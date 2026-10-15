@@ -27,7 +27,7 @@ step << Horde
     .accept 12892 >>Aceite Só Diversão
 step
     .goto IcecrownGlacier,44.5,21.6
-	.use 41265 >>Voe para o topo da torre. Usar o Destruidor de Olhos no Ocular até que morra
+	.use 41265 >> Voe para o topo da torre. Usar o Destruidor de Olhos no Ocular até que morra
     .complete 12887,1 << Alliance --The Ocular has been destroyed (1)
     .complete 12892,1 << Horde --The Ocular has been destroyed (1)
 step
@@ -65,11 +65,11 @@ step
     .accept 12893 >>Aceite Liberar Sua Mente
 step
     .goto IcecrownGlacier,44.4,27.0
-	.use 41366 >>Mate Torpe. Usar o Bastão Soberano no cadáver dele
+	.use 41366 >> Mate Torpe. Usar o Bastão Soberano no cadáver dele
     .complete 12893,1 --Vile turned (1)
 step
     .goto IcecrownGlacier,41.8,24.5
-	.use 41366 >>Mate a Senhora Noctibosque. Usar o Bastão Soberano no cadáver dela
+	.use 41366 >> Mate a Senhora Noctibosque. Usar o Bastão Soberano no cadáver dela
     .complete 12893,2 --Lady Nightswood turned (1)
 step
     .goto IcecrownGlacier,43.0,23.5,70,0
@@ -78,7 +78,7 @@ step
     .goto IcecrownGlacier,45.7,19.7,70,0
     .goto IcecrownGlacier,43.7,19.0,70,0
     .goto IcecrownGlacier,42.6,21.1
-	.use 41366 >>Mate O Saltador. Usar o Bastão Soberano no cadáver dele. Ele caminha ao redor da área fora do prédio principal no andar superior.
+	.use 41366 >> Mate O Saltador. Usar o Bastão Soberano no cadáver dele. Ele caminha ao redor da área fora do prédio principal no andar superior.
     .complete 12893,3 --The Leaper turned (1)
 	.unitscan The Leaper
 step
@@ -90,7 +90,7 @@ step
     .accept 12897 >>Aceite Se Não Conseguir Convertê-lo... << Horde
 step
     .goto IcecrownGlacier,44.7,19.8
-	>>Entre no prédio e clique no Cavalete de Armas do General. Tenha cuidado, isso invoca um Élite. Mate o General Halonegro
+	>> Entre no prédio e clique no Cavalete de Armas do General. Tenha cuidado, isso invoca um Élite. Mate o General Halonegro
     .complete 12896,1 << Alliance --General Lightsbane (1)
     .complete 12897,1 << Horde --General Lightsbane (1)
 step << Alliance
@@ -115,7 +115,7 @@ step
 step
 	#completewith next
     .goto IcecrownGlacier,43.7,24.4
-    .fp The Shadow Vault >>Aprenda a rota de voo para A Abóbada das Sombras
+    .fp The Shadow Vault >> Aprenda a rota de voo para A Abóbada das Sombras
 step
     .goto IcecrownGlacier,44.7,20.3
 	>>Entre no prédio. Fale com Lankral
@@ -129,7 +129,7 @@ step
     .goto IcecrownGlacier,37.5,24.7,0,0
 	#sticky
 	#label mjordincombat
-	.use 41372 >>Usar a Bandeira de Desafio no Combatente Mjordin de longe. Você pode desafiar vários Combatentes de uma vez enquanto se mantém fora de combate (mas apenas 1 inimigo por dupla)
+	.use 41372 >> Usar a Bandeira de Desafio no Combatente Mjordin de longe. Você pode desafiar vários Combatentes de uma vez enquanto se mantém fora de combate (mas apenas 1 inimigo por dupla)
     .complete 12939,1 --Mjordin Combatants challenged and defeated (6)
 step
 	>>Voe para o Penhasco de Destroçar
@@ -154,14 +154,14 @@ step
     .accept 12943 >>Aceite O Decreto da Abóbada das Sombras
 step
 	#completewith next
-    .goto IcecrownGlacier,39.01,23.99,25 >>O caminho para o Salão de Ufrang começa aqui
+    .goto IcecrownGlacier,39.01,23.99,25 >> O caminho para o Salão de Ufrang começa aqui
 step
     .goto IcecrownGlacier,41.0,23.9
-	>>Volte para o Salto Selvagem e então entre no Salão de Ufrang. Fale com Vaelen que está acorrentado dentro.
+	>> Volte para o Salto Selvagem e então entre no Salão de Ufrang. Fale com Vaelen que está acorrentado dentro.
     .accept 12949 >>Aceite Em Busca da Chave
 step
     .goto IcecrownGlacier,40.3,23.9
-	.use 41776 >>Usar o Decreto da Abóbada das Sombras na mochila em frente a Thane. Abata-o.
+	.use 41776 >> Usar o Decreto da Abóbada das Sombras na mochila em frente a Thane. Abata-o.
     .complete 12943,1 --Thane Ufrang the Mighty (1)
 step
     .goto IcecrownGlacier,37.7,23.9,70,0
@@ -189,7 +189,7 @@ step
 step
     .goto IcecrownGlacier,43.8,23.3,30,0
     .goto IcecrownGlacier,43.1,21.1
-	>>Entre no prédio. Fale com Vaelen que está dentro à esquerda.
+	>> Entre no prédio. Fale com Vaelen que está dentro à esquerda.
     .turnin 13085 >>Entregue O Retorno de Vaelen
     .accept 12982 >>Aceite Prisioneiros da Lâmina de Ébano
 step
@@ -222,7 +222,7 @@ step
 step
     .goto IcecrownGlacier,43.8,23.3,30,0
     .goto IcecrownGlacier,43.1,21.1
-	>>Entre no prédio. Fale com Vaelen que está dentro à esquerda.
+	>> Entre no prédio. Fale com Vaelen que está dentro à esquerda.
     .turnin 12982 >>Entregue Prisioneiros da Lâmina de Ébano
 step
     .goto IcecrownGlacier,44.7,20.4
@@ -243,14 +243,14 @@ step
     .daily 13069 >>Aceite Derrube-os!
 step
     .goto IcecrownGlacier,27.9,33.2
-	>>Entre em um dos Arpões de Tiro Rápido de Jotunheim localizados centralmente.
-	>>Dentro do Arpão, use repetidamente "Arpão de Fogo Rápido" (3) para abater os Dragões
+	>> Entre em um dos Arpões de Tiro Rápido de Jotunheim localizados centralmente.
+	>> Dentro do Arpão, use repetidamente "Arpão de Fogo Rápido" (3) para abater os Dragões
 	.complete 13069,1 --Jotunheim Proto-Drakes & their riders shot down
 	.isOnQuest 13069
 step
 	#completewith next
     .goto IcecrownGlacier,28.0,37.7
-    .vehicle 30564 >>Clique com o botão direito no Protodraco de Njorndar para montá-lo
+    .vehicle 30564 >> Clique com o botão direito no Protodraco de Njorndar para montá-lo
 	.isOnQuest 13071
 step
     .goto IcecrownGlacier,27.7,41.1,70,0
@@ -282,7 +282,7 @@ step
 	#sticky
 	#label DeathRise
     .goto IcecrownGlacier,19.3,47.8
-    .fp Death's Rise >>Aprenda a rota de voo para a Elevação da Morte.
+    .fp Death's Rise >> Aprenda a rota de voo para a Elevação da Morte.
 step
 	>>Fale com Setaal
     .daily 12813 >>Aceite Ergam-se dos Cadáveres!
@@ -300,7 +300,7 @@ step
 	#label transformedcorpse
     .goto IcecrownGlacier,9.5,44.8,50,0
     .goto IcecrownGlacier,9.5,44.8,0,0
-	.use 40587 >>Abate os inimigos do Acossamento na área. Usar a Tintura da Curalâmina Sombria na mochila nos cadáveres
+	.use 40587 >> Abate os inimigos do Acossamento na área. Usar a Tintura da Curalâmina Sombria na mochila nos cadáveres
     .complete 12813,1 --Scarlet Onslaught corpse transformed (10)
 	.isOnQuest 12813
 step
@@ -332,7 +332,7 @@ step
 	.isOnQuest 12838
 step
 	#requires transformedcorpse
-	.use 40551 >>Vá para o mar a cerca de 30-90 jardas da costa e mate Tubaroz. Usar a Bexiga de Sangue na mochila nos cadáveres deles.
+	.use 40551 >> Vá para o mar a cerca de 30-90 jardas da costa e mate Tubaroz. Usar a Bexiga de Sangue na mochila nos cadáveres deles.
     .goto IcecrownGlacier,4.8,41.5,90,0
     .goto IcecrownGlacier,4.3,35.9,90,0
     .goto IcecrownGlacier,11.7,35.6,90,0
@@ -361,7 +361,7 @@ step
     .goto IcecrownGlacier,19.7,48.4
 step
     .goto IcecrownGlacier,10.4,44.1
-	>>Abata os Cavaleiros do Grifo da Ofensiva na área. Saqueie-os pelas Rédeas de Grifo da Ofensiva.
+	>> Abata os Cavaleiros do Grifo da Ofensiva na área. Saqueie-os pelas Rédeas de Grifo da Ofensiva.
 	.collect 40970,1,12814,1 --Onslaught Grpyhon Reins (1)
 step
     .goto IcecrownGlacier,19.6,47.8
@@ -379,7 +379,7 @@ step
     .goto IcecrownGlacier,10.5,39.0,70,0
     .goto IcecrownGlacier,12.7,41.2,70,0
     .goto IcecrownGlacier,10.5,44.1
-	>>Abata os Cavaleiros do Grifo na área. Derrube-os com habilidades à distância ou agrupe vários deles no ar e depois voe para baixo e mate-os. Se agrupar muitos, não deixe que o ataquem por trás ou será desmontado.
+	>> Abata os Cavaleiros do Grifo na área. Derrube-os com habilidades à distância ou agrupe vários deles no ar e depois voe para baixo e mate-os. Se agrupar muitos, não deixe que o ataquem por trás ou será desmontado.
     .complete 12815,1 --Onslaught Gryphon Rider (10)
 step
 	.goto Icecrown,19.64,47.80

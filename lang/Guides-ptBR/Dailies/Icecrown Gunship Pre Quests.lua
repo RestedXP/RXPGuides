@@ -12,7 +12,7 @@ step
 	>>Se você não conseguir completá-las, retorne a elas mais tarde.
 step
     .goto IcecrownGlacier,87.8,78.1
-    .fp The Argent Vanguard >>Aprenda a rota de voo para The Argent Vanguarda.
+    .fp The Argent Vanguard >> Aprenda a rota de voo para The Argent Vanguarda.
 step
     .goto IcecrownGlacier,87.5,75.8
 	>>Voe para The Argent Vanguarda. Fale com Tirion.
@@ -68,7 +68,7 @@ step
 step
 	#completewith next
     .goto IcecrownGlacier,87.1,79.2
-	.vehicle 30228 >>Clique com o botão direito em Garraérea Argêntea para montá-lo.
+	.vehicle 30228 >> Clique com o botão direito em Garraérea Argêntea para montá-lo.
 step
 	>>Voe para Scourgeholme. Usar "Agarrar Cruzado Capturado" (1) para resgatar os Cruzados (você só pode pegar um por vez), depois voe de volta para Gustav em The Argent Vanguarda e use "Soltar Cruzado Capturado" (2) para soltá-los. Usar "Voar Alto" (3) em recarga para ir mais rápido.
 	.pin Icecrown,78.7,67.0
@@ -122,7 +122,7 @@ step
     .complete 13122,1 --Scourgestone (15)
 step
 	#completewith Kings
-	.use 43153 >>Mate os Cruzados Reanimados em Scourgeholme. Usar a Água Sagrada na mochila nos cadáveres deles para libertar suas almas
+	.use 43153 >> Mate os Cruzados Reanimados em Scourgeholme. Usar a Água Sagrada na mochila nos cadáveres deles para libertar suas almas
     .goto IcecrownGlacier,78.6,69.7,0
     .goto IcecrownGlacier,77.9,66.2,0
     .goto IcecrownGlacier,78.5,64.6,0
@@ -168,7 +168,7 @@ step
     .goto IcecrownGlacier,77.9,66.2,80,0
     .goto IcecrownGlacier,78.5,64.6,80,0
     .goto IcecrownGlacier,80.2,65.7
-	.use 43153 >>Mate os Cruzados Reanimados em Scourgeholme. Usar a Água Sagrada na mochila nos cadáveres deles para libertar suas almas
+	.use 43153 >> Mate os Cruzados Reanimados em Scourgeholme. Usar a Água Sagrada na mochila nos cadáveres deles para libertar suas almas
     .complete 13110,1 --Restless Soul Freed (10)
     .complete 13118,3 --Reanimated Crusader (8)
 step
@@ -274,7 +274,7 @@ step
     .accept 13068 >>Aceite Uma História de Coragem
 step
     .goto IcecrownGlacier,79.4,72.3
-    .fp Crusaders' Pinnacle >>Aprenda a rota de voo do Pináculo dos Cruzados
+    .fp Crusaders' Pinnacle >> Aprenda a rota de voo do Pináculo dos Cruzados
 step << Horde
     .goto IcecrownGlacier,79.5,72.7
 	>>Entre na torre. Fale com Strongbrow no andar inferior na cama
@@ -325,16 +325,16 @@ step << Alliance
     .accept 13296 >>Aceite Vá à Ymarheim!
 step << Horde
 	.goto IcecrownGlacier,67.00,38.00
-	>>Voe para Martelo de Orgrim, o grande navio da Horda que está voando alto no ar. Entre no grande quarto na frente. Fale com o Exterminador dos Céus Korm Escaranegra
+	>> Voe para Martelo de Orgrim, o grande navio da Horda que está voando alto no ar. Entre no grande quarto na frente. Fale com o Exterminador dos Céus Korm Escaranegra
     .turnin 13224 >>Entregue Martelo de Orgrim
     .accept 13228 >>Aceite O Front Partido
 step << Horde
-	>>Aceite as missões de Armipotente Davos Bulício e o Irmão Keltan. Eles andam ao redor das escadas e do convés inferior
+	>> Aceite as missões de Armipotente Davos Bulício e o Irmão Keltan. Eles andam ao redor das escadas e do convés inferior
     .daily 13302 >>Aceite Escravos da Saronita
     .daily 13330 >>Aceite Sangue dos Escolhidos
     .accept 13340 >>Aceite Juntando-se ao Ataque
 step << Horde
-	>>Vá para o convés inferior do navio. Fale com o Engenheiro-chefe Cobregarra
+	>> Vá para o convés inferior do navio. Fale com o Engenheiro-chefe Cobregarra
     .accept 13293 >>Aceite Vá à Ymarheim!
 step << Alliance
     .goto IcecrownGlacier,62.6,51.3
@@ -345,7 +345,7 @@ step << Alliance
 step << Alliance
     #completewith next
     .goto Icecrown,62.55,50.67
-    .vehicle 32227 >>Clique com o botão direito na torre de canhão no topo da Máquina Voadora para iniciar a missão
+    .vehicle 32227 >> Clique com o botão direito na torre de canhão no topo da Máquina Voadora para iniciar a missão
 	.isOnQuest 13309
 step << Alliance
 	-- completionist
@@ -373,7 +373,7 @@ step << Alliance
 	.complete 13336,1 --Ymirheim Vrykul Slain (20)
 step << Alliance
     .goto Icecrown,59.89,53.50
-	>>Escolte as tropas. Deixe algumas das tropas segurarem os inimigos se necessário
+	>> Escolte as tropas. Deixe algumas das tropas segurarem os inimigos se necessário
     .complete 13284,1 --4/4 Alliance troops escorted to Ymirheim
 	.isOnQuest 13284
 step << Alliance
@@ -456,7 +456,7 @@ step << Horde
 	.complete 13330,1 --Ymirheim Vrykul Slain (20)
 	.isOnQuest 13330
 step << Horde
-	>>Escorte as tropas
+	>> Escorte as tropas
     .goto IcecrownGlacier,59.4,52.8
     .complete 13301,1 --Horde troops escorted to Ymirheim (4)
 	.isOnQuest 13301
@@ -584,7 +584,7 @@ step
     .turnin 13330 >>Complete Sangue dos Escolhidos
 	.isQuestComplete 13330
 step << Horde
-	>>Vá para o convés inferior do navio. Fale com o Engenheiro-chefe Cobregarra
+	>> Vá para o convés inferior do navio. Fale com o Engenheiro-chefe Cobregarra
     .turnin 13238 >>Entregue Vamos Ver se Dá pro Gasto
     .accept 13239 >>Aceite Volatilidade
 step << Alliance
@@ -687,12 +687,12 @@ step << Horde
     .accept 13264 >>Aceite Abominável!
 	.accept 13277 >>Aceite Contra os Gigantes
 step << Horde
-	>>Vá para o convés inferior do navio. Fale com o Engenheiro-chefe Cobregarra
+	>> Vá para o convés inferior do navio. Fale com o Engenheiro-chefe Cobregarra
     .turnin 13239 >>Complete Volatilidade
 step
     .goto IcecrownGlacier,68.3,61.5
 	>>Abate as Abominações Colossais na área e saqueie-as por Tripas de Abominação Geladas
-	.use 43968 >>Usar o Kit de Reanimação de Abominações com algumas Tripas na mochila para invocar uma Abominação que você pode controlar. Colete tantos inimigos quantos possível fazendo a Abominação atacá-los e ganhando agro, depois use "Rasgo na Costura" para matar todos os inimigos perto da sua Abominação (os inimigos têm que estar em combate para obter crédito deles)
+	.use 43968 >> Usar o Kit de Reanimação de Abominações com algumas Tripas na mochila para invocar uma Abominação que você pode controlar. Colete tantos inimigos quantos possível fazendo a Abominação atacá-los e ganhando agro, depois use "Rasgo na Costura" para matar todos os inimigos perto da sua Abominação (os inimigos têm que estar em combate para obter crédito deles)
 	>>Se você ficar sem Tripas, vá e mate mais Abominações Colossais. Você pode ter apenas uma Tripa com você por vez.
 	.collect 43966,1,13288,-1,1 << Alliance --Chilled Abomination Guts (3)
     .complete 13288,1 << Alliance  --Icy Ghouls Exploded (15)
@@ -774,7 +774,7 @@ step << Horde
 	.accept 13279 >>Aceite Alquimia Básica
     .accept 13278 >>Aceite Coprous, o Escatológico
 step << Horde
-	>>Vá para o convés inferior do navio. Fale com o Engenheiro-chefe Cobregarra
+	>> Vá para o convés inferior do navio. Fale com o Engenheiro-chefe Cobregarra
     .accept 13379 >>Aceite Tecnologia Verde
 step << Alliance
     .goto IcecrownGlacier,65.1,57.2,0
@@ -798,12 +798,12 @@ step << Alliance
     .accept 13383 >>Aceite Tecnologia Emprestada
 step
 	#completewith next
-    .goto IcecrownGlacier,63.3,62.1,25 >>Entre no portão para Mord'rethar. Está no segundo nível, guardado pelos Demônios Pestilhentos
+    .goto IcecrownGlacier,63.3,62.1,25 >> Entre no portão para Mord'rethar. Está no segundo nível, guardado pelos Demônios Pestilhentos
 	.isOnQuest 13295 << Alliance
 	.isOnQuest 13279 << Horde
 step
     .goto IcecrownGlacier,62.3,63.4
-	.use 44010 >>Usar o Fluído Espinhal Pustulante nos caldeirões verdes borbulhantes. Mate os inimigos que aparecem e use o Fluído Espinhal novamente quando a mensagem disser "Adicione fluído em breve". Esta missão é MUITO difícil, forme um grupo se necessário.
+	.use 44010 >> Usar o Fluído Espinhal Pustulante nos caldeirões verdes borbulhantes. Mate os inimigos que aparecem e use o Fluído Espinhal novamente quando a mensagem disser "Adicione fluído em breve". Esta missão é MUITO difícil, forme um grupo se necessário.
     .complete 13295,1 << Alliance --Batch of Plague Neutralized (1)
     .complete 13279,1 << Horde --Batch of Plague Neutralized (1)
 step
@@ -834,7 +834,7 @@ step
 	.complete 13319,1 << Alliance --Overseer Faedris Killed (1)
 step
 	#requires darksub
-	.use 44251 >>Usar o Frasco Compartimentado nos caldeirões fora de Aldur'thar
+	.use 44251 >> Usar o Frasco Compartimentado nos caldeirões fora de Aldur'thar
     .complete 13355,3 << Horde --Dark Sample Collected (1)
 	.complete 13320,3 << Alliance --Dark Sample Collected (1)
     .goto IcecrownGlacier,49.7,34.4
@@ -917,7 +917,7 @@ step << Alliance
     .accept 13321 >>Aceite Novo Teste
 step << Horde
 	.goto IcecrownGlacier,67.00,38.00
-	>>Voe para Martelo de Orgrim, o grande navio da Horda voando muito alto no ar. Entre na grande sala na frente. Fale com Kolitra
+	>> Voe para Martelo de Orgrim, o grande navio da Horda voando muito alto no ar. Entre na grande sala na frente. Fale com Kolitra
 	.turnin 13352 >>Complete Arrastar e Soltar
     .turnin 13354 >>Entregue Cadeia de Comando
     .turnin 13279 >>Entregue Alquimia Básica
@@ -925,7 +925,7 @@ step << Horde
     .accept 13358 >>Aceite Outro Tipo de Grampo
     .accept 13366 >>Aceite Precisamos de Mais Informações
 step << Horde
-	>>Vá para o convés inferior do navio. Fale com o Engenheiro-chefe Cobregarra
+	>> Vá para o convés inferior do navio. Fale com o Engenheiro-chefe Cobregarra
     .turnin 13355 >>Entregue Impossível Reproduzir
     .accept 13356 >>Aceite Novo Teste
 step
@@ -940,7 +940,7 @@ step
     .goto IcecrownGlacier,54.7,28.0,70,0
     .goto IcecrownGlacier,57.0,28.8,70,0
     .goto IcecrownGlacier,54.1,31.4
-	.use 44433 >>Abate 5 Minions Escravizados (Voidwalkers). Usar o Bastão de Sifão nos cadáveres deles pela Matéria Negra
+	.use 44433 >> Abate 5 Minions Escravizados (Voidwalkers). Usar o Bastão de Sifão nos cadáveres deles pela Matéria Negra
 	.collect 44434,5,13342,1 << Alliance --Dark Matter (5)
 	.collect 44434,5,13358,1 << Horde --Dark Matter (5)
 step
@@ -950,7 +950,7 @@ step
     .complete 13358,1 << Horde --Dark Messenger Summoned (1)
 step
 	#completewith next
-    .goto IcecrownGlacier,51.9,32.5,30 >>Entre em Aldur'thar
+    .goto IcecrownGlacier,51.9,32.5,30 >> Entre em Aldur'thar
 	.isOnQuest 13366 << Horde
 	.isOnQuest 13345 << Alliance
 step
@@ -969,14 +969,14 @@ step
 	#sticky
 	#label Thesis
     .goto IcecrownGlacier,49.7,34.4
-	.use 44459 >>Clique em uma das páginas de pesquisa na mochila para combiná-las na Tese
+	.use 44459 >> Clique em uma das páginas de pesquisa na mochila para combiná-las na Tese
     .complete 13366,1 << Horde --Cult of the Damned Thesis (1)
 	.complete 13345,1 << Alliance --Cult of the Damned Thesis (1)
 step
 	#requires taintedessence
     .goto IcecrownGlacier,49.7,34.4
 	.use 44301
-	.use 44304 >>Clique direito nas Essências Maculadas na mochila para transformá-las em um Writhing Mass. Jogue-o numa caldeira
+	.use 44304 >> Clique direito nas Essências Maculadas na mochila para transformá-las em um Writhing Mass. Jogue-o numa caldeira
 	.complete 13321,1 << Alliance
 	.complete 13356,1 << Horde
 step << Alliance
@@ -1006,13 +1006,13 @@ step << Alliance
     .turnin 13321 >>Complete Novo Teste
 step << Horde
 	.goto IcecrownGlacier,67.00,38.00
-	>>Voe para Martelo de Orgrim, o grande navio da Horda voando muito alto no ar. Entre na grande sala na frente. Fale com Kolitra
+	>> Voe para Martelo de Orgrim, o grande navio da Horda voando muito alto no ar. Entre na grande sala na frente. Fale com Kolitra
     .turnin 13358 >>Complete Outro Tipo de Grampo
 	.turnin 13366 >>Entregue Precisamos de Mais Informações
     .accept 13367 >>Aceite Onde os Maléficos Não Têm Descanso
     .accept 13306 >>Aceite Erguendo as Barricadas
 step << Horde
-	>>Vá para o convés inferior do navio. Fale com o Engenheiro-chefe Cobregarra
+	>> Vá para o convés inferior do navio. Fale com o Engenheiro-chefe Cobregarra
     .turnin 13356 >>Complete Novo Teste
 step
     .goto IcecrownGlacier,52.5,42.0,70,0
@@ -1039,14 +1039,14 @@ step
 step
     .goto IcecrownGlacier,51.9,29.0
 	>>Esta missão é MUITO difícil, forme um grupo para completá-la se necessário
-	.use 44476 >>Clique em qualquer um dos itens na mochila para combiná-los em Restos Mortais de Alumeth
+	.use 44476 >> Clique em qualquer um dos itens na mochila para combiná-los em Restos Mortais de Alumeth
 	.collect 44480,1 --Alumeth's Remains (1)
 	.isOnQuest 13346 << Alliance
 	.isOnQuest 13367 << Horde
 step
     .goto IcecrownGlacier,51.9,29.0
 	>>Esta missão é MUITO difícil, forme um grupo para completá-la se necessário
-	.use 44480 >>Usar Restos Mortais de Alumeth em frente ao cristal brilhante para invocá-lo. Abate-o
+	.use 44480 >> Usar Restos Mortais de Alumeth em frente ao cristal brilhante para invocá-lo. Abate-o
     .complete 13346,1 << Alliance --Alumeth the Ascended Defeated (1)
     .complete 13367,1 << Horde --Alumeth the Ascended Defeated (1)
 	.isOnQuest 13346 << Alliance
@@ -1067,7 +1067,7 @@ step << Alliance
 	.accept 13334 >>Aceite Estandartes Salpicados de Sangue
 step << Horde
 	.goto IcecrownGlacier,67.00,38.00
-	>>Voe para Martelo de Orgrim, o grande navio da Horda voando muito alto no ar. Entre na grande sala na frente. Fale com Kolitra
+	>> Voe para Martelo de Orgrim, o grande navio da Horda voando muito alto no ar. Entre na grande sala na frente. Fale com Kolitra
     .turnin 13367 >>Complete Onde os Maléficos Não Têm Descanso
     .turnin 13306 >>Entregue Erguendo as Barricadas
 	.accept 13312 >>Aceite A Muralha de Ferro
@@ -1081,7 +1081,7 @@ step
 step
     .goto IcecrownGlacier,45.5,46.5
 	>>Esta missão é MUITO difícil, forme um grupo para completá-la se necessário
-	.use 44186 >>Voe até a varanda, depois use a Runa da Distorção na mochila no Orbe de Grimkor. Mate Grimkor, o Perverso
+	.use 44186 >> Voe até a varanda, depois use a Runa da Distorção na mochila no Orbe de Grimkor. Mate Grimkor, o Perverso
     .complete 13337,1 << Alliance --Grimkor the Wicked (1)
     .complete 13312,1 << Horde --Grimkor the Wicked (1)
 step
@@ -1126,7 +1126,7 @@ step << Alliance
 	.turnin 13314 >>Entregue Get The Message
 step << Horde
 	.goto IcecrownGlacier,67.00,38.00
-	>>Voe para Martelo de Orgrim, o grande navio da Horda voando muito alto no ar. Entre na grande sala na frente. Fale com Kolitra
+	>> Voe para Martelo de Orgrim, o grande navio da Horda voando muito alto no ar. Entre na grande sala na frente. Fale com Kolitra
 	.turnin 13312 >>Entregue A Muralha de Ferro
 	.turnin 13307 >>Entregue Estandartes Salpicados de Sangue
 step << Horde
@@ -1137,7 +1137,7 @@ step << Horde
 	.use 44212 >>Usar o SGM-3 na mochila nos Skybreaker Recon Fighters no ar
 	.complete 13313,1 --Skybreaker Recon Fighters shot down (6)
 step << Horde
-	>>Voe para Martelo de Orgrim, o grande navio da Horda que está voando bem alto. Entre na grande sala na frente. Fale com Krom Blackscar
+	>> Voe para Martelo de Orgrim, o grande navio da Horda que está voando bem alto. Entre na grande sala na frente. Fale com Krom Blackscar
 	.turnin 13313 >>Entregue Cegando os Olhos no Céu
 step
 	+Se você pulou ou não completou qualquer uma das missões neste guia, reinicie o guia e complete-as. Para fazer isso, clique na roda de engrenagem e navegue de volta para o guia Desbloqueio de Missões Diárias do Canhoneiro da Coroa de Gelo

@@ -85,7 +85,7 @@ step << Hunter
     .goto Eversong Woods,39.05,20.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Patrulheira Sallina|r
     .turnin 9393 >>Entregue Treinamento de Caçador
-    .accept 10070 >>Aceite Tiro Firme
+    .accept 10070 >> Aceite Tiro Firme
     .train 56641 >>Treine |T132213:0|t[Tiro Firme] << Cata
     .target Ranger Sallina
 step << Mage cata
@@ -93,7 +93,7 @@ step << Mage cata
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Julia Golpessol|r
     .turnin 8328 >>Entregue Treinamento de Mago
     .accept 10068 >>Aceite Mísseis Arcanos
-    .train 5143 >>Treine |T136096:0|t[Mísseis Arcanos] << Cata
+    .train 5143 >>Aprenda |T136096:0|t[Mísseis Arcanos] << Cata
     .target Julia Sunstriker
 step << Mage !cata
     .goto Eversong Woods,39.23,21.46
@@ -134,7 +134,7 @@ step << Warlock cata
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Evocador Teli'Larien|r
     .turnin 8563 >>Entregue Treinamento de Bruxo
     .accept 10073 >>Aceite Imolação
-    .train 348 >>Treine |T135817:0|t[Imolação] << Cata
+    .train 348 >>Treine |T135817:0|t [Imolar] << Cata
     .target Summoner Teli'Larien
 step << Warlock !cata
     .goto Eversong Woods,38.94,21.45
@@ -398,7 +398,7 @@ step
     .use 20483
 step
     #completewith SolanianB
-    .deathskip >>Morra e reviva no |cRXP_FRIENDLY_Anjo da Cura|r
+    .deathskip >> Morra e reviva no |cRXP_FRIENDLY_Anjo da Cura|r
 step
     #completewith next
     >>Mate os |cRXP_ENEMY_Mana Wyrms|r. Saque-os para obter as |cRXP_LOOT_Lascas|r.
@@ -584,12 +584,12 @@ step
 step
     .goto Eversong Woods,48.165,45.999
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Aledon Marcassol|r
-    .accept 8463 >>Aceite Cristais de Mana Instáveis
+    .accept 8463 >> Aceite Cristais de Mana Instáveis
     .target Aeldon Sunbrand
 step << Rogue
     .goto Eversong Woods,48.492,45.905
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Geron|r
-    .vendor >>Vendedor de lixo. Venda sua arma se lhe der dinheiro suficiente para um |T135321:0|t[Gládio] (5s 9c). Você voltará mais tarde se ainda não tiver o suficiente
+    .vendor >> Vendedor de lixo. Venda sua arma se lhe der dinheiro suficiente para um |T135321:0|t[Gládio] (5s 9c). Você voltará mais tarde se ainda não tiver o suficiente
     .target Geron
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.8
@@ -605,7 +605,7 @@ step << Rogue
 step << Warrior/Paladin
     .goto Eversong Woods,48.492,45.905
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Geron|r
-    .vendor >>Venda os lixos. Venda sua arma se ela lhe der dinheiro suficiente para uma |T133053:0|t[Marreta de Madeira] (6p 66c). Você voltará depois se ainda não tiver o suficiente
+    .vendor >> Venda os lixos. Venda sua arma se ela lhe der dinheiro suficiente para uma |T133053:0|t[Marreta de Madeira] (6p 66c). Você voltará depois se ainda não tiver o suficiente
     .target Geron
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<5
@@ -794,7 +794,7 @@ step << Warlock Cata
 step << Rogue
     .goto Eversong Woods,48.492,45.905
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Geron|r
-    .vendor >>Vendedor de lixo. Venda sua arma se lhe der dinheiro suficiente para um |T135321:0|t[Gládio] (5s 9c). Você voltará mais tarde se ainda não tiver o suficiente
+    .vendor >> Vendedor de lixo. Venda sua arma se lhe der dinheiro suficiente para um |T135321:0|t[Gládio] (5s 9c). Você voltará mais tarde se ainda não tiver o suficiente
     .target Geron
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.8
@@ -810,7 +810,7 @@ step << Rogue
 step << Warrior/Paladin
     .goto Eversong Woods,48.492,45.905
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Geron|r
-    .vendor >>Venda os lixos. Venda sua arma se ela lhe der dinheiro suficiente para uma |T133053:0|t[Marreta de Madeira] (6p 66c). Você voltará depois se ainda não tiver o suficiente
+    .vendor >> Venda os lixos. Venda sua arma se ela lhe der dinheiro suficiente para uma |T133053:0|t[Marreta de Madeira] (6p 66c). Você voltará depois se ainda não tiver o suficiente
     .target Geron
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<5
@@ -872,7 +872,7 @@ step
     >>|cRXP_WARN_Use os |T133464:0|t[|cRXP_LOOT_documentos incriminadores|r] para iniciar a missão|r
     .complete 9352,1 --Intruder Defeated
     .collect 20765,1,8482 --Incriminating Documents (1)
-    .accept 8482 >>Aceite Documentos Incriminadores
+    .accept 8482 >> Aceite Documentos Incriminadores
     .mob Darnassian Scout
     .use 20765
 step
@@ -946,7 +946,7 @@ step
 step
     .goto Eversong Woods,43.34,70.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Patrulheiro Degolien|r
-    .accept 8892 >>Aceite Incidente no Ancoradouro Velaclara
+    .accept 8892 >> Aceite Incidente no Ancoradouro Velaclara
     .target Ranger Degolien
 step << BloodElf
     .goto Eversong Woods,43.698,71.555
@@ -1131,7 +1131,7 @@ step
     .mob Springpaw Stalker
 step
     #completewith SunsailTurnin
-    .deathskip >>Morra e renasça no |cRXP_FRIENDLY_Anjo da Cura|r ou corra de volta para Vila de Brisabela
+    .deathskip >> Morra e renasça no |cRXP_FRIENDLY_Anjo da Cura|r ou corra de volta para Vila de Brisabela
 step
     #xprate <1.2
     .goto Eversong Woods,44.72,69.63
@@ -1279,7 +1279,7 @@ step
 step
     #xprate <1.2
     #completewith DefendingFBV
-    .deathskip >>Morra e renasça no |cRXP_FRIENDLY_Anjo da Cura|r ou corra de volta para Vila de Brisabela
+    .deathskip >> Morra e renasça no |cRXP_FRIENDLY_Anjo da Cura|r ou corra de volta para Vila de Brisabela
     .isQuestComplete 9252
 step
     #xprate <1.2
@@ -1293,12 +1293,12 @@ step
     #label DefendingFBV
     .goto Eversong Woods,46.93,71.79
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Sareyn|r
-    .turnin 9252 >>Entregue Defendendo a Vila de Brisabela
+    .turnin 9252 >> Entregue Defendendo a Vila de Brisabela
     .target Ranger Sareyn
     .isQuestComplete 9252
 step << !Undead
     #completewith IncrDocs
-    .hs >>Use sua Pedra de Retorno para ir a Praça da Asa de Falcão
+    .hs >> Use sua Pedra de Retorno para ir a Praça da Asa de Falcão
     .cooldown item,6948,>2,1
 step
     #completewith IncrDocs
@@ -1311,7 +1311,7 @@ step
     #label IncrDocs
     .goto Eversong Woods,48.17,46.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Aeldon|r
-    .turnin 8482 >>Entregue Documentos Incriminadores
+    .turnin 8482 >> Entregue Documentos Incriminadores
     .target Aeldon Sunbrand
 step << Paladin Cata
     .goto Eversong Woods,48.39,46.47
@@ -1405,6 +1405,6 @@ step
     .goto 18,61.38,58.71,8,0
     .goto 18,61.34,59.17,8,0
     .goto 18,60.51,58.69
-    >>Suba pela Torre do Zepelim
+    >>Suba a Torre do Zepelim
     .zone Orgrimmar >>Pegue o zepelim para Orgrimmar
 ]])

@@ -7,7 +7,7 @@ RXPGuides.RegisterGuide([[
 #mop
 << Horde
 #name 1-6 Kezan
-#next 6-11 The Perdida Isles
+#next 6-11 As Ilhas Perdidas
 #version 1
 --#group RXP Cataclysm (H) << cata
 
@@ -129,7 +129,7 @@ step
     #completewith next
     .goto 194,57.10,78.44,10,0
     .goto 194,53.39,75.13,20,0
-    .goto 194,47.36,78.46,30 >>Siga a seta ao redor da casa
+    .goto 194,47.36,78.46,30 >> Siga a seta ao redor da casa
 step
     .goto 194,45.19,74.76
     >>Ataque |cFFFF5722Bruno|r
@@ -242,7 +242,7 @@ step
 step
     #completewith next
     .goto 194,47.71,57.76
-    .vehicle >>Entre em |cRXP_FRIENDLY_Bilgewater Bucaneiro|r
+    .vehicle >> Entre em |cRXP_FRIENDLY_Bilgewater Bucaneiro|r
     .target Bilgewater Buccaneer
 step
     >>Usar |T134480:0|tChutar Futebomba (1)
@@ -280,13 +280,13 @@ step << Rogue
     .goto 194,58.27,73.10,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cFF00FF25Slinky|r
     .accept 14010 >>Aceite Eviscerar
-    .train 2098 >>Treine |T132292:0|t[Eviscerar] << Cata
+    .train 2098 >> Treine |T132292:0|t[Eviscerar] << Cata
     .target Slinky Sharpshiv
 step << Warrior
     .goto 194,60.27,77.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cFF00FF25Guerreiromático X-9|r
     .accept 14013 >>Aceite Investida
-    .train 100 >>|T132337:0|t[Investida] << Cata
+    .train 100 >> |T132337:0|t[Investida] << Cata
     .target Warrior-Matic NX-01
 step << Hunter
     .goto 194,60.42,77.50
@@ -304,7 +304,7 @@ step << Mage cata
     .goto 194,59.37,73.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cFF00FF25Fizz|r
     .accept 14008 >>Aceite Mísseis Arcanos
-    .train 5143 >>Treine |T136096:0|t[Mísseis Arcanos] << Cata
+    .train 5143 >>Aprenda |T136096:0|t[Mísseis Arcanos] << Cata
     .target Fizz Lighter
 step << Mage !cata
     .goto 194,59.37,73.77
@@ -315,7 +315,7 @@ step << Warlock cata
     .goto 194,57.96,74.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cFF00FF25Evol|r
     .accept 14012 >>Aceite Imolação
-    .train 348 >>Treine |T135817:0|t[Imolação] << Cata
+    .train 348 >>Treine |T135817:0|t [Imolar] << Cata
     .target Evol Fingers
 step << Warlock !cata
     .goto 194,57.96,74.22
@@ -666,7 +666,7 @@ step
 step
     #completewith next
     .goto 194,22.31,16.78
-    .cast 92633 >>Clique no canhão
+    .cast 92633 >> Clique no canhão
 step
     .goto 194,20.76,13.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cFF00FF25Gallywix|r
@@ -691,7 +691,7 @@ RXPGuides.RegisterGuide([[
 step
     #completewith next
     >>Às vezes você pode ficar preso e ter que fazer login novamente ou /reload
-    .timer 45 >>Não entre no RP da Luz
+    .timer 45 >> Não entre no RP da Luz
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cFF00FF25Zapnozzle|r e |cFF00FF25Gizmo|r
     .turnin 14239 >>Entregue Não Entre na Luz

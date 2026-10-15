@@ -59,7 +59,7 @@ step
 step
     .goto 10,41.99,15.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gort|r
-    .fp The Mor'shan Rampart >>Aprenda a rota de voo para The Mor'shan Rampart
+    .fp The Mor'shan Rampart >> Aprenda a rota de voo para The Mor'shan Rampart
     .target Gort Goreflight
     .subzoneskip 1703,1
 step
@@ -71,7 +71,7 @@ step
     .mob +Ashenvale Bowman
 step
     #completewith Skirmishers
-    .use 45001 >>|cRXP_WARN_Usar|r |T133690:0|t[Medicated Salve] |cRXP_WARN_em|r |cRXP_FRIENDLY_Defensores de Mor'shan Feridos|r
+    .use 45001 >> |cRXP_WARN_Usar|r |T133690:0|t[Medicated Salve] |cRXP_WARN_em|r |cRXP_FRIENDLY_Defensores de Mor'shan Feridos|r
     .complete 13613,1 --5/5 Wounded Mor'shan Defenders Rescued
     .target Wounded Mor'shan Defender
 step
@@ -111,7 +111,7 @@ step
     .waypoint 63,68.994,86.080,20,0
     .waypoint 10,40.760,12.633,20,0
     .waypoint 63,65.280,86.817,20,0
-    .use 45001 >>Usar |T133690:0|t[Medicated Salve] em |cRXP_FRIENDLY_Defensores de Mor'shan Feridos|r
+    .use 45001 >> Usar |T133690:0|t[Medicated Salve] em |cRXP_FRIENDLY_Defensores de Mor'shan Feridos|r
     .complete 13613,1 --5/5 Wounded Mor'shan Defenders Rescued
     .target Wounded Mor'shan Defender
 step
@@ -150,7 +150,7 @@ step
 step
     #completewith next
     .goto 63,64.16,84.50
-    .cast 62772 >>|cRXP_WARN_Use|r |T134719:0|t[Gorat's Imbuído Sanguíneo] |cRXP_WARN_Usar|r |cRXP_FRIENDLY_Gorat|r
+    .cast 62772 >> |cRXP_WARN_Use|r |T134719:0|t[Gorat's Imbuído Sanguíneo] |cRXP_WARN_Usar|r |cRXP_FRIENDLY_Gorat|r
     .timer 103,A Vingança de Gorat RP
     .use 45023
 step
@@ -216,7 +216,7 @@ step
     #completewith next
     >>Mate |cRXP_ENEMY_Garraguda|r se ele estiver disponível. Saqueie-o para obter |T136063:0|t[|cRXP_LOOT_Garra de Garraguda|r] e use-o para começar a missão
     .collect 16305,1,2 --Sharptalon's Claw (1)
-    .accept 2 >>Aceite Garra de Garraguda
+    .accept 2 >> Aceite Garra de Garraguda
     .unitscan Sharptalon
     .use 16305
     .maxlevel 24
@@ -304,8 +304,8 @@ step
     .isQuestTurnedIn 13712
 step
     .goto 63,74.00,60.64
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Estalajadeira Kailisk|r
-    .home >>Defina sua Pedra de Retorno em Posto Machadada
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estalajadeira Kailisk|r
+    .home >>Defina sua Pedra de Regresso para Posto Machadada
     .target Innkeeper Kaylisk
     .isQuestTurnedIn 13712
     .isQuestAvailable 6503
@@ -385,13 +385,13 @@ step
     #completewith DorDanilDen
     >>Abate |cRXP_ENEMY_Garraguda|r. Saque-o para obter |T136063:0|t[|cRXP_LOOT_Garra de Garraguda|r] e use-a para iniciar a missão
     .collect 16305,1,2 --Sharptalon's Claw (1)
-    .accept 2 >>Aceite Garra de Garraguda
+    .accept 2 >> Aceite Garra de Garraguda
     .unitscan Sharptalon
     .use 16305
     .maxlevel 24
 step
     #completewith next
-    >>Abate os |cRXP_ENEMY_Vanguardeiros do Vale Gris|r
+    >>Mate |cRXP_ENEMY_Vanguardeiros do Vale Gris|r
     >>|cRXP_WARN_Eles estão invisíveis perto das árvores|r
     .complete 6503,1 --9/9 Ashenvale Outrunners Killed
     .unitscan Ashenvale Outrunner
@@ -408,7 +408,7 @@ step
     .mob Severed Keeper
 step
     .goto 63,75.52,74.20
-    .use 45683 >>|cRXP_WARN_Use o|r |T134840:0|t[Sangue Maculado of the Kaldorei] |cRXP_WARN_no centro da caverna|r
+    .use 45683 >> |cRXP_WARN_Use o|r |T134840:0|t[Sangue Maculado of the Kaldorei] |cRXP_WARN_no centro da caverna|r
     .complete 13805,1 --1/1 Forest Heart Corrupted
     .isQuestTurnedIn 13712
 step
@@ -431,7 +431,7 @@ step
     #completewith next
     >>Abate |cRXP_ENEMY_Garraguda|r. Saque-o para obter |T136063:0|t[|cRXP_LOOT_Garra de Garraguda|r] e use-a para iniciar a missão
     .collect 16305,1,2 --Sharptalon's Claw (1)
-    .accept 2 >>Aceite Garra de Garraguda
+    .accept 2 >> Aceite Garra de Garraguda
     .unitscan Sharptalon
     .use 16305
     .maxlevel 24
@@ -465,14 +465,14 @@ step
     .waypoint 1440/1,-2480.90015,1737.70007,40,0
     >>Abate |cRXP_ENEMY_Garraguda|r. Saque-o para obter |T136063:0|t[|cRXP_LOOT_Garra de Garraguda|r] e use-a para iniciar a missão
     .collect 16305,1,2 --Sharptalon's Claw (1)
-    .accept 2 >>Aceite Garra de Garraguda
+    .accept 2 >> Aceite Garra de Garraguda
     .unitscan Sharptalon
     .use 16305
     .isQuestTurnedIn 13712
     .maxlevel 24
 step << skip
     #completewith next
-    .hs >>Vá para Posto Machadada
+    .hs >> Vá para Posto Machadada
     .use 6948
     .subzoneskip 431
     --Need hearth cd for zoram strand
@@ -566,7 +566,7 @@ step
 step
     #questguide
     .goto 63,74.09,62.92
-    .use 45598 >>|cRXP_WARN_Suba a torre e aponte o|r |T134569:0|t[Amaldiçoado Ore] |cRXP_WARN_em|r |cRXP_ENEMY_Raging Ancients|r |cRXP_WARN_e|r |cRXP_ENEMY_Attacking Elves|r
+    .use 45598 >> |cRXP_WARN_Suba a torre e aponte o|r |T134569:0|t[Amaldiçoado Ore] |cRXP_WARN_em|r |cRXP_ENEMY_Raging Ancients|r |cRXP_WARN_e|r |cRXP_ENEMY_Attacking Elves|r
     .complete 13798,2 --5/5 Raging Ancients Slain
     .complete 13798,1 --30/30 Attacking Elves Slain
     .mob Raging Ancients
@@ -608,7 +608,7 @@ step
 step
     #questguide
     #completewith next
-    .use 45807 >>|cRXP_WARN_Use|r |T132399:0|t[Splintertree Machado] |cRXP_WARN_para derrubar|r os |cRXP_FRIENDLY_Vale Gris Carvalhos|r
+    .use 45807 >> |cRXP_WARN_Use|r |T132399:0|t[Splintertree Machado] |cRXP_WARN_para derrubar|r os |cRXP_FRIENDLY_Vale Gris Carvalhos|r
     .complete 13815,1 --6/6 Ashenvale Oaks Chopped Down
     .target Ashenvale Oak
 step
@@ -627,7 +627,7 @@ step
     #questguide
     #label ChopSomeTrees
     .goto 63,86.51,54.67
-    .use 45807 >>|cRXP_WARN_Use|r |T132399:0|t[Splintertree Machado] |cRXP_WARN_para derrubar|r os |cRXP_FRIENDLY_Vale Gris Carvalhos|r
+    .use 45807 >> |cRXP_WARN_Use|r |T132399:0|t[Splintertree Machado] |cRXP_WARN_para derrubar|r os |cRXP_FRIENDLY_Vale Gris Carvalhos|r
     .complete 13815,1 --6/6 Ashenvale Oaks Chopped Down
     .target Ashenvale Oak
 step
@@ -642,7 +642,7 @@ step
 step
     #questguide
     #completewith next
-    .subzone 435 >>Voe para Cânion do Demônio Caído
+    .subzone 435 >> Voe para Cânion do Demônio Caído
 step
     #questguide
     .goto 63,89.75,76.72
@@ -787,7 +787,7 @@ step
     .maxlevel 24,AshenvaleEnd
     .goto 63,73.19,61.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Vhulgra|r
-    .gossipoption 111682 >>Voe para Praia de Zoram
+    .gossipoption 111682 >> Voe para Praia de Zoram
     .timer 165,Praia de Zoram, Vale Gris
     .target Vhulgra
     .subzoneskip 414
@@ -797,7 +797,7 @@ step
     .maxlevel 25,AshenvaleEnd
     .goto 63,73.19,61.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Vhulgra|r
-    .gossipoption 111682 >>Voe para Praia de Zoram
+    .gossipoption 111682 >> Voe para Praia de Zoram
     .timer 165,Praia de Zoram, Vale Gris
     .target Vhulgra
     .subzoneskip 414
@@ -841,7 +841,7 @@ step
     .goto 63,12.77,34.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Muglash|r
     >>|cRXP_WARN_Isso iniciará uma missão de escolta. Cuidado, ela é difícil|r
-    .accept 6641,1 >>Aceite Vorsha, a Açoitadora
+    .accept 6641,1 >> Aceite Vorsha, a Açoitadora
     .target Muglash
 step
     #completewith LitLightHouse
@@ -879,7 +879,7 @@ step
     .complete 13883,1 --10/10 Sunken Scrap Metal
 step
     #completewith next
-    .goto 63,11.69,35.36,30 >>Viaje para a forja em Posto Avançado Zoram'Gar
+    .goto 63,11.69,35.36,30 >> Viaje para a forja em Posto Avançado Zoram'Gar
 step
     .goto 63,11.69,35.36
     .use 46365 >>|cRXP_WARN_Use o|r |T237338:0|t[Esperma de Hidra Brumaçoite] |cRXP_WARN_para criar|r |cRXP_LOOT_Óleo de Hidra Brumaçoite|r
@@ -915,7 +915,7 @@ step
     .target Commander Grimfang
 step
     .goto 63,12.46,35.15
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Mensageiro do Brado Guerreiro|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mensageiro do Brado Guerreiro|r
     .turnin 6641 >>Entregue Vorsha, a Açoitadora
     .target Warsong Runner
 step
@@ -967,7 +967,7 @@ step
     .complete 26890,1 --20/20 Sapphire of Aku'Mai
 step
     #completewith next
-    .hs >>Use sua Pedra de Retorno para ir a Praia de Zoram
+    .hs >> Use sua Pedra de Retorno para ir a Praia de Zoram
     .use 6948
     .subzoneskip 2897
 step
@@ -984,7 +984,7 @@ step
 step
     .goto 63,11.57,35.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Dagrun Martelo da Ira|r
-    .turnin 26890 >>Entregue A Essência de Aku'mai
+    .turnin 26890 >>Entregue A essência de Aku'mai
     .target Dagrun Ragehammer
 step
     #completewith HellscreamsWatchPickups
@@ -1058,7 +1058,7 @@ step
     .mob Thistlefur Avenger
 step
     #completewith next
-    .goto 63,38.37,30.59,40 >>Entre no Domínio dos Pelocardos
+    .goto 63,38.37,30.59,40 >>Entre no Covil dos Pelocardo
 step
     #loop
     .goto 1440/1,-627.70001,3394.69995,0
@@ -1068,12 +1068,12 @@ step
     .waypoint 1440/1,-574.70001,3385.60010,15,0
     .waypoint 1440/1,-676.70001,3314.19995,15,0
     .waypoint 1440/1,-683.60004,3359.00000,15,0
-	>>Pegue os |cRXP_PICK_Baús dos Trolls|r no chão para |cRXP_LOOT_Encantos dos Trolls|r
+	>>Abra os |cRXP_PICK_Baús dos Trolls|r no chão para pegar os |cRXP_LOOT_Patuás Troll|r
 	.complete 6462,1 --Collect Troll Charm (x8)
 step
     .goto 63,41.49,34.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ruul|r no fundo da caverna. Uma escolta começará
-    .accept 6482 >>Aceite Liberdade para Ruul!
+    .accept 6482 >> Aceite Liberdade para Ruul!
     .target Ruul Snowhoof
 step
     .goto 63,40.68,33.21,20,0
@@ -1084,7 +1084,7 @@ step
     .goto 63,37.30,34.49,30,0
     .goto 63,38.73,36.86,50,0
     .goto 63,38.35,38.55
-    >>Escolte |cRXP_FRIENDLY_Ruul|r para fora de Thistlefur Village
+    >>Escolte |cRXP_FRIENDLY_Ruul|r para fora da Aldeia dos Pelocardo
     >>|cFFFCDC00Cuidado! 3|r |cRXP_ENEMY_Thistlefurs|r |cFFFCDC00aparecerão assim que você chegar na metade da caverna e outros 3 fora do portão de Thistlefur Village|r
     .complete 6482,1 --Escort Ruul from the Thistlefurs
     .target Ruul Snowhoof
@@ -1143,7 +1143,7 @@ step
     .mob +Astranaar Thrower
 step
     #completewith next
-    .cast vehicle,65481 >>vehicle,65481 >>|cRXP_WARN_Usar|r |T136011:0|t[Volte para a Base!] |cRXP_WARN_para voar de volta para Vigia de Grito Infernal|r
+    .cast vehicle,65481 >>|cRXP_WARN_Usar|r |T136011:0|t[Volte para a Base!] |cRXP_WARN_para voar de volta para Vigia de Grito Infernal|r
     .subzoneskip 4691
 step
     .goto 63,37.99,42.83
@@ -1209,7 +1209,7 @@ step
     .waypoint 1440/1,-1247.30005,2860.00000,30,0
     .waypoint 1440/1,-1300.80005,2733.19995,30,0
     .waypoint 1440/1,-1323.30005,2631.60010,30,0
-    .use 46352 >>|cRXP_WARN_Use a|r |T237588:0|t[Dádiva da Terra] |cRXP_WARN_em|r |cRXP_PICK_Lava Fissures|r
+    .use 46352 >> |cRXP_WARN_Use a|r |T237588:0|t[Dádiva da Terra] |cRXP_WARN_em|r |cRXP_PICK_Lava Fissures|r
     .complete 13880,1 --8/8 Lava fissures filled
 step
     #questguide
@@ -1265,7 +1265,7 @@ step
     .target Stikwad
 step
     #completewith SilverwindPickups
-    .goto 63,49.96,67.25,100 >>Vá para Silverwind Refuge
+    .goto 63,49.96,67.25,100 >> Vá para Silverwind Refuge
 step
     .goto 63,49.79,65.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com Senani Coração Trovejante|r
@@ -1351,7 +1351,7 @@ step
     .target Senani Thunderheart
 step
     .goto 63,56.37,63.54
-    .use 16972 >>|cRXP_WARN_Use o|r |T237588:0|t[Dádiva da Terra] |cRXP_WARN_no Montículo do Totem e proteja-o dos|r |cRXP_ENEMY_Furbolgs|r
+    .use 16972 >> |cRXP_WARN_Use o|r |T237588:0|t[Dádiva da Terra] |cRXP_WARN_no Montículo do Totem e proteja-o dos|r |cRXP_ENEMY_Furbolgs|r
     >>Mate o |cRXP_ENEMY_Chefe Murgut|r assim que ele aparecer. Saque-o para obter o |cRXP_PICK_Basket|r para |cRXP_LOOT_Murgut's Totem|r
     .complete 6621,1 --1/1 Murgut's Totem
     .mob Chief Murgut
@@ -1362,7 +1362,7 @@ step
     .mob Befouled Water Elemental
 step
     .goto 1440/1,-1079.70007,1994.20007
-    >>Mate a |cRXP_ENEMY_Mareante|r. Saqueie-a para obter o |T136222:0|t[|cRXP_LOOT_Befouled Globo de Água|r]. Usar-o para iniciar a missão.
+    >>Mate |cRXP_ENEMY_Mareante|r. Pegue o |T136222:0|t[|cRXP_LOOT_Globo d'Água Conspurcado|r] e use-o para iniciar a missão
     .complete 25,2 --1/1 Tideress slain
     .collect 16408,1,1918 --Collect Befouled Water Globe (x1)
     .accept 1918 >>Aceite O Elemento Conspurcado
@@ -1389,7 +1389,7 @@ step
     >>Mate o |cRXP_ENEMY_Ursangous|r. Saque-o para obter o |T132941:0|t[|cRXP_LOOT_Ursangous's Paw|r] e use-o para iniciar a missão.
     >>|cRXP_WARN_Ele patrulha um pouco pela área|r
     .collect 16303,1,23 --Collect Ursangous's Paw (x1)
-    .accept 23 >>Aceite Ursangous's Paw
+    .accept 23 >> Aceite Pata de Ursangous
     .unitscan Ursangous
     .use 16303
 step
@@ -1437,7 +1437,7 @@ step
     >>Mate o |cRXP_ENEMY_Ursangous|r. Saque-o para obter o |T132941:0|t[|cRXP_LOOT_Ursangous's Paw|r] e use-o para iniciar a missão.
     >>|cRXP_WARN_Ele patrulha um pouco pela área|r
     .collect 16303,1,23 --Collect Ursangous's Paw (x1)
-    .accept 23 >>Aceite Ursangous's Paw
+    .accept 23 >> Aceite Pata de Ursangous
     .unitscan Ursangous
     .use 16303
 step
@@ -1459,7 +1459,7 @@ step
     .target Captain Tarkan
 step
     #completewith next
-    .goto 63,60.65,52.69,100 >>Vá para o Retiro Raynewood
+    .goto 63,60.65,52.69,100 >> Vá para o Retiro Raynewood
 step
     .goto 63,60.65,52.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thagg|r
@@ -1468,10 +1468,10 @@ step
     .target Thagg
 step
     #completewith next
-    >>Mate a |cRXP_ENEMY_Shadumbra|r. Saque-a para obter o |T132225:0|t[|cRXP_LOOT_Shadumbra's Cabeça|r] e use-a para iniciar a missão.
+    >>Mate |cRXP_ENEMY_Shadumbra|r. Pegue a |T132225:0|t[|cRXP_LOOT_Cabeça de Shadumbra|r] e use-a para iniciar a missão
     >>|cRXP_ENEMY_Shadumbra|r patrulha próximo
     .collect 16304,1,24 --Collect Shadumbra's Head
-	.accept 24 >>Aceite Cabeça de Shadumbra
+	.accept 24 >> Aceite Cabeça de Shadumbra
 	.unitscan Shadumbra
     .use 16304
 step
@@ -1485,10 +1485,10 @@ step
     .waypoint 1440/1,-1867.09998,2752.19995,30,0
     .waypoint 1440/1,-1825.50000,2708.69995,30,0
     .waypoint 1440/1,-1857.90002,2660.80005,30,0
-    >>Mate a |cRXP_ENEMY_Shadumbra|r. Saque-a para obter o |T132225:0|t[|cRXP_LOOT_Shadumbra's Cabeça|r] e use-a para iniciar a missão.
+    >>Mate |cRXP_ENEMY_Shadumbra|r. Pegue a |T132225:0|t[|cRXP_LOOT_Cabeça de Shadumbra|r] e use-a para iniciar a missão
     >>|cRXP_ENEMY_Shadumbra|r patrulha ao redor do edifício
     .collect 16304,1,24 --Collect Shadumbra's Head
-	.accept 24 >>Aceite Cabeça de Shadumbra
+	.accept 24 >> Aceite Cabeça de Shadumbra
 	.unitscan Shadumbra
     .use 16304
 step
@@ -1498,7 +1498,7 @@ step
     .target Thagg
 step
     #completewith FlytoSP
-    .hs >>Vá para a Vigia do Grito Infernal
+    .hs >> Vá para a Vigia do Grito Infernal
     .use 6948
     .subzoneskip 4691
     .cooldown item,6948,>0,1
@@ -1523,7 +1523,7 @@ step
 step
     .goto 63,74.12,60.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Yama|r
-    .turnin 6482 >>Entregue Liberdade para Ruul!
+    .turnin 6482 >> Entregue Liberdade para Ruul!
     .target Yama Snowhoof
 step
     .goto 63,74.19,60.73
@@ -1548,14 +1548,14 @@ step
     .zoneskip Orgrimmar
 step << Rogue Cata/Warlock Cata
     #completewith next
-    .goto 1454,45.81,66.88,40 >>Vá para a Fenda da Sombra
+    .goto 1454,45.81,66.88,40 >> Vá para a Fenda da Sombra
 step << Shaman Cata/Druid Cata/Paladin Cata/Warrior Cata/Hunter Cata/Priest Cata
     #completewith next
-    .goto 1454/1,-4291.89990,1876.70007,50 >>Vá para o Vale da Sabedoria
+    .goto 1454/1,-4291.89990,1876.70007,50 >> Vá para o Vale da Sabedoria
 step << Rogue Cata
     .goto 1454,44.65,61.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gordul|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Gordul
 step << Rogue Cata
     .goto 1454,29.60,50.40
@@ -1565,17 +1565,17 @@ step << Rogue Cata
 step << Shaman Cata
     .goto 1454/1,-4282.60010,1884.09998
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sahi|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Sahi Cloudsinger
 step << Druid Cata
     .goto 1454/1,-4285.10010,1889.09998
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Shalla|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Shalla Whiteleaf
 step << Mage Cata
     .goto 1454/1,-4125.10010,1690.59998
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Uthel'nay|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Uthel'nay
 step << Mage Cata
     .goto 1454/1,-4128.89990,1692.09998
@@ -1594,27 +1594,27 @@ step << Mage Cata
 step << Priest Cata
     .goto 1454/1,-4297.60010,1863.30005
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Liwatha|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Seer Liwatha
 step << Warlock Cata
     .goto 1454,54.49,39.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mirket|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Mirket
 step << Paladin Cata
     .goto 1454/1,-4292.50000,1863.70007
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Atohmo|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Sunwalker Atohmo
 step << Hunter Cata
     .goto 1454/1,-4281.00000,1872.50000
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Nohi|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Nohi Plainswalker
 step << Warrior Cata
     .goto 1454/1,-4284.00000,1867.80005
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Nahu|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Nahu Ragehoof
 
 
@@ -1632,7 +1632,7 @@ step
     #questguide
     .goto 85,53.62,78.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estalajadeira Gryshka|r
-    .home >>Defina sua Pedra de Retorno em Orgrimmar
+    .home >>Defina sua Pedra de Regresso em Orgrimmar
     .target Innkeeper Gryshka
     .isQuestTurnedIn 13841
 step
@@ -1661,7 +1661,7 @@ step
     .isQuestTurnedIn 13841
 step
     #questguide
-    .hs >>Use sua Pedra de Retorno para ir a Orgrimmar
+    .hs >> Use sua Pedra de Retorno para ir a Orgrimmar
     .use 6948
     .cooldown item,6948,>2
     .zoneskip Orgrimmar

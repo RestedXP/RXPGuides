@@ -125,7 +125,7 @@ step
     #completewith next
     .goto 27,35.914,68.096,30,0
     .goto 27,35.751,67.107,12,0
-    .goto 27,35.650,66.782,12 >>Entre Anvilmar
+    .goto 27,35.650,66.782,12 >> Entre Anvilmar
     .isOnQuest 24473
 step
     #loop
@@ -151,7 +151,7 @@ step
     #optional
     #completewith next
     .goto 27,35.805,67.328,10,0
-    .goto 27,35.912,68.003,15 >>Saia de Anvilmar
+    .goto 27,35.912,68.003,15 >> Saia de Anvilmar
     .isOnQuest 24474
     .subzoneskip 77,1
 step
@@ -258,14 +258,14 @@ step
     #completewith FirstThing
     .goto 27,35.914,68.096,30,0
     .goto 27,35.751,67.107,12,0
-    .goto 27,35.650,66.782,15 >>Entre Anvilmar
+    .goto 27,35.650,66.782,15 >> Entre Anvilmar
     .cooldown item,6948,<0 << Dwarf !DK
     .isOnQuest 24474
     .noflyable  --Azeroth Flying
 step << Dwarf !DK
     #optional
     #completewith FirstThing
-    .hs >>Use sua Pedra de Retorno para ir a Anvilmar
+    .hs >> Use sua Pedra de Retorno para ir a Anvilmar
     .cooldown item,6948,>2,1
     .isOnQuest 24474
     .noflyable  --Azeroth Flying
@@ -275,7 +275,7 @@ step
     #completewith FirstThing
     .goto 27,35.914,68.096,30,0
     .goto 27,35.751,67.107,12,0
-    .goto 27,35.650,66.782,15 >>Entre Anvilmar
+    .goto 27,35.650,66.782,15 >> Entre Anvilmar
     .isOnQuest 24474
     .flyable  --Azeroth Flying
 step
@@ -305,7 +305,7 @@ step
     #requires FirstThing
     #completewith RockjawA
     .goto 27,35.805,67.328,10,0
-    .goto 27,35.702,68.138,20 >>Saia de Anvilmar
+    .goto 27,35.702,68.138,20 >> Saia de Anvilmar
     .isOnQuest 24475
     .subzoneskip 77,1
 step
@@ -400,7 +400,7 @@ step
     #completewith Sun
     .goto 27,35.914,68.096,30,0
     .goto 27,35.751,67.107,12,0
-    .goto 27,35.650,66.782,15 >>Entre Anvilmar
+    .goto 27,35.650,66.782,15 >> Entre Anvilmar
     .cooldown item,6948,<0 << Dwarf !DK
     .isOnQuest 24475
     .noflyable  --Azeroth Flying
@@ -408,7 +408,7 @@ step << Dwarf !DK
     #optional
     #requires DunWolves
     #completewith Sun
-    .hs >>Use sua Pedra de Retorno para ir a Anvilmar
+    .hs >> Use sua Pedra de Retorno para ir a Anvilmar
     .cooldown item,6948,>2,1
     .isOnQuest 24475
     .noflyable  --Azeroth Flying
@@ -418,7 +418,7 @@ step
     #completewith Sun
     .goto 27,35.914,68.096,30,0
     .goto 27,35.751,67.107,12,0
-    .goto 27,35.650,66.782,15 >>Entre Anvilmar
+    .goto 27,35.650,66.782,15 >> Entre Anvilmar
     .isOnQuest 24475
     .flyable  --Azeroth Flying
 step
@@ -446,7 +446,7 @@ step
     #optional
     #completewith next
     .goto 27,35.805,67.328,10,0
-    .goto 27,35.702,68.138,20 >>Saia de Anvilmar
+    .goto 27,35.702,68.138,20 >> Saia de Anvilmar
     .isOnQuest 24487
     .subzoneskip 77,1
 step
@@ -495,7 +495,7 @@ step
 step
     #optional
     #completewith next
-    .goto 27,27.759,75.195,10 >>Vá até o |cRXP_FRIENDLY_Adivinha Mirim'koa|r
+    .goto 27,27.759,75.195,10 >> Vá até o |cRXP_FRIENDLY_Adivinha Mirim'koa|r
     .timer 11,Informação Trolada RP
     .isOnQuest 24489
 --XX you can start the event earlier then get the box and come back but its way too hard to communicate it/trust the player enough for a 3s time gain vs 20s time loss
@@ -508,7 +508,7 @@ step
 step
     #optional
     #completewith next
-    .goto 27,29.593,78.754,11 >>Vá até o |cRXP_FRIENDLY_Adivinha Rikkari|r
+    .goto 27,29.593,78.754,11 >> Vá até o |cRXP_FRIENDLY_Adivinha Rikkari|r
     .timer 11,Informação Trolada RP
     .isOnQuest 24489
 step
@@ -528,7 +528,7 @@ step
     #optional
     #completewith next
     #requires Rikkari
-    .goto 27,33.323,77.988,11 >>Vá até o |cRXP_FRIENDLY_Adivinha Shi'kala|r
+    .goto 27,33.323,77.988,11 >> Vá até o |cRXP_FRIENDLY_Adivinha Shi'kala|r
     .timer 13,Informação Trolada RP
     .isOnQuest 24489
 step
@@ -569,7 +569,7 @@ step
 step << cata
     #optional
     #completewith Griknir
-    .goto 428,12.774,40.711,15 >>Entre na caverna de Coldridge Valley
+    .goto 428,12.774,40.711,15 >> Entre na caverna de Coldridge Valley
 	.isOnQuest 218
 step << cata
     #optional
@@ -631,7 +631,7 @@ step << !tbc !wotlk !cata
     #optional
     #completewith Griknir
     #label Hovel1
-    .goto 428,12.774,40.711,15 >>Entre na caverna de Coldridge Valley
+    .goto 428,12.774,40.711,15 >> Entre na caverna de Coldridge Valley
 	.isOnQuest 218
 step << !tbc !wotlk !cata
     #optional
@@ -642,7 +642,7 @@ step << !tbc !wotlk !cata
     .goto 428,18.302,48.547,15,0
     .goto 428,37.713,29.248,15,0
     .goto 428,52.353,14.297,15,0
-    .goto 428,76.449,32.098,80 >>Vá até o |cRXP_ENEMY_Grik'nir o Frio|r
+    .goto 428,76.449,32.098,80 >> Vá até o |cRXP_ENEMY_Grik'nir o Frio|r
 	.isOnQuest 218
 step << !tbc !wotlk !cata
     #sticky
@@ -725,7 +725,7 @@ step
     #completewith Pack
     .goto 27,35.914,68.096,30,0
     .goto 27,35.836,67.146,12,0
-    .goto 27,35.953,66.803,15 >>Entre Anvilmar
+    .goto 27,35.953,66.803,15 >> Entre Anvilmar
     .isOnQuest 24492
     .subzoneskip 77
 step
@@ -753,7 +753,7 @@ step
     .complete 24492,1 --|Coldridge Beer Flagon: 1/1
 step
     #completewith next
-    .goto Dun Morogh,36.120,64.787,8 >>Suba as escadas
+    .goto Dun Morogh,36.120,64.787,8 >> Suba as escadas
 step
     .goto Dun Morogh,35.782,64.496
     >>Abra a caixa de |cRXP_PICK_Wolf-Esconder-se Cloaks|r no chão. Pegue o |cRXP_LOOT_Ragged Lobo-Esconder-se Manto|r
@@ -763,7 +763,7 @@ step
     #requires Forget
     #completewith next
     .goto 27,35.805,67.328,10,0
-    .goto 27,35.912,68.003,20 >>Saia de Anvilmar
+    .goto 27,35.912,68.003,20 >> Saia de Anvilmar
     .isOnQuest 24492
     .subzoneskip 77,1
 step
@@ -779,7 +779,7 @@ step
     .goto 27,53.713,52.190
     >>|cRXP_WARN_Quando o temporizador de 26 segundos expirar (26 segundos depois de aceitar o montar), desconecte-se e reconecte enquanto estiver em |cRXP_FRIENDLY_Milo's Gyro|r para pular para Kharanos|r
     >>|cRXP_WARN_Se você fizer isto antes do temporizador expirar, pode pular para New Tinkertown ou de volta para Coldridge Valley. Se isto acontecer, vá para Kharanos normalmente|r
-    .subzone 131 >>Voe para Kharanos
+    .subzone 131 >> Voe para Kharanos
     .isOnQuest 24493
 ]])
 
@@ -887,7 +887,7 @@ step << skip -- not working currently in cata
 step
     .isOnQuest 27635
     .goto 30,58.746,82.974
-    .vehicle >>Clique em |cRXP_FRIENDLY_Limpatron 500|r
+    .vehicle >> Clique em |cRXP_FRIENDLY_Limpatron 500|r
     .timer 30,Descontaminação RP
     .target Sanitron 500
 step
@@ -902,7 +902,7 @@ step
 	.target Technician Braggle
 step
     .goto 30,67.282,84.148
-    .gossip 46293,0 >>Fale com |cRXP_FRIENDLY_Toninho Despachante|r
+    .gossip 46293,0 >> Fale com |cRXP_FRIENDLY_Toninho Despachante|r
     .skipgossip 46293,1
     .isOnQuest 27674
     .target Torben Zapblast
@@ -1124,12 +1124,12 @@ step
 step << Priest cata
     .goto Dun Morogh,33.898,34.782
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_"Doutora" Girarroda|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
 	.target "Doc" Cogspin
 step << Mage cata
     .goto Dun Morogh,34.534,35.065
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Bipsi Tacagelo|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
 	.target Bipsi Frostflinger
 step
     .goto 469,39.225,26.552
@@ -1145,13 +1145,13 @@ step
 step << Warrior cata
     .goto Dun Morogh,34.274,37.520
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Sargento-instrutor Virabrequim|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
 	.target Drill Sergeant Steamcrank
 step << Warrior
     #optional
     .goto Dun Morogh,34.274,37.520
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Sargento-instrutor Virabrequim|r
-    .accept 26204 >>Aceite A Arte do Guerreiro
+    .accept 26204 >> Aceite A Arte do Guerreiro
 	.target Drill Sergeant Steamcrank
     .itemStat 16,QUALITY,<7
 step << Warrior
@@ -1168,31 +1168,31 @@ step << Warrior
     .isQuestComplete 26204
     .goto Dun Morogh,34.274,37.520
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Sargento-instrutor Virabrequim|r
-    .turnin 26204 >>Entregue A Arte do Guerreiro
+    .turnin 26204 >> Entregue A Arte do Guerreiro
 	.target Drill Sergeant Steamcrank
     .itemStat 16,QUALITY,<7
 step << Warrior
     #optional
     #completewith next
-    .equip 16,59039 >>|cRXP_WARN_Equipe o|r |T135275:0|t[Sabre Muito Leve]
+    .equip 16,59039 >> |cRXP_WARN_Equipe o|r |T135275:0|t[Sabre Muito Leve]
     .use 59039
     .itemcount 59039,1
     .itemStat 16,QUALITY,<7
 step << Warlock cata
     .goto Dun Morogh,33.246,38.397
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Alamar Carranca|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
 	.target Alamar Grimm
 step << Rogue cata
     .goto Dun Morogh,33.376,36.738
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com Kelsey Fagulhaço|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
 	.target Kelsey Steelspark
 step << Rogue
     #optional
     .goto Dun Morogh,33.376,36.738
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com Kelsey Fagulhaço|r
-    .accept 26207 >>Aceite A Arte do Ladino
+    .accept 26207 >> Aceite A Arte do Ladino
 	.target Kelsey Steelspark
     .itemStat 16,QUALITY,<7
 step << Rogue
@@ -1209,13 +1209,13 @@ step << Rogue
     .isQuestComplete 26207
     .goto Dun Morogh,33.376,36.738
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com Kelsey Fagulhaço|r
-    .turnin 26207 >>Entregue A Arte do Ladino
+    .turnin 26207 >> Entregue A Arte do Ladino
 	.target Kelsey Steelspark
     .itemStat 16,QUALITY,<7
 step << Rogue
     #optional
     #completewith next
-    .equip 16,59043 >>|cRXP_WARN_Equipe o|r |T133514:0|t[Estrela da Morte]
+    .equip 16,59043 >> |cRXP_WARN_Equipe o|r |T133514:0|t[Estrela da Morte]
     .use 59043
     .itemcount 59043,1
     .itemStat 16,QUALITY,<7
@@ -1359,7 +1359,7 @@ step
     .goto 469,47.880,44.670,-1
 -- .goto 425,38.29,58.12
     *|cRXP_WARN_Usar repetidamente /sit ou remover seu equipamento vai fazer você morrer mais rápido|r
-    .deathskip >>Morra e reviva no |cRXP_FRIENDLY_Anjo da Cura|r
+    .deathskip >> Morra e reviva no |cRXP_FRIENDLY_Anjo da Cura|r
     .skill riding,75,1
 --XX NOTE: Dying in gnomer sends you to Chill Breeze
 step
@@ -1430,7 +1430,7 @@ step << skip
     .goto 469,47.880,44.670,-1
 -- .goto 425,38.29,58.12
     *|cRXP_WARN_Usar /sit repetidamente ou remover seu equipamento fará você morrer mais rápido|r
-    .deathskip >>Morra e reviva no |cRXP_FRIENDLY_Anjo da Cura|r
+    .deathskip >> Morra e reviva no |cRXP_FRIENDLY_Anjo da Cura|r
     .skill riding,75,1
 --XX unlikely to ever be worth
 step
@@ -1485,7 +1485,7 @@ step
     #completewith Razlo
     #label Mekkatalk
     .goto 469,57.188,47.535
-    .gossipoption 38798 >>Fale com o |cRXP_FRIENDLY_Grão-faz-tudo Mekkatorque|r
+    .gossipoption 38798 >> Fale com o |cRXP_FRIENDLY_Grão-faz-tudo Mekkatorque|r
     .timer 72,Abaixo o Esmagrenagem! RP
     .target High Tinker Mekkatorque
     .isOnQuest 26364
@@ -1573,7 +1573,7 @@ step
     #completewith Belm
     .goto 27,54.083,50.335,8,0
     .goto 27,54.277,50.312,8,0
-    .goto 27,54.485,50.847,10 >>Entre na Destilaria Cervaforte. Vá até o |cRXP_FRIENDLY_Estalajadeiro Belm|r lá dentro
+    .goto 27,54.485,50.847,10 >> Entre na Destilaria Cervaforte. Vá até o |cRXP_FRIENDLY_Estalajadeiro Belm|r lá dentro
     .subzoneskip 2102
 step << Gnome
     #requires Distillery
@@ -1598,7 +1598,7 @@ step
 step << Warrior cata
     .goto 27,54.470,50.974
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Granis Celeraxa|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Granis Swiftaxe
 step << Dwarf/Gnome/DarkIronDwarf
     .goto 27,54.723,50.607,8,0
@@ -1611,37 +1611,37 @@ step << Dwarf/Gnome/DarkIronDwarf
 step << Rogue cata
     .goto 27,54.673,50.933
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Hogral Bakkan|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Hogral Bakkan
 step << Priest cata
     .goto 27,54.455,50.508
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Maxan Begurno|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Maxan Anvol
 step << Shaman cata
     .goto 27,54.605,50.232
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Halbin Marrãogélido|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Halbin Frosthammer
 step << Mage cata
     .goto 27,54.609,50.397
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Magis Fagulhamanto|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Magis Sparkmantle
 step << Paladin cata
     .goto 27,54.709,50.392
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Avar Marroforte|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Azar Stronghammer
 step << Warlock cata
     .goto 27,54.437,52.022
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gimrizz Umbrenagem|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Gimrizz Shadowcog
 step << Hunter cata
     .goto 27,52.913,51.364
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Grif Selvacuore|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Grif Wildheart
 step
     .goto 27,53.124,49.995
@@ -1662,7 +1662,7 @@ step
     #optional
     #completewith next
     #label Ramp
-    .goto 27,51.034,40.862,50 >>Suba a rampa
+    .goto 27,51.034,40.862,50 >> Suba a rampa
     .subzoneskip 802
     .noflyable --Azeroth Flying
     .isOnQuest 25724
@@ -1743,12 +1743,12 @@ step
     #optional
     #requires Shimmerweed
 	#completewith next
-    .goto 27,50.495,40.006,70 >>Vá para o lado leste do acampamento. Ressuscite no |cRXP_FRIENDLY_Anjo da Cura|r
+    .goto 27,50.495,40.006,70 >> Vá para o lado leste do acampamento. Ressuscite no |cRXP_FRIENDLY_Anjo da Cura|r
     .noflyable --Azeroth Flying
 step
     #requires Shimmerweed
     #completewith next
-    .deathskip >>Morra e reviva no |cRXP_FRIENDLY_Anjo da Cura|r
+    .deathskip >> Morra e reviva no |cRXP_FRIENDLY_Anjo da Cura|r
     .noflyable --Azeroth Flying
 step << Dwarf/Gnome/DarkIronDwarf
     #requires Shimmerweed
@@ -1819,7 +1819,7 @@ step
 step
     #optional
     #label WendigoCave
-    .goto 29,61.676,88.466,40 >>Entre na Caverna Wendigo
+    .goto 29,61.676,88.466,40 >> Entre na Caverna Wendigo
 	.isOnQuest 25668
 step
     #optional
@@ -1875,7 +1875,7 @@ step
     #requires Wendigos
     #completewith Afar
     >>|cRXP_WARN_Garanta que você morra em um local a leste/sudeste de onde o |cRXP_FRIENDLY_Montanhista Valgrum|r está|r
-    .deathskip >>Morra e reviva no |cRXP_FRIENDLY_Anjo da Cura|r
+    .deathskip >> Morra e reviva no |cRXP_FRIENDLY_Anjo da Cura|r
     .isOnQuest 313
     .subzoneskip 131
 step
@@ -2247,7 +2247,7 @@ step << Human
     #label FlySW
     .goto 37,41.715,64.636
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Bartolotto, o Bravo|r
-    .fly Gol'Bolar Quarry >>Voe para Gol'Bolar Pedreira
+    .fly Gol'Bolar Quarry >> Voe para Gol'Bolar Pedreira
 	.target Bartlett the Brave
     .zoneskip Dun Morogh
 
@@ -2398,7 +2398,7 @@ step
     .accept 25979 >>Aceite Surto Elemental
     .goto 27,82.642,48.295
     .target +Khurgorn Singefeather
-    .turnin -25986 >>Entregue Problemas no Lago
+    .turnin -25986 >> Entregue Problemas no Lago
     .accept 25978 >>Aceite Caindo numa Fria
     .goto 27,82.854,48.409
     .target +Sergeant Bahrum
@@ -2490,7 +2490,7 @@ step
 #xprate <1.2
     #requires Spies
     #completewith next
-    .deathskip >>Morra e reviva no |cRXP_FRIENDLY_Anjo da Cura|r
+    .deathskip >> Morra e reviva no |cRXP_FRIENDLY_Anjo da Cura|r
 step
 #xprate <1.2
     #requires Spies
@@ -2509,7 +2509,7 @@ step
     .goto 27,88.331,47.792,12,0
     .goto 27,88.873,48.312,12,0
     .goto 48,12.138,54.947,20,0
-    .goto 48,14.025,56.641,12 >>|cRXP_WARN_Viagem para cima da montanha, depois cuidadosamente desça em direção a|r |cRXP_FRIENDLY_Piloto Pisafundo|r
+    .goto 48,14.025,56.641,12 >> |cRXP_WARN_Viagem para cima da montanha, depois cuidadosamente desça em direção a|r |cRXP_FRIENDLY_Piloto Pisafundo|r
     .noflyable
 step
     .goto 48,14.006,56.485
@@ -2547,11 +2547,11 @@ step
 step
     .goto 48,16.385,58.564,30,0
     .goto 48,19.511,62.766,30,0
-    .goto 48,21.097,64.989,30 >>Viaje pelo Desfiladeiro do Portão Sul para Loch Modan
+    .goto 48,21.097,64.989,30 >> Viaje pelo Desfiladeiro do Portão Sul para Loch Modan
     .noflyable
     .isOnQuest 26855
 step << skip
-    .hs >>Use sua Pedra de Regresso para ir a |cFFfa9602Cervaforte Distillery|r
+    .hs >> Use sua Pedra de Regresso para ir a |cFFfa9602Cervaforte Distillery|r
 step << skip
     #completewith next
     .goto 27,53.80,52.76
@@ -2605,18 +2605,18 @@ step << skip
     #completewith next
     .goto 84,68.50,73.43,10,0
     .goto 84,68.54,74.89,10,0
-    .goto 84,70.94,72.47,10 >>Vá em direção a |cRXP_FRIENDLY_Dungar Tragolongo|r
+    .goto 84,70.94,72.47,10 >> Vá em direção a |cRXP_FRIENDLY_Dungar Tragolongo|r
     .skill riding,75,1
 step << skip
     #completewith next
     .goto 84,70.94,72.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dungar Tragolongo|r
-    .fly Goldshire >>Voe para Goldshire
+    .fly Goldshire >> Voe para Goldshire
 	.target Dungar Longdrink
     .zoneskip 37 --Elwynn Forest
 --XX Elwynn Non-human route: Copy retail elwynn (Fargo->Hogger->WF start->HS/Fly Goldshire->Eastvale->HS/Fly Loch/Fly Redridge?)
 step << skip
     .goto 37,42.11,65.93
-    .zone 37 >>Viaje para Elwynn Forest
+    .zone 37 >> Viaje para Elwynn Forest
     .isQuestAvailable 62 --The Fargodeep Mine
 ]])

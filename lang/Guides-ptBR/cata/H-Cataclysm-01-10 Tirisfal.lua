@@ -182,7 +182,7 @@ step << Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Isabella|r
     .turnin 3098 >>Entregue Pergaminho glífico
     .accept 24965 >>Aceite Treinamento de Magia
-    .train 5143 >>Treine |T136096:0|t[Mísseis Arcanos] << Cata
+    .train 5143 >>Aprenda |T136096:0|t[Mísseis Arcanos] << Cata
     .target Isabella
 step << Hunter
     .goto 18,31.45,65.61
@@ -203,7 +203,7 @@ step << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Maximillion|r
     .turnin 3099 >>Entregue Pergaminho conspurcado
     .accept 24968 >>Aceite Proeza Sombria
-    .train 348 >>Treine |T135817:0|t[Imolação] << Cata
+    .train 348 >>Treine |T135817:0|t [Imolar] << Cata
     .target Maximillion
 step << Mage cata
     .goto 18,31.64,66.91
@@ -250,7 +250,7 @@ step << Monk
     .target Ting, Strong of Stomach
 step << Rogue
     .goto 18,32.53,65.66
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_David|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Davi|r
     .turnin 3096 >>Entregue Pergaminho cifrado
     .accept 24967 >>Aceite Punhalada!
     .train 2098 >>Treine |T132292:0|t[Eviscerar] << Cata
@@ -292,7 +292,7 @@ step << Monk
     .target Ting, Strong of Stomach
 step << Rogue
     .goto 18,32.53,65.66
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_David|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Davi|r
     .turnin 24967 >>Entregue Punhalada!
     .target David Trias
 step << Warrior
@@ -470,7 +470,7 @@ step
     #xprate <1.2
     #completewith next
     .goto 18,44.49,53.85,3,0
-    .goto 18,44.63,53.75,3 >>Suba
+    .goto 18,44.63,53.75,3 >> Suba
 step
     #xprate <1.2
     .goto 18,44.75,53.65
@@ -568,7 +568,7 @@ step
     #xprate <1.2
     #completewith MurlocDelivery
     .goto 18,44.49,53.85,3,0
-    .goto 18,44.63,53.75,3 >>Suba
+    .goto 18,44.63,53.75,3 >> Suba
 step
     #xprate <1.2
     .goto 18,44.75,53.65
@@ -586,7 +586,7 @@ step
     #xprate <1.2
     #completewith next
     .goto 18,44.49,53.86,5,0
-    .goto 18,44.75,53.65 >>Suba para retornar ao Murloc
+    .goto 18,44.75,53.65 >> Suba para retornar ao Murloc
     .complete 24974,2 --1/1 Vile Fin returned
 step
     #xprate <1.2

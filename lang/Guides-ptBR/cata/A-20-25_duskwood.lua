@@ -18,7 +18,7 @@ RXPGuides.RegisterGuide([[
 
 step
     .goto 47,93.30,12.00
-    .zone 47 >>Voe para Floresta do Crepúsculo
+    .zone 47 >> Voe para Floresta do Crepúsculo
 step
     .goto 47,78.74,44.53,8,0
     .goto 47,79.09,44.17
@@ -28,7 +28,7 @@ step
 step
     .goto 47,87.43,35.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Abercrombie|r
-    .accept 26653 >>Aceite Suprimentos de Vila Sombria
+    .accept 26653 >>Aceite Suprimentos da Vila Sombria
 	.target Abercrombie
 step
     .goto 47,77.48,44.28
@@ -151,7 +151,7 @@ step
 	.mob Dire Wolf
 step
     .isOnQuest 26620,26618,26623,26688,26667
-    .hs >>Use sua Pedra de Retorno para ir a Darkshire
+    .hs >> Use sua Pedra de Retorno para ir a Darkshire
     .cooldown item,6948,>2
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Daltry|r dentro e |cRXP_FRIENDLY_Althea|r fora
@@ -175,7 +175,7 @@ step
 step
     .goto 47,79.53,47.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Viktori|r
-    .accept 26683 >>Aceite Ora (Direis) Ouvir Estrelas!
+    .accept 26683 >>Aceite Ora (direis) ouvir Estrelas!
 	.target Viktori Prism'Antras
 step
 	#completewith next
@@ -189,7 +189,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mary|r dentro da casa
     .turnin 26652 >>Entregue Linha de Cabelo de Fantasma
     .accept 26654 >>Aceite Devolva o Pente
-    .turnin 26683 >>Entregue Olhe para as Estrelas
+    .turnin 26683 >>Entregue Ora (direis) ouvir Estrelas!
     .accept 26684 >>Aceite O Carniçal Insano
 	.target Blind Mary
 step
@@ -205,7 +205,7 @@ step
 	.mob Rotting Horror
 step
     #completewith next
-    .subzone 42 >>Entregue em Darkshire
+    .subzone 42 >> Entregue em Darkshire
 step
     .goto 47,75.56,45.37,8,0
     .goto 47,75.83,45.26
@@ -216,7 +216,7 @@ step
 step
     .goto 47,87.43,35.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Abercrombie|r
-    .turnin 26655 >>Entregue Entregue a Linha
+    .turnin 26655 >>Entregue Entrega da Linha
     .accept 26660 >>Aceite Suco de Zumbi
 	.target Abercrombie
 step << skip
@@ -288,7 +288,7 @@ step
 step
 	#completewith next
     .goto 47,66.03,75.79,8,0
-    .goto 47,65.98,76.42,8 >>Entre no celeiro
+    .goto 47,65.98,76.42,8 >> Entre no celeiro
 step
 #label journal1
     .goto 47,66.59,76.44
@@ -415,7 +415,7 @@ step
 	.target Madame Eva
 step
     #completewith next
-	.cast 82029 >>|cRXP_WARN_Use o|r |T133343:0|t[Mistmantle Family Anel] |cRXP_WARN_para invocar|r |cRXP_ENEMY_Galvão Brumanto|r
+	.cast 82029 >> |cRXP_WARN_Use o|r |T133343:0|t[Mistmantle Family Anel] |cRXP_WARN_para invocar|r |cRXP_ENEMY_Galvão Brumanto|r
 	.timer 33,A Vingança de Brumanto RP
 step
     .goto 47,77.42,35.85,10,0
@@ -432,7 +432,7 @@ step
 	.target Tobias Mistmantle
 step
 	#completewith next
-    .goto 47,69.51,48.83,30 >>Pegue o caminho atrás do Town Hall para Brightwood Grove
+    .goto 47,69.51,48.83,30 >> Pegue o caminho atrás do Town Hall para Brightwood Grove
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dodds|r e |cRXP_FRIENDLY_Fess|r
     .accept 25235 >>Aceite Vul'Gol Vulgar
@@ -480,7 +480,7 @@ step
     .complete 26680,1 --1/1 Abercrombie's Crate
 step
     #completewith next
-    .goto 47,34.23,77.47,15 >>Vá para a Caverna do Ogro Punhalasca
+    .goto 47,34.23,77.47,15 >> Vá para a Caverna do Ogro Punhalasca
 step
 	#label Zzarc
     .goto 47,37.87,84.33
@@ -623,7 +623,7 @@ step
     .complete 26723,1 --1/1 Remains of Morbent Fel
 step
     .isOnQuest 26793,26685,26680
-    .hs >>Use sua Pedra de Retorno para ir a Darkshire
+    .hs >> Use sua Pedra de Retorno para ir a Darkshire
     .cooldown item,6948,>2
 step
     .goto 47,72.43,46.80,15,0
@@ -640,7 +640,7 @@ step
     .target Commander Althea Ebonlocke
 step
 	#sticky
-    .destroy 2154 >>Descarte o |T133741:0|t[A História de Morgan Ladimore]
+    .destroy 2154 >> Descarte o |T133741:0|t[A História de Morgan Ladimore]
 step
     .goto 47,79.53,47.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Vitório Prismado|r
@@ -881,5 +881,5 @@ step
     #label endOfTheGuide
 step
     .goto 50,51.88,12.10
-    .zone 50 >>Voe para a Selva do Espinhaço Setentrional
+    .zone 50 >> Voe para a Selva do Espinhaço Setentrional
 ]])

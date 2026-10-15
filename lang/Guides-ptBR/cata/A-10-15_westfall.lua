@@ -16,7 +16,7 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith WestfallEntry
-    .zone 52 >>Viaje até Cerro Oeste
+    .zone 52 >> Viaje até Cerro Oeste
 step
     .isOnQuest 26378
     .goto 1436/0,914.900,-9849.900
@@ -135,7 +135,7 @@ step
     .mob Coyote
 step
     #completewith BackOfMine
-    .goto 52,53.24,92.20 >>Vá para Jangolode Mina
+    .goto 52,53.24,92.20 >> Vá para Jangolode Mina
 step
     #completewith BackOfMine
     >>Mate os |cRXP_ENEMY_Kobold Diggers|r
@@ -144,7 +144,7 @@ step
 step
     #completewith BackOfMine
     .goto 52,46.405,19.289
-    .cast 79262 >>|cRXP_WARN_Usar|r |T132762:0|t[Velha Casa do Lu "Dois Sapatos"] |cRXP_WARN_no fundo da Jangolode Mina|r
+    .cast 79262 >> |cRXP_WARN_Usar|r |T132762:0|t[Velha Casa do Lu "Dois Sapatos"] |cRXP_WARN_no fundo da Jangolode Mina|r
     .use 57761
 step
     #label BackOfMine
@@ -208,7 +208,7 @@ step
     >>Mate os |cRXP_ENEMY_Harvest Watchers|r. Saqueie-os para obter o |T133862:0|t[|cRXP_LOOT_Coração de Guarda-colheitas|r]
     .use 57935 >>|cRXP_WARN_Use o|r |T133862:0|t[|cRXP_LOOT_Coração de Guarda-colheitas|r] |cRXP_WARN_para iniciar a missão|r
     .collect 57935,1,26252,1 -- Harvest Watcher Heart (1)
-    .accept 26252 >>Aceite O guarda tem coração
+    .accept 26252 >> Aceite O guarda tem coração
     .complete 26237,1 --|Harvest Watcher slain: 10/10
     .mob Harvest Watcher
 step
@@ -234,7 +234,7 @@ step
     .mob +Young Fleshripper
 step
     .goto 1436/0,1283.100,-10164.700
-    .use 57954 >>|cRXP_WARN_Use o|r |T133862:0|t[Coração de Guarda-colheitas] |cRXP_WARN_em um |cRXP_ENEMY_Golem Colheiteiro em Curto-circuito|r para tomar controle dele|r
+    .use 57954 >> |cRXP_WARN_Use o|r |T133862:0|t[Coração de Guarda-colheitas] |cRXP_WARN_em um |cRXP_ENEMY_Golem Colheiteiro em Curto-circuito|r para tomar controle dele|r
     .complete 26257,1 --|Overloaded Harvest Golem enabled: 1/1
     .target Overloaded Harvest Golem
 step
@@ -244,7 +244,7 @@ step
     .mob Energized Harvest Reaper
 step
     .isOnQuest 26257
-    .exitvehicle >>|cRXP_WARN_Saia do|r |cRXP_ENEMY_Golem Colheiteiro em Curto-circuito|r
+    .exitvehicle >> |cRXP_WARN_Saia do|r |cRXP_ENEMY_Golem Colheiteiro em Curto-circuito|r
 step
     #loop
     .goto 52,41.4,37.4,60,0
@@ -311,7 +311,7 @@ step
     .goto 52,56.91,57.72,20,0
     .goto 52,53.94,57.06,20,0
     .goto 52,52.20,55.75,20,0
-    .use 57991 >>|cRXP_WARN_Use o|r |T237329:0|t[Ensopado de Cerro Oeste] |cRXP_WARN_ao lado dos |cRXP_FRIENDLY_Homeless|r ao redor de Sentinela Hill|r
+    .use 57991 >> |cRXP_WARN_Use o|r |T237329:0|t[Ensopado de Cerro Oeste] |cRXP_WARN_ao lado dos |cRXP_FRIENDLY_Homeless|r ao redor de Sentinela Hill|r
     .complete 26271,1 --|Westfall Homeless fed: 20/20
     .target Homeless Stormwind Citizen
     .target West Plains Drifter
@@ -368,11 +368,11 @@ step
     #completewith next
     .isOnQuest 26290
     .goto 52,70.38,74.45
-    .subzone 5289 >>Entre em Mortwake's Torre
+    .subzone 5289 >> Entre em Mortwake's Torre
 step
     .isOnQuest 26290
     .goto 52,70.38,74.45
-    .cast 79528 >>|cRXP_WARN_Use a|r |T134724:0|t[Poção de Esconderijo] |cRXP_WARN_enquanto dentro de Mortwake's Torre|r
+    .cast 79528 >> |cRXP_WARN_Use a|r |T134724:0|t[Poção de Esconderijo] |cRXP_WARN_enquanto dentro de Mortwake's Torre|r
     .use 58112 >>|cRXP_WARN_Corra passando pelo |cRXP_ENEMY_Mercenário|r na frente da torre. a |cRXP_FRIENDLY_Agente Marta Hari|r os atacará assim que você entrar em combate com eles|r
 step
     .goto 52,70.543,74.060
@@ -390,7 +390,7 @@ step
     .accept 26291 >>Aceite Problemas no Arroio da Lua
 step
     #completewith next
-    .hs >>Vá para Sentinela Hill
+    .hs >> Vá para Sentinela Hill
     .cooldown item,6948,>2,1
 step
     .goto 1436/0,1045.300,-10508.800
@@ -429,10 +429,10 @@ step
     .goto 52,45.6,70.8,40,0
     .goto 52,43.8,67.4,40,0
     >>Abate os |cRXP_ENEMY_Moonbrook Thugs|r. Saque-os por |T237277:0|t[|cRXP_LOOT_Bandana Vermelha|r]
-    .use 58117 >>|cRXP_WARN_Use a|r |T237277:0|t[|cRXP_LOOT_Bandana Vermelha|r] |cRXP_WARN_para iniciar a missão|r
+    .use 58117 >> |cRXP_WARN_Use a|r |T237277:0|t[|cRXP_LOOT_Bandana Vermelha|r] |cRXP_WARN_para iniciar a missão|r
     .collect 58117,1,26296,1 -- Red Bandana (1)
     .disablecheckbox
-    .accept 26296 >>Aceite Coleta de Provas
+    .accept 26296 >> Aceite Coleta de Provas
     .mob Moonbrook Thug
 step
     #label MoonbrookThugs
@@ -485,10 +485,10 @@ step
     .goto 1415,40.92,81.99,15,0
     .goto 1415,40.90,82.18,10,0
     .goto 1415,40.77,82.58,15,0
-    .goto 1415,40.48,82.44,5 >>Entre em Minas Mortas e entre na instância
+    .goto 1415,40.48,82.44,5 >> Entre em Minas Mortas e entre na instância
 step
     .isOnQuest 26320
-    .cast 79586 >>|cRXP_WARN_Use o|r [Incensório] |cRXP_WARN_enquanto dentro da instância de Minas Mortas|r
+    .cast 79586 >> |cRXP_WARN_Use o|r [Incensório] |cRXP_WARN_enquanto dentro da instância de Minas Mortas|r
     .timer 155,Visão do Passado RP
     .use 58147
 step
@@ -496,7 +496,7 @@ step
     .complete 26320,1 -- Vision of the Past uncovered 1/1
 step
     #completewith next
-    .hs >>Vá para Sentinela Hill
+    .hs >> Vá para Sentinela Hill
     .cooldown item,6948,>2,1
 step
     .goto 1436/0,1045.100,-10508.800
@@ -511,9 +511,9 @@ step << skip -- quest isn't needed for loremaster
 step
     .goto 1436/0,2110.100,-10514.500
     >>Abate os |cRXP_ENEMY_Murlocs|r ao longo da costa. Saqueie-os por |T134269:0|t[|cRXP_LOOT_Mapa do Tesouro do Capitão Albernaz|r]
-    .use 1357 >>|cRXP_WARN_Use|r |T134269:0|t[|cRXP_LOOT_Mapa do Tesouro do Capitão Albernaz|r] |cRXP_WARN_para começar a missão|r
+    .use 1357 >> |cRXP_WARN_Use|r |T134269:0|t[|cRXP_LOOT_Mapa do Tesouro do Capitão Albernaz|r] |cRXP_WARN_para começar a missão|r
     .collect 1357,1,26353,1 -- Captain Sanders' Treasure Map (1)
-    .accept 26353 >>Aceite O Tesouro Escondido do Capitão Albernaz
+    .accept 26353 >> Aceite O Tesouro Escondido do Capitão Albernaz
     .mob Murloc Hunter
     .mob Murloc Warrior
 step
@@ -533,14 +533,14 @@ step
     .accept 26356 >>Aceite O Tesouro Escondido do Capitão Albernaz
 step
     #completewith next
-    .goto 52,25.97,16.90,20 >>Nade para a pequena ilha
+    .goto 52,25.97,16.90,20 >> Nade para a pequena ilha
 step
     .goto 1436/0,2107.700,-9794.300
     >>Clique no |cRXP_PICK_Locked Baú|r no chão
     .turnin 26356 >>Entregue O Tesouro Escondido do Capitão Albernaz
 step
     #completewith next
-    .subzone 115 >>Vá ao Farol de Cerro Oeste
+    .subzone 115 >> Vá ao Farol de Cerro Oeste
 step
     .goto 1436/0,1949.100,-11397.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Capitão Calvino|r
@@ -548,7 +548,7 @@ step
     .turnin 26371 >>Entregue A Lenda do Capitão Calvino
     .accept 26348 >>Aceite Limpando a Área
     --.accept 26347 >>Accept Keeper of the Flame
-    .accept 26349 >>Aceite O Mar Não Está para Peixe
+    .accept 26349 >>Aceite O mar não está para peixe
 step
     #completewith next
     >>Mate os |cRXP_ENEMY_Murloc Tidehunters|r e os |cRXP_ENEMY_Murloc Oracles|r
@@ -561,7 +561,7 @@ step
     .goto 52,35.8,87.2,50,0
     .goto 52,30.6,79.8,50,0
     .goto 52,26.2,63.2,50,0
-    >>Mate |cRXP_ENEMY_Velho Olho-turvo|r. Saque a |cRXP_LOOT_Escama|r dele
+    >>Mate |cRXP_ENEMY_Velho Olho-turvo|r. Pegue sua |cRXP_LOOT_Escama|r
     >>|cRXP_ENEMY_Velho Olho-turvo|r |cRXP_WARN_patrols along the coast|r
     .complete 26349,1 --|Scale of Old Murk-Eye: 1/1
     .unitscan Old Murk-Eye

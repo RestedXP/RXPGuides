@@ -25,11 +25,11 @@ step
     .goto TheStormPeaks,63.13,62.94
     .daily 12977 >>Aceite Chamado de Hodir
     .goto TheStormPeaks,64.17,65.01
-	.daily 13006 >>Aceite Limpeza Viscosa
+	.daily 13006 >> Aceite Limpeza Viscosa
 	.goto TheStormPeaks,64.24,59.23
-	.daily 12994 >>Aceite Caçador de Espiões
+	.daily 12994 >> Aceite Caçador de Espiões
 	.goto TheStormPeaks,63.49,59.73
-	.daily 13046 >>Aceite Alimentando Arngrim
+	.daily 13046 >> Aceite Alimentando Arngrim
 	.goto TheStormPeaks,67.61,59.95
 	.reputation 1119,revered,<0,1 -- if you're 0 into revered it will display this step
 step
@@ -38,9 +38,9 @@ step
     .goto TheStormPeaks,63.13,62.94
     .daily 12977 >>Aceite Chamado de Hodir
     .goto TheStormPeaks,64.17,65.01
-	.daily 13006 >>Aceite Limpeza Viscosa
+	.daily 13006 >> Aceite Limpeza Viscosa
 	.goto TheStormPeaks,64.24,59.23
-	.daily 12994 >>Aceite Caçador de Espiões
+	.daily 12994 >> Aceite Caçador de Espiões
 	.goto TheStormPeaks,63.49,59.73
 	.reputation 1119,honored,<0,1 -- if you're 0 into honored it will display this step
 step
@@ -49,7 +49,7 @@ step
     .goto TheStormPeaks,63.13,62.94
     .daily 12977 >>Aceite Chamado de Hodir
     .goto TheStormPeaks,64.17,65.01
-	.daily 13006 >>Aceite Limpeza Viscosa
+	.daily 13006 >> Aceite Limpeza Viscosa
 	.goto TheStormPeaks,64.24,59.23
 	.reputation 1119,friendly,<0,1 -- if you're 0 into friendly it will display this step
 step
@@ -61,33 +61,33 @@ step
 step
 	.goto TheStormPeaks,73.5,62.9,70,0
     .goto TheStormPeaks,76.2,63.4
-	.use 42246 >>Usar a Essência de Gelo ao lado dos Fragmentos Brilhantes ao redor da Bigorna de Fjorn. Saqueie a Sucata de Ferro Congelada
+	.use 42246 >> Usar a Essência de Gelo ao lado dos Fragmentos Brilhantes ao redor da Bigorna de Fjorn. Saqueie a Sucata de Ferro Congelada
     .complete 12981,1 --Frozen Iron Scrap (6)
 	.isOnQuest 12981
 step
     .goto TheStormPeaks,70.73,50.96,65,0
 	.goto TheStormPeaks,73.00,49.05,65,0
     .goto TheStormPeaks,71.45,47.76
-	.use 42164 >>Mate os Patriarcas de Niffelem e os Gelificados Inquietos na área. Usar Chifre de Hodir nos cadáveres deles para libertá-los
+	.use 42164 >> Mate os Patriarcas de Niffelem e os Gelificados Inquietos na área. Usar Chifre de Hodir nos cadáveres deles para libertá-los
     .complete 12977,1 --Niffelem Forefather freed (5)
     .complete 12977,2 --Restless Frostborn freed (5)
 	.isOnQuest 12977
 step
 	#completewith next
     .goto TheStormPeaks,57.23,64.02
-	.use 42479 >>Usar a Presa do Lobo Etéreo em sua mochila no Cadáver do Lobo Caído. Siga o Lobo Etéreo até que ele rastreie um Infiltrado Forjado pela Tempestade, depois mate-o
+	.use 42479 >> Usar a Presa do Lobo Etéreo em sua mochila no Cadáver do Lobo Caído. Siga o Lobo Etéreo até que ele rastreie um Infiltrado Forjado pela Tempestade, depois mate-o
 	.complete 12994,1 --Stormforged Infiltrators Slain (3)
 	.isOnQuest 12994
 step
 	.goto TheStormPeaks,57.92,61.07,60,0
 	.goto TheStormPeaks,57.83,63.59,60,0
 	.goto TheStormPeaks,56.51,65.00
-	.use 42774 >>Usar o Dente de Arngrim em sua mochila no Jormungar Errante. Dê dano nele até 30% de vida ou menos, mas não o mate
+	.use 42774 >> Usar o Dente de Arngrim em sua mochila no Jormungar Errante. Dê dano nele até 30% de vida ou menos, mas não o mate
 	.complete 13046,1 --Arngrim's spirit fed (5)
 	.isOnQuest 13046
 step
     .goto TheStormPeaks,57.23,64.02
-	.use 42479 >>Usar a Presa do Lobo Etéreo em sua mochila no Cadáver do Lobo Caído. Siga o Lobo Etéreo até que ele rastreie um Infiltrado Forjado pela Tempestade, depois mate-o
+	.use 42479 >> Usar a Presa do Lobo Etéreo em sua mochila no Cadáver do Lobo Caído. Siga o Lobo Etéreo até que ele rastreie um Infiltrado Forjado pela Tempestade, depois mate-o
 	.complete 12994,1 --Stormforged Infiltrators Slain (3)
 	.isOnQuest 12994
 step
@@ -103,11 +103,11 @@ step
     .goto TheStormPeaks,63.13,62.94
     .turnin 12977 >>Entregue Chamado de Hodir
     .goto TheStormPeaks,64.17,65.01
-	.turnin 13006 >>Entregue Limpeza Viscosa
+	.turnin 13006 >> Entregue Limpeza Viscosa
 	.goto TheStormPeaks,64.24,59.23
-	.turnin 12994 >>Entregue Caçador de Espiões
+	.turnin 12994 >> Entregue Caçador de Espiões
 	.goto TheStormPeaks,63.49,59.73
-	.turnin 13046 >>Entregue Alimentando Arngrim
+	.turnin 13046 >> Entregue Alimentando Arngrim
 	.goto TheStormPeaks,67.61,59.95
 	.isQuestComplete 12994
 	.isQuestComplete 13046
@@ -118,9 +118,9 @@ step
     .goto TheStormPeaks,63.13,62.94
     .turnin 12977 >>Entregue Chamado de Hodir
     .goto TheStormPeaks,64.17,65.01
-	.turnin 13006 >>Entregue Limpeza Viscosa
+	.turnin 13006 >> Entregue Limpeza Viscosa
 	.goto TheStormPeaks,64.24,59.23
-	.turnin 13046 >>Entregue Alimentando Arngrim
+	.turnin 13046 >> Entregue Alimentando Arngrim
 	.goto TheStormPeaks,67.61,59.95
 	.isQuestComplete 13046
 step
@@ -130,9 +130,9 @@ step
     .goto TheStormPeaks,63.13,62.94
     .turnin 12977 >>Entregue Chamado de Hodir
     .goto TheStormPeaks,64.17,65.01
-	.turnin 13006 >>Entregue Limpeza Viscosa
+	.turnin 13006 >> Entregue Limpeza Viscosa
 	.goto TheStormPeaks,64.24,59.23
-	.turnin 12994 >>Entregue Caçador de Espiões
+	.turnin 12994 >> Entregue Caçador de Espiões
 	.goto TheStormPeaks,63.49,59.73
 	.isQuestComplete 12994
 step
@@ -142,11 +142,11 @@ step
     .goto TheStormPeaks,63.13,62.94
     .turnin 12977 >>Entregue Chamado de Hodir
     .goto TheStormPeaks,64.17,65.01
-	.turnin 13006 >>Entregue Limpeza Viscosa
+	.turnin 13006 >> Entregue Limpeza Viscosa
 	.goto TheStormPeaks,64.24,59.23
-	.turnin 12994 >>Entregue Caçador de Espiões
+	.turnin 12994 >> Entregue Caçador de Espiões
 	.goto TheStormPeaks,63.49,59.73
-	.turnin 13046 >>Entregue Alimentando Arngrim
+	.turnin 13046 >> Entregue Alimentando Arngrim
 	.goto TheStormPeaks,67.61,59.95
 	.isQuestComplete 12994
 	.isQuestComplete 13046
@@ -157,9 +157,9 @@ step
     .goto TheStormPeaks,63.13,62.94
     .turnin 12977 >>Entregue Chamado de Hodir
     .goto TheStormPeaks,64.17,65.01
-	.turnin 13006 >>Entregue Limpeza Viscosa
+	.turnin 13006 >> Entregue Limpeza Viscosa
 	.goto TheStormPeaks,65.00,60.95
-	.turnin 13046 >>Entregue Alimentando Arngrim
+	.turnin 13046 >> Entregue Alimentando Arngrim
 	.goto TheStormPeaks,67.61,59.95
 	.isQuestComplete 13046
 step
@@ -169,9 +169,9 @@ step
     .goto TheStormPeaks,63.13,62.94
     .turnin 12977 >>Entregue Chamado de Hodir
     .goto TheStormPeaks,64.17,65.01
-	.turnin 13006 >>Entregue Limpeza Viscosa
+	.turnin 13006 >> Entregue Limpeza Viscosa
 	.goto TheStormPeaks,64.24,59.23
-	.turnin 12994 >>Entregue Caçador de Espiões
+	.turnin 12994 >> Entregue Caçador de Espiões
 	.goto TheStormPeaks,63.49,59.73
 	.isQuestComplete 12994
 step
@@ -181,11 +181,11 @@ step
     .goto TheStormPeaks,63.13,62.94
     .turnin -12977 >>Entregue Chamado de Hodir
     .goto TheStormPeaks,64.17,65.01
-	.turnin -13006 >>Entregue Limpeza Viscosa
+	.turnin -13006 >> Entregue Limpeza Viscosa
 	.goto TheStormPeaks,64.24,59.23
 step << Mage
 	#completewith next
-	.zone Dalaran >>Vá para Dalaran
+	.zone Dalaran >> Vá para Dalaran
 	>>Voe para Coroa de Gelo
 step << !Mage
 	#completewith next
@@ -243,7 +243,7 @@ step << Alliance
 step << Alliance
     #completewith next
     .goto Icecrown,62.55,50.67
-    .vehicle 32227 >>Clique com o botão direito na torre de canhão no topo da Máquina Voadora para iniciar a missão
+    .vehicle 32227 >> Clique com o botão direito na torre de canhão no topo da Máquina Voadora para iniciar a missão
 	.isOnQuest 13309
 step << Alliance
 	>>Atire em todos os Lança Armas de Fogo que vir enquanto voa. Os Infiltradores aparecerão conforme você fizer isto
@@ -426,7 +426,7 @@ step
 step
     .goto IcecrownGlacier,49.7,34.4
 	.use 44301 -- to combine the 10 tainted essences into a writhing mass
-	.use 44304 >>Clique direito nas Essências Maculadas na mochila para transformá-las em um Writhing Mass. Jogue-o numa caldeira
+	.use 44304 >> Clique direito nas Essências Maculadas na mochila para transformá-las em um Writhing Mass. Jogue-o numa caldeira
 	.complete 13322,1 << Alliance
 	.complete 13357,1 << Horde
 	.isOnQuest 13322 << Alliance
@@ -436,7 +436,7 @@ step
     .goto IcecrownGlacier,54.7,28.0,70,0
     .goto IcecrownGlacier,57.0,28.8,70,0
     .goto IcecrownGlacier,54.1,31.4
-	.use 44433 >>Abate 5 Minions Escravizados (Voidwalkers). Usar o Bastão de Sifão nos cadáveres deles pela Matéria Negra
+	.use 44433 >> Abate 5 Minions Escravizados (Voidwalkers). Usar o Bastão de Sifão nos cadáveres deles pela Matéria Negra
 	.collect 44434,5,13344,1 << Alliance --Dark Matter (5)
 	.collect 44434,5,13365,1 << Horde --Dark Matter (5)
 	.isOnQuest 13344 << Alliance
@@ -510,7 +510,7 @@ step
 step
 	#completewith next
     .goto IcecrownGlacier,28.0,37.7
-    .vehicle 30564 >>Clique com o botão direito no Protodraco de Njorndar para montá-lo
+    .vehicle 30564 >> Clique com o botão direito no Protodraco de Njorndar para montá-lo
 	.isOnQuest 13071
 step
     .goto IcecrownGlacier,27.7,41.1,70,0
@@ -566,7 +566,7 @@ step
     #completewith next
 	.goto IcecrownGlacier,9.5,44.8,50,0
     .goto IcecrownGlacier,9.5,44.8,0,0
-	.use 40587 >>Abate os inimigos do Acossamento na área. Usar a Tintura da Curalâmina Sombria na mochila nos cadáveres
+	.use 40587 >> Abate os inimigos do Acossamento na área. Usar a Tintura da Curalâmina Sombria na mochila nos cadáveres
     .complete 12813,1 --Scarlet Onslaught corpse transformed (10)
 	.isOnQuest 12813
 step
@@ -598,7 +598,7 @@ step
 step
 	.goto IcecrownGlacier,9.5,44.8,50,0
     .goto IcecrownGlacier,9.5,44.8,0,0
-	.use 40587 >>Abate os inimigos do Acossamento na área. Usar a Tintura da Curalâmina Sombria na mochila nos cadáveres
+	.use 40587 >> Abate os inimigos do Acossamento na área. Usar a Tintura da Curalâmina Sombria na mochila nos cadáveres
     .complete 12813,1 --Scarlet Onslaught corpse transformed (10)
 	.isOnQuest 12813
 step

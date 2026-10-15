@@ -66,7 +66,7 @@ step
 	.goto 1411,43.43,70.84,30,0
 	.goto 1411,44.39,70.04,30,0
     >>Mate os |cRXP_ENEMY_Northwatch Batedores|r
-    >>|cRXP_WARN_Eles estão invisíveis|r
+    >>|cRXP_WARN_Eles estão furtivos|r
     .complete 25172,1 --Northwatch Scout (7)
     .mob Northwatch Scout
     --VV Check on yard range for these stealthed mobs
@@ -89,7 +89,7 @@ step
 	.goto 1411,43.02,71.23,30,0
 	.goto 1411,43.43,70.84,30,0
 	.goto 1411,44.39,70.04,30,0
-    .xp 2+650 >>Farme até 650+/900xp
+    .xp 2+650 >> Farme até 650+/900xp
     .mob Northwatch Scout
 step
     .goto 1411,43.27,68.22
@@ -100,7 +100,7 @@ step
     .accept 3087 >>Aceite Pergaminho Cinzelado << Hunter
     .accept 25138 >>Aceite Pergaminho Glífico << Mage
     .accept 3089 >>Aceite Pergaminho inscrito em runas << Shaman
-    .accept 2383 >>Aceite Pergaminho simples << Warrior
+    .accept 2383 >> Aceite Pergaminho simples << Warrior
     .accept 3090 >>Aceite Pergaminho maculado << Warlock
     .accept 31156 >>Aceite Pergaminho Caligrafado << Monk
     .target Gornek
@@ -115,21 +115,21 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Rwag|r
     .turnin 3088 >>Entregue Pergaminho Cifrado
     .accept 25141 >>Aceite Eviscerar
-    .train 2098 >>Treine |T132292:0|t[Eviscerar] << Cata
+    .train 2098 >> Treine |T132292:0|t[Eviscerar] << Cata
     .target Rwag
 step << Hunter
     .goto 1411,42.84,69.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Karranisha|r
     .turnin 3087 >>Entregue Pergaminho cinzelado
     .accept 25139 >>Aceite Tiro Firme
-    .train 56641 >>Treine |T132213:0|t[Tiro Firme] << Cata
+    .train 56641 >> Treine |T132213:0|t[Tiro Firme] << Cata
     .target Karranisha
 step << Mage cata
     .goto 1411,42.52,69.03
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Acrypha|r
     .turnin 25138 >>Entregue Pergaminho Glífico
     .accept 25149 >>Aceite Mísseis Arcanos
-    .train 5143 >>Treine |T136096:0|t[Mísseis Arcanos] << Cata
+    .train 5143 >> Aprenda |T136096:0|t[Mísseis Arcanos] << Cata
     .target Acrypha
 step << Mage !cata
     .goto 1411,42.52,69.03
@@ -142,21 +142,21 @@ step << Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Shikrik|r
     .turnin 3089 >>Entregue Pergaminho inscrito em runas
     .accept 25143 >>Aceite Golpe Primevo
-    .train 73899 >>Treine |T460956:0|t[Golpe Primevo] << Cata
+    .train 73899 >> Treine |T460956:0|t[Golpe Primevo] << Cata
     .target Shikrik
 step << Warrior
     .goto 1411,42.88,69.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Frang|r
     .turnin 2383 >>Entregue Pergaminho simples
     .accept 25147 >>Aceite Investida
-    .train 100 >>Treine |T132337:0|t[Carga] << Cata
+    .train 100 >> Treine |T132337:0|t[Carga] << Cata
     .target Frang
 step << Warlock cata
     .goto 1411,42.38,68.06
     .>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nartok|r
     .turnin 3090 >>Entregue Pergaminho Maculado
     .accept 25145 >>Aceite Imolação
-    .train 348 >>Treine |T135817:0|t[Imolação] << Cata
+    .train 348 >> Treine |T135817:0|t [Imolar] << Cata
     .target Nartok
 step << Warlock !cata
     .goto 1411,42.38,68.06
@@ -437,7 +437,7 @@ step
     .complete 25136,1 --6/6 Cactus Apple
 step
     #completewith next
-    .goto 1411,45.41,55.69,30 >>Entre na caverna
+    .goto 1411,45.41,55.69,30 >> Entre na caverna
 step
     #completewith Yarrog
 	>>Mate |cRXP_ENEMY_Espreitadores Vis|r
@@ -471,7 +471,7 @@ step
     #completewith next
     .goto 1411,42.50,54.48,-1
     .goto 1411,44.77,54.64,-1
-    .deathskip >>Morra e reviva no |cRXP_FRIENDLY_Anjo da Cura|r
+    .deathskip >> Morra e reviva no |cRXP_FRIENDLY_Anjo da Cura|r
     >>|cRXP_WARN_Morra perto da seta|r
     .target Anjo da Cura
 step
@@ -517,15 +517,15 @@ step << !Troll
 step
     .goto 1411,62.45,84.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Jin'thela|r
-    .accept 31159 >>Aceite O Levante dos Lançanegra << Monk
-	.accept 24770 >>Aceite O Levante dos Lançanegra << Rogue
-	.accept 24607 >>Aceite O Levante dos Lançanegra << Warrior
-	.accept 24750 >>Aceite O Levante dos Lançanegra << Mage
-	.accept 24758 >>Aceite O Levante dos Lançanegra << Shaman
-	.accept 24764 >>Aceite O Levante dos Lançanegra << Druid
-	.accept 24776 >>Aceite O Levante dos Lançanegra << Hunter
-	.accept 24782 >>Aceite O Levante dos Lançanegra << Priest
-	.accept 26272 >>Aceite O Levante dos Lançanegra << Warlock
+    .accept 31159 >> Aceite O Levante dos Lançanegra << Monk
+	.accept 24770 >> Aceite O Levante dos Lançanegra << Rogue
+	.accept 24607 >> Aceite O Levante dos Lançanegra << Warrior
+	.accept 24750 >> Aceite O Levante dos Lançanegra << Mage
+	.accept 24758 >> Aceite O Levante dos Lançanegra << Shaman
+	.accept 24764 >> Aceite O Levante dos Lançanegra << Druid
+	.accept 24776 >> Aceite O Levante dos Lançanegra << Hunter
+	.accept 24782 >> Aceite O Levante dos Lançanegra << Priest
+	.accept 26272 >> Aceite O Levante dos Lançanegra << Warlock
     .target Jin'thala
 step << Monk
     .goto 463/1,-5441.400,-1149.400
@@ -536,50 +536,50 @@ step << Monk
 step << Rogue
     .goto 1411,65.89,83.25
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Legati|r
-    .turnin 24770 >>Entregue O Levante dos Lançanegra
-    .accept 24771 >>Aceite O Básico: Como Bater nas Coisas
+    .turnin 24770 >> Entregue O Levante dos Lançanegra
+    .accept 24771 >> Aceite O Básico: Como Bater nas Coisas
     .target Legati
 step << Warrior
     .goto 1411,65.79,84.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Nortet|r
-    .turnin 24607 >>Entregue O Levante dos Lançanegra
-    .accept 24639 >>Aceite O Básico: Como Bater nas Coisas
+    .turnin 24607 >> Entregue O Levante dos Lançanegra
+    .accept 24639 >> Aceite O Básico: Como Bater nas Coisas
     .target Nortet
 step << Mage
     .goto 1411,68.22,83.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Soratha|r
-    .turnin 24750 >>Entregue O Levante dos Lançanegra
-    .accept 24751 >>Aceite O Básico: Como Bater nas Coisas
+    .turnin 24750 >> Entregue O Levante dos Lançanegra
+    .accept 24751 >> Aceite O Básico: Como Bater nas Coisas
     .target Soratha
 step << Shaman
     .goto 1411,64.94,84.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Nekali|r
-    .turnin 24758 >>Entregue O Levante dos Lançanegra
-    .accept 24759 >>Aceite O Básico: Como Bater nas Coisas
+    .turnin 24758 >> Entregue O Levante dos Lançanegra
+    .accept 24759 >> Aceite O Básico: Como Bater nas Coisas
     .target Nekali
 step << Druid
     .goto 1411,67.67,84.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zen'tabra|r
-    .turnin 24764 >>Entregue O Levante dos Lançanegra
-    .accept 24765 >>Aceite O Básico: Como Bater nas Coisas
+    .turnin 24764 >> Entregue O Levante dos Lançanegra
+    .accept 24765 >> Aceite O Básico: Como Bater nas Coisas
     .target Zen'tabra
 step << Hunter
     .goto 1411,67.09,83.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ortezza|r
-    .turnin 24776 >>Entregue O Levante dos Lançanegra
-    .accept 24777 >>Aceite O Básico: Como Bater nas Coisas
+    .turnin 24776 >> Entregue O Levante dos Lançanegra
+    .accept 24777 >> Aceite O Básico: Como Bater nas Coisas
     .target Ortezza
 step << Priest
     .goto 1411,67.59,83.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tunari|r
-    .turnin 24782 >>Entregue O Levante dos Lançanegra
-    .accept 24783 >>Aceite O Básico: Como Bater nas Coisas
+    .turnin 24782 >> Entregue O Levante dos Lançanegra
+    .accept 24783 >> Aceite O Básico: Como Bater nas Coisas
     .target Tunari
 step << Warlock
     .goto 1411,64.92,83.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Voldreka|r
-    .turnin 26272 >>Entregue O Levante dos Lançanegra
-    .accept 26273 >>Aceite O Básico: Como Bater nas Coisas
+    .turnin 26272 >> Entregue O Levante dos Lançanegra
+    .accept 26273 >> Aceite O Básico: Como Bater nas Coisas
     .target Voldreka
 step
     .goto 1411,66.912,83.481 << Hunter
@@ -610,50 +610,50 @@ step << Monk
 step << Rogue
     .goto 1411,65.89,83.25
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Legati|r
-    .turnin 24771 >>Entregue O Básico: Como Bater nas Coisas
-    .accept 24773 >>Aceite O Começo Sempre É Difícil
+    .turnin 24771 >> Entregue O Básico: Como Bater nas Coisas
+    .accept 24773 >> Aceite O Começo Sempre É Difícil
     .target Legati
 step << Warrior
     .goto 1411,65.79,84.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Nortet|r
-    .turnin 24639 >>Entregue O Básico: Como Bater nas Coisas
-    .accept 24641 >>Aceite O Começo Sempre É Difícil
+    .turnin 24639 >> Entregue O Básico: Como Bater nas Coisas
+    .accept 24641 >> Aceite O Começo Sempre É Difícil
     .target Nortet
 step << Mage
     .goto 1411,68.22,83.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Soratha|r
-    .turnin 24751 >>Entregue O Básico: Como Bater nas Coisas
-    .accept 24753 >>Aceite O Começo Sempre É Difícil
+    .turnin 24751 >> Entregue O Básico: Como Bater nas Coisas
+    .accept 24753 >> Aceite O Começo Sempre É Difícil
     .target Soratha
 step << Shaman
     .goto 1411,64.94,84.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Nekali|r
-    .turnin 24759 >>Entregue O Básico: Como Bater nas Coisas
-    .accept 24761 >>Aceite O Começo Sempre É Difícil
+    .turnin 24759 >> Entregue O Básico: Como Bater nas Coisas
+    .accept 24761 >> Aceite O Começo Sempre É Difícil
     .target Nekali
 step << Druid
     .goto 1411,67.67,84.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zen'tabra|r
-    .turnin 24765 >>Entregue O Básico: Como Bater nas Coisas
-    .accept 24767 >>Aceite O Começo Sempre É Difícil
+    .turnin 24765 >> Entregue O Básico: Como Bater nas Coisas
+    .accept 24767 >> Aceite O Começo Sempre É Difícil
     .target Zen'tabra
 step << Hunter
     .goto 1411,67.09,83.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ortezza|r
-    .turnin 24777 >>Entregue O Básico: Como Bater nas Coisas
-    .accept 24779 >>Aceite O Começo Sempre É Difícil
+    .turnin 24777 >> Entregue O Básico: Como Bater nas Coisas
+    .accept 24779 >> Aceite O Começo Sempre É Difícil
     .target Ortezza
 step << Priest
     .goto 1411,67.59,83.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tunari|r
-    .turnin 24783 >>Entregue O Básico: Como Bater nas Coisas
-    .accept 24785 >>Aceite O Começo Sempre É Difícil
+    .turnin 24783 >> Entregue O Básico: Como Bater nas Coisas
+    .accept 24785 >> Aceite O Começo Sempre É Difícil
     .target Tunari
 step << Warlock
     .goto 1411,64.92,83.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Voldreka|r
-    .turnin 26273 >>Entregue O Básico: Como Bater nas Coisas
-    .accept 26275 >>Aceite O Começo Sempre É Difícil
+    .turnin 26273 >> Entregue O Básico: Como Bater nas Coisas
+    .accept 26275 >> Aceite O Começo Sempre É Difícil
     .target Voldreka
 step << Monk
     #loop
@@ -775,50 +775,50 @@ step << Monk
 step << Rogue
     .goto 1411,65.89,83.25
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Legati|r
-    .turnin 24773 >>Entregue O Começo Sempre é Difícil
-    .accept 24774 >>Aceite Fosso da Prova
+    .turnin 24773 >> Entregue O Começo Sempre é Difícil
+    .accept 24774 >> Aceite Fosso da Prova
     .target Legati
 step << Warrior
     .goto 1411,65.79,84.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Nortet|r
-    .turnin 24641 >>Entregue O Começo Sempre é Difícil
-    .accept 24642 >>Aceite Fosso da Prova
+    .turnin 24641 >> Entregue O Começo Sempre é Difícil
+    .accept 24642 >> Aceite Fosso da Prova
     .target Nortet
 step << Mage
     .goto 1411,68.22,83.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Soratha|r
-    .turnin 24753 >>Entregue O Começo Sempre É Difícil
-    .accept 24754 >>Aceite Fosso da Prova
+    .turnin 24753 >> Entregue O Começo Sempre É Difícil
+    .accept 24754 >> Aceite Fosso da Prova
     .target Soratha
 step << Shaman
     .goto 1411,64.94,84.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Nekali|r
-    .turnin 24761 >>Entregue O Começo Sempre é Difícil
-    .accept 24762 >>Aceite Fosso da Prova
+    .turnin 24761 >> Entregue O Começo Sempre é Difícil
+    .accept 24762 >> Aceite Fosso da Prova
     .target Nekali
 step << Druid
     .goto 1411,67.67,84.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zen'tabra|r
-    .turnin 24767 >>Entregue O Começo Sempre é Difícil
-    .accept 24768 >>Aceite Fosso da Prova
+    .turnin 24767 >> Entregue O Começo Sempre é Difícil
+    .accept 24768 >> Aceite Fosso da Prova
     .target Zen'tabra
 step << Hunter
     .goto 1411,67.09,83.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ortezza|r
-    .turnin 24779 >>Entregue O Começo Sempre é Difícil
-    .accept 24780 >>Aceite Fosso da Prova
+    .turnin 24779 >> Entregue O Começo Sempre é Difícil
+    .accept 24780 >> Aceite Fosso da Prova
     .target Ortezza
 step << Priest
     .goto 1411,67.59,83.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tunari|r
-    .turnin 24785 >>Entregue O Começo Sempre é Difícil
-    .accept 24786 >>Aceite Fosso da Prova
+    .turnin 24785 >> Entregue O Começo Sempre é Difícil
+    .accept 24786 >> Aceite Fosso da Prova
     .target Tunari
 step << Warlock
     .goto 1411,64.92,83.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Voldreka|r
-    .turnin 26275 >>Entregue O Começo Sempre é Difícil
-    .accept 26276 >>Aceite Fosso da Prova
+    .turnin 26275 >> Entregue O Começo Sempre é Difícil
+    .accept 26276 >> Aceite Fosso da Prova
     .target Voldreka
 step << Monk
     .goto 1411,65.58,83.74
@@ -930,21 +930,21 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Legati|r
     .turnin 24774 >>Entregue em Fosso da Prova
     .accept 24772 >>Aceite A Arte do Ladino
-    .train 2098 >>Treine |T132292:0|t[Eviscerar] << Cata
+    .train 2098 >> Treine |T132292:0|t[Eviscerar] << Cata
     .target Legati
 step << Warrior
     .goto 1411,65.79,84.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Nortet|r
     .turnin 24642 >>Entregue em Fosso da Prova
     .accept 24640 >>Aceite A Arte do Guerreiro
-    .train 100 >>|T132337:0|t[Investida] << Cata
+    .train 100 >> |T132337:0|t[Investida] << Cata
     .target Nortet
 step << Mage
     .goto 1411,68.22,83.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Soratha|r
     .turnin 24754 >>Entregue em Fosso da Prova
     .accept 24752 >>Aceite A Arte do Mago
-    .train 5143 >>Treine |T136096:0|t[Mísseis Arcanos] << Cata
+    .train 5143 >>Aprenda |T136096:0|t[Mísseis Arcanos] << Cata
     .target Soratha
 step << Shaman
     .goto 1411,64.94,84.21
@@ -958,7 +958,7 @@ step << Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zen'tabra|r
     .turnin 24768 >>Entregue em Fosso da Prova
     .accept 24766 >>Aceite A Arte do Druida
-    .train 774 >>Treine |T136081:0|t[Rejuvenescer] << Cata
+    .train 774 >>Aprenda |T136081:0|t[Rejuvenescer] << Cata
     .target Zen'tabra
 step << Hunter
     .goto 1411,67.09,83.31
@@ -985,7 +985,7 @@ step << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Voldreka|r
     .turnin 26276 >>Entregue em Fosso da Prova
     .accept 26274 >>Aceite A Arte do Bruxo
-    .train 348 >>Treine |T135817:0|t[Imolação] << Cata
+    .train 348 >>Treine |T135817:0|t [Imolar] << Cata
     .target Voldreka
 step << Monk
 	.goto 1411,65.91,83.45
@@ -1134,20 +1134,20 @@ step
 step
     .goto 1411,68.50,87.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tora'Jin|r
-    .accept 25037 >>Aceite Pescar Caranguejo
+    .accept 25037 >> Aceite Pescar Caranguejo
     .target Tora'Jin
 step
     .goto 1411,67.26,87.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Moraya|r
-    .turnin 25064 >>Entregue Moraya
-    .accept 24622 >>Aceite O Melhor Amigo de um Troll
+    .turnin 25064 >> Entregue Moraya
+    .accept 24622 >> Aceite O Melhor Amigo de um Troll
     .target Moraya
 step
     #label CrossBridge
     #completewith Kijara
     .goto 1411,66.09,89.14,40,0
     .goto 1411,64.94,89.02,40,0
-    .goto 1411,63.42,93.50,40 >>Atravesse a Ponte
+    .goto 1411,63.42,93.50,40 >> Atravesse a Ponte
 step
     #require CrossBridge
     #completewith next
@@ -1307,7 +1307,7 @@ step << Troll
     .target Tortunga << Troll
 step << Troll
     .goto 1411,68.02,89.06
-    .gossipoption 112038 >>Fale com |cRXP_FRIENDLY_Jornun|r
+    .gossipoption 112038 >> Fale com |cRXP_FRIENDLY_Jornun|r
     .timer 39,Ignorando a Linha Inimiga RP
     .target Jornun
     .isOnQuest 25035
@@ -1380,7 +1380,7 @@ step << skip
     .isQuestTurnedIn 25035
 step << skip
     .goto 1411,69.13,72.32
-    .gossipoption 37251 >>Fale com |cRXP_FRIENDLY_Vanira|r para voltar ao Baluarte Lançanegra
+    .gossipoption 37251 >> Fale com |cRXP_FRIENDLY_Vanira|r para voltar ao Baluarte Lançanegra
     .target Vanira
     .isOnQuest 24814
     --VV Add timer in case it's not an instant teleport
@@ -1412,16 +1412,16 @@ step << skip
     .goto 1411,63.67,82.61,60,0
     .goto 1411,60.48,81.45,60,0
     .goto 1411,60.09,79.68,60,0
-    .subzone 367 >>Vá para Sen'Jin Village
+    .subzone 367 >> Vá para Sen'Jin Village
 step << Troll
     #completewith BreakingtheChain
     .goto 1411,64.10,74.25,40,0
-    .subzone 367 >>Viaje para a Aldeia Sen'jin
+    .subzone 367 >> Viaje para a Aldeia Sen'jin
 step << Orc
     #completewith BreakingtheChain
     .goto 1411,48.47,67.93,60,0
     .goto 1411,50.44,68.39,60,0
-    .subzone 367 >>Vá para Sen'Jin Village
+    .subzone 367 >> Vá para Sen'Jin Village
 step
     #optional << Troll
     .goto 1411,55.95,74.73
@@ -1440,32 +1440,32 @@ step << Troll
 step << Shaman Cata
     .goto 1411,56.27,75.17
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Koni|r
-    .train 8042 >>Treine suas magias de classe
+    .train 8042 >> Treine suas magias de classe
     .target Cona
 step << Druid Cata
     .goto 1411,56.18,75.24
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Den'chulu|r
-    .train 8921 >>Treine suas magias de classe
+    .train 8921 >> Treine suas magias de classe
     .target Den'chulu
 step << Hunter Cata
     .goto 1411,55.72,73.74
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Hai'zan|r
-    .train 2973 >>Treine suas magias de classe
+    .train 2973 >> Treine suas magias de classe
     .target Hai'zan
     .xp <6,1
 step
     #completewith next
     .goto 1411,56.13,74.53,10,0
-    .goto 1411,56.30,73.89,10 >>Entre na cabana grande
+    .goto 1411,56.30,73.89,10 >> Entre na cabana grande
 step << Mage/Priest/Warlock/Druid
     .goto 1411,56.41,73.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tai'tasi|r
-    .vendor >>Comerciante de Lixo
+    .vendor >> Comerciante de Lixo
     .target Tai'tasi
 step << Warrior Cata
     .goto 1411,56.70,73.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Yeniss|r
-    .train 34428 >>Treine suas magias de classe
+    .train 34428 >> Treine suas magias de classe
     .target Yeniss
 step << Warrior/Shaman/Paladin
     .goto 1411,56.47,73.12
@@ -1532,25 +1532,25 @@ step << Mage Cata/Priest Cata/Warlock Cata
     #completewith next
     .goto 1411,56.59,73.25,10,0
     .goto 1411,56.50,72.90,10,0
-    .goto 1411,56.33,73.28,10 >>Suba
+    .goto 1411,56.33,73.28,10 >> Suba
 step << Mage Cata
     .goto 1411,56.37,73.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Bomsanchu|r no andar superior
-    .train 2136 >>Treine suas magias de classe
+    .train 2136 >> Treine suas magias de classe
     .target Bomsanchu
 step << Priest Cata
     .goto 1411,56.41,73.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Parata|r no andar superior
-    .train 589 >>Treine suas magias de classe
+    .train 589 >> Treine suas magias de classe
     .target Parata
 step << Warlock Cata
     .goto 1411,56.31,73.57
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gusini|r no andar superior
-    .train 87389 >>Treine suas magias de classe
+    .train 87389 >> Treine suas magias de classe
     .target Gusini
 step << Mage Cata/Priest Cata/Warlock Cata
     #completewith next
-    .goto 1411,55.71,75.28,10 >>Pule em direção a |cRXP_FRIENDLY_Bom'bay|r
+    .goto 1411,55.71,75.28,10 >> Pule em direção a |cRXP_FRIENDLY_Bom'bay|r
 step
     #label Bombay
     .goto 1411,55.71,75.28
@@ -1626,23 +1626,23 @@ step
 step << Shaman Cata
     .goto 1411,56.27,75.17
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Koni|r
-    .train 8042 >>Treine suas magias de classe
+    .train 8042 >> Treine suas magias de classe
     .target Cona
 step << Druid Cata
     .goto 1411,56.18,75.24
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Den'chulu|r
-    .train 8921 >>Treine suas magias de classe
+    .train 8921 >> Treine suas magias de classe
     .target Den'chulu
 step << Hunter Cata
     .goto 1411,55.72,73.74
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Hai'zan|r
-    .train 2973 >>Treine suas magias de classe
+    .train 2973 >> Treine suas magias de classe
     .target Hai'zan
     .xp <6,1
 step << Warrior Cata
     .goto 1411,56.70,73.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Yeniss|r
-    .train 34428 >>Treine suas magias de classe
+    .train 34428 >> Treine suas magias de classe
     .target Yeniss
 step << Warrior/Shaman/Paladin
     .goto 1411,56.47,73.12
@@ -1708,17 +1708,17 @@ step << Hunter
 step << Mage Cata
     .goto 1411,56.37,73.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Bomsanchu|r no andar de cima
-    .train 2136 >>Treine suas magias de classe
+    .train 2136 >> Treine suas magias de classe
     .target Bomsanchu
 step << Priest Cata
     .goto 1411,56.41,73.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Parata|r no andar de cima
-    .train 589 >>Treine suas magias de classe
+    .train 589 >> Treine suas magias de classe
     .target Parata
 step << Warlock Cata
     .goto 1411,56.31,73.57
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gusini|r no andar de cima
-    .train 87389 >>Treine suas magias de classe
+    .train 87389 >> Treine suas magias de classe
     .target Gusini
 step
     #xprate <1.1
@@ -1773,7 +1773,7 @@ step
     .mob Northwatch Ranger
 step
     #completewith next
-    .deathskip >>Morra e reviva no |cRXP_FRIENDLY_Anjo da Cura|r
+    .deathskip >> Morra e reviva no |cRXP_FRIENDLY_Anjo da Cura|r
     --VV Beta test needed
 step
     #xprate <1.1
@@ -1801,67 +1801,67 @@ step
 step
     .goto 1411,56.47,73.12
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Trayexir|r
-    .vendor >>Comerciante Lixo e Consertar
+    .vendor >> Comerciante Lixo e Consertar
     .target Trayexir
 step << Rogue Cata
     .goto 1411,56.05,73.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Munalti|r
-    .train 15087 >>Treine suas magias de classe
+    .train 15087 >> Treine suas magias de classe
     .target Munalti
     .xp <8,1
 step << Shaman Cata
     .goto 1411,56.27,75.17
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Koni|r
-    .train 324 >>Treine suas magias de classe
+    .train 324 >> Treine suas magias de classe
     .target Cona
     .xp <8,1
 step << Druid Cata
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Den'chulu|r
     .goto 1411,56.18,75.24
-    .train 768 >>Treine suas magias de classe
+    .train 768 >> Treine suas magias de classe
     .target Den'chulu
     .xp <8,1
 step << Hunter Cata
     .goto 1411,55.72,73.74
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Hai'zan|r
-    .train 2973 >>Treine suas magias de classe
+    .train 2973 >> Treine suas magias de classe
     .target Hai'zan
     .xp <6,1
     .xp >8,1
 step << Hunter Cata
     .goto 1411,55.72,73.74
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Hai'zan|r
-    .train 5116 >>Treine suas magias de classe
+    .train 5116 >> Treine suas magias de classe
     .target Hai'zan
     .xp <8,1
 step << Warrior Cata
     .goto 1411,56.70,73.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Yeniss|r
-    .train 772 >>Treine suas magias de classe
+    .train 772 >> Treine suas magias de classe
     .target Yeniss
     .xp <7,1
 step << Mage Cata
     .goto 1411,56.37,73.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Bomsanchu|r no andar de cima
-    .train 96089 >>Treine suas magias de classe
+    .train 96089 >> Treine suas magias de classe
     .target Bomsanchu
     .xp <7,1
 step << Priest Cata
     .goto 1411,56.41,73.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Parata|r no andar de cima
-    .train 588 >>Treine suas magias de classe
+    .train 588 >> Treine suas magias de classe
     .target Parata
     .xp <8,1
 step << Warlock Cata
     .goto 1411,56.31,73.57
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gusini|r no andar de cima
-    .train 687 >>Treine suas magias de classe
+    .train 687 >> Treine suas magias de classe
     .target Gusini
     .xp <8,1
 step << cata
     #completewith RazorVisit1
     .goto 1411,55.26,74.66
-    .gossipoption 112084 >>Fale com |cRXP_FRIENDLY_Jhash|r
+    .gossipoption 112084 >> Fale com |cRXP_FRIENDLY_Jhash|r
     >>|cRXP_WARN_Pegue a carona para Razor Hill|r
     .timer 67,Monte em RP
     .target Raider Jhash
@@ -1875,7 +1875,7 @@ step << !cata
 step
     .goto 1411,51.51,41.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Grosk|r
-    .home >>Defina sua Pedra de Retorno em Razor Hill
+    .home >> Defina sua Pedra de Retorno em Razor Hill
     .target Innkeeper Grosk
     .isQuestAvailable 2517
 step
@@ -1893,7 +1893,7 @@ step
 step
     #label TravelToTiragarde
     #completewith Palliter
-    .subzone 372>>Vá para Bastilha Tiragarde
+    .subzone 372>> Vá para Bastilha Tiragarde
 step
     #completewith Palliter
     >>Mate os |cRXP_ENEMY_Northwatch Marines|r e os |cRXP_ENEMY_Northwatch Sharpshooters|r
@@ -1954,7 +1954,7 @@ step
     #completewith next
     .goto 1411,58.71,56.76,-1
     .goto 1411,58.56,54.00,-1
-    .deathskip >>Morra e reviva no |cRXP_FRIENDLY_Anjo da Cura|r
+    .deathskip >> Morra e reviva no |cRXP_FRIENDLY_Anjo da Cura|r
     >>|cRXP_WARN_Morra perto do waypoint ou mais ao norte do castelo|r
 step
     .goto 1411,52.00,43.44
@@ -1982,37 +1982,37 @@ step << skip
 step << Rogue Cata
     .goto 1411,51.98,43.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kaplak|r no bunker no andar superior
-    .train 15087 >>Treine suas magias de classe
+    .train 15087 >> Treine suas magias de classe
     .target Kaplak
     .xp <8,1
 step << Shaman Cata
     .goto 1411,54.42,42.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Swart|r dentro
-    .train 324 >>Treine suas magias de classe
+    .train 324 >> Treine suas magias de classe
     .target Swart
     .xp <8,1
 step << Druid Cata
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Jabul|r
     .goto 1411,53.10,41.61
-    .train 768 >>Treine suas magias de classe
+    .train 768 >> Treine suas magias de classe
     .target Jabul
     .xp <8,1
 step << Hunter Cata
     .goto 1411,51.86,43.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thotar|r no bunker no andar inferior
-    .train 5116 >>Treine suas magias de classe
+    .train 5116 >> Treine suas magias de classe
     .target Thotar
     .xp <8,1
 step << Warrior Cata
     .goto 1411,54.18,42.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tarshaw|r dentro
-    .train 772 >>Treine suas magias de classe
+    .train 772 >> Treine suas magias de classe
     .target Tarshaw Jaggedscar
     .xp <7,1
 step << Mage Cata
     .goto 1411,53.04,41.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Un'Thuwa|r
-    .train 122 >>Treine suas magias de classe
+    .train 122 >> Treine suas magias de classe
     .target Un'Thuwa
     .xp <8,1
 step << Priest Cata
@@ -2097,7 +2097,7 @@ step
     .mob Foaming Sea Elemental
 step
     #completewith next
-    .deathskip >>Morra e reviva no |cRXP_FRIENDLY_Anjo da Cura|r
+    .deathskip >> Morra e reviva no |cRXP_FRIENDLY_Anjo da Cura|r
 step
     .goto 1411,53.08,43.17
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gail|r
@@ -2119,37 +2119,37 @@ step
 step << Rogue Cata
     .goto 1411,51.98,43.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kaplak|r no bunker no andar superior
-    .train 15087 >>Treine suas magias de classe
+    .train 15087 >> Treine suas magias de classe
     .target Kaplak
     .xp <8,1
 step << Shaman Cata
     .goto 1411,54.42,42.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Swart|r dentro
-    .train 324 >>Treine suas magias de classe
+    .train 324 >> Treine suas magias de classe
     .target Swart
     .xp <8,1
 step << Druid Cata
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Jabul|r
     .goto 1411,53.10,41.61
-    .train 768 >>Treine suas magias de classe
+    .train 768 >> Treine suas magias de classe
     .target Jabul
     .xp <8,1
 step << Hunter Cata
     .goto 1411,51.86,43.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thotar|r no bunker no andar inferior
-    .train 5116 >>Treine suas magias de classe
+    .train 5116 >> Treine suas magias de classe
     .target Thotar
     .xp <8,1
 step << Warrior Cata
     .goto 1411,54.18,42.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tarshaw|r dentro
-    .train 772 >>Treine suas magias de classe
+    .train 772 >> Treine suas magias de classe
     .target Tarshaw Jaggedscar
     .xp <7,1
 step << Mage Cata
     .goto 1411,53.04,41.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Un'Thuwa|r
-    .train 122 >>Treine suas magias de classe
+    .train 122 >> Treine suas magias de classe
     .target Un'Thuwa
     .xp <8,1
 step << Priest Cata
@@ -2167,7 +2167,7 @@ step << Warlock Cata
 step
     .goto 1411,51.900,41.147
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Wuark|r
-    .vendor >>Comerciante de descarte e reparo
+    .vendor >> Venda os lixos e repare seu equipamento
     .target Wuark
 step
     #optional
@@ -2175,7 +2175,7 @@ step
 step
     #completewith next
     .goto 1411,50.86,42.26,40,0
-    .goto 1411,49.58,40.51,12 >>Vá para a torre de guarda
+    .goto 1411,49.58,40.51,12 >> Vá para a torre de guarda
 step
     .goto 1411,49.60,40.17
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thonk|r no topo da torre de guarda
@@ -2209,7 +2209,7 @@ step
     .mob Dreadmaw Toothgnasher
 step
     #completewith next
-    .goto 1411,35.84,41.38,30 >>Vá para |cRXP_FRIENDLY_Zen'Taji|r
+    .goto 1411,35.84,41.38,30 >> Vá para |cRXP_FRIENDLY_Zen'Taji|r
 step
     .goto 1411,35.84,41.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zen'Taji|r
@@ -2343,18 +2343,18 @@ step
 step
     #xprate >1.19
     #completewith FlyORG
-    .hs >>Use sua Pedra de Regresso para ir a Monte Navalha
+    .hs >> Use sua Pedra de Regresso para ir a Monte Navalha
     .cooldown item,6948,>0,1
 step
     #xprate >1.19
     #completewith FlyORG
-    .deathskip >>Morra e reviva no |cRXP_FRIENDLY_Anjo da Cura|r
+    .deathskip >> Morra e reviva no |cRXP_FRIENDLY_Anjo da Cura|r
     .cooldown item,6948,<0
 step
     #xprate >1.19
     #completewith next
     .goto 1411,50.86,42.26,40,0
-    .goto 1411,49.58,40.51,12 >>Siga em direção à torre
+    .goto 1411,49.58,40.51,12 >> Siga em direção à torre
 step
     #xprate >1.19
     .goto 1411,49.60,40.18
@@ -2364,60 +2364,60 @@ step
 step
     #xprate <1.2
     #completewith DustwindCave
-    .deathskip >>Morra e reviva no |cRXP_FRIENDLY_Anjo da Cura|r
+    .deathskip >> Morra e reviva no |cRXP_FRIENDLY_Anjo da Cura|r
 step << Rogue Cata
     .goto 1411,51.98,43.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kaplak|r no bunker no andar superior
-    .train 61922 >>Treine suas magias de classe
+    .train 61922 >> Treine suas magias de classe
     .target Kaplak
     .xp <10,1
 step << Shaman Cata
     .goto 1411,54.42,42.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Swart|r dentro
-    .train 3599 >>Treine suas magias de classe
+    .train 3599 >> Treine suas magias de classe
     .target Swart
     .xp <10,1
 step << Druid Cata
     .goto 1411,53.10,41.61
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Jabul|r
-    .train 5215 >>Treine suas magias de classe
+    .train 5215 >> Treine suas magias de classe
     .target Jabul
     .xp <10,1
 step << Hunter Cata
     .goto 1411,51.86,43.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thotar|r no bunker no andar inferior
-    .train 1978 >>Treine suas magias de classe
+    .train 1978 >> Treine suas magias de classe
     .target Thotar
     .xp <10,1
 step << Warrior Cata
     .goto 1411,54.18,42.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tarshaw|r dentro
-    .train 71 >>Treine suas magias de classe
+    .train 71 >> Treine suas magias de classe
     .target Tarshaw Jaggedscar
     .xp <10,1
 step << Mage Cata
     .goto 1411,53.04,41.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Un'Thuwa|r
-    .train 2139 >>Treine suas magias de classe
+    .train 2139 >> Treine suas magias de classe
     .target Un'Thuwa
     .xp <9,1
 step << Priest Cata
     .goto 1411,54.26,42.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Parata|r dentro
-    .train 8092 >>Treine suas magias de classe
+    .train 8092 >> Treine suas magias de classe
     .target Tai'jin
     .xp <9,1
 step << Warlock Cata
     .goto 1411,54.38,41.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ghugru|r fora
-    .train 1120 >>Treine suas magias de classe
+    .train 1120 >> Treine suas magias de classe
     .target Ghugru Gorelust
     .xp <10,1
 step
     #xprate <1.2
     #label DustwindCave
     #completewith next
-    .goto 1411,52.82,28.88,40 >>Viaje dentro da caverna
+    .goto 1411,52.82,28.88,40 >> Viaje dentro da caverna
 step
     #xprate <1.2
     #loop
@@ -2444,7 +2444,7 @@ step
     .goto 1411,56.13,28.06,70,0
     .goto 1411,56.30,24.76,70,0
     .goto 1411,56.11,21.96,40,0
-    .goto 1411,56.21,20.23 >>Viaje para Vek'nag
+    .goto 1411,56.21,20.23 >> Viaje para Vek'nag
 step
     #xprate <1.2
     .goto 1411,56.21,20.23
@@ -2513,12 +2513,12 @@ step
     .goto 1411,57.13,27.37,40,0
     .goto 1411,55.79,31.03,40,0
     .goto 1411,53.90,35.53,40,0
-    .goto 1411,52.81,39.75,40 >>Corra de volta para Razor Hill
+    .goto 1411,52.81,39.75,40 >> Corra de volta para Razor Hill
     .cooldown item,6948,<0
 step
     #xprate <1.2
     #completewith Orgnil
-    .hs >>Use sua Pedra de Regresso para ir a Monte Navalha
+    .hs >> Use sua Pedra de Regresso para ir a Monte Navalha
     .cooldown item,6948,>0
 step
     #xprate <1.2
@@ -2540,63 +2540,63 @@ step << Rogue Cata
     #xprate <1.2
     .goto 1411,51.98,43.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kaplak|r no bunker no andar superior
-    .train 61922 >>Treine suas magias de classe
+    .train 61922 >> Treine suas magias de classe
     .target Kaplak
     .xp <10,1
 step << Shaman Cata
     #xprate <1.2
     .goto 1411,54.42,42.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Swart|r dentro
-    .train 3599 >>Treine suas magias de classe
+    .train 3599 >> Treine suas magias de classe
     .target Swart
     .xp <10,1
 step << Druid Cata
     #xprate <1.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Jabul|r
     .goto 1411,53.10,41.61
-    .train 5215 >>Treine suas magias de classe
+    .train 5215 >> Treine suas magias de classe
     .target Jabul
     .xp <10,1
 step << Hunter Cata
     #xprate <1.2
     .goto 1411,51.86,43.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thotar|r no bunker no andar inferior
-    .train 1978 >>Treine suas magias de classe
+    .train 1978 >> Treine suas magias de classe
     .target Thotar
     .xp <10,1
 step << Warrior Cata
     #xprate <1.2
     .goto 1411,54.18,42.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tarshaw|r dentro
-    .train 71 >>Treine suas magias de classe
+    .train 71 >> Treine suas magias de classe
     .target Tarshaw Jaggedscar
     .xp <10,1
 step << Mage Cata
     #xprate <1.2
     .goto 1411,53.04,41.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Un'Thuwa|r
-    .train 2139 >>Treine suas magias de classe
+    .train 2139 >> Treine suas magias de classe
     .target Un'Thuwa
     .xp <9,1
 step << Priest Cata
     #xprate <1.2
     .goto 1411,54.26,42.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Parata|r dentro
-    .train 8092 >>Treine suas magias de classe
+    .train 8092 >> Treine suas magias de classe
     .target Tai'jin
     .xp <9,1
 step << Warlock Cata
     #xprate <1.2
     .goto 1411,54.38,41.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ghugru|r fora
-    .train 1120 >>Treine suas magias de classe
+    .train 1120 >> Treine suas magias de classe
     .target Ghugru Gorelust
     .xp <10,1
 step
     #xprate <1.2
     #completewith next
     .goto 1411,50.86,42.26,40,0
-    .goto 1411,49.58,40.51,12 >>Siga em direção à torre
+    .goto 1411,49.58,40.51,12 >> Siga em direção à torre
 step
     #xprate <1.2
     .goto 1411,49.60,40.18
@@ -2622,7 +2622,7 @@ step
     #completewith next
     .goto 1411,46.26,30.19
     >>|cRXP_WARN_Vá até o waypoint. Não morra até chegar lá|r
-    .deathskip >>Morra e reviva no |cRXP_FRIENDLY_Anjo da Cura|r
+    .deathskip >> Morra e reviva no |cRXP_FRIENDLY_Anjo da Cura|r
 step
     #xprate <1.2
     #optional
@@ -2706,7 +2706,7 @@ step
     #xprate <1.2
     #optional
     #completewith Fizzled
-    .goto 1411,45.11,13.65,30 >>Corra para |cRXP_FRIENDLY_Gor|r
+    .goto 1411,45.11,13.65,30 >> Corra para |cRXP_FRIENDLY_Gor|r
 step << skip
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gor|r e |cRXP_FRIENDLY_Shin|r
     .turnin 25196 >>Entregue Barreira Dranosh'ar
@@ -2750,7 +2750,7 @@ step
 step << skip
     .goto 1411,44.90,14.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Shin|r
-    .gossipoption 112089 >>Fale com |cRXP_FRIENDLY_Shin|r
+    .gossipoption 112089 >> Fale com |cRXP_FRIENDLY_Shin|r
     .target Shin Stonepillar
 step << skip
     .goto 1411,52.47,16.47
@@ -2823,7 +2823,7 @@ step
     #xprate <1.2
     #optional
     #completewith FizzledTurnin
-    .deathskip >>Morra e reviva no |cRXP_FRIENDLY_Anjo da Cura|r
+    .deathskip >> Morra e reviva no |cRXP_FRIENDLY_Anjo da Cura|r
     .isQuestComplete 25236
 step
     #xprate <1.2

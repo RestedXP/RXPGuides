@@ -153,7 +153,7 @@ step
 step
 	#completewith next
     --#title |cFFFCDC00Jump down|r
-    .goto 378,60.19,19.35,6 >>|cRXP_WARN_Saltar|r
+    .goto 378,60.19,19.35,6 >> |cRXP_WARN_Saltar|r
 step
     .goto 378,59.67,19.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Mestre Shang Xi|r
@@ -221,7 +221,7 @@ step
 	#completewith next
     --#title |cFFFCDC00Enter the cave|r
     .goto 378,57.21,31.04,30,0
-    .goto 378,57.63,35.20,10 >>Entre na caverna
+    .goto 378,57.63,35.20,10 >> Entre na caverna
 	.timer 87,Encenação na Caverna
 step
     .goto 378,57.89,36.55
@@ -315,7 +315,7 @@ step
 	.target +Master Shang Xi
 step
    --#title |cFFFCDC00Enter the cave|r
-    .goto 378,41.09,24.83,10 >>Entre na caverna
+    .goto 378,41.09,24.83,10 >> Entre na caverna
     .isOnQuest 29420
 step
     .goto 378,40.75,23.86,10,0
@@ -389,7 +389,7 @@ step
     .goto 378,50.12,38.94,15,0
     .goto 378,50.32,37.48,20,0
     .goto 378,51.58,40.46
-    .subzone 5820 >>Vá para o |cRXP_WARN_Temple of Cinco Dawns|r
+    .subzone 5820 >> Vá para o |cRXP_WARN_Temple of Cinco Dawns|r
 step
     .goto 378,51.41,46.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Mestre Shang Xi|r
@@ -411,7 +411,7 @@ step
     .goto 378,57.12,46.63,10,0
     .goto 378,63.12,41.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Cortador Dewei|r
-    .train 2366 >>Aprenda Herborismo
+    .train 2366 >> Aprenda Herborismo
     .target Whittler Dewei
     .skipgossipid 112959
     .skipgossipid 130364
@@ -420,7 +420,7 @@ step
     .isOnQuest 29521
     .goto 378,63.12,41.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Cortador Dewei|r
-    .train 2575 >>Aprenda Mineração
+    .train 2575 >> Aprenda Mineração
 	.target Whittler Dewei
     .skipgossipid 130364
     .skipgossipid 112912
@@ -454,7 +454,7 @@ step
     .isQuestNotComplete 29663
     #label JumpOnPole
     .goto 378,63.37,45.17
-	.vehicle >>Clique num |cRXP_FRIENDLY_Mastro de Equilíbrio|r |cRXP_WARN_Enquanto você não está na água ou é um sapo|r
+	.vehicle >> Clique num |cRXP_FRIENDLY_Mastro de Equilíbrio|r |cRXP_WARN_Enquanto você não está na água ou é um sapo|r
 step
     #label RingTrainingBell
     .goto 378,61.41,47.81
@@ -618,7 +618,7 @@ step
     .complete 29770,3 --3/3 Pilfered Pumpkin
 step
 	.isOnQuest 29770
-    .goto 378,77.05,71.02,10 >>Entre na caverna
+    .goto 378,77.05,71.02,10 >> Entre na caverna
 step
 	#label Carrots
 	.goto 378,74.70,74.76,0
@@ -638,7 +638,7 @@ step
 	.mob Plump Carrotcruncher
 step
 	.isOnQuest 29770
-    .goto 378,74.99,69.42,10 >>Saia da caverna
+    .goto 378,74.99,69.42,10 >> Saia da caverna
 step
 	.goto 378,77.85,71.75,0
     .goto 378,74.73,67.2,15,0
@@ -852,7 +852,7 @@ step
 	.isOnQuest 29779
     .goto 378,29.28,39.98,15,0
     .goto 378,27.42,36.25,30,0
-    .goto 378,26.42,33.68,30 >>Voe para |cRXP_WARN_Jade Pilar|r
+    .goto 378,26.42,33.68,30 >> Voe para |cRXP_WARN_Jade Pilar|r
 step
 	#completewith RukRuk
 	>>Mate os |cRXP_ENEMY_Hozen Fe-Feng|r
@@ -947,13 +947,13 @@ step
 	#sticky
 	#label Temple2
 	#requires Temple1
-    .goto 378,26.64,66.63,10 >>Corra entre os conjuntos de escadas depois que os ventos diminuem pela primeira vez
+    .goto 378,26.64,66.63,10 >> Corra entre os conjuntos de escadas depois que os ventos diminuem pela primeira vez
 	.isOnQuest 29785
 step
 	#sticky
 	#label Temple3
 	#requires Temple2
-    .goto 378,26.64,66.63,10 >>Corra até |cRXP_FRIENDLY_Dafeng|r depois que os ventos da próxima sala diminuem
+    .goto 378,26.64,66.63,10 >> Corra até |cRXP_FRIENDLY_Dafeng|r depois que os ventos da próxima sala diminuem
 	.isOnQuest 29785
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dafeng|r e |cRXP_FRIENDLY_Aysa|r
@@ -1332,7 +1332,7 @@ step
 	.target Ji Firepaw
 step
     #completewith next
-    .hs >>Use sua Pedra de Retorno para |cRXP_WARN_the Temple of Cinco Dawns|r
+    .hs >> Use sua Pedra de Retorno para |cRXP_WARN_the Temple of Cinco Dawns|r
 step
     .goto 378,51.45,48.28
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Spirit of Shang Xi|r e selecione sua Facção
@@ -1372,12 +1372,12 @@ step <<skip
 step
     .zoneskip 84
     #completewith next
-    .goto 85,49.87,75.52,20 >>Entre em Grommash Segurar
+    .goto 85,49.87,75.52,20 >> Entre em Grommash Segurar
 step
     .zoneskip 84
     .goto 85,48.76,70.77
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Garrosh Grito Infernal|r
-    .turnin 31012 >>Entregue Entrando para a Horda
+    .turnin 31012 >> Entregue Entrando para a Horda
     .target Garrosh Hellscream
     .neutralzonefinished
 step

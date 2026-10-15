@@ -10,7 +10,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Nagrand,50,50
-    .zone Nagrand >>Vá para Nagrand
+    .zone Nagrand >> Vá para Nagrand
 step
     #hidewindow
     +teste
@@ -30,7 +30,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Nagrand,50,50
-    .zone Nagrand >>Vá para Nagrand
+    .zone Nagrand >> Vá para Nagrand
 step
     #hidewindow
     +teste
@@ -50,7 +50,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Nagrand,50,50
-    .zone Nagrand >>Vá para Nagrand
+    .zone Nagrand >> Vá para Nagrand
 step
     #hidewindow
     +teste
@@ -69,7 +69,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Netherstorm,50,50
-    .zone Netherstorm >>Vá para Eternévoa
+    .zone Netherstorm >> Vá para Eternévoa
 step
     #hidewindow
     +teste
@@ -88,7 +88,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Netherstorm,50,50
-    .zone Netherstorm >>Vá para Eternévoa
+    .zone Netherstorm >> Vá para Eternévoa
 step
     #hidewindow
     +teste
@@ -107,7 +107,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Netherstorm,50,50
-    .zone Netherstorm >>Vá para Eternévoa
+    .zone Netherstorm >> Vá para Eternévoa
 step
     #hidewindow
     +teste
@@ -127,7 +127,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Terokkar Forest,50,50
-    .zone Terokkar Forest >>Vá para a Mata Terokkar
+    .zone Terokkar Forest >> Vá para a Mata Terokkar
 step
     #hidewindow
     +teste
@@ -146,7 +146,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Terokkar Forest,50,50
-    .zone Terokkar Forest >>Vá para a Mata Terokkar
+    .zone Terokkar Forest >> Vá para a Mata Terokkar
 step
     #hidewindow
     +teste
@@ -165,7 +165,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Terokkar Forest,50,50
-    .zone Terokkar Forest >>Vá para a Mata Terokkar
+    .zone Terokkar Forest >> Vá para a Mata Terokkar
 step
     #hidewindow
     +teste
@@ -184,7 +184,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Shadowmoon Valley,50,50
-    .zone Shadowmoon Valley >>Vá para Vale da Lua Negra
+    .zone Shadowmoon Valley >> Vá para Vale da Lua Negra
 step
     #hidewindow
     +teste
@@ -203,7 +203,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Shadowmoon Valley,50,50
-    .zone Shadowmoon Valley >>Vá para Vale da Lua Negra
+    .zone Shadowmoon Valley >> Vá para Vale da Lua Negra
 step
     #hidewindow
     +teste
@@ -222,7 +222,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Shadowmoon Valley,50,50
-    .zone Shadowmoon Valley >>Vá para Vale da Lua Negra
+    .zone Shadowmoon Valley >> Vá para Vale da Lua Negra
 step
     #hidewindow
     +teste
@@ -241,7 +241,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Zangarmarsh,50,50
-    .zone Zangarmarsh >>Vá para Pântano Zíngaro
+    .zone Zangarmarsh >> Vá para Pântano Zíngaro
 step
     +Objetivo obrigatório, não remova esta linha
     .loop @20,Zangarmarsh,77.9,91.1,86.4,86.5,82.6,82.2,84.5,79.6,82.0,69.6,81.8,59.0,89.2,38.0,85.5,26.7,84.4,42.4,81.8,44.2,78.2,39.7,81.7,34.5,79.9,28.0,70.9,33.6,69.9,43.6,60.9,32.6,49.1,29.0,40.0,31.9,34.6,16.3,31.0,21.7,19.9,15.4,19.6,4.8,15.9,14.3,14.7,29.5,11.5,38.8,8.1,51.5,11.1,65.9,16.6,57.9,18.4,70.5,25.4,54.9,31.3,66.6,27.5,38.8,36.9,34.1,37.0,62.9,57.1,69.9,70.1,69.5,67.1,78.6,76.1,90.3,77.9,91.1
@@ -259,7 +259,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Zangarmarsh,50,50
-    .zone Zangarmarsh >>Vá para Pântano Zíngaro
+    .zone Zangarmarsh >> Vá para Pântano Zíngaro
 step
     +Objetivo obrigatório, não remova esta linha
     .loop @20,Zangarmarsh,84.6,88.7,85.5,79.1,83.1,70.5,87.4,46.9,80.3,36.4,87.1,35.2,84.2,28.7,75.5,29.3,71.5,34.5,56.2,33.5,56.0,43.7,46.3,37.9,34.5,16.5,33.2,21.6,18.8,14.7,19.0,2.7,14.2,20.7,14.3,31.9,7.6,51.9,11.2,62.0,17.3,68.3,27.5,66.2,30.7,59.7,40.4,66.9,48.9,66.8,67.1,76.4,68.9,86.7,76.8,91.8,84.6,88.7
@@ -277,7 +277,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Zangarmarsh,50,50
-    .zone Zangarmarsh >>Vá para Pântano Zíngaro
+    .zone Zangarmarsh >> Vá para Pântano Zíngaro
 step
     +Objetivo obrigatório, não remova esta linha
     .loop @20,Zangarmarsh,77.9,91.1,85.0,85.2,82.6,82.2,84.5,79.6,82.0,69.6,81.8,59.0,89.4,37.6,85.7,28.8,84.4,42.4,81.8,44.2,78.2,39.7,81.7,34.5,80.3,29.8,71.6,35.6,69.9,43.6,61.0,33.9,49.0,30.6,40.0,31.9,34.8,17.7,31.0,21.7,19.9,15.4,19.6,2.4,15.9,14.3,14.7,29.5,11.5,38.8,9.1,51.7,11.1,65.9,16.6,57.9,18.4,70.5,25.4,54.9,31.3,66.6,27.5,36.6,36.9,34.1,37.5,62.3,57.1,69.9,70.1,69.5,67.1,78.6,76.1,90.3,77.9,91.1
@@ -295,7 +295,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Hellfire Peninsula,50,50
-    .zone Hellfire Peninsula >>Vá para Península Fogo do Inferno
+    .zone Hellfire Peninsula >> Vá para Península Fogo do Inferno
 step
     #hidewindow
     +teste
@@ -314,7 +314,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Hellfire Peninsula,50,50
-    .zone Hellfire Peninsula >>Vá para Península Fogo do Inferno
+    .zone Hellfire Peninsula >> Vá para Península Fogo do Inferno
 step
     #hidewindow
     +teste
@@ -333,7 +333,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Hellfire Peninsula,50,50
-    .zone Hellfire Peninsula >>Vá para a Península Fogo do Inferno
+    .zone Hellfire Peninsula >> Vá para a Península Fogo do Inferno
 step
     #hidewindow
     +teste
@@ -352,7 +352,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Blade's Edge Mountains,50,50
-    .zone Blade's Edge Mountains >>Vá para Montanhas da Lâmina Afiada
+    .zone Blade's Edge Mountains >> Vá para Montanhas da Lâmina Afiada
 step
     #hidewindow
     +teste
@@ -371,7 +371,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Blade's Edge Mountains,50,50
-    .zone Blade's Edge Mountains >>Vá para Montanhas da Lâmina Afiada
+    .zone Blade's Edge Mountains >> Vá para Montanhas da Lâmina Afiada
 step
     #hidewindow
     +teste
@@ -390,7 +390,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Blade's Edge Mountains,50,50
-    .zone Blade's Edge Mountains >>Cabeça para Montanhas da Lâmina Afiada
+    .zone Blade's Edge Mountains >> Cabeça para Montanhas da Lâmina Afiada
 step
     #hidewindow
     +teste
@@ -539,7 +539,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Nagrand,50,50
-    .zone Nagrand >>Cabeça para Nagrand
+    .zone Nagrand >> Cabeça para Nagrand
 step
     #hidewindow
     +area1
@@ -846,7 +846,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #wotlk
-#group Cultivo em Azeroth
+#group Coleta em Azeroth
 #loop
 #hidewindow
 #subgroup Cratera Un'Goro
@@ -855,7 +855,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Un'Goro Crater,50,50
-    .zone Un'Goro Crater >>Vá para a Cratera Un'Goro
+    .zone Un'Goro Crater >> Vá para a Cratera Un'Goro
 step
     #hidewindow
     +teste
@@ -874,7 +874,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Un'Goro Crater,50,50
-    .zone Un'Goro Crater >>Vá para a Cratera Un'Goro
+    .zone Un'Goro Crater >> Vá para a Cratera Un'Goro
 step
     #hidewindow
     +teste
@@ -893,7 +893,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Un'Goro Crater,50,50
-    .zone Un'Goro Crater >>Cabeça para Cratera Un'Goro
+    .zone Un'Goro Crater >> Cabeça para Cratera Un'Goro
 step
     #hidewindow
     +teste
@@ -906,13 +906,13 @@ RXPGuides.RegisterGuide([[
 #group Coleta em Azeroth
 #loop
 #hidewindow
-#subgroup Hibérnia
+#subgroup Hibernal
 #name Mineração9
 #displayname Mineração
 step
     #sticky
     .waypoint Winterspring,50,50
-    .zone Winterspring >>Cabeça para Hibérnia
+    .zone Winterspring >> Cabeça para Hibérnia
 step
     #hidewindow
     +teste
@@ -931,7 +931,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Winterspring,50,50
-    .zone Winterspring >>Vá para Hibernal
+    .zone Winterspring >> Vá para Hibernal
 step
     #hidewindow
     +teste
@@ -950,7 +950,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Winterspring,50,50
-    .zone Winterspring >>Vá para Hibernal
+    .zone Winterspring >> Vá para Hibernal
 step
     #hidewindow
     +teste
@@ -969,7 +969,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Borean Tundra,50,50
-    .zone Borean Tundra >>Vá para Tundra Boreana
+    .zone Borean Tundra >> Vá para Tundra Boreana
 step
     #hidewindow
     +teste
@@ -988,7 +988,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Borean Tundra,50,50
-    .zone Borean Tundra >>Vá para Tundra Boreana
+    .zone Borean Tundra >> Vá para Tundra Boreana
 step
     #hidewindow
     +teste
@@ -1007,7 +1007,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Borean Tundra,50,50
-    .zone Borean Tundra >>Vá para Tundra Boreana
+    .zone Borean Tundra >> Vá para Tundra Boreana
 step
     #hidewindow
     +teste
@@ -1026,7 +1026,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Borean Tundra,50,50
-    .zone Borean Tundra >>Vá para Tundra Boreana
+    .zone Borean Tundra >> Vá para Tundra Boreana
 step
     #hidewindow
     +teste
@@ -1045,7 +1045,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Borean Tundra,50,50
-    .zone Borean Tundra >>Vá para Tundra Boreana
+    .zone Borean Tundra >> Vá para Tundra Boreana
 step
     #hidewindow
     +teste
@@ -1064,7 +1064,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Borean Tundra,50,50
-    .zone Borean Tundra >>Vá para Tundra Boreana
+    .zone Borean Tundra >> Vá para Tundra Boreana
 step
     #hidewindow
     +area1
@@ -1087,7 +1087,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Sholazar Basin,50,50
-    .zone Borean Tundra >>Vá para Bacia Sholazar
+    .zone Borean Tundra >> Vá para Bacia Sholazar
 step
     #hidewindow
     +area1
@@ -1110,7 +1110,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Sholazar Basin,50,50
-    .zone Sholazar Basin >>Vá para Bacia Sholazar
+    .zone Sholazar Basin >> Vá para Bacia Sholazar
 step
     #hidewindow
     +teste
@@ -1129,7 +1129,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Sholazar Basin,50,50
-    .zone Sholazar Basin >>Vá para Bacia Sholazar
+    .zone Sholazar Basin >> Vá para Bacia Sholazar
 step
     #hidewindow
     +teste
@@ -1148,7 +1148,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Sholazar Basin,50,50
-    .zone Sholazar Basin >>Vá para Bacia Sholazar
+    .zone Sholazar Basin >> Vá para Bacia Sholazar
 step
     #hidewindow
     +teste
@@ -1167,7 +1167,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Sholazar Basin,50,50
-    .zone Sholazar Basin >>Vá para Bacia Sholazar
+    .zone Sholazar Basin >> Vá para Bacia Sholazar
 step
     #hidewindow
     +teste
@@ -1186,7 +1186,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Dragonblight,50,50
-    .zone Dragonblight >>Vá para Ermo das Serpes
+    .zone Dragonblight >> Vá para Ermo das Serpes
 step
     #hidewindow
     +teste
@@ -1205,7 +1205,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Dragonblight,50,50
-    .zone Dragonblight >>Vá para Ermo das Serpes
+    .zone Dragonblight >> Vá para Ermo das Serpes
 step
     #hidewindow
     +teste
@@ -1224,7 +1224,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Dragonblight,50,50
-    .zone Dragonblight >>Vá para Ermo das Serpes
+    .zone Dragonblight >> Vá para Ermo das Serpes
 step
     #hidewindow
     +teste
@@ -1243,7 +1243,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Grizzly Hills,50,50
-    .zone Grizzly Hills >>Vá para Serra Gris
+    .zone Grizzly Hills >> Vá para Serra Gris
 step
     #hidewindow
     +teste
@@ -1262,7 +1262,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Grizzly Hills,50,50
-    .zone Grizzly Hills >>Vá para Serra Gris
+    .zone Grizzly Hills >> Vá para Serra Gris
 step
     #hidewindow
     +teste
@@ -1281,7 +1281,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Howling Fjord,50,50
-    .zone Howling Fjord >>Vá para Fiorde Uivante
+    .zone Howling Fjord >> Vá para Fiorde Uivante
 step
     #hidewindow
     +teste
@@ -1300,7 +1300,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Howling Fjord,50,50
-    .zone Howling Fjord >>Vá para Fiorde Uivante
+    .zone Howling Fjord >> Vá para Fiorde Uivante
 step
     #hidewindow
     +teste
@@ -1319,7 +1319,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Howling Fjord,50,50
-    .zone Howling Fjord >>Vá para Fiorde Uivante
+    .zone Howling Fjord >> Vá para Fiorde Uivante
 step
     #hidewindow
     +teste
@@ -1338,7 +1338,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Howling Fjord,50,50
-    .zone Howling Fjord >>Vá para Fiorde Uivante
+    .zone Howling Fjord >> Vá para Fiorde Uivante
 step
     #hidewindow
     +teste
@@ -1357,7 +1357,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Howling Fjord,50,50
-    .zone Howling Fjord >>Vá para Fiorde Uivante
+    .zone Howling Fjord >> Vá para Fiorde Uivante
 step
     #hidewindow
     +teste
@@ -1376,7 +1376,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Zul'Drak,50,50
-    .zone Zul'Drak >>Vá para Zul'Drak
+    .zone Zul'Drak >> Vá para Zul'Drak
 step
     #hidewindow
     +teste
@@ -1395,7 +1395,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Zul'Drak,50,50
-    .zone Zul'Drak >>Vá para Zul'Drak
+    .zone Zul'Drak >> Vá para Zul'Drak
 step
     #hidewindow
     +teste
@@ -1414,7 +1414,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Zul'Drak,50,50
-    .zone Zul'Drak >>Vá para Zul'Drak
+    .zone Zul'Drak >> Vá para Zul'Drak
 step
     #hidewindow
     +teste
@@ -1433,7 +1433,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Zul'Drak,50,50
-    .zone Zul'Drak >>Vá para Zul'Drak
+    .zone Zul'Drak >> Vá para Zul'Drak
 step
     #hidewindow
     +teste
@@ -1452,7 +1452,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint The Storm Peaks,50,50
-    .zone The Storm Peaks >>Cabeça para Picos Tempestuosos
+    .zone The Storm Peaks >> Cabeça para Picos Tempestuosos
 step
     #hidewindow
     +teste
@@ -1471,7 +1471,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint The Storm Peaks,50,50
-    .zone The Storm Peaks >>Cabeça para Picos Tempestuosos
+    .zone The Storm Peaks >> Cabeça para Picos Tempestuosos
 step
     #hidewindow
     +teste
@@ -1490,7 +1490,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint The Storm Peaks,50,50
-    .zone The Storm Peaks >>Cabeça para Picos Tempestuosos
+    .zone The Storm Peaks >> Cabeça para Picos Tempestuosos
 step
     #hidewindow
     +teste
@@ -1509,7 +1509,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint The Storm Peaks,50,50
-    .zone The Storm Peaks >>Cabeça para Picos Tempestuosos
+    .zone The Storm Peaks >> Cabeça para Picos Tempestuosos
 step
     #hidewindow
     +teste
@@ -1529,7 +1529,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint The Storm Peaks,50,50
-    .zone The Storm Peaks >>Vá para Picos Tempestuosos
+    .zone The Storm Peaks >> Vá para Picos Tempestuosos
 step
     #hidewindow
     +teste
@@ -1548,7 +1548,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint The Storm Peaks,50,50
-    .zone The Storm Peaks >>Cabeça para Picos Tempestuosos
+    .zone The Storm Peaks >> Cabeça para Picos Tempestuosos
 step
     #hidewindow
     +teste
@@ -1567,7 +1567,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint The Storm Peaks,50,50
-    .zone The Storm Peaks >>Cabeça para Picos Tempestuosos
+    .zone The Storm Peaks >> Cabeça para Picos Tempestuosos
 step
     #hidewindow
     +teste
@@ -1586,7 +1586,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint The Storm Peaks,50,50
-    .zone The Storm Peaks >>Cabeça para Picos Tempestuosos
+    .zone The Storm Peaks >> Cabeça para Picos Tempestuosos
 step
     #hidewindow
     +teste
@@ -1605,7 +1605,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Icecrown,50,50
-    .zone Icecrown >>Cabeça para Coroa de Gelo
+    .zone Icecrown >> Cabeça para Coroa de Gelo
 step
     #hidewindow
     +teste
@@ -1624,7 +1624,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Wintergrasp,50,50
-    .zone Wintergrasp >>Cabeça para Wintergrasp
+    .zone Wintergrasp >> Cabeça para Wintergrasp
 step
     #hidewindow
     +teste
@@ -1643,7 +1643,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Borean Tundra,50,50
-    .zone Borean Tundra >>Vá para Tundra Boreana
+    .zone Borean Tundra >> Vá para Tundra Boreana
 step
     #hidewindow
     +teste
@@ -1662,7 +1662,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Borean Tundra,50,50
-    .zone Borean Tundra >>Vá para Tundra Boreana
+    .zone Borean Tundra >> Vá para Tundra Boreana
 step
     #hidewindow
     +teste
@@ -1681,7 +1681,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Borean Tundra,50,50
-    .zone Borean Tundra >>Vá para Tundra Boreana
+    .zone Borean Tundra >> Vá para Tundra Boreana
 step
     #hidewindow
     +teste
@@ -1700,7 +1700,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Sholazar Basin,50,50
-    .zone Sholazar Basin >>Vá para Bacia Sholazar
+    .zone Sholazar Basin >> Vá para Bacia Sholazar
 step
     #hidewindow
     +teste
@@ -1719,7 +1719,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Sholazar Basin,50,50
-    .zone Sholazar Basin >>Vá para Bacia Sholazar
+    .zone Sholazar Basin >> Vá para Bacia Sholazar
 step
     #hidewindow
     +teste
@@ -1738,7 +1738,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Sholazar Basin,50,50
-    .zone Sholazar Basin >>Vá para Bacia Sholazar
+    .zone Sholazar Basin >> Vá para Bacia Sholazar
 step
     #hidewindow
     +teste
@@ -1757,7 +1757,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Dragonblight,50,50
-    .zone Dragonblight >>Vá para Ermo das Serpes
+    .zone Dragonblight >> Vá para Ermo das Serpes
 step
     #hidewindow
     +teste
@@ -1776,7 +1776,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Dragonblight,50,50
-    .zone Dragonblight >>Vá para Ermo das Serpes
+    .zone Dragonblight >> Vá para Ermo das Serpes
 step
     #hidewindow
     +teste
@@ -1795,7 +1795,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Dragonblight,50,50
-    .zone Dragonblight >>Vá para Ermo das Serpes
+    .zone Dragonblight >> Vá para Ermo das Serpes
 step
     #hidewindow
     +teste
@@ -1814,7 +1814,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Howling Fjord,50,50
-    .zone Howling Fjord >>Vá para Fiorde Uivante
+    .zone Howling Fjord >> Vá para Fiorde Uivante
 step
     #hidewindow
     +teste
@@ -1833,7 +1833,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Howling Fjord,50,50
-    .zone Howling Fjord >>Vá para Fiorde Uivante
+    .zone Howling Fjord >> Vá para Fiorde Uivante
 step
     #hidewindow
     +teste
@@ -1852,7 +1852,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Howling Fjord,50,50
-    .zone Howling Fjord >>Vá para Fiorde Uivante
+    .zone Howling Fjord >> Vá para Fiorde Uivante
 step
     #hidewindow
     +teste
@@ -1871,7 +1871,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Grizzly Hills,50,50
-    .zone Grizzly Hills >>Vá para Serra Gris
+    .zone Grizzly Hills >> Vá para Serra Gris
 step
     #hidewindow
     +teste
@@ -1890,7 +1890,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Grizzly Hills,50,50
-    .zone Grizzly Hills >>Vá para Serra Gris
+    .zone Grizzly Hills >> Vá para Serra Gris
 step
     #hidewindow
     +teste
@@ -1909,7 +1909,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Grizzly Hills,50,50
-    .zone Grizzly Hills >>Vá para Serra Gris
+    .zone Grizzly Hills >> Vá para Serra Gris
 step
     #hidewindow
     +teste
@@ -1928,7 +1928,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Zul'Drak,50,50
-    .zone Zul'Drak >>Vá para Zul'Drak
+    .zone Zul'Drak >> Vá para Zul'Drak
 step
     #hidewindow
     +teste
@@ -1947,7 +1947,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Zul'Drak,50,50
-    .zone Zul'Drak >>Vá para Zul'Drak
+    .zone Zul'Drak >> Vá para Zul'Drak
 step
     #hidewindow
     +teste
@@ -1966,7 +1966,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Zul'Drak,50,50
-    .zone Zul'Drak >>Vá para Zul'Drak
+    .zone Zul'Drak >> Vá para Zul'Drak
 step
     #hidewindow
     +teste
@@ -1985,7 +1985,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint The Storm Peaks,50,50
-    .zone The Storm Peaks >>Vá para Picos Tempestuosos
+    .zone The Storm Peaks >> Vá para Picos Tempestuosos
 step
     #hidewindow
     +teste
@@ -2004,7 +2004,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint The Storm Peaks,50,50
-    .zone The Storm Peaks >>Vá para os Picos Tempestuosos
+    .zone The Storm Peaks >> Vá para os Picos Tempestuosos
 step
     #hidewindow
     +teste
@@ -2023,7 +2023,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint The Storm Peaks,50,50
-    .zone The Storm Peaks >>Vá para os Picos Tempestuosos
+    .zone The Storm Peaks >> Vá para os Picos Tempestuosos
 step
     #hidewindow
     +teste
@@ -2042,7 +2042,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Wintergrasp,50,50
-    .zone Wintergrasp >>Vá para Wintergrasp
+    .zone Wintergrasp >> Vá para Wintergrasp
 step
     #hidewindow
     +teste
@@ -2061,7 +2061,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Wintergrasp,50,50
-    .zone Wintergrasp >>Vá para Wintergrasp
+    .zone Wintergrasp >> Vá para Wintergrasp
 step
     #hidewindow
     +teste
@@ -2080,7 +2080,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Wintergrasp,50,50
-    .zone Wintergrasp >>Vá para Wintergrasp
+    .zone Wintergrasp >> Vá para Wintergrasp
 step
     #hidewindow
     +teste
@@ -2099,7 +2099,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Wintergrasp,50,50
-    .zone Wintergrasp >>Vá para Wintergrasp
+    .zone Wintergrasp >> Vá para Wintergrasp
 step
     #hidewindow
     +teste
@@ -2118,7 +2118,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Wintergrasp,50,50
-    .zone Wintergrasp >>Vá para Wintergrasp
+    .zone Wintergrasp >> Vá para Wintergrasp
 step
     #hidewindow
     +teste
@@ -2137,7 +2137,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Wintergrasp,50,50
-    .zone Wintergrasp >>Vá para Wintergrasp
+    .zone Wintergrasp >> Vá para Wintergrasp
 step
     #hidewindow
     +teste
@@ -2157,7 +2157,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Wintergrasp,50,50
-    .zone Wintergrasp >>Vá para Wintergrasp
+    .zone Wintergrasp >> Vá para Wintergrasp
 step
     #hidewindow
     +teste
@@ -2176,7 +2176,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Wintergrasp,50,50
-    .zone Wintergrasp >>Vá para Wintergrasp
+    .zone Wintergrasp >> Vá para Wintergrasp
 step
     #hidewindow
     +teste
@@ -2195,7 +2195,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Icecrown,50,50
-    .zone Icecrown >>Vá para Coroa de Gelo
+    .zone Icecrown >> Vá para Coroa de Gelo
 step
     #hidewindow
     +teste
@@ -2214,7 +2214,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Icecrown,50,50
-    .zone Icecrown >>Vá para Coroa de Gelo
+    .zone Icecrown >> Vá para Coroa de Gelo
 step
     #hidewindow
     +teste
@@ -2233,7 +2233,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Icecrown,50,50
-    .zone Icecrown >>Vá para Coroa de Gelo
+    .zone Icecrown >> Vá para Coroa de Gelo
 step
     #hidewindow
     +teste

@@ -146,37 +146,37 @@ step
 step << Priest
     .goto 62,50.647,19.840
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Irlara Luzalbor|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Irlara Morninglight
 step << Hunter
     .goto 62,50.352,19.126
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Lanla Frondarcos|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Lanla Bowleaf
 step << Mage
     .goto 62,50.465,19.210
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Lareth Beld|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Lareth Beld
 step << Warlock
     .goto 62,50.487,19.240
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Laera Dubois|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Laera Dubois
 step << Rogue
     .goto 62,50.684,18.509
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kenral Noctéolas|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Kenral Nightwind
 step << Warrior
     .goto 62,50.831,18.787
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Sentinela Lunala|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Sentinel Moonwing
 step << Druid
     .goto 62,50.120,19.495
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dular|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Dular
 step
     .goto 62,52.96,25.46,40,0
@@ -253,7 +253,7 @@ step
 	.mob Vile Corruptor
 step
     #completewith next
-    .hs >>Vá para Lor'Danel
+    .hs >> Vá para Lor'Danel
     .cooldown item,6948,>2
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Xafetim Manigiro|r e |cRXP_FRIENDLY_Tharnariun Tratárvore|r
@@ -387,7 +387,7 @@ step
 step
     #completewith next
     .goto 62,42.938,39.031
-    .aura 64198 >>Clique em |cRXP_PICK_Grovekeeper's Incenso|r no chão
+    .aura 64198 >> Clique em |cRXP_PICK_Grovekeeper's Incenso|r no chão
     .skipgossip
 step
     .goto 62,43.683,39.926
@@ -542,15 +542,15 @@ step
 step
     #completewith next
     .goto 62,38.77,60.82,25,0
-    .goto 62,39.66,62.12,30 >>Vá para o altar no topo da pequena colina
+    .goto 62,39.66,62.12,30 >> Vá para o altar no topo da pequena colina
 step
     .goto 62,39.66,62.12
-    .cast 65361 >>|cRXP_WARN_Use the|r |T135839:0|t[Totem Reconfortante Energizado] |cRXP_WARN_next to the altar then defend it|r
+    .cast 65361 >> |cRXP_WARN_Use the|r |T135839:0|t[Totem Reconfortante Energizado] |cRXP_WARN_next to the altar then defend it|r
     .use 46546
     .isOnQuest 13580
 step
     .goto 62,39.66,62.12
-    .use 46546 >>|cRXP_WARN_Defend the|r |T135839:0|t[Totem Reconfortante Energizado] |cRXP_WARN_against the attackers|r
+    .use 46546 >> |cRXP_WARN_Defend the|r |T135839:0|t[Totem Reconfortante Energizado] |cRXP_WARN_against the attackers|r
     .complete 13580,1 --|1/1 Ritual of Soothing complete
     .mob Fire Elemental Remnant
     .mob Fire Elemental Rager
@@ -594,7 +594,7 @@ step
 step
 #completewith next
     .goto 62,46.620,54.478,25,0
-    .goto 62,47.366,55.964,25 >>Vá para a Caverna Quebraterra
+    .goto 62,47.366,55.964,25 >> Vá para a Caverna Quebraterra
     .subzoneskip 4708
 step
     .goto 62,49.003,57.076
@@ -619,8 +619,8 @@ step
     .goto 62/1,192.60001,5918.10010
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Malfurion Tempesfúria|r
     .target Malfurion Stormrage
-    .turnin 13940 >>Entregue Deixando os Sonhos para Trás
-    .accept 13588 >>Aceite O Olho de Todas as Tempestades
+    .turnin 13940 >> Entregue Deixando os Sonhos para Trás
+    .accept 13588 >> Aceite O Olho de Todas as Tempestades
 step
     .goto 62,43.555,53.701
     >>Fale com |cRXP_FRIENDLY_Thessera|r para tomar o voo, use sua primeira habilidade para matar os |cRXP_ENEMY_Twilight Riders|r e o |cRXP_ENEMY_Portal do Crepúsculo|r no meio
@@ -640,7 +640,7 @@ step
 ----
 step
     #completewith next
-    .hs >>Use sua Pedra de Retorno para ir a Lor'danel
+    .hs >> Use sua Pedra de Retorno para ir a Lor'danel
 step
 #sticky
 #label glynda2
@@ -677,37 +677,37 @@ step << skip--terrible xp/hr
 step << Priest
     .goto 62,50.647,19.840
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Irlara Luzalbor|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Irlara Morninglight
 step << Hunter
     .goto 62,50.352,19.126
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Lanla Frondarcos|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Lanla Bowleaf
 step << Mage
     .goto 62,50.465,19.210
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Lareth Beld|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Lareth Beld
 step << Warlock
     .goto 62,50.487,19.240
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Laera Dubois|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Laera Dubois
 step << Rogue
     .goto 62,50.684,18.509
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kenral Noctéolas|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Kenral Nightwind
 step << Warrior
     .goto 62,50.831,18.787
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Sentinela Lunala|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Sentinel Moonwing
 step << Druid
     .goto 62,50.120,19.495
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dular|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Dular
 step
     #optional
@@ -779,7 +779,7 @@ step
 #completewith escort1a
     .goto 62,62.143,9.604,0
     >>Mate os |cRXP_ENEMY_Horde Enforcers|r e os |cRXP_ENEMY_Shatterspear Mystics|r
-    .use 44999 >>|cRXP_WARN_Use the|r |T135433:0|t[Sentinela Tocha] |cRXP_WARN_on the |cRXP_PICK_Shatterspear Armaments|r around the Horda camp|r
+    .use 44999 >> |cRXP_WARN_Use the|r |T135433:0|t[Sentinela Tocha] |cRXP_WARN_on the |cRXP_PICK_Shatterspear Armaments|r around the Horda camp|r
     .complete 13507,1 --|6/6 Horde Enforcer slain
     .mob +Horde Enforcer
     .complete 13507,2 --|6/6 Shatterspear Mystic slain
@@ -814,7 +814,7 @@ step
     .goto 62,61.720,11.021,30,0
     .goto 62,62.143,9.604,0
     >>Mate os |cRXP_ENEMY_Horde Enforcers|r e os |cRXP_ENEMY_Shatterspear Mystics|r
-    .use 44999 >>|cRXP_WARN_Use the|r |T135433:0|t[Sentinela Tocha] |cRXP_WARN_on the |cRXP_PICK_Shatterspear Armaments|r around the Horda camp|r
+    .use 44999 >> |cRXP_WARN_Use the|r |T135433:0|t[Sentinela Tocha] |cRXP_WARN_on the |cRXP_PICK_Shatterspear Armaments|r around the Horda camp|r
     .complete 13507,1 --|6/6 Horde Enforcer slain
     .mob +Horde Enforcer
     .complete 13507,2 --|6/6 Shatterspear Mystic slain
@@ -847,7 +847,7 @@ step
 #sticky
 #label sheya
     .goto 62,61.233,20.367
-    .use 44995 >>|cRXP_WARN_Use the|r |T136021:0|t[Lança Dríade] |cRXP_WARN_to kill|r |cRXP_ENEMY_Sheyla Tempestece|r
+    .use 44995 >> |cRXP_WARN_Use the|r |T136021:0|t[Lança Dríade] |cRXP_WARN_to kill|r |cRXP_ENEMY_Sheyla Tempestece|r
     .complete 13512,2 --|1/1 Sheya Stormweaver slain
     .mob Sheya Stormweaver
 step
@@ -871,7 +871,7 @@ step
     .mob Teegan Holloway
 step
     .goto 62,56.801,25.781
-    .use 44995 >>|cRXP_WARN_Use the|r |T136021:0|t[Lança Dríade] |cRXP_WARN_to kill|r |cRXP_ENEMY_Lorenth Trovejada|r
+    .use 44995 >> |cRXP_WARN_Use the|r |T136021:0|t[Lança Dríade] |cRXP_WARN_to kill|r |cRXP_ENEMY_Lorenth Trovejada|r
     .complete 13512,1 --|1/1 Lorenth Thundercall slain
     .mob Lorenth Thundercall
 step--TODO: Fix this bit
@@ -899,7 +899,7 @@ step
 step
 #completewith next
     .goto 62,69.435,19.546
-    .vehicle >>|cRXP_WARN_Monte o|r |cRXP_FRIENDLY_Protetor Vingativo|r
+    .vehicle >> |cRXP_WARN_Monte o|r |cRXP_FRIENDLY_Protetor Vingativo|r
     .target Vengeful Protector
 step
     .goto 62,70.684,20.841,0
@@ -915,7 +915,7 @@ step
     .complete 13514,2 --|6/6 Shatterspear Structures destroyed
 step
     .isOnQuest 13514
-    .exitvehicle >>|cRXP_WARN_Saia do|r |cRXP_FRIENDLY_Protetor Vingativo|r
+    .exitvehicle >> |cRXP_WARN_Saia do|r |cRXP_FRIENDLY_Protetor Vingativo|r
 step
     .goto 62,72.263,19.096
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Caçadora Sandrya Luméluna|r
@@ -925,7 +925,7 @@ step
 step
     .isOnQuest 13515
     .goto 62,72.263,19.096
-    .gossip 33178,0 >>Fale com a |cRXP_FRIENDLY_Caçadora Sandrya Luméluna|r para começar o ataque
+    .gossip 33178,0 >> Fale com a |cRXP_FRIENDLY_Caçadora Sandrya Luméluna|r para começar o ataque
     .skipgossip 33178,1
     .target Huntress Sandrya Moonfall
 step
@@ -949,7 +949,7 @@ step
     .turnin 13514 >>Entregue A Ira dos Anciões
 step
     #completewith next
-    .hs >>Use sua Pedra de Retorno para ir a Lor'danel
+    .hs >> Use sua Pedra de Retorno para ir a Lor'danel
 step << skip
     .goto 62,51.004,19.217
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gorbold Manácero|r
@@ -969,37 +969,37 @@ step
 step << Priest
     .goto 62,50.647,19.840
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Irlara Luzalbor|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Irlara Morninglight
 step << Hunter
     .goto 62,50.352,19.126
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Lanla Frondarcos|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Lanla Bowleaf
 step << Mage
     .goto 62,50.465,19.210
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Lareth Beld|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Lareth Beld
 step << Warlock
     .goto 62,50.487,19.240
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Laera Dubois|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Laera Dubois
 step << Rogue
     .goto 62,50.684,18.509
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kenral Noctéolas|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Kenral Nightwind
 step << Warrior
     .goto 62,50.831,18.787
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Sentinela Lunala|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Sentinel Moonwing
 step << Druid
     .goto 62,50.120,19.495
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dular|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Dular
 step
     #optional
@@ -1065,12 +1065,12 @@ step
 step
 #questguide
     .goto 62,40.634,84.297
-    .subzone 449 >>Vá para The Master's Glaive
+    .subzone 449 >> Vá para The Master's Glaive
     .isOnQuest 13892
 step
 #questguide
     #completewith next
-    .cast 65426 >>|cRXP_WARN_Use a|r |T133236:0|t[Estatueta de Pantera] |cRXP_WARN_para se transformar em uma Pantera|r
+    .cast 65426 >> |cRXP_WARN_Use a|r |T133236:0|t[Estatueta de Pantera] |cRXP_WARN_para se transformar em uma Pantera|r
     .use 46696
 step
 #questguide
@@ -1095,7 +1095,7 @@ step
     .goto 62,40.733,85.046,10,0
     .goto 62,39.809,85.356,10,0
     .goto 62,40.101,84.651
-    .use 46696 >>|cRXP_WARN_Use a|r |T133236:0|t[Estatueta de Pantera] |cRXP_WARN_para se transformar em uma Pantera novamente|r
+    .use 46696 >> |cRXP_WARN_Use a|r |T133236:0|t[Estatueta de Pantera] |cRXP_WARN_para se transformar em uma Pantera novamente|r
     >>|cRXP_WARN_Dissimule até a|r |cRXP_ENEMY_Voz da Ruína Trevellion|r |cRXP_WARN_até o topo do andaime. Espere o RP novamente|r
     >>|cRXP_WARN_Evite os |cRXP_ENEMY_Faceless Ones|r pois têm detecção de furtividade|r
     .target Doomspeaker Trevellion
@@ -1129,7 +1129,7 @@ step
 #questguide
 #requires fleetfoot
     .goto 62,45.300,76.734
-    .use 44888 >>|cRXP_WARN_Use o|r |T134189:0|t[Urso's Paw Bundle] |cRXP_WARN_perto da|r |cRXP_PICK_Ancient Urso Estátua|r
+    .use 44888 >> |cRXP_WARN_Use o|r |T134189:0|t[Urso's Paw Bundle] |cRXP_WARN_perto da|r |cRXP_PICK_Ancient Urso Estátua|r
     .complete 13544,1
 step
 #questguide
@@ -1345,7 +1345,7 @@ step
     .complete 13909,1
 step
 #questguide
-    .use 46702 >>|cRXP_WARN_Use o|r |T132997:0|t[Fragmento de Dispositivo Antigo] |cRXP_WARN_para combiná-los no|r |cRXP_LOOT_Dispositivo Antigo com Gavetas|r
+    .use 46702 >> |cRXP_WARN_Use o|r |T132997:0|t[Fragmento de Dispositivo Antigo] |cRXP_WARN_para combiná-los no|r |cRXP_LOOT_Dispositivo Antigo com Gavetas|r
     .complete 13918,1
 step
 #questguide
@@ -1360,7 +1360,7 @@ step
 step
 #questguide
     .goto 62,35.905,81.942
-    .use 46385 >>|cRXP_WARN_Use o|r |T132281:0|t[Marvelous Mobile Murloc Manor Maker] |cRXP_WARN_ao lado do|r |cRXP_PICK_Brumagris Local de Construção Murloc|r
+    .use 46385 >> |cRXP_WARN_Use o|r |T132281:0|t[Marvelous Mobile Murloc Manor Maker] |cRXP_WARN_ao lado do|r |cRXP_PICK_Brumagris Local de Construção Murloc|r
     .complete 13910,1 --|1/1 Greymist Murloc Home Built
 step
 #questguide
@@ -1433,7 +1433,7 @@ step
 #questguide
 #completewith next
     .goto 62,44.474,75.350
-    .vehicle >>|cRXP_WARN_Conversar|cRXP_FRIENDLY_ com |rOrseus|r para montar um|cRXP_FRIENDLY_ Hipogrifo|r
+    .vehicle >> |cRXP_WARN_Conversar|cRXP_FRIENDLY_ com |rOrseus|r para montar um|cRXP_FRIENDLY_ Hipogrifo|r
     .skipgossip
 step
 #questguide
@@ -1455,13 +1455,13 @@ step
 #questguide
     #completewith next
     .goto 62,45.031,79.192
-    .cast 65207 >>|cRXP_WARN_Use o|r |T133749:0|t[Broto Vivificante] |cRXP_WARN_no|cRXP_PICK_ Artefato Devorador|r submerso para invocar|r |cRXP_ENEMY_Yoth'al, o Devorador|r
+    .cast 65207 >> |cRXP_WARN_Use o|r |T133749:0|t[Broto Vivificante] |cRXP_WARN_no|cRXP_PICK_ Artefato Devorador|r submerso para invocar|r |cRXP_ENEMY_Yoth'al, o Devorador|r
     .timer 10,O Devorador da Costa Negra RP
     .use 46370
 step
 #questguide
     .goto 62,45.031,79.192
-    .use 46370 >>Abate |cRXP_ENEMY_Yoth'al, o Devorador|r
+    .use 46370 >> Abate |cRXP_ENEMY_Yoth'al, o Devorador|r
     .complete 13891,1
     .mob Yoth'al the Devourer
 step
@@ -1499,7 +1499,7 @@ step
     .goto 62,32.796,84.294
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Malfurion Tempesfúria|r
     .turnin 13900 >>Entregue A Oferenda a Azshara
-    .accept 13897 >>Aceite A Batalha pela Costa Negra
+    .accept 13897 >> Aceite A Batalha pela Costa Negra
     .target Malfurion Stormrage
 step
 #questguide
@@ -1540,5 +1540,5 @@ step
 step
 #questguide
     #completewith next
-    .hs >>Use sua Pedra de Retorno para ir a Lor'danel
+    .hs >> Use sua Pedra de Retorno para ir a Lor'danel
 ]])

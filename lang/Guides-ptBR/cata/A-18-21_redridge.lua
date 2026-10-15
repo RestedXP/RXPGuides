@@ -49,7 +49,7 @@ step << NightElf
 step << NightElf
     .goto 89,42.782,32.919
     >>Fale com |cRXP_FRIENDLY_Jartsam|r
-    .train 33388 >>Treinamento de Aprendiz de Montaria
+    .train 33388 >> Treinamento de Aprendiz de Montaria
     .target Jartsam
     .money <3.4000
     .xp <20,1
@@ -59,7 +59,7 @@ step << NightElf
     .zoneskip 89,1
 step << Draenei
     .goto 57,52.30,89.50
-    .zone Azuremyst Isle >>Pegue o barco para a Ilha Névoa Lazúli
+    .zone Azuremyst Isle >> Pegue o barco para a Ilha Névoa Lazúli
     .mountcount 0-150,<1
     .itemcount 29743,<1
     .itemcount 29744,<1
@@ -76,25 +76,25 @@ step << Draenei
 step << Draenei
     .goto 89,81.348,52.623
     >>Fale com |cRXP_FRIENDLY_Aalun|r
-    .train 33388 >>Treinamento de Aprendiz de Montaria
+    .train 33388 >> Treinamento de Aprendiz de Montaria
     .target Aalun
     .money <3.6000
     .xp <20,1
     .zoneskip Azuremyst Isle,1
 step << Draenei
     .goto Azuremyst Isle,20.41,54.18
-    .zone 57 >>Pegue o barco de volta para Rut'Theran Village
+    .zone 57 >> Pegue o barco de volta para Rut'Theran Village
     .zoneskip Azuremyst Isle,1
 step << NightElf/Draenei/Worgen
     .goto 57,55.037,93.677,25,0
     .goto 57,55.037,93.677,0
-    .zone Stormwind City >>Pegue o barco para Ventobravo
+    .zone Stormwind City >> Pegue o barco para Ventobravo
 step << Gnome/Dwarf
 #completewith next
     .goto 48,33.938,50.932
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thorgrum Borrelson|r
-    .fly Kharanos >>Voe para Kharanos << Gnome
-    .fly Gol'Bolar Quarry >>Voe para Gol'Bolar Pedreira << Dwarf
+    .fly Kharanos >> Voe para Kharanos << Gnome
+    .fly Gol'Bolar Quarry >> Voe para Gol'Bolar Pedreira << Dwarf
     .target Thorgrum Borrelson
     .zoneskip Loch Modan,1
     .mountcount 0-150,<1
@@ -129,7 +129,7 @@ step << Human/Dwarf/Gnome
     .goto 1426/0,-497.200,-5663.700,-1 << Gnome
     .goto 1426/0,-1578.000,-5718.000,-1 << Dwarf
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thorgrum Borrelson|r
-    .fly Stormwind >>Voe para Ventobravo
+    .fly Stormwind >> Voe para Ventobravo
     .target Thorgrum Borrelson
     .target Brolan Galebeard << Gnome
     .target Dominic Galebeard << Dwarf
@@ -254,19 +254,19 @@ step
     .goto 84,64.55,70.61,15,0
     .goto 84,68.50,73.43,10,0
     .goto 84,68.54,74.89,10,0
-    .goto 84,70.94,72.47,10 >>Vá em direção a |cRXP_FRIENDLY_Dungar Tragolongo|r
+    .goto 84,70.94,72.47,10 >> Vá em direção a |cRXP_FRIENDLY_Dungar Tragolongo|r
     .noflyable --Azeroth Flying
 step
     #completewith EnterRR
     .goto 84,70.94,72.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dungar Tragolongo|r
-    .fly Eastvale Logging Camp >>Voe para Acampamento de Lenhadores do Vale do Leste
+    .fly Eastvale Logging Camp >> Voe para Acampamento de Lenhadores do Vale do Leste
 	.target Dungar Longdrink
     .zoneskip 49 --Redridge Mountains
 step
     .goto 37,84.322,64.870
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Randal Caçador|r
-    .train 33388 >>Treinamento de Aprendiz de Montaria
+    .train 33388 >> Treinamento de Aprendiz de Montaria
     .money <3.6000
     .target Randal Hunter
     .xp <20,1
@@ -284,13 +284,13 @@ step << Human
 step
     #label EnterRR
     .goto 49,11.78,64.40
-    .zone Redridge Mountains >>Viaje para as Montanhas Cristarrubra
+    .zone Redridge Mountains >> Viaje para as Montanhas Cristarrubra
     .isQuestAvailable 26504
 step
     #optional
     .goto Redridge Mountains,29.405,53.770
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ariena Penafúria|r
-    .fp Lakeshire >>Aprenda a rota de voo de Lakeshire
+    .fp Lakeshire >> Aprenda a rota de voo de Lakeshire
     .target Ariena Stormfeather
     .xp <21,1
 step
@@ -531,7 +531,7 @@ step
 step
     .goto Redridge Mountains,29.405,53.770
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ariena Penafúria|r
-    .fp Lakeshire >>Aprenda a rota de voo de Lakeshire
+    .fp Lakeshire >> Aprenda a rota de voo de Lakeshire
     .target Ariena Stormfeather
 step
     #optional
@@ -553,7 +553,7 @@ step
     #optional
     #completewith next
     .goto 49,28.282,41.910,8,0
-    .goto 49,27.972,41.567,8 >>Entre em Lakeshire Town Hall
+    .goto 49,27.972,41.567,8 >> Entre em Lakeshire Town Hall
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Meirinho Conacher|r e o |cRXP_FRIENDLY_Magistrado Salomão|r lá dentro
     .accept 26511 >>Aceite Limpando o Lago Plácido
@@ -568,7 +568,7 @@ step
     #completewith next
     .goto 49,27.960,41.519,8,0
     .goto 49,28.310,41.910,8,0
-    .goto 49,28.588,42.644,15 >>Saia do Lakeshire Town Hall
+    .goto 49,28.588,42.644,15 >> Saia do Lakeshire Town Hall
 step
     #sticky
     #label EverstillMurlocs
@@ -597,7 +597,7 @@ step
     #requires EverstillMurlocs
     #completewith next
     .goto 49,28.282,41.910,8,0
-    .goto 49,27.972,41.567,8 >>Entre em Lakeshire Town Hall
+    .goto 49,27.972,41.567,8 >> Entre em Lakeshire Town Hall
 step
     #requires EverstillMurlocs
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Meirinho Conacher|r e o |cRXP_FRIENDLY_Magistrado Salomão|r lá dentro
@@ -613,7 +613,7 @@ step
     #completewith next
     .goto 49,27.960,41.519,8,0
     .goto 49,28.310,41.910,8,0
-    .goto 49,28.588,42.644,15 >>Saia do Lakeshire Town Hall
+    .goto 49,28.588,42.644,15 >> Saia do Lakeshire Town Hall
 step
     .goto 49,31.856,44.894
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Oficial Marris|r
@@ -709,7 +709,7 @@ step
     #completewith Ardo
     #requires DirtScroll
     .goto 49,20.431,26.655
-    .subzone 98 >>Vá para as Cavernas Rethban
+    .subzone 98 >> Vá para as Cavernas Rethban
     .isOnQuest 26544
 step
     #sticky
@@ -819,7 +819,7 @@ step
     .goto 49,27.502,28.865,50,0
     .goto 49,26.595,28.355,50,0
     .goto 49,25.013,28.408,50,0
-    .cast 80704 >>De pé, use a |T332402:0|t[Orbe de Controle de Gorjala] em um |cRXP_ENEMY_Gorjala do Desfiladeiro|r
+    .cast 80704 >> De pé, use a |T332402:0|t[Orbe de Controle de Gorjala] em um |cRXP_ENEMY_Gorjala do Desfiladeiro|r
     .use 58895
     .unitscan Canyon Ettin
     .isOnQuest 26520
@@ -838,7 +838,7 @@ step
     #optional
     #completewith next
     .goto 49,28.282,41.910,8,0
-    .goto 49,27.972,41.567,8 >>Entre em Lakeshire Town Hall
+    .goto 49,27.972,41.567,8 >> Entre em Lakeshire Town Hall
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Magistrado Salomão|r e o |cRXP_FRIENDLY_Coronel Troteman|r
     .turnin 26545 >>Entregue Berrante Tem que Morrer!
@@ -871,7 +871,7 @@ step
     #completewith next
     .goto 49,27.960,41.519,8,0
     .goto 49,28.310,41.910,8,0
-    .goto 49,28.588,42.644,15 >>Saia do Lakeshire Town Hall
+    .goto 49,28.588,42.644,15 >> Saia do Lakeshire Town Hall
 ------Skip/remove section if Keeshan added
 step
     .goto 49,22.043,42.696
@@ -924,7 +924,7 @@ step
     .train 33388,1
     .goto Redridge Mountains,29.405,53.770
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ariena Penafúria|r
-    .fly Eastvale Logging Camp >>Voe para Acampamento de Lenhadores do Vale do Leste
+    .fly Eastvale Logging Camp >> Voe para Acampamento de Lenhadores do Vale do Leste
 	.target Ariena Stormfeather
 step << Human
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Katie Caçador|r
@@ -939,7 +939,7 @@ step
     .train 33388,1
     .goto 37,84.322,64.870
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Randal Caçador|r
-    .train 33388 >>Treinamento de Aprendiz de Montaria
+    .train 33388 >> Treinamento de Aprendiz de Montaria
     .money <3.6000
     .target Randal Hunter
     .xp <20,1
@@ -947,7 +947,7 @@ step
     .train 33388,3
     .goto 37,81.830,66.553
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gus, o Veloz|r
-    .fly Lakeshire, Redridge >>Voe para Lakeshire
+    .fly Lakeshire, Redridge >> Voe para Lakeshire
 	.target Goss the Swift
     .zoneskip 37,1
 step
@@ -969,11 +969,11 @@ step
     #completewith KeeshanStart
     .goto 49,26.093,42.716,10,0
     .goto 49,26.138,42.315,8,0
-    .goto 49,26.306,42.096,8 >>Entre na Estalagem de Lakeshire
+    .goto 49,26.306,42.096,8 >> Entre na Estalagem de Lakeshire
 step
     .goto 49,26.393,41.425
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Estalajadeira Briana|r
-    .home >>Defina sua Pedra de Regresso para Vila Plácida
+    .home >> Defina sua Pedra de Regresso para Vila Plácida
     .target Innkeeper Brianna
     .isOnQuest 26567
 step
@@ -995,7 +995,7 @@ step
     .goto 49,26.253,40.514,8,0
     .goto 49,26.306,42.096,8,0
     .goto 49,26.138,42.315,8,0
-    .goto 49,25.990,42.754,10 >>Saia da Estalagem de Lakeshire --Exiting West (OPTIONAL SECTION)
+    .goto 49,25.990,42.754,10 >> Saia da Estalagem de Lakeshire --Exiting West (OPTIONAL SECTION)
 step
     .goto 49,22.043,42.696
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Martie Jainrose|r
@@ -1057,7 +1057,7 @@ step
     #optional
     #completewith next
     .goto 49,28.282,41.910,8,0
-    .goto 49,27.972,41.567,8 >>Entre em Lakeshire Town Hall
+    .goto 49,27.972,41.567,8 >> Entre em Lakeshire Town Hall
 step
     .goto 49,28.659,40.744
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Coronel Troteman|r dentro
@@ -1070,7 +1070,7 @@ step
     #completewith next
     .goto 49,27.960,41.519,8,0
     .goto 49,28.310,41.910,8,0
-    .goto 49,28.588,42.644,15 >>Saia do Lakeshire Town Hall
+    .goto 49,28.588,42.644,15 >> Saia do Lakeshire Town Hall
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Encarregado Oslow|r e o |cRXP_FRIENDLY_Oficial Marris|r
     .accept 26569 >>Aceite Aparelhagem de Levantamento
@@ -1179,7 +1179,7 @@ step
     #completewith next
     .goto 49,37.338,15.299,40,0
     .goto 49,35.846,14.524,40,0
-    .goto 49,33.538,11.867,15 >>Vá para |cRXP_FRIENDLY_Jorgensen|r
+    .goto 49,33.538,11.867,15 >> Vá para |cRXP_FRIENDLY_Jorgensen|r
     .noflyable --Azeroth Flying
 step
     .goto 49,33.538,11.867
@@ -1191,7 +1191,7 @@ step
 step
     #completewith BlackrockC
     #label RendersRock
-    .goto 49,30.861,9.190,20 >>Entre em Render's Pedra
+    .goto 49,30.861,9.190,20 >> Entre em Render's Pedra
     .isOnQuest 265261
 step
     #sticky
@@ -1228,7 +1228,7 @@ step
     .goto 49,26.615,13.314,15,0
     .goto 49,25.552,14.772,15,0
     .goto 49,25.856,16.403,15,0
-    .goto 49,27.634,18.155,15 >Vá para |cRXP_ENEMY_Suserano Barbarius|r dentro
+    .goto 49,27.634,18.155,15 >Travel toward |cRXP_ENEMY_Overlord Barbarius|r inside
 step
     .goto 49,27.634,18.155
     >>Mate |cRXP_ENEMY_Suserano Barbarius|r dentro. Saque-o para obter o |cRXP_LOOT_Chave da Alavanca de Rocha Negra|r
@@ -1257,7 +1257,7 @@ step
     .goto 49,30.004,12.928,15,0
     .goto 49,29.820,10.349,15,0
     .goto 49,30.372,9.117,15,0
-    .goto 49,31.635,9.630,30 >>Saia de Render's Pedra
+    .goto 49,31.635,9.630,30 >> Saia de Render's Pedra
 step
     #optional
     #loop
@@ -1287,18 +1287,18 @@ step
 	.mob Blackrock Summoner
 step
     #completewith next
-    .hs >>Volte para Lakeshire
+    .hs >> Volte para Lakeshire
 step
     .goto 49,26.456,42.038
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kimberly Hiett|r na Estalagem de Lakeshire
-    .vendor >>Compre e Conserte
+    .vendor >>Venda e Repare
     .target Kimberly Hiett
 	.isOnQuest 26573
 step
     #optional
     #completewith next
     .goto 49,28.282,41.910,8,0
-    .goto 49,27.972,41.567,8 >>Entre em Lakeshire Town Hall
+    .goto 49,27.972,41.567,8 >> Entre em Lakeshire Town Hall
 step
     .goto 49,28.659,40.744
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Coronel Troteman|r
@@ -1311,13 +1311,13 @@ step
     #completewith next
     .goto 49,27.960,41.519,8,0
     .goto 49,28.310,41.910,8,0
-    .goto 49,28.588,42.644,15 >>Saia do Lakeshire Town Hall
+    .goto 49,28.588,42.644,15 >> Saia do Lakeshire Town Hall
 step
     #optional
     #completewith Keeshan2
     .goto 49,26.093,42.716,10,0
     .goto 49,26.138,42.315,8,0
-    .goto 49,26.306,42.096,8 >>Entre na Estalagem de Lakeshire
+    .goto 49,26.306,42.096,8 >> Entre na Estalagem de Lakeshire
 step
     #optional
     #completewith next
@@ -1344,7 +1344,7 @@ step
     .goto 49,26.253,40.514,8,0
     .goto 49,26.306,42.096,8,0
     .goto 49,26.138,42.315,8,0
-    .goto 49,26.108,42.747,10 >>Saia da Estalagem de Lakeshire --East
+    .goto 49,26.108,42.747,10 >> Saia da Estalagem de Lakeshire --East
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Encarregado Oslow|r e o |cRXP_FRIENDLY_Oficial Marris|r
     .turnin 26569 >>Entregue Aparelhagem de Levantamento
@@ -1357,7 +1357,7 @@ step
 #questguide
 	#label Boat
     .goto 49,34.426,45.914
-	.vehicle >>Entre em |cRXP_PICK_Keeshan's A Barcaça|r
+	.vehicle >> Entre em |cRXP_PICK_Keeshan's A Barcaça|r
 	.timer 43,Não Acaba Nunca RP
     .isOnQuest 26616
 step
@@ -1519,7 +1519,7 @@ step << Human
     #completewith next
     .goto 49,52.920,54.640
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Arlen Marsters|r
-    .fly Eastvale Logging Camp >>Voe para Acampamento de Lenhadores do Vale do Leste
+    .fly Eastvale Logging Camp >> Voe para Acampamento de Lenhadores do Vale do Leste
 	.target Arlen Marsters
     .isQuestAvailable 26646 --Prisoners of War
     .skill riding,75,1
@@ -1528,7 +1528,7 @@ step << Human
 #questguide
     .goto 37,84.321,64.870
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Randal Caçador|r
-    .skill riding,75 >>Treine |T136103:0|t[Aprendiz de Montaria] com ele
+    .skill riding,75 >> Treine |T136103:0|t[Aprendiz de Montaria] com ele
     .target Randal Hunter
 step << Human
 #questguide
@@ -1544,21 +1544,21 @@ step << Human
 step << Human
 #questguide
     #optional
-    .cast 55884 >>Usar |T132261:0|t[Cavalo Tobiano Bridle] para aprender
+    .cast 55884 >> Usar |T132261:0|t[Cavalo Tobiano Bridle] para aprender
     .use 2414
     .itemcount 2414,1
     .zoneskip 37,1
 step << Human
 #questguide
     #optional
-    .cast 55884 >>Usar |T132261:0|t[Égua Alazã Bridle] para aprender
+    .cast 55884 >> Usar |T132261:0|t[Égua Alazã Bridle] para aprender
     .use 5655
     .itemcount 5655,1
     .zoneskip 37,1
 step << Human
 #questguide
     #optional
-    .cast 55884 >>Usar |T132261:0|t[Cavalo Castanho Bridle] para aprender
+    .cast 55884 >> Usar |T132261:0|t[Cavalo Castanho Bridle] para aprender
     .use 5656
     .itemcount 5656,1
     .zoneskip 37,1
@@ -1568,7 +1568,7 @@ step << Human
     #completewith Goss
     >>|cRXP_WARN_Pressione "Mudança+P" para abrir sua aba Montar|r
     >>|cRXP_WARN_Arraste|r |T132261:0|t[Cavalo Tobiano]|cRXP_WARN_ para suas Barras de Ação|r
-    .cast 472 >>Monte seu |T132261:0|t[Cavalo Tobiano]
+    .cast 472 >> Monte seu |T132261:0|t[Cavalo Tobiano]
     .train 472,3
     .zoneskip 37,1
 step << Human
@@ -1577,7 +1577,7 @@ step << Human
     #completewith Goss
     >>|cRXP_WARN_Pressione "Mudança+P" para abrir sua aba Montar|r
     >>|cRXP_WARN_Arraste|r |T132261:0|t[Égua Alazã]|cRXP_WARN_ para suas Barras de Ação|r
-    .cast 6648 >>Monte seu |T132261:0|t[Égua Alazã]
+    .cast 6648 >> Monte seu |T132261:0|t[Égua Alazã]
     .train 6648,3
     .zoneskip 37,1
 step << Human
@@ -1586,7 +1586,7 @@ step << Human
     #completewith Goss
     >>|cRXP_WARN_Pressione "Mudança+P" para abrir sua aba Montar|r
     >>|cRXP_WARN_Arrastar o|r |T132261:0|t[Cavalo Castanho] |cRXP_WARN_para suas Barras de Ação|r
-    .cast 458 >>Monte seu |T132261:0|t[Cavalo Castanho]
+    .cast 458 >> Monte seu |T132261:0|t[Cavalo Castanho]
     .train 458,3
     .zoneskip 37,1
 step << Human
@@ -1596,7 +1596,7 @@ step << Human
     #completewith Duskwood
     .goto 37,81.829,66.556
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gus, o Veloz|r
-    .fly Darkshire >>Voe para Darkshire
+    .fly Darkshire >> Voe para Darkshire
     .target Goss the Swift
     .zoneskip 37,1
 step
@@ -1605,7 +1605,7 @@ step
     #completewith Duskwood
     .goto 49,52.920,54.640
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Arlen Marsters|r
-    .fly Darkshire >>Voe para Darkshire
+    .fly Darkshire >> Voe para Darkshire
 	.target Arlen Marsters
     .isQuestAvailable 26646
     .skill riding,<75,1 << Human
@@ -1645,7 +1645,7 @@ step
     #questguide
     #optional
     #completewith next
-    .goto 49,68.486,75.120,20 >>Entre na caverna em Render's Valley
+    .goto 49,68.486,75.120,20 >> Entre na caverna em Render's Valley
 step
     #questguide
     .goto 49,69.525,76.315
@@ -1686,7 +1686,7 @@ step
     #optional
     #label FieldKit
     #completewith War
-    .aura -82587 >>|cRXP_WARN_Clique para remover o|r |T133878:0|t[Kit de Campanha da Companhia Bravo] |cRXP_WARN_Bônus|r
+    .aura -82587 >> |cRXP_WARN_Clique para remover o|r |T133878:0|t[Kit de Campanha da Companhia Bravo] |cRXP_WARN_Bônus|r
     .isOnQuest 26651
 step
     #questguide
@@ -1694,7 +1694,7 @@ step
     #requires FieldKit
     #completewith War
     >>|cRXP_WARN_Evite |cRXP_ENEMY_Blackrock Wardens|r, |cRXP_ENEMY_Blackrock Guards|r, e|r |cRXP_ENEMY_Blackrock Draco Riders|r
-    .goto 49,77.683,65.506,15 >>Vá em direção a |cRXP_FRIENDLY_John J. Keeshan|r
+    .goto 49,77.683,65.506,15 >> Vá em direção a |cRXP_FRIENDLY_John J. Keeshan|r
     .noflyable --Azeroth Flying
 step
     #questguide
@@ -1800,7 +1800,7 @@ step
     #requires Ilgalar1
     #completewith next
     .goto 49,71.952,44.819
-    .cast 81776 >>Clique em |cRXP_PICK_Proteção de Ilgalar|r na base da Torre de Ilgalar
+    .cast 81776 >> Clique em |cRXP_PICK_Proteção de Ilgalar|r na base da Torre de Ilgalar
     .isOnQuest 26694
 step
     #questguide
@@ -1816,7 +1816,7 @@ step
     #completewith next
     .goto 49,76.973,52.844,40,0
     .goto 49,77.906,58.960,40,0
-    .goto 49,77.683,65.506,15 >>Entregue para |cRXP_FRIENDLY_John J. Keeshan|r
+    .goto 49,77.683,65.506,15 >> Entregue para |cRXP_FRIENDLY_John J. Keeshan|r
     .noflyable --Azeroth Flying
 step
     #questguide
@@ -1838,7 +1838,7 @@ step
     #completewith BlackrockInvaders
     #label BravoCompany
     .goto 49,76.916,66.133
-    .vehicle >>Entre no |cRXP_FRIENDLY_Tanque de Cerco da Companhia Bravo|r
+    .vehicle >> Entre no |cRXP_FRIENDLY_Tanque de Cerco da Companhia Bravo|r
     .target Bravo Company Siege Tank
     .isOnQuest 26708
 step
@@ -1868,7 +1868,7 @@ step
     #completewith next
     >>|cRXP_WARN_Saia do|r |cRXP_FRIENDLY_Tanque de Cerco da Companhia Bravo|r
     >>|cRXP_WARN_Você será imediatamente removido da fase com |cRXP_ENEMY_Blackrock Invaders|r e retornado para a fase com os|r |cRXP_ENEMY_Shadowhide Gnolls|r
-    .goto 49,60.660,36.666,15 >>Entregue para |cRXP_FRIENDLY_Coronel Troteman|r
+    .goto 49,60.660,36.666,15 >> Entregue para |cRXP_FRIENDLY_Coronel Troteman|r
 step
     #questguide
     .goto 49,60.660,36.666
@@ -1929,7 +1929,7 @@ step
 step
     #questguide
     #completewith next
-    .hs >>Volte para Lakeshire
+    .hs >> Volte para Lakeshire
     .cooldown item,6948,>2
     .isOnQuest 26726
     .subzoneskip 69 --Yes that is Lakeshire's subzone id
@@ -1938,7 +1938,7 @@ step
     #optional
     #completewith next
     .goto 49,28.282,41.910,8,0
-    .goto 49,27.972,41.567,8 >>Entre em Lakeshire Town Hall
+    .goto 49,27.972,41.567,8 >> Entre em Lakeshire Town Hall
     .isOnQuest 26726
 step
     #questguide

@@ -45,7 +45,7 @@ step
 step
     .isOnQuest 12619
     .goto 124,47.9,27.6
-    .cast 51769 >>|cRXP_WARN_Channel the|r |T135410:0|t[|cRXP_LOOT_Espada Gasta pela Batalha|r] |cRXP_WARN_at the|r |cRXP_PICK_Runeforge|r
+    .cast 51769 >> |cRXP_WARN_Channel the|r |T135410:0|t[|cRXP_LOOT_Espada Gasta pela Batalha|r] |cRXP_WARN_at the|r |cRXP_PICK_Runeforge|r
     .timer 8,Blasonar Lâmina Rúnica RP
 	.use 38607
     .complete 12619,1 --Runebladed Sword (1)
@@ -68,7 +68,7 @@ step
 step
     #optional
     #completewith next
-    .equip 16,38707 >>|cRXP_WARN_Equipe a|r |T135335:0|t[|cFF0070FFRuned Laminalma|r]
+    .equip 16,38707 >> |cRXP_WARN_Equipe a|r |T135335:0|t[|cFF0070FFRuned Laminalma|r]
     .use 38707
 step
     #loop
@@ -83,11 +83,11 @@ step
 step
     #optional
     .isOnQuest 12848
-    .equip 16,38707 >>|cRXP_WARN_Equipe a|r |T135335:0|t[|cFF0070FFRuned Laminalma|r]
+    .equip 16,38707 >> |cRXP_WARN_Equipe a|r |T135335:0|t[|cFF0070FFRuned Laminalma|r]
     .use 38707
 step
     #completewith next
-    .cast 54669 >>Clique em um |cRXP_PICK_Acherus Alma Prisons|r ao longo da parede central interna para liberar um |cRXP_ENEMY_Iniciado Indigno|r
+    .cast 54669 >> Clique em um |cRXP_PICK_Acherus Alma Prisons|r ao longo da parede central interna para liberar um |cRXP_ENEMY_Iniciado Indigno|r
     .timer 17,Iniciado Indigno RP
 step
     .goto 124,48.4,29.0
@@ -121,7 +121,7 @@ step
     .isOnQuest 12641
     .goto 124,51.062,36.310,-1
     .goto 124,52.130,35.220,-1
-    .aura 51852 >>Clique em um |cRXP_PICK_Olho de Áquerus Mecanismo de Controle|r
+    .aura 51852 >> Clique em um |cRXP_PICK_Olho de Áquerus Mecanismo de Controle|r
 step
     .goto 124,61.42,60.12,0
 	>>|cRXP_WARN_Cast|r |T136158:0|t[Sifão de Áquerus] (1) |cRXP_WARN_on the Nova Avalon Forja|r
@@ -149,7 +149,7 @@ step
 step
     #optional
 	#completewith next
- 	.aura -51852 >>|cRXP_WARN_Pressione Fuga ou|r |T136190:0|t[Retornar Olho de Áquerus] (5) |cRXP_WARN_para retornar à Masmorra de Ébano|r
+ 	.aura -51852 >> |cRXP_WARN_Pressione Fuga ou|r |T136190:0|t[Retornar Olho de Áquerus] (5) |cRXP_WARN_para retornar à Masmorra de Ébano|r
 step
     .goto 124,51.350,35.205
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_O Lich Rei|r
@@ -158,7 +158,7 @@ step
     .accept 12657 >>Aceite O Poder do Flagelo
 step
     #completewith next
-    .goto 124,50.516,33.404,5 >>Pise no teletransportador roxo para viajar ao nível inferior
+    .goto 124,50.516,33.404,5 >> Pise no teletransportador roxo para viajar ao nível inferior
 step
     .goto 124,48.872,29.747
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Grão-lorde Dárion Mograine|r
@@ -176,7 +176,7 @@ step
 	#completewith next
     .goto 124,52.092,35.048,-1
     .goto 124,50.961,36.165,-1
-    .fly >>Monte no |cRXP_FRIENDLY_Grifo do Flagelo|r para voar até Morte's Fenda
+    .fly >> Monte no |cRXP_FRIENDLY_Grifo do Flagelo|r para voar até Morte's Fenda
     .target Scourge Gryphon
     .skipgossip
 step
@@ -254,13 +254,13 @@ step
 step
     .isOnQuest 12687
     .goto 124,54.6,46.4
-    .vehicle >>Mate o |cRXP_ENEMY_Cavalgante Negro de Áquerus|r. Monte no |cRXP_FRIENDLY_Corcel da Morte de Áquerus|r depois
+    .vehicle >> Mate o |cRXP_ENEMY_Cavalgante Negro de Áquerus|r. Monte no |cRXP_FRIENDLY_Corcel da Morte de Áquerus|r depois
     .mob Dark Rider of Acherus
     .target Acherus Deathcharger
 step
     #optional
     .isOnQuest 12687
-    .goto 124,51.70,35.76,20 >>Retorne para Morte's Fenda
+    .goto 124,51.70,35.76,20 >> Retorne para Morte's Fenda
 step
     .goto 124,51.70,35.76
 	>>|cRXP_WARN_Use|r |T136129:0|t[Chamado do Cavaleiro] (1) |cRXP_WARN_uma vez em Morte's Fenda. Aguarde a encenação curta|r
@@ -274,7 +274,7 @@ step
     .turnin 12687 >>Entregue No Reino das Sombras
 step
 	#completewith DuelDK
-	.cast 48778 >>|cRXP_WARN_Você agora tem seu|r |T237534:0|t[Corcel da Morte de Áquerus]|cRXP_WARN_. Certifique-se de adicioná-lo às suas barras de ação no seu painel de Montarias (Padrão: Mudança+P)|r
+	.cast 48778 >> |cRXP_WARN_Você agora tem seu|r |T237534:0|t[Corcel da Morte de Áquerus]|cRXP_WARN_. Certifique-se de adicioná-lo às suas barras de ação no seu painel de Montarias (Padrão: Mudança+P)|r
 step
     #loop
     .goto 124,55.9,38.8,50,0
@@ -333,7 +333,7 @@ step
     .goto 124,60.925,29.682,60,0
     .goto 124,54.1,34.9
     >>|cRXP_WARN_Enter the Havenshire Mina|r
-    .use 39253 >>|cRXP_WARN_Use o|r |T133882:0|t[Dádiva do Ceifador] |cRXP_WARN_em |cRXP_ENEMY_Mineradores Escarlates|r enquanto estiverem fora de combate. NÃO os mate ou ataque|r
+    .use 39253 >> |cRXP_WARN_Use o|r |T133882:0|t[Dádiva do Ceifador] |cRXP_WARN_em |cRXP_ENEMY_Mineradores Escarlates|r enquanto estiverem fora de combate. NÃO os mate ou ataque|r
     >>|cRXP_WARN_Quando você tiver 5 |cRXP_FRIENDLY_Carniçais Escarlates|r seguindo você, volte para|r |cRXP_ENEMY_Gothik, o Ceifador|r
     >>|cRXP_WARN_Abate |cRXP_ENEMY_Scarlet Ghosts|r que estão em combate com você|r
     .complete 12698,1 --Scarlet Ghoul Returned (5)
@@ -364,7 +364,7 @@ step
     #label ScarletCannon
     .goto 124,67.022,38.817,15,0
     .goto 124,67.706,39.023
-    .vehicle >>|cRXP_WARN_Run up the ramp onto the Scarlet Ship. Enter o|r |cRXP_PICK_Canhão Escarlate|r
+    .vehicle >> |cRXP_WARN_Run up the ramp onto the Scarlet Ship. Enter o|r |cRXP_PICK_Canhão Escarlate|r
     .target Scarlet Cannon
 step
 	>>|cRXP_WARN_Cast|r |T136186:0|t[Canhão Escarlate] (1) |cRXP_WARN_to kill the|r |cRXP_ENEMY_Defensor da Armada Escarlate|r
@@ -373,7 +373,7 @@ step
     .mob Scarlet Fleet Defender
 step
     .isOnQuest 12701
-    .cast vehicle,52588,52589 >>vehicle,52588,52589 >>|cRXP_WARN_Use|r |T135766:0|t[Fuga no Grifo Descarnado] (5) |cRXP_WARN_para retornar à Fenda de Morte|r
+    .cast vehicle,52588,52589 >>|cRXP_WARN_Use|r |T135766:0|t[Fuga no Grifo Descarnado] (5) |cRXP_WARN_para retornar à Fenda de Morte|r
     .timer 70,Voo da Fenda da Morte
 step
     .goto 124,52.272,33.965
@@ -384,7 +384,7 @@ step
 step
     #completewith next
     .goto 124,53.094,32.473
-    .fly >>Monte o |cRXP_FRIENDLY_Grifo do Flagelo|r para retornar a Acherus
+    .fly >> Monte o |cRXP_FRIENDLY_Grifo do Flagelo|r para retornar a Acherus
     .skipgossip
     .target Scourge Gryphon
 step
@@ -399,12 +399,12 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Lorde Thorval|r
     .accept 12849 >>Aceite O Poder de Sangue, Gelo e Profano
 	.turnin 12849 >>Entregue O Poder de Sangue, Gelo e Profano
-	.trainer >>Treine suas magias de classe << wotlk/cata
+	.trainer >> Treine suas magias de classe << wotlk/cata
 step
     #completewith next
     .goto 124,52.092,35.048,-1
     .goto 124,50.961,36.165,-1
-    .fly >>Monte no |cRXP_FRIENDLY_Grifo do Flagelo|r para voar até Morte's Fenda
+    .fly >> Monte no |cRXP_FRIENDLY_Grifo do Flagelo|r para voar até Morte's Fenda
     .target Scourge Gryphon
     .skipgossip
 step
@@ -432,7 +432,7 @@ step
     .accept 12716 >>Aceite O Pedido do Pestífero
 step
     #completewith LTTS
-    .goto 124,54.007,58.135,20 >>Desça até a Cripta da Memória
+    .goto 124,54.007,58.135,20 >> Desça até a Cripta da Memória
 step
     .goto 124,54.299,57.302
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Príncipe Keleseth|r
@@ -459,7 +459,7 @@ step
     .complete 12716,3 --Crusader Skull (10)
 step
     #completewith next
-    .goto 124,52.924,71.237,25 >>Entre na Prefeitura de Nova Avalon
+    .goto 124,52.924,71.237,25 >> Entre na Prefeitura de Nova Avalon
 step
     #label QuimbyRegistry
 	>>Mate |cRXP_ENEMY_Prefeito Quimby|r. Pegue o |cRXP_PICK_Registro de Nova Avalon|r na mesa
@@ -470,7 +470,7 @@ step
     .goto 124,52.462,71.010
 step
     #completewith next
-    .goto 124,54.007,58.135,20 >>Volte para a Cripta da Memória
+    .goto 124,54.007,58.135,20 >> Volte para a Cripta da Memória
 step
     .goto 124,54.301,57.300
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Príncipe Keleseth|r
@@ -502,7 +502,7 @@ step
     .complete 12716,2 --Iron Chain (1)
 step
     #completewith next
-    .goto 124,57.676,64.336,15 >>Entre na Estalagem
+    .goto 124,57.676,64.336,15 >> Entre na Estalagem
 step
     .goto 124,57.847,62.617,10,0
     .goto 124,57.521,61.883,10,0
@@ -511,12 +511,12 @@ step
     .complete 12716,1 --Empty Cauldron (1)
 step
     .isOnQuest 12720
-	.use 39418 >>|cRXP_WARN_Abra|r |T132595:0|t[Caixa Adornada de Joias] |cRXP_WARN_para obter 2|r |T135271:0|t[Persuasor de Keleseth]
+	.use 39418 >> |cRXP_WARN_Abra|r |T132595:0|t[Caixa Adornada de Joias] |cRXP_WARN_para obter 2|r |T135271:0|t[Persuasor de Keleseth]
     .collect 39371,2 -- Keleseth's Persuader
 step
     .isOnQuest 12720
-    .equip 16,39371 >>|cRXP_WARN_Equipe|r |T135271:0|t[Persuasor de Keleseth] |cRXP_WARN_em sua Mão Direita|r
-    .equip 17,39371 >>|cRXP_WARN_Equipe|r |T135271:0|t[Persuasor de Keleseth] |cRXP_WARN_em sua Mão Esquerda|r
+    .equip 16,39371 >> |cRXP_WARN_Equipe|r |T135271:0|t[Persuasor de Keleseth] |cRXP_WARN_em sua Mão Direita|r
+    .equip 17,39371 >> |cRXP_WARN_Equipe|r |T135271:0|t[Persuasor de Keleseth] |cRXP_WARN_em sua Mão Esquerda|r
     .use 39371
 step
 	#label Dawn
@@ -527,7 +527,7 @@ step
 step
     #optional
     .isOnQuest 12720
-    .equip 16,38707 >>|cRXP_WARN_Equipe a|r |T135335:0|t[|cFF0070FFRuned Laminalma|r]
+    .equip 16,38707 >> |cRXP_WARN_Equipe a|r |T135335:0|t[|cFF0070FFRuned Laminalma|r]
     .use 38707
 step
     #loop
@@ -563,7 +563,7 @@ step
     .itemcount 39328,20
 step
     #completewith BSL
-    .goto 124,54.007,58.135,20 >>Volte para a Cripta da Memória
+    .goto 124,54.007,58.135,20 >> Volte para a Cripta da Memória
 step
     .goto 124,54.678,57.437
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Barão Rivendare|r
@@ -578,7 +578,7 @@ step
     .accept 12723 >>Aceite Atrás das Linhas Escarlates
 step
     #completewith next
-    .goto 124,56.150,79.986,15 >>Vá para a Taverna Escarlate. Fale com |cRXP_FRIENDLY_Orbaz Ruinassangue|r e com |cRXP_FRIENDLY_Thassarian|r acima
+    .goto 124,56.150,79.986,15 >> Vá para a Taverna Escarlate. Fale com |cRXP_FRIENDLY_Orbaz Ruinassangue|r e com |cRXP_FRIENDLY_Thassarian|r acima
 step
     .goto 124,56.249,79.847
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Orbaz Ruinassangue|r acima
@@ -593,7 +593,7 @@ step
 step
     #completewith next
     .goto 124,61.752,68.157,20,0
-    .goto 124,62.876,68.650,10 >>Entre no Castelo Escarlate. Desça para o porão
+    .goto 124,62.876,68.650,10 >> Entre no Castelo Escarlate. Desça para o porão
     >>|cRXP_WARN_NÃO libere seu espírito se você morrer. Uma |cRXP_FRIENDLY_Donzela Guerreira Val'kyr|r vai ressuscitá-lo|r
 step
     .goto 124,62.954,67.856
@@ -632,10 +632,10 @@ step
     .itemcount 39328,20
 step
     #completewith ACFV
-    .goto 124,56.150,79.986,15 >>Entregue para a Taverna Escarlate. Fale com |cRXP_FRIENDLY_Orbaz Ruinassangue|r e |cRXP_FRIENDLY_Thassarian|r no andar superior
+    .goto 124,56.150,79.986,15 >> Entregue para a Taverna Escarlate. Fale com |cRXP_FRIENDLY_Orbaz Ruinassangue|r e |cRXP_FRIENDLY_Thassarian|r no andar superior
 step
 	#completewith ACFV
-	.destroy 39328 >>Descarte qualquer |T133730:0|t[Crânio de Cruzado] que você tenha
+	.destroy 39328 >> Descarte qualquer |T133730:0|t[Crânio de Cruzado] que você tenha
 step
     .goto 124,56.254,79.845
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Orbaz Ruinassangue|r acima
@@ -748,7 +748,7 @@ step
 	.accept 12751 >>Aceite Um Pouco Como Voltar Pra Casa
 step
     #completewith AATO
-    .goto 124,56.150,79.986,15 >>Entregue para a Taverna Escarlate. Fale com |cRXP_FRIENDLY_Orbaz Ruinassangue|r e |cRXP_FRIENDLY_Thassarian|r no andar superior
+    .goto 124,56.150,79.986,15 >> Entregue para a Taverna Escarlate. Fale com |cRXP_FRIENDLY_Orbaz Ruinassangue|r e |cRXP_FRIENDLY_Thassarian|r no andar superior
 step
     .goto 124,56.268,80.157
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thassarian|r
@@ -762,10 +762,10 @@ step
     .accept 12754 >>Aceite Emboscada No Penhasco
 step
     #completewith ScarletCourier
-    .subzone 4360 >>Vá para Scarlet Overlook
+    .subzone 4360 >> Vá para Scarlet Overlook
 step
     #completewith ScarletCourier
-    .cast 53061 >>|cRXP_WARN_Use|r |T136065:0|t[Esconderijo Improvisado] |cRXP_WARN_em Scarlet Overlook|r
+    .cast 53061 >> |cRXP_WARN_Use|r |T136065:0|t[Esconderijo Improvisado] |cRXP_WARN_em Scarlet Overlook|r
     .use 39645
 step
     #label ScarletCourier
@@ -776,7 +776,7 @@ step
     .mob Scarlet Courier
 step
     #completewith next
-    .goto 124,56.150,79.986,15 >>Vá para Scarlet Tavern. Fale com |cRXP_FRIENDLY_Orbaz Ruinassangue|r acima
+    .goto 124,56.150,79.986,15 >> Vá para Scarlet Tavern. Fale com |cRXP_FRIENDLY_Orbaz Ruinassangue|r acima
 step
     .goto 124,56.253,79.844
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Orbaz Ruinassangue|r acima
@@ -791,7 +791,7 @@ step
     .accept 12756 >>Aceite Surge a Ofensiva Escarlate
 step
     #completewith next
-    .goto 124,56.150,79.986,15 >>Vá para Scarlet Tavern. Fale com |cRXP_FRIENDLY_Orbaz Ruinassangue|r acima
+    .goto 124,56.150,79.986,15 >> Vá para Scarlet Tavern. Fale com |cRXP_FRIENDLY_Orbaz Ruinassangue|r acima
 step
     .goto 124,56.251,79.846
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Orbaz Ruinassangue|r acima
@@ -801,7 +801,7 @@ step
 step
     #completewith next
     .goto 124,56.180,80.036
-    .subzone 4281 >>|cRXP_WARN_Vá através do|cRXP_PICK_ Portal to Acherus|r atrás de|r |cRXP_FRIENDLY_Orbaz Ruinassangue|r
+    .subzone 4281 >> |cRXP_WARN_Vá através do|cRXP_PICK_ Portal to Acherus|r atrás de|r |cRXP_FRIENDLY_Orbaz Ruinassangue|r
 step
     .goto 124,48.872,29.749
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Grão-lorde Dárion Mograine|r
@@ -812,12 +812,12 @@ step << wotlk/cata
     .goto 124,46.697,31.934
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Amal'thazad|r
     .target Amal'thazad
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
 step
     #completewith next
     .goto 124,52.092,35.048,-1
     .goto 124,50.961,36.165,-1
-    .fly >>Monte no |cRXP_FRIENDLY_Grifo do Flagelo|r para voar até Morte's Fenda
+    .fly >> Monte no |cRXP_FRIENDLY_Grifo do Flagelo|r para voar até Morte's Fenda
     .target Scourge Gryphon
     .skipgossip
 step
@@ -829,7 +829,7 @@ step
 step
 	#completewith next
 	.use 39700
-	.vehicle >>|cRXP_WARN_Use o|r |T134228:0|t[Chifre de Ninhálgida] |cRXP_WARN_para montar no|r |cRXP_FRIENDLY_Conquistador Ninhálgida|r
+	.vehicle >> |cRXP_WARN_Use o|r |T134228:0|t[Chifre de Ninhálgida] |cRXP_WARN_para montar no|r |cRXP_FRIENDLY_Conquistador Ninhálgida|r
 step
     #loop
     .goto 124,56.0,62.2,100,0
@@ -850,10 +850,10 @@ step
     .complete 12779,1 --Scarlet Soldiers (150)
 step
     #completewith TLKC
-    .goto 124,53.575,36.865,30 >>Voe de volta para |cRXP_FRIENDLY_The Lich Rei|r
+    .goto 124,53.575,36.865,30 >> Voe de volta para |cRXP_FRIENDLY_The Lich Rei|r
 step
     #completewith TLKC
-    .exitvehicle >>|cRXP_WARN_Saia do|r |cRXP_FRIENDLY_Conquistador Ninhálgida|r
+    .exitvehicle >> |cRXP_WARN_Saia do|r |cRXP_FRIENDLY_Conquistador Ninhálgida|r
 step
     #label TLKC
     .goto 124,53.575,36.865
@@ -866,7 +866,7 @@ step
     .goto 124,49.3,28.7,45,0
     .goto 124,47.1,24.1,45,0
     .goto 124,39.430,21.142,70,0
-    .goto 124,35.161,26.725,80 >>Vá através de The Noxious Passe para Browman Moinho
+    .goto 124,35.161,26.725,80 >> Vá através de The Noxious Passe para Browman Moinho
 step
     .goto 124,34.1,30.4
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Comandante do Flagelo Thalanor|r
@@ -876,7 +876,7 @@ step
 step
 	#completewith next
     .goto 124,34.441,31.107
-	.gossipoption 93584 >>|cRXP_WARN_Converse com o|cRXP_FRIENDLY_ Grão-lorde Dárion Mograine|r para começar a encenação|r
+	.gossipoption 93584 >> |cRXP_WARN_Converse com o|cRXP_FRIENDLY_ Grão-lorde Dárion Mograine|r para começar a encenação|r
     >>|cRXP_WARN_Se ele não está de pé ao lado de |cRXP_FRIENDLY_Comandante do Flagelo Thalanor|r significa que a batalha está em andamento ou em preparação. A informação para isso deve estar no topo da sua tela. Vá para Capela Esperança da Luz e espere a encenação terminar|r
     .skipgossip
     .subzoneskip 2268
@@ -893,32 +893,32 @@ step
     .accept 13165 >>Aceite A Retomada de Áquerus
 step
     #optional
-    .equip 16,38633 >>|cRXP_WARN_Equipe o|r |T132480:0|t[|cFF0070FFMachadão da Lâmina de Ébano|r]
+    .equip 16,38633 >> |cRXP_WARN_Equipe o|r |T132480:0|t[|cFF0070FFMachadão da Lâmina de Ébano|r]
     .use 38633
     .itemcount 38633,1
 step
     #optional
-    .equip 16,38632 >>|cRXP_WARN_Equipe o|r |T135335:0|t[|cFF0070FFMontante da Lâmina de Ébano|r]
+    .equip 16,38632 >> |cRXP_WARN_Equipe o|r |T135335:0|t[|cFF0070FFMontante da Lâmina de Ébano|r]
     .use 38632
     .itemcount 38632,1
 step
 	#completewith next
-	.cast 50977 >>|cRXP_WARN_Lance|r |T135766:0|t[Portão da Morte]
+	.cast 50977 >> |cRXP_WARN_Lance|r |T135766:0|t[Portão da Morte]
     .usespell 50977
 	.subzoneskip 4281
 step
 	#completewith next
-    .subzone 4281 >>|cRXP_WARN_Passe pelo|r |T135766:0|t[Portão da Morte]
+    .subzone 4281 >> |cRXP_WARN_Passe pelo|r |T135766:0|t[Portão da Morte]
 step
     .goto 23/0,-5650.600,2375.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Grão-lorde Dárion Mograine|r
     .target Highlord Darion Mograine
     .turnin 13165 >>Entregue A Retomada de Áquerus
     .accept 13166 >>Aceite A Batalha pela Fortaleza de Ébano
-    .trainer >>Treine suas magias de classe << wotlk/cata
+    .trainer >> Treine suas magias de classe << wotlk/cata
 step
     #completewith Pwerk
-    .goto 23,83.179,48.888,5 >>Pise no teletransportador roxo para ir ao andar superior
+    .goto 23,83.179,48.888,5 >> Pise no teletransportador roxo para ir ao andar superior
 step
     .isOnQuest 13166
     #sticky
@@ -954,7 +954,7 @@ step
 step
     #requires Cinderglacier
 	#completewith next
-    .goto 23,83.179,48.888,5 >>Pise no teletransportador roxo para viajar ao nível inferior
+    .goto 23,83.179,48.888,5 >> Pise no teletransportador roxo para viajar ao nível inferior
 step
     #requires Cinderglacier
     .goto 23/0,-5650.700,2375.400
@@ -977,7 +977,7 @@ step << Horde
 step << Horde
     .goto Orgrimmar,38.1,85.8 << wotlk
     .goto Orgrimmar,35.478,69.111 << cata/mop
-	.zone Blasted Lands >>Pegue o Portal para as Terras Devastadas
+	.zone Blasted Lands >> Pegue o Portal para as Terras Devastadas
     .zoneskip Orgrimmar,1
 step << Alliance
     .isOnQuest 13188
@@ -991,6 +991,6 @@ step << Alliance
     .turnin 13188 >>Entregue Onde Reis Caminham
 step << Alliance
     .goto Stormwind City,48.99,87.36
-	.zone Blasted Lands >>Pegue o Portal para as Terras Devastadas na Torre do Mago
+	.zone Blasted Lands >> Pegue o Portal para as Terras Devastadas na Torre do Mago
     .zoneskip Stormwind City,1
 ]])

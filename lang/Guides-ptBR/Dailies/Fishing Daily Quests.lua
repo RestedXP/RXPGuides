@@ -9,7 +9,7 @@ RXPGuides.RegisterGuide([[
 
 step
 	.goto Dalaran,53.04,64.95
-	.daily 13830,13832,13833,13834,13836, >>Fale com |cRXP_FRIENDLY_Marcia Perseguição|r em Dalaran. Ela tem 1 de 5 missões de pesca diárias. Aceite qualquer uma que esteja disponível.
+	.daily 13830,13832,13833,13834,13836, >> Fale com |cRXP_FRIENDLY_Marcia Perseguição|r em Dalaran. Ela tem 1 de 5 missões de pesca diárias. Aceite qualquer uma que esteja disponível.
 	>>O Peixe Fantasma -- 13830
 	>>Joia dos Esgotos -- 13832
 	>>O Sangue é Mais Espesso -- 13833
@@ -35,7 +35,7 @@ step << Horde
 step
 	.goto Wintergrasp,79.57,46.92,-1
 	.goto Wintergrasp,79.88,41.38,-1
-	.zone Wintergrasp >>Vá para Wintergrasp
+	.zone Wintergrasp >> Vá para Wintergrasp
 	.isOnQuest 13834
 step << Alliance
 	>>Pesque o |cRXP_LOOT_Terrorfish|r em qualquer lugar em Wintergrasp
@@ -77,7 +77,7 @@ step
 	.target Aludane
 step
 	.goto SholazarBasin,49.40,62.13
-	.zone SholazarBasin >>Vá para Bacia Sholazar
+	.zone SholazarBasin >> Vá para Bacia Sholazar
 	.isOnQuest 13830
 step
 	#completewith next

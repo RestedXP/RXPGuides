@@ -10,17 +10,17 @@ RXPGuides.RegisterGuide([[
 
 step
 	#completewith next
-	.goto IcecrownGlacier,69.66,22.86,200 >>Viaje para os |T236690:0|tArgent Torneio Grounds em Coroa de Gelo
+	.goto IcecrownGlacier,69.66,22.86,200 >> Viaje para os |T236690:0|tArgent Torneio Grounds em Coroa de Gelo
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Justicar Mariel Veras|r
 	.goto IcecrownGlacier,69.66,22.86
-	.accept 13667 >>Aceite O Torneio Argênteo << Alliance
-	.accept 13668 >>Aceite O Torneio Argênteo << Horde
+	.accept 13667 >> Aceite O Torneio Argênteo << Alliance
+	.accept 13668 >> Aceite O Torneio Argênteo << Horde
 	.target Justicar Mariel Trueheart
 step
 	#completewith next
 	.goto IcecrownGlacier,72.59,22.61
-	.fp Argent Tournament Grounds >>Aprenda a rota de voo dos Argent Torneio Grounds
+	.fp Argent Tournament Grounds >> Aprenda a rota de voo dos Argent Torneio Grounds
 	.target Helidan Lightwing
 step
 	>>Entre no Pavilhão de Aliança Prateado Covenant << Alliance
@@ -29,24 +29,24 @@ step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Magister Edien|r Sunhollow << Horde
 	.goto IcecrownGlacier,76.46,19.41 << Alliance
 	.goto IcecrownGlacier,76.27,24.38 << Horde
-	.turnin 13667 >>Entregue O Torneio Argênteo << Alliance
-	.turnin 13668 >>Entregue O Torneio Argênteo << Horde
+	.turnin 13667 >> Entregue O Torneio Argênteo << Alliance
+	.turnin 13668 >> Entregue O Torneio Argênteo << Horde
 	.target Arcanist Taelis << Alliance
 	.target Magister Edien Sunhollow << Horde
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Arcanista Taelis|r, |cRXP_FRIENDLY_Avareth Ligérion|r e a |cRXP_FRIENDLY_Batedora Shalíndria|r << Alliance
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Magíster Edien Solinane|r, |cRXP_FRIENDLY_Amariel Jurassolar|r e a |cRXP_FRIENDLY_Galátia Brilhalvo|r << Horde
-	.accept 13828 >>Aceite Proficiência de Combate Corpo a Corpo << Alliance
+	.accept 13828 >> Aceite Proficiência de Combate Corpo a Corpo << Alliance
 	.goto IcecrownGlacier,76.46,19.41 << Alliance
-	.accept 13837 >>Aceite Maestria da Investida << Alliance
+	.accept 13837 >> Aceite Maestria da Investida << Alliance
 	.goto IcecrownGlacier,76.44,19.35 << Alliance
-	.accept 13835 >>Aceite A Maestria do Quebra-Escudo << Alliance
+	.accept 13835 >> Aceite A Maestria do Quebra-Escudo << Alliance
 	.goto IcecrownGlacier,76.47,19.46 << Alliance
-	.accept 13829 >>Aceite Proficiência de Combate Corpo a Corpo << Horde
+	.accept 13829 >> Aceite Proficiência de Combate Corpo a Corpo << Horde
 	.goto IcecrownGlacier,76.27,24.38 << Horde
-	.accept 13839 >>Aceite Maestria da Investida << Horde
+	.accept 13839 >> Aceite Maestria da Investida << Horde
 	.goto IcecrownGlacier,76.31,24.38 << Horde
-	.accept 13838 >>Aceite A Maestria do Quebra-Escudo << Horde
+	.accept 13838 >> Aceite A Maestria do Quebra-Escudo << Horde
 	.goto IcecrownGlacier,76.24,24.44 << Horde
 	.target Arcanist Taelis << Alliance
 	.target Avareth Swiftstrike << Alliance
@@ -121,17 +121,17 @@ step
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Arcanista Taelis|r, |cRXP_FRIENDLY_Avareth Ligérion|r e a |cRXP_FRIENDLY_Batedora Shalíndria|r << Alliance
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Magíster Edien Solinane|r, |cRXP_FRIENDLY_Amariel Jurassolar|r e a |cRXP_FRIENDLY_Galátia Brilhalvo|r << Horde
-	.turnin 13828 >>Entregue Proficiência de Combate Corpo a Corpo << Alliance
+	.turnin 13828 >> Entregue Proficiência de Combate Corpo a Corpo << Alliance
 	.goto IcecrownGlacier,76.46,19.41 << Alliance
-	.turnin 13837 >>Entregue Maestria da Investida << Alliance
+	.turnin 13837 >> Entregue Maestria da Investida << Alliance
 	.goto IcecrownGlacier,76.44,19.35 << Alliance
-	.turnin 13835 >>Entregue A Maestria do Quebra-Escudo << Alliance
+	.turnin 13835 >> Entregue A Maestria do Quebra-Escudo << Alliance
 	.goto IcecrownGlacier,76.47,19.46 << Alliance
-	.turnin 13829 >>Entregue Proficiência de Combate Corpo a Corpo << Horde
+	.turnin 13829 >> Entregue Proficiência de Combate Corpo a Corpo << Horde
 	.goto IcecrownGlacier,76.27,24.38 << Horde
-	.turnin 13839 >>Entregue Maestria da Investida << Horde
+	.turnin 13839 >> Entregue Maestria da Investida << Horde
 	.goto IcecrownGlacier,76.31,24.38 << Horde
-	.turnin 13838 >>Entregue A Maestria do Quebra-Escudo << Horde
+	.turnin 13838 >> Entregue A Maestria do Quebra-Escudo << Horde
 	.goto IcecrownGlacier,76.24,24.44 << Horde
 	.target Arcanist Taelis << Alliance
 	.target Avareth Swiftstrike << Alliance
@@ -142,9 +142,9 @@ step
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Arcanista Taelis|r << Alliance
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Magíster Edien Solinane|r << Horde
-	.accept 13672 >>Aceite À Altura do Desafio << Alliance
+	.accept 13672 >> Aceite À Altura do Desafio << Alliance
 	.goto IcecrownGlacier,76.46,19.41 << Alliance
-	.accept 13678 >>Aceite À Altura do Desafio << Horde
+	.accept 13678 >> Aceite À Altura do Desafio << Horde
 	.goto IcecrownGlacier,76.27,24.38 << Horde
 	.target Arcanist Taelis << Alliance
 	.target Magister Edien Sunhollow << Horde
@@ -157,13 +157,13 @@ step
 	.goto IcecrownGlacier,76.27,24.38 << Horde
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Avareth Ligérion|r e |cRXP_FRIENDLY_Batedora Shalíndria|r << Alliance
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Amariel Jurassolar|r e |cRXP_FRIENDLY_Galátia Brilhalvo|r << Horde
-	.daily 13671 >>Aceite Treinamento de Campo << Alliance
+	.daily 13671 >> Aceite Treinamento de Campo << Alliance
 	.goto IcecrownGlacier,76.44,19.35 << Alliance
-	.daily 13676 >>Aceite Treinamento de Campo << Horde
+	.daily 13676 >> Aceite Treinamento de Campo << Horde
 	.goto IcecrownGlacier,76.31,24.38 << Horde
-	.daily 13625 >>Aceite Dominando as Rédeas << Alliance
+	.daily 13625 >> Aceite Dominando as Rédeas << Alliance
 	.goto IcecrownGlacier,76.47,19.46 << Alliance
-	.daily 13677 >>Aceite Dominando as Rédeas << Horde
+	.daily 13677 >> Aceite Dominando as Rédeas << Horde
 	.goto IcecrownGlacier,76.24,24.44 << Horde
 	.target Arcanist Taelis << Alliance
 	.target Avareth Swiftstrike << Alliance
@@ -247,7 +247,7 @@ step
 	.isOnQuest 13669 << Alliance
 	.isOnQuest 13674 << Horde
 	.goto Dragonblight,93.18,26.00
-	.zone Dragonblight >>Viaje para Drak'Mar Lake no nordeste de Ermo das Serpes
+	.zone Dragonblight >> Viaje para Drak'Mar Lake no nordeste de Ermo das Serpes
 step
 	.isOnQuest 13669 << Alliance
 	.isOnQuest 13674 << Horde
@@ -263,7 +263,7 @@ step
 	.isOnQuest 13670 << Alliance
 	.isOnQuest 13675 << Horde
 	.goto CrystalsongForest,55.05,75.04
-	.zone CrystalsongForest >>Viaje para a Floresta do Canto Cristalino
+	.zone CrystalsongForest >> Viaje para a Floresta do Canto Cristalino
 step
 	.isOnQuest 13670 << Alliance
 	.isOnQuest 13675 << Horde
@@ -276,7 +276,7 @@ step
 	.isOnQuest 13670 << Alliance
 	.isOnQuest 13675 << Horde
 	.goto HowlingFjord,42.18,19.65
-	.zone HowlingFjord >>Viaje para o Lago do Sopro de Inverno no norte de Fiorde Uivante
+	.zone HowlingFjord >> Viaje para o Lago do Sopro de Inverno no norte de Fiorde Uivante
 step
 	.isOnQuest 13670 << Alliance
 	.isOnQuest 13675 << Horde
@@ -290,7 +290,7 @@ step
 	.isOnQuest 13666 << Alliance
 	.isOnQuest 13673 << Horde
 	.goto Grizzly Hills,60.83,51.36
-	.zone Grizzly Hills >>Viaje para Serra Gris
+	.zone Grizzly Hills >> Viaje para Serra Gris
 step
 	.isOnQuest 13666 << Alliance
 	.isOnQuest 13673 << Horde
@@ -312,23 +312,23 @@ step
 	.target Lake Frog
 	.target Maiden of Ashwood Lake
 step
-	.goto IcecrownGlacier,76.46,19.41,300 >>Volte para o |T236690:0|tTerrenos do Torneio Argent em Coroa de Gelo << Alliance
-	.goto IcecrownGlacier,76.27,24.38,300 >>Volte para o |T236690:0|tTerrenos do Torneio Argent em Coroa de Gelo << Horde
+	.goto IcecrownGlacier,76.46,19.41,300 >> Volte para o |T236690:0|tTerrenos do Torneio Argent em Coroa de Gelo << Alliance
+	.goto IcecrownGlacier,76.27,24.38,300 >> Volte para o |T236690:0|tTerrenos do Torneio Argent em Coroa de Gelo << Horde
 	.isOnQuest 13666,13673,13675,13670,13674,13669
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Arcanista Taelis|r, |cRXP_FRIENDLY_Avareth Ligérion|r e a |cRXP_FRIENDLY_Batedora Shalíndria|r << Alliance
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Magíster Edien Solinane|r, |cRXP_FRIENDLY_Amariel Jurassolar|r e a |cRXP_FRIENDLY_Galátia Brilhalvo|r << Horde
-	.turnin 13669 >>Entregue Uma Arma de Valor << Alliance
+	.turnin 13669 >> Entregue Uma Arma de Valor << Alliance
 	.goto IcecrownGlacier,76.46,19.41 << Alliance
-	.turnin 13674 >>Entregue Uma Arma de Valor << Horde
+	.turnin 13674 >> Entregue Uma Arma de Valor << Horde
 	.goto IcecrownGlacier,76.27,24.38 << Horde
-	.turnin 13671 >>Entregue Treinamento de Campo << Alliance
+	.turnin 13671 >> Entregue Treinamento de Campo << Alliance
 	.goto IcecrownGlacier,76.44,19.35 << Alliance
-	.turnin 13676 >>Entregue Treinamento de Campo << Horde
+	.turnin 13676 >> Entregue Treinamento de Campo << Horde
 	.goto IcecrownGlacier,76.31,24.38 << Horde
-	.turnin 13625 >>Entregue Dominando as Rédeas << Alliance
+	.turnin 13625 >> Entregue Dominando as Rédeas << Alliance
 	.goto IcecrownGlacier,76.47,19.46 << Alliance
-	.turnin 13677 >>Entregue Dominando as Rédeas << Horde
+	.turnin 13677 >> Entregue Dominando as Rédeas << Horde
 	.goto IcecrownGlacier,76.24,24.44 << Horde
 	.target Arcanist Taelis << Alliance
 	.target Avareth Swiftstrike << Alliance
@@ -341,17 +341,17 @@ step
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Arcanista Taelis|r, |cRXP_FRIENDLY_Avareth Ligérion|r e a |cRXP_FRIENDLY_Batedora Shalíndria|r << Alliance
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Magíster Edien Solinane|r, |cRXP_FRIENDLY_Amariel Jurassolar|r e a |cRXP_FRIENDLY_Galátia Brilhalvo|r << Horde
-	.turnin 13670 >>Entregue Limiar do Inverno << Alliance
+	.turnin 13670 >> Entregue Limiar do Inverno << Alliance
 	.goto IcecrownGlacier,76.46,19.41 << Alliance
-	.turnin 13675 >>Entregue Limiar do Inverno << Horde
+	.turnin 13675 >> Entregue Limiar do Inverno << Horde
 	.goto IcecrownGlacier,76.27,24.38 << Horde
-	.turnin 13671 >>Entregue Treinamento de Campo << Alliance
+	.turnin 13671 >> Entregue Treinamento de Campo << Alliance
 	.goto IcecrownGlacier,76.44,19.35 << Alliance
-	.turnin 13676 >>Entregue Treinamento de Campo << Horde
+	.turnin 13676 >> Entregue Treinamento de Campo << Horde
 	.goto IcecrownGlacier,76.31,24.38 << Horde
-	.turnin 13625 >>Entregue Dominando as Rédeas << Alliance
+	.turnin 13625 >> Entregue Dominando as Rédeas << Alliance
 	.goto IcecrownGlacier,76.47,19.46 << Alliance
-	.turnin 13677 >>Entregue Dominando as Rédeas << Horde
+	.turnin 13677 >> Entregue Dominando as Rédeas << Horde
 	.goto IcecrownGlacier,76.24,24.44 << Horde
 	.target Arcanist Taelis << Alliance
 	.target Avareth Swiftstrike << Alliance
@@ -364,17 +364,17 @@ step
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Arcanista Taelis|r, |cRXP_FRIENDLY_Avareth Ligérion|r e a |cRXP_FRIENDLY_Batedora Shalíndria|r << Alliance
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Magíster Edien Solinane|r, |cRXP_FRIENDLY_Amariel Jurassolar|r e a |cRXP_FRIENDLY_Galátia Brilhalvo|r << Horde
-	.turnin 13666 >>Entregue Uma Espada Digna de um Campeão << Alliance
+	.turnin 13666 >> Entregue Uma Espada Digna de um Campeão << Alliance
 	.goto IcecrownGlacier,76.46,19.41 << Alliance
-	.turnin 13673 >>Entregue Uma Espada Digna de um Campeão << Horde
+	.turnin 13673 >> Entregue Uma Espada Digna de um Campeão << Horde
 	.goto IcecrownGlacier,76.27,24.38 << Horde
-	.turnin 13671 >>Entregue Treinamento de Campo << Alliance
+	.turnin 13671 >> Entregue Treinamento de Campo << Alliance
 	.goto IcecrownGlacier,76.44,19.35 << Alliance
-	.turnin 13676 >>Entregue Treinamento de Campo << Horde
+	.turnin 13676 >> Entregue Treinamento de Campo << Horde
 	.goto IcecrownGlacier,76.31,24.38 << Horde
-	.turnin 13625 >>Entregue Dominando as Rédeas << Alliance
+	.turnin 13625 >> Entregue Dominando as Rédeas << Alliance
 	.goto IcecrownGlacier,76.47,19.46 << Alliance
-	.turnin 13677 >>Entregue Dominando as Rédeas << Horde
+	.turnin 13677 >> Entregue Dominando as Rédeas << Horde
 	.goto IcecrownGlacier,76.24,24.44 << Horde
 	.target Arcanist Taelis << Alliance
 	.target Avareth Swiftstrike << Alliance
@@ -387,13 +387,13 @@ step
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Avareth Ligérion|r e a |cRXP_FRIENDLY_Batedora Shalíndria|r << Alliance
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Amariel Jurassolar|r e |cRXP_FRIENDLY_Galátia Brilhalvo|r << Horde
-	.turnin -13671 >>Entregue Treinamento de Campo << Alliance
+	.turnin -13671 >> Entregue Treinamento de Campo << Alliance
 	.goto IcecrownGlacier,76.44,19.35 << Alliance
-	.turnin -13676 >>Entregue Treinamento de Campo << Horde
+	.turnin -13676 >> Entregue Treinamento de Campo << Horde
 	.goto IcecrownGlacier,76.31,24.38 << Horde
-	.turnin -13625 >>Entregue Dominando as Rédeas << Alliance
+	.turnin -13625 >> Entregue Dominando as Rédeas << Alliance
 	.goto IcecrownGlacier,76.47,19.46 << Alliance
-	.turnin -13677 >>Entregue Dominando as Rédeas << Horde
+	.turnin -13677 >> Entregue Dominando as Rédeas << Horde
 	.goto IcecrownGlacier,76.24,24.44 << Horde
 	.target Avareth Swiftstrike << Alliance
 	.target Scout Shalyndria << Alliance
@@ -407,17 +407,17 @@ step -- Checking if they have 15 Aspirant's Seals after a set of turn ins.
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Magíster Edien Solinane|r << Horde
 	.complete 13672,1 << Alliance -- Aspirant's Seal (15)
 	.complete 13678,1 << Horde -- Aspirant's Seal (15)
-	.turnin 13672 >>Entregue À Altura do Desafio << Alliance
+	.turnin 13672 >> Entregue À Altura do Desafio << Alliance
 	.goto IcecrownGlacier,76.46,19.41 << Alliance
-	.turnin 13678 >>Entregue À Altura do Desafio << Horde
+	.turnin 13678 >> Entregue À Altura do Desafio << Horde
 	.goto IcecrownGlacier,76.27,24.38 << Horde
 	.target Arcanist Taelis << Alliance
 	.target Magister Edien Sunhollow << Horde
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Arcanista Taelis|r << Alliance
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Magíster Edien Solinane|r << Horde
-	.accept 13679 >>Aceite O Desafio do Aspirante << Alliance
-	.accept 13680 >>Aceite O Desafio do Aspirante << Horde
+	.accept 13679 >> Aceite O Desafio do Aspirante << Alliance
+	.accept 13680 >> Aceite O Desafio do Aspirante << Horde
 	.goto IcecrownGlacier,76.46,19.41 << Alliance
 	.goto IcecrownGlacier,76.27,24.38 << Horde
 	.target Arcanist Taelis << Alliance
@@ -461,18 +461,18 @@ step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Magíster Edien Solinane|r << Horde
 	.goto IcecrownGlacier,76.46,19.41 << Alliance
 	.goto IcecrownGlacier,76.27,24.38 << Horde
-	.turnin 13679 >>Entregue O Desafio do Aspirante << Alliance
-	.turnin 13680 >>Entregue O Desafio do Aspirante << Horde
-	.accept 13690 >>Aceite Um Valente da Exodar << Draenei
-	.accept 13685 >>Aceite Um Valente de Altaforja << Dwarf
-	.accept 13688 >>Aceite Um Valente de Gnomeregan << Gnome
-	.accept 13684 >>Aceite Um Valente de Ventobravo	<< Human
-	.accept 13689 >>Aceite Um Valente de Darnassus << NightElf
-	.accept 13695 >>Aceite Um Valente da Cidade Baixa << Scourge
-	.accept 13691 >>Aceite Um Valente de Orgrimmar << Orc
-	.accept 13694 >>Aceite Um Valente do Penhasco do Trovão << Tauren
-	.accept 13693 >>Aceite Um Valente de Sen'Jin << Troll
-	.accept 13696 >>Aceite Um Valente de Luaprata << BloodElf
+	.turnin 13679 >> Entregue O Desafio do Aspirante << Alliance
+	.turnin 13680 >> Entregue O Desafio do Aspirante << Horde
+	.accept 13690 >> Aceite Um Valente da Exodar << Draenei
+	.accept 13685 >> Aceite Um Valente de Altaforja << Dwarf
+	.accept 13688 >> Aceite Um Valente de Gnomeregan << Gnome
+	.accept 13684 >> Aceite Um Valente de Ventobravo	<< Human
+	.accept 13689 >> Aceite Um Valente de Darnassus << NightElf
+	.accept 13695 >> Aceite Um Valente da Cidade Baixa << Scourge
+	.accept 13691 >> Aceite Um Valente de Orgrimmar << Orc
+	.accept 13694 >> Aceite Um Valente do Penhasco do Trovão << Tauren
+	.accept 13693 >> Aceite Um Valente de Sen'Jin << Troll
+	.accept 13696 >> Aceite Um Valente de Luaprata << BloodElf
 	.target Arcanist Taelis << Alliance
 	.target Magister Edien Sunhollow << Horde
 step
@@ -496,26 +496,26 @@ step
 	.goto IcecrownGlacier,76.20,24.63 << Tauren
 	.goto IcecrownGlacier,75.95,24.53 << Troll
 	.goto IcecrownGlacier,76.45,23.85 << BloodElf
-	.turnin 13690 >>Entregue Um Valente da Exodar << Draenei
-	.turnin 13685 >>Entregue Um Valente de Altaforja << Dwarf
-	.turnin 13688 >>Entregue Um Valente de Gnomeregan << Gnome
-	.turnin 13684 >>Entregue Um Valente de Ventobravo	<< Human
-	.turnin 13689 >>Entregue Um Valente de Darnassus << NightElf
-	.turnin 13695 >>Entregue Um Valente da Cidade Baixa << Scourge
-	.turnin 13691 >>Entregue Um Valente de Orgrimmar << Orc
-	.turnin 13694 >>Entregue Um Valente do Penhasco do Trovão << Tauren
-	.turnin 13693 >>Entregue Um Valente de Sen'Jin << Troll
-	.turnin 13696 >>Entregue Um Valente de Luaprata << BloodElf
-	.accept 13716 >>Aceite A Investida do Valente << Draenei
-	.accept	13714 >>Aceite A Investida do Valente << Dwarf
-	.accept 13715 >>Aceite A Investida do Valente << Gnome
-	.accept	13718 >>Aceite A Investida do Valente << Human
-	.accept 13717 >>Aceite A Investida do Valente << NightElf
-	.accept	13721 >>Aceite A Investida do Valente << Scourge
-	.accept 13697 >>Aceite A Investida do Valente << Orc
-	.accept 13720 >>Aceite A Investida do Valente << Tauren
-	.accept 13719 >>Aceite A Investida do Valente << Troll
-	.accept 13722 >>Aceite A Investida do Valente << BloodElf
+	.turnin 13690 >> Entregue Um Valente da Exodar << Draenei
+	.turnin 13685 >> Entregue Um Valente de Altaforja << Dwarf
+	.turnin 13688 >> Entregue Um Valente de Gnomeregan << Gnome
+	.turnin 13684 >> Entregue Um Valente de Ventobravo	<< Human
+	.turnin 13689 >> Entregue Um Valente de Darnassus << NightElf
+	.turnin 13695 >> Entregue Um Valente da Cidade Baixa << Scourge
+	.turnin 13691 >> Entregue Um Valente de Orgrimmar << Orc
+	.turnin 13694 >> Entregue Um Valente do Penhasco do Trovão << Tauren
+	.turnin 13693 >> Entregue Um Valente de Sen'Jin << Troll
+	.turnin 13696 >> Entregue Um Valente de Luaprata << BloodElf
+	.accept 13716 >> Aceite A Investida do Valente << Draenei
+	.accept	13714 >> Aceite A Investida do Valente << Dwarf
+	.accept 13715 >> Aceite A Investida do Valente << Gnome
+	.accept	13718 >> Aceite A Investida do Valente << Human
+	.accept 13717 >> Aceite A Investida do Valente << NightElf
+	.accept	13721 >> Aceite A Investida do Valente << Scourge
+	.accept 13697 >> Aceite A Investida do Valente << Orc
+	.accept 13720 >> Aceite A Investida do Valente << Tauren
+	.accept 13719 >> Aceite A Investida do Valente << Troll
+	.accept 13722 >> Aceite A Investida do Valente << BloodElf
 	.target Colosos << Draenei
 	.target Lana Stouthammer << Dwarf
 	.target Ambrose Boltspark << Gnome
@@ -532,10 +532,10 @@ step << Human
 	.daily 13603,13616,13600 >>Aceite Uma Espada Digna de um Campeão |c99ffff99OU|r Limiar do Inverno |c99ffff99OU|r Uma Arma de Valor
 	.goto IcecrownGlacier,76.60,19.12
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sir Marcus Barlowe|r e o |cRXP_FRIENDLY_Capitão Josué Rolém|r
-	.daily 13592 >>Aceite Treinamento de Campo de um Valente
+	.daily 13592 >> Aceite Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.53,19.08
-	.daily 13665 >>Aceite A Grande Escaramuça
-	.daily 13847 >>Aceite Nos Portões Inimigos
+	.daily 13665 >> Aceite A Grande Escaramuça
+	.daily 13847 >> Aceite Nos Portões Inimigos
 	.goto IcecrownGlacier,76.62,19.21
 	.target Marshal Jacob Alerius
 	.target Sir Marcus Barlowe
@@ -547,10 +547,10 @@ step << Draenei
 	.daily 13752,13754,13753 >>Aceite Uma Espada Digna de um Campeão |c99ffff99OU|r Limiar do Inverno |c99ffff99OU|r Uma Arma de Valor
 	.goto IcecrownGlacier,76.10,19.10
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Saandos|r e |cRXP_FRIENDLY_Ranii|r
-	.daily 13755 >>Aceite Treinamento de Campo de um Valente
+	.daily 13755 >> Aceite Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.08,19.19
-	.daily 13756 >>Aceite A Grande Escaramuça
-	.daily 13854 >>Aceite Nos Portões Inimigos
+	.daily 13756 >> Aceite A Grande Escaramuça
+	.daily 13854 >> Aceite Nos Portões Inimigos
 	.goto IcecrownGlacier,76.15,19.08
 	.target Colosos
 	.target Saandos
@@ -562,10 +562,10 @@ step << NightElf
 	.daily 13757,13759,13758 >>Aceite Uma Espada Digna de um Campeão |c99ffff99OU|r Limiar do Inverno |c99ffff99OU|r Uma Arma de Valor
 	.goto IcecrownGlacier,76.34,19.03
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Illestria Cantalâmina|r e |cRXP_FRIENDLY_Airae Mirestela|r
-	.daily 13760 >>Aceite Treinamento de Campo de um Valente
+	.daily 13760 >> Aceite Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.29,18.99
-	.daily 13761 >>Aceite A Grande Escaramuça
-	.daily 13855 >>Aceite Nos Portões Inimigos
+	.daily 13761 >> Aceite A Grande Escaramuça
+	.daily 13855 >> Aceite Nos Portões Inimigos
 	.goto IcecrownGlacier,76.40,19.00
 	.target Jaelyne Evensong
 	.target Illestria Bladesinger
@@ -577,10 +577,10 @@ step << Dwarf
 	.daily 13741,13743,13742 >>Aceite Uma Espada Digna de um Campeão |c99ffff99OU|r Limiar do Inverno |c99ffff99OU|r Uma Arma de Valor
 	.goto IcecrownGlacier,76.64,19.49
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Rolo Tirocerto|r e |cRXP_FRIENDLY_Clara Rolacerva|r
-	.daily 13744 >>Aceite Treinamento de Campo de um Valente
+	.daily 13744 >> Aceite Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.66,19.41
-	.daily 13745 >>Aceite A Grande Escaramuça
-	.daily 13851 >>Aceite Nos Portões Inimigos
+	.daily 13745 >> Aceite A Grande Escaramuça
+	.daily 13851 >> Aceite Nos Portões Inimigos
 	.goto IcecrownGlacier,76.64,19.57
 	.target Lana Stouthammer
 	.target Rollo Sureshot
@@ -592,10 +592,10 @@ step << Gnome
 	.daily 13746,13748,13747 >>Aceite Uma Espada Digna de um Campeão |c99ffff99OU|r Limiar do Inverno |c99ffff99OU|r Uma Arma de Valor
 	.goto IcecrownGlacier,76.55,19.82
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tiquim Chavefenda|r e |cRXP_FRIENDLY_Fliquim Chavefenda|r
-	.daily 13749 >>Aceite Treinamento de Campo de um Valente
+	.daily 13749 >> Aceite Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.60,19.79
-	.daily 13750 >>Aceite A Grande Escaramuça
-	.daily 13852 >>Aceite Nos Portões Inimigos
+	.daily 13750 >> Aceite A Grande Escaramuça
+	.daily 13852 >> Aceite Nos Portões Inimigos
 	.goto IcecrownGlacier,76.52,19.89
 	.target Ambrose Boltspark
 	.target Tickin Gearspanner
@@ -607,10 +607,10 @@ step << BloodElf
 	.daily 13783,13785,13784 >>Aceite Uma Espada Digna de um Campeão |c99ffff99OU|r Limiar do Inverno |c99ffff99OU|r Uma Arma de Valor
 	.goto IcecrownGlacier,76.45,23.85
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kethiel Arrebol|r e |cRXP_FRIENDLY_Aníra Thuron|r
-	.daily 13786 >>Aceite Treinamento de Campo de um Valente
+	.daily 13786 >> Aceite Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.41,23.75
-	.daily 13787 >>Aceite A Grande Escaramuça
-	.daily 13859 >>Aceite Nos Portões Inimigos
+	.daily 13787 >> Aceite A Grande Escaramuça
+	.daily 13859 >> Aceite Nos Portões Inimigos
 	.goto IcecrownGlacier,76.52,23.93
 	.target Eressea Dawnsinger
 	.target Kethiel Sunlance
@@ -622,10 +622,10 @@ step << Scourge
 	.daily 13778,13780,13779 >>Aceite Uma Espada Digna de um Campeão |c99ffff99OU|r Limiar do Inverno |c99ffff99OU|r Uma Arma de Valor
 	.goto IcecrownGlacier,76.53,24.21
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sarah Chalke|r e o |cRXP_FRIENDLY_Tratador Dretch|r
-	.daily 13781 >>Aceite Treinamento de Campo de um Valente
+	.daily 13781 >> Aceite Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.56,24.11
-	.daily 13782 >>Aceite A Grande Escaramuça
-	.daily 13860 >>Aceite Nos Portões Inimigos
+	.daily 13782 >> Aceite A Grande Escaramuça
+	.daily 13860 >> Aceite Nos Portões Inimigos
 	.goto IcecrownGlacier,76.55,24.33
 	.target Deathstalker Visceri
 	.target Sarah Chalke
@@ -637,10 +637,10 @@ step << Orc
 	.daily 13762,13764,13763 >>Aceite Uma Espada Digna de um Campeão |c99ffff99OU|r Limiar do Inverno |c99ffff99OU|r Uma Arma de Valor
 	.goto IcecrownGlacier,76.46,24.60
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Aquinos|r e |cRXP_FRIENDLY_Móra Manaworg|r
-	.daily 13765 >>Aceite Treinamento de Campo de um Valente
+	.daily 13765 >> Aceite Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.50,24.48
-	.daily 13767 >>Aceite A Grande Escaramuça
-	.daily 13856 >>Aceite Nos Portões Inimigos
+	.daily 13767 >> Aceite A Grande Escaramuça
+	.daily 13856 >> Aceite Nos Portões Inimigos
 	.goto IcecrownGlacier,76.40,24.59
 	.target Mokra the Skullcrusher
 	.target Akinos
@@ -652,10 +652,10 @@ step << Tauren
 	.daily 13773,13775,13774 >>Aceite Uma Espada Digna de um Campeão |c99ffff99OU|r Limiar do Inverno |c99ffff99OU|r Uma Arma de Valor
 	.goto IcecrownGlacier,76.20,24.63
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dern Totem da Fúria|r e |cRXP_FRIENDLY_Anka Casco Afiado|r
-	.daily 13776 >>Aceite Treinamento de Campo de um Valente
+	.daily 13776 >> Aceite Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.26,24.66
-	.daily 13777 >>Aceite A Grande Escaramuça
-	.daily 13858 >>Aceite Nos Portões Inimigos
+	.daily 13777 >> Aceite A Grande Escaramuça
+	.daily 13858 >> Aceite Nos Portões Inimigos
 	.goto IcecrownGlacier,76.14,24.64
 	.target Runok Wildmane
 	.target Dern Ragetotem
@@ -667,10 +667,10 @@ step << Troll
 	.daily 13768,13770,13769 >>Aceite Uma Espada Digna de um Campeão |c99ffff99OU|r Limiar do Inverno |c99ffff99OU|r Uma Arma de Valor
 	.goto IcecrownGlacier,75.95,24.53
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Caçador Sombrio Mezil-kree|r e |cRXP_FRIENDLY_Gahju|r
-	.daily 13771 >>Aceite Treinamento de Campo de um Valente
+	.daily 13771 >> Aceite Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.04,24.59
-	.daily 13772 >>Aceite A Grande Escaramuça
-	.daily 13857 >>Aceite Nos Portões Inimigos
+	.daily 13772 >> Aceite A Grande Escaramuça
+	.daily 13857 >> Aceite Nos Portões Inimigos
 	.goto IcecrownGlacier,75.93,24.41
 	.target Zul'tore
 	.target Shadow Hunter Mezil-kree
@@ -887,7 +887,7 @@ step -- A Worthy Weapon v2
 step
 	#completewith next
 	.goto Dragonblight,93.18,26.00
-	.zone Dragonblight >>Viaje para Drak'Mar Lake no nordeste de Ermo das Serpes
+	.zone Dragonblight >> Viaje para Drak'Mar Lake no nordeste de Ermo das Serpes
 	.isOnQuest 13600,13742,13747,13753,13758,13763,13769,13774,13779,13784
 step
 	.goto Dragonblight,93.18,26.00
@@ -910,7 +910,7 @@ step
 step -- The Edge Of Winter v2
 	#completewith next
 	.goto CrystalsongForest,55.05,75.04
-	.zone CrystalsongForest >>Viaje para a Floresta do Canto Cristalino
+	.zone CrystalsongForest >> Viaje para a Floresta do Canto Cristalino
 	.isOnQuest 13616,13743,13748,13754,13759,13764,13770,13775,13780,13785
 step
 	.goto CrystalsongForest,55.05,75.04
@@ -922,7 +922,7 @@ step
 step
 	#completewith next
 	.goto HowlingFjord,42.18,19.65
-	.zone HowlingFjord >>Viaje para o Lago do Sopro de Inverno no norte de Fiorde Uivante
+	.zone HowlingFjord >> Viaje para o Lago do Sopro de Inverno no norte de Fiorde Uivante
 	.isOnQuest 13616,13743,13748,13754,13759,13764,13770,13775,13780,13785
 step
 	.goto HowlingFjord,42.18,19.65
@@ -943,7 +943,7 @@ step
 step -- A Blade Fit For A Champion v2
 	#completewith next
 	.goto Grizzly Hills,60.83,51.36
-	.zone Grizzly Hills >>Viaje para Serra Gris
+	.zone Grizzly Hills >> Viaje para Serra Gris
 	.isOnQuest 13603,13741,13746,13752,13757,13762,13768,13773,13778,13783
 step
 	.goto Grizzly Hills,60.83,51.36,10,0
@@ -974,17 +974,17 @@ step
 	.target Maiden of Ashwood Lake
 	.isOnQuest 13603,13741,13746,13752,13757,13762,13768,13773,13778,13783
 step
-	.goto IcecrownGlacier,76.46,19.41,300 >>Volte para o |T236690:0|tTerrenos do Torneio Argent em Coroa de Gelo << Alliance
-	.goto IcecrownGlacier,76.27,24.38,300 >>Volte para o |T236690:0|tTerrenos do Torneio Argent em Coroa de Gelo << Horde
+	.goto IcecrownGlacier,76.46,19.41,300 >> Volte para o |T236690:0|tTerrenos do Torneio Argent em Coroa de Gelo << Alliance
+	.goto IcecrownGlacier,76.27,24.38,300 >> Volte para o |T236690:0|tTerrenos do Torneio Argent em Coroa de Gelo << Horde
 	.isOnQuest 13603,13741,13746,13752,13757,13762,13768,13773,13778,13783,13616,13743,13748,13754,13759,13764,13770,13775,13780,13785,13600,13742,13747,13753,13758,13763,13769,13774,13779,13784
 step << Human
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Marechal Jacob Alerius|r, |cRXP_FRIENDLY_Sir Marcus Barlowe|r e o |cRXP_FRIENDLY_Capitão Josué Rolém|r
-	.turnin 13603 >>Entregue Uma Espada Digna de um Campeão
+	.turnin 13603 >> Entregue Uma Espada Digna de um Campeão
 	.goto IcecrownGlacier,76.60,19.12
-	.turnin 13592 >>Entregue Treinamento de Campo de um Valente
+	.turnin 13592 >> Entregue Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.53,19.08
-	.turnin 13665 >>Entregue A Grande Escaramuça
-	.turnin 13847 >>Entregue Nos Portões Inimigos
+	.turnin 13665 >> Entregue A Grande Escaramuça
+	.turnin 13847 >> Entregue Nos Portões Inimigos
 	.goto IcecrownGlacier,76.62,19.21
 	.target Marshal Jacob Alerius
 	.target Sir Marcus Barlowe
@@ -992,12 +992,12 @@ step << Human
 	.isQuestComplete 13603 -- A Blade Fit For A Champion
 step << Human
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Marechal Jacob Alerius|r, |cRXP_FRIENDLY_Sir Marcus Barlowe|r e o |cRXP_FRIENDLY_Capitão Josué Rolém|r
-	.turnin 13616 >>Entregue Limiar do Inverno
+	.turnin 13616 >> Entregue Limiar do Inverno
 	.goto IcecrownGlacier,76.60,19.12
-	.turnin 13592 >>Entregue Treinamento de Campo de um Valente
+	.turnin 13592 >> Entregue Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.53,19.08
-	.turnin 13665 >>Entregue A Grande Escaramuça
-	.turnin 13847 >>Entregue Nos Portões Inimigos
+	.turnin 13665 >> Entregue A Grande Escaramuça
+	.turnin 13847 >> Entregue Nos Portões Inimigos
 	.goto IcecrownGlacier,76.62,19.21
 	.target Marshal Jacob Alerius
 	.target Sir Marcus Barlowe
@@ -1005,12 +1005,12 @@ step << Human
 	.isQuestComplete 13616 -- The Edge Of Winter
 step << Human
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Marechal Jacob Alerius|r, |cRXP_FRIENDLY_Sir Marcus Barlowe|r e o |cRXP_FRIENDLY_Capitão Josué Rolém|r
-	.turnin 13600 >>Entregue Uma Arma de Valor
+	.turnin 13600 >> Entregue Uma Arma de Valor
 	.goto IcecrownGlacier,76.60,19.12
-	.turnin 13592 >>Entregue Treinamento de Campo de um Valente
+	.turnin 13592 >> Entregue Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.53,19.08
-	.turnin 13665 >>Entregue A Grande Escaramuça
-	.turnin 13847 >>Entregue Nos Portões Inimigos
+	.turnin 13665 >> Entregue A Grande Escaramuça
+	.turnin 13847 >> Entregue Nos Portões Inimigos
 	.goto IcecrownGlacier,76.62,19.21
 	.target Marshal Jacob Alerius
 	.target Sir Marcus Barlowe
@@ -1018,22 +1018,22 @@ step << Human
 	.isQuestComplete 13600 -- A Worthy Weapon
 step << Human
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sir Marcus Barlowe|r e o |cRXP_FRIENDLY_Capitão Josué Rolém|r
-	.turnin -13592 >>Entregue Treinamento de Campo de um Valente
+	.turnin -13592 >> Entregue Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.53,19.08
-	.turnin -13665 >>Entregue A Grande Escaramuça
-	.turnin -13847 >>Entregue Nos Portões Inimigos
+	.turnin -13665 >> Entregue A Grande Escaramuça
+	.turnin -13847 >> Entregue Nos Portões Inimigos
 	.goto IcecrownGlacier,76.62,19.21
 	.target Sir Marcus Barlowe
 	.target Captain Joseph Holley
 
 step << Draenei
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Colossos|r, |cRXP_FRIENDLY_Saandos|r e |cRXP_FRIENDLY_Ranii|r
-	.turnin 13752 >>Entregue Uma Espada Digna de um Campeão
+	.turnin 13752 >> Entregue Uma Espada Digna de um Campeão
 	.goto IcecrownGlacier,76.10,19.10
-	.turnin 13755 >>Entregue Treinamento de Campo de um Valente
+	.turnin 13755 >> Entregue Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.08,19.19
-	.turnin 13756 >>Entregue A Grande Escaramuça
-	.turnin 13854 >>Entregue Nos Portões Inimigos
+	.turnin 13756 >> Entregue A Grande Escaramuça
+	.turnin 13854 >> Entregue Nos Portões Inimigos
 	.goto IcecrownGlacier,76.15,19.08
 	.target Colosos
 	.target Saandos
@@ -1041,12 +1041,12 @@ step << Draenei
 	.isQuestComplete 13752 -- A Blade Fit For A Champion
 step << Draenei
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Colossos|r, |cRXP_FRIENDLY_Saandos|r e |cRXP_FRIENDLY_Ranii|r
-	.turnin 13754 >>Entregue Limiar do Inverno
+	.turnin 13754 >> Entregue Limiar do Inverno
 	.goto IcecrownGlacier,76.10,19.10
-	.turnin 13755 >>Entregue Treinamento de Campo de um Valente
+	.turnin 13755 >> Entregue Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.08,19.19
-	.turnin 13756 >>Entregue A Grande Escaramuça
-	.turnin 13854 >>Entregue Nos Portões Inimigos
+	.turnin 13756 >> Entregue A Grande Escaramuça
+	.turnin 13854 >> Entregue Nos Portões Inimigos
 	.goto IcecrownGlacier,76.15,19.08
 	.target Colosos
 	.target Saandos
@@ -1054,12 +1054,12 @@ step << Draenei
 	.isQuestComplete 13754 -- The Edge Of Winter
 step << Draenei
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Colossos|r, |cRXP_FRIENDLY_Saandos|r e |cRXP_FRIENDLY_Ranii|r
-	.turnin 13753 >>Entregue Uma Arma de Valor
+	.turnin 13753 >> Entregue Uma Arma de Valor
 	.goto IcecrownGlacier,76.10,19.10
-	.turnin 13755 >>Entregue Treinamento de Campo de um Valente
+	.turnin 13755 >> Entregue Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.08,19.19
-	.turnin 13756 >>Entregue A Grande Escaramuça
-	.turnin 13854 >>Entregue Nos Portões Inimigos
+	.turnin 13756 >> Entregue A Grande Escaramuça
+	.turnin 13854 >> Entregue Nos Portões Inimigos
 	.goto IcecrownGlacier,76.15,19.08
 	.target Colosos
 	.target Saandos
@@ -1067,22 +1067,22 @@ step << Draenei
 	.isQuestComplete 13753 -- A Worthy Weapon
 step << Draenei
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Saandos|r e |cRXP_FRIENDLY_Ranii|r
-	.turnin -13755 >>Entregue Treinamento de Campo de um Valente
+	.turnin -13755 >> Entregue Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.08,19.19
-	.turnin -13756 >>Entregue A Grande Escaramuça
-	.turnin -13854 >>Entregue Nos Portões Inimigos
+	.turnin -13756 >> Entregue A Grande Escaramuça
+	.turnin -13854 >> Entregue Nos Portões Inimigos
 	.goto IcecrownGlacier,76.15,19.08
 	.target Saandos
 	.target Ranii
 
 step << NightElf
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Jaeline Ortocanto|r, |cRXP_FRIENDLY_Illestria Cantalâmina|r e |cRXP_FRIENDLY_Airae Mirestela|r
-	.turnin 13757 >>Entregue Uma Espada Digna de um Campeão
+	.turnin 13757 >> Entregue Uma Espada Digna de um Campeão
 	.goto IcecrownGlacier,76.34,19.03
-	.turnin 13760 >>Entregue Treinamento de Campo de um Valente
+	.turnin 13760 >> Entregue Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.29,18.99
-	.turnin 13761 >>Entregue A Grande Escaramuça
-	.turnin 13855 >>Entregue Nos Portões Inimigos
+	.turnin 13761 >> Entregue A Grande Escaramuça
+	.turnin 13855 >> Entregue Nos Portões Inimigos
 	.goto IcecrownGlacier,76.40,19.00
 	.target Jaelyne Evensong
 	.target Illestria Bladesinger
@@ -1090,12 +1090,12 @@ step << NightElf
 	.isQuestComplete 13757 -- A Blade Fit For A Champion
 step << NightElf
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Jaeline Ortocanto|r, |cRXP_FRIENDLY_Illestria Cantalâmina|r e |cRXP_FRIENDLY_Airae Mirestela|r
-	.turnin 13759 >>Entregue Limiar do Inverno
+	.turnin 13759 >> Entregue Limiar do Inverno
 	.goto IcecrownGlacier,76.34,19.03
-	.turnin 13760 >>Entregue Treinamento de Campo de um Valente
+	.turnin 13760 >> Entregue Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.29,18.99
-	.turnin 13761 >>Entregue A Grande Escaramuça
-	.turnin 13855 >>Entregue Nos Portões Inimigos
+	.turnin 13761 >> Entregue A Grande Escaramuça
+	.turnin 13855 >> Entregue Nos Portões Inimigos
 	.goto IcecrownGlacier,76.40,19.00
 	.target Jaelyne Evensong
 	.target Illestria Bladesinger
@@ -1103,12 +1103,12 @@ step << NightElf
 	.isQuestComplete 13759 -- The Edge Of Winter
 step << NightElf
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Jaeline Ortocanto|r, |cRXP_FRIENDLY_Illestria Cantalâmina|r e |cRXP_FRIENDLY_Airae Mirestela|r
-	.turnin 13758 >>Entregue Uma Arma de Valor
+	.turnin 13758 >> Entregue Uma Arma de Valor
 	.goto IcecrownGlacier,76.34,19.03
-	.turnin 13760 >>Entregue Treinamento de Campo de um Valente
+	.turnin 13760 >> Entregue Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.29,18.99
-	.turnin 13761 >>Entregue A Grande Escaramuça
-	.turnin 13855 >>Entregue Nos Portões Inimigos
+	.turnin 13761 >> Entregue A Grande Escaramuça
+	.turnin 13855 >> Entregue Nos Portões Inimigos
 	.goto IcecrownGlacier,76.40,19.00
 	.target Jaelyne Evensong
 	.target Illestria Bladesinger
@@ -1116,22 +1116,22 @@ step << NightElf
 	.isQuestComplete 13758 -- A Worthy Weapon
 step << NightElf
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Illestria Cantalâmina|r e |cRXP_FRIENDLY_Airae Mirestela|r
-	.turnin -13760 >>Entregue Treinamento de Campo de um Valente
+	.turnin -13760 >> Entregue Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.29,18.99
-	.turnin -13761 >>Entregue A Grande Escaramuça
-	.turnin -13855 >>Entregue Nos Portões Inimigos
+	.turnin -13761 >> Entregue A Grande Escaramuça
+	.turnin -13855 >> Entregue Nos Portões Inimigos
 	.goto IcecrownGlacier,76.40,19.00
 	.target Illestria Bladesinger
 	.target Airae Starseeker
 
 step << Dwarf
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Lana Fortemalho|r, |cRXP_FRIENDLY_Rolo Tirocerto|r e |cRXP_FRIENDLY_Clara Rolacerva|r
-	.turnin 13741 >>Entregue Uma Espada Digna de um Campeão
+	.turnin 13741 >> Entregue Uma Espada Digna de um Campeão
 	.goto IcecrownGlacier,76.64,19.49
-	.turnin 13744 >>Entregue Treinamento de Campo de um Valente
+	.turnin 13744 >> Entregue Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.66,19.41
-	.turnin 13745 >>Entregue A Grande Escaramuça
-	.turnin 13851 >>Entregue Nos Portões Inimigos
+	.turnin 13745 >> Entregue A Grande Escaramuça
+	.turnin 13851 >> Entregue Nos Portões Inimigos
 	.goto IcecrownGlacier,76.64,19.57
 	.target Lana Stouthammer
 	.target Rollo Sureshot
@@ -1139,12 +1139,12 @@ step << Dwarf
 	.isQuestComplete 13741 -- A Blade Fit For A Champion
 step << Dwarf
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Lana Fortemalho|r, |cRXP_FRIENDLY_Rolo Tirocerto|r e |cRXP_FRIENDLY_Clara Rolacerva|r
-	.turnin 13743 >>Entregue Limiar do Inverno
+	.turnin 13743 >> Entregue Limiar do Inverno
 	.goto IcecrownGlacier,76.64,19.49
-	.turnin 13744 >>Entregue Treinamento de Campo de um Valente
+	.turnin 13744 >> Entregue Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.66,19.41
-	.turnin 13745 >>Entregue A Grande Escaramuça
-	.turnin 13851 >>Entregue Nos Portões Inimigos
+	.turnin 13745 >> Entregue A Grande Escaramuça
+	.turnin 13851 >> Entregue Nos Portões Inimigos
 	.goto IcecrownGlacier,76.64,19.57
 	.target Lana Stouthammer
 	.target Rollo Sureshot
@@ -1152,12 +1152,12 @@ step << Dwarf
 	.isQuestComplete 13743 -- The Edge Of Winter
 step << Dwarf
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Lana Fortemalho|r, |cRXP_FRIENDLY_Rolo Tirocerto|r e |cRXP_FRIENDLY_Clara Rolacerva|r
-	.turnin 13742 >>Entregue Uma Arma de Valor
+	.turnin 13742 >> Entregue Uma Arma de Valor
 	.goto IcecrownGlacier,76.64,19.49
-	.turnin 13744 >>Entregue Treinamento de Campo de um Valente
+	.turnin 13744 >> Entregue Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.66,19.41
-	.turnin 13745 >>Entregue A Grande Escaramuça
-	.turnin 13851 >>Entregue Nos Portões Inimigos
+	.turnin 13745 >> Entregue A Grande Escaramuça
+	.turnin 13851 >> Entregue Nos Portões Inimigos
 	.goto IcecrownGlacier,76.64,19.57
 	.target Lana Stouthammer
 	.target Rollo Sureshot
@@ -1165,22 +1165,22 @@ step << Dwarf
 	.isQuestComplete 13742 -- A Worthy Weapon
 step << Dwarf
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Rollo|r Sureshot e |cRXP_FRIENDLY_Clara Rolacerva|r
-	.turnin -13744 >>Entregue Treinamento de Campo de um Valente
+	.turnin -13744 >> Entregue Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.66,19.41
-	.turnin -13745 >>Entregue A Grande Escaramuça
-	.turnin -13851 >>Entregue Nos Portões Inimigos
+	.turnin -13745 >> Entregue A Grande Escaramuça
+	.turnin -13851 >> Entregue Nos Portões Inimigos
 	.goto IcecrownGlacier,76.64,19.57
 	.target Rollo Sureshot
 	.target Clara Tumblebrew
 
 step << Gnome
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ambrósio Chisparafuso|r, |cRXP_FRIENDLY_Tiquim Chavefenda|r e |cRXP_FRIENDLY_Fliquim Chavefenda|r
-	.turnin 13746 >>Entregue Uma Espada Digna de um Campeão
+	.turnin 13746 >> Entregue Uma Espada Digna de um Campeão
 	.goto IcecrownGlacier,76.55,19.82
-	.turnin 13749 >>Entregue Treinamento de Campo de um Valente
+	.turnin 13749 >> Entregue Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.60,19.79
-	.turnin 13750 >>Entregue A Grande Escaramuça
-	.turnin 13852 >>Entregue Nos Portões Inimigos
+	.turnin 13750 >> Entregue A Grande Escaramuça
+	.turnin 13852 >> Entregue Nos Portões Inimigos
 	.goto IcecrownGlacier,76.52,19.89
 	.target Ambrose Boltspark
 	.target Tickin Gearspanner
@@ -1188,12 +1188,12 @@ step << Gnome
 	.isQuestComplete 13746 -- A Blade Fit For A Champion
 step << Gnome
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ambrósio Chisparafuso|r, |cRXP_FRIENDLY_Tiquim Chavefenda|r e |cRXP_FRIENDLY_Fliquim Chavefenda|r
-	.turnin 13748 >>Entregue Limiar do Inverno
+	.turnin 13748 >> Entregue Limiar do Inverno
 	.goto IcecrownGlacier,76.55,19.82
-	.turnin 13749 >>Entregue Treinamento de Campo de um Valente
+	.turnin 13749 >> Entregue Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.60,19.79
-	.turnin 13750 >>Entregue A Grande Escaramuça
-	.turnin 13852 >>Entregue Nos Portões Inimigos
+	.turnin 13750 >> Entregue A Grande Escaramuça
+	.turnin 13852 >> Entregue Nos Portões Inimigos
 	.goto IcecrownGlacier,76.52,19.89
 	.target Ambrose Boltspark
 	.target Tickin Gearspanner
@@ -1201,12 +1201,12 @@ step << Gnome
 	.isQuestComplete 13748 -- The Edge Of Winter
 step << Gnome
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ambrósio Chisparafuso|r, |cRXP_FRIENDLY_Tiquim Chavefenda|r e |cRXP_FRIENDLY_Fliquim Chavefenda|r
-	.turnin 13747 >>Entregue Uma Arma de Valor
+	.turnin 13747 >> Entregue Uma Arma de Valor
 	.goto IcecrownGlacier,76.55,19.82
-	.turnin 13749 >>Entregue Treinamento de Campo de um Valente
+	.turnin 13749 >> Entregue Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.60,19.79
-	.turnin 13750 >>Entregue A Grande Escaramuça
-	.turnin 13852 >>Entregue Nos Portões Inimigos
+	.turnin 13750 >> Entregue A Grande Escaramuça
+	.turnin 13852 >> Entregue Nos Portões Inimigos
 	.goto IcecrownGlacier,76.52,19.89
 	.target Ambrose Boltspark
 	.target Tickin Gearspanner
@@ -1214,22 +1214,22 @@ step << Gnome
 	.isQuestComplete 13747 -- A Worthy Weapon
 step << Gnome
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tiquim Chavefenda|r e |cRXP_FRIENDLY_Fliquim Chavefenda|r
-	.turnin -13749 >>Entregue Treinamento de Campo de um Valente
+	.turnin -13749 >> Entregue Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.60,19.79
-	.turnin -13750 >>Entregue A Grande Escaramuça
-	.turnin -13852 >>Entregue Nos Portões Inimigos
+	.turnin -13750 >> Entregue A Grande Escaramuça
+	.turnin -13852 >> Entregue Nos Portões Inimigos
 	.goto IcecrownGlacier,76.52,19.89
 	.target Tickin Gearspanner
 	.target Flickin Gearspanner
 
 step << Troll
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zul'tore|r, |cRXP_FRIENDLY_Caçador Sombrio Mezil-kree|r e |cRXP_FRIENDLY_Gahju|r
-	.turnin 13768 >>Entregue Uma Espada Digna de um Campeão
+	.turnin 13768 >> Entregue Uma Espada Digna de um Campeão
 	.goto IcecrownGlacier,75.95,24.53
-	.turnin 13771 >>Entregue Treinamento de Campo de um Valente
+	.turnin 13771 >> Entregue Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.04,24.59
-	.turnin 13772 >>Entregue A Grande Escaramuça
-	.turnin 13857 >>Entregue Nos Portões Inimigos
+	.turnin 13772 >> Entregue A Grande Escaramuça
+	.turnin 13857 >> Entregue Nos Portões Inimigos
 	.goto IcecrownGlacier,75.93,24.41
 	.target Zul'tore
 	.target Shadow Hunter Mezil-kree
@@ -1237,12 +1237,12 @@ step << Troll
 	.isQuestComplete 13768 -- A Blade Fit For A Champion
 step << Troll
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zul'tore|r, |cRXP_FRIENDLY_Caçador Sombrio Mezil-kree|r e |cRXP_FRIENDLY_Gahju|r
-	.turnin 13770 >>Entregue Limiar do Inverno
+	.turnin 13770 >> Entregue Limiar do Inverno
 	.goto IcecrownGlacier,75.95,24.53
-	.turnin 13771 >>Entregue Treinamento de Campo de um Valente
+	.turnin 13771 >> Entregue Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.04,24.59
-	.turnin 13772 >>Entregue A Grande Escaramuça
-	.turnin 13857 >>Entregue Nos Portões Inimigos
+	.turnin 13772 >> Entregue A Grande Escaramuça
+	.turnin 13857 >> Entregue Nos Portões Inimigos
 	.goto IcecrownGlacier,75.93,24.41
 	.target Zul'tore
 	.target Shadow Hunter Mezil-kree
@@ -1250,12 +1250,12 @@ step << Troll
 	.isQuestComplete 13770 -- The Edge Of Winter
 step << Troll
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zul'tore|r, |cRXP_FRIENDLY_Caçador Sombrio Mezil-kree|r e |cRXP_FRIENDLY_Gahju|r
-	.turnin 13769 >>Entregue Uma Arma de Valor
+	.turnin 13769 >> Entregue Uma Arma de Valor
 	.goto IcecrownGlacier,75.95,24.53
-	.turnin 13771 >>Entregue Treinamento de Campo de um Valente
+	.turnin 13771 >> Entregue Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.04,24.59
-	.turnin 13772 >>Entregue A Grande Escaramuça
-	.turnin 13857 >>Entregue Nos Portões Inimigos
+	.turnin 13772 >> Entregue A Grande Escaramuça
+	.turnin 13857 >> Entregue Nos Portões Inimigos
 	.goto IcecrownGlacier,75.93,24.41
 	.target Zul'tore
 	.target Shadow Hunter Mezil-kree
@@ -1263,22 +1263,22 @@ step << Troll
 	.isQuestComplete 13769 -- A Worthy Weapon
 step << Troll
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Caçador Sombrio Mezil-kree|r e |cRXP_FRIENDLY_Gahju|r
-	.turnin -13771 >>Entregue Treinamento de Campo de um Valente
+	.turnin -13771 >> Entregue Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.04,24.59
-	.turnin -13772 >>Entregue A Grande Escaramuça
-	.turnin -13857 >>Entregue Nos Portões Inimigos
+	.turnin -13772 >> Entregue A Grande Escaramuça
+	.turnin -13857 >> Entregue Nos Portões Inimigos
 	.goto IcecrownGlacier,75.93,24.41
 	.target Shadow Hunter Mezil-kree
 	.target Gahju
 
 step << Tauren
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Runok Juba Agreste|r, |cRXP_FRIENDLY_Dern Totem da Fúria|r e |cRXP_FRIENDLY_Anka Casco Afiado|r
-	.turnin 13773 >>Entregue Uma Espada Digna de um Campeão
+	.turnin 13773 >> Entregue Uma Espada Digna de um Campeão
 	.goto IcecrownGlacier,76.20,24.63
-	.turnin 13776 >>Entregue Treinamento de Campo de um Valente
+	.turnin 13776 >> Entregue Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.26,24.66
-	.turnin 13777 >>Entregue A Grande Escaramuça
-	.turnin 13858 >>Entregue Nos Portões Inimigos
+	.turnin 13777 >> Entregue A Grande Escaramuça
+	.turnin 13858 >> Entregue Nos Portões Inimigos
 	.goto IcecrownGlacier,76.14,24.64
 	.target Runok Wildmane
 	.target Dern Ragetotem
@@ -1286,12 +1286,12 @@ step << Tauren
 	.isQuestComplete 13773 -- A Blade Fit For A Champion
 step << Tauren
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Runok Juba Agreste|r, |cRXP_FRIENDLY_Dern Totem da Fúria|r e |cRXP_FRIENDLY_Anka Casco Afiado|r
-	.turnin 13775 >>Entregue Limiar do Inverno
+	.turnin 13775 >> Entregue Limiar do Inverno
 	.goto IcecrownGlacier,76.20,24.63
-	.turnin 13776 >>Entregue Treinamento de Campo de um Valente
+	.turnin 13776 >> Entregue Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.26,24.66
-	.turnin 13777 >>Entregue A Grande Escaramuça
-	.turnin 13858 >>Entregue Nos Portões Inimigos
+	.turnin 13777 >> Entregue A Grande Escaramuça
+	.turnin 13858 >> Entregue Nos Portões Inimigos
 	.goto IcecrownGlacier,76.14,24.64
 	.target Runok Wildmane
 	.target Dern Ragetotem
@@ -1299,12 +1299,12 @@ step << Tauren
 	.isQuestComplete 13775 -- The Edge Of Winter
 step << Tauren
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Runok Juba Agreste|r, |cRXP_FRIENDLY_Dern Totem da Fúria|r e |cRXP_FRIENDLY_Anka Casco Afiado|r
-	.turnin 13774 >>Entregue Uma Arma de Valor
+	.turnin 13774 >> Entregue Uma Arma de Valor
 	.goto IcecrownGlacier,76.20,24.63
-	.turnin 13776 >>Entregue Treinamento de Campo de um Valente
+	.turnin 13776 >> Entregue Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.26,24.66
-	.turnin 13777 >>Entregue A Grande Escaramuça
-	.turnin 13858 >>Entregue Nos Portões Inimigos
+	.turnin 13777 >> Entregue A Grande Escaramuça
+	.turnin 13858 >> Entregue Nos Portões Inimigos
 	.goto IcecrownGlacier,76.14,24.64
 	.target Runok Wildmane
 	.target Dern Ragetotem
@@ -1312,22 +1312,22 @@ step << Tauren
 	.isQuestComplete 13774 -- A Worthy Weapon
 step << Tauren
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dern Totem da Fúria|r e |cRXP_FRIENDLY_Anka Casco Afiado|r
-	.turnin -13776 >>Entregue Treinamento de Campo de um Valente
+	.turnin -13776 >> Entregue Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.26,24.66
-	.turnin -13777 >>Entregue A Grande Escaramuça
-	.turnin -13858 >>Entregue Nos Portões Inimigos
+	.turnin -13777 >> Entregue A Grande Escaramuça
+	.turnin -13858 >> Entregue Nos Portões Inimigos
 	.goto IcecrownGlacier,76.14,24.64
 	.target Dern Ragetotem
 	.target Anka Clawhoof
 
 step << Orc
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mokra, o Esmaga-crânios|r, |cRXP_FRIENDLY_Aquinos|r e |cRXP_FRIENDLY_Móra Manaworg|r
-	.turnin 13762 >>Entregue Uma Espada Digna de um Campeão
+	.turnin 13762 >> Entregue Uma Espada Digna de um Campeão
 	.goto IcecrownGlacier,76.46,24.60
-	.turnin 13765 >>Entregue Treinamento de Campo de um Valente
+	.turnin 13765 >> Entregue Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.50,24.48
-	.turnin 13767 >>Entregue A Grande Escaramuça
-	.turnin 13856 >>Entregue Nos Portões Inimigos
+	.turnin 13767 >> Entregue A Grande Escaramuça
+	.turnin 13856 >> Entregue Nos Portões Inimigos
 	.goto IcecrownGlacier,76.40,24.59
 	.target Mokra the Skullcrusher
 	.target Akinos
@@ -1335,12 +1335,12 @@ step << Orc
 	.isQuestComplete 13762 -- A Blade Fit For A Champion
 step << Orc
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mokra, o Esmaga-crânios|r, |cRXP_FRIENDLY_Aquinos|r e |cRXP_FRIENDLY_Móra Manaworg|r
-	.turnin 13764 >>Entregue Limiar do Inverno
+	.turnin 13764 >> Entregue Limiar do Inverno
 	.goto IcecrownGlacier,76.46,24.60
-	.turnin 13765 >>Entregue Treinamento de Campo de um Valente
+	.turnin 13765 >> Entregue Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.50,24.48
-	.turnin 13767 >>Entregue A Grande Escaramuça
-	.turnin 13856 >>Entregue Nos Portões Inimigos
+	.turnin 13767 >> Entregue A Grande Escaramuça
+	.turnin 13856 >> Entregue Nos Portões Inimigos
 	.goto IcecrownGlacier,76.40,24.59
 	.target Mokra the Skullcrusher
 	.target Akinos
@@ -1348,12 +1348,12 @@ step << Orc
 	.isQuestComplete 13764 -- The Edge Of Winter
 step << Orc
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mokra, o Esmaga-crânios|r, |cRXP_FRIENDLY_Aquinos|r e |cRXP_FRIENDLY_Móra Manaworg|r
-	.turnin 13763 >>Entregue Uma Arma de Valor
+	.turnin 13763 >> Entregue Uma Arma de Valor
 	.goto IcecrownGlacier,76.46,24.60
-	.turnin 13765 >>Entregue Treinamento de Campo de um Valente
+	.turnin 13765 >> Entregue Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.50,24.48
-	.turnin 13767 >>Entregue A Grande Escaramuça
-	.turnin 13856 >>Entregue Nos Portões Inimigos
+	.turnin 13767 >> Entregue A Grande Escaramuça
+	.turnin 13856 >> Entregue Nos Portões Inimigos
 	.goto IcecrownGlacier,76.40,24.59
 	.target Mokra the Skullcrusher
 	.target Akinos
@@ -1361,22 +1361,22 @@ step << Orc
 	.isQuestComplete 13763 -- A Worthy Weapon
 step << Orc
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Aquinos|r e |cRXP_FRIENDLY_Móra Manaworg|r
-	.turnin -13765 >>Entregue Treinamento de Campo de um Valente
+	.turnin -13765 >> Entregue Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.50,24.48
-	.turnin -13767 >>Entregue A Grande Escaramuça
-	.turnin -13856 >>Entregue Nos Portões Inimigos
+	.turnin -13767 >> Entregue A Grande Escaramuça
+	.turnin -13856 >> Entregue Nos Portões Inimigos
 	.goto IcecrownGlacier,76.40,24.59
 	.target Akinos
 	.target Morah Worgsister
 
 step << Scourge
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Sicário Viscerae|r, Sarah Chalke e o |cRXP_FRIENDLY_Tratador Dretch|r
-	.turnin 13778 >>Entregue Uma Espada Digna de um Campeão
+	.turnin 13778 >> Entregue Uma Espada Digna de um Campeão
 	.goto IcecrownGlacier,76.53,24.21
-	.turnin 13781 >>Entregue Treinamento de Campo de um Valente
+	.turnin 13781 >> Entregue Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.56,24.11
-	.turnin 13782 >>Entregue A Grande Escaramuça
-	.turnin 13860 >>Entregue Nos Portões Inimigos
+	.turnin 13782 >> Entregue A Grande Escaramuça
+	.turnin 13860 >> Entregue Nos Portões Inimigos
 	.goto IcecrownGlacier,76.55,24.33
 	.target Deathstalker Visceri
 	.target Sarah Chalke
@@ -1384,12 +1384,12 @@ step << Scourge
 	.isQuestComplete 13778 -- A Blade Fit For A Champion
 step << Scourge
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Sicário Viscerae|r, Sarah Chalke e o |cRXP_FRIENDLY_Tratador Dretch|r
-	.turnin 13780 >>Entregue Limiar do Inverno
+	.turnin 13780 >> Entregue Limiar do Inverno
 	.goto IcecrownGlacier,76.53,24.21
-	.turnin 13781 >>Entregue Treinamento de Campo de um Valente
+	.turnin 13781 >> Entregue Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.56,24.11
-	.turnin 13782 >>Entregue A Grande Escaramuça
-	.turnin 13860 >>Entregue Nos Portões Inimigos
+	.turnin 13782 >> Entregue A Grande Escaramuça
+	.turnin 13860 >> Entregue Nos Portões Inimigos
 	.goto IcecrownGlacier,76.55,24.33
 	.target Deathstalker Visceri
 	.target Sarah Chalke
@@ -1397,12 +1397,12 @@ step << Scourge
 	.isQuestComplete 13780 -- The Edge Of Winter
 step << Scourge
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Sicário Viscerae|r, Sarah Chalke e o |cRXP_FRIENDLY_Tratador Dretch|r
-	.turnin 13779 >>Entregue Uma Arma de Valor
+	.turnin 13779 >> Entregue Uma Arma de Valor
 	.goto IcecrownGlacier,76.53,24.21
-	.turnin 13781 >>Entregue Treinamento de Campo de um Valente
+	.turnin 13781 >> Entregue Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.56,24.11
-	.turnin 13782 >>Entregue A Grande Escaramuça
-	.turnin 13860 >>Entregue Nos Portões Inimigos
+	.turnin 13782 >> Entregue A Grande Escaramuça
+	.turnin 13860 >> Entregue Nos Portões Inimigos
 	.goto IcecrownGlacier,76.55,24.33
 	.target Deathstalker Visceri
 	.target Sarah Chalke
@@ -1410,22 +1410,22 @@ step << Scourge
 	.isQuestComplete 13779 -- A Worthy Weapon
 step << Scourge
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sarah Chalke|r e o |cRXP_FRIENDLY_Tratador Dretch|r
-	.turnin -13781 >>Entregue Treinamento de Campo de um Valente
+	.turnin -13781 >> Entregue Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.56,24.11
-	.turnin -13782 >>Entregue A Grande Escaramuça
-	.turnin -13860 >>Entregue Nos Portões Inimigos
+	.turnin -13782 >> Entregue A Grande Escaramuça
+	.turnin -13860 >> Entregue Nos Portões Inimigos
 	.goto IcecrownGlacier,76.55,24.33
 	.target Sarah Chalke
 	.target Handler Dretch
 
 step << BloodElf
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Erasséa Cantalva|r, |cRXP_FRIENDLY_Kethiel Arrebol|r e |cRXP_FRIENDLY_Aníra Thuron|r
-	.turnin 13783 >>Entregue Uma Espada Digna de um Campeão
+	.turnin 13783 >> Entregue Uma Espada Digna de um Campeão
 	.goto IcecrownGlacier,76.45,23.85
-	.turnin 13786 >>Entregue Treinamento de Campo de um Valente
+	.turnin 13786 >> Entregue Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.41,23.75
-	.turnin 13787 >>Entregue A Grande Escaramuça
-	.turnin 13859 >>Entregue Nos Portões Inimigos
+	.turnin 13787 >> Entregue A Grande Escaramuça
+	.turnin 13859 >> Entregue Nos Portões Inimigos
 	.goto IcecrownGlacier,76.52,23.93
 	.target Eressea Dawnsinger
 	.target Kethiel Sunlance
@@ -1433,12 +1433,12 @@ step << BloodElf
 	.isQuestComplete 13783 -- A Blade Fit For A Champion
 step << BloodElf
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Erasséa Cantalva|r, |cRXP_FRIENDLY_Kethiel Arrebol|r e |cRXP_FRIENDLY_Aníra Thuron|r
-	.turnin 13785 >>Entregue Limiar do Inverno
+	.turnin 13785 >> Entregue Limiar do Inverno
 	.goto IcecrownGlacier,76.45,23.85
-	.turnin 13786 >>Entregue Treinamento de Campo de um Valente
+	.turnin 13786 >> Entregue Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.41,23.75
-	.turnin 13787 >>Entregue A Grande Escaramuça
-	.turnin 13859 >>Entregue Nos Portões Inimigos
+	.turnin 13787 >> Entregue A Grande Escaramuça
+	.turnin 13859 >> Entregue Nos Portões Inimigos
 	.goto IcecrownGlacier,76.52,23.93
 	.target Eressea Dawnsinger
 	.target Kethiel Sunlance
@@ -1446,12 +1446,12 @@ step << BloodElf
 	.isQuestComplete 13785 -- The Edge Of Winter
 step << BloodElf
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Erasséa Cantalva|r, |cRXP_FRIENDLY_Kethiel Arrebol|r e |cRXP_FRIENDLY_Aníra Thuron|r
-	.turnin 13784 >>Entregue Uma Arma de Valor
+	.turnin 13784 >> Entregue Uma Arma de Valor
 	.goto IcecrownGlacier,76.45,23.85
-	.turnin 13786 >>Entregue Treinamento de Campo de um Valente
+	.turnin 13786 >> Entregue Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.41,23.75
-	.turnin 13787 >>Entregue A Grande Escaramuça
-	.turnin 13859 >>Entregue Nos Portões Inimigos
+	.turnin 13787 >> Entregue A Grande Escaramuça
+	.turnin 13859 >> Entregue Nos Portões Inimigos
 	.goto IcecrownGlacier,76.52,23.93
 	.target Eressea Dawnsinger
 	.target Kethiel Sunlance
@@ -1459,10 +1459,10 @@ step << BloodElf
 	.isQuestComplete 13784 -- A Worthy Weapon
 step << BloodElf
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kethiel Arrebol|r e |cRXP_FRIENDLY_Aníra Thuron|r
-	.turnin -13786 >>Entregue Treinamento de Campo de um Valente
+	.turnin -13786 >> Entregue Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.41,23.75
-	.turnin -13787 >>Entregue A Grande Escaramuça
-	.turnin -13859 >>Entregue Nos Portões Inimigos
+	.turnin -13787 >> Entregue A Grande Escaramuça
+	.turnin -13859 >> Entregue Nos Portões Inimigos
 	.goto IcecrownGlacier,76.52,23.93
 	.target Kethiel Sunlance
 	.target Aneera Thuron
@@ -1491,36 +1491,36 @@ step -- Checking if they have 25 Valiant's Seals after a set of turn ins.
 	.goto IcecrownGlacier,76.20,24.63 << Tauren
 	.goto IcecrownGlacier,75.95,24.53 << Troll
 	.goto IcecrownGlacier,76.45,23.85 << BloodElf
-	.complete 13716,1 >>Entregue A Investida do Valente << Draenei -- Valiant's Seal (25)
-	.complete 13714,1 >>Entregue A Investida do Valente << Dwarf -- Valiant's Seal (25)
-	.complete 13715,1 >>Entregue A Investida do Valente << Gnome -- Valiant's Seal (25)
-	.complete 13718,1 >>Entregue A Investida do Valente << Human -- Valiant's Seal (25)
-	.complete 13717,1 >>Entregue A Investida do Valente << NightElf -- Valiant's Seal (25)
-	.complete 13721,1 >>Entregue A Investida do Valente << Scourge -- Valiant's Seal (25)
-	.complete 13697,1 >>Entregue A Investida do Valente << Orc -- Valiant's Seal (25)
-	.complete 13720,1 >>Entregue A Investida do Valente << Tauren -- Valiant's Seal (25)
-	.complete 13719,1 >>Entregue A Investida do Valente << Troll -- Valiant's Seal (25)
-	.complete 13722,1 >>Entregue A Investida do Valente << BloodElf -- Valiant's Seal (25)
-	.turnin 13716 >>Entregue A Investida do Valente << Draenei
-	.turnin 13714 >>Entregue A Investida do Valente << Dwarf
-	.turnin 13715 >>Entregue A Investida do Valente << Gnome
-	.turnin 13718 >>Entregue A Investida do Valente << Human
-	.turnin 13717 >>Entregue A Investida do Valente << NightElf
-	.turnin 13721 >>Entregue A Investida do Valente << Scourge
-	.turnin 13697 >>Entregue A Investida do Valente << Orc
-	.turnin 13720 >>Entregue A Investida do Valente << Tauren
-	.turnin 13719 >>Entregue A Investida do Valente << Troll
-	.turnin 13722 >>Entregue A Investida do Valente << BloodElf
-	.accept 13724 >>Aceite O Desafio do Valente << Draenei
-	.accept	13713 >>Aceite O Desafio do Valente << Dwarf
-	.accept 13723 >>Aceite O Desafio do Valente << Gnome
-	.accept	13699 >>Aceite O Desafio do Valente << Human
-	.accept 13725 >>Aceite O Desafio do Valente << NightElf
-	.accept	13729 >>Aceite O Desafio do Valente << Scourge
-	.accept 13726 >>Aceite O Desafio do Valente << Orc
-	.accept 13728 >>Aceite O Desafio do Valente << Tauren
-	.accept 13727 >>Aceite O Desafio do Valente << Troll
-	.accept 13731 >>Aceite O Desafio do Valente << BloodElf
+	.complete 13716,1 >> Entregue A Investida do Valente << Draenei -- Valiant's Seal (25)
+	.complete 13714,1 >> Entregue A Investida do Valente << Dwarf -- Valiant's Seal (25)
+	.complete 13715,1 >> Entregue A Investida do Valente << Gnome -- Valiant's Seal (25)
+	.complete 13718,1 >> Entregue A Investida do Valente << Human -- Valiant's Seal (25)
+	.complete 13717,1 >> Entregue A Investida do Valente << NightElf -- Valiant's Seal (25)
+	.complete 13721,1 >> Entregue A Investida do Valente << Scourge -- Valiant's Seal (25)
+	.complete 13697,1 >> Entregue A Investida do Valente << Orc -- Valiant's Seal (25)
+	.complete 13720,1 >> Entregue A Investida do Valente << Tauren -- Valiant's Seal (25)
+	.complete 13719,1 >> Entregue A Investida do Valente << Troll -- Valiant's Seal (25)
+	.complete 13722,1 >> Entregue A Investida do Valente << BloodElf -- Valiant's Seal (25)
+	.turnin 13716 >> Entregue A Investida do Valente << Draenei
+	.turnin 13714 >> Entregue A Investida do Valente << Dwarf
+	.turnin 13715 >> Entregue A Investida do Valente << Gnome
+	.turnin 13718 >> Entregue A Investida do Valente << Human
+	.turnin 13717 >> Entregue A Investida do Valente << NightElf
+	.turnin 13721 >> Entregue A Investida do Valente << Scourge
+	.turnin 13697 >> Entregue A Investida do Valente << Orc
+	.turnin 13720 >> Entregue A Investida do Valente << Tauren
+	.turnin 13719 >> Entregue A Investida do Valente << Troll
+	.turnin 13722 >> Entregue A Investida do Valente << BloodElf
+	.accept 13724 >> Aceite O Desafio do Valente << Draenei
+	.accept	13713 >> Aceite O Desafio do Valente << Dwarf
+	.accept 13723 >> Aceite O Desafio do Valente << Gnome
+	.accept	13699 >> Aceite O Desafio do Valente << Human
+	.accept 13725 >> Aceite O Desafio do Valente << NightElf
+	.accept	13729 >> Aceite O Desafio do Valente << Scourge
+	.accept 13726 >> Aceite O Desafio do Valente << Orc
+	.accept 13728 >> Aceite O Desafio do Valente << Tauren
+	.accept 13727 >> Aceite O Desafio do Valente << Troll
+	.accept 13731 >> Aceite O Desafio do Valente << BloodElf
 	.target Colosos << Draenei
 	.target Lana Stouthammer << Dwarf
 	.target Ambrose Boltspark << Gnome
@@ -1610,16 +1610,16 @@ step
 	.goto IcecrownGlacier,76.20,24.63 << Tauren
 	.goto IcecrownGlacier,75.95,24.53 << Troll
 	.goto IcecrownGlacier,76.45,23.85 << BloodElf
-	.turnin 13724 >>Entregue O Desafio do Valente << Draenei
-	.turnin	13713 >>Entregue O Desafio do Valente << Dwarf
-	.turnin 13723 >>Entregue O Desafio do Valente << Gnome
-	.turnin	13699 >>Entregue O Desafio do Valente << Human
-	.turnin 13725 >>Entregue O Desafio do Valente << NightElf
-	.turnin	13729 >>Entregue O Desafio do Valente << Scourge
-	.turnin 13726 >>Entregue O Desafio do Valente << Orc
-	.turnin 13728 >>Entregue O Desafio do Valente << Tauren
-	.turnin 13727 >>Entregue O Desafio do Valente << Troll
-	.turnin 13731 >>Entregue O Desafio do Valente << BloodElf
+	.turnin 13724 >> Entregue O Desafio do Valente << Draenei
+	.turnin	13713 >> Entregue O Desafio do Valente << Dwarf
+	.turnin 13723 >> Entregue O Desafio do Valente << Gnome
+	.turnin	13699 >> Entregue O Desafio do Valente << Human
+	.turnin 13725 >> Entregue O Desafio do Valente << NightElf
+	.turnin	13729 >> Entregue O Desafio do Valente << Scourge
+	.turnin 13726 >> Entregue O Desafio do Valente << Orc
+	.turnin 13728 >> Entregue O Desafio do Valente << Tauren
+	.turnin 13727 >> Entregue O Desafio do Valente << Troll
+	.turnin 13731 >> Entregue O Desafio do Valente << BloodElf
 	.target Colosos << Draenei
 	.target Lana Stouthammer << Dwarf
 	.target Ambrose Boltspark << Gnome
@@ -1651,16 +1651,16 @@ step
 	.goto IcecrownGlacier,76.20,24.63 << Tauren
 	.goto IcecrownGlacier,75.95,24.53 << Troll
 	.goto IcecrownGlacier,76.45,23.85 << BloodElf
-	.accept 13734 >>Aceite Surge um Campeão << Draenei
-	.accept	13732 >>Aceite Surge um Campeão << Dwarf
-	.accept 13733 >>Aceite Surge um Campeão << Gnome
-	.accept	13702 >>Aceite Surge um Campeão << Human
-	.accept 13735 >>Aceite Surge um Campeão << NightElf
-	.accept	13739 >>Aceite Surge um Campeão << Scourge
-	.accept 13736 >>Aceite Surge um Campeão << Orc
-	.accept 13738 >>Aceite Surge um Campeão << Tauren
-	.accept 13737 >>Aceite Surge um Campeão << Troll
-	.accept 13740 >>Aceite Surge um Campeão << BloodElf
+	.accept 13734 >> Aceite Surge um Campeão << Draenei
+	.accept	13732 >> Aceite Surge um Campeão << Dwarf
+	.accept 13733 >> Aceite Surge um Campeão << Gnome
+	.accept	13702 >> Aceite Surge um Campeão << Human
+	.accept 13735 >> Aceite Surge um Campeão << NightElf
+	.accept	13739 >> Aceite Surge um Campeão << Scourge
+	.accept 13736 >> Aceite Surge um Campeão << Orc
+	.accept 13738 >> Aceite Surge um Campeão << Tauren
+	.accept 13737 >> Aceite Surge um Campeão << Troll
+	.accept 13740 >> Aceite Surge um Campeão << BloodElf
 	.target Colosos << Draenei
 	.target Lana Stouthammer << Dwarf
 	.target Ambrose Boltspark << Gnome
@@ -1674,16 +1674,16 @@ step
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Justicar Mariel Veras|r
 	.goto IcecrownGlacier,69.66,22.86
-	.turnin 13734 >>Entregue Surge um Campeão << Draenei
-	.turnin	13732 >>Entregue Surge um Campeão << Dwarf
-	.turnin 13733 >>Entregue Surge um Campeão << Gnome
-	.turnin	13702 >>Entregue Surge um Campeão << Human
-	.turnin 13735 >>Entregue Surge um Campeão << NightElf
-	.turnin	13739 >>Entregue Surge um Campeão << Scourge
-	.turnin 13736 >>Entregue Surge um Campeão << Orc
-	.turnin 13738 >>Entregue Surge um Campeão << Tauren
-	.turnin 13737 >>Entregue Surge um Campeão << Troll
-	.turnin 13740 >>Entregue Surge um Campeão << BloodElf
+	.turnin 13734 >> Entregue Surge um Campeão << Draenei
+	.turnin	13732 >> Entregue Surge um Campeão << Dwarf
+	.turnin 13733 >> Entregue Surge um Campeão << Gnome
+	.turnin	13702 >> Entregue Surge um Campeão << Human
+	.turnin 13735 >> Entregue Surge um Campeão << NightElf
+	.turnin	13739 >> Entregue Surge um Campeão << Scourge
+	.turnin 13736 >> Entregue Surge um Campeão << Orc
+	.turnin 13738 >> Entregue Surge um Campeão << Tauren
+	.turnin 13737 >> Entregue Surge um Campeão << Troll
+	.turnin 13740 >> Entregue Surge um Campeão << BloodElf
 	.target Justicar Mariel Trueheart
 step
 	.goto IcecrownGlacier,76.33,19.48 << Alliance
@@ -1729,19 +1729,19 @@ RXPGuides.RegisterGuide([[
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Colossos|r
 	.goto IcecrownGlacier,76.10,19.10
-	.accept 13705 >>Aceite Valente da Exodar
-	.turnin 13705 >>Entregue Valente da Exodar
+	.accept 13705 >> Aceite Valente da Exodar
+	.turnin 13705 >> Entregue Valente da Exodar
 	.target Colosos
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Colossos|r. Ele tem 1 de 3 missões diárias. Aceite qualquer uma que estiver disponível
-	.accept 13716 >>Aceite A Investida do Valente
+	.accept 13716 >> Aceite A Investida do Valente
 	.daily 13752,13754,13753 >>Aceite Uma Espada Digna de um Campeão |c99ffff99OU|r Limiar do Inverno |c99ffff99OU|r Uma Arma de Valor
 	.goto IcecrownGlacier,76.10,19.10
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Saandos|r e |cRXP_FRIENDLY_Ranii|r
-	.daily 13755 >>Aceite Treinamento de Campo de um Valente
+	.daily 13755 >> Aceite Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.08,19.19
-	.daily 13756 >>Aceite A Grande Escaramuça
-	.daily 13854 >>Aceite Nos Portões Inimigos
+	.daily 13756 >> Aceite A Grande Escaramuça
+	.daily 13854 >> Aceite Nos Portões Inimigos
 	.goto IcecrownGlacier,76.15,19.08
 	.target Colosos
 	.target Saandos
@@ -1856,7 +1856,7 @@ step -- A Worthy Weapon v2
 step
 	#completewith next
 	.goto Dragonblight,93.18,26.00
-	.zone Dragonblight >>Viaje para Drak'Mar Lake no nordeste de Ermo das Serpes
+	.zone Dragonblight >> Viaje para Drak'Mar Lake no nordeste de Ermo das Serpes
 	.isOnQuest 13753
 step
 	.goto Dragonblight,93.18,26.00
@@ -1870,7 +1870,7 @@ step
 step -- The Edge Of Winter v2
 	#completewith next
 	.goto CrystalsongForest,55.05,75.04
-	.zone CrystalsongForest >>Viaje para a Floresta do Canto Cristalino
+	.zone CrystalsongForest >> Viaje para a Floresta do Canto Cristalino
 	.isOnQuest 13754
 step
 	.goto CrystalsongForest,55.05,75.04
@@ -1882,7 +1882,7 @@ step
 step
 	#completewith next
 	.goto HowlingFjord,42.18,19.65
-	.zone HowlingFjord >>Viaje para o Lago do Sopro de Inverno no norte de Fiorde Uivante
+	.zone HowlingFjord >> Viaje para o Lago do Sopro de Inverno no norte de Fiorde Uivante
 	.isOnQuest 13754
 step
 	.goto HowlingFjord,42.18,19.65
@@ -1894,7 +1894,7 @@ step
 step -- A Blade Fit For A Champion v2
 	#completewith next
 	.goto Grizzly Hills,60.83,51.36
-	.zone Grizzly Hills >>Viaje para Serra Gris
+	.zone Grizzly Hills >> Viaje para Serra Gris
 	.isOnQuest 13752
 step
 	.goto Grizzly Hills,60.83,51.36,10,0
@@ -1916,16 +1916,16 @@ step
 	.target Maiden of Ashwood Lake
 	.isOnQuest 13752
 step
-	.goto IcecrownGlacier,76.46,19.41,300 >>Volte para o |T236690:0|tTerrenos do Torneio Argent em Coroa de Gelo
+	.goto IcecrownGlacier,76.46,19.41,300 >> Volte para o |T236690:0|tTerrenos do Torneio Argent em Coroa de Gelo
 	.isOnQuest 13752,13754,13753,13755,13756,13854
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Colossos|r, |cRXP_FRIENDLY_Saandos|r e |cRXP_FRIENDLY_Ranii|r
-	.turnin 13752 >>Entregue Uma Espada Digna de um Campeão
+	.turnin 13752 >> Entregue Uma Espada Digna de um Campeão
 	.goto IcecrownGlacier,76.10,19.10
-	.turnin 13755 >>Entregue Treinamento de Campo de um Valente
+	.turnin 13755 >> Entregue Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.08,19.19
-	.turnin 13756 >>Entregue A Grande Escaramuça
-	.turnin 13854 >>Entregue Nos Portões Inimigos
+	.turnin 13756 >> Entregue A Grande Escaramuça
+	.turnin 13854 >> Entregue Nos Portões Inimigos
 	.goto IcecrownGlacier,76.15,19.08
 	.target Colosos
 	.target Saandos
@@ -1933,12 +1933,12 @@ step
 	.isQuestComplete 13752 -- A Blade Fit For A Champion
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Colossos|r, |cRXP_FRIENDLY_Saandos|r e |cRXP_FRIENDLY_Ranii|r
-	.turnin 13754 >>Entregue Limiar do Inverno
+	.turnin 13754 >> Entregue Limiar do Inverno
 	.goto IcecrownGlacier,76.10,19.10
-	.turnin 13755 >>Entregue Treinamento de Campo de um Valente
+	.turnin 13755 >> Entregue Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.08,19.19
-	.turnin 13756 >>Entregue A Grande Escaramuça
-	.turnin 13854 >>Entregue Nos Portões Inimigos
+	.turnin 13756 >> Entregue A Grande Escaramuça
+	.turnin 13854 >> Entregue Nos Portões Inimigos
 	.goto IcecrownGlacier,76.15,19.08
 	.target Colosos
 	.target Saandos
@@ -1946,12 +1946,12 @@ step
 	.isQuestComplete 13754 -- The Edge Of Winter
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Colossos|r, |cRXP_FRIENDLY_Saandos|r e |cRXP_FRIENDLY_Ranii|r
-	.turnin 13753 >>Entregue Uma Arma de Valor
+	.turnin 13753 >> Entregue Uma Arma de Valor
 	.goto IcecrownGlacier,76.10,19.10
-	.turnin 13755 >>Entregue Treinamento de Campo de um Valente
+	.turnin 13755 >> Entregue Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.08,19.19
-	.turnin 13756 >>Entregue A Grande Escaramuça
-	.turnin 13854 >>Entregue Nos Portões Inimigos
+	.turnin 13756 >> Entregue A Grande Escaramuça
+	.turnin 13854 >> Entregue Nos Portões Inimigos
 	.goto IcecrownGlacier,76.15,19.08
 	.target Colosos
 	.target Saandos
@@ -1959,10 +1959,10 @@ step
 	.isQuestComplete 13753 -- A Worthy Weapon
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Saandos|r e |cRXP_FRIENDLY_Ranii|r
-	.turnin -13755 >>Entregue Treinamento de Campo de um Valente
+	.turnin -13755 >> Entregue Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.08,19.19
-	.turnin -13756 >>Entregue A Grande Escaramuça
-	.turnin -13854 >>Entregue Nos Portões Inimigos
+	.turnin -13756 >> Entregue A Grande Escaramuça
+	.turnin -13854 >> Entregue Nos Portões Inimigos
 	.goto IcecrownGlacier,76.15,19.08
 	.target Saandos
 	.target Ranii
@@ -1972,9 +1972,9 @@ step -- Checking if they have 25 Valiant's Seals after a set of turn ins.
 	>>|c99ffff99RECARREGUE O GUIA NO PRÓXIMO DIA SE VOCÊ AINDA PRECISAR COMPLETAR AS MISSÕES DIÁRIAS ATÉ PODER ENTREGAR ESTA MISSÃO|r.
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Colossos|r
 	.goto IcecrownGlacier,76.10,19.10
-	.complete 13716,1 >>Entregue A Investida do Valente -- Valiant's Seal (25)
-	.turnin 13716 >>Entregue A Investida do Valente
-	.accept 13724 >>Aceite O Desafio do Valente
+	.complete 13716,1 >> Entregue A Investida do Valente -- Valiant's Seal (25)
+	.turnin 13716 >> Entregue A Investida do Valente
+	.accept 13724 >> Aceite O Desafio do Valente
 	.target Colosos
 step -- The Valiant's Challenge
 	#completewith next
@@ -1999,7 +1999,7 @@ step
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Colossos|r
 	.goto IcecrownGlacier,76.10,19.10
-	.turnin 13724 >>Entregue O Desafio do Valente
+	.turnin 13724 >> Entregue O Desafio do Valente
 	.target Colosos
 step
 	.goto IcecrownGlacier,76.33,19.48
@@ -2026,19 +2026,19 @@ RXPGuides.RegisterGuide([[
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Marechal Jacob Alerius|r
 	.goto IcecrownGlacier,76.60,19.12
-	.accept 13593 >>Aceite Valente de Ventobravo
-	.turnin 13593 >>Entregue Valente de Ventobravo
+	.accept 13593 >> Aceite Valente de Ventobravo
+	.turnin 13593 >> Entregue Valente de Ventobravo
 	.target Marshal Jacob Alerius
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Marechal Jacob Alerius|r. Ele tem 1 de 3 missões diárias. Aceite qualquer uma que estiver disponível
-	.accept 13718 >>Aceite A Investida do Valente
+	.accept 13718 >> Aceite A Investida do Valente
 	.daily 13603,13616,13600 >>Aceite Uma Espada Digna de um Campeão |c99ffff99OU|r Limiar do Inverno |c99ffff99OU|r Uma Arma de Valor
 	.goto IcecrownGlacier,76.60,19.12
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sir Marcus Barlowe|r e o |cRXP_FRIENDLY_Capitão Josué Rolém|r
-	.daily 13592 >>Aceite Treinamento de Campo de um Valente
+	.daily 13592 >> Aceite Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.53,19.08
-	.daily 13665 >>Aceite A Grande Escaramuça
-	.daily 13847 >>Aceite Nos Portões Inimigos
+	.daily 13665 >> Aceite A Grande Escaramuça
+	.daily 13847 >> Aceite Nos Portões Inimigos
 	.goto IcecrownGlacier,76.62,19.21
 	.target Marshal Jacob Alerius
 	.target Sir Marcus Barlowe
@@ -2154,7 +2154,7 @@ step -- A Worthy Weapon v2
 step
 	#completewith next
 	.goto Dragonblight,93.18,26.00
-	.zone Dragonblight >>Viaje para Drak'Mar Lake no nordeste de Ermo das Serpes
+	.zone Dragonblight >> Viaje para Drak'Mar Lake no nordeste de Ermo das Serpes
 	.isOnQuest 13600
 step
 	.goto Dragonblight,93.18,26.00
@@ -2168,7 +2168,7 @@ step
 step -- The Edge Of Winter v2
 	#completewith next
 	.goto CrystalsongForest,55.05,75.04
-	.zone CrystalsongForest >>Viaje para a Floresta do Canto Cristalino
+	.zone CrystalsongForest >> Viaje para a Floresta do Canto Cristalino
 	.isOnQuest 13616
 step
 	.goto CrystalsongForest,55.05,75.04
@@ -2180,7 +2180,7 @@ step
 step
 	#completewith next
 	.goto HowlingFjord,42.18,19.65
-	.zone HowlingFjord >>Viaje para o Lago do Sopro de Inverno no norte de Fiorde Uivante
+	.zone HowlingFjord >> Viaje para o Lago do Sopro de Inverno no norte de Fiorde Uivante
 	.isOnQuest 13616
 step
 	.goto HowlingFjord,42.18,19.65
@@ -2192,7 +2192,7 @@ step
 step -- A Blade Fit For A Champion v2
 	#completewith next
 	.goto Grizzly Hills,60.83,51.36
-	.zone Grizzly Hills >>Viaje para Serra Gris
+	.zone Grizzly Hills >> Viaje para Serra Gris
 	.isOnQuest 13603
 step
 	.goto Grizzly Hills,60.83,51.36,10,0
@@ -2214,16 +2214,16 @@ step
 	.target Maiden of Ashwood Lake
 	.isOnQuest 13603
 step
-	.goto IcecrownGlacier,76.46,19.41,300 >>Volte para o |T236690:0|tTerrenos do Torneio Argent em Coroa de Gelo
+	.goto IcecrownGlacier,76.46,19.41,300 >> Volte para o |T236690:0|tTerrenos do Torneio Argent em Coroa de Gelo
 	.isOnQuest 13603,13616,13600,13592,13665,13847
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Marechal Jacob Alerius|r, |cRXP_FRIENDLY_Sir Marcus Barlowe|r e o |cRXP_FRIENDLY_Capitão Josué Rolém|r
-	.turnin 13603 >>Entregue Uma Espada Digna de um Campeão
+	.turnin 13603 >> Entregue Uma Espada Digna de um Campeão
 	.goto IcecrownGlacier,76.60,19.12
-	.turnin 13592 >>Entregue Treinamento de Campo de um Valente
+	.turnin 13592 >> Entregue Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.53,19.08
-	.turnin 13665 >>Entregue A Grande Escaramuça
-	.turnin 13847 >>Entregue Nos Portões Inimigos
+	.turnin 13665 >> Entregue A Grande Escaramuça
+	.turnin 13847 >> Entregue Nos Portões Inimigos
 	.goto IcecrownGlacier,76.62,19.21
 	.target Marshal Jacob Alerius
 	.target Sir Marcus Barlowe
@@ -2231,12 +2231,12 @@ step
 	.isQuestComplete 13603 -- A Blade Fit For A Champion
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Marechal Jacob Alerius|r, |cRXP_FRIENDLY_Sir Marcus Barlowe|r e o |cRXP_FRIENDLY_Capitão Josué Rolém|r
-	.turnin 13616 >>Entregue Limiar do Inverno
+	.turnin 13616 >> Entregue Limiar do Inverno
 	.goto IcecrownGlacier,76.60,19.12
-	.turnin 13592 >>Entregue Treinamento de Campo de um Valente
+	.turnin 13592 >> Entregue Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.53,19.08
-	.turnin 13665 >>Entregue A Grande Escaramuça
-	.turnin 13847 >>Entregue Nos Portões Inimigos
+	.turnin 13665 >> Entregue A Grande Escaramuça
+	.turnin 13847 >> Entregue Nos Portões Inimigos
 	.goto IcecrownGlacier,76.62,19.21
 	.target Marshal Jacob Alerius
 	.target Sir Marcus Barlowe
@@ -2244,12 +2244,12 @@ step
 	.isQuestComplete 13616 -- The Edge Of Winter
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Marechal Jacob Alerius|r, |cRXP_FRIENDLY_Sir Marcus Barlowe|r e o |cRXP_FRIENDLY_Capitão Josué Rolém|r
-	.turnin 13600 >>Entregue Uma Arma de Valor
+	.turnin 13600 >> Entregue Uma Arma de Valor
 	.goto IcecrownGlacier,76.60,19.12
-	.turnin 13592 >>Entregue Treinamento de Campo de um Valente
+	.turnin 13592 >> Entregue Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.53,19.08
-	.turnin 13665 >>Entregue A Grande Escaramuça
-	.turnin 13847 >>Entregue Nos Portões Inimigos
+	.turnin 13665 >> Entregue A Grande Escaramuça
+	.turnin 13847 >> Entregue Nos Portões Inimigos
 	.goto IcecrownGlacier,76.62,19.21
 	.target Marshal Jacob Alerius
 	.target Sir Marcus Barlowe
@@ -2257,10 +2257,10 @@ step
 	.isQuestComplete 13600 -- A Worthy Weapon
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sir Marcus Barlowe|r e o |cRXP_FRIENDLY_Capitão Josué Rolém|r
-	.turnin -13592 >>Entregue Treinamento de Campo de um Valente
+	.turnin -13592 >> Entregue Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.53,19.08
-	.turnin -13665 >>Entregue A Grande Escaramuça
-	.turnin -13847 >>Entregue Nos Portões Inimigos
+	.turnin -13665 >> Entregue A Grande Escaramuça
+	.turnin -13847 >> Entregue Nos Portões Inimigos
 	.goto IcecrownGlacier,76.62,19.21
 	.target Sir Marcus Barlowe
 	.target Captain Joseph Holley
@@ -2269,9 +2269,9 @@ step
 	>>Você precisa de |T133441:0|t|c99CCFFFF25 Valiant's Seal|r. Você ganhará 5 por dia se completar as 4 missões diárias
 	>>|c99ffff99RECARREGUE O GUIA NO PRÓXIMO DIA SE VOCÊ AINDA PRECISAR COMPLETAR AS MISSÕES DIÁRIAS ATÉ PODER ENTREGAR ESTA MISSÃO|r.
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Marechal Jacob Alerius|r
-	.complete 13718,1 >>Entregue A Investida do Valente -- Valiant's Seal (25)
-	.turnin 13718 >>Entregue A Investida do Valente
-	.accept	13699 >>Aceite O Desafio do Valente
+	.complete 13718,1 >> Entregue A Investida do Valente -- Valiant's Seal (25)
+	.turnin 13718 >> Entregue A Investida do Valente
+	.accept	13699 >> Aceite O Desafio do Valente
 	.target Marshal Jacob Alerius
 step -- The Valiant's Challenge
 	#completewith next
@@ -2296,7 +2296,7 @@ step
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Marechal Jacob Alerius|r
 	.goto IcecrownGlacier,76.60,19.12
-	.turnin	13699 >>Entregue O Desafio do Valente
+	.turnin	13699 >> Entregue O Desafio do Valente
 	.target Marshal Jacob Alerius
 step
 	.goto IcecrownGlacier,76.33,19.48
@@ -2323,19 +2323,19 @@ RXPGuides.RegisterGuide([[
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Lana Fortemalho|r
 	.goto IcecrownGlacier,76.64,19.49
-	.accept 13703 >>Aceite Valente de Altaforja
-	.turnin 13703 >>Entregue Valente de Altaforja
+	.accept 13703 >> Aceite Valente de Altaforja
+	.turnin 13703 >> Entregue Valente de Altaforja
 	.target Lana Stouthammer
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Lana Fortemalho|r. Ela tem 1 de 3 missões diárias. Aceite a que estiver disponível.
-	.accept 13714 >>Aceite A Investida do Valente
+	.accept 13714 >> Aceite A Investida do Valente
 	.daily 13741,13743,13742 >>Aceite Uma Espada Digna de um Campeão |c99ffff99OU|r Limiar do Inverno |c99ffff99OU|r Uma Arma de Valor
 	.goto IcecrownGlacier,76.64,19.49
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Rolo Tirocerto|r e |cRXP_FRIENDLY_Clara Rolacerva|r
-	.daily 13744 >>Aceite Treinamento de Campo de um Valente
+	.daily 13744 >> Aceite Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.66,19.41
-	.daily 13745 >>Aceite A Grande Escaramuça
-	.daily 13851 >>Aceite Nos Portões Inimigos
+	.daily 13745 >> Aceite A Grande Escaramuça
+	.daily 13851 >> Aceite Nos Portões Inimigos
 	.goto IcecrownGlacier,76.64,19.57
 	.target Lana Stouthammer
 	.target Rollo Sureshot
@@ -2452,7 +2452,7 @@ step -- A Worthy Weapon v2
 step
 	#completewith next
 	.goto Dragonblight,93.18,26.00
-	.zone Dragonblight >>Viaje para Drak'Mar Lake no nordeste de Ermo das Serpes
+	.zone Dragonblight >> Viaje para Drak'Mar Lake no nordeste de Ermo das Serpes
 	.isOnQuest 13742
 step
 	.goto Dragonblight,93.18,26.00
@@ -2466,7 +2466,7 @@ step
 step -- The Edge Of Winter v2
 	#completewith next
 	.goto CrystalsongForest,55.05,75.04
-	.zone CrystalsongForest >>Viaje para a Floresta do Canto Cristalino
+	.zone CrystalsongForest >> Viaje para a Floresta do Canto Cristalino
 	.isOnQuest 13743
 step
 	.goto CrystalsongForest,55.05,75.04
@@ -2478,7 +2478,7 @@ step
 step
 	#completewith next
 	.goto HowlingFjord,42.18,19.65
-	.zone HowlingFjord >>Viaje para o Lago do Sopro de Inverno no norte de Fiorde Uivante
+	.zone HowlingFjord >> Viaje para o Lago do Sopro de Inverno no norte de Fiorde Uivante
 	.isOnQuest 13743
 step
 	.goto HowlingFjord,42.18,19.65
@@ -2490,7 +2490,7 @@ step
 step -- A Blade Fit For A Champion v2
 	#completewith next
 	.goto Grizzly Hills,60.83,51.36
-	.zone Grizzly Hills >>Viaje para Serra Gris
+	.zone Grizzly Hills >> Viaje para Serra Gris
 	.isOnQuest 13741
 step
 	.goto Grizzly Hills,60.83,51.36,10,0
@@ -2512,17 +2512,17 @@ step
 	.target Maiden of Ashwood Lake
 	.isOnQuest 13741
 step
-	.goto IcecrownGlacier,76.46,19.41,300 >>Volte para o |T236690:0|tTerrenos do Torneio Argent em Coroa de Gelo << Alliance
-	.goto IcecrownGlacier,76.27,24.38,300 >>Volte para o |T236690:0|tTerrenos do Torneio Argent em Coroa de Gelo << Horde
+	.goto IcecrownGlacier,76.46,19.41,300 >> Volte para o |T236690:0|tTerrenos do Torneio Argent em Coroa de Gelo << Alliance
+	.goto IcecrownGlacier,76.27,24.38,300 >> Volte para o |T236690:0|tTerrenos do Torneio Argent em Coroa de Gelo << Horde
 	.isOnQuest 13741,13743,13742,13744,13745,13851
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Lana Fortemalho|r, |cRXP_FRIENDLY_Rolo Tirocerto|r e |cRXP_FRIENDLY_Clara Rolacerva|r
-	.turnin 13741 >>Entregue Uma Espada Digna de um Campeão
+	.turnin 13741 >> Entregue Uma Espada Digna de um Campeão
 	.goto IcecrownGlacier,76.64,19.49
-	.turnin 13744 >>Entregue Treinamento de Campo de um Valente
+	.turnin 13744 >> Entregue Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.66,19.41
-	.turnin 13745 >>Entregue A Grande Escaramuça
-	.turnin 13851 >>Entregue Nos Portões Inimigos
+	.turnin 13745 >> Entregue A Grande Escaramuça
+	.turnin 13851 >> Entregue Nos Portões Inimigos
 	.goto IcecrownGlacier,76.64,19.57
 	.target Lana Stouthammer
 	.target Rollo Sureshot
@@ -2530,12 +2530,12 @@ step
 	.isQuestComplete 13741 -- A Blade Fit For A Champion
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Lana Fortemalho|r, |cRXP_FRIENDLY_Rolo Tirocerto|r e |cRXP_FRIENDLY_Clara Rolacerva|r
-	.turnin 13743 >>Entregue Limiar do Inverno
+	.turnin 13743 >> Entregue Limiar do Inverno
 	.goto IcecrownGlacier,76.64,19.49
-	.turnin 13744 >>Entregue Treinamento de Campo de um Valente
+	.turnin 13744 >> Entregue Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.66,19.41
-	.turnin 13745 >>Entregue A Grande Escaramuça
-	.turnin 13851 >>Entregue Nos Portões Inimigos
+	.turnin 13745 >> Entregue A Grande Escaramuça
+	.turnin 13851 >> Entregue Nos Portões Inimigos
 	.goto IcecrownGlacier,76.64,19.57
 	.target Lana Stouthammer
 	.target Rollo Sureshot
@@ -2543,12 +2543,12 @@ step
 	.isQuestComplete 13743 -- The Edge Of Winter
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Lana Fortemalho|r, |cRXP_FRIENDLY_Rolo Tirocerto|r e |cRXP_FRIENDLY_Clara Rolacerva|r
-	.turnin 13742 >>Entregue Uma Arma de Valor
+	.turnin 13742 >> Entregue Uma Arma de Valor
 	.goto IcecrownGlacier,76.64,19.49
-	.turnin 13744 >>Entregue Treinamento de Campo de um Valente
+	.turnin 13744 >> Entregue Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.66,19.41
-	.turnin 13745 >>Entregue A Grande Escaramuça
-	.turnin 13851 >>Entregue Nos Portões Inimigos
+	.turnin 13745 >> Entregue A Grande Escaramuça
+	.turnin 13851 >> Entregue Nos Portões Inimigos
 	.goto IcecrownGlacier,76.64,19.57
 	.target Lana Stouthammer
 	.target Rollo Sureshot
@@ -2556,10 +2556,10 @@ step
 	.isQuestComplete 13742 -- A Worthy Weapon
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Rollo|r Sureshot e |cRXP_FRIENDLY_Clara Rolacerva|r
-	.turnin -13744 >>Entregue Treinamento de Campo de um Valente
+	.turnin -13744 >> Entregue Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.66,19.41
-	.turnin -13745 >>Entregue A Grande Escaramuça
-	.turnin -13851 >>Entregue Nos Portões Inimigos
+	.turnin -13745 >> Entregue A Grande Escaramuça
+	.turnin -13851 >> Entregue Nos Portões Inimigos
 	.goto IcecrownGlacier,76.64,19.57
 	.target Rollo Sureshot
 	.target Clara Tumblebrew
@@ -2569,9 +2569,9 @@ step
 	>>|c99ffff99RECARREGUE O GUIA NO PRÓXIMO DIA SE VOCÊ AINDA PRECISAR COMPLETAR AS MISSÕES DIÁRIAS ATÉ PODER ENTREGAR ESTA MISSÃO|r.
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Lana Fortemalho|r
 	.goto IcecrownGlacier,76.64,19.49
-	.complete 13714,1 >>Entregue A Investida do Valente -- Valiant's Seal (25)
-	.turnin 13714 >>Entregue A Investida do Valente
-	.accept	13713 >>Aceite O Desafio do Valente
+	.complete 13714,1 >> Entregue A Investida do Valente -- Valiant's Seal (25)
+	.turnin 13714 >> Entregue A Investida do Valente
+	.accept	13713 >> Aceite O Desafio do Valente
 	.target Lana Stouthammer
 step -- The Valiant's Challenge
 	#completewith next
@@ -2596,7 +2596,7 @@ step
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Lana Fortemalho|r
 	.goto IcecrownGlacier,76.64,19.49
-	.turnin	13713 >>Entregue O Desafio do Valente
+	.turnin	13713 >> Entregue O Desafio do Valente
 	.target Lana Stouthammer
 step
 	.goto IcecrownGlacier,76.33,19.48
@@ -2622,19 +2622,19 @@ RXPGuides.RegisterGuide([[
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ambrósio Chisparafuso|r
 	.goto IcecrownGlacier,76.55,19.82
-	.accept 13704 >>Aceite Valente de Gnomeregan
-	.turnin 13704 >>Entregue Valente de Gnomeregan
+	.accept 13704 >> Aceite Valente de Gnomeregan
+	.turnin 13704 >> Entregue Valente de Gnomeregan
 	.target Ambrose Boltspark
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ambrósio Chisparafuso|r. Ele tem 1 de 3 missões diárias. Aceite a que estiver disponível
-	.accept 13715 >>Aceite A Investida do Valente
+	.accept 13715 >> Aceite A Investida do Valente
 	.daily 13746,13748,13747 >>Aceite Uma Espada Digna de um Campeão |c99ffff99OU|r Limiar do Inverno |c99ffff99OU|r Uma Arma de Valor
 	.goto IcecrownGlacier,76.55,19.82
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tiquim Chavefenda|r e |cRXP_FRIENDLY_Fliquim Chavefenda|r
-	.daily 13749 >>Aceite Treinamento de Campo de um Valente
+	.daily 13749 >> Aceite Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.60,19.79
-	.daily 13750 >>Aceite A Grande Escaramuça
-	.daily 13852 >>Aceite Nos Portões Inimigos
+	.daily 13750 >> Aceite A Grande Escaramuça
+	.daily 13852 >> Aceite Nos Portões Inimigos
 	.goto IcecrownGlacier,76.52,19.89
 	.target Ambrose Boltspark
 	.target Tickin Gearspanner
@@ -2750,7 +2750,7 @@ step -- A Worthy Weapon v2
 step
 	#completewith next
 	.goto Dragonblight,93.18,26.00
-	.zone Dragonblight >>Viaje para Drak'Mar Lake no nordeste de Ermo das Serpes
+	.zone Dragonblight >> Viaje para Drak'Mar Lake no nordeste de Ermo das Serpes
 	.isOnQuest 13747
 step
 	.goto Dragonblight,93.18,26.00
@@ -2764,7 +2764,7 @@ step
 step -- The Edge Of Winter v2
 	#completewith next
 	.goto CrystalsongForest,55.05,75.04
-	.zone CrystalsongForest >>Viaje para a Floresta do Canto Cristalino
+	.zone CrystalsongForest >> Viaje para a Floresta do Canto Cristalino
 	.isOnQuest 13748
 step
 	.goto CrystalsongForest,55.05,75.04
@@ -2776,7 +2776,7 @@ step
 step
 	#completewith next
 	.goto HowlingFjord,42.18,19.65
-	.zone HowlingFjord >>Viaje para o Lago do Sopro de Inverno no norte de Fiorde Uivante
+	.zone HowlingFjord >> Viaje para o Lago do Sopro de Inverno no norte de Fiorde Uivante
 	.isOnQuest 13748
 step
 	.goto HowlingFjord,42.18,19.65
@@ -2788,7 +2788,7 @@ step
 step -- A Blade Fit For A Champion v2
 	#completewith next
 	.goto Grizzly Hills,60.83,51.36
-	.zone Grizzly Hills >>Viaje para Serra Gris
+	.zone Grizzly Hills >> Viaje para Serra Gris
 	.isOnQuest 13746
 step
 	.goto Grizzly Hills,60.83,51.36,10,0
@@ -2810,16 +2810,16 @@ step
 	.target Maiden of Ashwood Lake
 	.isOnQuest 13746
 step
-	.goto IcecrownGlacier,76.46,19.41,300 >>Volte para o |T236690:0|tTerrenos do Torneio Argent em Coroa de Gelo
+	.goto IcecrownGlacier,76.46,19.41,300 >> Volte para o |T236690:0|tTerrenos do Torneio Argent em Coroa de Gelo
 	.isOnQuest 13746,13748,13747,13749,13750,13852
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ambrósio Chisparafuso|r, |cRXP_FRIENDLY_Tiquim Chavefenda|r e |cRXP_FRIENDLY_Fliquim Chavefenda|r
-	.turnin 13746 >>Entregue Uma Espada Digna de um Campeão
+	.turnin 13746 >> Entregue Uma Espada Digna de um Campeão
 	.goto IcecrownGlacier,76.55,19.82
-	.turnin 13749 >>Entregue Treinamento de Campo de um Valente
+	.turnin 13749 >> Entregue Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.60,19.79
-	.turnin 13750 >>Entregue A Grande Escaramuça
-	.turnin 13852 >>Entregue Nos Portões Inimigos
+	.turnin 13750 >> Entregue A Grande Escaramuça
+	.turnin 13852 >> Entregue Nos Portões Inimigos
 	.goto IcecrownGlacier,76.52,19.89
 	.target Ambrose Boltspark
 	.target Tickin Gearspanner
@@ -2827,12 +2827,12 @@ step
 	.isQuestComplete 13746 -- A Blade Fit For A Champion
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ambrósio Chisparafuso|r, |cRXP_FRIENDLY_Tiquim Chavefenda|r e |cRXP_FRIENDLY_Fliquim Chavefenda|r
-	.turnin 13748 >>Entregue Limiar do Inverno
+	.turnin 13748 >> Entregue Limiar do Inverno
 	.goto IcecrownGlacier,76.55,19.82
-	.turnin 13749 >>Entregue Treinamento de Campo de um Valente
+	.turnin 13749 >> Entregue Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.60,19.79
-	.turnin 13750 >>Entregue A Grande Escaramuça
-	.turnin 13852 >>Entregue Nos Portões Inimigos
+	.turnin 13750 >> Entregue A Grande Escaramuça
+	.turnin 13852 >> Entregue Nos Portões Inimigos
 	.goto IcecrownGlacier,76.52,19.89
 	.target Ambrose Boltspark
 	.target Tickin Gearspanner
@@ -2840,12 +2840,12 @@ step
 	.isQuestComplete 13748 -- The Edge Of Winter
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ambrósio Chisparafuso|r, |cRXP_FRIENDLY_Tiquim Chavefenda|r e |cRXP_FRIENDLY_Fliquim Chavefenda|r
-	.turnin 13747 >>Entregue Uma Arma de Valor
+	.turnin 13747 >> Entregue Uma Arma de Valor
 	.goto IcecrownGlacier,76.55,19.82
-	.turnin 13749 >>Entregue Treinamento de Campo de um Valente
+	.turnin 13749 >> Entregue Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.60,19.79
-	.turnin 13750 >>Entregue A Grande Escaramuça
-	.turnin 13852 >>Entregue Nos Portões Inimigos
+	.turnin 13750 >> Entregue A Grande Escaramuça
+	.turnin 13852 >> Entregue Nos Portões Inimigos
 	.goto IcecrownGlacier,76.52,19.89
 	.target Ambrose Boltspark
 	.target Tickin Gearspanner
@@ -2853,10 +2853,10 @@ step
 	.isQuestComplete 13747 -- A Worthy Weapon
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tiquim Chavefenda|r e |cRXP_FRIENDLY_Fliquim Chavefenda|r
-	.turnin -13749 >>Entregue Treinamento de Campo de um Valente
+	.turnin -13749 >> Entregue Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.60,19.79
-	.turnin -13750 >>Entregue A Grande Escaramuça
-	.turnin -13852 >>Entregue Nos Portões Inimigos
+	.turnin -13750 >> Entregue A Grande Escaramuça
+	.turnin -13852 >> Entregue Nos Portões Inimigos
 	.goto IcecrownGlacier,76.52,19.89
 	.target Tickin Gearspanner
 	.target Flickin Gearspanner
@@ -2866,9 +2866,9 @@ step -- Checking if they have 25 Valiant's Seals after a set of turn ins.
 	>>|c99ffff99RECARREGUE O GUIA NO PRÓXIMO DIA SE VOCÊ AINDA PRECISAR COMPLETAR AS MISSÕES DIÁRIAS ATÉ PODER ENTREGAR ESTA MISSÃO|r.
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ambrósio Chisparafuso|r
 	.goto IcecrownGlacier,76.55,19.82
-	.complete 13715,1 >>Entregue A Investida do Valente -- Valiant's Seal (25)
-	.turnin 13715 >>Entregue A Investida do Valente
-	.accept 13723 >>Aceite O Desafio do Valente
+	.complete 13715,1 >> Entregue A Investida do Valente -- Valiant's Seal (25)
+	.turnin 13715 >> Entregue A Investida do Valente
+	.accept 13723 >> Aceite O Desafio do Valente
 	.target Ambrose Boltspark
 step -- The Valiant's Challenge
 	#completewith next
@@ -2893,7 +2893,7 @@ step
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ambrósio Chisparafuso|r
 	.goto IcecrownGlacier,76.55,19.82
-	.turnin 13723 >>Entregue O Desafio do Valente
+	.turnin 13723 >> Entregue O Desafio do Valente
 	.target Ambrose Boltspark
 step
 	.goto IcecrownGlacier,76.33,19.48
@@ -2919,19 +2919,19 @@ RXPGuides.RegisterGuide([[
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Jaeline Ortocanto|r
 	.goto IcecrownGlacier,76.34,19.03
-	.accept 13706 >>Aceite Valente de Darnassus
-	.turnin 13706 >>Entregue Valente de Darnassus
+	.accept 13706 >> Aceite Valente de Darnassus
+	.turnin 13706 >> Entregue Valente de Darnassus
 	.target Jaelyne Evensong
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Jaeline Ortocanto|r. Ela tem 1 de 3 missões diárias. Aceite o que estiver disponível.
-	.accept 13717 >>Aceite A Investida do Valente
+	.accept 13717 >> Aceite A Investida do Valente
 	.daily 13757,13759,13758 >>Aceite Uma Espada Digna de um Campeão |c99ffff99OU|r Limiar do Inverno |c99ffff99OU|r Uma Arma de Valor
 	.goto IcecrownGlacier,76.34,19.03
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Illestria Cantalâmina|r e |cRXP_FRIENDLY_Airae Mirestela|r
-	.daily 13760 >>Aceite Treinamento de Campo de um Valente
+	.daily 13760 >> Aceite Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.29,18.99
-	.daily 13761 >>Aceite A Grande Escaramuça
-	.daily 13855 >>Aceite Nos Portões Inimigos
+	.daily 13761 >> Aceite A Grande Escaramuça
+	.daily 13855 >> Aceite Nos Portões Inimigos
 	.goto IcecrownGlacier,76.40,19.00
 	.target Jaelyne Evensong
 	.target Illestria Bladesinger
@@ -3046,7 +3046,7 @@ step -- A Worthy Weapon v2
 step
 	#completewith next
 	.goto Dragonblight,93.18,26.00
-	.zone Dragonblight >>Viaje para Drak'Mar Lake no nordeste de Ermo das Serpes
+	.zone Dragonblight >> Viaje para Drak'Mar Lake no nordeste de Ermo das Serpes
 	.isOnQuest 13758
 step
 	.goto Dragonblight,93.18,26.00
@@ -3060,7 +3060,7 @@ step
 step -- The Edge Of Winter v2
 	#completewith next
 	.goto CrystalsongForest,55.05,75.04
-	.zone CrystalsongForest >>Viaje para a Floresta do Canto Cristalino
+	.zone CrystalsongForest >> Viaje para a Floresta do Canto Cristalino
 	.isOnQuest 13759
 step
 	.goto CrystalsongForest,55.05,75.04
@@ -3072,7 +3072,7 @@ step
 step
 	#completewith next
 	.goto HowlingFjord,42.18,19.65
-	.zone HowlingFjord >>Viaje para o Lago do Sopro de Inverno no norte de Fiorde Uivante
+	.zone HowlingFjord >> Viaje para o Lago do Sopro de Inverno no norte de Fiorde Uivante
 	.isOnQuest 13759
 step
 	.goto HowlingFjord,42.18,19.65
@@ -3084,7 +3084,7 @@ step
 step -- A Blade Fit For A Champion v2
 	#completewith next
 	.goto Grizzly Hills,60.83,51.36
-	.zone Grizzly Hills >>Viaje para Serra Gris
+	.zone Grizzly Hills >> Viaje para Serra Gris
 	.isOnQuest 13757
 step
 	.goto Grizzly Hills,60.83,51.36,10,0
@@ -3106,16 +3106,16 @@ step
 	.target Maiden of Ashwood Lake
 	.isOnQuest 13757
 step
-	.goto IcecrownGlacier,76.46,19.41,300 >>Volte para o |T236690:0|tTerrenos do Torneio Argent em Coroa de Gelo
+	.goto IcecrownGlacier,76.46,19.41,300 >> Volte para o |T236690:0|tTerrenos do Torneio Argent em Coroa de Gelo
 	.isOnQuest 13757,13759,13758,13760,13761,13855
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Jaeline Ortocanto|r, |cRXP_FRIENDLY_Illestria Cantalâmina|r e |cRXP_FRIENDLY_Airae Mirestela|r
-	.turnin 13757 >>Entregue Uma Espada Digna de um Campeão
+	.turnin 13757 >> Entregue Uma Espada Digna de um Campeão
 	.goto IcecrownGlacier,76.34,19.03
-	.turnin 13760 >>Entregue Treinamento de Campo de um Valente
+	.turnin 13760 >> Entregue Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.29,18.99
-	.turnin 13761 >>Entregue A Grande Escaramuça
-	.turnin 13855 >>Entregue Nos Portões Inimigos
+	.turnin 13761 >> Entregue A Grande Escaramuça
+	.turnin 13855 >> Entregue Nos Portões Inimigos
 	.goto IcecrownGlacier,76.40,19.00
 	.target Jaelyne Evensong
 	.target Illestria Bladesinger
@@ -3123,12 +3123,12 @@ step
 	.isQuestComplete 13757 -- A Blade Fit For A Champion
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Jaeline Ortocanto|r, |cRXP_FRIENDLY_Illestria Cantalâmina|r e |cRXP_FRIENDLY_Airae Mirestela|r
-	.turnin 13759 >>Entregue Limiar do Inverno
+	.turnin 13759 >> Entregue Limiar do Inverno
 	.goto IcecrownGlacier,76.34,19.03
-	.turnin 13760 >>Entregue Treinamento de Campo de um Valente
+	.turnin 13760 >> Entregue Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.29,18.99
-	.turnin 13761 >>Entregue A Grande Escaramuça
-	.turnin 13855 >>Entregue Nos Portões Inimigos
+	.turnin 13761 >> Entregue A Grande Escaramuça
+	.turnin 13855 >> Entregue Nos Portões Inimigos
 	.goto IcecrownGlacier,76.40,19.00
 	.target Jaelyne Evensong
 	.target Illestria Bladesinger
@@ -3136,12 +3136,12 @@ step
 	.isQuestComplete 13759 -- The Edge Of Winter
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Jaeline Ortocanto|r, |cRXP_FRIENDLY_Illestria Cantalâmina|r e |cRXP_FRIENDLY_Airae Mirestela|r
-	.turnin 13758 >>Entregue Uma Arma de Valor
+	.turnin 13758 >> Entregue Uma Arma de Valor
 	.goto IcecrownGlacier,76.34,19.03
-	.turnin 13760 >>Entregue Treinamento de Campo de um Valente
+	.turnin 13760 >> Entregue Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.29,18.99
-	.turnin 13761 >>Entregue A Grande Escaramuça
-	.turnin 13855 >>Entregue Nos Portões Inimigos
+	.turnin 13761 >> Entregue A Grande Escaramuça
+	.turnin 13855 >> Entregue Nos Portões Inimigos
 	.goto IcecrownGlacier,76.40,19.00
 	.target Jaelyne Evensong
 	.target Illestria Bladesinger
@@ -3149,10 +3149,10 @@ step
 	.isQuestComplete 13758 -- A Worthy Weapon
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Illestria Cantalâmina|r e |cRXP_FRIENDLY_Airae Mirestela|r
-	.turnin -13760 >>Entregue Treinamento de Campo de um Valente
+	.turnin -13760 >> Entregue Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.29,18.99
-	.turnin -13761 >>Entregue A Grande Escaramuça
-	.turnin -13855 >>Entregue Nos Portões Inimigos
+	.turnin -13761 >> Entregue A Grande Escaramuça
+	.turnin -13855 >> Entregue Nos Portões Inimigos
 	.goto IcecrownGlacier,76.40,19.00
 	.target Illestria Bladesinger
 	.target Airae Starseeker
@@ -3162,9 +3162,9 @@ step
 	>>|c99ffff99RECARREGUE O GUIA NO PRÓXIMO DIA SE VOCÊ AINDA PRECISAR COMPLETAR AS MISSÕES DIÁRIAS ATÉ PODER ENTREGAR ESTA MISSÃO|r.
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Jaeline Ortocanto|r
 	.goto IcecrownGlacier,76.34,19.03
-	.complete 13717,1 >>Entregue A Investida do Valente -- Valiant's Seal (25)
-	.turnin 13717 >>Entregue A Investida do Valente
-	.accept 13725 >>Aceite O Desafio do Valente
+	.complete 13717,1 >> Entregue A Investida do Valente -- Valiant's Seal (25)
+	.turnin 13717 >> Entregue A Investida do Valente
+	.accept 13725 >> Aceite O Desafio do Valente
 	.target Jaelyne Evensong
 step -- The Valiant's Challenge
 	#completewith next
@@ -3189,7 +3189,7 @@ step
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Jaeline Ortocanto|r
 	.goto IcecrownGlacier,76.34,19.03
-	.turnin 13725 >>Entregue O Desafio do Valente
+	.turnin 13725 >> Entregue O Desafio do Valente
 	.target Jaelyne Evensong
 step
 	.goto IcecrownGlacier,76.33,19.48
@@ -3216,19 +3216,19 @@ RXPGuides.RegisterGuide([[
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mokra, o Esmaga-crânios|r
 	.goto IcecrownGlacier,76.46,24.60
-	.accept 13707 >>Aceite Valente de Orgrimmar
-	.turnin 13707 >>Entregue Valente de Orgrimmar
+	.accept 13707 >> Aceite Valente de Orgrimmar
+	.turnin 13707 >> Entregue Valente de Orgrimmar
 	.target Mokra the Skullcrusher
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mokra, o Esmaga-crânios|r. Ele tem 1 de 3 missões diárias. Aceite aquela que estiver disponível
-	.accept 13697 >>Aceite A Investida do Valente
+	.accept 13697 >> Aceite A Investida do Valente
 	.daily 13762,13764,13763 >>Aceite Uma Espada Digna de um Campeão |c99ffff99OU|r Limiar do Inverno |c99ffff99OU|r Uma Arma de Valor
 	.goto IcecrownGlacier,76.46,24.60
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Aquinos|r e |cRXP_FRIENDLY_Móra Manaworg|r
-	.daily 13765 >>Aceite Treinamento de Campo de um Valente
+	.daily 13765 >> Aceite Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.50,24.48
-	.daily 13767 >>Aceite A Grande Escaramuça
-	.daily 13856 >>Aceite Nos Portões Inimigos
+	.daily 13767 >> Aceite A Grande Escaramuça
+	.daily 13856 >> Aceite Nos Portões Inimigos
 	.goto IcecrownGlacier,76.40,24.59
 	.target Mokra the Skullcrusher
 	.target Akinos
@@ -3342,7 +3342,7 @@ step -- A Worthy Weapon v2
 step
 	#completewith next
 	.goto Dragonblight,93.18,26.00
-	.zone Dragonblight >>Viaje para Drak'Mar Lake no nordeste de Ermo das Serpes
+	.zone Dragonblight >> Viaje para Drak'Mar Lake no nordeste de Ermo das Serpes
 	.isOnQuest 13763
 step
 	.goto Dragonblight,93.18,26.00
@@ -3356,7 +3356,7 @@ step
 step -- The Edge Of Winter v2
 	#completewith next
 	.goto CrystalsongForest,55.05,75.04
-	.zone CrystalsongForest >>Viaje para a Floresta do Canto Cristalino
+	.zone CrystalsongForest >> Viaje para a Floresta do Canto Cristalino
 	.isOnQuest 13764
 step
 	.goto CrystalsongForest,55.05,75.04
@@ -3368,7 +3368,7 @@ step
 step
 	#completewith next
 	.goto HowlingFjord,42.18,19.65
-	.zone HowlingFjord >>Viaje para o Lago do Sopro de Inverno no norte de Fiorde Uivante
+	.zone HowlingFjord >> Viaje para o Lago do Sopro de Inverno no norte de Fiorde Uivante
 	.isOnQuest 13764
 step
 	.goto HowlingFjord,42.18,19.65
@@ -3380,7 +3380,7 @@ step
 step -- A Blade Fit For A Champion v2
 	#completewith next
 	.goto Grizzly Hills,60.83,51.36
-	.zone Grizzly Hills >>Viaje para Serra Gris
+	.zone Grizzly Hills >> Viaje para Serra Gris
 	.isOnQuest 13762
 step
 	.goto Grizzly Hills,60.83,51.36,10,0
@@ -3402,16 +3402,16 @@ step
 	.target Maiden of Ashwood Lake
 	.isOnQuest 13762
 step
-	.goto IcecrownGlacier,76.27,24.38,300 >>Volte para o |T236690:0|tTerrenos do Torneio Argent em Coroa de Gelo
+	.goto IcecrownGlacier,76.27,24.38,300 >> Volte para o |T236690:0|tTerrenos do Torneio Argent em Coroa de Gelo
 	.isOnQuest 13762,13764,13763,13765,13767,13856
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mokra, o Esmaga-crânios|r, |cRXP_FRIENDLY_Aquinos|r e |cRXP_FRIENDLY_Móra Manaworg|r
-	.turnin 13762 >>Entregue Uma Espada Digna de um Campeão
+	.turnin 13762 >> Entregue Uma Espada Digna de um Campeão
 	.goto IcecrownGlacier,76.46,24.60
-	.turnin 13765 >>Entregue Treinamento de Campo de um Valente
+	.turnin 13765 >> Entregue Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.50,24.48
-	.turnin 13767 >>Entregue A Grande Escaramuça
-	.turnin 13856 >>Entregue Nos Portões Inimigos
+	.turnin 13767 >> Entregue A Grande Escaramuça
+	.turnin 13856 >> Entregue Nos Portões Inimigos
 	.goto IcecrownGlacier,76.40,24.59
 	.target Mokra the Skullcrusher
 	.target Akinos
@@ -3419,12 +3419,12 @@ step
 	.isQuestComplete 13762 -- A Blade Fit For A Champion
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mokra, o Esmaga-crânios|r, |cRXP_FRIENDLY_Aquinos|r e |cRXP_FRIENDLY_Móra Manaworg|r
-	.turnin 13764 >>Entregue Limiar do Inverno
+	.turnin 13764 >> Entregue Limiar do Inverno
 	.goto IcecrownGlacier,76.46,24.60
-	.turnin 13765 >>Entregue Treinamento de Campo de um Valente
+	.turnin 13765 >> Entregue Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.50,24.48
-	.turnin 13767 >>Entregue A Grande Escaramuça
-	.turnin 13856 >>Entregue Nos Portões Inimigos
+	.turnin 13767 >> Entregue A Grande Escaramuça
+	.turnin 13856 >> Entregue Nos Portões Inimigos
 	.goto IcecrownGlacier,76.40,24.59
 	.target Mokra the Skullcrusher
 	.target Akinos
@@ -3432,12 +3432,12 @@ step
 	.isQuestComplete 13764 -- The Edge Of Winter
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mokra, o Esmaga-crânios|r, |cRXP_FRIENDLY_Aquinos|r e |cRXP_FRIENDLY_Móra Manaworg|r
-	.turnin 13763 >>Entregue Uma Arma de Valor
+	.turnin 13763 >> Entregue Uma Arma de Valor
 	.goto IcecrownGlacier,76.46,24.60
-	.turnin 13765 >>Entregue Treinamento de Campo de um Valente
+	.turnin 13765 >> Entregue Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.50,24.48
-	.turnin 13767 >>Entregue A Grande Escaramuça
-	.turnin 13856 >>Entregue Nos Portões Inimigos
+	.turnin 13767 >> Entregue A Grande Escaramuça
+	.turnin 13856 >> Entregue Nos Portões Inimigos
 	.goto IcecrownGlacier,76.40,24.59
 	.target Mokra the Skullcrusher
 	.target Akinos
@@ -3445,10 +3445,10 @@ step
 	.isQuestComplete 13763 -- A Worthy Weapon
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Aquinos|r e |cRXP_FRIENDLY_Móra Manaworg|r
-	.turnin -13765 >>Entregue Treinamento de Campo de um Valente
+	.turnin -13765 >> Entregue Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.50,24.48
-	.turnin -13767 >>Entregue A Grande Escaramuça
-	.turnin -13856 >>Entregue Nos Portões Inimigos
+	.turnin -13767 >> Entregue A Grande Escaramuça
+	.turnin -13856 >> Entregue Nos Portões Inimigos
 	.goto IcecrownGlacier,76.40,24.59
 	.target Akinos
 	.target Morah Worgsister
@@ -3458,9 +3458,9 @@ step
 	>>|c99ffff99RECARREGUE O GUIA NO PRÓXIMO DIA SE VOCÊ AINDA PRECISAR COMPLETAR AS MISSÕES DIÁRIAS ATÉ PODER ENTREGAR ESTA MISSÃO|r.
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mokra, o Esmaga-crânios|r
 	.goto IcecrownGlacier,76.46,24.60
-	.complete 13697,1 >>Entregue A Investida do Valente -- Valiant's Seal (25)
-	.turnin 13697 >>Entregue A Investida do Valente
-	.accept 13726 >>Aceite O Desafio do Valente
+	.complete 13697,1 >> Entregue A Investida do Valente -- Valiant's Seal (25)
+	.turnin 13697 >> Entregue A Investida do Valente
+	.accept 13726 >> Aceite O Desafio do Valente
 	.target Mokra the Skullcrusher
 step -- The Valiant's Challenge
 	#completewith next
@@ -3484,7 +3484,7 @@ step
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mokra, o Esmaga-crânios|r
 	.goto IcecrownGlacier,76.46,24.60
-	.turnin 13726 >>Entregue O Desafio do Valente
+	.turnin 13726 >> Entregue O Desafio do Valente
 	.target Mokra the Skullcrusher
 step
 	.goto IcecrownGlacier,76.17,24.21
@@ -3510,19 +3510,19 @@ RXPGuides.RegisterGuide([[
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zul'tore|r
 	.goto IcecrownGlacier,75.95,24.53
-	.accept 13708 >>Aceite Valente de Sen'jin
-	.turnin 13708 >>Entregue Valente de Sen'jin
+	.accept 13708 >> Aceite Valente de Sen'jin
+	.turnin 13708 >> Entregue Valente de Sen'jin
 	.target Zul'tore
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zul'tore|r. Ele tem 1 de 3 missões diárias. Aceite qual estiver disponível
-	.accept 13719 >>Aceite A Investida do Valente
+	.accept 13719 >> Aceite A Investida do Valente
 	.daily 13768,13770,13769 >>Aceite Uma Espada Digna de um Campeão |c99ffff99OU|r Limiar do Inverno |c99ffff99OU|r Uma Arma de Valor
 	.goto IcecrownGlacier,75.95,24.53
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Caçador Sombrio Mezil-kree|r e |cRXP_FRIENDLY_Gahju|r
-	.daily 13771 >>Aceite Treinamento de Campo de um Valente
+	.daily 13771 >> Aceite Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.04,24.59
-	.daily 13772 >>Aceite A Grande Escaramuça
-	.daily 13857 >>Aceite Nos Portões Inimigos
+	.daily 13772 >> Aceite A Grande Escaramuça
+	.daily 13857 >> Aceite Nos Portões Inimigos
 	.goto IcecrownGlacier,75.93,24.41
 	.target Zul'tore
 	.target Shadow Hunter Mezil-kree
@@ -3638,7 +3638,7 @@ step -- A Worthy Weapon v2
 step
 	#completewith next
 	.goto Dragonblight,93.18,26.00
-	.zone Dragonblight >>Viaje para Drak'Mar Lake no nordeste de Ermo das Serpes
+	.zone Dragonblight >> Viaje para Drak'Mar Lake no nordeste de Ermo das Serpes
 	.isOnQuest 13769
 step
 	.goto Dragonblight,93.18,26.00
@@ -3652,7 +3652,7 @@ step
 step -- The Edge Of Winter v2
 	#completewith next
 	.goto CrystalsongForest,55.05,75.04
-	.zone CrystalsongForest >>Viaje para a Floresta do Canto Cristalino
+	.zone CrystalsongForest >> Viaje para a Floresta do Canto Cristalino
 	.isOnQuest 13770
 step
 	.goto CrystalsongForest,55.05,75.04
@@ -3664,7 +3664,7 @@ step
 step
 	#completewith next
 	.goto HowlingFjord,42.18,19.65
-	.zone HowlingFjord >>Viaje para o Lago do Sopro de Inverno no norte de Fiorde Uivante
+	.zone HowlingFjord >> Viaje para o Lago do Sopro de Inverno no norte de Fiorde Uivante
 	.isOnQuest 13770
 step
 	.goto HowlingFjord,42.18,19.65
@@ -3676,7 +3676,7 @@ step
 step -- A Blade Fit For A Champion v2
 	#completewith next
 	.goto Grizzly Hills,60.83,51.36
-	.zone Grizzly Hills >>Viaje para Serra Gris
+	.zone Grizzly Hills >> Viaje para Serra Gris
 	.isOnQuest 13768
 step
 	.goto Grizzly Hills,60.83,51.36,10,0
@@ -3698,16 +3698,16 @@ step
 	.target Maiden of Ashwood Lake
 	.isOnQuest 13768
 step
-	.goto IcecrownGlacier,76.27,24.38,300 >>Volte para o |T236690:0|tTerrenos do Torneio Argent em Coroa de Gelo
+	.goto IcecrownGlacier,76.27,24.38,300 >> Volte para o |T236690:0|tTerrenos do Torneio Argent em Coroa de Gelo
 	.isOnQuest 13768,13770,13769,13771,13772,13857
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zul'tore|r, |cRXP_FRIENDLY_Caçador Sombrio Mezil-kree|r e |cRXP_FRIENDLY_Gahju|r
-	.turnin 13768 >>Entregue Uma Espada Digna de um Campeão
+	.turnin 13768 >> Entregue Uma Espada Digna de um Campeão
 	.goto IcecrownGlacier,75.95,24.53
-	.turnin 13771 >>Entregue Treinamento de Campo de um Valente
+	.turnin 13771 >> Entregue Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.04,24.59
-	.turnin 13772 >>Entregue A Grande Escaramuça
-	.turnin 13857 >>Entregue Nos Portões Inimigos
+	.turnin 13772 >> Entregue A Grande Escaramuça
+	.turnin 13857 >> Entregue Nos Portões Inimigos
 	.goto IcecrownGlacier,75.93,24.41
 	.target Zul'tore
 	.target Shadow Hunter Mezil-kree
@@ -3715,12 +3715,12 @@ step
 	.isQuestComplete 13768 -- A Blade Fit For A Champion
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zul'tore|r, |cRXP_FRIENDLY_Caçador Sombrio Mezil-kree|r e |cRXP_FRIENDLY_Gahju|r
-	.turnin 13770 >>Entregue Limiar do Inverno
+	.turnin 13770 >> Entregue Limiar do Inverno
 	.goto IcecrownGlacier,75.95,24.53
-	.turnin 13771 >>Entregue Treinamento de Campo de um Valente
+	.turnin 13771 >> Entregue Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.04,24.59
-	.turnin 13772 >>Entregue A Grande Escaramuça
-	.turnin 13857 >>Entregue Nos Portões Inimigos
+	.turnin 13772 >> Entregue A Grande Escaramuça
+	.turnin 13857 >> Entregue Nos Portões Inimigos
 	.goto IcecrownGlacier,75.93,24.41
 	.target Zul'tore
 	.target Shadow Hunter Mezil-kree
@@ -3728,12 +3728,12 @@ step
 	.isQuestComplete 13770 -- The Edge Of Winter
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zul'tore|r, |cRXP_FRIENDLY_Caçador Sombrio Mezil-kree|r e |cRXP_FRIENDLY_Gahju|r
-	.turnin 13769 >>Entregue Uma Arma de Valor
+	.turnin 13769 >> Entregue Uma Arma de Valor
 	.goto IcecrownGlacier,75.95,24.53
-	.turnin 13771 >>Entregue Treinamento de Campo de um Valente
+	.turnin 13771 >> Entregue Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.04,24.59
-	.turnin 13772 >>Entregue A Grande Escaramuça
-	.turnin 13857 >>Entregue Nos Portões Inimigos
+	.turnin 13772 >> Entregue A Grande Escaramuça
+	.turnin 13857 >> Entregue Nos Portões Inimigos
 	.goto IcecrownGlacier,75.93,24.41
 	.target Zul'tore
 	.target Shadow Hunter Mezil-kree
@@ -3741,10 +3741,10 @@ step
 	.isQuestComplete 13769 -- A Worthy Weapon
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Caçador Sombrio Mezil-kree|r e |cRXP_FRIENDLY_Gahju|r
-	.turnin -13771 >>Entregue Treinamento de Campo de um Valente
+	.turnin -13771 >> Entregue Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.04,24.59
-	.turnin -13772 >>Entregue A Grande Escaramuça
-	.turnin -13857 >>Entregue Nos Portões Inimigos
+	.turnin -13772 >> Entregue A Grande Escaramuça
+	.turnin -13857 >> Entregue Nos Portões Inimigos
 	.goto IcecrownGlacier,75.93,24.41
 	.target Shadow Hunter Mezil-kree
 	.target Gahju
@@ -3754,9 +3754,9 @@ step
 	>>|c99ffff99RECARREGUE O GUIA NO PRÓXIMO DIA SE VOCÊ AINDA PRECISAR COMPLETAR AS MISSÕES DIÁRIAS ATÉ PODER ENTREGAR ESTA MISSÃO|r.
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zul'tore|r
 	.goto IcecrownGlacier,75.95,24.53
-	.complete 13719,1 >>Entregue A Investida do Valente -- Valiant's Seal (25)
-	.turnin 13719 >>Entregue A Investida do Valente
-	.accept 13727 >>Aceite O Desafio do Valente
+	.complete 13719,1 >> Entregue A Investida do Valente -- Valiant's Seal (25)
+	.turnin 13719 >> Entregue A Investida do Valente
+	.accept 13727 >> Aceite O Desafio do Valente
 	.target Zul'tore
 step -- The Valiant's Challenge
 	#completewith next
@@ -3781,7 +3781,7 @@ step
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zul'tore|r
 	.goto IcecrownGlacier,75.95,24.53
-	.turnin 13727 >>Entregue O Desafio do Valente
+	.turnin 13727 >> Entregue O Desafio do Valente
 	.target Zul'tore
 step
 	.goto IcecrownGlacier,76.17,24.21
@@ -3807,19 +3807,19 @@ RXPGuides.RegisterGuide([[
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Runok Juba Agreste|r
 	.goto IcecrownGlacier,76.20,24.63
-	.accept 13709 >>Aceite Valente do Penhasco do Trovão
-	.turnin 13709 >>Entregue Valente do Penhasco do Trovão
+	.accept 13709 >> Aceite Valente do Penhasco do Trovão
+	.turnin 13709 >> Entregue Valente do Penhasco do Trovão
 	.target Runok Wildmane
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Runok Juba Agreste|r. Ele tem 1 de 3 missões diárias. Aceite qualquer uma que estiver disponível.
-	.accept 13720 >>Aceite A Investida do Valente
+	.accept 13720 >> Aceite A Investida do Valente
 	.daily 13773,13775,13774 >>Aceite Uma Espada Digna de um Campeão |c99ffff99OU|r Limiar do Inverno |c99ffff99OU|r Uma Arma de Valor
 	.goto IcecrownGlacier,76.20,24.63
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dern Totem da Fúria|r e |cRXP_FRIENDLY_Anka Casco Afiado|r
-	.daily 13776 >>Aceite Treinamento de Campo de um Valente
+	.daily 13776 >> Aceite Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.26,24.66
-	.daily 13777 >>Aceite A Grande Escaramuça
-	.daily 13858 >>Aceite Nos Portões Inimigos
+	.daily 13777 >> Aceite A Grande Escaramuça
+	.daily 13858 >> Aceite Nos Portões Inimigos
 	.goto IcecrownGlacier,76.14,24.64
 	.target Runok Wildmane
 	.target Dern Ragetotem
@@ -3935,7 +3935,7 @@ step -- A Worthy Weapon v2
 step
 	#completewith next
 	.goto Dragonblight,93.18,26.00
-	.zone Dragonblight >>Viaje para Drak'Mar Lake no nordeste de Ermo das Serpes
+	.zone Dragonblight >> Viaje para Drak'Mar Lake no nordeste de Ermo das Serpes
 	.isOnQuest 13774
 step
 	.goto Dragonblight,93.18,26.00
@@ -3949,7 +3949,7 @@ step
 step -- The Edge Of Winter v2
 	#completewith next
 	.goto CrystalsongForest,55.05,75.04
-	.zone CrystalsongForest >>Viaje para a Floresta do Canto Cristalino
+	.zone CrystalsongForest >> Viaje para a Floresta do Canto Cristalino
 	.isOnQuest 13775
 step
 	.goto CrystalsongForest,55.05,75.04
@@ -3961,7 +3961,7 @@ step
 step
 	#completewith next
 	.goto HowlingFjord,42.18,19.65
-	.zone HowlingFjord >>Viaje para o Lago do Sopro de Inverno no norte de Fiorde Uivante
+	.zone HowlingFjord >> Viaje para o Lago do Sopro de Inverno no norte de Fiorde Uivante
 	.isOnQuest 13775
 step
 	.goto HowlingFjord,42.18,19.65
@@ -3973,7 +3973,7 @@ step
 step -- A Blade Fit For A Champion v2
 	#completewith next
 	.goto Grizzly Hills,60.83,51.36
-	.zone Grizzly Hills >>Viaje para Serra Gris
+	.zone Grizzly Hills >> Viaje para Serra Gris
 	.isOnQuest 13773
 step
 	.goto Grizzly Hills,60.83,51.36,10,0
@@ -3995,17 +3995,17 @@ step
 	.target Maiden of Ashwood Lake
 	.isOnQuest 13773
 step
-	.goto IcecrownGlacier,76.46,19.41,300 >>Volte para o |T236690:0|tTerrenos do Torneio Argent em Coroa de Gelo << Alliance
-	.goto IcecrownGlacier,76.27,24.38,300 >>Volte para o |T236690:0|tTerrenos do Torneio Argent em Coroa de Gelo << Horde
+	.goto IcecrownGlacier,76.46,19.41,300 >> Volte para o |T236690:0|tTerrenos do Torneio Argent em Coroa de Gelo << Alliance
+	.goto IcecrownGlacier,76.27,24.38,300 >> Volte para o |T236690:0|tTerrenos do Torneio Argent em Coroa de Gelo << Horde
 	.isOnQuest 13773,13775,13774,13776,13777,13858
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Runok Juba Agreste|r, |cRXP_FRIENDLY_Dern Totem da Fúria|r e |cRXP_FRIENDLY_Anka Casco Afiado|r
-	.turnin 13773 >>Entregue Uma Espada Digna de um Campeão
+	.turnin 13773 >> Entregue Uma Espada Digna de um Campeão
 	.goto IcecrownGlacier,76.20,24.63
-	.turnin 13776 >>Entregue Treinamento de Campo de um Valente
+	.turnin 13776 >> Entregue Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.26,24.66
-	.turnin 13777 >>Entregue A Grande Escaramuça
-	.turnin 13858 >>Entregue Nos Portões Inimigos
+	.turnin 13777 >> Entregue A Grande Escaramuça
+	.turnin 13858 >> Entregue Nos Portões Inimigos
 	.goto IcecrownGlacier,76.14,24.64
 	.target Runok Wildmane
 	.target Dern Ragetotem
@@ -4013,12 +4013,12 @@ step
 	.isQuestComplete 13773 -- A Blade Fit For A Champion
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Runok Juba Agreste|r, |cRXP_FRIENDLY_Dern Totem da Fúria|r e |cRXP_FRIENDLY_Anka Casco Afiado|r
-	.turnin 13775 >>Entregue Limiar do Inverno
+	.turnin 13775 >> Entregue Limiar do Inverno
 	.goto IcecrownGlacier,76.20,24.63
-	.turnin 13776 >>Entregue Treinamento de Campo de um Valente
+	.turnin 13776 >> Entregue Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.26,24.66
-	.turnin 13777 >>Entregue A Grande Escaramuça
-	.turnin 13858 >>Entregue Nos Portões Inimigos
+	.turnin 13777 >> Entregue A Grande Escaramuça
+	.turnin 13858 >> Entregue Nos Portões Inimigos
 	.goto IcecrownGlacier,76.14,24.64
 	.target Runok Wildmane
 	.target Dern Ragetotem
@@ -4026,12 +4026,12 @@ step
 	.isQuestComplete 13775 -- The Edge Of Winter
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Runok Juba Agreste|r, |cRXP_FRIENDLY_Dern Totem da Fúria|r e |cRXP_FRIENDLY_Anka Casco Afiado|r
-	.turnin 13774 >>Entregue Uma Arma de Valor
+	.turnin 13774 >> Entregue Uma Arma de Valor
 	.goto IcecrownGlacier,76.20,24.63
-	.turnin 13776 >>Entregue Treinamento de Campo de um Valente
+	.turnin 13776 >> Entregue Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.26,24.66
-	.turnin 13777 >>Entregue A Grande Escaramuça
-	.turnin 13858 >>Entregue Nos Portões Inimigos
+	.turnin 13777 >> Entregue A Grande Escaramuça
+	.turnin 13858 >> Entregue Nos Portões Inimigos
 	.goto IcecrownGlacier,76.14,24.64
 	.target Runok Wildmane
 	.target Dern Ragetotem
@@ -4039,10 +4039,10 @@ step
 	.isQuestComplete 13774 -- A Worthy Weapon
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dern Totem da Fúria|r e |cRXP_FRIENDLY_Anka Casco Afiado|r
-	.turnin -13776 >>Entregue Treinamento de Campo de um Valente
+	.turnin -13776 >> Entregue Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.26,24.66
-	.turnin -13777 >>Entregue A Grande Escaramuça
-	.turnin -13858 >>Entregue Nos Portões Inimigos
+	.turnin -13777 >> Entregue A Grande Escaramuça
+	.turnin -13858 >> Entregue Nos Portões Inimigos
 	.goto IcecrownGlacier,76.14,24.64
 	.target Dern Ragetotem
 	.target Anka Clawhoof
@@ -4052,9 +4052,9 @@ step -- Checking if they have 25 Valiant's Seals after a set of turn ins.
 	>>|c99ffff99RECARREGUE O GUIA NO PRÓXIMO DIA SE VOCÊ AINDA PRECISAR COMPLETAR AS MISSÕES DIÁRIAS ATÉ PODER ENTREGAR ESTA MISSÃO|r.
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Runok Juba Agreste|r
 	.goto IcecrownGlacier,76.20,24.63
-	.complete 13720,1 >>Entregue A Investida do Valente -- Valiant's Seal (25)
-	.turnin 13720 >>Entregue A Investida do Valente
-	.accept 13728 >>Aceite O Desafio do Valente
+	.complete 13720,1 >> Entregue A Investida do Valente -- Valiant's Seal (25)
+	.turnin 13720 >> Entregue A Investida do Valente
+	.accept 13728 >> Aceite O Desafio do Valente
 	.target Runok Wildmane
 step -- The Valiant's Challenge
 	#completewith next
@@ -4079,7 +4079,7 @@ step
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Runok Juba Agreste|r
 	.goto IcecrownGlacier,76.20,24.63
-	.turnin 13728 >>Entregue O Desafio do Valente
+	.turnin 13728 >> Entregue O Desafio do Valente
 	.target Runok Wildmane
 step
 	.goto IcecrownGlacier,76.17,24.21
@@ -4105,19 +4105,19 @@ RXPGuides.RegisterGuide([[
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Sicário Viscerae|r
 	.goto IcecrownGlacier,76.53,24.21
-	.accept 13710 >>Aceite Valente de Undercity
-	.turnin 13710 >>Entregue Valente de Undercity
+	.accept 13710 >> Aceite Valente de Undercity
+	.turnin 13710 >> Entregue Valente de Undercity
 	.target Deathstalker Visceri
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sicário Viscerae|r. Ele tem 1 de 3 missões diárias. Aceite a que estiver disponível
-	.accept 13721 >>Aceite A Investida do Valente
+	.accept 13721 >> Aceite A Investida do Valente
 	.daily 13778,13780,13779 >>Aceite Uma Espada Digna de um Campeão |c99ffff99OU|r Limiar do Inverno |c99ffff99OU|r Uma Arma de Valor
 	.goto IcecrownGlacier,76.53,24.21
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sarah Chalke|r e o |cRXP_FRIENDLY_Tratador Dretch|r
-	.daily 13781 >>Aceite Treinamento de Campo de um Valente
+	.daily 13781 >> Aceite Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.56,24.11
-	.daily 13782 >>Aceite A Grande Escaramuça
-	.daily 13860 >>Aceite Nos Portões Inimigos
+	.daily 13782 >> Aceite A Grande Escaramuça
+	.daily 13860 >> Aceite Nos Portões Inimigos
 	.goto IcecrownGlacier,76.55,24.33
 	.target Deathstalker Visceri
 	.target Sarah Chalke
@@ -4232,7 +4232,7 @@ step -- A Worthy Weapon v2
 step
 	#completewith next
 	.goto Dragonblight,93.18,26.00
-	.zone Dragonblight >>Viaje para Drak'Mar Lake no nordeste de Ermo das Serpes
+	.zone Dragonblight >> Viaje para Drak'Mar Lake no nordeste de Ermo das Serpes
 	.isOnQuest 13779
 step
 	.goto Dragonblight,93.18,26.00
@@ -4246,7 +4246,7 @@ step
 step -- The Edge Of Winter v2
 	#completewith next
 	.goto CrystalsongForest,55.05,75.04
-	.zone CrystalsongForest >>Viaje para a Floresta do Canto Cristalino
+	.zone CrystalsongForest >> Viaje para a Floresta do Canto Cristalino
 	.isOnQuest 13780
 step
 	.goto CrystalsongForest,55.05,75.04
@@ -4258,7 +4258,7 @@ step
 step
 	#completewith next
 	.goto HowlingFjord,42.18,19.65
-	.zone HowlingFjord >>Viaje para o Lago do Sopro de Inverno no norte de Fiorde Uivante
+	.zone HowlingFjord >> Viaje para o Lago do Sopro de Inverno no norte de Fiorde Uivante
 	.isOnQuest 13780
 step
 	.goto HowlingFjord,42.18,19.65
@@ -4270,7 +4270,7 @@ step
 step -- A Blade Fit For A Champion v2
 	#completewith next
 	.goto Grizzly Hills,60.83,51.36
-	.zone Grizzly Hills >>Viaje para Serra Gris
+	.zone Grizzly Hills >> Viaje para Serra Gris
 	.isOnQuest 13778
 step
 	.goto Grizzly Hills,60.83,51.36,10,0
@@ -4292,17 +4292,17 @@ step
 	.target Maiden of Ashwood Lake
 	.isOnQuest 13778
 step
-	.goto IcecrownGlacier,76.46,19.41,300 >>Volte para o |T236690:0|tTerrenos do Torneio Argent em Coroa de Gelo << Alliance
-	.goto IcecrownGlacier,76.27,24.38,300 >>Volte para o |T236690:0|tTerrenos do Torneio Argent em Coroa de Gelo << Horde
+	.goto IcecrownGlacier,76.46,19.41,300 >> Volte para o |T236690:0|tTerrenos do Torneio Argent em Coroa de Gelo << Alliance
+	.goto IcecrownGlacier,76.27,24.38,300 >> Volte para o |T236690:0|tTerrenos do Torneio Argent em Coroa de Gelo << Horde
 	.isOnQuest 13778,13780,13779,13781,13782,13860
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Sicário Viscerae|r, Sarah Chalke e o |cRXP_FRIENDLY_Tratador Dretch|r
-	.turnin 13778 >>Entregue Uma Espada Digna de um Campeão
+	.turnin 13778 >> Entregue Uma Espada Digna de um Campeão
 	.goto IcecrownGlacier,76.53,24.21
-	.turnin 13781 >>Entregue Treinamento de Campo de um Valente
+	.turnin 13781 >> Entregue Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.56,24.11
-	.turnin 13782 >>Entregue A Grande Escaramuça
-	.turnin 13860 >>Entregue Nos Portões Inimigos
+	.turnin 13782 >> Entregue A Grande Escaramuça
+	.turnin 13860 >> Entregue Nos Portões Inimigos
 	.goto IcecrownGlacier,76.55,24.33
 	.target Deathstalker Visceri
 	.target Sarah Chalke
@@ -4310,12 +4310,12 @@ step
 	.isQuestComplete 13778 -- A Blade Fit For A Champion
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Sicário Viscerae|r, Sarah Chalke e o |cRXP_FRIENDLY_Tratador Dretch|r
-	.turnin 13780 >>Entregue Limiar do Inverno
+	.turnin 13780 >> Entregue Limiar do Inverno
 	.goto IcecrownGlacier,76.53,24.21
-	.turnin 13781 >>Entregue Treinamento de Campo de um Valente
+	.turnin 13781 >> Entregue Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.56,24.11
-	.turnin 13782 >>Entregue A Grande Escaramuça
-	.turnin 13860 >>Entregue Nos Portões Inimigos
+	.turnin 13782 >> Entregue A Grande Escaramuça
+	.turnin 13860 >> Entregue Nos Portões Inimigos
 	.goto IcecrownGlacier,76.55,24.33
 	.target Deathstalker Visceri
 	.target Sarah Chalke
@@ -4323,12 +4323,12 @@ step
 	.isQuestComplete 13780 -- The Edge Of Winter
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Sicário Viscerae|r, Sarah Chalke e o |cRXP_FRIENDLY_Tratador Dretch|r
-	.turnin 13779 >>Entregue Uma Arma de Valor
+	.turnin 13779 >> Entregue Uma Arma de Valor
 	.goto IcecrownGlacier,76.53,24.21
-	.turnin 13781 >>Entregue Treinamento de Campo de um Valente
+	.turnin 13781 >> Entregue Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.56,24.11
-	.turnin 13782 >>Entregue A Grande Escaramuça
-	.turnin 13860 >>Entregue Nos Portões Inimigos
+	.turnin 13782 >> Entregue A Grande Escaramuça
+	.turnin 13860 >> Entregue Nos Portões Inimigos
 	.goto IcecrownGlacier,76.55,24.33
 	.target Deathstalker Visceri
 	.target Sarah Chalke
@@ -4336,10 +4336,10 @@ step
 	.isQuestComplete 13779 -- A Worthy Weapon
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sarah Chalke|r e o |cRXP_FRIENDLY_Tratador Dretch|r
-	.turnin -13781 >>Entregue Treinamento de Campo de um Valente
+	.turnin -13781 >> Entregue Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.56,24.11
-	.turnin -13782 >>Entregue A Grande Escaramuça
-	.turnin -13860 >>Entregue Nos Portões Inimigos
+	.turnin -13782 >> Entregue A Grande Escaramuça
+	.turnin -13860 >> Entregue Nos Portões Inimigos
 	.goto IcecrownGlacier,76.55,24.33
 	.target Sarah Chalke
 	.target Handler Dretch
@@ -4349,9 +4349,9 @@ step -- Checking if they have 25 Valiant's Seals after a set of turn ins.
 	>>|c99ffff99RECARREGUE O GUIA NO PRÓXIMO DIA SE VOCÊ AINDA PRECISAR COMPLETAR AS MISSÕES DIÁRIAS ATÉ PODER ENTREGAR ESTA MISSÃO|r.
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Sicário Viscerae|r
 	.goto IcecrownGlacier,76.53,24.21
-	.complete 13721,1 >>Entregue A Investida do Valente -- Valiant's Seal (25)
-	.turnin 13721 >>Entregue A Investida do Valente
-	.accept	13729 >>Aceite O Desafio do Valente
+	.complete 13721,1 >> Entregue A Investida do Valente -- Valiant's Seal (25)
+	.turnin 13721 >> Entregue A Investida do Valente
+	.accept	13729 >> Aceite O Desafio do Valente
 	.target Deathstalker Visceri
 step -- The Valiant's Challenge
 	#completewith next
@@ -4376,7 +4376,7 @@ step
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Sicário Viscerae|r
 	.goto IcecrownGlacier,76.53,24.21
-	.turnin	13729 >>Entregue O Desafio do Valente
+	.turnin	13729 >> Entregue O Desafio do Valente
 	.target Deathstalker Visceri
 step
 	.goto IcecrownGlacier,76.17,24.21
@@ -4403,20 +4403,20 @@ RXPGuides.RegisterGuide([[
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Erasséa Cantalva|r
 	.goto IcecrownGlacier,76.45,23.85
-	.accept 13711 >>Aceite [Valente de Luaprata]
-	.turnin 13711 >>Entregue [Valente de Luaprata]
+	.accept 13711 >> Aceite [Valente de Luaprata]
+	.turnin 13711 >> Entregue [Valente de Luaprata]
 	.target Eressea Dawnsinger
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mokra, o Esmaga-crânios|r. Ela tem 1 de 3 missões diárias. Aceite qualquer uma que estiver disponível
-	.accept 13722 >>Aceite A Investida do Valente
+	.accept 13722 >> Aceite A Investida do Valente
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Erasséa Cantalva|r. Ela tem 1 de 3 missões diárias. Aceite qualquer uma que estiver disponível
 	.daily 13783,13785,13784 >>Aceite Uma Espada Digna de um Campeão |c99ffff99OU|r Limiar do Inverno |c99ffff99OU|r Uma Arma de Valor
 	.goto IcecrownGlacier,76.45,23.85
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kethiel Arrebol|r e |cRXP_FRIENDLY_Aníra Thuron|r
-	.daily 13786 >>Aceite Treinamento de Campo de um Valente
+	.daily 13786 >> Aceite Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.41,23.75
-	.daily 13787 >>Aceite A Grande Escaramuça
-	.daily 13859 >>Aceite Nos Portões Inimigos
+	.daily 13787 >> Aceite A Grande Escaramuça
+	.daily 13859 >> Aceite Nos Portões Inimigos
 	.goto IcecrownGlacier,76.52,23.93
 	.target Eressea Dawnsinger
 	.target Kethiel Sunlance
@@ -4533,7 +4533,7 @@ step -- A Worthy Weapon v2
 step
 	#completewith next
 	.goto Dragonblight,93.18,26.00
-	.zone Dragonblight >>Viaje para Drak'Mar Lake no nordeste de Ermo das Serpes
+	.zone Dragonblight >> Viaje para Drak'Mar Lake no nordeste de Ermo das Serpes
 	.isOnQuest 13784
 step
 	.goto Dragonblight,93.18,26.00
@@ -4547,7 +4547,7 @@ step
 step -- The Edge Of Winter v2
 	#completewith next
 	.goto CrystalsongForest,55.05,75.04
-	.zone CrystalsongForest >>Viaje para a Floresta do Canto Cristalino
+	.zone CrystalsongForest >> Viaje para a Floresta do Canto Cristalino
 	.isOnQuest 13785
 step
 	.goto CrystalsongForest,55.05,75.04
@@ -4559,7 +4559,7 @@ step
 step
 	#completewith next
 	.goto HowlingFjord,42.18,19.65
-	.zone HowlingFjord >>Viaje para o Lago do Sopro de Inverno no norte de Fiorde Uivante
+	.zone HowlingFjord >> Viaje para o Lago do Sopro de Inverno no norte de Fiorde Uivante
 	.isOnQuest 13785
 step
 	.goto HowlingFjord,42.18,19.65
@@ -4571,7 +4571,7 @@ step
 step -- A Blade Fit For A Champion v2
 	#completewith next
 	.goto Grizzly Hills,60.83,51.36
-	.zone Grizzly Hills >>Viaje para Serra Gris
+	.zone Grizzly Hills >> Viaje para Serra Gris
 	.isOnQuest 13783
 step
 	.goto Grizzly Hills,60.83,51.36,10,0
@@ -4593,16 +4593,16 @@ step
 	.target Maiden of Ashwood Lake
 	.isOnQuest 13783
 step
-	.goto IcecrownGlacier,76.27,24.38,300 >>Volte para o |T236690:0|tTerrenos do Torneio Argent em Coroa de Gelo
+	.goto IcecrownGlacier,76.27,24.38,300 >> Volte para o |T236690:0|tTerrenos do Torneio Argent em Coroa de Gelo
 	.isOnQuest 13783,13785,13784,13786,13787,13859
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Erasséa Cantalva|r, |cRXP_FRIENDLY_Kethiel Arrebol|r e |cRXP_FRIENDLY_Aníra Thuron|r
-	.turnin 13783 >>Entregue Uma Espada Digna de um Campeão
+	.turnin 13783 >> Entregue Uma Espada Digna de um Campeão
 	.goto IcecrownGlacier,76.45,23.85
-	.turnin 13786 >>Entregue Treinamento de Campo de um Valente
+	.turnin 13786 >> Entregue Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.41,23.75
-	.turnin 13787 >>Entregue A Grande Escaramuça
-	.turnin 13859 >>Entregue Nos Portões Inimigos
+	.turnin 13787 >> Entregue A Grande Escaramuça
+	.turnin 13859 >> Entregue Nos Portões Inimigos
 	.goto IcecrownGlacier,76.52,23.93
 	.target Eressea Dawnsinger
 	.target Kethiel Sunlance
@@ -4610,12 +4610,12 @@ step
 	.isQuestComplete 13783 -- A Blade Fit For A Champion
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Erasséa Cantalva|r, |cRXP_FRIENDLY_Kethiel Arrebol|r e |cRXP_FRIENDLY_Aníra Thuron|r
-	.turnin 13785 >>Entregue Limiar do Inverno
+	.turnin 13785 >> Entregue Limiar do Inverno
 	.goto IcecrownGlacier,76.45,23.85
-	.turnin 13786 >>Entregue Treinamento de Campo de um Valente
+	.turnin 13786 >> Entregue Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.41,23.75
-	.turnin 13787 >>Entregue A Grande Escaramuça
-	.turnin 13859 >>Entregue Nos Portões Inimigos
+	.turnin 13787 >> Entregue A Grande Escaramuça
+	.turnin 13859 >> Entregue Nos Portões Inimigos
 	.goto IcecrownGlacier,76.52,23.93
 	.target Eressea Dawnsinger
 	.target Kethiel Sunlance
@@ -4623,12 +4623,12 @@ step
 	.isQuestComplete 13785 -- The Edge Of Winter
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Erasséa Cantalva|r, |cRXP_FRIENDLY_Kethiel Arrebol|r e |cRXP_FRIENDLY_Aníra Thuron|r
-	.turnin 13784 >>Entregue Uma Arma de Valor
+	.turnin 13784 >> Entregue Uma Arma de Valor
 	.goto IcecrownGlacier,76.45,23.85
-	.turnin 13786 >>Entregue Treinamento de Campo de um Valente
+	.turnin 13786 >> Entregue Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.41,23.75
-	.turnin 13787 >>Entregue A Grande Escaramuça
-	.turnin 13859 >>Entregue Nos Portões Inimigos
+	.turnin 13787 >> Entregue A Grande Escaramuça
+	.turnin 13859 >> Entregue Nos Portões Inimigos
 	.goto IcecrownGlacier,76.52,23.93
 	.target Eressea Dawnsinger
 	.target Kethiel Sunlance
@@ -4636,10 +4636,10 @@ step
 	.isQuestComplete 13784 -- A Worthy Weapon
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kethiel Arrebol|r e |cRXP_FRIENDLY_Aníra Thuron|r
-	.turnin -13786 >>Entregue Treinamento de Campo de um Valente
+	.turnin -13786 >> Entregue Treinamento de Campo de um Valente
 	.goto IcecrownGlacier,76.41,23.75
-	.turnin -13787 >>Entregue A Grande Escaramuça
-	.turnin -13859 >>Entregue Nos Portões Inimigos
+	.turnin -13787 >> Entregue A Grande Escaramuça
+	.turnin -13859 >> Entregue Nos Portões Inimigos
 	.goto IcecrownGlacier,76.52,23.93
 	.target Kethiel Sunlance
 	.target Aneera Thuron
@@ -4649,9 +4649,9 @@ step -- Checking if they have 25 Valiant's Seals after a set of turn ins.
 	>>|c99ffff99RECARREGUE O GUIA NO PRÓXIMO DIA SE VOCÊ AINDA PRECISAR COMPLETAR AS MISSÕES DIÁRIAS ATÉ PODER ENTREGAR ESTA MISSÃO|r.
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Erasséa Cantalva|r
 	.goto IcecrownGlacier,76.45,23.85
-	.complete 13722,1 >>Entregue A Investida do Valente -- Valiant's Seal (25)
-	.turnin 13722 >>Entregue A Investida do Valente
-	.accept 13731 >>Aceite O Desafio do Valente
+	.complete 13722,1 >> Entregue A Investida do Valente -- Valiant's Seal (25)
+	.turnin 13722 >> Entregue A Investida do Valente
+	.accept 13731 >> Aceite O Desafio do Valente
 	.target Eressea Dawnsinger
 step -- The Valiant's Challenge
 	#completewith next
@@ -4676,7 +4676,7 @@ step
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Erasséa Cantalva|r
 	.goto IcecrownGlacier,76.45,23.85
-	.turnin 13731 >>Entregue O Desafio do Valente
+	.turnin 13731 >> Entregue O Desafio do Valente
 	.target Eressea Dawnsinger
 step
 	.goto IcecrownGlacier,76.17,24.21
@@ -4703,8 +4703,8 @@ RXPGuides.RegisterGuide([[
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Cruzada Rhydalla|r
 	.goto IcecrownGlacier,69.43,23.02
-	.accept 13633 >>Aceite O Cavaleiro Negro de Cerro Oeste? << Alliance
-	.accept 13634 >>Aceite O Cavaleiro Negro de Pinhaprata? << Horde
+	.accept 13633 >> Aceite O Cavaleiro Negro de Cerro Oeste? << Alliance
+	.accept 13634 >> Aceite O Cavaleiro Negro de Pinhaprata? << Horde
 	.target Crusader Rhydalla
 step << Mage
 	.zone Stormwind City >>Teleporte para Ventobravo << Alliance
@@ -4717,10 +4717,10 @@ step << Alliance !Mage
 step << Alliance
 	#completewith next
 	.goto StormwindClassic,66.2,62.2
-	.fly Westfall >>Voe para Cerro Oeste
+	.fly Westfall >> Voe para Cerro Oeste
 	.isOnQuest 13633
 step << Alliance
-	>>Vá para Moonbrook. Pegue o |cRXP_PICK_Dusty Diário|r dentro da casa
+	>> Vá para Moonbrook. Pegue o |cRXP_PICK_Dusty Diário|r dentro da casa
 	.goto Westfall,42.09,69.66
 	.complete 13633,1 -- Dusty Journal (1)
 	.isOnQuest 13633
@@ -4731,10 +4731,10 @@ step << Horde !Mage
 step << Horde
 	#completewith next
 	.goto Undercity,63.25,48.56
-	.fly Silverpine >>Voe para Floresta de Pinhaprata
+	.fly Silverpine >> Voe para Floresta de Pinhaprata
 	.isOnQuest 13634
 step << Horde
-	>>Vá para Valgan's Field. Pegue o |cRXP_PICK_Dusty Diário|r dentro da casa
+	>> Vá para Valgan's Field. Pegue o |cRXP_PICK_Dusty Diário|r dentro da casa
 	.goto Silverpine Forest,52.85,27.92,8,0
 	.goto Silverpine Forest,53.17,28.10
 	.complete 13634,1 -- Dusty Journal (1)
@@ -4745,14 +4745,14 @@ step << Mage
 	.isOnQuest 13633,13634
 step
 	#completewith next
-	.goto IcecrownGlacier,69.43,23.02,500 >>Volte para o |T236690:0|tTerrenos do Torneio Argent em Coroa de Gelo
+	.goto IcecrownGlacier,69.43,23.02,500 >> Volte para o |T236690:0|tTerrenos do Torneio Argent em Coroa de Gelo
 	.isOnQuest 13633,13634
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Cruzada Rhydalla|r
 	.goto IcecrownGlacier,69.43,23.02
-	.turnin 13633 >>Entregue O Cavaleiro Negro de Cerro Oeste? << Alliance
-	.turnin 13634 >>Entregue O Cavaleiro Negro de Pinhaprata? << Horde
-	.accept 13641 >>Aceite O Cristal do Vidente
+	.turnin 13633 >> Entregue O Cavaleiro Negro de Cerro Oeste? << Alliance
+	.turnin 13634 >> Entregue O Cavaleiro Negro de Pinhaprata? << Horde
+	.accept 13641 >> Aceite O Cristal do Vidente
 	.target Crusader Rhydalla
 step << Mage
 	#completewith next
@@ -4762,7 +4762,7 @@ step
 	#completewith next
 	.isOnQuest 13641
 	.goto CrystalsongForest,43.90,40.07
-	.zone CrystalsongForest >>Viaje para a Floresta do Canto Cristalino
+	.zone CrystalsongForest >> Viaje para a Floresta do Canto Cristalino
 step
 	>>Abate os |cRXP_ENEMY_Unbound Seers|r. Saqueie-os para o |cRXP_LOOT_Seer's Cristal|r
 	.goto CrystalsongForest,43.90,40.07,30,0
@@ -4774,13 +4774,13 @@ step
 	.mob Unbound Seer
 step
 	#completewith next
-	.goto IcecrownGlacier,69.43,23.02,500 >>Volte para o |T236690:0|tTerrenos do Torneio Argent em Coroa de Gelo
+	.goto IcecrownGlacier,69.43,23.02,500 >> Volte para o |T236690:0|tTerrenos do Torneio Argent em Coroa de Gelo
 	.isOnQuest 13641
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Cruzada Rhydalla|r
 	.goto IcecrownGlacier,69.43,23.02
-	.turnin 13641 >>Entregue O Cristal do Vidente
-	.accept 13643 >>Aceite As Histórias que os Mortos Contam
+	.turnin 13641 >> Entregue O Cristal do Vidente
+	.accept 13643 >> Aceite As Histórias que os Mortos Contam
 	.target Crusader Rhydalla
 step
 	>>Vá para o leste até o Cemitério do |T236690:0|tArgent Torneio Grounds
@@ -4795,8 +4795,8 @@ step
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Cruzada Rhydalla|r
 	.goto IcecrownGlacier,69.43,23.02
-	.turnin 13643 >>Entregue As Histórias que os Mortos Contam
-	.accept 13654 >>Aceite Há Algo Sobre o Escudeiro
+	.turnin 13643 >> Entregue As Histórias que os Mortos Contam
+	.accept 13654 >> Aceite Há Algo Sobre o Escudeiro
 	.target Crusader Rhydalla
 step << Mage
 	#completewith next
@@ -4806,7 +4806,7 @@ step
 	#completewith next
 	.isOnQuest 13654
 	.goto CrystalsongForest,37.48,57.47
-	.zone CrystalsongForest >>Viaje para a Floresta do Canto Cristalino
+	.zone CrystalsongForest >> Viaje para a Floresta do Canto Cristalino
 step
 	>>Abate os |cRXP_ENEMY_Skeletal Woodcutters|r. Saqueie-os para um |cRXP_LOOT_Large Femur|r
 	.goto CrystalsongForest,37.48,57.47,15,0
@@ -4827,13 +4827,13 @@ step
 	.mob Maloric
 step
 	#completewith next
-	.goto IcecrownGlacier,69.43,23.02,500 >>Volte para o |T236690:0|tTerrenos do Torneio Argent em Coroa de Gelo
+	.goto IcecrownGlacier,69.43,23.02,500 >> Volte para o |T236690:0|tTerrenos do Torneio Argent em Coroa de Gelo
 	.isOnQuest 13654
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Cruzada Rhydalla|r
 	.goto IcecrownGlacier,69.43,23.02
-	.turnin 13654 >>Entregue Há Algo Sobre o Escudeiro
-	.accept 13663 >>Aceite As Ordens do Cavaleiro Negro
+	.turnin 13654 >> Entregue Há Algo Sobre o Escudeiro
+	.accept 13663 >> Aceite As Ordens do Cavaleiro Negro
 	.target Crusader Rhydalla
 step
 	.use 45083 >>Usar o |T133331:0|t|cFFFFFF99Enchanted Bridle|r na mochila no |cRXP_FRIENDLY_Grifo do Cavaleiro Negro|r
@@ -4854,13 +4854,13 @@ step
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Cruzada Rhydalla|r
 	.goto IcecrownGlacier,69.43,23.02
-	.turnin 13663 >>Entregue As Ordens do Cavaleiro Negro
+	.turnin 13663 >> Entregue As Ordens do Cavaleiro Negro
 	.target Crusader Rhydalla
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Cruzada Rhydalla|r
 	>>NOTA: Aceitar esta missão requer que você seja um |cRXP_WARN_Campeão|r. Se você não conseguir aceitar esta missão, complete o |cRXP_LOOT_1.0|r Becoming a Campeão Guia
 	.goto IcecrownGlacier,69.43,23.02
-	.accept 13664 >>Aceite A Queda do Cavaleiro Negro
+	.accept 13664 >> Aceite A Queda do Cavaleiro Negro
 	.target Crusader Rhydalla
 step
 	#completewith next
@@ -4888,13 +4888,13 @@ step
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Cruzada Rhydalla|r
 	.goto IcecrownGlacier,69.43,23.02
-	.turnin 13664 >>Entregue A Queda do Cavaleiro Negro
+	.turnin 13664 >> Entregue A Queda do Cavaleiro Negro
 	.target Crusader Rhydalla
 
 step -- 14016 and 14017 added in 3.2 - Add in Phase 3
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Cruzada Rhydalla|r
 	.goto IcecrownGlacier,69.43,23.02
-	.accept 14016 >>Aceite A Maldição do Cavaleiro Negro
+	.accept 14016 >> Aceite A Maldição do Cavaleiro Negro
 	.target Crusader Rhydalla
 step
 	>>Vá para o leste até o Cemitério do |T236690:0|tArgent Torneio Grounds
@@ -4906,8 +4906,8 @@ step
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Cruzada Rhydalla|r
 	.goto IcecrownGlacier,69.43,23.02
-	.turnin 14016 >>Entregue A Tumba do Cavaleiro Negro
-	.accept 14017 >>Aceite O Destino do Cavaleiro Negro
+	.turnin 14016 >> Entregue A Tumba do Cavaleiro Negro
+	.accept 14017 >> Aceite O Destino do Cavaleiro Negro
 	.target Crusader Rhydalla
 step
 	>>Voe para o leste até a Vigia do Morta-voz
@@ -4920,7 +4920,7 @@ step
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Cruzada Rhydalla|r
 	.goto IcecrownGlacier,69.43,23.02
-	.turnin 14017 >>Entregue A Sepultura do Cavaleiro Negro
+	.turnin 14017 >> Entregue A Sepultura do Cavaleiro Negro
 	.target Crusader Rhydalla
 step
 	+Este é o fim da História do |cRXP_WARN_The Preto Cavaleiro's|cRXP_ENEMY_!|r
@@ -4940,31 +4940,31 @@ step
 	>>Se você não consegue aceitar nenhuma missão, certifique-se de que foi completada
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Justicar Mariel Veras|r
 	.goto IcecrownGlacier,69.66,22.86
-	.accept 13794 >>Aceite Eadric, o Puro << !DK
-	.accept 13795 >>Aceite O Flagelicida << DK
+	.accept 13794 >> Aceite Eadric, o Puro << !DK
+	.accept 13795 >> Aceite O Flagelicida << DK
 	.target Justicar Mariel Trueheart
 step << !DK
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Eadric, o Puro|r
 	.goto IcecrownGlacier,69.96,23.44
-	.turnin 13794 >>Entregue Eadric, o Puro
+	.turnin 13794 >> Entregue Eadric, o Puro
 	.target Eadric the Pure
 step << DK
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Crok Flagelicida|r
 	.goto IcecrownGlacier,73.80,20.06
-	.turnin 13795 >>Entregue O Flagelicida
+	.turnin 13795 >> Entregue O Flagelicida
 	.target Crok Scourgebane
 step << !DK
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Eadric, o Puro|r, |cRXP_FRIENDLY_Luuri|r e |cRXP_FRIENDLY_Cellian Raiadiem|r
-	.daily 13682 >>Aceite A Ameaça Vem de Cima << Alliance
-	.daily 13809 >>Aceite A Ameaça Vem de Cima << Horde
-	.daily 13861 >>Aceite Batalha Diante da Cidadela << Alliance
-	.daily 13862 >>Aceite Batalha Diante da Cidadela << Horde
+	.daily 13682 >> Aceite A Ameaça Vem de Cima << Alliance
+	.daily 13809 >> Aceite A Ameaça Vem de Cima << Horde
+	.daily 13861 >> Aceite Batalha Diante da Cidadela << Alliance
+	.daily 13862 >> Aceite Batalha Diante da Cidadela << Horde
 	.goto IcecrownGlacier,69.96,23.44
-	.daily 13790 >>Aceite Entre Campeões << Alliance
-	.daily 13811 >>Aceite Entre Campeões << Horde
+	.daily 13790 >> Aceite Entre Campeões << Alliance
+	.daily 13811 >> Aceite Entre Campeões << Horde
 	.goto IcecrownGlacier,69.93,23.33
-	.daily 13789 >>Aceite Levar a Batalha ao Inimigo << Alliance
-	.daily 13810 >>Aceite Levando a Batalha ao Inimigo << Horde
+	.daily 13789 >> Aceite Levar a Batalha ao Inimigo << Alliance
+	.daily 13810 >> Aceite Levando a Batalha ao Inimigo << Horde
 	.goto IcecrownGlacier,69.92,23.53
 	.isQuestTurnedIn 13664 -- Must complete 13664 to accept Threat From Above
 	.target Eadric the Pure
@@ -4972,30 +4972,30 @@ step << !DK
 	.target Cellian Daybreak
 step << !DK
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Eadric, o Puro|r, |cRXP_FRIENDLY_Luuri|r e |cRXP_FRIENDLY_Cellian Raiadiem|r
-	.daily 13861 >>Aceite Batalha Diante da Cidadela << Alliance
-	.daily 13862 >>Aceite Batalha Diante da Cidadela << Horde
+	.daily 13861 >> Aceite Batalha Diante da Cidadela << Alliance
+	.daily 13862 >> Aceite Batalha Diante da Cidadela << Horde
 	.goto IcecrownGlacier,69.96,23.44
-	.daily 13790 >>Aceite Entre Campeões << Alliance
-	.daily 13811 >>Aceite Entre Campeões << Horde
+	.daily 13790 >> Aceite Entre Campeões << Alliance
+	.daily 13811 >> Aceite Entre Campeões << Horde
 	.goto IcecrownGlacier,69.93,23.33
-	.daily 13789 >>Aceite Levar a Batalha ao Inimigo << Alliance
-	.daily 13810 >>Aceite Levar a Batalha ao Inimigo << Horde
+	.daily 13789 >> Aceite Levar a Batalha ao Inimigo << Alliance
+	.daily 13810 >> Aceite Levar a Batalha ao Inimigo << Horde
 	.goto IcecrownGlacier,69.92,23.53
 	.target Eadric the Pure
 	.target Luuri
 	.target Cellian Daybreak
 step << DK
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Crok Flagelicida|r, |cRXP_FRIENDLY_Illyrie Cadenoctis|r e |cRXP_FRIENDLY_Zor'be, o Dessangrador|r
-	.daily 13788 >>Aceite A Ameaça Vem de Cima << Alliance
-	.daily 13812 >>Aceite A Ameaça Vem de Cima << Horde
-	.daily 13864 >>Aceite Batalha Diante da Cidadela << Alliance
-	.daily 13863 >>Aceite Batalha Diante da Cidadela << Horde
+	.daily 13788 >> Aceite A Ameaça Vem de Cima << Alliance
+	.daily 13812 >> Aceite A Ameaça Vem de Cima << Horde
+	.daily 13864 >> Aceite Batalha Diante da Cidadela << Alliance
+	.daily 13863 >> Aceite Batalha Diante da Cidadela << Horde
 	.goto IcecrownGlacier,73.80,20.06
-	.daily 13793 >>Aceite Entre Campeões << Alliance
-	.daily 13814 >>Aceite Entre Campeões << Horde
+	.daily 13793 >> Aceite Entre Campeões << Alliance
+	.daily 13814 >> Aceite Entre Campeões << Horde
 	.goto IcecrownGlacier,73.59,20.08
-	.daily 13791 >>Aceite Levar a Batalha ao Inimigo << Alliance
-	.daily 13813 >>Aceite Levar a Batalha ao Inimigo << Horde
+	.daily 13791 >> Aceite Levar a Batalha ao Inimigo << Alliance
+	.daily 13813 >> Aceite Levar a Batalha ao Inimigo << Horde
 	.goto IcecrownGlacier,73.80,19.45
 	.isQuestTurnedIn 13664
 	.target Crok Scourgebane
@@ -5003,14 +5003,14 @@ step << DK
 	.target Zor'be the Bloodletter
 step << DK
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Crok Flagelicida|r, |cRXP_FRIENDLY_Illyrie Cadenoctis|r e |cRXP_FRIENDLY_Zor'be, o Dessangrador|r
-	.daily 13864 >>Aceite Batalha Diante da Cidadela << Alliance
-	.daily 13863 >>Aceite Batalha Diante da Cidadela << Horde
+	.daily 13864 >> Aceite Batalha Diante da Cidadela << Alliance
+	.daily 13863 >> Aceite Batalha Diante da Cidadela << Horde
 	.goto IcecrownGlacier,73.80,20.06
-	.daily 13793 >>Aceite Entre Campeões << Alliance
-	.daily 13814 >>Aceite Entre Campeões << Horde
+	.daily 13793 >> Aceite Entre Campeões << Alliance
+	.daily 13814 >> Aceite Entre Campeões << Horde
 	.goto IcecrownGlacier,73.59,20.08
-	.daily 13791 >>Aceite Levar a Batalha ao Inimigo << Alliance
-	.daily 13813 >>Aceite Levar a Batalha ao Inimigo << Horde
+	.daily 13791 >> Aceite Levar a Batalha ao Inimigo << Alliance
+	.daily 13813 >> Aceite Levar a Batalha ao Inimigo << Horde
 	.goto IcecrownGlacier,73.80,19.45
 	.target Crok Scourgebane
 	.target Illyrie Nightfall
@@ -5292,23 +5292,23 @@ step -- Battle Before The Citadel
 	.isOnQuest 13861,13862,13864,13863
 	.mob Boneguard Commander
 step
-	.goto IcecrownGlacier,69.96,23.44,300 >>Volte para o |T236690:0|tTerrenos do Torneio Argent em Coroa de Gelo << !DK
+	.goto IcecrownGlacier,69.96,23.44,300 >> Volte para o |T236690:0|tTerrenos do Torneio Argent em Coroa de Gelo << !DK
 	.isOnQuest 13682,13809,13861,13862,13790,13811,13789,13810
 step
-	.goto IcecrownGlacier,73.80,20.06,300 >>Volte para o |T236690:0|tTerrenos do Torneio Argent em Coroa de Gelo << DK
+	.goto IcecrownGlacier,73.80,20.06,300 >> Volte para o |T236690:0|tTerrenos do Torneio Argent em Coroa de Gelo << DK
 	.isOnQuest 13788,13812,13864,13863,13793,13814,13791,13813
 step << !DK
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Eadric, o Puro|r, |cRXP_FRIENDLY_Luuri|r e |cRXP_FRIENDLY_Cellian Raiadiem|r
-	.turnin 13682 >>Entregue A Ameaça Vem de Cima << Alliance
-	.turnin 13809 >>Entregue A Ameaça Vem de Cima << Horde
-	.turnin 13861 >>Entregue Batalha Diante da Cidadela << Alliance
-	.turnin 13862 >>Entregue Batalha Diante da Cidadela << Horde
+	.turnin 13682 >> Entregue A Ameaça Vem de Cima << Alliance
+	.turnin 13809 >> Entregue A Ameaça Vem de Cima << Horde
+	.turnin 13861 >> Entregue Batalha Diante da Cidadela << Alliance
+	.turnin 13862 >> Entregue Batalha Diante da Cidadela << Horde
 	.goto IcecrownGlacier,69.96,23.44
-	.turnin 13790 >>Entregue Entre Campeões << Alliance
-	.turnin 13811 >>Entregue Entre Campeões << Horde
+	.turnin 13790 >> Entregue Entre Campeões << Alliance
+	.turnin 13811 >> Entregue Entre Campeões << Horde
 	.goto IcecrownGlacier,69.93,23.33
-	.turnin 13789 >>Entregue Levando a Batalha ao Inimigo << Alliance
-	.turnin 13810 >>Entregue Levando a Batalha ao Inimigo << Horde
+	.turnin 13789 >> Entregue Levando a Batalha ao Inimigo << Alliance
+	.turnin 13810 >> Entregue Levando a Batalha ao Inimigo << Horde
 	.goto IcecrownGlacier,69.92,23.53
 	.target Eadric the Pure
 	.target Luuri
@@ -5317,30 +5317,30 @@ step << !DK
 	.isQuestComplete 13809 << Horde
 step << !DK
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Eadric, o Puro|r, |cRXP_FRIENDLY_Luuri|r e |cRXP_FRIENDLY_Cellian Raiadiem|r
-	.turnin 13861 >>Entregue Batalha Diante da Cidadela << Alliance
-	.turnin 13862 >>Entregue Batalha Diante da Cidadela << Horde
+	.turnin 13861 >> Entregue Batalha Diante da Cidadela << Alliance
+	.turnin 13862 >> Entregue Batalha Diante da Cidadela << Horde
 	.goto IcecrownGlacier,69.96,23.44
-	.turnin 13790 >>Entregue Entre Campeões << Alliance
-	.turnin 13811 >>Entregue Entre Campeões << Horde
+	.turnin 13790 >> Entregue Entre Campeões << Alliance
+	.turnin 13811 >> Entregue Entre Campeões << Horde
 	.goto IcecrownGlacier,69.93,23.33
-	.turnin 13789 >>Entregue Levando a Batalha ao Inimigo << Alliance
-	.turnin 13810 >>Entregue Levando a Batalha ao Inimigo << Horde
+	.turnin 13789 >> Entregue Levando a Batalha ao Inimigo << Alliance
+	.turnin 13810 >> Entregue Levando a Batalha ao Inimigo << Horde
 	.goto IcecrownGlacier,69.92,23.53
 	.target Eadric the Pure
 	.target Luuri
 	.target Cellian Daybreak
 step << DK
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Crok Flagelicida|r, |cRXP_FRIENDLY_Illyrie Cadenoctis|r e |cRXP_FRIENDLY_Zor'be, o Dessangrador|r
-	.turnin 13788 >>Entregue A Ameaça Vem de Cima << Alliance
-	.turnin 13812 >>Entregue A Ameaça Vem de Cima << Horde
-	.turnin 13864 >>Entregue Batalha Diante da Cidadela << Alliance
-	.turnin 13863 >>Entregue Batalha Diante da Cidadela << Horde
+	.turnin 13788 >> Entregue A Ameaça Vem de Cima << Alliance
+	.turnin 13812 >> Entregue A Ameaça Vem de Cima << Horde
+	.turnin 13864 >> Entregue Batalha Diante da Cidadela << Alliance
+	.turnin 13863 >> Entregue Batalha Diante da Cidadela << Horde
 	.goto IcecrownGlacier,73.80,20.06
-	.turnin 13793 >>Entregue Entre Campeões << Alliance
-	.turnin 13814 >>Entregue Entre Campeões << Horde
+	.turnin 13793 >> Entregue Entre Campeões << Alliance
+	.turnin 13814 >> Entregue Entre Campeões << Horde
 	.goto IcecrownGlacier,73.59,20.08
-	.turnin 13791 >>Entregue Levando a Batalha ao Inimigo << Alliance
-	.turnin 13813 >>Entregue Levando a Batalha ao Inimigo << Horde
+	.turnin 13791 >> Entregue Levando a Batalha ao Inimigo << Alliance
+	.turnin 13813 >> Entregue Levando a Batalha ao Inimigo << Horde
 	.goto IcecrownGlacier,73.80,19.45
 	.target Crok Scourgebane
 	.target Illyrie Nightfall
@@ -5349,14 +5349,14 @@ step << DK
 	.isQuestComplete 13812 << Horde
 step << DK
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Crok Flagelicida|r, |cRXP_FRIENDLY_Illyrie Cadenoctis|r e |cRXP_FRIENDLY_Zor'be, o Dessangrador|r
-	.turnin 13864 >>Entregue Batalha Diante da Cidadela << Alliance
-	.turnin 13863 >>Entregue Batalha Diante da Cidadela << Horde
+	.turnin 13864 >> Entregue Batalha Diante da Cidadela << Alliance
+	.turnin 13863 >> Entregue Batalha Diante da Cidadela << Horde
 	.goto IcecrownGlacier,73.80,20.06
-	.turnin 13793 >>Entregue Entre Campeões << Alliance
-	.turnin 13814 >>Entregue Entre Campeões << Horde
+	.turnin 13793 >> Entregue Entre Campeões << Alliance
+	.turnin 13814 >> Entregue Entre Campeões << Horde
 	.goto IcecrownGlacier,73.59,20.08
-	.turnin 13791 >>Entregue Levando a Batalha ao Inimigo << Alliance
-	.turnin 13813 >>Entregue Levando a Batalha ao Inimigo << Horde
+	.turnin 13791 >> Entregue Levando a Batalha ao Inimigo << Alliance
+	.turnin 13813 >> Entregue Levando a Batalha ao Inimigo << Horde
 	.goto IcecrownGlacier,73.80,19.45
 	.target Crok Scourgebane
 	.target Illyrie Nightfall

@@ -44,13 +44,13 @@ step << Horde
 
 step
     #completewith next
-    .zone 84 >>Vá para Ventobravo << Alliance
-	.zone 85 >>Vá para Orgrimmar << Horde
+    .zone 84 >> Vá para Ventobravo << Alliance
+	.zone 85 >> Vá para Orgrimmar << Horde
 	.zoneskip 245
 step
     .goto 84,73.220,18.374 << Alliance
     .goto 85,47.405,39.261 << Horde
-    .zone 245 >>Pegue o portal para Tol Barad
+    .zone 245 >> Pegue o portal para Tol Barad
 step << Alliance
     +|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Sargento Dias|r, o |cRXP_FRIENDLY_Comandante Marco Gama|r, o |cRXP_FRIENDLY_Coordenador do Acampamento Leso|r e o |cRXP_FRIENDLY_Tenente Paranhos|r
     >>|TInterface/GossipFrame/DailyQuestIcon:0|t|cRXP_WARN_Aceite todas as missões diárias disponíveis no Acampamento da Base de Baradin|r
@@ -80,7 +80,7 @@ step << Horde
 step << Alliance
     #completewith CommanderLargo
     .goto 245,75.26,44.80
-    .subzone 5540 >>Viagem para o Miradouro de Largo
+    .subzone 5540 >> Viagem para o Miradouro de Largo
 step << Alliance
     .isOnQuest 27987
     #loop
@@ -111,7 +111,7 @@ step << Alliance
     .mob Commander Largo
 step << Alliance
     #completewith Seabass
-    .subzone 5538 >>Viagem para Rustberg Village
+    .subzone 5538 >> Viagem para Rustberg Village
 step << Alliance
     .isOnQuest 28130
     #loop
@@ -140,7 +140,7 @@ step << Alliance
     .mob Rustberg Fisherman
 step << Alliance
     #completewith Tankslain
-    .subzone 5534 >>Viagem para o Cabo de Esperança Perdida
+    .subzone 5534 >> Viagem para o Cabo de Esperança Perdida
 step << Alliance
     .isOnQuest 27972
     #loop
@@ -178,7 +178,7 @@ step << Alliance
     .unitscan Tank
 step << Alliance
     #completewith KeepLordFarson
-    .subzone 5539 >>Viagem para o Forte de Farson
+    .subzone 5539 >> Viagem para o Forte de Farson
 step << Alliance
     .isOnQuest 28063
     .goto 245,37.34,29.35
@@ -199,7 +199,7 @@ step << Alliance
     .mob Keep Lord Farson
 step << Alliance
     #completewith ForemanWellson
-    .subzone 5535 >>Vá para o Wellson Estaleiro
+    .subzone 5535 >> Vá para o Wellson Estaleiro
 step << Alliance
     .isOnQuest 27973
     #loop
@@ -220,7 +220,7 @@ step << Alliance
     #loop
     .goto 245,22.08,36.61,20,0
     .goto 245,21.76,47.89,20,0
-    .vehicle 48283 >>|cRXP_WARN_Entre em um|r |cRXP_FRIENDLY_Canhão do Bonfilho|r
+    .vehicle 48283 >> |cRXP_WARN_Entre em um|r |cRXP_FRIENDLY_Canhão do Bonfilho|r
     .target Wellson Cannon
 step << Alliance
     .isOnQuest 28275
@@ -240,7 +240,7 @@ step << Alliance
     .unitscan Foreman Wellson
 step << Horde
     #completewith FirstLieutenantConnor
-    .subzone 5536 >>Vá para o Monte Esquecido
+    .subzone 5536 >> Vá para o Monte Esquecido
 step << Horde
     .isOnQuest 27949
     #loop
@@ -275,7 +275,7 @@ step << Horde
     .unitscan First Lieutenant Connor
 step
     #completewith SiegeEngineScrap
-    .subzone 5542 >>Vá para o Restless Front
+    .subzone 5542 >> Vá para o Restless Front
 step << Alliance
     .isOnQuest 28046
     #loop
@@ -304,13 +304,13 @@ step
     .goto 245,47.46,69.52,60,0 << Horde
     .goto 245,43.90,60.75,60,0 << Horde
     .goto 245,39.23,61.12,60,0 << Horde
-    .use 62829 >>|cRXP_WARN_Use o|r |T134519:0|t[Coletor de Sucata Magnetizado] |cRXP_WARN_enquanto no Restless Front. Isso fará com que |cRXP_LOOT_Sucata da Máquina de Cerco|r seja revelada no chão|r
+    .use 62829 >> |cRXP_WARN_Use o|r |T134519:0|t[Coletor de Sucata Magnetizado] |cRXP_WARN_enquanto no Restless Front. Isso fará com que |cRXP_LOOT_Sucata da Máquina de Cerco|r seja revelada no chão|r
     >>|cRXP_WARN_Observe que o|r |T134519:0|t[Coletor de Sucata Magnetizado] |cRXP_WARN_nem sempre revela|r |cRXP_LOOT_Sucata da Máquina de Cerco|r
     >>Pegue a |cRXP_LOOT_Sucata da Máquina de Cerco|r no chão
     .complete 27992,1 -- Siege Engine Scrap (7)
 step << Alliance
     #completewith FirstLieutenantConnor
-    .subzone 5536 >>Vá para o Monte Esquecido
+    .subzone 5536 >> Vá para o Monte Esquecido
 step << Alliance
     .isOnQuest 27949
     #loop
@@ -345,7 +345,7 @@ step << Alliance
     .unitscan First Lieutenant Connor
 step << Alliance
     #completewith next
-    .subzone 5537 >>Vá para The Darkwood
+    .subzone 5537 >> Vá para The Darkwood
 step << Alliance
     .isOnQuest 27944
     #loop
@@ -370,7 +370,7 @@ step << Alliance
     .mob Darkwood Broodmother
 step << Horde
     #completewith ForemanWellson
-    .subzone 5535 >>Vá para o Wellson Estaleiro
+    .subzone 5535 >> Vá para o Wellson Estaleiro
 step << Horde
     .isOnQuest 27973
     #loop
@@ -391,7 +391,7 @@ step << Horde
     #loop
     .goto 245,22.08,36.61,20,0
     .goto 245,21.76,47.89,20,0
-    .vehicle 48283 >>|cRXP_WARN_Entre em um|r |cRXP_FRIENDLY_Canhão do Bonfilho|r
+    .vehicle 48283 >> |cRXP_WARN_Entre em um|r |cRXP_FRIENDLY_Canhão do Bonfilho|r
     .target Wellson Cannon
 step << Horde
     .isOnQuest 28275
@@ -411,7 +411,7 @@ step << Horde
     .unitscan Foreman Wellson
 step << Horde
     #completewith KeepLordFarson
-    .subzone 5539 >>Viagem para o Forte de Farson
+    .subzone 5539 >> Viagem para o Forte de Farson
 step << Horde
     .isOnQuest 28063
     .goto 245,37.34,29.35
@@ -432,7 +432,7 @@ step << Horde
     .mob Keep Lord Farson
 step << Horde
     #completewith Tankslain
-    .subzone 5534 >>Viagem para o Cabo de Esperança Perdida
+    .subzone 5534 >> Viagem para o Cabo de Esperança Perdida
 step << Horde
     .isOnQuest 27972
     #loop
@@ -470,7 +470,7 @@ step << Horde
     .unitscan Tank
 step << Horde
     #completewith Seabass
-    .subzone 5538 >>Viagem para Rustberg Village
+    .subzone 5538 >> Viagem para Rustberg Village
 step << Horde
     .isOnQuest 28130
     #loop
@@ -500,7 +500,7 @@ step << Horde
 step << Horde
     #completewith CommanderLargo
     .goto 245,75.26,44.80
-    .subzone 5540 >>Viagem para o Miradouro de Largo
+    .subzone 5540 >> Viagem para o Miradouro de Largo
 step << Horde
     .isOnQuest 27987
     #loop
@@ -531,7 +531,7 @@ step << Horde
     .mob Commander Largo
 step << Horde
     #completewith next
-    .subzone 5537 >>Vá para The Darkwood
+    .subzone 5537 >> Vá para The Darkwood
 step << Horde
     .isOnQuest 27944
     #loop
@@ -556,331 +556,331 @@ step << Horde
     .mob Darkwood Broodmother
 step << Alliance
     #completewith BaradinBaseCampTurnins
-    .goto 245,69.14,57.86,150 >>Volte para o Acampamento Base de Baradin
+    .goto 245,69.14,57.86,150 >> Volte para o Acampamento Base de Baradin
     .subzoneskip 5545
 step << Alliance
     .isQuestComplete 28275
     .goto 245,72.934,60.938
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Sargento Dias|r
-    .dailyturnin 28275 >>Entregue Lançar Bombas!
+    .dailyturnin 28275 >> Entregue Lançar Bombas!
     .target Sergeant Gray
 step << Alliance
     .isQuestComplete 27987
     .goto 245,72.934,60.938
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Sargento Dias|r
-    .dailyturnin 27987 >>Entregue Bala de Canhão!
+    .dailyturnin 27987 >> Entregue Bala de Canhão!
     .target Sergeant Gray
 step << Alliance
     .isQuestComplete 27978
     .goto 245,72.934,60.938
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Sargento Dias|r
-    .dailyturnin 27978 >>Entregue Ghostbuster
+    .dailyturnin 27978 >> Entregue Ghostbuster
     .target Sergeant Gray
 step << Alliance
     .isQuestComplete 27991
     .goto 245,72.934,60.938
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Sargento Dias|r
-    .dailyturnin 27991 >>Entregue Retomando o Belvedere
+    .dailyturnin 27991 >> Entregue Retomando o Belvedere
     .target Sergeant Gray
 step << Alliance
     .isQuestComplete 27973
     .goto 245,72.934,60.938
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Sargento Dias|r
-    .dailyturnin 27973 >>Entregue Cuidado com as Astas!
+    .dailyturnin 27973 >> Entregue Cuidado com as Astas!
     .target Sergeant Gray
 step << Alliance
     .isQuestComplete 27975
     .goto 245,72.934,60.938
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Sargento Dias|r
-    .dailyturnin 27975 >>Entregue WANTED: Encarregado Bonfilho
+    .dailyturnin 27975 >> Entregue WANTED: Encarregado Bonfilho
     .target Sergeant Gray
 step << Alliance
     .isQuestComplete 28059
     .goto 245,73.390,59.176
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Comandante Marco Gama|r
-    .dailyturnin 28059 >>Entregue Reivindicar The Keep
+    .dailyturnin 28059 >> Entregue Reivindicar The Keep
     .target Commander Marcus Johnson
 step << Alliance
     .isQuestComplete 28063
     .goto 245,73.390,59.176
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Comandante Marco Gama|r
-    .dailyturnin 28063 >>Entregue Não Deixe Nenhuma Arma para Trás
+    .dailyturnin 28063 >> Entregue Não Deixe Nenhuma Arma para Trás
     .target Commander Marcus Johnson
 step << Alliance
     .isQuestComplete 28130
     .goto 245,73.390,59.176
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Comandante Marco Gama|r
-    .dailyturnin 28130 >>Entregue A Cidade Menos Amigável
+    .dailyturnin 28130 >> Entregue A Cidade Menos Amigável
     .target Commander Marcus Johnson
 step << Alliance
     .isQuestComplete 28137
     .goto 245,73.390,59.176
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Comandante Marco Gama|r
-    .dailyturnin 28137 >>Entregue Ensinar um Homem a Pescar... ou Roubar
+    .dailyturnin 28137 >> Entregue Ensinar um Homem a Pescar... ou Roubar
     .target Commander Marcus Johnson
 step << Alliance
     .isQuestComplete 28065
     .goto 245,73.390,59.176
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Comandante Marco Gama|r
-    .dailyturnin 28065 >>Entregue Passo uma Milha nos Sapatos Deles
+    .dailyturnin 28065 >> Entregue Passo uma Milha nos Sapatos Deles
     .target Commander Marcus Johnson
 step << Alliance
     .isQuestComplete 27948
     .goto 245,73.729,57.571
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Comandante-de-campo Abreu|r
-    .dailyturnin 27948 >>Entregue Uma Tarefa Grudenta
+    .dailyturnin 27948 >> Entregue Uma Tarefa Grudenta
     .target Camp Coordinator Brack
 step << Alliance
     .isQuestComplete 27972
     .goto 245,73.729,57.571
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Comandante-de-campo Abreu|r
-    .dailyturnin 27972 >>Entregue Impulsionando a Moral
+    .dailyturnin 27972 >> Entregue Impulsionando a Moral
     .target Camp Coordinator Brack
 step << Alliance
     .isQuestComplete 27970
     .goto 245,73.729,57.571
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Comandante-de-campo Abreu|r
-    .dailyturnin 27970 >>Entregue Capitão P. Espargosa
+    .dailyturnin 27970 >> Entregue Capitão P. Espargosa
     .target Camp Coordinator Brack
 step << Alliance
     .isQuestComplete 27971
     .goto 245,73.729,57.571
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Comandante-de-campo Abreu|r
-    .dailyturnin 27971 >>Entregue Clangor das Gaiolas
+    .dailyturnin 27971 >> Entregue Clangor das Gaiolas
     .target Camp Coordinator Brack
 step << Alliance
     .isQuestComplete 28050
     .goto 245,73.729,57.571
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Comandante-de-campo Abreu|r
-    .dailyturnin 28050 >>Entregue Aquário de Tubarões
+    .dailyturnin 28050 >> Entregue Aquário de Tubarões
     .target Camp Coordinator Brack
 step << Alliance
     .isQuestComplete 27944
     .goto 245,73.729,57.571
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Comandante-de-campo Abreu|r
-    .dailyturnin 27944 >>Entregue Enxugando a Ninhada
+    .dailyturnin 27944 >> Entregue Enxugando a Ninhada
     .target Camp Coordinator Brack
 step << Alliance
     .isQuestComplete 28046
     .goto 245,74.776,59.600
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Tenente Paranhos|r
-    .dailyturnin 28046 >>Entregue Concluir o Trabalho
+    .dailyturnin 28046 >> Entregue Concluir o Trabalho
     .target Lieutenant Farnsworth
 step << Alliance
     .isQuestComplete 27967
     .goto 245,74.776,59.600
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Tenente Paranhos|r
-    .dailyturnin 27967 >>Entregue Primeiro-tenente Cunha
+    .dailyturnin 27967 >> Entregue Primeiro-tenente Cunha
     .target Lieutenant Farnsworth
 step << Alliance
     .isQuestComplete 27992
     .goto 245,74.776,59.600
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Tenente Paranhos|r
-    .dailyturnin 27992 >>Entregue Ímãs, Como Eles Funcionam?
+    .dailyturnin 27992 >> Entregue Ímãs, Como Eles Funcionam?
     .target Lieutenant Farnsworth
 step << Alliance
     .isQuestComplete 27966
     .goto 245,74.776,59.600
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Tenente Paranhos|r
-    .dailyturnin 27966 >>Entregue Resgatando os Restos
+    .dailyturnin 27966 >> Entregue Resgatando os Restos
     .target Lieutenant Farnsworth
 step << Alliance
     #label BaradinBaseCampTurnins
     .isQuestComplete 27949
     .goto 245,74.776,59.600
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Tenente Paranhos|r
-    .dailyturnin 27949 >>Entregue Os Esquecidos
+    .dailyturnin 27949 >> Entregue Os Esquecidos
     .target Lieutenant Farnsworth
 step << Horde
     #completewith HellscreamsGraspTurnins
-    .goto 245,52.43,68.91,150 >>Entregue a Garra de Grito Infernal
+    .goto 245,52.43,68.91,150 >> Entregue a Garra de Grito Infernal
     .subzoneskip 5546
 step << Horde
     .isQuestComplete 28693
     .goto 245,54.890,79.311
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Capitão Prug|r
-    .dailyturnin 28693 >>Entregue Concluir o Trabalho
+    .dailyturnin 28693 >> Entregue Concluir o Trabalho
     .target Captain Prug
 step << Horde
     .isQuestComplete 27967
     .goto 245,54.890,79.311
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Capitão Prug|r
-    .dailyturnin 27967 >>Entregue Primeiro-tenente Cunha
+    .dailyturnin 27967 >> Entregue Primeiro-tenente Cunha
     .target Captain Prug
 step << Horde
     .isQuestComplete 27992
     .goto 245,54.890,79.311
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Capitão Prug|r
-    .dailyturnin 27992 >>Entregue Ímãs, Como Eles Funcionam?
+    .dailyturnin 27992 >> Entregue Ímãs, Como Eles Funcionam?
     .target Captain Prug
 step << Horde
     .isQuestComplete 27966
     .goto 245,54.890,79.311
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Capitão Prug|r
-    .dailyturnin 27966 >>Entregue Resgatando os Restos
+    .dailyturnin 27966 >> Entregue Resgatando os Restos
     .target Captain Prug
 step << Horde
     .isQuestComplete 27949
     .goto 245,54.890,79.311
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Capitão Prug|r
-    .dailyturnin 27949 >>Entregue Os Esquecidos
+    .dailyturnin 27949 >> Entregue Os Esquecidos
     .target Captain Prug
 step << Horde
     .isQuestComplete 28275
     .goto 245,55.770,78.478
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Recruta Sarlosk|r
-    .dailyturnin 28275 >>Entregue Lançar Bombas!
+    .dailyturnin 28275 >> Entregue Lançar Bombas!
     .target Private Sarlosk
 step << Horde
     .isQuestComplete 27987
     .goto 245,55.770,78.478
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Recruta Sarlosk|r
-    .dailyturnin 27987 >>Entregue Bala de Canhão!
+    .dailyturnin 27987 >> Entregue Bala de Canhão!
     .target Private Sarlosk
 step << Horde
     .isQuestComplete 27978
     .goto 245,55.770,78.478
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Recruta Sarlosk|r
-    .dailyturnin 27978 >>Entregue Ghostbuster
+    .dailyturnin 27978 >> Entregue Ghostbuster
     .target Private Sarlosk
 step << Horde
     .isQuestComplete 27991
     .goto 245,55.770,78.478
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Recruta Sarlosk|r
-    .dailyturnin 27991 >>Entregue Retomando o Belvedere
+    .dailyturnin 27991 >> Entregue Retomando o Belvedere
     .target Private Sarlosk
 step << Horde
     .isQuestComplete 27973
     .goto 245,55.770,78.478
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Recruta Sarlosk|r
-    .dailyturnin 27973 >>Entregue Cuidado com as Astas!
+    .dailyturnin 27973 >> Entregue Cuidado com as Astas!
     .target Private Sarlosk
 step << Horde
     .isQuestComplete 27975
     .goto 245,55.770,78.478
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Recruta Sarlosk|r
-    .dailyturnin 27975 >>Entregue WANTED: Encarregado Bonfilho
+    .dailyturnin 27975 >> Entregue WANTED: Encarregado Bonfilho
     .target Private Sarlosk
 step << Horde
     .isQuestComplete 27948
     .goto 245,55.223,81.329
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Terceiro Oficial Kronkar|r
-    .dailyturnin 27948 >>Entregue Uma Tarefa Grudenta
+    .dailyturnin 27948 >> Entregue Uma Tarefa Grudenta
     .target 3rd Officer Kronkar
 step << Horde
     .isQuestComplete 27972
     .goto 245,55.223,81.329
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Terceiro Oficial Kronkar|r
-    .dailyturnin 27972 >>Entregue Impulsionando a Moral
+    .dailyturnin 27972 >> Entregue Impulsionando a Moral
     .target 3rd Officer Kronkar
 step << Horde
     .isQuestComplete 27970
     .goto 245,55.223,81.329
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Terceiro Oficial Kronkar|r
-    .dailyturnin 27970 >>Entregue Capitão P. Espargosa
+    .dailyturnin 27970 >> Entregue Capitão P. Espargosa
     .target 3rd Officer Kronkar
 step << Horde
     .isQuestComplete 27971
     .goto 245,55.223,81.329
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Terceiro Oficial Kronkar|r
-    .dailyturnin 27971 >>Entregue Clangor das Gaiolas
+    .dailyturnin 27971 >> Entregue Clangor das Gaiolas
     .target 3rd Officer Kronkar
 step << Horde
     .isQuestComplete 28050
     .goto 245,55.223,81.329
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Terceiro Oficial Kronkar|r
-    .dailyturnin 28050 >>Entregue Aquário de Tubarões
+    .dailyturnin 28050 >> Entregue Aquário de Tubarões
     .target 3rd Officer Kronkar
 step << Horde
     .isQuestComplete 27944
     .goto 245,55.223,81.329
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Terceiro Oficial Kronkar|r
-    .dailyturnin 27944 >>Entregue Enxugando a Ninhada
+    .dailyturnin 27944 >> Entregue Enxugando a Ninhada
     .target 3rd Officer Kronkar
 step << Horde
     .isQuestComplete 28059
     .goto 245,53.535,80.569
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Comandante Larmash|r
-    .dailyturnin 28059 >>Entregue Reivindicar The Keep
+    .dailyturnin 28059 >> Entregue Reivindicar The Keep
     .target Commander Larmash
 step << Horde
     .isQuestComplete 28063
     .goto 245,53.535,80.569
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Comandante Larmash|r
-    .dailyturnin 28063 >>Entregue Não Deixe Nenhuma Arma para Trás
+    .dailyturnin 28063 >> Entregue Não Deixe Nenhuma Arma para Trás
     .target Commander Larmash
 step << Horde
     .isQuestComplete 28130
     .goto 245,53.535,80.569
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Comandante Larmash|r
-    .dailyturnin 28130 >>Entregue A Cidade Menos Amigável
+    .dailyturnin 28130 >> Entregue A Cidade Menos Amigável
     .target Commander Larmash
 step << Horde
     .isQuestComplete 28137
     .goto 245,53.535,80.569
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Comandante Larmash|r
-    .dailyturnin 28137 >>Entregue Ensinar um Homem a Pescar... ou Roubar
+    .dailyturnin 28137 >> Entregue Ensinar um Homem a Pescar... ou Roubar
     .target Commander Larmash
 step << Horde
     #label HellscreamsGraspTurnins
     .isQuestComplete 28065
     .goto 245,53.535,80.569
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Comandante Larmash|r
-    .dailyturnin 28065 >>Entregue Passo uma Milha nos Sapatos Deles
+    .dailyturnin 28065 >> Entregue Passo uma Milha nos Sapatos Deles
     .target Commander Larmash
 step
     #completewith next
     .goto 245,66.83,81.42,30,0
     .goto 244,40.80,20.76
-    .zone 244 >>|cRXP_WARN_Você completou todas as missões diárias na Península de Tol Barad por hoje. Vá para o sul em direção a Tol Barad para completar mais missões diárias lá|r
+    .zone 244 >> |cRXP_WARN_Você completou todas as missões diárias na Península de Tol Barad por hoje. Vá para o sul em direção a Tol Barad para completar mais missões diárias lá|r
 step << Alliance
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Segundo-tenente Osório|r, o |cRXP_FRIENDLY_Marechal Malone|r, o |cRXP_FRIENDLY_Sargento Paulo|r e o |cRXP_FRIENDLY_Comandante Stevens|r
-    .daily 28186 >>Aceite Grilhões Amaldiçoados
-    .daily 28165 >>Aceite Bloco D
-    .daily 28185 >>Aceite Svarnos
+    .daily 28186 >> Aceite Grilhões Amaldiçoados
+    .daily 28165 >> Aceite Bloco D
+    .daily 28185 >> Aceite Svarnos
     .goto 244,53.108,46.414
     .target +2nd Lieutenant Wansworth
-    .daily 28232 >>Aceite Comida de Baixo
-    .daily 28188 >>Aceite Revolta na Prisão
-    .daily 28223 >>Aceite O Guardião
+    .daily 28232 >> Aceite Comida de Baixo
+    .daily 28188 >> Aceite Revolta na Prisão
+    .daily 28223 >> Aceite O Guardião
     .goto 244,53.517,47.011
     .target +Marshal Fallows
-    .daily 28122 >>Aceite A Huge Problem
-    .daily 28162 >>Aceite Isca do Pântano
-    .daily 28163 >>Aceite As Sobras
+    .daily 28122 >> Aceite A Huge Problem
+    .daily 28162 >> Aceite Isca do Pântano
+    .daily 28163 >> Aceite As Sobras
     .goto 244,54.568,46.338
     .target +Sergeant Parker
-    .daily 28117 >>Aceite Limpando as Profundezas
-    .daily 28120 >>Aceite Aprendendo com o Passado
-    .daily 28118 >>Aceite O Arquimago Aprisionado
+    .daily 28117 >> Aceite Limpando as Profundezas
+    .daily 28120 >> Aceite Aprendendo com o Passado
+    .daily 28118 >> Aceite O Arquimago Aprisionado
     .goto 244,54.385,45.623
     .target +Commander Stevens
 step << Horde
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Terceiro-sargento Lázaro|r, o |cRXP_FRIENDLY_Comandante Zanoth|r, o |cRXP_FRIENDLY_Recruta Garnoth|r e o |cRXP_FRIENDLY_Comandante-chefe Razgoth|r
-    .daily 28232 >>Aceite Comida de Baixo
-    .daily 28188 >>Aceite Revolta na Prisão
-    .daily 28223 >>Aceite O Guardião
+    .daily 28232 >> Aceite Comida de Baixo
+    .daily 28188 >> Aceite Revolta na Prisão
+    .daily 28223 >> Aceite O Guardião
     .goto 244,48.719,53.631
     .target +Staff Sergeant Lazgar
-    .daily 28122 >>Aceite A Huge Problem
-    .daily 28162 >>Aceite Isca do Pântano
-    .daily 28659 >>Aceite As Sobras
+    .daily 28122 >> Aceite A Huge Problem
+    .daily 28162 >> Aceite Isca do Pântano
+    .daily 28659 >> Aceite As Sobras
     .goto 244,48.003,54.792
     .target +Commander Zanoth
-    .daily 28117 >>Aceite Limpando as Profundezas
-    .daily 28120 >>Aceite Aprendendo com o Passado
-    .daily 28118 >>Aceite O Arquimago Aprisionado
+    .daily 28117 >> Aceite Limpando as Profundezas
+    .daily 28120 >> Aceite Aprendendo com o Passado
+    .daily 28118 >> Aceite O Arquimago Aprisionado
     .goto 244,48.476,55.240
     .target +Private Garnoth
-    .daily 28186 >>Aceite Grilhões Amaldiçoados
-    .daily 28165 >>Aceite Bloco D
-    .daily 28185 >>Aceite Svarnos
+    .daily 28186 >> Aceite Grilhões Amaldiçoados
+    .daily 28165 >> Aceite Bloco D
+    .daily 28185 >> Aceite Svarnos
     .goto 244,49.230,53.860
     .target +Drillmaster Razgoth
 step
     #completewith GalusStaff
     .goto 244,61.330,50.108
-    .subzone 5658 >>Entre nas Profundezas Amaldiçoadas
+    .subzone 5658 >> Entre nas Profundezas Amaldiçoadas
 step
     #completewith GalusStaff
     .isOnQuest 28117
@@ -929,7 +929,7 @@ step
 step
     #completewith SvarnosCollar
     .goto 244,42.722,38.648
-    .subzone 5657 >>Entre no Bloco D
+    .subzone 5657 >> Entre no Bloco D
 step
     #completewith SvarnosCollar
     .isOnQuest 28165
@@ -999,7 +999,7 @@ step
 step
     #completewith WardensKeys
     .goto 244,43.93,70.10
-    .subzone 5659 >>Entre no Buraco
+    .subzone 5659 >> Entre no Buraco
 step
     #completewith WardensKeys
     .isOnQuest 28188
@@ -1092,46 +1092,46 @@ step
     .mob Problim
 step << Alliance
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Segundo-tenente Osório|r, o |cRXP_FRIENDLY_Marechal Malone|r, o |cRXP_FRIENDLY_Sargento Paulo|r e o |cRXP_FRIENDLY_Comandante Stevens|r
-    .dailyturnin 28186 >>Entregue Amaldiçoado Grilhões
-    .dailyturnin 28165 >>Entregue D-Bloqueio
-    .dailyturnin 28185 >>Entregue Svarnos
+    .dailyturnin 28186 >> Entregue Amaldiçoado Grilhões
+    .dailyturnin 28165 >> Entregue D-Bloqueio
+    .dailyturnin 28185 >> Entregue Svarnos
     .goto 244,53.108,46.414
     .target +2nd Lieutenant Wansworth
-    .dailyturnin 28232 >>Entregue Comida From Below
-    .dailyturnin 28188 >>Entregue Prison Revolta
-    .dailyturnin 28223 >>Entregue O Guardião
+    .dailyturnin 28232 >> Entregue Comida From Below
+    .dailyturnin 28188 >> Entregue Prison Revolta
+    .dailyturnin 28223 >> Entregue O Guardião
     .goto 244,53.517,47.011
     .target +Marshal Fallows
-    .dailyturnin 28122 >>Entregue A Huge Problem
-    .dailyturnin 28162 >>Entregue Swamp Isca
-    .dailyturnin 28163 >>Entregue The Sobras
+    .dailyturnin 28122 >> Entregue A Huge Problem
+    .dailyturnin 28162 >> Entregue Swamp Isca
+    .dailyturnin 28163 >> Entregue The Sobras
     .goto 244,54.568,46.338
     .target +Sergeant Parker
-    .dailyturnin 28117 >>Entregue Limpando the Depths
-    .dailyturnin 28120 >>Entregue Aprendizagem From The Past
-    .dailyturnin 28118 >>Entregue The Aprisionado Archmage
+    .dailyturnin 28117 >> Entregue Limpando the Depths
+    .dailyturnin 28120 >> Entregue Aprendizagem From The Past
+    .dailyturnin 28118 >> Entregue The Aprisionado Archmage
     .goto 244,54.385,45.623
     .target +Commander Stevens
 step << Horde
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Terceiro-sargento Lázaro|r, o |cRXP_FRIENDLY_Comandante Zanoth|r, o |cRXP_FRIENDLY_Recruta Garnoth|r e o |cRXP_FRIENDLY_Comandante-chefe Razgoth|r
-    .dailyturnin 28232 >>Entregue Comida From Below
-    .dailyturnin 28188 >>Entregue Prison Revolta
-    .dailyturnin 28223 >>Entregue O Guardião
+    .dailyturnin 28232 >> Entregue Comida From Below
+    .dailyturnin 28188 >> Entregue Prison Revolta
+    .dailyturnin 28223 >> Entregue O Guardião
     .goto 244,48.719,53.631
     .target +Staff Sergeant Lazgar
-    .dailyturnin 28122 >>Entregue A Huge Problem
-    .dailyturnin 28162 >>Entregue Swamp Isca
-    .dailyturnin 28659 >>Entregue The Sobras
+    .dailyturnin 28122 >> Entregue A Huge Problem
+    .dailyturnin 28162 >> Entregue Swamp Isca
+    .dailyturnin 28659 >> Entregue The Sobras
     .goto 244,48.003,54.792
     .target +Commander Zanoth
-    .dailyturnin 28117 >>Entregue Limpando the Depths
-    .dailyturnin 28120 >>Entregue Aprendizagem From The Past
-    .dailyturnin 28118 >>Entregue The Aprisionado Archmage
+    .dailyturnin 28117 >> Entregue Limpando the Depths
+    .dailyturnin 28120 >> Entregue Aprendizagem From The Past
+    .dailyturnin 28118 >> Entregue The Aprisionado Archmage
     .goto 244,48.476,55.240
     .target +Private Garnoth
-    .dailyturnin 28186 >>Entregue Amaldiçoado Grilhões
-    .dailyturnin 28165 >>Entregue D-Bloqueio
-    .dailyturnin 28185 >>Entregue Svarnos
+    .dailyturnin 28186 >> Entregue Amaldiçoado Grilhões
+    .dailyturnin 28165 >> Entregue D-Bloqueio
+    .dailyturnin 28185 >> Entregue Svarnos
     .goto 244,49.230,53.860
     .target +Drillmaster Razgoth
 step

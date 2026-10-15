@@ -15,13 +15,13 @@ RXPGuides.RegisterGuide([[
 step
     .goto Azuremyst Isle,84.19,43.03
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Megelon|r
-    .accept 9279 >>Aceite Sobreviveste!
+    .accept 9279 >> Aceite Sobreviveste!
     .target Megelon
 step
     .goto Azuremyst Isle,80.419,45.885
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Proenitus|r
-    .turnin 9279 >>Entregue Sobreviveste!
-    .accept 9280 >>Aceite O Reabastecimento dos Cristais de Cura
+    .turnin 9279 >> Entregue Sobreviveste!
+    .accept 9280 >> Aceite O Reabastecimento dos Cristais de Cura
     .target Proenitus
 step
     #loop
@@ -33,13 +33,13 @@ step
 step
     .goto Azuremyst Isle,80.419,45.885
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Proenitus|r
-    .turnin 9280 >>Entregue O Reabastecimento dos Cristais de Cura
-    .accept 9409 >>Aceite Entrega Urgente!
+    .turnin 9280 >> Entregue O Reabastecimento dos Cristais de Cura
+    .accept 9409 >> Aceite Entrega Urgente!
     .target Proenitus
 step
     .goto Azuremyst Isle,79.139,46.536
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Botânica Taerix|r
-    .accept 10302 >>Aceite Mutações Voláteis
+    .accept 10302 >> Aceite Mutações Voláteis
     .target Botanist Taerix
 step
     #loop
@@ -51,11 +51,11 @@ step
     .mob Volatile Mutation
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Botânica Taerix|r e a |cRXP_FRIENDLY_Aprendiz Vishael|r
-    .turnin 10302 >>Entregue Mutações Voláteis
-    .accept 9293 >>Aceite A Resposta Adequada...
+    .turnin 10302 >> Entregue Mutações Voláteis
+    .accept 9293 >> Aceite A Resposta Adequada...
     .target +Botanist Taerix
     .goto Azuremyst Isle,79.139,46.536
-    .accept 9799 >>Aceite Trabalho de Campo: Botânica
+    .accept 9799 >> Aceite Trabalho de Campo: Botânica
     .target +Apprentice Vishael
     .goto Azuremyst Isle,79.071,46.624
 step
@@ -73,18 +73,18 @@ step << cata Priest/Shaman
 	.xp 4-470 >>Triture até ficar a 470xp do nível 4 (930/1400)
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Botânica Taerix|r e a |cRXP_FRIENDLY_Aprendiz Vishael|r
-    .turnin 9293 >>Entregue A Resposta Adequada...
-    .accept 9294 >>Aceite A Descontaminação do Lago
+    .turnin 9293 >> Entregue A Resposta Adequada...
+    .accept 9294 >> Aceite A Descontaminação do Lago
     .target +Botanist Taerix
     .goto Azuremyst Isle,79.139,46.536
-    .turnin 9799 >>Entregue Trabalho de Campo: Botânica
+    .turnin 9799 >> Entregue Trabalho de Campo: Botânica
     .target +Apprentice Vishael
     .goto Azuremyst Isle,79.071,46.624
 step
 	#completewith next
 	.goto Azuremyst Isle,79.987,47.117
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Aurok|r
-	.vendor >>Comerciante de Lixo
+	.vendor >> Comerciante de Lixo
     .target Aurok
 step
     #loop
@@ -92,12 +92,12 @@ step
     .goto Azuremyst Isle,80.01,49.42,10,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zalduun|r
     >>|cRXP_FRIENDLY_Zalduun|r |cRXP_WARN_patrulha ligeiramente|r
-    .turnin 9409 >>Entregue Entrega Urgente!
-    .accept 9283 >>Aceite O Resgate dos Sobreviventes!
-    .accept 26970 >>Aceite Ajudando o Ferido << cata Priest
-    .accept 26970 >>Aceite Aprenda a Palavra << !cata Priest
-    .train 2061 >>Treine |T135907:0|t[Cura Célere] << cata Priest
-    .train 589 >>Aprenda |T136207:0|t[Palavra Sombria: Dor] << cata Priest
+    .turnin 9409 >> Entregue Entrega Urgente!
+    .accept 9283 >> Aceite O Resgate dos Sobreviventes!
+    .accept 26970 >> Aceite Ajudando o Ferido << cata Priest
+    .accept 26970 >> Aceite Aprenda a Palavra << !cata Priest
+    .train 2061 >> Treine |T135907:0|t[Cura Célere] << cata Priest
+    .train 589 >> Aprenda |T136207:0|t[Palavra Sombria: Dor] << cata Priest
     .target Zalduun
 step << Priest cata
     .goto Azuremyst Isle,80.32,48.30,10,0
@@ -111,14 +111,14 @@ step << Priest cata
     .goto Azuremyst Isle,80.01,49.42,10,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zalduun|r
     >>|cRXP_FRIENDLY_Zalduun|r |cRXP_WARN_patrulha ligeiramente|r
-    .turnin 26970 >>Entregue Ajudando o Ferido
+    .turnin 26970 >> Entregue Ajudando o Ferido
     .target Zalduun
 step << Mage
 	.goto Azuremyst Isle,79.582,48.762
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Valaatu|r
-    .accept 26968 >>Aceite Mísseis Arcanos << cata
-    .accept 26968 >>Aceite Novane Congelante << !cata
-	.train 5143 >>Treine |T136096:0|t[Mísseis Arcanos] << cata
+    .accept 26968 >> Aceite Mísseis Arcanos << cata
+    .accept 26968 >> Aceite Novane Congelante << !cata
+	.train 5143 >> Aprenda |T136096:0|t[Mísseis Arcanos] << cata
     .target Valaatu
 step << Paladin
     #loop
@@ -126,38 +126,38 @@ step << Paladin
     .goto Azuremyst Isle,80.12,49.13,7,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Aurelon|r
     >>|cRXP_FRIENDLY_Aurelon|r |cRXP_WARN_pode patrulhar ligeiramente|r
-    .accept 26966 >>Aceite O Poder da Luz
-    .train 20154 >>Treine |T135960:0|t[Selo da Retidão] << cata
-	.train 20271 >>Aprenda |T135959:0|t[Julgamento] << cata
+    .accept 26966 >> Aceite O Poder da Luz
+    .train 20154 >> Treine |T135960:0|t[Selo da Retidão] << cata
+	.train 20271 >> Aprenda |T135959:0|t[Julgamento] << cata
     .target Aurelon
 step << Warrior
     .goto Azuremyst Isle,79.587,49.446
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kore|r
-    .accept 26958 >>Aceite A Primeira Lição
-	.train 100 >>Treine |T132337:0|t[Carga] << cata
+    .accept 26958 >> Aceite A Primeira Lição
+	.train 100 >> Treine |T132337:0|t[Carga] << cata
     .target Kore
 step << Shaman
     .goto Azuremyst Isle,79.278,49.126
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Firmanvaar|r
-    .accept 26969 >>Aceite Golpe Primevo
-    .train 8075 >>Treine |T136023:0|t[Totem da Força da Terra] << cata
-    .train 73899 >>Treine |T460956:0|t[Golpe Primevo] << cata
+    .accept 26969 >> Aceite Golpe Primevo
+    .train 8075 >> Treine |T136023:0|t[Totem da Força da Terra] << cata
+    .train 73899 >> Treine |T460956:0|t[Golpe Primevo] << cata
     .target Firmanvaar
 step << Hunter
 	.goto Azuremyst Isle,79.886,49.711
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Keilnei|r
-	.accept 26963 >>Aceite Firmeza no Disparo
-    .train 56641 >>Treine |T132213:0|t[Tiro Firme] << cata
+	.accept 26963 >> Aceite Firmeza no Disparo
+    .train 56641 >> Treine |T132213:0|t[Tiro Firme] << cata
     .target Keilnei
 step
     .goto Azuremyst Isle,79.419,51.235
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Técnica Zhanaa|r
-    .accept 9305 >>Aceite Peças Sobressalentes
+    .accept 9305 >> Aceite Peças Sobressalentes
     .target Technician Zhanaa
 step
     .goto Azuremyst Isle,79.486,51.620
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Vindicante Aldar|r
-    .accept 9303 >>Aceite Inoculação
+    .accept 9303 >> Aceite Inoculação
     .target Vindicator Aldar
 step
     #completewith Owlkininoculated
@@ -194,11 +194,11 @@ step
     .mob Nestlewood Owlkin
 step
 	#completewith next
-    .deathskip >>Morra e reviva no |cRXP_FRIENDLY_Anjo da Cura|r
+    .deathskip >> Morra e reviva no |cRXP_FRIENDLY_Anjo da Cura|r
 step
     .goto Azuremyst Isle,79.139,46.536
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Botânica Taerix|r
-    .turnin 9294 >>Entregue A Descontaminação do Lago
+    .turnin 9294 >> Entregue A Descontaminação do Lago
     .target Botanist Taerix
 step << Mage
     .goto Azuremyst Isle,79.662,46.427
@@ -240,7 +240,7 @@ step
 	#completewith SpareParts
 	.goto Azuremyst Isle,79.987,47.117
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Aurok|r
-	.vendor >>Comerciante de Lixo
+	.vendor >> Comerciante de Lixo
     .target Aurok
 step
     .isQuestComplete 9283
@@ -249,7 +249,7 @@ step
     .goto Azuremyst Isle,80.01,49.42,10,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zalduun|r
     >>|cRXP_FRIENDLY_Zalduun|r |cRXP_WARN_patrulha ligeiramente|r
-    .turnin 9283 >>Entregue O Resgate dos Sobreviventes!
+    .turnin 9283 >> Entregue O Resgate dos Sobreviventes!
     .target Zalduun
 step << !cata Priest
     #loop
@@ -257,28 +257,28 @@ step << !cata Priest
     .goto Azuremyst Isle,80.01,49.42,10,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zalduun|r
     >>|cRXP_FRIENDLY_Zalduun|r |cRXP_WARN_patrulha ligeiramente|r
-    .turnin 26970 >>Entregue Aprenda a Palavra
+    .turnin 26970 >> Entregue Aprenda a Palavra
     .target Zalduun
 step << Mage
 	.goto Azuremyst Isle,79.582,48.762
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Valaatu|r
-    .turnin 26968 >>Entregue Mísseis Arcanos << cata
-    .turnin 26968 >>Entregue Novane Congelante << !cata
+    .turnin 26968 >> Entregue Mísseis Arcanos << cata
+    .turnin 26968 >> Entregue Novane Congelante << !cata
     .target Valaatu
 step << Shaman
     .goto Azuremyst Isle,79.278,49.126
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Firmanvaar|r
-    .turnin 26969 >>Entregue Golpe Primevo
+    .turnin 26969 >> Entregue Golpe Primevo
     .target Firmanvaar
 step << Hunter
 	.goto Azuremyst Isle,79.886,49.711
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Keilnei|r
-	.turnin 26963 >>Entregue Firmeza no Disparo
+	.turnin 26963 >> Entregue Firmeza no Disparo
     .target Keilnei
 step << Warrior
     .goto Azuremyst Isle,79.587,49.446
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kore|r
-    .turnin 26958 >>Entregue A Primeira Lição
+    .turnin 26958 >> Entregue A Primeira Lição
     .target Kore
 step << Paladin
     #loop
@@ -286,19 +286,19 @@ step << Paladin
     .goto Azuremyst Isle,80.12,49.13,7,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Aurelon|r
     >>|cRXP_FRIENDLY_Aurelon|r |cRXP_WARN_pode patrulhar ligeiramente|r
-    .turnin 26966 >>Entregue O Poder da Luz
+    .turnin 26966 >> Entregue O Poder da Luz
     .target Aurelon
 step
     #label SpareParts
     .goto Azuremyst Isle,79.419,51.235
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Técnica Zhanaa|r
-    .turnin 9305 >>Entregue Peças Sobressalentes
+    .turnin 9305 >> Entregue Peças Sobressalentes
     .target Technician Zhanaa
 step
     .goto Azuremyst Isle,79.486,51.620
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Vindicante Aldar|r
-    .turnin 9303 >>Entregue Inoculação
-    .accept 9309 >>Aceite O Batedor Desaparecido
+    .turnin 9303 >> Entregue Inoculação
+    .accept 9309 >> Aceite O Batedor Desaparecido
     .target Vindicator Aldar
 step
     #completewith SurveyorCandress
@@ -308,8 +308,8 @@ step
 step
     .goto Azuremyst Isle,71.998,60.856
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tolaan|r
-    .turnin 9309 >>Entregue O Batedor Desaparecido
-    .accept 10303 >>Aceite Os Elfos Sangrentos
+    .turnin 9309 >> Entregue O Batedor Desaparecido
+    .accept 10303 >> Aceite Os Elfos Sangrentos
     .target Tolaan
 step
     .goto Azuremyst Isle,69.420,64.608
@@ -319,8 +319,8 @@ step
 step
     .goto Azuremyst Isle,71.998,60.856
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tolaan|r
-    .turnin 10303 >>Entregue Os Elfos Sangrentos
-    .accept 9311 >>Aceite Espiã Elfa Sangrenta
+    .turnin 10303 >> Entregue Os Elfos Sangrentos
+    .accept 9311 >> Aceite Espiã Elfa Sangrenta
     .target Tolaan
 step
     #label SurveyorCandress
@@ -329,7 +329,7 @@ step
     .use 24414 >>|cRXP_WARN_Use o|r |T132319:0|t[|cRXP_LOOT_Os planos dos elfos sangrentos|r] |cRXP_WARN_para iniciar a missão|r
     .complete 9311,1 --Kill Surveyor Candress (x1)
     .collect 24414,1,9798,1 -- Blood Elf Plans
-    .accept 9798 >>Aceite Os Planos dos Elfos Sangrentos
+    .accept 9798 >> Aceite Os Planos dos Elfos Sangrentos
     .mob Surveyor Candress
 step
     #loop
@@ -342,33 +342,33 @@ step
     .unitscan Draenei Survivor
 step
 	#completewith BloodElfSpy
-    .deathskip >>Morra e reviva no |cRXP_FRIENDLY_Anjo da Cura|r
+    .deathskip >> Morra e reviva no |cRXP_FRIENDLY_Anjo da Cura|r
 step
     #loop
     .goto Azuremyst Isle,80.25,48.46,10,0
     .goto Azuremyst Isle,80.01,49.42,10,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zalduun|r
     >>|cRXP_FRIENDLY_Zalduun|r |cRXP_WARN_patrulha ligeiramente|r
-    .turnin 9283 >>Entregue O Resgate dos Sobreviventes!
+    .turnin 9283 >> Entregue O Resgate dos Sobreviventes!
     .target Zalduun
 step
     #label BloodElfSpy
     .goto Azuremyst Isle,79.488,51.622
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Vindicante Aldar|r
-    .turnin 9311 >>Entregue Espiã Elfa Sangrenta
-    .turnin 9798 >>Entregue Os Planos dos Elfos Sangrentos
-    .accept 9312 >>Aceite O Emissor
+    .turnin 9311 >> Entregue Espiã Elfa Sangrenta
+    .turnin 9798 >> Entregue Os Planos dos Elfos Sangrentos
+    .accept 9312 >> Aceite O Emissor
     .target Vindicator Aldar
 step
     .goto Azuremyst Isle,79.422,51.234
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Técnica Zhanaa|r
-    .turnin 9312 >>Entregue O Emissor
-    .accept 9313 >>Aceite A Viagem para o Entreposto Lazúli
+    .turnin 9312 >> Entregue O Emissor
+    .accept 9313 >> Aceite A Viagem para o Entreposto Lazúli
     .target Technician Zhanaa
 step << Mage cata
 	.goto Azuremyst Isle,79.582,48.762
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Valaatu|r
-	.train 2136 >>Aprenda |T135807:0|t[Impacto de Fogo]
+	.train 2136 >> Aprenda |T135807:0|t[Impacto de Fogo]
     .target Valaatu
 step << Priest cata
     #loop
@@ -376,7 +376,7 @@ step << Priest cata
     .goto Azuremyst Isle,80.01,49.42,10,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zalduun|r
     >>|cRXP_FRIENDLY_Zalduun|r |cRXP_WARN_patrulha ligeiramente|r
-    .train 17 >>Aprenda |T135940:0|t[Palavra de Poder: Escudo]
+    .train 17 >> Aprenda |T135940:0|t[Palavra de Poder: Escudo]
     .target Zalduun
 step << Paladin cata
     #loop
@@ -384,32 +384,32 @@ step << Paladin cata
     .goto Azuremyst Isle,80.12,49.13,7,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Aurelon|r
     >>|cRXP_FRIENDLY_Aurelon|r |cRXP_WARN_pode patrulhar ligeiramente|r
-	.train 465 >>Treine |T135893:0|t[Aura de Devoção]
+	.train 465 >> Treine |T135893:0|t[Aura de Devoção]
     .target Aurelon
 step << Warrior cata
     .goto Azuremyst Isle,79.587,49.446
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kore|r
-	.train 34428 >>Treine |T132342:0|t[Ímpeto da Vitória]
+	.train 34428 >> Treine |T132342:0|t[Ímpeto da Vitória]
     .target Kore
 step << Shaman cata
     .goto Azuremyst Isle,79.278,49.126
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Firmanvaar|r
-	.train 8042 >>|T136026:0|t[Choque Terreno]
+	.train 8042 >> |T136026:0|t[Choque Terreno]
     .target Firmanvaar
 step
     .goto Azuremyst Isle,64.497,54.037
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Aeun|r
-    .accept 9314 >>Aceite Notícias do Entreposto Lazúli
+    .accept 9314 >> Aceite Notícias do Entreposto Lazúli
     .target Aeun
 step
     .goto Azuremyst Isle,61.052,54.248
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Diktynna|r
-    .accept 9452 >>Aceite Hum... Delícia de Pargo-vermelho!
+    .accept 9452 >> Aceite Hum... Delícia de Pargo-vermelho!
     .target Diktynna
 step
     .isOnQuest 9452
     .goto Azuremyst Isle,62.38,51.93,40,0
-    .goto Azuremyst Isle,61.87,41.62,60 >>|cRXP_WARN_Nade rio acima|r
+    .goto Azuremyst Isle,61.87,41.62,60 >> |cRXP_WARN_Nade rio acima|r
     .use 23654 >>|cRXP_WARN_Use o|r |T134325:0|t[Draenei Pesca Rede] |cRXP_WARN_em|r |cRXP_PICK_Cardumes de Pargo-vermelho|r |cRXP_WARN_que você vê pelo caminho. Pule este passo quando chegar ao topo do rio, você o completará depois|r
 	.collect 23614,10 -- Red Snapper (10)
     .disablecheckbox
@@ -417,28 +417,28 @@ step
 	#completewith next
     >>|cRXP_WARN_Fique atento para um|r |cRXP_FRIENDLY_Jovem Draenei|r
     >>|cRXP_WARN_Enquanto estão em combate, lance|r |T135923:0|t[Dádiva dos Naarus] |cRXP_WARN_neles, depois aceite a missão|r
-	.accept 9612 >>Aceite Agradeço de Coração!
+	.accept 9612 >> Aceite Agradeço de Coração!
 	.unitscan Draenei Youngling
 step
     .goto Azuremyst Isle,53.9,34.4
     >>Mate os |cRXP_ENEMY_Infected Espreitanoite Nanico|r. Saque-os para obter um |T134072:0|t[|cRXP_LOOT_Cristal Fracamente Faiscante|r]
     .use 23678 >>|cRXP_WARN_Use o|r |T134072:0|t[|cRXP_LOOT_Cristal Fracamente Faiscante|r] |cRXP_WARN_para iniciar a missão|r
 	.collect 23678,1,9455,1 -- Faintly Glowing Crystal (1)
-    .accept 9455 >>Aceite Descobertas Intrigantes
+    .accept 9455 >> Aceite Descobertas Intrigantes
     .mob Infected Nightstalker Runt
 step
 	#completewith NightstalkerCleanUp
     .goto Azuremyst Isle,56.1,39.3
-    .deathskip >>Morra e reviva no |cRXP_FRIENDLY_Anjo da Cura|r
+    .deathskip >> Morra e reviva no |cRXP_FRIENDLY_Anjo da Cura|r
     >>|cRXP_WARN_Morra perto do açude próximo ao lado da montanha|r
 step
     #completewith NightstalkerCleanUp
-    .subzone 3576 >>A Viagem para o Entreposto Lazúli
+    .subzone 3576 >> A Viagem para o Entreposto Lazúli
 --not sure what the deal with weapons are
 step << Shaman
     .goto Azuremyst Isle,49.577,53.112
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Nabek|r
-    >>|cRXP_BUY_Compre e equipe um|r |T135145:0|t[Bengala]
+    >>|cRXP_BUY_Compre e equipe uma|r |T135145:0|t[Bengala]
     .collect 2495,1 --Walking Stick (1)
     .target Nabek
     .money <0.0480
@@ -457,44 +457,44 @@ step
 step
     .goto Azuremyst Isle,48.391,51.771
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Anacoreta Fateema|r
-    .accept 9463 >>Aceite Propriedades Medicinais
+    .accept 9463 >> Aceite Propriedades Medicinais
     .target Anchorite Fateema
 step
 	.isOnQuest 9612
     .goto Azuremyst Isle,47.110,50.603
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Exarca Menelaus|r
-	.turnin 9612 >>Entregue Agradeço de Coração!
-    .turnin 9455 >>Entregue Descobertas Intrigantes
-    .accept 9456 >>Aceite Extermínio de Espreitanoites, Ilha 2...
+	.turnin 9612 >> Entregue Agradeço de Coração!
+    .turnin 9455 >> Entregue Descobertas Intrigantes
+    .accept 9456 >> Aceite Extermínio de Espreitanoites, Ilha 2...
     .target Exarch Menelaous
 step
     #label NightstalkerCleanUp
     .goto Azuremyst Isle,47.110,50.603
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Exarca Menelaus|r
-    .turnin 9455 >>Entregue Descobertas Intrigantes
-    .accept 9456 >>Aceite Extermínio de Espreitanoites, Ilha 2...
+    .turnin 9455 >> Entregue Descobertas Intrigantes
+    .accept 9456 >> Aceite Extermínio de Espreitanoites, Ilha 2...
     .target Exarch Menelaous
 step << Shaman cata
     .goto Azuremyst Isle,48.053,50.419
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com Tuluun|r
-    .train 331 >>Aprenda |T136052:0|t[Onda Curativa]
+    .train 331 >> Aprenda |T136052:0|t[Onda Curativa]
     .target Tuluun
     .xp <7,1
 step
     .goto Azuremyst Isle,48.7,50.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Técnico Dyvuun|r
-    .turnin 9313 >>Entregue A Viagem para o Entreposto Lazúli
+    .turnin 9313 >> Entregue A Viagem para o Entreposto Lazúli
     .target Technician Dyvuun
 step
     .goto Azuremyst Isle,48.4,49.3
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Hospedeira Chellan|r
-    .turnin 9314 >>Entregue Notícias do Entreposto Lazúli
+    .turnin 9314 >> Entregue Notícias do Entreposto Lazúli
     .accept 9603 >>Aceite Roupa de Cama, Mesa e Etc
     .target Caregiver Chellan
 step
 	.goto Azuremyst Isle,48.336,49.144
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Hospedeira Chellan|r
-    .home >>Defina sua Pedra de Retorno no Entreposto Lazúli
+    .home >> Defina sua Pedra de Retorno no Entreposto Lazúli
     .target Caregiver Chellan
 step
     .goto Azuremyst Isle,49.67,49.19
@@ -504,37 +504,37 @@ step
 step << Paladin cata
     .goto Azuremyst Isle,48.356,49.558
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com Tullas|r
-    .train 635 >>Aprenda |T135920:0|t[Luz Sagrada]
+    .train 635 >> Aprenda |T135920:0|t[Luz Sagrada]
     .target Tullas
     .xp <7,1
 step << Priest cata
     .goto Azuremyst Isle,48.603,49.285
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com Guvan|r
-    .accept 9586 >>Aceite Ajuda Tavera
-    .train 588 >>Aprenda |T135926:0|t[Fogo Interior]
+    .accept 9586 >> Aceite Ajuda Tavera
+    .train 588 >> Aprenda |T135926:0|t[Fogo Interior]
     .target Guvan
     .xp <7,1
 step << Priest cata
     .goto Azuremyst Isle,48.603,49.285
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com Guvan|r
-    .accept 9586 >>Aceite Ajuda Tavera
+    .accept 9586 >> Aceite Ajuda Tavera
     .target Guvan
 step << Warrior cata
     .goto Azuremyst Isle,50.023,50.515
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com Ruada|r
-    .train 772 >>Aprenda |T132155:0|t[Dilacerar]
+    .train 772 >> Aprenda |T132155:0|t[Dilacerar]
     .target Ruada
     .xp <7,1
 step << Hunter cata
     .goto Azuremyst Isle,49.780,51.938
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com Acteon|r
-    .train 2973 >>Aprenda |T132223:0|t[Golpe do Raptor]
+    .train 2973 >> Aprenda |T132223:0|t[Golpe do Raptor]
     .target Acteon
 step
 	#completewith level8
     >>|cRXP_WARN_Fique atento para um|r |cRXP_FRIENDLY_Jovem Draenei|r
     >>|cRXP_WARN_Enquanto estão em combate, lance|r |T135923:0|t[Dádiva dos Naarus] |cRXP_WARN_neles, depois aceite a missão|r
-	.accept 9612 >>Aceite Agradeço de Coração!
+	.accept 9612 >> Aceite Agradeço de Coração!
 	.unitscan Draenei Youngling
 step
     #completewith LeavesTree
@@ -552,12 +552,12 @@ step << Priest
 step
     .goto Azuremyst Isle,47.038,70.206
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Almirante Odisseu|r
-    .accept 9506 >>Aceite Um Pequeno Começo
+    .accept 9506 >> Aceite Um Pequeno Começo
     .target Admiral Odesyus
 step
     .goto Azuremyst Isle,46.681,70.540
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com "Cuca" MacMolhofraco|r
-    .accept 9512 >>Aceite Risoto do "Cuca"
+    .accept 9512 >> Aceite Risoto do "Cuca"
     .target "Cookie" McWeaksauce
 step << Warrior/Rogue/Paladin
     .goto Azuremyst Isle,46.355,71.188
@@ -565,7 +565,7 @@ step << Warrior/Rogue/Paladin
     >>|cRXP_WARN_Isso permitirá que você crie|r |T135248:0|t [Pedras de Amolar Ásperas] |cRXP_WARN_que aumentam seu dano corpo a corpo em 2|r << Warrior/Rogue
     >>|cRXP_WARN_Isso permitirá que você crie|r |T135255:0|t [Contrapesos Ásperos] |cRXP_WARN_que aumentam seu dano corpo a corpo em 2|r << Paladin
     >>|cRXP_WARN_Se você não quiser fazer isso, pule esta etapa|r
-    .train 2018 >>Treine |T136241:0|t [Ferraria]
+    .train 2018 >> Treine |T136241:0|t [Ferraria]
     .target Blacksmith Calypso
     .train 2575,3 --Mining
 step
@@ -587,21 +587,21 @@ step
 step
     .goto Azuremyst Isle,46.681,70.540
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com "Cuca" MacMolhofraco|r
-    .turnin 9512 >>Entregue Risoto do "Cuca"
+    .turnin 9512 >> Entregue Risoto do "Cuca"
     .target "Cookie" McWeaksauce
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Almirante Odisseu|r e com a |cRXP_FRIENDLY_Sacerdotisa Cailin Il'dinero|r
-    .turnin 9506 >>Entregue Um Pequeno Começo
+    .turnin 9506 >> Entregue Um Pequeno Começo
     .target +Admiral Odesyus
     .goto Azuremyst Isle,47.038,70.206
-    .accept 9530 >>Aceite Planta Infalível
-    .accept 9513 >>Aceite A Reconquista das Ruínas
+    .accept 9530 >> Aceite Planta Infalível
+    .accept 9513 >> Aceite A Reconquista das Ruínas
     .target +Priestess Kyleen Il'dinare
     .goto Azuremyst Isle,47.131,70.289
 step
     .goto Azuremyst Isle,47.243,69.998
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Arqueólogo Adamantino Ferrocordis|r
-    .accept 9523 >>Aceite Relíquia é Coisa para Se Guardar Debaixo de Sete Chaves
+    .accept 9523 >> Aceite Relíquia é Coisa para Se Guardar Debaixo de Sete Chaves
     .target Archaeologist Adamant Ironheart
 step
     #label LeavesTree
@@ -631,81 +631,81 @@ step
 step
     .goto Azuremyst Isle,47.038,70.206
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Almirante Odisseu|r
-    .turnin 9530 >>Entregue Planta Infalível
-    .accept 9531 >>Aceite Debaixo do Pé de Árvore
+    .turnin 9530 >> Entregue Planta Infalível
+    .accept 9531 >> Aceite Debaixo do Pé de Árvore
     .target Admiral Odesyus
 step
     #label level8
-	.xp 8-950 >>Farme até estar a 950 de XP do nível 8 (3550/4500)
+	.xp 8-950 >> Farme até estar a 950 de XP do nível 8 (3550/4500)
     >>|cRXP_WARN_Procure terminar perto de Azure Vigiar|r
 step
 	#completewith next
     .goto Azuremyst Isle,50.43,63.70
-    .deathskip >>Morra e reviva no |cRXP_FRIENDLY_Anjo da Cura|r
+    .deathskip >> Morra e reviva no |cRXP_FRIENDLY_Anjo da Cura|r
     >>|cRXP_WARN_Pule este passo se você já está perto de Azure Vigiar|r
 step
 	.goto Azuremyst Isle,49.780,51.938
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com Acteon|r
-	.accept 9454 >>Aceite A Grande Caçada de Pastolunas
-    .turnin 9454 >>Entregue A Grande Caçada de Pastolunas
-    .accept 10324 >>Aceite A Grande Caçada de Pastolunas
+	.accept 9454 >> Aceite A Grande Caçada de Pastolunas
+    .turnin 9454 >> Entregue A Grande Caçada de Pastolunas
+    .accept 10324 >> Aceite A Grande Caçada de Pastolunas
     .target Acteon
 step << Hunter cata
     .goto Azuremyst Isle,49.780,51.938
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com Acteon|r
-    .train 5116 >>Treine |T135860:0|t[Tiro de Concussão]
-    .train 82243 >>Aprenda |T132269:0|t[Aparar]
+    .train 5116 >> Aprenda |T135860:0|t[Tiro de Concussão]
+    .train 82243 >> Aprenda |T132269:0|t[Aparar]
     .target Acteon
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Anacoreta Fateema|r e |cRXP_FRIENDLY_Daedal|r
-    .turnin 9463 >>Entregue Propriedades Medicinais
+    .turnin 9463 >> Entregue Propriedades Medicinais
     .target +Anchorite Fateema
     .goto Azuremyst Isle,48.390,51.770
-    .accept 9473 >>Aceite Uma Alternativa à Alternativa
+    .accept 9473 >> Aceite Uma Alternativa à Alternativa
     .target +Daedal
     .goto Azuremyst Isle,48.392,51.482
 step << Shaman cata
     .train 331,1
     .goto Azuremyst Isle,48.053,50.419
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com Tuluun|r
-    .train 331 >>Aprenda |T136052:0|t[Onda Curativa]
-    .train 324 >>Treine |T136051:0|t[Escudo de Raios]
+    .train 331 >> Aprenda |T136052:0|t[Onda Curativa]
+    .train 324 >> Treine |T136051:0|t[Escudo de Raios]
     .target Tuluun
 step << Shaman cata
     .goto Azuremyst Isle,48.053,50.419
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com Tuluun|r
-    .train 324 >>Treine |T136051:0|t[Escudo de Raios]
+    .train 324 >> Treine |T136051:0|t[Escudo de Raios]
     .target Tuluun
 step << Paladin cata
     .goto Azuremyst Isle,48.356,49.558
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com Tullas|r
-    .train 635 >>Aprenda |T135920:0|t[Luz Sagrada]
+    .train 635 >> Aprenda |T135920:0|t[Luz Sagrada]
     .target Tullas
 step << Priest cata
     .goto Azuremyst Isle,48.603,49.285
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com Guvan|r
-    .turnin 9586 >>Entregue Ajuda Tavera
-    .trainer >>Treine suas magias de classe
+    .turnin 9586 >> Entregue Ajuda Tavera
+    .trainer >> Treine suas magias de classe
     .target Guvan
 step << Mage cata
     .goto Azuremyst Isle,49.868,49.949
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Semid|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Semid
 step << Warrior cata
     .goto Azuremyst Isle,50.023,50.515
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com Ruada|r
-    .train 772 >>Aprenda |T132155:0|t[Dilacerar]
+    .train 772 >> Aprenda |T132155:0|t[Dilacerar]
     .target Ruada
 step
     .goto Azuremyst Isle,48.9,51.1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dulvi|r
-    .accept 10428 >>Aceite O Pescador Desparecido
+    .accept 10428 >> Aceite O Pescador Desparecido
     .target Dulvi
 step
     .goto Azuremyst Isle,49.365,51.086
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Criptógrafo Aurren|r
-    .accept 9538 >>Aceite O Aprendizado de uma Língua
+    .accept 9538 >> Aceite O Aprendizado de uma Língua
     .target Cryptographer Aurren
 step
 	.use 23818 >>|cRXP_WARN_Use a|r |T133741:0|t[Cartilha da Língua dos Pelursos Pinhoquieto]
@@ -713,14 +713,14 @@ step
 step
     .goto Azuremyst Isle,49.439,50.977
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Totem de Akira|r
-    .turnin 9538 >>Entregue O Aprendizado de uma Língua
-    .accept 9539 >>Aceite O Totem de Coor
+    .turnin 9538 >> Entregue O Aprendizado de uma Língua
+    .accept 9539 >> Aceite O Totem de Coor
     .target Totem of Akida
 step
 	#completewith AncientRelics
     >>|cRXP_WARN_Fique atento para um|r |cRXP_FRIENDLY_Jovem Draenei|r
     >>|cRXP_WARN_Enquanto estão em combate, lance|r |T135923:0|t[Dádiva dos Naarus] |cRXP_WARN_neles, depois aceite a missão|r
-	.accept 9612 >>Aceite Agradeço de Coração!
+	.accept 9612 >> Aceite Agradeço de Coração!
 	.unitscan Draenei Youngling
 step
 	#completewith TotemofTikti
@@ -734,12 +734,12 @@ step
 	.goto Azuremyst Isle,49.9,45.9,100,0
     .goto Azuremyst Isle,55.233,41.643
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_O totem de Coor|r
-    .turnin 9539 >>Entregue O Totem de Coor
-    .accept 9540 >>Aceite O Totem de Tikti
+    .turnin 9539 >> Entregue O Totem de Coor
+    .accept 9540 >> Aceite O Totem de Tikti
     .target Totem of Coo
 step
     #completewith next
-    .goto Azuremyst Isle,54.531,40.493,10 >>|cRXP_WARN_Cuidadosamente desça pelo lado da montanha aqui|r
+    .goto Azuremyst Isle,54.531,40.493,10 >> |cRXP_WARN_Cuidadosamente desça pelo lado da montanha aqui|r
 step
     #loop
     .goto Azuremyst Isle,51.9,32.4,60,0
@@ -750,14 +750,14 @@ step
     #label TotemofTikti
     .goto Azuremyst Isle,64.475,39.772
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_O totem de Tikti|r
-    .turnin 9540 >>Entregue O Totem de Tikti
-    .accept 9541 >>Aceite O Totem de Yor
+    .turnin 9540 >> Entregue O Totem de Tikti
+    .accept 9541 >> Aceite O Totem de Yor
     .timer 30,O Totem de Yor RP
     .target Totem of Tikti
 step
     .isOnQuest 9541
     .goto Azuremyst Isle,63.64,40.09
-    .aura 30430 >>|cRXP_WARN_Siga|r |cRXP_FRIENDLY_Ancestral Pinhoquieto Tikti|r|cRXP_WARN_. Ele concederá|r |T132107:0|t[Abraço da Serpente] |cRXP_WARN_que concede aumento de 150% na velocidade de natação e respiração aquática|r
+    .aura 30430 >> |cRXP_WARN_Siga|r |cRXP_FRIENDLY_Ancestral Pinhoquieto Tikti|r|cRXP_WARN_. Ele concederá|r |T132107:0|t[Abraço da Serpente] |cRXP_WARN_que concede aumento de 150% na velocidade de natação e respiração aquática|r
 step
     .goto Azuremyst Isle,63.2,68.0
     .use 23654 >>|cRXP_WARN_Use o|r |T134325:0|t[Draenei Pesca Rede] |cRXP_WARN_em|r |cRXP_PICK_Schools of Pargo-vermelho|r
@@ -766,28 +766,28 @@ step
 step
     .goto Azuremyst Isle,61.052,54.248
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Diktynna|r
-    .turnin 9452 >>Entregue Hum... Delicinha de Pargo-Vermelho
-    .accept 9453 >>Aceite Encontrar Acteon
+    .turnin 9452 >> Entregue Hum... Delicinha de Pargo-Vermelho
+    .accept 9453 >> Aceite Encontrar Acteon
     .target Diktynna
 step
     .goto Azuremyst Isle,63.116,67.880
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_O totem de Yor|r embaixo d'água
-    .turnin 9541 >>Entregue O Totem de Yor
-    .accept 9542 >>Aceite O Totem de Vark
+    .turnin 9541 >> Entregue O Totem de Yor
+    .accept 9542 >> Aceite O Totem de Vark
     .timer 71,O Totem de Vark RP
     .target Totem of Yor
 step
     .isOnQuest 9542
     .goto Azuremyst Isle,60.971,69.354
-    .aura 30448 >>|cRXP_WARN_Siga|r |cRXP_FRIENDLY_Ancestral Pinhoquieto Yor|r|cRXP_WARN_. Ele concederá|r |T132142:0|t[Sombra da Floresta] |cRXP_WARN_que concede aumento de velocidade de movimento e invisibilidade|r
+    .aura 30448 >> |cRXP_WARN_Siga|r |cRXP_FRIENDLY_Ancestral Pinhoquieto Yor|r|cRXP_WARN_. Ele concederá|r |T132142:0|t[Sombra da Floresta] |cRXP_WARN_que concede aumento de velocidade de movimento e invisibilidade|r
 step
     #completewith next
-    .goto Azuremyst Isle,28.115,62.391,30 >>|cRXP_WARN_Vá para o oeste de Azuremyst Isle|r
+    .goto Azuremyst Isle,28.115,62.391,30 >> |cRXP_WARN_Vá para o oeste de Azuremyst Isle|r
 step
     .goto Azuremyst Isle,28.115,62.391
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_O totem de Vark|r
-    .turnin 9542 >>Entregue O Totem de Vark
-    .accept 9544 >>Aceite A Profecia de Akira
+    .turnin 9542 >> Entregue O Totem de Vark
+    .accept 9544 >> Aceite A Profecia de Akira
     .target Totem of Vark
 step
     .aura -30448
@@ -824,7 +824,7 @@ step
     >>Abate os |cRXP_ENEMY_Wrathscale Nagas|r, os |cRXP_ENEMY_Wrathscale Myrmidons|r e os |cRXP_ENEMY_Wrathscale Sirens|r. Saque-os para as |T134462:0|t[|cRXP_LOOT_A tabuleta coberta de runas|r]
     .use 23759 >>|cRXP_WARN_Use a|r |T134462:0|t[|cRXP_LOOT_A tabuleta coberta de runas|r] |cRXP_WARN_para iniciar a missão|r
     .collect 23759,1,9514 --Collect Rune Covered Tablet (x1)
-    .accept 9514>>A tabuleta coberta de runas
+    .accept 9514>> A tabuleta coberta de runas
     .complete 9513,1 --Kill Wrathscale Myrmidon (x5)
     .mob +Wrathscale Myrmidon
     .complete 9513,2 --Kill Wrathscale Naga (x5)
@@ -841,11 +841,11 @@ step
     .complete 9523,1 --Collect Ancient Relic (x8)
 step
     #completewith next
-    .subzone 3579 >>Nade para Traitor's Cove
+    .subzone 3579 >> Nade para Traitor's Cove
 step
     .isOnQuest 9531
     .goto Azuremyst Isle,18.473,84.349
-    .cast 30298 >>|cRXP_WARN_Use o|r |T132288:0|t[Kit de Disfarce de Árvore] |cRXP_WARN_na bandeira naga|r
+    .cast 30298 >> |cRXP_WARN_Use o|r |T132288:0|t[Kit de Disfarce de Árvore] |cRXP_WARN_na bandeira naga|r
     .timer 73,Debaixo do Pé de Árvore RP
     .use 23792
 step
@@ -857,8 +857,8 @@ step
 step
     .goto Azuremyst Isle,16.587,94.450
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Capúleo|r
-    .turnin 10428 >>Entregue O Pescador Desaparecido
-    .accept 9527 >>Aceite O que Restou
+    .turnin 10428 >> Entregue O Pescador Desaparecido
+    .accept 9527 >> Aceite O que Restou
     .target Cowlen
 step
     .goto Azuremyst Isle,13.209,89.742
@@ -870,31 +870,31 @@ step
 step
     .goto Azuremyst Isle,16.587,94.450
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Capúleo|r
-    .turnin 9527 >>Entregue O que Restou
+    .turnin 9527 >> Entregue O que Restou
     .target Cowlen
 step
 	#completewith next
-    .deathskip >>Morra e reviva no |cRXP_FRIENDLY_Anjo da Cura|r
+    .deathskip >> Morra e reviva no |cRXP_FRIENDLY_Anjo da Cura|r
 step
     .goto Azuremyst Isle,47.243,69.998
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Arqueólogo Adamantino Ferrocordis|r
-    .turnin 9523 >>Entregue Relíquia É Coisa para se Guardar Debaixo de Sete Chaves
+    .turnin 9523 >> Entregue Relíquia É Coisa para se Guardar Debaixo de Sete Chaves
     .target Archaeologist Adamant Ironheart
 step
     .goto Azuremyst Isle,47.038,70.206
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Almirante Odisseu|r
-    .turnin 9531 >>Entregue Debaixo do Pé de Árvore
-    .accept 9537 >>Aceite Gnomicídio
+    .turnin 9531 >> Entregue Debaixo do Pé de Árvore
+    .accept 9537 >> Aceite Gnomicídio
     .target Admiral Odesyus
 step
     .goto Azuremyst Isle,47.131,70.289
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Sacerdotisa Cailin Il'dinero|r
-    .turnin 9513 >>Entregue A Reconquista das Ruínas
+    .turnin 9513 >> Entregue A Reconquista das Ruínas
     .target Priestess Kyleen Il'dinare
 step -- to avoid long RP incase turned in in above step
     .goto Azuremyst Isle,47.131,70.289
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Sacerdotisa Cailin Il'dinero|r
-    .turnin 9514 >>Entregue A Tabuleta Coberta de Runas
+    .turnin 9514 >> Entregue A Tabuleta Coberta de Runas
     .target Priestess Kyleen Il'dinare
 step
     .goto Azuremyst Isle,50.2,70.6,40,0
@@ -909,72 +909,72 @@ step
 step
     .goto Azuremyst Isle,47.038,70.206
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Almirante Odisseu|r
-    .turnin 9537 >>Entregue Gnomicídio
-    .accept 9602 >>Aceite Livrai-os de Todo Mal...
+    .turnin 9537 >> Entregue Gnomicídio
+    .accept 9602 >> Aceite Livrai-os de Todo Mal...
     .target Admiral Odesyus
 step
     .goto Azuremyst Isle,49.9,51.9
-    .xp 9+2430 >>Triture até 2430+/6500xp
+    .xp 9+2430 >> Triture até 2430+/6500xp
 step
     #completewith next
-    .hs >>Use sua Pedra de Retorno para ir a Vigia do Azul
+    .hs >> Use sua Pedra de Retorno para ir a Vigia do Azul
 step
     .goto Azuremyst Isle,49.367,51.082
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Aruguu dos Pinhoquieto|r
-    .turnin 9544 >>Entregue A Profecia de Akida
+    .turnin 9544 >> Entregue A Profecia de Akida
     .target Arugoo of the Stillpine
 step
     .goto Azuremyst Isle,49.780,51.938
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com Acteon|r
-    .turnin 9453 >>Entregue Encontrar Acteon!
-    .turnin 10324 >>Entregue A Grande Caçada de Pastolunas
+    .turnin 9453 >> Entregue Encontrar Acteon!
+    .turnin 10324 >> Entregue A Grande Caçada de Pastolunas
     .target Acteon
 step
     .goto Azuremyst Isle,48.392,51.482
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Daedal|r
-    .turnin 9473 >>Entregue Uma Alternativa à Alternativa
+    .turnin 9473 >> Entregue Uma Alternativa à Alternativa
     .target Daedal
 step
     .goto Azuremyst Isle,47.110,50.603
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Exarca Menelaus|r
-    .turnin 9456 >>Entregue Extermínio de Espreitanoites, Ilha 2...
-    .turnin 9602 >>Entregue Livrai-os de Todo Mal...
+    .turnin 9456 >> Entregue Extermínio de Espreitanoites, Ilha 2...
+    .turnin 9602 >> Entregue Livrai-os de Todo Mal...
     .target Exarch Menelaous
 step
     .isOnQuest 9612
     .goto Azuremyst Isle,47.110,50.603
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Exarca Menelaus|r
-    .turnin 9612 >>Entregue Agradeço de Coração!
+    .turnin 9612 >> Entregue Agradeço de Coração!
     .target Exarch Menelaous
 step << Shaman cata
     .goto Azuremyst Isle,48.053,50.419
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com Tuluun|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Tuluun
 step << Paladin cata
     .goto Azuremyst Isle,48.356,49.558
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com Tullas|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Tullas
 step << Priest cata
     .goto Azuremyst Isle,48.603,49.285
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com Guvan|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Guvan
 step << Mage cata
     .goto Azuremyst Isle,49.868,49.949
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Semid|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Semid
 step << Warrior cata
     .goto Azuremyst Isle,50.023,50.515
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com Ruada|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Ruada
 step << Hunter cata
     .goto Azuremyst Isle,49.780,51.938
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com Acteon|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Acteon
 step
     .goto Azuremyst Isle,49.712,49.102
@@ -984,13 +984,13 @@ step
 step
     .goto Azuremyst Isle,49.712,49.102
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com Zaldaan|r
-    .fly The Exodar >>Voe para Exodar
+    .fly The Exodar >> Voe para Exodar
     .target Zaldaan
 step
     .goto The Exodar,57.016,50.081
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Nurguni|r
-    .turnin 9604 >>Entregue Nas Asas do Hipogrifo
-    .accept 9605 >>Aceite O Mestre de Hipogrifos Stephanos
+    .turnin 9604 >> Entregue Nas Asas do Hipogrifo
+    .accept 9605 >> Aceite O Mestre de Hipogrifos Stephanos
     .target Nurguni
 step << Warrior/Paladin
     .goto The Exodar,69.945,90.749
@@ -1055,6 +1055,6 @@ step
     #label end
     .goto The Exodar,54.488,36.285
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Stephanos|r
-    .fly Lor'danel >>Voe para Lor'danel
+    .fly Lor'danel >> Voe para Lor'danel
     .target Stephanos
 ]])

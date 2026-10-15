@@ -121,7 +121,7 @@ step << Alliance
 step << Alliance
     #completewith next
     .goto Icecrown,62.55,50.67
-    .vehicle 32227 >>Clique com o botão direito na torre de canhão no topo da Máquina Voadora para iniciar a missão
+    .vehicle 32227 >> Clique com o botão direito na torre de canhão no topo da Máquina Voadora para iniciar a missão
 	.isOnQuest 13309
 step << Alliance
 	>>Atire em todas as Lança Armas de Fogo nos prédios enquanto você voa ao redor
@@ -286,7 +286,7 @@ step
 step
     .goto IcecrownGlacier,68.3,61.5
 	>>Abate as Abominações Colossais na área e saqueie-as por Tripas de Abominação Geladas
-	.use 43968 >>Usar o Kit de Reanimação de Abominações com algumas Tripas na mochila para invocar uma Abominação que você pode controlar. Colete tantos inimigos quantos possível fazendo a Abominação atacá-los e ganhando agro, depois use "Rasgo na Costura" para matar todos os inimigos perto da sua Abominação (os inimigos têm que estar em combate para obter crédito deles)
+	.use 43968 >> Usar o Kit de Reanimação de Abominações com algumas Tripas na mochila para invocar uma Abominação que você pode controlar. Colete tantos inimigos quantos possível fazendo a Abominação atacá-los e ganhando agro, depois use "Rasgo na Costura" para matar todos os inimigos perto da sua Abominação (os inimigos têm que estar em combate para obter crédito deles)
 	>>Se você ficar sem Tripas, vá e mate mais Abominações Colossais. Você pode ter apenas uma Tripa com você por vez.
 	.collect 43966,1,13289,-1,1 << Alliance --Chilled Abomination Guts (3)
     .complete 13289,1 << Alliance  --Icy Ghouls Exploded (15)
@@ -313,13 +313,13 @@ step
 	.isOnQuest 13281 << Horde
 step
 	.goto IcecrownGlacier,62.3,63.4
-	.use 44009 >>Usar o Flesh Giant Spine na mochila para criar Pustulant Spinal Fluid
+	.use 44009 >> Usar o Flesh Giant Spine na mochila para criar Pustulant Spinal Fluid
 	.collect 44010,1 -- Pustulant Spinal Fluid (1)
 	.isOnQuest 13297 << Alliance
 	.isOnQuest 13281 << Horde
 step
     .goto IcecrownGlacier,62.3,63.4
-	.use 44010 >>Usar o Pustulant Spinal Fluid nas caldeiras verdes borbulhantes. Abate os inimigos que aparecem e use o Spinal Fluid novamente quando for pedido para "Adicionar fluido em breve". Esta missão é MUITO difícil. Forme um grupo se necessário ou você pode abandonar/pular essa diária se desejar
+	.use 44010 >> Usar o Pustulant Spinal Fluid nas caldeiras verdes borbulhantes. Abate os inimigos que aparecem e use o Spinal Fluid novamente quando for pedido para "Adicionar fluido em breve". Esta missão é MUITO difícil. Forme um grupo se necessário ou você pode abandonar/pular essa diária se desejar
     .complete 13297,1 << Alliance --Batch of Plague Neutralized (1)
     .complete 13281,1 << Horde --Batch of Plague Neutralized (1)
 	.isOnQuest 13297 << Alliance
@@ -348,7 +348,7 @@ step
 step
     .goto IcecrownGlacier,49.7,34.4
 	.use 44301 -- to combine the 10 tainted essences into a writhing mass
-	.use 44304 >>Clique direito nas Essências Maculadas na mochila para transformá-las em um Writhing Mass. Jogue-o numa caldeira
+	.use 44304 >> Clique direito nas Essências Maculadas na mochila para transformá-las em um Writhing Mass. Jogue-o numa caldeira
 	.complete 13322,1 << Alliance
 	.complete 13357,1 << Horde
 	.isOnQuest 13322 << Alliance
@@ -358,7 +358,7 @@ step
     .goto IcecrownGlacier,54.7,28.0,70,0
     .goto IcecrownGlacier,57.0,28.8,70,0
     .goto IcecrownGlacier,54.1,31.4
-	.use 44433 >>Abate 5 Minions Escravizados (Voidwalkers). Usar o Bastão de Sifão nos cadáveres deles pela Matéria Negra
+	.use 44433 >> Abate 5 Minions Escravizados (Voidwalkers). Usar o Bastão de Sifão nos cadáveres deles pela Matéria Negra
 	.collect 44434,5,13344,1 << Alliance --Dark Matter (5)
 	.collect 44434,5,13365,1 << Horde --Dark Matter (5)
 	.isOnQuest 13344 << Alliance
@@ -372,7 +372,7 @@ step
 	.isOnQuest 13365 << Horde
 step
 	#completewith next
-    .goto IcecrownGlacier,51.9,32.5,30 >>Vá para dentro de Aldur'thar
+    .goto IcecrownGlacier,51.9,32.5,30 >> Vá para dentro de Aldur'thar
 	.isOnQuest 13350 << Alliance
 	.isOnQuest 13368 << Horde
 step
@@ -391,14 +391,14 @@ step
 step
     .goto IcecrownGlacier,51.9,29.0
 	>>Esta missão é MUITO difícil. Forme um grupo se necessário ou abandone/pule essa diária
-	.use 44476 >>Clique em qualquer um dos itens na mochila para combiná-los em Restos Mortais de Alumeth
+	.use 44476 >> Clique em qualquer um dos itens na mochila para combiná-los em Restos Mortais de Alumeth
 	.collect 44480,1 --Alumeth's Remains (1)
 	.isOnQuest 13350 << Alliance
 	.isOnQuest 13368 << Horde
 step
     .goto IcecrownGlacier,51.9,29.0
 	>>Esta missão é MUITO difícil. Forme um grupo se necessário ou abandone/pule essa diária
-	.use 44480 >>Usar Restos Mortais de Alumeth em frente ao cristal brilhante para invocá-lo. Abate-o
+	.use 44480 >> Usar Restos Mortais de Alumeth em frente ao cristal brilhante para invocá-lo. Abate-o
     .complete 13350,1 << Alliance --Alumeth the Ascended Defeated (1)
     .complete 13368,1 << Horde --Alumeth the Ascended Defeated (1)
 	.isOnQuest 13350 << Alliance

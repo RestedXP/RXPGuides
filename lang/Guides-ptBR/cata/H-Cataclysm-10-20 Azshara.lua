@@ -18,18 +18,18 @@ RXPGuides.RegisterGuide([[
 
 step << Rogue Cata/Warlock Cata/Mage Cata
     #completewith next
-    .goto 1454,45.81,66.88,40 >>Vá para a Fenda da Sombra
+    .goto 1454,45.81,66.88,40 >> Vá para a Fenda da Sombra
 step << Priest Cata/Paladin Cata
     #completewith next
-    .goto 1454,49.88,75.54,30 >>Entre em Grommash Segurar
+    .goto 1454,49.88,75.54,30 >> Entre em Grommash Segurar
 step << Shaman Cata/Druid Cata
     #completewith next
     .goto 1454,44.84,75.46,40,0
-    .goto 1454,41.53,60.64,40 >>Vá para o Vale da Sabedoria
+    .goto 1454,41.53,60.64,40 >> Vá para o Vale da Sabedoria
 step << Rogue Cata
     .goto 1454,44.65,61.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gordul|r
-    .train 61922 >>Treine suas magias de classe
+    .train 61922 >> Treine suas magias de classe
     .target Gordul
 step << Rogue Cata
     .goto 1454,29.60,50.40
@@ -40,43 +40,43 @@ step << Rogue Cata
 step << Shaman Cata
     .goto 1454,44.64,52.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sahi|r
-    .train 3599 >>Treine suas magias de classe
+    .train 3599 >> Treine suas magias de classe
     .target Sahi Cloudsinger
     .xp <10,1
 step << Druid Cata
     .goto 1454,44.79,51.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Shalla|r
-    .train 5215 >>Treine suas magias de classe
+    .train 5215 >> Treine suas magias de classe
     .target Shalla Whiteleaf
     .xp <10,1
 step << Mage Cata
     .goto 1454,48.45,62.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Marud|r
-    .train 5505 >>Treine suas magias de classe
+    .train 5505 >> Treine suas magias de classe
     .target Marud
     .xp <10,1
 step << Priest Cata
     .goto 1454,49.17,70.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tyelis|r
-    .train 8092 >>Treine suas magias de classe
+    .train 8092 >> Treine suas magias de classe
     .target Tyelis
     .xp <10,1
 step << Warlock Cata
     .goto 1454,54.49,39.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mirket|r
-    .train 1120 >>Treine suas magias de classe
+    .train 1120 >> Treine suas magias de classe
     .target Mirket
     .xp <10,1
 step << Paladin Cata
     .goto 1454,49.27,71.17
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Pyreanor|r
-    .train 82242 >>Treine suas magias de classe
+    .train 82242 >> Treine suas magias de classe
     .target Master Pyreanor
     .xp <10,1
 step
     #completewith next
     .goto 1454,59.59,50.63,40,0
-    .goto 1454,65.39,49.14,40 >>Vá para o Vale de Honra
+    .goto 1454,65.39,49.14,40 >> Vá para o Vale de Honra
 step << !Goblin
     .goto 1454,66.433,49.292
     >>Clique em |cRXP_PICK_Warchief's Comando Tabuleiro|r
@@ -86,21 +86,21 @@ step << !Warrior !Paladin !Rogue !Hunter !Shaman
     #completewith next
     .goto 1454,66.84,50.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kira|r
-    .vendor >>Compre e Conserte
+    .vendor >> Venda e Repare
     .target Kiro
 step << Warrior Cata
     .goto 1454,73.71,45.32
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ronakada|r
-    .train 71 >>Treine suas magias de classe
+    .train 71 >> Treine suas magias de classe
     .target Blademaster Ronakada
     .xp <10,1
 step << Warrior/Paladin
     .goto 1454,76.38,37.81
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Koru|r
-    .vendor >>Venda lixo e conserte. Venda sua arma se der dinheiro suficiente para |T133477:0|t[Maça Gigante] (24s) << Orc/Troll
-    .vendor >>Venda lixo e conserte. Venda sua arma se der dinheiro suficiente para |T133477:0|t[Maça Gigante] (25s 34c) << Tauren
-    .vendor >>Venda lixo e conserte. Venda sua arma se der dinheiro suficiente para |T133477:0|t[Maça Gigante] (26s 67c) << Undead/BloodElf
-    .vendor >>Venda lixo e conserte. Venda sua arma se der dinheiro suficiente para |T133477:0|t[Maça Gigante] (21s 34c) << Goblin
+    .vendor >> Venda lixo e conserte. Venda sua arma se der dinheiro suficiente para |T133477:0|t[Maça Gigante] (24s) << Orc/Troll
+    .vendor >> Venda lixo e conserte. Venda sua arma se der dinheiro suficiente para |T133477:0|t[Maça Gigante] (25s 34c) << Tauren
+    .vendor >> Venda lixo e conserte. Venda sua arma se der dinheiro suficiente para |T133477:0|t[Maça Gigante] (26s 67c) << Undead/BloodElf
+    .vendor >> Venda lixo e conserte. Venda sua arma se der dinheiro suficiente para |T133477:0|t[Maça Gigante] (21s 34c) << Goblin
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.9
     .target Koru
@@ -120,9 +120,9 @@ step << Shaman
     .goto 1454,76.12,37.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Shoma|r
     >>|cRXP_WARN_Pule este passo se você não escolheu Aperfeiçoamento!|r
-    .vendor >>Venda lixo e conserte. Venda sua arma se der dinheiro suficiente para |T132938:0|t[Direita-Handed Soqueira] (19s 17c) e |T132938:0|t[Soqueira de Canhoto] [19s 24c] << Orc/Troll
-    .vendor >>Venda lixo e conserte. Venda sua arma se der dinheiro suficiente para |T132938:0|t[Direita-Handed Soqueira] (20s 24c) e |T132938:0|t[Soqueira de Canhoto] [20s 31c] << Tauren
-    .vendor >>Venda lixo e conserte. Venda sua arma se der dinheiro suficiente para |T132938:0|t[Direita-Handed Soqueira] (17s 4c) e |T132938:0|t[Soqueira de Canhoto] [17s 10c] << Goblin
+    .vendor >> Venda lixo e conserte. Venda sua arma se der dinheiro suficiente para |T132938:0|t[Direita-Handed Soqueira] (19s 17c) e |T132938:0|t[Soqueira de Canhoto] [19s 24c] << Orc/Troll
+    .vendor >> Venda lixo e conserte. Venda sua arma se der dinheiro suficiente para |T132938:0|t[Direita-Handed Soqueira] (20s 24c) e |T132938:0|t[Soqueira de Canhoto] [20s 31c] << Tauren
+    .vendor >> Venda lixo e conserte. Venda sua arma se der dinheiro suficiente para |T132938:0|t[Direita-Handed Soqueira] (17s 4c) e |T132938:0|t[Soqueira de Canhoto] [17s 10c] << Goblin
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.7
     .target Shoma
@@ -142,10 +142,10 @@ step << Shaman
 step << Hunter
     .goto 1454,75.08,36.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zendo'jian|r
-    .vendor >>Venda lixo e conserte. Venda sua arma se der dinheiro suficiente para |T135489:0|t[Arco Recurvo Laminado] (15s 76c) << Orc/Troll
-    .vendor >>Venda lixo e conserte. Venda sua arma se der dinheiro suficiente para |T135489:0|t[Arco Recurvo Laminado] (16s 64c) << Tauren
-    .vendor >>Venda lixo e conserte. Venda sua arma se der dinheiro suficiente para |T135489:0|t[Arco Recurvo Laminado] (17s 52c) << Undead/BloodElf
-    .vendor >>Venda lixo e conserte. Venda sua arma se der dinheiro suficiente para |T135489:0|t[Arco Recurvo Laminado] (14s 2c) << Goblin
+    .vendor >> Venda lixo e conserte. Venda sua arma se der dinheiro suficiente para |T135489:0|t[Arco Recurvo Laminado] (15s 76c) << Orc/Troll
+    .vendor >> Venda lixo e conserte. Venda sua arma se der dinheiro suficiente para |T135489:0|t[Arco Recurvo Laminado] (16s 64c) << Tauren
+    .vendor >> Venda lixo e conserte. Venda sua arma se der dinheiro suficiente para |T135489:0|t[Arco Recurvo Laminado] (17s 52c) << Undead/BloodElf
+    .vendor >> Venda lixo e conserte. Venda sua arma se der dinheiro suficiente para |T135489:0|t[Arco Recurvo Laminado] (14s 2c) << Goblin
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.5
     .target Zendo'jian
@@ -165,9 +165,9 @@ step << Hunter
 step << Rogue
     .goto 1454,76.12,37.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Shoma|r
-    .vendor >>Venda lixo e conserte. Venda sua arma se der dinheiro suficiente para |T135346:0|t[Alfanje] (18s 20c cada); compre dois se tiver dinheiro suficiente << Orc/Troll
-    .vendor >>Venda lixo e conserte. Venda sua arma se der dinheiro suficiente para |T135346:0|t[Alfanje] (20s 23c cada); compre dois se tiver dinheiro suficiente << Undead/BloodElf
-    .vendor >>Venda lixo e conserte. Venda sua arma se der dinheiro suficiente para |T135346:0|t[Alfanje] (16s 18c cada); compre dois se tiver dinheiro suficiente << Goblin
+    .vendor >> Venda lixo e conserte. Venda sua arma se der dinheiro suficiente para |T135346:0|t[Alfanje] (18s 20c cada); compre dois se tiver dinheiro suficiente << Orc/Troll
+    .vendor >> Venda lixo e conserte. Venda sua arma se der dinheiro suficiente para |T135346:0|t[Alfanje] (20s 23c cada); compre dois se tiver dinheiro suficiente << Undead/BloodElf
+    .vendor >> Venda lixo e conserte. Venda sua arma se der dinheiro suficiente para |T135346:0|t[Alfanje] (16s 18c cada); compre dois se tiver dinheiro suficiente << Goblin
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.7
     .target Shoma
@@ -237,13 +237,13 @@ step << Rogue
 step << Hunter Cata
     .goto 1454,63.87,32.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ormak Tiroatroz|r
-    .train 1978 >>Treine suas magias de classe
+    .train 1978 >> Treine suas magias de classe
     .target Ormak Grimshot
     .xp <10,1
 step
     #completewith RunawayShredder
     .goto 1454,75.39,4.15,0
-    .zone Azshara >>Entre em Azshara pela saída norte
+    .zone Azshara >> Entre em Azshara pela saída norte
 step
     #optional
     .goto 76,26.81,76.96
@@ -486,7 +486,7 @@ step
     .waypoint 76,25.517,69.028,20,0
     .waypoint 76,24.911,68.008,20,0
     .waypoint 76,23.005,68.003,20,0
-    .use 48104 >>|cRXP_WARN_Usar|r |T249182:0|t[The Refleshifier] |cRXP_WARN_em|r os |cRXP_FRIENDLY_Mineradores do Sopé|r
+    .use 48104 >> |cRXP_WARN_Usar|r |T249182:0|t[The Refleshifier] |cRXP_WARN_em|r os |cRXP_FRIENDLY_Mineradores do Sopé|r
     .complete 14194,1 --Mountainfoot Miner Destoned (8)
     .target Mountainfoot Miner
 step
@@ -590,7 +590,7 @@ step
     .target Commander Molotov
 step
     .goto 76,31.12,57.59
-    .vehicle >>Monte o |cRXP_FRIENDLY_Bilgewater Morteiro|r
+    .vehicle >> Monte o |cRXP_FRIENDLY_Bilgewater Morteiro|r
     .target Bilgewater Mortar
     .isOnQuest 14471
 step
@@ -609,7 +609,7 @@ step
     .target Glix Grindlock
 step
     .goto 76,31.61,60.49
-    .use 49700 >>|cRXP_WARN_Use seu|r |T133032:0|t[GAF] |cRXP_WARN_para matar um|r |cRXP_ENEMY_Filho Escravizado de Arkkoroc|r
+    .use 49700 >> |cRXP_WARN_Use seu|r |T133032:0|t[GAF] |cRXP_WARN_para matar um|r |cRXP_ENEMY_Filho Escravizado de Arkkoroc|r
     .complete 14472,1 --Enslaved Son of Arkkoroc (1)
     .mob Enslaved Son of Arkkoroc
 step
@@ -625,7 +625,7 @@ step
 step
     .goto 76,31.924,50.964
     >>Vá para o centro das Ruínas de Eldarath
-    .use 49701 >>|cRXP_WARN_Usar seu|r |T133866:0|t[Gerador de Área de Furtividade] |cRXP_WARN_para ficar invisível|r
+    .use 49701 >> |cRXP_WARN_Usar seu|r |T133866:0|t[Gerador de Área de Furtividade] |cRXP_WARN_para ficar invisível|r
     .complete 24452,1 --Heart of Arkkoroc identified
 step
     .goto 76,29.45,57.65
@@ -657,7 +657,7 @@ step
     .complete 14201,1 --Recovered Artifacts (5)
 step
     >>Defenda a |cRXP_FRIENDLY_Topógrafa-júnior Goblina|r dos |cRXP_ENEMY_Shades of Hate|r conforme marca os levantamentos
-    .use 48655 >>|cRXP_WARN_Usar|r |T133015:0|t[Surveyor's Sinalizador] |cRXP_WARN_para convocar um novo|r |cRXP_FRIENDLY_Goblin Surveyor|r |cRXP_WARN_se necessário|r
+    .use 48655 >> |cRXP_WARN_Usar|r |T133015:0|t[Surveyor's Sinalizador] |cRXP_WARN_para convocar um novo|r |cRXP_FRIENDLY_Goblin Surveyor|r |cRXP_WARN_se necessário|r
     .complete 14202,2 --Survey North Marker (1)
     .goto 76,34.69,71.58
     .complete 14202,3 --Survey East Marker (1)
@@ -778,7 +778,7 @@ step
     .complete 14258,1 --Goblin Mortar Shell (5)
 step
     #completewith NineVisit1
-    .use 49132 >>|cRXP_WARN_Aponte seu|r |T133037:0|t[Fireliminator X-21] |cRXP_WARN_em incêndios e|r |cRXP_FRIENDLY_Research Interns|r
+    .use 49132 >> |cRXP_WARN_Aponte seu|r |T133037:0|t[Fireliminator X-21] |cRXP_WARN_em incêndios e|r |cRXP_FRIENDLY_Research Interns|r
     .complete 14308,1 --Lab Fires Extinguished (8)
     .complete 14308,2 --Research Interns Rescued (6)
     .target Research Intern
@@ -800,7 +800,7 @@ step
     .waypoint 76,44.122,76.798,30,0
     .waypoint 76,43.906,74.755,30,0
     .waypoint 76,43.465,75.872,30,0
-    .use 49132 >>|cRXP_WARN_Aponte seu|r |T133037:0|t[Fireliminator X-21] |cRXP_WARN_para fogos e|r |cRXP_FRIENDLY_Estagiários de Pesquisa|r
+    .use 49132 >> |cRXP_WARN_Aponte seu|r |T133037:0|t[Fireliminator X-21] |cRXP_WARN_para fogos e|r |cRXP_FRIENDLY_Estagiários de Pesquisa|r
     >>|cRXP_WARN_Cuidado com|r |cRXP_ENEMY_Subject Quatro|r|cRXP_WARN_ (raptor vermelho). Ele pode matá-lo de um golpe|r
     .complete 14308,1 --Lab Fires Extinguished (8)
     .complete 14308,2 --Research Interns Rescued (6)
@@ -821,7 +821,7 @@ step
     .goto 76,49.490,74.495
     >>Clique em |cRXP_PICK_Painel de Controle do Reator|r para iniciar a escolta
     >>Escorte o carrinho de volta para o Southern Rocketway Exchange
-    .use 49132 >>|cRXP_WARN_Aponte seu|r |T133037:0|t[Fireliminator X-21] |cRXP_WARN_para o|r |cRXP_FRIENDLY_Brutamontes de Laboratório|r |cRXP_WARN_sempre que ele estiver em fogo|r
+    .use 49132 >> |cRXP_WARN_Aponte seu|r |T133037:0|t[Fireliminator X-21] |cRXP_WARN_para o|r |cRXP_FRIENDLY_Brutamontes de Laboratório|r |cRXP_WARN_sempre que ele estiver em fogo|r
     .complete 14310,1 --Azsharite Core Delivered (1)
     .target Hulking Labgoblin
 step
@@ -892,7 +892,7 @@ step
 step
     .goto 76,42.25,76.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Cobaia Nove|r
-    .turnin 14422 >>Entregue Eram os Deuses Dinossauros?
+    .turnin 14422 >> Entregue Eram os Deuses Dinossauros?
     .target Subject Nine
 step
     .goto 76,45.06,75.48
@@ -1131,22 +1131,22 @@ step
 step << Shaman Cata
     .goto 76,56.671,49.531
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Max Avalanche|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Maxx Avalanche
 step << Mage Cata
     .goto 76,56.919,49.598
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Luís Queiro|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Fizz Lighter
 step << Warlock Cata
     .goto 76,56.708,49.283
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Policarpo|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Evol Fingers
 step << Priest Cata
     .goto 76,56.852,50.279
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Irmã Madeira|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Sister Goldskimmer
 step
     .goto 76,56.978,50.093
@@ -1155,23 +1155,23 @@ step
 step
     .goto 1447/1,-6519.00000,3529.80005
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kascão Melamão|r
-    .home >>Defina sua Pedra de Retorno em Bilgewater Harbor
+    .home >> Defina sua Pedra de Retorno em Bilgewater Harbor
     .target Grimy Greasefingers
     .subzoneskip 4821,1
 step << Rogue Cata
     .goto 76,56.884,50.575
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Stinky Shapshiv|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Stinky Shapshiv
 step << Hunter Cata
     .goto 76,56.914,50.709
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Bam Megabomba|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Bamm Megabomb
 step << Warrior Cata
     .goto 76,57.167,50.105
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Guerreiromático X-9|r no andar de cima
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Warrior-Matic NX-01
 
     --VV Confirm if there are no Druid/Pala trainers in Bilgewater
@@ -2073,7 +2073,7 @@ step
     #xprate <1.2
     #optional
     #completewith next
-    .goto 76,32.755,32.247,12 >>Saia de Blackmaw Segurar
+    .goto 76,32.755,32.247,12 >> Saia de Blackmaw Segurar
     .subzoneskip 1216,1
     .isOnQuest 14435
 step
@@ -2208,7 +2208,7 @@ step << Druid Cata
     #label DruidTraining1
     .goto 1450/1,-2593.69995,7867.39990
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Loganaar|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Loganaar
 step
     #completewith next
@@ -2218,37 +2218,37 @@ step
 step << Shaman Cata
     .goto 76,56.671,49.531
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Max Avalanche|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Max Avalanche
 step << Mage Cata
     .goto 76,56.919,49.598
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Luís Queiro|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Fizz Lighter
 step << Warlock Cata
     .goto 76,56.708,49.283
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Policarpo|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Evol Fingers
 step << Priest Cata
     .goto 76,56.852,50.279
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Irmã Madeira|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Sister Goldskimmer
 step << Rogue Cata
     .goto 76,56.884,50.575
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Stinky Shapshiv|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Stinky Shapshiv
 step << Hunter Cata
     .goto 76,56.914,50.709
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Bam Megabomba|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Bamm Megabomb
 step << Warrior Cata
     .goto 76,57.167,50.105
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Guerreiromático X-9|r no andar de cima
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Warrior-Matic NX-01
 step
     .goto 76,53.264,49.955
@@ -2487,7 +2487,7 @@ step
     #completewith WarhorseTraining << Paladin
     .goto 76,14.346,65.018
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kroum|r
-    .fly Orgrimmar >>Voe para Orgrimmar
+    .fly Orgrimmar >> Voe para Orgrimmar
     .target Kroum
     .zoneskip Orgrimmar
 step

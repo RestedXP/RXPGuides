@@ -153,7 +153,7 @@ step
     .mob Chief Squealer Thornmantle
 step
     #completewith next
-    .hs >>Use a Pedra de Regresso para voltar à Aldeia Narache
+    .hs >> Use a Pedra de Regresso para voltar à Aldeia Narache
     .cooldown item,6948,>0
 step
     .goto 7,45.17,75.44
@@ -181,16 +181,16 @@ step << Monk
 step << Hunter
     .goto 7,45.28,75.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Lanka|r
-    .turnin 3092 >>Entregue Bilhete Cinzelado
+    .turnin 3092 >>Entregue Bilhete cinzelado
     .accept 27021 >>Aceite O Caminho do Caçador
-    .train 56641 >>Treine |T132213:0|t[Tiro Firme] << Cata
+    .train 56641 >> Treine |T132213:0|t[Tiro Firme] << Cata
     .target Lanka Farshot
 step << Warrior
     .goto 7,44.99,75.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Harutt|r
     .turnin 3091 >>Entregue Bilhete
     .accept 27020 >>Aceite A Primeira Lição
-    .train 100 >>Treine |T132337:0|t[Carga] << Cata
+    .train 100 >> Treine |T132337:0|t[Carga] << Cata
     .target Harutt Thunderhorn
 step << Paladin
     .goto 7,44.96,75.34
@@ -203,14 +203,14 @@ step << Paladin
 step << Druid cata
     .goto 7,45.22,75.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gart|r
-    .turnin 3094 >>Entregue Bilhete Verdejante
+    .turnin 3094 >>Entregue Bilhete verdejante
     .accept 27067 >>Aceite Rejuvenescer Toque
-    .train 774 >>Treine |T136081:0|t[Rejuvenescer] << Cata
+    .train 774 >>Aprenda |T136081:0|t[Rejuvenescer] << Cata
     .target Gart Mistrunner
 step << Druid !cata
     .goto 7,45.22,75.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gart|r
-    .turnin 3094 >>Entregue Bilhete Verdejante
+    .turnin 3094 >>Entregue Bilhete verdejante
     .accept 27067 >>Aceite Fogo Lunar
     .target Gart Mistrunner
 step << Shaman
@@ -374,7 +374,7 @@ step
 step << Hunter Cata
     .goto 7,47.94,55.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Yaw Crina Cortante|r
-    .train 2973 >>Treine suas magias de classe
+    .train 2973 >> Treine suas magias de classe
     .target Yaw Sharpmane
     .xp <6,1
 step
@@ -387,12 +387,12 @@ step << Tauren
     .goto 7,46.06,58.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Varg|r
     .accept 6361 >>Aceite Um pacote de peles
-    .vendor >>Comerciante de descarte e reparo << Paladin/Priest
+    .vendor >> Venda os lixos e repare seu equipamento << Paladin/Priest
     .target Varg Windwhisper
 step << Warrior/Shaman/Paladin
     .goto 7,45.91,58.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mahnott Ferida Aberta|r
-    .vendor >>Venda os lixos. Venda sua arma se ela lhe der dinheiro suficiente para uma |T133053:0|t[Marreta de Madeira] (6p 66c). Você voltará depois se ainda não tiver o suficiente
+    .vendor >> Venda os lixos. Venda sua arma se ela lhe der dinheiro suficiente para uma |T133053:0|t[Marreta de Madeira] (6p 66c). Você voltará depois se ainda não tiver o suficiente
     .target Mahnott Roughwound
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.9
@@ -408,7 +408,7 @@ step << Warrior/Shaman/Paladin
 step << Hunter
     .goto 7,45.75,57.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kenna Olho de Falcão|r
-    .vendor >>Comerciante trash e reparo. Venda sua arma se lhe der dinheiro suficiente para um |T135611:0|t[Bacamarte Ornado] (3s 93c). Você voltará depois se ainda não tiver o suficiente
+    .vendor >> Comerciante trash e reparo. Venda sua arma se lhe der dinheiro suficiente para um |T135611:0|t[Bacamarte Ornado] (3s 93c). Você voltará depois se ainda não tiver o suficiente
     .target Kennah Hawkseye
     .itemStat 18,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.9
@@ -461,32 +461,32 @@ step
 step << Shaman Cata
     .goto 7,48.47,58.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tarl|r
-    .train 8042 >>Treine suas magias de classe
+    .train 8042 >> Treine suas magias de classe
     .target Tarl Cloudsong
 step << Priest Cata
     .goto 7,48.76,58.70
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Alsoomse|r
-    .train 589 >>Treine suas magias de classe
+    .train 589 >> Treine suas magias de classe
     .target Seer Alsoomse
 step << Druid Cata
     .goto 7,48.56,59.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gennia|r
-    .train 8921 >>Treine suas magias de classe
+    .train 8921 >> Treine suas magias de classe
     .target Gennia Runetotem
 step << Paladin Cata
     .goto 7,48.78,58.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Iopi|r
-    .train 465 >>Treine suas magias de classe
+    .train 465 >> Treine suas magias de classe
     .target Sunwalker Iopi
 step
     .goto 7,48.62,59.80
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mull|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mull Chifre Troante|r
     .accept 20440 >>Aceite Água venenosa
     .target Mull Thunderhorn
 step << Warrior Cata
     .goto 7,49.55,59.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Krang|r
-    .train 34428 >>Treine suas magias de classe
+    .train 34428 >> Treine suas magias de classe
     .target Krang Stonehoof
 step
     #completewith WCleansing1
@@ -564,14 +564,14 @@ step
     #completewith AcceptDangers
     .goto 1412/1,-354.10001,-2318.40015,0
     .goto 1412/1,-488.20001,-2347.90015,0
-    .use 33009>>Encontre |cRXP_FRIENDLY_Quico|r. Usar a |T134343:0|t[|cRXP_LOOT_Carne Tenra de Moa|r] para alimentá-lo
+    .use 33009>> Encontre |cRXP_FRIENDLY_Quico|r. Usar a |T134343:0|t[|cRXP_LOOT_Carne Tenra de Moa|r] para alimentá-lo
     >>|cRXP_WARN_Ele corre em círculos ao redor de Bloodhoof Village|r
     .complete 11129,1 --1/1 Kyle fed
     .unitscan Kyle the Frenzied
 step
     #label WCleansing1
     .goto 7,48.62,59.91
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mull|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mull Chifre Troante|r
     .turnin 20440 >>Entregue Água venenosa
     .accept 24440 >>Aceite A purificação de Casco Invernal
     .target Mull Thunderhorn
@@ -596,12 +596,12 @@ step
 step << Hunter Cata
     .goto 7,47.94,55.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Yaw Crina Cortante|r
-    .train 2973 >>Treine suas magias de classe
+    .train 2973 >> Treine suas magias de classe
     .target Yaw Sharpmane
 step << Warrior/Shaman/Paladin
     .goto 7,45.91,58.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mahnott Ferida Aberta|r
-    .vendor >>Comerciante fraco. Venda sua arma se der dinheiro suficiente para uma |T133053:0|t[Marreta de Madeira] (6s 65c). Você voltará mais tarde se ainda não tiver dinheiro suficiente
+    .vendor >> Comerciante fraco. Venda sua arma se der dinheiro suficiente para uma |T133053:0|t[Marreta de Madeira] (6s 65c). Você voltará mais tarde se ainda não tiver dinheiro suficiente
     .target Mahnott Roughwound
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.9
@@ -616,7 +616,7 @@ step << Warrior/Shaman/Paladin
 step << Hunter
     .goto 7,45.75,57.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kenna Olho de Falcão|r
-    .vendor >>Comerciante trash e reparo. Venda sua arma se lhe der dinheiro suficiente para um |T135611:0|t[Bacamarte Ornado] (3s 93c). Você voltará depois se ainda não tiver o suficiente
+    .vendor >> Comerciante trash e reparo. Venda sua arma se lhe der dinheiro suficiente para um |T135611:0|t[Bacamarte Ornado] (3s 93c). Você voltará depois se ainda não tiver o suficiente
     .target Kennah Hawkseye
     .itemStat 18,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.9
@@ -645,7 +645,7 @@ step << Hunter
 step
     #label AcceptDangers
     .goto 1412/1,-384.80002,-2397.00000
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ruul|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ruul Garra da Águia|r
     .accept 743 >>Aceite Perigos das Ventofúria
     .target Ruul Eagletalon
 step
@@ -665,44 +665,44 @@ step
     #completewith next
     .goto 1412/1,-354.10001,-2318.40015,0
     .goto 1412/1,-488.20001,-2347.90015,0
-    .use 33009>>Encontre |cRXP_FRIENDLY_Quico|r. Usar a |T134343:0|t[|cRXP_LOOT_Carne Tenra de Moa|r] para alimentá-lo
+    .use 33009>> Encontre |cRXP_FRIENDLY_Quico|r. Usar a |T134343:0|t[|cRXP_LOOT_Carne Tenra de Moa|r] para alimentá-lo
     >>|cRXP_WARN_Ele corre em círculos ao redor de Bloodhoof Village|r
     .complete 11129,1 --1/1 Kyle fed
     .unitscan Kyle the Frenzied
 step
     .goto 7,48.62,59.91
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mull|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mull Chifre Troante|r
     .turnin 24440 >>Entregue A purificação de Casco Invernal
     .accept 24441 >>Aceite Totem de Chifre Troante
     .target Mull Thunderhorn
 step << Warrior Cata
     .goto 7,49.55,59.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Krang|r
-    .train 84939 >>Treine suas magias de classe
+    .train 84939 >> Treine suas magias de classe
     .target Krang Stonehoof
     .xp <7,1
 step << Shaman Cata
     .goto 7,48.47,58.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tarl|r
-    .train 324 >>Treine suas magias de classe
+    .train 324 >> Treine suas magias de classe
     .target Tarl Cloudsong
     .xp <8,1
 step << Priest Cata
     .goto 7,48.76,58.70
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Alsoomse|r
-    .train 588 >>Treine suas magias de classe
+    .train 588 >> Treine suas magias de classe
     .target Seer Alsoomse
     .xp <8,1
 step << Druid Cata
     .goto 7,48.56,59.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gennia|r
-    .train 768 >>Treine suas magias de classe
+    .train 768 >> Treine suas magias de classe
     .target Gennia Runetotem
     .xp <8,1
 step << Paladin Cata
     .goto 7,48.78,58.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Iopi|r
-    .train 635 >>Treine suas magias de classe
+    .train 635 >> Treine suas magias de classe
     .target Sunwalker Iopi
     .xp <7,1
 step
@@ -716,7 +716,7 @@ step
 step << Hunter Cata
     .goto 7,47.94,55.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Yaw Crina Cortante|r
-    .train 5116 >>Treine suas magias de classe
+    .train 5116 >> Treine suas magias de classe
     .target Yaw Sharpmane
     .xp <8,1
 step
@@ -755,7 +755,7 @@ step
 step
     #label VentureCoCave
     #completewith FizsprocketKill
-    .goto 7,60.86,47.47,10 >>Entre na caverna
+    .goto 7,60.86,47.47,10 >> Entre na caverna
 step
     #completewith FizsprocketKill
     >>Mate os |cRXP_ENEMY_Venture Co. Trabalhadores|r
@@ -847,7 +847,7 @@ step
     #completewith ThunderHornTotem
     .goto 1412/1,-354.10001,-2318.40015,0
     .goto 1412/1,-488.20001,-2347.90015,0
-    .use 33009>>Encontre |cRXP_FRIENDLY_Quico|r. Usar a |T134343:0|t[|cRXP_LOOT_Carne Tenra de Moa|r] para alimentá-lo
+    .use 33009>> Encontre |cRXP_FRIENDLY_Quico|r. Usar a |T134343:0|t[|cRXP_LOOT_Carne Tenra de Moa|r] para alimentá-lo
     >>|cRXP_WARN_Ele corre em círculos ao redor de Bloodhoof Village|r
     .complete 11129,1 --1/1 Kyle fed
     .unitscan Kyle the Frenzied
@@ -856,14 +856,14 @@ step
     #completewith FlyTB
     .goto 1412/1,-354.10001,-2318.40015,0
     .goto 1412/1,-488.20001,-2347.90015,0
-    .use 33009>>Encontre |cRXP_FRIENDLY_Quico|r. Usar a |T134343:0|t[|cRXP_LOOT_Carne Tenra de Moa|r] para alimentá-lo
+    .use 33009>> Encontre |cRXP_FRIENDLY_Quico|r. Usar a |T134343:0|t[|cRXP_LOOT_Carne Tenra de Moa|r] para alimentá-lo
     >>|cRXP_WARN_Ele corre em círculos ao redor de Bloodhoof Village|r
     .complete 11129,1 --1/1 Kyle fed
     .unitscan Kyle the Frenzied
 step
     #label ThunderHornTurnin
     .goto 7,48.60,59.78
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mull|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mull Chifre Troante|r
     .turnin 24441 >>Entregue Totem de Chifre Troante
     .accept 24456 >>Aceite Purificação de Chifre Troante
     .target Mull Thunderhorn
@@ -875,27 +875,27 @@ step
 step << Warrior Cata
     .goto 7,49.55,59.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Krang|r
-    .train 84939 >>Treine suas magias de classe
+    .train 84939 >> Treine suas magias de classe
     .target Krang Stonehoof
 step << Shaman Cata
     .goto 7,48.47,58.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tarl|r
-    .train 324 >>Treine suas magias de classe
+    .train 324 >> Treine suas magias de classe
     .target Tarl Cloudsong
 step << Priest Cata
     .goto 7,48.76,58.70
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Alsoomse|r
-    .train 588 >>Treine suas magias de classe
+    .train 588 >> Treine suas magias de classe
     .target Seer Alsoomse
 step << Druid Cata
     .goto 7,48.56,59.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gennia|r
-    .train 768 >>Treine suas magias de classe
+    .train 768 >> Treine suas magias de classe
     .target Gennia Runetotem
 step << Paladin Cata
     .goto 7,48.78,58.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Iopi|r
-    .train 635 >>Treine suas magias de classe
+    .train 635 >> Treine suas magias de classe
     .target Sunwalker Iopi
 step
     .goto 7,47.16,56.65
@@ -905,7 +905,7 @@ step
 step << Hunter Cata
     .goto 7,47.94,55.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Yaw Crina Cortante|r
-    .train 5116 >>Treine suas magias de classe
+    .train 5116 >> Treine suas magias de classe
     .target Yaw Sharpmane
 step
     #xprate <1.2
@@ -1000,7 +1000,7 @@ step
     .waypoint 1412/1,-421.60001,-2256.00000,30,0
     .waypoint 1412/1,-377.10001,-2257.30005,30,0
     .waypoint 1412/1,-368.80002,-2275.90015,30,0
-    .use 33009>>Encontre |cRXP_FRIENDLY_Quico|r. Usar a |T134343:0|t[|cRXP_LOOT_Carne Tenra de Moa|r] para alimentá-lo
+    .use 33009>> Encontre |cRXP_FRIENDLY_Quico|r. Usar a |T134343:0|t[|cRXP_LOOT_Carne Tenra de Moa|r] para alimentá-lo
     >>|cRXP_WARN_Ele corre em círculos ao redor de Bloodhoof Village|r
     .complete 11129,1 --1/1 Kyle fed
     .unitscan Kyle the Frenzied
@@ -1023,56 +1023,56 @@ step
 step
     #label DangerTurnin
     .goto 7,47.51,61.32
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ruul|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ruul Garra da Águia|r
     .turnin 743 >>Entregue Perigos das Ventofúria
     .target Ruul Eagletalon
 step
     #xprate <1.2
     .goto 7,48.60,59.78
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mull|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mull Chifre Troante|r
     .turnin 24456 >>Entregue Purificação de Chifre Troante
     .accept 24457 >>Aceite Rito de visão
     .target Mull Thunderhorn
 step
     #xprate >1.19
     .goto 7,48.60,59.78
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mull|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mull Chifre Troante|r
     .turnin 24456 >>Entregue Purificação de Chifre Troante
     .target Mull Thunderhorn
 step << Hunter Cata
     .goto 7,47.94,55.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Yaw Crina Cortante|r
-    .train 1978 >>Treine suas magias de classe
+    .train 1978 >> Treine suas magias de classe
     .target Yaw Sharpmane
     .xp <10,1
 step << Warrior Cata
     .goto 7,49.55,59.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Krang|r
-    .train 71 >>Treine suas magias de classe
+    .train 71 >> Treine suas magias de classe
     .target Krang Stonehoof
     .xp <10,1
 step << Shaman Cata
     .goto 7,48.47,58.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tarl|r
-    .train 3599 >>Treine suas magias de classe
+    .train 3599 >> Treine suas magias de classe
     .target Tarl Cloudsong
     .xp <10,1
 step << Priest Cata
     .goto 7,48.76,58.70
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Alsoomse|r
-    .train 8092 >>Treine suas magias de classe
+    .train 8092 >> Treine suas magias de classe
     .target Seer Alsoomse
     .xp <10,1
 step << Druid Cata
     .goto 7,48.56,59.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gennia|r
-    .train 5215 >>Treine suas magias de classe
+    .train 5215 >> Treine suas magias de classe
     .target Gennia Runetotem
     .xp <10,1
 step << Paladin Cata
     .goto 7,48.78,58.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Iopi|r
-    .train 82242 >>Treine suas magias de classe
+    .train 82242 >> Treine suas magias de classe
     .target Sunwalker Iopi
     .xp <10,1
 step
@@ -1158,7 +1158,7 @@ step
     #xprate <1.2
     .goto 7,60.787,22.684
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ahanu|r
-    .turnin 773 >>Entregue Rito de Sabedoria
+    .turnin 773 >>Entregue Rito de sabedoria
     .target Ancestral Spirit
 step
     #xprate <1.2
@@ -1272,7 +1272,7 @@ step
 step
     #xprate <1.2
     #completewith next
-    .hs >>Lar to Penhasco do Trovão
+    .hs >>Use a Pedra de Regresso para voltar ao Penhasco do Trovão
     .use 6948
     .zoneskip Thunder Bluff
 step
@@ -1295,7 +1295,7 @@ step
 step << !Tauren
     .goto 88,47.05,49.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tal|r
-    .fly Orgrimmar >>Voe para Orgrimmar
+    .fly Orgrimmar >> Voe para Orgrimmar
     .target Tal
     .zoneskip Thunder Bluff,1
 step << Tauren

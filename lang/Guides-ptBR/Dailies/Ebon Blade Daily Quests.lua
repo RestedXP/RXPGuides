@@ -44,7 +44,7 @@ step
 step
 	#completewith next
     .goto IcecrownGlacier,28.0,37.7
-    .vehicle 30564 >>Clique com o botão direito no Protodraco de Njorndar para montá-lo
+    .vehicle 30564 >> Clique com o botão direito no Protodraco de Njorndar para montá-lo
 	.isOnQuest 13071
 step
     .goto IcecrownGlacier,27.7,41.1,70,0
@@ -100,7 +100,7 @@ step
     #completewith next
 	.goto IcecrownGlacier,9.5,44.8,50,0
     .goto IcecrownGlacier,9.5,44.8,0,0
-	.use 40587 >>Abate os inimigos do Acossamento na área. Usar a Tintura da Curalâmina Sombria na mochila nos cadáveres
+	.use 40587 >> Abate os inimigos do Acossamento na área. Usar a Tintura da Curalâmina Sombria na mochila nos cadáveres
     .complete 12813,1 --Scarlet Onslaught corpse transformed (10)
 	.isOnQuest 12813
 step
@@ -132,7 +132,7 @@ step
 step
 	.goto IcecrownGlacier,9.5,44.8,50,0
     .goto IcecrownGlacier,9.5,44.8,0,0
-	.use 40587 >>Abate os inimigos do Acossamento na área. Usar a Tintura da Curalâmina Sombria na mochila nos cadáveres
+	.use 40587 >> Abate os inimigos do Acossamento na área. Usar a Tintura da Curalâmina Sombria na mochila nos cadáveres
     .complete 12813,1 --Scarlet Onslaught corpse transformed (10)
 	.isOnQuest 12813
 step

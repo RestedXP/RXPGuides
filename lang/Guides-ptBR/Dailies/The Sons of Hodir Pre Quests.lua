@@ -66,7 +66,7 @@ step
     .goto TheStormPeaks,44.3,66.8,40,0
     .goto TheStormPeaks,43.0,68.0,40,0
     .goto TheStormPeaks,43.4,70.5
-	.use 42837 >>Usar o Bastão de Disciplina na mochila em Vraikal Exausto nos poços da mina
+	.use 42837 >> Usar o Bastão de Disciplina na mochila em Vraikal Exausto nos poços da mina
     .complete 12906,1 --Exhausted Vrykul Disciplined (6)
 step
     .goto TheStormPeaks,44.39,68.93
@@ -147,7 +147,7 @@ step
     .waypoint TheStormPeaks,53.1,65.7,0,niffelen,VEHICLE_PASSENGERS_CHANGED,VEHICLE_UPDATE
     .goto The Storm Peaks,66.75,60.63
 	>>Usar a primeira habilidade do seu Protodraco em um dos Brunnhildar Aprisionados congelados no Bloco de Gelo quando estiver perto deles
-    >>Devolva 3 prisioneiros a Brunnhildar quando você tiver 3 no seu Protodraco. Faça isto 3 vezes
+    >> Devolva 3 prisioneiros a Brunnhildar quando você tiver 3 no seu Protodraco. Faça isto 3 vezes
     .complete 12856,1 --Rescued Brunnhildar Prisoners (9)
     .complete 12856,2 --Freed Proto-Drakes (3)
 step
@@ -197,7 +197,7 @@ step
 step
 	#completewith next
     .goto TheStormPeaks,50.79,67.68
-	.vehicle >>Voe para Kirgaraak. Usar as Rédeas da Matriarca Ursa de Guerra em sua mochila para montá-la
+	.vehicle >> Voe para Kirgaraak. Usar as Rédeas da Matriarca Ursa de Guerra em sua mochila para montá-la
 	.use 42481
 step
     .goto TheStormPeaks,50.79,67.68
@@ -211,7 +211,7 @@ step
 step
 	#completewith next
     .goto TheStormPeaks,49.24,68.46
-	.vehicle >>Voe para O Fosso da Dentada. Usar as Rédeas da Matriarca Ursa de Guerra em sua mochila para montá-la
+	.vehicle >> Voe para O Fosso da Dentada. Usar as Rédeas da Matriarca Ursa de Guerra em sua mochila para montá-la
 	.use 42499
 step
     .goto TheStormPeaks,49.24,68.46
@@ -268,7 +268,7 @@ step
     .goto TheStormPeaks,75.0,63.6,70,0
     .goto TheStormPeaks,71.8,61.1
 	>>Pegue os Pedregulhos de Granito encontrados no chão no Lago Campo Gélido e na Bigorna de Fjorn (você pode carregar apenas um por vez).
-	.use 41505 >>Usar o Amuleto de Terra de Thorim na mochila quando você tiver um Pedregulho nos Gigantes de Ferro Forjados pela Tempestade para ajudar a matá-los.
+	.use 41505 >> Usar o Amuleto de Terra de Thorim na mochila quando você tiver um Pedregulho nos Gigantes de Ferro Forjados pela Tempestade para ajudar a matá-los.
 	.collect 41506,1,12915,1,-1
     .complete 12915,2 --Stormforged Iron Giants (5)
 step
@@ -292,7 +292,7 @@ step
 step
     .goto TheStormPeaks,77.34,62.87
 	>>Pegue os Pedregulhos de Granito encontrados no chão no Lago Campo Gélido e na Bigorna de Fjorn (você pode carregar apenas um por vez).
-	.use 41505 >>Usar o Amuleto de Terra de Thorim na mochila quando você tiver um Pedregulho em Fjorn para ajudar a matá-lo.
+	.use 41505 >> Usar o Amuleto de Terra de Thorim na mochila quando você tiver um Pedregulho em Fjorn para ajudar a matá-lo.
     .complete 12915,1 --Fjorn (1)
 step
 	#label Thorim1
@@ -352,12 +352,12 @@ step << !Human
 step << Human
 	#completewith HornF
 	>>Procure pelos objetos Lasca de Gelo Eterno na área. Se você encontrar um, pegue-o e comece a missão.
-	.accept 13420 >>Aceite Gelo Eterno
+	.accept 13420 >> Aceite Gelo Eterno
 step << Human
     .goto TheStormPeaks,69.6,58.8,70,0
     .goto TheStormPeaks,70.3,62.2
 	>>Mate os Espectros Quebradiços. Saqueie-os para Essência de Gelo
-	.use 42424 >>Usar a Picareta com Ponta de Diamante nos Gigantes de Ferro Mortos. Inimigos podem aparecer; mate-os e saqueie-os para obter os Olhos Forjados pela Tempestade.
+	.use 42424 >> Usar a Picareta com Ponta de Diamante nos Gigantes de Ferro Mortos. Inimigos podem aparecer; mate-os e saqueie-os para obter os Olhos Forjados pela Tempestade.
 	.collect 42246,6 --Essence of Ice (6)
 	.complete 12985,1 --Stormforged Eye (8)
 	.isQuestAvailable 13047
@@ -371,7 +371,7 @@ step << !Human
 step
     .goto TheStormPeaks,73.5,62.9,70,0
     .goto TheStormPeaks,76.2,63.4
-	.use 42246 >>Usar a Essência de Gelo ao lado dos Fragmentos Brilhantes ao redor da Bigorna de Fjorn. Saqueie a Sucata de Ferro Congelada
+	.use 42246 >> Usar a Essência de Gelo ao lado dos Fragmentos Brilhantes ao redor da Bigorna de Fjorn. Saqueie a Sucata de Ferro Congelada
     .complete 12981,1 --Frozen Iron Scrap (6)
 	.isQuestAvailable 13047
 step
@@ -381,7 +381,7 @@ step
     .complete 12975,1 --Horn Fragment (8)
 step << Human
 	>>Vá de volta para Dun Niffelem. Fale com Calder, o Rei Iokkum, depois Njormeld, a Bigorna de Fjorn, e o Chifre de Hodir.
-	.turnin 13420 >>Entregue Gelo Eterno
+	.turnin 13420 >> Entregue Gelo Eterno
     .goto TheStormPeaks,67.11,60.97
     .turnin 12975 >>Entregue In memoriam
     .accept 12976 >>Aceite Um Monumento aos que Tombaram
@@ -433,7 +433,7 @@ step << !Human
 step << !Human
     .goto TheStormPeaks,69.6,58.8,70,0
     .goto TheStormPeaks,70.3,62.2
-	.use 42424 >>Usar a Picareta com Ponta de Diamante nos Gigantes de Ferro Mortos. Inimigos podem aparecer; mate-os e saqueie-os para obter os Olhos Forjados pela Tempestade.
+	.use 42424 >> Usar a Picareta com Ponta de Diamante nos Gigantes de Ferro Mortos. Inimigos podem aparecer; mate-os e saqueie-os para obter os Olhos Forjados pela Tempestade.
 	.complete 12985,1 --Stormforged Eye (8)
 step << !Human
 	>>Devolva para Dun Niffelem. Fale com Njormeld e Hodir's Chifre
@@ -445,7 +445,7 @@ step << !Human
 	.isQuestAvailable 13047
 step
     .goto TheStormPeaks,64.24,59.23
-	.use 42442 >>Voe até o pico de gelo reluzente em Dun Niffelem. Usar as Tábuas de Proclamação na mochila quando estiver em sua montaria voadora
+	.use 42442 >> Voe até o pico de gelo reluzente em Dun Niffelem. Usar as Tábuas de Proclamação na mochila quando estiver em sua montaria voadora
     .complete 12987,1 --Hodir's Helm Mounted (1)
 step
     .goto TheStormPeaks,63.20,63.27
@@ -469,7 +469,7 @@ step
 step
     .goto TheStormPeaks,55.8,63.9,30,0
     .goto TheStormPeaks,54.7,60.6
-	.use 42732 >>Entre na Caverna Hibernal e siga pelo lado direito dela. Usar a Navalha do Gelo Eterno nos Ursos Icemaw Mortos até obter um Flanco de Urso Icemaw
+	.use 42732 >> Entre na Caverna Hibernal e siga pelo lado direito dela. Usar a Navalha do Gelo Eterno nos Ursos Icemaw Mortos até obter um Flanco de Urso Icemaw
 	.collect 42733,1 --Icemaw Bear Flank (1)
 	.isQuestAvailable 13047
 step
@@ -499,7 +499,7 @@ step
     .accept 13051 >>Aceite Invasão de Território
 step
     .goto TheStormPeaks,38.73,65.54
-	.cast 56788 >>Usar os Ovos de Protodrão Roubados na mochila no topo do ninho da Matriarca para atrair Veranes
+	.cast 56788 >> Usar os Ovos de Protodrão Roubados na mochila no topo do ninho da Matriarca para atrair Veranes
 	.timer 42,RP de Veranes (CONTINUE FAZENDO MISSÕES)
 	.use 42797
 	.isQuestAvailable 13047
@@ -524,14 +524,14 @@ step
     .turnin 13006 >>Entregue Limpeza Viscosa
     .goto TheStormPeaks,64.22,59.39
     .turnin 13011 >>Entregue Expurgo Yorcuttar
-	.vehicle >>Fale com o Rei Iokkum. Suba nele para Thunderfall
+	.vehicle >> Fale com o Rei Iokkum. Suba nele para Thunderfall
 	.timer 118,Krolmir, o Martelo das Tempestades RP
 	.skipgossip
 	.isQuestAvailable 13047
 step
 	#completewith TerraceM
 	>>Procure pelos objetos Lasca de Gelo Eterno na área. Se você encontrar um, pegue-o e comece a missão.
-	.accept 13420 >>Aceite Gelo Eterno
+	.accept 13420 >> Aceite Gelo Eterno
 	.isQuestAvailable 13047
 step
 	#completewith ThorimRP
@@ -539,7 +539,7 @@ step
     .goto TheStormPeaks,70.1,52.5,0
     .goto TheStormPeaks,72.7,52.1,0
     .goto TheStormPeaks,74.7,48.3,0
-	.use 42164 >>Mate os Patriarcas de Niffelem e os Gelificados Inquietos na área. Usar Chifre de Hodir nos cadáveres deles para libertá-los
+	.use 42164 >> Mate os Patriarcas de Niffelem e os Gelificados Inquietos na área. Usar Chifre de Hodir nos cadáveres deles para libertá-los
 	>>Você pode fazer isto durante o evento RP
     .complete 12977,1 --Niffelem Forefather freed (5)
     .complete 12977,2 --Restless Frostborn freed (5)
@@ -561,7 +561,7 @@ step
     .goto TheStormPeaks,70.1,52.5,60,0
     .goto TheStormPeaks,72.7,52.1,60,0
     .goto TheStormPeaks,74.7,48.3
-	.use 42164 >>Mate os Patriarcas de Niffelem e os Gelificados Inquietos na área. Usar Chifre de Hodir nos cadáveres deles para libertá-los
+	.use 42164 >> Mate os Patriarcas de Niffelem e os Gelificados Inquietos na área. Usar Chifre de Hodir nos cadáveres deles para libertá-los
     .complete 12977,1 --Niffelem Forefather freed (5)
     .complete 12977,2 --Restless Frostborn freed (5)
 	.isQuestAvailable 13047
@@ -576,34 +576,34 @@ step
 step
 	#completewith Duronn
     .goto TheStormPeaks,52.0,50.4,0
-	.use 42840 >>Usar a Trompa dos Picos na mochila para ajudar a matar os Anões de Ferro e os Sentinelas de Ferro no caminho para os inimigos nomeados
+	.use 42840 >> Usar a Trompa dos Picos na mochila para ajudar a matar os Anões de Ferro e os Sentinelas de Ferro no caminho para os inimigos nomeados
     .complete 13005,1 --Iron Sentinel (7)
     .complete 13005,2 --Iron Dwarf Assailant (20)
 	.isQuestAvailable 13047
 step
     .goto TheStormPeaks,48.72,45.65
-	.use 42840 >>Usar a Trompa dos Picos na mochila para convocar um pequeno exército. Usar-a para matar Halefnir
+	.use 42840 >> Usar a Trompa dos Picos na mochila para convocar um pequeno exército. Usar-a para matar Halefnir
     .complete 13035,2 --Halefnir the Windborn (1)
 step
 	#label Duronn
     .goto TheStormPeaks,44.94,38.03
-	.use 42840 >>Usar a Trompa dos Picos na mochila para convocar um pequeno exército. Usar-a para matar Duronn
+	.use 42840 >> Usar a Trompa dos Picos na mochila para convocar um pequeno exército. Usar-a para matar Duronn
     .complete 13035,3 --Duronn the Runewrought (1)
 step
 	#completewith next
     .goto TheStormPeaks,57.7,44.5,50,0
     .goto TheStormPeaks,57.7,44.5,0
-	.use 42840 >>Usar a Trompa dos Picos para ajudar a matar os Sentinelas de Ferro fora da caverna de Eisenfaust
+	.use 42840 >> Usar a Trompa dos Picos para ajudar a matar os Sentinelas de Ferro fora da caverna de Eisenfaust
     .complete 13005,1 --Iron Sentinel (7)
 step
     .goto TheStormPeaks,56.9,44.1,30,0
     .goto TheStormPeaks,55.30,43.32
 	>>Entre no Salão do Cinzelador na base da montanha no lado leste
-	.use 42840 >>Usar a Trompa dos Picos para convocar um pequeno exército. Usar-a para matar Eisenfaust
+	.use 42840 >> Usar a Trompa dos Picos para convocar um pequeno exército. Usar-a para matar Eisenfaust
     .complete 13035,1 --Eisenfaust (1)
 step
     .goto TheStormPeaks,58.48,45.21
-	.use 42840 >>Usar a Trompa dos Picos na mochila para ajudar a matar os Anões de Ferro e os Sentinelas de Ferro na área
+	.use 42840 >> Usar a Trompa dos Picos na mochila para ajudar a matar os Anões de Ferro e os Sentinelas de Ferro na área
     .complete 13005,1 --Iron Sentinel (7)
     .complete 13005,2 --Iron Dwarf Assailant (20)
 step
@@ -616,7 +616,7 @@ step
     #completewith next
 	.goto TheStormPeaks,44.49,28.19
 	>>Voe para fora de Ulduar
-    .fp Ulduar >>Aprenda a rota de voo para Ulduar
+    .fp Ulduar >> Aprenda a rota de voo para Ulduar
     .skill riding,<300,1
 step
     .goto TheStormPeaks,35.93,31.52
@@ -628,19 +628,19 @@ step
 	#completewith end
     .goto TheStormPeaks,44.49,28.19
 	>>Voe para fora de Ulduar
-    .fp Ulduar >>Aprenda a rota de voo para Ulduar
-	.fly Dun Niffelem >>Voe para Dun Niffelem. Isso leva 1m 44s, então você pode fazer uma pausa durante esse tempo
+    .fp Ulduar >> Aprenda a rota de voo para Ulduar
+	.fly Dun Niffelem >> Voe para Dun Niffelem. Isso leva 1m 44s, então você pode fazer uma pausa durante esse tempo
     .skill riding,300,1
 step
 	#completewith next
-    .goto TheStormPeaks,36.2,49.3,200 >>Voe para Dun Niffelem em sua montaria voadora
+    .goto TheStormPeaks,36.2,49.3,200 >> Voe para Dun Niffelem em sua montaria voadora
     .skill riding,<300,1
 step
 	>>Entregue em Dun Niffelem. Converse com Jokkum, Calder e Chifre de Hodir
     .turnin 13047 >>Entregue O Juízo
 --  .accept 13108 >>Accept Whatever it Takes!
     .goto TheStormPeaks,65.45,60.16
-	.turnin 13420 >>Entregue Gelo Eterno
+	.turnin 13420 >> Entregue Gelo Eterno
     .goto TheStormPeaks,67.11,60.97
     .turnin 12977 >>Entregue Chamado de Hodir
     .goto TheStormPeaks,64.17,65.01

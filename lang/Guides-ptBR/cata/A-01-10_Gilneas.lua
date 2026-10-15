@@ -141,7 +141,7 @@ step
     .goto 202,62.290,31.759,15,0
     .goto 202,64.098,34.535,15,0
     .goto 202,68.809,45.472,15,0
-    .goto 202,70.770,55.050,15 >>Viaje para |cRXP_FRIENDLY_Gwen Armstead|r
+    .goto 202,70.770,55.050,15 >> Viaje para |cRXP_FRIENDLY_Gwen Armstead|r
 step
     .goto 202,70.770,55.050
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gwen Armstead|r
@@ -180,7 +180,7 @@ step << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Vitus Darkwalker|r
     .turnin 14273 >>Entregue Gente Esquisita
     .accept 14274 >>Aceite Imolação
-    .train 348 >>Treine |T135817:0|t[Imolação] << cata
+    .train 348 >>Treine |T135817:0|t [Imolar] << cata
 	.target Vitus Darkwalker
 step << Hunter
     .goto 202,71.503,61.307
@@ -194,7 +194,7 @@ step << Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Myriam Spellwaker|r
     .turnin 14277 >>Entregue Procura Arcana
     .accept 14281 >>Aceite Mísseis Arcanos
-    .train 5143 >>Treine |T136096:0|t[Mísseis Arcanos] << cata
+    .train 5143 >>Aprenda |T136096:0|t[Mísseis Arcanos] << cata
 	.target Myriam Spellwaker
 step << Priest
     .goto 202,70.421,65.541
@@ -210,7 +210,7 @@ step << Druid
     .turnin 14280 >>Entregue Parece que os Ventos Conhecem Você...
     .accept 14283 >>Aceite Um Toque Rejuvenescedor << cata
     .accept 14283 >>Aceite Fogo Lunar << !cata
-    .train 774 >>Treine |T136081:0|t[Rejuvenescer] << cata
+    .train 774 >>Aprenda |T136081:0|t[Rejuvenescer] << cata
 	.target Celestine of the Harvest
 step << !Priest !Druid
     .goto 202,67.168,64.124
@@ -289,9 +289,9 @@ step << Priest
 step << Druid
     .goto 202,70.190,65.887
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Celestine da Colheita|r
-    .turnin 14283 >>Entregue Um Toque Rejuvenescedor << cata
-    .turnin 14283 >>Entregue Fogo Lunar << !cata
-    .accept 14291 >>Aceite Quanto Mais, Melhor
+    .turnin 14283 >> Entregue Um Toque Rejuvenescedor << cata
+    .turnin 14283 >> Entregue Fogo Lunar << !cata
+    .accept 14291 >> Aceite Quanto Mais, Melhor
 	.target Celestine of the Harvest
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Rei Genn Greymane|r e o |cRXP_FRIENDLY_Lorde Godfrey|r
@@ -466,7 +466,7 @@ step
     #completewith next
     .goto 202,55.818,81.572,6,0
     .goto 202,56.184,82.795,12,0
-    .goto 202,59.207,83.777,15 >>Vá para o |cRXP_FRIENDLY_Rei Genn Greymane|r
+    .goto 202,59.207,83.777,15 >> Vá para o |cRXP_FRIENDLY_Rei Genn Greymane|r
 step
     .goto 202,59.207,83.777
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Rei Genn Greymane|r
@@ -477,7 +477,7 @@ step
 step << skip
     #completewith next
     .goto 202,58.710,77.289,0
-    .deathskip >>Morra e reapareça no |cRXP_FRIENDLY_Espírito Anjo da Cura|r APÓS salvar |cRXP_FRIENDLY_Krennan Aranas|r
+    .deathskip >> Morra e reapareça no |cRXP_FRIENDLY_Espírito Anjo da Cura|r APÓS salvar |cRXP_FRIENDLY_Krennan Aranas|r
     .target Anjo da Cura
 step
     .goto 202,59.207,83.777,0
@@ -497,7 +497,7 @@ step << skip
     #optional
     #completewith next
     .goto 202,58.710,77.289
-    .deathskip >>Morra e reviva no |cRXP_FRIENDLY_Anjo da Cura|r DEPOIS de resgatar |cRXP_FRIENDLY_Krennan Aranas|r
+    .deathskip >> Morra e reviva no |cRXP_FRIENDLY_Anjo da Cura|r DEPOIS de resgatar |cRXP_FRIENDLY_Krennan Aranas|r
     .target Anjo da Cura
 step
     .goto 202,55.715,80.753
@@ -512,7 +512,7 @@ step
     .goto 202,53.411,82.729,15,0
     .goto 202,44.351,82.504,15,0
     .goto 202,41.103,81.945,15,0
-    .goto 202,30.373,73.142,15 >>Vá para o |cRXP_FRIENDLY_Rei Genn Greymane|r
+    .goto 202,30.373,73.142,15 >> Vá para o |cRXP_FRIENDLY_Rei Genn Greymane|r
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com o |cRXP_FRIENDLY_Rei Genn Greymane|r e o |cRXP_FRIENDLY_Lorde Darius Crowley|r
     .turnin 14294 >>Entregue Hora de Reagrupar
@@ -524,7 +524,7 @@ step
 step
     #completewith next
     .goto 202,31.282,72.645
-    .vehicle >>Suba em |cRXP_FRIENDLY_Cavalo de Crowley|r
+    .vehicle >> Suba em |cRXP_FRIENDLY_Cavalo de Crowley|r
     .timer 79,Sacrifícios RP
     .target Crowley's Horse
 step
@@ -554,7 +554,7 @@ step
     .goto 202,38.395,38.282,-1
     .goto 202,37.896,39.535,-1
     .goto 202,37.955,40.949,-1
-    .vehicle >>Entre em um |cRXP_FRIENDLY_Canhão Rebelde|r
+    .vehicle >> Entre em um |cRXP_FRIENDLY_Canhão Rebelde|r
     .target Rebel Cannon
 step
     .goto 202,40.13,36.52
@@ -633,8 +633,8 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Jack "All Trades" Derrington|r
     >>|cRXP_WARN_Colher plantas e minerar veios fornecem XP. Colha apenas recursos no seu caminho direto|r
     >>|cRXP_WARN_Se você não quiser fazer isso, pule esta etapa|r
-    .train 2366 >>Aprenda |T136065:0|t[Herborismo]
-    .train 2575 >>Aprenda |T136248:0|t[Mineração]
+    .train 2366 >> Aprenda |T136065:0|t[Herborismo]
+    .train 2575 >> Aprenda |T136248:0|t[Mineração]
     .target Jack "All Trades" Derrington
     .skipgossip 50247,1,1,1
     .train 2366,1 --Herbalism
@@ -648,7 +648,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Jack "All Trades" Derrington|r
     >>|cRXP_WARN_Colher plantas fornece XP. Colha apenas recursos no seu caminho direto|r
     >>|cRXP_WARN_Se você não quiser fazer isso, pule esta etapa|r
-    .train 2366 >>Aprenda |T136065:0|t[Herborismo]
+    .train 2366 >> Aprenda |T136065:0|t[Herborismo]
     .target Jack "All Trades" Derrington
     .skipgossip 50247,2,2,2
     .train 2575,3 --Mining
@@ -660,25 +660,25 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Jack "All Trades" Derrington|r
     >>|cRXP_WARN_Mineração de veios fornece XP. Colha apenas recursos no seu caminho direto|r
     >>|cRXP_WARN_Se você não quiser fazer isso, pule esta etapa|r
-    .train 2575 >>Aprenda |T136248:0|t[Mineração]
+    .train 2575 >> Aprenda |T136248:0|t[Mineração]
     .target Jack "All Trades" Derrington
     .skipgossip 50247,2,3,2
     .train 2366,3 --Herbalism
 step << Hunter cata
     .goto 179,38.032,63.359
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Guarda-caça Blake|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Huntsman Blake
 step << Warrior cata
     .goto 179,38.278,63.457
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Sargento Cleese|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Sergeant Cleese
 step
     #completewith INOG
     #optional
-    .cast 2383 >>|cRXP_WARN_Use|r [Localizar Plantas]
-    .cast 2580 >>|cRXP_WARN_Use|r [Localizar Minérios]
+    .cast 2383 >> |cRXP_WARN_Use|r [Localizar Plantas]
+    .cast 2580 >> |cRXP_WARN_Use|r [Localizar Minérios]
     .train 2575,3 --Mining
     .train 2366,3 --Herbalism
     .subzoneskip 4786,1
@@ -693,27 +693,27 @@ step
 step << Priest cata
     .goto 179,36.015,64.943
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Irmã Almyra|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Sister Almyra
 step << Druid cata
     .goto 179,36.276,64.123
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Celestine da Colheita|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Celestine of the Harvest
 step << Mage cata
     .goto 179,36.099,63.825
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Myriam Spellwaker|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Myriam Spellwaker
 step << Warlock cata
     .goto 179,35.824,63.866
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Vitus Darkwalker|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Vitus Darkwalker
 step << Rogue cata
     .goto 179,36.735,65.379
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Loren, a Receptora|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Loren the Fence
 step
     #label INOG
@@ -911,7 +911,7 @@ step
     #optional
     #completewith Morris
     #label Catapult3
-    .goto 179,24.94,76.50,6 >>Volte para cima
+    .goto 179,24.94,76.50,6 >> Volte para cima
 step
     #optional
     #requires Catapult3
@@ -1292,41 +1292,41 @@ step
 	.target Sebastian Hayward
 step
     #completewith next
-    .hs >>Use sua Pedra de Retorno para ir a Duskhaven
+    .hs >> Use sua Pedra de Retorno para ir a Duskhaven
 step << Priest cata
     .goto 179,36.015,64.943
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Irmã Almyra|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Sister Almyra
 step << Druid cata
     .goto 179,36.276,64.123
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Celestine da Colheita|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Celestine of the Harvest
 step << Mage cata
     .goto 179,36.099,63.825
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Myriam Spellwaker|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Celestine of the Harvest
 step << Warlock cata
     .goto 179,35.824,63.866
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Vitus Darkwalker|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Vitus Darkwalker
 step << Rogue cata
     .goto 179,36.735,65.379
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Loren, a Receptora|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Loren the Fence
 step << Hunter cata
     .goto 179,38.032,63.359
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Guarda-caça Blake|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Huntsman Blake
 step << Warrior cata
     .goto 179,38.278,63.457
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Sargento Cleese|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Sergeant Cleese
 step
     .goto 179,37.63,65.23
@@ -1388,7 +1388,7 @@ step
     .target Stagecoach Carriage
 step
     .isOnQuest 24438
-    .goto 179,51.81,80.49,10 >>|cRXP_WARN_Espere a sequência de RP terminar|r
+    .goto 179,51.81,80.49,10 >> |cRXP_WARN_Espere a sequência de RP terminar|r
 step
     .goto 179,51.81,80.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Príncipe Liam Greymane|r
@@ -1467,7 +1467,7 @@ step << !Mage
 step << Mage
     .goto 179,59.073,92.955
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Myriam Spellwaker|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Myriam Spellwaker
 step
     .goto 179,59.86,91.71
@@ -1490,32 +1490,32 @@ step
 step << Priest
     .goto 179,60.482,91.587
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Irmã Almyra|r lá acima
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Sister Almyra
 step << Druid
     .goto 179,60.002,92.230
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Celestine da Colheita|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Celestine of the Harvest
 step << Warrior
     .goto 179,59.500,91.003
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Sargento Cleese|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Sergeant Cleese
 step << Rogue
     .goto 179,60.255,90.426
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Loren, a Receptora|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Loren the Fence
 step << Hunter
     .goto 179,60.468,90.790
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Guarda-caça Blake|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Huntsman Blake
 step << Warlock
     .goto 179,61.723,91.088
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Vitus Darkwalker|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Vitus Darkwalker
 step
     #sticky
@@ -1741,7 +1741,7 @@ step
     #optional
     #requires Taldoren
     #completewith ScytheOfElune
-    .goto 179,57.85,75.95,8 >>Entre na casa
+    .goto 179,57.85,75.95,8 >> Entre na casa
 step
     #label ScytheOfElune
     .goto 179,57.51,75.59
@@ -1770,7 +1770,7 @@ step
 	.target Lord Darius Crowley
 step
     #completewith next
-    .hs >>Vá para o Vale Tormenta
+    .hs >> Vá para o Vale Tormenta
 step
     .goto 179,59.86,91.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gwen Armstead|r dentro
@@ -1943,7 +1943,7 @@ step
 step << skip
     #requires Enslaved
 	#completewith next
-    .deathskip >>Morra e reviva no |cRXP_FRIENDLY_Anjo da Cura|r
+    .deathskip >> Morra e reviva no |cRXP_FRIENDLY_Anjo da Cura|r
     .subzoneskip 4732,1
 --XX skipping because theres 0 repair vendors in Gilneas past duskhaven?
 step
@@ -2347,7 +2347,7 @@ step
     #requires Darnassus
     #completewith Oak
     .goto 89,48.960,19.200,20,0
-    .goto 89,48.126,14.432,60 >>Entre no Carvalho Uivante
+    .goto 89,48.126,14.432,60 >> Entre no Carvalho Uivante
 step
     #label Oak
     .goto 89,48.126,14.432
@@ -2362,7 +2362,7 @@ step
     #optional
     #label DarkshoreTravel
     #completewith Darkshore
-    .goto 89,48.960,19.200,20 >>Saia do Carvalho Uivante
+    .goto 89,48.960,19.200,20 >> Saia do Carvalho Uivante
 step
     #optional
     #requires DarkshoreTravel
@@ -2373,7 +2373,7 @@ step
     #label Darkshore
     .goto 57,55.415,88.398
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Vesprystus|r
-    .fly Lor'Danel >>Voe para Lor'danel
+    .fly Lor'Danel >> Voe para Lor'danel
     .target Vesprystus
     .zoneskip 62
 ]])

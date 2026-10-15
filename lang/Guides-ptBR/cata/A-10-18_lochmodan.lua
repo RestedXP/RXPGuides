@@ -22,7 +22,7 @@ step
 step << Pandaren
     .goto 84,70.94,72.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dungar Tragolongo|r
-    .fly Gol'Bolar Quarry >>Voe para Gol'Bolar Pedreira
+    .fly Gol'Bolar Quarry >> Voe para Gol'Bolar Pedreira
 	.target Dungar Longdrink
     .zoneskip Dun Morogh
     .zoneskip Loch Modan
@@ -33,7 +33,7 @@ step << Pandaren
     .goto 27,88.331,47.792,12,0
     .goto 27,88.873,48.312,12,0
     .goto 48,12.138,54.947,20,0
-    .goto 48,14.025,56.641,12 >>|cRXP_WARN_Viagem para cima da montanha, depois cuidadosamente desça em direção a|r |cRXP_FRIENDLY_Piloto Pisafundo|r
+    .goto 48,14.025,56.641,12 >> |cRXP_WARN_Viagem para cima da montanha, depois cuidadosamente desça em direção a|r |cRXP_FRIENDLY_Piloto Pisafundo|r
     .noflyable
 step << Pandaren
     .goto 48,14.006,56.485
@@ -70,7 +70,7 @@ step
     .goto 48,21.398,66.390,30,0
     .goto 48,21.559,68.292,30,0
     .goto 48,23.670,75.378,15,0
-    .goto 48,23.495,75.054,12 >>Viaje para |cRXP_FRIENDLY_Capitão Balbúrdia|r dentro do bunker
+    .goto 48,23.495,75.054,12 >> Viaje para |cRXP_FRIENDLY_Capitão Balbúrdia|r dentro do bunker
     .xp >30,1
     .isOnQuest 13635
 step
@@ -124,7 +124,7 @@ step
     .goto 48,24.950,78.306,20,0
     .goto 48,27.712,76.586,20,0
     .goto 48,30.076,78.276
-    .subzone 923 >>Viaje para cima do caminho em direção a Stonesplinter Valley
+    .subzone 923 >> Viaje para cima do caminho em direção a Stonesplinter Valley
     .xp >30,1
 step
 #loop
@@ -201,7 +201,7 @@ step
 step
     .goto 48,33.940,50.955
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thorgrum Borrelson|r
-    .fp Thelsamar >>Pegue a rota de voo de Thelsamar
+    .fp Thelsamar >> Pegue a rota de voo de Thelsamar
     .target Thorgrum Borrelson
 step
     .goto 48,35.079,46.663
@@ -226,42 +226,42 @@ step
 step << Paladin cata
     .goto 48,35.374,48.810
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Faldoc Petrafé|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Faldoc Stonefaith
 step << Rogue cata
     .goto 48,34.935,48.483
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Galda Bronzegume|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Galda Bronzeblade
 step << Mage cata
     .goto 48,35.012,48.445
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gindle, o Verde|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Gindle the Green
 step << Hunter cata
     .goto 48,34.553,48.117
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Belda Selvacuore|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Belda Wildheart
 step << Warrior cata
     .goto 48,33.951,46.768
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Grendin Celeraxa|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Grendin Swiftaxe
 step << Shaman cata
     .goto 48,36.596,48.341
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Grenilda Garranegra|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Grenhild Darktalon
 step << Warlock cata
     .goto 48,35.879,46.199
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Solbin Umbrenagem|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Solbin Shadowcog
 step << Priest cata
     .goto 48,36.108,45.893
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Sacerdotisa Baerla|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Priestess Baerla
 step
     .goto 48,37.303,46.517
@@ -332,7 +332,7 @@ step
 step
     #label SilverStreamMine
     #completewith ForemanSharpsneer
-    .goto 48,35.49,19.13,15 >>Entre na Prateado Stream Mina
+    .goto 48,35.49,19.13,15 >> Entre na Prateado Stream Mina
 step
     #sticky
     #label koboldmine1
@@ -357,7 +357,7 @@ step
 step
     #requires koboldmine1
     #completewith next
-    .goto 48,35.49,19.13,15 >>Saia da Prateado Stream Mina
+    .goto 48,35.49,19.13,15 >> Saia da Prateado Stream Mina
 step
     #completewith TheBearer
     >>Mate os |cRXP_ENEMY_Forest Lurkers|r
@@ -407,7 +407,7 @@ step
     .mob Forest Lurker
 step
     .isOnQuest 26860,25118
-    .hs >>Use sua Pedra de Retorno para ir a Thelsamar
+    .hs >> Use sua Pedra de Retorno para ir a Thelsamar
     .cooldown item,6948,>2,1
 step
     .goto 48,35.969,44.330
@@ -437,27 +437,27 @@ step
 step << Paladin cata
     .goto 48,35.374,48.810
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Faldoc Petrafé|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Faldoc Stonefaith
 step << Rogue cata
     .goto 48,34.935,48.483
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Galda Bronzegume|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Galda Bronzeblade
 step << Mage cata
     .goto 48,35.012,48.445
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gindle, o Verde|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Gindle the Green
 step << Hunter cata
     .goto 48,34.553,48.117
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Belda Selvacuore|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Belda Wildheart
 step << Warrior cata
     .goto 48,33.951,46.768
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Grendin Celeraxa|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Grendin Swiftaxe
 step
     .goto 48,35.079,46.663
@@ -467,17 +467,17 @@ step
 step << Shaman cata
     .goto 48,36.596,48.341
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Grenilda Garranegra|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Grenhild Darktalon
 step << Warlock cata
     .goto 48,35.879,46.199
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Solbin Umbrenagem|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Solbin Shadowcog
 step << Priest cata
     .goto 48,36.108,45.893
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Sacerdotisa Baerla|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Priestess Baerla
 step
     .goto 48,40.642,58.310,15,0
@@ -490,7 +490,7 @@ step
 step
     .goto 48,36.752,61.108
     >>Clique em |cRXP_PICK_Stolen Explorers' League Documentar|r dentro da caverna
-    .accept 13656>>Aceite Documento da Liga dos Exploradores (1 de 6)
+    .accept 13656>> Aceite Documento da Liga dos Exploradores (1 de 6)
 step
     #completewith next
     >>Mate os |cRXP_ENEMY_Loch Buzzards|r
@@ -560,15 +560,15 @@ step
     .maxlevel 20,endOfTheGuide
 step
     .isOnQuest 26868
-    .use 60681 >>|cRXP_WARN_Abra|r |T133639:0|t[Cannary's Cache] |cRXP_WARN_para o|r |T237425:0|t[|cRXP_LOOT_Clever Plantar Disfarce Kit|r] |cRXP_WARN_e|r |T134839:0|t[|cRXP_LOOT_Potent Murloc Feromônios|r]
+    .use 60681 >> |cRXP_WARN_Abra|r |T133639:0|t[Cannary's Cache] |cRXP_WARN_para o|r |T237425:0|t[|cRXP_LOOT_Clever Plantar Disfarce Kit|r] |cRXP_WARN_e|r |T134839:0|t[|cRXP_LOOT_Potent Murloc Feromônios|r]
     .collect 60502,1,26868,1 -- Clever Plant Disguise Kit (1)
     .collect 60503,1,26868,1 -- Potent Murloc Pheromones (1)
 step
     .isOnQuest 26868
-    .goto 48,50.585,56.048,85 >>|cRXP_WARN_Viagem em direção ao|r |cRXP_ENEMY_Representante Pelemusgo|r
+    .goto 48,50.585,56.048,85 >> |cRXP_WARN_Viagem em direção ao|r |cRXP_ENEMY_Representante Pelemusgo|r
 step
     .isOnQuest 26868
-    .cast 82788 >>|cRXP_WARN_Use o|r |T237425:0|t[|cRXP_LOOT_Clever Plantar Disfarce Kit|r] |cRXP_WARN_para se disfarçar|r
+    .cast 82788 >> |cRXP_WARN_Use o|r |T237425:0|t[|cRXP_LOOT_Clever Plantar Disfarce Kit|r] |cRXP_WARN_para se disfarçar|r
     .use 60502
 step
     .goto 48,50.585,56.048
@@ -660,7 +660,7 @@ step
 step
     #completewith next
     .goto 48,69.478,51.742,70,0
-    .goto 48,83.597,60.675,40 >>Vá para Andarilho Lodge
+    .goto 48,83.597,60.675,40 >> Vá para Andarilho Lodge
     .subzoneskip 147
 step
     .goto 48,82.789,63.459
@@ -782,7 +782,7 @@ step
     .mob Mudbelly Boar
 step
     .isOnQuest 27016,27028,13660,27025,27030,27031
-    .hs >>Use sua Pedra de Retorno para ir a Andarilho's Lodge
+    .hs >> Use sua Pedra de Retorno para ir a Andarilho's Lodge
     .cooldown item,6948,>2,1
 step
 #requires doc5
@@ -823,13 +823,13 @@ step
     .mob Bobcat
 step
     .goto 48,72.590,72.017,70,0
-    .goto 48,71.603,77.167,20 >>Vá para a Caverna Asa de Ferro
+    .goto 48,71.603,77.167,20 >> Vá para a Caverna Asa de Ferro
     .subzoneskip 5391
     .isOnQuest 27032
 step
     .isOnQuest 27032
     #completewith next
-    .goto 48,78.594,76.215,20 >>|cRXP_WARN_Limpe o caminho até o fundo da caverna|r
+    .goto 48,78.594,76.215,20 >> |cRXP_WARN_Limpe o caminho até o fundo da caverna|r
 step
     .goto 48,78.594,76.215
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Navestruz Enferrujado|r
@@ -838,7 +838,7 @@ step
     .accept 27033 >>Aceite Coração de Navestruz
 step
     #completewith next
-    .goto 48,71.603,77.167,20 >>Saia da Caverna Asa de Ferro
+    .goto 48,71.603,77.167,20 >> Saia da Caverna Asa de Ferro
     .subzoneskip 5391,1
     .isOnQuest 27033
 step
@@ -864,7 +864,7 @@ step
     .mob Bobcat
 step
     .isOnQuest 27026,27036
-    .hs >>Use sua Pedra de Retorno para ir a Andarilho's Lodge
+    .hs >> Use sua Pedra de Retorno para ir a Andarilho's Lodge
     .cooldown item,6948,>2,1
 step
     .goto 48,82.789,63.459
@@ -916,48 +916,48 @@ step
 step << Paladin cata
     .goto 48,35.374,48.810
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Faldoc Petrafé|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Faldoc Stonefaith
 step << Rogue cata
     .goto 48,34.935,48.483
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Galda Bronzegume|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Galda Bronzeblade
 step << Mage cata
     .goto 48,35.012,48.445
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gindle, o Verde|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Gindle the Green
 step << Hunter cata
     .goto 48,34.553,48.117
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Belda Selvacuore|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Belda Wildheart
 step << Warrior cata
     .goto 48,33.951,46.768
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Grendin Celeraxa|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Grendin Swiftaxe
 step << Shaman cata
     .goto 48,36.596,48.341
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Grenilda Garranegra|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Grenhild Darktalon
 step << Warlock cata
     .goto 48,35.879,46.199
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Solbin Umbrenagem|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Solbin Shadowcog
 step << Priest cata
     .goto 48,36.108,45.893
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Sacerdotisa Baerla|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Priestess Baerla
 step
 #questguide
     .goto 48,33.938,50.932
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thorgrum Borrelson|r
-    .fly Farstrider Lodge >>Voe para a Pousada do Andarilho
+    .fly Farstrider Lodge >> Voe para a Pousada do Andarilho
     .target Thorgrum Borrelson
 step
 #questguide
@@ -1045,7 +1045,7 @@ step
 #questguide
     .goto 48,25.315,1.591,15,0
     .goto 56,54.873,83.458,15,0
-    .zone Wetlands >>Vá ao norte até Pantanal
+    .zone Wetlands >> Vá ao norte até Pantanal
     .isOnQuest 26137
 step
 #questguide

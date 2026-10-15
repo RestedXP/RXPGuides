@@ -9,7 +9,7 @@ RXPGuides.RegisterGuide([[
 
 step
 	.goto Dalaran,40.67,35.35
-	>>Para começar as missões diárias de Joalheria, você deve primeiro completar a missão Toque final na encomenda, que requer que você traga |cRXP_FRIENDLY_Timothy Jones|r em Dalaran um |cRXP_LOOT_Chalcedony|r
+	>> Para começar as missões diárias de Joalheria, você deve primeiro completar a missão Toque final na encomenda, que requer que você traga |cRXP_FRIENDLY_Timothy Jones|r em Dalaran um |cRXP_LOOT_Chalcedony|r
 	.collect 36923,1 --Chalcedony (1)
 	.isQuestAvailable 13041
 	.target Timothy Jones
@@ -22,7 +22,7 @@ step
 	.isQuestAvailable 13041
 step
 	.goto Dalaran,40.67,35.35
-	.daily 12958,12959,12960,12961,12962,12963 >>Fale com |cRXP_FRIENDLY_Timothy Jones|r em Dalaran. Ele tem 1 de 6 missões diárias de Joalheria. Aceite qual for disponível
+	.daily 12958,12959,12960,12961,12962,12963 >> Fale com |cRXP_FRIENDLY_Timothy Jones|r em Dalaran. Ele tem 1 de 6 missões diárias de Joalheria. Aceite qual for disponível
 	>>Carregamento: Amuleto de Jade Sangrento -- 12958
 	>>Remessa: Estatueta de Mármore Faiscante -- 12959
 	>>Remessa: Broche Solar Perverso -- 12960
@@ -54,7 +54,7 @@ step
 	.complete 12958,1 --Blood Jade Amulet (1)
 	.isOnQuest 12958
 step << Mage
-	.zone Dalaran >>Vá para Dalaran
+	.zone Dalaran >> Vá para Dalaran
 step
 	>>Fale com |cRXP_FRIENDLY_Timothy Jones|r em Dalaran
 	.goto Dalaran,40.67,35.35
@@ -86,7 +86,7 @@ step
 	.complete 12959,1 --Glowing Ivory Figurine (1)
 	.isOnQuest 12959
 step << Mage
-	.zone Dalaran >>Vá para Dalaran
+	.zone Dalaran >> Vá para Dalaran
 step
 	>>Fale com |cRXP_FRIENDLY_Timothy Jones|r em Dalaran
 	.goto Dalaran,40.67,35.35
@@ -115,7 +115,7 @@ step
 	.complete 12960,1 --Wicked Sun Brooch (1)
 	.isOnQuest 12960
 step << Mage
-	.zone Dalaran >>Vá para Dalaran
+	.zone Dalaran >> Vá para Dalaran
 step
 	>>Fale com |cRXP_FRIENDLY_Timothy Jones|r em Dalaran
 	.goto Dalaran,40.67,35.35
@@ -145,7 +145,7 @@ step
 	.complete 12961,1 --Intricate Bone Figurine (1)
 	.isOnQuest 12961
 step << Mage
-	.zone Dalaran >>Vá para Dalaran
+	.zone Dalaran >> Vá para Dalaran
 step
 	>>Fale com |cRXP_FRIENDLY_Timothy Jones|r em Dalaran
 	.goto Dalaran,40.67,35.35
@@ -173,7 +173,7 @@ step
 	.complete 12962,1 --Bright Armor Relic (1)
 	.isOnQuest 12962
 step << Mage
-	.zone Dalaran >>Vá para Dalaran
+	.zone Dalaran >> Vá para Dalaran
 step
 	>>Fale com |cRXP_FRIENDLY_Timothy Jones|r em Dalaran
 	.goto Dalaran,40.67,35.35
@@ -202,7 +202,7 @@ step
 	.complete 12963,1 --Shifting Sun Curio (1)
 	.isOnQuest 12963
 step << Mage
-	.zone Dalaran >>Vá para Dalaran
+	.zone Dalaran >> Vá para Dalaran
 step
 	>>Fale com |cRXP_FRIENDLY_Timothy Jones|r em Dalaran
 	.goto Dalaran,40.67,35.35

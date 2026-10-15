@@ -67,24 +67,24 @@ step
     .turnin 28715 >>Entregue Ladrões Demoníacos
 	.target +Melithar Staghelm
     .goto 460,45.93,72.86
-    .accept 3116 >>Aceite O Selo Simples << Warrior
-    .accept 3117 >>Aceite O Selo Cinzelado << Hunter
-    .accept 3118 >>Aceite O Selo Cifrado << Rogue
-    .accept 3119 >>Aceite O Selo Sagrado << Priest
-    .accept 3120 >>Aceite O Selo Verdejante << Druid
-    .accept 26841 >>Aceite O Selo Proibido << Mage
+    .accept 3116 >> Aceite O Selo Simples << Warrior
+    .accept 3117 >> Aceite O Selo Cinzelado << Hunter
+    .accept 3118 >> Aceite O Selo Cifrado << Rogue
+    .accept 3119 >> Aceite O Selo Sagrado << Priest
+    .accept 3120 >> Aceite O Selo Verdejante << Druid
+    .accept 26841 >> Aceite O Selo Proibido << Mage
     --class quests are auto from either npc
 step << Priest/Mage
     #completewith next
-    .goto 1438/1,761.79999,10415.60059,10 >>Vá para dentro em direção a |cRXP_FRIENDLY_Shanda|r << Priest
-    .goto 1438/1,761.79999,10415.60059,10 >>Vá para dentro em direção a |cRXP_FRIENDLY_Rhyanda|r << Mage
+    .goto 1438/1,761.79999,10415.60059,10 >> Vá para dentro em direção a |cRXP_FRIENDLY_Shanda|r << Priest
+    .goto 1438/1,761.79999,10415.60059,10 >> Vá para dentro em direção a |cRXP_FRIENDLY_Rhyanda|r << Mage
 step << Priest
     .goto 1438/1,801.60004,10458.79980
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Shanda|r
-    .turnin 3119 >>Entregue O Selo Sagrado
-    .accept 26949 >>Aceite Cura para o Ferido << cata
-    .accept 26949 >>Aceite Aprenda a Palavra << !cata
-    .train 2061 >>Treine |T135907:0|t[Cura Célere] << cata
+    .turnin 3119 >> Entregue O Selo Sagrado
+    .accept 26949 >> Aceite Cura para o Ferido << cata
+    .accept 26949 >> Aceite Aprenda a Palavra << !cata
+    .train 2061 >> Treine |T135907:0|t[Cura Célere] << cata
     .target Shanda
 step << Priest cata
     .goto 1438/1,797.70001,10464.60059
@@ -105,16 +105,16 @@ step << Priest !cata
 step << Priest
     .goto 1438/1,801.60004,10458.79980
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Shanda|r
-    .turnin 26949 >>Entregue Cura para o Ferido << cata
-    .turnin 26949 >>Entregue Aprenda a Palavra << !cata
-    .accept 28723 >>Aceite A Sacerdotisa da Lua
+    .turnin 26949 >> Entregue Cura para o Ferido << cata
+    .turnin 26949 >> Entregue Aprenda a Palavra << !cata
+    .accept 28723 >> Aceite A Sacerdotisa da Lua
     .target Shanda
 step << Mage
     .goto 1438/1,804.79999,10456.29980
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Rhyanda|r
-    .turnin 26841 >>Entregue O Selo Proibido
-    .accept 26940 >>Aceite Mísseis Arcanos
-    .train 5143 >>Treine |T136096:0|t[Mísseis Arcanos] << cata
+    .turnin 26841 >> Entregue O Selo Proibido
+    .accept 26940 >> Aceite Mísseis Arcanos
+    .train 5143 >> Aprenda |T136096:0|t[Mísseis Arcanos] << cata
     .target Rhyanda
 step << Mage
     .goto 1438/1,813.50000,10417.29980,-1
@@ -130,24 +130,24 @@ step << Mage
     .mob Training Dummy
 step << Mage
     #completewith next
-    .goto 1438/1,761.79999,10415.60059,10 >>Vá para dentro em direção a |cRXP_FRIENDLY_Rhyanda|r
+    .goto 1438/1,761.79999,10415.60059,10 >> Vá para dentro em direção a |cRXP_FRIENDLY_Rhyanda|r
 step << Mage
     .goto 1438/1,804.79999,10456.29980
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Rhyanda|r
-    .turnin 26940 >>Entregue Mísseis Arcanos
-    .accept 28723 >>Aceite A Sacerdotisa da Lua
+    .turnin 26940 >> Entregue Mísseis Arcanos
+    .accept 28723 >> Aceite A Sacerdotisa da Lua
     .target Rhyanda
 step << Warrior/Rogue
     #completewith next
     .goto 1438/1,797.20001,10458.90039,15,0
-    .goto 1438/1,794.60004,10506.90039,10 >>Vá para dentro em direção a |cRXP_FRIENDLY_Alyissia|r << Warrior
-    .goto 1438/1,794.60004,10506.90039,10 >>Vá para dentro em direção a |cRXP_FRIENDLY_Frahun Umbrurmúrio|r << Rogue
+    .goto 1438/1,794.60004,10506.90039,10 >> Vá para dentro em direção a |cRXP_FRIENDLY_Alyissia|r << Warrior
+    .goto 1438/1,794.60004,10506.90039,10 >> Vá para dentro em direção a |cRXP_FRIENDLY_Frahun Umbrurmúrio|r << Rogue
 step << Warrior
     .goto 1438/1,778.10004,10526.60059
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Alyissia|r
-    .turnin 3116 >>Entregue O Selo Simples
-    .accept 26945 >>Aceite O Aprendizado de Novas Técnicas
-	.train 100 >>Treine |T132337:0|t[Carga] << cata
+    .turnin 3116 >> Entregue O Selo Simples
+    .accept 26945 >> Aceite O Aprendizado de Novas Técnicas
+	.train 100 >> Treine |T132337:0|t[Carga] << cata
     .target Alyissia
 step << Warrior
     .goto 1438/1,808.79999,10460.79980
@@ -158,15 +158,15 @@ step << Warrior
 step << Warrior
     .goto 1438/1,778.10004,10526.60059
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Alyissia|r
-    .turnin 26945 >>Entregue O Aprendizado de Novas Técnicas
-    .accept 28723 >>Aceite A Sacerdotisa da Lua
+    .turnin 26945 >> Entregue O Aprendizado de Novas Técnicas
+    .accept 28723 >> Aceite A Sacerdotisa da Lua
     .target Alyissia
 step << Rogue
     .goto 1438/1,778.00000,10519.20020
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Frahun Umbrurmúrio|r
-    .turnin 3118 >>Entregue O Selo Cifrado
-    .accept 26946 >>Aceite As Vantagens de um Ladino
-	.train 2098 >>Treine |T132292:0|t[Eviscerar] << cata
+    .turnin 3118 >> Entregue O Selo Cifrado
+    .accept 26946 >> Aceite As Vantagens de um Ladino
+	.train 2098 >> Treine |T132292:0|t[Eviscerar] << cata
     .target Frahun Shadewhisper
 step << Rogue
     .goto 1438/1,808.79999,10486.00000,-1
@@ -178,15 +178,15 @@ step << Rogue
 step << Rogue
     .goto 1438/1,778.00000,10519.20020
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Frahun Umbrurmúrio|r
-    .turnin 26946 >>Entregue As Vantagens de um Ladino
-    .accept 28723 >>Aceite A Sacerdotisa da Lua
+    .turnin 26946 >> Entregue As Vantagens de um Ladino
+    .accept 28723 >> Aceite A Sacerdotisa da Lua
     .target Frahun Shadewhisper
 step << Hunter
     .goto 1438/1,778.00000,10448.10059
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ayanna Perenanda|r
-    .turnin 3117 >>Entregue O Selo Cinzelado
-    .accept 26947 >>Aceite Treinamento de Mateiro
-	.train 56641 >>Treine |T132213:0|t[Tiro Firme] << cata
+    .turnin 3117 >> Entregue O Selo Cinzelado
+    .accept 26947 >> Aceite Treinamento de Mateiro
+	.train 56641 >> Treine |T132213:0|t[Tiro Firme] << cata
     .target Ayanna Everstride
 step << Hunter
     .goto 1438/1,801.20001,10454.90039
@@ -197,19 +197,19 @@ step << Hunter
 step << Hunter
     .goto 1438/1,778.00000,10448.10059
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ayanna Perenanda|r
-    .turnin 26947 >>Entregue Treinamento de Mateiro
-    .accept 28723 >>Aceite A Sacerdotisa da Lua
+    .turnin 26947 >> Entregue Treinamento de Mateiro
+    .accept 28723 >> Aceite A Sacerdotisa da Lua
     .target Ayanna Everstride
 step << Druid
     #completewith next
-    .goto 1438/1,797.20001,10458.90039,15 >>Vá para |cRXP_FRIENDLY_Mardant Carvalhaço|r dentro
+    .goto 1438/1,797.20001,10458.90039,15 >> Vá para |cRXP_FRIENDLY_Mardant Carvalhaço|r dentro
 step << Druid
     .goto 1438/1,816.00000,10485.90039
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mardant Carvalhaço|r
-    .turnin 3120 >>Entregue O Selo Verdejante
-    .accept 26948 >>Aceite Rejuvenescer Toque << cata
-    .accept 26948 >>Aceite Fogo Lunar << !cata
-	.train 774 >>Treine |T136081:0|t[Rejuvenescer] << cata
+    .turnin 3120 >> Entregue O Selo Verdejante
+    .accept 26948 >> Aceite Rejuvenescer Toque << cata
+    .accept 26948 >> Aceite Fogo Lunar << !cata
+	.train 774 >> Aprenda |T136081:0|t[Rejuvenescer] << cata
     .target Mardant Strongoak
 step << Druid cata
     .goto 1438/1,769.79999,10436.29980,-1
@@ -225,9 +225,9 @@ step << !cata Druid
 step << Druid
     .goto 1438/1,816.00000,10485.90039
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mardant Carvalhaço|r
-    .turnin 26948 >>Entregue Rejuvenescer Toque << cata
-    .turnin 26948 >>Entregue Fogo Lunar << !cata
-    .accept 28723 >>Aceite A Sacerdotisa da Lua
+    .turnin 26948 >> Entregue Rejuvenescer Toque << cata
+    .turnin 26948 >> Entregue Fogo Lunar << !cata
+    .accept 28723 >> Aceite A Sacerdotisa da Lua
     .target Mardant Strongoak
 step
     .goto 460,42.49,50.51
@@ -254,7 +254,7 @@ step
 	.target Dentaria Silverglade
 step
 	#completewith next
-	.goto 58,56.34,27.51,5 >>|cRXP_WARN_Entre na Caverna, depois espere por|cRXP_FRIENDLY_ Tarindrella|r para aparecer|r
+	.goto 58,56.34,27.51,5 >> |cRXP_WARN_Entre na Caverna, depois espere por|cRXP_FRIENDLY_ Tarindrella|r para aparecer|r
 step
     .goto 58,56.34,27.51
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tarindrella|r na localização da seta. Ela aparecerá em alguns segundos
@@ -391,39 +391,39 @@ step
 	#completewith next
     .goto 57,56.00,52.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Iranis Brotossombra|r
-    .train 2366 >>Aprenda |T136065:0|t[Herborismo]
+    .train 2366 >> Aprenda |T136065:0|t[Herborismo]
 	.skipgossip 47420,1,1,1
 	.target Iranis Shadebloom
 step
     .goto 57,56.00,52.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Iranis Brotossombra|r
-    .train 2575 >>Aprenda |T136248:0|t[Mineração]
+    .train 2575 >> Aprenda |T136248:0|t[Mineração]
 	.skipgossip 47420,2,3,2
 	.target Iranis Shadebloom
 step << Warrior cata
     .goto 57,55.887,51.720
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kyra Laminéola|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Kyra Windblade
 step << Mage cata
     .goto 57,55.816,51.389
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Irriende|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Irriende
 step << Priest cata
     .goto 57,55.319,49.594
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Laurna Luzalbor|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Laurna Morninglight
 step << Rogue cata
     .goto 57,56.027,52.534
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Jannok Brisacanto|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Jannok Breezesong
 step << Hunter cata
     .goto 57,56.284,51.973
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Jannok Brisacanto|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Jannok Breezesong
 step
     .goto 57,55.82,53.91
@@ -434,7 +434,7 @@ step
 step << Druid cata
     .goto 57,55.650,53.771
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kal|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Kal
 step
     #completewith TeldrassilEmeraldDreamcatcher
@@ -466,7 +466,7 @@ step
     .complete 2438,1 --1/1 Emerald Dreamcatcher
 step
     #completewith next
-    .deathskip >>Morra e reviva no Anjo da Cura
+    .deathskip >> Morra e reviva no Anjo da Cura
     .subzoneskip 186
 step
     .goto 57,55.82,53.90
@@ -534,7 +534,7 @@ step
 step
     #completewith next
     .goto 57,66.13,45.25,25,0
-    .deathskip >>Morra e reviva no Anjo da Cura
+    .deathskip >> Morra e reviva no Anjo da Cura
 step
     .goto 57,55.55,49.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tallonkai Radicélere|r
@@ -543,7 +543,7 @@ step
 step << Priest cata
     .goto 57,55.319,49.594
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Laurna Luzalbor|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Laurna Morninglight
 step
     .goto 57,55.72,50.52
@@ -553,27 +553,27 @@ step
 step << Warrior cata
     .goto 57,55.887,51.720
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kyra Laminéola|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Kyra Windblade
 step << Mage cata
     .goto 57,55.816,51.389
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Irriende|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Irriende
 step << Rogue cata
     .goto 57,56.027,52.534
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Jannok Brisacanto|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Jannok Breezesong
 step << Hunter cata
     .goto 57,56.284,51.973
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Jannok Brisacanto|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Jannok Breezesong
 step << Druid cata
     .goto 57,55.650,53.771
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kal|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Kal
 step
 #loop
@@ -604,7 +604,7 @@ step
 	.target Tallonkai Swiftroot
 step
 #completewith melenas
-    .goto 57,54.45,45.43,40 >>Vá para o norte em direção à caverna
+    .goto 57,54.45,45.43,40 >> Vá para o norte em direção à caverna
     .subzoneskip 258--Fel Rock
 step
     #label ireroot
@@ -621,7 +621,7 @@ step
 step
     #requires ireroot
     #completewith next
-    .hs >>Use sua Pedra de Retorno para ir a Dolanaar
+    .hs >> Use sua Pedra de Retorno para ir a Dolanaar
     .cooldown item,6948,>2,1
 step
     .goto 57,55.77,50.47
@@ -656,7 +656,7 @@ step
     #completewith next
     .goto 57,48.61,47.92,100,0
     .goto 57,46.03,47.99,100,0
-    .goto 57,45.488,50.760,25 >>Entre no túnel dentro da casa de árvore
+    .goto 57,45.488,50.760,25 >> Entre no túnel dentro da casa de árvore
     .subzoneskip 262
 step
     #label sleepingd
@@ -736,7 +736,7 @@ step
 step
     .isQuestComplete 483
     #completewith next
-    .hs >>Use sua Pedra de Retorno para ir a Dolanaar
+    .hs >> Use sua Pedra de Retorno para ir a Dolanaar
     .cooldown item,6948,>2,1
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com Athridas Mantursino e a Sentinela Kyra Stelacanto|r
@@ -750,32 +750,32 @@ step
 step << Warrior cata
     .goto 57,55.887,51.720
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kyra Laminéola|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Kyra Windblade
 step << Mage cata
     .goto 57,55.816,51.389
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Irriende|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Irriende
 step << Priest cata
     .goto 57,55.319,49.594
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Laurna Luzalbor|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Laurna Morninglight
 step << Rogue cata
     .goto 57,56.027,52.534
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Jannok Brisacanto|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Jannok Breezesong
 step << Hunter cata
     .goto 57,56.284,51.973
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Jannok Brisacanto|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Jannok Breezesong
 step << Druid cata
     .goto 57,55.650,53.771
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kal|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Kal
 step
     .goto 57,49.351,44.672
@@ -803,7 +803,7 @@ step
 step
     #completewith next
     #requires ambushers
-    .deathskip >>Morra e renasça em Dolanaar
+    .deathskip >> Morra e renasça em Dolanaar
 step
     #requires ambushers
     .goto 57,55.715,51.981
@@ -1010,7 +1010,7 @@ step << skip
     .accept 14039 >>Aceite Terra dos Kaldorei
 step
     .goto 89,35.993,50.342
-    .zone 89 >>Viagem para Darnassus
+    .zone 89 >> Viagem para Darnassus
     .isOnQuest 6341
 step
     #optional
@@ -1030,7 +1030,7 @@ step
     #completewith end
     .goto 57,55.47,50.42
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Fidélio|r
-    .fly Darnassus >>Voe para Darnassus
+    .fly Darnassus >> Voe para Darnassus
 	.target Fidelio
     .zoneskip 89
 step << Warrior

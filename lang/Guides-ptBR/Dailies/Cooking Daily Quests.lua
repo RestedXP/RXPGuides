@@ -9,7 +9,7 @@ RXPGuides.RegisterGuide([[
 
 step << Alliance
 	.goto Dalaran,40.43,65.66
-	.daily 13100,13101,13102,13103,13107 >>Converse com |cRXP_FRIENDLY_Katherine Lee|r dentro da estalagem. Ela tem 1 de 5 missões de Culinária diárias. Aceite qualquer uma disponível
+	.daily 13100,13101,13102,13103,13107 >> Converse com |cRXP_FRIENDLY_Katherine Lee|r dentro da estalagem. Ela tem 1 de 5 missões de Culinária diárias. Aceite qualquer uma disponível
 	>>Bolo de Carne de Cogumelo Infundido
 	>>Ensopado do Esgoto
 	>>Mustard Dogs
@@ -18,7 +18,7 @@ step << Alliance
 	.target Katherine Lee
 step << Horde
 	.goto Dalaran,69.96,39.05
-	.daily 13112,13113,13114,13115,13116 >>Converse com |cRXP_FRIENDLY_Awilo Lon'gomba|r dentro da estalagem. Ele tem 1 de 5 missões de Culinária diárias. Aceite qualquer uma disponível
+	.daily 13112,13113,13114,13115,13116 >> Converse com |cRXP_FRIENDLY_Awilo Lon'gomba|r dentro da estalagem. Ele tem 1 de 5 missões de Culinária diárias. Aceite qualquer uma disponível
 	>>Bolo de Carne de Cogumelo Infundido
 	>>Ensopado do Esgoto
 	>>Mustard Dogs
@@ -55,7 +55,7 @@ step << Horde
 	.isOnQuest 13116
 step
 	#sticky
-	>>Abate |cRXP_ENEMY_Rhinos|r em Picos Tempestuosos para |cRXP_LOOT_Rhino Carne|r. Alternativamente você pode comprar |cRXP_LOOT_Rhino Carne|r ou |cRXP_LOOT_Rinocerontes-quentes|r direto da Casa de Leilões em Dalaran
+	>> Abate |cRXP_ENEMY_Rhinos|r em Picos Tempestuosos para |cRXP_LOOT_Rhino Carne|r. Alternativamente você pode comprar |cRXP_LOOT_Rhino Carne|r ou |cRXP_LOOT_Rinocerontes-quentes|r direto da Casa de Leilões em Dalaran
 	.goto TheStormPeaks,43.26,59.11,70,0
 	.goto TheStormPeaks,44.93,61.45,70,0
 	.goto TheStormPeaks,45.77,57.91,70,0
@@ -70,7 +70,7 @@ step
 	.isOnQuest 13116 << Horde
 step << Alliance
 	#sticky
-	>>Abate |cRXP_ENEMY_Rhinos|r em Picos Tempestuosos para |cRXP_LOOT_Rhino Carne|r. Alternativamente você pode comprar |cRXP_LOOT_Rhino Carne|r ou |cRXP_LOOT_Rinocerontes-quentes|r direto da Casa de Leilões em Objetos de TBC City ou Ironforge
+	>> Abate |cRXP_ENEMY_Rhinos|r em Picos Tempestuosos para |cRXP_LOOT_Rhino Carne|r. Alternativamente você pode comprar |cRXP_LOOT_Rhino Carne|r ou |cRXP_LOOT_Rinocerontes-quentes|r direto da Casa de Leilões em Objetos de TBC City ou Ironforge
 	.goto TheStormPeaks,43.26,59.11,70,0
 	.goto TheStormPeaks,44.93,61.45,70,0
 	.goto TheStormPeaks,45.77,57.91,70,0
@@ -85,7 +85,7 @@ step << Alliance
 	.isOnQuest 13107
 step << Horde
 	#sticky
-	>>Abate |cRXP_ENEMY_Rhinos|r em Picos Tempestuosos para |cRXP_LOOT_Rhino Carne|r. Alternativamente você pode comprar |cRXP_LOOT_Rhino Carne|r ou |cRXP_LOOT_Rinocerontes-quentes|r direto da Casa de Leilões em Orgrimmar
+	>> Abate |cRXP_ENEMY_Rhinos|r em Picos Tempestuosos para |cRXP_LOOT_Rhino Carne|r. Alternativamente você pode comprar |cRXP_LOOT_Rhino Carne|r ou |cRXP_LOOT_Rinocerontes-quentes|r direto da Casa de Leilões em Orgrimmar
 	.goto TheStormPeaks,43.26,59.11,70,0
 	.goto TheStormPeaks,44.93,61.45,70,0
 	.goto TheStormPeaks,45.77,57.91,70,0
@@ -151,7 +151,7 @@ step << Horde
 	.isOnQuest 13112
 step
 	#sticky
-	>>Abate |cRXP_ENEMY_Rhinos|r em Picos Tempestuosos para |cRXP_LOOT_Gelado Carne|r. Alternativamente você pode comprar |cRXP_LOOT_Gelado Carne|r direto da Casa de Leilões em Dalaran
+	>> Abate |cRXP_ENEMY_Rhinos|r em Picos Tempestuosos para |cRXP_LOOT_Gelado Carne|r. Alternativamente você pode comprar |cRXP_LOOT_Gelado Carne|r direto da Casa de Leilões em Dalaran
 	.goto TheStormPeaks,43.26,59.11,70,0
 	.goto TheStormPeaks,44.93,61.45,70,0
 	.goto TheStormPeaks,45.77,57.91,70,0
@@ -166,7 +166,7 @@ step
 	.isOnQuest 13112 << Horde
 step << Alliance
 	#sticky
-	>>Abate |cRXP_ENEMY_Rhinos|r em Picos Tempestuosos para |cRXP_LOOT_Gelado Carne|r. Alternativamente você pode comprar |cRXP_LOOT_Gelado Carne|r direto da Casa de Leilões em Objetos de TBC City ou Ironforge
+	>> Abate |cRXP_ENEMY_Rhinos|r em Picos Tempestuosos para |cRXP_LOOT_Gelado Carne|r. Alternativamente você pode comprar |cRXP_LOOT_Gelado Carne|r direto da Casa de Leilões em Objetos de TBC City ou Ironforge
 	.goto TheStormPeaks,43.26,59.11,70,0
 	.goto TheStormPeaks,44.93,61.45,70,0
 	.goto TheStormPeaks,45.77,57.91,70,0
@@ -181,7 +181,7 @@ step << Alliance
 	.isOnQuest 13100
 step << Horde
 	#sticky
-	>>Abate |cRXP_ENEMY_Rhinos|r em Picos Tempestuosos para |cRXP_LOOT_Gelado Carne|r. Alternativamente você pode comprar |cRXP_LOOT_Gelado Carne|r direto da Casa de Leilões em Orgrimmar
+	>> Abate |cRXP_ENEMY_Rhinos|r em Picos Tempestuosos para |cRXP_LOOT_Gelado Carne|r. Alternativamente você pode comprar |cRXP_LOOT_Gelado Carne|r direto da Casa de Leilões em Orgrimmar
 	.goto TheStormPeaks,43.26,59.11,70,0
 	.goto TheStormPeaks,44.93,61.45,70,0
 	.goto TheStormPeaks,45.77,57.91,70,0
@@ -234,7 +234,7 @@ step
 	.isOnQuest 13114 << Horde
 step
 	#sticky
-	>>Abate |cRXP_ENEMY_Rhinos|r em Picos Tempestuosos para |cRXP_LOOT_Gelado Carne|r. Alternativamente você pode comprar |cRXP_LOOT_Gelado Carne|r direto da Casa de Leilões em Dalaran
+	>> Abate |cRXP_ENEMY_Rhinos|r em Picos Tempestuosos para |cRXP_LOOT_Gelado Carne|r. Alternativamente você pode comprar |cRXP_LOOT_Gelado Carne|r direto da Casa de Leilões em Dalaran
 	.goto TheStormPeaks,43.26,59.11,70,0
 	.goto TheStormPeaks,44.93,61.45,70,0
 	.goto TheStormPeaks,45.77,57.91,70,0
@@ -249,7 +249,7 @@ step
 	.isOnQuest 13114 << Horde
 step << Alliance
 	#sticky
-	>>Abate |cRXP_ENEMY_Rhinos|r em Picos Tempestuosos para |cRXP_LOOT_Gelado Carne|r. Alternativamente você pode comprar |cRXP_LOOT_Gelado Carne|r direto da Casa de Leilões em Objetos de TBC City ou Ironforge
+	>> Abate |cRXP_ENEMY_Rhinos|r em Picos Tempestuosos para |cRXP_LOOT_Gelado Carne|r. Alternativamente você pode comprar |cRXP_LOOT_Gelado Carne|r direto da Casa de Leilões em Objetos de TBC City ou Ironforge
 	.goto TheStormPeaks,43.26,59.11,70,0
 	.goto TheStormPeaks,44.93,61.45,70,0
 	.goto TheStormPeaks,45.77,57.91,70,0
@@ -264,7 +264,7 @@ step << Alliance
 	.isOnQuest 13102
 step << Horde
 	#sticky
-	>>Abate |cRXP_ENEMY_Rhinos|r em Picos Tempestuosos para |cRXP_LOOT_Gelado Carne|r. Alternativamente você pode comprar |cRXP_LOOT_Gelado Carne|r direto da Casa de Leilões em Orgrimmar
+	>> Abate |cRXP_ENEMY_Rhinos|r em Picos Tempestuosos para |cRXP_LOOT_Gelado Carne|r. Alternativamente você pode comprar |cRXP_LOOT_Gelado Carne|r direto da Casa de Leilões em Orgrimmar
 	.goto TheStormPeaks,43.26,59.11,70,0
 	.goto TheStormPeaks,44.93,61.45,70,0
 	.goto TheStormPeaks,45.77,57.91,70,0
@@ -359,7 +359,7 @@ step << Horde
 step
 	#sticky
     #completewith stew
-	>>Abate |cRXP_ENEMY_Rhinos|r em Picos Tempestuosos para |cRXP_LOOT_Gelado Carne|r. Alternativamente você pode comprar |cRXP_LOOT_Gelado Carne|r ou |cRXP_LOOT_Ensopado do Norte|r direto da Casa de Leilões em Dalaran
+	>> Abate |cRXP_ENEMY_Rhinos|r em Picos Tempestuosos para |cRXP_LOOT_Gelado Carne|r. Alternativamente você pode comprar |cRXP_LOOT_Gelado Carne|r ou |cRXP_LOOT_Ensopado do Norte|r direto da Casa de Leilões em Dalaran
 	.goto TheStormPeaks,43.26,59.11,70,0
 	.goto TheStormPeaks,44.93,61.45,70,0
 	.goto TheStormPeaks,45.77,57.91,70,0
@@ -375,7 +375,7 @@ step
 step << Alliance
 	#sticky
     #completewith stew
-	>>Abate |cRXP_ENEMY_Rhinos|r em Picos Tempestuosos para |cRXP_LOOT_Gelado Carne|r. Alternativamente você pode comprar |cRXP_LOOT_Gelado Carne|r ou |cRXP_LOOT_Ensopado do Norte|r direto da Casa de Leilões em Objetos de TBC City ou Ironforge
+	>> Abate |cRXP_ENEMY_Rhinos|r em Picos Tempestuosos para |cRXP_LOOT_Gelado Carne|r. Alternativamente você pode comprar |cRXP_LOOT_Gelado Carne|r ou |cRXP_LOOT_Ensopado do Norte|r direto da Casa de Leilões em Objetos de TBC City ou Ironforge
 	.goto TheStormPeaks,43.26,59.11,70,0
 	.goto TheStormPeaks,44.93,61.45,70,0
 	.goto TheStormPeaks,45.77,57.91,70,0
@@ -391,7 +391,7 @@ step << Alliance
 step << Horde
 	#sticky
     #completewith stew
-	>>Abate |cRXP_ENEMY_Rhinos|r em Picos Tempestuosos para |cRXP_LOOT_Gelado Carne|r. Alternativamente você pode comprar |cRXP_LOOT_Gelado Carne|r ou |cRXP_LOOT_Ensopado do Norte|r direto da Casa de Leilões em Orgrimmar
+	>> Abate |cRXP_ENEMY_Rhinos|r em Picos Tempestuosos para |cRXP_LOOT_Gelado Carne|r. Alternativamente você pode comprar |cRXP_LOOT_Gelado Carne|r ou |cRXP_LOOT_Ensopado do Norte|r direto da Casa de Leilões em Orgrimmar
 	.goto TheStormPeaks,43.26,59.11,70,0
 	.goto TheStormPeaks,44.93,61.45,70,0
 	.goto TheStormPeaks,45.77,57.91,70,0
@@ -410,8 +410,8 @@ step << Alliance
 	>>Para aprender a cozinhar |cRXP_LOOT_Ensopado do Norte|r você deve levar 4 |cRXP_LOOT_Gelado Carne|r para |cRXP_FRIENDLY_Brom Brewbaster|r em Fiorde Uivante. Alternativamente você pode comprar |cRXP_LOOT_Ensopado do Norte|r direto da Casa de Leilões. Se você está comprando |cRXP_LOOT_Ensopado do Norte|r da Casa de Leilões pule este passo
 	>>Se você está completando esta missão, você precisará de um total de 8 Carne Gelada
 	.collect 43013,4 -- Chilled Meat (4)
-	.accept 13087 >>Aceite Culinária do Norte
-	.turnin 13087 >>Entregue Culinária do Norte
+	.accept 13087 >> Aceite Culinária do Norte
+	.turnin 13087 >> Entregue Culinária do Norte
 	.goto HowlingFjord,58.21,62.06
 	.target Brom Brewbaster
 step << Horde
@@ -421,8 +421,8 @@ step << Horde
 	>>Para aprender a cozinhar |cRXP_LOOT_Ensopado do Norte|r você deve levar 4 |cRXP_LOOT_Gelado Carne|r para |cRXP_FRIENDLY_Tomás Kolichio|r em Fiorde Uivante. Alternativamente você pode comprar |cRXP_LOOT_Ensopado do Norte|r direto da Casa de Leilões. Se você está comprando |cRXP_LOOT_Ensopado do Norte|r da Casa de Leilões pule este passo
 	>>Se você está completando esta missão, você precisará de um total de 8 Carne Gelada
 	.collect 43013,4 -- Chilled Meat (4)
-	.accept 13089 >>Aceite Culinária do Norte
-	.turnin 13089 >>Entregue Culinária do Norte
+	.accept 13089 >> Aceite Culinária do Norte
+	.turnin 13089 >> Entregue Culinária do Norte
 	.goto HowlingFjord,78.61,29.48
 	.target Thomas Kolichio
 step << Alliance
