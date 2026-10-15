@@ -4849,16 +4849,16 @@ step << Rogue
 step << Hunter
     .goto 1453/0,765.700,-8804.000
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Catherine Leland|r
-    >>|cRXP_BUY_Kauft eins|r |T134335:0|t[Glänzendes Schmuckstück] |cRXP_BUY_und drei|r |T134324:0|t[Nachtkriecher] |cRXP_BUY_von ihr. Dies ist für eine 900-XP-Quest|r
+    >>|cRXP_BUY_Kauft ein|r |T134335:0|t[Glänzendes Schmuckstück] |cRXP_BUY_und drei|r |T134324:0|t[Nachtkriecher] |cRXP_BUY_von ihr. Dies ist für eine 900xp Quest|r
     .collect 6529,1,95065,1 --|1/1 Shiny Bauble
     .collect 6530,3,95065,1 --|3/3 Nightcrawlers
     .target Catherine Leland
 step << Hunter
     .goto 1453/0,1269.100,-8540.601
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Gilbert Grau::267118|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Gilbert Gray::267118|r
     .target Gilbert Gray::267118
-    .accept 95065 >>Akzeptiert die Quest Fishin' Zeit
-    .turnin 95065 >>Gebt die Quest Fishin' Zeit ab
+    .accept 95065 >>Akzeptiert die Quest Zeit zu fischen
+    .turnin 95065 >>Gebt die Quest Zeit zu fischen ab
 step << Hunter
     #optional
     #requires DockTravel

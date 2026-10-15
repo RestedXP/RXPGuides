@@ -2793,10 +2793,10 @@ step << NightElf
     .goto 1432/0,-3251.5499,-5285.8790,0
     .goto 1432/0,-3342.5748,-5484.5540,0
     .goto 1432/0,-3386.7082,-5462.4790,0
-    >>Hebt den |cRXP_PICK_Verworfenen Angelwerkzeugkasten|r vom Boden auf
-    >>|cRXP_WARN_HINWEIS: Das kann an vielen verschiedenen Orten spawnen. Schwimmt herum, bis ihr das Ausrufezeichen auf der Minikarte von Euch seht|r
-    >>|cRXP_WARN_Seid vorsichtig vor hohen Stufengegnern|r |cRXP_ENEMY_Junger Dreschadon|r
-    .accept 86614 >>Akzeptiert die Quest Silber of the Waves
+    >>Klickt die |cRXP_PICK_Weggeworfene Kiste mit Angelzubehör|r auf dem Seeboden
+    >>|cRXP_WARN_HINWEIS: Dies kann an vielen verschiedenen Orten erscheinen. Schwimmt herum, bis ihr das Ausrufezeichen auf eurer Minikarte seht|r
+    >>|cRXP_WARN_Vorsicht vor hochstufigen|r |cRXP_ENEMY_Junger Dreschadons|r
+    .accept 86614 >>Akzeptiert die Quest Silberschatz der Wellen
 step << NightElf
     .goto Loch Modan,64.89,66.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Magmar Fellhew|r
@@ -2815,7 +2815,7 @@ step << NightElf
 step << NightElf Rogue/NightElf Hunter/NightElf Warrior/NightElf Druid
     .goto Loch Modan,82.6,64.0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Kat|r
-    .vendor >> |cRXP_BUY_Kauft|r |T132539:0|t[Agil Stiefel] |cRXP_BUY_bei ihr, wenn sie verfügbar sind|r
+    .vendor >> |cRXP_BUY_Kauft|r |T132539:0|t[Bewegliche Stiefel] |cRXP_BUY_bei ihr, wenn sie verfügbar sind|r
     .target Kat Sampson
 step << NightElf
     .goto Loch Modan,80.09,64.16,60,0
@@ -2845,37 +2845,37 @@ step << NightElf
 step << NightElf
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Marek Ironheart|r
     .accept 385 >> Akzeptiert die Quest Krokiliskenjagd
-    .accept 86758 >>Akzeptiert die Quest Twisting the Messer
+    .accept 86758 >>Akzeptiert die Quest Ist dies ein Dolch
     .goto Loch Modan,81.76,61.66
     .target Marek Ironheart
 step << NightElf
     #completewith next
-    >>Tötet |cRXP_ENEMY_Loch Crocolisks|r. Plündert sie für |cRXP_LOOT_Meat|r und |cRXP_LOOT_Skin|r
+    >>Tötet |cRXP_ENEMY_Lochkrokilisk|r. Plündert sie für ihr |cRXP_LOOT_Fleisch|r und |cRXP_LOOT_Haut|r
     .complete 385,1 -- Crocolisk Meat (5)
     .complete 385,2 -- Crocolisk Skin (6)
     .mob Loch Crocolisk
 step
     --@TODO add a line for this
     .goto Loch Modan,62,44
-    >>Tötet |cRXP_ENEMY_Daggerfang|r, er |cRXP_WARN_könnte die Küste entlang patrouillieren|r. Plündert |T3736888:0|t[|cRXP_LOOT_Marek's Krokodil-Jagdmesser|r]
+    >>Tötet |cRXP_ENEMY_Dolchzahn|r, er |cRXP_WARN_könnte die Küste entlang patrouillieren|r. Plündert ihr für|T3736888:0|t[|cRXP_LOOT_Mareks Krokojagdmesser|r]
     .complete 86758,1 --Marek's Croc Hunting Knife (1)
     .mob Daggerfang
 step << NightElf
     #completewith next
-    .goto Loch Modan,54.7,38.3,200 >> Reist zur Insel in Der Loch
+    .goto Loch Modan,54.7,38.3,200 >> Reist zu der Insel, die mitten im Loch liegt
 step << NightElf
     .goto Loch Modan,58.86,38.32,80,0
     .goto Loch Modan,54.80,40.02,60,0
     .goto Loch Modan,54.16,35.79,60,0
     .goto Loch Modan,54.72,38.15
-    >>Tötet |cRXP_ENEMY_Loch Crocolisks|r. Plündert sie für |cRXP_LOOT_Meat|r und |cRXP_LOOT_Skin|r
+    >>Tötet |cRXP_ENEMY_Lochkrokilisk|r. Plündert sie für ihr |cRXP_LOOT_Fleisch|r und |cRXP_LOOT_Haut|r
     .complete 385,1 -- Crocolisk Meat (5)
     .complete 385,2 -- Crocolisk Skin (6)
     .mob Loch Crocolisk
 step << NightElf
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Marek Ironheart|r
     .turnin 385 >>Gebt die Quest Krokiliskenjagd ab
-    .turnin 86758 >>Gebt die Quest Twisting the Messer ab
+    .turnin 86758 >>Gebt die Quest Ist dies ein Dolch ab
     .goto Loch Modan,81.76,61.66
     .target Marek Ironheart
 step << NightElf
@@ -2893,7 +2893,7 @@ step << NightElf
     .goto 1432/0,-3086.600,-5216.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Khara Deepwater::1684|r
     .target Khara Deepwater::1684
-    .turnin 86614 >>Gebt die Quest Silber of the Waves ab
+    .turnin 86614 >>Gebt die Quest Silberschatz der Wellen ab
 step << NightElf
     #label flyIF
     .goto 1432/0,-2929.87,-5424.84

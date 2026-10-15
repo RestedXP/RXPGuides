@@ -90,7 +90,7 @@ step << !Tauren !Hunter !Shaman
     .isQuestAvailable 840
 step
     #optional
-    .abandon 480 >> Brecht die Quest Die Weberin ab, um Probleme mit dem Questtagebuch zu vermeiden. Ihr werdet sie später erneut aufnehmen.
+    .abandon 480 >> Brecht die Quest Der Wirker ab, um Probleme mit dem Questtagebuch zu vermeiden. Ihr werdet sie später erneut annehmen
     .isOnQuest 480
 step
     #completewith next

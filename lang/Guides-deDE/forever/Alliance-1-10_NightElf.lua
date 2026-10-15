@@ -1859,7 +1859,7 @@ step
     .goto 1438/1,997.200,9903.601
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Byancie::6094|r
     .target Byancie::6094
-    .turnin 99050 >>Gebt die Quest Der Große Baum versorgt ab
+    .turnin 99050 >>Gebt die Quest Gaben des Großen Baums ab
     .accept 99073 >>Akzeptiert die Quest Leidlinderung
     .xp >10,1
 step
@@ -1989,7 +1989,7 @@ step
     .target Moon Priestess Amara
 step
     #optional
-    .abandon 87288 >> Brecht die Quest Soft Saber Pelts ab, da ihr nicht zu Dolanaar zurückkehren werdet.
+    .abandon 87288 >> Brecht die Quest Weiche Säblerpelze ab, da ihr nicht zu Dolanaar zurückkehren werdet
 step << Rogue
     #softcore
     #completewith next
