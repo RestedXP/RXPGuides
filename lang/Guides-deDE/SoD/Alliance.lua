@@ -1,0 +1,229 @@
+if GetLocale() ~= "deDE" then return end
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance Druid SoD/Alliance Hunter SoD
+#group RestedXP Rune & Books Dungeonführer
+#subgroup Handschuhe
+#name Aufschlitzen - 12 (Dunkelküste) << Druid
+#name Meister der Tiere - 12 (Dunkelküste) << Hunter
+#title Aufschlitzen << Druid
+#title Meister der Tiere << Hunter
+
+step << Druid/Hunter
+    .goto Darkshore,39.84,53.82,50,0
+    .goto Darkshore,40.03,56.24,50,0
+    .goto Darkshore,39.34,56.58,50,0
+    .goto Darkshore,39.84,53.82
+    >>Tötet |cRXP_ENEMY_Blackwood Pfadfinder|r und |cRXP_ENEMY_Blackwood Windtalkers|r. Plündert sie für |T237270:0|t[|cRXP_LOOT_Crab Treats|r]
+    .collect 209027,1 -- Crab Treats (1)
+    .mob Blackwood Pathfinder
+    .mob Blackwood Windtalker
+    .train 416049,1 << Druid
+    .train 410110,1 << Hunter
+step << Druid/Hunter
+    .goto Darkshore,35.8,55.6
+    .use 209027 >> |cRXP_WARN_Benutzt das|r |T237270:0|t[|cRXP_LOOT_Krabbenleckerli|r] |cRXP_WARN_auf einem |cRXP_ENEMY_Junger Riffkriecher|r, um das zu erhalten|r |T134419:0|t[|cRXP_FRIENDLY_Rune des Aufschlitzens|r] << Druid
+    .use 209027 >> |cRXP_WARN_Benutzt das|r |T237270:0|t[|cRXP_LOOT_Krabbenleckerli|r] |cRXP_WARN_auf einem |cRXP_ENEMY_Junger Riffkriecher|r, um das zu erhalten|r |T134419:0|t[|cRXP_FRIENDLY_Rune von Meister der Tiere|r] << Hunter
+    .collect 208687,1 << Druid -- Rune of Lacerate (1)
+    .collect 208701,1 << Hunter -- Beast Mastery (1)
+    .target Young Reef Crawler
+    .train 416049,1 << Druid
+    .train 410110,1 << Hunter
+step << Druid/Hunter
+    .train 416049 >> |cRXP_WARN_Benutzt die|r |T134419:0|t[|cRXP_FRIENDLY_Rune von Aufschlitzen|r] |cRXP_WARN_zum Trainieren von|r |T132131:0|t[Aufschlitzen] << Druid
+    .use 208687 << Druid
+    .itemcount 208687,1 << Druid
+    .train 410110 >> |cRXP_WARN_Benutzt die|r |T134419:0|t[|cRXP_FRIENDLY_Rune des Meister der Tiere|r] |cRXP_WARN_zum Trainieren von|r |T132270:0|t[Meister der Tiere] << Hunter
+    .use 208701 << Hunter
+    .itemcount 208701,1 << Hunter
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance Druid SoD/Alliance Hunter SoD
+#group RestedXP Rune & Books Dungeonführer
+#subgroup Handschuhe
+#name Zerfleischen - 8 (Teldrassil) << Druid
+#name Explosivschuss - 8 (Teldrassil) << Hunter
+#title Zerfleischen << Druid
+#title Explosivschuss << Hunter
+
+step
+    +|cRXP_WARN_Ihr solltet mindestens Stufe 8 sein, um die Fähigkeit zu erwerben|r |T133816:0|t[Handschuhe prägen - Zerfleischen] |cRXP_WARN_nur in Teldrassil|r << Druid
+    +|cRXP_WARN_Ihr solltet mindestens Stufe 8 sein, um die Fähigkeit zu erwerben|r |T133816:0|t[Handschuhe prägen - Explosivschuss] |cRXP_WARN_nur in Teldrassil|r << Hunter
+    .train 410025,1 << Druid
+    .train 410123,1 << Hunter
+    .xp >8,1
+step
+    #completewith Rune
+    #label Teld1
+    .zone Teldrassil >> Reist nach Teldrassil
+    .subzoneskip 262
+    .train 410025,1 << Druid
+    .train 410123,1 << Hunter
+step
+    #optional
+    #requires Teld1
+    #label ShadowCave1
+    #completewith Rune
+    .goto 1438,44.197,58.040
+    .subzone 262 >> Betretet den Grabhügel von Ban'ethil
+    .train 410025,1 << Druid
+    .train 410123,1 << Hunter
+step
+    #optional
+    #requires ShadowCave1
+    #completewith Rune
+    .goto 1438,44.064,58.196,15,0
+    .goto 1438,43.975,58.537,15,0
+    .goto 1438,44.196,58.597,15,0
+    .goto 1438,44.167,58.204,15,0
+    .goto 1438,43.073,59.123,15,0
+    .goto 1438,43.399,59.885,15,0
+    .goto 1438,43.602,59.799,15,0
+    .goto 1438,44.254,59.083,15,0
+    .goto 1438,44.292,58.555,15,0
+    .goto 1438,43.944,57.918,15,0
+    .goto 1438,43.947,57.297,15,0
+    .goto 1438,44.731,57.355,15,0
+    .goto 1438,45.118,57.701,20 >> Reisen towards |cRXP_ENEMY_Rageclaw|r inside
+    .train 410025,1 << Druid
+    .train 410123,1 << Hunter
+step
+    #loop
+    #label Rune
+    .line 1438,45.055,57.739,45.008,58.055,45.091,58.386,45.256,58.538,45.492,58.609,45.668,58.356,45.702,57.980,45.604,57.699,45.370,57.566,45.161,57.638,45.118,57.701
+    .goto 1438,45.055,57.739,12,0
+    .goto 1438,45.008,58.055,12,0
+    .goto 1438,45.091,58.386,12,0
+    .goto 1438,45.256,58.538,12,0
+    .goto 1438,45.492,58.609,12,0
+    .goto 1438,45.668,58.356,12,0
+    .goto 1438,45.702,57.980,12,0
+    .goto 1438,45.604,57.699,12,0
+    .goto 1438,45.370,57.566,12,0
+    .goto 1438,45.161,57.638,12,0
+    .goto 1438,45.118,57.701,12,0
+    >>Tötet |cRXP_ENEMY_Zornklaue|r auf der untersten Ebene. Plündert |T136061:0|t[|cRXP_LOOT_Götze der Bärenwut|r] << Druid
+    >>Tötet |cRXP_ENEMY_Zornklaue|r auf der untersten Ebene. Plündert |T134419:0|t[|cRXP_LOOT_Rune des Explosivschusses|r] << Hunter
+    .collect 206954,1 << Druid -- Idol of Ursine Rage (1)
+    .collect 206169,1 << Hunter -- Rune of Explosive Shot (1)
+    .train 410025,1 << Druid
+    .train 410123,1 << Hunter
+    .unitscan Rageclaw
+step << Hunter
+    .train 410123 >> |cRXP_WARN_Benutzt die|r |T134419:0|t[|cRXP_LOOT_Rune des Explosivschusses|r] |cRXP_WARN_um|r |T133816:0|t[Handschuhe prägen - Explosivschuss] zu erlernen
+    .use 206169
+    .itemcount 206169,1
+step << Druid
+    .equip 18,206954 >> |cRXP_WARN_Legt das an|r |T136061:0|t[|cRXP_LOOT_Götze der Bärenwut|r]
+    .use 206954
+    .itemcount 206954,1
+    .train 410025,1
+step << Druid
+    #loop
+    .goto 1438,44.731,57.355,0
+    .goto 1438,44.254,59.083,0
+    .goto 1438,44.064,58.196,0
+    .goto 1438,44.731,57.355,15,0
+    .goto 1438,43.947,57.297,15,0
+    .goto 1438,43.944,57.918,15,0
+    .goto 1438,44.292,58.555,15,0
+    .goto 1438,44.254,59.083,15,0
+    .goto 1438,43.602,59.799,15,0
+    .goto 1438,43.399,59.885,15,0
+    .goto 1438,43.073,59.123,15,0
+    .goto 1438,44.167,58.204,15,0
+    .goto 1438,44.196,58.597,15,0
+    .goto 1438,43.975,58.537,15,0
+    .goto 1438,44.064,58.196,15,0
+    .aura 414824 >>|cRXP_WARN_Während ihr in|r |T132276:0|t[Bärengestalt]|cRXP_WARN_, behaltet 50 oder mehr Wut für 60 Sek.|r
+    .itemStat 18,QUALITY,2
+    .train 410025,1
+step << Druid
+    .train 410025 >>|cRXP_WARN_Benutzt die|r |T136061:0|t[|cRXP_LOOT_Götze der Bärenwut|r] |cRXP_WARN_zum Erlernen|r |T133816:0|t[Handschuhe prägen - Zerfleischen]
+    .use 206954
+    .aura -414824
+    .train 410025,1
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance Rogue SoD/Alliance Warrior SoD/Alliance Priest SoD
+#group RestedXP Rune & Books Dungeonführer
+#subgroup Brust << Rogue/Priest
+#subgroup Beine << Warrior
+#name Hinterhältiger Mord - 8 (Teldrassil) << Rogue
+#name Wütender Donner - 8 (Teldrassil) << Warrior
+#name Pest der Leere - 8 (Teldrassil) << Priest
+#title Hinterhältiger Mord << Rogue
+#title Wütender Donner << Warrior
+#title Pest der Leere << Priest
+
+step
+    #completewith next
+    .goto Teldrassil,44.18,58.19
+    .subzone 262 >> BETRITT den Grabhügel von Ban'ethil
+    .train 424992,1 << Rogue
+    .train 403476,1 << Warrior
+    .train 425216,1 << Priest
+step << Rogue
+    .goto Teldrassil,44.155,61.182
+    >>Öffnet den |cRXP_PICK_Gnarlpine-Versteck|r. Plündert ihn für die |T134419:0|t[|cRXP_FRIENDLY_Rune von Abschlachten|r]
+    >>|cRXP_WARN_Hinweis:|cRXP_PICK_ Der |rGnarlpine-Versteck|r erscheint irgendwo zufällig in den Grabhügeln von Ban'ethil.
+    .collect 203993 -- Rune of Slaughter (1)
+    .train 424992 >>|cRXP_WARN_Benutzt die|r |T134419:0|t[|cRXP_FRIENDLY_Rune des Abschlachtens|r] |cRXP_WARN_zum Trainieren von|r |T236280:0|t[Hinterhältiger Mord]
+    .use 203993
+step << Warrior
+    .goto Teldrassil,44.401,60.655
+    >>Öffnet den |cRXP_PICK_Gnarlpine-Versteck|r. Plündert ihn für die |T134419:0|t[|cRXP_FRIENDLY_Rune des Wütenden Donners|r]
+    >>|cRXP_WARN_Hinweis:|cRXP_PICK_ Der |rGnarlpine-Versteck|r kann an mehreren Stellen in den Grabhügeln von Ban'ethil erscheinen.
+    .collect 204809,1 -- Rune of Furious Thunder (1)
+    .train 403476 >>|cRXP_WARN_Benutzt die|r |T134419:0|t[|cRXP_FRIENDLY_Rune des Wütenden Donners|r] |cRXP_WARN_zum Trainieren|r |T136048:0|t[Wütender Donner]
+    .use 204809
+step << Priest
+    .goto Teldrassil,44.401,60.655
+    >>Öffnet den |cRXP_PICK_Gnarlpine-Versteck|r. Plündert ihn für eine |T136222:0|t[|cRXP_FRIENDLY_Erinnerung einer Finsteren Entschlossenheit|r]
+    >>|cRXP_WARN_Hinweis: Die |cRXP_PICK_Gnarlpine Cache|r kann mehrere Spawnpositionen in den Ban'ethil Barrows|r haben
+    .collect 205940,1 -- Memory of a Dark Purpose (1)
+    .train 425216 >>|cRXP_WARN_Benutzt die|r |T136222:0|t[|cRXP_FRIENDLY_Erinnerung an einen dunklen Zweck|r] |cRXP_WARN_zum Trainieren von|r |T237514:0|t[Pest der Leere]
+    .use 205940
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance Rogue SoD/Alliance Priest SoD
+#group RestedXP Rune & Books Dungeonführer
+#subgroup Handschuhe << Rogue
+#subgroup Beine << Priest
+#name Verstümmeln - 8 (Teldrassil) << Rogue
+#name Geteilter Schmerz - 8 (Teldrassil) << Priest
+#title Verstümmeln << Rogue
+#title Geteilter Schmerz << Priest
+
+step << Rogue/Priest
+    #completewith next
+    .goto Teldrassil,54.68,52.84,20,0
+    .goto Teldrassil,54.42,51.19,15 >> Reist zum Teufelsfels
+    .train 400094,1 << Rogue
+    .train 402854,1 << Priest
+step << Rogue/Priest
+    .goto Teldrassil,51.2,50.6
+    >>Tötet |cRXP_ENEMY_Lord Melenas|r. Plündert sie für |T134419:0|t[|cRXP_FRIENDLY_Rune of Verstümmelung|r] << Rogue
+    >>Tötet |cRXP_ENEMY_Lord Melenas|r. Plündert sie für |T136222:0|t[|cRXP_FRIENDLY_Memory of an Eingesperrt Retter|r] << Priest
+    >>|cRXP_ENEMY_Herr Melenas|r |cRXP_WARN_kann sich an vielen verschiedenen Orten in Teufelsfels befinden.|r
+    .collect 203990,1 << Rogue
+    .collect 205945,1 << Priest
+    .unitscan Lord Melenas
+    .train 400094,1 << Rogue
+    .train 402854,1 << Priest
+step << Rogue
+    .train 400094 >> |cRXP_WARN_Benutzt die|r |T134419:0|t[|cRXP_FRIENDLY_Rune der Verstümmelung|r] |cRXP_WARN_zum lernen von|r |T132304:0|t[Verstümmeln]
+    .use 203990
+    .itemcount 203990,1
+step << Priest
+    .train 402854 >> |cRXP_WARN_Benutzt die|r |T136222:0|t[|cRXP_FRIENDLY_Erinnerung eines Eingesperrten Retters|r] |cRXP_WARN_zum Trainieren|r |T136160:0|t[Geteilter Schmerz]
+    >>|cRXP_WARN_Ihr müsst einen|r |T135934:0|t|T136057:0|t[Meditation] |cRXP_WARN_Buff haben durch Eingeben von /knien in einem heiligen Gebiet, wie zum Beispiel einen Mondquell, die Abtei von Nordhain, die Kathedrale von Sturmwind, die Altäre des Lichts in Ambossar, Loch Modan oder der Mystische Bezirk in Eisenschmiede.|r
+    .use 205945
+    .itemcount 205945,1
+]])
