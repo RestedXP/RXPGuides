@@ -1653,7 +1653,7 @@ function addon.ProcessGuideTable(guide)
         local firstLabel = true
         local secondLabel = true
         for n, step in ipairs(guide.steps) do
-            local isShown = addon.IsStepShown(step)
+            local isShown = addon.IsStepShown(step,guide)
             if isShown and startAt and (step.label == startAt or startAt == step.stepId) then
                 firstLabel = startAt
                 startAt = nil

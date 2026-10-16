@@ -223,6 +223,7 @@ addon.RXPGuides = RXPGuides
 _G.RXPGuides = RXPGuides
 
 addon.guideCache = {}
+addon.dungeonOverride = {}
 addon.questQueryList = {}
 addon.itemQueryList = {}
 addon.questAccept = {}
@@ -2526,12 +2527,17 @@ end
 function addon.IsStepShown(step,...)
     local isShown = true
     local ignoreEntry = {}
+    local args = {}
     for _,entry in pairs({...}) do
-        ignoreEntry[entry] = true
+        if type(entry) == "string" then
+            ignoreEntry[entry] = true
+        else
+            table.insert(args,entry)
+        end
     end
     for name,check in pairs(addon.stepLogic) do
         if not ignoreEntry[name] then
-            isShown = isShown and check(step)
+            isShown = isShown and check(step,unpack(args))
         end
     end
     return isShown
@@ -2685,14 +2691,28 @@ function addon.stepLogic.LevelCheck(step)
     if level <= maxLevel then return true end
 end
 
-function addon.stepLogic.DungeonCheck(step)
+function addon.stepLogic.DungeonCheck(step,guide)
     if step.disabled then return false end
     local dungeon = step.dungeon
     local dskip = step.dungeonskip
     --print(dungeon,dskip)
-    if dskip and addon.settings.profile.dungeons[dskip] then
+    local function IsDungeonEnabled(tag)
+        local key
+        if guide then
+            key = guide.group
+        else
+            key = addon.currentGuide and addon.currentGuide.group
+        end
+        local dungeonOverride = addon.dungeonOverride[key]
+        if dungeonOverride and dungeonOverride[tag] ~= nil then
+            return dungeonOverride[tag]
+        else
+            return addon.settings.profile.dungeons[tag]
+        end
+    end
+    if dskip and IsDungeonEnabled(dskip) then
         return false
-    elseif dungeon and dungeon ~= dskip and addon.settings.profile.dungeons[dungeon] then
+    elseif dungeon and dungeon ~= dskip and IsDungeonEnabled(dungeon) then
         return true
     elseif not dungeon then
         return true
