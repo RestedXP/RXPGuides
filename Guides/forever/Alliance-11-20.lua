@@ -2396,6 +2396,8 @@ step << NightElf Warrior
     .use 3107
     .itemcount 3107,1
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.3
+step
+    #label IFExit
 step << NightElf
     #completewith next
     .zone Dun Morogh >> Travel to Dun Morogh
@@ -2426,7 +2428,6 @@ step << NightElf
     .target Rudra Amberstill
     .turnin 314 >>Turn in Protecting the Herd
 step << NightElf
-    #optional
     #label LochEnter
     .goto 1432,16.494,58.424,20,0
     .goto 1432,19.594,62.735,20,0
@@ -2518,7 +2519,7 @@ step << NightElf
     .target Thorgrum Borrelson
 step << NightElf
     #optional
-    #completewith Snowbound
+    #completewith KingsLands 
     >>Kill |cRXP_ENEMY_Elder Black Bears|r. Loot them for their |cRXP_LOOT_Bear Meat|r
     >>Kill |cRXP_ENEMY_Mountain Boars|r. Loot them for their |cRXP_LOOT_Boar Intestines|r
     >>Kill |cRXP_ENEMY_Forest Lurkers|r. Loot them for their |cRXP_LOOT_Spider Ichor|r
@@ -2543,6 +2544,7 @@ step << NightElf
     .target Captain Rugelfuss
     .isQuestComplete 267
 step << NightElf
+    #label KingsLands
     .goto 1432/0,-2602.54,-5832.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Cobbleflint|r
     .turnin 224 >> Turn in In Defense of the King's Lands
@@ -2770,6 +2772,7 @@ step << NightElf
     .turnin 418 >> Turn in Thelsamar Blood Sausages
     .target Vidra Hearthstove
 step << NightElf
+    #label FlintTinder
     .goto Loch Modan,37.17,47.94,8,0
     .goto Loch Modan,37.24,47.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jern Hornhelm|r
@@ -2935,6 +2938,8 @@ step << NightElf
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Khara Deepwater::1684|r
     .target Khara Deepwater::1684
     .turnin 86614 >>Turn in Silver of the Waves
+step
+    #label LochEnd
 step << NightElf
     #label flyIF
     .goto 1432/0,-2929.87,-5424.84
