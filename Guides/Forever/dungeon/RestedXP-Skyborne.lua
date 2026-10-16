@@ -3,13 +3,12 @@ local L = GetLocale() if L and RXP.enabledLocale[L] then return end
 RXPGuides.RegisterGuide([[
 #forever
 #version 1
-#beta
 #name 1-9 Zephras Isle
 #displayname 1-9 Skyborne << Alliance
 #displayname 1-9 Skyborne << Horde
 #group RestedXP Forever Dungeon Guide (A) << Alliance
 #group RestedXP Forever Dungeon Guide (H) << Horde
-#subgroup (WIP) Dungeon Guide 1-20 << Alliance
+#subgroup Dungeon Guide 1-20 << Alliance
 #subgroup (WIP) Dungeon Guide 1-22 << Horde
 #defaultfor Skyborne
 #next 9-13 Zephras Isle
@@ -23,13 +22,12 @@ step << Alliance
 RXPGuides.RegisterGuide([[
 #forever
 #version 1
-#beta
 #name 9-13 Zephras Isle
 #displayname 9-13 Skyborne << Alliance
 #displayname 9-12 Skyborne << Horde
 #group RestedXP Forever Dungeon Guide (A) << Alliance
 #group RestedXP Forever Dungeon Guide (H) << Horde
-#subgroup (WIP) Dungeon Guide 1-20 << Alliance
+#subgroup Dungeon Guide 1-20 << Alliance
 #subgroup (WIP) Dungeon Guide 1-22 << Horde
 #defaultfor Skyborne
 #next 13-15 Westfall << Alliance
@@ -47,7 +45,6 @@ step << Alliance
 RXPGuides.RegisterGuide([[
 #forever
 #version 1
-#beta
 #name Skyborne Hunter Class Quests
 #group RestedXP Forever Dungeon Guide (A) << Alliance
 #group RestedXP Forever Dungeon Guide (H) << Horde
@@ -60,7 +57,6 @@ step
 RXPGuides.RegisterGuide([[
 #forever
 #version 1
-#beta
 #name Skyborne Druid Class Quests
 #displayname Skyborne Druid Class Quests
 #group RestedXP Forever Dungeon Guide (A) << Alliance
@@ -76,7 +72,6 @@ step
 RXPGuides.RegisterGuide([[
 #forever
 #version 1
-#beta
 #name Random Stuff
 #group RestedXP Forever Dungeon Guide (A) << Alliance
 #group RestedXP Forever Dungeon Guide (H) << Horde

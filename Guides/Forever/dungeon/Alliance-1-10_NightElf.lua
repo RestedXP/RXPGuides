@@ -9,9 +9,8 @@ RXPGuides.RegisterGuide([[
 #name 1-6 Shadowglen
 #displayname 1-7 Shadowglen << sod
 #version 1
-#beta
 #group RestedXP Forever Dungeon Guide (A)
-#subgroup (WIP) Dungeon Guide 1-20
+#subgroup Dungeon Guide 1-20
 --#groupid RXP-SRGCE-A1
 #defaultfor NightElf
 #next 6-11 Teldrassil
@@ -26,9 +25,8 @@ RXPGuides.RegisterGuide([[
 #name 6-11 Teldrassil
 #displayname 7-13 Teldrassil << SoD
 #version 1
-#beta
 #group RestedXP Forever Dungeon Guide (A)
-#subgroup (WIP) Dungeon Guide 1-20
+#subgroup Dungeon Guide 1-20
 --#groupid RXP-SRGCE-A1
 #defaultfor NightElf
 #next 14-16 Darkshore

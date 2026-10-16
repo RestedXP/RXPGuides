@@ -7,9 +7,8 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #name 1-6 Northshire
 #version 1
-#beta
 #group RestedXP Forever Dungeon Guide (A)
-#subgroup (WIP) Dungeon Guide 1-20
+#subgroup Dungeon Guide 1-20
 --#groupid RXP-SRGCE-A1
 #defaultfor Human
 #next 6-11 Elwynn Forest
@@ -23,10 +22,9 @@ step
 RXPGuides.RegisterGuide([[
 #forever
 #version 1
-#beta
 << Alliance
 #group RestedXP Forever Dungeon Guide (A)
-#subgroup (WIP) Dungeon Guide 1-20
+#subgroup Dungeon Guide 1-20
 --#groupid RXP-SRGCE-A1
 #name 6-11 Elwynn Forest
 #next 11-13 Loch Modan
@@ -39,10 +37,9 @@ step
 RXPGuides.RegisterGuide([[
 #forever
 #version 1
-#beta
 << Alliance
 #group RestedXP Forever Dungeon Guide (A)
-#subgroup (WIP) Dungeon Guide 1-20
+#subgroup Dungeon Guide 1-20
 --#groupid RXP-SRGCE-A1
 #name 11-13 Loch Modan
 #next 13-15 Westfall

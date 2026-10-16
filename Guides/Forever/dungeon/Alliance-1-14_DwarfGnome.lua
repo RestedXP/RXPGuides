@@ -5,10 +5,9 @@ local L = GetLocale() if L and RXP.enabledLocale[L] then return end
 RXPGuides.RegisterGuide([[
 #forever
 #version 1
-#beta
 << Alliance
 #group RestedXP Forever Dungeon Guide (A)
-#subgroup (WIP) Dungeon Guide 1-20
+#subgroup Dungeon Guide 1-20
 --#groupid RXP-SRGCE-A1
 #name 1-5 Coldridge Valley
 #next 5-11 Dun Morogh
@@ -21,10 +20,9 @@ step
 RXPGuides.RegisterGuide([[
 #forever
 #version 1
-#beta
 << Alliance
 #group RestedXP Forever Dungeon Guide (A)
-#subgroup (WIP) Dungeon Guide 1-20
+#subgroup Dungeon Guide 1-20
 --#groupid RXP-SRGCE-A1
 #name 5-11 Dun Morogh
 #next 11-12 Elwynn (Dwarf/Gnome);11-12 Voidwalker Quest;12-14 Loch Modan (Dwarf/Gnome);11-13 Loch Modan (Hunter)
@@ -38,11 +36,10 @@ RXPGuides.RegisterGuide([[
 #forever
 << Alliance !Hunter
 #group RestedXP Forever Dungeon Guide (A)
-#subgroup (WIP) Dungeon Guide 1-20
+#subgroup Dungeon Guide 1-20
 --#groupid RXP-SRGCE-A1
 #name 11-12 Elwynn (Dwarf/Gnome)
 #version 1
-#beta
 #defaultfor Gnome/Dwarf
 #next 12-14 Loch Modan (Dwarf/Gnome)
 
@@ -53,10 +50,9 @@ step
 RXPGuides.RegisterGuide([[
 #forever
 #version 1
-#beta
 << Alliance !Hunter
 #group RestedXP Forever Dungeon Guide (A)
-#subgroup (WIP) Dungeon Guide 1-20
+#subgroup Dungeon Guide 1-20
 --#groupid RXP-SRGCE-A1
 #name 12-14 Loch Modan (Dwarf/Gnome)
 #next 13-15 Westfall
@@ -69,10 +65,9 @@ step
 RXPGuides.RegisterGuide([[
 #forever
 #version 1
-#beta
 << Alliance Hunter
 #group RestedXP Forever Dungeon Guide (A)
-#subgroup (WIP) Dungeon Guide 1-20
+#subgroup Dungeon Guide 1-20
 --#groupid RXP-SRGCE-A1
 #name 11-13 Loch Modan (Hunter)
 #next 13-15 Westfall

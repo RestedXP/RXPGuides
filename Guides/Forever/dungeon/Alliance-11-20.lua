@@ -4,12 +4,10 @@ local L = GetLocale() if L and RXP.enabledLocale[L] then return end
 RXPGuides.RegisterGuide([[
 #forever
 #version 1
-#beta
-<< Alliance
-<< NightElf
+<< Alliance NightElf
 #name 11-16 Darkshore/Loch Modan
 #group RestedXP Forever Dungeon Guide (A)
-#subgroup (WIP) Dungeon Guide 1-20
+#subgroup Dungeon Guide 1-20
 --#groupid RXP-SRGCE-A1
 #next 17-18 Hall of Thanes
 
@@ -661,12 +659,11 @@ step << NightElf
 RXPGuides.RegisterGuide([[
 #forever
 #version 1
-#beta
 << Alliance !NightElf
 #name 13-15 Westfall 
 #displayname 14-15 Westfall << Gnome/Dwarf !Hunter
 #group RestedXP Forever Dungeon Guide (A)
-#subgroup (WIP) Dungeon Guide 1-20
+#subgroup Dungeon Guide 1-20
 --#groupid RXP-SRGCE-A1
 #next 15-17 Darkshore
 
@@ -1416,11 +1413,10 @@ step
 RXPGuides.RegisterGuide([[
 #forever
 #version 1
-#beta
 << Alliance !NightElf
 #name 15-17 Darkshore
 #group RestedXP Forever Dungeon Guide (A)
-#subgroup (WIP) Dungeon Guide 1-20
+#subgroup Dungeon Guide 1-20
 --#groupid RXP-SRGCE-A1
 #next 17-18 Hall of Thanes
 
@@ -2427,10 +2423,9 @@ step
 RXPGuides.RegisterGuide([[
 #forever
 #version 1
-#beta
 << Alliance
 #group RestedXP Forever Dungeon Guide (A)
-#subgroup (WIP) Dungeon Guide 1-20
+#subgroup Dungeon Guide 1-20
 --#groupid RXP-SRGCE-A1
 #name 17-18 Hall of Thanes
 #next 18-19 Ruins of Lordaeron
@@ -2677,10 +2672,9 @@ RXPGuides.RegisterGuide([[
 #forever
 #season 0,1
 #version 1
-#beta
 << Alliance
 #group RestedXP Forever Dungeon Guide (A)
-#subgroup (WIP) Dungeon Guide 1-20
+#subgroup Dungeon Guide 1-20
 --#groupid RXP-SRGCE-A1
 #name 18-19 Ruins of Lordaeron
 #next 19-20 Deadmines
@@ -2951,10 +2945,9 @@ step << Priest
 RXPGuides.RegisterGuide([[
 #forever
 #version 1
-#beta
 << Alliance
 #group RestedXP Forever Dungeon Guide (A)
-#subgroup (WIP) Dungeon Guide 1-20
+#subgroup Dungeon Guide 1-20
 --#groupid RXP-SRGCE-A1
 #name 19-20 Deadmines
 #displayname 18-20 Deadmines/Redridge << NightElf
@@ -3255,6 +3248,20 @@ step << Druid
     .trainer >> Train your class spells
     .target Loganaar
 step << Druid
+    .goto 1450/1,-2212.25,7854.28
+    .use 15883 >>|cRXP_WARN_Use the|r |T133443:0|t[Half Pendant of Aquatic Agility] |cRXP_WARN_to combine it with the|r |T133442:0|t[Half Pendant of Aquatic Endurance] |cRXP_WARN_at the Shrine of Remulos|r
+    .complete 272,1 --Collect Pendant of the Sea Lion (x1)
+step << Druid
+    #completewith next
+	.cast 18960 >> Cast Teleport: Moonglade
+    >>|cRXP_WARN_This will save you time from running back|r
+step << Druid
+    .goto 1450/1,-2678.74,8020.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dendrite Starblaze|r
+    .turnin 272 >> Turn in Trial of the Sea Lion
+    .accept 5061 >> Accept Aquatic Form
+    .target Dendrite Starblaze
+step << Druid
     .hs >> Hearth to Sentinel Hill
 step << !Druid
     .goto 1436/0,1707.2116,-10583.0227
@@ -3519,6 +3526,11 @@ step << Rogue
     >>|cRXP_WARN_Turn in the Deadmines quests if you are not level 20 yet|r
     .trainer >> Train your class spells
     .target Osborne the Night Man
+step << Rogue
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Mathias Shaw|r
+    .accept 2360 >> Accept Mathias and the Defias
+    .goto 1453/0,362.28,-8815.23
+    .target Master Mathias Shaw
 step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wu|r or |cRXP_FRIENDLY_Ilsa|r
     >>|cRXP_WARN_Turn in the Deadmines quests if you are not level 20 yet|r
@@ -3556,6 +3568,12 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shoni the Shilent|r
     .turnin 2040 >> Turn in Underground Assault
     .target Shoni the Shilent
+step
+    .goto 1453/0,719.67,-8550.30
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baros Alexston|r
+    .turnin 373 >>Turn in The Unsent Letter
+    .accept 389 >>Accept Bazil Thredd
+    .target Baros Alexston
 step << Warlock
     #optional
     #completewith next
@@ -3618,10 +3636,9 @@ step
 RXPGuides.RegisterGuide([[
 #forever
 #version 1
-#beta
 << Alliance
 #group RestedXP Forever Dungeon Guide (A)
-#subgroup (WIP) Dungeon Guide 1-20
+#subgroup Dungeon Guide 1-20
 --#groupid RXP-SRGCE-A1
 #name 20-21 Darkshore/Ashenvale
 #next 21-23 Ashenvale/Stonetalon
@@ -4023,7 +4040,7 @@ step
     .goto 1439,53.113,18.099
     >>Click the |cRXP_PICK_Beached Sea Turtle|r
     .accept 4727 >> Accept Beached Sea Turtle
-step << NightElf Druid
+step << Druid
     .goto Darkshore,48.87,11.32
     >>|cRXP_WARN_Swim out in the water|r
     >>Open the |cRXP_PICK_Strange Lockbox|r. Loot it for the |cRXP_LOOT_Half Pendant of Aquatic Agility|r
@@ -4396,10 +4413,10 @@ step
     .accept 991 >> Accept Raene's Cleansing
     .accept 1054 >> Accept Culling the Threat
     .target Raene Wolfrunner
-step << !Warlock
+step
     .goto 1440/1,-433.09,2781.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Kimlya|r
-    .home 415 >> Set your Hearthstone to Astranaar
+    .home >> Set your Hearthstone to Astranaar
     .target Innkeeper Kimlya
 step
     .goto 1440/1,-454.43,2682.24
