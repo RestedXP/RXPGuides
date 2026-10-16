@@ -1370,7 +1370,6 @@ step
     .unitscan Rabid Thistle Bear
     .use 7586
 step
-    #label FurlbogCamp
     .goto 1439/1,393.72,5993.24
     >>Run toward the edge of the Furbolg Camp
     .complete 984,1 -- Find a corrupt furbolg camp
@@ -1404,7 +1403,6 @@ step
     .turnin 983 >> Turn in Buzzbox 827
     .accept 1001 >> Accept Buzzbox 411
 step
-    #label FirstWashed
     .goto 1439,36.701,45.122,8,0
     .goto 1439,36.621,45.596
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
@@ -1583,7 +1581,6 @@ step
     .isQuestComplete 1001
 step
     #optional
-    #label AsterionTravel
     #completewith Bashal1
     .goto 1439,44.629,36.316,20,0
     .goto 1439,44.168,36.289,15 >> Travel toward |cRXP_FRIENDLY_Asterion|r
@@ -1649,10 +1646,8 @@ step
     .target Asterion
     .isQuestTurnedIn 955
 step
-    #completewith MeatFangEgg1
     #optional
     .abandon 955 >> Abandon Bashal'Aran
-    .isQuestAvailable 955
 step
     #loop
     .goto 1439,45.393,36.472,0
@@ -1685,7 +1680,6 @@ step
     .target Asterion
     .isQuestTurnedIn 956
 step
-    #label RedCrystal
     .goto 1439,47.314,48.676
     >>Travel up to the |cRXP_PICK_Mysterious Red Crystal|r
     >>|cRXP_WARN_Be careful of the two group of 2 |cRXP_ENEMY_Raging Moonkins|r west of the |cRXP_PICK_Mysterious Red Crystal|r as the duos closest to each other are leashed together|r
@@ -1909,7 +1903,6 @@ step
     .turnin 4812 >> Turn in As Water Cascades
     .accept 4813 >> Accept The Fragments Within
 step
-    #label BashalEnd
     .goto 1439,44.168,36.289
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Asterion|r
     .turnin 957 >> Turn in Bashal'Aran
@@ -1959,7 +1952,6 @@ step
 step
     #optional
     #completewith next
-    #label CliffCave
     .goto 1439,54.934,32.721,20,0
     .goto 1439,55.108,33.600,40 >> Travel to the Cliffspring River Cave
 step << Druid
@@ -1968,7 +1960,6 @@ step << Druid
     .complete 6122,1 --Filled Cliffspring Falls Sampler (1)
     .isOnQuest 6122
 step
-    #label CaveMushrooms
     .goto 1439/1,-690.31,6751.29,12,0
     .goto 1439/1,-706.68,6748.23,12,0
     .goto 1439/1,-719.13,6787.530,12,0
@@ -2121,6 +2112,7 @@ step
     .hs >> Hearth to Stormwind
     .zoneskip Stormwind City
     .zoneskip Darkshore
+    .zoneskip Ironforge
 step
     .goto 1453/0,566.600,-8845.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elaine Trias::483|r
@@ -3541,6 +3533,12 @@ step
     .accept 4763 >> Accept The Blackwood Corrupted
     .target Thundris Windweaver
 step
+    .isOnQuest 4763
+    .goto 1439/1,467.08,6409.38
+    >>|cRXP_WARN_Use the|r |T133748:0|t[Empty Cleansing Bowl] |cRXP_WARN_at the Auberdine moonwell|r
+    .collect 12347,1,4763,1 --Filled Cleansing Bowl (1)
+    .use 12346
+step
     .isOnQuest 3765
     .goto 1439,38.325,43.039
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gershala Nightwhisper|r
@@ -3563,12 +3561,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Elissa Starbreeze|r upstairs
     .accept 965 >> Accept The Tower of Althalaxx
     .target Sentinel Elissa Starbreeze
-step
-    .isOnQuest 4763
-    .goto 1439/1,467.08,6409.38
-    >>|cRXP_WARN_Use the|r |T133748:0|t[Empty Cleansing Bowl] |cRXP_WARN_at the Auberdine moonwell|r
-    .collect 12347,1,4763,1 --Filled Cleansing Bowl (1)
-    .use 12346
 step
     .isOnQuest 4763
     #sticky
@@ -3640,7 +3632,6 @@ step
     .complete 4763,1 -- Talisman of Corruption (1)
     .mob Xabraxxis
 step
-    #label CaveMushrooms
     .goto 1439/1,-690.31,6751.29,12,0
     .goto 1439/1,-706.68,6748.23,12,0
     .goto 1439/1,-719.13,6787.530,12,0
