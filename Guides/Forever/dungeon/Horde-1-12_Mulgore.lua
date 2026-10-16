@@ -7,9 +7,8 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 1-6 Mulgore
 #version 11
-#beta
 #group RestedXP Forever Dungeon Guide (H)
-#subgroup (WIP) Dungeon Guide 1-22
+#subgroup Dungeon Guide 1-22
 --#groupid RXP-SRGCE-H1
 #defaultfor Tauren
 #next 6-12 Mulgore;6-13 Mulgore
@@ -24,9 +23,8 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 6-12 Mulgore
 #version 11
-#beta
 #group RestedXP Forever Dungeon Guide (H)
-#subgroup (WIP) Dungeon Guide 1-22
+#subgroup Dungeon Guide 1-22
 --#groupid RXP-SRGCE-H1
 #defaultfor Tauren
 #next 12-17 The Barrens

@@ -7,9 +7,8 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 1-6 Durotar
 #version 11
-#beta
 #group RestedXP Forever Dungeon Guide (H)
-#subgroup (WIP) Dungeon Guide 1-22
+#subgroup Dungeon Guide 1-22
 --#groupid RXP-SRGCE-H1
 #defaultfor Troll/Orc
 #next 6-10 Durotar
@@ -24,9 +23,8 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 6-10 Durotar
 #version 11
-#beta
 #group RestedXP Forever Dungeon Guide (H)
-#subgroup (WIP) Dungeon Guide 1-22
+#subgroup Dungeon Guide 1-22
 --#groupid RXP-SRGCE-H1
 #defaultfor Troll/Orc
 #next 10-12 Durotar
@@ -40,9 +38,8 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 10-12 Durotar
 #version 11
-#beta
 #group RestedXP Forever Dungeon Guide (H)
-#subgroup (WIP) Dungeon Guide 1-22
+#subgroup Dungeon Guide 1-22
 --#groupid RXP-SRGCE-H1
 #defaultfor Troll/Orc
 #next 10-12 Tirisfal (Orc/Troll) << !Hunter !Shaman !Tauren !Skyborne
@@ -59,9 +56,8 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 10-12 Tirisfal (Orc/Troll)
 #version 11
-#beta
 #group RestedXP Forever Dungeon Guide (H)
-#subgroup (WIP) Dungeon Guide 1-22
+#subgroup Dungeon Guide 1-22
 --#groupid RXP-SRGCE-H1
 #defaultfor !Hunter !Shaman !Tauren !Skyborne !Undead
 #next 12-14 Silverpine Forest << !Hunter !Shaman !Tauren !Skyborne !Undead

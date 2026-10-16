@@ -6,9 +6,8 @@ RXPGuides.RegisterGuide([[
 #forever
 << Horde
 #version 11
-#beta
 #group RestedXP Forever Dungeon Guide (H)
-#subgroup (WIP) Dungeon Guide 1-22
+#subgroup Dungeon Guide 1-22
 --#groupid RXP-SRGCE-H1
 #defaultfor Undead
 #name 1-6 Tirisfal Glades
@@ -24,9 +23,8 @@ RXPGuides.RegisterGuide([[
 #name 6-12 Tirisfal Glades
 #displayname 6-13 Tirisfal Glades << Paladin
 #version 11
-#beta
 #group RestedXP Forever Dungeon Guide (H)
-#subgroup (WIP) Dungeon Guide 1-22
+#subgroup Dungeon Guide 1-22
 --#groupid RXP-SRGCE-H1
 #defaultfor Undead
 #next 12-14 Silverpine Forest; 12-17 The Barrens
@@ -38,11 +36,10 @@ step
 
 RXPGuides.RegisterGuide([[
 #group RestedXP Forever Dungeon Guide (H)
-#subgroup (WIP) Dungeon Guide 1-22
+#subgroup Dungeon Guide 1-22
 --#groupid RXP-SRGCE-H1
 << Horde
 #version 11
-#beta
 #defaultfor !Hunter !Shaman !Tauren !Skyborne
 #forever
 #era/som--h
