@@ -896,6 +896,7 @@ step
     .goto 1436/0,1192.12,-9641.73
     .goto 1436/0,1042.67,-9619.33,0
     >>Kill |cRXP_ENEMY_Murloc Raiders|r and |cRXP_ENEMY_Murloc Coastrunners|r. Loot them for their |cRXP_LOOT_Eyes|r and |cRXP_LOOT_Gills|r
+    >>|cRXP_WARN_If you don't have many |cRXP_LOOT_Gills|r by the time you have finished |cRXP_LOOT_Eyes|r, skip this step|r
     .collect 730,3,38,1 --Murloc Eye (3)
     .complete 92744,1 -- Longshore Murloc Gills 7/7
     .mob Murloc Raider
@@ -1150,6 +1151,12 @@ step
     .target Alba Fairmoon::253092
     .turnin 92742 >>Turn in Testing the Wells
     .turnin 92744 >>Turn in Murloc Gills
+    .isQuestComplete 92744
+step
+    .goto 1436/0,1179.800,-10635.601
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alba Fairmoon::253092|r
+    .target Alba Fairmoon::253092
+    .turnin 92742 >>Turn in Testing the Wells
 step
     .hs >> Hearth to Stormwind
     .bindlocation 16509,1
