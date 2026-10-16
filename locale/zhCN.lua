@@ -247,8 +247,8 @@ L["Total XP: %s\n%s"] = "总经验: %s\n%s"
 
 -- DB\shared.lua file
 
-L["RXP MoP 1-80 (A)"] = "RXP 熊猫人之谜1-80级 (联盟)"
-L["RXP MoP 1-60 (A)"] = "RXP 熊猫人之谜1-60级 (联盟)"
+L["RXP MoP 1-80 (A)"] = "RXP 熊猫人之谜 1-80级 (联盟)"
+L["RXP MoP 1-60 (A)"] = "RXP 熊猫人之谜 1-60级 (联盟)"
 L["RXP MoP 1-80 (H)"] = "RXP 熊猫人之谜 1-80级 (部落)"
 L["RXP MoP 1-60 (H)"] = "RXP 熊猫人之谜 1-60级 (部落)"
 
