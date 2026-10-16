@@ -3962,11 +3962,17 @@ step
     .goto 1426/0,-1679.89,-5728.88,40,0
     .goto 1426/0,-1675.95,-5597.22,25,0
     .goto 1426/0,-1679.89,-5728.88
-    >>Kill |cRXP_ENEMY_Rockjaw Skullthumpers|r and |cRXP_ENEMY_Rockjaw Bonesnappers|r inside the cave
+    >>Kill |cRXP_ENEMY_Rockjaw Skullthumpers|r and |cRXP_ENEMY_Rockjaw Bonesnappers|r inside the cave. Loot them for the |T132621:0|t[|cRXP_LOOT_Empty Powder Keg|r]
+    .use 268548 >> |cRXP_WARN_Use the|r |T132621:0|t[|cRXP_LOOT_Empty Powder Keg|r] |cRXP_WARN_to start the quest|r
+    >>|cRXP_WARN_NOTE: This item has a low drop rate. Skip this step if you do not find it|r
     .complete 432,1 --Kill Rockjaw Skullthumper (x6)
     .mob +Rockjaw Skullthumper
     .complete 433,1 --Kill Rockjaw Bonesnapper (x10)
     .mob +Rockjaw Bonesnapper
+    .collect 268548,1,95213,1 -- Empty Powder Keg (1)
+    .disablecheckbox
+    .accept 95213 >> Accept Stolen Blasting Powder
+    .disablecheckbox
 step
     #label QuarryEnd
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Stonebrow|r and |cRXP_FRIENDLY_Senator Mehr Stonehallow|r
@@ -3976,12 +3982,32 @@ step
     .turnin 433 >> Turn in The Public Servant
     .goto 1426/0,-1579.96,-5714.73
     .target +Senator Mehr Stonehallow
+step
+    .isOnQuest 95213
+    .goto 1426/0,-1606.02,-5676.35
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quarrymaster Thesten|r
+    .turnin 95213 >> Turn in Stolen Blasting Powder
+    .accept 95214 >> Accept Stolen Blasting Powder
+    .target Quarrymaster Thesten
+step
+    #optional
+    .isQuestTurnedIn 95213
+    .goto 1426/0,-1606.02,-5676.35
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quarrymaster Thesten|r
+    .accept 95214 >> Accept Stolen Blasting Powder
+    .target Quarrymaster Thesten
 step << !Warrior !Rogue !Paladin !Hunter
     .goto 1426/0,-1577.16,-5671.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kazan Mogosh|r
     .vendor >> |cRXP_BUY_Buy up to 20|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from him|r
     .target Kazan Mogosh
     .xp >15,1
+step
+    .isOnQuest 95214
+    #completewith SpyMap
+    >>Kill |cRXP_ENEMY_Rockjaw Ambushers|r. Loot them for their |cRXP_LOOT_Stolen Blasting Powder|r
+    .complete 95214,1 -- Stolen Blasting Powder (16)
+    .mob Rockjaw Ambusher
 step
     #completewith OII
     >>Kill |cRXP_ENEMY_Rockjaw Ambushers|r. Loot them for the |T132621:0|t[|cRXP_LOOT_Empty Powder Keg|r]
@@ -3991,6 +4017,7 @@ step
     .accept 95213 >> Accept Stolen Blasting Powder
     .mob Rockjaw Ambusher
 step
+    #label SpyMap
     .goto 1426/0,-2009.87,-5860.22,40,0
     .goto 1426/0,-2034.49,-5922.60
     >>Kill |cRXP_ENEMY_Dark Iron Spies|r. Loot them for the |T237385:0|t[|cRXP_LOOT_Dark Iron Map|r]
@@ -3999,6 +4026,24 @@ step
     .collect 274268,1,96391,1 -- Dark Iron Map (1)
     .accept 96391 >> Accept Underground Map
     .mob Dark Iron Spy
+step
+    .isOnQuest 95214
+    #loop
+    .goto 1426/0,-1881.82,-5735.45,50,0
+    .goto 1426/0,-1832.57,-5571.28,50,0
+    .goto 1426/0,-1724.22,-5636.95,50,0
+    .goto 1426/0,-1881.82,-5735.45,0
+    .goto 1426/0,-1832.57,-5571.28,0
+    .goto 1426/0,-1724.22,-5636.95,0
+    >>Kill |cRXP_ENEMY_Rockjaw Ambushers|r. Loot them for their |cRXP_LOOT_Stolen Blasting Powder|r
+    .complete 95214,1 -- Stolen Blasting Powder (16)
+    .mob Rockjaw Ambusher
+step
+    .isQuestComplete 95214
+    .goto 1426/0,-1606.02,-5676.35
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quarrymaster Thesten|r
+    .turnin 95214 >> Turn in Stolen Blasting Powder
+    .target Quarrymaster Thesten
 step
     #label OII
     .goto 1426/0,-1394.24,-5797.83
