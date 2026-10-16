@@ -1075,6 +1075,47 @@ step
     #label endOfTheGuide
 
 step
+    .goto 1453/0,673.58,-8867.76
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Allison|r
+    .home >> Set your Hearthstone to Stormwind City
+    .target Innkeeper Allison
+    .bindlocation 16509
+step
+    #ah
+    .goto 1453/0,660.28,-8814.55
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Jaxon|r
+    >>|cRXP_BUY_Buy|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r |cRXP_BUY_and/or|r |T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r |cRXP_BUY_to level your|r |T133971:0|t[Cooking] |cRXP_BUY_with later|r
+    >>|cRXP_WARN_Your|r |T133971:0|t[Cooking] |cRXP_WARN_skill must be 10 for the turn in at Darkshore for|r |T133972:0|t[Strider Meat]
+    >>|cRXP_WARN_If you don't want to or can't do this, skip this step|r
+    >>|cRXP_BUY_Buy the following items for faster turn ins at Darkshore shortly:|r
+    >>|T133972:0|t[Strider Meat]
+    >>|T133912:0|t[Darkshore Grouper]
+    >>|T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
+    >>|T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r
+    .collect 5469,5,2178,1 -- Strider Meat (5)
+    .collect 12238,6,1141,1 -- Darkshore Grouper (6)
+    .collect 769,50,2178,1,0x20,cooking --Chunk of Boar Meat (1-50)
+    .disablecheckbox
+    .collect 2672,50,2178,1,0x20,cooking --Stringy Wolf Meat (1-50)
+    .disablecheckbox
+    .target Auctioneer Jaxon
+    .skill cooking,<1,1 -- step only displays if skill is 1 or higher
+step
+    #ah
+    #optional
+    .goto 1453/0,660.28,-8814.55
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Jaxon|r
+    >>|cRXP_WARN_If you don't want to or can't do this, skip this step|r
+    >>|cRXP_BUY_Buy the following items for faster turn ins at Darkshore shortly:|r
+    >>|T133912:0|t[Darkshore Grouper]
+    .collect 12238,6,1141,1 -- Darkshore Grouper (6)
+    .target Auctioneer Jaxon
+step
+    .goto 1453/0,1193.100,-8328.900
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Manifest Clerk Philmor::268511|r 
+    .target Manifest Clerk Philmor::268511
+    .accept 97220 >>Accept Philmor's Favor
+step
     .goto 1453/0,1269.100,-8540.601
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gilbert Gray::267118|r
     .target Gilbert Gray::267118
@@ -1187,17 +1228,915 @@ RXPGuides.RegisterGuide([[
 #next 17-18 Hall of Thanes
 
 step
-#include RestedXP Forever Guide (A)\14-16 Darkshore
+    .goto 1439,35.743,43.710
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cerellean Whiteclaw|r
+    .accept 963 >> Accept For Love Eternal
+    .target Cerellean Whiteclaw
 step
-    .goto 1439/1,929.100,6543.600
-    .zone Stormwind City >> Take the boat to Stormwind City
-    .zoneskip Dun Morogh
-    .zoneskip Ironforge
+    #optional
+    #completewith next
+    .goto 1439/1,525.800,6414.800,8 >> Travel up the ramp toward |cRXP_FRIENDLY_Wizbang Cranktoggle|r
 step
-    .goto 1453/0,1193.100,-8328.900
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Manifest Clerk Philmor::268511|r 
-    .target Manifest Clerk Philmor::268511
-    .accept 97220 >>Accept Philmor's Favor
+    .goto 1439,36.976,44.135
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wizbang Cranktoggle|r upstairs
+    .accept 983 >> Accept Buzzbox 827
+    .target Wizbang Cranktoggle
+step
+    .goto 1439,37.322,43.640
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Barithras Moonshade|r
+    .accept 947 >> Accept Cave Mushrooms
+    .target Barithras Moonshade
+step
+    .goto 1439,37.703,43.393
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
+    .accept 4811 >> Accept The Red Crystal
+    .target Sentinel Glynda Nal'Shea
+step
+    .goto 1439,38.843,43.416
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tharnariun Treetender|r
+    .accept 2118 >> Accept Plagued Lands
+    .target Tharnariun Treetender
+step
+    .goto 1439,39.373,43.483
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Terenthis|r
+    .accept 984 >> Accept How Big a Threat?
+    .target Terenthis
+step
+    .goto 1439/1,503.100,6402.100
+    >>Click the |cRXP_PICK_Wanted Poster|r
+    .accept 98025 >>Accept WANTED: Jai'vhanel
+step
+    #optional
+    .goto 1439/1,577.38,6371.35
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gubber Blump|r
+    .accept 1141 >> Accept The Family and the Fishing Pole
+    .turnin 1141 >> Turn in The Family and the Fishing Pole
+    .itemcount 12238,6 -- Darkshore Grouper (6)
+    .target Gubber Blump
+step
+    #label WashedA
+    .goto 1439,36.701,45.122,8,0
+    .goto 1439,36.621,45.596
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
+    .accept 3524 >> Accept Washed Ashore
+    .target Gwennyth Bly'Leggonde
+step
+    .goto 1439/1,561.66,6343.27
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Caylais Moonfeather|r
+    .fp Auberdine >> Get the Auberdine flight path
+    .target Caylais Moonfeather
+step << Dwarf Hunter/Human Hunter/Skyborne Hunter
+    #optional
+    #completewith RabidThistle
+    #loop
+    .goto 1439/1,272.54,5255.27,0
+    .goto 1439/1,271.23,4902.88,0
+    .goto 1439/1,438.91,5131.69,0
+    .goto 1439/1,272.54,5255.27,40,0
+    .goto 1439/1,271.23,4902.88,40,0
+    .goto 1439/1,438.91,5131.69,40,0
+    >>|cRXP_WARN_Send your pet to attack a |cRXP_ENEMY_Thistle Bear|r. Once your pet is stunned by the |cRXP_ENEMY_Thistle Bear|r, abandon your pet and start taming it|r
+    .train 16828 >>|cRXP_WARN_Cast|r |T132164:0|t[Tame Beast] |cRXP_WARN_on a |cRXP_ENEMY_Thistle Bear|r to tame it|r
+    .target Thistle Bear
+    .train 17255,1 --skips if they also already know bite r2
+step
+    #sticky
+    #label BuzzBox1
+    #loop
+    .goto 1439,36.051,44.757,0
+    .goto 1439,36.280,50.071,0
+    .goto 1439,35.275,53.464,0
+    .waypoint 1439,36.091,51.501,60,0
+    .waypoint 1439,37.115,52.368,60,0
+    .waypoint 1439,37.130,53.663,60,0
+    .waypoint 1439,36.740,55.221,60,0
+    .waypoint 1439,35.655,55.872,60,0
+    .waypoint 1439,35.088,55.085,60,0
+    .waypoint 1439,35.275,53.464,60,0
+    .waypoint 1439,36.091,51.501,60,0
+    .waypoint 1439,36.280,50.071,60,0
+    .waypoint 1439,36.523,48.554,60,0
+    .waypoint 1439,35.977,48.408,60,0
+    .waypoint 1439,35.902,47.145,60,0
+    .waypoint 1439,35.759,45.455,60,0
+    .waypoint 1439,36.051,44.757,60,0
+    >>Kill |cRXP_ENEMY_Pygmy Tide Crawlers|r and |cRXP_ENEMY_Young Reef Crawlers|r. Loot them for their |cRXP_LOOT_Crawler Legs|r
+    >>|cRXP_WARN_You may need to go in the water for them|r
+    >>|cRXP_WARN_Even if some of these are gray, still complete the quest as it is part of a chain|r
+    .complete 983,1 --Crawler Leg (6)
+    .mob Pygmy Tide Crawler
+    .mob Young Reef Crawler
+    .isOnQuest 983
+step
+    .goto 1439,36.371,50.920
+    >>Open the |cRXP_PICK_Beached Sea Creature|r. Loot it for the |cRXP_LOOT_Sea Creature Bones|r
+    .complete 3524,1 --Sea Creature Bones (1)
+
+
+
+step << Druid
+    #ah
+    #optional
+    #completewith CliffspringEnd
+    #label GatheringQ
+    .skill herbalism,15 >>|cRXP_WARN_Level your|r |T136065:0|t[Herbalism] |cRXP_WARN_to 15 to be able to herb|r |T134187:0|t[Earthroot] |cRXP_WARN_for an important class quest soon. You can unlearn it afterwards|r
+    >>|cRXP_WARN_If you would rather purchase 5|r |T134187:0|t[Earthroot] |cRXP_WARN_from the Auction House later, skip this step|r
+    .collect 2449,5,6123,1 --Earthroot (5)
+    .disablecheckbox
+step << Druid
+    #ssf
+    #optional
+    #completewith CliffspringEnd
+    #label GatheringQ
+    .skill herbalism,15 >>|cRXP_WARN_Level your|r |T136065:0|t[Herbalism] |cRXP_WARN_to 15 to be able to gather 5|r |T134187:0|t[Earthroot] |cRXP_WARN_for an important class quest soon. You can unlearn it afterwards|r
+    .collect 2449,5,6123,1 --Earthroot (5)
+    .disablecheckbox
+step << Druid
+    #optional
+    #completewith CliffspringEnd
+    #requires GatheringQ
+    >>|cRXP_WARN_Collect 5 |T134187:0|t[Earthroot] via |T136065:0|t[Herbalism] and rarely |cRXP_PICK_Battered Chests|r for a future class quest|r
+    .collect 2449,5,6123,1 --Earthroot (5)
+    .skill herbalism,<15,1
+
+
+
+step
+    #completewith next
+    >>|cRXP_WARN_Use|r |T134335:0|t[Tharnariun's Hope] |cRXP_WARN_on a|r |cRXP_ENEMY_Rabid Thistle Bear|r --|cRXP_WARN_. It can be used from any range as long as you're targeting the|r |cRXP_ENEMY_Bear|r
+    -->>|cRXP_WARN_==DO NOT USE THE QUEST ITEM IF THERES NO |cRXP_ENEMY_BEAR|r NEARBY==|r
+    >>|cRXP_WARN_You can waste the trap and make the quest impossible to complete! If it happens to you you need to return to the questgiver and ask for another trap|r
+    .complete 2118,1 --Rabid Thistle Bear Captured (1)
+    .unitscan Rabid Thistle Bear
+    .use 7586
+step
+    #label FurlbogCamp
+    .goto 1439/1,393.72,5993.24
+    >>Run toward the edge of the Furbolg Camp
+    .complete 984,1 -- Find a corrupt furbolg camp
+step
+    #sticky
+    #label RabidThistle
+    #loop
+    .goto 1439,38.226,52.780,0
+    .goto 1439,39.129,59.176,0
+    .goto 1439,38.226,52.780,50,0
+    .goto 1439,38.527,54.661,50,0
+    .goto 1439,38.037,56.815,50,0
+    .goto 1439,38.095,58.395,50,0
+    .goto 1439,38.696,57.874,50,0
+    .goto 1439,39.129,59.176,50,0
+    >>|cRXP_WARN_Use|r |T134335:0|t[Tharnariun's Hope] |cRXP_WARN_on a|r |cRXP_ENEMY_Rabid Thistle Bear|r --|cRXP_WARN_. It can be used from any range as long as you're targeting the bear|r
+    -->>|cRXP_WARN_==DO NOT USE THE QUEST ITEM IF THERES NO BEAR NEARBY==|r
+    >>|cRXP_WARN_You can waste the trap and make the quest impossible to complete! If it happens to you you need to return to the questgiver and ask for another trap|r
+    .complete 2118,1 --Rabid Thistle Bear Captured (1)
+    .unitscan Rabid Thistle Bear
+    .use 7586
+step
+    #label invisThistle
+    #optional
+    #requires RabidThistle
+--XXREQ Placeholder invis step until multiple requires per step
+step
+    #requires BuzzBox1
+    .goto 1439,36.634,46.250
+    >>Click the |cRXP_PICK_Buzzbox 827|r on the ground
+    .turnin 983 >> Turn in Buzzbox 827
+    .accept 1001 >> Accept Buzzbox 411
+step
+    #label FirstWashed
+    .goto 1439,36.701,45.122,8,0
+    .goto 1439,36.621,45.596
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
+    .turnin 3524 >> Turn in Washed Ashore
+    .accept 4681 >> Accept Washed Ashore
+    .target Gwennyth Bly'Leggonde
+step
+    #optional
+    #completewith next
+    .goto 1439,36.806,44.137,8,0
+    .goto 1439,35.743,43.710,12 >> Travel toward |cRXP_FRIENDLY_Cerellean Whiteclaw|r on the dock
+step
+    .goto 1439,35.743,43.710
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cerellean Whiteclaw|r
+    .accept 963 >> Accept For Love Eternal
+    .target Cerellean Whiteclaw
+step
+    #optional
+    #completewith SeaT1
+    .goto 1439,32.432,43.744,15 >> Travel to the end of the dock, then jump into the water
+step
+    #optional
+    #completewith washed1
+    .goto 1439/1,741.52,6570.95,0
+    .goto 1439/1,915.10,6333.84,0
+    .goto 1439/1,778.20,6231.66,0
+    >>Kill |cRXP_ENEMY_Darkshore Threshers|r. Loot them for their |cRXP_LOOT_Thresher Eyes|r
+    .complete 1001,1 --Thresher Eye (3)
+    .mob Darkshore Thresher
+    .isOnQuest 1001
+step
+    #label SeaT1
+    .goto 1439,31.841,46.304
+    >>Open the |cRXP_PICK_Skeletal Sea Turtle|r. Loot it for the |cRXP_LOOT_Sea Turtle Remains|r
+    .complete 4681,1 --Sea Turtle Remains (1)
+step
+    #label washed1
+    .goto 1439,36.701,45.122,8,0
+    .goto 1439,36.621,45.596
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
+    .turnin 4681 >> Turn in Washed Ashore
+    .target Gwennyth Bly'Leggonde
+step
+    .goto 1439,37.322,43.640
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Barithras Moonshade|r
+    .accept 947 >> Accept Cave Mushrooms
+    .target Barithras Moonshade
+step
+    .goto 1439,37.703,43.393
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
+    .accept 4811 >> Accept The Red Crystal
+    .target Sentinel Glynda Nal'Shea
+step
+    .goto 1439,38.843,43.416
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tharnariun Treetender|r
+    .turnin 2118 >> Turn in Plagued Lands
+    .accept 2138 >> Accept Cleansing of the Infected
+    .target Tharnariun Treetender
+step
+    .goto 1439,39.373,43.483
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Terenthis|r
+    .turnin 984 >> Turn in How Big a Threat?
+    .accept 985 >> Accept How Big a Threat?
+    .accept 4761 >> Accept Thundris Windweaver
+    .target Terenthis
+step
+    .goto 1439,38.107,41.165
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gorbold Steelhand|r
+    .accept 982 >> Accept Deep Ocean, Vast Sea
+    .target Gorbold Steelhand
+step
+    #optional
+    .goto 1439/1,472.32,6556.100
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alanndarian Nightsong|r
+    .accept 2178 >> Accept Easy Strider Living
+    .turnin 2178 >> Turn in Easy Strider Living
+    .target Alanndarian Nightsong
+    .itemcount 5469,5 -- Strider Meat (5)
+    .skill cooking,<10,1 -- step only displays if skill is 10 or higher
+step
+    #optional
+    #completewith next
+    .goto 1439/1,488.69,6564.830
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalmond|r inside
+    .vendor 4182 >> |cRXP_BUY_Buy as many|r |T133634:0|t[Small Brown Pouches] |cRXP_BUY_or|r |T133634:0|t[Brown Leather Satchels] |cRXP_BUY_as you need from him|r
+    >>|cRXP_BUY_Buy|r |T132382:0|t[Sharp Arrows] |cRXP_BUY_or|r |T132384:0|t[Heavy Shots] |cRXP_BUY_from him until your Quiver/Ammo Pouch is full|r << Hunter
+    .target Dalmond
+step
+    .goto 1439,37.394,40.128
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thundris Windweaver|r
+    .turnin 4761 >> Turn in Thundris Windweaver
+    .accept 4762 >> Accept The Cliffspring River
+    .accept 954 >> Accept Bashal'Aran
+    .accept 958 >> Accept Tools of the Highborne << !sod
+    .target Thundris Windweaver
+    .xp >16,1
+--XX if 16+, skip Tools
+step
+    #optional
+    .goto 1439,37.394,40.128
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thundris Windweaver|r
+    .turnin 4761 >> Turn in Thundris Windweaver
+    .accept 4762 >> Accept The Cliffspring River
+    .accept 954 >> Accept Bashal'Aran
+    .target Thundris Windweaver
+    .xp >18,1
+--XX if 18+, skip Bashal
+step
+    #optional
+    .goto 1439,37.394,40.128
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thundris Windweaver|r
+    .turnin 4761 >> Turn in Thundris Windweaver
+    .accept 4762 >> Accept The Cliffspring River
+step
+    #completewith MistVeil
+    .goto 1439/1,620.35,6768.76,0
+    .goto 1439/1,602.66,6924.21,0
+    .goto 1439/1,537.82,7023.33,0
+    .goto 1439/1,404.85,7099.75,0
+    .goto 1439/1,310.53,7077.48,0
+    .goto 1439/1,620.35,6768.76,55,0
+    .goto 1439/1,602.66,6924.21,55,0
+    >>Kill |cRXP_ENEMY_Darkshore Threshers|r. Loot them for their |cRXP_LOOT_Thresher Eyes|r
+    .complete 1001,1 --Thresher Eye (3)
+    .mob Darkshore Thresher
+    .isOnQuest 1001
+    .isOnQuest 982
+step
+    #optional
+    #completewith next
+    +|cRXP_WARN_Press Escape, then go into -> Options -> Controls|r
+    >>|cRXP_WARN_Check "Enable Interact Key" and bind the "Interact with Target" option to a key|r
+step
+    .goto 1439,38.213,28.754
+--  .goto 1439,38.234,28.796
+    >>|cRXP_WARN_==BE AWARE OF YOUR BREATH METER==|r
+    >>|cRXP_WARN_Swim underwater to the outside of the back of the boat|r
+    >>|cRXP_WARN_On the arrow location, press your "Interact with Target" keybind to loot the |cRXP_LOOT_Silver Dawning's Lockbox|r from outside the boat|r
+    >>|cRXP_WARN_If you don't want to do this, swim underwater into the bottom floor of the boat then loot the |cRXP_LOOT_Silver Dawning's Lockbox|r inside|r
+    .complete 982,1 --Silver Dawning's Lockbox (1)
+    .isOnQuest 982
+step
+    #label MistVeil
+    .goto 1439,39.581,27.487
+--  .goto 1439,39.629,27.462
+    >>|cRXP_WARN_==BE AWARE OF YOUR BREATH METER==|r
+    >>|cRXP_WARN_Swim underwater to the outside of the back of the boat|r
+    >>|cRXP_WARN_On the arrow location, press your "Interact with Target" keybind to loot the |cRXP_LOOT_Mist Veil's Lockbox|r from outside the boat|r
+    >>|cRXP_WARN_If you don't want to do this, swim underwater into the bottom floor of the boat then loot the |cRXP_LOOT_Mist Veil's Lockbox|r inside|r
+    .complete 982,2 --Mist Veil Lockbox (1)
+    .isOnQuest 982
+step
+    #loop
+    .goto 1439/1,310.53,7077.48,0
+    .goto 1439/1,404.85,7099.75,0
+    .goto 1439/1,537.82,7023.33,0
+    .goto 1439/1,310.53,7077.48,55,0
+    .goto 1439/1,404.85,7099.75,55,0
+    .goto 1439/1,537.82,7023.33,55,0
+    .goto 1439/1,602.66,6924.21,55,0
+    .goto 1439/1,620.35,6768.76,55,0
+    .goto 1439/1,602.66,6924.21,55,0
+    .goto 1439/1,620.35,6768.76,55,0
+    >>Kill |cRXP_ENEMY_Darkshore Threshers|r. Loot them for their |cRXP_LOOT_Thresher Eyes|r
+    .complete 1001,1 --Thresher Eye (3)
+    .mob Darkshore Thresher
+    .isOnQuest 1001
+step
+    .goto 1439,41.901,31.339
+    >>Click the |cRXP_PICK_Beached Sea Creature|r
+    .accept 4723 >> Accept Beached Sea Creature
+step
+    .goto 1439,41.960,28.616
+    >>Click the |cRXP_PICK_Buzzbox 411|r on the ground
+    .turnin 1001 >> Turn in Buzzbox 411
+    .isQuestComplete 1001
+step
+    #optional
+    #label AsterionTravel
+    #completewith Bashal1
+    .goto 1439,44.629,36.316,20,0
+    .goto 1439,44.168,36.289,15 >> Travel toward |cRXP_FRIENDLY_Asterion|r
+step
+    .goto 1439,44.168,36.289
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Asterion|r
+    >>|cRXP_WARN_Avoid killing |cRXP_ENEMY_Wild Grells|r and |cRXP_ENEMY_Vile Sprites|r en-route|r
+    .turnin 954 >> Turn in Bashal'Aran
+    .accept 955 >> Accept Bashal'Aran
+    .target Asterion
+    .isOnQuest 954
+    .xp >16,1
+--XX skip Bashal Aran qline if 16+
+step
+    #optional
+    #label Bashal1
+    .goto 1439,44.168,36.289
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Asterion|r
+    >>|cRXP_WARN_Avoid killing |cRXP_ENEMY_Wild Grells|r and |cRXP_ENEMY_Vile Sprites|r en-route|r
+    .turnin 954 >> Turn in Bashal'Aran
+    .target Asterion
+    .isOnQuest 954
+--XX Turn in Breadcrumb if you picked it up earlier before 18
+step
+    #loop
+    .goto 1439,44.528,36.587,0
+    .goto 1439,45.334,39.393,0
+    .goto 1439,46.096,36.541,0
+    .goto 1439,44.528,36.587,50,0
+    .goto 1439,44.435,37.404,50,0
+    .goto 1439,44.443,38.202,50,0
+    .goto 1439,44.493,39.008,50,0
+    .goto 1439,44.821,39.711,50,0
+    .goto 1439,45.334,39.393,50,0
+    .goto 1439,45.167,38.652,50,0
+    .goto 1439,45.091,37.865,50,0
+    .goto 1439,45.495,37.019,50,0
+    .goto 1439,45.831,36.790,50,0
+    .goto 1439,46.096,36.541,50,0
+    .goto 1439,46.906,36.171,50,0
+    .goto 1439,47.431,36.151,50,0
+    .goto 1439,47.022,37.083,50,0
+    .goto 1439,47.166,37.580,50,0
+    .goto 1439,45.827,36.812,50,0
+    >>Kill |cRXP_ENEMY_Wild Grells|r and |cRXP_ENEMY_Vile Sprites|r. Loot them for their |cRXP_LOOT_Grell Earrings|r
+    >>|cRXP_WARN_Avoid killing |cRXP_ENEMY_Deth'ryll Satyrs|r for now|r
+    .complete 955,1 --Grell Earring (8)
+    .mob Wild Grell
+    .mob Vile Sprite
+    .isOnQuest 955
+step
+    .goto 1439,44.168,36.289
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Asterion|r
+    .turnin 955 >> Turn in Bashal'Aran
+    .accept 956 >> Accept Bashal'Aran
+    .target Asterion
+    .isQuestComplete 955
+step
+    #optional
+    .goto 1439,44.168,36.289
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Asterion|r
+    .accept 956 >> Accept Bashal'Aran
+    .target Asterion
+    .isQuestTurnedIn 955
+step
+    #completewith MeatFangEgg1
+    #optional
+    .abandon 955 >> Abandon Bashal'Aran
+    .isQuestAvailable 955
+step
+    #loop
+    .goto 1439,45.393,36.472,0
+    .goto 1439,45.429,39.773,0
+    .goto 1439,47.368,36.774,0
+    .goto 1439,45.393,36.472,45,0
+    .goto 1439,45.938,37.800,45,0
+    .goto 1439,45.938,38.040,45,0
+    .goto 1439,46.531,39.134,45,0
+    .goto 1439,45.429,39.773,45,0
+    .goto 1439,47.262,37.674,45,0
+    .goto 1439,47.920,37.228,45,0
+    .goto 1439,47.368,36.774,45,0
+    >>Kill |cRXP_ENEMY_Deth'ryll Satyrs|r. Loot them for the |cRXP_LOOT_Ancient Moonstone Seal|r
+    >>|cRXP_WARN_Be aware that they do not have dynamic respawns|r
+    .complete 956,1 --Ancient Moonstone Seal (1)
+    .mob Deth'ryll Satyr
+    .isQuestTurnedIn 955
+step
+    .goto 1439,44.168,36.289
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Asterion|r
+    .turnin 956 >> Turn in Bashal'Aran
+    .accept 957 >> Accept Bashal'Aran
+    .target Asterion
+    .isQuestComplete 956
+step
+    .goto 1439,44.168,36.289
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Asterion|r
+    .accept 957 >> Accept Bashal'Aran
+    .target Asterion
+    .isQuestTurnedIn 956
+step
+    #label RedCrystal
+    .goto 1439,47.314,48.676
+    >>Travel up to the |cRXP_PICK_Mysterious Red Crystal|r
+    >>|cRXP_WARN_Be careful of the two group of 2 |cRXP_ENEMY_Raging Moonkins|r west of the |cRXP_PICK_Mysterious Red Crystal|r as the duos closest to each other are leashed together|r
+    .complete 4811,1 --Locate the large, red crystal on Darkshore's eastern mountain range
+step
+    #sticky
+    #label Anaya
+    .goto 1439,42.017,58.866,0 --NE spawn
+    .goto 1439,43.222,59.693,0 --NE spawn
+    .goto 1439,43.069,62.448,0 --SE spawn
+    .goto 1439,42.489,60.677,0 --Middle spawn
+    .waypoint 1439,42.017,58.866,50,0 --NE spawn
+    .waypoint 1439,42.311,58.645,50,0
+    .waypoint 1439,42.448,58.236,50,0
+    .waypoint 1439,43.222,59.693,50,0 --NE spawn
+    .waypoint 1439,43.447,60.131,50,0
+    .waypoint 1439,43.780,60.275,50,0
+    .waypoint 1439,43.069,62.448,50,0 --SE spawn
+    .waypoint 1439,43.104,62.563,50,0
+    .waypoint 1439,42.794,62.166,50,0
+    .waypoint 1439,42.489,60.677,50,0 --Middle spawn
+    >>Kill |cRXP_ENEMY_Anaya Dawnrunner|r. Loot her for her |cRXP_LOOT_Pendant|r
+    -->>|cRXP_WARN_Be aware that she has a 7-8 minute spawn time and 4 different spawnpoints across Ameth'Aran|r
+    -->>|cRXP_WARN_You may want to group with others nearby if you can't find her. Ask in General Chat (/1) to group with anyone else that is also looking for her|r
+    -->>|cRXP_WARN_If you can't find her and want to try again later at the cost of potentially grinding more mobs soon, skip this step|r
+    --much faster spawn time now on forever
+    .complete 963,1 --Anaya's Pendant (1)
+    .unitscan Anaya Dawnrunner
+step
+    #sticky
+    #label Relics
+    .goto 1439,42.670,57.390,0
+    .goto 1439,41.986,62.462,0
+    .goto 1439,44.072,60.507,0
+    .waypoint 1439,42.670,57.390,55,0
+    .waypoint 1439,41.708,57.888,55,0
+    .waypoint 1439,41.597,59.765,55,0
+    .waypoint 1439,42.058,61.199,55,0
+    .waypoint 1439,41.986,62.462,55,0
+    .waypoint 1439,42.773,63.420,55,0
+    .waypoint 1439,43.253,63.287,55,0
+    .waypoint 1439,43.945,62.188,55,0
+    .waypoint 1439,44.072,60.507,55,0
+    .waypoint 1439,43.410,59.784,55,0
+    .waypoint 1439,43.787,58.959,55,0
+    >>Kill |cRXP_ENEMY_Cursed Highbornes|r, |cRXP_ENEMY_Writhing Highbornes|r and |cRXP_ENEMY_Wailing Highbornes|r. Loot them for their |cRXP_LOOT_Relics|r
+    .complete 958,1 --Highborne Relic (7)
+    .mob Cursed Highborne
+    .mob Writhing Highborne
+    .mob Wailing Highborne
+    .isOnQuest 958
+step
+    .goto 1439,40.302,59.731
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Tysha Moonblade|r
+    .accept 953 >> Accept The Fall of Ameth'Aran
+    .target Sentinel Tysha Moonblade
+    .xp >17,1
+step
+    .goto 1439,42.652,63.145
+    >>Click the |cRXP_PICK_The Fall of Ameth'Aran|r
+    .complete 953,2 --Read The Fall of Ameth'Aran (1)
+    .isOnQuest 953
+step << !sod/Warrior/Rogue/Priest
+    .goto 1439,42.373,61.815
+    >>Click the |cRXP_PICK_Ancient Flame|r
+    .complete 957,1 --Destroy the seal at the ancient flame (1)
+    .isOnQuest 957
+step
+    #label TheLay
+    .goto 1439/1,105.52,5770.100
+    >>Click the |cRXP_PICK_The Lay of Ameth'Aran|r
+    .complete 953,1 --Read The Lay of Ameth'Aran (1)
+    .isOnQuest 953
+step
+    .isOnQuest 98025
+    .waypoint 1439/1,-18.100,5779.800
+    >>Kill |cRXP_ENEMY_Jai'vhanel|r. Loot it for the |cRXP_LOOT_Feather of Jai'vhanel|r
+    .complete 98025,1 --|1/1 Feather of Jai'vhanel
+    .mob Jai'vhanel
+step
+    #optional
+    #requires Relics
+--XXREQ Placeholder invis step until multiple requires per step
+step
+    #optional
+    #requires Anaya
+--XXREQ Placeholder invis step until multiple requires per step
+step
+    .isQuestComplete 953
+    .goto 1439,40.302,59.731
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Tysha Moonblade|r
+    .turnin 953 >> Turn in The Fall of Ameth'Aran
+    .target Sentinel Tysha Moonblade
+step
+    #optional
+    #completewith FurbolgGrind
+    >>Kill |cRXP_ENEMY_Rabid Thistle Bears|r
+    >>|cRXP_WARN_Be careful as they cast|r |T135914:0|t[Rabies] |cRXP_WARN_if you dont kill them fast enough (Instant Melee: Reduces ALL health regen by 50% for 10 Minutes)|r
+    .complete 2138,1 -- Rabid Thistle Bear slain (20)
+    .mob Rabid Thistle Bear
+step
+    .goto 1439,37.105,62.167
+    >>Click the |cRXP_PICK_Beached Sea Turtle|r
+    .accept 4722 >> Accept Beached Sea Turtle
+step
+    #loop
+    #label FurbolgGrind
+    .goto 1439,39.899,54.745,0
+    .goto 1439,40.181,56.229,0
+    .goto 1439,39.267,53.092,50,0
+    .goto 1439,39.754,53.444,50,0
+    .goto 1439,40.234,54.325,50,0
+    .goto 1439,39.899,54.745,50,0
+    .goto 1439,40.181,56.229,50,0
+    .goto 1439,39.388,56.671,50,0
+    .goto 1439,39.191,56.382,50,0
+    .goto 1439,39.957,55.300,50,0
+    .goto 1439,39.332,54.079,50,0
+    >>Kill |cRXP_ENEMY_Blackwood Pathfinders|r and |cRXP_ENEMY_Blackwood Windtalkers|r
+    .complete 985,1 -- Blackwood Pathfinder (8)
+    .mob +Blackwood Pathfinder
+    .complete 985,2 -- Blackwood Windtalker (5)
+    .mob +Blackwood Windtalker
+step
+    #completewith TOTH
+    .goto 1439,36.701,45.122
+    .subzone 442 >> Return to Auberdine
+step
+    .goto 1439,36.701,45.122,8,0
+    .goto 1439,36.621,45.596
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
+    .turnin 4722 >> Turn in Beached Sea Turtle
+    .turnin 4723 >> Turn in Beached Sea Creature
+    .target Gwennyth Bly'Leggonde
+step
+    #optional
+    #completewith next
+    .goto 1439,36.806,44.137,8,0
+    .goto 1439,35.743,43.710,12 >> Return to |cRXP_FRIENDLY_Cerellean Whiteclaw|r on the dock
+step
+    #optional
+    .goto 1439,35.743,43.710
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cerellean Whiteclaw|r
+    .turnin 963 >> Turn in For Love Eternal
+    .target Cerellean Whiteclaw
+    .isQuestComplete 963
+step
+    .isOnQuest 98025
+    .goto 1439/1,472.900,6439.800
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea::2930|r
+    .target Sentinel Glynda Nal'Shea::2930
+    .turnin 98025 >>Turn in WANTED: Jai'vhanel
+step
+    .goto 1439,37.703,43.393
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
+    .turnin 4811 >> Turn in The Red Crystal
+    .accept 4812 >> Accept As Water Cascades
+    .target Sentinel Glynda Nal'Shea
+step
+    .goto 1439,37.767,44.001
+    >>|cRXP_WARN_Use the|r |T134865:0|t[Empty Water Tube] |cRXP_WARN_at the Auberdine moonwell|r
+    .complete 4812,1 --Moonwell Water Tube (1)
+    .use 14338
+step
+    #optional
+    .goto 1439,38.843,43.416
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tharnariun Treetender|r
+    .turnin 2138 >> Turn in Cleansing of the Infected
+    .accept 2139 >> Accept Tharnariun's Hope
+    .target Tharnariun Treetender
+    .isQuestComplete 2138
+step
+    #optional
+    .goto 1439,38.843,43.416
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tharnariun Treetender|r
+    .accept 2139 >> Accept Tharnariun's Hope
+    .target Tharnariun Treetender
+    .isQuestTurnedIn 2138
+step
+    .goto 1439,39.373,43.483
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Terenthis|r
+    .turnin 985 >> Turn in How Big a Threat?
+    .target Terenthis
+step
+    #optional
+    #completewith next
+    .goto 1439,39.280,43.121,6,0
+    .goto 1439,39.162,43.194,6 >> Go upstairs
+step
+    .goto 1439,39.043,43.555
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Elissa Starbreeze|r upstairs
+    .accept 965 >> Accept The Tower of Althalaxx
+    .target Sentinel Elissa Starbreeze
+step
+    #optional
+    .goto 1439,38.107,41.165
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gorbold Steelhand|r
+    .turnin 982 >> Turn in Deep Ocean, Vast Sea
+    .target Gorbold Steelhand
+    .isQuestComplete 982
+step
+    #optional
+    .goto 1439/1,472.32,6556.100
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alanndarian Nightsong|r
+    .accept 2178 >> Accept Easy Strider Living
+    .turnin 2178 >> Turn in Easy Strider Living
+    .target Alanndarian Nightsong
+    .itemcount 5469,5 -- Strider Meat (5)
+    .skill cooking,<10,1 -- step only displays if skill is 10 or higher
+step
+    #label TOTH
+    .goto 1439,37.394,40.128
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thundris Windweaver|r
+    .turnin 958 >> Turn in Tools of the Highborne
+    .target Thundris Windweaver
+    .isQuestComplete 958
+step
+    .goto 1439,47.314,48.676
+    >>Click the |cRXP_PICK_Mysterious Red Crystal|r
+    >>|cRXP_WARN_Be careful of the 2 groups of 2 |cRXP_ENEMY_Raging Moonkins|r west of the |cRXP_PICK_Mysterious Red Crystal|r as the duos closest to each other are leashed together|r
+    .turnin 4812 >> Turn in As Water Cascades
+    .accept 4813 >> Accept The Fragments Within
+step
+    #label BashalEnd
+    .goto 1439,44.168,36.289
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Asterion|r
+    .turnin 957 >> Turn in Bashal'Aran
+    .isOnQuest 957
+    .target Asterion
+step
+    #optional
+    #completewith CrabTurtle
+    >>Kill |cRXP_ENEMY_Rabid Thistle Bears|r
+    >>|cRXP_WARN_Be careful as they cast|r |T135914:0|t[Rabies] |cRXP_WARN_if you dont kill them fast enough (Instant Melee: Reduces ALL health regen by 50% for 10 Minutes)|r
+    .complete 2138,1 -- Rabid Thistle Bear slain (20)
+    .mob Rabid Thistle Bear
+step
+    #label CrabTurtle
+    .goto 1439/1,47.88,7433.800
+    >>Click the |cRXP_PICK_Beached Sea Turtle|r
+    .accept 4725 >> Accept Beached Sea Turtle
+step
+    .goto 1439/1,-386.39,7219.830
+    >>|cRXP_WARN_Use the|r |T134865:0|t[Empty Sampling Tube] |cRXP_WARN_at the base of the Cliffspring River|r
+    .complete 4762,1 --Cliffspring River Sample (1)
+    .use 12350
+step
+    #loop
+    .goto 1439,53.629,26.054,0
+    .goto 1439,54.204,30.475,0
+    .goto 1439,49.775,30.351,0
+    .goto 1439,48.894,26.514,0
+    .goto 1439,48.022,27.199,60,0
+    .goto 1439,48.894,26.514,60,0
+    .goto 1439,49.558,26.087,60,0
+    .goto 1439,49.902,27.511,60,0
+    .goto 1439,49.776,28.393,60,0
+    .goto 1439,49.775,30.351,60,0
+    .goto 1439,50.818,30.486,60,0
+    .goto 1439,50.689,32.001,60,0
+    .goto 1439,51.267,32.319,60,0
+    .goto 1439,54.204,30.475,60,0
+    .goto 1439,53.899,28.638,60,0
+    .goto 1439,53.049,27.983,60,0
+    .goto 1439,52.764,26.312,60,0
+    .goto 1439,53.629,26.054,60,0
+    >>Kill |cRXP_ENEMY_Rabid Thistle Bears|r
+    >>|cRXP_WARN_Be careful as they cast|r |T135914:0|t[Rabies] |cRXP_WARN_if you dont kill them fast enough (Instant Melee: Reduces ALL health regen by 50% for 10 Minutes)|r
+    .complete 2138,1 -- Rabid Thistle Bear slain (20)
+    .mob Rabid Thistle Bear
+step
+    #optional
+    #completewith next
+    #label CliffCave
+    .goto 1439,54.934,32.721,20,0
+    .goto 1439,55.108,33.600,40 >> Travel to the Cliffspring River Cave
+step << Druid
+    .goto 1439/1,-660.18,6874.43
+    >>|cRXP_WARN_Use the|r |T134776:0|t[Empty Cliffspring Falls Sampler] |cRXP_WARN_in the water at the entrance of the Cliffspring River Cave|r
+    .complete 6122,1 --Filled Cliffspring Falls Sampler (1)
+    .isOnQuest 6122
+step
+    #label CaveMushrooms
+    .goto 1439/1,-690.31,6751.29,12,0
+    .goto 1439/1,-706.68,6748.23,12,0
+    .goto 1439/1,-719.13,6787.530,12,0
+    >>Loot the |cRXP_LOOT_Scaber Stalks|r and a |cRXP_LOOT_Death Cap|r on the ground
+    >>|cRXP_WARN_Stay on the upper section. If there is not a |cRXP_LOOT_Death Cap|r at the end of the top side, drop down and get one from the southern room below|r
+    >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Stormscale Wave Riders|r cast|r |T135836:0|t[Aqua Jet] |cRXP_WARN_(Ranged Instant: Deals damage to nearby enemies and knocks them back) - make sure you're not in a position to get knocked off the upper level of the cave|r
+    .complete 947,1 --Scaber Stalk (5)
+    .goto 1439/1,-663.45,6877.49,8,0
+    .goto 1439/1,-679.17,6848.67,8,0
+    .goto 1439/1,-666.73,6819.41,8,0
+    .goto 1439/1,-680.48,6779.67,8,0
+    .goto 1439/1,-663.45,6877.49,8,0
+    .goto 1439/1,-679.17,6848.67,8,0
+    .goto 1439/1,-666.73,6819.41,8,0
+    .goto 1439/1,-680.48,6779.67,8,0
+    .goto 1439/1,-663.45,6877.49
+    .complete 947,2 --Death Cap (1)
+    .goto 1439/1,-685.72,6746.49
+step
+    .deathskip >> Die and respawn at the Auberdine graveyard
+    .target Spirit Healer
+step
+    #optional
+    #label CavetoAuber
+    #completewith CliffspringEnd
+    .subzone 442 >> Travel to Auberdine
+step
+    #label CliffspringEnd
+    .goto 1439,37.394,40.128
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thundris Windweaver|r
+    .turnin 4762 >> Turn in The Cliffspring River
+    .target Thundris Windweaver
+step
+    .goto 1439/1,472.32,6556.100
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alanndarian Nightsong|r
+    .accept 2178 >> Accept Easy Strider Living
+    .turnin 2178 >> Turn in Easy Strider Living
+    .target Alanndarian Nightsong
+    .skill cooking,<10,1 -- step only displays if skill is 10 or higher
+    .itemcount 5469,5 -- strider meat (5)
+
+step << Druid
+    #optional
+    .isOnQuest 6122
+    .goto 1439/1,472.32,6556.100
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alanndarian Nightsong|r
+    .turnin 6122 >> Turn in The Principal Source
+    .accept 6123 >> Accept Gathering the Cure
+    .target Alanndarian Nightsong
+step << Druid
+    #optional
+    .isQuestTurnedIn 6123
+    .goto 1439/1,472.32,6556.100
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alanndarian Nightsong|r
+    .accept 6123 >> Accept Gathering the Cure
+    .target Alanndarian Nightsong
+step << !Druid
+    .goto 1439,37.439,41.839
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archaeologist Hollee|r
+    .accept 729 >> Accept The Absent Minded Prospector
+    .target Archaeologist Hollee
+step
+    .goto 1439,38.843,43.416
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tharnariun Treetender|r
+    .turnin 2138 >> Turn in Cleansing of the Infected
+    .accept 2139 >> Accept Tharnariun's Hope
+    .target Tharnariun Treetender
+step
+    .goto 1439/1,472.32,6438.64
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
+    >>|cRXP_WARN_Choose the|r |T135641:0|t[Curvewood Dagger] |cRXP_WARN_as you should try to save a|r |T135641:0|t[Dagger] |cRXP_WARN_for your|r |T132290:0|t[Poisons] |cRXP_WARN_quest later|r << Rogue
+    .turnin 4813 >> Turn in The Fragments Within
+    .target Sentinel Glynda Nal'Shea
+step
+    .goto 1439,37.322,43.640
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Barithras Moonshade|r
+    .turnin 947 >> Turn in Cave Mushrooms
+    .accept 948 >> Accept Onu
+    .target Barithras Moonshade
+step
+    .goto 1439/1,504.41,6402.39
+    >>Click the |cRXP_PICK_Wanted Poster|r
+    .accept 4740 >> Accept WANTED: Murkdeep!
+step
+    .goto 1439,36.701,45.122,8,0
+    .goto 1439,36.621,45.596
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
+    .turnin 4723 >> Turn in Beached Sea Creature
+    .turnin 4725 >> Turn in Beached Sea Turtle
+    .target Gwennyth Bly'Leggonde
+    .isOnQuest 4723
+
+----Start of Druid Quest section----
+step << Druid
+    #completewith TotL
+    .goto 1439,33.213,39.883
+    .zone Teldrassil >> Take the boat to Darnassus
+    .zoneskip Darnassus
+step << Druid
+    #optional
+    #label DruidLesson
+    #completewith TotL
+    .goto 1438/1,965.80,8780.95
+    .zone Darnassus >> Take the purple portal into Darnassus
+step << Druid
+    .goto 1457/1,2563.98,10179.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mathrengyl Bearwalker|r
+    .accept 26 >> Accept A Lesson to Learn
+    .trainer >> Train your class spells
+    .target Mathrengyl Bearwalker
+step << Druid
+    #optional
+    #completewith next
+    .abandon 729 >> Abandon The Absent Minded Prospector to accept the quest Trouble In Darkshore?
+step << Druid
+    #optional
+	#completewith TotL
+	.cast 18960 >> Cast Teleport: Moonglade
+	.zoneskip Moonglade
+step << Druid
+    .goto 1450/1,-2676.22,8019.01
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dendrite Starblaze|r
+    .turnin 26 >> Turn in A Lesson to Learn
+    .accept 29 >> Accept Trial of the Lake
+    .target Dendrite Starblaze
+step << Druid
+    .goto 1450/1,-2595.43,7697.24
+    >>Swim into Lake Elune'Ara
+    >>Open a |cRXP_PICK_Bauble Container|r. Loot it for a |T134125:0|t[Shrine Bauble]
+    >>|cRXP_WARN_It may spawn in different locations underwater|r
+    .collect 15877,1,29,1 -- Shrine Bauble (1)
+step << Druid
+    #optional
+    #completewith next
+    .cast 18960 >> Cast Teleport: Moonglade
+    .itemcount 15877,1 -- Shrine Bauble (1)
+step << Druid
+    .goto 1450/1,-2212.85,7854.68
+    >>|cRXP_WARN_Use the|r |T134125:0|t[Shrine Bauble] |cRXP_WARN_at the Shrine of Remulos tree|r
+    .complete 29,1 --Complete the Trial of the Lake.
+    .use 15877
+step << Druid
+    #label TotL
+    .goto 1450/1,-2224.18,7874.23
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tajarri|r
+    .turnin 29 >> Turn in Trial of the Lake
+    .accept 272 >> Accept Trial of the Sea Lion
+    .target Tajarri
+step
+    .hs >> Hearth to Stormwind
+    .zoneskip Stormwind City
+    .zoneskip Darkshore
+step
+    .goto 1453/0,566.600,-8845.500
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elaine Trias::483|r
+    .target Elaine Trias::483
+    .turnin 97220 >>Turn in Philmor's Favor
+    .accept 97222 >>Accept Gatehouse Goods
+step
+    .goto 1453/0,568.300,-8862.200
+    .use 277198 >> |cRXP_WARN_Use the|r |T132762:0|t[Gatehouse Shipment] |cRXP_WARN_in front of the |cRXP_PICK_Gatehouse Door|r upstairs|r
+    .complete 97222,1 --|1/1 Gatehouse Shipment delivered
+step
+    #label Gatehouse
+    .goto 1453/0,566.600,-8845.500
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elaine Trias::483|r
+    .target Elaine Trias::483
+    .turnin 97222 >>Turn in Gatehouse Goods  
 step << Druid
     .goto 1453/0,1095.500,-8741.700
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Theridran|r
@@ -1253,22 +2192,6 @@ step << Priest
     .target Brother Joshua
     .zoneskip Dun Morogh
     .zoneskip Ironforge
-step
-    .goto 1453/0,566.600,-8845.500
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elaine Trias::483|r
-    .target Elaine Trias::483
-    .turnin 97220 >>Turn in Philmor's Favor
-    .accept 97222 >>Accept Gatehouse Goods
-step
-    .goto 1453/0,568.300,-8862.200
-    .use 277198 >> |cRXP_WARN_Use the|r |T132762:0|t[Gatehouse Shipment] |cRXP_WARN_in front of the |cRXP_PICK_Gatehouse Door|r upstairs|r
-    .complete 97222,1 --|1/1 Gatehouse Shipment delivered
-step
-    #label Gatehouse
-    .goto 1453/0,566.600,-8845.500
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elaine Trias::483|r
-    .target Elaine Trias::483
-    .turnin 97222 >>Turn in Gatehouse Goods  
 step << Hunter
     .goto 1453/0,552.78,-8415.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Einris Brightspear|r
@@ -1655,7 +2578,7 @@ step
     .goto 1420/0,4.300,1847.500,10,0
     .goto 1458/0,238.400,1872.200,20,0
     .goto 1458/0,170.700,1804.700,20 >>Travel to the Ruins of Lordaeron in Undercity. Enter the dungeon
-    >>|cRXP_WARN_Be careful of higher level |cRXP_ENEMY_Cats|r, |cRXP_ENEMY_Bears|r, |cRXP_ENEMY_Spiders|r or |cRXP_ENEMY_Murlocs|r as you run over|r
+    >>|cRXP_WARN_Be careful of higher level |cRXP_ENEMY_Cats|r, |cRXP_ENEMY_Bears|r, |cRXP_ENEMY_Spiders|r or |cRXP_ENEMY_Murlocs|r as you run over. Run through the Hillsbrad fields if needed instead|r
     >>|cRXP_WARN_As soon as you enter Undercity you will be automatically PVP flagged, becoming attackable by|r |cRXP_ENEMY_Horde|r
 
 step
@@ -1758,6 +2681,7 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Osborne|r
     .trainer >> Train your class spells
     .target Osborne the Night Man
+    .xp <20,1
 step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wu|r or |cRXP_FRIENDLY_Ilsa|r
     .goto 1453/0,358.25,-8728.28,15,0
@@ -1766,16 +2690,19 @@ step << Warrior
     .trainer >> Train your class spells
     .target Wu Shen
     .target Ilsa Corbin
+    .xp <20,1
 step << Hunter
     .goto 1453/0,552.78,-8415.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Einris Brightspear|r inside
     .trainer >> Train your class spells
     .target Einris Brightspear
+    .xp <20,1
 step << Druid
     .goto 1453/0,1347.6192,-8591.2168
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Theridran|r
     .trainer >> Train your class spells
 	.target Theridran
+    .xp <20,1
 step << Warlock
     #optional
     #completewith next
@@ -1786,6 +2713,7 @@ step << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ursula Deline|r
     .trainer >> Train your class spells
     .target Ursula Deline
+    .xp <20,1
 step << Mage
     #optional
     #completewith next
@@ -1795,6 +2723,7 @@ step << Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elsharin|r
     .trainer >> Train your class spells
     .target Elsharin
+    .xp <20,1
 step << Priest/Paladin
     #optional
     #completewith next
@@ -1805,11 +2734,13 @@ step << Paladin
     .goto 1453/0,861.14,-8573.03
     .trainer >> Train your class spells
     .target Arthur the Faithful
+    .xp <20,1
 step << Priest
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Joshua|r
     .goto 1453/0,862.89,-8519.61
     .trainer >> Train your class spells
     .target Brother Joshua
+    .xp <20,1
 ]])
 
 RXPGuides.RegisterGuide([[
