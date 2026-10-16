@@ -16,7 +16,7 @@ RXPGuides.RegisterGuide([[
 
 
 step
-#include RestedXP Forever Guide (A)\1-6 Durotar
+#include RestedXP Forever Guide (H)\1-6 Durotar
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -32,7 +32,7 @@ RXPGuides.RegisterGuide([[
 #next 10-12 Durotar
 
 step
-#include RestedXP Forever Guide (A)\6-10 Durotar
+#include RestedXP Forever Guide (H)\6-10 Durotar
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -50,7 +50,7 @@ RXPGuides.RegisterGuide([[
 
 
 step
-#include RestedXP Forever Guide (A)\10-12 Durotar
+#include RestedXP Forever Guide (H)\10-12 Durotar
 ]])
 
 
@@ -67,5 +67,5 @@ RXPGuides.RegisterGuide([[
 #next 12-14 Silverpine Forest << !Hunter !Shaman !Tauren !Skyborne !Undead
 
 step
-#include RestedXP Forever Guide (A)\10-12 Tirisfal (Orc/Troll)
+#include RestedXP Forever Guide (H)\10-12 Tirisfal (Orc/Troll)
 ]])

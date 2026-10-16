@@ -4,18 +4,42 @@ RXPGuides.RegisterGuide([[
 #forever
 #version 1
 #beta
-#name 1-14 Zephras Isle
-#displayname 1-13 Skyborne << Alliance
-#displayname 1-12 Skyborne << Horde
+#name 1-9 Zephras Isle
+#displayname 1-9 Skyborne << Alliance
+#displayname 1-9 Skyborne << Horde
+#group RestedXP Forever Dungeon Guide (A) << Alliance
+#group RestedXP Forever Dungeon Guide (H) << Horde
+#subgroup (WIP) Dungeon Guide 1-20 << Alliance
+#subgroup (WIP) Dungeon Guide 1-22 << Horde
+#defaultfor Skyborne
+#next 9-13 Zephras Isle
+
+step << Horde
+#include RestedXP Forever Guide (H)\1-9 Zephras Isle
+step << Alliance
+#include RestedXP Forever Guide (A)\1-9 Zephras Isle
+]])
+
+RXPGuides.RegisterGuide([[
+#forever
+#version 1
+#beta
+#name 9-13 Zephras Isle
+#displayname 9-13 Skyborne << Alliance
+#displayname 9-12 Skyborne << Horde
 #group RestedXP Forever Dungeon Guide (A) << Alliance
 #group RestedXP Forever Dungeon Guide (H) << Horde
 #subgroup (WIP) Dungeon Guide 1-20 << Alliance
 #subgroup (WIP) Dungeon Guide 1-22 << Horde
 #defaultfor Skyborne
 #next 13-15 Westfall << Alliance
+#next 12-14 Silverpine Forest << Horde !Hunter
+#next 12-17 The Barrens << Horde Hunter
 
-step
-#include RestedXP Forever Guide (A)\1-14 Zephras Isle
+step << Horde
+#include RestedXP Forever Guide (H)\9-13 Zephras Isle
+step << Alliance
+#include RestedXP Forever Guide (A)\9-13 Zephras Isle
 ]])
 
 

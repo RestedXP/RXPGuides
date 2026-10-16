@@ -15,7 +15,7 @@ RXPGuides.RegisterGuide([[
 #next 6-12 Tirisfal Glades
 
 step
-#include RestedXP Forever Guide (A)\1-6 Tirisfal Glades
+#include RestedXP Forever Guide (H)\1-6 Tirisfal Glades
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -32,7 +32,7 @@ RXPGuides.RegisterGuide([[
 #next 12-14 Silverpine Forest; 12-17 The Barrens
 
 step
-#include RestedXP Forever Guide (A)\6-12 Tirisfal Glades
+#include RestedXP Forever Guide (H)\6-12 Tirisfal Glades
 ]])
 
 
@@ -52,5 +52,5 @@ RXPGuides.RegisterGuide([[
 
 
 step
-#include RestedXP Forever Guide (A)\12-14 Silverpine Forest
+#include RestedXP Forever Guide (H)\12-14 Silverpine Forest
 ]])

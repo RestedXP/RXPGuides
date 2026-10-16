@@ -15,7 +15,7 @@ RXPGuides.RegisterGuide([[
 #next 6-12 Mulgore;6-13 Mulgore
 
 step
-#include RestedXP Forever Guide (A)\1-6 Mulgore
+#include RestedXP Forever Guide (H)\1-6 Mulgore
 ]])
 
 
@@ -33,5 +33,5 @@ RXPGuides.RegisterGuide([[
 
 
 step
-#include RestedXP Forever Guide (A)\6-12 Mulgore
+#include RestedXP Forever Guide (H)\6-12 Mulgore
 ]])
