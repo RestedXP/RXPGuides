@@ -13,7 +13,6 @@ RXPGuides.RegisterGuide([[
 #defaultfor Troll/Orc
 #next 6-10 Durotar
 
-
 step << !Orc !Troll
     #completewith next
     +|cRXP_WARN_You have selected a guide meant for Orcs and Trolls. You should choose the same starter zone that you start in|r

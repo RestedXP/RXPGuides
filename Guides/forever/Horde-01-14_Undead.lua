@@ -3887,15 +3887,6 @@ step << Undead
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Michael|r
     .turnin 6322 >>Turn in Michael Garrett
     .target Michael Garrett
-step << Undead Warrior
-    #optional
-    .goto 1458/0,418.35,1767.02
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baltus Fowler|r
-    .train 285 >> Train your class spells
-    .target Baltus Fowler
-    .dungeon RFC
-    .xp <16,1
---XX 16+ Only for Heroic Strike, Undead only as other races train elsewhere more effectively. RFC So warriors have 16 spells for RFC
 step << Rogue/Warrior
     .goto 1458/0,171.03,1524.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Mary|r in the Rogues' Quarter
@@ -3956,24 +3947,6 @@ step << Undead Rogue
     .xp <16,1
     .isOnQuest 1898 << Undead
 step << Undead Rogue
-    .goto 1458/0,68.66,1416.69
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Carolyn|r
-    .train 1758 >> Train your class spells
-    .target Carolyn Ward
-    .xp <14,1
-    .xp >16,1
-    .dungeon RFC
---XX Force train if hs not in Brill as an undead ONLY + you want to do RFC. Optional left out on purpose
---XX This whole section of training across 3 different areas, 2 different xp rates and RFC is solidly in the top 10 worst experiences of my life and im still not 100% happy with it xd
-step << Undead Rogue
-    #optional
-    .goto 1458/0,68.66,1416.69
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Carolyn|r
-    .train 6761 >> Train your class spells
-    .target Carolyn Ward
-    .xp <16,1
-    .dungeon RFC
-step << Undead Rogue
     .goto 1458/0,347.07,1389.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Andron|r
     .turnin 1898 >>Turn in The Deathstalkers
@@ -4014,6 +3987,12 @@ step
     .accept 1358 >> Accept Sample for Helbrim
     .target +Apothecary Zinge
     .goto 1458/0,391.97,1442.87
+step
+    .goto Undercity,56.2,96.2
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Varimathras|r
+    .accept 5725 >>Accept The Power to Destroy...
+    .target Varimathras
+    .dungeon RFC
 step << Undead Rogue
     .goto 1458/0,71.83,1435.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mennet|r
@@ -4021,24 +4000,6 @@ step << Undead Rogue
     .accept 1978 >>Accept The Deathstalkers
     .target Mennet Carkad
     .isQuestTurnedIn 1886
-step << Undead Rogue
-    #optional
-    .goto 1458/0,68.66,1416.69
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Carolyn|r
-    .train 1758 >> Train your class spells
-    .target Carolyn Ward
-    .xp <14,1
-    .xp >16,1
-    .dungeon RFC
---XX Force train if hs not in Brill as an undead ONLY + you want to do RFC. Duplicate if you ding from prev optional quests
-step << Undead Rogue
-    #optional
-    .goto 1458/0,68.66,1416.69
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Carolyn|r
-    .train 6761 >> Train your class spells
-    .target Carolyn Ward
-    .xp <16,1
-    .dungeon RFC
 step << Undead Rogue
     .goto 1420/0,373.60,1464.85,40,0
     .goto 1420/0,333.38,1287.72
@@ -4152,69 +4113,12 @@ step << Priest/Mage/Warlock
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<13.4
     .xp <15,1
-step << Undead Priest
-    #sticky
-    #label TouchOW
-    .goto 1458/0,403.29,1760.61
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aelthalyste|r
-    .turnin 5658 >> Turn in Touch of Weakness
-    .target Aelthalyste
-    .train 2652,1 --Touch of Weakness not trained
-    .dungeon RFC
-step << !Undead Priest
-    #sticky
-    #label TouchOW
-    .goto 1458/0,403.29,1760.61
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aelthalyste|r
-    .turnin 5660 >> Turn in Touch of Weakness
-    .target Aelthalyste
-    .train 2652,1 --Touch of Weakness not trained
-    .dungeon RFC
-    .isOnQuest 5660
---XX Not going out of the way for this outside of this edge case to train for RFC, waste of a gcd
-step << Undead Priest
-    .goto 1458/0,416.91,1757.03
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lazarus|r
-	.train 6074 >> Train your class spells
-    .target Father Lazarus
-    .xp <14,1
-    .xp >16,1
-    .dungeon RFC
-step << Undead Priest
-    #optional
-    .goto 1458/0,416.91,1757.03
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lazarus|r
-	.train 8102 >> Train your class spells
-    .target Father Lazarus
-    .xp <16,1
-    .dungeon RFC
 step << Undead Rogue
     #optional
     #completewith Conscript
     >>Abandon The Deathstalkers, there's no opportunity left to do it
     .abandon 1886 >> Abandon The Deathstalkers
     .isOnQuest 1886
-step << skip --Undead !Rogue !Warrior
-    #requires TouchOW << Undead Priest
-    .goto 1458/0,327.4,1770.6 << Priest
-    .goto 1458/0,206.81,1712.48 << Mage/Warlock
-    .goto 1458/0,221.78,1780.14,30 >>|cRXP_WARN_Perform a Logout Skip by jumping on top of the grinder of the Meat Wagon, then logging out and back in|r << Priest
-    .goto 1458/0,221.78,1780.14,30 >>|cRXP_WARN_Perform a Logout Skip by jumping on top of the stack of barrels, then logging out and back in|r << Mage/Warlock
-    >>|cRXP_WARN_If you can't do this, just run out of Undercity normally|r
-    .zoneskip Undercity,1
-    .dungeon RFC
-step << skip --Undead !Rogue !Warrior
-    .goto 1458/0,206.81,1712.48 << Priest/Mage/Warlock
-    .goto 1458/0,221.78,1780.14,30 >>|cRXP_WARN_Perform a Logout Skip by jumping on top of the stack of barrels, then logging out and back in|r << Priest/Mage/Warlock
-    .link https://www.youtube.com/watch?v=-Bi95bCN8dM >> |cRXP_WARN_CLICK HERE for an example|r
-    >>|cRXP_WARN_If you can't do this, just run out of Undercity normally|r
-    .zoneskip Undercity,1
-    .dungeon !RFC
-step << Undead/Skyborne
-    #sticky
-    #completewith EnterRFC
-    .subzone 2437 >> Now you should be looking for a group to Ragefire Chasm
-    .dungeon RFC
 step << Undead
     #completewith next
     .goto 1420/0,235.32,1883.89,50,0
@@ -4265,9 +4169,6 @@ step << Skyborne
 step << Skyborne
     #optional
     #label Silverpineskip
-
-    --Start Undead/Skyborne RFC
-
 step << Undead
     #completewith HiddenEnemiesPickup
     .goto 1454/1,-4367.46,1405.44,50,0
@@ -4296,208 +4197,6 @@ step << Undead/Skyborne
     >>Kill |cRXP_ENEMY_Burning Blade|r mobs in Skull Rock until |cRXP_LOOT_Lieutenant's Insignia|r drops
     .complete 5726,1 --Lieutenant's Insignia (1)
     .dungeon RFC
-step << Undead/Skyborne
-    #completewith next
-    .goto 1454/1,-4367.46,1405.44,50,0
-    .zone Orgrimmar >> Enter Orgrimmar
-    .dungeon RFC
-step << Undead/Skyborne
-    .goto 1454/1,-4125.79,1920.10
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
-    .turnin 5726 >> Turn in Hidden Enemies
-    .accept 5727 >> Accept Hidden Enemies
-    .target Thrall
-    .dungeon RFC
-step << Undead/Skyborne
-    .goto 1454/1,-4376.29,1802.43
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Neeru Fireblade|r
-    .accept 5761 >>Accept Slaying the Beast
-    .target Neeru Fireblade
-    .dungeon RFC
-step << Undead/Skyborne
-    .goto 1454/1,-4376.29,1802.43
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Neeru Fireblade|r
-    .complete 5727,1 --Gauge Neeru Fireblade's reaction to you being a member of the Burning Blade
-    .skipgossip
-    .target Neeru Fireblade
-    .dungeon RFC
-step << Undead/Skyborne
-    #label HiddenEnemiesPickup
-    .goto 1454/1,-4125.79,1920.10
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
-    .turnin 5727 >> Turn in Hidden Enemies
-    .accept 5728 >> Accept Hidden Enemies
-    .target Thrall
-    .dungeon RFC
-step << Undead/Skyborne
-    #completewith EnterRFC
-    .destroy 14544 >>|cRXP_WARN_Destroy|r |T134417:0|t[Lieutenant's Insignia] |cRXP_WARN_as you no longer need it|r
-    .dungeon RFC
-step << Undead/Skyborne
-    #label EnterRFC
-    .goto 1454/1,-4420.76,1815.80
-    .subzone 2437 >> Enter the RFC Instance portal. Zone in
-    .dungeon RFC
-step << Undead/Skyborne
-    >>|cRXP_WARN_If possible, have party members share the following quests|r
-    .accept 5722 >> Accept Searching for the Lost Satchel
-    .accept 5723 >> Accept Testing an Enemy's Strength
-    .disablecheckbox
-    .dungeon RFC
-step << Undead/Skyborne
-    #completewith next
-    >>Kill |cRXP_ENEMY_Ragefire Troggs|r and |cRXP_ENEMY_Ragefire Shamans|r
-    .complete 5723,1 --Ragefire Trogg (8)
-    .mob +Ragefire Trogg
-    .complete 5723,2 --Ragefire Shaman (8)
-    .mob +Ragefire Shaman
-    .isOnQuest 5723
-    .dungeon RFC
-step << Undead/Skyborne
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maur|r
-    .turnin 5722 >> Turn in Searching for the Lost Satchel
-    .accept 5724 >> Accept Returning the Lost Satchel
-    .target Maur Grimtotem
-    .isOnQuest 5722
-    .dungeon RFC
-step << Undead/Skyborne
-    #optional
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maur|r
-    .accept 5724 >> Accept Returning the Lost Satchel
-    .target Maur Grimtotem
-    .isQuestTurnedIn 5722
-    .dungeon RFC
-step << Undead/Skyborne
-    #label TroggsShamans
-    >>Kill |cRXP_ENEMY_Ragefire Troggs|r and |cRXP_ENEMY_Ragefire Shamans|r
-    .complete 5723,1 --Ragefire Trogg (8)
-    .mob +Ragefire Trogg
-    .complete 5723,2 --Ragefire Shaman (8)
-    .mob +Ragefire Shaman
-    .isOnQuest 5723
-    .dungeon RFC
-step << Undead/Skyborne
-    #requires TroggsShamans
-    #completewith BazzalanandJergosh
-    >>Kill |cRXP_ENEMY_Searing Blade Cultists|r and |cRXP_ENEMY_Searing Blade Warlocks|r. Loot them for the |cRXP_LOOT_Spells of Shadow|r and |cRXP_LOOT_Incantations from the Nether|r
-    .complete 5725,1 --Spells of Shadow (1)
-    .complete 5725,2 --	Incantations from the Nether (1)
-    .mob Searing Blade Cultist
-    .mob Searing Blade Warlock
-    .isOnQuest 5725
-    .dungeon RFC
-step << Undead/Skyborne
-    >>Kill |cRXP_ENEMY_Taragaman the Hungerer|r. Loot him for his |cRXP_LOOT_Heart|r
-    .complete 5761,1 -- Taragaman the Hungerer's Heart
-    .mob Taragaman the Hungerer
-    .isOnQuest 5761
-    .dungeon RFC
-step << Undead/Skyborne
-    #label BazzalanandJergosh
-    >>Kill |cRXP_ENEMY_Bazzalan|r and |cRXP_ENEMY_Jergosh the Invoker|r
-    .complete 5728,1 --Bazzalan (1)
-    .mob +Bazzalan
-    .complete 5728,2 --Jergosh the Invoker (1)
-    .mob +Jergosh the Invoker
-    .isOnQuest 5728
-    .dungeon RFC
-step << Undead/Skyborne
-    >>Kill |cRXP_ENEMY_Searing Blade Cultists|r and |cRXP_ENEMY_Searing Blade Warlocks|r. Loot them for the |cRXP_LOOT_Spells of Shadow|r and |cRXP_LOOT_Incantations from the Nether|r
-    .complete 5725,1 --Spells of Shadow (1)
-    .complete 5725,2 --	Incantations from the Nether (1)
-    .mob Searing Blade Cultist
-    .mob Searing Blade Warlock
-    .isOnQuest 5725
-    .dungeon RFC
-step << Undead/Skyborne
-    .goto 1454/1,-4376.29,1802.43
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Neeru Fireblade|r
-    .turnin 5761 >>Turn in Slaying the Beast
-    .target Neeru Fireblade
-    .isQuestComplete 5761
-    .dungeon RFC
-step << Undead/Skyborne
-    .goto 1454/1,-4125.79,1920.10
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
-    .turnin 5728 >> Turn in Hidden Enemies
-    .accept 5729 >> Accept Hidden Enemies
-    .target Thrall
-    .isQuestComplete 5728
-    .dungeon RFC
-step << Undead/Skyborne
-    .goto 1454/1,-4125.79,1920.10
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
-    .accept 5729 >> Accept Hidden Enemies
-    .target Thrall
-    .isQuestTurnedIn 5728
-    .dungeon RFC
-step << Undead/Skyborne
-    .goto 1454/1,-4376.29,1802.43
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Neeru Fireblade|r
-    .turnin 5729 >> Turn in Hidden Enemies
-    .accept 5730 >> Accept Hidden Enemies
-    .target Neeru Fireblade
-    .dungeon RFC
-    .isQuestTurnedIn 5728
-step << Undead/Skyborne
-    .goto 1454/1,-4125.79,1920.10
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
-    .turnin 5730 >> Turn in Hidden Enemies
-    .target Thrall
-    .isQuestTurnedIn 5728
-    .dungeon RFC
-step << Skyborne
-    #completewith RFCTurninsTB1
-    .goto 1454/1,-4313.46,1676.25--c:Orgrimmar,45.120,63.889
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Doras|r
-    .fly Thunder Bluff >>Fly to Thunder Bluff
-    .target Doras
-    .zoneskip Orgrimmar,1
-    .isOnQuest 5724
-    .isQuestComplete 5723
-    .dungeon RFC
-step << Skyborne
-    #completewith RFCTurninsTB1
-    .goto 1456/1,-212.71,-1065.010,80 >> Travel to the Elder Rise
-    .isOnQuest 5724
-    .isQuestComplete 5723
-    .dungeon RFC
-step << Skyborne
-    .goto 1456/1,-218.13,-1055.97
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rahauro|r
-    .turnin 5724 >> Turn in Returning the Lost Satchel
-    .turnin 5723 >> Turn in Testing an Enemy's Strength
-    .target Rahauro
-    .isOnQuest 5724
-    .isQuestComplete 5723
-    .dungeon RFC
-step << Skyborne
-    .goto 1456/1,-218.13,-1055.97
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rahauro|r
-    .turnin 5724 >> Turn in Returning the Lost Satchel
-    .target Rahauro
-    .isOnQuest 5724
-    .dungeon RFC
-step << Skyborne
-    #completewith Conscript
-    .hs >> Hearth to Orgrimmar
-    .use 6948
-    .zoneskip Thunder Bluff,1
-    .bindlocation 1637,1
-    .cooldown item,6948,>0,1
-    .dungeon RFC
-step << Skyborne
-    #completewith Conscript
-    .goto Thunder Bluff,47.00,49.82
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
-    .fly Orgrimmar >>Fly to Orgrimmar
-    .target Tal
-    .zoneskip Thunder Bluff,1
-    .cooldown item,6948,<0
-    .dungeon RFC
-
-    --End Undead/Skyborne RFC
-
 step << Undead/Skyborne
     #completewith Conscript
     .subzone 362 >> Travel to Razor Hill

@@ -1247,14 +1247,13 @@ step
     .isQuestTurnedIn 850
 step
     #optional
-    #completewith next
+    #completewith HarpyTalons
     >>Kill every |cRXP_ENEMY_Raptor|r you see. Loot them for their |cRXP_LOOT_Heads|r
     .complete 869,1 --Raptor Head (12)
     .mob Sunscale Lashtail
     .mob Sunscale Screecher
 step
     #completewith HarpyTalons
-    #loop
     .goto 1413/1,-1594.58,30.19,0
     .goto 1413/1,-1594.58,30.19,50,0
     .goto 1413/1,-1562.15,-29.94,50,0
@@ -1270,7 +1269,6 @@ step
 step
     #optional
     #completewith HarpyTalons
-    #loop
     .goto 1413/1,-1594.58,30.19,0
     .goto 1413/1,-1594.58,30.19,50,0
     .goto 1413/1,-1562.15,-29.94,50,0

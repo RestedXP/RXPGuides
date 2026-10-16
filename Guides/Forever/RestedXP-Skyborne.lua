@@ -6573,6 +6573,13 @@ step << Horde !Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal::2995|r.
     .fly Orgrimmar >>Fly to Orgrimmar
     .target Tal::2995
+step
+    .goto 1456/1,-218.13,-1055.97--c:Thunder Bluff,70.4,29.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rahauro|r
+    .accept 5722 >> Accept Searching for the Lost Satchel
+    .accept 5723 >> Accept Testing an Enemy's Strength
+    .target Rahauro
+    .dungeon RFC
 step << Horde !Druid
     #completewith WelcomeToAzerothA
     .goto 1456/1,-110.500,-970.700,15,0
@@ -6765,7 +6772,6 @@ step << !Hunter
 step << Horde
     #completewith next
     .zone Durotar >> Leave Orgrimmar
-    .zoneskip Durotar
     .zoneskip Tirisfal Glades
     .zoneskip Undercity
     .zoneskip Silverpine Forest
@@ -6788,7 +6794,6 @@ step << Horde Hunter
     .accept 842 >>Accept Crossroads Conscription
     .target Kargal Battlescar::3337
 step << Horde !Hunter
-    .zoneskip Tirisfal Glades
     .goto 1411/1,-4648.55,1321.88,40 >>Go up the Zeppelin Tower
     .zone Tirisfal Glades >>Take the Zeppelin to Tirisfal Glades
     >>|cRXP_WARN_Conjure water while waiting|r << Mage
