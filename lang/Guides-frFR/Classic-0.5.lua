@@ -914,7 +914,7 @@ step
 step
     #optional
     #completewith AnthionsFriend
-    .goto Kalimdor,43.39,66.52,20 >>Entrez dans Hache-Tripes par l'entrée nord
+    .goto Kalimdor,43.39,66.52,20 >>Entrez à Hache-Tripes par l'entrée nord
     .itemcount 18249,1 << !Rogue --Crescent Key
     .skill lockpicking,<300,1 << Rogue
 step

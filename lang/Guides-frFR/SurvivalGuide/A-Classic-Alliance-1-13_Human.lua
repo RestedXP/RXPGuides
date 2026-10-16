@@ -1790,7 +1790,7 @@ step
     .goto Dun Morogh,70.7,56.4,40,0
     .goto Dun Morogh,70.62,52.39,25,0
     .goto Dun Morogh,70.7,56.4
-    >>Tuez les |cRXP_ENEMY_Rockjaw Skullthumpers|r et les |cRXP_ENEMY_Rockjaw Bonesnappers|r
+    >>Tuez les |cRXP_ENEMY_Brise-crânes Mâcherocs|r et les |cRXP_ENEMY_Briseurs d'os Mâcherocs|r
     .complete 432,1 --Kill Rockjaw Skullthumper (x6)
     .mob +Rockjaw Skullthumper
     .complete 433,1 --Kill Rockjaw Bonesnapper (x10)
@@ -1872,7 +1872,7 @@ step
 .group
     .goto Loch Modan,24.764,18.397
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Mountaineer Stormpike|r
-    .turnin 353 >> Rendez la quête Livraison pour Stormpike
+    .turnin 353 >> Rendez la quête Livraison pour Foudrepique
     .target Mountaineer Stormpike
     .accept 307 >> Acceptez la quête Bas les pattes !
     >>|cRXP_WARN_N'acceptez pas encore la quête La mission de Foudrepique|r
@@ -1880,7 +1880,7 @@ step
 .solo
     .goto Loch Modan,24.764,18.397
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Mountaineer Stormpike|r
-    .turnin 353 >> Rendez la quête Livraison pour Stormpike
+    .turnin 353 >> Rendez la quête Livraison pour Foudrepique
     .target Mountaineer Stormpike
     >>|cRXP_WARN_N'acceptez pas encore la quête La mission de Foudrepique|r
 step
