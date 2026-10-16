@@ -146,7 +146,7 @@ step
 step
     #label Crates
 	.goto 1413/1,-3305.08,-231.96,40,0
-    .goto 1413/1,-3294.95,-211.69.0,40,0
+    .goto 1413/1,-3294.95,-211.69,40,0
     .goto 1413/1,-3305.08,-130.61,40,0
     .goto 1413/1,-3396.28,-63.05,40,0
     >>Loot the brown boxes found in the area
@@ -450,7 +450,7 @@ step
 .target Gazrog
     .accept 3281 >>Accept Stolen Silver
 step
-    .goto 1413/1,-2676.82,-481.94.0
+    .goto 1413/1,-2676.82,-481.94
 >>Talk to |cRXP_FRIENDLY_Sergra Darkthorn|r
     .turnin 903 >>Turn in Prowlers of the Barrens
 .target Sergra Darkthorn
@@ -466,7 +466,7 @@ step
 .target Sergra Darkthorn
     .accept 905 >>Accept The Angry Scytheclaws
 step
-    .goto 1413/1,-2666.68,-481.94.90
+    .goto 1413/1,-2666.68,-481.94
 >>Talk to |cRXP_FRIENDLY_Tonga Runetotem|r
     .turnin 870 >> Turn in The Forgotten Pools
 .target Tonga Runetotem
@@ -719,11 +719,11 @@ step
     .goto 1442/1,-695.02,12.09,50,0
     .goto 1442/1,-758.5,116.29,50,0
     .goto 1442/1,-890.35,171.65,50,0
-    .goto 1442/1,-773.15,-13.96.0,50,0
+    .goto 1442/1,-773.15,-13.96,50,0
     .goto 1442/1,-695.02,12.09,50,0
     .goto 1442/1,-758.5,116.29,50,0
     .goto 1442/1,-890.35,171.65,50,0
-    .goto 1442/1,-773.15,-13.96.0,50,0
+    .goto 1442/1,-773.15,-13.96,50,0
     >>Kill Grimtotems in the area
     .complete 6548,2 --Kill Grimtotem Mercenary (x6)
     .complete 6548,1 --Kill Grimtotem Ruffian (x8)
@@ -970,7 +970,7 @@ step
     #completewith next
     .goto 1413/1,-1856.02,-2583.13,0
     .goto 1413/1,-2362.68,-2616.91,0
-    .goto 1413/1,-2403.22,-2441.25.0,0
+    .goto 1413/1,-2403.22,-2441.25,0
     >>Search for Owatanka (Blue Thunder Lizard) around this area. If you find him, loot his Tailspike and start the quest. If you can't find him, skip this quest
     .collect 5102,1,884 --Collect Owatanka's Tailspike
     .accept 884 >>Accept Owatanka
@@ -1033,7 +1033,7 @@ step
     .accept 1131 >>Accept Steelsnap
 step
  	>>Go into The Pools of Vision
-	.goto 1456/1,202.5,-1058.75.0,30,0
+	.goto 1456/1,202.5,-1058.75,30,0
 	.goto 1456/1,276.6,-996.120
 .target Apothecary Zamah
 >>Talk to |cRXP_FRIENDLY_Apothecary Zamah|r
@@ -1116,7 +1116,7 @@ step
     .trainer >> Train your class spells if needed
 	>>Respec to Frost AoE if you haven't already
 step
-    .goto 1456/1,28.19,-1197.92.0
+    .goto 1456/1,28.19,-1197.92
     .fly The Crossroads >>Fly to The Crossroads
 step
     .goto 1413/1,-2605.88,-475.180
