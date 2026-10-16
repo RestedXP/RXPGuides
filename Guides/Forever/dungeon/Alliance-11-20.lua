@@ -2684,7 +2684,7 @@ RXPGuides.RegisterGuide([[
 --#groupid RXP-SRGCE-A1
 #name 18-19 Ruins of Lordaeron
 #next 19-20 Deadmines
-#displayname 17-18 Ruins of Lordaeron
+#displayname 17-18 Ruins of Lordaeron << NightElf
 
 step
     #completewith EnterRoL
@@ -3091,7 +3091,7 @@ step
     .turnin 141 >> Turn in The Defias Brotherhood
     .accept 142 >> Accept The Defias Brotherhood
     .target Gryan Stoutmantle
-step << NightElf Druid
+step << Druid
     .goto Westfall,52.8,53.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Heather|r
     .target Innkeeper Heather
@@ -3239,14 +3239,14 @@ step << Druid
     .goto 1436/0,1707.2116,-10583.0227
     >>Click the |cRXP_PICK_Burned-Out Remains|r on the ground
     .accept 79008 >> Accept ...and that note you found
-step << NightElf Druid
+step << Druid
     #completewith next
     .goto Westfall,17.928,33.099,50 >> Swim out to sea
-step << NightElf Druid
+step << Druid
     .goto Westfall,17.928,33.099
     >>Open the |cRXP_PICK_Strange Lockbox|r. Loot it for the |cRXP_LOOT_Half Pendant of Aquatic Endurance|r
     .collect 15882,1,272,1 --Collect Half Pendant of Aquatic Endurance (x1)
-step << NightElf Druid
+step << Druid
     #completewith next
 	.cast 18960 >> Cast Teleport: Moonglade
 step << Druid
@@ -3254,7 +3254,7 @@ step << Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loganaar|r
     .trainer >> Train your class spells
     .target Loganaar
-step << NightElf Druid
+step << Druid
     .hs >> Hearth to Sentinel Hill
 step << !Druid
     .goto 1436/0,1707.2116,-10583.0227
@@ -3496,17 +3496,21 @@ step << Shaman
     .goto 1433/0,-3121.100,-9485.000
     .use 265747 >> |cRXP_WARN_Use the|r |T132829:0|t[Unfilled Red Waterskin] |cRXP_WARN_at Stonewatch Falls|r
     .complete 94499,1 --|1/1 Full Red Waterskin
-step
+step << !Druid
     #optional << Shaman
     .hs >> Hearth to Stormwind
-    .cooldown item,6948,>2,1  
+    .cooldown item,6948,>2,1
+    .zoneskip Stormwind City
+    .zoneskip Darkshore
 step
     #optional
     #completewith DarkshoreBoat
-    .goto 1433/0,-2234.900,-9435.300
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariena Stormfeather|r
+    .goto 1433/0,-2234.900,-9435.300,-1
+    .goto 1436/0,1037.42,-10628.27,-1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariena Stormfeather|r or |cRXP_FRIENDLY_Thor|r
     .fly Stormwind >> Fly to Stormwind
     .target Ariena Stormfeather
+    .target Thor
     .zoneskip Stormwind City
     .zoneskip Darkshore
 step << Rogue
