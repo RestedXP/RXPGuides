@@ -6715,6 +6715,7 @@ RXPGuides.RegisterGuide([[
 #subgroup Speedrun Guide 1-20 << Alliance
 #subgroup Speedrun Guide 1-22 << Horde
 #next 9-13 Zephras Isle
+#defaultfor Skyborne
 
 step
     .goto 2521,42.82,23.41
@@ -9754,7 +9755,7 @@ RXPGuides.RegisterGuide([[
 #next 14-16 Darkshore << Alliance Hunter
 #next 12-14 Silverpine Forest << Horde !Hunter
 #next 12-17 The Barrens << Horde Hunter
-
+#defaultfor Skyborne
 
 step
     #optional
