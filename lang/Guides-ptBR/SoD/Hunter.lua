@@ -527,7 +527,7 @@ step
 step
     #season 2
     .goto Durotar,52.15,44.01
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com [[Razzil] <[Snake Charmer]>] <[Snake Charmer]>
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com [ [Razzil] <[Snake Charmer]>] <[Snake Charmer]>
     >>Entregue a |cRXP_ENEMY_Áspide|r para receber |T134419:0|t[|cRXP_FRIENDLY_Runa de Trinchar|r]
     .collect 206032,1 --Rune of Carve (1)
     .target Razzil

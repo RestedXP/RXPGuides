@@ -120,7 +120,7 @@ step
     #optional
     #completewith Hypothesis
     #requires EnterDungeon
-    >>Abate [[Grimroot] <[The Mourning Guardian]>] <[The Mourning Guardian]>|cRXP_ENEMY_, o primeiro chefe da instância. Saque o |T135139:0|t[Ironwood Branch]|r
+    >>Abate [ [Grimroot] <[The Mourning Guardian]>] <[The Mourning Guardian]>|cRXP_ENEMY_, o primeiro chefe da instância. Saque o |T135139:0|t[Ironwood Branch]|r
     .complete 86969,2
     .subzoneskip 15475,1 --Only shows in Demon Fall Canyon
     .isOnQuest 86969
@@ -165,7 +165,7 @@ step
 step
     #label Hypothesis
     >>Colete a |T132839:0|t[Chama da Vida]. Cai dos |cRXP_ENEMY_Élites Dragonkin|r perto de |cRXP_LOOT_Grim Batol|r em |cRXP_PICK_Pantanal|r
-    >>Colete o |T135139:0|t[Ironwood Branch]. Cai de |cRXP_ENEMY_[[Grimroot] <[The Mourning Guardian]>] <[The Mourning Guardian]>|r em |cRXP_LOOT_Cânion do Demônio Caído|r|cRXP_WARN_(dungeon)|r ou |cRXP_ENEMY_Gavíneo Lenhatorta|r em |cRXP_LOOT_Dire Malho West|r|cRXP_WARN_(dungeon)|r
+    >>Colete o |T135139:0|t[Ironwood Branch]. Cai de |cRXP_ENEMY_[ [Grimroot] <[The Mourning Guardian]>] <[The Mourning Guardian]>|r em |cRXP_LOOT_Cânion do Demônio Caído|r|cRXP_WARN_(dungeon)|r ou |cRXP_ENEMY_Gavíneo Lenhatorta|r em |cRXP_LOOT_Dire Malho West|r|cRXP_WARN_(dungeon)|r
     >>Colete o |T136116:0|t[NO TRANSLATION FOUND TO THIS ELEMENT]. É um NPC |cRXP_FRIENDLY_friendly NPC|r em |cRXP_LOOT_Garganta do Sussurro Sombrio|r em |cRXP_PICK_Hibernal|r
     >>|cRXP_WARN_Estes itens podem ser coletados em qualquer ordem|r
     .complete 86969,1 --Flame of Life

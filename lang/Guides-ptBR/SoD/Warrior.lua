@@ -1354,11 +1354,11 @@ step
     .mob Crushridge Warmonger
 step
     #completewith next
-    .goto Arathi Highlands,57.587,72.499,10 >> Suba a montanha para chegar a |cRXP_FRIENDLY_[[Skonk] <[Amateur Chef]>] <[Amateur Chef]>|r
+    .goto Arathi Highlands,57.587,72.499,10 >> Suba a montanha para chegar a |cRXP_FRIENDLY_[ [Skonk] <[Amateur Chef]>] <[Amateur Chef]>|r
 step
     .train 416004,1
     .goto Arathi Highlands,57.68,74.66
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_[[Skonk] <[Amateur Chef]>] <[Amateur Chef]>|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_[ [Skonk] <[Amateur Chef]>] <[Amateur Chef]>|r
     .turnin 79624 >>Entregue Qualquer um Cozinha
     .accept 79677 >>Aceite Ida Rápida ao Mercado
     .target Skonk
@@ -1433,12 +1433,12 @@ step
     .zone Arathi Highlands >>Vá para Planalto Arathi
 step
     #completewith next
-    .goto Arathi Highlands,57.587,72.499,10 >> Suba a montanha para chegar a |cRXP_FRIENDLY_[[Skonk] <[Amateur Chef]>] <[Amateur Chef]>|r
+    .goto Arathi Highlands,57.587,72.499,10 >> Suba a montanha para chegar a |cRXP_FRIENDLY_[ [Skonk] <[Amateur Chef]>] <[Amateur Chef]>|r
 step
     #label GroceryRun
     .train 416004,1
     .goto Arathi Highlands,57.68,74.66
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_[[Skonk] <[Amateur Chef]>] <[Amateur Chef]>|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_[ [Skonk] <[Amateur Chef]>] <[Amateur Chef]>|r
     .turnin 79677 >>Entregue Ida Rápida ao Mercado
     .accept 79678 >>Aceite Degustação
     .timer 23,Degustação RP
@@ -1446,13 +1446,13 @@ step
 step
     .train 416004,1
     .goto Arathi Highlands,57.68,74.66
-    >>Derrote |cRXP_ENEMY_[[Skonk] <[Amateur Chef]>] <[Amateur Chef]>|r depois que comer sua refeição
+    >>Derrote |cRXP_ENEMY_[ [Skonk] <[Amateur Chef]>] <[Amateur Chef]>|r depois que comer sua refeição
     .complete 79678,1 --Taste Testing
     .mob Skonk
 step
     .train 416004,1
     .goto Arathi Highlands,57.68,74.66
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_[[Skonk] <[Amateur Chef]>] <[Amateur Chef]>|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_[ [Skonk] <[Amateur Chef]>] <[Amateur Chef]>|r
     .turnin 79678 >>Entregue Degustação
     .target Skonk
 step
@@ -1967,7 +1967,7 @@ step
 step
     .train 440496,1
     >>|cRXP_WARN_NOTA: NÃO HÁ SETA PARA ESTE PASSO!|r
-    >>|cRXP_WARN_Você deve nadar para o sul até a ilha remota e falar com |cRXP_FRIENDLY_[[Sebastian Jurgens] <[Mad Doctor]>] <[Mad Doctor]>|r. Você deve nadar pelas águas de fadiga para alcançá-lo. Vá em direção ao Oilrig localizado na ilha para encontrá-lo|r
+    >>|cRXP_WARN_Você deve nadar para o sul até a ilha remota e falar com |cRXP_FRIENDLY_[ [Sebastian Jurgens] <[Mad Doctor]>] <[Mad Doctor]>|r. Você deve nadar pelas águas de fadiga para alcançá-lo. Vá em direção ao Oilrig localizado na ilha para encontrá-lo|r
     .turnin 84137 >> Entregue Amor de máquina
     .accept 84138 >> Aceite Favores gelados
     .target Sebastian Jurgens
@@ -2019,19 +2019,19 @@ step
     .zone Tanaris >>Viaje para Tanaris
 step
     .train 440496,1
-    >>|cRXP_WARN_Volte para |cRXP_FRIENDLY_[[Sebastian Jurgens] <[Mad Doctor]>] <[Mad Doctor]>|r na ilha remota ao sul novamente|r
+    >>|cRXP_WARN_Volte para |cRXP_FRIENDLY_[ [Sebastian Jurgens] <[Mad Doctor]>] <[Mad Doctor]>|r na ilha remota ao sul novamente|r
     .turnin 84212 >> Entregue De Volta à Estante
     .accept 84213 >> Aceite Fenda Afora
     .target Sebastian Jurgens
 step
     .train 440496,1
-    .zone Westfall >> |cRXP_WARN_Siga |cRXP_FRIENDLY_[[Sebastian Jurgens] <[Mad Doctor]>] <[Mad Doctor]>|r para o teletransportador. Ele o teletransportará para Cerro Oeste|r << Alliance
-    .zone Tirisfal Glades >> |cRXP_WARN_Siga |cRXP_FRIENDLY_[[Sebastian Jurgens] <[Mad Doctor]>] <[Mad Doctor]>|r para o teletransportador. Ele o teletransportará para Tirisfal Glades|r << Horde
+    .zone Westfall >> |cRXP_WARN_Siga |cRXP_FRIENDLY_[ [Sebastian Jurgens] <[Mad Doctor]>] <[Mad Doctor]>|r para o teletransportador. Ele o teletransportará para Cerro Oeste|r << Alliance
+    .zone Tirisfal Glades >> |cRXP_WARN_Siga |cRXP_FRIENDLY_[ [Sebastian Jurgens] <[Mad Doctor]>] <[Mad Doctor]>|r para o teletransportador. Ele o teletransportará para Tirisfal Glades|r << Horde
     .target Sebastian Jurgens
 step
     .train 440496,1
     >>|cRXP_WARN_Encontre um grupo para ajudá-lo com isto! Você precisa de pelo menos um tanque e um curador para lhe ajudar!|r
-    >>Converse com |cRXP_FRIENDLY_[[Sebastian Jurgens] <[Mad Doctor]>] <[Mad Doctor]>|r para invocar o |cRXP_ENEMY_Harvest Golem V000-A|r
+    >>Converse com |cRXP_FRIENDLY_[ [Sebastian Jurgens] <[Mad Doctor]>] <[Mad Doctor]>|r para invocar o |cRXP_ENEMY_Harvest Golem V000-A|r
     >>Mate |cRXP_ENEMY_Harvest Golem V000-A|r
     .complete 84213,1
     .mob Harvest Golem V000-A

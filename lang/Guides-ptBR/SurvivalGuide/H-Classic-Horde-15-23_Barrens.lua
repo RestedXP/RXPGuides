@@ -4950,7 +4950,7 @@ step
 step
     #requires SamophlangePages
     #requires SamophlangePages2
-    >>|cRXP_WARN_Clique na|r |T133735:0|t[[DEPRICATED] A rebimboca Manual Cobertura] |cRXP_WARN_para criar o|r |cRXP_LOOT_Manual|r
+    >>|cRXP_WARN_Clique na|r |T133735:0|t[ [DEPRICATED] A rebimboca Manual Cobertura] |cRXP_WARN_para criar o|r |cRXP_LOOT_Manual|r
     .complete 3924,1 -- Samophlange Manual
     .use 6626
 ste
