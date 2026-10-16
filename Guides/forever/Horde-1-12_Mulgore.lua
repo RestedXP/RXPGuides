@@ -666,17 +666,8 @@ step
     .accept 99108 >>Accept Sparring Match
     .target Krang Stonehoof
 step
-    #softcore
     .goto 1412/1,-521.600,-2345.400
     >>Talk to a |cRXP_FRIENDLY_Novice Warrior|r, then defeat it in combat
-    .complete 99108,1 --|3/3 Player Duels won or Novice Warriors defeated
-    .target Novice Warrior
-    .skipgossip
-step
-    #hardcore
-    .goto 1412/1,-521.600,-2345.400
-    >>Talk to a |cRXP_FRIENDLY_Novice Warrior|r, then defeat it in combat
-    >>|cRXP_WARN_Be aware that this quest PVP flags you|r
     .complete 99108,1 --|3/3 Player Duels won or Novice Warriors defeated
     .target Novice Warrior
     .skipgossip
@@ -1952,12 +1943,12 @@ step
     .turnin 765 >>Turn in Supervisor Fizsprocket
     .turnin 98424 >>Turn in Fizsprocket's Notes
 	.unitscan Morin Cloudstalker
-step << skip -- Tauren
+step << Tauren
     #softcore
 	#completewith Thunderhorn2
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
 step << Tauren
-    --#hardcore
+    #hardcore
     #completewith Thunderhorn2
     .subzone 222 >>Travel to Bloodhoof Village
 step

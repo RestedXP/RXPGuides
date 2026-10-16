@@ -68,14 +68,14 @@ step << Tauren Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thun'grim|r
     .turnin 1503 >>Turn in Forged Steel
     .target Thun'grim Firegaze
-step << skip --!Tauren
+step << !Tauren
     #softcore
     #completewith ThievesPickup
     .goto 1413/1,-2516.71,-590.71
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
     .xp >15,1
 step << !Tauren
-    --#softcore
+    #softcore
     #completewith ThievesPickup
     .subzone 380 >> Travel to The Crossroads
     .xp <15,1
