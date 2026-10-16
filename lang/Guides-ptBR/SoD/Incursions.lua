@@ -962,7 +962,7 @@ step
     #requires Moonkin
     #requires groupSkulk
     .goto The Hinterlands,53.58,39.10
-    .gossipoption 122141 >> Fale com |cRXP_FRIENDLY_[ [Elianar Shadowdrinker] <[Druid of the Claw]>] <[Druid of the Claw]>|r deitado no chão. Ele deveria começar a te seguir
+    .gossipoption 122141 >> Fale com |cRXP_FRIENDLY_Elianar Shadowdrinker|r deitado no chÃ£o. Ele deveria comeÃ§ar a te seguir
     >>|cRXP_WARN_Você pode falar com ele através da parte traseira da cerca de madeira sem ter que entrar|r
     >>|cRXP_WARN_Se ele não estiver lá, isso significa que alguém está a escoltando, pule este passo se você não conseguir encontrá-lo|r
     .target Elianar Shadowdrinker
@@ -1028,13 +1028,13 @@ step
     .maxlevel 53
 step
     .goto The Hinterlands,57.30,42.95
-    .gossipoption 122151 >>Suba para o topo da colina. Fale com |cRXP_FRIENDLY_[ [Veanna Cloudsleeper] <[Druid of the Claw]>] <[Druid of the Claw]>|r deitada no chão. Ela deveria começar a te seguir
+    .gossipoption 122151 >>Suba para o topo da colina. Fale com |cRXP_FRIENDLY_Veanna Cloudsleeper|r deitada no chÃ£o. Ela deveria comeÃ§ar a te seguir
     >>|cRXP_WARN_Se ela não estiver lá, isso significa que outra pessoa está escoltando-a, pule este passo se você não conseguir encontrá-la|r
     .target Veanna Cloudsleeper
     .maxlevel 53
 step
     .goto The Hinterlands,71.09,48.14
-    .gossipoption 122149 >> Entre no pequeno forte de madeira. Fale com |cRXP_FRIENDLY_[ [Serlina Starbright] <[Druid of the Claw]>] <[Druid of the Claw]>|r deitada no chão. Ela deve começar a acompanhá-o.
+    .gossipoption 122149 >> Entre no pequeno forte de madeira. Fale com |cRXP_FRIENDLY_Serlina Starbright|r deitada no chÃ£o. Ela deve comeÃ§ar a acompanhÃ¡-o.
     >>|cRXP_WARN_Se ela não estiver lá, isso significa que outra pessoa está escoltando-a, pule este passo se você não conseguir encontrá-la|r
     .target Serlina Starbright
     .maxlevel 53
@@ -1091,7 +1091,7 @@ step
     .turnin 81832 >> Entregue Missão IX das Terras Agrestes: Obter Pérola Onírica
     .turnin 81850 >> Entregue Missão XVI das Terras Agrestes: Resgatar Elianar Sorvessombra
     .turnin 81851 >> Entregue Missão XVII das Terras Agrestes: Resgatar Serlina Luminastra
-    .turnin 81852 >> Entregue Missão XVII das Terras Agrestes: Resgatar [Veanna Cloudsleeper] <[Druid of the Claw]>
+    .turnin 81852 >> Entregue MissÃ£o XVII das Terras Agrestes: Resgatar Veanna Cloudsleeper
     .target Field Captain Korlian
     .maxlevel 53
 step

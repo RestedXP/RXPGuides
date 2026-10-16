@@ -143,7 +143,7 @@ step
     .mob Gazz'uz
 step
     .train 403920,1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_[ [Darmak Bloodhowl] <[Soul Broker]>] <[Soul Broker]>|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Darmak Bloodhowl|r
     .goto Durotar,54.6,41.6
     .collect 205022,1
     .skipgossip 208226,1
@@ -1359,16 +1359,16 @@ step
     .train 426467,1
     .train 19028,3 --Soul Link
     .goto Desolace,81.2,79.7
-    .cast 434869 >> |cRXP_WARN_Clique no Altar para invocar|r |cRXP_ENEMY_[ [Seductress Ceeyna] <[Mistress of Desire]>] <[Mistress of Desire]>|r |cRXP_WARN_mas certifique-se de usar|r |T136121:0|t[Proteção contra Sombra]|cRXP_WARN_,|r |T136190:0|t[Sacrificar] |cRXP_WARN_e|r |T136160:0|t[Vínculo Anímico]|r |cRXP_WARN_antecipadamente|r |cFFFF0000pois você receberá muito dano durante o canal e não pode ser curado|r
+    .cast 434869 >> |cRXP_WARN_Clique no Altar para invocar|r |cRXP_ENEMY_Seductress Ceeyna|r |cRXP_WARN_mas certifique-se de usar|r |T136121:0|t[ProteÃ§Ã£o contra Sombra]|cRXP_WARN_,|r |T136190:0|t[Sacrificar] |cRXP_WARN_e|r |T136160:0|t[VÃ­nculo AnÃ­mico]|r |cRXP_WARN_antecipadamente|r |cFFFF0000pois vocÃª receberÃ¡ muito dano durante o canal e nÃ£o pode ser curado|r
 step
     .train 426467,1
     .train 19028,1 --Soul Link
     .goto Desolace,81.2,79.7
-    .cast 434869 >> |cRXP_WARN_Clique no Altar para invocar|r |cRXP_ENEMY_[ [Seductress Ceeyna] <[Mistress of Desire]>] <[Mistress of Desire]>|r |cRXP_WARN_mas certifique-se de usar|r |T136121:0|t[Proteção contra Sombra] |cRXP_WARN_e|r |T136190:0|t[Sacrificar] |cRXP_WARN_antecipadamente|r |cFFFF0000pois você receberá muito dano durante o canal e não pode ser curado|r
+    .cast 434869 >> |cRXP_WARN_Clique no Altar para invocar|r |cRXP_ENEMY_Seductress Ceeyna|r |cRXP_WARN_mas certifique-se de usar|r |T136121:0|t[ProteÃ§Ã£o contra Sombra] |cRXP_WARN_e|r |T136190:0|t[Sacrificar] |cRXP_WARN_antecipadamente|r |cFFFF0000pois vocÃª receberÃ¡ muito dano durante o canal e nÃ£o pode ser curado|r
 step
     .train 426467,1
     .goto Desolace,81.2,79.7
-    >>Abate |cRXP_ENEMY_[ [Seductress Ceeyna] <[Mistress of Desire]>] <[Mistress of Desire]>|r. Saqueie a |T134419:0|t[|cRXP_FRIENDLY_Runa das Chamas Sombrias|r]
+    >>Abate |cRXP_ENEMY_Seductress Ceeyna|r. Saqueie a |T134419:0|t[|cRXP_FRIENDLY_Runa das Chamas Sombrias|r]
     .collect 213101,1
     .mob Seductress Ceeyna
 step
