@@ -3297,98 +3297,10 @@ step
     .goto 1436/0,1033.22,-10504.83
     .target Scout Riell
 
---Shaman water totem quest start
-step << Shaman
-    #completewith next
-    .goto 1436/0,1037.42,-10628.27
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thor|r
-    .fly Ironforge >> Fly to Ironforge
-    .target Thor
-step << Shaman
-    .goto 1455/0,-1086.500,-4642.400
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eldrun Stormbreaker::258098|r
-    .target Eldrun Stormbreaker::258098
-    .accept 94494 >>Accept Call of Water
-    .trainer >> Train your class spells
-step << Shaman
-    #completewith CallofWater
-    .goto 1455/0,-1152.400,-4821.100
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryth Thurden|r
-    .fly Loch Modan >> Fly to Loch Modan
-    .target Gryth Thurden
-step << Shaman
-	.isOnQuest 94494
-    .goto 1432/0,-3146.000,-4837.500
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Norric Lochthane::258043|r
-    .target Norric Lochthane::258043
-    .turnin 94494 >>Turn in Call of Water
-	.accept 94495 >>Accept Call of Water
-step << Shaman
-	#label CallofWater
-    .goto 1432/0,-3146.000,-4837.500
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Norric Lochthane::258043|r
-    .target Norric Lochthane::258043
-    .accept 94495 >>Accept Call of Water
-step << Shaman
-	#optional
-	.isOnQuest 468
-    .goto 1432/0,-2695.500,-4678.600
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Rockgar::1342|r
-    .target Mountaineer Rockgar::1342
-    .turnin 468 >>Turn in Report to Mountaineer Rockgar
-step << Shaman
-    #completewith WaterTotem1
-    #label DunAlgaz1
-    .goto 1432/0,-2697.700,-4645.500,15,0
-    .goto 1437/0,-2653.800,-4448.100,15,0
-    .goto 1437/0,-2480.200,-4421.800,15,0
-    .goto 1437/0,-2464.200,-4280.900,15,0
-    .goto 1437/0,-2419.800,-4092.100,15,0
-    .goto 1437/0,-2629.900,-4086.400,15 >> Travel through Dun Algaz to Wetlands
-step << Shaman
-    #completewith WaterTotem1
-    #requires DunAlgaz1
-    .goto 1437/0,-3085.500,-4196.100,10,0
-    .goto 1437/0,-3103.100,-4212.600,12,0
-    .goto 1437/0,-3098.200,-4242.600,7 >> Travel up the ramp toward |cRXP_FRIENDLY_Hervdana Saegrund::258203|r inside the cave
-step << Shaman
-    #label WaterTotem1
-    .goto 1437/0,-3109.300,-4257.500
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hervdana Saegrund::258203|r
-    .target Hervdana Saegrund::258203
-    .turnin 94495 >>Turn in Call of Water
-    .accept 94497 >>Accept Call of Water  
-step << Shaman
-    .goto 1437/0,-3069.100,-4210.100
-    .use 265732 >>|cRXP_WARN_Use the|r |T132825:0|t[Unfilled Brown Waterskin] |cRXP_WARN_at the base of the waterfall|r
-    .complete 94497,1 --|1/1 Full Brown Waterskin
-step << Shaman
-    #completewith next
-    .goto 1437/0,-3085.500,-4196.100,10,0
-    .goto 1437/0,-3103.100,-4212.600,12,0
-    .goto 1437/0,-3098.200,-4242.600,7 >> Travel back up the ramp toward |cRXP_FRIENDLY_Hervdana Saegrund::258203|r inside the cave
-step << Shaman
-    .goto 1437/0,-3109.300,-4257.500
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hervdana Saegrund::258203|r
-    .target Hervdana Saegrund::258203
-    .turnin 94497 >>Turn in Call of Water
-    .accept 94499 >>Accept Call of Water
-step << Shaman
-    .isOnQuest 94499
-    .hs >> Hearth to Stormwind
-step << Shaman
-    .isOnQuest 94499
-    .goto 1453/0,490.03,-8835.82
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r
-    .fly Redridge >> Fly to Redridge Mountains
-    .target Dungar Longdrink
-    .zoneskip Redridge Mountains
-
 step
    .maxlevel 19,Level20Check
 
 step
-    #optional << Shaman
     .goto 1436/0,1037.42,-10628.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thor|r
     .fly Redridge >> Fly to Redridge Mountains
@@ -3473,7 +3385,7 @@ step
     .complete 98387,2 -- Stolen Weapon (8)
 step
     #requires IncineratorGarim
-step << Shaman
+step << Shaman -- most likely not on this quest yet
     #optional
     .isOnQuest 94499
     .goto 1433/0,-3121.100,-9485.000
@@ -3505,13 +3417,7 @@ step
 step
     #label Level20Check
 
-step << Shaman
-    .isOnQuest 94499
-    .goto 1433/0,-3121.100,-9485.000
-    .use 265747 >> |cRXP_WARN_Use the|r |T132829:0|t[Unfilled Red Waterskin] |cRXP_WARN_at Stonewatch Falls|r
-    .complete 94499,1 --|1/1 Full Red Waterskin
 step << !Druid
-    #optional << Shaman
     .hs >> Hearth to Stormwind
     .cooldown item,6948,>2,1
     .zoneskip Stormwind City
