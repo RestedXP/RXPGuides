@@ -4795,7 +4795,7 @@ step
     .goto Orgrimmar,76.50,24.42
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConversar com |cRXP_FRIENDLY_Rilli|r
     .turnin 3923 >> Entregue Rilli Passomal
-    .accept 3924 >> Aceite [DEPRICATED] A rebimboca Manual
+    .accept 3924 >> Aceite A rebimboca Manual
     .target Rilli Greasygob
 step << Priest/Warlock
     .goto Orgrimmar,44.16,48.45
@@ -4950,7 +4950,7 @@ step
 step
     #requires SamophlangePages
     #requires SamophlangePages2
-    >>|cRXP_WARN_Clique|r |T133735:0|t[[DEPRICATED] A rebimboca Manual Cobertura] |cRXP_WARN_para criar o|r |cRXP_LOOT_Manual|r
+    >>|cRXP_WARN_Clique|r |T133735:0|t[A rebimboca Manual Cobertura] |cRXP_WARN_para criar o|r |cRXP_LOOT_Manual|r
     .complete 3924,1 -- Samophlange Manual
     .use 6626
 ste
@@ -4990,7 +4990,7 @@ step << Shaman
 step
     .goto Orgrimmar,76.50,24.42
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Rilli |r
-    .turnin 3924 >> Entregue [DEPRICATED] A rebimboca Manual
+    .turnin 3924 >> Entregue A rebimboca Manual
     .target Rilli Greasygob
 step << Troll Warrior/Undead Warrior/Tauren Warrior
     .goto Orgrimmar,81.52,19.60
