@@ -35,7 +35,7 @@ step << Warlock
     #sticky
     #label WarlockVendor << Human
     .goto Elwynn Forest,50.051,42.689
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_丹恩·温斯洛|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_丹恩·温斯洛|r 对话
     .vendor >> |cRXP_WARN_出售你的胸甲、衬衣、裤子和靴子，还有你背包里的食物与水。你一共需要10枚铜币|r
     .target Dane Winslow
 step << Human Warlock
@@ -64,7 +64,7 @@ step << Warlock
     #season 0,1
     #completewith next
     .goto Elwynn Forest,50.051,42.689
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_丹恩·温斯洛|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_丹恩·温斯洛|r 对话
     .vendor >> |cRXP_WARN_出售你的胸甲、衬衣、裤子和靴子，还有你背包里的食物与水。你一共需要10枚铜币|r
     .target Dane Winslow
 step << Warlock
@@ -119,7 +119,7 @@ step << Warlock
     >>|cRXP_WARN_闯入迪菲亚营地里的帐篷|r
     >>打开 |cRXP_PICK_被偷走的书|r。从中拾取 |cRXP_LOOT_虚空灵能|r
     >>|cRXP_WARN_你可以在帐篷内安全地拾取 |cRXP_LOOT_虚空灵能|r！请观看提供的小视频，了解具体操作方法|r
-    .link https://www.youtube.com/watch?v=_-KEke9Yeik >> |cRXP_WARN_点击此处查看视频参考|r
+    .link https://www.youtube.com/watch?v=_-KEke9Yeik >> |cRXP_WARN_点击此处查看视频参考 |r
     .complete 1598,1 --Collect Powers of the Void (x1)
 step << Warlock
     #softcore
@@ -662,7 +662,7 @@ step << Mage
     .waypoint Elwynn Forest,55.09,49.00,30,0
     .waypoint Elwynn Forest,55.43,45.87,30,0
     .waypoint Elwynn Forest,53.86,47.05,30,0
-    >>击杀|cRXP_ENEMY_迪菲亚暴徒|r。拾取他们的|T134939:0|t|cRXP_LOOT_[法术笔记：NNGABIIHGQSU]|r
+    >>击杀|cRXP_ENEMY_迪菲亚暴徒|r，并从他们身上拾取|T134939:0|t|T134939:0|t|cRXP_LOOT_[法术笔记：NNGABIIHGQSU]|r
     >>|cRXP_WARN_注意：你无法在此处训练|r |T135844:0|t|T133736:0|t[冰枪术] |cRXP_WARN_，因为你只能在种族出生区域获得|r |T133736:0|t|T133736:0|t[理解入门] |cRXP_WARN_|r << !Human
     .collect 203751,1,77620,1 -- Spell Notes: CALE ENCI (1)
     .mob 迪菲亚暴徒
@@ -715,7 +715,7 @@ step << Paladin
     .waypoint Elwynn Forest,55.09,49.00,30,0
     .waypoint Elwynn Forest,53.89,50.52,30,0
     .waypoint Elwynn Forest,52.55,48.79,30,0
-    .aura 408828 >>|cRXP_WARN_施放|r |T135959:0|t[审判] |cRXP_WARN_10次以获得|r |T136116:0|t[灵感勃发] |cRXP_WARN_增益效果|r
+    .aura 408828 >>|cRXP_WARN_施放|r |T135959:0|t|T136116:0|t[审判] |cRXP_WARN_10次以获得|r |T136116:0|t|T136116:0|t[灵感勃发] |cRXP_WARN_增益效果|r
     .itemStat 18,QUALITY,2
     .train 410002,1
 step << Paladin
@@ -2263,7 +2263,7 @@ step << Paladin
 step << Paladin
     #season 2
     .goto Elwynn Forest,61.97,47.31
-    >>|cRXP_WARN_对|cRXP_FRIENDLY_受伤的冒险者|r施放|r|T135949:0|t[纯净术] |cRXP_WARN_后与他对话，即可获得|r|T134419:0|t[神盾符文]
+    >>|cRXP_WARN_对|cRXP_FRIENDLY_受伤的冒险者|r施放|r|T135949:0|t|T134419:0|t[纯净术] |cRXP_WARN_后与他对话，即可获得|r|T134419:0|t|T134419:0|t[神盾符文]
     .collect 205685,1 --Rune of Aegis (1)
     .target Wounded Adventurer
     .skipgossip
@@ -2288,7 +2288,7 @@ step
     #optional
     #label ExitJasperlode
     #completewith Find
-    .goto 1429,61.820,53.871,15 >> 退出玉石矿洞
+    .goto 1429,61.820,53.871,15 >> 离开玉石矿洞
     .subzoneskip 54,1
 step
     #optional
@@ -3335,7 +3335,7 @@ step
     #sticky
     #label Fields
     .goto Westfall,56.04,31.23
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_农夫萨丁|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_农夫萨丁|r 对话
     .accept 9 >> 接受任务 清理荒野
     .target Farmer Saldean
 step
@@ -4090,7 +4090,7 @@ step << Rogue
 step << Rogue
     #season 2
     #optional
-    .train 400081 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_精准符文|r] |cRXP_WARN_来训练|r |T135610:0|t[正中眉心]
+    .train 400081 >>|cRXP_WARN_使用|r |T134419:0|t|T135610:0|t[|cRXP_FRIENDLY_精准符文|r] |cRXP_WARN_训练|r |T135610:0|t|T135610:0|t[正中眉心]
     .use 204174
     .itemcount 204174,1
 step
@@ -4304,7 +4304,7 @@ step << Paladin/Warrior
     >>|cRXP_WARN_将他风筝到楼上的阳台，然后从旅店外跳下，如果有/需要的话使用|r |T133688:0|t|T133688:0|t[绷带]|cRXP_WARN_ |r << Warrior
     >>|cRXP_WARN_击败|cRXP_ENEMY_布鲁阿尔特|r后：|r
     >>再次与|cRXP_FRIENDLY_布鲁克·麦须|r对话，领取|T134419:0|t|T134419:0|t[责难符文] << Paladin
-    >>|cRXP_WARN_如果他不给你|r |T134419:0|t[责难符文]|cRXP_WARN_，你可能需要再次与|cRXP_ENEMY_布鲁阿特|r 战斗|r << Paladin
+    >>|cRXP_WARN_如果他不给你|r |T134419:0|t|T134419:0|t[责难符文]|cRXP_WARN_，你可能需要再次与|cRXP_ENEMY_布鲁亚特|r战斗|r << Paladin
     >>再次与|cRXP_FRIENDLY_布鲁克·麦须|r对话，领取|T134419:0|t|T134419:0|t[狂乱攻击符文] << Warrior
     >>|cRXP_WARN_如果他没有给你|r |T134419:0|t|T134419:0|t狂乱攻击符文|cRXP_WARN_，你可能需要再次与|cRXP_ENEMY_布鲁阿尔特|r战斗|r << Warrior
     >>|cRXP_WARN_注意：此任务可能难以独自完成。请寻求帮助，否则后续指南中会要求你重新完成|r << Warrior
@@ -4514,7 +4514,7 @@ step
     #label IFHS
     .goto 1455,20.419,53.269,10,0 << Mage/Paladin
     .goto Ironforge,18.14,51.45
-    >>与里面的|cRXP_FRIENDLY_旅店老板洛雷·火酒|r 对话
+    >>与里面的|cRXP_FRIENDLY_旅店老板洛雷·火酒|r对话
     .home >> 将你的炉石设置为铁炉堡
     .target 旅店老板洛雷·火酒
 step << skip --logout skip
@@ -4746,7 +4746,7 @@ step << !Human
     .goto Dun Morogh,68.614,54.643
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡杉·莫格什|r 对话
     .vendor >> |cRXP_BUY_购买|r |T133968:0|t[刚出炉的面包]|cRXP_BUY_如果需要的话|r << Warrior/Rogue
-    .vendor >> |cRXP_BUY_购买|r |T133968:0|t[刚出炉的面包]|cRXP_BUY_和|r |T132815:0|t[冰镇牛奶]|cRXP_BUY_如果需要的话|r << !Warrior !Rogue
+    .vendor >> |cRXP_BUY_购买|r |T133968:0|t [刚出炉的面包]|cRXP_BUY_和|r |T132815:0|t[冰镇牛奶]|cRXP_BUY_如果需要的话|r << !Warrior !Rogue
     .target 卡杉·莫格什
     .xp >15,1
 step << Rogue
@@ -5684,7 +5684,7 @@ step << Paladin
     #xprate <1.5
     #season 2
     .goto StormwindClassic,38.10,28.10
-    .gossipoption 109653 >>与 |cRXP_FRIENDLY_罗姆鲁斯修士|r对话
+    .gossipoption 109653 >>与|cRXP_FRIENDLY_罗姆鲁斯修士|r 对话
     .target Brother Romulus
     .skipgossip
     .train 410015,1
@@ -5777,7 +5777,7 @@ step << Rogue
     #xprate <1.5
     #ah
     .goto StormwindClassic,57.38,56.77
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_玛尔达·维勒|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_玛尔达·维勒|r 对话
     >>|cRXP_BUY_如果买得起，就从她那里买最多2把|r |T135343:0|t|T135343:0|t[弯刀] |cRXP_BUY_，或者你也可以从拍卖行买更好/更便宜的|r
     >>|cRXP_WARN_当你达到14级时装备它们|r
     .collect 2027,2 --Scimitar
@@ -5788,7 +5788,7 @@ step << Rogue
     #xprate <1.5
     #ssf
     .goto StormwindClassic,57.38,56.77
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_玛尔达·维勒|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_玛尔达·维勒|r 对话
     >>|cRXP_BUY_如果买得起，从她那里买最多2把|r |T135343:0|t|T135343:0|t[弯刀] |cRXP_BUY_即可|r
     >>|cRXP_WARN_当你达到14级时装备它们|r
     .collect 2027,2 --Scimitar

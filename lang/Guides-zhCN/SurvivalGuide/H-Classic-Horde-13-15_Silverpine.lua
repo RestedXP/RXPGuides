@@ -89,7 +89,7 @@ step
     .goto Silverpine Forest,43.98,39.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾德温|r 对话
     >>|cRXP_BUY_购买|r |T132815:0|t[冰镇牛奶]|cRXP_BUY_从他那里|r << Mage/Warlock/Priest/Shaman/Druid
-    .vendor >> |cRXP_BUY_从他那里购买|r|T134830:0|t[次级治疗药水] |cRXP_BUY_（如果有货的话）|r
+    .vendor >> |cRXP_BUY_购买|r |T134830:0|t|T134830:0|t[次级治疗药水] |cRXP_BUY_从他那里（如果有货的话）|r
     .collect 1179,20,421,1 << Mage/Warlock/Priest/Shaman/Druid --Ice Cold Milk (20)
     .target Edwin Harly
     .money <0.05 << Mage/Warlock/Priest/Shaman/Druid
@@ -104,7 +104,7 @@ step << Undead
 step
     #label BorderCrossings
     .goto Silverpine Forest,43.98,40.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥利斯特|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_爱思特|r 对话
     .accept 477 >>接受任务 越境
     .target Shadow Priest Allister
 step
@@ -455,18 +455,18 @@ step
     .goto Silverpine Forest,44.20,39.73
 step
     .goto Silverpine Forest,43.98,40.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥利斯特|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_爱思特|r 对话
     .turnin 482 >>交任务 达拉然的意图
     .target Shadow Priest Allister
 step
     .goto Silverpine Forest,43.98,40.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥利斯特|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_爱思特|r 对话
     .accept 479 >>接受任务 调查安伯米尔
     .target Shadow Priest Allister
     .group
 step
     .goto Silverpine Forest,43.98,40.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥利斯特|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_爱思特|r 对话
     .turnin 482 >>交任务 达拉然的意图
     .target Shadow Priest Allister
 step
@@ -498,13 +498,13 @@ step
     .zoneskip Undercity
 step << Undead
     .goto Undercity,61.48,41.81
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_高顿|r对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_高顿|r 对话
     .turnin 6323 >> 交任务 飞往幽暗城
     .accept 6322 >> 接受任务 迈克尔·加勒特
     .target Gordon Wendham
 step << Troll Warrior/Undead Warrior
     .goto Undercity,61.15,40.89
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_刘易斯|r|cRXP_BUY_对话，|r|cRXP_BUY_从他那里购买|r |T135147:0|t[法师之杖]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_刘易斯|r|cRXP_BUY_对话。|r从他那里购买1把|cRXP_BUY_ |T135147:0|t[法师之杖] |r
     .collect 2030,1,479,1 --Collect Gnarled Staff (1)
     .money <0.5544
     .target 刘易斯·瓦伦
@@ -678,7 +678,7 @@ step << Undead Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_安德隆|r 对话
     .turnin 1898 >>交任务亡灵哨兵
     .accept 1899 >>接受任务 亡灵哨兵
-    .target 安德隆·甘特
+    .target Andron Gant
     .isQuestTurnedIn 1886
 step << Undead Rogue
     .goto Undercity,55.43,76.87
@@ -936,7 +936,7 @@ step
 step
     #label AmbermillTurnin
     .goto Silverpine Forest,43.98,40.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥利斯特|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_爱思特|r 对话
     .turnin 479 >>交任务 调查安伯米尔
     .target Shadow Priest Allister
     .isQuestComplete 479

@@ -2,7 +2,7 @@ if GetLocale() ~= "zhCN" then return end
 RXPGuides.RegisterGuide([[
 #classic
 #season 2
-#group RestedXP 满级指南
+#group RestedXP 终局指南
 #subgroup 开门任务
 #name 卡拉赞地穴开门任务
 
@@ -214,7 +214,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 #season 2
-#group RestedXP 满级指南
+#group RestedXP 终局指南
 #subgroup 开门任务
 #name 血色领地序章
 

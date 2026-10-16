@@ -52,7 +52,7 @@ step << Warlock
     .target 德南·弗卡特
 step << Warlock
     .goto Dun Morogh,28.650,66.145
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿拉玛尔·格里姆|r对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿拉玛尔·格里姆|r 对话
     .train 348 >> 学习 |T135817:0|t[献祭]
     .accept 1599 >> 接受任务 开端
     .target 阿拉玛尔·格里姆
@@ -102,7 +102,7 @@ step << Warlock
     #completewith next
     .hs >> 炉石返回寒脊山谷
 step << Warlock
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿拉玛尔·格里姆|r对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿拉玛尔·格里姆|r 对话
     .goto Dun Morogh,28.650,66.145
     .turnin 1599 >> 交任务 开端
     .turnin 3115 >> 交任务 被污染的备忘录 << Gnome Warlock
@@ -229,7 +229,7 @@ step << Gnome Mage
     .turnin 3114 >> 交任务 雕文备忘录
     .trainer >> 训练你的职业技能
 step << Warlock
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿拉玛尔·格里姆|r对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿拉玛尔·格里姆|r 对话
     .target 阿拉玛尔·格里姆
     .goto Dun Morogh,28.650,66.145
     .trainer >> 训练你的腐蚀术
@@ -806,7 +806,7 @@ step << Warrior/Rogue/Paladin
     #completewith next
     .goto Dun Morogh,47.377,52.523
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_旅店老板贝尔姆|r 对话，NPC在里面
-    .vendor >> |cRXP_BUY_购买最多20个 |r |T133968:0|t[刚出炉的面包] << Warrior/Rogue
+    .vendor >> |cRXP_BUY_购买最多20个|r |T133968:0|t[刚出炉的面包] << Warrior/Rogue
     .vendor >> |cRXP_BUY_购买最多10个|r |T133968:0|t[刚出炉的面包] << Paladin
     .target 旅店老板贝尔姆
 step << Paladin/Warrior/Rogue
@@ -967,7 +967,7 @@ step
 step
     .goto Dun Morogh,47.377,52.523
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_旅店老板贝尔姆|r 对话，NPC在里面
-    >>|cRXP_BUY_从他那里购买1杯|r |T132800:0|t[狂想麦酒] |cRXP_BUY_和1杯|r |T132800:0|t[雷霆麦酒]
+    >>|cRXP_BUY_从他那里购买一杯|r |T132800:0|t[狂想麦酒] |cRXP_BUY_和一杯|r |T132800:0|t[雷霆麦酒]
     .complete 384,2 --Collect Rhapsody Malt (x1)
     .collect 2686,1,311 --Collect Thunder Ale (x1)
     .target 旅店老板贝尔姆
@@ -1346,7 +1346,7 @@ step
 step
     .goto Dun Morogh,68.6,54.7
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡杉·莫格什|r 对话
-    .vendor >> |cRXP_BUY_购买|r |T133968:0|t[刚出炉的面包]|cRXP_BUY_如果需要的话|r << Warrior/Rogue
+    .vendor >> |cRXP_BUY_如有需要，|r|cRXP_BUY_购买|r |T133968:0|t[刚出炉的面包] << Warrior/Rogue
     .vendor >> |cRXP_BUY_购买|r |T133968:0|t[刚出炉的面包]|cRXP_BUY_和|r |T132815:0|t[冰镇牛奶]|cRXP_BUY_如果需要的话|r << !Warrior !Rogue
     .target 卡杉·莫格什
 step
@@ -1532,7 +1532,7 @@ step
     .turnin 6391 >> 交任务 飞往铁炉堡
     .accept 6388 >> 接受任务 格莱斯·瑟登
 step << Hunter
-    >>|cRXP_WARN_不要飞到任何地方|r
+    >>|cRXP_WARN_不要飞往任何地方|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
     .target 格莱斯·瑟登
     .goto Ironforge,55.501,47.742
@@ -1551,7 +1551,7 @@ step << Warrior
     .goto Ironforge,61.181,89.514
     .trainer >>学习双手锤
 step << !Hunter
-    >>|cRXP_WARN_不要飞到任何地方|r
+    >>|cRXP_WARN_不要飞往任何地方|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
     .target 格莱斯·瑟登
     .goto Ironforge,55.501,47.742
@@ -1706,7 +1706,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP 生存指南 (联盟版)
 #subgroup RXP 生存指南 1-20级
 #defaultfor Gnome/Dwarf
-#next 11-13级 洛克莫丹 (矮人/侏儒)
+#next 11-13 洛克莫丹 (矮人/侏儒)
 
 step
     .goto StormwindClassic,66.277,62.137
@@ -2364,7 +2364,7 @@ RXPGuides.RegisterGuide([[
 #classic
 #tbc
 << Alliance
-#name 11-13级 洛克莫丹 (矮人/侏儒)
+#name 11-13 洛克莫丹 (矮人/侏儒)
 #version 1
 #group RestedXP 生存指南 (联盟版)
 #subgroup RXP 生存指南 1-20级

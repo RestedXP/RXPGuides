@@ -7,7 +7,7 @@ RXPGuides.RegisterGuide([[
 << Human Mage
 #name 1-10级 艾尔文森林 人类法师 A怪进阶攻略
 #version 2
-#group RestedXP 联盟法师A怪进阶攻略
+#group RestedXP 联盟法师 A怪进阶指南
 #defaultfor Human Mage
 #next 10-11级 丹莫罗 人类法师A怪高级指南
 
@@ -1147,7 +1147,7 @@ RXPGuides.RegisterGuide([[
 << Human Mage
 #name 10-11级 丹莫罗 人类法师A怪高级指南
 #version 2
-#group RestedXP 联盟法师A怪进阶攻略
+#group RestedXP 联盟法师 A怪进阶指南
 #defaultfor Human Mage
 #next 10-12 黑海岸 1 法师 AOE进阶攻略
 
@@ -1438,7 +1438,7 @@ RXPGuides.RegisterGuide([[
 << Gnome Mage
 #name 1-10 丹莫罗侏儒法师AOE进阶攻略
 #version 2
-#group RestedXP 联盟法师A怪进阶攻略
+#group RestedXP 联盟法师 A怪进阶指南
 #defaultfor Gnome Mage
 #next 10-12 黑海岸 1 法师 AOE进阶攻略
 
@@ -2997,7 +2997,7 @@ RXPGuides.RegisterGuide([[
 << Alliance Mage
 #name 10-12 黑海岸 1 法师 AOE进阶攻略
 #version 2
-#group RestedXP 联盟法师A怪进阶攻略
+#group RestedXP 联盟法师 A怪进阶指南
 #defaultfor Human Mage/Gnome Mage
 #next 12-14 洛克莫丹 法师 AoE进阶攻略
 
@@ -3553,7 +3553,7 @@ RXPGuides.RegisterGuide([[
 << Alliance Mage
 #name 10-12 黑海岸 1 法师 AoE进阶 起飞路线
 #version 2
-#group RestedXP 联盟法师A怪进阶攻略
+#group RestedXP 联盟法师 A怪进阶指南
 #defaultfor none
 #next 12-14 洛克莫丹 法师 AoE进阶攻略
 
@@ -4120,7 +4120,7 @@ RXPGuides.RegisterGuide([[
 << Alliance Mage
 #name 12-14 洛克莫丹 法师 AoE进阶攻略
 #version 2
-#group RestedXP 联盟法师A怪进阶攻略
+#group RestedXP 联盟法师 A怪进阶指南
 #defaultfor Human Mage/Gnome Mage
 #next 14-16 黑海岸 2 法师 AoE进阶攻略
 step
@@ -4900,7 +4900,7 @@ RXPGuides.RegisterGuide([[
 << Alliance Mage
 #name 14-16 黑海岸 2 法师 AoE进阶攻略
 #version 2
-#group RestedXP 联盟法师A怪进阶攻略
+#group RestedXP 联盟法师 A怪进阶指南
 #defaultfor Human Mage/Gnome Mage
 #next 16-18级 西部荒野 法师 AoE进阶攻略
 
@@ -5548,7 +5548,7 @@ RXPGuides.RegisterGuide([[
 << Alliance Mage
 #name 16-18级 西部荒野 法师 AoE进阶攻略
 #version 2
-#group RestedXP 联盟法师A怪进阶攻略
+#group RestedXP 联盟法师 A怪进阶指南
 #defaultfor Human Mage/Gnome Mage
 #next 18-20黑海岸 3 法师 AoE进阶攻略
 
@@ -6278,7 +6278,7 @@ RXPGuides.RegisterGuide([[
 << Alliance Mage
 #name 18-20黑海岸 3 法师 AoE进阶攻略
 #version 2
-#group RestedXP 联盟法师A怪进阶攻略
+#group RestedXP 联盟法师 A怪进阶指南
 #defaultfor Human Mage/Gnome Mage
 #next 20-22 赤脊山 1法师 AOE进阶攻略
 
@@ -7056,7 +7056,7 @@ RXPGuides.RegisterGuide([[
 << Alliance Mage
 #name 20-22 赤脊山 1法师 AOE进阶攻略
 #version 2
-#group RestedXP 联盟法师A怪进阶攻略
+#group RestedXP 联盟法师 A怪进阶指南
 #defaultfor Human Mage/Gnome Mage
 #next 22-26 湿地 1法师AOE进阶攻略
 
