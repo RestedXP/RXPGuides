@@ -1047,7 +1047,7 @@ step
 step
     .train 425310,1
     #completewith next
-    .zone Desolace >>Vá para |cFFfa9602Desolação|r
+    .zone Desolace >>Vá a |cFFfa9602Desolação|r
 step
     #loop
     .goto Desolace,35.4,29.6,60,0

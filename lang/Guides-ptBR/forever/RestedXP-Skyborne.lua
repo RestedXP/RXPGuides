@@ -3457,7 +3457,7 @@ step << Alliance/Shaman
     .goto 2521,47.51,78.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Aamelia Campo de Vento::252800|r.
     .turnin 92693 >>Entregue Defendendo o que é nosso
-    .accept 92703 >>Aceite Deliver the News
+    .accept 92703 >>Aceite Dê as boas novas
     .target Aamelia Windfield::252800
 -- step << Horde
 --     .isOnQuest 92703 -- Deliver the News
@@ -3535,10 +3535,10 @@ step
     .goto 2521,62.05,73.09,8,0
     .goto 2521,62.11,73.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Alvarion Campo de Vento::252448|r |cRXP_WARN_no segundo andar|r.
-    .turnin 92703,1 >>Entregue Deliver the News << Warrior/Shaman/Paladin
-    .turnin 92703,2 >>Entregue Deliver the News << Druid/Priest
-    .turnin 92703,3 >>Entregue Deliver the News << Rogue
-    .turnin 92703 >>Entregue Deliver the News << Hunter/Mage/Warlock
+    .turnin 92703,1 >>Entregue Dê as boas novas << Warrior/Shaman/Paladin
+    .turnin 92703,2 >>Entregue Dê as boas novas << Druid/Priest
+    .turnin 92703,3 >>Entregue Dê as boas novas << Rogue
+    .turnin 92703 >>Entregue Dê as boas novas << Hunter/Mage/Warlock
     .target Alvarion Windfield::252448
 step
     #completewith next
@@ -3596,7 +3596,7 @@ step << Druid
 step << Druid
     .goto 2521,63.983,75.093
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Lotheluum Brisastral::252359|r.
-    .accept 94006 >>Aceite O Grande Espírito Ursera
+    .accept 94006 >>Aceite O grande espírito de ursera
     .target Lotheluum Starbreeze::252359
 step << Druid
     .goto 2521,63.983,75.093
@@ -3682,7 +3682,7 @@ step << Alliance
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Elaadrin Plenovento::252475|r.
     .target Elaadrin Evengale::252475
     .turnin 99260 >>Entregue O erudito desaparecido
-    .accept 92840 >>Aceite Pegando Vento
+    .accept 92840 >>Aceite Caça ao vento
 
 -- Deathskip past 10; might need later
 -- step << Alliance
@@ -4010,7 +4010,7 @@ step << Alliance !Mage
 step << Alliance
     .goto 2521,66.63,79.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Elaadrin Plenovento::252475|r.
-    .turnin 92840 >>Entregue Pegando Vento
+    .turnin 92840 >>Entregue Caça ao vento
     .accept 92834 >>Aceite Avenged Tenfold
     .accept 92860 >>Aceite A Serviço de Zephras
     .target Elaadrin Evengale::252475
@@ -5646,7 +5646,7 @@ step << Alliance Hunter
     >>Você precisa de 50 em [Culinária] para uma missão mais tarde na Floresta do Crepúsculo
     >>|T133971:0|t[Cozinhe] os seguintes itens
     >>|T133971:0|t[Cozinhe] os |cRXP_LOOT_[Naco de Carne de Javali]|r em [Carne Assada de Porco]
-    >>|T133971:0|t[Cozinhe] a |cRXP_LOOT_[Acém de Lobo]|r em [Carne Tostada de Lobo]
+    >>|T133971:0|t[Cozinhe] a |cRXP_LOOT_[Carne Fibrosa de Lobo]|r em [Carne de Lobo Chamuscada]
     .usespell 2550
     .zoneskip Darkshore
     .itemcount 769,1 --Chunk of Boar Meat (1+)
@@ -5659,7 +5659,7 @@ step << Alliance Hunter
     #label DarkshoreCook5
     #completewith DarkshoreBoat
     >>Você precisa de 50 em [Culinária] para uma missão mais tarde na Floresta do Crepúsculo
-    >>|T133971:0|t[Cozinhe] a |cRXP_LOOT_[Acém de Lobo]|r em [Carne Tostada de Lobo]
+    >>|T133971:0|t[Cozinhe] a |cRXP_LOOT_[Carne Fibrosa de Lobo]|r em [Carne de Lobo Chamuscada]
     .usespell 2550
     .zoneskip Darkshore
     .itemcount 769,<1 --Chunk of Boar Meat (<1)

@@ -265,14 +265,14 @@ step << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Lanka|r
     .turnin 3092 >>Entregue Bilhete cinzelado
     .accept 77649 >>Aceite A Força de um Caçador
-    .train 1978 >> Treine |T132204:0|t[Picada de Serpente]
+    .train 1978 >> Aprenda |T132204:0|t[Picada de Serpente]
     .target Lanka Farshot
 step << Hunter
     #season 0
     .goto Mulgore,44.26,75.70
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Lanka|r
     .turnin 3092 >>Entregue Bilhete cinzelado
-    .train 1978 >> Treine |T132204:0|t[Picada de Serpente]
+    .train 1978 >> Aprenda |T132204:0|t[Picada de Serpente]
     .target Lanka Farshot
 step << Druid
     #season 2
@@ -616,7 +616,7 @@ step
 step
     #softcore
     .goto Mulgore,46.97,57.07
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Maur|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mauren Temível Totem|r
     .accept 766 >>Aceite Mazzranache
     .target Maur Raincaller
 step
@@ -1072,7 +1072,7 @@ step << Hunter
 step
     #label Mazzturnin
     .goto Mulgore,46.97,57.07
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Maur|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mauren Temível Totem|r
     .turnin 766 >>Entregue Mazzranache
     .target Maur Raincaller
     .isQuestComplete 766
@@ -1784,7 +1784,7 @@ step << Hunter
     .target Kennah Hawkseye
 step
     .goto Mulgore,46.97,57.07
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Maur|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mauren Temível Totem|r
     .turnin 766 >>Entregue Mazzranache
     .target Maur Raincaller
     .isQuestComplete 766
@@ -2071,7 +2071,7 @@ step << Tauren
     .target Thork
 step
     .goto The Barrens,51.44,30.15
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Helbrim|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Boticário Hermógenes|r
     .accept 848 >>Aceite Esporos de Fungos
     .target Apothecary Helbrim
 step
@@ -2131,13 +2131,13 @@ step
 step
     .goto The Barrens,51.99,29.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estalajadeiro Boorand Vento das Planícies|r
-    .home >>Defina sua Pedra de Retorno em Encruzilhada
+    .home >>Defina sua Pedra de Regresso em A Encruzilhada
     .target Innkeeper Boorand Plainswind
     .bindlocation 380
     .isQuestAvailable 853
 step
     .goto The Barrens,51.44,30.15
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Helbrim|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Boticário Hermógenes|r
     >>|cRXP_WARN_Espere a cena terminar|r
     >>|cRXP_WARN_Isto inicia uma missão com limite de 45 minutos|r
     .turnin 848 >>Entregue Esporos de Fungos
@@ -2149,7 +2149,7 @@ step
     #optional
     #label ZamahPickup
     .goto The Barrens,51.44,30.15
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Helbrim|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Boticário Hermógenes|r
     >>|cRXP_WARN_Isto inicia uma missão com limite de 45 minutos|r
     .accept 853 >>Aceite Boticária Zaqueia
     .target Apothecary Helbrim
@@ -2237,7 +2237,7 @@ step
 step
     #label CauldronStirrer
     .goto Thunder Bluff,22.82,20.88
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zamah|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Boticário Zaqueu|r
     .turnin 853 >>Entregue para o Boticário Zamah
     .target Apothecary Zamah
     .isOnQuest 853
@@ -2849,13 +2849,13 @@ step
     .target Jahan Hawkwing
 step
     .goto The Barrens,51.44,30.15
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Helbrim|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Boticário Hermógenes|r
     .accept 1492 >>Aceite Mestre Portuário Caruncho
     .target Apothecary Helbrim
 step
     .goto The Barrens,51.50,30.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thork|r
-    .accept 871 >>Aceite Em Defesa do Posto Remoto
+    .accept 871 >>Aceite Cortando o ataque pela raiz
     .accept 5041 >>Aceite Suprimentos para a Encruzilhada
     .target Thork
 step
@@ -3371,14 +3371,14 @@ step << Hunter
     .goto Mulgore,44.26,75.70
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Lanka|r
     .turnin 3092 >>Entregue Bilhete cinzelado
-    .train 1978 >> Treine |T132204:0|t[Picada de Serpente]
+    .train 1978 >> Aprenda |T132204:0|t[Picada de Serpente]
     .target Lanka Farshot
 step << Hunter
     #season 0
     .goto Mulgore,44.26,75.70
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Lanka|r
     .turnin 3092 >>Entregue Bilhete cinzelado
-    .train 1978 >> Treine |T132204:0|t[Picada de Serpente]
+    .train 1978 >> Aprenda |T132204:0|t[Picada de Serpente]
     .target Lanka Farshot
 step << Druid
     #season 2
@@ -3678,7 +3678,7 @@ step
 step
     #softcore
     .goto Mulgore,46.97,57.07
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Maur|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mauren Temível Totem|r
     .accept 766 >>Aceite Mazzranache
     .target Maur Raincaller
 step
@@ -4168,7 +4168,7 @@ step
     #xprate <2.1
     #label Mazzturnin
     .goto Mulgore,46.97,57.07
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Maur|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mauren Temível Totem|r
     .turnin 766 >>Entregue Mazzranache
     .target Maur Raincaller
     .isQuestComplete 766
@@ -4874,7 +4874,7 @@ step
     .subzoneskip 222
 step
     .goto Mulgore,46.97,57.07
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Maur|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mauren Temível Totem|r
     .turnin 766 >>Entregue Mazzranache
     .target Maur Raincaller
     .isQuestComplete 766
@@ -5418,7 +5418,7 @@ step
 step
     .goto The Barrens,51.99,29.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estalajadeiro Boorand Vento das Planícies|r
-    .home >>Defina sua Pedra de Retorno em Encruzilhada
+    .home >>Defina sua Pedra de Regresso em A Encruzilhada
     .target Innkeeper Boorand Plainswind
     .bindlocation 380,1
     .subzoneskip 380
@@ -5435,7 +5435,7 @@ step
 step
     #xprate <2.1
     .goto The Barrens,51.44,30.15
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Helbrim|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Boticário Hermógenes|r
     .accept 848 >>Aceite Esporos de Fungos
     .accept 1492 >>Aceite Mestre Portuário Caruncho
     .target Apothecary Helbrim
@@ -5493,7 +5493,7 @@ step
 step
     #xprate <2.1
     .goto The Barrens,51.44,30.15
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Helbrim|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Boticário Hermógenes|r
     >>|cRXP_WARN_Espere a cena terminar|r
     >>|cRXP_WARN_Isto inicia uma missão com limite de 45 minutos|r
     .turnin 848 >>Entregue Esporos de Fungos
@@ -5506,7 +5506,7 @@ step
     #optional
     #label ZamahPickup
     .goto The Barrens,51.44,30.15
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Helbrim|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Boticário Hermógenes|r
     >>|cRXP_WARN_Isto inicia uma missão com limite de 45 minutos|r
     .accept 853 >>Aceite Boticária Zaqueia
     .target Apothecary Helbrim
@@ -5570,7 +5570,7 @@ step << Hunter
 step << Warrior
     #optional
     .goto Thunder Bluff,57.59,85.50
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Ker|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ker Totem da Fúria|r
     .train 7384 >> Treine suas magias de classe
     .target Ker Ragetotem
     .xp <12,1
@@ -5609,7 +5609,7 @@ step
     #xprate <2.1
     #label CauldronStirrer
     .goto Thunder Bluff,22.82,20.88
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zamah|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Boticário Zaqueu|r
     .turnin 853 >>Entregue para o Boticário Zamah
     .target Apothecary Zamah
     .isOnQuest 853
@@ -5624,7 +5624,7 @@ step
 step << Shaman
     #optional
     .goto Thunder Bluff,23.64,18.74
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tigor|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tigor Persegue-céus|r
     .train 547 >> Treine suas magias de classe
     .target Tigor Skychaser
     .xp <12,1
@@ -5892,13 +5892,13 @@ step
     .target Jahan Hawkwing
 step
     .goto The Barrens,51.44,30.15
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Helbrim|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Boticário Hermógenes|r
     .accept 1492 >>Aceite Mestre Portuário Caruncho
     .target Apothecary Helbrim
 step
     .goto The Barrens,51.50,30.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thork|r
-    .accept 871 >>Aceite Em Defesa do Posto Remoto
+    .accept 871 >>Aceite Cortando o ataque pela raiz
     .accept 5041 >>Aceite Suprimentos para a Encruzilhada
     .target Thork
 step

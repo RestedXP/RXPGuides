@@ -523,7 +523,7 @@ step << Hunter
     .turnin 3087 >>Entregue Pergaminho cinzelado << Orc
     .accept 77590 >>Aceite Terreno Acidentado << Troll Hunter
     .accept 77584 >>Aceite Caçada pela Runa << Orc Hunter
-    .train 1978 >> Treine |T132204:0|t[Picada de Serpente]
+    .train 1978 >> Aprenda |T132204:0|t[Picada de Serpente]
     .target Jen'shan
     .money <0.01
 step << Hunter
@@ -553,7 +553,7 @@ step << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Jen'shan|r
     .turnin 3082 >>Entregue Tábua Cinzelada << Troll
     .turnin 3087 >>Entregue Pergaminho cinzelado << Orc
-    .train 1978 >> Treine |T132204:0|t[Picada de Serpente]
+    .train 1978 >> Aprenda |T132204:0|t[Picada de Serpente]
     .target Jen'shan
     .money <0.01
 step << Hunter
@@ -1039,7 +1039,7 @@ step << Hunter
     #optional
     .goto Durotar,42.84,69.32
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Jen'shan|r
-    .train 1978 >> Treine |T132204:0|t[Picada de Serpente]
+    .train 1978 >> Aprenda |T132204:0|t[Picada de Serpente]
     .turnin 77590 >>Entregue Terreno Acidentado << Troll Hunter
     .turnin 77584 >>Entregue Caçada da Runa << Orc Hunter
     .target Jen'shan
@@ -1056,7 +1056,7 @@ step << Hunter
     #season 0
     .goto Durotar,42.84,69.32
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Jen'shan|r
-    .train 1978 >> Treine |T132204:0|t[Picada de Serpente]
+    .train 1978 >> Aprenda |T132204:0|t[Picada de Serpente]
     .target Jen'shan
     .xp <4,1
     .money <0.01
@@ -3845,14 +3845,14 @@ step << Warrior/Shaman
     #xprate >1.49
     .goto The Barrens,51.99,29.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estalajadeiro Boorand Vento das Planícies|r
-    .home >>Defina sua Pedra de Retorno em Encruzilhada
+    .home >>Defina sua Pedra de Regresso em A Encruzilhada
     .target Innkeeper Boorand Plainswind
     .bindlocation 380
     .subzoneskip 380,1
 step << Warrior/Shaman
     .goto The Barrens,51.50,30.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thork|r
-    .accept 871 >>Aceite Em Defesa do Posto Remoto
+    .accept 871 >>Aceite Cortando o ataque pela raiz
     .accept 5041 >>Aceite Suprimentos para a Encruzilhada
     .target Thork
 step << Warrior/Shaman
@@ -3866,7 +3866,7 @@ step << Warrior/Shaman
     .zoneskip Orgrimmar
 step << Warrior/Shaman
     .goto The Barrens,51.44,30.15
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Helbrim|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Boticário Hermógenes|r
     .accept 848 >>Aceite Esporos de Fungos
     .accept 1492 >>Aceite Mestre Portuário Caruncho
     .target Apothecary Helbrim
@@ -3903,7 +3903,7 @@ step << Warrior/Shaman
 step << Warrior/Shaman
     #label FungalSporesComplete
     .goto The Barrens,51.44,30.15
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Helbrim|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Boticário Hermógenes|r
     >>|cRXP_WARN_Espere a cena terminar|r
     >>|cRXP_WARN_Isto inicia uma missão com limite de 45 minutos|r
     .turnin 848 >> Entregue Esporos de Fungos
@@ -3975,7 +3975,7 @@ step << Warrior/Shaman
     .target Zarlman Two-Moons
 step << Warrior/Shaman
     .goto Mulgore,47.0,57.0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Maur|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mauren Temível Totem|r
     .accept 766 >>Aceite Mazzranache
     .target Maur Raincaller
 step << Warrior/Shaman
@@ -4067,7 +4067,7 @@ step << Warrior/Shaman
 step << Warrior/Shaman
     #label ZamahTurnin2
     .goto Thunder Bluff,22.82,20.88
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zamah|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Boticário Zaqueu|r
     .turnin 853 >> Entregue para o Boticário Zamah
     .target Apothecary Zamah
     .isOnQuest 853
@@ -4263,7 +4263,7 @@ step << Warrior/Shaman
     .accept 751 >>Aceite A caravana devastada
 step << Warrior/Shaman
     .goto Mulgore,46.97,57.07
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Maur|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mauren Temível Totem|r
     .turnin 766 >>Entregue Mazzranache
     .target Maur Raincaller
     .isQuestComplete 766
@@ -7709,7 +7709,7 @@ step << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Jen'shan|r
     .turnin 3082 >>Entregue Tábua Cinzelada << Troll
     .turnin 3087 >>Entregue Pergaminho cinzelado << Orc
-    .train 1978 >> Treine |T132204:0|t[Picada de Serpente]
+    .train 1978 >> Aprenda |T132204:0|t[Picada de Serpente]
     .target Jen'shan
     .money <0.01
 step << Hunter
@@ -7736,7 +7736,7 @@ step << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Jen'shan|r
     .turnin 3082 >>Entregue Tábua Cinzelada << Troll
     .turnin 3087 >>Entregue Pergaminho cinzelado << Orc
-    .train 1978 >> Treine |T132204:0|t[Picada de Serpente]
+    .train 1978 >> Aprenda |T132204:0|t[Picada de Serpente]
     .target Jen'shan
     .money <0.01
 step << Hunter
@@ -8073,7 +8073,7 @@ step << Hunter
     #optional
     .goto Durotar,42.84,69.32
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Jen'shan|r
-    .train 1978 >> Treine |T132204:0|t[Picada de Serpente]
+    .train 1978 >> Aprenda |T132204:0|t[Picada de Serpente]
     .turnin 77590 >>Entregue Terreno Acidentado << Troll Hunter
     .turnin 77584 >>Entregue Caçada da Runa << Orc Hunter
     .target Jen'shan
@@ -8089,7 +8089,7 @@ step << Hunter
     #season 0
     .goto Durotar,42.84,69.32
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Jen'shan|r
-    .train 1978 >> Treine |T132204:0|t[Picada de Serpente]
+    .train 1978 >> Aprenda |T132204:0|t[Picada de Serpente]
     .target Jen'shan
     .xp <4,1
     .money <0.01
@@ -9860,7 +9860,7 @@ step
     #xprate >2.09
     .goto The Barrens,51.50,30.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thork|r
-    .accept 871 >>Aceite Em Defesa do Posto Remoto
+    .accept 871 >>Aceite Cortando o ataque pela raiz
     .accept 5041 >>Aceite Suprimentos para a Encruzilhada
     .target Thork
 step
@@ -9880,7 +9880,7 @@ step
     #xprate >2.09
     .goto The Barrens,51.99,29.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estalajadeiro Boorand Vento das Planícies|r
-    .home >> Defina sua Pedra de Retorno em Encruzilhada
+    .home >> Defina sua Pedra de Regresso em A Encruzilhada
     .target Innkeeper Boorand Plainswind
     .bindlocation 380
     .subzoneskip 380,1

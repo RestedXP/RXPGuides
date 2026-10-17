@@ -80,7 +80,7 @@ step
 step << Warrior
     .goto Teldrassil,59.306,41.091
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Keina|r
-	.vendor >> |cRXP_WARN_Venda lixo|r
+	.vendor >> |cRXP_WARN_Venda os itens de lixo|r
     .target Keina
 step << Warrior
 	.goto Teldrassil,59.637,38.442
@@ -182,7 +182,7 @@ step << !Priest
     #completewith next
     .goto Teldrassil,59.306,41.091
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Keina|r
-	.vendor >> |cRXP_WARN_Venda lixo|r << !Hunter
+	.vendor >> |cRXP_WARN_Venda os itens de lixo|r << !Hunter
 	.vendor >> |cRXP_BUY_Compre 3 ou 4 pilhas de|r |T132382:0|t[Rough Flechas] << Hunter
     .target Keina
 step << Warrior
@@ -194,7 +194,7 @@ step << Priest
     #completewith next
     .goto Teldrassil,59.456,41.050
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Janna Lunaclara|r acima
-	.vendor >> |cRXP_WARN_Venda lixo|r
+	.vendor >> |cRXP_WARN_Venda os itens de lixo|r
     .target Janna Brightmoon
 step << Priest
 	.goto Teldrassil,59.174,40.442
@@ -373,7 +373,7 @@ step << Hunter
     .goto Teldrassil,55.890,59.205
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Jiyna Penarco|r
     >>|cRXP_BUY_Compre e equipe um|r |T135499:0|t[Arco Recurvo de Pau-de-chifre] |cRXP_BUY_se você conseguir arcar com isso (2s 85c), se não pule este passo|r
-    >>|cRXP_BUY_Compre|r |T132382:0|t[Rough Flechas] |cRXP_BUY_até sua Aljava estar cheia|r
+    >>|cRXP_BUY_Compre|r |T132382:0|t[Flechas Rústicas] |cRXP_BUY_até encher sua aljava|r
     .collect 2506,1 --Collect Hornwood Recurve Bow
     .target Jeena Featherbow
 step << Warrior

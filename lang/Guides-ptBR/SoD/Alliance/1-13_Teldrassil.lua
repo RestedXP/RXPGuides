@@ -110,7 +110,7 @@ step << Warrior/Rogue
     #season 2
     .goto Teldrassil,59.306,41.091
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Keina|r
-	.vendor >> |cRXP_WARN_Venda lixo|r
+	.vendor >> |cRXP_WARN_Venda os itens de lixo|r
     .target Keina
 step << Rogue
     .goto Teldrassil,59.63,38.67
@@ -328,7 +328,7 @@ step << !Hunter !Druid !Priest
     #season 2
     .goto Teldrassil,59.306,41.091
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Keina|r
-	.vendor >> |cRXP_WARN_Venda lixo|r
+	.vendor >> |cRXP_WARN_Venda os itens de lixo|r
     .target Keina
  step << NightElf Warrior
     #season 2
@@ -343,7 +343,7 @@ step << Druid/Priest
     #label DTrain4
     .goto Teldrassil,59.602,40.696
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Delailah|r
-    .vendor >> |cRXP_WARN_Venda lixo|r
+    .vendor >> |cRXP_WARN_Venda os itens de lixo|r
     >>|cRXP_BUY_Compre 10|r |T132794:0|t[Água Refrescante da Fonte]
     .collect 159,10 --Collect Refreshing Spring Water (x10)
     .target Dellylah
@@ -409,13 +409,13 @@ step
 step << !Hunter
     .goto Teldrassil,59.306,41.091
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Keina|r
-	.vendor >> |cRXP_WARN_Venda lixo|r << !Hunter
+	.vendor >> |cRXP_WARN_Venda os itens de lixo|r << !Hunter
     .target Keina
 step << Hunter
     #season 2
     .goto Teldrassil,59.306,41.091
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Keina|r
-	.vendor >> |cRXP_WARN_Venda lixo|r << !Hunter
+	.vendor >> |cRXP_WARN_Venda os itens de lixo|r << !Hunter
 	.vendor >> |cRXP_BUY_Compre 3 ou 4 pilhas de|r |T132382:0|t[Rough Flechas] << Hunter
     .vendor >> |cRXP_BUY_Compre um|r |T135499:0|t[Arco Recurvo de Pau-de-chifre] |cRXP_BUY_Compre se você ainda não tem|r << Hunter
     .target Keina
@@ -606,7 +606,7 @@ step << Hunter
     .goto Teldrassil,55.890,59.205
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Jiyna Penarco|r
     >>|cRXP_BUY_Compre e equipe um|r |T135499:0|t[Arco Recurvo de Pau-de-chifre]
-    >>|cRXP_BUY_Compre|r |T132382:0|t[Rough Flechas] |cRXP_BUY_até sua Aljava estar cheia|r
+    >>|cRXP_BUY_Compre|r |T132382:0|t[Flechas Rústicas] |cRXP_BUY_até encher sua aljava|r
     .collect 2506,1 --Collect Hornwood Recurve Bow
     .target Jeena Featherbow
     .money <0.0285
@@ -615,7 +615,7 @@ step << Hunter
     #season 0
     .goto Teldrassil,55.890,59.205
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Jiyna Penarco|r
-    .vendor >>|cRXP_BUY_Compre|r |T132382:0|t[Rough Flechas] |cRXP_BUY_até sua Aljava estar cheia|r
+    .vendor >>|cRXP_BUY_Compre|r |T132382:0|t[Flechas Rústicas] |cRXP_BUY_até encher sua aljava|r
     .target Jeena Featherbow
 step << Hunter
     #season 2

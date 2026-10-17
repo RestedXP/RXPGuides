@@ -11,7 +11,7 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith next
-    .zone Burning Steppes>>|cRXP_WARN_Viagem para|r |cFFfa9602Estepes Ardentes|r
+    .zone Burning Steppes>>|cRXP_WARN_Vá às|r |cFFfa9602Estepes Ardentes|r
 step
     .goto Burning Steppes,85.820,68.948
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Helendis Flumicórnio|r
@@ -82,7 +82,7 @@ step
 step
     .isQuestTurnedIn 4182
     .goto Stormwind City,78.102,17.750
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a Lady Katrana Prestor|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Lady Katrana Prestor|r
     .complete 4185,1 -- Advice from Lady Prestor
     .skipgossip
     .target Lady Katrana Prestor
@@ -352,7 +352,7 @@ step
     .goto Badlands,5.81,47.52
 	>>Fale com |cRXP_FRIENDLY_Senhor da Guerra Trincador|r para receber |T133473:0|t[|cRXP_LOOT_Comando do Senhor da Guerra Trincador|r]. Use-o para aceitar a missão
     .collect 12563,1,4903 --Warlord Goretooth's Command 1/1
-    .accept 4903 >>Aceite Comando do Senhor da Guerra Trincador
+    .accept 4903 >>Aceite O comando do Senhor da Guerra
     .target Warlord Goretooth
     .skipgossip 0,1,1,1,1,1
 step
@@ -371,7 +371,7 @@ step
     >>|cRXP_WARN_Aos pés do|r |cRXP_ENEMY_Lorde Supremo Wyrmthalak|r
     >>|cRXP_WARN_Em um canto vazio ao lado do|r |cRXP_ENEMY_Senhor da Guerra Voone|r
     >>|cRXP_WARN_Perto do|r |cRXP_ENEMY_Grão-lorde Omokk|r
-    >>|cRXP_WARN_Ao lado da |cRXP_ENEMY_Urok Doomhowl's|r Pilha de Tributo|r
+    >>|cRXP_WARN_Ao lado da Pilha de Tributo a|cRXP_ENEMY_ |rUrok Uivo-da-ruína|r
     .complete 4903,4 --Important Blackrock Documents 1/1
 step
     >>Abate |cRXP_ENEMY_Grão-lorde Omokk|r, |cRXP_ENEMY_Senhor da Guerra Voone|r e |cRXP_ENEMY_Lorde Supremo Wyrmthalak|r
@@ -675,7 +675,7 @@ step
     .target Emberstrife
 step
     #completewith next
-    .zone Desolace >>Vá para |cFFfa9602Desolação|r
+    .zone Desolace >>Vá a |cFFfa9602Desolação|r
 step
     #loop
     .line Desolace,55.50,0.50,53.37,5.77,54.61,10.71,56.20,13.14,60.42,16.17,62.27,19.48,63.38,26.21,62.14,32.17,60.49,37.07,57.27,38.21,53.34,37.51,50.46,42.48,49.55,48.56,49.10,54.18,52.25,59.36,54.52,63.72,55.63,67.41,52.04,71.54,50.53,75.40,47.03,75.15,39.99,78.28,39.79,81.92,41.79,85.27,40.68,89.43,41.44,93.66,41.95,96.04
@@ -736,7 +736,7 @@ step
     .mob General Drakkisath
 step
     #completewith next
-    .zone Desolace >>Vá para |cFFfa9602Desolação|r
+    .zone Desolace >>Vá a |cFFfa9602Desolação|r
 step
     .isQuestComplete 6602
     #loop

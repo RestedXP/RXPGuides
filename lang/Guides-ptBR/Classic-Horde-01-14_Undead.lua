@@ -4180,7 +4180,7 @@ step
 step
     #label ProveyourWorth
     .goto Silverpine Forest,44.20,39.73
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dalar|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dalar Tessalba|r
     .accept 421 >>Aceite Prove Your Worth
     .target Dalar Dawnweaver
 step << !Mage !Priest
@@ -4252,7 +4252,7 @@ step
     .unitscan Son of Arugal
 step
     .goto Silverpine Forest,44.20,39.73
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dalar|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dalar Tessalba|r
     .target Dalar Dawnweaver
     .turnin 421 >>Entregue Prove seu valor
     .accept 422 >>Aceite A loucura de Arugal
@@ -4388,14 +4388,14 @@ step
 step
     #xprate <1.5
     .goto Silverpine Forest,44.20,39.73
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dalar|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dalar Tessalba|r
     .turnin 422 >> Entregue A loucura de Arugal
     .accept 423 >> Aceite A loucura de Arugal
     .target Dalar Dawnweaver
 step
     #xprate >1.49
     .goto Silverpine Forest,44.20,39.73
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dalar|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dalar Tessalba|r
     .turnin 422 >> Entregue A loucura de Arugal
     .target Dalar Dawnweaver
 step
@@ -4716,7 +4716,7 @@ step << Undead Rogue
 step << Undead Rogue
     #optional
     .goto Undercity,83.86,72.06
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Carolyn|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Capitolina Casmurro|r
     .train 1758 >> Treine suas magias de classe
     .target Carolyn Ward
     .xp <14,1
@@ -4726,7 +4726,7 @@ step << Undead Rogue
 step << Undead Rogue
     #optional
     .goto Undercity,83.86,72.06
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Carolyn|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Capitolina Casmurro|r
     .train 6761 >> Treine suas magias de classe
     .target Carolyn Ward
     .xp <16,1
@@ -4734,7 +4734,7 @@ step << Undead Rogue
 step << Undead Rogue
     #xprate <1.5
     .goto Undercity,83.86,72.06
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Carolyn|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Capitolina Casmurro|r
     .train 1758 >> Treine suas magias de classe
     .target Carolyn Ward
     .xp <14,1
@@ -4746,7 +4746,7 @@ step << Undead Rogue
     #optional
     #xprate <1.5
     .goto Undercity,83.86,72.06
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Carolyn|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Capitolina Casmurro|r
     .train 6761 >> Treine suas magias de classe
     .target Carolyn Ward
     .xp <16,1
@@ -4822,7 +4822,7 @@ step << Undead Rogue
     #xprate <1.5
     #optional
     .goto Undercity,83.86,72.06
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Carolyn|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Capitolina Casmurro|r
     .train 1758 >> Treine suas magias de classe
     .target Carolyn Ward
     .xp <14,1
@@ -4833,7 +4833,7 @@ step << Undead Rogue
     #xprate <1.5
     #optional
     .goto Undercity,83.86,72.06
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Carolyn|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Capitolina Casmurro|r
     .train 6761 >> Treine suas magias de classe
     .target Carolyn Ward
     .xp <16,1
@@ -5244,7 +5244,7 @@ step << Undead
     .isOnQuest 5723
     .dungeon RFC
 step << Undead
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Maur|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mauren Temível Totem|r
     .turnin 5722 >> Entregue Em busca da algibeira perdida
     .accept 5724 >> Aceite Devolvendo a algibeira perdida
     .target Maur Grimtotem
@@ -5252,7 +5252,7 @@ step << Undead
     .dungeon RFC
 step << Undead
     #optional
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Maur|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mauren Temível Totem|r
     .accept 5724 >> Aceite Devolvendo a algibeira perdida
     .target Maur Grimtotem
     .isQuestTurnedIn 5722
@@ -9699,7 +9699,7 @@ step << Undead
     .isOnQuest 5723
     .dungeon RFC
 step << Undead
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Maur|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mauren Temível Totem|r
     .turnin 5722 >> Entregue Em busca da algibeira perdida
     .accept 5724 >> Aceite Devolvendo a algibeira perdida
     .target Maur Grimtotem
@@ -9707,7 +9707,7 @@ step << Undead
     .dungeon RFC
 step << Undead
     #optional
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Maur|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mauren Temível Totem|r
     .accept 5724 >> Aceite Devolvendo a algibeira perdida
     .target Maur Grimtotem
     .isQuestTurnedIn 5722

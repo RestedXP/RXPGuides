@@ -192,7 +192,7 @@ step << !Priest !Mage !Warlock !Warrior !Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Adlin Altanário|r
     >>Venda os itens de lixo << Hunter
     >>|cRXP_BUY_Compre 600|r |T132384:0|t[Luz Shots] |cRXP_BUY_dele|r << Hunter
-    .vendor >> |cRXP_WARN_Venda lixo|r << !Hunter
+    .vendor >> |cRXP_WARN_Venda os itens de lixo|r << !Hunter
     .collect 2516,600 << Hunter --Light Shot (600)
     .target Adlin Pridedrift
     .xp >6,1
@@ -632,7 +632,7 @@ step << Hunter
     .turnin 3108 >>Entregue Runa Cinzelada << Dwarf
     .accept 77660 >> Aceite Caminhada nas Cavernas << Dwarf
     .turnin 77660 >> Entregue Caminhada nas Cavernas << Dwarf
-    .train 1978 >> Treine |T132204:0|t[Picada de Serpente]
+    .train 1978 >> Aprenda |T132204:0|t[Picada de Serpente]
 step << Paladin
     #season 2
     .goto Dun Morogh,28.833,68.332

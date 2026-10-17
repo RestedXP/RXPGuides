@@ -1900,7 +1900,7 @@ step
     .goto The Barrens,58.82,37.67,40,0 --Spawn 5
     .goto The Barrens,58.92,37.53,40,0
     .goto The Barrens,58.94,37.73,40,0
-    >>Use |T136075:0|t[Expurgar] na |cRXP_ENEMY_Miragem do Deserto|r para matá-la. Saqueie-a para obter |T134419:0|t[|cRXP_LOOT_Runa Terrana|r]
+    >>Lance |T136075:0|t[Expurgar] na |cRXP_ENEMY_Miragem do Deserto|r para matá-la. Pegue dela a |T134419:0|t|cRXP_LOOT_[Runa Terrana]|r
     .collect 208758,1 --Earthen Rune (1)
     .unitscan Desert Mirage
     .train 410107,1
@@ -2347,7 +2347,7 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith next
-    .zone Desolace >>Vá para |cFFfa9602Desolação|r
+    .zone Desolace >>Vá a |cFFfa9602Desolação|r
 step
     .goto Desolace,56.6,21.8
     >>Mate |cRXP_ENEMY_Videchamas Dubelen|r. Saque o |T136008:0|t|cRXP_LOOT_Corrompido Totem do Fogo|r
@@ -2479,7 +2479,7 @@ step
 step
     .train 410100,1
     #completewith next
-    .zone Desolace >>Vá para |cFFfa9602Desolação|r
+    .zone Desolace >>Vá a |cFFfa9602Desolação|r
 step
     .train 410100,1
     #loop

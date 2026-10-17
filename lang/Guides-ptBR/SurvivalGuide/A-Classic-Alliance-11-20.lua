@@ -819,7 +819,7 @@ step
     .accept 4725 >> Aceite Tartaruga Marinha Encalhada
 step
     .goto Darkshore,50.81,25.50
-    .use 12350 >>Use o [Tubo de Amostragem Vazio] na base do **Rio Fontescarpa**
+    .use 12350 >>Use o [Tubo de Amostragem Vazio] na base do Rio Fontescarpa
     .complete 4762,1
 step
 #map Darkshore
@@ -2170,7 +2170,7 @@ step
 .dungeon WC
     #completewith EnterWC
     >>Mate todos os tipos de criaturas |cRXP_ENEMY_Desviantes|r. Saqueie-as para obter seus |cRXP_LOOT_Pelegos Anormal|r
-    >>Isso pode ser concluído DENTRO e FORA da Caverna Ululante
+    >>Isso pode ser concluído DENTRO e FORA das Cavernas do Lamento
     .complete 1486,1 -- Deviate Hide (20)
     .isOnQuest 1486
 step
@@ -2236,7 +2236,7 @@ step
 step
 .dungeon WC
     >>Mate todos os tipos de criaturas |cRXP_ENEMY_Desviantes|r. Saqueie-as para obter seus |cRXP_LOOT_Pelegos Anormal|r
-    >>Isso pode ser concluído DENTRO e FORA da Caverna Ululante
+    >>Isso pode ser concluído DENTRO e FORA das Cavernas do Lamento
     .complete 1486,1 -- Deviate Hide (20)
     .isOnQuest 1486
 step

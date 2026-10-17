@@ -391,7 +391,7 @@ step << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Jen'shan|r
     .turnin 3082 >>Entregue Tábua Cinzelada << Troll
     .turnin 3087 >>Entregue Pergaminho cinzelado << Orc
-    .train 1978 >> Treine |T132204:0|t[Picada de Serpente]
+    .train 1978 >> Aprenda |T132204:0|t[Picada de Serpente]
     .target Jen'shan
     .xp <4,1
 step << Hunter
@@ -637,7 +637,7 @@ step << !Warlock
 step << Hunter
     .goto Durotar,42.84,69.32
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Jen'shan|r
-    .train 1978,1 >> Treine |T132204:0|t[Picada de Serpente]
+    .train 1978,1 >> Aprenda |T132204:0|t[Picada de Serpente]
     .target Jen'shan
 step << Warrior
     .goto Durotar,42.89,69.4
@@ -2413,7 +2413,7 @@ step << Shaman
     .accept 844 >>Aceite A Ameaça Pinote
     .target +Sergra Darkthorn
     .goto The Barrens,52.23,31.00
-    .accept 871 >>Aceite Em Defesa do Posto Remoto
+    .accept 871 >>Aceite Cortando o ataque pela raiz
     .accept 5041 >>Aceite Suprimentos para a Encruzilhada
     .target +Thork
     .goto The Barrens,51.50,30.87
@@ -3276,7 +3276,7 @@ step << Hunter
     .accept 844 >>Aceite A Ameaça Pinote
     .target +Sergra Darkthorn
     .goto The Barrens,52.23,31.00
-    .accept 871 >>Aceite Em Defesa do Posto Remoto
+    .accept 871 >>Aceite Cortando o ataque pela raiz
     .accept 5041 >>Aceite Suprimentos para a Encruzilhada
     .target +Thork
     .goto The Barrens,51.50,30.87
@@ -3417,7 +3417,7 @@ step << Shaman/Hunter
     .target +Sergra Darkthorn
     .goto The Barrens,52.23,31.00
     .turnin 871 >>Entregue Adeus aos ataques
-    .accept 872 >>Aceite Em Defesa do Posto Remoto
+    .accept 872 >>Aceite Cortando o ataque pela raiz
     .target +Thork
     .goto The Barrens,51.50,30.87
     .isOnQuest 6386
@@ -3428,13 +3428,13 @@ step << Shaman/Hunter
     .target +Sergra Darkthorn
     .goto The Barrens,52.23,31.00
     .turnin 871 >>Entregue Adeus aos ataques
-    .accept 872 >>Aceite Em Defesa do Posto Remoto
+    .accept 872 >>Aceite Cortando o ataque pela raiz
     .target +Thork
     .goto The Barrens,51.50,30.87
 step << Shaman/Hunter
     .goto The Barrens,51.99,29.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estalajadeiro Boorand Vento das Planícies|r
-    .home >>Defina sua Pedra de Retorno em Encruzilhada
+    .home >>Defina sua Pedra de Regresso em A Encruzilhada
     .target Innkeeper Boorand Plainswind
     .bindlocation 380
     .subzoneskip 380,1

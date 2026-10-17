@@ -75,7 +75,7 @@ step
     .subzoneskip 228
 step
     .goto Silverpine Forest,44.20,39.73
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dalar|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dalar Tessalba|r
     .accept 421 >>Aceite Prove Your Worth
     .target Dalar Dawnweaver
 step << !Mage !Priest
@@ -147,7 +147,7 @@ step
     .unitscan Son of Arugal
 step
     .goto Silverpine Forest,44.20,39.73
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dalar|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dalar Tessalba|r
     .target Dalar Dawnweaver
     .turnin 421 >>Entregue Prove seu valor
     .accept 422 >>Aceite A loucura de Arugal
@@ -277,7 +277,7 @@ step
 step
     #label ArugalTurnin
     .goto Silverpine Forest,44.20,39.73
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dalar|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dalar Tessalba|r
     .turnin 422 >> Entregue A loucura de Arugal
     .accept 423 >> Aceite A loucura de Arugal
     .target Dalar Dawnweaver
@@ -625,7 +625,7 @@ step << Mage
     .xp <16,1
 step << Rogue
     .goto Undercity,83.86,72.06
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Carolyn|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Capitolina Casmurro|r
     .train 1758 >> Treine suas magias de classe
     .target Carolyn Ward
     .xp <14,1
@@ -633,7 +633,7 @@ step << Rogue
  step << Rogue
     #optional
     .goto Undercity,83.86,72.06
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Carolyn|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Capitolina Casmurro|r
     .train 6761 >> Treine suas magias de classe
     .target Carolyn Ward
     .xp <16,1
@@ -801,7 +801,7 @@ step << skip
     .link https://www.youtube.com/watch?v=uD2CUb3rdQ0&ab >> |cRXP_WARN_CLICK HERE for an example|r
     .group
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dalar|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dalar Tessalba|r
     .turnin 424 >>Entregue A loucura de Arugal
     .accept 99 >> Arugal's Folly
     .goto Silverpine Forest,44.20,39.73
@@ -920,7 +920,7 @@ step
     .subzoneskip 228
     .group
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dalar|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dalar Tessalba|r
     .turnin 99 >> Entregue A loucura de Arugal
     .goto Silverpine Forest,44.20,39.73
     .target Dalar Dawnweaver

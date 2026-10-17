@@ -894,7 +894,7 @@ step
     #season 0,1 << Rogue
     #hardcore
     #completewith next
-    .subzone 87 >> Voe para Goldshire
+    .subzone 87 >> Viaje para Vila d'Ouro
 step
     #hardcore
     .goto Elwynn Forest,42.105,65.927
@@ -1198,7 +1198,7 @@ step
     .goto Elwynn Forest,42.357,89.373
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Josué Madruga|r
     .vendor >>|cRXP_BUY_Compre o máximo de|r |T132815:0|t[Leite Gelado] |cRXP_WARN_que puder pagar|r << Priest/Warlock/Mage
-    .vendor >>|cRXP_WARN_Venda lixo|r << !Priest !Warlock !Mage
+    .vendor >>|cRXP_WARN_Venda os itens de lixo|r << !Priest !Warlock !Mage
     .target Joshua Maclure
     .subzoneskip 64,1 --The Maclure Vineyards
 step << Warrior/Paladin/Rogue
@@ -2663,7 +2663,7 @@ step << Warlock
 step << Warlock
     #completewith WLHoggerEnd
     .goto Elwynn Forest,42.105,65.927
-    .subzone 87 >> Voe para Goldshire
+    .subzone 87 >> Viaje para Vila d'Ouro
 step << Warlock
     #optional
     #completewith LockGoldshireEnd

@@ -58,7 +58,7 @@ step << !sod/Warrior
 step << Priest
     .goto 1438/1,779.8482,10450.1295
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Delailah|r
-    .vendor >> |cRXP_WARN_Venda lixo|r
+    .vendor >> |cRXP_WARN_Venda os itens de lixo|r
     >>|cRXP_BUY_Compre 15|r |T132794:0|t[Água Refrescante da Fonte]
     .collect 159,15 --Collect Refreshing Spring Water (x15)
     .target Dellylah
@@ -72,7 +72,7 @@ step << !Druid
 step << Warrior
     .goto 1438/1,794.92,10436.72
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Keina|r
-	.vendor >> |cRXP_WARN_Venda lixo|r
+	.vendor >> |cRXP_WARN_Venda os itens de lixo|r
     .target Keina
 step << Warrior
 	.goto 1438/1,778.07,10526.62
@@ -205,7 +205,7 @@ step << Warrior
 step << Priest
     .goto 1438/1,779.8482,10450.1295
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Delailah|r
-    .vendor >> |cRXP_WARN_Venda lixo|r
+    .vendor >> |cRXP_WARN_Venda os itens de lixo|r
     >>|cRXP_BUY_Compre até 25|r |T132794:0|t[Água Refrescante da Fonte]
     .collect 159,25 --Collect Refreshing Spring Water (x25)
     .target Dellylah
@@ -295,14 +295,14 @@ step
 step << Priest
     .goto 1438/1,779.8482,10450.1295
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Delailah|r
-    .vendor >> |cRXP_WARN_Venda lixo|r
+    .vendor >> |cRXP_WARN_Venda os itens de lixo|r
     >>|cRXP_BUY_Compre até 25|r |T132794:0|t[Água Refrescante da Fonte]
     .collect 159,25 --Collect Refreshing Spring Water (x25)
     .target Dellylah
 step << !Priest
     .goto 1438/1,794.92,10436.72
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Keina|r
-	.vendor >> |cRXP_WARN_Venda lixo|r << !Hunter
+	.vendor >> |cRXP_WARN_Venda os itens de lixo|r << !Hunter
 	.vendor >> |cRXP_BUY_Compre 3 ou 4 pilhas de|r |T132382:0|t[Rough Flechas] << Hunter
     .target Keina
 step
@@ -408,7 +408,7 @@ step << Priest
     #completewith next
     .goto 1438/1,787.28,10438.120
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Janna Lunaclara|r acima
-	.vendor >> |cRXP_WARN_Venda lixo|r
+	.vendor >> |cRXP_WARN_Venda os itens de lixo|r
     .target Janna Brightmoon
 step << Priest
 	.goto 1438/1,801.64,10458.75
@@ -536,7 +536,7 @@ step << Hunter
     .goto 1438/1,968.85,9821.98--c:Teldrassil,55.890,59.205
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Jiyna Penarco|r
     >>|cRXP_BUY_Compre e equipe um|r |T135499:0|t[Arco Recurvo de Pau-de-chifre]
-    >>|cRXP_BUY_Compre|r |T132382:0|t[Rough Flechas] |cRXP_BUY_até sua Aljava estar cheia|r
+    >>|cRXP_BUY_Compre|r |T132382:0|t[Flechas Rústicas] |cRXP_BUY_até encher sua aljava|r
     .collect 2506,1 --Collect Hornwood Recurve Bow
     .target Jeena Featherbow
     .money <0.0285
@@ -544,7 +544,7 @@ step << Hunter
 step << Hunter
     .goto 1438/1,968.85,9821.98--c:Teldrassil,55.890,59.205
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Jiyna Penarco|r
-    .vendor >>|cRXP_BUY_Compre|r |T132382:0|t[Rough Flechas] |cRXP_BUY_até sua Aljava estar cheia|r
+    .vendor >>|cRXP_BUY_Compre|r |T132382:0|t[Flechas Rústicas] |cRXP_BUY_até encher sua aljava|r
     .target Jeena Featherbow
 step << Hunter
     #completewith next

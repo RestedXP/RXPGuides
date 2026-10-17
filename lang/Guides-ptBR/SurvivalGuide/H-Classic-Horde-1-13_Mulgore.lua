@@ -219,7 +219,7 @@ step << Hunter
     .goto Mulgore,44.26,75.70
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Lanka|r
     .turnin 3092 >>Entregue Bilhete cinzelado
-    .train 1978 >>Treine |T132204:0|t[Picada de Serpente]
+    .train 1978 >>Aprenda |T132204:0|t[Picada de Serpente]
     .target Lanka Farshot
 step << Druid
     .goto Mulgore,45.09,75.93
@@ -851,7 +851,7 @@ step << Hunter
 step
     #label Mazzturnin
     .goto Mulgore,46.97,57.07
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Maur|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mauren Temível Totem|r
     .turnin 766 >>Entregue Mazzranache
     .target Maur Raincaller
     .isQuestComplete 766
@@ -1312,7 +1312,7 @@ step << Hunter
     .target Kennah Hawkseye
 step
     .goto Mulgore,46.97,57.07
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Maur|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mauren Temível Totem|r
     .turnin 766 >>Entregue Mazzranache
     .target Maur Raincaller
     .isQuestComplete 766
@@ -1531,7 +1531,7 @@ step
     .target +Gazrog
     .goto The Barrens,51.93,30.32
     .turnin 854 >>Entregue Jornada para a Encruzilhada << Tauren
-    .accept 871 >>Aceite Em Defesa do Posto Remoto
+    .accept 871 >>Aceite Cortando o ataque pela raiz
     .accept 5041 >>Aceite Suprimentos para a Encruzilhada
     .target +Thork
     .goto The Barrens,51.50,30.87
@@ -2852,8 +2852,8 @@ step
     .mob +Razormane Hunter
 step
     .goto The Barrens,55.70,27.30
-    .use 4926 >> Pegue o |cRXP_PICK_Barril Vazio do Chen|r do chão e comece a missão
-    >>|cRXP_WARN_Se não estiver disponível, você o receberá mais tarde|r
+    .use 4926 >> Pegue o |cRXP_PICK_Barril Vazio do Chen|r no chão e inicie a missão
+    >>|cRXP_WARN_Se não estiver disponível, você conseguirá mais tarde|r
     .collect 4926,1,819 --Collect Chen's Empty Keg
     .accept 819 >> Aceite Barril Vazio do Chen
 step
@@ -2902,13 +2902,13 @@ step << Tauren
     .target +Sergra Darkthorn
     .goto The Barrens,52.23,31.00
     .turnin 871 >>Entregue Adeus aos ataques
-    .accept 872 >>Aceite Em Defesa do Posto Remoto
+    .accept 872 >>Aceite Cortando o ataque pela raiz
     .target +Thork
     .goto The Barrens,51.50,30.87
 step
     .goto The Barrens,51.99,29.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estalajadeiro Boorand Vento das Planícies|r
-    .home >>Defina sua Pedra de Retorno em Encruzilhada
+    .home >>Defina sua Pedra de Regresso em A Encruzilhada
     .target Innkeeper Boorand Plainswind
     .bindlocation 380
 step << Druid

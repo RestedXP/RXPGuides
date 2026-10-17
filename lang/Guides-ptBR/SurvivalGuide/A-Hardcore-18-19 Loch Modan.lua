@@ -89,7 +89,7 @@ step
     .goto Loch Modan,34.53,43.72,10,0
     .goto Loch Modan,34.69,43.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Magistrado Grã-narina|r
-    .accept 255 >> Aceite [DEPRECATED][DEPRECATED]Mercenaries
+    .accept 255 >> Aceite Mercenaries
     .target Magistrate Bluntnose
 step
     .goto Loch Modan,37.17,47.94,8,0
@@ -384,12 +384,12 @@ step
     .goto Loch Modan,34.53,43.72,10,0
     .goto Loch Modan,34.69,43.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Magistrado Grã-narina|r
-    .turnin 255 >> Entregue [DEPRECATED][DEPRECATED]Mercenaries
+    .turnin 255 >> Entregue Mercenaries
     .target Magistrate Bluntnose
     .isQuestComplete 255
 step
     .group
-    .abandon 255 >> Abandone [DEPRECATED][DEPRECATED]Mercenaries
+    .abandon 255 >> Abandone Mercenaries
 step
     #label FINISHED
     .goto Loch Modan,33.938,50.954

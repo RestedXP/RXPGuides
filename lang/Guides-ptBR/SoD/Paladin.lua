@@ -1511,7 +1511,7 @@ step
     .goto Arathi Highlands,31.46,25.36,50,0
     .goto Arathi Highlands,33.87,29.13,50,0
     .goto Arathi Highlands,31.13,29.47,50,0
-    >>Mate os |cRXP_ENEMY_Syndicate [DEPRECATED]Mercenaries|r, |cRXP_ENEMY_Syndicate Pathstalkers|r e |cRXP_ENEMY_Syndicate Highwaymen|r. Saqueie-os pela |T135261:0|t[|cRXP_LOOT_Conta de Oração Manchada I|r]
+    >>Mate os |cRXP_ENEMY_Syndicate Mercenaries|r, |cRXP_ENEMY_Syndicate Pathstalkers|r e |cRXP_ENEMY_Syndicate Highwaymen|r. Saqueie-os pela |T135261:0|t[|cRXP_LOOT_Conta de Oração Manchada I|r]
     .collect 213444,1 --Tarnished Prayer Bead I
     .mob Syndicate Mercenary
     .mob Syndicate Pathstalker
@@ -1549,7 +1549,7 @@ step
     .goto Arathi Highlands,31.46,25.36,50,0
     .goto Arathi Highlands,33.87,29.13,50,0
     .goto Arathi Highlands,31.13,29.47,50,0
-    >>Mate os |cRXP_ENEMY_Syndicate [DEPRECATED]Mercenaries|r, |cRXP_ENEMY_Syndicate Pathstalkers|r e |cRXP_ENEMY_Syndicate Highwaymen|r. Saqueie-os pela |T135261:0|t[|cRXP_LOOT_Conta de Oração Manchada II|r]
+    >>Mate os |cRXP_ENEMY_Syndicate Mercenaries|r, |cRXP_ENEMY_Syndicate Pathstalkers|r e |cRXP_ENEMY_Syndicate Highwaymen|r. Saqueie-os pela |T135261:0|t[|cRXP_LOOT_Conta de Oração Manchada II|r]
     .collect 213445,1 --Tarnished Prayer Bead II
     .mob Syndicate Mercenary
     .mob Syndicate Pathstalker
@@ -1567,7 +1567,7 @@ step
     .train 426175,1
     #completewith Rosary
     #label BeadSoJ1
-    >>Mate os |cRXP_ENEMY_Syndicate [DEPRECATED]Mercenaries|r, |cRXP_ENEMY_Syndicate Pathstalkers|r e |cRXP_ENEMY_Syndicate Highwaymen|r. Saqueie-os pela |T135261:0|t[|cRXP_LOOT_Conta de Oração Manchada III|r]
+    >>Mate os |cRXP_ENEMY_Syndicate Mercenaries|r, |cRXP_ENEMY_Syndicate Pathstalkers|r e |cRXP_ENEMY_Syndicate Highwaymen|r. Saqueie-os pela |T135261:0|t[|cRXP_LOOT_Conta de Oração Manchada III|r]
     #loop
     .goto Arathi Highlands,33.26,32.60,50,0
     .goto Arathi Highlands,30.38,30.68,50,0

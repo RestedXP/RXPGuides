@@ -1421,7 +1421,7 @@ step
     .isQuestAvailable 78149
 step
     #completewith next
-    .zone Desolace >>Vá para |cFFfa9602Desolação|r
+    .zone Desolace >>Vá a |cFFfa9602Desolação|r
     .fly Desolace >>Pegue a rota de voo para |cFFfa9602Desolação|r |cRXP_WARN_se você a tem desbloqueada.|r
     .disablecheckbox
     .isQuestAvailable 79950
@@ -1698,7 +1698,7 @@ step
     .isQuestAvailable 78145
 step
     #completewith next
-    .zone Desolace >>Vá para |cFFfa9602Desolação|r
+    .zone Desolace >>Vá a |cFFfa9602Desolação|r
     .fly Desolace >>Pegue a rota de voo para |cFFfa9602Desolação|r |cRXP_WARN_se você a tem desbloqueada.|r
     .disablecheckbox
     .isQuestAvailable 79950
