@@ -1785,7 +1785,7 @@ step
 step
     .goto Duskwood,75.81,45.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Madame Eva|r
-    .turnin 262 >> Turn in The Shadowy Figure (NOT TRANSLATED IN :deDE YET)
+    .turnin 262 >> Gebt die Quest Die Schattengestalt ab
     .target Madame Eva
     .accept 265 >> Akzeptiert die Quest Die Schattensuche geht weiter
 step
@@ -1856,7 +1856,7 @@ step
     .goto Duskwood,61.2,46.0,60,0
     .goto Duskwood,67.6,46.6,60,0
     .goto Duskwood,63.6,41.2,60,0
-	>>Töte |cRXP_ENEMY_Schattenwirker der Nachtheuler|r
+	>>Tötet |cRXP_ENEMY_Schattenwirker der Nachtheuler|r
     .complete 173,1 --6/6 Nightbane Shadow Weaver slain
 	.mob Nightbane Shadow Weaver
 step
@@ -1923,7 +1923,7 @@ step
     .turnin 231 >> Gebt die Quest Die Liebe einer Tochter ab
 step
     .goto Duskwood,16.01,38.79
-    >>Kill |cRXP_ENEMY_Skeletträuber|r, |cRXP_ENEMY_Skelettheiler|r und |cRXP_ENEMY_Skelettwärter|r
+    >>Töte |cRXP_ENEMY_Skeletträuber|r, |cRXP_ENEMY_Skelettheiler|r und |cRXP_ENEMY_Skelettwärter|r
     >>|cRXP_WARN_Betretet Die Katakomben des Morgenwaldes für die|r |cRXP_ENEMY_Skelettwärter|r
     .complete 323,1 -- Skeletal Raider slain (15)
     .mob +Skeletal Raider
@@ -3297,7 +3297,7 @@ step
 step
     .goto Wetlands,9.861,57.486
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Hauptmann Starkfaust|r
-    .turnin 464 >> Turn in War Banners (NOT TRANSLATED IN :deDE YET)
+    .turnin 464 >> Gebt die Quest Kriegsflaggen ab
     .accept 465 >> Nek'roshs Schachzug annehmen
     .target Captain Stoutfist
 step
@@ -3643,19 +3643,19 @@ step
     .goto Ashenvale,69.73,86.62,0
     .goto Ashenvale,69.71,86.87,50,0
     .goto The Barrens,48.98,5.42,35,0
-    .zone The Barrens >> Travel to The Barrens. Follow the Arrow to avoid |cRXP_ENEMY_Barrens Guards|r (NOT TRANSLATED IN :deDE YET)
+    .zone The Barrens >> Reist in Das Brachland. Folgt dem Pfeil, um die |cRXP_ENEMY_Brachland-Wachen|r zu vermeiden
     .isOnQuest 1017
 step
     #completewith next
     .goto The Barrens,48.73,14.86,20,0
     .goto The Barrens,48.53,16.51,15,0
     .goto The Barrens,48.16,18.52,6,0
-    .goto The Barrens,47.96,18.82,5 >> Ascend Dreadmist Peak. Follow the Arrow to the top (NOT TRANSLATED IN :deDE YET)
+    .goto The Barrens,47.96,18.82,5 >> Steigt zum Glutnebelgipfel hinauf. Folgt dem Pfeil nach oben
     .isOnQuest 1017
 step
     .goto The Barrens,48.22,19.15
-    >>Kill |cRXP_ENEMY_Sarilus Foulborne|r. Loote ihn für seine |cRXP_LOOT_Kopf|r
-    >>|cRXP_WARN_The surrounding |cRXP_ENEMY_Burning Blade|r are only level 10-12|r (NOT TRANSLATED IN :deDE YET)
+    >>Tötet |cRXP_ENEMY_Sarilus Foulborne|r. Plündert sie für seinen |cRXP_LOOT_Kopf|r
+    >>|cRXP_WARN_Die umgebenden |cRXP_ENEMY_Brennende Klinge|r sind nur Stufe 10-12|r
     .complete 1017,1 -- Sarilus Foulborne's Head (1)
     .mob Sarilus Foulborne
     .isOnQuest 1017
@@ -3666,7 +3666,7 @@ step
     .goto The Barrens,51.60,24.87,25,0
     .goto The Barrens,58.76,25.28,60,0
     .goto The Barrens,63.08,37.16
-    .subzone 392>> Travel to Ratchet. Follow the Arrow to avoid |cRXP_ENEMY_Barrens Guards|r (NOT TRANSLATED IN :deDE YET)
+    .subzone 392>> Reist nach Ratschet. Folgt dem Pfeil, um die |cRXP_ENEMY_Brachland-Wachen|r zu vermeiden
     .isOnQuest 1017
 step
     #completewith next
@@ -3758,10 +3758,10 @@ step
 step
     .goto Ashenvale,49.79,67.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Schildwache Velene Sternenschlag|r
-    .turnin 1017 >> Turn in Mage Summoner (NOT TRANSLATED IN :deDE YET)
-	>>|cRXP_WARN_This quest will reward you with the|r |T134754:0|t[Light of Elune]
-    >>|T134754:0|t[Light of Elune]|cRXP_WARN_- Grants immunity from all damage and spells for 10 sec.|r
-    >>|cRXP_WARN_This is a ONE time use only. Use it in an emergency|r (NOT TRANSLATED IN :deDE YET)
+    .turnin 1017 >> Gebt die Quest Magier-Beschwörer ab
+	>>|cRXP_WARN_Diese Quest wird euch mit dem|r |T134754:0|t[Licht von Elune] Belohnen
+    >>|T134754:0|t[Licht von Elune]|cRXP_WARN_- Gibt euch Immunität von Schaden und Zaubern für 10 sek.|r
+    >>|cRXP_WARN_Dies ist nur EINMAL verwendbar. Benutzt es nur im Notfall|r
     .target Sentinel Velene Starstrike
 step << Druid
     #completewith next
@@ -4338,7 +4338,7 @@ step
     .target Watcher Backus
 step
     #completewith next
-    .goto Elwynn Forest,84.60,69.37,100 >> Travel to the Eastvale Logging Camp (NOT TRANSLATED IN :deDE YET)
+    .goto Elwynn Forest,84.60,69.37,100 >> Reist zum Holzfällerlager des Osttals
 step
     .goto Elwynn Forest,84.60,69.37
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Marshal Haggard|r
@@ -4443,7 +4443,7 @@ step
 step
     .goto Duskwood,24.26,32.90
     >>Tötet |cRXP_ENEMY_Seuchenverbreiter|r. Plündert sie für ihre |cRXP_LOOT_Ghulrippe|r und |cRXP_LOOT_Ghulfangzahn|r
-    >>|cRXP_WARN_Other |cRXP_ENEMY_Ghouls|r may also drop |cRXP_LOOT_Ribs|r and |cRXP_LOOT_Fangs|r but focus on|r |cRXP_ENEMY_Plague Spreaders|r (NOT TRANSLATED IN :deDE YET)
+    >>|cRXP_WARN_Andere |cRXP_ENEMY_Ghule|r können auch |cRXP_LOOT_Ghulrippe|r und |cRXP_LOOT_Ghulfangzahn|r droppen, aber fokussiert euch auf|r |cRXP_ENEMY_Seuchenverbreiter|r
     .complete 58,1 --20/20 Plague Spreader slain
     .mob +Plague Spreader
     .complete 133,1 --7/7 Ghoul Rib
@@ -4619,7 +4619,7 @@ step
     .goto Duskwood,71.93,46.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Lord Ello Schwarzhaupt|r
     .turnin 160 >> Gebt Ein Brief für den Bürgermeister ab
-    .accept 251 >> Übersetzung von Calvinius' Notiz annehmen
+    .accept 251 >> Akzeptiert die Quest Übersetzung von Calvinius' Notiz
     .target Lord Ello Ebonlocke
 step
     .goto Duskwood,72.64,47.61
@@ -4714,7 +4714,7 @@ step
 step
     .goto Duskwood,62.33,81.77
     >> Tötet |cRXP_ENEMY_Nightbane Ekel Kiefer|r und |cRXP_ENEMY_Besudelter Nachtheuler|r
-	>>|cRXP_WARN_Be careful as all the mobs in the area respawn at once after a few minutes|r (NOT TRANSLATED IN :deDE YET)
+	>>|cRXP_WARN_Seid vorsichtig, denn alle Kreaturen in der Gegend respawnen nach ein paar Minuten alle auf einmal|r
     .complete 222,1 --8/8 Nightbane Vile Fang slain
     .mob +Nightbane Vile Fang
     .complete 222,2 --8/8 Nightbane Tainted One slain

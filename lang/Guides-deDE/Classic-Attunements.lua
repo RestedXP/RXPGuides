@@ -163,7 +163,7 @@ step
 step
     .isQuestTurnedIn 4182
     .goto Burning Steppes,84.744,69.015
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Marshal Maxwell|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Marschall Maxwell|r
     >>|cRXP_WARN_Die Questreihe macht hier Pause, bis ihr|r |T134331:0|t[Eine zusammengeknüllte Notiz] |cRXP_WARN_in der BRD findet|r
     .turnin 4242 >> Gebt die Quest Verlorene Hoffnung ab
     .target Marshal Maxwell
@@ -190,7 +190,7 @@ step
     .accept 4282 >> Akzeptiert die Quest Ein Funken Hoffnung
 step
     .isQuestTurnedIn 4264
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Marshal Windsor|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Marschall Windsor|r
     .accept 4282 >> Akzeptiert die Quest Ein Funken Hoffnung
 step
     .isOnQuest 4282
@@ -1542,7 +1542,7 @@ step
     .isOnQuest 3802
 step
     >>Lauf zurück zur Location über dem Ring des Gesetzes
-    >>Klickt das |cRXP_PICK_Denkmal für Franclorn Forgewright|r
+    >>Zwickt |cRXP_PICK_Denkmal für Franclorn Forgewright|r
     .turnin 3802 >> Gebt die Quest Dunkeleisenerbe ab
     .isQuestComplete 3802
 
@@ -1611,7 +1611,7 @@ step
     .isQuestAvailable 9122 --The Dread Citadel - Naxxramas
 step
     #completewith AttuneComplete
-    .zone Eastern Plaguelands >>Reist in die |cFFfa9602Die Östlichen Pestländer|r
+    .zone Eastern Plaguelands >>Reist in die |cFFfa9602Östlichen Pestländer|r
 step
     #optional
     .reputation 529,honored >>Erlangt einen Wohlwollenden Ruf bei der Argentumdämmerung

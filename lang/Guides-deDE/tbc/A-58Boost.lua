@@ -372,7 +372,7 @@ step
     >>|cRXP_WARN_ENTER die Dalson's Tränen-Scheune|r
     >>Zwicken |cRXP_PICK_Mrs. Dalson's Diary|r auf dem Boden
     .accept 5058 >> Mrs. Dalsons Tagebuch annehmen
-    .turnin 5058 >> Gebt die Quest Mrs. Dalson Diary ab
+    .turnin 5058 >> Gebt die Quest Mrs. Dalsons Tagebuch ab
 step
     .goto Western Plaguelands,47.86,49.88,25,0
     .goto Western Plaguelands,48.48,51.56,25,0

@@ -517,7 +517,7 @@ step
 step
 #map Darkshore
     .goto Felwood,25.15,4.61
-    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4723 >> Akzeptiert die Quest Gestrandete Meereskreatur
 step
 #map Darkshore
@@ -906,7 +906,7 @@ step
     .accept 4722 >> Akzeptiert die Quest Gestrandete Meeresschildkröte
 step
     .goto 1439/1,579.500,5240.300
-    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4728 >>Akzeptiert die Quest Gestrandete Meereskreatur
 step
     #requires bears1A
@@ -4743,7 +4743,7 @@ step
     .complete 945,1 --Escort Therylune away from the Master's Glaive (1)
 step
     .goto Ashenvale,13.97,4.10
-    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4733 >> Akzeptiert die Quest Gestrandete Meereskreatur
     >>|cRXP_WARN_Diese Quest kann SEHR schwierig sein. Bekämpft die |cRXP_ENEMY_Murlocs|r einzeln, Andernfalls könntest du die Aggro von mehreren gleichzeitig auf dich ziehen.|r
     .link https://youtu.be/lfQM3Q-Ag5A >> |cRXP_WARN_Klickt hier für einen Videoleitfaden|r
@@ -4759,7 +4759,7 @@ step
 step
 #map Darkshore
     .goto Felwood,14.62,60.72
-    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4730 >> Akzeptiert die Quest Gestrandete Meereskreatur
 step
     .goto 1439,35.724,83.696
@@ -5874,7 +5874,7 @@ step
     .goto Ashenvale,49.79,67.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Schildwache Velene Sternenschlag|r
     .turnin 1016 >> Gebt die Quest Elementararmschienen ab
-    .accept 1017 >> Magier-Beschwörer annehmen
+    .accept 1017 >> Accept Magier-Beschwörer
     .target Sentinel Velene Starstrike
 step
     #loop
@@ -5926,7 +5926,7 @@ step
     .zoneskip Ashenvale,1
 step
     #completewith MeneBoat
-    .goto 1439,32.432,43.744,15 >> Reist zu den Auberdine Docks. Wartet auf das Hafen von Menethil boat
+    .goto 1439,32.432,43.744,15 >> Reist zu den Auberdine Docks. Wartet auf das Boot zum Hafen von Menethil
     .zoneskip Wetlands
 step
 #optional
