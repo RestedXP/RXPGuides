@@ -553,7 +553,7 @@ step << Hunter
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.0
 step
     .goto Mulgore,46.97,57.07
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Maur|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mauren Temível Totem|r
     .accept 766 >>Aceite Mazzranache
     .target Maur Raincaller
 step
@@ -931,7 +931,7 @@ step << Hunter
 step
     #label Mazzturnin
     .goto Mulgore,46.97,57.07
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Maur|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mauren Temível Totem|r
     .turnin 766 >>Entregue Mazzranache
     .target Maur Raincaller
     .isQuestComplete 766
@@ -1420,7 +1420,7 @@ step << Hunter
     .target Kennah Hawkseye
 step
     .goto Mulgore,46.97,57.07
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Maur|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mauren Temível Totem|r
     .turnin 766 >>Entregue Mazzranache
     .target Maur Raincaller
     .isQuestComplete 766
@@ -1642,7 +1642,7 @@ step
     .target +Gazrog
     .goto The Barrens,51.93,30.32
     .turnin 854 >>Entregue Jornada para a Encruzilhada << Tauren
-    .accept 871 >>Aceite Em Defesa do Posto Remoto
+    .accept 871 >>Aceite Cortando o ataque pela raiz
     .accept 5041 >>Aceite Suprimentos para a Encruzilhada
     .target +Thork
     .goto The Barrens,51.50,30.87
@@ -1866,7 +1866,7 @@ step
 step
     .goto The Barrens,51.99,29.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estalajadeiro Boorand Vento das Planícies|r
-    .home >>Defina sua Pedra de Retorno em Encruzilhada
+    .home >>Defina sua Pedra de Regresso em A Encruzilhada
     .target Innkeeper Boorand Plainswind
     .bindlocation 380
 step << Shaman/Druid

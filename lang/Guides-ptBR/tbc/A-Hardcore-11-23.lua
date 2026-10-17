@@ -5032,7 +5032,7 @@ step
 .dungeon WC
     #completewith EnterWC
     >>Mate todos os tipos de criaturas |cRXP_ENEMY_Desviantes|r. Saqueie-as para obter seus |cRXP_LOOT_Pelegos Anormal|r
-    >>Isso pode ser concluído DENTRO e FORA da Caverna Ululante
+    >>Isso pode ser concluído DENTRO e FORA das Cavernas do Lamento
     .complete 1486,1 -- Deviate Hide (20)
     .isOnQuest 1486
 step
@@ -5098,7 +5098,7 @@ step
 step
 .dungeon WC
     >>Mate todos os tipos de criaturas |cRXP_ENEMY_Desviantes|r. Saqueie-as para obter seus |cRXP_LOOT_Pelegos Anormal|r
-    >>Isso pode ser concluído DENTRO e FORA da Caverna Ululante
+    >>Isso pode ser concluído DENTRO e FORA das Cavernas do Lamento
     .complete 1486,1 -- Deviate Hide (20)
     .isOnQuest 1486
 step
@@ -5263,7 +5263,7 @@ step
     .accept 1009 >> Aceite Ruuzel
 step
     .goto Ashenvale,6.528,13.361
-    >>Mate |cRXP_ENEMY_Ruuzel|r. Saque-a pelo |cRXP_LOOT_Anel de Zoram|r
+    >>Mate |cRXP_ENEMY_Ruuzel|r. Saqueie-a para obter o |cRXP_LOOT_Anel de Zoram|r
     >>|cRXP_ENEMY_Ruzzel|r patrulha a ilha com um|cRXP_WARN_ Mirmidão Caudafúria|cRXP_ENEMY_ e uma|r |cRXP_ENEMY_Bruxa do Mar Caudafúria|r. Mate um deles e depois redefina-os se necessário|r
     >>Se você tiver [Bombas]|cRXP_WARN_/|r[Granadas] também pode usá-las para fazer uma puxada dividida no |cRXP_ENEMY_Ruzzel|r
     .link https://www.youtube.com/watch?v=H-IwZ6P-ldY >> Clique aqui para referência em vídeo sobre “puxada dividida”
@@ -5273,7 +5273,7 @@ step
 step
     #label nagas
     .goto Ashenvale,6.528,13.361
-    >>Mate |cRXP_ENEMY_Ruuzel|r. Saque-a pelo |cRXP_LOOT_Anel de Zoram|r
+    >>Mate |cRXP_ENEMY_Ruuzel|r. Saqueie-a para obter o |cRXP_LOOT_Anel de Zoram|r
     >>|cRXP_ENEMY_Ruzzel|r patrulha a ilha com um|cRXP_WARN_ Mirmidão Caudafúria|cRXP_ENEMY_ e uma|r |cRXP_ENEMY_Bruxa do Mar Caudafúria|r. Mate um deles e depois redefina-os se necessário|r
 	.mob Ruuzel
     .complete 1009,1
@@ -5706,7 +5706,7 @@ step << Warlock
     >>|cRXP_WARN_Pule este passo se você não fez WC antes|r
 	.target Teloren
     .goto Stonetalon Mountains,36.438,7.181
-	.fly Ratchet >> Voe para Ponto de Ancoragem
+	.fly Ratchet >> Voe para Vila Catraca
     .zoneskip Stonetalon Mountains,1
 step << Warlock
     .goto Stonetalon Mountains,75.466,91.422,0

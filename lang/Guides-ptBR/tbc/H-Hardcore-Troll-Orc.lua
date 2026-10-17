@@ -330,7 +330,7 @@ step << Mage
     .goto Durotar,42.51,69.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mai'ah|r
     .turnin 3086 >>Entregue Tabuleta glífica << Troll
-    .train 1459 >> Treine |T135932:0|t[Inteligência Arcana]
+    .train 1459 >> Aprenda |T135932:0|t[Inteligência Arcana]
     .target Mai'ah
 step << Hunter
     #requires Galgar
@@ -2537,7 +2537,7 @@ step
 step
     .goto The Barrens,51.99,29.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estalajadeiro Boorand Vento das Planícies|r
-    .home >>Defina sua Pedra de Retorno em Encruzilhada
+    .home >>Defina sua Pedra de Regresso em A Encruzilhada
     .target Innkeeper Boorand Plainswind
     .bindlocation 380
 step << Orc/Troll
@@ -2726,7 +2726,7 @@ step
     .zoneskip Tirisfal Glades
 step << Warrior
     #completewith WarDefStance
-    .goto Tirisfal Glades,61.52,53.20,80 >> Viaje para Brill
+    .goto Tirisfal Glades,61.52,53.20,80 >> Vá para Montalvo
     .subzoneskip 159
 step << Warrior
     #optional

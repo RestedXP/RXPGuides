@@ -27,7 +27,7 @@ step
 step
     .goto Wetlands,8.359,58.526
     .target Karl Boran
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Karl Boran|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Carlos Borba|r
     .accept 279 >> Aceite Garras das Profundezas
 step << Draenei/NightElf
     .goto Wetlands,9.490,59.693
@@ -286,7 +286,7 @@ step << !NightElf !Draenei
     .xp <25,1
 step << !NightElf !Draenei
     .goto Wetlands,8.359,58.526
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Karl Boran|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Carlos Borba|r
     .turnin 279 >> Entregue Garras das Profundezas
     .target Karl Boran
     .xp <25,1
@@ -316,7 +316,7 @@ step
     .subzoneskip 150 --Skips if you go to Menethil
     .subzoneskip 2104 --Skips if you HS Menethil inn
     .goto 1437/0,-2374.900,-4011.600,15,0
-    .goto 1437/0,-2462.600,-4119.400,10 >> Viaje até o segundo túnel
+    .goto 1437/0,-2462.600,-4119.400,10 >> Vá até o segundo túnel
     .mob Dragonmaw Grunt
 step
     #optional
@@ -402,7 +402,7 @@ step << NightElf/Draenei
     .goto 1426/0,-2441.900,-5559.800,10 >> Atravesse o túnel
 step << NightElf/Draenei
     #optional
-    .goto 1426/0,-2347.800,-5560.700,10 >> Viaje até o segundo túnel
+    .goto 1426/0,-2347.800,-5560.700,10 >> Vá até o segundo túnel
 step << NightElf/Draenei
     #optional
     .goto 1426/0,-2243.100,-5634.800,10 >> Atravesse o segundo túnel
@@ -1000,7 +1000,7 @@ step
     .isQuestTurnedIn 174
 step
     .goto Duskwood,81.46,59.02
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Maria Cega|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Maria Cega|r
     .turnin 175 >> Entregue Ora (direis) ouvir Estrelas!
     .accept 177 >> Aceite Ora (direis) ouvir Estrelas!
     .target Blind Mary
@@ -1324,7 +1324,7 @@ step
     .isQuestTurnedIn 2359 << Rogue -- going straight to duskwood if already completed poison quest earlier
     .goto Westfall,56.55,52.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thor|r
-    .fly Duskwood >> Voe para Darkshire
+    .fly Duskwood >> Voe para Vila Sombria
     .target Thor
     .zoneskip Duskwood
 step << Rogue
@@ -1466,7 +1466,7 @@ step
     .turnin 5 >> Entregue A barriga roncante de Medrisco
     .accept 93 >> Aceite Bolinhos de Caranguejo Crepuscular
     .turnin 93 >> Entregue Bolinhos de Caranguejo Crepuscular
-    .accept 240 >> Aceite Devolver para Medrisco
+    .accept 240 >> Aceite Fale novamente com Medrisco
     .target Chef Grual
 step
     .goto Duskwood,73.59,46.89
@@ -1522,14 +1522,14 @@ step
     .isQuestTurnedIn 174
 step
     .goto Duskwood,81.46,59.02
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Maria Cega|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Maria Cega|r
     .turnin 175 >> Entregue Ora (direis) ouvir Estrelas!
     .accept 177 >> Aceite Ora (direis) ouvir Estrelas!
     .target Blind Mary
     .isQuestTurnedIn 174
 step
     .goto Duskwood,81.98,59.08
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Maria Cega|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Maria Cega|r
     .turnin 149 >> Entregue Linha de Cabelo de Fantasma
     .accept 154 >> Aceite Devolva o Pente
     .target Blind Mary
@@ -1564,7 +1564,7 @@ step
 step
     .goto Duskwood,75.81,45.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Madame Eva|r
-    .turnin 154 >> Entregue Devolva o Pente
+    .turnin 154 >> Entregue Devolver o Pente
     .accept 157 >> Aceite Entregue a Linha
     .target Madame Eva
 step
@@ -1776,7 +1776,7 @@ step
 step
     .goto Redridge Mountains,30.590,59.410
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ariena Penafúria|r
-    .fly Duskwood >> Voe para Darkshire
+    .fly Duskwood >> Voe para Vila Sombria
     .target Ariena Stormfeather
     .zoneskip Redridge Mountains,1
 step
@@ -1785,7 +1785,7 @@ step
 step
     .goto Duskwood,75.81,45.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Madame Eva|r
-    .turnin 262 >> Entregue O Vulto Sombrio
+    .turnin 262 >> Entregue O vulto sombrio
     .target Madame Eva
     .accept 265 >> Aceite A Busca Sombria Continua
 step
@@ -1818,7 +1818,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Taberneiro Oseias|r
     .turnin 158 >> Entregue Suco de Zumbi
     .accept 156 >> Aceite Flores do Mal
-    .turnin 266 >> Entregue Indagar na Estalagem
+    .turnin 266 >> Entregue Pergunte na Estalagem
     .accept 453 >> Aceite À procura do Vulto Sombrio
     .target Tavernkeep Smitts
 step
@@ -1955,7 +1955,7 @@ step << Warrior/Paladin
     .isQuestComplete 228 -- turning in mor'ladim to get Archeus if complete
     .goto Westfall,56.55,52.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thor|r
-    .fly Duskwood>> Voe para Darkshire
+    .fly Duskwood>> Voe para Vila Sombria
     .target Thor
 step << Warrior/Paladin
     #optional
@@ -2061,7 +2061,7 @@ step
     .target Innkeeper Farley
 step
     #completewith next
-    .goto Elwynn Forest,43.877,66.546,9 >> Vá para cima
+    .goto Elwynn Forest,43.877,66.546,9 >> Suba as escadas
 step << Priest
     .goto Elwynn Forest,43.283,65.721
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Sacerdotisa Joselita|r
@@ -2106,7 +2106,7 @@ step
     #completewith GRB
     .goto Stormwind City,66.27,62.12
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dungar Tragolongo|r
-    .fly Duskwood >> Voe para Darkshire
+    .fly Duskwood >> Voe para Vila Sombria
     .target Dungar Longdrink
 step
     .goto Duskwood,73.59,46.89
@@ -2182,7 +2182,7 @@ step << !Mage
 step
     #completewith next
     .goto Stormwind City,29.2,74.0,20,0
-    .goto Stormwind City,27.2,78.1,15 >> Head to the Slaughtered Lamb e go no andar de baixo
+    .goto Stormwind City,27.2,78.1,15 >> Vá até o Cordeiro Abatido e desça as escadas
 step
     .goto Stormwind City,26.44,78.66
     .target Zardeth of the Black Claw
@@ -2195,13 +2195,13 @@ step << Warlock
     .target Ursula Deline
 step
     .goto Stormwind City,29.528,61.924
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Caretaker Folsom|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Zelador Folsom|r
     .turnin 70 >> Entregue A Lenda de Galvão
     .target Caretaker Folsom
     .accept 72 >> Aceite A Lenda de Galvão
 step
     .goto Stormwind City,29.44,61.52
-    >>Clique no |cRXP_PICK_Sealed Crate|r no chão
+    >>Clique no |cRXP_PICK_Caixote Selado|r no chão
     .turnin 72 >> Entregue A Lenda de Galvão
     .accept 74 >> Aceite A Lenda de Galvão
 step << Druid
@@ -2506,7 +2506,7 @@ step
 step
 .dungeon Stockades
     .goto StormwindClassic,78.105,17.750
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Dama Katrana Prestor|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Lady Katrana Prestor|r
     .turnin 396 >> Entregue Uma Audiência com o Rei
     .target Lady Katrana Prestor
     .isQuestTurnedIn 391
@@ -2894,7 +2894,7 @@ RXPGuides.RegisterGuide([[
 
 step
     .goto Wetlands,8.359,58.526
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Karl Boran|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Carlos Borba|r
     .turnin 279 >> Entregue Garras das Profundezas
     .accept 281 >> Aceite O Que É Nosso de Direito
     .target Karl Boran
@@ -3281,7 +3281,7 @@ step
 step
     .isOnQuest 286
     .goto Wetlands,8.359,58.526
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Karl Boran|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Carlos Borba|r
     .turnin 286 >> Entregue Devolver a Estatueta
     .target Karl Boran
 step
@@ -3991,7 +3991,7 @@ step << Hunter/Warrior
     .goto Ironforge,69.872,82.890 << Hunter
     .goto 1455/0,-1269.700,-5047.600 << Warrior
     .trainer >> Treine suas magias de classe
-    .accept 1718 >> Aceite O Ilhéu << Warrior
+    .accept 1718 >> Aceite O ilhéu << Warrior
     .target Regnus Thundergranite << Hunter
     .target Kelv Sternhammer << Warrior
 step
@@ -4224,7 +4224,7 @@ step
     .target Viktori Prism'Antras
 step
     .goto Duskwood,81.46,59.02
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Maria Cega|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Maria Cega|r
     .turnin 175 >> Entregue Ora (direis) ouvir Estrelas!
     .accept 177 >> Aceite Ora (direis) ouvir Estrelas!
     .isQuestTurnedIn 174
@@ -4577,7 +4577,7 @@ step
     .goto Duskwood,73.77,44.48,-1 << !Shaman
     .goto Duskwood,73.59,46.89,-1 << Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thor|r
-    .fly Duskwood>> Voe para Darkshire
+    .fly Duskwood>> Voe para Vila Sombria
     .target Thor
     .subzoneskip 42
 step << !Shaman
@@ -4750,12 +4750,12 @@ step
     .accept 185 >> Aceite Maestria em Tigres
     .target +Ajeck Rouack
     .goto Stranglethorn Vale,35.616,10.619
-    .accept 190 >> Aceite Maestria em Panteras
+    .accept 190 >> Aceite Maestria em panteras
     .target +Sir S. J. Erlgadin
     .goto Stranglethorn Vale,35.556,10.546
 step
     #completewith next
-	>>Mate |cRXP_ENEMY_Young Panthers|r
+	>>Mate |cRXP_ENEMY_Panteras Jovens|r
     .complete 190,1 --10/10 Young Panther slain
     .mob Young Panther
 step
@@ -4768,7 +4768,7 @@ step
     .goto Stranglethorn Vale,33.30,11.90,50,0
     .goto Stranglethorn Vale,31.76,9.00,50,0
     .goto Stranglethorn Vale,35.40,12.50,50,0
-	>>Mate |cRXP_ENEMY_Young Stranglethorn Tigers|r
+	>>Mate |cRXP_ENEMY_Tigres-do-espinhaço Jovens|r
     .complete 185,1 --10/10 Young Stranglethorn Tiger slain
     .mob Young Stranglethorn Tiger
 step
@@ -4783,7 +4783,7 @@ step
     .goto Stranglethorn Vale,41.43,9.77,50,0
     .goto Stranglethorn Vale,40.67,11.65,50,0
     .goto Stranglethorn Vale,41.50,12.00,50,0
-	>>Mate |cRXP_ENEMY_Young Panthers|r
+	>>Mate |cRXP_ENEMY_Panteras Jovens|r
     .complete 190,1 --10/10 Young Panther slain
     .mob Young Panther
 step
@@ -5406,7 +5406,7 @@ step << Draenei
 step
     .goto Wetlands,8.388,61.752
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Vincent Hyal|r
-    .turnin 1301 >> Entregue [DEPRECATED][DEPRECATED]James Hyal
+    .turnin 1301 >> Entregue James Hyal
     .accept 1302 >> Aceite [DEPRECATED]James Hyal
     .target Vincent Hyal
 step

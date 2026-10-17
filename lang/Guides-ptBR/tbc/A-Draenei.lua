@@ -47,7 +47,7 @@ step
 step << Priest/Mage
     .goto Azuremyst Isle,79.253,50.884
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ryosh|r
-    .vendor >> |cRXP_WARN_Vendor trash|r
+    .vendor >> |cRXP_WARN_Venda os itens de lixo|r
     >>|cRXP_BUY_Compre 10|r |T132794:0|t[Água Refrescante da Fonte]
     .collect 159,10 --Collect Refreshing Spring Water (x10)
     .target Ryosh
@@ -190,7 +190,7 @@ step << Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Valaatu|r
 	.accept 9290 >> Aceite Treinamento de Mago
 	.turnin 9290 >> Entregue Treinamento de Mago
-    .train 1459 >> Treine |T135932:0|t[Inteligência Arcana]
+    .train 1459 >> Aprenda |T135932:0|t[Inteligência Arcana]
     .train 116 >> Treine |T135846:0|t[Seta de Gelo]
     .target Valaatu
 step << Paladin
@@ -2564,8 +2564,8 @@ step
     #optional
     .goto Bloodmyst Isle,55.429,55.266
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Vindicante Boros|r
-    +Lembre-se de entregar seus [Estilhaços de Cristal Irradiado] para obter o buff consumível [Cristal da Perspicácia] (Aumenta o Intelecto em 5. Dura 30 min.) << !Warrior !Paladin !Shaman !Rogue
-    +Lembre-se de entregar seus [Estilhaços de Cristal Irradiado] para o buff consumível [Cristal da Ferocidade] (Aumenta o poder de ataque em 10. Dura 30 min.) << Warrior/Paladin/Shaman/Rogue
+    +Lembre-se de entregar seus [Estilhaços de Cristal Irradiado] para o buff consumível [Cristal da Percepção] (Aumenta o Intelecto em 5. Dura 30 min.) << !Warrior !Paladin !Shaman !Rogue
+    +Lembre-se de entregar seus [Estilhaços de Cristal Irradiado] para obter o buff consumível [Cristal da Ferocidade] (Aumenta o poder de ataque em 10. Dura 30 min.) << Warrior/Paladin/Shaman/Rogue
     .target Vindicator Boros
     .itemcount 23984,>9
 step
@@ -2798,8 +2798,8 @@ step
     #optional
     .goto Bloodmyst Isle,55.429,55.266
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Vindicante Boros|r
-    +Lembre-se de entregar seus [Estilhaços de Cristal Irradiado] para obter o buff consumível [Cristal da Perspicácia] (Aumenta o Intelecto em 5. Dura 30 min.) << !Warrior !Paladin !Shaman !Rogue
-    +Lembre-se de entregar seus [Estilhaços de Cristal Irradiado] para o buff consumível [Cristal da Ferocidade] (Aumenta o poder de ataque em 10. Dura 30 min.) << Warrior/Paladin/Shaman/Rogue
+    +Lembre-se de entregar seus [Estilhaços de Cristal Irradiado] para o buff consumível [Cristal da Percepção] (Aumenta o Intelecto em 5. Dura 30 min.) << !Warrior !Paladin !Shaman !Rogue
+    +Lembre-se de entregar seus [Estilhaços de Cristal Irradiado] para obter o buff consumível [Cristal da Ferocidade] (Aumenta o poder de ataque em 10. Dura 30 min.) << Warrior/Paladin/Shaman/Rogue
     .target Vindicator Boros
     .itemcount 23984,>9
 step
@@ -4629,7 +4629,7 @@ step
 .dungeon WC
     #completewith EnterWC
     >>Mate todos os tipos de criaturas |cRXP_ENEMY_Desviantes|r. Saqueie-as para obter seus |cRXP_LOOT_Pelegos Anormal|r
-    >>Isso pode ser concluído DENTRO e FORA da Caverna Ululante
+    >>Isso pode ser concluído DENTRO e FORA das Cavernas do Lamento
     .complete 1486,1 -- Deviate Hide (20)
     .isOnQuest 1486
 step
@@ -4695,7 +4695,7 @@ step
 step
 .dungeon WC
     >>Mate todos os tipos de criaturas |cRXP_ENEMY_Desviantes|r. Saqueie-as para obter seus |cRXP_LOOT_Pelegos Anormal|r
-    >>Isso pode ser concluído DENTRO e FORA da Caverna Ululante
+    >>Isso pode ser concluído DENTRO e FORA das Cavernas do Lamento
     .complete 1486,1 -- Deviate Hide (20)
     .isOnQuest 1486
 step
@@ -4900,7 +4900,7 @@ step
     .complete 1008,1
 step
     .goto Ashenvale,6.528,13.361
-    >>Mate |cRXP_ENEMY_Ruuzel|r. Saque-a pelo |cRXP_LOOT_Anel de Zoram|r
+    >>Mate |cRXP_ENEMY_Ruuzel|r. Saqueie-a para obter o |cRXP_LOOT_Anel de Zoram|r
     >>|cRXP_ENEMY_Ruzzel|r patrulha a ilha com um|cRXP_WARN_ Mirmidão Caudafúria|cRXP_ENEMY_ e uma|r |cRXP_ENEMY_Bruxa do Mar Caudafúria|r. Mate um deles e depois redefina-os se necessário|r
     >>|cRXP_ENEMY_Lady Vespira|r é um reaparecimento raro que também pode derrubar o|cRXP_WARN_ Anel de Zoram|cRXP_LOOT_ |rse você a vir|r
 	.unitscan Lady Vespia

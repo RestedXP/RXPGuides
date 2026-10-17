@@ -46,7 +46,7 @@ step
 step << Priest/Mage
     .goto Azuremyst Isle,79.253,50.884
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ryosh|r
-    .vendor >> |cRXP_WARN_Vendor trash|r
+    .vendor >> |cRXP_WARN_Venda os itens de lixo|r
     >>|cRXP_BUY_Compre 10|r |T132794:0|t[Água Refrescante da Fonte]
     .collect 159,10 --Collect Refreshing Spring Water (x10)
     .target Ryosh
@@ -189,7 +189,7 @@ step << Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Valaatu|r
 	.accept 9290 >> Aceite Treinamento de Mago
 	.turnin 9290 >> Entregue Treinamento de Mago
-    .train 1459 >> Treine |T135932:0|t[Inteligência Arcana]
+    .train 1459 >> Aprenda |T135932:0|t[Inteligência Arcana]
     .train 116 >> Treine |T135846:0|t[Seta de Gelo]
     .target Valaatu
 step << Paladin

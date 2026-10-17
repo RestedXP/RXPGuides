@@ -58,7 +58,7 @@ step << Warrior
     >>Mate |cRXP_ENEMY_Lobos Jovens|r até ter 10c+ em itens de lixo para vender
     >>|cRXP_WARN_Você irá treinar|r |T132333:0|t [Grito de Guerra] |cRXP_WARN_que aumenta a velocidade de progressão nos níveis iniciais|r
     >>|interface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Irmão Dânio|r
-    .vendor >> |cRXP_WARN_Vendor trash|r
+    .vendor >> |cRXP_WARN_Venda os itens de lixo|r
     .target +Brother Danil
     .goto Elwynn Forest,47.486,41.566
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Hipólito Valentim|r
@@ -124,7 +124,7 @@ step
 step << Priest/Mage/Warlock
     .goto Elwynn Forest,47.486,41.566
     >>|interface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Irmão Dânio|r
-    .vendor >>|cRXP_WARN_Vendor trash|r
+    .vendor >>|cRXP_WARN_Venda os itens de lixo|r
     >>|cRXP_WARN_Compre 10|r |T132794:0|t[Água Refrescante da Fonte]
     .target Brother Danil
     .collect 159,10 --Collect Refreshing Spring Water (x10)
@@ -132,7 +132,7 @@ step << !Priest !Mage !Warlock !Rogue
     >>|interface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Godrico Rothgar|r
     .target Godric Rothgar
     .goto Elwynn Forest,47.691,41.417
-    .vendor >>|cRXP_WARN_Vendor trash|r
+    .vendor >>|cRXP_WARN_Venda os itens de lixo|r
 step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Janos|r
     .goto Elwynn Forest,47.240,41.900
@@ -175,7 +175,7 @@ step
     .goto Elwynn Forest,47.691,41.417
     >>|interface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Godrico Rothgar|r
     .target Godric Rothgar
-    .vendor >> |cRXP_WARN_Vendor trash|r
+    .vendor >> |cRXP_WARN_Venda os itens de lixo|r
 --N need SoM xp note
 step
     #requires xp3
@@ -394,7 +394,7 @@ step << Mage/Priest/Warlock
     >>|interface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_André Cravo|r
     .target Andrew Krighton
     .goto Elwynn Forest,41.706,65.786
-    .vendor >> |cRXP_WARN_Vendor trash|r
+    .vendor >> |cRXP_WARN_Venda os itens de lixo|r
 step
     #label Goldshire
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Delegado Durão|r
@@ -533,7 +533,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Josué Madruga|r
     .target Joshua Maclure
     .vendor >>|cRXP_BUY_Compre o máximo|r |T132815:0|t[Leite Gelado] |cRXP_WARN_que você puder pagar|r << Priest/Warlock/Mage
-    .vendor >>|cRXP_WARN_Vendor trash|r << !Priest !Warlock !Mage
+    .vendor >>|cRXP_WARN_Venda os itens de lixo|r << !Priest !Warlock !Mage
 step
     #completewith next
     >>Abate os |cRXP_ENEMY_Kobold Escavadores|r e os |cRXP_ENEMY_Kobold Mineradores|r. Saque-os por suas |cRXP_LOOT_Velas|r e |cRXP_LOOT_Poeira|r
@@ -681,7 +681,7 @@ step
     #completewith next
     >>|interface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Corina Ácero|r
     .goto Elwynn Forest,41.529,65.900
-    .vendor >>|cRXP_WARN_Vendor trash|r
+    .vendor >>|cRXP_WARN_Venda os itens de lixo|r
     .target Corina Steele
 step << Warrior
     >>|interface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Corina Ácero|r
@@ -825,7 +825,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ricardo Fino|r
     .target Rallic Finn
     .goto Elwynn Forest,83.283,66.089
-    .vendor >> |cRXP_WARN_Vendor trash|r
+    .vendor >> |cRXP_WARN_Venda os itens de lixo|r
     .zoneskip Elwynn Forest,1
 step
     #completewith Prowlers
@@ -1265,7 +1265,7 @@ step << Human
     .target Quartermaster Lewis
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Intendente Ludovico|r
     .accept 6181 >> Aceite Um Recado Rápido
-    .vendor >>|cRXP_WARN_Vendor trash|r
+    .vendor >>|cRXP_WARN_Venda os itens de lixo|r
 step << Rogue
     #era
     .money >0.3152
@@ -1775,7 +1775,7 @@ step
 step
     .goto Dun Morogh,68.614,54.643
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kazan Mogosh|r
-    .vendor >> |cRXP_WARN_Vendor trash|r << !Priest !Warlock !Mage
+    .vendor >> |cRXP_WARN_Venda os itens de lixo|r << !Priest !Warlock !Mage
     .vendor >> |cRXP_BUY_Compre 20|r |T132815:0|t[Leite Gelado] << Priest/Warlock/Mage
     .target Kazan Mogosh
 step << !Warlock

@@ -361,7 +361,7 @@ step << Mage
     .goto Durotar,42.51,69.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mai'ah|r
     .turnin 3086 >>Entregue Tabuleta glífica << Troll
-    .train 1459 >> Treine |T135932:0|t[Inteligência Arcana]
+    .train 1459 >> Aprenda |T135932:0|t[Inteligência Arcana]
     .target Mai'ah
 step << Hunter
     #requires Galgar
@@ -1689,7 +1689,7 @@ step << Warrior
 step << Warrior
     #hardcore
     #completewith FillerTurnins
-    .subzone 159 >>Viaje para Brill
+    .subzone 159 >>Vá para Montalvo
 step << Warrior
     .goto Tirisfal Glades,59.45,52.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Joaquino|r
@@ -3761,7 +3761,7 @@ step << !Tauren
 step << !Tauren
     .goto The Barrens,51.50,30.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thork|r
-    .accept 871 >>Aceite Em Defesa do Posto Remoto
+    .accept 871 >>Aceite Cortando o ataque pela raiz
     .accept 5041 >>Aceite Suprimentos para a Encruzilhada
     .target Thork
 step << !Tauren
@@ -3783,7 +3783,7 @@ step << Orc/Troll
 step << !Tauren
     #label Xroads1
     .goto The Barrens,51.44,30.15
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Helbrim|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Boticário Hermógenes|r
     .accept 848 >>Aceite Esporos de Fungos
     .accept 1492 >>Aceite Mestre Portuário Caruncho
     .target Apothecary Helbrim
@@ -3826,7 +3826,7 @@ step << !Tauren
     #xprate <1.5
     #label FungalSporesComplete
     .goto The Barrens,51.44,30.15
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Helbrim|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Boticário Hermógenes|r
     >>|cRXP_WARN_Espere a cena terminar|r
     >>|cRXP_WARN_Isso inicia uma missão cronometrada de 45 minutos|r
     .turnin 848 >> Entregue Esporos de Fungos
@@ -4057,7 +4057,7 @@ step << !Tauren
     #xprate <1.5
     #label ZamahTurnin
     .goto Thunder Bluff,22.82,20.88
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zamah|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Boticário Zaqueu|r
     .turnin 853 >> Entregue Boticário Zaqueu
     .target Apothecary Zamah
 step << !Tauren

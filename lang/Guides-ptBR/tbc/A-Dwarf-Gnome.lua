@@ -109,7 +109,7 @@ step
 step
     .goto Dun Morogh,30.087,71.563
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Adlin Altanário|r
-    .vendor >>|cRXP_WARN_Vendor trash|r
+    .vendor >>|cRXP_WARN_Venda os itens de lixo|r
     >>|cRXP_BUY_Compre 600|r |T132384:0|t[Luz Shots] |cRXP_BUY_dele|r << Hunter
     >>|cRXP_BUY_Compre 15|r |T132794:0|t[Água Refrescante da Fonte] |cRXP_BUY_do vendedor|r << Priest/Mage/Warlock
     >>|cRXP_WARN_Triture extra |cRXP_ENEMY_Lobos Jovens Esfarrapados|r se você não tiver dinheiro suficiente|r << Priest/Mage/Warlock
@@ -492,7 +492,7 @@ step << Mage
     .goto Dun Morogh,28.709,66.366
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Marryk Nurribit|r dentro
     .turnin 3114 >> Entregue Memorando Glífico << Gnome
-    .train 1459 >> Treine |T135932:0|t[Inteligência Arcana]
+    .train 1459 >> Aprenda |T135932:0|t[Inteligência Arcana]
     .train 116 >> Treine |T135846:0|t[Seta de Gelo]
     .target Marryk Nurribit
 step << Rogue
@@ -1252,7 +1252,7 @@ step << !Mage !Priest !Warlock
     #completewith next
     .goto Dun Morogh,30.453,46.005
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Jado Cerver|r
-    .vendor >> |cRXP_WARN_Vendor trash|r
+    .vendor >> |cRXP_WARN_Venda os itens de lixo|r
     .target Keeg Gibn
 step << Priest/Mage/Warlock
     #completewith next
@@ -1677,7 +1677,7 @@ step
     #completewith next
     .goto Dun Morogh,30.453,46.005
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Jado Cerver|r
-    .vendor >> |cRXP_WARN_Vendor trash|r
+    .vendor >> |cRXP_WARN_Venda os itens de lixo|r
     .target Keeg Gibn
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Rejold Cervevada|r e |cRXP_FRIENDLY_Marleth Cervevada|r
@@ -4412,7 +4412,7 @@ step
     #completewith next
     .goto Dun Morogh,30.453,46.005
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Jado Cerver|r
-    .vendor >> |cRXP_WARN_Vendor trash|r
+    .vendor >> |cRXP_WARN_Venda os itens de lixo|r
     .target Keeg Gibn
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Rejold Cervevada|r e |cRXP_FRIENDLY_Marleth Cervevada|r

@@ -494,7 +494,7 @@ step
 step
     #softcore
     .goto Mulgore,46.97,57.07
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Maur|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mauren Temível Totem|r
     .accept 766 >>Aceite Mazzranache
     .target Maur Raincaller
 step
@@ -608,7 +608,7 @@ step << Hunter
 step
     #hardcore
     .goto Mulgore,46.97,57.07
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Maur|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mauren Temível Totem|r
     .accept 766 >>Aceite Mazzranache
     .target Maur Raincaller
 step
@@ -1094,7 +1094,7 @@ step
     #xprate <1.5
     #label Mazzturnin
     .goto Mulgore,46.97,57.07
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Maur|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mauren Temível Totem|r
     .turnin 766 >>Entregue Mazzranache
     .target Maur Raincaller
     .isQuestComplete 766
@@ -1555,7 +1555,7 @@ step << Druid
     .subzoneskip 222
 step << Druid
     .goto Mulgore,46.97,57.07
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Maur|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mauren Temível Totem|r
     .turnin 766 >>Entregue Mazzranache
     .target Maur Raincaller
     .isQuestComplete 766
@@ -1685,7 +1685,7 @@ step << Shaman
     .target Narm Skychaser
 step << !Druid
     .goto Mulgore,46.97,57.07
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Maur|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mauren Temível Totem|r
     .turnin 766 >>Entregue Mazzranache
     .target Maur Raincaller
     .isQuestComplete 766
@@ -2064,7 +2064,7 @@ step << Tauren
     .target Thork
 step
     .goto The Barrens,51.44,30.15
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Helbrim|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Boticário Hermógenes|r
     .accept 848 >>Aceite Esporos de Fungos
     .target Apothecary Helbrim
 step
@@ -2114,13 +2114,13 @@ step
 step
     .goto The Barrens,51.99,29.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estalajadeiro Boorand Vento das Planícies|r
-    .home >>Defina sua Pedra de Retorno em Encruzilhada
+    .home >>Defina sua Pedra de Regresso em A Encruzilhada
     .target Innkeeper Boorand Plainswind
     .bindlocation 380
 step
     #label ZamahPickup
     .goto The Barrens,51.44,30.15
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Helbrim|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Boticário Hermógenes|r
     >>|cRXP_WARN_Espere a cena terminar|r
     >>|cRXP_WARN_Isso inicia uma missão cronometrada de 45 minutos|r
     .turnin 848 >>Entregue Esporos de Fungos
@@ -2176,7 +2176,7 @@ step
 step
     #label CauldronStirrer
     .goto Thunder Bluff,22.82,20.88
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zamah|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Boticário Zaqueu|r
     .turnin 853 >>Entregue Boticário Zaqueu
     .target Apothecary Zamah
 step
@@ -2444,7 +2444,7 @@ step
 step
     #xprate <1.5
     .goto Thunder Bluff,61.3,80.9
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Melor|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Melor Casco de Pedra|r
     .turnin 861 >>Entregue A senda do caçador
     .accept 860 >>Aceite Sergra Espinhonegro
     .target Melor Stonehoof
@@ -2453,7 +2453,7 @@ step
     #xprate <1.5
     #optional
     .goto Thunder Bluff,61.3,80.9
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Melor|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Melor Casco de Pedra|r
     .accept 860 >>Aceite Sergra Espinhonegro
     .target Melor Stonehoof
     .isQuestTurnedIn 861
@@ -2639,7 +2639,7 @@ step
 step
     .goto The Barrens,51.50,30.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thork|r
-    .accept 871 >>Aceite Em Defesa do Posto Remoto
+    .accept 871 >>Aceite Cortando o ataque pela raiz
     .accept 5041 >>Aceite Suprimentos para a Encruzilhada
     .target Thork
 step
@@ -2668,7 +2668,7 @@ step
     .target Gazrog
 step << Shaman
     #completewith next
-    .use 4926 >> Pegue |cRXP_PICK_Barril Vazio de Chen|r do chão e comece a missão
+    .use 4926 >> Pegue o |cRXP_PICK_Barril Vazio do Chen|r no chão e inicie a missão
     >>|cRXP_WARN_Se não estiver disponível, você conseguirá mais tarde|r
     .collect 4926,1,819 --Collect Chen's Empty Keg
     .accept 819 >> Aceite Barril Vazio do Chen

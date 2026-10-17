@@ -97,7 +97,7 @@ step
     .goto Eversong Woods,39.48,20.58,10,0
     .goto Eversong Woods,39.31,20.23,10,0
     .goto Eversong Woods,38.93,19.93,10,0
-    .goto Eversong Woods,38.76,19.36,10 >>Vá para cima
+    .goto Eversong Woods,38.76,19.36,10 >>Suba as escadas
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Solanian|r, |cRXP_FRIENDLY_Ithanas|r, and |cRXP_FRIENDLY_Helion|r
     .turnin 10068 >> Entregue Vigia da Nascente Solanian << Mage
@@ -530,7 +530,7 @@ step
     .goto Eversong Woods,39.48,20.58,10,0
     .goto Eversong Woods,39.31,20.23,10,0
     .goto Eversong Woods,38.93,19.93,10,0
-    .goto Eversong Woods,38.76,19.36,10 >>Vá para cima
+    .goto Eversong Woods,38.76,19.36,10 >>Suba as escadas
 step
     #label SolanianB
     .goto Eversong Woods,38.76,19.36
@@ -635,7 +635,7 @@ step << !BloodElf
 step << Priest/Mage/Warlock/Warrior/Rogue
     #completewith next
     .goto Eversong Woods,48.27,47.05,8,0
-    .goto Eversong Woods,48.06,47.11,8 >> Vá para cima
+    .goto Eversong Woods,48.06,47.11,8 >> Suba as escadas
 step << Priest
     .goto Eversong Woods,47.85,47.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ponaris|r no andar de cima
@@ -823,7 +823,7 @@ step << Mage/Warlock
 step << Mage/Warlock
     #completewith next
     .goto Eversong Woods,48.27,47.05,8,0
-    .goto Eversong Woods,48.06,47.11,8 >> Vá para cima
+    .goto Eversong Woods,48.06,47.11,8 >> Suba as escadas
 	.xp <8,1
 step << Mage
     .goto Eversong Woods,48.04,48.11
@@ -1149,7 +1149,7 @@ step << Warlock
 step << Warlock
     #completewith next
     .goto Eversong Woods,48.27,47.05,8,0
-    .goto Eversong Woods,48.06,47.11,8 >> Vá para cima
+    .goto Eversong Woods,48.06,47.11,8 >> Suba as escadas
 step << Warlock
     .goto Eversong Woods,48.23,47.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Celoenus|r no andar de cima
@@ -1242,7 +1242,7 @@ step << Warlock/Hunter/Rogue
     .use 22473
 step
     #completewith next
-    .goto Eversong Woods,43.61,70.66,10 >>Vá para cima
+    .goto Eversong Woods,43.61,70.66,10 >>Suba as escadas
 step
     .goto Eversong Woods,43.34,70.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Degolien|r
@@ -1465,7 +1465,7 @@ step << !Hunter
     .target Halis Dawnstrider
 step
     #completewith next
-    .goto Eversong Woods,43.61,70.66,10 >>Vá para cima
+    .goto Eversong Woods,43.61,70.66,10 >>Suba as escadas
 step
     .goto Eversong Woods,43.34,70.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Degolien|r
@@ -1728,7 +1728,7 @@ step << Undead Warlock
     .target Carendin Halgar
 step << Undead Warrior
     #completewith WarDefStance
-    .goto Tirisfal Glades,61.52,53.20,80 >> Viaje para Brill
+    .goto Tirisfal Glades,61.52,53.20,80 >> Vá para Montalvo
     .subzoneskip 159
 step << Undead Warrior
     #optional
@@ -1946,7 +1946,7 @@ step << Mage/Priest/Warlock
 step << Mage/Priest/Warlock
     #completewith MaPrWaTrain2
     .goto Eversong Woods,48.27,47.05,8,0
-    .goto Eversong Woods,48.06,47.11,8 >> Vá para cima
+    .goto Eversong Woods,48.06,47.11,8 >> Suba as escadas
 	.xp <10,1
 step << Priest
     .goto Eversong Woods,47.85,47.97
@@ -2465,7 +2465,7 @@ step
     #completewith next
     .goto Eversong Woods,69.16,52.01,8,0
     .goto Eversong Woods,69.09,51.74,8,0
-    .goto Eversong Woods,68.93,51.69,8 >> Vá para cima
+    .goto Eversong Woods,68.93,51.69,8 >> Suba as escadas
 step
     #sticky
     #label Journalt
@@ -2483,7 +2483,7 @@ step
     .goto Eversong Woods,69.57,52.12,12,0
     .goto Eversong Woods,69.82,52.50,12,0
     .goto Eversong Woods,69.76,52.98,12,0
-    .goto Eversong Woods,69.64,53.35,15 >> Vá para cima
+    .goto Eversong Woods,69.64,53.35,15 >> Suba as escadas
 step
     #requires Journalt
     .goto Eversong Woods,69.64,53.35
@@ -2739,7 +2739,7 @@ step << Mage/Priest/Undead Warlock
 step << Mage/Priest/Undead Warlock
     #completewith FalconPMTrain2
     .goto Eversong Woods,48.27,47.05,8,0
-    .goto Eversong Woods,48.06,47.11,8 >> Vá para cima
+    .goto Eversong Woods,48.06,47.11,8 >> Suba as escadas
     .cooldown item,6948,>0
 	.xp <12,1
 step << Priest
@@ -2989,7 +2989,7 @@ step << BloodElf Warlock
     .goto Ghostlands,26.17,15.61,8,0
     .goto Ghostlands,26.09,14.56,8,0
     .goto Ghostlands,26.44,14.24,8,0
-    .goto Ghostlands,26.74,14.38,8 >>Vá para cima
+    .goto Ghostlands,26.74,14.38,8 >>Suba as escadas
 step << BloodElf Warlock
     #completewith next
     .goto Ghostlands,26.99,15.24
@@ -4593,7 +4593,7 @@ step << Druid
     .train 5178 >> Treine suas magias de classe
     .target Loganaar
 step << Orc/Troll/Tauren
-    .hs >>Hearth to A Encruzilhada
+    .hs >>Use sua Pedra de Regresso para ir à Encruzilhada
     .bindlocation 380,1
     .zoneskip The Barrens
     .use 6948
@@ -5424,7 +5424,7 @@ step
     #completewith next
     .goto Ghostlands,55.42,48.70,10,0
     .goto Ghostlands,55.32,48.35,10,0
-    .goto Ghostlands,55.17,48.21,10 >>Vá para cima
+    .goto Ghostlands,55.17,48.21,10 >>Suba as escadas
     .isOnQuest 9151
 step
     .goto Ghostlands,54.87,48.55
@@ -5998,7 +5998,7 @@ step
     .goto Ghostlands,65.29,79.31,12,0
     .goto Ghostlands,65.77,79.73,8,0
     .goto Ghostlands,65.93,80.68,8,0
-    .goto Ghostlands,65.59,80.72,8 >> Vá para cima
+    .goto Ghostlands,65.59,80.72,8 >> Suba as escadas
     .group
 step
     .goto Ghostlands,65.29,79.46
@@ -6449,7 +6449,7 @@ step
     #completewith next
     .goto Ghostlands,55.42,48.70,10,0
     .goto Ghostlands,55.32,48.35,10,0
-    .goto Ghostlands,55.17,48.21,10 >>Vá para cima
+    .goto Ghostlands,55.17,48.21,10 >>Suba as escadas
     .isOnQuest 9151
 step
     .goto Ghostlands,54.87,48.55
@@ -6600,7 +6600,7 @@ step
     #completewith Aminel
     .goto Ghostlands,48.91,31.13,12,0
     .goto Ghostlands,49.36,31.74,12,0
-    .goto Ghostlands,49.36,31.74,10 >> Vá para cima
+    .goto Ghostlands,49.36,31.74,10 >> Suba as escadas
 step
     .goto Ghostlands,48.91,31.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Aminel|r
@@ -6795,7 +6795,7 @@ step
     #completewith next
     .goto Ghostlands,55.42,48.70,10,0
     .goto Ghostlands,55.32,48.35,10,0
-    .goto Ghostlands,55.17,48.21,10 >>Vá para cima
+    .goto Ghostlands,55.17,48.21,10 >>Suba as escadas
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Idonis|r e |cRXP_FRIENDLY_Janeda|r
     .turnin 9220 >> Entregue Guerra na Cidadela da Morte
@@ -7101,7 +7101,7 @@ step
     #completewith next
     .goto Ghostlands,55.42,48.70,10,0
     .goto Ghostlands,55.32,48.35,10,0
-    .goto Ghostlands,55.17,48.21,10 >>Vá para cima
+    .goto Ghostlands,55.17,48.21,10 >>Suba as escadas
 step
     #label HeroSindorei
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Idonis|r e |cRXP_FRIENDLY_Janeda|r
@@ -7226,7 +7226,7 @@ step
     #completewith Aminel2
     .goto Ghostlands,48.91,31.13,12,0
     .goto Ghostlands,49.36,31.74,12,0
-    .goto Ghostlands,49.36,31.74,10 >> Vá para cima
+    .goto Ghostlands,49.36,31.74,10 >> Suba as escadas
 step
     .goto Ghostlands,48.91,31.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Aminel|r

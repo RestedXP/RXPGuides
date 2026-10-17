@@ -399,7 +399,7 @@ step
 >>Fale com |cRXP_FRIENDLY_Retalhador do Manivela|r
     .turnin 858 >>Entregue Ignição
 .target Wizzlecrank's Shredder
-    .accept 863 >>Aceite A fuga
+    .accept 863 >>Aceite A Fuga
 step
     #label Slugs
     >>2 inimigos aparecerão em algum momento. Mate-os e aguarde a cena dele no final
@@ -437,7 +437,7 @@ step
     .accept 1061 >>Aceite Os espíritos das Torres de Pedra
 step
     #completewith next
-    .hs >>Use sua Pedra de Retorno para ir a Encruzilhada
+    .hs >>Use sua Pedra de Retorno para ir à Encruzilhada
 step << Troll Mage
     .goto The Barrens,52.6,29.9
 .target Zargh
@@ -491,7 +491,7 @@ step
     .turnin 848 >> Entregue Esporos de Fungos
 step
     .goto The Barrens,51.5,30.3
-    .fly Ratchet >>Voe para Ponto de Ancoragem
+    .fly Ratchet >>Voe para Vila Catraca
 step
     .goto The Barrens,63.0,37.2
 >>Fale com |cRXP_FRIENDLY_Cobogó|r
@@ -529,7 +529,7 @@ step
     .complete 3281,1 --Stolen Silver (1)
 step
     #completewith Verog
-    >>Coletar os |cRXP_LOOT_Laden Mushrooms|r ao redor do Oásis Estagnado
+    >>Colete |cRXP_LOOT_Laden Mushrooms|r ao redor do Oásis Estagnado
     .complete 848,1 --Collect Fungal Spores (x4)
 step
     >>Clique na Rachadura Borbulhante debaixo d'água
@@ -557,7 +557,7 @@ step
 	.goto The Barrens,56.15,43.28,25,0
 	.goto The Barrens,56.08,42.58,25,0
 	.goto The Barrens,55.72,42.14,25,0
-    >>Coletar os |cRXP_LOOT_Laden Mushrooms|r ao redor do Oásis Estagnado
+    >>Colete |cRXP_LOOT_Cogumelos Carregados|r ao redor de O Oásis Estagnado
     .complete 848,1 --Collect Fungal Spores (x4)
 step
     >>Clique no ovo. Você precisa das Penas Helióscamas dos raptores
@@ -589,7 +589,7 @@ step
     .complete 4921,1 --Find Mankrik's Wife (1)
 step
     .goto The Barrens,45.6,59.0
-    .home >>Defina sua Pedra de Regresso em Camp Taurajo
+    .home >>Defina sua Pedra de Retorno em Camp Taurajo
 step
     .goto The Barrens,44.5,59.2
 .target Mangletooth
@@ -1037,7 +1037,7 @@ step
 	.goto Thunder Bluff,23.00,21.00
 .target Apothecary Zamah
 >>Fale com o |cRXP_FRIENDLY_Boticário Zaqueu|r
-    .turnin 853 >> Entregue para o Boticário Zamah
+    .turnin 853 >> Entregue Boticário Zaqueu
 step
     .goto Thunder Bluff,25.16,20.95
     .trainer >> Treine suas magias de classe

@@ -101,13 +101,13 @@ step << !Warrior !Shaman
 step << !Warrior !Shaman
     .goto The Barrens,51.50,30.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thork|r
-    .accept 871 >>Aceite Em Defesa do Posto Remoto
+    .accept 871 >>Aceite Cortando o ataque pela raiz
     .accept 5041 >>Aceite Suprimentos para a Encruzilhada
     .target Thork
 step << !Warrior !Shaman
     #label Xroadspickups
     .goto The Barrens,51.44,30.15
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Helbrim|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Boticário Hermógenes|r
     .accept 848 >>Aceite Esporos de Fungos
     .accept 1492 >>Aceite Mestre Portuário Caruncho
     .target Apothecary Helbrim
@@ -161,7 +161,7 @@ step
     .mob +Razormane Hunter
 step
     .goto The Barrens,55.70,27.30
-    .use 4926 >>Pegue |cRXP_PICK_Barril Vazio de Chen|r do chão e comece a missão
+    .use 4926 >>Pegue o |cRXP_PICK_Barril Vazio do Chen|r no chão e inicie a missão
     >>|cRXP_WARN_Se não estiver disponível, você conseguirá mais tarde|r
     .collect 4926,1,819 --Collect Chen's Empty Keg
     .accept 819 >>Aceite Barril Vazio do Chen
@@ -245,7 +245,7 @@ step
     .target Darsok Swiftdagger
 step
     .goto The Barrens,51.44,30.15
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Helbrim|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Boticário Hermógenes|r
     .accept 1492 >>Aceite Mestre Portuário Caruncho
     .target Apothecary Helbrim
 step << !Hunter !Rogue !Warlock !Mage !Priest
@@ -260,14 +260,14 @@ step << !Hunter !Rogue !Warlock !Mage !Priest
 step << !Tauren
     .goto The Barrens,51.99,29.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estalajadeiro Boorand Vento das Planícies|r
-    .home >>Defina sua Pedra de Retorno em Encruzilhada
+    .home >>Defina sua Pedra de Regresso em A Encruzilhada
     .target Innkeeper Boorand Plainswind
     .isQuestAvailable 894
     .bindlocation 380
 step
     .goto The Barrens,55.70,27.30,20,0
     .goto The Barrens,55.78,20.00
-    .use 4926 >> Pegue |cRXP_PICK_Barril Vazio de Chen|r do chão e comece a missão
+    .use 4926 >> Pegue o |cRXP_PICK_Barril Vazio do Chen|r no chão e inicie a missão
     >>|cRXP_WARN_Espere reaparecer se não estiver lá|r
     .collect 4926,1,819 --Collect Chen's Empty Keg
     .accept 819 >> Aceite Barril Vazio do Chen
@@ -287,7 +287,7 @@ step
 step
     #label KreenigSnarlsnout
     .goto The Barrens,58.69,27.08
-    >>Mate o |cRXP_ENEMY_Kreenig Rosnento|r. Saqueie o |cRXP_LOOT_Tusk|r
+    >>Mate |cRXP_ENEMY_Kreenig Rosnento|r. Pegue sua |cRXP_LOOT_Presa|r
     .complete 872,3 --Kreenig Snarlsnout's Tusk (1)
     .mob Kreenig Snarlsnout
 step
@@ -403,7 +403,7 @@ step << Shaman
     .target Kranal Fiss
 step << Shaman
     .goto The Barrens,55.78,20.00
-    .use 4926 >> Pegue |cRXP_PICK_Barril Vazio de Chen|r do chão e comece a missão
+    .use 4926 >> Pegue o |cRXP_PICK_Barril Vazio do Chen|r no chão e inicie a missão
     >>|cRXP_WARN_Espere reaparecer se não estiver lá|r
     .collect 4926,1,819 --Collect Chen's Empty Keg
     .accept 819 >> Aceite Barril Vazio do Chen
@@ -599,7 +599,7 @@ step << Rogue
 step
     .goto The Barrens,62.27,38.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Cervejeiro Drohn|r
-    .turnin 819 >>Entregue Barril Vazio de Chen
+    .turnin 819 >>Entregue Barril Vazio do Chen
     .accept 821 >>Aceite Barril Vazio do Chen
     .target Brewmaster Drohn
 step
@@ -655,7 +655,7 @@ step
     .target Gazlowe
 step
     .goto The Barrens,63.35,38.45
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConversar com |cRXP_FRIENDLY_Dizzywig|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mestre Portuário Caruncho|r
     .turnin 1492 >>Entregue Mestre Portuário Caruncho
     .turnin 890 >>Entregue Carregamento perdido
     .accept 892 >>Aceite Carregamento perdido
@@ -1467,7 +1467,7 @@ step
     .isOnQuest 5723
     .dungeon RFC
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Maur|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mauren Temível Totem|r
     .turnin 5722 >>Entregue Em busca da algibeira perdida
     .accept 5724 >>Aceite Devolvendo a algibeira perdida
     .target Maur Grimtotem
@@ -1475,7 +1475,7 @@ step
     .dungeon RFC
 step
     #optional
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Maur|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mauren Temível Totem|r
     .accept 5724 >>Aceite Devolvendo a algibeira perdida
     .target Maur Grimtotem
     .isQuestTurnedIn 5722
@@ -1574,7 +1574,7 @@ step
     .target Gazrog
 step
     .goto The Barrens,51.44,30.15
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Helbrim|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Boticário Hermógenes|r
     .turnin 848 >> Entregue Esporos de Fungos
     .target Apothecary Helbrim
     .isQuestComplete 848
@@ -1706,7 +1706,7 @@ step
     #completewith RapHornsPickup
     .goto The Barrens,51.50,30.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Devrak|r
-    .fly Ratchet >>Voe para Ponto de Ancoragem
+    .fly Ratchet >>Voe para Vila Catraca
     .target Devrak
     .subzoneskip 392
 step << Rogue
@@ -1967,7 +1967,7 @@ step
     .subzoneskip 380
 step
     .goto The Barrens,51.44,30.15
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Helbrim|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Boticário Hermógenes|r
     .turnin 848 >>Entregue Esporos de Fungos
     .target Apothecary Helbrim
     .isQuestComplete 848
@@ -2575,7 +2575,7 @@ step
     .accept 1491 >>Aceite Bebidas inteligentes
     .target +Mebok Mizzyrix
     .goto The Barrens,62.37,37.62
-    .turnin 821 >>Entregue Barril Vazio de Chen
+    .turnin 821 >>Entregue Barril Vazio do Chen
     --.accept 822 >>Accept Chen's Empty Keg
     .target +Brewmaster Drohn
     .goto The Barrens,62.27,38.39
@@ -2590,7 +2590,7 @@ step
     .turnin 1069 >>Entregue Ovos de Aranha de Fundolimo
     .target +Mebok Mizzyrix
     .goto The Barrens,62.37,37.62
-    .turnin 821 >>Entregue Barril Vazio de Chen
+    .turnin 821 >>Entregue Barril Vazio do Chen
     --.accept 822 >>Accept Chen's Empty Keg
     .target +Brewmaster Drohn
     .goto The Barrens,62.27,38.39
@@ -2731,7 +2731,7 @@ step << Warlock
     .target Gazrog
 step << !Tauren !Warrior !Shaman
     .goto The Barrens,51.44,30.15
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Helbrim|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Boticário Hermógenes|r
     >>|cRXP_FRIENDLY_Boticário Hermógenes|r |cRXP_WARN_inicia uma missão com prazo de 45 minutos|r
     .accept 853 >> Aceite Boticária Zaqueia
     .target Apothecary Helbrim
@@ -2949,7 +2949,7 @@ step
 step
     #xprate <1.5
     .goto Thunder Bluff,22.82,20.88
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zamah|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Boticário Zaqueu|r
     .turnin 853 >> Entregue Boticário Zaqueu
     .accept 962 >> Aceite Ofídeas
     .target Apothecary Zamah
@@ -2958,13 +2958,13 @@ step
     #xprate <1.5
     #optional
     .goto Thunder Bluff,22.82,20.88
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zamah|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Boticário Zaqueu|r
     .accept 962 >> Aceite Ofídeas
     .target Apothecary Zamah
 step
     #optional
     .goto Thunder Bluff,22.82,20.88
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zamah|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Boticário Zaqueu|r
     .turnin 853 >> Entregue Boticário Zaqueu
     .target Apothecary Zamah
     .isOnQuest 853
@@ -3001,7 +3001,7 @@ step
     #label ZamahTurnin
 step << Shaman
     .goto Thunder Bluff,23.64,18.74
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConversar com |cRXP_FRIENDLY_Tigor|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tigor Persegue-céus|r
     .train 2645 >> Treine suas magias de classe
     .target Tigor Skychaser
     .xp <20,1
@@ -3009,7 +3009,7 @@ step << Shaman
 step << Shaman
     #optional
     .goto Thunder Bluff,23.64,18.74
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConversar com |cRXP_FRIENDLY_Tigor|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tigor Persegue-céus|r
     .train 8498 >> Treine suas magias de classe
     .target Tigor Skychaser
     .xp <22,1
@@ -3027,7 +3027,7 @@ step
     .skill firstaid,<1,1
 step
     .goto Thunder Bluff,29.68,21.19
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Pand|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com|r |cRXP_FRIENDLY_Pand Junta Pedras|r
     >>|cRXP_WARN_Pule esta etapa se não tiver|r |T132889:0|t[Linho] |cRXP_WARN_suficiente para atingir nível 80 de profissão|r
     .train 3277 >> Aprenda |T133684:0|t[Bandagem de Lã]
     .train 7934 >> Aprenda |T134437:0|t[Antipeçonha] << Rogue
@@ -3146,7 +3146,7 @@ step
     .goto Thunder Bluff,61.31,78.25,60 >> Vá ao Platô dos Caçadores
 step
     .goto Thunder Bluff,61.53,80.92
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Melor|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Melor Casco de Pedra|r
     .accept 1131 >>Aceite Estalaço
     .target Melor Stonehoof
 step << Hunter
@@ -3193,7 +3193,7 @@ step << Rogue
 step << Warrior/Shaman/Paladin
     #completewith next
     #ah
-    +|cRXP_FRIENDLY_Se for mais barato, você pode comprar uma arma verde do leilão em vez disso|r
+    +|cRXP_FRIENDLY_Se for mais barato, compre uma arma verde na Casa de Leilões|r
 step << Warrior/Paladin/Shaman
     .goto Thunder Bluff,53.21,58.25
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Conversar com|r |cRXP_FRIENDLY_Etu|r|cRXP_BUY_. Compre um|r |T135423:0|t[Machado de Batalha] |cRXP_BUY_dele|r
@@ -3228,7 +3228,7 @@ step << Hunter
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.1
 step << Hunter
     .goto Thunder Bluff,46.98,45.69
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Conversar com|r |cRXP_FRIENDLY_Kuna|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Fale com|r |cRXP_FRIENDLY_Kina Chifre Troante|r
     >>|cRXP_BUY_Compre|r |T132382:0|t[Flechas Afiadas] |cRXP_BUY_dela|r
     .collect 2515,1600,6562,1 << Hunter --Sharp Arrow (1600)
     .target Kina Chifre Troante
@@ -3304,7 +3304,7 @@ step
     #xprate <1.5
     #completewith EnterWC
     >>Abate os |cRXP_ENEMY_Deviate Beasts|r. Saque os |cRXP_LOOT_Hides|r deles
-    >>Abate os |cRXP_ENEMY_Ectoplasms|r. Saque-os para obter a |cRXP_LOOT_Essência|r
+    >>Mate |cRXP_ENEMY_Ectoplasmas|r. Pegue sua |cRXP_LOOT_Essência|r
     .complete 1486,1 --Deviate Hide (20)
     .mob +Deviate Slayer
     .mob +Deviate Stinglash
@@ -3350,7 +3350,7 @@ step
     #xprate >1.49
     #completewith EnterWC
     >>Abate os |cRXP_ENEMY_Deviate Beasts|r. Saque os |cRXP_LOOT_Hides|r deles
-    >>Abate os |cRXP_ENEMY_Ectoplasms|r. Saque-os para obter a |cRXP_LOOT_Essência|r
+    >>Mate |cRXP_ENEMY_Ectoplasmas|r. Pegue sua |cRXP_LOOT_Essência|r
     .complete 1486,1 --Deviate Hide (20)
     .mob +Deviate Slayer
     .mob +Deviate Stinglash
@@ -3427,7 +3427,7 @@ step
     .dungeon WC
 step
     #completewith DeviateRaptors
-    >>Abate os |cRXP_ENEMY_Ectoplasms|r. Saque-os para obter a |cRXP_LOOT_Essência|r
+    >>Mate |cRXP_ENEMY_Ectoplasmas|r. Pegue sua |cRXP_LOOT_Essência|r
     .complete 1491,1 --Wailing Essence (6)
     .isOnQuest 1491
     .dungeon WC
@@ -3527,7 +3527,7 @@ step
     .goto Kalimdor,52.32,55.03,30,0
     .goto Kalimdor,52.33,54.70,30,0
     >>Abate os |cRXP_ENEMY_Deviate Beasts|r. Saque os |cRXP_LOOT_Hides|r deles
-    >>Abate os |cRXP_ENEMY_Ectoplasms|r. Saque-os para obter a |cRXP_LOOT_Essência|r
+    >>Mate |cRXP_ENEMY_Ectoplasmas|r. Pegue sua |cRXP_LOOT_Essência|r
     .complete 1486,1 --Deviate Hide (20)
     .mob +Deviate Slayer
     .mob +Deviate Stinglash
@@ -3604,7 +3604,7 @@ step
     .goto Kalimdor,52.32,55.03,30,0
     .goto Kalimdor,52.33,54.70,30,0
     >>Abate os |cRXP_ENEMY_Deviate Beasts|r. Saque os |cRXP_LOOT_Hides|r deles
-    >>Abate os |cRXP_ENEMY_Ectoplasms|r. Saque-os para obter a |cRXP_LOOT_Essência|r
+    >>Mate |cRXP_ENEMY_Ectoplasmas|r. Pegue sua |cRXP_LOOT_Essência|r
     .complete 1486,1 --Deviate Hide (20)
     .mob +Deviate Slayer
     .mob +Deviate Stinglash
@@ -3687,7 +3687,7 @@ step << Shaman
     .accept 1530 >>Aceite Chamado da Água
     .target +Islen Waterseer
     .goto The Barrens,65.83,43.78
-    .turnin 874 >>Entregue a missão para Mahren Vidente do Céu
+    .turnin 874 >>Entregue Mahren Vidente do Céu
     .accept 873 >>Aceite Isha Awak
     .target +Mahren Skyseer
     .goto The Barrens,65.83,43.86
@@ -3699,7 +3699,7 @@ step << Shaman
     .accept 1530 >>Aceite Chamado da Água
     .target +Islen Waterseer
     .goto The Barrens,65.83,43.78
-    .turnin 874 >>Entregue para Mahren Vidente do Céu
+    .turnin 874 >>Entregue Mahren Vidente do Céu
     .accept 873 >>Aceite Isha Awak
     .target +Mahren Skyseer
     .goto The Barrens,65.83,43.86
@@ -3711,7 +3711,7 @@ step << Shaman
     .accept 1530 >>Aceite Chamado da Água
     .target +Islen Waterseer
     .goto The Barrens,65.83,43.78
-    .turnin 874 >>Entregue para Mahren Vidente do Céu
+    .turnin 874 >>Entregue Mahren Vidente do Céu
     .accept 873 >>Aceite Isha Awak
     .target +Mahren Skyseer
     .goto The Barrens,65.83,43.86
@@ -3723,7 +3723,7 @@ step << Shaman
     .accept 1530 >>Aceite Chamado da Água
     .target +Islen Waterseer
     .goto The Barrens,65.83,43.78
-    .turnin 874 >>Entregue para Mahren Vidente do Céu
+    .turnin 874 >>Entregue Mahren Vidente do Céu
     .accept 873 >>Aceite Isha Awak
     .target +Mahren Skyseer
     .goto The Barrens,65.83,43.86
@@ -4122,7 +4122,7 @@ step
     #xprate <1.5
     #sticky
     #completewith EnterBFD
-    .subzone 2797,2 >> Agora você deve procurar um grupo para BlackFathom Deeps
+    .subzone 2797,2 >> Agora procure um grupo para as Profundezas Negras
     .dungeon BFD
 step
     #xprate <1.5
@@ -4166,7 +4166,7 @@ step
 step
     #xprate <1.5
     #completewith Sapphires
-    .goto Kalimdor,43.98,35.30,40 >>Vá para a entrada de Profundezas Negras
+    .goto Kalimdor,43.98,35.30,40 >>Vá à entrada das Profundezas Negras
 step
     #xprate <1.5
     #completewith next
@@ -4239,7 +4239,7 @@ step
     #xprate >1.49
     #sticky
     #completewith EnterBFD
-    .subzone 2797,2 >> Agora você deve procurar um grupo para BlackFathom Deeps
+    .subzone 2797,2 >> Agora procure um grupo para as Profundezas Negras
     .dungeon BFD
 step
     #xprate >1.49
@@ -4277,7 +4277,7 @@ step
 step
     #xprate >1.49
     #completewith Sapphires
-    .goto Kalimdor,43.98,35.30,40 >>Vá para a entrada de Profundezas Negras
+    .goto Kalimdor,43.98,35.30,40 >>Vá à entrada das Profundezas Negras
     .dungeon BFD
 step
     #xprate >1.49
@@ -4371,7 +4371,7 @@ step
 step
     #completewith BFDTurnins
     .zone Ashenvale >>Saia da masmorra
-    >>|cRXP_WARN_Abate|r |cRXP_ENEMY_Aku'mai|r |cRXP_WARN_primeiro se desejar. Este é o último chefe da masmorra|r
+    >>|cRXP_WARN_Mate|r |cRXP_ENEMY_Aku'mai|r |cRXP_WARN_primeiro se quiser. É o último chefe da masmorra|r
     .dungeon BFD
 step
     #xprate <1.5
@@ -4568,7 +4568,7 @@ step << !Warlock
     #completewith CallofWater << Shaman
     .goto Thunder Bluff,47.00,49.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tal|r
-    .fly Ratchet >>Voe para Ponto de Ancoragem
+    .fly Ratchet >>Voe para Vila Catraca
     .target Tal
     .zoneskip Thunder Bluff,1
     .dungeon !WC
@@ -4577,7 +4577,7 @@ step << Warlock
     #completewith DockTrouble
     .goto The Barrens,44.45,59.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Omusa Chifre Troante|r
-    .fly Ratchet >>Voe para Ponto de Ancoragem
+    .fly Ratchet >>Voe para Vila Catraca
     .target Omusa Thunderhorn
     .zoneskip The Barrens,1
     .dungeon !WC
@@ -4586,7 +4586,7 @@ step << Shaman
     #completewith CallofWater
     .goto Thunder Bluff,47.00,49.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tal|r
-    .fly Ratchet >>Voe para Ponto de Ancoragem
+    .fly Ratchet >>Voe para Vila Catraca
     .target Tal
     .zoneskip Thunder Bluff,1
     .dungeon !WC
@@ -4613,7 +4613,7 @@ step << Shaman
     .accept 1530 >>Aceite Chamado da Água
     .target +Islen Waterseer
     .goto The Barrens,65.83,43.78
-    .turnin 874 >>Entregue para Mahren Vidente do Céu
+    .turnin 874 >>Entregue Mahren Vidente do Céu
     .accept 873 >>Aceite Isha Awak
     .target +Mahren Skyseer
     .goto The Barrens,65.83,43.86
@@ -4625,7 +4625,7 @@ step << Shaman
     .accept 1530 >>Aceite Chamado da Água
     .target +Islen Waterseer
     .goto The Barrens,65.83,43.78
-    .turnin 874 >>Entregue para Mahren Vidente do Céu
+    .turnin 874 >>Entregue Mahren Vidente do Céu
     .accept 873 >>Aceite Isha Awak
     .target +Mahren Skyseer
     .goto The Barrens,65.83,43.86
@@ -4637,7 +4637,7 @@ step << Shaman
     .accept 1530 >>Aceite Chamado da Água
     .target +Islen Waterseer
     .goto The Barrens,65.83,43.78
-    .turnin 874 >>Entregue para Mahren Vidente do Céu
+    .turnin 874 >>Entregue Mahren Vidente do Céu
     .accept 873 >>Aceite Isha Awak
     .target +Mahren Skyseer
     .goto The Barrens,65.83,43.86
@@ -4650,7 +4650,7 @@ step << Shaman
     .accept 1530 >>Aceite Chamado da Água
     .target +Islen Waterseer
     .goto The Barrens,65.83,43.78
-    .turnin 874 >>Entregue para Mahren Vidente do Céu
+    .turnin 874 >>Entregue Mahren Vidente do Céu
     .accept 873 >>Aceite Isha Awak
     .target +Mahren Skyseer
     .goto The Barrens,65.83,43.86

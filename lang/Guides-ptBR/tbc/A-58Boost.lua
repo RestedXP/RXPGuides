@@ -103,7 +103,7 @@ step
 step
     .isQuestTurnedIn 4182
     .goto Stormwind City,78.102,17.750
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Dama Katrana Prestor|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Lady Katrana Prestor|r
     .complete 4185,1 -- Advice from Lady Prestor
     .skipgossip
     .target Lady Katrana Prestor
