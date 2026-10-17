@@ -528,11 +528,11 @@ step
 	.isOnQuest 13071
 step
     >>Regresa a La Cámara de las Sombras. Habla con Plateado, El Saltador y Vil.
-	.turnin 12995 >>Entrega la misión Dejar nuestra huella.
+	.turnin 12995 >>Entrega la misión Dejar nuestra huella
 	.goto Icecrown,42.84,24.92
     .turnin 13069 >>Entrega la misión Disparar'Em Up.
 	.goto IcecrownGlacier,43.5,25.0
-    .turnin 13071 >>Entrega la misión ¡A Vil gustar fuego!.
+    .turnin 13071 >>Entrega la misión ¡A Vil gustar fuego!
     .goto IcecrownGlacier,43.6,24.1,60,0
     .goto IcecrownGlacier,42.7,26.8
 
@@ -608,7 +608,7 @@ step
     .goto Icecrown,19.64,47.80
     .turnin 12813 >>Entrega la misión ¡De sus cadáveres se alzan!.
     .goto Icecrown,19.67,48.39
-    .turnin 12838 >>Entrega la misión Acumular inteligencia.
+    .turnin 12838 >>Entrega la misión Acumular inteligencia
     .goto IcecrownGlacier,20.1,47.5,20,0
     .goto IcecrownGlacier,20.4,47.9,20,0
     .goto IcecrownGlacier,20.1,48.4,20,0

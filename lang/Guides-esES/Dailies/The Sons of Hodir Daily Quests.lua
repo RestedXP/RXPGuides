@@ -105,7 +105,7 @@ step
 step
 	>>Regresa a Dun Niffelem
 	>>Habla con el Yunque de Fjorn, el Cuerno de Hodir, el Yelmo de Hodir, la Madra de los huargos de escarcha, la Lanza de Hodir y Arngrim el Insaciable
-    .turnin 12981 >>Entrega la misión Polimorfismo térmico
+    .turnin 12981 >>Entrega la misión Caliente y frío
     .goto TheStormPeaks,63.13,62.94
     .turnin 12977 >>Entrega la misión La llamada de Hodir
     .goto TheStormPeaks,64.17,65.01
@@ -123,7 +123,7 @@ step
 step
 	>>Regresa a Dun Niffelem
 	>>Habla con el Yunque de Fjorn, el Cuerno de Hodir, el Yelmo de Hodir, la Lanza de Hodir y Arngrim el Insaciable
-    .turnin 12981 >>Entrega la misión Polimorfismo térmico
+    .turnin 12981 >>Entrega la misión Caliente y frío
     .goto TheStormPeaks,63.13,62.94
     .turnin 12977 >>Entrega la misión La llamada de Hodir
     .goto TheStormPeaks,64.17,65.01
@@ -138,11 +138,11 @@ step
 step
 	>>Regresa a Dun Niffelem
 	>>Habla con el Yunque de Fjorn, el Cuerno de Hodir, el Yelmo de Hodir, la Madra de los huargos de escarcha y la Lanza de Hodir
-    .turnin 12981 >>Entrega la misión Polimorfismo térmico
+    .turnin 12981 >>Entrega la misión Caliente y frío
     .goto TheStormPeaks,63.13,62.94
     .turnin 12977 >>Entrega la misión La llamada de Hodir
     .goto TheStormPeaks,64.17,65.01
-	.turnin 13006 >> Entrega la misión Una limpieza pegajosa
+	.turnin 13006 >> Entrega la misión Una limpieza viscosa
 	.goto TheStormPeaks,64.24,59.23
 	.turnin 12994 >> Entrega la misión Cazador de espías
 	.goto TheStormPeaks,63.49,59.73

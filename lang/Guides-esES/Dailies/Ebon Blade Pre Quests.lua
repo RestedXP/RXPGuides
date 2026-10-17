@@ -231,7 +231,7 @@ step
 step
     .goto IcecrownGlacier,42.9,24.9
     >>Regresa a Plateado
-	.turnin 12995 >>Entrega la misión Dejar nuestra huella.
+	.turnin 12995 >>Entrega la misión Dejar nuestra huella
 	.isQuestComplete 12995
 step
     .goto IcecrownGlacier,42.9,24.9
@@ -351,7 +351,7 @@ step
     .goto IcecrownGlacier,19.6,48.1
 step
 	>>Habla con Aurochs. Patrulla alrededor del fuego del medio.
-    .turnin -12838 >>Entrega la misión Acumular inteligencia.
+    .turnin -12838 >>Entrega la misión Acumular inteligencia
     .goto IcecrownGlacier,20.1,47.5,20,0
     .goto IcecrownGlacier,20.4,47.9,20,0
     .goto IcecrownGlacier,20.1,48.4,20,0
@@ -389,7 +389,7 @@ step
     >>Regresa a La Cámara de las Sombras. Habla con El Saltador y Vil
     .turnin -13069 >>Gira en Dispárales
 	.goto IcecrownGlacier,43.5,25.0
-    .turnin -13071 >>Entrega la misión ¡A Vil gustar fuego!.
+    .turnin -13071 >>Entrega la misión ¡A Vil gustar fuego!
     .goto IcecrownGlacier,43.6,24.1,60,0
     .goto IcecrownGlacier,42.7,26.8
 step
