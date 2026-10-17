@@ -2682,7 +2682,6 @@ step << Warrior/Hunter
 
 RXPGuides.RegisterGuide([[
 #forever
-#season 0,1
 #version 1
 << Alliance
 #group RestedXP Forever Dungeon Guide (A)
