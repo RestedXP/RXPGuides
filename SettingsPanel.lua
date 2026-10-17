@@ -1386,7 +1386,7 @@ function addon.settings:CreateAceOptionsPanel()
                         width = "full",
                         order = 3.0,
                         hidden = function()
-                            return (addon.game == "FOREVER" and not addon.settings.profile.debug) or not next(addon.settings.dungeons:GetDungeons())
+                            return not next(addon.settings.dungeons:GetDungeons())
                         end
                     },
                     dungeonsSetRecommended = {
@@ -1412,7 +1412,7 @@ function addon.settings:CreateAceOptionsPanel()
                             addon.ReloadGuide()
                         end,
                         hidden = function()
-                            return (addon.game == "FOREVER" and not addon.settings.profile.debug) or not next(addon.settings.dungeons:GetDungeons())
+                            return not next(addon.settings.dungeons:GetDungeons())
                         end
                     },
                     dungeons = {
@@ -1440,7 +1440,7 @@ function addon.settings:CreateAceOptionsPanel()
                             addon.ReloadGuide()
                         end,
                         hidden = function()
-                            return (addon.game == "FOREVER" and not addon.settings.profile.debug) or not next(addon.settings.dungeons:GetDungeons())
+                            return not next(addon.settings.dungeons:GetDungeons())
                         end
                     },
                     professions = {
@@ -4402,8 +4402,15 @@ function addon.settings.dungeons:ScoreDungeons()
 end
 
 function addon.settings.dungeons:GetDungeons()
-    local dungeons = RXPCData.guideMetaData.enabledDungeons[addon.player.faction] or {}
-
+    local dungeons = CopyTable(RXPCData.guideMetaData.enabledDungeons[addon.player.faction] or {})
+    local group = addon.currentGuide and addon.currentGuide.group
+    if group and addon.currentGuide.disabledungeons then
+        return {}
+    elseif addon.dungeonOverride[group] then
+        for dungeon in pairs(addon.dungeonOverride[group]) do
+            dungeons[dungeon] = nil
+        end
+    end
     if not addon.player.hardcore then
         return dungeons
     end
