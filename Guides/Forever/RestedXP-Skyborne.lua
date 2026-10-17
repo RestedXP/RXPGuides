@@ -149,9 +149,9 @@ step << Skyborne
     .accept 92484 >>Accept Embracing the Elements << Shaman
     .accept 92532 >>Accept The Warrior's Path << Warrior
     .accept 92485 >>Accept A Student of Nature << Druid
---split so a person
+--Split so players can complete this later if they used Walk on Air early
 step << Skyborne
-    .isQuestComplete 92474
+    .isQuestComplete 92474 --Falling With Style
     .goto 2521,42.06,23.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rorian the Dayseeker::251361|r.
     .target Rorian the Dayseeker::251361
@@ -214,10 +214,11 @@ step << Hunter
     .turnin 92482 >>Turn in The Way of the Hunter
     .target Tai'ree Farsight::251376
 step << Alliance Rogue/Alliance Warrior
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<1.15 << Rogue
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.17 << Warrior
     .isNotOnQuest 93552 -- Harvesting Windstones
     .subzoneskip 16635,1 -- Thendal Village
     .isOnQuest 92464 -- Elemental Unrest
-    .goto 2521,43.41,23.51,10,0
     .goto 2521,43.37,23.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Destin Thriceforged::251364|r.
     .collect 2131,1 >>Buy and equip a |T135274:0|t[Shortsword] << Rogue
@@ -232,19 +233,15 @@ step << Horde
     .target Ventaari Brightwish::251487
 step << Horde !Warrior !Rogue/Alliance !Warrior !Rogue !Hunter
     .itemcount 159,<20 << Mage/Shaman/Priest/Warlock/Paladin -- Refreshing Spring Water
-    -- .itemcount 2512,<1000 << Hunter -- Rough Arrow
     .subzoneskip 16635,1 -- Thendal Village
     .isNotOnQuest 93552 -- Harvesting Windstones
     .isQuestAvailable 93552 -- Harvesting Windstones
-    .goto 2521,42.749,24.496,10,0
-    .goto 2521,43.37,23.99
+    .goto 2521,42.749,24.496
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uualia Suncrest::251537|r
     >>|cRXP_BUY_Buy|r |T132794:0|t[Refreshing Spring Water] |cRXP_BUY_from her|r << !Hunter !Shaman
-    -- >>|cRXP_BUY_Buy|r |T132382:0|t[Rough Arrows] |cRXP_BUY_from her|r << Hunter
     .vendor 251537 >>|cRXP_WARN_Vendor trash|r
     *Don't sell |T133970:0|t[Stringy Meat] or |T132889:0|t[Linen Cloth]. << Alliance
     .collect 159,20 << !Hunter !Shaman --Refreshing Spring Water (20)
-    -- .collect 2512,1000 << Hunter --Rough Arrow (1000)
     .target Uualia Suncrest::251537
     -- .money <0.0050 << !Hunter !Shaman
     -- .money <0.0040 << Hunter
@@ -259,6 +256,8 @@ step
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crystals|r
     .complete 93552,1 --15/15 Windstone Cluster
 step << Alliance Hunter/Horde Rogue/Horde Warrior
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.17 << Hunter/Warrior
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<1.15 << Rogue
     .subzoneskip 16635,1 -- Thendal Village
     .isOnQuest 92464 -- Elemental Unrest
     .goto 2521,43.41,23.51
@@ -612,7 +611,7 @@ step << Horde
     .accept 92471 >>Accept Aetheen of the Gales -- Unlocks at 4
     .target Rorian the Dayseeker::251361
 step << Horde Skyborne
-    .isQuestComplete 92474
+    .isQuestComplete 92474 --Falling With Style
     .goto 2521,42.06,23.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rorian the Dayseeker::251361|r.
     .target Rorian the Dayseeker::251361
@@ -667,7 +666,7 @@ step << Alliance
     .accept 92471 >>Accept Aetheen of the Gales -- Unlocks at 4
     .target Rorian the Dayseeker::251361
 step << Alliance Skyborne
-    .isQuestComplete 92474
+    .isQuestComplete 92474 --Falling With Style
     .goto 2521,42.06,23.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rorian the Dayseeker::251361|r.
     .target Rorian the Dayseeker::251361
@@ -735,7 +734,7 @@ step
     .goto 2521,42.41,25.15
     .vendor 251537 >>|cRXP_WARN_Vendor trash|r
     *Don't sell |T133970:0|t[Stringy Meat] or |T132889:0|t[Linen Cloth]. << Alliance
-    .collect 2512,800 << Hunter --Rough Arrow (800)
+    .collect 2512,1200 << Hunter --Rough Arrow (1200)
     .collect 159,20 >>Buy |T132794:0|t[Refreshing Spring Water] << Druid/Mage/Priest/Warlock/Paladin
 step
     #requires Aggressive Encroachment
@@ -817,7 +816,7 @@ step
     .goto 2521,35.71,25.7,30,0
     .subzone 16635 >>Die and respawn at the Graveyard.
     *|cRXP_WARN_Use the sit macro in combat to die faster|r.
-    .macro Sit to Die Faster, >>/sit
+    .macro Sit to Die Faster,134400 >>/sit
     .target Spirit Healer::6491
 step
     #optional
@@ -863,8 +862,7 @@ step
     .target Valreaa Valewind::257551
 step
     #completewith Aggressive Encroachment2
-    .goto 2521,42.76,24.52,10,0
-    .goto 2521,42.41,25.15
+    .goto 2521,42.76,24.52
     .vendor 251537 >>|cRXP_WARN_Vendor trash|r
     *Don't sell |T133970:0|t[Stringy Meat], |T132832:0|t[Small Eggs], or |T132889:0|t[Linen Cloth]. << Alliance
     *Don't sell |T132832:0|t[Small Eggs] or |T132889:0|t[Linen Cloth]. << Horde
@@ -1005,8 +1003,7 @@ step
 step << !Rogue !Warrior
     #completewith The Next Step
     #label VendorStep
-    .goto 2521,44.72,45.47,10,0
-    .goto 2521,45.67,45.51
+    .goto 2521,44.72,45.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veena Vericloud::254358|r.
     >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from her|r << Shaman/Druid/Priest/Warlock/Paladin/Mage
     >>|cRXP_WARN_Save 2 silver for your class spells!|r << Shaman/Druid
@@ -1019,8 +1016,7 @@ step << Rogue/Warrior
     #completewith The Next Step
     #label VendorStep
     .goto 2521,44.67,45.19,10,0
-    .goto 2521,44.78,45.05,10,0
-    .goto 2521,45.67,45.51
+    .goto 2521,44.78,45.05
     .vendor 254360 >>|cRXP_WARN_Vendor trash|r.
     *Don't sell |T133970:0|t[Stringy Meat], |T132832:0|t[Small Eggs], |T133972:0|t[Strider Meat], or |T132889:0|t[Linen Cloth]. << Alliance
     *Don't sell |T132832:0|t[Small Eggs], |T133972:0|t[Strider Meat], or |T132889:0|t[Linen Cloth]. << Horde
@@ -1353,6 +1349,7 @@ step << Hunter
     .target Tephri Thriceforged::257421
 step << Warrior/Paladin
     .money <0.0701
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<5.00
     .isOnQuest 92517 -- The Criminal Element
     .isQuestNotComplete 92517 -- The Criminal Element
     .subzoneskip 16624,1 -- Shen'dar Village
@@ -1362,6 +1359,7 @@ step << Warrior/Paladin
     .target Tephri Thriceforged::257421
 step << Rogue
     .money <0.0536
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.81
     .isOnQuest 92517 -- The Criminal Element
     .isQuestNotComplete 92517 -- The Criminal Element
     .subzoneskip 16624,1 -- Shen'dar Village
@@ -1677,7 +1675,7 @@ step << Rogue
 --Weapon Backup
 step << Hunter
     .money <0.0285
-    .isOnQuest 96638
+    .isOnQuest 96638 --The Adventurer
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.38
     .subzoneskip 16624,1 -- Shen'dar Village
     .goto 2521,44.790,44.168
@@ -1689,7 +1687,8 @@ step << Hunter
 --Weapon Backup
 step << Warrior/Paladin
     .money <0.0701
-    .isOnQuest 96638
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<5.00
+    .isOnQuest 96638 --The Adventurer
     .subzoneskip 16624,1 -- Shen'dar Village
     .goto 2521,44.8,44.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tephri Thriceforged::257421|r and buy and equip a |T133053:0|t[Wooden Mallet].
@@ -1699,7 +1698,8 @@ step << Warrior/Paladin
 --Weapon Backup
 step << Rogue
     .money <0.0536
-    .isOnQuest 96638
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.81
+    .isOnQuest 96638 --The Adventurer
     .subzoneskip 16624,1 -- Shen'dar Village
     .goto 2521,44.8,44.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tephri Thriceforged::257421|r and buy and equip a |T135321:0|t[Gladius].
@@ -1709,7 +1709,7 @@ step << Rogue
 --Weapon Backup
 step << Shaman
     .money <0.0504
-    .isOnQuest 96638
+    .isOnQuest 96638 --The Adventurer
     .subzoneskip 16624,1 -- Shen'dar Village
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.2
@@ -1749,7 +1749,7 @@ step
 --Weapon Backup
 step << Shaman
     .money <0.0504
-    .isOnQuest 96638
+    .isOnQuest 96638 --The Adventurer
     .subzoneskip 16624,1 -- Shen'dar Village
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.2
@@ -1861,7 +1861,7 @@ step << Alliance
     .itemcount 2589,1 -- Linen Cloth
     .train 2550,3 -- Cooking Trained
     .itemcount 2672,1 --Stringy Wolf Meat
-    >>|cRXP_WARN_Do not move or jump until the quest is complete.
+    >>|cRXP_WARN_Do not move or jump until the quest is complete|r.
     *|cRXP_WARN_Use the Macros in the "Active Items Frame" to craft|r |T133685:0|t[Linen Bandages] and |T133974:0|t[Charred Wolf Meat] for later quests.
     *You can craft and rebuff without losing quest credit. You can also eat buff food here to gain 5% increased experience from kills.
     .complete 96101,2 --Gain the Boosted Rest buff
@@ -1872,7 +1872,7 @@ step
     .aura -1289723
     .train 3273,3 -- First Aid Trained
     .itemcount 2589,1 -- Linen Cloth
-    >>|cRXP_WARN_Do not move or jump until the quest is complete.
+    >>|cRXP_WARN_Do not move or jump until the quest is complete|r.
     *|cRXP_WARN_Press the Macro in the "Active Items Frame" to craft|r |T133685:0|t[Linen Bandages] for a later quest.
     *You can craft and rebuff without losing quest credit. You can also eat buff food here to gain 5% increased experience from kills.
     .complete 96101,2 --Gain the Boosted Rest buff
@@ -1882,7 +1882,7 @@ step << Alliance
     .aura -1289723
     .train 2550,3 -- Cooking Trained
     .itemcount 2672,1 --Stringy Wolf Meat
-    >>|cRXP_WARN_Do not move or jump until the quest is complete.
+    >>|cRXP_WARN_Do not move or jump until the quest is complete|r.
     *|cRXP_WARN_Press the Macro in the "Active Items Frame" to craft|r |T133974:0|t[Charred Wolf Meat] for a later quest|r
     *You can craft and rebuff without losing quest credit. You can also eat buff food here to gain 5% increased experience from kills.
     .complete 96101,2 --Gain the Boosted Rest buff
@@ -1890,7 +1890,7 @@ step << Alliance
     .macro Cooking,133971 >>/run local t=C_TradeSkillUI;if not t.IsTradeSkillReady() or t.GetBaseProfessionInfo().professionID~=185 then t.OpenTradeSkill(185) else local n=t.GetCraftableCount(2538);if n and n>0 then t.CraftRecipe(2538,n) end end
 step
     .aura -1289723
-    >>|cRXP_WARN_Do not move or jump until the quest is complete.
+    >>|cRXP_WARN_Do not move or jump until the quest is complete|r.
     *You can craft and rebuff without losing quest credit. You can also eat buff food here to gain 5% increased experience from kills.
     .complete 96101,2 --Gain the Boosted Rest buff
 step
@@ -1905,7 +1905,7 @@ step << Alliance
     .itemcount 2589,1 -- Linen Cloth
     .train 2550,3 -- Cooking Trained
     .itemcount 2672,1 --Stringy Wolf Meat
-    >>|cRXP_WARN_Do not move or jump until the quest is complete.
+    >>|cRXP_WARN_Do not move or jump until the quest is complete|r.
     *|cRXP_WARN_Use the Macros in the "Active Items Frame" to craft|r |T133685:0|t[Linen Bandages] and |T133974:0|t[Charred Wolf Meat] for later quests.
     *You can craft and rebuff without losing quest credit. You can also eat buff food here to gain 5% increased experience from kills.
     .complete 96101,2 --Gain the Boosted Rest buff
@@ -1915,7 +1915,7 @@ step << Alliance
 step
     .train 3273,3 -- First Aid Trained
     .itemcount 2589,1 -- Linen Cloth
-    >>|cRXP_WARN_Do not move or jump until the quest is complete.
+    >>|cRXP_WARN_Do not move or jump until the quest is complete|r.
     *|cRXP_WARN_Press the Macro in the "Active Items Frame" to craft|r |T133685:0|t[Linen Bandages] for a later quest.
     *You can craft and rebuff without losing quest credit. You can also eat buff food here to gain 5% increased experience from kills.
     .complete 96101,2 --Gain the Boosted Rest buff
@@ -1924,14 +1924,14 @@ step
 step << Alliance
     .train 2550,3 -- Cooking Trained
     .itemcount 2672,1 --Stringy Wolf Meat
-    >>|cRXP_WARN_Do not move or jump until the quest is complete.
+    >>|cRXP_WARN_Do not move or jump until the quest is complete|r.
     *|cRXP_WARN_Press the Macro in the "Active Items Frame" to craft|r |T133974:0|t[Charred Wolf Meat] for a later quest|r
     *You can craft and rebuff without losing quest credit. You can also eat buff food here to gain 5% increased experience from kills.
     .complete 96101,2 --Gain the Boosted Rest buff
     *|cRXP_WARN_You may need to press the macro twice|r.
     .macro Cooking,133971 >>/run local t=C_TradeSkillUI;if not t.IsTradeSkillReady() or t.GetBaseProfessionInfo().professionID~=185 then t.OpenTradeSkill(185) else local n=t.GetCraftableCount(2538);if n and n>0 then t.CraftRecipe(2538,n) end end
 step
-    >>|cRXP_WARN_Do not move or jump until the quest is complete.
+    >>|cRXP_WARN_Do not move or jump until the quest is complete|r.
     *You can craft and rebuff without losing quest credit. You can also eat buff food here to gain 5% increased experience from kills.
     .complete 96101,2 --Gain the Boosted Rest buff
 step
@@ -2634,7 +2634,7 @@ step << Rogue
     .goto 2521,44.37,46.69,30,0
     .goto 2521,43.15,43.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Miriaan Mistblade::254087|r
-    *Don't use walk on air
+    *|cRXP_WARN_Do not use|r |T132845:0|t[Walk on Air] |cRXP_WARN_during this step|r.
     .train 5277 >>Train |T136205:0|t[Evasion]
     .train 6760 >>Train |T132292:0|t[Eviscerate (Rank 2)]
     .skipgossipid 136810
@@ -2647,7 +2647,7 @@ step
     .goto 2521,45.04,46.23,15,0 << !Rogue
     .goto 2521,45.67,45.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Constable Aonda::251523|r.
-    *Don't use walk on air
+    *|cRXP_WARN_Do not use|r |T132845:0|t[Walk on Air] |cRXP_WARN_during this step|r.
     .turnin 92528,1 >>Turn in Among the Faithful << Mage/Druid/Shaman/Priest/Warlock
     .turnin 92528,2 >>Turn in Among the Faithful << Warrior/Rogue/Paladin
     .turnin 92528,3 >>Turn in Among the Faithful << Hunter
@@ -2667,7 +2667,7 @@ step
     .use 273877 << Hunter -- Windswept Shortbow
 step
     .train 7620,3 -- Fishing Trained
-    .isOnQuest 93926
+    .isOnQuest 93926 --The Western Watch
     .isQuestComplete 97967 -- Camping 101: Fishing
     .goto 2521,45.03,48.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fenn Fairweather::251992|r
@@ -3112,8 +3112,7 @@ step
 step
     .subzoneskip 16624,1 -- Shen'dar Village
     .isQuestComplete 92550 -- Havoc in the Highlands
-    .goto 2521,44.71,45.48,10,0
-    .goto 2521,45.24,45.19
+    .goto 2521,44.71,45.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veena Vericloud::254358|r
     .vendor 254358 >>Vendor Trash. |cRXP_BUY_Buy up to three|r |T133634:0|t[Small Brown Pouches] |cRXP_BUY_as needed|r.
     *|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from him|r << Druid/Mage/Priest/Warlock/Paladin
@@ -3170,9 +3169,9 @@ step
 step
     .goto 2521,45.67,45.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Constable Aonda::251523|r.
-    .accept 92701 --To Valanaar >>Accept To Valanaar << Alliance
+    .accept 92701 >>Accept To Valanaar << Alliance
     .accept 92579 >>Accept To Valanaar << Horde 
-    .accept 93948 --Deliver the Signet >>Accept Deliver the Signet
+    .accept 93948 >>Accept Deliver the Signet
     .target Constable Aonda::251523
 step
     #completewith LeaveZephrasIsle
@@ -3218,7 +3217,8 @@ step
     .skipgossipid 96031
     .skipgossipid 98031
     .target Spirit Healer::6491
-step << Hunter
+step << Alliance Hunter
+    .xp <9,1
     .money <0.1345
     .isNotOnQuest 92679 -- Blood Tithe
     .isQuestAvailable 92679 -- Blood Tithe
@@ -3233,6 +3233,75 @@ step << Hunter
     *|cRXP_WARN_We need them for Cooking later|r.
     .skipgossipid 141556
     .target Falfaan Halfwind::271465
+step << Alliance Hunter
+    #optional
+    #completewith Deliver the Signet
+    .xp <9,1
+    .itemcount 277110,1 --Zephrali Bow
+    +|cRXP_WARN_Equip the|r |T7810733:0|t[|cRXP_LOOT_Zephrali Bow|r].
+    .use 277110 --Zephrali Bow
+step << Alliance Warrior/Alliance Paladin/Alliance Shaman/Alliance Druid
+    .xp <9,1
+    .money <0.2151
+    .isNotOnQuest 92679 --Blood Tithe
+    .isQuestAvailable 92679 --Blood Tithe
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.28
+    .goto 2521,59.395,75.730
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falfaan Halfwind::271465|r inside the house.
+    >>|cRXP_BUY_Buy and equip a|r |T7792097:0|t[Zephrali Smasher].
+    .collect 277106,1 --Zephrali Smasher
+    .vendor 271465 >>Vendor trash and repair if needed.
+    *Don't sell |T133970:0|t[Stringy Meat], |T132832:0|t[Small Eggs], or |T133972:0|t[Strider Meat]. << Alliance
+    *Don't sell |T132832:0|t[Small Eggs] and |T133972:0|t[Strider Meat]. << Horde
+    *|cRXP_WARN_We need them for Cooking later|r.
+    .skipgossipid 141556
+    .target Falfaan Halfwind::271465
+step << Alliance Warrior/Alliance Paladin/Alliance Shaman/Alliance Druid
+    #optional
+    #completewith Deliver the Signet
+    .xp <9,1
+    .itemcount 277106,1 --Zephrali Smasher
+    +|cRXP_WARN_Equip the|r |T7792097:0|t[|cRXP_LOOT_Zephrali Smasher|r].
+    .use 277106 --Zephrali Smasher
+step << Alliance Rogue
+    .xp <9,1
+    .money <0.1727
+    .isNotOnQuest 92679 --Blood Tithe
+    .isQuestAvailable 92679 --Blood Tithe
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.35
+    .goto 2521,59.395,75.730
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falfaan Halfwind::271465|r inside the house.
+    >>|cRXP_BUY_Buy and equip a|r |T7791298:0|t[Zephrali Bludgeon].
+    .collect 277107,1 --Zephrali Bludgeon
+    .vendor 271465 >>Vendor trash and repair if needed.
+    *Don't sell |T133970:0|t[Stringy Meat], |T132832:0|t[Small Eggs], or |T133972:0|t[Strider Meat]. << Alliance
+    *Don't sell |T132832:0|t[Small Eggs] and |T133972:0|t[Strider Meat]. << Horde
+    *|cRXP_WARN_We need them for Cooking later|r.
+    .skipgossipid 141556
+    .target Falfaan Halfwind::271465
+step << Alliance Rogue
+    #optional
+    #completewith Deliver the Signet
+    .xp <9,1
+    .itemcount 277107,1 --Zephrali Bludgeon
+    +|cRXP_WARN_Equip the|r |T7791298:0|t[|cRXP_LOOT_Zephrali Bludgeon|r].
+    .use 277107 --Zephrali Bludgeon
+-- step << Mage/Priest/Warlock
+--     .xp <9,1
+--     .money <0.1734
+--     .isNotOnQuest 92679 --Blood Tithe
+--     .isQuestAvailable 92679 --Blood Tithe
+--     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.18
+--     .goto 2521,59.395,75.730
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falfaan Halfwind::271465|r inside the house.
+--     >>|cRXP_BUY_Buy and equip a|r |T7792229:0|t[Zephrali Knife].
+--     .collect 277108,1 --Zephrali Knife
+--     .vendor 271465 >>Vendor trash and repair if needed.
+--     *Don't sell |T133970:0|t[Stringy Meat], |T132832:0|t[Small Eggs], or |T133972:0|t[Strider Meat]. << Alliance
+--     *Don't sell |T132832:0|t[Small Eggs] and |T133972:0|t[Strider Meat]. << Horde
+--     *|cRXP_WARN_We need them for Cooking later|r.
+--     .skipgossipid 141556
+--     .target Falfaan Halfwind::271465
 step << Alliance
     .goto 2521,60.6,73.16,10,0
     .goto 2521,60.640,72.664
@@ -3301,7 +3370,7 @@ step
     .isQuestAvailable 93948 -- Deliver the Signet
     .goto 2521,63.33,73.65,15,0
     .goto 2521,63.973,75.095,25 >>Go over the mountain
-    *|cRXP_WARN_Ignore the Leyline; we'll deathskip shortly|r
+    *|cRXP_WARN_Ignore the Leyline; we'll deathskip shortly|r << Alliance
 step
     .goto 2521,63.973,75.095
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lotheluum Starbreeze::252359|r.
@@ -3332,6 +3401,7 @@ step
     .goto 2521,66.44,76.4,5 >>Climb the tower
 step
     #requires DeliverTheSignetA
+    #label Deliver the Signet
     .goto 2521,66.17,76.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Talaanis Shadowsong::252476|r.
     .turnin 93948 >>Turn in Deliver the Signet
@@ -3401,11 +3471,11 @@ step << Alliance
     .goto 2521,53.33,72.15
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Bloodstained Satchel::581822|r
     *|cRXP_WARN_If a Tornado is present, use it for faster travel|r.
-    *Watch out for the |cRXP_ENEMY_Ornery Galestrider|r.
+    *Watch out for the |cRXP_ENEMY_Ornery Galestrider::251707|r.
     .turnin 92727 >>Turn in The Missing Scholar
     .accept 92849 >>Accept The Missing Scholar
     .target Bloodstained Satchel::581822
-    .mob Ornery Galestrider
+    .mob Ornery Galestrider::251707
 step << Alliance
     #label LeavingValanaarA
     .goto 2521,51.11,67.06,30,0
@@ -3520,7 +3590,7 @@ step << Horde
     .turnin 92700 >>Turn in The Grand Skyseer
     .accept 92708 >>Accept A Grand Adventure
     .timer 75,Roleplay Duration
-    .accept 93735 >>Accept The Broken Construct
+    .accept 93735 >>Accept The Broken Construct 1
     .target Ayessa Dawnsinger::251968
 step << Horde
     .isOnQuest 92708 -- A Grand Adventure
@@ -3532,6 +3602,74 @@ step << Horde
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Endaria Mistgaze::254344|r.
 --     .accept 93736 >>Accept Unwelcome Spirits
 --     .target Endaria Mistgaze::254344
+
+step << Horde Hunter
+    .xp <9,1
+    .money <0.1345
+    .isNotOnQuest 92679 -- Blood Tithe
+    .isQuestAvailable 92679 -- Blood Tithe
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.82
+    .goto 2521,59.395,75.730
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falfaan Halfwind::271465|r inside the house.
+    >>|cRXP_BUY_Buy and equip a|r |T7810733:0|t[Zephrali Bow]
+    .collect 277110,1 --Collect Zephrali Bow
+    .vendor 271465 >>Vendor trash and repair if needed
+    *Don't sell |T132832:0|t[Small Eggs] and |T133972:0|t[Strider Meat]. << Horde
+    *|cRXP_WARN_We need them for Cooking later|r.
+    .skipgossipid 141556
+    .target Falfaan Halfwind::271465
+step << Horde Hunter
+    #optional
+    #completewith LeavingValanaarA
+    .xp <9,1
+    .itemcount 277110,1 --Zephrali Bow
+    +|cRXP_WARN_Equip the|r |T7810733:0|t[|cRXP_LOOT_Zephrali Bow|r].
+    .use 277110 --Zephrali Bow
+step << Horde Warrior/Horde Shaman/Horde Druid
+    .xp <9,1
+    .money <0.2151
+    .isNotOnQuest 92679 --Blood Tithe
+    .isQuestAvailable 92679 --Blood Tithe
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.28
+    .goto 2521,59.395,75.730
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falfaan Halfwind::271465|r inside the house.
+    >>|cRXP_BUY_Buy and equip a|r |T7792097:0|t[Zephrali Smasher].
+    .collect 277106,1 --Zephrali Smasher
+    .vendor 271465 >>Vendor trash and repair if needed.
+    *Don't sell |T132832:0|t[Small Eggs] and |T133972:0|t[Strider Meat]. << Horde
+    *|cRXP_WARN_We need them for Cooking later|r.
+    .skipgossipid 141556
+    .target Falfaan Halfwind::271465
+step << Horde Warrior/Horde Shaman/Horde Druid
+    #optional
+    #completewith LeavingValanaarA
+    .xp <9,1
+    .itemcount 277106,1 --Zephrali Smasher
+    +|cRXP_WARN_Equip the|r |T7792097:0|t[|cRXP_LOOT_Zephrali Smasher|r].
+    .use 277106 --Zephrali Smasher
+step << Horde Rogue
+    .xp <9,1
+    .money <0.1727
+    .isNotOnQuest 92679 --Blood Tithe
+    .isQuestAvailable 92679 --Blood Tithe
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.35
+    .goto 2521,59.395,75.730
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falfaan Halfwind::271465|r inside the house.
+    >>|cRXP_BUY_Buy and equip a|r |T7791298:0|t[Zephrali Bludgeon].
+    .collect 277107,1 --Zephrali Bludgeon
+    .vendor 271465 >>Vendor trash and repair if needed.
+    *Don't sell |T132832:0|t[Small Eggs] and |T133972:0|t[Strider Meat]. << Horde
+    *|cRXP_WARN_We need them for Cooking later|r.
+    .skipgossipid 141556
+    .target Falfaan Halfwind::271465
+step << Horde Rogue
+    #optional
+    #completewith LeavingValanaarA
+    .xp <9,1
+    .itemcount 277107,1 --Zephrali Bludgeon
+    +|cRXP_WARN_Equip the|r |T7791298:0|t[|cRXP_LOOT_Zephrali Bludgeon|r].
+    .use 277107 --Zephrali Bludgeon
+
 step << Horde
     .train 2366,3 -- Herbalism Trained
     .isQuestComplete 97968 -- Camping 101: Herbalism
@@ -3544,8 +3682,8 @@ step << Horde
     .goto 2521,59.064,72.989
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Riaani Nightwind::256083|r.
     .target Riaani Nightwind::256083
-    .turnin 93735 >>Turn in The Broken Construct
---     .accept 93737 >>Accept The Broken Construct
+    .turnin 93735 >>Turn in The Broken Construct 1
+--     .accept 93737 >>Accept The Broken Construct 2
 --     .complete 93737,1 --|1/1 Listen to what Riaani Nightwind has to say
 -- step << Horde
 --     .goto 2521,59.265,79.977
@@ -3609,7 +3747,7 @@ step
     .target Aamelia Windfield::252800
 step
     #loop
-    .goto 2521,46.71,81.94,10,0
+    .goto 2521,46.71,81.94,30,0
     .goto 2521,47.511,78.490,10,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aamelia Windfield::252800|r.
     *|cRXP_WARN_She may be moving between locations during a roleplay sequence|r.
@@ -3842,10 +3980,6 @@ step
     .turnin 92683 >>Turn in Flutterfly Dust
     .accept 92685 >>Accept The Hills Have Eyes << Alliance/Horde Shaman
     .target Aamelia Windfield::252800
-step << Druid
-    #completewith next
-    *|cRXP_WARN_Equip the|r |T7791298:0|t[Flutterfly Swatter]
-    .use 263329 --Flutterfly Swatter
 
 -- ============================================================================
 -- The Hills Have Eyes: Bandit Hunt
@@ -3863,7 +3997,7 @@ step << Alliance/Horde Shaman
     #optional
     #completewith next
     #label Bandit Highwaymen
-    *|cRXP_WARN_Equip the|r |T7791298:0|t[Flutterfly Swatter] << Rogue
+    *|cRXP_WARN_Equip the|r |T7791298:0|t[Flutterfly Swatter] if you don't have |T7791298:0|t[|cRXP_LOOT_Zephrali Bludgeon|r]. << Rogue
     >>Kill |cRXP_ENEMY_Bandit Highwaymen::252820|r. Loot them for the |T133693:0|t[|cRXP_LOOT_Blood-Stained Bandit Masks|r].
     *|cRXP_WARN_Watch for stealthed enemies in the apple orchard|r.
     .complete 92685,1 --7/7 Blood-Stained Bandit Mask
@@ -3909,8 +4043,8 @@ step << Alliance
     .usespell 1259416
 step << Alliance/Horde Shaman
     #loop
-    .goto 2521,47.511,78.490,30,0
     .goto 2521,46.71,81.94,30,0
+    .goto 2521,47.511,78.490,30,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aamelia Windfield::252800|r.
     *|cRXP_WARN_She may be moving between locations during a roleplay sequence|r.
     *|cRXP_WARN_Look for her from a distance or follow her dialogue; the arrow marks only an approximate location|r.
@@ -3955,7 +4089,7 @@ step << Alliance/Horde !Shaman
     .hs >>Hearth to Valanaar
 step << Alliance/Horde !Shaman
     .isQuestAvailable 92703 -- Deliver the News
-    .subzoneskip 16638,1 -- Valanaar
+    -- .subzoneskip 16638,1 -- Valanaar
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Donaal Downbreeze::255940|r.
     *|cRXP_BUY_Buy|r |T134534:0|t[Forest Mushroom Cap] |cRXP_BUY_from him|r. |cRXP_BUY_You will use this to feed your pet later|r << Hunter
     .vendor 255940 >>Vendor trash
@@ -4011,8 +4145,7 @@ step << Horde Shaman
 
 step << Horde Shaman
     .isQuestAvailable 92703 -- Deliver the News
-    .goto 2521,62.180,72.616,10,0
-    .goto 2521,61.94,72.8,10,0
+    .goto 2521,62.180,72.616
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Donaal Downbreeze::255940|r.
     .vendor 255940 >>Vendor trash
     *Don't sell |T133970:0|t[Stringy Meat], |T132832:0|t[Small Eggs], or |T133972:0|t[Strider Meat]. << Alliance
@@ -4026,7 +4159,6 @@ step << Horde Shaman
 -- Shared City Tour at Level 10
 -- ============================================================================
 
-
 step
     .isQuestComplete 92703 -- Deliver the News
     .goto 2521,61.94,72.8,10,0
@@ -4039,7 +4171,7 @@ step
     .turnin 92703 >>Turn in Deliver the News << Hunter/Mage/Warlock
     .target Alvarion Windfield::252448
 step
-    #completewith next
+    #completewith Accept Catching Wind
     *|cRXP_WARN_Equip the|r |T134435:0|t[Planting Shovel] << Warrior/Shaman/Paladin
     *|cRXP_WARN_Equip the|r |T133057:0|t[Roofing Hammer] << Druid/Priest
     *|cRXP_WARN_Equip the|r |T134520:0|t[Trusty Wrench] << Rogue
@@ -4054,6 +4186,22 @@ step << Alliance
     *|cRXP_WARN_While the Tornado speed buff is active, avoid killing them|r.
     .complete 93949,1 --|8/8 Enchanted Skyhopper Exterminated
     .mob Skyhopper::251314
+-- step << Mage/Priest/Warlock
+--     .xp <9,1
+--     .money <0.1734
+--     .isNotOnQuest 92679 --Blood Tithe
+--     .isQuestAvailable 92679 --Blood Tithe
+--     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.18
+--     .goto 2521,59.395,75.730
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falfaan Halfwind::271465|r inside the house.
+--     >>|cRXP_BUY_Buy and equip a|r |T7792229:0|t[Zephrali Knife].
+--     .collect 277108,1 --Zephrali Knife
+--     .vendor 271465 >>Vendor trash and repair if needed.
+--     *Don't sell |T133970:0|t[Stringy Meat], |T132832:0|t[Small Eggs], or |T133972:0|t[Strider Meat]. << Alliance
+--     *Don't sell |T132832:0|t[Small Eggs] and |T133972:0|t[Strider Meat]. << Horde
+--     *|cRXP_WARN_We need them for Cooking later|r.
+--     .skipgossipid 141556
+--     .target Falfaan Halfwind::271465
 step << Mage
     .goto 2521,62.887,77.324
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Belann Windwood::256507|r.
@@ -4076,48 +4224,29 @@ step << Warrior
     .train 2687 >>Train |T132277:0|t[Bloodrage]
     .skipgossipid 136813
     .target Seena Skybreaker::252377
-
---probably delete
--- step << Alliance Druid
---     .isQuestAvailable 92850 -- The Missing Scholar
---     #completewith next
---     .goto 2521,63.33,73.65,15,0
---     .cast 1259705 >>Use |T236219:0|t[Read Ley Line] for 100% increased passive Mana and Health regeneration.
---     .cooldown spell,1259705,>0,1
---     .usespell 1259705
--- step << Alliance Druid
---     .subzoneskip 16638,1 -- Valanaar
---     .isQuestAvailable 92850 -- The Missing Scholar
---     #completewith next
---     .goto 2521,63.33,73.65,15,0
---     .goto 2521,63.973,75.095,25 >>Go over the mountain
---     .cooldown spell,1259705,<0,1
-
-
-step << Druid
-    .subzoneskip 16638,1 -- Valanaar
-    .isNotOnQuest 94006 -- The Great Ursera Spirit
-    .isQuestAvailable 94006 -- The Great Ursera Spirit
-    #completewith next
-    .goto 2521,63.33,73.65,15,0
-    .goto 2521,63.973,75.095,25 >>Go over the mountain
-step << Druid
-    .goto 2521,63.983,75.093
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lotheluum Starbreeze::252359|r.
-    .accept 94006 >>Accept The Great Ursera Spirit
-    .target Lotheluum Starbreeze::252359
-step << Druid
-    .money <0.12
-    .xp <10,1
-    .goto 2521,63.983,75.093
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lotheluum Starbreeze::252359|r.
-    .train 16689 >>Train |T136063:0|t[Nature's Grasp]
-    -- .train 99 >>Train |TInterface/Icons/Ability_Druid_DemoralizingRoar:0|t[Demoralizing Roar]
-    .train 1058 >>Train |T136081:0|t[Rejuvenation (Rank 2)]
-    .train 5232 >>Train |T136078:0|t[Mark of the Wild (Rank 2)]
-    .train 8924 >>Train |T136096:0|t[Moonfire (Rank 2)]
-    .skipgossipid 140781
-    .target Lotheluum Starbreeze::252359
+step << Warrior/Paladin/Shaman/Druid
+    .xp <9,1
+    .money <0.2151
+    .isNotOnQuest 92679 --Blood Tithe
+    .isQuestAvailable 92679 --Blood Tithe
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.28
+    .goto 2521,59.395,75.730
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falfaan Halfwind::271465|r inside the house.
+    >>|cRXP_BUY_Buy and equip a|r |T7792097:0|t[Zephrali Smasher].
+    .collect 277106,1 --Zephrali Smasher
+    .vendor 271465 >>Vendor trash and repair if needed.
+    *Don't sell |T133970:0|t[Stringy Meat], |T132832:0|t[Small Eggs], or |T133972:0|t[Strider Meat]. << Alliance
+    *Don't sell |T132832:0|t[Small Eggs] and |T133972:0|t[Strider Meat]. << Horde
+    *|cRXP_WARN_We need them for Cooking later|r.
+    .skipgossipid 141556
+    .target Falfaan Halfwind::271465
+step << Warrior/Paladin/Shaman/Druid
+    #optional
+    #completewith Accept Catching Wind
+    .xp <9,1
+    .itemcount 277106,1 --Zephrali Smasher
+    +|cRXP_WARN_Equip the|r |T7792097:0|t[|cRXP_LOOT_Zephrali Smasher|r].
+    .use 277106 --Zephrali Smasher
 step << Rogue
     .money <0.09
     .train 2070,1 -- Sap (Rank 2) Not Trained
@@ -4134,6 +4263,29 @@ step << Rogue
     .train 2983 >>Train |T132307:0|t[Sprint]
     .skipgossipid 136810
     .target Eltheen Nightbreeze::252379
+step << Rogue
+    .xp <9,1
+    .money <0.1727
+    .isNotOnQuest 92679 --Blood Tithe
+    .isQuestAvailable 92679 --Blood Tithe
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.35
+    .goto 2521,59.395,75.730
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falfaan Halfwind::271465|r inside the house.
+    >>|cRXP_BUY_Buy and equip a|r |T7791298:0|t[Zephrali Bludgeon].
+    .collect 277107,1 --Zephrali Bludgeon
+    .vendor 271465 >>Vendor trash and repair if needed.
+    *Don't sell |T133970:0|t[Stringy Meat], |T132832:0|t[Small Eggs], or |T133972:0|t[Strider Meat]. << Alliance
+    *Don't sell |T132832:0|t[Small Eggs] and |T133972:0|t[Strider Meat]. << Horde
+    *|cRXP_WARN_We need them for Cooking later|r.
+    .skipgossipid 141556
+    .target Falfaan Halfwind::271465
+step << Rogue
+    #optional
+    #completewith Accept Catching Wind
+    .xp <9,1
+    .itemcount 277107,1 --Zephrali Bludgeon
+    +|cRXP_WARN_Equip the|r |T7791298:0|t[|cRXP_LOOT_Zephrali Bludgeon|r].
+    .use 277107 --Zephrali Bludgeon
 step << Hunter
     .goto 2521,59.55,73.3,25,0
     .goto 2521,59.572,72.639
@@ -4149,6 +4301,67 @@ step << Hunter
     .train 13549 >>Train |T132204:0|t[Serpent Sting (Rank 2)]
     .skipgossipid 136808
     .target Quel'ana Quickgale::252389
+step << Hunter
+    .xp <9,1
+    .money <0.1345
+    .isNotOnQuest 92679 -- Blood Tithe
+    .isQuestAvailable 92679 -- Blood Tithe
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.82
+    .goto 2521,59.395,75.730
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falfaan Halfwind::271465|r inside the house.
+    >>|cRXP_BUY_Buy and equip a|r |T7810733:0|t[Zephrali Bow]
+    .collect 277110,1 --Collect Zephrali Bow
+    .vendor 271465 >>Vendor trash and repair if needed
+    *Don't sell |T133970:0|t[Stringy Meat], |T132832:0|t[Small Eggs], or |T133972:0|t[Strider Meat]. << Alliance
+    *Don't sell |T132832:0|t[Small Eggs] and |T133972:0|t[Strider Meat]. << Horde
+    *|cRXP_WARN_We need them for Cooking later|r.
+    .skipgossipid 141556
+    .target Falfaan Halfwind::271465
+step << Hunter
+    #optional
+    #completewith Accept Catching Wind
+    .xp <9,1
+    .itemcount 277110,1 --Zephrali Bow
+    +|cRXP_WARN_Equip the|r |T7810733:0|t[|cRXP_LOOT_Zephrali Bow|r].
+    .use 277110 --Zephrali Bow
+step << Horde Druid
+    .subzoneskip 16638,1 -- Valanaar
+    .isNotOnQuest 94006 -- The Great Ursera Spirit
+    .isQuestAvailable 94006 -- The Great Ursera Spirit
+    #completewith next
+    .goto 2521,63.33,73.65,15,0
+    .goto 2521,63.973,75.095,25 >>Go over the mountain
+step << Horde Druid
+    .goto 2521,63.983,75.093
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lotheluum Starbreeze::252359|r.
+    .accept 94006 >>Accept The Great Ursera Spirit
+    .target Lotheluum Starbreeze::252359
+step << Alliance Druid
+    .xp <10,1
+    .subzoneskip 16638,1 -- Valanaar
+    .isNotOnQuest 94006 -- The Great Ursera Spirit
+    .isQuestAvailable 94006 -- The Great Ursera Spirit
+    #completewith next
+    .goto 2521,63.33,73.65,15,0
+    .goto 2521,63.973,75.095,25 >>Go over the mountain
+step << Alliance Druid
+    .xp <10,1
+    .goto 2521,63.983,75.093
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lotheluum Starbreeze::252359|r.
+    .accept 94006 >>Accept The Great Ursera Spirit
+    .target Lotheluum Starbreeze::252359
+step << Druid
+    .money <0.12
+    .xp <10,1
+    .goto 2521,63.983,75.093
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lotheluum Starbreeze::252359|r.
+    .train 16689 >>Train |T136063:0|t[Nature's Grasp]
+    -- .train 99 >>Train |TInterface/Icons/Ability_Druid_DemoralizingRoar:0|t[Demoralizing Roar]
+    .train 1058 >>Train |T136081:0|t[Rejuvenation (Rank 2)]
+    .train 5232 >>Train |T136078:0|t[Mark of the Wild (Rank 2)]
+    .train 8924 >>Train |T136096:0|t[Moonfire (Rank 2)]
+    .skipgossipid 140781
+    .target Lotheluum Starbreeze::252359
 
 -- step << Alliance Hunter
 --     .goto 2521,63.023,77.803,10,0
@@ -4160,7 +4373,6 @@ step << Hunter
 --     *|cRXP_WARN_We need them for Cooking later|r.
 --     .collect 2515,1000 -- Sharp Arrows
 --     .target Antelariaa Cloudgaze::252390
-
 
 step << Mage
     .money <0.08
@@ -4185,7 +4397,8 @@ step << Alliance
     .use 263313 << Rogue -- Trusty Wrench
     .use 263329 << Rogue -- Flutterfly Swatter
 step << Alliance
-    #completewith Protect the Index
+    -- #completewith Protect the Index
+    #completewith next
     .subzoneskip 16638,1 -- Valanaar
     .aura 1258510
     >>Kill |cRXP_ENEMY_Skyhoppers::251314|r.
@@ -4194,26 +4407,12 @@ step << Alliance
     .complete 93949,1 --|8/8 Enchanted Skyhopper Exterminated
     .mob Skyhopper::251314
 step << Alliance
+    #label Accept Catching Wind
     .goto 2521,66.627,79.942
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elaadrin Evengale::252475|r.
     .target Elaadrin Evengale::252475
     .turnin 99260 >>Turn in Fillion's Mission
     .accept 92840 >>Accept Catching Wind
-
--- ============================================================================
--- Level 10+ Deathskip: Re-enable Once the Resurrection Sickness Bug Is Fixed
--- ============================================================================
--- step << Alliance
---     .isOnQuest 92840
---     .isQuestNotComplete 92840
---     .goto 2521,67.41,80.46
--- -- #ignorecorpse
---     .deathskip >>Jump off the cliff
---     *|cRXP_WARN_(BETA: Resurrection Sickness is bugged. Skip this step for now.)|r
---     .skipgossipid 96031
---     .skipgossipid 98031
---     -- .subzoneskip 16638,1 -- Valanaar
---     .target Spirit Healer::6491
 
 -- ============================================================================
 -- Horde Hunter: Taming the Beast 1
@@ -4244,7 +4443,7 @@ step << Horde Hunter
     .goto 2521,60.905,69.414,35,0
     .goto 2521,58.339,68.476,35,0
     .goto 2521,53.799,72.161,35,0
-    .use 267298 >> |cRXP_WARN_Use your|r |T132164:0|t[Taming Rod] |cRXP_WARN_on an|r |cRXP_ENEMY_Ornery Galestrider::251707|r |cRXP_WARN_at max range|r.
+    .use 267298 >>|cRXP_WARN_Use your|r |T132164:0|t[Taming Rod] |cRXP_WARN_on an|r |cRXP_ENEMY_Ornery Galestrider::251707|r |cRXP_WARN_at max range|r.
     .complete 94979,1 --Tame an Ornery Galestrider
     .mob Ornery Galestrider::251707
 step << Horde Hunter
@@ -4300,23 +4499,39 @@ step << Horde Hunter
 	.mob Windsong Crawler::254588
 
 -- ============================================================================
--- Alliance Hunter: Taming the Beast 1
+-- Level 10+ Deathskip Version
 -- ============================================================================
 
+step << Alliance
+    .isOnQuest 92840 -- Catching Wind
+    .subzoneskip 16638,1 -- Shen'dar Village
+    .goto 2521,67.41,80.46
+    .subzone 16626 >>Jump off the cliff
+step << Alliance
+    #ignorecorpse
+    .subzoneskip 16626,1 -- Gustberry Lowlands
+    .isOnQuest 92840 -- Catching Wind
+    .showwhiledead
+    .goto 2521,54.99,68.14
+    .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Spirit Healer::6491|r.
+    .skipgossipid 96031
+    .skipgossipid 98031
+    .target Spirit Healer::6491
+-- step << Alliance !Hunter
+--     #completewith Protect the Index
+--     >>Kill |cRXP_ENEMY_Windsong Crawlers::254588|r. Loot them for |T133972:0|t[|cRXP_LOOT_Windsong Crawler Meat|r].
+--     .complete 93317,1 --6/6 Windsong Crawler Meat
+--     .mob Windsong Crawler::254588
+--     .skipgossipid 98031
+--     .skipgossipid 96031
 step << Alliance Hunter
-    #completewith next
+    #completewith Protect the Index
     .goto 2521,51.56,71.28,40,0
     .goto 2521,50.94,69.46,40,0
     .use 267272 >> |cRXP_WARN_Use your|r |T132164:0|t[Taming Rod] |cRXP_WARN_on a|r |cRXP_ENEMY_Windsong Crawler::254588|r |cRXP_WARN_at max range|r.
+    *|cRXP_WARN_Be careful while Resurrection Sickness is active|r.
     .complete 94978,1 --Tame a Windsong Crawler
     .mob Windsong Crawler::254588
-step << Alliance !Hunter
-    #completewith next
-    >>Kill |cRXP_ENEMY_Windsong Crawlers::254588|r. Loot them for |T133972:0|t[|cRXP_LOOT_Windsong Crawler Meat|r].
-    .complete 93317,1 --6/6 Windsong Crawler Meat
-    .mob Windsong Crawler::254588
-    .skipgossipid 98031
-    .skipgossipid 96031
 step << Alliance
     #optional
     #completewith next
@@ -4334,6 +4549,7 @@ step << Alliance
     #completewith Protect the Index
     .goto 2521,46.52,70.33,30 >>Go around the Mountain.
     *|cRXP_WARN_If a Tornado is nearby, touch it to gain 40% increased movement speed for 5 minutes. Dealing damage removes the effect|r.
+    *|cRXP_WARN_Do not use|r |T132845:0|t[Walk on Air] |cRXP_WARN_during this step|r.
 step << Alliance
     #requires Protect the Index
     #loop
@@ -4343,6 +4559,7 @@ step << Alliance
     .goto 2521,48.68,69.06,20,0
     .goto 2521,48.13,70.15,20,0
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crystals|r
+    *|cRXP_WARN_Do not use|r |T132845:0|t[Walk on Air] |cRXP_WARN_during this step|r.
     .complete 92840,1 --|6/6 Gather Data on Elemental Currents
     .use 254584 -- Index Esoteria
     .mob Windshaper Elementalist
@@ -4355,10 +4572,12 @@ step << Alliance
     .isQuestComplete 92840 -- Catching Wind
     .isQuestComplete 94978 << Hunter -- Taming the Beast
     .subzoneskip 16638 -- Valanaar
+    .subzoneskip 16626 -- Gustberry Lowlands
     .cooldown spell,1259416,>0,1 -- Walk on Air
     .goto 2521,49.46,70.12,30,0
-    .goto 2521,65.577,76.650
+    .goto 2521,52.35,70.23
     .cast 1259416 >>Jump off the mountain and use |T132845:0|t[Walk on Air] to fly towards the waypoint location.
+    *|cRXP_WARN_Be careful of the enemies near the edge. If you die, accept Resurrection Sickness|r.
     .usespell 1259416
 step << Alliance Hunter
     .isOnQuest 94978 -- Taming the Beast
@@ -4382,26 +4601,6 @@ step << Alliance Hunter
     .goto 2521,52.73,71.12
     .cast 1259416 >>Jump off the mountain and use |T132845:0|t[Walk on Air] to fly towards the waypoint location.
     .usespell 1259416
-
-
--- ============================================================================
--- Level 10+ Deathskip: Re-enable Once the Resurrection Sickness Bug Is Fixed
--- ============================================================================
--- step << Alliance --The correct step; the beta issue still needs to be fixed.
---     .subzoneskip 16638 -- Valanaar
---     .isOnQuest 92840
---     .isQuestComplete 92840
---     .goto 2521,48.37,70.01
--- -- #ignorecorpse
---     .deathskip >>Die to the monsters or jump off the cliff
---     *|cRXP_WARN_(BETA: Resurrection Sickness is bugged. Skip this step for now.)|r
---     .skipgossipid 96031
---     .skipgossipid 98031
---     .subzoneskip 16638,1 -- Valanaar
---     .target Spirit Healer
-
-
-
 step << Alliance Hunter/Alliance Mage
     #completewith SkyhopperMultiClass
     >>Kill |cRXP_ENEMY_Skyhoppers::251314|r.
@@ -4447,8 +4646,8 @@ step << Alliance Hunter
     +|cRXP_WARN_Dismiss your |cRXP_ENEMY_Ornery Galestrider::251707|r by right clicking its unit frame and clicking dismiss, otherwise you'll be unable to tame an|r |cRXP_ENEMY_Vuldren::250874|r
     *|cRXP_WARN_Be careful; it will attack you when dismissed|r.
 step << Alliance Hunter
-    .isOnQuest 94013
-    .isQuestNotComplete 94013
+    .isOnQuest 94013 --Taming the Beast
+    .isQuestNotComplete 94013 --Taming the Beast
     .subzoneskip 16638,1
     #label SkyhopperMultiClass
     .goto 2521,57.11,74.49
@@ -4715,11 +4914,21 @@ step << Horde Druid
 -- ============================================================================
 
 step << Alliance
+    .isOnQuest 92840 --Catching Wind
+    .goto 2521,65.47,80.29
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Daeann Steelwind::252479|r.
+    .vendor 252479 >>|cRXP_WARN_Vendor trash and repair|r.
+    .skipgossipid 137531
+    *Don't sell |T133970:0|t[Stringy Meat], |T132832:0|t[Small Eggs], or |T133972:0|t[Strider Meat].
+    *|cRXP_WARN_We need them for Cooking later|r.
+    .target Daeann Steelwind::252479
+step << Alliance
     .goto 2521,66.63,79.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elaadrin Evengale::252475|r.
     .turnin 92840 >>Turn in Catching Wind
     .accept 92834 >>Accept Avenged Tenfold
     .accept 92860 >>Accept In Service of Zephras
+    .accept 92709 >>Accept A Grand Adventure
     .target Elaadrin Evengale::252475
 step << Alliance
     #optional
@@ -4777,12 +4986,11 @@ step << Alliance !Druid
     .goto 2521,64,74.06
     .cast 1259705 >>Use |T236219:0|t[Read Ley Line] for 100% increased passive Mana and Health regeneration.
     .usespell 1259705
-
 step << Alliance
     #completewith next
     >>Kill |cRXP_ENEMY_Al'Aketh Brawlers::270201|r.
     *Loot them for |T1379232:0|t[|cRXP_LOOT_Al'Aketh Windstone Charms|r].
-    *You will make progress here but likely finish the quest at another location later.
+   *|cRXP_WARN_You will make progress here but likely finish the quest at another location later|r.
     .complete 92834,1 --10/10 Al'Aketh Windstone Charm
     .mob Al'Aketh Healer::254596
     .mob Al'Aketh Brawler::270201
@@ -4804,7 +5012,7 @@ step << Alliance !Druid
     #completewith Commander Belguilos2
     >>Kill |cRXP_ENEMY_Al'Aketh Brawlers::270201|r, |cRXP_ENEMY_Al'Aketh Preachers::253195|r, and |cRXP_ENEMY_Al'Aketh Pillagers::253511|r.
     *Loot them for |T1379232:0|t[|cRXP_LOOT_Al'Aketh Windstone Charms|r].
-    *You will make progress here but likely finish the quest at another location later.
+   *|cRXP_WARN_You will make progress here but likely finish the quest at another location later|r.
     .complete 92834,1 --10/10 Al'Aketh Windstone Charm
     .mob Al'Aketh Brawler::270201
     .mob Al'Aketh Preacher::253195
@@ -4812,7 +5020,7 @@ step << Alliance !Druid
 step << Alliance !Druid
     #optional
     #completewith Commander Belguilos2
-    >>Kill |cRXP_ENEMY_Al'Aketh Healers|r and |cRXP_ENEMY_Al'Aketh Brawlers|r.
+    >>Kill |cRXP_ENEMY_Al'Aketh Healers::254596|r and |cRXP_ENEMY_Al'Aketh Brawlers::270201|r.
     .complete 92642,1 --4/4 Al'Aketh Healer slain
     .mob +Al'Aketh Healer::254596
     .complete 92642,2 --8/8 Al'Aketh Brawler slain
@@ -4829,7 +5037,7 @@ step << Alliance !Druid
     #completewith next
     >>Kill |cRXP_ENEMY_Al'Aketh Brawlers::270201|r, |cRXP_ENEMY_Al'Aketh Preachers::253195|r, and |cRXP_ENEMY_Al'Aketh Pillagers::253511|r.
     *Loot them for |T1379232:0|t[|cRXP_LOOT_Al'Aketh Windstone Charms|r].
-    *You will make progress here but likely finish the quest at another location later.
+   *|cRXP_WARN_You will make progress here but likely finish the quest at another location later|r.
     .complete 92834,1 --10/10 Al'Aketh Windstone Charm
     .mob Al'Aketh Brawler::270201
     .mob Al'Aketh Preacher::253195
@@ -4851,7 +5059,6 @@ step << Alliance !Druid
 step << Alliance Druid
     .isOnQuest 92834 -- Avenged Tenfold
     .subzoneskip 17675,1 -- East Pylon Watchtower
-    -- .subzone 16593
     .cooldown spell,1259416,>0,1 -- Walk on Air
     .goto 2521,69.01,65.86,20,0
     .goto 2521,69.84,61.73
@@ -4865,7 +5072,7 @@ step << Alliance Druid
     .accept 94638 >>Accept Strength and Mercy
 step << Alliance Druid
     .subzoneskip 16593,1
-    .isOnQuest 92645
+    .isOnQuest 92645 --Breaking the Breaker
     .cooldown spell,1259705,>0,1 -- Read Ley Line
     .goto 2521,69.08,61.98
     .cast 1259705 >>Use |T236219:0|t[Read Ley Line] for 100% increased passive Mana and Health regeneration.
@@ -4874,7 +5081,7 @@ step << Alliance Druid
     #completewith Commander Belguilos Druid2
     >>Kill |cRXP_ENEMY_Al'Aketh Brawlers::270201|r, |cRXP_ENEMY_Al'Aketh Preachers::253195|r, and |cRXP_ENEMY_Al'Aketh Pillagers::253511|r.
     *Loot them for |T1379232:0|t[|cRXP_LOOT_Al'Aketh Windstone Charms|r].
-    *You will make progress here but likely finish the quest at another location later.
+   *|cRXP_WARN_You will make progress here but likely finish the quest at another location later|r.
     .complete 92834,1 --10/10 Al'Aketh Windstone Charm
     .mob Al'Aketh Brawler::270201
     .mob Al'Aketh Preacher::253195
@@ -4882,7 +5089,7 @@ step << Alliance Druid
 step << Alliance Druid
     #optional
     #completewith Commander Belguilos Druid2
-    >>Kill |cRXP_ENEMY_Al'Akeths|r.
+    >>Kill |cRXP_ENEMY_Al'Aketh Healers::254596|r and |cRXP_ENEMY_Al'Aketh Brawlers::270201|r.
     .complete 92642,1 --4/4 Al'Aketh Healer slain
     .mob +Al'Aketh Healer::254596
     .complete 92642,2 --8/8 Al'Aketh Brawler slain
@@ -4911,7 +5118,7 @@ step << Alliance Druid
     #completewith next
     >>Kill |cRXP_ENEMY_Al'Aketh Brawlers::270201|r, |cRXP_ENEMY_Al'Aketh Preachers::253195|r, and |cRXP_ENEMY_Al'Aketh Pillagers::253511|r.
     *Loot them for |T1379232:0|t[|cRXP_LOOT_Al'Aketh Windstone Charms|r].
-    *You will make progress here but likely finish the quest at another location later.
+   *|cRXP_WARN_You will make progress here but likely finish the quest at another location later|r.
     .complete 92834,1 --10/10 Al'Aketh Windstone Charm
     .mob Al'Aketh Brawler::270201
     .mob Al'Aketh Preacher::253195
@@ -4974,75 +5181,173 @@ step << Alliance
     .turnin 92881 >>Turn in The High Elder's Request
     .accept 92643 >>Accept The Turncoat
     .target Talaanis::252476
+
+-- ============================================================================
+-- Level 10+ Non Deathskip Version
+-- ============================================================================
+
+-- step << Alliance Paladin/Alliance Priest/Alliance Warlock/Alliance Mage/Alliance Rogue
+--     #optional
+--     #completewith Al'Aketh Assassins Equip Reminder
+--     +|cRXP_WARN_Equip the|r |T7792097:0|t[Honed Greathammer] << Paladin
+--     +|cRXP_WARN_Equip the|r |T7798447:0|t[Balanced Quarterstaff] << Priest/Warlock/Mage
+--     +|cRXP_WARN_Equip the|r |TInterface/Icons/inv_knife_1h_skybornec60_b_01:0|t[Quickblade's Dagger] |cRXP_WARN_in your off-hand|r. << Rogue
+--     .use 257345 << Paladin -- Honed Greathammer
+--     .use 257343 << Priest/Warlock/Mage -- Balanced Quarterstaff
+--     .use 257346 << Rogue -- Quickblade's Dagger
+-- step << Alliance
+--     .subzoneskip 16638,1 -- Valanaar
+--     .isQuestAvailable 98512 -- Al'Aketh Assassins
+--     .isNotOnQuest 98512 -- Al'Aketh Assassins
+--     .cooldown spell,1259416,>0,1 -- Walk on Air
+--     .goto 2521,66.47,76.61,8,0
+--     .goto 2521,66.31,76.18,15,0
+--     .goto 2521,63.14,76.9
+--     .cast 1259416 >>Jump off the mountain and use |T132845:0|t[Walk on Air] to fly towards the questgiver.
+--     .usespell 1259416
+-- step << Alliance
+--     .subzoneskip 16638,1 -- Valanaar
+--     .isQuestAvailable 98512 -- Al'Aketh Assassins
+--     .isNotOnQuest 98512 -- Al'Aketh Assassins
+--     .goto 2521,63.14,76.9,20,0
+--     .goto 2521,62.9,77.44,10,0
+--     .goto 2521,63.96,74.15
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Belann Windwood::256507|r inside the house.
+--     .vendor 256507 >>Vendor trash and repair if needed
+--     *Don't sell |T133970:0|t[Stringy Meat], |T132832:0|t[Small Eggs], or |T133972:0|t[Strider Meat].
+--     *|cRXP_WARN_We need them for Cooking later|r.
+--     .target Belann Windwood::256507
+--     .skipgossipid 137530
+-- step << Alliance
+--     .subzoneskip 16638,1 -- Valanaar
+--     .isQuestAvailable 98512 -- Al'Aketh Assassins
+--     .isNotOnQuest 98512 -- Al'Aketh Assassins
+--     .cooldown spell,1259705,>0,1 -- Read Ley Line
+--     .goto 2521,63.96,74.15
+--     .cast 1259705 >>Use |T236219:0|t[Read Ley Line] for 100% increased passive Mana and Health regeneration.
+--     .usespell 1259705
+
+
+-- ============================================================================
+-- Level 10+ Deathskip Version
+-- ============================================================================
+
+
+step << Hunter
+    .xp <9,1
+    .money <0.1345
+    .isNotOnQuest 92679 -- Blood Tithe
+    .isQuestAvailable 92679 -- Blood Tithe
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.82
+    .goto 2521,59.395,75.730
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falfaan Halfwind::271465|r inside the house.
+    >>|cRXP_BUY_Buy and equip a|r |T7810733:0|t[Zephrali Bow]
+    .collect 277110,1 --Collect Zephrali Bow
+    .vendor 271465 >>Vendor trash and repair if needed
+    *Don't sell |T133970:0|t[Stringy Meat], |T132832:0|t[Small Eggs], or |T133972:0|t[Strider Meat]. << Alliance
+    *Don't sell |T132832:0|t[Small Eggs] and |T133972:0|t[Strider Meat]. << Horde
+    *|cRXP_WARN_We need them for Cooking later|r.
+    .skipgossipid 141556
+    .target Falfaan Halfwind::271465
+step << Hunter
+    #optional
+    #completewith secluded house
+    .xp <9,1
+    .itemcount 277110,1 --Zephrali Bow
+    +|cRXP_WARN_Equip the|r |T7810733:0|t[|cRXP_LOOT_Zephrali Bow|r].
+    .use 277110 --Zephrali Bow
+step << Warrior/Paladin/Shaman/Druid
+    .xp <9,1
+    .money <0.2151
+    .isNotOnQuest 92679 --Blood Tithe
+    .isQuestAvailable 92679 --Blood Tithe
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.28
+    .goto 2521,59.395,75.730
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falfaan Halfwind::271465|r inside the house.
+    >>|cRXP_BUY_Buy and equip a|r |T7792097:0|t[Zephrali Smasher].
+    .collect 277106,1 --Zephrali Smasher
+    .vendor 271465 >>Vendor trash and repair if needed.
+    *Don't sell |T133970:0|t[Stringy Meat], |T132832:0|t[Small Eggs], or |T133972:0|t[Strider Meat]. << Alliance
+    *Don't sell |T132832:0|t[Small Eggs] and |T133972:0|t[Strider Meat]. << Horde
+    *|cRXP_WARN_We need them for Cooking later|r.
+    .skipgossipid 141556
+    .target Falfaan Halfwind::271465
+step << Warrior/Paladin/Shaman/Druid
+    #optional
+    #completewith secluded house
+    .xp <9,1
+    .itemcount 277106,1 --Zephrali Smasher
+    +|cRXP_WARN_Equip the|r |T7792097:0|t[|cRXP_LOOT_Zephrali Smasher|r].
+    .use 277106 --Zephrali Smasher
+step << Rogue
+    .xp <9,1
+    .money <0.1727
+    .isNotOnQuest 92679 --Blood Tithe
+    .isQuestAvailable 92679 --Blood Tithe
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.35
+    .goto 2521,59.395,75.730
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falfaan Halfwind::271465|r inside the house.
+    >>|cRXP_BUY_Buy and equip a|r |T7791298:0|t[Zephrali Bludgeon].
+    .collect 277107,1 --Zephrali Bludgeon
+    .vendor 271465 >>Vendor trash and repair if needed.
+    *Don't sell |T133970:0|t[Stringy Meat], |T132832:0|t[Small Eggs], or |T133972:0|t[Strider Meat]. << Alliance
+    *Don't sell |T132832:0|t[Small Eggs] and |T133972:0|t[Strider Meat]. << Horde
+    *|cRXP_WARN_We need them for Cooking later|r.
+    .skipgossipid 141556
+    .target Falfaan Halfwind::271465
+step << Rogue
+    #optional
+    #completewith secluded house
+    .xp <9,1
+    .itemcount 277107,1 --Zephrali Bludgeon
+    +|cRXP_WARN_Equip the|r |T7791298:0|t[|cRXP_LOOT_Zephrali Bludgeon|r].
+    .use 277107 --Zephrali Bludgeon
+-- step << Mage/Priest/Warlock
+--     .xp <9,1
+--     .money <0.1734
+--     .isNotOnQuest 92679 --Blood Tithe
+--     .isQuestAvailable 92679 --Blood Tithe
+--     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.18
+--     .goto 2521,59.395,75.730
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falfaan Halfwind::271465|r inside the house.
+--     >>|cRXP_BUY_Buy and equip a|r |T7792229:0|t[Zephrali Knife].
+--     .collect 277108,1 --Zephrali Knife
+--     .vendor 271465 >>Vendor trash and repair if needed.
+--     *Don't sell |T133970:0|t[Stringy Meat], |T132832:0|t[Small Eggs], or |T133972:0|t[Strider Meat]. << Alliance
+--     *Don't sell |T132832:0|t[Small Eggs] and |T133972:0|t[Strider Meat]. << Horde
+--     *|cRXP_WARN_We need them for Cooking later|r.
+--     .skipgossipid 141556
+--     .target Falfaan Halfwind::271465
+step << Alliance
+    .isNotOnQuest 98512 --Al'Aketh Assassins
+    .isQuestAvailable 98512 --Al'Aketh Assassins
+    .goto 2521,66.49,76.65,8,0
+    .goto 2521,68.84,78.42,-1
+    .goto 2521,60.74,78.02,-1
+    .subzone 16626 >>Jump off the cliff
 step << Alliance Paladin/Alliance Priest/Alliance Warlock/Alliance Mage/Alliance Rogue
     #optional
     #completewith Al'Aketh Assassins Equip Reminder
-    +|cRXP_WARN_Equip the|r |T7792097:0|t[Honed Greathammer] << Paladin
-    +|cRXP_WARN_Equip the|r |T7798447:0|t[Balanced Quarterstaff] << Priest/Warlock/Mage
-    +|cRXP_WARN_Equip the|r |TInterface/Icons/inv_knife_1h_skybornec60_b_01:0|t[Quickblade's Dagger] |cRXP_WARN_in your off-hand|r. << Rogue
+    +|cRXP_WARN_Equip the|r |T7792097:0|t[Honed Greathammer] if you don't have |T7792097:0|t[|cRXP_LOOT_Zephrali Smasher|r]. << Paladin
+    +|cRXP_WARN_Equip the|r |T7798447:0|t[Balanced Quarterstaff] if you don't have |T7792229:0|t[|cRXP_LOOT_Zephrali Knife|r]. << Priest/Warlock/Mage
+    +|cRXP_WARN_Equip the|r |TInterface/Icons/inv_knife_1h_skybornec60_b_01:0|t[Quickblade's Dagger] if you don't have |T7791298:0|t[|cRXP_LOOT_Zephrali Bludgeon|r]. << Rogue
     .use 257345 << Paladin -- Honed Greathammer
     .use 257343 << Priest/Warlock/Mage -- Balanced Quarterstaff
     .use 257346 << Rogue -- Quickblade's Dagger
 step << Alliance
-    .subzoneskip 16638,1 -- Valanaar
-    .isQuestAvailable 98512 -- Al'Aketh Assassins
-    .isNotOnQuest 98512 -- Al'Aketh Assassins
-    .cooldown spell,1259416,>0,1 -- Walk on Air
-    .goto 2521,66.47,76.61,8,0
-    .goto 2521,66.31,76.18,15,0
-    .goto 2521,63.14,76.9
-    .cast 1259416 >>Jump off the mountain and use |T132845:0|t[Walk on Air] to fly towards the questgiver.
-    .usespell 1259416
-step << Alliance
-    .subzoneskip 16638,1 -- Valanaar
-    .isQuestAvailable 98512 -- Al'Aketh Assassins
-    .isNotOnQuest 98512 -- Al'Aketh Assassins
-    .goto 2521,63.14,76.9,20,0
-    .goto 2521,62.9,77.44,10,0
-    .goto 2521,63.96,74.15
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Belann Windwood::256507|r inside the house.
-    .vendor 256507 >>Vendor trash and repair if needed
-    *Don't sell |T133970:0|t[Stringy Meat], |T132832:0|t[Small Eggs], or |T133972:0|t[Strider Meat].
-    *|cRXP_WARN_We need them for Cooking later|r.
-    .target Belann Windwood::256507
-    .skipgossipid 137530
-step << Alliance
-    .subzoneskip 16638,1 -- Valanaar
-    .isQuestAvailable 98512 -- Al'Aketh Assassins
-    .isNotOnQuest 98512 -- Al'Aketh Assassins
-    .cooldown spell,1259705,>0,1 -- Read Ley Line
-    .goto 2521,63.96,74.15
-    .cast 1259705 >>Use |T236219:0|t[Read Ley Line] for 100% increased passive Mana and Health regeneration.
-    .usespell 1259705
--- ============================================================================
--- Level 10+ Deathskip: Re-enable Once the Resurrection Sickness Bug Is Fixed
--- ============================================================================
--- step << Alliance
---     .subzoneskip 16638,1 -- Valanaar
---     .isQuestAvailable 98512
---     .isNotOnQuest 98512
---     -- *|cRXP_WARN_Equip the|r |T7792097:0|t[Honed Greathammer] << Alliance Warrior
---     -- *|cRXP_WARN_Equip the|r |T7798447:0|t[Balanced Quarterstaff] << Alliance Hunter/Alliance Mage/Alliance Druid
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Daeann Steelwind::252479|r outside the house.
---     .vendor 252479 >>Vendor trash and repair if needed
---     *Don't sell |T133970:0|t[Stringy Meat], |T132832:0|t[Small Eggs], or |T133972:0|t[Strider Meat]. << Alliance
---     *|cRXP_WARN_We need them for Cooking later|r.
---     .target Daeann Steelwind::252479
---     .goto 2521,65.4,80.22
---     .skipgossipid 137530
--- step << Alliance
---     -- .subzoneskip 16638,1 -- Valanaar
---     .isQuestAvailable 98512
---     .isNotOnQuest 98512
---     .goto 2521,66.42,83.48
--- -- #ignorecorpse
---     .deathskip >>Jump off the cliff
---     .skipgossipid 96031
---     .skipgossipid 98031
---     .target Spirit Healer::6491
+    #ignorecorpse
+    .subzoneskip 16626,1 -- Gustberry Lowlands
+    .isNotOnQuest 98512 --Al'Aketh Assassins
+    .isQuestAvailable 98512 --Al'Aketh Assassins
+    .showwhiledead
+    .goto 2521,54.99,68.14
+    .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Spirit Healer::6491|r.
+    .skipgossipid 96031
+    .skipgossipid 98031
+    .target Spirit Healer::6491
 step << Alliance
     #label Al'Aketh Assassins Equip Reminder
-    .goto 2521,59.719,67.016,35,0 << Druid --Remove if we add deathskips again
+    -- .goto 2521,59.719,67.016,35,0 << Druid --Remove if we add deathskips again
     .goto 2521,56.81,61.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fendaal Windstone::273017|r.
     *|cRXP_WARN_If a Tornado is nearby, touch it to gain 40% increased movement speed for 5 minutes. Dealing damage removes the effect|r.
@@ -5055,8 +5360,10 @@ step << Alliance
     .complete 98512,1 --10/10 Al'Aketh Assassin slain
     .mob Al'Aketh Assassin::254626
 step << Alliance
+    #label secluded house
     .goto 2521,56.13,60.26
     >>Follow the Arrow
+    *|cRXP_WARN_Be careful while Resurrection Sickness is active|r.
     .complete 92643,1 --1/1 Find the secluded house in Shen'dar Highlands
 step << Alliance
     .goto 2521,56.05,58.79
@@ -5104,7 +5411,7 @@ step << Alliance Druid
     #completewith Windsong Crawler Meat Druid2
     >>Kill |cRXP_ENEMY_Al'Aketh Brawlers::270201|r, |cRXP_ENEMY_Al'Aketh Preachers::253195|r, and |cRXP_ENEMY_Al'Aketh Pillagers::253511|r |cRXP_WARN_along the way|r.
     *Loot them for |T1379232:0|t[|cRXP_LOOT_Al'Aketh Windstone Charms|r].
-    *You will make progress here but likely finish the quest at another location later.
+   *|cRXP_WARN_You will make progress here but likely finish the quest at another location later|r.
     .complete 92834,1 --10/10 Al'Aketh Windstone Charm
     .mob Al'Aketh Brawler::270201
     .mob Al'Aketh Preacher::253195
@@ -5138,6 +5445,7 @@ step << Alliance Druid
 --maybe finish in the big field with all of the Al'Akeths
 step << Alliance
     #loop
+    .goto 2521,54.35,57.87,35,0
     .goto 2521,53.56,59.17,35,0
     .goto 2521,52.91,58.56,35,0
     .goto 2521,52.08,59.23,35,0
@@ -5272,6 +5580,7 @@ step
     .goto 2521,56.83,33.99,30,0
     .goto 2521,56.75,33.3,25,0
     .goto 2521,57.25,33.37,25,0
+    .goto 2521,57.23,33.4,25,0
     .goto 2521,57.04,29.36
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Resaan Nimbuswalker|r
     .complete 94897,1 --1/1 Resaan's Heirloom
@@ -5394,7 +5703,7 @@ step
     .goto 2521,64.14,39.18,40,0
     .goto 2521,65.7,36.82,40,0
     .goto 2521,65.63,35.57,40,0
-    >>Kill |cRXP_ENEMY_Al'Aketh Footsoldiers|r and |cRXP_ENEMY_Al'Aketh Stormchasers|r.
+    >>Kill |cRXP_ENEMY_Al'Aketh Footsoldiers::252665|r and |cRXP_ENEMY_Al'Aketh Stormchasers::252664|r.
     *Loot them for |T4622283:0|t[|cRXP_LOOT_Bloody Heirlooms|r], |T133856:0|t[|cRXP_LOOT_Al'Aketh Cultist's Ears|r] and |T1379232:0|t[|cRXP_LOOT_Al'Aketh Windstone Charms|r]. << Alliance
     *Loot them for |T4622283:0|t[|cRXP_LOOT_Bloody Heirlooms|r]. << Horde
     .complete 94487,1 --10/10 Bloody Heirloom
@@ -5636,21 +5945,6 @@ step << Alliance Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Seena Skybreaker::252377|r.
     .target Seena Skybreaker::252377
     .turnin 94003 >>Turn in The Skybreaker Bulwark
-step << Alliance Warrior
-    .money <0.45
-    .isQuestAvailable 94491 -- The Fate of the Den
-    .subzoneskip 16638,1 -- Valanaar
-    .train 6190,1 -- Demoralizing Shout (Rank 2) Not Trained
-    .train 6574,1 -- Revenge (Rank 2) Not Trained
-    .xp <14,1
-    .goto 2521,59.89,72.87
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Seena Skybreaker::252377|r.
-    .train 1160 >>Train |Tinterface/icons/ability_warrior_warcry.blp:0|t[Demoralizing Shout]
-    .train 6572 >>Train |Tinterface/icons/ability_warrior_revenge.blp:0|t[Revenge]
-    .train 1310185 >>Train |T136031:0|t[Tactical Mastery]
-    .skipgossipid 136813
-    .target Seena Skybreaker::252377
-
 -- step << Alliance Rogue
 --     .goto 2521,59.9,72.48
 --     *|cRXP_WARN_Use the Interact Key through the Wall|r
@@ -5661,7 +5955,6 @@ step << Alliance Warrior
 --     .target Eltheen Nightbreeze::252379
 --     .money <0.16
 --     .xp <12,1
-
 step << Alliance Rogue
     .money <0.16
     .xp <12,1
@@ -5825,6 +6118,7 @@ step << Alliance
     .goto 2521,66.628,79.936
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elaadrin Evengale::252475|r.
     .turnin 92834 >>Turn in Avenged Tenfold
+    .turnin -92709 >>Turn in A Grand Adventure
     .target Elaadrin Evengale::252475
 step << Alliance Mage
     .money <0.24
@@ -6081,6 +6375,8 @@ step << Alliance !Hunter !Rogue !Warrior
 --     .target Elaadrin Evengale
 
 
+--UNUSED likely train in sw/og because of portal from quest before takes you near zeppelin
+
 -- step << Warrior
 --     .goto 2521,59.89,72.87
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Seena Skybreaker::252377|r.
@@ -6088,6 +6384,20 @@ step << Alliance !Hunter !Rogue !Warrior
 --     .skipgossipid 136813
 --     .target Seena Skybreaker::252377
 --     .xp <14,1
+-- step << Warrior
+--     .money <0.45
+--     .isQuestAvailable 94491 -- The Fate of the Den
+--     .subzoneskip 16638,1 -- Valanaar
+--     .train 6190,1 -- Demoralizing Shout (Rank 2) Not Trained
+--     .train 6574,1 -- Revenge (Rank 2) Not Trained
+--     .xp <14,1
+--     .goto 2521,59.89,72.87
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Seena Skybreaker::252377|r.
+--     .train 1160 >>Train |Tinterface/icons/ability_warrior_warcry.blp:0|t[Demoralizing Shout]
+--     .train 6572 >>Train |Tinterface/icons/ability_warrior_revenge.blp:0|t[Revenge]
+--     .train 1310185 >>Train |T136031:0|t[Tactical Mastery]
+--     .skipgossipid 136813
+--     .target Seena Skybreaker::252377
 -- step << Rogue
 --     .goto 2521,59.55,73.3,30,0
 --     .goto 2521,59.91,72.48
@@ -6152,7 +6462,8 @@ step << Alliance
     .abandon 97969 >>Abandon Camping 101: Leatherworking
     .abandon 98285 >>Abandon Camping 101: Engineering
     .abandon 93318 >>Abandon WANTED: Vulgara the Insatiable
-    .macro Abandon 101,130722 >>/run for _,q in ipairs({97970,97971,96646,97968,97965,97967,97963,97964,97973,98286,97969,98285,93318})do if C_QuestLog.IsOnQuest(q)then C_QuestLog.SetSelectedQuest(q) C_QuestLog.SetAbandonQuest() C_QuestLog.AbandonQuest() ConfirmAbandonQuest()end end
+    .abandon 92709 >>Abandon A Grand Adventure
+    .macro Abandon 101,130722 >>/run for _,q in ipairs({97970,97971,96646,97968,97965,97967,97963,97964,97973,98286,97969,98285,93318,92709})do if C_QuestLog.IsOnQuest(q)then C_QuestLog.SetSelectedQuest(q) C_QuestLog.SetAbandonQuest() C_QuestLog.AbandonQuest() ConfirmAbandonQuest()end end
 
 -- ============================================================================
 -- Alliance Discovery
@@ -6473,8 +6784,7 @@ step << Horde
     .turnin 93737 >>Turn in The Broken Construct
     .target Riaani Nightwind::256083
 step << Horde
-    .goto 2521,58.986,75.460,10,0
-    .goto 2521,58.128,78.307
+    .goto 2521,58.986,75.460
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Railee Thriceforged::257422|r.
     .vendor 257422 >>Vendor trash.
     *Don't sell |T132832:0|t[Small Eggs] and |T133972:0|t[Strider Meat].
@@ -6824,11 +7134,11 @@ step << Horde !Hunter
 step << Horde !Hunter
     .isOnQuest 96897,96898 -- The Cult of the Damned / Remnants of War
     .goto 1420/0,-130.500,1907.800
-    >>Kill |cRXP_ENEMY_Dark Enforcers|r and |cRXP_ENEMY_Dark Neophytes|r. Loot them for |cRXP_LOOT_Necrotic Crystal Fragments|r
+    >>Kill |cRXP_ENEMY_Dark Enforcers::275437|r and |cRXP_ENEMY_Dark Neophytes|r. Loot them for |cRXP_LOOT_Necrotic Crystal Fragments|r
     >>|cRXP_LOOT_Necrotic Crystal Fragments|r |cRXP_WARN_can also be looted on the ground|r
-    >>|cRXP_WARN_Be careful! These mobs hit hard. |cRXP_ENEMY_Dark Enforcers|r also have an instant cast 50-70 damage ability|r
+    >>|cRXP_WARN_Be careful! These mobs hit hard. |cRXP_ENEMY_Dark Enforcers::275437|r also have an instant cast 50-70 damage ability|r
     .complete 96897,2 --|8/8 Dark Enforcer slain
-    .mob +Dark Enforcer
+    .mob +Dark Enforcer::275437
     .complete 96897,1 --|8/8 Dark Neophyte slain
     .mob +Dark Neophyte
     .complete 96898,1 --|12/12 Necrotic Crystal Fragment
@@ -6884,4 +7194,21 @@ step << Horde !Hunter
 step << !Hunter
     #optional
     #label Silverpineskip
+]])
+
+
+
+RXPGuides.RegisterGuide([[
+#forever
+#version 1
+#internal
+
+tornadoes
+.goto 2521,54.22,64.13
+.goto 2521,64.44,79.62
+.goto 2521,58.77,50.45
+.goto 2521,57.28,70.5
+.goto 2521,68.16,74.89
+.goto 2521,60.94,73.58
+.goto 2521,48.36,80.52
 ]])
