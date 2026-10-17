@@ -162,6 +162,7 @@ local alternateNames = {
     ["SH"] = "TDC",
     ["DC"] = "TDC",
     ["ESW"] = "ES",
+    ["AI"] = "AP",
 }
 
 for tag,name in pairs(dungeonList) do

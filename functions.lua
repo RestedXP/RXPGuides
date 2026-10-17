@@ -7638,8 +7638,9 @@ function addon.functions.enabledungeon(self, text, instance)
         if not addon.dungeonOverride[group] then
             addon.dungeonOverride[group] = {}
         end
-        addon.dungeonOverride[group][tag] = enabled
-
+        if group and tag then
+            addon.dungeonOverride[group][tag] = enabled
+        end
 
         if text and text ~= "" then
             return {textOnly = true, text = text}
