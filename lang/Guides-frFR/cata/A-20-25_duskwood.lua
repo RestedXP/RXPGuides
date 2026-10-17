@@ -45,7 +45,7 @@ step
 step
 	#completewith next
     .goto 47,73.82,45.95,8,0
-    .goto 47,74.07,45.32,8 >>Entrez dans l'auberge
+    .goto 47,74.07,45.32,8 >>Entrez à l'intérieur de l'auberge
 step
     #completewith Daltry1
     .goto 47,73.87,44.41
@@ -228,7 +228,7 @@ step << skip
 step
 	#completewith next
     .goto 47,73.82,45.95,8,0
-    .goto 47,74.07,45.32,8 >>Entrez dans l'auberge
+    .goto 47,74.07,45.32,8 >>Entrez à l'intérieur de l'auberge
 step
     .goto 47,74.09,44.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Smitts|r
@@ -318,7 +318,7 @@ step
 step
 	#completewith next
     .goto 47,73.82,45.95,8,0
-    .goto 47,74.07,45.32,8 >>Entrez dans l'auberge
+    .goto 47,74.07,45.32,8 >>Entrez à l'intérieur de l'auberge
 step
     .goto 47,74.09,44.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Smitts|r
@@ -613,7 +613,7 @@ step
 	.mob Black Widow
 step
     .goto 47,17.72,29.05
-    >>Cliquez sur le |cRXP_PICK_A Weathered Grave|r
+    >>Cliquez sur la |cRXP_PICK_A Weathered Grave|r
     .accept 26793 >>Acceptez la quête La tombe effritée
 step
     .goto 47,17.49,33.40,8,0
