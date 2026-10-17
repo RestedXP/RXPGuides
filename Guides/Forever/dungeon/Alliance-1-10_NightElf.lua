@@ -7,7 +7,6 @@ RXPGuides.RegisterGuide([[
 #season 0,1
 << Alliance
 #name 1-6 Shadowglen
-#displayname 1-7 Shadowglen << sod
 #version 1
 #group RestedXP Forever Dungeon Guide (A)
 #subgroup Dungeon Guide 1-20
@@ -23,13 +22,12 @@ RXPGuides.RegisterGuide([[
 #season 0,1
 << Alliance
 #name 6-11 Teldrassil
-#displayname 7-13 Teldrassil << SoD
 #version 1
 #group RestedXP Forever Dungeon Guide (A)
 #subgroup Dungeon Guide 1-20
 --#groupid RXP-SRGCE-A1
 #defaultfor NightElf
-#next 14-16 Darkshore
+#next 11-16 Darkshore/Loch Modan
 
 step
 #include RestedXP Forever Guide (A)\6-11 Teldrassil
