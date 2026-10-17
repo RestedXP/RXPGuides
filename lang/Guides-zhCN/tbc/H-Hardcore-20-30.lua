@@ -342,7 +342,7 @@ step
 step
     .goto The Barrens,57.39,52.28,60,0
     .goto The Barrens,58.04,53.87
-    >>拾取地上的|cRXP_PICK_[DEPRECATED] 被偷走的银币|r
+    >>拾取地上的|cRXP_PICK_被偷走的银币|r
     .complete 3281,1 --Stolen Silver (1)
 step
     .goto The Barrens,52.60,46.10
@@ -451,7 +451,7 @@ step
     .target 图加·符文图腾
     .goto The Barrens,52.26,31.93
     .turnin 905 >>交任务  在迅猛龙的巢穴里
-    .accept 3261 >>接受任务 [DEPRECATED in 4.x] 乔恩·星眼
+    .accept 3261 >>接受任务 乔恩·星眼
     .target 瑟格拉·黑棘
     .goto The Barrens,52.24,31.01
     .turnin 3281 >>交任务  被偷走的银币
@@ -467,7 +467,7 @@ step
     .target 图加·符文图腾
     .goto The Barrens,52.26,31.93
     .turnin 905 >>交任务  在迅猛龙的巢穴里
-    .accept 3261 >>接受任务 [DEPRECATED in 4.x] 乔恩·星眼
+    .accept 3261 >>接受任务 乔恩·星眼
     .target 瑟格拉·黑棘
     .goto The Barrens,52.24,31.01
     .turnin 3281 >>交任务  被偷走的银币
@@ -823,7 +823,7 @@ step
     #label JornSkyseerTurnin
     .goto The Barrens,44.85,59.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔恩·星眼|r 对话
-    .turnin 3261 >>交任务  [DEPRECATED in 4.x] 乔恩·星眼
+    .turnin 3261 >>交任务  乔恩·星眼
     .accept 882 >>接受任务 伊沙姆哈尔
     .target 乔恩·星眼
 step << Warlock
@@ -927,7 +927,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_碎牙|r 对话
     .turnin 878 >>交任务  野猪人的内战
     .accept 5052 >>接受任务 阿迦玛甘的血岩碎片
-    .turnin 5052 >>交任务阿迦玛甘的血岩碎片
+    .turnin 5052 >>交任务  阿迦玛甘的血岩碎片
     .target 碎牙
     .addquestitem 5075,5052
 step << !Tauren
@@ -2074,7 +2074,7 @@ step
     .goto Ashenvale,12.06,34.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_穆格拉什|r 对话
     >>|cRXP_WARN_这将启动一个护送任务。要非常小心！|cRXP_ENEMY_ Vorsha|r 打得很猛|r
-    .accept 6641,1 >> 接受任务 鞭笞者沃尔沙
+    .accept 6641,1 >> 接受任务鞭笞者沃尔沙
     .target 穆格拉什
     .group 2
 step
@@ -3870,7 +3870,7 @@ RXPGuides.RegisterGuide([[
 #name 25-27 South Barrens
 #version 7
 #subgroup RXP TBC Survival Guide 1-30
-#next 27-29 灰谷
+#next 27-29级 灰谷
 
 step << Shaman/Warrior
     .goto Thunder Bluff,54.06,57.25
@@ -4756,10 +4756,10 @@ RXPGuides.RegisterGuide([[
 #version 7
 #group RXP TBC 生存指南 (H)
 << Horde
-#name 27-29 灰谷
+#name 27-29级 灰谷
 #version 7
 #subgroup RXP TBC Survival Guide 1-30
-#next 29-31 千针石林
+#next 29-31级 千针石林
 
 
 step
@@ -5696,7 +5696,7 @@ RXPGuides.RegisterGuide([[
 #version 7
 #group RXP TBC 生存指南 (H)
 << Horde
-#name 29-31 千针石林
+#name 29-31级 千针石林
 #version 7
 #subgroup RXP TBC Survival Guide 1-30
 #next RXP TBC 生存指南 (H)\31-33级 希尔斯布莱德/阿拉希 第1部分

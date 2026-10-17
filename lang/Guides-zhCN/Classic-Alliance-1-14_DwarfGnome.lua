@@ -14,7 +14,7 @@ RXPGuides.RegisterGuide([[
 #displayname 1-6级 寒脊山谷 << !SoD
 #displayname 1-7级 寒脊山谷 << SoD
 #next 6-11级 丹莫罗 << !Hunter
-#next 6-11 丹莫罗 (猎人);6-11级 丹莫罗 << Hunter
+#next 6-11级 丹莫罗 (猎人);6-11级 丹莫罗 << Hunter
 #defaultfor Dwarf/Gnome
 
 step << !Gnome !Dwarf
@@ -50,7 +50,7 @@ step << Warlock
 #requires wlrune1
 #sticky
     #season 2
-    .train 403919 >>|cRXP_WARN_使用|r |T134419:0|t|T133816:0|t|cRXP_LOOT_[鬼影缠身符文]|r |cRXP_WARN_学习|r |T133816:0|t|T133816:0|t[铭刻手套 - 鬼影缠身]
+    .train 403919 >>|cRXP_WARN_使用|r t|T134419:0|t|cRXP_LOOT_[鬼影缠身符文]|r |cRXP_WARN_来学习|r |T133816:0|t[铭刻手套 - 鬼影缠身]
     .use 205230
     .itemcount 205230,1 -- Rune of Haunting (1)
 --XX Era Level 1 Warrior/Warlock training, Era Warlock imp accept start
@@ -289,7 +289,7 @@ step << Priest
     .train 402862,1
 step << Priest
     #season 2
-    .train 402862 >> |cRXP_WARN_使用|r |T136222:0|t|T133816:0|t|cRXP_LOOT_[忧虑助祭的回忆]|r |cRXP_WARN_学习|r |T133816:0|t|T133816:0|t[铭刻手套 - 苦修]
+    .train 402862 >> |cRXP_WARN_使用|r |T136222:0|t|cRXP_LOOT_[忧虑助祭的回忆]|r |cRXP_WARN_来学习|r |T133816:0|t[铭刻手套 - 苦修]
     .aura -410935
     .use 205951
 step << Dwarf Priest
@@ -348,7 +348,7 @@ step << Warlock
     .goto 1426,27.095,80.702,20,0
     .goto 1426,27.265,80.848,20,0
     .goto 1426,27.857,81.067,20,0
-    .goto 1426,28.696,83.148,50 >> 朝 |cRXP_ENEMY_霜鬃巨魔新兵|r方向前进
+    .goto 1426,28.696,83.148,50 >> 前去找 |cRXP_ENEMY_霜鬃巨魔新兵|r，NPC在里面
 step << Warlock
     #season 0,1
     #label Feathers
@@ -361,7 +361,7 @@ step << Warlock
     .goto 1426,30.055,82.385,40,0
     .goto 1426,30.381,80.766,40,0
     .goto 1426,30.216,80.254,40,0
-    >>击杀洞穴里面的 |cRXP_ENEMY_霜鬃巨魔新兵|r ，从他们身上拾取|cRXP_LOOT_羽饰护符|r
+    >>击杀洞穴里面的 |cRXP_ENEMY_霜鬃巨魔新兵|r 并拾取 |cRXP_LOOT_羽毛咒符|r
     .complete 1599,1 --Collect Feather Charm (x3)
     .mob Frostmane Novice
 step << Warlock
@@ -385,7 +385,7 @@ step << Warlock
     #softcore
     #label BeginningsHS
     #completewith BeginningsEnd
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
     .target 灵魂医者
 step << Warlock
     #season 0,1
@@ -574,7 +574,7 @@ step << Warlock
 step << Warlock
     #season 2
     #completewith next
-    .hs >> 炉石回安威玛尔
+    .hs >> 炉石返回安威玛尔
 step << Paladin/Warlock/Hunter
     #optional
     #completewith next
@@ -697,7 +697,7 @@ step << Warrior/Paladin
     .waypoint 1426,26.031,79.854,45,0
     .waypoint 1426,23.716,80.257,45,0
     >>击杀|cRXP_ENEMY_霜鬃巨魔幼崽|r，从它们身上拾取|T134419:0|t|T134419:0|t|cRXP_LOOT_[乘胜追击符文]|r << Warrior
-    >>击杀|cRXP_ENEMY_霜鬃巨魔幼崽|r，从它们身上拾取|T134916:0|t|T134916:0|t|cRXP_LOOT_[审判圣契]|r << Paladin
+    >>击杀|cRXP_ENEMY_霜鬃巨魔幼崽|r。拾取它们的|T134916:0|t|cRXP_LOOT_[审判圣契]|r << Paladin
     .collect 204806,1 << Warrior --Rune of Victory Rush (1)
     .collect 205420,1 << Paladin -- Libram of Judgement (1)
     .mob 霜鬃巨魔新兵
@@ -762,7 +762,7 @@ step << Paladin
     #completewith Observations
     #label Libram4
     #requires Libram3
-    .cast 409920 >>|cRXP_WARN_使用|r |T134916:0|t|T133816:0|t|cRXP_LOOT_[审判圣契]|r |cRXP_WARN_学习|r |T133816:0|t|T133816:0|t[铭刻手套 - 十字军打击]
+    .cast 409920 >>|cRXP_WARN_使用|r |T134916:0|t|cRXP_LOOT_[审判圣契]|r |cRXP_WARN_学习|r |T133816:0|t[铭刻手套 - 十字军打击]
     .use 205420
     .aura -408828
     .train 410002,1
@@ -849,7 +849,7 @@ step
 step << Rogue/Hunter
     #season 2
     .goto Dun Morogh,30.773,80.063
-    >>打开地面上的|cRXP_PICK_霜鬃掠夺者宝箱|r，拾取获得|T134419:0|t|T134419:0|t|cRXP_LOOT_[暗影打击符文]|r << Rogue
+    >>打开地面上的|cRXP_PICK_霜鬃掠夺者宝箱|r，获得|T134419:0|t|T134419:0|t|cRXP_LOOT_[暗影打击符文]|r << Rogue
     >>打开地面上的|cRXP_PICK_霜鬃掠夺者宝箱|r，拾取获得|T134419:0|t|T134419:0|t|cRXP_LOOT_[奇美拉符文]|r << Hunter
     .collect 204795,1 << Rogue --Rune of Shadowstrike (1)
     .collect 206168,1 << Hunter -- Rune of the Chimera (1)
@@ -864,7 +864,7 @@ step << Rogue
 --XX HC as softcore have timed quest turnin in Anvilmar (softcore rogues do it after turnin)
 step << Hunter
     #season 2
-    .train 410121 >>|cRXP_WARN_使用|r |T134419:0|t|T133816:0|t|cRXP_LOOT_[奇美拉符文]|r |cRXP_WARN_学习|r |T133816:0|t|T133816:0|t[铭刻手套 - 奇美拉射击]
+    .train 410121 >>|cRXP_WARN_使用|r |T134419:0|t|cRXP_LOOT_[奇美拉符文]|r |cRXP_WARN_来学习|r |T133816:0|t[铭刻手套 - 奇美拉射击]
     .use 206168
     .itemcount 206168,1
 step << Rogue
@@ -897,7 +897,7 @@ step << !Paladin !Warlock !Hunter
     #softcore
     #requires Grelin << Rogue
     #completewith next
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
     .target 灵魂医者
 step
     #hardcore << !Paladin !Warlock !Hunter
@@ -1334,7 +1334,7 @@ RXPGuides.RegisterGuide([[
 #groupid RXP-SRGCE-A1
 #name 6-11级 丹莫罗
 #displayname 6-12级 丹莫罗 << sod !Warlock
-#next 11-12 艾尔文森林（矮人/侏儒）;11-12级 虚空行者任务;12-14 洛克莫丹 (矮人/侏儒);11-13级 洛克莫丹 (猎人)
+#next 11-12级 艾尔文森林 (矮人/侏儒);11-12级 虚空行者任务;12-14级 洛克莫丹 (矮人/侏儒);11-13级 洛克莫丹 (猎人)
 #defaultfor Dwarf/Gnome
 
 step
@@ -1391,7 +1391,7 @@ step
     #softcore
     #completewith next
     >>|cRXP_WARN_请确保你的区域不是寒脊山小径|r
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
     .target 灵魂医者
 step
     #label SenirEnd
@@ -1697,7 +1697,7 @@ step << Hunter
     #season 2
     #sticky
     #label pigmeat
-    >>击杀|cRXP_ENEMY_雕像 - 野猪之王|r，拾取获得|T134026:0|t|T134026:0|t[丹莫罗猪肉]
+    >>击杀|cRXP_ENEMY_野猪|r。拾取它们的|T134026:0|t[丹莫罗猪肉]
     .collect 208192,1
     .mob 峭壁野猪
     .mob 老峭壁野猪
@@ -2398,7 +2398,7 @@ step << Hunter
     #sticky
     #label Marksmanship1
     .goto Dun Morogh,28.852,49.859
-    >>对|cRXP_ENEMY_沙沙作响的灌木丛|r施放|T132212:0|t|T132212:0|t[猎人印记]
+    >>对|cRXP_ENEMY_沙沙作响的灌木丛|r 施放|T132212:0|t[猎人印记]
     >>击杀刷新的|cRXP_ENEMY_鬃毛偷猎者|r，拾取|T134419:0|t|T134419:0|t[|cRXP_FRIENDLY_神射手符文|r]
     .collect 206155,1 --Rune of Marksmanship (1)
     .mob Rustling Bush
@@ -2409,7 +2409,7 @@ step << Hunter
     #sticky
     #label Marksmanship2
     #requires Marksmanship1
-    .cast 402265 >>使用|T134419:0|t|T134419:0|t[|cRXP_FRIENDLY_神射手符文|r]
+    .cast 402265 >>使用|T134419:0|t[|cRXP_FRIENDLY_神射手符文|r]
     .use 206155
     .train 410113,1
 step << Hunter/Mage/Warrior
@@ -2428,9 +2428,9 @@ step << Hunter/Mage/Warrior
     >>击杀|cRXP_ENEMY_菲欧迪|r，从他身上拾取|T134419:0|t|T134419:0|t|cRXP_LOOT_[爆炸射击符文]|r << Hunter
     >>击杀|cRXP_ENEMY_菲欧迪|r。从他身上拾取|T134939:0|t|T134939:0|t|cRXP_LOOT_[法术笔记：IGBHNHZNAI]|r << Mage
     >>杀死 |cRXP_ENEMY_菲欧迪|r。从他身上拾取|T134419:0|t|T134419:0|t|cRXP_LOOT_[狂怒雷霆符文]|r << Warrior
-    >>|cRXP_WARN_尽管|cRXP_ENEMY_菲欧迪|r显示为精英，但其生命值、伤害和护甲数值均与普通怪物相同|r
-    >>|cRXP_WARN_注意他施放|r |T132337:0|t|T132337:0|t[冲锋] |cRXP_WARN_（自身 瞬发：提高移动速度3秒，命中后造成35-80点近战伤害。仅可在远程距离施放）|r
-    >>|cRXP_WARN_注意：|r|T134419:0|t|T134419:0|t|cRXP_LOOT_[爆炸射击符文]|r|cRXP_WARN_也会从丹莫罗的所有稀有怪身上掉落，包括|cRXP_ENEMY_瓦加什|r、|cRXP_ENEMY_癞爪|r和|r|cRXP_ENEMY_冰须|r << Hunter
+    >>|cRXP_WARN_虽然 |cRXP_ENEMY_菲欧迪|r 显示为精英，但他的生命值、伤害和护甲属性与一般的小怪相同|r
+    >>|cRXP_WARN_小心，他会施放|r |T132337:0|t[冲锋] |cRXP_WARN_（自身瞬发：提高移动速度3秒，命中后造成35-80点近战伤害。仅可在远程距离施放）|r
+    >>|cRXP_WARN_注意：|r|T134419:0|t|cRXP_LOOT_[爆炸射击符文]|r|cRXP_WARN_也会从丹莫罗的所有稀有怪身上掉落，包括|cRXP_ENEMY_瓦加什|r，|cRXP_ENEMY_癞爪|r 和 |r|cRXP_ENEMY_冰须|r << Hunter
     >>|cRXP_WARN_注意：|r |T134939:0|t|T134939:0|t|cRXP_LOOT_[法术笔记：IGBHNHZNAI]|r |cRXP_WARN_也会从丹莫罗的所有稀有怪物身上掉落，包括|cRXP_ENEMY_瓦加什|r、|cRXP_ENEMY_癞爪|r和|r |cRXP_ENEMY_冰须|r << Mage
     >>|cRXP_WARN_注意：|r |T134419:0|t|T134419:0|t|cRXP_LOOT_[狂怒雷霆符文]|r |cRXP_WARN_也可从丹莫罗的所有稀有怪物身上掉落，包括|cRXP_ENEMY_瓦加什|r、|cRXP_ENEMY_癞爪|r和|r|cRXP_ENEMY_冰须|r << Warrior
     .collect 206169,1 << Hunter --Rune of Explosive Shot (1)
@@ -3141,7 +3141,7 @@ step << Dwarf Rogue/Gnome Rogue
     #xprate >1.59
     .goto Dun Morogh,25.164,44.460
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与飞行器港口顶部的|cRXP_FRIENDLY_奥宁·铁锤|r交谈
-    >>|cRXP_WARN_他处于|r |T132320:0|t[潜行] 状态。
+    >>|cRXP_WARN_他处于|r |T132320:0|t[潜行] 状态
     .turnin 2238 >> 交任务 国王的财宝
     .accept 2239 >> 接受任务 奥宁的报告
     .target Onin MacHammar
@@ -3191,7 +3191,7 @@ step << Priest
     .train 425216,1
 step << Priest
     #season 2
-    .train 425216 >>|cRXP_WARN_使用|r |T136222:0|t|T237514:0|t[|cRXP_FRIENDLY_黑暗意图的回忆|r] |cRXP_WARN_训练|r |T237514:0|t|T237514:0|t[虚空疫病]
+    .train 425216 >>|cRXP_WARN_使用|r |T136222:0|t[|cRXP_FRIENDLY_黑暗意图的回忆|r] |cRXP_WARN_训练|r |T237514:0|t[虚空疫病]
     >>|cRXP_WARN_你必须在圣洁区域（如北郡修道院、暴风城大教堂、安威玛尔的光线祭坛、洛克莫丹或铁炉堡的神秘结界）输入/kneel以获得|r |T135934:0|t|T136057:0|t|T136057:0|t|T136057:0|t[冥想] |cRXP_WARN_增益效果|r
     .use 205940
 step << Rogue
@@ -3676,7 +3676,7 @@ step << Warrior/Rogue
     #softcore
     #optional
     #completewith next
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
     .target 灵魂医者
     .train 403475,1 << Warrior
     .train 398196,1 << Rogue
@@ -4029,7 +4029,7 @@ step << Human
 step
     #softcore
     #completewith flyIF
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
     .target 灵魂医者
 step
     #optional
@@ -4129,7 +4129,7 @@ step << Rogue
 step << Rogue
     #xprate <1.59
     #season 2
-    .train 400081 >>|cRXP_WARN_使用|r |T134419:0|t|T135610:0|t[|cRXP_FRIENDLY_精准符文|r] |cRXP_WARN_训练|r |T135610:0|t|T135610:0|t[正中眉心]
+    .train 400081 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_精准符文|r] |cRXP_WARN_来训练|r |T135610:0|t[正中眉心]
     .use 204174
     .itemcount 204174,1
 step << Dwarf Rogue/Gnome Rogue
@@ -4436,7 +4436,7 @@ step << Paladin
     >>击败|cRXP_ENEMY_布鲁阿特|r
     >>|cRXP_WARN_小心他施放|r |T132939:0|t|T132939:0|t[反手一击] |cRXP_WARN_（击晕你2秒）|r
     >>|cRXP_WARN_记得预读|r |T135924:0|t|T135924:0|t[十字军圣印] |cRXP_WARN_对他|r
-    >>|cRXP_WARN_千万不要不小心对他施放|r|T135906:0|t[力量祝福] |cRXP_WARN_|r
+    >>|cRXP_WARN_不要意外对他施放|r |T135906:0|t|T135906:0|t[力量祝福] |cRXP_WARN_ |r
     >>|cRXP_WARN_将他风筝到楼上的阳台，然后从旅店外跳下，必要时施放|r |T135920:0|t|T135920:0|t[圣光术] |cRXP_WARN_如果必要的话|r
     >>|cRXP_WARN_击败|cRXP_ENEMY_布鲁阿尔特|r后：|r
     >>再次与|cRXP_FRIENDLY_布鲁克·麦须|r对话，领取|T134419:0|t|T134419:0|t[责难符文]
@@ -4717,7 +4717,7 @@ step << Paladin
 step << Paladin
     #season 2
     .goto StormwindClassic,38.10,28.10
-    .gossipoption 109653 >>与 |cRXP_FRIENDLY_罗姆鲁斯修士|r对话
+    .gossipoption 109653 >>与|cRXP_FRIENDLY_罗姆鲁斯修士|r 对话
     .target Brother Romulus
     --.skipgossip
     .train 410015,1
@@ -4807,7 +4807,7 @@ step << Warlock
     .goto StormwindClassic,27.2,78.1,15 >> 前往屠宰场，进入地下室
 step << Warlock
     .goto StormwindClassic,26.117,77.225
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
     .trainer >> 训练你的职业技能
     .target 厄苏拉·德林
 step << Warlock
@@ -4842,7 +4842,7 @@ RXPGuides.RegisterGuide([[
 #groupid RXP-SRGCE-A1
 #name 11-12级 虚空行者任务
 #displayname 12-13级 虚空行者任务 << SoD
-#next 12-14 洛克莫丹 (矮人/侏儒)
+#next 12-14级 洛克莫丹 (矮人/侏儒)
 
 step
     #completewith next
@@ -4855,7 +4855,7 @@ step
     .target 黑暗缚灵者加科因
 step
     .goto StormwindClassic,66.277,62.137
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
     .fp Stormwind >> 获取暴风城的飞行路径
     .target 杜加尔·朗德瑞克
 step
@@ -4976,7 +4976,7 @@ step
 step
     #xprate >1.49
     .goto Redridge Mountains,29.31,53.63
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_肖恩|r 对话
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_肖恩|r对话
     >>|cRXP_WARN_小心前进，途中有高等级怪物|r
     .accept 3741 >> 接受任务 希拉里的项链
     .target 肖恩
@@ -5069,7 +5069,7 @@ step
     .goto StormwindClassic,27.2,78.1,15 >> 前往屠宰场，进入地下室
 step
     .goto StormwindClassic,26.117,77.225
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
     .trainer >> 训练你的职业技能
     .target 厄苏拉·德林
 step
@@ -5109,10 +5109,10 @@ RXPGuides.RegisterGuide([[
 << Alliance !Hunter
 #group RestedXP 联盟 1-20 级
 #groupid RXP-SRGCE-A1
-#name 11-12 艾尔文森林（矮人/侏儒）
+#name 11-12级 艾尔文森林 (矮人/侏儒)
 #version 1
 #defaultfor Gnome/Dwarf
-#next 12-14 洛克莫丹 (矮人/侏儒)
+#next 12-14级 洛克莫丹 (矮人/侏儒)
 --#era << !Warlock
 
 step << Warlock
@@ -5122,7 +5122,7 @@ step << Warlock
     +在前往|cRXP_FRIENDLY_杜加尔·朗德瑞克|r的路上，反复施放|T136126:0|t|T136126:0|t[生命分流]，直到生命值低于10%
 step
     .goto StormwindClassic,66.277,62.137
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
     .fp Stormwind >> 获取暴风城的飞行路径
     .target 杜加尔·朗德瑞克
 step << Warlock
@@ -5271,7 +5271,7 @@ step << Paladin
 step << Paladin
     #season 2
     #sticky
-    .destroy 205864 >> 从背包中删除|T134939:0|t|T134939:0|t[烧焦的笔记]，因为它不再需要
+    .destroy 205864 >> 从背包中摧毁|T134939:0|t[烧焦的笔记]，因为不再需要了
 step << Paladin
     #season 2
     .cast 402265 >>|cRXP_WARN_使用|r |T134419:0|t|T133815:0|t[殉难符文] |cRXP_WARN_学习|r |T133815:0|t|T133815:0|t[铭刻胸部 - 殉道圣印]
@@ -5633,7 +5633,7 @@ step << Warlock
     .goto StormwindClassic,27.2,78.1,15 >> 前往屠宰场，进入地下室
 step << Warlock
     .goto StormwindClassic,26.117,77.225
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
     .trainer >> 训练你的职业技能
     .target 厄苏拉·德林
 step << Warlock
@@ -5757,7 +5757,7 @@ step
     .goto Westfall,59.92,19.42
 	.target 弗娜·法布隆
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_农夫萨丁|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_农夫萨丁|r 对话
     .target Farmer Saldean
     .goto Westfall,56.04,31.23
     .accept 9 >> 接受任务 清理荒野
@@ -5788,7 +5788,7 @@ step
     .accept 12 >> 接受任务 西部荒野人民军
 step
     #era
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_丹努文队长|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_丹努文队长|r 对话
     .target Captain Danuvin
     .goto Westfall,56.42,47.62
     .accept 102 >> 接受任务 西部荒野的豺狼人
@@ -5820,8 +5820,8 @@ RXPGuides.RegisterGuide([[
 << Alliance !Hunter
 #group RestedXP 联盟 1-20 级
 #groupid RXP-SRGCE-A1
-#name 12-14 洛克莫丹 (矮人/侏儒)
-#displayname 12-15 洛克莫丹 << SoD !Warlock
+#name 12-14级 洛克莫丹 (矮人/侏儒)
+#displayname 12-15级 洛克莫丹 << SoD !Warlock
 #displayname 13-15级 洛克莫丹 << SoD Warlock
 #next 13-15级 西部荒野;14-16级 黑海岸
 #defaultfor Gnome/Dwarf
@@ -5831,7 +5831,7 @@ step << Rogue
     #xprate >1.49
     #ah
     .goto StormwindClassic,57.38,56.77
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_玛尔达·维勒|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_玛尔达·维勒|r 对话
     >>|cRXP_BUY_最多购买2把|r |T135343:0|t|T135343:0|t[弯刀] |cRXP_BUY_如果买得起，或者从拍卖行买更便宜/更好的替代品|r
     .collect 2027,1 --Scimitar
     .target 玛尔达·维勒
@@ -5840,7 +5840,7 @@ step << Rogue
     #xprate >1.49
     #ssf
     .goto StormwindClassic,57.38,56.77
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_玛尔达·维勒|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_玛尔达·维勒|r 对话
     >>|cRXP_BUY_如果买得起，从她那里买最多2把|r |T135343:0|t|T135343:0|t[弯刀] |cRXP_BUY_即可|r
     .collect 2027,1 --Scimitar
     .money <0.3815
@@ -5942,13 +5942,13 @@ step << Rogue
 step
     #xprate 1.49-1.59
     .goto StormwindClassic,66.277,62.137
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
     .fp Stormwind >> 获取暴风城的飞行路径
     .target 杜加尔·朗德瑞克
 step
     #xprate >1.59
     .goto StormwindClassic,66.277,62.137
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
     .fp Stormwind >> 获取暴风城的飞行路径
     .target 杜加尔·朗德瑞克
     .dungeon !DM
@@ -6077,7 +6077,7 @@ step << Dwarf Paladin
 step << Dwarf Paladin
     #xprate <1.5
     .goto Ironforge,23.539,8.300
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与楼上的 |cRXP_FRIENDLY_穆里顿·热炉|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_穆里顿·热炉|r 在楼上对话
     .turnin 1779 >>交任务圣洁之书
     .accept 1783 >>接受任务圣洁之书
     .target 穆里顿·热炉
@@ -6921,7 +6921,7 @@ step << Rogue
     #xprate <1.5
     #ah
     .goto StormwindClassic,57.38,56.77
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_玛尔达·维勒|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_玛尔达·维勒|r 对话
     >>|cRXP_BUY_从她那里购买最多2把|r |T135343:0|t|T135343:0|t[弯刀] |cRXP_BUY_如果你买得起，或者从拍卖行买更好的装备|r
     .collect 2027,1 --Scimitar
     .target 玛尔达·维勒
@@ -6931,7 +6931,7 @@ step << Rogue
     #xprate <1.5
     #ssf
     .goto StormwindClassic,57.38,56.77
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_玛尔达·维勒|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_玛尔达·维勒|r 对话
     >>|cRXP_BUY_如果买得起，从她那里买最多2把|r |T135343:0|t|T135343:0|t[弯刀] |cRXP_BUY_即可|r
     .collect 2027,1 --Scimitar
     .money <0.3815
@@ -7057,7 +7057,7 @@ step
     #xprate <1.5
     #label Fly2WF
     .goto StormwindClassic,66.277,62.137
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
     .fly Westfall >> 飞往西部荒野
     .target 杜加尔·朗德瑞克
 
@@ -7432,7 +7432,7 @@ step
     .goto Wetlands,10.1,56.9,15,0
     .goto Wetlands,10.6,57.2,15,0
     .goto 1437,10.760,56.721
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与军营底楼的 |cRXP_FRIENDLY_尼尔·奥雷|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_尼尔·奥雷|r 在军营底层对话
     .vendor 1448 >> |cRXP_WARN_购买|r |T133024:0|t[青铜管] |cRXP_BUY_从他那里（如果有货）|r
 	.target 尼尔·奥雷
     .bronzetube
@@ -7575,7 +7575,7 @@ RXPGuides.RegisterGuide([[
 << Alliance Hunter
 #group RestedXP 联盟 1-20 级
 #groupid RXP-SRGCE-A1
-#name 6-11 丹莫罗 (猎人)
+#name 6-11级 丹莫罗 (猎人)
 #displayname 6-11级 丹莫罗
 #next 11-13级 洛克莫丹 (猎人)
 #defaultfor Dwarf Hunter
@@ -7612,7 +7612,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_旅店老板贝尔姆|r 对话，NPC在里面
     .target 旅店老板贝尔姆
     .goto Dun Morogh,47.377,52.523
-    .home >> 将你的炉石绑在卡拉诺斯
+    .home >> 将你的炉石设为卡拉诺斯
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_萨雷克·暗岩|r 对话
     .target 萨雷克·暗岩
@@ -8277,7 +8277,7 @@ RXPGuides.RegisterGuide([[
 #groupid RXP-SRGCE-A1
 #name 11-13级 洛克莫丹 (猎人)
 #displayname 11-13级 洛克莫丹 << !SoD
-#displayname 12-15 洛克莫丹 << SoD
+#displayname 12-15级 洛克莫丹 << SoD
 #next 14-16级 黑海岸
 #defaultfor Dwarf
 

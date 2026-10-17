@@ -2167,7 +2167,7 @@ step
 step
     #completewith MinshinasSkull
     >>击杀 |cRXP_ENEMY_妖术巨魔|r 和 |cRXP_ENEMY_巫毒巨魔|r。
-    >>|cRXP_WARN_小心！|r |cRXP_ENEMY_巫毒巨魔|r |cRXP_WARN_能够施放|r |T136052:0|t|T136052:0|t[治疗波]
+    >>|cRXP_WARN_小心！|r |cRXP_ENEMY_巫毒巨魔|r |cRXP_WARN_能够施放|r |T136052:0|t[治疗波]
     .complete 826,1 --Hexed Troll (8)
     .mob 妖术巨魔
     .complete 826,2 --Voodoo Troll (8)
@@ -2177,7 +2177,7 @@ step
     >>击杀 |cRXP_ENEMY_扎拉赞恩|r。拾取他的 |cRXP_LOOT_头颅|r
     >>|cRXP_WARN_保留你的|r |T136026:0|t[大地震击]|cRXP_WARN_，在他施放 |T136052:0|t[治疗波] 时使用|r << Shaman
     >>|cRXP_WARN_保留你的|r |T132155:0|t[凿击]|cRXP_WARN_，在他施放 |T136052:0|t[治疗波] 时使用|r << Rogue
-    >>|cRXP_WARN_小心。他能施放|r |T136052:0|t[治疗波]|cRXP_WARN_。如果需要的话，使用你的|r |T134829:0|t[药水] |cRXP_WARN_。|r << !Shaman !Rogue
+    >>|cRXP_WARN_小心。他能施放|r |T136052:0|t|T134829:0|t[治疗波]|cRXP_WARN_。如果需要的话，使用你的|r |T134829:0|t|T134829:0|t[药水] |cRXP_WARN_。|r << !Shaman !Rogue
     .complete 826,3 --Zalazane's Head (1)
     .mob 扎拉赞恩
 step
@@ -2190,7 +2190,7 @@ step
     >>击杀 |cRXP_ENEMY_扎拉赞恩|r。拾取他的 |cRXP_LOOT_头颅|r
     >>|cRXP_WARN_保留你的|r |T136026:0|t[大地震击]|cRXP_WARN_，在他施放 |T136052:0|t[治疗波] 时使用|r << Shaman
     >>|cRXP_WARN_保留你的|r |T132155:0|t[凿击]|cRXP_WARN_，在他施放 |T136052:0|t[治疗波] 时使用|r << Rogue
-    >>|cRXP_WARN_小心。他能施放|r |T136052:0|t[治疗波]|cRXP_WARN_。如果需要的话，使用你的|r |T134829:0|t[药水] |cRXP_WARN_。|r << !Shaman !Rogue
+    >>|cRXP_WARN_小心。他能施放|r |T136052:0|t|T134829:0|t[治疗波]|cRXP_WARN_。如果需要的话，使用你的|r |T134829:0|t|T134829:0|t[药水] |cRXP_WARN_。|r << !Shaman !Rogue
     .complete 826,3 --Zalazane's Head (1)
     .mob 扎拉赞恩
 step

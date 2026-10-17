@@ -9,7 +9,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 1-6级 兽人/巨魔
 #version 1
-#group RestedXP 生存指南 (部落版)
+#group RestedXP 生存指南 (部落)
 #subgroup RXP 生存指南 1-20级
 #defaultfor Troll/Orc
 #next 6-13级 兽人/巨魔
@@ -97,7 +97,7 @@ step << Warlock
     #completewith next
     .goto Durotar,43.57,67.28,25,0
     >>在前往火刃集会所的路上，击杀 |cRXP_ENEMY_杂斑野猪|r
-    >>|cRXP_WARN_尽量在到达那里之前升到2级|r
+    >>|cRXP_WARN_尽量在到达那里之前升到 2 级|r
     .complete 788,1 --Mottled Boar (10)
     .mob 杂斑野猪
 step << Warlock
@@ -121,7 +121,7 @@ step << Warlock
     .goto Durotar,44.58,56.10,40,0
     .goto Durotar,44.27,56.59,40,0
     .goto Durotar,43.85,55.52,40,0
-    >>击杀 |cRXP_ENEMY_邪灵劣魔|r. 拾取 |cRXP_LOOT_邪灵劣魔的徽记|r
+    >>击杀 |cRXP_ENEMY_邪灵劣魔|r。拾取他们的 |cRXP_LOOT_邪灵劣魔的头颅|r
     .complete 1485,1 --Vile Familiar Head (6)
     .mob 邪灵劣魔
 step
@@ -239,7 +239,7 @@ step << Warlock/Warrior/Shaman/Hunter
     #completewith Ruzan2
 	>>|cRXP_WARN_刷|cRXP_ENEMY_杂斑野猪|r。拾取它们，直到你拥有价值2个银币的垃圾物品|r << Warrior
 	>>|cRXP_WARN_刷 |cRXP_ENEMY_杂斑野猪|r。拾取它们，直到获得价值1银币75铜币的垃圾物品|r << Warlock
-	>>|cRXP_WARN_刷怪 |cRXP_ENEMY_杂斑野猪|r，拾取它们的掉落物，直到获得价值1银币10铜币的可出售物品|r << Hunter
+	>>|cRXP_WARN_刷 |cRXP_ENEMY_杂斑野猪|r。拾取它们，直到获得价值1银币10铜币的垃圾物品|r << Hunter
 	>>|cRXP_WARN_刷怪 |cRXP_ENEMY_杂斑野猪|r，拾取它们的掉落物，直到获得价值 1 银币的可出售物品|r << Shaman
     .mob 杂斑野猪
 	.money >0.02 << Warrior
@@ -883,7 +883,7 @@ step << skip --Warrior/Rogue
 step << skip --Warrior/Rogue
     .goto Durotar,51.90,41.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_沃克|r 对话
-    >>|cRXP_BUY_从他那里购买一把|r |T134708:0|t[矿工锄] |cRXP_BUY_|r |cRXP_BUY_|r
+    >>|cRXP_BUY_购买一把|r |T134708:0|t[矿工锄] |cRXP_BUY_从他|r |cRXP_BUY_那里|r
     .collect 2901,1,9144,1 --Mining Pick (1)
     .target 沃克
 step << skip --Warrior/Rogue
@@ -1071,7 +1071,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 6-13级 兽人/巨魔
 #version 1
-#group RestedXP 生存指南 (部落版)
+#group RestedXP 生存指南 (部落)
 #subgroup RXP 生存指南 1-20级
 #defaultfor Troll/Orc
 #next 13-15级 银松森林
@@ -1106,7 +1106,7 @@ step
     .goto Durotar,56.31,73.8,8 >> 进入大帐篷
 step << Rogue
     .goto Durotar,56.29,73.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_克瓦埃|r |cRXP_BUY_对话，并|r|cRXP_BUY_从她那里购买一把|r |T135421:0|t[增重飞斧]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_克瓦埃|r |cRXP_BUY_对话并|r|cRXP_BUY_从她那里购买一把|r |T135421:0|t[增重飞斧]
     .collect 3131,200,786,1 --Weighted Throwing Axe (200)
     .target 克瓦埃
     .itemStat 18,QUALITY,<7
@@ -1500,7 +1500,7 @@ step << Warrior/Rogue
 step << Warrior/Rogue
     .goto Durotar,51.90,41.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_沃克|r 对话
-    >>|cRXP_BUY_从他那里购买一把|r |T134708:0|t[矿工锄] |cRXP_BUY_|r |cRXP_BUY_|r
+    >>|cRXP_BUY_购买一把|r |T134708:0|t[矿工锄] |cRXP_BUY_从他|r |cRXP_BUY_那里|r
     .collect 2901,1,9144,1 --Mining Pick (1)
     .target 沃克
 step << Warrior/Rogue
@@ -1994,7 +1994,7 @@ step
 step
     #completewith ZalazaneKill
     >>击杀 |cRXP_ENEMY_妖术巨魔|r 和 |cRXP_ENEMY_巫毒巨魔|r。
-    >>|cRXP_WARN_小心！|r |cRXP_ENEMY_巫毒巨魔|r |cRXP_WARN_能够施放|r |T136052:0|t|T136052:0|t[治疗波]
+    >>|cRXP_WARN_小心！|r |cRXP_ENEMY_巫毒巨魔|r |cRXP_WARN_能够施放|r |T136052:0|t[治疗波]
     .complete 826,1 --Hexed Troll (8)
     .mob 妖术巨魔
     .complete 826,2 --Voodoo Troll (8)
@@ -2041,7 +2041,7 @@ step
     .goto Durotar,68.47,86.77,40,0
     .goto Durotar,67.23,88.00,40,0
     >>击杀 |cRXP_ENEMY_妖术巨魔|r 和 |cRXP_ENEMY_巫毒巨魔|r。
-    >>|cRXP_WARN_小心！|r |cRXP_ENEMY_巫毒巨魔|r |cRXP_WARN_能够施放|r |T136052:0|t|T136052:0|t[治疗波]
+    >>|cRXP_WARN_小心！|r |cRXP_ENEMY_巫毒巨魔|r |cRXP_WARN_能够施放|r |T136052:0|t[治疗波]
     .complete 826,1 --Hexed Troll (8)
     .mob 妖术巨魔
     .complete 826,2 --Voodoo Troll (8)
@@ -2733,7 +2733,7 @@ step << Shaman
     .money <0.0375
 step
     .goto Durotar,52.24,43.15
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_ 奥戈尼尔·魂痕|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_ 奥戈尼尔·魂痕|r对话
     .turnin 806 >>交任务 黑暗风暴
     .accept 828 >>接受任务 玛高兹
     .target 奥戈尼尔·魂痕
@@ -2742,20 +2742,20 @@ step
 step
     #optional
     .goto Durotar,52.24,43.15
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_ 奥戈尼尔·魂痕|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_ 奥戈尼尔·魂痕|r对话
     .accept 828 >>接受任务 玛高兹
     .target 奥戈尼尔·魂痕
     .isQuestTurnedIn 806
     .group
 step << !Shaman
     .goto Durotar,51.95,43.50
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_加索克|r对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_加索克|r 对话
     .turnin 837 >>交任务 野猪人的进犯
     .target 加索克
     .group
 step << Shaman
     .goto Durotar,51.95,43.50
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_加索克|r对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_加索克|r 对话
     .turnin 837 >>交任务 野猪人的进犯
     .target 加索克
 step << Warrior
@@ -2980,7 +2980,7 @@ step << Rogue
     .goto Orgrimmar,48.12,80.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_特拉克根|r|cRXP_BUY_对话。从他那里购买|r |T135419:0|t[锋利飞斧] |cRXP_BUY_|r
     .collect 3135,200,354,1 --Sharp Throwing Axe (200)
-    .vendor >> 向商人出售垃圾物品
+    .vendor >> 向商人出售你的垃圾物品
     .target 特拉克根
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.3
@@ -3094,7 +3094,7 @@ step << Orc Warrior
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.2
 step << Orc Warrior
     .goto Orgrimmar,47.54,68.39
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_乌萨罗|r|cRXP_BUY_对话。|r|cRXP_BUY_从他那里购买一把|r|T132395:0|t[大板斧]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_乌萨罗|r|cRXP_BUY_对话。从他那里购买一把|r|T132395:0|t[大板斧] |cRXP_BUY_|r
     .collect 1196,1,398,1 --Collect Tabar (1)
     .money <0.2214
     .itemStat 16,QUALITY,<7
@@ -3532,7 +3532,7 @@ step << Hunter
     .xp <12,1
 step << Hunter
     .goto Orgrimmar,81.17,18.69
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|T135499:0|t|cRXP_BUY_与|r |cRXP_FRIENDLY_森度吉安|r|cRXP_BUY_交谈。从他那里购买一把|r |T135499:0|t|T135499:0|t[多层弯弓] |cRXP_BUY_|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_森度吉安|r|cRXP_BUY_交谈。从他那里购买一把|r |T135499:0|t[多层弯弓] |cRXP_BUY_|r
     .collect 2507,1,398,1 --Collect Laminated Recurve Bow (1)
     .money <0.1751
     .itemStat 18,QUALITY,<7
@@ -3589,7 +3589,7 @@ step << Orc Rogue/Troll Rogue
 step << Orc Rogue/Troll Rogue
     #label Swordtraining1
     .goto Undercity,57.29,32.72
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与战争军需区的|r|cRXP_FRIENDLY_阿基巴德|r交谈
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|Tinterface/worldmap/chatbubble_64grey.blp:20|t与战争军需区的|r|cRXP_FRIENDLY_阿基巴德|r交谈
     .train 201 >>学习单手剑
     .target 阿基巴德
     .money <0.3023
@@ -3739,7 +3739,7 @@ step
     .maxlevel 12
 step
     .goto Tirisfal Glades,59.45,52.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔汉|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔汉|r对话
     .accept 445 >>接受任务 给银松森林送信
     .accept 367 >>接受任务 新的瘟疫
     .target 药剂师乔汉
@@ -3808,7 +3808,7 @@ step
     #optional
     #label Pumpkins
     .goto Tirisfal Glades,40.91,54.17
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_西米尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_西米尔|r对话
     .accept 365 >>接受任务 悲伤之地
     .target Deathguard Simmer
     .maxlevel 11
@@ -3882,7 +3882,7 @@ step
     .isQuestTurnedIn 404
 step
     .goto Tirisfal Glades,59.45,52.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔汉|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔汉|r对话
     .turnin 367 >>交任务 新的瘟疫
     .turnin 365 >>交任务 悲伤之地
     .accept 368 >>接受任务 新的瘟疫
@@ -3892,14 +3892,14 @@ step
 step
     #optional
     .goto Tirisfal Glades,59.45,52.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔汉|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔汉|r对话
     .accept 407 >>接受任务 悲伤之地
     .target 药剂师乔汉
     .isQuestTurnedIn 365
 step
     #optional
     .goto Tirisfal Glades,59.45,52.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔汉|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔汉|r对话
     .turnin 367 >>交任务 新的瘟疫
     .accept 368 >>接受任务 新的瘟疫
     .target 药剂师乔汉
@@ -4048,14 +4048,14 @@ step << Undead Priest
 step << Undead Priest
     #optional
     .goto Undercity,48.98,18.33
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_艾萨莱斯特|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_艾萨莱斯特|r对话
     .turnin 5660 >> 交任务 虚弱之触
     .target Aelthalyste
     .isOnQuest 5660
 step << Undead Priest
     #label TouchofWeakness
     .goto Undercity,48.98,18.33
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_艾萨莱斯特|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_艾萨莱斯特|r对话
     .accept 5658 >> 接受任务 虚弱之触
     .turnin 5658 >> 交任务 虚弱之触
     .target Aelthalyste
@@ -4128,7 +4128,7 @@ step << Rogue
     #optional
     #label Swordtraining2
     .goto Undercity,57.29,32.72
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与战争军需区的|r|cRXP_FRIENDLY_阿基巴德|r交谈
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|Tinterface/worldmap/chatbubble_64grey.blp:20|t与战争军需区的|r|cRXP_FRIENDLY_阿基巴德|r交谈
     .train 201 >>学习单手剑
     .target 阿基巴德
     .money <0.1
@@ -4426,14 +4426,14 @@ step
     .isQuestComplete 426
 step
     .goto Tirisfal Glades,59.45,52.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔汉|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔汉|r对话
     .turnin 368 >>交任务 新的瘟疫
     .accept 369 >>接受任务 新的瘟疫
     .target 药剂师乔汉
 step
     #optional
     .goto Tirisfal Glades,59.45,52.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔汉|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔汉|r对话
     .accept 369 >>接受任务 新的瘟疫
     .target 药剂师乔汉
     .isQuestTurnedIn 368
@@ -4611,7 +4611,7 @@ step << Warrior
 step << Priest
     .goto Tirisfal Glades,61.57,52.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与二楼的 |cRXP_FRIENDLY_贝里尔|r 对话
-	.train 588 >>训练 |T135926:0|t[心灵之火]
+	.train 588 >>学习 |T135926:0|t[心灵之火]
     .target Dark Cleric Beryl
     .xp <12,1
 step << Mage
@@ -4913,7 +4913,7 @@ step
     .isQuestComplete 369
 step
     .goto Tirisfal Glades,59.45,52.39
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔汉|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔汉|r对话
     .turnin 369 >>交任务 新的瘟疫
     .accept 492 >>接受任务 新的瘟疫
     .accept 445 >>接受任务 给银松森林送信
@@ -4928,7 +4928,7 @@ step
 step << Priest
     .goto Tirisfal Glades,61.57,52.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与二楼的 |cRXP_FRIENDLY_贝里尔|r 对话
-	.train 588,1 >>训练 |T135926:0|t[心灵之火]
+	.train 588,1 >>学习 |T135926:0|t[心灵之火]
     .target Dark Cleric Beryl
     .xp <12,1
 step << Mage
@@ -5079,7 +5079,7 @@ step
 step << Priest
     .goto Tirisfal Glades,61.57,52.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与二楼的 |cRXP_FRIENDLY_贝里尔|r 对话
-	.train 588,1 >>训练 |T135926:0|t[心灵之火]
+	.train 588,1 >>学习 |T135926:0|t[心灵之火]
     .target Dark Cleric Beryl
     .xp <12,1
     .xp >14,1

@@ -6,17 +6,17 @@ RXPGuides.RegisterGuide([[
 #classic
 #tbc
 << Human Mage
-#name 1-10 艾尔文森林 法师 AoE攻略
+#name 1-10级 艾尔文森林 法师 A怪指南
 #version 1
 #group RestedXP 联盟 法师
 #defaultfor Human
-#next 10-12 洛克莫丹 法师 AoE攻略
+#next 10-12级 洛克莫丹 法师 A怪指南
 step
     #sticky
     #completewith next
     .goto Elwynn Forest,48.171,42.943
     +你选择的是人类专用的指南，请确保你的选择与你角色出生地一致 << Gnome
-    +请注意，你已选择了AOE攻略指南。AOE通常比单体法师难得多，但速度要快得多
+    +请注意，你已选择了A怪指南。法师A怪通常比单体输出难得多，但速度也要快得多
 step
     >>删除你的炉石
     .goto Elwynn Forest,48.171,42.943
@@ -797,7 +797,7 @@ step
     .turnin 419 >> 交任务 失踪的驾驶员
     .accept 417 >> 接受任务 驾驶员的复仇
 step
-    >>击杀癞爪。拾取它的爪子
+    >>击杀癞爪，拾取它的爪子
     .goto Dun Morogh,80.0,36.4
     .complete 417,1 --Collect Mangy Claw (x1)
 step
@@ -813,25 +813,25 @@ RXPGuides.RegisterGuide([[
 #classic
 #tbc
 << Gnome Mage
-#name 1-10 丹莫罗 法师 AoE
+#name 1-10级 丹莫罗 法师 A怪指南
 #version 1
 #group RestedXP 联盟 法师
 #defaultfor Dwarf/Gnome
-#next 10-12 洛克莫丹 法师 AoE攻略
+#next 10-12级 洛克莫丹 法师 A怪指南
 step
     #era/som
     #sticky
     #completewith next
     .goto Dun Morogh,29.927,71.201
     +你选择的是侏儒和矮人专用的指南，请确保你的选择与你角色出生地一致 << Human
-    +请注意，你已选择了AOE攻略指南。AOE通常比单体法师难得多，但速度要快得多
+    +请注意，你已选择了A怪指南。法师A怪通常比单体输出难得多，但速度也要快得多
 step
     #phase 3-6
     #sticky
     #completewith next
     .goto Dun Morogh,29.927,71.201
     +你选择的是侏儒和矮人专用的指南，请确保你的选择与你角色出生地一致 << Human
-    +请注意，你选择了AOE指南。AOE通常比单体法师难得多，但最近100%任务经验加成后，AOE升级速度反而更慢
+    +请注意，你选择了A怪指南。AOE通常比法师单体输出难得多，而且由于SoM近期 100% 任务经验改动，AOE升级速度反而更慢
 step
     >>删除你的炉石
     .goto Dun Morogh,29.927,71.201
@@ -1066,7 +1066,7 @@ step
     .goto Dun Morogh,49.426,48.410
     >>不要在途中杀熊
 .target 驾驶员贝隆·风箱
->>与 |cRXP_FRIENDLY_驾驶员贝隆·风箱|r 对话
+>>与|cRXP_FRIENDLY_驾驶员贝隆·风箱|r 对话
     .accept 317 >> 接受任务 贝尔丁的补给
 step
     .goto Dun Morogh,49.622,48.612
@@ -1118,7 +1118,7 @@ step
     .complete 317,2 --Collect Thick Bear Fur (x2)
 step
     .goto Dun Morogh,49.426,48.410
->>与 |cRXP_FRIENDLY_驾驶员贝隆·风箱|r 对话
+>>与|cRXP_FRIENDLY_驾驶员贝隆·风箱|r 对话
     .turnin 317 >> 交任务 贝尔丁的补给
 .target 驾驶员贝隆·风箱
     .accept 318 >> 接受任务 艾沃沙酒
@@ -1154,7 +1154,7 @@ step
 .target 海格纳·重枪
 >>与|cRXP_FRIENDLY_海格纳·重枪|r 对话
     .turnin 5541 >> 交任务 海格纳的弹药
-    .vendor >> 出售物品并修理装备
+    .vendor >> 垃圾卖店并修理装备
 step
     .xp 7 >> 刷怪至7级
 step
@@ -1252,7 +1252,7 @@ step
 step
     .goto Dun Morogh,49.622,48.612
 .target 驾驶员迪恩·石轮
->>与|cRXP_FRIENDLY_驾驶员迪恩·石轮|r 对话
+>>与 |cRXP_FRIENDLY_驾驶员迪恩·石轮|r 对话
     .turnin 313 >> 交任务 灰色洞穴
 step
     .goto Dun Morogh,49.426,48.410
@@ -1463,11 +1463,11 @@ RXPGuides.RegisterGuide([[
 #classic
 #tbc
 << Alliance Mage
-#name 10-12 洛克莫丹 法师 AoE攻略
+#name 10-12级 洛克莫丹 法师 A怪指南
 #version 1
 #group RestedXP 联盟 法师
 #defaultfor Human Mage/Gnome Mage
-#next 12-18 黑海岸 法师 AoE攻略
+#next 12-18级 黑海岸 法师 A怪指南
 step
     #era/som
     #completewith next
@@ -1569,7 +1569,7 @@ step
     .collect 3172,3,418,1 --Collect Boar Intestines (x3)
 step << Gnome
     .goto Loch Modan,24.1,18.2
-    .vendor >>出售物品并修理装备
+    .vendor >>垃圾卖店并修理装备
 step << Gnome
     .goto Loch Modan,24.764,18.397
 >>与|cRXP_FRIENDLY_巡山人雷矛|r 对话
@@ -1841,7 +1841,7 @@ step
     .goto Wetlands,15.1,64.0,40,0
     .goto Wetlands,12.1,60.3,40,0
     >>打开这个链接，并在另一个屏幕上跟随它。
-    >>走无伤翻山路线。从丹莫罗直接翻山前往湿地
+    >>走无伤翻山路线，从丹莫罗直接翻山前往湿地
     >>走水路的时候小心避开海里的鳄鱼
     .link https://www.youtube.com/watch?v=9afQTimaiZQ >> 点击此处查看参考视频
     .goto Wetlands,12.1,60.3,80 >> 前往米奈希尔港，湿地

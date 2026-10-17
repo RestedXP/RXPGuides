@@ -3,13 +3,13 @@ RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
 #version 7
-#group RestedXP 《燃烧的远征》练级指南（联盟版）
+#group RestedXP 燃烧的远征 练级指南 (联盟)
 << Alliance
 #name 1-11级 艾尔文森林
 #subgroup RestedXP 联盟 1-20 级
 #defaultfor Human
-#next 12-14 Loch Modan;12-14 黑海岸 << Warlock
-#next 11-12 Loch Modan;12-14 黑海岸 << !Warlock
+#next 12-14 Loch Modan;12-14级 黑海岸 << Warlock
+#next 11-12 Loch Modan;12-14级 黑海岸 << !Warlock
 
 step << !Human
     #sticky
@@ -2679,15 +2679,15 @@ RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
 #version 7
-#group RestedXP 《燃烧的远征》练级指南（联盟版）
+#group RestedXP 燃烧的远征 练级指南 (联盟)
 << Alliance
 #xprate <1.5
 #name 11-12级 洛克莫丹 << !Warlock
 #name 12-14级 洛克莫丹 << Warlock
 #subgroup RestedXP 联盟 1-20 级
 #defaultfor Human
-#next 12-14 黑海岸 << Warlock
-#next 12-14 黑海岸 << !Warlock
+#next 14-14级 黑海岸 << Warlock
+#next 12-14级 黑海岸 << !Warlock
 
 step
     #completewith next
@@ -3194,7 +3194,7 @@ step
     .subzoneskip 2103,1 --Menethil Keep
 step
     .goto Wetlands,9.49,59.69
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在外面与 |cRXP_FRIENDLY_谢尔雷|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 在外面与 |cRXP_FRIENDLY_谢尔雷|r 对话
     .fp Wetlands >> 获取湿地的飞行路径
     .target 谢尔雷·布隆迪尔
 step
@@ -3295,10 +3295,10 @@ RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
 #version 7
-#group RestedXP 《燃烧的远征》练级指南（联盟版）
+#group RestedXP 燃烧的远征 练级指南 (联盟)
 << Alliance Warlock
 #xprate <1.5
-#name 12-14 黑海岸
+#name 14-14级 黑海岸
 #subgroup RestedXP 联盟 1-20 级
 #defaultfor Human Warlock
 #next 14-20秘血岛

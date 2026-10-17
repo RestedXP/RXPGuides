@@ -7,12 +7,12 @@ RXPGuides.RegisterGuide([[
 #classic
 #tbc
 << Alliance
-#name 1-6 幽影谷
+#name 1-6级 幽影谷
 #version 1
-#group RestedXP 生存指南 (联盟版)
+#group RestedXP 生存指南 (联盟)
 #subgroup RXP 生存指南 1-20级
 #defaultfor NightElf
-#next 6-11 泰达希尔
+#next 6-11级 泰达希尔
 step << !NightElf
     #sticky
     #completewith next
@@ -231,7 +231,7 @@ step
 step
 	#softcore
 	#completewith next
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
 step << skip --logout skip
 	#hardcore
 	#completewith next
@@ -268,7 +268,7 @@ step << Hunter
 step
     #requires vial1
     #completewith next
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
 step << Hunter
     #requires vial1
     .goto Teldrassil,58.6,44.3
@@ -302,12 +302,12 @@ RXPGuides.RegisterGuide([[
 #classic
 #tbc
 << Alliance
-#name 6-11 泰达希尔
+#name 6-11级 泰达希尔
 #version 1
-#group RestedXP 生存指南 (联盟版)
+#group RestedXP 生存指南 (联盟)
 #subgroup RXP 生存指南 1-20级
 #defaultfor NightElf
-#next 11-13级 黑海岸（暗夜精灵）
+#next 11-13级 黑海岸 (暗夜精灵)
 step
     .goto Teldrassil,60.5,56.3
     .target 赛恩·腐蹄
@@ -658,7 +658,7 @@ step << !Hunter
 step
     #softcore
     #completewith next
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
 step << !Druid
     .goto Teldrassil,56.142,61.714
     .target 科瑞萨斯·月怒
@@ -798,7 +798,7 @@ step << Hunter
     #era
     #sticky
     #label xp10
-    .xp 10-2670 >> 刷怪升级直到离10级还差2670经验（3830/6500）
+    .xp 10-2670 >> 刷怪升级直到离10级还差2670xp（3830/6500）
     >>|cRXP_WARN_一旦你达到这个经验值临界点，就跳过鹰身人任务和护送任务，直接前往达纳苏斯。你稍后还会有机会来完成这些任务|r
 step << Hunter skip
     #era/som--xpgate

@@ -4,11 +4,11 @@ RXPGuides.RegisterGuide([[
 #classic
 #tbc
 << Alliance
-#name 11-13级 黑海岸（暗夜精灵）
+#name 11-13级 黑海岸 (暗夜精灵)
 #version 1
-#group RestedXP 生存指南 (联盟版)
+#group RestedXP 生存指南 (联盟)
 #subgroup RXP 生存指南 1-20级
-#next 13-13级 洛克莫丹（暗夜精灵）
+#next 13-13级 洛克莫丹 (暗夜精灵)
 #defaultfor NightElf
 
 step << NightElf
@@ -537,9 +537,9 @@ RXPGuides.RegisterGuide([[
 #classic
 #tbc
 << Alliance
-#name 13-13级 洛克莫丹（暗夜精灵）
+#name 13-13级 洛克莫丹 (暗夜精灵)
 #version 1
-#group RestedXP 生存指南 (联盟版)
+#group RestedXP 生存指南 (联盟)
 #subgroup RXP 生存指南 1-20级
 #next 13-15级 西部荒野
 #defaultfor NightElf
@@ -605,7 +605,7 @@ step
     .goto StormwindClassic,63.301,62.103,30,0
     .goto StormwindClassic,63.047,65.744,15,0
     .goto StormwindClassic,66.276,62.135
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
     .fp Stormwind >> 获取暴风城的飞行路径
     .target 杜加尔·朗德瑞克
     .zoneskip Ironforge
@@ -1211,7 +1211,7 @@ step
     .target 凯德雷克·布舍尔
 step
     .goto StormwindClassic,66.277,62.137
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
     .fp Stormwind >> 获取暴风城的飞行路径
     .target 杜加尔·朗德瑞克
 ]])

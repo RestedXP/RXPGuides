@@ -1190,7 +1190,7 @@ step << Warlock
     .xp <18,1
 step << Warlock
     .goto Orgrimmar,47.54,46.75
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_库古尔|r 对话并购买 |T133738:0|t[牺牲魔典]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_库古尔|r 对话，购买 |T133738:0|t[牺牲魔典]
     .collect 16351,1,896,1 --Grimoire of Sacrifice (Rank 1) (1)
     .target 库古尔
     .xp <16,1

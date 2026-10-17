@@ -906,7 +906,7 @@ step
     .accept 4722 >> 接受任务 搁浅的海龟
 step
     .goto 1439/1,579.500,5240.300
-    >>点击地上的 |cRXP_PICK_搁浅的海洋生物|r
+    >>点击 |cRXP_PICK_搁浅的海洋生物|r
     .accept 4728 >>接受任务 搁浅的海洋生物
 step
     #requires bears1A
@@ -1178,7 +1178,7 @@ RXPGuides.RegisterGuide([[
 #group RXP TBC 生存指南 A
 #subgroup RXP 生存指南 1-20级
 #name 14-20 秘血岛
-#next 20-21 黑海岸
+#next 20-21级 黑海岸
 
 step << Druid
     .goto Azuremyst Isle,24.450,54.556
@@ -3296,7 +3296,7 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #group RXP TBC 生存指南 A
 #subgroup RXP 生存 指南 20-32
-#name 20-21 黑海岸
+#name 20-21级 黑海岸
 #next 21-23级 灰谷
 
 step
@@ -3342,7 +3342,7 @@ step << Warlock
 .dungeon !DM
     #optional
     .goto StormwindClassic,26.117,77.225
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
     .trainer >> 训练你的职业技能
     .target 厄苏拉·德林
     .zoneskip Stormwind City,1
@@ -3625,7 +3625,7 @@ step
     .goto StormwindClassic,63.301,62.103,30,0
     .goto StormwindClassic,63.047,65.744,15,0
     .goto StormwindClassic,66.276,62.135
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
     .fp Stormwind >> 获取暴风城的飞行路径 << NightElf/Draenei
     .fly Westfall >> 飞往西部荒野 << !NightElf !Draenei
     .target 杜加尔·朗德瑞克
@@ -3790,7 +3790,7 @@ step << Warlock
 .dungeon DM
     #optional
     .goto StormwindClassic,26.117,77.225
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
     .train 6202 >> 训练你的职业技能
     .target 厄苏拉·德林
     .xp <22,1
@@ -3868,7 +3868,7 @@ step << Human Rogue
     .goto StormwindClassic,63.301,62.103,30,0
     .goto StormwindClassic,63.047,65.744,15,0
     .goto StormwindClassic,66.276,62.135
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
     .fly Redridge Mountains >> 飞往赤脊山
     .target 杜加尔·朗德瑞克
 step << !Human Rogue
@@ -4743,7 +4743,7 @@ step
     .complete 945,1 --Escort Therylune away from the Master's Glaive (1)
 step
     .goto Ashenvale,13.97,4.10
-    >>点击地上的 |cRXP_PICK_搁浅的海洋生物|r
+    >>点击 |cRXP_PICK_搁浅的海洋生物|r
     .accept 4733 >> 接受任务 搁浅的海洋生物
     >>|cRXP_WARN_这个任务可能会非常困难。请与 |cRXP_ENEMY_鱼人|r 逐个交战，否则你可能会同时引到多个|r
     .link https://youtu.be/lfQM3Q-Ag5A >> |cRXP_WARN_点击此处查看视频指南|r
@@ -4759,7 +4759,7 @@ step
 step
 #map Darkshore
     .goto Felwood,14.62,60.72
-    >>点击地上的 |cRXP_PICK_搁浅的海洋生物|r
+    >>点击 |cRXP_PICK_搁浅的海洋生物|r
     .accept 4730 >> 接受任务 搁浅的海洋生物
 step
     .goto 1439,35.724,83.696

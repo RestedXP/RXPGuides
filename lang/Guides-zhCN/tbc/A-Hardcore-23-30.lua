@@ -658,7 +658,7 @@ step << Warlock
     .goto Stormwind City,27.2,78.1,15 >> 进入屠宰场。下楼
 step << Warlock
     .goto StormwindClassic,26.117,77.225
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
     .trainer >> 训练你的职业技能
     .target 厄苏拉·德林
 step << Warlock
@@ -778,7 +778,7 @@ step << Shaman
     .target 牛顿·伯恩赛德
 step << Draenei/NightElf
     .goto StormwindClassic,66.277,62.137
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
     .fp Stormwind >> 获取暴风城的飞行路径
     .target 杜加尔·朗德瑞克
 step
@@ -956,7 +956,7 @@ step
     .target 指挥官阿尔泰娅·埃伯洛克
 step
     .goto Duskwood,72.53,46.85
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_书记员达尔塔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_书记员达尔塔|r 对话
     .turnin 66 >> 交任务斯塔文的传说
     .accept 67 >> 接受任务斯塔文的传说
     .target 书记员达尔塔
@@ -1399,7 +1399,7 @@ step << Rogue
     .target 马迪亚斯·肖尔大师
 step << Rogue
     .goto Stormwind City,66.27,62.12
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
     .fly Duskwood>> 飞往暮色森林
     .target 杜加尔·朗德瑞克
     .zoneskip Stormwind City,1
@@ -1476,7 +1476,7 @@ step
     .accept 57 >> 接受任务守夜人
 step
     .goto Duskwood,72.53,46.85
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_书记员达尔塔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_书记员达尔塔|r 对话
     .turnin 68 >> 交任务斯塔文的传说
     .accept 69 >> 接受任务斯塔文的传说
     .target 书记员达尔塔
@@ -1803,7 +1803,7 @@ step
     .target 指挥官阿尔泰娅·埃伯洛克
 step
     .goto Duskwood,72.53,46.85
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_书记员达尔塔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_书记员达尔塔|r 对话
     .turnin 265 >> 交任务继续搜寻
     .accept 266 >> 接受任务调查旅店
     .target 书记员达尔塔
@@ -2105,7 +2105,7 @@ step << Shaman
 step
     #completewith GRB
     .goto Stormwind City,66.27,62.12
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
     .fly Duskwood >> 飞往夜色镇
     .target 杜加尔·朗德瑞克
 step
@@ -2190,7 +2190,7 @@ step
     .accept 335 >> 接受任务名酿
 step << Warlock
     .goto StormwindClassic,26.117,77.225
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
     .trainer >> 训练你的职业技能
     .target 厄苏拉·德林
 step
@@ -2514,7 +2514,7 @@ step
 .dungeon Stockades
     #completewith next
     .goto Stormwind City,66.27,62.12
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
     .fly Redridge >> 飞往赤脊山
     .target 杜加尔·朗德瑞克
 step
@@ -2890,7 +2890,7 @@ RXPGuides.RegisterGuide([[
 #group RXP TBC 生存指南 A
 #subgroup RXP 生存 指南 20-32
 #name 27-29 湿地
-#next 29-30 灰谷
+#next 29-30级 灰谷
 
 step
     .goto Wetlands,8.359,58.526
@@ -3446,7 +3446,7 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #group RXP TBC 生存指南 A
 #subgroup RXP 生存 指南 20-32
-#name 29-30 灰谷
+#name 29-30级 灰谷
 #next 30-31 湿地
 
 step
@@ -4198,7 +4198,7 @@ step
 step
     #completewith dusk2
     .goto Stormwind City,66.27,62.12
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
     .fly Duskwood>> 飞往暮色森林
     .target 杜加尔·朗德瑞克
     .zoneskip Stormwind City,1
@@ -4390,7 +4390,7 @@ step << Shaman
     .target 指挥官阿尔泰娅·埃伯洛克
 step << Shaman
     .goto Duskwood,72.53,46.85
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_书记员达尔塔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_书记员达尔塔|r 对话
     .turnin 80 >> 交任务斯塔文的传说
     .accept 97 >> 接受任务斯塔文的传说
     .target 书记员达尔塔
@@ -4611,7 +4611,7 @@ step
     .target 指挥官阿尔泰娅·埃伯洛克
 step << !Shaman
     .goto Duskwood,72.53,46.85
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_书记员达尔塔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_书记员达尔塔|r 对话
     .turnin 80 >> 交任务斯塔文的传说
     .accept 97 >> 接受任务斯塔文的传说
     .target 书记员达尔塔
@@ -4991,7 +4991,7 @@ step
     .target 黑爪加尔德斯
 step << Warlock
     .goto StormwindClassic,26.117,77.225
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
     .trainer >> 训练你的职业技能
     .target 厄苏拉·德林
 step << Warlock

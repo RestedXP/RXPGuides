@@ -2,7 +2,7 @@ if GetLocale() ~= "zhCN" then return end
 RXPGuides.RegisterGuide([[
 #tbc
 #version 7
-#group RestedXP 《燃烧的远征》练级指南（联盟版）
+#group RestedXP 燃烧的远征 练级指南 (联盟)
 << Alliance
 #name 1-6级 丹莫罗
 #subgroup RestedXP 联盟 1-20 级
@@ -569,11 +569,11 @@ step
 RXPGuides.RegisterGuide([[
 #tbc
 #version 7
-#group RestedXP 《燃烧的远征》练级指南（联盟版）
+#group RestedXP 燃烧的远征 练级指南 (联盟)
 << Alliance !Hunter
 #name 6-11级 丹莫罗 << !Hunter
 #displayname 6-12级 丹莫罗 << Mage
-#next 12-14 黑海岸 << !Warlock
+#next 12-14级 黑海岸 << !Warlock
 #next 11-14级 艾尔文森林/丹莫罗 << Warlock
 #subgroup RestedXP 联盟 1-20 级
 #defaultfor Gnome/Dwarf
@@ -2911,7 +2911,7 @@ step << Rogue/Warrior
 RXPGuides.RegisterGuide([[
 #tbc
 #version 7
-#group RestedXP 《燃烧的远征》练级指南（联盟版）
+#group RestedXP 燃烧的远征 练级指南 (联盟)
 << Alliance Warlock
 #name 11-14级 艾尔文森林/丹莫罗
 #next 14-20秘血岛
@@ -4187,10 +4187,10 @@ step
 RXPGuides.RegisterGuide([[
 #tbc
 #version 7
-#group RestedXP 《燃烧的远征》练级指南（联盟版）
+#group RestedXP 燃烧的远征 练级指南 (联盟)
 << Alliance Hunter
 #name 6-10级 丹莫罗 (猎人)
-#next 12-14 黑海岸
+#next 12-14级 黑海岸
 #subgroup RestedXP 联盟 1-20 级
 #defaultfor Dwarf Hunter
 

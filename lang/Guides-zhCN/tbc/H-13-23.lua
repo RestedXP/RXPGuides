@@ -2,12 +2,12 @@ if GetLocale() ~= "zhCN" then return end
 RXPGuides.RegisterGuide([[
 #tbc
 #version 7
-#group RestedXP 《燃烧的远征》升级指南（部落版）
+#group RestedXP 燃烧的远征 练级指南 (部落)
 << Horde
-#name 13-18 贫瘠之地
+#name 13-18级 贫瘠之地
 #subgroup RestedXP 部落 1-30级
 #defaultfor Shaman
-#next 18-23 Stonetalon/The Barrens
+#next 18-23级 石爪山脉/贫瘠之地
 
 step << Tauren Shaman
     .goto Durotar,50.8,43.6
@@ -2040,12 +2040,12 @@ step
 RXPGuides.RegisterGuide([[
 #tbc
 #version 7
-#group RestedXP 《燃烧的远征》升级指南（部落版）
+#group RestedXP 燃烧的远征 练级指南 (部落)
 << Horde
-#name 18-23 Stonetalon/The Barrens
+#name 18-23级 石爪山脉/贫瘠之地
 #subgroup RestedXP 部落 1-30级
 #defaultfor Shaman
-#next 23-25 级 希尔斯布莱德丘陵
+#next 23-25级 希尔斯布莱德丘陵
 
 step
     #completewith next

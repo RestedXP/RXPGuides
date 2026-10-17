@@ -20,7 +20,7 @@ step
     #completewith next
     .goto Tirisfal Glades,30.04,72.78,8,0
     .goto Tirisfal Glades,30.27,72.78,8,0
-    .goto Tirisfal Glades,30.22,71.65,10 >> 从地穴跑出来，朝 |cRXP_FRIENDLY_摩尔多|r 方向前进
+    .goto Tirisfal Glades,30.22,71.65,10 >> 跑出地穴，朝 |cRXP_FRIENDLY_摩尔多|r 的方向前进
 step
     .goto Tirisfal Glades,30.22,71.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莫多|r 对话

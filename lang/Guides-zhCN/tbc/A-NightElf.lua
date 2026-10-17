@@ -3,9 +3,9 @@ RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
 #version 7
-#group RestedXP 《燃烧的远征》练级指南（联盟版）
+#group RestedXP 燃烧的远征 练级指南 (联盟)
 << Alliance
-#name 1-6 幽影谷
+#name 1-6级 幽影谷
 #subgroup RestedXP 联盟 1-20 级
 #defaultfor NightElf
 #next 6-11 泰达希尔
@@ -311,12 +311,12 @@ RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
 #version 7
-#group RestedXP 《燃烧的远征》练级指南（联盟版）
+#group RestedXP 燃烧的远征 练级指南 (联盟)
 << Alliance
 #name 6-11 泰达希尔
 #subgroup RestedXP 联盟 1-20 级
 #defaultfor NightElf
-#next 12-14 黑海岸
+#next 12-14级 黑海岸
 
 step
     .goto Teldrassil,60.5,56.3

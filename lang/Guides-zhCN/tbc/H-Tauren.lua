@@ -2,9 +2,9 @@ if GetLocale() ~= "zhCN" then return end
 RXPGuides.RegisterGuide([[
 #tbc
 #version 7
-#group RestedXP 《燃烧的远征》升级指南（部落版）
+#group RestedXP 燃烧的远征 练级指南 (部落)
 << Horde
-#name 1-6 莫高雷
+#name 1-6级 莫高雷
 #version 7
 #subgroup RestedXP 部落 1-30级
 #defaultfor Tauren
@@ -468,7 +468,7 @@ step
 RXPGuides.RegisterGuide([[
 #tbc
 #version 7
-#group RestedXP 《燃烧的远征》升级指南（部落版）
+#group RestedXP 燃烧的远征 练级指南 (部落)
 << Horde
 #name 6-10 莫高雷
 #version 7
@@ -2345,13 +2345,13 @@ step
 RXPGuides.RegisterGuide([[
 #tbc
 #version 7
-#group RestedXP 《燃烧的远征》升级指南（部落版）
+#group RestedXP 燃烧的远征 练级指南 (部落)
 << Horde
 #name 10-13 莫高雷
 #version 7
 #subgroup RestedXP 部落 1-30级
 #defaultfor Tauren Shaman
-#next 13-18 贫瘠之地
+#next 13-18级 贫瘠之地
 
 step
     #xprate <1.5

@@ -2,9 +2,9 @@ if GetLocale() ~= "zhCN" then return end
 RXPGuides.RegisterGuide([[
 #tbc
 #version 7
-#group RestedXP 《燃烧的远征》升级指南（部落版）
+#group RestedXP 燃烧的远征 练级指南 (部落)
 << Horde
-#name 1-6 永歌森林
+#name 1-6级 永歌森林
 #version 7
 #subgroup RestedXP 部落 1-30级
 #defaultfor BloodElf
@@ -635,7 +635,7 @@ step
 RXPGuides.RegisterGuide([[
 #tbc
 #version 7
-#group RestedXP 《燃烧的远征》升级指南（部落版）
+#group RestedXP 燃烧的远征 练级指南 (部落)
 << Horde
 #name 6-10 永歌森林
 #displayname 8-11 Eversong Woods << Orc Warrior/Troll Warrior
@@ -2180,7 +2180,7 @@ step
 RXPGuides.RegisterGuide([[
 #tbc
 #version 7
-#group RestedXP 《燃烧的远征》升级指南（部落版）
+#group RestedXP 燃烧的远征 练级指南 (部落)
 << Horde
 #defaultfor !Shaman
 #name 10-12 永歌森林
@@ -3489,7 +3489,7 @@ step
 RXPGuides.RegisterGuide([[
 #tbc
 #version 7
-#group RestedXP 《燃烧的远征》升级指南（部落版）
+#group RestedXP 燃烧的远征 练级指南 (部落)
 << Horde
 #name 12-16 幽魂之地
 #displayname 13-16 Ghostlands << Orc !Hunter !Warlock/Troll !Hunter
@@ -4165,7 +4165,7 @@ step << Priest/Mage/Warlock/Rogue/Druid/Warrior
     #xprate <1.5 << !Warrior
     #softcore
     #completewith SuncrownTurnin
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
     .target 灵魂医者
 step << Priest/Mage/Warlock/Rogue/Druid/Warrior
     #hardcore
@@ -6794,7 +6794,7 @@ step
 RXPGuides.RegisterGuide([[
 #tbc
 #version 7
-#group RestedXP 《燃烧的远征》升级指南（部落版）
+#group RestedXP 燃烧的远征 练级指南 (部落)
 << Horde
 #name 16-20 幽魂之地
 #defaultfor !Shaman
@@ -8659,7 +8659,7 @@ step
 step
     #softcore
     #completewith HeroSindorei
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
     .target 灵魂医者
 step
     #hardcore

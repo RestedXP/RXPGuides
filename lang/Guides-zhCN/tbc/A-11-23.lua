@@ -3,13 +3,13 @@ RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
 #version 7
-#group RestedXP 《燃烧的远征》练级指南（联盟版）
+#group RestedXP 燃烧的远征 练级指南 (联盟)
 << Alliance
 #xprate >1.49 << Human Warlock
-#name 12-14 黑海岸
+#name 12-14级 黑海岸
 #displayname 10-14 黑海岸 << Dwarf Hunter
-#displayname 11-14 黑海岸 << !Human !Mage
-#displayname 12-14 黑海岸 << Gnome Mage
+#displayname 11-14级 黑海岸 << !Human !Mage
+#displayname 12-14级 黑海岸 << Gnome Mage
 #subgroup RestedXP 联盟 1-20 级
 #defaultfor Human/NightElf/Dwarf/Gnome !Warlock
 #next 14-20秘血岛
@@ -892,7 +892,7 @@ RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
 #version 7
-#group RestedXP 《燃烧的远征》练级指南（联盟版）
+#group RestedXP 燃烧的远征 练级指南 (联盟)
 << Alliance
 #name 14-20秘血岛
 #subgroup RestedXP 联盟 1-20 级
@@ -2812,7 +2812,7 @@ step
     .goto StormwindClassic,63.301,62.103,30,0
     .goto StormwindClassic,63.047,65.744,15,0
     .goto StormwindClassic,66.276,62.135
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
     .fp Stormwind >> 获取暴风城的飞行路径 << !Human
     .fly Westfall >> 飞往西部荒野 << Human/Dwarf Warrior/Gnome Warrior/Rogue/Warlock
     .target 杜加尔·朗德瑞克
@@ -3055,7 +3055,7 @@ step << Human Rogue
     .goto StormwindClassic,63.301,62.103,30,0
     .goto StormwindClassic,63.047,65.744,15,0
     .goto StormwindClassic,66.276,62.135
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
     .fly Redridge Mountains >> 飞往赤脊山
     .target 杜加尔·朗德瑞克
 step << !Human Rogue
@@ -3460,7 +3460,7 @@ RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
 #version 7
-#group RestedXP 《燃烧的远征》练级指南（联盟版）
+#group RestedXP 燃烧的远征 练级指南 (联盟)
 << Alliance !Warlock
 #xprate <1.5
 #name 20-21 黑海岸
@@ -4069,7 +4069,7 @@ RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
 #version 7
-#group RestedXP 《燃烧的远征》练级指南（联盟版）
+#group RestedXP 燃烧的远征 练级指南 (联盟)
 << Alliance !Warlock
 #name 21-23级 灰谷
 #subgroup RestedXP 联盟 20-32 级
@@ -5001,7 +5001,7 @@ RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
 #version 7
-#group RestedXP 《燃烧的远征》练级指南（联盟版）
+#group RestedXP 燃烧的远征 练级指南 (联盟)
 << Alliance Warlock
 #name 20-23 黑海岸/灰谷
 #subgroup RestedXP 联盟 20-32 级

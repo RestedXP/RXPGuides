@@ -7,7 +7,7 @@ RXPGuides.RegisterGuide([[
 #group RXP TBC 生存指南 A
 #subgroup RXP 生存指南 1-20级
 #name 1-12 秘蓝岛
-#next 12-14 黑海岸
+#next 12-14级 黑海岸
 
 step
     .goto Azuremyst Isle,82.96,43.88

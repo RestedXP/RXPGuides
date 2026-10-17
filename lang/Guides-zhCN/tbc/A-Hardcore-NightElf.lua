@@ -7,7 +7,7 @@ RXPGuides.RegisterGuide([[
 #group RXP TBC 生存指南 A
 #subgroup RXP 生存指南 1-20级
 #name 1-11 泰达希尔
-#next 12-14 黑海岸
+#next 12-14级 黑海岸
 
 step << !NightElf
     #sticky

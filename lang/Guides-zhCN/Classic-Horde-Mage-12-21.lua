@@ -6,21 +6,21 @@ RXPGuides.RegisterGuide([[
 #classic
 #tbc
 << Horde Mage
-#name 12-17 贫瘠之地 AOE
+#name 12-17级 贫瘠之地 A怪指南
 #version 1
-#group RestedXP 部落法师 AOE攻略
+#group RestedXP 部落法师 A怪指南
 #defaultfor Horde Mage
-#next 17-21级 石爪山脉/荒芜之地 AoE指南
+#next 17-21级 石爪山脉/荒芜之地 A怪指南
 
 step << Mage
 	#era/som
     #completewith next
-	+请注意，你已选择了AOE攻略指南。AOE通常比单体法师难得多，但速度要快得多
+	+请注意，你已选择了A怪指南。法师A怪通常比单体输出难得多，但速度也要快得多
 step << Mage
 	#som
 	#phase 3-6
     #completewith next
-	+请注意你已选择了 AoE 指南。AoE 通常比单目标法师困难得多，但由于最近 SoM 中 100% 任务经验值的变化，也变得更慢了
+	+请注意，你已选择了 A怪指南。AOE通常比法师单体输出难得多，而且由于SoM近期的 100% 任务经验加成，A怪升级速度也变得更慢了
 step
     .goto The Barrens,52.2,31.8
 .target 图加·符文图腾
@@ -510,11 +510,11 @@ step
 >>与 |cRXP_FRIENDLY_麦伯克·米希瑞克斯|r 对话
     .accept 1069 >> 接受任务深苔蜘蛛的卵
 step
-    >>拾取箱子
+    >>拾取箱子中的物品
     .goto The Barrens,63.6,49.2
     .complete 888,2 --Telescopic Lens (1)
 step
-    >>拾取箱子
+    >>拾取箱子中的物品
     .goto The Barrens,62.6,49.6
 step
     #sticky
@@ -609,7 +609,7 @@ step
 >>与 |cRXP_FRIENDLY_瑟格拉·黑棘|r 对话
     .turnin 905 >>交任务  在迅猛龙的巢穴里
 .target 瑟格拉·黑棘
-    .accept 3261 >>接受任务 [DEPRECATED in 4.x] 乔恩·星眼
+    .accept 3261 >>接受任务 乔恩·星眼
 step
     .goto The Barrens,52.2,31.9
 >>与 |cRXP_FRIENDLY_图加·符文图腾|r 对话
@@ -709,11 +709,11 @@ RXPGuides.RegisterGuide([[
 #classic
 #tbc
 << Horde Mage
-#name 17-21级 石爪山脉/荒芜之地 AoE指南
+#name 17-21级 石爪山脉/荒芜之地 A怪指南
 #version 1
-#group RestedXP 部落法师 AOE攻略
+#group RestedXP 部落法师 A怪指南
 #defaultfor Horde Mage
-#next 21-30 银松森林/希尔斯布莱德 AoE
+#next 21-30级 银松森林/希尔斯布莱德 A怪指南
 
 step
     .goto Stonetalon Mountains,80.7,89.2,50,0
@@ -817,7 +817,7 @@ step
 step
     .goto The Barrens,44.9,59.1
 >>与 |cRXP_FRIENDLY_乔恩·星眼|r 对话
-    .turnin 3261 >>交任务  [DEPRECATED in 4.x] 乔恩·星眼
+    .turnin 3261 >>交任务  乔恩·星眼
 .target 乔恩·星眼
     .accept 882 >>接受任务 伊沙姆哈尔
 step
@@ -942,7 +942,7 @@ step
     .turnin 878 >>交任务  野猪人的内战
 .target 碎牙
     .accept 5052 >>接受任务 阿迦玛甘的血岩碎片
-    .turnin 5052 >>交任务阿迦玛甘的血岩碎片
+    .turnin 5052 >>交任务  阿迦玛甘的血岩碎片
 --N Different classes needing different buffs, e.g. need speed buff later for Mulgore run for classes that didnt get FP earlier
 step
     .goto The Barrens,44.8,59.1

@@ -3,7 +3,7 @@ RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
 #version 7
-#group RestedXP 《燃烧的远征》练级指南（联盟版）
+#group RestedXP 燃烧的远征 练级指南 (联盟)
 << Alliance
 #xprate <1.5
 #name 23-24级 湿地
@@ -764,11 +764,11 @@ RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
 #version 7
-#group RestedXP 《燃烧的远征》练级指南（联盟版）
+#group RestedXP 燃烧的远征 练级指南 (联盟)
 << Alliance
 #name 24-27级 赤脊山/暮色森林
 #subgroup RestedXP 联盟 20-32 级
-#next 27-30 湿地/希尔斯布莱德;28-30 Duskwood
+#next 27-30级 湿地/希尔斯布莱德;28-30 Duskwood
 
 step
     .goto Stormwind City,55.21,7.04
@@ -1015,7 +1015,7 @@ step << Shaman
     .target 牛顿·伯恩赛德
 step << !Human !Warlock
     .goto StormwindClassic,66.277,62.137
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
     .fp Stormwind >> 获取暴风城的飞行路径
     .target 杜加尔·朗德瑞克
 step
@@ -1620,7 +1620,7 @@ step << Rogue
     .target 马迪亚斯·肖尔大师
 step << Rogue
     .goto Stormwind City,66.27,62.12
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
     .fly Duskwood>> 飞往暮色森林
     .target 杜加尔·朗德瑞克
     .zoneskip Stormwind City,1
@@ -2705,7 +2705,7 @@ step
 .dungeon Stockades
     #completewith next
     .goto Stormwind City,66.27,62.12
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
     .fly Redridge >> 飞往赤脊山
     .target 杜加尔·朗德瑞克
 step
@@ -3082,12 +3082,12 @@ RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
 #version 7
-#group RestedXP 《燃烧的远征》练级指南（联盟版）
+#group RestedXP 燃烧的远征 练级指南 (联盟)
 << Alliance
 #xprate <1.5
-#name 27-30 湿地/希尔斯布莱德
+#name 27-30级 湿地/希尔斯布莱德
 #subgroup RestedXP 联盟 20-32 级
-#next 30-32 暮色森林/荆棘谷
+#next 30-32级 暮色森林/荆棘谷
 
 step
     .isQuestComplete 279
@@ -3862,10 +3862,10 @@ RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
 #version 7
-#group RestedXP 《燃烧的远征》练级指南（联盟版）
+#group RestedXP 燃烧的远征 练级指南 (联盟)
 << Alliance
 #xprate <1.5
-#name 30-32 暮色森林/荆棘谷
+#name 30-32级 暮色森林/荆棘谷
 #subgroup RestedXP 联盟 20-32 级
 #next 32-33级 闪光平原
 
@@ -5033,7 +5033,7 @@ step
 step
     .goto Wetlands,10.599,60.769
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_米克哈尔|r 对话
-    >>|cRXP_WARN_等待剧情演出完成|r
+    >>|cRXP_WARN_等剧情结束|r
     .turnin 1249 >> 交任务失踪的使节
     .target 米克哈尔
 step
@@ -5286,7 +5286,7 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #name 28-30 Duskwood
 #version 7
-#group RestedXP 《燃烧的远征》练级指南（联盟版）
+#group RestedXP 燃烧的远征 练级指南 (联盟)
 #subgroup RestedXP 联盟 20-32 级
 #next 30-32 Hillsbrad
 #xprate >1.49
@@ -5327,7 +5327,7 @@ step
     .target 埃林·提亚斯
 step
     .goto Stormwind City,66.27,62.12
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
     .fly Duskwood>> 飞往暮色森林
     .target 杜加尔·朗德瑞克
     .zoneskip Duskwood
@@ -5475,7 +5475,7 @@ step << Shaman
     .target 指挥官阿尔泰娅·埃伯洛克
 step << Shaman
     .goto Duskwood,72.53,46.85
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_书记员达尔塔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_书记员达尔塔|r 对话
     .turnin 80 >> 交任务斯塔文的传说
     .accept 97 >> 接受任务斯塔文的传说
     .target 书记员达尔塔
@@ -5655,7 +5655,7 @@ step
     .target 指挥官阿尔泰娅·埃伯洛克
 step << !Shaman
     .goto Duskwood,72.53,46.85
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_书记员达尔塔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_书记员达尔塔|r 对话
     .turnin 80 >> 交任务斯塔文的传说
     .accept 97 >> 接受任务斯塔文的传说
     .target 书记员达尔塔
@@ -5840,7 +5840,7 @@ step
     .goto Stormwind City,27.2,78.1,15 >> 进入屠宰场, 下楼
 step << Warlock
     .goto StormwindClassic,26.117,77.225
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
     .trainer >> 训练你的职业技能
     .target 厄苏拉·德林
 step << Warlock
@@ -6126,7 +6126,7 @@ RXPGuides.RegisterGuide([[
 #wotlk
 << Alliance
 #version 7
-#group RestedXP 《燃烧的远征》练级指南（联盟版）
+#group RestedXP 燃烧的远征 练级指南 (联盟)
 #subgroup RestedXP 联盟 20-32 级
 #name 30-32 Hillsbrad
 #next 32-33级 闪光平原
@@ -6176,7 +6176,7 @@ step
 step
     .goto Wetlands,10.599,60.769
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_米克哈尔|r 对话
-    >>|cRXP_WARN_等待剧情演出完成|r
+    >>|cRXP_WARN_等剧情结束|r
     .turnin 1249 >> 交任务失踪的使节
     .target 米克哈尔
 step

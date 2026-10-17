@@ -9,7 +9,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 15-19级 贫瘠之地
 #version 1
-#group RestedXP 生存指南 (部落版)
+#group RestedXP 生存指南 (部落)
 #subgroup RXP 生存指南 1-20级
 #next 19-23级 石爪山脉/贫瘠之地/灰谷
 
@@ -1429,14 +1429,14 @@ step << Warlock
     .xp <18,1
 step << Warlock
     .goto Orgrimmar,47.54,46.75
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_库古尔|r 对话并购买 |T133738:0|t[牺牲魔典]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_库古尔|r 对话，购买 |T133738:0|t[牺牲魔典]
     .collect 16351,1,896,1 --Grimoire of Sacrifice (Rank 1) (1)
     .target 库古尔
     .xp <16,1
     .xp >18,1
 step << Warlock
     .goto Orgrimmar,47.54,46.75
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 库古尔|cRXP_FRIENDLY_ 对话，购买 |T133738:0|t[火焰箭典籍(等级 3)]|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 库古尔|cRXP_FRIENDLY_ 对话，并购买 |T133738:0|t[火焰箭典籍(等级 3)]|r
     .collect 16316,1,896,1 --Grimoire of Firebolt (Rank 3) (Rank 1) (1)
     .target 库古尔
     .xp <18,1
@@ -2059,7 +2059,7 @@ step
     .target 图加·符文图腾
     .goto The Barrens,52.26,31.93
     .turnin 905 >>交任务  在迅猛龙的巢穴里
-    .accept 3261 >>接受任务 [DEPRECATED in 4.x] 乔恩·星眼
+    .accept 3261 >>接受任务 乔恩·星眼
     .target 瑟格拉·黑棘
     .goto The Barrens,52.24,31.01
     .turnin 3281 >>交任务  被偷走的银币
@@ -2116,9 +2116,9 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 19-23级 石爪山脉/贫瘠之地/灰谷
 #version 1
-#group RestedXP 生存指南 (部落版)
+#group RestedXP 生存指南 (部落)
 #subgroup RXP 生存指南 1-20级
-#next 23-25 希尔斯布莱德
+#next 23-25级 希尔斯布莱德
 
 step
     #optional
@@ -2471,7 +2471,7 @@ step
 step
     .goto The Barrens,44.85,59.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔恩·星眼|r 对话
-    .turnin 3261 >>交任务  [DEPRECATED in 4.x] 乔恩·星眼
+    .turnin 3261 >>交任务  乔恩·星眼
     .accept 882 >>接受任务 伊沙姆哈尔
     .target 乔恩·星眼
 step
@@ -3129,7 +3129,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_碎牙|r 对话
     .turnin 878 >>交任务  野猪人的内战
     .accept 5052 >>接受任务 阿迦玛甘的血岩碎片
-    .turnin 5052 >>交任务阿迦玛甘的血岩碎片
+    .turnin 5052 >>交任务  阿迦玛甘的血岩碎片
     .target 碎牙
     .addquestitem 5075,5052
 step
@@ -4489,7 +4489,7 @@ step
     .goto Ashenvale,12.06,34.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_穆格拉什|r 对话
     >>|cRXP_WARN_这将开始一个护送任务。小心，任务难度较高|r
-    .accept 6641,1 >> 接受任务 鞭笞者沃尔沙
+    .accept 6641,1 >> 接受任务鞭笞者沃尔沙
     .target 穆格拉什
     .group 2
 step
@@ -4610,7 +4610,7 @@ step
 step
     .goto Ashenvale,11.56,34.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_耶努萨克雷|r 对话
-    .turnin 6563 >>交任务  阿库麦尔的精华
+    .turnin 6563 >>交任务阿库麦尔的精华
     .turnin 6564 >>交任务  上古之神的仆从
     .target 耶努萨克雷
     .group

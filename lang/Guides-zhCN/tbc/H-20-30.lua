@@ -2,12 +2,12 @@ if GetLocale() ~= "zhCN" then return end
 RXPGuides.RegisterGuide([[
 #tbc
 #version 7
-#group RestedXP 《燃烧的远征》升级指南（部落版）
+#group RestedXP 燃烧的远征 练级指南 (部落)
 << Horde !Shaman
 #name 20-23 Stonetalon/The Barrens
 #version 7
 #subgroup RestedXP 部落 1-30级
-#next 23-25 级 希尔斯布莱德丘陵
+#next 23-25级 希尔斯布莱德丘陵
 
 step
     #completewith MeetingTW
@@ -3272,9 +3272,9 @@ step
 RXPGuides.RegisterGuide([[
 #tbc
 #version 7
-#group RestedXP 《燃烧的远征》升级指南（部落版）
+#group RestedXP 燃烧的远征 练级指南 (部落)
 << Horde
-#name 23-25 级 希尔斯布莱德丘陵
+#name 23-25级 希尔斯布莱德丘陵
 #version 7
 #subgroup RestedXP 部落 1-30级
 #next 25-27级 灰谷
@@ -4711,7 +4711,7 @@ step
 RXPGuides.RegisterGuide([[
 #tbc
 #version 7
-#group RestedXP 《燃烧的远征》升级指南（部落版）
+#group RestedXP 燃烧的远征 练级指南 (部落)
 << Horde
 #name 25-27级 灰谷
 #version 7
@@ -5500,7 +5500,7 @@ step
 RXPGuides.RegisterGuide([[
 #tbc
 #version 7
-#group RestedXP 《燃烧的远征》升级指南（部落版）
+#group RestedXP 燃烧的远征 练级指南 (部落)
 << Horde
 #name 27-30 South Barrens/Thousand Needles
 #version 7

@@ -3,9 +3,9 @@ RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
 #version 7
-#group RestedXP 《燃烧的远征》练级指南（联盟版）
+#group RestedXP 燃烧的远征 练级指南 (联盟)
 << Alliance
-#name 1-12 秘蓝岛
+#name 1-12级 秘蓝岛
 #subgroup RestedXP 联盟 1-20 级
 #defaultfor Draenei
 #next 12-20 秘蓝岛 (德莱尼)
@@ -961,7 +961,7 @@ step
     .timer 73,间谍之树剧情表演
     .use 23792
 step
-    >>|cRXP_WARN_等待剧情演出完成|r
+    >>|cRXP_WARN_等剧情结束|r
     .complete 9531,1 -- The Traitor Uncovered
 step
     +|cRXP_WARN_点掉|r |T132288:0|t[大树伪装] |cRXP_WARN_buff|r
@@ -1493,7 +1493,7 @@ RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
 #version 7
-#group RestedXP 《燃烧的远征》练级指南（联盟版）
+#group RestedXP 燃烧的远征 练级指南 (联盟)
 << Alliance
 #name 12-20 秘蓝岛 (德莱尼)
 #subgroup RestedXP 联盟 1-20 级
@@ -4019,7 +4019,7 @@ RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
 #version 7
-#group RestedXP 《燃烧的远征》练级指南（联盟版）
+#group RestedXP 燃烧的远征 练级指南 (联盟)
 << Alliance
 #xprate <1.5
 #name 20-21 黑海岸 (德莱尼)
@@ -4420,7 +4420,7 @@ RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
 #version 7
-#group RestedXP 《燃烧的远征》练级指南（联盟版）
+#group RestedXP 燃烧的远征 练级指南 (联盟)
 << Alliance
 #name 21-23 灰谷 (德莱尼)
 #subgroup RestedXP 联盟 20-32 级

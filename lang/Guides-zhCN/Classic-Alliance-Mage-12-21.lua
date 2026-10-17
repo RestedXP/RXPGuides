@@ -6,11 +6,11 @@ RXPGuides.RegisterGuide([[
 #classic
 #tbc
 << Alliance Mage
-#name 12-18 黑海岸 法师 AoE攻略
+#name 12-18级 黑海岸 法师 A怪指南
 #version 1
 #group RestedXP 联盟 法师
 #defaultfor Alliance Mage
-#next 18-21 赤脊山 法师 AoE攻略
+#next 18-21级 赤脊山 法师 A怪指南
 
 step
     #completewith next
@@ -801,11 +801,11 @@ RXPGuides.RegisterGuide([[
 #classic
 #tbc
 << Alliance Mage
-#name 18-21 赤脊山 法师 AoE攻略
+#name 18-21级 赤脊山 法师 A怪指南
 #version 1
 #group RestedXP 联盟 法师
 #defaultfor Alliance Mage
-#next 21-22 暮色森林 法师 AoE攻略
+#next 21-22级 暮色森林 法师 A怪指南
 
 step
     #sticky
@@ -948,7 +948,7 @@ step
     #completewith hsLakeshire
     #label WFFP
     .goto Westfall,56.55,52.65
-    .fp Westfall >> 开启西部荒野的飞行路径 << Gnome
+    .fp Westfall >> 解锁西部荒野飞行路线 << Gnome
     .fly Redridge >> 飞往 Redridge
 step
     #requires WFFP

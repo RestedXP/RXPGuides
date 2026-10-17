@@ -2,9 +2,9 @@ if GetLocale() ~= "zhCN" then return end
 RXPGuides.RegisterGuide([[
 #tbc
 #version 7
-#group RestedXP 《燃烧的远征》升级指南（部落版）
+#group RestedXP 燃烧的远征 练级指南 (部落)
 << Horde
-#name 1-6 杜隆塔尔
+#name 1-6级 杜隆塔尔
 #displayname 1-7级 杜隆塔尔 << Orc !Warrior !Hunter !Shaman !Warlock/Troll !Warrior !Hunter !Shaman
 #displayname 1-8 Durotar << Orc Warrior/Troll Warrior
 #version 7
@@ -1778,7 +1778,7 @@ step << !Shaman !Hunter !Warlock
 RXPGuides.RegisterGuide([[
 #tbc
 #version 7
-#group RestedXP 《燃烧的远征》升级指南（部落版）
+#group RestedXP 燃烧的远征 练级指南 (部落)
 << Horde
 #name 6-10 杜隆塔尔
 #version 7
@@ -3643,13 +3643,13 @@ step << Paladin
 RXPGuides.RegisterGuide([[
 #tbc
 #version 7
-#group RestedXP 《燃烧的远征》升级指南（部落版）
+#group RestedXP 燃烧的远征 练级指南 (部落)
 << Horde
 #name 10-13 杜隆塔尔
 #version 7
 #subgroup RestedXP 部落 1-30级
 #defaultfor Shaman !Tauren
-#next 13-18 贫瘠之地
+#next 13-18级 贫瘠之地
 
 
 step << Warrior/Shaman
@@ -3731,7 +3731,7 @@ step << !Tauren
     #softcore
     #completewith Xroads1
     .goto The Barrens,50.72,32.61
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
     .subzoneskip 380
 step << !Tauren
     #hardcore
@@ -3821,7 +3821,7 @@ step << !Tauren
     #xprate <1.5
     #softcore
     #completewith PoolsTurnin
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
 step << !Tauren
     #xprate <1.5
     #label FungalSporesComplete
@@ -4187,7 +4187,7 @@ step
     #softcore
     #completewith FizzleKill
     .goto Durotar,47.05,17.58
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
 step
     #hardcore
     #completewith FizzleKill
@@ -4437,7 +4437,7 @@ step
 step
     #softcore
     #completewith next
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
     .isQuestComplete 813 --don't want ress sickness if more Scorpids need to get killed before entering ORG
 step
     #hardcore
@@ -4508,7 +4508,7 @@ step
     #softcore
     #completewith FoundtheCure
     .goto Durotar,47.05,17.58
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
 step
     #label FoundtheCure
     .goto Durotar,41.54,18.59
