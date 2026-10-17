@@ -210,7 +210,7 @@ step
     .goto 47,75.56,45.37,8,0
     .goto 47,75.83,45.26
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com [Name] dentro da casa
-    .turnin 26654 >>Entregue Devolva o Pente
+    .turnin 26654 >>Entregue Devolver o Pente
     .accept 26655 >>Aceite Entregue a Linha
 	.target Madame Eva
 step

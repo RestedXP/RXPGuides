@@ -470,7 +470,7 @@ step
     #xprate <1.2
     #completewith next
     .goto 18,44.49,53.85,3,0
-    .goto 18,44.63,53.75,3 >> Suba
+    .goto 18,44.63,53.75,3 >> Suba as escadas
 step
     #xprate <1.2
     .goto 18,44.75,53.65
@@ -568,7 +568,7 @@ step
     #xprate <1.2
     #completewith MurlocDelivery
     .goto 18,44.49,53.85,3,0
-    .goto 18,44.63,53.75,3 >> Suba
+    .goto 18,44.63,53.75,3 >> Suba as escadas
 step
     #xprate <1.2
     .goto 18,44.75,53.65
@@ -677,7 +677,7 @@ step << Undead
 step << !Undead
     #completewith SilvermoonPort
     .goto 18,66.21,1.16,20,0
-    .zone Undercity >>Vá para Undercity
+    .zone Undercity >>Vá à Cidade Baixa
 step
     #label SilvermoonPort
     .goto 1420/0,269.10001,1804.59998,15,0

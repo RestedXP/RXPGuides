@@ -80,7 +80,7 @@ step
     .goto Silverpine Forest,45.6,42.6,-1
     .goto Hillsbrad Foothills,21.0,46.2,-1
     >>Viaje para Contraforte de Eira dos Montes. Se você estiver perto da borda, então vá lá a cavalo - caso contrário, volte para The Sepulcher e voe para Tarren Moinho
-    .fly Tarren Mill >> Voe para Tarren Moinho
+    .fly Tarren Mill >> Voe para Serraria Tarren
     .zoneskip Hillsbrad Foothills
     .skill herbalism,150,1
 step

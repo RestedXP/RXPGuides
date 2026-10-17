@@ -379,7 +379,7 @@ step << Hunter Cata
     .xp <6,1
 step
     .goto 7,47.15,56.67
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Maur|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mauren Temível Totem|r
     .accept 26188 >>Aceite Mazzranache
     .target Maur Raincaller
     .xp <6,1
@@ -590,7 +590,7 @@ step
     .target Maur Raincaller
 step
     .goto 7,47.15,56.67
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Maur|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mauren Temível Totem|r
     .accept 26188 >>Aceite Mazzranache
     .target Maur Raincaller
 step << Hunter Cata
@@ -899,7 +899,7 @@ step << Paladin Cata
     .target Sunwalker Iopi
 step
     .goto 7,47.16,56.65
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Maur|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mauren Temível Totem|r
     .turnin 26188 >>Entregue Mazzranache
     .target Maur Raincaller
 step << Hunter Cata

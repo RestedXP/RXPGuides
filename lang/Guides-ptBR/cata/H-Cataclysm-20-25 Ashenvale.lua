@@ -288,7 +288,7 @@ step
     .isQuestTurnedIn 13712
 step
     #completewith next
-    .subzone 431 >>Viaje para Posto Machadada
+    .subzone 431 >>Vá até o Posto Machadada
     .isQuestAvailable 13712
 step
     .goto 63,73.19,61.60
@@ -472,7 +472,7 @@ step
     .maxlevel 24
 step << skip
     #completewith next
-    .hs >> Vá para Posto Machadada
+    .hs >> Use a Pedra de Regresso para voltar ao Posto Machadada
     .use 6948
     .subzoneskip 431
     --Need hearth cd for zoram strand
@@ -1115,7 +1115,7 @@ step
 step
     .goto 63,38.89,42.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mitsuwa|r
-    .turnin 6462 >>Entregue Patuá Trolls
+    .turnin 6462 >>Entregue Patuá troll
     .target Mitsuwa
 step
     .goto 63,38.47,44.22
@@ -1386,7 +1386,7 @@ step
     .target Foreman Jinx
 step
     #completewith KillAssassins
-    >>Mate o |cRXP_ENEMY_Ursangous|r. Saque-o para obter o |T132941:0|t[|cRXP_LOOT_Ursangous's Paw|r] e use-o para iniciar a missão.
+    >>Mate |cRXP_ENEMY_Ursangous|r. Pegue a |T132941:0|t[|cRXP_LOOT_Pata de Ursangous|r] e use-a para iniciar a missão
     >>|cRXP_WARN_Ele patrulha um pouco pela área|r
     .collect 16303,1,23 --Collect Ursangous's Paw (x1)
     .accept 23 >> Aceite Pata de Ursangous
@@ -1434,7 +1434,7 @@ step
     .waypoint 1440/1,-597.40002,2149.40015,30,0
     .waypoint 1440/1,-653.40002,2121.30005,30,0
     .waypoint 1440/1,-693.90002,2149.00000,30,0
-    >>Mate o |cRXP_ENEMY_Ursangous|r. Saque-o para obter o |T132941:0|t[|cRXP_LOOT_Ursangous's Paw|r] e use-o para iniciar a missão.
+    >>Mate |cRXP_ENEMY_Ursangous|r. Pegue a |T132941:0|t[|cRXP_LOOT_Pata de Ursangous|r] e use-a para iniciar a missão
     >>|cRXP_WARN_Ele patrulha um pouco pela área|r
     .collect 16303,1,23 --Collect Ursangous's Paw (x1)
     .accept 23 >> Aceite Pata de Ursangous
@@ -1529,7 +1529,7 @@ step
     .goto 63,74.19,60.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mastok Wrilehiss|r
     .accept 1918 >>Aceite O Elemento Conspurcado
-    .turnin 1918 >>Entregue O Elemento Conspurcado
+    .turnin 1918 >>Entregue O elemento conspurcado
     .target Mastok Wrilehiss
     .itemcount 16408,1
 step
@@ -1661,7 +1661,7 @@ step
     .isQuestTurnedIn 13841
 step
     #questguide
-    .hs >> Use sua Pedra de Retorno para ir a Orgrimmar
+    .hs >> Use sua Pedra de Regresso para Orgrimmar
     .use 6948
     .cooldown item,6948,>2
     .zoneskip Orgrimmar

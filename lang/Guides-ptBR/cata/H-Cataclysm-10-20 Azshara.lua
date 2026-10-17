@@ -2550,7 +2550,7 @@ step << Undead !Warlock
 step << BloodElf !Warlock
     #completewith SilvermoonPort
     .goto 18,66.21,1.16,20,0
-    .zone Undercity >>Vá para Undercity
+    .zone Undercity >>Vá à Cidade Baixa
 step << BloodElf !Warlock
     #label SilvermoonPort
     .goto 1420/0,269.10001,1804.59998,15,0
@@ -2606,7 +2606,7 @@ step << Paladin Cata
 step << !Orc !Goblin !Warlock !Paladin
     #optional
     #completewith FlyValormok
-    .hs >>Use sua Pedra de Retorno para ir a Orgrimmar
+    .hs >>Use sua Pedra de Regresso para Orgrimmar
     .use 6948
     .zoneskip Azshara
     .zoneskip Orgrimmar

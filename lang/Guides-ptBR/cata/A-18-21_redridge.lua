@@ -1596,7 +1596,7 @@ step << Human
     #completewith Duskwood
     .goto 37,81.829,66.556
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gus, o Veloz|r
-    .fly Darkshire >> Voe para Darkshire
+    .fly Darkshire >> Voe para Vila Sombria
     .target Goss the Swift
     .zoneskip 37,1
 step
@@ -1605,7 +1605,7 @@ step
     #completewith Duskwood
     .goto 49,52.920,54.640
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Arlen Marsters|r
-    .fly Darkshire >> Voe para Darkshire
+    .fly Darkshire >> Voe para Vila Sombria
 	.target Arlen Marsters
     .isQuestAvailable 26646
     .skill riding,<75,1 << Human

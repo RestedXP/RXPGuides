@@ -144,7 +144,7 @@ step
     .goto 378,60.48,18.85,5,0
     .goto 378,60.20,18.89,5,0
     .goto 378,59.98,18.69,5,0
-	.goto 378,60.46,19.60,8 >>Suba
+	.goto 378,60.46,19.60,8 >>Suba as escadas
     >>|cRXP_WARN_pegar o atalho para cima pulando pela lacuna|r
 step
     .goto 378,59.95,20.39

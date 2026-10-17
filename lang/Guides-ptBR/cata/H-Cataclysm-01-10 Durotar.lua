@@ -1532,7 +1532,7 @@ step << Mage Cata/Priest Cata/Warlock Cata
     #completewith next
     .goto 1411,56.59,73.25,10,0
     .goto 1411,56.50,72.90,10,0
-    .goto 1411,56.33,73.28,10 >> Suba
+    .goto 1411,56.33,73.28,10 >> Suba as escadas
 step << Mage Cata
     .goto 1411,56.37,73.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Bomsanchu|r no andar superior

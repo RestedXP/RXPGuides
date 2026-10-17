@@ -271,7 +271,7 @@ step
     #completewith next
     .goto Eversong Woods,39.44,21.16,10,0
     .goto Eversong Woods,39.44,20.35,10,0
-    .goto Eversong Woods,39.10,20.04,10 >>Suba
+    .goto Eversong Woods,39.10,20.04,10 >>Suba as escadas
 step
     .goto Eversong Woods,38.97,20.26
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Vigia da Nascente Solanian|r
@@ -437,7 +437,7 @@ step
     #completewith next
     .goto Eversong Woods,39.44,21.16,10,0
     .goto Eversong Woods,39.44,20.35,10,0
-    .goto Eversong Woods,39.10,20.04,10 >>Suba
+    .goto Eversong Woods,39.10,20.04,10 >>Suba as escadas
 step
     #label SolanianB
     .goto Eversong Woods,38.97,20.26
@@ -745,7 +745,7 @@ step << Mage Cata/Warlock Cata/Priest Cata
     #completewith next
     .goto Eversong Woods,48.286,47.097,8,0
     .goto Eversong Woods,48.054,47.130,8,0
-    .goto Eversong Woods,48.074,47.354,8 >>Suba
+    .goto Eversong Woods,48.074,47.354,8 >>Suba as escadas
 step << Priest Cata
     .goto Eversong Woods,47.85,47.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ponaris|r
@@ -942,7 +942,7 @@ step
     .target Velan Brightoak
 step
     #completewith next
-    .goto Eversong Woods,43.61,70.66,10 >>Suba
+    .goto Eversong Woods,43.61,70.66,10 >>Suba as escadas
 step
     .goto Eversong Woods,43.34,70.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Patrulheiro Degolien|r
@@ -1344,7 +1344,7 @@ step << Mage Cata/Warlock Cata/Priest Cata
     #completewith next
     .goto Eversong Woods,48.286,47.097,8,0
     .goto Eversong Woods,48.054,47.130,8,0
-    .goto Eversong Woods,48.074,47.354,8 >>Suba
+    .goto Eversong Woods,48.074,47.354,8 >>Suba as escadas
 step << Priest Cata
     .goto Eversong Woods,47.85,47.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ponaris|r

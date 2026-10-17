@@ -827,7 +827,7 @@ step
     #completewith Ashley
     #requires ChildrenHouse2
     .goto 179,27.90,66.12,3,0
-    .goto 179,28.19,66.32,3 >>Suba
+    .goto 179,28.19,66.32,3 >>Suba as escadas
 step
     #label Ashley
     .goto 179,27.88,66.66
