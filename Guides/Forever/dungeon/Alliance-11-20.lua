@@ -3579,7 +3579,7 @@ RXPGuides.RegisterGuide([[
 #subgroup Dungeon Guide 1-20
 --#groupid RXP-SRGCE-A1
 #name 20-21 Darkshore/Ashenvale
-#next 21-23 Ashenvale/Stonetalon
+#next RestedXP Forever Dungeon Guide (A)\21-23 Ashenvale/Stonetalon
 
 step << Druid
     #completewith catspirit1
