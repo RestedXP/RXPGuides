@@ -1269,8 +1269,12 @@ step << Paladin
     .target Arthur the Faithful
 step
     #optional
-    .abandon 153 >> Abandon Red Leather Bandanas
-
+    #sticky
+    .abandon 153 >> Abandon Red Leather Bandanas if you did not finish it
+step
+    #optional
+    #sticky
+    .abandon 92744 >> Abandon Murloc Gills if you did not finish it
 step
     #optional
     #label endOfTheGuide
@@ -3275,22 +3279,16 @@ step << !Druid
     >>Click the |cRXP_PICK_Burned-Out Remains|r on the ground
     .accept 79008 >> Accept ...and that note you found
 step
-    #completewith next
+    #completewith RSB
     .goto 1436/0,1045.12,-10508.80,100 >> Travel to Sentinel Hill
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r and |cRXP_FRIENDLY_Scout Riell|r atop the Tower
-    .turnin 166 >> Turn in The Defias Brotherhood
-    .target +Gryan Stoutmantle
-    .goto 1436/0,1045.12,-10508.80
-    .turnin 214 >> Turn in Red Silk Bandanas
-    .goto 1436/0,1033.22,-10504.83
-    .target +Scout Riell
-step
+    .isQuestComplete 166
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
     .turnin 166 >> Turn in The Defias Brotherhood
     .target Gryan Stoutmantle
     .goto 1436/0,1045.12,-10508.80
 step
+    #label RSB
     .isQuestComplete 214
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scout Riell|r atop the tower
     .turnin 214 >> Turn in Red Silk Bandanas
@@ -3684,12 +3682,6 @@ step << Druid
     .fly Darkshore >> Fly to Darkshore
     .target Vesprystus
     .zoneskip Darkshore
-step << Warlock
-    .goto 1439/1,515.55,6406.32
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shaussiy|r downstairs
-    .home >> Set your Hearthstone to Auberdine
-    .target Innkeeper Shaussiy
-    .bindlocation 442
 step
     .goto 1439,37.322,43.640
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Barithras Moonshade|r
