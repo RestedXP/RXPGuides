@@ -18206,7 +18206,7 @@ step
     .mob Worgen Descontrolado
 step
     #completewith Market Homes6
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClique em |cRXP_PICK_Caixotes|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClique nos |cRXP_PICK_Caixotes|r
     .complete 14094,1 --Salvaged Supplies (4)
 step
     #completewith next
@@ -18278,7 +18278,7 @@ step
     .complete 14093,1 --Rampaging Worgen slain (6)
     .mob Worgen Descontrolado
 step
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClique em |cRXP_PICK_Caixotes|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClique nos |cRXP_PICK_Caixotes|r
     .complete 14094,1 --Salvaged Supplies (4)
 step
     #label Rampaging Worgen
