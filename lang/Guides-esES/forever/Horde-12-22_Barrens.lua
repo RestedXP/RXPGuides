@@ -3098,7 +3098,7 @@ step
     .goto 1442/1,-774.61,-5.17,40,0
     .goto 1442/1,-774.61,-27.96,40,0
     .goto 1442/1,-726.27,-39.36,40,0
-    >>Mata a los |cRXP_ENEMY_Grimtotem Ruffians|r y a los |cRXP_ENEMY_Grimtotem [DEPRECATED]Mercenarios|r
+    >>Mata a los |cRXP_ENEMY_Grimtotem Ruffians|r y a los |cRXP_ENEMY_Grimtotem Mercenarios|r
     .complete 6548,1 --Kill Grimtotem Ruffian (x8)
     .mob +Grimtotem Ruffian
     .complete 6548,2 --Kill Grimtotem Mercenary (x6)

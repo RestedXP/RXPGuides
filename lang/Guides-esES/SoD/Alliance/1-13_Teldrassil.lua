@@ -1571,7 +1571,7 @@ step << Hunter
 	#xprate <1.5
     #sticky
     #label xp10
-    .xp 10-2670 >> Mata enemigos hasta que te falten 2670 xp para el nivel 10 (3830/6500)
+    .xp 10-2670 >> Grindea hasta que te falten 2670 xp para el nivel 10 (3830/6500)
     >>|cRXP_WARN_Una vez que llegues a este punto de ruptura de experiencia, omite la misión de arpías/escolta y ve directamente a Darnassus. Tendrás otra oportunidad para completar esas misiones más tarde|r
 step << Hunter
 	#xprate <1.5

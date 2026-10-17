@@ -3342,7 +3342,7 @@ step << Warrior/Shaman
     #xprate >1.49
     #softcore
     .goto Durotar,47.04,17.58
-    .deathskip >> Muere y reaparece en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
+    .deathskip >> Muere y resucita en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
     .isQuestComplete 806
 step << Warrior/Shaman
     #xprate >1.49
@@ -3486,7 +3486,7 @@ step << Warrior/Shaman/Hunter
     #xprate <1.5 << Shaman/Warrior
     #softcore
     .goto Durotar,47.04,17.58
-    .deathskip >> Muere y reaparece en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
+    .deathskip >> Muere y resucita en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
     .isQuestComplete 806
 step << Warrior/Shaman/Hunter
     #xprate <1.5 << Shaman/Warrior
@@ -3497,7 +3497,7 @@ step << !Warrior !Shaman !Hunter
     #xprate >1.49
     #softcore
     .goto Durotar,47.04,17.58
-    .deathskip >> Muere y reaparece en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
+    .deathskip >> Muere y resucita en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
     .isQuestComplete 806
 step << !Warrior !Shaman !Hunter
     #xprate >1.49
@@ -3818,7 +3818,7 @@ step << Warrior/Shaman
 step << Warrior/Shaman
     #softcore
     #completewith next
-    .deathskip >> Muere y reaparece en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
+    .deathskip >> Muere y resucita en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
 step << Warrior/Shaman
     #label PoolsPickup
     .goto The Barrens,52.26,31.93
@@ -3899,7 +3899,7 @@ step << Warrior/Shaman
 step << Warrior/Shaman
     #softcore
     #completewith next
-    .deathskip >> Muere y reaparece en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
+    .deathskip >> Muere y resucita en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
 step << Warrior/Shaman
     #label FungalSporesComplete
     .goto The Barrens,51.44,30.15
@@ -4860,7 +4860,7 @@ step
     #xprate <1.5
     #softcore
     #completewith SecuringLinesTurnIn
-    .deathskip >> Muere y reaparece en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
+    .deathskip >> Muere y resucita en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
     .isQuestComplete 813 << Warrior/Shaman/Hunter
 step
     #xprate <1.5
@@ -4941,14 +4941,14 @@ step << Rogue
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.3
 step << Troll Priest
     .goto Orgrimmar,35.59,87.80
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ur'kyo|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con|r |cRXP_FRIENDLY_Ur'kyo|r
     .turnin 5654 >> Entrega la misión Maleficio de Debilidad
     .trainer >> Aprende tus hechizos de clase
     .target Ur'kyo
     .isOnQuest 5654
 step << Troll Priest
     .goto Orgrimmar,35.59,87.80
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ur'kyo|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con|r |cRXP_FRIENDLY_Ur'kyo|r
     .turnin 5652 >> Entrega la misión Maleficio de Debilidad
     .trainer >> Aprende tus hechizos de clase
     .target Ur'kyo
@@ -5544,7 +5544,7 @@ step
     #optional
     #softcore
     #completewith ProofofDemiseTurnin
-    .deathskip >> Muere y reaparece en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
+    .deathskip >> Muere y resucita en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
     .isQuestComplete 427
 step
     #optional
@@ -6072,7 +6072,7 @@ step
     #optional
     #softcore
     #completewith MillsTurnin
-    .deathskip >> Muere y reaparece en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
+    .deathskip >> Muere y resucita en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
 step
     #optional
     #hardcore
@@ -6640,7 +6640,7 @@ step << skip --Warrior
 step << Warrior
     #softcore
     #completewith next
-    .deathskip >> Muere y reaparece en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
+    .deathskip >> Muere y resucita en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
 step << Warrior
     #hardcore
     #completewith next
@@ -9723,7 +9723,7 @@ step
     #xprate <2.1
     #softcore
     .goto Durotar,47.04,17.58
-    .deathskip >> Muere y reaparece en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
+    .deathskip >> Muere y resucita en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
     .isQuestComplete 806
 step
     #xprate <2.1
@@ -9849,7 +9849,7 @@ step
     #softcore
     #completewith
     .goto The Barrens,50.72,32.61
-    .deathskip >> Muere y reaparece en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
+    .deathskip >> Muere y resucita en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
     .subzoneskip 380
 step
     #xprate >2.09
@@ -9940,14 +9940,14 @@ step << Warlock/Hunter/Rogue/Priest/Warrior
     .zoneskip Orgrimmar
 step << Troll Priest
     .goto Orgrimmar,35.59,87.80
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ur'kyo|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con|r |cRXP_FRIENDLY_Ur'kyo|r
     .turnin 5654 >>Entrega la misión Maleficio de Debilidad
     .trainer >>Aprende tus hechizos de clase
     .target Ur'kyo
     .isOnQuest 5654
 step << Troll Priest
     .goto Orgrimmar,35.59,87.80
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ur'kyo|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con|r |cRXP_FRIENDLY_Ur'kyo|r
     .turnin 5652 >>Entrega la misión Maleficio de Debilidad
     .trainer >>Aprende tus hechizos de clase
     .target Ur'kyo

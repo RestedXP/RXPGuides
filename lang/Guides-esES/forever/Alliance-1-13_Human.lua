@@ -2684,7 +2684,7 @@ step << Warrior
     #optional
     .goto 1429/0,109.36,-9461.84
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Lyria Du Lac|r
-    >>|cRXP_WARN_No aprendas habilidades, ya que necesitas ahorrar dinero para más adelante|r
+    >>|cRXP_WARN_No entrenes, ya que necesitas ahorrar dinero para más adelante|r
     .accept 1638 >> Acepta la misión Instrucción de guerrero
     .target Lyria Du Lac
 step << Paladin

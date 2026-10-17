@@ -3317,7 +3317,7 @@ step << skip --logout skip
     #label MushroomLS
     #completewith CavetoAuber
     .goto 1439,54.964,34.536
-    .goto 1439,41.705,36.507,20 >>|cRXP_WARN_Salta encima de la roca en el piso superior dentro de la cueva. Posiciona tu personaje hasta que parezca que está flotando, luego realiza un Logout Skip desconectando y volviendo a entrar|r
+    .goto 1439,41.705,36.507,20 >>|cRXP_WARN_Salta en la cima de la roca en el piso superior dentro de la cueva. Posiciona tu personaje hasta que parezca que está flotando, luego realiza un Logout Skip desconectando y volviendo a entrar|r
 step
     #completewith CavetoAuber
     >>Mata |cRXP_ENEMY_Volantones zancudo del bosque|r. Despójalos para obtener su |cRXP_LOOT_Carne de zancudo|r
@@ -3406,7 +3406,7 @@ step
     .target Sentinel Glynda Nal'Shea
 step
     .goto 1439/1,467.08,6409.38
-    >>|cRXP_WARN_Usa el|r |T133748:0|t[Cuenco de purificación vacío] |cRXP_WARN_en el pozo lunar de Auberdine|r
+    >>|cRXP_WARN_Usa el|r |T133748:0|t[Cuenco de purificación vacío] |cRXP_WARN_en la Poza de la Luna de Auberdine|r
     .collect 12347,1,4763,1 --Filled Cleansing Bowl (1)
     .use 12346
     .isOnQuest 4763
@@ -4392,7 +4392,7 @@ step
     >>|cRXP_WARN_Esta misión es MUY difícil|r
     *Solo usa ataques a distancia mientras huyes de él, evita estar en rango de cuerpo a cuerpo << Druid
     >>|cRXP_WARN_Intenta hacer esta misión si puedes ya que te ahorrarás tiempo después porque ofrece|r |T134797:0|t[Elixires de Respiración acuática] |cRXP_WARN_para misiones submarinas después|r << !Druid !Warlock !Shaman
-    >>|cRXP_WARN_Usa|r |T136100:0|t[Raíces enredadoras] |cRXP_WARN_en él cuando se vuelva hostil, luego crea distancia y kitea usando hechizos de lanzamiento instantáneo|r << Druid
+    >>|cRXP_WARN_Usa|r |T136100:0|t[Raíces enredadoras] |cRXP_WARN_en él cuando se vuelva hostil, luego crea distancia y "kitea" usando hechizos de lanzamiento instantáneo|r << Druid
     >>|cRXP_WARN_Si no puedes matar a |cRXP_ENEMY_El Trillomajareitor 4100|r, omite este paso|r
     .complete 2078,1 --Gyromast's Revenge (1)
     .link https://youtu.be/1WRRmKYBr9s >> |cRXP_WARN_Haz clic aquí para una guía en video|r

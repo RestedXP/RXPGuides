@@ -798,7 +798,7 @@ step << Hunter
     #era
     #sticky
     #label xp10
-    .xp 10-2670 >> Grindea hasta que te falten 2670 xp para el nivel 10 (3830/6500)
+    .xp 10-2670 >> Mata enemigos hasta que te falten 2670 xp para el nivel 10 (3830/6500)
     >>|cRXP_WARN_Una vez que llegues a este punto de ruptura de experiencia, omite la misión de harpías/escolta y ve directamente a Darnassus. Tendrás otra oportunidad para completar esas misiones más tarde|r
 step << Hunter skip
     #era/som--xpgate
@@ -905,7 +905,7 @@ step << Druid
 	.zoneskip Moonglade
 step << Druid
     .goto Moonglade,56.21,30.64
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Dendrita Rafagaestelar|r subiendo las escaleras
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Dendrita Rafagaestelar|r arriba
     .turnin 5921 >> Entrega la misión Claro de la Luna
     .target Dendrite Starblaze
     .accept 5929 >> Acepta la misión Espíritu del gran oso
@@ -922,7 +922,7 @@ step << Druid
     >>|cRXP_WARN_Esto te hará regresar más rápido|r
 step << Druid
     .goto Moonglade,56.21,30.64
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Dendrita Rafagaestelar|r subiendo las escaleras
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Dendrita Rafagaestelar|r arriba
     .turnin 5929 >> Entrega la misión Espíritu del gran oso
     .target Dendrite Starblaze
     .accept 5931 >> Acepta la misión El regreso a Darnassus
@@ -1363,7 +1363,7 @@ step << Warrior
     .target Ariyell Skyshadow
 step
     #completewith next
-    .goto Darnassus,30.00,41.43,10 >> Viaja por el portal morado a la Aldea Rut'theran
+    .goto Darnassus,30.00,41.43,10 >> Viaja a través del portal morado hacia la Aldea Rut'theran
 step
     .goto Teldrassil,56.25,92.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Nessa Cantosombrío|r

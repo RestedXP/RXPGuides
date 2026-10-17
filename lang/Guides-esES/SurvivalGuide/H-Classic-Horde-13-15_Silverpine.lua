@@ -185,7 +185,7 @@ step
     .goto Silverpine Forest,51.54,13.91
     >>Mata a |cRXP_ENEMY_Ivar el Hediondo|r. Despójalo para obtener su |cRXP_LOOT_Cabeza|r
     >>|cRXP_WARN_¡Ten cuidado! Despeja toda la zona delantera del granero y atrae a los|r |cRXP_ENEMY_Esclavos Corvozarpas|r |cRXP_WARN_fuera, uno por uno.|r
-    >>|cRXP_WARN_Ivar está protegido por dos|r |cRXP_ENEMY_Esclavos Corvozarpa|r |cRXP_WARN_dentro del granero. Puedes atraer a uno de ellos cuando patrulle hacia adelante.|r
+    >>|cRXP_WARN_Ivar está protegido por dos|r |cRXP_ENEMY_Esclavos Corvozarpa|r |cRXP_WARN_dentro del granero. Puedes atraer a uno de ellos cuando patrulle hacia adelante|r
     >>|cRXP_WARN_¡Son inmunes al miedo!|r << Priest/Warlock
     .complete 425,1 --Ivar's Head (1)
     .target Ivar the Foul
@@ -427,7 +427,7 @@ step
     .mob Dalaran Apprentice
 step
     #completewith next
-    .goto Silverpine Forest,45.51,41.26,100 >> Viaja de vuelta a El Sepulcro
+    .goto Silverpine Forest,45.51,41.26,100 >> Viaja de regreso a El Sepulcro
     .subzoneskip 228
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Allister|r y |cRXP_FRIENDLY_Dalar|r

@@ -274,7 +274,7 @@ step << NightElf Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ilyenia Fuegolunar|r
     .skipgossip 11866,1
     .goto Darnassus,57.56,46.72
-    .train 2567 >> Aprende el uso de Arrojadizas
+    .train 2567 >> Aprende el uso de Armas arrojadizas
     .target Ilyenia Moonfire
 step << NightElf Warrior
     #completewith next
@@ -1169,7 +1169,7 @@ step << Druid
     .goto Stormwind City,53.612,59.764
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con la |cRXP_FRIENDLY_Subastadora Jaxon|r
     >>Si no planeas adoptar |T136065:0|t[Herboristería] como tu profesión primaria, compra 5 |T134187:0|t[Raíz de tierra] para una misión futura
-    >>Compra los siguientes objetos para entregar misiones más rápido en Páramos de Poniente pronto 
+    >>Compra los siguientes objetos para entregar misiones más rápido en Páramos de Poniente pronto
     >>Esto te ahorrará tiempo ya que no necesitarás correr buscando enemigos para matar. Omite este paso si prefieres no comprar nada
     >>|T133972:0|t[Carne fibrosa de buitre]
     >>|T133884:0|t[Ojo de múrloc]
@@ -1189,7 +1189,7 @@ step << !Druid
     #ah
     .goto Stormwind City,53.612,59.764
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con la |cRXP_FRIENDLY_Subastadora Jaxon|r
-    >>Compra los siguientes objetos para entregar misiones más rápido en Páramos de Poniente pronto 
+    >>Compra los siguientes objetos para entregar misiones más rápido en Páramos de Poniente pronto
     >>Esto te ahorrará tiempo ya que no necesitarás correr buscando enemigos para matar. Omite este paso si prefieres no comprar nada
     >>|T133972:0|t[Carne fibrosa de buitre]
     >>|T133884:0|t[Ojo de múrloc]
