@@ -2541,6 +2541,7 @@ step
     .target Thom Filch
 step
     #label EnterHoT
+    .enabledungeon HOT
     .goto 1455/0,-933.200,-4821.900
     .subzone 16919 >> Enter the Hall of Thanes
 
@@ -2761,6 +2762,7 @@ step
     .subzoneskip 16611 -- ruins of lordaeron
 step
     #label EnterRoL
+    .enabledungeon ROL
     .goto 1424/0,-272.000,-381.800,100,0
     .goto 1424/0,-47.400,-249.400,100,0
     .goto 1416/0,68.400,-46.200,130,0
@@ -3192,6 +3194,7 @@ step
     .mob Undead Excavator
 step
     #label EnterDM
+    .enabledungeon DM
     .goto 1415,40.94,79.76,25,0
     .goto 1415,40.86,79.62,20,0
     .goto 1415,40.678,79.578
@@ -3479,6 +3482,31 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shoni the Shilent|r
     .turnin 2040 >> Turn in Underground Assault
     .target Shoni the Shilent
+step << Shaman
+    #completewith ShamTrain
+    .goto 1453/0,558.96,-8382.54,25,0
+    .goto 1453/0,520.64,-8351.460
+    .zone Ironforge >> Enter the Deeprun Tram. Take the Tram to Ironforge
+step << Shaman
+    .goto 1455/0,-1086.500,-4642.400
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eldrun Stormbreaker::258098|r
+    .target Eldrun Stormbreaker::258098
+    .accept 94494 >>Accept Call of Water
+    .trainer >> Train your class spells
+    .train 2645,1 -- ghost wolf
+step << Shaman
+    #label ShamTrain
+    .goto 1455/0,-1086.500,-4642.400
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eldrun Stormbreaker::258098|r
+    .target Eldrun Stormbreaker::258098
+    .trainer >> Train your class spells
+    .train 408342,1 -- fire nova r2
+    .xp <22,1
+step << Shaman
+    .goto 1455/0,-1330.28,-4843.6,5,0
+    .zone Stormwind City >> Enter the Deeprun Tram. Take the tram to Stormwind
+    .zoneskip Darkshore
+    .zoneskip Ashenvale
 step
     .goto 1453/0,719.67,-8550.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baros Alexston|r
@@ -3688,6 +3716,13 @@ step
     .accept 947 >> Accept Cave Mushrooms
     .target Barithras Moonshade
 step
+    #optional
+    .isOnQuest 4763
+    .goto 1439/1,467.08,6409.38
+    >>|cRXP_WARN_Use the|r |T133748:0|t[Empty Cleansing Bowl] |cRXP_WARN_at the Auberdine moonwell|r
+    .collect 12347,1,4763,1 --Filled Cleansing Bowl (1)
+    .use 12346
+step
     .goto 1439,37.439,41.839
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archaeologist Hollee|r
     .accept 729 >> Accept The Absent Minded Prospector
@@ -3698,12 +3733,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thundris Windweaver|r
     .accept 4763 >> Accept The Blackwood Corrupted
     .target Thundris Windweaver
-step
-    .isOnQuest 4763
-    .goto 1439/1,467.08,6409.38
-    >>|cRXP_WARN_Use the|r |T133748:0|t[Empty Cleansing Bowl] |cRXP_WARN_at the Auberdine moonwell|r
-    .collect 12347,1,4763,1 --Filled Cleansing Bowl (1)
-    .use 12346
 step
     .isOnQuest 3765
     .goto 1439,38.325,43.039
@@ -3727,6 +3756,12 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Elissa Starbreeze|r upstairs
     .accept 965 >> Accept The Tower of Althalaxx
     .target Sentinel Elissa Starbreeze
+step
+    .isOnQuest 4763
+    .goto 1439/1,467.08,6409.38
+    >>|cRXP_WARN_Use the|r |T133748:0|t[Empty Cleansing Bowl] |cRXP_WARN_at the Auberdine moonwell|r
+    .collect 12347,1,4763,1 --Filled Cleansing Bowl (1)
+    .use 12346
 step
     .isOnQuest 4763
     #sticky
@@ -3950,6 +3985,10 @@ step << Druid
     >>|cRXP_WARN_Swim out in the water|r
     >>Open the |cRXP_PICK_Strange Lockbox|r. Loot it for the |cRXP_LOOT_Half Pendant of Aquatic Agility|r
     .collect 15883,1,272,1 --Collect Half Pendant of Aquatic Agility (x1)
+step
+    #sticky
+    #optional
+    .destroy 7442 >> Delete |T134459:0|t[Gyromast's Key] from your bags, as it's no longer needed
 step
     #completewith ReturnAuberdine
     .subzone 442 >> Return to Auberdine
