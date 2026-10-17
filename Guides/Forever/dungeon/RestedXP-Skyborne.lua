@@ -14,6 +14,7 @@ RXPGuides.RegisterGuide([[
 #next 9-13 Zephras Isle
 
 step << Horde
+.enabledungeon RFC
 #include RestedXP Forever Guide (H)\1-9 Zephras Isle
 step << Alliance
 #include RestedXP Forever Guide (A)\1-9 Zephras Isle
@@ -35,6 +36,7 @@ RXPGuides.RegisterGuide([[
 #next 12-16 The Barrens << Horde Hunter
 
 step << Horde
+.enabledungeon RFC
 #include RestedXP Forever Guide (H)\9-13 Zephras Isle
 step << Alliance
 #include RestedXP Forever Guide (A)\9-13 Zephras Isle

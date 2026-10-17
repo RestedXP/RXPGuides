@@ -15,6 +15,7 @@ RXPGuides.RegisterGuide([[
 
 
 step
+.enabledungeon RFC
 #include RestedXP Forever Guide (H)\1-6 Durotar
 ]])
 
@@ -30,6 +31,7 @@ RXPGuides.RegisterGuide([[
 #next 10-12 Durotar
 
 step
+.enabledungeon RFC
 #include RestedXP Forever Guide (H)\6-10 Durotar
 ]])
 
@@ -47,6 +49,7 @@ RXPGuides.RegisterGuide([[
 
 
 step
+.enabledungeon RFC
 #include RestedXP Forever Guide (H)\10-12 Durotar
 ]])
 
@@ -63,5 +66,6 @@ RXPGuides.RegisterGuide([[
 #next 12-14 Silverpine Forest << !Hunter !Shaman !Tauren !Skyborne !Undead
 
 step
+.enabledungeon RFC
 #include RestedXP Forever Guide (H)\10-12 Tirisfal (Orc/Troll)
 ]])
