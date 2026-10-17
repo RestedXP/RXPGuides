@@ -4979,7 +4979,7 @@ step << Alliance Rogue
     .goto 2521,59.55,73.3,30,0
     .goto 2521,59.91,72.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Eltheen Nightbreeze::252379|r.
-    .train 1766 >>Erlernen |T132219:0|t[Tritt]
+    .train 1766 >>Erlernt |T132219:0|t[Tritt]
     .train 3127 >>Erlernt |T132269:0|t[Parieren]
     .skipgossipid 136810
     .target Eltheen Nightbreeze::252379
@@ -5736,7 +5736,7 @@ step << Warrior Horde
 step << Horde Rogue
     .goto 2521,59.9,72.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Eltheen Nightbreeze::252379|r.
-    .train 1766 >>Erlernen |T132219:0|t[Tritt]
+    .train 1766 >>Erlernt |T132219:0|t[Tritt]
     .train 3127 >>Erlernt |T132269:0|t[Parieren]
     .skipgossipid 136810
     .target Eltheen Nightbreeze::252379

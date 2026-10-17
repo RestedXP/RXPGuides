@@ -3573,7 +3573,7 @@ step << skip
     #optional
     #label TramCook1
     #completewith TramEnd
-    >>|cRXP_WARN_Auf der Tiefenbahn, wenn sie ankommt:|r
+    >>|cRXP_WARN_Geht auf die Tiefenbahn wenn sie ankommt:|r
     .cast 818 >>|cRXP_WARN_Erstellt eine|r |T135805:0|t[Einfaches Lagerfeuer] |cRXP_WARN_(unter dem Allgemeinen-Reiter eures Zauberbuches)|r
     .usespell 818
     .zoneskip Ironforge
@@ -3587,7 +3587,7 @@ step << skip
     #requires TramCook1
     #label TramCook2
     #completewith TramEnd
-    >>|cRXP_WARN_Auf der Tiefenbahn, wenn sie ankommt:|r
+    >>|cRXP_WARN_Geht auf die Tiefenbahn wenn sie ankommt:|r
     .cast 818 >>|cRXP_WARN_Erstellt eine|r |T135805:0|t[Einfaches Lagerfeuer] |cRXP_WARN_(unter dem Allgemeinen-Reiter eures Zauberbuches)|r
     .usespell 818
     .zoneskip Ironforge
@@ -3601,7 +3601,7 @@ step << skip
     #requires TramCook2
     #label TramCook3
     #completewith TramEnd
-    >>|cRXP_WARN_Auf der Tiefenbahn, wenn sie ankommt:|r
+    >>|cRXP_WARN_Geht auf die Tiefenbahn wenn sie ankommt:|r
     .cast 818 >>|cRXP_WARN_Erstellt eine|r |T135805:0|t[Einfaches Lagerfeuer] |cRXP_WARN_(unter dem Allgemeinen-Reiter eures Zauberbuches)|r
     .usespell 818
     .zoneskip Ironforge
@@ -3679,7 +3679,7 @@ step << Warrior
     #optional
     #completewith next
     .goto 1455,67.400,84.909,15,0
-    .goto 1455/0,-1234.65,-5035.67,12 >> Reist in Richtung |cRXP_FRIENDLY_Bilban Tosslespanner|r
+    .goto 1455/0,-1234.65,-5035.67,12 >> Reise in Richtung |cRXP_FRIENDLY_Bilban Tosslespanner|r
 step << Warrior
     .goto 1455/0,-1234.65,-5035.67
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Bilban Tosslespanner|r
@@ -3753,7 +3753,7 @@ step << Mage/Paladin
     .goto 1455/0,-992.68,-4742.08,20,0
     .goto 1455/0,-928.40,-4635.61,20,0 << Paladin
     .goto 1455/0,-931.8,-4627.59,20,0 << Mage
-    .goto 1455/0,-928.40,-4614.51,12 >>Reist in Richtung |cRXP_FRIENDLY_Dink|r << Mage
+    .goto 1455/0,-928.40,-4614.51,12 >>Reisenzu |cRXP_FRIENDLY_Dink|r << Mage
     .goto 1455/0,-896.47,-4601.65,12 >>Reist zu |cRXP_FRIENDLY_Brandur Ironhammer|r << Paladin
 step << Mage
     .goto 1455/0,-928.40,-4614.51
@@ -4097,7 +4097,7 @@ step
 step << Rogue
     #optional
     #completewith next
-    +|cRXP_WARN_Legt den|r |T135641:0|t[Handwerkerdolch] |cRXP_WARN_in eurer Nebenhand an|r
+    +|cRXP_WARN_Legt|r |T135641:0|t[Handwerkerdolch] |cRXP_WARN_in eurer Nebenhand an|r
     .use 2218
     .itemcount 2218,1
     .itemStat 17,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8

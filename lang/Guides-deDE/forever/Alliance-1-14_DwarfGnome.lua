@@ -2508,7 +2508,7 @@ step << !Hunter skip
     #optional
     #label TramCook1
     #completewith TramEnd
-    >>|cRXP_WARN_Auf der Tiefenbahn, wenn sie ankommt:|r
+    >>|cRXP_WARN_Geht auf die Tiefenbahn wenn sie ankommt:|r
     .cast 818 >>|cRXP_WARN_Erstellt eine|r |T135805:0|t[Einfaches Lagerfeuer] |cRXP_WARN_(unter dem Allgemeinen-Reiter eures Zauberbuches)|r
     .usespell 818
     .zoneskip Stormwind City
@@ -2522,7 +2522,7 @@ step << !Hunter skip
     #requires TramCook1
     #label TramCook2
     #completewith TramEnd
-    >>|cRXP_WARN_Auf der Tiefenbahn, wenn sie ankommt:|r
+    >>|cRXP_WARN_Geht auf die Tiefenbahn wenn sie ankommt:|r
     .cast 818 >>|cRXP_WARN_Erstellt eine|r |T135805:0|t[Einfaches Lagerfeuer] |cRXP_WARN_(unter dem Allgemeinen-Reiter eures Zauberbuches)|r
     .usespell 818
     .zoneskip Stormwind City
@@ -2536,7 +2536,7 @@ step << !Hunter skip
     #requires TramCook2
     #label TramCook3
     #completewith TramEnd
-    >>|cRXP_WARN_Auf der Tiefenbahn, wenn sie ankommt:|r
+    >>|cRXP_WARN_Geht auf die Tiefenbahn wenn sie ankommt:|r
     .cast 818 >>|cRXP_WARN_Erstellt eine|r |T135805:0|t[Einfaches Lagerfeuer] |cRXP_WARN_(unter dem Allgemeinen-Reiter eures Zauberbuches)|r
     .usespell 818
     .zoneskip Stormwind City
@@ -4145,7 +4145,7 @@ step << Warlock
     #optional
     #label Jubahl
     #completewith Deeprun
-    .goto 1455,53.164,7.037,10 >> Betretet |cRXP_FRIENDLY_Jubahl Corpseseeker|r's Haus
+    .goto 1455,53.164,7.037,10 >> Betretet |cRXP_FRIENDLY_Jubahl Corpseseekers|r Haus
 step << Warlock
     .goto 1455/0,-1130.26,-4601.270
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Jubaal Leichenfund|r
@@ -4161,7 +4161,7 @@ step << Warrior
     #optional
     #completewith Deeprun
     .goto 1455,67.400,84.909,15,0
-    .goto 1455/0,-1234.65,-5035.67,12 >> Reist in Richtung |cRXP_FRIENDLY_Bilban Tosslespanner|r
+    .goto 1455/0,-1234.65,-5035.67,12 >> Reise in Richtung |cRXP_FRIENDLY_Bilban Tosslespanner|r
 step << Warrior
     .goto 1455/0,-1234.65,-5035.67
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Bilban Tosslespanner|r
@@ -4204,7 +4204,7 @@ step << skip
     #optional
     #label WestfallTramCook1
     #completewith WestfallTramEnd
-    >>|cRXP_WARN_Auf der Tiefenbahn, wenn sie ankommt:|r
+    >>|cRXP_WARN_Geht auf die Tiefenbahn wenn sie ankommt:|r
     .cast 818 >>|cRXP_WARN_Erstellt eine|r |T135805:0|t[Einfaches Lagerfeuer] |cRXP_WARN_(unter dem Allgemeinen-Reiter eures Zauberbuches)|r
     .usespell 818
     .zoneskip Stormwind City
@@ -4218,7 +4218,7 @@ step << skip
     #requires WestfallTramCook1
     #label WestfallTramCook2
     #completewith WestfallTramEnd
-    >>|cRXP_WARN_Auf der Tiefenbahn, wenn sie ankommt:|r
+    >>|cRXP_WARN_Geht auf die Tiefenbahn wenn sie ankommt:|r
     .cast 818 >>|cRXP_WARN_Erstellt eine|r |T135805:0|t[Einfaches Lagerfeuer] |cRXP_WARN_(unter dem Allgemeinen-Reiter eures Zauberbuches)|r
     .usespell 818
     .zoneskip Stormwind City
@@ -4232,7 +4232,7 @@ step << skip
     #requires WestfallTramCook2
     #label WestfallTramCook3
     #completewith WestfallTramEnd
-    >>|cRXP_WARN_Auf der Tiefenbahn, wenn sie ankommt:|r
+    >>|cRXP_WARN_Geht auf die Tiefenbahn wenn sie ankommt:|r
     .cast 818 >>|cRXP_WARN_Erstellt eine|r |T135805:0|t[Einfaches Lagerfeuer] |cRXP_WARN_(unter dem Allgemeinen-Reiter eures Zauberbuches)|r
     .usespell 818
     .zoneskip Stormwind City

@@ -31,8 +31,8 @@ step
     .target Farmer Furlbrow
 step
     .goto Westfall,59.92,19.42
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Verna Brauenwirbel|r
-    .accept 36 >> Akzeptiert die Quest Westfalleintopf
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Verna Furlbrow|r
+    .accept 36 >> Akzeptiert die Quest Westfall-Eintopf
     .accept 151 >> Akzeptiert die Quest Die arme Graumähne
     .target Verna Furlbrow
 step
@@ -47,9 +47,9 @@ step
     #label SalmaS
     .goto Westfall,56.40,30.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Salma Saldean|r
-    .turnin 36 >> Gebt die Quest Westfalleintopf ab
+    .turnin 36 >> Gebt die Quest Westfall-Eintopf ab
     .target Salma Saldean
-    .accept 38 >> Akzeptiert die Quest Westfalleintopf
+    .accept 38 >> Akzeptiert die Quest Westfall-Eintopf
     .accept 22 >> Akzeptiert die Quest Pastete aus Geiferzahnleber
 step << Human
     #label Lewis
@@ -67,7 +67,7 @@ step << Gnome/Dwarf
 step
     .goto Westfall,56.33,47.52
     .target Gryan Stoutmantle
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gryan Starkmantel|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gryan Stoutmantle|r
     .accept 12 >> Akzeptiert die Quest Die Volksmiliz
 step
     #xprate <1.2
@@ -89,12 +89,12 @@ step << !Human
 step
     .goto Westfall,52.86,53.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Gastwirtin Heather|r
-    >>|cRXP_BUY_Kauf Essen/Wasser, falls du welches brauchst|r
+    >>|cRXP_BUY_Kaufe Essen/Wasser, falls du welches brauchst|r
     .vendor >>|T133918:0|t[Langzahniger Matschschnapper] |cRXP_WARN_ist sehr günstig|r
 	.target Innkeeper Heather
 step
 	#completewith GnollPaws
-    >>Öffnet die |cRXP_PICK_Sack Hafer|r auf dem Boden. Plündert es für eine |cRXP_LOOT_Handvoll Hafer|r
+    >>Öffnet die |cRXP_PICK_Sack Hafer|r auf dem Boden. Plündert sie für die |cRXP_LOOT_Handvoll Hafer|r
     >>|cRXP_WARN_Ihr findet sie normalerweise in der nähe von Farmzäunen oder Gebäuden|r
     .complete 151,1 --Handful of Oats (8)
 step
@@ -278,7 +278,7 @@ step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Salma Saldean|r
     .goto Westfall,56.40,30.50
     .turnin 22 >> Gebt die Quest Pastete aus Geiferzahnleber ab
-    .turnin 38 >> Gebt die Quest Westfalleintopf ab
+    .turnin 38 >> Gebt die Quest Westfall-Eintopf ab
     .isQuestComplete 22
     .isQuestComplete 38
     .target Salma Saldean
@@ -293,7 +293,7 @@ step
     #optional
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Salma Saldean|r
     .goto Westfall,56.40,30.50
-    .turnin 38 >> Gebt die Quest Westfalleintopf ab
+    .turnin 38 >> Gebt die Quest Westfall-Eintopf ab
     .isQuestComplete 38
     .target Salma Saldean
   step
@@ -357,7 +357,7 @@ step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Salma Saldean|r
 	.target Salma Saldean
     .goto Westfall,56.40,30.50
-    .turnin 38 >> Gebt die Quest Westfalleintopf ab
+    .turnin 38 >> Gebt die Quest Westfall-Eintopf ab
     .turnin 22 >> Gebt die Quest Pastete aus Geiferzahnleber ab
 step
     .goto Westfall,50.0,45.4
@@ -371,13 +371,13 @@ step
     .mob +Defias Trapper
     .mob +Defias Smuggler
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gryan Starkmantel|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gryan Stoutmantle|r
 	.target Gryan Stoutmantle
     .goto Westfall,56.33,47.52
     .turnin 12 >> Gebt die Quest Die Volksmiliz ab
 step
 	.xp <14,1
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gryan Starkmantel|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gryan Stoutmantle|r
 	.target Gryan Stoutmantle
     .goto Westfall,56.33,47.52
     .accept 65 >> Die Bruderschaft der Defias annehmen
@@ -428,7 +428,7 @@ step << Gnome Rogue/Dwarf Rogue
 step << Gnome Rogue/Dwarf Rogue
     #ah
     .goto Stormwind City,53.612,59.764
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Auktionatorin Jaxon|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Auktionator Jaxon|r
     >>Kauft die folgenden Gegenstände für eine schnellere Abgabe in der Dunkelküste in Kürze
     >>Das spart dir Zeit, weil du dann später nicht rumläufst und die Mobs dafür töten musst. Überspring diesen Schritt, wenn du nichts kaufen willst
     >>|T133972:0|t[Sehniges Geierfleisch]
@@ -557,11 +557,11 @@ step << Dwarf Paladin
 step
     #hardcore << !Human
     .goto Dun Morogh,53.5,34.9
-    .zone Dun Morogh>>Verlasst Eisenschmiede
+    .zone Dun Morogh>>Verlasse Eisenschmiede
 step
     #hardcore
     #completewith next
-    .goto Dun Morogh,59.43,42.85,150 >> Reist zum Dun Morogh -> Sumpfland Skip-Spot
+    .goto Dun Morogh,59.43,42.85,150 >> Reist zu der Dun Morogh -> Sumpfland Skip-Spot
 step
     #hardcore
     .goto Dun Morogh,59.5,42.8,40,0
@@ -582,7 +582,7 @@ step
     .goto Wetlands,16.8,65.3,40,0
     .goto Wetlands,15.1,64.0,40,0
     .goto Wetlands,12.1,60.3,40,0
-    >>|cRXP_WARN_Schaut das Video-Handbuch zuerst als Referenz!|r
+    >>|cRXP_WARN_Schaut das Video, um zuerst zu verstehen, wie man den skip durchführt!|r
     >>|cRXP_WARN_Macht den Dun Morogh -> Sumpfland skip|r ohne zu sterben
     >>|cRXP_WARN_Weicht den |cRXP_ENEMY_Sumpflandkrokilisks|r und den |cRXP_ENEMY_Murlocs|r beim Durchqueren des Wassers aus|r
     .link https://www.youtube.com/watch?v=9afQTimaiZQ >> |cRXP_WARN_Clickt hier für die Videoanleitung|r
@@ -614,7 +614,7 @@ step
     .goto 1437,10.760,56.721
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Neal Allen|r
     .vendor 1448 >> |cRXP_WARN_Kaufe eine|r |T133024:0|t[Bronzeröhre]
-    >>|cRXP_WARN_Dieses Item hat limitierte Verfügbarkeit. Überspringe den Schritt, wenn |cRXP_FRIENDLY_Neal Allen|r keine hat|r
+    >>|cRXP_WARN_Dieses Item hat eine limitierte Verfügbarkeit. Überspringe den Schritt, wenn |cRXP_FRIENDLY_Neal Allen|r keine hat|r
 	.target Neal Allen
     .bronzetube
 step << Human/Dwarf Paladin
@@ -722,7 +722,7 @@ step
     #label DarkshoreBoat
     .goto 1437,4.370,56.762
     >>|cRXP_WARN_Levelt eure|r |T135966:0|t[Erste Hilfe] |cRXP_WARN_während ihr auf das Boot nach Dunkelküste wartet, falls nötig|r
-    .zone Darkshore >> Nimm das Boot nach Dunkelküste
+    .zone Darkshore >> Nimm das Boot in die Dunkelküste
 ]])
 
 ----End of <1.5x Westfall----
@@ -892,8 +892,8 @@ step << !NightElf
     .target Gwennyth Bly'Leggonde
 step << !NightElf
     .goto Darkshore,36.336,45.574
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Caylais Mondfeder|r
-    .fp Auberdine >> Erlernt die Flugroute nach Auberdine
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Caylais Moonfeather|r
+    .fp Auberdine >> Hol dir den Flugpunkt von Auberdine.
     .target Caylais Moonfeather
 step << Dwarf Hunter
     #optional
@@ -972,7 +972,7 @@ step << Druid
     #season 0
     #completewith CliffspringEnd
     #requires GatheringQ
-    >>Sammelt 5 |T134187:0|t[Erdwurzel] über |cRXP_WARN_über |T136065:0|t[Kräuterkunde] und selten in |cRXP_PICK_Ramponierte Truhe|r für eine zukünftige Klassenquest|r
+    >>Sammelt 5|cRXP_WARN_ |T134187:0|t[Earthroot] über |T136065:0|t[Kräuterkunde] und selten |cRXP_PICK_Battered Chests|r für eine zukünftige Klassenquest|r
     .collect 2449,5,6123,1 --Earthroot (5)
     .skill herbalism,<15,1
 step
@@ -1036,7 +1036,7 @@ step
     #optional << !NightElf/Hunter
     #requires BuzzBox1
     .goto 1439,36.634,46.250
-    >>Klickt auf die |cRXP_PICK_Dröhnkiste 827|r auf dem Boden
+    >>Klickt auf die|cRXP_PICK_Dröhnkiste 827|r auf dem Boden
     .turnin 983 >> Gebt die Quest Dröhnkiste 827 ab
     .accept 1001 >> Akzeptiert die Quest Dröhnkiste 411 << !sod
     .isQuestComplete 983
@@ -1352,7 +1352,7 @@ step
 step
     .goto 1439,44.168,36.289
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Asterion|r
-    >>|cRXP_WARN_Vermeidet |cRXP_ENEMY_Wilder Grell|r und |cRXP_ENEMY_Übler Grimmling|r auf dem weg zu töten|r
+    >>|cRXP_WARN_Vermeidet es |cRXP_ENEMY_Wilder Grell|r und |cRXP_ENEMY_Übler Grimmling|r auf dem weg zu töten|r
     .turnin 954 >> Gebt die Quest Bashal'Aran ab
     .accept 955 >> Akzeptiert die Quest Bashal'Aran
     .target Asterion
@@ -1824,7 +1824,7 @@ step << Druid
 step << Druid
     #season 0
     .goto Darkshore,36.336,45.574
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Caylais Mondfeder|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Caylais Moonfeather|r
     .fly Teldrassil >> Fliegt nach Teldrassil
     .target Caylais Moonfeather
 step << Druid
@@ -2270,7 +2270,7 @@ step
     >>|cRXP_WARN_Das Abschließen dieses Grinds wird euch ermöglichen, später ganz Dunkelküste durch zu questen, ohne gegen höherstufige Mobs kämpfen zu müssen|r
     >>Passt auf, da die |cRXP_ENEMY_Pfadfinder der Schwarzfelle|r |T132152:0|t[Hauen] nutzen und die kann euch bis zu 3 Mal gleichzeitig treffen
     >>|cRXP_ENEMY_Windsprecher der Schwarzfelle|r wirken |T136022:0|t[Windstoß] - einen Nahkampf-Stun, |cRXP_WARN_bewegt euch aus der Nahkampfreichweite, wenn sie ihn wirken|r, um nicht betäubt zu werden
-    .xp 14+12210 >> Farmt bis 12210+/12900 XP
+    .xp 14+12210 >> Farmt bis 12210+/12900XP
     .mob Blackwood Pathfinder
     .mob Blackwood Windtalker
     .itemcount 5382,1 --Anaya's Pendant (1)
@@ -2657,7 +2657,7 @@ step << Hunter/Druid
 #xprate <1.5 << Hunter/Druid
     #label Tower1
     .goto 1439,54.973,24.885
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Balthule Schattenhieb|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Balthule Shadowstrike|r
     .turnin 965 >> Gebt die Quest Der Turm von Althalaxx ab
     .accept 966 >> Der Turm von Althalaxx annehmen
     .target Balthule Shadowstrike
@@ -2684,7 +2684,7 @@ step << Hunter/Druid
 step << Hunter/Druid
 #xprate <1.5 << Hunter/Druid
     .goto 1439,54.973,24.885
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Balthule Schattenhieb|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Balthule Shadowstrike|r
     .turnin 966 >> Gebt die Quest Der Turm von Althalaxx ab
     .accept 967 >> Der Turm von Althalaxx annehmen
     .target Balthule Shadowstrike
@@ -2829,7 +2829,7 @@ step << NightElf !Druid
     #optional
     #completewith CavetoAuber
     #season 0
-    .deathskip >> Stirb und beleb dich am |cRXP_FRIENDLY_Geistheiler|r wieder
+    .deathskip >> Stirb und belebe dich am |cRXP_FRIENDLY_Geistheiler|r wieder
     .target Geistheiler
 step << skip --logout skip
     #hardcore << NightElf !Druid
@@ -3011,7 +3011,7 @@ step << Druid
     #season 0
     #completewith DruidLesson
     .goto Darkshore,36.336,45.574
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Caylais Mondfeder|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Caylais Moonfeather|r
     .fly Teldrassil >> Fliegt nach Teldrassil
     .target Caylais Moonfeather
 step << Druid
@@ -3043,19 +3043,19 @@ step << Druid
 step << Druid
     .goto Teldrassil,23.70,64.51
     #season 0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Chefarchäologe Grauflaum|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Chefarchäologe Greywhisker|r
     .accept 730 >> Akzeptiert die Quest Ärger in Dunkelküste?
     .target Chief Archaeologist Greywhisker
 step << Druid
     #optional
 	#completewith TotL
     #season 0
-	.cast 18960 >> Caste Teleportieren: Moonglade
+	.cast 18960 >> Caste Teleportieren: Mondlichtung
 	.zoneskip Moonglade
 step << Druid
     #season 0
     .goto Moonglade,56.1,30.7
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Dendrite Sternenschauer|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Dendrite Starblaze|r
     .turnin 26 >> Gebt die Quest Eine wertvolle Lektion ab
     .accept 29 >> Akzeptiert die Quest Prüfung des Sees
     .target Dendrite Starblaze
@@ -3070,7 +3070,7 @@ step << Druid
     #optional
     #season 0
     #completewith next
-    .cast 18960 >> Caste Teleportieren: Moonglade
+    .cast 18960 >> Caste Teleportieren: Mondlichtung
     .itemcount 15877,1 -- Shrine Bauble (1)
 step << Druid
     #season 0
@@ -3119,7 +3119,7 @@ step << NightElf !Druid
     #completewith PortalDarn
     #season 0
     .goto Darkshore,36.336,45.574
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Caylais Mondfeder|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Caylais Moonfeather|r
     .fly Teldrassil >> Fliegt nach Teldrassil
     .target Caylais Moonfeather
     .zoneskip Teldrassil
@@ -3200,7 +3200,7 @@ step << NightElf !Druid
 step << NightElf !Druid
     .goto Teldrassil,23.70,64.51
     #season 0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Chefarchäologe Grauflaum|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Chefarchäologe Greywhisker|r
     .accept 730 >> Akzeptiert die Quest Ärger in Dunkelküste?
     .target Chief Archaeologist Greywhisker
 step << NightElf Priest
@@ -3367,7 +3367,7 @@ step
     #xprate <1.5 --<< !NightElf/Hunter
     #optional
     .goto 1439,41.390,80.563
-    >>Klickt auf die|cRXP_PICK_Dröhnkiste 525|r auf dem Boden
+    >>Klickt auf die|cRXP_PICK_Dröhnkiste 323|r auf dem Boden
     .turnin 1003 >> Gebt die Quest Dröhnkiste 525 ab
     .isQuestComplete 1003
 step
@@ -3423,7 +3423,7 @@ step
     #label TheryluneEnd
     #season 0
     .goto Darkshore,40.51,87.09
-    >>|cRXP_WARN_Eskortiert |cRXP_FRIENDLY_Therylune|r aus Der Meistergleve|r
+    >>|cRXP_WARN_Begleitet |cRXP_FRIENDLY_Therylune|r aus Der Meistergleve|r
     .complete 945,1 --Escort Therylune away from the Master's Glaive (1)
     .isOnQuest 945
 step
@@ -3550,13 +3550,13 @@ step << !Hunter
 	#xprate <1.5
     #season 0
     .goto 1439,32.644,80.711
-    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4730 >> Akzeptiert die Quest Gestrandete Meereskreatur
 step << Hunter
 	#xprate <1.5
     #season 0
     .goto 1439,32.644,80.711
-    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4730 >> Akzeptiert die Quest Gestrandete Meereskreatur
 step << Druid
     #optional
@@ -3586,20 +3586,20 @@ step
     #label CompleteThistleBears
     #season 0
     .goto 1439,35.968,70.807
-    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4728 >> Akzeptiert die Quest Gestrandete Meereskreatur
 step << Druid
     #label Southcrabs
     #season 0
     #requires earthroot
 	#completewith FlyDarkshore
-	.cast 18960 >> Caste Teleportieren: Moonglade
+	.cast 18960 >> Caste Teleportieren: Mondlichtung
 	.zoneskip Moonglade
 step << Druid
     #requires earthroot
     #season 0
     .goto Moonglade,52.53,40.57
-	>>Gehe nach Moonglade
+	>>Gehe zur Mondlichtung
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Loganaar|r
     .trainer >> Trainiere deine Klassenfähigkeiten
     .target Loganaar
@@ -3609,7 +3609,7 @@ step << Druid
     #season 0
     .goto Moonglade,48.11,67.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Sindrayl|r
-    .fly Auberdine >> Fliegt zur Dunkelküste
+    .fly Auberdine >> Fliegt in die Dunkelküste
     .target Sindrayl
     .zoneskip Darkshore
 step << NightElf !Druid/Dwarf Hunter
@@ -3622,7 +3622,7 @@ step
     #completewith next
     #season 0
     .goto 1439,36.806,44.137,8,0
-    .goto 1439,35.743,43.710,12 >> Kehrt zum |cRXP_FRIENDLY_Cerellean Whiteclaw|r auf dem Dock zurück
+    .goto 1439,35.743,43.710,12 >> Kehrt zu |cRXP_FRIENDLY_Cerellean Whiteclaw|r auf dem Dock zurück
 step
     #optional
     #season 0
@@ -3862,13 +3862,13 @@ step
     #label Buzzbox323End
     #requires SicklyDeers << Druid --xprate <1.5
     .goto 1439,51.288,24.554
-    >>Klickt auf die|cRXP_PICK_Dröhnkiste 323|r auf dem Boden
+    >>Klickt auf die |cRXP_PICK_Dröhnkiste 323|r auf dem Boden
     .turnin 1002 >> Gebt die Quest Dröhnkiste 323 ab
     .accept 1003 >> Akzeptiert die Quest Dröhnkiste 525
 step
 	#xprate >1.49 << Hunter/Druid
     .goto 1439,54.973,24.885
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Balthule Schattenhieb|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Balthule Shadowstrike|r
     .turnin 965 >> Gebt die Quest Der Turm von Althalaxx ab
     .accept 966 >> Der Turm von Althalaxx annehmen
     .target Balthule Shadowstrike
@@ -3915,7 +3915,7 @@ step
 step
 	#xprate >1.49 << Hunter/Druid
     .goto 1439,54.973,24.885
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Balthule Schattenhieb|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Balthule Shadowstrike|r
     .turnin 966 >> Gebt die Quest Der Turm von Althalaxx ab
     .accept 967 >> Der Turm von Althalaxx annehmen
     .target Balthule Shadowstrike
@@ -3978,7 +3978,7 @@ step
     .goto Darkshore,61.40,9.40,45,0
     .goto Darkshore,62.42,7.67
     >>Tötet |cRXP_ENEMY_Mondpirscherpatriarch|r und |cRXP_ENEMY_Mondpirschermatriarchin|r. Plündert sie für ihre |cRXP_LOOT_Pelze|r
-    >>|cRXP_WARN_Passt auf |cRXP_ENEMY_Mondpirscher Matriarchs|r auf. Sie greifen immer mit einem |cRXP_ENEMY_Mondpirscher Mondpirscherwicht|r an ihrer Seite an|r
+    >>|cRXP_WARN_Seid vorsichtig vor den |cRXP_ENEMY_Mondpirschermatriarchin|r. Sie greifen immer mit einem |cRXP_ENEMY_Mondpirscherwicht|r an ihrer Seite an|r
     >>|cRXP_ENEMY_Mondpirscherpatriarch|r wirken |T132090:0|t[Schwäche ausnutzen] als Hinterhaltangriff, der 20-40 Schaden verursacht, wenn ihr ihnen den Rücken zudreht
     .complete 986,1 -- Fine Moonstalker Pelt (5)
     .mob Moonstalker Sire
@@ -4007,7 +4007,7 @@ step
     #optional
     #completewith next
     .goto 1439,55.802,18.290
-    .gossipoption 95406 >> Sprecht mit |cRXP_FRIENDLY_Der Dreschonator 4100|r, um die Eskorte zu starten
+    .gossipoption 95406 >> Sprecht mit |cRXP_FRIENDLY_Der Dreschonator 4100|r um die Eskorte zu beginnen
 --  .gossipoption 87696 >> Talk to |cRXP_FRIENDLY_The Threshwackonator 4100|r to start the escort
     >>|cRXP_WARN_Diese Quest ist SEHR schwierig|r
     .target The Threshwackonator 4100
@@ -4020,7 +4020,7 @@ step
 step
     .goto 1439,56.654,13.484
     #optional
-    >>Escortier |cRXP_FRIENDLY_Der Dreschonator 4100|r bis zu |cRXP_FRIENDLY_Gelkak Gyromast|r
+    >>Eskortiert |cRXP_FRIENDLY_Der Dreschonator 4100|r bis zu |cRXP_FRIENDLY_Gelkak Gyromast|r
     >>Tötet |cRXP_ENEMY_The Threshwackonator 4100|r sobald er feindselig ist
     >>|cRXP_WARN_Diese Quest ist SEHR schwierig|r
     *Nutzt nur Fernkampfangriffe, während ihr vor ihm wegrennt, vermeidet Nahkampfreichweite << Druid
@@ -4099,14 +4099,14 @@ step << Druid
     #xprate >1.59
     #optional
 	#completewith next
-	.cast 18960 >> Caste Teleportieren: Moonglade
+	.cast 18960 >> Caste Teleportieren: Mondlichtung
 	.zoneskip Moonglade
     .xp <20,1
 step << Druid
     #xprate >1.59
     #optional
     .goto Moonglade,52.53,40.57
-	>>Gehe nach Moonglade
+	>>Gehe zur Mondlichtung
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Loganaar|r
     .trainer >> Trainiere deine Klassenfähigkeiten
     .target Loganaar
@@ -4232,7 +4232,7 @@ step << Warrior/Paladin/Mage/Warlock/Rogue
     #requires TravelMenethilNoDMBoat
     #completewith MenethilNoDMBoat
     >>|cRXP_WARN_Auf dem Boot, wenn es gerade angekommen ist, oder am Dock, wenn das Boot gerade abgefahren ist:|r
-    .cast 818 >>|cRXP_WARN_Erstellt eine|r |T135805:0|t[Einfaches Lagerfeuer] |cRXP_WARN_(unter dem Allgemeinen-Reiter eures Zauberbuches)|r
+    .cast 818 >>|cRXP_WARN_Erstellt ein|r |T135805:0|t[Einfaches Lagerfeuer] |cRXP_WARN_(unter dem Allgemeinen-Reiter eures Zauberbuches)|r
     .usespell 818
     .zoneskip Wetlands
     .zoneskip Elwynn Forest
@@ -4450,7 +4450,7 @@ step << NightElf Rogue
     #xprate >1.59
     #optional
     .goto Westfall,56.33,47.52
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gryan Starkmantel|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gryan Stoutmantle|r
     .accept 65 >> Die Bruderschaft der Defias annehmen
     .target Gryan Stoutmantle
     .zoneskip Westfall,1
@@ -4561,7 +4561,7 @@ step << Warrior
     #optional
     #completewith next
     .goto 1455,67.400,84.909,15,0
-    .goto Ironforge,65.905,88.405,12 >> Reise in Richtung |cRXP_FRIENDLY_Bilban Tosslespanner|r
+    .goto Ironforge,65.905,88.405,12 >> Reist in Richtung |cRXP_FRIENDLY_Bilban Tosslespanner|r
     .zoneskip Darkshore
     .zoneskip Elwynn Forest
     .zoneskip Stormwind City
@@ -4639,7 +4639,7 @@ step << Mage
     #xprate >1.59
     #label MilstaffNoDM
     .goto Ironforge,25.50,7.04
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Milstaff Sturmauge|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Milstaff Stormeye|r
     .train 3562 >> Erlernen |T135763:0|t[Teleportieren: Eisenschmiede]
     .target Milstaff Stormeye
     .dungeon !DM
@@ -4710,7 +4710,7 @@ step << Mage/Warlock/Rogue
     #xprate >1.59
     #requires MilstaffNoDM << Mage
     .goto 1455,67.842,42.456
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Ritzelschnitt Zahnrad|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gearcutter Cogspinner|r
     .vendor 5175 >> |cRXP_BUY_Kauft eine|r |T133024:0|t[Bronzeröhre] |cRXP_BUY_beim Händler (falls sie verfügbar ist)|r
 --    >>You will need 2 bronze tubes for a quest later << Rogue
     .target Gearcutter Cogspinner
@@ -4748,7 +4748,7 @@ step << Mage/Warlock/Rogue
 step << Mage/Warlock/Rogue
     #xprate >1.59
     .goto StormwindClassic,55.21,7.04
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Billibub Zahnrad|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Billibub Cogspinner|r
     .vendor 5519 >> |cRXP_BUY_Kauft eine|r |T133024:0|t[Bronzeröhre] |cRXP_BUY_beim Händler (falls sie verfügbar ist)|r
 --    >>You will need 2 bronze tubes for a quest later << Rogue
     .target Billibub Cogspinner
@@ -4803,8 +4803,8 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Osborne der Nachtmensch|r
     >>|cRXP_WARN_Stellt sicher, dass ihr|r |T132320:0|t[Verstohlenheit]|cRXP_WARN_,|r |T133644:0|t[Taschendiebstahl] |cRXP_WARN_, und|r |T136058:0|t[Schloss knacken] lernt |cRXP_WARN_da ihr es später brauchen werdet|r
     .train 1784 >>Erlernt |T132320:0|t[Verstohlenheit]
-    .train 921 >>Erlernt |T133644:0|t[Taschendiebstahl]
-    .train 1804 >> Erlernt |T136058:0|t[Schloss knacken]
+    .train 921 >>Erlert |T133644:0|t[Taschendiebstahl]
+    .train 1804 >> Erlernt|T136058:0|t[Schloss knacken]
     .trainer >> Trainiere deine Klassenfähigkeiten
     .target Osborne the Night Man
     .dungeon !DM
@@ -4862,7 +4862,7 @@ step << NightElf Rogue/Mage/Warlock
     .goto StormwindClassic,57.12,57.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Woo Ping|r
     .train 201 >> Erlernt 1h Schwerter << Mage/Rogue/Warlock
-    .train 1180 >> Erlernen Dolche << Mage
+    .train 1180 >> Erlernt Dolche << Mage
     .train 202 >> Erlernt 2h Schwerter << Warrior
     .target Woo Ping
     .dungeon !DM
@@ -4944,7 +4944,7 @@ step << Rogue
     #xprate >1.59
     #ah
     .goto Stormwind City,53.612,59.764
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Auktionatorin Jaxon|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Auktionator Jaxon|r
     >>Kauft das |T134437:0|t[Gegengift] für eure |T132290:0|t[Gifte]-Quest später und den Rest für schnellere Questabgaben im Rotkammgebirge << !Dwarf
     >>Kauft die folgenden Gegenstände für schnellere Abgaben im Rotkammgebirge << Dwarf
     >>Das spart dir Zeit, weil du dann später nicht rumläufst und die Mobs dafür töten musst. Überspring diesen Schritt, wenn du nichts kaufen willst
@@ -4966,7 +4966,7 @@ step << Rogue
     .goto StormwindClassic,63.301,62.103,30,0
     .goto StormwindClassic,63.047,65.744,15,0
     .goto StormwindClassic,66.276,62.135
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Dungar Trinkfest|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Dungar Longdrink|r
     .fp Stormwind >> Holt euch den Flugpunkt in Sturmwind << !Human
     .fly Westfall >> Fliegt nach Westfall << Human
     .target Dungar Longdrink
@@ -5002,7 +5002,7 @@ step << Human Rogue
     .goto StormwindClassic,63.301,62.103,30,0
     .goto StormwindClassic,63.047,65.744,15,0
     .goto StormwindClassic,66.276,62.135
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Dungar Trinkfest|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Dungar Longdrink|r
     .fly Redridge >> Fliegt ins Rotkammgebirge
     .target Dungar Longdrink
     .zoneskip Stormwind City,1
@@ -5141,7 +5141,7 @@ step << Rogue
     #xprate >1.59
     #completewith next
     .goto Redridge Mountains,30.59,59.42
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Ariena Sturmfeder|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Ariena Stormfeather|r
     .fp Redridge Mountains >> Erlernt die Flugroute zum Rotkammgebirge << !Human
     .fly Westfall >> Fliegt nach Westfall
     .target Ariena Stormfeather
@@ -5265,7 +5265,7 @@ step << Dwarf Rogue
     #optional
     #sticky
     #label AntiVenomEnd2
-    .cast 20594 >>|cRXP_WARN_Wirkt|T136225:0|t[Steingestalt],um|T136230:0|t[Berührung von Zanzil] Debuff zu entfernen|r
+    .cast 20594 >>|cRXP_WARN_Wirkt |T136225:0|t[Steingestalt], um |T136230:0|t[Berührung von Zanzil]-Debuff zu entfernen|r
     .aura -9991
     .dungeon !DM
 step << Rogue
@@ -5312,7 +5312,7 @@ step << !Dwarf Rogue
     #xprate >1.59
     #sticky
     #label AntiVenomStart2
-    .collect 6452,1 >> Crafte ein |T134437:0|t[Gegengift]
+    .collect 6452,1 >> Stelle ein |T134437:0|t[Gegengift] her
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
     .train 7934,3 --Anti Venom spell trained
@@ -5547,7 +5547,7 @@ step << NightElf Rogue
     #label NEWarRogNoDMNoFP2
     #completewith NEWarRogNoDMIFPP
     .goto 1455,67.842,42.456
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Ritzelschnitt Zahnrad|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gearcutter Cogspinner|r
     .vendor 5175 >> |cRXP_BUY_Kauft eine|r |T133024:0|t[Bronzeröhre] |cRXP_BUY_beim Händler (falls sie verfügbar ist)|r
 --    >>You will need 2 bronze tubes for a quest later << Rogue
     .target Gearcutter Cogspinner
@@ -5801,7 +5801,7 @@ step << Dwarf Hunter
     #requires TravelDarnDwarfHBoat
     #completewith DarnDwarfHBoat
     >>|cRXP_WARN_Auf dem Boot, wenn es gerade angekommen ist, oder am Dock, wenn das Boot gerade abgefahren ist:|r
-    .cast 818 >>|cRXP_WARN_Erstellt eine|r |T135805:0|t[Einfaches Lagerfeuer] |cRXP_WARN_(unter dem Allgemeinen-Reiter eures Zauberbuches)|r
+    .cast 818 >>|cRXP_WARN_Erstellt ein|r |T135805:0|t[Einfaches Lagerfeuer] |cRXP_WARN_(unter dem Allgemeinen-Reiter eures Zauberbuches)|r
     .usespell 818
     .zoneskip Teldrassil
     .zoneskip Darnassus
@@ -5886,7 +5886,7 @@ step << Dwarf Hunter
     #xprate <1.59
     #optional
     .goto Teldrassil,23.70,64.51
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Chefarchäologe Grauflaum|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Chefarchäologe Greywhisker|r
     .accept 942 >> Der geistesabwesende Ausgrabungsleiter annehmen
     .target Chief Archaeologist Greywhisker
     .isQuestTurnedIn 741
@@ -6216,7 +6216,7 @@ step << NightElf
     #xprate >1.59 << !Hunter
     #optional
     .goto Westfall,56.33,47.52
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gryan Starkmantel|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gryan Stoutmantle|r
     .accept 65 >> Die Bruderschaft der Defias annehmen
     .target Gryan Stoutmantle
     .zoneskip Westfall,1
@@ -6357,7 +6357,7 @@ step << Mage
     #xprate >1.59
     #label MilstaffDM
     .goto Ironforge,25.50,7.04
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Milstaff Sturmauge|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Milstaff Stormeye|r
     .train 3562 >> Lerne |T135757:0|t[Teleportieren: Ironforge]
     .target Milstaff Stormeye
     .dungeon DM
@@ -6395,7 +6395,7 @@ step << skip --Warlock
     #xprate >1.59
     .goto Ironforge,51.1,8.7,15,0
     .goto Ironforge,50.343,5.657
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Wilddornrose|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Briarthorn|r
     .trainer >> Trainiere deine Klassenfähigkeiten
     .target Briarthorn
     .zoneskip Elwynn Forest
@@ -6413,7 +6413,7 @@ step << skip --Warlock
 step << skip --Warlock
     #xprate >1.59
     .goto Ironforge,52.701,6.070
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Jubaal Leichenfund|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Jubahl Corpseseeker|r
     .vendor 6382 >> |cRXP_BUY_Kauft|r |T133738:0|t[Grimoires] |cRXP_BUY_für eure Pets, falls ihr wollt|r
     .target Jubahl Corpseseeker
     .zoneskip Elwynn Forest
@@ -6481,7 +6481,7 @@ step
     #optional
     #requires MilstaffDM << Mage
     .goto 1455,67.842,42.456
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Ritzelschnitt Zahnrad|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gearcutter Cogspinner|r
     .vendor 5175 >> |cRXP_BUY_Kauft eine|r |T133024:0|t[Bronzeröhre] |cRXP_BUY_beim Händler (falls sie verfügbar ist)|r
 --    >>You will need 2 bronze tubes for a quest later << Rogue
     .target Gearcutter Cogspinner
@@ -6518,7 +6518,7 @@ step
 step
     #xprate >1.59 << !Hunter
     .goto StormwindClassic,55.21,7.04
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Billibub Zahnrad|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Billibub Cogspinner|r
     .vendor 5519 >> |cRXP_BUY_Kauft eine|r |T133024:0|t[Bronzeröhre] |cRXP_BUY_beim Händler (falls sie verfügbar ist)|r
 --    >>You will need 2 bronze tubes for a quest later << Rogue
     .bronzetube
@@ -6554,7 +6554,7 @@ step << Hunter
     #label DMPetTrain
     .goto 1453,61.576,15.998
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich drinnen mit |cRXP_FRIENDLY_Karrina Mekenda|r
-    .trainer 2879 >> Erlernt eure Begleiterfähigkeiten
+    .trainer 2879 >> Erlernt eure spells für euren Begleiter
     .target Karrina Mekenda
     .dungeon DM
 step << Hunter
@@ -6659,7 +6659,7 @@ step
     .goto StormwindClassic,57.12,57.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Woo Ping|r
     .train 201 >> Erlernt 1h Schwerter << Mage/Rogue/Warlock
-    .train 1180 >> Erlernen Dolche << Mage/Druid/Priest
+    .train 1180 >> Erlerne Dolche << Mage/Druid/Priest
     .train 202 >> Erlernt 2h Schwerter << Warrior/Paladin/Hunter
     .target Woo Ping
     .dungeon DM
@@ -6718,7 +6718,7 @@ step << Paladin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Duthorian Rall|r. Er wird dir den [|cRXP_LOOT_Foliant der Ehre|r] geben
     .use 6776 >>|cRXP_WARN_Benutzt die |T133739:0|t[|cRXP_LOOT_Der Foliant der Ehre|r] um die Quest zu starten|r
     .collect 6776,1,1649 --Tome of Valor (1)
-    .accept 1649 >>Der Foliant der Tapferkeit annehmen
+    .accept 1649 >>Der Foliant der Ehre annehmen
     .target Duthorian Rall
     .dungeon DM
 step << Paladin
@@ -6726,7 +6726,7 @@ step << Paladin
     .goto StormwindClassic,39.80,29.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Duthorian Rall|r
     .turnin 1649 >>Gebt die Quest Der Foliant der Ehre ab
-    .accept 1650 >>Der Foliant der Tapferkeit annehmen
+    .accept 1650 >>Der Foliant der Ehre annehmen
     .target Duthorian Rall
     .dungeon DM
 step << Paladin
@@ -6868,7 +6868,7 @@ step << Mage
     .goto 1453,38.035,81.729,6,0
     .goto 1453,37.550,82.500,10,0
     >>Besteigt den Magierturm. Geht durch das grüne Portal
-    .goto Stormwind City,39.681,79.538,15 >>Reisen in Richtung |cRXP_FRIENDLY_Larimaine Purdue|r
+    .goto Stormwind City,39.681,79.538,15 >>Reist in Richtung |cRXP_FRIENDLY_Larimaine Purdue|r
     .dungeon DM
 step << Mage
     #xprate >1.59
@@ -6926,7 +6926,7 @@ step
     #ah
     #softcore
     .goto Stormwind City,53.612,59.764
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Auktionatorin Jaxon|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Auktionator Jaxon|r
     >>Kauft das |T134437:0|t[Gegengift] für eure |T132290:0|t[Gifte]-Quest später und den Rest für schnellere Questabgaben im Rotkammgebirge << !Dwarf Rogue
     >>Kauft die folgenden Gegenstände für schnellere Abgaben im Rotkammgebirge und Westfall in Kürze << Paladin
     >>Kauft die folgenden Gegenstände für schnellere Abgaben im Rotkammgebirge << !Paladin !Rogue/Dwarf Rogue
@@ -6948,7 +6948,7 @@ step
     #ah
     #hardcore
     .goto Stormwind City,53.612,59.764
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Auktionatorin Jaxon|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Auktionator Jaxon|r
     >>Kauft das |T134437:0|t[Gegengift] für eure |T132290:0|t[Gifte]-Quest später und den Rest für schnellere Questabgaben im Rotkammgebirge und Westfall << !Dwarf Rogue
     >>Kauft die folgenden Gegenstände für schnellere Abgaben im Rotkammgebirge und Westfall in Kürze << !Rogue/Dwarf Rogue
     >>Das spart dir Zeit, weil du dann später nicht rumläufst und die Mobs dafür töten musst. Überspring diesen Schritt, wenn du nichts kaufen willst
@@ -6972,7 +6972,7 @@ step
     .goto StormwindClassic,63.301,62.103,30,0
     .goto StormwindClassic,63.047,65.744,15,0
     .goto StormwindClassic,66.276,62.135
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Dungar Trinkfest|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Dungar Longdrink|r
     .fp Stormwind >> Holt euch den Flugpunkt in Sturmwind << !Human
     .fly Westfall >> Fliegt nach Westfall << Human
     .target Dungar Longdrink
@@ -7011,7 +7011,7 @@ step << Human
     .goto StormwindClassic,63.301,62.103,30,0
     .goto StormwindClassic,63.047,65.744,15,0
     .goto StormwindClassic,66.276,62.135
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Dungar Trinkfest|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Dungar Longdrink|r
     .fly Redridge >> Fliegt ins Rotkammgebirge
     .target Dungar Longdrink
     .zoneskip Stormwind City,1
@@ -7093,7 +7093,7 @@ step
     #optional << Human/Warlock
     #completewith next
     .goto Redridge Mountains,30.59,59.42
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Ariena Sturmfeder|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Ariena Stormfeather|r
     .fp Redridge Mountains >> Erlernt die Flugroute zum Rotkammgebirge << !Human !Warlock
     .fly Westfall >> Fliegt nach Westfall
     .target Ariena Stormfeather
@@ -7102,7 +7102,7 @@ step
     #xprate >1.59 << !Hunter
     #label DefiasWestfall2
     .goto Westfall,56.325,47.519
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gryan Starkmantel|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gryan Stoutmantle|r
     .turnin 132 >> Gebt die Quest Die Bruderschaft der Defias ab
     .accept 135 >> Die Bruderschaft der Defias annehmen
     .target Gryan Stoutmantle
@@ -7264,7 +7264,7 @@ step << !Dwarf Rogue
     #xprate >1.59
     #sticky
     #label AntiVenomStart2
-    .collect 6452,1 >> Crafte ein |T134437:0|t[Gegengift]
+    .collect 6452,1 >> Stelle ein |T134437:0|t[Gegengift] her
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
     .train 7934,3 --Anti Venom spell trained
@@ -7309,7 +7309,7 @@ step
     #optional
     #completewith next
     .goto StormwindClassic,66.277,62.137
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Dungar Trinkfest|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Dungar Longdrink|r
     .fly Westfall >> Fliegt nach Westfall
     .target Dungar Longdrink
     .dungeon DM
@@ -7558,7 +7558,7 @@ step << Paladin
     >>|cRXP_WARN_Sie patrouilliert leicht auf ihrem Feld herum|r
     >>|cRXP_WARN_Seid vorsichtig, da dies etwas schwierig sein kann. Es werden 3 Wellen mit 3, dann 4, dann 5 Stufe-17-18 |cRXP_ENEMY_Räuber der Defias|r spawnen
     .turnin 1650 >>Gebt die Quest Der Foliant der Ehre ab
-    .accept 1651,1 >>Der Foliant der Tapferkeit annehmen
+    .accept 1651,1 >>Der Foliant der Ehre annehmen
     .link https://youtu.be/1-nnLcqIIlQ?si=kZi41eXT8ZQmSBY2&t=10 >> KLICKT HIER für einen Videoanleitung
     .target Daphne Stilwell
     .dungeon DM
@@ -7609,7 +7609,7 @@ step
     #ssf
     #hardcore << !Paladin
     .goto Westfall,30.01,86.02
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Kapitän Grausohn|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Captain Grayson|r
     .accept 104 >> Akzeptiert die Quest Bedrohung an der Küste
     .target Captain Grayson
     .dungeon DM
@@ -7701,7 +7701,7 @@ step
     #xprate >1.59 << !Hunter
     #label DeadminesEnd
     .goto Westfall,56.33,47.52
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gryan Starkmantel|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gryan Stoutmantle|r
     .turnin 166 >> Gebt die Quest Die Bruderschaft der Defias ab
     .target Gryan Stoutmantle
     .dungeon DM
@@ -7994,7 +7994,7 @@ step << NightElf
     #label DeeprunDMNoFP2
     #completewith NEIFFP
     .goto 1455,67.842,42.456
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Ritzelschnitt Zahnrad|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gearcutter Cogspinner|r
     .vendor 5175 >> |cRXP_BUY_Kauft eine|r |T133024:0|t[Bronzeröhre] |cRXP_BUY_beim Händler (falls sie verfügbar ist)|r
 --    >>You will need 2 bronze tubes for a quest later << Rogue
     .target Gearcutter Cogspinner
@@ -8006,7 +8006,7 @@ step << NightElf Warrior/NightElf Hunter
     #label DeeprunDMNoFP3
     #completewith NEIFFP
     .goto Ironforge,61.177,89.508
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich drinnen mit |cRXP_FRIENDLY_Buliwyf Steinhand|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich drinnen mit |cRXP_FRIENDLY_Buliwyf Stonehand|r
     .train 197 >> Erlernen 2h Äxte << Warrior
     .train 199 >> Erlernen 2h Streitkolben << Warrior
     .train 266 >> Erlerne Schusswaffen << Hunter
@@ -8223,7 +8223,7 @@ step << !Hunter NightElf
     #label crocs
     .goto Wetlands,49.91,39.36
     .target Einar Stonegrip
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Einar Steingriff|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Einar Stonegrip|r
     .accept 469 >> Tägliche Lieferung annehmen
 step << !Hunter NightElf !Warrior
     #xprate <1.59
@@ -8321,7 +8321,7 @@ step << !Hunter
     #xprate <1.59
     #completewith next
     .goto Ironforge,67.84,42.50
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Ritzelschnitt Zahnrad|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gearcutter Cogspinner|r
     .vendor >> |cRXP_WARN_Kaufe eine|r |T133024:0|t[Bronzeröhre]
     >>|cRXP_WARN_Dieses Item hat limitierte Verfügbarkeit. Überspringe den Schritt, wenn |cRXP_FRIENDLY_Gearcutter Cogspinner|r keine hat|r
 --  >>You will need 2 bronze tubes for a quest later << Rogue
@@ -8331,7 +8331,7 @@ step << !Hunter
     #xprate <1.59
     .goto Ironforge,78.00,52.00,5,0
     .zone Stormwind City >> Betretet die Tiefenbahn. Nehmt die Straßenbahn nach Sturmwind
-    >>|cRXP_WARN_Skillt eure|r |T135966:0|t[Erste Hilfe] |cRXP_WARN_und|r |T133971:0|t[Kochkunst] |cRXP_WARN_falls nötig, während ihr auf den Zug wartet|r
+    >>|cRXP_WARN_Level eure|r |T135966:0|t[Erste Hilfe] |cRXP_WARN_und|r |T133971:0|t[Kochkunst] |cRXP_WARN_falls benötigt, während ihr auf die Tram wartet|r
     >>Ihr werdet eure|cRXP_WARN_ |T135966:0|t[Erste Hilfe] |rauf 80 benötigen für eine spätere Ques mit level 24|cRXP_WARN_ << Rogue !Dwarf
 
 
@@ -8362,7 +8362,7 @@ RXPGuides.RegisterGuide([[
 step
     #completewith BMenace
     .goto StormwindClassic,55.21,7.04
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Billibub Zahnrad|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Billibub Cogspinner|r
     .vendor >> |cRXP_WARN_Kaufe eine|r |T133024:0|t[Bronzeröhre]
     >>|cRXP_WARN_Dieses Item hat limitierte Verfügbarkeit. Überspringe den Schritt, wenn |cRXP_FRIENDLY_Billibub Zahnrad|r keine hat|r
 --    >>You will need 2 bronze tubes for a quest later << Rogue
@@ -8507,7 +8507,7 @@ step << Rogue
 step
     #ah
     .goto Stormwind City,53.612,59.764
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Auktionatorin Jaxon|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Auktionator Jaxon|r
     >>Kauft das |T134437:0|t[Gegengift] für eure |T132290:0|t[Gifte]-Quest später und den Rest für schnellere Questabgaben im Rotkammgebirge << !Dwarf Rogue
     >>Kauft die folgenden Gegenstände für schnellere Abgaben im Rotkammgebirge << !Rogue/Dwarf Rogue
     >>Das spart dir Zeit, weil du dann später nicht rumläufst und die Mobs dafür töten musst. Überspring diesen Schritt, wenn du nichts kaufen willst
@@ -8523,7 +8523,7 @@ step
     .dungeon !DM
 step << !Human !Warlock
     #completewith start
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Dungar Trinkfest|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Dungar Longdrink|r
     .goto StormwindClassic,66.27,62.12
     .fp Stormwind >> Erlernt die Sturmwind Flugroute
     .target Dungar Longdrink
@@ -8535,14 +8535,14 @@ step << !NightElf
 .dungeon DM
     #completewith next
     .goto StormwindClassic,66.27,62.12
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Dungar Trinkfest|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Dungar Longdrink|r
     .fly Westfall >> Fliegt nach Westfall
     .target Dungar Longdrink
     .zoneskip Westfall
 step << !NightElf
 #xprate <1.5 << Dwarf/Gnome
 .dungeon DM
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gryan Starkmantel|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gryan Stoutmantle|r
     .accept 65 >> Die Bruderschaft der Defias annehmen
     .goto Westfall,56.33,47.52
     .target Gryan Stoutmantle
@@ -8578,7 +8578,7 @@ step << Gnome Warlock
 step << !Human
 #xprate >1.49 << Dwarf/Gnome
 .dungeon DM
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gryan Starkmantel|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gryan Stoutmantle|r
     .accept 65 >> Die Bruderschaft der Defias annehmen
     .goto Westfall,56.33,47.52
     .target Gryan Stoutmantle
@@ -8630,13 +8630,13 @@ step << !Human !Warlock
 step << !Human !Warlock
     #xprate >1.49 << Gnome/Dwarf
     .goto Redridge Mountains,30.73,59.99
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Stellvertreter Feldon|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Deputy Feldon|r
     .turnin 244 >> Gebt die Quest Eindringende Gnolle ab
     .target Deputy Feldon
 step << NightElf
     #xprate <1.5
     .goto Redridge Mountains,30.73,59.99
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Stellvertreter Feldon|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Deputy Feldon|r
     .target Deputy Feldon
     .accept 246 >> Akzeptiert die Quest Einschätzung der Gefahr
 step
@@ -8656,7 +8656,7 @@ step
     .accept 120 >> Akzeptiert die Quest Botschaft nach Sturmwind
 step
 .dungeon DM
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Verner Gutmark|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Verner Osgood|r
 	.target Verner Osgood
     .goto Redridge Mountains,30.97,47.27
     .accept 118 >> Akzeptiert die Quest Der Preis für Hufeisen
@@ -8664,13 +8664,13 @@ step
 .dungeon DM
     #completewith next
     .goto Redridge Mountains,30.59,59.42
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Ariena Sturmfeder|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Ariena Stormfeather|r
     .fly Westfall >> Fliegt nach Westfall
     .target Ariena Stormfeather
 step
 .dungeon DM
     .goto Westfall,56.325,47.519
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gryan Starkmantel|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gryan Stoutmantle|r
     .turnin 132 >> Gebt die Quest Die Bruderschaft der Defias ab
     .accept 135 >> Die Bruderschaft der Defias annehmen
     .target Gryan Stoutmantle
@@ -8737,7 +8737,7 @@ step
 step
 .dungeon DM
     .goto Westfall,56.33,47.52
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gryan Starkmantel|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gryan Stoutmantle|r
     .turnin 155 >> Gebt die Quest Die Bruderschaft der Defias ab
     .accept 166 >> Die Bruderschaft der Defias annehmen
     .target Gryan Stoutmantle
@@ -8896,7 +8896,7 @@ step << Druid
     +|cRXP_WARN_Ihr solltet euch darauf vorbereiten, zu|r |T132276:0|t[Wildheit] |cRXP_WARN_anstatt|r |T136096:0|t[Gleichgewicht] zu nutzen|cRXP_WARN_sobald ihr die Runen für eure Fähigkeiten|r |T132135:0|t[Zerfleischen] |cRXP_WARN_und|r |T236167:0|t[Wildes Brüllen] habt
 step << Druid
 .dungeon DM
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Sheldras Mistelmond|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Sheldras Moontree|r
     .goto StormwindClassic,20.89,55.50
     .trainer >> Trainiere deine Klassenfähigkeiten
     .train 768 >> Erlernt |T132115:0|t[Katzengestalt]
@@ -8918,7 +8918,7 @@ step << Paladin
     .goto StormwindClassic,39.80,29.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Duthorian Rall|r
     .turnin 1649 >>Gebt die Quest Der Foliant der Ehre ab
-    .accept 1650 >>Der Foliant der Tapferkeit annehmen
+    .accept 1650 >>Der Foliant der Ehre annehmen
     .target Duthorian Rall
 step << Paladin
 .dungeon DM
@@ -9124,7 +9124,7 @@ step
 .dungeon DM
     #xprate <1.5
     .goto Redridge Mountains,30.73,59.99
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Stellvertreter Feldon|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Deputy Feldon|r
     .turnin 244 >> Gebt die Quest Eindringende Gnolle ab
     .target Deputy Feldon
 
@@ -9156,7 +9156,7 @@ step
 step
 .dungeon DM
 #xprate <1.5
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Verner Gutmark|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Verner Osgood|r
 	.target Verner Osgood
     .goto Redridge Mountains,30.97,47.27
     .turnin 119 >> Gebt die Quest Zurück zu Verner ab
@@ -9437,7 +9437,7 @@ step << Rogue
 	.destroy 7907 >> Zerstört die |T134328:0|t[Zertifikat der Diebeskunst]. Ihr braucht es nicht mehr
 step
     #xprate <1.5
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Stellvertreter Feldon|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Deputy Feldon|r
 	.target Deputy Feldon
     .goto Redridge Mountains,30.73,59.99
     .turnin 246 >> Gebt die Quest Einschätzung der Gefahr ab
@@ -9525,7 +9525,7 @@ step << Warlock
 .dungeon !DM
     #completewith next
     .goto StormwindClassic,29.2,74.0,20,0
-    .goto StormwindClassic,27.2,78.1,15 >> Geh ins geschlachtete Lamm und dann in den Keller
+    .goto StormwindClassic,27.2,78.1,15 >> Geht Zum geschlachtete Lamm und dann in den Keller
 step << Warlock
 .dungeon !DM
     .goto StormwindClassic,26.11,77.22
@@ -9567,7 +9567,7 @@ step << Druid
     +|cRXP_WARN_Ihr solltet euch darauf vorbereiten, zu|r |T132276:0|t[Wildheit] |cRXP_WARN_anstatt|r |T136096:0|t[Gleichgewicht] zu nutzen|cRXP_WARN_sobald ihr die Runen für eure Fähigkeiten|r |T132135:0|t[Zerfleischen] |cRXP_WARN_und|r |T236167:0|t[Wildes Brüllen] habt
 step << Druid
 .dungeon !DM
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Sheldras Mistelmond|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Sheldras Moontree|r
     .goto StormwindClassic,20.89,55.50
     .trainer >> Trainiere deine Klassenfähigkeiten
     .train 768 >> Erlernt |T132115:0|t[Katzengestalt]
@@ -9589,7 +9589,7 @@ step << Paladin
     .goto StormwindClassic,39.80,29.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Duthorian Rall|r
     .turnin 1649 >>Gebt die Quest Der Foliant der Ehre ab
-    .accept 1650 >>Der Foliant der Tapferkeit annehmen
+    .accept 1650 >>Der Foliant der Ehre annehmen
     .target Duthorian Rall
 step << Paladin
 .dungeon !DM
@@ -9736,7 +9736,7 @@ step << Dwarf Rogue
     #optional
     #sticky
     #label AntiVenomEnd2
-    .cast 20594 >>|cRXP_WARN_Wirkt|T136225:0|t[Steingestalt],um|T136230:0|t[Berührung von Zanzil] Debuff zu entfernen|r
+    .cast 20594 >>|cRXP_WARN_Wirkt |T136225:0|t[Steingestalt], um |T136230:0|t[Berührung von Zanzil]-Debuff zu entfernen|r
     .aura -9991
 step << Rogue
     #optional
@@ -9773,7 +9773,7 @@ step << !Dwarf Rogue
 step << !Dwarf Rogue
     #sticky
     #label AntiVenomStart2
-    .collect 6452,1 >> Crafte ein |T134437:0|t[Gegengift]
+    .collect 6452,1 >> Stelle ein |T134437:0|t[Gegengift] her
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
     .train 7934,3 --Anti Venom spell trained
@@ -9842,7 +9842,7 @@ step
     >>|cRXP_WARN_Falls ihr in Goldhain seid, ist es schneller, von Sturmwind zu fliegen|r
 	>>|cRXP_WARN_Falls ihr am Turm von Azora seid, lauft einfach ins Rotkammgebirge|r
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Verner Gutmark|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Verner Osgood|r
 	.target Verner Osgood
     .goto Redridge Mountains,30.97,47.27
     .turnin 119 >> Gebt die Quest Zurück zu Verner ab
@@ -9978,14 +9978,14 @@ step
     .mob Great Goretusk
 step
     #xprate <1.2
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Verner Gutmark|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Verner Osgood|r
 	.target Verner Osgood
     .goto Redridge Mountains,31.00,47.30
     .turnin 124 >> Gebt die Quest Das Bellen der Gnolle ab
     .turnin 122 >> Gebt die Quest Bauchschuppen ab
 step
     #xprate >1.0
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Verner Gutmark|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Verner Osgood|r
 	.target Verner Osgood
     .goto Redridge Mountains,30.97,47.27
     .turnin 124 >> Gebt die Quest Das Bellen der Gnolle ab
@@ -10009,12 +10009,12 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Allianz 1-20
 #groupid RXP-SRGCE-A1
 #name 19-21 Dunkelküste/Eschental
-#next RestedXP Allianz 20-30\21-23 Eschental/Steinkrallengebirge
+#next RestedXP Allianz 20-30\21-23 Eschental/Stonetalon
 
 step
     #xprate >1.59
     .goto 1439,38.325,43.039
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gershala Nachtraunen|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gershala Nightwhisper|r
     .turnin 3765 >> Gebt die Quest Verderbnis in der Fremde ab
     .target Gershala Nightwhisper
     .isOnQuest 3765
@@ -10424,7 +10424,7 @@ step
     .fp Astranaar>> Erlernt die Flugroute nach Astranaar
 	.target Daelyshia
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Shindrell Feuerflink|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Shindrell Swiftfire|r
 	.target Shindrell Swiftfire
     .goto Ashenvale,34.67,48.83
     .accept 1008 >> Akzeptiert die Quest Der Zoramstrand
@@ -10466,7 +10466,7 @@ step
 step
     #xprate <1.59
     .goto Ashenvale,37.36,51.79
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Pelturas Weißmond|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Pelturas Whitemoon|r
 	.target Pelturas Whitemoon
     .turnin 1020 >> Gebt die Quest Orendils Heilmittel ab
     .timer 24,Orendils Heilmittel Roleplay
@@ -10738,23 +10738,23 @@ step
     .goto Darnassus,40.0,42.2
     .bankdeposit 5996,1468,2251,1015 >> Deponiert die folgenden Gegenstände in eurer Bank
     .target Garryeth
-    >>|T134797:0|t[Elixir der Wasseratmung] --5996
+    >>|T134797:0|t[Elixier der Wasseratmung] --5996
     >>|T134304:0|t[Murlocflossen] --1468
     >>|T134321:0|t[Klebriges Spinnenbein] --2251
     >>|T133970:0|t[Magere Wolfflanke] --1015
 step << Dwarf Hunter
     #xprate <1.59
 -- #xprate >1.59
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Ilyenia Mondfeuer|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Ilyenia Moonfire|r
     .skipgossip 11866,1
     .goto Darnassus,57.56,46.72
-    .train 264 >> Erlernen Bogen
+    .train 264 >> Erlernt Bogen
     .train 227 >> Erlernt Stäbe
     .target Ilyenia Moonfire
     .dungeon DM
 step
     #xprate <1.59
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Chefarchäologe Grauflaum|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Chefarchäologe Greywhisker|r
 	.target Chief Archaeologist Greywhisker
     .goto Teldrassil,23.70,64.51
     .turnin 741 >> Gebt die Quest Der geistesabwesende Ausgrabungsleiter ab
@@ -10802,18 +10802,18 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Allianz 1-20
 #groupid RXP-SRGCE-A1
 #name 20-21 Dunkelküste/Eschental
-#next RestedXP Allianz 20-30\21-23 Stonetalon/Eschental;RestedXP Allianz 20-30\21-22 Eschental SoD
+#next RestedXP Allianz 20-30\21-23 Steinkrallengebirge/Ashenvale;RestedXP Allianz 20-30\21-22 Eschental SoD
 
 
 step << Druid
     #xprate <1.59
 	#completewith next
-	.cast 18960 >> Caste Teleportieren: Moonglade
+	.cast 18960 >> Caste Teleportieren: Mondlichtung
 	.zoneskip Moonglade
 step << Druid
     #xprate <1.59
     .goto Moonglade,52.53,40.57
-	>>Gehe nach Moonglade
+	>>Gehe zur Mondlichtung
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Loganaar|r
     .trainer >> Trainiere deine Klassenfähigkeiten
     .target Loganaar
@@ -10923,7 +10923,7 @@ step
     #xprate >1.49
     #optional
     #completewith Murkdeep
-    .equip 15 >>|cRXP_WARN_Legt euren vorherigen |r |T133762:0|t[Umhang] an
+    .equip 15 >>|cRXP_WARN_Re-equip euren vorherigen|r |T133762:0|t[Umhang]
     .itemStat 15,QUALITY,<7
     .isOnQuest 995
 step
@@ -11358,7 +11358,7 @@ step
     .goto Ashenvale,33.01,21.41,50,0
     .goto Ashenvale,29.53,24.33,40,0
     .goto Ashenvale,31.89,22.53
-    >>Öffnet |cRXP_PICK_Pflanzenbündel|r auf dem Boden. Plündert sie für |cRXP_LOOT_Bathranshaar|r
+    >>Öffnet die |cRXP_PICK_Pflanzenbündel|r auf dem Boden. Plündert sie für |cRXP_LOOT_Bathranshaar|r
     >>|cRXP_WARN_Sie sehen wie kleine braune Säcke aus und können teilweise im Boden vergraben sein. Sie können schwer zu sehen sein|r
     >>|cRXP_WARN_Stellt sicher, dass ihr|r |T134916:0|t[Kräutersuche] |cRXP_WARN_aktiviert habt, um sie auf der Minikarte zu sehen|r
     .complete 1010,1 --Bathran's Hair (5)

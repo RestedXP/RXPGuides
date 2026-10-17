@@ -7,7 +7,7 @@ RXPGuides.RegisterGuide([[
 << Human Mage
 #name 1-10 Fortgeschrittener AoE-Guide für Mensch Magier im Wald von Elwynn
 #version 2
-#group RestedXP ADV AoE Allianz Magier
+#group RestedXP Forgeschrittener AoE Allianz Magier
 #defaultfor Human Mage
 #next 10-11 Fortgeschrittene AoE-Guide für Mensch Magier in Dun Morogh
 
@@ -59,7 +59,7 @@ step
     .goto 1429/0,-188.20,-8868.89,10,0
     .goto 1429/0,-174.32,-8880.92,10,0
     .goto 1429/0,-164.25,-8891.80,10,0
-    .goto 1429/0,-136.52,-8933.53,10 >>Reist zu |cRXP_FRIENDLY_Willem|r
+    .goto 1429/0,-136.52,-8933.53,10 >>Reisen zu |cRXP_FRIENDLY_Willem|r
 step
     .goto 1429/0,-136.52,-8933.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Willem|r
@@ -206,7 +206,7 @@ step
     .goto 1429/0,-188.20,-8868.89,10,0
     .goto 1429/0,-174.32,-8880.92,10,0
     .goto 1429/0,-164.25,-8891.80,10,0
-    .goto 1429/0,-136.52,-8933.53,10 >>Reist zu |cRXP_FRIENDLY_Willem|r
+    .goto 1429/0,-136.52,-8933.53,10 >>Reisen zu |cRXP_FRIENDLY_Willem|r
 step
     .goto 1429/0,-136.52,-8933.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Willem|r
@@ -1100,7 +1100,7 @@ step
     .goto 1455/0,-1036.48,-4804.50,20,0
     .goto 1455/0,-992.68,-4742.08,20,0
     .goto 1455/0,-931.8,-4627.59,20,0
-    .goto 1455/0,-928.40,-4614.51,10 >>Reist in Richtung |cRXP_FRIENDLY_Dink|r
+    .goto 1455/0,-928.40,-4614.51,10 >>Reisenzu |cRXP_FRIENDLY_Dink|r
 step
     .goto 1455/0,-928.40,-4614.51
     >>Sprich mit |cRXP_FRIENDLY_Dink|r
@@ -1147,7 +1147,7 @@ RXPGuides.RegisterGuide([[
 << Human Mage
 #name 10-11 Fortgeschrittene AoE-Guide für Mensch Magier in Dun Morogh
 #version 2
-#group RestedXP ADV AoE Allianz Magier
+#group RestedXP Forgeschrittener AoE Allianz Magier
 #defaultfor Human Mage
 #next 10-12 Fortgeschrittender Dunkelküste 1 Magier AoE Guide
 
@@ -1438,7 +1438,7 @@ RXPGuides.RegisterGuide([[
 << Gnome Mage
 #name 1-10 ADV Dun Morogh Gnomenmagier AoE
 #version 2
-#group RestedXP ADV AoE Allianz Magier
+#group RestedXP Forgeschrittener AoE Allianz Magier
 #defaultfor Gnome Mage
 #next 10-12 Fortgeschrittender Dunkelküste 1 Magier AoE Guide
 
@@ -1968,7 +1968,7 @@ step
 step
     #completewith Tannok
     .cast 1459 >> |T135932:0|t[Arkane Intelligenz] nachbuffen
-    .cast 168 >> |T135843:0|t[Frostrüstung] Nachbuffen
+    .cast 168 >> |T135843:0|t[Frostschadenrüstung] Nachbuffen
 step
     .goto 1426/0,-504.29,-5596.24
     >>Sprecht mit |cRXP_FRIENDLY_Ragnar|r
@@ -2577,7 +2577,7 @@ step
 step
     #completewith next
     .cast 1459 >> |T135932:0|t[Arkane Intelligenz] nachbuffen
-    .cast 168 >> |T135843:0|t[Frostrüstung] Nachbuffen
+    .cast 168 >> |T135843:0|t[Frostschadenrüstung] Nachbuffen
 step
     >>Sprecht mit |cRXP_FRIENDLY_Bellowfiz|r und |cRXP_FRIENDLY_Stonegear|r
     .turnin 320,2 >> Gebt die Quest Rückkehr zu Bellowfiz ab
@@ -2962,7 +2962,7 @@ step
     .goto 1455/0,-1036.48,-4804.50,20,0
     .goto 1455/0,-992.68,-4742.08,20,0
     .goto 1455/0,-931.8,-4627.59,20,0
-    .goto 1455/0,-928.40,-4614.51,10 >>Reist in Richtung |cRXP_FRIENDLY_Dink|r
+    .goto 1455/0,-928.40,-4614.51,10 >>Reisenzu |cRXP_FRIENDLY_Dink|r
 step
     .goto 1455/0,-928.40,-4614.51
     >>Sprich mit |cRXP_FRIENDLY_Dink|r
@@ -2997,7 +2997,7 @@ RXPGuides.RegisterGuide([[
 << Alliance Mage
 #name 10-12 Fortgeschrittender Dunkelküste 1 Magier AoE Guide
 #version 2
-#group RestedXP ADV AoE Allianz Magier
+#group RestedXP Forgeschrittener AoE Allianz Magier
 #defaultfor Human Mage/Gnome Mage
 #next 12-14 Fortgeschrittender Loch Modan Magier AoE Guide
 
@@ -3440,7 +3440,7 @@ step
     .mob Young Reef Crawler
 step
     .goto 1439/1,541.75,6313.31
-    >>Klickt |cRXP_PICK_Buzzbox 827|r
+    >>Clickt die |cRXP_PICK_Buzzbox 827|r
     .turnin 983 >>Gebt die Quest Dröhnkiste 827 ab
     .accept 1001 >>Akzeptiert die Quest Dröhnkiste 411
 step
@@ -3553,7 +3553,7 @@ RXPGuides.RegisterGuide([[
 << Alliance Mage
 #name 10-12 Starte Fortgeschrittender Dunkelküste 1 Magier AoE Guide
 #version 2
-#group RestedXP ADV AoE Allianz Magier
+#group RestedXP Forgeschrittener AoE Allianz Magier
 #defaultfor none
 #next 12-14 Fortgeschrittender Loch Modan Magier AoE Guide
 
@@ -4007,7 +4007,7 @@ step
     .target Terenthis
 step
     .goto 1439/1,541.75,6313.31
-    >>Klickt |cRXP_PICK_Buzzbox 827|r
+    >>Clickt die |cRXP_PICK_Buzzbox 827|r
     .turnin 983 >>Gebt die Quest Dröhnkiste 827 ab
     .accept 1001 >>Akzeptiert die Quest Dröhnkiste 411
 step
@@ -4120,7 +4120,7 @@ RXPGuides.RegisterGuide([[
 << Alliance Mage
 #name 12-14 Fortgeschrittender Loch Modan Magier AoE Guide
 #version 2
-#group RestedXP ADV AoE Allianz Magier
+#group RestedXP Forgeschrittener AoE Allianz Magier
 #defaultfor Human Mage/Gnome Mage
 #next 14-16 Fortgeschrittender Dunkelküste 2 Magier AoE Guide
 step
@@ -4900,7 +4900,7 @@ RXPGuides.RegisterGuide([[
 << Alliance Mage
 #name 14-16 Fortgeschrittender Dunkelküste 2 Magier AoE Guide
 #version 2
-#group RestedXP ADV AoE Allianz Magier
+#group RestedXP Forgeschrittener AoE Allianz Magier
 #defaultfor Human Mage/Gnome Mage
 #next 16-18 Fortgeschrittener Westfall Magier AoE Guide
 
@@ -5548,7 +5548,7 @@ RXPGuides.RegisterGuide([[
 << Alliance Mage
 #name 16-18 Fortgeschrittener Westfall Magier AoE Guide
 #version 2
-#group RestedXP ADV AoE Allianz Magier
+#group RestedXP Forgeschrittener AoE Allianz Magier
 #defaultfor Human Mage/Gnome Mage
 #next 18-20 Fortgeschrittener Dunkelküste 3 Magier AoE Guide
 
@@ -6278,7 +6278,7 @@ RXPGuides.RegisterGuide([[
 << Alliance Mage
 #name 18-20 Fortgeschrittener Dunkelküste 3 Magier AoE Guide
 #version 2
-#group RestedXP ADV AoE Allianz Magier
+#group RestedXP Forgeschrittener AoE Allianz Magier
 #defaultfor Human Mage/Gnome Mage
 #next 20-22 Fortgeschrittener Rotkammgebirge 1 Magier AoE Guide
 
@@ -7056,7 +7056,7 @@ RXPGuides.RegisterGuide([[
 << Alliance Mage
 #name 20-22 Fortgeschrittener Rotkammgebirge 1 Magier AoE Guide
 #version 2
-#group RestedXP ADV AoE Allianz Magier
+#group RestedXP Forgeschrittener AoE Allianz Magier
 #defaultfor Human Mage/Gnome Mage
 #next 22-26 ADV Sumpfland 1 Magier AoE
 

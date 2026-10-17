@@ -5616,7 +5616,7 @@ step << skip --Warlock
     #xprate >1.59
     #optional
     #completewith DeeprunDM
-    .goto 1455,53.164,7.037,10 >> Betretet |cRXP_FRIENDLY_Jubahl Corpseseeker|r's Haus
+    .goto 1455,53.164,7.037,10 >> Betretet |cRXP_FRIENDLY_Jubahl Corpseseekers|r Haus
     .zoneskip Elwynn Forest
     .zoneskip Stormwind City
     .zoneskip Westfall
@@ -5644,7 +5644,7 @@ step << !Mage !Priest
     #xprate >1.59 << !Hunter
     #completewith DeeprunDM
     #optional
-    .goto 1455,53.164,7.037,10 >> Betretet |cRXP_FRIENDLY_Jubahl Corpseseeker|r's Haus
+    .goto 1455,53.164,7.037,10 >> Betretet |cRXP_FRIENDLY_Jubahl Corpseseekers|r Haus
     .zoneskip Wetlands << NightElf
     .zoneskip Elwynn Forest
     .zoneskip Stormwind City
@@ -6071,7 +6071,7 @@ step << Mage
     .goto 1453,38.035,81.729,6,0
     .goto 1453,37.550,82.500,10,0
     >>Besteigt den Magierturm. Geht durch das grüne Portal
-    .goto Stormwind City,39.681,79.538,15 >>Reist in Richtung |cRXP_FRIENDLY_Larimaine Purdue|r
+    .goto Stormwind City,39.681,79.538,15 >>Reisen in Richtung |cRXP_FRIENDLY_Larimaine Purdue|r
     .dungeon DM
 step << Mage
     #xprate >1.59

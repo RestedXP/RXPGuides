@@ -199,7 +199,7 @@ step
     .maxlevel 53
 step
     .goto Duskwood,36.62,83.75
-    >>Geht tiefer in die Höhle und sprecht mit |cRXP_FRIENDLY_Dreamwarden Thalinar|r, um den [|T134939:0|t[|cRXP_LOOT_Intelligenz-Bericht|r]] zu erhalten
+    >>Geht tiefer in die Höhle und sprecht mit |cRXP_FRIENDLY_Dreamwarden Thalinar|r, um den |T134939:0|t[|cRXP_LOOT_Intelligenz-Bericht|r] zu erhalten
     .complete 81733,1
     .target Dreamwarden Thalinar
     .skipgossip
@@ -236,7 +236,7 @@ step
     .maxlevel 53
 step
     .goto Duskwood,50.6,77.0
-    >>Geht ins Bauernhaus und sprecht mit |cRXP_FRIENDLY_Dreamwarden Amalia|r, um den [|T134939:0|t[|cRXP_LOOT_Intelligenz-Bericht|r]] zu erhalten
+    >>Geht ins Bauernhaus und sprecht mit |cRXP_FRIENDLY_Dreamwarden Amalia|r, um den |T134939:0|t[|cRXP_LOOT_Intelligenz-Bericht|r] zu erhalten
     .complete 81735,1
     .target Dreamwarden Amalia
     .skipgossip
@@ -261,7 +261,7 @@ step
 step
     #requires Dragons
     .goto Duskwood,66.32,76.09
-    >>Geht in die Scheune und sprecht mit |cRXP_FRIENDLY_Dreamwarden Dorilar|r, um den [|T134939:0|t[|cRXP_LOOT_Intelligenz-Bericht|r]] zu erhalten
+    >>Geht in die Scheune und sprecht mit |cRXP_FRIENDLY_Dreamwarden Dorilar|r, um den |T134939:0|t[|cRXP_LOOT_Intelligenz-Bericht|r] zu erhalten
     >>|cRXP_WARN_Betretet die Scheune nicht zu tief. Ihr könnt mit dem NPC durch die Innenwand sprechen, indem ihr ihn anvisiert und dann eure Interaktionstaste verwendet|r
     >>|cRXP_WARN_Seid vorsichtig, da der Boss|r |cRXP_ENEMY_Amokarok|r |cRXP_WARN_direkt neben dem NPC steht|r
     .complete 81734,1

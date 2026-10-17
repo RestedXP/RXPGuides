@@ -667,7 +667,7 @@ step << Priest
     .target Ken'jai
 step
     #completewith Sting
-    >>Beute |cRXP_LOOT_Kaktusapfel|r in der Nähe der Kakteen
+    >>Sammelt die |cRXP_LOOT_Kaktusapfel|r in der Nähe der Kakteen
     .complete 4402,1 --Cactus Apple (10)
 step
     #completewith Tails
@@ -4188,7 +4188,7 @@ step << Shaman
     #label MoltenBlast
     #completewith SacredBurialTurnIn
     .aura 408828 >>|cRXP_WARN_Tötet Feinde mit|r |T136026:0|t[Erdschock] |cRXP_WARN_auf ihnen mindestens einmal. Macht dies 10 Mal, um den|r |T136116:0|t[Inspiriert] |cRXP_WARN_Effekt zu erhalten|r
-    >>|cRXP_WARN_HINWEIS: Ihr müsst dies an Feinden tun, die Erfahrung gewähren können, um Stapel zu erhalten|r
+    >>|cRXP_WARN_HINWEIS: Ihr müsst dies auf Feinde wirken, die Erfahrung geben, um Stapel zu erhalten|r
     .mob Bael'dun Digger
     .mob Bael'dun Appraiser
     .train 425344,1
@@ -4673,7 +4673,7 @@ step << Hunter
 step << Shaman
     #xprate <1.5
     #completewith next
-    .subzone 371 >>Reist zu Staubwindhöhle
+    .subzone 371 >>Reist zur Staubwindhöhle
 step << Shaman
     #xprate <1.5
     #loop
@@ -5270,7 +5270,7 @@ step
     .goto Tirisfal Glades,61.52,53.20,80 >> Lauf nach Brill
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Coleman|r und |cRXP_FRIENDLY_Gretchen|r im Gasthaus
-    >>|cRXP_FRIENDLY_Gretchen|r |cRXP_WARN_ist im zweiten Stock|r
+    >>|cRXP_FRIENDLY_Gretchen|r |cRXP_WARN_ist in der zweiten Etage|r
     .accept 354 >>Akzeptiert die Quest Todesfälle in der Familie
     .accept 362 >>Akzeptiert die Quest Die Spuk-Mühle
     .target +Coleman Farthing
@@ -5424,7 +5424,7 @@ step << Warrior
 step
     #optional
     #completewith Pumpkins
-    >>Tötet alle |cRXP_ENEMY_Schattenhunde|r, die ihr seht. Plündert sie für ihre |cRXP_LOOT_Schattenhundblut|r
+    >>Tötet alle |cRXP_ENEMY_Schattenhunde|r, die ihr seht. Plündert sie für ihre |cRXP_LOOT_Schattenhundblut|r.
     >>|cRXP_WARN_Ihr erhaltet|r |T133849:0|t[Schlummersand] |cRXP_WARN_von der Folgequest dieser Quest|r
     .complete 367,1 --Darkhound Blood (5)
     .mob Decrepit Darkhound
@@ -5452,7 +5452,7 @@ step
 step
     #optional
     #completewith Pumpkins
-    >>Tötet jeden |cRXP_ENEMY_Nachtsauger|r, den ihr seht. Sammelt ihre |cRXP_LOOT_Nachtsaugerpelz|r als Beute
+    >>Tötet jeden |cRXP_ENEMY_Nachtsauger|r, den ihr seht. Sammelt ihre |cRXP_LOOT_Nachtsaugerpelze|r als Beute
     .complete 375,1 --Duskbat Pelt (5)
     .mob Greater Duskbat
     .mob Vampiric Duskbat
@@ -5521,7 +5521,7 @@ step
 step
     #optional
     #completewith next
-    >>Tötet jeden |cRXP_ENEMY_Nachtsauger|r, den ihr seht. Sammelt ihre |cRXP_LOOT_Nachtsaugerpelz|r als Beute
+    >>Tötet jeden |cRXP_ENEMY_Nachtsauger|r, den ihr seht. Sammelt ihre |cRXP_LOOT_Nachtsaugerpelze|r als Beute
     .complete 375,1 --Duskbat Pelt (5)
     .mob Greater Duskbat
     .mob Vampiric Duskbat
@@ -6032,7 +6032,7 @@ step
 step
     #optional
     #completewith RotHideGnolls
-    >>Tötet jeden |cRXP_ENEMY_Nachtsauger|r, den ihr seht. Sammelt ihre |cRXP_LOOT_Nachtsaugerpelz|r als Beute
+    >>Tötet jeden |cRXP_ENEMY_Nachtsauger|r, den ihr seht. Sammelt ihre |cRXP_LOOT_Nachtsaugerpelze|r als Beute
     .complete 375,1 --Duskbat Pelt (5)
     .mob Greater Duskbat
     .mob Vampiric Duskbat
@@ -6236,7 +6236,7 @@ step << Warrior
 step << Rogue
     .goto Tirisfal Glades,61.75,52.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Marion|r auf der zweiten Etage
-    .train 1766 >> Erlernt |T132219:0|t[Tritt]
+    .train 1766 >> Erlernen |T132219:0|t[Tritt]
     .target Marion Call
     .xp <12,1
 step << Warlock
@@ -6509,7 +6509,7 @@ step
 step << Warrior
     .goto Tirisfal Glades,61.26,50.84
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Sevren|r
-    .turnin 355 >>Gebt die Quest Sprecht mit Sevren ab
+    .turnin 355 >>Gebt die Quest Gespräch mit Sevren ab
     .accept 408 >>Akzeptiert die Quest Die Familiengruft
     .target Magistrate Sevren
     .isQuestTurnedIn 354
@@ -7297,7 +7297,7 @@ step << Warlock
     .goto Durotar,41.52,68.36,12,0
     .goto Durotar,41.24,68.16,12,0
     .goto Durotar,40.82,68.03,12,0
-    .goto Durotar,40.56,68.44,12 >>Reisen zu |cRXP_FRIENDLY_Nartok|r
+    .goto Durotar,40.56,68.44,12 >>Reist zu |cRXP_FRIENDLY_Nartok|r
 step << Warlock
     #softcore
     #season 0
@@ -7331,7 +7331,7 @@ step << Warlock
 step << Warlock
     #season 2
     .equip 10,711 >> |cRXP_WARN_Legt die|r |T132961:0|t[Zerlumpte Stoffhandschuhe] an
-    .equip 9,3596 >> |cRXP_ENEMY_Legt die|r |T132606:0|t[Zerlumpte Stoffarmschienen] an
+    .equip 9,3596 >> |cRXP_ENEMY_Legt|r die |T132606:0|t[Zerlumpte Stoffarmschienen] an
     .use 711
     .use 3596
     .engrave 10 >>|cRXP_WARN_Graviert eure|r Handschuhe mit|r |T133816:0|t[Heimsuchung] << Warlock
@@ -9733,7 +9733,7 @@ step
 step
     #xprate <2.1
     #completewith next
-    .goto Durotar,46.37,22.94,50 >> Reist nach Rezlak
+    .goto Durotar,46.37,22.94,50 >> Reist zu Rezlak
 step
     #xprate <2.1
     .goto Durotar,46.37,22.94
@@ -9800,7 +9800,7 @@ step << Shaman
     .goto Durotar,51.35,16.76,40,0
     .goto Durotar,54.65,19.02,40,0
     .goto Durotar,55.86,28.31,40,0
-    .subzone 371 >>Reist zu Staubwindhöhle
+    .subzone 371 >>Reist zur Staubwindhöhle
     >>|cRXP_WARN_Reist nach Osten um die Hügel herum, um die Höhle zu erreichen. Folgt dem Pfeil|r
 step << Shaman
     #xprate <2.1
@@ -10075,7 +10075,7 @@ step << Hunter
 step << Hunter
     .goto Orgrimmar,66.34,14.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Xao'tsu|r
-    .train 24547 >>Erlernt eure Begleiterfähigkeiten
+    .train 24547 >>Erlernt eure  Begleiterfähigkeiten
     .target Xao'tsu
 step << Hunter
     #season 0

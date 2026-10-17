@@ -129,7 +129,7 @@ step
 step
     .isQuestTurnedIn 4182
     .goto Burning Steppes,65.012,23.757
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Ragged John|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Struppiger John|r
     .complete 4224,1 -- Ragged John's Story (1)
     .skipgossip
     .target Ragged John
@@ -163,7 +163,7 @@ step
 step
     .isQuestTurnedIn 4182
     .goto Burning Steppes,84.744,69.015
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Marschall Maxwell|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Marshal Maxwell|r
     >>|cRXP_WARN_Die Questreihe macht hier Pause, bis ihr|r |T134331:0|t[Eine zusammengeknüllte Notiz] |cRXP_WARN_in der BRD findet|r
     .turnin 4242 >> Gebt die Quest Verlorene Hoffnung ab
     .target Marshal Maxwell
@@ -190,7 +190,7 @@ step
     .accept 4282 >> Akzeptiert die Quest Ein Funken Hoffnung
 step
     .isQuestTurnedIn 4264
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Marschall Windsor|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Marshal Windsor|r
     .accept 4282 >> Akzeptiert die Quest Ein Funken Hoffnung
 step
     .isOnQuest 4282
@@ -1542,7 +1542,7 @@ step
     .isOnQuest 3802
 step
     >>Lauf zurück zur Location über dem Ring des Gesetzes
-    >>Zwickt |cRXP_PICK_Denkmal für Franclorn Forgewright|r
+    >>Klickt das |cRXP_PICK_Denkmal für Franclorn Forgewright|r
     .turnin 3802 >> Gebt die Quest Dunkeleisenerbe ab
     .isQuestComplete 3802
 

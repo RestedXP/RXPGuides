@@ -201,7 +201,7 @@ step << !Warlock !Rogue !Mage
     .goto Durotar,42.02,62.15,40,0
     .goto Durotar,42.00,62.92,40,0
     .goto Durotar,41.99,64.03,40,0
-    .xp 3+1120 >> Farmt bis 1120+/1400 EP
+    .xp 3+1120 >> Schleift bis 1120+/1400 XP
     .mob Mottled Boar
 step << Warlock
     #loop
@@ -228,7 +228,7 @@ step << Warlock
     .goto Durotar,42.02,62.15,40,0
     .goto Durotar,42.00,62.92,40,0
     .goto Durotar,41.99,64.03,40,0
-    .xp 3+760 >> Farmt bis 760+/1400 EP
+    .xp 3+760 >> Schleift bis 760+/1400 XP
     .mob Mottled Boar
 step << Warlock
     #completewith Ruzan2
@@ -439,7 +439,7 @@ step
     .goto Durotar,44.98,69.13,45,0
     .goto Durotar,45.64,65.70,45,0
     .goto Durotar,47.37,65.67,45,0
-    >>Benutzt den |T133486:0|t[Foreman's Totschläger] auf schlafende |cRXP_FRIENDLY_Faule Peons|r
+    >>Benutzt |T133486:0|t[Foreman's Totschläger] auf schlafenden |cRXP_FRIENDLY_Faule Peons|r
     .complete 5441,1 --Peons Awoken (5)
     .target Lazy Peon
     .use 16114
@@ -741,7 +741,7 @@ step << Shaman
 step
     #label Thazz
     .goto Durotar,43.72,53.79
-    >>Plündert |cRXP_PICK_Thazz'ril's Hacke|r an der Wand
+    >>Beute |cRXP_PICK_Thazz'ril's Hacken|r gegen die Wand
     .complete 6394,1 --Thazz'ril's Pick (1)
 step
 	#completewith next
@@ -807,7 +807,7 @@ step
 	.goto Durotar,42.53,53.48,25,0
 	.goto Durotar,43.27,53.82,25,0
     .xp 6 >> Farmt bis Stufe 6 << !Shaman
-    .xp 5+1810 >> Farmt bis 1810+/2800 XP << Shaman
+    .xp 5+1810 >> Schleifen bis 1810+/2800xp << Shaman
     .isQuestTurnedIn 4402
 step
     #optional
@@ -833,13 +833,13 @@ step
 	.goto Durotar,42.53,53.48,25,0
 	.goto Durotar,43.27,53.82,25,0
     .xp 6 >> Farmt bis Stufe 6 << !Shaman
-    .xp 5+1430 >> Farmt bis 1430+/2800 XP << Shaman
+    .xp 5+1430 >> Schleifen bis 1430+/2800xp << Shaman
     .isQuestComplete 4402
 step << skip
 	#completewith next
     .goto Durotar,44.70,52.47
     .goto Durotar,53.55,44.68,30 >>|cRXP_WARN_Führt einen Logout-Skip durch, indem ihr den Charakter von Euch an der Kante des Steins positioniert, bis es aussieht, als würde er schweben, dann loggt euch aus und wieder ein|r
-	.link https://www.youtube.com/watch?v=7vmnvdjbUnM >> |cRXP_WARN_CLICK HERE for an example|r
+	.link https://www.youtube.com/watch?v=7vmnvdjbUnM >> |cRXP_WARN_KLICKT HIER für ein Beispiel|r
 step << skip
     #label Betrayers
     .goto Durotar,51.95,43.50
@@ -1106,7 +1106,7 @@ step
     .goto Durotar,56.31,73.8,8 >> Betretet die große Hütte
 step << Rogue
     .goto Durotar,56.29,73.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Sprechen mit|r |cRXP_FRIENDLY_K'waii|r|cRXP_BUY_. Kauft|r |T135421:0|t[Beschwerte Wurfaxt] |cRXP_BUY_bei ihr|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Sprecht mit|r |cRXP_FRIENDLY_K'waii|r|cRXP_BUY_. Kauft |r |T135421:0|t[Beschwerte Wurfaxt] |cRXP_BUY_bei ihr|r
     .collect 3131,200,786,1 --Weighted Throwing Axe (200)
     .target K'waii
     .itemStat 18,QUALITY,<7
@@ -1282,7 +1282,7 @@ step
     +|cRXP_WARN_Seid vorsichtig, wenn|r |cRXP_ENEMY_Kolkanis|r |cRXP_WARN_aktiv ist, er ist ein seltener mob der Stufe 9. Ihr müsst möglicherweise einen|r |T134829:0|t[Schwachen Heiltrank] |cRXP_WARN_verwenden, wenn ihr ihn habt|r
     .unitscan Warlord Kolkanis
 step
-    >>Brandmarkt den |cRXP_PICK_Angriffsplan|r im Zelt auf dem Boden
+    >>Markiert |cRXP_PICK_Angriffsplan|r im Zelt auf dem Boden
     .goto Durotar,49.8,81.2
     .complete 786,1 --Attack Plan: Valley of Trials destroyed (1)
 step
@@ -1826,7 +1826,7 @@ step << Hunter
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.3
 step << Hunter
     .goto Durotar,52.97,41.04
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Sprecht mit|r |cRXP_FRIENDLY_Ghrawt. Kauft|r |T132382:0|t[Rough Pfeile] |cRXP_BUY_bei ihm|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Sprecht mit|r |cRXP_FRIENDLY_Ghrawt. Kauft|r |T132382:0|t[Rough Pfeile] |cRXP_BUY_von ihm|r
     .collect 2512,1000,818,1 << Hunter --Rough Arrow (1000)
     .target Ghrawt
     .itemcount 2512,<600 << Hunter
@@ -1923,7 +1923,7 @@ step
     .money <0.05
 step
     #completewith next
-    >>Tötet |cRXP_ENEMY_Krabbler|r und |cRXP_ENEMY_Makruras|r. Plündert sie nach ihrem |cRXP_LOOT_Schleim|r und ihren |cRXP_LOOT_Augen|r. Dies muss jetzt noch nicht abgeschlossen werden
+    >>Tötet |cRXP_ENEMY_Crawlers|r und |cRXP_ENEMY_Makruras|r. Sammelt ihre Beute: |cRXP_LOOT_Mucus|r und |cRXP_LOOT_Augen|r. Das braucht jetzt nicht beendet zu werden.
     .complete 818,2 --Crawler Mucus (8)
     .mob +Pygmy Surf Crawler
     .mob +Surf Crawler
@@ -1948,7 +1948,7 @@ step
     .goto Durotar,67.10,69.29,100 >> Schwimmt zur Insel
 step
     #completewith MinshinasSkull
-    >>Tötet die |cRXP_ENEMY_Tiger|r. Plündert sie für ihre |cRXP_LOOT_Fell|r. Das muss nicht jetzt abgeschlossen werden
+    >>Tötet die |cRXP_ENEMY_Tiger|r. Beute sie für ihren |cRXP_LOOT_Pelz|r
     .complete 817,1 --Durotar Tiger Fur (4)
     .mob Durotar Tiger
 step
@@ -2101,7 +2101,7 @@ step
 step
     .goto Durotar,56.48,73.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Trayexir|r
-    .vendor >> Verkauft Müll und repariert. Ihr könnt mit ihm von draußen sprechen
+    .vendor >> Verkauft Müll und repariert. Ihr könnt mit ihm von außerhalb der Hütte sprechen
     .target Trayexir
     .isQuestAvailable 837
 step << Mage
@@ -2200,7 +2200,7 @@ step << Hunter
     .target Thotar
 step << Hunter
     .goto Durotar,52.97,41.04
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Sprecht mit|r |cRXP_FRIENDLY_Ghrawt|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Spricht mit|r |cRXP_FRIENDLY_Ghrawt|r
     .collect 2515,1200,837,1 << Hunter --Sharp Arrow (1200)
     .target Ghrawt
     .itemcount 2515,<600 << Hunter
@@ -2354,7 +2354,7 @@ step << Shaman
     .target Kranal Fiss
 step << Shaman
     #completewith CallofFire2
-    .zone Durotar >> Reist zurück nach Durotar
+    .zone Durotar >> Reist nach Durotar
     .zoneskip Durotar
 step << Shaman
     #completewith next
@@ -2385,11 +2385,11 @@ step << Shaman
     .goto Durotar,38.61,57.67,8,0
     .goto Durotar,38.06,57.78,8,0
     .goto Durotar,37.76,58.19,8,0
-    .goto Durotar,36.96,58.07,15 >> Reist den Pfad den Berg wieder hinunter
+    .goto Durotar,36.96,58.07,15 >> Geht den Weg den Berg hinunter
     >>|cRXP_WARN_Seid vorsichtig und fallt nicht vom Berg. Der Weg ist sehr schmal. Ihr könntet sterben, wenn ihr fallt|r
 step << Shaman
     #completewith next
-    .zone The Barrens >> Reist zurück nach The Barrens
+    .zone The Barrens >> Reist nach dem Brachland
     .zoneskip The Barrens
 step << Shaman
     #loop
@@ -2444,7 +2444,7 @@ step << Shaman
 step << Shaman
     #optional
     #completewith NeedforaCureAccept
-    +|cRXP_WARN_Anlegen|r |T135154:0|t[Hirtenstab] |cRXP_WARN_wenn ihr Stufe 11 seid|r
+    +|cRXP_WARN_Legt an|r |T135154:0|t[Hirtenstab] |cRXP_WARN_wenn ihr Stufe 11 seid|r
     .use 854
     .itemcount 854,1
     .itemStat 16,QUALITY,<7
@@ -2601,7 +2601,7 @@ step << Hunter
     .goto Durotar,41.08,20.42,40,0
     .goto Durotar,42.76,21.08,40,0
     .goto Durotar,40.44,17.51,40,0
-    +Zähmt ein Tier. Mit |cRXP_ENEMY_Skorpid|r oder |cRXP_ENEMY_Raptor|r erzielt ihr den höchsten DPS
+    +Zähmt ein Haustier. Ein |cRXP_ENEMY_Skorpid|r oder ein |cRXP_ENEMY_Raptor|r hat den höchsten DPS
     .mob Venomtail Scorpid
     .mob Bloodtalon Scythemaw
 step << Hunter
@@ -2650,7 +2650,7 @@ step
     .goto Durotar,51.26,19.19,40,0
     .goto Durotar,53.98,23.70,40,0
     >>Tötet |cRXP_ENEMY_Wilde der Staubschwingen|r und |cRXP_ENEMY_Sturmhexe der Staubschwingen|r
-    >>|cRXP_WARN_Diese Gegner fliehen. Passt auf, nicht versehentlich zwei Gruppen zu ziehen|r
+    >>|cRXP_WARN_Diese Mobs fliehen. Seid vorsichtig und zieht nicht mehrere auf einmal|r
     .complete 835,1 --Dustwind Savage (12)
     .mob +Dustwind Savage
     .complete 835,2 --Dustwind Storm Witch (8)
@@ -2658,7 +2658,7 @@ step
     .solo
 step << Troll Warrior/Undead Warrior
     #completewith next
-    +|cRXP_WARN_Hacken den|r |T135158:0|t[Verunstalteter Holzstab] |cRXP_WARN_als Questreward von Euch und spart ihn auf. Ihr werdet Stabtraining in Orgrimmar erhalten|r
+    +|cRXP_WARN_Wählt|r |T135158:0|t[Verunstalteter Holzstab] |cRXP_WARN_als Questbelohnung und behaltet ihn. Ihr erhaltet Stabausbildung in Orgrimmar|r
     .solo
 step
     .goto Durotar,46.37,22.94
@@ -2682,12 +2682,12 @@ step
 step
     .goto Durotar,42.13,26.67
     >>Tötet |cRXP_ENEMY_Fizzle Dunkelsturm|r und plündert ihn für seine |cRXP_LOOT_Klaue|r
-    >>|cRXP_WARN_Seid sehr vorsichtig. Tötet den patrouillierenden|r |cRXP_ENEMY_Fanatiker der Brennenden Klinge|r |cRXP_WARN_und die|r |cRXP_ENEMY_Lightning Hides|r |cRXP_WARN_im hinteren Bereich, bevor ihr ihn angreift|r
-    >>|cRXP_WARN_Zieht ihn rückwärts zu den|r |cRXP_ENEMY_Lightning Hides|r |cRXP_WARN_die ihr gerade besiegt habt. Andernfalls könnt ihr zusätzliche Burning Blade Mobs per Körperaggro anziehen|r
+    >>|cRXP_WARN_Seid sehr vorsichtig. Tötet die patrollierenden|r |cRXP_ENEMY_Brennen Fanatiker der Brennenden Klinge|r |cRXP_WARN_und die|r |cRXP_ENEMY_Blitzschlag Hides|r |cRXP_WARN_im Hintergrund, bevor ihr ihn zieht|r
+    >>|cRXP_WARN_Zieht|r ihn rückwärts zu den |cRXP_ENEMY_Blitzschlag Hides|r |cRXP_WARN_die ihr gerade besiegt habt. Ansonsten könntet ihr zusätzliche Brennende-Klinge-Mobs aggrieren|r
     >>Tötet|cRXP_WARN_ den Wichtel zunächst. Benutzt|r |T132155:0|t[Solarplexus] |cRXP_WARN_wenn er|r |T136169:0|t[Seelenentzug] wirkt << Rogue
     >>Tötet|cRXP_WARN_ den Wichtel zunächst. Benutzt|r |T136026:0|t[Erdschock] |cRXP_WARN_wenn er|r |T136169:0|t[Seelenentzug] wirkt << Shaman
     >>|cRXP_WARN_Ihr könnt|r |T136071:0|t[Verwandlung] |cRXP_WARN_auf|r |cRXP_ENEMY_Fizzle|r wirken |cRXP_WARN_und tötet|r |cRXP_ENEMY_Wichtel|r |cRXP_WARN_zuerst|r << Mage
-    >>|cRXP_WARN_Töten den Wichtel zuerst.|r << Warrior/Warlock/Priest
+    >>|cRXP_WARN_Tötet den Wichtel zunächst.|r << Warrior/Warlock/Priest
     >>|cRXP_WARN_Benutzt einen|r |T134829:0|t[Schwacher Heiltrank] |cRXP_WARN_falls ihr ihn habt und euren|r |T133728:0|t[Schwach leuchtender Schädel] |cRXP_WARN_falls erforderlich|r << !Warlock
     >>|cRXP_WARN_Benutzt einen|r |T134829:0|t[Schwacher Heiltrank], |T133728:0|t[Schwacher Gesundheitsstein] |cRXP_WARN_falls ihr ihn habt und euren|r |T133728:0|t[Schwach leuchtender Schädel] |cRXP_WARN_falls erforderlich|r << Warlock
     .complete 806,1 --Fizzle's Claw (1)
@@ -2796,14 +2796,14 @@ step << Priest
 step << Hunter
     .goto Durotar,52.97,41.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Ghrawt|r
-    .vendor >> Verkauft grauen Plunder. Verkauft eure Waffe, falls sie euch genug Geld für einen |T135489:0|t[Laminierter Doppelbogen] (17s 51c) einbringt. Ihr werdet später zurückkommen, falls ihr noch nicht genug habt
+    .vendor >> Verkäufermüll. Verkauft die Waffe von Euch, wenn sie euch genug Geld für einen |T135489:0|t[Laminierter Doppelbogen] bringt (17s 51c). Ihr kommt später zurück, wenn ihr noch nicht genug habt.
     .target Ghrawt
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<5.7
     .group
 step << Hunter
     .goto Durotar,52.97,41.04
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Sprecht mit|r |cRXP_FRIENDLY_Ghrawt|r|cRXP_BUY_. Kauft einen|r |T135499:0|t[Laminierter Doppelbogen] |cRXP_BUY_bei ihm|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Spricht mit|r |cRXP_FRIENDLY_Ghrawt|r|cRXP_BUY_. Kauft einen|r |T135499:0|t[Laminierter Doppelbogen] |cRXP_BUY_von ihm|r
     .collect 2507,1,828,1 --Collect Laminated Recurve Bow (1)
     .money <0.1751
     .itemStat 18,QUALITY,<7
@@ -2907,8 +2907,8 @@ step
     #label Collars1
 step << skip --Shaman
     .goto Durotar,53.03,26.82
-    .goto Durotar,47.31,17.89,30 >>|cRXP_WARN_Springen auf den Felsen. Führt einen Ausloggen-Überspringen durch, indem ihr den Charakter von Euch so positioniert, bis es aussieht, als würde er schweben, dann ausloggt und wieder einloggt|r
-    .link https://www.youtube.com/watch?v=9A6LHcLZeTU&ab >> |cRXP_WARN_Klickt HIER für ein Beispiel|r
+    .goto Durotar,47.31,17.89,30 >>|cRXP_WARN_Springen auf den Stein. Führt einen Ausloggen-Überspringen durch, indem ihr den Charakter von Euch so positioniert, dass es aussieht, als würde er schweben, dann meldet euch ab und wieder an|r
+    .link https://www.youtube.com/watch?v=9A6LHcLZeTU&ab >> |cRXP_WARN_KLICKT HIER für ein Beispiel|r
     .solo
 step
     #completewith next
@@ -2939,7 +2939,7 @@ step
     .goto Durotar,51.26,19.19,40,0
     .goto Durotar,53.98,23.70,40,0
     >>Tötet |cRXP_ENEMY_Wilde der Staubschwingen|r und |cRXP_ENEMY_Sturmhexe der Staubschwingen|r
-    >>|cRXP_WARN_Diese Gegner fliehen. Passt auf, nicht versehentlich zwei Gruppen zu ziehen|r
+    >>|cRXP_WARN_Diese Mobs fliehen. Seid vorsichtig und zieht nicht mehrere auf einmal|r
     .complete 835,1 --Dustwind Savage (12)
     .mob +Dustwind Savage
     .complete 835,2 --Dustwind Storm Witch (8)
@@ -2947,7 +2947,7 @@ step
     .group
 step << Troll Warrior/Undead Warrior
     #completewith next
-    +|cRXP_WARN_Hacken den|r |T135158:0|t[Verunstalteter Holzstab] |cRXP_WARN_als Questreward von Euch und spart ihn auf. Ihr werdet Stabtraining in Orgrimmar erhalten|r
+    +|cRXP_WARN_Wählt|r |T135158:0|t[Verunstalteter Holzstab] |cRXP_WARN_als Questbelohnung und behaltet ihn. Ihr erhaltet Stabausbildung in Orgrimmar|r
     .group
 step
     .goto Durotar,46.37,22.94
@@ -2973,7 +2973,7 @@ step << !Hunter
     .zoneskip Orgrimmar
 step << !Rogue
     .goto Orgrimmar,48.12,80.52
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|rSprecht mit|cRXP_FRIENDLY_ Trak'gen|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|rSpricht mit|cRXP_FRIENDLY_ Trak'gen|r
     .vendor >> Verkaufe deinen trash
     .target Trak'gen
 step << Rogue
@@ -3080,7 +3080,7 @@ step << Troll Warrior/Undead Warrior
 step << Troll Warrior/Undead Warrior
     #optional
     #completewith ZeptoUC1
-    +|cRXP_WARN_Anlegen|r |T135154:0|t[Hirtenstab] |cRXP_WARN_wenn ihr Stufe 11 seid|r
+    +|cRXP_WARN_Legt an|r |T135154:0|t[Hirtenstab] |cRXP_WARN_wenn ihr Stufe 11 seid|r
     .use 854
     .itemcount 854,1
     .itemStat 16,QUALITY,<7
@@ -3088,13 +3088,13 @@ step << Troll Warrior/Undead Warrior
 step << Orc Warrior
     .goto Orgrimmar,47.54,68.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Urtharo|r
-    .vendor >> Verkauft Händlerplunder. Verkauft die Waffe von Euch, wenn sie euch genug Geld für einen |T132395:0|t[Tabar] (22s 14c) bringt. Ihr werdet später zurückkommen, falls ihr noch nicht genug habt
+    .vendor >> Verkauft Müll. Verkauft von Euch Waffe, falls es euch genug Geld für eine |T132395:0|t[Tabar] (22s 14c) bringt. Ihr kommt später zurück, falls ihr noch nicht genug habt
     .target Urtharo
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.2
 step << Orc Warrior
     .goto Orgrimmar,47.54,68.39
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Sprechen mit|r |cRXP_FRIENDLY_Urtharo|r|cRXP_BUY_. Kauft einen|r |T132395:0|t[Tabar] |cRXP_BUY_bei ihm|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Sprecht mit|r |cRXP_FRIENDLY_Urtharo|r|cRXP_BUY_. Kauft eine|r |T132395:0|t[Tabar] |cRXP_BUY_von ihm|r
     .collect 1196,1,398,1 --Collect Tabar (1)
     .money <0.2214
     .itemStat 16,QUALITY,<7
@@ -3109,7 +3109,7 @@ step << Orc Warrior
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.2
 step << Shaman
     .goto Orgrimmar,47.54,68.39
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Sprechen mit|r |cRXP_FRIENDLY_Urtharo|r|cRXP_BUY_. Kauft einen|r |T135154:0|t[Hirtenstab] |cRXP_BUY_bei ihm|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Sprecht mit|r |cRXP_FRIENDLY_Urtharo|r|cRXP_BUY_. Kauft ein|r |T135154:0|t[Hirtenstab] |cRXP_BUY_von ihm|r
     .collect 854,1,398,1 --Collect Quarter Staff (1)
     .money <0.3022
     .target Urtharo
@@ -3118,7 +3118,7 @@ step << Shaman
 step << Shaman
     #optional
     #completewith ZeptoUC1
-    +|cRXP_WARN_Anlegen|r |T135154:0|t[Hirtenstab] |cRXP_WARN_wenn ihr Stufe 11 seid|r
+    +|cRXP_WARN_Legt an|r |T135154:0|t[Hirtenstab] |cRXP_WARN_wenn ihr Stufe 11 seid|r
     .use 854
     .itemcount 854,1
     .itemStat 16,QUALITY,<7
@@ -3169,7 +3169,7 @@ step << Shaman
     .goto Durotar,34.27,47.02,50,0
     .goto Durotar,34.51,51.48,50,0
     .goto Durotar,35.16,56.43,50,0
-    >>Reist südlich am Fluss entlang. Tötet unterwegs |cRXP_ENEMY_Ätzmaulkrokilisken|r. Beute sie für |cRXP_LOOT_Kron's Amulet|r
+    >>Reist südlich entlang des Flusses. Tötet |cRXP_ENEMY_Ätzmaul Crocolisks|r auf dem Weg. Sammelt sie für |cRXP_LOOT_Kron's Amulet|r
     .complete 816,1 --Kron's Amulet (1)
     .mob Dreadmaw Crocolisk
 step << Shaman
@@ -3216,7 +3216,7 @@ step << Shaman
     .goto Durotar,38.61,57.67,8,0
     .goto Durotar,38.06,57.78,8,0
     .goto Durotar,37.76,58.19,8,0
-    .goto Durotar,36.96,58.07,15 >> Reist den Pfad den Berg wieder hinunter
+    .goto Durotar,36.96,58.07,15 >> Geht den Weg den Berg hinunter
     >>|cRXP_WARN_Seid vorsichtig und fallt nicht vom Berg. Der Weg ist sehr schmal. Ihr könntet sterben, wenn ihr fallt|r
 step << Shaman
     .goto Durotar,34.92,54.87,50,0
@@ -3318,7 +3318,7 @@ step << Shaman/Hunter
     .isOnQuest 924
 step << Shaman/Hunter
     #completewith next
-    +|cRXP_WARN_Seid vorsichtig, falls|r |cRXP_ENEMY_Rathorian|r |cRXP_WARN_präsent ist, er ist ein Level-15-Rare. Seid bereit,|r |T133728:0|t[Faintly Glowing Schädel] |cRXP_WARN_und|r |T134712:0|t[Echt klebriger Leim] |cRXP_WARN_zu benutzen, falls nötig|r
+    +|cRXP_WARN_Passt auf, falls|r |cRXP_ENEMY_Rathorian|r |cRXP_WARN_aktiv ist, es ist ein Level-15-Rare. Seid bereit, eure|r |T133728:0|t[Faintly Glowing Schädel] |cRXP_WARN_und|r |T134712:0|t[Echt klebriger Leim] |cRXP_WARN_zu benutzen, falls nötig|r
     .unitscan Rathorian
 step << Shaman/Hunter
     #label DemonSeed
@@ -3406,7 +3406,7 @@ step << Hunter
 	.goto The Barrens,53.74,23.66,60,0
 	.goto The Barrens,53.35,25.16,60,0
 	.goto The Barrens,52.99,26.88,60,0
-    .xp 11+6980 >> Farmt bis 6980/8800 EP
+    .xp 11+6980 >> Farmt bis 6980/8800 XP
 step << Shaman/Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Zargh|r, |cRXP_FRIENDLY_Sergra|r und |cRXP_FRIENDLY_Thork|r
     .turnin 6386 >> Kehrt zum Wegekreuz zurück
@@ -3495,13 +3495,13 @@ step << Shaman
 step << Shaman
     .goto Orgrimmar,47.54,68.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Urtharo|r
-    .vendor >> Verkauft grauen Plunder. Verkauft eure Waffe, falls sie euch genug Geld für einen |T135154:0|t[Hirtenstab] (30s 22c) einbringt. Ihr werdet ihn später bekommen, falls ihr noch nicht genug habt
+    .vendor >> Verkäufermüll. Verkauft die Waffe von Euch, wenn sie euch genug Geld für einen |T135154:0|t[Hirtenstab] bringt (30s 22c). Ihr bekommt ihn später, wenn ihr noch nicht genug habt.
     .target Urtharo
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.4
 step << Shaman
     .goto Orgrimmar,47.54,68.39
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Sprechen mit|r |cRXP_FRIENDLY_Urtharo|r|cRXP_BUY_. Kauft einen|r |T135154:0|t[Hirtenstab] |cRXP_BUY_bei ihm|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Sprecht mit|r |cRXP_FRIENDLY_Urtharo|r|cRXP_BUY_. Kauft ein|r |T135154:0|t[Hirtenstab] |cRXP_BUY_von ihm|r
     .collect 854,1,398,1 --Collect Quarter Staff (1)
     .money <0.3022
     .target Urtharo
@@ -3655,7 +3655,7 @@ step
 step
     #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Coleman|r und |cRXP_FRIENDLY_Gretchen|r im Gasthaus
-    >>|cRXP_FRIENDLY_Gretchen|r |cRXP_WARN_ist im zweiten Stock|r
+    >>|cRXP_FRIENDLY_Gretchen|r |cRXP_WARN_ist in der zweiten Etage|r
     .accept 354 >>Akzeptiert die Quest Todesfälle in der Familie
     .accept 362 >>Akzeptiert die Quest Die Spuk-Mühle
     .target +Coleman Farthing
@@ -4180,7 +4180,7 @@ step << Undead Priest
 step
     #optional
     #completewith ScarletCrusade1
-    >>Sammelt |cRXP_LOOT_Scarlet Insignia Rings|r. Ihr braucht diesen Schritt jetzt nicht abzuschließen
+    >>Sammelt |cRXP_LOOT_Scarlet Insignia Rings|r. Ihr müsst diesen Schritt jetzt nicht abschließen.
     .complete 374,1 --Scarlet Insignia Ring (10)
     .isOnQuest 374
 step << Warlock
@@ -4477,7 +4477,7 @@ step
     .isQuestTurnedIn 358
 step
     #completewith HorrorsandSpirits
-    +|cRXP_WARN_Bind von Euch|r |T133849:0|t[Schlummer Sand]|cRXP_WARN_. Speichern it for emergency situations|r
+    +|cRXP_WARN_Bindet euren|r |T133849:0|t[Schlummer Sand]|cRXP_WARN_. Bewahrt ihn für Notfallsituationen auf|r
 step
     #optional
     .goto Tirisfal Glades,61.03,52.35
@@ -4489,8 +4489,8 @@ step
     .isOnQuest 375
 step
     #optional
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Yvette|r, |cRXP_FRIENDLY_Coleman|r und |cRXP_FRIENDLY_Gretchen|r in der Taverne
-    >>|cRXP_FRIENDLY_Gretchen|r |cRXP_WARN_ist im zweiten Stock|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Yvette|r, |cRXP_FRIENDLY_Coleman|r und |cRXP_FRIENDLY_Gretchen|r im Wirtshaus
+    >>|cRXP_FRIENDLY_Gretchen|r |cRXP_WARN_ist in der zweiten Etage|r
     .turnin 361 >>Gebt die Quest Ein nie zugestellter Brief ab
     .target +Yvette Farthing
     .goto Tirisfal Glades,61.58,52.60
@@ -4508,7 +4508,7 @@ step
 step
     #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Coleman|r und |cRXP_FRIENDLY_Gretchen|r im Gasthaus
-    >>|cRXP_FRIENDLY_Gretchen|r |cRXP_WARN_ist im zweiten Stock|r
+    >>|cRXP_FRIENDLY_Gretchen|r |cRXP_WARN_ist in der zweiten Etage|r
     .turnin 354 >>Gebt die Quest Todesfälle in der Familie ab
     .turnin 362 >>Gebt die Quest Die Spuk-Mühle ab
     .accept 355 >>Akzeptiert die Quest Gespräch mit Sevren
@@ -4521,8 +4521,8 @@ step
     .group
 step
     #optional
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Yvette|r und |cRXP_FRIENDLY_Coleman|r in der Taverne
-    >>|cRXP_FRIENDLY_Gretchen|r |cRXP_WARN_ist im zweiten Stock|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Yvette|r und |cRXP_FRIENDLY_Coleman|r im Wirtshaus
+    >>|cRXP_FRIENDLY_Gretchen|r |cRXP_WARN_ist in der zweiten Etage|r
     .turnin 361 >>Gebt die Quest Ein nie zugestellter Brief ab
     .target +Yvette Farthing
     .goto Tirisfal Glades,61.58,52.60
@@ -4545,8 +4545,8 @@ step
     .isQuestComplete 354
 step
     #optional
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Yvette|r, |cRXP_FRIENDLY_Coleman|r und |cRXP_FRIENDLY_Gretchen|r in der Taverne
-    >>|cRXP_FRIENDLY_Gretchen|r |cRXP_WARN_ist im zweiten Stock|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Yvette|r, |cRXP_FRIENDLY_Coleman|r und |cRXP_FRIENDLY_Gretchen|r im Wirtshaus
+    >>|cRXP_FRIENDLY_Gretchen|r |cRXP_WARN_ist in der zweiten Etage|r
     .turnin 361 >>Gebt die Quest Ein nie zugestellter Brief ab
     .target +Yvette Farthing
     .goto Tirisfal Glades,61.58,52.60
@@ -4563,7 +4563,7 @@ step
 step
     #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Coleman|r und |cRXP_FRIENDLY_Gretchen|r im Gasthaus
-    >>|cRXP_FRIENDLY_Gretchen|r |cRXP_WARN_ist im zweiten Stock|r
+    >>|cRXP_FRIENDLY_Gretchen|r |cRXP_WARN_ist in der zweiten Etage|r
     .turnin 354 >>Gebt die Quest Todesfälle in der Familie ab
     .turnin 362 >>Gebt die Quest Die Spuk-Mühle ab
     .accept 355 >>Akzeptiert die Quest Gespräch mit Sevren
@@ -4575,8 +4575,8 @@ step
     .isQuestComplete 375
 step
     #optional
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Yvette|r und |cRXP_FRIENDLY_Coleman|r in der Taverne
-    >>|cRXP_FRIENDLY_Gretchen|r |cRXP_WARN_ist im zweiten Stock|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Yvette|r und |cRXP_FRIENDLY_Coleman|r im Wirtshaus
+    >>|cRXP_FRIENDLY_Gretchen|r |cRXP_WARN_ist in der zweiten Etage|r
     .turnin 361 >>Gebt die Quest Ein nie zugestellter Brief ab
     .target +Yvette Farthing
     .goto Tirisfal Glades,61.58,52.60
@@ -5238,7 +5238,7 @@ step << Rogue
     .zoneskip Undercity,1
 step << Rogue
     .goto Undercity,77.08,49.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Sprechen mit|r |cRXP_FRIENDLY_Charles|r |cRXP_BUY_im Schurke's Quarter. Kauft einen|r |T135346:0|t[Entersäbel] |cRXP_BUY_bei ihm|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Sprecht mit|r |cRXP_FRIENDLY_Charles|r |cRXP_BUY_ im Schurken-Viertel. Kauft ein|r |T135346:0|t[Entersäbel] |cRXP_BUY_von ihm|r
     .collect 851,1,435,1 --Collect Cutlass (1)
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8

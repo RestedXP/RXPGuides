@@ -1994,7 +1994,7 @@ step << Priest
     .goto 1454/1,-4179.79,1452.580
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit|r |cRXP_FRIENDLY_Ur'kyo|r
     .train 527 >> Erlernt |T135894:0|t[Magiebannung]
-    >>|cRXP_WARN_Ihr werdet|r |T135894:0|t[Magiebannung]  benötigen |cRXP_WARN_um später eine Rune zu erhalten|r
+    >>|cRXP_WARN_Ihr werdet|r |T135894:0|t[Magiebannung] benötigen |cRXP_WARN_um später eine Rune zu erhalten|r
     .target Ur'kyo
     .xp <18,1
 step << Priest
@@ -9148,7 +9148,7 @@ step << Priest
     .goto 1454/1,-4179.79,1452.580
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit|r |cRXP_FRIENDLY_Ur'kyo|r
     .train 527 >> Erlernt |T135894:0|t[Magiebannung]
-    >>|cRXP_WARN_Ihr werdet|r |T135894:0|t[Magiebannung]  benötigen |cRXP_WARN_um später eine Rune zu erhalten|r
+    >>|cRXP_WARN_Ihr werdet|r |T135894:0|t[Magiebannung] benötigen |cRXP_WARN_um später eine Rune zu erhalten|r
     .target Ur'kyo
     .xp <18,1
 step << Priest
@@ -9783,7 +9783,7 @@ step << Rogue
 step << Rogue
     #season 2
     #label SaberSlashRune
-    .train 424984 >>|cRXP_WARN_Benutzt|r |T134419:0|t[|cRXP_FRIENDLY_Rune des Säbelschlitzers|r] |cRXP_WARN_zum Trainieren von|r |T132375:0|t[Säbelschlitzer]
+    .train 424984 >>|cRXP_WARN_Benutzt|r |T134419:0|t[|cRXP_FRIENDLY_Rune des Säbelschlitzers|r] |cRXP_WARN_zum Trainieren von|r |T132375:0|t[Säbelhieb]
     .use 208772
     .itemcount 208772,1
 step

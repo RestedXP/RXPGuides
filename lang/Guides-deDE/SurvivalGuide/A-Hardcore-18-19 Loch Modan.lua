@@ -32,7 +32,7 @@ step
 step << Hunter
     .goto Wetlands,11.113,58.316
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Edwina Monzor|r
-    .vendor >> |cRXP_BUY_Kauft einen|r |T134410:0|t[Mittlerer Köcher] |cRXP_BUY_und|r |T132382:0|t[Sharp Pfeile]
+    .vendor >> |cRXP_BUY_Kauft einen|r |T134410:0|t[Mittleren Köcher] |cRXP_BUY_und|r |T132382:0|t[Sharp Pfeile]
     .collect 11362,1 --Medium Quiver (1)
     .collect 2515,1800 --Sharp Arrow (1800)
     .target Edwina Monzor
@@ -141,7 +141,7 @@ step
     .target Chief Engineer Hinderweir VII
 step
     #completewith next
-    +|cRXP_WARN_Passt auf, nicht in die |cRXP_ENEMY_Horde Runners|r zu laufen! Es ist eine Elitegruppe aus 2 |cRXP_ENEMY_Orcs|r und einem |cRXP_ENEMY_Tauren|r, die die Ostseite des Lochs patrouillieren (die Linie auf der Karte von Euch)|r
+    +|cRXP_WARN_Passt auf, nicht in die|r |cRXP_ENEMY_Horde Runners|r|cRXP_WARN_! Es ist ein Elite-Pack aus 2 |cRXP_ENEMY_Orcs|r und |cRXP_ENEMY_Tauren|r, die auf der Ostseite von Der Loch patrouillieren (die Linie auf eurer Karte)|r
     .line Loch Modan,55.5,67.1,60.2,62.0,62.9,57.6,63.7,54.3,64.2,51.8,64.5,46.1,64.2,35.9,63.4,33.7,59.3,24.4,60.2,22.4,57.3,19.4
     .unitscan Haren Swifthoof
     .unitscan Gradok
@@ -189,7 +189,7 @@ step
 step
     #completewith next
     .goto Loch Modan,82.92,59.37,80,0
-    .goto Loch Modan,83.28,62.97,25 >> Reist in Richtung |cRXP_FRIENDLY_Daryl der Jüngling|r
+    .goto Loch Modan,83.28,62.97,25 >> Reist zu |cRXP_FRIENDLY_Daryl der Jüngling|r
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Daryl der Jüngling|r
     .goto Loch Modan,83.49,65.40
@@ -206,13 +206,13 @@ step
     .goto Loch Modan,73.87,51.85,70,0
     .goto Loch Modan,69.45,39.18
     >>Tötet |cRXP_ENEMY_Elder Mountain Boars|r
-    >>|cRXP_WARN_Ihr müsst diese Quest abschließen und innerhalb von 12 Minuten zu |cRXP_FRIENDLY_Daryl der Jüngling|r zurückkehren. Falls ihr bei der Quest scheitert, brecht sie ab und nehmt sie erneut an|r
+    >>|cRXP_WARN_Ihr müsst diese Quest abschließen und zu |cRXP_FRIENDLY_Daryl der Jüngling|r innerhalb von 12 Minuten zurückkehren. Wenn ihr die Quest fehlschlagt, brecht sie ab und nehmt sie erneut auf.|r
     .complete 258,1 -- Elder Mountain Boar slain (5)
     .mob Elder Mountain Boar
 step
     #completewith next
     .goto Loch Modan,82.92,59.37,80,0
-    .goto Loch Modan,83.28,62.97,25 >> Reist in Richtung |cRXP_FRIENDLY_Daryl der Jüngling|r
+    .goto Loch Modan,83.28,62.97,25 >> Reist zu |cRXP_FRIENDLY_Daryl der Jüngling|r
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Daryl der Jüngling|r
     .goto Loch Modan,83.49,65.40
@@ -226,14 +226,14 @@ step
     .target Vyrin Swiftwind
 step
     #completewith next
-    +|cRXP_WARN_Passt auf, nicht in die |cRXP_ENEMY_Horde Runners|r zu laufen! Es ist eine Elitegruppe aus 2 |cRXP_ENEMY_Orcs|r und einem |cRXP_ENEMY_Tauren|r, die die Ostseite des Lochs patrouillieren (die Linie auf der Karte von Euch)|r
+    +|cRXP_WARN_Passt auf, nicht in die|r |cRXP_ENEMY_Horde Runners|r|cRXP_WARN_! Es ist ein Elite-Pack aus 2 |cRXP_ENEMY_Orcs|r und |cRXP_ENEMY_Tauren|r, die auf der Ostseite von Der Loch patrouillieren (die Linie auf eurer Karte)|r
     .line Loch Modan,55.5,67.1,60.2,62.0,62.9,57.6,63.7,54.3,64.2,51.8,64.5,46.1,64.2,35.9,63.4,33.7,59.3,24.4,60.2,22.4,57.3,19.4
     .unitscan Haren Swifthoof
     .unitscan Gradok
     .unitscan Thragomm
 step
     #completewith next
-    .goto Loch Modan,54.7,38.3,200 >> Reist zu der Insel in der Mitte des Lochs
+    .goto Loch Modan,54.7,38.3,200 >> Reist zur Insel in Der Loch
 step
     .goto Loch Modan,58.86,38.32,80,0
     .goto Loch Modan,54.80,40.02,60,0
@@ -245,7 +245,7 @@ step
     .mob Loch Crocolisk
 step
     #completewith next
-    +|cRXP_WARN_Passt auf, nicht in die |cRXP_ENEMY_Horde Runners|r zu laufen! Es ist eine Elitegruppe aus 2 |cRXP_ENEMY_Orcs|r und einem |cRXP_ENEMY_Tauren|r, die die Ostseite des Lochs patrouillieren (die Linie auf der Karte von Euch)|r
+    +|cRXP_WARN_Passt auf, nicht in die|r |cRXP_ENEMY_Horde Runners|r|cRXP_WARN_! Es ist ein Elite-Pack aus 2 |cRXP_ENEMY_Orcs|r und |cRXP_ENEMY_Tauren|r, die auf der Ostseite von Der Loch patrouillieren (die Linie auf eurer Karte)|r
     .line Loch Modan,55.5,67.1,60.2,62.0,62.9,57.6,63.7,54.3,64.2,51.8,64.5,46.1,64.2,35.9,63.4,33.7,59.3,24.4,60.2,22.4,57.3,19.4
     .unitscan Haren Swifthoof
     .unitscan Gradok
@@ -293,8 +293,8 @@ step
     .goto Loch Modan,37.81,62.87,15,0
     .goto Loch Modan,36.73,61.08
     >>Tötet |cRXP_ENEMY_Ol' Rußbedeckt|r. Plündert sie für |cRXP_LOOT_Head|r
-    >>|cRXP_ENEMY_Alte Rußtatze|r |cRXP_WARN_ist nicht immer in seiner Höhle und kann den Pfad zu den unteren Ebenen hinunterpatrouillieren|r
-    >>|cRXP_ENEMY_Alte Rußtatze|r |cRXP_WARN_ist eine Stufe-20-Elite|r
+    >>|cRXP_ENEMY_Alte Rußtatze|r |cRXP_WARN_ist nicht immer in seiner Höhle und kann auf dem Pfad zu den unteren Bereichen patrouillieren|r
+    >>|cRXP_ENEMY_Alte Rußtatze|r |cRXP_WARN_ist ein Level-20-Elite|r
     .complete 271,1 -- Ol' Sooty's Head (1)
     .unitscan Ol' Sooty
     .isOnQuest 271
@@ -333,12 +333,12 @@ step
     .abandon 271 >> Brecht die Quest Vyrins Rache ab
 step
     .group
-    .goto Loch Modan,73.87,29.64,100 >> Reist zur Festung Mo'grosh
+    .goto Loch Modan,73.87,29.64,100 >> Reist nach Festung Mo'grosh
     .isOnQuest 255
 step
     .group 3
     >>Tötet |cRXP_ENEMY_Mo'grosh Ogres|r, |cRXP_ENEMY_Mo'grosh Enforcers|r und |cRXP_ENEMY_Mo'grosh Brutes|r
-    >>|cRXP_ENEMY_Mo'grosh Brutes|r |cRXP_WARN_sind nur in den Höhlen zu finden. Betretet die nordöstliche Höhle nicht und tötet sie einfach in den 2 anderen Mini-Höhlen.|r
+    >>|cRXP_ENEMY_Mo'grosh Brutes|r |cRXP_WARN_sind nur in den Höhlen anzutreffen. Es wird empfohlen, dass ihr nicht in die nordöstliche Höhle geht und tötet sie einfach nur in den 2 anderen Mini-Höhlen|r
     .complete 255,1 -- Mo'grosh Ogre slain (4)
     .mob +Mo'grosh Ogre
     .goto Loch Modan,73.87,29.64,60,0
@@ -364,7 +364,7 @@ step
     .mob +Mo'grosh Brute
 step
     #completewith next
-    +|cRXP_WARN_Passt auf, dass ihr nicht auf|r |cRXP_ENEMY_Horde Runners|r|cRXP_WARN_trefft! Es ist eine Elite-Gruppe mit 2 |cRXP_ENEMY_Orcs|r und |cRXP_ENEMY_Tauren|r, die auf der Ostseite von Der Loch patrouillieren (die Linie auf der Karte von Euch)|r
+    +|cRXP_WARN_Passt auf, dass ihr nicht in die|r |cRXP_ENEMY_Horde-Läufer|r |cRXP_WARN_lauft! Es ist ein Elite-Paket von 2 |cRXP_ENEMY_Orks|r und einem |cRXP_ENEMY_Tauren|r, die auf der Ostseite von Loch patrouillieren (die Linie auf der Karte von Euch).|r
     .line Loch Modan,55.5,67.1,60.2,62.0,62.9,57.6,63.7,54.3,64.2,51.8,64.5,46.1,64.2,35.9,63.4,33.7,59.3,24.4,60.2,22.4,57.3,19.4
     .unitscan Haren Swifthoof
     .unitscan Gradok
@@ -420,7 +420,7 @@ step
 step
     .goto Ironforge,78.00,52.00,5,0
     .zone Stormwind City >> Betretet die Tiefenbahn. Nehmt die Straßenbahn nach Sturmwind
-    >>|cRXP_WARN_Skillt eure|r |T135966:0|t[Erste Hilfe] |cRXP_WARN_und|r |T133971:0|t[Kochkunst] |cRXP_WARN_falls nötig, während ihr auf den Zug wartet|r
+    >>|cRXP_WARN_Level von Euch|r |T135966:0|t[Erste Hilfe] |cRXP_WARN_und|r |T133971:0|t[Kochkunst] |cRXP_WARN_if needed while waiting for the tram|r
     >>|cRXP_WARN_Ihr benötigt eure|r |T135966:0|t[Erste Hilfe] |cRXP_WARN_auf Stufe 80 für eine Quest auf Stufe 24|r << Rogue !Dwarf
     --.link https://www.youtube.com/watch?v=M_tXROi9nMQ >> |cRXP_WARN_Click here for a video guide for a logout skip on the tram|r
 ]])

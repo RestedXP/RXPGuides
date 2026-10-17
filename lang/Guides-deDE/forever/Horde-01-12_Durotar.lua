@@ -3787,7 +3787,7 @@ step << Warrior
 step << Rogue
     .goto 1420/0,243.01,2271.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Marion|r auf der zweiten Etage
-    .train 1766 >> Erlernen |T132219:0|t[Tritt]
+    .train 1766 >> Erlernt |T132219:0|t[Tritt]
     .target Marion Call
     .money <0.08
     .xp <12,1
@@ -4101,7 +4101,7 @@ step << Priest
 step << Rogue
     .goto 1458/0,68.66,1416.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Carolyn|r
-    .train 1766 >> Erlernen |T132219:0|t[Tritt]
+    .train 1766 >> Erlernt |T132219:0|t[Tritt]
     .target Carolyn Ward
     .xp <12,1
     .money <0.08

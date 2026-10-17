@@ -29,7 +29,7 @@ step
     .target Sten Stoutarm
 step << Warrior
     .goto Dun Morogh,29.68,74.20,40,0
-    >>Tötet |cRXP_ENEMY_Ragged Young Wolves|r, bis ihr Händlerplunder im Wert von 10 Kupfer oder mehr habt
+    >>Tötet |cRXP_ENEMY_Ragged Young Wolves|r bis ihr Müll im Wert von 10+ Kupfer habt
     >>|cRXP_WARN_Ihr werdet|r |T132333:0|t[Schlachtruf] lernen|cRXP_WARN_was die Levelgeschwindigkeit am Anfrang erhöht|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Grundel Harkin|r
     .vendor >> |cRXP_WARN_verkauft Schrott|r
@@ -44,7 +44,7 @@ step << Warrior
 step << Warlock
     #completewith next
     .goto Dun Morogh,28.792,68.497,20 >> Betretet Ambossar
-    >>|cRXP_WARN_Legt unterwegs Körperrüstung, Hemd, Hose und Stiefel von Euch ab. Ihr werdet sie beim Händler verkaufen|r
+    >>|cRXP_WARN_Legt von Euch Körperrüstung, Hemd, Hosen und Stiefel unterwegs ab. Ihr werdet sie an einen Händler verkaufen|r
 step << Warlock
     .goto Dun Morogh,28.769,66.377
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Durnan Furcutter|r
@@ -61,7 +61,7 @@ step
     .goto Dun Morogh,29.02,76.38,50,0
     .goto Dun Morogh,26.68,75.57
     >>Tötet |cRXP_ENEMY_Ragged Young Wolves|r und |cRXP_ENEMY_Ragged Timber Wolves|r. Plündert sie für |cRXP_LOOT_Tough Wolf Fleisch|r
-    >>|cRXP_WARN_Legt jede Stoffrüstung an, die ihr von den|r |cRXP_ENEMY_Young Wolves|r erbeutet << Warlock
+    >>|cRXP_WARN_Legt beliebige Stoffrüstung an, die ihr bei|r Young Wolves|cRXP_ENEMY_ plündert|r << Warlock
     .complete 179,1 --Collect Tough Wolf Meat (x8)
     .mob Ragged Young Wolf
     .mob Ragged Timber Wolf
@@ -83,15 +83,15 @@ step << Warlock
     .goto Dun Morogh,30.087,71.563
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Adlin Pridedrift|r
     .vendor >> |cRXP_WARN_verkauft Schrott|r
-    >>|cRXP_BUY_Kauft 15|r |T132794:0|t[Erfrischendes Quellwasser]|cRXP_BUY_. Farmt zusätzliche |cRXP_ENEMY_Ragged Young Wolves|r, falls ihr nicht genug Geld habt|r
+    >>|cRXP_BUY_Kauft 15|r |T132794:0|t[Erfrischendes Quellwasser]|cRXP_BUY_. Farmt extra |cRXP_ENEMY_Ragged Young Wolves|r wenn ihr nicht genug Geld habt|r
     .collect 159,15 --Collect Refreshing Spring Water (x15)
     .target Adlin Pridedrift
 step << Warlock
     #completewith next
     .goto Dun Morogh,27.28,81.09,20 >> Betretet die Höhle der Frostmähnen
 step << Warlock
-    >>Tötet |cRXP_ENEMY_Frostmane Novices|r in der Höhle. Nehmt als Beute |cRXP_LOOT_Feather Charms|r
-    >>|cRXP_BUY_Legt jede Stoffrüstung an, die ihr von den|r |cRXP_ENEMY_Frostmanes|r erbeutet
+    >>Tötet |cRXP_ENEMY_Frostmane Novices|r in der Höhle. Plündert sie für |cRXP_LOOT_Feather Charms|r
+    >>|cRXP_BUY_Legt beliebige Stoffrüstung an, die ihr bei|r Frostmanes|cRXP_ENEMY_ plündert|r
     .goto Dun Morogh,29.0,82.6,50,0
     .goto Dun Morogh,29.0,81.2,60,0
     .goto Dun Morogh,30.1,82.4
@@ -111,7 +111,7 @@ step << Priest/Mage
     .goto Dun Morogh,30.087,71.563
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Adlin Pridedrift|r
     .vendor >> |cRXP_WARN_verkauft Schrott|r
-    >>|cRXP_BUY_Kauft 15|r |T132794:0|t[Erfrischendes Quellwasser]|cRXP_BUY_. Farmt zusätzliche |cRXP_ENEMY_Ragged Young Wolves|r, falls ihr nicht genug Geld habt|r
+    >>|cRXP_BUY_Kauft 15|r |T132794:0|t[Erfrischendes Quellwasser]|cRXP_BUY_. Farmt extra |cRXP_ENEMY_Ragged Young Wolves|r, wenn ihr nicht genug Geld habt|r
     .collect 159,15 --Collect Refreshing Spring Water (x15)
     .target Adlin Pridedrift
 step << Paladin/Warrior
@@ -244,14 +244,14 @@ step << Hunter
     .goto Dun Morogh,30.087,71.563
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Adlin Pridedrift|r
     .vendor >> |cRXP_WARN_verkauft Schrott|r
-    >>|cRXP_WARN_Kauft 2 Stapel von|r |T132384:0|t[Leichte Schüsse]
+    >>|cRXP_WARN_Kauft 2 Stapel|r |T132384:0|t[Licht Shots]
     .collect 2516,400 -- Light Shot (400)
     .target Adlin Pridedrift
 step << Mage/Warlock
     .goto Dun Morogh,30.087,71.563
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Adlin Pridedrift|r
     .vendor >> |cRXP_WARN_verkauft Schrott|r
-    >>|cRXP_BUY_Kauft 10|r |T132794:0|t[Erfrischendes Quellwasser]|cRXP_BUY_. Farmt zusätzliche |cRXP_ENEMY_Ragged Young Wolves|r, falls ihr nicht genug Geld habt|r
+    >>|cRXP_BUY_Kauft 10|r |T132794:0|t[Erfrischendes Quellwasser]|cRXP_BUY_. Farmt extra |cRXP_ENEMY_Ragged Young Wolves|r wenn ihr nicht genug Geld habt|r
     .collect 159,10 --Collect Refreshing Spring Water (x15)
     .target Adlin Pridedrift
 step << !Paladin !Mage !Warlock !Hunter
@@ -291,7 +291,7 @@ step << !Paladin !Mage
     .complete 170,2 --Kill Burly Rockjaw Trogg (x6)
     .mob +Burly Rockjaw Trogg
 step << !Paladin !Mage !Warlock !Hunter
-    .xp 4 >> Farmt bis 4
+    .xp 4 >> Farmt bis Stufe 4
 step << !Paladin !Mage !Warlock !Hunter
     #era
     #requires TrollTroggs
@@ -325,7 +325,7 @@ step
     .goto Dun Morogh,26.8,79.9,30,0
     .goto Dun Morogh,29.0,79.0,15,0
     .goto Dun Morogh,30.6,80.3
-    >>Tötet |cRXP_ENEMY_Grik'nir der Kalte|r. Nehmt als Beute sein |cRXP_LOOT_Tagebuch|r
+    >>Tötet |cRXP_ENEMY_Grik'nir the Kalt|r. Plündert ihn nach seinem |cRXP_LOOT_Tagebuch|r
     .complete 218,1 --Collect Grelin Whitebeard's Journal (x1)
     .mob Grik'nir the Cold
 step << !Paladin !Mage !Warlock !Hunter
@@ -419,7 +419,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Überlebens-Guide (A)
 #subgroup RXP Überlebens-Guide 1-20
 #defaultfor Dwarf/Gnome
-#next 10-11 Elwynn (Zwerg/Gnom)
+#next 10-11 Elwynn (Zwerge/Gnome)
 step
     #completewith BoarMeat44 << !Paladin !Warrior !Rogue
     #completewith BearFur << Paladin/Warrior/Rogue
@@ -438,13 +438,13 @@ step
     .goto Dun Morogh,36.4,62.9,45,0
     .goto Dun Morogh,37.7,60.5,45,0
     .goto Dun Morogh,46.726,53.826
-    .xp 5+2145 >> Reist nach Kharanos. Farmt bis 2145/+2800 XP und tötet unterwegs |cRXP_ENEMY_Crag Boars|r << Priest
-    .xp 5+2415 >> Reist nach Kharanos. Farmt bis 2415/+2800 XP und tötet unterwegs |cRXP_ENEMY_Crag Boars|r << !Priest
+    .xp 5+2145 >> Reist nach Kharanos. Farmt bis 2145/+2800 EP, tötet dabei |cRXP_ENEMY_Crag Boars|r unterwegs << Priest
+    .xp 5+2415 >> Reist nach Kharanos. Farmt bis 2415/+2800 EP, tötet dabei |cRXP_ENEMY_Crag Boars|r unterwegs << !Priest
     .mob Crag Boar
     .mob Large Crag Boar
 step
     #completewith next
-    .goto Dun Morogh,46.726,53.826,30 >> Reist nach Kharanos. Tötet unterwegs |cRXP_ENEMY_Crag Boars|r
+    .goto Dun Morogh,46.726,53.826,30 >> Reist nach Kharanos. Tötet |cRXP_ENEMY_Crag Boars|r unterwegs
     .mob Crag Boar
     .mob Large Crag Boar
 step
@@ -460,7 +460,7 @@ step << Warlock
 step << Warlock
     .goto Dun Morogh,47.273,53.684
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Dannie Fizzwizzle|r
-    .vendor >> |cRXP_BUY_Kauft das|r |T133738:0|t[Grimoire of Blutpakt (Rang 1)] |cRXP_BUY_, wenn ihr es euch leisten könnt. Falls nicht, kauft ihr es später|r
+    .vendor >> |cRXP_BUY_Kauft das|r |T133738:0|t[Grimoire of Blutpakt (Rang 1)] |cRXP_BUY_wenn ihr es euch leisten könnt. Falls nicht, werdet ihr es später kaufen|r
     .target Dannie Fizzwizzle
 step << !Priest
     .goto Dun Morogh,48.3,57.0
@@ -571,8 +571,8 @@ step << Warrior/Rogue/Paladin
     .target Tognus Flintfire
     .goto Dun Morogh,45.3,51.9
     .trainer >> Erlerne |T136241:0|t[Schmiedekunst]
-    >>|cRXP_WARN_Dadurch könnt ihr |T135248:0|t[Rough Sharpening Stones] herstellen, die Nahkampftreffer um +2 Schaden erhöhen. Das ist am Anfang sehr bedeutend|r << Warrior/Rogue
-    >>|cRXP_WARN_Dadurch könnt ihr |T135255:0|t[Rough Weightstones] herstellen, die Nahkampftreffer um +2 Schaden erhöhen. Das ist am Anfang sehr bedeutend|r << Paladin
+    >>|cRXP_WARN_Dies erlaubt euch, |T135248:0|t[Rough Sharpening Stones] herzustellen, die Nahkampfanschläge um +2 Schaden erhöhen. Das ist sehr bedeutend zu Anfang|r << Warrior/Rogue
+    >>|cRXP_WARN_Dies erlaubt euch, |T135255:0|t[Rough Weightstones] herzustellen, die Nahkampfanschläge um +2 Schaden erhöhen. Das ist sehr bedeutend zu Anfang|r << Paladin
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Tharek Blackstone|r
     .target Tharek Blackstone
@@ -605,7 +605,7 @@ step << Warrior/Paladin/Rogue
     .money <0.0091
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Loslor Rudge|r
     .goto Dun Morogh,50.084,49.420
-    >>|cRXP_BUY_Kauft eine|r |T134708:0|t[Spitzhacke] |cRXP_BUY_, falls ihr|r |T136241:0|t[Schmiedekunst] gelernt habt
+    >>Kauft eine|cRXP_BUY_ |T134708:0|t[Spitzhacke] |rwenn ihr|cRXP_BUY_ |T136241:0|t[Schmiedekunst] trainiert habt|r
     .collect 2901,1
     .target Loslor Rudge
 step << Warrior/Paladin/Rogue
@@ -910,7 +910,7 @@ step
     .accept 320 >> Akzeptiert die Quest Rückkehr zu Bellowfiz
 step
     .isQuestTurnedIn 384
-    .xp 7+4360 >>Falls ihr die Quest Eberrippchen in Biersauce bereits abgegeben habt, farmt bis 4360+/4500 EP
+    .xp 7+4360 >>Falls ihr die Quest Eberrippchen in Biersauce bereits abgegeben habt, farmt bis 4360+/4500 XP
     .goto Dun Morogh,31.5,38.9,60,0
     .goto Dun Morogh,28.3,39.9,60,0
     .goto Dun Morogh,28.7,43.7,60,0
@@ -939,7 +939,7 @@ step
     .goto Dun Morogh,30.0,51.8
 step
     #softcore
-    .goto Dun Morogh,30.3,37.5,60 >> Lauft hierhin.
+    .goto Dun Morogh,30.3,37.5,60 >> Lauft hierher.
 step
     #softcore
     .goto Dun Morogh,30.9,33.1,15 >>Lauft den Berg nach Norden hinauf
@@ -1005,7 +1005,7 @@ step << Warlock
 step << Warlock
     .goto Dun Morogh,47.273,53.658
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Gimrizz Shadowcog|r
-    .vendor >> |cRXP_BUY_Kauft den|r |T133738:0|t[Grimoire of Feuerblitz (Rang 2)] |cRXP_BUY_wenn ihr ihn euch leisten könnt. Falls nicht, kauft ihr ihn später|r
+    .vendor >> |cRXP_BUY_Kauft das|r |T133738:0|t[Grimoire of Feuerblitz (Rang 2)] |cRXP_BUY_falls ihr es euch leisten könnt. Wenn nicht, werdet ihr es später kaufen|r
     .target Gimrizz Shadowcog
 step << Rogue
     .xp <8,1
@@ -1096,7 +1096,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Pilot Bellowfiz|r
     .target Pilot Bellowfiz
     .goto Dun Morogh,49.426,48.410
-    >>|cRXP_WARN_Wählen die|r |T135637:0|t[Campingmesser] |cRXP_WARN_Belohnung. Speichert es für später|r << Rogue
+    >>|cRXP_WARN_Wählt das|r |T135637:0|t[Campingmesser] |cRXP_WARN_Belohnung. Speichert es für später|r << Rogue
     .turnin 320 >> Gebt die Quest Rückkehr zu Bellowfiz ab
 step
     #era << Warlock
@@ -1144,7 +1144,7 @@ step << Mage/Priest/Warlock
     #completewith next
     .goto Dun Morogh,30.453,46.005
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Keeg Gibn|r
-    .vendor >> |cRXP_BUY_Kauft bis zu 10 weitere|r |T132815:0|t[Eiskalte Milch]
+    .vendor >> |cRXP_BUY_Kauft bis zu 10 mehr|r |T132815:0|t[Eiskalte Milch]
     .target Keeg Gibn
 step << Warrior/Paladin/Rogue
     #completewith next
@@ -1286,7 +1286,7 @@ step << Warrior
     #sticky
     #completewith next
     .money >0.1030
-    +|cRXP_WARN_Farmt bis ihr 10s30c habt, dann lauft nach Eisenschmiede|r
+    +|cRXP_WARN_Schleift bis ihr 10s30c habt, dann lauft nach Eisenschmiede|r
 step << Warrior/Hunter
     .goto Dun Morogh,47.58,41.58,40,0
     .goto Dun Morogh,50.19,40.79,20,0
@@ -1331,7 +1331,7 @@ step
     .mob Vagash
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Rudra Bernruh|r
-    >>|cRXP_WARN_Wählen|r |T133052:0|t[|cRXP_FRIENDLY_Eisklammhammer|r] |cRXP_WARN_als Eure Belohnung. Macht Euch keine Sorgen, falls ihr ihn noch nicht anlegen könnt, ihr werdet sehr bald Zweihandstreitkolben trainieren!|r << Warrior
+    >>|cRXP_WARN_Wählt die|r |T133052:0|t[|cRXP_FRIENDLY_Eisklammhammer|r] |cRXP_WARN_als eure Belohnung. Macht euch keine Sorgen, wenn ihr es noch nicht anlegen könnt, ihr werdet Zweihandkeulen sehr bald trainieren!|r << Warrior
     .target Rudra Amberstill
     .goto Dun Morogh,63.082,49.851
     .turnin 314 >> Gebt die Quest Die Herde beschützen ab
@@ -1470,7 +1470,7 @@ step
 step << skip
     #sticky
     #completewith next
-    +Farmt Mobs, bis ihr mindestens 33 Silber an Geld und verkaufbaren Gegenständen habt
+    +Farmt Mobs, bis ihr mindestens 33 Silber und verkäufliche Gegenstände habt
 --N rogue money gate for cutlass+1h swords
 step
     #completewith Thelsamar1
@@ -1506,7 +1506,7 @@ step
 step
     #softcore
     #completewith next
-    .deathskip >> Sterbt und erscheint in Thelsamar wieder
+    .deathskip >> Sterbt und erscheint bei Thelsamar wieder
 step
     .isQuestComplete 418
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Vidra Hearthstove|r
@@ -1546,7 +1546,7 @@ step
     .turnin 291 >> Gebt die Quest Die Berichte ab
 step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Buliwyf Stonehand|r
-    >>|cRXP_WARN_Anlegen die|r |T133052:0|t[|cRXP_FRIENDLY_Eisklammhammer|r] |cRXP_WARN_jetzt, falls ihr ihn nicht schon früher angelegt habt|r
+    >>|cRXP_WARN_Legt|r |T133052:0|t[|cRXP_FRIENDLY_Eisklammhammer|r] |cRXP_WARN_jetzt an, wenn ihr das nicht früher getan habt|r
     .target Buliwyf Stonehand
     .goto Ironforge,61.181,89.514
     .trainer >>Erlernen 2h Streitkolben
@@ -1560,7 +1560,7 @@ step << !Hunter
 step << !Hunter skip
     #completewith next
     +Führt einen Logout-Skip durch, indem ihr auf einen der Greif-Köpfe springt, euch abmeldet und dann wieder anmeldet
-    .link https://www.youtube.com/watch?v=PWMJhodh6Bw >> |cRXP_WARN_Klickt hier für die Videoreferenz|r
+    .link https://www.youtube.com/watch?v=PWMJhodh6Bw >> |cRXP_WARN_Click here for video reference|r
     .zoneskip Ironforge,1
 step
     .goto Ironforge,78.00,52.00,5,0
@@ -1686,12 +1686,12 @@ step << Rogue
     .goto StormwindClassic,57.547,57.076
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Gunther Weller|r
     .target Gunther Weller
-    .vendor >> |cRXP_WARN_Kauft einen|r |T135346:0|t[Entersäbel] |cRXP_WARN_und legt ihn in Eurer Haupthand an. Anlegen den|r |T135641:0|t[|cRXP_FRIENDLY_Handwerkerdolch|r] |cRXP_WARN_von früher in Eurer Nebenhand|r
+    .vendor >> |cRXP_WARN_Kauft|r |T135346:0|t[Entersäbel] |cRXP_WARN_und legt ihn in von Euch Haupthand an. Legt|r |T135641:0|t[|cRXP_FRIENDLY_Handwerkerdolch|r] |cRXP_WARN_von früher in von Euch Nebenhand an|r
 step << Rogue
     .goto StormwindClassic,57.32,62.08,20,0
     .goto StormwindClassic,58.362,61.678
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Thurman Mullby|r
-    .vendor >> |cRXP_BUY_Kauft ein|r |T135425:0|t[Wuchtiges Wurfmesser]|cRXP_BUY_. Anlegen es, wenn ihr Stufe 11 seid|r
+    .vendor >> |cRXP_BUY_Kauft|r |T135425:0|t[Wuchtiges Wurfmesser]|cRXP_BUY_. Legt es an, wenn ihr Stufe 11 seid|r
     .target Thurman Mullby
 ]])
 
@@ -1701,12 +1701,12 @@ RXPGuides.RegisterGuide([[
 #classic
 #tbc
 << Alliance
-#name 10-11 Elwynn (Zwerg/Gnom)
+#name 10-11 Elwynn (Zwerge/Gnome)
 #version 1
 #group RestedXP Überlebens-Guide (A)
 #subgroup RXP Überlebens-Guide 1-20
 #defaultfor Gnome/Dwarf
-#next 11-13 Loch Modan (Dwarf/Gnome)
+#next 11-13 Loch Modan (Zwerg/Gnom)
 
 step
     .goto StormwindClassic,66.277,62.137
@@ -1847,8 +1847,8 @@ step
     #completewith next
     .goto Elwynn Forest,61.654,53.608,15 >> BETRETET die Jaspismine
 step
-    >>|cRXP_WARN_Folgen: dem Weg durch die Mitte, um die Jaspismine zu erkunden|r
-    >>|cRXP_WARN_Verlassen die Jaspismine, sobald das Ziel abgeschlossen ist|r
+    >>|cRXP_WARN_Folgt dem Weg durch die Mitte, um die Jaspismine zu erkunden|r
+    >>|cRXP_WARN_Verlasst die Jaspismine sobald das Ziel abgeschlossen ist|r
     .goto Elwynn Forest,60.4,50.2
     .complete 76,1 --Scout through the Jasperlode Mine
 step
@@ -2031,13 +2031,13 @@ step
     #ah
     .goto Stormwind City,53.612,59.764
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Auktionatorin Jaxon|r
-    >>Kauft die folgenden Gegenstände für eine schnellere Questabgabe in Loch Modan in Kürze
+    >>Kauft die folgenden Gegenstände, um schneller bei Loch Modan abzugeben
     >>Das spart dir Zeit, weil du dann später nicht rumläufst und die Mobs dafür töten musst. Überspring diesen Schritt, wenn du nichts kaufen willst
-    >>Der Kauf von zusätzlichem |T134437:0|t[Chunk of Eber Fleisch] kann auch nützlich sein, um |T133971:0|t[Kochkunst] später auf 50 zu skillen
+    >>Es kann nützlich sein, zusätzliche |T134437:0|t[Stück Eber Fleisch] zu kaufen, um |T133971:0|t[Kochkunst] bis Stufe 50 zu leveln
     >>|T134342:0|t[Ebergedärme]
     >>|T134027:0|t[Bärenfleisch]
     >>|T134437:0|t[Spinnensekret]
-    >>|T134437:0|t[Chunk of Eber Fleisch]
+    >>|T134437:0|t[Stück Eber Fleisch]
     .collect 3172,3,418,1 -- Boar Intestines (3)
     .collect 3173,3,418,1 -- Bear Meat (3)
     .collect 3174,3,418,1 -- Spider Ichor (3)
@@ -2077,7 +2077,7 @@ step << Warlock
     .mob Summoned Voidwalker
 step << Warlock
      #softcore
-    >>Benutzt Lebensentzug auf eurem Weg zu |cRXP_FRIENDLY_Gakin der Dunkelbinder|r
+    >>Benutzt Lebensabzug auf von Euch Weg zurück zu |cRXP_FRIENDLY_Gakin der Dunkelbinder|r
     .target Gakin the Darkbinder
     .goto StormwindClassic,25.2,78.5
     .turnin 1689 >> Gebt die Quest Die Bindung ab
@@ -2091,7 +2091,7 @@ step << Warlock
     #softcore
     #completewith next
     .goto StormwindClassic,25.2,78.5
-    .deathskip >> Sterbt und erscheint beim Geistheiler wieder, indem ihr Aderlass benutzt und auf dem Freudenfeuer neben euch stehen bleibt
+    .deathskip >> Sterbt und respawnt beim Geistheiler, indem ihr Aderlass benutzt und auf dem Freudenfeuer neben euch steht
 step
     #completewith next
     .goto Elwynn Forest,42.20,66.00,100 >> Lauf nach Goldhain
@@ -2364,7 +2364,7 @@ RXPGuides.RegisterGuide([[
 #classic
 #tbc
 << Alliance
-#name 11-13 Loch Modan (Dwarf/Gnome)
+#name 11-13 Loch Modan (Zwerg/Gnom)
 #version 1
 #group RestedXP Überlebens-Guide (A)
 #subgroup RXP Überlebens-Guide 1-20
@@ -2403,7 +2403,7 @@ step << Dwarf Paladin
     .goto Ironforge,47.132,84.932,20,0
     .goto Ironforge,26.719,69.884
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_John Turner|r
-    >>|cRXP_FRIENDLY_John Turner|r |cRXP_WARN_patrouilliert auf dem äußeren Ring von Eisenschmiede in der Nähe des Auktionshauses|r
+    >>|cRXP_FRIENDLY_John Turner|r |cRXP_WARN_patrouilliert den äußeren Ring der Eisenschmiede neben dem Auktionshaus|r
     .turnin 1647 >>Gebt die Quest Der Foliant der Offenbarung ab
     .accept 1648 >>Akzeptiert die Quest Der Foliant der Offenbarung
     .turnin 1648 >>Gebt die Quest Der Foliant der Offenbarung ab
@@ -2447,7 +2447,7 @@ step
     .goto Loch Modan,35.534,48.404
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gastwirt Ofenglut|r
     .vendor 6734 >> |cRXP_BUY_Kauft einige|r |T133968:0|t[Frisch gebackenes Brot] |cRXP_BUY_wenn nötig|r << Warrior/Rogue
-    .vendor 6734 >> |cRXP_BUY_Kauft bei Bedarf etwas|r |T133968:0|t[Frisch gebackenes Brot] |cRXP_BUY_und|r |T132815:0|t[Eiskalte Milch] |cRXP_BUY_|r << !Warrior !Rogue
+    .vendor 6734 >> |cRXP_BUY_Kauft einige|r |T133968:0|t[Frisch gebackenes Brot] |cRXP_BUY_und|r |T132815:0|t[Eiskalte Milch] |cRXP_BUY_falls nötig|r << !Warrior !Rogue
     .target Innkeeper Hearthstove
 step
     .goto Loch Modan,37.17,47.94,8,0
@@ -2525,8 +2525,8 @@ step
 step << Paladin/Warrior
     .goto Loch Modan,42.867,9.885
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Nillen Andemar|r
-    .vendor >>|cRXP_FRIENDLY_Nillen Andemar|r |cRXP_WARN_verkauft|r |T133476:0|t[|cRXP_FRIENDLY_Heavy Aufgespießt Streitkolben|r] |cRXP_WARN_das ein Gegenstand mit begrenztem Vorrat ist|r
-    >>|cRXP_WARN_Überprüfen, ob es verfügbar ist, und kauft es, wenn ihr könnt. Falls ihr es euch nicht leisten könnt, farmt Geld von den |cRXP_ENEMY_Tunnel Ratten|r in der Nähe, bis ihr genug habt|r
+    .vendor >>|cRXP_FRIENDLY_Nillen Andemar|r |cRXP_WARN_verkauft|r |T133476:0|t[|cRXP_FRIENDLY_Schwerer Stachelkolben|r] |cRXP_WARN_welcher ein Gegenstand mit limitiertem Angebot ist|r
+    >>|cRXP_WARN_Überprüft, ob es verfügbar ist, und kauft es, wenn ihr könnt. Wenn ihr es euch nicht leisten könnt, farmt dann Geld von den |cRXP_ENEMY_Tunnel Ratten|r in der Nähe, bis ihr genug habt|r
     >>|cRXP_WARN_Tut dies schnell, da ein anderer Spieler es vor euch kaufen könnte|r
     .target Nillen Andemar
 step
@@ -2633,7 +2633,7 @@ step
 step
     .goto Loch Modan,34.757,48.618
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Yanni Stoutheart|r
-    >>|cRXP_BUY_Kauft ein|r |T135237:0|t[Feuerstein und Zunder] |cRXP_BUY_zusammen mit 2|r |T135435:0|t[Simple Holz]|cRXP_BUY_. Kauft bei Bedarf einen beliebigen|r|T133634:0|t[Kleiner brauner Beutel] |cRXP_BUY_|r
+    >>|cRXP_BUY_Kauft einen|r |T135237:0|t[Feuerstein und Zunder] |cRXP_BUY_zusammen mit 2|r |T135435:0|t[Einfaches Holz] |cRXP_BUY_. Kauft einen beliebigen|r |T133634:0|t[Kleiner brauner Beutel] |cRXP_BUY_falls nötig|r
     .collect 4470,2 --Simple Wood (2)
     .collect 4471,1 --Flint and Tinder (1)
     .target Yanni Stoutheart
@@ -2662,7 +2662,7 @@ step
 step
     #som--xpgate
     .goto Loch Modan,27.4,48.4
-    .xp 14-2300 >> Farmt, bis ihr 2300 EP von Stufe 14 entfernt seid (9100/11400)
+    .xp 14-2300 >> Farmt bis Stufe 14 (noch 2300 XP, 9100/11400)
 step
     #completewith next
     .goto Loch Modan,24.78,70.17,10,0
@@ -2689,7 +2689,7 @@ step << Dwarf Paladin
 step << Dwarf Paladin
     #completewith next
     .goto Dun Morogh,78.321,58.088
-    .cast 8593 >>|cRXP_WARN_Benutzt das|r |T133439:0|t[Symbol des Lebens] |cRXP_WARN_bei|r |cRXP_FRIENDLY_Narm Faulk|r
+    .cast 8593 >>|cRXP_WARN_Benutzt das|r |T133439:0|t[Symbol des Lebens] |cRXP_WARN_auf|r |cRXP_FRIENDLY_Narm Faulk|r
 	.use 6866
 	.target Narm Faulk
 step << Dwarf Paladin
@@ -2748,7 +2748,7 @@ step << Mage/Priest/Warlock
     .goto Ironforge,21.131,17.276,5,0
     .goto Ironforge,23.135,15.936
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich unten mit |cRXP_FRIENDLY_Harick Felstrommel|r
-    >>|cRXP_WARN_Falls ihr keinen|r |T135144:0|t[Großer Magiezauberstab] |cRXP_WARN_bekommen könnt, kauft einen|r |T135468:0|t[Glimmender Zauberstab] |cRXP_WARN_und rüstet ihn aus, wenn ihr Stufe 15 erreicht|r
+    >>|cRXP_WARN_Falls ihr einen|r |T135144:0|t[Großer Magiezauberstab] |cRXP_WARN_nicht bekommen könnt, kauft einen|r |T135468:0|t[Glimmender Zauberstab] |cRXP_WARN_und rüstet ihn aus, wenn ihr Stufe 15 erreicht|r
     .collect 5208,1 --Smoldering Wand (1)
     .target Harick Boulderdrum
 step << Warlock
@@ -2789,12 +2789,12 @@ step << Priest
 step << !Paladin !Warrior !Hunter !Warlock skip
     #completewith next
     +Führt einen Logout-Skip durch, indem ihr auf einen der Greif-Köpfe springt, euch abmeldet und dann wieder anmeldet
-    .link https://www.youtube.com/watch?v=PWMJhodh6Bw >> |cRXP_WARN_Klickt hier für die Videoreferenz|r
+    .link https://www.youtube.com/watch?v=PWMJhodh6Bw >> |cRXP_WARN_Click here for video reference|r
     .zoneskip Ironforge,1
 step << !Paladin
     .goto Ironforge,78.00,52.00,5,0
-    .zone Stormwind City >> Betretet die Tiefenbahn. Nehmt die Bahn nach Sturmwind
-    >>|cRXP_WARN_Skillt eure|r |T135966:0|t[Erste Hilfe] |cRXP_WARN_und|r |T133971:0|t[Kochkunst] |cRXP_WARN_falls nötig, während ihr auf den Zug wartet|r
+    .zone Stormwind City >> Betretet die Tiefenbahn. Nehmt sie nach Sturmwind
+    >>|cRXP_WARN_Level von Euch|r |T135966:0|t[Erste Hilfe] |cRXP_WARN_und|r |T133971:0|t[Kochkunst] |cRXP_WARN_if needed while waiting for the tram|r
     >>|cRXP_WARN_Ihr benötigt eure|r |T135966:0|t[Erste Hilfe] |cRXP_WARN_auf Stufe 80 für eine Quest auf Stufe 24|r << Rogue !Dwarf
 step
     #completewith Fly2WF
@@ -2809,7 +2809,7 @@ step << Rogue
     #ah
     .goto StormwindClassic,57.38,56.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Marda Weller|r
-    >>|cRXP_BUY_Kauft 1 oder 2|r |T135343:0|t[Scimitars] |cRXP_BUY_falls ihr sie euch leisten könnt oder etwas Besseres aus dem Auktionshaus|r
+    >>|cRXP_BUY_Kauft 1 oder 2|r |T135343:0|t[Scimitars] |cRXP_BUY_falls ihr sie euch leisten könnt oder etwas Besseres vom Auktionshaus|r
     .collect 2027,2 --Scimitar
     .target Marda Weller
     .money <0.3815
@@ -2835,7 +2835,7 @@ step
     #ah
     .goto Stormwind City,53.612,59.764
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Auktionatorin Jaxon|r
-    >>Kauft die folgenden Gegenstände für schnellere Questabgaben in Westfall in Kürze
+    >>Kauft die folgenden Gegenstände für schnellere Abgaben später in Westfall
     >>Das spart dir Zeit, weil du dann später nicht rumläufst und die Mobs dafür töten musst. Überspring diesen Schritt, wenn du nichts kaufen willst
     >>|T133972:0|t[Sehniges Geierfleisch]
     >>|T133884:0|t[Murlocauge]

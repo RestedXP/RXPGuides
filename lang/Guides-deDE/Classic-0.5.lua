@@ -27,7 +27,7 @@ step
     >>Sammelt die |T132612:0|t[|cRXP_LOOT_Armschienen der Furcht|r]. Dies ist ein gebunden beim anlegen Loot in der |cFFfa9602Schwarzfelsspitze|r << Warlock
     >>Sammelt die |T132617:0|t[|cRXP_LOOT_Armschienen der Ehre|r]. Dies ist ein beim Anlegen gebunden Loot in der |cFFfa9602Schwarzfelsspitze|r << Warrior
     >>|cRXP_WARN_Alternativ kauft sie aus dem Auktionshaus << !sod
-    >>|cRXP_WARN_Alternativ kauft sie aus dem Auktionshaus oder von |cRXP_FRIENDLY_Pix Xizzix|r in Beutebucht im Austausch gegen|r |T133799:0|t[|cRXP_FRIENDLY_Angelaufener Real aus Undermine|r] << sod
+    >>|cRXP_WARN_Alternativ kauft sie aus dem Auktionshaus oder von |cRXP_FRIENDLY_Pix Xizzix|r in Beutebucht gegen|r |T133799:0|t[|cRXP_FRIENDLY_Angelaufener Real aus Undermine|r] << sod
     .collect 16714,1,8905,1 << Alliance Druid --Wildheart Bracers (x1)
     .collect 16681,1,8906,1 << Alliance Hunter --Beaststalker's Bindings (x1)
     .collect 16683,1,8907,1 << Alliance Mage --Magister's Bindings (x1)
@@ -106,7 +106,7 @@ step << Alliance
     .goto Ironforge,43.54,52.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Deliana|r
     >>|cRXP_WARN_Ihr benötigt 20 Gold und|r |T132608:0|t[|cRXP_LOOT_Armschienen des Wildherzens|r] |cRXP_WARN_um diese Quest abzugeben|r << Druid
-    >>|cRXP_WARN_Ihr werdet 20 Gold benötigen und|r |T132616:0|t[|cRXP_LOOT_Bestienjägerbindungen|r] |cRXP_WARN_um diese Quest abzugeben|r << Hunter
+    >>|cRXP_WARN_Ihr benötigt 20 Gold und|r |T132616:0|t[|cRXP_LOOT_Bestienjägerbindungen|r] |cRXP_WARN_um diese Quest abzugeben|r << Hunter
     >>|cRXP_WARN_Ihr werdet 20 Gold benötigen und|r |T133365:0|t[|cRXP_LOOT_Bindungen des Magisters|r] |cRXP_WARN_um diese Quest abzugeben|r << Mage
     >>|cRXP_WARN_Ihr benötigt 20 Gold und|r |T132613:0|t[|cRXP_LOOT_Armschienen des Lichts|r] |cRXP_WARN_um diese Quest abzugeben|r << Paladin
     >>|cRXP_WARN_Ihr benötigt 20 Gold und|r |T132520:0|t[|cRXP_LOOT_Armschienen des Gläubigen|r] |cRXP_WARN_um diese Quest abzugeben|r << Priest
@@ -262,7 +262,7 @@ step
     >>Sammelt |T132501:0|t[|cRXP_LOOT_Gürtel der Furcht|r]. Dies ist eine Gebunden-beim-Anlegen-Beute in |cFFfa9602Stratholme|r << Warlock
     >>Sammelt |T132523:0|t[|cRXP_LOOT_Gürtel der Ehre|r]. Dies ist eine Gebunden-beim-Anlegen-Beute in |cFFfa9602Schwarzfelsspitze|r und |cFFfa9602Stratholme|r << Warrior
     >>|cRXP_WARN_Alternativ kauft sie aus dem Auktionshaus << !sod
-    >>|cRXP_WARN_Alternativ kauft sie aus dem Auktionshaus oder von |cRXP_FRIENDLY_Pix Xizzix|r in Beutebucht im Austausch gegen|r |T133799:0|t[|cRXP_FRIENDLY_Angelaufener Real aus Undermine|r] << sod
+    >>|cRXP_WARN_Alternativ kauft sie aus dem Auktionshaus oder von |cRXP_FRIENDLY_Pix Xizzix|r in Beutebucht im Tausch gegen|r |T133799:0|t[|cRXP_FRIENDLY_Angelaufener Real aus Undermine|r] << sod
     .collect 16716,1,8926,1 << Alliance Druid --Wildheart Belt (x1)
     .collect 16680,1,8931,1 << Alliance Hunter --Beaststalker's Belt (x1)
     .collect 16685,1,8932,1 << Alliance Mage --Magister's Belt (x1)
@@ -442,7 +442,7 @@ step
 step
     #completewith next
     .cast 27433 >>|cRXP_WARN_Platziert den|r |T133882:0|t[Ektoplasmadestillierer] |cRXP_WARN_auf dem Boden. Er hält 5 Minuten lang|r
-    .use 21946 >>|cRXP_WARN_Eins|r |T132621:0|t[Goblin-Raketentreibstoff] |cRXP_WARN_wird jedesmal benötigt, wenn ihr |r |T133882:0|t[Ektoplasmadestillierer] benutzt
+    .use 21946 >>Ein |T132621:0|t[Goblin-Raketentreibstoff] |cRXP_WARN_wird jedes Mal benötigt, wenn ihr den|r |T133882:0|t[Ektoplasmadestillierer] |cRXP_WARN_benutzt|r
 step
     #loop
     .goto Winterspring,55.42,43.41,0
@@ -482,7 +482,7 @@ step
 step
     #completewith next
     .cast 27433 >>|cRXP_WARN_Platziert den|r |T133882:0|t[Ektoplasmadestillierer] |cRXP_WARN_auf dem Boden. Er hält 5 Minuten lang|r
-    .use 21946 >>|cRXP_WARN_Eins|r |T132621:0|t[Goblin-Raketentreibstoff] |cRXP_WARN_wird jedesmal benötigt, wenn ihr |r |T133882:0|t[Ektoplasmadestillierer] benutzt
+    .use 21946 >>Ein |T132621:0|t[Goblin-Raketentreibstoff] |cRXP_WARN_wird jedes Mal benötigt, wenn ihr den|r |T133882:0|t[Ektoplasmadestillierer] |cRXP_WARN_benutzt|r
 step
     #loop
     .goto Eastern Plaguelands,60.67,67.35,0
@@ -975,7 +975,7 @@ step
 step
     >>|cRXP_BUY_Sammelt die folgenden Gegenstände|r:
     >>|T132873:0|t[Großer glänzender Splitter] |cRXP_WARN_Verzauberer können diese durch das entzaubern von Geegenständen erhalten|r
-    >>|T136192:0|t[|cRXP_FRIENDLY_Dunkelrunen|r] |cRXP_WARN_sind zufällige Beute in|r |cFFfa9602Scholomance|r
+    >>|T136192:0|t[|cRXP_FRIENDLY_Dunkelrune|r] |cRXP_WARN_sind Zufallsfunde in|r |cFFfa9602Scholomance|r
     >>|cRXP_WARN_Kauft sie wenn möglich aus dem Auktionshaus|r
     .collect 14344,8,8950,1 --Large Brilliant Shard (x8)
     .collect 20520,4,8950,1 --Dark Rune (x4)
@@ -1018,7 +1018,7 @@ step
     .mob Theldren
 step
     #completewith next
-    .zone Eastern Plaguelands >>Lauf in die Östlichen Pestländer
+    .zone Eastern Plaguelands >>Lauft in die Östlichen Pestländer
 step
     .goto Eastern Kingdoms,55.06,17.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Anthion|r
@@ -1048,7 +1048,7 @@ step << Alliance
     .goto Ironforge,43.54,52.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Deliana|r
     >>Ihr benötigt |T132542:0|t[|cRXP_LOOT_Stiefel des Wildherzens|r], |T134588:0|t[|cRXP_LOOT_Kilt des Wildherzens|r] und |T135032:0|t[|cRXP_LOOT_Schiftung des Wildherzens|r] um diese Quest abzugeben << Druid
-    >>Ihr werdet |T132588:0|t[|cRXP_LOOT_Bestienjägerstiefer|r], |T134583:0|t[|cRXP_LOOT_Bestienjägerhose|r] und |T135041:0|t[|cRXP_LOOT_Bestienjägermantel|r] benötigen, um diese Quest abzugeben << Hunter
+    >>Ihr benötigt |T132588:0|t[|cRXP_LOOT_Bestienjägerstiefel|r], |T134583:0|t[|cRXP_LOOT_Bestienjägerhose|r] und |T135041:0|t[|cRXP_LOOT_Bestienjägermantel|r] um diese Quest abzugeben << Hunter
     >>Ihr benötigt |T132536:0|t[|cRXP_LOOT_Stiefel des Magisters|r], |T134586:0|t[|cRXP_LOOT_Gamaschen des Magisters|r] und |T135054:0|t[|cRXP_LOOT_Mantel des Magisters|r] um diese Quest abzugeben << Mage
     >>Ihr benötigt |T132584:0|t[|cRXP_LOOT_Stiefel des Lichts|r], |T134584:0|t[|cRXP_LOOT_Beinplatten des Lichts|r] und |T135041:0|t[|cRXP_LOOT_Schiftung des Lichts|r] um diese Quest abzugeben << Paladin
     >>Ihr werdet |T132539:0|t[|cRXP_LOOT_Sandalen des Gläubigen|r], |T134588:0|t[|cRXP_LOOT_Rock des Gläubigen|r] und |T135033:0|t[|cRXP_LOOT_Mantel des Gläubigen|r] benötigen, um diese Quest abzugeben << Priest
@@ -1186,7 +1186,7 @@ step
     >>Sammelt die |T133131:0|t[|cRXP_LOOT_Maske der Furcht|r]. Diese dropt von |cRXP_ENEMY_Dunkelmeister Gandling|r in |cFFfa9602Scholomance|r << Warlock
     >>Sammelt den |T133070:0|t[|cRXP_LOOT_Helm der Ehre|r]. Diese dropt von |cRXP_ENEMY_Dunkelmeister Gandling|r in |cFFfa9602Scholomance|r << Warrior
     >>Sammelt die |T132768:0|t[|cRXP_LOOT_Krone des Magisters|r]. Diese dropt von |cRXP_ENEMY_Dunkelmeister Gandling|r in |cFFfa9602Scholomance|r << Mage
-    >>|cRXP_WARN_Alternativ kauft sie von |cRXP_FRIENDLY_Pix Xizzix|r in Beutebucht im Austausch für|r |T133799:0|t[|cRXP_FRIENDLY_Angelaufener Real aus Undermine|r] << sod
+    >>|cRXP_WARN_Kauft sie alternativ von |cRXP_FRIENDLY_Pix Xizzix|r in Beutebucht im Tausch gegen|r |T133799:0|t[|cRXP_FRIENDLY_Angelaufener Real aus Undermine|r] << sod
     .collect 16727,1,9002,1 << Alliance Paladin --Lightforge Helm (x1)
     .collect 16720,1,8999,1 << Alliance Druid --Wildheart Cowl (x1)
     .collect 16677,1,9000,1 << Alliance Hunter --Beaststalker's Cap (x1)
@@ -1604,7 +1604,7 @@ step
     .isOnQuest 8967
 step
     #completewith next
-    .zone Eastern Plaguelands >>Reist in die |cFFfa9602Die Östlichen Pestländer|r
+    .zone Eastern Plaguelands >>Reist in die |cFFfa9602 Östlichen Pestländer|r
     .subzoneskip 2017
     .isOnQuest 8968
 step
@@ -1974,7 +1974,7 @@ step
     .isOnQuest 8990
 step
     #completewith next
-    .zone Eastern Plaguelands >>Reist in die |cFFfa9602Die Östlichen Pestländer|r
+    .zone Eastern Plaguelands >>Reist in die |cFFfa9602Östlichen Pestländer|r
     .subzoneskip 2017
     .isOnQuest 8991
 step
@@ -2184,7 +2184,7 @@ step << Alliance
 step << Alliance
     .goto Ironforge,43.54,52.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Deliana|r
-    >>Ihr benötigt |T133129:0|t[|cRXP_LOOT_Kutte des Wildherzens|r] und |T132741:0|t[|cRXP_LOOT_Weste des Wildherzens|r] um diese Quest abzugeben << Druid
+    >>Ihr benötigt |T133129:0|t[|cRXP_LOOT_Kutte des Wildherzens|r] und |T132741:0|t[|cRXP_LOOT_Weste des Wildherzens|r], um diese Quest abzugeben << Druid
     >>Ihr benötigt |T133126:0|t[|cRXP_LOOT_Bestienjägerkappe|r] und |T132625:0|t[|cRXP_LOOT_Bestienjägertunika|r], um diese Quest abzugeben <<  Hunter
     >>Ihr benötigt |T132768:0|t[|cRXP_LOOT_Krone des Magisters|r] und |T132666:0|t[|cRXP_LOOT_Roben des Magisters|r], um diese Quest abzugeben << Mage
     >>Ihr braucht |T133076:0|t[|cRXP_LOOT_Helm des Lichts|r] und |T132738:0|t[|cRXP_LOOT_Brustplatte des Lichts|r], um diese Quest abzugeben << Paladin
@@ -2237,7 +2237,7 @@ step << Horde
     .goto Orgrimmar,34.96,38.28
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Mokvar|r
     >>Ihr benötigt |T133129:0|t[|cRXP_LOOT_Kutte des Wildherzens|r] und |T132741:0|t[|cRXP_LOOT_Weste des Wildherzens|r] um diese Quest abzugeben << Druid
-    >>Ihr benötigt |T133126:0|t[|cRXP_LOOT_Bestienjägerkappe|r] und |T132625:0|t[|cRXP_LOOT_Bestienjägertunika|r], um diese Quest abzugeben <<  Hunter
+    >>Ihr benötigt |T133126:0|t[|cRXP_LOOT_Bestienjägerkappe|r] und |T132625:0|t[|cRXP_LOOT_Bestienjägertunika|r] um diese Quest abzugeben <<  Hunter
     >>Ihr benötigt |T132768:0|t[|cRXP_LOOT_Krone des Magisters|r] und |T132666:0|t[|cRXP_LOOT_Roben des Magisters|r], um diese Quest abzugeben << Mage
     >>Ihr benötigt |T132767:0|t[|cRXP_LOOT_Krone des Gläubigen|r] und |T132652:0|t[|cRXP_LOOT_Robe des Gläubigen|r] um diese Quest abzugeben << Priest
     >>Ihr benötigt |T133143:0|t[|cRXP_LOOT_Kappe der Schattenkunst|r] und |T132722:0|t[|cRXP_LOOT_Tunika der Schattenkunst|r], um diese Quest abzugeben << Rogue
