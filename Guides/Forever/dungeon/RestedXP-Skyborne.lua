@@ -32,7 +32,7 @@ RXPGuides.RegisterGuide([[
 #defaultfor Skyborne
 #next 13-15 Westfall << Alliance
 #next 12-14 Silverpine Forest << Horde !Hunter
-#next 12-17 The Barrens << Horde Hunter
+#next 12-16 The Barrens << Horde Hunter
 
 step << Horde
 #include RestedXP Forever Guide (H)\9-13 Zephras Isle

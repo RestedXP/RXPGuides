@@ -6,7 +6,7 @@ RXPGuides.RegisterGuide([[
 #forever
 << Horde
 #name 12-16 The Barrens
-#displayname 14-16 The Barrens << !Shaman !Hunter !Tauren !Skyborne
+#displayname 14-16 The Barrens << !Shaman !Hunter !Tauren
 #displayname 15-16 The Barrens << Paladin
 #version 11
 #group RestedXP Forever Dungeon Guide (H)

@@ -43,7 +43,7 @@ RXPGuides.RegisterGuide([[
 --#groupid RXP-SRGCE-H1
 #defaultfor Troll/Orc
 #next 10-12 Tirisfal (Orc/Troll) << !Hunter !Shaman !Tauren !Skyborne
-#next 12-17 The Barrens << Orc Hunter/Troll Hunter/Orc Shaman/Troll Shaman
+#next 12-16 The Barrens << Orc Hunter/Troll Hunter/Orc Shaman/Troll Shaman
 
 
 step

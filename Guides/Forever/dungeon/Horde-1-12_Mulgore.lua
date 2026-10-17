@@ -27,7 +27,7 @@ RXPGuides.RegisterGuide([[
 #subgroup Dungeon Guide 1-22
 --#groupid RXP-SRGCE-H1
 #defaultfor Tauren
-#next 12-17 The Barrens
+#next 12-16 The Barrens
 
 
 step

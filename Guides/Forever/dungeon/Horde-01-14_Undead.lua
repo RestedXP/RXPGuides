@@ -45,7 +45,7 @@ RXPGuides.RegisterGuide([[
 #era/som--h
 #name 12-14 Silverpine Forest
 #displayname 13-15 Silverpine Forest << Paladin
-#next 12-17 The Barrens
+#next 12-16 The Barrens
 
 
 step
