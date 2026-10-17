@@ -605,7 +605,7 @@ step << Rogue
 step << Warrior/Paladin
     .goto Eversong Woods,48.492,45.905
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Geron|r
-    .vendor >> Verkauft trash. Verkauft eure Waffe, wenn es euch genug Geld für einen |T133053:0|t[Hölzerner Schlaghammer] (6s 66c) gibt. Ihr kommt später zurück, wenn ihr noch nicht genug habt.
+    .vendor >> Verkaufttrash. Verkauft eure Waffe, wenn es euch genug Geld für einen |T133053:0|t[Hölzerner Schlaghammer] (6s 66c) gibt. Ihr kommt später zurück, wenn ihr noch nicht genug habt.
     .target Geron
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<5
@@ -810,7 +810,7 @@ step << Rogue
 step << Warrior/Paladin
     .goto Eversong Woods,48.492,45.905
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Geron|r
-    .vendor >> Verkauft trash. Verkauft eure Waffe, wenn es euch genug Geld für einen |T133053:0|t[Hölzerner Schlaghammer] (6s 66c) gibt. Ihr kommt später zurück, wenn ihr noch nicht genug habt.
+    .vendor >> Verkaufttrash. Verkauft eure Waffe, wenn es euch genug Geld für einen |T133053:0|t[Hölzerner Schlaghammer] (6s 66c) gibt. Ihr kommt später zurück, wenn ihr noch nicht genug habt.
     .target Geron
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<5

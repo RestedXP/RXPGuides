@@ -282,7 +282,7 @@ step
 step
 #optional
     #completewith journal1
-    >>Tötet |cRXP_ENEMY_Nightbane Schatten Weavers|r
+    >>Tötet |cRXP_ENEMY_Schattenwirker der Nachtheuler|r
     .complete 26689,1 --10/10 Nightbane Shadow Weaver slain
 	.mob Nightbane Shadow Weaver
 step
@@ -303,7 +303,7 @@ step
     .goto 47,60.88,73.19,40,0
     .goto 47,64.19,65.03,40,0
     .goto 47,63.50,76.61,0
-    >>Tötet |cRXP_ENEMY_Nightbane Schatten Weavers|r
+    >>Tötet |cRXP_ENEMY_Schattenwirker der Nachtheuler|r
     .complete 26689,1 --10/10 Nightbane Shadow Weaver slain
 	.mob Nightbane Shadow Weaver
 step
