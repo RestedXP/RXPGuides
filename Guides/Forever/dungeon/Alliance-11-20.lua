@@ -4022,9 +4022,9 @@ step
     .turnin 4727 >> Turn in Beached Sea Turtle
     .target Gwennyth Bly'Leggonde
 step
-    .goto 1439,37.105,62.167
-    >>Click the |cRXP_PICK_Beached Sea Turtle|r
-    .accept 4722 >> Accept Beached Sea Turtle
+    .goto 1439,35.968,70.807
+    >>Click the |cRXP_PICK_Beached Sea Creature|r
+    .accept 4728 >> Accept Beached Sea Creature
     .isQuestTurnedIn 4681
 step
     .goto 1439,35.429,76.566,0
@@ -4123,18 +4123,6 @@ step
     .isQuestTurnedIn 949
     .destroy 5251 >> Delete the |T134715:0|t[Phial of Scrying] from your bags, as it's no longer needed
 step
-    .goto 1439,43.555,76.293
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Onu|r
-    .turnin 950 >> Turn in Return to Onu
-    .timer 11,Return to Onu RP
-    .target Onu
-step
-    #optional
-    >>|cRXP_WARN_Use the |T133743:0|t[|cRXP_LOOT_Book: The Powers Below|r] to start the quest|r
-    .accept 968 >> Accept The Powers Below
-    .use 5352
-    .itemcount 5352,1
-step
     #sticky
     #label prospector
     .goto 1439,35.724,83.696
@@ -4175,6 +4163,18 @@ step
     >>Click the |cRXP_PICK_Beached Sea Creature|r
     .accept 4733 >> Accept Beached Sea Creature
     >>|cRXP_WARN_Be aware of |cRXP_ENEMY_Greymist Oracles|r'|r |T136048:0|t[Lightning Bolt] |cRXP_WARN_damage, they can also heal with|r |T136052:0|t[Healing Wave]|r
+step
+    .goto 1439,43.555,76.293
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Onu|r
+    .turnin 950 >> Turn in Return to Onu
+    .timer 11,Return to Onu RP
+    .target Onu
+step
+    #optional
+    >>|cRXP_WARN_Use the |T133743:0|t[|cRXP_LOOT_Book: The Powers Below|r] to start the quest|r
+    .accept 968 >> Accept The Powers Below
+    .use 5352
+    .itemcount 5352,1
 step
     #optional
     .goto 1439,44.401,76.425
@@ -4293,6 +4293,7 @@ step
     .turnin 970 >> Turn in The Tower of Althalaxx
     .accept 973 >> Accept The Tower of Althalaxx
 step
+    #optional
     .goto 1440/1,-138.99,3806.92
     .xp 20 >> Grind to level 20
 step
