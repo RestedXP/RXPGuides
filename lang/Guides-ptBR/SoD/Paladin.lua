@@ -1731,7 +1731,7 @@ step
 step
     .train 426178,1
     >>|cRXP_WARN_Você agora tem que entrar em Monastério Escarlate e completar uma execução completa da Catedral|r
-    >>ApÃ³s matar |cRXP_ENEMY_Mograine|r e |cRXP_ENEMY_Whitemane|r, fale com |cRXP_FRIENDLY_Aeonas|r na sala de trÃ¡s
+    >>Após matar |cRXP_ENEMY_Mograine|r e |cRXP_ENEMY_Whitemane|r, fale com |cRXP_FRIENDLY_Aeonas|r na sala de trás
     .complete 79946,2 --Find Aeonas in the Scarlet Monastery
     .turnin 79946 >>Entregue A Brother in Need
     .accept 79963 >>Aceite Pela Graça da Luz
@@ -1745,7 +1745,7 @@ step
     .train 426178,1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse |cRXP_FRIENDLY_Aeonas|r
     .turnin 79963 >>Entregue Pela Graça da Luz
-    .accept 79970 >>Aceite Aeonas, o JustiÃ§ado
+    .accept 79970 >>Aceite Aeonas, o Justiçado
     .target Aeonas
 step
     #completewith Aeonas
@@ -1757,7 +1757,7 @@ step
     #label Aeonas
     .goto Stormwind City,37.355,31.708
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Aeonas, o Justiçado|r
-    .turnin 79970 >> Entregue Aeonas, o JustiÃ§ado
+    .turnin 79970 >> Entregue Aeonas, o Justiçado
     .train 426178 >> Aprenda |T236263:0|t[Bainha de Luz]
     .target Aeonas the Vindicated
 ]])
@@ -2210,7 +2210,7 @@ step
     .complete 84318,1
 step
     .goto Eastern Plaguelands,61.3,69.3
-    >>Usar |T134566:0|t[Orthas' Favourite Ouro Tooth] para invocar |cRXP_FRIENDLY_Orthas|r novamente. Fale com ele para entregar a missÃ£o e obter a continuaÃ§Ã£o
+    >>Usar |T134566:0|t[Orthas' Favourite Ouro Tooth] para invocar |cRXP_FRIENDLY_Orthas|r novamente. Fale com ele para entregar a missão e obter a continuação
     .turnin 84318 >> Entregue Bah!
     .accept 84319 >> Aceite Oh No Ye Don't
     .use 227687
@@ -2220,7 +2220,7 @@ step
     .complete 84319,1
     .mob Stitched Horror
 step
-    >>Usar |T134566:0|t[Orthas' Favourite Ouro Tooth] para invocar |cRXP_FRIENDLY_Orthas|r novamente. Fale com ele para entregar a missÃ£o e obter a continuaÃ§Ã£o
+    >>Usar |T134566:0|t[Orthas' Favourite Ouro Tooth] para invocar |cRXP_FRIENDLY_Orthas|r novamente. Fale com ele para entregar a missão e obter a continuação
     .turnin 84319 >> Entregue Oh No Ye Don't
     .accept 84330 >> Aceite Um Tiquinho de Necromancia
 step

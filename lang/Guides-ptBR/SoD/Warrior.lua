@@ -1446,7 +1446,7 @@ step
 step
     .train 416004,1
     .goto Arathi Highlands,57.68,74.66
-    >>Derrote |cRXP_ENEMY_Skonk|r depois que comer sua refeiÃ§Ã£o
+    >>Derrote |cRXP_ENEMY_Skonk|r depois que comer sua refeição
     .complete 79678,1 --Taste Testing
     .mob Skonk
 step
@@ -1967,7 +1967,7 @@ step
 step
     .train 440496,1
     >>|cRXP_WARN_NOTA: NÃO HÁ SETA PARA ESTE PASSO!|r
-    >>|cRXP_WARN_VocÃª deve nadar para o sul atÃ© a ilha remota e falar com |cRXP_FRIENDLY_Sebastian Jurgens|r. VocÃª deve nadar pelas Ã¡guas de fadiga para alcanÃ§Ã¡-lo. VÃ¡ em direÃ§Ã£o ao Oilrig localizado na ilha para encontrÃ¡-lo|r
+    >>|cRXP_WARN_Você deve nadar para o sul até a ilha remota e falar com |cRXP_FRIENDLY_Sebastian Jurgens|r. Você deve nadar pelas águas de fadiga para alcançá-lo. Vá em direção ao Oilrig localizado na ilha para encontrá-lo|r
     .turnin 84137 >> Entregue Amor de máquina
     .accept 84138 >> Aceite Favores gelados
     .target Sebastian Jurgens
@@ -2025,8 +2025,8 @@ step
     .target Sebastian Jurgens
 step
     .train 440496,1
-    .zone Westfall >> |cRXP_WARN_Siga |cRXP_FRIENDLY_Sebastian Jurgens|r para o teletransportador. Ele o teletransportarÃ¡ para Cerro Oeste|r << Alliance
-    .zone Tirisfal Glades >> |cRXP_WARN_Siga |cRXP_FRIENDLY_Sebastian Jurgens|r para o teletransportador. Ele o teletransportarÃ¡ para Tirisfal Glades|r << Horde
+    .zone Westfall >> |cRXP_WARN_Siga |cRXP_FRIENDLY_Sebastian Jurgens|r para o teletransportador. Ele o teletransportará para Cerro Oeste|r << Alliance
+    .zone Tirisfal Glades >> |cRXP_WARN_Siga |cRXP_FRIENDLY_Sebastian Jurgens|r para o teletransportador. Ele o teletransportará para Tirisfal Glades|r << Horde
     .target Sebastian Jurgens
 step
     .train 440496,1

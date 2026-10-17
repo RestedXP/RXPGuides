@@ -212,7 +212,7 @@ step << Rogue
     .train 398196,1
 step << Rogue
     #season 2
-    .cast 418600 >>|cRXP_WARN_Use qualquer uma das|r |T134327:0|t[|cRXP_LOOT_Map Pieces]|r |cRXP_WARN_para combinÃ¡-las em um|r |T134269:0|t[|cRXP_LOOT_Dun Morogh Mapa do Tesouro|r]
+    .cast 418600 >>|cRXP_WARN_Use qualquer uma das|r |T134327:0|t[|cRXP_LOOT_Map Pieces]|r |cRXP_WARN_para combiná-las em um|r |T134269:0|t[|cRXP_LOOT_Dun Morogh Mapa do Tesouro|r]
     .collect 208220,1
     .itemcount 208219,1
     .itemcount 208213,1

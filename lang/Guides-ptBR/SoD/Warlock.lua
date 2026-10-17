@@ -1359,12 +1359,12 @@ step
     .train 426467,1
     .train 19028,3 --Soul Link
     .goto Desolace,81.2,79.7
-    .cast 434869 >> |cRXP_WARN_Clique no Altar para invocar|r |cRXP_ENEMY_Seductress Ceeyna|r |cRXP_WARN_mas certifique-se de usar|r |T136121:0|t[ProteÃ§Ã£o contra Sombra]|cRXP_WARN_,|r |T136190:0|t[Sacrificar] |cRXP_WARN_e|r |T136160:0|t[VÃ­nculo AnÃ­mico]|r |cRXP_WARN_antecipadamente|r |cFFFF0000pois vocÃª receberÃ¡ muito dano durante o canal e nÃ£o pode ser curado|r
+    .cast 434869 >> |cRXP_WARN_Clique no Altar para invocar|r |cRXP_ENEMY_Seductress Ceeyna|r |cRXP_WARN_mas certifique-se de usar|r |T136121:0|t[Proteção contra Sombra]|cRXP_WARN_,|r |T136190:0|t[Sacrificar] |cRXP_WARN_e|r |T136160:0|t[Vínculo Anímico]|r |cRXP_WARN_antecipadamente|r |cFFFF0000pois você receberá muito dano durante o canal e não pode ser curado|r
 step
     .train 426467,1
     .train 19028,1 --Soul Link
     .goto Desolace,81.2,79.7
-    .cast 434869 >> |cRXP_WARN_Clique no Altar para invocar|r |cRXP_ENEMY_Seductress Ceeyna|r |cRXP_WARN_mas certifique-se de usar|r |T136121:0|t[ProteÃ§Ã£o contra Sombra] |cRXP_WARN_e|r |T136190:0|t[Sacrificar] |cRXP_WARN_antecipadamente|r |cFFFF0000pois vocÃª receberÃ¡ muito dano durante o canal e nÃ£o pode ser curado|r
+    .cast 434869 >> |cRXP_WARN_Clique no Altar para invocar|r |cRXP_ENEMY_Seductress Ceeyna|r |cRXP_WARN_mas certifique-se de usar|r |T136121:0|t[Proteção contra Sombra] |cRXP_WARN_e|r |T136190:0|t[Sacrificar] |cRXP_WARN_antecipadamente|r |cFFFF0000pois você receberá muito dano durante o canal e não pode ser curado|r
 step
     .train 426467,1
     .goto Desolace,81.2,79.7
