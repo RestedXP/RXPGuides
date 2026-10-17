@@ -139,6 +139,15 @@ local dungeonList = {
     ["SCHOLO"] = 2057,
     ["STRAT"] = 2017,
     ["LBRS"] = 1583,
+    ["HOT"] = 16919,--Hall of thanes
+    ["HOL"] = 153,--Ruins of lordaeron
+    ["ES"] = 16732,--Excavation site
+    ["COD"] = 16544,--City of dalaran
+    ["TDC"] = 17853,--The Drowned city
+    ["KS"] = 17780,--Krol'dok stronghold
+    ["AP"] = 2079,--Alcaz Prison
+    ["BH"] = 1216,--Blackmaw Hold
+    ["TST"] = 16985,--The shaper's terrace
 }
 
 local alternateNames = {
@@ -148,6 +157,11 @@ local alternateNames = {
     ["TEMPLE OF ATAL'HAKKAR"] = "ST",
     ["DMW"] = "DME",
     ["DMN"] = "DME",
+    ["BMH"] = "BH",
+    ["SHT"] = "TST",
+    ["SH"] = "TDC",
+    ["DC"] = "TDC",
+    ["ESW"] = "ES",
 }
 
 for tag,name in pairs(dungeonList) do
