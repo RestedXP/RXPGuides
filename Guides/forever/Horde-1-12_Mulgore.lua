@@ -5,6 +5,7 @@ if faction == "Alliance" then return end
 local L = GetLocale() if L and RXP.enabledLocale[L] then return end
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Horde
 #name 1-6 Mulgore
 #version 11
@@ -474,6 +475,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Horde
 #name 6-12 Mulgore
 #version 11
@@ -517,13 +519,13 @@ step
 step
     #softcore
     .goto 1412/1,-408.900,-2179.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yaw Sharpmane|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yaw Sharpmane|r
     .accept 96130 >>Accept Chakuyak
     .target Yaw Sharpmane
 step
     #softcore
     .goto 1412/1,-430.600,-2097.600
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ahab Wheathoof|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ahab Wheathoof|r
     .accept 99411 >>Accept Kyle's Gone Missing!
     .target Ahab Wheathoof
 step
@@ -646,13 +648,13 @@ step
 step
     #hardcore
     .goto 1412/1,-408.900,-2179.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yaw Sharpmane|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yaw Sharpmane|r
     .accept 96130 >>Accept Chakuyak
     .target Yaw Sharpmane
 step
     #hardcore
     .goto 1412/1,-430.600,-2097.600
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ahab Wheathoof|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ahab Wheathoof|r
     .accept 99411 >>Accept Kyle's Gone Missing!
     .target Ahab Wheathoof
 step
@@ -662,7 +664,7 @@ step
     .target Harken Windtotem
 step
     .goto 1412/1,-496.200,-2347.900
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krang Stonehoof|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krang Stonehoof|r
     .accept 99108 >>Accept Sparring Match
     .target Krang Stonehoof
 step
@@ -940,7 +942,7 @@ step
     .target Zarlman Two-Moons
 step
     .goto 1412/1,-430.600,-2097.600
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ahab Wheathoof|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ahab Wheathoof|r
     .turnin 99411 >>Turn in Kyle's Gone Missing!
     .target Ahab Wheathoof
     .isQuestComplete 99411
@@ -1307,7 +1309,7 @@ step
     .unitscan Kyle the Frenzied
 step
     .goto 1412/1,-430.600,-2097.600
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ahab Wheathoof|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ahab Wheathoof|r
     .turnin 99411 >>Turn in Kyle's Gone Missing!
     .target Ahab Wheathoof
 step
@@ -1374,7 +1376,7 @@ step
 step
     .goto 1456/1,104.500,-1308.400
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Boarton Shadetotem|
-    >>|cRXP_WARN_He is|r |T132320:0|t[Stealthed] 
+    >>|cRXP_WARN_He is|r |T132320:0|t[Stealthed]
     .accept 76156 >>Accept Stalk With The Earthmother
     .target Boarton Shadetotem
 step
@@ -1977,7 +1979,7 @@ step << Druid
 step
     .goto 1456/1,104.500,-1308.400
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Boarton Shadetotem|r
-    >>|cRXP_WARN_He is|r |T132320:0|t[Stealthed] 
+    >>|cRXP_WARN_He is|r |T132320:0|t[Stealthed]
     .turnin 76156 >>Turn in Stalk With The Earthmother
     .accept 76160 >>Accept Stalk With The Earthmother
     .target Boarton Shadetotem

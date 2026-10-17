@@ -4,6 +4,7 @@ if faction == "Horde" then return end
 local L = GetLocale() if L and RXP.enabledLocale[L] then return end
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 #season 0,1
 << Alliance
 #name 1-6 Northshire
@@ -760,7 +761,7 @@ step
     #completewith RnR
     .isOnQuest 91772
     .goto 1429/0,-46.00,-9044.61,5 >>Click the green |cRXP_PICK_Kobold Tracks|r on the ground as you travel toward Goldshire
-    .use 247970 
+    .use 247970
     .complete 91772,1 -- Followed Kobold Tracks 6/6
     .disablecheckbox
 step
@@ -774,6 +775,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 #season 0,1
 #version 1
 << Alliance
@@ -3794,7 +3796,7 @@ step
 --logout skip - remove if logout skips re-added
 step
     .goto 1426/0,-682.300,-5489.000
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Beldin Steelgrill::1376|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Beldin Steelgrill::1376|r
     .target Beldin Steelgrill::1376
     .accept 96408 >>Accept A Visitor to Dun Morogh
 step
@@ -4121,6 +4123,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 #season 0,1
 #version 1
 << Alliance

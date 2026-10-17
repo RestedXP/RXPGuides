@@ -4,6 +4,7 @@ if faction == "Alliance" then return end
 local L = GetLocale() if L and RXP.enabledLocale[L] then return end
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Horde
 #name 12-17 The Barrens
 #displayname 14-18 The Barrens << !Shaman !Hunter !Tauren
@@ -125,7 +126,7 @@ step << Skyborne
     #optional
     .goto 1413/1,-2595.75,-473.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thork|r
-    .turnin 98024 >>Turn in Journey to the Crossroads 
+    .turnin 98024 >>Turn in Journey to the Crossroads
     .target Thork
     .maxlevel 15
 step << Orc/Troll
@@ -563,7 +564,7 @@ step << Orc Shaman/Troll Shaman/Tauren Shaman
     >>|cRXP_WARN_Wait for the respawn if it's not up|r
     .collect 4926,1,819 --Collect Chen's Empty Keg
     .accept 819 >> Accept Chen's Empty Keg
-step 
+step
     #completewith RatchetEnter
     >>Kill |cRXP_ENEMY_Raptors|r. Loot them for their |cRXP_LOOT_Heads|r
     .complete 869,1 --Raptor Head (12)
@@ -2576,6 +2577,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Horde
 #name 17-22 Stonetalon/Barrens/Ashenvale
 #displayname 18-22 Stonetalon/Barrens/Ashenvale << !Shaman !Hunter !Tauren
@@ -3704,7 +3706,7 @@ step << Rogue
     #optional
     .goto 1456/1,104.500,-1308.400
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Boarton Shadetotem|r
-    >>|cRXP_WARN_He is|r |T132320:0|t[Stealthed] 
+    >>|cRXP_WARN_He is|r |T132320:0|t[Stealthed]
     .train 6761 >>Train your class spells
     .target Boarton Shadetotem
     .xp <16,1
@@ -3712,7 +3714,7 @@ step << Rogue
 step << Rogue
     .goto 1456/1,104.500,-1308.400
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Boarton Shadetotem|r
-    >>|cRXP_WARN_He is|r |T132320:0|t[Stealthed] 
+    >>|cRXP_WARN_He is|r |T132320:0|t[Stealthed]
     .train 1943 >>Train your class spells
     .target Boarton Shadetotem
     .xp <20,1
@@ -3781,7 +3783,7 @@ step << Paladin
     .goto 1456/1,253.900,-950.200
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alodan|r
     .train 1866 >>Train your class spells
-    .target Alodan the Hopeful 
+    .target Alodan the Hopeful
     .xp <20,1
     .xp >22,1
 step << Paladin
@@ -3789,7 +3791,7 @@ step << Paladin
     .goto 1456/1,253.900,-950.200
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alodan|r
     .train 1026 >>Train your class spells
-    .target Alodan the Hopeful 
+    .target Alodan the Hopeful
     .xp <22,1
 step
     #optional
@@ -4566,7 +4568,7 @@ step << skip
     .zoneskip Ashenvale
 step
     .goto 1440/1,-632.700,2311.500
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Va'xug Firefure|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Va'xug Firefure|r
     .accept 98251 >>Accept Never Coming Back
     .target Va'xug Firefure
 step
@@ -4807,7 +4809,7 @@ step << Paladin
     .goto 1456/1,253.900,-950.200
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alodan|r
     .train 1866 >>Train your class spells
-    .target Alodan the Hopeful 
+    .target Alodan the Hopeful
     .xp <20,1
     .xp >22,1
 step << Paladin
@@ -4815,7 +4817,7 @@ step << Paladin
     .goto 1456/1,253.900,-950.200
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alodan|r
     .train 1026 >>Train your class spells
-    .target Alodan the Hopeful 
+    .target Alodan the Hopeful
     .xp <22,1
 step
     #ah

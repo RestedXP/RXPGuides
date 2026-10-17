@@ -4,6 +4,7 @@ if faction == "Horde" then return end
 local L = GetLocale() if L and RXP.enabledLocale[L] then return end
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 #season 0,1
 << Alliance
 #name 1-6 Shadowglen
@@ -443,6 +444,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 #season 0,1
 << Alliance
 #name 6-11 Teldrassil

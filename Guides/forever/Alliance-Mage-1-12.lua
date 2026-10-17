@@ -4,6 +4,7 @@ if faction == "Horde" then return end
 local L = GetLocale() if L and RXP.enabledLocale[L] then return end
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Human Mage
 #name 1-10 Elwynn Forest Mage AoE
 #version 1
@@ -811,6 +812,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Gnome Mage
 #name 1-10 Dun Morogh Mage AoE
 #version 1
@@ -1461,6 +1463,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Alliance Mage
 #name 10-12 Loch Modan Mage AoE
 #version 1

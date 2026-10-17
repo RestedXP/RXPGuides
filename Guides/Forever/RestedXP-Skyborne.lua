@@ -2,6 +2,7 @@ local L = GetLocale() if L and RXP.enabledLocale[L] then return end
 --Skyborne leveling guide: Part 1
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 #version 1
 #name 1-9 Zephras Isle
 #displayname 1-9 Skyborne << Alliance
@@ -3146,6 +3147,7 @@ step
 --Skyborne leveling guide: Part 2
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 #version 1
 #name 9-13 Zephras Isle
 #displayname 9-13 Skyborne << Alliance
@@ -3170,7 +3172,7 @@ step
     .goto 2521,45.67,45.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Constable Aonda::251523|r.
     .accept 92701 >>Accept To Valanaar << Alliance
-    .accept 92579 >>Accept To Valanaar << Horde 
+    .accept 92579 >>Accept To Valanaar << Horde
     .accept 93948 >>Accept Deliver the Signet
     .target Constable Aonda::251523
 step
@@ -6883,7 +6885,7 @@ step << Horde !Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal::2995|r.
     .fly Orgrimmar >>Fly to Orgrimmar
     .target Tal::2995
-step
+step << Horde
     .goto 1456/1,-218.13,-1055.97--c:Thunder Bluff,70.4,29.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rahauro|r
     .accept 5722 >> Accept Searching for the Lost Satchel
@@ -7200,6 +7202,7 @@ step << !Hunter
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 #version 1
 #internal
 

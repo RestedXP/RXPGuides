@@ -1382,10 +1382,10 @@ local function LoadCache(guide)
                                     currentGuideName)
                 if g then
                     addon.SaveGuideProgress(g, startStep, startStepId)
-                    if WOW_PROJECT_ID == WOW_PROJECT_CAMELOT then
-                        --TODO: Fix the dungeon selection for Camelot
-                        addon.settings.dungeons:SetNone()
-                    end
+                    -- if WOW_PROJECT_ID == WOW_PROJECT_CAMELOT then
+                    --     --TODO: Fix the dungeon selection for Camelot
+                    --     addon.settings.dungeons:SetNone()
+                    -- end
                     addon:LoadGuide(g, true)
                     currentGuideGroup = nil
                     currentGuideName = nil
@@ -2706,6 +2706,8 @@ function addon.stepLogic.DungeonCheck(step,guide)
         local dungeonOverride = addon.dungeonOverride[key]
         if dungeonOverride and dungeonOverride[tag] ~= nil then
             return dungeonOverride[tag]
+        elseif guide and guide.disabledungeons then
+            return false
         else
             return addon.settings.profile.dungeons[tag]
         end

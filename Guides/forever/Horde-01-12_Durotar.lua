@@ -4,6 +4,7 @@ if faction == "Alliance" then return end
 local L = GetLocale() if L and RXP.enabledLocale[L] then return end
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Horde
 #name 1-6 Durotar
 #version 11
@@ -1094,6 +1095,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Horde
 #name 6-10 Durotar
 #version 11
@@ -1149,13 +1151,13 @@ step
     .goto 1411/1,-4939.89,-793.12,8 >> Enter the big hut
 step << !Rogue !Warrior
     .goto 1411/1,-4960.000,-791.300
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pa'zula|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pa'zula|r
     >>|cRXP_WARN_This will unlock a quest. Skip this step if you already have 2 professions|r
     .train 7411 >> Train |T136244:0|t[Enchanting]
     .target Pa'zula
 step << !Rogue !Warrior
     .goto 1411/1,-4960.000,-791.300
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pa'zula|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pa'zula|r
     .accept 96873 >>Accept A Pain in the Neck
     .target Pa'zula
     .skill enchanting,<1,1
@@ -2862,7 +2864,7 @@ step << Hunter/Shaman
     .isOnQuest 96877
 step << Hunter/Shaman
     .goto 1454/1,-4466.800,1954.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kor'geld|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kor'geld|r
     .accept 97242 >>Accept Yelmak's Medley
     .target Kor'geld
 step << Hunter/Shaman
@@ -2945,7 +2947,7 @@ step << Hunter/Shaman
     .target Migi
 step << Hunter/Shaman
     .goto 1454/1,-4205.800,2007.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thra|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thra|r
     .accept 97326 >>Accept Rocks to Rests
     .target Thra
 step << Hunter/Shaman
@@ -3088,6 +3090,7 @@ step << Rogue
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Horde
 #name 10-12 Durotar
 #version 11
@@ -3473,7 +3476,7 @@ step
     .isOnQuest 96877
 step
     .goto 1454/1,-4466.800,1954.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kor'geld|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kor'geld|r
     .accept 97242 >>Accept Yelmak's Medley
     .target Kor'geld
 step
@@ -3528,7 +3531,7 @@ step
     .target Migi
 step
     .goto 1454/1,-4205.800,2007.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thra|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thra|r
     .accept 97326 >>Accept Rocks to Rests
     .target Thra
 step
@@ -3724,6 +3727,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Horde
 #name 10-12 Tirisfal (Orc/Troll)
 #version 11
@@ -4175,7 +4179,7 @@ step << Warrior
     .abandon 1821 >> Abandon Agamand Heirlooms
 step
     #optional
-    .abandon 375 >>Abandon The Chill of Death 
+    .abandon 375 >>Abandon The Chill of Death
 step
     #label LeaveUndercity3
     .goto 1458/0,419.89,1627.54,50,0

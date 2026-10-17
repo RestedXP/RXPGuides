@@ -4,6 +4,7 @@ if faction == "Horde" then return end
 local L = GetLocale() if L and RXP.enabledLocale[L] then return end
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 #version 1
 << Alliance
 #name 13-15 Westfall
@@ -619,7 +620,7 @@ step << !NightElf
 step << NightElf Hunter
     .goto 1453/0,706.15,-8795.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Frederick Stover|r
-    >>|cRXP_BUY_Buy a|r |T135489:0|t[Heavy Recurve Bow] |cRXP_BUY_from him|r. |cRXP_BUY_If you can afford to, buy a|r |T135490:0|t[Reinforced Bow] |cRXP_BUY_and a|r |T134410:0|t[Medium Quiver] |cRXP_BUY_as well|r 
+    >>|cRXP_BUY_Buy a|r |T135489:0|t[Heavy Recurve Bow] |cRXP_BUY_from him|r. |cRXP_BUY_If you can afford to, buy a|r |T135490:0|t[Reinforced Bow] |cRXP_BUY_and a|r |T134410:0|t[Medium Quiver] |cRXP_BUY_as well|r
     .collect 3027,1 -- Heavy Recurve Bow (1)
     .collect 11362,1 -- Medium Quiver (1)
     .collect 3026,1 --Reinforced Bow (1)
@@ -716,7 +717,7 @@ step
     .target Catherine Leland
 step << Shaman -- Shaman accepts now isntead of later due to arriving back from tram, not boat like the rest
     .goto 1453/0,1193.100,-8328.900
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Manifest Clerk Philmor::268511|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Manifest Clerk Philmor::268511|r
     .target Manifest Clerk Philmor::268511
     .accept 97220 >>Accept Philmor's Favor
 step
@@ -822,6 +823,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 #version 1
 << Alliance
 #group RestedXP Forever Guide (A)
@@ -2519,7 +2521,7 @@ step << NightElf
     .target Thorgrum Borrelson
 step << NightElf
     #optional
-    #completewith KingsLands 
+    #completewith KingsLands
     >>Kill |cRXP_ENEMY_Elder Black Bears|r. Loot them for their |cRXP_LOOT_Bear Meat|r
     >>Kill |cRXP_ENEMY_Mountain Boars|r. Loot them for their |cRXP_LOOT_Boar Intestines|r
     >>Kill |cRXP_ENEMY_Forest Lurkers|r. Loot them for their |cRXP_LOOT_Spider Ichor|r
@@ -2959,7 +2961,7 @@ step << NightElf Hunter
     .target Regnus Thundergranite
 step << NightElf Priest
     .goto 1455/0,-897.200,-4607.200
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priest Rohan|r  
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priest Rohan|r
     .trainer >> Train your class spells
     .target High Priest Rohan
 step << NightElf Priest/NightElf Druid
@@ -3599,6 +3601,7 @@ step << Druid
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 #version 1
 << Alliance
 #group RestedXP Forever Guide (A)
@@ -4855,6 +4858,7 @@ step << Shaman
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 #version 1
 << Alliance !Hunter
 #group RestedXP Forever Guide (A)
@@ -4865,7 +4869,7 @@ RXPGuides.RegisterGuide([[
 
 step << !Shaman
     .goto 1453/0,1193.100,-8328.900
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Manifest Clerk Philmor::268511|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Manifest Clerk Philmor::268511|r
     .target Manifest Clerk Philmor::268511
     .accept 97220 >>Accept Philmor's Favor
 step << Shaman
@@ -6068,6 +6072,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 #version 1
 << Alliance Hunter
 #group RestedXP Forever Guide (A)
@@ -6687,6 +6692,7 @@ step << Dwarf Hunter/Human Hunter/Skyborne Hunter
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 #version 1
 << Alliance !Hunter
 #group RestedXP Forever Guide (A)

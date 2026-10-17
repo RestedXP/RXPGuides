@@ -4,6 +4,7 @@ if faction == "Alliance" then return end
 local L = GetLocale() if L and RXP.enabledLocale[L] then return end
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Horde
 #version 11
 #group RestedXP Forever Guide (H)
@@ -705,6 +706,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Horde
 #name 6-12 Tirisfal Glades
 #displayname 6-13 Tirisfal Glades << Paladin
@@ -3276,6 +3278,7 @@ RXPGuides.RegisterGuide([[
 #version 11
 #defaultfor !Hunter !Shaman !Tauren
 #forever
+#disabledungeons
 #name 12-14 Silverpine Forest
 #displayname 13-15 Silverpine Forest << Paladin
 #next 12-17 The Barrens
