@@ -1415,6 +1415,41 @@ function addon.settings:CreateAceOptionsPanel()
                             return not next(addon.settings.dungeons:GetDungeons())
                         end
                     },
+                    enabledDungeons = {
+                        order = 3.91,
+                        type = 'description',
+                        -- hidden = function()
+                        --     return addon.game ~= "FOREVER"
+                        -- end,
+                        name = function()
+                            local group = addon.currentGuide and addon.currentGuide.group
+                            local out = ""
+                            local active = {}
+                            if group and addon.dungeonOverride[group] then
+                                for dungeon,enabled in pairs(addon.dungeonOverride[group]) do
+                                    if enabled then
+                                        if out == "" then
+                                            out = fmt("|cfffcdc00%s - %s|r",L"Enabled Dungeons",group)
+                                        end
+                                        active[dungeon] = true
+                                        local name = addon.GetDungeonName(dungeon)
+                                        out = fmt("%s\n%s",out,name)
+                                    end
+                                end
+                                for dungeon,enabled in pairs(addon.settings.profile.dungeons) do
+                                    if enabled and not active[dungeon] then
+                                        if out == "" then
+                                            out = fmt("|cfffcdc00%s - %s|r",L"Enabled Dungeons",group)
+                                        end
+                                        local name = addon.GetDungeonName(dungeon)
+                                        out = fmt("%s\n%s",out,name)
+                                    end
+                                end
+                            end
+                            return out
+                        end,
+                        width = "full"
+                    },
                     dungeons = {
                         name = _G.LFG_LIST_SELECT .. ' ' ..  _G.DUNGEONS,
                         desc = function()
