@@ -3825,14 +3825,13 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Allister|r
     .turnin 482 >>Turn in Dalaran's Intentions
     .target Shadow Priest Allister
-step << skip
+step
     .goto 1421/0,1579.600,461.700
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tabitha Heartweaver::250686|r
     .accept 92401 >>Accept A Frightened Request
     .target Tabitha Heartweaver::250686
     .xp <15,1
     .dungeon ROL
-    --TODO: Activate step once .dungeon ROL command works
 step
     .goto 1421/0,1533.96,474.43
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Karos|r

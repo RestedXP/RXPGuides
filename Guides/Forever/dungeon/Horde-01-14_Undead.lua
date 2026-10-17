@@ -52,5 +52,6 @@ RXPGuides.RegisterGuide([[
 
 step
 .enabledungeon RFC
+.enabledungeon ROL
 #include RestedXP Forever Guide (H)\12-14 Silverpine Forest
 ]])
