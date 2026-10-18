@@ -586,6 +586,7 @@ L["Removes sections that require attention from all clients\nGuides that support
 L["Select Recommended Dungeons"] = ""
 L["Factor only the high impact dungeons into the route"] = ""
 L["Select all Dungeons"] = ""
+L["Enabled Dungeons"] = ""
 L["Routes in quests for the selected dungeon\nGuides that support this feature:\n"] = ""
 L["Professions"] = ""
 L["Level professions along with the guide\nGuides that support this feature:\n"] = ""
