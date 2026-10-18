@@ -589,6 +589,7 @@ L["Removes sections that require attention from all clients\nGuides that support
 L["Select Recommended Dungeons"] = "选择推荐的5人本"
 L["Factor only the high impact dungeons into the route"] = "只将高影响的 5 人副本纳入路线计算"
 L["Select all Dungeons"] = "选择所有 5 人副本"
+L["Enabled Dungeons"] = "开启地下城"
 L["Routes in quests for the selected dungeon\nGuides that support this feature:\n"] = "规划所选地下城的任务路线\n支持此功能的指南：\n"
 L["Professions"] = "专业"
 L["Level professions along with the guide\nGuides that support this feature:\n"] = "跟随指南同步升级专业技能\n支持此功能的指南：\n"
