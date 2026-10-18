@@ -6,14 +6,14 @@ RXPGuides.RegisterGuide([[
 #forever
 #disabledungeons
 #version 1
-<< Alliance
+<< Alliance !NightElf
 #name 13-15 Westfall
 #displayname 14-15 Westfall << Dwarf/Gnome
 #group RestedXP Forever Guide (A)
 #subgroup Speedrun Guide 1-20
 --#groupid RXP-SRGCE-A1
 #next 14-16 Darkshore
-#defaultfor !NightElf !Hunter/!Dwarf !Hunter/!Human !Hunter/!Skyborne !Hunter
+#defaultfor !NightElf !Hunter/!Dwarf !Hunter/!Human !Hunter/!Skyborne !Hunter/
 
 --Going to Darkshore if already 15
 
