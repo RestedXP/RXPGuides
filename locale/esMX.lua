@@ -590,6 +590,7 @@ L["Removes sections that require attention from all clients\nGuides that support
 L["Select Recommended Dungeons"] = "Seleccionar Mazmorras Recomendadas"
 L["Factor only the high impact dungeons into the route"] = "Incluye en la ruta solo las mazmorras de alto impacto"
 L["Select all Dungeons"] = "Seleccionar Todas las Mazmorras"
+L["Enabled Dungeons"] = "Mazmorras habilitadas"
 L["Routes in quests for the selected dungeon\nGuides that support this feature:\n"] = "Incluye en la ruta las misiones de la mazmorra seleccionada\nGuías que admiten esta función:\n"
 L["Professions"] = "Profesiones"
 L["Level professions along with the guide\nGuides that support this feature:\n"] = "Subir profesiones junto con la guía\nGuías que admiten esta función:\n"
