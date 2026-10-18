@@ -4,13 +4,14 @@ if faction == "Horde" then return end
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Alliance Mage
-#name 12-18 黑海岸 法师 AoE攻略
+#name 12-18级 黑海岸 法师 A怪指南
 #version 1
 #group RestedXP 无限指南 (联盟)
-#subgroup 法师快速升级指南
+#subgroup 法师速通指南
 #defaultfor Alliance Mage
-#next 18-21 赤脊山 法师 AoE攻略
+#next 18-21级 赤脊山 法师 A怪指南
 
 step
     #completewith next
@@ -799,13 +800,14 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Alliance Mage
-#name 18-21 赤脊山 法师 AoE攻略
+#name 18-21级 赤脊山 法师 A怪指南
 #version 1
 #group RestedXP 无限指南 (联盟)
-#subgroup 法师快速升级指南
+#subgroup 法师速通指南
 #defaultfor Alliance Mage
-#next 21-22 暮色森林 法师 AoE攻略
+#next 21-22级 暮色森林 法师 A怪指南
 
 step
     #sticky
@@ -948,7 +950,7 @@ step
     #completewith hsLakeshire
     #label WFFP
     .goto 1436/0,1037.42,-10628.50
-    .fp Westfall >> 开启西部荒野的飞行路径 << Gnome
+    .fp Westfall >> 解锁西部荒野飞行路线 << Gnome
     .fly Redridge >> 飞往 Redridge
 step
     #requires WFFP

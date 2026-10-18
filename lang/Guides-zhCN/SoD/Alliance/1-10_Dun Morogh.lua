@@ -7,7 +7,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #season 2
 << Alliance
-#group RestedXP 联盟 1-20 级
+#group RestedXP 联盟 1-20级
 #groupid RXP-SRGCE-A1
 #name 1-7级 寒脊山谷
 #next 6-11级 丹莫罗 探索赛季
@@ -1112,11 +1112,11 @@ RXPGuides.RegisterGuide([[
 #classic
 #version 1
 << Alliance --!Hunter
-#group RestedXP 联盟 1-20 级
+#group RestedXP 联盟 1-20级
 #groupid RXP-SRGCE-A1
 #name 6-11级 丹莫罗 探索赛季
 #displayname 7-12级 丹莫罗
-#next 12-13 丹莫罗 探索赛季
+#next 12-13级 丹莫罗 探索赛季
 #defaultfor Dwarf/Gnome
 
 step

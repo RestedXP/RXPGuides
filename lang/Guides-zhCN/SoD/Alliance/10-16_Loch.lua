@@ -5,11 +5,11 @@ RXPGuides.RegisterGuide([[
 #version 1
 #season 2
 << Alliance
-#group RestedXP 联盟 1-20 级
+#group RestedXP 联盟 1-20级
 #groupid RXP-SRGCE-A1
-#name 12-13 丹莫罗 探索赛季
-#displayname 12-13 丹莫罗
-#next 13-16 洛克莫丹 探索赛季
+#name 12-13级 丹莫罗 探索赛季
+#displayname 12-13级 丹莫罗
+#next 13-16级 洛克莫丹 探索赛季
 #defaultfor !NightElf
 
 step << Warrior
@@ -815,7 +815,7 @@ step << Paladin Dwarf
     >>击败|cRXP_ENEMY_布鲁阿特|r
     >>|cRXP_WARN_小心他施放|r |T132939:0|t|T132939:0|t[反手一击] |cRXP_WARN_（击晕你2秒）|r
     >>|cRXP_WARN_记得预读|r |T135924:0|t|T135924:0|t[十字军圣印] |cRXP_WARN_对他|r
-    >>|cRXP_WARN_千万不要不小心对他施放|r|T135906:0|t[力量祝福] |cRXP_WARN_|r
+    >>|cRXP_WARN_不要意外对他施放|r |T135906:0|t|T135906:0|t[力量祝福] |cRXP_WARN_ |r
     >>|cRXP_WARN_将他风筝到楼上的阳台，然后从旅店外跳下，必要时施放|r |T135920:0|t|T135920:0|t[圣光术] |cRXP_WARN_如果必要的话|r
     >>|cRXP_WARN_击败|cRXP_ENEMY_布鲁阿尔特|r后：|r
     >>再次与|cRXP_FRIENDLY_布鲁克·麦须|r对话，领取|T134419:0|t|T134419:0|t[责难符文]
@@ -948,7 +948,7 @@ step << Warlock !Human
     .goto StormwindClassic,27.2,78.1,15 >> 前往屠宰场，进入地下室
 step << Warlock !Human
     .goto StormwindClassic,26.117,77.225
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
     .trainer >> 训练你的职业技能
     .target 厄苏拉·德林
 step << Warlock !Human
@@ -1035,10 +1035,10 @@ RXPGuides.RegisterGuide([[
 #version 1
 #season 2
 << Alliance
-#group RestedXP 联盟 1-20 级
+#group RestedXP 联盟 1-20级
 #groupid RXP-SRGCE-A1
-#name 13-16 洛克莫丹 探索赛季
-#displayname 13-16 洛克莫丹
+#name 13-16级 洛克莫丹 探索赛季
+#displayname 13-16级 洛克莫丹
 #next 16-17级 西部荒野 探索赛季
 #defaultfor !NightElf
 

@@ -6,13 +6,13 @@ RXPGuides.RegisterGuide([[
 #classic
 << Alliance
 #season 2
-#name 1-7 幽影谷 探索赛季
+#name 1-7级 幽影谷 探索赛季
 #displayname 1-7级 幽影谷
 #version 1
-#group RestedXP 联盟 1-20 级
+#group RestedXP 联盟 1-20级
 #groupid RXP-SRGCE-A1
 #defaultfor NightElf
-#next 7-13 泰达希尔 探索赛季
+#next 7-13级 泰达希尔 探索赛季
 step << !NightElf
     #sticky
     #completewith next
@@ -509,10 +509,10 @@ RXPGuides.RegisterGuide([[
 #classic
 << Alliance
 #season 2
-#name 7-13 泰达希尔 探索赛季
+#name 7-13级 泰达希尔 探索赛季
 #displayname 7-13级 泰达希尔
 #version 1
-#group RestedXP 联盟 1-20 级
+#group RestedXP 联盟 1-20级
 #groupid RXP-SRGCE-A1
 #defaultfor NightElf
 #next 13-20级 黑海岸 探索赛季

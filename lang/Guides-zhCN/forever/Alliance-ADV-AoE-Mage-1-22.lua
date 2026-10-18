@@ -4,12 +4,13 @@ if faction == "Horde" then return end
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Human Mage
-#name 1-10级 艾尔文森林 人类法师 A怪进阶攻略
+#name 1-10级 艾尔文森林 人类法师 A怪进阶指南
 #version 2
 #group RestedXP 联盟法师 A怪进阶指南
 #defaultfor Human Mage
-#next 10-11级 丹莫罗 人类法师A怪高级指南
+#next 10-11级 丹莫罗 人类法师 A怪进阶指南
 
 
 step << !Human Mage
@@ -18,7 +19,7 @@ step << !Human Mage
     +在探索赛季中，法师不应在种族初始区域之外开始游戏，因为你将无法在此处获得第一个符文（|T133816:0|t|T133816:0|t[铭刻手套 - 冰枪术]）
 step
     #completewith next
-    +你已选择高级指南。这是专为游戏中升级最快的职业（联盟法师）量身定制的最速指南。因此，本指南中会使用大量小众机制，并包含极高难度的 AoE 拉怪操作。在学习过程中请保持耐心与毅力！祝你好运！
+    +你已选择进阶指南。这是专为游戏中升级最快的职业（联盟法师）量身定制的最速指南。因此，本指南中会使用大量小众机制，并包含极高难度的 AoE 拉怪操作。在学习过程中请保持耐心与毅力！祝你好运！
 step
     #completewith next
     .goto 1429/0,-146.20,-8999.660,50,0
@@ -1090,7 +1091,7 @@ step
     .goto 1455/0,-1152.31,-4821.12,10 >>前去找 |cRXP_FRIENDLY_格莱斯|r
 step
     .goto 1455/0,-1152.39,-4820.914
-    >>与 |cRXP_FRIENDLY_格莱斯|r 对话
+    >>与|cRXP_FRIENDLY_格莱斯|r 对话
     .fp Ironforge >> 获取铁炉堡的飞行路径
     .target 格莱斯·瑟登
 step
@@ -1144,12 +1145,13 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Human Mage
-#name 10-11级 丹莫罗 人类法师A怪高级指南
+#name 10-11级 丹莫罗 人类法师 A怪进阶指南
 #version 2
 #group RestedXP 联盟法师 A怪进阶指南
 #defaultfor Human Mage
-#next 10-12 黑海岸 1 法师 AOE进阶攻略
+#next 10-12级 黑海岸 1 法师 A怪进阶指南
 
 step
     #completewith Rudra
@@ -1307,7 +1309,7 @@ step
     #requires Shortcut2
     #completewith next
     .goto 1426/0,-2198.49,-5277.75,50,0
-    .goto 1426/0,-2286.16,-5200.59,30 >>风筝一只 |cRXP_ENEMY_有伤疤的峭壁野猪|r 穿过隧道
+    .goto 1426/0,-2286.16,-5200.59,30 >>风筝 |cRXP_ENEMY_有伤疤的峭壁野猪|r 穿过隧道
     >>|cRXP_WARN_小心，它们会施放|r|T132337:0|t[冲锋]|cRXP_WARN_（自身瞬发：提高移动速度，持续3秒，并在击中时造成40-100点近战伤害。仅可在远程施放）|r
     .mob 有伤疤的峭壁野猪
 step
@@ -1354,7 +1356,7 @@ step
     .mob 有伤疤的峭壁野猪
 step
     .goto 1432/0,-2518.11,-5625.83
-    >>风筝一只 |cRXP_ENEMY_有伤疤的峭壁野猪|r 穿过隧道
+    >>风筝 |cRXP_ENEMY_有伤疤的峭壁野猪|r 穿过隧道
     >>|cRXP_WARN_小心，它们会施放|r|T132337:0|t[冲锋]|cRXP_WARN_（自身瞬发：提高移动速度，持续3秒，并在击中时造成40-100点近战伤害。仅可在远程施放）|r
     .zone Loch Modan >> 穿过隧道前往洛克莫丹
     .mob 有伤疤的峭壁野猪
@@ -1435,12 +1437,13 @@ step << skip
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Gnome Mage
-#name 1-10 丹莫罗侏儒法师AOE进阶攻略
+#name 1-10级 丹莫罗 侏儒法师 A怪进阶指南
 #version 2
 #group RestedXP 联盟法师 A怪进阶指南
 #defaultfor Gnome Mage
-#next 10-12 黑海岸 1 法师 AOE进阶攻略
+#next 10-12级 黑海岸 1 法师 A怪进阶指南
 
 
 step << !Gnome Mage
@@ -1449,7 +1452,7 @@ step << !Gnome Mage
     +在探索赛季中，法师不应在种族初始区域之外开始游戏，因为你将无法在此处获得第一个符文（|T133816:0|t|T133816:0|t[铭刻手套 - 冰枪术]）
 step
     #completewith next
-    +你已选择高级指南。这是专为游戏中升级最快的职业（联盟法师）量身定制的最速指南。因此，本指南中会使用大量小众机制，并包含极高难度的 AoE 拉怪操作。在学习过程中请保持耐心与毅力！祝你好运！
+    +你已选择进阶指南。这是专为游戏中升级最快的职业（联盟法师）量身定制的最速指南。因此，本指南中会使用大量小众机制，并包含极高难度的 AoE 拉怪操作。在学习过程中请保持耐心与毅力！祝你好运！
 step
     #completewith Adlin
 	.destroy 6948 >> 删除包里的 |T134414:0|t[炉石] 你已不再需要它了
@@ -2748,7 +2751,7 @@ step
     #requires Shortcut2
     #completewith next
     .goto 1426/0,-2198.49,-5277.75,50,0
-    .goto 1426/0,-2286.16,-5200.59,30 >>风筝一只 |cRXP_ENEMY_有伤疤的峭壁野猪|r 穿过隧道
+    .goto 1426/0,-2286.16,-5200.59,30 >>风筝 |cRXP_ENEMY_有伤疤的峭壁野猪|r 穿过隧道
     >>|cRXP_WARN_小心，它们会施放|r|T132337:0|t[冲锋]|cRXP_WARN_（自身瞬发：提高移动速度，持续3秒，并在击中时造成40-100点近战伤害。仅可在远程施放）|r
     .mob 有伤疤的峭壁野猪
 step
@@ -2826,7 +2829,7 @@ step
     #label CragB1
     #completewith Cobbleflint
     .goto 1432/0,-2447.50,-5564.39,20,0
-    .goto 1432/0,-2534.11,-5642.02,30 >>风筝一只 |cRXP_ENEMY_有伤疤的峭壁野猪|r 穿过隧道
+    .goto 1432/0,-2534.11,-5642.02,30 >>风筝 |cRXP_ENEMY_有伤疤的峭壁野猪|r 穿过隧道
     >>|cRXP_WARN_小心，它们会施放|r|T132337:0|t[冲锋]|cRXP_WARN_（自身瞬发：提高移动速度，持续3秒，并在击中时造成40-100点近战伤害。仅可在远程施放）|r
     .mob 有伤疤的峭壁野猪
 step
@@ -2938,7 +2941,7 @@ step
     .goto 1455/0,-1152.31,-4821.12,10 >>前去找 |cRXP_FRIENDLY_格莱斯|r
 step
     .goto 1455/0,-1152.39,-4820.914
-    >>与 |cRXP_FRIENDLY_格莱斯|r 对话
+    >>与|cRXP_FRIENDLY_格莱斯|r 对话
     .turnin 6388 >>交任务 格莱斯·瑟登
 --   .accept 6392 >>Accept Return to Brock
 -- .fly Thelsamar >> Fly to Thelsamar
@@ -2994,12 +2997,13 @@ step << skip
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Alliance Mage
-#name 10-12 黑海岸 1 法师 AOE进阶攻略
+#name 10-12级 黑海岸 1 法师 A怪进阶指南
 #version 2
 #group RestedXP 联盟法师 A怪进阶指南
 #defaultfor Human Mage/Gnome Mage
-#next 12-14 洛克莫丹 法师 AoE进阶攻略
+#next 12-14级 洛克莫丹 法师 A怪进阶指南
 
 step
     #completewith DeathlessSkip
@@ -3067,7 +3071,7 @@ step
 step
     .goto 1437/0,-823.8,-3807.180
     >>起跳到楼下的吊灯上
-    >>透过墙壁与|cRXP_FRIENDLY_萨莫尔|r对话
+    >>透过墙壁，与|cRXP_FRIENDLY_萨莫尔|r对话
     >>|cRXP_WARN_注意：要实现此操作，请在选项菜单的“游戏功能 -> 控制”中绑定“与目标互动”按键|r
     >>|cRXP_WARN_如果船只刚刚抵达，跳过此步骤|r
     .vendor 1457 >> |cRXP_BUY_购买|r |T134831:0|t[治疗药水] |cRXP_BUY_从他那里(如果有)|r
@@ -3538,24 +3542,25 @@ step
     +|cRXP_WARN_开始狂按|r |T132794:0|t|T132794:0|t[造水术 等级2] |cRXP_WARN_在乘坐飞行前尽可能多地造水|r
 step << Gnome
     .goto 1455/0,-1152.39,-4820.914
-    >>与 |cRXP_FRIENDLY_格莱斯|r 对话
+    >>与|cRXP_FRIENDLY_格莱斯|r 对话
     .accept 6392 >>接受任务 向格雷姆罗克回复
     .target 格莱斯·瑟登
 step
     .goto 1455/0,-1152.39,-4820.914
-    >>与 |cRXP_FRIENDLY_格莱斯|r 对话
+    >>与|cRXP_FRIENDLY_格莱斯|r 对话
     .fly Thelsamar >> 飞往塞尔萨玛
     .target 格莱斯·瑟登
 ]])
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Alliance Mage
-#name 10-12 黑海岸 1 法师 AoE进阶 起飞路线
+#name 10-12级 黑海岸 1 法师 A怪进阶指南 起飞路线
 #version 2
 #group RestedXP 联盟法师 A怪进阶指南
 #defaultfor none
-#next 12-14 洛克莫丹 法师 AoE进阶攻略
+#next 12-14级 洛克莫丹 法师 A怪进阶指南
 
 --VV Make this an alternative route that must be manually selected
 step
@@ -3622,7 +3627,7 @@ step
 step
     .goto 1437/0,-823.8,-3807.180
     >>起跳到楼下的吊灯上
-    >>透过墙壁与|cRXP_FRIENDLY_萨莫尔|r对话
+    >>透过墙壁，与|cRXP_FRIENDLY_萨莫尔|r对话
     >>|cRXP_WARN_注意：要实现此操作，请在选项菜单的“游戏功能 -> 控制”中绑定“与目标互动”按键|r
     >>|cRXP_WARN_如果船只刚刚抵达，跳过此步骤|r
     .vendor 1457 >> |cRXP_BUY_购买|r |T134831:0|t[治疗药水] |cRXP_BUY_从他那里(如果有)|r
@@ -4105,24 +4110,25 @@ step
     +|cRXP_WARN_开始狂按|r |T132794:0|t|T132794:0|t[造水术 等级2] |cRXP_WARN_在乘坐飞行前尽可能多地造水|r
 step << Gnome
     .goto 1455/0,-1152.39,-4820.914
-    >>与 |cRXP_FRIENDLY_格莱斯|r 对话
+    >>与|cRXP_FRIENDLY_格莱斯|r 对话
     .accept 6392 >>接受任务 向格雷姆罗克回复
     .target 格莱斯·瑟登
 step
     .goto 1455/0,-1152.39,-4820.914
-    >>与 |cRXP_FRIENDLY_格莱斯|r 对话
+    >>与|cRXP_FRIENDLY_格莱斯|r 对话
     .fly Thelsamar >> 飞往塞尔萨玛
     .target 格莱斯·瑟登
 ]])
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Alliance Mage
-#name 12-14 洛克莫丹 法师 AoE进阶攻略
+#name 12-14级 洛克莫丹 法师 A怪进阶指南
 #version 2
 #group RestedXP 联盟法师 A怪进阶指南
 #defaultfor Human Mage/Gnome Mage
-#next 14-16 黑海岸 2 法师 AoE进阶攻略
+#next 14-16级 黑海岸 2 法师 A怪进阶指南
 step
     #completewith next
     +|cRXP_WARN_在洛克莫丹任务时，请保留所有拾取到的|T133970:0|t|T133970:0|t[|cRXP_LOOT_野猪肉块]|r，以备后续使用|r
@@ -4666,7 +4672,7 @@ step << Gnome
     .use 17117
 step
     >>与|cRXP_FRIENDLY_蒙提|r 对话
-    >>|cRXP_WARN_等待剧情演出完成|r << Gnome
+    >>|cRXP_WARN_等剧情结束|r << Gnome
     .turnin 6661 >> 交任务 捕捉矿道老鼠 << Gnome
     .timer 13,捕捉矿道老鼠剧情表演 << Gnome
     .accept 6662 >> 接受任务 我的兄弟，尼普希
@@ -4769,7 +4775,7 @@ step
 step
     .goto 1453/0,822.16,-8865.60
     >>进入建筑
-    >>与|cRXP_FRIENDLY_艾代尔|r 对话
+    >>与 |cRXP_FRIENDLY_艾代尔|r 对话
     .vendor 1316 >> |cRXP_BUY_从他那里购买非智力|r |T134943:0|t|T134943:0|t[卷轴] |cRXP_BUY_（如果有货）|r
     .money <0.0090
     .target 艾代尔·吉尔罗
@@ -4803,7 +4809,7 @@ step
     .goto 1453/0,637.59,-8889.81,10 >>进入 暴风城银行
 step
     .goto 1453/0,614.33,-8932.92
-    >>与|cRXP_FRIENDLY_牛顿|r 对话
+    >>与|cRXP_FRIENDLY_牛顿|r 交谈
     .bankdeposit 769,4371,730,7207,1941,1711,1478,1712,3012,1180,1181,3013,6889 >> 将以下物品存入银行：
     >>|T133970:0|t[大块野猪肉]
     >>|T133024:0|t[青铜管]
@@ -4897,12 +4903,13 @@ step
 ]])
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Alliance Mage
-#name 14-16 黑海岸 2 法师 AoE进阶攻略
+#name 14-16级 黑海岸 2 法师 A怪进阶指南
 #version 2
 #group RestedXP 联盟法师 A怪进阶指南
 #defaultfor Human Mage/Gnome Mage
-#next 16-18级 西部荒野 法师 AoE进阶攻略
+#next 16-18级 西部荒野 法师 A怪进阶指南
 
 
 step
@@ -5327,7 +5334,7 @@ step
     .collect 12342,1,4673,1 --Blackwood Grain Sample (1)
 step
     #completewith next
-    >>击杀 |cRXP_ENEMY_月夜猛虎|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
+    >>杀死 |cRXP_ENEMY_月夜猛虎|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
     .complete 1002,1 --Moonstalker Fang (6)
     .mob Moonstalker
 step
@@ -5353,7 +5360,7 @@ step
     .itemcount 4358,1
 step
     #completewith Talisman
-    >>击杀 |cRXP_ENEMY_月夜猛虎|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
+    >>杀死 |cRXP_ENEMY_月夜猛虎|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
     .complete 1002,1 --Moonstalker Fang (6)
     .mob Moonstalker
 step
@@ -5378,7 +5385,7 @@ step
 step
     #label Talisman
     .goto 1439/1,-480.05,6888.84
-    >>|cRXP_WARN_等待剧情演出完成|r
+    >>|cRXP_WARN_等剧情结束|r
     >>击杀|cRXP_ENEMY_萨巴克希斯|r
     >>拾取掉落地上的|cRXP_PICK_萨布拉克斯的恶魔之袋|r，从中获得|cRXP_LOOT_堕落护符|r
     >>|cRXP_WARN_该操作有 5 秒施法时间|r
@@ -5403,7 +5410,7 @@ step
     .goto 1439/1,-499.70,7221.14,60,0
     .goto 1439/1,-674.59,7333.80,60,0
     .goto 1439/1,-637.91,7415.02,60,0
-    >>击杀 |cRXP_ENEMY_月夜猛虎|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
+    >>杀死 |cRXP_ENEMY_月夜猛虎|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
     .complete 1002,1 --Moonstalker Fang (6)
     .mob Moonstalker
 step
@@ -5424,7 +5431,7 @@ step
     .goto 1439/1,-499.70,7221.14,60,0
     .goto 1439/1,-674.59,7333.80,60,0
     .goto 1439/1,-637.91,7415.02
-    >>击杀 |cRXP_ENEMY_月夜猛虎|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
+    >>杀死 |cRXP_ENEMY_月夜猛虎|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
     .complete 1002,1 --Moonstalker Fang (6)
     .mob Moonstalker
 step
@@ -5545,12 +5552,13 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Alliance Mage
-#name 16-18级 西部荒野 法师 AoE进阶攻略
+#name 16-18级 西部荒野 法师 A怪进阶指南
 #version 2
 #group RestedXP 联盟法师 A怪进阶指南
 #defaultfor Human Mage/Gnome Mage
-#next 18-20黑海岸 3 法师 AoE进阶攻略
+#next 18-20级 黑海岸 3 法师 A怪进阶指南
 
 step
     #completewith JenneaT
@@ -5572,16 +5580,16 @@ step << skip
 step
     #sticky
     #label Bank2
-    >>与|cRXP_FRIENDLY_牛顿|r 对话
+    >>与|cRXP_FRIENDLY_牛顿|r 交谈
     .bankdeposit 17056,5354,2592,6889 >> 将以下物品存入银行：
-    >>|T132917:0|t|T132917:0|t[轻羽毛]
+    >>|T132917:0|t[轻羽毛]
     >>|T133469:0|t|T133469:0|t[写给德尔格伦的信]
     >>|T132911:0|t|T132911:0|t[毛料]
     >>|T132832:0|t[小蛋]
     .target 牛顿·伯恩赛德
 step
     .goto 1453/0,614.33,-8932.92
-    >>与|cRXP_FRIENDLY_牛顿|r 对话
+    >>与|cRXP_FRIENDLY_牛顿|r 交谈
     .bankwithdraw 730,7207 >> 从你的银行中取出以下物品： << Gnome
     .bankwithdraw 730,16115 >> 从你的银行中取出以下物品： << Human
     >>|T133884:0|t[鱼人眼睛]
@@ -5628,7 +5636,7 @@ step
     .goto 1453/0,612.45,-8806.18,12,0
     .goto 1453/0,528.43,-8850.28,20,0
     .goto 1453/0,532.20,-8863.72,15,0
-    .goto 1453/0,490.12,-8835.67,10 >>朝|cRXP_FRIENDLY_杜加尔|r走去
+    .goto 1453/0,490.12,-8835.67,10 >>朝|cRXP_FRIENDLY_杜加尔|r 走去
 step << Human
     .goto 1453/0,490.12,-8835.67
     >>与|cRXP_FRIENDLY_杜加尔|r交谈
@@ -6200,7 +6208,7 @@ step
 step
     .goto 1453/0,822.16,-8865.60
     >>进入建筑
-    >>与|cRXP_FRIENDLY_艾代尔|r 对话
+    >>与 |cRXP_FRIENDLY_艾代尔|r 对话
     .vendor 1316 >> |cRXP_BUY_从他那里购买非智力|r |T134943:0|t|T134943:0|t[卷轴] |cRXP_BUY_（如果有货）|r
     .target 艾代尔·吉尔罗
 step
@@ -6233,7 +6241,7 @@ step
     #sticky
     #label Bank4
     .goto 1453/0,614.33,-8932.92
-    >>与|cRXP_FRIENDLY_牛顿|r 对话
+    >>与|cRXP_FRIENDLY_牛顿|r 交谈
     .bankwithdraw 769,5354,6889 >> 从你的银行中取出以下物品：
     >>|T133970:0|t[大块野猪肉]
     >>|T133469:0|t|T133469:0|t[写给德尔格伦的信]
@@ -6241,12 +6249,12 @@ step
 step
     #label Bank3
     .goto 1453/0,614.33,-8932.92
-    >>与|cRXP_FRIENDLY_牛顿|r 对话
+    >>与|cRXP_FRIENDLY_牛顿|r 交谈
     >>|cRXP_WARN_注意：每种布料需要准备12组（|r|T132911:0|t|T132905:0|t[毛料]|cRXP_WARN_、|r |T132892:0|t|T132903:0|t[丝绸]|cRXP_WARN_、|r |T132892:0|t|T132892:0|t[魔纹布]|cRXP_WARN_、|r 和 |T132903:0|t|T132903:0|t[符文布]|cRXP_WARN_），用于后续的布料捐献任务。这些布料在升级过程中会自然获得|r
     .bankdeposit 2998,4371,1711,1478,1712,3012,1180,1181,3013,17056,2592,2998,1941 >> 将以下物品存入银行：
     >>|T133024:0|t[青铜管]
     >>|T134943:0|t|T134943:0|t[卷轴]
-    >>|T132917:0|t|T132917:0|t[轻羽毛]
+    >>|T132917:0|t[轻羽毛]
     >>|T132911:0|t|T132911:0|t[毛料]
     >>|T134377:0|t|T134377:0|t[简易罗盘]
     >>|T132620:0|t[一桶葡萄酒]
@@ -6275,12 +6283,13 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Alliance Mage
-#name 18-20黑海岸 3 法师 AoE进阶攻略
+#name 18-20级 黑海岸 3 法师 A怪进阶指南
 #version 2
 #group RestedXP 联盟法师 A怪进阶指南
 #defaultfor Human Mage/Gnome Mage
-#next 20-22 赤脊山 1法师 AOE进阶攻略
+#next 20-22级 赤脊山 1 法师 A怪进阶指南
 
 step
     .goto 1439/1,529.30,6415.93
@@ -7053,12 +7062,13 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Alliance Mage
-#name 20-22 赤脊山 1法师 AOE进阶攻略
+#name 20-22级 赤脊山 1 法师 A怪进阶指南
 #version 2
 #group RestedXP 联盟法师 A怪进阶指南
 #defaultfor Human Mage/Gnome Mage
-#next 22-26 湿地 1法师AOE进阶攻略
+#next 22-26级 湿地 1 法师 A怪进阶指南
 
 step
     #completewith next
@@ -7076,7 +7086,7 @@ step
     #sticky
     #label Bank1
     .goto 1453/0,614.33,-8932.92
-    >>与|cRXP_FRIENDLY_牛顿|r 对话
+    >>与|cRXP_FRIENDLY_牛顿|r 交谈
     .bankwithdraw 4371,1941,1711,1478,1712,3012,1180,1181,3013,2998 >> 从你的银行中取出以下物品：
     >>|T133024:0|t[青铜管]
     >>|T134943:0|t|T134943:0|t[卷轴]
@@ -7086,10 +7096,10 @@ step
 step
     #label Bank
     .goto 1453/0,614.33,-8932.92
-    >>与|cRXP_FRIENDLY_牛顿|r 对话
+    >>与|cRXP_FRIENDLY_牛顿|r 交谈
     >>|cRXP_WARN_注意：每种布料需要准备12组（|r|T132911:0|t|T132905:0|t[毛料]|cRXP_WARN_、|r |T132892:0|t|T132903:0|t[丝绸]|cRXP_WARN_、|r |T132892:0|t|T132892:0|t[魔纹布]|cRXP_WARN_、|r 和 |T132903:0|t|T132903:0|t[符文布]|cRXP_WARN_），用于后续的布料捐献任务。这些布料在升级过程中会自然获得|r
     .bankdeposit 17056,2592,1015,4654 >> 将以下物品存入银行：
-    >>|T132917:0|t|T132917:0|t[轻羽毛]
+    >>|T132917:0|t[轻羽毛]
     >>|T132911:0|t|T132911:0|t[毛料]
     >>|T133970:0|t[狼肋排]
     >>|T134431:0|t|T134431:0|t[神秘的化石]
@@ -7178,7 +7188,7 @@ step
 step
     .goto 1453/0,822.16,-8865.60
     >>进入建筑
-    >>与|cRXP_FRIENDLY_艾代尔|r 对话
+    >>与 |cRXP_FRIENDLY_艾代尔|r 对话
     .vendor 1316 >> |cRXP_BUY_从他那里购买非智力|r |T134943:0|t|T134943:0|t[卷轴] |cRXP_BUY_（如果有货）|r
     >>|cRXP_WARN_不要让你的钱低于18银31铜|r
     .money <0.1831
@@ -7187,7 +7197,7 @@ step
     #label Adair
     .goto 1453/0,822.16,-8865.60
     >>进入建筑
-    >>与|cRXP_FRIENDLY_艾代尔|r 对话
+    >>与 |cRXP_FRIENDLY_艾代尔|r 对话
     .vendor 1316 >> |cRXP_BUY_从他那里购买非智力|r |T134943:0|t|T134943:0|t[卷轴] |cRXP_BUY_（如果有货）|r
     >>|cRXP_WARN_不要让你的钱低于 26银31铜|r
     .money <0.2631
@@ -7195,7 +7205,7 @@ step
 step
     #completewith next
     .goto 1453/0,872.30,-8803.220,5,0
-    .goto 1453/0,872.70,-8682.39,20 >>沿着墙边跑上去，而不是绕过去
+    .goto 1453/0,872.70,-8682.39,20 >>沿着墙边往上跑，而不是绕过
 step
     .goto 1453/0,766.64,-8623.23
     >>与 |cRXP_FRIENDLY_克里斯托弗修士|r 对话
@@ -7224,7 +7234,7 @@ step
     .goto 1453/0,405.03,-8486.89,20,0
     .goto 1453/0,442.94,-8427.47,20,0
     .goto 1453/0,435.41,-8381.66,20,0
-    .goto 1453/0,383.66,-8345.63,12 >>前往|cRXP_FRIENDLY_米尔顿|r
+    .goto 1453/0,383.66,-8345.63,12 >>前往 |cRXP_FRIENDLY_米尔顿|r
 step
     .goto 1453/0,383.66,-8345.63
     >>与 |cRXP_FRIENDLY_米尔顿|r 对话
@@ -7242,7 +7252,7 @@ step
     .goto 1453/0,518.35,-8822.040,12 >>前去找 |cRXP_FRIENDLY_菲利希亚|r
 step
     .goto 1453/0,518.35,-8822.040
-    >>与|cRXP_FRIENDLY_菲利希亚|r 对话
+    >>与 |cRXP_FRIENDLY_菲利希亚|r 对话
     >>|cRXP_BUY_从她那里购买|r |T133849:0|t|T133849:0|t[暴风城特产调料] |cRXP_BUY_|r
     .collect 2665,1,90,1 --Stormwind Seasoning Herbs
     .target 菲利希亚·加姆
@@ -7291,7 +7301,7 @@ step
 step
     #requires FarleyHome
     .goto 1429/0,-186.46,-8874.91
-    >>与 |cRXP_FRIENDLY_帕克斯顿修士|r 对话
+    >>与 |cRXP_FRIENDLY_帕克斯顿|r 对话
     .turnin 344 >> 交任务 帕克斯顿修士
     .accept 345 >> 接受任务 墨水短缺
     .target Brother Paxton
@@ -7380,14 +7390,14 @@ step
     .isQuestTurnedIn 174
 step
     .goto 1431/0,-1366.09,-10779.03
-    >>与|cRXP_FRIENDLY_玛丽|r 对话
+    >>与|cRXP_FRIENDLY_玛丽|r交谈
     .turnin 175 >> 交任务眺望群星
     .accept 177 >> 接受任务眺望群星
     .target 盲眼玛丽
     .isQuestTurnedIn 174
 step
     .goto 1431/0,-1258.63,-10513.89
-    >>与|cRXP_FRIENDLY_菲利希亚|r 对话
+    >>与 |cRXP_FRIENDLY_菲利希亚|r 对话
     .fp Duskwood >> 获取暮色森林的飞行路径
     .target Felicia Mane
 step
@@ -7927,13 +7937,13 @@ step
     .goto 1429/0,-186.46,-8874.91,10 >>前去找 |cRXP_FRIENDLY_帕克斯顿|r
 step
     .goto 1429/0,-186.46,-8874.91
-    >>与 |cRXP_FRIENDLY_帕克斯顿修士|r 对话
+    >>与 |cRXP_FRIENDLY_帕克斯顿|r 对话
     .turnin 347 >> 交任务 瑞斯班矿石
     .accept 346 >> 接受任务 克里斯托弗的书
     .target Brother Paxton
 step
     #completewith CharysEnd
-    .cast 3561 >> 施放 |T135763:0|t[传送：暴风城]
+    .cast 3561 >> 施放|T135763:0|t[传送：暴风城]
     .zoneskip Stormwind City
 step
     #completewith CharysEnd
@@ -8007,13 +8017,13 @@ step
     #label AdairX
     .goto 1453/0,822.16,-8865.60
     >>进入建筑
-    >>与|cRXP_FRIENDLY_艾代尔|r 对话
+    >>与 |cRXP_FRIENDLY_艾代尔|r 对话
     .vendor 1316 >> |cRXP_BUY_从他那里购买非智力|r |T134943:0|t|T134943:0|t[卷轴] |cRXP_BUY_（如果有货）|r
     .target 艾代尔·吉尔罗
 step
     #completewith next
     .goto 1453/0,872.30,-8803.220,5,0
-    .goto 1453/0,872.70,-8682.39,20 >>沿着墙边跑上去，而不是绕过去
+    .goto 1453/0,872.70,-8682.39,20 >>沿着墙边往上跑，而不是绕过
 step
     .goto 1453/0,766.64,-8623.23
     >>与 |cRXP_FRIENDLY_克里斯托弗修士|r 对话
@@ -8049,13 +8059,13 @@ step
     >>与 |cRXP_FRIENDLY_拜雷|r 对话
     >>|cRXP_WARN_注意：每种布料需要准备12组（|r|T132911:0|t|T132905:0|t[毛料]|cRXP_WARN_、|r |T132892:0|t|T132903:0|t[丝绸]|cRXP_WARN_、|r |T132892:0|t|T132892:0|t[魔纹布]|cRXP_WARN_、|r 和 |T132903:0|t|T132903:0|t[符文布]|cRXP_WARN_），用于后续的布料捐献任务。这些布料在升级过程中会自然获得|r
     .bankdeposit 17056,2592,1015,1083,2665,1922,1284 >> 将以下物品存入银行：
-    >>|T132917:0|t|T132917:0|t[轻羽毛]
+    >>|T132917:0|t[轻羽毛]
     >>|T132911:0|t|T132911:0|t[毛料]
     >>|T133970:0|t[狼肋排]
     >>|T133277:0|t|T133277:0|t[阿祖拉的铭文饰品]
     >>|T133849:0|t|T133849:0|t[暴风城特产调料]
     >>|T133629:0|t|T133629:0|t[斯温的货物]
-    >>|T132761:0|t|T132761:0|t[一箱马掌]
+    >>|T132761:0|t[一箱马掌]
     .target 拜雷·石衣
 step
     #label BankDeposit
@@ -8084,7 +8094,7 @@ step
     #completewith next
     #label FlyMene
     .goto 1455/0,-1152.39,-4820.914
-    >>与 |cRXP_FRIENDLY_格莱斯|r 对话
+    >>与|cRXP_FRIENDLY_格莱斯|r 对话
     .fly Menethil >> 飞往米奈希尔港，湿地
     .target 格莱斯·瑟登
 step

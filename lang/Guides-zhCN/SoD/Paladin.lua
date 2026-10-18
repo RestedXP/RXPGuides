@@ -974,7 +974,7 @@ step
 step
     #completewith theairissalt
     .goto StormwindClassic,66.28,62.13
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
     .fly Redridge >> 飞往赤脊山
     .zoneskip Redridge Mountains
     .target 杜加尔·朗德瑞克
@@ -1077,7 +1077,7 @@ step
     .goto Ashenvale,84.18,76.79,50,0
     >>击杀|cRXP_ENEMY_灼热的地狱火|r，|cRXP_ENEMY_恶魔卫士|r，|cRXP_ENEMY_玛诺洛克鞭笞者|r 和 |cRXP_ENEMY_军团犬|r。拾取它们的 |cRXP_LOOT_玛诺洛斯微粒|r
     >>|cRXP_WARN_|cRXP_LOOT_玛诺洛斯微粒|r是独立掉落的（每个怪物都有几率分别为队伍中的每个人掉落微粒），因此你完全可以轻松地与他人组队完成这个任务|r
-    >>|cRXP_WARN_请务必小心，因为 |cRXP_ENEMY_灼热的地狱火|r 拥有 |r |T135802:0|t[献祭光环] |cRXP_WARN_（被动近战范围伤害：每3秒造成27-28点火焰伤害），|cRXP_ENEMY_恶魔卫士|r 会施放 |r |T132154:0|t[击倒] |cRXP_WARN_（瞬发近战：造成约140点伤害并击晕2秒），而|cRXP_ENEMY_玛诺洛克鞭笞者|r 会施放 |r |T135817:0|t[火焰之鞭] |cRXP_WARN_（瞬发远程：造成约45点火焰伤害，随后在21秒内每3秒造成12-13点火焰伤害）和 |r |T136197:0|t[暗影箭] |cRXP_WARN_（远程读条：造成约125点暗影伤害）|r
+    >>|cRXP_WARN_请务必小心，因为 |cRXP_ENEMY_灼热的地狱火|r 拥有 |r |T135802:0|t[献祭光环] |cRXP_WARN_（被动近战范围伤害：每3秒造成27-28点火焰伤害），|cRXP_ENEMY_恶魔守卫|r 会施放 |r |T132154:0|t[击倒] |cRXP_WARN_（瞬发近战：造成约140点伤害并击晕2秒），而|cRXP_ENEMY_玛诺洛克鞭笞者|r 会施放 |r |T135817:0|t[烈焰鞭笞] |cRXP_WARN_（瞬发远程：造成约45点火焰伤害，随后在21秒内每3秒造成12-13点火焰伤害）和 |r |T136197:0|t[暗影箭] |cRXP_WARN_（远程读条：造成约125点暗影伤害）|r
     .complete 78092,1 --Mote of Mannoroth (12)
     .mob Searing Infernal
     .mob Felguard

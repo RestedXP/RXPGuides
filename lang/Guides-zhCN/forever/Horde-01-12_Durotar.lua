@@ -4,15 +4,15 @@ if faction == "Alliance" then return end
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Horde
-#name 1-6 杜隆塔尔
+#name 1-6级 杜隆塔尔
 #version 11
 #group RestedXP 无限指南 (部落)
-#subgroup 快速升级指南1-22级
+#subgroup 速通指南 1-22级
 --#groupid RXP-SRGCE-H1
 #defaultfor Troll/Orc
-#next 6-10 杜隆塔尔
-
+#next 6-10级 杜隆塔尔
 
 step << !Orc !Troll
     #completewith next
@@ -34,7 +34,7 @@ step << Warrior/Shaman/Warlock/Mage/Priest
     .money >0.01
 step << Warlock
     .goto 1411/1,-4214.45,-623.92.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_鲁赞|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_鲁赞|r 对话
     .accept 1485 >>接受任务 邪灵劣魔
     .target Ruzan
 step << Warrior/Shaman
@@ -154,7 +154,7 @@ step << Warlock
     .goto 1411/1,-4319.67,-169.190,40,0
     .goto 1411/1,-4303.28,-186.46,40,0
     .goto 1411/1,-4281.07,-148.75,40,0
-    >>击杀 |cRXP_ENEMY_邪灵劣魔|r，拾取 |cRXP_LOOT_邪灵劣魔的徽记|r
+    >>击杀 |cRXP_ENEMY_邪灵劣魔|r。拾取他们的 |cRXP_LOOT_邪灵劣魔的头颅|r
     .complete 1485,1 --Vile Familiar Head (6)
     .mob 邪灵劣魔
 step
@@ -257,7 +257,7 @@ step << Rogue
 step << Warlock
     #label Ruzan2
     .goto 1411/1,-4214.400,-624.000
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_鲁赞|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_鲁赞|r 对话
     .turnin 1485 >>交任务 邪灵劣魔
     .accept 1499 >>接受任务 邪灵劣魔
     .target Ruzan
@@ -286,10 +286,12 @@ step
     .accept 3084 >>接受任务 符文石板 << Troll Shaman
     .accept 3085 >>接受任务 神圣石板 << Troll Priest
     .accept 3086 >>接受任务 雕文石板 << Troll Mage
+    .accept 98575 >>Accept Tainted Tablet (NOT TRANSLATED IN :zhCN YET) << Troll Warlock
     .accept 3087 >>接受任务 风蚀羊皮纸 << Orc Hunter
     .accept 3088 >>接受任务 密文羊皮纸 << Orc Rogue
     .accept 3089 >>接受任务 符文羊皮纸 << Orc Shaman
     .accept 3090 >>接受任务 被污染的羊皮纸 << Orc Warlock
+    .accept 98576 >>接受任务 雕文羊皮纸 << Orc Mage
     .turnin 804,1 >>交任务 萨科斯 << Shaman
     .turnin 804 >>交任务 萨科斯 << !Shaman
     .target 高内克
@@ -313,11 +315,16 @@ step << Rogue
     .turnin 3083 >>交任务 密文石板 << Troll Rogue
     .turnin 3088 >>交任务 密文羊皮纸 << Orc Rogue
     .target 鲁瓦格
-step << skip
+step
+    #optional
     .goto 1411/1,-4102.400,-588.900
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与在洞穴的后面的|cRXP_FRIENDLY_克赞·荆条|r 对话
     .turnin 97279 >>交任务 遗失的武器
     .target Kzan Thornslash
+    .isQuestComplete 97279
+step
+    #optional
+    .abandon 97279 >>Abandon Wayward Weapons (NOT TRANSLATED IN :zhCN YET)
 step << Shaman
     .goto 1411/1,-4102.600,-588.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_克赞|r 对话
@@ -352,7 +359,8 @@ step << Warlock
     #label Nartok2
     .goto 1411/1,-4111.87,-607.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_纳托克|r 对话
-    .turnin 3090 >>交任务 被污染的羊皮纸
+    .turnin 3090 >>交任务 被污染的羊皮纸 << Orc Warlock
+    .turnin 98575 >>Turn in Tainted Tablet (NOT TRANSLATED IN :zhCN YET) << Troll Warlock
     .train 172 >> 学习 |T136118:0|t[腐蚀术]
     .target 纳托克
 step
@@ -383,7 +391,8 @@ step << Mage
     #requires Galgar
     .goto 1411/1,-4210.22,-625.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迈安|r 对话
-    .turnin 3086 >>交任务 雕文石板 << Troll
+    .turnin 3086 >>交任务 雕文石板 << Troll Mage
+    .turnin 98576 >>交任务 雕文羊皮纸 << Orc Mage
     .train 1459 >> 学习 |T135932:0|t[奥术智慧]
     .target 迈安
 step << !Warlock
@@ -985,7 +994,7 @@ step << Warrior
     .goto 1411/1,-4230.31,-639.43
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_弗朗恩|r 对话
     .train 3127 >>学习 |T132269:0|t[招架]
-    .train 6343 >>训练|T136105:0|t|T136105:0|t[雷霆一击]
+    .train 6343 >>学习 |T136105:0|t[雷霆一击]
     .target 弗朗恩
     .money <0.02
 step << Warrior
@@ -1024,7 +1033,7 @@ step << Warlock
     #label Hraug3
     .goto 1411/1,-4107.11,-604.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_赫劳格|r 对话
-    >>|cRXP_BUY_购买|r |T133738:0|t[魔典:血契]|cRXP_BUY_从他那里|r
+    >>|cRXP_BUY_从他那里购买|r |T133738:0|t[魔典：血契]|cRXP_BUY_|r
     .collect 16321,1,817,1 --Grimoire of Blood Pact
     .vendor >>把垃圾物品卖给商人
     .target 赫劳格
@@ -1086,11 +1095,12 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Horde
-#name 6-10 杜隆塔尔
+#name 6-10级 杜隆塔尔
 #version 11
 #group RestedXP 无限指南 (部落)
-#subgroup 快速升级指南1-22级
+#subgroup 速通指南 1-22级
 --#groupid RXP-SRGCE-H1
 #defaultfor Troll/Orc
 #next 10-12级 杜隆塔尔
@@ -1141,13 +1151,13 @@ step
     .goto 1411/1,-4939.89,-793.12,8 >> 进入大帐篷
 step << !Rogue !Warrior
     .goto 1411/1,-4960.000,-791.300
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_帕祖拉|r 对话 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_帕祖拉|r 对话
     >>|cRXP_WARN_这会解锁一个任务。如果你已经有2个专业技能，跳过此步骤|r
     .train 7411 >> 训练 |T136244:0|t[附魔]
     .target Pa'zula
 step << !Rogue !Warrior
     .goto 1411/1,-4960.000,-791.300
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_帕祖拉|r 对话 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_帕祖拉|r 对话
     .accept 96873 >>接受任务 脖子上的麻烦
     .target Pa'zula
     .skill enchanting,<1,1
@@ -2155,7 +2165,7 @@ step << Warlock
     .target 杜格鲁·血怒
 step << Warlock
     .goto 1411/1,-4854.76,345.81
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_基萨|r 对话并购买 |T133738:0|t[火焰箭 等级2]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_基萨|r 对话并购买 |T133738:0|t[火焰箭（等级 2）]
     .collect 16302,1,825,1 --Grimoire of Firebolt (Rank 2) (1)
     .target 基萨
     .money <0.01
@@ -2833,7 +2843,6 @@ step << Hunter/Shaman
     #completewith next
     .goto 1454/1,-4367.46,1405.44,50,0
     .zone Orgrimmar >> 进入奥格瑞玛
-    .zoneskip Orgrimmar
 step << Hunter/Shaman
     .goto 1454/1,-4460.600,1584.300,10,0
     .goto 1454/1,-4460.000,1598.600
@@ -2855,7 +2864,7 @@ step << Hunter/Shaman
     .isOnQuest 96877
 step << Hunter/Shaman
     .goto 1454/1,-4466.800,1954.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_考吉尔德|r 对话 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_考吉尔德|r 对话
     .accept 97242 >>接受任务 耶尔玛克的混合配方
     .target Kor'geld
 step << Hunter/Shaman
@@ -2938,7 +2947,7 @@ step << Hunter/Shaman
     .target Migi
 step << Hunter/Shaman
     .goto 1454/1,-4205.800,2007.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_斯拉|r 对话 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_斯拉|r 对话
     .accept 97326 >>接受任务 以石为座
     .target Thra
 step << Hunter/Shaman
@@ -3054,7 +3063,7 @@ step << Warlock
     .target 杜格鲁·血怒
 step << Warlock
     .goto 1411/1,-4854.76,345.81
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_基萨|r 对话并购买 |T133738:0|t[火焰箭 等级2]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_基萨|r 对话并购买 |T133738:0|t[火焰箭（等级 2）]
     .collect 16302,1,837,1 --Grimoire of Firebolt (Rank 2) (1)
     .target 基萨
     .money <0.01
@@ -3081,11 +3090,12 @@ step << Rogue
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Horde
 #name 10-12级 杜隆塔尔
 #version 11
 #group RestedXP 无限指南 (部落)
-#subgroup 快速升级指南1-22级
+#subgroup 速通指南 1-22级
 --#groupid RXP-SRGCE-H1
 #defaultfor Troll/Orc
 #next 10-12级 提瑞斯法 （兽人/巨魔） << !Hunter !Shaman !Tauren !Skyborne
@@ -3140,10 +3150,9 @@ step << Shaman
     .turnin 1524 >>交任务 火焰的召唤
     .accept 1525 >>接受任务 火焰的召唤
     .target 泰尔夫·祖拉姆
-step << skip --Shaman
+step << Shaman
     #completewith MargozTurnIn
     .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
-    --TODO: Re-add deathskip after ress timer fix
 step << Shaman
     .goto 1411/1,-5061.700,201.700
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_赫格兰·暗眼|r 对话
@@ -3246,12 +3255,12 @@ step
     .mob 尘风雷巫
     .collect 277661,1,97281 --Dull Storm Orb (x1)
     .accept 97281 >>接受任务 酝酿中的风暴
-step << skip
+step
     #softcore
     #completewith SecuringLinesTurnIn
     .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
 step
-    --#hardcore
+    #hardcore
     #completewith next
     .goto 1411/1,-4804.53,830.5,60,0
     .goto 1411/1,-4698.78,842.48,60,0
@@ -3300,7 +3309,7 @@ step
     .complete 97282,1 --|5/5 Charged Thunder Lizard Organ
     .mob 闪电蜥蜴
     .mob Charged Thunder Lizard Organ
-step << skip
+step
     #softcore
     #completewith next
     .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
@@ -3467,7 +3476,7 @@ step
     .isOnQuest 96877
 step
     .goto 1454/1,-4466.800,1954.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_考吉尔德|r 对话 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_考吉尔德|r 对话
     .accept 97242 >>接受任务 耶尔玛克的混合配方
     .target Kor'geld
 step
@@ -3522,7 +3531,7 @@ step
     .target Migi
 step
     .goto 1454/1,-4205.800,2007.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_斯拉|r 对话 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_斯拉|r 对话
     .accept 97326 >>接受任务 以石为座
     .target Thra
 step
@@ -3543,6 +3552,12 @@ step << !Shaman !Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_纳兹格雷尔|r 对话
     .turnin 831 >>交任务 将军的命令
     .target 纳兹格雷尔
+step << !Shaman !Hunter
+    .goto 1454/1,-4125.79,1920.10
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_萨尔|r 对话
+    .accept 5726 >>接受任务 隐藏的敌人
+    .target 萨尔
+    .dungeon RFC
 step << Shaman/Hunter
     .goto 1454/1,-4125.79,1920.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_萨尔|r 对话
@@ -3602,33 +3617,33 @@ step
     .accept 809 >>接受任务 雅克塞罗斯
     .target 尼尔鲁·火刃
     .isQuestTurnedIn 827
-step << skip --!Shaman !Hunter
+step << !Shaman !Hunter
     #softcore
     #completewith ZeptoUC1
     .goto 1454/1,-4424.40,1817.58
     .subzone 2437 >> 进入怒焰裂谷
-step << skip --!Shaman !Hunter
+step << !Shaman !Hunter
     #softcore
     #completewith ZeptoUC1
     .goto 1411/1,-4450.27,1188.64
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
 step << !Shaman !Hunter
-    --#hardcore
+    #hardcore
     #completewith ZeptoUC1
     .zone Durotar >> 离开 奥格瑞玛
     .zoneskip Durotar
-step << skip --Shaman/Hunter
+step << Shaman/Hunter
     #softcore
     #completewith FoundtheCure
     .goto 1454/1,-4424.40,1817.58
     .subzone 2437 >> 进入怒焰裂谷
-step << skip --Shaman/Hunter
+step << Shaman/Hunter
     #softcore
     #completewith FoundtheCure
     .goto 1411/1,-4450.27,1188.64
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
 step << Shaman/Hunter
-    --#hardcore
+    #hardcore
     #completewith FoundtheCure
     .zone Durotar >> 离开 奥格瑞玛
     .zoneskip Durotar
@@ -3679,7 +3694,26 @@ step << Shaman/Hunter
     >>|cRXP_WARN_拾取位于 |r|cRXP_WARN_雅克塞罗斯|r |cRXP_FRIENDLY_旁的 |r|T134095:0|t[有瑕疵的能量石]|cRXP_WARN_。该物品有 30 分钟的计时器，所以要尽快操作|r
     .turnin 926 >>交任务 有瑕疵的能量石
     .isOnQuest 924
-step << Rogue/Mage/Priest/Warlock/Warrior
+step << !Shaman !Hunter
+    #loop
+    .goto 1411/1,-4805.59,1495.67,0
+    .goto 1411/1,-4855.82,1498.84,15,0
+    .goto 1411/1,-4833.08,1494.96,15,0
+    .goto 1411/1,-4805.59,1495.67,15,0
+    .goto 1411/1,-4784.44,1535.85,15,0
+    .goto 1411/1,-4750.60,1531.62,15,0
+    .goto 1411/1,-4734.21,1505.54,15,0
+    .goto 1411/1,-4693.49,1519.64,15,0
+    .goto 1411/1,-4679.75,1501.31,15,0
+    .goto 1411/1,-4684.50,1466.06,15,0
+    .goto 1411/1,-4805.59,1495.67,15,0
+    >>击杀 |cRXP_ENEMY_火刃兽人|r，拾取他们掉落的 |cRXP_LOOT_军官的徽章|r
+    .complete 5726,1 --Lieutenant's Insignia (1)
+    .mob 火刃狂热者
+    .mob 火刃学徒
+    .dungeon RFC
+    .isOnQuest 5726
+step << !Shaman !Hunter
     #label ZeptoUC1
     .goto 1411/1,-4648.55,1321.88,40 >>登上飞艇塔
     .zone Tirisfal Glades >>做飞艇去提瑞斯法林地
@@ -3693,11 +3727,12 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Horde
 #name 10-12级 提瑞斯法 （兽人/巨魔）
 #version 11
 #group RestedXP 无限指南 (部落)
-#subgroup 快速升级指南1-22级
+#subgroup 速通指南 1-22级
 --#groupid RXP-SRGCE-H1
 #defaultfor !Hunter !Shaman !Tauren !Skyborne !Undead
 #next 12-14级 银松森林 << !Hunter !Shaman !Tauren !Skyborne !Undead
@@ -4144,7 +4179,7 @@ step << Warrior
     .abandon 1821 >> 放弃任务 阿加曼德家传武器
 step
     #optional
-    .abandon 375 >>放弃任务 死亡之寒 
+    .abandon 375 >>放弃任务 死亡之寒
 step
     #label LeaveUndercity3
     .goto 1458/0,419.89,1627.54,50,0

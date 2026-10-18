@@ -510,11 +510,11 @@ step
 >>与 |cRXP_FRIENDLY_麦伯克·米希瑞克斯|r 对话
     .accept 1069 >> 接受任务深苔蜘蛛的卵
 step
-    >>拾取箱子中的物品
+    >>拾取箱子
     .goto The Barrens,63.6,49.2
     .complete 888,2 --Telescopic Lens (1)
 step
-    >>拾取箱子中的物品
+    >>拾取箱子
     .goto The Barrens,62.6,49.6
 step
     #sticky

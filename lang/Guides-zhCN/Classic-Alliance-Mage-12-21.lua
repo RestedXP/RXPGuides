@@ -948,7 +948,7 @@ step
     #completewith hsLakeshire
     #label WFFP
     .goto Westfall,56.55,52.65
-    .fp Westfall >> 解锁西部荒野飞行路线 << Gnome
+    .fp Westfall >> 开启西部荒野的飞行路径 << Gnome
     .fly Redridge >> 飞往 Redridge
 step
     #requires WFFP

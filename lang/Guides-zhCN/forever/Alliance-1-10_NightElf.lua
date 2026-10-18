@@ -4,16 +4,17 @@ if faction == "Horde" then return end
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 #season 0,1
 << Alliance
-#name 1-6 幽影谷
+#name 1-6级 幽影谷
 #displayname 1-7级 幽影谷 << sod
 #version 1
 #group RestedXP 无限指南 (联盟)
-#subgroup 快速升级指南1-20级
+#subgroup 速通指南 1-20级
 --#groupid RXP-SRGCE-A1
 #defaultfor NightElf
-#next 6-11 泰达希尔
+#next 6-11级 泰达希尔
 step << !NightElf
     #sticky
     #completewith next
@@ -443,13 +444,14 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 #season 0,1
 << Alliance
-#name 6-11 泰达希尔
+#name 6-11级 泰达希尔
 #displayname 7-13级 泰达希尔 << SoD
 #version 1
 #group RestedXP 无限指南 (联盟)
-#subgroup 快速升级指南1-20级
+#subgroup 速通指南 1-20级
 --#groupid RXP-SRGCE-A1
 #defaultfor NightElf
 #next 14-16级 黑海岸
@@ -1308,7 +1310,7 @@ step << Druid/Priest
     .turnin 487 >> 交任务  达纳苏斯之路
 step
     #completewith next
-    .goto 1438/1,1863.46,10665.16,50 >> 前往先知林地
+    .goto 1438/1,1899.700,10582.900,50 >> 前往先知林地
 step
     .goto 1438/1,1899.700,10582.900
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哨兵埃拉莉亚·影叶::275683|r 对话
@@ -1326,7 +1328,6 @@ step
     .complete 7383,1 --Collect Filled Amethyst Phial (x1)
 
 --with the new quests, druids can go straight to 10, a 5 minute save later down the road
---@TODO add mist here
 step << Druid/Priest
     #completewith next
     >>击杀 |cRXP_ENEMY_血羽鹰身人|r。拾取他们的 |cRXP_LOOT_腰带|r
@@ -1437,10 +1438,7 @@ step << Hunter
 step << !Rogue
     #softcore
     #requires xp10
-    #completewith next
     .deathskip >> 死掉然后在达纳苏斯的灵魂医者处复活
-    >>|cRXP_WARN_请确保你死的时候距离达纳苏斯墓地比多兰纳尔墓地更近，否则你可能会走错方向。如果你不确定具体位置，就一路跑出洞穴然后再送死|r << sod Priest
-    >>|cRXP_WARN_请确保你死的时候距离达纳苏斯墓地比多兰纳尔墓地更近，否则你可能会走错方向。如果你不确定具体位置就跑到河西边|r << sod Hunter/sod Warrior/sod Druid
     .target 灵魂医者
 step << !Rogue
     #hardcore
@@ -1660,18 +1658,18 @@ step << !Druid
     .collect 3371,1 --Empty Vial
     .target Narret Shadowgrove
 step
-    .goto 1438/1,984.94,9898.58
-    .target 塔隆凯·捷根
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|在树顶上与 |cRXP_FRIENDLY_塔隆凯·捷根|r 对话
-    .turnin 932 >> 交任务  扭曲的仇恨
-    .turnin 2459 >> 交任务 噬梦者菲罗斯塔
-step
     #optional
     .goto 1438/1,988.30,9891.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥蒂亚|r 对话
     .turnin 87288 >> 交任务 柔软的夜刃豹毛皮
     .target 奥蒂亚
     .isQuestComplete 87288
+step
+    .goto 1438/1,984.94,9898.58
+    .target 塔隆凯·捷根
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|在树顶上与 |cRXP_FRIENDLY_塔隆凯·捷根|r 对话
+    .turnin 932 >> 交任务  扭曲的仇恨
+    .turnin 2459 >> 交任务 噬梦者菲罗斯塔
 step
     >>击杀 |cRXP_ENEMY_夜刃豹|r。拾取它们的 |cRXP_LOOT_牙齿|r 和 |cRXP_LOOT_毛皮|r
     >>击杀 |cRXP_ENEMY_巨翼枭|r。拾取他们的 |cRXP_LOOT_乱羽|r
@@ -1747,7 +1745,7 @@ step << Hunter/Warrior/Rogue
     .target 哨兵阿玛拉·夜行者
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哨兵阿玛拉·夜行者|r 对话
     .turnin 487 >> 交任务  达纳苏斯之路
-	.maxlevel 9
+	.xp 9.56,1 --Only Turn in early if needed to ding 10
 step << Hunter
 #xprate <1.99
     #optional
@@ -1965,15 +1963,6 @@ step << Priest
 	.trainer >> 训练你的职业技能
     .target 劳尔娜·晨光
 step << Hunter
-	#xprate <1.5--money issues 1.5x
-    .goto 1438/1,947.57,9812.38
-    .money <0.0504
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_沙洛蒙|r 对话
-    >>|cRXP_BUY_购买一个|r |T135145:0|t[学徒短杖]
-    >>|cRXP_WARN_你之后会装备它。如果你已经找到了另一个法杖就跳过这一步|r
-    .collect 2495,1 -- Walking Stick (1)
-    .target 沙洛蒙
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.20step
     .goto 1438/1,997.200,9903.601
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拜恩希::6094|r 对话
     .target Byancie::6094
@@ -2407,6 +2396,14 @@ step << Rogue
     >>|cRXP_BUY_购买1把|r |T135641:0|t[平衡飞刀]
     .collect 2946,1 -- Balanced Throwing Dagger
     .target 图里安
+step << Hunter
+    #optional
+    .goto 1457/1,2511.04,10178.01
+    .target 祖卡斯特
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_祖卡斯特|r 对话
+    .train 2974 >>Train |T132309:0|t[|cRXP_LOOT_Wing Clip|r] (NOT TRANSLATED IN :zhCN YET)
+    .xp <12,1
+    .money <0.0600
 step
     #completewith NessaShadowsong
     .goto 1457/1,2636.53,9956.80

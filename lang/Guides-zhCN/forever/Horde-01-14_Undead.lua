@@ -4,13 +4,14 @@ if faction == "Alliance" then return end
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Horde
 #version 11
 #group RestedXP 无限指南 (部落)
-#subgroup 快速升级指南1-22级
+#subgroup 速通指南 1-22级
 --#groupid RXP-SRGCE-H1
 #defaultfor Undead
-#name 1-6 提瑞斯法林地
+#name 1-6级 提瑞斯法林地
 #next 6-12级 提瑞斯法林地
 
 step << !Undead
@@ -23,7 +24,7 @@ step
     #completewith next
     .goto 1420/0,1675.90,1645.00,8,0
     .goto 1420/0,1665.51,1645.00,8,0
-    .goto 1420/0,1667.77,1679.04,10 >> 从地穴跑出来，朝 |cRXP_FRIENDLY_摩尔多|r 方向前进
+    .goto 1420/0,1667.77,1679.04,10 >> 跑出地穴，朝 |cRXP_FRIENDLY_摩尔多|r 的方向前进
 step
     .goto 1420/0,1667.77,1679.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莫多|r 对话
@@ -157,6 +158,9 @@ step << Warlock
 step << Warlock
     #completewith next
     .cast 688 >>|cRXP_WARN_施放|r |T136218:0|t[召唤小鬼]
+step << Priest
+    #completewith next
+    +|cRXP_WARN_保存你的|r |T132889:0|t[亚麻布]|cRXP_WARN_。后续制作魔杖需要|r
 step
     #label Zombies
     #requires Piercing << Warlock/Mage
@@ -194,7 +198,6 @@ step << Mage/Warlock/Priest
     .collect 159,10,383,1 --Collect Refreshing Spring Water (10)
     .vendor >> 把垃圾物品卖给商人
     .target 乔舒·基恩
-    .isOnQuest 364
     .money <0.0050
     .itemcount 159,<10
  step << Mage/Warlock/Priest
@@ -206,9 +209,6 @@ step << Mage/Warlock/Priest
     .collect 159,5,383,1 --Collect Refreshing Spring Water (5)
     .vendor >> 把垃圾物品卖给商人
     .target 乔舒·基恩
-    .isOnQuest 364
-    .money >0.0050
-    .itemcount 159,<5
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_萨维斯|r 和 |cRXP_FRIENDLY_艾尔雷斯|r 对话 << !Warlock !Mage !Priest
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_萨维斯|r, |cRXP_FRIENDLY_艾尔雷斯|r,和|cRXP_FRIENDLY_马克希米林|r对话 << Warlock
@@ -257,6 +257,11 @@ step << Mage/Warlock/Priest
     .collect 159,10,383,1 --Collect Refreshing Spring Water (10)
     .target 乔舒·基恩
     .isOnQuest 364
+step
+    #completewith next
+    >>击杀 |cRXP_ENEMY_断骨骷髅|r
+    .complete 3901,1 --Kill Rattlecage Skeleton (12)
+    .mob 断骨骷髅
 step
     #loop
     .goto 1420/0,1482.50,2126.70,0
@@ -379,7 +384,7 @@ step << Priest
     .train 2052 >> 学习 |T135929:0|t[次级治疗术 等级 2 ]
     .train 589 >> 训练 |T136207:0|t[暗言术：痛]
     .target 黑暗牧师杜斯滕
-    .money <0.02
+    .money <0.021
 step << Priest
     .goto 1420/0,1627.55,1848.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜斯滕|r 对话
@@ -701,12 +706,13 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Horde
 #name 6-12级 提瑞斯法林地
 #displayname 6-13级 提瑞斯法林地 << Paladin
 #version 11
 #group RestedXP 无限指南 (部落)
-#subgroup 快速升级指南1-22级
+#subgroup 速通指南 1-22级
 --#groupid RXP-SRGCE-H1
 #defaultfor Undead
 #next 12-14级 银松森林; 12-17级 贫瘠之地
@@ -809,7 +815,7 @@ step
     --too many .mobs, will cause clutter
 step << Rogue
     .goto 1420/0,270.12,2253.23
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_温特斯夫人|r |cRXP_BUY_对话并|r|cRXP_BUY_从她那里购买一把|r |T135421:0|t[增重飞斧]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_温特斯夫人|r |cRXP_BUY_对话，并|r|cRXP_BUY_从她那里购买一把|r |T135421:0|t[增重飞斧]
     .collect 3131,200,786,1 --Weighted Throwing Axe (200)
     .target 温特斯夫人
     .itemStat 18,QUALITY,<7
@@ -984,15 +990,10 @@ step << Priest/Warlock
 step
     .goto 1420/0,244.81,2269.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_旅店老板瑞尼|r 对话
-    >>|cRXP_BUY_购买|r |T132815:0|t[冰镇牛奶]|cRXP_BUY_从她那里|r << Mage/Priest/Paladin
-    >>|cRXP_BUY_从她那里购买|r |T134532:0|t|T134532:0|t[红斑蘑菇] |cRXP_BUY_|r << Warrior/Rogue
-    >>|cRXP_BUY_购买|r |T132815:0|t|T134532:0|t[冰镇牛奶] |cRXP_BUY_和|r |T134532:0|t|T134532:0|t[红斑蘑菇] |cRXP_BUY_从她那里|r << Warlock
-    .collect 1179,15,367,1 << Mage/Priest/Paladin --Ice Cold Milk (15)
-    .collect 4605,10,367,1 << Rogue/Warrior --Red-speckled Mushroom (10)
-    .collect 1179,10,367,1 << Warlock --Ice Cold Milk (10)
-    .collect 4605,5,367,1 << Warlock --Red-speckled Mushroom (5)
-    .money <0.025 << Warrior/Rogue
-    .money <0.0375 << Mage/Priest/Warlock/Paladin
+    .vendor >>|cRXP_BUY_Buy as much|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from her as you can|r (NOT TRANSLATED IN :zhCN YET) << Mage/Priest/Paladin
+    .vendor >>|cRXP_BUY_Buy as much|r |T134532:0|t[Red-speckled Mushrooms] |cRXP_BUY_from her as you can|r (NOT TRANSLATED IN :zhCN YET) << Warrior/Rogue
+    .vendor >>|cRXP_BUY_Buy as much|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_and|r |T134532:0|t[Red-speckled Mushrooms] |cRXP_BUY_from her as you can|r (NOT TRANSLATED IN :zhCN YET) << Warlock
+    .money <0.0125
     .target 旅店老板瑞尼
 step
     .goto 1420/0,84.900,2023.500
@@ -1296,6 +1297,13 @@ step << Warlock
     .train 980 >> 训练你的职业技能
     .target 鲁伯特·鲍什
     .xp <8,1
+step << Mage/Priest/Warlock
+    .goto 1420/0,244.81,2269.19
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_旅店老板瑞尼|r 对话
+    .vendor >>|cRXP_BUY_Buy as much|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from her as you can|r (NOT TRANSLATED IN :zhCN YET) << Mage/Priest
+    .vendor >>|cRXP_BUY_Buy as much|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_and|r |T134532:0|t[Red-speckled Mushrooms] |cRXP_BUY_from her as you can|r (NOT TRANSLATED IN :zhCN YET) << Warlock
+    .money <0.0125
+    .target 旅店老板瑞尼
 step
     .goto 1420/0,243.200,2288.100
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_威廉|r 对话
@@ -1654,7 +1662,6 @@ step
     >>|cRXP_BUY_从她那里购买1个|r |T132891:0|t[粗线] |cRXP_BUY_|r
     .complete 375,2 --Coarse Thread (1)
     .target Abigail Shiel
-    .itemcount 2876,5 --Duskbat Pelt (5)
     .isQuestAvailable 375
 step
     .goto 1420/0,295.87,2277.93
@@ -1669,7 +1676,6 @@ step
     .accept 359 >>接受任务 亡灵卫兵的职责
     .target Magistrate Sevren
 step
-    #optional
     .goto 1420/0,236.68,2249.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格莉丝|r 对话
     .turnin 375 >>交任务 死亡之寒
@@ -2112,7 +2118,7 @@ step << Warlock
     .goto 1420/0,726.06,1801.95
     >>拾取地上的 |cRXP_PICK_派瑞恩的箱子|r 中的 |T133733:0|t[埃加林的魔典]
     .complete 1473,1 --Egalin's Grimoire (1)
-step
+step << !Priest
     #completewith UCHome
     .goto 1458/0,714.8,1604.24,35,0
     .goto 1458/0,652.73,1623.44,35,0
@@ -2126,7 +2132,7 @@ step
     .zoneskip Undercity
 step << Rogue
     .goto 1458/0,323.57,1668.50
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与战争军需区的|r|cRXP_FRIENDLY_阿基巴德|r交谈
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|Tinterface/worldmap/chatbubble_64grey.blp:20|t与战争军需区的|r|cRXP_FRIENDLY_阿基巴德|r交谈
     .train 201 >>学习单手剑
     .target 阿基巴德
 step << Warrior/Rogue
@@ -2295,7 +2301,7 @@ step << skip
     .goto 1458/0,221.78,1780.14,30 >>|cRXP_WARN_执行一个返回角色选择跳过技巧，通过将你的角色定位在最低楼梯的最高部分，直到看起来像他们在漂浮，然后登出再登入|r
     .link https://www.youtube.com/watch?v=-Bi95bCN8dM >> |cRXP_WARN_点击此处查看示例|r
     >>|cRXP_WARN_如果你做不到，就正常跑出幽暗城|r
-step
+step << !Priest
     #completewith AtWarS
     .goto 1420/0,235.32,1883.89
     .zone Tirisfal Glades >> 离开幽暗城
@@ -2333,6 +2339,20 @@ step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_库勒曼|r 对话
     .turnin 1820 >>交任务《 前往熔光镇》 库勒曼
     .target 库勒曼·法席恩
+step
+    #label Brill33
+    .goto 1420/0,244.81,2269.19
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_旅店老板瑞尼|r 对话
+    >>|cRXP_BUY_购买|r |T132815:0|t[冰镇牛奶]|cRXP_BUY_从她那里|r << Mage/Priest/Paladin
+    >>|cRXP_BUY_从她那里购买|r |T134532:0|t|T134532:0|t[红斑蘑菇] |cRXP_BUY_|r << Warrior/Rogue
+    >>|cRXP_BUY_购买|r |T132815:0|t|T134532:0|t[冰镇牛奶] |cRXP_BUY_和|r |T134532:0|t|T134532:0|t[红斑蘑菇] |cRXP_BUY_从她那里|r << Warlock
+    .collect 1179,20,96898,1 << Mage/Priest/Paladin --Ice Cold Milk (20)
+    .collect 4605,20,96898,1 << Rogue/Warrior --Red-speckled Mushroom (20)
+    .collect 1179,10,96898,1 << Warlock --Ice Cold Milk (10)
+    .collect 4605,10,96898,1 << Warlock --Red-speckled Mushroom (10)
+    .money <0.025 << Warrior/Rogue
+    .money <0.0375 << Mage/Priest/Warlock/Paladin
+    .target 旅店老板瑞尼
 step
     .goto 1420/0,54.600,1996.600
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哈德里克·哈尔森|r 对话
@@ -2765,11 +2785,6 @@ step << !Paladin
     .subzone 159 >> 返回布瑞尔
     .subzoneskip 159
     .cooldown item,6948,<0
-step << !Paladin
-    .goto 1420/0,347.600,2265.200
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡罗莱·安尼斯|r 对话
-    .turnin 95314 >>交任务 影谷的绿色饮剂
-    .target Carolai Anise
 step << Priest
     .goto 1420/0,251.14,2265.28--c:Tirisfal Glades,61.57,52.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与二楼的 |cRXP_FRIENDLY_贝里尔|r 对话
@@ -2795,6 +2810,46 @@ step << Rogue
     .target 马里恩·考尔
     .xp <12,1
 step << Mage
+    .goto 1420/0,233.52,2256.84--c:Tirisfal Glades,61.96,52.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_凯恩|r 在旅馆内对话
+    .train 145 >> 训练你的职业技能
+    .target 凯恩·火歌
+    .xp <12,1
+step << !Paladin
+    .goto 1420/0,347.600,2265.200
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡罗莱·安尼斯|r 对话
+    .turnin 95314 >>交任务 影谷的绿色饮剂
+    .target Carolai Anise
+step << Priest
+    #optional
+    .goto 1420/0,251.14,2265.28--c:Tirisfal Glades,61.57,52.19
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与二楼的 |cRXP_FRIENDLY_贝里尔|r 对话
+	.trainer >> 训练你的职业技能
+    .target Dark Cleric Beryl
+    .xp <12,1
+step << Warrior
+    #optional
+    .goto 1420/0,238.49,2255.03--c:Tirisfal Glades,61.85,52.53
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥斯蒂尔|r 对话
+    .train 7384 >>训练你的职业技能
+    .target 奥斯蒂尔·德·蒙
+    .xp <12,1
+step << Warlock
+    #optional
+    .goto 1420/0,250.24,2259.25--c:Tirisfal Glades,61.59,52.39
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_鲁伯特|r 对话
+    .train 755 >> 训练你的职业技能
+    .target 鲁伯特·鲍什
+    .xp <12,1
+step << Rogue
+    #optional
+    .goto 1420/0,243.01,2270.70--c:Tirisfal Glades,61.75,52.01
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_马里恩|r 对话
+    .train 1766 >> 训练你的职业技能
+    .target 马里恩·考尔
+    .xp <12,1
+step << Mage
+    #optional
     .goto 1420/0,233.52,2256.84--c:Tirisfal Glades,61.96,52.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_凯恩|r 在旅馆内对话
     .train 145 >> 训练你的职业技能
@@ -3081,7 +3136,7 @@ step << Paladin
     .goto 1458/0,365.30,1304.41,10 >>进入皇家区--c:Undercity,52.94,89.60
 step << Paladin
     .goto 1458/0,316.200,1290.600
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_希尔瓦娜斯·风行者|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_希尔瓦娜斯·风行者|r对话
     .turnin 95803 >>交任务 善意的信物
     .target Lady Sylvanas Windrunner
 
@@ -3217,12 +3272,13 @@ step
 
 RXPGuides.RegisterGuide([[
 #group RestedXP 无限指南 (部落)
-#subgroup 快速升级指南1-22级
+#subgroup 速通指南 1-22级
 --#groupid RXP-SRGCE-H1
 << Horde
 #version 11
 #defaultfor !Hunter !Shaman !Tauren
 #forever
+#disabledungeons
 #name 12-14级 银松森林
 #displayname 13-15级 银松森林 << Paladin
 #next 12-17级 贫瘠之地
@@ -3274,7 +3330,12 @@ step
     .mob Mottled Worg
     .unitscan Gorefang
 step
-    .goto 1421/0,715.000,1335.400
+    #loop
+    .goto 1421/0,941.300,1210.400,0
+    .goto 1421/0,706.700,1317.400,0
+    .goto 1421/0,941.300,1210.400,50,0
+    .goto 1421/0,830.000,1309.400,50,0
+    .goto 1421/0,706.700,1317.400,50,0
     >>击杀 |cRXP_ENEMY_邪鳍鱼人|r。拾取它们的 |T133884:0|t[|cRXP_LOOT_鱼人的眼珠|r]
     .collect 730,3,91920,1 --Collect Murloc Eyes (x3)
     .mob Vile Vin Shredder
@@ -3314,12 +3375,12 @@ step
     .turnin 435 >>交任务 护送埃兰德
     .accept 449 >>接受任务 亡灵哨兵的报告
     .target Rane Yorick
-step << skip
+step
     #softcore
     #completewith ProveyourWorth
     .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
 step
-    --#hardcore
+    #hardcore
     #completewith next
     .goto 1421/0,1359.66,864.19,50,0
     .goto 1421/0,1359.66,741.27,50,0
@@ -3445,7 +3506,12 @@ step
     .accept 91920 >>接受任务 鱼人之眼
     .target Quinn Yorick
 step
-    .goto 1421/0,715.000,1335.400
+    #loop
+    .goto 1421/0,941.300,1210.400,0
+    .goto 1421/0,706.700,1317.400,0
+    .goto 1421/0,941.300,1210.400,50,0
+    .goto 1421/0,830.000,1309.400,50,0
+    .goto 1421/0,706.700,1317.400,50,0
     >>击杀 |cRXP_ENEMY_邪鳍鱼人|r。拾取它们的 |T133884:0|t[|cRXP_LOOT_鱼人的眼珠|r]
     .collect 730,3,91920,1 --Collect Murloc Eyes (x3)
     .mob Vile Vin Shredder
@@ -3526,12 +3592,12 @@ step
     .mob Giant Grizzled Bear
     .unitscan Old VIcejaw
     .unitscan Son of Arugal
-step << skip
+step
     #softcore
     #completewith ArugalTurnin
     .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
 step
-    --#hardcore
+    #hardcore
     #completewith next
     .goto 1421/0,1538.58,511.39,100,0
     .subzone 228 >>返回瑟伯切尔
@@ -3610,12 +3676,12 @@ step
     .goto 1421/0,1582.68,640.47,15,0--c:Silverpine Forest,44.46,36.65
     .goto 1421/0,1563.78,738.75,30 >> 下山--c:Silverpine Forest,44.91,33.14
 step
-    #completewith DecrepitFerry
+    #completewith Yorick3
     +|cRXP_WARN_小心！附近可能有|r |cRXP_ENEMY_阿鲁高之子|r |cRXP_WARN_出没！这是25级精英怪，务必远离他！|r
     .unitscan Son of Arugal
 step
     #label Shackles
-    #loop
+    #completewith Yorick3
     .goto 1421/0,1609.1399,798.6667,50,0,0
     .goto 1421/0,1609.1399,798.6667,50,0
     .goto 1421/0,1592.7599,783.2667,50,0
@@ -3642,6 +3708,7 @@ step
     .mob +Moonrage Darksoul
     .unitscan Son of Arugal
 step
+    #label Yorick3
     .goto 1421/0,1207.62,1293.71,8,0
     .goto 1421/0,1220.64,1299.59,8,0
     .goto 1421/0,1212.66,1298.19,8,0
@@ -3675,6 +3742,19 @@ step
     >>点击码头旁的 |cRXP_PICK_船只|r
     .turnin 438 >>交任务 破旧渡口
     .accept 439 >>接受任务 线索
+step
+    #loop
+    .goto 1421/0,1079.000,375.000,0
+    .goto 1421/0,1079.000,375.000,30,0
+    .goto 1421/0,1015.900,417.200,20,0
+    .goto 1421/0,1134.400,301.200,40,0
+    >>击杀|cRXP_ENEMY_月怒暴食者|r和|cRXP_ENEMY_月怒暗魂|r，从它们身上拾取|cRXP_LOOT_镣铐|r
+    >>|cRXP_WARN_小心！|r |cRXP_ENEMY_月怒暗魂|r |cRXP_WARN_在生命值低于25%时会狂暴。当它们血量较低时，请迅速击杀|r
+    .complete 423,1 --Glutton Shackle (6)
+    .mob +Moonrage Glutton
+    .complete 423,2 --Darksoul Shackle (3)
+    .mob +Moonrage Darksoul
+    .unitscan Son of Arugal
 step
     #completewith next
     .goto 1421/0,1538.58,511.39,100 >> 返回瑟伯切尔
@@ -3749,6 +3829,13 @@ step
     .turnin 482 >>交任务 达拉然的意图
     .target Shadow Priest Allister
 step
+    .goto 1421/0,1579.600,461.700
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tabitha Heartweaver::250686|r (NOT TRANSLATED IN :zhCN YET)
+    .accept 92401 >>Accept A Frightened Request (NOT TRANSLATED IN :zhCN YET)
+    .target Tabitha Heartweaver::250686
+    .xp <15,1
+    .dungeon ROL
+step
     .goto 1421/0,1533.96,474.43
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡鲁斯|r 对话
     .turnin 6321 >>交任务 资助墓穴 << Undead
@@ -3773,7 +3860,7 @@ step << Rogue
     .goto 1458/0,286.53,1616.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与贸易区的 |cRXP_FRIENDLY_刘易斯·瓦伦|r 对话
     >>|cRXP_BUY_购买1把|r |T135343:0|t[战士阔剑] |cRXP_BUY_从他那里|r
-    .collect 2027,1,809,1 --Collect Scimitar (1)
+    .collect 2027,1 --Collect Scimitar (1)
     .money <0.3815
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.6
@@ -3784,7 +3871,7 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与贸易区的 |cRXP_FRIENDLY_刘易斯·瓦伦|r 对话
     >>|cRXP_BUY_购买1把|r |T135343:0|t[战士阔剑] |cRXP_BUY_从他那里|r
     >>|cRXP_WARN_或者你也可以稍后去拍卖行看看是否有更好或更便宜的替代品|r
-    .collect 2027,1,809,1 --Collect Scimitar (1)
+    .collect 2027,1 --Collect Scimitar (1)
     .money <0.3815
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.6
@@ -3802,15 +3889,6 @@ step << Undead
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迈克尔 |r 对话
     .turnin 6322 >>交任务 迈克尔·加勒特
     .target 迈克尔·加勒特
-step << Undead Warrior
-    #optional
-    .goto 1458/0,418.35,1767.02
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与|cRXP_FRIENDLY_巴尔图斯·弗勒|r 对话
-    .train 285 >> 训练你的职业技能
-    .target Baltus Fowler
-    .dungeon RFC
-    .xp <16,1
---XX 16+ Only for Heroic Strike, Undead only as other races train elsewhere more effectively. RFC So warriors have 16 spells for RFC
 step << Rogue/Warrior
     .goto 1458/0,171.03,1524.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|r |cRXP_FRIENDLY_玛丽|r在盗贼区交谈
@@ -3871,24 +3949,6 @@ step << Undead Rogue
     .xp <16,1
     .isOnQuest 1898 << Undead
 step << Undead Rogue
-    .goto 1458/0,68.66,1416.69
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡罗琳|r 对话
-    .train 1758 >> 训练你的职业技能
-    .target 卡罗琳·瓦德
-    .xp <14,1
-    .xp >16,1
-    .dungeon RFC
---XX Force train if hs not in Brill as an undead ONLY + you want to do RFC. Optional left out on purpose
---XX This whole section of training across 3 different areas, 2 different xp rates and RFC is solidly in the top 10 worst experiences of my life and im still not 100% happy with it xd
-step << Undead Rogue
-    #optional
-    .goto 1458/0,68.66,1416.69
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡罗琳|r 对话
-    .train 6761 >> 训练你的职业技能
-    .target 卡罗琳·瓦德
-    .xp <16,1
-    .dungeon RFC
-step << Undead Rogue
     .goto 1458/0,347.07,1389.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_安德隆|r 对话
     .turnin 1898 >>交任务亡灵哨兵
@@ -3913,8 +3973,7 @@ step
     .goto 1458,52.275,79.254,15,0
     .goto 1458,51.279,79.923,15,0
     .goto 1458,49.693,78.903,15,0
-    .goto 1458,47.951,76.171,15,0
-    .goto 1458/0,404.63,1434.67,12 >> 向炼金师区的|cRXP_FRIENDLY_大药剂师法拉尼尔|r走去
+    .goto 1458,47.951,76.171,15 >>Travel to the The Apothecarium (NOT TRANSLATED IN :zhCN YET)
 step
     .goto 1458/0,426.100,1403.600
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_马丁·费尔本|r 对话
@@ -3930,6 +3989,12 @@ step
     .accept 1358 >> 接受任务 给赫布瑞姆的样本
     .target +Apothecary Zinge
     .goto 1458/0,391.97,1442.87
+step
+    .goto Undercity,56.2,96.2
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_瓦里玛萨斯|r 对话
+    .accept 5725 >>接受任务《物归己用》 毁灭之力
+    .target 瓦里玛萨斯
+    .dungeon RFC
 step << Undead Rogue
     .goto 1458/0,71.83,1435.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_米奈特|r 对话
@@ -3937,24 +4002,6 @@ step << Undead Rogue
     .accept 1978 >>接受任务 亡灵哨兵
     .target Mennet Carkad
     .isQuestTurnedIn 1886
-step << Undead Rogue
-    #optional
-    .goto 1458/0,68.66,1416.69
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡罗琳|r 对话
-    .train 1758 >> 训练你的职业技能
-    .target 卡罗琳·瓦德
-    .xp <14,1
-    .xp >16,1
-    .dungeon RFC
---XX Force train if hs not in Brill as an undead ONLY + you want to do RFC. Duplicate if you ding from prev optional quests
-step << Undead Rogue
-    #optional
-    .goto 1458/0,68.66,1416.69
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡罗琳|r 对话
-    .train 6761 >> 训练你的职业技能
-    .target 卡罗琳·瓦德
-    .xp <16,1
-    .dungeon RFC
 step << Undead Rogue
     .goto 1420/0,373.60,1464.85,40,0
     .goto 1420/0,333.38,1287.72
@@ -4068,69 +4115,12 @@ step << Priest/Mage/Warlock
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<13.4
     .xp <15,1
-step << Undead Priest
-    #sticky
-    #label TouchOW
-    .goto 1458/0,403.29,1760.61
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_艾萨莱斯特|r对话
-    .turnin 5658 >> 交任务 虚弱之触
-    .target Aelthalyste
-    .train 2652,1 --Touch of Weakness not trained
-    .dungeon RFC
-step << !Undead Priest
-    #sticky
-    #label TouchOW
-    .goto 1458/0,403.29,1760.61
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_艾萨莱斯特|r对话
-    .turnin 5660 >> 交任务 虚弱之触
-    .target Aelthalyste
-    .train 2652,1 --Touch of Weakness not trained
-    .dungeon RFC
-    .isOnQuest 5660
---XX Not going out of the way for this outside of this edge case to train for RFC, waste of a gcd
-step << Undead Priest
-    .goto 1458/0,416.91,1757.03
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拉扎鲁斯|r 对话
-	.train 6074 >> 训练你的职业技能
-    .target 拉扎鲁斯神父
-    .xp <14,1
-    .xp >16,1
-    .dungeon RFC
-step << Undead Priest
-    #optional
-    .goto 1458/0,416.91,1757.03
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拉扎鲁斯|r 对话
-	.train 8102 >> 训练你的职业技能
-    .target 拉扎鲁斯神父
-    .xp <16,1
-    .dungeon RFC
 step << Undead Rogue
     #optional
     #completewith Conscript
     >>放弃任务 亡灵哨兵，没有再做一次的机会了
     .abandon 1886 >> 放弃任务 亡灵哨兵
     .isOnQuest 1886
-step << skip --Undead !Rogue !Warrior
-    #requires TouchOW << Undead Priest
-    .goto 1458/0,327.4,1770.6 << Priest
-    .goto 1458/0,206.81,1712.48 << Mage/Warlock
-    .goto 1458/0,221.78,1780.14,30 >>|cRXP_WARN_通过跳到肉车的研磨机顶部，然后登出重入来执行返回角色选择跳过|r << Priest
-    .goto 1458/0,221.78,1780.14,30 >>|cRXP_WARN_跳到桶堆顶部，然后退出并重新登录，执行登出跳过|r << Mage/Warlock
-    >>|cRXP_WARN_如果你做不到，就正常跑出幽暗城|r
-    .zoneskip Undercity,1
-    .dungeon RFC
-step << skip --Undead !Rogue !Warrior
-    .goto 1458/0,206.81,1712.48 << Priest/Mage/Warlock
-    .goto 1458/0,221.78,1780.14,30 >>|cRXP_WARN_跳到桶堆顶部，然后退出并重新登录，执行登出跳过|r << Priest/Mage/Warlock
-    .link https://www.youtube.com/watch?v=-Bi95bCN8dM >> |cRXP_WARN_点击此处查看示例|r
-    >>|cRXP_WARN_如果你做不到，就正常跑出幽暗城|r
-    .zoneskip Undercity,1
-    .dungeon !RFC
-step << Undead/Skyborne
-    #sticky
-    #completewith EnterRFC
-    .subzone 2437 >> 现在你应该找个队伍去怒焰裂谷了
-    .dungeon RFC
 step << Undead
     #completewith next
     .goto 1420/0,235.32,1883.89,50,0
@@ -4181,9 +4171,6 @@ step << Skyborne
 step << Skyborne
     #optional
     #label Silverpineskip
-
-    --Start Undead/Skyborne RFC
-
 step << Undead
     #completewith HiddenEnemiesPickup
     .goto 1454/1,-4367.46,1405.44,50,0
@@ -4203,207 +4190,15 @@ step << Undead/Skyborne
     .target 萨尔
     .dungeon RFC
 step << Undead/Skyborne
+    #completewith next
+    .goto 1454/1,-4367.46,1405.44,50,0
+    .zone Durotar >> 离开奥格瑞玛
+    .dungeon RFC
+step << Undead/Skyborne
     .goto 1411/1,-4769.10,1484.39,0
     >>在骷髅石击杀|cRXP_ENEMY_火刃氏族|r 小怪，直到掉落|cRXP_LOOT_军官的徽章|r
     .complete 5726,1 --Lieutenant's Insignia (1)
     .dungeon RFC
-step << Undead/Skyborne
-    .goto 1454/1,-4125.79,1920.10
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_萨尔|r 对话
-    .turnin 5726 >> 交任务 隐藏的敌人
-    .accept 5727 >> 接受任务 隐藏的敌人
-    .target 萨尔
-    .dungeon RFC
-step << Undead/Skyborne
-    .goto 1454/1,-4376.29,1802.43
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_尼尔鲁·火刃|r 对话
-    .accept 5761 >>接受任务《物归己用》 饥饿者塔拉加曼
-    .target 尼尔鲁·火刃
-    .dungeon RFC
-step << Undead/Skyborne
-    .goto 1454/1,-4376.29,1802.43
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_尼尔鲁·火刃|r 对话
-    .complete 5727,1 --Gauge Neeru Fireblade's reaction to you being a member of the Burning Blade
-    .skipgossip
-    .target 尼尔鲁·火刃
-    .dungeon RFC
-step << Undead/Skyborne
-    #label HiddenEnemiesPickup
-    .goto 1454/1,-4125.79,1920.10
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_萨尔|r 对话
-    .turnin 5727 >> 交任务 隐藏的敌人
-    .accept 5728 >> 接受任务 隐藏的敌人
-    .target 萨尔
-    .dungeon RFC
-step << Undead/Skyborne
-    #completewith EnterRFC
-    .destroy 14544 >>|cRXP_WARN_销毁|r |T134417:0|t[军官的徽章] |cRXP_WARN_因为你不再需要它|r
-    .dungeon RFC
-step << Undead/Skyborne
-    #label EnterRFC
-    .goto 1454/1,-4420.76,1815.80
-    .subzone 2437 >> 进入 RFC Instance portal. Zone in
-    .dungeon RFC
-step << Undead/Skyborne
-    >>|cRXP_WARN_如果可能，让队友共享以下任务|r
-    .accept 5722 >> 接受任务 寻找背包
-    .accept 5723 >> 接受任务 试探敌人
-    .disablecheckbox
-    .dungeon RFC
-step << Undead/Skyborne
-    #completewith next
-    >>击杀|cRXP_ENEMY_怒焰穴居怪|r和|cRXP_ENEMY_怒焰萨满|r
-    .complete 5723,1 --Ragefire Trogg (8)
-    .mob +Ragefire Trogg
-    .complete 5723,2 --Ragefire Shaman (8)
-    .mob +Ragefire Shaman
-    .isOnQuest 5723
-    .dungeon RFC
-step << Undead/Skyborne
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_茂尔|r 对话
-    .turnin 5722 >> 交任务 寻找背包
-    .accept 5724 >> 接受任务 归还背包
-    .target Maur Grimtotem
-    .isOnQuest 5722
-    .dungeon RFC
-step << Undead/Skyborne
-    #optional
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_茂尔|r 对话
-    .accept 5724 >> 接受任务 归还背包
-    .target Maur Grimtotem
-    .isQuestTurnedIn 5722
-    .dungeon RFC
-step << Undead/Skyborne
-    #label TroggsShamans
-    >>击杀|cRXP_ENEMY_怒焰穴居怪|r和|cRXP_ENEMY_怒焰萨满|r
-    .complete 5723,1 --Ragefire Trogg (8)
-    .mob +Ragefire Trogg
-    .complete 5723,2 --Ragefire Shaman (8)
-    .mob +Ragefire Shaman
-    .isOnQuest 5723
-    .dungeon RFC
-step << Undead/Skyborne
-    #requires TroggsShamans
-    #completewith BazzalanandJergosh
-    >>击杀 |cRXP_ENEMY_燃刃信徒|r and |cRXP_ENEMY_燃刃术士|r. Loot them for the |cRXP_LOOT_Spells of Shadow|r and |cRXP_LOOT_Incantations from the Nether|r
-    .complete 5725,1 --Spells of Shadow (1)
-    .complete 5725,2 --	Incantations from the Nether (1)
-    .mob 燃刃信徒
-    .mob 燃刃术士
-    .isOnQuest 5725
-    .dungeon RFC
-step << Undead/Skyborne
-    >>击杀|cRXP_ENEMY_饥饿者塔拉加曼|r，拾取|cRXP_LOOT_心|r
-    .complete 5761,1 -- Taragaman the Hungerer's Heart
-    .mob 饥饿者塔拉加曼
-    .isOnQuest 5761
-    .dungeon RFC
-step << Undead/Skyborne
-    #label BazzalanandJergosh
-    >>击杀|cRXP_ENEMY_巴扎兰|r和|cRXP_ENEMY_召唤者耶戈什|r
-    .complete 5728,1 --Bazzalan (1)
-    .mob +Bazzalan
-    .complete 5728,2 --Jergosh the Invoker (1)
-    .mob +Jergosh the Invoker
-    .isOnQuest 5728
-    .dungeon RFC
-step << Undead/Skyborne
-    >>击杀 |cRXP_ENEMY_燃刃信徒|r and |cRXP_ENEMY_燃刃术士|r. Loot them for the |cRXP_LOOT_Spells of Shadow|r and |cRXP_LOOT_Incantations from the Nether|r
-    .complete 5725,1 --Spells of Shadow (1)
-    .complete 5725,2 --	Incantations from the Nether (1)
-    .mob 燃刃信徒
-    .mob 燃刃术士
-    .isOnQuest 5725
-    .dungeon RFC
-step << Undead/Skyborne
-    .goto 1454/1,-4376.29,1802.43
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_尼尔鲁·火刃|r 对话
-    .turnin 5761 >>交任务《 前往熔光镇》 饥饿者塔拉加曼
-    .target 尼尔鲁·火刃
-    .isQuestComplete 5761
-    .dungeon RFC
-step << Undead/Skyborne
-    .goto 1454/1,-4125.79,1920.10
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_萨尔|r 对话
-    .turnin 5728 >> 交任务 隐藏的敌人
-    .accept 5729 >> 接受任务 隐藏的敌人
-    .target 萨尔
-    .isQuestComplete 5728
-    .dungeon RFC
-step << Undead/Skyborne
-    .goto 1454/1,-4125.79,1920.10
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_萨尔|r 对话
-    .accept 5729 >> 接受任务 隐藏的敌人
-    .target 萨尔
-    .isQuestTurnedIn 5728
-    .dungeon RFC
-step << Undead/Skyborne
-    .goto 1454/1,-4376.29,1802.43
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_尼尔鲁·火刃|r 对话
-    .turnin 5729 >> 交任务 隐藏的敌人
-    .accept 5730 >> 接受任务 隐藏的敌人
-    .target 尼尔鲁·火刃
-    .dungeon RFC
-    .isQuestTurnedIn 5728
-step << Undead/Skyborne
-    .goto 1454/1,-4125.79,1920.10
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_萨尔|r 对话
-    .turnin 5730 >> 交任务 隐藏的敌人
-    .target 萨尔
-    .isQuestTurnedIn 5728
-    .dungeon RFC
-step << Skyborne
-    #completewith RFCTurninsTB1
-    .goto 1454/1,-4313.46,1676.25--c:Orgrimmar,45.120,63.889
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|r |cRXP_FRIENDLY_多拉斯|r 对话
-    .fly Thunder Bluff >>飞往雷霆崖
-    .target 多拉斯
-    .zoneskip Orgrimmar,1
-    .isOnQuest 5724
-    .isQuestComplete 5723
-    .dungeon RFC
-step << Skyborne
-    #completewith RFCTurninsTB1
-    .goto 1456/1,-212.71,-1065.010,80 >> 前往长者高地
-    .isOnQuest 5724
-    .isQuestComplete 5723
-    .dungeon RFC
-step << Skyborne
-    .goto 1456/1,-218.13,-1055.97
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拉哈罗|r 对话
-    .turnin 5724 >> 交任务 归还背包
-    .turnin 5723 >> 交任务 试探敌人
-    .target Rahauro
-    .isOnQuest 5724
-    .isQuestComplete 5723
-    .dungeon RFC
-step << Skyborne
-    .goto 1456/1,-218.13,-1055.97
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拉哈罗|r 对话
-    .turnin 5724 >> 交任务 归还背包
-    .target Rahauro
-    .isOnQuest 5724
-    .dungeon RFC
-step << Skyborne
-    #completewith Conscript
-    .hs >> 使用炉石返回奥格瑞玛
-    .use 6948
-    .zoneskip Thunder Bluff,1
-    .bindlocation 1637,1
-    .cooldown item,6948,>0,1
-    .dungeon RFC
-step << Skyborne
-    #completewith Conscript
-    .goto Thunder Bluff,47.00,49.82
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塔尔|r 对话
-    .fly Orgrimmar >>飞往奥格瑞玛
-    .target 塔尔
-    .zoneskip Thunder Bluff,1
-    .cooldown item,6948,<0
-    .dungeon RFC
-
-    --End Undead/Skyborne RFC
-
 step << Undead/Skyborne
     #completewith Conscript
     .subzone 362 >> 前往剃刀岭

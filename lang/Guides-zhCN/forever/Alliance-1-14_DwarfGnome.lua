@@ -4,11 +4,12 @@ if faction == "Horde" then return end
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 #season 0,1
 #version 1
 << Alliance
 #group RestedXP 无限指南 (联盟)
-#subgroup 快速升级指南1-20级
+#subgroup 速通指南 1-20级
 --#groupid RXP-SRGCE-A1
 #name 1-5级 寒脊山谷
 #next 5-11级 丹莫罗
@@ -648,14 +649,15 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 #season 0,1
 #version 1
 << Alliance
 #group RestedXP 无限指南 (联盟)
-#subgroup 快速升级指南1-20级
+#subgroup 速通指南 1-20级
 --#groupid RXP-SRGCE-A1
 #name 5-11级 丹莫罗
-#next 11-12 艾尔文森林（矮人/侏儒）;11-12级 虚空行者任务;12-14 洛克莫丹 (矮人/侏儒);11-13级 洛克莫丹 (猎人)
+#next 11-12级 艾尔文森林 (矮人/侏儒);11-12级 虚空行者任务;12-14级 洛克莫丹 (矮人/侏儒);11-13级 洛克莫丹 (猎人)
 #defaultfor Dwarf/Gnome
 
 step
@@ -748,7 +750,7 @@ step
     .target 塔诺克·霜锤
 step
     .goto 1426/0,-529.600,-5590.600
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_马克萨恩·安沃尔::1226|r 对话 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_马克萨恩·安沃尔::1226|r 对话
     .target Maxan Anvol::1226
     .accept 5625 >> 接受任务 圣光之衣 << Priest
     .accept 99158 >>接受任务 群山中的曙光
@@ -928,7 +930,7 @@ step << Shaman
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.20
 step
     .goto 1426/0,-431.000,-5582.400
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_托格努斯·燧火::1241|r 对话 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_托格努斯·燧火::1241|r 对话
     .target Tognus Flintfire::1241
     .accept 98321 >>接受任务 燧火的货物
 step
@@ -991,7 +993,7 @@ step
     .mob 峭壁野猪
 step
     #completewith next
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_巡山人格雷琴::271546|r 对话 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_巡山人格雷琴::271546|r 对话
     .target Mountaineer Gretchen::271546
     .turnin 98322 >>交任务 占领山丘
     .accept 98319 >>接受任务 占领山丘
@@ -1002,7 +1004,7 @@ step
     .complete 5541,1 --Collect Rumbleshot's Ammo (x1)
 step
     .goto 1426/0,-371.400,-5746.900
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_巡山人格雷琴::271546|r 对话 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_巡山人格雷琴::271546|r 对话
     .target Mountaineer Gretchen::271546
     .turnin 98322 >>交任务 占领山丘
     .accept 98319 >>接受任务 占领山丘
@@ -1115,7 +1117,7 @@ step
     .xp 7 >> 刷怪至7级
 step
     .goto 1426/0,-501.500,-5643.900
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_森内尔·白须::1252|r 对话 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_森内尔·白须::1252|r 对话
     .target Senir Whitebeard::1252
     .accept 287 >>接受任务 霜鬃巨魔要塞
 step
@@ -1448,10 +1450,10 @@ step << Hunter
     .turnin 314 >> 交任务 保护牲畜
     .target 鲁德拉·冻石
 step << Hunter
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_参议员梅尔·圣石|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_工头乔尼·石眉|r 对话
     .accept 432 >> 接受任务 该死的穴居人！
-    .goto 1426/0,-1580.000,-5714.700
-    .target Senator Mehr Stonehallow
+    .goto 1426/0,-1600.30,-5726.590
+    .target Foreman Stonebrow
 step << Hunter
     #loop
     .goto 1426,70.073,57.030,0
@@ -1463,14 +1465,34 @@ step << Hunter
     .waypoint 1426,67.687,60.059,45,0
     .waypoint 1426,68.958,59.357,45,0
     .waypoint 1426,70.475,59.420,45,0
-    >>击杀矿洞外面的 |cRXP_ENEMY_石腭击颅者|r
+    >>Kill |cRXP_ENEMY_Rockjaw Skullthumpers|r outside the mine. Loot them for the |T132621:0|t[|cRXP_LOOT_Empty Powder Keg|r] (NOT TRANSLATED IN :zhCN YET)
+    .use 268548 >> |cRXP_WARN_使用|r |T132621:0|t[|cRXP_LOOT_空火药桶|r] |cRXP_WARN_来开启任务|r
+    >>|cRXP_WARN_NOTE: This item has a low drop rate. Skip this step if you do not find it|r (NOT TRANSLATED IN :zhCN YET)
     .complete 432,1 --Kill Rockjaw Skullthumper (x6)
+    .collect 268548,1,95213,1 -- Empty Powder Keg (1)
+    .disablecheckbox
+    .accept 95213 >> 接受任务 被偷走的炸药粉
+    .disablecheckbox
     .mob 石腭击颅者
 step << Hunter
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_参议员梅尔·圣石|r 对话
+    .isOnQuest 95213
+    .goto 1426/0,-1606.02,-5676.35
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_矿场主管瑟斯丁|r 对话
+    .turnin 95213 >> 交任务 被偷走的炸药粉
+    .accept 95214 >> 接受任务 被偷走的炸药粉
+    .target Quarrymaster Thesten
+step << Hunter
+    #optional
+    .isQuestTurnedIn 95213
+    .goto 1426/0,-1606.02,-5676.35
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_矿场主管瑟斯丁|r 对话
+    .accept 95214 >> 接受任务 被偷走的炸药粉
+    .target Quarrymaster Thesten
+step << Hunter
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_工头乔尼·石眉|r 对话
     .turnin 432 >> 交任务 该死的穴居人！
-    .target Senator Mehr Stonehallow
-    .goto 1426/0,-1580.000,-5714.700
+    .target Foreman Stonebrow
+    .goto 1426/0,-1600.30,-5726.590
 step << Hunter
     .goto 1426/0,-2197.02,-5279.07,45,0
     .goto 1426/0,-2329.60,-5163.76
@@ -1685,7 +1707,7 @@ step << Hunter
     .accept 6086 >>接受任务 训练野兽
 step
     .goto 1426/0,-682.300,-5489.000
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_贝尔丁·钢架::1376|r 对话 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_贝尔丁·钢架::1376|r 对话
     .target Beldin Steelgrill::1376
     .accept 96408 >>接受任务 一位到访丹莫罗的访客
 step << Warrior
@@ -1884,13 +1906,21 @@ step << !Hunter
 --XX Mud slappers instead
 step
     #label QuarryStart
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_参议员梅尔·圣石|r 和 |cRXP_FRIENDLY_工头乔尼·石眉|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_参议员梅尔·圣石|r 和 |cRXP_FRIENDLY_工头乔尼·石眉|r 对话 << !Hunter
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_参议员梅尔·圣石|r 对话 << Hunter
     .accept 433 >> 接受任务 公众之仆
     .target 参议员梅尔·圣石
     .goto 1426/0,-1579.96,-5714.73
-    .accept 432 >> 接受任务 该死的穴居人！
-    .goto 1426/0,-1600.30,-5726.590
-    .target 工头乔尼·石眉
+    .accept 432 >> 接受任务 该死的穴居人！ << !Hunter
+    .goto 1426/0,-1600.30,-5726.590 << !Hunter
+    .target 工头乔尼·石眉 << !Hunter
+step
+    #completewith RockjawBonesnappers
+    >>Loot the |cRXP_ENEMY_Rockjaw Skullthumpers|r and |cRXP_ENEMY_Rockjaw Bonesnappers|r for the |T132621:0|t[|cRXP_LOOT_Empty Powder Keg|r] (NOT TRANSLATED IN :zhCN YET)
+    .use 268548 >> |cRXP_WARN_Use the|r |T132621:0|t[|cRXP_LOOT_Empty Powder Keg|r] |cRXP_WARN_to start the quest|r (NOT TRANSLATED IN :zhCN YET)
+    >>|cRXP_WARN_NOTE: This item has a low drop rate. Skip this step if you do not find it|r (NOT TRANSLATED IN :zhCN YET)
+    .collect 268548,1,95213,1 -- Empty Powder Keg (1)
+    .accept 95213 >> Accept Stolen Blasting Powder (NOT TRANSLATED IN :zhCN YET)
 step
     #sticky
     #label Skullthumpers
@@ -1913,6 +1943,7 @@ step
     .goto 1426,70.750,56.219,20 >>进入古博拉采掘场
     .isOnQuest 433
 step
+    #label RockjawBonesnappers
     #loop
     .goto 1426,70.750,56.219,0
     .goto 1426,71.344,51.873,0
@@ -1937,13 +1968,28 @@ step
     #requires Skullthumpers
 --XXREQ Placeholder invis step until multiple requires per step
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_工头乔尼·石眉|r 和 |cRXP_FRIENDLY_参议员梅尔·圣石|r 对话
-    .turnin 432 >> 交任务 该死的穴居人！
-    .target 参议员梅尔·圣石
-    .goto 1426/0,-1600.30,-5726.590
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_参议员梅尔·圣石|r 和 |cRXP_FRIENDLY_工头乔尼·石眉|r 对话 << !Hunter
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_参议员梅尔·圣石|r 对话 << Hunter
     .turnin 433 >> 交任务 公众之仆
     .goto 1426/0,-1579.96,-5714.73
-    .target 工头乔尼·石眉  
+    .target 参议员梅尔·圣石
+    .turnin 432 >> 交任务 该死的穴居人！ << !Hunter
+    .goto 1426/0,-1600.30,-5726.590 << !Hunter
+    .target 工头乔尼·石眉 << !Hunter
+step
+    .isOnQuest 95213
+    .goto 1426/0,-1606.02,-5676.35
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_矿场主管瑟斯丁|r 对话
+    .turnin 95213 >> 交任务 被偷走的炸药粉
+    .accept 95214 >> Accept Stolen Blasting Powder (NOT TRANSLATED IN :zhCN YET)
+    .target Quarrymaster Thesten
+step
+    #optional
+    .isQuestTurnedIn 95213
+    .goto 1426/0,-1606.02,-5676.35
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quarrymaster Thesten|r (NOT TRANSLATED IN :zhCN YET)
+    .accept 95214 >> Accept Stolen Blasting Powder (NOT TRANSLATED IN :zhCN YET)
+    .target Quarrymaster Thesten
 step
     #optional
     #label BoarMeatDunMorogh3
@@ -1977,14 +2023,21 @@ step
 --  .skill cooking,<10,1
     .skill cooking,50,1 --XX Shows if cooking skill is between 1-50
 step
-    #completewith OII
-    >>击杀 |cRXP_ENEMY_石腭伏击者|r。拾取它们的 |T132621:0|t[|cRXP_LOOT_空火药桶|r]
-    .use 268548 >> |cRXP_WARN_使用|r |T132621:0|t[|cRXP_LOOT_空火药桶|r] |cRXP_WARN_来开启任务|r
-    >>|cRXP_WARN_注释：这个物品掉落率很低。如果你在完成了|r 黑铁间谍|cRXP_ENEMY_ 任务时还没有找到它，请跳过此步骤|r
-    .collect 268548,1,95213,1 -- Empty Powder Keg (1)
-    .accept 95213 >> 接受任务 被偷走的炸药粉
+    .isOnQuest 95214
+    #completewith SpyMap
+    >>击杀 |cRXP_ENEMY_石腭伏击者|r。拾取它们的 |cRXP_LOOT_被偷走的炸药粉|r
+    .complete 95214,1 -- Stolen Blasting Powder (16)
     .mob Rockjaw Ambusher
 step
+    #completewith OII
+    >>击杀 |cRXP_ENEMY_石腭伏击者|r。拾取它们的 |T132621:0|t[|cRXP_LOOT_空火药桶|r]
+    .use 268548 >> |cRXP_WARN_Use the|r |T132621:0|t[|cRXP_LOOT_Empty Powder Keg|r] |cRXP_WARN_to start the quest|r (NOT TRANSLATED IN :zhCN YET)
+    >>|cRXP_WARN_注释：这个物品掉落率很低。如果你在完成了|r 黑铁间谍|cRXP_ENEMY_ 任务时还没有找到它，请跳过此步骤|r
+    .collect 268548,1,95213,1 -- Empty Powder Keg (1)
+    .accept 95213 >> Accept Stolen Blasting Powder (NOT TRANSLATED IN :zhCN YET)
+    .mob Rockjaw Ambusher
+step
+    #label SpyMap
     .goto 1426/0,-2009.87,-5860.22,40,0
     .goto 1426/0,-2034.49,-5922.60
     >>击杀 |cRXP_ENEMY_黑铁间谍|r。拾取他们的 |T237385:0|t|cRXP_LOOT_黑铁地图|r
@@ -1993,6 +2046,24 @@ step
     .collect 274268,1,96391,1 -- Dark Iron Map (1)
     .accept 96391 >> 接受任务 地下地图
     .mob 黑铁间谍
+step
+    .isOnQuest 95214
+    #loop
+    .goto 1426/0,-1881.82,-5735.45,50,0
+    .goto 1426/0,-1832.57,-5571.28,50,0
+    .goto 1426/0,-1724.22,-5636.95,50,0
+    .goto 1426/0,-1881.82,-5735.45,0
+    .goto 1426/0,-1832.57,-5571.28,0
+    .goto 1426/0,-1724.22,-5636.95,0
+    >>Kill |cRXP_ENEMY_Rockjaw Ambushers|r. Loot them for their |cRXP_LOOT_Stolen Blasting Powder|r (NOT TRANSLATED IN :zhCN YET)
+    .complete 95214,1 -- Stolen Blasting Powder (16)
+    .mob Rockjaw Ambusher
+step
+    .isQuestComplete 95214
+    .goto 1426/0,-1606.02,-5676.35
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quarrymaster Thesten|r (NOT TRANSLATED IN :zhCN YET)
+    .turnin 95214 >> Turn in Stolen Blasting Powder (NOT TRANSLATED IN :zhCN YET)
+    .target Quarrymaster Thesten
 step
     #label OII
     .goto 1426/0,-1394.24,-5797.83
@@ -2004,15 +2075,15 @@ step
 step
     .isOnQuest 95213
     .goto 1426/0,-1606.02,-5676.35
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_矿场主管瑟斯丁|r 对话
-    .turnin 95213 >> 交任务 被偷走的炸药粉
-    .accept 95214 >> 接受任务 被偷走的炸药粉
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quarrymaster Thesten|r (NOT TRANSLATED IN :zhCN YET)
+    .turnin 95213 >> Turn in Stolen Blasting Powder (NOT TRANSLATED IN :zhCN YET)
+    .accept 95214 >> Accept Stolen Blasting Powder (NOT TRANSLATED IN :zhCN YET)
     .target Quarrymaster Thesten
 step
     .isQuestTurnedIn 95213
     .goto 1426/0,-1606.02,-5676.35
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_矿场主管瑟斯丁|r 对话
-    .accept 95214 >> 接受任务 被偷走的炸药粉
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quarrymaster Thesten|r (NOT TRANSLATED IN :zhCN YET)
+    .accept 95214 >> Accept Stolen Blasting Powder (NOT TRANSLATED IN :zhCN YET)
     .target Quarrymaster Thesten
 step
     .isOnQuest 95214
@@ -2023,14 +2094,14 @@ step
     .goto 1426/0,-1881.82,-5735.45,0
     .goto 1426/0,-1832.57,-5571.28,0
     .goto 1426/0,-1724.22,-5636.95,0
-    >>击杀 |cRXP_ENEMY_石腭伏击者|r。拾取它们的 |cRXP_LOOT_被偷走的炸药粉|r
+    >>Kill |cRXP_ENEMY_Rockjaw Ambushers|r. Loot them for their |cRXP_LOOT_Stolen Blasting Powder|r (NOT TRANSLATED IN :zhCN YET)
     .complete 95214,1 -- Stolen Blasting Powder (16)
     .mob Rockjaw Ambusher
 step
     .isQuestComplete 95214
     .goto 1426/0,-1606.02,-5676.35
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_矿场主管瑟斯丁|r 对话
-    .turnin 95214 >> 交任务 被偷走的炸药粉
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quarrymaster Thesten|r (NOT TRANSLATED IN :zhCN YET)
+    .turnin 95214 >> Turn in Stolen Blasting Powder (NOT TRANSLATED IN :zhCN YET)
     .target Quarrymaster Thesten
 step
     #completewith next
@@ -2104,7 +2175,7 @@ step << !Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雅尼·铁心|r 对话
     >>|cRXP_BUY_从她那里|r|cRXP_BUY_购买一捆|r |T135435:0|t[普通木柴] |cRXP_BUY_和一块|r |T135237:0|t[燧石和火绒]
     >>|cRXP_BUY_需要的话也可以从她那里|r|cRXP_BUY_购买一个|r |T133634:0|t[棕色小包] << !Rogue
-    >>|cRXP_WARN_这个是用来|r在船上制作 |cRXP_WARN_|T135805:0|t[基础营火]，以便在不浪费时间的情况下提升你的 |r|T133971:0|t[烹饪] |cRXP_WARN_技能|r
+    >>|cRXP_WARN_This is used to make|r |T135805:0|t[Basic Campfires] |cRXP_WARN_while waiting for Boats to level your|r |T133971:0|t[Cooking] |cRXP_WARN_skill without losing time|r (NOT TRANSLATED IN :zhCN YET)
     >>|cRXP_WARN_你需要 50 点|r |T133971:0|t[烹饪] |cRXP_WARN_，以便之后在暮色森林完成一个任务|r
     .collect 4470,1 --Simple Wood (1)
     .collect 4471,1 --Flint and Tinder (1)
@@ -2294,7 +2365,7 @@ step << Dwarf/Gnome
     .target 高尼尔·石趾
 step << Shaman
     .goto 1455/0,-1086.500,-4642.400
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_埃尔德伦·风暴破坏者::258098|r 对话 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_埃尔德伦·风暴破坏者::258098|r 对话
     .target Eldrun Stormbreaker::258098
     .accept 94449 >>接受任务 火焰的召唤
     .trainer >> 训练你的职业技能
@@ -2393,7 +2464,7 @@ step << Hunter
     .target 雷格努斯·雷石
 step << Dawrf Priest
     .goto 1455/0,-897.200,-4607.200
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_高阶牧师洛汉|r 对话  
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_高阶牧师洛汉|r 对话
     .turnin 5639 >> 交任务 绝望祷言
     .trainer >> 训练你的职业技能
     .target High Priest Rohan
@@ -2663,7 +2734,7 @@ step << Warlock
     .goto 1453/0,1015.33,-8978.9,15 >> 前往屠宰场，进入地下室
 step << Warlock
     .goto 1453/0,1029.89,-8971.06
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
     .trainer >> 训练你的职业技能
     .target 厄苏拉·德林
 step << Warlock
@@ -2713,15 +2784,16 @@ step << Rogue
 RXPGuides.RegisterGuide([[
 #xprate <1.5
 #forever
+#disabledungeons
 #season 0,1
 << Alliance !Hunter
 #group RestedXP 无限指南 (联盟)
-#subgroup 快速升级指南1-20级
+#subgroup 速通指南 1-20级
 --#groupid RXP-SRGCE-A1
-#name 11-12 艾尔文森林（矮人/侏儒）
+#name 11-12级 艾尔文森林 (矮人/侏儒)
 #version 1
 #defaultfor Gnome/Dwarf
-#next 12-14 洛克莫丹 (矮人/侏儒)
+#next 12-14级 洛克莫丹 (矮人/侏儒)
 --#era << !Warlock
 
 step << Warlock
@@ -2731,7 +2803,7 @@ step << Warlock
     +|cRXP_WARN_在前往|r 杜加尔·朗德瑞克|cRXP_WARN_ 的路上，重复施放|r |T136126:0|t[生命分流] |cRXP_FRIENDLY_直到你的生命值低于10%|r
 step
     .goto 1453/0,490.03,-8835.82
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
     .fp Stormwind >> 获取暴风城的飞行路径
     .target 杜加尔·朗德瑞克
 step << Warlock
@@ -2851,7 +2923,7 @@ step << skip
 step << skip
     .goto 1429/0,193.00,-9832.40,50,0
     .goto 1429/0,129.73,-9844.49
-    >>|cRXP_WARN_进入并探察法戈第矿洞|r
+    >>|cRXP_WARN_进入并且探察法戈第矿洞|r
     .complete 62,1 --Scout Through the Fargodeep Mine
 step << skip
     .goto 1429/0,129.73,-9844.49,25,0
@@ -3154,7 +3226,7 @@ step << Warlock
     .goto 1453/0,1015.33,-8978.9,15 >> 前往屠宰场，进入地下室
 step << Warlock
     .goto 1453/0,1029.89,-8971.06
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
     .trainer >> 训练你的职业技能
     .target 厄苏拉·德林
 step << Warlock
@@ -3375,18 +3447,17 @@ step << !Paladin
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 #season 0,1
 #version 1
 << Alliance !Hunter
 #group RestedXP 无限指南 (联盟)
-#subgroup 快速升级指南1-20级
+#subgroup 速通指南 1-20级
 --#groupid RXP-SRGCE-A1
-#name 12-14 洛克莫丹 (矮人/侏儒)
+#name 12-14级 洛克莫丹 (矮人/侏儒)
 #next 13-15级 西部荒野;14-16级 黑海岸
 #defaultfor Gnome/Dwarf
 
-step -- dont delete
-    #label LochStart
 step << Dwarf Paladin
     #optional
     #completewith next
@@ -3628,7 +3699,7 @@ step
     .waypoint 1432/0,-2684.71,-5042.87,50,0
     .waypoint 1432/0,-2712.57,-5286.61,50,0
     >>击杀 |cRXP_ENEMY_坑道鼠|r。拾取他们的 |cRXP_LOOT_耳朵|r
-    >>击杀 |cRXP_ENEMY_坑道鼠地卜师|r。拾取他们的 |cRXP_LOOT_火焰焦油|r << Shaman 
+    >>击杀 |cRXP_ENEMY_坑道鼠地卜师|r。拾取他们的 |cRXP_LOOT_火焰焦油|r << Shaman
     >>|cRXP_ENEMY_只能在矿洞内找到|r |cRXP_WARN_坑道鼠地卜师|r << Shaman
     .complete 416,1 --Collect Tunnel Rat Ear (x12)
     .mob +Tunnel Rat Scout
@@ -4091,7 +4162,7 @@ step << Dwarf Paladin
     .target 蒂萨·热炉
 step << Shaman
     .goto 1455/0,-1086.500,-4642.400
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_埃尔德伦·风暴破坏者::258098|r 对话 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_埃尔德伦·风暴破坏者::258098|r 对话
     .target Eldrun Stormbreaker::258098
     .trainer >> 训练你的职业技能
 step << Mage/Priest/Warlock
@@ -4168,9 +4239,6 @@ step << Warrior
     .trainer >> 训练你的职业技能
     .target 比尔班·飞钳
 
-step -- dont delete
-    #label LochEnd
-
 step << skip --logout skip << Warrior
     #optional
     #completewith Deeprun
@@ -4187,7 +4255,7 @@ step
     #completewith Fly2WF
     .goto 1455,67.842,42.456
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_考格斯宾|r 对话
-    .vendor 5175 >> |cRXP_BUY_如果有的话，|r|cRXP_BUY_从他那里购买|r |T133024:0|t[青铜管]
+    .vendor 5175 >> |cRXP_BUY_如果有的话，|r|cRXP_BUY_购买|r |T133024:0|t[青铜管]
 --    >>You will need 2 bronze tubes for a quest later << Rogue
     .bronzetube
     .target 考格斯宾
@@ -4292,7 +4360,7 @@ step
     #completewith Fly2WF
     .goto 1453/0,638.8,-8341.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_比利巴布·旋轮|r 对话
-    .vendor 5519 >> |cRXP_BUY_如果有的话，|r|cRXP_BUY_购买|r |T133024:0|t[青铜管]
+    .vendor 5519 >> |cRXP_BUY_如果有的话，|r|cRXP_BUY_从他那里购买|r |T133024:0|t[青铜管]
 --    >>You will need 2 bronze tubes for a quest later << Rogue
     .bronzetube
     .target 比利巴布·旋轮
@@ -4380,12 +4448,13 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 #season 0,1
 #era/som--h
 #version 1
 << Alliance Hunter
 #group RestedXP 无限指南 (联盟)
-#subgroup 快速升级指南1-20级
+#subgroup 速通指南 1-20级
 --#groupid RXP-SRGCE-A1
 #name 11-13级 洛克莫丹 (猎人)
 #next 14-16级 黑海岸
@@ -4875,12 +4944,12 @@ step
     .target Catherine Leland
 step
     .goto 1453/0,1269.100,-8540.601
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_吉尔伯特·格雷::267118|r 对话 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_吉尔伯特·格雷::267118|r 对话
     .target Gilbert Gray::267118
     .accept 95065 >>接受任务 钓鱼时间
     .turnin 95065 >>交任务 钓鱼时间
 --Hunter going Darkshore, rest Westfall
-step << Hunter
+step << Hunter skip
     #optional
     #requires DockTravel
     #label DarkshoreCook1
@@ -4894,7 +4963,7 @@ step << Hunter
     .itemcount 4470,1 --Simple Wood (1+)
     .itemcount 4471,1 --Flint and Tinder (1)
     .skill cooking,50,1 --XX Shows if cooking skill is <50
-step << Hunter
+step << Hunter skip
     #optional
     #requires DarkshoreCook1
     #label DarkshoreCook2
@@ -4908,7 +4977,7 @@ step << Hunter
     .itemcount 4470,1 --Simple Wood (1+)
     .itemcount 4471,1 --Flint and Tinder (1)
     .skill cooking,50,1 --XX Shows if cooking skill is <50
-step << Hunter
+step << Hunter skip
     #optional
     #requires DarkshoreCook2
     #label DarkshoreCook3
@@ -4922,7 +4991,7 @@ step << Hunter
     .itemcount 4470,1 --Simple Wood (1+)
     .itemcount 4471,1 --Flint and Tinder (1)
     .skill cooking,50,1 --XX Shows if cooking skill is <50
-step << Hunter
+step << Hunter skip
     #optional
     #requires DarkshoreCook3
     #label DarkshoreCook4
@@ -4937,7 +5006,7 @@ step << Hunter
     .itemcount 2672,1 --Stringy Wolf Meat (1+)
     .itemcount 4471,1 --Flint and Tinder (1)
     .skill cooking,50,1
-step << Hunter
+step << Hunter skip
     #optional
     #requires DarkshoreCook4
     #label DarkshoreCook5
@@ -4950,7 +5019,7 @@ step << Hunter
     .itemcount 2672,1 --Stringy Wolf Meat (1)
     .itemcount 4471,1 --Flint and Tinder (1)
     .skill cooking,50,1
-step << Hunter
+step << Hunter skip
     #optional
     #requires DarkshoreCook5
     #label DarkshoreCook6

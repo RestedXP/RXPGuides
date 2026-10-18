@@ -5,15 +5,15 @@ if faction == "Alliance" then return end
 
 RXPGuides.RegisterGuide([[
 #forever
-#era/som--h
+#disabledungeons
 << Horde
-#name 1-6 莫高雷
+#name 1-6级 莫高雷
 #version 11
 #group RestedXP 无限指南 (部落)
-#subgroup 快速升级指南1-22级
+#subgroup 速通指南 1-22级
 --#groupid RXP-SRGCE-H1
 #defaultfor Tauren
-#next 6-12级 莫高雷;6-13 Mulgore
+#next 6-12级 莫高雷;6-13级 莫高雷
 
 step << !Tauren
     #completewith next
@@ -108,6 +108,13 @@ step
     .target 鹰风酋长
 step << Shaman
     .goto 1412/1,-216.18,-2926.26--c:Mulgore,44.07,77.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marjak|r (NOT TRANSLATED IN :zhCN YET)
+    .vendor >> Vendor trash. Sell your weapon if it gives you enough money for a |T135139:0|t[Short Staff] (1s 02c). You'll come back later if you don't have enough yet (NOT TRANSLATED IN :zhCN YET)
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<1.9
+    .target 马沙克·利刃
+step << Shaman
+    .goto 1412/1,-216.18,-2926.26--c:Mulgore,44.07,77.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_马沙克·利刃|r |cRXP_BUY_对话。|r |cRXP_BUY_从他那里购买一把|r |T135139:0|t[学徒法杖]
     .collect 2132,1,750,1 --Collect Short Staff (1)
     .money <0.0102
@@ -122,6 +129,20 @@ step << Shaman
     .itemcount 2132,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<1.9
+step
+    #completewith next
+    >>击杀 |cRXP_ENEMY_山狮|r。拾取他们的 |cRXP_LOOT_毛皮|r
+    .complete 750,1 --Mountain Cougar Pelt (10)
+    .mob 山狮
+step
+    #label RitesoftheEarthmother
+    .goto 1412/1,-139.63,-3430.08--c:Mulgore,42.58,92.18
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_灰舌先知|r 对话
+    >>|cRXP_WARN_这将开启一个 10 分钟的限时任务|r
+    .turnin 755 >>交任务 大地母亲的仪式
+    .accept 757 >>接受任务 力量仪祭
+    .accept 95805 >>接受任务 安瑟与穆莎的恩典
+    .target 灰舌先知
 step
     #loop
     .goto 1412/1,-243.41,-3384.87,0--c:Mulgore,44.60,90.86
@@ -139,15 +160,6 @@ step
     >>击杀 |cRXP_ENEMY_山狮|r。拾取他们的 |cRXP_LOOT_毛皮|r
     .complete 750,1 --Mountain Cougar Pelt (10)
     .mob 山狮
-step
-    #label RitesoftheEarthmother
-    .goto 1412/1,-139.63,-3430.08--c:Mulgore,42.58,92.18
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_灰舌先知|r 对话
-    >>|cRXP_WARN_这将开启一个 10 分钟的限时任务|r
-    .turnin 755 >>交任务 大地母亲的仪式
-    .accept 757 >>接受任务 力量仪祭
-    .accept 95805 >>接受任务 安瑟与穆莎的恩典
-    .target 灰舌先知
 step
     #loop
 	.goto 1412/1,-292.73,-3285.20,40,0--c:Mulgore,45.56,87.95
@@ -234,6 +246,13 @@ step << Shaman
     .turnin 3093 >>交任务 符文便笺
     .train 8042 >>影袭 |T136026:0|t[大地震击]
     .target 米拉·晨行者
+step << Druid
+    .goto 1412/1,-279.37,-2893.73--c:Mulgore,45.30,76.52
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡文尼·柔风|r 对话
+    >>|cRXP_BUY_从她那里|r|cRXP_BUY_购买|r |T132794:0|t[清凉的泉水]
+	.collect 159,5,383,1 --Collect Refreshing Spring Water (10)
+    .target 卡文尼·柔风
+    .money <0.0025
 step
     #completewith next
     >>击杀 |cRXP_ENEMY_斗猪|r。拾取他们的 |cRXP_LOOT_肋排|r 和 |cRXP_LOOT_头|r
@@ -361,7 +380,7 @@ step
     .target 卫兵维萨罗·风羽
 step
     .goto 1412/1,-279.37,-2893.73--c:Mulgore,45.30,76.52
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡文尼·柔风|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kawnie Softbreeze|r (NOT TRANSLATED IN :zhCN YET)
     .vendor >> 把垃圾物品卖给商人
     .target 卡文尼·柔风
 step
@@ -437,7 +456,7 @@ step << Warrior
     .goto 1412/1,-213.61,-2880.71--c:Mulgore,44.02,76.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哈鲁特·雷角|r 对话
     .train 3127 >>学习 |T132269:0|t[招架]
-    .train 6343 >>训练|T136105:0|t|T136105:0|t[雷霆一击]
+    .train 6343 >>学习 |T136105:0|t[雷霆一击]
     .target 哈鲁特·雷角
     .money <0.02
 step << Warrior
@@ -456,12 +475,12 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
-#era/som--h
+#disabledungeons
 << Horde
 #name 6-12级 莫高雷
 #version 11
 #group RestedXP 无限指南 (部落)
-#subgroup 快速升级指南1-22级
+#subgroup 速通指南 1-22级
 --#groupid RXP-SRGCE-H1
 #defaultfor Tauren
 #next 12-17级 贫瘠之地
@@ -500,13 +519,13 @@ step
 step
     #softcore
     .goto 1412/1,-408.900,-2179.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雅文·刺鬃|r 对话 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雅文·刺鬃|r 对话
     .accept 96130 >>接受任务 查库亚克
     .target 雅文·刺鬃
 step
     #softcore
     .goto 1412/1,-430.600,-2097.600
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_阿哈布·麦蹄|r对话 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_阿哈布·麦蹄|r对话
     .accept 99411 >>接受任务 凯雷失踪了！
     .target 阿哈布·麦蹄
 step
@@ -629,13 +648,13 @@ step
 step
     #hardcore
     .goto 1412/1,-408.900,-2179.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雅文·刺鬃|r 对话 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雅文·刺鬃|r 对话
     .accept 96130 >>接受任务 查库亚克
     .target 雅文·刺鬃
 step
     #hardcore
     .goto 1412/1,-430.600,-2097.600
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_阿哈布·麦蹄|r对话 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_阿哈布·麦蹄|r对话
     .accept 99411 >>接受任务 凯雷失踪了！
     .target 阿哈布·麦蹄
 step
@@ -645,7 +664,7 @@ step
     .target 哈肯·风之图腾
 step
     .goto 1412/1,-496.200,-2347.900
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_克朗·石蹄|r 对话 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_克朗·石蹄|r 对话
     .accept 99108 >>接受任务 练习赛
     .target 克朗·石蹄
 step
@@ -912,6 +931,7 @@ step
     .train 2550 >>学习烹饪
     .turnin 96661 >>交任务 露营基础：烹饪
     .target Pyall Silentstride
+    .money <0.01
 step
     #label Vision
     .goto 1412/1,-405.75,-2243.32--c:Mulgore,47.76,57.53
@@ -922,7 +942,7 @@ step
     .target 扎尔曼·双月
 step
     .goto 1412/1,-430.600,-2097.600
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_阿哈布·麦蹄|r对话 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_阿哈布·麦蹄|r对话
     .turnin 99411 >>交任务 凯雷失踪了！
     .target 阿哈布·麦蹄
     .isQuestComplete 99411
@@ -1009,6 +1029,38 @@ step << Tauren
     .mob +草原捕食者
     .complete 756,2 --Cougar Claws (6)
     .mob 平原狮
+step
+    #softcore
+	#completewith Escort1
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+step << Hunter
+    #softcore
+    .goto 1412/1,-408.32,-2180.30--c:Mulgore,47.81,55.69
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雅文|r 对话
+    .train 5116 >> 训练你的职业技能
+    .target 雅文·刺鬃
+    .xp <8,1
+step << Druid
+    #softcore
+    .goto 1412/1,-442.74,-2315.59--c:Mulgore,48.48,59.64
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_根妮亚|r 对话
+    .train 5186 >>训练你的职业技能
+    .target 根妮亚·符文图腾
+    .xp <8,1
+step << Warrior
+    #softcore
+    .goto 1412/1,-496.17,-2347.78--c:Mulgore,49.52,60.58
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_克朗|r 对话
+    .train 284 >> 训练你的职业技能
+    .target 克朗·石蹄
+    .xp <8,1
+step << Shaman
+    #softcore
+    .goto 1412/1,-437.61,-2298.80--c:Mulgore,48.38,59.15
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_纳姆|r 对话
+    .train 8044 >> 训练你的职业技能
+    .target 纳姆·逐星
+    .xp <8,1
 step
     .goto 1412/1,54.800,-2442.200
     >>击杀|cRXP_ENEMY_查库亚克|r。拾取他的 |cRXP_LOOT_查库亚克的皮|r
@@ -1172,6 +1224,12 @@ step
     .vendor >> 出售垃圾物品并修理装备
     .target 哈兰特·铁枝
 step
+    .goto 1412/1,-285.000,-2263.400
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pyall|r (NOT TRANSLATED IN :zhCN YET)
+    .train 2550 >>学习烹饪
+    .turnin 96661 >>Turn in Camping 101: Cooking (NOT TRANSLATED IN :zhCN YET)
+    .target Pyall Silentstride
+step
     .goto 1412/1,-392.500,-2318.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卫兵萨拉莫尼·野蹄|r 对话
     >>|cRXP_WARN_他会在周围巡逻|r
@@ -1251,7 +1309,7 @@ step
     .unitscan 疯狂的凯雷
 step
     .goto 1412/1,-430.600,-2097.600
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_阿哈布·麦蹄|r对话 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_阿哈布·麦蹄|r对话
     .turnin 99411 >>交任务 凯雷失踪了！
     .target 阿哈布·麦蹄
 step
@@ -1318,7 +1376,7 @@ step
 step
     .goto 1456/1,104.500,-1308.400
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_巴通·阴影图腾| 对话
-    >>|cRXP_WARN_他处于|r |T132320:0|t[潜行] 状态 
+    >>|cRXP_WARN_他处于|r |T132320:0|t[潜行] 状态
     .accept 76156 >>接受任务 大地母亲与匿同在
     .target Boarton Shadetotem
 step
@@ -1542,7 +1600,7 @@ step
     #sofcore
     #completewith Bloodhoofturnins1
     .goto 1412/1,-598.900,-1603.700
-    .deathskip >> Die at the waypoint arrow (or further south of it) and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
+    .deathskip >> 在位点箭头位置（或者更南边一点）死掉，然后在 |cRXP_FRIENDLY_灵魂医者|r 那里复活
 step
     #hardcore
     #completewith Bloodhoofturnins1
@@ -1887,12 +1945,12 @@ step
     .turnin 765 >>交任务 菲兹普罗克主管
     .turnin 98424 >>交任务 菲兹普罗克的笔记板
 	.unitscan 摩林·云行者
-step << skip -- Tauren
+step << Tauren
     #softcore
 	#completewith Thunderhorn2
     .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
 step << Tauren
-    --#hardcore
+    #hardcore
     #completewith Thunderhorn2
     .subzone 222 >>前往血蹄村
 step
@@ -1921,7 +1979,7 @@ step << Druid
 step
     .goto 1456/1,104.500,-1308.400
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_巴通·阴影图腾|r 对话
-    >>|cRXP_WARN_他处于|r |T132320:0|t[潜行] 状态 
+    >>|cRXP_WARN_他处于|r |T132320:0|t[潜行] 状态
     .turnin 76156 >>交任务 大地母亲与匿同在
     .accept 76160 >>接受任务 大地母亲与匿同在
     .target Boarton Shadetotem
@@ -2246,7 +2304,7 @@ step
     #label Fish
     #requires Kah
     .goto Thunder Bluff,40.42,58.55
-    >>在池塘里钓鱼，直到获得一条|T133894:0|t|T133894:0|t[|cRXP_LOOT_新鲜的美味小鱼|r]
+    >>在池塘里钓鱼，直到获得一条|T133894:0|t[|cRXP_LOOT_新鲜的美味小鱼|r]
     .collect 6291,1,76240,1 --Raw Brilliant Smallfish (1)
 step
     >>|cRXP_WARN_使用|r |T132147:0|t[一套匕首] |cRXP_WARN_来制造|r |T134007:0|t[鱼块]

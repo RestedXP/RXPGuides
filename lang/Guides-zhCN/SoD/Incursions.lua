@@ -3,7 +3,7 @@ RXPGuides.RegisterGuide([[
 #classic
 #season 2
 #group RestedXP 梦魇进犯日常任务
-#name (25-32) 暮色森林梦魇进犯
+#name (25-32级) 暮色森林梦魇进犯
 
 step
     #optional
@@ -347,7 +347,7 @@ RXPGuides.RegisterGuide([[
 #classic
 #season 2
 #group RestedXP 梦魇进犯日常任务
-#name (40-49) 灰谷梦魇进犯
+#name (40-49级) 灰谷梦魇进犯
 
 step
     #optional
@@ -760,7 +760,7 @@ RXPGuides.RegisterGuide([[
 #classic
 #season 2
 #group RestedXP 梦魇进犯日常任务
-#name (50-53) 辛特兰梦魇进犯
+#name (50-53级) 辛特兰梦魇进犯
 
 
 step
@@ -1119,7 +1119,7 @@ RXPGuides.RegisterGuide([[
 #classic
 #season 2
 #group RestedXP 梦魇进犯日常任务
-#name (50-53) 菲拉斯梦魇进犯
+#name (50-53级) 菲拉斯梦魇进犯
 
 step
     #ah
