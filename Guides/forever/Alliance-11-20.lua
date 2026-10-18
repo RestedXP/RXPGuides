@@ -4770,7 +4770,7 @@ step << !Hunter
     #label DarkshoreRRCook1
     #requires TravelMenethilRRBoat
     #completewith MenethilRRBoat
-    >>|cRXP_WARN_On the Boat if it just arrived or on the dock if the boat just left:|r
+    >>|cRXP_WARN_While waiting for the Boat on the dock:|r
     .cast 818 >>|cRXP_WARN_Create a|r |T135805:0|t[Basic Campfire] |cRXP_WARN_(under the General Tab of your Spellbook)|r
     .usespell 818
     .zoneskip Loch Modan
