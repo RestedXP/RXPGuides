@@ -1945,12 +1945,12 @@ step
     .turnin 765 >>Turn in Supervisor Fizsprocket
     .turnin 98424 >>Turn in Fizsprocket's Notes
 	.unitscan Morin Cloudstalker
-step << Tauren
+step << skip -- Tauren
     #softcore
 	#completewith Thunderhorn2
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
 step << Tauren
-    #hardcore
+    --#hardcore
     #completewith Thunderhorn2
     .subzone 222 >>Travel to Bloodhoof Village
 step

@@ -3150,7 +3150,7 @@ step << Shaman
     .turnin 1524 >>Turn in Call of Fire
     .accept 1525 >>Accept Call of Fire
     .target Telf Joolam
-step << Shaman
+step << skip --Shaman
     #completewith MargozTurnIn
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
 step << Shaman
@@ -3255,7 +3255,7 @@ step
     .mob +Dustwind Storm Witch
     .collect 277661,1,97281 --Dull Storm Orb (x1)
     .accept 97281 >>Accept A Simmering Storm
-step
+step << skip
     #softcore
     #completewith SecuringLinesTurnIn
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
@@ -3309,7 +3309,7 @@ step
     .complete 97282,1 --|5/5 Charged Thunder Lizard Organ
     .mob Lightning Hide
     .mob Charged Thunder Lizard Organ
-step
+step << skip
     #softcore
     #completewith next
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
@@ -3617,33 +3617,33 @@ step
     .accept 809 >>Accept Ak'Zeloth
     .target Neeru Fireblade
     .isQuestTurnedIn 827
-step << !Shaman !Hunter
+step << skip --!Shaman !Hunter
     #softcore
     #completewith ZeptoUC1
     .goto 1454/1,-4424.40,1817.58
     .subzone 2437 >> Enter Ragefire Chasm
-step << !Shaman !Hunter
+step << skip --!Shaman !Hunter
     #softcore
     #completewith ZeptoUC1
     .goto 1411/1,-4450.27,1188.64
     .deathskip >> Die and Respawn at the |cRXP_FRIENDLY_Spirit Healer|r
 step << !Shaman !Hunter
-    #hardcore
+    --#hardcore
     #completewith ZeptoUC1
     .zone Durotar >> Leave Orgrimmar
     .zoneskip Durotar
-step << Shaman/Hunter
+step << skip --Shaman/Hunter
     #softcore
     #completewith FoundtheCure
     .goto 1454/1,-4424.40,1817.58
     .subzone 2437 >> Enter Ragefire Chasm
-step << Shaman/Hunter
+step << skip --Shaman/Hunter
     #softcore
     #completewith FoundtheCure
     .goto 1411/1,-4450.27,1188.64
     .deathskip >> Die and Respawn at the |cRXP_FRIENDLY_Spirit Healer|r
 step << Shaman/Hunter
-    #hardcore
+    --#hardcore
     #completewith FoundtheCure
     .zone Durotar >> Leave Orgrimmar
     .zoneskip Durotar
