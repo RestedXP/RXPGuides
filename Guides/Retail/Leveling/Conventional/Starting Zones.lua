@@ -1810,7 +1810,10 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 4
 #group RestedXP Speed Leveling
-#name a) No House Skip 
+#name a) No House Skip
+#displayname No House Skip
+#next RestedXP Speed Leveling\ba) DF Alliance Intro Midnight (A) << Alliance
+#next RestedXP Speed Leveling\b1) BfA Intro << Horde
 #chapter
 
 step
@@ -1824,18 +1827,21 @@ step
     .choose 5403
     .zoneskip 2352
 step
+    #hidewindow
+    .countdown 1 >>here
+step
     .goto 2352,57.44,26.64
     .zoneskip 2352,1
     .zone 84 >>Click on the |cRXP_PICK_Portal|r
-    .skipto guide,RestedXP Speed Leveling\ba) DF Alliance Intro Midnight (A) << Alliance
-    .skipto guide,RestedXP Speed Leveling\b1) BfA Intro << Horde
+    -- .skipto guide,RestedXP Speed Leveling\ba) DF Alliance Intro Midnight (A) << Alliance
+    -- .skipto guide,RestedXP Speed Leveling\b1) BfA Intro << Horde
     .zoneskip 85
 step
     .goto 2351,53.93,49.4
     .zoneskip 2351,1
     .zone 85 >>Click on the |cRXP_PICK_Portal|r
-    .skipto guide,RestedXP Speed Leveling\ba) DF Alliance Intro Midnight (A) << Alliance
-    .skipto guide,RestedXP Speed Leveling\b1) BfA Intro << Horde
+    -- .skipto guide,RestedXP Speed Leveling\ba) DF Alliance Intro Midnight (A) << Alliance
+    -- .skipto guide,RestedXP Speed Leveling\b1) BfA Intro << Horde
     .zoneskip 84
 ]])
 --Death Knight Plaguelands: The Scarlet Enclave
@@ -16870,7 +16876,7 @@ RXPGuides.RegisterGuide([[
 #name ac) Night Elf Teldrassil
 #displayname |cFF1EFF002|r - Teldrassil
 #defaultfor NightElf !DemonHunter !DK
-#next RestedXP Speed Leveling\a) DF Alliance Intro Midnight (A)
+#next RestedXP Speed Leveling\ba) DF Alliance Intro Midnight (A)
 
 << Alliance
 
