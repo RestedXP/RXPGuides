@@ -220,7 +220,7 @@ step << Alliance Rogue/Alliance Warrior
     .isNotOnQuest 93552 -- Harvesting Windstones
     .subzoneskip 16635,1 -- Thendal Village
     .isOnQuest 92464 -- Elemental Unrest
-    .goto 2521,43.37,23.99
+    .goto 2521,43.42,23.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Destin Thriceforged::251364|r.
     .collect 2131,1 >>Buy and equip a |T135274:0|t[Shortsword] << Rogue
     .collect 1194,1 >>Buy and equip a |T135276:0|t[Bastard Sword] << Warrior
@@ -976,7 +976,34 @@ step
 step
     #completewith SkybornePart1End
     #hidewindow
-    +Windstones
+    +Tornado Spawn Location
+    #icon |TInterface/Icons/Spell_Nature_Cyclone:0|t
+    .pin 2521,62.15,70.42,Tornado
+    .pin 2521,52.5,79,Tornado
+    .pin 2521,54.36,72.97,Tornado
+    .pin 2521,62.52,73.74,Tornado
+    .pin 2521,42.85,41.26,Tornado
+    .pin 2521,58.8,74.36,Tornado
+    .pin 2521,64.84,67.52,Tornado
+    .pin 2521,52.41,70.33,Tornado
+    .pin 2521,43.74,59.77,Tornado
+    .pin 2521,54.22,64.13,Tornado
+    .pin 2521,64.44,79.62,Tornado
+    .pin 2521,58.77,50.45,Tornado
+    .pin 2521,57.28,70.5,Tornado
+    .pin 2521,68.16,74.89,Tornado
+    .pin 2521,60.94,73.58,Tornado
+    .pin 2521,48.36,80.52,Tornado
+    .pin 2521,58.40,47.31,Tornado
+    .pin 2521,58.78,50.39,Tornado
+    .pin 2521,41.45,54.37,Tornado
+    .pin 2521,37.25,46.84,Tornado
+    .pin 2521,40.43,46.88,Tornado
+    .pin 2521,46.58,38.35,Tornado
+    .pin 2521,43.16,65.06,Tornado
+    .pin 2521,60.44,66.16,Tornado
+    .pin 2521,61.06,73.57,Tornado
+    .pin 2521,58.04,44.13,Tornado
     .use 255663 --Windstones
 step
     #optional
@@ -3180,6 +3207,38 @@ step
     .clicknext RestedXP Forever Guide (A)\1-9 Zephras Isle >>CLICK HERE FOR THE 1-9 SKYBORNE GUIDE << Alliance
     .clicknext RestedXP Forever Guide (H)\1-9 Zephras Isle >>CLICK HERE FOR THE 1-9 SKYBORNE GUIDE << Horde
 step
+    #completewith LeaveZephrasIsle
+    #hidewindow
+    +Tornado Spawn Location
+    #icon |TInterface/Icons/Spell_Nature_Cyclone:0|t
+    .pin 2521,62.15,70.42,Tornado
+    .pin 2521,52.5,79,Tornado
+    .pin 2521,54.36,72.97,Tornado
+    .pin 2521,62.52,73.74,Tornado
+    .pin 2521,42.85,41.26,Tornado
+    .pin 2521,58.8,74.36,Tornado
+    .pin 2521,64.84,67.52,Tornado
+    .pin 2521,52.41,70.33,Tornado
+    .pin 2521,43.74,59.77,Tornado
+    .pin 2521,54.22,64.13,Tornado
+    .pin 2521,64.44,79.62,Tornado
+    .pin 2521,58.77,50.45,Tornado
+    .pin 2521,57.28,70.5,Tornado
+    .pin 2521,68.16,74.89,Tornado
+    .pin 2521,60.94,73.58,Tornado
+    .pin 2521,48.36,80.52,Tornado
+    .pin 2521,58.40,47.31,Tornado
+    .pin 2521,58.78,50.39,Tornado
+    .pin 2521,41.45,54.37,Tornado
+    .pin 2521,37.25,46.84,Tornado
+    .pin 2521,40.43,46.88,Tornado
+    .pin 2521,46.58,38.35,Tornado
+    .pin 2521,43.16,65.06,Tornado
+    .pin 2521,60.44,66.16,Tornado
+    .pin 2521,61.06,73.57,Tornado
+    .pin 2521,58.04,44.13,Tornado
+    .use 255663 --Windstones
+step
     .goto 2521,45.67,45.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Constable Aonda::251523|r.
     .accept 92701 >>Accept To Valanaar << Alliance
@@ -3367,15 +3426,6 @@ step << Alliance
     .accept 93317 >>Accept Crab Season
     .skipgossipid 96031
     .skipgossipid 98031
--- step --probably delete
---     .isOnQuest 93948 -- Deliver the Signet
---     .train 2550,3 -- Cooking Trained
---     .itemcount 6889,1 -- Small Egg
---     .itemcount 2678,1 -- Mild Spices
---     .goto 2521,60.640,72.664
---     +Use the |T132834:0|t[Herb Baked Egg] macro below to craft as many as possible.
---     *|cRXP_WARN_Most buff food grants 5% increased experience from kills for 15 minutes. Try to maintain a high uptime on this buff while leveling|r.
---     .macro Herb Baked Egg,132834 >>/cast Cooking\n/run local count=C_Item.GetItemCount(6889);if count and count > 0 then C_TradeSkillUI.CraftRecipe(8604,count) end
 step
     .isOnQuest 93948 -- Deliver the Signet
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Donaal Downbreeze::255940|r.
@@ -4590,34 +4640,34 @@ step << Horde Hunter
 -- Level 10+ Deathskip Version
 -- ============================================================================
 
-step << Alliance
-    .isOnQuest 92840 -- Catching Wind
-    .subzoneskip 16638,1 -- Shen'dar Village
-    .goto 2521,67.41,80.46
-    .subzone 16626 >>Jump off the cliff
-step << Alliance
-    #ignorecorpse
-    .subzoneskip 16626,1 -- Gustberry Lowlands
-    .isOnQuest 92840 -- Catching Wind
-    .showwhiledead
-    .goto 2521,54.99,68.14
-    .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Spirit Healer::6491|r.
-    .skipgossipid 96031
-    .skipgossipid 98031
-    .target Spirit Healer::6491
--- step << Alliance !Hunter
---     #completewith Protect the Index
---     >>Kill |cRXP_ENEMY_Windsong Crawlers::254588|r. Loot them for |T133972:0|t[|cRXP_LOOT_Windsong Crawler Meat|r].
---     .complete 93317,1 --6/6 Windsong Crawler Meat
---     .mob Windsong Crawler::254588
---     .skipgossipid 98031
+-- step << Alliance
+--     .isOnQuest 92840 -- Catching Wind
+--     .subzoneskip 16638,1 -- Shen'dar Village
+--     .goto 2521,67.41,80.46
+--     .subzone 16626 >>Jump off the cliff
+-- step << Alliance
+--     #ignorecorpse
+--     .subzoneskip 16626,1 -- Gustberry Lowlands
+--     .isOnQuest 92840 -- Catching Wind
+--     .showwhiledead
+--     .goto 2521,54.99,68.14
+--     .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Spirit Healer::6491|r.
 --     .skipgossipid 96031
+--     .skipgossipid 98031
+--     .target Spirit Healer::6491
+step << Alliance !Hunter
+    #completewith Protect the Index
+    >>Kill |cRXP_ENEMY_Windsong Crawlers::254588|r. Loot them for |T133972:0|t[|cRXP_LOOT_Windsong Crawler Meat|r].
+    .complete 93317,1 --6/6 Windsong Crawler Meat
+    .mob Windsong Crawler::254588
+    .skipgossipid 98031
+    .skipgossipid 96031
 step << Alliance Hunter
     #completewith Protect the Index
     .goto 2521,51.56,71.28,40,0
     .goto 2521,50.94,69.46,40,0
     .use 267272 >> |cRXP_WARN_Use your|r |T132164:0|t[Taming Rod] |cRXP_WARN_on a|r |cRXP_ENEMY_Windsong Crawler::254588|r |cRXP_WARN_at max range|r.
-    *|cRXP_WARN_Be careful while Resurrection Sickness is active|r.
+    -- *|cRXP_WARN_Be careful while Resurrection Sickness is active|r.
     .complete 94978,1 --Tame a Windsong Crawler
     .mob Windsong Crawler::254588
 step << Alliance
@@ -4665,7 +4715,8 @@ step << Alliance
     .goto 2521,49.46,70.12,30,0
     .goto 2521,52.35,70.23
     .cast 1259416 >>Jump off the mountain and use |T132845:0|t[Walk on Air] to fly towards the waypoint location.
-    *|cRXP_WARN_Be careful of the enemies near the edge. If you die, accept Resurrection Sickness|r.
+    -- *|cRXP_WARN_Be careful of the enemies near the edge. If you die, accept Resurrection Sickness|r.
+    *|cRXP_WARN_Be careful of the enemies near the edge|r.
     .usespell 1259416
 step << Alliance Hunter
     .isOnQuest 94978 -- Taming the Beast
@@ -5318,54 +5369,29 @@ step << Alliance
 -- ============================================================================
 -- Level 10+ Non Deathskip Version
 -- ============================================================================
-
--- step << Alliance Paladin/Alliance Priest/Alliance Warlock/Alliance Mage/Alliance Rogue
---     #optional
---     #completewith Al'Aketh Assassins Equip Reminder
---     +|cRXP_WARN_Equip the|r |T7792097:0|t[Honed Greathammer] << Paladin
---     +|cRXP_WARN_Equip the|r |T7798447:0|t[Balanced Quarterstaff] << Priest/Warlock/Mage
---     +|cRXP_WARN_Equip the|r |TInterface/Icons/inv_knife_1h_skybornec60_b_01:0|t[Quickblade's Dagger] |cRXP_WARN_in your off-hand|r. << Rogue
---     .use 257345 << Paladin -- Honed Greathammer
---     .use 257343 << Priest/Warlock/Mage -- Balanced Quarterstaff
---     .use 257346 << Rogue -- Quickblade's Dagger
--- step << Alliance
---     .subzoneskip 16638,1 -- Valanaar
---     .isQuestAvailable 98512 -- Al'Aketh Assassins
---     .isNotOnQuest 98512 -- Al'Aketh Assassins
---     .cooldown spell,1259416,>0,1 -- Walk on Air
---     .goto 2521,66.47,76.61,8,0
---     .goto 2521,66.31,76.18,15,0
---     .goto 2521,63.14,76.9
---     .cast 1259416 >>Jump off the mountain and use |T132845:0|t[Walk on Air] to fly towards the questgiver.
---     .usespell 1259416
--- step << Alliance
---     .subzoneskip 16638,1 -- Valanaar
---     .isQuestAvailable 98512 -- Al'Aketh Assassins
---     .isNotOnQuest 98512 -- Al'Aketh Assassins
---     .goto 2521,63.14,76.9,20,0
---     .goto 2521,62.9,77.44,10,0
---     .goto 2521,63.96,74.15
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Belann Windwood::256507|r inside the house.
---     .vendor 256507 >>Vendor trash and repair if needed
---     *Don't sell |T133970:0|t[Stringy Meat], |T132832:0|t[Small Eggs], or |T133972:0|t[Strider Meat].
---     *|cRXP_WARN_We need them for Cooking later|r.
---     .target Belann Windwood::256507
---     .skipgossipid 137530
--- step << Alliance
---     .subzoneskip 16638,1 -- Valanaar
---     .isQuestAvailable 98512 -- Al'Aketh Assassins
---     .isNotOnQuest 98512 -- Al'Aketh Assassins
---     .cooldown spell,1259705,>0,1 -- Read Ley Line
---     .goto 2521,63.96,74.15
---     .cast 1259705 >>Use |T236219:0|t[Read Ley Line] for 100% increased passive Mana and Health regeneration.
---     .usespell 1259705
-
-
--- ============================================================================
--- Level 10+ Deathskip Version
--- ============================================================================
-
-
+step << Alliance
+    .subzoneskip 16638,1 -- Valanaar
+    .isQuestAvailable 98512 -- Al'Aketh Assassins
+    .isNotOnQuest 98512 -- Al'Aketh Assassins
+    .cooldown spell,1259416,>0,1 -- Walk on Air
+    .goto 2521,66.47,76.61,8,0
+    .goto 2521,66.31,76.18,15,0
+    .goto 2521,63.14,76.9
+    .cast 1259416 >>Jump off the mountain and use |T132845:0|t[Walk on Air] to fly towards the waypoint location.
+    .usespell 1259416
+step << Alliance
+    .subzoneskip 16638,1 -- Valanaar
+    .isQuestAvailable 98512 -- Al'Aketh Assassins
+    .isNotOnQuest 98512 -- Al'Aketh Assassins
+    .goto 2521,63.14,76.9,20,0
+    .goto 2521,62.9,77.44,10,0
+    .goto 2521,63.96,74.15
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Belann Windwood::256507|r inside the house.
+    .vendor 256507 >>Vendor trash and repair if needed
+    *Don't sell |T133970:0|t[Stringy Meat], |T132832:0|t[Small Eggs], or |T133972:0|t[Strider Meat].
+    *|cRXP_WARN_We need them for Cooking later|r.
+    .target Belann Windwood::256507
+    .skipgossipid 137530
 step << Hunter Alliance
     .xp <9,1
     .money <0.1345
@@ -5435,6 +5461,90 @@ step << Rogue Alliance
     .itemcount 277107,1 --Zephrali Bludgeon
     +|cRXP_WARN_Equip the|r |T7791298:0|t[|cRXP_LOOT_Zephrali Bludgeon|r].
     .use 277107 --Zephrali Bludgeon
+-- step << Alliance
+--     .subzoneskip 16638,1 -- Valanaar
+--     .isQuestAvailable 98512 -- Al'Aketh Assassins
+--     .isNotOnQuest 98512 -- Al'Aketh Assassins
+--     .cooldown spell,1259705,>0,1 -- Read Ley Line
+--     .goto 2521,63.96,74.15
+--     .cast 1259705 >>Use |T236219:0|t[Read Ley Line] for 100% increased passive Mana and Health regeneration.
+--     .usespell 1259705
+
+
+-- ============================================================================
+-- Level 10+ Deathskip Version
+-- ============================================================================
+
+
+-- step << Hunter
+--     .xp <9,1
+--     .money <0.1345
+--     .isNotOnQuest 92679 -- Blood Tithe
+--     .isQuestAvailable 92679 -- Blood Tithe
+--     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.82
+--     .goto 2521,59.395,75.730
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falfaan Halfwind::271465|r inside the house.
+--     >>|cRXP_BUY_Buy and equip a|r |T7810733:0|t[Zephrali Bow]
+--     .collect 277110,1 --Collect Zephrali Bow
+--     .vendor 271465 >>Vendor trash and repair if needed
+--     *Don't sell |T133970:0|t[Stringy Meat], |T132832:0|t[Small Eggs], or |T133972:0|t[Strider Meat]. << Alliance
+--     *Don't sell |T132832:0|t[Small Eggs] and |T133972:0|t[Strider Meat]. << Horde
+--     *|cRXP_WARN_We need them for Cooking later|r.
+--     .skipgossipid 141556
+--     .target Falfaan Halfwind::271465
+-- step << Hunter
+--     #optional
+--     #completewith secluded house
+--     .xp <9,1
+--     .itemcount 277110,1 --Zephrali Bow
+--     +|cRXP_WARN_Equip the|r |T7810733:0|t[|cRXP_LOOT_Zephrali Bow|r].
+--     .use 277110 --Zephrali Bow
+-- step << Warrior/Paladin/Shaman/Druid
+--     .xp <9,1
+--     .money <0.2151
+--     .isNotOnQuest 92679 --Blood Tithe
+--     .isQuestAvailable 92679 --Blood Tithe
+--     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.28
+--     .goto 2521,59.395,75.730
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falfaan Halfwind::271465|r inside the house.
+--     >>|cRXP_BUY_Buy and equip a|r |T7792097:0|t[Zephrali Smasher].
+--     .collect 277106,1 --Zephrali Smasher
+--     .vendor 271465 >>Vendor trash and repair if needed.
+--     *Don't sell |T133970:0|t[Stringy Meat], |T132832:0|t[Small Eggs], or |T133972:0|t[Strider Meat]. << Alliance
+--     *Don't sell |T132832:0|t[Small Eggs] and |T133972:0|t[Strider Meat]. << Horde
+--     *|cRXP_WARN_We need them for Cooking later|r.
+--     .skipgossipid 141556
+--     .target Falfaan Halfwind::271465
+-- step << Warrior/Paladin/Shaman/Druid
+--     #optional
+--     #completewith secluded house
+--     .xp <9,1
+--     .itemcount 277106,1 --Zephrali Smasher
+--     +|cRXP_WARN_Equip the|r |T7792097:0|t[|cRXP_LOOT_Zephrali Smasher|r].
+--     .use 277106 --Zephrali Smasher
+-- step << Rogue
+--     .xp <9,1
+--     .money <0.1727
+--     .isNotOnQuest 92679 --Blood Tithe
+--     .isQuestAvailable 92679 --Blood Tithe
+--     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.35
+--     .goto 2521,59.395,75.730
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falfaan Halfwind::271465|r inside the house.
+--     >>|cRXP_BUY_Buy and equip a|r |T7791298:0|t[Zephrali Bludgeon].
+--     .collect 277107,1 --Zephrali Bludgeon
+--     .vendor 271465 >>Vendor trash and repair if needed.
+--     *Don't sell |T133970:0|t[Stringy Meat], |T132832:0|t[Small Eggs], or |T133972:0|t[Strider Meat]. << Alliance
+--     *Don't sell |T132832:0|t[Small Eggs] and |T133972:0|t[Strider Meat]. << Horde
+--     *|cRXP_WARN_We need them for Cooking later|r.
+--     .skipgossipid 141556
+--     .target Falfaan Halfwind::271465
+-- step << Rogue
+--     #optional
+--     #completewith secluded house
+--     .xp <9,1
+--     .itemcount 277107,1 --Zephrali Bludgeon
+--     +|cRXP_WARN_Equip the|r |T7791298:0|t[|cRXP_LOOT_Zephrali Bludgeon|r].
+--     .use 277107 --Zephrali Bludgeon
 -- step << Mage/Priest/Warlock
 --     .xp <9,1
 --     .money <0.1734
@@ -5451,39 +5561,41 @@ step << Rogue Alliance
 --     *|cRXP_WARN_We need them for Cooking later|r.
 --     .skipgossipid 141556
 --     .target Falfaan Halfwind::271465
-step << Alliance
-    .isNotOnQuest 98512 --Al'Aketh Assassins
-    .isQuestAvailable 98512 --Al'Aketh Assassins
-    .goto 2521,66.49,76.65,8,0
-    .goto 2521,68.84,78.42,-1
-    .goto 2521,60.74,78.02,-1
-    .subzone 16626 >>Jump off the cliff
-step << Alliance Paladin/Alliance Priest/Alliance Warlock/Alliance Mage/Alliance Rogue
-    #optional
-    #completewith Al'Aketh Assassins Equip Reminder
-    +|cRXP_WARN_Equip the|r |T7792097:0|t[Honed Greathammer] if you don't have |T7792097:0|t[|cRXP_LOOT_Zephrali Smasher|r]. << Paladin
-    +|cRXP_WARN_Equip the|r |T7798447:0|t[Balanced Quarterstaff] if you don't have |T7792229:0|t[|cRXP_LOOT_Zephrali Knife|r]. << Priest/Warlock/Mage
-    +|cRXP_WARN_Equip the|r |TInterface/Icons/inv_knife_1h_skybornec60_b_01:0|t[Quickblade's Dagger] if you don't have |T7791298:0|t[|cRXP_LOOT_Zephrali Bludgeon|r]. << Rogue
-    .use 257345 << Paladin -- Honed Greathammer
-    .use 257343 << Priest/Warlock/Mage -- Balanced Quarterstaff
-    .use 257346 << Rogue -- Quickblade's Dagger
-step << Alliance
-    #ignorecorpse
-    .subzoneskip 16626,1 -- Gustberry Lowlands
-    .isNotOnQuest 98512 --Al'Aketh Assassins
-    .isQuestAvailable 98512 --Al'Aketh Assassins
-    .showwhiledead
-    .goto 2521,54.99,68.14
-    .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Spirit Healer::6491|r.
-    .skipgossipid 96031
-    .skipgossipid 98031
-    .target Spirit Healer::6491
+-- step << Alliance
+--     .isNotOnQuest 98512 --Al'Aketh Assassins
+--     .isQuestAvailable 98512 --Al'Aketh Assassins
+--     .goto 2521,66.49,76.65,8,0
+--     .goto 2521,68.84,78.42,-1
+--     .goto 2521,60.74,78.02,-1
+--     .subzone 16626 >>Jump off the cliff
+-- step << Alliance Paladin/Alliance Priest/Alliance Warlock/Alliance Mage/Alliance Rogue
+--     #optional
+--     #completewith Al'Aketh Assassins Equip Reminder
+--     +|cRXP_WARN_Equip the|r |T7792097:0|t[Honed Greathammer] if you don't have |T7792097:0|t[|cRXP_LOOT_Zephrali Smasher|r]. << Paladin
+--     +|cRXP_WARN_Equip the|r |T7798447:0|t[Balanced Quarterstaff] if you don't have |T7792229:0|t[|cRXP_LOOT_Zephrali Knife|r]. << Priest/Warlock/Mage
+--     +|cRXP_WARN_Equip the|r |TInterface/Icons/inv_knife_1h_skybornec60_b_01:0|t[Quickblade's Dagger] if you don't have |T7791298:0|t[|cRXP_LOOT_Zephrali Bludgeon|r]. << Rogue
+--     .use 257345 << Paladin -- Honed Greathammer
+--     .use 257343 << Priest/Warlock/Mage -- Balanced Quarterstaff
+--     .use 257346 << Rogue -- Quickblade's Dagger
+-- step << Alliance
+--     #ignorecorpse
+--     .subzoneskip 16626,1 -- Gustberry Lowlands
+--     .isNotOnQuest 98512 --Al'Aketh Assassins
+--     .isQuestAvailable 98512 --Al'Aketh Assassins
+--     .showwhiledead
+--     .goto 2521,54.99,68.14
+--     .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Spirit Healer::6491|r.
+--     .skipgossipid 96031
+--     .skipgossipid 98031
+--     .target Spirit Healer::6491
 step << Alliance
     #label Al'Aketh Assassins Equip Reminder
-    -- .goto 2521,59.719,67.016,35,0 << Druid --Remove if we add deathskips again
     .goto 2521,56.81,61.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fendaal Windstone::273017|r.
     *|cRXP_WARN_If a Tornado is nearby, touch it to gain 40% increased movement speed for 5 minutes. Dealing damage removes the effect|r.
+    *|cRXP_WARN_Equip the|r |T7792097:0|t[Honed Greathammer] if you don't have |T7792097:0|t[|cRXP_LOOT_Zephrali Smasher|r]. << Paladin
+    *|cRXP_WARN_Equip the|r |T7798447:0|t[Balanced Quarterstaff] if you don't have |T7792229:0|t[|cRXP_LOOT_Zephrali Knife|r]. << Priest/Warlock/Mage
+    *|cRXP_WARN_Equip the|r |TInterface/Icons/inv_knife_1h_skybornec60_b_01:0|t[Quickblade's Dagger] if you don't have |T7791298:0|t[|cRXP_LOOT_Zephrali Bludgeon|r]. << Rogue
     .accept 98512 >>Accept Al'Aketh Assassins
     .target Fendaal Windstone::273017
 step << Alliance
@@ -5496,7 +5608,7 @@ step << Alliance
     #label secluded house
     .goto 2521,56.13,60.26
     >>Follow the Arrow
-    *|cRXP_WARN_Be careful while Resurrection Sickness is active|r.
+    -- *|cRXP_WARN_Be careful while Resurrection Sickness is active|r.
     .complete 92643,1 --1/1 Find the secluded house in Shen'dar Highlands
 step << Alliance
     .goto 2521,56.05,58.79
@@ -5574,8 +5686,6 @@ step << Alliance Druid
     >>Kill |cRXP_ENEMY_Windsong Crawlers::254588|r. Loot them for |T133972:0|t[|cRXP_LOOT_Windsong Crawler Meat|r].
     .complete 93317,1 --6/6 Windsong Crawler Meat
     .mob Windsong Crawler::254588
-
---maybe finish in the big field with all of the Al'Akeths
 step << Alliance
     #loop
     .goto 2521,54.35,57.87,35,0
@@ -6058,7 +6168,7 @@ step
 step
     .isOnQuest 94491 << Alliance -- The Fate of the Den
     .isOnQuest 94896 << Horde -- Aid For The Refugees
-    .subzoneskip 16631,1 -- Shadowgale Forest
+    -- .subzoneskip 16631,1 -- Shadowgale Forest
     .hs >>Hearth to Valanaar
     .use 6948 -- Hearthstone
 step
@@ -6753,15 +6863,40 @@ step << Alliance Hunter
     .collect 5469,5,2178,1 -- Strider Meat (5)
     .collect 12238,6,1141,1 -- Darkshore Grouper (6)
     .target Auctioneer Jaxon::15659
+
+-- for discovery route
+-- step << Alliance Mage
+--     .goto 1453/0,885.34,-9006.15
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elsharin::5497|r.
+--     .trainer >>Train your class spells
+--     .target Elsharin::5497
 step << Alliance
-    .goto 1453,48.1,88.35,10,0
-    .goto 1453,49.36,87.37,10,0
-    .goto 1453,48.85,86.94,10,0
-    .goto 1453,48.76,87.71,10,0
-    .goto 1453,54.8,83.65,25,0
-    .goto 1453,53.78,78.72,25,0
-    .goto 1453,55.67,75.99,25,0
-    .goto 1453,59.9,71.41,25,0
+    -- .goto 1453,48.1,88.35,10,0
+    -- .goto 1453,49.36,87.37,10,0
+    -- .goto 1453,48.85,86.94,10,0
+    -- .goto 1453,48.76,87.71,10,0
+    -- .goto 1453,54.8,83.65,25,0
+    -- .goto 1453,53.78,78.72,25,0
+    -- .goto 1453,55.67,75.99,25,0
+    -- .goto 1453,59.9,71.41,25,0
+
+    .goto 1453/0,888.000,-9027.101,9,0
+    .goto 1453/0,867.400,-9005.500,8,0
+    .goto 1453/0,877.300,-9008.900,8,0
+    .goto 1453/0,864.000,-9001.300,8,0
+    .goto 1453/0,811.900,-8993.200,20,0
+    .goto 1453/0,780.500,-8975.800,20,0
+    .goto 1453/0,770.500,-8947.200,20,0
+    .goto 1453/0,789.900,-8907.400,20,0
+    .goto 1453/0,755.500,-8878.500,20,0
+    .goto 1453/0,715.500,-8843.300,20,0
+    .goto 1453/0,675.600,-8782.601,20,0
+    .goto 1453/0,629.700,-8759.800,20,0
+    .goto 1453/0,603.400,-8765.500,20,0
+    .goto 1453/0,573.500,-8737.800,20,0
+    .goto 1453/0,552.500,-8742.000,20,0
+    .goto 1453/0,527.700,-8703.500,20,0
+    .goto 1453/0,552.600,-8656.900,20,0
     .goto 1453/0,332.000,-8443.101
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Highlord Bolvar Fordragon::1748|r inside the Keep.
     .target Highlord Bolvar Fordragon::1748
@@ -7363,22 +7498,4 @@ step << Horde !Hunter
 step << !Hunter
     #optional
     #label Silverpineskip
-]])
-
-
-
-RXPGuides.RegisterGuide([[
-#forever
-#disabledungeons
-#version 1
-#internal
-
-tornadoes
-.goto 2521,54.22,64.13
-.goto 2521,64.44,79.62
-.goto 2521,58.77,50.45
-.goto 2521,57.28,70.5
-.goto 2521,68.16,74.89
-.goto 2521,60.94,73.58
-.goto 2521,48.36,80.52
 ]])
