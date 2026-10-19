@@ -4254,16 +4254,15 @@ step << Horde Shaman
 -- ============================================================================
 
 
--- step << Horde Shaman
---     .isQuestAvailable 92703 -- Deliver the News
---     .goto 2521,62.180,72.616
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Donaal Downbreeze::255940|r.
---     .vendor 255940 >>Vendor trash
---     *Don't sell |T133970:0|t[Stringy Meat], |T132832:0|t[Small Eggs], or |T133972:0|t[Strider Meat]. << Alliance
---     *Don't sell |T132832:0|t[Small Eggs] and |T133972:0|t[Strider Meat].
---     *|cRXP_WARN_We need them for Cooking later|r.
---     .target Donaal Downbreeze::255940
---     .skipgossipid 137078
+step << Horde Shaman
+    .isQuestAvailable 98512 -- Al'Aketh Assassins
+    .goto 2521,59.40,75.74
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falfaan Halfwind::271465|r.
+    .vendor 271465 >>Vendor trash
+    *Don't sell |T132832:0|t[Small Eggs] and |T133972:0|t[Strider Meat].
+    *|cRXP_WARN_We need them for Cooking later|r.
+    .target Falfaan Halfwind::271465
+    .skipgossipid 141556
 
 
 -- ============================================================================
@@ -4338,8 +4337,7 @@ step << Warrior
 step << Warrior/Paladin
     .xp <9,1
     .money <0.2151
-    .isNotOnQuest 92679 --Blood Tithe
-    .isQuestAvailable 92679 --Blood Tithe
+    .isQuestAvailable 98512 --Al'Aketh Assassins
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.28
     .goto 2521,59.395,75.730
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falfaan Halfwind::271465|r inside the house.
@@ -4362,17 +4360,16 @@ step << Warrior/Paladin
 step << Shaman/Druid
     .xp <9,1
     .money <0.2176
-    .isNotOnQuest 92679 --Blood Tithe
-    .isQuestAvailable 92679 --Blood Tithe
+    .isQuestAvailable 98512 --Al'Aketh Assassins
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.48
     .goto 2521,59.395,75.730
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falfaan Halfwind::271465|r inside the house.
     >>|cRXP_BUY_Buy and equip a|r |T7798447:0|t[Zephrali Greatstaff].
     .collect 277109,1 --Zephrali Greatstaff
-    .vendor 271465 >>Vendor trash and repair if needed.
+    .vendor 271465 >>Vendor trash and repair if needed. << Druid
     *Don't sell |T133970:0|t[Stringy Meat], |T132832:0|t[Small Eggs], or |T133972:0|t[Strider Meat]. << Alliance
-    *Don't sell |T132832:0|t[Small Eggs] and |T133972:0|t[Strider Meat]. << Horde
-    *|cRXP_WARN_We need them for Cooking later|r.
+    *Don't sell |T132832:0|t[Small Eggs] and |T133972:0|t[Strider Meat]. << Horde Druid
+    *|cRXP_WARN_We need them for Cooking later|r. << Druid
     .skipgossipid 141556
     .target Falfaan Halfwind::271465
 step << Shaman/Druid
@@ -4402,8 +4399,7 @@ step << Rogue
 step << Rogue
     .xp <9,1
     .money <0.1727
-    .isNotOnQuest 92679 --Blood Tithe
-    .isQuestAvailable 92679 --Blood Tithe
+    .isQuestAvailable 98512 --Al'Aketh Assassins
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.35
     .goto 2521,59.395,75.730
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falfaan Halfwind::271465|r inside the house.
@@ -4441,8 +4437,7 @@ step << Hunter
 step << Hunter
     .xp <9,1
     .money <0.1345
-    .isNotOnQuest 92679 -- Blood Tithe
-    .isQuestAvailable 92679 -- Blood Tithe
+    .isQuestAvailable 98512 --Al'Aketh Assassins
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.82
     .goto 2521,59.395,75.730
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falfaan Halfwind::271465|r inside the house.
@@ -5799,7 +5794,7 @@ step << Alliance
     *Loot them for |T1508517:0|t[|cRXP_LOOT_Shriekling Talons|r].
     .complete 92741,1 --8/8 Shriekling Talons
     .mob Shadowgale Shriekling::256092
-step << Alliance
+step
     #completewith next
     #hidewindow
     #label Abandoned Belongings1
@@ -5813,10 +5808,11 @@ step
     .complete 93172,1 --10/10 Wind Hollow freed
     -- .complete 93736,1 << Horde --10/10 Wind Hollow Essence
     .mob +Wind Hollow::251676
-step << Alliance
+step
     #optional
     #completewith Resaan's Heirloom
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crates|r
+    *|cRXP_WARN_NOTE:|r This quest is optional. You can skip it when there are too many people doing it. << Horde
     .complete 94896,1 --8/8 Abandoned Belongings
 step
     #label Resaan's Heirloom
@@ -5878,7 +5874,7 @@ step
     .goto 2521,58.06,28.2,30,0
     .goto 2521,56.61,29.26,20,0
     +1
-step << Alliance
+step
     #optional
     --@THIDDI: Not sure if worth it (Wind Hollow Essence).
     #completewith next
@@ -5887,8 +5883,9 @@ step << Alliance
     .complete 93172,1 --10/10 Wind Hollow freed
     -- .complete 93736,1 << Horde--10/10 Wind Hollow Essence
     .mob +Wind Hollow::251676
-step << Alliance
+step
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crates|r
+    *|cRXP_WARN_NOTE:|r This quest is optional. You can skip it when there are too many people doing it. << Horde
     .complete 94896,1 --8/8 Abandoned Belongings
 step
     --@THIDDI: Not sure if worth it (Wind Hollow Essence).
@@ -6085,8 +6082,28 @@ step
     .complete 94488,1 --1/1 Commander Haalien's Severed Head
     .mob Commander Haalien::253622
     .collect 265476,1 -- Ripped Missive
-step
+step << Horde
+    #optional
+    .isOnQuest 93165
+    .itemcount 258771,4
+    #loop
+    .goto 2521,63.04,37.12,40,0
+    .goto 2521,61.99,35.62,30,0
+    .goto 2521,61.97,36.71,30,0
+    .goto 2521,62.47,37.3,40,0
+    .goto 2521,62.96,39.3,40,0
+    .goto 2521,63.33,38.01,35,0
+    .goto 2521,64.14,39.18,40,0
+    .goto 2521,65.7,36.82,40,0
+    .goto 2521,65.63,35.57,40,0
+    >>Kill |cRXP_ENEMY_Al'Aketh Footsoldiers::252665|r and |cRXP_ENEMY_Al'Aketh Stormchasers::252664|r.
+    *Loot them for the |T133856:0|t[|cRXP_LOOT_Al'Aketh Cultist's Ears|r].
+    .complete 93165,1 --10/10 Al'Aketh Cultist's Ear
+    .mob Al'Aketh Footsoldier::252665
+    .mob Al'Aketh Stormchaser::252664
+step << Alliance
     #completewith next
+    .itemcount 265476,1
     >>Use the |T134332:0|t[Ripped Missive] in your bags to begin the quest.
     .accept 94490 >>Accept Ripped Missive
     .use 265476 -- Ripped Missive
@@ -6102,10 +6119,11 @@ step
 step
     .goto 2521,63.93,33.76,20,0
     .goto 2521,63.69,32.49,20,0
-    .goto 2521,64,31.97,25,0
-    .goto 2521,64.52,31.88,25,0
-    .goto 2521,64,31.97,25,0
-    .goto 2521,64.52,31.88,25,0
+    .goto 2521,64,31.97,15,0
+    .goto 2521,64.52,31.88,15,0
+    .goto 2521,64,31.97,15,0
+    .goto 2521,64.52,31.88,15,0
+    .goto 2521,64.25,31.93
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Druids|r
     .complete 94489,1,2 --7/7 Injured Druids healed
     .target Neyasteel Mossmender::258275
@@ -6138,6 +6156,11 @@ step
     .complete 94489,2 --1/1 Find Jorel Windsinger
     .skipgossipid 137859
     .target Jorel Windsinger::258130
+step << Horde
+    .itemcount 265476,1
+    >>Use the |T134332:0|t[Ripped Missive] in your bags to begin the quest.
+    .accept 94490 >>Accept Ripped Missive
+    .use 265476 -- Ripped Missive
 step
     #optional
     #completewith next
@@ -6172,7 +6195,6 @@ step
     .hs >>Hearth to Valanaar
     .use 6948 -- Hearthstone
 step
-    .subzoneskip 16638,1 -- Valanaar
     .isOnQuest 94896 -- Aid For The Refugees
     .goto 2521,62.180,72.616
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Donaal Downbreeze::255940|r.
@@ -7094,7 +7116,7 @@ step << Horde
     .target Endaria Mistgaze::254344
 step << Horde
     #optional
-    .isOnQuest 93736
+    .isOnQuest 93738
     .goto 2521,59.149,79.773
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ayessa Dawnsinger::251968|r.
     .turnin 93738 >>Turn in The Broken Construct
