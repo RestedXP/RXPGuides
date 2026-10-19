@@ -22472,7 +22472,8 @@ step
     .turnin 90843 >>Turn in Aiding the Dragon Isles
     .target Naleidea Rivergleam
 step
-    .zone 2351 >>Teleport to a Neighbourhood with the House finder, not |T7252953:0|t[Teleport to Plot] then take the |cRXP_PICK_Stormwind Portal|r.
+    .zoneskip 2022,1
+    .zone 2351 >>Teleport to a Neighbourhood with the House finder, not |T7252953:0|t[Teleport to Plot] then take the |cRXP_PICK_Orgrimmar Portal|r.
     .link https://www.youtube.com/watch?v=uVkUB7z0njo >>CLICK HERE FOR VIDEO
     .macro House Teleport, 975747 >>/run C_Housing.StartTutorial()
     .skyriding
@@ -23383,8 +23384,9 @@ RXPGuides.RegisterGuide([[
 
 step << Hunter
     #completewith next
-    .goto 467,58.74,57.51
+    .goto 94,58.74,57.51
     .cast 1515 >>Tame a |cRXP_ENEMY_Mana Wyrm|r with your ability |T132164:0|t[Tame Beast].
+    .train 1515,1
 step
     .isOnQuest 8347
     .goto 94,40.42,32.21
