@@ -1335,6 +1335,7 @@ step << Tauren/Hunter/Orc Shaman/Troll Shaman
     .goto 1413/1,-1871.600,653.700,50,0
     .goto 1413/1,-1729.700,592.400,50,0
     >>Kill |cRXP_ENEMY_Savannah Patriarchs|r. Loot them for their |cRXP_LOOT_Hides|r and |cRXP_LOOT_Tusks|r
+    >>|cRXP_WARN_If there is too much competition and you cannot complete this quest quickly, feel free to skip this step|r
     .complete 95494,1 --|6/6 Savannah Lion Hide
     .complete 821,1 --Savannah Lion Tusk (5)
     .disablecheckbox
@@ -1351,6 +1352,7 @@ step << Tauren/Hunter/Orc Shaman/Troll Shaman
     .goto 1413/1,-1871.600,653.700,50,0
     .goto 1413/1,-1729.700,592.400,50,0
     >>Kill |cRXP_ENEMY_Savannah Patriarchs|r. Loot them for their |cRXP_LOOT_Hides|r
+    >>|cRXP_WARN_If there is too much competition and you cannot complete this quest quickly, feel free to skip this step|r
     .complete 95494,1 --|6/6 Savannah Lion Hide
     .mob Savannah Patriarch
     .isQuestAvailable 819
@@ -2707,7 +2709,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sputtervalve|r and |cRXP_FRIENDLY_Dizzywig|r
     .turnin 902 >>Turn in Samophlange
     .turnin 863 >> Turn in The Escape
-    .accept 1483 >> Accept Ziz Fizziks
     .target +Sputtervalve
     .goto 1413/1,-3759.06,-902.18
     .turnin 896 >> Turn in Miner's Fortune
@@ -2719,7 +2720,6 @@ step
     #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sputtervalve|r and |cRXP_FRIENDLY_Dizzywig|r
     .turnin 902 >>Turn in Samophlange
-    .accept 1483 >> Accept Ziz Fizziks
     .target +Sputtervalve
     .goto 1413/1,-3759.06,-902.18
     .turnin 896 >> Turn in Miner's Fortune
@@ -2731,21 +2731,13 @@ step
     .goto 1413/1,-3759.06,-902.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sputtervalve|r
     .turnin 863 >> Turn in The Escape
-    .accept 1483 >> Accept Ziz Fizziks
     .target Sputtervalve
     .isQuestComplete 863
-step
-    #optional
-    .goto 1413/1,-3759.06,-902.18
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sputtervalve|r
-    .accept 1483 >> Accept Ziz Fizziks
-    .target Sputtervalve
 step
     #label RapHornsPickup
     .goto 1413/1,-3697.24,-929.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mebok|r
     .accept 865 >>Accept Raptor Horns
-    .accept 1069 >>Accept Deepmoss Spider Eggs
     .target Mebok Mizzyrix
 step << skip
     .goto 1413/1,-3664.82,-1050.14
@@ -3253,12 +3245,6 @@ step
     .turnin 888 >>Turn in Stolen Booty
     .target Gazlowe
 step
-    .goto 1413/1,-3759.06,-902.18
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sputtervalve|r
-    .turnin 1094 >>Turn in Further Instructions
-    .accept 1095 >>Accept Further Instructions
-    .target Sputtervalve
-step
     .goto 1413/1,-3720.300,-920.000
     >>Click the |cRXP_PICK_Wanted Poster|r
     .accept 92706 >>Accept WANTED: Bruuz
@@ -3267,13 +3253,8 @@ step
     .goto 1413/1,-3697.24,-929.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mebok|r
     .turnin 865 >>Turn in Raptor Horns
-    .turnin 1069 >>Turn in Deepmoss Spider Eggs
     .accept 1491 >>Accept Smart Drinks
     .target Mebok Mizzyrix
-step
-    #optional
-    #completewith XroadsHS2
-    .destroy 5570 >>|cRXP_WARN_Delete any|r |T132834:0|t[Deepmoss Spider Eggs] |cRXP_WARN_you have left|r
 step
     .goto 1413/1,-3687.11,-981.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Drohn|r
@@ -4600,9 +4581,36 @@ step
     .skill herbalism,1,1
     .isOnQuest 962
 step
-    #completewith next
+    #completewith GShard
     .subzone 380 >>Leave your party while inside WC to get teleported to the Crossroads graveyard (after 1 minute)
     .subzoneskip 392
+step
+    #completewith Cholaruk
+    >>|cRXP_WARN_Check with your group if they would like to do the quest "Chol'aruk the Ravener"|r (lvl 20 elite)
+    .isQuestAvailable 97003
+step
+    .goto 1413/1,-2711.800,-350.500
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gur'ak|r
+    .accept 97003 >>Accept Chol'aruk the Ravener
+    .target Gur'ak
+step
+    #completewith next
+    .goto 1413/1,-3257.300,-113.100,15,0
+    .goto 1413/1,-3217.100,-147.700,10,0
+    .goto 1413/1,-3236.000,-178.100,10,0
+    .goto 1413/1,-3259.700,-205.400,10,0
+    .goto 1413/1,-3226.900,-237.900,10 >>Travel to |cRXP_ENEMY_Chol'aruk the Ravener|r in the back of the cave
+step
+    #label Cholaruk
+    .goto 1413/1,-3206.800,-220.200
+    >>Kill |cRXP_ENEMY_Chol'aruk the Ravener|r. Loot him for his |cRXP_LOOT_Head|r
+    .complete 97003,1 --Chol'aruk's Head (x1)
+    .mob Chol'aruk the Ravener
+    .isOnQuest 97003
+step
+    #completewith GShard
+    .subzone 392 >>Travel to Ratchet
+    .subzoneskip 1699,1 --Thorn Hill
 step
     #completewith GShard
     .goto 1413/1,-2595.75,-437.35
@@ -4610,6 +4618,7 @@ step
     .fly Ratchet >> Fly to Ratchet
     .target Devrak
     .subzoneskip 392
+    .subzoneskip 1699 --Thorn Hill
 step
     .goto 1413/1,-3697.24,-929.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mebok|r
@@ -4717,6 +4726,12 @@ step
     .fly Crossroads >> Fly to The Crossroads
     .target Bragok
     .subzoneskip 380
+step
+    .goto 1413/1,-2711.800,-350.500
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gur'ak|r
+    .accept 97003 >>Accept Chol'aruk the Ravener
+    .target Gur'ak
+    .isQuestComplete 97003
 step
     .goto 1413/1,-1972.55,-306.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regthar|r

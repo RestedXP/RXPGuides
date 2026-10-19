@@ -3166,7 +3166,7 @@ step
     >>Kill |cRXP_ENEMY_Savannah Matriarchs|r and |cRXP_ENEMY_Savannah Patriarchs|r. Loot them for their |cRXP_LOOT_Hides|r
     .complete 95494,1 --|6/6 Savannah Lion Hide
     .mob Savannah Matriarch
-    .mob Savannah Patriarchs
+    .mob Savannah Patriarch
 step
     #completewith next
     >>Kill any |cRXP_ENEMY_Zhevra|r. Loot it for a |cRXP_LOOT_Fresh Zhevra Carcass|r
@@ -3188,7 +3188,7 @@ step
     >>Kill |cRXP_ENEMY_Savannah Matriarchs|r and |cRXP_ENEMY_Savannah Patriarchs|r. Loot them for their |cRXP_LOOT_Hides|r
     .complete 95494,1 --|6/6 Savannah Lion Hide
     .mob Savannah Matriarch
-    .mob Savannah Patriarchs
+    .mob Savannah Patriarch
 step
     #completewith BootyTurnin
     .subzone 392 >> Travel to Ratchet
@@ -4580,7 +4580,7 @@ step
     .goto 1440/1,-712.300,2023.900,50,0
     .goto 1440/1,-534.500,2045.100,50,0
     >>Kill |cRXP_ENEMY_Ashenvale Bears|r and |cRXP_ENEMY_Shadowhorn Stags|r
-    >>|cRXP_WARN_Be care of |cRXP_ENEMY_Ursangous|r (strong lvl 25) that patrols in the area|r
+    >>|cRXP_WARN_Be careful of |cRXP_ENEMY_Ursangous|r (strong lvl 25) that patrols in the area|r
     .complete 98251,2 --|6/6 Ashenvale Bear slain
     .mob +Ashenvale Bear
     .complete 98251,1 --|6/6 Shadowhorn Stag slain
