@@ -2664,12 +2664,6 @@ step << Warlock
     .vendor >> |cRXP_BUY_Buy|r |T133738:0|t[Grimoire of Sacrifice (Rank 1)]
     .target Jubahl Corpseseeker
     .train 20381,1
-step
-.dungeon BFD
-    .goto 1455/0,-1115.43,-4598.86
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gerrig Bonegrip|r
-    .accept 971 >> Accept Knowledge in the Deeps
-    .target Gerrig Bonegrip
 step << Warrior/Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regnus Thundergranite|r << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bilban Tosslespanner|r << Warrior
