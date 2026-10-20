@@ -5,6 +5,7 @@ addon.professions = addon.professions or {}
 addon.professions.materialIds = addon.professions.materialIds or {}
 addon.professions.recipeIds = addon.professions.recipeIds or {}
 addon.professions.PROFESSIONS = addon.professions.PROFESSIONS or {}
+addon.professions.locale = addon.professions.locale or {}
 
 -- Localize globals
 local _G = _G
@@ -39,6 +40,7 @@ local GetConfigIDBySystemID, GetNodeInfo, ConfigHasStagedChanges, GetStagedChang
 -- Local renaming
 local RECIPES = addon.professions.recipeIds
 local MATERIALS = addon.professions.materialIds
+local PROFESSION_NAMES = addon.professions.locale.PROFESSION_NAMES
 
 --local enums
 local EVENTS_TO_REGISTER_AH = {
@@ -352,7 +354,7 @@ local function gatherPlayerProfessionInfo()
         --skillDescription = GetSkillLineInfo(index)
         local skillName, isHeader, skillRank, skillMaxRank
         local foundFirst = false
-        for i = 1, GetNumSkillLines() do --TODO: Proveri da li ovde nastaje problem u Forever-u!!!!
+        for i = 1, GetNumSkillLines() do
             skillName, isHeader, _, skillRank, _, _, skillMaxRank, _, _, _, _, _, _ = GetSkillLineInfo(i)
             if skillName and not isHeader and addon.professions.locale.PROFESSION_NAMES[skillName] then
                 if not foundFirst then
@@ -631,6 +633,10 @@ function debug.DetectFaction()
     print("faction = ", RXPCData.professions.faction)
 
     print("test done")
+end
+
+function debug.DetectOvertimeLevel()
+    gatherPlayerWorkingOvertimeTalent()
 end
 
 SLASH_scan1 = '/scan'

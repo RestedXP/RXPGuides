@@ -202,7 +202,10 @@ local function buildPayload(opts)
     local skills = useOverrides and overrideProfessions() or liveProfessions()
     local faction = addon.player.faction
     local money = GetMoney()
-    local overtimeLevel = RXPCData.professions.overtimeLevel
+    if not useOverrides then
+        addon.professions.debug.DetectOvertimeLevel()
+    end
+    local overtimeLevel = RXPCData.professions.overtimeLevel or 0
     if useOverrides then
         if data.faction then
             faction = data.faction:sub(1, 1):upper() .. data.faction:sub(2)
