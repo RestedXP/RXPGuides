@@ -3,6 +3,9 @@ local L = addon.locale.Get
 
 if not (addon.game == "CLASSIC" or addon.game == "TBC" or addon.game == "FOREVER" or addon.game == "MOP") then return end
 
+addon.professions = addon.professions or {}
+addon.professions.locale = addon.professions.locale or {}
+
 -- Localize globals
 local _G = _G
 local len, fmt, lower, find, match, gmatch = string.len, string.format, string.lower, string.find, string.match, string.gmatch
@@ -11,105 +14,37 @@ local pairs, ipairs, next, type, tostring, tonumber, error, unpack = pairs, ipai
 local max, min, abs, floor, ceil, huge, log = math.max, math.min, math.abs, math.floor, math.ceil, math.huge, math.log
 local GetContainerItemInfo = _G.C_Container.GetContainerItemInfo
 local GetMoney, CopyTable = _G.GetMoney, _G.CopyTable
+local GetLocale = _G.GetLocale()
+
+-- Local renaming
+local PROFESSION_NAMES = addon.professions.locale.PROFESSION_NAMES
 
 
 addon.professions = addon:NewModule("ProfessionsGuide", "AceEvent-3.0")
 
 --Session
 local EVENTS_TO_REGISTER = {
-    --TODO: cull unnecessary events and update with version control
-    "TRADE_SKILL_SHOW", --Opening the tradeskill window
-    "TRADE_SKILL_CLOSE", --Closing the tradeskill window
-    "TRADE_SKILL_UPDATE", --Learning skill?, Minimizing categories in tradeskill window
-    "UPDATE_TRADESKILL_RECAST", --Started crafting
-    "ITEM_PUSH", --Item added to inventory?
-    "BAG_NEW_ITEMS_UPDATED", --item added to inventory?
-    "BAG_UPDATE_COOLDOWN",
-    "UNIT_INVENTORY_CHANGED",
-    "TRADE_SKILL_DETAILS_UPDATE", --TODO: test when activated
-    "SKILL_LINES_CHANGED", --Learning/unlearning, journeyman -> master
-    "ITEM_LOCKED", --Locking the item in bagSlot (when selling to a vendor for example)
-    "ITEM_LOCK_CHANGED", --Changing the item status in bagSlot
-    "ITEM_UNLOCKED",
+    --Universal
+    universal = {
+        "CHAT_MSG_LOOT",
+        "CHAT_MSG_SKILL",
+        "PLAYER_MONEY",
+    },
+    --Classic
+    classic = {
+        "ITEM_LOCKED", --Locking the item in bagSlot (when selling to a vendor for example)
+        "ITEM_UNLOCKED",
+    },
+    --Forever
+    forever = {
 
-    "CHAT_MSG_LOOT",
-    "CHAT_MSG_SKILL",
-
-    "PLAYER_MONEY",
+    },
 }
 
 addon.professions.session = {
     isInitialized = false,
     isClassic = false,
 }
-
---local helper functions
-
---TODO: Maybe change to table approach
---Faster way to concat strings
---Assumes allways builder .. "string"
---InitialString may be empty
-local function stringBuilder(initialString)
-    local self = {
-        t = {initialString}
-    }
-
-    function self:append(str)
-        self.t[#self.t+1] = str
-        return self
-    end
-
-    function self:build()
-        return tconcat(self.t)
-    end
-
-    function self:flush()
-        self.t = {}
-    end
-
-    function self:isEmpty()
-        return #self.t > 0
-    end
-
-    return setmetatable(self, {__concat = function (a, b)
-        a.t[#a.t+1] = b
-        return a
-    end})
-end
-
---Splits arguments for slash commands to emulate ... var args
-local function varArgs(message)
-    local args = {}
-    for arg in message:gmatch("%S+") do
-        args[#args+1] = arg
-    end
-    return unpack(args)
-end
-
---Prints the (global) data
-local function pnt(...)
-    local args = {...}
-    local arg
-    local dots
-    for i = 1, #args do
-        arg = args[i]
-        if find(arg, "%.") then
-            dots = nil
-            for dot in gmatch(arg, "[^%.]+") do
-                if not dots then
-                    dots = _G[dot]
-                else
-                    dots = dots[dot]
-                end
-            end
-            print(dots)
-        elseif _G[arg] then
-            print("global: ", _G[arg])
-        else
-            print(arg)
-        end
-    end
-end
 
 --local functions
 
@@ -140,37 +75,11 @@ local function removeFromCraftedItems(itemID, itemCount)
 end
 
 --Events
-function addon.professions:TRADE_SKILL_SHOW()
-end
-
-function addon.professions:TRADE_SKILL_CLOSE()
-end
-
-function addon.professions:TRADE_SKILL_UPDATE()
-end
-
-function addon.professions:UPDATE_TRADESKILL_RECAST()
-end
-
-function addon.professions:ITEM_PUSH(_, bagSlot, iconFileID)
-    print("ITEM_PUSH")
-    print(bagSlot, iconFileID)
-    --TODO: get info by iconFileID
-end
-
---The debug window shows craftedItems; it only exists once GUI/ProfessionsDebugGUI.lua has loaded
-local function refreshDebugWindow()
-    if addon.professions.debugGUI then
-        addon.professions.debugGUI:Refresh()
-    end
-end
-
-function addon.professions:ITEM_LOCK_CHANGED(_, bagIndex, slotIndex)
-end
 
 --Updates craftedItems when an item is removed from inventory
 function addon.professions:ITEM_LOCKED(_, bagIndex, slotIndex)
-    if not bagIndex or not slotIndex or bagIndex < 0 or bagIndex > 4 then return end
+    --TODO: Check if this functionality is necessary at all!
+    --[[if not bagIndex or not slotIndex or bagIndex < 0 or bagIndex > 4 then return end
 
     local containerInfo = GetContainerItemInfo(bagIndex, slotIndex)
     if not containerInfo then return end
@@ -182,76 +91,28 @@ function addon.professions:ITEM_LOCKED(_, bagIndex, slotIndex)
         if RXPCData.craftedItems[itemID] == 0 then
             RXPCData.craftedItems[itemID] = nil
         end
-    end
-
-    refreshDebugWindow()
+    end]]
 end
 
 --Updates craftedItems when an item is stored to inventory
 function addon.professions:ITEM_UNLOCKED(_, bagIndex, slotIndex)
-    if not bagIndex or not slotIndex or bagIndex < 0 or bagIndex > 4 then return end
+    --TODO: Check if this functionality is necessary at all!
+    --[[if not bagIndex or not slotIndex or bagIndex < 0 or bagIndex > 4 then return end
 
     local containerInfo = GetContainerItemInfo(bagIndex, slotIndex)
     if not containerInfo then return end
     RXPCData.craftedItems = RXPCData.craftedItems or {}
     local itemID = containerInfo.itemID
     local stackCount = containerInfo.stackCount
-    --TODO: What to do now that we don't know whats a recipe and whats not
     --Until then every item counts, as before (the old isRecipe check was never defined)
-    RXPCData.craftedItems[itemID] = (RXPCData.craftedItems[itemID] or 0) + stackCount
-
-    refreshDebugWindow()
-end
-
-function addon.professions:BAG_NEW_ITEMS_UPDATED(_)
-end
-
-function addon.professions:BAG_UPDATE_COOLDOWN()
-end
-
-function addon.professions:UNIT_INVENTORY_CHANGED(unitTokenVariant)
-end
-
-function addon.professions:TRADE_SKILL_DETAILS_UPDATE(...)
-    print("DETAILS_UPDATE")
-    local args = {...}
-    for index, value in ipairs(args) do
-        print(index, ": ", value)
-    end
-    print("==========")
-end
-
-function addon.professions:SKILL_LINES_CHANGED()
-    --print("skill lines changed")
+    RXPCData.craftedItems[itemID] = (RXPCData.craftedItems[itemID] or 0) + stackCount]]
 end
 
 --Updates crafted items list
 function addon.professions:CHAT_MSG_LOOT(_, text) --TODO: Rework this
-    --TODO: change only to check prof1 and prof2
-    --TODO: get crafted stack size and update accordingly
-    local itemName = match(text, "%[(.*)%]")
-    if not itemName then return end
-    RXPCData.craftedItems = RXPCData.craftedItems or {}
-    local foundRecipe = false
-    for k, profession in pairs(addon.professions.PROFESSIONS or {}) do --TODO: What to do now that we do not have that info?
-        if k ~= "VENDOR_ITEMS" and k ~= "testing" and type(profession.RECIPES) == "table" then
-            for recipeName, _ in pairs(profession.RECIPES) do
-                if lower(itemName) == lower(recipeName) then
-                    --Update crafted items
-                    RXPCData.craftedItems[itemName] = (RXPCData.craftedItems[itemName] or 0) + 1
-                    foundRecipe = true
-                    break
-                end
-            end
-            if foundRecipe then
-                break
-            end
-        end
-    end
 end
 
 --Updates skill level
---TODO: Make a better check whether chat_msg_skill is related to professions or not!
 function addon.professions:CHAT_MSG_SKILL(_, text)
     if RXPCData.professions == nil or RXPCData.professions.profession1 == nil or RXPCData.professions.profession1.name == nil
         or RXPCData.professions.profession2 == nil or RXPCData.professions.profession2.name == nil then
@@ -302,8 +163,12 @@ function addon.professions:Setup()
         self.session.isClassic = true
     end
 
-    for _, event in ipairs(EVENTS_TO_REGISTER) do
-        --self:RegisterEvent(event)
+    for version, events in pairs(EVENTS_TO_REGISTER) do
+        if version == "universal" or (version == "classic" and addon.professions.session.isClassic) or (version == "forever" and not addon.professions.session.isClassic) then
+            for _, event in ipairs(events) do
+                self:RegisterEvent(event)
+            end
+        end
     end
     RXPCData.professions.isInitialScanned = RXPCData.professions.isInitialScanned or false
     setUpRXPCData()
@@ -327,21 +192,6 @@ end
 SLASH_r1 = '/r'
 SlashCmdList['r'] = function()
     C_UI.Reload()
-end
-
-SLASH_c1 = '/c'
-SlashCmdList['c'] = function()
-    RXPCData.craftedItems = {}
-end
-
-SLASH_pnt1 = '/pnt'
-SlashCmdList['pnt'] = function(args)
-    pnt(varArgs(args))
-end
-
-SLASH_print1 = '/print'
-SlashCmdList['print'] = function(args)
-    pnt(varArgs(args))
 end
 
 
