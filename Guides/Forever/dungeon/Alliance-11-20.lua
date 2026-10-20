@@ -2754,9 +2754,13 @@ step
     .target Darla Harris
     .subzoneskip 16611 -- ruins of lordaeron
 step
+    #completewith next
+    .goto 1424/0,-136.700,-535.800,125 >> |cRXP_WARN_NOTE: You may encounter higher level |cRXP_ENEMY_Lions|r and |cRXP_ENEMY_Bears|r on the way to the Hillsbrad Fields|r
+    >>|cRXP_WARN_Be careful of Horde players if you are on a PVP server|r
+    .zoneskip 1424,1 
+step
     #label EnterRoL
     .enabledungeon ROL
-    .goto 1424/0,-272.000,-381.800,100,0
     .goto 1424/0,-47.400,-249.400,100,0
     .goto 1416/0,68.400,-46.200,130,0
     .goto 1416/0,45.300,257.100,150,0
@@ -2769,9 +2773,9 @@ step
     .goto 1420/0,4.300,1847.500,10,0
     .goto 1458/0,238.400,1872.200,20,0
     .goto 1458/0,170.700,1804.700,20 >>Travel to the Ruins of Lordaeron in Undercity. Enter the dungeon
-    >>|cRXP_WARN_Be careful of higher level |cRXP_ENEMY_Cats|r, |cRXP_ENEMY_Bears|r, |cRXP_ENEMY_Spiders|r or |cRXP_ENEMY_Murlocs|r as you run over. Run through the Hillsbrad fields if needed instead|r
+    >>|cRXP_WARN_Be careful of high level |cRXP_ENEMY_Lions|r, |cRXP_ENEMY_Bears|r, |cRXP_ENEMY_Spiders|r or |cRXP_ENEMY_Murlocs|r as you run over|r
     >>|cRXP_WARN_As soon as you enter Undercity you will be automatically PVP flagged, becoming attackable by|r |cRXP_ENEMY_Horde|r
-
+    .link https://www.youtube.com/watch?v=jxmG6_JPFMc >> |cRXP_WARN_Click here for a video guide on how to enter the Ruins of Lordaeon dungeon|r
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Truman|r
     .accept 95250 >> Accept Abominable Creatures
