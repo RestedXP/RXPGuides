@@ -427,7 +427,7 @@ step << !NightElf
 step << NightElf !Druid
     .goto Westfall,56.556,52.643
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_索尔|r 对话
-    .fp Westfall >> 解锁西部荒野飞行路线
+    .fp Westfall >> 开启西部荒野的飞行路径
     .fly Stormwind >> 飞往暴风城
     .target 索尔
 step << Druid
@@ -512,7 +512,7 @@ step << NightElf Hunter
     .target 弗德瑞克·斯图瓦
 step << NightElf
     .goto StormwindClassic,43.065,26.156
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_珊娜·弗勒|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_珊娜·弗勒|r 对话
     >>升级你的|T135966:0|t[急救]
     .train 3274 >> 学习 中级急救
     .target Shaina Fuller

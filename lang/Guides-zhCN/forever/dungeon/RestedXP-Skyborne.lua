@@ -3,15 +3,15 @@ if GetLocale() ~= "zhCN" then return end
 RXPGuides.RegisterGuide([[
 #forever
 #version 1
-#name 1-9 Zephras Isle
-#displayname 1-9 Skyborne << Alliance
-#displayname 1-9 Skyborne << Horde
+#name 1-9级 Zephras Isle
+#displayname 1-9级 Skyborne << Alliance
+#displayname 1-9级 Skyborne << Horde
 #group RestedXP 无限 地下城指南 (联盟) << Alliance
 #group RestedXP 无限 地下城指南 (部落) << Horde
-#subgroup Dungeon Guide 1-20 << Alliance
-#subgroup Dungeon Guide 1-22 << Horde
+#subgroup 地下城指南 1-20 << Alliance
+#subgroup 地下城指南 1-22级 << Horde
 #defaultfor Skyborne
-#next 9-13 Zephras Isle
+#next 9-13级 Zephras Isle
 
 step << Horde
 .enabledungeon RFC
@@ -23,17 +23,17 @@ step << Alliance
 RXPGuides.RegisterGuide([[
 #forever
 #version 1
-#name 9-13 Zephras Isle
-#displayname 9-13 Skyborne << Alliance
-#displayname 9-12 Skyborne << Horde
+#name 9-13级 Zephras Isle
+#displayname 9-13级 Skyborne << Alliance
+#displayname 9-12级 Skyborne << Horde
 #group RestedXP 无限 地下城指南 (联盟) << Alliance
 #group RestedXP 无限 地下城指南 (部落) << Horde
-#subgroup Dungeon Guide 1-20 << Alliance
-#subgroup Dungeon Guide 1-22 << Horde
+#subgroup 地下城指南 1-20 << Alliance
+#subgroup 地下城指南 1-22级 << Horde
 #defaultfor Skyborne
 #next 13-15级 西部荒野 << Alliance
 #next 12-14级 银松森林 << Horde !Hunter
-#next 12-16 The Barrens << Horde Hunter
+#next 12-16级 荒芜之地 << Horde Hunter
 
 step << Horde
 .enabledungeon RFC

@@ -8,7 +8,7 @@ RXPGuides.RegisterGuide([[
 #season 0,1
 #version 1
 << Alliance
-#group RestedXP 无限指南 (联盟)
+#group RestedXP Forever 指南 A
 #subgroup 速通指南 1-20级
 --#groupid RXP-SRGCE-A1
 #name 1-5级 寒脊山谷
@@ -653,7 +653,7 @@ RXPGuides.RegisterGuide([[
 #season 0,1
 #version 1
 << Alliance
-#group RestedXP 无限指南 (联盟)
+#group RestedXP Forever 指南 A
 #subgroup 速通指南 1-20级
 --#groupid RXP-SRGCE-A1
 #name 5-11级 丹莫罗
@@ -1465,9 +1465,9 @@ step << Hunter
     .waypoint 1426,67.687,60.059,45,0
     .waypoint 1426,68.958,59.357,45,0
     .waypoint 1426,70.475,59.420,45,0
-    >>Kill |cRXP_ENEMY_Rockjaw Skullthumpers|r outside the mine. Loot them for the |T132621:0|t[|cRXP_LOOT_Empty Powder Keg|r] (NOT TRANSLATED IN :zhCN YET)
+    >>击杀矿山外的 |cRXP_ENEMY_Rockjaw Skullthumpers|r。拾取它们的 |T132621:0|t[|cRXP_LOOT_Empty Powder Keg|r]
     .use 268548 >> |cRXP_WARN_使用|r |T132621:0|t[|cRXP_LOOT_空火药桶|r] |cRXP_WARN_来开启任务|r
-    >>|cRXP_WARN_NOTE: This item has a low drop rate. Skip this step if you do not find it|r (NOT TRANSLATED IN :zhCN YET)
+    >>|cRXP_WARN_注释：该物品掉率很低。如果你没有找到它，请跳过此步骤|r
     .complete 432,1 --Kill Rockjaw Skullthumper (x6)
     .collect 268548,1,95213,1 -- Empty Powder Keg (1)
     .disablecheckbox
@@ -1916,11 +1916,11 @@ step
     .target 工头乔尼·石眉 << !Hunter
 step
     #completewith RockjawBonesnappers
-    >>Loot the |cRXP_ENEMY_Rockjaw Skullthumpers|r and |cRXP_ENEMY_Rockjaw Bonesnappers|r for the |T132621:0|t[|cRXP_LOOT_Empty Powder Keg|r] (NOT TRANSLATED IN :zhCN YET)
-    .use 268548 >> |cRXP_WARN_Use the|r |T132621:0|t[|cRXP_LOOT_Empty Powder Keg|r] |cRXP_WARN_to start the quest|r (NOT TRANSLATED IN :zhCN YET)
-    >>|cRXP_WARN_NOTE: This item has a low drop rate. Skip this step if you do not find it|r (NOT TRANSLATED IN :zhCN YET)
+    >>从 |cRXP_ENEMY_Rockjaw Skullthumpers|r 和 |cRXP_ENEMY_Rockjaw Bonesnappers|r 身上拾取 |T132621:0|t[|cRXP_LOOT_Empty Powder Keg|r]
+    .use 268548 >> |cRXP_WARN_使用|r |T132621:0|t[|cRXP_LOOT_Empty Powder Keg|r] |cRXP_WARN_来开启任务|r
+    >>|cRXP_WARN_注释：该物品掉率很低。如果你没有找到它，请跳过此步骤|r
     .collect 268548,1,95213,1 -- Empty Powder Keg (1)
-    .accept 95213 >> Accept Stolen Blasting Powder (NOT TRANSLATED IN :zhCN YET)
+    .accept 95213 >> 接受任务 Stolen Blasting Powder
 step
     #sticky
     #label Skullthumpers
@@ -1981,14 +1981,14 @@ step
     .goto 1426/0,-1606.02,-5676.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_矿场主管瑟斯丁|r 对话
     .turnin 95213 >> 交任务 被偷走的炸药粉
-    .accept 95214 >> Accept Stolen Blasting Powder (NOT TRANSLATED IN :zhCN YET)
+    .accept 95214 >> 接受任务 Stolen Blasting Powder
     .target Quarrymaster Thesten
 step
     #optional
     .isQuestTurnedIn 95213
     .goto 1426/0,-1606.02,-5676.35
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quarrymaster Thesten|r (NOT TRANSLATED IN :zhCN YET)
-    .accept 95214 >> Accept Stolen Blasting Powder (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Quarrymaster Thesten|r 对话
+    .accept 95214 >> 接受任务 Stolen Blasting Powder
     .target Quarrymaster Thesten
 step
     #optional
@@ -2031,10 +2031,10 @@ step
 step
     #completewith OII
     >>击杀 |cRXP_ENEMY_石腭伏击者|r。拾取它们的 |T132621:0|t[|cRXP_LOOT_空火药桶|r]
-    .use 268548 >> |cRXP_WARN_Use the|r |T132621:0|t[|cRXP_LOOT_Empty Powder Keg|r] |cRXP_WARN_to start the quest|r (NOT TRANSLATED IN :zhCN YET)
+    .use 268548 >> |cRXP_WARN_使用|r |T132621:0|t[|cRXP_LOOT_Empty Powder Keg|r] |cRXP_WARN_来开启任务|r
     >>|cRXP_WARN_注释：这个物品掉落率很低。如果你在完成了|r 黑铁间谍|cRXP_ENEMY_ 任务时还没有找到它，请跳过此步骤|r
     .collect 268548,1,95213,1 -- Empty Powder Keg (1)
-    .accept 95213 >> Accept Stolen Blasting Powder (NOT TRANSLATED IN :zhCN YET)
+    .accept 95213 >> 接受任务 Stolen Blasting Powder
     .mob Rockjaw Ambusher
 step
     #label SpyMap
@@ -2055,14 +2055,14 @@ step
     .goto 1426/0,-1881.82,-5735.45,0
     .goto 1426/0,-1832.57,-5571.28,0
     .goto 1426/0,-1724.22,-5636.95,0
-    >>Kill |cRXP_ENEMY_Rockjaw Ambushers|r. Loot them for their |cRXP_LOOT_Stolen Blasting Powder|r (NOT TRANSLATED IN :zhCN YET)
+    >>击杀 |cRXP_ENEMY_石颚 Ambushers|r，拾取他们的 |cRXP_LOOT_Stolen Blasting Powder|r
     .complete 95214,1 -- Stolen Blasting Powder (16)
     .mob Rockjaw Ambusher
 step
     .isQuestComplete 95214
     .goto 1426/0,-1606.02,-5676.35
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quarrymaster Thesten|r (NOT TRANSLATED IN :zhCN YET)
-    .turnin 95214 >> Turn in Stolen Blasting Powder (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Quarrymaster Thesten|r 对话
+    .turnin 95214 >> 交任务 Stolen Blasting Powder
     .target Quarrymaster Thesten
 step
     #label OII
@@ -2075,15 +2075,15 @@ step
 step
     .isOnQuest 95213
     .goto 1426/0,-1606.02,-5676.35
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quarrymaster Thesten|r (NOT TRANSLATED IN :zhCN YET)
-    .turnin 95213 >> Turn in Stolen Blasting Powder (NOT TRANSLATED IN :zhCN YET)
-    .accept 95214 >> Accept Stolen Blasting Powder (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Quarrymaster Thesten|r 对话
+    .turnin 95213 >> 交任务 Stolen Blasting Powder
+    .accept 95214 >> 接受任务 Stolen Blasting Powder
     .target Quarrymaster Thesten
 step
     .isQuestTurnedIn 95213
     .goto 1426/0,-1606.02,-5676.35
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quarrymaster Thesten|r (NOT TRANSLATED IN :zhCN YET)
-    .accept 95214 >> Accept Stolen Blasting Powder (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Quarrymaster Thesten|r 对话
+    .accept 95214 >> 接受任务 Stolen Blasting Powder
     .target Quarrymaster Thesten
 step
     .isOnQuest 95214
@@ -2094,14 +2094,14 @@ step
     .goto 1426/0,-1881.82,-5735.45,0
     .goto 1426/0,-1832.57,-5571.28,0
     .goto 1426/0,-1724.22,-5636.95,0
-    >>Kill |cRXP_ENEMY_Rockjaw Ambushers|r. Loot them for their |cRXP_LOOT_Stolen Blasting Powder|r (NOT TRANSLATED IN :zhCN YET)
+    >>击杀 |cRXP_ENEMY_石颚 Ambushers|r，拾取他们的 |cRXP_LOOT_Stolen Blasting Powder|r
     .complete 95214,1 -- Stolen Blasting Powder (16)
     .mob Rockjaw Ambusher
 step
     .isQuestComplete 95214
     .goto 1426/0,-1606.02,-5676.35
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quarrymaster Thesten|r (NOT TRANSLATED IN :zhCN YET)
-    .turnin 95214 >> Turn in Stolen Blasting Powder (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Quarrymaster Thesten|r 对话
+    .turnin 95214 >> 交任务 Stolen Blasting Powder
     .target Quarrymaster Thesten
 step
     #completewith next
@@ -2175,7 +2175,7 @@ step << !Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雅尼·铁心|r 对话
     >>|cRXP_BUY_从她那里|r|cRXP_BUY_购买一捆|r |T135435:0|t[普通木柴] |cRXP_BUY_和一块|r |T135237:0|t[燧石和火绒]
     >>|cRXP_BUY_需要的话也可以从她那里|r|cRXP_BUY_购买一个|r |T133634:0|t[棕色小包] << !Rogue
-    >>|cRXP_WARN_This is used to make|r |T135805:0|t[Basic Campfires] |cRXP_WARN_while waiting for Boats to level your|r |T133971:0|t[Cooking] |cRXP_WARN_skill without losing time|r (NOT TRANSLATED IN :zhCN YET)
+    >>|cRXP_WARN_这个用来制作|r |T135805:0|t[Basic Campfires] |cRXP_WARN_在等待 Boats 的同时升级你的|r |T133971:0|t[烹饪] |cRXP_WARN_技能而不浪费时间|r
     >>|cRXP_WARN_你需要 50 点|r |T133971:0|t[烹饪] |cRXP_WARN_，以便之后在暮色森林完成一个任务|r
     .collect 4470,1 --Simple Wood (1)
     .collect 4471,1 --Flint and Tinder (1)
@@ -2561,7 +2561,7 @@ step << !Hunter
     .goto 1455/0,-1330.28,-4840.430
     .subzone 2257 >>进入矿道地铁
 step << !Hunter
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在矿道地铁的中间平台上与 |cRXP_FRIENDLY_蒙提|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 在矿道地铁的中间平台上与 |cRXP_FRIENDLY_蒙提|r 对话
     .accept 6661 >> 接受任务 捕捉矿道老鼠
     .target 蒙提
 step << !Hunter
@@ -2570,7 +2570,7 @@ step << !Hunter
     .use 17117
     .mob 矿道老鼠
 step << !Hunter
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在矿道地铁的中间平台上与 |cRXP_FRIENDLY_蒙提|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 在矿道地铁的中间平台上与 |cRXP_FRIENDLY_蒙提|r 对话
     .turnin 6661 >> 交任务 捕捉矿道老鼠
     .timer 11,捕捉矿道老鼠剧情表演
     .accept 6662 >> 接受任务 我的兄弟，尼普希
@@ -2787,7 +2787,7 @@ RXPGuides.RegisterGuide([[
 #disabledungeons
 #season 0,1
 << Alliance !Hunter
-#group RestedXP 无限指南 (联盟)
+#group RestedXP Forever 指南 A
 #subgroup 速通指南 1-20级
 --#groupid RXP-SRGCE-A1
 #name 11-12级 艾尔文森林 (矮人/侏儒)
@@ -2914,7 +2914,7 @@ step << skip
     .accept 86 >> 接受任务 比利的馅饼
 step << skip
     #completewith next
-    >>击杀 |cRXP_ENEMY_狗头人隧道工|r 和 |cRXP_ENEMY_狗头人矿工|r，拾取他们的 |cRXP_LOOT_蜡烛|r 和 |cRXP_LOOT_金砂|r
+    >>击杀 |cRXP_ENEMY_狗头人隧道工|r 和 |cRXP_ENEMY_狗头人矿工|r。拾取他们的 |cRXP_LOOT_蜡烛|r 和 |cRXP_LOOT_金砂|r
     >>|cRXP_WARN_任务过程中5级怪物可能会变灰，但仍需完成此任务以解锁后续任务|r
     .complete 60,1 --Kobold Candle (8)
     .complete 47,1 --Gold Dust (10)
@@ -2923,7 +2923,7 @@ step << skip
 step << skip
     .goto 1429/0,193.00,-9832.40,50,0
     .goto 1429/0,129.73,-9844.49
-    >>|cRXP_WARN_进入并且探察法戈第矿洞|r
+    >>|cRXP_WARN_进入并探察法戈第矿洞|r
     .complete 62,1 --Scout Through the Fargodeep Mine
 step << skip
     .goto 1429/0,129.73,-9844.49,25,0
@@ -2931,7 +2931,7 @@ step << skip
     .goto 1429/0,129.73,-9844.49,25,0
     .goto 1429/0,226.57,-9878.28,25,0
     .goto 1429/0,129.73,-9844.49
-    >>击杀 |cRXP_ENEMY_狗头人隧道工|r 和 |cRXP_ENEMY_狗头人矿工|r，拾取他们的 |cRXP_LOOT_蜡烛|r 和 |cRXP_LOOT_金砂|r
+    >>击杀 |cRXP_ENEMY_狗头人隧道工|r 和 |cRXP_ENEMY_狗头人矿工|r。拾取他们的 |cRXP_LOOT_蜡烛|r 和 |cRXP_LOOT_金砂|r
     >>|cRXP_WARN_任务过程中5级怪物可能会变灰，但仍需完成此任务以解锁后续任务|r
     .complete 60,1 --Kobold Candle (8)
     .complete 47,1 --Gold Dust (10)
@@ -3451,7 +3451,7 @@ RXPGuides.RegisterGuide([[
 #season 0,1
 #version 1
 << Alliance !Hunter
-#group RestedXP 无限指南 (联盟)
+#group RestedXP Forever 指南 A
 #subgroup 速通指南 1-20级
 --#groupid RXP-SRGCE-A1
 #name 12-14级 洛克莫丹 (矮人/侏儒)
@@ -4453,7 +4453,7 @@ RXPGuides.RegisterGuide([[
 #era/som--h
 #version 1
 << Alliance Hunter
-#group RestedXP 无限指南 (联盟)
+#group RestedXP Forever 指南 A
 #subgroup 速通指南 1-20级
 --#groupid RXP-SRGCE-A1
 #name 11-13级 洛克莫丹 (猎人)

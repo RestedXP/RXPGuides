@@ -8,7 +8,7 @@ RXPGuides.RegisterGuide([[
 << Horde Mage
 #name 12-17级 贫瘠之地 A怪指南
 #version 1
-#group RestedXP 无限指南 (部落)
+#group RestedXP 永久指南 (H)
 #subgroup 法师A怪速通指南
 #defaultfor Horde Mage
 #next 17-21级 石爪山脉/荒芜之地 A怪指南
@@ -712,7 +712,7 @@ RXPGuides.RegisterGuide([[
 << Horde Mage
 #name 17-21级 石爪山脉/荒芜之地 A怪指南
 #version 1
-#group RestedXP 无限指南 (部落)
+#group RestedXP 永久指南 (H)
 #subgroup 法师A怪速通指南
 #defaultfor Horde Mage
 #next 21-30级 银松森林/希尔斯布莱德 A怪指南

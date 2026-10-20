@@ -5,14 +5,14 @@ RXPGuides.RegisterGuide([[
 #forever
 #version 1
 << Alliance NightElf
-#name 11-16 Darkshore/Loch Modan
-#group RestedXP 无限 地下城指南 (联盟)
-#subgroup Dungeon Guide 1-20
+#name 11-16 黑海岸/洛克莫丹
+#group Forever 地下城 向导 A
+#subgroup 地下城指南 1-20
 --#groupid RXP-SRGCE-A1
 #next 17-18 Hall of Thanes
 
 step
-    #include RestedXP 无限指南 (联盟)\14-16级 黑海岸@WashedA-IFExit
+    #include RestedXP Forever 指南 A\14-16级 黑海岸@WashedA-IFExit
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_旅店老板洛雷·火酒|r 对话
     >>|cRXP_WARN_如果你的队伍里有法师，那就把炉石绑定在湖畔镇|r
@@ -25,26 +25,26 @@ step
 step
     .goto Dun Morogh,59.9,49.5,30,0
     .goto Dun Morogh,61.2,47.2,15,0
-    .goto Dun Morogh,62.1,47.3,20 >>Run up the ramp to |cRXP_ENEMY_Vagash|r (NOT TRANSLATED IN :zhCN YET)
+    .goto Dun Morogh,62.1,47.3,20 >>跑上坡道到 |cRXP_ENEMY_Vagash|r
 step
     #completewith next
-    +Kite |cRXP_ENEMY_Vagash|r to |cRXP_FRIENDLY_Rudra Amberstill|r (NOT TRANSLATED IN :zhCN YET)
-    >>|cRXP_WARN_Try to avoid getting close to him or he will cast|r |T135848:16|t[Glacial Roar] |cRXP_WARN_which stuns you for 3 seconds|r (NOT TRANSLATED IN :zhCN YET)
+    +将 |cRXP_ENEMY_Vagash|r 牵引到 |cRXP_FRIENDLY_Rudra Amberstill|r
+    >>|cRXP_WARN_尽量不要靠他太近，否则他会施放|r |T135848:16|t[Glacial Roar] |cRXP_WARN_它会将你晕眩3秒|r
     .mob 瓦加什
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:16|tTalk to |cRXP_FRIENDLY_Rudra Amberstill|r (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:16|t与 |cRXP_FRIENDLY_Rudra Amberstill|r 对话
     .goto Dun Morogh,63.1,49.8
     .target 鲁德拉·冻石
     .accept 314 >>接受任务 保护牲畜
 step
-    >>Kite |cRXP_ENEMY_Vagash|r into the |cRXP_FRIENDLY_Dun Morogh Mountaineer|r (NOT TRANSLATED IN :zhCN YET)
-    >>|cRXP_WARN_Make sure you deal at least 50% damage to him|r (NOT TRANSLATED IN :zhCN YET)
+    >>将 |cRXP_ENEMY_Vagash|r 牵引到 |cRXP_FRIENDLY_Dun Morogh Mountaineer|r 身边
+    >>|cRXP_WARN_确保你对他造成至少50%的伤害|r
     .goto Dun Morogh,62.8,54.6,10,0
     .mob 瓦加什
     .target Dun Morogh Mountaineer
     .complete 314, 1
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:16|tTalk to |cRXP_FRIENDLY_Rudra Amberstill|r (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:16|t与 |cRXP_FRIENDLY_Rudra Amberstill|r 对话
     .goto Dun Morogh, 63.1, 49.8
     .target 鲁德拉·冻石
     .turnin 314 >>交任务 保护牲畜
@@ -102,15 +102,15 @@ step
     .turnin 96390 >> 交任务 防患于未然
     .target Earthseer Farsen
 step
-    #include RestedXP 无限指南 (联盟)\14-16级 黑海岸@LochEnter-LochEnd
+    #include RestedXP Forever 指南 A\14-16级 黑海岸@LochEnter-LochEnd
 step << NightElf Druid
     #completewith next
 	.cast 18960 >> 施放传送：月光林地
 	.zoneskip Moonglade
 step << Druid
 	.goto Moonglade,44.2,45.2
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Silva|r (NOT TRANSLATED IN :zhCN YET)
-	.fly Teldrassil >>Fly to Rutheran Village (NOT TRANSLATED IN :zhCN YET)
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Silva|r 对话
+	.fly Teldrassil >>飞往露瑟兰村庄
 	.target Silva
 step << Druid
     #completewith next
@@ -157,7 +157,7 @@ step << Druid
     .accept 272 >> 接受任务 海狮试炼
     .target 塔加里
 step << NightElf
-    .hs >>Hearthstone to Ironforge (NOT TRANSLATED IN :zhCN YET)
+    .hs >>使用炉石传送至铁炉堡
     .zoneskip Ironforge
 step << NightElf Priest/NightElf Druid
     #ah
@@ -166,10 +166,10 @@ step << NightElf Priest/NightElf Druid
     .goto 1455/0,-917.57,-4967.58,-1--c:Ironforge,25.800,75.500
     .goto 1455/0,-904.92,-4962.83,-1--c:Ironforge,24.200,74.600
     .goto 1455/0,-901.76,-4948.06,-1--c:Ironforge,23.800,71.800
-    >>|cRXP_WARN_Buy the following if you can afford it:|r (NOT TRANSLATED IN :zhCN YET)
-    >>|T134711:0|t[Minor Wizard Oil] |cRXP_WARN_and|r |T133906:0|t[Smoked Sagefish] (NOT TRANSLATED IN :zhCN YET)
-    >>|cRXP_WARN_Also check for any high DPS|r |T132317:0|t[Wand] |cRXP_WARN_upgrades that you can use now/soon|r (NOT TRANSLATED IN :zhCN YET) << Priest
-    >>|cRXP_WARN_These will provide a high DPS increase in early levels. If you don't want to or can't do this, skip this step|r (NOT TRANSLATED IN :zhCN YET)
+    >>|cRXP_WARN_如果你能负担得起，购买以下物品:|r
+    >>|T134711:0|t[杂兵 Wizard Oil] |cRXP_WARN_和|r |T133906:0|t[Smoked Sagefish]
+    >>|cRXP_WARN_还要查找可以立即使用或很快使用的高每秒伤害|r |T132317:0|t[Wand] |cRXP_WARN_升级|r << Priest
+    >>|cRXP_WARN_这些将在早期等级提供高每秒伤害提升。如果你不想这样做或无法这样做，跳过此步骤|r
     .collect 20744,1 -- Minor Wizard Oil (1)
     .collect 21072,20 -- Smoked Sagefish (20)
     .target 拍卖师林姆克
@@ -182,7 +182,7 @@ step << NightElf Hunter
     .target 雷格努斯·雷石
 step << NightElf Priest
     .goto 1455/0,-897.200,-4607.200
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priest Rohan|r (NOT TRANSLATED IN :zhCN YET)  
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_高阶牧师洛汉|r 对话  
     .trainer >> 训练你的职业技能
     .target High Priest Rohan
 step << NightElf Rogue
@@ -662,10 +662,10 @@ RXPGuides.RegisterGuide([[
 << Alliance !NightElf
 #name 13-15级 西部荒野 
 #displayname 14-15级 西部荒野 << Gnome/Dwarf !Hunter
-#group RestedXP 无限 地下城指南 (联盟)
-#subgroup Dungeon Guide 1-20
+#group Forever 地下城 向导 A
+#subgroup 地下城指南 1-20
 --#groupid RXP-SRGCE-A1
-#next 15-17 Darkshore
+#next 15-17 黑海岸
 
 step
     #optional
@@ -792,8 +792,8 @@ step
     .accept 92744 >>接受任务 鱼人的鳃
 step
     #optional
-    .abandon 102 >> Abandon Patrolling Westfall (NOT TRANSLATED IN :zhCN YET)
-    >>|cRXP_WARN_You won't complete this quest in this guide|r (NOT TRANSLATED IN :zhCN YET)
+    .abandon 102 >> 放弃任务 巡查西部荒野
+    >>|cRXP_WARN_你不会在本指南中完成此任务|r
 step
 	#completewith MurlocEyeGills
     >>打开地上的 |cRXP_PICK_一袋燕麦|r。拾取他们的 |cRXP_LOOT_一捧燕麦|r
@@ -843,7 +843,7 @@ step
 step
     .goto 1436/0,1748.27,-10672.13
     >>打开 |cRXP_PICK_阿历克斯顿的箱子|r。拾取其中的 |cRXP_LOOT_简易罗盘|r
-    >>|cRXP_WARN_Avoid the mobs in front of the burnt building. Loot it from the back, beside the chimney. Use the chimney to LoS the casts of |cRXP_ENEMY_Pillagers|r if required|r (NOT TRANSLATED IN :zhCN YET)
+    >>|cRXP_WARN_避开燃烧建筑前面的小怪。从背面、烟囱旁拾取 战利品。使用烟囱躲避 |cRXP_ENEMY_Pillagers|r 的施法（如果需要）|r
     .complete 399,1 --A Simple Compass (1)
     .isOnQuest 399
 step
@@ -896,7 +896,7 @@ step
     .goto 1436/0,1192.12,-9641.73
     .goto 1436/0,1042.67,-9619.33,0
     >>击杀 |cRXP_ENEMY_鱼人袭击者|r 和 |cRXP_ENEMY_滩行鱼人|r。拾取他们的 |cRXP_LOOT_眼球|r 和 |cRXP_LOOT_小蚌壳|r
-    >>|cRXP_WARN_If you don't have many |cRXP_LOOT_Gills|r by the time you have finished |cRXP_LOOT_Eyes|r, skip this step|r (NOT TRANSLATED IN :zhCN YET)
+    >>|cRXP_WARN_如果你在完成 |cRXP_LOOT_眼睛|r 时没有很多 |cRXP_LOOT_Gills|r，跳过此步骤|r
     .collect 730,3,38,1 --Murloc Eye (3)
     .complete 92744,1 -- Longshore Murloc Gills 7/7
     .mob Murloc Raider
@@ -1104,7 +1104,7 @@ step
     .goto 1436/0,1324.200,-10490.400
     >>杀死 |cRXP_ENEMY_迪菲亚捕兽者|r 和 |cRXP_ENEMY_迪菲亚走私者|r。拾取他们的 |T133694:0|t|cRXP_LOOT_红色皮质面罩|r
     >>|cRXP_WARN_这是一个动态刷新区域，如果你击杀足够的敌人，他们会持续刷新|r
-    >>|cRXP_WARN_If you are still very far behind on |T133694:0|t|cRXP_LOOT_Red Leather Bandanas|r and have killed all required |cRXP_ENEMY_Defias|r, abandon the quest|r [Red Leather Bandanas] (NOT TRANSLATED IN :zhCN YET)
+    >>|cRXP_WARN_如果你在 |T133694:0|t|cRXP_LOOT_红色皮质面罩|r 上仍然落后很多，并且已经杀死了所有需要的 |cRXP_ENEMY_Defias|r，放弃该任务|r [红色皮质面罩]
     .complete 12,1 -- Defias Trapper slain (15)
     .mob +Defias Trapper
     .complete 12,2 -- Defias Smuggler slain (15)
@@ -1270,11 +1270,11 @@ step << Paladin
 step
     #optional
     #sticky
-    .abandon 153 >> Abandon Red Leather Bandanas if you did not finish it (NOT TRANSLATED IN :zhCN YET)
+    .abandon 153 >> 如果你没有完成，放弃任务红色皮质面罩
 step
     #optional
     #sticky
-    .abandon 92744 >> Abandon Murloc Gills if you did not finish it (NOT TRANSLATED IN :zhCN YET)
+    .abandon 92744 >> 如果你没有完成，放弃任务 Gills
 step
     #optional
     #label endOfTheGuide
@@ -1290,7 +1290,7 @@ step
     .goto 1453/0,660.28,-8814.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
     >>|cRXP_BUY_购买|r |T133970:0|t|cRXP_LOOT_[野猪肉块]|r|cRXP_BUY_ 或|r |T133970:0|t|cRXP_LOOT_[多汁狼肉]|r|cRXP_BUY_，以便稍后提升你的 |r|T133971:0|t[烹饪] |cRXP_BUY_技能|r
-    >>|cRXP_WARN_Your|r |T133971:0|t[Cooking] |cRXP_WARN_skill must be 10 for the turn in at Darkshore for|r |T133972:0|t[Strider Meat] (NOT TRANSLATED IN :zhCN YET)
+    >>|cRXP_WARN_你的|r |T133971:0|t[烹饪] |cRXP_WARN_技能必须达到10级才能在黑海岸交任务|r |T133972:0|t[Strider 肉]
     >>|cRXP_WARN_如果你不想这样做，或者无法完成，可以跳过此步骤|r
     >>|cRXP_BUY_购买以下物品，以便稍后在黑海岸更快交任务|r
     >>|T133972:0|t[陆行鸟肉]
@@ -1331,8 +1331,8 @@ step
     #requires DockTravel
     #label DarkshoreCook1
     #completewith DarkshoreBoat
-    >>|cRXP_WARN_While waiting for the Boat on the dock:|r (NOT TRANSLATED IN :zhCN YET)
-    .cast 818 >>|cRXP_WARN_Create a|r |T135805:0|t[Basic Campfire] |cRXP_WARN_(in your Profession Book)|r (NOT TRANSLATED IN :zhCN YET)
+    >>|cRXP_WARN_在码头等待船只期间:|r
+    .cast 818 >>|cRXP_WARN_创建|r |T135805:0|t[烹饪用火] |cRXP_WARN_（在你的专业技能 书籍中）|r
     .usespell 818
     .zoneskip Darkshore
     .itemcount 769,1 --Chunk of Boar Meat (1+)
@@ -1345,8 +1345,8 @@ step
     #requires DarkshoreCook1
     #label DarkshoreCook2
     #completewith DarkshoreBoat
-    >>|cRXP_WARN_While waiting for the Boat on the dock:|r (NOT TRANSLATED IN :zhCN YET)
-    .cast 818 >>|cRXP_WARN_Create a|r |T135805:0|t[Basic Campfire] |cRXP_WARN_(in your Profession Book)|r (NOT TRANSLATED IN :zhCN YET)
+    >>|cRXP_WARN_在码头等待船只期间:|r
+    .cast 818 >>|cRXP_WARN_创建|r |T135805:0|t[烹饪用火] |cRXP_WARN_（在你的专业技能 书籍中）|r
     .usespell 818
     .zoneskip Darkshore
     .itemcount 769,<1 --Chunk of Boar Meat (<1)
@@ -1359,8 +1359,8 @@ step
     #requires DarkshoreCook2
     #label DarkshoreCook3
     #completewith DarkshoreBoat
-    >>|cRXP_WARN_While waiting for the Boat on the dock:|r (NOT TRANSLATED IN :zhCN YET)
-    .cast 818 >>|cRXP_WARN_Create a|r |T135805:0|t[Basic Campfire] |cRXP_WARN_(in your Profession Book)|r (NOT TRANSLATED IN :zhCN YET)
+    >>|cRXP_WARN_在码头等待船只期间:|r
+    .cast 818 >>|cRXP_WARN_创建|r |T135805:0|t[烹饪用火] |cRXP_WARN_（在你的专业技能 书籍中）|r
     .usespell 818
     .zoneskip Darkshore
     .itemcount 769,1 --Chunk of Boar Meat (1+)
@@ -1425,9 +1425,9 @@ RXPGuides.RegisterGuide([[
 #forever
 #version 1
 << Alliance !NightElf
-#name 15-17 Darkshore
-#group RestedXP 无限 地下城指南 (联盟)
-#subgroup Dungeon Guide 1-20
+#name 15-17 黑海岸
+#group Forever 地下城 向导 A
+#subgroup 地下城指南 1-20
 --#groupid RXP-SRGCE-A1
 #next 17-18 Hall of Thanes
 
@@ -1439,7 +1439,7 @@ step
 step
     #optional
     #completewith next
-    .goto 1439/1,525.800,6414.800,8 >> Travel up the ramp toward |cRXP_FRIENDLY_Wizbang Cranktoggle|r (NOT TRANSLATED IN :zhCN YET)
+    .goto 1439/1,525.800,6414.800,8 >> 沿着坡道向 |cRXP_FRIENDLY_维兹班恩·曲针|r 旅行
 step
     .goto 1439,36.976,44.135
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_维兹班恩·曲针|r 对话
@@ -1468,7 +1468,7 @@ step
 step
     .goto 1439/1,503.100,6402.100
     >>点击 |cRXP_PICK_通缉布告|r
-    .accept 98025 >>Accept WANTED: Jai'vhanel (NOT TRANSLATED IN :zhCN YET)
+    .accept 98025 >>接受任务 WANTED: Jai'vhanel
 step
     #optional
     .goto 1439/1,577.38,6371.35
@@ -1526,7 +1526,7 @@ step
     .waypoint 1439,36.051,44.757,60,0
     >>击杀 |cRXP_ENEMY_小潮行蟹|r 和 |cRXP_ENEMY_暗礁蟹幼崽|r，拾取它们的 |cRXP_LOOT_蟹腿|r
     >>你可能需要下水才能获得它们
-    >>|cRXP_WARN_Even if some of these are gray, still complete the quest as it is part of a chain|r (NOT TRANSLATED IN :zhCN YET)
+    >>|cRXP_WARN_即使其中有些已经灰化，仍要完成此任务，因为它是任务链的一部分|r
     .complete 983,1 --Crawler Leg (6)
     .mob 小潮行蟹
     .mob 暗礁蟹幼崽
@@ -1960,7 +1960,7 @@ step
 step
     .isOnQuest 98025
     .waypoint 1439/1,-18.100,5779.800
-    >>Kill |cRXP_ENEMY_Jai'vhanel|r. Loot it for the |cRXP_LOOT_Feather of Jai'vhanel|r (NOT TRANSLATED IN :zhCN YET)
+    >>杀死 |cRXP_ENEMY_Jai'vhanel|r 并拾取 |cRXP_LOOT_Feather of Jai'vhanel|r
     .complete 98025,1 --|1/1 Feather of Jai'vhanel
     .mob Jai'vhanel
 step
@@ -2033,9 +2033,9 @@ step
 step
     .isOnQuest 98025
     .goto 1439/1,472.900,6439.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea::2930|r (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea::2930|r 对话
     .target Sentinel Glynda Nal'Shea::2930
-    .turnin 98025 >>Turn in WANTED: Jai'vhanel (NOT TRANSLATED IN :zhCN YET)
+    .turnin 98025 >>交任务 WANTED: Jai'vhanel
 step
     .goto 1439,37.703,43.393
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哨兵戈琳达·纳希恩|r 对话
@@ -2183,7 +2183,7 @@ step
     .complete 947,2 --Death Cap (1)
     .goto 1439/1,-685.72,6746.49
 step
-    .deathskip >> Die and respawn at the Auberdine graveyard (NOT TRANSLATED IN :zhCN YET)
+    .deathskip >> 死亡并在Auberdine的墓地复活
     .target 灵魂医者
 step
     #optional
@@ -2435,11 +2435,11 @@ RXPGuides.RegisterGuide([[
 #forever
 #version 1
 << Alliance
-#group RestedXP 无限 地下城指南 (联盟)
-#subgroup Dungeon Guide 1-20
+#group Forever 地下城 向导 A
+#subgroup 地下城指南 1-20
 --#groupid RXP-SRGCE-A1
 #name 17-18 Hall of Thanes
-#next 18-19 Ruins of Lordaeron
+#next 18-19 洛丹伦废墟
 #displayname 16-17 Hall of Thanes << NightElf
 
 step << Skyborne
@@ -2456,56 +2456,56 @@ step << !NightElf
 step << !NightElf
     #label QuarryStart
     .goto 1426/0,-1394.24,-5797.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Earthseer Farsen|r (NOT TRANSLATED IN :zhCN YET)
-    .accept 96392 >> Accept Farsen's Watch (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Earthseer Farsen|r 对话
+    .accept 96392 >> 接受任务 Farsen's Watch
     .target Earthseer Farsen
 step << !NightElf
     .isOnQuest 96392
     .goto 1426/0,-1394.24,-5797.83
-    .gossipoption 139831 >> Talk to |cRXP_FRIENDLY_Earthseer Farsen|r to view his farsight (NOT TRANSLATED IN :zhCN YET)
-    >>|cRXP_WARN_You can cancel the Farsight once the objective completes|r (NOT TRANSLATED IN :zhCN YET)
+    .gossipoption 139831 >> 与 |cRXP_FRIENDLY_Earthseer Farsen|r 对话以查看他的远视
+    >>|cRXP_WARN_目标完成后，你可以取消远视|r
     .target Earthseer Farsen
 step << !NightElf
     .isOnQuest 96392
-    .aura -1293681 >> |cRXP_WARN_Press ESCAPE to cancel the Farsight|r (NOT TRANSLATED IN :zhCN YET)
+    .aura -1293681 >> |cRXP_WARN_按ESCAPE取消远视|r
 step << skip
     .goto 1426/0,-1394.24,-5797.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Earthseer Farsen|r (NOT TRANSLATED IN :zhCN YET)
-    >>|cRXP_WARN_You can cancel the Farsight once the objective completes|r (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Earthseer Farsen|r 对话
+    >>|cRXP_WARN_目标完成后，你可以取消远视|r
     .complete 96392,1 -- Use Farsen's Farsight
     .skipgossip
     .target Earthseer Farsen
 step << !NightElf
     .goto 1426/0,-1394.24,-5797.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Earthseer Farsen|r (NOT TRANSLATED IN :zhCN YET)
-    >>|cRXP_WARN_Press ESCAPE to cancel the Farsight|r (NOT TRANSLATED IN :zhCN YET)
-    .turnin 96392 >> Turn in Farsen's Watch (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Earthseer Farsen|r 对话
+    >>|cRXP_WARN_按ESCAPE取消远视|r
+    .turnin 96392 >> 交任务 Farsen's Watch
     --.accept 96390 >> Accept Nip 'Em in the Bud
     .target Earthseer Farsen
 step << !NightElf
     .goto 1426/0,-2009.87,-5860.22,40,0
     .goto 1426/0,-2034.49,-5922.60
-    >>Kill |cRXP_ENEMY_Dark Iron Spies|r. Loot them for the |T237385:0|t[|cRXP_LOOT_Dark Iron Map|r] (NOT TRANSLATED IN :zhCN YET)
-    .use 274268 >>|cRXP_WARN_Use the|r |T237385:0|t[|cRXP_LOOT_Dark Iron Map|r] |cRXP_WARN_to start the quest|r (NOT TRANSLATED IN :zhCN YET)
+    >>击杀 |cRXP_ENEMY_Dark Iron Spies|r。从他们身上拾取 |T237385:0|t[|cRXP_LOOT_Dark Iron Map|r]
+    .use 274268 >>|cRXP_WARN_使用|r |T237385:0|t[|cRXP_LOOT_Dark Iron Map|r] |cRXP_WARN_来激发任务|r
     -->>|cRXP_WARN_You can skip killing |cRXP_ENEMY_Dark Iron Spies|r for the other quest because they are low level once you find the|r |T237385:0|t[|cRXP_LOOT_Dark Iron Map|r]
     --.complete 96390,1 -- Dark Iron Spy slain 10/10
     --.disablecheckbox
     .collect 274268,1,96391,1 -- Dark Iron Map (1)
-    .accept 96391 >> Accept Underground Map (NOT TRANSLATED IN :zhCN YET)
+    .accept 96391 >> 接受任务 Underground Map
     .mob 黑铁间谍
 step << !NightElf
     #label OII
     .goto 1426/0,-1394.24,-5797.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Earthseer Farsen|r (NOT TRANSLATED IN :zhCN YET)
-    .turnin 96391 >> Turn in Underground Map (NOT TRANSLATED IN :zhCN YET)
-    .accept 96393 >> Accept Old Ironforge Incursion (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Earthseer Farsen|r 对话
+    .turnin 96391 >> 交任务 Underground Map
+    .accept 96393 >> 接受任务 Old 铁炉堡 Incursion
     .target Earthseer Farsen
 step << !NightElf
     #optional
     .isQuestComplete 96390
     .goto 1426/0,-1394.24,-5797.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Earthseer Farsen|r (NOT TRANSLATED IN :zhCN YET)
-    .turnin 96390 >> Turn in Nip 'Em in the Bud (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Earthseer Farsen|r 对话
+    .turnin 96390 >> 交任务 Nip 'Em in the 巴德
     .target Earthseer Farsen
 
 step
@@ -2668,7 +2668,7 @@ step
 .dungeon BFD
     .goto 1455/0,-1115.43,-4598.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_葛利·硬骨|r 对话
-    .accept 971 >> Accept Knowledge in the Deeps (NOT TRANSLATED IN :zhCN YET)
+    .accept 971 >> 接受任务深渊中的知识
     .target 葛利·硬骨
 step << Warrior/Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_雷格努斯·雷石|r 对话 << Hunter
@@ -2684,12 +2684,12 @@ RXPGuides.RegisterGuide([[
 #forever
 #version 1
 << Alliance
-#group RestedXP 无限 地下城指南 (联盟)
-#subgroup Dungeon Guide 1-20
+#group Forever 地下城 向导 A
+#subgroup 地下城指南 1-20
 --#groupid RXP-SRGCE-A1
-#name 18-19 Ruins of Lordaeron
-#next 19-20 Deadmines
-#displayname 17-18 Ruins of Lordaeron << NightElf
+#name 18-19 洛丹伦废墟
+#next 19-20 死亡矿井
+#displayname 17-18 洛丹伦废墟 << NightElf
 
 step
     #completewith EnterRoL
@@ -2775,7 +2775,7 @@ step
     .goto 1420/0,4.300,1847.500,10,0
     .goto 1458/0,238.400,1872.200,20,0
     .goto 1458/0,170.700,1804.700,20 >>前往幽暗城的洛丹伦废墟。进入地下城
-    >>|cRXP_WARN_Be careful of higher level |cRXP_ENEMY_Cats|r, |cRXP_ENEMY_Bears|r, |cRXP_ENEMY_Spiders|r or |cRXP_ENEMY_Murlocs|r as you run over. Run through the Hillsbrad fields if needed instead|r (NOT TRANSLATED IN :zhCN YET)
+    >>|cRXP_WARN_小心高等级的 |cRXP_ENEMY_Cats|r、|cRXP_ENEMY_熊|r、|cRXP_ENEMY_Spiders|r 或 |cRXP_ENEMY_Murlocs|r。如果需要，可以改走 希尔斯布莱德 平原|r
     >>|cRXP_WARN_一旦进入 幽暗城，你将自动被标记为PvP状态，|r |cRXP_ENEMY_部落|r 可以攻击你
 
 step
@@ -2843,7 +2843,7 @@ step
 step
     #optional
     #completewith next
-    .zone Stormwind City >>Make your way to Stormwind (NOT TRANSLATED IN :zhCN YET)
+    .zone Stormwind City >>前往暴风城
 step
     .isOnQuest 92415
     .goto 1453/0,744.400,-8621.101
@@ -2958,11 +2958,11 @@ RXPGuides.RegisterGuide([[
 #forever
 #version 1
 << Alliance
-#group RestedXP 无限 地下城指南 (联盟)
-#subgroup Dungeon Guide 1-20
+#group Forever 地下城 向导 A
+#subgroup 地下城指南 1-20
 --#groupid RXP-SRGCE-A1
-#name 19-20 Deadmines
-#displayname 18-20 Deadmines/Redridge << NightElf
+#name 19-20 死亡矿井
+#displayname 18-20 死亡矿井/赤脊山 << NightElf
 #next 20-21级 黑海岸/灰谷
 
 step
@@ -2970,7 +2970,7 @@ step
     #label FlyWestfall
     .goto 1453/0,490.03,-8835.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
-    >>|cRXP_WARN_If you do not already have the Westfall flight path, skip this step|r (NOT TRANSLATED IN :zhCN YET) << !Human !Gnome !Dwarf
+    >>|cRXP_WARN_如果你还没有获得 西部荒野 飞行路径，请跳过此步骤|r << !Human !Gnome !Dwarf
     .fly Westfall >> 飞往西部荒野
     .target 杜加尔·朗德瑞克
 step
@@ -3100,7 +3100,7 @@ step << Druid
     .goto Westfall,52.8,53.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_与旅店老板对话|r
     .target 旅店老板希瑟尔
-    .home >> Set your Hearthstone to Westfall (NOT TRANSLATED IN :zhCN YET)
+    .home >> 将 你的 炉石 设置为 西部荒野
 step
     #optional
     #completewith next
@@ -3278,8 +3278,8 @@ step << Druid
     .hs >> 炉石到哨兵岭
 step << !Druid
     .goto 1436/0,1707.2116,-10583.0227
-    >>Click the |cRXP_PICK_Burned-Out Remains|r on the ground (NOT TRANSLATED IN :zhCN YET)
-    .accept 79008 >> Accept ...and that note you found (NOT TRANSLATED IN :zhCN YET)
+    >>点击地面上的|cRXP_PICK_焦焚残骸|r
+    .accept 79008 >> 接受任务……你所找到的纸条
 step
     #completewith RSB
     .goto 1436/0,1045.12,-10508.80,100 >> 前往哨兵岭
@@ -3321,13 +3321,13 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_治安官马瑞斯|r 对话
     .goto 1433/0,-2298.06,-9284.04
     .accept 20 >> 接受任务 黑石氏族的威胁
-    .accept 98387 >>Accept Blackrock Blockade (NOT TRANSLATED IN :zhCN YET)
+    .accept 98387 >>接受任务 Blackrock Blockade
     .target 治安官马瑞斯
 step
     .group
     .goto 1433/0,-2208.600,-9243.500
     >>点击 |cRXP_PICK_通缉布告|r
-    .accept 95999 >>Accept WANTED: Incinerator Gar'im (NOT TRANSLATED IN :zhCN YET)
+    .accept 95999 >>接受任务 WANTED: 焚化者加因姆
 step
     #loop
     .goto 1433/0,-1913.800,-9490.601,50,0
@@ -3336,7 +3336,7 @@ step
     .goto 1433/0,-2508.20,-9620.68,45,0
     .goto 1433/0,-2246.61,-9764.90,45,0
 	>>杀死 |cRXP_ENEMY_混血赤脊山豺狼人|r 和 |cRXP_ENEMY_赤脊山偷猎者|r
-    >>Kill |cRXP_ENEMY_Redridge Thrashers|r. Loot them for their |cRXP_LOOT_Spiked Collars|r (NOT TRANSLATED IN :zhCN YET)
+    >>击杀 |cRXP_ENEMY_Redridge Thrashers|r。拾取他们的 |cRXP_LOOT_Spiked Collars|r
     .complete 246,1 --Redridge Mongrel (10)
     .mob +Redridge Mongrel
     .complete 246,2 --Redridge Poacher (6)
@@ -3349,14 +3349,14 @@ step
     #sticky
     #label IncineratorGarim
     .waypoint 1433/0,-3261.400,-9824.700
-    >>Kill |cRXP_ENEMY_Incinerator Gar'im|r inside the cave. Loot him for the |cRXP_LOOT_Broken Staff of Incinerator Gar'im|r (NOT TRANSLATED IN :zhCN YET)
-    >>|cRXP_WARN_Skip this step if you are unable to find a group for him|r (NOT TRANSLATED IN :zhCN YET)
+    >>击杀洞穴内的 |cRXP_ENEMY_焚化者加因姆|r。从他身上拾取 |cRXP_LOOT_Broken 法杖 of 焚化者加因姆|r
+    >>|cRXP_WARN_如果你无法组建队伍，请跳过此步骤|r
     .complete 95999,1 -- Broken Staff of Incinerator Gar'im (1)
     .mob Incinerator Gar'im
 step
     #completewith next
-    >>Loot the |cRXP_PICK_Grain Sacks|r and |cRXP_PICK_Meat Haunches|r on the ground for |cRXP_LOOT_Stolen Supplies|r (NOT TRANSLATED IN :zhCN YET)
-    >>Loot the |cRXP_PICK_Weapon Racks|r and |cRXP_PICK_Stolen Weapons|r the ground (NOT TRANSLATED IN :zhCN YET)
+    >>拾取地上的 |cRXP_PICK_谷物袋|r 和 |cRXP_PICK_大块腿肉|r 来获得 |cRXP_LOOT_Stolen 补给|r
+    >>拾取地上的 |cRXP_PICK_武器架|r 和 |cRXP_PICK_Stolen 武器|r
     .complete 98387,1 -- Stolen Supplies (10)
     .complete 98387,2 -- Stolen Weapon (8)
 step
@@ -3379,8 +3379,8 @@ step
     .goto 1433/0,-3259.74,-9566.82,60,0
     .goto 1433/0,-3092.80,-9694.82,60,0
     .goto 1433/0,-3177.25,-9718.85,60,0
-    >>Loot the |cRXP_PICK_Grain Sacks|r and |cRXP_PICK_Meat Haunches|r on the ground for |cRXP_LOOT_Stolen Supplies|r (NOT TRANSLATED IN :zhCN YET)
-    >>Loot the |cRXP_PICK_Weapon Racks|r and |cRXP_PICK_Stolen Weapons|r the ground (NOT TRANSLATED IN :zhCN YET)
+    >>拾取地上的 |cRXP_PICK_谷物袋|r 和 |cRXP_PICK_大块腿肉|r 来获得 |cRXP_LOOT_Stolen 补给|r
+    >>拾取地上的 |cRXP_PICK_武器架|r 和 |cRXP_PICK_Stolen 武器|r
     .complete 98387,1 -- Stolen Supplies (10)
     .complete 98387,2 -- Stolen Weapon (8)
 step
@@ -3389,7 +3389,7 @@ step << Shaman -- most likely not on this quest yet
     #optional
     .isOnQuest 94499
     .goto 1433/0,-3121.100,-9485.000
-    .use 265747 >> |cRXP_WARN_Use the|r |T132829:0|t[Unfilled Red Waterskin] |cRXP_WARN_at Stonewatch Falls|r (NOT TRANSLATED IN :zhCN YET)
+    .use 265747 >> |cRXP_WARN_使用|r |T132829:0|t[Unfilled 红色 Waterskin] |cRXP_WARN_在石堡瀑布|r
     .complete 94499,1 --|1/1 Full Red Waterskin
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_菲尔顿副队长|r 对话
@@ -3402,14 +3402,14 @@ step
 	.target 治安官马瑞斯
     .goto 1433/0,-2298.06,-9284.04
     .turnin 20 >> 交任务 黑石氏族的威胁
-    .turnin 98387 >>Turn in Blackrock Blockade (NOT TRANSLATED IN :zhCN YET)
+    .turnin 98387 >>交任务 Blackrock Blockade
 step
     .isQuestComplete 95999
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_所罗门镇长|r 对话
 	.target 所罗门镇长
     .goto 1433/0,-2207.10,-9231.34,15,0
     .goto 1433/0,-2221.65,-9218.60
-    .turnin 95999 >>Turn in WANTED: Incinerator Gar'im (NOT TRANSLATED IN :zhCN YET)
+    .turnin 95999 >>交任务 WANTED: 焚化者加因姆
 step
     #optional
     .xp 20 >> 刷怪达到20级
@@ -3427,7 +3427,7 @@ step
     #completewith DarkshoreBoat
     .goto 1433/0,-2234.900,-9435.300,-1
     .goto 1436/0,1037.42,-10628.27,-1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariena Stormfeather|r or |cRXP_FRIENDLY_Thor|r (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾蕾娜·斯托姆法瑟|r 或 |cRXP_FRIENDLY_索尔|r 对话
     .fly Stormwind >> 飞往暴风城
     .target 艾蕾娜·斯托姆法瑟
     .target 索尔
@@ -3436,7 +3436,7 @@ step
 step << Rogue
     .goto 1453/0,377.47,-8752.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥斯本|r 对话
-    >>|cRXP_WARN_Turn in the Deadmines quests if you are not level 20 yet|r (NOT TRANSLATED IN :zhCN YET)
+    >>|cRXP_WARN_如果你还没有达到20级，请交任务 死亡矿井 任务|r
     .trainer >> 训练你的职业技能
     .target 夜行者奥斯伯
 step << Rogue
@@ -3446,7 +3446,7 @@ step << Rogue
     .target 马迪亚斯·肖尔大师
 step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_吴|r 或 |cRXP_FRIENDLY_伊尔莎|r 对话
-    >>|cRXP_WARN_Turn in the Deadmines quests if you are not level 20 yet|r (NOT TRANSLATED IN :zhCN YET)
+    >>|cRXP_WARN_如果你还没有达到20级，请交任务 死亡矿井 任务|r
     .goto 1453/0,358.25,-8728.28,15,0
     .goto 1453/0,302.6,-8685.53,15,0
 	.goto 1453/0,323.3,-8689.29
@@ -3496,7 +3496,7 @@ step << Shaman
 step << Shaman
     #label ShamTrain
     .goto 1455/0,-1086.500,-4642.400
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eldrun Stormbreaker::258098|r (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_埃尔德伦·风暴破坏者::258098|r 对话
     .target Eldrun Stormbreaker::258098
     .trainer >> 训练你的职业技能
     .train 408342,1 -- fire nova r2
@@ -3568,18 +3568,18 @@ step << !Druid
     .zone Darkshore >> 乘船前往黑海岸
 step
     #optional
-    .abandon 95999 >>Abandon WANTED: Incinerator Gar'im (NOT TRANSLATED IN :zhCN YET)
+    .abandon 95999 >>放弃任务 WANTED: 焚化者加因姆
 ]])
 
 RXPGuides.RegisterGuide([[
 #forever
 #version 1
 << Alliance
-#group RestedXP 无限 地下城指南 (联盟)
-#subgroup Dungeon Guide 1-20
+#group Forever 地下城 向导 A
+#subgroup 地下城指南 1-20
 --#groupid RXP-SRGCE-A1
 #name 20-21级 黑海岸/灰谷
-#next RestedXP 无限 地下城指南 (联盟)\21-23 Ashenvale/Stonetalon
+#next Forever 地下城 向导 A\21-23级 灰谷/石爪山脉
 
 step << Druid
     #completewith catspirit1
@@ -3603,74 +3603,74 @@ step << NightElf !Druid
 step << Druid
     #label catspirit1
     .goto 1457/1,2564.600,10179.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mathrengyl Bearwalker::4217|r (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Mathrengyl Bearwalker::4217|r 对话
     .target Mathrengyl Bearwalker::4217
-    .accept 98393 >>Accept The Great Cat Spirit (NOT TRANSLATED IN :zhCN YET)
+    .accept 98393 >>接受任务 The ????????????
 step << Druid
     #completewith next
 	.cast 18960 >> 施放传送：月光林地
     .zoneskip Moonglade
 step << Druid
     .goto 1450/1,-2678.900,8020.000
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dendrite Starblaze::11802|r (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德迪利特·星焰::11802|r 对话
     .target Dendrite Starblaze::11802
-    .turnin 98393 >>Turn in The Great Cat Spirit (NOT TRANSLATED IN :zhCN YET)
-    .accept 98341 >>Accept The Great Windborne Cat Spirit (NOT TRANSLATED IN :zhCN YET) << Skyborne
-    .accept 98394 >>Accept The Great Cat Spirit (NOT TRANSLATED IN :zhCN YET) << !Skyborne
+    .turnin 98393 >>交任务 The ????????????
+    .accept 98341 >>接受任务 The Great Windborne 猫 精神 << Skyborne
+    .accept 98394 >>接受任务 The ???????????? << !Skyborne
 step << Druid !Skyborne
     .goto 1450/1,-2640.000,7338.900
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Great Cat Spirit|r (NOT TRANSLATED IN :zhCN YET)
-    .turnin 98394 >>Turn in The Great Cat Spirit (NOT TRANSLATED IN :zhCN YET)
-    .accept 98396 >>Accept The Great Cat Spirit (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Great 猫 精神|r 对话
+    .turnin 98394 >>交任务 The ????????????
+    .accept 98396 >>接受任务 The ????????????
     .target Great Cat Spirit
 step << Druid Skyborne
     .goto 1450/1,-2352.700,7375.600,10,0
     .goto 1450/1,-2394.300,7361.200
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Avatar of Saeyleenan::272054|r (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Avatar of Saeyleenan::272054|r 对话
     .target Avatar of Saeyleenan::272054
-    .turnin 98341 >>Turn in The Great Windborne Cat Spirit (NOT TRANSLATED IN :zhCN YET)
-    .accept 98404 >>Accept The Great Windborne Cat Spirit (NOT TRANSLATED IN :zhCN YET)
+    .turnin 98341 >>交任务 The Great Windborne 猫 精神
+    .accept 98404 >>接受任务 The Great Windborne 猫 精神
 step << Druid
     #completewith next
     .goto 1450/1,-3046.700,7534.400
     --aura 1309054?
-    .subzone 2363 >> Head to the Stormrage Barrow Dens (NOT TRANSLATED IN :zhCN YET)
+    .subzone 2363 >> 前往 怒风兽穴
 step << Druid
-    >>Go deep into the cave, travel across the bridge, look for a cat statue inside an alcove and click on the small orb next to the statue (NOT TRANSLATED IN :zhCN YET)
-    >>Loot |cRXP_LOOT_Relic of the Claw|r (NOT TRANSLATED IN :zhCN YET)
+    >>深入洞穴，穿过桥梁，寻找壁龛内的猫雕像，点击雕像旁边的小球
+    >>拾取 |cRXP_LOOT_Relic of the Claw|r
     .goto 1450/1,-3117.400,7455.300
     .complete 98404,2 << Skyborne --|1/1 Relic of the Claw
     .complete 98396,2 << !Skyborne --|1/1 Relic of the Claw
 step << Druid
-    >>Click on the small orb next to the cat statue (NOT TRANSLATED IN :zhCN YET)
-    >>Loot |cRXP_LOOT_Relic of the Silent Shadow|r (NOT TRANSLATED IN :zhCN YET)
+    >>点击猫雕像旁边的小球
+    >>拾取 |cRXP_LOOT_Relic of the Silent 小影|r
     .goto 1450/1,-3099.200,7485.700
     .complete 98404,3  << Skyborne --|1/1 Relic of the Silent Shadow
     .complete 98396,3  << !Skyborne --|1/1 Relic of the Silent Shadow
 step << Druid
-    >>Click on the small orb next to the cat statue (NOT TRANSLATED IN :zhCN YET)
-    >>Loot |cRXP_LOOT_Relic of the Fang|r (NOT TRANSLATED IN :zhCN YET)
+    >>点击猫雕像旁边的小球
+    >>拾取 |cRXP_LOOT_Relic of the 利牙|r
     .goto 1450/1,-3054.100,7476.800
     .complete 98404,1  << Skyborne --|1/1 Relic of the Fang
     .complete 98396,1  << !Skyborne --|1/1 Relic of the Fang
 step << Druid !Skyborne
     .goto 1450/1,-2640.000,7338.900
-     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Great Cat Spirit|r (NOT TRANSLATED IN :zhCN YET)
-    .turnin 98396 >>Turn in The Great Cat Spirit (NOT TRANSLATED IN :zhCN YET)
-    .accept 98731 >>Accept Blessings of the Great Cat Spirit (NOT TRANSLATED IN :zhCN YET)
+     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Great 猫 精神|r 对话
+    .turnin 98396 >>交任务 The ????????????
+    .accept 98731 >>接受任务 Blessings of the ????????????
     .target Great Cat Spirit
 step << Druid Skyborne
     .goto 1450/1,-2395.400,7361.400
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Avatar of Saeyleenan::272054|r (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Avatar of Saeyleenan::272054|r 对话
     .target Avatar of Saeyleenan::272054
-    .turnin 98404 >>Turn in The Great Windborne Cat Spirit (NOT TRANSLATED IN :zhCN YET)
-    .accept 98738 >>Accept Blessings of the Great Windborne Cat Spirit (NOT TRANSLATED IN :zhCN YET)
+    .turnin 98404 >>交任务 The Great Windborne 猫 精神
+    .accept 98738 >>接受任务 Blessings of the Great Windborne 猫 精神
 step << Druid
     .goto 1450/1,-2678.200,8021.500
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTeleport to Moonglade and talk to |cRXP_FRIENDLY_Dendrite Starblaze::11802|r (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t传送到月光林地并与 |cRXP_FRIENDLY_Dendrite Starblaze::11802|r 对话
     .target Dendrite Starblaze::11802
     .usespell 18960
-    .turnin 98738 >>Turn in Blessings of the Great Windborne Cat Spirit (NOT TRANSLATED IN :zhCN YET) << Skyborne
+    .turnin 98738 >>交任务 Blessings of the Great Windborne 猫 精神 << Skyborne
     .accept 98397 >>接受任务 前往达纳苏斯 --<< Alliance
     --.accept 98362 >>Accept To Thunder Bluff << Horde
 step << Druid
@@ -3696,7 +3696,7 @@ step << Druid
 step << Druid
     #label catspirit2
     .goto 1457/1,2564.400,10179.900
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mathrengyl Bearwalker::4217|r (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Mathrengyl Bearwalker::4217|r 对话
     .target Mathrengyl Bearwalker::4217
     .turnin 98397 >>交任务 前往达纳苏斯
 step << Druid
@@ -3987,7 +3987,7 @@ step << Druid
 step
     #sticky
     #optional
-    .destroy 7442 >> 从你的背包中摧毁 |T134459:0|t[Gyromast's 钥匙]，因为不再需要了
+    .destroy 7442 >> 从背包中删除|T134459:0|t|T134459:0|t[基尔卡克的钥匙]，因为不再需要了
 step
     #completewith ReturnAuberdine
     .subzone 442 >> Return to 奥伯丁，黑海岸
@@ -4081,10 +4081,10 @@ step
     >>点击北侧基座上的 |cRXP_PICK_暮光典籍|r
     .turnin 949 >> 交任务 暮光之锤的营地
     .accept 950 >> 接受任务 向安努回复
-    .accept 98042 >>Accept It's All Fun and Games Until... (NOT TRANSLATED IN :zhCN YET)
+    .accept 98042 >>接受任务 乐趣十足 Until...
 step
     #completewith TheryluneEnd
-    >>Kill |cRXP_ENEMY_Twilight Disciples|r and |cRXP_ENEMY_Twilight Thugs|r. Loot them for the |cRXP_LOOT_Peerless Eye|r and |T133743:0|t[|cRXP_LOOT_Book: The Powers Below|r] (NOT TRANSLATED IN :zhCN YET)
+    >>击杀 |cRXP_ENEMY_暮光信徒|r 和 |cRXP_ENEMY_暮光恶棍|r。从他们身上拾取 |cRXP_LOOT_无双之眼|r 和 |T133743:0|t[|cRXP_LOOT_Book: 深渊之神|r]
     *|cRXP_WARN_小心 |cRXP_ENEMY_暮光暴徒|r 能够|r |T132343:0|t[缴械] |cRXP_WARN_你6秒|r << Rogue/Paladin/Warrior/Shaman
     *|cRXP_WARN_小心，|cRXP_ENEMY_暮光信徒|r 会施放|r |T135953:0|t[恢复] |cRXP_WARN_和3秒的|r |T135915:0|t[治疗术]
     .complete 98042,1 -- Peerless Eye (1)
@@ -4109,7 +4109,7 @@ step
     .goto 1439/1,376.800,4608.600,40,0
     .goto 1439/1,453.100,4580.200,40,0
     .goto 1439/1,409.4366,4521.0151,40,0
-    >>Kill |cRXP_ENEMY_Twilight Disciples|r and |cRXP_ENEMY_Twilight Thugs|r. Loot them for the |cRXP_LOOT_Peerless Eye|r and |T133743:0|t[|cRXP_LOOT_Book: The Powers Below|r] (NOT TRANSLATED IN :zhCN YET)
+    >>击杀 |cRXP_ENEMY_暮光信徒|r 和 |cRXP_ENEMY_暮光恶棍|r。从他们身上拾取 |cRXP_LOOT_无双之眼|r 和 |T133743:0|t[|cRXP_LOOT_Book: 深渊之神|r]
     *|cRXP_WARN_小心 |cRXP_ENEMY_暮光暴徒|r 能够|r |T132343:0|t[缴械] |cRXP_WARN_你6秒|r << Rogue/Paladin/Warrior/Shaman
     *|cRXP_WARN_小心，|cRXP_ENEMY_暮光信徒|r 会施放|r |T135953:0|t[恢复] |cRXP_WARN_和3秒的|r |T135915:0|t[治疗术]
     .complete 98042,1 -- Peerless Eye (1)
@@ -4148,13 +4148,13 @@ step
 step
     .isQuestTurnedIn 4681
     .goto 1439,31.690,83.700
-    >>|cRXP_WARN_注意 |cRXP_ENEMY_灰雾智者|r 的|r |T136048:0|t[闪电箭] |cRXP_WARN_伤害，他们还会使用|r |T136052:0|t[治疗波] 进行治疗|r
+    >>|cRXP_WARN_注意 |cRXP_ENEMY_灰雾智者|r 的|r |T136048:0|t[闪电箭] |cRXP_WARN_伤害，他们还会使用|r |T136052:0|t[治疗波]|r
     >>点击地上的 |cRXP_PICK_搁浅的海龟|r
     .accept 4731 >> 接受任务 搁浅的海龟
 step
     .isQuestTurnedIn 4681
     .goto 1439,31.229,85.564
-    >>|cRXP_WARN_注意 |cRXP_ENEMY_灰雾智者|r 的|r |T136048:0|t[闪电箭] |cRXP_WARN_伤害，他们还会使用|r |T136052:0|t[治疗波] 进行治疗|r
+    >>|cRXP_WARN_注意 |cRXP_ENEMY_灰雾智者|r 的|r |T136048:0|t[闪电箭] |cRXP_WARN_伤害，他们还会使用|r |T136052:0|t[治疗波]|r
     >>点击地上的 |cRXP_PICK_搁浅的海龟|r
     .accept 4732 >> 接受任务 搁浅的海龟
 step
@@ -4162,12 +4162,12 @@ step
     .goto 1439,31.251,87.419
     >>点击 |cRXP_PICK_搁浅的海洋生物|r
     .accept 4733 >> 接受任务 搁浅的海洋生物
-    >>|cRXP_WARN_注意 |cRXP_ENEMY_灰雾智者|r 的|r |T136048:0|t[闪电箭] |cRXP_WARN_伤害，他们还会使用|r |T136052:0|t[治疗波] 进行治疗|r
+    >>|cRXP_WARN_注意 |cRXP_ENEMY_灰雾智者|r 的|r |T136048:0|t[闪电箭] |cRXP_WARN_伤害，他们还会使用|r |T136052:0|t[治疗波]|r
 step
     .goto 1439,43.555,76.293
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_安努|r 对话
     .turnin 950 >> 交任务 向安努回复
-    .timer 11,Return to Onu RP (NOT TRANSLATED IN :zhCN YET)
+    .timer 11,回到安努处完成剧情
     .target 安努
 step
     #optional
@@ -4180,7 +4180,7 @@ step
     .goto 1439,44.401,76.425
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_克罗尼亚·恒影|r 对话来开启护送任务
     >>|cRXP_WARN_如果他不在那里就跳过这一步。他最多需要25分钟才会重新刷新|r
-    >>|cRXP_WARN_This is a timed quest, you have to escort him to his bag in 20 minutes|r (NOT TRANSLATED IN :zhCN YET)
+    >>|cRXP_WARN_这是一个限时任务，你必须在20分钟内护送他到他的背包|r
     .accept 5321 >> 接受任务 苏醒者已醒
     .target Kerlonian Evershade
     .isQuestTurnedIn 731 --Only shows if Prospector was already escorted
@@ -4195,7 +4195,7 @@ step
     .goto 1439,44.401,76.425
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_克罗尼亚·恒影|r 对话来开启护送任务
     >>|cRXP_WARN_如果他不在那里就跳过这一步。他最多需要25分钟才会重新刷新|r
-    >>|cRXP_WARN_This is a timed quest, you have to escort him to his bag in 20 minutes|r (NOT TRANSLATED IN :zhCN YET)
+    >>|cRXP_WARN_这是一个限时任务，你必须在20分钟内护送他到他的背包|r
     .accept 5321 >> 接受任务 苏醒者已醒
     .target Kerlonian Evershade
     .itemcount 13536,<1 --Horn of Awakening
@@ -4208,7 +4208,7 @@ step
 step
     #label Kerlonian
     .goto 1439/1,206.400,4402.500
-    >>|cRXP_WARN_Escort |cRXP_FRIENDLY_Kerlonian|r to his bag |cRXP_WARN_in Darkshore|r|r (NOT TRANSLATED IN :zhCN YET)
+    >>|cRXP_WARN_护送 |cRXP_FRIENDLY_Kerlonian|r 前往 |cRXP_WARN_黑海岸|r 的背包处|r
     .use 13536 >> |cRXP_WARN_每当|r|cRXP_LOOT_克罗尼亚|r|cRXP_WARN_在他身边睡着时，就吹|cRXP_FRIENDLY_ |T134229:0|t[|r唤醒号角|r]
     >>|cRXP_WARN_尽可能避免在主干道上奔跑。只有当你在路上时敌人才会刷新|r
     .complete 5321,2

@@ -9,7 +9,7 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #name 1-6级 北郡
 #version 1
-#group RestedXP 无限指南 (联盟)
+#group RestedXP Forever 指南 A
 #subgroup 速通指南 1-20级
 --#groupid RXP-SRGCE-A1
 #defaultfor Human
@@ -779,7 +779,7 @@ RXPGuides.RegisterGuide([[
 #season 0,1
 #version 1
 << Alliance
-#group RestedXP 无限指南 (联盟)
+#group RestedXP Forever 指南 A
 #subgroup 速通指南 1-20级
 --#groupid RXP-SRGCE-A1
 #name 6-11级 艾尔文森林
@@ -1192,7 +1192,7 @@ step << Warrior/Paladin/Rogue
     #label RoughStoneCraft1
     #completewith NecklaceStart
     +|cRXP_WARN_把|r |T136241:0|t|cRXP_LOOT_[劣质的石头]|r |T135232:0|t[锻造]|cRXP_WARN_成|r |T135248:0|t[劣质磨刀石] << Warrior/Rogue
-    +|T136241:0|t[Blacksmith] |cRXP_WARN_the|r |T135232:0|t|cRXP_LOOT_[Rough Stones]|r |cRXP_WARN_into|r |T135255:0|t[Rough Weightstones] (NOT TRANSLATED IN :zhCN YET) << Paladin
+    +|T136241:0|t[铁匠铺] |cRXP_WARN_将|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_铸成|r |T135255:0|t[Rough Weightstones] << Paladin
     .collect 2862,5 << Rogue/Warrior --Rough Sharpening Stone (5)
     .disablecheckbox
     .collect 3239,5 << Paladin --Rough Weightstone (5)
@@ -1273,7 +1273,7 @@ step << Warrior/Paladin/Rogue
     #label RoughStoneCraft2
     #completewith Lovers
     +|cRXP_WARN_把|r |T136241:0|t|cRXP_LOOT_[劣质的石头]|r |T135232:0|t[锻造]|cRXP_WARN_成|r |T135248:0|t[劣质磨刀石] << Warrior/Rogue
-    +|T136241:0|t[Blacksmith] |cRXP_WARN_the|r |T135232:0|t|cRXP_LOOT_[Rough Stones]|r |cRXP_WARN_into|r |T135255:0|t[Rough Weightstones] (NOT TRANSLATED IN :zhCN YET) << Paladin
+    +|T136241:0|t[铁匠铺] |cRXP_WARN_将|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_铸成|r |T135255:0|t[Rough Weightstones] << Paladin
     .collect 2862,5 << Rogue/Warrior --Rough Sharpening Stone (5)
     .disablecheckbox
     .collect 3239,5 << Paladin --Rough Weightstone (5)
@@ -1354,7 +1354,7 @@ step << Warrior/Paladin/Rogue
     #label RoughStoneCraft3
     #completewith Exchange
     +|cRXP_WARN_把|r |T136241:0|t|cRXP_LOOT_[劣质的石头]|r |T135232:0|t[锻造]|cRXP_WARN_成|r |T135248:0|t[劣质磨刀石] << Warrior/Rogue
-    +|T136241:0|t[Blacksmith] |cRXP_WARN_the|r |T135232:0|t|cRXP_LOOT_[Rough Stones]|r |cRXP_WARN_into|r |T135255:0|t[Rough Weightstones] (NOT TRANSLATED IN :zhCN YET) << Paladin
+    +|T136241:0|t[铁匠铺] |cRXP_WARN_将|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_铸成|r |T135255:0|t[Rough Weightstones] << Paladin
     .collect 2862,5 << Rogue/Warrior --Rough Sharpening Stone (5)
     .disablecheckbox
     .collect 3239,5 << Paladin --Rough Weightstone (5)
@@ -1869,7 +1869,7 @@ step << Warrior/Paladin/Rogue
     #label RoughStoneCraft4
     #completewith JasperlodeExplore
     +|cRXP_WARN_把|r |T136241:0|t|cRXP_LOOT_[劣质的石头]|r |T135232:0|t[锻造]|cRXP_WARN_成|r |T135248:0|t[劣质磨刀石] << Warrior/Rogue
-    +|T136241:0|t[Blacksmith] |cRXP_WARN_the|r |T135232:0|t|cRXP_LOOT_[Rough Stones]|r |cRXP_WARN_into|r |T135255:0|t[Rough Weightstones] (NOT TRANSLATED IN :zhCN YET) << Paladin
+    +|T136241:0|t[铁匠铺] |cRXP_WARN_将|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_铸成|r |T135255:0|t[Rough Weightstones] << Paladin
     .collect 2862,5 << Rogue/Warrior --Rough Sharpening Stone (5)
     .disablecheckbox
     .collect 3239,5 << Paladin --Rough Weightstone (5)
@@ -1956,7 +1956,7 @@ step << Warrior/Paladin/Rogue
     #label RoughStoneCraft5
     #completewith Find
     +|cRXP_WARN_把|r |T136241:0|t|cRXP_LOOT_[劣质的石头]|r |T135232:0|t[锻造]|cRXP_WARN_成|r |T135248:0|t[劣质磨刀石] << Warrior/Rogue
-    +|T136241:0|t[Blacksmith] |cRXP_WARN_the|r |T135232:0|t|cRXP_LOOT_[Rough Stones]|r |cRXP_WARN_into|r |T135255:0|t[Rough Weightstones] (NOT TRANSLATED IN :zhCN YET) << Paladin
+    +|T136241:0|t[铁匠铺] |cRXP_WARN_将|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_铸成|r |T135255:0|t[Rough Weightstones] << Paladin
     .collect 2862,5 << Rogue/Warrior --Rough Sharpening Stone (5)
     .disablecheckbox
     .collect 3239,5 << Paladin --Rough Weightstone (5)
@@ -2706,7 +2706,7 @@ step << Priest
     #requires GoldshireVendor
     .goto 1429/0,33.14,-9460.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_女牧师洁塞塔|r 对话
-    .accept 94774 >> Accept Divine Grace (NOT TRANSLATED IN :zhCN YET)
+    .accept 94774 >> 接受任务 Holy 格蕾丝
     .trainer >> 训练你的职业技能
     .target 女牧师洁塞塔
     .xp <10,1
@@ -3501,7 +3501,7 @@ step << Priest
 step << Priest
     .goto 1453/0,862.89,-8519.61
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_高阶牧师劳瑞娜|r 对话
-    .turnin -94774 >> Turn in Divine Grace (NOT TRANSLATED IN :zhCN YET)
+    .turnin -94774 >> 交任务 Holy 格蕾丝
     .trainer >> 训练你的职业技能
     .target 高阶牧师劳瑞娜
 step << Priest
@@ -3964,9 +3964,9 @@ step
     .goto 1426/0,-1679.89,-5728.88,40,0
     .goto 1426/0,-1675.95,-5597.22,25,0
     .goto 1426/0,-1679.89,-5728.88
-    >>Kill |cRXP_ENEMY_Rockjaw Skullthumpers|r and |cRXP_ENEMY_Rockjaw Bonesnappers|r inside the cave. Loot them for the |T132621:0|t[|cRXP_LOOT_Empty Powder Keg|r] (NOT TRANSLATED IN :zhCN YET)
+    >>在洞穴内击杀 |cRXP_ENEMY_Rockjaw Skullthumpers|r 和 |cRXP_ENEMY_Rockjaw Bonesnappers|r，拾取他们的 |T132621:0|t[|cRXP_LOOT_Empty Powder Keg|r]
     .use 268548 >> |cRXP_WARN_使用|r |T132621:0|t[|cRXP_LOOT_空火药桶|r] |cRXP_WARN_来开始任务|r
-    >>|cRXP_WARN_NOTE: This item has a low drop rate. Skip this step if you do not find it|r (NOT TRANSLATED IN :zhCN YET)
+    >>|cRXP_WARN_注释：该物品掉率很低。如果你没有找到它，请跳过此步骤|r
     .complete 432,1 --Kill Rockjaw Skullthumper (x6)
     .mob 石腭击颅者
     .complete 433,1 --Kill Rockjaw Bonesnapper (x10)
@@ -4013,10 +4013,10 @@ step
 step
     #completewith OII
     >>击杀 |cRXP_ENEMY_石腭伏击者|r，并拾取他们的 |T132621:0|t[|cRXP_LOOT_空火药桶|r]
-    .use 268548 >> |cRXP_WARN_Use the|r |T132621:0|t[|cRXP_LOOT_Empty Powder Keg|r] |cRXP_WARN_to start the quest|r (NOT TRANSLATED IN :zhCN YET)
+    .use 268548 >> |cRXP_WARN_使用|r |T132621:0|t[|cRXP_LOOT_Empty Powder Keg|r] |cRXP_WARN_来开启任务|r
     >>|cRXP_WARN_注释：这个物品掉落率很低。如果你在完成了|r 黑铁间谍|cRXP_ENEMY_ 任务时还没有找到它，请跳过此步骤|r
     .collect 268548,1,95213,1 -- Empty Powder Keg (1)
-    .accept 95213 >> Accept Stolen Blasting Powder (NOT TRANSLATED IN :zhCN YET)
+    .accept 95213 >> 接受任务 Stolen Blasting Powder
     .mob Rockjaw Ambusher
 step
     #label SpyMap
@@ -4037,7 +4037,7 @@ step
     .goto 1426/0,-1881.82,-5735.45,0
     .goto 1426/0,-1832.57,-5571.28,0
     .goto 1426/0,-1724.22,-5636.95,0
-    >>Kill |cRXP_ENEMY_Rockjaw Ambushers|r. Loot them for their |cRXP_LOOT_Stolen Blasting Powder|r (NOT TRANSLATED IN :zhCN YET)
+    >>击杀 |cRXP_ENEMY_石颚 Ambushers|r，拾取他们的 |cRXP_LOOT_Stolen Blasting Powder|r
     .complete 95214,1 -- Stolen Blasting Powder (16)
     .mob Rockjaw Ambusher
 step
@@ -4057,15 +4057,15 @@ step
 step
     .isOnQuest 95213
     .goto 1426/0,-1606.02,-5676.35
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quarrymaster Thesten|r (NOT TRANSLATED IN :zhCN YET)
-    .turnin 95213 >> Turn in Stolen Blasting Powder (NOT TRANSLATED IN :zhCN YET)
-    .accept 95214 >> Accept Stolen Blasting Powder (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Quarrymaster Thesten|r 对话
+    .turnin 95213 >> 交任务 Stolen Blasting Powder
+    .accept 95214 >> 接受任务 Stolen Blasting Powder
     .target Quarrymaster Thesten
 step
     .isQuestTurnedIn 95213
     .goto 1426/0,-1606.02,-5676.35
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quarrymaster Thesten|r (NOT TRANSLATED IN :zhCN YET)
-    .accept 95214 >> Accept Stolen Blasting Powder (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Quarrymaster Thesten|r 对话
+    .accept 95214 >> 接受任务 Stolen Blasting Powder
     .target Quarrymaster Thesten
 step
     .isOnQuest 95214
@@ -4076,14 +4076,14 @@ step
     .goto 1426/0,-1881.82,-5735.45,0
     .goto 1426/0,-1832.57,-5571.28,0
     .goto 1426/0,-1724.22,-5636.95,0
-    >>Kill |cRXP_ENEMY_Rockjaw Ambushers|r. Loot them for their |cRXP_LOOT_Stolen Blasting Powder|r (NOT TRANSLATED IN :zhCN YET)
+    >>击杀 |cRXP_ENEMY_石颚 Ambushers|r，拾取他们的 |cRXP_LOOT_Stolen Blasting Powder|r
     .complete 95214,1 -- Stolen Blasting Powder (16)
     .mob Rockjaw Ambusher
 step
     .isQuestComplete 95214
     .goto 1426/0,-1606.02,-5676.35
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quarrymaster Thesten|r (NOT TRANSLATED IN :zhCN YET)
-    .turnin 95214 >> Turn in Stolen Blasting Powder (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Quarrymaster Thesten|r 对话
+    .turnin 95214 >> 交任务 Stolen Blasting Powder
     .target Quarrymaster Thesten
 step
     .goto 1426/0,-2197.02,-5279.07,45,0
@@ -4127,7 +4127,7 @@ RXPGuides.RegisterGuide([[
 #season 0,1
 #version 1
 << Alliance
-#group RestedXP 无限指南 (联盟)
+#group RestedXP Forever 指南 A
 #subgroup 速通指南 1-20级
 --#groupid RXP-SRGCE-A1
 #name 11-13级 洛克莫丹

@@ -4,14 +4,14 @@ RXPGuides.RegisterGuide([[
 #forever
 #disabledungeons
 #version 1
-#name 1-9 Zephras Isle
-#displayname 1-9 Skyborne << Alliance
-#displayname 1-9 Skyborne << Horde
+#name 1-9级 Zephras Isle
+#displayname 1-9级 Skyborne << Alliance
+#displayname 1-9级 Skyborne << Horde
 #group RestedXP 无限指南 (联盟) << Alliance
 #group RestedXP 无限指南 (部落) << Horde
-#subgroup 速通指南 1-20级 << Alliance
-#subgroup 速通指南 1-22级 << Horde
-#next 9-13 Zephras Isle
+#subgroup 速通向导 1-20 << Alliance
+#subgroup 速通向导 1-22 << Horde
+#next 9-13级 Zephras Isle
 #defaultfor Skyborne
 
 step
@@ -57,17 +57,17 @@ step << Horde Shaman
 step
     #optional
     #completewith next
-    >>Kill |cRXP_ENEMY_Juvenile Vuldrens::250873|r. (NOT TRANSLATED IN :zhCN YET)
+    >>击杀 |cRXP_ENEMY_Juvenile Vuldrens::250873|r。
     .complete 92461,1 --8/8 Juvenile Vuldren slain
     .mob Juvenile Vuldren::250873
 step
-    >>Kill |cRXP_ENEMY_Pesky Cirrusflies::251169|r. (NOT TRANSLATED IN :zhCN YET)
+    >>击杀 |cRXP_ENEMY_Pesky Cirrusflies::251169|r。
     *|cRXP_WARN_优先击杀它们|r
     .complete 92462,1 --8/8 Pesky Cirrusfly slain
     .mob Pesky Cirrusfly::251169
 step
     #label Juvenile Vuldren
-    >>Kill |cRXP_ENEMY_Juvenile Vuldrens::250873|r. (NOT TRANSLATED IN :zhCN YET)
+    >>击杀 |cRXP_ENEMY_Juvenile Vuldrens::250873|r。
     .complete 92461,1 --8/8 Juvenile Vuldren slain
     .mob Juvenile Vuldren::250873
 step << Horde Shaman
@@ -133,7 +133,7 @@ step << Skyborne
     .goto 2521,42.06,23.48
     >>从塔上坠落时，使用 |T132845:0|t[踏空而行] 并朝任务NPC飞过去。
     *你也可以跳起来并在地上狂按按钮。
-    *If it's on cooldown, this step will skip on turnin of Harmony in Balance. You can complete it later. (NOT TRANSLATED IN :zhCN YET)
+    *如果它在冷却中，交任务 Harmony in 平衡 时这一步会被跳过。你可以稍后完成。
     .complete 92474,1 --Use Walk on Air
     .macro Walk on Air, 132845 >>踏空而行
     -- .macro Cancel Walk on Air,132745 >>/cancelaura Walk on Air
@@ -221,11 +221,11 @@ step << Alliance Rogue/Alliance Warrior
     .subzoneskip 16635,1 -- Thendal Village
     .isOnQuest 92464 -- Elemental Unrest
     .goto 2521,43.37,23.99
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Destin Thriceforged::251364|r. (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Destin Thriceforged::251364|r 对话。
     .collect 2131,1 >>购买并装备 |T135274:0|t[农夫之剑] << Rogue
     .collect 1194,1 >>购买并装备 |T135276:0|t[损坏的双刃刀] << Warrior
     .vendor 251364 >>出售垃圾物品
-    *Don't sell |T133970:0|t[Stringy Meat] or |T132889:0|t[Linen Cloth]. (NOT TRANSLATED IN :zhCN YET)
+    *不要出售 |T133970:0|t[Stringy 肉] 或 |T132889:0|t[亚麻布]。
     .target Destin Thriceforged::251364
 step << Horde
     .goto 2521,42.60,24.39
@@ -241,7 +241,7 @@ step << Horde !Warrior !Rogue/Alliance !Warrior !Rogue !Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乌阿莉亚·日冠::251537|r 对话
     >>|cRXP_BUY_从她那里|r|cRXP_BUY_购买|r |T132794:0|t[清凉的泉水] << !Hunter !Shaman
     .vendor 251537 >>出售垃圾物品
-    *Don't sell |T133970:0|t[Stringy Meat] or |T132889:0|t[Linen Cloth]. (NOT TRANSLATED IN :zhCN YET) << Alliance
+    *不要出售 |T133970:0|t[Stringy 肉] 或 |T132889:0|t[亚麻布]。 << Alliance
     .collect 159,20 << !Hunter !Shaman --Refreshing Spring Water (20)
     .target Uualia Suncrest::251537
     -- .money <0.0050 << !Hunter !Shaman
@@ -265,7 +265,7 @@ step << Alliance Hunter/Horde Rogue/Horde Warrior
     .collect 1194,1 >>购买并装备 |T135276:0|t[损坏的双刃刀] << Hunter/Horde Warrior
     .collect 2131,1 >>购买并装备 |T135274:0|t[农夫之剑] << Horde Rogue
     .vendor 251364 >>出售垃圾物品
-    *Don't sell |T133970:0|t[Stringy Meat] or |T132889:0|t[Linen Cloth]. (NOT TRANSLATED IN :zhCN YET)
+    *不要出售 |T133970:0|t[Stringy 肉] 或 |T132889:0|t[亚麻布]。
     .target Destin Thriceforged::251364
 step << Alliance
     .goto 2521,43.33,24.92
@@ -291,7 +291,7 @@ step << Horde Shaman
 step << Horde Shaman
     #optional
     #completewith next
-    >>Kill |cRXP_ENEMY_Al'Aketh Converts::251160|r and |cRXP_ENEMY_Roiling Winds::251143|r. (NOT TRANSLATED IN :zhCN YET)
+    >>击杀 |cRXP_ENEMY_Al'Aketh Converts::251160|r 和 |cRXP_ENEMY_Roiling Winds::251143|r。
     *|cRXP_WARN_优先击杀 |cRXP_ENEMY_翻滚之风::251143|r|r
     .complete 92465,1 --7/7 Al'Aketh Convert slain
     .mob +Al'Aketh Convert::251160
@@ -322,7 +322,7 @@ step << Horde Shaman
     .goto 2521,45.82,19.09,40,0
     .goto 2521,47.19,23.55,30,0
     .goto 2521,46.6,24.62,30,0
-    >>Kill |cRXP_ENEMY_Al'Aketh Converts::251160|r and |cRXP_ENEMY_Roiling Winds::251143|r. (NOT TRANSLATED IN :zhCN YET)
+    >>击杀 |cRXP_ENEMY_Al'Aketh Converts::251160|r 和 |cRXP_ENEMY_Roiling Winds::251143|r。
     *拾取它们的 |T1020384:0|t[阿基尔徽记]
     *|cRXP_WARN_优先击杀 |cRXP_ENEMY_翻滚之风::251143|r|r
     .complete 92465,1 --7/7 Al'Aketh Convert slain
@@ -439,7 +439,7 @@ step << Alliance/!Shaman
 step << Alliance/!Shaman
     #optional
     #completewith UseRacialAbility
-    >>Kill |cRXP_ENEMY_Al'Aketh Converts::251160|r and |cRXP_ENEMY_Roiling Winds::251143|r. (NOT TRANSLATED IN :zhCN YET)
+    >>击杀 |cRXP_ENEMY_Al'Aketh Converts::251160|r 和 |cRXP_ENEMY_Roiling Winds::251143|r。
     *|cRXP_WARN_优先击杀 |cRXP_ENEMY_翻滚之风::251143|r|r
     .complete 92465,1 --7/7 Al'Aketh Convert slain
     .mob +Al'Aketh Convert::251160
@@ -484,7 +484,7 @@ step << Alliance/!Shaman
     *|cRXP_WARN_如果该区域人数过多，可以蹲守一个刷新点或者在附近的几个石碑之间跑来跑去|r。
     .complete 93552,1 --15/15 Windstone Cluster
 step << Alliance/!Shaman
-    >>Kill |cRXP_ENEMY_Al'Aketh Converts::251160|r and |cRXP_ENEMY_Roiling Winds::251143|r. (NOT TRANSLATED IN :zhCN YET)
+    >>击杀 |cRXP_ENEMY_Al'Aketh Converts::251160|r 和 |cRXP_ENEMY_Roiling Winds::251143|r。
     *拾取它们的 |T1020384:0|t[阿基尔徽记] << Shaman
     *|cRXP_WARN_优先击杀 |cRXP_ENEMY_翻滚之风::251143|r|r
     .complete 92465,1 --7/7 Al'Aketh Convert slain
@@ -616,7 +616,7 @@ step << Horde Skyborne
     .goto 2521,42.06,23.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_逐日者罗里安::251361|r 对话。
     .target Rorian the Dayseeker::251361
-    .turnin 92474 >>Turn in Falling With Style (NOT TRANSLATED IN :zhCN YET)
+    .turnin 92474 >>交任务 掉落 With Style
 step << Horde Druid
     .money <0.02
     .xp <4,1
@@ -662,16 +662,16 @@ step << Alliance Hunter
 step << Alliance
     #label Turn in Return to Rorian
     .goto 2521,42.07,23.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rorian the Dayseeker::251361|r. (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Rorian the Dayseeker::251361|r 对话。
     .turnin 92469,1 >>交任务 向罗里安复命
     .accept 92471 >>接受任务 烈风之埃瑟恩 -- Unlocks at 4
     .target Rorian the Dayseeker::251361
 step << Alliance Skyborne
     .isQuestComplete 92474 --Falling With Style
     .goto 2521,42.06,23.48
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rorian the Dayseeker::251361|r. (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Rorian the Dayseeker::251361|r 对话。
     .target Rorian the Dayseeker::251361
-    .turnin 92474 >>Turn in Falling With Style (NOT TRANSLATED IN :zhCN YET)
+    .turnin 92474 >>交任务 掉落 With Style
 step << Alliance Druid
     .money <0.02
     .xp <4,1
@@ -708,7 +708,7 @@ step
     .goto 2521,42.76,24.5
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乌阿莉亚·日冠::251537|r 对话
     .collect 277113,1 >>购买 |T133637:0|t[初级草药袋]
-    .macro Buy Herbalism Supplies,133637 >>/run local t={[277113]=1};local m=C_MerchantFrame;for i=1,(m.GetNumItems or GetMerchantNumItems)()do local k=tonumber(((m.GetItemLink or GetMerchantItemLink)(i)or""):match("item:(%d+)"));if t[k]then BuyMerchantItem(i,t[k]);t[k]=nil end end (NOT TRANSLATED IN :zhCN YET)
+    .macro Buy Herbalism Supplies,133637 >>购买草药学补给
     .target Uualia Suncrest::251537
 step
     #completewith Aggressive Encroachment
@@ -717,7 +717,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乌阿莉亚·日冠::251537|r 对话
     .collect 2901,1 >>购买 |T134708:0|t[矿工锄]
     .collect 277115,1 >>购买 |T133635:0|t[初级采矿包]
-    .macro Buy Mining Supplies,134708 >>/run local t={[2901]=1,[277115]=1};local m=C_MerchantFrame;for i=1,(m.GetNumItems or GetMerchantNumItems)()do local k=tonumber(((m.GetItemLink or GetMerchantItemLink)(i)or""):match("item:(%d+)"));if t[k]then BuyMerchantItem(i,t[k]);t[k]=nil end end (NOT TRANSLATED IN :zhCN YET)
+    .macro Buy Mining Supplies,134708 >>购买采矿补给
     .target Uualia Suncrest::251537
 step
     #completewith Aggressive Encroachment
@@ -726,7 +726,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乌阿莉亚·日冠::251537|r 对话
     .collect 7005,1 >>购买 |T135637:0|t[剥皮小刀]
     .collect 277114,1 >>购买 |T133634:0|t[初级剥皮包]
-    .macro Buy Skinning Supplies,135637 >>/run local t={[7005]=1,[277114]=1};local m=C_MerchantFrame;for i=1,(m.GetNumItems or GetMerchantNumItems)()do local k=tonumber(((m.GetItemLink or GetMerchantItemLink)(i)or""):match("item:(%d+)"));if t[k]then BuyMerchantItem(i,t[k]);t[k]=nil end end (NOT TRANSLATED IN :zhCN YET)
+    .macro Buy Skinning Supplies,135637 >>购买剥皮补给
     .target Uualia Suncrest::251537
 step
     #label AggressiveVendor
@@ -734,7 +734,7 @@ step
     .goto 2521,42.76,24.5,10,0
     .goto 2521,42.41,25.15
     .vendor 251537 >>出售垃圾物品
-    *Don't sell |T133970:0|t[Stringy Meat] or |T132889:0|t[Linen Cloth]. (NOT TRANSLATED IN :zhCN YET) << Alliance
+    *不要出售 |T133970:0|t[Stringy 肉] 或 |T132889:0|t[亚麻布]。 << Alliance
     .collect 2512,1200 << Hunter --Rough Arrow (1200)
     .collect 159,20 >>购买 |T132794:0|t[清凉的泉水] << Druid/Mage/Priest/Warlock/Paladin
 step
@@ -782,7 +782,7 @@ step
 step
     #optional
     #completewith next
-    >>Kill |cRXP_ENEMY_Ursera Scavengers::250937|r. (NOT TRANSLATED IN :zhCN YET)
+    >>击杀 |cRXP_ENEMY_Ursera Scavengers::250937|r。
     .complete 92470,1 --8/8 Ursera Scavenger slain
     .mob Ursera Scavenger::250937
 step
@@ -792,7 +792,7 @@ step
     .goto 2521,35.65,26.06
     >>击杀 |cRXP_ENEMY_乌萨娜|r。拾取他的 |T5840609:0|t[|cRXP_LOOT_乌萨娜的头颅|r]。
     .complete 92470,2 --1/1 Head of Urs'anah
-    .macro Sit to Die Faster,134400 >>/sit (NOT TRANSLATED IN :zhCN YET)
+    .macro Sit to Die Faster,134400 >>坐下以更快死亡
     .mob Urs'anah::251115
 step
     #loop
@@ -804,9 +804,9 @@ step
     .goto 2521,38.12,27.71,30,0
     .goto 2521,37.7,29.46,30,0
     .goto 2521,40.79,26.64,30,0
-    >>Kill |cRXP_ENEMY_Ursera Scavengers::250937|r. (NOT TRANSLATED IN :zhCN YET)
+    >>击杀 |cRXP_ENEMY_Ursera Scavengers::250937|r。
     .complete 92470,1 --8/8 Ursera Scavenger slain
-    .macro Sit to Die Faster,134400 >>/sit (NOT TRANSLATED IN :zhCN YET)
+    .macro Sit to Die Faster,134400 >>坐下以更快死亡
     .mob Ursera Scavenger::250937
 step
     .isQuestComplete 92470 -- Foul Matriarch
@@ -817,7 +817,7 @@ step
     .goto 2521,35.71,25.7,30,0
     .subzone 16635 >>死掉后在墓地复活。
     *|cRXP_WARN_在战斗中使用坐下宏，可加快死亡速度|r。
-    .macro Sit to Die Faster,134400 >>/sit (NOT TRANSLATED IN :zhCN YET)
+    .macro Sit to Die Faster,134400 >>坐下以更快死亡
     .target Spirit Healer::6491
 step
     #optional
@@ -865,8 +865,8 @@ step
     #completewith Aggressive Encroachment2
     .goto 2521,42.76,24.52
     .vendor 251537 >>出售垃圾物品
-    *Don't sell |T133970:0|t[Stringy Meat], |T132832:0|t[Small Eggs], or |T132889:0|t[Linen Cloth]. (NOT TRANSLATED IN :zhCN YET) << Alliance
-    *Don't sell |T132832:0|t[Small Eggs] or |T132889:0|t[Linen Cloth]. (NOT TRANSLATED IN :zhCN YET) << Horde
+    *不要出售 |T133970:0|t[Stringy 肉]、|T132832:0|t[小蛋] 或 |T132889:0|t[亚麻布]。 << Alliance
+    *不要出售 |T132832:0|t[小蛋] 或 |T132889:0|t[亚麻布]。 << Horde
     *|cRXP_WARN_之后烹饪会用到它们|r。
 step
     #requires Aggressive Encroachment2
@@ -903,7 +903,7 @@ step
 step
     #optional
     #completewith next
-    >>Kill |cRXP_ENEMY_Al'Aketh Brutes::251145|r and |cRXP_ENEMY_Al'Aketh Neophytes::251448|r. (NOT TRANSLATED IN :zhCN YET)
+    >>击杀 |cRXP_ENEMY_Al'Aketh Brutes::251145|r 和 |cRXP_ENEMY_Al'Aketh Neophytes::251448|r。
     .complete 92544,1 --|6/6 Al'Aketh Brute slain
     .mob +Al'Aketh Brute::251145
     .complete 92544,2 --|4/4 Al'Aketh Neophyte slain
@@ -953,7 +953,7 @@ step
     .goto 2521,37.3,32.89,40,0
     .goto 2521,37.16,34.72,40,0
     .goto 2521,38.08,35.01,40,0
-    >>Kill |cRXP_ENEMY_Al'Aketh Brutes::251145|r and |cRXP_ENEMY_Al'Aketh Neophytes::251448|r. (NOT TRANSLATED IN :zhCN YET)
+    >>击杀 |cRXP_ENEMY_Al'Aketh Brutes::251145|r 和 |cRXP_ENEMY_Al'Aketh Neophytes::251448|r。
     *|cRXP_WARN_在魔网附近|r|cRXP_WARN_刷新|r |T236219:0|t[阅读魔网] << Alliance
     .usespell 1259705
     .complete 92544,1 --|6/6 Al'Aketh Brute slain
@@ -977,7 +977,7 @@ step
 step
     #completewith SkybornePart1End
     #hidewindow
-    +Windstones (NOT TRANSLATED IN :zhCN YET)
+    +Windstones
     .use 255663 --Windstones
 step
     #optional
@@ -995,7 +995,7 @@ step
 step
     #completewith The Next Step
     >>沿途击杀 |cRXP_ENEMY_疾风陆行鸟::251661|r，拾取 |T133972:0|t[|cRXP_LOOT_陆行鸟肉|r] 和 |T132832:0|t[|cRXP_LOOT_小蛋|r]
-    *|cRXP_WARN_If the Tornado speed buff is active or a Tornado is nearby, avoid killing them.|r. (NOT TRANSLATED IN :zhCN YET)
+    *|cRXP_WARN_如果龙卷风速度增益处于活跃或附近有龙卷风，请避免击杀它们。|r
     .collect 5469,8 -- Strider Meat
     .collect 6889,3 -- Small Egg
     -- .complete 92553,2 --8/8 Strider Meat
@@ -1010,8 +1010,8 @@ step << !Rogue !Warrior
     >>|cRXP_WARN_为你的职业法术预留 2 银币！|r << Shaman/Druid
     >>|cRXP_WARN_为你的职业法术预留 2 银币！|r << Mage
     .vendor 254358 >>|cRXP_WARN_出售垃圾物品|r。
-    *Don't sell |T133970:0|t[Stringy Meat], |T132832:0|t[Small Eggs], |T133972:0|t[Strider Meat], or |T132889:0|t[Linen Cloth]. (NOT TRANSLATED IN :zhCN YET) << Alliance
-    *Don't sell |T132832:0|t[Small Eggs], |T133972:0|t[Strider Meat], or |T132889:0|t[Linen Cloth]. (NOT TRANSLATED IN :zhCN YET) << Horde
+    *不要出售 |T133970:0|t[Stringy 肉]、|T132832:0|t[小蛋]、|T133972:0|t[Strider 肉] 或 |T132889:0|t[亚麻布]。 << Alliance
+    *不要出售 |T132832:0|t[小蛋]、|T133972:0|t[Strider 肉] 或 |T132889:0|t[亚麻布]。 << Horde
     *|cRXP_WARN_之后烹饪会用到它们|r。
 step << Rogue/Warrior
     #completewith The Next Step
@@ -1019,8 +1019,8 @@ step << Rogue/Warrior
     .goto 2521,44.67,45.19,10,0
     .goto 2521,44.78,45.05
     .vendor 254360 >>|cRXP_WARN_出售垃圾物品|r。
-    *Don't sell |T133970:0|t[Stringy Meat], |T132832:0|t[Small Eggs], |T133972:0|t[Strider Meat], or |T132889:0|t[Linen Cloth]. (NOT TRANSLATED IN :zhCN YET) << Alliance
-    *Don't sell |T132832:0|t[Small Eggs], |T133972:0|t[Strider Meat], or |T132889:0|t[Linen Cloth]. (NOT TRANSLATED IN :zhCN YET) << Horde
+    *不要出售 |T133970:0|t[Stringy 肉]、|T132832:0|t[小蛋]、|T133972:0|t[Strider 肉] 或 |T132889:0|t[亚麻布]。 << Alliance
+    *不要出售 |T132832:0|t[小蛋]、|T133972:0|t[Strider 肉] 或 |T132889:0|t[亚麻布]。 << Horde
     *|cRXP_WARN_之后烹饪会用到它们|r。
     .target Belandiel Farflight::254360
 step
@@ -1266,7 +1266,7 @@ step << Hunter
     .money <0.02
     .xp <6,1
     .goto 2521,45.263,44.236
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Elayaa Easewind::254084|r 对话。
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_伊拉雅·柔风::254084|r 对话。
     .train 3044 >>训练 |T132218:0|t[奥术射击]
     .train 1130 >>训练 |T132212:0|t[猎人印记]
     .skipgossipid 136808
@@ -1277,7 +1277,7 @@ step << Druid
     .money <0.02
     .xp <6,1
     .goto 2521,45.154,44.217
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Naeluna Swiftmend::254081|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奈露娜·迅愈::254081|r 对话
     .train 467 >>学习 |T136104:0|t[荆棘术]
     .train 5177 >>学习 |T136006:0|t[愤怒 (等级 2)]
     .skipgossipid 136805
@@ -1305,8 +1305,8 @@ step << Druid/Priest/Warlock/Mage
     .goto 2521,44.72,45.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_维娜·真云::254358|r 对话。
     .collect 1179,5 >>|cRXP_BUY_购买5个|r |T132815:0|t[冰镇牛奶]，|cRXP_BUY_或如果你能负担的起，就购买10个|r
-    *Don't sell |T133970:0|t[Stringy Meat], |T132832:0|t[Small Eggs], |T133972:0|t[Strider Meat], or |T132889:0|t[Linen Cloth]. (NOT TRANSLATED IN :zhCN YET) << Alliance
-    *Don't sell |T132832:0|t[Small Eggs], |T133972:0|t[Strider Meat], or |T132889:0|t[Linen Cloth]. (NOT TRANSLATED IN :zhCN YET) << Horde
+    *不要出售 |T133970:0|t[Stringy 肉]、|T132832:0|t[小蛋]、|T133972:0|t[Strider 肉] 或 |T132889:0|t[亚麻布]。 << Alliance
+    *不要出售 |T132832:0|t[小蛋]、|T133972:0|t[Strider 肉] 或 |T132889:0|t[亚麻布]。 << Horde
     *|cRXP_WARN_之后烹饪会用到它们|r。
 step
     .goto 2521,44.47,44.98
@@ -1406,9 +1406,9 @@ step
     .goto 2521,43.86,43.85
     +使用下方的 |T132834:0|t[草药烘蛋] 宏尽可能多地制作。
     *|cRXP_WARN_大多数buff食物可在15分钟内使杀敌经验提升5%。升级时应尽量保持这个buff的运行时间|r。
-    *|cRXP_BUY_Buy 5-20|r |T134059:0|t[Mild Spices] |cRXP_BUY_from|r |cRXP_FRIENDLY_Zerril Softbreeze|r |cRXP_WARN_if you haven't already|r. (NOT TRANSLATED IN :zhCN YET)
+    *|cRXP_BUY_购买5至20个|r |T134059:0|t[甜香料] |cRXP_BUY_从|r |cRXP_FRIENDLY_Zerril Softbreeze|r |cRXP_WARN_如果你还没有|r。
     .skipgossipid 137550 --I would like to buy from you.
-    *|cRXP_WARN_You may need to press the macro twice|r. (NOT TRANSLATED IN :zhCN YET)
+    *|cRXP_WARN_你可能需要按宏两次|r。
     .macro Herb Baked Egg,132834 >>草药烘蛋
 step
     .isOnQuest 92553 -- Restocking the Larders
@@ -1422,9 +1422,9 @@ step
     .goto 2521,43.86,43.85
     +使用下面的 |T132834:0|t[草药烘蛋] 宏制作1个来获得buff。
     *|cRXP_WARN_大多数buff食物可在15分钟内使杀敌经验提升5%。升级时应尽量保持这个buff的运行时间|r。
-    *|cRXP_BUY_Buy 5-20|r |T134059:0|t[Mild Spices] |cRXP_BUY_from|r |cRXP_FRIENDLY_Zerril Softbreeze|r |cRXP_WARN_if you haven't already|r. (NOT TRANSLATED IN :zhCN YET)
+    *|cRXP_BUY_购买5至20个|r |T134059:0|t[甜香料] |cRXP_BUY_从|r |cRXP_FRIENDLY_Zerril Softbreeze|r |cRXP_WARN_如果你还没有|r。
     .skipgossipid 137550 --I would like to buy from you.
-    *|cRXP_WARN_You may need to press the macro twice|r. (NOT TRANSLATED IN :zhCN YET)
+    *|cRXP_WARN_你可能需要按宏两次|r。
     .macro Herb Baked Egg,132834 >>草药烘蛋
 step
     .isOnQuest 92553 -- Restocking the Larders
@@ -1438,9 +1438,9 @@ step
     +使用下面的 |T132834:0|t[草药烘蛋] 宏制作除了为补充储藏室保留的3个小蛋外的所有小蛋。
     *|cRXP_WARN_保留至少3颗小蛋，用于后续任务|r
     *|cRXP_WARN_大多数buff食物可在15分钟内使杀敌经验提升5%。升级时应尽量保持这个buff的运行时间|r。
-    *|cRXP_BUY_Buy 5-20|r |T134059:0|t[Mild Spices] |cRXP_BUY_from|r |cRXP_FRIENDLY_Zerril Softbreeze|r |cRXP_WARN_if you haven't already|r. (NOT TRANSLATED IN :zhCN YET)
+    *|cRXP_BUY_购买5至20个|r |T134059:0|t[甜香料] |cRXP_BUY_从|r |cRXP_FRIENDLY_Zerril Softbreeze|r |cRXP_WARN_如果你还没有|r。
     .skipgossipid 137550 --I would like to buy from you.
-    *|cRXP_WARN_You may need to press the macro twice|r. (NOT TRANSLATED IN :zhCN YET)
+    *|cRXP_WARN_你可能需要按宏两次|r。
     .macro Herb Baked Egg,132834 >>草药烘蛋
 
 --Class Trainer Backup
@@ -1467,14 +1467,14 @@ step << Rogue
 step
     #optional
     #completewith BadwindBennicA
-    >>Kill |cRXP_ENEMY_Prideclaws::251245|r |cRXP_WARN_along the way|r. Loot them for the |T237416:0|t[|cRXP_LOOT_Prideclaw Pelts|r]. (NOT TRANSLATED IN :zhCN YET)
+    >>击杀 |cRXP_ENEMY_Prideclaws::251245|r |cRXP_WARN_沿途|r。拾取他们的战利品 |T237416:0|t[|cRXP_LOOT_Prideclaw Pelts|r]。
     *|cRXP_WARN_优先击杀它们|r
     .complete 92515,1 --10/10 Prideclaw Pelt
     .mob Prideclaw::251245
 step
     #optional
     #completewith BadwindBennicA
-    >>Kill |cRXP_ENEMY_Galestriders::251661|r |cRXP_WARN_along the way|r. Loot them for |T133972:0|t[|cRXP_LOOT_Strider Meat|r] and |T132832:0|t[|cRXP_LOOT_Small Eggs|r]. (NOT TRANSLATED IN :zhCN YET)
+    >>击杀 |cRXP_ENEMY_Galestriders::251661|r |cRXP_WARN_沿途|r。拾取 |T133972:0|t[|cRXP_LOOT_Strider 肉|r] 和 |T132832:0|t[|cRXP_LOOT_小蛋|r]。
     *|cRXP_WARN_优先击杀它们|r
     .complete 92553,2 --8/8 Strider Meat
     .complete 92553,1 --3/3 Small Egg
@@ -1537,7 +1537,7 @@ step
 step
     #optional
     #completewith OutCave
-    >>Kill |cRXP_ENEMY_Galestriders::251661|r. Loot them for |T133972:0|t[|cRXP_LOOT_Strider Meat|r] and |T132832:0|t[|cRXP_LOOT_Small Eggs|r]. (NOT TRANSLATED IN :zhCN YET)
+    >>击杀 |cRXP_ENEMY_Galestriders::251661|r。拾取 |T133972:0|t[|cRXP_LOOT_Strider 肉|r] 和 |T132832:0|t[|cRXP_LOOT_小蛋|r]。
     .complete 92553,2 --8/8 Strider Meat
     .complete 92553,1 --3/3 Small Egg
     .mob +Galestrider::251661
@@ -1568,7 +1568,7 @@ step
 step
     #optional
     #completewith To Shendalar
-    >>Kill |cRXP_ENEMY_Galestriders::251661|r |cRXP_WARN_along the way|r. (NOT TRANSLATED IN :zhCN YET)
+    >>击杀 |cRXP_ENEMY_Galestriders::251661|r |cRXP_WARN_沿途|r。
     *拾取它们的 |T133972:0|t[|cRXP_LOOT_陆行鸟肉|r] 和 |T132832:0|t[|cRXP_LOOT_小蛋|r]。
     -- *|cRXP_WARN_While the Tornado speed buff is active, avoid killing them|r.
     .complete 92553,2 --8/8 Strider Meat
@@ -1591,8 +1591,8 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_泽瑞尔·柔风::251905|r 对话并购买5个 |T134059:0|t[甜香料]。
     .vendor 251905 >>把垃圾物品卖给商人
     .collect 2678,5 -- Mild Spices
-    *Don't sell |T133970:0|t[Stringy Meat], |T132832:0|t[Small Eggs], |T133972:0|t[Strider Meat], or |T132889:0|t[Linen Cloth]. (NOT TRANSLATED IN :zhCN YET) << Alliance
-    *Don't sell |T132832:0|t[Small Eggs], |T133972:0|t[Strider Meat], or |T132889:0|t[Linen Cloth]. (NOT TRANSLATED IN :zhCN YET) << Horde
+    *不要出售 |T133970:0|t[Stringy 肉]、|T132832:0|t[小蛋]、|T133972:0|t[Strider 肉] 或 |T132889:0|t[亚麻布]。 << Alliance
+    *不要出售 |T132832:0|t[小蛋]、|T133972:0|t[Strider 肉] 或 |T132889:0|t[亚麻布]。 << Horde
     *|cRXP_WARN_之后烹饪会用到它们|r。
     .target Zerril Softbreeze::251905
     .skipgossipid 137550
@@ -1622,9 +1622,9 @@ step
     .goto 2521,43.86,43.85
     +使用下方的 |T132834:0|t[草药烘蛋] 宏尽可能多地制作。
     *|cRXP_WARN_大多数buff食物可在15分钟内使杀敌经验提升5%。升级时应尽量保持这个buff的运行时间|r。
-    *|cRXP_BUY_Buy 5-20|r |T134059:0|t[Mild Spices] |cRXP_BUY_from|r |cRXP_FRIENDLY_Zerril Softbreeze|r |cRXP_WARN_if you haven't already|r. (NOT TRANSLATED IN :zhCN YET)
+    *|cRXP_BUY_购买5至20个|r |T134059:0|t[甜香料] |cRXP_BUY_从|r |cRXP_FRIENDLY_Zerril Softbreeze|r |cRXP_WARN_如果你还没有|r。
     .skipgossipid 137550 --I would like to buy from you.
-    *|cRXP_WARN_You may need to press the macro twice|r. (NOT TRANSLATED IN :zhCN YET)
+    *|cRXP_WARN_你可能需要按宏两次|r。
     .macro Herb Baked Egg,132834 >>草药烘蛋
 step
     .isOnQuest 92553 -- Restocking the Larders
@@ -1639,9 +1639,9 @@ step
     .goto 2521,43.86,43.85
     +使用下面的 |T132834:0|t[草药烘蛋] 宏制作1个来获得buff。
     *|cRXP_WARN_大多数buff食物可在15分钟内使杀敌经验提升5%。升级时应尽量保持这个buff的运行时间|r。
-    *|cRXP_BUY_Buy 5-20|r |T134059:0|t[Mild Spices] |cRXP_BUY_from|r |cRXP_FRIENDLY_Zerril Softbreeze|r |cRXP_WARN_if you haven't already|r. (NOT TRANSLATED IN :zhCN YET)
+    *|cRXP_BUY_购买5至20个|r |T134059:0|t[甜香料] |cRXP_BUY_从|r |cRXP_FRIENDLY_Zerril Softbreeze|r |cRXP_WARN_如果你还没有|r。
     .skipgossipid 137550 --I would like to buy from you.
-    *|cRXP_WARN_You may need to press the macro twice|r. (NOT TRANSLATED IN :zhCN YET)
+    *|cRXP_WARN_你可能需要按宏两次|r。
     .macro Herb Baked Egg,132834 >>草药烘蛋
 step
     .isOnQuest 92553 -- Restocking the Larders
@@ -1656,9 +1656,9 @@ step
     +使用下面的 |T132834:0|t[草药烘蛋] 宏制作除了为补充储藏室保留的3个小蛋外的所有小蛋。
     *|cRXP_WARN_保留至少3颗小蛋，用于后续任务|r
     *|cRXP_WARN_大多数buff食物可在15分钟内使杀敌经验提升5%。升级时应尽量保持这个buff的运行时间|r。
-    *|cRXP_BUY_Buy 5-20|r |T134059:0|t[Mild Spices] |cRXP_BUY_from|r |cRXP_FRIENDLY_Zerril Softbreeze|r |cRXP_WARN_if you haven't already|r. (NOT TRANSLATED IN :zhCN YET)
+    *|cRXP_BUY_购买5至20个|r |T134059:0|t[甜香料] |cRXP_BUY_从|r |cRXP_FRIENDLY_Zerril Softbreeze|r |cRXP_WARN_如果你还没有|r。
     .skipgossipid 137550 --I would like to buy from you.
-    *|cRXP_WARN_You may need to press the macro twice|r. (NOT TRANSLATED IN :zhCN YET)
+    *|cRXP_WARN_你可能需要按宏两次|r。
     .macro Herb Baked Egg,132834 >>草药烘蛋
 
 --Class Trainer Backup
@@ -1692,7 +1692,7 @@ step << Warrior/Paladin
     .isOnQuest 96638 --The Adventurer
     .subzoneskip 16624,1 -- Shen'dar Village
     .goto 2521,44.8,44.18
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tephri Thriceforged::257421|r and buy and equip a |T133053:0|t[Wooden Mallet]. (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Tephri Thriceforged::257421|r 对话，购买并装备 |T133053:0|t[木槌棒]。
     .collect 2493,1 -- Wooden Mallet
     .target Tephri Thriceforged::257421
 
@@ -1703,7 +1703,7 @@ step << Rogue
     .isOnQuest 96638 --The Adventurer
     .subzoneskip 16624,1 -- Shen'dar Village
     .goto 2521,44.8,44.18
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tephri Thriceforged::257421|r and buy and equip a |T135321:0|t[Gladius]. (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Tephri Thriceforged::257421|r 对话，购买并装备 |T135321:0|t[步兵剑]。
     .collect 2488,1 -- Gladius
     .target Tephri Thriceforged::257421
 
@@ -1765,12 +1765,12 @@ step
     .isOnQuest 96638 -- The Adventurer
     .goto 2521,44.71,45.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_维娜·真云::254358|r 对话
-    .vendor 254358 >>|cRXP_BUY_Buy a|r |T133634:0|t[Small Brown Pouch] |cRXP_WARN_if you can|r. (NOT TRANSLATED IN :zhCN YET)
+    .vendor 254358 >>|cRXP_BUY_购买|r |T133634:0|t[棕色小包] |cRXP_WARN_如果可以|r。
     *|cRXP_BUY_从她那里购买最多10个|r |T132815:0|t[冰镇牛奶] |cRXP_BUY_|r << Mage/Druid/Shaman/Priest/Warlock/Paladin
     *|cRXP_WARN_装配背包时，确保你的材料包在专用的材料包栏位|r。
     .collect 2946,1 >>|cRXP_BUY_购买1把|r |T135641:0|t[平衡飞刀]。 << Rogue/Warrior
-    *Don't sell |T133970:0|t[Stringy Meat], |T132832:0|t[Small Eggs], |T133972:0|t[Strider Meat], or |T132889:0|t[Linen Cloth]. (NOT TRANSLATED IN :zhCN YET) << Alliance
-    *Don't sell |T132832:0|t[Small Eggs], |T133972:0|t[Strider Meat], or |T132889:0|t[Linen Cloth]. (NOT TRANSLATED IN :zhCN YET) << Horde
+    *不要出售 |T133970:0|t[Stringy 肉]、|T132832:0|t[小蛋]、|T133972:0|t[Strider 肉] 或 |T132889:0|t[亚麻布]。 << Alliance
+    *不要出售 |T132832:0|t[小蛋]、|T133972:0|t[Strider 肉] 或 |T132889:0|t[亚麻布]。 << Horde
     .target Veena Vericloud::254358
 
 --Class Trainer Backup
@@ -1855,85 +1855,85 @@ step
     >>点击快捷物品栏里的宏以坐下。
     .complete 96101,1 --1/1 Use the /sit emote near the campfire
     .macro Sit,134400 >>坐下
-    .timer 59,Time until completion 1 (NOT TRANSLATED IN :zhCN YET)
+    .timer 59,距完成还有 1
 step << Alliance
     .aura -1289723
     .train 3273,3 -- First Aid Trained
     .itemcount 2589,1 -- Linen Cloth
     .train 2550,3 -- Cooking Trained
     .itemcount 2672,1 --Stringy Wolf Meat
-    >>|cRXP_WARN_Do not move or jump until the quest is complete|r. (NOT TRANSLATED IN :zhCN YET)
-    *|cRXP_WARN_Use the Macros in the "Active Items Frame" to craft|r |T133685:0|t[Linen Bandages] and |T133974:0|t[Charred Wolf Meat] for later quests. (NOT TRANSLATED IN :zhCN YET)
-    *You can craft and rebuff without losing quest credit. You can also eat buff food here to gain 5% increased experience from kills. (NOT TRANSLATED IN :zhCN YET)
+    >>|cRXP_WARN_不要移动或跳跃直到任务完成|r。
+    *|cRXP_WARN_使用"可用物品"框架中的宏来制作|r |T133685:0|t[亚麻绷带] 和 |T133974:0|t[烧烤狼肉] 供之后的任务使用。
+    *你可以制作和使用buff而不失去任务进度。你也可以在这里食用增益食物来获得额外5%的击杀经验。
     .complete 96101,2 --Gain the Boosted Rest buff
-    *|cRXP_WARN_You may need to press the macro twice|r. (NOT TRANSLATED IN :zhCN YET)
-    .macro First Aid,135966 >>/run local t=C_TradeSkillUI;t.OpenTradeSkill(129);t.CraftRecipe(3275,C_Item.GetItemCount(2589)) (NOT TRANSLATED IN :zhCN YET)
+    *|cRXP_WARN_你可能需要按宏两次|r。
+    .macro First Aid,135966 >>急救
     .macro Cooking,133971 >>烹饪
 step
     .aura -1289723
     .train 3273,3 -- First Aid Trained
     .itemcount 2589,1 -- Linen Cloth
-    >>|cRXP_WARN_Do not move or jump until the quest is complete|r. (NOT TRANSLATED IN :zhCN YET)
-    *|cRXP_WARN_Press the Macro in the "Active Items Frame" to craft|r |T133685:0|t[Linen Bandages] for a later quest. (NOT TRANSLATED IN :zhCN YET)
-    *You can craft and rebuff without losing quest credit. You can also eat buff food here to gain 5% increased experience from kills. (NOT TRANSLATED IN :zhCN YET)
+    >>|cRXP_WARN_不要移动或跳跃直到任务完成|r。
+    *|cRXP_WARN_按下"可用物品"框架中的宏来制作|r |T133685:0|t[亚麻绷带] 供之后的任务使用。
+    *你可以制作和使用buff而不失去任务进度。你也可以在这里食用增益食物来获得额外5%的击杀经验。
     .complete 96101,2 --Gain the Boosted Rest buff
-    *|cRXP_WARN_You may need to press the macro twice|r. (NOT TRANSLATED IN :zhCN YET)
-    .macro First Aid,135966 >>/run local t=C_TradeSkillUI;t.OpenTradeSkill(129);t.CraftRecipe(3275,C_Item.GetItemCount(2589)) (NOT TRANSLATED IN :zhCN YET)
+    *|cRXP_WARN_你可能需要按宏两次|r。
+    .macro First Aid,135966 >>急救
 step << Alliance
     .aura -1289723
     .train 2550,3 -- Cooking Trained
     .itemcount 2672,1 --Stringy Wolf Meat
-    >>|cRXP_WARN_Do not move or jump until the quest is complete|r. (NOT TRANSLATED IN :zhCN YET)
-    *|cRXP_WARN_Press the Macro in the "Active Items Frame" to craft|r |T133974:0|t[Charred Wolf Meat] for a later quest|r (NOT TRANSLATED IN :zhCN YET)
-    *You can craft and rebuff without losing quest credit. You can also eat buff food here to gain 5% increased experience from kills. (NOT TRANSLATED IN :zhCN YET)
+    >>|cRXP_WARN_不要移动或跳跃直到任务完成|r。
+    *|cRXP_WARN_按下"可用物品"框架中的宏来制作|r |T133974:0|t[烧烤狼肉] 供之后的任务使用。
+    *你可以制作和使用buff而不失去任务进度。你也可以在这里食用增益食物来获得额外5%的击杀经验。
     .complete 96101,2 --Gain the Boosted Rest buff
-    *|cRXP_WARN_You may need to press the macro twice|r. (NOT TRANSLATED IN :zhCN YET)
+    *|cRXP_WARN_你可能需要按宏两次|r。
     .macro Cooking,133971 >>烹饪
 step
     .aura -1289723
-    >>|cRXP_WARN_Do not move or jump until the quest is complete|r. (NOT TRANSLATED IN :zhCN YET)
-    *You can craft and rebuff without losing quest credit. You can also eat buff food here to gain 5% increased experience from kills. (NOT TRANSLATED IN :zhCN YET)
+    >>|cRXP_WARN_不要移动或跳跃直到任务完成|r。
+    *你可以制作和使用buff而不失去任务进度。你也可以在这里食用增益食物来获得额外5%的击杀经验。
     .complete 96101,2 --Gain the Boosted Rest buff
 step
     .aura 1289723
-    >>The process was cancelled. Please use the SIT macro again to restart it. (NOT TRANSLATED IN :zhCN YET)
-    *|cRXP_WARN_Do not move or jump until the quest is complete|r. (NOT TRANSLATED IN :zhCN YET)
+    >>过程已取消。请重新使用SIT宏来重新启动。
+    *|cRXP_WARN_不要移动或跳跃直到任务完成|r。
     .complete 96101,2 --Gain the Boosted Rest buff
-    .timer 59,Time until completion 2 (NOT TRANSLATED IN :zhCN YET)
+    .timer 59,距完成还有 2
     .macro Sit,134400 >>坐下
 step << Alliance
     .train 3273,3 -- First Aid Trained
     .itemcount 2589,1 -- Linen Cloth
     .train 2550,3 -- Cooking Trained
     .itemcount 2672,1 --Stringy Wolf Meat
-    >>|cRXP_WARN_Do not move or jump until the quest is complete|r. (NOT TRANSLATED IN :zhCN YET)
-    *|cRXP_WARN_Use the Macros in the "Active Items Frame" to craft|r |T133685:0|t[Linen Bandages] and |T133974:0|t[Charred Wolf Meat] for later quests. (NOT TRANSLATED IN :zhCN YET)
-    *You can craft and rebuff without losing quest credit. You can also eat buff food here to gain 5% increased experience from kills. (NOT TRANSLATED IN :zhCN YET)
+    >>|cRXP_WARN_不要移动或跳跃直到任务完成|r。
+    *|cRXP_WARN_使用"可用物品"框架中的宏来制作|r |T133685:0|t[亚麻绷带] 和 |T133974:0|t[烧烤狼肉] 供之后的任务使用。
+    *你可以制作和使用buff而不失去任务进度。你也可以在这里食用增益食物来获得额外5%的击杀经验。
     .complete 96101,2 --Gain the Boosted Rest buff
-    *|cRXP_WARN_You may need to press the macro twice|r. (NOT TRANSLATED IN :zhCN YET)
-    .macro First Aid,135966 >>/run local t=C_TradeSkillUI;t.OpenTradeSkill(129);t.CraftRecipe(3275,C_Item.GetItemCount(2589)) (NOT TRANSLATED IN :zhCN YET)
+    *|cRXP_WARN_你可能需要按宏两次|r。
+    .macro First Aid,135966 >>急救
     .macro Cooking,133971 >>烹饪
 step
     .train 3273,3 -- First Aid Trained
     .itemcount 2589,1 -- Linen Cloth
-    >>|cRXP_WARN_Do not move or jump until the quest is complete|r. (NOT TRANSLATED IN :zhCN YET)
-    *|cRXP_WARN_Press the Macro in the "Active Items Frame" to craft|r |T133685:0|t[Linen Bandages] for a later quest. (NOT TRANSLATED IN :zhCN YET)
-    *You can craft and rebuff without losing quest credit. You can also eat buff food here to gain 5% increased experience from kills. (NOT TRANSLATED IN :zhCN YET)
+    >>|cRXP_WARN_不要移动或跳跃直到任务完成|r。
+    *|cRXP_WARN_按下"可用物品"框架中的宏来制作|r |T133685:0|t[亚麻绷带] 供之后的任务使用。
+    *你可以制作和使用buff而不失去任务进度。你也可以在这里食用增益食物来获得额外5%的击杀经验。
     .complete 96101,2 --Gain the Boosted Rest buff
-    *|cRXP_WARN_You may need to press the macro twice|r. (NOT TRANSLATED IN :zhCN YET)
-    .macro First Aid,135966 >>/run local t=C_TradeSkillUI;t.OpenTradeSkill(129);t.CraftRecipe(3275,C_Item.GetItemCount(2589)) (NOT TRANSLATED IN :zhCN YET)
+    *|cRXP_WARN_你可能需要按宏两次|r。
+    .macro First Aid,135966 >>急救
 step << Alliance
     .train 2550,3 -- Cooking Trained
     .itemcount 2672,1 --Stringy Wolf Meat
-    >>|cRXP_WARN_Do not move or jump until the quest is complete|r. (NOT TRANSLATED IN :zhCN YET)
-    *|cRXP_WARN_Press the Macro in the "Active Items Frame" to craft|r |T133974:0|t[Charred Wolf Meat] for a later quest|r (NOT TRANSLATED IN :zhCN YET)
-    *You can craft and rebuff without losing quest credit. You can also eat buff food here to gain 5% increased experience from kills. (NOT TRANSLATED IN :zhCN YET)
+    >>|cRXP_WARN_不要移动或跳跃直到任务完成|r。
+    *|cRXP_WARN_按下"可用物品"框架中的宏来制作|r |T133974:0|t[烧烤狼肉] 供之后的任务使用。
+    *你可以制作和使用buff而不失去任务进度。你也可以在这里食用增益食物来获得额外5%的击杀经验。
     .complete 96101,2 --Gain the Boosted Rest buff
-    *|cRXP_WARN_You may need to press the macro twice|r. (NOT TRANSLATED IN :zhCN YET)
+    *|cRXP_WARN_你可能需要按宏两次|r。
     .macro Cooking,133971 >>烹饪
 step
-    >>|cRXP_WARN_Do not move or jump until the quest is complete|r. (NOT TRANSLATED IN :zhCN YET)
-    *You can craft and rebuff without losing quest credit. You can also eat buff food here to gain 5% increased experience from kills. (NOT TRANSLATED IN :zhCN YET)
+    >>|cRXP_WARN_不要移动或跳跃直到任务完成|r。
+    *你可以制作和使用buff而不失去任务进度。你也可以在这里食用增益食物来获得额外5%的击杀经验。
     .complete 96101,2 --Gain the Boosted Rest buff
 step
     .goto 2521,41.67,44.79
@@ -2075,14 +2075,14 @@ step
 step
     #optional
     #completewith HippogryphHarassmentA
-    >>Kill |cRXP_ENEMY_Galestriders::251661|r. Loot them for |T133972:0|t[|cRXP_LOOT_Strider Meat|r] and |T132832:0|t[|cRXP_LOOT_Small Eggs|r]. (NOT TRANSLATED IN :zhCN YET)
+    >>击杀 |cRXP_ENEMY_Galestriders::251661|r。拾取 |T133972:0|t[|cRXP_LOOT_Strider 肉|r] 和 |T132832:0|t[|cRXP_LOOT_小蛋|r]。
     .complete 92553,2 --8/8 Strider Meat
     .complete 92553,1 --3/3 Small Egg
     .mob +Galestrider::251661
 step << Alliance
     #optional
     #completewith next
-    >>Kill |cRXP_ENEMY_Windshaper Novice Seers::257532|r. (NOT TRANSLATED IN :zhCN YET)
+    >>击杀 |cRXP_ENEMY_Windshaper Novice Seers::257532|r。
     .usespell 1259705
     .complete 94413,1 --6/6 Windshaper Novice Seer defeated
     .mob Windshaper Novice Seer::257532
@@ -2098,7 +2098,7 @@ step << Alliance
     .goto 2521,37.96,46.86,40,0
     .goto 2521,38.75,48.72,40,0
     .goto 2521,38.99,47.24,40,0
-    >>Kill |cRXP_ENEMY_Windshaper Novice Seers::257532|r. (NOT TRANSLATED IN :zhCN YET)
+    >>击杀 |cRXP_ENEMY_Windshaper Novice Seers::257532|r。
     .usespell 1259705
     .complete 94413,1 --6/6 Windshaper Novice Seer defeated
     .mob Windshaper Novice Seer::257532
@@ -2109,7 +2109,7 @@ step
     .cooldown spell,1259416,>0,1 -- Walk on Air
     .goto 2521,36.44,50.93
     .cast 1259416 >>从山上跳下，使用 |T132845:0|t[踏空而行] 飞向路径点。
-    *|cRXP_WARN_Be careful near the waypoint; two Gryphons patrol the area|r. (NOT TRANSLATED IN :zhCN YET)
+    *|cRXP_WARN_靠近路点时要小心；两只狮鹫在该区域巡逻|r。
     .usespell 1259416
 
 --here It's possible to change this in such a way that we first guarantee Protector & Matriarch then Youth
@@ -2165,8 +2165,8 @@ step << Alliance
 step
     #optional
     #completewith next
-    >>Kill |cRXP_ENEMY_Hippogryph Youths::251291|r, |cRXP_ENEMY_Hippogryph Protectors::251284|r and the |cRXP_ENEMY_Hippogryph Matriarch::251261|r. (NOT TRANSLATED IN :zhCN YET)
-    *|cRXP_WARN_Loot them for valuable vendor trash to help pay for weapon upgrades and class training|r. (NOT TRANSLATED IN :zhCN YET)
+    >>杀死 |cRXP_ENEMY_Hippogryph Youths::251291|r、|cRXP_ENEMY_Hippogryph Protectors::251284|r 和 |cRXP_ENEMY_Hippogryph Matriarch::251261|r。
+    *|cRXP_WARN_拾取它们的有价值的杂物出售，以支付武器升级和职业训练的费用|r。
     *|cRXP_WARN_优先击杀 |cRXP_ENEMY_主母::251261|r|r
     .complete 92516,1 --|8/8 Hippogryph Youth slain
     .mob +Hippogryph Youth::251291
@@ -2179,8 +2179,8 @@ step
     .complete 93951,1 --|8/8 Hippogryph Down
 step
     #label HippogryphHarassmentA
-    >>Kill |cRXP_ENEMY_Hippogryph Youths::251291|r, |cRXP_ENEMY_Hippogryph Protectors::251284|r and the |cRXP_ENEMY_Hippogryph Matriarch::251261|r. (NOT TRANSLATED IN :zhCN YET)
-    *|cRXP_WARN_Loot them for valuable vendor trash to help pay for weapon upgrades and class training|r. (NOT TRANSLATED IN :zhCN YET)
+    >>杀死 |cRXP_ENEMY_Hippogryph Youths::251291|r、|cRXP_ENEMY_Hippogryph Protectors::251284|r 和 |cRXP_ENEMY_Hippogryph Matriarch::251261|r。
+    *|cRXP_WARN_拾取它们的有价值的杂物出售，以支付武器升级和职业训练的费用|r。
     *|cRXP_WARN_优先击杀 |cRXP_ENEMY_主母::251261|r|r
     .complete 92516,1 --|8/8 Hippogryph Youth slain
     .mob +Hippogryph Youth::251291
@@ -2191,7 +2191,7 @@ step
 step
     #optional
     #completewith VulgarasHeadA
-    >>Kill |cRXP_ENEMY_Galestriders::251661|r. Loot them for |T133972:0|t[|cRXP_LOOT_Strider Meat|r] and |T132832:0|t[|cRXP_LOOT_Small Eggs|r]. (NOT TRANSLATED IN :zhCN YET)
+    >>击杀 |cRXP_ENEMY_Galestriders::251661|r。拾取 |T133972:0|t[|cRXP_LOOT_Strider 肉|r] 和 |T132832:0|t[|cRXP_LOOT_小蛋|r]。
     .complete 92553,2 --8/8 Strider Meat
     .complete 92553,1 --3/3 Small Egg
     .mob +Galestrider::251661
@@ -2213,7 +2213,7 @@ step
 step
     #optional
     #completewith A Little Beauty
-    >>Kill |cRXP_ENEMY_Galestriders::251661|r. Loot them for |T133972:0|t[|cRXP_LOOT_Strider Meat|r] and |T132832:0|t[|cRXP_LOOT_Small Eggs|r]. (NOT TRANSLATED IN :zhCN YET)
+    >>击杀 |cRXP_ENEMY_Galestriders::251661|r。拾取 |T133972:0|t[|cRXP_LOOT_Strider 肉|r] 和 |T132832:0|t[|cRXP_LOOT_小蛋|r]。
     .complete 92553,2 --8/8 Strider Meat
     .complete 92553,1 --3/3 Small Egg
     .mob +Galestrider::251661
@@ -2236,17 +2236,17 @@ step
     .train 3273,3 -- First Aid Trained
     .itemcount 2589,1 -- Linen Cloth
     .goto 2521,43.08,46.31
-    >>Press the Macro in the "Active Items Frame" to craft |T133685:0|t[Linen Bandages]. (NOT TRANSLATED IN :zhCN YET)
-    *|cRXP_WARN_Skip this if you can't reach skill 20|r (NOT TRANSLATED IN :zhCN YET)
-    .complete 97965,1 >>Complete Camping 101: First Aid (NOT TRANSLATED IN :zhCN YET)
-    *|cRXP_WARN_You may need to press the macro twice|r. (NOT TRANSLATED IN :zhCN YET)
-    .macro First Aid,135966 >>/run local t=C_TradeSkillUI;t.OpenTradeSkill(129);t.CraftRecipe(3275,C_Item.GetItemCount(2589)) (NOT TRANSLATED IN :zhCN YET)
+    >>按下"使用中物品框"中的宏来制作 |T133685:0|t[Linen Bandages]。
+    *|cRXP_WARN_如果技能等级达不到20，请跳过此步骤|r
+    .complete 97965,1 >>完成任务 Camping 101: 急救
+    *|cRXP_WARN_你可能需要按宏两次|r。
+    .macro First Aid,135966 >>急救
 step
     .train 3273,3 -- First Aid Trained
     .isQuestComplete 97965 -- Camping 101: First Aid
     .isQuestComplete 92516 -- Hippogryph Harassment
     .goto 2521,43.08,46.31
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Naleeia Tattermend::257018|r inside the tower (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在塔内与 |cRXP_FRIENDLY_Naleeia Tattermend::257018|r 对话
     .turnin 97965 >>交任务 露营基础：急救
     .target Naleeia Tattermend::257018
 step
@@ -2300,9 +2300,9 @@ step
     .goto 2521,43.86,43.85
     +使用下方的 |T132834:0|t[草药烘蛋] 宏尽可能多地制作。
     *|cRXP_WARN_大多数buff食物可在15分钟内使杀敌经验提升5%。升级时应尽量保持这个buff的运行时间|r。
-    *|cRXP_BUY_Buy 5-20|r |T134059:0|t[Mild Spices] |cRXP_BUY_from|r |cRXP_FRIENDLY_Zerril Softbreeze|r |cRXP_WARN_if you haven't already|r. (NOT TRANSLATED IN :zhCN YET)
+    *|cRXP_BUY_购买5至20个|r |T134059:0|t[甜香料] |cRXP_BUY_从|r |cRXP_FRIENDLY_Zerril Softbreeze|r |cRXP_WARN_如果你还没有|r。
     .skipgossipid 137550 --I would like to buy from you.
-    *|cRXP_WARN_You may need to press the macro twice|r. (NOT TRANSLATED IN :zhCN YET)
+    *|cRXP_WARN_你可能需要按宏两次|r。
     .macro Herb Baked Egg,132834 >>草药烘蛋
 step
     .isOnQuest 92553 -- Restocking the Larders
@@ -2314,9 +2314,9 @@ step
     .goto 2521,43.86,43.85
     +使用下面的 |T132834:0|t[草药烘蛋] 宏制作1个来获得buff。
     *|cRXP_WARN_大多数buff食物可在15分钟内使杀敌经验提升5%。升级时应尽量保持这个buff的运行时间|r。
-    *|cRXP_BUY_Buy 5-20|r |T134059:0|t[Mild Spices] |cRXP_BUY_from|r |cRXP_FRIENDLY_Zerril Softbreeze|r |cRXP_WARN_if you haven't already|r. (NOT TRANSLATED IN :zhCN YET)
+    *|cRXP_BUY_购买5至20个|r |T134059:0|t[甜香料] |cRXP_BUY_从|r |cRXP_FRIENDLY_Zerril Softbreeze|r |cRXP_WARN_如果你还没有|r。
     .skipgossipid 137550 --I would like to buy from you.
-    *|cRXP_WARN_You may need to press the macro twice|r. (NOT TRANSLATED IN :zhCN YET)
+    *|cRXP_WARN_你可能需要按宏两次|r。
     .macro Herb Baked Egg,132834 >>草药烘蛋
 step
     .isOnQuest 92553 -- Restocking the Larders
@@ -2327,9 +2327,9 @@ step
     +使用下面的 |T132834:0|t[草药烘蛋] 宏制作除了为补充储藏室保留的3个小蛋外的所有小蛋。
     *|cRXP_WARN_保留至少3颗小蛋，用于后续任务|r
     *|cRXP_WARN_大多数buff食物可在15分钟内使杀敌经验提升5%。升级时应尽量保持这个buff的运行时间|r。
-    *|cRXP_BUY_Buy 5-20|r |T134059:0|t[Mild Spices] |cRXP_BUY_from|r |cRXP_FRIENDLY_Zerril Softbreeze|r |cRXP_WARN_if you haven't already|r. (NOT TRANSLATED IN :zhCN YET)
+    *|cRXP_BUY_购买5至20个|r |T134059:0|t[甜香料] |cRXP_BUY_从|r |cRXP_FRIENDLY_Zerril Softbreeze|r |cRXP_WARN_如果你还没有|r。
     .skipgossipid 137550 --I would like to buy from you.
-    *|cRXP_WARN_You may need to press the macro twice|r. (NOT TRANSLATED IN :zhCN YET)
+    *|cRXP_WARN_你可能需要按宏两次|r。
     .macro Herb Baked Egg,132834 >>草药烘蛋
 step
     .train 2259,3 -- Alchemy Trained
@@ -2398,7 +2398,7 @@ step << Shaman/Druid
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.2
     .goto 2521,44.790,44.168
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tephri Thriceforged::257421|r (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Tephri Thriceforged::257421|r 对话。
     >>|cRXP_BUY_购买并装备一把|r |T135145:0|t[学徒短杖]
     .collect 2495,1 --Collect Walking Stick (1)
     .target Tephri Thriceforged::257421
@@ -2409,10 +2409,10 @@ step << Warrior
     .train 8198,1 -- Thunder Clap (Rank 2) Not Trained
     .xp <8,1
     .goto 2521,44.95,45.1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corsan Earthrazer::254088|r (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Corsan Earthrazer::254088|r 对话。
     .train 284 >> 学习 |T132282:0|t[英勇打击 (等级 2)]
     .train 1715 >> 学习 |T132316:0|t[断筋]
-    .train 6343 >> 学习 |T136105:0|t[雷霆一击]
+    .train 6343 >> 训练|T136105:0|t|T136105:0|t[雷霆一击]
     .skipgossipid 136813
     .target Corsan Earthrazer::254088
 step
@@ -2503,7 +2503,7 @@ step << Shaman/Druid
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.2
     .goto 2521,44.790,44.168
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tephri Thriceforged::257421|r (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Tephri Thriceforged::257421|r 对话。
     >>|cRXP_BUY_购买并装备一把|r |T135145:0|t[学徒短杖]
     .collect 2495,1 --Collect Walking Stick (1)
     .target Tephri Thriceforged::257421
@@ -2532,7 +2532,7 @@ step << Mage
     .xp <8,1
     .goto 2521,45.1,45.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_申安·咒风::254086|r 对话
-    .train 5143 >> 学习 |T136096:0|t[奥术飞弹]
+    .train 5143 >> 训练 |T136096:0|t[奥术飞弹]
     -- .train 205 >> Train |T135846:0|t[Frostbolt (Rank 2)]
     -- .train 118 >> Train |T136071:0|t[Polymorph]
     .skipgossipid 136807
@@ -2553,7 +2553,7 @@ step
 step
     #optional
     #completewith LivingLightningA
-    >>Kill |cRXP_ENEMY_Galestriders::251661|r. Loot them for |T133972:0|t[|cRXP_LOOT_Strider Meat|r] and |T132832:0|t[|cRXP_LOOT_Small Eggs|r]. (NOT TRANSLATED IN :zhCN YET)
+    >>击杀 |cRXP_ENEMY_Galestriders::251661|r。拾取 |T133972:0|t[|cRXP_LOOT_Strider 肉|r] 和 |T132832:0|t[|cRXP_LOOT_小蛋|r]。
     .complete 92553,2 --8/8 Strider Meat
     .complete 92553,1 --3/3 Small Egg
     .mob +Galestrider::251661
@@ -2635,7 +2635,7 @@ step << Rogue
     .goto 2521,44.37,46.69,30,0
     .goto 2521,43.15,43.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_米莉安·雾刃::254087|r 对话
-    *|cRXP_WARN_Do not use|r |T132845:0|t[Walk on Air] |cRXP_WARN_during this step|r. (NOT TRANSLATED IN :zhCN YET)
+    *|cRXP_WARN_不要使用|r |T132845:0|t[踏空而行] |cRXP_WARN_在此步骤中|r。
     .train 5277 >>学习 |T136205:0|t[闪避]
     .train 6760 >>学习 |T132292:0|t[刺骨 (等级 2)]
     .skipgossipid 136810
@@ -2648,7 +2648,7 @@ step
     .goto 2521,45.04,46.23,15,0 << !Rogue
     .goto 2521,45.67,45.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_治安官阿翁达::251523|r 对话。
-    *|cRXP_WARN_Do not use|r |T132845:0|t[Walk on Air] |cRXP_WARN_during this step|r. (NOT TRANSLATED IN :zhCN YET)
+    *|cRXP_WARN_不要使用|r |T132845:0|t[踏空而行] |cRXP_WARN_在此步骤中|r。
     .turnin 92528,1 >>交任务 信徒之中 << Mage/Druid/Shaman/Priest/Warlock
     .turnin 92528,2 >>交任务 信徒之中 << Warrior/Rogue/Paladin
     .turnin 92528,3 >>交任务 信徒之中 << Hunter
@@ -2690,7 +2690,7 @@ step
     .goto 2521,43.02,49.86
     .subzone 17674 >>在申达尔村西南方死亡，然后在 |cRXP_FRIENDLY_灵魂医者::6491|r 处复活
     *|cRXP_WARN_在战斗中使用坐下宏，可加快死亡速度|r。
-    .macro Sit to Die Faster,134400 >>/sit (NOT TRANSLATED IN :zhCN YET)
+    .macro Sit to Die Faster,134400 >>坐下以更快死亡
 step
     #optional
     #completewith next
@@ -2763,7 +2763,7 @@ step
 step  << Alliance
     #optional
     #completewith NearCommander
-    >>Kill |cRXP_ENEMY_Al'Aketh Stormcallers::252068|r. Loot them for the |T133647:0|t[|cRXP_LOOT_Stolen Shen'dar Supplies|r]. (NOT TRANSLATED IN :zhCN YET)
+    >>杀死 |cRXP_ENEMY_Al'Aketh Stormcallers::252068|r。拾取他们掉落的 |T133647:0|t[|cRXP_LOOT_Stolen Shen'dar 补给|r]。
     >>|TInterface/cursor/crosshair/interact.blp:16|t点击 |cRXP_PICK_补给箱|r （小包）。
     .complete 92550,1 --6/6 Al'Aketh Stormcaller slain
     .complete 92551,1 --10/10 Stolen Shen'dar Supplies
@@ -2771,7 +2771,7 @@ step  << Alliance
 step << Alliance
     #optional
     #completewith NearCommander
-    >>Kill |cRXP_ENEMY_Galestriders::251661|r. Loot them for |T133972:0|t[|cRXP_LOOT_Strider Meat|r] and |T132832:0|t[|cRXP_LOOT_Small Eggs|r]. (NOT TRANSLATED IN :zhCN YET)
+    >>击杀 |cRXP_ENEMY_Galestriders::251661|r。拾取 |T133972:0|t[|cRXP_LOOT_Strider 肉|r] 和 |T132832:0|t[|cRXP_LOOT_小蛋|r]。
     .complete 92553,2 --8/8 Strider Meat
     .complete 92553,1 --3/3 Small Egg
     .mob +Galestrider::251661
@@ -2794,7 +2794,7 @@ step << Alliance
 step
     #optional
     #completewith CommanderCyclasHeadA
-    >>Kill |cRXP_ENEMY_Galestriders::251661|r. Loot them for |T133972:0|t[|cRXP_LOOT_Strider Meat|r] and |T132832:0|t[|cRXP_LOOT_Small Eggs|r]. (NOT TRANSLATED IN :zhCN YET)
+    >>击杀 |cRXP_ENEMY_Galestriders::251661|r。拾取 |T133972:0|t[|cRXP_LOOT_Strider 肉|r] 和 |T132832:0|t[|cRXP_LOOT_小蛋|r]。
     .complete 92553,2 --8/8 Strider Meat
     .complete 92553,1 --3/3 Small Egg
     .mob +Galestrider::251661
@@ -2813,7 +2813,7 @@ step
 step
     #optional
     #completewith CommanderCyclasHeadA
-    >>Kill |cRXP_ENEMY_Al'Aketh Stormcallers::252068|r. Loot them for the |T133647:0|t[|cRXP_LOOT_Stolen Shen'dar Supplies|r]. (NOT TRANSLATED IN :zhCN YET)
+    >>杀死 |cRXP_ENEMY_Al'Aketh Stormcallers::252068|r。拾取他们掉落的 |T133647:0|t[|cRXP_LOOT_Stolen Shen'dar 补给|r]。
     >>|TInterface/cursor/crosshair/interact.blp:16|t点击|cRXP_PICK_补给箱|r。
     .complete 92550,1 --6/6 Al'Aketh Stormcaller slain
     .complete 92551,1 --10/10 Stolen Shen'dar Supplies
@@ -2847,7 +2847,7 @@ step
     .complete 92550,2 --4/4 Living Lightning slain
     .mob Living Lightning::251662
 step
-    >>Kill |cRXP_ENEMY_Al'Aketh Stormcallers::252068|r. Loot them for the |T133647:0|t[|cRXP_LOOT_Stolen Shen'dar Supplies|r]. (NOT TRANSLATED IN :zhCN YET)
+    >>杀死 |cRXP_ENEMY_Al'Aketh Stormcallers::252068|r。拾取他们掉落的 |T133647:0|t[|cRXP_LOOT_Stolen Shen'dar 补给|r]。
     >>|TInterface/cursor/crosshair/interact.blp:16|t点击|cRXP_PICK_补给箱|r。
     .complete 92550,1 --6/6 Al'Aketh Stormcaller slain
     .complete 92551,1 --10/10 Stolen Shen'dar Supplies
@@ -2884,7 +2884,7 @@ step
 step
     #optional
     #completewith next
-    >>Kill |cRXP_ENEMY_Galestriders::251661|r. Loot them for |T133972:0|t[|cRXP_LOOT_Strider Meat|r] and |T132832:0|t[|cRXP_LOOT_Small Eggs|r]. (NOT TRANSLATED IN :zhCN YET)
+    >>击杀 |cRXP_ENEMY_Galestriders::251661|r。拾取 |T133972:0|t[|cRXP_LOOT_Strider 肉|r] 和 |T132832:0|t[|cRXP_LOOT_小蛋|r]。
     .complete 92553,2 --8/8 Strider Meat
     .complete 92553,1 --3/3 Small Egg
     .mob +Galestrider::251661
@@ -2894,7 +2894,7 @@ step
     .mob Prideclaw::251245
 step
     #label RestockingTheLardersA
-    >>Kill |cRXP_ENEMY_Galestriders::251661|r. Loot them for |T133972:0|t[|cRXP_LOOT_Strider Meat|r] and |T132832:0|t[|cRXP_LOOT_Small Eggs|r]. (NOT TRANSLATED IN :zhCN YET)
+    >>击杀 |cRXP_ENEMY_Galestriders::251661|r。拾取 |T133972:0|t[|cRXP_LOOT_Strider 肉|r] 和 |T132832:0|t[|cRXP_LOOT_小蛋|r]。
     .complete 92553,2 --8/8 Strider Meat
     .complete 92553,1 --3/3 Small Egg
     .mob +Galestrider::251661
@@ -3002,8 +3002,8 @@ step
 step
     .isQuestComplete 92550 -- Havoc in the Highlands
     .goto 2521,43.86,43.85
-    *|cRXP_WARN_Do not use|r |T132845:0|t[Walk on Air] |cRXP_WARN_during this step|r. (NOT TRANSLATED IN :zhCN YET)
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zerril Softbreeze::251905|r. (NOT TRANSLATED IN :zhCN YET)
+    *|cRXP_WARN_不要使用|r |T132845:0|t[踏空而行] |cRXP_WARN_在此步骤中|r。
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Zerril Softbreeze::251905|r 对话。
     .vendor 251905 >>把垃圾物品卖给商人
     .skipgossipid 137550
     *别卖 |T133970:0|t[多汁狼肉]、|T132832:0|t[小蛋] 或 |T133972:0|t[陆行鸟肉]。 << Alliance
@@ -3027,9 +3027,9 @@ step
     .goto 2521,43.86,43.85
     +使用下方的 |T132834:0|t[草药烘蛋] 宏尽可能多地制作。
     *|cRXP_WARN_大多数buff食物可在15分钟内使杀敌经验提升5%。升级时应尽量保持这个buff的运行时间|r。
-    *|cRXP_BUY_Buy 5-20|r |T134059:0|t[Mild Spices] |cRXP_BUY_from|r |cRXP_FRIENDLY_Zerril Softbreeze|r |cRXP_WARN_if you haven't already|r. (NOT TRANSLATED IN :zhCN YET)
+    *|cRXP_BUY_购买5至20个|r |T134059:0|t[甜香料] |cRXP_BUY_从|r |cRXP_FRIENDLY_Zerril Softbreeze|r |cRXP_WARN_如果你还没有|r。
     .skipgossipid 137550 --I would like to buy from you.
-    *|cRXP_WARN_You may need to press the macro twice|r. (NOT TRANSLATED IN :zhCN YET)
+    *|cRXP_WARN_你可能需要按宏两次|r。
     .macro Herb Baked Egg,132834 >>草药烘蛋
 step
     .train 8613,3 -- Skinning Trained
@@ -3051,11 +3051,11 @@ step
     .train 3273,3 -- First Aid Trained
     .itemcount 2589,1 -- Linen Cloth
     .goto 2521,43.08,46.31
-    >>Press the Macro in the "Active Items Frame" to craft |T133685:0|t[Linen Bandages]. (NOT TRANSLATED IN :zhCN YET)
-    *|cRXP_WARN_Skip this if you can't reach skill 20|r (NOT TRANSLATED IN :zhCN YET)
-    .complete 97965,1 >>Complete Camping 101: First Aid (NOT TRANSLATED IN :zhCN YET)
-    *|cRXP_WARN_You may need to press the macro twice|r. (NOT TRANSLATED IN :zhCN YET)
-    .macro First Aid,135966 >>/run local t=C_TradeSkillUI;t.OpenTradeSkill(129);t.CraftRecipe(3275,C_Item.GetItemCount(2589)) (NOT TRANSLATED IN :zhCN YET)
+    >>按下"使用中物品框"中的宏来制作 |T133685:0|t[Linen Bandages]。
+    *|cRXP_WARN_如果技能等级达不到20，请跳过此步骤|r
+    .complete 97965,1 >>完成任务 Camping 101: 急救
+    *|cRXP_WARN_你可能需要按宏两次|r。
+    .macro First Aid,135966 >>急救
 step
     .train 3273,3 -- First Aid Trained
     .isQuestComplete 97965 -- Camping 101: First Aid
@@ -3149,13 +3149,13 @@ RXPGuides.RegisterGuide([[
 #forever
 #disabledungeons
 #version 1
-#name 9-13 Zephras Isle
-#displayname 9-13 Skyborne << Alliance
-#displayname 9-12 Skyborne << Horde
+#name 9-13级 Zephras Isle
+#displayname 9-13级 Skyborne << Alliance
+#displayname 9-12级 Skyborne << Horde
 #group RestedXP 无限指南 (联盟) << Alliance
 #group RestedXP 无限指南 (部落) << Horde
-#subgroup 速通指南 1-20级 << Alliance
-#subgroup 速通指南 1-22级 << Horde
+#subgroup 速通向导 1-20 << Alliance
+#subgroup 速通向导 1-22 << Horde
 #next 13-15级 西部荒野 << Alliance !Hunter
 #next 14-16级 黑海岸 << Alliance Hunter
 #next 12-14级 银松森林 << Horde !Hunter
@@ -3165,20 +3165,20 @@ RXPGuides.RegisterGuide([[
 step
     #optional
     .isQuestAvailable 92550,93927 --Havoc in the Highlands; A Last Request
-    +|cRXP_WARN_Complete the 1-9 Skyborne guide before continuing. This guide requires the quests from Part 1|r. (NOT TRANSLATED IN :zhCN YET)
-    .clicknext RestedXP Forever Guide (A)\1-9 Zephras Isle >>CLICK HERE FOR THE 1-9 SKYBORNE GUIDE (NOT TRANSLATED IN :zhCN YET) << Alliance
-    .clicknext RestedXP Forever Guide (H)\1-9 Zephras Isle >>CLICK HERE FOR THE 1-9 SKYBORNE GUIDE (NOT TRANSLATED IN :zhCN YET) << Horde
+    +|cRXP_WARN_完成 1-9 Skyborne 指南后才能继续。该指南需要第1部分的任务|r。
+    .clicknext RestedXP Forever Guide (A)\1-9 Zephras Isle >>点击此处查看 1-9 Skyborne 指南 << Alliance
+    .clicknext RestedXP Forever Guide (H)\1-9 Zephras Isle >>点击此处查看 1-9 Skyborne 指南 << Horde
 step
     .goto 2521,45.67,45.50
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Constable Aonda::251523|r. (NOT TRANSLATED IN :zhCN YET)
-    .accept 92701 >>Accept To Valanaar (NOT TRANSLATED IN :zhCN YET) << Alliance
-    .accept 92579 >>Accept To Valanaar (NOT TRANSLATED IN :zhCN YET) << Horde
-    .accept 93948 >>Accept Deliver the Signet (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Constable Aonda::251523|r 对话。
+    .accept 92701 >>接受任务 To Valanaar << Alliance
+    .accept 92579 >>接受任务 To Valanaar << Horde
+    .accept 93948 >>接受任务 Deliver the Signet
     .target Constable Aonda::251523
 step
     #completewith LeaveZephrasIsle
     #hidewindow
-    +Windstones (NOT TRANSLATED IN :zhCN YET)
+    +Windstones
     .use 255663 --Windstones
 --here maybe duplicate trainer steps for low silver cases
 
@@ -3195,8 +3195,8 @@ step
     .isQuestComplete 97967 -- Camping 101: Fishing
     .isQuestComplete 92550 -- Havoc in the Highlands
     .goto 2521,45.03,48.45
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fenn Fairweather::251992|r (NOT TRANSLATED IN :zhCN YET)
-    .turnin 97967 >>Turn in Camping 101: Fishing (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Fenn Fairweather::251992|r 对话
+    .turnin 97967 >>交任务 Camping 101: 钓鱼
     .target Fenn Fairweather::251992
 step
 	.isOnQuest 93948 -- Deliver the Signet
@@ -3206,8 +3206,8 @@ step
     .subzone 16626 >>在精确的路径点位置死亡
     *|cRXP_WARN_在战斗中使用坐下宏，可加快死亡速度|r。
     *|cRXP_WARN_否则，你可能会被送到不同的墓地|r
-    *|cRXP_WARN_Be careful if you go straight through the field; you can easily die|r. (NOT TRANSLATED IN :zhCN YET)
-    .macro Sit to Die Faster,134400 >>/sit (NOT TRANSLATED IN :zhCN YET)
+    *|cRXP_WARN_小心直接穿过田地，你很容易死亡|r。
+    .macro Sit to Die Faster,134400 >>坐下以更快死亡
 step
     #ignorecorpse
     .subzoneskip 16626,1 -- Gustberry Lowlands
@@ -3240,7 +3240,7 @@ step << Alliance Hunter
     #completewith Deliver the Signet
     .xp <9,1
     .itemcount 277110,1 --Zephrali Bow
-    +|cRXP_WARN_Equip the|r |T7810733:0|t[|cRXP_LOOT_Zephrali Bow|r]. (NOT TRANSLATED IN :zhCN YET)
+    +|cRXP_WARN_装备|r |T7810733:0|t[|cRXP_LOOT_泽风弓|r]。
     .use 277110 --Zephrali Bow
 step << Alliance Warrior/Alliance Paladin/Alliance Shaman/Alliance Druid
     .xp <9,1
@@ -3249,10 +3249,10 @@ step << Alliance Warrior/Alliance Paladin/Alliance Shaman/Alliance Druid
     .isQuestAvailable 92679 --Blood Tithe
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.28
     .goto 2521,59.395,75.730
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falfaan Halfwind::271465|r inside the house. (NOT TRANSLATED IN :zhCN YET)
-    >>|cRXP_BUY_Buy and equip a|r |T7792097:0|t[Zephrali Smasher]. (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在房屋内与 |cRXP_FRIENDLY_Falfaan Halfwind::271465|r 对话。
+    >>|cRXP_BUY_购买并装备|r |T7792097:0|t[泽风粉碎者]。
     .collect 277106,1 --Zephrali Smasher
-    .vendor 271465 >>Vendor trash and repair if needed. (NOT TRANSLATED IN :zhCN YET)
+    .vendor 271465 >>在商人处扔垃圾和修理（如需要）。
     *别卖 |T133970:0|t[多汁狼肉]、|T132832:0|t[小蛋] 或 |T133972:0|t[陆行鸟肉]。 << Alliance
     *别卖 |T132832:0|t[小蛋] 和 |T133972:0|t[陆行鸟肉]。 << Horde
     *|cRXP_WARN_之后烹饪会用到它们|r。
@@ -3263,7 +3263,7 @@ step << Alliance Warrior/Alliance Paladin/Alliance Shaman/Alliance Druid
     #completewith Deliver the Signet
     .xp <9,1
     .itemcount 277106,1 --Zephrali Smasher
-    +|cRXP_WARN_Equip the|r |T7792097:0|t[|cRXP_LOOT_Zephrali Smasher|r]. (NOT TRANSLATED IN :zhCN YET)
+    +|cRXP_WARN_装备|r |T7792097:0|t[|cRXP_LOOT_泽风粉碎者|r]。
     .use 277106 --Zephrali Smasher
 step << Alliance Rogue
     .xp <9,1
@@ -3272,10 +3272,10 @@ step << Alliance Rogue
     .isQuestAvailable 92679 --Blood Tithe
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.35
     .goto 2521,59.395,75.730
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falfaan Halfwind::271465|r inside the house. (NOT TRANSLATED IN :zhCN YET)
-    >>|cRXP_BUY_Buy and equip a|r |T7791298:0|t[Zephrali Bludgeon]. (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在房屋内与 |cRXP_FRIENDLY_Falfaan Halfwind::271465|r 对话。
+    >>|cRXP_BUY_购买并装备|r |T7791298:0|t[泽风大头棒]。
     .collect 277107,1 --Zephrali Bludgeon
-    .vendor 271465 >>Vendor trash and repair if needed. (NOT TRANSLATED IN :zhCN YET)
+    .vendor 271465 >>在商人处扔垃圾和修理（如需要）。
     *别卖 |T133970:0|t[多汁狼肉]、|T132832:0|t[小蛋] 或 |T133972:0|t[陆行鸟肉]。 << Alliance
     *别卖 |T132832:0|t[小蛋] 和 |T133972:0|t[陆行鸟肉]。 << Horde
     *|cRXP_WARN_之后烹饪会用到它们|r。
@@ -3286,7 +3286,7 @@ step << Alliance Rogue
     #completewith Deliver the Signet
     .xp <9,1
     .itemcount 277107,1 --Zephrali Bludgeon
-    +|cRXP_WARN_Equip the|r |T7791298:0|t[|cRXP_LOOT_Zephrali Bludgeon|r]. (NOT TRANSLATED IN :zhCN YET)
+    +|cRXP_WARN_装备|r |T7791298:0|t[|cRXP_LOOT_泽风大头棒|r]。
     .use 277107 --Zephrali Bludgeon
 -- step << Mage/Priest/Warlock
 --     .xp <9,1
@@ -3365,14 +3365,14 @@ step << Alliance
     #optional
     #completewith BuggedAcceptedA
     .isNotOnQuest 93949 --Bugged
-    +|cRXP_WARN_Do not use|r |T132845:0|t[Walk on Air] |cRXP_WARN_until you accept Bugged|r. (NOT TRANSLATED IN :zhCN YET)
+    +|cRXP_WARN_不要使用|r |T132845:0|t[踏空而行] |cRXP_WARN_直到接受任务 Bugged|r。
 step
     .isNotOnQuest 94484 -- Unnerving Silence
     .subzoneskip 16638,1 -- Valanaar
     .isQuestAvailable 93948 -- Deliver the Signet
     .goto 2521,63.33,73.65,15,0
     .goto 2521,63.973,75.095,25 >>越过山
-    *|cRXP_WARN_Ignore the Leyline; we'll deathskip shortly|r (NOT TRANSLATED IN :zhCN YET) << Alliance
+    *|cRXP_WARN_屏蔽 魔网；我们马上会死亡跳过|r << Alliance
 step
     .goto 2521,63.973,75.095
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_洛瑟鲁姆·星风::252359|r 对话。
@@ -3435,7 +3435,7 @@ step << Alliance
 step << Alliance
     #completewith Unwelcome Visitors
     .aura 1258510
-    >>Kill |cRXP_ENEMY_Skyhoppers::251314|r. (NOT TRANSLATED IN :zhCN YET)
+    >>击杀 |cRXP_ENEMY_Skyhoppers::251314|r。
     .complete 93949,1 --8/8 Enchanted Skyhopper Exterminated
     .mob Skyhopper::251314
 step << Alliance
@@ -3472,8 +3472,8 @@ step << Alliance
 step << Alliance
     .goto 2521,53.33,72.15
     >>|TInterface/cursor/crosshair/interact.blp:20|t点击 |cRXP_PICK_染血的背包::581822|r
-    *|cRXP_WARN_If a Tornado is present, use it for faster travel|r. (NOT TRANSLATED IN :zhCN YET)
-    *Watch out for the |cRXP_ENEMY_Ornery Galestrider::251707|r. (NOT TRANSLATED IN :zhCN YET)
+    *|cRXP_WARN_如果出现龙卷风，使用它以加速移动|r。
+    *小心 |cRXP_ENEMY_Ornery Galestrider::251707|r。
     .turnin 92727 >>交任务 失踪的学者
     .accept 92849 >>接受任务 失踪的学者
     .target Bloodstained Satchel::581822
@@ -3486,8 +3486,8 @@ step << Alliance
     .goto 2521,49.75,65.9,30,0
     .goto 2521,50.7,65.36
     >>|TInterface/cursor/crosshair/interact.blp:20|t在洞穴内点击 |cRXP_FRIENDLY_菲里昂·炎风::253002|r。
-    *|cRXP_WARN_Avoid the birds and click Fillion out of combat, or you'll be teleported outside|r. (NOT TRANSLATED IN :zhCN YET)
-    *|cRXP_WARN_If a Tornado is present, use it for faster travel|r. (NOT TRANSLATED IN :zhCN YET)
+    *|cRXP_WARN_躲开鸟类，脱离战斗后点击 Fillion，否则你会被传送到外面|r。
+    *|cRXP_WARN_如果出现龙卷风，使用它以加速移动|r。
     .complete 92849,1 --1/1 Find Fillion Flamebreeze
 step << Alliance
     .subzoneskip 16672,1 -- Shriekling Den
@@ -3495,7 +3495,7 @@ step << Alliance
     .isQuestNotComplete 92849 -- The Missing Scholar
     .goto 2521,50.7,65.36
     .aura 1258429 >>|TInterface/cursor/crosshair/interact.blp:20|t在洞穴内点击 |cRXP_FRIENDLY_菲里昂·炎风::253002|r。
-    *|cRXP_WARN_Avoid the birds and click Fillion out of combat, or you'll be teleported outside|r. (NOT TRANSLATED IN :zhCN YET)
+    *|cRXP_WARN_躲开鸟类，脱离战斗后点击 Fillion，否则你会被传送到外面|r。
     .skipgossipid 136430
     .target Fillion Flamebreeze::253002
 step << Alliance
@@ -3505,8 +3505,8 @@ step << Alliance
     .goto 2521,51.03,67.15,15,0
     .goto 2521,51.55,69.2,35,0
     .goto 2521,52.08,69.41
-    >>Carry |cRXP_FRIENDLY_Fillion Flamebreeze::253281|r to safety. (NOT TRANSLATED IN :zhCN YET)
-    *|cRXP_WARN_Avoid the birds and click Fillion out of combat, or you'll be teleported outside|r. (NOT TRANSLATED IN :zhCN YET)
+    >>护送 |cRXP_FRIENDLY_Fillion Flamebreeze::253281|r 到安全地方。
+    *|cRXP_WARN_躲开鸟类，脱离战斗后点击 Fillion，否则你会被传送到外面|r。
     .complete 92849,2 --1/1 Carry Fillion Flamebreeze to safety while avoiding enemies
     .skipgossipid 136430
     .mob Shriekling Fledgling::253282
@@ -3515,8 +3515,8 @@ step << Alliance
     .goto 2521,52.064,69.396
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_菲里昂·炎风::253284|r 对话。
     .target Fillion Flamebreeze::253284
-    .turnin 92849 >>Turn in The Missing Scholar 1 (NOT TRANSLATED IN :zhCN YET)
-    .accept 92850 >>Accept The Missing Scholar 2 (NOT TRANSLATED IN :zhCN YET)
+    .turnin 92849 >>交任务失踪的学者 1
+    .accept 92850 >>接受任务失踪的学者 2
 -- step << Alliance
 --     #completewith next
 --     #label Shriekling Matriarch
@@ -3575,7 +3575,7 @@ step << Horde
     .goto 2521,66.488,76.498,6,0
     .goto 2521,63.027,77.807 << Hunter
     .goto 2521,61.491,76.893 << !Hunter
-    .cast 1259416 >>Jump off the tower and use |T132845:0|t[Walk on Air] to fly towards the waypoint locations. (NOT TRANSLATED IN :zhCN YET)
+    .cast 1259416 >>从塔上跳下来并使用 |T132845:0|t[踏空而行] 飞向路点位置。
     .usespell 1259416
     .macro Cancel Walk on Air,132845 >>取消踏空而行
 -- step << Horde Hunter
@@ -3592,7 +3592,7 @@ step << Horde
     .turnin 92700 >>交任务 大星灵
     .accept 92708 >>接受任务 大冒险
     .timer 75,剧情事件时长
-    .accept 93735 >>Accept The Broken Construct 1 (NOT TRANSLATED IN :zhCN YET)
+    .accept 93735 >>接受任务 破碎者 构造体 1
     .target Ayessa Dawnsinger::251968
 step << Horde
     .isOnQuest 92708 -- A Grand Adventure
@@ -3612,8 +3612,8 @@ step << Horde Hunter
     .isQuestAvailable 92679 -- Blood Tithe
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.82
     .goto 2521,59.395,75.730
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falfaan Halfwind::271465|r inside the house. (NOT TRANSLATED IN :zhCN YET)
-    >>|cRXP_BUY_Buy and equip a|r |T7810733:0|t[Zephrali Bow] (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在房屋内与 |cRXP_FRIENDLY_Falfaan Halfwind::271465|r 对话。
+    >>|cRXP_BUY_购买并装备|r |T7810733:0|t[泽风弓]
     .collect 277110,1 --Collect Zephrali Bow
     .vendor 271465 >>出售垃圾，需要时修理
     *别卖 |T132832:0|t[小蛋] 和 |T133972:0|t[陆行鸟肉]。 << Horde
@@ -3625,7 +3625,7 @@ step << Horde Hunter
     #completewith LeavingValanaarA
     .xp <9,1
     .itemcount 277110,1 --Zephrali Bow
-    +|cRXP_WARN_Equip the|r |T7810733:0|t[|cRXP_LOOT_Zephrali Bow|r]. (NOT TRANSLATED IN :zhCN YET)
+    +|cRXP_WARN_装备|r |T7810733:0|t[|cRXP_LOOT_泽风弓|r]。
     .use 277110 --Zephrali Bow
 step << Horde Warrior/Horde Shaman/Horde Druid
     .xp <9,1
@@ -3634,10 +3634,10 @@ step << Horde Warrior/Horde Shaman/Horde Druid
     .isQuestAvailable 92679 --Blood Tithe
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.28
     .goto 2521,59.395,75.730
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falfaan Halfwind::271465|r inside the house. (NOT TRANSLATED IN :zhCN YET)
-    >>|cRXP_BUY_Buy and equip a|r |T7792097:0|t[Zephrali Smasher]. (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在房屋内与 |cRXP_FRIENDLY_Falfaan Halfwind::271465|r 对话。
+    >>|cRXP_BUY_购买并装备|r |T7792097:0|t[泽风粉碎者]。
     .collect 277106,1 --Zephrali Smasher
-    .vendor 271465 >>Vendor trash and repair if needed. (NOT TRANSLATED IN :zhCN YET)
+    .vendor 271465 >>在商人处扔垃圾和修理（如需要）。
     *别卖 |T132832:0|t[小蛋] 和 |T133972:0|t[陆行鸟肉]。 << Horde
     *|cRXP_WARN_之后烹饪会用到它们|r。
     .skipgossipid 141556
@@ -3647,7 +3647,7 @@ step << Horde Warrior/Horde Shaman/Horde Druid
     #completewith LeavingValanaarA
     .xp <9,1
     .itemcount 277106,1 --Zephrali Smasher
-    +|cRXP_WARN_Equip the|r |T7792097:0|t[|cRXP_LOOT_Zephrali Smasher|r]. (NOT TRANSLATED IN :zhCN YET)
+    +|cRXP_WARN_装备|r |T7792097:0|t[|cRXP_LOOT_泽风粉碎者|r]。
     .use 277106 --Zephrali Smasher
 step << Horde Rogue
     .xp <9,1
@@ -3656,10 +3656,10 @@ step << Horde Rogue
     .isQuestAvailable 92679 --Blood Tithe
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.35
     .goto 2521,59.395,75.730
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falfaan Halfwind::271465|r inside the house. (NOT TRANSLATED IN :zhCN YET)
-    >>|cRXP_BUY_Buy and equip a|r |T7791298:0|t[Zephrali Bludgeon]. (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在房屋内与 |cRXP_FRIENDLY_Falfaan Halfwind::271465|r 对话。
+    >>|cRXP_BUY_购买并装备|r |T7791298:0|t[泽风大头棒]。
     .collect 277107,1 --Zephrali Bludgeon
-    .vendor 271465 >>Vendor trash and repair if needed. (NOT TRANSLATED IN :zhCN YET)
+    .vendor 271465 >>在商人处扔垃圾和修理（如需要）。
     *别卖 |T132832:0|t[小蛋] 和 |T133972:0|t[陆行鸟肉]。 << Horde
     *|cRXP_WARN_之后烹饪会用到它们|r。
     .skipgossipid 141556
@@ -3669,7 +3669,7 @@ step << Horde Rogue
     #completewith LeavingValanaarA
     .xp <9,1
     .itemcount 277107,1 --Zephrali Bludgeon
-    +|cRXP_WARN_Equip the|r |T7791298:0|t[|cRXP_LOOT_Zephrali Bludgeon|r]. (NOT TRANSLATED IN :zhCN YET)
+    +|cRXP_WARN_装备|r |T7791298:0|t[|cRXP_LOOT_泽风大头棒|r]。
     .use 277107 --Zephrali Bludgeon
 
 step << Horde
@@ -3684,7 +3684,7 @@ step << Horde
     .goto 2521,59.064,72.989
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_里阿尼·夜风::256083|r 对话。
     .target Riaani Nightwind::256083
-    .turnin 93735 >>Turn in The Broken Construct 1 (NOT TRANSLATED IN :zhCN YET)
+    .turnin 93735 >>交任务 破碎者 构造体 1
 --     .accept 93737 >>Accept The Broken Construct 2
 --     .complete 93737,1 --|1/1 Listen to what Riaani Nightwind has to say
 -- step << Horde
@@ -3743,8 +3743,8 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿米莉亚·风野::252800|r 对话。
     *|cRXP_WARN_她可能会在剧情演出期间于不同位置间移动|r。
     *|cRXP_WARN_从远处寻找她，或跟随她的对话提示；箭头仅标示大概位置|r。
-    *|cRXP_WARN_If a Tornado is present, use it for faster travel|r. (NOT TRANSLATED IN :zhCN YET)
-    *|cRXP_WARN_If you walk through the orchard, watch out for stealthed bandits|r. (NOT TRANSLATED IN :zhCN YET)
+    *|cRXP_WARN_如果出现龙卷风，使用它以加速移动|r。
+    *|cRXP_WARN_穿过果园时要小心隐形盗匪|r。
     .complete 92679,1 --1/1 Find Aamelia Windfield
     .target Aamelia Windfield::252800
 step
@@ -3752,8 +3752,8 @@ step
     .goto 2521,46.71,81.94,30,0
     .goto 2521,47.511,78.490,10,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿米莉亚·风野::252800|r 对话。
-    *|cRXP_WARN_She may be moving between locations during a roleplay sequence|r. (NOT TRANSLATED IN :zhCN YET)
-    *|cRXP_WARN_Look for her from a distance or follow her dialogue; the arrow marks only an approximate location|r. (NOT TRANSLATED IN :zhCN YET)
+    *|cRXP_WARN_在剧情演出中，她可能在不同位置移动|r。
+    *|cRXP_WARN_从远处寻找她或跟随她的对话；箭头仅标记近似的所在地区|r。
     .turnin 92679 >>交任务 血之什一税
     .accept 92682 >>接受任务 派上用场
     .accept 92684 >>接受任务 暴躁的疾风陆行鸟
@@ -3773,7 +3773,7 @@ step
     #loop
     .goto 2521,46.164,78.043,30,0
     .goto 2521,48.920,84.441,30,0
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Ripe Stormapples|r. (NOT TRANSLATED IN :zhCN YET)
+    >>|TInterface/cursor/crosshair/interact.blp:20|t点击 |cRXP_PICK_Ripe Stormapples|r。
     >>击杀 |cRXP_ENEMY_饥饿的强盗::252802|r|cRXP_WARN_（潜行状态）|r。
     *猎人提示：不停按Tab键提前选中它们，对其使用猎人印记，这样你就能拉开距离并从远处攻击。 << Hunter
     .complete 92682,1 --10/10 Ripe Stormapple
@@ -3787,7 +3787,7 @@ step << Horde
 step
     #optional
     #completewith WhatIsMyPurposeA
-    >>Kill |cRXP_ENEMY_Ornery Galestriders::251707|r. Loot them for |T2066012:0|t[|cRXP_LOOT_Lowlands Galestrider Tenderloins|r]. (NOT TRANSLATED IN :zhCN YET)
+    >>击杀 |cRXP_ENEMY_Ornery Galestriders::251707|r。从它们掉落的战利品中获得 |T2066012:0|t[|cRXP_LOOT_Lowlands Galestrider Tenderloins|r]。
     .complete 92684,1 --7/7 Lowlands Galestrider Tenderloin
     .mob Ornery Galestrider::251707
 step
@@ -3796,8 +3796,8 @@ step
     >>对 |cRXP_ENEMY_扑翼蝶::251622|r 反复使用 |T537768:0|t[扑翼蝶拍]
     >>|TInterface/cursor/crosshair/interact.blp:16|t点击 |cRXP_PICK_扑翼蝶鳞粉|r。
     *|cRXP_WARN_如果扑翼蝶拍没有飞走，再次对其使用蝶拍|r << !Mage !Druid
-    *|cRXP_WARN_Repeatedly cast|r |T136071:0|t[Polymorph] |cRXP_WARN_and use the swatter on the same Flutterfly for extra dust|r. (NOT TRANSLATED IN :zhCN YET) << Mage
-    *|cRXP_WARN_cast|r |T136100:0|t[Entangling Roots] |cRXP_WARN_and use the swatter on the same Flutterfly for extra dust|r. (NOT TRANSLATED IN :zhCN YET) << Druid
+    *|cRXP_WARN_重复施放|r |T136071:0|t[变形术] |cRXP_WARN_并对同一个 Flutterfly 使用 swatter 以获得更多粉尘|r。 << Mage
+    *|cRXP_WARN_施放|r |T136100:0|t[纠缠根须] |cRXP_WARN_并对同一个 Flutterfly 使用 swatter 以获得更多粉尘|r。 << Druid
     .complete 92683,1 --5/5 Flutterfly Dust
     .mob Flutterfly::251622
     .use 253666 -- Flutterfly Swatter
@@ -3825,7 +3825,7 @@ step << Horde Shaman
 step << Horde Shaman
     #optional
     #completewith next
-    >>Kill |cRXP_ENEMY_Ornery Galestriders::251707|r. Loot them for |T2066012:0|t[|cRXP_LOOT_Lowlands Galestrider Tenderloins|r]. (NOT TRANSLATED IN :zhCN YET)
+    >>击杀 |cRXP_ENEMY_Ornery Galestriders::251707|r。从它们掉落的战利品中获得 |T2066012:0|t[|cRXP_LOOT_Lowlands Galestrider Tenderloins|r]。
     .complete 92684,1 --7/7 Lowlands Galestrider Tenderloin
     .mob Ornery Galestrider::251707
 step << Horde Shaman
@@ -3842,7 +3842,7 @@ step << Horde Shaman
     #optional
     #requires ShamanFluterflyDustA
     #completewith ShamanLevel10
-    >>Kill |cRXP_ENEMY_Ornery Galestriders::251707|r. Loot them for |T2066012:0|t[|cRXP_LOOT_Lowlands Galestrider Tenderloins|r]. (NOT TRANSLATED IN :zhCN YET)
+    >>击杀 |cRXP_ENEMY_Ornery Galestriders::251707|r。从它们掉落的战利品中获得 |T2066012:0|t[|cRXP_LOOT_Lowlands Galestrider Tenderloins|r]。
     .complete 92684,1 --7/7 Lowlands Galestrider Tenderloin
     .mob Ornery Galestrider::251707
 step << Horde Shaman
@@ -3878,7 +3878,7 @@ step << Horde Shaman
 step << Horde Shaman
     #optional
     #completewith CallOfFireA
-    >>Kill |cRXP_ENEMY_Ornery Galestriders::251707|r. Loot them for |T2066012:0|t[|cRXP_LOOT_Lowlands Galestrider Tenderloins|r]. (NOT TRANSLATED IN :zhCN YET)
+    >>击杀 |cRXP_ENEMY_Ornery Galestriders::251707|r。从它们掉落的战利品中获得 |T2066012:0|t[|cRXP_LOOT_Lowlands Galestrider Tenderloins|r]。
     .complete 92684,1 --7/7 Lowlands Galestrider Tenderloin
     .mob Ornery Galestrider::251707
 step << Horde Shaman
@@ -3923,7 +3923,7 @@ step << Horde Shaman
 step << Horde Shaman
     #optional
     #completewith CallOfFireB
-    >>Kill |cRXP_ENEMY_Ornery Galestriders::251707|r. Loot them for |T2066012:0|t[|cRXP_LOOT_Lowlands Galestrider Tenderloins|r]. (NOT TRANSLATED IN :zhCN YET)
+    >>击杀 |cRXP_ENEMY_Ornery Galestriders::251707|r。从它们掉落的战利品中获得 |T2066012:0|t[|cRXP_LOOT_Lowlands Galestrider Tenderloins|r]。
     .complete 92684,1 --7/7 Lowlands Galestrider Tenderloin
     .mob Ornery Galestrider::251707
 step << Horde Shaman
@@ -3951,21 +3951,21 @@ step
 step
     #optional
     #completewith next
-    >>Kill |cRXP_ENEMY_Ornery Galestriders::251707|r. Loot them for |T2066012:0|t[|cRXP_LOOT_Lowlands Galestrider Tenderloins|r]. (NOT TRANSLATED IN :zhCN YET)
+    >>击杀 |cRXP_ENEMY_Ornery Galestriders::251707|r。从它们掉落的战利品中获得 |T2066012:0|t[|cRXP_LOOT_Lowlands Galestrider Tenderloins|r]。
     .complete 92684,1 --7/7 Lowlands Galestrider Tenderloin
     .mob Ornery Galestrider::251707
 step
     >>对 |cRXP_ENEMY_扑翼蝶::251622|r 反复使用 |T537768:0|t[扑翼蝶拍]
     >>|TInterface/cursor/crosshair/interact.blp:16|t点击 |cRXP_PICK_扑翼蝶鳞粉|r。
     *|cRXP_WARN_如果扑翼蝶拍没有飞走，再次对其使用蝶拍|r << !Mage !Druid
-    *|cRXP_WARN_Repeatedly cast|r |T136071:0|t[Polymorph] |cRXP_WARN_and use the swatter on the same Flutterfly for extra dust|r. (NOT TRANSLATED IN :zhCN YET) << Mage
-    *|cRXP_WARN_cast|r |T136100:0|t[Entangling Roots] |cRXP_WARN_and use the swatter on the same Flutterfly for extra dust|r. (NOT TRANSLATED IN :zhCN YET) << Druid
+    *|cRXP_WARN_重复施放|r |T136071:0|t[变形术] |cRXP_WARN_并对同一个 Flutterfly 使用 swatter 以获得更多粉尘|r。 << Mage
+    *|cRXP_WARN_施放|r |T136100:0|t[纠缠根须] |cRXP_WARN_并对同一个 Flutterfly 使用 swatter 以获得更多粉尘|r。 << Druid
     .complete 92683,1 --5/5 Flutterfly Dust
     .mob Flutterfly::251622
     .use 253666 -- Flutterfly Swatter
 step
     #label GalestriderTenderloinA
-    >>Kill |cRXP_ENEMY_Ornery Galestriders::251707|r. Loot them for |T2066012:0|t[|cRXP_LOOT_Lowlands Galestrider Tenderloins|r]. (NOT TRANSLATED IN :zhCN YET)
+    >>击杀 |cRXP_ENEMY_Ornery Galestriders::251707|r。从它们掉落的战利品中获得 |T2066012:0|t[|cRXP_LOOT_Lowlands Galestrider Tenderloins|r]。
     .complete 92684,1 --7/7 Lowlands Galestrider Tenderloin
     .mob Ornery Galestrider::251707
 step
@@ -3974,8 +3974,8 @@ step
     .goto 2521,47.511,78.490,40,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿米莉亚·风野::252800|r 对话。
     *|cRXP_WARN_如果附近有龙卷风，使用它可以更快速地前进|r。
-    *|cRXP_WARN_She may be moving between locations during a roleplay sequence|r. (NOT TRANSLATED IN :zhCN YET)
-    *|cRXP_WARN_Look for her from a distance or follow her dialogue; the arrow marks only an approximate location|r. (NOT TRANSLATED IN :zhCN YET)
+    *|cRXP_WARN_在剧情演出中，她可能在不同位置移动|r。
+    *|cRXP_WARN_从远处寻找她或跟随她的对话；箭头仅标记近似的所在地区|r。
     .turnin 92682 >>交任务 派上用场
     .turnin 92684,3 >>交任务 暴躁的疾风陆行鸟
     .turnin 92698 >>交任务 我的使命是什么？
@@ -3999,7 +3999,7 @@ step << Alliance/Horde Shaman
     #optional
     #completewith next
     #label Bandit Highwaymen
-    *|cRXP_WARN_Equip the|r |T7791298:0|t[Flutterfly Swatter] if you don't have |T7791298:0|t[|cRXP_LOOT_Zephrali Bludgeon|r]. (NOT TRANSLATED IN :zhCN YET) << Rogue
+    *|cRXP_WARN_装备|r |T7791298:0|t[扑翼蝶拍] 如果你没有 |T7791298:0|t[|cRXP_LOOT_泽风大头棒|r]。 << Rogue
     >>击杀 |cRXP_ENEMY_强盗路霸::252820|r。拾取 |T133693:0|t[|cRXP_LOOT_染血的强盗面罩|r]。
     *|cRXP_WARN_留意苹果园中潜行的敌人|r。
     .complete 92685,1 --7/7 Blood-Stained Bandit Mask
@@ -4029,8 +4029,8 @@ step << Horde Shaman
 step << Alliance
     #completewith next
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿米莉亚·风野::252800|r 对话。
-    *|cRXP_WARN_She may be moving between locations during a roleplay sequence|r. (NOT TRANSLATED IN :zhCN YET)
-    *|cRXP_WARN_Look for her from a distance or follow her dialogue; the arrow marks only an approximate location|r. (NOT TRANSLATED IN :zhCN YET)
+    *|cRXP_WARN_在剧情演出中，她可能在不同位置移动|r。
+    *|cRXP_WARN_从远处寻找她或跟随她的对话；箭头仅标记近似的所在地区|r。
     .turnin 92685 >>交任务 隔山有眼
     .accept 92693 >>接受任务 坚守阵地
     .target Aamelia Windfield::252800
@@ -4048,10 +4048,10 @@ step << Alliance/Horde Shaman
     .goto 2521,46.71,81.94,30,0
     .goto 2521,47.511,78.490,30,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿米莉亚·风野::252800|r 对话。
-    *|cRXP_WARN_She may be moving between locations during a roleplay sequence|r. (NOT TRANSLATED IN :zhCN YET)
-    *|cRXP_WARN_Look for her from a distance or follow her dialogue; the arrow marks only an approximate location|r. (NOT TRANSLATED IN :zhCN YET)
+    *|cRXP_WARN_在剧情演出中，她可能在不同位置移动|r。
+    *|cRXP_WARN_从远处寻找她或跟随她的对话；箭头仅标记近似的所在地区|r。
     *你可以从山上跳下，|cRXP_WARN_在半空中|r使用 |T132845:0|t[踏空而行] 飞向路径点位置。
-    *|cRXP_WARN_Watch out for stealthed bandits along the way|r. (NOT TRANSLATED IN :zhCN YET)
+    *|cRXP_WARN_小心沿途隐身的匪徒|r。
     .turnin 92685 >>交任务 隔山有眼
     .accept 92693 >>接受任务 坚守阵地
     .target Aamelia Windfield::252800
@@ -4071,7 +4071,7 @@ step << Alliance/Horde Shaman
 step << Alliance/Horde Shaman
     .goto 2521,47.51,78.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿米莉亚·风野::252800|r 对话。
-    *|cRXP_WARN_Turn in the quest immediately; Aamelia will soon return to her original location|r. (NOT TRANSLATED IN :zhCN YET)
+    *|cRXP_WARN_立即交任务；Aamelia 很快就会返回她原来的位置|r。
     .turnin 92693 >>交任务 坚守阵地
     .accept 92703 >>接受任务 传递消息
     .target Aamelia Windfield::252800
@@ -4183,8 +4183,8 @@ step
 step << Alliance
     #completewith Turn in The Missing Scholar
     .aura 1258510
-    >>Kill |cRXP_ENEMY_Skyhoppers::251314|r. (NOT TRANSLATED IN :zhCN YET)
-    *|cRXP_WARN_If you find a Tornado, touch it to gain its speed buff|r. (NOT TRANSLATED IN :zhCN YET)
+    >>击杀 |cRXP_ENEMY_Skyhoppers::251314|r。
+    *|cRXP_WARN_如果你找到 Tornado，接触它来获得速度加成|r。
     *|cRXP_WARN_龙卷风速度buff激活时，避免击杀它们|r。
     .complete 93949,1 --|8/8 Enchanted Skyhopper Exterminated
     .mob Skyhopper::251314
@@ -4233,10 +4233,10 @@ step << Warrior/Paladin/Shaman/Druid
     .isQuestAvailable 92679 --Blood Tithe
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.28
     .goto 2521,59.395,75.730
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falfaan Halfwind::271465|r inside the house. (NOT TRANSLATED IN :zhCN YET)
-    >>|cRXP_BUY_Buy and equip a|r |T7792097:0|t[Zephrali Smasher]. (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在房屋内与 |cRXP_FRIENDLY_Falfaan Halfwind::271465|r 对话。
+    >>|cRXP_BUY_购买并装备|r |T7792097:0|t[泽风粉碎者]。
     .collect 277106,1 --Zephrali Smasher
-    .vendor 271465 >>Vendor trash and repair if needed. (NOT TRANSLATED IN :zhCN YET)
+    .vendor 271465 >>在商人处扔垃圾和修理（如需要）。
     *别卖 |T133970:0|t[多汁狼肉]、|T132832:0|t[小蛋] 或 |T133972:0|t[陆行鸟肉]。 << Alliance
     *别卖 |T132832:0|t[小蛋] 和 |T133972:0|t[陆行鸟肉]。 << Horde
     *|cRXP_WARN_之后烹饪会用到它们|r。
@@ -4247,7 +4247,7 @@ step << Warrior/Paladin/Shaman/Druid
     #completewith Accept Catching Wind
     .xp <9,1
     .itemcount 277106,1 --Zephrali Smasher
-    +|cRXP_WARN_Equip the|r |T7792097:0|t[|cRXP_LOOT_Zephrali Smasher|r]. (NOT TRANSLATED IN :zhCN YET)
+    +|cRXP_WARN_装备|r |T7792097:0|t[|cRXP_LOOT_泽风粉碎者|r]。
     .use 277106 --Zephrali Smasher
 step << Rogue
     .money <0.09
@@ -4272,10 +4272,10 @@ step << Rogue
     .isQuestAvailable 92679 --Blood Tithe
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.35
     .goto 2521,59.395,75.730
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falfaan Halfwind::271465|r inside the house. (NOT TRANSLATED IN :zhCN YET)
-    >>|cRXP_BUY_Buy and equip a|r |T7791298:0|t[Zephrali Bludgeon]. (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在房屋内与 |cRXP_FRIENDLY_Falfaan Halfwind::271465|r 对话。
+    >>|cRXP_BUY_购买并装备|r |T7791298:0|t[泽风大头棒]。
     .collect 277107,1 --Zephrali Bludgeon
-    .vendor 271465 >>Vendor trash and repair if needed. (NOT TRANSLATED IN :zhCN YET)
+    .vendor 271465 >>在商人处扔垃圾和修理（如需要）。
     *别卖 |T133970:0|t[多汁狼肉]、|T132832:0|t[小蛋] 或 |T133972:0|t[陆行鸟肉]。 << Alliance
     *别卖 |T132832:0|t[小蛋] 和 |T133972:0|t[陆行鸟肉]。 << Horde
     *|cRXP_WARN_之后烹饪会用到它们|r。
@@ -4286,7 +4286,7 @@ step << Rogue
     #completewith Accept Catching Wind
     .xp <9,1
     .itemcount 277107,1 --Zephrali Bludgeon
-    +|cRXP_WARN_Equip the|r |T7791298:0|t[|cRXP_LOOT_Zephrali Bludgeon|r]. (NOT TRANSLATED IN :zhCN YET)
+    +|cRXP_WARN_装备|r |T7791298:0|t[|cRXP_LOOT_泽风大头棒|r]。
     .use 277107 --Zephrali Bludgeon
 step << Hunter
     .goto 2521,59.55,73.3,25,0
@@ -4310,13 +4310,13 @@ step << Hunter
     .isQuestAvailable 92679 -- Blood Tithe
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.82
     .goto 2521,59.395,75.730
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falfaan Halfwind::271465|r inside the house. (NOT TRANSLATED IN :zhCN YET)
-    >>|cRXP_BUY_Buy and equip a|r |T7810733:0|t[Zephrali Bow] (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在房屋内与 |cRXP_FRIENDLY_Falfaan Halfwind::271465|r 对话。
+    >>|cRXP_BUY_购买并装备|r |T7810733:0|t[泽风弓]
     .collect 277110,1 --Collect Zephrali Bow
-    .vendor 271465 >>Vendor trash and repair if needed (NOT TRANSLATED IN :zhCN YET)
+    .vendor 271465 >>变卖杂物，需要时进行修理
     *别卖 |T133970:0|t[多汁狼肉]、|T132832:0|t[小蛋] 或 |T133972:0|t[陆行鸟肉]。 << Alliance
     *别卖 |T132832:0|t[小蛋] 和 |T133972:0|t[陆行鸟肉]。 << Horde
-    *|cRXP_WARN_We need them for Cooking later|r. (NOT TRANSLATED IN :zhCN YET)
+    *|cRXP_WARN_我们稍后需要它们来 烹饪|r。
     .skipgossipid 141556
     .target Falfaan Halfwind::271465
 step << Hunter
@@ -4324,7 +4324,7 @@ step << Hunter
     #completewith Accept Catching Wind
     .xp <9,1
     .itemcount 277110,1 --Zephrali Bow
-    +|cRXP_WARN_Equip the|r |T7810733:0|t[|cRXP_LOOT_Zephrali Bow|r]. (NOT TRANSLATED IN :zhCN YET)
+    +|cRXP_WARN_装备|r |T7810733:0|t[|cRXP_LOOT_泽风弓|r]。
     .use 277110 --Zephrali Bow
 step << Horde Druid
     .subzoneskip 16638,1 -- Valanaar
@@ -4350,7 +4350,7 @@ step << Alliance Druid
     .xp <10,1
     .goto 2521,63.983,75.093
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_洛瑟鲁姆·星风::252359|r 对话。
-    .accept 94006 >>Accept The Great Ursera Spirit (NOT TRANSLATED IN :zhCN YET)
+    .accept 94006 >>接受任务 The Great Ursera 精神
     .target Lotheluum Starbreeze::252359
 step << Druid
     .money <0.12
@@ -4393,7 +4393,7 @@ step << Alliance
     *|cRXP_WARN_双持|r |T134520:0|t[可靠的扳手] |cRXP_WARN_和|r |T7791298:0|t[扑翼蝶拍] << Rogue
     .goto 2521,66.21,79.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_菲里昂·炎风::253284|r 对话。
-    .turnin 92850 >>Turn in The Missing Scholar 2 (NOT TRANSLATED IN :zhCN YET)
+    .turnin 92850 >>交任务 The 缺失 Scholar 2
     .accept 99260 >>接受任务 菲里昂的任务
     .target Fillion Flamebreeze::253284
     .use 263313 << Rogue -- Trusty Wrench
@@ -4403,8 +4403,8 @@ step << Alliance
     #completewith next
     .subzoneskip 16638,1 -- Valanaar
     .aura 1258510
-    >>Kill |cRXP_ENEMY_Skyhoppers::251314|r. (NOT TRANSLATED IN :zhCN YET)
-    *|cRXP_WARN_If you find a Tornado, touch it to gain its speed buff|r. (NOT TRANSLATED IN :zhCN YET)
+    >>击杀 |cRXP_ENEMY_Skyhoppers::251314|r。
+    *|cRXP_WARN_如果你找到 Tornado，接触它来获得速度加成|r。
     *|cRXP_WARN_龙卷风速度buff激活时，避免击杀它们|r。
     .complete 93949,1 --|8/8 Enchanted Skyhopper Exterminated
     .mob Skyhopper::251314
@@ -4439,7 +4439,7 @@ step << Horde Hunter
     #optional
     #completewith next
     +|cRXP_WARN_解散你的|cRXP_ENEMY_风歌爬行者::254588|r，右键点击其单位框架并点击解散，否则你将无法驯服|r |cRXP_ENEMY_暴躁的狂风踏行者::251707|r
-    *|cRXP_WARN_Be careful; it will attack you when dismissed|r. (NOT TRANSLATED IN :zhCN YET)
+    *|cRXP_WARN_小心；它被解散时会攻击你|r。
 step << Horde Hunter
     #loop
     .goto 2521,60.905,69.414,35,0
@@ -4458,7 +4458,7 @@ step << Horde Hunter
     #optional
     #completewith next
     +|cRXP_WARN_右键点击|cRXP_ENEMY_暴躁的乘风者::251707|r的单位框并选择解散来解散它，否则你将无法驯服|r |cRXP_ENEMY_维尔登::250874|r
-    *|cRXP_WARN_Be careful; it will attack you when dismissed|r. (NOT TRANSLATED IN :zhCN YET)
+    *|cRXP_WARN_小心；它被解散时会攻击你|r。
 step << Horde Hunter
     #loop
     .goto 2521,56.946,67.887,35,0
@@ -4515,7 +4515,7 @@ step << Alliance
     .isOnQuest 92840 -- Catching Wind
     .showwhiledead
     .goto 2521,54.99,68.14
-    .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Spirit Healer::6491|r. (NOT TRANSLATED IN :zhCN YET)
+    .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Spirit 治疗者::6491|r 对话。
     .skipgossipid 96031
     .skipgossipid 98031
     .target Spirit Healer::6491
@@ -4531,7 +4531,7 @@ step << Alliance Hunter
     .goto 2521,51.56,71.28,40,0
     .goto 2521,50.94,69.46,40,0
     .use 267272 >> |cRXP_WARN_在最大射程下，|r|cRXP_WARN_对一只|r |cRXP_ENEMY_风歌爬行者::254588|r |cRXP_WARN_使用|r |T132164:0|t[驯兽棒]。
-    *|cRXP_WARN_Be careful while Resurrection Sickness is active|r. (NOT TRANSLATED IN :zhCN YET)
+    *|cRXP_WARN_当 Resurrection Sickness 处于活跃状态时要小心|r。
     .complete 94978,1 --Tame a Windsong Crawler
     .mob Windsong Crawler::254588
 step << Alliance
@@ -4551,7 +4551,7 @@ step << Alliance
     #completewith Protect the Index
     .goto 2521,46.52,70.33,30 >>绕过这座山。
     *|cRXP_WARN_如果附近有龙卷风，接触它可获得40%移动速度加成，持续5分钟。造成伤害会移除该效果|r。
-    *|cRXP_WARN_Do not use|r |T132845:0|t[Walk on Air] |cRXP_WARN_during this step|r. (NOT TRANSLATED IN :zhCN YET)
+    *|cRXP_WARN_不要使用|r |T132845:0|t[踏空而行] |cRXP_WARN_在此步骤中|r。
 step << Alliance
     #requires Protect the Index
     #loop
@@ -4561,7 +4561,7 @@ step << Alliance
     .goto 2521,48.68,69.06,20,0
     .goto 2521,48.13,70.15,20,0
     >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_水晶|r
-    *|cRXP_WARN_Do not use|r |T132845:0|t[Walk on Air] |cRXP_WARN_during this step|r. (NOT TRANSLATED IN :zhCN YET)
+    *|cRXP_WARN_不要使用|r |T132845:0|t[踏空而行] |cRXP_WARN_在此步骤中|r。
     .complete 92840,1 --|6/6 Gather Data on Elemental Currents
     .use 254584 -- Index Esoteria
     .mob Windshaper Elementalist
@@ -4579,7 +4579,7 @@ step << Alliance
     .goto 2521,49.46,70.12,30,0
     .goto 2521,52.35,70.23
     .cast 1259416 >>从山上跳下，使用 |T132845:0|t[踏空而行] 飞向路径点位置。
-    *|cRXP_WARN_Be careful of the enemies near the edge. If you die, accept Resurrection Sickness|r. (NOT TRANSLATED IN :zhCN YET)
+    *|cRXP_WARN_小心边缘附近的 敌人。如果你死亡，你会获得 Resurrection Sickness|r。
     .usespell 1259416
 step << Alliance Hunter
     .isOnQuest 94978 -- Taming the Beast
@@ -4605,8 +4605,8 @@ step << Alliance Hunter
     .usespell 1259416
 step << Alliance Hunter/Alliance Mage
     #completewith SkyhopperMultiClass
-    >>Kill |cRXP_ENEMY_Skyhoppers::251314|r. (NOT TRANSLATED IN :zhCN YET)
-    *|cRXP_WARN_If you find a Tornado, touch it to gain its speed buff|r. (NOT TRANSLATED IN :zhCN YET)
+    >>击杀 |cRXP_ENEMY_Skyhoppers::251314|r。
+    *|cRXP_WARN_如果你找到 Tornado，接触它来获得速度加成|r。
     *|cRXP_WARN_龙卷风速度buff激活时，避免击杀它们|r。
     .complete 93949,1 --|8/8 Enchanted Skyhopper Exterminated
     .mob Skyhopper::251314
@@ -4619,8 +4619,8 @@ step << Alliance Hunter
 step << Alliance Hunter
     #optional
     #completewith next
-    +|cRXP_WARN_Dismiss your |cRXP_ENEMY_Windsong Crawler::254588|r by right clicking its unit frame and clicking dismiss, otherwise you'll be unable to tame an|r |cRXP_ENEMY_Ornery Galestrider::251707|r (NOT TRANSLATED IN :zhCN YET)
-    *|cRXP_WARN_Be careful; it will attack you when dismissed|r. (NOT TRANSLATED IN :zhCN YET)
+    +|cRXP_WARN_通过右键点击 |cRXP_ENEMY_Windsong 海蟹::254588|r 的单位框体并点击解散来解散它，否则你将无法驯服|r |cRXP_ENEMY_Ornery Galestrider::251707|r
+    *|cRXP_WARN_小心；它被解散时会攻击你|r。
 step << Alliance Hunter
     #loop
     .goto 2521,60.905,69.414,35,0
@@ -4645,15 +4645,15 @@ step << Alliance Hunter
 step << Alliance Hunter
     #optional
     #completewith next
-    +|cRXP_WARN_Dismiss your |cRXP_ENEMY_Ornery Galestrider::251707|r by right clicking its unit frame and clicking dismiss, otherwise you'll be unable to tame an|r |cRXP_ENEMY_Vuldren::250874|r (NOT TRANSLATED IN :zhCN YET)
-    *|cRXP_WARN_Be careful; it will attack you when dismissed|r. (NOT TRANSLATED IN :zhCN YET)
+    +|cRXP_WARN_通过右键点击 |cRXP_ENEMY_Ornery Galestrider::251707|r 的单位框体并点击解散来解散它，否则你将无法驯服|r |cRXP_ENEMY_Vuldren::250874|r
+    *|cRXP_WARN_小心；它被解散时会攻击你|r。
 step << Alliance Hunter
     .isOnQuest 94013 --Taming the Beast
     .isQuestNotComplete 94013 --Taming the Beast
     .subzoneskip 16638,1
     #label SkyhopperMultiClass
     .goto 2521,57.11,74.49
-    .subzone 16626 >> Enter Gustberry Lowlands (NOT TRANSLATED IN :zhCN YET)
+    .subzone 16626 >> 前往 Gustberry Lowlands
 step << Alliance Hunter
     #loop
     .goto 2521,54.23,75,40,0
@@ -4671,9 +4671,9 @@ step << Alliance Hunter
     .mob Vuldren Alpha::250874
 step << Alliance Hunter
     #completewith next
-    >>Kill |cRXP_ENEMY_Skyhoppers::251314|r. (NOT TRANSLATED IN :zhCN YET)
-    *|cRXP_WARN_If you find a Tornado, touch it to gain its speed buff|r. (NOT TRANSLATED IN :zhCN YET)
-    *|cRXP_WARN_While the Tornado speed buff is active, avoid killing them|r. (NOT TRANSLATED IN :zhCN YET)
+    >>击杀 |cRXP_ENEMY_Skyhoppers::251314|r。
+    *|cRXP_WARN_如果你找到 Tornado，接触它来获得速度加成|r。
+    *|cRXP_WARN_当龙卷风加速buff激活时，避免击杀它们|r。
     .complete 93949,1 --|8/8 Enchanted Skyhopper Exterminated
     .mob Skyhopper::251314
 step << Alliance Hunter
@@ -4700,8 +4700,8 @@ step << Alliance Hunter
     .goto 2521,60.905,69.414,35,0
     .goto 2521,58.339,68.476,35,0
     .goto 2521,53.799,72.161,35,0
-    >>|cRXP_WARN_Cast|r |T132164:0|t[Tame Beast] |cRXP_WARN_on a |cRXP_ENEMY_Windsong Crawler::254588|r to tame it|r (NOT TRANSLATED IN :zhCN YET) -- .tame 1997
-    *|cRXP_WARN_NOTE:|r If all crabs are dead then you can also tame an |cRXP_ENEMY_Ornery Galestrider::251707|r until you find a crab. (NOT TRANSLATED IN :zhCN YET)
+    >>|cRXP_WARN_对|r Windsong 海蟹::254588|cRXP_WARN_ 施放|cRXP_ENEMY_ |T132164:0|t[经典怀旧服 道具] |r来驯服它|r -- .tame 1997
+    *|cRXP_WARN_注释：|r 如果所有螃蟹都是死亡的，你也可以驯服一个 |cRXP_ENEMY_Ornery Galestrider::251707|r 直到你找到一只螃蟹。
     .train 2981 >> |cRXP_WARN_用它攻击怪物以学习|r |T132140:0|t [爪击(等级 2)]
     .link https://www.wow-petopia.com/classic/training.php >> |cRXP_WARN_点击此处了解更多关于宠物训练的信息|r
 	.mob Windsong Crawler::254588
@@ -4722,15 +4722,15 @@ step << Mage
     .goto 2521,64.18,78.18,30,0
     .goto 2521,63.19,79.17,30,0
     .goto 2521,64.36,80.69,30,0
-    >>Kill |cRXP_ENEMY_Skyhoppers::251314|r. (NOT TRANSLATED IN :zhCN YET)
+    >>击杀 |cRXP_ENEMY_Skyhoppers::251314|r。
     .complete 93949,1 --|8/8 Enchanted Skyhopper Exterminated
     .mob Skyhopper::251314
 step << Alliance !Hunter
     .train 2366,3 -- Herbalism Trained
     .isQuestComplete 97968 -- Camping 101: Herbalism
     .goto 2521,57.890,75.514
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Syriel Nightrain::254345|r. (NOT TRANSLATED IN :zhCN YET)
-    .turnin 97968 >>Turn in Camping 101: Herbalism (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Syriel Nightrain::254345|r 对话。
+    .turnin 97968 >>交任务 Camping 101: 草药学
     .target Syriel Nightrain::254345
 step << Alliance !Mage/Alliance !Hunter
     #loop
@@ -4746,7 +4746,7 @@ step << Alliance !Mage/Alliance !Hunter
     .goto 2521,63.8,78.01,30,0
     .goto 2521,63.16,78.97,30,0
     .goto 2521,65.37,78.53,40,0
-    >>Kill |cRXP_ENEMY_Skyhoppers::251314|r. (NOT TRANSLATED IN :zhCN YET)
+    >>击杀 |cRXP_ENEMY_Skyhoppers::251314|r。
     .complete 93949,1 --|8/8 Enchanted Skyhopper Exterminated
     .mob Skyhopper::251314
 
@@ -4843,7 +4843,7 @@ step << Horde Druid
 --     .deathskip >>|cRXP_WARN_(BETA: Resurrection Sickness is bugged. Skip this step for now.)|r Die and respawn at the |cRXP_FRIENDLY_Spirit Healer::6491|r.
 step << Horde Druid
     .goto 2521,54.284,65.803
-    >>Kill |cRXP_ENEMY_Ur'endra::258443|r inside the cave. (NOT TRANSLATED IN :zhCN YET)
+    >>在洞穴中击杀 |cRXP_ENEMY_Ur'endra::258443|r。
     .complete 94638,1 --|1/1 Ur'endra slain
     .mob Ur'endra::258443
 step << Horde Druid
@@ -4918,11 +4918,11 @@ step << Horde Druid
 step << Alliance
     .isOnQuest 92840 --Catching Wind
     .goto 2521,65.47,80.29
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Daeann Steelwind::252479|r. (NOT TRANSLATED IN :zhCN YET)
-    .vendor 252479 >>|cRXP_WARN_Vendor trash and repair|r. (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Daeann Steelwind::252479|r 对话。
+    .vendor 252479 >>|cRXP_WARN_出售垃圾物品并修理|r。
     .skipgossipid 137531
     *别卖 |T133970:0|t[多汁狼肉]、|T132832:0|t[小蛋] 或 |T133972:0|t[陆行鸟肉]。
-    *|cRXP_WARN_We need them for Cooking later|r. (NOT TRANSLATED IN :zhCN YET)
+    *|cRXP_WARN_我们稍后需要它们来 烹饪|r。
     .target Daeann Steelwind::252479
 step << Alliance
     .goto 2521,66.63,79.93
@@ -4930,7 +4930,7 @@ step << Alliance
     .turnin 92840 >>交任务 捕风
     .accept 92834 >>接受任务 十倍奉还
     .accept 92860 >>接受任务 塞弗拉斯之约
-    .accept 92709 >>Accept A Grand Adventure (NOT TRANSLATED IN :zhCN YET)
+    .accept 92709 >>接受任务 A Grand Adventure
     .target Elaadrin Evengale::252475
 step << Alliance
     #optional
@@ -4956,7 +4956,7 @@ step << Alliance
     .goto 2521,66,76.57,8,0
     .goto 2521,66.19,76.22,8,0
     .goto 2521,66.44,76.4,5 >>登上塔
-    *|cRXP_WARN_If a Tornado is present, use it for faster travel|r. (NOT TRANSLATED IN :zhCN YET)
+    *|cRXP_WARN_如果出现龙卷风，使用它以加速移动|r。
 step << Alliance
     #requires Service of Zephras
     .goto 2521,66.18,76.66
@@ -4977,7 +4977,7 @@ step << Alliance !Druid
 step << Alliance
     .goto 2521,65.956,74.309
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_埃拉内·漫云::259012|r 对话。
-    *|cRXP_WARN_Do not use|r |T132845:0|t[Walk on Air] |cRXP_WARN_during this step|r. (NOT TRANSLATED IN :zhCN YET) << Druid
+    *|cRXP_WARN_不要使用|r |T132845:0|t[踏空而行] |cRXP_WARN_在此步骤中|r。 << Druid
     .accept 94896 >>接受任务 援助难民
     .accept 94897 >>接受任务 爱人的命运
     .target Ealaane Nimbuswalker::259012
@@ -4990,9 +4990,9 @@ step << Alliance !Druid
     .usespell 1259705
 step << Alliance
     #completewith next
-    >>Kill |cRXP_ENEMY_Al'Aketh Brawlers::270201|r. (NOT TRANSLATED IN :zhCN YET)
+    >>击杀 |cRXP_ENEMY_Al'Aketh Brawlers::270201|r。
     *拾取 |T1379232:0|t[|cRXP_LOOT_奥拉凯斯风石护符|r]。
-   *|cRXP_WARN_You will make progress here but likely finish the quest at another location later|r. (NOT TRANSLATED IN :zhCN YET)
+   *|cRXP_WARN_你将在此地取得进度，但可能会在另一个所在地区完成该任务|r。
     .complete 92834,1 --10/10 Al'Aketh Windstone Charm
     .mob Al'Aketh Healer::254596
     .mob Al'Aketh Brawler::270201
@@ -5014,7 +5014,7 @@ step << Alliance !Druid
     #completewith Commander Belguilos2
     >>击杀|cRXP_ENEMY_奥拉凯斯斗士::270201|r、|cRXP_ENEMY_奥拉凯斯传教士::253195|r和|cRXP_ENEMY_奥拉凯斯掠夺者::253511|r。
     *拾取 |T1379232:0|t[|cRXP_LOOT_奥拉凯斯风石护符|r]。
-   *|cRXP_WARN_You will make progress here but likely finish the quest at another location later|r. (NOT TRANSLATED IN :zhCN YET)
+   *|cRXP_WARN_你将在此地取得进度，但可能会在另一个所在地区完成该任务|r。
     .complete 92834,1 --10/10 Al'Aketh Windstone Charm
     .mob Al'Aketh Brawler::270201
     .mob Al'Aketh Preacher::253195
@@ -5022,7 +5022,7 @@ step << Alliance !Druid
 step << Alliance !Druid
     #optional
     #completewith Commander Belguilos2
-    >>Kill |cRXP_ENEMY_Al'Aketh Healers::254596|r and |cRXP_ENEMY_Al'Aketh Brawlers::270201|r. (NOT TRANSLATED IN :zhCN YET)
+    >>击杀 |cRXP_ENEMY_Al'Aketh Healers::254596|r 和 |cRXP_ENEMY_Al'Aketh Brawlers::270201|r。
     .complete 92642,1 --4/4 Al'Aketh Healer slain
     .mob +Al'Aketh Healer::254596
     .complete 92642,2 --8/8 Al'Aketh Brawler slain
@@ -5039,7 +5039,7 @@ step << Alliance !Druid
     #completewith next
     >>击杀|cRXP_ENEMY_奥拉凯斯斗士::270201|r、|cRXP_ENEMY_奥拉凯斯传教士::253195|r和|cRXP_ENEMY_奥拉凯斯掠夺者::253511|r。
     *拾取 |T1379232:0|t[|cRXP_LOOT_奥拉凯斯风石护符|r]。
-   *|cRXP_WARN_You will make progress here but likely finish the quest at another location later|r. (NOT TRANSLATED IN :zhCN YET)
+   *|cRXP_WARN_你将在此地取得进度，但可能会在另一个所在地区完成该任务|r。
     .complete 92834,1 --10/10 Al'Aketh Windstone Charm
     .mob Al'Aketh Brawler::270201
     .mob Al'Aketh Preacher::253195
@@ -5051,7 +5051,7 @@ step << Alliance !Druid
     .goto 2521,64.46,66.11,40,0
     .goto 2521,64.71,67.65,40,0
     .goto 2521,66.59,67.5,40,0
-    >>Kill |cRXP_ENEMY_Al'Aketh Brawlers::270201|r and |cRXP_ENEMY_Al'Aketh Healers::254596|r. (NOT TRANSLATED IN :zhCN YET)
+    >>击杀 |cRXP_ENEMY_Al'Aketh Brawlers::270201|r 和 |cRXP_ENEMY_Al'Aketh Healers::254596|r。
     .complete 92642,1 --4/4 Al'Aketh Healer slain
     .mob +Al'Aketh Healer::254596
     .complete 92642,2 --8/8 Al'Aketh Brawler slain
@@ -5083,7 +5083,7 @@ step << Alliance Druid
     #completewith Commander Belguilos Druid2
     >>击杀|cRXP_ENEMY_奥拉凯斯斗士::270201|r、|cRXP_ENEMY_奥拉凯斯传教士::253195|r和|cRXP_ENEMY_奥拉凯斯掠夺者::253511|r。
     *拾取 |T1379232:0|t[|cRXP_LOOT_奥拉凯斯风石护符|r]。
-   *|cRXP_WARN_You will make progress here but likely finish the quest at another location later|r. (NOT TRANSLATED IN :zhCN YET)
+   *|cRXP_WARN_你将在此地取得进度，但可能会在另一个所在地区完成该任务|r。
     .complete 92834,1 --10/10 Al'Aketh Windstone Charm
     .mob Al'Aketh Brawler::270201
     .mob Al'Aketh Preacher::253195
@@ -5091,7 +5091,7 @@ step << Alliance Druid
 step << Alliance Druid
     #optional
     #completewith Commander Belguilos Druid2
-    >>Kill |cRXP_ENEMY_Al'Aketh Healers::254596|r and |cRXP_ENEMY_Al'Aketh Brawlers::270201|r. (NOT TRANSLATED IN :zhCN YET)
+    >>击杀 |cRXP_ENEMY_Al'Aketh Healers::254596|r 和 |cRXP_ENEMY_Al'Aketh Brawlers::270201|r。
     .complete 92642,1 --4/4 Al'Aketh Healer slain
     .mob +Al'Aketh Healer::254596
     .complete 92642,2 --8/8 Al'Aketh Brawler slain
@@ -5120,7 +5120,7 @@ step << Alliance Druid
     #completewith next
     >>击杀|cRXP_ENEMY_奥拉凯斯斗士::270201|r、|cRXP_ENEMY_奥拉凯斯传教士::253195|r和|cRXP_ENEMY_奥拉凯斯掠夺者::253511|r。
     *拾取 |T1379232:0|t[|cRXP_LOOT_奥拉凯斯风石护符|r]。
-   *|cRXP_WARN_You will make progress here but likely finish the quest at another location later|r. (NOT TRANSLATED IN :zhCN YET)
+   *|cRXP_WARN_你将在此地取得进度，但可能会在另一个所在地区完成该任务|r。
     .complete 92834,1 --10/10 Al'Aketh Windstone Charm
     .mob Al'Aketh Brawler::270201
     .mob Al'Aketh Preacher::253195
@@ -5132,7 +5132,7 @@ step << Alliance Druid
     .goto 2521,64.46,66.11,40,0
     .goto 2521,64.71,67.65,40,0
     .goto 2521,66.59,67.5,40,0
-    >>Kill |cRXP_ENEMY_Al'Aketh Brawlers::270201|r and |cRXP_ENEMY_Al'Aketh Healers::254596|r. (NOT TRANSLATED IN :zhCN YET)
+    >>击杀 |cRXP_ENEMY_Al'Aketh Brawlers::270201|r 和 |cRXP_ENEMY_Al'Aketh Healers::254596|r。
     .complete 92642,1 --4/4 Al'Aketh Healer slain
     .mob +Al'Aketh Healer::254596
     .complete 92642,2 --8/8 Al'Aketh Brawler slain
@@ -5167,7 +5167,7 @@ step << Alliance
     .goto 2521,66,76.57,8,0
     .goto 2521,66.19,76.22,8,0
     .goto 2521,66.44,76.4,5 >>绕过山，然后爬上塔
-    *|cRXP_WARN_If a Tornado is present, use it for faster travel|r. (NOT TRANSLATED IN :zhCN YET)
+    *|cRXP_WARN_如果出现龙卷风，使用它以加速移动|r。
 step << Alliance
     #requires Return to Valanaar
     .goto 2521,66.20,76.66
@@ -5242,13 +5242,13 @@ step << Hunter
     .isQuestAvailable 92679 -- Blood Tithe
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.82
     .goto 2521,59.395,75.730
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falfaan Halfwind::271465|r inside the house. (NOT TRANSLATED IN :zhCN YET)
-    >>|cRXP_BUY_Buy and equip a|r |T7810733:0|t[Zephrali Bow] (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在房屋内与 |cRXP_FRIENDLY_Falfaan Halfwind::271465|r 对话。
+    >>|cRXP_BUY_购买并装备|r |T7810733:0|t[泽风弓]
     .collect 277110,1 --Collect Zephrali Bow
-    .vendor 271465 >>Vendor trash and repair if needed (NOT TRANSLATED IN :zhCN YET)
+    .vendor 271465 >>变卖杂物，需要时进行修理
     *别卖 |T133970:0|t[多汁狼肉]、|T132832:0|t[小蛋] 或 |T133972:0|t[陆行鸟肉]。 << Alliance
     *别卖 |T132832:0|t[小蛋] 和 |T133972:0|t[陆行鸟肉]。 << Horde
-    *|cRXP_WARN_We need them for Cooking later|r. (NOT TRANSLATED IN :zhCN YET)
+    *|cRXP_WARN_我们稍后需要它们来 烹饪|r。
     .skipgossipid 141556
     .target Falfaan Halfwind::271465
 step << Hunter
@@ -5256,7 +5256,7 @@ step << Hunter
     #completewith secluded house
     .xp <9,1
     .itemcount 277110,1 --Zephrali Bow
-    +|cRXP_WARN_Equip the|r |T7810733:0|t[|cRXP_LOOT_Zephrali Bow|r]. (NOT TRANSLATED IN :zhCN YET)
+    +|cRXP_WARN_装备|r |T7810733:0|t[|cRXP_LOOT_泽风弓|r]。
     .use 277110 --Zephrali Bow
 step << Warrior/Paladin/Shaman/Druid
     .xp <9,1
@@ -5265,13 +5265,13 @@ step << Warrior/Paladin/Shaman/Druid
     .isQuestAvailable 92679 --Blood Tithe
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.28
     .goto 2521,59.395,75.730
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falfaan Halfwind::271465|r inside the house. (NOT TRANSLATED IN :zhCN YET)
-    >>|cRXP_BUY_Buy and equip a|r |T7792097:0|t[Zephrali Smasher]. (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在房屋内与 |cRXP_FRIENDLY_Falfaan Halfwind::271465|r 对话。
+    >>|cRXP_BUY_购买并装备|r |T7792097:0|t[泽风粉碎者]。
     .collect 277106,1 --Zephrali Smasher
-    .vendor 271465 >>Vendor trash and repair if needed. (NOT TRANSLATED IN :zhCN YET)
+    .vendor 271465 >>在商人处扔垃圾和修理（如需要）。
     *别卖 |T133970:0|t[多汁狼肉]、|T132832:0|t[小蛋] 或 |T133972:0|t[陆行鸟肉]。 << Alliance
     *别卖 |T132832:0|t[小蛋] 和 |T133972:0|t[陆行鸟肉]。 << Horde
-    *|cRXP_WARN_We need them for Cooking later|r. (NOT TRANSLATED IN :zhCN YET)
+    *|cRXP_WARN_我们稍后需要它们来 烹饪|r。
     .skipgossipid 141556
     .target Falfaan Halfwind::271465
 step << Warrior/Paladin/Shaman/Druid
@@ -5279,7 +5279,7 @@ step << Warrior/Paladin/Shaman/Druid
     #completewith secluded house
     .xp <9,1
     .itemcount 277106,1 --Zephrali Smasher
-    +|cRXP_WARN_Equip the|r |T7792097:0|t[|cRXP_LOOT_Zephrali Smasher|r]. (NOT TRANSLATED IN :zhCN YET)
+    +|cRXP_WARN_装备|r |T7792097:0|t[|cRXP_LOOT_泽风粉碎者|r]。
     .use 277106 --Zephrali Smasher
 step << Rogue
     .xp <9,1
@@ -5288,13 +5288,13 @@ step << Rogue
     .isQuestAvailable 92679 --Blood Tithe
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.35
     .goto 2521,59.395,75.730
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falfaan Halfwind::271465|r inside the house. (NOT TRANSLATED IN :zhCN YET)
-    >>|cRXP_BUY_Buy and equip a|r |T7791298:0|t[Zephrali Bludgeon]. (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在房屋内与 |cRXP_FRIENDLY_Falfaan Halfwind::271465|r 对话。
+    >>|cRXP_BUY_购买并装备|r |T7791298:0|t[泽风大头棒]。
     .collect 277107,1 --Zephrali Bludgeon
-    .vendor 271465 >>Vendor trash and repair if needed. (NOT TRANSLATED IN :zhCN YET)
+    .vendor 271465 >>在商人处扔垃圾和修理（如需要）。
     *别卖 |T133970:0|t[多汁狼肉]、|T132832:0|t[小蛋] 或 |T133972:0|t[陆行鸟肉]。 << Alliance
     *别卖 |T132832:0|t[小蛋] 和 |T133972:0|t[陆行鸟肉]。 << Horde
-    *|cRXP_WARN_We need them for Cooking later|r. (NOT TRANSLATED IN :zhCN YET)
+    *|cRXP_WARN_我们稍后需要它们来 烹饪|r。
     .skipgossipid 141556
     .target Falfaan Halfwind::271465
 step << Rogue
@@ -5302,7 +5302,7 @@ step << Rogue
     #completewith secluded house
     .xp <9,1
     .itemcount 277107,1 --Zephrali Bludgeon
-    +|cRXP_WARN_Equip the|r |T7791298:0|t[|cRXP_LOOT_Zephrali Bludgeon|r]. (NOT TRANSLATED IN :zhCN YET)
+    +|cRXP_WARN_装备|r |T7791298:0|t[|cRXP_LOOT_泽风大头棒|r]。
     .use 277107 --Zephrali Bludgeon
 -- step << Mage/Priest/Warlock
 --     .xp <9,1
@@ -5330,9 +5330,9 @@ step << Alliance
 step << Alliance Paladin/Alliance Priest/Alliance Warlock/Alliance Mage/Alliance Rogue
     #optional
     #completewith Al'Aketh Assassins Equip Reminder
-    +|cRXP_WARN_Equip the|r |T7792097:0|t[Honed Greathammer] if you don't have |T7792097:0|t[|cRXP_LOOT_Zephrali Smasher|r]. (NOT TRANSLATED IN :zhCN YET) << Paladin
-    +|cRXP_WARN_Equip the|r |T7798447:0|t[Balanced Quarterstaff] if you don't have |T7792229:0|t[|cRXP_LOOT_Zephrali Knife|r]. (NOT TRANSLATED IN :zhCN YET) << Priest/Warlock/Mage
-    +|cRXP_WARN_Equip the|r |TInterface/Icons/inv_knife_1h_skybornec60_b_01:0|t[Quickblade's Dagger] if you don't have |T7791298:0|t[|cRXP_LOOT_Zephrali Bludgeon|r]. (NOT TRANSLATED IN :zhCN YET) << Rogue
+    +|cRXP_WARN_装备|r |T7792097:0|t[磨光的巨锤] 如果你没有 |T7792097:0|t[|cRXP_LOOT_泽风粉碎者|r]。 << Paladin
+    +|cRXP_WARN_装备|r |T7798447:0|t[平衡短杖] 如果你没有 |T7792229:0|t[|cRXP_LOOT_泽风小刀|r]。 << Priest/Warlock/Mage
+    +|cRXP_WARN_装备|r |TInterface/Icons/inv_knife_1h_skybornec60_b_01:0|t[Quickblade's Dagger] 如果你没有 |T7791298:0|t[|cRXP_LOOT_泽风大头棒|r]。 << Rogue
     .use 257345 << Paladin -- Honed Greathammer
     .use 257343 << Priest/Warlock/Mage -- Balanced Quarterstaff
     .use 257346 << Rogue -- Quickblade's Dagger
@@ -5343,7 +5343,7 @@ step << Alliance
     .isQuestAvailable 98512 --Al'Aketh Assassins
     .showwhiledead
     .goto 2521,54.99,68.14
-    .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Spirit Healer::6491|r. (NOT TRANSLATED IN :zhCN YET)
+    .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Spirit 治疗者::6491|r 对话。
     .skipgossipid 96031
     .skipgossipid 98031
     .target Spirit Healer::6491
@@ -5352,20 +5352,20 @@ step << Alliance
     -- .goto 2521,59.719,67.016,35,0 << Druid --Remove if we add deathskips again
     .goto 2521,56.81,61.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_芬达尔·风石::273017|r交谈。
-    *|cRXP_WARN_If a Tornado is nearby, touch it to gain 40% increased movement speed for 5 minutes. Dealing damage removes the effect|r. (NOT TRANSLATED IN :zhCN YET)
+    *|cRXP_WARN_如果附近有龙卷风，接触它以获得40%的移动速度提升，持续5分钟。造成伤害会移除该效果|r。
     .accept 98512 >>接受任务 奥拉凯斯刺客
     .target Fendaal Windstone::273017
 step << Alliance
     #optional
     #completewith Fendaal Windstone
-    >>Kill |cRXP_ENEMY_Al'Aketh Assassins::254626|r. (NOT TRANSLATED IN :zhCN YET)
+    >>击杀 |cRXP_ENEMY_Al'Aketh Assassins::254626|r。
     .complete 98512,1 --10/10 Al'Aketh Assassin slain
     .mob Al'Aketh Assassin::254626
 step << Alliance
     #label secluded house
     .goto 2521,56.13,60.26
     >>跟随箭头
-    *|cRXP_WARN_Be careful while Resurrection Sickness is active|r. (NOT TRANSLATED IN :zhCN YET)
+    *|cRXP_WARN_当 Resurrection Sickness 处于活跃状态时要小心|r。
     .complete 92643,1 --1/1 Find the secluded house in Shen'dar Highlands
 step << Alliance
     .goto 2521,56.05,58.79
@@ -5385,7 +5385,7 @@ step << Alliance
     .goto 2521,54.58,60.52,35,0
     .goto 2521,55.93,60.3,35,0
     .goto 2521,56.04,59.08,35,0
-    >>Kill |cRXP_ENEMY_Al'Aketh Assassins::254626|r. (NOT TRANSLATED IN :zhCN YET)
+    >>击杀 |cRXP_ENEMY_Al'Aketh Assassins::254626|r。
     .complete 98512,1 --10/10 Al'Aketh Assassin slain
     .mob Al'Aketh Assassin::254626
 step << Alliance
@@ -5395,25 +5395,25 @@ step << Alliance
     .target Fendaal Windstone::273017
 step << Alliance Druid
     .goto 2521,54.284,65.803
-    >>Kill |cRXP_ENEMY_Ur'endra::258443|r inside the cave. (NOT TRANSLATED IN :zhCN YET)
+    >>在洞穴中击杀 |cRXP_ENEMY_Ur'endra::258443|r。
     .complete 94638,1 --|1/1 Ur'endra slain
     .mob Ur'endra::258443
 step << Alliance Druid
     .isOnQuest 94638 --Strength and Mercy
     .goto 2521,56,64.14,20,0
     .goto 2521,69.803,61.660
-    .cast 1259416 >>Jump off the |cRXP_WARN_lower mountain|r and use |T132845:0|t[Walk on Air] to fly toward the questgiver. (NOT TRANSLATED IN :zhCN YET) --Walk on Air
+    .cast 1259416 >>从 |cRXP_WARN_下方的山|r 跳下并使用 |T132845:0|t[踏空而行] 飞向任务给予者。 --Walk on Air
     .usespell 1259416 --Walk on Air
 step << Alliance Druid
     .goto 2521,69.803,61.660
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Urs'endris::255853|r. (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Urs'endris::255853|r 对话。
     .target Urs'endris::255853
-    .turnin 94638 >>Turn in Strength and Mercy (NOT TRANSLATED IN :zhCN YET)
+    .turnin 94638 >>交任务 Power 和 Mercy
 step << Alliance Druid
     #completewith Windsong Crawler Meat Druid2
-    >>Kill |cRXP_ENEMY_Al'Aketh Brawlers::270201|r, |cRXP_ENEMY_Al'Aketh Preachers::253195|r, and |cRXP_ENEMY_Al'Aketh Pillagers::253511|r |cRXP_WARN_along the way|r. (NOT TRANSLATED IN :zhCN YET)
-    *Loot them for |T1379232:0|t[|cRXP_LOOT_Al'Aketh Windstone Charms|r]. (NOT TRANSLATED IN :zhCN YET)
-   *|cRXP_WARN_You will make progress here but likely finish the quest at another location later|r. (NOT TRANSLATED IN :zhCN YET)
+    >>击杀 |cRXP_ENEMY_Al'Aketh Brawlers::270201|r、|cRXP_ENEMY_Al'Aketh Preachers::253195|r 和 |cRXP_ENEMY_Al'Aketh Pillagers::253511|r |cRXP_WARN_沿途|r。
+    *拾取他们掉落的战利品 |T1379232:0|t[|cRXP_LOOT_Al'Aketh Windstone Charms|r]。
+   *|cRXP_WARN_你将在此地取得进度，但可能会在另一个所在地区完成该任务|r。
     .complete 92834,1 --10/10 Al'Aketh Windstone Charm
     .mob Al'Aketh Brawler::270201
     .mob Al'Aketh Preacher::253195
@@ -5423,14 +5423,14 @@ step << Alliance Druid
     #completewith next
     #label Windsong Crawler Meat Druid
     .goto 2521,59.59,66.7,30,0
-    >>Kill |cRXP_ENEMY_Windsong Crawlers::254588|r |cRXP_WARN_along the way|r. Loot them for |T133972:0|t[|cRXP_LOOT_Windsong Crawler Meat|r]. (NOT TRANSLATED IN :zhCN YET)
+    >>击杀 |cRXP_ENEMY_Windsong Crawlers::254588|r |cRXP_WARN_沿途|r。拾取它们的 |T133972:0|t[|cRXP_LOOT_Windsong 海蟹 肉|r]。
     .complete 93317,1 --6/6 Windsong Crawler Meat
     .mob Windsong Crawler::254588
 step << Alliance Druid
     #completewith Windsong Crawler Meat Druid
     #label Windsong Crawler Meat Druid2
     .goto 2521,57.25,60.92,50 >>绕过群山
-    *|cRXP_WARN_If a Tornado is present, use it for faster travel|r. (NOT TRANSLATED IN :zhCN YET)
+    *|cRXP_WARN_如果出现龙卷风，使用它以加速移动|r。
 step << Alliance Druid
     #requires Windsong Crawler Meat Druid
     #loop
@@ -5705,7 +5705,7 @@ step
     .goto 2521,64.14,39.18,40,0
     .goto 2521,65.7,36.82,40,0
     .goto 2521,65.63,35.57,40,0
-    >>Kill |cRXP_ENEMY_Al'Aketh Footsoldiers::252665|r and |cRXP_ENEMY_Al'Aketh Stormchasers::252664|r. (NOT TRANSLATED IN :zhCN YET)
+    >>击杀 |cRXP_ENEMY_Al'Aketh Footsoldiers::252665|r 和 |cRXP_ENEMY_Al'Aketh Stormchasers::252664|r。
     *拾取它们的 |T4622283:0|t[|cRXP_LOOT_染血的传家宝|r]、|T133856:0|t[|cRXP_LOOT_奥拉凯斯教徒的耳朵|r] 和 |T1379232:0|t[|cRXP_LOOT_奥拉凯斯风石护符|r]。 << Alliance
     *拾取它们的战利品 |T4622283:0|t[|cRXP_LOOT_染血的传家宝|r]。 << Horde
     .complete 94487,1 --10/10 Bloody Heirloom
@@ -5743,7 +5743,7 @@ step
     #completewith ToHermit << Alliance
     #completewith ForestHollowsB << Horde
     >>击杀 |cRXP_ENEMY_影风尖啸幼兽::256092|r。
-    *拾取战利品 |T1508517:0|t[|cRXP_LOOT_Shriekling 泰爪|r] 和 |T132927:0|t[Pristine Shriekling 乱羽]。 << Alliance
+    *拾取 |T1508517:0|t[|cRXP_LOOT_尖啸幼兽的利爪|r] 和 |T132927:0|t[完好的尖啸幼兽羽毛]。 << Alliance
     *拾取它们的 |T132927:0|t[完好的尖啸幼兽羽毛]。
     .complete 92741,1 << Alliance --8/8 Shriekling Talons
     .complete 94486,1 --20/20 Pristine Shriekling Feathers
@@ -5933,8 +5933,8 @@ step
     .vendor 255940 >>把垃圾物品卖给商人
     .collect 1179,20 << Mage/Druid/Shaman/Priest/Warlock/Paladin -- Ice Cold Milk
     *别卖 |T133970:0|t[多汁狼肉]、|T132832:0|t[小蛋] 或 |T133972:0|t[陆行鸟肉]。 << Alliance
-    *Don't sell |T132832:0|t[Small Eggs] and |T133972:0|t[Strider Meat]. (NOT TRANSLATED IN :zhCN YET) << Horde
-    *|cRXP_WARN_We need them for Cooking later|r. (NOT TRANSLATED IN :zhCN YET)
+    *不要出售 |T132832:0|t[小 道具] 和 |T133972:0|t[Strider 肉]。 << Horde
+    *|cRXP_WARN_我们稍后需要它们来 烹饪|r。
     .skipgossipid 137078
     .target Donaal Downbreeze::255940
 
@@ -6086,7 +6086,7 @@ step << Alliance
     .cooldown spell,1259416,>0,1 -- Walk on Air
     .goto 2521,66.49,76.64,8,0
     .goto 2521,63.33,78.16
-    .cast 1259416 >>Jump off the mountain and use |T132845:0|t[Walk on Air] to fly towards the waypoint location. (NOT TRANSLATED IN :zhCN YET)
+    .cast 1259416 >>从山顶跳下，使用 |T132845:0|t[踏空而行] 飞向路点所在地区。
     .usespell 1259416
 step << Alliance
     .goto 2521,63.33,78.16,30,0
@@ -6169,7 +6169,7 @@ step << Alliance
     .goto 2521,66.49,76.64,8,0
     .goto 2521,66.39,76.26,10,0
     .goto 2521,63.9,74.16
-    .cast 1259416 >>Jump off the mountain and use |T132845:0|t[Walk on Air] to fly towards the waypoint location. (NOT TRANSLATED IN :zhCN YET)
+    .cast 1259416 >>从山顶跳下，使用 |T132845:0|t[踏空而行] 飞向路点所在地区。
     .usespell 1259416
 step << Alliance
     .subzoneskip 16638,1 -- Valanaar
@@ -6734,8 +6734,8 @@ step << Horde
 step << Horde
     .isQuestComplete 93317 -- Crab Season
     .goto 2521,60.64,72.66
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nyalah Brightfire::257006|r inside the house. (NOT TRANSLATED IN :zhCN YET)
-    .turnin 93317 >>Turn in Crab Season (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Nyalah Brightfire::257006|r 在房屋内对话。
+    .turnin 93317 >>交任务 Crab Season
     .target Nyalah Brightfire::257006
 step << Horde Warrior
     .goto 2521,59.886,72.863
@@ -6789,8 +6789,8 @@ step << Horde
     .goto 2521,58.986,75.460
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_蕾莉·三铸::257422|r 对话。
     .vendor 257422 >>把垃圾物品卖给商人。
-    *Don't sell |T132832:0|t[Small Eggs] and |T133972:0|t[Strider Meat]. (NOT TRANSLATED IN :zhCN YET)
-    *|cRXP_WARN_We need them for Cooking later|r. (NOT TRANSLATED IN :zhCN YET)
+    *不要出售 |T132832:0|t[小 道具] 和 |T133972:0|t[Strider 肉]。
+    *|cRXP_WARN_我们稍后需要它们来 烹饪|r。
     .target Railee Thriceforged::257422
 step << Horde
     .isQuestComplete 93736 -- Unwelcome Spirits
@@ -6802,10 +6802,10 @@ step << Horde
     .isQuestComplete 92708 -- A Grand Adventure
     .goto 2521,59.154,79.789
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿耶莎·晨歌::251968|r 对话。
-    .turnin 92708 >>Turn in A Grand Adventure (NOT TRANSLATED IN :zhCN YET)
+    .turnin 92708 >>交任务 A Grand Adventure
     .target Ayessa Dawnsinger::251968
 step << Horde
-    .abandon 92708 >>Abandon A Grand Adventure (NOT TRANSLATED IN :zhCN YET)
+    .abandon 92708 >>放弃任务 A Grand Adventure
 step << Horde
     #label LeaveZephrasIsle
     .zoneskip 2521,1 -- Zephras Isle
@@ -7136,9 +7136,9 @@ step << Horde !Hunter
 step << Horde !Hunter
     .isOnQuest 96897,96898 -- The Cult of the Damned / Remnants of War
     .goto 1420/0,-130.500,1907.800
-    >>Kill |cRXP_ENEMY_Dark Enforcers::275437|r and |cRXP_ENEMY_Dark Neophytes|r. Loot them for |cRXP_LOOT_Necrotic Crystal Fragments|r (NOT TRANSLATED IN :zhCN YET)
+    >>击杀 |cRXP_ENEMY_Dark Enforcers::275437|r 和 |cRXP_ENEMY_Dark Neophytes|r。拾取它们的 |cRXP_LOOT_Necrotic 水晶 碎片|r
     >>|cRXP_LOOT_死灵水晶碎片|r |cRXP_WARN_也可以从地上拾取|r
-    >>|cRXP_WARN_Be careful! These mobs hit hard. |cRXP_ENEMY_Dark Enforcers::275437|r also have an instant cast 50-70 damage ability|r (NOT TRANSLATED IN :zhCN YET)
+    >>|cRXP_WARN_小心！这些小怪伤害很高。|cRXP_ENEMY_Dark Enforcers::275437|r 还有一个即时施放的 50-70 伤害技能|r
     .complete 96897,2 --|8/8 Dark Enforcer slain
     .mob +Dark Enforcer::275437
     .complete 96897,1 --|8/8 Dark Neophyte slain

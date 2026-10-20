@@ -5,14 +5,14 @@ if faction == "Alliance" then return end
 RXPGuides.RegisterGuide([[
 #forever
 << Horde
-#name 12-16 The Barrens
+#name 12-16级 荒芜之地
 #displayname 14-16 The Barrens << !Shaman !Hunter !Tauren
 #displayname 15-16 The Barrens << Paladin
 #version 11
 #group RestedXP 无限 地下城指南 (部落)
-#subgroup Dungeon Guide 1-22
+#subgroup 地下城指南 1-22级
 --#groupid RXP-SRGCE-H1
-#next 16-17 Ragefire Chasm
+#next 16-17 怒焰裂谷
 
 
 step << Tauren Shaman
@@ -389,8 +389,8 @@ step << Orc Warrior/Troll Warrior/Tauren Warrior/Skyborne Warrior
 step
     .goto 1413/1,-2645.40,-406.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_旅店老板伯兰德|r 对话
-    .vendor >>Stock up on food and water (NOT TRANSLATED IN :zhCN YET) << !Rogue !Warrior
-    .vendor >>Stock up on food (NOT TRANSLATED IN :zhCN YET) << Rogue/Warrior
+    .vendor >>准备食物和水 << !Rogue !Warrior
+    .vendor >>准备食物 << Rogue/Warrior
     .target 旅店老板伯兰德·草风
     .isOnQuest 872,5041,845
 step
@@ -591,7 +591,7 @@ step
 step
     .goto 1413/1,-3767.800,-842.900
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_维尼克斯|r 对话
-    .accept 97253 >>Accept Parts and Pieces (NOT TRANSLATED IN :zhCN YET)
+    .accept 97253 >>接受任务 Parts and Pieces
     .target 卑鄙的维尼克斯
 step
     .goto 1413/1,-3728.66,-835.29
@@ -784,7 +784,7 @@ step << Orc Rogue/Troll Rogue
     #optional
 	#completewith SouthSea
 	>>杀死 |cRXP_ENEMY_塔赞|r。从他身上拾取战利品 |cRXP_LOOT_背包|r
-    >>|cRXP_WARN_He spawns at the first camp and patrols up the hill|r (NOT TRANSLATED IN :zhCN YET)
+    >>|cRXP_WARN_他在第一个营地生成，并沿着山坡向上巡逻|r
 	.complete 1963,1 --Tazan's Satchel (1)
     .unitscan Tazan
 step
@@ -822,7 +822,7 @@ step
     .goto 1413/1,-3680.100,-1593.000,40,0
     .goto 1413/1,-3614.800,-1632.800,40,0
     .goto 1413/1,-3611.500,-1692.500,40,0
-    >>Loot the |cRXP_PICK_Handful of Complicated Parts|r on the ground (NOT TRANSLATED IN :zhCN YET)
+    >>在地上拾取 |cRXP_PICK_Handful of Complicated Parts|r
     .complete 97253,1 --|5/5 Handful of Complicated Parts
     .isOnQuest 97253
 step << Orc Rogue/Troll Rogue
@@ -832,7 +832,7 @@ step << Orc Rogue/Troll Rogue
     .goto 1413/1,-3895.600,-1365.000,50,0
     .goto 1413/1,-3826.300,-1487.300,50,0
 	>>杀死 |cRXP_ENEMY_塔赞|r。从他身上拾取战利品 |cRXP_LOOT_背包|r
-    >>|cRXP_WARN_He spawns at the first camp and patrols up the hill|r (NOT TRANSLATED IN :zhCN YET)
+    >>|cRXP_WARN_他在第一个营地生成，并沿着山坡向上巡逻|r
 	.complete 1963,1 --Tazan's Satchel (1)
     .unitscan Tazan
 step
@@ -845,7 +845,7 @@ step
 step
     .goto 1413/1,-3767.800,-842.900
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_维尼克斯|r 对话
-    .turnin 97253 >>Turn in Parts and Pieces (NOT TRANSLATED IN :zhCN YET)
+    .turnin 97253 >>交任务 Parts and Pieces
     .target 卑鄙的维尼克斯
     .isQuestComplete 97253
 step
@@ -1275,7 +1275,7 @@ step
     .goto 1413/1,-1483.11,66.67,50,0
     .goto 1413/1,-1531.75,180.85,50,0
     .goto 1413/1,-1462.84,214.63,50,0
-    >>Kill |cRXP_ENEMY_Savannah Prowlers|r. Loot them for their |cRXP_LOOT_Claws|r (NOT TRANSLATED IN :zhCN YET)
+    >>杀死 |cRXP_ENEMY_Savannah Prowlers|r。拾取它们的 |cRXP_LOOT_Claws|r
     .complete 903,1 --Prowler Claws (7)
     .mob 草原徘徊者
     .isQuestAvailable 819
@@ -1311,8 +1311,8 @@ step << Tauren/Hunter/Orc Shaman/Troll Shaman
 step << Tauren/Hunter/Orc Shaman/Troll Shaman
     .goto 1413/1,-1812.500,790.000
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_弗朗恩|r 对话
-    .accept 95494 >>Accept Bruised Pride and Lion Hides (NOT TRANSLATED IN :zhCN YET)
-    .accept 95507 >>Accept Vrang's Game (NOT TRANSLATED IN :zhCN YET)
+    .accept 95494 >>接受任务 Bruised 骄傲 and Lion Hides
+    .accept 95507 >>接受任务 Vrang's 游戏
     .target 弗朗恩·凝血
 step << Tauren/Hunter/Orc Shaman/Troll Shaman
     .goto 1413/1,-1815.48,786.89
@@ -1323,7 +1323,7 @@ step << Tauren/Hunter/Orc Shaman/Troll Shaman
     .isQuestAvailable 95494,95507
 step << Tauren/Hunter/Orc Shaman/Troll Shaman
     #completewith next
-    >>Loot the |cRXP_PICK_Sprung Traps|r on the ground (NOT TRANSLATED IN :zhCN YET)
+    >>在地上拾取 |cRXP_PICK_Sprung Traps|r
     .complete 95507,1 --|8/8 Trapped Game
 step << Tauren/Hunter/Orc Shaman/Troll Shaman
     #loop
@@ -1334,7 +1334,7 @@ step << Tauren/Hunter/Orc Shaman/Troll Shaman
     .goto 1413/1,-1960.600,653.700,50,0
     .goto 1413/1,-1871.600,653.700,50,0
     .goto 1413/1,-1729.700,592.400,50,0
-    >>Kill |cRXP_ENEMY_Savannah Patriarchs|r. Loot them for their |cRXP_LOOT_Hides|r and |cRXP_LOOT_Tusks|r (NOT TRANSLATED IN :zhCN YET)
+    >>杀死 |cRXP_ENEMY_Savannah Patriarchs|r。拾取它们的 |cRXP_LOOT_Hides|r 和 |cRXP_LOOT_獠牙|r
     .complete 95494,1 --|6/6 Savannah Lion Hide
     .complete 821,1 --Savannah Lion Tusk (5)
     .disablecheckbox
@@ -1350,7 +1350,7 @@ step << Tauren/Hunter/Orc Shaman/Troll Shaman
     .goto 1413/1,-1960.600,653.700,50,0
     .goto 1413/1,-1871.600,653.700,50,0
     .goto 1413/1,-1729.700,592.400,50,0
-    >>Kill |cRXP_ENEMY_Savannah Patriarchs|r. Loot them for their |cRXP_LOOT_Hides|r (NOT TRANSLATED IN :zhCN YET)
+    >>杀死 |cRXP_ENEMY_Savannah Patriarchs|r。拾取它们的 |cRXP_LOOT_Hides|r
     .complete 95494,1 --|6/6 Savannah Lion Hide
     .mob Savannah Patriarch
     .isQuestAvailable 819
@@ -1363,14 +1363,14 @@ step << Tauren/Hunter/Orc Shaman/Troll Shaman
     .goto 1413/1,-1960.600,653.700,50,0
     .goto 1413/1,-1871.600,653.700,50,0
     .goto 1413/1,-1729.700,592.400,50,0
-    >>Loot the |cRXP_PICK_Sprung Traps|r on the ground (NOT TRANSLATED IN :zhCN YET)
+    >>在地上拾取 |cRXP_PICK_Sprung Traps|r
     .complete 95507,1 --|8/8 Trapped Game
 step << Tauren/Hunter/Orc Shaman/Troll Shaman
     .goto 1413/1,-1812.600,789.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vrang Wildgore|r (NOT TRANSLATED IN :zhCN YET)
-    .turnin 95494 >>Turn in Bruised Pride and Lion Hides (NOT TRANSLATED IN :zhCN YET)
-    .turnin 95507 >>Turn in Vrang's Game (NOT TRANSLATED IN :zhCN YET)
-    .accept 95495 >>Accept The Hermit Tanner (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_弗朗恩·凝血|r 对话
+    .turnin 95494 >>交任务 Bruised 骄傲 and Lion Hides
+    .turnin 95507 >>交任务 Vrang's 游戏
+    .accept 95495 >>接受任务 隐士坦纳
     .target 弗朗恩·凝血
     .isQuestComplete 95494
 step << Tauren/Hunter/Orc Shaman/Troll Shaman
@@ -1381,15 +1381,15 @@ step << Tauren/Hunter/Orc Shaman/Troll Shaman
     .goto 1413/1,-1605.300,818.300,20 >>沿着山路向上前进
 step << Tauren/Hunter/Orc Shaman/Troll Shaman
     .goto 1413/1,-1635.400,838.900
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Walton|r (NOT TRANSLATED IN :zhCN YET)
-    .turnin 95495 >>Turn in The Hermit Tanner (NOT TRANSLATED IN :zhCN YET)
-    .accept 95621 >>Accept Trouble in the Valley (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Walton|r 对话
+    .turnin 95495 >>交任务 隐士坦纳
+    .accept 95621 >>接受任务 Trouble in the Valley
     .target Walton
     .isQuestTurnedIn 95494
 step << Tauren/Hunter/Orc Shaman/Troll Shaman
     .goto 1413/1,-1611.500,549.000
-    >>Kill |cRXP_ENEMY_Corporal Adamore|r (NOT TRANSLATED IN :zhCN YET)
-    >>|cRXP_WARN_Be careful! You may aggro 2-3 mobs at the same time|r (NOT TRANSLATED IN :zhCN YET)
+    >>杀死 |cRXP_ENEMY_下士 Adamore|r
+    >>|cRXP_WARN_小心！你可能同时激怒2-3个怪物|r
     .complete 95621,1 --|1/1 Learn why the Kul Tirans are here
     .mob Corporal Adamore
     .isQuestTurnedIn 95494
@@ -1401,22 +1401,22 @@ step << Tauren/Hunter/Orc Shaman/Troll Shaman
     .goto 1413/1,-1605.300,818.300,20 >>沿着山路向上前进
 step << Tauren/Hunter/Orc Shaman/Troll Shaman
     .goto 1413/1,-1635.500,838.900
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Walton|r (NOT TRANSLATED IN :zhCN YET)
-    .turnin 95621 >>Turn in Trouble in the Valley (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Walton|r 对话
+    .turnin 95621 >>交任务 Trouble in the Valley
     .accept 95508 >>接受任务 不速之客
-    .timer 67,Unwelcome Guests RP (NOT TRANSLATED IN :zhCN YET)
+    .timer 67,不速之客 RP
     .target Walton
     .isQuestTurnedIn 95494
 step << Tauren/Hunter/Orc Shaman/Troll Shaman
     .goto 1413/1,-1629.200,835.600
-    >>Move behind the house as you wait for the RP to finish to avoid getting aggro by all mobs at once (NOT TRANSLATED IN :zhCN YET)
-    >>|cRXP_WARN_You don't actually need to assist |cRXP_FRIENDLY_Walton|r, he will survive with the help of|r |cRXP_FRIENDLY_Vrang Wildgore|r (NOT TRANSLATED IN :zhCN YET)
+    >>在房子后面等待 RP 完成，避免同时被所有怪物激怒
+    >>|cRXP_WARN_你其实不需要协助 |cRXP_FRIENDLY_Walton|r，他会在 |r弗朗恩·凝血|cRXP_FRIENDLY_ 的帮助下活下来|r
     .complete 95508,1 --|1/1 Assist Walton
     .mob Terry Longdrink
     .isQuestTurnedIn 95494
 step << Tauren/Hunter/Orc Shaman/Troll Shaman
     .goto 1413/1,-1635.400,838.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Walton|r (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Walton|r 对话
     .turnin 95508 >>交任务 不速之客
     .target Walton
     .isQuestTurnedIn 95494
@@ -1686,12 +1686,12 @@ step << skip
 RXPGuides.RegisterGuide([[
 #forever
 << Horde
-#name 16-17 Ragefire Chasm
+#name 16-17 怒焰裂谷
 #version 11
 #group RestedXP 无限 地下城指南 (部落)
-#subgroup Dungeon Guide 1-22
+#subgroup 地下城指南 1-22级
 --#groupid RXP-SRGCE-H1
-#next 17-18 Ruins of Lordaeron
+#next 17-18 洛丹伦废墟
 
 step
     #sticky
@@ -1700,14 +1700,14 @@ step
 step
     #optional
     #completewith EnterRFC
-    >>|cRXP_WARN_If possible, have party members share the following quest|r (NOT TRANSLATED IN :zhCN YET)
-    >>|cRXP_WARN_If needed, ask someone in Undercity for a share|r (NOT TRANSLATED IN :zhCN YET)
+    >>|cRXP_WARN_如果可能，让队伍成员分享以下任务|r
+    >>|cRXP_WARN_如果需要，请在幽暗城里找人分享|r
     .accept 5725 >> 接受任务《物归己用》 毁灭之力
 step
     #optional
     #completewith EnterRFC
     >>|cRXP_WARN_如果可能，让队友共享以下任务|r
-    >>|cRXP_WARN_If needed, ask someone in Thunder Bluff for a share|r (NOT TRANSLATED IN :zhCN YET)
+    >>|cRXP_WARN_如果需要，请在雷霆崖里找人分享|r
     .accept 5722 >> 接受任务 寻找背包
     .accept 5723 >> 接受任务 试探敌人
 step << Tauren/Hunter/Orc Shaman/Troll Shaman
@@ -2141,17 +2141,17 @@ step
 RXPGuides.RegisterGuide([[
 #forever
 << Horde
-#name 17-18 Ruins of Lordaeron
+#name 17-18 洛丹伦废墟
 #version 11
 #group RestedXP 无限 地下城指南 (部落)
-#subgroup Dungeon Guide 1-22
+#subgroup 地下城指南 1-22级
 --#groupid RXP-SRGCE-H1
 #next 18-21 The Barrens
 
 step
     #sticky
     #completewith EnterRoL
-    .subzone 16611 >> Now you should be looking for a group to Ruins of Lordaeron (NOT TRANSLATED IN :zhCN YET)
+    .subzone 16611 >> 现在你应该找一个小队前往洛丹伦废墟
 step
     #completewith next
     .zone Durotar >> 离开 奥格瑞玛
@@ -2166,13 +2166,13 @@ step
     .zoneskip Silverpine Forest
 step
     .goto 1420/0,84.900,2023.500
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathguard Kristof::251001|r (NOT TRANSLATED IN :zhCN YET)
-    .accept 92422 >>Accept The Wrath of Rath'mael (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Deathguard Kristof::251001|r 对话
+    .accept 92422 >>接受任务 The 愤怒 of Rath'mael
     .target Deathguard Kristof::251001
 step
     #completewith UCPickups
-    >>|cRXP_WARN_If possible, have somebody in your group share the following quest|r (NOT TRANSLATED IN :zhCN YET)
-    .accept 92401 >>Accept A Frightened Request (NOT TRANSLATED IN :zhCN YET)
+    >>|cRXP_WARN_如果可能，让你的小队成员分享以下任务|r
+    .accept 92401 >>接受任务 惊恐的请求
 step
     #completewith UCPickups
     .goto 1420/0,240.75,1877.57
@@ -2188,14 +2188,14 @@ step
     .goto 1458/0,266.300,1567.200,20 >>乘电梯下去到幽暗城
 step << Tauren/Hunter/Orc Shaman/Troll Shaman
     .goto 1458/0,266.300,1567.200
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Michael Garrett::4551|r (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Michael Garrett::4551|r 对话
     .fp Undercity >>获得幽暗城的飞行路径
     .target Michael Garrett::4551
 step
     .goto 1458/0,344.000,1423.800,50,0
     .goto 1458/0,373.200,1362.100,50,0
     .goto 1458/0,428.400,1417.700
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Theodore Griffs::11835|r (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Theodore Griffs::11835|r 对话
     .accept 95216 >>接受任务 新的药剂
     .target Theodore Griffs::11835
 step
@@ -2207,14 +2207,14 @@ step
     .goto 1458/0,438.100,1352.900,50,0
     .goto 1458/0,396.100,1308.800,50,0
     .goto 1458/0,316.000,1304.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Morbin Lightbane::266484|r (NOT TRANSLATED IN :zhCN YET)
-    .accept 92421 >>Accept Light's Justice (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Morbin Lightbane::266484|r 对话
+    .accept 92421 >>接受任务 圣光的正义
     .target Morbin Lightbane::266484
 step
     #label UCPickups
     .isQuestComplete 5725
     .goto 1458/0,334.02,1262.17
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Varimathras::2425|r (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_瓦里玛萨斯::2425|r 对话
     .turnin 5725 >>交任务《 前往熔光镇》 毁灭之力
     .target Varimathras::2425
 step << Tauren/Hunter/Orc Shaman/Troll Shaman
@@ -2256,30 +2256,30 @@ step << !Tauren !Hunter !Shaman/Skyborne
     .isNotOnQuest 92401
     .subzoneskip 228
     .goto 1458/0,266.300,1567.200
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Michael Garrett::4551|r (NOT TRANSLATED IN :zhCN YET)
-    .fly Sepulcher >>Fly to Sepulcher (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Michael Garrett::4551|r 对话
+    .fly Sepulcher >>飞往 Sepulcher
     .target Michael Garrett::4551
 step
     #label AFrightenedRequest
     .goto 1421/0,1579.600,461.700
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tabitha Heartweaver::250686|r (NOT TRANSLATED IN :zhCN YET)
-    .accept 92401 >>Accept A Frightened Request (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Tabitha Heartweaver::250686|r 对话
+    .accept 92401 >>接受任务 惊恐的请求
     .target Tabitha Heartweaver::250686
 step
     #completewith next
     .zoneskip Silverpine Forest,1
     .goto 1421/0,1533.96,474.43
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Karos Razok::2226|r (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡洛斯·拉佐克::2226|r 对话
     .fly Undercity >>飞往幽暗城
     .target Karos Razok::2226
 step
     #label EnterRoL
     .goto 1458/0,188.400,1804.500
-    .subzone 16611 >>Enter Ruins of Lordaeron (NOT TRANSLATED IN :zhCN YET)
+    .subzone 16611 >>返回洛丹伦废墟
 step
     #completewith RuinsRathma
     .isOnQuest 92421
-    >>Kill |cRXP_ENEMY_Undead|r. Loot them for their |T458717:0|t[|cRXP_LOOT_Intact Limbs|r] (NOT TRANSLATED IN :zhCN YET)
+    >>杀死 |cRXP_ENEMY_亡灵|r。从他们身上拾取 |T458717:0|t[|cRXP_LOOT_Intact Limbs|r]
     .complete 92421,1 --Intact Limbs (25)
     .mob Skeleton::250618
     --.mob Cadaver::250621
@@ -2297,40 +2297,40 @@ step
     #completewith RuinsLimbs
     .isQuestAvailable 95204
     .isNotOnQuest 95204
-    >>Loot and use the |T4504543:0|t[|cRXP_LOOT_Crest of Lordaeron|r] to start the quest (NOT TRANSLATED IN :zhCN YET)
-    >>|cRXP_WARN_It has 5 possible spawn locations|r (NOT TRANSLATED IN :zhCN YET)
+    >>拾取并使用 |T4504543:0|t[|cRXP_LOOT_Crest of 洛丹伦|r] 来激发任务
+    >>|cRXP_WARN_它有5个可能的刷新位置|r
     .collect 275521,1,95204 --Crest of Lordaeron (1)
-    .accept 95204 >>Accept Crest of Lordaeron (NOT TRANSLATED IN :zhCN YET)
+    .accept 95204 >>接受任务 Crest of 洛丹伦
     .use 275521
 step
     .isOnQuest 95216
-    >>Kill |cRXP_ENEMY_Witherfang::250483|r. Loot it for a |T132108:0|t[|cRXP_LOOT_Highly Toxic Strain|r] (NOT TRANSLATED IN :zhCN YET)
+    >>杀死 |cRXP_ENEMY_Witherfang::250483|r。从它身上拾取 |T132108:0|t[|cRXP_LOOT_Highly Toxic Strain|r]
     .complete 95216,1 --Highly Toxic Strain (1)
     .mob Witherfang::250483
 step
     .isQuestAvailable 97288
     .isNotOnQuest 97288
-    >>Kill |cRXP_ENEMY_The Baron::250660|r. Loot and use his |T2492254:0|t[|cRXP_LOOT_Abominable Head|r] to start the quest (NOT TRANSLATED IN :zhCN YET)
+    >>击杀 |cRXP_ENEMY_The 男爵::250660|r。拾取战利品并使用他的 |T2492254:0|t[|cRXP_LOOT_Abominable 头部|r] 来开始任务
     .collect 280438,1,97288 --Abominable Head (1)
-    .accept 97288 >>Accept Unending Torment (NOT TRANSLATED IN :zhCN YET)
+    .accept 97288 >>接受任务 Unending Torment
     .use 280438
     .mob The Baron::250660
 step
     #label RuinsRathma
     .isOnQuest 92422
-    >>Kill |cRXP_ENEMY_Rath'mael::250657|r (NOT TRANSLATED IN :zhCN YET)
+    >>击杀 |cRXP_ENEMY_Rath'mael::250657|r
     .complete 92422,1 --Rath'mael Slain (1)
     .mob Rath'mael::250657
     .target Edward Heartweaver::250842
 step
     .isOnQuest 92401
-    >>Approach the body of |cRXP_FRIENDLY_Edward Heartweaver::250842|r near |cRXP_ENEMY_Rath'mael::250657|r (NOT TRANSLATED IN :zhCN YET)
+    >>靠近位于 |cRXP_FRIENDLY_Rath'mael::250657|r 附近的 |cRXP_ENEMY_Edward Heartweaver::250842|r 的尸体
     .complete 92401,1
     .target Edward Heartweaver::250842
 step
     #label RuinsLimbs
     .isOnQuest 92421
-    >>Kill |cRXP_ENEMY_Undead|r. Loot them for their |T458717:0|t[|cRXP_LOOT_Intact Limbs|r] (NOT TRANSLATED IN :zhCN YET)
+    >>杀死 |cRXP_ENEMY_亡灵|r。从他们身上拾取 |T458717:0|t[|cRXP_LOOT_Intact Limbs|r]
     .complete 92421,1 --Intact Limbs (25)
     .mob Skeleton::250618
     --.mob Cadaver::250621
@@ -2347,23 +2347,23 @@ step
 step
     .isQuestAvailable 95204
     .isNotOnQuest 95204
-    >>Loot and use the |T4504543:0|t[|cRXP_LOOT_Crest of Lordaeron|r] to start the quest (NOT TRANSLATED IN :zhCN YET)
-    >>|cRXP_WARN_It has 5 possible spawn locations|r (NOT TRANSLATED IN :zhCN YET)
+    >>拾取并使用 |T4504543:0|t[|cRXP_LOOT_Crest of 洛丹伦|r] 来激发任务
+    >>|cRXP_WARN_它有5个可能的刷新位置|r
     .collect 275521,1,95204 --Crest of Lordaeron (1)
-    .accept 95204 >>Accept Crest of Lordaeron (NOT TRANSLATED IN :zhCN YET)
+    .accept 95204 >>接受任务 Crest of 洛丹伦
     .use 275521
 step
     .goto 1458/0,188.400,1804.500
-    .zone Undercity >>Exit Ruins of Lordaeron (NOT TRANSLATED IN :zhCN YET)
+    .zone Undercity >>退出洛丹伦废墟
 step
     .isQuestComplete 92422
     .goto 1420/0,84.900,2023.500
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathguard Kristof::251001|r (NOT TRANSLATED IN :zhCN YET)
-    .turnin 92422 >>Turn in The Wrath of Rath'mael (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Deathguard Kristof::251001|r 对话
+    .turnin 92422 >>交任务 The 愤怒 of Rath'mael
     .target Deathguard Kristof::251001
 step
     .goto 1420/0,240.75,1877.57
-    .zone Undercity >>Return to Undercity (NOT TRANSLATED IN :zhCN YET)
+    .zone Undercity >>返回幽暗城
 step
     .goto 1458/0,239.14,1749.54,35,0
     .goto 1458/0,255.64,1724.70,35,0
@@ -2377,44 +2377,44 @@ step
     .goto 1458/0,344.000,1423.800,50,0
     .goto 1458/0,373.200,1362.100,50,0
     .goto 1458/0,428.400,1417.700
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Theodore Griffs::11835|r (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Theodore Griffs::11835|r 对话
     .turnin 95216 >>交任务 新的药剂
     .target Theodore Griffs::11835
 step
     .isOnQuest 97288
     .goto 1458/0,404.800,1434.500
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Apothecary Faranell::2055|r (NOT TRANSLATED IN :zhCN YET)
-    .turnin 97288 >>Turn in Unending Torment (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Master Apothecary 大药剂师法拉尼尔::2055|r 对话
+    .turnin 97288 >>交任务 Unending Torment
     .target Master Apothecary Faranell::2055
 step
     .isQuestTurnedIn 97288
     .goto 1458/0,404.800,1434.500
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Apothecary Faranell::2055|r (NOT TRANSLATED IN :zhCN YET)
-    .accept 97289 >>Accept Unending Torment (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Master Apothecary 大药剂师法拉尼尔::2055|r 对话
+    .accept 97289 >>接受任务 Unending Torment
     .target Master Apothecary Faranell::2055
 step
     .isOnQuest 97289
     .goto 1458/0,433.300,1482.600
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Unfinished Abomination::271613|r (NOT TRANSLATED IN :zhCN YET)
-    .turnin 97289 >>Turn in Unending Torment (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Unfinished 憎恶::271613|r 对话
+    .turnin 97289 >>交任务 Unending Torment
     .target Unfinished Abomination::271613
 step
     .isQuestTurnedIn 97289
     .goto 1458/0,433.300,1482.600
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Unfinished Abomination::271613|r (NOT TRANSLATED IN :zhCN YET)
-    .accept 97290 >>Accept Unending Torment (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Unfinished 憎恶::271613|r 对话
+    .accept 97290 >>接受任务 Unending Torment
     .target Unfinished Abomination::271613
 step
     .isOnQuest 97290
     .goto 1458/0,404.800,1434.500
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Apothecary Faranell::2055|r (NOT TRANSLATED IN :zhCN YET)
-    .turnin 97290 >>Turn in Unending Torment (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Master Apothecary 大药剂师法拉尼尔::2055|r 对话
+    .turnin 97290 >>交任务 Unending Torment
     .target Master Apothecary Faranell::2055
 step
     .isQuestTurnedIn 97290
     .goto 1458/0,404.800,1434.500
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Apothecary Faranell::2055|r (NOT TRANSLATED IN :zhCN YET)
-    .accept 97291 >>Accept Unending Torment (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Master Apothecary 大药剂师法拉尼尔::2055|r 对话
+    .accept 97291 >>接受任务 Unending Torment
     .target Master Apothecary Faranell::2055
 step
     .isQuestComplete 92421
@@ -2425,33 +2425,33 @@ step
     .goto 1458/0,430.600,1342.100,50,0
     .goto 1458/0,397.500,1311.400,50,0
     .goto 1458/0,315.800,1304.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Morbin Lightbane::266484|r (NOT TRANSLATED IN :zhCN YET)
-    .turnin 92421 >>Turn in Light's Justice (NOT TRANSLATED IN :zhCN YET)
-    *Choose |T133483:0|t[|cRXP_LOOT_The Stitcher|r] for a main-hand upgrade. Train Maces if needed (NOT TRANSLATED IN :zhCN YET) << Rogue
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Morbin Lightbane::266484|r 对话
+    .turnin 92421 >>交任务 圣光的正义
+    *选择 |T133483:0|t[|cRXP_LOOT_The Stitcher|r] 作为主手升级。如果需要，训练 Maces << Rogue
     .target Morbin Lightbane::266484
 step
     .isOnQuest 97291
     .goto 1458/0,356.700,1563.500
-    >>|cRXP_WARN_Loot a|r |T134181:0|t[|cRXP_LOOT_Blisterweed|r] |cRXP_WARN_from the pot behind|r |cRXP_FRIENDLY_Katrina Alliestar::4615|r (NOT TRANSLATED IN :zhCN YET)
+    >>|cRXP_WARN_从|r |cRXP_LOOT_Katrina Alliestar::4615|r |cRXP_WARN_后面的罐子里拾取|r |T134181:0|t[|cRXP_FRIENDLY_Blisterweed|r]
     .complete 97291,2 --Blisterweed (1)
 step
     .isOnQuest 97291
     .goto 1458/0,151.500,1550.200
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ezekiel Graves::4585|r (NOT TRANSLATED IN :zhCN YET)
-    >>|cRXP_BUY_Buy an|r |T134799:0|t[|cRXP_LOOT_Essence of Agony|r] (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Ezekiel 恶灵魔像::4585|r 对话
+    >>|cRXP_BUY_购买一个|r |T134799:0|t[|cRXP_LOOT_Essence of Agony|r]
     .complete 97291,3 --Essence of Agony (1)
     .target Ezekiel Graves::4585
 step
     .isOnQuest 95204
     .goto 1458/0,172.100,1667.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Oran Snakewrithe::7825|r (NOT TRANSLATED IN :zhCN YET)
-    .turnin 95204 >>Turn in Crest of Lordaeron (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥兰·斯内克威瑟::7825|r 对话
+    .turnin 95204 >>交任务 Crest of 洛丹伦
     .target Oran Snakewrithe::7825
 step
     .isOnQuest 97291
     .goto 1458/0,241.700,1633.200
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tawny Grisette::4554|r (NOT TRANSLATED IN :zhCN YET)
-    >>|cRXP_BUY_Buy a|r |T134522:0|t[|cRXP_LOOT_Toxic Skullcap|r] (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Tawny Grisette::4554|r 对话
+    >>|cRXP_BUY_购买一个|r |T134522:0|t[|cRXP_LOOT_Toxic 斯库尔卡|r]
     .complete 97291,1 --Toxic Skullcap (1)
     .target Tawny Grisette::4554
 step
@@ -2459,27 +2459,27 @@ step
     .goto 1458/0,344.000,1423.800,50,0
     .goto 1458/0,373.200,1362.100,50,0
     .goto 1458/0,404.800,1434.500
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Apothecary Faranell::2055|r (NOT TRANSLATED IN :zhCN YET)
-    .turnin 97291 >>Turn in Unending Torment (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Master Apothecary 大药剂师法拉尼尔::2055|r 对话
+    .turnin 97291 >>交任务 Unending Torment
     .target Master Apothecary Faranell::2055
 step
     .isQuestTurnedIn 97291
     .goto 1458/0,404.800,1434.500
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Apothecary Faranell::2055|r (NOT TRANSLATED IN :zhCN YET)
-    .accept 97292 >>Accept Unending Torment (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Master Apothecary 大药剂师法拉尼尔::2055|r 对话
+    .accept 97292 >>接受任务 Unending Torment
     .target Master Apothecary Faranell::2055
 step
     .isOnQuest 97292
     .goto 1458/0,442.700,1419.600,50,0
     .goto 1458/0,458.900,1438.600,50,0
     .goto 1458/0,438.800,1468.700
-    .use 281327 >>|cRXP_WARN_Use|r |T134837:0|t[|cRXP_LOOT_Hissing Serum|r] |cRXP_WARN_by the worm upstairs|r (NOT TRANSLATED IN :zhCN YET)
+    .use 281327 >>|cRXP_WARN_在楼上的虫子附近使用|r |T134837:0|t[|cRXP_LOOT_嘶嘶血清|r]
     .complete 97292,1
 step
     .isQuestComplete 97292
     .goto 1458/0,404.800,1434.500
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Apothecary Faranell::2055|r (NOT TRANSLATED IN :zhCN YET)
-    .turnin 97292 >>Turn in Unending Torment (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Master Apothecary 大药剂师法拉尼尔::2055|r 对话
+    .turnin 97292 >>交任务 Unending Torment
     .target Master Apothecary Faranell::2055
 step << Rogue
     #completewith RuinsRogueTurnin
@@ -2487,18 +2487,18 @@ step << Rogue
     .isQuestComplete 92401
     .zoneskip Undercity,1
     .goto 1458/0,266.300,1567.200
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Michael Garrett::4551|r (NOT TRANSLATED IN :zhCN YET)
-    .fly Sepulcher >>Fly to Sepulcher if you have the flight path (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Michael Garrett::4551|r 对话
+    .fly Sepulcher >>如果你有飞行路径，飞往 Sepulcher
     .target Michael Garrett::4551
 step << Rogue
     #label RuinsRogueTurnin
     #optional
     .isQuestComplete 92401
     .goto 1421/0,1579.600,461.700
-    >>|cRXP_WARN_Only turn in now for an off-hand upgrade|r (NOT TRANSLATED IN :zhCN YET)
-    >>Take the sewers and follow the road to the Sepulcher if you cannot fly (NOT TRANSLATED IN :zhCN YET)
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tabitha Heartweaver::250686|r (NOT TRANSLATED IN :zhCN YET)
-    .turnin 92401 >>Turn in A Frightened Request (NOT TRANSLATED IN :zhCN YET)
+    >>|cRXP_WARN_现在只能交任务来获得副手升级|r
+    >>如果你不能飞行，走下水道并跟随道路前往 Sepulcher
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Tabitha Heartweaver::250686|r 对话
+    .turnin 92401 >>交任务 A Frightened Request
     .target Tabitha Heartweaver::250686
 
     ]])
@@ -2509,9 +2509,9 @@ RXPGuides.RegisterGuide([[
 #name 18-21 The Barrens
 #version 11
 #group RestedXP 无限 地下城指南 (部落)
-#subgroup Dungeon Guide 1-22
+#subgroup 地下城指南 1-22级
 --#groupid RXP-SRGCE-H1
-#next 21-22 Wailing Caverns
+#next 21-22 哀嚎洞穴
 
 step
     #completewith FoodandWater2
@@ -2920,7 +2920,7 @@ step
 	>>击杀|cRXP_ENEMY_Lakota'mani|r. Loot him for the |T132318:0|t[|cRXP_LOOT_拉克塔曼尼的蹄子|r]
     >>|cRXP_WARN_使用 |T132318:0|t [|cRXP_LOOT_拉克塔曼尼之蹄|r]以开启该任务|r
     >>|cRXP_WARN_他有 4 个刷新点（已在地图上标记）|r
-    >>|cRXP_WARN_Skip this step if you can't find him or can't kill him. You can come back for him later|r (NOT TRANSLATED IN :zhCN YET)
+    >>|cRXP_WARN_如果你找不到他或无法击杀他，跳过这一步。你可以稍后再来处理。|r
 	.collect 5099,1,883 --Collect Hoof of Lakota'Mani
 	.accept 883 >>接受任务 拉克塔曼尼
     .use 5099
@@ -2970,7 +2970,7 @@ step
     #label Xroadsturnins2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_曼科里克|r, |cRXP_FRIENDLY_图加|r, |cRXP_FRIENDLY_瑟格拉|r 和 |cRXP_FRIENDLY_加兹罗格|r 对话
     .turnin 4921 >>交任务在战斗中失踪
-    .accept 95774 >>Accept Her Name Is Olgra (NOT TRANSLATED IN :zhCN YET)
+    .accept 95774 >>接受任务 Her 名称 Is Olgra
     .target 曼科里克
     .goto 1413/1,-2641.35,-521.12
     .turnin 877 >>交任务  死水绿洲
@@ -3046,7 +3046,7 @@ step
     .target 乔恩·星眼
 step
     #completewith LakotaMani2
-    >>Kill |cRXP_ENEMY_Razormane Raiders|r. Loot them for |cRXP_LOOT_Olgra's Adornments|r (NOT TRANSLATED IN :zhCN YET)
+    >>杀死 |cRXP_ENEMY_Razormane Raiders|r。拾取他们的战利品 |cRXP_LOOT_Olgra's Adornments|r
     .complete 95774,1 --|4/4 Olgra's Adornments
     .mob Razormane Raider
 step
@@ -3095,7 +3095,7 @@ step
     .goto 1413/1,-2346.200,-1788.600,50,0
     .goto 1413/1,-2458.300,-1824.400,50,0
     .goto 1413/1,-2381.000,-2061.000,50,0
-    >>Kill |cRXP_ENEMY_Razormane Raiders|r. Loot them for |cRXP_LOOT_Olgra's Adornments|r (NOT TRANSLATED IN :zhCN YET)
+    >>杀死 |cRXP_ENEMY_Razormane Raiders|r。拾取他们的战利品 |cRXP_LOOT_Olgra's Adornments|r
     .complete 95774,1 --|4/4 Olgra's Adornments
     .mob Razormane Raider
 step
@@ -3159,7 +3159,7 @@ step << Warlock
 	.goto 1413/1,-2687.96,-1973.04,60,0
 	.goto 1413/1,-2678.84,-2016.28,60,0
 	.goto 1413/1,-2584.6,-2050.74,60,0
-    .xp 19+9500 >> Grind to 9500+/21300 xp (NOT TRANSLATED IN :zhCN YET)
+    .xp 19+9500 >> 刷怪至 9500+/21300 xp
 step
     #loop
     .goto 1413/1,-2532.92,-1965.61,0
@@ -3261,7 +3261,7 @@ step
 step
     .goto 1413/1,-3720.300,-920.000
     >>点击 |cRXP_PICK_通缉布告|r
-    .accept 92706 >>Accept WANTED: Bruuz (NOT TRANSLATED IN :zhCN YET)
+    .accept 92706 >>接受任务 WANTED: 布鲁兹
     .group << Rogue/Warrior
 step
     .goto 1413/1,-3697.24,-929.20
@@ -3273,7 +3273,7 @@ step
 step
     #optional
     #completewith XroadsHS2
-    .destroy 5570 >>|cRXP_WARN_Delete any|r |T132834:0|t[Deepmoss Spider Eggs] |cRXP_WARN_you have left|r (NOT TRANSLATED IN :zhCN YET)
+    .destroy 5570 >>|cRXP_WARN_删除任何|r |T132834:0|t[[DEPRECATED] 深苔蜘蛛的卵] |cRXP_WARN_你剩余的|r
 step
     .goto 1413/1,-3687.11,-981.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德罗恩|r 对话
@@ -3323,9 +3323,9 @@ step
     .goto 1413/1,-3951.600,-1093.500
     .goto 1413/1,-4012.800,-1081.800
     .goto 1413/1,-3973.000,-1028.700
-    >>Kill |cRXP_PICK_Bruuz|r (lvl 20 elite) in the sea near Ratchet (NOT TRANSLATED IN :zhCN YET)
-    >>|cRXP_WARN_This is hard! Group up if possible|r (NOT TRANSLATED IN :zhCN YET) << !Rogue !Warrior
-    >>|cRXP_WARN_Try to kite him to Ratchet to guards who will help, but make sure to deal at least 50% damage!|r (NOT TRANSLATED IN :zhCN YET)
+    >>在棘齿城附近的海里杀死 |cRXP_PICK_布鲁兹|r (20级精英)
+    >>|cRXP_WARN_这很难!如果可能的话,请组队|r << !Rogue !Warrior
+    >>|cRXP_WARN_尝试把他引到 棘齿城 的守卫那里，他们会帮助你，但确保你造成至少50%的伤害！|r
     .complete 92706,1 --Kill Bruuz
     .mob Bruuz
     .isOnQuest 92706
@@ -3333,7 +3333,7 @@ step
 step
     .goto 1413/1,-3728.66,-835.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_加兹鲁维|r 对话
-    .turnin 92706 >>Turn in WANTED: Bruuz (NOT TRANSLATED IN :zhCN YET)
+    .turnin 92706 >>交任务 WANTED: 布鲁兹
     .target 加兹鲁维
     .group << Rogue/Warrior
     .isQuestComplete 92706
@@ -3359,7 +3359,7 @@ step
     #label XroadsHS2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_曼科里克|r 和 |cRXP_FRIENDLY_图加|r 对话
     .turnin 899 >>交任务  复仇的怒火
-    .turnin 95774 >>Turn in Her Name Is Olgra (NOT TRANSLATED IN :zhCN YET)
+    .turnin 95774 >>交任务 Her 名称 Is Olgra
     .target 曼科里克
     .goto 1413/1,-2641.35,-521.12
     .turnin 880 >>交任务  变异的生物
@@ -3738,8 +3738,8 @@ step
 step
     #label SleepingBag1
     .goto The Barrens,46.361,73.904
-    >>Click the |cRXP_PICK_Burned-Out Remains|r on the ground (NOT TRANSLATED IN :zhCN YET)
-    .accept 79007 >> Accept ...and that note you found (NOT TRANSLATED IN :zhCN YET)
+    >>点击地面上的|cRXP_PICK_焦焚残骸|r
+    .accept 79007 >> 接受任务……你所找到的纸条
 step
     #label LizardBlood
     #loop
@@ -3958,7 +3958,7 @@ step << Mage
     .xp <22,1
 step << Paladin
     .goto 1456/1,253.900,-950.200
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alodan|r (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Alodan|r 对话
     .train 1866 >>训练你的职业技能
     .target Alodan the Hopeful 
     .xp <20,1
@@ -3966,7 +3966,7 @@ step << Paladin
 step << Paladin
     #optional
     .goto 1456/1,253.900,-950.200
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alodan|r (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Alodan|r 对话
     .train 1026 >>训练你的职业技能
     .target Alodan the Hopeful 
     .xp <22,1
@@ -3975,7 +3975,7 @@ step
     #label DeathDUPpickup
 step << Shaman
     .goto 1456/1,269.92,-980.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tigor|r |cRXP_WARN_outside|r (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Tigor|r 对话 |cRXP_WARN_（在外面）|r
     .train 2645 >> 训练你的职业技能
     .target 提戈尔·逐星
     .xp <20,1
@@ -3983,7 +3983,7 @@ step << Shaman
 step << Shaman
     #optional
     .goto 1456/1,269.92,-980.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tigor|r |cRXP_WARN_outside|r (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Tigor|r 对话 |cRXP_WARN_（在外面）|r
     .train 8498 >> 训练你的职业技能
     .target 提戈尔·逐星
     .xp <22,1
@@ -4060,7 +4060,7 @@ step << Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_图拉克|r 对话
     .trainer >>训练你的职业技能
     .accept 27 >>接受任务必修的课程
-    .accept 98340 >>Accept The Great Cat Spirit (NOT TRANSLATED IN :zhCN YET)
+    .accept 98340 >>接受任务 The ????????????
     .target 图拉克·符文图腾
 step << Druid
     #completewith next
@@ -4071,9 +4071,9 @@ step << Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德迪利特|r 对话
     .turnin 27 >>交任务必修的课程
     .accept 28 >>接受任务湖中试炼
-    .turnin 98340 >>Turn in The Great Cat Spirit (NOT TRANSLATED IN :zhCN YET)
-    .accept 98341 >>Accept The Great Windborne Cat Spirit (NOT TRANSLATED IN :zhCN YET) << Skyborne
-    .accept 98405 >>Accept The Great Cat Spirit (NOT TRANSLATED IN :zhCN YET) << !Skyborne
+    .turnin 98340 >>交任务 The ????????????
+    .accept 98341 >>接受任务 The Great Windborne 猫 精神 << Skyborne
+    .accept 98405 >>接受任务 The ???????????? << !Skyborne
     .target 德迪利特·星焰
 step << Druid
     #completewith next
@@ -4093,62 +4093,62 @@ step << Druid
     .target 塔加里
 step << Druid !Skyborne
     .goto 1450/1,-2640.000,7338.900
-     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Great Cat Spirit|r (NOT TRANSLATED IN :zhCN YET)
-    .turnin 98405 >>Turn in The Great Cat Spirit (NOT TRANSLATED IN :zhCN YET)
-    .accept 98342 >>Accept The Great Cat Spirit (NOT TRANSLATED IN :zhCN YET)
+     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Great 猫 精神|r 对话
+    .turnin 98405 >>交任务 The ????????????
+    .accept 98342 >>接受任务 The ????????????
     .target Great Cat Spirit
 step << Druid Skyborne
     .goto 1450/1,-2352.700,7375.600,10,0
     .goto 1450/1,-2394.300,7361.200
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Avatar of Saeyleenan::272054|r (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Avatar of Saeyleenan::272054|r 对话
     .target Avatar of Saeyleenan::272054
-    .turnin 98341 >>Turn in The Great Windborne Cat Spirit (NOT TRANSLATED IN :zhCN YET)
-    .accept 98404 >>Accept The Great Windborne Cat Spirit (NOT TRANSLATED IN :zhCN YET)
+    .turnin 98341 >>交任务 The Great Windborne 猫 精神
+    .accept 98404 >>接受任务 The Great Windborne 猫 精神
 step << Druid
     #completewith next
     .goto 1450/1,-3046.700,7534.400
     --aura 1309054?
-    .subzone 2363 >> Head to the Stormrage Barrow Dens (NOT TRANSLATED IN :zhCN YET)
+    .subzone 2363 >> 前往 怒风兽穴
 step << Druid
-    >>Go deep into the cave, travel across the bridge, look for a cat statue inside an alcove and click on the small orb next to the statue (NOT TRANSLATED IN :zhCN YET)
-    >>Loot |cRXP_LOOT_Relic of the Claw|r (NOT TRANSLATED IN :zhCN YET)
+    >>深入洞穴，穿过桥梁，寻找壁龛内的猫雕像，点击雕像旁边的小球
+    >>拾取 |cRXP_LOOT_Relic of the Claw|r
     .goto 1450/1,-3117.400,7455.300
     .complete 98404,2 << Skyborne --|1/1 Relic of the Claw
     .complete 98342,2 << !Skyborne --|1/1 Relic of the Claw
 step << Druid
-    >>Click on the small orb next to the cat statue (NOT TRANSLATED IN :zhCN YET)
-    >>Loot |cRXP_LOOT_Relic of the Silent Shadow|r (NOT TRANSLATED IN :zhCN YET)
+    >>点击猫雕像旁边的小球
+    >>拾取 |cRXP_LOOT_Relic of the Silent 小影|r
     .goto 1450/1,-3099.200,7485.700
     .complete 98404,3  << Skyborne --|1/1 Relic of the Silent Shadow
     .complete 98342,3  << !Skyborne --|1/1 Relic of the Silent Shadow
 step << Druid
-    >>Click on the small orb next to the cat statue (NOT TRANSLATED IN :zhCN YET)
-    >>Loot |cRXP_LOOT_Relic of the Fang|r (NOT TRANSLATED IN :zhCN YET)
+    >>点击猫雕像旁边的小球
+    >>拾取 |cRXP_LOOT_Relic of the 利牙|r
     .goto 1450/1,-3054.100,7476.800
     .complete 98404,1  << Skyborne --|1/1 Relic of the Fang
     .complete 98342,1  << !Skyborne --|1/1 Relic of the Fang
 step << Druid !Skyborne
     .goto 1450/1,-2640.000,7338.900
-     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Great Cat Spirit|r (NOT TRANSLATED IN :zhCN YET)
-    .turnin 98342 >>Turn in The Great Cat Spirit (NOT TRANSLATED IN :zhCN YET)
-    .accept 98739 >>Accept Blessings of the Great Cat Spirit (NOT TRANSLATED IN :zhCN YET)
+     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Great 猫 精神|r 对话
+    .turnin 98342 >>交任务 The ????????????
+    .accept 98739 >>接受任务 Blessings of the ????????????
     .target Great Cat Spirit
 step << Druid Skyborne
     .goto 1450/1,-2395.400,7361.400
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Avatar of Saeyleenan::272054|r (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Avatar of Saeyleenan::272054|r 对话
     .target Avatar of Saeyleenan::272054
-    .turnin 98404 >>Turn in The Great Windborne Cat Spirit (NOT TRANSLATED IN :zhCN YET)
-    .accept 98738 >>Accept Blessings of the Great Windborne Cat Spirit (NOT TRANSLATED IN :zhCN YET)
+    .turnin 98404 >>交任务 The Great Windborne 猫 精神
+    .accept 98738 >>接受任务 Blessings of the Great Windborne 猫 精神
 step << Druid
     #completewith next
     .cast 18960 >>|cRXP_WARN_施放|r |T135758:0|t[传送：月光林地]
     .zoneskip Moonglade
 step << Druid
     .goto 1450/1,-2678.200,8021.500
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dendrite Starblaze::11802|r (NOT TRANSLATED IN :zhCN YET)
-    .turnin 98738 >>Turn in Blessings of the Great Windborne Cat Spirit (NOT TRANSLATED IN :zhCN YET) << Skyborne
-    .turnin 98739 >>Turn in Blessings of the Great Cat Spirit (NOT TRANSLATED IN :zhCN YET) << !Skyborne
-    .accept 98362 >>Accept To Thunder Bluff (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德迪利特·星焰::11802|r 对话
+    .turnin 98738 >>交任务 Blessings of the Great Windborne 猫 精神 << Skyborne
+    .turnin 98739 >>交任务 Blessings of the ???????????? << !Skyborne
+    .accept 98362 >>接受任务 To 雷霆崖
     .target Dendrite Starblaze::11802
 step << Druid
     .hs >> 使用炉石返回雷霆崖
@@ -4167,7 +4167,7 @@ step << Druid
 step << Druid
     .goto 1456/1,-281.59,-1039.61
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_图拉克|r 对话
-    .turnin 98362 >>Turn in Thunder Bluff (NOT TRANSLATED IN :zhCN YET)
+    .turnin 98362 >>交任务 雷霆崖
     .target 图拉克·符文图腾
 step << Hunter
     #completewith HunterTraining2
@@ -4325,11 +4325,11 @@ step << Warlock
 RXPGuides.RegisterGuide([[
 #forever
 << Horde
-#name 21-22 Wailing Caverns
+#name 21-22 哀嚎洞穴
 #next RestedXP 部落 22-30级\22-24级 希尔斯布莱德
 #version 11
 #group RestedXP 无限 地下城指南 (部落)
-#subgroup Dungeon Guide 1-22
+#subgroup 地下城指南 1-22级
 --#groupid RXP-SRGCE-H1
 
 step
@@ -4338,7 +4338,7 @@ step
     .goto 1414/1,-2216.5,-742.43,30 >>现在你应该开始寻找哀嚎洞穴的小队
 step << Warlock
     #completewith EnterWC
-    .zone The Barrens >>Run back into the Barrens (NOT TRANSLATED IN :zhCN YET)
+    .zone The Barrens >>返回 Barrens
 step
     #completewith EnterWC
     .subzone 387 >> 前往甜水绿洲
@@ -4406,8 +4406,8 @@ step
     .goto 1414/1,-2039.86,-801.31
 step
     #completewith EnterWC
-    +|cRXP_WARN_It is recommended to divide the quests "Serpentbloom" and "Deviate Hides" if you're doing only 1 run|r (NOT TRANSLATED IN :zhCN YET)
-    >>|cRXP_WARN_There won't enough |cRXP_PICK_Serpentbloom|r and |cRXP_LOOT_Deviate Hides|r for everybody|r (NOT TRANSLATED IN :zhCN YET)
+    +|cRXP_WARN_建议只做一次时,分开接受"毒蛇花"和"变异皮革"任务|r
+    >>|cRXP_WARN_没有足够的 |cRXP_PICK_毒蛇花|r 和 |cRXP_LOOT_变异皮革|r 给每个人|r
     .isOnQuest 962,1486
 step
     #optional
@@ -4601,7 +4601,7 @@ step
     .isOnQuest 962
 step
     #completewith next
-    .subzone 380 >>Leave your party while inside WC to get teleported to the Crossroads graveyard (after 1 minute) (NOT TRANSLATED IN :zhCN YET)
+    .subzone 380 >>在WC内离开你的队伍,以便在1分钟后被传送到Crossroads墓地
     .subzoneskip 392
 step
     #completewith GShard
@@ -4844,14 +4844,14 @@ step
 step << Paladin
     #optional
     .goto 1456/1,253.900,-950.200
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alodan|r (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Alodan|r 对话
     .train 1866 >>训练你的职业技能
     .target Alodan the Hopeful 
     .xp <20,1
     .xp >22,1
 step << Paladin
     .goto 1456/1,253.900,-950.200
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alodan|r (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Alodan|r 对话
     .train 1026 >>训练你的职业技能
     .target Alodan the Hopeful 
     .xp <22,1
@@ -5193,7 +5193,7 @@ step << skip
     .target 诺格
 step
     .goto 1454/1,-4739.57,2036.84
-    .gossipoption 95758 >>Talk to |cRXP_FRIENDLY_Sovik|r (NOT TRANSLATED IN :zhCN YET)
+    .gossipoption 95758 >>与 |cRXP_FRIENDLY_索维克|r 对话
     .isNotOnQuest 2842
     .target 索维克
 step
@@ -5204,7 +5204,7 @@ step
     .target 索维克
 step << skip
     #optional
-    .abandon 2841 >> Abandon Rig Wars. Make sure you have Chief Engineer Scooty in your quest log (NOT TRANSLATED IN :zhCN YET)
+    .abandon 2841 >> 放弃任务 设备之战。确保你的任务日志中有 主工程师斯库提
     .dungeon !GNOMER
 step << Rogue
     .goto 1454/1,-4355.53,1520.68

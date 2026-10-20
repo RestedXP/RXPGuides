@@ -8,13 +8,13 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #name 1-6级 幽影谷
 #version 1
-#group RestedXP 无限 地下城指南 (联盟)
-#subgroup Dungeon Guide 1-20
+#group Forever 地下城 向导 A
+#subgroup 地下城指南 1-20
 --#groupid RXP-SRGCE-A1
 #defaultfor NightElf
 #next 6-11级 泰达希尔
 step
-#include RestedXP 无限指南 (联盟)\1-6级 幽影谷
+#include RestedXP Forever 指南 A\1-6级 幽影谷
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -23,12 +23,12 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #name 6-11级 泰达希尔
 #version 1
-#group RestedXP 无限 地下城指南 (联盟)
-#subgroup Dungeon Guide 1-20
+#group Forever 地下城 向导 A
+#subgroup 地下城指南 1-20
 --#groupid RXP-SRGCE-A1
 #defaultfor NightElf
-#next 11-16 Darkshore/Loch Modan
+#next 11-16 黑海岸/洛克莫丹
 
 step
-#include RestedXP 无限指南 (联盟)\6-11级 泰达希尔
+#include RestedXP Forever 指南 A\6-11级 泰达希尔
 ]])

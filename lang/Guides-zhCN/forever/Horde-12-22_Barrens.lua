@@ -10,7 +10,7 @@ RXPGuides.RegisterGuide([[
 #displayname 14-18级 贫瘠之地 << !Shaman !Hunter !Tauren
 #displayname 15-18级 贫瘠之地 << Paladin
 #version 11
-#group RestedXP 无限指南 (部落)
+#group RestedXP 永久指南 (H)
 #subgroup 速通指南 1-22级
 --#groupid RXP-SRGCE-H1
 #next 17-22级 石爪山脉/贫瘠之地/灰谷
@@ -785,7 +785,7 @@ step << Orc Rogue/Troll Rogue
     #optional
 	#completewith SouthSea
 	>>杀死 |cRXP_ENEMY_塔赞|r。从他身上拾取战利品 |cRXP_LOOT_背包|r
-    >>|cRXP_WARN_He spawns at the first camp and patrols up the hill|r (NOT TRANSLATED IN :zhCN YET)
+    >>|cRXP_WARN_他在第一个营地生成，并沿着山坡向上巡逻|r
 	.complete 1963,1 --Tazan's Satchel (1)
     .unitscan Tazan
 step
@@ -833,7 +833,7 @@ step << Orc Rogue/Troll Rogue
     .goto 1413/1,-3895.600,-1365.000,50,0
     .goto 1413/1,-3826.300,-1487.300,50,0
 	>>杀死 |cRXP_ENEMY_塔赞|r。从他身上拾取战利品 |cRXP_LOOT_背包|r
-    >>|cRXP_WARN_He spawns at the first camp and patrols up the hill|r (NOT TRANSLATED IN :zhCN YET)
+    >>|cRXP_WARN_他在第一个营地生成，并沿着山坡向上巡逻|r
 	.complete 1963,1 --Tazan's Satchel (1)
     .unitscan Tazan
 step
@@ -1276,7 +1276,7 @@ step
     .goto 1413/1,-1483.11,66.67,50,0
     .goto 1413/1,-1531.75,180.85,50,0
     .goto 1413/1,-1462.84,214.63,50,0
-    >>Kill |cRXP_ENEMY_Savannah Prowlers|r. Loot them for their |cRXP_LOOT_Claws|r (NOT TRANSLATED IN :zhCN YET)
+    >>杀死 |cRXP_ENEMY_Savannah Prowlers|r。拾取它们的 |cRXP_LOOT_Claws|r
     .complete 903,1 --Prowler Claws (7)
     .mob 草原徘徊者
     .isQuestAvailable 819
@@ -1333,8 +1333,8 @@ step
     .goto 1413/1,-1960.600,653.700,50,0
     .goto 1413/1,-1871.600,653.700,50,0
     .goto 1413/1,-1729.700,592.400,50,0
-    >>Kill |cRXP_ENEMY_Savannah Patriarchs|r. Loot them for their |cRXP_LOOT_Hides|r and |cRXP_LOOT_Tusks|r (NOT TRANSLATED IN :zhCN YET)
-    >>|cRXP_WARN_If the |cRXP_ENEMY_Savannah Patriarchs|r are heavily contested consider skipping this quest for now, it can be completed later|r (NOT TRANSLATED IN :zhCN YET)
+    >>杀死 |cRXP_ENEMY_Savannah Patriarchs|r。拾取它们的 |cRXP_LOOT_Hides|r 和 |cRXP_LOOT_獠牙|r
+    >>|cRXP_WARN_如果 |cRXP_ENEMY_Savannah Patriarchs|r 争夺激烈，考虑暂时跳过此任务，可以稍后完成|r
     .complete 95494,1 --|6/6 Savannah Lion Hide
     .complete 821,1 --Savannah Lion Tusk (5)
     .disablecheckbox
@@ -1350,8 +1350,8 @@ step
     .goto 1413/1,-1960.600,653.700,50,0
     .goto 1413/1,-1871.600,653.700,50,0
     .goto 1413/1,-1729.700,592.400,50,0
-    >>Kill |cRXP_ENEMY_Savannah Patriarchs|r. Loot them for their |cRXP_LOOT_Hides|r (NOT TRANSLATED IN :zhCN YET)
-    >>|cRXP_WARN_If the |cRXP_ENEMY_Savannah Patriarchs|r are heavily contested consider skipping this quest for now, it can be completed later|r (NOT TRANSLATED IN :zhCN YET)
+    >>杀死 |cRXP_ENEMY_Savannah Patriarchs|r。拾取它们的 |cRXP_LOOT_Hides|r
+    >>|cRXP_WARN_如果 |cRXP_ENEMY_Savannah Patriarchs|r 争夺激烈，考虑暂时跳过此任务，可以稍后完成|r
     .complete 95494,1 --|6/6 Savannah Lion Hide
     .mob Savannah Patriarch
     .isQuestAvailable 819
@@ -1475,7 +1475,7 @@ step
 step
     #optional
     #completewith RaptorHeadsComplete
-    >>Kill |cRXP_ENEMY_Savannah Prowlers|r. Loot them for their |cRXP_LOOT_Claws|r (NOT TRANSLATED IN :zhCN YET)
+    >>杀死 |cRXP_ENEMY_Savannah Prowlers|r。拾取它们的 |cRXP_LOOT_Claws|r
     .complete 903,1 --Prowler Claws (7)
     .mob 草原徘徊者
     .isQuestAvailable 819
@@ -1512,7 +1512,7 @@ step
     .goto 1413/1,-2859.800,565.900,50,0
     .goto 1413/1,-3023.000,530.700,50,0
     .goto 1413/1,-2897.500,642.200,50,0
-    >>Kill |cRXP_ENEMY_Savannah Prowlers|r. Loot them for their |cRXP_LOOT_Claws|r (NOT TRANSLATED IN :zhCN YET)
+    >>杀死 |cRXP_ENEMY_Savannah Prowlers|r。拾取它们的 |cRXP_LOOT_Claws|r
     .complete 903,1 --Prowler Claws (7)
     .mob 草原徘徊者
     .isQuestAvailable 819
@@ -2582,10 +2582,10 @@ RXPGuides.RegisterGuide([[
 #name 17-22级 石爪山脉/贫瘠之地/灰谷
 #displayname 18-22级 石爪山脉/贫瘠之地/灰谷 << !Shaman !Hunter !Tauren
 #version 11
-#group RestedXP 无限指南 (部落)
+#group RestedXP 永久指南 (H)
 #subgroup 速通指南 1-22级
 --#groupid RXP-SRGCE-H1
-#next 22-24 Hillsbrad
+#next 22-24级 希尔斯布莱德
 
 
 step
@@ -3163,7 +3163,7 @@ step
     .mob 绿洲钳嘴龟
 step
     #completewith IshamuhalesFang
-    >>Kill |cRXP_ENEMY_Savannah Matriarchs|r and |cRXP_ENEMY_Savannah Patriarchs|r. Loot them for their |cRXP_LOOT_Hides|r (NOT TRANSLATED IN :zhCN YET)
+    >>杀死 |cRXP_ENEMY_Savannah Matriarchs|r 和 |cRXP_ENEMY_Savannah Patriarchs|r。拾取它们的 |cRXP_LOOT_Hides|r
     .complete 95494,1 --|6/6 Savannah Lion Hide
     .mob Savannah Matriarch
     .mob Savannah Patriarchs
@@ -3185,7 +3185,7 @@ step
     .goto 1413/1,-3633.200,-600.500,50,0
     .goto 1413/1,-3469.100,-495.000,50,0
     .goto 1413/1,-3428.300,-584.300,50,0
-    >>Kill |cRXP_ENEMY_Savannah Matriarchs|r and |cRXP_ENEMY_Savannah Patriarchs|r. Loot them for their |cRXP_LOOT_Hides|r (NOT TRANSLATED IN :zhCN YET)
+    >>杀死 |cRXP_ENEMY_Savannah Matriarchs|r 和 |cRXP_ENEMY_Savannah Patriarchs|r。拾取它们的 |cRXP_LOOT_Hides|r
     .complete 95494,1 --|6/6 Savannah Lion Hide
     .mob Savannah Matriarch
     .mob Savannah Patriarchs
@@ -3229,7 +3229,7 @@ step
 step
     #optional
     #completewith XroadsHS2
-    .destroy 5570 >>|cRXP_WARN_Delete any|r |T132834:0|t[Deepmoss Spider Eggs] |cRXP_WARN_you have left|r (NOT TRANSLATED IN :zhCN YET)
+    .destroy 5570 >>|cRXP_WARN_删除任何|r |T132834:0|t[[DEPRECATED] 深苔蜘蛛的卵] |cRXP_WARN_你剩余的|r
 step
     .goto 1413/1,-3687.11,-981.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德罗恩|r 对话
@@ -3281,7 +3281,7 @@ step
     .goto 1413/1,-3973.000,-1028.700
     >>击杀棘齿城附近海中的 |cRXP_PICK_布鲁兹|r（20级精英怪）
     >>|cRXP_WARN_这个任务很难！如果可能的话请组队|r << !Rogue !Warrior
-    >>|cRXP_WARN_Try to kite him to Ratchet to guards who will help, but make sure to deal at least 50% damage!|r (NOT TRANSLATED IN :zhCN YET)
+    >>|cRXP_WARN_尝试把他引到 棘齿城 的守卫那里，他们会帮助你，但确保你造成至少50%的伤害！|r
     .complete 92706,1 --Kill Bruuz
     .mob Bruuz
     .isOnQuest 92706
@@ -3846,7 +3846,7 @@ step << Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_图拉克|r 对话
     .trainer >>训练你的职业技能
     .accept 27 >>接受任务必修的课程
-    .accept 98340 >>Accept The Great Cat Spirit (NOT TRANSLATED IN :zhCN YET)
+    .accept 98340 >>接受任务 The ????????????
     .target 图拉克·符文图腾
 step << Druid
     #completewith next
@@ -3857,9 +3857,9 @@ step << Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德迪利特|r 对话
     .turnin 27 >>交任务必修的课程
     .accept 28 >>接受任务湖中试炼
-    .turnin 98340 >>Turn in The Great Cat Spirit (NOT TRANSLATED IN :zhCN YET)
-    .accept 98341 >>Accept The Great Windborne Cat Spirit (NOT TRANSLATED IN :zhCN YET) << Skyborne
-    .accept 98405 >>Accept The Great Cat Spirit (NOT TRANSLATED IN :zhCN YET) << !Skyborne
+    .turnin 98340 >>交任务 The ????????????
+    .accept 98341 >>接受任务 The Great Windborne 猫 精神 << Skyborne
+    .accept 98405 >>接受任务 The ???????????? << !Skyborne
     .target 德迪利特·星焰
 step << Druid
     #completewith next
@@ -3879,62 +3879,62 @@ step << Druid
     .target 塔加里
 step << Druid !Skyborne
     .goto 1450/1,-2640.000,7338.900
-     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Great Cat Spirit|r (NOT TRANSLATED IN :zhCN YET)
-    .turnin 98405 >>Turn in The Great Cat Spirit (NOT TRANSLATED IN :zhCN YET)
-    .accept 98342 >>Accept The Great Cat Spirit (NOT TRANSLATED IN :zhCN YET)
+     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Great 猫 精神|r 对话
+    .turnin 98405 >>交任务 The ????????????
+    .accept 98342 >>接受任务 The ????????????
     .target Great Cat Spirit
 step << Druid Skyborne
     .goto 1450/1,-2352.700,7375.600,10,0
     .goto 1450/1,-2394.300,7361.200
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Avatar of Saeyleenan::272054|r (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Avatar of Saeyleenan::272054|r 对话
     .target Avatar of Saeyleenan::272054
-    .turnin 98341 >>Turn in The Great Windborne Cat Spirit (NOT TRANSLATED IN :zhCN YET)
-    .accept 98404 >>Accept The Great Windborne Cat Spirit (NOT TRANSLATED IN :zhCN YET)
+    .turnin 98341 >>交任务 The Great Windborne 猫 精神
+    .accept 98404 >>接受任务 The Great Windborne 猫 精神
 step << Druid
     #completewith next
     .goto 1450/1,-3046.700,7534.400
     --aura 1309054?
-    .subzone 2363 >> Head to the Stormrage Barrow Dens (NOT TRANSLATED IN :zhCN YET)
+    .subzone 2363 >> 前往 怒风兽穴
 step << Druid
-    >>Go deep into the cave, travel across the bridge, look for a cat statue inside an alcove and click on the small orb next to the statue (NOT TRANSLATED IN :zhCN YET)
-    >>Loot |cRXP_LOOT_Relic of the Claw|r (NOT TRANSLATED IN :zhCN YET)
+    >>深入洞穴，穿过桥梁，寻找壁龛内的猫雕像，点击雕像旁边的小球
+    >>拾取 |cRXP_LOOT_Relic of the Claw|r
     .goto 1450/1,-3117.400,7455.300
     .complete 98404,2 << Skyborne --|1/1 Relic of the Claw
     .complete 98342,2 << !Skyborne --|1/1 Relic of the Claw
 step << Druid
-    >>Click on the small orb next to the cat statue (NOT TRANSLATED IN :zhCN YET)
-    >>Loot |cRXP_LOOT_Relic of the Silent Shadow|r (NOT TRANSLATED IN :zhCN YET)
+    >>点击猫雕像旁边的小球
+    >>拾取 |cRXP_LOOT_Relic of the Silent 小影|r
     .goto 1450/1,-3099.200,7485.700
     .complete 98404,3  << Skyborne --|1/1 Relic of the Silent Shadow
     .complete 98342,3  << !Skyborne --|1/1 Relic of the Silent Shadow
 step << Druid
-    >>Click on the small orb next to the cat statue (NOT TRANSLATED IN :zhCN YET)
-    >>Loot |cRXP_LOOT_Relic of the Fang|r (NOT TRANSLATED IN :zhCN YET)
+    >>点击猫雕像旁边的小球
+    >>拾取 |cRXP_LOOT_Relic of the 利牙|r
     .goto 1450/1,-3054.100,7476.800
     .complete 98404,1  << Skyborne --|1/1 Relic of the Fang
     .complete 98342,1  << !Skyborne --|1/1 Relic of the Fang
 step << Druid !Skyborne
     .goto 1450/1,-2640.000,7338.900
-     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Great Cat Spirit|r (NOT TRANSLATED IN :zhCN YET)
-    .turnin 98342 >>Turn in The Great Cat Spirit (NOT TRANSLATED IN :zhCN YET)
-    .accept 98739 >>Accept Blessings of the Great Cat Spirit (NOT TRANSLATED IN :zhCN YET)
+     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Great 猫 精神|r 对话
+    .turnin 98342 >>交任务 The ????????????
+    .accept 98739 >>接受任务 Blessings of the ????????????
     .target Great Cat Spirit
 step << Druid Skyborne
     .goto 1450/1,-2395.400,7361.400
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Avatar of Saeyleenan::272054|r (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Avatar of Saeyleenan::272054|r 对话
     .target Avatar of Saeyleenan::272054
-    .turnin 98404 >>Turn in The Great Windborne Cat Spirit (NOT TRANSLATED IN :zhCN YET)
-    .accept 98738 >>Accept Blessings of the Great Windborne Cat Spirit (NOT TRANSLATED IN :zhCN YET)
+    .turnin 98404 >>交任务 The Great Windborne 猫 精神
+    .accept 98738 >>接受任务 Blessings of the Great Windborne 猫 精神
 step << Druid
     #completewith next
     .cast 18960 >>|cRXP_WARN_施放|r |T135758:0|t[传送：月光林地]
     .zoneskip Moonglade
 step << Druid
     .goto 1450/1,-2678.200,8021.500
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dendrite Starblaze::11802|r (NOT TRANSLATED IN :zhCN YET)
-    .turnin 98738 >>Turn in Blessings of the Great Windborne Cat Spirit (NOT TRANSLATED IN :zhCN YET) << Skyborne
-    .turnin 98739 >>Turn in Blessings of the Great Cat Spirit (NOT TRANSLATED IN :zhCN YET) << !Skyborne
-    .accept 98362 >>Accept To Thunder Bluff (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德迪利特·星焰::11802|r 对话
+    .turnin 98738 >>交任务 Blessings of the Great Windborne 猫 精神 << Skyborne
+    .turnin 98739 >>交任务 Blessings of the ???????????? << !Skyborne
+    .accept 98362 >>接受任务 To 雷霆崖
     .target Dendrite Starblaze::11802
 step << Druid
     .hs >> 使用炉石返回雷霆崖
@@ -3953,7 +3953,7 @@ step << Druid
 step << Druid
     .goto 1456/1,-281.59,-1039.61
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_图拉克|r 对话
-    .turnin 98362 >>Turn in Thunder Bluff (NOT TRANSLATED IN :zhCN YET)
+    .turnin 98362 >>交任务 雷霆崖
     .target 图拉克·符文图腾
 step << Hunter
     #completewith HunterTraining2
@@ -4142,7 +4142,7 @@ step
     .goto 1413/1,-1960.600,653.700,50,0
     .goto 1413/1,-1871.600,653.700,50,0
     .goto 1413/1,-1729.700,592.400,50,0
-    >>Kill |cRXP_ENEMY_Savannah Patriarchs|r. Loot them for their |cRXP_LOOT_Hides|r (NOT TRANSLATED IN :zhCN YET)
+    >>杀死 |cRXP_ENEMY_Savannah Patriarchs|r。拾取它们的 |cRXP_LOOT_Hides|r
     .complete 95494,1 --|6/6 Savannah Lion Hide
     .mob Savannah Patriarch
 step
@@ -4226,8 +4226,8 @@ step << Hunter
     #optional
     .goto 1413/1,-2253.24,1246.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_托雷克|r 对话
-    .accept 3513 >>Accept The Runed Scroll (NOT TRANSLATED IN :zhCN YET)
-    .turnin 3513 >>Turn in The Runed Scroll (NOT TRANSLATED IN :zhCN YET)
+    .accept 3513 >>接受任务 符文卷轴
+    .turnin 3513 >>交任务 符文卷轴
     .target Kadrak
     .itemcount 10621,1
 step << Hunter
@@ -4663,7 +4663,7 @@ step
 step
     #ah
     #completewith WrathtailHeads
-    +|cRXP_WARN_Save all the|r |T134332:0|t[Shredder Operating Manual Pages] |cRXP_WARN_you loot|r (NOT TRANSLATED IN :zhCN YET)
+    +|cRXP_WARN_保存|r 你拾取的所有 |T134332:0|t[切割机 Operating 手动 Pages]
 step
    .goto 1440/1,1004.54,3341.83
    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_穆格拉什|r 对话
@@ -4823,7 +4823,7 @@ step
     #ah
     .goto 1456/1,24.85,-1252.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_彻斯姆|r 对话
-    .bankdeposit 16645,16646,16647,16648,16649,16650,16651,16652,16653,16654,16655,16656 >>Deposit all your |T134332:0|t[Shredder Operating Manual Pages] (NOT TRANSLATED IN :zhCN YET)
+    .bankdeposit 16645,16646,16647,16648,16649,16650,16651,16652,16653,16654,16655,16656 >>存放 你的 |T134332:0|t[切割机 Operating 手动 Pages]
     .target 彻斯姆
 step << Warlock
     .goto 1456/1,26.1,-1196.66

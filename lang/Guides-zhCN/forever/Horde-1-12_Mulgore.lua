@@ -9,7 +9,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 1-6级 莫高雷
 #version 11
-#group RestedXP 无限指南 (部落)
+#group RestedXP 永久指南 (H)
 #subgroup 速通指南 1-22级
 --#groupid RXP-SRGCE-H1
 #defaultfor Tauren
@@ -108,8 +108,8 @@ step
     .target 鹰风酋长
 step << Shaman
     .goto 1412/1,-216.18,-2926.26--c:Mulgore,44.07,77.47
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marjak|r (NOT TRANSLATED IN :zhCN YET)
-    .vendor >> Vendor trash. Sell your weapon if it gives you enough money for a |T135139:0|t[Short Staff] (1s 02c). You'll come back later if you don't have enough yet (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Marjak|r 对话
+    .vendor >> 商人垃圾。卖掉你的武器，如果能换到足够的钱购买 |T135139:0|t[学徒法杖] (1s 02c)。如果现在没有足够的钱，你稍后可以回来。
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<1.9
     .target 马沙克·利刃
@@ -380,7 +380,7 @@ step
     .target 卫兵维萨罗·风羽
 step
     .goto 1412/1,-279.37,-2893.73--c:Mulgore,45.30,76.52
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kawnie Softbreeze|r (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Kawnie Softbreeze|r 对话
     .vendor >> 把垃圾物品卖给商人
     .target 卡文尼·柔风
 step
@@ -456,7 +456,7 @@ step << Warrior
     .goto 1412/1,-213.61,-2880.71--c:Mulgore,44.02,76.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哈鲁特·雷角|r 对话
     .train 3127 >>学习 |T132269:0|t[招架]
-    .train 6343 >>学习 |T136105:0|t[雷霆一击]
+    .train 6343 >>训练|T136105:0|t|T136105:0|t[雷霆一击]
     .target 哈鲁特·雷角
     .money <0.02
 step << Warrior
@@ -479,7 +479,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 6-12级 莫高雷
 #version 11
-#group RestedXP 无限指南 (部落)
+#group RestedXP 永久指南 (H)
 #subgroup 速通指南 1-22级
 --#groupid RXP-SRGCE-H1
 #defaultfor Tauren
@@ -1225,9 +1225,9 @@ step
     .target 哈兰特·铁枝
 step
     .goto 1412/1,-285.000,-2263.400
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pyall|r (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Pyall|r 对话
     .train 2550 >>学习烹饪
-    .turnin 96661 >>Turn in Camping 101: Cooking (NOT TRANSLATED IN :zhCN YET)
+    .turnin 96661 >>交任务 Camping 101：烹饪
     .target Pyall Silentstride
 step
     .goto 1412/1,-392.500,-2318.500
@@ -2304,7 +2304,7 @@ step
     #label Fish
     #requires Kah
     .goto Thunder Bluff,40.42,58.55
-    >>在池塘里钓鱼，直到获得一条|T133894:0|t[|cRXP_LOOT_新鲜的美味小鱼|r]
+    >>在池塘里钓鱼，直到获得一条|T133894:0|t|T133894:0|t[|cRXP_LOOT_新鲜的美味小鱼|r]
     .collect 6291,1,76240,1 --Raw Brilliant Smallfish (1)
 step
     >>|cRXP_WARN_使用|r |T132147:0|t[一套匕首] |cRXP_WARN_来制造|r |T134007:0|t[鱼块]

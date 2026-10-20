@@ -8,7 +8,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 1-6级 杜隆塔尔
 #version 11
-#group RestedXP 无限指南 (部落)
+#group RestedXP 永久指南 (H)
 #subgroup 速通指南 1-22级
 --#groupid RXP-SRGCE-H1
 #defaultfor Troll/Orc
@@ -154,7 +154,7 @@ step << Warlock
     .goto 1411/1,-4319.67,-169.190,40,0
     .goto 1411/1,-4303.28,-186.46,40,0
     .goto 1411/1,-4281.07,-148.75,40,0
-    >>击杀 |cRXP_ENEMY_邪灵劣魔|r。拾取他们的 |cRXP_LOOT_邪灵劣魔的头颅|r
+    >>击杀 |cRXP_ENEMY_邪灵劣魔|r，拾取 |cRXP_LOOT_邪灵劣魔的徽记|r
     .complete 1485,1 --Vile Familiar Head (6)
     .mob 邪灵劣魔
 step
@@ -286,7 +286,7 @@ step
     .accept 3084 >>接受任务 符文石板 << Troll Shaman
     .accept 3085 >>接受任务 神圣石板 << Troll Priest
     .accept 3086 >>接受任务 雕文石板 << Troll Mage
-    .accept 98575 >>Accept Tainted Tablet (NOT TRANSLATED IN :zhCN YET) << Troll Warlock
+    .accept 98575 >>接受污染的石板 << Troll Warlock
     .accept 3087 >>接受任务 风蚀羊皮纸 << Orc Hunter
     .accept 3088 >>接受任务 密文羊皮纸 << Orc Rogue
     .accept 3089 >>接受任务 符文羊皮纸 << Orc Shaman
@@ -324,7 +324,7 @@ step
     .isQuestComplete 97279
 step
     #optional
-    .abandon 97279 >>Abandon Wayward Weapons (NOT TRANSLATED IN :zhCN YET)
+    .abandon 97279 >>放弃迷途的武器
 step << Shaman
     .goto 1411/1,-4102.600,-588.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_克赞|r 对话
@@ -360,7 +360,7 @@ step << Warlock
     .goto 1411/1,-4111.87,-607.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_纳托克|r 对话
     .turnin 3090 >>交任务 被污染的羊皮纸 << Orc Warlock
-    .turnin 98575 >>Turn in Tainted Tablet (NOT TRANSLATED IN :zhCN YET) << Troll Warlock
+    .turnin 98575 >>交还污染的石板 << Troll Warlock
     .train 172 >> 学习 |T136118:0|t[腐蚀术]
     .target 纳托克
 step
@@ -994,7 +994,7 @@ step << Warrior
     .goto 1411/1,-4230.31,-639.43
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_弗朗恩|r 对话
     .train 3127 >>学习 |T132269:0|t[招架]
-    .train 6343 >>学习 |T136105:0|t[雷霆一击]
+    .train 6343 >>训练|T136105:0|t|T136105:0|t[雷霆一击]
     .target 弗朗恩
     .money <0.02
 step << Warrior
@@ -1033,7 +1033,7 @@ step << Warlock
     #label Hraug3
     .goto 1411/1,-4107.11,-604.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_赫劳格|r 对话
-    >>|cRXP_BUY_从他那里购买|r |T133738:0|t[魔典：血契]|cRXP_BUY_|r
+    >>|cRXP_BUY_购买|r |T133738:0|t[魔典:血契]|cRXP_BUY_从他那里|r
     .collect 16321,1,817,1 --Grimoire of Blood Pact
     .vendor >>把垃圾物品卖给商人
     .target 赫劳格
@@ -1099,7 +1099,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 6-10级 杜隆塔尔
 #version 11
-#group RestedXP 无限指南 (部落)
+#group RestedXP 永久指南 (H)
 #subgroup 速通指南 1-22级
 --#groupid RXP-SRGCE-H1
 #defaultfor Troll/Orc
@@ -1320,7 +1320,7 @@ step
     .goto 1411/1,-4908.69,-998.27,40,0
     .goto 1411/1,-4829.91,-1091.33,40,0
     .goto 1411/1,-4722.57,-1117.42,40,0
-    >>沿着海滩前进。击杀 |cRXP_ENEMY_海蟹|r 和 |cRXP_ENEMY_龙虾人|r，拾取它们掉落的 |cRXP_LOOT_粘液|r 和 |cRXP_LOOT_眼睛|r。你不需要在这里完成这一步。
+    >>沿着海滩往下跑。击杀|cRXP_ENEMY_海浪蟹|r和|cRXP_ENEMY_龙虾人|r。拾取它们的|cRXP_LOOT_蟹胶|r 和 |cRXP_LOOT_眼球|r。你不需要在这里完成这一步。
     .complete 818,2 --Crawler Mucus (8)
     .mob 海浪蟹
     .mob 成熟海浪蟹
@@ -2900,7 +2900,7 @@ step << Hunter
     >>记得每当你的宠物获得训练点时，为其进行|cRXP_WARN_ |T132162:0|t[野兽训练]|r
 step << Hunter
     .goto 1454/1,-4819.1,2099.05
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_森度吉安|r|cRXP_BUY_交谈。从他那里购买一把|r |T135499:0|t[多层弯弓] |cRXP_BUY_|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|T135499:0|t|cRXP_BUY_与|r |cRXP_FRIENDLY_森度吉安|r|cRXP_BUY_交谈。从他那里购买一把|r |T135499:0|t|T135499:0|t[多层弯弓] |cRXP_BUY_|r
     .collect 2507,1,835,1 --Collect Laminated Recurve Bow (1)
     .money <0.1751
     .itemStat 18,QUALITY,<7
@@ -3094,7 +3094,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 10-12级 杜隆塔尔
 #version 11
-#group RestedXP 无限指南 (部落)
+#group RestedXP 永久指南 (H)
 #subgroup 速通指南 1-22级
 --#groupid RXP-SRGCE-H1
 #defaultfor Troll/Orc
@@ -3731,7 +3731,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 10-12级 提瑞斯法 （兽人/巨魔）
 #version 11
-#group RestedXP 无限指南 (部落)
+#group RestedXP 永久指南 (H)
 #subgroup 速通指南 1-22级
 --#groupid RXP-SRGCE-H1
 #defaultfor !Hunter !Shaman !Tauren !Skyborne !Undead

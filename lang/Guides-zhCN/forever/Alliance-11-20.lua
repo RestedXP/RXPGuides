@@ -9,7 +9,7 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #name 13-15级 西部荒野
 #displayname 14-15级 西部荒野 << Dwarf/Gnome
-#group RestedXP 无限指南 (联盟)
+#group RestedXP Forever 指南 A
 #subgroup 速通指南 1-20级
 --#groupid RXP-SRGCE-A1
 #next 14-16级 黑海岸
@@ -191,7 +191,7 @@ step
 step
     .goto 1436/0,1748.27,-10672.13
     >>打开 |cRXP_PICK_阿历克斯顿的箱子|r。拾取其中的 |cRXP_LOOT_简易罗盘|r
-    >>|cRXP_WARN_Avoid the mobs in front of the burnt building. Loot it from the back, beside the chimney. Use the chimney to LoS the casts of |cRXP_ENEMY_Pillagers|r if required|r (NOT TRANSLATED IN :zhCN YET)
+    >>|cRXP_WARN_避开燃烧建筑前面的小怪。从背面、烟囱旁拾取 战利品。使用烟囱躲避 |cRXP_ENEMY_Pillagers|r 的施法（如果需要）|r
     .complete 399,1 --A Simple Compass (1)
     .isOnQuest 399
 step
@@ -731,7 +731,7 @@ step
     #requires DockTravel
     #label DarkshoreCook1
     #completewith DarkshoreBoat
-    >>|cRXP_WARN_While waiting for the Boat on the dock:|r (NOT TRANSLATED IN :zhCN YET)
+    >>|cRXP_WARN_在码头等待船只期间:|r
     .cast 818 >>|cRXP_WARN_创建|r |T135805:0|t[基础营火] |cRXP_WARN_（在你的专业技能书中）|r
     .usespell 818
     .zoneskip Darkshore
@@ -745,7 +745,7 @@ step
     #requires DarkshoreCook1
     #label DarkshoreCook2
     #completewith DarkshoreBoat
-    >>|cRXP_WARN_While waiting for the Boat on the dock:|r (NOT TRANSLATED IN :zhCN YET)
+    >>|cRXP_WARN_在码头等待船只期间:|r
     .cast 818 >>|cRXP_WARN_创建|r |T135805:0|t[基础营火] |cRXP_WARN_（在你的专业技能书中）|r
     .usespell 818
     .zoneskip Darkshore
@@ -759,7 +759,7 @@ step
     #requires DarkshoreCook2
     #label DarkshoreCook3
     #completewith DarkshoreBoat
-    >>|cRXP_WARN_While waiting for the Boat on the dock:|r (NOT TRANSLATED IN :zhCN YET)
+    >>|cRXP_WARN_在码头等待船只期间:|r
     .cast 818 >>|cRXP_WARN_创建|r |T135805:0|t[基础营火] |cRXP_WARN_（在你的专业技能书中）|r
     .usespell 818
     .zoneskip Darkshore
@@ -826,7 +826,7 @@ RXPGuides.RegisterGuide([[
 #disabledungeons
 #version 1
 << Alliance
-#group RestedXP 无限指南 (联盟)
+#group RestedXP Forever 指南 A
 #subgroup 速通指南 1-20级
 --#groupid RXP-SRGCE-A1
 #name 14-16级 黑海岸
@@ -2353,7 +2353,7 @@ step << NightElf
     .zoneskip Loch Modan
     .zoneskip Dun Morogh
 step << NightElf
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Monty|r on the middle platform in the Deeprun Tram |cRXP_WARN_on the Ironforge side!|r (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_蒙提|r 在矿道地铁的中间平台上对话 |cRXP_WARN_在铁炉堡这一侧!|r
     .accept 6661 >> 接受任务 捕捉矿道老鼠
     .target 蒙提
 step << NightElf
@@ -2362,7 +2362,7 @@ step << NightElf
     .use 17117
     .mob 矿道老鼠
 step << NightElf
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在矿道地铁的中间平台上与 |cRXP_FRIENDLY_蒙提|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 在矿道地铁的中间平台上与 |cRXP_FRIENDLY_蒙提|r 对话
     .turnin 6661 >> 交任务 捕捉矿道老鼠
     .target 蒙提
 step << NightElf
@@ -2923,7 +2923,7 @@ step << NightElf
     .isOnQuest 258
 step << NightElf
     #optional
-    .xp 16-2360 >> Grind untill you're 2360 xp away from level 16 (12.040/14.400) (NOT TRANSLATED IN :zhCN YET)
+    .xp 16-2360 >> 继续升级直到还差2360经验升到16级(12.040/14.400)
 step << NightElf
     >>从旅店跳下去，死在下面的怪物手里
     .deathskip >> 死亡后在塞尔萨玛墓地复活
@@ -3604,7 +3604,7 @@ RXPGuides.RegisterGuide([[
 #disabledungeons
 #version 1
 << Alliance
-#group RestedXP 无限指南 (联盟)
+#group RestedXP Forever 指南 A
 #subgroup 速通指南 1-20级
 --#groupid RXP-SRGCE-A1
 #name 16-19级 黑海岸
@@ -3989,7 +3989,7 @@ step << Hunter
     >>点击 |cRXP_PICK_搁浅的海洋生物|r
     .accept 4733 >> 接受任务 搁浅的海洋生物
     >>|cRXP_WARN_这个任务可能会非常困难。请与 |cRXP_ENEMY_鱼人|r 逐个交战，否则你可能会同时引到多个|r
-    >>|cRXP_WARN_注意 |cRXP_ENEMY_灰雾智者|r 的|r |T136048:0|t[闪电箭] |cRXP_WARN_伤害，他们还会使用|r |T136052:0|t[治疗波] 进行治疗|r
+    >>|cRXP_WARN_注意 |cRXP_ENEMY_灰雾智者|r 的|r |T136048:0|t[闪电箭] |cRXP_WARN_伤害，他们还会使用|r |T136052:0|t[治疗波]|r
     .link https://youtu.be/lfQM3Q-Ag5A >> |cRXP_WARN_点击此处查看视频指南|r
 step
     #completewith CompleteThistleBears
@@ -4000,14 +4000,14 @@ step
     .mob 硬壳潮行蟹
 step << Hunter
     .goto 1439,31.229,85.564
-    >>|cRXP_WARN_注意 |cRXP_ENEMY_灰雾智者|r 的|r |T136048:0|t[闪电箭] |cRXP_WARN_伤害，他们还会使用|r |T136052:0|t[治疗波] 进行治疗|r
+    >>|cRXP_WARN_注意 |cRXP_ENEMY_灰雾智者|r 的|r |T136048:0|t[闪电箭] |cRXP_WARN_伤害，他们还会使用|r |T136052:0|t[治疗波]|r
     >>小心|cRXP_ENEMY_灰雾潮行者|r 会施放 |T136016:0|t[|cRXP_FRIENDLY_毒药|r]，在近战攻击时会留下一个持续伤害，每3秒造成13伤害，持续30秒
     >>点击地上的 |cRXP_PICK_搁浅的海龟|r
     .accept 4732 >> 接受任务 搁浅的海龟
 step
     #label TurtleSouth
     .goto 1439,31.690,83.700
-    >>|cRXP_WARN_注意 |cRXP_ENEMY_灰雾智者|r 的|r |T136048:0|t[闪电箭] |cRXP_WARN_伤害，他们还会使用|r |T136052:0|t[治疗波] 进行治疗|r
+    >>|cRXP_WARN_注意 |cRXP_ENEMY_灰雾智者|r 的|r |T136048:0|t[闪电箭] |cRXP_WARN_伤害，他们还会使用|r |T136052:0|t[治疗波]|r
     >>小心|cRXP_ENEMY_灰雾潮行者|r 会施放 |T136016:0|t[|cRXP_FRIENDLY_毒药|r]，在近战攻击时会留下一个持续伤害，每3秒造成13伤害，持续30秒
     >>点击地上的 |cRXP_PICK_搁浅的海龟|r
     .accept 4731 >> 接受任务 搁浅的海龟
@@ -4468,7 +4468,7 @@ step
     #sticky
     #label DeleteGyromast
     #optional
-    .destroy 7442 >> 从你的背包中摧毁 |T134459:0|t[Gyromast's 钥匙]，因为不再需要了
+    .destroy 7442 >> 从背包中删除|T134459:0|t|T134459:0|t[基尔卡克的钥匙]，因为不再需要了
 step << !NightElf/!Dwarf Hunter/!Human Hunter/!Druid
     #completewith BeachedCloak
     #map Darkshore
@@ -4565,7 +4565,7 @@ step << Dwarf Hunter/Human Hunter/Skyborne Hunter
     #label DarnDwarfHCook1
     #requires TravelDarnDwarfHBoat
     #completewith DarnDwarfHBoat
-    >>|cRXP_WARN_While waiting for the Boat on the dock:|r (NOT TRANSLATED IN :zhCN YET)
+    >>|cRXP_WARN_在码头等待船只期间:|r
     .cast 818 >>|cRXP_WARN_在你的法术书常规标签下创建一个|r |T135805:0|t[基础篝火] |cRXP_WARN_|r
     .usespell 818
     .zoneskip Teldrassil
@@ -4734,7 +4734,7 @@ step << NightElf
 step << !Hunter
     .goto 1439/1,488.69,6564.830
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_达蒙德|r 对话
-    >>|cRXP_BUY_从他那里|r|cRXP_BUY_购买一个|r |T135237:0|t[燧石和火绒] |cRXP_BUY_和一个|r |T135435:0|t[普通木柴]
+    >>|cRXP_BUY_从他那里购买一个|r |T135237:0|t[燧石和火绒] |cRXP_BUY_和一个|r |T135435:0|t[普通木柴] |cRXP_BUY_|r
     >>这是为了稍后在船上时，顺便提升你的 |T133971:0|t[|cRXP_WARN_烹饪|r] |cRXP_WARN_技能等级|r
     >>|cRXP_WARN_你需要 50 点|r |T133971:0|t[烹饪] |cRXP_WARN_，以便之后在暮色森林完成一个任务|r
     .collect 4470,1 --Simple Wood (1)
@@ -4861,7 +4861,7 @@ RXPGuides.RegisterGuide([[
 #disabledungeons
 #version 1
 << Alliance !Hunter
-#group RestedXP 无限指南 (联盟)
+#group RestedXP Forever 指南 A
 #subgroup 速通指南 1-20级
 --#groupid RXP-SRGCE-A1
 #name 19-20级 赤脊山
@@ -5173,7 +5173,7 @@ step << Warlock
     .turnin 34 >> 交任务不速之客
 step << Rogue
     .goto 1433/0,-2180.19,-9328.21
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_卢修斯|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_卢修斯|r 对话
     .turnin 2281 >> 交任务 赤脊山的联络员
     .accept 2282 >> 接受任务 奥瑟尔伐木场
     .target Lucius
@@ -5418,7 +5418,7 @@ step
     .goto 1433/0,-2152.62,-9216.430
     .turnin 131 >> 交任务 水仙诉衷情
 step << Rogue
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_卢修斯|r 对话
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_卢修斯|r 对话
 	.target Lucius
     .goto 1433/0,-2180.19,-9328.21
     .turnin 2282 >> 交任务 奥瑟尔伐木场
@@ -5753,7 +5753,7 @@ step << NightElf Rogue/Skyborne Rogue
 step << NightElf Rogue/Skyborne Rogue
     .goto 1436/0,1037.42,-10628.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_索尔|r 对话
-    .fp Westfall >> 解锁西部荒野飞行路线
+    .fp Westfall >> 开启西部荒野的飞行路径
     .target 索尔
     .isOnQuest 2360
 step << Human Rogue/Dwarf Rogue
@@ -5765,7 +5765,7 @@ step << !Dwarf Rogue
     .goto 1431/0,404.03,-11014.47,60,0
     .goto 1431/0,432.11,-10878.75,50,0
     .goto 1431/0,551.72,-10688.13
-    >>击杀|cRXP_ENEMY_小型结网毒蜘蛛|r和|cRXP_ENEMY_结网毒蜘蛛|r，拾取|cRXP_LOOT_小毒囊|r和|cRXP_LOOT_粘糊的蜘蛛腿|r
+    >>击杀|cRXP_ENEMY_小型结网毒蜘蛛|r 和 |cRXP_ENEMY_结网毒蜘蛛|r。拾取|cRXP_LOOT_小毒囊|r 和 |cRXP_LOOT_粘糊的蜘蛛腿|r
     >>|cRXP_WARN_你需要一个|cRXP_LOOT_小毒囊|r来做成|r |T134437:0|t[抗毒药剂] |cRXP_WARN_，后面用来解除|r |T136230:0|t[赞吉尔之触] |cRXP_WARN_的debuff|r
     >>|cRXP_WARN_把|cRXP_LOOT_粘糊的蜘蛛腿|r留着后面用|r
     >>|cRXP_WARN_如果有|r |T626003:0|t|T625999:0|t|cFFF48CBA圣骑士|r |cRXP_WARN_或|r |T625999:0|t|T625999:0|t|cFFFF7C0A德鲁伊|r |cRXP_WARN_朋友，这步可以直接跳过，之后请他们帮你解掉就行|r
@@ -5781,11 +5781,11 @@ step << Rogue
     +|cRXP_WARN_==注意接下来的内容==|r
     >>|cRXP_WARN_按下 Esc，然后进入 → 选项 → 控制|r
     >>|cRXP_WARN_勾选 "启用交互键" 并将 "与目标互动" 绑定到一个按键|r
-    >>|cRXP_WARN_另外，建议启用敌方姓名板 (默认按键：V) 这样可以在塔内的一些拐角处看到躲在后面的敌人|r
+    >>|cRXP_WARN_另外，建议启用敌方姓名板（默认按键：V）这样可以在塔内的一些拐角处看到躲在后面的敌人|r
 step << Rogue
     .goto 1436/0,619.17,-11035.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_密探吉尔妮|r 对话
-    >>这个任务是必须完成的，关系到你的|cRXP_WARN_ |T132290:0|t[毒药]|r
+    >>|cRXP_WARN_你必须完成这个任务来获取你的|r|T132290:0|t[毒药]
     .turnin 2360 >> 交任务 马迪亚斯和迪菲亚盗贼
     .accept 2359 >> 接受任务 克拉文之塔
     .target Agent Kearnen
@@ -5808,7 +5808,7 @@ step << Rogue
 step << Rogue
     #optional
     #completewith Mortwake
-    +|cRXP_WARN_如果你还没有装备|r |T135641:0|t[弯曲木匕首] |cRXP_WARN_，并且当前没有装备|r |T135641:0|t[匕首] |cRXP_WARN_，请在此任务中装备它|r
+    +|cRXP_WARN_如果你还没有装备|r|T135641:0|t[匕首]|cRXP_WARN_，请为这个任务装备上|r|T135641:0|t[曲木匕首]|cRXP_WARN_ |r
     .use 15396
     .itemcount 15396,1
 step << Rogue
@@ -5843,7 +5843,7 @@ step << Dwarf Rogue
     #optional
     #sticky
     #label AntiVenomEnd2
-    .cast 20594 >>|cRXP_WARN_施放 |T136225:0|t[石像形态] 来移除 |T136230:0|t[赞吉尔之触] 的减益效果|r
+    .cast 20594 >>|cRXP_WARN_施放 |T136225:0|t[石像形态] ，来移除 |T136230:0|t[赞吉尔之触] 的减益效果|r
     .aura -9991
 step << Rogue
     #optional
@@ -5864,16 +5864,16 @@ step << !Dwarf Rogue
 step << !Dwarf Rogue
     #requires AntiVenomEnd
     .goto 1453,43.070,26.155
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_珊娜·弗勒|r 对话
-    >>|cRXP_WARN_如果你有|r |T626003:0|t|cFFF48CBA圣骑士|r |cRXP_WARN_或者|r |T625999:0|t|cFFFF7C0A德鲁伊|r |cRXP_WARN_朋友，建议让他们帮你移除|r |T136230:0|t[赞吉尔之触] |cRXP_WARN_，而不是自己处理|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_珊娜·弗勒|r 对话
+    >>|cRXP_WARN_If you have a|r |T626003:0|t|cFFF48CBAPaladin|r |cRXP_WARN_or|r |T625999:0|t|cFFFF7C0ADruid|r |cRXP_WARN_friend, ask them to remove the|r |T136230:0|t[赞吉尔之触] |cRXP_WARN_for you instead|r
     .skill firstaid,80 >> |cRXP_WARN_将你的|r |T135966:0|t[急救] |cRXP_WARN_提升到 80|r
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
 step << !Dwarf Rogue
     #label FirstAidEnd
     .goto 1453,43.070,26.155
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_珊娜·弗勒|r 对话
-    >>|cRXP_WARN_如果你有|r |T626003:0|t|cFFF48CBA圣骑士|r |cRXP_WARN_或者|r |T625999:0|t|cFFFF7C0A德鲁伊|r |cRXP_WARN_朋友，建议让他们帮你移除|r |T136230:0|t[赞吉尔之触] |cRXP_WARN_，而不是自己处理|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_珊娜·弗勒|r 对话
+    >>|cRXP_WARN_If you have a|r |T626003:0|t|cFFF48CBAPaladin|r |cRXP_WARN_or|r |T625999:0|t|cFFFF7C0ADruid|r |cRXP_WARN_friend, ask them to remove the|r |T136230:0|t[赞吉尔之触] |cRXP_WARN_for you instead|r
     .train 7934 >> |cRXP_WARN_学习|r |T134437:0|t[抗毒药剂]
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
@@ -5904,7 +5904,7 @@ step << Rogue
     #requires AntiVenomEnd2 << Rogue
     .goto 1453/0,362.28,-8815.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_马迪亚斯·肖尔大师|r 对话
-    >>|cRXP_WARN_如果你之前切换成了|r |T135641:0|t[匕首] |cRXP_WARN_，记得重新装备你的主武器|r << Rogue
+    >>|cRXP_WARN_如果你之前切换成了|r |T135641:0|t[匕首] |cRXP_WARN_，记得重新装备上你的主武器|r << Rogue
     .turnin 2359 >> 交任务 克拉文之塔
     .target 马迪亚斯·肖尔大师
 
@@ -6075,11 +6075,11 @@ RXPGuides.RegisterGuide([[
 #disabledungeons
 #version 1
 << Alliance Hunter
-#group RestedXP 无限指南 (联盟)
+#group RestedXP Forever 指南 A
 #subgroup 速通指南 1-20级
 --#groupid RXP-SRGCE-A1
 #name 19-21级 黑海岸/灰谷
-#next RestedXP 无限指南 (联盟)\21-23 Ashenvale/Stonetalon
+#next RestedXP Forever 指南 A\21-23 灰谷/Stonetalon
 
 step
     #optional
@@ -6695,11 +6695,11 @@ RXPGuides.RegisterGuide([[
 #disabledungeons
 #version 1
 << Alliance !Hunter
-#group RestedXP 无限指南 (联盟)
+#group RestedXP Forever 指南 A
 #subgroup 速通指南 1-20级
 --#groupid RXP-SRGCE-A1
 #name 20-21级 黑海岸/灰谷
-#next RestedXP 无限指南 (联盟)\21-23级 石爪山 / 灰谷
+#next RestedXP Forever 指南 A\21-23级 石爪山 / 灰谷
 
 
 step << Druid
