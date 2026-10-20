@@ -41,15 +41,15 @@ step
     >>|T135997:0|t[Goretusk Snout]
     >>|T134185:0|t[Okra]
     >>|T134341:0|t[Goretusk Liver]
-    >>|T4548890:0|t[Golem Isospring]
-    >>|T132995:0|t[Harvester Gyrostabilizer]
+    -->>|T4548890:0|t[Golem Isospring]
+    -->>|T132995:0|t[Harvester Gyrostabilizer]
     .collect 729,3,38,1 -- Stringy Vulture Meat (3)
     .collect 730,3,38,1 -- Murloc Eye (3)
     .collect 731,3,38,1 -- Goretusk Snout (3)
     .collect 732,3,38,1 -- Okra (3)
     .collect 723,8,22,1 -- Goretusk Liver (8)
-    .collect 255007,14,92909,1 -- Golem Isospring (14)
-    .collect 255010,5,92909,1 -- Harvester Gyrostabilizer (5)
+    --.collect 255007,14,92909,1 -- Golem Isospring (14)
+    --.collect 255010,5,92909,1 -- Harvester Gyrostabilizer (5)
 step << Human
     .goto 1453/0,489.99,-8835.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r
