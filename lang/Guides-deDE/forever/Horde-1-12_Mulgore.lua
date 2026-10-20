@@ -5,7 +5,7 @@ if faction == "Alliance" then return end
 
 RXPGuides.RegisterGuide([[
 #forever
-#era/som--h
+#disabledungeons
 << Horde
 #name 1-6 Mulgore
 #version 11
@@ -108,6 +108,13 @@ step
     .target Chief Hawkwind
 step << Shaman
     .goto 1412/1,-216.18,-2926.26--c:Mulgore,44.07,77.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Marjak|r
+    .vendor >> Verkauft Ramsch. Verkauft die Waffe von Euch, wenn sie euch genug Geld für einen |T135139:0|t[Kurzstab] (1s 02c) bringt. Ihr werdet später zurückkommen, wenn ihr noch nicht genug habt.
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<1.9
+    .target Marjak Keenblade
+step << Shaman
+    .goto 1412/1,-216.18,-2926.26--c:Mulgore,44.07,77.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Sprecht mit|r |cRXP_FRIENDLY_Marjak Keenblade|r|cRXP_BUY_. Kauft einen|r |T135139:0|t[Kurzstab] |cRXP_BUY_von ihm|r
     .collect 2132,1,750,1 --Collect Short Staff (1)
     .money <0.0102
@@ -122,6 +129,20 @@ step << Shaman
     .itemcount 2132,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<1.9
+step
+    #completewith next
+    >>Tötet |cRXP_ENEMY_Bergpumas|r. Plündert sie für ihre |cRXP_LOOT_Bergpumapelze|r
+    .complete 750,1 --Mountain Cougar Pelt (10)
+    .mob Mountain Cougar
+step
+    #label RitesoftheEarthmother
+    .goto 1412/1,-139.63,-3430.08--c:Mulgore,42.58,92.18
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Seher Graytongue|r
+    >>|cRXP_WARN_Dies startet eine Quest mit einem 10-Minuten-Zeitlimit|r
+    .turnin 755 >>Gebt die Quest Riten der Erdenmutter ab
+    .accept 757 >>Akzeptiert die Quest Ritus der Kraft
+    .accept 95805 >>Akzeptiert die Quest Barmherzigkeit von An'she und Mu'sha
+    .target Seer Graytongue
 step
     #loop
     .goto 1412/1,-243.41,-3384.87,0--c:Mulgore,44.60,90.86
@@ -139,15 +160,6 @@ step
     >>Tötet |cRXP_ENEMY_Bergpumas|r. Plündert sie für ihre |cRXP_LOOT_Bergpumapelze|r
     .complete 750,1 --Mountain Cougar Pelt (10)
     .mob Mountain Cougar
-step
-    #label RitesoftheEarthmother
-    .goto 1412/1,-139.63,-3430.08--c:Mulgore,42.58,92.18
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Seher Graytongue|r
-    >>|cRXP_WARN_Dies startet eine Quest mit einem 10-Minuten-Zeitlimit|r
-    .turnin 755 >>Gebt die Quest Riten der Erdenmutter ab
-    .accept 757 >>Akzeptiert die Quest Ritus der Kraft
-    .accept 95805 >>Akzeptiert die Quest Barmherzigkeit von An'she und Mu'sha
-    .target Seer Graytongue
 step
     #loop
 	.goto 1412/1,-292.73,-3285.20,40,0--c:Mulgore,45.56,87.95
@@ -234,6 +246,13 @@ step << Shaman
     .turnin 3093 >>Gebt die Quest Mit Runen beschriftete Notiz ab
     .train 8042 >>Erlernt |T136026:0|t[Erdschock]
     .target Meela Dawnstrider
+step << Druid
+    .goto 1412/1,-279.37,-2893.73--c:Mulgore,45.30,76.52
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Kawnie Softbreeze|r
+    >>|cRXP_BUY_Kauft|r |T132794:0|t[Erfrischendes Quellwasser] |cRXP_BUY_bei ihr|r
+	.collect 159,5,383,1 --Collect Refreshing Spring Water (10)
+    .target Kawnie Softbreeze
+    .money <0.0025
 step
     #completewith next
     >>Tötet |cRXP_ENEMY_Kampfeber|r. Plündert sie für ihre |cRXP_LOOT_Kampfeberflanke|r und |cRXP_LOOT_Kampfeberschnauze|r
@@ -456,7 +475,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
-#era/som--h
+#disabledungeons
 << Horde
 #name 6-12 Mulgore
 #version 11
@@ -500,13 +519,13 @@ step
 step
     #softcore
     .goto 1412/1,-408.900,-2179.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Yaw Sharpmane|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Yaw Sharpmane|r
     .accept 96130 >>Akzeptiert die Quest Chakuyak
     .target Yaw Sharpmane
 step
     #softcore
     .goto 1412/1,-430.600,-2097.600
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Ahab Wheathoof|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Ahab Wheathoof|r
     .accept 99411 >>Akzeptiert die Quest Kyle wird vermisst!
     .target Ahab Wheathoof
 step
@@ -629,13 +648,13 @@ step
 step
     #hardcore
     .goto 1412/1,-408.900,-2179.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Yaw Sharpmane|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Yaw Sharpmane|r
     .accept 96130 >>Akzeptiert die Quest Chakuyak
     .target Yaw Sharpmane
 step
     #hardcore
     .goto 1412/1,-430.600,-2097.600
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Ahab Wheathoof|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Ahab Wheathoof|r
     .accept 99411 >>Akzeptiert die Quest Kyle wird vermisst!
     .target Ahab Wheathoof
 step
@@ -645,7 +664,7 @@ step
     .target Harken Windtotem
 step
     .goto 1412/1,-496.200,-2347.900
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Krang Stonehoof|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Krang Stonehoof|r
     .accept 99108 >>Akzeptiert die Quest Sparringskampf
     .target Krang Stonehoof
 step
@@ -912,6 +931,7 @@ step
     .train 2550 >>Erlerne Kochkunst
     .turnin 96661 >>Gebt die Quest Grundlagen des Zeltens: Kochkunst ab
     .target Pyall Silentstride
+    .money <0.01
 step
     #label Vision
     .goto 1412/1,-405.75,-2243.32--c:Mulgore,47.76,57.53
@@ -922,7 +942,7 @@ step
     .target Zarlman Two-Moons
 step
     .goto 1412/1,-430.600,-2097.600
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Ahab Wheathoof|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Ahab Wheathoof|r
     .turnin 99411 >>Gebt die Quest Kyle wird vermisst! ab
     .target Ahab Wheathoof
     .isQuestComplete 99411
@@ -1009,6 +1029,38 @@ step << Tauren
     .mob +Prairie Stalker
     .complete 756,2 --Cougar Claws (6)
     .mob +Flatland Cougar
+step
+    #softcore
+	#completewith Escort1
+    .deathskip >> Stirb und beleb dich am |cRXP_FRIENDLY_Geistheiler|r wieder
+step << Hunter
+    #softcore
+    .goto 1412/1,-408.32,-2180.30--c:Mulgore,47.81,55.69
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Yaw|r
+    .train 5116 >> Trainiere deine Klassenfähigkeiten
+    .target Yaw Sharpmane
+    .xp <8,1
+step << Druid
+    #softcore
+    .goto 1412/1,-442.74,-2315.59--c:Mulgore,48.48,59.64
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Gennia|r
+    .train 5186 >>Trainiere deine Klassenfähigkeiten
+    .target Gennia Runetotem
+    .xp <8,1
+step << Warrior
+    #softcore
+    .goto 1412/1,-496.17,-2347.78--c:Mulgore,49.52,60.58
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Krang|r
+    .train 284 >> Trainiere deine Klassenfähigkeiten
+    .target Krang Stonehoof
+    .xp <8,1
+step << Shaman
+    #softcore
+    .goto 1412/1,-437.61,-2298.80--c:Mulgore,48.38,59.15
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Narm|r
+    .train 8044 >> Trainiere deine Klassenfähigkeiten
+    .target Narm Skychaser
+    .xp <8,1
 step
     .goto 1412/1,54.800,-2442.200
     >>Tötet |cRXP_ENEMY_Chakuyak|r. Plündert sie für den |cRXP_LOOT_Pelz|r
@@ -1172,6 +1224,12 @@ step
     .vendor >> Verkauft trash und repariert
     .target Harant Ironbrace
 step
+    .goto 1412/1,-285.000,-2263.400
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Pyall|r
+    .train 2550 >>Erlerne Kochkunst
+    .turnin 96661 >>Gebt die Quest Lager aufschlagen 101 ab: Kochkunst
+    .target Pyall Silentstride
+step
     .goto 1412/1,-392.500,-2318.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Kriegerheld Wildrunner|r
     >>|cRXP_WARN_Er patrouilliert ein wenig herum|r
@@ -1251,7 +1309,7 @@ step
     .unitscan Kyle the Frenzied
 step
     .goto 1412/1,-430.600,-2097.600
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Ahab Wheathoof|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Ahab Wheathoof|r
     .turnin 99411 >>Gebt die Quest Kyle wird vermisst! ab
     .target Ahab Wheathoof
 step
@@ -1318,7 +1376,7 @@ step
 step
     .goto 1456/1,104.500,-1308.400
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit Eberton Schattentotem|cRXP_FRIENDLY_
-    >>|cRXP_WARN_Er ist in|r |T132320:0|t[Verstohlenheit] 
+    >>|cRXP_WARN_Er ist in|r |T132320:0|t[Verstohlenheit]
     .accept 76156 >>Akzeptiert die Quest Schleicht mit der Erdenmutter
     .target Boarton Shadetotem
 step
@@ -1542,7 +1600,7 @@ step
     #sofcore
     #completewith Bloodhoofturnins1
     .goto 1412/1,-598.900,-1603.700
-    .deathskip >> Die at the waypoint arrow (or further south of it) and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
+    .deathskip >> Sterbt beim Wegpunkt Pfeil (oder weiter südlich davon) und belebt euch beim |cRXP_FRIENDLY_Geistheiler|r wieder
 step
     #hardcore
     #completewith Bloodhoofturnins1
@@ -1887,12 +1945,12 @@ step
     .turnin 765 >>Gebt die Quest Vorsteher Fizsprocket ab
     .turnin 98424 >>Gebt die Quest Fizsprockets Notizen ab
 	.unitscan Morin Cloudstalker
-step << skip -- Tauren
+step << Tauren
     #softcore
 	#completewith Thunderhorn2
     .deathskip >> Stirb und beleb dich am |cRXP_FRIENDLY_Geistheiler|r wieder
 step << Tauren
-    --#hardcore
+    #hardcore
     #completewith Thunderhorn2
     .subzone 222 >>Reist zum Dorf der Bluthufe
 step
@@ -1921,7 +1979,7 @@ step << Druid
 step
     .goto 1456/1,104.500,-1308.400
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Eberton Schattentotem|r
-    >>|cRXP_WARN_Er ist in|r |T132320:0|t[Verstohlenheit] 
+    >>|cRXP_WARN_Er ist in|r |T132320:0|t[Verstohlenheit]
     .turnin 76156 >>Gebt die Quest Schleicht mit der Erdenmutter ab
     .accept 76160 >>Akzeptiert die Quest Schleicht mit der Erdenmutter
     .target Boarton Shadetotem

@@ -343,7 +343,7 @@ RXPGuides.RegisterGuide([[
 
 step << Druid
     #completewith next
-    .zone Ashenvale >> Reist zu Eschental
+    .zone Ashenvale >> Reist nach Eschental
 step << Druid
     .goto Ashenvale,86.963,43.159
     >>Zwickt |cRXP_PICK_Eulenstatue|r um das Ereignis zu starten
@@ -382,7 +382,7 @@ step << Druid
     .train 410028,1
 step << Druid
     #completewith next
-    .zone Hillsbrad Foothills >> Reist zum Vorgebirge des Hügellands
+    .zone Hillsbrad Foothills >> Reist nach Vorgebirge des Hügellands
     .train 410028,1
 step << Druid
     .goto Hillsbrad Foothills,36.914,76.142
@@ -523,7 +523,7 @@ step << Warrior
     .train 425444,1
 step << Warrior
     #completewith next
-    .zone Ashenvale >> Reist zu Eschental
+    .zone Ashenvale >> Reist nach Eschental
     .train 425444,1
 step << Warrior
     .goto Ashenvale,43.513,70.463
@@ -749,7 +749,7 @@ step
 step
     #season 2
     #completewith next
-    .zone Ashenvale >>Reist zu Eschental
+    .zone Ashenvale >>Reist nach Eschental
 step
     #season 2
     .goto Ashenvale,37.91,34.49,40,0
@@ -1021,7 +1021,7 @@ step
     .mob Dark Rider
 step
     #completewith next
-    .zone Arathi Highlands >>Reist nach Arathihochland
+    .zone Arathi Highlands >>Reist zum Arathihochland
 step
     .train 425312,1 << Priest
     .train 426180,1 << Paladin
@@ -1330,7 +1330,7 @@ step
     .zone Wetlands >>Reist zur Grenze zwischen Arathihochland und Sumpfland
 step
     .goto Wetlands,58.320,6.927
-    .cast 6477 >>Besteigt das |cRXP_PICK_Ruderboot|r im Wasser
+    .cast 6477 >>Betretet das |cRXP_PICK_Ruderboot|r im Wasser
     .train 431663,1 << Priest
     .train 416031,1 << Paladin
     .train 401752,1 << Mage
@@ -1369,7 +1369,7 @@ step << !NightElf
     .train 425883,1 << Shaman
     #completewith next
     .goto Arathi Highlands,93.90,71.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Illari Duskfeather|r. Ihr werdet gegen sie kämpfen müssen
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Illari Duskfeather|r. Ihr müsst danach gegen sie kämpfen.
     .complete 79242,1 --Found Illari Duskfeather
     .skipgossip 215655,1,1,1
     .target Illari Duskfeather
@@ -1384,7 +1384,7 @@ step << !NightElf
     .train 425102,1 << Rogue
     .train 425883,1 << Shaman
     .goto Arathi Highlands,93.90,71.49
-    >>Tötet |cRXP_ENEMY_Illari Duskfeather|r. Öffnet den |cRXP_PICK_Fallengelassenen Beutel|r, den sie auf dem Boden fallen lässt. Plündert ihn für |cRXP_LOOT_Illaris Schlüssel|r
+    >>Tötet |cRXP_ENEMY_Illari Duskfeather|r. Öffnet |cRXP_PICK_Fallengelassenen Beutel|r, den sie fallen lässt. Plündert ihn nach |cRXP_LOOT_Illari's Schlüssel|r.
     .collect 212347,1,79242,1 --Illari's Key
     .skipgossip 215655,1,1,1
     .mob Illari Duskfeather
@@ -1475,7 +1475,7 @@ step
     .itemcount 212560,1 << Shaman
 step
     .goto 1417,89.536,78.149
-    .cast 6477 >>Besteigt das |cRXP_PICK_Ruderboot|r im Wasser, um nach Arathi zurückzukehren
+    .cast 6477 >>Betretet |cRXP_PICK_Ruderboot|r im Wasser, um nach Arathi zurückzukehren.
     .subzoneskip 308,1
 ]])
 
@@ -1629,7 +1629,7 @@ step
     .train 416089,1 << Hunter
     .train 410027,1 << Druid
     #completewith next
-    .zone Stranglethorn Vale >>Reist nach Schlingendorntal.
+    .zone Stranglethorn Vale >>Reist nach Schlingendorntal
 step
     .train 416089,1 << Hunter
     .train 410027,1 << Druid
@@ -1647,7 +1647,7 @@ step
     .train 416089,1 << Hunter
     .train 410027,1 << Druid
     #completewith next
-    .zone Arathi Highlands >>Reist nach Arathihochland
+    .zone Arathi Highlands >>Reist zum Arathihochland
 step
     .train 416089,1 << Hunter
     .train 410027,1 << Druid
@@ -1724,48 +1724,48 @@ step << Alliance
     .zone Westfall >> Lauf nach Westfall
 step << Alliance
     .goto Westfall,37.413,50.701
-    >>Klickt |cRXP_PICK_Burned-Raus Remains|r am Boden
-    .accept 79008 >> Akzeptiert die Quest ...und diese Notiz, die Ihr gefunden habt.
+    >>Klickt die |cRXP_PICK_Verbrannten Überreste|r auf dem Boden an
+    .accept 79008 >> Nehmt an ...und diese Notiz, die Ihr gefunden habt.
 step << Alliance
     #completewith next
     .zone The Barrens >> Reist nach Das Brachland
 step << Alliance
     .goto The Barrens,46.361,73.904
-    >>Klickt |cRXP_PICK_Burned-Raus Remains|r am Boden
-    .turnin 79008 >> Gebt die Quest ...und diese Notiz, die Ihr gefunden habt, ab
+    >>Klickt die |cRXP_PICK_Verbrannten Überreste|r auf dem Boden an
+    .turnin 79008 >> Gebt die Quest ...und diese Notiz, die Ihr gefunden habt ab
     .accept 79192 >> Akzeptiert die Quest Trittsteine
 step << Horde
     #completewith next
     .zone The Barrens >> Reist nach Das Brachland
 step << Horde
     .goto The Barrens,46.361,73.904
-    >>Klickt |cRXP_PICK_Burned-Raus Remains|r am Boden
-    .accept 79007 >> Akzeptiert die Quest ...und diese Notiz, die Ihr gefunden habt.
+    >>Klickt die |cRXP_PICK_Verbrannten Überreste|r auf dem Boden an
+    .accept 79007 >> Nehmt an ...und diese Notiz, die Ihr gefunden habt.
 step << Horde
     #completewith next
     .zone Westfall >> Lauf nach Westfall
 step << Horde
     .goto Westfall,37.413,50.701
-    >>Klickt |cRXP_PICK_Burned-Raus Remains|r am Boden
-    .turnin 79007 >> Gebt die Quest ...und diese Notiz, die Ihr gefunden habt, ab
+    >>Klickt die |cRXP_PICK_Verbrannten Überreste|r auf dem Boden an
+    .turnin 79007 >> Gebt die Quest ...und diese Notiz, die Ihr gefunden habt ab
     .accept 79192 >> Akzeptiert die Quest Trittsteine
 step
     #completewith next
     .zone Stonetalon Mountains >> Reist ins Steinkrallengebirge
 step
     #completewith next
-    .goto Stonetalon Mountains,50.29,52.94,25 >> Reist entlang des Erdpfads in Richtung Norden zu Sonnenfels
+    .goto Stonetalon Mountains,50.29,52.94,25 >> Reist hinauf und entlang des Feldwegs nördlich von Sonnenfels
 step
     .goto Stonetalon Mountains,40.748,52.576
-    >>Hebt die |cRXP_PICK_Pocket Litter|r vom Kasten auf
+    >>Klickt die |cRXP_PICK_Pocket Litter|r auf der Kiste an
     .turnin 79192 >> Gebt die Quest Trittsteine ab
     .accept 79980 >> Akzeptiert die Quest Weg hier
 step
     #completewith next
-    .goto Stonetalon Mountains,40.19,50.80,15 >> Folgt dem Weg durch die Berge
+    .goto Stonetalon Mountains,40.19,50.80,15 >> Folgt dem Pfad durch die Berge
 step
     .goto Stonetalon Mountains,39.614,49.783
-    >>Hebt die |cRXP_PICK_Mound of Dirt|r vom Boden auf
+    >>Klickt den |cRXP_PICK_Mound of Dirt|r auf dem Boden an
     .turnin 79980 >> Gebt die Quest Weg hier ab
     .accept 79974 >> Akzeptiert die Quest Feuchte Angelegenheit
 step
@@ -1775,26 +1775,26 @@ step
     #completewith next
     .goto Loch Modan,41.01,12.60,50,0
     .goto Loch Modan,42.86,10.36,60,0
-    .goto Loch Modan,49.4,12.9,8 >> |cRXP_WARN_Macht euch auf den Weg zur Loch-Modan-Dammwand und lasst euch vorsichtig auf den Sims in der Mitte des Damms hinunter. Folgt dem Pfeil|r
+    .goto Loch Modan,49.4,12.9,8 >> |cRXP_WARN_Geht auf die Mauer des Stausees von Loch Modan und fallt vorsichtig auf den Felsvorsprung in der Mitte hinunter. Folgt dem Pfeil|r
 step
     .goto Loch Modan,49.421,12.917
-    >>Hebt die |cRXP_PICK_Carved Figurine|r auf dem Sims auf
+    >>Hebt die |cRXP_PICK_Schnitzfigur|r vom Sims auf
     .turnin 79974 >> Gebt die Quest Feuchte Angelegenheit ab
-    .accept 79975 >> Akzeptiert die Quest Adlerfaust
+    .accept 79975 >> Nehmt die Quest Adlerfaust an
 step
     #completewith next
-    .goto Hillsbrad Foothills,87.691,48.166,10 >> Reist zum Thoradinswall an der Zonengrenze von Arathihochland/Vorgebirge des Hügellands
+    .goto Hillsbrad Foothills,87.691,48.166,10 >> Reist zum Thoradinswall an der Zonengrenze zwischen Arathihochland und Vorgebirge des Hügellands
 step
     #completewith next
-    .goto Arathi Highlands,24.132,21.470,7 >> Klettert auf den Wagen und arbeitet euch entlang der Mauer nach oben
+    .goto Arathi Highlands,24.132,21.470,7 >> Klettert auf den Wagen und arbeitet euch die Mauer entlang nach oben
 step
     .goto Arathi Highlands,22.466,24.127
-    >>Hebt |cRXP_PICK_Messenger Tasche|r an der Wand auf
+    >>Hebt die |cRXP_PICK_Kuriertasche|r von der Wand auf
     .turnin 79975 >> Gebt die Quest Adlerfaust ab
-    .accept 79976 >> Akzeptiert die Quest Das muss der Ort sein
+    .accept 79976 >> Nehmt die Quest Das muss der Ort sein an
 step
     .goto Arathi Highlands,22.466,24.127
-    >>Hebt |cRXP_PICK_Hastily Rolled-Up Satchel|r vom Boden auf
+    >>Hebt die |cRXP_PICK_überstürzt zusammengerollte Tasche|r vom Boden auf
     .turnin 79976 >> Gebt die Quest Das muss der Ort sein ab
 step
     +|cRXP_WARN_Es wird dringend empfohlen, von Euch|r |T134057:0|t[|cRXP_LOOT_Student Futter|r] |cRXP_WARN_für höhere Level aufzusparen, bevor ihr diese verbraucht. Jede Verwendung von|r |T134057:0|t[|cRXP_LOOT_Student Futter|r] |cRXP_WARN_addiert 20% rested experience zu von Euch Charakter; daher ist es effizienter, diese bei höheren Levels zu nutzen|r
@@ -2420,7 +2420,7 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith next
-    .zone Deadwind Pass >> Reist nach Deadwind-Weitergeben
+    .zone Deadwind Pass >> Reist zu Gebirgspass der Totenwinde
 step
     .goto Deadwind Pass,47.40,75.50 >> Geht nach Süden zu Karazhan
 step
@@ -2470,9 +2470,9 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith next
-    .zone Arathi Highlands >> Reist nach Arathihochland
+    .zone Arathi Highlands >> Reist zum Arathihochland
 step
-    .goto Arathi Highlands,21.98,79.75,40 >> Geht zur Faldirbucht, folgt dem Weg zwischen den Bergen und Stromgardes südöstlicher Mauer
+    .goto Arathi Highlands,21.98,79.75,40 >> Begebt euch zur Faldirbucht und folgt dem Pfad zwischen den Bergen und Stromgardes südöstlicher Mauer
 step
     .goto Arathi Highlands,35.2,79.1
     >>|cRXP_WARN_Kopf zum Lagerfeuer neben |cRXP_FRIENDLY_Professor Prasseltrop|r, sucht nach einem |cRXP_WARN_grauen Buch|r, das auf einer Kiste neben dem Lagerfeuer liegt. Beute es für die Rune|r

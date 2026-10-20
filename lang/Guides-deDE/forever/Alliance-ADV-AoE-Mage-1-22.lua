@@ -4,6 +4,7 @@ if faction == "Horde" then return end
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Human Mage
 #name 1-10 Fortgeschrittener AoE-Guide für Mensch Magier im Wald von Elwynn
 #version 2
@@ -1100,7 +1101,7 @@ step
     .goto 1455/0,-1036.48,-4804.50,20,0
     .goto 1455/0,-992.68,-4742.08,20,0
     .goto 1455/0,-931.8,-4627.59,20,0
-    .goto 1455/0,-928.40,-4614.51,10 >>Reisenzu |cRXP_FRIENDLY_Dink|r
+    .goto 1455/0,-928.40,-4614.51,10 >>Reist in Richtung |cRXP_FRIENDLY_Dink|r
 step
     .goto 1455/0,-928.40,-4614.51
     >>Sprich mit |cRXP_FRIENDLY_Dink|r
@@ -1144,6 +1145,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Human Mage
 #name 10-11 Fortgeschrittene AoE-Guide für Mensch Magier in Dun Morogh
 #version 2
@@ -1435,6 +1437,7 @@ step << skip
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Gnome Mage
 #name 1-10 ADV Dun Morogh Gnomenmagier AoE
 #version 2
@@ -2962,7 +2965,7 @@ step
     .goto 1455/0,-1036.48,-4804.50,20,0
     .goto 1455/0,-992.68,-4742.08,20,0
     .goto 1455/0,-931.8,-4627.59,20,0
-    .goto 1455/0,-928.40,-4614.51,10 >>Reisenzu |cRXP_FRIENDLY_Dink|r
+    .goto 1455/0,-928.40,-4614.51,10 >>Reist in Richtung |cRXP_FRIENDLY_Dink|r
 step
     .goto 1455/0,-928.40,-4614.51
     >>Sprich mit |cRXP_FRIENDLY_Dink|r
@@ -2994,6 +2997,7 @@ step << skip
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Alliance Mage
 #name 10-12 Fortgeschrittender Dunkelküste 1 Magier AoE Guide
 #version 2
@@ -3052,7 +3056,7 @@ step
     .goto 1437/0,-1014.03,-3904.2,12,0
     >>|cRXP_WARN_Macht den Dun Morogh -> Sumpfland skip|r ohne zu sterben
     >>|cRXP_WARN_Seid vorsichtig vor |cRXP_ENEMY_Schlicker|r (selten), bevor ihr zur Küste hinuntergeht (falls er up ist)|r
-    >>|cRXP_WARN_Seid vorsichtig vor den |cRXP_ENEMY_Räuber der Blaukiemen|r im Westen, wenn ihr das Meer erreicht|r
+    >>|cRXP_WARN_Seid vorsichtig vor |cRXP_ENEMY_Räuber der Blaukiemen|r im Westen, wenn ihr das Meer erreicht|r
     >>|cRXP_WARN_Weicht den |cRXP_ENEMY_Junger Sumpflandkrokilisk|r aus wenn ihr das Meer überquert. Wartet, bis sie wegpatroullieren|r
     .link https://youtu.be/QcEUvwu49KI?t=336 >> |cRXP_WARN_Klickt hier für eine Anleitung (Es wird dringend empfohlen, dies zu tun.)|r
     .goto 1437/0,-914.37,-3828.40,15 >> Laufe zum Hafen von Menethil
@@ -3440,7 +3444,7 @@ step
     .mob Young Reef Crawler
 step
     .goto 1439/1,541.75,6313.31
-    >>Clickt die |cRXP_PICK_Buzzbox 827|r
+    >>Klickt |cRXP_PICK_Buzzbox 827|r
     .turnin 983 >>Gebt die Quest Dröhnkiste 827 ab
     .accept 1001 >>Akzeptiert die Quest Dröhnkiste 411
 step
@@ -3550,6 +3554,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Alliance Mage
 #name 10-12 Starte Fortgeschrittender Dunkelküste 1 Magier AoE Guide
 #version 2
@@ -3606,7 +3611,7 @@ step
     .goto 1437/0,-1014.03,-3904.2,12,0
     >>|cRXP_WARN_Macht den Dun Morogh -> Sumpfland skip|r ohne zu sterben
     >>|cRXP_WARN_Seid vorsichtig vor |cRXP_ENEMY_Schlicker|r (selten), bevor ihr zur Küste hinuntergeht (falls er up ist)|r
-    >>|cRXP_WARN_Seid vorsichtig vor den |cRXP_ENEMY_Räuber der Blaukiemen|r im Westen, wenn ihr das Meer erreicht|r
+    >>|cRXP_WARN_Seid vorsichtig vor |cRXP_ENEMY_Räuber der Blaukiemen|r im Westen, wenn ihr das Meer erreicht|r
     >>|cRXP_WARN_Weicht den |cRXP_ENEMY_Junger Sumpflandkrokilisk|r aus wenn ihr das Meer überquert. Wartet, bis sie wegpatroullieren|r
     .link https://youtu.be/QcEUvwu49KI?t=336 >> |cRXP_WARN_Klickt hier für eine Anleitung (Es wird dringend empfohlen, dies zu tun.)|r
     .goto 1437/0,-914.37,-3828.40,15 >> Laufe zum Hafen von Menethil
@@ -4007,7 +4012,7 @@ step
     .target Terenthis
 step
     .goto 1439/1,541.75,6313.31
-    >>Clickt die |cRXP_PICK_Buzzbox 827|r
+    >>Klickt |cRXP_PICK_Buzzbox 827|r
     .turnin 983 >>Gebt die Quest Dröhnkiste 827 ab
     .accept 1001 >>Akzeptiert die Quest Dröhnkiste 411
 step
@@ -4117,6 +4122,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Alliance Mage
 #name 12-14 Fortgeschrittender Loch Modan Magier AoE Guide
 #version 2
@@ -4883,7 +4889,7 @@ step
     #completewith next
     .goto 1453/0,662.46,-8860.76,10,0
     >>Betretet das Gasthaus
-    .goto 1453/0,673.75,-8867.93,10 >>Reisen zu |cRXP_FRIENDLY_Allison|r
+    .goto 1453/0,673.75,-8867.93,10 >>Reist zu |cRXP_FRIENDLY_Allison|r
     .target Innkeeper Allison
 step
     .goto 1453/0,673.75,-8867.93
@@ -4897,6 +4903,7 @@ step
 ]])
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Alliance Mage
 #name 14-16 Fortgeschrittender Dunkelküste 2 Magier AoE Guide
 #version 2
@@ -5545,6 +5552,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Alliance Mage
 #name 16-18 Fortgeschrittener Westfall Magier AoE Guide
 #version 2
@@ -6261,7 +6269,7 @@ step
     #completewith next
     .goto 1453/0,662.46,-8860.76,10,0
     >>Betretet das Gasthaus
-    .goto 1453/0,673.75,-8867.93,10 >>Reisen zu |cRXP_FRIENDLY_Allison|r
+    .goto 1453/0,673.75,-8867.93,10 >>Reist zu |cRXP_FRIENDLY_Allison|r
     .target Innkeeper Allison
 step
     .goto 1453/0,673.75,-8867.93
@@ -6275,6 +6283,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Alliance Mage
 #name 18-20 Fortgeschrittener Dunkelküste 3 Magier AoE Guide
 #version 2
@@ -7053,6 +7062,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Alliance Mage
 #name 20-22 Fortgeschrittener Rotkammgebirge 1 Magier AoE Guide
 #version 2

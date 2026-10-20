@@ -4,6 +4,7 @@ if faction == "Horde" then return end
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 #version 1
 << Alliance
 #name 13-15 Westfall
@@ -190,6 +191,7 @@ step
 step
     .goto 1436/0,1748.27,-10672.13
     >>Öffne |cRXP_PICK_Alexstons Truhe|r. Plündert sie für |cRXP_LOOT_Ein einfacher Kompass|r
+    >>|cRXP_WARN_Vermeidet die Mobs vor dem brennenden Gebäude. Sammelt die Beute von hinten, neben dem Schornstein. Benutzt den Schornstein, um die Zauber der |cRXP_ENEMY_Pillagers|r zu blocken, falls nötig|r
     .complete 399,1 --A Simple Compass (1)
     .isOnQuest 399
 step
@@ -350,6 +352,7 @@ step
     .goto 1436/0,1238.67,-9907.73
     >>Tötet die |cRXP_ENEMY_Erntebehüter|r. Plündert sie für ihre |cRXP_LOOT_Okraschote|r und ihre |cRXP_LOOT_Fläschchen Öl|r
     .complete 9,1 --Harvest Watcher (20)
+    .mob Harvest Watcher
     .collect 732,3,38,1 --Okra (3)
     .collect 814,5,103,1 --Flask of Oil (5)
 step
@@ -365,6 +368,7 @@ step
     .goto 1436/0,1460.22,-10224.83,60,0
     .goto 1436/0,1238.67,-9907.73
     >>Tötet die |cRXP_ENEMY_Erntebehüter|r. Plündert sie für ihr |cRXP_LOOT_Fläschchen Öl|r
+    .mob Harvest Watcher
     .complete 9,1 --Harvest Watcher (20)
     .collect 814,5,103,1 --Flask of Oil (5)
 step
@@ -616,7 +620,7 @@ step << !NightElf
 step << NightElf Hunter
     .goto 1453/0,706.15,-8795.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Frederick Stover|r
-    >>|cRXP_BUY_Kauft einen|r |T135489:0|t[Schwerer Doppelbogen] |cRXP_BUY_von ihm|r. |cRXP_BUY_Falls ihr es euch leisten könnt, kauft einen|r |T135490:0|t[Verstärkter Bogen] |cRXP_BUY_und auch einen|r |T134410:0|t[Mittlerer Köcher] |cRXP_BUY_|r 
+    >>|cRXP_BUY_Kauft einen|r |T135489:0|t[Schwerer Doppelbogen] |cRXP_BUY_von ihm|r. |cRXP_BUY_Falls ihr es euch leisten könnt, kauft einen|r |T135490:0|t[Verstärkter Bogen] |cRXP_BUY_und auch einen|r |T134410:0|t[Mittlerer Köcher] |cRXP_BUY_|r
     .collect 3027,1 -- Heavy Recurve Bow (1)
     .collect 11362,1 -- Medium Quiver (1)
     .collect 3026,1 --Reinforced Bow (1)
@@ -652,7 +656,7 @@ step
     .target Baros Alexston
     .isQuestComplete 399
 step << NightElf Druid
-    .goto 1453/0,1347.6192,-8591.2168
+    .goto 1453/0,1095.500,-8741.700
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Theridran|r
     .trainer >>Trainiere deine Klassenfähigkeiten
 	.target Theridran
@@ -679,9 +683,17 @@ step << Mage
     .target Elsharin
 step << Priest/Paladin
     #optional
-    #completewith next
+    #completewith train19742 << Paladin
+    #completewith next << Priest
     .goto 1453/0,809.52,-8579.22,20 >> Lauf zur Kathedrale in Sturmwind
+step << Human Paladin
+    .isOnQuest 1780
+    .goto 1453/0,845.800,-8545.800
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Duthorian Rall|r
+    .turnin 1780 >>Gebt die Quest Der Foliant der Offenbarung ab
+    .target Duthorian Rall
 step << Paladin
+    #label train19742
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Arthur der Treue|r
     .goto 1453/0,859.13,-8559.14,10,0
     .goto 1453/0,861.14,-8573.03
@@ -705,7 +717,7 @@ step
     .target Catherine Leland
 step << Shaman -- Shaman accepts now isntead of later due to arriving back from tram, not boat like the rest
     .goto 1453/0,1193.100,-8328.900
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Ladungsbuchhalter Philmor::268511|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Ladungsbuchhalter Philmor::268511|r
     .target Manifest Clerk Philmor::268511
     .accept 97220 >>Akzeptiert die Quest Philmors Bitte
 step
@@ -719,8 +731,8 @@ step
     #requires DockTravel
     #label DarkshoreCook1
     #completewith DarkshoreBoat
-    >>|cRXP_WARN_Auf dem Boot, wenn es gerade angekommen ist, oder am Dock, wenn das Boot gerade abgefahren ist:|r
-    .cast 818 >>|cRXP_WARN_Erstellt ein|r |T135805:0|t[Einfaches Lagerfeuer] |cRXP_WARN_(in eurem Berufe-Buch)|r
+    >>|cRXP_WARN_Während ihr auf das Boot wartet:|r
+    .cast 818 >>|cRXP_WARN_Erstellt|r |T135805:0|t[Kochfeuerstelle] |cRXP_WARN_(in eurem Berufs-Buch)|r
     .usespell 818
     .zoneskip Darkshore
     .itemcount 769,1 --Chunk of Boar Meat (1+)
@@ -733,8 +745,8 @@ step
     #requires DarkshoreCook1
     #label DarkshoreCook2
     #completewith DarkshoreBoat
-    >>|cRXP_WARN_Auf dem Boot, wenn es gerade angekommen ist, oder am Dock, wenn das Boot gerade abgefahren ist:|r
-    .cast 818 >>|cRXP_WARN_Erstellt|r |T135805:0|t[Kochfeuerstelle] |cRXP_WARN_(in eurem Berufs-Buch)|r
+    >>|cRXP_WARN_Während ihr auf das Boot wartet:|r
+    .cast 818 >>|cRXP_WARN_Erstellt ein|r |T135805:0|t[Einfaches Lagerfeuer] |cRXP_WARN_(in eurem Berufe-Buch)|r
     .usespell 818
     .zoneskip Darkshore
     .itemcount 769,<1 --Chunk of Boar Meat (<1)
@@ -747,7 +759,7 @@ step
     #requires DarkshoreCook2
     #label DarkshoreCook3
     #completewith DarkshoreBoat
-    >>|cRXP_WARN_Auf dem Boot, wenn es gerade angekommen ist, oder am Dock, wenn das Boot gerade abgefahren ist:|r
+    >>|cRXP_WARN_Während ihr auf das Boot wartet:|r
     .cast 818 >>|cRXP_WARN_Erstellt ein|r |T135805:0|t[Einfaches Lagerfeuer] |cRXP_WARN_(in eurem Berufe-Buch)|r
     .usespell 818
     .zoneskip Darkshore
@@ -811,6 +823,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 #version 1
 << Alliance
 #group RestedXP Forever Dungeonführer (A)
@@ -852,7 +865,6 @@ step << NightElf
 step << !NightElf
     .goto 1439,35.743,43.710
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Cerellean Whiteclaw|r
-    >>|cRXP_WARN_Ihr müsst möglicherweise warten, bis sein Rollenspiel vorbei ist, falls jemand anderes gerade abgegeben hat|r
     .accept 963 >> Akzeptiert die Quest In ewiger Liebe
     .target Cerellean Whiteclaw
     .xp <11,1
@@ -1021,8 +1033,8 @@ step << Druid
     .skill herbalism,<15,1
 step
     #completewith next
-    >>|cRXP_WARN_Benutzt|r |T134335:0|t[Tharnariuns Hoffnung] |cRXP_WARN_auf einen|r Tollwütigen Distelbär|cRXP_ENEMY_. Es kann aus jeder Distanz verwendet werden, solange ihr den|r |cRXP_WARN_Bär|r |cRXP_ENEMY_anvisiert|r
-    >>|cRXP_WARN_==BENUTZT DEN QUESTGEGENSTAND NICHT, WENN KEIN |cRXP_ENEMY_Bär|r IN DER NÄHE IST==|r
+    >>|cRXP_WARN_Use|r |T134335:0|t[Tharnariuns Hoffnung] |cRXP_WARN_on a|r |cRXP_ENEMY_Rabid Distelbär|r --|cRXP_WARN_. It can be used from any range as long as you're targeting the|r |cRXP_ENEMY_Bear|r
+    -->>|cRXP_WARN_==DO NOT USE THE QUEST ITEM IF THERES NO |cRXP_ENEMY_BEAR|r NEARBY==|r
     >>|cRXP_WARN_Du kannst die Falle verschwenden und die Quest damit unlösbar machen! Sollte dir das passieren, musst du zum Questgeber zurückkehren und um eine weitere Falle bitten.|r
     .complete 2118,1 --Rabid Thistle Bear Captured (1)
     .unitscan Rabid Thistle Bear
@@ -1044,8 +1056,8 @@ step
     .goto 1439,38.095,58.395,50,0
     .goto 1439,38.696,57.874,50,0
     .goto 1439,39.129,59.176,50,0
-    >>|cRXP_WARN_Benutzt|r |T134335:0|t[Tharnariuns Hoffnung] |cRXP_WARN_auf einen|r |cRXP_ENEMY_Tollwütiger Distelbär|r |cRXP_WARN_Es kann von jeder Reichweite verwendet werden, solange ihr den Bären anvisiert|r
-    >>|cRXP_WARN_==BENUTZT NICHT DEN QUESTGEGENSTAND, WENN KEIN BÄR IN DER NÄHE IST==|r
+    >>|cRXP_WARN_Use|r |T134335:0|t[Tharnariuns Hoffnung] |cRXP_WARN_on a|r |cRXP_ENEMY_Rabid Distelbär|r --|cRXP_WARN_. It can be used from any range as long as you're targeting the bear|r
+    -->>|cRXP_WARN_==DO NOT USE THE QUEST ITEM IF THERES NO BEAR NEARBY==|r
     >>|cRXP_WARN_Du kannst die Falle verschwenden und die Quest damit unlösbar machen! Sollte dir das passieren, musst du zum Questgeber zurückkehren und um eine weitere Falle bitten.|r
     .complete 2118,1 --Rabid Thistle Bear Captured (1)
     .unitscan Rabid Thistle Bear
@@ -1187,7 +1199,6 @@ step
 step
     .goto 1439,35.743,43.710
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Cerellean Whiteclaw|r
-    >>|cRXP_WARN_Ihr müsst möglicherweise warten, bis sein Rollenspiel vorbei ist, falls jemand anderes gerade abgegeben hat|r
     .accept 963 >> Akzeptiert die Quest In ewiger Liebe
     .target Cerellean Whiteclaw
 step
@@ -1398,13 +1409,13 @@ step
 step
     #optional
     .goto 1439,41.901,31.339
-    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4723 >> Akzeptiert die Quest Gestrandete Meereskreatur
     .isOnQuest 1001
 step
     #optional
     .goto 1439,41.901,31.339
-    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4723 >> Akzeptiert die Quest Gestrandete Meereskreatur
     .isOnQuest 982
 step
@@ -1595,6 +1606,7 @@ step
     .skill cooking,10,1 -- shows if cooking is <10
     .skill cooking,<1,1 -- shows if cooking is >1
 step
+    #completewith RedCrystal << !NightElf !Hunter !Druid !Warrior
     #completewith AuberdineTurnin2 << NightElf/Hunter/Druid/Warrior
     >>Tötet |cRXP_ENEMY_Moonkin|r. Plündert sie für |T132832:0|t|cRXP_LOOT_[Kleines Ei]|r
     >>|cRXP_WARN_Dies wird verwendet, um eure|r |T133971:0|t[Kochkunst] |cRXP_WARN_später auf 50 zu erhöhen|r
@@ -1606,20 +1618,6 @@ step
     .mob Moonkin
     .skill cooking,<10,1 --XX Shows if cooking skill is 10-50
     .skill cooking,50,1
-step
-    #completewith LateTurtleStart
-    >>Tötet |cRXP_ENEMY_Moonkin|r. Plündert sie für |T132832:0|t|cRXP_LOOT_[Kleines Ei]|r
-    >>|cRXP_WARN_Dies wird verwendet, um eure|r |T133971:0|t[Kochkunst] |cRXP_WARN_später auf 50 zu erhöhen|r
-    >>|cRXP_WARN_Macht euch keinen Stress die Eier jetzt zu farmen. Denkt einfach daran, die Eier zu behalten und überlegt, wie viele Fertigkeitspunkte ihr noch benötigt, um Kochen 50 zu erreichen|r
-    .collect 6889,50,90,1,0x20,cooking --Small Egg (10-49)
-    .mob Young Moonkin
-    .mob Raging Moonkin
-    .mob Moonkin Oracle
-    .mob Moonkin
-    .skill cooking,<10,1 --XX Shows if cooking skill is 10-50
-    .skill cooking,50,1
-    .subzoneskip 442 --Auberdine
-    .subzoneskip 447 --Ameth'Aran
 step
     #label RedCrystal
     .goto 1439,47.314,48.676
@@ -2103,7 +2101,6 @@ step << !NightElf
     #optional
     .goto 1439,35.743,43.710
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Cerellean Whiteclaw|r
-    >>|cRXP_WARN_Ihr müsst möglicherweise warten, bis sein Rollenspiel vorbei ist, falls jemand anderes gerade abgegeben hat|r
     .turnin 963 >> Gebt die Quest In ewiger Liebe ab
     .target Cerellean Whiteclaw
     .isQuestComplete 963
@@ -2251,7 +2248,6 @@ step << NightElf
     #optional
     .goto 1439,35.743,43.710
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Cerellean Whiteclaw|r
-    >>|cRXP_WARN_Ihr müsst möglicherweise warten, bis sein Rollenspiel vorbei ist, falls jemand anderes gerade abgegeben hat|r
     .turnin 963 >> Gebt die Quest In ewiger Liebe ab
     .target Cerellean Whiteclaw
     .isQuestComplete 963
@@ -2288,7 +2284,7 @@ step << NightElf Rogue/NightElf Warrior/NightElf Hunter
     .goto 1453/0,875.500,-8680.900,10 >> Verlasst den Hafen von Sturmwind
 --@TODO add new coords for harbor exit cus no philmor's favor
 step << NightElf Druid
-    .goto 1453/0,1347.6192,-8591.2168
+    .goto 1453/0,1095.500,-8741.700
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Theridran|r
     .trainer >>Trainiere deine Klassenfähigkeiten
 	.target Theridran
@@ -2304,19 +2300,6 @@ step << NightElf
     .accept 97926 >> Akzeptiert die Quest Auf sich allein gestellt
 --    .accept 399 >> Accept Humble Beginnings
     .target Baros Alexston
-step << NightElf Rogue
-    .goto 1453/0,377.47,-8752.39
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Osborne|r
-    .trainer >> Trainiere deine Klassenfähigkeiten
-    .target Osborne the Night Man
-step << NightElf Warrior
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Wu|r oder |cRXP_FRIENDLY_Ilsa|r
-    .goto 1453/0,358.25,-8728.28,15,0
-    .goto 1453/0,302.6,-8685.53,15,0
-	.goto 1453/0,323.3,-8689.29
-    .trainer >> Trainiere deine Klassenfähigkeiten
-    .target Wu Shen
-    .target Ilsa Corbin
 step << NightElf Rogue/NightElf Warrior/NightElf Hunter
     .goto 1453/0,613.12,-8795.96
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Woo Ping|r
@@ -2340,6 +2323,11 @@ step << NightElf Rogue/NightElf Warrior/NightElf Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Elaine Trias::483|r
     .target Elaine Trias::483
     .turnin 97222 >>Gebt die Quest Torhauswaren ab
+step << NightElf Rogue
+    .goto 1453/0,377.47,-8752.39
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Osborne|r
+    .trainer >> Trainiere deine Klassenfähigkeiten
+    .target Osborne the Night Man
 step << NightElf Hunter
     .goto 1453/0,552.78,-8415.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Einris Brightspear|r
@@ -2360,14 +2348,33 @@ step << NightElf
     .zoneskip Loch Modan
     .zoneskip Dun Morogh
 step << NightElf
+    #completewith next
     .zone Ironforge >> Nehmt die Tiefenbahn nach Eisenschmiede
     .zoneskip Loch Modan
     .zoneskip Dun Morogh
+step << NightElf
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Monty|r auf der mittleren Plattform in der Tiefenbahn |cRXP_WARN_auf der Eisenschmiede-Seite!|r
+    .accept 6661 >> Akzeptiert die Quest Tiefenbahn-Ratten-Razzia
+    .target Monty
+step << NightElf
+    >>Benutzt |T133942:0|t[Rattenfänger-Flöte] auf |cRXP_FRIENDLY_Tiefenbahn-Ratten|r in der Tiefenbahn
+    .complete 6661,1 --Rats Captured (x5)
+    .use 17117
+    .mob Deeprun Rat
+step << NightElf
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Monty|r auf der mittleren Plattform in der Tiefenbahn
+    .turnin 6661 >> Gebt die Quest Tiefenbahn-Ratten-Razzia ab
+    .target Monty
 step << NightElf
     .goto Ironforge,55.491,47.751
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gryth Thurden|r
     .fp Ironforge >> Holt euch den Flugpunkt in Eisenschmiede
     .target Gryth Thurden
+step << NightElf Warrior
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Bilban Tosslespanner|r
+    .goto Ironforge,65.905,88.405
+    .trainer >> Trainiere deine Klassenfähigkeiten
+    .target Bilban Tosslespanner
 step << NightElf Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Bixi Wobblebonk|r und |cRXP_FRIENDLY_Buliwyf Stonehand|r
     >>Trainiert Wurfwaffen und 2H-Streitkolben wenn ihr das nicht schon vorher getan habt
@@ -2391,13 +2398,15 @@ step << NightElf Warrior
     .use 3107
     .itemcount 3107,1
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.3
+step
+    #label IFExit
 step << NightElf
     #completewith next
     .zone Dun Morogh >> Reist nach Dun Morogh
 step << NightElf
-    .goto Dun Morogh, 59.9, 49.5, 30, 0
-    .goto Dun Morogh, 61.2, 47.2, 15, 0
-    .goto Dun Morogh, 62.1, 47.3, 20 >>Lauft die Rampe hinauf zu |cRXP_ENEMY_Vagash|r
+    .goto Dun Morogh,59.9,49.5,30,0
+    .goto Dun Morogh,61.2,47.2,15,0
+    .goto Dun Morogh,62.1,47.3,20 >>Lauft die Rampe hinauf zu |cRXP_ENEMY_Vagash|r
 step << NightElf
     #completewith next
     +Lockt |cRXP_ENEMY_Vagash|r zu |cRXP_FRIENDLY_Rudra Amberstill|r
@@ -2405,13 +2414,13 @@ step << NightElf
     .mob Vagash
 step << NightElf
     >>|Tinterface/worldmap/chatbubble_64grey.blp:16|tSprecht mit |cRXP_FRIENDLY_Rudra Amberstill|r
-    .goto Dun Morogh, 63.1, 49.8
+    .goto Dun Morogh,63.1,49.8
     .target Rudra Amberstill
     .accept 314 >>Akzeptiert die Quest Die Herde beschützen
 step << NightElf
     >>Lockt |cRXP_ENEMY_Vagash|r zu den |cRXP_FRIENDLY_Gebirgsjäger von Dun Morogh|r
     >>|cRXP_WARN_Stellt sicher, dass ihr mindestens 50% Schaden anrichtet|r
-    .goto Dun Morogh, 62.8, 54.6, 10, 0
+    .goto Dun Morogh,62.8,54.6,10,0
     .mob Vagash
     .target Dun Morogh Mountaineer
     .complete 314, 1
@@ -2421,7 +2430,6 @@ step << NightElf
     .target Rudra Amberstill
     .turnin 314 >>Gebt die Quest Die Herde beschützen ab
 step << NightElf
-    #optional
     #label LochEnter
     .goto 1432,16.494,58.424,20,0
     .goto 1432,19.594,62.735,20,0
@@ -2513,7 +2521,7 @@ step << NightElf
     .target Thorgrum Borrelson
 step << NightElf
     #optional
-    #completewith Snowbound
+    #completewith KingsLands
     >>Tötet |cRXP_ENEMY_Alter Schwarzbär|r. Plündert sie für |T134027:0|t|cRXP_LOOT_Bärenfleisch|r
     >>Tötet |cRXP_ENEMY_Bergeber|r. Plündert sie für |cRXP_LOOT_Ebergedärme|r
     >>Tötet |cRXP_ENEMY_Waldlauerer|r. Plündert sie für |cRXP_LOOT_Spinnensekret|r
@@ -2538,6 +2546,7 @@ step << NightElf
     .target Captain Rugelfuss
     .isQuestComplete 267
 step << NightElf
+    #label KingsLands
     .goto 1432/0,-2602.54,-5832.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Gebirgsjäger Cobbleflint|r
     .turnin 224 >> Gebt die Quest Verteidigung der Länder des Königs ab
@@ -2765,6 +2774,7 @@ step << NightElf
     .turnin 418 >> Gebt die Blutwurst in Thelsamar ab
     .target Vidra Hearthstove
 step << NightElf
+    #label FlintTinder
     .goto Loch Modan,37.17,47.94,8,0
     .goto Loch Modan,37.24,47.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Jern Hornhelm|r
@@ -2854,8 +2864,7 @@ step << NightElf
     .complete 385,1 -- Crocolisk Meat (5)
     .complete 385,2 -- Crocolisk Skin (6)
     .mob Loch Crocolisk
-step
-    --@TODO add a line for this
+step << NightElf
     .goto Loch Modan,62,44
     >>Tötet |cRXP_ENEMY_Dolchzahn|r, er |cRXP_WARN_könnte die Küste entlang patrouillieren|r. Plündert ihr für|T3736888:0|t[|cRXP_LOOT_Mareks Krokojagdmesser|r]
     .complete 86758,1 --Marek's Croc Hunting Knife (1)
@@ -2879,6 +2888,43 @@ step << NightElf
     .goto Loch Modan,81.76,61.66
     .target Marek Ironheart
 step << NightElf
+    #optional
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Daryl der Jüngling|r
+    .goto Loch Modan,83.49,65.40
+    .accept 258 >> Akzeptiert die Quest Die Herausforderung eines Jägers
+    .target Daryl the Youngling
+    .xp >16,1
+step << NightElf
+    #optional
+    .goto Loch Modan,74.65,49.60,70,0
+    .goto Loch Modan,75.80,43.43,70,0
+    .goto Loch Modan,71.10,38.98,70,0
+    .goto Loch Modan,65.59,41.89,70,0
+    .goto Loch Modan,61.66,32.02,70,0
+    .goto Loch Modan,72.79,39.86,70,0
+    .goto Loch Modan,73.87,51.85,70,0
+    .goto Loch Modan,69.45,39.18
+    >>Tötet |cRXP_ENEMY_Elder Mountain Boars|r
+    >>|cRXP_WARN_Ihr müsst diese Quest abschließen und innerhalb von 12 Minuten zu |cRXP_FRIENDLY_Daryl der Jüngling|r zurückkehren. Falls ihr scheitert, brecht die Quest ab und nehmt sie erneut auf|r
+    .complete 258,1 -- Elder Mountain Boar slain (5)
+    .mob Elder Mountain Boar
+    .isOnQuest 258
+step << NightElf
+    #completewith next
+    #optional
+    .goto Loch Modan,82.92,59.37,80,0
+    .goto Loch Modan,83.28,62.97,25 >> Reist zu |cRXP_FRIENDLY_Daryl der Jüngling|r
+step << NightElf
+    #optional
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Daryl der Jüngling|r
+    .goto Loch Modan,83.49,65.40
+    .turnin 258 >> Gebt die Quest Die Herausforderung eines Jägers ab
+    .target Daryl the Youngling
+    .isOnQuest 258
+step << NightElf
+    #optional
+    .xp 16-2360 >> Farmt, bis ihr noch 2360 XP bis Stufe 16 benötigt (12.040/14.400)
+step << NightElf
     >>Springt aus der Hütte und sterbt durch die Mobs darunten
     .deathskip >> Sterbt und respawnt am Friedhof von Thelsamar
 step << NightElf
@@ -2894,6 +2940,8 @@ step << NightElf
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Khara Deepwater::1684|r
     .target Khara Deepwater::1684
     .turnin 86614 >>Gebt die Quest Silberschatz der Wellen ab
+step
+    #label LochEnd
 step << NightElf
     #label flyIF
     .goto 1432/0,-2929.87,-5424.84
@@ -2913,7 +2961,7 @@ step << NightElf Hunter
     .target Regnus Thundergranite
 step << NightElf Priest
     .goto 1455/0,-897.200,-4607.200
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Hohepriester Rohan|r  
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Hohepriester Rohan|r
     .trainer >> Trainiere deine Klassenfähigkeiten
     .target High Priest Rohan
 step << NightElf Priest/NightElf Druid
@@ -2987,7 +3035,7 @@ step
 step
     #optional
     .goto 1439,41.901,31.339
-    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4723 >> Akzeptiert die Quest Gestrandete Meereskreatur
     .isOnQuest 982
 
@@ -3050,7 +3098,7 @@ step
 step
     #label BoatSeaCreature
     .goto 1439,41.901,31.339
-    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4723 >> Akzeptiert die Quest Gestrandete Meereskreatur
 step
     #optional
@@ -3553,6 +3601,7 @@ step << Druid
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 #version 1
 << Alliance
 #group RestedXP Forever Dungeonführer (A)
@@ -3937,7 +3986,7 @@ step << Hunter
     .isOnQuest 731
 step << Hunter
     .goto 1439,31.251,87.419
-    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4733 >> Akzeptiert die Quest Gestrandete Meereskreatur
     >>|cRXP_WARN_Diese Quest kann SEHR schwierig sein. Bekämpft die |cRXP_ENEMY_Murlocs|r einzeln, Andernfalls könntest du die Aggro von mehreren gleichzeitig auf dich ziehen.|r
     >>|cRXP_WARN_Achtet auf |cRXP_ENEMY_Orakel der Grauflossen|r'|r |T136048:0|t[Blitzschlag] |cRXP_WARN_Schaden, sie können auch mit|r |T136052:0|t[Welle der Heilung]|r heilen
@@ -3964,11 +4013,11 @@ step
     .accept 4731 >> Akzeptiert die Quest Gestrandete Meeresschildkröte
 step << !Hunter
     .goto 1439,32.644,80.711
-    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4730 >> Akzeptiert die Quest Gestrandete Meereskreatur
 step << Hunter
     .goto 1439,32.644,80.711
-    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4730 >> Akzeptiert die Quest Gestrandete Meereskreatur
 step << Druid
     #optional
@@ -3995,7 +4044,7 @@ step
 step
     #label CompleteThistleBears
     .goto 1439,35.968,70.807
-    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4728 >> Akzeptiert die Quest Gestrandete Meereskreatur
 step << Druid
     #label Southcrabs
@@ -4031,7 +4080,6 @@ step
     #optional
     .goto 1439,35.743,43.710
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Cerellean Whiteclaw|r
-    >>|cRXP_WARN_Ihr müsst möglicherweise warten, bis sein Rollenspiel vorbei ist, falls jemand anderes gerade abgegeben hat|r
     .turnin 963 >> Gebt die Quest In ewiger Liebe ab
     .target Cerellean Whiteclaw
     .isQuestComplete 963
@@ -4517,7 +4565,7 @@ step << Dwarf Hunter/Human Hunter/Skyborne Hunter
     #label DarnDwarfHCook1
     #requires TravelDarnDwarfHBoat
     #completewith DarnDwarfHBoat
-    >>|cRXP_WARN_Auf dem Boot, wenn es gerade angekommen ist, oder am Dock, wenn das Boot gerade abgefahren ist:|r
+    >>|cRXP_WARN_Während ihr auf das Boot wartet:|r
     .cast 818 >>|cRXP_WARN_Erstellt eine|r |T135805:0|t[Einfaches Lagerfeuer] |cRXP_WARN_(unter dem Allgemeinen-Reiter eures Zauberbuches)|r
     .usespell 818
     .zoneskip Teldrassil
@@ -4554,14 +4602,12 @@ step << Dwarf Hunter/Human Hunter/Skyborne Hunter
     .goto 1438/1,965.80,8780.95
     .zone Darnassus >> Nimm das Lila Portal nach Darnassus
 step << Dwarf Hunter/Human Hunter/Skyborne Hunter
-    #completewith next
     .goto 1457/1,2511.01,10178.05
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Jocaste|r
     .trainer >> Trainiere deine Klassenfähigkeiten
     .target Jocaste
 step << Dwarf Hunter/Human Hunter/Skyborne Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Ilyenia Mondfeuer|r
-    .skipgossipid 96881
     .goto 1457/1,2329.19,9908.60
     .train 264 >> Erlernen Bogen
     .train 227 >> Erlernt Stäbe
@@ -4812,6 +4858,7 @@ step << Shaman
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 #version 1
 << Alliance !Hunter
 #group RestedXP Forever Dungeonführer (A)
@@ -4822,11 +4869,11 @@ RXPGuides.RegisterGuide([[
 
 step << !Shaman
     .goto 1453/0,1193.100,-8328.900
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Ladungsbuchhalter Philmor::268511|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Ladungsbuchhalter Philmor::268511|r
     .target Manifest Clerk Philmor::268511
     .accept 97220 >>Akzeptiert die Quest Philmors Bitte
 step << Shaman
-    .goto 1453/0,758.4316,-8140.6689
+    .goto 1453/0,634.800,-8390.900
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Shoni die Schtille|r
     .accept 2040 >> Unterirdischer Angriff annehmen
     .target Shoni the Shilent
@@ -4834,7 +4881,7 @@ step << Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Wilder Thistlenettle|r
     .accept 167 >> Akzeptiert die Quest Oh Bruder...
     .accept 168 >> Akzeptiert Die Suche nach Andenken
-    .goto 1453/0,585.9322,-8241.1085
+    .goto 1453/0,501.200,-8468.601
     .target Wilder Thistlenettle
 step << Mage
     #completewith next
@@ -4901,7 +4948,7 @@ step << !NightElf
     .target Furen Longbeard
     .isOnQuest 1338
 step << !Shaman
-    .goto 1453/0,758.4316,-8140.6689
+    .goto 1453/0,634.800,-8390.900
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Shoni die Schtille|r
     .accept 2040 >> Unterirdischer Angriff annehmen
     .target Shoni the Shilent
@@ -4918,7 +4965,7 @@ step << !Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Wilder Thistlenettle|r
     .accept 167 >> Akzeptiert die Quest Oh Bruder...
     .accept 168 >> Akzeptiert Die Suche nach Andenken
-    .goto 1453/0,585.9322,-8241.1085
+    .goto 1453/0,501.200,-8468.601
     .target Wilder Thistlenettle
 step << Rogue
     .goto 1453/0,377.61,-8752.30
@@ -5015,16 +5062,16 @@ step
     #completewith orcs
     .goto 1453/0,490.12,-8835.67
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Dungar Trinkfest|r
-    .fly Redridge >> Fliegt ins Rotkammgebirge << !NightElf
-    .fp Stormwind >> Erlernt die Flugroute in Sturmwind << NightElf
+    .fly Redridge >> Fliegt ins Rotkammgebirge << !NightElf !Skyborne
+    .fp Stormwind >> Erlernt die Flugroute in Sturmwind << NightElf/Skyborne
     .target Dungar Longdrink
     .zoneskip Redridge Mountains
-step << NightElf
+step << NightElf/Skyborne
     #completewith RRFP
     .goto 1429/0,389.800,-9119.900
     .zone Elwynn Forest >> Verlasst Sturmwind
     .zoneskip Redridge Mountains
-step << NightElf
+step << NightElf/Skyborne
     #completewith RRFP
     .goto 1433/0,-1948.56,-9582.75
     .zone Redridge Mountains >> Reist ins Rotkammgebirge
@@ -5040,7 +5087,7 @@ step
     .accept 246 >> Akzeptiert die Quest Einschätzung der Gefahr
     .accept 98407 >>Akzeptiert die Quest Machtdemonstration
     .target Deputy Feldon
-step << NightElf
+step << NightElf/Skyborne
     #label RRFP
     .goto 1433/0,-2234.900,-9435.300
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Ariena Sturmfeder|r
@@ -5423,15 +5470,19 @@ step << Druid
     .accept 98393 >>Akzeptiert die Quest Der große Katzengeist
 
 step << Druid
+    #completewith next
+	.cast 18960 >> Caste Teleportieren: Moonglade
+    .zoneskip Moonglade
+step << Druid
     .goto 1450/1,-2678.900,8020.000
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Dendrite Starblaze::11802|r
     .target Dendrite Starblaze::11802
     .turnin 98393 >>Gebt die Quest Der große Katzengeist ab
     .accept 98341 >>Akzeptiert die Quest Der Große windgetragene Katzengeist << Skyborne
-    .accept 98341 >>Akzeptiert die Quest Der große Katzengeist << !Skyborne
+    .accept 98394 >>Akzeptiert die Quest Der große Katzengeist << !Skyborne
 step << Druid !Skyborne
     .goto 1450/1,-2640.000,7338.900
-     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Großer Katzengeist|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Großer Katzengeist|r
     .turnin 98394 >>Gebt die Quest Der große Katzengeist ab
     .accept 98396 >>Akzeptiert die Quest Der große Katzengeist
     .target Great Cat Spirit
@@ -5553,7 +5604,7 @@ step << Rogue
 step
     #optional
     .isQuestComplete 2040
-    .goto 1453/0,758.4316,-8140.6689
+    .goto 1453/0,634.800,-8390.900
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Shoni die Schtille|r
     .turnin 2040 >> Gebt die Quest Unterirdischer Angriff ab
     .target Shoni the Shilent
@@ -5562,14 +5613,14 @@ step
     .isQuestComplete 168
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Wilder Thistlenettle|r
     .turnin 168 >> Gebt die Quest Die Suche nach Andenken ab
-    .goto 1453/0,585.9322,-8241.1085
+    .goto 1453/0,501.200,-8468.601
     .target Wilder Thistlenettle
 step
     #optional
     .isQuestComplete 167
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Wilder Thistlenettle|r
     .turnin 167 >> Gebt die Quest Oh Bruder... ab
-    .goto 1453/0,585.9322,-8241.1085
+    .goto 1453/0,501.200,-8468.601
     .target Wilder Thistlenettle
 step << Warrior/Paladin
     #ah
@@ -5643,7 +5694,7 @@ step << Paladin/Priest
 step << Paladin
     .goto 1453/0,845.95,-8545.70
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Duthorian Rall|r. Er wird dir den [|cRXP_LOOT_Foliant der Ehre|r] geben
-    use 6776 >>|cRXP_WARN_Use the |T133739:0|t[|cRXP_LOOT_Tome of Valor|r] to start the quest|r
+    .use 6776 >>|cRXP_WARN_Benutzt die |T133739:0|t[|cRXP_LOOT_Der Foliant der Ehre|r] um die Quest zu starten|r
     .collect 6776,1,1649 --Tome of Valor (1)
     .accept 1649 >>Der Foliant der Tapferkeit annehmen
     .target Duthorian Rall
@@ -5776,7 +5827,7 @@ step << Rogue
 step << !Dwarf Rogue
     #sticky
     #label AntiVenomStart
-    .collect 6452,1 >> Crafte ein |T134437:0|t[Gegengift]
+    .collect 6452,1 >> Stelle ein |T134437:0|t[Gegengift] her
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
     .train 7934,3 --Anti Venom spell trained
@@ -5829,7 +5880,7 @@ step << !Dwarf Rogue
 step << !Dwarf Rogue
     #sticky
     #label AntiVenomStart2
-    .collect 6452,1 >> Crafte ein |T134437:0|t[Gegengift]
+    .collect 6452,1 >> Stelle ein |T134437:0|t[Gegengift] her
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
     .train 7934,3 --Anti Venom spell trained
@@ -6021,13 +6072,14 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 #version 1
 << Alliance Hunter
 #group RestedXP Forever Dungeonführer (A)
 #subgroup Speedrun Dungeonführer 1-20
 --#groupid RXP-SRGCE-A1
 #name 19-21 Dunkelküste/Eschental
-#next RestedXP Forever Dungeonführer (A)\21-23 Eschental/Steinkrallengebirge
+#next RestedXP Forever Dungeonführer (A)\21-23 Eschental/Stonetalon
 
 step
     #optional
@@ -6102,7 +6154,7 @@ step
 step
     #optional
     .goto 1439,31.251,87.419
-    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4733 >> Akzeptiert die Quest Gestrandete Meereskreatur
     >>|cRXP_WARN_Diese Quest kann SEHR schwierig sein. Bekämpft die |cRXP_ENEMY_Murlocs|r einzeln, Andernfalls könntest du die Aggro von mehreren gleichzeitig auf dich ziehen.|r
     .link https://youtu.be/lfQM3Q-Ag5A >> |cRXP_WARN_Klickt hier für einen Videoleitfaden|r
@@ -6119,7 +6171,7 @@ step
 step
     #optional
     .goto 1439,32.644,80.711
-    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4730 >> Akzeptiert die Quest Gestrandete Meereskreatur
 step
     #optional
@@ -6188,7 +6240,7 @@ step
     .itemcount 13536,<1 --Horn of Awakening
 step
     #label Kerlonian
-    --@TODO add coordinates for this
+    .goto 1439/1,206.400,4402.500
     >>|cRXP_WARN_Eskortiert |cRXP_FRIENDLY_Kerlonian|r zu seinen Beutel |cRXP_WARN_in Dunkelküste|r|r
     .use 13536 >> |cRXP_WARN_Benutzt das|r |T134229:0|t[|cRXP_LOOT_Horn der Erweckung|r] |cRXP_WARN_wenn |cRXP_FRIENDLY_Kerlonian|r neben euch einschläft|r
     >>|cRXP_WARN_Vermeidet es so weit wie möglich, auf der Hauptstraße zu laufen. Feinde spawnen nur, wenn ihr auf der Straße seid|r
@@ -6640,6 +6692,7 @@ step << Dwarf Hunter/Human Hunter/Skyborne Hunter
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 #version 1
 << Alliance !Hunter
 #group RestedXP Forever Dungeonführer (A)
@@ -6844,7 +6897,7 @@ step
     .mob Reef Crawler
 step
     .goto 1439,31.251,87.419
-    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4733 >> Akzeptiert die Quest Gestrandete Meereskreatur
     >>|cRXP_WARN_Diese Quest kann SEHR schwierig sein. Bekämpft die |cRXP_ENEMY_Murlocs|r einzeln, Andernfalls könntest du die Aggro von mehreren gleichzeitig auf dich ziehen.|r
     .link https://youtu.be/lfQM3Q-Ag5A >> |cRXP_WARN_Klickt hier für einen Videoleitfaden|r
@@ -6860,7 +6913,7 @@ step
 step
     #optional
     .goto 1439,32.644,80.711
-    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4730 >> Akzeptiert die Quest Gestrandete Meereskreatur
 step
     #optional
@@ -6961,7 +7014,7 @@ step
     .isOnQuest 995
 step
     #label KerlonianTwo
-    --@TODO add coordinates for this
+    .goto 1439/1,206.400,4402.500
     >>|cRXP_WARN_Eskortiert |cRXP_FRIENDLY_Kerlonian|r zu seinen Beutel |cRXP_WARN_in Dunkelküste|r|r
     .use 13536 >> |cRXP_WARN_Benutzt das|r |T134229:0|t[|cRXP_LOOT_Horn der Erweckung|r] |cRXP_WARN_wenn |cRXP_FRIENDLY_Kerlonian|r neben euch einschläft|r
     >>|cRXP_WARN_Vermeidet es so weit wie möglich, auf der Hauptstraße zu laufen. Feinde spawnen nur, wenn ihr auf der Straße seid|r

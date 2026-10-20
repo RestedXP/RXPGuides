@@ -92,7 +92,7 @@ step << Priest/Mage/Warlock
     .goto Elwynn Forest,46.2,40.4,40,0
     .goto Elwynn Forest,47.486,41.566
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Bruder Danil|r
-    .vendor >> |cRXP_WARN_Sobald ihr 50c an Verkäuferplunder habt, kauft 10|r |T132794:0|t[Erfrischendes Quellwasser]
+    .vendor >> |cRXP_WARN_Sobald ihr 50 Kupfer Vendor-Schrott habt, kauft 10|r |T132794:0|t[Erfrischendes Quellwasser]
     .target Brother Danil
     .collect 159,10 --Collect Refreshing Spring Water (x10)
 step
@@ -173,7 +173,7 @@ step
 step
     #sticky
     #label xp3
-    .xp 3+1110 >>Farmt auf dem Rückweg bis 1110+/1400xp
+    .xp 3+1110 >>Farmt bis 1110+/1400xp auf dem Weg von Euch zurück
 step
     #completewith next
     .goto Elwynn Forest,47.691,41.417
@@ -200,7 +200,7 @@ step << Mage
     .trainer >> Trainiere deine Klassenfähigkeiten
 step << Priest
     #completewith next
-    .goto Elwynn Forest,49.8,40.2,10 >> Reist durch den Türdurchgang
+    .goto Elwynn Forest,49.8,40.2,10 >> Reist durch die Tür
 step << Priest
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Priestess Anetta|r
     .target Priestess Anetta
@@ -233,7 +233,7 @@ step << Warlock
     .target Drusilla La Salle
     .goto Elwynn Forest,49.873,42.649
     .turnin 3105 >> Gebt die Quest Besudelter Brief ab
-    .xp 4 >> Farmt bis 4
+    .xp 4 >> Farmt bis Stufe 4
     .trainer >>Erlernt |T136118:0|t[Verderbnis]
 step
     .goto Elwynn Forest,53.9,49.2,50,0
@@ -244,7 +244,7 @@ step
 	.mob Defias Thug
     .complete 18,1 --Collect Red Burlap Bandana (x12)
 step << Rogue
-    .xp 4 >> Farmt bis 4
+    .xp 4 >> Farmt bis Stufe 4
 step
     #completewith next
     #softcore
@@ -263,7 +263,7 @@ step
     .accept 3903 >> Akzeptiert die Quest Milly Osworth
 step << Paladin
     #completewith next
-    +Legt den |T133052:0|t[Milizkriegshammer] an
+    +Rüstet die |T133052:0|t[Milizkriegshammer] aus
     .use 5579
     .itemcount 5579,1
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.6
@@ -313,7 +313,7 @@ step << !Priest !Mage
     #sticky
     .abandon 3904 >> Brecht die Quest Millys Ernte ab
 step << !Priest !Mage
-    .xp 5+1715 >> Farmt auf dem Rückweg bis 1715+/2800xp
+    .xp 5+1715 >> Farmt auf eurem Rückweg bis 1715+/2800xp
     .goto Elwynn Forest,48.171,42.943
 --N SoM xp values
 step << Priest/Mage
@@ -393,8 +393,8 @@ step << Warrior/Rogue/Paladin
     .target Smith Argus
     .goto Elwynn Forest,41.706,65.544
     .trainer >> Erlerne |T136241:0|t[Schmiedekunst]
-    >>|cRXP_WARN_Dadurch könnt ihr |T135248:0|t[Rough Sharpening Stones] herstellen, die Nahkampftreffer um +2 Schaden erhöhen. Das ist am Anfang sehr bedeutend|r << Warrior/Rogue
-    >>|cRXP_WARN_Dadurch könnt ihr |T135255:0|t[Rough Weightstones] herstellen, die Nahkampftreffer um +2 Schaden erhöhen. Das ist am Anfang sehr bedeutend|r << Paladin
+    >>|cRXP_WARN_Dies erlaubt euch, |T135248:0|t[Rough Sharpening Stones] herzustellen, die Nahkampfanschläge um +2 Schaden erhöhen. Das ist sehr bedeutend zu Anfang|r << Warrior/Rogue
+    >>|cRXP_WARN_Dies erlaubt euch, |T135255:0|t[Rough Weightstones] herzustellen, die Nahkampfanschläge um +2 Schaden erhöhen. Das ist sehr bedeutend zu Anfang|r << Paladin
 step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Corina Steele|r
     >>|cRXP_WARN_Buy und equip a|r |T135321:0|t[Gladius]
@@ -447,7 +447,7 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Brog Hamfist|r
     .target Brog Hamfist
     .goto Elwynn Forest,43.96,65.92
-    .vendor 151 >>|cRXP_WARN_Kauft eine|r |T135641:0|t[Ausbalancierter Wurfdolch] |cRXP_WARN_und legt ihn an|r
+    .vendor 151 >>|cRXP_WARN_Kauft einen|r |T135641:0|t[Ausbalancierter Wurfdolch] |cRXP_WARN_und rüstet ihn aus|r
 step << Warlock
     #completewith next
     .goto Elwynn Forest,44.1,66.0,10 >> Geht nach unten
@@ -531,8 +531,8 @@ step
 step
     #completewith next
     >>Tötet |cRXP_ENEMY_Koboldtunnelgräber|r und |cRXP_ENEMY_Koboldminenarbeiter|r. Plündert sie für |cRXP_LOOT_Große Kerze|r und |cRXP_LOOT_Goldstaub|r
-    >>|cRXP_WARN_Falls ihr|r |T135232:0|t|cRXP_LOOT_[Rauer Stein]|r |cRXP_WARN_als Beute bekommt, macht daraus|r |T135248:0|t[Rough Sharpening Stones] << Warrior/Rogue
-    >>|cRXP_WARN_Falls ihr|r |T135232:0|t|cRXP_LOOT_[Rauer Stein]|r |cRXP_WARN_als Beute bekommt, macht daraus|r |T135255:0|t[Rough Weightstones] << Paladin
+    >>|cRXP_WARN_Falls ihr etwas|r |T135232:0|t|cRXP_LOOT_[Rauer Stein]|r |cRXP_WARN_verarbeitet diese zu|r |T135248:0|t[Grobe Schleifsteine] << Warrior/Rogue
+    >>|cRXP_WARN_Falls ihr etwas|r |T135232:0|t|cRXP_LOOT_[Rauer Stein]|r |cRXP_WARN_verarbeitet diese zu|r |T135255:0|t[Grobe Wiegesteine] << Paladin
     .complete 60,1 --Kobold Candle (8)
     .complete 47,1 --Gold Dust (10)
     .mob Kobold Tunneler
@@ -558,8 +558,8 @@ step
 step
     #completewith next
     >>Tötet |cRXP_ENEMY_Koboldtunnelgräber|r und |cRXP_ENEMY_Koboldminenarbeiter|r. Plündert sie für |cRXP_LOOT_Große Kerze|r und |cRXP_LOOT_Goldstaub|r
-    >>|cRXP_WARN_Falls ihr|r |T135232:0|t|cRXP_LOOT_[Rauer Stein]|r |cRXP_WARN_als Beute bekommt, macht daraus|r |T135248:0|t[Rough Sharpening Stones] << Warrior/Rogue
-    >>|cRXP_WARN_Falls ihr|r |T135232:0|t|cRXP_LOOT_[Rauer Stein]|r |cRXP_WARN_als Beute bekommt, macht daraus|r |T135255:0|t[Rough Weightstones] << Paladin
+    >>|cRXP_WARN_Falls ihr etwas|r |T135232:0|t|cRXP_LOOT_[Rauer Stein]|r |cRXP_WARN_verarbeitet diese zu|r |T135248:0|t[Grobe Schleifsteine] << Warrior/Rogue
+    >>|cRXP_WARN_Falls ihr etwas|r |T135232:0|t|cRXP_LOOT_[Rauer Stein]|r |cRXP_WARN_verarbeitet diese zu|r |T135255:0|t[Grobe Wiegesteine] << Paladin
     .complete 60,1 --Kobold Candle (8)
     .complete 47,1 --Gold Dust (10)
     .mob Kobold Tunneler
@@ -591,8 +591,8 @@ step
 step
     #completewith next
     >>Tötet |cRXP_ENEMY_Koboldtunnelgräber|r und |cRXP_ENEMY_Koboldminenarbeiter|r. Plündert sie für |cRXP_LOOT_Große Kerze|r und |cRXP_LOOT_Goldstaub|r
-    >>|cRXP_WARN_Falls ihr|r |T135232:0|t|cRXP_LOOT_[Rauer Stein]|r |cRXP_WARN_als Beute bekommt, macht daraus|r |T135248:0|t[Rough Sharpening Stones] << Warrior/Rogue
-    >>|cRXP_WARN_Falls ihr|r |T135232:0|t|cRXP_LOOT_[Rauer Stein]|r |cRXP_WARN_als Beute bekommt, macht daraus|r |T135255:0|t[Rough Weightstones] << Paladin
+    >>|cRXP_WARN_Falls ihr etwas sammelt|r |T135232:0|t|cRXP_LOOT_[Rauer Stein]|r |cRXP_WARN_verwandelt sie in|r |T135248:0|t[Rough Sharpening Stones] << Warrior/Rogue
+    >>|cRXP_WARN_Falls ihr welche lotet|r |T135232:0|t|cRXP_LOOT_[Rauer Stein]|r |cRXP_WARN_konvertiert sie in|r |T135255:0|t[Rough Weightstones] << Paladin
     .complete 60,1 --Kobold Candle (8)
     .complete 47,1 --Gold Dust (10)
     .mob Kobold Tunneler
@@ -606,8 +606,8 @@ step
 step
     #completewith KillGoldtooth
     >>Tötet |cRXP_ENEMY_Koboldtunnelgräber|r und |cRXP_ENEMY_Koboldminenarbeiter|r. Plündert sie für |cRXP_LOOT_Große Kerze|r und |cRXP_LOOT_Goldstaub|r
-    >>|cRXP_WARN_Falls ihr|r |T135232:0|t|cRXP_LOOT_[Rauer Stein]|r |cRXP_WARN_als Beute bekommt, macht daraus|r |T135248:0|t[Rough Sharpening Stones] << Warrior/Rogue
-    >>|cRXP_WARN_Falls ihr|r |T135232:0|t|cRXP_LOOT_[Rauer Stein]|r |cRXP_WARN_als Beute bekommt, macht daraus|r |T135255:0|t[Rough Weightstones] << Paladin
+    >>|cRXP_WARN_Falls ihr welche lotet|r |T135232:0|t|cRXP_LOOT_[Rauer Stein]|r |cRXP_WARN_konvertiert sie in|r |T135248:0|t[Rough Sharpening Stones] << Warrior/Rogue
+    >>|cRXP_WARN_Falls ihr welche lotet|r |T135232:0|t|cRXP_LOOT_[Rauer Stein]|r |cRXP_WARN_konvertiert sie in|r |T135255:0|t[Rough Weightstones] << Paladin
     .complete 60,1 --Kobold Candle (8)
     .complete 47,1 --Gold Dust (10)
     .mob Kobold Tunneler
@@ -627,8 +627,8 @@ step
 step
     #completewith next
     >>Tötet |cRXP_ENEMY_Koboldtunnelgräber|r und |cRXP_ENEMY_Koboldminenarbeiter|r. Plündert sie für |cRXP_LOOT_Große Kerze|r und |cRXP_LOOT_Goldstaub|r
-    >>|cRXP_WARN_Falls ihr|r |T135232:0|t|cRXP_LOOT_[Rauer Stein]|r |cRXP_WARN_als Beute bekommt, macht daraus|r |T135248:0|t[Rough Sharpening Stones] << Warrior/Rogue
-    >>|cRXP_WARN_Falls ihr|r |T135232:0|t|cRXP_LOOT_[Rauer Stein]|r |cRXP_WARN_als Beute bekommt, macht daraus|r |T135255:0|t[Rough Weightstones] << Paladin
+    >>|cRXP_WARN_Falls ihr welche lotet|r |T135232:0|t|cRXP_LOOT_[Rauer Stein]|r |cRXP_WARN_konvertiert sie in|r |T135248:0|t[Rough Sharpening Stones] << Warrior/Rogue
+    >>|cRXP_WARN_Falls ihr welche lotet|r |T135232:0|t|cRXP_LOOT_[Rauer Stein]|r |cRXP_WARN_konvertiert sie in|r |T135255:0|t[Rough Weightstones] << Paladin
     .complete 60,1 --Kobold Candle (8)
     .complete 47,1 --Gold Dust (10)
     .mob Kobold Tunneler
@@ -644,8 +644,8 @@ step
     .goto Elwynn Forest,37.71,83.76,25,0
     .goto Elwynn Forest,40.5,82.3
     >>Tötet |cRXP_ENEMY_Koboldtunnelgräber|r und |cRXP_ENEMY_Koboldminenarbeiter|r. Plündert sie für |cRXP_LOOT_Große Kerze|r und |cRXP_LOOT_Goldstaub|r
-    >>|cRXP_WARN_Falls ihr|r |T135232:0|t|cRXP_LOOT_[Rauer Stein]|r |cRXP_WARN_als Beute bekommt, macht daraus|r |T135248:0|t[Rough Sharpening Stones] << Warrior/Rogue
-    >>|cRXP_WARN_Falls ihr|r |T135232:0|t|cRXP_LOOT_[Rauer Stein]|r |cRXP_WARN_als Beute bekommt, macht daraus|r |T135255:0|t[Rough Weightstones] << Paladin
+    >>|cRXP_WARN_Falls ihr welche lotet|r |T135232:0|t|cRXP_LOOT_[Rauer Stein]|r |cRXP_WARN_konvertiert sie in|r |T135248:0|t[Rough Sharpening Stones] << Warrior/Rogue
+    >>|cRXP_WARN_Falls ihr etwas sammelt|r |T135232:0|t|cRXP_LOOT_[Rauer Stein]|r |cRXP_WARN_verwandelt sie in|r |T135255:0|t[Rough Weightstones] << Paladin
     .complete 60,1 --Kobold Candle (8)
     .complete 47,1 --Gold Dust (10)
     .mob Kobold Tunneler
@@ -654,10 +654,10 @@ step << Warrior
     #completewith Goldtooth
     +|cRXP_WARN_Versucht, einen|r |T134829:0|t[Schwacher Heiltrank] zu sparen |cRXP_WARN_da ihr es später für Rolfs Leiche brauchen werdet|r
 step << Warrior/Rogue
-    >>Erinnern: Stellt|cRXP_WARN_ |T135248:0|t[Rough Sharpening Stones] |rher, wenn ihr einen|cRXP_WARN_ |T135232:0|t|r[Rauer Stein]|cRXP_LOOT_ aufgehoben habt|r
+    >>Denkt daran,|cRXP_WARN_ |T135248:0|t[Rough Sharpening Stones] |rherzustellen, falls ihr einen|cRXP_WARN_ |T135232:0|t|r[Rauer Stein]|cRXP_LOOT_ aufgehoben habt|r
     .xp 7+1600 >>Farmt bis 1600+/4500xp
 step << Paladin
-    >>Erinnern: Stellt|cRXP_WARN_ |T135255:0|t[Rough Weightstones] |rher, wenn ihr einen|cRXP_WARN_ |T135232:0|t|r[Rauer Stein]|cRXP_LOOT_ aufgehoben habt|r
+    >>Denkt daran,|cRXP_WARN_ |T135255:0|t[Rough Weightstones] |rherzustellen, falls ihr einen|cRXP_WARN_ |T135232:0|t|r[Rauer Stein]|cRXP_LOOT_ aufgehoben habt|r
     .xp 7+1600 >>Farmt bis 1600+/4500xp
 step << !Priest !Paladin !Warrior !Rogue
     .xp 7+1600 >>Farmt bis 1600+/4500xp
@@ -749,7 +749,7 @@ step << Warlock
 step << Warlock
     .goto Elwynn Forest,44.397,65.989
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Cylina Darkheart|r
-    .vendor >> |cRXP_WARN_Kauft|r |T133738:0|t[Grimoire of Feuerblitz (Rang 2)] |cRXP_WARN_, wenn ihr es euch leisten könnt. Falls nicht, werdet ihr es später kaufen|r
+    .vendor >> |cRXP_WARN_Kauft das|r |T133738:0|t[Grimoire of Feuerblitz (Rang 2)] |cRXP_WARN_wenn ihr es euch leisten könnt. Wenn nicht, kauft ihr es später|r
     .target Cylina Darkheart
 step << Mage/Priest/Rogue/Warrior/Paladin
     #completewith next
@@ -805,8 +805,8 @@ step
     #completewith next
     .goto Elwynn Forest,61.654,53.608,15 >> BETRETET die Jaspismine
 step
-    >>|cRXP_WARN_Folgen: dem Weg durch die Mitte, um die Jaspismine zu erkunden|r
-    >>|cRXP_WARN_Verlassen die Jaspismine, sobald das Ziel abgeschlossen ist|r
+    >>|cRXP_WARN_Folgt dem Weg durch die Mitte, um die Jaspismine zu erkunden|r
+    >>|cRXP_WARN_Verlasst die Jaspismine sobald das Ziel abgeschlossen ist|r
     .goto Elwynn Forest,60.4,50.2
     .complete 76,1 --Scout through the Jasperlode Mine
 step
@@ -859,7 +859,7 @@ step
     >>Klickt auf |cRXP_PICK_Rolfs Leichnam|r auf dem Boden
     >>|cRXP_ENEMY_Murlocfutterwühler|r |cRXP_WARN_werden|r |T135915:0|t[Schwachen Trank trinken] |cRXP_WARN_wirken, was sie selbst für 61-68 heilt|r
     >>|cRXP_WARN_Wirkt|r |T135953:0|t[Erneuerung] |cRXP_WARN_und|r |T135940:0|t[Machtwort: Schild] |cRXP_WARN_dann füllt eure Mana. Zieht die 2|cRXP_ENEMY_ Murlocs|r vor den Hütten, bewegt euch weg, dann tötet einen. Lauft weg wenn ihr einen tötet, dann tötet den anderen|r << Priest
-    >>|cRXP_WARN_Ziehen die 2|r |cRXP_ENEMY_Murlocs|r |cRXP_WARN_vor den Hütten, entfernt euch und|r |T136071:0|t[Verwandlung] |cRXP_WARN_einen, während ihr den anderen tötet. Tötet den|r |T136071:0|tVerwandelt |cRXP_WARN_danach|r << Mage
+    >>|cRXP_WARN_Zieht die 2|r |cRXP_ENEMY_Murlocs|r |cRXP_WARN_vor den Hütten, bewegt euch weg und|r |T136071:0|t[Verwandlung] |cRXP_WARN_einen während ihr den anderen tötet. Tötet den|r |T136071:0|t[Verwandelt] |cRXP_WARN_einen danach|r << Mage
     >>|cRXP_WARN_Sammelt 100 Wut. Zieht die 2|r Murlocs|cRXP_ENEMY_ vor den Hütten, bewegt euch weg und haltet|r |T132316:0|t[Kniesehne] |cRXP_WARN_auf einem aktiv,während ihr den anderen tötet. Benutzt auch|r |T133581:0|t[Tasche mit Murmeln] |cRXP_WARN_auf den, den ihr tötet. Lauft weg und|r |cRXP_WARN_setzt den einen den ihr mit|r |T132316:0|t[Kniesehne] |cRXP_WARN_zurück gezogen habt zurück, nachdem ihr den anderern getötet habt|r << Warrior
     >>|cRXP_WARN_Zieht die 2|r |cRXP_ENEMY_Murlocs|r |cRXP_WARN_vor den Hütten, bewegt euch weg und konzentriert euch auf das Töten eines Murlocs. Benutzt|r |T136205:0|t[Entrinnen] |cRXP_WARN_sobald beide euch angreifen. Dies ist eine gute Gelegenheit,|r |T133581:0|t[Tasche mit Murmeln]|cRXP_WARN_zu benutzen. Lauft weg und setzt den Kampf zurück, sobald ihr einen getötet habt|r << Rogue
     >>|cRXP_WARN_Zieht die 2|r |cRXP_ENEMY_Murlocs|r |cRXP_WARN_vor den Hütten, bewegt euch weg und|r |T136183:0|t[Furcht] |cRXP_WARN_wirkt auf einen von ihnen ständig, und versucht, DoTs auf beide zu halten|r << Warlock
@@ -1078,18 +1078,18 @@ step << Rogue
     .target Keryn Sylvius
     .goto Elwynn Forest,43.872,65.937
     .trainer >> Trainiere deine Klassenfähigkeiten
-    >>|cRXP_WARN_Zug|r |T132147:0|t[Beidhändigkeit] |cRXP_WARN_und|r |T132307:0|t[Sprinten] |cRXP_WARN_als Minimum. Erlernt keine zusätzlichen Fähigkeiten. Spart von Euch Geld|r
+    >>|cRXP_WARN_Lernt|r |T132147:0|t[Beidhändigkeit] |cRXP_WARN_und|r |T132307:0|t[Sprinten] |cRXP_WARN_zumindest. Lernt keine überflüssigen Fähigkeiten. Spart euer Geld|r
     .train 674 >> Erlernt |T132147:0|t[Beidhändigkeit]
     .train 2983 >> Erlernt |T132307:0|t[Sprinten]
 step << Rogue
     #som
     .goto Elwynn Forest,41.7,65.9
     .money >0.3197
-    .vendor >>Ihr habt nicht genug Geld, also kauft ein Stilett für eure Aus-Hand
+    .vendor >>Ihr habt nicht genug Geld, also kauft ein Stilett für eure Offhand
 step << Rogue
     #era
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Corina Steele|r
-    >>|cRXP_WARN_Kauft und rüstet ein|r |T135641:0|t[Stilett] |cRXP_WARN_für die Aus-Hand von Euch aus|r
+    >>|cRXP_WARN_Kauft und rüstet ein|r |T135641:0|t[Stilett] |cRXP_WARN_für eure Nebenhand aus|r
     .target Corina Steele
     .money >0.3152
     .goto Elwynn Forest,41.529,65.900
@@ -1223,7 +1223,7 @@ step << Warrior
     .money >0.3129
     #era
     >>Tötet |cRXP_ENEMY_Riverpaw Schlaffi|r und |cRXP_ENEMY_Riverpaw Outrunners|r
-    >>|cRXP_WARN_Farmt, bis ihr 31s 29c oder mehr an verkaufbaren Gegenständen/Geld habt. Das ist für Wurfwaffen-, 2h-Streitkolben- und 2h-Schwert-Training. Es ist auch dafür, bald eine Wurfwaffe der Stufe 3 zu kaufen und nach Sturmwind zu fliegen|r
+    >>|cRXP_WARN_Farmt bis ihr 31s 29c+ Verkäufliches/Geld habt. Das ist für Wurfwaffen-, 2H-Streitkolben- und 2H-Schwert-Training. Es ist auch zum Kaufen einer Stufe-3-Wurfwaffe und bald zum Fliegen nach Sturmwind|r
     .goto Elwynn Forest,27.0,86.7,70,0
     .goto Elwynn Forest,26.1,89.9,70,0
     .goto Elwynn Forest,25.2,92.7,70,0
@@ -1312,11 +1312,11 @@ step << Human
 step << Rogue
     #era
     .money >0.3152
-    +|cRXP_WARN_Farmt, bis ihr 31s 52c an verkaufbaren Gegenständen/Geld habt|r
+    +|cRXP_WARN_Schleift bis ihr 31s 52c Verkäufliches/Geld habt|r
 step << Rogue
     #som
     .money >0.3197
-    +Farmt, bis ihr 31s 97c an verkaufbaren Gegenständen/Geld habt
+    +Schleift bis ihr 31s 97c Verkäufliches/Geld habt
     --Not taking into account Shipment q turnin money so its insurance money
 step << Human
     .goto Westfall,56.55,52.64
@@ -1334,7 +1334,7 @@ step << Rogue
     >>Geht ins Gebäude
     .goto StormwindClassic,57.32,62.08,20,0
     .goto StormwindClassic,58.37,61.69
-    .vendor >> Kauft die Wurfwaffe der Stufe 11 bei Thurman. Rüstet sie auf Stufe 11 aus
+    .vendor >> Kauft die Stufe-11-Wurfwaffe von Thurman. Legt sie an, wenn ihr Stufe 11 seid
 step << Rogue
     #era
     .goto StormwindClassic,57.32,62.08,20,0
@@ -1356,13 +1356,13 @@ step
     .trainer >>Erlernt 1h Schwerter << Rogue
     .trainer >>Erlernt Stäbe << Warlock/Priest
     .trainer >>Erlernt 2h Schwerter << Warrior/Paladin
-    >>|cRXP_WARN_Erlernt 2h-Schwerter, falls ihr genug Geld habt. Ihr müsst 20s für später sparen|r << Warrior
-    >>|cRXP_WARN_Erlernt auch 1h-Schwerter, falls ihr noch Geld habt|r << Mage/Warlock
+    >>|cRXP_WARN_Lernt 2H-Schwerter, falls ihr genug Geld habt. Ihr müsst 20s für später sparen|r << Warrior
+    >>|cRXP_WARN_Lernt auch 1H-Schwerter, falls ihr noch Geld habt|r << Mage/Warlock
 step << Rogue
     .goto StormwindClassic,57.547,57.076
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Gunther Weller|r
     .target Gunther Weller
-    .vendor >> |cRXP_WARN_Kauft einen|r |T135346:0|t[Entersäbel] |cRXP_WARN_und rüstet ihn in Eurer Waffenhand aus|r
+    .vendor >> |cRXP_WARN_Kauft einen|r |T135346:0|t[Entersäbel] |cRXP_WARN_und rüstet ihn in eurer Haupthand aus|r
 step
     .goto StormwindClassic,52.623,65.701
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gastwirtin Allison|r
@@ -1380,7 +1380,7 @@ step << Warlock
     .accept 1688 >> Akzeptiert die Quest Surena Caledon
 step << Warlock
     #softcore
-    .deathskip >> Sterbt und erscheint beim Geistheiler wieder, indem ihr Aderlass benutzt und auf dem Freudenfeuer neben euch stehen bleibt
+    .deathskip >> Sterbt und respawnt beim Geistheiler, indem ihr Aderlass benutzt und auf dem Freudenfeuer neben euch steht
 step << Warlock
     .goto Elwynn Forest,42.105,65.927
     .zone Elwynn Forest >> Verlasst Sturmwind. Reist nach Goldhain
@@ -1390,7 +1390,7 @@ step << Warlock
     .target Marshal Dughan
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Marschall Dughan|r
     .turnin 176 >> Gebt die Quest Gesucht: "Hogger" ab
-    >>|cRXP_WARN_Wählt|r |T135145:0|t[|cRXP_FRIENDLY_Ausbalancierter Kampfstecken|r] |cRXP_WARN_als Eure Belohnung. Rüstet ihn aus|r
+    >>|cRXP_WARN_Wählt die|r |T135145:0|t[|cRXP_FRIENDLY_Ausbalancierter Kampfstecken|r] |cRXP_WARN_als Belohnung. Rüstet sie aus|r
     .turnin 123 >> Gebt die Quest Der Sammler ab
     .accept 147 >> Akzeptiert die Quest Menschenjagd
 step << Warlock
@@ -1398,7 +1398,7 @@ step << Warlock
     .target Marshal Dughan
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Marschall Dughan|r
     .turnin 176 >> Gebt die Quest Gesucht: "Hogger" ab
-    >>|cRXP_WARN_Wählt|r |T135145:0|t[|cRXP_FRIENDLY_Ausbalancierter Kampfstecken|r] |cRXP_WARN_als Eure Belohnung. Rüstet ihn aus|r
+    >>|cRXP_WARN_Wählt das|r |T135145:0|t[|cRXP_FRIENDLY_Ausbalancierter Kampfstecken|r] |cRXP_WARN_als Belohnung. Legt es an|r
 step << Warlock
     .isQuestTurnedIn 123
     .goto Elwynn Forest,42.105,65.927
@@ -1410,7 +1410,7 @@ step << Warlock
 step << Warlock
     #completewith LockVW
     .goto Elwynn Forest,71.0,80.8,150 >> Reist zu Brackbrunns Kürbisbeet
-    >>|cRXP_WARN_Farmt unterwegs. Versucht, Eure Stabfertigkeit für später zu verbessern|r
+    >>|cRXP_WARN_Farmt unterwegs. Versucht, eure Stab-Fertigkeit für später zu trainieren|r
 step << Warlock
     .isOnQuest 147
     .goto Elwynn Forest,71.10,80.66
@@ -1439,7 +1439,7 @@ step << Warlock
     #completewith next
     .goto Redridge Mountains,17.4,69.6
     .zone Redridge Mountains >> Reist ins Rotkammgebirge
-    >>Farmt unterwegs. Stellt sicher, dass ihr mindestens 2 |T134075:0|t[Seelensplitter] |cRXP_WARN_mithilfe von|r |T136163:0|t[Seelendieb] |cRXP_WARN_habt|r
+    >>|cRXP_WARN_Schleifen auf dem Weg. Stellt sicher, dass ihr mindestens 2|r |T134075:0|t[Seelensplitter] |cRXP_WARN_durch die Verwendung von|r |T136163:0|t[Seelendieb]
     .collect 6265,2 --Soul Shard (2)
 step << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Wache Parker|r
@@ -1575,7 +1575,7 @@ step << Warrior
 step << Warrior/Paladin/Rogue
     .goto StormwindClassic,56.3,17.0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Kaita Deepforge|r
-    .vendor >>|cRXP_WARN_Kauft eine|r |T134708:0|t[Spitzhacke]|cRXP_WARN_. Erlernt|r |T134708:0|t[Bergbau] |cRXP_WARN_sehr bald|r
+    .vendor >>|cRXP_WARN_Kauft eine|r |T134708:0|t[Spitzhacke]|cRXP_WARN_. Ihr werdet|r |T134708:0|t[Bergbau] |cRXP_WARN_sehr bald trainieren|r
     .target Kaita Deepforge
 step
     #label TravelIF
@@ -1585,7 +1585,7 @@ step
     .zone Ironforge >> Geh zur Tiefeneisenbahn. Nehme sie in Richtung Ironforge
     >>|cRXP_WARN_Levelt eure|r |T135966:0|t[Erste Hilfe] |cRXP_WARN_falls erforderlich, während ihr auf die Straßenbahn wartet|r
 step
-    >>|cRXP_WARN_Steigt in die Bahn ein, sobald sie ankommt. Steigt auf der anderen Seite aus und sucht auf der mittleren Plattform nach |cRXP_FRIENDLY_Monty|r|r
+    >>|cRXP_WARN_Steigt in die Straßenbahn ein, sobald sie ankommt. Steigt auf der anderen Seite aus und sucht nach |cRXP_FRIENDLY_Monty|r auf dem mittleren Bahnsteig|r
     >>|cRXP_WARN_Wirkt|r |T136221:0|t[Leerwandler beschwören] |cRXP_WARN_und|r |T135230:0|t[Gesundheitsstein herstellen] |cRXP_WARN_während ihr wartet|r << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Monty|r
     .accept 6661 >> Akzeptiert die Quest Tiefenbahn-Ratten-Razzia
@@ -1616,7 +1616,7 @@ step << Warrior
 step << Warrior
     .goto Ironforge,62.375,88.679
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Brenwyn Winterstahl|r unten
-    .vendor >>|cRXP_WARN_Kauft eine|r |T135641:0|t[Ausbalancierter Wurfdolch] |cRXP_WARN_und legt ihn an|r
+    .vendor >>|cRXP_WARN_Kauft einen|r |T135641:0|t[Ausbalancierter Wurfdolch] |cRXP_WARN_und rüstet ihn aus|r
     .target Brenwyn Wintersteel
 step
     #ah
@@ -1624,7 +1624,7 @@ step
     .goto Ironforge,24.200,74.600,-1
     .goto Ironforge,23.800,71.800,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit einem |cRXP_FRIENDLY_Ironforge Auktionator|r
-    >>Kauft die folgenden Gegenstände für eine schnellere Questabgabe in Loch Modan in Kürze
+    >>Kauft die folgenden Gegenstände, um schneller bei Loch Modan abzugeben
     >>Das spart dir Zeit, weil du dann später nicht rumläufst und die Mobs dafür töten musst. Überspring diesen Schritt, wenn du nichts kaufen willst
     >>|T134342:0|t[Ebergedärme]
     >>|T134027:0|t[Bärenfleisch]
@@ -1834,14 +1834,14 @@ step
 step
     #som
     .goto Dun Morogh,83.892,39.188
-    >>Wählt den Dolch und benutzt ihn als Off-Hand von Euch, bis ihr ein Schwert beim Händler bekommt << Rogue
+    >>Wählt den Dolch, benutzt ihn als euer Nebenhand-Slot, bis ihr ein Vendorschwert bekommt << Rogue
     .target Pilot Hammerfoot
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Pilot Hammerfuß|r
     .turnin 417 >> Gebt die Quest Pilotenrache ab
 step
     #era
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Pilot Hammerfuß|r
-    >>|cRXP_WARN_Wählen die|r |T135641:0|t[|cRXP_FRIENDLY_Handwerkerdolch|r] |cRXP_WARN_als Belohnung von Euch. Legt ihn in die Aus-Hand von Euch|r << Rogue
+    >>|cRXP_WARN_Wählt|r |T135641:0|t[|cRXP_FRIENDLY_Handwerkerdolch|r] |cRXP_WARN_als eure Belohnung. Legt ihn in eure Nebenhand an|r << Rogue
     .target Pilot Hammerfoot
     .goto Dun Morogh,83.892,39.188
     .turnin 417 >> Gebt die Quest Pilotenrache ab
@@ -1917,8 +1917,8 @@ step
     #label StormpikeO
     .goto Loch Modan,35.534,48.404
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gastwirt Ofenglut|r
-    .vendor 6734 >> |cRXP_BUY_Kauft|r |T133968:0|t[Frisch gebackenes Brot]|cRXP_BUY_. Versucht, etwa 20 zu haben|r << Warrior/Rogue
-    .vendor 6734 >> |cRXP_BUY_Kauft|r |T133968:0|t[Frisch gebackenes Brot] |cRXP_BUY_und|r |T132815:0|t[Eiskalte Milch]|cRXP_BUY_. Versucht, etwa 10|r |T133968:0|t[Frisch gebackenes Brot] |cRXP_BUY_und 20|r |T132815:0|t[Eiskalte Milch] << !Warrior !Rogue
+    .vendor 6734 >> |cRXP_BUY_Kauft|r |T133968:0|t[Frisch gebackenes Brot] |cRXP_BUY_. Ihr solltet etwa 20 haben|r << Warrior/Rogue
+    .vendor 6734 >> |cRXP_BUY_Kauft|r |T133968:0|t[Frisch gebackenes Brot] |cRXP_BUY_und|r |T132815:0|t[Eiskalte Milch] |cRXP_BUY_. Ihr solltet etwa 10|r |T133968:0|t[Frisch gebackenes Brot] |cRXP_BUY_und 20|r |T132815:0|t[Eiskalte Milch] << !Warrior !Rogue
     .target Innkeeper Hearthstove
 step
     .line Loch Modan,36.72,41.97,37.24,43.19,37.33,45.63,36.77,46.20,35.19,46.88,32.67,49.71,35.19,46.88,36.77,46.20,37.33,45.63,37.24,43.19,36.72,41.97
@@ -1997,8 +1997,8 @@ step
 step << Paladin/Warrior
     .goto Loch Modan,42.867,9.885
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Nillen Andemar|r
-    .vendor >>|cRXP_FRIENDLY_Nillen Andemar|r |cRXP_WARN_verkauft|r |T133476:0|t[|cRXP_FRIENDLY_Heavy Aufgespießt Streitkolben|r] |cRXP_WARN_das ein Gegenstand mit begrenztem Vorrat ist|r
-    >>|cRXP_WARN_Überprüfen, ob es verfügbar ist, und kauft es, wenn ihr könnt. Falls ihr es euch nicht leisten könnt, farmt Geld von den |cRXP_ENEMY_Tunnel Ratten|r in der Nähe, bis ihr genug habt|r
+    .vendor >>|cRXP_FRIENDLY_Nillen Andemar|r |cRXP_WARN_verkauft|r |T133476:0|t[|cRXP_FRIENDLY_Schwerer Stachelkolben|r] |cRXP_WARN_welcher ein Gegenstand mit limitiertem Angebot ist|r
+    >>|cRXP_WARN_Überprüft, ob es verfügbar ist, und kauft es, wenn ihr könnt. Wenn ihr es euch nicht leisten könnt, farmt dann Geld von den |cRXP_ENEMY_Tunnel Ratten|r in der Nähe, bis ihr genug habt|r
     >>|cRXP_WARN_Tut dies schnell, da ein anderer Spieler es vor euch kaufen könnte|r
     .target Nillen Andemar
 step
@@ -2108,7 +2108,7 @@ step
 step
     .goto Loch Modan,34.757,48.618
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Yanni Stoutheart|r
-    >>|cRXP_WARN_Kauft einen|r |T135237:0|t[Feuerstein und Zunder] |cRXP_WARN_zusammen mit 2|r |T135435:0|t[Simple Holz]|cRXP_WARN_. Kauft irgendeinen|r|T133634:0|t[Kleiner brauner Beutel] |cRXP_WARN_wenn nötig|r
+    >>|cRXP_WARN_Kauft|r |T135237:0|t[Feuerstein und Zunder] |cRXP_WARN_zusammen mit 2|r |T135435:0|t[Simple Holz]|cRXP_WARN_. Kauft einen|r|T133634:0|t[Kleiner brauner Beutel] |cRXP_WARN_falls benötigt|r
     .collect 4470,2 --Simple Wood (2)
     .collect 4471,1 --Flint and Tinder (1)
     .target Yanni Stoutheart
@@ -2167,7 +2167,7 @@ step << Warlock
     .xp 13+9600 >>Grinded bis 9600+/11400xp
 step << Warlock
     #som--xpgate
-    .xp 14-2520 >> Farmt, bis ihr 8880 XP in Stufe 13 habt
+    .xp 14-2520 >> Farmt bis ihr 8880xp auf Stufe 13 habt
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Gebirgsjäger Cobbleflint|r
     .target Mountaineer Cobbleflint
@@ -2186,7 +2186,7 @@ step
     .hs >> Ruhestein nach Sturmwind
 step << Warlock/Priest
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Ardwyn Cailen|r
-    >>|cRXP_BUY_Kauft einen|r |T135468:0|t[Glimmender Zauberstab]|cRXP_BUY_. Legt ihn an, wenn ihr Level 15 seid|r
+    >>|cRXP_BUY_Kauft|r |T135468:0|t[Glimmender Zauberstab]|cRXP_BUY_. Legt es an, wenn ihr Stufe 15 erreicht habt|r
     .goto StormwindClassic,42.65,67.16,14,0
     .goto StormwindClassic,42.88,65.11
     .collect 5208,1 --Smoldering Wand (1)
@@ -2279,7 +2279,7 @@ step
     #ah
     .goto Stormwind City,53.612,59.764
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Auktionatorin Jaxon|r
-    >>Kauft die folgenden Gegenstände für schnellere Questabgaben in Westfall in Kürze
+    >>Kauft die folgenden Gegenstände für schnellere Abgaben später in Westfall
     >>Das spart dir Zeit, weil du dann später nicht rumläufst und die Mobs dafür töten musst. Überspring diesen Schritt, wenn du nichts kaufen willst
     >>|T133972:0|t[Sehniges Geierfleisch]
     >>|T133884:0|t[Murlocauge]

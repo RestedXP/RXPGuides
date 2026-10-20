@@ -1325,7 +1325,7 @@ RXPGuides.RegisterGuide([[
 step
     .train 416004,1
     #completewith SpiceBlend
-    .zone Arathi Highlands >>Reist nach Arathihochland
+    .zone Arathi Highlands >>Reist zum Arathihochland
 step
     #completewith IllegibleReciple
     +|cRXP_WARN_Ihr solltet euch evtl. eine Gruppe suchen, da ihr Level-37+-Elites töten müsst um|r |T134419:0|t[|cRXP_FRIENDLY_Rune der Blutwoge|r] zu erhalten
@@ -1379,7 +1379,7 @@ step
 step
     .train 416004,1
     #completewith next
-    .zone Hillsbrad Foothills >>Reist zum Vorgebirge des Hügellands
+    .zone Hillsbrad Foothills >>Reist nach Vorgebirge des Hügellands
 step
     .train 416004,1
     #loop
@@ -1430,7 +1430,7 @@ step
 step
     .train 416004,1
     #completewith GroceryRun
-    .zone Arathi Highlands >>Reist nach Arathihochland
+    .zone Arathi Highlands >>Reist zum Arathihochland
 step
     #completewith next
     .goto Arathi Highlands,57.587,72.499,10 >> Geht den Berg hinauf zu |cRXP_FRIENDLY_Skonk <Hobbykoch>|r

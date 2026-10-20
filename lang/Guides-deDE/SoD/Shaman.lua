@@ -969,7 +969,7 @@ step
     .xp <25,1
 step
     #completewith next
-    .zone Hillsbrad Foothills >>Reist zum Vorgebirge des Hügellands
+    .zone Hillsbrad Foothills >>Reist nach Vorgebirge des Hügellands
     .train 410095,1
     .xp <25,1
 step
@@ -1036,7 +1036,7 @@ step
     .xp >25,1
 step
     #completewith next
-    .zone Hillsbrad Foothills >>Reist zum Vorgebirge des Hügellands
+    .zone Hillsbrad Foothills >>Reist nach Vorgebirge des Hügellands
     .train 410095,1
 step
     #loop
@@ -2094,7 +2094,7 @@ step
     .xp <25,1
 step
     #completewith next
-    .zone Ashenvale >> Reist zu Eschental
+    .zone Ashenvale >> Reist nach Eschental
     .train 410101,1
     .xp <25,1
 step
@@ -2120,13 +2120,13 @@ step
 step
     #completewith Baron
     >>|cRXP_WARN_Beendet den Raid wenn ihr wollt, dann verlasst Die Tiefschwarze Grotte|r
-    .zone Ashenvale >> Reist zu Eschental
+    .zone Ashenvale >> Reist nach Eschental
     .zoneskip 221,1
     .train 410101,1
     .xp <25,1
 step
     #completewith next
-    .zone Ashenvale >> Reist zu Eschental
+    .zone Ashenvale >> Reist nach Eschental
     .train 410101,1
     .xp <25,1
 step
@@ -2253,7 +2253,7 @@ step
     .xp <25,1
 step
     #completewith next
-    .zone Ashenvale >>Reist zu Eschental
+    .zone Ashenvale >>Reist nach Eschental
     .train 410101,1
     .xp <25,1
 step
@@ -2301,7 +2301,7 @@ step
 --XX Objective IDs (,1 and ,2) need testing
 step
     #completewith next
-    .zone Ashenvale >>Reist zu Eschental
+    .zone Ashenvale >>Reist nach Eschental
     .train 410101,1
     .xp <25,1
 step

@@ -1169,7 +1169,7 @@ step
 step
     #optional
     .train 402855,1
-    .zone Arathi Highlands >>Reist nach Arathihochland
+    .zone Arathi Highlands >>Reist zum Arathihochland
 step
     .train 402855,1
     .goto Arathi Highlands,62.1,54.5
@@ -1257,7 +1257,7 @@ step
     .train 402864,1
 step
     #completewith next
-    .zone Stranglethorn Vale >>Reist nach Schlingendorntal.
+    .zone Stranglethorn Vale >>Reist nach Schlingendorntal
     .train 402864,1
 step
     .goto Stranglethorn Vale,33,88
@@ -1420,7 +1420,7 @@ step
     .train 431669,1
 step
     #completewith next
-    .zone Stranglethorn Vale >>Reist nach Schlingendorntal.
+    .zone Stranglethorn Vale >>Reist nach Schlingendorntal
     .train 431669,1
 step
     .train 431669,1
@@ -1453,7 +1453,7 @@ step
     .train 431669,1
 step
     #completewith next
-    .zone Stranglethorn Vale >>Reist nach Schlingendorntal.
+    .zone Stranglethorn Vale >>Reist nach Schlingendorntal
     .train 431669,1
 step
     .train 431669,1
@@ -1638,7 +1638,7 @@ step
 step
     >>|cRXP_WARN_Die Rune von|r |T135978:0|t[|cRXP_FRIENDLY_Vampirberührung|r] |cRXP_WARN_fällt vom letzten Boss des Dämonensturz, das in SoD hinzugefügt wurde. Fangt an, nach einer Gruppe zu suchen, während ihr nach Eschental geht.|r
     >>Falls ihr fliegt, fliegt zum Talendris-Punkt in Azshara statt nach Astranaar. Es liegt näher am Verlieseingang << Alliance
-    .zone Ashenvale >> Reist zu Eschental
+    .zone Ashenvale >> Reist nach Eschental
 step
     .goto Ashenvale,84.5,75.0,50 >> Geht zum Eingang des Dämonensturz-Verlieses
 step

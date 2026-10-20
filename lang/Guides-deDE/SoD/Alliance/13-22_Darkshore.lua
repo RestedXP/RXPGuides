@@ -206,7 +206,7 @@ step << Warlock/Mage
     #completewith DarkshoreEnd
     #label FelPortalRuneDarkshore
     >>Ihr seid in einer Zone mit |cRXP_FRIENDLY_Teufelsportal|r vorhanden. Falls ihr einen findet, beschwört euren |T236294:0|t[|cRXP_FRIENDLY_Wichtelforscher|r] und sprecht mit ihm neben einem Portal, um ihn auf eine Expedition zu schicken. Nach 10-20 Minuten kehrt er mit Beute zurück und hat die Chance, euch mit |T134419:0|t[|cRXP_FRIENDLY_Rune der Teufelswache|r] zu belohnen << Warlock
-    >>Ihr befindet euch in einer Zone mit |cRXP_FRIENDLY_Fel Portale|r. Falls ihr einen findet, schließt ihn mit einer |T134945:0|t[|cRXP_LOOT_Schriftrolle der räumlichen Heilung|r]. Dies wird euch mit |T134939:0|t[|cRXP_FRIENDLY_Zaubernotizen: Qualfeuerblitz|r] belohnen << Mage
+    >>Ihr seid in einer Zone mit |cRXP_FRIENDLY_Teufelsportalen|r vorhanden. Falls ihr eins findet, schließt ihn mit einer |T134945:0|t[|cRXP_LOOT_Schriftrolle der räumlichen Heilung|r]. Dies wird euch mit |T134939:0|t[|cRXP_FRIENDLY_Zaubernotizen: Qualfeuerblitz|r] belohnen << Mage
     >>|cRXP_WARN_Achtet auf die Portale, bis ihr die Rune erhaltet.|r
     .collect 221499,1 << Warlock --rune of the felguard
     .collect 223147,1 << Mage --Spell Notes: Balefire Bolt
@@ -788,7 +788,7 @@ step << !Druid sod
 step << Warrior/Rogue
     #season 2
     .goto 1439,41.901,31.339
-    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4723 >> Akzeptiert die Quest Gestrandete Meereskreatur
 step << !Warrior !Rogue
     #season 2
@@ -2878,7 +2878,7 @@ step << Druid/Hunter/Warrior
 step << !Warrior
     #season 2
     .goto 1439,31.251,87.419
-    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4733 >> Akzeptiert die Quest Gestrandete Meereskreatur
     >>|cRXP_WARN_Diese Quest kann SEHR schwierig sein. Bekämpft die |cRXP_ENEMY_Murlocs|r einzeln, Andernfalls könntest du die Aggro von mehreren gleichzeitig auf dich ziehen.|r
     .link https://youtu.be/lfQM3Q-Ag5A >> |cRXP_WARN_Klickt hier für einen Videoleitfaden|r << Hunter
@@ -2895,7 +2895,7 @@ step << !Warrior
 step
 	#season 2
     .goto 1439,32.644,80.711
-    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4730 >> Akzeptiert die Quest Gestrandete Meereskreatur
 step
     #season 2
@@ -2924,7 +2924,7 @@ step << !Priest
     #season 2
     #label CompleteThistleBears
     .goto 1439,35.968,70.807
-    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4728 >> Akzeptiert die Quest Gestrandete Meereskreatur
 step << !Priest
     #season 2
@@ -3552,7 +3552,7 @@ step << Warlock/Mage
     #completewith TravelMenethilNoDMBoat
     #label FelPortalRuneDarkshore
     >>Ihr seid in einer Zone mit |cRXP_FRIENDLY_Teufelsportal|r vorhanden. Falls ihr einen findet, beschwört euren |T236294:0|t[|cRXP_FRIENDLY_Wichtelforscher|r] und sprecht mit ihm neben einem Portal, um ihn auf eine Expedition zu schicken. Nach 10-20 Minuten kehrt er mit Beute zurück und hat die Chance, euch mit |T134419:0|t[|cRXP_FRIENDLY_Rune der Teufelswache|r] zu belohnen << Warlock
-    >>Ihr befindet euch in einer Zone mit |cRXP_FRIENDLY_Fel Portale|r. Falls ihr einen findet, schließt ihn mit einer |T134945:0|t[|cRXP_LOOT_Schriftrolle der räumlichen Heilung|r]. Dies wird euch mit |T134939:0|t[|cRXP_FRIENDLY_Zaubernotizen: Qualfeuerblitz|r] belohnen << Mage
+    >>Ihr seid in einer Zone mit |cRXP_FRIENDLY_Teufelsportalen|r vorhanden. Falls ihr eins findet, schließt ihn mit einer |T134945:0|t[|cRXP_LOOT_Schriftrolle der räumlichen Heilung|r]. Dies wird euch mit |T134939:0|t[|cRXP_FRIENDLY_Zaubernotizen: Qualfeuerblitz|r] belohnen << Mage
     >>|cRXP_WARN_Achtet auf die Portale, bis ihr die Rune erhaltet.|r
     .collect 221499,1 << Warlock --rune of the felguard
     .collect 223147,1 << Mage --Spell Notes: Balefire Bolt
@@ -3891,7 +3891,7 @@ step << !sod/Hunter/Druid
     #optional
     #completewith next
     .goto 1439,55.802,18.290
-    .gossipoption 95406 >> Sprecht mit |cRXP_FRIENDLY_Der Dreschonator 4100|r, um die Eskorte zu starten
+    .gossipoption 95406 >> Sprecht mit dem |cRXP_FRIENDLY_Dreschonator 4100|r um die Eskorte zu starten
 --  .gossipoption 87696 >> Talk to |cRXP_FRIENDLY_The Threshwackonator 4100|r to start the escort
     >>|cRXP_WARN_Diese Quest ist SEHR schwierig|r
     .target The Threshwackonator 4100
@@ -5046,7 +5046,7 @@ step << !Dwarf Rogue
     #xprate >1.59
     #sticky
     #label AntiVenomStart
-    .collect 6452,1 >> Crafte ein |T134437:0|t[Gegengift]
+    .collect 6452,1 >> Stelle ein |T134437:0|t[Gegengift] her
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
     .train 7934,3 --Anti Venom spell trained
@@ -5116,7 +5116,7 @@ step << !Dwarf Rogue
     #xprate >1.59
     #sticky
     #label AntiVenomStart2
-    .collect 6452,1 >> Crafte ein |T134437:0|t[Gegengift]
+    .collect 6452,1 >> Stelle ein |T134437:0|t[Gegengift] her
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
     .train 7934,3 --Anti Venom spell trained
@@ -6071,7 +6071,7 @@ step << Mage
     .goto 1453,38.035,81.729,6,0
     .goto 1453,37.550,82.500,10,0
     >>Besteigt den Magierturm. Geht durch das grüne Portal
-    .goto Stormwind City,39.681,79.538,15 >>Reisen in Richtung |cRXP_FRIENDLY_Larimaine Purdue|r
+    .goto Stormwind City,39.681,79.538,15 >>Reist in Richtung |cRXP_FRIENDLY_Larimaine Purdue|r
     .dungeon DM
 step << Mage
     #xprate >1.59
@@ -6399,7 +6399,7 @@ step << !Dwarf Rogue
     #xprate >1.59
     #sticky
     #label AntiVenomStart
-    .collect 6452,1 >> Crafte ein |T134437:0|t[Gegengift]
+    .collect 6452,1 >> Stelle ein |T134437:0|t[Gegengift] her
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
     .train 7934,3 --Anti Venom spell trained
@@ -6466,7 +6466,7 @@ step << !Dwarf Rogue
     #xprate >1.59
     #sticky
     #label AntiVenomStart2
-    .collect 6452,1 >> Crafte ein |T134437:0|t[Gegengift]
+    .collect 6452,1 >> Stelle ein |T134437:0|t[Gegengift] her
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
     .train 7934,3 --Anti Venom spell trained

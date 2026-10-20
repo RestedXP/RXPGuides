@@ -7,16 +7,16 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 1-6 Durotar
 #version 11
-#beta
-#group RestedXP Forever Dungeon Guide (A)
-#subgroup (WIP) Dungeon Dungeonführer 1-22
+#group RestedXP Forever Dungeon Dungeonführer (H)
+#subgroup Dungeon Dungeonführer 1-22
 --#groupid RXP-SRGCE-H1
 #defaultfor Troll/Orc
 #next 6-10 Durotar
 
 
 step
-#include RestedXP Forever Guide (A)\1-6 Durotar
+.enabledungeon RFC
+#include RestedXP Forever Dungeonführer (H)\1-6 Durotar
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -24,15 +24,15 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 6-10 Durotar
 #version 11
-#beta
-#group RestedXP Forever Dungeon Guide (A)
-#subgroup (WIP) Dungeon Dungeonführer 1-22
+#group RestedXP Forever Dungeon Dungeonführer (H)
+#subgroup Dungeon Dungeonführer 1-22
 --#groupid RXP-SRGCE-H1
 #defaultfor Troll/Orc
 #next 10-12 Durotar
 
 step
-#include RestedXP Forever Guide (A)\6-10 Durotar
+.enabledungeon RFC
+#include RestedXP Forever Dungeonführer (H)\6-10 Durotar
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -40,17 +40,17 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 10-12 Durotar
 #version 11
-#beta
-#group RestedXP Forever Dungeon Guide (A)
-#subgroup (WIP) Dungeon Dungeonführer 1-22
+#group RestedXP Forever Dungeon Dungeonführer (H)
+#subgroup Dungeon Dungeonführer 1-22
 --#groupid RXP-SRGCE-H1
 #defaultfor Troll/Orc
 #next 10-12 Tirisfal (Orc/Troll) << !Hunter !Shaman !Tauren !Skyborne
-#next 12-17 das Brachland << Orc Hunter/Troll Hunter/Orc Shaman/Troll Shaman
+#next 12-16 Das Brachland << Orc Hunter/Troll Hunter/Orc Shaman/Troll Shaman
 
 
 step
-#include RestedXP Forever Guide (A)\10-12 Durotar
+.enabledungeon RFC
+#include RestedXP Forever Dungeonführer (H)\10-12 Durotar
 ]])
 
 
@@ -59,13 +59,13 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 10-12 Tirisfal (Orc/Troll)
 #version 11
-#beta
-#group RestedXP Forever Dungeon Guide (A)
-#subgroup (WIP) Dungeon Dungeonführer 1-22
+#group RestedXP Forever Dungeon Dungeonführer (H)
+#subgroup Dungeon Dungeonführer 1-22
 --#groupid RXP-SRGCE-H1
 #defaultfor !Hunter !Shaman !Tauren !Skyborne !Undead
 #next 12-14 Silberwald << !Hunter !Shaman !Tauren !Skyborne !Undead
 
 step
-#include RestedXP Forever Guide (A)\10-12 Tirisfal (Orc/Troll)
+.enabledungeon RFC
+#include RestedXP Forever Dungeonführer (H)\10-12 Tirisfal (Orc/Troll)
 ]])

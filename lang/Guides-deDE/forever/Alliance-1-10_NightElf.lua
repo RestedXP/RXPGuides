@@ -4,6 +4,7 @@ if faction == "Horde" then return end
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 #season 0,1
 << Alliance
 #name 1-6 Laubschattental
@@ -443,6 +444,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 #season 0,1
 << Alliance
 #name 6-11 Teldrassil
@@ -1308,7 +1310,7 @@ step << Druid/Priest
     .turnin 487 >> Gebt die Quest Die Straße nach Darnassus ab
 step
     #completewith next
-    .goto 1438/1,1863.46,10665.16,50 >> Reist zur Lichtung des Orakels
+    .goto 1438/1,1899.700,10582.900,50 >> Reist zur Lichtung des Orakels
 step
     .goto 1438/1,1899.700,10582.900
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Schildwache Eralya Leafshadow::275683|r
@@ -1326,7 +1328,6 @@ step
     .complete 7383,1 --Collect Filled Amethyst Phial (x1)
 
 --with the new quests, druids can go straight to 10, a 5 minute save later down the road
---@TODO add mist here
 step << Druid/Priest
     #completewith next
     >>Tötet |cRXP_ENEMY_Harpyie der Blutfedern|r. Plündert sie für ihre |cRXP_LOOT_Gürtel|r
@@ -1437,10 +1438,7 @@ step << Hunter
 step << !Rogue
     #softcore
     #requires xp10
-    #completewith next
     .deathskip >> Sterbt absichtlich und erscheint erneut beim Geistheiler in Darnassus
-    >>|cRXP_WARN_Stellt sicher, dass ihr näher beim Friedhof von Darnassus seid als bei dem von Dolnaar, sonst gehst du womöglich in die falsche Richtung. Lauft ganz aus dem Lager heraus und sterbt dann, falls du dir unsicher bist|r << sod Priest
-    >>|cRXP_WARN_Stellt sicher, dass ihr näher beim Friedhof von Darnassus seid als beim von Dolanaar, sonst geht ihr womöglich in die falsche Richtung. Lauft zur Westseite des Flusses, falls ihr euch unsicher seid|r << sod Hunter/sod Warrior/sod Druid
     .target Geistheiler
 step << !Rogue
     #hardcore
@@ -1660,18 +1658,18 @@ step << !Druid
     .collect 3371,1 --Empty Vial
     .target Narret Shadowgrove
 step
-    .goto 1438/1,984.94,9898.58
-    .target Tallonkai Swiftroot
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Tallonkai Swiftroot|r oben auf dem Baum
-    .turnin 932 >> Gebt die Quest Krankhafter Hass ab
-    .turnin 2459 >> Gebt die Quest Ferocitas der Traumfresser ab
-step
     #optional
     .goto 1438/1,988.30,9891.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Aldia|r oben
     .turnin 87288 >> Gebt die Quest Weiche Säblerpelze ab
     .target Aldia
     .isQuestComplete 87288
+step
+    .goto 1438/1,984.94,9898.58
+    .target Tallonkai Swiftroot
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Tallonkai Swiftroot|r oben auf dem Baum
+    .turnin 932 >> Gebt die Quest Krankhafter Hass ab
+    .turnin 2459 >> Gebt die Quest Ferocitas der Traumfresser ab
 step
     >>Tötet |cRXP_ENEMY_Nachtsäbler|r. Plündert sie für |cRXP_LOOT_Fangzähne|r und |cRXP_LOOT_Pelze|r
     >>Tötet |cRXP_ENEMY_Strigideule|r. Plündert sie für |cRXP_LOOT_Federn|r
@@ -1747,7 +1745,7 @@ step << Hunter/Warrior/Rogue
     .target Moon Priestess Amara
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Mondpriesterin Amara|r
     .turnin 487 >> Gebt die Quest Die Straße nach Darnassus ab
-	.maxlevel 9
+	.xp 9.56,1 --Only Turn in early if needed to ding 10
 step << Hunter
 #xprate <1.99
     #optional
@@ -1965,15 +1963,6 @@ step << Priest
 	.trainer >> Trainiere deine Klassenfähigkeiten
     .target Laurna Morninglight
 step << Hunter
-	#xprate <1.5--money issues 1.5x
-    .goto 1438/1,947.57,9812.38
-    .money <0.0504
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Shalomon|r
-    >>|cRXP_BUY_Kauft einen|r |T135145:0|t[Wanderstecken]
-    >>|cRXP_WARN_Ihr werdet diesen später anlegen. Überspringt diesen Schritt, falls ihr einen anderen Stab gefunden habt|r
-    .collect 2495,1 -- Walking Stick (1)
-    .target Shalomon
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.20step
     .goto 1438/1,997.200,9903.601
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Byancie::6094|r
     .target Byancie::6094
@@ -2407,6 +2396,14 @@ step << Rogue
     >>|cRXP_BUY_Kauft einen|r |T135641:0|t[Ausbalancierter Wurfdolch]
     .collect 2946,1 -- Balanced Throwing Dagger
     .target Turian
+step << Hunter
+    #optional
+    .goto 1457/1,2511.04,10178.01
+    .target Jocaste
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Jocaste|r
+    .train 2974 >>Erlernt |T132309:0|t[|cRXP_LOOT_Zurechtstutzen|r]
+    .xp <12,1
+    .money <0.0600
 step
     #completewith NessaShadowsong
     .goto 1457/1,2636.53,9956.80

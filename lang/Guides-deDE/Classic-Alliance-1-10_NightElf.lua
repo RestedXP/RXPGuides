@@ -1095,7 +1095,7 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Jannok Breezesong|r
 	.trainer >> Trainiere deine Klassenfähigkeiten
     .train 5171 >> Erlerne |T132306:0|t[Zerhäckseln] << !sod
-    .train 921 >> Lernt |T133644:0|t[Taschendiebstahl] ebenfalls, was für eure Stufe-10-Schurken-Quest benötigt wird
+    .train 921 >> Erlernt auch|T133644:0|t[Taschendiebstahl], das wird für eure Stufe-10-Schurken-Quest benötigt
     .target Jannok Breezesong
 step << Hunter
 #xprate >1.99
@@ -1218,7 +1218,7 @@ step << Hunter
     #label mist1
     .goto Teldrassil,31.54,31.62
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Mist|r
-    >>Dies startet eine Escort Quest
+    >>|cRXP_WARN_Dies startet eine Escort Quest|r
     .accept 938 >> Akzeptiert die Quest Nebel
     .target Mist
 step << Hunter
@@ -1249,8 +1249,8 @@ step << !Hunter
 	#xprate <1.5
     #label mist1
     .goto Teldrassil,31.54,31.62
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Mist|r
-    >>Dies startet eine Escort Quest
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Nebel|r
+    >>|cRXP_WARN_Dies startet eine Escort Quest|r
     .accept 938 >> Akzeptiert die Quest Nebel
     .target Mist
 step << !Hunter
@@ -1365,7 +1365,7 @@ step << !Rogue
     .accept 2518 >> Akzeptiert die Quest Tränen des Mondes
 step << Druid
 	#completewith next
-	.cast 18960 >> Caste Teleportieren: Moonglade
+	.cast 18960 >> Caste Teleportieren: Mondlichtung
     >>|cRXP_WARN_Es wird sich in eurem Zauberbuch befinden|r
 	.zoneskip Moonglade
 step << Druid
@@ -1383,7 +1383,7 @@ step << Druid
     .target Great Bear Spirit
 step << Druid
 	#completewith next
-	.cast 18960 >> Caste Teleportieren: Moonglade
+	.cast 18960 >> Caste Teleportieren: Mondlichtung
     >>|cRXP_WARN_Dies wird euch schneller zurück bringen|r
 step << Druid
     .goto Moonglade,56.21,30.64
@@ -1656,7 +1656,7 @@ step << Hunter
 	.goto Teldrassil,37.6,28.8,0
     >>|cRXP_WARN_Wirkt|r |T132164:0|t[Wildtier zähmen] |cRXP_WARN_auf einen |cRXP_ENEMY_Strigidjäger|r um ihn zu Zähmen|r -- .tame 1997
     .train 2981 >> |cRXP_WARN_Greift mobs mit ihm an um|r |T132140:0|t[Klaue (Rang 2)] zu lernen
-    .link https://www.wow-petopia.com/classic/training.php >> |cRXP_WARN_Hier Klicken für mehr Infos bezüglich Pet Training|r
+    .link https://www.wow-petopia.com/classic/training.php >> |cRXP_WARN_Klick hier um mehr infos bezüglich Pet Training zu erhalten|r
 	.unitscan Strigid Hunter
 step
     #sticky
@@ -1719,8 +1719,8 @@ step
     .goto Teldrassil,31.54,31.62
     .target Mist
     #label MistStart
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Mist|r
-    >>Dies startet eine Escort Quest
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Nebel|r
+    >>|cRXP_WARN_Dies startet eine Escort Quest|r
     >>|cRXP_WARN_Überspringt die Quest, wenn der NPC nicht da ist|r
     .accept 938 >> Akzeptiert die Quest Nebel
 step
@@ -1874,7 +1874,7 @@ step
     #ah
     .goto Darnassus,56.245,54.039,-1
     .goto Darnassus,56.374,51.820,-1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit einem |cRXP_FRIENDLY_Darnassus Auktionator|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit einem |cRXP_FRIENDLY_Auktionator von Darnassus|r
     >>Kauft die folgenden Gegenstände für eine sofortige Abgabe später in der Dunkelküste
     >>|T134187:0|t[Erdwurzel] << Druid era
     >>|T133912:0|t[Dunkelküstenbarsch]
@@ -1898,7 +1898,7 @@ step << Hunter/Warrior/Priest/Sod Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Ilyenia Mondfeuer|r
     .skipgossip 11866,1
     .train 227 >>Erlernt Stäbe << Hunter/Warrior/Priest
-    .train 265 >>Erlernen Bogen << Sod Rogue
+    .train 265 >>Erlernt Bogen << Sod Rogue
     >>Falls ihr einen Stab in der Tasche habt, rüstet ihn aus << Hunter
     >>Falls ihr einen Bogen der Tasche habt, rüstet ihn aus << Rogue
     .target Ilyenia Moonfire
@@ -1911,7 +1911,7 @@ step << Hunter
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.19
 step << Hunter/Sod Rogue
     .goto Darnassus,58.76,44.48
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Ariyell Himmelsschatten|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Ariyell Skyshadow|r
     >>|cRXP_BUY_Kaufe und rüste einen|r |T135489:0|t[Laminierter Doppelbogen] aus
     .collect 2507,1
     .target Ariyell Skyshadow
@@ -1920,7 +1920,7 @@ step << Hunter/Sod Rogue
 step << Hunter
     #season 0
     .goto Darnassus,58.76,44.48
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Ariyell Himmelsschatten|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Ariyell Skyshadow|r
 	.vendor >>|cRXP_BUY_Kaufe|r |T132382:0|t[Scharfe Pfeile]
     .target Ariyell Skyshadow
 step << Hunter
@@ -1931,7 +1931,7 @@ step << Hunter
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<5.76
 step << Warrior
     .goto Darnassus,58.76,44.48
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Ariyell Himmelsschatten|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Ariyell Skyshadow|r
     >>|cRXP_BUY_Kauft einen|r |T135147:0|t[Knorriger Stab]|cRXP_BUY_. Legt ihn auf Stufe 15 an|r
 	.collect 2030,1
     .target Ariyell Skyshadow
@@ -1939,7 +1939,7 @@ step << Warrior
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.9
 step << Warrior
     .goto Darnassus,58.76,44.48
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Ariyell Himmelsschatten|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Ariyell Skyshadow|r
     >>|cRXP_BUY_Kauft einen|r |T135154:0|t[Hirtenstab]|cRXP_BUY_. Legt ihn ab Stufe 11 an|r << era
     >>|cRXP_BUY_Kauft und legt einen|r |T135154:0|t[Hirtenstab] an |cRXP_BUY_falls ihr euch keinen |r |T135147:0|t[Knorriger Stab] leisten könnt << sod
 	.collect 854,1
@@ -1948,7 +1948,7 @@ step << Warrior
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.44
 step << Warrior
     .goto Darnassus,58.76,44.48
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Ariyell Himmelsschatten|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Ariyell Skyshadow|r
 	>>|cRXP_BUY_Kauft und rüstet einen|r |T135346:0|t[Entersäbel] aus |cRXP_BUY_falls ihr euch keinen|r |T135154:0|t[Hirtenstab] leisten könnt
 	.collect 851,1
     .target Ariyell Skyshadow
@@ -1976,7 +1976,7 @@ step << Rogue
 step
     #completewith NessaShadowsong
     .goto Darnassus,28.52,39.89
-    .zone Teldrassil >> Nimm das Lila Portal nach Rut'Theran
+    .zone Teldrassil >> Reise durch das Lila Portal nach Rut'Theran
     .zoneskip Darkshore
     .subzoneskip 702
 step

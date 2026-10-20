@@ -2026,7 +2026,7 @@ step << Rogue
 step << Rogue
     #season 2
     .goto Elwynn Forest,80.365,79.134
-    >>Öffnet den |cRXP_PICK_Begraben Schatz|r. Plündert ihn für die |T134419:0|t[|cRXP_FRIENDLY_Rune des Pistolenhelden|r]
+    >>Öffnet den |cRXP_PICK_Vergrabenen Schatz|r. Plündert ihn für die |T134419:0|t[|cRXP_FRIENDLY_Rune des Pistolenhelden|r]
     .collect 203991,1 -- Rune of Quick Draw (1)
     .train 398196,1
     .subzoneskip 87 --Skip the Quick Draw steps if the user went back to goldshire instead
@@ -3246,7 +3246,7 @@ step << Mage/Paladin
     .goto Ironforge,35.30,32.76,20,0
     .goto Ironforge,27.17,12.58,20,0 << Paladin
     .goto Ironforge,27.60,11.06,20,0 << Mage
-    .goto Ironforge,26.8,8.6,12 >>Reisenzu |cRXP_FRIENDLY_Dink|r << Mage
+    .goto Ironforge,26.8,8.6,12 >>Reist in Richtung |cRXP_FRIENDLY_Dink|r << Mage
     .goto Ironforge,23.131,6.143,12 >>Reist zu |cRXP_FRIENDLY_Brandur Ironhammer|r << Paladin
 step << Mage
     #xprate >1.49

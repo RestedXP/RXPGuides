@@ -7,11 +7,9 @@ RXPGuides.RegisterGuide([[
 #season 0,1
 << Alliance
 #name 1-6 Laubschattental
-#displayname 1-7 Laubschattental << sod
 #version 1
-#beta
-#group RestedXP Forever Dungeon Guide (A)
-#subgroup (WIP) Dungeon Guide 1-20
+#group RestedXP Forever Dungeon Dungeonführer (A)
+#subgroup Dungeon Dungeonführer 1-20
 --#groupid RXP-SRGCE-A1
 #defaultfor NightElf
 #next 6-11 Teldrassil
@@ -24,14 +22,12 @@ RXPGuides.RegisterGuide([[
 #season 0,1
 << Alliance
 #name 6-11 Teldrassil
-#displayname 7-13 Teldrassil << SoD
 #version 1
-#beta
-#group RestedXP Forever Dungeon Guide (A)
-#subgroup (WIP) Dungeon Guide 1-20
+#group RestedXP Forever Dungeon Dungeonführer (A)
+#subgroup Dungeon Dungeonführer 1-20
 --#groupid RXP-SRGCE-A1
 #defaultfor NightElf
-#next 14-16 Dunkelküste
+#next 11-16 Dunkelküste/Loch Modan
 
 step
 #include RestedXP Forever Dungeonführer (A)\6-11 Teldrassil

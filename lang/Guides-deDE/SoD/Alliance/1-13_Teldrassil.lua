@@ -2739,7 +2739,7 @@ step << Rogue
     .train 398196,1
 step << Rogue
     #season 2
-    >>Öffnet den |cRXP_PICK_Begraben Schatz|r. Plündert ihn für die |T134419:0|t[|cRXP_FRIENDLY_Rune des Pistolenhelden|r]
+    >>Öffnet den |cRXP_PICK_Vergrabenen Schatz|r. Plündert ihn für die |T134419:0|t[|cRXP_FRIENDLY_Rune des Pistolenhelden|r]
     .collect 203991,1 -- Rune of Quick Draw (1)
     .train 398196,1
 step << Rogue

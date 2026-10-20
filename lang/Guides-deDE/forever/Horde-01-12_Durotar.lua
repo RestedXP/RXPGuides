@@ -4,6 +4,7 @@ if faction == "Alliance" then return end
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Horde
 #name 1-6 Durotar
 #version 11
@@ -12,7 +13,6 @@ RXPGuides.RegisterGuide([[
 --#groupid RXP-SRGCE-H1
 #defaultfor Troll/Orc
 #next 6-10 Durotar
-
 
 step << !Orc !Troll
     #completewith next
@@ -286,10 +286,12 @@ step
     .accept 3084 >>Akzeptiert die Quest Mit Runen beschriftete Schrifttafel << Troll Shaman
     .accept 3085 >>Akzeptiert die Quest Geheiligte Schrifttafel << Troll Priest
     .accept 3086 >>Akzeptiert die Quest Glyphen-Schrifttafel << Troll Mage
+    .accept 98575 >>Akzeptiert die Quest Besudelt Tafel << Troll Warlock
     .accept 3087 >>Akzeptiert die Quest Geätztes Pergament << Orc Hunter
     .accept 3088 >>Akzeptiert die Quest Verschlüsseltes Pergament << Orc Rogue
     .accept 3089 >>Akzeptiert die Quest Mit Runen beschriftetes Pergament << Orc Shaman
     .accept 3090 >>Akzeptiert die Quest Besudeltes Pergament << Orc Warlock
+    .accept 98576 >>Akzeptiert die Quest Glyphenpergament << Orc Mage
     .turnin 804,1 >>Gebt die Quest Sarkoth ab << Shaman
     .turnin 804 >>Gebt die Quest Sarkoth ab << !Shaman
     .target Gornek
@@ -313,11 +315,16 @@ step << Rogue
     .turnin 3083 >>Gebt die Quest Verschlüsselte Schrifttafel ab << Troll Rogue
     .turnin 3088 >>Gebt die Quest Verschlüsseltes Pergament ab << Orc Rogue
     .target Rwag
-step << skip
+step
+    #optional
     .goto 1411/1,-4102.400,-588.900
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Kzan Thornslash|r hinten in der Höhle
     .turnin 97279 >>Gebt die Quest Verlorene Waffen ab
     .target Kzan Thornslash
+    .isQuestComplete 97279
+step
+    #optional
+    .abandon 97279 >>Brecht die Quest Abtrünnige Waffen ab
 step << Shaman
     .goto 1411/1,-4102.600,-588.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Kzan|r
@@ -352,7 +359,8 @@ step << Warlock
     #label Nartok2
     .goto 1411/1,-4111.87,-607.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Nartok|r
-    .turnin 3090 >>Gebt die Quest Besudeltes Pergament ab
+    .turnin 3090 >>Gebt die Quest Besudeltes Pergament ab << Orc Warlock
+    .turnin 98575 >>Gebt die Quest Besudelt Tafel ab << Troll Warlock
     .train 172 >> Erlernt |T136118:0|t[Verderbnis]
     .target Nartok
 step
@@ -383,7 +391,8 @@ step << Mage
     #requires Galgar
     .goto 1411/1,-4210.22,-625.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Mai'ah|r
-    .turnin 3086 >>Abgeben Glyphen-Schrifttafel << Troll
+    .turnin 3086 >>Abgeben Glyphen-Schrifttafel << Troll Mage
+    .turnin 98576 >>Gebt die Quest Glyphenpergament ab << Orc Mage
     .train 1459 >> Erlernt |T135932:0|t[Arkane Intelligenz]
     .target Mai'ah
 step << !Warlock
@@ -1086,6 +1095,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Horde
 #name 6-10 Durotar
 #version 11
@@ -1141,13 +1151,13 @@ step
     .goto 1411/1,-4939.89,-793.12,8 >> Betretet die große Hütte
 step << !Rogue !Warrior
     .goto 1411/1,-4960.000,-791.300
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Pa'zula|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Pa'zula|r
     >>|cRXP_WARN_Dies wird eine Quest freischalten. Überspringt diesen Schritt, falls ihr bereits 2 Berufe habt|r
     .train 7411 >> Erlernt |T136244:0|t[Verzauberkunst]
     .target Pa'zula
 step << !Rogue !Warrior
     .goto 1411/1,-4960.000,-791.300
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Pa'zula|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Pa'zula|r
     .accept 96873 >>Akzeptiert die Quest Ein Dorn im Nacken
     .target Pa'zula
     .skill enchanting,<1,1
@@ -2833,7 +2843,6 @@ step << Hunter/Shaman
     #completewith next
     .goto 1454/1,-4367.46,1405.44,50,0
     .zone Orgrimmar >> Betretet Orgrimmar
-    .zoneskip Orgrimmar
 step << Hunter/Shaman
     .goto 1454/1,-4460.600,1584.300,10,0
     .goto 1454/1,-4460.000,1598.600
@@ -2855,7 +2864,7 @@ step << Hunter/Shaman
     .isOnQuest 96877
 step << Hunter/Shaman
     .goto 1454/1,-4466.800,1954.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Kor'geld|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Kor'geld|r
     .accept 97242 >>Akzeptiert die Quest Yelmaks Mischmasch
     .target Kor'geld
 step << Hunter/Shaman
@@ -2938,7 +2947,7 @@ step << Hunter/Shaman
     .target Migi
 step << Hunter/Shaman
     .goto 1454/1,-4205.800,2007.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Thra|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Thra|r
     .accept 97326 >>Akzeptiert die Quest Felsen zum Faulenzen
     .target Thra
 step << Hunter/Shaman
@@ -3081,6 +3090,7 @@ step << Rogue
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Horde
 #name 10-12 Durotar
 #version 11
@@ -3140,10 +3150,9 @@ step << Shaman
     .turnin 1524 >>Gebt die Quest Ruf des Feuers ab
     .accept 1525 >>Akzeptiert die Quest Ruf des Feuers
     .target Telf Joolam
-step << skip --Shaman
+step << Shaman
     #completewith MargozTurnIn
     .deathskip >> Stirb und beleb dich am |cRXP_FRIENDLY_Geistheiler|r wieder
-    --TODO: Re-add deathskip after ress timer fix
 step << Shaman
     .goto 1411/1,-5061.700,201.700
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Heglan Shadeeye|r
@@ -3246,12 +3255,12 @@ step
     .mob +Dustwind Storm Witch
     .collect 277661,1,97281 --Dull Storm Orb (x1)
     .accept 97281 >>Akzeptiert die Quest Ein Sturm braut sich zusammen
-step << skip
+step
     #softcore
     #completewith SecuringLinesTurnIn
     .deathskip >> Stirb und beleb dich am |cRXP_FRIENDLY_Geistheiler|r wieder
 step
-    --#hardcore
+    #hardcore
     #completewith next
     .goto 1411/1,-4804.53,830.5,60,0
     .goto 1411/1,-4698.78,842.48,60,0
@@ -3300,7 +3309,7 @@ step
     .complete 97282,1 --|5/5 Charged Thunder Lizard Organ
     .mob Lightning Hide
     .mob Charged Thunder Lizard Organ
-step << skip
+step
     #softcore
     #completewith next
     .deathskip >> Stirb und beleb dich am |cRXP_FRIENDLY_Geistheiler|r wieder
@@ -3467,7 +3476,7 @@ step
     .isOnQuest 96877
 step
     .goto 1454/1,-4466.800,1954.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Kor'geld|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Kor'geld|r
     .accept 97242 >>Akzeptiert die Quest Yelmaks Mischmasch
     .target Kor'geld
 step
@@ -3522,7 +3531,7 @@ step
     .target Migi
 step
     .goto 1454/1,-4205.800,2007.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Thra|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Thra|r
     .accept 97326 >>Akzeptiert die Quest Felsen zum Faulenzen
     .target Thra
 step
@@ -3543,6 +3552,12 @@ step << !Shaman !Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Nazgrel|r
     .turnin 831 >>Gebt die Quest Die Befehle des Admirals ab
     .target Nazgrel
+step << !Shaman !Hunter
+    .goto 1454/1,-4125.79,1920.10
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Thrall|r
+    .accept 5726 >>Akzeptiert die Quest Verborgene Feinde
+    .target Thrall
+    .dungeon RFC
 step << Shaman/Hunter
     .goto 1454/1,-4125.79,1920.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Thrall|r
@@ -3602,33 +3617,33 @@ step
     .accept 809 >>Akzeptiert die Quest Ak'zeloth
     .target Neeru Fireblade
     .isQuestTurnedIn 827
-step << skip --!Shaman !Hunter
+step << !Shaman !Hunter
     #softcore
     #completewith ZeptoUC1
     .goto 1454/1,-4424.40,1817.58
     .subzone 2437 >> Betretet Der Flammenschlund
-step << skip --!Shaman !Hunter
+step << !Shaman !Hunter
     #softcore
     #completewith ZeptoUC1
     .goto 1411/1,-4450.27,1188.64
     .deathskip >> Sterbt und spawnt beim |cRXP_FRIENDLY_Geistheiler|r
 step << !Shaman !Hunter
-    --#hardcore
+    #hardcore
     #completewith ZeptoUC1
     .zone Durotar >> Verlass Orgrimmar
     .zoneskip Durotar
-step << skip --Shaman/Hunter
+step << Shaman/Hunter
     #softcore
     #completewith FoundtheCure
     .goto 1454/1,-4424.40,1817.58
     .subzone 2437 >> Betretet Der Flammenschlund
-step << skip --Shaman/Hunter
+step << Shaman/Hunter
     #softcore
     #completewith FoundtheCure
     .goto 1411/1,-4450.27,1188.64
     .deathskip >> Sterbt und spawnt beim |cRXP_FRIENDLY_Geistheiler|r
 step << Shaman/Hunter
-    --#hardcore
+    #hardcore
     #completewith FoundtheCure
     .zone Durotar >> Verlass Orgrimmar
     .zoneskip Durotar
@@ -3679,7 +3694,26 @@ step << Shaman/Hunter
     >>|cRXP_WARN_Plündert den|r |T134095:0|t[Fehlerhaften Kraftstein] |cRXP_WARN_neben|r |cRXP_FRIENDLY_Ak'zeloth|r|cRXP_WARN_. Dieser Gegenstand hat einen 30-Minuten-Timer, daher müsst ihr schnell sein|r
     .turnin 926 >>Gebt die Quest Fehlerhafter Kraftstein ab
     .isOnQuest 924
-step << Rogue/Mage/Priest/Warlock/Warrior
+step << !Shaman !Hunter
+    #loop
+    .goto 1411/1,-4805.59,1495.67,0
+    .goto 1411/1,-4855.82,1498.84,15,0
+    .goto 1411/1,-4833.08,1494.96,15,0
+    .goto 1411/1,-4805.59,1495.67,15,0
+    .goto 1411/1,-4784.44,1535.85,15,0
+    .goto 1411/1,-4750.60,1531.62,15,0
+    .goto 1411/1,-4734.21,1505.54,15,0
+    .goto 1411/1,-4693.49,1519.64,15,0
+    .goto 1411/1,-4679.75,1501.31,15,0
+    .goto 1411/1,-4684.50,1466.06,15,0
+    .goto 1411/1,-4805.59,1495.67,15,0
+    >>Tötet |cRXP_ENEMY_Burning Blade Orks|r. Plündert sie für |cRXP_LOOT_Insignien des Lieutenants|r
+    .complete 5726,1 --Lieutenant's Insignia (1)
+    .mob Burning Blade Fanatic
+    .mob Burning Blade Apprentice
+    .dungeon RFC
+    .isOnQuest 5726
+step << !Shaman !Hunter
     #label ZeptoUC1
     .goto 1411/1,-4648.55,1321.88,40 >>Geh auf den Zeppelin-Turm
     .zone Tirisfal Glades >>Nehmt den Zeppelin nach Tirisfal
@@ -3693,6 +3727,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Horde
 #name 10-12 Tirisfal (Orc/Troll)
 #version 11
@@ -4144,7 +4179,7 @@ step << Warrior
     .abandon 1821 >> Brecht die Quest Agamand-Erbstücke ab
 step
     #optional
-    .abandon 375 >>Brecht die Quest Die Kälte des Todes ab 
+    .abandon 375 >>Brecht die Quest Die Kälte des Todes ab
 step
     #label LeaveUndercity3
     .goto 1458/0,419.89,1627.54,50,0

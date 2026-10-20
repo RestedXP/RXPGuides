@@ -4,6 +4,7 @@ if faction == "Alliance" then return end
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Horde Mage
 #name 12-17 Das Brachland AoE
 #version 1
@@ -146,7 +147,7 @@ step
 step
     #label Crates
 	.goto 1413/1,-3305.08,-231.96,40,0
-    .goto 1413/1,-3294.95,-211.69.0,40,0
+    .goto 1413/1,-3294.95,-211.69,40,0
     .goto 1413/1,-3305.08,-130.61,40,0
     .goto 1413/1,-3396.28,-63.05,40,0
     >>Sammelt die braunen Kisten in der Gegend
@@ -450,7 +451,7 @@ step
 .target Gazrog
     .accept 3281 >>Akzeptiert die Quest Gestohlenes Silber
 step
-    .goto 1413/1,-2676.82,-481.94.0
+    .goto 1413/1,-2676.82,-481.94
 >>Sprecht mit |cRXP_FRIENDLY_Sergra Darkthorn|r
     .turnin 903 >>Gebt die Quest Streuner des Brachlandes ab
 .target Sergra Darkthorn
@@ -466,7 +467,7 @@ step
 .target Sergra Darkthorn
     .accept 905 >>Akzeptiert die Quest Die wütenden Sensenklauen
 step
-    .goto 1413/1,-2666.68,-481.94.90
+    .goto 1413/1,-2666.68,-481.94
 >>Sprecht mit |cRXP_FRIENDLY_Tonga Runetotem|r
     .turnin 870 >> Gebt die Quest Die Vergessenen Teiche ab
 .target Tonga Runetotem
@@ -707,6 +708,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Horde Mage
 #name 17-21 Steinkrallengebirge/Brachland AoE
 #version 1
@@ -719,11 +721,11 @@ step
     .goto 1442/1,-695.02,12.09,50,0
     .goto 1442/1,-758.5,116.29,50,0
     .goto 1442/1,-890.35,171.65,50,0
-    .goto 1442/1,-773.15,-13.96.0,50,0
+    .goto 1442/1,-773.15,-13.96,50,0
     .goto 1442/1,-695.02,12.09,50,0
     .goto 1442/1,-758.5,116.29,50,0
     .goto 1442/1,-890.35,171.65,50,0
-    .goto 1442/1,-773.15,-13.96.0,50,0
+    .goto 1442/1,-773.15,-13.96,50,0
     >>Tötet Grimtotems in der Gegend
     .complete 6548,2 --Kill Grimtotem Mercenary (x6)
     .complete 6548,1 --Kill Grimtotem Ruffian (x8)
@@ -970,7 +972,7 @@ step
     #completewith next
     .goto 1413/1,-1856.02,-2583.13,0
     .goto 1413/1,-2362.68,-2616.91,0
-    .goto 1413/1,-2403.22,-2441.25.0,0
+    .goto 1413/1,-2403.22,-2441.25,0
     >>Sucht nach Owatanka (Blauer Donnerechse) in dieser Gegend. Falls ihr ihn findet, plündert seinen Schwanzstachel und startet die Quest. Falls ihr ihn nicht findet, überspringt diese Quest
     .collect 5102,1,884 --Collect Owatanka's Tailspike
     .accept 884 >>Akzeptiert die Quest Owatanka
@@ -1033,7 +1035,7 @@ step
     .accept 1131 >>Akzeptiert die Quest Stahlbiss
 step
  	>>Geht zu den Teichen der Visionen
-	.goto 1456/1,202.5,-1058.75.0,30,0
+	.goto 1456/1,202.5,-1058.75,30,0
 	.goto 1456/1,276.6,-996.120
 .target Apothecary Zamah
 >>Sprecht mit |cRXP_FRIENDLY_Apothekerin Zamah|r
@@ -1116,7 +1118,7 @@ step
     .trainer >> Erlernt eure Klassenfähigkeiten, falls nötig
 	>>Spezialisiert euch auf Frostschaden AoE , falls ihr das noch nicht getan habt
 step
-    .goto 1456/1,28.19,-1197.92.0
+    .goto 1456/1,28.19,-1197.92
     .fly The Crossroads >>Fliege nach Das Wegekreuz
 step
     .goto 1413/1,-2605.88,-475.180

@@ -4,6 +4,7 @@ if faction == "Alliance" then return end
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Horde
 #name 12-17 das Brachland
 #displayname 14-18 Das Brachland << !Shaman !Hunter !Tauren
@@ -68,14 +69,14 @@ step << Tauren Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Thun'grim|r
     .turnin 1503 >>Gebt die Quest Geschmiedeter Stahl ab
     .target Thun'grim Firegaze
-step << skip --!Tauren
+step << !Tauren
     #softcore
     #completewith ThievesPickup
     .goto 1413/1,-2516.71,-590.71
     .deathskip >> Stirb und beleb dich am |cRXP_FRIENDLY_Geistheiler|r wieder
     .xp >15,1
 step << !Tauren
-    --#softcore
+    #softcore
     #completewith ThievesPickup
     .subzone 380 >> Reist zum Wegekreuz
     .xp <15,1
@@ -120,6 +121,14 @@ step << !Tauren
     .accept 871 >>Akzeptiert die Quest Vereitelung der Angriffe
     .accept 5041 >>Akzeptiert die Quest Vorräte für Crossroads
     .target Thork
+    .maxlevel 15
+step << Skyborne
+    #optional
+    .goto 1413/1,-2595.75,-473.15
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Thork|r
+    .turnin 98024 >>Gebt die Quest Reise zum Wegekreuz ab
+    .target Thork
+    .maxlevel 15
 step << Orc/Troll
     #hardcore
     .goto 1413/1,-2595.75,-437.35
@@ -202,6 +211,13 @@ step << Orc/Troll
 step
     #optional
     #completewith DisruptTheAttacks
+    >>Tötet jeden |cRXP_ENEMY_Raptor|r, den ihr seht. Plündert sie für ihren |cRXP_LOOT_Kopf|r
+    .complete 869,1 --Raptor Head (12)
+    .mob Sunscale Lashtail
+    .mob Sunscale Screecher
+step
+    #optional
+    #completewith DisruptTheAttacks
     >>Tötet |cRXP_ENEMY_Ebenenschreiter|r. Plündert sie für |cRXP_LOOT_Ebenenschreiter-Schnabel|r
     .complete 844,1 --Plainstrider Beak (7)
     .mob Greater Plainstrider
@@ -227,7 +243,7 @@ step << !Tauren !Undead !Skyborne
     .collect 4986,1,924 --Collect Flawed Power Stone
     .complete 924,1 --Destroy the Demon Seed (1)
     .isOnQuest 924
-step << Shaman
+step << Orc Shaman/Troll Shaman/Tauren Shaman
     #sticky
     #label FireTar2
     .goto 1413/1,-2947.38,-92.1,50,0
@@ -247,12 +263,14 @@ step
     .mob +Razormane Thornweaver
     .complete 871,3 --Razormane Hunter (3)
     .mob +Razormane Hunter
+    .isOnQuest 871
 step
     .goto 1413/1,-3021.35,-231.960
     .use 4926 >> Plündert |cRXP_PICK_Chens leeres Fässchen|r vom Boden und startet die Quest
     >>|cRXP_WARN_Ihr könnt es später holen, falls es nicht da ist|r
     .collect 4926,1,819 --Collect Chen's Empty Keg
     .accept 819 >> Akzeptiert die Quest Chens leeres Fässchen
+    .isOnQuest 871
 step
     #requires FireTar2 << Shaman
     #label DisruptTheAttacks
@@ -275,11 +293,7 @@ step
     .mob +Razormane Thornweaver
     .complete 871,3 --Razormane Hunter (3)
     .mob +Razormane Hunter
-step << !Undead !Tauren !Skyborne
-    #sticky
-    #completewith EnterRFC
-    .subzone 2437 >> Jetzt solltet ihr eine Gruppe für Flammenschlund suchen
-    .dungeon RFC
+    .isOnQuest 871
 step
     #completewith next
     >>Tötet jeden |cRXP_ENEMY_Raptor|r, den ihr seht. Plündert sie für ihren |cRXP_LOOT_Kopf|r
@@ -304,28 +318,34 @@ step
     .mob Greater Plainstrider
     .mob Fleeting Plainstrider
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Sergra|r und |cRXP_FRIENDLY_Thork|r
+    .goto 1413/1,-2670.74,-482.61
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Sergra|r
     .turnin 842 >>Gebt die Quest Wegekreuz-Wehrpflicht ab << Tauren Shaman
     .turnin 844 >>Gebt die Quest Ebenenschreiter-Bedrohung ab
     .accept 845 >>Akzeptiert die Quest Die Zhevras
-    .target +Sergra Darkthorn
-    .goto 1413/1,-2670.74,-482.61
-    .turnin 871 >>Gebt die Quest Vereitelung der Angriffe ab
-    .accept 872 >>Akzeptiert die Quest Das Ende der Unterbrechungen
-    .target +Thork
-    .goto 1413/1,-2595.75,-473.15
+    .target Sergra Darkthorn
     .isOnQuest 842 << Tauren Shaman
 step << Tauren Shaman
     #optional
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Sergra|r und |cRXP_FRIENDLY_Thork|r
+    .goto 1413/1,-2670.74,-482.61
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Sergra|r
     .turnin 844 >>Gebt die Quest Ebenenschreiter-Bedrohung ab
     .accept 845 >>Akzeptiert die Quest Die Zhevras
-    .target +Sergra Darkthorn
-    .goto 1413/1,-2670.74,-482.61
+    .target Sergra Darkthorn
+step
+    .goto 1413/1,-2595.75,-473.15
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Thork|r
     .turnin 871 >>Gebt die Quest Vereitelung der Angriffe ab
     .accept 872 >>Akzeptiert die Quest Das Ende der Unterbrechungen
-    .target +Thork
+    .target Thork
+    .isQuestComplete 871
+step
+    #optional
     .goto 1413/1,-2595.75,-473.15
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Thork|r
+    .accept 872 >>Akzeptiert die Quest Das Ende der Unterbrechungen
+    .target Thork
+    .isQuestTurnedIn 871
 step
     .goto 1413/1,-2607.91,-475.180
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Darsok|r
@@ -367,410 +387,6 @@ step << Orc Warrior/Troll Warrior/Tauren Warrior/Skyborne Warrior
     .subzoneskip 380,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.5
-step << !Undead !Tauren !Skyborne
-    #completewith HiddenEnemiesPickup
-    .goto 1413/1,-2595.75,-437.35
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Devrak|r
-    .fly Orgrimmar >> Fliege nach Orgrimmar
-    .zoneskip Orgrimmar
-    .target Devrak
-    .dungeon RFC
-step << Tauren
-    .goto 1413/1,-3021.35,-231.96,20,0
-    .goto 1413/1,-3029.46,261.25
-    .use 4926 >> Plündert |cRXP_PICK_Chens leeres Fässchen|r vom Boden und startet die Quest
-    >>|cRXP_WARN_Ihr könnt es später holen, falls es nicht da ist|r
-    .collect 4926,1,819 --Collect Chen's Empty Keg
-    .accept 819 >> Akzeptiert die Quest Chens leeres Fässchen
-    .dungeon RFC
-step << Tauren
-    #optional
-    #completewith KreenigSnarlsnout1
-    .goto 1413/1,-3127.75,-55.62,50,0
-    .goto 1413/1,-3382.10,-54.27,50,0
-    >>Tötet |cRXP_ENEMY_Geomant der Grimmhauer|r und |cRXP_ENEMY_Verteidiger der Grimmhauer|r
-    .complete 872,1 --Razormane Geomancer (8)
-    .mob +Razormane Geomancer
-    .complete 872,2 --Razormane Defender (8)
-    .mob +Razormane Defender
-    .dungeon RFC
-step << Tauren
-    #optional
-    #completewith next
-    >>Plündert die |cRXP_PICK_Vorratskisten von Crossroads|r
-    >>|cRXP_WARN_Es hat mehrere Spawnpunkte|r
-    .complete 5041,1 --Crossroads' Supply Crates (1)
-    .dungeon RFC
-step << Tauren
-    #label KreenigSnarlsnout1
-    .goto 1413/1,-3324.34,-217.09
-    >>Tötet |cRXP_ENEMY_Kreenig Grantelschnauze|r. Plündert ihn für |cRXP_LOOT_Kreenig Grantelschnauzes Hauer|r
-    .complete 872,3 --Kreenig Snarlsnout's Tusk (1)
-    .mob Kreenig Snarlsnout
-    .dungeon RFC
-step << Tauren
-    #optional
-    #completewith next
-    .goto 1413/1,-3127.75,-55.62,50,0
-    .goto 1413/1,-3382.10,-54.27,50,0
-    >>Tötet |cRXP_ENEMY_Geomant der Grimmhauer|r und |cRXP_ENEMY_Verteidiger der Grimmhauer|r
-    .complete 872,1 --Razormane Geomancer (8)
-    .mob +Razormane Geomancer
-    .complete 872,2 --Razormane Defender (8)
-    .mob +Razormane Defender
-    .dungeon RFC
-step << Tauren
-    .goto 1413/1,-3292.92,-212.36,30,0
-    .goto 1413/1,-3402.36,-48.19
-    >>Plündert die |cRXP_PICK_Vorratskisten von Crossroads|r
-    >>|cRXP_WARN_Es hat mehrere Spawnpunkte|r
-    .complete 5041,1 --Crossroads' Supply Crates (1)
-    .dungeon RFC
-step << Tauren
-    #loop
-	.goto 1413/1,-3345.62,-101.56,0
-	.goto 1413/1,-3393.24,-102.24,50,0
-	.goto 1413/1,-3419.59,-40.08,50,0
-	.goto 1413/1,-3419.59,-0.89,50,0
-	.goto 1413/1,-3361.83,-1.57,50,0
-	.goto 1413/1,-3317.24,-7.65,50,0
-	.goto 1413/1,-3237.19,-27.92,50,0
-	.goto 1413/1,-3139.91,-46.16,50,0
-	.goto 1413/1,-3126.74,-101.56,50,0
-	.goto 1413/1,-3178.42,-107.64,50,0
-	.goto 1413/1,-3205.78,-119.13,50,0
-	.goto 1413/1,-3218.95,-81.97,50,0
-	.goto 1413/1,-3278.74,-75.21,50,0
-	.goto 1413/1,-3345.62,-101.56,50,0
-    >>Tötet |cRXP_ENEMY_Geomant der Grimmhauer|r und |cRXP_ENEMY_Verteidiger der Grimmhauer|r
-    .complete 872,1 --Razormane Geomancer (8)
-    .mob +Razormane Geomancer
-    .complete 872,2 --Razormane Defender (8)
-    .mob +Razormane Defender
-    .dungeon RFC
-step << Tauren
-    #optional
-    #completewith next
-    >>Tötet jedes |cRXP_ENEMY_Zhevra|r, das ihr seht. Plündert sie für ihre |cRXP_LOOT_Hufe|r
-    .complete 845,1 --Zhevra Hooves (4)
-    .mob Zhevra Runner
-    .dungeon RFC
-step << Tauren Shaman
-    #completewith next
-    .goto 1411/1,-3905.13,-228.41,10,0
-    .goto 1411/1,-3899.31,-241.45,8,0
-    .goto 1411/1,-3899.31,-241.45,8,0
-    .goto 1411/1,-3906.71,-270.71,8,0
-    .goto 1411/1,-3910.94,-247.45,8,0
-    .goto 1411/1,-3931.56,-240.75,8,0
-    .goto 1411/1,-3964.35,-242.51,8,0
-    .goto 1411/1,-3974.39,-228.76,8,0
-    .goto 1411/1,-4020.92,-219.95,8,0
-    .goto 1411/1,-4034.67,-232.64,8,0
-    .goto 1411/1,-4033.08,-255.91,10 >> Reist den Weg den Berg hinauf zu |cRXP_FRIENDLY_Telf|r
-    .dungeon RFC
-step << Tauren Shaman
-    .goto 1411/1,-3999.24,-268.95
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Telf|r
-    .turnin 1525 >>Gebt die Quest Ruf des Feuers ab
-    .accept 1526 >>Akzeptiert die Quest Ruf des Feuers
-    .target Telf Joolam
-    .dungeon RFC
-step << Tauren Shaman
-    #completewith next
-    .goto 1411/1,-3981.27,-256.61
-    .cast 8898 >>|cRXP_WARN_Benutzt das|r |T134732:0|t[Feuersapta]
-    .use 6636
-    .dungeon RFC
-step << Tauren Shaman
-    .goto 1411/1,-4022.51,-243.92
-    >>Tötet die |cRXP_ENEMY_Schwache Feuermanifestation|r. Plündert sie für eine |cRXP_LOOT_Leuchtendes Holzscheit|r
-    .complete 1526,1 --Glowing Ember (1)
-    .mob Minor Manifestation of Fire
-    .dungeon RFC
-step << Tauren Shaman
-    .goto 1411/1,-4022.51,-243.92
-    >>Klickt die |cRXP_PICK_Kohlenpfanne|r auf dem Boden
-    .turnin 1526 >>Gebt die Quest Ruf des Feuers ab
-    .accept 1527 >>Akzeptiert die Quest Ruf des Feuers
-    .dungeon RFC
-step << Tauren Shaman
-    .goto 1413/1,-3037.56,264.63
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Kranal|r
-    .turnin 1527 >>Gebt die Quest Ruf des Feuers ab
-    .target Kranal Fiss
-    .dungeon RFC
-step << Tauren Shaman
-    .goto 1413/1,-3029.46,261.25
-    .use 4926 >> Plündert |cRXP_PICK_Chens leeres Fässchen|r vom Boden und startet die Quest
-    >>|cRXP_WARN_Wartet auf den Respawn, falls es noch nicht da ist|r
-    .collect 4926,1,819 --Collect Chen's Empty Keg
-    .accept 819 >> Akzeptiert die Quest Chens leeres Fässchen
-    .dungeon RFC
-step << Tauren
-    #sticky
-    #completewith EnterRFC
-    .subzone 2437 >> Jetzt solltet ihr eine Gruppe für Flammenschlund suchen
-    .dungeon RFC
-step << Tauren
-    #completewith HiddenEnemiesPickup
-    .goto 1454/1,-4367.46,1405.44,50,0
-    .zone Orgrimmar >> Reist nach Orgrimmar
-    .dungeon RFC
-step << Tauren
-    .goto 1454/1,-4313.60,1676.24
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Doras|r
-    >>|cRXP_WARN_Fliegt nicht irgendwohin!|r
-    .fp Orgrimmar >> Erlernt die Orgrimmar-Flugroute
-    .target Doras
-    .isQuestAvailable 5728
-    .dungeon RFC
-step << !Undead !Skyborne
-    .goto 1454/1,-4125.79,1920.10
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Thrall|r
-    .accept 5726 >>Akzeptiert die Quest Verborgene Feinde
-    .target Thrall
-    .dungeon RFC
-step << !Undead !Skyborne
-    .goto 1411/1,-4769.10,1484.39,0
-    >>Tötet |cRXP_ENEMY_Burning Blade|r Gegner in  der Knochenhöhle, bis |cRXP_LOOT_Insignien des Lieutenants|r dropt
-    .complete 5726,1 --Lieutenant's Insignia (1)
-    .dungeon RFC
-step << !Undead !Skyborne
-    .goto 1454/1,-4125.79,1920.10
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Thrall|r
-    .turnin 5726 >> Gebt die Quest Verborgene Feinde ab
-    .accept 5727 >> Akzeptiert die Quest Verborgene Feinde
-    .target Thrall
-    .dungeon RFC
-step << !Undead !Skyborne
-    .goto 1454/1,-4376.29,1802.43
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Neeru Fireblade|r
-    .accept 5761 >>Akzeptiert die Quest Vernichtung der Bestie
-    .target Neeru Fireblade
-    .dungeon RFC
-step << !Undead !Skyborne
-    .goto 1454/1,-4376.29,1802.43
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Neeru Fireblade|r
-    .complete 5727,1 --Gauge Neeru Fireblade's reaction to you being a member of the Burning Blade
-    .skipgossip
-    .target Neeru Fireblade
-    .dungeon RFC
-step << !Undead !Skyborne
-    #label HiddenEnemiesPickup
-    .goto 1454/1,-4125.79,1920.10
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Thrall|r
-    .turnin 5727 >> Gebt die Quest Verborgene Feinde ab
-    .accept 5728 >> Akzeptiert die Quest Verborgene Feinde
-    .target Thrall
-    .dungeon RFC
-step << !Undead !Skyborne
-    #completewith EnterRFC
-    .destroy 14544 >>|cRXP_WARN_Zerstört|r |T134417:0|tInsignien des Lieutenants] |cRXP_WARN_da ihr es nicht mehr braucht|r
-    .dungeon RFC
-step << !Undead !Skyborne
-    #label EnterRFC
-    .goto 1454/1,-4420.76,1815.80
-    .subzone 2437 >> BETRETET Das Flammenschlund Instanzportal. Betretet die Zone
-    .dungeon RFC
-step << !Undead !Skyborne
-    >>|cRXP_WARN_Falls möglich, lasst Gruppenmitglieder die folgenden Quests teilen|r
-    .accept 5722 >> Akzeptiert die Quest Die Suche nach dem verloren gegangenen Ranzen
-    .accept 5723 >> Akzeptiert die Quest Die Kraft des Feindes wird auf die Probe gestellt
-    .dungeon RFC
-step << !Undead !Skyborne
-    #optional
-    #completewith next
-    >>Tötet |cRXP_ENEMY_Ragefire Troggs|r und |cRXP_ENEMY_Ragefire-Schamanen|r
-    .complete 5723,1 --Ragefire Trogg (8)
-    .mob +Ragefire Trogg
-    .complete 5723,2 --Ragefire Shaman (8)
-    .mob +Ragefire Shaman
-    .isOnQuest 5723
-    .dungeon RFC
-step << !Undead !Skyborne
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Maur|r
-    .turnin 5722 >> Gebt die Quest Die Suche nach dem verloren gegangenen Ranzen ab
-    .accept 5724 >> Akzeptiert die Quest Wiederbeschaffung des verloren gegangenen Ranzens
-    .target Maur Grimtotem
-    .isOnQuest 5722
-    .dungeon RFC
-step << !Undead !Skyborne
-    #optional
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Maur|r
-    .accept 5724 >> Akzeptiert die Quest Wiederbeschaffung des verloren gegangenen Ranzens
-    .target Maur Grimtotem
-    .isQuestTurnedIn 5722
-    .dungeon RFC
-step << !Undead !Skyborne
-    #label TroggsShamans
-    >>Tötet |cRXP_ENEMY_Ragefire Troggs|r und |cRXP_ENEMY_Ragefire-Schamanen|r
-    .complete 5723,1 --Ragefire Trogg (8)
-    .mob +Ragefire Trogg
-    .complete 5723,2 --Ragefire Shaman (8)
-    .mob +Ragefire Shaman
-    .isOnQuest 5723
-    .dungeon RFC
-step << !Undead !Skyborne
-    #optional
-    #requires TroggsShamans
-    #completewith BazzalanandJergosh
-    >>Tötet |cRXP_ENEMY_Searingblade-Kultist|r und |cRXP_ENEMY_Searingblade-Hexenmeister|r. Plündert sie für |cRXP_LOOT_Schattenzauber|r und |cRXP_LOOT_Zauberformeln aus dem Nether|r
-    .complete 5725,1 --Spells of Shadow (1)
-    .complete 5725,2 --	Incantations from the Nether (1)
-    .mob Searing Blade Cultist
-    .mob Searing Blade Warlock
-    .isOnQuest 5725
-    .dungeon RFC
-step << !Undead !Skyborne
-    >>Tötet |cRXP_ENEMY_Taragaman der Hungerleider|r. Plündert ihn für sein |cRXP_LOOT_Herz|r
-    .complete 5761,1 -- Taragaman the Hungerer's Heart
-    .mob Taragaman the Hungerer
-    .isOnQuest 5761
-    .dungeon RFC
-step << !Undead !Skyborne
-    #label BazzalanandJergosh
-    >>Tötet |cRXP_ENEMY_Bazzalan|r und |cRXP_ENEMY_Jergosh der Herbeirufer|r
-    .complete 5728,1 --Bazzalan (1)
-    .mob +Bazzalan
-    .complete 5728,2 --Jergosh the Invoker (1)
-    .mob +Jergosh the Invoker
-    .isOnQuest 5728
-    .dungeon RFC
-step << !Undead !Skyborne
-    >>Tötet |cRXP_ENEMY_Searingblade-Kultist|r und |cRXP_ENEMY_Searingblade-Hexenmeister|r. Plündert sie für |cRXP_LOOT_Schattenzauber|r und |cRXP_LOOT_Zauberformeln aus dem Nether|r
-    .complete 5725,1 --Spells of Shadow (1)
-    .complete 5725,2 --	Incantations from the Nether (1)
-    .mob Searing Blade Cultist
-    .mob Searing Blade Warlock
-    .isOnQuest 5725
-    .dungeon RFC
-step << !Undead !Skyborne
-    .goto 1454/1,-4376.29,1802.43
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Neeru Fireblade|r
-    .turnin 5761 >>Gebt die Quest Vernichtung der Bestie ab
-    .target Neeru Fireblade
-    .isQuestComplete 5761
-    .dungeon RFC
-step << !Undead !Skyborne
-    .goto 1454/1,-4125.79,1920.10
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Thrall|r
-    .turnin 5728 >> Gebt die Quest Verborgene Feinde ab
-    .accept 5729 >> Akzeptiert die Quest Verborgene Feinde
-    .target Thrall
-    .isQuestComplete 5728
-    .dungeon RFC
-step << !Undead !Skyborne
-    .goto 1454/1,-4125.79,1920.10
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Thrall|r
-    .accept 5729 >> Akzeptiert die Quest Verborgene Feinde
-    .target Thrall
-    .isQuestTurnedIn 5728
-    .dungeon RFC
-step << !Undead !Skyborne
-    .goto 1454/1,-4376.29,1802.43
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Neeru Fireblade|r
-    .turnin 5729 >> Gebt die Quest Verborgene Feinde ab
-    .accept 5730 >> Akzeptiert die Quest Verborgene Feinde
-    .target Neeru Fireblade
-    .dungeon RFC
-    .isQuestTurnedIn 5728
-step << !Undead !Skyborne
-    .goto 1454/1,-4125.79,1920.10
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Thrall|r
-    .turnin 5730 >> Gebt die Quest Verborgene Feinde ab
-    .target Thrall
-    .isQuestTurnedIn 5728
-    .dungeon RFC
-step << Tauren
-    #completewith RFCTurninsTB1
-    .goto 1454/1,-4313.46,1676.25--c:Orgrimmar,45.120,63.889
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |r |cRXP_FRIENDLY_Doras|r
-    .fly Thunder Bluff >>Fliege nach Donnerfels
-    .target Doras
-    .zoneskip Orgrimmar,1
-    .isOnQuest 5724
-    .isQuestComplete 5723
-    .dungeon RFC
-step << !Tauren !Undead !Skyborne
-    #completewith KreenigSnarlsnout
-    .hs >> Ruhestein nach Das Wegekreuz
-    .use 6948
-    .zoneskip The Barrens
-    .bindlocation 380,1
-    .dungeon RFC
-
-    --not worth to turn in 5723/5724 w/o TB flight path
-
-step << skip
-    #completewith RFCTurninsTB1
-    .goto 1412/1,-1480.52,-2339.56,120,0
-    .zone Thunder Bluff >>Reist südlich zu Camp Taurajo und betretet Mulgore. Reist von dort zu Donnerfels
-    >>|cRXP_WARN_Wenn ihr die Donnerfels Flugroute habt, fliegt stattdessen dorthin|r
-    .isOnQuest 5724
-    .isQuestComplete 5723
-    .dungeon RFC
-step << skip
-    .goto 1413/1,-1881.35,-2384.50
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Omusa|r
-    .fp Camp Taurajo >> Erlernt die Camp Taurajo-Flugroute << !Tauren
-    .target Omusa Thunderhorn
-    .dungeon RFC
-    .isOnQuest 5724
-    .isQuestComplete 5723
-step << Tauren
-    #completewith RFCTurninsTB1
-    .goto 1456/1,-212.71,-1065.010,80 >> Reist zur Anhöhe der Ältesten
-    .isOnQuest 5724
-    .isQuestComplete 5723
-    .dungeon RFC
-step << Tauren
-    .goto 1456/1,-218.13,-1055.97
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Rahauro|r
-    .turnin 5724 >> Gebt die Quest Wiederbeschaffung des verloren gegangenen Ranzens ab
-    .turnin 5723 >> Gebt die Quest Die Kraft des Feindes wird auf die Probe gestellt ab
-    .target Rahauro
-    .isOnQuest 5724
-    .isQuestComplete 5723
-    .dungeon RFC
-step << Tauren
-    .goto 1456/1,-218.13,-1055.97
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Rahauro|r
-    .turnin 5724 >> Gebt die Quest Wiederbeschaffung des verloren gegangenen Ranzens ab
-    .target Rahauro
-    .isOnQuest 5724
-    .dungeon RFC
-step << Tauren
-    #label RFCTurninsTB1
-    .goto 1456/1,-218.13,-1055.97
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Rahauro|r
-    .turnin 5723 >> Gebt die Quest Die Kraft des Feindes wird auf die Probe gestellt ab
-    .target Rahauro
-    .isQuestComplete 5723
-    .dungeon RFC
-step << skip
-    .goto 1456/1,26.1,-1196.66
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Tal|r
-    .fly Thunder Bluff >> Erlernt die Flugroute nach Donnerfels
-    .target Tal
-    .zoneskip Thunder Bluff,1
-    .dungeon RFC
-step << !Undead !Skyborne
-    #completewith KreenigSnarlsnout
-    .hs >> Ruhestein nach Das Wegekreuz
-    .use 6948
-    .zoneskip Thunder Bluff,1
-    .cooldown item,6948,>0
-    .dungeon RFC
-step << !Undead !Skyborne
-    #completewith KreenigSnarlsnout
-    .goto 1456/1,26.1,-1196.66
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Tal|r
-    .fly Crossroads >>Fliege nach Das Wegekreuz
-    .target Tal
-    .zoneskip Thunder Bluff,1
-    .cooldown item,6948,<0
-    .dungeon RFC
 step
     .goto 1413/1,-2645.40,-406.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gastwirt Boorand|r
@@ -785,6 +401,7 @@ step
     >>|cRXP_WARN_Wartet auf den Respawn, falls es noch nicht da ist|r
     .collect 4926,1,819 --Collect Chen's Empty Keg
     .accept 819 >> Akzeptiert die Quest Chens leeres Fässchen
+    .isOnQuest 872
 step
     #optional
     #completewith KreenigSnarlsnout
@@ -795,18 +412,21 @@ step
     .mob +Razormane Geomancer
     .complete 872,2 --Razormane Defender (8)
     .mob +Razormane Defender
+    .isOnQuest 872
 step
     #optional
     #completewith next
     >>Plündert die |cRXP_PICK_Vorratskisten von Crossroads|r
     >>|cRXP_WARN_Es hat mehrere Spawnpunkte|r
     .complete 5041,1 --Crossroads' Supply Crates (1)
+    .isOnQuest 872
 step
     #label KreenigSnarlsnout
     .goto 1413/1,-3324.34,-217.09
     >>Tötet |cRXP_ENEMY_Kreenig Grantelschnauze|r. Plündert ihn für |cRXP_LOOT_Kreenig Grantelschnauzes Hauer|r
     .complete 872,3 --Kreenig Snarlsnout's Tusk (1)
     .mob Kreenig Snarlsnout
+    .isOnQuest 872
 step
     #optional
     #completewith next
@@ -817,6 +437,7 @@ step
     .mob +Razormane Geomancer
     .complete 872,2 --Razormane Defender (8)
     .mob +Razormane Defender
+    .isOnQuest 872
 step
     #loop
     .goto 1413/1,-3292.92,-212.36,30,0
@@ -826,6 +447,7 @@ step
     >>Plündert die |cRXP_PICK_Vorratskisten von Crossroads|r
     >>|cRXP_WARN_Es hat mehrere Spawnpunkte|r
     .complete 5041,1 --Crossroads' Supply Crates (1)
+    .isOnQuest 872
 step
     #loop
 	.goto 1413/1,-3345.62,-101.56,0
@@ -847,6 +469,7 @@ step
     .mob +Razormane Geomancer
     .complete 872,2 --Razormane Defender (8)
     .mob +Razormane Defender
+    .isOnQuest 872
 step << !Tauren !Undead !Skyborne
     #optional
     #completewith next
@@ -929,7 +552,6 @@ step << Orc Shaman/Troll Shaman/Tauren Shaman
     >>Tötet jedes |cRXP_ENEMY_Zhevra|r, das ihr seht. Plündert sie für ihre |cRXP_LOOT_Hufe|r
     .complete 845,1 --Zhevra Hooves (4)
     .mob Zhevra Runner
-    .dungeon RFC
 step << Orc Shaman/Troll Shaman/Tauren Shaman
     #label FireEnd
     .goto 1413/1,-3037.56,264.63
@@ -942,12 +564,11 @@ step << Orc Shaman/Troll Shaman/Tauren Shaman
     >>|cRXP_WARN_Wartet auf den Respawn, falls es noch nicht da ist|r
     .collect 4926,1,819 --Collect Chen's Empty Keg
     .accept 819 >> Akzeptiert die Quest Chens leeres Fässchen
-step << skip
+step
     #completewith RatchetEnter
-    >>Tötet |cRXP_ENEMY_Bluthornkreischer|r. Plündert sie für ihre |cRXP_LOOT_Köpfe|r
+    >>Tötet |cRXP_ENEMY_Raptoren|r. Plündert sie für ihre |cRXP_LOOT_Köpfe|r
     .complete 869,1 --Raptor Head (12)
     .mob Sunscale Screecher
---XX Need to add goto about halfway down since they only spawn up north, would be too messy to add it
 step
     #optional
     #completewith next
@@ -955,11 +576,24 @@ step
     >>Tötet |cRXP_ENEMY_Zhevra-Läufer|r. Plündert sie für ihre |cRXP_LOOT_Hufe|r
     .complete 845,1 --Zhevra Hooves (4)
     .mob Zhevra Runner
+    .isOnQuest 872
+step
+    #optional
+    #completewith next
+    >>Tötet |cRXP_ENEMY_Zhevra-Läufer|r. Plündert sie für ihre |cRXP_LOOT_Hufe|r
+    .complete 845,1 --Zhevra Hooves (4)
+    .mob Zhevra Runner
+    .isNotOnQuest 872
 step
     #label RatchetEnter
     .goto 1413/1,-3728.66,-835.29
     .subzone 392 >> Reist nach Ratschet
     .isOnQuest 845
+step
+    .goto 1413/1,-3767.800,-842.900
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Wrenix|r
+    .accept 97253 >>Akzeptiert die Quest Teile und Stücke
+    .target Wrenix the Wretched
 step
     .goto 1413/1,-3728.66,-835.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gazlowe|r
@@ -1115,6 +749,14 @@ step
     .turnin 819 >>Gebt die Quest Chens leeres Fässchen ab
     .accept 821 >>Akzeptiert die Quest Chens leeres Fässchen
     .target Brewmaster Drohn
+    .isOnQuest 819
+step
+    #optional
+    .goto 1413/1,-3687.11,-981.22
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Drohn|r
+    .accept 821 >>Akzeptiert die Quest Chens leeres Fässchen
+    .target Brewmaster Drohn
+    .isQuestTurnedIn 819
 step << Mage/Priest/Warlock/Shaman/Druid
     .goto 1413/1,-3664.82,-1050.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gastwirt Wiley|r
@@ -1143,7 +785,7 @@ step << Orc Rogue/Troll Rogue
     #optional
 	#completewith SouthSea
 	>>Tötet |cRXP_ENEMY_Tazan|r. Plündert ihn für |cRXP_LOOT_Tazans Ranzen|r
-    >>|cRXP_WARN_Er patrouilliert auf dem Hügel auf und ab|r
+    >>|cRXP_WARN_Er spawnt im ersten Lager und patroulliert den Hügel hinauf|r
 	.complete 1963,1 --Tazan's Satchel (1)
     .unitscan Tazan
 step
@@ -1160,7 +802,6 @@ step
     .complete 895,1 --Baron Longshore's Head (1)
     .unitscan Baron Longshore
 step
-    #label SouthSea
     #loop
     .goto 1413/1,-3885.72,-1569.690,0
     .goto 1413/1,-3902.95,-1366.33,50,0
@@ -1171,12 +812,28 @@ step
     .mob +Southsea Brigand
     .complete 887,2 --Southsea Cannoneer (6)
     .mob +Southsea Cannoneer
+step
+    #label SouthSea
+    #loop
+    .goto 1413/1,-3657.700,-1435.500,0
+    .goto 1413/1,-3675.100,-1364.100,40,0
+    .goto 1413/1,-3598.900,-1378.800,40,0
+    .goto 1413/1,-3657.700,-1435.500,40,0
+    .goto 1413/1,-3654.900,-1482.400,40,0
+    .goto 1413/1,-3680.100,-1593.000,40,0
+    .goto 1413/1,-3614.800,-1632.800,40,0
+    .goto 1413/1,-3611.500,-1692.500,40,0
+    >>Plündert die |cRXP_PICK_Handvoll komplexer Teile|r vom Boden
+    .complete 97253,1 --|5/5 Handful of Complicated Parts
+    .isOnQuest 97253
 step << Orc Rogue/Troll Rogue
-    .goto 1413/1,-3832.02,-1381.87,50,0
-    .goto 1413/1,-3730.68,-1364.98,50,0
-    .goto 1413/1,-3677.99,-1392.00
+    #loop
+    .goto 1413/1,-3895.600,-1365.000,0
+    .goto 1413/1,-3677.99,-1392.00,50,0
+    .goto 1413/1,-3895.600,-1365.000,50,0
+    .goto 1413/1,-3826.300,-1487.300,50,0
 	>>Tötet |cRXP_ENEMY_Tazan|r. Plündert ihn für |cRXP_LOOT_Tazans Ranzen|r
-    >>|cRXP_WARN_Er patrouilliert auf dem Hügel auf und ab|r
+    >>|cRXP_WARN_Er spawnt im ersten Lager und patroulliert den Hügel hinauf|r
 	.complete 1963,1 --Tazan's Satchel (1)
     .unitscan Tazan
 step
@@ -1186,6 +843,12 @@ step
     .turnin 895 >>Gebt die Quest GESUCHT: Baron Küstenschipper ab
     .accept 890 >>Akzeptiert die Quest Die verloren gegangene Lieferung
     .target Gazlowe
+step
+    .goto 1413/1,-3767.800,-842.900
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Wrenix|r
+    .turnin 97253 >>Gebt die Quest Teile und Stücke ab
+    .target Wrenix the Wretched
+    .isQuestComplete 97253
 step
     .goto 1413/1,-3796.55,-985.28
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Dizzywig|r
@@ -1460,16 +1123,19 @@ step << Tauren
     .bindlocation 380
     .isQuestAvailable 903,850,867,901
 step
-    #label XroadsTurnins3
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Thork|r und |cRXP_FRIENDLY_Sergra|r
+    .goto 1413/1,-2595.75,-473.15
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Thork|r
     .turnin 5041 >>Gebt die Quest Vorräte für Crossroads ab
     .turnin 872 >>Gebt die Quest Das Ende der Unterbrechungen ab
-    .target +Thork
-    .goto 1413/1,-2595.75,-473.15
+    .target Thork
+    .isQuestTurnedIn 871
+step
+    #label XroadsTurnins3
+    .goto 1413/1,-2669.72,-481.94
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Sergra|r
     .turnin 845 >>Gebt die Quest Die Zhevras ab
     .accept 903 >>Akzeptiert die Quest Streuner des Brachlandes
-    .target +Sergra Darkthorn
-    .goto 1413/1,-2669.72,-481.94
+    .target Sergra Darkthorn
 step << Tauren
     #label HidesTurnIn
     .goto 1413/1,-2566.36,-350.19--c:The Barrens,51.21,29.05
@@ -1511,6 +1177,7 @@ step
     .complete 821,2 --Plainstrider Kidney (5)
     .mob Greater Plainstrider
     .mob Fleeting Plainstrider
+    .isQuestTurnedIn 819
 step
     #optional
     #completewith next
@@ -1581,14 +1248,13 @@ step
     .isQuestTurnedIn 850
 step
     #optional
-    #completewith next
+    #completewith HarpyTalons
     >>Tötet jeden |cRXP_ENEMY_Raptor|r, den ihr seht. Plündert sie für ihren |cRXP_LOOT_Kopf|r
     .complete 869,1 --Raptor Head (12)
     .mob Sunscale Lashtail
     .mob Sunscale Screecher
 step
-    #completewith next
-    #loop
+    #completewith HarpyTalons
     .goto 1413/1,-1594.58,30.19,0
     .goto 1413/1,-1594.58,30.19,50,0
     .goto 1413/1,-1562.15,-29.94,50,0
@@ -1600,7 +1266,22 @@ step
     .complete 821,1 --Savannah Lion Tusk (5)
     .disablecheckbox
     .mob Savannah Prowler
+    .isQuestTurnedIn 819
 step
+    #optional
+    #completewith HarpyTalons
+    .goto 1413/1,-1594.58,30.19,0
+    .goto 1413/1,-1594.58,30.19,50,0
+    .goto 1413/1,-1562.15,-29.94,50,0
+    .goto 1413/1,-1483.11,66.67,50,0
+    .goto 1413/1,-1531.75,180.85,50,0
+    .goto 1413/1,-1462.84,214.63,50,0
+    >>Tötet |cRXP_ENEMY_Savannah Prowlers|r. Plündert sie für |cRXP_LOOT_Claws|r
+    .complete 903,1 --Prowler Claws (7)
+    .mob Savannah Prowler
+    .isQuestAvailable 819
+step
+    #label HarpyTalons
     #loop
     .goto 1413/1,-1616.87,611.90,0
     .goto 1413/1,-1583.43,322.73,60,0
@@ -1616,7 +1297,6 @@ step
 step
     #completewith Samophlange
     +|cRXP_WARN_Passt auf|r |cRXP_ENEMY_Bluthornsensenklaue|r |cRXP_WARN_in der Gegend auf. Sie sind bis Stufe 18 und können|r |T132152:0|t[Hauen]
-    --.dungeon !RFC
     .xp >17,1
 step
     #optional
@@ -1626,7 +1306,7 @@ step
     .mob Greater Plainstrider
     .mob Fleeting Plainstrider
     .mob Ornery Plainstrider
-    --.dungeon !RFC
+    .isQuestTurnedIn 819
 step
     .goto 1413/1,-1812.500,790.000
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Vrang|r
@@ -1639,7 +1319,7 @@ step
     >>|cRXP_FRIENDLY_Vrang|r |cRXP_WARN_verkauft|r |T133476:0|t[|cRXP_FRIENDLY_Schwerer Stachelkolben|r] |cRXP_WARN_ein Gegenstand mit begrenztem Vorrat|r << Tauren Warrior/Tauren Shaman/Druid
 	.vendor	>> Verkauft trash und repariert
     .target Vrang Wildgore
-    --.dungeon !RFC
+    .isQuestAvailable 95494,95507
 step
     #completewith next
     >>Sammelt die |cRXP_PICK_Ausgelöste Falle|r vom Boden
@@ -1653,12 +1333,28 @@ step
     .goto 1413/1,-1960.600,653.700,50,0
     .goto 1413/1,-1871.600,653.700,50,0
     .goto 1413/1,-1729.700,592.400,50,0
-    >>Tötet |cRXP_LOOT_Savannenpatriarche|r. Plündert sie für ihre |cRXP_LOOT_Bälge|r und |cRXP_LOOT_Hauer|r
-    >>|cRXP_WARN_Falls die |cRXP_LOOT_Savannenpatriarche|r stark umkämpft sind, überspringt diese Quest vorerst, sie kann später abgeschlossen werden|r
+    >>Tötet |cRXP_ENEMY_Savannah Patriarchs|r. Plündert sie für |cRXP_LOOT_Hides|r und |cRXP_LOOT_Tusks|r
+    >>|cRXP_WARN_Falls die |cRXP_ENEMY_Savannah Patriarchs|r stark umkämpft sind, überspringt diese Quest vorerst. Sie kann später abgeschlossen werden|r
     .complete 95494,1 --|6/6 Savannah Lion Hide
     .complete 821,1 --Savannah Lion Tusk (5)
     .disablecheckbox
     .mob Savannah Patriarch
+    .isQuestTurnedIn 819
+step
+    #optional
+    #loop
+    .goto 1413/1,-1848.200,486.900,0
+    .goto 1413/1,-1848.200,486.900,50,0
+    .goto 1413/1,-1937.500,480.000,50,0
+    .goto 1413/1,-1983.100,579.700,50,0
+    .goto 1413/1,-1960.600,653.700,50,0
+    .goto 1413/1,-1871.600,653.700,50,0
+    .goto 1413/1,-1729.700,592.400,50,0
+    >>Tötet |cRXP_ENEMY_Savannah Patriarchs|r. Plündert sie für |cRXP_LOOT_Hides|r
+    >>|cRXP_WARN_Falls die |cRXP_ENEMY_Savannah Patriarchs|r stark umkämpft sind, überspringt diese Quest vorerst. Sie kann später abgeschlossen werden|r
+    .complete 95494,1 --|6/6 Savannah Lion Hide
+    .mob Savannah Patriarch
+    .isQuestAvailable 819
 step
     #loop
     .goto 1413/1,-1960.600,653.700,0
@@ -1700,7 +1396,7 @@ step
     .isQuestTurnedIn 95494
 step
     #completewith next
-    .goto 1413/1,-1778.100,684.200,25,0
+    .goto 1413/1,-1736.900,650.300,25,0
     .goto 1413/1,-1741.700,721.400,25,0
     .goto 1413/1,-1643.900,786.000,25,0
     .goto 1413/1,-1605.300,818.300,20 >>Reist den Berg hinauf
@@ -1768,13 +1464,23 @@ step
     .mob Greater Plainstrider
     .mob Fleeting Plainstrider
     .mob Ornery Plainstrideridneys
+    .isQuestTurnedIn 819
 step
-    #completewith next
+    #completewith RaptorHeadsComplete
     >>Tötet |cRXP_ENEMY_Savannenstreuner|r. Plündert sie für |cRXP_LOOT_Klauen|r und |cRXP_LOOT_Hauer|r
     .complete 903,1 --Prowler Claws (7)
     .complete 821,1 --Savannah Lion Tusk (5)
     .mob Savannah Prowler
+    .isQuestTurnedIn 819
 step
+    #optional
+    #completewith RaptorHeadsComplete
+    >>Tötet |cRXP_ENEMY_Savannah Prowlers|r. Plündert sie für |cRXP_LOOT_Claws|r
+    .complete 903,1 --Prowler Claws (7)
+    .mob Savannah Prowler
+    .isQuestAvailable 819
+step
+    #label RaptorHeadsComplete
     #loop
     .goto 1413/1,-2879.48,781.48,0
     .goto 1413/1,-2879.48,781.48,90,0
@@ -1797,6 +1503,19 @@ step
     .complete 903,1 --Prowler Claws (7)
     .complete 821,1 --Savannah Lion Tusk (5)
     .mob Savannah Prowler
+    .isQuestTurnedIn 819
+step
+    #optional
+    #loop
+    .goto 1413/1,-2783.900,568.700,0
+    .goto 1413/1,-2783.900,568.700,50,0
+    .goto 1413/1,-2859.800,565.900,50,0
+    .goto 1413/1,-3023.000,530.700,50,0
+    .goto 1413/1,-2897.500,642.200,50,0
+    >>Tötet |cRXP_ENEMY_Savannah Prowlers|r. Plündert sie für |cRXP_LOOT_Claws|r
+    .complete 903,1 --Prowler Claws (7)
+    .mob Savannah Prowler
+    .isQuestAvailable 819
 step
     #optional
     .goto 1413/1,-3102.42,1105.78
@@ -1862,6 +1581,7 @@ step
     .mob Greater Plainstrider
     .mob Fleeting Plainstrider
     .mob Ornery Plainstrider
+    .isQuestTurnedIn 819
 step
     #label CatsEye
     #loop
@@ -1880,37 +1600,6 @@ step
     .complete 896,1 -- Cats Eye Emerald (1)
     .mob Venture Co. Enforcer
     .mob Venture Co. Overseer
-step
-    #ssf
-    .goto 1413/1,-3610.1,1313.2,0
-    .goto 1413/1,-3605.03,1308.47,40,0
-    .goto 1413/1,-3564.5,1367.25,40,0
-    .goto 1413/1,-3622.26,1384.81,40,0
-    .goto 1413/1,-3673.94,1374.68,40,0
-    .goto 1413/1,-3653.67,1306.44,40,0
-    .goto 1413/1,-3644.55,1249.69,40,0
-    .goto 1413/1,-3603.0,1236.85,40,0
-    .goto 1413/1,-3575.64,1271.31,40,0
-    .goto 1413/1,-3610.1,1313.2,40,0
-    >>Tötet |cRXP_ENEMY_Vorarbeiter der Venture Co.|r. Plündert sie für ihr |T132794:0|t[|cRXP_LOOT_Fläschchen Öl|r]
-    .collect 814,5,103,1 --Flask of Oil (5)
-    .dungeon DM
-step
-    #ah
-    .goto 1413/1,-3610.1,1313.2,0
-    .goto 1413/1,-3605.03,1308.47,40,0
-    .goto 1413/1,-3564.5,1367.25,40,0
-    .goto 1413/1,-3622.26,1384.81,40,0
-    .goto 1413/1,-3673.94,1374.68,40,0
-    .goto 1413/1,-3653.67,1306.44,40,0
-    .goto 1413/1,-3644.55,1249.69,40,0
-    .goto 1413/1,-3603.0,1236.85,40,0
-    .goto 1413/1,-3575.64,1271.31,40,0
-    .goto 1413/1,-3610.1,1313.2,40,0
-    >>Tötet |cRXP_ENEMY_Vorarbeiter der Venture Co.|r. Plündert sie für ihr |T132794:0|t[|cRXP_LOOT_Fläschchen Öl|r]
-    >>|cRXP_WARN_Alternativ könnt ihr sie auch vom Auktionshaus kaufen|r
-    .collect 814,5,103,1 --Flask of Oil (5)
-    .dungeon DM
 step << skip
     .goto 1413/1,-3505.72,1358.46
     .goto 1454/1,-4242.34,1637.33,30 >>|cRXP_WARN_Springt auf den hölzernen Balken. Überspringt durch Ausloggen, indem ihr euch abmeldet und wieder anmeldet. Lauft zurück nach Orgrimmar, wenn es nicht klappt|r
@@ -1942,11 +1631,6 @@ step
     .train 3274 >> Erlernt Geselle für Erste Hilfe
     .target Arnok
     .skill firstaid,<40,1
-step
-    #completewith SpiritsPickup
-    +|cRXP_WARN_Stellt sicher, dass ihr eure |T132794:0|t[|rFläschchen Öl|cRXP_LOOT_] nicht verkauft.|r
-    .itemcount 814,5
-    .dungeon DM
 step << Priest
     #optional
     .goto 1454/1,-4179.79,1452.580
@@ -1976,13 +1660,6 @@ step << Mage
     .train 3140 >> Trainiere deine Klassenfähigkeiten
     .target Pephredo
     .xp <18,1
-step << !Orc !Troll
-    .goto 1454/1,-4460.600,1584.300,10,0
-    .goto 1454/1,-4460.000,1598.600
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Thatog|r
-    >>|cRXP_WARN_Er ist oben im Gebäude.|r
-    .accept 97246 >>Akzeptiert die Quest Mahlzeit oder Spielzeit
-    .target Thatog
 step << Orc/Troll
     .goto 1454/1,-4439.37,1633.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit|r|cRXP_FRIENDLY_Gryshka|r
@@ -2010,34 +1687,6 @@ step << Tauren/Undead
     .fp Orgrimmar >> Erlernt die Orgrimmar-Flugroute
     .target Doras
     .isQuestAvailable 4921
-step << !Orc !Troll
-    .goto 1454/1,-4482.600,1775.000
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Borstan|r
-    .turnin 97246 >>Gebt die QuestMahlzeit oder Spielzeit ab
-    .accept 97249 >>Akzeptiert die Quest Lieblingsessen
-    .target Borstan
-step << !Orc !Troll
-    .goto 1454/1,-4466.800,1954.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Kor'geld|r 
-    .accept 97242 >>Akzeptiert die Quest Yelmaks Mischmasch
-    .target Kor'geld
-step << !Orc !Troll
-    #completewith next
-    .goto 1454/1,-4560.000,1908.500,15,0
-    .goto 1454/1,-4587.000,1918.300,15,0
-    .goto 1454/1,-4608.000,1897.400,15,0
-    .goto 1454/1,-4632.300,1911.600,15 >>Reist in Das Tal der Ehre
-step << !Orc !Troll
-    #loop
-    .goto 1454/1,-4653.900,1950.300,0
-    .goto 1454/1,-4653.900,1950.300,20,0
-    .goto 1454/1,-4677.700,1971.600,20,0
-    .goto 1454/1,-4667.400,1997.000,20,0
-    .goto 1454/1,-4609.800,2013.500,20,0
-    .goto 1454/1,-4630.600,1968.100,20,0
-    >>Plündert die |cRXP_PICK_Handvoll Rohrkolben|r und |cRXP_PICK_Speergrasstecklinge|r im Wasser
-    .complete 97242,1 --|2/2 Handful of Cattails
-    .complete 97242,2 --|4/4 Speargrass Cuttings
 step << Warrior
     .goto 1454/1,-4801.42,1980.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Grezz|r
@@ -2090,14 +1739,8 @@ step << Warrior !Skyborne
     .train 227 >>Erlernt Stäbe
     .target Hanashi
     .money <0.020
-step << Warrior !Skyborne
+step << Warrior/Paladin/Shaman !Skyborne
     #optional
-    .goto 1454/1,-4824.00,2090.540
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Hanashi|r
-    .train 197 >>Erlernt Zweihandäxte
-    .target Hanashi
-    .money <0.010
-step << Shaman !Skyborne
     .goto 1454/1,-4824.00,2090.540
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Hanashi|r
     .train 197 >>Erlernt Zweihandäxte
@@ -2147,44 +1790,6 @@ step << Warrior
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.2
     .xp <20,1
-step << !Orc !Troll
-    .goto 1454/1,-4466.900,1954.500
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Kor'geld|r
-    .turnin 97242 >>Gebt die Quest Yelmaks Mischmasch ab
-    .target Kor'geld
-step << !Orc !Troll
-    .goto 1454/1,-4477.900,1964.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Yelmak|r
-    >>|cRXP_WARN_Ihr müsst möglicherweise etwa 10 Sek. warten, bevor ihr diese Quest annehmen könnt|r
-    .accept 97275 >>Akzeptiert die Quest Whuut Ding will Weile haben
-    .target Yelmak
-step << !Orc !Troll
-    .goto 1454/1,-4463.000,1966.200
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Whuut|r
-    .turnin 97275 >>Gebt die Quest Whuut Ding will Weile haben ab
-    .target Whuut
-step << !Orc !Troll
-    .goto 1454/1,-4193.400,2001.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Migi|r
-    .turnin 97249 >>Gebt die Quest Lieblingsessen ab
-    .target Migi
-step << skip --!Orc !Troll
-    .goto 1454/1,-4205.800,2007.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Thra|r 
-    .accept 97326 >>Akzeptiert die Quest Felsen zum Faulenzen
-    .target Thra
-step << skip --!Orc !Troll
-    .goto 1454/1,-4293.600,1949.900
-    >>Plündert die orangen |cRXP_PICK_Steine|r auf dem Boden
-    >>|cRXP_WARN_Überspringt diese Quest, wenn es viel Konkurrenz gibt! Es gibt nicht so viele |cRXP_PICK_Steine|r und sie erscheinen nicht schnell wieder.|r
-    .complete 97326,1 --|8/8 Smooth Boulder
-    .isOnQuest 97326
-step << skip --!Orc !Troll
-    .goto 1454/1,-4205.900,2007.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Thra|r
-    .turnin 97326 >>Gebt die Quest Felsen zum Faulenzen ab
-    .target Thra
-    .isQuestComplete 97326
 step << Shaman
     .goto 1454/1,-4225.09,1933.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Kardris|r
@@ -2408,12 +2013,11 @@ step
     .fly Ratchet >>Fliege nach Ratschet
     .target Devrak
     .subzoneskip 392
-step
+step << Rogue
     .goto 1413/1,-3767.800,-842.900
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Wrenix|r
-    .turnin 2382 >>Gebt die Quest Wrenix aus Ratschet ab << Rogue
-    .accept 2381 >>Akzeptiert die Quest Das Ausplündern der Plünderer << Rogue
-    .accept 97253 >>Akzeptiert die Quest Teile und Stücke
+    .turnin 2382 >>Gebt die Quest Wrenix aus Ratschet ab
+    .accept 2381 >>Akzeptiert die Quest Das Ausplündern der Plünderer
     .target Wrenix the Wretched
 step << Rogue
     .goto 1413/1,-3773.24,-841.37
@@ -2467,7 +2071,7 @@ step
     .accept 865 >>Akzeptiert die Quest Raptorhörner
     .accept 1069 >>Akzeptiert die Quest Eier der Kluftmoosspinnen
     .target Mebok Mizzyrix
-step
+step << skip
     .goto 1413/1,-3664.82,-1050.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gastwirt Wiley|r
     -->>|cRXP_BUY_Buy|r |T133918:0|t[Longjaw Mud Snappers] |cRXP_BUY_from him|r
@@ -2489,18 +2093,6 @@ step << Rogue
     .use 7970
     .mob Polly
 step
-    #loop
-    .goto 1413/1,-3657.700,-1435.500,0
-    .goto 1413/1,-3675.100,-1364.100,40,0
-    .goto 1413/1,-3598.900,-1378.800,40,0
-    .goto 1413/1,-3657.700,-1435.500,40,0
-    .goto 1413/1,-3654.900,-1482.400,40,0
-    .goto 1413/1,-3680.100,-1593.000,40,0
-    .goto 1413/1,-3614.800,-1632.800,40,0
-    .goto 1413/1,-3611.500,-1692.500,40,0
-    >>Plündert die |cRXP_PICK_Handvoll komplexer Teile|r vom Boden
-    .complete 97253,1 --|5/5 Handful of Complicated Parts
-step
     #label LeaveRatchet
     .goto 1413/1,-3819.86,-1714.95
     >>Plündert die |cRXP_PICK_Kiste|r vom Boden
@@ -2517,6 +2109,7 @@ step
     .mob Greater Plainstrider
     .mob Fleeting Plainstrider
     .mob Ornery Plainstrider
+    .isQuestTurnedIn 819
 step
     #optional
     #completewith TestSeeds
@@ -2530,6 +2123,15 @@ step
     .goto 1413/1,-3258.47,-2027.09
     >>Plündert das |cRXP_PICK_Gestohlene Silber|r auf dem Boden
     .complete 3281,1 --Stolen Silver (1)
+step
+    #optional
+    #completewith TestSeeds
+    >>Tötet |cRXP_ENEMY_Kolkar|r rund um die Oase. Plündert sie für ihre |cRXP_LOOT_Armschienen|r
+    .complete 855,1 --Centaur Bracers (15)
+    .mob Kolkar Bloodcharger
+    .mob Kolkar Pack runner
+    .mob Kolkar Marauder
+    .isOnQuest 851
 step
     #optional
     #completewith Verog
@@ -2588,6 +2190,7 @@ step
     .mob Greater Plainstrider
     .mob Fleeting Plainstrider
     .mob Ornery Plainstrider
+    .isQuestTurnedIn 819
 step
     .goto 1413/1,-2707.22,-1502.130
     >>Klickt das |cRXP_PICK_Blauraptornest|r. Tötet weitere |cRXP_ENEMY_Bluthornsensenklaue|r, wenn ihr eine |T132914:0|t[Bluthornfeder] nicht habt
@@ -2626,10 +2229,11 @@ step
     .skipgossip
 step
     #optional
-    #completewith next
+    #completewith CampTArrive
     >>Tötet |cRXP_ENEMY_Sturmschnauze|r. Plündert sie für |cRXP_LOOT_Donnerechsenhorn|r
     .complete 821,3 --Thunder Lizard Horn (1)
     .mob Stormsnout
+    .isQuestTurnedIn 819
 step
     #label LakotaMani1
     #completewith CampTArrive
@@ -2646,12 +2250,6 @@ step
     .use 5099
     .unitscan Lakota'mani
     .xp <18,1
-step
-    #optional
-    #completewith CampTArrive
-    >>Tötet |cRXP_ENEMY_Sturmschnauzen|r. Plündert sie für ein |cRXP_LOOT_Horn|r. Dies muss jetzt nicht erledigt werden
-    .complete 821,3 --Thunder Lizard Horn (1)
-    .mob Stormsnout
 step
     #label CampTArrive
     #completewith next
@@ -2678,85 +2276,6 @@ step
     .accept 878 >>Akzeptiert die Quest Stämme im Krieg
     .target Mangletooth
 step
-    #optional
-    .goto 1413/1,-1881.35,-2384.50
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Omusa|r
-    .fp Camp Taurajo >> Erlernt die Camp Taurajo-Flugroute << !Tauren
-    .target Omusa Thunderhorn
-    .isOnQuest 5724
-    .dungeon RFC
-step
-    #optional
-    #completewith RFCTurninsTB1
-    .goto 1412/1,-1480.52,-2339.56,120,0
-    .zone Mulgore >>Reist nach Mulgore
-    .dungeon RFC
-step
-    #optional
-    #completewith RFCTurninsTB1
-    .goto 1456/1,184.96,-1308.69
-    .zone Thunder Bluff >>Nehmt den Aufzug nach Donnerfels
-    >>|cRXP_WARN_Wenn ihr die Donnerfels Flugroute habt, fliegt stattdessen dorthin|r
-    .dungeon RFC
-step
-    #optional
-    #completewith RFCTurninsTB1
-    .goto 1456/1,-212.71,-1065.010,80 >> Reist zur Anhöhe der Ältesten
-    .isOnQuest 5724
-    .isQuestComplete 5723
-    .dungeon RFC
-step
-    #optional
-    .goto 1456/1,-218.13,-1055.97
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Rahauro|r
-    .turnin 5724 >> Gebt die Quest Wiederbeschaffung des verloren gegangenen Ranzens ab
-    .turnin 5723 >> Gebt die Quest Die Kraft des Feindes wird auf die Probe gestellt ab
-    .target Rahauro
-    .isOnQuest 5724
-    .isQuestComplete 5723
-    .dungeon RFC
-step
-    #optional
-    .goto 1456/1,-218.13,-1055.97
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Rahauro|r
-    .turnin 5724 >> Gebt die Quest Wiederbeschaffung des verloren gegangenen Ranzens ab
-    .target Rahauro
-    .isOnQuest 5724
-    .dungeon RFC
-step
-    #optional
-    #label RFCTurninsTB1
-    .goto 1456/1,-218.13,-1055.97
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Rahauro|r
-    .turnin 5723 >> Gebt die Quest Die Kraft des Feindes wird auf die Probe gestellt ab
-    .target Rahauro
-    .isQuestComplete 5723
-    .dungeon RFC
-step << Paladin
-    .goto 1456/1,253.900,-950.200
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Alodan|r
-    .train 1044 >>Trainiere deine Klassenfähigkeiten
-    .target Alodan the Hopeful 
-    .xp <18,1
-    .xp >20,1
-    .dungeon RFC
-step << Paladin
-    #optional
-    .goto 1456/1,253.900,-950.200
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Alodan|r
-    .train 1866 >>Trainiere deine Klassenfähigkeiten
-    .target Alodan the Hopeful 
-    .xp <20,1
-    .dungeon RFC
-step
-    #optional
-    .goto 1456/1,26.1,-1196.66
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Tal|r
-    .fly Crossroads >>Fliege nach Das Wegekreuz
-    .target Tal
-    .zoneskip Thunder Bluff,1
-    .dungeon RFC
-step
     #completewith Xroadsturnins2
     .goto 1413/1,-1881.35,-2384.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Omusa|r
@@ -2765,22 +2284,6 @@ step
     .target Omusa Thunderhorn
     .zoneskip The Barrens,1
     .subzoneskip 380
-step
-    #optional
-    .abandon 5723 >> Brecht die Quest Die Kraft des Feindes wird auf die Probe gestellt ab
-    .dungeon RFC
-step
-    #optional
-    .abandon 5725 >> Brecht die Quest Die Macht zu Zerstören... ab
-    .dungeon RFC
-step
-    #optional
-    .abandon 5728 >> Brecht die Quest Verborgene Feinde ab
-    .dungeon RFC
-step
-    #optional
-    .abandon 5761 >> Brecht die Quest Vernichtung der Bestie ab
-    .dungeon RFC
 step
     .goto 1413/1,-2589.67,-424.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Helbrim|r
@@ -2807,6 +2310,7 @@ step
     .goto 1413/1,-2639.32,-436.00
 step
     #optional
+    #completewith Hezrul
     .destroy 5165 >>|cRXP_WARN_Entfernt alle übrigen|r |T132914:0|t[Bluthornfeder] |cRXP_WARN_, die ihr noch habt|r
     .itemcount 5165,1
 step << Hunter
@@ -3015,6 +2519,7 @@ step
     .mob Greater Plainstrider
     .mob Fleeting Plainstrider
     .mob Ornery Plainstrider
+    .isQuestTurnedIn 819
 step
     #loop
     .goto 1413/1,-1458.79,565.96,0
@@ -3072,6 +2577,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Horde
 #name 17-22 Steinkrallengebirge/Brachland/Eschental
 #displayname 18-22 Steinkrallengebirge/Brachland/Eschental << !Shaman !Hunter !Tauren
@@ -3422,10 +2928,6 @@ step
     >>|cRXP_WARN_Passt auf! Die|r |cRXP_ENEMY_Kluftmoosjungtier|r |cRXP_WARN_können einen Level-22|r |cRXP_ENEMY_Kluftmoosmatriarchin|r beschwören
     .complete 1069,1 --Collect Deepmoss Egg (x15)
 step
-    #optional
-	#completewith next
-	+|cRXP_WARN_Falls ihr über 15 |cRXP_LOOT_Kluftmooseier|r|cRXP_WARN_ habt, teilt den Stapel auf (Umschalt + Klick),dann zerstört sie|r
-step
     .goto 1442/1,365.16,878.250
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Ziz|r
     .turnin 1093 >> Gebt die Quest Superschnitter 6000 ab
@@ -3484,18 +2986,18 @@ step
     .accept 882 >>Akzeptiert die Quest Ishamuhale
     .target Jorn Skyseer
 step
-	#completewith LakotaMani2
-    >>Tötet |cRXP_ENEMY_Sturmschnauzen|r. Plündert sie für ein |cRXP_LOOT_Horn|r
-    .complete 821,3 --Thunder Lizard Horn (1)
-    .mob Stormsnout
-step
-    #label LakotaMani2
     #completewith LakotaMani2
     >>Tötet |cRXP_ENEMY_Räuber der Grimmhauer|r. Plündert sie für |cRXP_LOOT_Olgras Schmuckstücke|r
     .complete 95774,1 --|4/4 Olgra's Adornments
     .mob Razormane Raider
 step
-    #completewith next
+	#completewith Adornments
+    >>Tötet |cRXP_ENEMY_Sturmschnauzen|r. Plündert sie für ein |cRXP_LOOT_Horn|r
+    .complete 821,3 --Thunder Lizard Horn (1)
+    .mob Stormsnout
+    .isQuestTurnedIn 819
+step
+    #completewith Adornments
     >>Tötet |cRXP_ENEMY_Stacheleber der Borstennacken|r. Plündert sie für ihre |cRXP_LOOT_Hauer|r. behaltet die |T134128:0|t[|cRXP_LOOT_Blutsplitter|r], die ihr bekommt
 	.complete 878,1 --Kill Bristleback Water Seeker (x6)
     .mob +Bristleback Water Seeker
@@ -3508,6 +3010,7 @@ step
     .mob +Bristleback Thornweaver
     .mob +Bristleback Geomancer
 step
+    #label LakotaMani2
     #loop
     .goto 1413/1,-1951.27,-1956.15,0
     .goto 1413/1,-2031.32,-1703.47,0
@@ -3526,7 +3029,7 @@ step
     .use 5099
     .unitscan Lakota'mani
 step
-    #label LakotaMani2
+    #label Adornments
     #loop
     .goto 1413/1,-2241.200,-1988.500,0
     .goto 1413/1,-2241.200,-1988.500,50,0
@@ -3542,6 +3045,7 @@ step
     >>Tötet |cRXP_ENEMY_Sturmschnauzen|r. Plündert sie für ein |cRXP_LOOT_Horn|r
     .complete 821,3 --Thunder Lizard Horn (1)
     .mob Stormsnout
+    .isQuestTurnedIn 819
 step
     #loop
     .goto 1413/1,-2515.7,-2076.41,0
@@ -3609,6 +3113,7 @@ step
     >>Tötet |cRXP_ENEMY_Sturmschnauzen|r. Plündert sie für ein |cRXP_LOOT_Horn|r
     .complete 821,3 --Thunder Lizard Horn (1)
     .mob Stormsnout
+    .isQuestTurnedIn 819
 step
     #completewith next
     >>Tötet |cRXP_ENEMY_Bluthornsensenklaue|r. Plündert sie für ihre |cRXP_LOOT_Hörner|r
@@ -3622,11 +3127,12 @@ step
     .goto 1413/1,-2859.22,-1804.81,50,0
     .goto 1413/1,-2833.88,-1749.41,50,0
     .goto 1413/1,-2881.51,-1723.74,50,0
-    .goto 1413/1,-2932.18,-1698.06.0,50,0
+    .goto 1413/1,-2932.18,-1698.06,50,0
     .goto 1413/1,-2973.72,-1627.8,50,0
     >>Beenden das töten von |cRXP_ENEMY_Ebenenschreitern|r. Plündert sie für ihre |cRXP_LOOT_Niere|r
     .complete 821,2 --Plainstrider Kidney (5)
     .mob Greater Plainstrider
+    .isQuestTurnedIn 819
 step
     #loop
     .goto 1413/1,-3183.48,-2015.61,0
@@ -3657,7 +3163,7 @@ step
     .mob Oasis Snapjaw
 step
     #completewith IshamuhalesFang
-    >>Tötet |cRXP_LOOT_Savannenmatriarchin|r und |cRXP_ENEMY_Savannenpatriarch|r. Plündert sie für ihre |cRXP_LOOT_Bälge|r
+    >>Tötet |cRXP_ENEMY_Savannah Matriarchs|r und |cRXP_ENEMY_Savannah Patriarchs|r. Plündert sie für |cRXP_LOOT_Hides|r
     .complete 95494,1 --|6/6 Savannah Lion Hide
     .mob Savannah Matriarch
     .mob Savannah Patriarchs
@@ -3679,7 +3185,7 @@ step
     .goto 1413/1,-3633.200,-600.500,50,0
     .goto 1413/1,-3469.100,-495.000,50,0
     .goto 1413/1,-3428.300,-584.300,50,0
-    >>Tötet |cRXP_LOOT_Savannenmatriarchin|r und |cRXP_ENEMY_Savannenpatriarch|r. Plündert sie für ihre |cRXP_LOOT_Bälge|r
+    >>Tötet |cRXP_ENEMY_Savannah Matriarchs|r und |cRXP_ENEMY_Savannah Patriarchs|r. Plündert sie für |cRXP_LOOT_Hides|r
     .complete 95494,1 --|6/6 Savannah Lion Hide
     .mob Savannah Matriarch
     .mob Savannah Patriarchs
@@ -3690,9 +3196,7 @@ step
     .goto 1413/1,-3767.800,-842.900
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Wrenix|r
     .turnin 2381 >>Gebt die Quest Das Ausplündern der Plünderer ab << Rogue
-    .turnin 97253 >>Gebt die Quest Teile und Stücke ab
     .target Wrenix the Wretched
-    .isQuestComplete 97253
 step << Rogue
     #optional
     .goto 1413/1,-3767.800,-842.900
@@ -3714,26 +3218,24 @@ step
 step
     .goto 1413/1,-3720.300,-920.000
     >>Klickt das |cRXP_PICK_Gesucht-Plakat|r
-    .accept 92706 >>Akzeptiert die Quest GESUCHT: Bruuz
-step
-    .goto 1413/1,-3697.24,-929.20
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Mebok|r
-    .turnin 865 >>Gebt die Quest Raptorhörner ab
-    .turnin 1069 >>Gebt die Quest Eier der Kluftmoosspinnen ab
-    .accept 1491 >>Akzeptiert die Quest Klugheitstränke
-    .target Mebok Mizzyrix
-    .dungeon WC
+    .accept 92706 >>Nehmt WANTED: Bruuz an
+    .group << Rogue/Warrior
 step
     .goto 1413/1,-3697.24,-929.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Mebok|r
     .turnin 865 >>Gebt die Quest Raptorhörner ab
     .turnin 1069 >>Gebt die Quest Eier der Kluftmoosspinnen ab
     .target Mebok Mizzyrix
+step
+    #optional
+    #completewith XroadsHS2
+    .destroy 5570 >>|cRXP_WARN_Löscht beliebige|r |T132834:0|t[Eier der Kluftmoosspinnen] |cRXP_WARN_die ihr übrig habt|r
 step
     .goto 1413/1,-3687.11,-981.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Drohn|r
     .turnin 821 >>Gebt die Quest Chens leeres Fässchen ab
     .target Brewmaster Drohn
+    .isQuestComplete 821
 step << Warrior
     .goto 1413/1,-3680.02,-982.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Grazlix|r
@@ -3772,35 +3274,25 @@ step << Rogue/Hunter/Warrior/Shaman/Druid
     .xp <20,1
     .equip 9,4794
 step
-    .goto 1413/1,-3664.82,-1050.14
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gastwirt Wiley|r
-    .home >>Setzt euren Ruhestein in Ratschet
-    .target Innkeeper Wiley
-    .dungeon WC
-    .bindlocation 392
-    .isQuestTurnedIn 865
-step
     #loop
     .goto 1413/1,-3911.900,-1049.200
     .goto 1413/1,-3951.600,-1093.500
     .goto 1413/1,-4012.800,-1081.800
     .goto 1413/1,-3973.000,-1028.700
     >>Tötet |cRXP_PICK_Bruuz|r (Stufe 20 Elite) im Meer in der Nähe von Ratschet
-    >>|cRXP_WARN_Das ist schwer! Bildet eine Gruppe, falls möglich|r
-    >>|cRXP_WARN_Es kann solo gemacht werden, indem man ihn zu den Ratschet-Wachen zieht, die helfen werden, aber stellt sicher, dass ihr mindestens 50% Schaden verursacht!|r
+    >>|cRXP_WARN_Das ist schwer! Bildet eine Gruppe, falls möglich|r << !Rogue !Warrior
+    >>|cRXP_WARN_Versucht, ihn nach Ratschet zu den Wachen zu locken, die euch helfen werden, aber stellt sicher, dass ihr mindestens 50 % Schaden anrichtet!|r
     .complete 92706,1 --Kill Bruuz
+    .mob Bruuz
     .isOnQuest 92706
+    .group << Rogue/Warrior
 step
-    .goto 1413/1,-3720.300,-920.000
-    >>Klickt das |cRXP_PICK_Gesucht-Plakat|r
+    .goto 1413/1,-3728.66,-835.29
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gazlowe|r
     .turnin 92706 >>Gebt die Quest GESUCHT: Bruuz ab
+    .target Gazlowe
+    .group << Rogue/Warrior
     .isQuestComplete 92706
-step
-    .goto 1413/1,-3770.20,-928.53
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Bigglefuzz|r
-    .accept 959 >>Ärger auf den Docks annehmen
-    .target Crane Operator Bigglefuzz
-    .dungeon WC
 step
     #label FlytoXroads
     #completewith XroadsHS2
@@ -3844,17 +3336,9 @@ step
     .goto 1413/1,-2672.76,-544.77
 step
     #optional
+    #completewith IshamuhaleTurnin
     .destroy 5085 >>|cRXP_WARN_Zerstört jeden verbleibenden|r |T133721:0|t[Stacheleberhauer der Borstennacken] |cRXP_WARN_den ihr noch haben könntet|r
     .itemcount 5085,1
-step
-    .goto 1413/1,-2645.40,-406.94
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gastwirt Boorand|r
-    .home >>Setzt euren Ruhestein im Wegekreuz
-	.vendor >>|cRXP_BUY_Verkauft euren trash, dann füllt euer Essen und Trinken auf, wenn nötig|r << !Rogue !Warrior
-    .vendor >>|cRXP_BUY_Verkauft euren trash, dann füllt eure Nahrung auf, falls nötig|r << Rogue/Warrior
-    .target Innkeeper Boorand Plainswind
-    .dungeon !WC
-    .dungeon DM
 step
     .goto 1413/1,-2555.22,-387.350
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Korran|r
@@ -3915,245 +3399,6 @@ step << Warlock
     .turnin 1508 >>Gebt die Quest Der blinde Cazul ab
     .accept 1509 >>Akzeptiert die Quest Neuigkeiten von Dogran
     .target Zankaja
-step
-    #completewith EnterDM
-    .subzone 1581 >> Jetzt solltet ihr nach einer Gruppe für die Todesminen suchen
-    .dungeon DM
-step
-    #completewith ZepptoSTVforDM
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Devrak|r
-    .fly Orgrimmar >> Fliege nach Orgrimmar
-    .zoneskip Orgrimmar
-    .target Devrak
-    .dungeon DM
-step << Shaman
-    .goto 1454/1,-4225.09,1933.29
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Kardris|r
-    .train 8052 >> Trainiere deine Klassenfähigkeiten
-    .target Kardris Dreamseeker
-    .xp <18,1
-    .xp >20,1
-    .dungeon DM
-step << Shaman
-    #optional
-    .goto 1454/1,-4225.09,1933.29
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Kardris|r
-    .train 2645 >> Trainiere deine Klassenfähigkeiten
-    .target Kardris Dreamseeker
-    .xp <20,1
-    .dungeon DM
-step << Hunter
-    .goto 1454/1,-4607.02,2100.64
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Ormak|r
-	.train 14318 >>Trainiere deine Klassenfähigkeiten
-    .target Ormak Grimshot
-    .xp <18,1
-    .xp >20,1
-    .dungeon DM
-step << Hunter
-    #optional
-    .goto 1454/1,-4607.02,2100.64
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Ormak|r
-	.train 14290 >>Trainiere deine Klassenfähigkeiten
-    .target Ormak Grimshot
-    .xp <20,1
-    .dungeon DM
-step << Hunter
-    .goto 1454/1,-4610.95,2135.15
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Xao'tsu|r
-	.train 5118 >>Erlernt eure Begleiterfähigkeiten
-	.target Xao'tsu
-    .xp <20,1
-    .dungeon DM
-step << Warrior
-    .goto 1454/1,-4801.42,1980.53
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Grezz|r
-	.train 8198 >>Trainiere deine Klassenfähigkeiten
-    .target Grezz Ragefist
-    .xp <18,1
-    .xp >20,1
-    .dungeon DM
-step << Warrior
-    #optional
-    .goto 1454/1,-4801.42,1980.53
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Grezz|r
-    .train 845 >> Trainiere deine Klassenfähigkeiten
-    .target Grezz Ragefist
-    .xp <20,1
-    .dungeon DM
-step << Rogue
-    .goto 1454/1,-4296.34,1762.67
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Ormok|r
-    .train 1943 >> Trainiere deine Klassenfähigkeiten
-    .target Ormok
-    .xp <20,1
-    .dungeon DM
-step << Warlock
-    .goto 1458/0,408.18,1587.21
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Zevrost|r
-    .train 1014 >> Trainiere deine Klassenfähigkeiten
-	.target Zevrost
-    .xp <18,1
-    .xp >20,1
-    .dungeon DM
-step << Warlock
-    #optional
-    .goto 1458/0,408.18,1587.21
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Zevrost|r
-    .train 706 >> Trainiere deine Klassenfähigkeiten
-	.target Zevrost
-    .xp <20,1
-    .dungeon DM
-step << Mage
-    .goto 1454/1,-4218.64,1473.72
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |r |cRXP_FRIENDLY_Pephredo|r
-    .train 3140 >> Trainiere deine Klassenfähigkeiten
-    .target Pephredo
-    .xp <18,1
-    .xp >20,1
-    .dungeon DM
-step << Mage
-    #optional
-    .goto 1454/1,-4218.64,1473.72
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |r |cRXP_FRIENDLY_Pephredo|r
-    .train 1953 >> Trainiere deine Klassenfähigkeiten
-    .target Pephredo
-    .xp <20,1
-    .dungeon DM
-step << Priest
-    .goto 1454/1,-4179.79,1452.580
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit|r |cRXP_FRIENDLY_Ur'kyo|r
-    .train 970 >> Trainiere deine Klassenfähigkeiten
-    .target Ur'kyo
-    .xp <18,1
-    .xp >20,1
-    .dungeon DM
-step << Priest
-    #optional
-    .goto 1454/1,-4179.79,1452.580
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit|r |cRXP_FRIENDLY_Ur'kyo|r
-    .train 14914 >> Trainiere deine Klassenfähigkeiten
-    .target Ur'kyo
-    .xp <20,1
-    .dungeon DM
-step
-    #ah
-    .goto 1454/1,-4460.31,1685.31
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Thathung|r
-    >>|cRXP_BUY_Kauft|r |T132794:0|t[Fläschchen Öl] |cRXP_BUY_vom Auktionshaus wenn möglich|r
-    .collect 814,5,103,1 --Flask of Oil (5)
-	.target Auctioneer Thathung
-    .dungeon DM
-step
-    #completewith next
-    .zone Durotar >> Verlass Orgrimmar
-    .zoneskip Durotar
-    .dungeon DM
-step
-    #label ZepptoSTVforDM
-    .goto 1411/1,-4648.55,1321.88,40 >>Geh auf den Zeppelin-Turm
-    .zone Stranglethorn Vale >>Nehmt den Zeppelin nach Schlingendorntal
-    .zoneskip Stranglethorn Vale
-    .dungeon DM
-step
-    .goto 1434/0,273.91,-12406.71,40,0
-    .goto 1434/0,492.15,-12499.03,40,0
-    .goto 1434/0,759.53,-12494.77,60,0
-    .goto 1434/0,1004.57,-12317.37.0,60,0
-    .goto 1434/0,1178.78,-12166.78,60,0
-    .goto 1434/0,1360.0,-11978.74,60,0
-    .goto 1436/0,1578.87,-11699.5,60,0
-    .goto 1436/0,1718.17,-11480.4,40,0
-    .goto 1436/0,1966.32,-11407.13,200 >> Schwimmt direkt westlich von Grom'Gol ins Das finstere Riff und schwimmt dann nördlich in Richtung Westfall
-    >>|cRXP_WARN_Meidet die Insel. Folgt dem Wegpunkt zur Sicherheit!|r
-    .dungeon DM
-step
-    #completewith next
-    .goto 1436/0,1966.32,-11407.13,40 >> Reist zum Leuchtturm von Westfall
-    .dungeon DM
-step
-    .goto 1436/0,1966.32,-11407.13
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Kapitän Grausohn|r
-    .accept 103 >> Akzeptiert die Quest Bewahrer der Flamme
-    .target Captain Grayson
-    .itemcount 814,5 -- Flask of Oil (5)
-    .dungeon DM
-step
-    .goto 1436/0,1966.32,-11407.13
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Kapitän Grausohn|r
-    .turnin 103 >> Gebt die Quest Bewahrer der Flamme ab
-    .itemcount 814,5 -- Flask of Oil (5)
-    .target Captain Grayson
-    .dungeon DM
-step
-    .goto 1436/0,1966.32,-11407.13
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Kapitän Grausohn|r
-    .accept 104 >> Akzeptiert die Quest Bedrohung an der Küste
-    .target Captain Grayson
-    .dungeon DM
-step
-    .goto 1436/0,1811.62,-11358.37
-    .line Westfall,34.43,83.93,34.43,83.93,33.88,83.32,33.08,82.86,32.56,82.71,32.08,82.49,31.91,82.36,31.55,81.88,30.86,81.42,30.63,81.16,30.33,80.81,30.02,80.11,29.68,79.22,29.32,78.19,29.29,77.60,29.27,77.31,29.18,76.26,29.07,75.29,28.95,74.14,28.85,73.29,28.79,72.48,28.37,71.94,27.84,71.29,27.44,70.25,27.29,69.47,27.13,68.65,27.09,67.57,27.07,67.01,26.74,66.09,27.07,67.01,27.09,67.57,27.13,68.65,27.29,69.47,27.44,70.25,27.84,71.29,28.37,71.94,28.79,72.48,28.85,73.29,28.95,74.14,29.07,75.29,29.18,76.26,29.27,77.31,29.29,77.60,29.32,78.19,29.68,79.22,30.02,80.11,30.33,80.81,30.63,81.16,30.86,81.42,31.55,81.88,31.91,82.36,32.08,82.49,32.56,82.71,33.08,82.86,33.88,83.32,34.43,83.93
-    >>Tötet |cRXP_ENEMY_Old Murk-Eye|r. Plündert ihn für seine |cRXP_LOOT_Schuppe|r
-    >>|cRXP_ENEMY_Old Murk-Eye|r |cRXP_WARN_patrouilliert auf und ab an der Endlosen Küste. Falls ihr ihn nicht seht, wartet, bis er im südlichsten |cRXP_ENEMY_Murloc|r-Lager spawnt|r
-    .complete 104,1 -- Scale of Old Murk-Eye (1)
-    .unitscan Old Murk-Eye
-    .dungeon DM
-step
-    .goto 1436/0,1966.32,-11407.13
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Kapitän Grausohn|r
-    .turnin 104 >> Gebt die Quest Bedrohung an der Küste ab
-    .target Captain Grayson
-    .dungeon DM
-step
-    #optional
-    .abandon 103 >> Brecht die Quest Bewahrer der Flamme ab
-    .dungeon DM
-step
-    #label EnterDM
-    .goto 1415/0,1596.2,-11768.97,8,0
-    .goto 1415/0,1596.2,-11780.71,8,0
-    .goto 1415/0,1606.76,-11797.13,8,0
-    .goto 1415/0,1582.12,-11799.48,8,0
-    .goto 1415/0,1596.2,-11813.56,15,0
-    .goto 1415/0,1631.4,-11846.41,15,0
-    .goto 1415/0,1649.0,-11898.04,15,0
-    .goto 1415/0,1659.56,-11919.16,15,0
-    .goto 1415/0,1698.28,-11891.0,15,0
-    .goto 1415/0,1744.04,-11881.61
-    .zone 291 >> Betretet das Todesminen Instanz-Portal. Betretet die Instanz.
-    .dungeon DM
-step
-    .hs >> Geht ins Brachland, nachdem ihr Todesminen abgeschlossen habt.
-    .zone The Barrens >> Trefft im Brachland ein
-    .use 6948
-    .dungeon DM
-step
-    #optional
-    .goto 1413/1,-3664.82,-1050.14
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gastwirt Wiley|r
-	.vendor >>|cRXP_BUY_Verkauft euren trash, dann füllt euer Essen und Trinken auf, wenn nötig|r << !Rogue !Warrior
-    .vendor >>|cRXP_BUY_Verkauft euren trash, dann füllt eure Nahrung auf, falls nötig|r << Rogue/Warrior
-    .target Innkeeper Wiley
-    .subzoneskip 392,1
-    .dungeon WC
-step
-    #optional
-    .goto 1413/1,-2645.40,-406.94
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gastwirt Boorand|r
-	.vendor >>|cRXP_BUY_Verkauft euren trash, dann füllt euer Essen und Trinken auf, wenn nötig|r << !Rogue !Warrior
-    .vendor >>|cRXP_BUY_Verkauft euren trash, dann füllt eure Nahrung auf, falls nötig|r << Rogue/Warrior
-    .target Innkeeper Boorand Plainswind
-    .subzoneskip 380,1
-    .dungeon DM
-step << Warlock
-    #completewith TurninDogran
-    .goto 1413/1,-3770.20,-898.12
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Bragok|r
-    .fly Crossroads >> Fliege nach Das Wegekreuz
-    .target Bragok
-    .subzoneskip 392,1
-    .dungeon WC
 step << Warlock
     #completewith TurninDogran
     .goto 1454/1,-4313.60,1676.24
@@ -4182,14 +3427,6 @@ step << Shaman
     .turnin 1528 >>Gebt die Quest Ruf des Wassers ab
     .accept 1530 >>Akzeptiert die Quest Ruf des Wassers
     .target Islen Waterseer
-step << !Warlock !Shaman
-    #completewith next
-    .goto 1413/1,-3770.20,-898.12
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Bragok|r
-    .fly Crossroads >> Fliege nach Das Wegekreuz
-    .target Bragok
-    .subzoneskip 392,1
-    .dungeon WC
 step << Shaman
     #completewith next
     .goto 1413/1,-3770.20,-898.12
@@ -4210,14 +3447,6 @@ step
     #completewith ZamahTurnin
     +|cRXP_WARN_Ihr seid auf einer zeitgesteuerten Quest, geht nicht afk. Sie wird 20-30 Minuten nach der Annahme automatisch abgegeben|r
     .isOnQuest 853
-step << !Warlock !Shaman
-    #completewith TribesTurnin
-    .goto 1413/1,-3770.20,-898.12
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Bragok|r
-    .fly Camp Taurajo >> Fliege nach Camp Taurajo
-    .target Bragok
-    .subzoneskip 392,1
-    .dungeon WC
 step << Shaman
     #completewith TribesTurnin
     .goto 1413/1,-3770.20,-898.12
@@ -4292,8 +3521,8 @@ step
 step
     #label SleepingBag1
     .goto The Barrens,46.361,73.904
-    >>Klickt |cRXP_PICK_Burned-Raus Remains|r am Boden
-    .accept 79007 >> Akzeptiert die Quest ...und diese Notiz, die Ihr gefunden habt.
+    >>Klickt die |cRXP_PICK_Verbrannten Überreste|r auf dem Boden an
+    .accept 79007 >> Nehmt an ...und diese Notiz, die Ihr gefunden habt.
 step
     #label LizardBlood
     #loop
@@ -4424,6 +3653,9 @@ step
     .accept 874 >>Akzeptiert die Quest Mahren Skyseer
     .accept 6382 >>Akzeptiert die Quest Die Jagd im Eschental << Hunter
     .target Jorn Skyseer
+step
+    #optional
+    .xp 20 >>Farmt bis Stufe 20
 step << !Tauren !Skyborne
     .goto 1413/1,-1891.48,-2391.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Quetschzahn|r
@@ -4468,21 +3700,21 @@ step << Rogue !Skyborne
 step << Rogue
     .goto 1456/1,110.13,-1299.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Sprecht mit|r |cRXP_FRIENDLY_Kuruk|r|cRXP_BUY_. Kauft |r |T135423:0|t[Tödliche Wurfaxt] |cRXP_BUY_von ihm|r
-    .collect 3137,200,6562,1 --Deadly Throwing Axe (200)
+    .collect 3137,1,6562,1 --Deadly Throwing Axe (200)
     .target Kuruk
 step << Rogue
     #optional
     .goto 1456/1,104.500,-1308.400
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Boarton Shadetotem|
-    >>|cRXP_WARN_Er ist in|r |T132320:0|t[Verstohlenheit] 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Eberton Schattentotem|r
+    >>|cRXP_WARN_Er ist in|r |T132320:0|t[Verstohlenheit]
     .train 6761 >>Trainiere deine Klassenfähigkeiten
     .target Boarton Shadetotem
     .xp <16,1
     .xp >20,1
 step << Rogue
     .goto 1456/1,104.500,-1308.400
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Boarton Shadetotem|
-    >>|cRXP_WARN_Er ist in|r |T132320:0|t[Verstohlenheit] 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Eberton Schattentotem|r
+    >>|cRXP_WARN_Er ist in|r |T132320:0|t[Verstohlenheit]
     .train 1943 >>Trainiere deine Klassenfähigkeiten
     .target Boarton Shadetotem
     .xp <20,1
@@ -4499,6 +3731,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Chesmu|r
     .bankdeposit 5075 >> Packt eure |T134128:0|t[Blutsplitter] auf die Bank
     .target Chesmu
+    .isNotOnQuest 868
 step
     .goto 1456/1,38.32,-1300.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gastwirtin Pala|r
@@ -4506,7 +3739,6 @@ step
     .target Innkeeper Pala
     .bindlocation 1638
     .isQuestAvailable 6442
-    .dungeon !WC
 step
     #completewith next
     .goto 1456/1,222.96,-1079.42,40,0
@@ -4518,21 +3750,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Clarice|r
     .accept 264 >> Akzeptiert die Quest Bis dass der Tod uns scheidet
     .target Clarice Foster
-step
-    .goto 1456/1,278.48,-995.29
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Zamah|r
-    .turnin 853 >> Gebt die Quest Apothekerin Zamah ab
-    .accept 962 >> Akzeptiert die Quest Schlangenflaum
-    .target Apothecary Zamah
-    .isOnQuest 853
-    .dungeon WC
-step
-    #optional
-    .goto 1456/1,278.48,-995.29
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Zamah|r
-    .accept 962 >> Akzeptiert die Quest Schlangenflaum
-    .target Apothecary Zamah
-    .dungeon WC
 step
     #optional
     #label ZamahTurnin
@@ -4566,7 +3783,7 @@ step << Paladin
     .goto 1456/1,253.900,-950.200
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Alodan|r
     .train 1866 >>Trainiere deine Klassenfähigkeiten
-    .target Alodan the Hopeful 
+    .target Alodan the Hopeful
     .xp <20,1
     .xp >22,1
 step << Paladin
@@ -4574,7 +3791,7 @@ step << Paladin
     .goto 1456/1,253.900,-950.200
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Alodan|r
     .train 1026 >>Trainiere deine Klassenfähigkeiten
-    .target Alodan the Hopeful 
+    .target Alodan the Hopeful
     .xp <22,1
 step
     #optional
@@ -4623,19 +3840,13 @@ step
     .goto 1456/1,-272.93,-1069.67
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Nara|r
     .turnin 1490 >> Gebt die Quest Nara Wildmane ab
-    .accept 914 >> Akzeptiert die Quest Anführer der Giftzähne
-    .target Nara Wildmane
-    .dungeon WC
-step
-    .goto 1456/1,-272.93,-1069.67
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Nara|r
-    .turnin 1490 >> Gebt die Quest Nara Wildmane ab
     .target Nara Wildmane
 step << Druid
     .goto 1456/1,-281.59,-1039.61
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Turak|r
-    .trainer >> Trainiere deine Klassenfähigkeiten
-    .accept 27 >> Akzeptiert die Quest Eine wertvolle Lektion
+    .trainer >>Trainiere deine Klassenfähigkeiten
+    .accept 27 >>Akzeptiert die Quest Eine wertvolle Lektion
+    .accept 98340 >>Akzeptiert die Quest Der Große Katzengeist
     .target Turak Runetotem
 step << Druid
     #completewith next
@@ -4644,8 +3855,11 @@ step << Druid
 step << Druid
     .goto 1450/1,-2678.76,8019.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Dendrite|r
-    .turnin 27 >> Gebt die Quest Eine wertvolle Lektion ab
-    .accept 28 >> Akzeptiert die Quest Prüfung des Sees
+    .turnin 27 >>Gebt die Quest Eine wertvolle Lektion ab
+    .accept 28 >>Akzeptiert die Quest Prüfung des Sees
+    .turnin 98340 >>Gebt die Quest Der Große Katzengeist ab
+    .accept 98341 >>Akzeptiert die Quest Der Große windgetragene Katzengeist << Skyborne
+    .accept 98405 >>Akzeptiert die Quest Der Große Katzengeist << !Skyborne
     .target Dendrite Starblaze
 step << Druid
     #completewith next
@@ -4663,21 +3877,71 @@ step << Druid
     .turnin 28 >> Gebt die Quest Prüfung des Sees ab
     .accept 30 >> Akzeptiert die Quest Prüfung des Seelöwen
     .target Tajarri
+step << Druid !Skyborne
+    .goto 1450/1,-2640.000,7338.900
+     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Great Katze Willenskraft|r
+    .turnin 98405 >>Gebt die Quest Der Große Katzengeist ab
+    .accept 98342 >>Akzeptiert die Quest Der Große Katzengeist
+    .target Great Cat Spirit
+step << Druid Skyborne
+    .goto 1450/1,-2352.700,7375.600,10,0
+    .goto 1450/1,-2394.300,7361.200
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Avatar of Saeyleenan::272054|r
+    .target Avatar of Saeyleenan::272054
+    .turnin 98341 >>Gebt die Quest Der Große windgetragene Katzengeist ab
+    .accept 98404 >>Akzeptiert die Quest Der Große windgetragene Katzengeist
+step << Druid
+    #completewith next
+    .goto 1450/1,-3046.700,7534.400
+    --aura 1309054?
+    .subzone 2363 >> Geht zum Sturmgrimms Grabhügel
+step << Druid
+    >>Geht tief in die Höhle, wandert über die Brücke, sucht nach einer Katzenstatue in einer Nische und klickt auf die kleine Sphäre neben der Statue
+    >>Beute |cRXP_LOOT_Relikt der Klaue|r
+    .goto 1450/1,-3117.400,7455.300
+    .complete 98404,2 << Skyborne --|1/1 Relic of the Claw
+    .complete 98342,2 << !Skyborne --|1/1 Relic of the Claw
+step << Druid
+    >>Klickt auf die kleine Sphäre neben der Katzenstatue
+    >>Beute |cRXP_LOOT_Relikt des stillen Schattens|r
+    .goto 1450/1,-3099.200,7485.700
+    .complete 98404,3  << Skyborne --|1/1 Relic of the Silent Shadow
+    .complete 98342,3  << !Skyborne --|1/1 Relic of the Silent Shadow
+step << Druid
+    >>Klickt auf die kleine Sphäre neben der Katzenstatue
+    >>Plündert |cRXP_LOOT_Relic of the Zerrender Biss|r
+    .goto 1450/1,-3054.100,7476.800
+    .complete 98404,1  << Skyborne --|1/1 Relic of the Fang
+    .complete 98342,1  << !Skyborne --|1/1 Relic of the Fang
+step << Druid !Skyborne
+    .goto 1450/1,-2640.000,7338.900
+     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Great Katze Willenskraft|r
+    .turnin 98342 >>Gebt die Quest Der Große Katzengeist ab
+    .accept 98739 >>Akzeptiert die Quest Segnungen des Großen Katzengeists
+    .target Great Cat Spirit
+step << Druid Skyborne
+    .goto 1450/1,-2395.400,7361.400
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Avatar of Saeyleenan::272054|r
+    .target Avatar of Saeyleenan::272054
+    .turnin 98404 >>Gebt die Quest Der Große windgetragene Katzengeist ab
+    .accept 98738 >>Akzeptiert die Quest Segnungen des Großen windgetragenen Katzengeists
+step << Druid
+    #completewith next
+    .cast 18960 >>|cRXP_WARN_Wirkt |r|T135758:0|t[Teleportieren: Mondlichtung]
+    .zoneskip Moonglade
+step << Druid
+    .goto 1450/1,-2678.200,8021.500
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Dendrite Starblaze::11802|r
+    .turnin 98738 >>Gebt die Quest Segnungen des Großen windgetragenen Katzengeists ab << Skyborne
+    .turnin 98739 >>Gebt die Quest Segnungen des Großen Katzengeists ab << !Skyborne
+    .accept 98362 >>Akzeptiert die Quest Nach Donnerfels
+    .target Dendrite Starblaze::11802
 step << Druid
     .hs >> Ruhestein nach Donnerfels
     .use 6948
     .cooldown item,6948,>0
     .bindlocation 1638,1
     .zoneskip Thunder Bluff
-    .dungeon !WC
-step << Druid
-    #completewith next
-    .goto 1450/1,-2403.61,7785.31
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Bunthen|r
-    .fly Thunder Bluff >> Fliege nach Donnerfels
-    .target Bunthen Plainswind
-    .zoneskip Thunder Bluff
-    .dungeon WC
 step << Druid
     #completewith next
     .goto 1450/1,-2403.61,7785.31
@@ -4686,7 +3950,11 @@ step << Druid
     .target Bunthen Plainswind
     .zoneskip Thunder Bluff
     .cooldown item,6948,<0
-    .dungeon !WC
+step << Druid
+    .goto 1456/1,-281.59,-1039.61
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Turak|r
+    .turnin 98362 >>Gebt die Quest Nach Donnerfels ab
+    .target Turak Runetotem
 step << Hunter
     #completewith HunterTraining2
     .goto 1456/1,-123.26,-1394.49,60 >> Reist zur Anhöhe der Jäger
@@ -4798,527 +4066,14 @@ step << Hunter
     >>|cRXP_BUY_Kauft|r |T132382:0|t[Scharfe Pfeile] |cRXP_BUY_bei ihr|r
     .collect 2515,1600,493,1 << Hunter --Sharp Arrow (1600)
     .target Kuna Thunderhorn
-
-    --WC
-
 step
-    #completewith next
+    #completewith EnterSTM2
     .goto 1456/1,26.1,-1196.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Tal|r
     .fly Crossroads >>Fliege nach Das Wegekreuz
     .target Tal
     .zoneskip The Barrens
-    .dungeon WC
-step
-    #sticky
-    #completewith EnterWC
-    +Ihr solltet euch jetzt eine Gruppe für die Höhlen des Wehklagens suchen
-    >>Farmt |cRXP_ENEMY_Stacheleber|r |cRXP_WARN_während der Zusammenstellung einer Gruppe für Höhlen des Wehklagens|r
-    .dungeon WC
-step
-    .goto 1413/1,-2053.62,-882.58,100 >> Reist zu den Höhlen des Wehklagens
-    .isOnQuest 914
-    .dungeon WC
-step
-    #completewith next
-    .goto 1413/1,-2134.68,-764.35,0
-    .goto 1413/1,-2134.68,-764.35,30,0
-    .goto 1413/1,-2122.52,-734.62,20,0
-    .goto 1414/1,-2061.94,-781.68,20,0
-    .goto 1414/1,-2028.82,-828.29,10,0
-    .goto 1414/1,-2021.46,-816.030,10 >>Lauft den Berg hinauf am Versammlungsstein der Höhlen des Wehklagens
-    >>|cRXP_WARN_Folgt dem Pfeil genau zur verborgenen Höhle|r
-    .dungeon WC
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Nalpak|r und |cRXP_FRIENDLY_Ebru|r
-    >>|cRXP_WARN_Sie befinden sich über dem Eingang der Höhlen des Wehklagens|r
-    .accept 1486 >> Deviatbälge annehmen
-    .target +Nalpak
-    .goto 1414/1,-2036.18,-796.40
-    .accept 1487 >> Ausrottung der Deviat annehmen
-    .target +Ebru
-    .goto 1414/1,-2039.86,-801.31
-    .dungeon WC
-step
-    #optional
-    #hardcore
-    #completewith EnterWC
-    >>Sammelt |cRXP_PICK_Schlangenflaum|r vom Boden
-    >>|cRXP_WARN_Es wird empfohlen, dass maximal 3 Spieler diese Quest versuchen zu vollenden, wenn ihr nur 1 Durchlauf macht. Es gibt nicht genug|r |cRXP_PICK_Schlangenflaum|r |cRXP_WARN_für alle|r
-    >>|cRXP_WARN_Wirkt|r |T133939:0|t[Kräutersuche] |cRXP_WARN_um sie auf der Minikarte von euch zu sehen|r
-    .complete 962,1 --Serpentbloom (10)
-    .skill herbalism,<1,1
-    .isOnQuest 962
-    .dungeon WC
-step
-    #hardcore
-    #completewith EnterWC
-    >>Sammelt |cRXP_PICK_Schlangenflaum|r vom Boden
-    >>|cRXP_WARN_Es wird empfohlen, dass maximal 3 Spieler diese Quest versuchen zu vollenden, wenn ihr nur 1 Durchlauf macht. Es gibt nicht genug|r |cRXP_PICK_Schlangenflaum|r |cRXP_WARN_für alle|r
-    .complete 962,1 --Serpentbloom (10)
-    .skill herbalism,1,1
-    .isOnQuest 962
-    .dungeon WC
-step
-    #optional
-    #softcore
-    #completewith EnterWC
-    >>Sammelt |cRXP_PICK_Schlangenflaum|r vom Boden
-    >>|cRXP_WARN_Wirkt|r |T133939:0|t[Kräutersuche] |cRXP_WARN_um sie auf der Minikarte von euch zu sehen|r
-    .complete 962,1 --Serpentbloom (10)
-    .skill herbalism,<1,1
-    .isOnQuest 962
-    .dungeon WC
-step
-    #softcore
-    #completewith EnterWC
-    >>Sammelt |cRXP_PICK_Schlangenflaum|r vom Boden
-    .complete 962,1 --Serpentbloom (10)
-    .skill herbalism,1,1
-    .isOnQuest 962
-    .dungeon WC
-step
-    #hardcore
-    #completewith EnterWC
-    >>Tötet |cRXP_ENEMY_Deviat mobs|r, die ihr seht. Plündert sie für ihre |cRXP_LOOT_Deviatbälge|r
-    >>|cRXP_WARN_Es wird empfohlen, dass maximal 3 Spieler diese Quest versuchen zu absolvieren, wenn ihr nur einen Durchgang macht. Es gibt nicht genug|r |cRXP_LOOT_Bälge|r |cRXP_WARN_für alle|r
-    .complete 1486,1 --Deviate Hide (20)
-    .dungeon WC
-    .isOnQuest 1486
-    --Too many .mobs, would clutter target box
-step
-    #softcore
-    #completewith EnterWC
-    >>Tötet |cRXP_ENEMY_Deviat mobs|r, die ihr seht. Plündert sie für ihre |cRXP_LOOT_Deviatbälge|r
-    .complete 1486,1 --Deviate Hide (20)
-    .dungeon WC
-    .isOnQuest 1486
-    --Too many .mobs, would clutter target box
-step
-    #completewith EnterWC
-    >>Tötet |cRXP_ENEMY_Ektoplasma|r. Plündert sie für ihr |cRXP_LOOT_Klageessenz|r
-    .complete 1491,1 --Wailing Essence (6)
-    .isOnQuest 1491
-    .dungeon WC
-step
-    #label MadMagg
-    #loop
-    .goto 1414/1,-2058.26,-749.79,0
-    .goto 1414/1,-2003.06,-659.01,0
-    .goto 1414/1,-2072.98,-698.27,0
-    .goto 1414/1,-2124.50,-730.16,0
-    .goto 1414/1,-2058.26,-749.79,30,0
-    .goto 1414/1,-2003.06,-659.01,30,0
-    .goto 1414/1,-2072.98,-698.27,30,0
-    .goto 1414/1,-2124.50,-730.16,30,0
-    >>Tötet |cRXP_ENEMY_Zausel der Verrückte|r. Plündert ihn für |cRXP_LOOT_99 Jahre alter Portwein|r
-    >>|cRXP_WARN_Er hat eine lange Respawn-Zeit. Überspringt diesen Schritt, wenn ihr ihn nicht finden könnt|r
-    .complete 959,1 --99-Year-Old Port (1)
-    .mob Mad Magglish
-    .isOnQuest 959
-    .dungeon WC
-step
-    #label EnterWC
-    .goto 1414/1,-2028.82,-636.93,20,0
-    .goto 1414/1,-2050.90,-585.41,20,0
-    .goto 1414/1,-2168.66,-607.49,30,0
-    .goto 1414/1,-2216.5,-742.43,30 >> Betretet das HDW-Instanzportal. Tretet ein
-    .dungeon WC
-step
-    #optional
-    #hardcore
-    #completewith GlowingShard
-    >>Sammelt |cRXP_PICK_Schlangenflaum|r vom Boden
-    >>|cRXP_WARN_Es wird empfohlen, dass maximal 3 Spieler diese Quest versuchen zu vollenden, wenn ihr nur 1 Durchlauf macht. Es gibt nicht genug|r |cRXP_PICK_Schlangenflaum|r |cRXP_WARN_für alle|r
-    >>|cRXP_WARN_Wirkt|r |T133939:0|t[Kräutersuche] |cRXP_WARN_um sie auf der Minikarte von euch zu sehen|r
-    .complete 962,1 --Serpentbloom (10)
-    .skill herbalism,<1,1
-    .isOnQuest 962
-    .dungeon WC
-step
-    #optional
-    #hardcore
-    #completewith GlowingShard
-    >>Sammelt |cRXP_PICK_Schlangenflaum|r vom Boden
-    >>|cRXP_WARN_Es wird empfohlen, dass maximal 3 Spieler diese Quest versuchen zu vollenden, wenn ihr nur 1 Durchlauf macht. Es gibt nicht genug|r |cRXP_PICK_Schlangenflaum|r |cRXP_WARN_für alle|r
-    .complete 962,1 --Serpentbloom (10)
-    .skill herbalism,1,1
-    .isOnQuest 962
-    .dungeon WC
-step
-    #optional
-    #softcore
-    #completewith GlowingShard
-    >>Sammelt |cRXP_PICK_Schlangenflaum|r vom Boden
-    >>|cRXP_WARN_Wirkt|r |T133939:0|t[Kräutersuche] |cRXP_WARN_um sie auf der Minikarte von euch zu sehen|r
-    .complete 962,1 --Serpentbloom (10)
-    .skill herbalism,<1,1
-    .isOnQuest 962
-    .dungeon WC
-step
-    #optional
-    #softcore
-    #completewith GlowingShard
-    >>Sammelt |cRXP_PICK_Schlangenflaum|r vom Boden
-    .complete 962,1 --Serpentbloom (10)
-    .skill herbalism,1,1
-    .isOnQuest 962
-    .dungeon WC
-step
-    #optional
-    #hardcore
-    #completewith GlowingShard
-    >>Tötet |cRXP_ENEMY_Ektoplasma|r. Plündert sie für ihr |cRXP_LOOT_Klageessenz|r
-    >>|cRXP_WARN_Es wird empfohlen, dass maximal 3 Spieler diese Quest versuchen zu absolvieren, wenn ihr nur einen Durchgang macht. Es gibt nicht genug|r |cRXP_LOOT_Bälge|r |cRXP_WARN_für alle|r
-    .complete 1491,1 --Wailing Essence (6)
-    .isOnQuest 1491
-    .dungeon WC
-step
-    #optional
-    #softcore
-    #completewith GlowingShard
-    >>Tötet |cRXP_ENEMY_Ektoplasma|r. Plündert sie für ihr |cRXP_LOOT_Klageessenz|r
-    .complete 1491,1 --Wailing Essence (6)
-    .isOnQuest 1491
-    .dungeon WC
-step
-    #completewith GlowingShard
-    >>Tötet |cRXP_ENEMY_Deviatverheerer|r, |cRXP_ENEMY_Deviatviper|r, |cRXP_ENEMY_Deviatschlurfer|r und |cRXP_ENEMY_Deviatschreckensfang|r
-    .complete 1487,1 --Deviate Ravager (7)
-    .mob +Deviate Ravager
-    .complete 1487,2 --Deviate Viper (7)
-    .mob +Deviate Viper
-    .complete 1487,3 --Deviate Shambler (7)
-    .mob +Deviate Shambler
-    .complete 1487,4 --Deviate Dreadfang (7)
-    .mob +Deviate Dreadfang
-    .complete 1486,1 --Deviate Hide (20)
-    .isOnQuest 1487
-    .dungeon WC
-step
-    #label Gems
-    >>Tötet |cRXP_ENEMY_Lord Kobrahn|r, |cRXP_ENEMY_Lady Anacondra|r, |cRXP_ENEMY_Lord Pythas|r und |cRXP_ENEMY_Lord Serpentis|r. Plündert sie für ihre |cRXP_LOOT_Edelsteine|r
-    .complete 914,1 --Gem of Cobrahn (1)
-    .mob +Lord Cobrahn
-    .complete 914,2 --Gem of Anacondra (1)
-    .mob +Lady Anacondra
-    .complete 914,3 --Gem of Pythas (1)
-    .mob +Lord Pythas
-    .complete 914,4 --Gem of Serpentis (1)
-    .mob +Lord Serpentis
-    .isOnQuest 914
-    .dungeon WC
-step
-    #requires Gems
-    #completewith next
-    +|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Muyoh|r beim Eingang der Höhlen des Wehklagens. Begleitet ihn sicher zu |cRXP_FRIENDLY_Naralex|r
-    .target Disciple of Naralex
-    .skipgossip
-    .dungeon WC
-step
-    #label GlowingShard
-    >>Sobald ihr |cRXP_FRIENDLY_Naralex|r erreicht habt, werdet ihr von zwei Wellen Feinden angegriffen und schließlich von |cRXP_ENEMY_Mutanus der Verschlinger|r
-    >>Tötet ihn und plündert |T135229:0|t[|cRXP_LOOT_Der leuchtende Splitter|r] von ihm und benutzt ihn, um die Quest zu starten
-    .collect 10441,1 --Collect Glowing Shard (x1)
-    .accept 6981 >> Der leuchtende Splitter annehmen
-    .use 10441
-    .mob Mutanus the Devourer
-    .dungeon WC
-step
-    #optional
-    #completewith DeviateRaptors
-    >>Tötet |cRXP_ENEMY_Ektoplasma|r. Plündert sie für ihr |cRXP_LOOT_Klageessenz|r
-    .complete 1491,1 --Wailing Essence (6)
-    .isOnQuest 1491
-    .dungeon WC
-step
-    #optional
-    #hardcore
-    #completewith Ectoplasms
-    >>Sammelt |cRXP_PICK_Schlangenflaum|r vom Boden
-    >>|cRXP_WARN_Es wird empfohlen, dass maximal 3 Spieler diese Quest versuchen zu vollenden, wenn ihr nur 1 Durchlauf macht. Es gibt nicht genug|r |cRXP_PICK_Schlangenflaum|r |cRXP_WARN_für alle|r
-    >>|cRXP_WARN_Wirkt|r |T133939:0|t[Kräutersuche] |cRXP_WARN_um sie auf der Minikarte von euch zu sehen|r
-    .complete 962,1 --Serpentbloom (10)
-    .skill herbalism,<1,1
-    .isOnQuest 962
-    .dungeon WC
-step
-    #optional
-    #hardcore
-    #completewith Ectoplasms
-    >>Sammelt |cRXP_PICK_Schlangenflaum|r vom Boden
-    >>|cRXP_WARN_Es wird empfohlen, dass maximal 3 Spieler diese Quest versuchen zu vollenden, wenn ihr nur 1 Durchlauf macht. Es gibt nicht genug|r |cRXP_PICK_Schlangenflaum|r |cRXP_WARN_für alle|r
-    .complete 962,1 --Serpentbloom (10)
-    .skill herbalism,1,1
-    .isOnQuest 962
-    .dungeon WC
-step
-    #optional
-    #softcore
-    #completewith Ectoplasms
-    >>Sammelt |cRXP_PICK_Schlangenflaum|r vom Boden
-    >>|cRXP_WARN_Wirkt|r |T133939:0|t[Kräutersuche] |cRXP_WARN_um sie auf der Minikarte von euch zu sehen|r
-    .complete 962,1 --Serpentbloom (10)
-    .skill herbalism,<1,1
-    .isOnQuest 962
-    .dungeon WC
-step
-    #optional
-    #softcore
-    #completewith Ectoplasms
-    >>Sammelt |cRXP_PICK_Schlangenflaum|r vom Boden
-    .complete 962,1 --Serpentbloom (10)
-    .skill herbalism,1,1
-    .isOnQuest 962
-    .dungeon WC
-step
-    #optional
-    >>Tötet |cRXP_ENEMY_Deviatverheerer|r, |cRXP_ENEMY_Deviatviper|r, |cRXP_ENEMY_Deviatschlurfer|r und |cRXP_ENEMY_Deviatschreckensfang|r .Plündert sie für ihre|cRXP_ENEMY_Balg|r
-    .complete 1487,1 --Deviate Ravager (7)
-    .mob +Deviate Ravager
-    .complete 1487,2 --Deviate Viper (7)
-    .mob +Deviate Viper
-    .complete 1487,3 --Deviate Shambler (7)
-    .mob +Deviate Shambler
-    .complete 1487,4 --Deviate Dreadfang (7)
-    .mob +Deviate Dreadfang
-    .complete 1486,1 --Deviate Hide (20)
-    .disablecheckbox
-    .isOnQuest 1487
-    .isOnQuest 1486
-    .dungeon WC
- step
-    >>Tötet |cRXP_ENEMY_Deviatverheerer|r, |cRXP_ENEMY_Deviatviper|r, |cRXP_ENEMY_Deviatschlurfer|r und |cRXP_ENEMY_Deviatschreckensfang|r
-    .complete 1487,1 --Deviate Ravager (7)
-    .mob +Deviate Ravager
-    .complete 1487,2 --Deviate Viper (7)
-    .mob +Deviate Viper
-    .complete 1487,3 --Deviate Shambler (7)
-    .mob +Deviate Shambler
-    .complete 1487,4 --Deviate Dreadfang (7)
-    .mob +Deviate Dreadfang
-    .isOnQuest 1487
-    .dungeon WC
-step
-    #label DeviateRaptors
-    >>Tötet |cRXP_ENEMY_Deviat Raptoren|r. Plündert sie für |cRXP_ENEMY_Bälge|r
-    .complete 1486,1 --Deviate Hide (20)
-    .mob Deviate Ravager
-    .mob Deviate Viper
-    .mob Deviate Shambler
-    .mob Deviate Dreadfang
-    .isOnQuest 1486
-    .dungeon WC
-step
-    #label Ectoplasms
-    >>Tötet |cRXP_ENEMY_Ektoplasma|r. Plündert sie für ihr |cRXP_LOOT_Klageessenz|r
-    .complete 1491,1 --Wailing Essence (6)
-    .mob Devouring Ectoplasm
-    .mob Evolving Ectoplasm
-    .mob Nightmare Ectoplasm
-    .isOnQuest 1491
-    .dungeon WC
-step
-    #optional
-    #hardcore
-    >>Sammelt |cRXP_PICK_Schlangenflaum|r vom Boden
-    >>|cRXP_WARN_Es wird empfohlen, dass maximal 3 Spieler diese Quest versuchen zu vollenden, wenn ihr nur 1 Durchlauf macht. Es gibt nicht genug|r |cRXP_PICK_Schlangenflaum|r |cRXP_WARN_für alle|r
-    >>|cRXP_WARN_Wirkt|r |T133939:0|t[Kräutersuche] |cRXP_WARN_um sie auf der Minikarte von euch zu sehen|r
-    .complete 962,1 --Serpentbloom (10)
-    .skill herbalism,<1,1
-    .isOnQuest 962
-    .dungeon WC
-step
-    #hardcore
-    >>Sammelt |cRXP_PICK_Schlangenflaum|r vom Boden
-    >>|cRXP_WARN_Es wird empfohlen, dass maximal 3 Spieler diese Quest versuchen zu vollenden, wenn ihr nur 1 Durchlauf macht. Es gibt nicht genug|r |cRXP_PICK_Schlangenflaum|r |cRXP_WARN_für alle|r
-    .complete 962,1 --Serpentbloom (10)
-    .skill herbalism,1,1
-    .isOnQuest 962
-    .dungeon WC
-step
-    #optional
-    #softcore
-    >>Sammelt |cRXP_PICK_Schlangenflaum|r vom Boden
-    >>|cRXP_WARN_Wirkt|r |T133939:0|t[Kräutersuche] |cRXP_WARN_um sie auf der Minikarte von euch zu sehen|r
-    .complete 962,1 --Serpentbloom (10)
-    .skill herbalism,<1,1
-    .isOnQuest 962
-    .dungeon WC
-step
-    #softcore
-    >>Sammelt |cRXP_PICK_Schlangenflaum|r vom Boden
-    .complete 962,1 --Serpentbloom (10)
-    .skill herbalism,1,1
-    .isOnQuest 962
-    .dungeon WC
-step
-    #completewith GShard
-    .hs >> Ruhestein nach Ratschet
-    .bindlocation 392,1
-    .subzoneskip 392
-    .use 6948
-    .dungeon WC
-step
-    .goto 1413/1,-3697.24,-929.20
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Mebok|r
-    .turnin 1491 >>Gebt die Quest Klugheitstränke ab
-    .target Mebok Mizzyrix
-    .isQuestComplete 1491
-    .dungeon WC
-step
-    .goto 1413/1,-3770.20,-928.53
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Bigglefuzz|r
-    .turnin 959 >> Gebt die Quest Ärger auf den Docks ab
-    .target Crane Operator Bigglefuzz
-    .isQuestComplete 959
-    .dungeon WC
-step
-    #label GShard
-    .goto 1413/1,-3760.07,-902.18
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Sputtervalve|r
-    .complete 6981,1 --Speak with someone in Ratchet about the Glowing Shard
-    .skipgossip
-    .target Sputtervalve
-    .isOnQuest 6981
-    .dungeon WC
-step
-    .goto 1413/1,-3770.20,-898.12
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Bragok|r
-    .fly Crossroads >> Fliege nach Das Wegekreuz
-    .target Bragok
-    .subzoneskip 380
-    .isOnQuest 6981
-    .dungeon WC
-step
-    #completewith next
-    .goto 1413/1,-2493.40,-708.95,20,0
-    .goto 1413/1,-2404.23,-721.11,20,0
-    .goto 1413/1,-2356.60,-685.98,20,0
-    .goto 1413/1,-2259.32,-602.20,50 >> Reist den Berg hinauf
-    .dungeon WC
-step
-    .goto 1413/1,-2259.32,-602.20
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Falla|r
-    .turnin 6981 >> Gebt die Quest Der leuchtende Splitter ab
-    .accept 3369 >> Akzeptiert die Quest Alptraum
-    .target Falla Sagewind
-    .isOnQuest 6981
-    .dungeon WC
-step
-    .goto 1413/1,-2259.32,-602.20
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Falla|r
-    .accept 3369 >> Akzeptiert die Quest Alptraum
-    .target Falla Sagewind
-    .isQuestTurnedIn 6981
-    .dungeon WC
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Nalpak|r und |cRXP_FRIENDLY_Ebru|r
-    >>|cRXP_WARN_Sie befinden sich über dem Eingang der Höhlen des Wehklagens|r
-    .turnin 1486 >> Gebt die Quest Deviatbälge ab
-    .target +Nalpak
-    .goto 1414/1,-2036.18,-796.40
-    .turnin 1487 >> Gebt die Quest Ausrottung der Deviat ab
-    .target +Ebru
-    .goto 1414/1,-2039.86,-801.31
-    .isQuestComplete 1487
-    .isQuestComplete 1486
-    .dungeon WC
-step
-    .goto 1414/1,-2039.86,-801.31
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Ebru|r
-    >>|cRXP_WARN_Er befindet sich über dem Eingang der Höhlen des Wehklagens|r
-    .turnin 1487 >> Gebt die Quest Ausrottung der Deviat ab
-    .target Ebru
-    .isQuestComplete 1487
-    .dungeon WC
-step
-    .goto 1414/1,-2036.18,-796.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Nalpak|r
-    >>|cRXP_WARN_Er befindet sich über dem Eingang der Höhlen des Wehklagens|r
-    .turnin 1486 >> Gebt die Quest Deviatbälge ab
-    .target Nalpak
-    .isQuestComplete 1486
-    .dungeon WC
-step
-    #completewith WCEnd
-    .goto 1413/1,-2595.75,-437.35
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Devrak|r
-    .fly Thunder Bluff >>Fliege nach Donnerfels
-    .target Devrak
-    .zoneskip Thunder Bluff
-    .dungeon WC
-step << skip
-    #completewith next
-    .subzone 378 >> Reist südlich nach Camp Taurajo
-    .dungeon WC
-step << skip
-    .goto 1413/1,-1881.35,-2384.50
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Omusa|r
-    .fly Thunder Bluff >>Fliege nach Donnerfels
-    .target Omusa Thunderhorn
-    .dungeon WC
-step
-    .goto 1456/1,-272.93,-1069.67
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Nara|r
-    .turnin 914 >>Gebt die Quest Anführer der Giftzähne ab
-    .target Nara Wildmane
-    .isQuestComplete 914
-    .dungeon WC
-step
-    .goto 1456/1,-303.83,-1048.66
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Hamuul|r
-    .turnin 3369 >> Gebt die Quest Alptraum ab
-    .target Arch Druid Hamuul Runetotem
-    .isOnQuest 3369
-    .dungeon WC
-step
-    #completewith next
-    .goto 1456/1,219.09,-1051.44,10 >> Reist zur Anhöhe der Geister und begebt euch zu den Teichen der Visionen
-    .isQuestComplete 962
-    .dungeon WC
-step
-    .goto 1456/1,276.6,-996.12
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Apothekerin Zamah|r
-    .turnin 962 >>Gebt die Quest Schlangenflaum ab
-    .target Apothecary Zamah
-    .isQuestComplete 962
-    .dungeon WC
-step
-    #label WCEnd
-    .goto 1456/1,38.32,-1300.48
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gastwirtin Pala|r
-    .home >>Setzt euren Ruhestein in Donnerfels
-    .target Innkeeper Pala
-    .bindlocation 1638
-    .isQuestAvailable 6442
-    .dungeon WC
-step
-    #optional
-    .abandon 1486 >>Brecht die Quest Deviatbälge ab
-step
-    #optional
-    .abandon 1487 >>Brecht die Quest Ausrottung der Deviat ab
-step
-    #optional
-    .abandon 1491 >>Brecht die Quest Klugheitstränke ab
-step
-    #optional
-    .abandon 959 >>Brecht die Quest Ärger auf den Docks ab
-step
-    #optional
-    .abandon 914 >>Brecht die Quest Anführer der Giftzähne ab
-step
-    #optional
-    .abandon 962 >>Brecht die Quest Schlangenflaum ab
-step
-    #completewith Serena
-    .goto 1456/1,26.1,-1196.66
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Tal|r
-    .fly Crossroads >>Fliege nach Das Wegekreuz
-    .target Tal
-    .subzoneskip 380
-    .isQuestTurnedIn 852 << !Hunter
+    .zoneskip Stonetalon Mountains
 step
     .goto 1413/1,-1972.55,-306.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Regthar|r
@@ -5387,7 +4142,7 @@ step
     .goto 1413/1,-1960.600,653.700,50,0
     .goto 1413/1,-1871.600,653.700,50,0
     .goto 1413/1,-1729.700,592.400,50,0
-    >>Tötet |cRXP_LOOT_Savannenpatriarche|r. Plündert sie für ihre |cRXP_LOOT_Bälge|r
+    >>Tötet |cRXP_ENEMY_Savannah Patriarchs|r. Plündert sie für |cRXP_LOOT_Hides|r
     .complete 95494,1 --|6/6 Savannah Lion Hide
     .mob Savannah Patriarch
 step
@@ -5431,7 +4186,7 @@ step
     .isQuestTurnedIn 95494
 step
     #completewith next
-    .goto 1413/1,-1778.100,684.200,25,0
+    .goto 1413/1,-1736.900,650.300,25,0
     .goto 1413/1,-1741.700,721.400,25,0
     .goto 1413/1,-1643.900,786.000,25,0
     .goto 1413/1,-1605.300,818.300,20 >>Reist den Berg hinauf
@@ -5467,6 +4222,14 @@ step << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Torek|r
     .turnin 6541 >> Gebt die Quest Meldung bei Kadrak ab
     .target Kadrak
+step << Hunter
+    #optional
+    .goto 1413/1,-2253.24,1246.31
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Torek|r
+    .accept 3513 >>Akzeptiert die Quest Die Runenverzierte Schriftrolle
+    .turnin 3513 >>Gebt die Quest Die Runenverzierte Schriftrolle ab
+    .target Kadrak
+    .itemcount 10621,1
 step << Hunter
     .goto 1440/1,-2240.94,1778.570
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Torek|r um die Escort zu starten
@@ -5805,7 +4568,7 @@ step << skip
     .zoneskip Ashenvale
 step
     .goto 1440/1,-632.700,2311.500
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Va'xug Firefure|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Va'xug Firefure|r
     .accept 98251 >>Akzeptiert die Quest Keine Rückkehr
     .target Va'xug Firefure
 step
@@ -5898,6 +4661,10 @@ step
    .target +Marukai
    .goto 1440/1,1025.88,3331.450
 step
+    #ah
+    #completewith WrathtailHeads
+    +|cRXP_WARN_Speichert alle|r |T134332:0|t[Schredder Operating Manuell Pages] |cRXP_WARN_die ihr plündert|r
+step
    .goto 1440/1,1004.54,3341.83
    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Muglash|r
    >>|cRXP_WARN_Dies wird ein Eskortenquest starten. Seid vorsichtig, da es schwierig ist|r
@@ -5921,12 +4688,8 @@ step
    >>|cRXP_WARN_Ihr könnt|r |cRXP_FRIENDLY_Muglash|r |cRXP_WARN_etwas Aggro aufbauen, bevor du gegen ihn kämpfst|r
    .complete 6641,1 --Defeat Vorsha the Lasher
    .mob Vorsha the Lasher
-step << Priest
-    #sticky
-    #completewith EnterBFD
-    .subzone 2797,2 >> Such dir jetzt eine Gruppe für BFD, wenn du ein starkes Zauberstab-Upgrade (Grabsteinszepter) haben möchtest. Alternativ kannst du auch warten, bis du dich auf Stufe 26–28 in Ashenvale befindest, um BFD zu absolvieren
-    .dungeon BFD
 step
+    #label WrathtailHeads
 	#loop
     .goto 1440/1,1065.09,3574.76,0
 	.goto 1440/1,1073.74,3635.49,50,0
@@ -5993,7 +4756,6 @@ step
 	.goto 1440/1,1101.42,3535.17,50,0
 	.goto 1440/1,1065.09,3574.76,50,0
     .xp 21+21450 >> Farmt bis 21450+/25200 Erfahrung
-    .dungeon !BFD << Priest
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Warsongläufer|r und |cRXP_FRIENDLY_Marukai|r
     .turnin 6641 >> Gebt die Quest Vorsha die Peitscherin ab
@@ -6002,160 +4764,6 @@ step
     .turnin 6442 >> Gebt die Quest Die Naga am Zoramstrand ab
     .target +Marukai
     .goto 1440/1,1025.88,3331.450
-step << Priest
-    .goto 1440/1,1033.37,3354.89
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Je'neu Sancrea|r
-    .accept 6563 >> Akzeptiert die Quest Die Essenz von Aku'mai
-    .accept 6921 >> Akzeptiert die Quest Inmitten der Ruinen
-    .accept 6565 >> Akzeptiert die Quest Treue zu den Alten Göttern
-    .target Je'neu Sancrea
-    .dungeon BFD
-    .isQuestTurnedIn 6564
-step << Priest
-    .goto 1440/1,1033.37,3354.89
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Je'neu Sancrea|r
-    .accept 6563 >> Akzeptiert die Quest Die Essenz von Aku'mai
-    .accept 6921 >> Akzeptiert die Quest Inmitten der Ruinen
-    .target Je'neu Sancrea
-    .dungeon BFD
-step << Priest
-    .goto 1414/1,915.16,4156.85,100 >> Reist zum Eingang der Tiefschwarzen Grotte
-    .dungeon BFD
-step << Priest
-    #completewith next
-    >>Plündert |cRXP_LOOT_Saphir von Aku'mai|r von der Wand
-    .complete 6563,1 --Sapphire of Aku'Mai (20)
-    .dungeon BFD
-    .isOnQuest 6563
-step << Priest
-    #loop
-    .goto 1414/1,896.76,4247.63,0
-    .goto 1414/1,944.60,4174.03,20,0
-    .goto 1414/1,896.76,4247.63,20,0
-    .goto 1414/1,911.48,4313.87,20,0
-    .goto 1414/1,874.68,4318.77,20,0
-    .goto 1414/1,815.80,4250.08,20,0
-    .goto 1414/1,745.88,4220.64,20,0
-    .goto 1414/1,679.64,4247.63,20,0
-    .goto 1414/1,896.76,4247.63,20,0
-    >>Tötet |cRXP_ENEMY_Blackfathom-Gezeitenpriesterin|r. Plündert sie für ein |T134332:0|t[|cRXP_LOOT_Feuchte Notiz|r], und benutzt sie, um die Quest zu starten
-    .collect 16790,1,6564 --Collect Damp Note (1)
-    .accept 6564 >> Akzeptiert die Quest Treue zu den Alten Göttern
-    .mob Blackfathom Tide Priestess
-    .use 16790
-    .dungeon BFD
-step << Priest
-    #loop
-    .goto 1414/1,749.56,4186.29,0
-    .goto 1414/1,679.64,4247.63,20,0
-    .goto 1414/1,745.88,4220.64,20,0
-    .goto 1414/1,815.80,4250.08,20,0
-    .goto 1414/1,874.68,4318.77,20,0
-    .goto 1414/1,911.48,4313.87,20,0
-    .goto 1414/1,896.76,4247.63,20,0
-    .goto 1414/1,944.60,4174.03,20,0
-    .goto 1414/1,749.56,4186.29,20,0
-    >>Plündert |cRXP_LOOT_Saphir von Aku'mai|r von der Wand
-    .complete 6563,1 --Sapphire of Aku'Mai (20)
-    .dungeon BFD
-    .isOnQuest 6563
-step << Priest
-    #label EnterBFD
-    .goto 1414/1,742.20,4247.63
-    .subzone 2797,2 >> Betretet das Tiefschwarze-Grotte-Instanzportal
-    .dungeon BFD
-step << Priest
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Späher Thaelrid|r
-    .accept 6561 >>Schurkerei in der Tiefschwarzen Grotte annehmen
-    .target Argent Guard Thaelrid
-    .dungeon BFD
-step << Priest
-    >>Tötet |cRXP_ENEMY_Lorgus Jett|r
-    .complete 6565,1 --Lorgus Jett slain (1)
-    .mob Lorgus Jett
-    .isOnQuest 6565
-    .dungeon BFD
-step << Priest
-    #completewith next
-    >>Plündert den |cRXP_PICK_Fathom Stein|r im Wasser auf dem Boden für den |cRXP_LOOT_Fathomkern|r
-    >>|cRXP_WARN_Das Plündern wird|r Baron Aquanis|cRXP_ENEMY_ beschwören|r
-    .complete 6921,1 --Fathom Core (1)
-    .isOnQuest 6921
-    .dungeon BFD
-step << Priest
-    >>Tötet |cRXP_ENEMY_Baron Aquanis|r. Plündert ihn für eine |T136222:0|t[|cRXP_LOOT_Seltsame Wasserkugel|r]. Benutzt sie, um die Quest zu akzeptieren
-    .collect 16782,1,6782 --Strange Water Globe (1)
-    .accept 6922 >>Akzeptiert die Quest Baron Aquanis
-    .mob Baron Aquanis
-    .use 16782
-    .dungeon BFD
-step << Priest
-    >>Plündert den |cRXP_PICK_Fathom Stein|r im Wasser auf dem Boden für den |cRXP_LOOT_Fathomkern|r
-    .complete 6921,1 --Fathom Core (1)
-    .isOnQuest 6921
-    .dungeon BFD
-step << Priest
-    >>Tötet |cRXP_ENEMY_Twilight-Lord Kelris|r. Plündert ihn für seinen |cRXP_LOOT_Kopf|r
-    .complete 6561,1 --Head of Kelris (1)
-    .mob Twilight Lord Kelris
-    .isOnQuest 6561
-    .dungeon BFD
-step << Priest
-    .hs >> Ruhestein nach Donnerfels
-    .bindlocation 1638,1
-    .zoneskip Thunder Bluff
-    .use 6948
-    >>|cRXP_WARN_Tötet|r |cRXP_ENEMY_Aku'mai|r |cRXP_WARN_zuerst, wenn ihr möchtet. Dies ist der letzte Boss des Dungeons|r
-    .dungeon BFD
-step << Priest
-    .goto 1456/1,-224.81,-1087.91
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Bashana|r
-    .turnin 6561 >>Gebt die Quest Schurkerei in der Tiefschwarzen Grotte ab
-    .target Bashana Runetotem
-    .isQuestComplete 6561
-    .dungeon BFD
-step << Priest
-    .goto 1456/1,26.1,-1196.66
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Tal|r
-    .fly Zoram'gar >> Fliege nach Außenposten von Zoram'gar
-    .target Tal
-    .zoneskip Ashenvale
-    .dungeon BFD
-step << Priest
-    .goto 1440/1,1033.37,3354.89
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Je'neu Sancrea|r
-    .turnin 6564 >>Gebt die Quest Treue zu den Alten Göttern ab
-    .target Je'neu Sancrea
-    .dungeon BFD
-    .isOnQuest 6564
-step << Priest
-    .goto 1440/1,1033.37,3354.89
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Je'neu Sancrea|r
-    .turnin 6565 >>Gebt die Quest Treue zu den Alten Göttern ab
-    .target Je'neu Sancrea
-    .dungeon BFD
-    .isQuestComplete 6565
-step << Priest
-    .goto 1440/1,1033.37,3354.89
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Je'neu Sancrea|r
-    .turnin 6563 >>Gebt die Quest Die Essenz von Aku'mai ab
-    .target Je'neu Sancrea
-    .dungeon BFD
-    .isQuestComplete 6563
-step << Priest
-    .goto 1440/1,1033.37,3354.89
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Je'neu Sancrea|r
-    .turnin 6921 >>Gebt die Quest Inmitten der Ruinen ab
-    .target Je'neu Sancrea
-    .dungeon BFD
-    .isQuestComplete 6521
-step << Priest
-    .goto 1440/1,1033.37,3354.89
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Je'neu Sancrea|r
-    .turnin 6922 >>Gebt die Quest Baron Aquanis ab
-    .target Je'neu Sancrea
-    .dungeon BFD
-    .isQuestComplete 6922
 step
     .goto 1440/1,1013.77,3345.67
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Karang|r
@@ -6201,7 +4809,7 @@ step << Paladin
     .goto 1456/1,253.900,-950.200
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Alodan|r
     .train 1866 >>Trainiere deine Klassenfähigkeiten
-    .target Alodan the Hopeful 
+    .target Alodan the Hopeful
     .xp <20,1
     .xp >22,1
 step << Paladin
@@ -6209,8 +4817,14 @@ step << Paladin
     .goto 1456/1,253.900,-950.200
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Alodan|r
     .train 1026 >>Trainiere deine Klassenfähigkeiten
-    .target Alodan the Hopeful 
+    .target Alodan the Hopeful
     .xp <22,1
+step
+    #ah
+    .goto 1456/1,24.85,-1252.75
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Chesmu|r
+    .bankdeposit 16645,16646,16647,16648,16649,16650,16651,16652,16653,16654,16655,16656 >>Einzahlen alle von Euch |T134332:0|t[Schredder Operating Manuell Pages]
+    .target Chesmu
 step << Warlock
     .goto 1456/1,26.1,-1196.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Tal|r
@@ -6486,7 +5100,7 @@ step << Shaman
     .train 905 >> Trainiere deine Klassenfähigkeiten
     .target Kardris Dreamseeker
     .xp <24,1
-step << Troll Warrior/Undead Warrior/Tauren Warrior
+step << Troll Warrior/Undead Warrior/Tauren Warrior/Undead Paladin
     .goto 1454/1,-4824.00,2090.540
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Hanashi|r
     .train 197 >>Erlernt Zweihandäxte
@@ -6541,14 +5155,10 @@ step
     -->>|cRXP_WARN_You are required to have Rig Wars in your quest log to accept this quest|r
     .accept 2842 >>Akzeptiert die Quest Chefingenieur Scooty
     .target Sovik
-step << skip
-    #optional
-    .abandon 2841 >> Brecht die Quest Maschinenkriege ab. Stellt sicher, dass Chefingenieur Scooty in eurem Questtagebuch ist.
-    .dungeon !GNOMER
 step << Rogue
     .goto 1454/1,-4355.53,1520.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Sprecht mit|r |cRXP_FRIENDLY_Trak'gen|r|cRXP_BUY_. Kauft|r |T135423:0|t[Tödliche Wurfaxt] |cRXP_BUY_von ihm|r
-    .collect 3137,200,6544,1 --Deadly Throwing Axe (200)
+    .collect 3137,1,6544,1 --Deadly Throwing Axe (200)
     .target Trak'gen
 step << Rogue
     >>Falls ihr irgendwelche |T134437:0|t[Gegengift]  habt|cRXP_WARN_, benutzt einen davon, um euch von|r |T136230:0|t[Berührung von Zanzil]|cRXP_WARN_ zu heilen|r

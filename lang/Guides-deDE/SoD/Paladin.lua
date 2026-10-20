@@ -913,7 +913,7 @@ step
 step
     #completewith Delgren1
     #label AshenvaleT
-    .zone Ashenvale >> Reist zu Eschental
+    .zone Ashenvale >> Reist nach Eschental
     .train 410014,1
 step
     #completewith next
@@ -1051,7 +1051,7 @@ step
 step
     #completewith Motes
     #label AshenvaleT
-    .zone Ashenvale >> Reist zu Eschental
+    .zone Ashenvale >> Reist nach Eschental
     .train 410014,1
 step
     #completewith next
@@ -2120,7 +2120,7 @@ step << Alliance
     .train 410013,1
 step << Alliance
     #completewith next
-    .zone Hillsbrad Foothills >>Reist zum Vorgebirge des Hügellands
+    .zone Hillsbrad Foothills >>Reist nach Vorgebirge des Hügellands
     .train 410013,1
 step << Alliance
     #loop
@@ -2133,7 +2133,7 @@ step << Alliance
     .complete 81970,4 --1/1 Symbol of Faith
 step << Horde
     #completewith next
-    .zone Hillsbrad Foothills >>Reist zum Vorgebirge des Hügellands
+    .zone Hillsbrad Foothills >>Reist nach Vorgebirge des Hügellands
     .train 410013,1
 step << Horde
     #loop

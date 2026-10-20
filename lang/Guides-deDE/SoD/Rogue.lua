@@ -157,7 +157,7 @@ step << Rogue
     .train 398196,1
 step << Rogue
     #season 2
-    >>Öffnet den |cRXP_PICK_Begraben Schatz|r. Plündert ihn für die |T134419:0|t[|cRXP_FRIENDLY_Rune des Pistolenhelden|r]
+    >>Öffnet den |cRXP_PICK_Vergrabenen Schatz|r. Plündert ihn für die |T134419:0|t[|cRXP_FRIENDLY_Rune des Pistolenhelden|r]
     .collect 203991,1 -- Rune of Quick Draw (1)
     .train 398196,1
 step << Rogue
@@ -233,7 +233,7 @@ step << Rogue
     .train 398196,1
 step << Rogue
     #season 2
-    >>Öffnet den |cRXP_PICK_Begraben Schatz|r. Plündert ihn für die |T134419:0|t[|cRXP_FRIENDLY_Rune des Pistolenhelden|r]
+    >>Öffnet den |cRXP_PICK_Vergrabenen Schatz|r. Plündert ihn für die |T134419:0|t[|cRXP_FRIENDLY_Rune des Pistolenhelden|r]
     .collect 203991,1 -- Rune of Quick Draw (1)
     .train 398196,1
 step << Rogue
@@ -332,7 +332,7 @@ step << Rogue
     .train 398196,1
 step << Rogue
     #season 2
-    >>Öffnet den |cRXP_PICK_Begraben Schatz|r. Plündert ihn für die |T134419:0|t[|cRXP_FRIENDLY_Rune des Pistolenhelden|r]
+    >>Öffnet den |cRXP_PICK_Vergrabenen Schatz|r. Plündert ihn für die |T134419:0|t[|cRXP_FRIENDLY_Rune des Pistolenhelden|r]
     .collect 203991,1 -- Rune of Quick Draw (1)
     .train 398196,1
 step << Rogue
@@ -1646,7 +1646,7 @@ step
 step
     .train 425103,1
     #completewith next
-    .zone Stranglethorn Vale >>Reist nach Schlingendorntal.
+    .zone Stranglethorn Vale >>Reist nach Schlingendorntal
 step
     .train 425103,1
     #completewith Uniform
@@ -1680,7 +1680,7 @@ step
 step
     .train 425103,1
     .goto Stranglethorn Vale,44.261,7.908
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_NPCs|r im Turm
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Wendel Mathers|r im Turm
     >>|cRXP_WARN_Er hat einen Respawn-Timer von etwa 3 Minuten|r
     .destroy 216616 >> Gebt ihm |cRXP_LOOT_Lagerkäfigschlüssel|r
     .destroy 216617 >> Gebt ihm |cRXP_LOOT_Kurzens Kämpferuniform|r

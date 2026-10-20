@@ -62,7 +62,7 @@ step << Hunter
     #completewith ExitSW
     .goto StormwindClassic,49.990,57.641
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Frederick Stover|r
-    >>|cRXP_BUY_Kauft einen|r |T135489:0|t[Schwerer Doppelbogen] |cRXP_BUY_oder etwas Besseres im Auktionshaus|r
+    >>|cRXP_BUY_Kauft einen|r |T135489:0|t[Schwerer Doppelbogen] |cRXP_BUY_oder etwas besseres vom Auktionshaus|r
     .collect 3027,1 -- Heavy Recurve Bow (1)
     .target Frederick Stover
     .money <0.6722
@@ -146,8 +146,8 @@ step << !Hunter !Priest
 step << Rogue
     .goto StormwindClassic,57.38,56.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Marda Weller|r
-    >>|cRXP_BUY_Kauft ein|r |T135324:0|t[Langschwert] |cRXP_BUY_und ein|r |T135342:0|t[Kris]
-    >>|cRXP_WARN_Legt|r |T135324:0|t[Langschwert] |cRXP_WARN_auf Stufe 21 in eure Haupthand und|r |T135342:0|t[Kris] |cRXP_WARN_in eure Nebenhand|r
+    >>|cRXP_BUY_Kauft einen|r |T135324:0|t[Langschwert] |cRXP_BUY_und|r |T135342:0|t[Kris]
+    >>|cRXP_WARN_Legt|r |T135324:0|t[Langschwert] |cRXP_WARN_in eurer Haupthand an, wenn ihr Stufe 21 seid und|r |T135342:0|t[Kris] |cRXP_WARN_in eurer Nebenhand an|r
     .collect 923,1 --Longsword
     .collect 2209,1 --Kris
     .target Marda Weller
@@ -357,31 +357,31 @@ step
     .target The Defias Traitor
 step
     .goto Westfall,25.90,47.76
-    >>|cRXP_WARN_Benutzt |T134269:0|t[|cRXP_LOOT_Captain Sander's Schatzkarte|r] um die Quest zu starten|r
+    >>|cRXP_WARN_Benutzt |T134269:0|t[|cRXP_LOOT_Captain Sander's Schatzkarte|r], um die Quest zu beginnen|r
     .use 1357
     .accept 136 >> Akzeptiert die Quest Käpt'n Sanders' versteckter Schatz
     .itemcount 1357,1 -- Captain Sanders' Treasure Map (1)
 step
     .goto Westfall,25.90,47.76
     >>Klickt |cRXP_PICK_Captain's Schließkiste|r
-    .turnin 136 >> Gebt die Quest Käpt'n Sanders' versteckter Schatz ab
+    .turnin 136 >> Gebt die Quest Käpt'n Sanders' verborgener Schatz ab
     .itemcount 1357,1 -- Captain Sanders' Treasure Map (1)
 step
     .goto Westfall,25.90,47.76
     >>Klickt |cRXP_PICK_Captain's Schließkiste|r
-    .accept 138 >> Akzeptiert die Quest Käpt'n Sanders' versteckter Schatz
+    .accept 138 >> Akzeptiert die Quest Käpt'n Sanders' verborgener Schatz
     .isQuestTurnedIn 136
 step
     .goto Westfall,40.51,47.80
-    >>Klickt |cRXP_PICK_Kaputt Fass|r
-    .turnin 138 >> Gebt die Quest Käpt'n Sanders' versteckter Schatz ab
-    .accept 139 >> Akzeptiert die Quest Käpt'n Sanders' versteckter Schatz
+    >>Klickt |cRXP_PICK_Kaputtes Fass|r
+    .turnin 138 >> Gebt die Quest Käpt'n Sanders' verborgener Schatz ab
+    .accept 139 >> Akzeptiert die Quest Käpt'n Sanders' verborgener Schatz
     .isQuestTurnedIn 136
 step
     .goto Westfall,40.63,17.03
-    >>Klickt |cRXP_PICK_Alter Krug|r
-    .turnin 139 >> Gebt die Quest Käpt'n Sanders' versteckter Schatz ab
-    .accept 140 >> Akzeptiert die Quest Käpt'n Sanders' versteckter Schatz
+    >>Klickt |cRXP_PICK_Old Krug|r
+    .turnin 139 >> Gebt die Quest Käpt'n Sanders' verborgener Schatz ab
+    .accept 140 >> Akzeptiert die Quest Käpt'n Sanders' verborgener Schatz
     .isQuestTurnedIn 138
 step
     #completewith next
@@ -389,7 +389,7 @@ step
     .isOnQuest 140
 step
     .goto Westfall,25.97,16.90
-    >>Klickt |cRXP_PICK_Verschlossen Truhe|r
+    >>Klickt |cRXP_PICK_Verschlossene Truhe|r
     .turnin 140 >> Gebt die Quest Käpt'n Sanders' versteckter Schatz ab
     .isOnQuest 140
 step
@@ -508,7 +508,7 @@ step
 .dungeon DM
     .goto StormwindClassic,45.694,38.416
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Bruder Kristoff|r
-    >>Überspringen diesen Schritt, wenn ihr noch nicht Stufe 20 seid
+    >>Überspringt diesen Schritt, wenn ihr noch nicht auf Stufe 20 seid
     .accept 343 >> Reden über Kraft annehmen
     .target Brother Kristoff
     .xp <20,1
@@ -534,7 +534,7 @@ step -- adding again 2nd time incase hitting 20 after turning in triple DM quest
 .dungeon DM
     .goto StormwindClassic,45.694,38.416
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Bruder Kristoff|r
-    >>Überspringen diesen Schritt, wenn ihr noch nicht Stufe 20 seid
+    >>Überspringt diesen Schritt, wenn ihr noch nicht auf Stufe 20 seid
     .accept 343 >> Reden über Kraft annehmen
     .target Brother Kristoff
     .xp <20,1
@@ -543,13 +543,13 @@ step
     #completewith next
     .goto StormwindClassic,70.439,27.097,15,0
     .goto StormwindClassic,72.003,21.525,15,0
-    .goto StormwindClassic,70.713,10.717,15 >> Reist zu |cRXP_FRIENDLY_Milton Garbenbund|r in der MoP - Objekte Library
+    .goto StormwindClassic,70.713,10.717,15 >> Reist zu |cRXP_FRIENDLY_Milton Garbenbund|r in der Sturmwind-Bibliothek
     .xp <20,1
 step
 .dungeon DM
     .goto StormwindClassic,74.182,7.465
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Milton Garbenbund|r
-    >>Überspringen diesen Schritt, wenn ihr noch nicht Stufe 20 seid
+    >>Überspringt diesen Schritt, wenn ihr noch nicht auf Stufe 20 seid
     .turnin 343 >> Gebt die Quest Reden über Kraft ab
     .accept 344 >> Bruder Paxton annehmen
     .target Milton Sheaf
@@ -565,7 +565,7 @@ step
 step
     .goto Westfall,56.55,52.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Thor|r
-    >>Fliegt nach Redridge, falls ihr noch in Westfall seid
+    >>Fliegt nach Redridge, wenn ihr noch in Westfall seid
     .fly Redridge >> Fliegt ins Rotkammgebirge
     .target Thor
     .zoneskip Westfall,1
@@ -606,7 +606,7 @@ step
     #completewith next
     .goto Elwynn Forest,57.518,51.595,25,0
     .goto Elwynn Forest,58.14,52.50,20,0
-    .goto Elwynn Forest,65.20,69.80,50 >> Reist zum Turm von Azora. Steigt den Turm hinauf. Folgt dem Pfeil für eine Abkürzung durch die Berge
+    .goto Elwynn Forest,65.20,69.80,50 >> Reist zum Turm von Azora. Steigt den Turm auf. Folgt dem Pfeil für einen Kurzweg durch die Berge
     .xp <20,1
 step
 .dungeon DM
@@ -687,7 +687,7 @@ step
     .isOnQuest 122
     #completewith Toolbox
     >>Tötet |cRXP_ENEMY_Schwarzer Großdrachenwelpe|r. Plündert sie für |cRXP_LOOT_Welpenbauchschuppe|r
-    >>Ihr müsst diese Quest jetzt nicht abschließen
+    >>Ihr müsst diese Quest nicht jetzt abschließen
     .complete 122,1 --Underbelly Whelp Scale (6)
     .mob Black Dragon Whelp
 step
@@ -744,13 +744,13 @@ step
     .mob +Great Goretusk
 step
     #label Toolbox
-    >>|cRXP_WARN_Springt in den See. Achtet auf den patrouillierenden Elite-|cRXP_ENEMY_Lake Thresher|r im Wasser|r
+    >>|cRXP_WARN_Springt in den See. Passt auf die patrouillierende Elite |cRXP_ENEMY_Lake Thresher|r im Wasser auf|r
     >>Öffnet die |cRXP_PICK_Versunkene Truhe|r. Plündert sie für |cRXP_LOOT_Oslows Werkzeugkasten|r
     .goto Redridge Mountains,41.52,54.68
     .complete 125,1 --Oslow's Toolbox (1)
 step
     .goto Redridge Mountains,49.0,70.0
-    .xp 20-3000 >> Farmt, bis ihr 3000 EP von Stufe 20 entfernt seid
+    .xp 20-3000 >> Farmt, bis ihr nur noch 3000 XP bis Stufe 20 benötigt
 step
     #completewith next
     .goto Redridge Mountains,30.73,59.99,150 >> Reist nach Seenhain
@@ -764,7 +764,7 @@ step
     #era
     .isQuestComplete 122
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Verner Gutmark|r
-    >>Überspringt diesen Schritt, falls ihr Bauchschuppen noch nicht abgeschlossen habt; ihr werdet es später tun
+    >>Überspringt diesen Schritt, falls ihr die Quest Bauchschuppen noch nicht abgeschlossen habt. Ihr werdet sie später machen.
 	.target Verner Osgood
     .goto Redridge Mountains,31.00,47.30
     .turnin 122 >> Gebt die Quest Bauchschuppen ab
@@ -799,7 +799,7 @@ step
     .goto Redridge Mountains,30.73,59.99
     .turnin 246 >> Gebt die Quest Einschätzung der Gefahr ab
 step
-    .xp 20 >> Stellt sicher, dass ihr Stufe 20 seid, bevor ihr nach MoP - Objekte fliegt
+    .xp 20 >> Stellt sicher, dass ihr auf Stufe 20 seid, bevor ihr nach Sturmwind reist
 step
     .goto Redridge Mountains,30.59,59.42
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Ariena Sturmfeder|r
@@ -848,8 +848,8 @@ step << Rogue
     #ah
     .goto StormwindClassic,57.38,56.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Marda Weller|r
-    >>|cRXP_BUY_Kauft ein|r |T135324:0|t[Langschwert] |cRXP_BUY_und rüstet es auf Stufe 21 aus|r
-    >>|cRXP_BUY_Kauft etwas im Auktionshaus, falls es etwas Günstigeres/Besseres gibt|r
+    >>|cRXP_BUY_Kauft|r |T135324:0|t[Langschwert] |cRXP_BUY_und rüstet es auf Stufe 21 aus|r
+    >>|cRXP_BUY_Kauft beim Auktionshaus etwas, falls es dort etwas Günstigeres oder Besseres gibt|r
     >>|cRXP_WARN_Überspringt diesen Schritt, falls ihr etwas Besseres habt|r
     .collect 923,1 --Longsword (1)
     .target Marda Weller
@@ -857,15 +857,15 @@ step << !Dwarf Rogue
     #ah
     .goto Stormwind City,53.612,59.764
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Auktionatorin Jaxon|r
-    >>Kauft |T134437:0|t[Gegengift] später für eure |T132290:0|t[Gifte]-Quest
-    >>Das wird euch Zeit sparen, da ihr nicht herumlaufen müsst, um Mobs zum Töten zu suchen. Überspringt diesen Schritt, falls ihr es nicht kaufen möchtet
+    >>Kauft |T134437:0|t[Gegengift] für die |T132290:0|t[Gifte]-Quest von Euch später
+    >>Das spart euch Zeit, da ihr nicht herumrennen müsst, um Mobs zu töten. Überspringt diesen Schritt, falls ihr es nicht kaufen möchtet.
     .collect 6452,1,2359,1 --Anti-Venom (1)
     .target Auctioneer Jaxon
 step << Rogue
     #hardcore
     .goto StormwindClassic,57.38,56.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Marda Weller|r
-    >>|cRXP_BUY_Kauft ein|r |T135324:0|t[Langschwert] |cRXP_BUY_und rüstet es auf Stufe 21 aus|r
+    >>|cRXP_BUY_Kauft|r |T135324:0|t[Langschwert] |cRXP_BUY_und rüstet es auf Stufe 21 aus|r
     >>|cRXP_WARN_Überspringt diesen Schritt, falls ihr etwas Besseres habt|r
     .collect 923,1 --Longsword (1)
     .target Marda Weller
@@ -873,17 +873,17 @@ step << Warrior/Paladin
     #ah
     .goto StormwindClassic,57.54,57.07
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Gunther Weller|r
-    >>|cRXP_BUY_Kauft eine|r |T135280:0|t[Dakische Sichel] |cRXP_BUY_falls ihr genug Geld habt. Rüstet sie auf Stufe 21 aus|r
-    >>|cRXP_BUY_Kauft etwas im Auktionshaus, falls es etwas Günstigeres/Besseres gibt|r
-    >>|cRXP_WARN_Überspringt diesen Schritt, falls ihr etwas Besseres habt|r
+    >>|cRXP_BUY_Kauft|r |T135280:0|t[Dakische Sichel] |cRXP_BUY_, falls ihr genug Geld habt. Legt es auf Stufe 21 an|r
+    >>|cRXP_BUY_Kauft beim Auktionshaus etwas, falls es dort etwas Günstigeres oder Besseres gibt|r
+    >>|cRXP_WARN_Überspringt diesen Schritt, wenn ihr etwas Besseres habt|r
     .collect 922,1 --Dacian Falx (1)
     .target Gunther Weller
 step << Warrior/Paladin
     #hardcore
     .goto StormwindClassic,57.54,57.07
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Gunther Weller|r
-    >>|cRXP_BUY_Kauft eine|r |T135280:0|t[Dakische Sichel] |cRXP_BUY_falls ihr genug Geld habt. Rüstet sie auf Stufe 21 aus|r
-    >>|cRXP_WARN_Überspringt diesen Schritt, falls ihr etwas Besseres habt|r
+    >>|cRXP_BUY_Kauft eine|r |T135280:0|t[Dakische Sichel] |cRXP_BUY_wenn ihr genug Geld habt. Legt sie bei Stufe 21 an|r
+    >>|cRXP_WARN_Überspringt diesen Schritt, wenn ihr etwas Besseres habt|r
     .collect 922,1 --Dacian Falx (1)
     .target Gunther Weller
 step
@@ -926,7 +926,7 @@ step
     #completewith next
     .goto StormwindClassic,70.439,27.097,15,0
     .goto StormwindClassic,72.003,21.525,15,0
-    .goto StormwindClassic,70.713,10.717,15 >> Reist zu |cRXP_FRIENDLY_Milton Garbenbund|r in der MoP - Objekte Library
+    .goto StormwindClassic,70.713,10.717,15 >> Reist zu |cRXP_FRIENDLY_Milton Garbenbund|r in der Sturmwind-Bibliothek
 step
     .goto StormwindClassic,74.182,7.465
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Milton Garbenbund|r
@@ -942,13 +942,13 @@ step << Rogue
     .goto StormwindClassic,74.64,52.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Osborne|r
     .trainer >> Trainiere deine Klassenfähigkeiten
-    .train 1804 >> Benutzt |T136058:0|t[Schloss knacken], um Schlossknacken zu erlernen
+    .train 1804 >> Benutzt |T136058:0|t[Schloss knacken] um Schlossknacken zu erlernen
     .target Osborne the Night Man
 step << Rogue
     #completewith next
     .goto StormwindClassic,74.90,54.00,20,0
     .goto StormwindClassic,78.43,60.15,20,0
-    .goto StormwindClassic,78.67,60.13,5 >> Betretet das SI:7 Headquarters. Geht die Treppe hinauf zu |cRXP_FRIENDLY_Renzik "The Tückische Klinge"|r und |cRXP_FRIENDLY_Meister Mathias Shaw|r
+    .goto StormwindClassic,78.67,60.13,5 >> Betretet das SI:7 Hauptquartier. Lauft die Treppen hinauf zu |cRXP_FRIENDLY_Renzik "Das Messer"|r und |cRXP_FRIENDLY_Meister Mathias Shaw|r
 step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Renzik "Das Messer"|r und |cRXP_FRIENDLY_Meister Mathias Shaw|r
     .accept 2281 >> Akzeptiert die Quest Rendezvous im Rotkammgebirge
@@ -988,7 +988,7 @@ step
     #completewith next
     .goto Elwynn Forest,57.518,51.595,25,0
     .goto Elwynn Forest,58.14,52.50,20,0
-    .goto Elwynn Forest,65.20,69.80,50 >> Reist zum Turm von Azora. Steigt den Turm hinauf. Folgt dem Pfeil für eine Abkürzung durch die Berge
+    .goto Elwynn Forest,65.20,69.80,50 >> Reist zum Turm von Azora. Erklimmt den Turm. Folgt dem Pfeil für einen Shortcut durch die Berge.
 step
     .goto Elwynn Forest,65.22,69.71
     .target Theocritus
@@ -1009,7 +1009,7 @@ step
 step
     .goto StormwindClassic,66.27,62.12,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Dungar Trinkfest|r
-    >>Fliegt nach Redridge, falls ihr in MoP - Objekte seid
+    >>Fliegt nach Redridge, wenn ihr in MoP - Objekte seid
     .fly Redridge >> Fliegt ins Rotkammgebirge
     .target Dungar Longdrink
     .zoneskip Stormwind City,1
@@ -1065,7 +1065,7 @@ step
 	.mob +Redridge Brute
 step << Rogue
     .goto Redridge Mountains,52.10,45.24
-    +Öffnet |cRXP_PICK_Üben Lockboxes|r, bis ihr 80 in |T136058:0|t[Schlossknacken] erreicht
+    +|T136058:0|tÖffnet |cRXP_PICK_Üben Schließkassetten|r, bis ihr im Schlossknacken 80 erreicht
     .skill lockpicking,80,1
 step << Rogue
 	.goto Redridge Mountains,52.05,44.69

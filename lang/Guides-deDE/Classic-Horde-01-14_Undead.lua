@@ -354,7 +354,7 @@ step
     .goto Tirisfal Glades,34.21,63.05,30,0
     .goto Tirisfal Glades,33.01,63.01,30,0
     .xp 3+940 >>Farmt bis 940+/1400XP << Warrior/Rogue
-    .xp 3+980 >>Farmt bis 980+/1400xp << !Warrior !Rogue
+    .xp 3+980 >>Farmt bis 980+/1400XP << !Warrior !Rogue
     .mob Mindless Zombie
     .mob Wretched Zombie
 step << Mage/Warlock/Priest
@@ -2525,7 +2525,7 @@ step << Rogue
 step << Warlock
     #completewith next
     .goto Tirisfal Glades,51.06,67.57
-    >>Beute |cRXP_PICK_Perrines Truhe|r für |T133733:0|t[Egalins Zauberfoliant]
+    >>Plündert |cRXP_PICK_Perrines Truhe|r für |T133733:0|t[Egalins Zauberfoliant]
     .complete 1473,1 --Egalin's Grimoire (1)
 step
     #label ScarletCrusade1
@@ -2668,7 +2668,7 @@ step << Warrior
 step << Warrior
     #ah
     .goto Undercity,77.08,49.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Charles Seaton|r im Schurkenviertel
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Charles Seaton|r im Schurken-Viertel
     >>|cRXP_BUY_Kauft eine|r |T135350:0|t[Claymore] |cRXP_BUY_von ihm|r
     >>|cRXP_WARN_Alternativ könnt ihr bald das Auktionshaus nach etwas Besserem oder Billigerem durchsuchen|r
     .collect 1198,1,371,1 --Collect Claymore (1)
@@ -2686,7 +2686,7 @@ step << Warrior
 step << Rogue
     #ssf
     .goto Undercity,77.08,49.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Charles Seaton|r im Schurkenviertel
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Charles Seaton|r im Schurken-Viertel
     >>|cRXP_BUY_Kauft einen|r |T135346:0|t[Entersäbel] |cRXP_BUY_von ihm|r
     .collect 851,1,371,1 --Collect Cutlass (1)
     .money <0.2023
@@ -2696,7 +2696,7 @@ step << Rogue
 step << Rogue
     #ah
     .goto Undercity,77.08,49.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Charles Seaton|r im Schurkenviertel
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Charles Seaton|r im Schurken-Viertel
     >>|cRXP_BUY_Kauft einen|r |T135346:0|t[Entersäbel] |cRXP_BUY_von ihm|r
     >>|cRXP_WARN_Alternativ könnt ihr bald das Auktionshaus nach etwas Besserem oder Billigerem durchsuchen|r
     .collect 851,1,371,1 --Collect Cutlass (1)
@@ -3363,7 +3363,7 @@ step << Rogue
     #ssf
     #xprate <1.5
     .goto Undercity,77.08,49.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Charles Seaton|r im Schurkenviertel
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Charles Seaton|r im Schurken-Viertel
     >>|cRXP_BUY_Kauft einen|r |T135346:0|t[Entersäbel] |cRXP_BUY_von ihm|r
     .collect 851,1,372,1 --Collect Cutlass (1)
     .money <0.2023
@@ -3374,7 +3374,7 @@ step << Rogue
     #ah
     #xprate <1.5
     .goto Undercity,77.08,49.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Charles Seaton|r im Schurkenviertel
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Charles Seaton|r im Schurken-Viertel
     >>|cRXP_BUY_Kauft einen|r |T135346:0|t[Entersäbel] |cRXP_BUY_von ihm|r
     >>|cRXP_WARN_Alternativ könnt ihr bald das Auktionshaus nach etwas Besserem oder Billigerem durchsuchen|r
     .collect 851,1,372,1 --Collect Cutlass (1)
@@ -3395,7 +3395,7 @@ step << Warrior
     #ssf
     #xprate <1.5
     .goto Undercity,77.08,49.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Charles Seaton|r im Schurkenviertel
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Charles Seaton|r im Schurken-Viertel
     >>|cRXP_BUY_Kauft eine|r |T135350:0|t[Claymore] |cRXP_BUY_von ihm|r
     .collect 1198,1,372,1 --Collect Claymore (1)
     .money <0.2950
@@ -3406,7 +3406,7 @@ step << Warrior
     #ah
     #xprate <1.5
     .goto Undercity,77.08,49.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Charles Seaton|r im Schurkenviertel
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Charles Seaton|r im Schurken-Viertel
     >>|cRXP_BUY_Kauft eine|r |T135350:0|t[Claymore] |cRXP_BUY_von ihm|r
     >>|cRXP_WARN_Alternativ könnt ihr bald das Auktionshaus nach etwas Besserem oder Billigerem durchsuchen|r
     .collect 1198,1,372,1 --Collect Claymore (1)
@@ -4314,7 +4314,7 @@ step
 step
     #label Nightlash
     .goto Silverpine Forest,45.44,21.01
-    >>Tötet |cRXP_ENEMY_Rot Verstecken Gnolls|r um das Todesfeld herum, bis |cRXP_ENEMY_Nachtseele|r erscheint. Tötet und plündert sie, um ihre |cRXP_LOOT_Essenz|r zu erhalten.
+    >>Tötet |cRXP_ENEMY_Gnoll der Moderfelle|r rund um das Todesfeld, bis |cRXP_ENEMY_Nachtseele|r erscheint. Tötet sie und plündert ihre |cRXP_LOOT_Essenz|r
     >>|cRXP_WARN_Sie sind immun gegen Furcht!|r << Priest/Warlock
     .complete 437,1 --Enter the Dead Fields (1)
     .complete 437,2 --Essence of Nightlash (1)
@@ -5738,7 +5738,7 @@ step << Rogue/Priest/Warlock
 step << Warlock
     #season 2
     .equip 10,711 >> |cRXP_WARN_Legt die|r |T132961:0|t[Zerlumpte Stoffhandschuhe] an
-    .equip 9,3596 >> |cRXP_ENEMY_Legt|r die |T132606:0|t[Zerlumpte Stoffarmschienen] an
+    .equip 9,3596 >> |cRXP_ENEMY_Legt die|r |T132606:0|t[Zerlumpte Stoffarmschienen] an
     .use 711
     .use 3596
     .engrave 10 >>|cRXP_WARN_Graviert|r die Handschuhe von Euch mit |T236298:0|t[Heimsuchung]
@@ -7106,7 +7106,7 @@ step << Rogue
 step << Warrior
     .goto Tirisfal Glades,60.12,53.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Oliver|r
-    .vendor >> Verkauft trash. Verkauft eure Waffe, wenn sie genug für ein |T135321:0|t[Gladius] (5s 36c) wert ist. Kommt später zurück, wenn ihr noch nicht genug Geld habt.
+    .vendor >> Verkauft trash. Verkauft eure Waffe, wenn sie genug für ein |T135321:0|t[Gladius] (5s 36c) wert ist. Kommt später zurück, wenn ihr noch nicht genug Geld habt
     .target Oliver Dwor
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.7
@@ -8000,7 +8000,7 @@ step
     .goto Tirisfal Glades,42.82,31.93,60,0
     .goto Tirisfal Glades,42.82,31.93,60,0
     .goto Tirisfal Glades,45.08,31.15,60,0
-    >>Tötet |cRXP_ENEMY_Thurman|r und |cRXP_ENEMY_Gregor|r. Plündert sie für ihre |cRXP_LOOT_Überreste|r. Sie können umher patroullieren
+    >>Tötet |cRXP_ENEMY_Thurman|r und |cRXP_ENEMY_Gregor|r. Plündert sie für ihre |cRXP_LOOT_überreste|r. Sie können umher patroullieren
     .complete 354,3 --Thurman's Remains (1)
     .unitscan +Thurman Agamand
     .complete 354,1 --Gregor's Remains (1)
@@ -8628,7 +8628,7 @@ step << Warlock
 step << Warrior
     #ssf
     .goto Undercity,77.08,49.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Charles Seaton|r im Schurkenviertel
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Charles Seaton|r im Schurken-Viertel
     >>|cRXP_BUY_Kauft eine|r |T135350:0|t[Claymore] |cRXP_BUY_von ihm|r
     .collect 1198,1,371,1 --Collect Claymore (1)
     .money <0.2676
@@ -8638,7 +8638,7 @@ step << Warrior
 step << Warrior
     #ah
     .goto Undercity,77.08,49.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Charles Seaton|r im Schurkenviertel
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Charles Seaton|r im Schurken-Viertel
     >>|cRXP_BUY_Kauft eine|r |T135350:0|t[Claymore] |cRXP_BUY_von ihm|r
     >>|cRXP_WARN_Alternativ könnt ihr bald das Auktionshaus nach etwas Besserem oder Billigerem durchsuchen|r
     .collect 1198,1,371,1 --Collect Claymore (1)
@@ -8657,7 +8657,7 @@ step << Rogue
     #season 0
     #ssf
     .goto Undercity,77.08,49.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Charles Seaton|r im Schurkenviertel
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Charles Seaton|r im Schurken-Viertel
     >>|cRXP_BUY_Kauft einen|r |T135346:0|t[Entersäbel] |cRXP_BUY_von ihm|r
     .collect 851,1,371,1 --Collect Cutlass (1)
     .money <0.2023
@@ -8668,7 +8668,7 @@ step << Rogue
     #season 0
     #ah
     .goto Undercity,77.08,49.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Charles Seaton|r im Schurkenviertel
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Charles Seaton|r im Schurken-Viertel
     >>|cRXP_BUY_Kauft einen|r |T135346:0|t[Entersäbel] |cRXP_BUY_von ihm|r
     >>|cRXP_WARN_Alternativ könnt ihr bald das Auktionshaus nach etwas Besserem oder Billigerem durchsuchen|r
     .collect 851,1,371,1 --Collect Cutlass (1)
@@ -8680,7 +8680,7 @@ step << Rogue
     #season 2
     #ssf
     .goto Undercity,77.08,49.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Charles Seaton|r im Schurkenviertel
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Charles Seaton|r im Schurken-Viertel
     .vendor >>|cRXP_BUY_Kauft einen|r |T135346:0|t[Entersäbel] |cRXP_BUY_oder einen|r |T135640:0|t[Jambiya] |cRXP_BUY_von ihm|r
     .money <0.2023
     .itemStat 16,QUALITY,<7
@@ -8690,7 +8690,7 @@ step << Rogue
     #season 2
     #ah
     .goto Undercity,77.08,49.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Charles Seaton|r im Schurkenviertel
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Charles Seaton|r im Schurken-Viertel
     .vendor >>|cRXP_BUY_Kauft einen|r |T135346:0|t[Entersäbel] |cRXP_BUY_oder einen|r |T135640:0|t[Jambiya] |cRXP_BUY_von ihm|r
     >>|cRXP_WARN_Alternativ könnt ihr bald das Auktionshaus nach etwas Besserem oder Billigerem durchsuchen|r
     .money <0.2023
@@ -8828,7 +8828,7 @@ step
     #optional
     .goto Tirisfal Glades,60.93,52.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Burgess|r
-    .turnin 374 >>Gebt die Quest Todesbeweise ab
+    .turnin 374 >>Gebt die Quest Beweise des Ablebens ab
     .target Deathguard Burgess
     .isQuestComplete 374
 step

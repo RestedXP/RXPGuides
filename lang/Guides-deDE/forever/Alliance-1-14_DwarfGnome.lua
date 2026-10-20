@@ -4,6 +4,7 @@ if faction == "Horde" then return end
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 #season 0,1
 #version 1
 << Alliance
@@ -648,6 +649,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 #season 0,1
 #version 1
 << Alliance
@@ -748,7 +750,7 @@ step
     .target Tannok Frosthammer
 step
     .goto 1426/0,-529.600,-5590.600
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Maxan Anvol::1226|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Maxan Anvol::1226|r
     .target Maxan Anvol::1226
     .accept 5625 >> Gewänder des Lichts annehmen << Priest
     .accept 99158 >>Akzeptiert die Quest Dämmerung in den Bergen
@@ -928,7 +930,7 @@ step << Shaman
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.20
 step
     .goto 1426/0,-431.000,-5582.400
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Tognus Flintfire::1241|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Tognus Flintfire::1241|r
     .target Tognus Flintfire::1241
     .accept 98321 >>Akzeptiert die Quest Flintfires Lieferung
 step
@@ -991,7 +993,7 @@ step
     .mob +Crag Boar
 step
     #completewith next
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Gebirgsjägerin Gretchen::271546|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Gebirgsjägerin Gretchen::271546|r
     .target Mountaineer Gretchen::271546
     .turnin 98322 >>Gebt die Quest Sichert den Pass ab
     .accept 98319 >>Akzeptiert die Quest Sichert den Pass
@@ -1002,7 +1004,7 @@ step
     .complete 5541,1 --Collect Rumbleshot's Ammo (x1)
 step
     .goto 1426/0,-371.400,-5746.900
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Gebirgsjägerin Gretchen::271546|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Gebirgsjägerin Gretchen::271546|r
     .target Mountaineer Gretchen::271546
     .turnin 98322 >>Gebt die Quest Sichert den Pass ab
     .accept 98319 >>Akzeptiert die Quest Sichert den Pass
@@ -1115,7 +1117,7 @@ step
     .xp 7 >> Farmt bis Stufe 7
 step
     .goto 1426/0,-501.500,-5643.900
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Senir Whitebeard::1252|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Senir Whitebeard::1252|r
     .target Senir Whitebeard::1252
     .accept 287 >>Akzeptiert die QuestHöhle der Frostmane
 step
@@ -1448,10 +1450,10 @@ step << Hunter
     .turnin 314 >> Gebt die Quest Die Herde beschützen ab
     .target Rudra Amberstill
 step << Hunter
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Senator Mehr Steingunst|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Großknecht Steinbraue|r
     .accept 432 >> Akzeptiert die Quest Diese verfluchten Troggs!
-    .goto 1426/0,-1580.000,-5714.700
-    .target Senator Mehr Stonehallow
+    .goto 1426/0,-1600.30,-5726.590
+    .target Foreman Stonebrow
 step << Hunter
     #loop
     .goto 1426,70.073,57.030,0
@@ -1463,14 +1465,34 @@ step << Hunter
     .waypoint 1426,67.687,60.059,45,0
     .waypoint 1426,68.958,59.357,45,0
     .waypoint 1426,70.475,59.420,45,0
-    >>Tötet |cRXP_ENEMY_Schädelhauer der Felsenkiefer|r in oder außerhalb der Mine
+    >>Tötet |cRXP_ENEMY_Rockjaw Skullthumpers|r außerhalb der Mine. Sammelt die Beute |T132621:0|t[|cRXP_LOOT_Empty Pulverfass|r]
+    .use 268548 >> |cRXP_WARN_Benutzt das|r |T132621:0|t[|cRXP_LOOT_Leeres Pulverfass|r] |cRXP_WARN_um die Quest zu starten|r
+    >>|cRXP_WARN_HINWEIS: Dieser Gegenstand hat eine niedrige Drop-Rate. Überspringt diesen Schritt, wenn ihr ihn nicht findet|r
     .complete 432,1 --Kill Rockjaw Skullthumper (x6)
+    .collect 268548,1,95213,1 -- Empty Powder Keg (1)
+    .disablecheckbox
+    .accept 95213 >> Akzeptiert die Quest Gestohlenes Sprengpulver
+    .disablecheckbox
     .mob Rockjaw Skullthumper
 step << Hunter
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Senator Mehr Steingunst|r
+    .isOnQuest 95213
+    .goto 1426/0,-1606.02,-5676.35
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Steinbruchmeister Thesten|r
+    .turnin 95213 >> Gebt die Quest Gestohlenes Sprengpulver ab
+    .accept 95214 >> Akzeptiert die Quest Gestohlenes Sprengpulver
+    .target Quarrymaster Thesten
+step << Hunter
+    #optional
+    .isQuestTurnedIn 95213
+    .goto 1426/0,-1606.02,-5676.35
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Steinbruchmeister Thesten|r
+    .accept 95214 >> Akzeptiert die Quest Gestohlenes Sprengpulver
+    .target Quarrymaster Thesten
+step << Hunter
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Großknecht Steinbraue|r
     .turnin 432 >> Gebt die Quest Diese verfluchten Troggs! ab
-    .target Senator Mehr Stonehallow
-    .goto 1426/0,-1580.000,-5714.700
+    .target Foreman Stonebrow
+    .goto 1426/0,-1600.30,-5726.590
 step << Hunter
     .goto 1426/0,-2197.02,-5279.07,45,0
     .goto 1426/0,-2329.60,-5163.76
@@ -1685,7 +1707,7 @@ step << Hunter
     .accept 6086 >>Akzeptiert die Quest Die Ausbildung des Tiers
 step
     .goto 1426/0,-682.300,-5489.000
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Beldin Steelgrill::1376|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Beldin Steelgrill::1376|r
     .target Beldin Steelgrill::1376
     .accept 96408 >>Akzeptiert die Quest Ein Besucher in Dun Morogh
 step << Warrior
@@ -1884,13 +1906,21 @@ step << !Hunter
 --XX Mud slappers instead
 step
     #label QuarryStart
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Senator Mehr Stonehallow|r und |cRXP_FRIENDLY_Großknecht Stonebrow|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Senator Mehr Stonehallow|r und |cRXP_FRIENDLY_Großknecht Stonebrow|r << !Hunter
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Senator Mehr Steingunst|r << Hunter
     .accept 433 >> Akzeptiert die Quest Im Dienste des Volkes
     .target +Senator Mehr Stonehallow
     .goto 1426/0,-1579.96,-5714.73
-    .accept 432 >> Akzeptiert die Quest Diese verfluchten Troggs!
-    .goto 1426/0,-1600.30,-5726.590
-    .target +Foreman Stonebrow
+    .accept 432 >> Akzeptiert die Quest Diese verfluchten Troggs! << !Hunter
+    .goto 1426/0,-1600.30,-5726.590 << !Hunter
+    .target +Foreman Stonebrow << !Hunter
+step
+    #completewith RockjawBonesnappers
+    >>Sammelt die Beute |T132621:0|t[|cRXP_ENEMY_Empty Pulverfass|r] von den |cRXP_ENEMY_Rockjaw Skullthumpers|r und den |cRXP_LOOT_Rockjaw Bonesnappers|r
+    .use 268548 >> |cRXP_WARN_Benutzt das|r |T132621:0|t[|cRXP_LOOT_Leer Pulverfass|r] |cRXP_WARN_um die Quest zu starten|r
+    >>|cRXP_WARN_HINWEIS: Dieser Gegenstand hat eine niedrige Drop-Rate. Überspringt diesen Schritt, wenn ihr ihn nicht findet|r
+    .collect 268548,1,95213,1 -- Empty Powder Keg (1)
+    .accept 95213 >> Akzeptiert die Quest Gestohlenes Schießpulver
 step
     #sticky
     #label Skullthumpers
@@ -1913,6 +1943,7 @@ step
     .goto 1426,70.750,56.219,20 >>Betretet die Steinbruch Gol'Bolar Mine
     .isOnQuest 433
 step
+    #label RockjawBonesnappers
     #loop
     .goto 1426,70.750,56.219,0
     .goto 1426,71.344,51.873,0
@@ -1937,13 +1968,28 @@ step
     #requires Skullthumpers
 --XXREQ Placeholder invis step until multiple requires per step
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Großknecht Stonebrow|r und |cRXP_FRIENDLY_Senator Mehr Stonehallow|r
-    .turnin 432 >> Gebt die Quest Diese verfluchten Troggs! ab
-    .target +Senator Mehr Stonehallow
-    .goto 1426/0,-1600.30,-5726.590
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Senator Mehr Stonehallow|r und |cRXP_FRIENDLY_Großknecht Stonebrow|r << !Hunter
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Senator Mehr Steingunst|r << Hunter
     .turnin 433 >> Gebt die Quest Im Dienste des Volkes ab
     .goto 1426/0,-1579.96,-5714.73
-    .target +Foreman Stonebrow  
+    .target +Senator Mehr Stonehallow
+    .turnin 432 >> Gebt die Quest Diese verfluchten Troggs! ab << !Hunter
+    .goto 1426/0,-1600.30,-5726.590 << !Hunter
+    .target +Foreman Stonebrow << !Hunter
+step
+    .isOnQuest 95213
+    .goto 1426/0,-1606.02,-5676.35
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Steinbruchmeister Thesten|r
+    .turnin 95213 >> Gebt die Quest Gestohlenes Sprengpulver ab
+    .accept 95214 >> Akzeptiert die Quest Gestohlenes Schießpulver
+    .target Quarrymaster Thesten
+step
+    #optional
+    .isQuestTurnedIn 95213
+    .goto 1426/0,-1606.02,-5676.35
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Quarrymaster Thesten|r
+    .accept 95214 >> Akzeptiert die Quest Gestohlenes Schießpulver
+    .target Quarrymaster Thesten
 step
     #optional
     #label BoarMeatDunMorogh3
@@ -1977,14 +2023,21 @@ step
 --  .skill cooking,<10,1
     .skill cooking,50,1 --XX Shows if cooking skill is between 1-50
 step
-    #completewith OII
-    >>Tötet |cRXP_ENEMY_Wegelagerer der Felsenkiefer|r. Plündert sie für |T132621:0|t[|cRXP_LOOT_Leeres Pulverfass|r]
-    .use 268548 >> |cRXP_WARN_Benutzt das|r |T132621:0|t[|cRXP_LOOT_Leeres Pulverfass|r] |cRXP_WARN_um die Quest zu starten|r
-    >>|cRXP_WARN_HINWEIS: Dieser Gegenstand hat eine niedrige Droprate. Überspringt diesen Schritt, wenn ihr ihn nicht findet, bis ihr mit den|r Spione der Dunkeleisenzwerge|cRXP_ENEMY_ fertig seid|r
-    .collect 268548,1,95213,1 -- Empty Powder Keg (1)
-    .accept 95213 >> Akzeptiert die Quest Gestohlenes Sprengpulver
+    .isOnQuest 95214
+    #completewith SpyMap
+    >>Tötet |cRXP_ENEMY_Wegelagerer der Felsenkiefer|r. Plündert sie für |cRXP_LOOT_Gestohlenes Sprengpulver|r
+    .complete 95214,1 -- Stolen Blasting Powder (16)
     .mob Rockjaw Ambusher
 step
+    #completewith OII
+    >>Tötet |cRXP_ENEMY_Wegelagerer der Felsenkiefer|r. Plündert sie für |T132621:0|t[|cRXP_LOOT_Leeres Pulverfass|r]
+    .use 268548 >> |cRXP_WARN_Benutzt das|r |T132621:0|t[|cRXP_LOOT_Leer Pulverfass|r] |cRXP_WARN_um die Quest zu starten|r
+    >>|cRXP_WARN_HINWEIS: Dieser Gegenstand hat eine niedrige Droprate. Überspringt diesen Schritt, wenn ihr ihn nicht findet, bis ihr mit den|r Spione der Dunkeleisenzwerge|cRXP_ENEMY_ fertig seid|r
+    .collect 268548,1,95213,1 -- Empty Powder Keg (1)
+    .accept 95213 >> Akzeptiert die Quest Gestohlenes Schießpulver
+    .mob Rockjaw Ambusher
+step
+    #label SpyMap
     .goto 1426/0,-2009.87,-5860.22,40,0
     .goto 1426/0,-2034.49,-5922.60
     >>Tötet |cRXP_ENEMY_Spion der Dunkeleisenzwerge|r. Plündert sie für |T237385:0|t[|cRXP_LOOT_Dunkeleisenkarte |r]
@@ -1993,6 +2046,24 @@ step
     .collect 274268,1,96391,1 -- Dark Iron Map (1)
     .accept 96391 >> Akzeptiert die Quest Karte des Untergrunds
     .mob Dark Iron Spy
+step
+    .isOnQuest 95214
+    #loop
+    .goto 1426/0,-1881.82,-5735.45,50,0
+    .goto 1426/0,-1832.57,-5571.28,50,0
+    .goto 1426/0,-1724.22,-5636.95,50,0
+    .goto 1426/0,-1881.82,-5735.45,0
+    .goto 1426/0,-1832.57,-5571.28,0
+    .goto 1426/0,-1724.22,-5636.95,0
+    >>Tötet |cRXP_ENEMY_Rockjaw Ambushers|r. Plündert sie für |cRXP_LOOT_Stolen Zauberwucht Powder|r
+    .complete 95214,1 -- Stolen Blasting Powder (16)
+    .mob Rockjaw Ambusher
+step
+    .isQuestComplete 95214
+    .goto 1426/0,-1606.02,-5676.35
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Quarrymaster Thesten|r
+    .turnin 95214 >> Gebt die Quest Gestohlenes Schießpulver ab
+    .target Quarrymaster Thesten
 step
     #label OII
     .goto 1426/0,-1394.24,-5797.83
@@ -2004,15 +2075,15 @@ step
 step
     .isOnQuest 95213
     .goto 1426/0,-1606.02,-5676.35
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Steinbruchmeister Thesten|r
-    .turnin 95213 >> Gebt die Quest Gestohlenes Sprengpulver ab
-    .accept 95214 >> Akzeptiert die Quest Gestohlenes Sprengpulver
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Quarrymaster Thesten|r
+    .turnin 95213 >> Gebt die Quest Gestohlenes Schießpulver ab
+    .accept 95214 >> Akzeptiert die Quest Gestohlenes Schießpulver
     .target Quarrymaster Thesten
 step
     .isQuestTurnedIn 95213
     .goto 1426/0,-1606.02,-5676.35
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Steinbruchmeister Thesten|r
-    .accept 95214 >> Akzeptiert die Quest Gestohlenes Sprengpulver
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Quarrymaster Thesten|r
+    .accept 95214 >> Akzeptiert die Quest Gestohlenes Schießpulver
     .target Quarrymaster Thesten
 step
     .isOnQuest 95214
@@ -2023,14 +2094,14 @@ step
     .goto 1426/0,-1881.82,-5735.45,0
     .goto 1426/0,-1832.57,-5571.28,0
     .goto 1426/0,-1724.22,-5636.95,0
-    >>Tötet |cRXP_ENEMY_Wegelagerer der Felsenkiefer|r. Plündert sie für |cRXP_LOOT_Gestohlenes Sprengpulver|r
+    >>Tötet |cRXP_ENEMY_Rockjaw Ambushers|r. Plündert sie für |cRXP_LOOT_Stolen Zauberwucht Powder|r
     .complete 95214,1 -- Stolen Blasting Powder (16)
     .mob Rockjaw Ambusher
 step
     .isQuestComplete 95214
     .goto 1426/0,-1606.02,-5676.35
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Steinbruchmeister Thesten|r
-    .turnin 95214 >> Gebt die Quest Gestohlenes Sprengpulver ab
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Quarrymaster Thesten|r
+    .turnin 95214 >> Gebt die Quest Gestohlenes Schießpulver ab
     .target Quarrymaster Thesten
 step
     #completewith next
@@ -2104,7 +2175,7 @@ step << !Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Yanni Stoutheart|r
     >>|cRXP_BUY_Kauft ein|r |T135435:0|t[Einfaches Holz] |cRXP_BUY_und ein|r |T135237:0|t[Feuerstein und Zunder] |cRXP_BUY_von ihr|r
     >>|cRXP_BUY_Kauft einen|r |T133634:0|t[Kleiner brauner Beutel] |cRXP_BUY_von ihr, wenn nötig|r << !Rogue
-    >>|cRXP_WARN_Das wird verwendet, um|r |T135805:0|t[Einfache Lagerfeuer] |cRXP_WARN_auf Booten oder Straßenbahnen zu erstellen, um eure|r |T133971:0|t[Kochkunst] |cRXP_WARN_ohne Zeitverlust zu skillen|r
+    >>|cRXP_WARN_Dies wird zum Erstellen von|r |T135805:0|t[Basic Campfires] |cRXP_WARN_benutzt, während ihr auf die Boote wartet, um eure|r |T133971:0|t[Kochkunst] |cRXP_WARN_-Fertigkeit zu leveln, ohne Zeit zu verschwenden|r
     >>|cRXP_WARN_Ihr benötigt 50|r |T133971:0|t[Kochkunst] |cRXP_WARN_für eine spätere Quest im Dämmerwald|r
     .collect 4470,1 --Simple Wood (1)
     .collect 4471,1 --Flint and Tinder (1)
@@ -2294,7 +2365,7 @@ step << Dwarf/Gnome
     .target Golnir Bouldertoe
 step << Shaman
     .goto 1455/0,-1086.500,-4642.400
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Eldrun Stormbreaker|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Eldrun Stormbreaker|r
     .target Eldrun Stormbreaker::258098
     .accept 94449 >>Akzeptiert die Quest Ruf des Feuers
     .trainer >> Trainiere deine Klassenfähigkeiten
@@ -2393,7 +2464,7 @@ step << Hunter
     .target Regnus Thundergranite
 step << Dawrf Priest
     .goto 1455/0,-897.200,-4607.200
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Hohepriester Rohan|r  
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Hohepriester Rohan|r
     .turnin 5639 >> Gebt die Quest Verzweifeltes Gebet ab
     .trainer >> Trainiere deine Klassenfähigkeiten
     .target High Priest Rohan
@@ -2508,7 +2579,7 @@ step << !Hunter skip
     #optional
     #label TramCook1
     #completewith TramEnd
-    >>|cRXP_WARN_Geht auf die Tiefenbahn wenn sie ankommt:|r
+    >>|cRXP_WARN_Auf der Tiefenbahn, wenn sie ankommt:|r
     .cast 818 >>|cRXP_WARN_Erstellt eine|r |T135805:0|t[Einfaches Lagerfeuer] |cRXP_WARN_(unter dem Allgemeinen-Reiter eures Zauberbuches)|r
     .usespell 818
     .zoneskip Stormwind City
@@ -2522,7 +2593,7 @@ step << !Hunter skip
     #requires TramCook1
     #label TramCook2
     #completewith TramEnd
-    >>|cRXP_WARN_Geht auf die Tiefenbahn wenn sie ankommt:|r
+    >>|cRXP_WARN_Auf der Tiefenbahn, wenn sie ankommt:|r
     .cast 818 >>|cRXP_WARN_Erstellt eine|r |T135805:0|t[Einfaches Lagerfeuer] |cRXP_WARN_(unter dem Allgemeinen-Reiter eures Zauberbuches)|r
     .usespell 818
     .zoneskip Stormwind City
@@ -2536,7 +2607,7 @@ step << !Hunter skip
     #requires TramCook2
     #label TramCook3
     #completewith TramEnd
-    >>|cRXP_WARN_Geht auf die Tiefenbahn wenn sie ankommt:|r
+    >>|cRXP_WARN_Auf der Tiefenbahn, wenn sie ankommt:|r
     .cast 818 >>|cRXP_WARN_Erstellt eine|r |T135805:0|t[Einfaches Lagerfeuer] |cRXP_WARN_(unter dem Allgemeinen-Reiter eures Zauberbuches)|r
     .usespell 818
     .zoneskip Stormwind City
@@ -2713,6 +2784,7 @@ step << Rogue
 RXPGuides.RegisterGuide([[
 #xprate <1.5
 #forever
+#disabledungeons
 #season 0,1
 << Alliance !Hunter
 #group RestedXP Forever Dungeonführer (A)
@@ -3375,6 +3447,7 @@ step << !Paladin
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 #season 0,1
 #version 1
 << Alliance !Hunter
@@ -3385,8 +3458,6 @@ RXPGuides.RegisterGuide([[
 #next 13-15 Westfall;14-16 Dunkelküste
 #defaultfor Gnome/Dwarf
 
-step -- dont delete
-    #label LochStart
 step << Dwarf Paladin
     #optional
     #completewith next
@@ -3628,7 +3699,7 @@ step
     .waypoint 1432/0,-2684.71,-5042.87,50,0
     .waypoint 1432/0,-2712.57,-5286.61,50,0
     >>Tötet |cRXP_ENEMY_Tunnel Ratten|r. Plündert sie für ihre |cRXP_LOOT_Ohren|r
-    >>Tötet |cRXP_ENEMY_Geomant der Tunnelratten|r. Plündert sie für |cRXP_LOOT_Feuerteer|r << Shaman 
+    >>Tötet |cRXP_ENEMY_Geomant der Tunnelratten|r. Plündert sie für |cRXP_LOOT_Feuerteer|r << Shaman
     >>|cRXP_ENEMY_Geomant der Tunnelratten|r |cRXP_WARN_sind nur in der Mine zu finden|r << Shaman
     .complete 416,1 --Collect Tunnel Rat Ear (x12)
     .mob +Tunnel Rat Scout
@@ -4091,7 +4162,7 @@ step << Dwarf Paladin
     .target Tiza Battleforge
 step << Shaman
     .goto 1455/0,-1086.500,-4642.400
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Eldrun Stormbreaker|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Eldrun Stormbreaker|r
     .target Eldrun Stormbreaker::258098
     .trainer >> Trainiere deine Klassenfähigkeiten
 step << Mage/Priest/Warlock
@@ -4168,9 +4239,6 @@ step << Warrior
     .trainer >> Trainiere deine Klassenfähigkeiten
     .target Bilban Tosslespanner
 
-step -- dont delete
-    #label LochEnd
-
 step << skip --logout skip << Warrior
     #optional
     #completewith Deeprun
@@ -4204,7 +4272,7 @@ step << skip
     #optional
     #label WestfallTramCook1
     #completewith WestfallTramEnd
-    >>|cRXP_WARN_Geht auf die Tiefenbahn wenn sie ankommt:|r
+    >>|cRXP_WARN_Auf der Tiefenbahn, wenn sie ankommt:|r
     .cast 818 >>|cRXP_WARN_Erstellt eine|r |T135805:0|t[Einfaches Lagerfeuer] |cRXP_WARN_(unter dem Allgemeinen-Reiter eures Zauberbuches)|r
     .usespell 818
     .zoneskip Stormwind City
@@ -4218,7 +4286,7 @@ step << skip
     #requires WestfallTramCook1
     #label WestfallTramCook2
     #completewith WestfallTramEnd
-    >>|cRXP_WARN_Geht auf die Tiefenbahn wenn sie ankommt:|r
+    >>|cRXP_WARN_Auf der Tiefenbahn, wenn sie ankommt:|r
     .cast 818 >>|cRXP_WARN_Erstellt eine|r |T135805:0|t[Einfaches Lagerfeuer] |cRXP_WARN_(unter dem Allgemeinen-Reiter eures Zauberbuches)|r
     .usespell 818
     .zoneskip Stormwind City
@@ -4232,7 +4300,7 @@ step << skip
     #requires WestfallTramCook2
     #label WestfallTramCook3
     #completewith WestfallTramEnd
-    >>|cRXP_WARN_Geht auf die Tiefenbahn wenn sie ankommt:|r
+    >>|cRXP_WARN_Auf der Tiefenbahn, wenn sie ankommt:|r
     .cast 818 >>|cRXP_WARN_Erstellt eine|r |T135805:0|t[Einfaches Lagerfeuer] |cRXP_WARN_(unter dem Allgemeinen-Reiter eures Zauberbuches)|r
     .usespell 818
     .zoneskip Stormwind City
@@ -4380,6 +4448,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 #season 0,1
 #era/som--h
 #version 1
@@ -4875,12 +4944,12 @@ step
     .target Catherine Leland
 step
     .goto 1453/0,1269.100,-8540.601
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Gilbert Gray::267118|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Gilbert Gray::267118|r
     .target Gilbert Gray::267118
     .accept 95065 >>Akzeptiert die Quest Zeit zu fischen
     .turnin 95065 >>Gebt die Quest Zeit zu fischen ab
 --Hunter going Darkshore, rest Westfall
-step << Hunter
+step << Hunter skip
     #optional
     #requires DockTravel
     #label DarkshoreCook1
@@ -4894,7 +4963,7 @@ step << Hunter
     .itemcount 4470,1 --Simple Wood (1+)
     .itemcount 4471,1 --Flint and Tinder (1)
     .skill cooking,50,1 --XX Shows if cooking skill is <50
-step << Hunter
+step << Hunter skip
     #optional
     #requires DarkshoreCook1
     #label DarkshoreCook2
@@ -4908,7 +4977,7 @@ step << Hunter
     .itemcount 4470,1 --Simple Wood (1+)
     .itemcount 4471,1 --Flint and Tinder (1)
     .skill cooking,50,1 --XX Shows if cooking skill is <50
-step << Hunter
+step << Hunter skip
     #optional
     #requires DarkshoreCook2
     #label DarkshoreCook3
@@ -4922,7 +4991,7 @@ step << Hunter
     .itemcount 4470,1 --Simple Wood (1+)
     .itemcount 4471,1 --Flint and Tinder (1)
     .skill cooking,50,1 --XX Shows if cooking skill is <50
-step << Hunter
+step << Hunter skip
     #optional
     #requires DarkshoreCook3
     #label DarkshoreCook4
@@ -4937,7 +5006,7 @@ step << Hunter
     .itemcount 2672,1 --Stringy Wolf Meat (1+)
     .itemcount 4471,1 --Flint and Tinder (1)
     .skill cooking,50,1
-step << Hunter
+step << Hunter skip
     #optional
     #requires DarkshoreCook4
     #label DarkshoreCook5
@@ -4950,7 +5019,7 @@ step << Hunter
     .itemcount 2672,1 --Stringy Wolf Meat (1)
     .itemcount 4471,1 --Flint and Tinder (1)
     .skill cooking,50,1
-step << Hunter
+step << Hunter skip
     #optional
     #requires DarkshoreCook5
     #label DarkshoreCook6

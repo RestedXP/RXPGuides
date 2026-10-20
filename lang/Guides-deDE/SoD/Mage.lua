@@ -2690,7 +2690,7 @@ RXPGuides.RegisterGuide([[
 step
     .train 401749,1
     #completewith next
-    .zone Arathi Highlands >> Reist nach Arathihochland
+    .zone Arathi Highlands >> Reist zum Arathihochland
 step
     .train 401749,1
     .goto Arathi Highlands,67.46,28.79,40,0
