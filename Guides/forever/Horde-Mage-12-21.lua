@@ -8,9 +8,9 @@ RXPGuides.RegisterGuide([[
 << Horde Mage
 #name 12-17 The Barrens AoE
 #version 1
-#group RestedXP Forever Guide (H)
-#subgroup Speedrun Guide Mage AoE
-#defaultfor Horde Mage
+#group RestedXP Horde Mage AoE
+
+#defaultfor none Horde Mage
 #next 17-21 Stonetalon/Barrens AoE
 
 step << Mage
@@ -712,9 +712,9 @@ RXPGuides.RegisterGuide([[
 << Horde Mage
 #name 17-21 Stonetalon/Barrens AoE
 #version 1
-#group RestedXP Forever Guide (H)
-#subgroup Speedrun Guide Mage AoE
-#defaultfor Horde Mage
+#group RestedXP Horde Mage AoE
+
+#defaultfor none Horde Mage
 #next 21-30 Silverpine/Hillsbrad AoE
 
 step
