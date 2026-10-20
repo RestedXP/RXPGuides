@@ -87,7 +87,7 @@ step
     .target Farmer Saldean
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Farmer Saldean|r
     .accept 9 >> Accept The Killing Fields
-    .accept 109 >>Accept Report to Gryan Stoutmantle << NightElf
+    .accept 109 >>Accept Report to Gryan Stoutmantle << !Human
 step
     #label SalmaS
     .goto 1436/0,1042.67,-10111.670
@@ -102,7 +102,7 @@ step << Human
     .target Quartermaster Lewis
     .goto 1436/0,1021.67,-10500.63
     .turnin 6285 >> Turn in Return to Lewis
-step << Gnome/Dwarf/NightElf
+step << !Human
     #completewith next
     .goto 1436/0,1045.12,-10508.80
     .target Gryan Stoutmantle
@@ -2296,7 +2296,7 @@ step << NightElf Priest
 step << NightElf
     .goto 1453/0,719.67,-8550.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baros Alexston|r
-    .turnin 97914 >> Turn in Expanding Horizons
+    .turnin -97914 >> Turn in Expanding Horizons
     .accept 97926 >> Accept Making Do
 --    .accept 399 >> Accept Humble Beginnings
     .target Baros Alexston
@@ -6722,6 +6722,13 @@ step
     #optional
     #completewith AshenvaleEnd
     .hs >> Hearth to Auberdine
+    .cooldown item,6948,>2,1
+step << Druid
+    .goto 1450/1,-2491.79,7454.76
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sindrayl|r
+    .fly Auberdine >> Fly to Darkshore
+    .target Sindrayl
+    .zoneskip Darkshore
 step
     #optional
     #sticky
