@@ -6821,19 +6821,12 @@ step << Alliance
     .goto 1416/0,445.93,450.00
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
     .complete 94947,1 --Take the Skyborne Portal to Stormwind
-
--- step << Alliance Druid
---     .goto 1453/0,1099.900,-8776.700
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sheldras Moontree::5504|r.
---     .turnin 94912 >>Turn in Child of Nature
---     .accept 94914 >>Accept Moonglade
---     .target Sheldras Moontree::5504
--- step << Alliance Druid
---     .goto 1450/1,-2678.600,8020.000
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dendrite Starblaze::11802|r.
---     .target Dendrite Starblaze::11802
---     .turnin 94914 >>Turn in Moonglade
-
+step << Alliance Druid
+    .goto 1453/0,1100.200,-8776.400
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sheldras Moontree::5504|r
+    .target Sheldras Moontree::5504
+    .turnin 94912 >>Turn in Child of Nature
+    .accept 94914 >>Accept Moonglade
 step << Alliance Hunter
     .goto 1453/0,765.700,-8804.000
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Catherine Leland::5494|r
