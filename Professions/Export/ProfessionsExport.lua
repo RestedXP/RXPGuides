@@ -143,7 +143,6 @@ local function knownRecipes(skills)
             end
         end
     end
-    tsort(known)
     return known
 end
 
@@ -203,6 +202,7 @@ local function buildPayload(opts)
     local skills = useOverrides and overrideProfessions() or liveProfessions()
     local faction = addon.player.faction
     local money = GetMoney()
+    local overtimeLevel = RXPCData.professions.overtimeLevel
     if useOverrides then
         if data.faction then
             faction = data.faction:sub(1, 1):upper() .. data.faction:sub(2)
@@ -219,6 +219,7 @@ local function buildPayload(opts)
         character = {
             level = addon.player.level,
             moneyCopper = money,
+            overtimeLevel = overtimeLevel,
         },
         professions = professionList(skills),
         auctionScan = auctionScan(),

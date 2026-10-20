@@ -27,6 +27,14 @@ local GetNumFactions, GetFactionInfo = _G.GetNumFactions, _G.GetFactionInfo
 local GetMoney, CopyTable = _G.GetMoney, _G.CopyTable
 local GetItemNameByID, GetItemInfo = _G.C_Item.GetItemNameByID, _G.C_Item.GetItemInfo
 local GetItemCount = _G.C_Item and _G.C_Item.GetItemCount
+local GetActiveConfigID = _G.C_ClassTalents and _G.C_ClassTalents.GetActiveConfigID
+local GetConfigIDBySystemID, GetNodeInfo, ConfigHasStagedChanges, GetStagedChanges, GetTreeNodes, GetConfigInfo =
+    (_G.C_Traits and _G.C_Traits.GetConfigIDBySystemID),
+    (_G.C_Traits and _G.C_Traits.GetNodeInfo),
+    (_G.C_Traits and _G.C_Traits.ConfigHasStagedChanges),
+    (_G.C_Traits and _G.C_Traits.GetStagedChanges),
+    (_G.C_Traits and _G.C_Traits.GetTreeNodes),
+    (_G.C_Traits and _G.C_Traits.GetConfigInfo)
 
 -- Local renaming
 local RECIPES = addon.professions.recipeIds
@@ -50,6 +58,12 @@ local EVENTS_TO_REGISTER_AH = {
         "ITEM_SEARCH_RESULTS_UPDATED",
         "COMMODITY_SEARCH_RESULTS_UPDATED",
     },
+}
+
+local IDs = {
+    LEGACY_SYSTEM_ID = 45,
+    OVERTIME_NODE_ID = 110290,
+    OVERTIME_SPELL_ID = 1225451,
 }
 
 addon.professions.AH = addon:NewModule("ProfessionsAH", "AceEvent-3.0")
@@ -399,10 +413,74 @@ local function gatherPlayerFactionInfo()
     end
 end
 
+
+
 local function gatherPlayerMoneyInfo()
     if not RXPCData.professions then RXPCData.professions = {} end
     RXPCData.professions.money = GetMoney()
 end
+
+
+--Checks if player has Working Overtime talent points
+local function gatherPlayerWorkingOvertimeTalent()
+    if addon.professions.session.isClassic then
+        RXPCData.professions.overtimeLevel = 0
+        return
+    end
+
+    --Get all config IDs
+    local configIDs = {}
+    if GetActiveConfigID then
+        local id = GetActiveConfigID()
+        if id and id ~= 0 then
+            configIDs[#configIDs + 1] = id
+        end
+    end
+    if GetConfigIDBySystemID then
+        local id = GetConfigIDBySystemID(IDs.LEGACY_SYSTEM_ID)
+        if id and id ~= 0 then
+            configIDs[#configIDs + 1] = id
+        end
+    end
+
+    --Sarch for overtime node
+    local config, node
+    for _, configID in ipairs(configIDs) do
+        config = GetConfigInfo(configID)
+        for _, treeID in ipairs(config and config.treeIDs or {}) do
+            for _, nodeID in ipairs(GetTreeNodes(treeID) or {}) do
+                node = GetNodeInfo(configID, nodeID)
+                if node and node.ID ~= 0 and node.ID == IDs.OVERTIME_NODE_ID and node.maxRanks and node.maxRanks > 0 then
+                    if node.activeRank then
+                        --Check if rank is commited or not
+                        local hasStaged = ConfigHasStagedChanges(configID)
+                        if hasStaged then
+                            local isNodeStaged = false
+                            for _, list in ipairs({GetStagedChanges(configID)}) do
+                                for _, id in ipairs(type(list) == "table" and list or {}) do
+                                    if id == IDs.OVERTIME_NODE_ID then
+                                        isNodeStaged = true
+                                        break
+                                    end
+                                end
+                            end
+                            hasStaged = isNodeStaged
+                        end
+                        if not hasStaged then
+                            RXPCData.professions.overtimeLevel = node.activeRank or 0
+                        else
+                            RXPCData.professions.overtimeLevel = RXPCData.professions.overtimeLevel or 0
+                        end
+                        return
+                    end
+                end
+            end
+        end
+    end
+    RXPCData.professions.overtimeLevel = 0
+end
+
+
 
 function addon.professions.AH:fullScan()
     gatherPlayerProfessionInfo()
@@ -428,6 +506,7 @@ function addon.professions.AH:exportInfo()
     gatherPlayerProfessionInfo()
     gatherPlayerFactionInfo()
     gatherPlayerMoneyInfo()
+    gatherPlayerWorkingOvertimeTalent()
     RXPCData.professions.foundItems = self.session.foundItems
     RXPCData.professions.scannedAt = self.session.scannedAt
 end
@@ -507,6 +586,15 @@ function debug.SetMoney(money)
     print("done set")
 end
 
+function debug.SetOvertimeLevel(level)
+    if not tonumber(level) then return end
+    level = tonumber(level)
+    if level > 5 then level = 5 end
+    if level < 0 then level = 0 end
+    RXPCData.professions.overtimeLevel = level
+    print("done set")
+end
+
 function debug.PrintData()
     for k, v in pairs(RXPCData.professions) do
         if type(v) == "table" then
@@ -575,6 +663,12 @@ end
 SLASH_setm1 = '/setm'
 SlashCmdList['setm'] = function(args)
     debug.SetMoney((split(" ", trim(args))))
+end
+
+--TODO: Debug only
+SLASH_seto1 = '/seto'
+SlashCmdList['seto'] = function (args)
+    debug.SetOvertimeLevel((split(" ", trim(args))))
 end
 
 --TODO: Debug only
