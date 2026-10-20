@@ -125,7 +125,7 @@ step << Skyborne
     #optional
     .goto 1413/1,-2595.75,-473.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_索克|r 对话
-    .turnin 98024 >>交任务 十字路口之旅 
+    .turnin 98024 >>交任务 十字路口之旅
     .target 索克
     .maxlevel 15
 step << Orc/Troll
@@ -563,7 +563,7 @@ step << Orc Shaman/Troll Shaman/Tauren Shaman
     >>|cRXP_WARN_如果没有刷新，请等待其重新出现|r
     .collect 4926,1,819 --Collect Chen's Empty Keg
     .accept 819 >> 接受任务 老陈的空酒桶
-step 
+step
     #completewith RatchetEnter
     >>击杀 |cRXP_ENEMY_迅猛龙|r，拾取它们掉落的 |cRXP_LOOT_头颅|r
     .complete 869,1 --Raptor Head (12)
@@ -3273,7 +3273,7 @@ step
 step
     #optional
     #completewith XroadsHS2
-    .destroy 5570 >>|cRXP_WARN_删除任何|r |T132834:0|t[[DEPRECATED] 深苔蜘蛛的卵] |cRXP_WARN_你剩余的|r
+    .destroy 5570 >>|cRXP_WARN_删除任何|r |T132834:0|t[深苔蜘蛛的卵] |cRXP_WARN_你剩余的|r
 step
     .goto 1413/1,-3687.11,-981.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德罗恩|r 对话
@@ -3876,7 +3876,7 @@ step << Rogue
     #optional
     .goto 1456/1,104.500,-1308.400
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_巴通·阴影图腾|r 对话
-    >>|cRXP_WARN_他处于|r |T132320:0|t[潜行] 状态 
+    >>|cRXP_WARN_他处于|r |T132320:0|t[潜行] 状态
     .train 6761 >>训练你的职业技能
     .target Boarton Shadetotem
     .xp <16,1
@@ -3884,7 +3884,7 @@ step << Rogue
 step << Rogue
     .goto 1456/1,104.500,-1308.400
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_巴通·阴影图腾|r 对话
-    >>|cRXP_WARN_他处于|r |T132320:0|t[潜行] 状态 
+    >>|cRXP_WARN_他处于|r |T132320:0|t[潜行] 状态
     .train 1943 >>训练你的职业技能
     .target Boarton Shadetotem
     .xp <20,1
@@ -3960,7 +3960,7 @@ step << Paladin
     .goto 1456/1,253.900,-950.200
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Alodan|r 对话
     .train 1866 >>训练你的职业技能
-    .target Alodan the Hopeful 
+    .target Alodan the Hopeful
     .xp <20,1
     .xp >22,1
 step << Paladin
@@ -3968,7 +3968,7 @@ step << Paladin
     .goto 1456/1,253.900,-950.200
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Alodan|r 对话
     .train 1026 >>训练你的职业技能
-    .target Alodan the Hopeful 
+    .target Alodan the Hopeful
     .xp <22,1
 step
     #optional
@@ -4846,14 +4846,14 @@ step << Paladin
     .goto 1456/1,253.900,-950.200
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Alodan|r 对话
     .train 1866 >>训练你的职业技能
-    .target Alodan the Hopeful 
+    .target Alodan the Hopeful
     .xp <20,1
     .xp >22,1
 step << Paladin
     .goto 1456/1,253.900,-950.200
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Alodan|r 对话
     .train 1026 >>训练你的职业技能
-    .target Alodan the Hopeful 
+    .target Alodan the Hopeful
     .xp <22,1
 step
     #optional

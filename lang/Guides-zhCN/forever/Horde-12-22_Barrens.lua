@@ -3229,7 +3229,7 @@ step
 step
     #optional
     #completewith XroadsHS2
-    .destroy 5570 >>|cRXP_WARN_删除任何|r |T132834:0|t[[DEPRECATED] 深苔蜘蛛的卵] |cRXP_WARN_你剩余的|r
+    .destroy 5570 >>|cRXP_WARN_删除任何|r |T132834:0|t[深苔蜘蛛的卵] |cRXP_WARN_你剩余的|r
 step
     .goto 1413/1,-3687.11,-981.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德罗恩|r 对话
