@@ -2964,6 +2964,12 @@ RXPGuides.RegisterGuide([[
 #next 20-21 Darkshore/Ashenvale
 
 step
+    .goto 1453/0,673.58,-8867.76
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Allison|r
+    .home >> Set your Hearthstone to Stormwind City
+    .target Innkeeper Allison
+    .bindlocation 16509
+step
     #completewith TDB1
     #label FlyWestfall
     .goto 1453/0,490.03,-8835.82
