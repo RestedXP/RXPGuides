@@ -473,7 +473,7 @@ step << !Skyborne
     .zoneskip Darkshore
 step
     #completewith DarkshoreBoat
-    -- .goto 1436/0,1037.42,-10628.27
+    .goto 1436/0,1037.42,-10628.27
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thor|r
     .fly Stormwind >> Fly to Stormwind
     .target Thor
