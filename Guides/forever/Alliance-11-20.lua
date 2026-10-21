@@ -114,7 +114,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
     .accept 12 >> Accept The People's Militia
     .turnin 98021 >>Turn in Journey to Sentinel Hill << Skyborne
-step
+step << skip
     .goto 1436/0,1041.97,-10511.13
     .target Captain Danuvin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Danuvin|r
@@ -142,7 +142,7 @@ step
     .accept 92742 >>Accept Testing the Wells
     .accept 92744 >>Accept Murloc Gills
 step
-	#completewith GnollPaws
+	#completewith bennytime
     >>Open the |cRXP_PICK_Sacks of Oats|r on the ground. Loot them for the |cRXP_LOOT_Handful of Oats|r
     >>|cRXP_WARN_You can usually find them near Farm Fences or Buildings|r
     .complete 151,1 --Handful of Oats (8)
@@ -228,7 +228,7 @@ step
     >>|cRXP_WARN_You can loot |cRXP_PICK_Furlbrow's Wardrobe|r from outside if you angle your camera correctly|r
 	>>|cRXP_WARN_Be aware of |cRXP_ENEMY_Benny Blanco|r. He hits hard|r
     .complete 64,1 --Furlbrow's Pocket Watch
-step
+step << skip
     #label GnollPaws
     .goto 1436/0,1042.67,-9715.0,60,0
     .goto 1436/0,1517.97,-9743.000,60,0
@@ -449,7 +449,7 @@ step
 	.target Gryan Stoutmantle
     .goto 1436/0,1045.12,-10508.80
     .accept 65 >> Accept The Defias Brotherhood
-step
+step << skip
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Danuvin|r
 	.target Captain Danuvin
     .goto 1436/0,1041.97,-10511.13
