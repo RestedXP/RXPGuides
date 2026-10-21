@@ -830,7 +830,7 @@ step
     .turnin 92470,2 >>Turn in Foul Matriarch << Druid/Shaman/Priest/Warlock
     .turnin 92470,3 >>Turn in Foul Matriarch << Mage
     .turnin 92470,4 >>Turn in Foul Matriarch << Rogue
-    .turnin 92470,5 >>Turn in Foul Matriarch << Hunter
+    .turnin 92470,1 >>Turn in Foul Matriarch << Hunter
 step
     #completewith Turn in Foul Matriarch
     #ignorecorpse
@@ -850,7 +850,7 @@ step
     .turnin 92470,2 >>Turn in Foul Matriarch << Druid/Shaman/Priest/Warlock
     .turnin 92470,3 >>Turn in Foul Matriarch << Mage
     .turnin 92470,4 >>Turn in Foul Matriarch << Rogue
-    .turnin 92470,5 >>Turn in Foul Matriarch << Hunter
+    .turnin 92470,1 >>Turn in Foul Matriarch << Hunter
     .accept 92472 >>Accept The Next Step
     .accept 96638 >>Accept The Adventurer
     .target Aetheen of the Gales::251366
@@ -878,11 +878,10 @@ step
     #optional
     #completewith next
     #label Al'Aketh Thugs
-    *|cRXP_WARN_Equip the|r |T135335:0|t[Worn Greatsword] << Warrior/Paladin
+    *|cRXP_WARN_Equip the|r |T135335:0|t[Worn Greatsword] << Warrior/Paladin/Hunter
     *|cRXP_WARN_Equip the|r |T135145:0|t[Novice's Quarterstaff] << Druid/Shaman/Priest/Warlock
     *|cRXP_WARN_Equip the|r |T135650:0|t[Scout Ranger's Dagger] << Mage
     *|cRXP_WARN_Equip the|r |T133057:0|t[Peacekeeper's Pickhammer] << Rogue
-    *|cRXP_WARN_Equip the|r |T135503:0|t[Refined Shortbow] << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hanaa Nightwind::252095|r.
     .accept 92544 >>Accept Al'Aketh Thugs
     .target Hanaa Nightwind::252095
@@ -890,7 +889,7 @@ step
     .use 257282 << Druid/Shaman/Priest/Warlock -- Novice's Quarterstaff
     .use 257283 << Mage -- Scout Ranger's Dagger
     .use 257276 << Rogue -- Peacekeeper's Pickhammer
-    .use 273879 << Hunter -- Refined Shortbow
+    .use 258882 << Hunter -- Worn Greatsword
 step
     #completewith Al'Aketh Thugs
     .goto 2521,38.31,30.17,100 >>Kill mobs along the way if you can do so without losing time.
@@ -4097,12 +4096,18 @@ step << Horde Shaman
     .turnin 97243 >>Turn in Call of Fire
     .accept 97244 >>Accept Call of Fire
     .target Olariaan Swiftburn::268592
--- step << Shaman
+-- step << Horde Shaman
 --     .isOnQuest 97244
 --     .isQuestNotComplete 97244
 --     .goto 2521,50.8,89.6
--- -- #ignorecorpse
---     .deathskip >>|cRXP_WARN_(BETA: Resurrection Sickness is bugged. Skip this step for now.)|r Jump down to die and respawn at the |cRXP_FRIENDLY_Spirit Healer::6491|r.
+--     .subzone 16593 >>Jump off the cliff
+-- step << Horde Shaman
+--     #ignorecorpse
+--     .isOnQuest 97244
+--     .isQuestNotComplete 97244
+--     .showwhiledead
+--     .goto 2521,54.99,68.14
+--     .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Spirit Healer::6491|r.
 --     .skipgossipid 96031
 --     .skipgossipid 98031
 --     .target Spirit Healer::6491
@@ -4111,11 +4116,20 @@ step << Horde Shaman
     >>Kill |cRXP_ENEMY_Skypriest Faladiel::268602|r. Loot him for |T839910:0|t[|cRXP_LOOT_Faladiel's Heart|r].
     .complete 97244,1 --|1/1 Faladiel's Heart
     .mob Skypriest Faladiel::268602
--- step << Shaman
+-- step << Horde Shaman
+--     #completewith next
 --     .isOnQuest 97244
---     .goto 2521,62.384,64.393
--- -- #ignorecorpse
---     .deathskip >>|cRXP_WARN_(BETA: Resurrection Sickness is bugged. Skip this step for now.)|r Jump down to die and respawn at the |cRXP_FRIENDLY_Spirit Healer::6491|r.
+--     .isQuestComplete 97244
+--     .goto 2521,62.384,64.393,-1
+--     .goto 2521,54.99,68.14,-1
+--     +Die and ressurect at the |cRXP_FRIENDLY_Spirit Healer::6491|r.
+-- step << Horde Shaman
+--     .isOnQuest 97244
+--     .isQuestComplete 97244
+--     #ignorecorpse
+--     .showwhiledead
+--     .goto 2521,54.99,68.14
+--     .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Spirit Healer::6491|r.
 --     .skipgossipid 96031
 --     .skipgossipid 98031
 --     .target Spirit Healer::6491
@@ -5031,22 +5045,13 @@ step << Horde Druid
     .cooldown spell,1259686,>0,1 -- Skysight
     .goto 2521,46.597,38.121
     .cast 1259686 >>Use |T1029587:0|t[Skysight] for the 10% movement speed buff.
--- step << Horde !Druid
---      -- Not sure yet if I want to do this. This saves "only" ~15 seconds
---     .isQuestAvailable 98512
---     .goto 2521,61.221,78.472
---     .deathskip >>|cRXP_WARN_(BETA: Resurrection Sickness is bugged. Skip this step for now.)|r Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r.
--- step << Horde Druid
---     .isOnQuest 94638
---     .goto 2521,62.384,64.393
---     .deathskip >>|cRXP_WARN_(BETA: Resurrection Sickness is bugged. Skip this step for now.)|r Die and respawn at the |cRXP_FRIENDLY_Spirit Healer::6491|r.
 step << Horde Druid
     #completewith next
     .goto 2521,59.59,66.7,30,0
     >>Kill |cRXP_ENEMY_Windsong Crawlers::254588|r. Loot them for |T133972:0|t[|cRXP_LOOT_Windsong Crawler Meat|r].
     .complete 93317,1 --6/6 Windsong Crawler Meat
 step << Horde
-    .goto 2521,59.528,66.902,30,0
+    .goto 2521,59.528,66.902,30,0 << Druid
     .goto 2521,56.81,61.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fendaal Windstone::273017|r.
     *|cRXP_WARN_If a Tornado is nearby, touch it to gain 40% increased movement speed for 5 minutes. Dealing damage removes the effect|r.
@@ -5067,6 +5072,12 @@ step << Horde !Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fendaal Windstone::273017|r.
     .turnin 98512 >>Turn in Al'Aketh Assassins
     .target Fendaal Windstone::273017
+step << Horde Druid
+    .goto 2521,56.80,61.10,25,0
+    .goto 2521,54.284,65.803
+    >>Kill |cRXP_ENEMY_Ur'endra::258443|r inside the cave.
+    .complete 94638,1 --|1/1 Ur'endra slain
+    .mob Ur'endra::258443
 step << Horde
     #loop
     .goto 2521,53.56,59.17,35,0
@@ -5099,12 +5110,6 @@ step << Horde
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Construct Parts|r.
     .complete 93737,3 --|1/1 Obtain Enchanted Gyrozephyr from Windsong Lake
     .mob Windsong Crawler::254588
-step << Horde Druid
-    .goto 2521,56.80,61.10,25,0
-    .goto 2521,54.284,65.803
-    >>Kill |cRXP_ENEMY_Ur'endra::258443|r inside the cave.
-    .complete 94638,1 --|1/1 Ur'endra slain
-    .mob Ur'endra::258443
 step << Horde Druid
     .goto 2521,56.80,61.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fendaal Windstone::273017|r.
