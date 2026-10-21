@@ -2913,8 +2913,7 @@ step
     .goto 2521,49.5,56.22,35,0
     .goto 2521,49.86,56.95,35,0
     .goto 2521,50.4,56.93,25,0
-    +1
-    .xp 8+4000 >>Grind to 4000/5400 to reach level 10 later at the correct moment
+    .xp 8+4400 >>Grind to 4400+/5400 to reach level 10 later at the correct moment
 step
     #completewith RestockingTheLardersA
     #hidewindow
@@ -3387,10 +3386,6 @@ step << Alliance Shaman/Alliance Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falfaan Halfwind::271465|r inside the house.
     >>|cRXP_BUY_Buy and equip a|r |T7798447:0|t[Zephrali Greatstaff].
     .collect 277109,1 --Zephrali Greatstaff
-    .vendor 271465 >>Vendor trash and repair if needed.
-    *Don't sell |T133970:0|t[Stringy Meat], |T132832:0|t[Small Eggs], or |T133972:0|t[Strider Meat]. << Alliance
-    *Don't sell |T132832:0|t[Small Eggs] and |T133972:0|t[Strider Meat]. << Horde
-    *|cRXP_WARN_We need them for Cooking later|r.
     .skipgossipid 141556
     .target Falfaan Halfwind::271465
 step << Alliance Shaman/Alliance Druid
@@ -3439,7 +3434,7 @@ step << Alliance Rogue
 --     *|cRXP_WARN_We need them for Cooking later|r.
 --     .skipgossipid 141556
 --     .target Falfaan Halfwind::271465
-step << Alliance
+step
     .goto 2521,60.6,73.16,10,0
     .goto 2521,60.640,72.664
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nyalah Brightfire::257006|r.
@@ -3496,7 +3491,7 @@ step
     .subzoneskip 16638,1 -- Valanaar
     .isQuestAvailable 93948 -- Deliver the Signet
     .goto 2521,63.33,73.65,15,0
-    .goto 2521,63.973,75.095,25 >>Go over the mountain
+    .goto 2521,63.973,75.095,25 >>Go over the hill
     *|cRXP_WARN_Ignore the Leyline; we'll deathskip shortly|r << Alliance
 step
     .goto 2521,63.973,75.095
@@ -4984,6 +4979,7 @@ step << Alliance !Mage/Alliance !Hunter
 step << Horde Druid
     .isOnQuest 94006 -- The Great Ursera Spirit
     .subzoneskip 16638,1 -- Valanaar
+    .goto 2521,65.378,74.886,20,0
     .goto 2521,65.424,71.472,35,0
     .goto 2521,65.905,68.024
     .subzone 16626 >>Follow the way out of Valanaar
@@ -5000,6 +4996,11 @@ step << Horde Druid
     .turnin 94006 >>Turn in The Great Ursera Spirit
     .accept 94638 >>Accept Strength and Mercy
     .target Urs'endris::255853
+step << Horde Druid
+    .isOnQuest 94638 -- Strength and Mercy
+    .cooldown spell,1259686,>0,1 -- Skysight
+    .goto 2521,46.597,38.121
+    .cast 1259686 >>Use |T1029587:0|t[Skysight] for the 10% movement speed buff.
 -- step << Horde !Druid
 --      -- Not sure yet if I want to do this. This saves "only" ~15 seconds
 --     .isQuestAvailable 98512
@@ -5010,88 +5011,18 @@ step << Horde Druid
 --     .goto 2521,62.384,64.393
 --     .deathskip >>|cRXP_WARN_(BETA: Resurrection Sickness is bugged. Skip this step for now.)|r Die and respawn at the |cRXP_FRIENDLY_Spirit Healer::6491|r.
 step << Horde Druid
+    #completewith next
+    .goto 2521,59.59,66.7,30,0
+    >>Kill |cRXP_ENEMY_Windsong Crawlers::254588|r. Loot them for |T133972:0|t[|cRXP_LOOT_Windsong Crawler Meat|r].
+    .complete 93317,1 --6/6 Windsong Crawler Meat
+step << Horde
+    .goto 2521,59.528,66.902,30,0
     .goto 2521,56.81,61.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fendaal Windstone::273017|r.
     *|cRXP_WARN_If a Tornado is nearby, touch it to gain 40% increased movement speed for 5 minutes. Dealing damage removes the effect|r.
     .accept 98512 >>Accept Al'Aketh Assassins
     .target Fendaal Windstone::273017
-step << Horde Druid
-    #loop
-    .goto 2521,55.27,59.58,35,0
-    .goto 2521,54.58,60.52,35,0
-    .goto 2521,55.93,60.3,35,0
-    .goto 2521,56.04,59.08,35,0
-    >>Kill |cRXP_ENEMY_Al'Aketh Assassins::254626|r.
-    .complete 98512,1 --10/10 Al'Aketh Assassin slain
-    .mob Al'Aketh Assassin::254626
-step << Horde Druid
-    .goto 2521,56.80,61.10
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fendaal Windstone::273017|r.
-    .turnin 98512 >>Turn in Al'Aketh Assassins
-    .target Fendaal Windstone::273017
-step << Horde Druid
-    .goto 2521,56.80,61.10,25,0
-    .goto 2521,54.284,65.803
-    >>Kill |cRXP_ENEMY_Ur'endra::258443|r inside the cave.
-    .complete 94638,1 --|1/1 Ur'endra slain
-    .mob Ur'endra::258443
-step << Horde Druid
-    .isOnQuest 94638 -- Strength and Mercy
-    .cooldown spell,1259416,>0,1 -- Walk on Air
-    .goto 2521,56.830,63.121,15,0
-    .goto 2521,57.299,63.465,15,0
-    .goto 2521,60.250,62.742,20,0
-    .goto 2521,69.803,61.660
-    .cast 1259416 >>Jump off the |cRXP_WARN_lower (not the one you're on)|r mountain and use |T132845:0|t[Walk on Air] to fly towards the questgiver.
-    .usespell 1259416
-step << Horde Druid
-    .goto 2521,69.803,61.660
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Urs'endris::255853|r.
-    .target Urs'endris::255853
-    .turnin 94638 >>Turn in Strength and Mercy
-
--- ============================================================================
--- Horde Crabs
--- ============================================================================
-
--- step << Horde Druid
---     #completewith next
---     #label CrawlerMeatDruidA
---     .goto 2521,59.59,66.7,30,0
---     >>Kill |cRXP_ENEMY_Windsong Crawlers::254588|r. Loot them for |T133972:0|t[|cRXP_LOOT_Windsong Crawler Meat|r].
---     .complete 93317,1 --6/6 Windsong Crawler Meat
--- step << Horde Druid
---     #completewith CrawlerMeatDruidA
---     .goto 2521,57.25,60.92,50 >>Go around the mountains
--- step << Horde
---     #requires CrawlerMeatDruidA << Druid
---     #loop
---     .goto 2521,53.56,59.17,35,0
---     .goto 2521,52.91,58.56,35,0
---     .goto 2521,52.08,59.23,35,0
---     .goto 2521,52.49,57.3,35,0
---     .goto 2521,53.55,55.55,35,0
---     .goto 2521,54.3,57.94,35,0
---     >>Kill |cRXP_ENEMY_Windsong Crawlers::254588|r. Loot them for |T133972:0|t[|cRXP_LOOT_Windsong Crawler Meat|r].
---     .complete 93317,1 --6/6 Windsong Crawler Meat
---     .mob Windsong Crawler::254588
-
--- ============================================================================
--- Horde Bad Quest
--- ============================================================================
-
--- step << Horde
---     .isQuestAvailable 93159 -- The Strange Hermit
---     .goto 2521,52.790,57.628
---     .cast 1259686 >>Use |T1029587:0|t[Skysight] for the 10% movement speed buff.
---     .cooldown spell,1259686,>0,1
-step << Horde !Druid
-    .goto 2521,56.81,61.11
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fendaal Windstone::273017|r.
-    *|cRXP_WARN_If a Tornado is nearby, touch it to gain 40% increased movement speed for 5 minutes. Dealing damage removes the effect|r.
-    .accept 98512 >>Accept Al'Aketh Assassins
-    .target Fendaal Windstone::273017
-step << Horde !Druid
+step << Horde
     #loop
     .goto 2521,55.27,59.58,35,0
     .goto 2521,54.58,60.52,35,0
@@ -5105,10 +5036,23 @@ step << Horde !Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fendaal Windstone::273017|r.
     .turnin 98512 >>Turn in Al'Aketh Assassins
     .target Fendaal Windstone::273017
-step << Horde Druid
-    #comletewith next
-    #hidewindow
-    .goto 2521,56.80,61.10,25 >>1
+step << Horde
+    #loop
+    .goto 2521,53.56,59.17,35,0
+    .goto 2521,52.91,58.56,35,0
+    .goto 2521,52.08,59.23,35,0
+    .goto 2521,52.49,57.3,35,0
+    .goto 2521,53.55,55.55,35,0
+    .goto 2521,54.3,57.94,35,0
+    >>Kill |cRXP_ENEMY_Windsong Crawlers::254588|r. Loot them for |T133972:0|t[|cRXP_LOOT_Windsong Crawler Meat|r].
+    *|cRXP_WARN_NOTE:|r This quest is |cRXP_WARN_OPTIONAL|r. Skip this step if the crabs are too contested.
+    .complete 93317,1 --6/6 Windsong Crawler Meat
+step << Horde
+    .subzoneskip 16625,1 -- Windsong Lake
+    .isQuestAvailable 93159 -- The Strange Hermit
+    .goto 2521,52.790,57.628
+    .cast 1259686 >>Use |T1029587:0|t[Skysight] for the 10% movement speed buff.
+    .cooldown spell,1259686,>0,1
 step << Horde
     --@THIDDI: Not sure if worth it.
     #loop
@@ -5123,6 +5067,32 @@ step << Horde
     .goto 2521,50.642,44.296,35,0
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Construct Parts|r.
     .complete 93737,3 --|1/1 Obtain Enchanted Gyrozephyr from Windsong Lake
+    .mob Windsong Crawler::254588
+step << Horde Druid
+    .goto 2521,56.80,61.10,25,0
+    .goto 2521,54.284,65.803
+    >>Kill |cRXP_ENEMY_Ur'endra::258443|r inside the cave.
+    .complete 94638,1 --|1/1 Ur'endra slain
+    .mob Ur'endra::258443
+step << Horde Druid
+    .goto 2521,56.80,61.10
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fendaal Windstone::273017|r.
+    .turnin 98512 >>Turn in Al'Aketh Assassins
+    .target Fendaal Windstone::273017
+step << Horde Druid
+    .isOnQuest 94638 -- Strength and Mercy
+    .cooldown spell,1259416,>0,1 -- Walk on Air
+    .goto 2521,56.830,63.121,15,0
+    .goto 2521,57.299,63.465,15,0
+    .goto 2521,60.250,62.742,20,0
+    .goto 2521,69.803,61.660
+    .cast 1259416 >>Jump off the |cRXP_WARN_lower (not the one you're on)|r mountain and use |T132845:0|t[Walk on Air] to fly towards the questgiver.
+    .usespell 1259416
+step << Horde Druid
+    .goto 2521,69.803,61.660
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Urs'endris::255853|r.
+    .target Urs'endris::255853
+    .turnin 94638 >>Turn in Strength and Mercy
 
 -- ============================================================================
 -- Alliance: Branch
@@ -5806,6 +5776,9 @@ step << Alliance
     #completewith next
     .goto 2521,58.81,46.74,30,0 << Alliance
     .goto 2521,58.81,43.57,40 >>Cross the bridge.
+step << Horde Druid
+    #completewith next
+    .goto 2521,56.80,61.10,25 >>Go around the mountain.
 step
     #label Learn
     .goto 2521,53.95,38.90
