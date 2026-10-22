@@ -4688,7 +4688,7 @@ step << Warlock/Mage/Rogue/Priest/Warrior/Paladin
     .target Woo Ping
 step
     .isOnQuest 6261
-    .goto 1453/0,489.99,-8835.76
+    .goto 1453/0,484.200,-8832.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r
     .turnin 6261 >> Turn in Dungar Longdrink
     .target Dungar Longdrink

@@ -238,7 +238,7 @@ step << NightElf
 --     .collect 255010,5,92909,1 -- Harvester Gyrostabilizer (5)
 --     .target Auctioneer Jaxon
 -- step
---     .goto 1453/0,490.03,-8835.82
+--     .goto 1453/0,484.200,-8832.500
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r
 --     .fp Stormwind >> Get the Stormwind Flight Path
 --     .target Dungar Longdrink
@@ -700,14 +700,14 @@ step
     .target Auctioneer Jaxon
 
 step << Human
-    .goto 1453/0,489.99,-8835.76
+    .goto 1453/0,484.200,-8832.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r
     .turnin 6261 >> Turn in Dungar Longdrink
     .accept 6285 >> Accept Return to Lewis
     .target Dungar Longdrink
 
 step << !Skyborne
-    .goto 1453/0,490.03,-8835.82
+    .goto 1453/0,484.200,-8832.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r
     .fly Westfall >> Fly to Westfall << !NightElf
     .fp Stormwind >> Get the Stormwind Flight Path << NightElf
@@ -2992,7 +2992,7 @@ step
 step
     #completewith TDB1
     #label FlyWestfall
-    .goto 1453/0,490.03,-8835.82
+    .goto 1453/0,484.200,-8832.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r
     >>|cRXP_WARN_If you do not already have the Westfall flight path, skip this step|r << !Human !Gnome !Dwarf
     .fly Westfall >> Fly to Westfall
@@ -3010,7 +3010,7 @@ step
     .accept 65 >> Accept The Defias Brotherhood
 step
     #completewith RRDB
-    .goto 1453/0,490.03,-8835.82,-1
+    .goto 1453/0,484.200,-8832.500,-1
     .goto 1436/0,1037.42,-10628.27,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r or |cRXP_FRIENDLY_Thor|r
     >>|cRXP_WARN_If you do not already have the Redridge Mountains flight path, skip this step|r << !Human !Gnome !Dwarf
@@ -3145,7 +3145,7 @@ step
 step
     #completewith EnterDM
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r
-    .goto 1453/0,490.03,-8835.82
+    .goto 1453/0,484.200,-8832.500
     .fly Westfall >> Fly to Westfall
     .target Dungar Longdrink
 step
@@ -3508,7 +3508,7 @@ step << Rogue
 step << Rogue
     #completewith RoguePoison
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r
-    .goto 1453/0,490.03,-8835.82
+    .goto 1453/0,484.200,-8832.500
     .fly Westfall >> Fly to Westfall
     .target Dungar Longdrink
 step << !Dwarf Rogue

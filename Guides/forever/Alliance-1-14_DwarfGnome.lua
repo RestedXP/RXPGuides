@@ -2808,7 +2808,7 @@ step << Warlock
     #completewith next
     +|cRXP_WARN_Cast|r |T136126:0|t[Life Tap] |cRXP_WARN_repeatedly until you have <10% health while on the way to|r |cRXP_FRIENDLY_Dungar Longdrink|r
 step
-    .goto 1453/0,490.03,-8835.82
+    .goto 1453/0,484.200,-8832.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r
     .fp Stormwind >> Get the Stormwind City flight path
     .target Dungar Longdrink
