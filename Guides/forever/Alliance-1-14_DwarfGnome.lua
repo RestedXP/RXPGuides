@@ -157,6 +157,11 @@ step
     .target Sten Stoutarm
 
 step << Warlock
+    .goto 1426,25.077,75.711
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grelin Whitebeard|r
+    .accept 182 >> Accept The Troll Cave
+    .target Grelin Whitebeard
+step << Warlock
     #season 0,1
     #optional
     #requires FrostmaneC1
@@ -282,7 +287,7 @@ step
     .goto 1426,25.077,75.711
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grelin Whitebeard|r
     .turnin 234 >> Turn in Coldridge Valley Mail Delivery
-    .accept 182 >> Accept The Troll Cave
+    .accept 182 >> Accept The Troll Cave << !Warlock
     .target Grelin Whitebeard
 step << Hunter
     #completewith next
