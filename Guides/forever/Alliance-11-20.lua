@@ -4401,6 +4401,7 @@ step
     .mob Moonstalker Sire
     .mob Moonstalker Matriarch
     .mob Moonstalker Runt
+    .isOnQuest 986
 step << Warrior/Paladin/Rogue/Shaman
     #requires foreststriders
     .goto 1439,56.654,13.484
@@ -4543,9 +4544,17 @@ step << !NightElf
     .turnin 2139 >> Turn in Tharnariun's Hope
     .target Tharnariun Treetender
 step << !NightElf
+    .isQuestComplete 986
     .goto 1439,39.373,43.483
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Terenthis|r
     .turnin 986 >> Turn in A Lost Master
+    .accept 993 >> Accept A Lost Master
+    .target Terenthis
+step << !NightElf
+    #optional
+    .isQuestTurnedIn 986
+    .goto 1439,39.373,43.483
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Terenthis|r
     .accept 993 >> Accept A Lost Master
     .target Terenthis
 step << !NightElf
@@ -4714,10 +4723,17 @@ step << NightElf
     .turnin 2139 >> Turn in Tharnariun's Hope
     .target Tharnariun Treetender
 step << NightElf
-    #label LostMasters
+    .isQuestComplete 986
     .goto 1439,39.373,43.483
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Terenthis|r
     .turnin 986 >> Turn in A Lost Master
+    .accept 993 >> Accept A Lost Master
+    .target Terenthis
+step << NightElf
+    #label LostMasters
+    .isQuestTurnedIn 986
+    .goto 1439,39.373,43.483
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Terenthis|r
     .accept 993 >> Accept A Lost Master
     .target Terenthis
 
@@ -7014,11 +7030,18 @@ step
     .goto 1439/1,-5.83,4608.57,30 >> Travel toward |cRXP_FRIENDLY_Volcor|r in the Cave
     .isOnQuest 993
 step
+    .isOnQuest 993
     .goto 1439/1,-5.83,4608.570
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Volcor|r
     .turnin 993 >> Turn in A Lost Master
     .accept 995 >> Accept Escape Through Stealth
     .timer 20,Escape Through Stealth RP
+    .target Volcor
+step
+    .isQuestTurnedIn 993
+    .goto 1439/1,-5.83,4608.570
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Volcor|r
+    .accept 995 >> Accept Escape Through Stealth
     .target Volcor
 step
     #label volcorEnd
