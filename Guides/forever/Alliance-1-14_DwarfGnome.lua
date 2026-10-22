@@ -209,6 +209,7 @@ step << Warlock
     #label BeginningsHS
     #completewith BeginningsEnd
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
+    >>|cRXP_WARN_Ensure your subzone is Coldridge Valley when you die! Otherwise you will be sent to the Kharanos graveyard|r
     .target Spirit Healer
 step << Warlock
     #season 0,1
