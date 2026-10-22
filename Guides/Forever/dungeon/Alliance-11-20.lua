@@ -709,8 +709,8 @@ step << Human
 step << !Skyborne
     .goto 1453/0,484.200,-8832.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r
-    .fly Westfall >> Fly to Westfall << !NightElf
-    .fp Stormwind >> Get the Stormwind Flight Path << NightElf
+    .fly Westfall >> Fly to Westfall << !NightElf !Dwarf/!Hunter
+    .fp Stormwind >> Get the Stormwind Flight Path << NightElf/Dwarf Hunter
     .target Dungar Longdrink
 step
     #completewith SaldeanVendor
