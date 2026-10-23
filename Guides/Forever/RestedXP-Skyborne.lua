@@ -709,7 +709,7 @@ step
     .goto 2521,42.76,24.5
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uualia Suncrest::251537|r
     .collect 277113,1 >>Buy an |T133637:0|t[Apprentice's Herb Pouch]
-    .macro Buy Herbalism Supplies,133637 >>/run local t={[277113]=1};local m=C_MerchantFrame;for i=1,(m.GetNumItems or GetMerchantNumItems)()do local k=tonumber(((m.GetItemLink or GetMerchantItemLink)(i)or""):match("item:(%d+)"));if t[k]then BuyMerchantItem(i,t[k]);t[k]=nil end end
+    -- .macro Buy Herbalism Supplies,133637 >>/run local t={[277113]=1};local m=C_MerchantFrame;for i=1,(m.GetNumItems or GetMerchantNumItems)()do local k=tonumber(((m.GetItemLink or GetMerchantItemLink)(i)or""):match("item:(%d+)"));if t[k]then BuyMerchantItem(i,t[k]);t[k]=nil end end
     .target Uualia Suncrest::251537
 step
     #completewith Aggressive Encroachment
@@ -718,7 +718,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uualia Suncrest::251537|r
     .collect 2901,1 >>Buy a |T134708:0|t[Mining Pick]
     .collect 277115,1 >>Buy an |T133635:0|t[Apprentice's Mining Pack]
-    .macro Buy Mining Supplies,134708 >>/run local t={[2901]=1,[277115]=1};local m=C_MerchantFrame;for i=1,(m.GetNumItems or GetMerchantNumItems)()do local k=tonumber(((m.GetItemLink or GetMerchantItemLink)(i)or""):match("item:(%d+)"));if t[k]then BuyMerchantItem(i,t[k]);t[k]=nil end end
+    -- .macro Buy Mining Supplies,134708 >>/run local t={[2901]=1,[277115]=1};local m=C_MerchantFrame;for i=1,(m.GetNumItems or GetMerchantNumItems)()do local k=tonumber(((m.GetItemLink or GetMerchantItemLink)(i)or""):match("item:(%d+)"));if t[k]then BuyMerchantItem(i,t[k]);t[k]=nil end end
     .target Uualia Suncrest::251537
 step
     #completewith Aggressive Encroachment
@@ -979,6 +979,8 @@ step
     #hidewindow
     +Possible Tornado Spawn Location
     #icon |TInterface/Icons/Spell_Nature_Cyclone:0|t
+    .pin 2521,48.14,56.56,Tornado
+    .pin 2521,54.92,44.76,Tornado
     .pin 2521,39.6,45.11,Tornado
     .pin 2521,58.55,52.75,Tornado
     .pin 2521,47.74,69.57,Tornado
@@ -3229,7 +3231,9 @@ step
     #hidewindow
     +Possible Tornado Spawn Location
     #icon |TInterface/Icons/Spell_Nature_Cyclone:0|t
+    .pin 2521,48.14,56.56,Tornado
     .pin 2521,39.6,45.11,Tornado
+    .pin 2521,54.92,44.76,Tornado
     .pin 2521,58.55,52.75,Tornado
     .pin 2521,47.74,69.57,Tornado
     .pin 2521,50.22,76.77,Tornado
@@ -3929,10 +3933,11 @@ step
 step
     -- #label RipBanditsA
     --fix loop later
-    #loop
-    .goto 2521,46.92,81.63,30,0
-    .goto 2521,48.08,80.63,30,0
-    .goto 2521,47.43,79.26,30,0
+    -- #loop
+    -- .goto 2521,46.92,81.63,30,0
+    -- .goto 2521,48.08,80.63,30,0
+    -- .goto 2521,47.43,79.26,30,0
+    .goto 2521,46.26,78.04
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Ripe Stormapples|r.
     >>Kill |cRXP_ENEMY_Hungry Bandits::252802|r |cRXP_WARN_(stealthed)|r.
     *Hunter tips: Spam tab to target them early, use Hunter's Mark on them so you can run away and hit them from farther away. << Hunter
