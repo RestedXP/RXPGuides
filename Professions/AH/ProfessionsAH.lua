@@ -86,7 +86,7 @@ addon.professions.AH.session = {
 
 --Setup
 function addon.professions.AH:Setup()
-    if addon.game ~= "CLASSIC" and addon.game ~= "TBC" and addon.game ~= "MOP" and addon.game ~= "FOREVER" then return end
+    if addon.game ~= "CLASSIC" and addon.game ~= "TBC" and addon.game ~= "FOREVER" then return end
     if self.session.isInitialized then return end
 
     --Set the flag to check the players inventory for lingering items
@@ -113,9 +113,6 @@ function addon.professions.AH.session:Reset()
     self.sentQuery = false
     self.isScanning = false
 end
-
--- Local renaming
-local session = addon.professions.AH.session
 
 
 --Local functions
@@ -252,7 +249,6 @@ end
 
 --Classic events
 function addon.professions.AH:GET_ITEM_INFO_RECEIVED(_, itemID, success)
-    --print("GET_ITEM_INFO_RECEIVED")
 end
 
 function addon.professions.AH:AUCTION_ITEM_LIST_UPDATE()
@@ -308,7 +304,6 @@ function addon.professions.AH:ITEM_SEARCH_RESULTS_UPDATED(_, itemKey, _)
             totalCount = totalCount + count
         end
 	end
-    print(GetItemNameByID(itemKey.itemID), totalCount, "item")
 
     self.session.sentQuery = false
     self.session.materialIndex = self.session.materialIndex + 1
@@ -333,7 +328,6 @@ function addon.professions.AH:COMMODITY_SEARCH_RESULTS_UPDATED(_, itemID)
             totalCount = totalCount + count
         end
 	end
-    print(GetItemNameByID(itemID), totalCount, "com")
 
     self.session.sentQuery = false
     self.session.materialIndex = self.session.materialIndex + 1
