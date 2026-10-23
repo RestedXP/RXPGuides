@@ -73,6 +73,7 @@ local IsCurrentSpell = C_Spell and C_Spell.IsCurrentSpell or _G.IsCurrentSpell
 local IsSpellKnown = C_Spell and C_Spell.IsSpellKnown or _G.IsSpellKnown
 local IsPlayerSpell = C_Spell and C_Spell.IsPlayerSpell or _G.IsPlayerSpell
 local NewTicker = C_Timer.NewTicker
+local GetMoney = _G.GetMoney
 local messageList = {}
 
 local function MessageHandler(message,...)
@@ -1499,6 +1500,10 @@ function addon:OnInitialize()
     RXPData.maxLoadTime = RXPData.maxLoadTime or 4000
     RXPCData = RXPCData or {}
     RXPCData.exploredZones = RXPCData.exploredZones or {}
+    RXPCData.craftedItems = RXPCData.craftedItems or {}
+    RXPCData.professions = RXPCData.professions or {}
+    RXPCData.money = 0
+
 
     local realm = _G.GetRealmName()
     RXPData.realmData = RXPData.realmData or {}
@@ -1748,9 +1753,12 @@ function addon:OnEnable()
     RXPData.release = addon.release
     RXPData.cacheVersion = cacheVersion
 
+    RXPCData.money = GetMoney()
+
     C_Timer.After(0.2, function()
         if addon.VendorTreasures then addon.VendorTreasures:Setup() end
         if addon.itemUpgrades then addon.itemUpgrades:Setup() end
+        if addon.professions then addon.professions:Setup() end
     end)
 
     if addon.player.level == 1 then
