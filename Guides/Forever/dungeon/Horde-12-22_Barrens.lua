@@ -2441,9 +2441,28 @@ step
     .goto 1458/0,244.51,1598.73,15,0
     .goto 1458/0,266.300,1567.200,20 >>Take the lift down to the Undercity
 step
+    .goto 1458/0,241.700,1633.200
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tawny Grisette::4554|r
+    >>|cRXP_WARN_She patrols around in the Trade Quarter|r
+    >>|cRXP_BUY_Buy a|r |T134522:0|t[|cRXP_LOOT_Toxic Skullcap|r]
+    .collect 281246,1,97291,1 --Toxic Skullcap (1)
+    .target Tawny Grisette::4554
+step
+    .isOnQuest 95204
+    .goto 1458/0,172.100,1667.800
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Oran Snakewrithe::7825|r
+    .turnin 95204 >>Turn in Crest of Lordaeron
+    .target Oran Snakewrithe::7825
+step
+    .goto 1458/0,151.500,1550.200
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ezekiel Graves::4585|r
+    >>|cRXP_BUY_Buy an|r |T134799:0|t[|cRXP_LOOT_Essence of Agony|r]
+    .collect 8923,1,97291,1 --Essence of Agony (1)
+    .target Ezekiel Graves::4585
+step
     .isQuestComplete 95216
-    .goto 1458/0,344.000,1423.800,50,0
-    .goto 1458/0,373.200,1362.100,50,0
+    .goto 1458/0,344.000,1423.800,15,0
+    .goto 1458/0,373.200,1362.100,15,0
     .goto 1458/0,428.400,1417.700
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Theodore Griffs::11835|r
     .turnin 95216 >>Turn in The New Plague
@@ -2453,8 +2472,10 @@ step
     .goto 1458/0,404.800,1434.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Apothecary Faranell::2055|r
     .turnin 97288 >>Turn in Unending Torment
+    .accept 97289 >>Accept Unending Torment
     .target Master Apothecary Faranell::2055
 step
+    #optional
     .isQuestTurnedIn 97288
     .goto 1458/0,404.800,1434.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Apothecary Faranell::2055|r
@@ -2465,8 +2486,10 @@ step
     .goto 1458/0,433.300,1482.600
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Unfinished Abomination::271613|r
     .turnin 97289 >>Turn in Unending Torment
+    .accept 97290 >>Accept Unending Torment
     .target Unfinished Abomination::271613
 step
+    #optional
     .isQuestTurnedIn 97289
     .goto 1458/0,433.300,1482.600
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Unfinished Abomination::271613|r
@@ -2477,60 +2500,34 @@ step
     .goto 1458/0,404.800,1434.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Apothecary Faranell::2055|r
     .turnin 97290 >>Turn in Unending Torment
+    .accept 97291 >>Accept Unending Torment
     .target Master Apothecary Faranell::2055
 step
+    #optional
     .isQuestTurnedIn 97290
     .goto 1458/0,404.800,1434.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Apothecary Faranell::2055|r
     .accept 97291 >>Accept Unending Torment
     .target Master Apothecary Faranell::2055
 step
-    .isQuestComplete 92421
-    .goto 1458/0,344.000,1423.800,50,0
-    .goto 1458/0,373.200,1362.100,50,0
-    .goto 1458/0,371.600,1465.600,50,0
-    .goto 1458/0,437.100,1399.300,50,0
-    .goto 1458/0,430.600,1342.100,50,0
-    .goto 1458/0,397.500,1311.400,50,0
-    .goto 1458/0,315.800,1304.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Morbin Lightbane::266484|r
-    .turnin 92421 >>Turn in Light's Justice
-    *Choose |T133483:0|t[|cRXP_LOOT_The Stitcher|r] for a main-hand upgrade. Train Maces if needed << Rogue
-    .target Morbin Lightbane::266484
+    .goto 1458/0,357.62,1529.15
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bel'dugur|r
+    .accept 1013 >>Accept The Book of Ur
+    .target Keeper Bel'dugur
 step
-    .isOnQuest 97291
     .goto 1458/0,356.700,1563.500
-    >>|cRXP_WARN_Loot a|r |T134181:0|t[|cRXP_LOOT_Blisterweed|r] |cRXP_WARN_from the pot behind|r |cRXP_FRIENDLY_Katrina Alliestar::4615|r
-    .complete 97291,2 --Blisterweed (1)
+    >>|cRXP_WARN_Loot a|r |T134181:0|t[|cRXP_LOOT_Blisterweed|r] |cRXP_WARN_from the pot behind|r |cRXP_FRIENDLY_Martha Alliestar|r
+    .collect 281300,1,97291,1 --Blisterweed (1)
+    .target Martha Alliestar
 step
     .isOnQuest 97291
-    .goto 1458/0,151.500,1550.200
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ezekiel Graves::4585|r
-    >>|cRXP_BUY_Buy an|r |T134799:0|t[|cRXP_LOOT_Essence of Agony|r]
-    .complete 97291,3 --Essence of Agony (1)
-    .target Ezekiel Graves::4585
-step
-    .isOnQuest 95204
-    .goto 1458/0,172.100,1667.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Oran Snakewrithe::7825|r
-    .turnin 95204 >>Turn in Crest of Lordaeron
-    .target Oran Snakewrithe::7825
-step
-    .isOnQuest 97291
-    .goto 1458/0,241.700,1633.200
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tawny Grisette::4554|r
-    >>|cRXP_BUY_Buy a|r |T134522:0|t[|cRXP_LOOT_Toxic Skullcap|r]
-    .complete 97291,1 --Toxic Skullcap (1)
-    .target Tawny Grisette::4554
-step
-    .isOnQuest 97291
-    .goto 1458/0,344.000,1423.800,50,0
-    .goto 1458/0,373.200,1362.100,50,0
     .goto 1458/0,404.800,1434.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Apothecary Faranell::2055|r
     .turnin 97291 >>Turn in Unending Torment
+    .accept 97292 >>Accept Unending Torment
     .target Master Apothecary Faranell::2055
 step
+    #optional
     .isQuestTurnedIn 97291
     .goto 1458/0,404.800,1434.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Apothecary Faranell::2055|r
@@ -2538,8 +2535,8 @@ step
     .target Master Apothecary Faranell::2055
 step
     .isOnQuest 97292
-    .goto 1458/0,442.700,1419.600,50,0
-    .goto 1458/0,458.900,1438.600,50,0
+    .goto 1458/0,444.300,1421.500,10,0
+    .goto 1458/0,455.400,1442.500,10,0
     .goto 1458/0,438.800,1468.700
     .use 281327 >>|cRXP_WARN_Use|r |T134837:0|t[|cRXP_LOOT_Hissing Serum|r] |cRXP_WARN_by the worm upstairs|r
     .complete 97292,1
@@ -2549,6 +2546,16 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Apothecary Faranell::2055|r
     .turnin 97292 >>Turn in Unending Torment
     .target Master Apothecary Faranell::2055
+step
+    .isQuestComplete 92421
+    .goto 1458/0,377.100,1461.700,15,0
+    .goto 1458/0,431.500,1407.800,10,0
+    .goto 1458/0,429.200,1340.400,10,0
+    .goto 1458/0,368.600,1305.000,10,0
+    .goto 1458/0,315.600,1304.800
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Morbin Lightbane::266484|r
+    .turnin 92421 >>Turn in Light's Justice
+    .target Morbin Lightbane::266484
 step << Rogue
     #completewith RuinsRogueTurnin
     #optional
@@ -3966,6 +3973,38 @@ step
     .bindlocation 1638
     .isQuestAvailable 6442
     .dungeon !WC
+step << Hunter
+    #completewith HunterTraining2
+    .goto 1456/1,-123.26,-1394.49,60 >> Travel to the Hunter Rise
+step << Hunter
+    .goto 1456/1,-100.50,-1454.75
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Urek|r
+    .train 5118 >> Train your class spells
+    .target Urek Thunderhorn
+    .xp <20,1
+    .xp >22,1
+step << Hunter
+    #label HunterTraining2
+    #optional
+    .goto 1456/1,-100.50,-1454.75
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Urek|r
+    .train 5118 >> Train your class spells
+    .target Urek Thunderhorn
+    .xp <22,1
+step << Hunter
+    .goto 1456/1,-47.69,-1434.64
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hesuwa|r
+    .train 24494 >> Train your pet spells
+    .target Hesuwa Thunderhorn
+step << Warrior
+    #completewith next
+    .goto 1456/1,-123.26,-1394.49,60 >> Travel to the Hunter Rise
+step << Warrior
+    .goto 1456/1,-81.09,-1457.74
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Torm|r
+    .train 845 >>Train your class spells
+    .accept 1823 >>Accept Speak with Ruga
+    .target Torm Ragetotem
 step
     #completewith next
     .goto 1456/1,222.96,-1079.42,40,0
@@ -4225,38 +4264,6 @@ step << Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Turak|r
     .turnin 98362 >>Turn in Thunder Bluff
     .target Turak Runetotem
-step << Hunter
-    #completewith HunterTraining2
-    .goto 1456/1,-123.26,-1394.49,60 >> Travel to the Hunter Rise
-step << Hunter
-    .goto 1456/1,-100.50,-1454.75
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Urek|r
-    .train 5118 >> Train your class spells
-    .target Urek Thunderhorn
-    .xp <20,1
-    .xp >22,1
-step << Hunter
-    #label HunterTraining2
-    #optional
-    .goto 1456/1,-100.50,-1454.75
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Urek|r
-    .train 5118 >> Train your class spells
-    .target Urek Thunderhorn
-    .xp <22,1
-step << Hunter
-    .goto 1456/1,-47.69,-1434.64
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hesuwa|r
-    .train 24494 >> Train your pet spells
-    .target Hesuwa Thunderhorn
-step << Warrior
-    #completewith next
-    .goto 1456/1,-123.26,-1394.49,60 >> Travel to the Hunter Rise
-step << Warrior
-    .goto 1456/1,-81.09,-1457.74
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Torm|r
-    .train 845 >>Train your class spells
-    .accept 1823 >>Accept Speak with Ruga
-    .target Torm Ragetotem
 step << Rogue
     .goto 1456/1,-36.52,-1244.05
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Kard|r|cRXP_BUY_. Buy a|r |T135324:0|t[Longsword] |cRXP_BUY_from him.|r
@@ -4585,8 +4592,8 @@ step
     #optional
     #completewith Ectoplasms
     >>Loot the |cRXP_PICK_Serpentbloom|r on the ground
-    >>|cRXP_WARN_It is recommended that maximum 3 players attempt to complete this quest if you're doing only 1 run. There aren't enough|r |cRXP_PICK_Serpentbloom|r |cRXP_WARN_for everybody|r
     >>|cRXP_WARN_Cast|r |T133939:0|t[Find Herbs] |cRXP_WARN_to see them on your minimap|r
+    >>|cRXP_WARN_Most |cRXP_PICK_Serpentbloom|r should have respawned after having killed the final boss!|r
     .complete 962,1 --Serpentbloom (10)
     .skill herbalism,<1,1
     .isOnQuest 962
@@ -4594,7 +4601,7 @@ step
     #optional
     #completewith Ectoplasms
     >>Loot the |cRXP_PICK_Serpentbloom|r on the ground
-    >>|cRXP_WARN_It is recommended that maximum 3 players attempt to complete this quest if you're doing only 1 run. There aren't enough|r |cRXP_PICK_Serpentbloom|r |cRXP_WARN_for everybody|r
+    >>|cRXP_WARN_Most |cRXP_PICK_Serpentbloom|r should have respawned after having killed the final boss!|r
     .complete 962,1 --Serpentbloom (10)
     .skill herbalism,1,1
     .isOnQuest 962
@@ -5248,6 +5255,12 @@ step << Troll Warrior/Undead Warrior/Tauren Warrior/Undead Paladin
     .goto 1454/1,-4824.00,2090.540
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hanashi|r
     .train 197 >>Train Two-Handed Axes
+    .train 2567 >> Train Thrown << !Paladin
+    .target Hanashi
+step << Orc Warrior
+    .goto 1454/1,-4824.00,2090.540
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hanashi|r
+    .train 2567 >> Train Thrown
     .target Hanashi
 step << Warrior
     .goto 1454/1,-4801.42,1980.53

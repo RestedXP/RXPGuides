@@ -7376,7 +7376,17 @@ step << Horde
     --.accept 93739 >>Accept Exploring the Horde
     --.accept 5726 >>Accept Hidden Enemies
     .target Thrall::4949
+    .dungeon !RFC
     --93739 will take too long, won't be able to fully complete and turnin until lvl 22/23 and at that point you get no xp
+step << Horde
+    .goto 1454/1,-4126.300,1920.100
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall::4949|r.
+    .turnin 95350 >>Turn in Welcome to Azeroth
+    .accept 98024 >>Accept Journey to the Crossroads
+    --.accept 93739 >>Accept Exploring the Horde
+    .accept 5726 >>Accept Hidden Enemies
+    .target Thrall::4949
+    .dungeon RFC
 step << skip --Horde
     .goto 1454/1,-4133.400,1938.600
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nazgrel::3230|r.
@@ -7436,9 +7446,6 @@ step << Horde Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pephredo::5882|r
     .train 1449 >> Train your class spells
     .target Pephredo::5882
-step << !Hunter
-    #optional
-    .maxlevel 13,Silverpineskip
 step << Horde
     #completewith next
     .zone Durotar >> Leave Orgrimmar
@@ -7551,7 +7558,4 @@ step << Horde !Hunter
     .zoneskip Silverpine Forest
     .goto 1420/0,629.36,1553.42
     .zone Silverpine Forest >> Travel to Silverpine Forest
-step << !Hunter
-    #optional
-    #label Silverpineskip
 ]])

@@ -3291,9 +3291,6 @@ RXPGuides.RegisterGuide([[
 #displayname 13-15 Silverpine Forest << Paladin
 #next 12-17 The Barrens
 
-step << Skyborne
-    #optional
-    .maxlevel 13,Silverpineskip
 step << Undead Rogue
     #sticky
     #completewith RotHideCluesTurnIn
@@ -3474,6 +3471,11 @@ step
     .target Apothecary Renferrel
     .addquestitem 3164,429
 step
+    #completewith next
+    >>Kill |cRXP_ENEMY_Bears|r. Loot them for their |cRXP_LOOT_Hearts|r
+    .complete 447,1 --Grizzled Bear Heart (6)
+    .mob Ferocious Grizzled Bear
+step
     #loop
     .goto 1421/0,1386.96,638.51,0
     .goto 1421/0,1336.56,568.51,50,0
@@ -3504,6 +3506,11 @@ step
     .goto 1421/0,1231.14,866.99
     >>Enter the house and go to the second floor. Loot the |cRXP_PICK_Dusty Spellbooks|r on the ground
     .complete 422,1 --Remedy of Arugal (1)
+step
+    #completewith next
+    >>Kill |cRXP_ENEMY_Bears|r. Loot them for their |cRXP_LOOT_Hearts|r
+    .complete 447,1 --Grizzled Bear Heart (6)
+    .mob Ferocious Grizzled Bear
 step
     #completewith next
     .goto 1421/0,1207.62,1293.71,80,0
@@ -4187,9 +4194,6 @@ step << Skyborne
     .use 6948
     .zoneskip Orgrimmar
     .bindlocation 1637,1
-step << Skyborne
-    #optional
-    #label Silverpineskip
 step << Undead
     #completewith HiddenEnemiesPickup
     .goto 1454/1,-4367.46,1405.44,50,0

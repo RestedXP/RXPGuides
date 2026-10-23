@@ -3739,6 +3739,38 @@ step
     .target Innkeeper Pala
     .bindlocation 1638
     .isQuestAvailable 6442
+step << Hunter
+    #completewith HunterTraining2
+    .goto 1456/1,-123.26,-1394.49,60 >> Travel to the Hunter Rise
+step << Hunter
+    .goto 1456/1,-100.50,-1454.75
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Urek|r
+    .train 5118 >> Train your class spells
+    .target Urek Thunderhorn
+    .xp <20,1
+    .xp >22,1
+step << Hunter
+    #label HunterTraining2
+    #optional
+    .goto 1456/1,-100.50,-1454.75
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Urek|r
+    .train 5118 >> Train your class spells
+    .target Urek Thunderhorn
+    .xp <22,1
+step << Hunter
+    .goto 1456/1,-47.69,-1434.64
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hesuwa|r
+    .train 24494 >> Train your pet spells
+    .target Hesuwa Thunderhorn
+step << Warrior
+    #completewith next
+    .goto 1456/1,-123.26,-1394.49,60 >> Travel to the Hunter Rise
+step << Warrior
+    .goto 1456/1,-81.09,-1457.74
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Torm|r
+    .train 845 >>Train your class spells
+    .accept 1823 >>Accept Speak with Ruga
+    .target Torm Ragetotem
 step
     #completewith next
     .goto 1456/1,222.96,-1079.42,40,0
@@ -3955,38 +3987,6 @@ step << Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Turak|r
     .turnin 98362 >>Turn in Thunder Bluff
     .target Turak Runetotem
-step << Hunter
-    #completewith HunterTraining2
-    .goto 1456/1,-123.26,-1394.49,60 >> Travel to the Hunter Rise
-step << Hunter
-    .goto 1456/1,-100.50,-1454.75
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Urek|r
-    .train 5118 >> Train your class spells
-    .target Urek Thunderhorn
-    .xp <20,1
-    .xp >22,1
-step << Hunter
-    #label HunterTraining2
-    #optional
-    .goto 1456/1,-100.50,-1454.75
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Urek|r
-    .train 5118 >> Train your class spells
-    .target Urek Thunderhorn
-    .xp <22,1
-step << Hunter
-    .goto 1456/1,-47.69,-1434.64
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hesuwa|r
-    .train 24494 >> Train your pet spells
-    .target Hesuwa Thunderhorn
-step << Warrior
-    #completewith next
-    .goto 1456/1,-123.26,-1394.49,60 >> Travel to the Hunter Rise
-step << Warrior
-    .goto 1456/1,-81.09,-1457.74
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Torm|r
-    .train 845 >>Train your class spells
-    .accept 1823 >>Accept Speak with Ruga
-    .target Torm Ragetotem
 step << Rogue
     .goto 1456/1,-36.52,-1244.05
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Kard|r|cRXP_BUY_. Buy a|r |T135324:0|t[Longsword] |cRXP_BUY_from him.|r
@@ -5104,6 +5104,12 @@ step << Troll Warrior/Undead Warrior/Tauren Warrior/Undead Paladin
     .goto 1454/1,-4824.00,2090.540
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hanashi|r
     .train 197 >>Train Two-Handed Axes
+    .train 2567 >> Train Thrown << !Paladin
+    .target Hanashi
+step << Orc Warrior
+    .goto 1454/1,-4824.00,2090.540
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hanashi|r
+    .train 2567 >> Train Thrown
     .target Hanashi
 step << Warrior
     .goto 1454/1,-4801.42,1980.53
