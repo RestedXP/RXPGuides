@@ -10,7 +10,7 @@ RXPGuides.RegisterGuide([[
 #name 1-6级 幽影谷
 #displayname 1-7级 幽影谷 << sod
 #version 1
-#group RestedXP Forever 指南 A
+#group RestedXP 永久向导 A
 #subgroup 速通指南 1-20级
 --#groupid RXP-SRGCE-A1
 #defaultfor NightElf
@@ -450,7 +450,7 @@ RXPGuides.RegisterGuide([[
 #name 6-11级 泰达希尔
 #displayname 7-13级 泰达希尔 << SoD
 #version 1
-#group RestedXP Forever 指南 A
+#group RestedXP 永久向导 A
 #subgroup 速通指南 1-20级
 --#groupid RXP-SRGCE-A1
 #defaultfor NightElf
@@ -2401,7 +2401,7 @@ step << Hunter
     .goto 1457/1,2511.04,10178.01
     .target 祖卡斯特
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_祖卡斯特|r 对话
-    .train 2974 >>训练 |T132309:0|t[|cRXP_LOOT_摔绊|r]
+    .train 2974 >>学习 |T132309:0|t[|cRXP_LOOT_摔绊|r]
     .xp <12,1
     .money <0.0600
 step

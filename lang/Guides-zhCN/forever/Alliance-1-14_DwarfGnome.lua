@@ -8,7 +8,7 @@ RXPGuides.RegisterGuide([[
 #season 0,1
 #version 1
 << Alliance
-#group RestedXP Forever 指南 A
+#group RestedXP 永久向导 A
 #subgroup 速通指南 1-20级
 --#groupid RXP-SRGCE-A1
 #name 1-5级 寒脊山谷
@@ -653,7 +653,7 @@ RXPGuides.RegisterGuide([[
 #season 0,1
 #version 1
 << Alliance
-#group RestedXP Forever 指南 A
+#group RestedXP 永久向导 A
 #subgroup 速通指南 1-20级
 --#groupid RXP-SRGCE-A1
 #name 5-11级 丹莫罗
@@ -1465,9 +1465,9 @@ step << Hunter
     .waypoint 1426,67.687,60.059,45,0
     .waypoint 1426,68.958,59.357,45,0
     .waypoint 1426,70.475,59.420,45,0
-    >>击杀矿山外的 |cRXP_ENEMY_Rockjaw Skullthumpers|r。拾取它们的 |T132621:0|t[|cRXP_LOOT_Empty Powder Keg|r]
+    >>击杀矿山外的 |cRXP_ENEMY_石腭击颅者|r。拾取它们的 |T132621:0|t[|cRXP_LOOT_空火药桶|r]
     .use 268548 >> |cRXP_WARN_使用|r |T132621:0|t[|cRXP_LOOT_空火药桶|r] |cRXP_WARN_来开启任务|r
-    >>|cRXP_WARN_注释：该物品掉率很低。如果你没有找到它，请跳过此步骤|r
+    >>|cRXP_WARN_注意：该物品掉率很低。如果打不出来，请跳过此步骤|r
     .complete 432,1 --Kill Rockjaw Skullthumper (x6)
     .collect 268548,1,95213,1 -- Empty Powder Keg (1)
     .disablecheckbox
@@ -1916,11 +1916,11 @@ step
     .target 工头乔尼·石眉 << !Hunter
 step
     #completewith RockjawBonesnappers
-    >>从 |cRXP_ENEMY_Rockjaw Skullthumpers|r 和 |cRXP_ENEMY_Rockjaw Bonesnappers|r 身上拾取 |T132621:0|t[|cRXP_LOOT_Empty Powder Keg|r]
-    .use 268548 >> |cRXP_WARN_使用|r |T132621:0|t[|cRXP_LOOT_Empty Powder Keg|r] |cRXP_WARN_来开启任务|r
-    >>|cRXP_WARN_注释：该物品掉率很低。如果你没有找到它，请跳过此步骤|r
+    >>从 |cRXP_ENEMY_石腭击颅者|r 和 |cRXP_ENEMY_石腭断骨者|r 身上拾取 |T132621:0|t[|cRXP_LOOT_空火药桶|r]
+    .use 268548 >> |cRXP_WARN_使用|r |T132621:0|t[|cRXP_LOOT_空火药桶|r] |cRXP_WARN_来开启任务|r
+    >>|cRXP_WARN_注意：该物品掉率很低。如果打不出来，请跳过此步骤|r
     .collect 268548,1,95213,1 -- Empty Powder Keg (1)
-    .accept 95213 >> 接受任务 Stolen Blasting Powder
+    .accept 95213 >> 接受任务 被偷走的炸药粉
 step
     #sticky
     #label Skullthumpers
@@ -1981,14 +1981,14 @@ step
     .goto 1426/0,-1606.02,-5676.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_矿场主管瑟斯丁|r 对话
     .turnin 95213 >> 交任务 被偷走的炸药粉
-    .accept 95214 >> 接受任务 Stolen Blasting Powder
+    .accept 95214 >> 接受任务 被偷走的炸药粉
     .target Quarrymaster Thesten
 step
     #optional
     .isQuestTurnedIn 95213
     .goto 1426/0,-1606.02,-5676.35
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Quarrymaster Thesten|r 对话
-    .accept 95214 >> 接受任务 Stolen Blasting Powder
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_矿场主管瑟斯丁|r 对话
+    .accept 95214 >> 接受任务 被偷走的炸药粉
     .target Quarrymaster Thesten
 step
     #optional
@@ -2031,10 +2031,10 @@ step
 step
     #completewith OII
     >>击杀 |cRXP_ENEMY_石腭伏击者|r。拾取它们的 |T132621:0|t[|cRXP_LOOT_空火药桶|r]
-    .use 268548 >> |cRXP_WARN_使用|r |T132621:0|t[|cRXP_LOOT_Empty Powder Keg|r] |cRXP_WARN_来开启任务|r
+    .use 268548 >> |cRXP_WARN_使用|r |T132621:0|t[|cRXP_LOOT_空火药桶|r] |cRXP_WARN_来开启任务|r
     >>|cRXP_WARN_注释：这个物品掉落率很低。如果你在完成了|r 黑铁间谍|cRXP_ENEMY_ 任务时还没有找到它，请跳过此步骤|r
     .collect 268548,1,95213,1 -- Empty Powder Keg (1)
-    .accept 95213 >> 接受任务 Stolen Blasting Powder
+    .accept 95213 >> 接受任务 被偷走的炸药粉
     .mob Rockjaw Ambusher
 step
     #label SpyMap
@@ -2055,14 +2055,14 @@ step
     .goto 1426/0,-1881.82,-5735.45,0
     .goto 1426/0,-1832.57,-5571.28,0
     .goto 1426/0,-1724.22,-5636.95,0
-    >>击杀 |cRXP_ENEMY_石颚 Ambushers|r，拾取他们的 |cRXP_LOOT_Stolen Blasting Powder|r
+    >>击杀 |cRXP_ENEMY_石腭伏击者|r。拾取它们的 |cRXP_LOOT_被偷走的炸药粉|r
     .complete 95214,1 -- Stolen Blasting Powder (16)
     .mob Rockjaw Ambusher
 step
     .isQuestComplete 95214
     .goto 1426/0,-1606.02,-5676.35
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Quarrymaster Thesten|r 对话
-    .turnin 95214 >> 交任务 Stolen Blasting Powder
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_矿场主管瑟斯丁|r 对话
+    .turnin 95214 >> 交任务 被偷走的炸药粉
     .target Quarrymaster Thesten
 step
     #label OII
@@ -2075,15 +2075,15 @@ step
 step
     .isOnQuest 95213
     .goto 1426/0,-1606.02,-5676.35
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Quarrymaster Thesten|r 对话
-    .turnin 95213 >> 交任务 Stolen Blasting Powder
-    .accept 95214 >> 接受任务 Stolen Blasting Powder
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_矿场主管瑟斯丁|r 对话
+    .turnin 95213 >> 交任务 被偷走的炸药粉
+    .accept 95214 >> 接受任务 被偷走的炸药粉
     .target Quarrymaster Thesten
 step
     .isQuestTurnedIn 95213
     .goto 1426/0,-1606.02,-5676.35
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Quarrymaster Thesten|r 对话
-    .accept 95214 >> 接受任务 Stolen Blasting Powder
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_矿场主管瑟斯丁|r 对话
+    .accept 95214 >> 接受任务 被偷走的炸药粉
     .target Quarrymaster Thesten
 step
     .isOnQuest 95214
@@ -2094,14 +2094,14 @@ step
     .goto 1426/0,-1881.82,-5735.45,0
     .goto 1426/0,-1832.57,-5571.28,0
     .goto 1426/0,-1724.22,-5636.95,0
-    >>击杀 |cRXP_ENEMY_石颚 Ambushers|r，拾取他们的 |cRXP_LOOT_Stolen Blasting Powder|r
+    >>击杀 |cRXP_ENEMY_石腭伏击者|r。拾取它们的 |cRXP_LOOT_被偷走的炸药粉|r
     .complete 95214,1 -- Stolen Blasting Powder (16)
     .mob Rockjaw Ambusher
 step
     .isQuestComplete 95214
     .goto 1426/0,-1606.02,-5676.35
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Quarrymaster Thesten|r 对话
-    .turnin 95214 >> 交任务 Stolen Blasting Powder
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_矿场主管瑟斯丁|r 对话
+    .turnin 95214 >> 交任务 被偷走的炸药粉
     .target Quarrymaster Thesten
 step
     #completewith next
@@ -2175,7 +2175,7 @@ step << !Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雅尼·铁心|r 对话
     >>|cRXP_BUY_从她那里|r|cRXP_BUY_购买一捆|r |T135435:0|t[普通木柴] |cRXP_BUY_和一块|r |T135237:0|t[燧石和火绒]
     >>|cRXP_BUY_需要的话也可以从她那里|r|cRXP_BUY_购买一个|r |T133634:0|t[棕色小包] << !Rogue
-    >>|cRXP_WARN_这个用来制作|r |T135805:0|t[Basic Campfires] |cRXP_WARN_在等待 Boats 的同时升级你的|r |T133971:0|t[烹饪] |cRXP_WARN_技能而不浪费时间|r
+    >>|cRXP_WARN_这个是用来|r在等船的时候制作 |cRXP_WARN_|T135805:0|t[基础营火]，以便在不浪费时间的情况下提升你的 |r|T133971:0|t[烹饪] |cRXP_WARN_技能|r
     >>|cRXP_WARN_你需要 50 点|r |T133971:0|t[烹饪] |cRXP_WARN_，以便之后在暮色森林完成一个任务|r
     .collect 4470,1 --Simple Wood (1)
     .collect 4471,1 --Flint and Tinder (1)
@@ -2561,7 +2561,7 @@ step << !Hunter
     .goto 1455/0,-1330.28,-4840.430
     .subzone 2257 >>进入矿道地铁
 step << !Hunter
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 在矿道地铁的中间平台上与 |cRXP_FRIENDLY_蒙提|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在矿道地铁的中间平台上与 |cRXP_FRIENDLY_蒙提|r 对话
     .accept 6661 >> 接受任务 捕捉矿道老鼠
     .target 蒙提
 step << !Hunter
@@ -2570,7 +2570,7 @@ step << !Hunter
     .use 17117
     .mob 矿道老鼠
 step << !Hunter
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 在矿道地铁的中间平台上与 |cRXP_FRIENDLY_蒙提|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在矿道地铁的中间平台上与 |cRXP_FRIENDLY_蒙提|r 对话
     .turnin 6661 >> 交任务 捕捉矿道老鼠
     .timer 11,捕捉矿道老鼠剧情表演
     .accept 6662 >> 接受任务 我的兄弟，尼普希
@@ -2787,7 +2787,7 @@ RXPGuides.RegisterGuide([[
 #disabledungeons
 #season 0,1
 << Alliance !Hunter
-#group RestedXP Forever 指南 A
+#group RestedXP 永久向导 A
 #subgroup 速通指南 1-20级
 --#groupid RXP-SRGCE-A1
 #name 11-12级 艾尔文森林 (矮人/侏儒)
@@ -2923,7 +2923,7 @@ step << skip
 step << skip
     .goto 1429/0,193.00,-9832.40,50,0
     .goto 1429/0,129.73,-9844.49
-    >>|cRXP_WARN_进入并探察法戈第矿洞|r
+    >>|cRXP_WARN_进入并且探察法戈第矿洞|r
     .complete 62,1 --Scout Through the Fargodeep Mine
 step << skip
     .goto 1429/0,129.73,-9844.49,25,0
@@ -3196,7 +3196,8 @@ step
     .fp Redridge Mountains >> 获取赤脊山的飞行路径
     .fly Stormwind >> 飞往暴风城
     .target 艾蕾娜·斯托姆法瑟
-step << skip
+step
+    .isOnQuest 61
     .goto 1453/0,625.48,-8857.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_摩根·匹斯特|r 对话
     .turnin 61,1 >> 交任务 送往暴风城的货物
@@ -3451,7 +3452,7 @@ RXPGuides.RegisterGuide([[
 #season 0,1
 #version 1
 << Alliance !Hunter
-#group RestedXP Forever 指南 A
+#group RestedXP 永久向导 A
 #subgroup 速通指南 1-20级
 --#groupid RXP-SRGCE-A1
 #name 12-14级 洛克莫丹 (矮人/侏儒)
@@ -3674,7 +3675,6 @@ step
     .subzoneskip 149 --Silver Stream Mine
 step
     .goto 1432/0,-3146.73,-4837.02
-    #arrowtext |cRXP_WARN_限时10分钟内交任务！|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_诺里克·洛克塞恩|r 对话
     >>|cRXP_WARN_确保在|T1387609:0|t[雪罐] 10分钟计时结束前交掉此任务|r
     .turnin 86667 >> 交任务 困于风雪
@@ -4453,7 +4453,7 @@ RXPGuides.RegisterGuide([[
 #era/som--h
 #version 1
 << Alliance Hunter
-#group RestedXP Forever 指南 A
+#group RestedXP 永久向导 A
 #subgroup 速通指南 1-20级
 --#groupid RXP-SRGCE-A1
 #name 11-13级 洛克莫丹 (猎人)
@@ -4747,7 +4747,6 @@ step
     .complete 86667,1 -- Jar of Snow 1/1
 step
     .goto 1432/0,-3146.73,-4837.02
-    #arrowtext |cRXP_WARN_限时10分钟内交任务！|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_诺里克·洛克塞恩|r 对话
     >>|cRXP_WARN_确保在|T1387609:0|t[雪罐] 10分钟计时结束前交掉此任务|r
     .turnin 86667 >> 交任务 困于风雪
@@ -4954,7 +4953,7 @@ step << Hunter skip
     #requires DockTravel
     #label DarkshoreCook1
     #completewith DarkshoreBoat
-    >>如果船只刚到就登船，如果船只刚走就在码头等：
+    >>|cRXP_WARN_在码头等待船只时:|r
     .cast 818 >>|cRXP_WARN_创建|r |T135805:0|t[基础营火] |cRXP_WARN_（在你的专业技能书中）|r
     .usespell 818
     .zoneskip Darkshore
@@ -4968,7 +4967,7 @@ step << Hunter skip
     #requires DarkshoreCook1
     #label DarkshoreCook2
     #completewith DarkshoreBoat
-    >>如果船只刚到就登船，如果船只刚走就在码头等：
+    >>|cRXP_WARN_在码头等待船只时:|r
     .cast 818 >>|cRXP_WARN_创建|r |T135805:0|t[基础营火] |cRXP_WARN_（在你的专业技能书中）|r
     .usespell 818
     .zoneskip Darkshore
@@ -4982,7 +4981,7 @@ step << Hunter skip
     #requires DarkshoreCook2
     #label DarkshoreCook3
     #completewith DarkshoreBoat
-    >>如果船只刚到就登船，如果船只刚走就在码头等：
+    >>|cRXP_WARN_在码头等待船只时:|r
     .cast 818 >>|cRXP_WARN_创建|r |T135805:0|t[基础营火] |cRXP_WARN_（在你的专业技能书中）|r
     .usespell 818
     .zoneskip Darkshore

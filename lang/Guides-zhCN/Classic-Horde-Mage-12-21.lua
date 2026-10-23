@@ -470,7 +470,7 @@ step
 >>与 |cRXP_FRIENDLY_图加·符文图腾|r 对话
     .turnin 870 >> 交任务  遗忘之池
 .target 图加·符文图腾
-    .accept 877 >> 接受任务 死水绿洲
+    .accept 877 >> 接受任务死水绿洲
 step
     .goto The Barrens,52.00,31.60
 .target 曼科里克

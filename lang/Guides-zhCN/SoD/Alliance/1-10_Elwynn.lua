@@ -1144,7 +1144,7 @@ step << Warrior/Paladin/Rogue
     #requires RoughStone1
     #label RoughStoneCraft1
     #completewith NecklaceStart
-    +|cRXP_WARN_把|r |T136241:0|t|cRXP_LOOT_[劣质的石头]|r |T135232:0|t[锻造]|cRXP_WARN_成|r |T135248:0|t[劣质磨刀石] << Warrior/Rogue
+    +|T136241:0|t[锻造]|cRXP_WARN_|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_制作为|r |T135248:0|t[劣质磨刀石] << Warrior/Rogue
     +|cRXP_WARN_将|r |T136241:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_与|r |T135232:0|t|cRXP_LOOT_[亚麻布]|r |T132889:0|t[锻造]|cRXP_WARN_成|r |T135255:0|t[劣质平衡石] << Paladin
     .collect 2862,5 << Rogue/Warrior --Rough Sharpening Stone (5)
     .disablecheckbox
@@ -1217,7 +1217,7 @@ step << Warrior/Paladin/Rogue
     #requires RoughStone2
     #label RoughStoneCraft2
     #completewith Lovers
-    +|cRXP_WARN_把|r |T136241:0|t|cRXP_LOOT_[劣质的石头]|r |T135232:0|t[锻造]|cRXP_WARN_成|r |T135248:0|t[劣质磨刀石] << Warrior/Rogue
+    +|T136241:0|t[锻造]|cRXP_WARN_|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_制作为|r |T135248:0|t[劣质磨刀石] << Warrior/Rogue
     +|cRXP_WARN_将|r |T136241:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_与|r |T135232:0|t|cRXP_LOOT_[亚麻布]|r |T132889:0|t[锻造]|cRXP_WARN_成|r |T135255:0|t[劣质平衡石] << Paladin
     .collect 2862,5 << Rogue/Warrior --Rough Sharpening Stone (5)
     .disablecheckbox
@@ -1291,7 +1291,7 @@ step << Warrior/Paladin/Rogue
     #requires RoughStone3
     #label RoughStoneCraft3
     #completewith Exchange
-    +|cRXP_WARN_把|r |T136241:0|t|cRXP_LOOT_[劣质的石头]|r |T135232:0|t[锻造]|cRXP_WARN_成|r |T135248:0|t[劣质磨刀石] << Warrior/Rogue
+    +|T136241:0|t[锻造]|cRXP_WARN_|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_制作为|r |T135248:0|t[劣质磨刀石] << Warrior/Rogue
     +|cRXP_WARN_将|r |T136241:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_与|r |T135232:0|t|cRXP_LOOT_[亚麻布]|r |T132889:0|t[锻造]|cRXP_WARN_成|r |T135255:0|t[劣质平衡石] << Paladin
     .collect 2862,5 << Rogue/Warrior --Rough Sharpening Stone (5)
     .disablecheckbox
@@ -1756,7 +1756,7 @@ step << Warrior/Paladin/Rogue
     #requires RoughStone4
     #label RoughStoneCraft4
     #completewith JasperlodeExplore
-    +|cRXP_WARN_把|r |T136241:0|t|cRXP_LOOT_[劣质的石头]|r |T135232:0|t[锻造]|cRXP_WARN_成|r |T135248:0|t[劣质磨刀石] << Warrior/Rogue
+    +|T136241:0|t[锻造]|cRXP_WARN_|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_制作为|r |T135248:0|t[劣质磨刀石] << Warrior/Rogue
     +|cRXP_WARN_将|r |T136241:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_与|r |T135232:0|t|cRXP_LOOT_[亚麻布]|r |T132889:0|t[锻造]|cRXP_WARN_成|r |T135255:0|t[劣质平衡石] << Paladin
     .collect 2862,5 << Rogue/Warrior --Rough Sharpening Stone (5)
     .disablecheckbox
@@ -1865,7 +1865,7 @@ step << Warrior/Paladin/Rogue
     #requires RoughStone5
     #label RoughStoneCraft5
     #completewith Find
-    +|cRXP_WARN_把|r |T136241:0|t|cRXP_LOOT_[劣质的石头]|r |T135232:0|t[锻造]|cRXP_WARN_成|r |T135248:0|t[劣质磨刀石] << Warrior/Rogue
+    +|T136241:0|t[锻造]|cRXP_WARN_|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_制作为|r |T135248:0|t[劣质磨刀石] << Warrior/Rogue
     +|cRXP_WARN_将|r |T136241:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_与|r |T135232:0|t|cRXP_LOOT_[亚麻布]|r |T132889:0|t[锻造]|cRXP_WARN_成|r |T135255:0|t[劣质平衡石] << Paladin
     .collect 2862,5 << Rogue/Warrior --Rough Sharpening Stone (5)
     .disablecheckbox
@@ -3175,7 +3175,7 @@ step << Paladin/Warrior
     >>击败|cRXP_ENEMY_布鲁阿特|r
     >>|cRXP_WARN_小心他施放|r |T132939:0|t|T132939:0|t[反手一击] |cRXP_WARN_（击晕你2秒）|r
     >>|cRXP_WARN_记得预读|r |T135924:0|t|T135924:0|t[十字军圣印] |cRXP_WARN_对他|r << Paladin
-    >>|cRXP_WARN_千万不要对他施放|r |T135906:0|t[力量祝福] |cRXP_WARN_|r << Paladin
+    >>|cRXP_WARN_不要意外对他施放|r |T135906:0|t|T135906:0|t[力量祝福] |cRXP_WARN_ |r << Paladin
     >>|cRXP_WARN_将他风筝到楼上的阳台，然后从旅店外跳下，必要时施放|r |T135920:0|t|T135920:0|t[圣光术] |cRXP_WARN_如果必要的话|r << Paladin
     >>|cRXP_WARN_将他风筝到楼上的阳台，然后从旅店外跳下，如果有/需要的话使用|r |T133688:0|t|T133688:0|t[绷带]|cRXP_WARN_ |r << Warrior
     >>|cRXP_WARN_尝试使用|r |T132316:0|t|T132324:0|t[|cRXP_FRIENDLY_断筋|r] |cRXP_WARN_和|r |T132324:0|t|T132324:0|t[|cRXP_FRIENDLY_投掷|r]来风筝他 << Warrior
@@ -3193,7 +3193,7 @@ step << Paladin/Warrior
     >>击败|cRXP_ENEMY_布鲁阿特|r
     >>|cRXP_WARN_小心他施放|r |T132939:0|t|T132939:0|t[反手一击] |cRXP_WARN_（击晕你2秒）|r
     >>|cRXP_WARN_记得预读|r |T135924:0|t|T135924:0|t[十字军圣印] |cRXP_WARN_对他|r << Paladin
-    >>|cRXP_WARN_千万不要对他施放|r |T135906:0|t[力量祝福] |cRXP_WARN_|r << Paladin
+    >>|cRXP_WARN_不要意外对他施放|r |T135906:0|t|T135906:0|t[力量祝福] |cRXP_WARN_ |r << Paladin
     >>|cRXP_WARN_将他风筝到楼上的阳台，然后从旅店外跳下，必要时施放|r |T135920:0|t|T135920:0|t[圣光术] |cRXP_WARN_如果必要的话|r << Paladin
     >>|cRXP_WARN_将他风筝到楼上的阳台，然后从旅店外跳下，如果有/需要的话使用|r |T133688:0|t|T133688:0|t[绷带]|cRXP_WARN_ |r << Warrior
     >>|cRXP_WARN_击败|cRXP_ENEMY_布鲁阿尔特|r后：|r

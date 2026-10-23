@@ -409,7 +409,7 @@ step << Warrior
     .goto Mulgore,44.02,76.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哈鲁特|r 对话
     .train 3127 >>学习 |T132269:0|t[招架]
-    .train 6343 >>训练|T136105:0|t|T136105:0|t[雷霆一击]
+    .train 6343 >>学习 |T136105:0|t[雷霆一击]
     .target 哈鲁特·雷角
     .money <0.02
 step << Warrior

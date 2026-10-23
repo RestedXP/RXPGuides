@@ -8,9 +8,9 @@ RXPGuides.RegisterGuide([[
 << Human Mage
 #name 1-10级 艾尔文森林 法师 A怪指南
 #version 1
-#group RestedXP Forever 指南 A
-#subgroup 法师速通指南
-#defaultfor Human
+#group RestedXP 联盟 法师
+
+#defaultfor none Human
 #next 10-12级 洛克莫丹 法师 A怪指南
 step
     #sticky
@@ -798,7 +798,7 @@ step
     .turnin 419 >> 交任务 失踪的驾驶员
     .accept 417 >> 接受任务 驾驶员的复仇
 step
-    >>击杀癞爪。拾取它的爪子
+    >>击杀癞爪，拾取它的爪子
     .goto 1426/0,-2137.92,-5072.22
     .complete 417,1 --Collect Mangy Claw (x1)
 step
@@ -816,9 +816,9 @@ RXPGuides.RegisterGuide([[
 << Gnome Mage
 #name 1-10级 丹莫罗 法师 A怪指南
 #version 1
-#group RestedXP Forever 指南 A
-#subgroup 法师速通指南
-#defaultfor Dwarf/Gnome
+#group RestedXP 联盟 法师
+
+#defaultfor none Gnome
 #next 10-12级 洛克莫丹 法师 A怪指南
 step
     #era/som
@@ -1442,7 +1442,7 @@ step
     .turnin 419 >> 交任务 失踪的驾驶员
     .accept 417 >> 接受任务 驾驶员的复仇
 step
-    >>击杀癞爪。拾取它的爪子
+    >>击杀癞爪，拾取它的爪子
     .goto 1426/0,-2137.92,-5072.22
     .complete 417,1 --Collect Mangy Claw (x1)
 step
@@ -1467,9 +1467,9 @@ RXPGuides.RegisterGuide([[
 << Alliance Mage
 #name 10-12级 洛克莫丹 法师 A怪指南
 #version 1
-#group RestedXP Forever 指南 A
-#subgroup 法师速通指南
-#defaultfor Human Mage/Gnome Mage
+#group RestedXP 联盟 法师
+
+#defaultfor none Mage
 #next 12-18级 黑海岸 法师 A怪指南
 step
     #era/som
@@ -1636,7 +1636,7 @@ step
     .goto 1432/0,-2636.44,-4816.79,60 >>跑回地堡，路上刷小怪
 step
     .goto 1432/0,-2658.51,-4822.30
-    .vendor >>垃圾卖店，修理装备
+    .vendor >>出售物品并修理装备
 step
     .goto 1432/0,-2675.06,-4824.14
 >>与|cRXP_FRIENDLY_巡山人雷矛|r 对话

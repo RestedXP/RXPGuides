@@ -1309,7 +1309,7 @@ step
     #requires Shortcut2
     #completewith next
     .goto Dun Morogh,81.23,42.66,50,0
-    .goto Dun Morogh,83.01,40.31,30 >>风筝一只 |cRXP_ENEMY_有伤疤的峭壁野猪|r 穿过隧道
+    .goto Dun Morogh,83.01,40.31,30 >>风筝 |cRXP_ENEMY_有伤疤的峭壁野猪|r 穿过隧道
     >>|cRXP_WARN_小心，它们会施放|r|T132337:0|t[冲锋]|cRXP_WARN_（自身瞬发：提高移动速度，持续3秒，并在击中时造成40-100点近战伤害。仅可在远程施放）|r
     .mob 有伤疤的峭壁野猪
 step
@@ -2829,7 +2829,7 @@ step
     #label CragB1
     #completewith Cobbleflint
     .goto Loch Modan,16.45,58.54,20,0
-    .goto Loch Modan,19.59,62.76,30 >>风筝一只 |cRXP_ENEMY_有伤疤的峭壁野猪|r 穿过隧道
+    .goto Loch Modan,19.59,62.76,30 >>风筝 |cRXP_ENEMY_有伤疤的峭壁野猪|r 穿过隧道
     >>|cRXP_WARN_小心，它们会施放|r|T132337:0|t[冲锋]|cRXP_WARN_（自身瞬发：提高移动速度，持续3秒，并在击中时造成40-100点近战伤害。仅可在远程施放）|r
     .mob 有伤疤的峭壁野猪
 step
@@ -7345,7 +7345,7 @@ step
     #completewith next
     #requires Dawn2
     .goto Duskwood,73.79,45.98,20,0
-    .goto Duskwood,74.01,45.36,10 >>进入旅馆
+    .goto Duskwood,74.01,45.36,10 >>进入旅店
 step
     #requires Dawn2
     .goto Duskwood,73.81,44.02

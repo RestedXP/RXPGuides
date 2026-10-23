@@ -2703,7 +2703,7 @@ step << Warlock
     .zoneskip Tirisfal Glades
 step
     #completewith next
-    >>杀死你看到的 |cRXP_ENEMY_夜行蝙蝠|r，拾取它们的 |cRXP_LOOT_毛皮|r
+    >>杀死你看到的 |cRXP_ENEMY_夜行蝙蝠|r。拾取它们的 |cRXP_LOOT_毛皮|r
     .complete 375,1 --Duskbat Pelt (5)
     .mob Greater Duskbat
     .mob Vampiric Duskbat
@@ -2813,7 +2813,7 @@ step
     .mob Vile Fin Muckdweller
 step
     #completewith RotHideGnolls
-    >>杀死你看到的 |cRXP_ENEMY_夜行蝙蝠|r，拾取它们的 |cRXP_LOOT_毛皮|r
+    >>杀死你看到的 |cRXP_ENEMY_夜行蝙蝠|r。拾取它们的 |cRXP_LOOT_毛皮|r
     .complete 375,1 --Duskbat Pelt (5)
     .mob Greater Duskbat
     .mob Vampiric Duskbat
@@ -3106,7 +3106,7 @@ step
     .target Deathguard Linnea
 step
     #completewith HorrorsandSpirits
-    >>杀死你看到的 |cRXP_ENEMY_夜行蝙蝠|r，拾取它们的 |cRXP_LOOT_毛皮|r
+    >>杀死你看到的 |cRXP_ENEMY_夜行蝙蝠|r。拾取它们的 |cRXP_LOOT_毛皮|r
     .complete 375,1 --Duskbat Pelt (5)
     .mob Greater Duskbat
     .mob Vampiric Duskbat
@@ -3206,7 +3206,7 @@ step << Priest/Warlock
     .mob Scarlet Zealot
 step
     #completewith next
-    >>杀死你看到的 |cRXP_ENEMY_夜行蝙蝠|r，拾取它们的 |cRXP_LOOT_毛皮|r
+    >>杀死你看到的 |cRXP_ENEMY_夜行蝙蝠|r。拾取它们的 |cRXP_LOOT_毛皮|r
     .complete 375,1 --Duskbat Pelt (5)
     .mob Greater Duskbat
     .mob Vampiric Duskbat

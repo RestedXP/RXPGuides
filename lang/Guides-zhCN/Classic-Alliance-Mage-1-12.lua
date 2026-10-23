@@ -797,7 +797,7 @@ step
     .turnin 419 >> 交任务 失踪的驾驶员
     .accept 417 >> 接受任务 驾驶员的复仇
 step
-    >>击杀癞爪。拾取它的爪子
+    >>击杀癞爪，拾取它的爪子
     .goto Dun Morogh,80.0,36.4
     .complete 417,1 --Collect Mangy Claw (x1)
 step

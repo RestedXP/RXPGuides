@@ -28,7 +28,7 @@ RXPGuides.RegisterGuide([[
 #subgroup 地下城指南 1-22级
 --#groupid RXP-SRGCE-H1
 #defaultfor Tauren
-#next 12-16级 荒芜之地
+#next 12-16级 贫瘠之地
 
 
 step

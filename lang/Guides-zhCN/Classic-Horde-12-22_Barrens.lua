@@ -1735,7 +1735,7 @@ step << skip --!Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
     .goto The Barrens,52.26,31.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_图加|r 对话
     .turnin 870 >> 交任务  遗忘之池
-    .accept 877 >> 接受任务 死水绿洲
+    .accept 877 >> 接受任务死水绿洲
     .target 图加·符文图腾
     .dungeon RFC
 step << skip --!Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
@@ -2355,7 +2355,7 @@ step
     .goto The Barrens,52.26,31.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_图加|r 对话
     .turnin 870 >>交任务  遗忘之池
-    .accept 877 >>接受任务 死水绿洲
+    .accept 877 >>接受任务死水绿洲
     .target 图加·符文图腾
 step
     #label EcheyakeePickup
@@ -8786,7 +8786,7 @@ step << skip --!Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
     .goto The Barrens,52.26,31.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_图加|r 对话
     .turnin 870 >> 交任务  遗忘之池
-    .accept 877 >> 接受任务 死水绿洲
+    .accept 877 >> 接受任务死水绿洲
     .target 图加·符文图腾
     .dungeon RFC
 step << skip --!Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
@@ -8863,7 +8863,7 @@ step
     .goto The Barrens,52.26,31.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_图加|r 对话
     .turnin 870 >> 交任务  遗忘之池
-    .accept 877 >> 接受任务 死水绿洲
+    .accept 877 >> 接受任务死水绿洲
     .target 图加·符文图腾
 step
     #xprate >2.09
@@ -9542,7 +9542,7 @@ step
     .goto The Barrens,52.26,31.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_图加|r 对话
     .turnin 870 >> 交任务  遗忘之池
-    .accept 877 >> 接受任务 死水绿洲
+    .accept 877 >> 接受任务死水绿洲
     .target 图加·符文图腾
 step
     #label EcheyakeePickup

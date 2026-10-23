@@ -45,7 +45,7 @@ RXPGuides.RegisterGuide([[
 --#groupid RXP-SRGCE-H1
 #defaultfor Troll/Orc
 #next 10-12级 提瑞斯法 （兽人/巨魔） << !Hunter !Shaman !Tauren !Skyborne
-#next 12-16级 荒芜之地 << Orc Hunter/Troll Hunter/Orc Shaman/Troll Shaman
+#next 12-16级 贫瘠之地 << Orc Hunter/Troll Hunter/Orc Shaman/Troll Shaman
 
 
 step

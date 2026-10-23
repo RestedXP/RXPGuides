@@ -154,7 +154,7 @@ step << Warlock
     .goto 1411/1,-4319.67,-169.190,40,0
     .goto 1411/1,-4303.28,-186.46,40,0
     .goto 1411/1,-4281.07,-148.75,40,0
-    >>击杀 |cRXP_ENEMY_邪灵劣魔|r，拾取 |cRXP_LOOT_邪灵劣魔的徽记|r
+    >>击杀 |cRXP_ENEMY_邪灵劣魔|r。拾取他们的 |cRXP_LOOT_邪灵劣魔的头颅|r
     .complete 1485,1 --Vile Familiar Head (6)
     .mob 邪灵劣魔
 step
@@ -286,7 +286,7 @@ step
     .accept 3084 >>接受任务 符文石板 << Troll Shaman
     .accept 3085 >>接受任务 神圣石板 << Troll Priest
     .accept 3086 >>接受任务 雕文石板 << Troll Mage
-    .accept 98575 >>接受污染的石板 << Troll Warlock
+    .accept 98575 >>接受任务 被污染的石板 << Troll Warlock
     .accept 3087 >>接受任务 风蚀羊皮纸 << Orc Hunter
     .accept 3088 >>接受任务 密文羊皮纸 << Orc Rogue
     .accept 3089 >>接受任务 符文羊皮纸 << Orc Shaman
@@ -324,7 +324,7 @@ step
     .isQuestComplete 97279
 step
     #optional
-    .abandon 97279 >>放弃迷途的武器
+    .abandon 97279 >>放弃任务 遗失的武器
 step << Shaman
     .goto 1411/1,-4102.600,-588.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_克赞|r 对话
@@ -360,7 +360,7 @@ step << Warlock
     .goto 1411/1,-4111.87,-607.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_纳托克|r 对话
     .turnin 3090 >>交任务 被污染的羊皮纸 << Orc Warlock
-    .turnin 98575 >>交还污染的石板 << Troll Warlock
+    .turnin 98575 >>交任务 被污染的石板 << Troll Warlock
     .train 172 >> 学习 |T136118:0|t[腐蚀术]
     .target 纳托克
 step
@@ -851,7 +851,7 @@ step << skip
 	.link https://www.youtube.com/watch?v=7vmnvdjbUnM >> 点击此处查看示例
 step
     #softcore
-    #completewith next
+    #completewith RazorHill1
     .goto 1411/1,-4326.01,-41.23
     .deathskip >> |cRXP_WARN_在箭头附近死亡并在|cRXP_FRIENDLY_灵魂治疗者|r处复活|r
     .target 灵魂医者
@@ -864,6 +864,7 @@ step
     .accept 784 >>接受任务 背信弃义的人类
     .target 加索克
 step
+    #softcore
     .goto 1411/1,-4665.400,311.900
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厨师托尔卡|r 对话
     .accept 96825 >>接受任务 这果子会咬人
@@ -914,6 +915,8 @@ step << Warrior/Rogue
     .target 杜克
     .skill blacksmithing,1,1
 step -- (Barracks)
+    #softcore
+    #label RazorHill1
     .goto 1411/1,-4815.200,306.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_图罗克|r 对话
     .accept 96822 >>接受任务 为了荣耀
@@ -994,7 +997,7 @@ step << Warrior
     .goto 1411/1,-4230.31,-639.43
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_弗朗恩|r 对话
     .train 3127 >>学习 |T132269:0|t[招架]
-    .train 6343 >>训练|T136105:0|t|T136105:0|t[雷霆一击]
+    .train 6343 >>学习 |T136105:0|t[雷霆一击]
     .target 弗朗恩
     .money <0.02
 step << Warrior
@@ -1168,6 +1171,7 @@ step << Rogue
     .target 克瓦埃
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.9
+    .money <0.07
 step << Warlock/Mage/Priest
     .goto 1411/1,-4938.83,-779.37
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_克瓦埃|r 对话
@@ -1320,7 +1324,7 @@ step
     .goto 1411/1,-4908.69,-998.27,40,0
     .goto 1411/1,-4829.91,-1091.33,40,0
     .goto 1411/1,-4722.57,-1117.42,40,0
-    >>沿着海滩往下跑。击杀|cRXP_ENEMY_海浪蟹|r和|cRXP_ENEMY_龙虾人|r。拾取它们的|cRXP_LOOT_蟹胶|r 和 |cRXP_LOOT_眼球|r。你不需要在这里完成这一步。
+    >>沿着海滩前进。击杀 |cRXP_ENEMY_海蟹|r 和 |cRXP_ENEMY_龙虾人|r，拾取它们掉落的 |cRXP_LOOT_粘液|r 和 |cRXP_LOOT_眼睛|r。你不需要在这里完成这一步。
     .complete 818,2 --Crawler Mucus (8)
     .mob 海浪蟹
     .mob 成熟海浪蟹
@@ -1655,6 +1659,12 @@ step
     .target Cook Torka
 step
     #hardcore
+    .goto 1411/1,-4665.400,311.900
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_烹饪 厨师托尔卡|r 对话
+    .accept 96825 >>接受任务 This Fruit Could 撕咬 后退
+    .target Cook Torka
+step
+    #hardcore
     #completewith next
     .goto 1411/1,-4617.88,290.47,12,0
     .goto 1411/1,-4611.01,293.64,8,0
@@ -1698,6 +1708,13 @@ step << Warrior/Rogue
     .train 2018 >> 学习 |T136241:0|t[锻造]
     .target 杜克
     .skill blacksmithing,1,1
+step -- (Barracks)
+    #hardcore
+    #label RazorHill1
+    .goto 1411/1,-4815.200,306.800
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_图罗克|r 对话
+    .accept 96822 >>接受任务 For 荣誉
+    .target Turroc
 step << Warrior/Rogue
     #hardcore
     #completewith TravelToTiragarde
@@ -1730,8 +1747,13 @@ step
     .mob 库尔提拉斯水兵
     .mob 库尔提拉斯水手
 step --south/west of keep
-    .goto 1411/1,-4992.700,-234.400
+    #completewith next
+    .goto 1411/1,-4992.700,-234.400,0
+    .goto 1411/1,-5101.700,-178.500,0
+    .goto 1411/1,-4992.700,-234.400,25,0
+    .goto 1411/1,-5101.700,-178.500,25,0
     >>拾取地上的 |cRXP_PICK_狼骑兵的弓|r
+    >>|cRXP_WARN_它有两个不同的刷新位置|r
     .complete 96822,1 --|1/1 Raider's Bow
 step --center in keep
     .goto 1411/1,-4994.900,-182.300
@@ -1769,6 +1791,15 @@ step
     .collect 4881,1,830 --Collect Aged Envelope (1)
     .accept 830 >>接受任务 将军的命令
     .use 4881
+step --south/west of keep
+    #loop
+    .goto 1411/1,-4992.700,-234.400,0
+    .goto 1411/1,-5101.700,-178.500,0
+    .goto 1411/1,-5101.700,-178.500,25,0
+    .goto 1411/1,-4992.700,-234.400,25,0
+    >>在地上拾取 |cRXP_PICK_Raider's Bow|r
+    >>|cRXP_WARN_它有两个不同的刷新位置|r
+    .complete 96822,1 --|1/1 Raider's Bow
 step  --northern tower
     #label AgedEnvelope
     .goto 1411/1,-4951.500,-59.600
@@ -1938,6 +1969,13 @@ step
     .accept 825 >>接受任务 海底沉船
     .accept 831 >>接受任务 将军的命令
     .target 加索克
+step
+    #optional
+    .goto 1411/1,-4724.900,287.300
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_ 奥戈尼尔·魂痕|r对话
+    .accept 99048 >>接受任务 一只失踪的手
+    .target 奥戈尼尔·魂痕
+    .xp <8,1
 step
     #softcore
     .goto 1411/1,-4663.88,310.56
@@ -2145,7 +2183,7 @@ step << !Mage !Hunter !Druid
     .train 284,3 << Warrior
 step
     .goto 1411/1,-4815.400,306.500
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_图罗克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Turroc|r 对话
     .turnin 96822 >>交任务 为了荣誉
     .target Turroc
 step << Warrior
@@ -2212,6 +2250,29 @@ step
     .collect 4496,1,825,1 --Small Brown Pouch (1)
     .target 加尔克
     .money <0.05
+step
+    .goto 1411/1,-4724.900,287.300
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_ 奥戈尼尔·魂痕|r对话
+    .accept 99048 >>接受任务 一只失踪的手
+    .target 奥戈尼尔·魂痕
+step
+    .goto 1411/1,-5061.700,201.700
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_赫格兰·暗眼|r 对话
+    .turnin 99048 >>交任务 一只失踪的手
+    .accept 99049 >>接受任务 来自深海的威胁
+    .target Heglan Shadeeye
+step
+    .goto 1411/1,-5073.900,244.700
+    >>拾取地上的|cRXP_PICK_被遗弃的匕首|r
+    .complete 99049,1 --|1/1 Orcish Dagger
+step
+    .goto 1411/1,-5140.800,229.100
+    >>拾取地上的 |cRXP_PICK_武器碎片|r
+    .complete 99049,3 --|1/1 Broken Bone Trident
+step
+    .goto 1411/1,-5138.000,314.100
+    >>在地上拾取 |cRXP_PICK_奇怪的碎片|r
+    .complete 99049,2 --|1/1 Banner Scrap
 step
     #completewith next
     >>击杀 |cRXP_ENEMY_小海浪蟹|r 和 |cRXP_ENEMY_海浪蟹|r。拾取他们的 |cRXP_LOOT_粘液|r
@@ -2542,7 +2603,7 @@ step --at low lvl razormanes
     .goto 1411/1,-4459.000,66.300,40,0
     >>拾取地上的 |cRXP_PICK_仙人掌果|r
     .complete 96825,1 --|8/8 Prickly Pear Fruit
-step
+step << Hunter
     #loop
     .goto 1411/1,-4312.79,407.50,0
     .goto 1411/1,-4312.79,407.50,50,0
@@ -2569,17 +2630,25 @@ step << Hunter
 	.goto 1411/1,-4208.1,98.71,50,0
 	.goto 1411/1,-4300.1,57.11,50,0
 	.goto 1411/1,-4456.61,65.57,50,0
-    .xp 9+4470 >> 刷怪达到4470+/6500经验
-step << Hunter
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|r |cRXP_FRIENDLY_托尔卡|r 和 |cRXP_FRIENDLY_加索克|r 对话
+    .xp 9+4960 >> 升级至 4960+/6500 xp
+step
+    .goto 1411/1,-4709.36,274.960
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|r |cRXP_FRIENDLY_加索克|r 对话
+    .turnin 825 >>交任务 海底沉船
+    .turnin 837 >>交任务 野猪人的进犯 << Hunter
+    .target 加索克
+step
+    .goto 1411/1,-4725.000,287.200
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_奥戈尼尔·魂痕|r 对话
+    .turnin 99049 >>交任务 来自深海的威胁
+    --.accept 99051 >>Accept Threat from Below
+    .target 奥戈尼尔·魂痕
+step
+    .goto 1411/1,-4665.47,311.62
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|r |cRXP_FRIENDLY_厨师托尔卡|r 对话
     .turnin 815 >>交任务 恐龙蛋大餐
     .turnin 96825 >>交任务 这果子会咬人
-    .target 厨师托尔卡
-    .goto 1411/1,-4665.47,311.62
-    .turnin 825 >>交任务 海底沉船
-    .turnin 837 >>交任务 野猪人的进犯
-    .target 加索克
-    .goto 1411/1,-4709.36,274.960
+    .target Cook Torka
 step << Hunter
     .goto 1411/1,-4704.07,275.31
     >>进入碉堡内部
@@ -2587,11 +2656,6 @@ step << Hunter
     .accept 6062 >>接受任务 驯服野兽
     .trainer >> 训练你的职业技能
     .target 索塔尔
-step << Hunter
-    .goto 1411/1,-4724.900,287.300
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_奥戈尼尔·魂痕|r 对话
-    .accept 99048 >>接受任务 一只失踪的手
-    .target 奥戈尼尔·魂痕
 step << Hunter
     .goto 1411/1,-4763.29,361.67
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与 |cRXP_FRIENDLY_格劳特|r 对话并从他那里|r|cRXP_BUY_购买|r |T132382:0|t[锋利的箭] |cRXP_BUY_和一个|r |T134410:0|t[中型箭袋]
@@ -2646,30 +2710,6 @@ step << Hunter
     .complete 6083,1 --Tame a Surf Crawler
     .mob 成熟海浪蟹
     .isQuestTurnedIn 6062
-step << Hunter
-    .goto 1411/1,-5061.700,201.700
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_赫格兰·暗眼|r 对话
-    .turnin 99048 >>交任务 一只失踪的手
-    .accept 99049 >>接受任务 来自深海的威胁
-    .target Heglan Shadeeye
-step << Hunter
-    .goto 1411/1,-5073.900,244.700
-    >>拾取地上的|cRXP_PICK_被遗弃的匕首|r
-    .complete 99049,1 --|1/1 Orcish Dagger
-step << Hunter
-    .goto 1411/1,-5140.800,229.100
-    >>拾取地上的 |cRXP_PICK_武器碎片|r
-    .complete 99049,3 --|1/1 Broken Bone Trident
-step << Hunter
-    .goto 1411/1,-5138.000,314.100
-    >>在地上拾取 |cRXP_PICK_奇怪的碎片|r
-    .complete 99049,2 --|1/1 Banner Scrap
-step << Hunter
-    .goto 1411/1,-4725.000,287.200
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_奥戈尼尔·魂痕|r 对话
-    .turnin 99049 >>交任务 来自深海的威胁
-    --.accept 99051 >>Accept Threat from Below
-    .target 奥戈尼尔·魂痕
 step << Hunter
     .goto 1411/1,-4704.07,275.31
     >>进入碉堡内部
@@ -2727,6 +2767,70 @@ step << Hunter/Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_米莎|r 对话
     .accept 816 >>接受任务 刻骨铭心的伤痛
     .target 米莎·托克伦
+step << Warrior
+    .goto 1411/1,-4827.27,311.62
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塔绍尔·锯痕|r 对话
+    .train 6546 >> 训练你的职业技能
+    --.accept 1505 >>Accept Veteran Uzzek
+    .target 塔绍尔·锯痕
+    .xp <10,1
+step << Shaman
+    .goto 1411/1,-4839.96,307.04
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_斯瓦特|r 对话
+    .train 8050 >> 训练你的职业技能
+    .accept 2983 >>接受任务 火焰的召唤
+    .target 斯瓦特
+    .isNotOnQuest 1522
+    .xp <10,1
+step << Shaman
+    .goto 1411/1,-4839.96,307.04
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_斯瓦特|r 对话
+    .train 8050 >> 训练你的职业技能
+    .target 斯瓦特
+    .xp <10,1
+step << Warlock
+    .goto 1411/1,-4837.31,356.030
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜格鲁|r 对话
+    .train 1120 >> 训练你的职业技能
+    .target 杜格鲁·血怒
+    .xp <10,1
+step << Warlock
+    .goto 1411/1,-4854.76,345.81
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_基萨|r 对话并购买 |T133738:0|t[火焰箭（等级 2）]
+    .collect 16302,1,837,1 --Grimoire of Firebolt (Rank 2) (1)
+    .target 基萨
+    .money <0.01
+    .train 7799,1
+    .xp <10,1
+step << Priest
+    .goto 1411/1,-4831.5,295.05
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_泰金|r 对话
+    .accept 5654 >> 接受任务 虚弱妖术 << Troll
+    .accept 5660 >> 接受任务 虚弱之触 << Undead
+    .trainer >> 训练你的职业技能
+    .target 泰金
+    .xp <10,1
+step << Rogue
+    .goto 1411/1,-4710.94,268.26
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡普拉克|r 对话
+    .train 674 >> 训练你的职业技能
+    .target 卡普拉克
+    .xp <10,1
+step << !Hunter
+    #loop
+    .goto 1411/1,-4312.79,407.50,0
+    .goto 1411/1,-4312.79,407.50,50,0
+    .goto 1411/1,-4314.91,487.52,50,0
+    .goto 1411/1,-4251.99,492.8,50,0
+    .goto 1411/1,-4167.39,500.91,50,0
+    .goto 1411/1,-4164.21,459.32,50,0
+    .goto 1411/1,-4180.08,382.12,50,0
+    .goto 1411/1,-4251.99,384.23,50,0
+    >>击杀 |cRXP_ENEMY_钢鬃传令兵|r 和 |cRXP_ENEMY_钢鬃卫兵|r
+    .complete 837,3 --Razormane Dustrunner (4)
+    .mob 钢鬃传令兵
+    .complete 837,4 --Razormane Battleguard (4)
+    .mob 钢鬃卫兵
 step
     #completewith next
     .goto 1411/1,-4414.31,999.70,50 >> 前往雷兹拉克
@@ -2864,7 +2968,7 @@ step << Hunter/Shaman
     .isOnQuest 96877
 step << Hunter/Shaman
     .goto 1454/1,-4466.800,1954.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_考吉尔德|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_考吉尔德|r 对话
     .accept 97242 >>接受任务 耶尔玛克的混合配方
     .target Kor'geld
 step << Hunter/Shaman
@@ -2926,7 +3030,7 @@ step << Hunter
     .xp >11,1
 step << Hunter/Shaman
     .goto 1454/1,-4466.900,1954.500
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_考吉尔德|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_考吉尔德|r 对话
     .turnin 97242 >>交任务 耶尔玛克的混合配方
     .target Kor'geld
 step << Hunter/Shaman
@@ -3017,24 +3121,12 @@ step
     .collect 2287,15,828,1 << Rogue/Warrior --Haunch of Meat (15)
     .target 旅店老板格罗斯克
     .money <0.0375
-step << Hunter
-    .goto 1411/1,-4724.69,287.30
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|r |cRXP_FRIENDLY_奥戈尼尔·魂痕|r 对话
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 托尔卡|r、|cRXP_FRIENDLY_奥戈尼尔|r 和 |cRXP_FRIENDLY_加索克|r 对话
     .turnin 806 >>交任务 黑暗风暴
     .accept 828 >>接受任务 玛高兹
     .target 奥戈尼尔·魂痕
-step << !Hunter
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|r |cRXP_FRIENDLY_托尔卡|r、|cRXP_FRIENDLY_奥戈尼尔|r 和 |cRXP_FRIENDLY_加索克|r 对话
-    .turnin 815 >>交任务 恐龙蛋大餐
-    .turnin 96825 >>交任务 这果子会咬人
-    .target 厨师托尔卡
-    .goto 1411/1,-4665.47,311.62
-    .turnin 806 >>交任务 黑暗风暴
-    .accept 828 >>接受任务 玛高兹
-    .accept 99048 >>接受任务 一只失踪的手 << Shaman
-    .target 奥戈尼尔·魂痕
     .goto 1411/1,-4724.69,287.30
-    .turnin 825 >>交任务 海底沉船
     .turnin 837 >>交任务 野猪人的进犯
     .target 加索克
     .goto 1411/1,-4709.36,274.960
@@ -3150,33 +3242,9 @@ step << Shaman
     .turnin 1524 >>交任务 火焰的召唤
     .accept 1525 >>接受任务 火焰的召唤
     .target 泰尔夫·祖拉姆
-step << Shaman
+step << skip --Shaman
     #completewith MargozTurnIn
     .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
-step << Shaman
-    .goto 1411/1,-5061.700,201.700
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_赫格兰·暗眼|r 对话
-    .turnin 99048 >>交任务 一只失踪的手
-    .accept 99049 >>接受任务 来自深海的威胁
-    .target Heglan Shadeeye
-step << Shaman
-    .goto 1411/1,-5073.900,244.700
-    >>拾取地上的|cRXP_PICK_被遗弃的匕首|r
-    .complete 99049,1 --|1/1 Orcish Dagger
-step << Shaman
-    .goto 1411/1,-5140.800,229.100
-    >>在地上拾取 |cRXP_PICK_武器碎片|r
-    .complete 99049,3 --|1/1 Broken Bone Trident
-step << Shaman
-    .goto 1411/1,-5138.000,314.100
-    >>在地上拾取 |cRXP_PICK_奇怪的碎片|r
-    .complete 99049,2 --|1/1 Banner Scrap
-step << Shaman
-    .goto 1411/1,-4725.000,287.200
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_奥戈尼尔·魂痕|r 对话
-    .turnin 99049 >>交任务 来自深海的威胁
-    --.accept 99051 >>Accept Threat from Below
-    .target 奥戈尼尔·魂痕
 step << Hunter
     #completewith MargozTurnIn
     +驯服一只|cRXP_ENEMY_毒尾蝎|r
@@ -3255,7 +3323,7 @@ step
     .mob 尘风雷巫
     .collect 277661,1,97281 --Dull Storm Orb (x1)
     .accept 97281 >>接受任务 酝酿中的风暴
-step
+step << skip
     #softcore
     #completewith SecuringLinesTurnIn
     .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
@@ -3309,7 +3377,7 @@ step
     .complete 97282,1 --|5/5 Charged Thunder Lizard Organ
     .mob 闪电蜥蜴
     .mob Charged Thunder Lizard Organ
-step
+step << skip
     #softcore
     #completewith next
     .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
@@ -3418,6 +3486,7 @@ step << Rogue
     .target 特拉克根
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.3
+    .money <0.03
 step << Rogue
     #optional
     #completewith ZeptoUC1
@@ -3617,33 +3686,33 @@ step
     .accept 809 >>接受任务 雅克塞罗斯
     .target 尼尔鲁·火刃
     .isQuestTurnedIn 827
-step << !Shaman !Hunter
+step << skip --!Shaman !Hunter
     #softcore
     #completewith ZeptoUC1
     .goto 1454/1,-4424.40,1817.58
     .subzone 2437 >> 进入怒焰裂谷
-step << !Shaman !Hunter
+step << skip --!Shaman !Hunter
     #softcore
     #completewith ZeptoUC1
     .goto 1411/1,-4450.27,1188.64
     .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
 step << !Shaman !Hunter
-    #hardcore
+    --#hardcore
     #completewith ZeptoUC1
     .zone Durotar >> 离开 奥格瑞玛
     .zoneskip Durotar
-step << Shaman/Hunter
+step << skip --Shaman/Hunter
     #softcore
     #completewith FoundtheCure
     .goto 1454/1,-4424.40,1817.58
     .subzone 2437 >> 进入怒焰裂谷
-step << Shaman/Hunter
+step << skip --Shaman/Hunter
     #softcore
     #completewith FoundtheCure
     .goto 1411/1,-4450.27,1188.64
     .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
 step << Shaman/Hunter
-    #hardcore
+    --#hardcore
     #completewith FoundtheCure
     .zone Durotar >> 离开 奥格瑞玛
     .zoneskip Durotar

@@ -8,9 +8,9 @@ RXPGuides.RegisterGuide([[
 << Horde Mage
 #name 12-17级 贫瘠之地 A怪指南
 #version 1
-#group RestedXP 永久指南 (H)
-#subgroup 法师A怪速通指南
-#defaultfor Horde Mage
+#group RestedXP 部落法师 A怪指南
+
+#defaultfor none Horde Mage
 #next 17-21级 石爪山脉/荒芜之地 A怪指南
 
 step << Mage
@@ -471,7 +471,7 @@ step
 >>与 |cRXP_FRIENDLY_图加·符文图腾|r 对话
     .turnin 870 >> 交任务  遗忘之池
 .target 图加·符文图腾
-    .accept 877 >> 接受任务 死水绿洲
+    .accept 877 >> 接受任务死水绿洲
 step
     .goto 1413/1,-2646.42,-522.480
 .target 曼科里克
@@ -712,9 +712,9 @@ RXPGuides.RegisterGuide([[
 << Horde Mage
 #name 17-21级 石爪山脉/荒芜之地 A怪指南
 #version 1
-#group RestedXP 永久指南 (H)
-#subgroup 法师A怪速通指南
-#defaultfor Horde Mage
+#group RestedXP 部落法师 A怪指南
+
+#defaultfor none Horde Mage
 #next 21-30级 银松森林/希尔斯布莱德 A怪指南
 
 step

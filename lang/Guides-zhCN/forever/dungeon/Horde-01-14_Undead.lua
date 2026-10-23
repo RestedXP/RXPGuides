@@ -42,12 +42,12 @@ RXPGuides.RegisterGuide([[
 --#groupid RXP-SRGCE-H1
 << Horde
 #version 11
-#defaultfor !Hunter !Shaman !Tauren !Skyborne
+#defaultfor !Hunter !Shaman !Tauren
 #forever
 #era/som--h
 #name 12-14级 银松森林
 #displayname 13-15级 银松森林 << Paladin
-#next 12-16级 荒芜之地
+#next 12-16级 贫瘠之地
 
 
 step

@@ -1286,7 +1286,7 @@ step
     .target +Darsok Swiftdagger
     .goto The Barrens,51.62,30.90
     .turnin 870 >> 交任务  遗忘之池
-    .accept 877 >> 接受任务 死水绿洲
+    .accept 877 >> 接受任务死水绿洲
     .target 图加·符文图腾
     .goto The Barrens,52.26,31.93
     .turnin 903 >>交任务  猎杀雌狮
@@ -1306,7 +1306,7 @@ step
     .target +Darsok Swiftdagger
     .goto The Barrens,51.62,30.90
     .turnin 870 >> 交任务  遗忘之池
-    .accept 877 >> 接受任务 死水绿洲
+    .accept 877 >> 接受任务死水绿洲
     .target 图加·符文图腾
     .goto The Barrens,52.26,31.93
     .turnin 903 >>交任务  猎杀雌狮
@@ -1429,14 +1429,14 @@ step << Warlock
     .xp <18,1
 step << Warlock
     .goto Orgrimmar,47.54,46.75
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_库古尔|r 对话，购买 |T133738:0|t[牺牲魔典]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_库古尔|r 对话并购买 |T133738:0|t[牺牲魔典]
     .collect 16351,1,896,1 --Grimoire of Sacrifice (Rank 1) (1)
     .target 库古尔
     .xp <16,1
     .xp >18,1
 step << Warlock
     .goto Orgrimmar,47.54,46.75
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 库古尔|cRXP_FRIENDLY_ 对话，并购买 |T133738:0|t[火焰箭典籍(等级 3)]|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 库古尔|cRXP_FRIENDLY_ 对话，购买 |T133738:0|t[火焰箭典籍(等级 3)]|r
     .collect 16316,1,896,1 --Grimoire of Firebolt (Rank 3) (Rank 1) (1)
     .target 库古尔
     .xp <18,1
@@ -2309,7 +2309,7 @@ step << Troll Warrior/Undead Warrior
     .xp <20,1
 step << Orc Warrior
     .goto Stonetalon Mountains,58.22,51.74
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_维尼克斯|r |cRXP_BUY_交谈。购买一把|r |T135423:0|t[大型战斧] |cRXP_BUY_从他那里|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_维尼克斯|r |cRXP_BUY_对话。购买一把|r |T135423:0|t[大型战斧] |cRXP_BUY_从他那里|r
     .collect 926,1,899,1 --Collect Battle Axe (1)
     .money <0.9784
     .target 维尼克斯
@@ -2766,7 +2766,7 @@ step << Warlock
     .target 甘鲁尔·血眼
 step << Warlock
     .goto Orgrimmar,47.54,46.75
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 库古尔|cRXP_FRIENDLY_ 对话，并购买 |T133738:0|t[折磨典籍(等级 2)]|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 库古尔|cRXP_FRIENDLY_ 对话，购买 |T133738:0|t[折磨典籍(等级 2)]|r
     .collect 16346,1,1507,1 --Grimoire of Torment (Rank 2)
     .target 库古尔
 step << Warlock

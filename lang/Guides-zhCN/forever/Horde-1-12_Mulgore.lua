@@ -108,8 +108,8 @@ step
     .target 鹰风酋长
 step << Shaman
     .goto 1412/1,-216.18,-2926.26--c:Mulgore,44.07,77.47
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Marjak|r 对话
-    .vendor >> 商人垃圾。卖掉你的武器，如果能换到足够的钱购买 |T135139:0|t[学徒法杖] (1s 02c)。如果现在没有足够的钱，你稍后可以回来。
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_马沙克·利刃|r 对话
+    .vendor >> 把垃圾卖店。如果卖掉武器能凑够钱购买一把 |T135139:0|t[学徒法杖] （1银2铜），就把它卖了。要是钱还不够，以后再回来买
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<1.9
     .target 马沙克·利刃
@@ -380,7 +380,7 @@ step
     .target 卫兵维萨罗·风羽
 step
     .goto 1412/1,-279.37,-2893.73--c:Mulgore,45.30,76.52
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Kawnie Softbreeze|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡文尼·柔风|r 对话
     .vendor >> 把垃圾物品卖给商人
     .target 卡文尼·柔风
 step
@@ -456,7 +456,7 @@ step << Warrior
     .goto 1412/1,-213.61,-2880.71--c:Mulgore,44.02,76.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哈鲁特·雷角|r 对话
     .train 3127 >>学习 |T132269:0|t[招架]
-    .train 6343 >>训练|T136105:0|t|T136105:0|t[雷霆一击]
+    .train 6343 >>学习 |T136105:0|t[雷霆一击]
     .target 哈鲁特·雷角
     .money <0.02
 step << Warrior
@@ -1225,9 +1225,9 @@ step
     .target 哈兰特·铁枝
 step
     .goto 1412/1,-285.000,-2263.400
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Pyall|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_派尔|r 对话
     .train 2550 >>学习烹饪
-    .turnin 96661 >>交任务 Camping 101：烹饪
+    .turnin 96661 >>交任务 露营基础：烹饪
     .target Pyall Silentstride
 step
     .goto 1412/1,-392.500,-2318.500
@@ -1945,12 +1945,12 @@ step
     .turnin 765 >>交任务 菲兹普罗克主管
     .turnin 98424 >>交任务 菲兹普罗克的笔记板
 	.unitscan 摩林·云行者
-step << Tauren
+step << skip -- Tauren
     #softcore
 	#completewith Thunderhorn2
     .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
 step << Tauren
-    #hardcore
+    --#hardcore
     #completewith Thunderhorn2
     .subzone 222 >>前往血蹄村
 step
@@ -2304,7 +2304,7 @@ step
     #label Fish
     #requires Kah
     .goto Thunder Bluff,40.42,58.55
-    >>在池塘里钓鱼，直到获得一条|T133894:0|t|T133894:0|t[|cRXP_LOOT_新鲜的美味小鱼|r]
+    >>在池塘里钓鱼，直到获得一条|T133894:0|t[|cRXP_LOOT_新鲜的美味小鱼|r]
     .collect 6291,1,76240,1 --Raw Brilliant Smallfish (1)
 step
     >>|cRXP_WARN_使用|r |T132147:0|t[一套匕首] |cRXP_WARN_来制造|r |T134007:0|t[鱼块]

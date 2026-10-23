@@ -9,7 +9,7 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #name 1-6级 北郡
 #version 1
-#group RestedXP Forever 指南 A
+#group RestedXP 永久向导 A
 #subgroup 速通指南 1-20级
 --#groupid RXP-SRGCE-A1
 #defaultfor Human
@@ -779,7 +779,7 @@ RXPGuides.RegisterGuide([[
 #season 0,1
 #version 1
 << Alliance
-#group RestedXP Forever 指南 A
+#group RestedXP 永久向导 A
 #subgroup 速通指南 1-20级
 --#groupid RXP-SRGCE-A1
 #name 6-11级 艾尔文森林
@@ -1191,8 +1191,8 @@ step << Warrior/Paladin/Rogue
     #requires RoughStone1
     #label RoughStoneCraft1
     #completewith NecklaceStart
-    +|cRXP_WARN_把|r |T136241:0|t|cRXP_LOOT_[劣质的石头]|r |T135232:0|t[锻造]|cRXP_WARN_成|r |T135248:0|t[劣质磨刀石] << Warrior/Rogue
-    +|T136241:0|t[铁匠铺] |cRXP_WARN_将|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_铸成|r |T135255:0|t[Rough Weightstones] << Paladin
+    +|T136241:0|t[锻造]|cRXP_WARN_|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_制作为|r |T135248:0|t[劣质磨刀石] << Warrior/Rogue
+    +使用|T136241:0|t[锻造] |cRXP_WARN_将|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_制作成|r |T135255:0|t[劣质平衡石] << Paladin
     .collect 2862,5 << Rogue/Warrior --Rough Sharpening Stone (5)
     .disablecheckbox
     .collect 3239,5 << Paladin --Rough Weightstone (5)
@@ -1272,8 +1272,8 @@ step << Warrior/Paladin/Rogue
     #requires RoughStone2
     #label RoughStoneCraft2
     #completewith Lovers
-    +|cRXP_WARN_把|r |T136241:0|t|cRXP_LOOT_[劣质的石头]|r |T135232:0|t[锻造]|cRXP_WARN_成|r |T135248:0|t[劣质磨刀石] << Warrior/Rogue
-    +|T136241:0|t[铁匠铺] |cRXP_WARN_将|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_铸成|r |T135255:0|t[Rough Weightstones] << Paladin
+    +|T136241:0|t[锻造]|cRXP_WARN_|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_制作为|r |T135248:0|t[劣质磨刀石] << Warrior/Rogue
+    +使用|T136241:0|t[锻造] |cRXP_WARN_将|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_制作成|r |T135255:0|t[劣质平衡石] << Paladin
     .collect 2862,5 << Rogue/Warrior --Rough Sharpening Stone (5)
     .disablecheckbox
     .collect 3239,5 << Paladin --Rough Weightstone (5)
@@ -1353,8 +1353,8 @@ step << Warrior/Paladin/Rogue
     #requires RoughStone3
     #label RoughStoneCraft3
     #completewith Exchange
-    +|cRXP_WARN_把|r |T136241:0|t|cRXP_LOOT_[劣质的石头]|r |T135232:0|t[锻造]|cRXP_WARN_成|r |T135248:0|t[劣质磨刀石] << Warrior/Rogue
-    +|T136241:0|t[铁匠铺] |cRXP_WARN_将|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_铸成|r |T135255:0|t[Rough Weightstones] << Paladin
+    +|T136241:0|t[锻造]|cRXP_WARN_|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_制作为|r |T135248:0|t[劣质磨刀石] << Warrior/Rogue
+    +使用|T136241:0|t[锻造] |cRXP_WARN_将|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_制作成|r |T135255:0|t[劣质平衡石] << Paladin
     .collect 2862,5 << Rogue/Warrior --Rough Sharpening Stone (5)
     .disablecheckbox
     .collect 3239,5 << Paladin --Rough Weightstone (5)
@@ -1868,8 +1868,8 @@ step << Warrior/Paladin/Rogue
     #requires RoughStone4
     #label RoughStoneCraft4
     #completewith JasperlodeExplore
-    +|cRXP_WARN_把|r |T136241:0|t|cRXP_LOOT_[劣质的石头]|r |T135232:0|t[锻造]|cRXP_WARN_成|r |T135248:0|t[劣质磨刀石] << Warrior/Rogue
-    +|T136241:0|t[铁匠铺] |cRXP_WARN_将|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_铸成|r |T135255:0|t[Rough Weightstones] << Paladin
+    +|T136241:0|t[锻造]|cRXP_WARN_|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_制作为|r |T135248:0|t[劣质磨刀石] << Warrior/Rogue
+    +使用|T136241:0|t[锻造] |cRXP_WARN_将|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_制作成|r |T135255:0|t[劣质平衡石] << Paladin
     .collect 2862,5 << Rogue/Warrior --Rough Sharpening Stone (5)
     .disablecheckbox
     .collect 3239,5 << Paladin --Rough Weightstone (5)
@@ -1955,8 +1955,8 @@ step << Warrior/Paladin/Rogue
     #requires RoughStone5
     #label RoughStoneCraft5
     #completewith Find
-    +|cRXP_WARN_把|r |T136241:0|t|cRXP_LOOT_[劣质的石头]|r |T135232:0|t[锻造]|cRXP_WARN_成|r |T135248:0|t[劣质磨刀石] << Warrior/Rogue
-    +|T136241:0|t[铁匠铺] |cRXP_WARN_将|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_铸成|r |T135255:0|t[Rough Weightstones] << Paladin
+    +|T136241:0|t[锻造]|cRXP_WARN_|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_制作为|r |T135248:0|t[劣质磨刀石] << Warrior/Rogue
+    +使用|T136241:0|t[锻造] |cRXP_WARN_将|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_制作成|r |T135255:0|t[劣质平衡石] << Paladin
     .collect 2862,5 << Rogue/Warrior --Rough Sharpening Stone (5)
     .disablecheckbox
     .collect 3239,5 << Paladin --Rough Weightstone (5)
@@ -3019,8 +3019,8 @@ step
     .goto 1453/0,625.48,-8857.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_摩根·匹斯特|r 对话
     .turnin 61 >> 交任务 送往暴风城的货物
-    -->>|cRXP_WARN_We choose the|r |T132383:0|t[Explosive Rockets] |cRXP_WARN_as the reward. It deals decent damage, and can be used for "Split pulling" which is incredibly useful|r
-    --.link https://www.youtube.com/watch?v=H-IwZ6P-ldY >> |cRXP_WARN_Click here for video reference on "Split pulling". It is a short video and invaluable to learn|r
+    >>|cRXP_WARN_我们选择的奖励是|r |T132383:0|t[爆破火箭] |cRXP_WARN_它能造成不错的伤害，还可以用于"仇恨分离"，非常实用|r
+    .link https://www.youtube.com/watch?v=H-IwZ6P-ldY >> |cRXP_WARN_点击此处查看"仇恨分离"技巧的视频参考。这是一个简短却非常有价值的教学视频|r
     .target 摩根·匹斯特
 step << Rogue
     .goto 1453/0,596.43,-8831.70
@@ -3731,7 +3731,7 @@ step << Mage
     .target 丁克
 step << Paladin
     .goto 1455/0,-896.47,-4601.65
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_布兰度尔·铁锤|r 对话，NPC在里面
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布兰度尔·铁锤|r 对话，NPC在里面
     .train 633 >> 训练你的职业技能
     .target 布兰度尔·铁锤
 step << skip -- for dungeon route only
@@ -3964,9 +3964,9 @@ step
     .goto 1426/0,-1679.89,-5728.88,40,0
     .goto 1426/0,-1675.95,-5597.22,25,0
     .goto 1426/0,-1679.89,-5728.88
-    >>在洞穴内击杀 |cRXP_ENEMY_Rockjaw Skullthumpers|r 和 |cRXP_ENEMY_Rockjaw Bonesnappers|r，拾取他们的 |T132621:0|t[|cRXP_LOOT_Empty Powder Keg|r]
+    >>在洞穴内击杀 |cRXP_ENEMY_石腭击颅者|r 和 |cRXP_ENEMY_石腭断骨者|r。拾取他们的 |T132621:0|t[|cRXP_LOOT_空火药桶|r]
     .use 268548 >> |cRXP_WARN_使用|r |T132621:0|t[|cRXP_LOOT_空火药桶|r] |cRXP_WARN_来开始任务|r
-    >>|cRXP_WARN_注释：该物品掉率很低。如果你没有找到它，请跳过此步骤|r
+    >>|cRXP_WARN_注意：该物品掉率很低。如果打不出来，请跳过此步骤|r
     .complete 432,1 --Kill Rockjaw Skullthumper (x6)
     .mob 石腭击颅者
     .complete 433,1 --Kill Rockjaw Bonesnapper (x10)
@@ -4013,10 +4013,10 @@ step
 step
     #completewith OII
     >>击杀 |cRXP_ENEMY_石腭伏击者|r，并拾取他们的 |T132621:0|t[|cRXP_LOOT_空火药桶|r]
-    .use 268548 >> |cRXP_WARN_使用|r |T132621:0|t[|cRXP_LOOT_Empty Powder Keg|r] |cRXP_WARN_来开启任务|r
+    .use 268548 >> |cRXP_WARN_使用|r |T132621:0|t[|cRXP_LOOT_空火药桶|r] |cRXP_WARN_来开启任务|r
     >>|cRXP_WARN_注释：这个物品掉落率很低。如果你在完成了|r 黑铁间谍|cRXP_ENEMY_ 任务时还没有找到它，请跳过此步骤|r
     .collect 268548,1,95213,1 -- Empty Powder Keg (1)
-    .accept 95213 >> 接受任务 Stolen Blasting Powder
+    .accept 95213 >> 接受任务 被偷走的炸药粉
     .mob Rockjaw Ambusher
 step
     #label SpyMap
@@ -4037,7 +4037,7 @@ step
     .goto 1426/0,-1881.82,-5735.45,0
     .goto 1426/0,-1832.57,-5571.28,0
     .goto 1426/0,-1724.22,-5636.95,0
-    >>击杀 |cRXP_ENEMY_石颚 Ambushers|r，拾取他们的 |cRXP_LOOT_Stolen Blasting Powder|r
+    >>击杀 |cRXP_ENEMY_石腭伏击者|r。拾取它们的 |cRXP_LOOT_被偷走的炸药粉|r
     .complete 95214,1 -- Stolen Blasting Powder (16)
     .mob Rockjaw Ambusher
 step
@@ -4057,15 +4057,15 @@ step
 step
     .isOnQuest 95213
     .goto 1426/0,-1606.02,-5676.35
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Quarrymaster Thesten|r 对话
-    .turnin 95213 >> 交任务 Stolen Blasting Powder
-    .accept 95214 >> 接受任务 Stolen Blasting Powder
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_矿场主管瑟斯丁|r 对话
+    .turnin 95213 >> 交任务 被偷走的炸药粉
+    .accept 95214 >> 接受任务 被偷走的炸药粉
     .target Quarrymaster Thesten
 step
     .isQuestTurnedIn 95213
     .goto 1426/0,-1606.02,-5676.35
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Quarrymaster Thesten|r 对话
-    .accept 95214 >> 接受任务 Stolen Blasting Powder
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_矿场主管瑟斯丁|r 对话
+    .accept 95214 >> 接受任务 被偷走的炸药粉
     .target Quarrymaster Thesten
 step
     .isOnQuest 95214
@@ -4076,14 +4076,14 @@ step
     .goto 1426/0,-1881.82,-5735.45,0
     .goto 1426/0,-1832.57,-5571.28,0
     .goto 1426/0,-1724.22,-5636.95,0
-    >>击杀 |cRXP_ENEMY_石颚 Ambushers|r，拾取他们的 |cRXP_LOOT_Stolen Blasting Powder|r
+    >>击杀 |cRXP_ENEMY_石腭伏击者|r。拾取它们的 |cRXP_LOOT_被偷走的炸药粉|r
     .complete 95214,1 -- Stolen Blasting Powder (16)
     .mob Rockjaw Ambusher
 step
     .isQuestComplete 95214
     .goto 1426/0,-1606.02,-5676.35
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Quarrymaster Thesten|r 对话
-    .turnin 95214 >> 交任务 Stolen Blasting Powder
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_矿场主管瑟斯丁|r 对话
+    .turnin 95214 >> 交任务 被偷走的炸药粉
     .target Quarrymaster Thesten
 step
     .goto 1426/0,-2197.02,-5279.07,45,0
@@ -4127,7 +4127,7 @@ RXPGuides.RegisterGuide([[
 #season 0,1
 #version 1
 << Alliance
-#group RestedXP Forever 指南 A
+#group RestedXP 永久向导 A
 #subgroup 速通指南 1-20级
 --#groupid RXP-SRGCE-A1
 #name 11-13级 洛克莫丹
@@ -4878,7 +4878,7 @@ step << Hunter skip
     #requires DockTravel
     #label DarkshoreCook1
     #completewith DarkshoreBoat
-    >>如果船只刚到就登船，如果船只刚走就在码头等：
+    >>|cRXP_WARN_在码头等待船只时:|r
     .cast 818 >>|cRXP_WARN_创建|r |T135805:0|t[基础营火] |cRXP_WARN_（在你的专业技能书中）|r
     .usespell 818
     .zoneskip Darkshore
@@ -4892,7 +4892,7 @@ step << Hunter skip
     #requires DarkshoreCook1
     #label DarkshoreCook2
     #completewith DarkshoreBoat
-    >>如果船只刚到就登船，如果船只刚走就在码头等：
+    >>|cRXP_WARN_在码头等待船只时:|r
     .cast 818 >>|cRXP_WARN_创建|r |T135805:0|t[基础营火] |cRXP_WARN_（在你的专业技能书中）|r
     .usespell 818
     .zoneskip Darkshore
@@ -4906,7 +4906,7 @@ step << Hunter skip
     #requires DarkshoreCook2
     #label DarkshoreCook3
     #completewith DarkshoreBoat
-    >>如果船只刚到就登船，如果船只刚走就在码头等：
+    >>|cRXP_WARN_在码头等待船只时:|r
     .cast 818 >>|cRXP_WARN_创建|r |T135805:0|t[基础营火] |cRXP_WARN_（在你的专业技能书中）|r
     .usespell 818
     .zoneskip Darkshore

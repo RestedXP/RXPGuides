@@ -52,7 +52,7 @@ step << Warlock
     .target 德南·弗卡特
 step << Warlock
     .goto Dun Morogh,28.650,66.145
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿拉玛尔·格里姆|r对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿拉玛尔·格里姆|r 对话
     .train 348 >> 学习 |T135817:0|t[献祭]
     .accept 1599 >> 接受任务 开端
     .target 阿拉玛尔·格里姆
@@ -102,7 +102,7 @@ step << Warlock
     #completewith next
     .hs >> 炉石返回寒脊山谷
 step << Warlock
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿拉玛尔·格里姆|r对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿拉玛尔·格里姆|r 对话
     .goto Dun Morogh,28.650,66.145
     .turnin 1599 >> 交任务 开端
     .turnin 3115 >> 交任务 被污染的备忘录 << Gnome Warlock
@@ -229,7 +229,7 @@ step << Gnome Mage
     .turnin 3114 >> 交任务 雕文备忘录
     .trainer >> 训练你的职业技能
 step << Warlock
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿拉玛尔·格里姆|r对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿拉玛尔·格里姆|r 对话
     .target 阿拉玛尔·格里姆
     .goto Dun Morogh,28.650,66.145
     .trainer >> 训练你的腐蚀术
@@ -694,7 +694,7 @@ step
     .goto Dun Morogh,42.25,53.68
     >>击杀 |cRXP_ENEMY_雪怪|r 和 |cRXP_ENEMY_雪怪幼崽|r。拾取他们的 |cRXP_LOOT_雪怪的鬃毛|r
     >>|cRXP_WARN_记得留意|r |T134566:0|t[铜矿] |cRXP_WARN_它可产出|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_并让你制造出|r |T135248:0|t[劣质磨刀石] << Warrior/Rogue
-    >>|cRXP_WARN_Remember to keep an eye out for|r |T134566:0|t[Copper Veins] |cRXP_WARN_which yield|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_so you can craft|r |T135255:0|t[Rough Weightstones] << Paladin
+    >>|cRXP_WARN_记得留意|r |T134566:0|t[铜矿] |cRXP_WARN_它可产出|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_并让你制造出|r |T135255:0|t[劣质平衡石] << Paladin
     .complete 313,1 --Collect Wendigo Mane (x8)
     .mob 雪怪
     .mob 雪怪幼崽
@@ -967,7 +967,7 @@ step
 step
     .goto Dun Morogh,47.377,52.523
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_旅店老板贝尔姆|r 对话，NPC在里面
-    >>|cRXP_BUY_从他那里购买1杯|r |T132800:0|t[狂想麦酒] |cRXP_BUY_和1杯|r |T132800:0|t[雷霆麦酒]
+    >>|cRXP_BUY_从他那里购买一杯|r |T132800:0|t[狂想麦酒] |cRXP_BUY_和一杯|r |T132800:0|t[雷霆麦酒]
     .complete 384,2 --Collect Rhapsody Malt (x1)
     .collect 2686,1,311 --Collect Thunder Ale (x1)
     .target 旅店老板贝尔姆
@@ -1793,7 +1793,7 @@ step
     .mob 狗头人矿工
 step
     .goto Elwynn Forest,40.5,82.3
-    >>|cRXP_WARN_进入并探察法戈第矿洞|r
+    >>|cRXP_WARN_进入并且探察法戈第矿洞|r
     .complete 62,1 --Scout Through the Fargodeep Mine
 step
     .goto Elwynn Forest,40.5,82.3,25,0

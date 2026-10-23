@@ -24,7 +24,7 @@ step
     #completewith next
     .goto 1420/0,1675.90,1645.00,8,0
     .goto 1420/0,1665.51,1645.00,8,0
-    .goto 1420/0,1667.77,1679.04,10 >> 从地穴跑出来，朝 |cRXP_FRIENDLY_摩尔多|r 方向前进
+    .goto 1420/0,1667.77,1679.04,10 >> 跑出地穴，朝 |cRXP_FRIENDLY_摩尔多|r 的方向前进
 step
     .goto 1420/0,1667.77,1679.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莫多|r 对话
@@ -820,6 +820,7 @@ step << Rogue
     .target 温特斯夫人
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.9
+    .money <0.07
 step << Rogue
     .goto 1420/0,316.66,2227.32
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥利弗·德沃尔|r 对话
@@ -990,9 +991,9 @@ step << Priest/Warlock
 step
     .goto 1420/0,244.81,2269.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_旅店老板瑞尼|r 对话
-    .vendor >>|cRXP_BUY_购买尽可能多的|r |T132815:0|t[冰镇牛奶] |cRXP_BUY_从她这里|r << Mage/Priest/Paladin
-    .vendor >>|cRXP_BUY_购买尽可能多的|r |T134532:0|t[红色-speckled Mushrooms] |cRXP_BUY_从她这里|r << Warrior/Rogue
-    .vendor >>|cRXP_BUY_购买尽可能多的|r |T132815:0|t[冰镇牛奶] |cRXP_BUY_和|r |T134532:0|t[红色-speckled Mushrooms] |cRXP_BUY_从她这里|r << Warlock
+    .vendor >>|cRXP_BUY_从她这里|r |cRXP_BUY_购买尽可能多的|r |T132815:0|t[冰镇牛奶] << Mage/Priest/Paladin
+    .vendor >>|cRXP_BUY_从她这里|r |cRXP_BUY_购买尽可能多的|r |T134532:0|t[红斑蘑菇] << Warrior/Rogue
+    .vendor >>|cRXP_BUY_从她这里|r |cRXP_BUY_购买尽可能多的|r |T132815:0|t[冰镇牛奶] |cRXP_BUY_和|r |T134532:0|t[红斑蘑菇] << Warlock
     .money <0.0125
     .target 旅店老板瑞尼
 step
@@ -1300,8 +1301,8 @@ step << Warlock
 step << Mage/Priest/Warlock
     .goto 1420/0,244.81,2269.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_旅店老板瑞尼|r 对话
-    .vendor >>|cRXP_BUY_购买尽可能多的|r |T132815:0|t[冰镇牛奶] |cRXP_BUY_从她这里|r << Mage/Priest
-    .vendor >>|cRXP_BUY_购买尽可能多的|r |T132815:0|t[冰镇牛奶] |cRXP_BUY_和|r |T134532:0|t[红色-speckled Mushrooms] |cRXP_BUY_从她这里|r << Warlock
+    .vendor >>|cRXP_BUY_从她这里|r |cRXP_BUY_购买尽可能多的|r |T132815:0|t[冰镇牛奶] << Mage/Priest
+    .vendor >>|cRXP_BUY_从她这里|r |cRXP_BUY_购买尽可能多的|r |T132815:0|t[冰镇牛奶] |cRXP_BUY_和|r |T134532:0|t[红斑蘑菇] << Warlock
     .money <0.0125
     .target 旅店老板瑞尼
 step
@@ -1940,6 +1941,12 @@ step
     #softcore
     #completewith FoodandWater2
     .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .xp <10,1
+step
+    #softcore
+    #completewith FoodandWater2
+    .subzone 159 >> 返回布瑞尔
+    .xp >10,1
 step
     .goto 1420/0,403.42,2287.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Dillinger|r
@@ -2241,6 +2248,7 @@ step << Rogue
     .target 纳撒尼尔·斯蒂恩维克
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.3
+    .money <0.03
 step << Rogue
     #optional
     #completewith LogoutSkip1
@@ -2748,7 +2756,7 @@ step
     >>拾取地上和墙上的 |cRXP_PICK_低语饮剂瓶|r
     .complete 91316,1 << Paladin--|12/12 Sturdy Lumber
     .complete 95314,1 --|8/8 Bottle of Whispering Elixir
-step
+step << skip
     #softcore
     #completewith next
     .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
@@ -3375,12 +3383,12 @@ step
     .turnin 435 >>交任务 护送埃兰德
     .accept 449 >>接受任务 亡灵哨兵的报告
     .target Rane Yorick
-step
+step << skip
     #softcore
     #completewith ProveyourWorth
     .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
 step
-    #hardcore
+    --#hardcore
     #completewith next
     .goto 1421/0,1359.66,864.19,50,0
     .goto 1421/0,1359.66,741.27,50,0
@@ -3592,12 +3600,12 @@ step
     .mob Giant Grizzled Bear
     .unitscan Old VIcejaw
     .unitscan Son of Arugal
-step
+step << skip
     #softcore
     #completewith ArugalTurnin
     .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
 step
-    #hardcore
+    --#hardcore
     #completewith next
     .goto 1421/0,1538.58,511.39,100,0
     .subzone 228 >>返回瑟伯切尔
@@ -3830,8 +3838,8 @@ step
     .target Shadow Priest Allister
 step
     .goto 1421/0,1579.600,461.700
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Tabitha Heartweaver::250686|r 对话
-    .accept 92401 >>接受任务 惊恐的请求
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塔比莎·织心::250686|r 对话
+    .accept 92401 >>接受任务 惊恐的求援
     .target Tabitha Heartweaver::250686
     .xp <15,1
     .dungeon ROL
@@ -3973,7 +3981,7 @@ step
     .goto 1458,52.275,79.254,15,0
     .goto 1458,51.279,79.923,15,0
     .goto 1458,49.693,78.903,15,0
-    .goto 1458,47.951,76.171,15 >>前往炼金区
+    .goto 1458,47.951,76.171,15 >>前往炼金房
 step
     .goto 1458/0,426.100,1403.600
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_马丁·费尔本|r 对话

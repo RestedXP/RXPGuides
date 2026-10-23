@@ -2118,14 +2118,14 @@ step
     .goto The Barrens,52.26,31.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_图加|r 对话
     .turnin 870 >>交任务  遗忘之池
-    .accept 877 >>接受任务 死水绿洲
+    .accept 877 >>接受任务死水绿洲
     .target 图加·符文图腾
     .isQuestComplete 870
 step
     #optional
     .goto The Barrens,52.26,31.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_图加|r 对话
-    .accept 877 >>接受任务 死水绿洲
+    .accept 877 >>接受任务死水绿洲
     .target 图加·符文图腾
     .isQuestTurnedIn 877
 step
@@ -5478,7 +5478,7 @@ step
     .goto The Barrens,52.26,31.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_图加|r 对话
     .turnin 870 >>交任务  遗忘之池
-    .accept 877 >>接受任务 死水绿洲
+    .accept 877 >>接受任务死水绿洲
     .target 图加·符文图腾
     .isQuestComplete 870
 step
@@ -5487,7 +5487,7 @@ step
     .goto The Barrens,52.26,31.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_图加|r 对话
     .turnin 870 >>交任务  遗忘之池
-    .accept 877 >>接受任务 死水绿洲
+    .accept 877 >>接受任务死水绿洲
     .target 图加·符文图腾
     .isQuestTurnedIn 877
 step
