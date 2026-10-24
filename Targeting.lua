@@ -238,10 +238,16 @@ function addon.targeting:UpdateMacro(queuedTargets)
         addon.ScheduleTask(1.5, AnnounceTargets)
     end
 
-    if content then
-        while #content > 230 do content = content:gsub("^\n?[^\n]*[\n]*", "") end
+    local maxMacroSize = 230
+    local targetMarker = ""
+    if WOW_PROJECT_ID == WOW_PROJECT_CAMELOT or WOW_PROJECT_ID == WOW_PROJECT_MAINLINE then
+        targetMarker = "\n/tm !7"
+        maxMacroSize = 223
+    end
 
-        content = content .. '\n/targetlasttarget [dead]'
+    if content then
+        while #content > maxMacroSize do content = content:gsub("^\n?[^\n]*[\n]*", "") end
+        content = content .. targetMarker .. '\n/targetlasttarget [dead]'
     else
         content = fmt('//%s - %s', addon.title, L("current step has no configured targets")) -- TODO locale
     end
