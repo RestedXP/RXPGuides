@@ -39,87 +39,6 @@ step
     #hidewindow
     +1
     .usespell 1231411
-    .use 175180
-    .use 175245
-    .use 175181
-    .use 175182
-    .use 175183
-    .use 175212
-    .use 175213
-    .use 175214
-    .use 175215
-    .use 175161
-    .use 175162
-    .use 175163
-    .use 175164
-    .use 175165
-    .use 175166
-    .use 175167
-    .use 175168
-    .use 175169
-    .use 175170
-    .use 175171
-    .use 175172
-    .use 175173
-    .use 175174
-    .use 175199
-    .use 175200
-    .use 175201
-    .use 175202
-    .use 175231
-    .use 175232
-    .use 175233
-    .use 175238
-    .use 175191
-    .use 175192
-    .use 175193
-    .use 175194
-    .use 175224
-    .use 175223
-    .use 175225
-    .use 175226
-    .use 175203
-    .use 175204
-    .use 175205
-    .use 175206
-    .use 175234
-    .use 175235
-    .use 175236
-    .use 175237
-    .use 175184
-    .use 175185
-    .use 175186
-    .use 175187
-    .use 175216
-    .use 175218
-    .use 175219
-    .use 175175
-    .use 175188
-    .use 175189
-    .use 175190
-    .use 175207
-    .use 175220
-    .use 175221
-    .use 175222
-    .use 175176
-    .use 175177
-    .use 175178
-    .use 175179
-    .use 175208
-    .use 175209
-    .use 175210
-    .use 175211
-    .use 178164
-    .use 179362
-    .use 178166
-    .use 179360
-    .use 178167
-    .use 178163
-    .use 178165
-    .use 178162
-    .use 178168
-    .use 178171
-    .use 178169
 step
     #optional
     .convertquest 56775,59926 << Horde
@@ -497,6 +416,10 @@ step
     #arrowtext Click\n|cRXP_PICK_Chest|r << Alliance
     .goto 1409,58.51,59.30
     .turnin 56579 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Chest|r.
+    .use 175182 << Hunter/Shaman --Expeditionary Mail Sabatons
+    .use 175181 << Mage/Priest/Warlock --Expeditionary Cloth Boots
+    .use 175183 << Druid/Monk/Rogue --Expeditionary Leather Boots
+    .use 175180 << Warrior/Paladin --Expeditionary Plate Warboots
 step
     #completewith next
     #label ScoutoMatic 5000
@@ -658,6 +581,13 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Garrick|r.
     .accept 55194 >>Accept Stocking Up on Supplies
     .target Captain Garrick
+    .use 175166 << Warrior/Paladin --Expeditionary Greatsword
+    .use 175162 << Hunter --Expeditionary Longbow
+    .use 175167 << Mage/Priest/Warlock/Druid/Monk/Shaman --Expeditionary Staff
+    .use 175172 << Rogue/Mage/Priest/Warlock/Druid/Shaman --Expeditionary Dagger
+    .use 175170 << Warrior/Paladin/Rogue/Monk --Expeditionary Short Sword
+    .use 175173 << Priest/Druid/Monk/Shaman/Paladin/Rogue --Expeditionary Cudgel
+    .use 175168 << Druid/Monk/Hunter --Expeditionary Quarterstaff
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Richter|r << Alliance
     .goto 1409,52.22,55.3
@@ -908,6 +838,14 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Lightspawn|r.
     .accept 54933 >>Accept Freeing the Light
     .target Lightspawn
+    .use 175199 << Warrior/Paladin --Expeditionary Plate Girdle
+    .use 175238 << Mage/Priest/Warlock --Expeditionary Cloth Cord
+    .use 175200 << Mage/Priest/Warlock --Expeditionary Cloth Cord
+    .use 175201 << Hunter/Shaman --Expeditionary Mail Waistguard
+    .use 175202 << Druid/Monk/Rogue --Expeditionary Leather Belt
+    .use 175233 << Druid/Monk/Rogue --Expeditionary Leather Belt
+    .use 175232 << Hunter/Shaman --Expeditionary Mail Waistguard
+    .use 175231 << Warrior/Paladin --Expeditionary Plate Girdle
 step
     #arrowtext Click\n|cRXP_PICK_Orb|r << Alliance
     .zoneskip 1409,1
@@ -1073,6 +1011,10 @@ step << Rogue
     .skipgossipid 51266
     .skipgossipid 51267
     .target Coulston Nereus
+    .use 175191 << Warrior/Paladin --Expeditionary Plate Legguards
+    .use 175192 << Mage/Priest/Warlock --Expeditionary Cloth Leggings
+    .use 175193 << Hunter/Shaman --Expeditionary Mail Leggings
+    .use 175194 << Druid/Monk/Rogue --Expeditionary Leather Legguards
 step << Rogue
     #arrowtext Click\n|cRXP_PICK_Plant|r << Alliance
     .zoneskip 1409,1
@@ -1138,6 +1080,10 @@ step << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Austin Huxworth|r.
     .accept 59355 >>Accept A Hunter's Trap
     .target Austin Huxworth
+    .use 175191 << Warrior/Paladin --Expeditionary Plate Legguards
+    .use 175192 << Mage/Priest/Warlock --Expeditionary Cloth Leggings
+    .use 175193 << Hunter/Shaman --Expeditionary Mail Leggings
+    .use 175194 << Druid/Monk/Rogue --Expeditionary Leather Legguards
 step << Hunter
     #arrowtext Talk to\n|cRXP_FRIENDLY_Meredy Huntswell|r << Alliance
     .zoneskip 1409,1
@@ -1254,6 +1200,10 @@ step << Monk
     .accept 59347 >>Accept A Monk's Focus
     .timer 34,A Monk's Focus RP
     .target Kee-La
+    .use 175191 << Warrior/Paladin --Expeditionary Plate Legguards
+    .use 175192 << Mage/Priest/Warlock --Expeditionary Cloth Leggings
+    .use 175193 << Hunter/Shaman --Expeditionary Mail Leggings
+    .use 175194 << Druid/Monk/Rogue --Expeditionary Leather Legguards
 step << Monk
     .zoneskip 1409,1
     #completewith next
@@ -1305,6 +1255,10 @@ step << Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meredy Huntswell|r.
     .accept 59352 >>Accept A Mage's Knowledge
     .target Meredy Huntswell
+    .use 175191 << Warrior/Paladin --Expeditionary Plate Legguards
+    .use 175192 << Mage/Priest/Warlock --Expeditionary Cloth Leggings
+    .use 175193 << Hunter/Shaman --Expeditionary Mail Leggings
+    .use 175194 << Druid/Monk/Rogue --Expeditionary Leather Legguards
 step << Mage
     #arrowtext Click\n|cRXP_PICK_Book|r << Alliance
     .zoneskip 1409,1
@@ -1367,6 +1321,9 @@ step
     #hidewindow
     #completewith Who Lurks in the Pit1
     .goto 1409,51.18,59.61,80 >>Follow the Arrow
+    .use 175191 << Warrior/Paladin --Expeditionary Plate Legguards
+    .use 175192 << Priest/Warlock --Expeditionary Cloth Leggings
+    .use 175194 << Druid --Expeditionary Leather Legguards
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Bjorn Stouthands|r and |cRXP_FRIENDLY_Alaria|r << Alliance
     .zoneskip 1409,1
@@ -1562,6 +1519,11 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Richter|r and |cRXP_WARN_repair all items|r.
     .complete 85678,1 --1/1 Speak With Quartmaster Richter to Repair All Items
     .target Quartermaster Richter
+    .use 175203 << Mage/Priest/Warlock --Expeditionary Cloth Cuffs
+    .use 175204 << Warrior/Paladin --Expeditionary Plate Armguards
+    .use 175205 << Hunter/Shaman --Expeditionary Mail Armbands
+    .use 175206 << Druid/Monk/Rogue --Expeditionary Leather Bracers
+    .use 175193 << Shaman --Expeditionary Mail Leggings
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Captain Garrick|r << Alliance
     .zoneskip 1409,1
@@ -1834,6 +1796,7 @@ step
     .turnin 55988 >>Turn in Like Ogres to the Slaughter
     .target Captain Garrick
     .target Henry Garrick
+    .use 175245 --Runetusk Necklace
 step
     #arrowtext Follow the Arrow << Alliance
     .zoneskip 1409,1
@@ -1847,12 +1810,17 @@ step
     .turnin 55988 >>Turn in Like Ogres to the Slaughter
     .goto 1409,40.36,32.26
     .target +Henry Garrick
+    .use 175245 --Runetusk Necklace
 step
     #arrowtext Click\n|cRXP_PICK_Ogre Runestone|r << Alliance
     .zoneskip 1409,1
     .goto 1409,40.07,31.96
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Ogre Runestone|r.
     .complete 55990,4,1 --3/3 Disable runes holding Warlord Thunderwalker
+    .use 175184 << Druid/Monk/Rogue --Expeditionary Leather Gloves
+    .use 175186 << Mage/Priest/Warlock --Expeditionary Cloth Gloves
+    .use 175185 << Warrior/Paladin --Expeditionary Plate Gauntlets
+    .use 175187 << Hunter/Shaman --Expeditionary Mail Gauntlets
 step
     #arrowtext Click\n|cRXP_PICK_Ogre Runestone|r << Alliance
     .zoneskip 1409,1
@@ -1905,12 +1873,23 @@ step
     .complete 55992,2 --1/1 Gor'groth's final ritual stopped
     .mob Gor'groth
     .mob Kalecgos
+    .use 179362 << Mage/Priest/Warlock/Druid/Monk/Shaman --Tunk's Backscratcher
+    .use 178164 << Rogue/Mage/Priest/Warlock/Druid/Shaman --Tunk's Needle
+    .use 178167 << Warrior/Paladin/Rogue/Monk/Druid/Shaman/Priest --Tunk's Lil' Whomper
+    .use 178165 << Warrior/Paladin/Rogue/Monk --Tunk's Tooth
+    .use 179360 << Hunter --Tunk's Tiny Bow
+    .use 178163 << Warrior/Paladin/Shaman --Tunk's Shinguard
+    .use 178166 << Warrior/Paladin/Druid/Monk/Hunter --Tunk's Toothpick
+    .use 178162 << Warrior/Paladin/Druid --Tunk's Whomper
 step
     .isInScenario 1779
     #label Darkmaul Citadel
     >>Press the macro in the "Active Items Frame" to leave the dungeon.
     .complete 55992,3 --1/1 Speak with Captain Garrick to leave Darkmaul Citadel
     .macro Leave Instance,236367 >>/run C_PartyInfo.LeaveParty()
+    .use 178171 --Darkmaul Signet Ring
+    .use 178168 --Darkmaul Ritual Stone
+    .use 178169 --Decrepit Dragonscale Drape
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Lady Jaina Proudmoore|r << Alliance
     .goto 1409,39.65,31.99
@@ -1926,6 +1905,14 @@ step
     .complete 55991,1 --1/1 Speak to Kalecgos to travel to the Dragon Isles
     .skipgossipid 133763
     .target Kalecgos
+    .use 175188 << Mage/Priest/Warlock --Expeditionary Cloth Hood
+    .use 175175 << Warrior/Paladin --Expeditionary Plate Helm
+    .use 175190 << Druid/Monk/Rogue --Expeditionary Leather Helm
+    .use 175220 << Mage/Priest/Warlock --Expeditionary Cloth Hood
+    .use 175207 << Warrior/Paladin --Expeditionary Plate Helm
+    .use 175221 << Hunter/Shaman --Expeditionary Mail Helm
+    .use 175222 << Druid/Monk/Rogue --Expeditionary Leather Helm
+    .use 175189 << Hunter/Shaman --Expeditionary Mail Helm
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Kalecgos|r << Alliance
     .goto 2022,81.98,31.46
@@ -1940,6 +1927,10 @@ step
     *|cRXP_WARN_If you already have your desired one, switch to another and back|r.
     .complete 87547,1 --1/1 Activate a combat specialization
     -- .macro Open Talents,611426 >>/run ToggleTalentFrame()
+    .use 175176 << Mage/Priest/Warlock --Expeditionary Cloth Robe
+    .use 175177 << Warrior/Paladin --Expeditionary Plate Chestpiece
+    .use 175179 << Druid/Monk/Rogue --Expeditionary Leather Tunic
+    .use 175178 << Hunter/Shaman --Expeditionary Mail Armor
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Kalecgos|r << Alliance
     .goto 2022,81.97,31.47
@@ -2005,18 +1996,14 @@ step
 step
     #arrowtext Click\n|cRXP_PICK_Portal|r
     .goto 2352,57.44,26.64
-    .zoneskip 2352,1
+    -- .zoneskip 2352,1
     .zone 84 >>Click on the |cRXP_PICK_Portal|r
-    -- .skipto guide,RestedXP Speed Leveling\ba) DF Alliance Intro Midnight (A) << Alliance
-    -- .skipto guide,RestedXP Speed Leveling\b1) BfA Intro << Horde
-    .zoneskip 85
+    -- .zoneskip 85
 step
     #arrowtext Click\n|cRXP_PICK_Portal|r
     .goto 2351,53.93,49.4
     .zoneskip 2351,1
     .zone 85 >>Click on the |cRXP_PICK_Portal|r
-    -- .skipto guide,RestedXP Speed Leveling\ba) DF Alliance Intro Midnight (A) << Alliance
-    -- .skipto guide,RestedXP Speed Leveling\b1) BfA Intro << Horde
     .zoneskip 84
 ]])
 --Death Knight Plaguelands: The Scarlet Enclave
@@ -2038,24 +2025,7 @@ step
     #completewith Cry For Vengeance!
     +test
     .usespell 1231411
-    .use 38674
-    .use 38666
-    .use 38669
-    .use 38672
-    .use 38667
-    .use 38665
-    .use 38675
-    .use 38661
-    .use 38632
-    .use 38633
     .use 39208
-    .use 38664
-    .use 39320
-    .use 39322
-    .use 40483
-    .use 38707
-    .use 38662
-    .use 38671
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_The Lich King|r
     .goto 124,51.33,35.19
@@ -2107,6 +2077,7 @@ step
     >>Press the macro in the "Active Items Frame" to open Runeforging and pick an enchant for your weapon.
     .complete 12842,1 --Weapon emblazoned (1)
     .macro Runeforging,237523 >>/use runeforging
+    .use 38707 --Runed Soulblade
 step
     #arrowtext |cFFFCDC00Find the patrolling NPC|r
     #loop
@@ -2237,6 +2208,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Thorval|r.
     .turnin 12849 >>Turn in The Power Of Blood, Frost And Unholy
     .target Lord Thorval
+    .use 38662 --Bladed Ebon Amulet
 step
     #arrowtext |cFFFCDC00Find the patrolling NPC|r
     #loop
@@ -2450,6 +2422,9 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Olrun the Battlecaller|r.
     .turnin 12733 >>Turn in Death's Challenge
     .target Olrun the Battlecaller
+    .use 38664 --Sky Darkener's Shroud of the Unholy
+    .use 39320 --Sky Darkener's Shroud of Blood
+    .use 39322 --Shroud of the North Wind
 step
     #arrowtext |cFFFCDC00Find the patrolling NPC|r
     .goto 124,51.63,35.89
@@ -2457,6 +2432,7 @@ step
     .complete 12687,1
     .macro Remove Darkness,136223 >>/cancelaura 52693
     .macro Leave Vehicle,6656430 >>/leavevehicle
+    .use 40483 --Insignia of the Scourge
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Salanar the Horseman|r
     #loop
@@ -2479,6 +2455,7 @@ step
     .turnin 12697 >>Turn in Gothik the Harvester
     .accept 12698 >>Accept The Gift That Keeps On Giving
     .target Gothik the Harvester
+    .use 38671 --Valanar's Signet Ring
 step
     #completewith next
     #label Returned
@@ -2530,6 +2507,7 @@ step
     .turnin 12700 >>Turn in An Attack Of Opportunity
     .accept 12701 >>Accept Massacre At Light's Point
     .target Prince Valanar
+    .use 38674 --Soul Harvester's Charm
 step
     #completewith next
     #label Scarlet Defender
@@ -2615,6 +2593,7 @@ step
     .turnin 12706 >>Turn in Victory At Death's Breach!
     .accept 12714 >>Accept The Will Of The Lich King
     .target Highlord Darion Mograine
+    .use 38666 --Plated Saronite Bracers
 step
     #completewith next
     #label Crypt of Remembrance
@@ -2641,6 +2620,7 @@ step
     .accept 12715 >>Accept The Crypt of Remembrance
     .target Skeleton Gryphon
     .target Prince Valanar
+    .use 38669 --Engraved Saronite Legplates
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Noth the Plaguebringer|r
     .goto 124,55.91,52.42
@@ -2916,6 +2896,7 @@ step
     .turnin 12723 >>Turn in Behind Scarlet Lines
     .accept 12724 >>Accept The Path Of The Righteous Crusader
     .target Orbaz Bloodbane
+    .use 38672 --Keleseth's Signet Ring
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Thassarian|r
     .goto 124,56.27,80.17
@@ -3008,6 +2989,7 @@ step
     .turnin 12727 >>Turn in Bloody Breakout
     .accept 12738 >>Accept A Cry For Vengeance!
     .target Thassarian
+    .use 38667 --Bloodbane's Gauntlets of Command
 step
     #completewith next
     #label Cry For Vengeance!
@@ -3029,6 +3011,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Knight Commander Plaguefist|r.
     .turnin 12738 >>Turn in A Cry For Vengeance!
     .target Knight Commander Plaguefist
+    .use 38665 --Saronite War Plate
 step << Alliance
     #arrowtext |cFFFCDC00Find the patrolling NPC|r
     #loop
@@ -3523,6 +3506,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orbaz Bloodbane|r.
     .accept 12754 >>Accept Ambush At The Overlook
     .target Orbaz Bloodbane
+    .use 38675 --Signet of the Dark Brotherhood
 step
     #completewith next
     #label Belongings
@@ -3727,6 +3711,7 @@ step
     .turnin 12800 >>Turn in The Lich King's Command
     .accept 12801 >>Accept The Light of Dawn
     .target Scourge Commander Thalanor
+    .use 38661 --Greathelm of the Scourge Champion
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Highlord Darion Mograine|r
     .goto 124,34.46,31.12,5,0
@@ -3767,6 +3752,8 @@ step
     .turnin 13165 >>Turn in Taking Back Acherus
     .accept 13166 >>Accept The Battle For The Ebon Hold
     .target Highlord Darion Mograine
+    .use 38632 --Greatsword of the Ebon Blade
+    .use 38633 --Greataxe of the Ebon Blade
 step
     #completewith next
     #label Patchwerk
@@ -3822,6 +3809,7 @@ step
     .accept 13188 >>Accept Where Kings Walk << Alliance
     .accept 13189 >>Accept Saurfang's Blessing << Horde
     .target Highlord Darion Mograine
+    .use 38661 --Greathelm of the Scourge Champion
 step << Alliance
     #completewith next
     #label Where Kings Walk
@@ -4027,15 +4015,7 @@ step
     +test
     .usespell 1231411
     .use 129210
-    .use 133317
-    .use 133312
     .use 201989
-    .use 133316
-    .use 133311
-    .use 133314
-    .use 133310
-    .use 133315
-    .use 141650
     .use 129192
     .use 128946
     .use 128948
@@ -4108,6 +4088,7 @@ step
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Legion Banner|r.
     .complete 40378,1 --1/1 Ashtongue forces
     .timer 15,RP
+    .use 133317 --Treads of Illidari Supremacy
 step
     #completewith next
     #label Illidan's Gift
@@ -4283,6 +4264,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jace Darkweaver|r.
     .accept 39050 >>Accept Meeting With the Queen
     .target Jace Darkweaver
+    .use 133312 --Torment Ender's Chestguard
 step
     #arrowtext Click\n|cRXP_PICK_Nether Crucible|r
     .goto 672,38.75,60.53
@@ -4386,6 +4368,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r.
     .goto 672,60.51,44.75
     .accept 38813 >>Accept Orders for Your Captains
+    .use 133316 --Leggings of Sacrifice
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Lady S'theno|r
     .goto 672,59.23,46.16
@@ -4635,6 +4618,8 @@ step
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Book|r and choose a spec.
     *|cRXP_WARN_(You can change it later)|r.
     .complete 40051,1 --1/1 Choose between Havoc & Vengeance
+    .use 133311 --Demon-Rend Shoulderblades
+    .use 133314 --Power Handler's Gloves
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Kayn Sunfury|r
     .goto 672,60.52,44.76
@@ -4765,6 +4750,7 @@ step
     .goto 672,69.85,37.81
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Sargerite Keystone|r.
     .complete 38729,1 --1/1 Sargerite Keystone activated
+    .use 133310 --The Brood Queen's Veil
 step
     #arrowtext Click\n|cRXP_PICK_Portal|r
     .goto 672,69.85,37.54
@@ -5200,10 +5186,12 @@ step
     .turnin 39684 >>Turn in Beam Me Up
     .accept 39686 >>Accept All The Way Up
     .target Allari the Souleater
+    .use 133315 --Infernal Firecord Sash
 step
     .goto 678,46.69,48.12
     >>|cRXP_WARN_Proceed to the location of the elevator and patiently await its arrival|r.
     .complete 39686,1 --1/1 Ascend to the Hall of Judgment
+    .use 133315 --Infernal Firecord Sash
 step
     #completewith next
     #label A New Direction
@@ -5280,6 +5268,7 @@ step << Horde
     .complete 40256,1 --1/1 Bastillax slain & power taken
     .mob Bastillax
     .macro Remove Aura,1344654 >>/cancelaura Taking Power
+    .use 141650 << (Horde) --Helm of Reaffirmed Purpose
 step << Horde
     #completewith next
     #label Bastillax2
@@ -5337,6 +5326,7 @@ step << Alliance
     .complete 40255,1 --1/1 Bastillax slain & power taken
     .macro Remove Aura,1344654 >>/cancelaura Taking Power
     .mob Bastillax
+    .use 141650 << (Alliance) --Helm of Reaffirmed Purpose
 step << Alliance
     #completewith next
     #label Bastillax4
@@ -5675,20 +5665,6 @@ step << Evoker
     #completewith Final Orders
     +test
     .usespell 1231411
-    .use 191809 -- Crimson Dracthyr Battlegear Monnion
-    .use 1193916 -- Dragonkin Signet Ring
-    .use 1191808 -- Crimson Dracthyr Battlegear Leggings
-    .use 1194335 -- Emerald Tear Necklace
-    .use 1191811 -- Crimson Dracthyr Battlegear Bracers
-    .use 1194333 -- Ekrazathal Colored Fang
-    .use 1191805 -- Crimson Dracthyr Battlegear Hauberk
-    .use 1191810 -- Crimson Dracthyr Battlegear Belt
-    .use 1191806 -- Crimson Dracthyr Battlegear Grips
-    .use 1194109 -- Verdant Dracthyr Band
-    .use 191812 -- Crimson Dracthyr Battlegear Treads
-    .use 1193481 -- Emblazoned Ruby Staff
-    .use 1194422 -- Crimson Dracthyr Drape
-    .use 1193914 -- Crystalline Lapis
 step << Evoker Horde
     #arrowtext Talk to\n|cRXP_FRIENDLY_Kodethi|r
     .goto 2109,47.50,84.52,-1
@@ -5947,6 +5923,7 @@ step << Evoker
     >>Glide down
     .complete 64866,1 --1/1 Glide into the Earth-Warder's Cauldron
     .target Dracthyr Talon
+    .use 193481 << (Evoker) --Emblazoned Ruby Staff
 step << Evoker
     #arrowtext Use [Living Flame]\non |cRXP_FRIENDLY_Dracthyr Talons|r
     #loop
@@ -5991,6 +5968,7 @@ step << Evoker
     .goto 2109,66,13.22
     #title |cFFFCDC00Follow the Arrow|r
     .complete 64871,1 --Exit reached
+    .use 194422 << (Evoker) --Crimson Dracthyr Drape
 step << Evoker
     #arrowtext Kill\n|cRXP_ENEMY_Lapisagos|r
     .goto 2109,66.4,10.69
@@ -6017,6 +5995,7 @@ step << Evoker
     .complete 64872,2 --Cast an Empowered II Fire Breath
     .complete 64872,3 --Cast an Empowered III Fire Breath
     .usespell 357208
+    .use 193914 << (Evoker) --Crystalline Lapis
 step << Evoker
     #completewith next
     +You can now Skyride
@@ -6220,6 +6199,7 @@ step << Evoker
     .complete 65074,1 --4/4 Scythid slain
     .mob Scythid Steamstalker
     .mob Deatheater Scythid
+    .use 191805 << (Evoker) --Crimson Dracthyr Battlegear Hauberk
 step << Evoker
     #label Toxin Glands collected
     >>Kill |cRXP_ENEMY_Scalerenders|r.
@@ -6252,6 +6232,7 @@ step << Evoker
     .target Injured Talon
     .usespell 355913
     .usespell 361469
+    .use 191810 << (Evoker) --Crimson Dracthyr Battlegear Belt
 step << Evoker
     #arrowtext Use [Emerald Blossom]\non |cRXP_FRIENDLY_Injured Drakonid|r
     .goto 2118,24.94,12.72
@@ -6291,6 +6272,7 @@ step << Evoker
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Report: Infestation|r.
     .complete 66324,2 --1/1 Clues discovered
     .use 191729
+    .use 191806 << (Evoker) --Crimson Dracthyr Battlegear Grips
 step << Evoker
     #completewith next
     #label Horn signets1
@@ -6375,6 +6357,7 @@ step << Evoker
     .turnin 65075 >>Turn in The Healing Wings
     .accept 65045 >>Accept Stormsunder Crater
     .target Scalecommander Emberthal
+    .use 194109 << (Evoker) --Verdant Dracthyr Band
 step << Evoker
     #arrowtext Talk to\n|cRXP_FRIENDLY_Treysh|r
     .goto 2118,45.31,61.34
@@ -6382,6 +6365,7 @@ step << Evoker
     .accept 72263 >>Accept Cavalry Has its Place
     .turnin 72263 >>Turn in Cavalry Has its Place
     .target Treysh
+    .use 191812 << (Evoker) --Crimson Dracthyr Battlegear Treads
 step << Evoker
     #arrowtext Talk to\n|cRXP_FRIENDLY_Scalecommander Azurathel|r and |cRXP_FRIENDLY_Dervishian|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Azurathel|r and |cRXP_FRIENDLY_Dervishian|r.
@@ -6450,6 +6434,7 @@ step << Evoker
     .goto 2118,81.32,56.81
     >>Use the [ExtraActionButton] on the waypoint location.
     .complete 65052,1 --1/1 Attack on Ekrazathal signaled
+    .use 191811 << (Evoker) --Crimson Dracthyr Battlegear Bracers
 step << Evoker
     #arrowtext Talk to\n|cRXP_FRIENDLY_Scalecommander Sarkareth|r
     .goto 2118,81.22,53.96
@@ -6477,6 +6462,7 @@ step << Evoker
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Emberthal|r.
     .turnin 65057 >>Turn in Rally to Emberthal
 	.target Scalecommander Emberthal
+    .use 194333 << (Evoker) --Ekrazathal Colored Fang
 step << Evoker
     #arrowtext Talk to\n|cRXP_FRIENDLY_Scalecommander Emberthal|r
     .goto 2118,44.83,57.69
@@ -6502,6 +6488,7 @@ step << Evoker
     .turnin 65084 >>Turn in The Froststone Vault
     .accept 65087 >>Accept The Prize Inside
 	.target Scalecommander Sarkareth
+    .use 191808 << (Evoker) --Crimson Dracthyr Battlegear Leggings
 step << Evoker
     #arrowtext Kill\n|cRXP_ENEMY_Monsters|r
     #loop
@@ -6529,6 +6516,7 @@ step << Evoker
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Emberthal|r.
 	.target Scalecommander Emberthal
     .accept 65097 >>Accept Run!
+    .use 194335 << (Evoker) --Emerald Tear Necklace
 step << Evoker
     .goto 2118,53.19,33.04,20,0
     .goto 2118,51.39,33.16,20,0
@@ -6589,6 +6577,7 @@ step << Evoker
     .goto 2118,42.19,54.55
     #title |cFFFCDC00Follow the Arrow|r
     .complete 65100,1 --1/1 Reach the Old Weyrn Grounds
+    .use 191809 << (Evoker) --Crimson Dracthyr Battlegear Monnion
 step << Evoker
     #completewith next
     #label Nozdormu
@@ -6635,6 +6624,7 @@ step << Evoker
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Azurathel|r.
     .turnin 65100 >>Turn in Final Orders
 	.target Scalecommander Azurathel
+    .use 193916 << (Evoker) --Dragonkin Signet Ring
 step << Alliance Evoker
     #completewith Draconic Connections
     +|cRXP_WARN_Reminder: You can mount up again|r.
@@ -6644,6 +6634,7 @@ step << Alliance Evoker
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wrathion|r.
     .accept 65286 >>Accept Draconic Connections
 	.target Wrathion
+    .use 193916 << (Evoker) (Alliance Evoker) --Dragonkin Signet Ring
 step << Alliance Evoker
     #arrowtext Talk to\n|cRXP_FRIENDLY_Scalecommander Azurathel|r
     #label Draconic Connections
@@ -6763,6 +6754,7 @@ step << Horde Evoker
     .goto 1,45.56,12.95
     .target Spiritwalker Ebonhorn
     .target Scalecommander Cindrethresh
+    .use 193916 << (Evoker) (Horde Evoker) !(Alliance Evoker) --Dragonkin Signet Ring
 step << Horde Evoker
     #completewith next
     +|cRXP_WARN_Reminder: You can mount up again|r.
@@ -6889,93 +6881,6 @@ step
     +test
     .usespell 1231411
     .use 77272 --Sugarcane
-    .use 73241 -- bag
-    .use 73214 --initiates-wristwraps
-    .use 73216 --initiates-armguards
-    .use 131901 --initiates-cuffs
-    .use 73215 --initiates-bracers
-    .use 73217 --initiates-rope-belt
-    .use 73218 --initiates-belt
-    .use 131902 --initiates-braided-belt
-    .use 73219 --initiates-plate-belt
-    .use 73220 --initiates-gloves
-    .use 73222 --initiates-gauntlets
-    .use 131903 --initiates-grips
-    .use 73221 --initiates-handguards
-    .use 73223 --cloak-of-the-compassionate
-    .use 73241 --merchants-satchel
-    .use 73224 --initiates-robes
-    .use 73226 --initiates-breastplate
-    .use 131904 --initiates-chestpiece
-    .use 73225 --initiates-vest
-    .use 73227 --initiates-leggings
-    .use 73229 --initiates-legguards
-    .use 131905 --initiates-greaves
-    .use 73228 --initiates-britches
-    .use 73230 --initiates-slippers
-    .use 73232 --initiates-sabatons
-    .use 131906 --initiates-boots
-    .use 73231 --initiates-footgear
-    .use 73237 --mace-of-the-master
-    .use 73239 --staff-of-the-master
-    .use 73238 --dagger-of-the-master
-    .use 73242 --masters-haversack
-    .use 73233 --shield-of-blazing-will
-    .use 73235 --sword-of-the-burning-spirit
-    .use 73236 --dagger-of-silent-flame
-    .use 73234 --flameheart-crossbow
-    .use 74568 --unmarred-cord
-    .use 74570 --unmarred-belt
-    .use 131907 --unmarred-chain
-    .use 74569 --unmarred-waistband
-    .use 74574 --sun-pearl-gloves
-    .use 74576 --sun-pearl-bracers
-    .use 131909 --sun-pearl-chainmail
-    .use 74575 --sun-pearl-vest
-    .use 74571 --playful-wristbands
-    .use 74573 --glistening-breastplate
-    .use 131908 --gauntlets-of-splashing-water
-    .use 74572 --gloves-of-splashing-water
-    .use 74580 --homespun-leggings
-    .use 74582 --comfortable-greaves
-    .use 131911 --padded-greaves
-    .use 74581 --soft-britches
-    .use 74583 --silk-shoes
-    .use 74585 --dancing-boots
-    .use 131912 --ringing-boots
-    .use 74584 --summer-shoes
-    .use 74577 --robes-of-the-water-spirit
-    .use 74579 --gauntlets-of-earth-and-water
-    .use 131910 --bracers-of-the-earth-spirit
-    .use 74578 --bindings-of-the-earth-spirit
-    .use 74594 --gloves-of-wisdom
-    .use 74596 --unvarnished-vambraces
-    .use 131913 --handgrips-of-verity
-    .use 74595 --gloves-of-verity
-    .use 74591 --sword-of-the-hozen
-    .use 74593 --staff-of-the-hozen
-    .use 74592 --dagger-of-the-hozen
-    .use 74587 --jade-shield
-    .use 74589 --jade-hilted-sword
-    .use 157020 --humble-cudgel
-    .use 74590 --jade-hilted-dagger
-    .use 74588 --jade-crossbow
-    .use 74586 --cloak-of-the-fiery-skies
-    .use 74597 --cord-of-grieving
-    .use 74599 --cinch-of-grieving
-    .use 131914 --links-of-grieving
-    .use 74598 --ropes-of-grieving
-    .use 74606 --protectors-robes
-    .use 74607 --boots-of-courage
-    .use 131917 --waders-of-bravery
-    .use 74608 --legguards-of-the-brave
-    .use 74603 --survival-leggings
-    .use 74605 --gauntlets-of-mercy
-    .use 131916 --empathetic-mail
-    .use 74604 --vest-of-compassion
-    .use 74600 --healers-wristwraps
-    .use 74602 --ritual-breastplate
-    .use 74601 --ceremonial-leggings
 step
     #completewith Lesson of the Sandy Fist
     +If you want to level as fast as possible, choose Exile’s Reach as your starting zone. This requires recreating your character.
@@ -7207,6 +7112,10 @@ step
     .complete 29524,1 --6/6 Sparring Trainees defeated
 	.mob Tushui Trainee
 	.mob Huojin Trainee
+    .use 73214 --Initiate's Wristwraps
+    .use 73216 --Initiate's Armguards
+    .use 131901 --Initiate's Cuffs
+    .use 73215 --Initiate's Bracers
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Master Shang Xi|r
     .goto 378,59.67,19.11
@@ -7233,6 +7142,10 @@ step
     .goto 378,59.95,20.39
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Banner|r.
     .complete 29408,2 --1/1 Burn the Edict of Temperance
+    .use 73217 --Initiate's Rope Belt
+    .use 73218 --Initiate's Belt
+    .use 131902 --Initiate's Braided Belt
+    .use 73219 --Initiate's Plate Belt
 step
     #completewith next
     #label Lesson of the Burning Scroll
@@ -7315,6 +7228,10 @@ step << Hunter
     .accept 29419 >>Accept The Missing Driver
     .accept 29424 >>Accept Items of Utmost Importance
 	.target Merchant Lorvo
+    .use 73220 << (Hunter) --Initiate's Gloves
+    .use 73222 << (Hunter) --Initiate's Gauntlets
+    .use 131903 << (Hunter) --Initiate's Grips
+    .use 73221 << (Hunter) --Initiate's Handguards
 step << !Hunter
     #completewith next
     #label Aysa of the Tushui
@@ -7338,6 +7255,10 @@ step << !Hunter
     .accept 29419 >>Accept The Missing Driver
     .accept 29424 >>Accept Items of Utmost Importance
 	.target Merchant Lorvo
+    .use 73220 << (!Hunter) !(Hunter) --Initiate's Gloves
+    .use 73222 << (!Hunter) !(Hunter) --Initiate's Gauntlets
+    .use 131903 << (!Hunter) !(Hunter) --Initiate's Grips
+    .use 73221 << (!Hunter) !(Hunter) --Initiate's Handguards
 step
     #completewith next
     >>Kill |cRXP_ENEMY_Amberleaf Scamps|r
@@ -7437,6 +7358,8 @@ step
     .accept 29414 >>Accept The Way of the Tushui
     .goto 378,55.12,32.56
 	.target Aysa Cloudsinger
+    .use 73241 --Merchant's Satchel
+    .use 73223 --Cloak of the Compassionate
 step
     #completewith next
     #label DefendAysa2
@@ -7482,6 +7405,10 @@ step << !Hunter
     .turnin 29522 >>Turn in Ji of the Huojin
     .accept 29417 >>Accept The Way of the Huojin
 	.target Ji Firepaw
+    .use 73224 << (!Hunter) --Initiate's Robes
+    .use 73226 << (!Hunter) --Initiate's Breastplate
+    .use 131904 << (!Hunter) --Initiate's Chestpiece
+    .use 73225 << (!Hunter) --Initiate's Vest
 step << Hunter
     #completewith next
     #label Ji of the Huojin2
@@ -7507,6 +7434,10 @@ step << Hunter
     .turnin 29522 >>Turn in Ji of the Huojin
     .accept 29417 >>Accept The Way of the Huojin
 	.target Ji Firepaw
+    .use 73224 << (Hunter) !(!Hunter) --Initiate's Robes
+    .use 73226 << (Hunter) !(!Hunter) --Initiate's Breastplate
+    .use 131904 << (Hunter) !(!Hunter) --Initiate's Chestpiece
+    .use 73225 << (Hunter) !(!Hunter) --Initiate's Vest
 step
     #arrowtext Kill\n|cRXP_ENEMY_Hozens|r
     #loop
@@ -7573,6 +7504,10 @@ step
     .complete 29523,1 --1/1 Fluttering Breeze
     .use 72109
 	.mob Living Air
+    .use 73227 --Initiate's Leggings
+    .use 73229 --Initiate's Legguards
+    .use 131905 --Initiate's Greaves
+    .use 73228 --Initiate's Britches
 step
     #arrowtext Click\n|cRXP_PICK_Roots|r
     #loop
@@ -7649,6 +7584,10 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Li Fei|r.
     .turnin 29420 >>Turn in The Spirit's Guardian
 	.target Master Li Fei
+    .use 73230 --Initiate's Slippers
+    .use 73232 --Initiate's Sabatons
+    .use 131906 --Initiate's Boots
+    .use 73231 --Initiate's Footgear
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Master Li Fei|r
     .goto 378,38.81,25.50
@@ -7710,6 +7649,10 @@ step
     .complete 29422,1 --1/1 Reignite the Spirit of Fire
     .use 72583
     .target Huo
+    .use 73237 --Mace of the Master
+    .use 73239 --Staff of the Master
+    .use 73238 --Dagger of the Master
+    .use 73242 --Master's Haversack
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Huo|r
     .goto 378,39.41,29.55
@@ -7789,6 +7732,10 @@ step
     .skipgossipid 38871
     .skipgossipid 38919
     .target Whittler Dewei
+    .use 73233 --Shield of Blazing Will
+    .use 73235 --Sword of the Burning Spirit
+    .use 73236 --Dagger of Silent Flame
+    .use 73234 --Flameheart Crossbow
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Whittler Dewei|r
     .goto 378,63.12,41.44
@@ -7955,6 +7902,10 @@ step
     .accept 29666 >>Accept The Sting of Learning
     .accept 29677 >>Accept The Sun Pearl
 	.target Old Man Liang
+    .use 74568 --Unmarred Cord
+    .use 74570 --Unmarred Belt
+    .use 131907 --Unmarred Chain
+    .use 74569 --Unmarred Waistband
 step
     #arrowtext Kill\n|cRXP_ENEMY_Water Pincers|r
     #loop
@@ -8016,6 +7967,10 @@ step << Hunter
     .goto 378,78.9,37.81
     >>Use |T132294:0|t[Disengage] to jump over the mountain.
     .complete 29678,1 --1/1 Cross to the Pool of Reflection
+    .use 74574 << (Hunter) --Sun Pearl Gloves
+    .use 74576 << (Hunter) --Sun Pearl Bracers
+    .use 131909 << (Hunter) --Sun Pearl Chainmail
+    .use 74575 << (Hunter) --Sun Pearl Vest
 step << !Hunter
     #completewith next
     #label Pool of Reflection
@@ -8038,6 +7993,10 @@ step << !Hunter
     >>Jump into the gap of the mountain and then over.
     *|cRXP_WARN_This can take multiple attempts but it's still worth it|r.
     .complete 29678,1 --1/1 Cross to the Pool of Reflection
+    .use 74574 << (!Hunter) !(Hunter) --Sun Pearl Gloves
+    .use 74576 << (!Hunter) !(Hunter) --Sun Pearl Bracers
+    .use 131909 << (!Hunter) !(Hunter) --Sun Pearl Chainmail
+    .use 74575 << (!Hunter) !(Hunter) --Sun Pearl Vest
 step
     #arrowtext Use [Sun Pearl]
     .goto 378,78.27,37.37
@@ -8096,6 +8055,10 @@ step
     .turnin 29680 >>Turn in The Source of Our Livelihood
     .accept 29769 >>Accept Rascals
     .target Ji Firepaw
+    .use 74571 --Playful Wristbands
+    .use 74573 --Glistening Breastplate
+    .use 131908 --Gauntlets of Splashing Water
+    .use 74572 --Gloves of Splashing Water
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Gao Summerdraft|r
     .goto 378,68.13,66.40
@@ -8177,6 +8140,10 @@ step
     .goto 378,69.16,66.71
 	.target Ji Firepaw
 	.target Jojo Ironbrow
+    .use 74580 --Homespun Leggings
+    .use 74582 --Comfortable Greaves
+    .use 131911 --Padded Greaves
+    .use 74581 --Soft Britches
 step
 	#completewith next
 	>>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Wood|r.
@@ -8211,6 +8178,10 @@ step
     .goto 378,68.95,64.80
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Gong|r.
     .complete 29772,1 --1/1 Ring the town gong
+    .use 74583 --Silk Shoes
+    .use 74585 --Dancing Boots
+    .use 131912 --Ringing Boots
+    .use 74584 --Summer Shoes
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Ji Firepaw|r
     .goto 378,68.89,64.98
@@ -8310,6 +8281,10 @@ step
     .accept 29776 >>Accept Morning Breeze Village
 	.timer 20,Morning Breeze Village RP
 	.target Master Shang Xi
+    .use 74577 --Robes of the Water Spirit
+    .use 74579 --Gauntlets of Earth and Water
+    .use 131910 --Bracers of the Earth Spirit
+    .use 74578 --Bindings of the Earth Spirit
 step
     #completewith next
     #label Breeze Village
@@ -8338,6 +8313,10 @@ step
     .turnin 29776 >>Turn in Morning Breeze Village
     .accept 29778 >>Accept Rewritten Wisdoms
 	.target Ji Firepaw
+    .use 74577 --Robes of the Water Spirit
+    .use 74579 --Gauntlets of Earth and Water
+    .use 131910 --Bracers of the Earth Spirit
+    .use 74578 --Bindings of the Earth Spirit
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Jojo Ironbrow|r
     .goto 378,29.90,39.76
@@ -8446,6 +8425,10 @@ step
 	>>Kill |cRXP_ENEMY_Ruk-Ruk|r.
     .complete 29780,1 --1/1 Ruk-Ruk slain
 	.mob Ruk-Ruk
+    .use 74594 --Gloves of Wisdom
+    .use 74596 --Unvarnished Vambraces
+    .use 131913 --Handgrips of Verity
+    .use 74595 --Gloves of Verity
 step
     #hidewindow
     #completewith Stolen Firework Bundle
@@ -8486,6 +8469,9 @@ step
     *|cRXP_WARN_Ignore |cRXP_ENEMY_Hozens|r when possible|r
     .accept 29782 >>Accept Stronger Than Bone
     .target Jade Pillar
+    .use 74591 --Sword of the Hozen
+    .use 74593 --Staff of the Hozen
+    .use 74592 --Dagger of the Hozen
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Jojo Ironbrow|r
     .goto 378,29.90,39.76
@@ -8502,6 +8488,11 @@ step
     .turnin 29781 >>Turn in Monkey Advisory Warning
     .accept 29784 >>Accept Balanced Perspective
 	.target Ji Firepaw
+    .use 74587 --Jade Shield
+    .use 74589 --Jade Hilted Sword
+    .use 157020 --Humble Cudgel
+    .use 74590 --Jade Hilted Dagger
+    .use 74588 --Jade Crossbow
 step
     #completewith next
     #label Balanced Perspective
@@ -8526,6 +8517,9 @@ step
     .turnin 29784 >>Turn in Balanced Perspective
     .accept 29785 >>Accept Dafeng, the Spirit of Air
 	.target Aysa Cloudsinger
+    .use 74591 --Sword of the Hozen
+    .use 74593 --Staff of the Hozen
+    .use 74592 --Dagger of the Hozen
 step
     #completewith next
     #label Locate Dafeng
@@ -8625,6 +8619,7 @@ step
     .complete 29787,1 --1/1 Guardian of the Elders slain
 	.timer 20.5,RP
 	.target Guardian of the Elders
+    .use 74586 --Cloak of the Fiery Skies
 step
     #completewith next
     #label Passing
@@ -8724,6 +8719,10 @@ step
     .complete 29791,1 --1/1 Board the Hot Air Balloon
 	.timer 220,The Suffering of Shen-zin Su RP
     --191 until complete
+    .use 74597 --Cord of Grieving
+    .use 74599 --Cinch of Grieving
+    .use 131914 --Links of Grieving
+    .use 74598 --Ropes of Grieving
 step
     #arrowtext Wait for the roleplay
     .goto 378,30.8,92.9
@@ -8951,6 +8950,10 @@ step
     .goto 378,42.30,86.35
 	.target Delora Lionheart
 	.target Jojo Ironbrow
+    .use 74606 --Protector's Robes
+    .use 74607 --Boots of Courage
+    .use 131917 --Waders of Bravery
+    .use 74608 --Legguards of the Brave
 step
     #completewith LastSoldier
     >>Kill |cRXP_ENEMY_Deepscale Tormentors|r.
@@ -9103,6 +9106,10 @@ step
     .complete 29798,1 --1/1 Vordraka, the Deep Sea Nightmare slain
 	.mob Vordraka, The Deep Sea Nightmare
     .mob Deepscale Aggressor
+    .use 74603 --Survival Leggings
+    .use 74605 --Gauntlets of Mercy
+    .use 131916 --Empathetic Mail
+    .use 74604 --Vest of Compassion
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Aysa Cloudsinger|r
     .goto 378,36.50,84.23
@@ -9159,6 +9166,9 @@ step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ji Firepaw|r |cRXP_WARN_after the roleplay|r.
     .accept 29800 >>Accept New Allies
 	.target Ji Firepaw
+    .use 74600 --Healer's Wristwraps
+    .use 74602 --Ritual Breastplate
+    .use 74601 --Ceremonial Leggings
 step
     #completewith next
     #label Turn in New Allies
@@ -9290,10 +9300,6 @@ step
     #hidewindow
     #completewith Enter the rootway
     +test
-    .use 257528 --entwined-haranir-cowl
-    .use 257529 --coarse-haranir-cowl
-    .use 257559 --entwined-haranir-leaves
-    .use 257560 --coarse-haranir-leaves
     .usespell 1231411
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Hagar|r
@@ -9366,6 +9372,8 @@ step
     .complete 90958,1 --Pests Removed (100%)
     .mob Pesky Sludger
     .mob Withered Lasher
+    .use 257528 --Entwined Haranir Cowl
+    .use 257529 --Coarse Haranir Cowl
 step
     #arrowtext Click\n|cRXP_PICK_Shield|r
     .goto 2413,36.63,25.12
@@ -9438,6 +9446,8 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hagar|r.
     .accept 90960 >>Accept My Story, My Legacy
     .target Hagar
+    .use 257559 --Entwined Haranir Leaves
+    .use 257560 --Coarse Haranir Leaves
 step
     #arrowtext Click the |cRXP_PICK_Stone|r\n|cRXP_WARN_(very large range)|r
     .goto 2413,33.62,28.24
@@ -10286,28 +10296,9 @@ step
     #completewith Blood Elf Plans
     #hidewindow
     +test
-    .use 24129 -- Salvaged Leather Belt
-    .use 24130 -- Worn Slippers
-    .use 24131 -- Slightly Rusted Bracers
-    .use 131819 -- Partially-Tarnished Chain
-    .use 23389 -- Empty Draenei Supply Pouch
     .use 2454 -- Elixir of Lion's Strength
     .use 5997 -- Elixir of Minor Defense
     .use 118 -- Minor Healing Potion
-    .use 24133 -- Weathered Plate Tunic
-    .use 24134 -- Weathered Leather Vest
-    .use 24135 -- Weathered Cloth Armor
-    .use 131820 -- Weathered Chain Shirt
-    .use 23390 -- Exodar Bastard Sword
-    .use 23392 -- Exodar Maul
-    .use 24441 -- Exodar Crossbow
-    .use 25553 -- Exodar Staff
-    .use 23393 -- Exodar Shortsword
-    .use 23391 -- Exodar Dagger
-    .use 24423 -- Beaten Plate Leggings
-    .use 24425 -- Hand-sewn Pants
-    .use 131250 -- Coarse Mail Leggings
-    .use 24424 -- Rough Leather Leggings
 step
     #completewith Urgent Delivery!
     +If you want to level as fast as possible, choose Exile’s Reach as your starting zone. This requires recreating your character.
@@ -10380,6 +10371,10 @@ step
     .turnin 9409 >>Turn in Urgent Delivery!
     .accept 9283 >>Accept Rescue the Survivors!
 	.target Zalduun
+    .use 24129 << ((Draenei)/(!Draenei)) --Salvaged Leather Belt
+    .use 24130 << ((Draenei)/(!Draenei)) --Worn Slippers
+    .use 24131 << ((Draenei)/(!Draenei)) --Slightly Rusted Bracers
+    .use 131819 << ((Draenei)/(!Draenei)) --Partially-Tarnished Chain
 step
     .xp >10,1
     #completewith next
@@ -10613,6 +10608,7 @@ step
     .goto 468,50.65,48.76
 	.target Technician Zhanaa
     .target Vindicator Aldar
+    .use 23389 --Empty Draenei Supply Pouch
 step
     .xp >10,1
     #completewith next
@@ -10793,6 +10789,10 @@ step
     >>Use the |T132858:0|t[Neutralizing Agent] |cRXP_WARN_near the water by the large crystal|r.
     .complete 9294,1 --1/1 Disperse the Neutralizing Agent
     .use 22955
+    .use 24423 << ((Draenei)/(!Draenei)) --Beaten Plate Leggings
+    .use 24425 << ((Draenei)/(!Draenei)) --Hand-sewn Pants
+    .use 131250 << ((Draenei)/(!Draenei)) --Coarse Mail Leggings
+    .use 24424 << ((Draenei)/(!Draenei)) --Rough Leather Leggings
 step
     .xp >10,1
     #completewith next
@@ -10865,6 +10865,10 @@ step
     .accept 9798 >>Accept Blood Elf Plans
 	.target Surveyor Candress
     .use 24414
+    .use 24133 --Weathered Plate Tunic
+    .use 24134 --Weathered Leather Vest
+    .use 24135 --Weathered Cloth Armor
+    .use 131820 --Weathered Chain Shirt
 step
     .xp >10,1
     #completewith next
@@ -10946,6 +10950,12 @@ step
     .turnin 9312 >>Turn in The Emitter
     .accept 9313 >>Accept Travel to Azure Watch
 	.target Technician Zhanaa
+    .use 23390 --Exodar Bastard Sword
+    .use 23392 --Exodar Maul
+    .use 24441 --Exodar Crossbow
+    .use 25553 --Exodar Staff
+    .use 23393 --Exodar Shortsword
+    .use 23391 --Exodar Dagger
 ]])
     --Ammen Vale: Skip
 RXPGuides.RegisterGuide([[
@@ -10981,9 +10991,6 @@ step
     +test
     .usespell 1231411
     .use 24105 -- Roasted Moongraze Tenderloin
-    .use 24103 -- Moongraze Hide Boots
-    .use 24104 -- Moongraze Fur Cloak
-    .use 131274 -- Moongraze-Linked Boots
     .use 23756 -- Cookie's Jumbo Gumbo
     .use 24430 -- Seafarer's Blade
     .use 24431 -- McWeakSauce's Meat Tenderizer
@@ -11496,6 +11503,9 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Daedal|r
     .accept 9505 >>Accept The Prophecy of Velen
     .target Daedal
+    .use 24103 --Moongraze Hide Boots
+    .use 24104 --Moongraze Fur Cloak
+    .use 131274 --Moongraze Linked Boots
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Dulvi|r
     .goto 97,48.90,50.99
@@ -11830,7 +11840,7 @@ step
     #ignorecorpse
     .goto 97,47.86,56.19
     .deathskip >>Respawn at the Graveyard.
-    .target Spirt Healer
+    .target Spirit Healer
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Admiral Odesyus|r
     .isQuestComplete 9527
@@ -12169,6 +12179,9 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Exarch Menelaous|r.
     .accept 9456 >>Accept Nightstalker Clean Up, Isle 2...
     .target Exarch Menelaous
+    .use 24103 --Moongraze Hide Boots
+    .use 24104 --Moongraze Fur Cloak
+    .use 131274 --Moongraze Linked Boots
 step
     #xprate <1.30
     #completewith next
@@ -12366,6 +12379,9 @@ step
     .turnin 9604 >>Turn in On the Wings of a Hippogryph
     .accept 9605 >>Accept Hippogryph Master Stephanos
     .target Nurguni
+    .use 24103 --Moongraze Hide Boots
+    .use 24104 --Moongraze Fur Cloak
+    .use 131274 --Moongraze Linked Boots
 step
     #xprate 1.25-1.30
     #completewith next
@@ -12608,26 +12624,6 @@ step
     #hidewindow
     +test
     .usespell 1231411
-    .use 66922 --perimeter-britches
-    .use 66926 --trogg-repeller-platemail
-    .use 131895 --ironstocks-iron-grips
-    .use 66923 --lent-hands
-    .use 66928 --belt-of-so-called-leaders
-    .use 66930 --boots-of-the-blameless
-    .use 131896 --big-trogg-bracers
-    .use 66929 --big-trogg-armbands
-    .use 57530 --explorers-robe
-    .use 57532 --rockjaw-breastplate
-    .use 131890 --plundered-rockjaw-chestguard
-    .use 57531 --winter-jacket
-    .use 2047 --anvilmar-hand-axe
-    .use 5761 --anvilmar-sledge
-    .use 12446 --anvilmar-musket
-    .use 2195 --anvilmar-knife
-    .use 57534 --griknirs-chilly-belt
-    .use 57536 --legs-of-the-wayward-elemental
-    .use 131891 --griknirs-warming-bands
-    .use 57535 --whitebeards-bracer
     .use 57540 --coldridge-mountaineers-pouch
 step
     .xp >10,1
@@ -12668,6 +12664,10 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sten Stoutarm|r.
     .accept 24471 >>Accept Aid for the Wounded
     .target Sten Stoutarm
+    .use 66922 --Perimeter Britches
+    .use 66926 --Trogg Repeller Platemail
+    .use 131895 --Ironstock's Iron Grips
+    .use 66923 --Lent Hands
 step
     .xp >10,1
     #hidewindow
@@ -12755,6 +12755,10 @@ step
     .turnin 24473 >>Turn in Lockdown in Anvilmar
     .accept 24474 >>Accept First Things First: We're Gonna Need Some Beer
     .target Jona Ironstock
+    .use 66928 --Belt of So-Called Leaders
+    .use 66930 --Boots of the Blameless
+    .use 131896 --Big Trogg Bracers
+    .use 66929 --Big Trogg Armbands
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Grundel Harkin|r
     .xp >10,1
@@ -13035,6 +13039,10 @@ step
     .accept 24489 >>Accept Trolling for Information
     .goto 427,43.03,62.66
     .target +Apprentice Soren
+    .use 57530 --Explorer's Robe
+    .use 57532 --Rockjaw Breastplate
+    .use 131890 --Plundered Rockjaw Chestguard
+    .use 57531 --Winter Jacket
 step
     #arrowtext |cFFFCDC00Find the patrolling NPC|r
     .xp >10,1
@@ -13270,6 +13278,10 @@ step
     >>Kill |cRXP_ENEMY_Grik'nir the Cold|r.
     .complete 218,1 --Grik'nir the Cold (1)
     .mob Grik'nir the Cold
+    .use 2047 --Anvilmar Hand Axe
+    .use 5761 --Anvilmar Sledge
+    .use 12446 --Anvilmar Musket
+    .use 2195 --Anvilmar Knife
 step
     #arrowtext Kill\n|cRXP_ENEMY_Frostmanes|r and |cRXP_ENEMY_Elemental|r
     .xp >10,1
@@ -13356,6 +13368,10 @@ step
 --     .turnin 24490 >>Turn in A Trip to Ironforge
 --     .accept 24491 >>Accept Follow that Gyro-Copter!
 --     .target Hands Springsprocket
+    .use 57534 --Grik'nir's Chilly Belt
+    .use 57536 --Legs of the Wayward Elemental
+    .use 131891 --Grik'nir's Warming Bands
+    .use 57535 --Whitebeard's Bracer
 step
     .xp >10,1
     #completewith next
@@ -13504,22 +13520,6 @@ step
     #hidewindow
     +test
     .usespell 1231411
-    .use 59042 --electro-staff
-    .use 59041 --vibro-knife
-    .use 59043 --death-star
-    .use 59040 --staff-of-the-force
-    .use 59039 --very-light-sabre
-    .use 134123 --reliable-boom-o-tronic
-    .use 59038 --fallout-cover
-    .use 59053 --airfield-courier-bag
-    .use 59044 --velocity-bracers
-    .use 59046 --friction-gloves
-    .use 131512 --quickening-cinch
-    .use 59045 --acceleration-belt
-    .use 59047 --free-body-belt
-    .use 59049 --inertial-bracers
-    .use 131514 --torque-applying-grips
-    .use 59048 --torque-applying-gloves
 step
     .xp >10,1
     #completewith Withdraw to the Loading Room!
@@ -13807,6 +13807,13 @@ step
     .accept 26208 >>Accept The Fight Continues
     .timer 4.5,Meet the High Tinker RP
     .target High Tinker Mekkatorque
+    .use 59041 << (Gnome Rogue) --Vibro Knife
+    .use 59043 << (Gnome Rogue) --Death Star
+    .use 59042 << (Gnome Mage) --Electro-Staff
+    .use 59040 << (Gnome Priest) --Staff of the Force
+    .use 59041 << (Gnome Warlock) --Vibro Knife
+    .use 59039 << (Gnome Warrior) --Very Light Sabre
+    .use 134123 << (Gnome Hunter) --"Reliable" Boom-O-Tronic
 step
     .xp >10,1
     .goto 469,38.95,32.3
@@ -14004,6 +14011,8 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Engineer Grindspark|r.
     .turnin 26205 >>Turn in A Job for the Multi-Bot
     .target Engineer Grindspark
+    .use 59038 --Fallout Cover
+    .use 59053 --Airfield Courier Bag
 step
     .xp >10,1
     .goto 469,39.37,26.92
@@ -14233,6 +14242,10 @@ step
     .accept 26333 >>Accept No Tanks!
     .goto 469,38.46,33.49
     .target +Hinkles Fastblast
+    .use 59044 --Velocity Bracers
+    .use 59046 --Friction Gloves
+    .use 131512 --Quickening Cinch
+    .use 59045 --Acceleration Belt
 step
     .xp >10,1
     #completewith next
@@ -14354,6 +14367,10 @@ step
     .turnin 26339 >>Turn in Staging in Brewnall
     .accept 26342 >>Accept Paint it Black
     .target Jarvi Shadowstep
+    .use 59047 --Free Body Belt
+    .use 59049 --Inertial Bracers
+    .use 131514 --Torque-Applying Grips
+    .use 59048 --Torque-Applying Gloves
 step
     #arrowtext Click\n|cRXP_PICK_Bots|r
     .xp >10,1
@@ -14433,39 +14450,7 @@ step
     #completewith Trouble at the Lake
     +test
     .usespell 1231411
-    .use 2900 --stone-buckler
-    .use 2326 --ivy-weave-bracers
-    .use 57548 --herb-stained-gauntlets
-    .use 131206 --shimmerweed-brewer-treads
-    .use 57547 --shimmerweed-boots
     .use 2888 --beer-basted-boar-ribs
-    .use 57545 --oil-stained-gloves
-    .use 131207 --well-oiled-chain-gauntlets
-    .use 57546 --cog-belt
-    .use 1010 --gnarled-short-staff
-    .use 10547 --camping-knife
-    .use 156940 --snubnose-blunderbuss
-    .use 1011 --sharp-axe
-    .use 57554 --frostmane-belt
-    .use 131448 --frostmane-chain-links
-    .use 57555 --battoks-bloody-boots
-    .use 57556 --bracer-of-the-nightly-raid
-    .use 57559 --boots-of-the-weary-raider
-    .use 131458 --well-worn-raider-treads
-    .use 2817 --hard-leather-tunic
-    .use 57552 --vagash-breastplate
-    .use 131205 --ram-rescue-vest
-    .use 10549 --ranchers-trousers
-    .use 57568 --senators-dignified-pants
-    .use 57570 --golbolar-miners-belt
-    .use 131209 --stonehallows-pressed-cuffs
-    .use 131208 --senators-handsome-leggings
-    .use 57569 --stonehallows-arm-bands
-    .use 57571 --archaeologists-pants
-    .use 57574 --museum-guards-bracers
-    .use 131459 --museum-guards-warboots
-    .use 57572 --dun-morogh-hiking-boots
-    .use 57549 --prospectors-bag
     .use 57575 --belt-of-dark-schemes
     .use 57578 --dark-iron-hobplate-boots
     .use 131462 --dark-iron-spy-bands
@@ -14879,6 +14864,14 @@ step
     .accept 25668 >>Accept Pilfered Supplies
     .goto 27,53.707,52.095
     .target +Quartermaster Glynna
+    .use 2326 << (Dwarf) --Ivy-Weave Bracers
+    .use 57548 << (Dwarf) --Herb-Stained Gauntlets
+    .use 131206 << (Dwarf) --Shimmerweed Brewer Treads
+    .use 57547 << (Dwarf) --Shimmerweed Boots
+    .use 2326 << (Gnome) --Ivy-Weave Bracers
+    .use 57548 << (Gnome) --Herb-Stained Gauntlets
+    .use 131206 << (Gnome) --Shimmerweed Brewer Treads
+    .use 57547 << (Gnome) --Shimmerweed Boots
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Brolan Galebeard|r
     .xp >10,1
@@ -14886,6 +14879,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brolan Galebeard|r.
     .turnin 6387 >>Turn in Honor Students
     .target Brolan Galebeard
+    .use 2900 --Stone Buckler
 step
     .xp >10,1
     #completewith next
@@ -15178,6 +15172,9 @@ step
     .turnin 25792 >>Turn in Pushing Forward
     .accept 25838 >>Accept Help from Steelgrill's Depot
 	.target Captain Tharran
+    .use 57545 --Oil-Stained Gloves
+    .use 131207 --Well-Oiled Chain Gauntlets
+    .use 57546 --Cog Belt
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Ragnar Thunderbrew|r
     .xp >10,1
@@ -15185,6 +15182,10 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ragnar Thunderbrew|r.
     .turnin 384 >>Turn in Beer Basted Boar Ribs
 	.target Ragnar Thunderbrew
+    .use 1010 --Gnarled Short Staff
+    .use 10547 --Camping Knife
+    .use 156940 --Snubnose Blunderbuss
+    .use 1011 --Sharp Axe
 step
     .xp >10,1
     #completewith next
@@ -15363,6 +15364,9 @@ step
     .accept 25882 >>Accept A Hand at the Ranch
     .goto 27,62.505,53.708
 	.target +Slamp Wobblecog
+    .use 57554 --Frostmane Belt
+    .use 131448 --Frostmane Chain Links
+    .use 57555 --Battok's Bloody Boots
 step
     .xp >10,1
     #completewith next
@@ -15422,6 +15426,9 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veron Amberstill|r
     .accept 25905 >>Accept Rams on the Lam
     .target Veron Amberstill
+    .use 57556 --Bracer of the Nightly Raid
+    .use 57559 --Boots of the Weary Raider
+    .use 131458 --Well-Worn Raider Treads
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Rudra Amberstill|r
     .xp >10,1
@@ -15474,6 +15481,10 @@ step
     .emote WHISTLE,16518
     .macro Whistle, >>/whistle
     .target Stolen Ram
+    .use 2817 --Hard Leather Tunic
+    .use 57552 --Vagash Breastplate
+    .use 131205 --Ram Rescue Vest
+    .use 10549 --Rancher's Trousers
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Veron Amberstill|r
     .isQuestComplete 25905
@@ -15616,6 +15627,11 @@ step
     .turnin 433 >>Turn in The Public Servant
     .accept 25986 >>Accept Trouble at the Lake
     .target Senator Mehr Stonehallow
+    .use 57571 --Archaeologist's Pants
+    .use 57574 --Museum Guard's Bracers
+    .use 131459 --Museum Guard's Warboots
+    .use 57572 --Dun Morogh Hiking Boots
+    .use 57549 --Prospector's Bag
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Khurgorn Singefeather|r
     .xp >10,1
@@ -15623,6 +15639,11 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Khurgorn Singefeather|r
     .accept 25979 >>Accept Dealing with the Surge
     .target Khurgorn Singefeather
+    .use 57568 --Senator's Dignified Pants
+    .use 57570 --Gol'Bolar Miner's Belt
+    .use 131209 --Stonehallow's Pressed Cuffs
+    .use 131208 --Senator's Handsome Leggings
+    .use 57569 --Stonehallow's Arm Bands
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Sergeant Bahrum|r
     .xp >10,1
@@ -15737,30 +15758,6 @@ step
     #hidewindow
     +test
     .usespell 1231411
-    .use 57253 --northshire-abbots-cinch
-    .use 57255 --worg-handlers-gloves
-    .use 131899 --chasers-belt
-    .use 118532 --runners-belt
-    .use 57386 --northshire-abbots-robe
-    .use 57387 --spymasters-legs
-    .use 57388 --stormwind-infantry-belt
-    .use 131875 --spy-dispatchers-greaves
-    .use 2186 --outfitter-gloves
-    .use 11192 --outfitter-gloves
-    .use 131924 --outrider-belt
-    .use 2691 --outfitter-boots
-    .use 57247 --grape-picking-sack
-    .use 11475 --wine-stained-cloak
-    .use 133699 --militia-dagger
-    .use 57393 --abbey-defenders-crossbow
-    .use 5579 --militia-warhammer
-    .use 5580 --militia-hammer
-    .use 85575 --peacebringers-staff
-    .use 6078 --pikeman-shield
-    .use 57390 --goldshire-heavy-jacket
-    .use 131876 --deputys-chainmail
-    .use 57389 --innkeepers-longstockings
-    .use 57391 --pikeman-trousers
 
 step
     .xp >10,1
@@ -15852,7 +15849,10 @@ step
     .complete 29079,1 << !Human !KulTiran --Blackrock Spies (8)
     .complete 31140,1 << Human Death Knight/Human Monk/KulTiran Death Knight/KulTiran Monk/KulTiran Druid/KulTiran Shaman --Blackrock Spies (8)
     .mob Blackrock Spy
-    .use 57253
+    .use 57253 << ((Human Mage/KulTiran Mage)/(Human Priest/KulTiran Priest)/(Human Warlock/KulTiran Warlock)/(!Human !KulTiran)) --Northshire Abbot's Cinch
+    .use 57255 << ((Human Paladin)/(Human Warrior/KulTiran Warrior)/(!Human !KulTiran)) --Worg Handler's Gloves
+    .use 118532 << ((Human Rogue/KulTiran Rogue)/(!Human !KulTiran)/(Human Death Knight/Human Monk/KulTiran Death Knight/KulTiran Monk/KulTiran Druid/KulTiran Shaman)) --Runner's Belt
+    .use 131899 << ((Human Hunter/KulTiran Hunter)/(!Human !KulTiran)) --Chaser's Belt
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Marshal McBride|r
     .xp >10,1
@@ -15901,7 +15901,10 @@ step
     .accept 29081 >>Accept They Sent Assassins << !Human !KulTiran
     .accept 31144 >>Accept They Sent Assassins << Human Death Knight/Human Monk/KulTiran Death Knight/KulTiran Monk/KulTiran Druid/KulTiran Shaman
     .target Sergeant Willem
-    .use 57386
+    .use 131875 << ((Human Hunter/KulTiran Hunter)/(!Human !KulTiran)) --Spy Dispatchers Greaves
+    .use 57386 << ((Human Mage/KulTiran Mage)/(Human Priest/KulTiran Priest)/(Human Warlock/KulTiran Warlock)/(!Human !KulTiran)) --Northshire Abbot's Robe
+    .use 57388 << ((Human Paladin)/(Human Warrior/KulTiran Warrior)/(!Human !KulTiran)) --Stormwind Infantry Belt
+    .use 57387 << ((Human Rogue/KulTiran Rogue)/(!Human !KulTiran)/(Human Death Knight/Human Monk/KulTiran Death Knight/KulTiran Monk/KulTiran Druid/KulTiran Shaman)) --Spymaster's Legs
 step
     #arrowtext |cFFFCDC00Find the patrolling NPC|r
     .xp >10,1
@@ -16063,7 +16066,6 @@ step
     .disablecheckbox
     .target +Marshal McBride
     .target +Milly Osworth
-    .use 11192
     .use 57256
 step
     .xp >10,1
@@ -16091,6 +16093,10 @@ step
     .accept 26391 >>Accept Extinguishing Hope
     .goto 425,33.48,54.53
     .target +Milly Osworth
+    .use 131924 << ((Human Hunter/KulTiran Hunter)/(!Human !KulTiran)) --Outrider Belt
+    .use 11192 << ((Human Mage/KulTiran Mage)/(Human Priest/KulTiran Priest)/(Human Warlock/KulTiran Warlock)/(!Human !KulTiran)) --Outfitter Gloves
+    .use 2691 << ((Human Paladin)/(Human Warrior/KulTiran Warrior)/(!Human !KulTiran)) --Outfitter Boots
+    .use 2186 << ((Human Rogue/KulTiran Rogue)/(!Human !KulTiran)/(Human Death Knight/Human Monk/KulTiran Death Knight/KulTiran Monk/KulTiran Druid/KulTiran Shaman)) --Outfitter Gloves
 step
     .xp >10,1
     #completewith next
@@ -16191,7 +16197,6 @@ step
     .mob Blackrock Worg
     .mob Blackrock Spy
     .mob Blackrock Invader
-    .use 11475
 step
     #arrowtext Kill\n|cRXP_ENEMY_Kurtok the Slayer|r
     .xp >10,1
@@ -16200,6 +16205,8 @@ step
     >>Kill |cRXP_ENEMY_Kurtok the Slayer|r.
     .complete 26390,1 --Kill Kurtok the Slayer (1)
     .mob Kurtok the Slayer
+    .use 57247 --Grape-Picking Sack
+    .use 11475 --Wine-Stained Cloak
 step
     .xp >10,1
     #completewith next
@@ -16242,8 +16249,6 @@ step
     .xp >10,1
     #completewith Rest and Relaxation
     .goto 37,45.42,48.8,20 >>Exit Northshire Valley.
-    .use 85575
-    .use 133699
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Falkhaan Isenstrider|r
     .xp >10,1
@@ -16252,6 +16257,11 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falkhaan Isenstrider|r.
     .accept 37112 >>Accept Rest and Relaxation
     .target Falkhaan Isenstrider
+    .use 133699 --Militia Dagger
+    .use 57393 --Abbey Defender's Crossbow
+    .use 5579 --Militia Warhammer
+    .use 5580 --Militia Hammer
+    .use 85575 --Peacebringer's Staff
 ]])
     --Northshire Valley: Skip
 RXPGuides.RegisterGuide([[
@@ -16286,54 +16296,6 @@ step
     #hidewindow
     #completewith Turn in A Bundle of Trouble
     +1
-    .use 57395 --Lions Pride Bracer
-    .use 57397 --Goldshire Iron Bracer
-    .use 131715 --Smiths Chain Gloves
-    .use 57396 --Innkeepers Gloves
-    .use 57400 --Gold Dust Belt
-    .use 57401 --Jasperlode Chestguard
-    .use 57398 --Candlewax Streaked Robe
-    .use 57399 --Kobold Hunters Trophy Belt
-    .use 1173 --Weather Worn Boots
-    .use 11191 --Farmers Boots
-    .use 131197 --Rusty Chain Galoshes
-    .use 1182 --Brass Studded Bracers
-    .use 1158 --Solid Metal Club
-    .use 57248 --Well Used Greatsword
-    .use 156980 --Solid Wooden Club
-    .use 156981 --Field Tested Spear
-    .use 57521 --Marshals Light Crossbow
-    .use 4840 --Long Bayonet
-    .use 57523 --Wolf Fur Boots
-    .use 57525 --Shrouded Bearskin Breastplate
-    .use 131193 --Steel Reinforced Bracer
-    .use 57524 --Frontier Bracer
-    .use 983 --Red Linen Sash
-    .use 57406 --Reinforced Plate Belt
-    .use 131195 --Padded Chain Belt
-    .use 57405 --Fine Leather Sash
-    .use 1183 --Elastic Wristguards
-    .use 57522 --Pattersons Sparring Gloves
-    .use 131198 --Wrangling Grips
-    .use 1360 --Stormwind Plate Gloves
-    .use 1171 --Well Stitched Robe
-    .use 57520 --Studded Arm Protector
-    .use 131194 --Hand Welded Leggings
-    .use 2237 --Patched Pants
-    .use 2238 --Urchins Pants
-    .use 57527 --Stone Cairne Boots
-    .use 131192 --Riverpaw Gnoll Boots
-    .use 57526 --Gnollbreakers Boots
-    .use 6084 --Stormwind Guard Leggings
-    .use 60219 --Balanced Spell Staff
-    .use 131199 --Lion Guard Chainmail
-    .use 6085 --Footman Tunic
-    .use 6078 --Pikeman Shield
-    .use 57390 --Goldshire Heavy Jacket
-    .use 131876 --Deputys Chainmail
-    .use 57391 --Pikeman Trousers
-    .use 57389 --Innkeepers Longstockings
-    .use 55004
 step
     .xp >10,1
     #completewith next
@@ -16375,6 +16337,11 @@ step
     .accept 62 >>Accept The Fargodeep Mine
     .accept 26378 >>Accept Hero's Call: Westfall!
 	.target Marshal Dughan
+    .use 6078 --Pikeman Shield
+    .use 57390 --Goldshire Heavy Jacket
+    .use 131876 --Deputy's Chainmail
+    .use 57389 --Innkeeper's Longstockings
+    .use 57391 --Pikeman Trousers
 step << Human/KulTiran
     #arrowtext Talk to\n|cRXP_FRIENDLY_Smith Argus|r
     .xp >10,1
@@ -16419,7 +16386,6 @@ step
     .goto 37,43.3,65.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_William Pestle|r.
     .accept 60 >>Accept Kobold Candles
-    .use 57389
 	.target William Pestle
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Innkeeper Farley|r
@@ -16448,6 +16414,10 @@ step
 --     .subzoneskip 5637,1
 --     .isOnQuest 60
 --     .dmf
+    .use 57395 --Lions Pride Bracer
+    .use 57397 --Goldshire Iron Bracer
+    .use 131715 --Smiths Chain Gloves
+    .use 57396 --Innkeepers Gloves
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Brog Hamfist|r
     .xp >10,1
@@ -16582,7 +16552,6 @@ step
     .xp >10,1
     #completewith Julia Stevens
     .goto 37,41.66,83.67,60 >>If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_monsters|r while traveling (|cRXP_WARN_if able(class-dependent)|r.
-    .use 57395
     .mob Stonetusk Boar
     .mob Kobold Tunneler
 step
@@ -16645,7 +16614,6 @@ step
     .goto 37,39.04,82.48,15,0
     .goto 38,41.16,83.55,5 >>Enter the Mine.
     *If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_monsters|r while traveling (|cRXP_WARN_if able(class-dependent)|r.
-    .use 57395
 step
     .xp >10,1
     #requires Large Candle
@@ -16779,6 +16747,10 @@ step
     .goto 37,24.66,74.88
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_WANTED Poster|r
     .accept 176 >>Accept WANTED: "Hogger"
+    .use 1173 --Weather Worn Boots
+    .use 11191 --Farmers Boots
+    .use 131197 --Rusty Chain Galoshes
+    .use 1182 --Brass Studded Bracers
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Deputy Rainer|r
     .xp >10,1
@@ -16876,6 +16848,10 @@ step
 	.target Old MacDonald
     .isQuestTurnedIn 31889,31891,31902,31903
     .isOnQuest 184
+    .use 2238 --Urchins Pants
+    .use 57527 --Stone Cairne Boots
+    .use 131192 --Riverpaw Gnoll Boots
+    .use 57526 --Gnollbreakers Boots
 step
     .xp >10,1
     #completewith next
@@ -17051,6 +17027,8 @@ step
     .turnin 40 >>Turn in A Fishy Peril
     .goto 37,42.15,67.25
 	.target +Remy "Two Times"
+    .use 57398 --Candlewax Streaked Robe
+    .use 57399 --Kobold Hunters Trophy Belt
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Remy "Two Times"|r
     .xp >10,1
@@ -17058,6 +17036,8 @@ step
     .accept 35 >>Accept Further Concerns
     .goto 37,42.12,65.94
 	.target +Marshal Dughan
+    .use 57400 --Gold Dust Belt
+    .use 57401 --Jasperlode Chestguard
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Marshal Dughan|r
     .isQuestComplete 176
@@ -17102,6 +17082,10 @@ step
     .accept 37 >>Accept Find the Lost Guards
     .accept 52 >>Accept Protect the Frontier
 	.target +Guard Thomas
+    .use 6084 --Stormwind Guard Leggings
+    .use 60219 --Balanced Spell Staff
+    .use 131199 --Lion Guard Chainmail
+    .use 6085 --Footman Tunic
 step
     #arrowtext Click\n|cRXP_PICK_Bounty Board|r
     .xp >10,1
@@ -17340,6 +17324,16 @@ step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Thomas|r.
     .accept 59 >>Accept Cloth and Leather Armor
     .target Guard Thomas
+    .use 1158 --Solid Metal Club
+    .use 57248 --Well Used Greatsword
+    .use 156980 --Solid Wooden Club
+    .use 156981 --Field Tested Spear
+    .use 57521 --Marshals Light Crossbow
+    .use 4840 --Long Bayonet
+    .use 57523 --Wolf Fur Boots
+    .use 57525 --Shrouded Bearskin Breastplate
+    .use 131193 --Steel Reinforced Bracer
+    .use 57524 --Frontier Bracer
 step
     .xp >10,1
     #completewith Bandits1
@@ -17450,6 +17444,10 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Supervisor Raelen|r
     .turnin 5545 >>Turn in A Bundle of Trouble
     .target Supervisor Raelen
+    .use 1183 --Elastic Wristguards
+    .use 57522 --Pattersons Sparring Gloves
+    .use 131198 --Wrangling Grips
+    .use 1360 --Stormwind Plate Gloves
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Sara Timberlain|r
     .isQuestComplete 83,59
@@ -17464,6 +17462,14 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wrathion|r.
     .accept 65436 >>Accept The Dragon Isles Await
     .target Wrathion
+    .use 983 --Red Linen Sash
+    .use 57406 --Reinforced Plate Belt
+    .use 131195 --Padded Chain Belt
+    .use 57405 --Fine Leather Sash
+    .use 1171 --Well Stitched Robe
+    .use 57520 --Studded Arm Protector
+    .use 131194 --Hand Welded Leggings
+    .use 2237 --Patched Pants
 step
     #arrowtext Click\n|cRXP_PICK_Hero's Call Board|r
     .goto 84,62.21,29.84
@@ -17486,6 +17492,7 @@ step
     >>Use |T134309:0|t[Lost Dragonscale] to teleport to Stormwind.
     .complete 65436,1 --1/1 Lost Dragonscale used to teleport to near Wrathion's location (Optional)
     .nodmf
+    .use 205456
 ]])
 --Night Elf: Shadowglen
 RXPGuides.RegisterGuide([[
@@ -17505,32 +17512,9 @@ step
     #hidewindow
     +test
     .usespell 1231411
-    .use 5394 --archery-training-gloves
-    .use 11187 --stemleaf-bracers
-    .use 131815 --glen-cullers-grips
-    .use 5398 --canopy-leggings
-    .use 11190 --viny-gloves
-    .use 131816 --moss-encrusted-chain-pants
-    .use 5399 --tracking-boots
-    .use 46753 --melithars-supply-bag
-    .use 10655 --sedgeweed-britches
-    .use 10656 --barkplate-vest
-    .use 4907 --woodland-tunic
-    .use 11189 --woodland-robes
-    .use 131705 --woodland-chainmail
-    .use 5395 --woodland-shield
-    .use 5392 --thistlewood-dagger
-    .use 5586 --thistlewood-blade
-    .use 10544 --thistlewood-maul
-    .use 5393 --thistlewood-staff
-    .use 5405 --draped-cloak
-    .use 131704 --web-covered-mail-belt
-    .use 6058 --blackened-leather-belt
-
 step
     #completewith Balance of Nature
     +If you want to level as fast as possible, choose Exile’s Reach as your starting zone. This requires recreating your character.
-
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Ilthalaine|r
     .xp >10,1
@@ -17567,6 +17551,9 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Melithar Staghelm|r.
     .accept 28715 >>Accept Demonic Thieves
     .target Melithar Staghelm
+    .use 5394 --Archery Training Gloves
+    .use 11187 --Stemleaf Bracers
+    .use 131815 --Glen Culler's Grips
 step
     .xp >10,1
     #completewith next
@@ -17653,6 +17640,7 @@ step
     .turnin 28714 >>Turn in Fel Moss Corruption
     .accept 28723 >>Accept Priestess of the Moon
     .target Ilthalaine
+    .use 46753 --Melithar's Supply Bag
 step
     .xp >10,1
     #completewith next
@@ -17677,6 +17665,10 @@ step
     .turnin 28723 >>Turn in Priestess of the Moon
     .accept 28724 >>Accept Iverron's Antidote
     .target Dentaria Silverglade
+    .use 5398 --Canopy Leggings
+    .use 11190 --Viny Gloves
+    .use 131816 --Moss-Encrusted Chain Pants
+    .use 5399 --Tracking Boots
 step
     #arrowtext Click\n|cRXP_PICK_Flowers|r
     .xp >10,1
@@ -17738,6 +17730,8 @@ step
     .turnin 28725 >>Turn in The Woodland Protector
     .accept 28726 >>Accept Webwood Corruption
     .target Tarindrella
+    .use 10655 --Sedgeweed Britches
+    .use 10656 --Barkplate Vest
 step
     .xp >10,1
     #optional
@@ -17801,6 +17795,10 @@ step
     >>Kill |cRXP_ENEMY_Githyiss the Vile|r.
     .complete 28727,1 --1/1 Githyiss the Vile slain
     .mob Githyiss the Vile
+    .use 5392 --Thistlewood Dagger
+    .use 5586 --Thistlewood Blade
+    .use 10544 --Thistlewood Maul
+    .use 5393 --Thistlewood Staff
 step
     .xp >10,1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tarindrella|r |cRXP_WARN_next to you|r.
@@ -17815,6 +17813,9 @@ step
     .turnin 28728 >>Turn in Signs of Things to Come
     .accept 28729 >>Accept Teldrassil: Crown of Azeroth
     .target Dentaria Silverglade
+    .use 5405 --Draped Cloak
+    .use 131704 --Web Covered Mail Belt
+    .use 6058 --Blackened Leather Belt
 step
     .xp >10,1
     #optional
@@ -17970,6 +17971,10 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Porthannius|r.
     .accept 2159 >>Accept Dolanaar Delivery
     .target Porthannius
+    .use 4907 --Woodland Tunic
+    .use 11189 --Woodland Robes
+    .use 131705 --Woodland Chainmail
+    .use 5395 --Woodland Shield
 ]])
     --Shadowglen: Skip
 RXPGuides.RegisterGuide([[
@@ -18004,27 +18009,10 @@ step
     #completewith Ursal the Mauler
     +test
     .usespell 1231411
-    .use 60239 --foul-bag
     .use 5457 --severed-voodoo-claw
-    .use 60240 --dream-carrier
-    .use 131210 --gritroot-cinch
-    .use 9599 --barkplate-leggings
-    .use 54868 --gritroot-belt
-    .use 9598 --sleeping-robes
-    .use 18957 --brushwood-blade
-    .use 54869 --thornroot-vest
-    .use 131211 --thornroot-hauberk
-    .use 54870 --thornroot-cord
-    .use 2571 --viny-wrappings
-    .use 54867 --swiftroot-boots
-    .use 131228 --feral-wristguards
-    .use 5419 --feral-bracers
     .use 5606 --gardening-gloves
     .use 6061 --graystone-bracers
     .use 5605 --pruning-knife
-    .use 5591 --rain-spotted-cape
-    .use 131229 --shackled-cuffs
-    .use 54872 --shackled-bindings
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Porthannius|r
     .xp >10,1
@@ -18103,6 +18091,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Syral Bladeleaf|r.
     .accept 489 >>Accept Seek Redemption!
 	.target Syral Bladeleaf
+    .use 60239 --Foul Bag
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Tallonkai Swiftroot|r
     .xp >10,1
@@ -18743,6 +18732,10 @@ step
     .mob Webwood Lurker
     .mob Strigid Owl
     .mob Nightsaber
+    .use 2571 --Viny Wrappings
+    .use 54867 --Swiftroot Boots
+    .use 131228 --Feral Wristguards
+    .use 5419 --Feral Bracers
 step
     .xp >10,1
     #optional
@@ -18945,6 +18938,9 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess A'moora|r
     .turnin 2518 >>Turn in Tears of the Moon
     .target Priestess A'moora
+    .use 5591 --Rain-Spotted Cape
+    .use 131229 --Shackled Cuffs
+    .use 54872 --Shackled Bindings
 step
     .xp >10,1
     #completewith next
@@ -19158,6 +19154,8 @@ step
     .complete 13945,1 --20/20 Ban'ethil Gnarlpine slain
     .mob Gnarlpine Defender
     .mob Gnarlpine Shaman
+    .use 9598 --Sleeping Robes
+    .use 18957 --Brushwood Blade
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Athridas Bearmantle|r and |cRXP_FRIENDLY_Sentinel Kyra Starsong|r
     .isQuestComplete 483
@@ -19173,6 +19171,10 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Kyra Starsong|r.
     .turnin 13945 >>Turn in Resident Danger
     .target Sentinel Kyra Starsong
+    .use 60240 --Dream Carrier
+    .use 131210 --Gritroot Cinch
+    .use 9599 --Barkplate Leggings
+    .use 54868 --Gritroot Belt
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Moon Priestess Amara|r
     .xp >10,1
@@ -19222,6 +19224,9 @@ step
     .zone 2352 >>Teleport to a Neighbourhood with the House finder, not |T7252953:0|t[Teleport to Plot], then take the |cRXP_PICK_Stormwind Portal|r.
     .link https://www.youtube.com/watch?v=uVkUB7z0njo >>CLICK HERE FOR VIDEO
     .macro House Teleport, 975747 >>/run C_Housing.StartTutorial()
+    .use 54869 --Thornroot Vest
+    .use 131211 --Thornroot Hauberk
+    .use 54870 --Thornroot Cord
 step << Alliance
     #arrowtext Click\n|cRXP_PICK_Portal|r
     .goto 2352,57.43,26.65
@@ -19247,69 +19252,7 @@ step
     #hidewindow
     +test
     .usespell 1231411
-    .use 55004
-    .use 54975
-    .use 52040 --Salvager's Bag
-    .use 54978 --Merchant's Chestguard
-    .use 131864 --Armstead Bindings
-    .use 54976 --Bracers of the Queen's Gate
-    .use 55005 --Darius' Sash
-    .use 55006 --Dempsey's Gloves
-    .use 131865 --Darius' Handguards
-    .use 54985 --Alarmbringer's Mace
-    .use 54986 --Houndmaster's Crossbow
-    .use 58217 --Mastiff Trainer's Wand
-    .use 66247 --Timeworn Staff
-    .use 55009 --Steadfast Boots
-    .use 55010 --Cannoneer's Leggings
-    .use 131866 --Steadfast Greaves
-    .use 54983 --Repeller's Bracers
-    .use 54984 --Gilnean Soldier's Waistband
-    .use 54979 --Godfrey's Dagger
-    .use 54980 --Gilded Leggings
-    .use 54981 --Caregiver's Leggings
-    .use 54982 --Gloves of Protection
-    .use 131351 --Protector's Legguards
-    .use 55015 --Gloves of the Two Birds
-    .use 58216 --Flying Worgen Robes
-    .use 131354 --The Stone's Gauntlets
-    .use 55007 --Dark Ranger's Vest
-    .use 131355 --Dark Ranger's Hauberk
     .use 118 --Minor Healing Potion
-    .use 55016 --Granny's Mallet
-    .use 55017 --Orange Blanket
-    .use 52039 --Shipwright's Bag
-    .use 55018 --Boatwork Boots
-    .use 131356 --Repairman's Cinch
-    .use 55019 --Repair Belt
-    .use 55020 --Lorna's Gloves
-    .use 55021 --Crowley's Belt
-    .use 54994 --Paramedic Bracers
-    .use 54995 --Hailwood Chestpiece
-    .use 131368 --First Responder's Bindings
-    .use 54996 --Rygna Silk Leggings
-    .use 54997 --Arachnophobe's Breastplate
-    .use 131369 --Arachnophobe's Chain Shirt
-    .use 54998 --Braided Gossamer Armbands
-    .use 52942 --Staff of Earned Tranquility
-    .use 66660 --Hammer of Controlled Fury
-    .use 133697 --Sharpened Wolf's Tooth
-    .use 156985 --Staff of Deserved Tranquility
-    .use 66876 --Sharp Edge of Balance
-    .use 66439 --Cry of the Wolf
-    .use 55002 --Blue-Bloodied Boots
-    .use 131378 --Blue-Bloodied Treads
-    .use 55003 --Greymane Cloak
-    .use 54991 --Marcus' Pickaxe
-    .use 54992 --Laborer's Belt
-    .use 54993 --Emberstone Plate
-    .use 54987 --Marshalling Point
-    .use 54989 --Rallying Charge
-    .use 55011 --Mace of the Blood Price
-    .use 54990 --Gilnean Shield
-    .use 54988 --Cloak of the Clarion Call
-    .use 55012 --Night Elven Bow
-    .use 55013 --Seryl's Promise
 step
     #completewith Market Homes1
     +If you want to level as fast as possible, choose Exile’s Reach as your starting zone. This requires recreating your character.
@@ -19491,6 +19434,7 @@ step
     .turnin 14098 >>Turn in Evacuate the Merchant Square
     .accept 14099 >>Accept Royal Orders
     .target Prince Liam Greymane
+    .use 52040 --Salvager's Bag
 step
     #completewith next
     #label Royal Orders
@@ -19518,6 +19462,7 @@ step
     .accept 14280 >>Accept The Winds Know Your Name... Apparently << Druid
     .accept 75190 >>Accept Ready and Abel << Monk --Added in DF
     .target Gwen Armstead
+    .use 55004 --Wolf Fur Coat
 step << Warrior
     #completewith next
     #label Your Instructor
@@ -19772,6 +19717,9 @@ step
     >>|cRXP_WARN_Wait for the Roleplay|r.
     *|cRXP_WARN_Ignore |cRXP_ENEMY_Worgen Runts/Alphas|r no XP, no threat|r.
     .complete 14154,1 --Survive while holding back the worgen for 2 minutes. (1)
+    .use 54975 --Armstead Bracers
+    .use 54978 --Merchant's Chestguard
+    .use 131864 --Armstead Bindings
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Lord Darius Crowley|r
     .goto 202,55.224,62.906
@@ -19812,6 +19760,10 @@ step
     .accept 14159 >>Accept The Rebel Lord's Arsenal
     .goto 202,65.810,77.714
     .target +King Genn Greymane
+    .use 54976 --Bracers of the Queen's Gate
+    .use 55005 --Darius' Sash
+    .use 55006 --Dempsey's Gloves
+    .use 131865 --Darius' Handguards
 step
     #completewith next
     #label Rebel Lord's Arsenal
@@ -19839,6 +19791,9 @@ step
     .accept 14204 >>Accept From the Shadows
     .goto 202,56.873,81.421
     .target +Lorna Crowley
+    .use 54975 --Armstead Bracers
+    .use 54978 --Merchant's Chestguard
+    .use 131864 --Armstead Bindings
 step
     #completewith next
     #label Gilnean Mastiff Collar
@@ -19915,6 +19870,10 @@ step
     .accept 14293 >>Accept Save Krennan Aranas
     .timer 16,Save Krennan Aranas RP
     .target King Genn Greymane
+    .use 54985 --Alarmbringer's Mace
+    .use 54986 --Houndmaster's Crossbow
+    .use 58217 --Mastiff Trainer's Wand
+    .use 66247 --Timeworn Staff
 step
     #completewith next
     #title |cFFFCDC00Heads Up|r
@@ -20077,6 +20036,9 @@ step
     .turnin 14221 >>Turn in Never Surrender, Sometimes Retreat
     .accept 14222 >>Accept Last Stand
     .target Lord Darius Crowley
+    .use 55009 --Steadfast Boots
+    .use 55010 --Cannoneer's Leggings
+    .use 131866 --Steadfast Greaves
 step
     #arrowtext Kill\n|cRXP_ENEMY_Frenzied Stalkers|r
     #loop
@@ -20304,6 +20266,8 @@ step
     .turnin 14366 >>Turn in Holding Steady
     .accept 14367 >>Accept The Allens' Storm Cellar
     .target Gwen Armstead
+    .use 54983 --Repeller's Bracers
+    .use 54984 --Gilnean Soldier's Waistband
 step
     #completewith next
     #label Unleash the Beast
@@ -20620,6 +20584,14 @@ step
     .complete 14386,1 --Dark Ranger Thyala slain (1)
     .use 49240
     .mob Dark Ranger Thyala
+    .use 54981 --Caregiver's Leggings
+    .use 54982 --Gloves of Protection
+    .use 131351 --Protector's Legguards
+    .use 54979 --Godfrey's Dagger
+    .use 54980 --Gilded Leggings
+    .use 55015 --Gloves of the Two Birds
+    .use 58216 --"Flying" Worgen Robes
+    .use 131354 --The Stone's Gauntlets
 step
     #completewith next
     #label As the Land Shatters
@@ -20664,6 +20636,8 @@ step
     .turnin 14396 >>Turn in As the Land Shatters
     .accept 14395 >>Accept Gasping for Breath
     .target Prince Liam Greymane
+    .use 55007 --Dark Ranger's Vest
+    .use 131355 --Dark Ranger's Hauberk
 step
     #completewith next
     #label Drowning Watchman1
@@ -20871,6 +20845,8 @@ step
     .turnin 14398 >>Turn in Grandma Wahl
     .accept 14399 >>Accept Grandma's Lost It Alright
     .target Grandma Wahl
+    .use 55020 --Lorna's Gloves
+    .use 55021 --Crowley's Belt
 step
     #arrowtext Click\n|cRXP_PICK_Book|r
     .goto 179,33.96,77.38
@@ -21002,6 +20978,8 @@ step
     .accept 14404 >>Accept Not Quite Shipshape
     .accept 14412 >>Accept Washed Up
     .target Sebastian Hayward
+    .use 55016 --Granny's Mallet
+    .use 55017 --Orange Blanket
 step
     #completewith Planks of Wood
     >>Kill |cRXP_ENEMY_Forsakens|r.
@@ -21095,6 +21073,10 @@ step
     .accept 14465 >>Accept To Greymane Manor
     .timer 32,Greymane Manor RP
     .target Gwen Armstead
+    .use 52039 --Shipwright's Bag
+    .use 55018 --Boatwork Boots
+    .use 131356 --Repairman's Cinch
+    .use 55019 --Repair Belt
 step
     #completewith Greymane Manor2
     +You can stay mounted inside the Manor; |cRXP_WARN_if you enter mounted and don’t dismount|r
@@ -21303,6 +21285,9 @@ step
     .goto 179,46.74,83.20
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Banner|r
     .complete 24472,2 --Koroth's Banner (1)
+    .use 54994 --Paramedic Bracers
+    .use 54995 --Hailwood Chestpiece
+    .use 131368 --First Responder's Bindings
 step
     #arrowtext Kill\n|cRXP_ENEMY_Ogre Minions|r
     #loop
@@ -21502,6 +21487,10 @@ step
     .turnin 24578 >>Turn in The Blackwald
     .accept 24616 >>Accept Losing Your Tail
     .target Belysra Starbreeze
+    .use 54996 --Rygna-Silk Leggings
+    .use 54997 --Arachnophobe's Breastplate
+    .use 131369 --Arachnophobe's Chain Shirt
+    .use 54998 --Braided Gossamer Armbands
 step
     #completewith next
     #label Dark Scout1
@@ -21717,6 +21706,12 @@ step
     .turnin 24673 >>Turn in Return to Stormglen
     .accept 24672 >>Accept Onwards and Upwards
     .target Gwen Armstead
+    .use 52942 --Staff of Earned Tranquility
+    .use 66660 --Hammer of Controlled Fury
+    .use 133697 --Sharpened Wolf's Tooth
+    .use 156985 --Staff of Deserved Tranquility
+    .use 66876 --Sharp Edge of Balance
+    .use 66439 --Cry of the Wolf
 step
     #completewith next
     #label Return to Stormglen2
@@ -21919,6 +21914,9 @@ step
     .goto 179,70.63,40.12,8,0
     .goto 179,71.25,39.78
     .target +Marcus
+    .use 55002 --Blue-Bloodied Boots
+    .use 131378 --Blue-Bloodied Treads
+    .use 55003 --Greymane Cloak
 step
     #arrowtext Kill\n|cRXP_ENEMY_Stags|r
     #loop
@@ -21997,6 +21995,9 @@ step
     >>Kill |cRXP_ENEMY_Executor Cornell|r.
     .complete 24676,2 --Executor Cornell (1)
     .mob Executor Cornell
+    .use 54991 --Marcus' Pickaxe
+    .use 54992 --Laborer's Belt
+    .use 54993 --Emberstone Plate
 step
     #completewith next
     #label Valov the Mad1
@@ -22164,6 +22165,11 @@ step
     .complete 24902,1 --Hunt for Sylvanas (1)
     .target Tobias Mistmantle
     .target Lorna Crowley
+    .use 54987 --Marshalling Point
+    .use 54989 --Rallying Charge
+    .use 55011 --Mace of the Blood Price
+    .use 54990 --Gilnean Shield
+    .use 54988 --Cloak of the Clarion Call
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Lorna Crowley|r
     .goto 202,38.62,60.25
@@ -22380,6 +22386,8 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorna Crowley|r.
     .accept 26706 >>Accept Endgame
     .target Lorna Crowley
+    .use 55012 --Night Elven Bow
+    .use 55013 --Seryl's Promise
 step
     #completewith next
     #label Gunship destroyed
@@ -22844,6 +22852,7 @@ step
     >>Use |T134309:0|t[Lost Dragonscale] to teleport to Stormwind.
     .complete 65436,1 --1/1 Lost Dragonscale used to teleport to near Wrathion's location (Optional)
     .nodmf
+    .use 205456
 ]])
 
 -- ====================================
@@ -22863,91 +22872,6 @@ RXPGuides.RegisterGuide([[
 
 << Horde !Harronir !Dracthyr !DemonHunter !DK !Nightborne !HighmountainTauren !Vulpera !MagharOrc !ZandalariTroll
 
-step
-    #completewith ExilesEnd
-    #hidewindow
-    +1
-    .use 175180
-    .use 175245
-    .use 175181
-    .use 175182
-    .use 175183
-    .use 175212
-    .use 175213
-    .use 175214
-    .use 175215
-    .use 175161
-    .use 175162
-    .use 175163
-    .use 175164
-    .use 175165
-    .use 175166
-    .use 175167
-    .use 175168
-    .use 175169
-    .use 175170
-    .use 175171
-    .use 175172
-    .use 175173
-    .use 175174
-    .use 175199
-    .use 175200
-    .use 175201
-    .use 175202
-    .use 175231
-    .use 175232
-    .use 175233
-    .use 175238
-    .use 175191
-    .use 175192
-    .use 175193
-    .use 175194
-    .use 175224
-    .use 175223
-    .use 175225
-    .use 175226
-    .use 175203
-    .use 175204
-    .use 175205
-    .use 175206
-    .use 175234
-    .use 175235
-    .use 175236
-    .use 175237
-    .use 175184
-    .use 175185
-    .use 175186
-    .use 175187
-    .use 175216
-    .use 175218
-    .use 175219
-    .use 175175
-    .use 175188
-    .use 175189
-    .use 175190
-    .use 175207
-    .use 175220
-    .use 175221
-    .use 175222
-    .use 175176
-    .use 175177
-    .use 175178
-    .use 175179
-    .use 175208
-    .use 175209
-    .use 175210
-    .use 175211
-    .use 178164
-    .use 179362
-    .use 178166
-    .use 179360
-    .use 178167
-    .use 178163
-    .use 178165
-    .use 178162
-    .use 178168
-    .use 178171
-    .use 178169
 step
     #optional
     .convertquest 56775,59926 << Horde
@@ -23181,6 +23105,10 @@ step
     .zoneskip 1409,1
     .goto 1409,58.51,59.30
     .turnin 56579 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Chest|r
+    .use 175212 << Warrior/Paladin --Expeditionary Plate Warboots
+    .use 175214 << Hunter/Shaman --Expeditionary Mail Sabatons
+    .use 175213 << Mage/Priest/Warlock --Expeditionary Cloth Boots
+    .use 175215 << Druid/Monk/Rogue --Expeditionary Leather Boots
 step
     .zoneskip 1409,1
     #completewith next
@@ -23271,6 +23199,13 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Warlord Breka Grimaxe|r.
     .accept 59950 >>Accept Stocking Up on Supplies
     .target Warlord Breka Grimaxe
+    .use 175164 << Mage/Priest/Warlock/Druid/Monk/Shaman --Expeditionary Staff
+    .use 175163 << Druid/Monk/Hunter --Expeditionary Quarterstaff
+    .use 175165 << Warrior/Paladin --Expeditionary Greataxe
+    .use 175161 << Warrior/Paladin/Rogue/Monk/Shaman --Expeditionary Axe
+    .use 175171 << Rogue/Mage/Priest/Warlock/Druid/Shaman --Expeditionary Dagger
+    .use 175169 << Hunter --Expeditionary Longbow
+    .use 175174 << Priest/Druid/Monk/Shaman/Paladin/Rogue --Expeditionary Cudgel
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Provisioner Jin'hake|r
     .zoneskip 1409,1
@@ -23430,6 +23365,10 @@ step << Rogue
     .skipgossipid 52644
     .skipgossipid 52645
     .target Drizza Sidestabber
+    .use 175225 << Hunter/Shaman --Expeditionary Mail Leggings
+    .use 175226 << Druid/Monk/Rogue --Expeditionary Leather Legguards
+    .use 175223 << Warrior/Paladin --Expeditionary Plate Legguards
+    .use 175224 << Mage/Priest/Warlock --Expeditionary Cloth Leggings
 step << Rogue
     #include RestedXP Speed Leveling\a) Exile's Reach@RogueExilesStart1-RogueExilesEnd1
 step << Rogue
@@ -23449,6 +23388,10 @@ step << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mithdran Dawntracker|r.
     .accept 59355 >>Accept A Hunter's Trap
     .target Mithdran Dawntracker
+    .use 175225 << Hunter/Shaman --Expeditionary Mail Leggings
+    .use 175226 << Druid/Monk/Rogue --Expeditionary Leather Legguards
+    .use 175223 << Warrior/Paladin --Expeditionary Plate Legguards
+    .use 175224 << Mage/Priest/Warlock --Expeditionary Cloth Leggings
 step << Hunter
     #arrowtext Talk to\n|cRXP_FRIENDLY_Herbert Gloomburst|r
     .zoneskip 1409,1
@@ -23541,6 +23484,10 @@ step << Monk
     .accept 59347 >>Accept A Monk's Focus
     .timer 34,A Monk's Focus RP
     .target Bo
+    .use 175225 << Hunter/Shaman --Expeditionary Mail Leggings
+    .use 175226 << Druid/Monk/Rogue --Expeditionary Leather Legguards
+    .use 175223 << Warrior/Paladin --Expeditionary Plate Legguards
+    .use 175224 << Mage/Priest/Warlock --Expeditionary Cloth Leggings
 step << Monk
     .zoneskip 1409,1
     #completewith next
@@ -23592,6 +23539,10 @@ step << Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Herbert Gloomburst|r.
     .accept 59352 >>Accept A Mage's Knowledge
     .target Herbert Gloomburst
+    .use 175225 << Hunter/Shaman --Expeditionary Mail Leggings
+    .use 175226 << Druid/Monk/Rogue --Expeditionary Leather Legguards
+    .use 175223 << Warrior/Paladin --Expeditionary Plate Legguards
+    .use 175224 << Mage/Priest/Warlock --Expeditionary Cloth Leggings
 step << Mage
     #include RestedXP Speed Leveling\a) Exile's Reach@Spell Book-Spell Book
 step << Mage
@@ -23650,6 +23601,9 @@ step
     #hidewindow
     #completewith Who Lurks in the Pit1
     .goto 1409,51.18,59.61,80 >>Follow the Arrow
+    .use 175226 << Druid --Expeditionary Leather Legguards
+    .use 175223 << Warrior/Paladin --Expeditionary Plate Legguards
+    .use 175224 << Priest/Warlock --Expeditionary Cloth Leggings
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Lana Jordan|r
     .zoneskip 1409,1
@@ -23739,6 +23693,11 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Provisioner Jin'hake|r and |cRXP_WARN_repair all items|r.
     .complete 85678,1 --1/1 Speak With Quartmaster Richter to Repair All Items
     .target Provisioner Jin'hake
+    .use 175235 << Warrior/Paladin --Expeditionary Plate Armguards
+    .use 175237 << Druid/Monk/Rogue --Expeditionary Leather Bracers
+    .use 175234 << Mage/Priest/Warlock --Expeditionary Cloth Cuffs
+    .use 175236 << Hunter/Shaman --Expeditionary Mail Armbands
+    .use 175225 << Shaman --Expeditionary Mail Leggings
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Thrall|r
     .zoneskip 1409,1
@@ -23883,12 +23842,17 @@ step
     .turnin 55988 >>Turn in Like Ogres to the Slaughter
     .goto 1409,40.19,32.64
     .target Breka Grimaxe
+    .use 175245 --Runetusk Necklace
 step
     #arrowtext Click\n|cRXP_PICK_Ogre Runestone|r
     .zoneskip 1409,1
     .goto 1409,39.96,32.45
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Ogre Runestone|r.
     .complete 55990,4,1 --3/3 Disable runes holding Warlord Thunderwalker
+    .use 175216 << Druid/Monk/Rogue --Expeditionary Leather Gloves
+    .use 175217 << Warrior/Paladin --Expeditionary Plate Gauntlets
+    .use 175218 << Mage/Priest/Warlock --Expeditionary Cloth Gloves
+    .use 175219 << Hunter/Shaman --Expeditionary Mail Gauntlets
 step
     #arrowtext Click\n|cRXP_PICK_Ogre Runestone|r
     .zoneskip 1409,1
@@ -23934,6 +23898,10 @@ step
     >>Open your Talents(Default: N) and Select any specialization.
     *|cRXP_WARN_If you already have your desired one, switch to another and back|r.
     .complete 87547,1 --1/1 Activate a combat specialization
+    .use 175211 << Druid/Monk/Rogue --Expeditionary Leather Tunic
+    .use 175210 << Hunter/Shaman --Expeditionary Mail Armor
+    .use 175208 << Mage/Priest/Warlock --Expeditionary Cloth Robe
+    .use 175209 << Warrior/Paladin --Expeditionary Plate Chestpiece
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Kalecgos|r
     .goto 2022,81.23,28.06

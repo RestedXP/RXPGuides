@@ -813,7 +813,7 @@ step
     >>Use |T134309:0|t[Lost Dragonscale] to teleport to Stormwind.
     .complete 65436,1 --1/1 Lost Dragonscale used to teleport to near Wrathion's location (Optional)
     .nodmf
-
+    .use 205456
 ]])
 
 -- #########################################
@@ -2265,7 +2265,7 @@ step
     .clicknext RestedXP Legion Remix\a) Artifact Weapon: Unholy >> Unholy(DPS) Questline
     .clicknext RestedXP Legion Remix\a) Artifact Weapon: Blood >> Blood(Tank) Questline
 step
-    #include ac) Order Hall Demon Hunter Part 2@Plans and Preparations-Enlist Nazgrim
+    #include ac) Order Hall Death Knight Part 2@Plans and Preparations-Enlist Nazgrim
 step
     #arrowtext Click\n|cRXP_PICK_Portal to Dalaran|r
     .zoneskip 648,1

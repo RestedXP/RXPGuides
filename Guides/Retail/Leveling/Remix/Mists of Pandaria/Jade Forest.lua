@@ -2329,7 +2329,7 @@ step
 step
     #include 1) Jade Forest Cloud Serpent Side Quests
 step
-    #include X) August Celestial Daillies@startaugustjade-endaugustjade
+    #include ac) August Celestial Dailies@startaugustjade-endaugustjade
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Old Man Misteye|r
     .goto 371,48.32,46.06
@@ -3249,7 +3249,7 @@ step
     .goto 371,58.76,81.29
     .target +Pearlkeeper Fujin
 step
-    #include X) August Celestial Daillies@startaugustjade-endaugustjade
+    #include ac) August Celestial Dailies@startaugustjade-endaugustjade
 step
     #include 1) Jade Forest Cloud Serpent Side Quests
 step

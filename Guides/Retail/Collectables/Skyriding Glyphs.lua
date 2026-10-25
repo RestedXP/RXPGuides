@@ -65,8 +65,8 @@ step
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 16575,5 >>Pick up the Dragon Glyph: Wingrest Embassy at the top of a broken tower
 step
-    >>|cRXP_WARN_Spend all your already collected glyphs and wait until you have at least 3 vigar charges|r.
     #arrowtext Dragon Glyph: Scalecracker Peak
+    >>|cRXP_WARN_Spend all your already collected glyphs and wait until you have at least 3 vigor charges|r.
     >>Use |T4640498:0|t[Skyward Ascend] as often as possible but always wait a few seconds between the casts.
     >>You probably need to occasionally recharge your vigor (some good spots are marked on your map).
     .line 2022,74.94,37.50,73.21,20.51
@@ -441,8 +441,8 @@ RXPGuides.RegisterGuide([[
 #chapter
 
 step
-    >>Use|T4640498:0|t[Skyward Ascend] 2-3 times to reach the glyph
     #arrowtext Dragon Glyph: South Hold Gate
+    >>Use |T4640498:0|t[Skyward Ascend] 2-3 times to reach the glyph
     .goto 2025,35.5,85.5
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 16578,3 >>Pick up the Dragon Glyph: South Hold Gate at the top of the tower

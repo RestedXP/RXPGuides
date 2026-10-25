@@ -24,7 +24,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(10-70)|r Pandaria Remix
 #name a) Cloud Serpent Dailies
 #displayname |cFF1EFF001|r - Cloud Serpent
-#next ab) The Klaxxi Daillies
+#next ab) The Klaxxi Dailies
 
 step
     #loop
@@ -693,10 +693,10 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Speed Leveling
 #subgroup |cFFFCDC00(10-70)|r Pandaria Remix
-#name ab) The Klaxxi Daillies
+#name ab) The Klaxxi Dailies
 #displayname |cFF1EFF002|r - The Klaxxi
 #title The Klaxxi Dailies
-#next ac) August Celestial Daillies
+#next ac) August Celestial Dailies
 
 step
     #loop
@@ -1158,8 +1158,9 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Speed Leveling
 #subgroup |cFFFCDC00(10-70)|r Pandaria Remix
-#name ac) August Celestial Daillies
+#name ac) August Celestial Dailies
 #displayname |cFF1EFF003|r - August Celestial
+#title August Celestial Dailies
 #next ad) Domination Point Dailies
 
 
@@ -2202,7 +2203,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(10-70)|r Pandaria Remix
 #name ad) Domination Point Dailies
 #displayname |cFF1EFF004|r - Domination Point
-#next ae) Landfall Daillies Alliance
+#next ae) Landfall Dailies Alliance
 
 step
     #loop
@@ -2640,15 +2641,15 @@ step
 
 ]])
 
---Landfall Daillies Alliance
+--Landfall Dailies Alliance
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Speed Leveling
 #subgroup |cFFFCDC00(10-70)|r Pandaria Remix
-#name ae) Landfall Daillies Alliance
+#name ae) Landfall Dailies Alliance
 #displayname |cFF1EFF005|r - Landfall
-#next af) Shado-Pan Daillies
+#next af) Shado-Pan Dailies
 
 --Ruins of Ogudei
 -- step
@@ -3158,7 +3159,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Speed Leveling
 #subgroup |cFFFCDC00(10-70)|r Pandaria Remix
-#name af) Shado-Pan Daillies
+#name af) Shado-Pan Dailies
 #displayname |cFF1EFF006|r - Shado-Pan
 #title Shado-Pan Dailies
 #next a) Cloud Serpent Dailies
@@ -4270,7 +4271,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Speed Leveling
-#name X) Niuzao Daillies
+#name X) Niuzao Dailies
 #internal
 
 

@@ -919,7 +919,7 @@ step
     .complete 89295,1 --Complete the scenario "Nightfall"
     .complete 89331,1 --Complete the scenario "Nightfall"
 -----------------------------------------------------
---- DAILLIES BATCH 1
+--- DAILIES BATCH 1
 -----------------------------------------------------
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Sacred Alchemist|r
@@ -993,7 +993,7 @@ step
     .isQuestComplete 88711
     #include a) DawnBreakerTeleport
 -----------------------------------------------------
---- DAILLIES BATCH 2
+--- DAILIES BATCH 2
 -----------------------------------------------------
 step
     #arrowtext Kill\n|cRXP_ENEMY_Sureki Forces|r
