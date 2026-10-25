@@ -17,6 +17,7 @@ step
     .use 217930
     .itemcount 217930,1
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Arturos|r
     .goto 371,42.96,27.44 --x left
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arturos|r.
     .accept 80446 >>Accept Looking for Group
@@ -37,6 +38,7 @@ step
     .achievement 20004,0
     .achievement 40223,0
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Lidamorrutu|r
     #completewith all2
     .goto 371,43.01,27.58
     .achievementComplete 40223,1
@@ -45,6 +47,7 @@ step
     .buy 208555,1
     .target Lidamorrutu
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Lidamorrutu|r
     #completewith all2
     .goto 371,43.01,27.58
     .achievementComplete 20004,1
@@ -53,6 +56,7 @@ step
     .buy 208487,1
     .target Lidamorrutu
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Lidamorrutu|r
     #completewith all2
     .goto 371,43.01,27.58
     .achievementComplete 20005,1
@@ -61,6 +65,7 @@ step
     .buy 208491,1
     .target Lidamorrutu
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Lidamorrutu|r
     #completewith all2
     .goto 371,43.01,27.58
     .achievementComplete 20006,1
@@ -69,6 +74,7 @@ step
     .buy 210523,1
     .target Lidamorrutu
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Lidamorrutu|r
     #completewith all2
     #label All
     .goto 371,43.01,27.58
@@ -78,6 +84,7 @@ step
     .buy 208554,1
     .target Lidamorrutu
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Lidamorrutu|r
     .achievementComplete 20005,0
     .achievementComplete 19881,0
     .achievementComplete 20006,0
@@ -99,6 +106,7 @@ step
     .skipgossip
     .target Lidamorrutu
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Pythagorus|r and |cRXP_FRIENDLY_Larah Treebender|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pythagorus|r and |cRXP_FRIENDLY_Larah Treebender|r.
     .accept 80447 >>Accept Looking for More
     .goto 371,42.95,27.73 --x middle
@@ -112,27 +120,32 @@ step
 --     .accept 78894 >>Accept Infinite Growth
 --     .target Momentus
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Momentus|r
     #completewith next
     .goto 371,42.5,27.32,10,0
     .vendor >>Talk to |cRXP_FRIENDLY_Momentus|r and upgrade your gear |cRXP_WARN_It's recommended for faster leveling but uses bronze, a cosmetic currency|r.
     .skipgossip
     .target Momentus
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Lin Tenderpaw|r
     .goto 371,44.99,24.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lin Tenderpaw|r.
     .target Lin Tenderpaw
     .accept 29618 >>Accept The High Elder
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_High Elder Cloudfall|r
     .goto 371,45.22,25.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Elder Cloudfall|r |cRXP_WARN_on the balcony|r.
     .turnin 29618 >>Turn in The High Elder
     .target High Elder Cloudfall
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Lin Tenderpaw|r
     .goto 371,44.99,24.96
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lin Tenderpaw|r.
     .accept 29619 >>Accept A Courteous Guest
     .target Lin Tenderpaw
 step
+    #arrowtext Kill\n|cRXP_ENEMY_Greenwood Thieves|r
     #loop
     .goto 371,45.67,26.91,10,0
     .goto 371,45.96,27.19,10,0
@@ -146,6 +159,7 @@ step
     .complete 29619,1 --8/8 Ripe Orange
     .mob Greenwood Thief
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Lin Tenderpaw|r
     .goto 371,44.99,24.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lin Tenderpaw|r.
     .turnin 29619 >>Turn in A Courteous Guest
@@ -166,28 +180,33 @@ step
     .timer 162, RP
     .target High Elder Cloudfall
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_High Elder Cloudfall|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Elder Cloudfall|r.
     .goto 371,42.75,23.17
     .complete 29620,1 --1/1 Speak with High Elder Cloudfall
     .target High Elder Cloudfall
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_High Elder Cloudfall|r
     .goto 371,42.74,23.17
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Elder Cloudfall|r.
     .turnin 29620 >>Turn in The Great Banquet
     .timer 8, RP
     .target High Elder Cloudfall
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Xiao|r
     .goto 371,43.13,23.62
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xiao|r.
     .accept 29622 >>Accept Your Training Starts Now
     .accept 29626 >>Accept Groundskeeper Wu
     .target Xiao
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Master Stone Fist|r
     .goto 371,43.24,24.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Stone Fist|r.
     .accept 29632 >>Accept Becoming Battle-Ready
     .target Master Stone Fist
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Tian Pupil|r
     #loop
     .goto 371,43.26,25.12,15,0
     .goto 371,43.47,25.42,15,0
@@ -204,6 +223,7 @@ step
     .skipgossip
     .target Tian Pupil
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Master Stone Fist|r
     .goto 371,43.24,24.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Stone Fist|r.
     .turnin 29632 >>Turn in Becoming Battle-Ready
@@ -211,26 +231,31 @@ step
     .accept 29633 >>Accept Zhi-Zhi, the Dextrous
     .accept 29634 >>Accept Husshun, the Wizened
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Zhi-Zhi|r
     #completewith next
     .goto 371,43.06,26.01
     .gossipoption 40594 >> Talk to |cRXP_FRIENDLY_Zhi-Zhi|r.
     .target Zhi-Zhi
 step
+    #arrowtext Kill\n|cRXP_ENEMY_Zhi-Zhi|r
     >>Kill |cRXP_ENEMY_Zhi-Zhi|r.
     .goto 371,43.06,26.01
     .complete 29633,1 --1/1 Zhi-Zhi defeated
     .mob Zhi-Zhi
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Husshun|r
     #completewith next
     .goto 371,44.57,24.06
     .gossipoption 40595 >> Talk to |cRXP_FRIENDLY_Husshun|r.
     .target Husshun
 step
+    #arrowtext Kill\n|cRXP_ENEMY_Husshun|r
     .goto 371,44.57,24.06
     >>Kill |cRXP_ENEMY_Husshun|r.
     .complete 29634,1 --1/1 Husshun defeated
     .mob Husshun
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Master Stone Fist|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Stone Fist|r.
     .turnin 29633 >>Turn in Zhi-Zhi, the Dextrous
     .turnin 29634 >>Turn in Husshun, the Wizened
@@ -238,33 +263,39 @@ step
     .goto 371,43.24,24.76
     .target Master Stone Fist
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Zhi-Zhi|r
     .isOnQuest 29633
     .goto 371,43.06,26.01
     .gossipoption 40594 >> Talk to |cRXP_FRIENDLY_Zhi-Zhi|r.
     .target Zhi-Zhi
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Xiao|r
     #completewith next
     .goto 371,43.13,23.65
     .gossipoption 40337 >> Talk to |cRXP_FRIENDLY_Xiao|r.
     .target Xiao
 step
+    #arrowtext Kill\n|cRXP_ENEMY_Xiao|r
     .goto 371,43.13,23.65
     >>Kill |cRXP_ENEMY_Xiao|r.
     .complete 29635,1 --1/1 Xiao defeated
     .mob Xiao
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Master Stone Fist|r
     .goto 371,43.23,24.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Stone Fist|r.
     .turnin 29635 >>Turn in Xiao, the Eater
     .target Master Stone Fist
     .accept 29636 >>Accept A Test of Endurance
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Instructor Xann|r
     .solo
     .goto 371,41.61,28.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Instructor Xann|r.
     .turnin 29622 >>Turn in Your Training Starts Now
     .target Instructor Xann
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Instructor Xann|r
     .group
     .goto 371,41.61,28.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Instructor Xann|r.
@@ -279,6 +310,7 @@ step
     .complete 29623,1 --12/12 Practice Strikes completed
     .target Tian Student
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Instructor Xann|r
     .group
     .goto 371,41.61,28.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Instructor Xann|r.
@@ -286,18 +318,21 @@ step
     .target Instructor Xann
     .accept 29624 >>Accept Attention
 step
+    #arrowtext Kill\n|cRXP_ENEMY_Training Bags|r
     .group
     .goto 371,41.15,27.98
     >>Kill |cRXP_ENEMY_Training Bags|r.
     .complete 29624,1 --2/2 Training Bag slain
     .mob training bag
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Instructor Xann|r
     .group
     .goto 371,41.61,28.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Instructor Xann|r.
     .turnin 29624 >>Turn in Attention
     .target Instructor Xann
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Groundskeeper Wu|r
     .goto 371,41.61,23.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Groundskeeper Wu|r.
     .turnin 29626 >>Turn in Groundskeeper Wu
@@ -308,12 +343,14 @@ step
     >>Click on the |cRXP_PICK_Bambus|r.
     .complete 29627,1 --6/6 Rattan Switch
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_June Whiteblossom|r
     .goto 371,41.40,24.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_June Whiteblossom|r.
     .buy 72954,1
     .complete 29627,2 --1/1 Black Walnut Extract
     .target June Whiteblossom
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Brewmaster Lei Kanglei|r
     #label --3/3 Triple-Bittered Ale
     .goto 371,41.77,24.61
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brewmaster Lei Kanglei|r.
@@ -321,6 +358,7 @@ step
     .complete 29627,3 --3/3 Triple-Bittered Ale
     .target Brewmaster Lei Kanglei
 step
+    #arrowtext Click\n|cRXP_PICK_Bambus|r
     #loop
     .goto 371,41.86,24.87,20,0
     .goto 371,42.28,24.64,20,0
@@ -339,6 +377,7 @@ step
     >>Click on the |cRXP_PICK_Bambus|r.
     .complete 29627,1 --6/6 Rattan Switch
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Groundskeeper Wu|r
     .goto 371,41.62,23.70
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Groundskeeper Wu|r.
     .turnin 29627 >>Turn in A Proper Weapon
@@ -346,11 +385,13 @@ step
     .accept 29630 >>Accept And a Heavy Fist
     .target Groundskeeper Wu
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Instructor Myang|r
     .goto 371,38.97,24.05
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Instructor Myang|r.
     .turnin 29636 >>Turn in A Test of Endurance
     .target Instructor Myang
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Guard Shan Long|r
     .goto 371,38.02,23.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Shan Long|r.
     .accept 29631 >>Accept Burning Bright
@@ -390,6 +431,7 @@ step
     .complete 29631,1 --6/6 Waxwood Hunter slain
     .mob waxwood hunter
 step
+    #arrowtext Click\n|cRXP_PICK_Bushleaf Cluster|r
     #label Blushleaf Extract
     .goto 371,37.18,20.65,0
     .goto 371,38.31,21.43,0
@@ -420,6 +462,7 @@ step
     .complete 29630,1 --10/10 Greenwood Trickster slain
     .mob greenwood trickster
 step
+    #arrowtext Kill\n|cRXP_ENEMY_Waxwood Hunter|r
     .goto 371,37.18,20.65,0
     .goto 371,38.31,21.43,0
     .goto 371,36.41,22.21,0
@@ -446,6 +489,7 @@ step
     .complete 29631,1 --6/6 Waxwood Hunter slain
     .mob waxwood hunter
 step
+    #arrowtext Kill\n|cRXP_ENEMY_Greenwood Trickster|r
     #loop
     .goto 371,37.83,18.34,20,0
     .goto 371,37.70,20.48,20,0
@@ -474,6 +518,7 @@ step
 --    >>be careful not to stretch the rope |cRXP_WARN_beyond 100 yards to avoid disconnecting|r.
 --    .complete 29628,2 --1/1 Boiling Cauldron returned
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Guard Shan Long|r
     #label Burning Bright
     .goto 371,38.02,23.8
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Shan Long|r.
@@ -484,6 +529,7 @@ step
 --    >>|cRXP_WARN_Return the Cauldron|r but be careful not to stretch the rope |cRXP_WARN_beyond 100 yards to avoid disconnecting|r.
 --    .complete 29628,2 --1/1 Boiling Cauldron returned
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Groundskeeper Wu|r
     .convertquest 29646,29646 << Horde
     .goto 371,41.60,23.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Groundskeeper Wu|r.
@@ -509,11 +555,13 @@ RXPGuides.RegisterGuide([[
 #internal
 
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Outcast Sprite|r
     .goto 371,48.67,24.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Outcast Sprite|r.
     .accept 29745 >>Accept The Sprites' Plight
     .target Outcast Sprite
 step
+    #arrowtext Kill\n|cRXP_ENEMY_Stonebound Destroyer|r
     #completewith next
     .goto 371,49.22,22.72,20,0
     .goto 371,48.71,21.13,20,0
@@ -521,10 +569,12 @@ step
     .complete 29745,1 --10/10 Stonebound Destroyer slain
     .mob stonebound destroyer
 step
+    #arrowtext Follow the arrow
     .goto 371,48.58,20.63
     >>|cRXP_WARN_Follow the Arrow|r.
     .complete 29745,2 --1/1 Source of the destroyers found
 step
+    #arrowtext Kill\n|cRXP_ENEMY_Stonebound Destroyer|r
     #loop
     .goto 371,47.55,20.83,20,0
     .goto 371,49.90,19.47,20,0
@@ -538,11 +588,13 @@ step
     .complete 29745,1 --10/10 Stonebound Destroyer slain
     .mob stonebound destroyer
 step
+    #arrowtext Click the popup
     .goto 371,49.04,20.86
     >>Click on the popup to turn in the quest.
     .turnin 29745 >>Turn in The Sprites' Plight
     .accept 29747 >>Accept Break the Cycle
 step
+    #arrowtext Click\n|cRXP_PICK_Mogu Head|r
     .goto 371,48.57,20.63
     >>Click on the |cRXP_PICK_Mogu Head|r.
     .accept 29748 >>Accept Simulacrumble
@@ -577,17 +629,20 @@ step
     >>Click on the |cRXP_PICK_Statues|r.
     .complete 29748,1 --6/6 Vacant Destroyer Kicked
 step
+    #arrowtext Click the popup
     .goto 371,47.99,18.74
     >>Click on the popup to turn in the quest.
     .turnin 29747 >>Turn in Break the Cycle
     .turnin 29748 >>Turn in Simulacrumble
     .accept 29749 >>Accept An Urgent Plea
 step
+    #arrowtext Click\n|cRXP_PICK_Staff|r
     .goto 371,44.23,14.95
     >>Click on the |cRXP_PICK_Staff|r.
     .complete 29749,1 --1/1 Staff of Pei-Zhi
     -- .timer 100,RP
 step
+    #arrowtext Kill\n|cRXP_ENEMY_Ancient Spirits|r
     .goto 371,44.363,15.629
     >>Kill |cRXP_ENEMY_Ancient Spirits|r until quest completion (you have to kill 20 mobs to fill the bar).
     .complete 29749,2 --1/1 Interrupt the Ritual of Spiritbinding
@@ -596,6 +651,7 @@ step
     #completewith next
     .logout >> |cRXP_WARN_Press Escape and select Logout|r wait until you can log back in to skip roleplay.
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Pei-Zhi|r
     .goto 371,44.23,15.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pei-Zhi|r.
     .turnin 29749 >>Turn in An Urgent Plea
@@ -616,14 +672,17 @@ step
     .use 74771
     .mob Wayward Ancestor
 step
+    #arrowtext Click\n|cRXP_PICK_Jade Cong|r
     .goto 371,42.69,15.75
     >>Click on |cRXP_PICK_Jade Cong|r.
     .complete 29751,1 --1/1 Jade Cong
 step
+    #arrowtext Click\n|cRXP_PICK_Candle|r
     .goto 371,42.28,17.1
     >>Click on the |cRXP_PICK_Candle|r.
     .complete 29751,3 --1/1 Pungent Ritual Candle
 step
+    #arrowtext Click\n|cRXP_PICK_Bowl|r
     .goto 371,41.64,14.3
     #label Chipped Ritual Bowl
     >>Click on the |cRXP_PICK_Bowl|r.
@@ -657,6 +716,7 @@ step
     .complete 29750,1 --8/8 Spirit Bottle
     .mob Shan'ze Spiritclaw
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Pei-Zhi|r
     .goto 371,44.24,15.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pei-Zhi|r.
     .turnin 29750 >>Turn in Vessels of the Spirit
@@ -703,6 +763,7 @@ step
     >>Click on the |cRXP_PICK_Tidemist Caps|r.
     .complete 29756,1 --10/10 Tidemist Cap
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Pei-Zhi|r
     #xprate <2
     .goto 371,44.24,15.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pei-Zhi|r.
@@ -746,11 +807,13 @@ RXPGuides.RegisterGuide([[
 --     #completewith next
 --     .goto 371,46.31,80.67,40 >>Look for the Treasure on the shrine.
 step << Horde
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Old Man Misteye|r
     .goto 371,48.32,46.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Old Man Misteye|r.
     .accept 29576 >>Accept An Air of Worry
     .target Old Man Misteye
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Shao the Defiant|r
     .goto 371,43.49,75.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shao the Defiant|r.
     .turnin 29576 >>Turn in An Air of Worry << Horde
@@ -758,6 +821,7 @@ step
     .accept 29579 >>Accept Rally the Survivors
     .target Shao the Defiant
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Gentle Mother Hanae|r
     #loop
     .goto 371,43.25,76.02,10,0
     .goto 371,43.28,75.68,10,0
@@ -768,6 +832,7 @@ step
     .accept 29585 >>Accept Spitfire
     .target Gentle Mother Hanae
 step
+    #arrowtext Leave the House
     .isOnQuest 29585
     .goto 371,43.49,75.92,10 >> Leave the House
 step
@@ -856,12 +921,14 @@ step
     .skipgossip
     .mob gormali incinerator
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Shao the Defiant|r
     .goto 371,43.49,75.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shao the Defiant|r.
     .turnin 29578 >>Turn in Defiance
     .turnin 29579 >>Turn in Rally the Survivors
     .target Shao the Defiant
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Gentle Mother Hanae|r
     #loop
     .goto 371,43.28,75.77,10,0
     .goto 371,43.28,75.72,10,0
@@ -872,18 +939,22 @@ step
     .turnin 29585 >>Turn in Spitfire
     .target Gentle Mother Hanae
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Traumatized Nectarbreeze Farmer|r
     .goto 371,43.21,75.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Traumatized Nectarbreeze Farmer|r.
     .accept 29586 >>Accept The Splintered Path
     .target Traumatized Nectarbreeze Farmer
 step
+    #arrowtext Leave the House
     #completewith next
     .goto 371,43.49,75.92,10 >> Leave the House
 step
+    #arrowtext Follow the arrow
     .goto 371,41.01,73.97
     >>|cRXP_WARN_Follow the Arrow|r.
     .complete 29586,1 --1/1 Mogu Camp Discovered
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Shao the Defiant|r
     .goto 371,41.00,73.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shao the Defiant|r.
     .turnin 29586 >>Turn in The Splintered Path
@@ -905,11 +976,13 @@ step
     .mob Gormali Slaver
     .target Captured Nectarbreeze Farmer
 step
+    #arrowtext Kill\n|cRXP_ENEMY_Subjugator Gormal|r
     .goto 371,37.8,76.19
     >>Kill |cRXP_ENEMY_Subjugator Gormal|r.
     .complete 29670,1 --1/1 Subjugator Gormal slain
     .mob subjugator gormal
 step
+    #arrowtext Free\n|cRXP_FRIENDLY_Captured Nectarbreeze Farmer|r and |cRXP_PICK_Net|r and |cRXP_ENEMY_Gormali Slavers|r
     #loop
     .goto 371,37.79,76.91,15,0
     .goto 371,38.63,77.40,15,0
@@ -930,6 +1003,7 @@ step
     .mob Gormali Slaver
     .target Captured Nectarbreeze Farmer
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Shao the Defiant|r
     .goto 371,40.99,73.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shao the Defiant|r.
     .turnin 29587 >>Turn in Unbound
@@ -946,6 +1020,7 @@ RXPGuides.RegisterGuide([[
 #internal
 
 step
+    #arrowtext Use [Bronze Timepiece]
     #completewith next
     .goto 371,65.25,37.20,20,0
     .cast 437035 >>Use |T134376:0|t[Bronze Timepiece] to teleport to the dragonriding quests.
@@ -961,6 +1036,7 @@ step
 --     .accept 80311 >>Accept Order of the Cloud Serpent
 --     .target Toortle Wider
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Elder Anli|r
     .goto 371,57.64,44.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Anli|r.
     -- .turnin 80311 >>Turn in Order of the Cloud Serpent
@@ -977,12 +1053,14 @@ step
 --     .turnin 32498 >>Turn in Honor the Flame
 --     .target Midsummer Bonfire
 step
+    #arrowtext Use [Bronze Timepiece]
     #completewith next
     .goto 371,65.25,37.20,20,0
     .cast 437035 >>Use |T134376:0|t[Bronze Timepiece] to teleport to the dragonriding quests.
     .itemcount 216712,1
     .use 216712
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Instructor Tong|r
     .goto 371,65.33,31.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Instructor Tong|r.
     .turnin 30134 >>Turn in Wild Things
@@ -1046,6 +1124,7 @@ step
     .use 78947
     .target Windward Hatchlings
 step
+    #arrowtext Follow the arrow
     .goto 371,65.18,30.07,-1
     .goto 371,65.64,30.22,-1
     .goto 371,65.71,30.69,-1
@@ -1093,12 +1172,14 @@ step
     .mob Slitherscale Eggdrinker
     .mob Slitherscale Ripper
 step
+    #arrowtext Use [Bronze Timepiece]
     #completewith next
     .goto 371,65.25,37.20,20,0
     .cast 437035 >>Use |T134376:0|t[Bronze Timepiece] to teleport to the dragonriding quests.
     .itemcount 216712,1
     .use 216712
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Instructor Tong|r
     .goto 371,65.34,31.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Instructor Tong|r.
     .turnin 30135 >>Turn in Beating the Odds
@@ -1107,35 +1188,41 @@ step
     .accept 30138 >>Accept Choosing the One
     .turnin 30138 >>Turn in Choosing the One
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Instructor Tong|r
     .goto 371,65.34,31.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Instructor Tong|r.
     .daily 30140,30141,30139 >>Accept The Rider's Journey
     .target Instructor Tong
 step
+    #arrowtext Use [Bronze Timepiece]
     #completewith Egg hatched
     .goto 371,65.25,37.20,20,0
     .cast 437035 >>Use |T134376:0|t[Bronze Timepiece] to teleport to the dragonriding quests.
     .itemcount 216712,1
     .use 216712
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Instructor Skythorn|r
     .goto 371,57.55,45.10
     .isOnQuest 30139
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Instructor Skythorn|r.
     .turnin 30139 >>Turn in The Rider's Journey
     .target Instructor Skythorn
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Instructor Skythorn|r
     .goto 371,57.55,45.10
     .isOnQuest 30140
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Instructor Skythorn|r.
     .turnin 30140 >>Turn in The Rider's Journey
     .target Instructor Skythorn
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Instructor Skythorn|r
     .isOnQuest 30141
     .goto 371,57.55,45.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Instructor Skythorn|r.
     .turnin 30141 >>Turn in The Rider's Journey
     .target Instructor Skythorn
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Instructor Skythorn|r
     #label Egg hatched
     .goto 371,57.55,45.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Instructor Skythorn|r.
@@ -1259,21 +1346,25 @@ RXPGuides.RegisterGuide([[
 #next 3) Jade Forest Alliance << Alliance
 
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Eternus|r
     .goto 554,24.54,52.21
     .achievementComplete 19871,1
     .gossipoption 120607 >>Talk to |cRXP_FRIENDLY_Eternus|r.
     .target Eternus
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Eternus|r
     .goto 554,24.54,52.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eternus|r.
     .accept 79432 >>Accept It's About Time
     .target Eternus
 step
+    #arrowtext Click\n|cRXP_PICK_Unstable Rift|r
     #completewith next
     .goto 554,25.72,46.29
     >>Click on the |cRXP_PICK_Unstable Rift|r.
     .complete 79432,1 --1/1 Investigate the Unstable Rift (Optional)
 step
+    #arrowtext Kill\n|cRXP_ENEMY_Archaios the Artificer|r
     .goto 554,25.72,46.29
     >>Kill |cRXP_ENEMY_Archaios the Artificer|r.
     .complete 79432,1 --1/1 Investigate the Unstable Rift (Optional)
@@ -1284,12 +1375,14 @@ step
     .complete 79432,3 --1/1 Archaios's artifact taken
     .mob archaios the artificer
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Eternus|r
     .goto 554,24.51,52.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eternus|r.
     .turnin 79432 >>Turn in It's About Time
     .accept 79433 >>Accept Seeking Expert Advice
     .target Eternus
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Moratari|r
     .goto 554,25.68,51.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moratari|r.
     .turnin 79433 >>Turn in Seeking Expert Advice
@@ -1302,19 +1395,23 @@ step
     .complete 79434,1 --3/3 Thread of Time
     .mob Infinite Ravager
 step
+    #arrowtext Click\n|cRXP_PICK_Time Rift|r
     .goto 554,22.95,55.54
     >>Click on the |cRXP_PICK_Time Rift|r.
     .complete 79437,1,1 --3/3 Time Rift closed
 step
+    #arrowtext Click\n|cRXP_PICK_Time Rift|r
     .goto 554,22.47,50.32
     >>Click on the |cRXP_PICK_Time Rift|r.
     .complete 79437,1,2 --3/3 Time Rift closed
 step
+    #arrowtext Click\n|cRXP_PICK_Time Rift|r
     #label Time Rift
     .goto 554,20.95,45.15
     >>Click on the |cRXP_PICK_Time Rift|r.
     .complete 79437,1,3 --3/3 Time Rift closed
 step
+    #arrowtext Kill\n|cRXP_ENEMY_Infinite Ravagers|r
     #loop
     .goto 554,24.0,55.4,40,0
     .goto 554,22.4,43.4,40,0
@@ -1324,12 +1421,14 @@ step
     .complete 79434,1 --3/3 Thread of Time
     .mob Infinite Ravager
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Moratari|r
     .goto 554,25.69,51.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moratari|r.
     .turnin 79437 >>Turn in Weave It To Me
     .accept 79435 >>Accept What's Hours Is Yours
     .target Moratari
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Horos|r
     .goto 554,25.46,53.84
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Horos|r.
     .complete 79435,1 --1/1 Chronobadge purchased
@@ -1337,18 +1436,21 @@ step
     .buy 215438,1
     .target Horos
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Momentus|r
     #completewith next
     .goto 554,24.97,52.87
     .gossipoption 120769>>Talk to |cRXP_FRIENDLY_Momentus|r.
     .timer 9,RP
     .target Momentus
 step
+    #arrowtext Wait for the roleplay
     .goto 554,25.67,51.61
     >>|cRXP_WARN_Wait for the Roleplay|r.
     .complete 79435,2 --1/1 Ask Momentus to forge your artifact
     .skipgossip
     .target Momentus
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Moratari|r
     .goto 554,25.67,51.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moratari|r.
     .turnin 79435 >>Turn in What's Hours Is Yours
@@ -1363,6 +1465,7 @@ step
     .complete 80380,1 --1/1 Cloak of Infinite Potential equipped
     .use 210333
 step
+    #arrowtext Kill\n|cRXP_ENEMY_Infinite Ravagers|r
     #loop
     .goto 554,24.0,55.4,40,0
     .goto 554,22.4,43.4,40,0
@@ -1372,34 +1475,40 @@ step
     .complete 80380,2 --1/1 Thread of Power collected from Infinite Ravager
     .mob Infinite Ravager
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Moratari|r
     .goto 554,25.67,51.57
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moratari|r.
     .turnin 80380 >>Turn in Cloak and Needle
     .target Moratari
     .accept 79438 >>Accept Goodbyes Are Hard When You Live Forever
 step
+    #arrowtext Kill\n|cRXP_ENEMY_Eratus, the Unwoven Paradox|r
     .goto 554,25.71,58.11
     >>Kill |cRXP_ENEMY_Eratus, the Unwoven Paradox|r.
     .complete 79438,1 --1/1 Eratus, the Unwoven Paradox defeated
     .mob Eratus, the Unwoven Paradox
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Moratari|r
     .goto 554,26.44,54.25
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moratari|r.
     .turnin 79438 >>Turn in Goodbyes Are Hard When You Live Forever
     .target Moratari
     .accept 79440 >>Accept Recalling the War
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Eternus|r
     .goto 554,26.04,53.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eternus|r.
     .complete 79440,1 --1/1 Speak to Eternus about recent events
     .skipgossip 217538,3
     .target Eternus
 step << Horde
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Eternus|r
     .goto 371,30.84,10.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eternus|r.
     .turnin 79440 >>Turn in Recalling the War
     .target Eternus
 step << Alliance
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Eternus|r
     .goto 371,41.98,92.72
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eternus|r.
     .turnin 79440 >>Turn in Recalling the War
@@ -1421,11 +1530,13 @@ RXPGuides.RegisterGuide([[
 << Horde
 
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Eternus|r
     .goto 371,30.85,10.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eternus|r.
     .turnin 79440 >>Turn in Recalling the War
     .target Eternus
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_General Nazgrim|r
     .goto 12,61.22,42.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_General Nazgrim|r.
     .accept 29690 >>Accept Into the Mists
@@ -1434,22 +1545,26 @@ step
     .goto 371,31.12,11.03
     .complete 29690,1 --1/1 Discovered Pandaria
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_General Nazgrim|r
     .goto 371,30.78,10.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_General Nazgrim|r.
     .turnin 29690 >>Turn in Into the Mists
     .target General Nazgrim
     .accept 31765 >>Accept Paint it Red!
 step
+    #arrowtext Follow the way down
     #completewith next
     .goto 371,31.36,11.05,8,0
     .goto 371,31.37,11.51,8,0
     .goto 371,31.07,11.37,8,0
     .goto 371,31.12,11.57,8 >>Follow the way down
 step
+    #arrowtext Enter the Gunship Turret
     .isOnQuest 31765
     .goto 371,31.53,11.01
     .vehicle 66183 >>Enter the Gunship Turret
 step
+    #arrowtext Kill\n|cRXP_ENEMY_Thunder Hold Cannons|r and |cRXP_ENEMY_Thunder Hold Soldiers|r
     >>Kill |cRXP_ENEMY_Thunder Hold Cannons|r and |cRXP_ENEMY_Thunder Hold Soldiers|r.
     >>Spam |T132385:0|t[Shredder Round] (2), use |T249177:0|t[Full Autofire] (1) on cooldown
     *|cRXP_WARN_Focus the barrels, because they kill everything around them|r.
@@ -1457,16 +1572,19 @@ step
     .complete 31765,2 --9/9 Thunder Hold cannons destroyed
     .complete 31765,1 --80/80 Thunder Hold troops slain
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Rivett Clutchpop|r
     .goto 371,31.01,11.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rivett Clutchpop|r.
     .turnin 31765 >>Turn in Paint it Red!
     .target Rivett Clutchpop
     .accept 31766 >>Accept Touching Ground
 step
+    #arrowtext Click\n|cRXP_PICK_Rappeling Rope|r
     >>Click on the |cRXP_PICK_Rappeling Rope|r.
     .goto 371,31.51,11.10
     .complete 31766,1 --1/1 Rappel into Honeydew Glade
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_General Nazgrim|r
     #loop
     .goto 371,31.55,11.29,5,0
     .goto 371,31.69,11.48,5,0
@@ -1520,9 +1638,11 @@ step
     .mob Thunder Hold Cannoneer
     .mob Thunder Hold Armsman
 step
+    #arrowtext Enter the Thunder Hold
     #completewith next
     .goto 371,33.76,10.62,10 >>Enter the Thunder Hold
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_General Nazgrim|r
     .goto 371,34.78,10.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_General Nazgrim|r.
     .turnin 31767 >>Turn in Finish Them!
@@ -1530,21 +1650,25 @@ step
     .turnin 31768 >>Turn in Fire Is Always the Answer
     .accept 31769 >>Accept The Final Blow!
 step
+    #arrowtext Use [Nazgrim's Flare Gun]\non |cRXP_PICK_Barricade|r
     >>Use |T134538:0|t[Nazgrim's Flare Gun] to destroy the |cRXP_PICK_Barricade|r.
     .use 89769
     .goto 371,34.01,10.00
     .complete 31769,1 --1/1 Destroy the first barricade
 step
+    #arrowtext Use [Nazgrim's Flare Gun]\non |cRXP_PICK_Barricade|r
     >>Use |T134538:0|t[Nazgrim's Flare Gun] to destroy the |cRXP_PICK_Barricade|r.
     .use 89769
     .goto 371,34.72,9.96
     .complete 31769,2 --1/1 Destroy the second barricade
 step
+    #arrowtext Use [Nazgrim's Flare Gun]\non |cRXP_PICK_Barricade|r
     >>Use |T134538:0|t[Nazgrim's Flare Gun] to destroy the |cRXP_PICK_Barricade|r.
     .use 89769
     .goto 371,34.89,10.65
     .complete 31769,3 --1/1 Destroy the third barricade
 step
+    #arrowtext Wait for the roleplay
     >>Wait for the roleplay. |cRXP_WARN_You can skip the cutscene|r.
     .goto 371,33.65,10.61
     .complete 31769,4 --1/1 Find Captain Doren
@@ -1554,6 +1678,7 @@ step
     #completewith next
     +|cRXP_WARN_If nothing happens then start moving around|r.
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_General Nazgrim|r
     .goto 371,33.66,10.62
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_General Nazgrim|r.
     .turnin 31769 >>Turn in The Final Blow!
@@ -1565,6 +1690,7 @@ step
     +|cRXP_WARN_To efficiently learn dragonriding talents, use the macro found under "CLICK HERE"|r.
     .link /run GenericTraitUI_LoadUI();GenericTraitFrame:SetSystemID(1);ToggleFrame(GenericTraitFrame) >> CLICK HERE
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_General Nazgrim|r and |cRXP_FRIENDLY_Taran Zhu|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_General Nazgrim|r and |cRXP_FRIENDLY_Taran Zhu|r.
     .accept 29694 >>Accept Regroup!
     .accept 31770 >>Accept You're Either With Us Or...
@@ -1574,6 +1700,7 @@ step
     .goto 371,33.72,10.61
     .target +Taran Zhu
 step
+    #arrowtext Kill\n|cRXP_ENEMY_Sha Harbinger|r and |cRXP_ENEMY_Sha Haunt|r
     #loop
     .goto 371,34.45,9.89,30,0
     .goto 371,34.55,11.31,30,0
@@ -1604,17 +1731,20 @@ step
     .mob Sha Harbinger
     .mob Sha Haunt
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Gi-Oh|r
     .goto 371,31.99,13.28
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gi-Oh|r.
     .accept 31978 >>Accept Priorities!
     .target Gi-Oh
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Shademaster Kiryn|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shademaster Kiryn|r.
     .goto 371,32.06,13.35
     .skipgossip 55141,1
     .complete 29694,1 --1/1 Shademaster Kiryn Rescued
     .target Shademaster Kiryn
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Kai-Lin Honeydew|r
     .goto 371,32.06,13.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kai-Lin Honeydew|r.
     .accept 31773 >>Accept Prowler Problems
@@ -1629,24 +1759,28 @@ step
     >>Click on the |cRXP_PICK_Barrels of Honeybrew|r.
     .complete 31978,1 --6/6 Barrel of Honeybrew
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Sergeant Gorrok|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergeant Gorrok|r.
     .goto 371,30.58,11.65
     .skipgossip 55162,1
     .complete 29694,3 --1/1 Sergeant Gorrok Rescued
     .target Sergeant Gorrok
 step
+    #arrowtext Click\n|cRXP_PICK_Barrels of Honeybrew|r
     #completewith next
     .goto 371,30.91,10.03,18,0
     .goto 371,31.13,9.36,18,0
     >>Click on the |cRXP_PICK_Barrels of Honeybrew|r.
     .complete 31978,1 --6/6 Barrel of Honeybrew
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Rivett Clutchpop|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rivett Clutchpop|r.
     .goto 371,30.53,7.22
     .skipgossip 55146,1
     .complete 29694,2 --1/1 Rivett Clutchpop Rescued
     .target Rivett Clutchpop
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Shokia|r
     #label ShokiaRescued
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shokia|r.
     .goto 371,29.43,8.47
@@ -1684,11 +1818,13 @@ step
     .complete 31773,1 --10/10 Sha-Infested Prowler slain
     .mob Sha-Infested Prowler
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Ellie Honeypaw|r
     .goto 371,29.38,13.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ellie Honeypaw|r.
     .turnin 31978 >>Turn in Priorities!
     .target Ellie Honeypaw
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Mayor Honeydew|r and |cRXP_FRIENDLY_Taran Zhu|r and |cRXP_FRIENDLY_Sergeant Gorrok|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mayor Honeydew|r, |cRXP_FRIENDLY_Taran Zhu|r, and |cRXP_FRIENDLY_Sergeant Gorrok|r.
     .turnin 31770 >>Turn in You're Either With Us Or...
     .goto 371,29.18,13.79
@@ -1702,17 +1838,20 @@ step
     .goto 371,29.13,13.72
     .target +Sergeant Gorrok
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Brewmother Kiki|r
     .goto 371,28.51,13.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brewmother Kiki|r.
     .turnin 81638 >>Turn in Home Is Where the Hearthstone Is
     .target Brewmother Kiki
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Moratari|r
     .goto 371,28.53,14.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moratari|r.
     .target Moratari
     .accept 80012 >>Accept Dragonriding
     .timer 5,RP
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Nostwin|r
     .isOnQuest 80012
     .xp >14,1
     .goto 371,28.6,14.13
@@ -1722,6 +1861,7 @@ step
     .skipgossip
     .target Nostwin
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Nostwin|r
     .isOnQuest 80012
     .xp <14,1
     #loop
@@ -1734,23 +1874,27 @@ step
     .turnin 81976 >>Turn in Bazaar, Isn't It?
     .target Nostwin
 step
+    #arrowtext Click\n|cRXP_PICK_Portal|r
     .goto 371,28.53,14.01
     >>Click on the |cRXP_PICK_Portal|r.
     .complete 80012,1 --1/1 Take Moratari's portal
     .complete 80012,3 --1/1 Learn your new dragonriding mount from your inventory
     .disablecheckbox
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Lord Andestrasz|r
     #completewith next
     .goto 371,65.28,37.18
     .gossipoption 120916 >>Talk to |cRXP_FRIENDLY_Lord Andestrasz|r.
     .target Lord Andestrasz
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Lord Andestrasz|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Andestrasz|r.
     .goto 371,65.28,37.18
     .complete 80012,4 --1/1 Learn your new dragonriding mount from your inventory
     .target Lord Andestrasz
     --.complete 80012,3 --1/1 Learn your new dragonriding mount from your inventory
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Lord Andestrasz|r
     .goto 371,65.27,37.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Andestrasz|r.
     .turnin 80012 >>Turn in Dragonriding
@@ -1763,17 +1907,20 @@ step
     *Click on the |cRXP_PICK_Portal to Honeydew Village|r to go back.
     .itemcount 216712,1
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Zin'Jun|r
     .goto 371,31.14,17.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zin'Jun|r.
     .turnin 31774 >>Turn in Seeking Zin'jun
     .accept 29765 >>Accept Cryin' My Eyes Out
     .target Zin'Jun
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Ancient Statue|r
     .goto 371,30.90,17.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Ancient Statue|r.
     .accept 29743 >>Accept Monstrosity
     .target Ancient Statue
 step
+    #arrowtext Kill\n|cRXP_ENEMY_Hozen Groundpounders|r
     #completewith Monstrosity
     >>Kill |cRXP_ENEMY_Hozen Groundpounders|r. Loot them for |T135611:0|t[Zin'Jun's Rifle], |T237297:0|t[Zin'Jun's Left Eye], |T237299:0|t[Zin'Jun's Right Eye], and |T134176:0|t[Snuff's Corpse]
     *|cRXP_WARN_Don't kill too many at the same time otherwise they will all drop the same item|r.
@@ -1784,32 +1931,38 @@ step
     .complete 29765,4 --1/1 Snuff's Corpse
     .mob Hozen Groundpounder
 step
+    #arrowtext Click\n|cRXP_PICK_Ancient Statue Torso|r
     >>Click on the |cRXP_PICK_Ancient Statue Torso|r.
     .goto 371,29.27,18.97
     .skipgossip 1
     .complete 29743,1 --1/1 Statue Torso Sketched
 step
+    #arrowtext Click\n|cRXP_PICK_Ancient Statue Shoulder|r
     >>Click on the |cRXP_PICK_Ancient Statue Shoulder|r.
     .goto 371,28.47,22.24
     .skipgossip 1
     .complete 29743,3 --1/1 Statue Shoulder Sketched
 step
+    #arrowtext Click\n|cRXP_PICK_Ancient Statue Head|r
     >>Click on the |cRXP_PICK_Ancient Statue Head|r.
     .goto 371,29.95,22.48
     .skipgossip 1
     .complete 29743,4 --1/1 Statue Head Sketched
 step
+    #arrowtext Click\n|cRXP_PICK_Ancient Statue Arm|r
     >>Click on the |cRXP_PICK_Ancient Statue Arm|r.
     .goto 371,29.93,21.21
     .skipgossip 1
     .complete 29743,2 --1/1 Statue Arm Sketched
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Mopreemixer|r
     #label Monstrosity
     .goto 371,28.61,22.25
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mopreemixer|r.
     .turnin 29743 >>Turn in Monstrosity
     .target Mopreemixer
 step
+    #arrowtext Kill\n|cRXP_ENEMY_Hozen Groundpounders|r
     #loop
     .goto 371,31.28,21.63,28,0
     .goto 371,30.78,23.01,28,0
@@ -1825,18 +1978,21 @@ step
     .complete 29765,4 --1/1 Snuff's Corpse
     .mob Hozen Groundpounder
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Zin'Jun|r
     .goto 371,31.16,21.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zin'Jun|r.
     .turnin 29765 >>Turn in Cryin' My Eyes Out
     .accept 29804 >>Accept Seein' Red
     .target Zin'Jun
 step
+    #arrowtext Kill\n|cRXP_ENEMY_Konk|r
     .goto 371,31.95,22.22
     >>Kill |cRXP_ENEMY_Konk|r.
     .complete 29804,1 --1/1 Konk Slain
     .timer 11,Roleplay Duration
     .mob Konk
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_General Nazgrim|r
     .goto 371,31.66,21.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_General Nazgrim|r.
     .turnin 29804 >>Turn in Seein' Red
@@ -1844,11 +2000,13 @@ step
     .accept 31776 >>Accept Strongarm Tactics
     .target General Nazgrim
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Merchant Zin|r
     .goto 371,31.41,21.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Merchant Zin|r.
     .accept 31778 >>Accept Unreliable Allies
     .target Merchant Zin
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Rivett Clutchpop|r
     .goto 371,31.13,21.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rivett Clutchpop|r.
     .accept 31777 >>Accept Choppertunity
@@ -1891,6 +2049,7 @@ step
     .complete 31776,3 --1/1 Morgus Grimhatchet slain
     .mob Morgus Grimhatchet
 step
+    #arrowtext Kill\n|cRXP_ENEMY_Master Engineer Cogswing|r and |cRXP_ENEMY_Gyro-Mechanic Lavenderp|r
     #requires Grimhatchet
     #optional
     >>Kill |cRXP_ENEMY_Master Engineer Cogswing|r and |cRXP_ENEMY_Gyro-Mechanic Lavenderp|r.
@@ -1900,6 +2059,7 @@ step
     .mob Master Engineer Cogswing
     .mob Gyro-Mechanic Lavenderp
 step
+    #arrowtext Kill\n|cRXP_ENEMY_Morgus Grimhatchet|r
     #optional
     #label MorgusGrimhatchet
     >>Kill |cRXP_ENEMY_Morgus Grimhatchet|r.
@@ -1919,6 +2079,7 @@ step
     .complete 31778,1 --12/12 Indentured Pandaren freed
     .target Pandaren Volunteer
 step
+    #arrowtext Kill\n|cRXP_ENEMY_Corporal Jackson Silver|r
     #label CorporalJacksonSilver
     >>Kill |cRXP_ENEMY_Corporal Jackson Silver|r.
     .goto 371,27.78,22.92
@@ -1996,17 +2157,20 @@ step
     .complete 31775,1 --15/15 Strongarm troop slain
     .mob Strongarm troop
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Rivett Clutchpop|r
     #requires Grimhatchet
     .goto 371,31.14,21.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rivett Clutchpop|r.
     .turnin 31777 >>Turn in Choppertunity
     .target Rivett Clutchpop
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Merchant Zin|r
     .goto 371,31.43,21.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Merchant Zin|r.
     .turnin 31778 >>Turn in Unreliable Allies
     .target Merchant Zin
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_General Nazgrim|r
     .goto 371,31.67,21.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_General Nazgrim|r.
     .turnin 31775 >>Turn in Assault on the Airstrip
@@ -2014,25 +2178,30 @@ step
     .accept 31779 >>Accept The Darkness Within
     .target General Nazgrim
 step
+    #arrowtext Enter the cave behind the bridge
     #completewith next
     .goto 371,26.00,24.43,10 >>Enter the cave behind the bridge
 step
+    #arrowtext Kill\n|cRXP_ENEMY_Captain Doren|r
     .goto 371,25.76,23.64
     >>Kill |cRXP_ENEMY_Captain Doren|r.
     .complete 31779,1 --1/1 Captain Doren slain
     .mob Captain Doren
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Flagpole|r
     .goto 371,27.57,24.28
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Flagpole|r.
     .turnin 31779 >>Turn in The Darkness Within
     .accept 31999 >>Accept Nazgrim's Command
     .target Flagpole
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_General Nazgrim|r
     .goto 371,28.43,24.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_General Nazgrim|r.
     .turnin 31999 >>Turn in Nazgrim's Command
     .target General Nazgrim
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Shademaster Kiryn|r and |cRXP_FRIENDLY_Rivett Clutchpop|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shademaster Kiryn|r and |cRXP_FRIENDLY_Rivett Clutchpop|r.
     .accept 29815 >>Accept Forensic Science
     .goto 371,28.19,24.83
@@ -2046,6 +2215,7 @@ step
     .complete 29815,1 --8/8 Viscous Chlorophyll
     .target Lurching Blossom
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Empty Package|r
     .goto 371,22.87,30.61
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Empty Package|r.
     .turnin 29821 >>Turn in Missed Me By... That Much!
@@ -2080,6 +2250,7 @@ step
 --     .goto 371,26.39,28.33
 --     .achievement 6850,1 >>Click on the |cRXP_PICK_Scroll|r.
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Rivett Clutchpop|r and |cRXP_FRIENDLY_Shademaster Kiryn|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rivett Clutchpop|r and |cRXP_FRIENDLY_Shademaster Kiryn|r.
     .turnin 31112 >>Turn in They're So Thorny!
     .goto 371,28.11,24.69
@@ -2095,6 +2266,7 @@ step
     .vehicle 55676 >>Mount the |cRXP_FRIENDLY_Recovered Gyrocopter|r.
     .target Recovered Gyrocopter
 step
+    #arrowtext Use [Poison Blossom]
     .goto 371,28.07,24.79
     >>|cRXP_WARN_Use|r |T237521:0|t[Poison Blossom] (2) |cRXP_WARN_while above a large group of mobs|r. |cRXP_WARN_Use |r |T135431:0|t[Throw Star] (1) |cRXP_WARN_to kill individual mobs|r.
     >>Kill |cRXP_ENEMY_Hozen Nibstabber|r and |cRXP_ENEMY_Hozen Gutripper|r.
@@ -2103,20 +2275,24 @@ step
     .mob Hozen Nibstabber
     .mob Hozen Gutripper
 step
+    #arrowtext Kill\n|cRXP_ENEMY_Hozen Gutripper|r
     .goto 371,26.83,26.79
     >>Kill |cRXP_ENEMY_Hozen Gutripper|r.
     .mob Hozen Gutripper
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Shademaster Kiryn|r
     .goto 371,28.18,24.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shademaster Kiryn|r.
     .turnin 29827 >>Turn in Acid Rain
     .target Shademaster Kiryn
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_General Nazgrim|r
     .goto 371,28.44,24.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_General Nazgrim|r.
     .accept 29822 >>Accept Lay of the Land
     .target General Nazgrim
 step
+    #arrowtext Follow the arrow
     >>Follow the arrow
     .goto 371,31.98,27.73
     .complete 29822,1 --1/1 Shrine of the Sun Visited
@@ -2125,11 +2301,13 @@ step
     .cast 3365 >>Pick up the |T133784:0|t[Lucky Pandaren Coin] in the well
     .goto 371,31.96,27.75
 step
+    #arrowtext Kill\n|cRXP_ENEMY_Dook Ookem|r
     .goto 371,27.80,30.28
     >>Kill |cRXP_ENEMY_Dook Ookem|r.
     .complete 29822,3 --1/1 Dook Ookem slain
     .mob Dook Ookem
 step
+    #arrowtext Follow the arrow
     >>Follow the arrow
     .goto 371,26.25,32.35
     .complete 29822,2 --1/1 Shrine of the Moon Visited
@@ -2138,6 +2316,7 @@ step
     .cast 3365 >>Pick up the |T608949:0|t[Ancient Pandaren Tea Pot] on the table
     .goto 371,26.22,32.35
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Lorewalker Cho|r
     .goto 371,27.59,32.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorewalker Cho|r.
     .turnin 29822 >>Turn in Lay of the Land
@@ -2152,6 +2331,7 @@ step
 step
     #include X) August Celestial Daillies@startaugustjade-endaugustjade
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Old Man Misteye|r
     .goto 371,48.32,46.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Old Man Misteye|r.
     .accept 29576 >>Accept An Air of Worry
@@ -2184,16 +2364,19 @@ RXPGuides.RegisterGuide([[
 <<Alliance
 
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Sky Admiral Rogers|r
     .goto 371,42.03,92.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sky Admiral Rogers|r.
     .target Sky Admiral Rogers
     .accept 31732 >>Accept Unleash Hell
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Sky Admiral Rogers|r
     .goto 371,42.04,92.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sky Admiral Rogers|r.
     .accept 31732 >>Accept Unleash Hell
     .target Sky Admiral Rogers
 step
+    #arrowtext Click\n|cRXP_PICK_Skyfire Gyrocopter|r
     .isOnQuest 31732
     .goto 371,42.02,92.53
     .vehicle >> Click on the |cRXP_PICK_Skyfire Gyrocopter|r.
@@ -2213,11 +2396,13 @@ step
     .mob Garrosh'ar Peon
     .mob garrosh'ar shredder
 step
+    #arrowtext Use [Full Autofire(1)]
     .goto 371,44.18,98.83
     >>Use |T249177:0|t[Full Autofire(1)] or |T249177:0|t[Torpedo Rocket(2)] |cRXP_WARN_on an oil barrel on the ship|r.
     .complete 31732,3 --1/1 Bladefist Reaper sunk
     .timer 10.5, RP
 step
+    #arrowtext Use [Full Autofire(1)]
     .goto 424,65.59,74.42
     >>Use |T249177:0|t[Full Autofire(1)] or |T249177:0|t[Torpedo Rocket(2)] |cRXP_WARN_on an oil barrel on the ship|r.
     .complete 31732,4 --1/1 Stygian Scar sunk
@@ -2228,12 +2413,14 @@ step
     .macro Leave Vehicle,6656430 >>/leavevehicle
     *|cRXP_WARN_It's recommended to safe this macro for future use|r.
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Sky Admiral Rogers|r
     .goto 371,42.04,92.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sky Admiral Rogers|r.
     .turnin 31732 >>Turn in Unleash Hell
     .target Sky Admiral Rogers
     .accept 31733 >>Accept Touching Ground
 step
+    #arrowtext Click\n|cRXP_PICK_Skyfire Parachute|r
     .goto 371,42.32,92.79
     >>Click on the |cRXP_PICK_Skyfire Parachute|r.
     .complete 31733,1 --1/1 Equip a Skyfire Parachute
@@ -2244,6 +2431,7 @@ step
     .macro Leave Vehicle,6656430 >>/leavevehicle
     *|cRXP_WARN_It's recommended to safe this macro for future use|r.
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Sully "The Pickle" McLeary|r
     .goto 371,43.58,90.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sully "The Pickle" McLeary|r.
     .turnin 31733 >>Turn in Touching Ground
@@ -2258,6 +2446,7 @@ step
     .complete 30069,2 --4/4 Garrosh'ar Gear-Greaser slain
     .mob garrosh'ar gear-greaser
 step
+    #arrowtext Use [Sully's Flare Gun]
     #loop
     -- .goto 371,42.53,92.97,15,0
     -- .goto 371,44.09,93.55,15,0
@@ -2291,6 +2480,7 @@ step
     .complete 31734,1 --5/5 Horde War Wagon destroyed
     .use 89624
 step
+    #arrowtext Kill\n|cRXP_ENEMY_Grunts|r and |cRXP_ENEMY_Gear-Greasers|r
     #loop
     -- .goto 371,42.53,92.97,15,0
     -- .goto 371,44.09,93.55,15,0
@@ -2326,6 +2516,7 @@ step
     .mob garrosh'ar grunt
     .mob garrosh'ar gear-greaser
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Rell Nightwind|r
     .goto 371,45.17,95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rell Nightwind|r.
     .turnin 30069 >>Turn in No Plan Survives Contact with the Enemy
@@ -2333,32 +2524,38 @@ step
     .accept 31735 >>Accept The Right Tool For The Job
     .target Rell Nightwind
 step
+    #arrowtext Use [Sully's Flare Gun]
     .goto 371,45.62,95.24
     >>Use |T135619:0|t[Sully's Flare Gun] |cRXP_WARN_near the barricade|r.
     .complete 31735,1 --1/1 First Barricade Destroyed
     .use 89624
 step
+    #arrowtext Use [Sully's Flare Gun]
     .goto 371,45.99,96.01
     >>Use |T135619:0|t[Sully's Flare Gun] |cRXP_WARN_near the barricade|r.
     .complete 31735,2 --1/1 Second Barricade Destroyed
     .use 89624
 step
+    #arrowtext Follow the arrow
     .goto 371,46.21,96.34
     >>|cRXP_WARN_Follow the Arrow|r.
     .complete 31735,3 --1/1 Ga'trul Confronted
     .timer 13,RP
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Rell Nightwind|r
     .goto 371,46.47,96.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rell Nightwind|r.
     .turnin 31735 >>Turn in The Right Tool For The Job
     .target Rell Nightwind
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Rell Nightwind|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rell Nightwind|r.
     .goto 371,46.47,96.42
     .accept 31736 >>Accept Envoy of the Alliance
     .accept 31737 >>Accept The Cost of War
     .target Rell Nightwind
 step
+    #arrowtext Kill\n|cRXP_ENEMY_Sha Haunt|r and |cRXP_ENEMY_Sha Harbinger|r
     #loop
     .goto 371,45.53,94.18,15,0
     .goto 371,45.90,93.36,15,0
@@ -2378,6 +2575,7 @@ step
     .complete 31737,2 --5/5 Sha Harbinger slain
     .mob +sha harbinger
 step
+    #arrowtext Follow the arrow
     .goto 371,46.13,85.11
     >>|cRXP_WARN_Follow the Arrow|r.
     .complete 31736,1 --1/1 Leader of Paw'don Village found
@@ -2397,11 +2595,13 @@ step
     .goto 371,46.14,84.57
     .target +Mishka
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Moratari|r
     .goto 371,45.79,84.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moratari|r.
     .accept 80012 >>Accept Dragonriding
     .target Moratari
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Nostwin|r
     .isOnQuest 80012
     .xp >14,1
     #loop
@@ -2415,6 +2615,7 @@ step
     .skipgossip
     .target Nostwin
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Nostwin|r
     .isOnQuest 80012
     .xp <14,1
     #loop
@@ -2430,17 +2631,20 @@ step
     .turnin 81976 >>Turn in Bazaar, Isn't It?
     .target Nostwin
 step
+    #arrowtext Click\n|cRXP_PICK_Portal|r
     .goto 371,45.82,84.72
     >>Click on the |cRXP_PICK_Portal|r.
     .complete 80012,1 --1/1 Take Moratari's portal
     .complete 80012,3 --1/1 Learn your new dragonriding mount from your inventory
     .disablecheckbox
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Lord Andestrasz|r
     #completewith next
     .goto 371,65.25,37.20
     .gossipoption 120916 >>Talk to |cRXP_FRIENDLY_Lord Andestrasz|r.
     .target Lord Andestrasz
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Lord Andestrasz|r
     .goto 371,65.25,37.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Andestrasz|r.
     .accept 80013 >>Accept How to Glide with Your Dragon
@@ -2452,6 +2656,7 @@ step
     *Click on the |cRXP_PICK_Portal|r to go back.
     .itemcount 216712,1
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Jiayi Applebloom|r
     .goto 371,44.89,84.58,10,0
     .goto 371,44.88,84.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jiayi Applebloom|r.
@@ -2459,6 +2664,7 @@ step
     .turnin 81638 >>Turn in Home Is Where the Hearthstone Is
     .target Jiayi Applebloom
 step
+    #arrowtext Kill\n|cRXP_ENEMY_Twinspire Peon|r
     #loop
     .goto 371,44.00,85.39,20,0
     .goto 371,43.13,85.57,20,0
@@ -2493,17 +2699,20 @@ step
     .target Wounded Pilot
     .target Terribly Pilot
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Lin Applebloom|r
     .goto 371,39.56,90.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lin Applebloom|r.
     .turnin 31739 >>Turn in Priorities!
     .accept 31740 >>Accept Koukou's Rampage
     .target Lin Applebloom
 step
+    #arrowtext Kill\n|cRXP_ENEMY_Koukou|r
     .goto 371,39.32,89.86
     >>Kill |cRXP_ENEMY_Koukou|r.
     .complete 31740,1 --1/1 Koukou slain
     .mob koukou
 step
+    #arrowtext Use [Bronze Timepiece]
     #completewith Critical Condition
     .goto 371,65.25,37.20
     .cast 437035 >>Use |T134376:0|t[Bronze Timepiece] to teleport to the dragonriding quests.
@@ -2516,6 +2725,7 @@ step
     *Click on the |cRXP_PICK_Portal|r to go back.
     .itemcount 216712,1
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Nostwin|r
     .xp <14,1
     #loop
     .goto 371,45.89,84.63,5,0
@@ -2527,6 +2737,7 @@ step
     .turnin 81976 >>Turn in Bazaar, Isn't It?
     .target Nostwin
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Mishka|r and |cRXP_FRIENDLY_Sunke Khang|r and |cRXP_FRIENDLY_Rell Nightwind|r
     #label Critical Condition
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mishka|r, |cRXP_FRIENDLY_Sunke Khang|r and |cRXP_FRIENDLY_Rell Nightwind|r.
     .turnin 29552 >>Turn in Critical Condition
@@ -2549,6 +2760,7 @@ step
     .target Captive Pandaren Cub
     .mob Eye of Ga'trul
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Nostwin|r
     .xp <14,1
     #loop
     .goto 371,45.89,84.63,5,0
@@ -2569,28 +2781,33 @@ step
     .mob Gatrul'lon Flamecaller
     .mob Twinspire Demolitionist
 step
+    #arrowtext Use [Alliance Flare]
     .goto 371,42.98,81.26
     >>Use |T458733:0|t[Alliance Flare] on the |cRXP_WARN_green bubble|r.
     .complete 31743,4 --1/1 Wild Imps bombed
     .use 89602
 step
+    #arrowtext Use [Alliance Flare]\non |cRXP_ENEMY_Twinspire Demolisher|r
     .goto 371,41.30,81.34
     >>Use |T458733:0|t[Alliance Flare] on a |cRXP_ENEMY_Twinspire Demolisher|r.
     .use 89602
     .complete 31743,2 --1/1 Twinspire Demolishers bombed
     .mob Twinspire Demolisher
 step
+    #arrowtext Use [Alliance Flare]
     .goto 371,40.14,81.61
     >>Use |T458733:0|t[Alliance Flare] near the |cRXP_WARN_spike ball|r.
     .use 89602
     .complete 31743,1 --1/1 Twinspire munitions stockpile bombed
 step
+    #arrowtext Use [Alliance Flare]\non |cRXP_ENEMY_Xhu'daggab|r
     .goto 371,40.19,81.78
     >>Use |T458733:0|t[Alliance Flare] on |cRXP_ENEMY_Xhu'daggab|r.
     .use 89602
     .complete 31743,3 --1/1 Xhu'daggab bombed
     .mob Xhu'daggab
 step
+    #arrowtext Kill\n|cRXP_ENEMY_Dalgan|r and |cRXP_ENEMY_Bellandra Felstorm|r
     #label Dalgan and Bellandra Felstorm
     #loop
     .goto 371,41.15,80.27,10,0
@@ -2612,6 +2829,7 @@ step
     .mob Gatrul'lon Flamecaller
     .mob Twinspire Demolitionist
 step
+    #arrowtext Kill\n|cRXP_ENEMY_Eye of Ga'trul|r
     #loop
     .goto 371,42.93,81.27,20,0
     .goto 371,42.75,82.27,20,0
@@ -2632,6 +2850,7 @@ step
     .target Captive Pandaren Cub
     .mob Eye of Ga'trul
 step
+    #arrowtext Kill\n|cRXP_ENEMY_Horde Forces|r
     #loop
     .goto 371,42.93,81.27,20,0
     .goto 371,42.75,82.27,20,0
@@ -2655,6 +2874,7 @@ step
     .mob Gatrul'lon Flamecaller
     .mob Twinspire Demolitionist
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Sully "The Pickle" McLeary|r
     .goto 371,41.39,79.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sully "The Pickle" McLeary|r |cRXP_WARN_infont of the temple|r.
     .turnin 31741 >>Turn in Twinspire Keep
@@ -2664,22 +2884,26 @@ step
     .accept 30070 >>Accept The Fall of Ga'trul
     .target Sully "The Pickle" McLeary
 step
+    #arrowtext Kill\n|cRXP_ENEMY_Ga'trul|r
     .goto 371,41.38,77.82
     >>Kill |cRXP_ENEMY_Ga'trul|r.
     .complete 30070,1 --1/1 Ga'trul slain
     .mob ga'trul
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Rell Nightwind|r
     .goto 371,41.45,79.07
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rell Nightwind|r.
     .turnin 30070 >>Turn in The Fall of Ga'trul
     .accept 31745 >>Accept Onward and Inward
     .target Rell Nightwind
 step
+    #arrowtext Leave the Temple
     .isOnQuest 31745
     .goto 371,41.46,79.84,10 >> Leave the Temple. |cRXP_WARN_Don't click on the Gyrocopter|r.
 step
     #include 1) Jade Forest Defiance Side Quests
 step
+    #arrowtext Use [Bronze Timepiece]
     #completewith Paw'don Village
     .goto 371,65.25,37.20
     .cast 437035 >>Use |T134376:0|t[Bronze Timepiece] to teleport to the dragonriding quests.
@@ -2692,11 +2916,13 @@ step
     *Click on the |cRXP_PICK_Portal|r to go back.
     .itemcount 216712,1
 step
+    #arrowtext Follow the arrow
     #label Paw'don Village
     .goto 371,48.06,88.4
     >>|cRXP_WARN_Follow the Arrow|r.
     .complete 31745,1 --1/1 Return to Paw'don Village
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Nostwin|r
     .xp <14,1
     #loop
     .goto 371,45.89,84.63,5,0
@@ -2708,6 +2934,7 @@ step
     .turnin 81976 >>Turn in Bazaar, Isn't It?
     .target Nostwin
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Sky Admiral Rogers|r
     .goto 371,48.05,88.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sky Admiral Rogers|r.
     .turnin 31745 >>Turn in Onward and Inward
@@ -2725,12 +2952,14 @@ step
     .complete 29555,1,1 --3/3 Clues found
     .target Alliance Bodyguard
 step
+    #arrowtext Click\n|cRXP_PICK_Fine Leather Journal|r
     .goto 371,49.79,89.96,8,0
     .goto 371,50,90.28
     >>Click on |cRXP_PICK_Fine Leather Journal|r |cRXP_WARN_inside the ship|r.
     .complete 29555,1,2 --3/3 Clues found
     .target Fine Leather Journal
 step
+    #arrowtext Kill\n|cRXP_ENEMY_Hozen Diver|r
     .goto 371,50.01,90.38,10,0
     .goto 371,50.15,90.37,5,0
     .goto 371,50.27,90.83
@@ -2738,15 +2967,18 @@ step
     .complete 29555,2 --1/1 Encoded Captain's Log
     .mob Hozen Diver
 step
+    #arrowtext Click\n|cRXP_PICK_Alliance Banner|r
     #label Alliance Banner
     .goto 371,50.15,90.782
     >>Click on the |cRXP_PICK_Alliance Banner|r.
     .complete 29555,1,3 --3/3 Clues found
     .target Alliance Banner
 step
+    #arrowtext Leave the Ship
     .isOnQuest 29556
     .goto 371,49.98,90.89,5 >> Leave the Ship
 step
+    #arrowtext Kill\n|cRXP_ENEMY_Hozen|r
     #loop
     .goto 371,49.47,90.51,20,0
     .goto 371,50.03,89.21,20,0
@@ -2758,6 +2990,7 @@ step
     .complete 29556,1 --14/14 Hozen slain
     .mob hozen
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Nodd Codejack|r
     .goto 371,50.42,88.26
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nodd Codejack|r.
     .turnin 29555 >>Turn in the White Pawn
@@ -2765,6 +2998,7 @@ step
     .accept 29553 >>Accept The Missing Admiral
     .target Nodd Codejack
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Admiral Taylor|r and |cRXP_FRIENDLY_Bold Karasshi|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Admiral Taylor|r and |cRXP_FRIENDLY_Bold Karasshi|r.
     .turnin 29553 >>Turn in The Missing Admiral
     .goto 371,54.21,82.50
@@ -2835,6 +3069,7 @@ step
     .mob Slingtail Treeleaper
     .mob Slingtail Mudseer
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Bold Karasshi|r
     .goto 371,54.18,82.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bold Karasshi|r.
     .turnin 29558 >>Turn in The Path of War
@@ -2843,17 +3078,20 @@ step
     .accept 29759 >>Accept Kung Din
     .target Bold Karasshi
 step
+    #arrowtext Kill\n|cRXP_ENEMY_Kung Din|r
     .goto 371,54.65,80.12
     >>Kill |cRXP_ENEMY_Kung Din|r. Loot him for [|cRXP_LOOT_Slingtail Key|r].
     .complete 29759,1 --1/1 Slingtail Key
     .mob Kung Din
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Bold Karasshi|r
     .goto 371,54.18,82.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bold Karasshi|r.
     .turnin 29759 >>Turn in Kung Din
     .target Bold Karasshi
     .accept 29562 >>Accept Jailbreak
 step
+    #arrowtext Kill\n|cRXP_ENEMY_Slingtail Fishripper|r
     #loop
     .goto 371,56.27,81.48,20,0
     .goto 371,55.31,83.20,20,0
@@ -2871,6 +3109,7 @@ step
     .complete 29562,1 --10/10 Slingtail Fishripper slain
     .mob slingtail fishripper
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Bold Karasshi|r
     .goto 371,58.97,81.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bold Karasshi|r.
     .turnin 29562 >>Turn in Jailbreak
@@ -2880,6 +3119,7 @@ step
     #completewith Accept The Pearlfin Situation
     +|cRXP_WARN_Wait for the roleplay, which will be completed when the timer runs out|r. |cFFFF0000tidy your bags and optimize your equipment use --x item |r.
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Rell Nightwind|r
     #label Accept The Pearlfin Situation
     .goto 371,58.93,81.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rell Nightwind|r.
@@ -2887,30 +3127,35 @@ step
     .accept 29885 >>Accept Road Rations
     .target Rell Nightwind
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Pearlkeeper Fujin|r
     .goto 371,58.75,81.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pearlkeeper Fujin|r.
     .complete 29883,1 --1/1 Speak to Pearlkeeper Fujin
     .skipgossip
     .target Pearlkeeper Fujin
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Elder Lusshan|r
     .goto 371,58.05,80.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Lusshan|r.
     .complete 29883,4 --1/1 Speak to Elder Lusshan
     .skipgossip
     .target Elder Lusshan
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Instructor Sharpfin|r
     .goto 371,58.79,84.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Instructor Sharpfin|r.
     .complete 29883,3 --1/1 Speak to Instructor Sharpfin
     .skipgossip
     .target Instructor Sharpfin
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Watersmith Ot-Temmdo|r
     .goto 371,59.91,83.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Watersmith Ot-Temmdo|r.
     .complete 29883,2 --1/1 Speak to Watersmith Ot-Temmdo
     .skipgossip 56693,2
     .target Watersmith Ot-Temmdo
 step
+    #arrowtext Kill\n|cRXP_ENEMY_Pearly Tortoise|r
     #loop
     .goto 371,61.31,83.65,20,0
     .goto 371,61.02,81.44,20,0
@@ -2930,12 +3175,14 @@ step
     .complete 29885,1 --6/6 Tortoise Flank
     .mob Pearly Tortoise
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Rell Nightwind|r
     .goto 371,58.93,81.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rell Nightwind|r.
     .turnin 29883 >>Turn in The Pearlfin Situation
     .target Rell Nightwind
     .turnin 29885 >>Turn in Road Rations
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Pearlkeeper Fujin|r and |cRXP_FRIENDLY_Bold Karasshi|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pearlkeeper Fujin|r and |cRXP_FRIENDLY_Bold Karasshi|r.
     .accept 29762 >>Accept Family Heirlooms
     .goto 371,58.97,81.7
@@ -2992,6 +3239,7 @@ step
     .complete 29762,1 --8/8 Glassfin Heirloom
     .target Pearlfin Villager
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Bold Karasshi|r and |cRXP_FRIENDLY_Pearlkeeper Fujin|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bold Karasshi|r and |cRXP_FRIENDLY_Pearlkeeper Fujin|r.
     .turnin 29762 >>Turn in Family Heirlooms
     .goto 371,58.97,81.69
@@ -3009,6 +3257,7 @@ step
 step
     #include 1) Jade Forest Side Quests Tian Monastery
 step
+    #arrowtext Use [Bronze Timepiece]
     #completewith next
     .goto 371,65.25,37.20,20,0
     .cast 437035 >>Use |T134376:0|t[Bronze Timepiece] to teleport to the dragonriding quests.

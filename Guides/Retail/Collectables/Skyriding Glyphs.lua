@@ -29,7 +29,7 @@ step
     +Welcome to the Dragon Glyph Guide
     *This will guide you through all the Dragon Glyphs.
 step
-    #title Dragon Glyph: Skytop Observatory Rostrum
+    #arrowtext Dragon Glyph: Skytop Observatory Rostrum
     >>Use |T4640498:0|t[Skyward Ascend] once
     .goto 2022,75.26,57.07
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
@@ -38,7 +38,7 @@ step
     #completewith next
     .goto 2022,75.01,55.57,10 >>Use the ferry if you've unlocked it
 step
-    #title Dragon Glyph: Skytop Observatory Tower
+    #arrowtext Dragon Glyph: Skytop Observatory Tower
     >>Use |T4640498:0|t[Skyward Ascend] three times |cRXP_WARN_if you haven't unlocked the ferry|r.
     .goto 2022,75.26,57.07
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
@@ -65,8 +65,8 @@ step
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 16575,5 >>Pick up the Dragon Glyph: Wingrest Embassy at the top of a broken tower
 step
-    #title Dragon Glyph: Scalecracker Peak
     >>|cRXP_WARN_Spend all your already collected glyphs and wait until you have at least 3 vigar charges|r.
+    #arrowtext Dragon Glyph: Scalecracker Peak
     >>Use |T4640498:0|t[Skyward Ascend] as often as possible but always wait a few seconds between the casts.
     >>You probably need to occasionally recharge your vigor (some good spots are marked on your map).
     .line 2022,74.94,37.50,73.21,20.51
@@ -82,7 +82,7 @@ step
     +From the Scalecracker Peak: Just glide. Try to stay as high as possible while gliding at full speed
     *From somewhere else: Just fly there, wait for at least 3 vigor charges and use |T4640498:0|t[Skyward Ascend] to reach the tower
 step
-    #title Dragon Glyph: Life-Binder Observatory
+    #arrowtext Dragon Glyph: Life-Binder Observatory
     >>Use |T4640498:0|t[Skyward Ascend] only when needed
     .line 2022,21.91,51.41,52.60,17.12
     .goto 2022,52.60,17.12
@@ -93,7 +93,7 @@ step
     +From the Life-Binder Observatory: Just glide. Try to stay as high as possible while gliding at full speed
     *From somewhere else: Fly to the Obsidian Throne, wait form 4 vigor charges and use |T4640498:0|t[Skyward Ascend] to reach the tower
 step
-    #title Dragon Glyph: Obsidian Throne
+    #arrowtext Dragon Glyph: Obsidian Throne
     >>Use |T4640498:0|t[Skyward Ascend] only when you need to fly up the mountain.
     >>You probably have to take some breaks in between to wait for vigor (some good spots are marked on your map)
     .line 2022,73.21,20.51,21.91,51.41
@@ -181,7 +181,7 @@ RXPGuides.RegisterGuide([[
 #chapter
 
 step
-    #title Dragon Glyph: Mirewood Fen
+    #arrowtext Dragon Glyph: Mirewood Fen
     >>Use |T4640498:0|t[Skyward Ascend] once or twice
     .goto 2023,78.31,21.31
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
@@ -299,7 +299,7 @@ RXPGuides.RegisterGuide([[
 #chapter
 
 step
-    #title Dragon Glyph: Forkriver Crossing
+    #arrowtext Dragon Glyph: Forkriver Crossing
     >>Use |T4640498:0|t[Skyward Ascend] once or twice
     .goto 2023,36.58,27.96
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
@@ -326,11 +326,12 @@ step
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 16577,9 >>Pick up the Dragon Glyph: Rhonin's Shield at the top of the tower
 step
+    #arrowtext Fly into the 'Winds of the Isle'
     .isQuestTurnedIn 70220
     #completewith next
     .goto 2024,71.97,35.37,15 >>Fly into the 'Winds of the Isle'
 step
-    #title Dragon Glyph: Vakthros Range
+    #arrowtext Dragon Glyph: Vakthros Range
     >>Use |T4640498:0|t[Skyward Ascend] 2-3 times to reach the glyph
     .line 2024,67.64,29.13,72.62,39.78
     .goto 2024,72.62,39.78
@@ -440,8 +441,8 @@ RXPGuides.RegisterGuide([[
 #chapter
 
 step
-    #title Dragon Glyph: South Hold Gate
     >>Use|T4640498:0|t[Skyward Ascend] 2-3 times to reach the glyph
+    #arrowtext Dragon Glyph: South Hold Gate
     .goto 2025,35.5,85.5
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 16578,3 >>Pick up the Dragon Glyph: South Hold Gate at the top of the tower
@@ -525,7 +526,7 @@ step
     #completewith next
     +Best Option: If you have your hearthstone in Valdrakken then use it, go to Alexstrasza and fly there by using |T4640498:0|t[Skyward Ascend] only 3-4 times
 step
-    #title Dragon Glyph: Vault of the Incarnates
+    #arrowtext Dragon Glyph: Vault of the Incarnates
     >>Be careful with how you use your Vigor here you'll need a lot, alternatively fly an indirect path.
     >>Glide to recharge Vigor and Use |T4640498:0|t[Skyward Ascend] frequently to gain height
     .line 2025,67.0,11.7,72.4,51.7
@@ -575,6 +576,7 @@ step
     .goto 2112,61.93,32.2
     >>|cRXP_WARN_Alternatively you can just fly to the top of the Valdrakken Tower and skip this step|r.
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Kurazidaia|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kurazidaia|r.
     >>|cRXP_WARN_You can skip the upcoming cutscene with ESC|r.
     .isOnQuest 74381
@@ -582,11 +584,13 @@ step
     .skipgossip 201398,1
     .complete 74381,1 --1/1 Hear Kurazidaia's report
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Kurazidaia|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kurazidaia|r.
     .goto 2112,61.03,26.07
     .turnin 74381 >>Turn in Hidden Legacies
     .accept 73076 >>Accept Return to the Reach
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Flightmaster Aluri|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Flightmaster Aluri|r.
     .goto 2112,44.05,67.90
     .skipgossip 2
@@ -873,7 +877,7 @@ step
     +Welcome to the Skyriding Glyph Guide
     *This will guide you through all the Skyriding Glyphs.
 step
-    #title Skyriding Glyph: Storm's Watch
+    #arrowtext Skyriding Glyph: Storm's Watch
     .goto 2248,37.88,40.96
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -881,7 +885,7 @@ step
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 40166,3 >>Pick up the Skyriding Glyph: Storm's Watch
 step
-    #title Skyriding: Thul Medran
+    #arrowtext Skyriding: Thul Medran
     .goto 2248,47.78,26.71
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -889,7 +893,7 @@ step
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 40166,6 >>Pick up the Skyriding: Thul Medran
 step
-    #title Skyriding Glyph: Thunderhead Peak
+    #arrowtext Skyriding Glyph: Thunderhead Peak
     .goto 2248,56.21,17.86
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -897,7 +901,7 @@ step
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 40166,7 >>Pick up the Skyriding Glyph: Thunderhead Peak
 step
-    #title Skyriding Glyph: The Three Shields
+    #arrowtext Skyriding Glyph: The Three Shields
     .goto 2248,75.75,22.23
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -905,7 +909,7 @@ step
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 40166,1 >>Pick up the Skyriding Glyph: The Three Shields
 step
-    #title Skyriding Glyph: Cinderbrew Meadery
+    #arrowtext Skyriding Glyph: Cinderbrew Meadery
     .goto 2248,78.22,42.76
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -913,7 +917,7 @@ step
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 40166,8 >>Pick up the Skyriding Glyph: Cinderbrew Meadery
 step
-    #title Skyriding Glyph: Ironwold
+    #arrowtext Skyriding Glyph: Ironwold
     .goto 2248,71.91,47.22
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -921,7 +925,7 @@ step
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 40166,10 >>Pick up the Skyriding Glyph: Ironwold
 step
-    #title Skyriding Glyph: Mourning Rise
+    #arrowtext Skyriding Glyph: Mourning Rise
     .goto 2248,62.12,44.95
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -929,7 +933,7 @@ step
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 40166,9 >>Pick up the Skyriding Glyph: Mourning Rise
 step
-    #title Skyriding Glyph: Sunken Shield
+    #arrowtext Skyriding Glyph: Sunken Shield
     .goto 2248,68.24,71.8
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -937,7 +941,7 @@ step
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 40166,5 >>Pick up the Skyriding Glyph: Sunken Shield
 step
-    #title Skyriding Glyph: Dhar Durgaz
+    #arrowtext Skyriding Glyph: Dhar Durgaz
     .goto 2248,44.47,79.75
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -945,7 +949,7 @@ step
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 40166,4 >>Pick up the Skyriding Glyph: Dhar Durgaz
 step
-    #title Skyriding Glyph: Dhar Oztan
+    #arrowtext Skyriding Glyph: Dhar Oztan
     .goto 2248,23.15,58.56
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -964,7 +968,7 @@ RXPGuides.RegisterGuide([[
 #chapter
 
 step
-    #title Skyriding: The Stonevault Exterior
+    #arrowtext Skyriding: The Stonevault Exterior
     .goto 2214,42.72,10.06
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -972,7 +976,7 @@ step
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 40703,2 >>Pick up the Skyriding: The Stonevault Exterior
 step
-    #title Skyriding Glyph: Gundargaz
+    #arrowtext Skyriding Glyph: Gundargaz
     .goto 2214,44.86,31.61
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -980,7 +984,7 @@ step
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 40703,1 >>Pick up the Skyriding Glyph: Gundargaz
 step
-    #title Skyriding Glyph: Lost Mines
+    #arrowtext Skyriding Glyph: Lost Mines
     .goto 2214,53.10,31.54
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -988,7 +992,7 @@ step
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 40703,3 >>Pick up the Skyriding Glyph: Lost Mines
 step
-    #title Skyriding Glyph: Chittering Den
+    #arrowtext Skyriding Glyph: Chittering Den
     .goto 2214,65.30,34.52
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -996,7 +1000,7 @@ step
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 40703,4 >>Pick up the Skyriding Glyph: Chittering Den
 step
-    #title Skyriding Glyph: The Rumbling Wastes
+    #arrowtext Skyriding Glyph: The Rumbling Wastes
     .goto 2214,52.06,56.21
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -1004,23 +1008,23 @@ step
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 40703,5 >>Pick up the Skyriding Glyph: The Rumbling Wastes
 step
+    #arrowtext Skyriding Glyph: Taelloch Mine
     .goto 2214,58.77,66.06
-    #title Skyriding Glyph: Taelloch Mine
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
     *Use |T4640489:0|t[Second Wind] to renew vigor charges.
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 40703,8 >>Pick up the Skyriding Glyph: Taelloch Mine
 step
+    #arrowtext Skyriding Glyph: Abyssal Excavation
     .goto 2214,59.73,94.94
-    #title Skyriding Glyph: Abyssal Excavation
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
     *Use |T4640489:0|t[Second Wind] to renew vigor charges.
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 40703,7 >>Pick up the Skyriding Glyph: Abyssal Excavation
 step
-    #title Skyriding Glyph: The Living Grotto
+    #arrowtext Skyriding Glyph: The Living Grotto
     .goto 2214,45.10,66.16
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -1028,7 +1032,7 @@ step
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 40703,6 >>Pick up the Skyriding Glyph: The Living Grotto
 step
-    #title Skyriding Glyph: The Waterworks
+    #arrowtext Skyriding Glyph: The Waterworks
     .goto 2214,42.30,51.67
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -1047,7 +1051,7 @@ RXPGuides.RegisterGuide([[
 #chapter
 
 step
-    #title Skyriding: The Fangs
+    #arrowtext Skyriding: The Fangs
     .goto 2215,62.86,51.79
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -1055,7 +1059,7 @@ step
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 40704,1 >>Pick up the Skyriding: The Fangs
 step
-    #title Skyriding Glyph: Sina's Yearning
+    #arrowtext Skyriding Glyph: Sina's Yearning
     .goto 2215,57.21,32.6
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -1063,7 +1067,7 @@ step
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 40704,2 >>Pick up the Skyriding Glyph: Sina's Yearning
 step
-    #title Skyriding Glyph: Sanguine Grasps
+    #arrowtext Skyriding Glyph: Sanguine Grasps
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
     *Use |T4640489:0|t[Second Wind] to renew vigor charges.
@@ -1071,7 +1075,7 @@ step
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 40704,3 >>Pick up the Skyriding Glyph: Sanguine Grasps
 step
-    #title Skyriding Glyph: Dunelle's Kindness
+    #arrowtext Skyriding Glyph: Dunelle's Kindness
     .goto 2215,69.95,44.23
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -1079,7 +1083,7 @@ step
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 40704,4 >>Pick up the Skyriding Glyph: Dunelle's Kindness
 step
-    #title Skyriding Glyph: Bleak Sand
+    #arrowtext Skyriding Glyph: Bleak Sand
     .goto 2215,62.74,7.21
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -1087,7 +1091,7 @@ step
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 40704,5 >>Pick up the Skyriding Glyph: Bleak Sand
 step
-    #title Skyriding Glyph: Mereldar
+    #arrowtext Skyriding Glyph: Mereldar
     .goto 2215,43.33,52.77
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -1095,7 +1099,7 @@ step
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 40704,6 >>Pick up the Skyriding Glyph: Mereldar
 step
-    #title Skyriding Glyph: Priory of the Sacred Flame
+    #arrowtext Skyriding Glyph: Priory of the Sacred Flame
     .goto 2215,35.43,33.85
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -1103,7 +1107,7 @@ step
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 40704,7 >>Pick up the Skyriding Glyph: Priory of the Sacred Flame
 step
-    #title Skyriding Glyph: Fortune's Fall
+    #arrowtext Skyriding Glyph: Fortune's Fall
     .goto 2215,30.77,51.58
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -1111,7 +1115,7 @@ step
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 40704,8 >>Pick up the Skyriding Glyph: Fortune's Fall
 step
-    #title Skyriding Glyph: Velhan's Claim
+    #arrowtext Skyriding Glyph: Velhan's Claim
     .goto 2215,45.77,12.34
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -1119,7 +1123,7 @@ step
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 40704,9 >>Pick up the Skyriding Glyph: Velhan's Claim
 step
-    #title Skyriding Glyph: Tenir's Ascent
+    #arrowtext Skyriding Glyph: Tenir's Ascent
     .goto 2215,57.64,64.67
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -1138,7 +1142,7 @@ RXPGuides.RegisterGuide([[
 #chapter
 
 step
-    #title Skyriding: Trickling Abyss
+    #arrowtext Skyriding: Trickling Abyss
     .goto 2255,70.54,25.16
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -1146,7 +1150,7 @@ step
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 40705,10 >>Pick up the Skyriding: Trickling Abyss
 step
-    #title Skyriding Glyph: Arathi's End
+    #arrowtext Skyriding Glyph: Arathi's End
     .goto 2255,63.45,13.99
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -1154,7 +1158,7 @@ step
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 40705,1 >>Pick up the Skyriding Glyph: Arathi's End
 step
-    #title Skyriding Glyph: Siegehold
+    #arrowtext Skyriding Glyph: Siegehold
     .goto 2255,46.69,21.27
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -1162,7 +1166,7 @@ step
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 40705,2 >>Pick up the Skyriding Glyph: Siegehold
 step
-    #title Skyriding Glyph: Ruptured Lake
+    #arrowtext Skyriding Glyph: Ruptured Lake
     .goto 2255,25.18,40.64
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -1170,7 +1174,7 @@ step
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 40705,3 >>Pick up the Skyriding Glyph: Ruptured Lake
 step
-    #title Skyriding Glyph: Eye of Ansurek
+    #arrowtext Skyriding Glyph: Eye of Ansurek
     .goto 2255,42.94,57.14
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -1178,7 +1182,7 @@ step
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 40705,4 >>Pick up the Skyriding Glyph: Eye of Ansurek
 step
-    #title Skyriding Glyph: Old Sacrificial Pit
+    #arrowtext Skyriding Glyph: Old Sacrificial Pit
     .goto 2213,13.14,33.69
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -1186,7 +1190,7 @@ step
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 40705,5 >>Pick up the Skyriding Glyph: Old Sacrificial Pit
 step
-    #title Skyriding Glyph: Deepwalker Pass
+    #arrowtext Skyriding Glyph: Deepwalker Pass
     .goto 2255,58.58,89.79
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -1194,7 +1198,7 @@ step
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 40705,6 >>Pick up the Skyriding Glyph: Deepwalker Pass
 step
-    #title Skyriding Glyph: The Maddening Deep
+    #arrowtext Skyriding Glyph: The Maddening Deep
     .goto 2255,66.33,84.92
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -1202,7 +1206,7 @@ step
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 40705,7 >>Pick up the Skyriding Glyph: The Maddening Deep
 step
-    #title Skyriding Glyph: Rak-Ush
+    #arrowtext Skyriding Glyph: Rak-Ush
     .goto 2255,73.19,84.13
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -1210,7 +1214,7 @@ step
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 40705,8 >>Pick up the Skyriding Glyph: Rak-Ush
 step
-    #title Skyriding Glyph: Untamed Valley
+    #arrowtext Skyriding Glyph: Untamed Valley
     .goto 2255,65.46,51.78
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -1218,7 +1222,7 @@ step
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 40705,11 >>Pick up the Skyriding Glyph: Untamed Valley
 step
-    #title Skyriding Glyph: Silken Ward
+    #arrowtext Skyriding Glyph: Silken Ward
     .goto 2255,57.66,57.38
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -1237,7 +1241,7 @@ RXPGuides.RegisterGuide([[
 #chapter
 
 step
-    #title Skyriding: Tazavesh
+    #arrowtext Skyriding: Tazavesh
     .goto 2472,55.12,67.55
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -1245,13 +1249,13 @@ step
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 42727,7 >>Pick up the Skyriding: Tazavesh
 step
-    #title Skyriding Glyph: Eco-Dome: Primus
+    #arrowtext Skyriding Glyph: Eco-Dome: Primus
     .goto 2371,46.38,58.38
     >>Use |T4640490:0|t[Surge Forward] for a speed boost, |T4640498:0|t[Skyward Ascent]
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 42727,2 >>Pick up the Skyriding Glyph: Eco-Dome: Primus
 step
-    #title Skyriding Glyph: Serrated Peaks
+    #arrowtext Skyriding Glyph: Serrated Peaks
     .goto 2371,54.67,53.09
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -1259,7 +1263,7 @@ step
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 42727,5 >>Pick up the Skyriding Glyph: Serrated Peaks
 step
-    #title Skyriding Glyph: Castigaar
+    #arrowtext Skyriding Glyph: Castigaar
     .goto 2371,61,38.7
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -1267,7 +1271,7 @@ step
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 42727,1 >>Pick up the Skyriding Glyph: Castigaar
 step
-    #title Skyriding Glyph: North Sufaad
+    #arrowtext Skyriding Glyph: North Sufaad
     .goto 2371,76.47,46.32
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -1275,7 +1279,7 @@ step
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 42727,4 >>Pick up the Skyriding Glyph: North Sufaad
 step
-    #title |cFFFCDC00It sits at the highest part of the dome|r
+    #arrowtext |cFFFCDC00It sits at the highest part of the dome|r
     .goto 2371,74.05,32.52
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -1283,7 +1287,7 @@ step
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 42727,8 >>Pick up the Skyriding Glyph: The Oasis
 step
-    #title |cFFFCDC00Above a Mountain Formation|r
+    #arrowtext |cFFFCDC00Above a Mountain Formation|r
     .goto 2371,54.71,23.48
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -1291,7 +1295,7 @@ step
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 42727,3 >>Pick up the Skyriding Glyph: The Fracture of Laacuna
 step
-    #title |cFFFCDC00ontop of the reactor|r
+    #arrowtext |cFFFCDC00ontop of the reactor|r
     .goto 2371,43.9,17.04
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -1331,6 +1335,7 @@ RXPGuides.RegisterGuide([[
 #chapter
 
 step
+    #arrowtext Use [Surge Forward]
     .goto 2393,48.37,6.68
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -1338,6 +1343,7 @@ step
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 61576,1
 step
+    #arrowtext Use [Surge Forward]
     .goto 2395,58.95,19.59
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -1345,6 +1351,7 @@ step
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 61576,3
 step
+    #arrowtext Use [Surge Forward]
     .goto 2395,65.23,32.62
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -1352,6 +1359,7 @@ step
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 61576,2
 step
+    #arrowtext Use [Surge Forward]
     .goto 2395,49.46,48.04
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -1359,6 +1367,7 @@ step
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 61576,5
 step
+    #arrowtext Use [Surge Forward]
     .goto 2395,43.17,46.39
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -1366,6 +1375,7 @@ step
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 61576,11
 step
+    #arrowtext Use [Surge Forward]
     .goto 2395,39.45,45.66
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -1373,6 +1383,7 @@ step
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 61576,6
 step
+    #arrowtext Use [Surge Forward]
     .goto 2395,39.97,59.62
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -1380,6 +1391,7 @@ step
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 61576,4
 step
+    #arrowtext Use [Surge Forward]
     .goto 2395,33.42,65.4
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -1387,6 +1399,7 @@ step
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 61576,9
 step
+    #arrowtext Use [Surge Forward]
     .goto 2395,52.45,67.59
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -1394,6 +1407,7 @@ step
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 61576,8
 step
+    #arrowtext Use [Surge Forward]
     .goto 2395,58.48,58.22
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -1401,6 +1415,7 @@ step
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 61576,10
 step
+    #arrowtext Use [Surge Forward]
     .goto 2395,62.62,62.82
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -1419,6 +1434,7 @@ RXPGuides.RegisterGuide([[
 #chapter
 
 step
+    #arrowtext Use [Surge Forward]
     .goto 2395,63.81,81.9
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -1426,6 +1442,7 @@ step
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 61581,9
 step
+    #arrowtext Use [Surge Forward]
     .goto 2437,19.16,70.66
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -1433,6 +1450,7 @@ step
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 61581,1
 step
+    #arrowtext Use [Surge Forward]
     .goto 2437,30.44,84.79
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -1440,6 +1458,7 @@ step
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 61581,7
 step
+    #arrowtext Use [Surge Forward]
     .goto 2437,42.72,80.15
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -1447,6 +1466,7 @@ step
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 61581,11
 step
+    #arrowtext Use [Surge Forward]
     .goto 2437,46.72,82.22
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -1454,6 +1474,7 @@ step
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 61581,10
 step
+    #arrowtext Use [Surge Forward]
     .goto 2437,53.6,80.48
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -1461,6 +1482,7 @@ step
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 61581,3
 step
+    #arrowtext Use [Surge Forward]
     .goto 2437,53.21,54.45
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -1468,6 +1490,7 @@ step
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 61581,5
 step
+    #arrowtext Use [Surge Forward]
     .goto 2437,42.94,34.34
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -1475,6 +1498,7 @@ step
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 61581,2
 step
+    #arrowtext Use [Surge Forward]
     .goto 2437,51.5,23.6
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -1482,6 +1506,7 @@ step
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 61581,4
 step
+    #arrowtext Use [Surge Forward]
     .goto 2437,39.57,19.7
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -1489,6 +1514,7 @@ step
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 61581,6
 step
+    #arrowtext Use [Surge Forward]
     .goto 2437,27.95,28.62
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -1509,6 +1535,7 @@ RXPGuides.RegisterGuide([[
 #chapter
 
 step
+    #arrowtext Use [Surge Forward]
     .goto 2413,47.04,53.24
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -1516,6 +1543,7 @@ step
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 61582,2
 step
+    #arrowtext Use [Surge Forward]
     .goto 2413,44.57,62.78
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -1523,6 +1551,7 @@ step
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 61582,7
 step
+    #arrowtext Use [Surge Forward]
     .goto 2413,26.57,61.4
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -1530,6 +1559,7 @@ step
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 61582,8
 step
+    #arrowtext Use [Surge Forward]
     .goto 2413,34.58,23.15
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -1537,6 +1567,7 @@ step
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 61582,3
 step
+    #arrowtext Use [Surge Forward]
     .goto 2413,54.71,35.36
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -1544,6 +1575,7 @@ step
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 61582,5
 step
+    #arrowtext Use [Surge Forward]
     .goto 2413,59.69,43.94
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -1551,6 +1583,7 @@ step
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 61582,1
 step
+    #arrowtext Use [Surge Forward]
     .goto 2413,69.37,45.83
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -1562,6 +1595,7 @@ step
 --     *Use |T4640477:0|t[Whirling Surge] on cooldown.
 --     .achievement 61582,4
 step
+    #arrowtext Use [Surge Forward]
     .goto 2413,61.86,67.53
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -1579,6 +1613,7 @@ RXPGuides.RegisterGuide([[
 #chapter
 
 step
+    #arrowtext Use [Surge Forward]
     .goto 2405,49.25,87.48
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -1586,6 +1621,7 @@ step
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 61583,11
 step
+    #arrowtext Use [Surge Forward]
     .goto 2405,65.07,71.88
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -1593,6 +1629,7 @@ step
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 61583,9
 step
+    #arrowtext Use [Surge Forward]
     .goto 2405,51.33,62.68
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -1600,6 +1637,7 @@ step
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 61583,1
 step
+    #arrowtext Use [Surge Forward]
     .goto 2405,45.3,52.26
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -1607,6 +1645,7 @@ step
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 61583,8
 step
+    #arrowtext Use [Surge Forward]
     .goto 2405,54.97,45.55
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -1614,6 +1653,7 @@ step
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 61583,5
 step
+    #arrowtext Use [Surge Forward]
     .goto 2444,36.18,44.95
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -1621,6 +1661,7 @@ step
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 61583,6
 step
+    #arrowtext Use [Surge Forward]
     .goto 2405,36.09,37.25
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -1628,6 +1669,7 @@ step
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 61583,10
 step
+    #arrowtext Use [Surge Forward]
     .goto 2405,37.19,49.97
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -1635,6 +1677,7 @@ step
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 61583,2
 step
+    #arrowtext Use [Surge Forward]
     .goto 2405,35.67,61.13
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -1642,6 +1685,7 @@ step
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 61583,3
 step
+    #arrowtext Use [Surge Forward]
     .goto 2405,39.92,71
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
@@ -1649,6 +1693,7 @@ step
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 61583,4
 step
+    #arrowtext Use [Surge Forward]
     .goto 2405,38.89,76.2
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
