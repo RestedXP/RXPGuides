@@ -16,7 +16,7 @@ RXPGuides.RegisterGuide([[
 step
     +|cRXP_WARN_|cRXP_WARN_|T1411837:0|t[Infinite Power]|r|r is the Artifact Power of Legion Remix. It fuels your Artifact Weapon, allowing you to unlock upgrades and grow stronger as you play.
 step
-    +|cRXP_WARN_|T1411837:0|t[Infinite Power]|r is gained from most activities e.g looting enemies, completing quests, dungeons, treasures or reward boxes.
+    +|cRXP_WARN_|T1411837:0|t[Infinite Power]|r is gained from most activities, e.g. looting enemies, completing quests, dungeons, treasures or reward boxes.
 step
     +|cRXP_WARN_|T1411833:0|t[Infinite Knowledge]|r increases the rate at which you gain |cRXP_WARN_|T1411837:0|t[Infinite Power]|r |cRXP_WARN_(Artifact Power)|r.
     *The more ranks of |cRXP_WARN_|T1411833:0|t[Infinite Knowledge]|r you have, the more |cRXP_WARN_|T1411837:0|t[Infinite Power]|r you earn from every activity.
@@ -65,7 +65,7 @@ step
 step
     +If you’re wondering why we are not completing a certain quest or objective right away, this is most likely the reason.
 step
-    +|cRXP_WARN_|T4638724:0|t[Bronze]|r returns, now used purely for cosmetic purposes. You can purchase cosmetics at the Infinite Bzaar.
+    +|cRXP_WARN_|T4638724:0|t[Bronze]|r returns, now used purely for cosmetic purposes. You can purchase cosmetics at the Infinite Bazaar.
 step
     +The Scrapper returns! Any unwanted equipment can be scrapped for |cRXP_WARN_|T1411837:0|t[Infinite Power]|r and |cRXP_WARN_|T4638724:0|t[Bronze]|r. You can access this system at the Infinite Bazaar, or anytime by using the |cRXP_WARN_|T4643984:0|t[Unraveling Sands]|r ability.
 step
@@ -249,18 +249,18 @@ step
     #requires Magical barriers
     .goto 627,41.39,39.5,8,0
     .goto 627,41.98,37.77
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Magical barrier|r |cRXP_WARN_to your right from a far|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Magical barrier|r |cRXP_WARN_to your right from afar|r.
     .complete 89406,2,1 --5/5 Magical barriers reinforced
 step
     .goto 627,37.69,34.76
-    >>Stand on the Arrow Location and click on the |cRXP_PICK_Magical barrier|r infront of you.
+    >>Stand on the Arrow Location and click on the |cRXP_PICK_Magical barrier|r in front of you.
     *|cRXP_WARN_Make sure to do this to receive credit for all three doors at once.|r
     .complete 89406,2,4 --5/5 Magical barriers rein}forced
 step
     #arrowtext Click\n|cRXP_PICK_Magical barrier|r
     .goto 627,40.62,30.13,8,0
     .goto 627,41.24,31.57
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Magical barrier|r |cRXP_WARN_to your right from a far|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Magical barrier|r |cRXP_WARN_to your right from afar|r.
     .complete 89406,2,5 --5/5 Magical barriers reinforced
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Momentus|r
@@ -434,7 +434,7 @@ step
     #requires Temporal fibers
     #completewith next
     #label Temporal fibers separated
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Bars|r |cRXP_WARN_on the table infront of you|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Bars|r |cRXP_WARN_on the table in front of you|r.
     .complete 89409,4 --1/1 Anchoring materials infused
 step
     #arrowtext Click\n|cRXP_PICK_Temporal fibers|r
@@ -454,7 +454,7 @@ step
     #requires Temporal fibers separated
     #completewith Infinite Bronze forged
     .goto 627,45.14,29.31
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Bars|r |cRXP_WARN_on the table infront of you from a far|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Bars|r |cRXP_WARN_on the table in front of you from afar|r.
     .complete 89409,4 --1/1 Anchoring materials infused
 step
     #arrowtext Click\n|cRXP_PICK_Bronze|r
@@ -817,7 +817,7 @@ step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Eternus|r
     .goto 619,45.6,68.43,5,0
     .goto 619,45.69,68.54
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eternus|r |cRXP_WARN_from a far|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eternus|r |cRXP_WARN_from afar|r.
     .turnin 89417 >>Turn in Infinite Meetings
     .accept 89418 >>Accept A Fixed Point in Time
     .target Eternus
@@ -4776,7 +4776,7 @@ step
     .goto 630,40.24,54.23,35,0
     >>Kill the |cRXP_ENEMY_Demons|r in the area.
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Legion Portals|r.
-    *|cRXP_WARN_NOTE:|r We prepare this Bonus Objective for level 70 (you get a 200% xp buff when reach level 70).
+    *|cRXP_WARN_NOTE:|r We prepare this Bonus Objective for level 70 (you get a 200% xp buff when you reach level 70).
     .complete 36811,1,75 --Lead the fight against the Legion (100%)
 step
     #include RestedXP Legion Remix\b) Behind Legion Lines@BehindLegionLinesE-BehindLegionLinesZ
@@ -4965,7 +4965,7 @@ step
     .goto 632,72.48,75.05,25,0
     >>Kill the |cRXP_ENEMY_Hatecoil Naga|r and the |cRXP_ENEMY_Cave Skrogs|r (20% progress).
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Skrog Weapons|r and |cRXP_PICK_Prince's Plunder|r.
-    *|cRXP_WARN_NOTE:|r We prepare this Bonus Objective for level 70 (you get a 200% xp buff when reach level 70).
+    *|cRXP_WARN_NOTE:|r We prepare this Bonus Objective for level 70 (you get a 200% xp buff when you reach level 70).
     .complete 37495,1,70 --Plunder Oceanus Cove (100%)
     .mob Hatecoil Slavemaster
 step
@@ -5085,7 +5085,7 @@ step
     .goto 630,53.13,44.79,40,0
     >>Kill the |cRXP_ENEMY_Hatecoil forces|r.
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_FRIENDLY_Bound Citizens|r.
-    *|cRXP_WARN_NOTE:|r We prepare this Bonus Objective for level 70 (you get a 200% xp buff when reach level 70).
+    *|cRXP_WARN_NOTE:|r We prepare this Bonus Objective for level 70 (you get a 200% xp buff when you reach level 70).
     .complete 37466,1,75 --Defend against the Hatecoil (100%)
     .mob Hatecoil Riptail
     .mob Hatecoil Harpooner
@@ -5148,7 +5148,7 @@ step
     .goto 630,62.44,36.43,45,0
     >>Kill the |cRXP_PICK_Hatecoil Naga|r and |cRXP_PICK_Hatecoil Skrog|r. Destroy the |cRXP_PICK_Murloc Hatcheries|r.
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Coral Tridents|r to get an ExtraActionButton that helps you kill the |cRXP_PICK_Hatecoil Skrog|r
-    *|cRXP_WARN_NOTE:|r We prepare this Bonus Objective for level 70 (you get a 200% xp buff when reach level 70).
+    *|cRXP_WARN_NOTE:|r We prepare this Bonus Objective for level 70 (you get a 200% xp buff when you reach level 70).
     .complete 37779,1,70 --Disrupt the Hatecoil Warcamp (100%)
     .mob Hatecoil Skrog
     .mob Hatecoil Spitespeaker
@@ -5205,7 +5205,7 @@ step
     #completewith KirinTorReconnaissanceZ
     >>Kill the |cRXP_ENEMY_Hatecoil forces|r.
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_FRIENDLY_Bound Citizens|r.
-    *|cRXP_WARN_NOTE:|r We prepare this Bonus Objective for level 70 (you get a 200% xp buff when reach level 70).
+    *|cRXP_WARN_NOTE:|r We prepare this Bonus Objective for level 70 (you get a 200% xp buff when you reach level 70).
     .complete 37466,1,75 --Defend against the Hatecoil (100%)
     .mob Hatecoil Riptail
     .mob Hatecoil Harpooner
@@ -5242,7 +5242,7 @@ step
     .goto 630,53.13,44.79,40,0
     >>Kill the |cRXP_ENEMY_Hatecoil forces|r.
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_FRIENDLY_Bound Citizens|r.
-    *|cRXP_WARN_NOTE:|r We prepare this Bonus Objective for level 70 (you get a 200% xp buff when reach level 70).
+    *|cRXP_WARN_NOTE:|r We prepare this Bonus Objective for level 70 (you get a 200% xp buff when you reach level 70).
     .complete 37466,1,75 --Defend against the Hatecoil (100%)
     .mob Hatecoil Riptail
     .mob Hatecoil Harpooner
@@ -5264,7 +5264,7 @@ step
     .xp >80,1
     >>Kill the |cRXP_ENEMY_Hatecoil Naga|r and the |cRXP_ENEMY_Cave Skrogs|r (20% progress).
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Objects|r.
-    *|cRXP_WARN_NOTE:|r We prepare this Bonus Objective for level 70 (you get a 200% xp buff when reach level 70).
+    *|cRXP_WARN_NOTE:|r We prepare this Bonus Objective for level 70 (you get a 200% xp buff when you reach level 70).
     .complete 37495,1,70 --Plunder Oceanus Cove (100%)
     .mob Hatecoil Slavemaster
 step
@@ -5315,7 +5315,7 @@ step
     .xp >80,1
     >>Kill the |cRXP_ENEMY_Hatecoil Naga|r and the |cRXP_ENEMY_Cave Skrogs|r (20% progress).
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Objects|r.
-    *|cRXP_WARN_NOTE:|r We prepare this Bonus Objective for level 70 (you get a 200% xp buff when reach level 70).
+    *|cRXP_WARN_NOTE:|r We prepare this Bonus Objective for level 70 (you get a 200% xp buff when you reach level 70).
     .complete 37495,1,70 --Plunder Oceanus Cove (100%)
     .mob Hatecoil Slavemaster
 step
@@ -5367,7 +5367,7 @@ step
     .goto 632,72.48,75.05,25,0
     >>Kill the |cRXP_ENEMY_Hatecoil Naga|r and the |cRXP_ENEMY_Cave Skrogs|r (20% progress).
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Skrog Weapons|r and |cRXP_PICK_Prince's Plunder|r.
-    *|cRXP_WARN_NOTE:|r We prepare this Bonus Objective for level 70 (you get a 200% xp buff when reach level 70).
+    *|cRXP_WARN_NOTE:|r We prepare this Bonus Objective for level 70 (you get a 200% xp buff when you reach level 70).
     .complete 37495,1,70 --Plunder Oceanus Cove (100%)
     .mob Hatecoil Slavemaster
 step
@@ -5774,7 +5774,7 @@ step
 step
     #completewith next
     #label DefendingAzurewingReposeAC
-    >>Use your ExtraActionButton to the the crystals into the pool
+    >>Use your ExtraActionButton to move the crystals into the pool
     .complete 37853,2 --1/1 Throw crystals into Senegos's pool
 step
     #arrowtext Leave the Leyhollow cave
@@ -5784,7 +5784,7 @@ step
 step
     #arrowtext Use [|cRXP_WARN_ExtraActionButton|r]
     #requires DefendingAzurewingReposeAC
-    >>Use your |T133255:0|t[|cRXP_WARN_ExtraActionButton|r] to the the crystals into the pool
+    >>Use your |T133255:0|t[|cRXP_WARN_ExtraActionButton|r] to move the crystals into the pool
     .goto 630,47.91,26.88
     .complete 37853,2 --1/1 Throw crystals into Senegos's pool
 step
@@ -7030,7 +7030,7 @@ step
     .target Queen's Reprisal Sailor
 step
     .goto 630,56.40,59.24
-    >>|cRXP_WARN_Click on the popup under your minimap or search for the quest in your questlog to turn it in|r
+    >>|cRXP_WARN_Click on the popup under your minimap or search for the quest in your quest log to turn it in|r
     .turnin 42268 >>Turn in Shipwrecked Sailors
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Mr. Shackle|r

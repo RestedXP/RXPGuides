@@ -517,7 +517,7 @@ step
     #arrowtext Use [Afterburn]\non |cRXP_ENEMY_enemies|r
     .goto 1160,40.84,27.61,20,0
     .goto 1160,38.88,46.96,30,0
-    .goto 1160,44.83,64.11,15 >>Use |T1032476:0|t[Afterburn](2) to sprint and |T135781:0|t[Frozen Keekers](1) to kill |cRXP_ENEMY_enemies|r |cRXP_WARN_infront of you|r.
+    .goto 1160,44.83,64.11,15 >>Use |T1032476:0|t[Afterburn](2) to sprint and |T135781:0|t[Frozen Keekers](1) to kill |cRXP_ENEMY_enemies|r |cRXP_WARN_in front of you|r.
     .timer 7, Duration until continuation.
     .isOnQuest 53342
 step
@@ -4652,7 +4652,7 @@ step
     >>Listen to |cRXP_FRIENDLY_Korgran|r.
     *- "Would you toss me some of that |cRXP_WARN_ore|r, please?" -> |cRXP_PICK_Ore Barrel|r.
     *- "Would you please hand me a |cRXP_WARN_charged core|r.? -> |cRXP_PICK_Charged Core|r.
-    *- "We need more heat! Toos in some |cRXP_WARN_coals|r|r. -> |cRXP_PICK_A Pile of Coals|r.
+    *- "We need more heat! Toss in some |cRXP_WARN_coals|r." -> |cRXP_PICK_A Pile of Coals|r.
     .cast 281581 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the correct ingredient |cRXP_WARN_when he requests the next ingredient|r.!
     .timer 12,Next Ingredient Estimation
 step
@@ -4664,7 +4664,7 @@ step
     >>Listen to |cRXP_FRIENDLY_Korgran|r.
     *- "Would you toss me some of that |cRXP_WARN_ore|r, please?" -> |cRXP_PICK_Ore Barrel|r.
     *- "Would you please hand me a |cRXP_WARN_charged core|r.? -> |cRXP_PICK_Charged Core|r.
-    *- "We need more heat! Toos in some |cRXP_WARN_coals|r|r. -> |cRXP_PICK_A Pile of Coals|r.
+    *- "We need more heat! Toss in some |cRXP_WARN_coals|r." -> |cRXP_PICK_A Pile of Coals|r.
     .cast 281581 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the correct ingredient |cRXP_WARN_when he requests the next ingredient|r.!
     .timer 12,Next Ingredient Estimation
 step
@@ -4676,7 +4676,7 @@ step
     >>Listen to |cRXP_FRIENDLY_Korgran|r.
     *- "Would you toss me some of that |cRXP_WARN_ore|r, please?" -> |cRXP_PICK_Ore Barrel|r.
     *- "Would you please hand me a |cRXP_WARN_charged core|r.? -> |cRXP_PICK_Charged Core|r.
-    *- "We need more heat! Toos in some |cRXP_WARN_coals|r|r. -> |cRXP_PICK_A Pile of Coals|r.
+    *- "We need more heat! Toss in some |cRXP_WARN_coals|r." -> |cRXP_PICK_A Pile of Coals|r.
     .cast 281581 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the correct ingredient |cRXP_WARN_when he requests the next ingredient|r.!
     .timer 3,Done!
 step
@@ -6403,7 +6403,7 @@ step
 step
     #arrowtext Click the Quest Turnin Pop-Up in your quest log
     .goto 114,64.08,24.73
-    >>Click on the Quest Turnin Pop-Up in your Questlog.
+    >>Click on the Quest Turnin Pop-Up in your quest log.
     .turnin 54581 >>Turn in Now With More Mechanical Fowl
     .accept 54582 >>Accept Smarter Than Your Average Trogg
 step
@@ -6500,7 +6500,7 @@ step
     #arrowtext Click the Quest Turnin Pop-Up in your quest log
     #label EndIncludePrepGuide
     .goto 120,38.73,42.67
-    >>Click on the Quest Turnin Pop-Up in your Questlog.
+    >>Click on the Quest Turnin Pop-Up in your quest log.
     .turnin 54850 >>Turn in Operation: Troggageddon
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Cog Captain Winklespring|r
@@ -8499,26 +8499,26 @@ step
 step
     #arrowtext Use [Acid Rifle]
     .goto 21,46.67,47.08
-    >>Use |T132104:0|t[Acid Rifle] infront of the paper.
+    >>Use |T132104:0|t[Acid Rifle] in front of the paper.
     .complete 72858,1,1 --4/4 Notice to All Undead destroyed
     .use 202182
 step
     #arrowtext Use [Acid Rifle]
     .goto 21,45.61,47.37
-    >>Use |T132104:0|t[Acid Rifle] infront of the paper.
+    >>Use |T132104:0|t[Acid Rifle] in front of the paper.
     .complete 72858,1,2 --4/4 Notice to All Undead destroyed
     .use 202182
 step
     #arrowtext Use [Acid Rifle]
     .goto 21,46.95,50.23
-    >>Use |T132104:0|t[Acid Rifle] infront of the paper.
+    >>Use |T132104:0|t[Acid Rifle] in front of the paper.
     .complete 72858,1,3 --4/4 Notice to All Undead destroyed
     .use 202182
 step
     #arrowtext Use [Acid Rifle]
     #label Notice to All Undead
     .goto 21,48.35,48.83
-    >>Use |T132104:0|t[Acid Rifle] infront of the paper.
+    >>Use |T132104:0|t[Acid Rifle] in front of the paper.
     .complete 72858,1,4 --4/4 Notice to All Undead destroyed
     .use 202182
 step

@@ -1177,7 +1177,7 @@ step
     .goto 371,53.90,61.96,10,0
     .goto 371,53.8,61.8,10,0
     +|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Sage Tai-Feng|r and |cRXP_FRIENDLY_Elder Sage Storm-Sing|r
-    .questcount <4,30066,30065,30063,30064  >>|cRXP_WARN_Get all the Daillies|r
+    .questcount <4,30066,30065,30063,30064  >>|cRXP_WARN_Get all the Dailies|r
 step
     .goto 371,53.8,61.8
     .reputation 1269,revered,<0,1
@@ -1638,7 +1638,7 @@ step
     .goto 388,39.14,62.05,10,0
     .goto 388,39.40,61.98,10,0
     +|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Adept Paosha|r, |cRXP_FRIENDLY_Ogo the Younger|r, |cRXP_FRIENDLY_Yak-Keeper Kyana|r, |cRXP_FRIENDLY_Sentinel Commander Qipan|r and |cRXP_FRIENDLY_Ogo the Elder|r
-    .questcount <4,30955,30954,30953,30957,30956,30952,30959,30958  >>|cRXP_WARN_Get all the Daillies|r
+    .questcount <4,30955,30954,30953,30957,30956,30952,30959,30958  >>|cRXP_WARN_Get all the Dailies|r
     .target High Adept Paosha
     .target Ogo the Younger
     .target Yak-Keeper Kyana
@@ -3055,14 +3055,14 @@ step
     #arrowtext Use [Unstable Explosive]
     .isOnQuest 32154
    .goto 418,25.48,59.44
-    >>Use |T133717:0|t[Unstable Explosive] near the |cRXP_WARN_Goblin Explosixe Crate|r
+    >>Use |T133717:0|t[Unstable Explosive] near the |cRXP_WARN_Goblin Explosive Crate|r
     .complete 32154,1 --1/1 Northeastern Fuel Tank destroyed
     .use 93187
 step
     #arrowtext Use [Unstable Explosive]
     .isOnQuest 32154
     .goto 418,23.92,54.63
-    >>Use |T133717:0|t[Unstable Explosive] near the |cRXP_WARN_Goblin Explosixe Crate|r
+    >>Use |T133717:0|t[Unstable Explosive] near the |cRXP_WARN_Goblin Explosive Crate|r
     .complete 32154,2 --1/1 Northern Fuel Tank destroyed
     .use 93187
 step
@@ -3070,7 +3070,7 @@ step
     .isOnQuest 32154
     #label Northwestern
     .goto 418,15.28,59
-    >>Use |T133717:0|t[Unstable Explosive] near the |cRXP_WARN_Goblin Explosixe Crate|r
+    >>Use |T133717:0|t[Unstable Explosive] near the |cRXP_WARN_Goblin Explosive Crate|r
     .complete 32154,3 --1/1 Northwestern Fuel Tank destroyed
     .use 93187
 step
@@ -4210,7 +4210,7 @@ step
     #arrowtext Click the Spirit Orb
     .isOnQuest 30277
     #requires SpiritWallB
-    >>|cRXP_WARN_Loot at the first rune on the floor. This one is the safe on which won't kill you. Follow this rune to the spirit orb|r
+    >>|cRXP_WARN_Look at the first rune on the floor. This one is the safe one that won't kill you. Follow this rune to the spirit orb|r
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the Spirit Orb
     .goto 395,49.10,22.67
     .complete 30277,1 --1/1 Deactivate Spirit Wall

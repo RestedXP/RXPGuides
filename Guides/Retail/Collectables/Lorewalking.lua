@@ -886,7 +886,7 @@ step
     .goto 109,53.7,42.02,5,0
     .goto 109,53.32,42.31,5,0
     .goto 109,53.73,42.87,5,0
-    >>Use |T133002:0|t[Protectorate Disruptor] |cRXP_WARN_next to each power conduit to active the |cRXP_ENEMY_Nexus-King Salhadaar|r.|r
+    >>Use |T133002:0|t[Protectorate Disruptor] |cRXP_WARN_next to each power conduit to activate the |cRXP_ENEMY_Nexus-King Salhadaar|r.|r
     *|cRXP_WARN_Ignore this step if he's already active|r.
     .complete 10408,1 --3/3 Salhadaar's Power Conduits disrupted (Optional)
     .timer 17,RP
@@ -1589,7 +1589,7 @@ step
     >>|cRXP_WARN_Follow the in chat Instructions (5 times)|r
     *|T237290:0|t[Press Buttons] = any text with button in it.
     *|T2909707:0|t[Pull Lever] = any text with lever in it.
-    *|T2437249:0|t[Bonk Head] = any text with whack,bonk,strike,hit in it.
+    *|T2437249:0|t[Bonk Head] = any text with whack, bonk, strike, or hit in it.
     .complete 63983,3 --1/1 Prototype Aquilon returned
 step
     #arrowtext Click\n|cRXP_PICK_Prototype Aquilon|r
@@ -1603,7 +1603,7 @@ step
     >>|cRXP_WARN_Follow the in chat Instructions (5 times)|r
     *|T237290:0|t[Press Buttons] = any text with button in it.
     *|T2909707:0|t[Pull Lever] = any text with lever in it.
-    *|T2437249:0|t[Bonk Head] = any text with whack,bonk,strike,hit in it.
+    *|T2437249:0|t[Bonk Head] = any text with whack, bonk, strike, or hit in it.
     .complete 63983,3 --1/1 Prototype Aquilon returned
 -- step
 --     #completewith next
@@ -1975,7 +1975,7 @@ step
     .target Cho
 step
     #completewith Coordinates
-    +There is no access to player coordinates therefore no arrow.
+    +Player coordinates are unavailable, so the arrow cannot be displayed.
 step
     >>|cRXP_WARN_Enter the gate of Stratholme and then wait for the Roleplay|r.
     .scenario 15174,1

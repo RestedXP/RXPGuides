@@ -123,7 +123,7 @@ step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Momentus|r
     #completewith next
     .goto 371,42.5,27.32,10,0
-    .vendor >>Talk to |cRXP_FRIENDLY_Momentus|r and upgrade your gear |cRXP_WARN_It's recommended for faster leveling but uses bronze, a cosmetic currency|r.
+    .vendor >>Talk to |cRXP_FRIENDLY_Momentus|r and upgrade your gear. |cRXP_WARN_It's recommended for faster leveling but uses bronze, a cosmetic currency|r.
     .skipgossip
     .target Momentus
 step
@@ -454,7 +454,7 @@ step
     -- .goto 371,34.62,23.61,0 << Alliance
     -- .goto 371,34.32,23.72,0 << Alliance
     -- .goto 371,34.31,22.87,0 << Alliance
-    >>Click on |cRXP_PICK_Bushleaf Cluster|r |cRXP_WARN_and wait until the channel is over (you're not allowed to move or turn or your character)|r.
+    >>Click on |cRXP_PICK_Bushleaf Cluster|r |cRXP_WARN_and wait until the channel is over (do not move or turn your character)|r.
     .complete 29629,1 --80/80 Blushleaf Extract
 step
     #completewith next
@@ -1312,7 +1312,7 @@ step
     *Here's a detailed explanation of how Bronze works and its role in the event:
 step
     +|cRXP_WARN_Acquisition of |T4638724:0|t[Bronze]|r.
-    *|cRXP_WARN_Scrapping Unwanted Items:|r Players can scrap unwanted or outleveled items |cRXP_WARN_including prismatic gems|r by using the |T4643984:0|t[Unraveling Sands] Abilty to obtain Bronze. This process helps players clear their inventory of items they no longer need while gaining a valuable resource.
+    *|cRXP_WARN_Scrapping Unwanted Items:|r Players can scrap unwanted or outleveled items |cRXP_WARN_including prismatic gems|r by using the |T4643984:0|t[Unraveling Sands] Ability to obtain Bronze. This process helps players clear their inventory of items they no longer need while gaining a valuable resource.
     *|cRXP_WARN_Gem extraction:|r.  Players can remove gems from items by using the |T1379201:0|t[Gem Extraction] Ability or by scrapping obsolete gear with gems inside, allowing them to reuse or replace the gems with better ones. This ensures that players can continually optimize their gear without losing valuable gems.
     *|cRXP_WARN_Loot and Rewards:|r |T4638724:0|t[Bronze] can also be obtained from various event activities, such as dragonriding, looting enemies and completing quests.
 step
@@ -2411,7 +2411,7 @@ step
     .exitvehicle >> |cRXP_WARN_Dismount the Skyfire Gyrocopter by pressing the |r.[Exit] |cRXP_WARN_button on your action bars|r.
     *|cRXP_WARN_Alternatively, you can use this macro;|r.
     .macro Leave Vehicle,6656430 >>/leavevehicle
-    *|cRXP_WARN_It's recommended to safe this macro for future use|r.
+    *|cRXP_WARN_It's recommended to save this macro for future use|r.
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Sky Admiral Rogers|r
     .goto 371,42.04,92.75
@@ -2429,7 +2429,7 @@ step
     .exitvehicle >> |cRXP_WARN_Dismount the Skyfire Gyrocopter by pressing the |r.[Exit] |cRXP_WARN_button on your action bars|r.
     *|cRXP_WARN_Alternatively, you can use this macro;|r.
     .macro Leave Vehicle,6656430 >>/leavevehicle
-    *|cRXP_WARN_It's recommended to safe this macro for future use|r.
+    *|cRXP_WARN_It's recommended to save this macro for future use|r.
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Sully "The Pickle" McLeary|r
     .goto 371,43.58,90.64

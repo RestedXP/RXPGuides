@@ -379,8 +379,8 @@ step << Priest/Warrior/Druid/Mage/Shaman/Paladin/Rogue/Warlock/Monk
     *|cRXP_WARN_Keep your distance so you can|r |T132337:0|t[Charge] |cRXP_WARN_her immediately|r. << Warrior
     *Use |T132316:0|t[Hamstring] to slow her, making it easier to create distance before your next |T132337:0|t[Charge] is ready. << Warrior
 
-    *Repeat this sequence: cast |T135846:0|t[Frostbolt] on |cRXP_ENEMY_Captain Garrick|r, then move directly infront of her and use |T135807:0|t[Fire Blast]. << Mage
-    *|cRXP_WARN_You must be directly infront of her when using|r |T135807:0|t[Fire Blast]. << Mage
+    *Repeat this sequence: cast |T135846:0|t[Frostbolt] on |cRXP_ENEMY_Captain Garrick|r, then move directly in front of her and use |T135807:0|t[Fire Blast]. << Mage
+    *|cRXP_WARN_You must be directly in front of her when using|r |T135807:0|t[Fire Blast]. << Mage
 
     *Repeat this sequence: cast |T136048:0|t[Lightning Bolt] on |cRXP_ENEMY_Captain Garrick|r, then use |T460956:0|t[Primal Strike] on her 4 times. << Shaman
 
@@ -1061,7 +1061,7 @@ step << !Shaman
 step << Rogue
     .zoneskip 1409,1
     #completewith RogueExilesEnd1
-    +Beaware of |cRXP_ENEMY_Killclaw the Terrible|r don't pull him.
+    +Be aware of |cRXP_ENEMY_Killclaw the Terrible|r; don't pull him.
     .mob Killclaw the Terrible
 step << Rogue
     #arrowtext Talk to\n|cRXP_FRIENDLY_Coulston Nereus|r << Alliance
@@ -2366,7 +2366,7 @@ step
     #completewith next
     #label Successfully Stolen
     >>Use |T135788:0|t[Gallop](2) for speed.
-    *Use |T132261:0|t[Delivery](1) infront of |cRXP_FRIENDLY_Salanar the Horseman|r to finish this quest.
+    *Use |T132261:0|t[Delivery](1) in front of |cRXP_FRIENDLY_Salanar the Horseman|r to finish this quest.
     .complete 12680,1 --1/1 Horse Successfully Stolen
     .target Salanar the Horseman
 step
@@ -2374,7 +2374,7 @@ step
     #completewith Successfully Stolen
     .goto 124,55.69,43.2,-1
     .goto 124,55.87,40.65,-1
-    *|cRXP_WARN_Beaware of |cRXP_ENEMY_Stable Master Kitrik|r|r
+    *|cRXP_WARN_Be aware of |cRXP_ENEMY_Stable Master Kitrik|r|r
     .vehicle >>Click on a |cRXP_PICK_Horse|r
     .mob Havenshire Stallion
     .mob Havenshire Mare
@@ -2386,7 +2386,7 @@ step
     .goto 124,53.2,33.46,20,0
     .goto 124,51.63,35.89
     >>Use |T135788:0|t[Gallop](2) for speed.
-    *Use |T132261:0|t[Delivery](1) infront of |cRXP_FRIENDLY_Salanar the Horseman|r to finish this quest.
+    *Use |T132261:0|t[Delivery](1) in front of |cRXP_FRIENDLY_Salanar the Horseman|r to finish this quest.
     .complete 12680,1 --1/1 Horse Successfully Stolen
     .target Salanar the Horseman
 step
@@ -3927,7 +3927,7 @@ step
 step
     #arrowtext Use [Extra Action Button]\non |cRXP_FRIENDLY_The Lich King|r
     .goto 1602,49.55,89.74
-    >>Use the [Extra Action Button] |cRXP_WARN_infront of|r |cRXP_FRIENDLY_The Lich King|r.
+    >>Use the [Extra Action Button] |cRXP_WARN_in front of|r |cRXP_FRIENDLY_The Lich King|r.
     .complete 58877,1 --1/1 Fealty sworn
     .usespell 316907
     .target The Lich King
@@ -4708,7 +4708,7 @@ step
 step
     #completewith Ride to the Fel Hammer
     #title |cFFFCDC00Use Macro|r
-    .goto 672,62.52,44.91,8 >>Press the Macro in the "Active Items Frame" |cRXP_WARN_infront of|r |cRXP_FRIENDLY_Izal Whitemoon|r then talk to her.
+    .goto 672,62.52,44.91,8 >>Press the Macro in the "Active Items Frame" |cRXP_WARN_in front of|r |cRXP_FRIENDLY_Izal Whitemoon|r then talk to her.
     .macro Sit,134400 >>/sit
 step
     #arrowtext |cFFFCDC00Use the macro|r
@@ -6064,7 +6064,7 @@ step << Evoker
 	.target Dervishian
 step << Evoker
     #completewith coasting
-    .cast 378452 >>Use the [ExtraActionButton] to teleport infront of |cRXP_FRIENDLY_Dervishian|r
+    .cast 378452 >>Use the [ExtraActionButton] to teleport in front of |cRXP_FRIENDLY_Dervishian|r
     .use 195044
 step << Evoker
     #arrowtext Talk to\n|cRXP_FRIENDLY_Dervishian|r
@@ -6140,7 +6140,7 @@ step << Evoker
 	.target Scalecommander Emberthal
 step << Evoker
     #completewith Train Like We Fight
-    .cast 378452 >>Use the [ExtraActionButton] to teleport infront of |cRXP_FRIENDLY_Dervishian|r
+    .cast 378452 >>Use the [ExtraActionButton] to teleport in front of |cRXP_FRIENDLY_Dervishian|r
     .use 195044
 step << Evoker
     #arrowtext Talk to\n|cRXP_FRIENDLY_Scalecommander Emberthal|r
@@ -8047,7 +8047,7 @@ step
 step
     #arrowtext Click the Quest Turnin Pop-Up in your quest log
     .goto 378,79.82,39.31
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the Quest Turnin Pop-Up in your Questlog.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the Quest Turnin Pop-Up in your quest log.
     .turnin 29678 >>Turn in Shu, the Spirit of Water
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Aysa Cloudsinger|r
@@ -8542,7 +8542,7 @@ step
     .goto 378,32.27,51.76,30,0
     .goto 378,28.66,62.78,15,0
     .goto 378,28,64.26,15,0
-    .goto 378,24.65,69.80,150 >>Swim to the Shore and wait infront of the Temple.
+    .goto 378,24.65,69.80,150 >>Swim to the Shore and wait in front of the Temple.
     *>>Kill |cRXP_ENEMY_monsters|r while traveling (|cRXP_WARN_if able(class-dependent)|r.
     .timer 30,RP
 step
@@ -9284,7 +9284,7 @@ RXPGuides.RegisterGuide([[
 step
     #completewith Invasive Drifter
     .collecttoy 253629,3
-    +|cRXP_WARN_You can switch guides now to skip the starting zone(faster), or continue as normal|r.
+    +|cRXP_WARN_You can switch guides now to skip the starting zone (faster), or continue as normal|r.
     .clicknext RestedXP Speed Leveling\a) Harandar: Skip >>CLICK HERE FOR GUIDE << Alliance
 step
     #hidewindow
@@ -9624,7 +9624,7 @@ RXPGuides.RegisterGuide([[
 step
     #completewith Invasive Drifter
     .collecttoy 253629,3
-    +|cRXP_WARN_You can switch guides now to skip the starting zone(faster), or continue as normal|r.
+    +|cRXP_WARN_You can switch guides now to skip the starting zone (faster), or continue as normal|r.
     .clicknext RestedXP Speed Leveling\a) Hall of Awakening: Skip >>CLICK HERE FOR GUIDE << Alliance
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Dawn|r
@@ -10050,26 +10050,26 @@ step
     #arrowtext Click\n|cRXP_PICK_Pumpkin|r
     .goto 2451,53.06,59.22
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Pumpkin|r
-    *|cRXP_WARN_You can interact with them from a far|r
+    *|cRXP_WARN_You can interact with them from afar|r
     .complete 90885,1,1 --4/4 Prized Pumpkin recovered
 step
     #arrowtext Click\n|cRXP_PICK_Pumpkin|r
     .goto 2451,51.44,58.8
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Pumpkin|r
-    *|cRXP_WARN_You can interact with them from a far|r
+    *|cRXP_WARN_You can interact with them from afar|r
     .complete 90885,1,2 --4/4 Prized Pumpkin recovered
 step
     #arrowtext Click\n|cRXP_PICK_Pumpkin|r
     .goto 2451,52.73,60.93
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Pumpkin|r
-    *|cRXP_WARN_You can interact with them from a far|r
+    *|cRXP_WARN_You can interact with them from afar|r
     .complete 90885,1,3 --4/4 Prized Pumpkin recovered
 step
     #arrowtext Click\n|cRXP_PICK_Pumpkin|r
     #label Prized Pumpkin
     .goto 2451,53.96,60.07
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Pumpkin|r
-    *|cRXP_WARN_You can interact with them from a far|r
+    *|cRXP_WARN_You can interact with them from afar|r
     .complete 90885,1,4 --4/4 Prized Pumpkin recovered
 step
     #arrowtext Kill\n|cRXP_ENEMY_Kobolds|r and |cRXP_ENEMY_Ogres|r
@@ -11853,7 +11853,7 @@ step
 step
     #label HousingDraenei
     .zoneskip 97,1
-    .zone 2352 >>Teleport to a Neighbourhood with the House finder, not |T7252953:0|t[Teleport to Plot] then take the |cRXP_PICK_Stormwind Portal|r.
+    .zone 2352 >>Teleport to a Neighbourhood with the House finder, not |T7252953:0|t[Teleport to Plot], then take the |cRXP_PICK_Stormwind Portal|r.
     .link https://www.youtube.com/watch?v=uVkUB7z0njo >>CLICK HERE FOR VIDEO
     .macro House Teleport, 975747 >>/run C_Housing.StartTutorial()
 step << Alliance
@@ -15657,7 +15657,7 @@ step
     .target +Khurgorn Singefeather
 step
     .zoneskip 27,1
-    .zone 2352 >>Teleport to a Neighbourhood with the House finder, not |T7252953:0|t[Teleport to Plot] then take the |cRXP_PICK_Stormwind Portal|r.
+    .zone 2352 >>Teleport to a Neighbourhood with the House finder, not |T7252953:0|t[Teleport to Plot], then take the |cRXP_PICK_Stormwind Portal|r.
     .link https://www.youtube.com/watch?v=uVkUB7z0njo >>CLICK HERE FOR VIDEO
     .macro House Teleport, 975747 >>/run C_Housing.StartTutorial()
 step << Alliance
@@ -17355,7 +17355,7 @@ step
     #label Morgan the Collector
     .goto 37,71.18,81.13,20,0
     >>Kill |cRXP_ENEMY_Morgan the Collector|r
-    *|cRXP_WARN_Beaware you'll might aggro the entire house|r.
+    *|cRXP_WARN_Be aware you might aggro the entire house|r.
     .complete 147,1 --The Collector's Ring (1)
     .mob Morgan the Collector
 step
@@ -17371,7 +17371,7 @@ step
     .goto 37,71.02,80.67
     >>Kill |cRXP_ENEMY_Morgan the Collector|r
     *|TInterface/cursor/crosshair/interact.blp:17|tClick on the |cRXP_PICK_Chest|r behind the house; move on if it isn't there.
-    *|cRXP_WARN_Beaware you'll might aggro the entire house|r.
+    *|cRXP_WARN_Be aware you might aggro the entire house|r.
     .complete 147,1 --The Collector's Ring (1)
     .mob Morgan the Collector
 step
@@ -17734,7 +17734,7 @@ step
     #requires Woodland Protector
     .goto 58,44.98,83.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tarindrella|r.
-    *|cRXP_WARN_She might dissappear if you go too far away from the cave|r.
+    *|cRXP_WARN_She might disappear if you go too far away from the cave|r.
     .turnin 28725 >>Turn in The Woodland Protector
     .accept 28726 >>Accept Webwood Corruption
     .target Tarindrella
@@ -19219,7 +19219,7 @@ step
     .target Athridas Bearmantle
 step
     .zoneskip 57,1
-    .zone 2352 >>Teleport to a Neighbourhood with the House finder, not |T7252953:0|t[Teleport to Plot] then take the |cRXP_PICK_Stormwind Portal|r.
+    .zone 2352 >>Teleport to a Neighbourhood with the House finder, not |T7252953:0|t[Teleport to Plot], then take the |cRXP_PICK_Stormwind Portal|r.
     .link https://www.youtube.com/watch?v=uVkUB7z0njo >>CLICK HERE FOR VIDEO
     .macro House Teleport, 975747 >>/run C_Housing.StartTutorial()
 step << Alliance
@@ -22160,7 +22160,7 @@ step
     .goto 202,37.88,42.25,10,0
     .goto 202,36.85,45.7,10,0
     .goto 202,39.36,59.11
-    >>Wait infront of the Door(|cRXP_WARN_don't enter the house|r).
+    >>Wait in front of the Door (|cRXP_WARN_don't enter the house|r).
     .complete 24902,1 --Hunt for Sylvanas (1)
     .target Tobias Mistmantle
     .target Lorna Crowley
@@ -22326,7 +22326,7 @@ step
     #label Glaive Thrower
     >>Use |T236303:0|t[Glaive Barrage] (2) on cooldown; otherwise, use |T132330:0|t[Launch Glaive] (1).
     *Use |T136106:0|t[Double Speed] to sprint.
-    *Stay clear of the |cRXP_ENEMY_monsters|r. The |cRXP_FRIENDLY_Glaive Thrower|r is fragile; |cRXP_WARN_if it destroyed, return to pick up a new one|r.
+    *Stay clear of the |cRXP_ENEMY_monsters|r. The |cRXP_FRIENDLY_Glaive Thrower|r is fragile; |cRXP_WARN_if it is destroyed, return to pick up a new one|r.
     .complete 24681,1 --Orc Raider slain (40)
     .complete 24681,2 --Wolfmaw Outrider slain (8)
     .complete 24681,3 --Orcish War Machine slain (4)
@@ -22351,7 +22351,7 @@ step
     .goto 179,28.83,39.97,30,0
     >>Use |T236303:0|t[Glaive Barrage] (2) on cooldown; otherwise, use |T132330:0|t[Launch Glaive] (1).
     *Use |T136106:0|t[Double Speed] to sprint.
-    *Stay clear of the |cRXP_ENEMY_monsters|r. The |cRXP_FRIENDLY_Glaive Thrower|r is fragile; |cRXP_WARN_if it destroyed, return to pick up a new one|r.
+    *Stay clear of the |cRXP_ENEMY_monsters|r. The |cRXP_FRIENDLY_Glaive Thrower|r is fragile; |cRXP_WARN_if it is destroyed, return to pick up a new one|r.
     .complete 24681,1 --Orc Raider slain (40)
     .complete 24681,2 --Wolfmaw Outrider slain (8)
     .complete 24681,3 --Orcish War Machine slain (4)
@@ -23418,7 +23418,7 @@ step << !Shaman
 step << Rogue
     .zoneskip 1409,1
     #completewith RogueExilesEnd
-    +Beaware of |cRXP_ENEMY_Killclaw the Terrible|r don't pull him.
+    +Be aware of |cRXP_ENEMY_Killclaw the Terrible|r; don't pull him.
     .mob Killclaw the Terrible
 step << Rogue
     #arrowtext Talk to\n|cRXP_FRIENDLY_Drizza Sidestabber|r
@@ -23977,7 +23977,7 @@ step
     .target Naleidea Rivergleam
 step
     .zoneskip 2022,1
-    .zone 2351 >>Teleport to a Neighbourhood with the House finder, not |T7252953:0|t[Teleport to Plot] then take the |cRXP_PICK_Orgrimmar Portal|r.
+    .zone 2351 >>Teleport to a Neighbourhood with the House finder, not |T7252953:0|t[Teleport to Plot], then take the |cRXP_PICK_Orgrimmar Portal|r.
     .link https://www.youtube.com/watch?v=uVkUB7z0njo >>CLICK HERE FOR VIDEO
     .macro House Teleport, 975747 >>/run C_Housing.StartTutorial()
     .skyriding
@@ -24693,7 +24693,7 @@ step
     #optional
     #completewith next
     +|cRXP_WARN_If you want to make the most of RXP; Press Escape -> Options -> Keybindings -> RestedXP Guides -> Select and Bind Active Button 1,2,3 and 4. You can also do this with Targets|r.
-    *This will allow you to press a Keybind to use a Quest Items/target a relevant mob
+    *This will allow you to press a keybind to use a quest item or target a relevant mob
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Magistrix Erona|r
     #label SunstriderIsleFirstQuestCheck
@@ -25429,7 +25429,7 @@ step
 --     .zone 85 >>|cRXP_WARN_Mount up|r Take the portal to Orgrimmar.
 step
     .zoneskip 110,1
-    .zone 2351 >>Teleport to a Neighbourhood with the House finder, not |T7252953:0|t[Teleport to Plot] then take the |cRXP_PICK_Stormwind Portal|r.
+    .zone 2351 >>Teleport to a Neighbourhood with the House finder, not |T7252953:0|t[Teleport to Plot], then take the |cRXP_PICK_Stormwind Portal|r.
     .link https://www.youtube.com/watch?v=uVkUB7z0njo >>CLICK HERE FOR VIDEO
     .macro House Teleport, 975747 >>/run C_Housing.StartTutorial()
 
@@ -25479,7 +25479,7 @@ step << Orc
     #optional
     #completewith next
     +|cRXP_WARN_If you want to make the most of RXP; Press Escape -> Options -> Keybindings -> RestedXP Guides -> Select and Bind Active Button 1,2,3 and 4. You can also do this with Targets|r.
-    *This will allow you to press a Keybind to use a Quest Items/target a relevant mob
+    *This will allow you to press a keybind to use a quest item or target a relevant mob
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Kaltunk|r
     #label DurotarFirstQuestCheck
@@ -25863,7 +25863,7 @@ step << Troll
     #optional
     #completewith next
     +|cRXP_WARN_If you want to make the most of RXP; Press Escape -> Options -> Keybindings -> RestedXP Guides -> Select and Bind Active Button 1,2,3 and 4. You can also do this with Targets|r.
-    *This will allow you to press a Keybind to use a Quest Items/target a relevant mob
+    *This will allow you to press a keybind to use a quest item or target a relevant mob
 step << Orc
     #completewith next
     #label ReportToSenjinVillage
@@ -26646,7 +26646,7 @@ step
     #optional
     #completewith next
     +|cRXP_WARN_If you want to make the most of RXP; Press Escape -> Options -> Keybindings -> RestedXP Guides -> Select and Bind Active Button 1,2,3 and 4. You can also do this with Targets|r.
-    *This will allow you to press a Keybind to use a Quest Items/target a relevant mob
+    *This will allow you to press a keybind to use a quest item or target a relevant mob
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Chief Hawkwind|r
     #label MulgoreFirstQuestCheck
@@ -26954,7 +26954,7 @@ step
     .goto 7,48.44,70.79,30,0
     .goto 7,53.35,71.71,30,0
     >>Kill |cRXP_ENEMY_Palemane Gnolls|r.
-    >>|cRXP_WARN_Keep an eye out for the rares |cRXP_ENEMY_Snagglespear|r and |cRXP_ENEMY_Arra'chea|r (they give a quest worth of experience)|r.
+    >>|cRXP_WARN_Keep an eye out for the rares |cRXP_ENEMY_Snagglespear|r and |cRXP_ENEMY_Arra'chea|r (they give a quest's worth of experience)|r.
     .complete 14438,1 --15/15 Palemane Gnolls
     .mob Palemane Skinner
     .mob Palemane Tanner
@@ -27204,7 +27204,7 @@ step
     .target Ahab Wheathoof
 step << Warlock/Hunter
     #completewith next
-    +|cRXP_WARN_Reminder:Resummon your pet and set it to back to 'Assist'|r.
+    +|cRXP_WARN_Reminder: Resummon your pet and set it back to 'Assist'|r.
 step
     #completewith MulgoreCougarStalkerClaws
     >>Kill |cRXP_ENEMY_Flatland Cougars|r. Loot them for the |T133718:0|t[|cRXP_LOOT_Flatland Cougar Femur|r].
@@ -27293,7 +27293,7 @@ step
 step << Warlock/Hunter
     #requires DieMazzranache
     #completewith next
-    +|cRXP_WARN_Reminder:Resummon your pet and set it to back to 'Assist'|r.
+    +|cRXP_WARN_Reminder: Resummon your pet and set it back to 'Assist'|r.
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Maur Raincaller|r
     #label MulgoreMazzranacheTurnin
@@ -27409,7 +27409,7 @@ step
     #optional
     #completewith next
     +|cRXP_WARN_If you want to make the most of RXP; Press Escape -> Options -> Keybindings -> RestedXP Guides -> Select and Bind Active Button 1,2,3 and 4. You can also do this with Targets|r.
-    *This will allow you to press a Keybind to use a Quest Items/target a relevant mob
+    *This will allow you to press a keybind to use a quest item or target a relevant mob
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Agatha|r
     #label TirisfalFistQuestCheck
@@ -27576,7 +27576,7 @@ step
     .goto 465,52.38,56.41,5,0
     .goto 465,54.36,56.96
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tEnter the house and talk to |cRXP_FRIENDLY_Lilian Voss|r.
-    >>|cRXP_WARN_She can be down or upstairs. After talking to her (during the roleplay) you can already leave the house and return to |cRXP_FRIENDLY_Novice Elreth|r|r.
+    >>|cRXP_WARN_She can be downstairs or upstairs. After talking to her (during the roleplay) you can already leave the house and return to |cRXP_FRIENDLY_Novice Elreth|r|r.
     .complete 24961,1 --1/1 Show Lilian her reflection
     .target Lilian Voss
     .skipgossipid 38950
@@ -27806,7 +27806,7 @@ step
     .use 52059
 step << Warlock/Hunter
     #completewith next
-    +|cRXP_WARN_Reminder:Set your pet to back to 'Assist'|r.
+    +|cRXP_WARN_Reminder: Set your pet back to 'Assist'|r.
 step
     #completewith AScarletLetterA
     >>Kill |cRXP_ENEMY_Scarlet Warrior|r.
@@ -28312,7 +28312,7 @@ step
     #optional
     #completewith next
     +|cRXP_WARN_If you want to make the most of RXP; Press Escape -> Options -> Keybindings -> RestedXP Guides -> Select and Bind Active Button 1,2,3 and 4. You can also do this with Targets|r.
-    *This will allow you to press a Keybind to use a Quest Items/target a relevant mob
+    *This will allow you to press a keybind to use a quest item or target a relevant mob
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Sassy Hardwrench|r
     #label KezanFirstQuestCheck
@@ -29910,7 +29910,7 @@ step
     .goto 174,43.86,25.16
     .complete 25251,1 --1/1 Ultimate Footbomb Uniform
 step
-    >>Target |cRXP_ENEMY_Trade Prince Gallywix|r and all use your abilities on cooldown
+    >>Target |cRXP_ENEMY_Trade Prince Gallywix|r and use all your abilities on cooldown
     .goto 174,41.87,17.61,10,0
     .goto 174,43.4,19.9
     .complete 25251,2 --1/1 Trade Prince Gallywix dealt with
@@ -30315,7 +30315,7 @@ step
     .isNotOnQuest 44184
     .isInScenario 1189
     #completewith Demons
-    >>Kill |cRXP_ENEMY_Demons|r and |cRXP_ENEMY_Felguards|r |cRXP_WARN_infront of each pillar|r.
+    >>Kill |cRXP_ENEMY_Demons|r and |cRXP_ENEMY_Felguards|r |cRXP_WARN_in front of each pillar|r.
     .scenario 2896,1
     .scenario 2896,2
     .mob Fel Lord Razzar
@@ -30337,7 +30337,7 @@ step
     .isNotOnQuest 44184
     .isInScenario 1189
     #label Demons
-    >>Kill |cRXP_ENEMY_Demons|r and |cRXP_ENEMY_Felguards|r |cRXP_WARN_infront of each pillar|r.
+    >>Kill |cRXP_ENEMY_Demons|r and |cRXP_ENEMY_Felguards|r |cRXP_WARN_in front of each pillar|r.
     .scenario 2896,1
     .scenario 2896,2
     .mob Fel Lord Rakkan

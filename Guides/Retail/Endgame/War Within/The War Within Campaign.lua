@@ -639,7 +639,7 @@ step
     .goto 2248,55.47,63.17,120,0
     .goto 2248,59.23,62.56,120,0
     .goto 2248,61.27,62.94,120,0
-    >>Use |T4640498:0|t[Skwyard Ascent] from |cRXP_WARN_far and near|r to hit the |cRXP_PICK_Targets|r,
+    >>Use |T4640498:0|t[Skyward Ascend] from |cRXP_WARN_far and near|r to hit the |cRXP_PICK_Targets|r,
     --x |cRXP_WARN_even when they disappear; they will still count toward quest credit.|r
     *For additional vigor, fly through the green orbs on your path and use |T4640489:0|t[Second Wind] whenever it's off cooldown.
     .complete 81912,1 --15/15 Targets hit
@@ -657,7 +657,7 @@ step
 step
     #arrowtext Use [Skyward Ascend]\non |cRXP_PICK_Shalemaws|r
     .goto 2248,68.96,70.62
-    >>Use |T4640498:0|t[Skwyard Ascent] from |cRXP_WARN_far and near|r to hit |cRXP_PICK_Shalemaws|r
+    >>Use |T4640498:0|t[Skyward Ascend] from |cRXP_WARN_far and near|r to hit |cRXP_PICK_Shalemaws|r
     *For additional vigor, fly through the green orbs on your path and use |T4640489:0|t[Second Wind] whenever it's off cooldown.
     .complete 81913,1 --50/50 Shalemaws blasted
     .mob Tiderusher Shalemaw
@@ -707,7 +707,7 @@ step
 step
     #arrowtext Use [Skyward Ascend]\non |cRXP_PICK_Colossal Titan Construct|r
     .goto 2248,60.97,76.58
-    >>Use |T4640498:0|t[Skwyard Ascent] to hit the |cRXP_PICK_Colossal Titan Construct|r
+    >>Use |T4640498:0|t[Skyward Ascend] to hit the |cRXP_PICK_Colossal Titan Construct|r
     *Use |T4640490:0|t[Surge Forward] to shield yourself from incoming attacks.
     *For additional vigor, fly through the green orbs on your path and use |T4640489:0|t[Second Wind] whenever it's off cooldown.
     .complete 79157,2 --1/1 Colossal Titan Construct slain
@@ -1480,7 +1480,7 @@ step
     .cast 451809 >>Click on the |cRXP_PICK_Power Substation Console|r
     .timer 19,RP
 step
-    >>Wait infront of the Pipe Room
+    >>Wait in front of the Pipe Room
     .complete 79028,2 --1/1
     .goto 2214,51.93,37.23
 step
@@ -2506,7 +2506,7 @@ step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Angorla|r
     .goto 2369,71.09,44.12
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Angorla|r and finish the puzzle.
-    *|cRXP_WARN_Rearrange the positions so that none of the connecting intersect|r.
+    *|cRXP_WARN_Rearrange the positions so that none of the connecting lines intersect|r.
     .skipgossipid 124757 -- do It
     .complete 84728,1 --1/1 Cracked Citrine Repaired
     --x .skipgossipid 131242 -- wait
@@ -6950,7 +6950,7 @@ step
     #completewith Ethereal Siphon Barrier
     .goto 2371,54.10,48.13
     .cast 1218640 >>Use the |T4913234:0|t[|cRXP_WARN_ExtraActionButton|r] |cRXP_WARN_on the barrier|r.
-    *|cRXP_WARN_Make sure to wait infront of the barrier for 1-2second before moving on|r
+    *|cRXP_WARN_Make sure to wait in front of the barrier for 1-2 seconds before moving on|r
     .timer 20,RP
 step
     #arrowtext Use [|cRXP_WARN_ExtraActionButton|r]\non |cRXP_PICK_Shadowguard Cannons|r
@@ -8439,19 +8439,19 @@ step
     #arrowtext Click\n|cRXP_PICK_Void Focus|r
     .goto 2371,60.82,28.13,5,0
     .goto 2371,60.85,28.2
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Void Focus|r |cRXP_WARN_from a far|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Void Focus|r |cRXP_WARN_from afar|r.
     .complete 85212,2,1 --3/3 Void Focus placed
 step
     #arrowtext Click\n|cRXP_PICK_Void Focus|r
     .goto 2371,60.9,27.62,5,0
     .goto 2371,60.93,27.51
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Void Focus|r |cRXP_WARN_from a far|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Void Focus|r |cRXP_WARN_from afar|r.
     .complete 85212,2,2 --3/3 Void Focus placed
 step
     #arrowtext Click\n|cRXP_PICK_Void Focus|r
     .goto 2371,60.64,27.81,5,0
     .goto 2371,60.56,27.85
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Void Focus|r |cRXP_WARN_from a far|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Void Focus|r |cRXP_WARN_from afar|r.
     .complete 85212,2,3 --3/3 Void Focus placed
 step
     #completewith next
@@ -8815,7 +8815,7 @@ step
 step
     #arrowtext Click\n|cRXP_PICK_Grapple Point|r
     .goto 1543,26.78,14.18
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Grapple Point|r on the structure infront of you(|cRXP_WARN_it's high up|r)
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Grapple Point|r on the structure in front of you (|cRXP_WARN_it's high up|r).
     .complete 84942,1 --1/1 Use the Grapple Point to ascend the tower (Optional)
 step
     #arrowtext Kill\n|cRXP_ENEMY_Living Gateway|r

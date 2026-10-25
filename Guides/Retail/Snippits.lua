@@ -2858,7 +2858,7 @@ step
     #arrowtext Use [Spectral Sight]
     .isInScenario 961
     .goto 676,21.92,61.12
-    >>Use |T1247266:0|t[Spectral Sight] infront of the cave.
+    >>Use |T1247266:0|t[Spectral Sight] in front of the cave.
     .scenario 1941,1 --Find Caria's trail.
     .usespell 188501
 step
@@ -6152,7 +6152,7 @@ step
     >>|cRXP_WARN_Wait for the Roleplay|r.
     .complete 42007,1 --1/1 Activate the communication device
 step
-    >>Click the Quest Turnin Pop-Up in your Questlog.
+    >>Click the Quest Turnin Pop-Up in your quest log.
     .turnin 42007 >>Turn in A Forgotten Enemy
     .accept 42008 >>Accept Eyes of the Dragon
 step
@@ -6179,7 +6179,7 @@ step
     #title |cFFFCDC00Follow the Arrow|r
     .complete 42008,3 --1/1 Nexus foundation scouted
 step
-    >>Click the Quest Turnin Pop-Up in your Questlog.
+    >>Click the Quest Turnin Pop-Up in your quest log.
     .turnin 42008 >>Turn in Eyes of the Dragon
     .accept 42009 >>Accept Harnessing the Arcane
 step
@@ -6195,7 +6195,7 @@ step
     .mob Arcane Aberrant
     .mob Arcane Aberrant
 step
-    >>Click the Quest Turnin Pop-Up in your Questlog.
+    >>Click the Quest Turnin Pop-Up in your quest log.
     .turnin 42009 >>Turn in Harnessing the Arcane
     .accept 42010 >>Accept Arcane Unleashed
 step
@@ -6214,7 +6214,7 @@ step
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Focused Void|r
     .complete 42010,2 --1/1 West Surge Needle destroyed
 step
-    >>Click the Quest Turnin Pop-Up in your Questlog.
+    >>Click the Quest Turnin Pop-Up in your quest log.
     .turnin 42010 >>Turn in Arcane Unleashed
     .accept 42011 >>Accept The Nexus Vault
 step
@@ -7158,7 +7158,7 @@ step
     .isOnQuest 42479
     .goto 630,26.8,49.03
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Fel Dampening Ward|r
-    *|cRXP_WARN_Try flying some parts of this scenario allow it|r.
+    *|cRXP_WARN_Try flying; some parts of this scenario allow it|r.
     .scenario 2528,1,1 --Wards set up
     .target Fel Dampening Ward
 step
@@ -7166,7 +7166,7 @@ step
     .isInScenario 1122
     .goto 630,29.96,51.69
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Fel Dampening Ward|r
-    *|cRXP_WARN_Try flying some parts of this scenario allow it|r.
+    *|cRXP_WARN_Try flying; some parts of this scenario allow it|r.
     .scenario 2528,1,2 --Wards set up
     .target Fel Dampening Ward
 step
@@ -7174,7 +7174,7 @@ step
     .isInScenario 1122
     .goto 630,30.11,48.33
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Fel Dampening Ward|r
-    *|cRXP_WARN_Try flying some parts of this scenario allow it|r.
+    *|cRXP_WARN_Try flying; some parts of this scenario allow it|r.
     .scenario 2528,1,3 --Wards set up
     .target Fel Dampening Ward
 step
@@ -8119,7 +8119,7 @@ step
 step
     .isOnQuest 41003
     #completewith Aspersius
-    +Use |T1360980:0|t[Vivify] on |cRXP_FRIENDLY_Taran Zhu|r and your team to keep them alive or to resurrect.
+    +Use |T1360980:0|t[Vivify] on |cRXP_FRIENDLY_Taran Zhu|r and your team to keep them alive or resurrect them.
     *|cRXP_WARN_It's important as you can't progress with him being dead|r.
     .target Taran Zhu
 step
@@ -8490,7 +8490,7 @@ step
     #completewith Tornadoes
     .isInScenario 983
     .goto 716,29.91,47.18
-    .countdown 21 >>Wait infront of the Tornadoes
+    .countdown 21 >>Wait in front of the Tornadoes
     .timer 21
 step
     #requires Tornadoes
@@ -9137,7 +9137,7 @@ step
     .goto 20,37.74,64.36
     .isInScenario 1092
     >>Kill |cRXP_ENEMY_Masterless Faceless One|r, |cRXP_ENEMY_Flesh Spawn|r and |cRXP_ENEMY_G'norz the Crazed|r
-    *|cRXP_WARN_heal your team when they’re injured, you can't continue otherwise|r.
+    *|cRXP_WARN_heal your team when they’re injured; you can't continue otherwise|r.
     .scenario 2447,1 --Tyr's Crypt cleared.
     .timer 65,RP
     .mob Masterless Faceless Corrupter
@@ -9147,7 +9147,7 @@ step
     #arrowtext Wait for the roleplay
     .isInScenario 1092
     .goto 20,37.64,65.74
-    >>|cRXP_WARN_Wait for the Roleplay|r  — |cRXP_WARN_heal your team when they’re injured, you can't continue otherwise|r.
+    >>|cRXP_WARN_Wait for the Roleplay|r  — |cRXP_WARN_heal your team when they’re injured; you can't continue otherwise|r.
     .scenario 2448,1 --Listen to Travard.
 step
     .goto 20,38.77,77.48,15,0
@@ -9156,14 +9156,14 @@ step
     .goto 20,52.02,74.87,15,0
     .goto 20,62.67,74.52
     .isInScenario 1092
-    >>Escort |cRXP_FRIENDLY_Travard|r — |cRXP_WARN_heal your team when they’re injured, you can't continue otherwise|r.
+    >>Escort |cRXP_FRIENDLY_Travard|r — |cRXP_WARN_heal your team when they’re injured; you can't continue otherwise|r.
     .scenario 2449,1 --Find the final piece to the ritual.
     .mob Masterless Faceless Corrupter
 step
     #arrowtext Kill\n|cRXP_ENEMY_Horrific Aberration|r
     .isInScenario 1092
     .goto 20,62.67,74.52
-    >>Kill |cRXP_ENEMY_Horrific Aberration|r — |cRXP_WARN_heal your team when they’re injured, you can't continue otherwise|r.
+    >>Kill |cRXP_ENEMY_Horrific Aberration|r — |cRXP_WARN_heal your team when they’re injured; you can't continue otherwise|r.
     .scenario 2453,1,1
     .timer 30,RP
     .mob Horrific Aberration
@@ -9520,7 +9520,7 @@ step
     >>|cRXP_WARN_Wait for the Roleplay|r.
     .complete 42005,3 --1/1 Complete the ritual
 step
-    .cast 441154 >>Use|T134491:0|t[Nostwin's Voucher]
+    .cast 441154 >>Use |T134491:0|t[Nostwin's Voucher]
     .itemcount 238727,1
     .use 238727
 step
@@ -9560,7 +9560,7 @@ step
     #completewith Inna the Cryptstalker
     .isInScenario 1082
     .goto 635,74.6,58.74,25 >>Kill the |cRXP_ENEMY_Gatekeepers|r
-    *If needed pickup a spear and use the ExtraActionButton to deal a lot of damage.
+    *If needed, pick up a spear and use the ExtraActionButton to deal a lot of damage.
     .mob Inna the Cryptstalker
     .mob Shae
 step
@@ -11589,7 +11589,7 @@ step
 step
     #arrowtext Click the Quest Turnin Pop-Up in your quest log
     .goto 47,19.06,53.88
-    >>Click the Quest Turnin Pop-Up in your Questlog.
+    >>Click the Quest Turnin Pop-Up in your quest log.
     .turnin 42502 >>Turn in No Sanctuary
 step
     >>Use |T254294:0|t[Blasted Lands Scroll]
@@ -11604,7 +11604,7 @@ step
 step
     #arrowtext Click the Quest Turnin Pop-Up in your quest log
     .goto 17,37.01,30.04
-    >>Click the Quest Turnin Pop-Up in your Questlog.
+    >>Click the Quest Turnin Pop-Up in your quest log.
     .turnin 42501 >>Turn in Finishing the Job
     .accept 42503 >>Accept Codebreaker
 step
@@ -11637,7 +11637,7 @@ step
 step
     #arrowtext Click the Quest Turnin Pop-Up in your quest log
     .goto 17,37.21,29.05
-    >>Click the Quest Turnin Pop-Up in your Questlog.
+    >>Click the Quest Turnin Pop-Up in your quest log.
     .turnin 42503 >>Turn in Codebreaker
     .accept 42539 >>Accept Cloak and Dagger
     .target Malton
@@ -11729,7 +11729,7 @@ step
 step
     #arrowtext Click the Quest Turnin Pop-Up in your quest log
     .goto 47,71.91,47.69
-    >>Click the Quest Turnin Pop-Up in your Questlog.
+    >>Click the Quest Turnin Pop-Up in your quest log.
     .turnin 42539 >>Turn in Cloak and Dagger
     .accept 42568 >>Accept Preparation
     .target Malton
@@ -11786,7 +11786,7 @@ step
     .scenario 2548,1 --Confront Mathias Shaw.
 step
     #completewith Obtain the Kingslayers
-    +Enter |cRXP_WARN_Stealth|r and avoid guards, especially those with eye markers they detect stealth better.
+    +Enter |cRXP_WARN_Stealth|r and avoid guards, especially those with eye markers; they detect stealth better.
 step
     #arrowtext Follow the arrow
     .isInScenario 1123
@@ -15948,7 +15948,7 @@ step
     .target Odyn
 step
     #completewith Axe and You Shall Receive
-    +|cRXP_WARN_Check you have a usable weapon equipped; if not, equip one until you get your artifact or switch to spec you have already artifact from|r.
+    +|cRXP_WARN_Check you have a usable weapon equipped; if not, equip one until you get your artifact or switch to a specialization whose artifact you already have|r.
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Odyn|r
     .goto 695,58.36,85.16

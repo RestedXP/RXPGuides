@@ -843,7 +843,7 @@ step
     .wpradius 2404,53.29,50.39,100,0
     .goto 2403,52.00,82.81
     .wpradius 2403,52.00,82.81,100,0
-    >>Select DPS,Healer or Tank Role for your companion.
+    >>Select the DPS, Healer, or Tank role for your companion.
     .complete 88803,1 --1/1 Use the hourglass to summon aid
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Bronze Hourglass|r

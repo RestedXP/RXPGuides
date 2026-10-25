@@ -91,7 +91,7 @@ step
 step
     #completewith next
     +From the Life-Binder Observatory: Just glide. Try to stay as high as possible while gliding at full speed
-    *From somewhere else: Fly to the Obsidian Throne, wait form 4 vigor charges and use |T4640498:0|t[Skyward Ascend] to reach the tower
+    *From somewhere else: Fly to the Obsidian Throne, wait for 4 vigor charges and use |T4640498:0|t[Skyward Ascend] to reach the tower
 step
     #arrowtext Dragon Glyph: Obsidian Throne
     >>Use |T4640498:0|t[Skyward Ascend] only when you need to fly up the mountain.
@@ -150,14 +150,14 @@ step
     *From somewhere else: An easy way is to get to Ruby Life Pools and fly directly to the glyph
 step
     #title Dragon Glyph: Flashfrost Enclave
-    >>|cRXP_WARN_Spend all your already collected glyphs and wait until you have at least 3 vigar charges afterwards|r.
+    >>|cRXP_WARN_Spend all your already collected glyphs and wait until you have at least 3 vigor charges afterwards|r.
     .line 2022,54.43,74.22,58.09,78.58
     .goto 2022,58.09,78.58
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 16575,3 >>Pick up the Dragon Glyph: Flashfrost Enclave above the enclave entrance
 step
     #completewith next
-    +From the Flashfrost Enclave: Wait until you have at least 3 vigar charges. Try to save at least one vigor charge
+    +From the Flashfrost Enclave: Wait until you have at least 3 vigor charges. Try to save at least one vigor charge
     *From somewhere else: The easiest way is to fly from Valdrakken
 step
     #label WakingShoreDragonGlyphs
@@ -198,7 +198,7 @@ step
     .achievement 16576,9 >>Pick up the Dragon Glyph: Rusza'thar Reach above the tower
 step
     #completewith next
-    +From the Rusza'thar Reach: Try to stay as high as possible while gliding at full speed. You should be able recharge at least 2 vigor on the way. Use |T4640498:0|t[Skyward Ascend] as often as necessary to get to the top when you reach the mountain
+    +From the Rusza'thar Reach: Try to stay as high as possible while gliding at full speed. You should be able to recharge at least 2 vigor on the way. Use |T4640498:0|t[Skyward Ascend] as often as necessary to get to the top when you reach the mountain
     *From somewhere else: Fly to Maruukai, wait for 4 vigor charges and use |T4640498:0|t[Skyward Ascend] to reach the glyph
 step
     #title Dragon Glyph: Ohn'ahra's Roost
@@ -208,7 +208,7 @@ step
     .achievement 16576,1 >>Pick up the Dragon Glyph: Ohn'ahra's Roost at the top of the mountain above the statue
 step
     #completewith next
-    +From the Ohn'ahra's Roost: Try to stay as high as possible while gliding at full speed. You should be able recharge all your vigor on the way. Use |T4640498:0|t[Skyward Ascend] 2-3 times to get to the top
+    +From the Ohn'ahra's Roost: Try to stay as high as possible while gliding at full speed. You should be able to recharge all your vigor on the way. Use |T4640498:0|t[Skyward Ascend] 2-3 times to get to the top
     *From somewhere else: Get to the bottom of the mountain, wait for your vigor charges and spam |T4640498:0|t[Skyward Ascend] until you're at the top
 step
     #title Dragon Glyph: Nokhud Hold
@@ -218,7 +218,7 @@ step
     .achievement 16576,2 >>Pick up the Dragon Glyph: Nokhud Hold at the top of the mountain
 step
     #completewith next
-    +From the Nokhud Hold: Try to stay as high as possible while gliding at full speed. You should be able recharge all your vigor on the way
+    +From the Nokhud Hold: Try to stay as high as possible while gliding at full speed. You should be able to recharge all your vigor on the way
     *From somewhere else: Fly to the Shady Sanctuary. Wait for your vigor charges and spam |T4640498:0|t[Skyward Ascend] until you're at the top.
 step
     #title Dragon Glyph: Emerald Gardens
@@ -239,7 +239,7 @@ step
     .achievement 16576,4 >>Pick up the Dragon Glyph: The Eternal Kurgans in the air
 step
     #completewith next
-    +From the Eternal Kurgans: Wait until you have 3 vigar charges. Try to stay as high as possible while gliding at full speed. Use |T4640498:0|t[Skyward Ascend] only when you really need to
+    +From the Eternal Kurgans: Wait until you have 3 vigor charges. Try to stay as high as possible while gliding at full speed. Use |T4640498:0|t[Skyward Ascend] only when you really need to
     *From somewhere else: Fly to Teerakai, wait for your vigor charges and spam |T4640498:0|t[Skyward Ascend] until you reach the glyph
 step
     #title Dragon Glyph: Szar Skeleth
@@ -279,7 +279,7 @@ step
     .achievement 16576,10 >>Pick up the Dragon Glyph: Windsong Rise in the air
 step
     #completewith next
-    +From the Windsong Rise: Try to stay as high as possible while gliding at full speed. You should be able recharge most of your vigor on the way. 2-3 uses of |T4640498:0|t[Skyward Ascend] should be enough but you can use more if necessary
+    +From the Windsong Rise: Try to stay as high as possible while gliding at full speed. You should be able to recharge most of your vigor on the way. 2-3 uses of |T4640498:0|t[Skyward Ascend] should be enough but you can use more if necessary
     *From somewhere else: Fly to the Cobalt Assembly, wait for 1-2 vigor charges and spam |T4640498:0|t[Skyward Ascend] until you reach the glyph
 step
     #title Dragon Glyph: Dragonsprings Summit
@@ -306,7 +306,7 @@ step
     .achievement 16577,11 >>Pick up the Dragon Glyph: Forkriver Crossing a few yards above the ground
 step
     #completewith next
-    +From the Forkriver Crossing: Try to use as little vigor charges as possible
+    +From the Forkriver Crossing: Try to use as few vigor charges as possible
     *From somewhere else: Fly to the Cobalt Assembly and use |T4640498:0|t[Skyward Ascend] to reach the glyph
 step
     #title Dragon Glyph: The Fallen Course
@@ -316,7 +316,7 @@ step
     .achievement 16577,12 >>Pick up the Dragon Glyph: The Fallen Course a few yards above the ground
 step
     #completewith next
-    +From The Fallen Course: Try to stay as high as possible while gliding at full speed. You should be able recharge 1-2 vigor on the way. Use |T4640498:0|t[Skyward Ascend] 2-3 times to stay high enough
+    +From The Fallen Course: Try to stay as high as possible while gliding at full speed. You should be able to recharge 1-2 vigor on the way. Use |T4640498:0|t[Skyward Ascend] 2-3 times to stay high enough
     *From somewhere else: Get to the bottom of the mountain, wait for your vigor charges and spam |T4640498:0|t[Skyward Ascend] until you're at the top. It's possible that you have to recharge your vigor on the way up
 step
     #title Dragon Glyph: Rhonin's Shield
@@ -339,7 +339,7 @@ step
     .achievement 16577,10 >>Pick up the Dragon Glyph: Vakthros Range above the frozen sea
 step
     #completewith next
-    +From the Vakthros Range: Try to fly at full speed by aiming down. You should be able recharge your vigor on the way
+    +From the Vakthros Range: Try to fly at full speed by aiming down. You should be able to recharge your vigor on the way
     *From somewhere else: Follow the way to the glyph from Rhonin's Shield or Camp Nowhere and use |T4640498:0|t[Skyward Ascend] to reach the glyph. You may have to recharge your vigor occasionally
 step
     #title Dragon Glyph: Lost Ruins
@@ -359,7 +359,7 @@ step
     .achievement 16577,3 >>Pick up the Dragon Glyph: Ruins of Karnthar at the top of tower behind the broken wall
 step
     #completewith next
-    +From the Ruins of Karnthar: Try to fly at full speed by aiming down. You should be able recharge your vigor on the way
+    +From the Ruins of Karnthar: Try to fly at full speed by aiming down. You should be able to recharge your vigor on the way
     *From somewhere else: Fly to Camp Nowhere, use |T4640498:0|t[Skyward Ascend] one time and fly down to the glyph
 step
     #title Dragon Glyph: Imbu
@@ -388,7 +388,7 @@ step
     .isQuestAvailable 65852
     #completewith TheAzureSpanDragonGlyphAzureArchives
     +|cRXP_WARN_Wait at the bottom of the tower until your vigor has recharged|r.
-    *Use |T4640498:0|t[Skyward Ascend] four times. You can let your vigor charges recharge on a lower plataeu if necessary
+    *Use |T4640498:0|t[Skyward Ascend] four times. You can let your vigor charges recharge on a lower plateau if necessary
     .goto 2024,40.63,59.45,30,0
 step
     #label TheAzureSpanDragonGlyphAzureArchives
@@ -400,7 +400,7 @@ step
     .achievement 16577,2 >>Pick up the Dragon Glyph: Azure Archives in the air above the arcane tower
 step
     #completewith next
-    +From the Azure Archives: Try to stay as high as possible while gliding at full speed. You should be able recharge most of your vigor. Use |T4640498:0|t[Skyward Ascend] only once if possible
+    +From the Azure Archives: Try to stay as high as possible while gliding at full speed. You should be able to recharge most of your vigor. Use |T4640498:0|t[Skyward Ascend] only once if possible
     *From somewhere else: Fly to the Three-Falls Lookout and then glide down to the glyph
 step
     #title Dragon Glyph: Brackenhide Hollow
@@ -410,7 +410,7 @@ step
     .achievement 16577,5 >>Pick up the Dragon Glyph: Brackenhide Hollow in the air
 step
     #completewith next
-    +From Brackenhide Hollow: Try to stay as high as possible while gliding at full speed. You should be able recharge most of your vigor. Use |T4640498:0|t[Skyward Ascend] 3-5 times. Aim a little higher when using the ability
+    +From Brackenhide Hollow: Try to stay as high as possible while gliding at full speed. You should be able to recharge most of your vigor. Use |T4640498:0|t[Skyward Ascend] 3-5 times. Aim a little higher when using the ability
     *From somewhere else: Fly to the Three-Falls Lookout and then use |T4640498:0|t[Skyward Ascend] to reach the glyph
 step
     #title Dragon Glyph: Creektooth Den
@@ -420,7 +420,7 @@ step
     .achievement 16577,6 >>Pick up the Dragon Glyph: Creektooth Den at the top of the tree
 step
     #completewith next
-    +From the Creektooth Den: Wait at the base of the tower until all vigar charges are recharged. Use |T4640498:0|t[Skyward Ascend] as often as possible but always wait 2 seconds between each cast.
+    +From the Creektooth Den: Wait at the base of the tower until all vigor charges are recharged. Use |T4640498:0|t[Skyward Ascend] as often as possible but always wait 2 seconds between each cast.
     *From somewhere else: Fly to the Cobalt Assembly and use all your vigor charges to reach the glyph
 step
     #title Dragon Glyph: Cobalt Assembly
@@ -448,7 +448,7 @@ step
     .achievement 16578,3 >>Pick up the Dragon Glyph: South Hold Gate at the top of the tower
 step
     #completewith next
-    +From anywhere: Use|T4640498:0|t[Skyward Ascend] as much as you can to get ontop of the mountain. You probably have to stop at some points to recharge you vigor
+    +From anywhere: Use |T4640498:0|t[Skyward Ascend] as much as you can to get on top of the mountain. You probably have to stop at some points to recharge your vigor
 step
     #title Dragon Glyph: Stormshroud Peak
     .line 2025,35.5,85.5,46.0,73.0
@@ -476,7 +476,7 @@ step
     .achievement 16578,11 >>Pick up the Dragon Glyph: Gelikyr Overlook above the lower bridge
 step
     #completewith next
-    +From anywhere: Use|T4640498:0|t[Skyward Ascend] 2-3 times to reach the glyph
+    +From anywhere: Use |T4640498:0|t[Skyward Ascend] 2-3 times to reach the glyph
 step
     #title Dragon Glyph: Passage of Time
     .line 2025,52.7,67.4,55.6,72.1
@@ -486,7 +486,7 @@ step
 step
     #completewith next
     .goto 2025,57.46,66.55,50,0
-    +From anywhere: Fly through the tornado for an updraft. Use|T4640498:0|t[Skyward Ascend] four to five times to reach the glyph
+    +From anywhere: Fly through the tornado for an updraft. Use |T4640498:0|t[Skyward Ascend] four to five times to reach the glyph
 step
     #title Dragon Glyph: Tyrhold
     .line 2025,55.6,72.1,61.5,56.6
@@ -505,7 +505,7 @@ step
     .achievement 16578,5 >>Pick up the Dragon Glyph: Algeth'era on top of the tower
 step
     #completewith next
-    +From anywhere: Use|T4640498:0|t[Skyward Ascend] four to five times. You may have to let your vigor charges recharge
+    +From anywhere: Use |T4640498:0|t[Skyward Ascend] four to five times. You may have to let your vigor charges recharge
 step
     #title Dragon Glyph: Algeth'ar Academy
     .line 2025,49.8,40.2,62.4,40.4
@@ -544,7 +544,7 @@ step
     .achievement 16578,10 >>Pick up the Dragon Glyph: Thaldraszus Apex on top of the tower
 step
     #completewith next
-    +From the Thaldraszus Apex: It should be enough to just glide down. you can use Surge Forward to speed it up.
+    +From the Thaldraszus Apex: It should be enough to just glide down. You can use Surge Forward to speed it up.
     *From somewhere else: Fly to the Temporal Conflux and use |T4640498:0|t[Skyward Ascend] to reach the glyph
 step
     #title Dragon Glyph: Temporal Conflux
@@ -567,7 +567,7 @@ step
     #completewith next
     .hs >> Use your Hearthstone IF it's in Valdrakken
 step
-    >>This Quest should pop up in your Questlog when you enter Valdrakken if it isn't already in your Questlog or you have completed it
+    >>This quest should pop up in your quest log when you enter Valdrakken, unless it is already in your quest log or you have completed it
     .accept 74381 >>Accept Hidden Legacies
     .goto 2112,60.80,39.73
 step
@@ -706,7 +706,7 @@ step
     .achievement 19306,6 >> Pick up the Dragon Glyph: The Throughway beneath the cave ceiling
 step
     #completewith next
-    +Use |T4640498:0|t[Skyward Ascend] to ascend and |T2103880:0|t[Surge Forward] to speed up .
+    +Use |T4640498:0|t[Skyward Ascend] to ascend and |T2103880:0|t[Surge Forward] to speed up.
     *|cRXP_WARN_Be sure not to use up all of your Vigor charges at once. If you need to recharge Vigor try gliding instead|r.
 step
     #title Dragon Glyph: Loamm
