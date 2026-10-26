@@ -1545,7 +1545,7 @@ step
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 61582,5
 step
-    .goto 2413,73.08,25.87
+    .goto 2413,59.69,43.94
     >>Use |T4640490:0|t[Surge Forward] for a speed boost
     *Use |T4640498:0|t[Skyward Ascent] for an uplift.
     *Use |T4640489:0|t[Second Wind] to renew vigor charges.
