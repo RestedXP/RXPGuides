@@ -6383,7 +6383,8 @@ function addon.functions.cooldown(self, text, cooldownType, id, remaining,
     if class == "SHAMAN" and IsPlayerSpell(556) and id == 6948 and cooldownType ==
         "item" then
         local arStart, arDuration = GetSpellCooldown(556)
-        if not addon.IsSecretValue(arStart) and not addon.IsSecretValue(arDuration) then
+        if arStart and arDuration and not addon.IsSecretValue(arStart) and
+            not addon.IsSecretValue(arDuration) then
             endTime = math.min(endTime, arStart + arDuration)
         end
     end
