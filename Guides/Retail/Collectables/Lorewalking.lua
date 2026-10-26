@@ -11,7 +11,7 @@ RXPGuides.RegisterGuide([[
 
 step << Alliance
     #arrowtext Talk to\n|cRXP_FRIENDLY_Lorewalker Cho|r
-    .isOnQuest 90705
+    .isOnQuest 90705 --Lorewalking
     .goto 84,64.24,16.10,-1
     .goto 2339,49.62,31.52,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorewalker Cho|r |cRXP_WARN_in Dornogal or Stormwind|r.
@@ -20,7 +20,7 @@ step << Alliance
     .target Lorewalker Cho
 step << Horde
     #arrowtext Talk to\n|cRXP_FRIENDLY_Lorewalker Cho|r
-    .isOnQuest 90705
+    .isOnQuest 90705 --Lorewalking
     .goto 85,54.24,56.59,-1
     .goto 2339,49.62,31.52,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorewalker Cho|r |cRXP_WARN_in Dornogal or Orgrimmar|r.
@@ -59,7 +59,7 @@ step
     .skipgossipid 124809
     .target Lorewalker Cho
 step
-    .isOnQuest 84371
+    .isOnQuest 84371 --Lorewalking: The Blade and the High Priest
     .zone 18 >> Enter Tirisfal Glades
 step
     #completewith next
@@ -81,30 +81,30 @@ step
     .accept 40710 >>Accept Blade in Twilight
     .target Alonsus Faol
 step
-    .isOnQuest 40710
+    .isOnQuest 40710 --Blade in Twilight
     .goto 18,13.47,57.59
     #title |cFFFCDC00Follow the Arrow|r
     .complete 40710,1 --1/1 Go to the marked location in Tirisfal Glades
 step
     #arrowtext Click\n|cRXP_PICK_Notes|r
-    .isOnQuest 40710
+    .isOnQuest 40710 --Blade in Twilight
     .goto 18,13.47,57.59
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Notes|r
     .scenario 2221,1
 step
     #arrowtext Click\n|cRXP_PICK_Notes|r
-    .isOnQuest 40710
+    .isOnQuest 40710 --Blade in Twilight
     .goto 18,13.2,55.46
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Notes|r |cRXP_WARN_in the tent|r.
     .scenario 2221,2
 step
     #arrowtext Click\n|cRXP_PICK_Notes|r
-    .isOnQuest 40710
+    .isOnQuest 40710 --Blade in Twilight
     .goto 18,13.91,55.4
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Notes|r
     .scenario 2221,3
 step
-    .isOnQuest 40710
+    .isOnQuest 40710 --Blade in Twilight
     #completewith next
     #hidewindow
     #label Tomb
@@ -112,19 +112,19 @@ step
     .scenario 2031,1
 step
     #arrowtext Enter the Tomb at the bottom of the lake
-    .isOnQuest 40710
+    .isOnQuest 40710 --Blade in Twilight
     #completewith Tomb
     .goto 20,37.32,13.37,10,0
     .goto 20,36.24,17.16,10,0
     .goto 20,34.22,22.72,10,0
     .goto 20,34.92,28.92,10 >>Enter the Tomb |cRXP_WARN_at the bottom of the lake|r.
 step
-    .isOnQuest 40710
+    .isOnQuest 40710 --Blade in Twilight
     #requires Tomb
     #title |cFFFCDC00Follow the Arrow|r
     .scenario 2031,1
 step
-    .isOnQuest 40710
+    .isOnQuest 40710 --Blade in Twilight
     #completewith next
     #label Twilight Shadowcaster
     >>Kill |cRXP_ENEMY_Twilight Shadowcaster|r and |cRXP_ENEMY_Twilight Bladetwister|r.
@@ -132,26 +132,26 @@ step
     .mob Twilight Shadowcaster
     .mob Twilight Bladetwister
 step
-    .isOnQuest 40710
+    .isOnQuest 40710 --Blade in Twilight
     #hidewindow
     #completewith Twilight Shadowcaster
     .goto 20,37.18,43.08,30 >>Follow the Arrow
     .timer 30,RP
 step
     #arrowtext Kill\n|cRXP_ENEMY_Twilight Shadowcaster|r and |cRXP_ENEMY_Twilight Bladetwister|r
-    .isOnQuest 40710
+    .isOnQuest 40710 --Blade in Twilight
     #requires Twilight Shadowcaster
     .goto 20,37.18,43.08
     >>Kill |cRXP_ENEMY_Twilight Shadowcaster|r and |cRXP_ENEMY_Twilight Bladetwister|r.
     .scenario 2032,1
 step
-    .isOnQuest 40710
+    .isOnQuest 40710 --Blade in Twilight
     .goto 20,38.03,47.62
     #title |cFFFCDC00Follow the Arrow|r
     .scenario 2048,1
 step
     #arrowtext Kill\n|cRXP_ENEMY_Twilight Ritualists|r
-    .isOnQuest 40710
+    .isOnQuest 40710 --Blade in Twilight
     #loop
     .goto 20,40.04,51.38,15,0
     .goto 20,40.17,57.68,15,0
@@ -163,7 +163,7 @@ step
     .mob Flesh Spawn
 step
     #arrowtext Kill\n|cRXP_ENEMY_Amassing Darkness|r
-    .isOnQuest 40710
+    .isOnQuest 40710 --Blade in Twilight
     .goto 20,37.4,53,10,0
     .goto 20,37.49,54.93
     >>Kill the |cRXP_ENEMY_Amassing Darkness|r
@@ -171,7 +171,7 @@ step
     .mob Amassing Darkness
 step
     #arrowtext |cFFFCDC00Follow the arrow|r
-    .isOnQuest 40710
+    .isOnQuest 40710 --Blade in Twilight
     .goto 20,37.64,66.51,10,0
     .goto 20,39.85,79.51,10,0
     .goto 20,42.73,84.43,20,0
@@ -185,20 +185,20 @@ step
 step
     #completewith next
     #label Twilight Deacon
-    .isOnQuest 40710
+    .isOnQuest 40710 --Blade in Twilight
     >>Kill |cRXP_ENEMY_Twilight Deacon Farthing|r
     .scenario 2099,1
     .mob Twilight Deacon Farthing
 step
     #arrowtext |cFFFCDC00Mind your step|r
     #completewith Twilight Deacon
-    .isOnQuest 40710
+    .isOnQuest 40710 --Blade in Twilight
     .goto 20,51.71,74.95,10,0
     .goto 20,56.16,75.11,15 >>|cRXP_WARN_Cross the bridge|r
 step
     #arrowtext Kill\n|cRXP_ENEMY_Twilight Deacon Farthing|r
     #requires Twilight Deacon
-    .isOnQuest 40710
+    .isOnQuest 40710 --Blade in Twilight
     .goto 20,58.79,75.17,10,0
     .goto 20,58.61,76.46
     >>Kill |cRXP_ENEMY_Twilight Deacon Farthing|r
@@ -207,12 +207,12 @@ step
     .mob Twilight Deacon Farthing
 step
     #arrowtext Click\n|cRXP_PICK_Xal'atath (Blade in Twilight)|r
-    .isOnQuest 40710
+    .isOnQuest 40710 --Blade in Twilight
     .goto 20,58.61,76.46
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Xal'atath (Blade in Twilight)|r
     .scenario 2115,1
 step
-    .isOnQuest 40710
+    .isOnQuest 40710 --Blade in Twilight
     .goto 20,58.61,76.46
     .cast 201904 >>Use the |cRXP_WARN_ExtraActionButton|r
     .timer 10,RP
@@ -233,7 +233,7 @@ step
     .timer 12,RP
     .target Lorewalker Cho
 step
-    .isOnQuest 84779
+    .isOnQuest 84779 --Lorewalking: The Blade's Gambit
     .zone 20 >> Enter Stormsong Valley
 step
     #arrowtext Wait for the roleplay
@@ -544,7 +544,7 @@ step
     .complete 84782,1 --1/1 Talk to Lorewalker Cho to learn of Xal'atath's distant past
     .target Lorewalker Cho
 step
-    .isOnQuest 84782
+    .isOnQuest 84782 --Lorewalking: The Blade's Past
     .zone 2381 >>Enter Ny'alotha
 step
     #completewith next
@@ -714,7 +714,7 @@ RXPGuides.RegisterGuide([[
 
 step << Alliance
     #arrowtext Talk to\n|cRXP_FRIENDLY_Lorewalker Cho|r
-    .isOnQuest 90705
+    .isOnQuest 90705 --Lorewalking
     .goto 84,64.24,16.10,-1
     .goto 2339,49.62,31.52,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorewalker Cho|r |cRXP_WARN_in Dornogal or Stormwind|r.
@@ -723,7 +723,7 @@ step << Alliance
     .target Lorewalker Cho
 step << Horde
     #arrowtext Talk to\n|cRXP_FRIENDLY_Lorewalker Cho|r
-    .isOnQuest 90705
+    .isOnQuest 90705 --Lorewalking
     .goto 85,54.24,56.59,-1
     .goto 2339,49.62,31.52,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorewalker Cho|r |cRXP_WARN_in Dornogal or Orgrimmar|r.
@@ -758,7 +758,7 @@ step
     .skipgossipid 124637
     .target Lorewalker Cho
 step
-    .isOnQuest 85027
+    .isOnQuest 85027 --Lorewalking: The Protectorate
     .zone 109 >> Enter Netherstorm
 step
     #completewith next
@@ -839,7 +839,7 @@ step
     .goto 109,57.98,36.36,40,0
     +1
 step
-    .isOnQuest 10385
+    .isOnQuest 10385 --Potential for Brain Damage = High
     .aura 35409
     >>Kill any |cRXP_ENEMY_Ethereums|r. Loot them for an |T134729:0|t[|cRXP_LOOT_Ethereum Essence|r]. |cRXP_WARN_Use it.|r
     .collect 29482,1
@@ -1013,7 +1013,7 @@ step
     .skipgossipid 124639
     .target Lorewalker Cho
 step
-    .isOnQuest 85029
+    .isOnQuest 85029 --Lorewalking: Locus-Walker
     .zone 882 >>Enter Argus
 step
     #completewith next
@@ -1531,7 +1531,7 @@ step
     .skipgossipid 124638
     .target Ta'nla at the Night Market
 step
-    .isOnQuest 63980
+    .isOnQuest 63980 --Seeking Smugglers
     .zone 1525 >>Enter Revendreth
 step
     #completewith next
@@ -1694,7 +1694,7 @@ step
     .skipgossipid 124632
     .target Lorewalker Cho
 step
-    .isOnQuest 85028
+    .isOnQuest 85028 --Lorewalking: The Brokers
     .zone 1961 >>Enter Korthia
 step
     #completewith next
@@ -1779,7 +1779,7 @@ step
 step
     #completewith TransferSuccessful
     .goto 1543,46.9,41.54
-    .isOnQuest 63895
+    .isOnQuest 63895 --Grab Bag
     .aura -351792 >>|cRXP_WARN_You can cancel the slowfall effect by right-clicking it to drop down quicker.|r
 step
     #arrowtext Click\n|cRXP_PICK_Transferral Augmentor|r
@@ -1871,7 +1871,7 @@ RXPGuides.RegisterGuide([[
 
 step << Alliance
     #arrowtext Talk to\n|cRXP_FRIENDLY_Lorewalker Cho|r
-    .isOnQuest 90705
+    .isOnQuest 90705 --Lorewalking
     .goto 84,64.24,16.10,-1
     .goto 2339,49.62,31.52,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorewalker Cho|r |cRXP_WARN_in Dornogal or Stormwind|r.
@@ -1880,7 +1880,7 @@ step << Alliance
     .target Lorewalker Cho
 step << Horde
     #arrowtext Talk to\n|cRXP_FRIENDLY_Lorewalker Cho|r
-    .isOnQuest 90705
+    .isOnQuest 90705 --Lorewalking
     .goto 85,54.24,56.59,-1
     .goto 2339,49.62,31.52,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorewalker Cho|r |cRXP_WARN_in Dornogal or Orgrimmar|r.
@@ -2240,7 +2240,7 @@ step
     .mob Memory of Uther
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Memory of Terenas|r
-    .isOnQuest 85875
+    .isOnQuest 85875 --Ascent of the Lich King
     .goto 118,52.34,82.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Memory of Terenas|r
     .turnin 85875,1 >>Turn in Ascent of the Lich King
@@ -2323,7 +2323,7 @@ RXPGuides.RegisterGuide([[
 
 step << Alliance
     #arrowtext Talk to\n|cRXP_FRIENDLY_Lorewalker Cho|r
-    .isOnQuest 90705
+    .isOnQuest 90705 --Lorewalking
     .goto 84,64.24,16.10,-1
     .goto 2339,49.62,31.52,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorewalker Cho|r |cRXP_WARN_in Dornogal or Stormwind|r.
@@ -2332,7 +2332,7 @@ step << Alliance
     .target Lorewalker Cho
 step << Horde
     #arrowtext Talk to\n|cRXP_FRIENDLY_Lorewalker Cho|r
-    .isOnQuest 90705
+    .isOnQuest 90705 --Lorewalking
     .goto 85,54.24,56.59,-1
     .goto 2339,49.62,31.52,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorewalker Cho|r |cRXP_WARN_in Dornogal or Orgrimmar|r.
@@ -2470,7 +2470,7 @@ step
     #include RestedXP Collectables\a) Void Elf Unlock@SanctumoftheMoonStart-SanctumoftheMoonEnd
 step
     #arrowtext Click\n|cRXP_PICK_Dragon|r
-    .isOnQuest 49787
+    .isOnQuest 49787 --The Ghostlands
     .goto 95,46.5,56.74
     .vehicle >>Click on the |cRXP_PICK_Dragon|r
     .timer 35,RP
@@ -2478,7 +2478,7 @@ step
     #arrowtext Jump
     .goto 95,79.15,16.5,7,0
     .goto 95,79.65,17.52
-    .isOnQuest 49787
+    .isOnQuest 49787 --The Ghostlands
     .cast 258931 >>Jump and click on the |cRXP_PICK_Teleportation Console|r midair.
 step
     #include RestedXP Collectables\a) Void Elf Unlock@SanctumoftheMoonStart2-SanctumoftheMoonEnd2
