@@ -1585,13 +1585,13 @@ function addon.ui.v2.configurator:LoadPages(setDungeonMode)
     local categoryIcons = {
         attunement = "attunements-icon",
         key = "rxp-icon-key",
-        set = "rxp-icon-armor",
+        gearset = "rxp-icon-armor",
         profession = "rxp-icon-tailoring"
     }
     local categoryLabels = {
         attunement = L("Attunements"),
         key = L("Keys"),
-        set = L("Set Guide"),
+        gearset = L("Set Guide"),
         profession = L("Profession Leveling")
     }
     local endgameGuides, guideKindsBySubgroup, guideKindsPresent = {}, {}, {}
@@ -1607,7 +1607,7 @@ function addon.ui.v2.configurator:LoadPages(setDungeonMode)
     local subgroups = addon.GetGuideSubgroups(endgameGuides)
     for _, subgroup in ipairs(subgroups) do
         local guideKind = guideKindsBySubgroup[subgroup.subgroup]
-        if guideKind == "set" then
+        if guideKind == "gearset" then
             endgameCategories[#endgameCategories + 1] = {
                 guideKind = guideKind,
                 subgroup = subgroup.subgroup,
@@ -1625,7 +1625,7 @@ function addon.ui.v2.configurator:LoadPages(setDungeonMode)
         end
     end
 
-    for _, guideKind in ipairs({"attunement", "key", "set", "profession"}) do
+    for _, guideKind in ipairs({"attunement", "key", "gearset", "profession"}) do
         if guideKindsPresent[guideKind] and not categoriesByKind[guideKind] then
             endgameCategories[#endgameCategories + 1] = {
                 guideKind = guideKind,

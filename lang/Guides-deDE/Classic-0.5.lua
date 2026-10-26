@@ -13,7 +13,7 @@ RXPGuides.RegisterGuide([[
 #subgroup Heldentum Set Dungeonführer << Warrior
 #subgroup Tugendhaft Set Dungeonführer << Priest
 #name Teil 1: Armschienen
-#guideKind set
+#guideKind gearset
 #guideIcon rxp-icon-quest
 #next Teil 2: Gürtel & Handschuhe
 
@@ -231,7 +231,7 @@ RXPGuides.RegisterGuide([[
 #subgroup Heldentum Set Dungeonführer << Warrior
 #subgroup Tugendhaft Set Dungeonführer << Priest
 #name Teil 2: Gürtel & Handschuhe
-#guideKind set
+#guideKind gearset
 #guideIcon rxp-icon-quest
 #next Part 3: Beine, Schulter & Stiefel
 
@@ -677,7 +677,7 @@ RXPGuides.RegisterGuide([[
 #subgroup Heldentum Set Dungeonführer << Warrior
 #subgroup Tugendhaft Set Dungeonführer << Priest
 #name Part 3: Beine, Schulter & Stiefel
-#guideKind set
+#guideKind gearset
 #guideIcon rxp-icon-quest
 #next Part 4: Helm & Brust
 
@@ -1161,7 +1161,7 @@ RXPGuides.RegisterGuide([[
 #subgroup Heldentum Set Dungeonführer << Warrior
 #subgroup Tugendhaft Set Dungeonführer << Priest
 #name Part 4: Helm & Brust
-#guideKind set
+#guideKind gearset
 #guideIcon rxp-icon-quest
 
 
