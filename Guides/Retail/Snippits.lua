@@ -626,6 +626,7 @@ step << Alliance
     >>Use |T134309:0|t[Lost Dragonscale] to teleport to Stormwind.
     .complete 65436,1 --1/1 Lost Dragonscale used to teleport to near Wrathion's location (Optional)
     .dmf
+    .use 205456
 step << Horde
     .isOnQuest 65435 --The Dragon Isles Await
     >>Use |T134309:0|t[Lost Dragonscale] to teleport to Orgrimmar.
@@ -746,6 +747,7 @@ step  << Alliance
     >>Use |T134309:0|t[Lost Dragonscale] to teleport to Stormwind.
     .complete 65436,1 --1/1 Lost Dragonscale used to teleport to near Wrathion's location (Optional)
     .nodmf
+    .use 205456
 ]])
 --GC Alliance: Chromie Time Normal
 RXPGuides.RegisterGuide([[

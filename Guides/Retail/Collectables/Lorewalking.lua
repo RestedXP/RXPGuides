@@ -1,5 +1,6 @@
---Xal'atath
 local L = GetLocale() if L and RXP.enabledLocale[L] then return end
+
+--Xal'atath
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
@@ -9,12 +10,19 @@ RXPGuides.RegisterGuide([[
 #displayname Xal'atath
 #next ab) Ethereals
 
+-- step
+--     #sticky
+--     #completewith LorewalkingCampaignEnd
+--     +Click on the |cRXP_PICK_Ask a Question|r button in the "Active Items Frame" to talk to the Lorewalker if needed.
+--     *To stop the campaign, click on |cRXP_PICK_Exit Lorewalking|r in the Lorewalking panel.
+--     .macro Ask a Question,2056011 >>/cast spell:1242675
 step << Alliance
     #arrowtext Talk to\n|cRXP_FRIENDLY_Lorewalker Cho|r
     .isOnQuest 90705 --Lorewalking
     .goto 84,64.24,16.10,-1
     .goto 2339,49.62,31.52,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorewalker Cho|r |cRXP_WARN_in Dornogal or Stormwind|r.
+    >>|cRXP_WARN_If you are currently in Chromie Time, talk to Chromie to return to the present timeline before starting Lorewalking.|r
     .accept 90705 >>Accept Lorewalking
     .turnin 90705 >>Turn in Lorewalking
     .target Lorewalker Cho
@@ -24,6 +32,7 @@ step << Horde
     .goto 85,54.24,56.59,-1
     .goto 2339,49.62,31.52,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorewalker Cho|r |cRXP_WARN_in Dornogal or Orgrimmar|r.
+    >>|cRXP_WARN_If you are currently in Chromie Time, talk to Chromie to return to the present timeline before starting Lorewalking.|r
     .accept 90705 >>Accept Lorewalking
     .turnin 90705 >>Turn in Lorewalking
     .target Lorewalker Cho
@@ -34,6 +43,7 @@ step
     .goto 84,64.24,16.10,-1 << Alliance
     .goto 2339,49.6,31.63,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorewalker Cho|r
+    >>|cRXP_WARN_If you are currently in Chromie Time, talk to Chromie to return to the present timeline before starting Lorewalking.|r
     .accept 84371 >>Accept Lorewalking: The Blade and the High Priest
     .skipgossipid 124311
     .choose 6403389
@@ -693,6 +703,7 @@ step
     .complete 84789,2 --1/1 Xal'atath defeated
     .mob Xal'atath
 step
+--     #label LorewalkingCampaignEnd
     #arrowtext Talk to\n|cRXP_FRIENDLY_Lorewalker Cho|r
     .goto 85,54.35,56.66,-1
     .goto 84,64.24,16.10,-1
@@ -712,12 +723,19 @@ RXPGuides.RegisterGuide([[
 #next ac) The Lich King
 
 
+-- step
+--     #sticky
+--     #completewith LorewalkingCampaignEnd
+--     +Click on the |cRXP_PICK_Ask a Question|r button in the "Active Items Frame" to talk to the Lorewalker if needed.
+--     *To stop the campaign, click on |cRXP_PICK_Exit Lorewalking|r in the Lorewalking panel.
+--     .macro Ask a Question,2056011 >>/cast spell:1242675
 step << Alliance
     #arrowtext Talk to\n|cRXP_FRIENDLY_Lorewalker Cho|r
     .isOnQuest 90705 --Lorewalking
     .goto 84,64.24,16.10,-1
     .goto 2339,49.62,31.52,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorewalker Cho|r |cRXP_WARN_in Dornogal or Stormwind|r.
+    >>|cRXP_WARN_If you are currently in Chromie Time, talk to Chromie to return to the present timeline before starting Lorewalking.|r
     .accept 90705 >>Accept Lorewalking
     .turnin 90705 >>Turn in Lorewalking
     .target Lorewalker Cho
@@ -727,6 +745,7 @@ step << Horde
     .goto 85,54.24,56.59,-1
     .goto 2339,49.62,31.52,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorewalker Cho|r |cRXP_WARN_in Dornogal or Orgrimmar|r.
+    >>|cRXP_WARN_If you are currently in Chromie Time, talk to Chromie to return to the present timeline before starting Lorewalking.|r
     .accept 90705 >>Accept Lorewalking
     .turnin 90705 >>Turn in Lorewalking
     .target Lorewalker Cho
@@ -736,6 +755,7 @@ step
     .goto 85,54.28,56.56,-1 <<Horde
     .goto 2339,49.62,31.52,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorewalker Cho|r
+    >>|cRXP_WARN_If you are currently in Chromie Time, talk to Chromie to return to the present timeline before starting Lorewalking.|r
     .accept 85027 >>Accept Lorewalking: The Protectorate
     .timer 39,RP
     .skipgossipid 124311
@@ -1851,6 +1871,7 @@ step
     .complete 85036,2 --1/1 Return to Lorewalker Cho
     .timer 70,RP
 step
+--     #label LorewalkingCampaignEnd
     #arrowtext Talk to\n|cRXP_FRIENDLY_Lorewalker Cho|r
     .goto 85,54.35,56.66,-1
     .goto 84,64.19,16.26,-1
@@ -1869,12 +1890,19 @@ RXPGuides.RegisterGuide([[
 #displayname The Lich King
 #next ad) The Elves of Quel'Thalas
 
+-- step
+--     #sticky
+--     #completewith LorewalkingCampaignEnd
+--     +Click on the |cRXP_PICK_Ask a Question|r button in the "Active Items Frame" to talk to the Lorewalker if needed.
+--     *To stop the campaign, click on |cRXP_PICK_Exit Lorewalking|r in the Lorewalking panel.
+--     .macro Ask a Question,2056011 >>/cast spell:1242675
 step << Alliance
     #arrowtext Talk to\n|cRXP_FRIENDLY_Lorewalker Cho|r
     .isOnQuest 90705 --Lorewalking
     .goto 84,64.24,16.10,-1
     .goto 2339,49.62,31.52,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorewalker Cho|r |cRXP_WARN_in Dornogal or Stormwind|r.
+    >>|cRXP_WARN_If you are currently in Chromie Time, talk to Chromie to return to the present timeline before starting Lorewalking.|r
     .accept 90705 >>Accept Lorewalking
     .turnin 90705 >>Turn in Lorewalking
     .target Lorewalker Cho
@@ -1884,6 +1912,7 @@ step << Horde
     .goto 85,54.24,56.59,-1
     .goto 2339,49.62,31.52,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorewalker Cho|r |cRXP_WARN_in Dornogal or Orgrimmar|r.
+    >>|cRXP_WARN_If you are currently in Chromie Time, talk to Chromie to return to the present timeline before starting Lorewalking.|r
     .accept 90705 >>Accept Lorewalking
     .turnin 90705 >>Turn in Lorewalking
     .target Lorewalker Cho
@@ -1893,6 +1922,7 @@ step
     .goto 84,64.19,16.26,-1
     .goto 2339,49.6,31.63,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorewalker Cho|r
+    >>|cRXP_WARN_If you are currently in Chromie Time, talk to Chromie to return to the present timeline before starting Lorewalking.|r
     .accept 85884 >>Accept Lorewalking: The Prince Who Would Be King
     .skipgossipid 124311
     .choose 6403388
@@ -2302,6 +2332,7 @@ step
     *Use |T135833:0|t[Remorseless Winter] on cooldown.
     .complete 85878,1 --1/1 Complete "O'Thanagor"
 step
+--     #label LorewalkingCampaignEnd
     #arrowtext Talk to\n|cRXP_FRIENDLY_Lorewalker Cho|r
     .goto 85,54.35,56.66,-1
     .goto 84,64.19,16.26,-1
@@ -2321,12 +2352,19 @@ RXPGuides.RegisterGuide([[
 #displayname The Elves of Quel'Thalas
 #next ae) The Loa
 
+-- step
+--     #sticky
+--     #completewith LorewalkingCampaignEnd
+--     +Click on the |cRXP_PICK_Ask a Question|r button in the "Active Items Frame" to talk to the Lorewalker if needed.
+--     *To stop the campaign, click on |cRXP_PICK_Exit Lorewalking|r in the Lorewalking panel.
+--     .macro Ask a Question,2056011 >>/cast spell:1242675
 step << Alliance
     #arrowtext Talk to\n|cRXP_FRIENDLY_Lorewalker Cho|r
     .isOnQuest 90705 --Lorewalking
     .goto 84,64.24,16.10,-1
     .goto 2339,49.62,31.52,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorewalker Cho|r |cRXP_WARN_in Dornogal or Stormwind|r.
+    >>|cRXP_WARN_If you are currently in Chromie Time, talk to Chromie to return to the present timeline before starting Lorewalking.|r
     .accept 90705 >>Accept Lorewalking
     .turnin 90705 >>Turn in Lorewalking
     .target Lorewalker Cho
@@ -2336,6 +2374,7 @@ step << Horde
     .goto 85,54.24,56.59,-1
     .goto 2339,49.62,31.52,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorewalker Cho|r |cRXP_WARN_in Dornogal or Orgrimmar|r.
+    >>|cRXP_WARN_If you are currently in Chromie Time, talk to Chromie to return to the present timeline before starting Lorewalking.|r
     .accept 90705 >>Accept Lorewalking
     .turnin 90705 >>Turn in Lorewalking
     .target Lorewalker Cho
@@ -2345,6 +2384,7 @@ step
     .goto 84,64.19,16.26,-1
     .goto 2339,49.6,31.63,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorewalker Cho|r
+    >>|cRXP_WARN_If you are currently in Chromie Time, talk to Chromie to return to the present timeline before starting Lorewalking.|r
     .accept 85252 >>Accept Lorewalking: Children of the Blood
     .skipgossipid 124311
     .choose 6403386
@@ -2502,41 +2542,12 @@ step
     .complete 85254,5 --1/1 Complete the Void Elf Quests
     .target Lorewalker Cho
 step
+--     #label LorewalkingCampaignEnd
     #arrowtext Talk to\n|cRXP_FRIENDLY_Lorewalker Cho|r
     .goto 972,27.94,24.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorewalker Cho|r
     .turnin 85254 >>Turn in Lorewalking: Children of the Void
     .target Lorewalker Cho
-]])
---War Within Recap
-RXPGuides.RegisterGuide([[
-#retail
-#version 1
-#group RestedXP Speed Leveling
-#name a) War Within Recap
-#internal
-
-step
-    .goto 2112,59.55,41.46
-    .accept 72560 >>Accept Climbing
-step
-    .goto 2112,47.31,59.15
-    .complete 93929,1 --Visit the Tome of History in Valdrakken
-step
-    #arrowtext Talk to\n|cRXP_FRIENDLY_Tome of History|r
-    .goto 2112,46.38,60.22
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tome of History|r
-    .turnin 93929 >>Turn in The War Within Recap
-    .target Tome of History
-    .accept 91843 >>Accept Recap: The Harbinger
-    .complete 91843,1 --1/1 Consult the Tome of History to learn about the Harbinger
-step
-    #arrowtext Talk to\n|cRXP_FRIENDLY_Tome of History|r
-    .goto 2112,46.27,60.31
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tome of History|r
-    .turnin 91843 >>Turn in Recap: The Harbinger
-    .target Tome of History
-    .accept 91864 >>Accept Recap: Fractured Visions
 ]])
 --The Loa
 RXPGuides.RegisterGuide([[
@@ -3010,4 +3021,34 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Li Li Stormstout::253727|r to finish the Loa story and collect your rewards.
     .turnin 92832 >>Turn in Lorewalking: The Hash'ey
     .target Li Li Stormstout::253727
+]])
+--War Within Recap
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP Speed Leveling
+#name a) War Within Recap
+#internal
+
+step
+    .goto 2112,59.55,41.46
+    .accept 72560 >>Accept Climbing
+step
+    .goto 2112,47.31,59.15
+    .complete 93929,1 --Visit the Tome of History in Valdrakken
+step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Tome of History|r
+    .goto 2112,46.38,60.22
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tome of History|r
+    .turnin 93929 >>Turn in The War Within Recap
+    .target Tome of History
+    .accept 91843 >>Accept Recap: The Harbinger
+    .complete 91843,1 --1/1 Consult the Tome of History to learn about the Harbinger
+step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Tome of History|r
+    .goto 2112,46.27,60.31
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tome of History|r
+    .turnin 91843 >>Turn in Recap: The Harbinger
+    .target Tome of History
+    .accept 91864 >>Accept Recap: Fractured Visions
 ]])

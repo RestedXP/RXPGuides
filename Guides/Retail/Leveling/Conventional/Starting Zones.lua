@@ -1996,9 +1996,9 @@ step
 step
     #arrowtext Click\n|cRXP_PICK_Portal|r
     .goto 2352,57.44,26.64
-    -- .zoneskip 2352,1
+    .zoneskip 2352,1
     .zone 84 >>Click on the |cRXP_PICK_Portal|r
-    -- .zoneskip 85
+    .zoneskip 85
 step
     #arrowtext Click\n|cRXP_PICK_Portal|r
     .goto 2351,53.93,49.4
