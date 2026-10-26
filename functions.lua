@@ -8259,7 +8259,7 @@ function addon.functions.isQuestOffered(self, text, npc, ...)
                 end
             end
             if not match then
-                element.tooltipText = not element.found andL"Step skipped: Quest is not being offered"
+                element.tooltipText = not element.found and L("Step skipped: Quest is not being offered")
                 step.completed = true
                 addon.updateSteps = true
             end
