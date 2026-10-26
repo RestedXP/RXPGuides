@@ -327,7 +327,7 @@ step
     .achievement 16577,9 >>Pick up the Dragon Glyph: Rhonin's Shield at the top of the tower
 step
     #arrowtext Fly into the 'Winds of the Isle'
-    .isQuestTurnedIn 70220
+    .isQuestTurnedIn 70220 --Shady Sanctuary
     #completewith next
     .goto 2024,71.97,35.37,15 >>Fly into the 'Winds of the Isle'
 step
@@ -381,11 +381,11 @@ step
     #completewith TheAzureSpanDragonGlyphAzureArchives
     +From anywhere: Fly to the Azure Archives and follow the next steps
 step
-    .isQuestTurnedIn 65852
+    .isQuestTurnedIn 65852 --Straight to the Top
     #completewith TheAzureSpanDragonGlyphAzureArchives
     .goto 2024,39.57,60.25,5 >>Use the ExtraActionButton
 step
-    .isQuestAvailable 65852
+    .isQuestAvailable 65852 --Straight to the Top
     #completewith TheAzureSpanDragonGlyphAzureArchives
     +|cRXP_WARN_Wait at the bottom of the tower until your vigor has recharged|r.
     *Use |T4640498:0|t[Skyward Ascend] four times. You can let your vigor charges recharge on a lower plateau if necessary
@@ -579,7 +579,7 @@ step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Kurazidaia|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kurazidaia|r.
     >>|cRXP_WARN_You can skip the upcoming cutscene with ESC|r.
-    .isOnQuest 74381
+    .isOnQuest 74381 --Hidden Legacies
     .goto 2112,61.03,26.07
     .skipgossip 201398,1
     .complete 74381,1 --1/1 Hear Kurazidaia's report

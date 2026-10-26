@@ -15,7 +15,7 @@ step
     #completewith next
     .cast 441154 >> Use |T134491:0|t[Nostwin's Voucher] to teleport to Infinite Bazaar.
     .use 217930
-    .itemcount 217930,1
+    .itemcount 217930,1 --Nostwin's Voucher
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Arturos|r
     .goto 371,42.96,27.44 --x left
@@ -173,7 +173,7 @@ step
     .gossipoption 40364 >>Talk to |cRXP_FRIENDLY_High Elder Cloudfall|r. (for the skip)
     .goto 371,42.75,23.17
 step
-    .isOnQuest 29620
+    .isOnQuest 29620 --The Great Banquet
     #completewith next
     .gossipoption 39491 >>Talk to |cRXP_FRIENDLY_High Elder Cloudfall|r.
     --.skipgossip 54914,1
@@ -264,7 +264,7 @@ step
     .target Master Stone Fist
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Zhi-Zhi|r
-    .isOnQuest 29633
+    .isOnQuest 29633 --Zhi-Zhi, the Dextrous
     .goto 371,43.06,26.01
     .gossipoption 40594 >> Talk to |cRXP_FRIENDLY_Zhi-Zhi|r.
     .target Zhi-Zhi
@@ -833,7 +833,7 @@ step
     .target Gentle Mother Hanae
 step
     #arrowtext Leave the House
-    .isOnQuest 29585
+    .isOnQuest 29585 --Spitfire
     .goto 371,43.49,75.92,10 >> Leave the House
 step
     #completewith Turn in Defiance
@@ -1024,7 +1024,7 @@ step
     #completewith next
     .goto 371,65.25,37.20,20,0
     .cast 437035 >>Use |T134376:0|t[Bronze Timepiece] to teleport to the dragonriding quests.
-    .itemcount 216712,1
+    .itemcount 216712,1 --Bronze Timepiece
     .use 216712
 -- step
 --     #loop
@@ -1057,7 +1057,7 @@ step
     #completewith next
     .goto 371,65.25,37.20,20,0
     .cast 437035 >>Use |T134376:0|t[Bronze Timepiece] to teleport to the dragonriding quests.
-    .itemcount 216712,1
+    .itemcount 216712,1 --Bronze Timepiece
     .use 216712
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Instructor Tong|r
@@ -1093,33 +1093,33 @@ step
     .complete 30135,1 --8/8 Slitherscale saurok slain
     .mob Slitherscale Eggdrinker
 step
-    .isOnQuest 30136
+    .isOnQuest 30136 --Empty Nests
     .cast 110171 >>Interact with a |cRXP_FRIENDLY_Windward Hatchling|r |cRXP_WARN_[1]|r.
     .use 78947
     .target Windward Hatchlings
 step
-    .isOnQuest 30136
+    .isOnQuest 30136 --Empty Nests
     .cast 110171 >>Interact with a |cRXP_FRIENDLY_Windward Hatchling|r |cRXP_WARN_[2]|r.
     .use 78947
     .target Windward Hatchlings
 step
-    .isOnQuest 30136
+    .isOnQuest 30136 --Empty Nests
     .cast 110171 >>Interact with a |cRXP_FRIENDLY_Windward Hatchling|r |cRXP_WARN_[3]|r.
     .use 78947
     .target Windward Hatchlings
 step
-    .isOnQuest 30136
+    .isOnQuest 30136 --Empty Nests
     .cast 110171 >>Interact with a |cRXP_FRIENDLY_Windward Hatchling|r |cRXP_WARN_[4]|r.
     .use 78947
     .target Windward Hatchlings
 step
-    .isOnQuest 30136
+    .isOnQuest 30136 --Empty Nests
     .cast 110171 >>Interact with a |cRXP_FRIENDLY_Windward Hatchling|r |cRXP_WARN_[5]|r.
     .use 78947
     .target Windward Hatchlings
 step
     #label Interact with Windward Hatchlings
-    .isOnQuest 30136
+    .isOnQuest 30136 --Empty Nests
     .cast 110171 >>Interact with a |cRXP_FRIENDLY_Windward Hatchling|r |cRXP_WARN_[6]|r.
     .use 78947
     .target Windward Hatchlings
@@ -1176,7 +1176,7 @@ step
     #completewith next
     .goto 371,65.25,37.20,20,0
     .cast 437035 >>Use |T134376:0|t[Bronze Timepiece] to teleport to the dragonriding quests.
-    .itemcount 216712,1
+    .itemcount 216712,1 --Bronze Timepiece
     .use 216712
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Instructor Tong|r
@@ -1198,25 +1198,25 @@ step
     #completewith Egg hatched
     .goto 371,65.25,37.20,20,0
     .cast 437035 >>Use |T134376:0|t[Bronze Timepiece] to teleport to the dragonriding quests.
-    .itemcount 216712,1
+    .itemcount 216712,1 --Bronze Timepiece
     .use 216712
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Instructor Skythorn|r
     .goto 371,57.55,45.10
-    .isOnQuest 30139
+    .isOnQuest 30139 --The Rider's Journey
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Instructor Skythorn|r.
     .turnin 30139 >>Turn in The Rider's Journey
     .target Instructor Skythorn
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Instructor Skythorn|r
     .goto 371,57.55,45.10
-    .isOnQuest 30140
+    .isOnQuest 30140 --The Rider's Journey
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Instructor Skythorn|r.
     .turnin 30140 >>Turn in The Rider's Journey
     .target Instructor Skythorn
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Instructor Skythorn|r
-    .isOnQuest 30141
+    .isOnQuest 30141 --The Rider's Journey
     .goto 371,57.55,45.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Instructor Skythorn|r.
     .turnin 30141 >>Turn in The Rider's Journey
@@ -2377,7 +2377,7 @@ step
     .target Sky Admiral Rogers
 step
     #arrowtext Click\n|cRXP_PICK_Skyfire Gyrocopter|r
-    .isOnQuest 31732
+    .isOnQuest 31732 --Unleash Hell
     .goto 371,42.02,92.53
     .vehicle >> Click on the |cRXP_PICK_Skyfire Gyrocopter|r.
     .timer 25.5, RP
@@ -2602,7 +2602,7 @@ step
     .target Moratari
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Nostwin|r
-    .isOnQuest 80012
+    .isOnQuest 80012 --Dragonriding
     .xp >14,1
     #loop
     .goto 371,45.89,84.63,5,0
@@ -2616,7 +2616,7 @@ step
     .target Nostwin
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Nostwin|r
-    .isOnQuest 80012
+    .isOnQuest 80012 --Dragonriding
     .xp <14,1
     #loop
     .goto 371,45.89,84.63,5,0
@@ -2654,7 +2654,7 @@ step
     .goto 371,65.21,37.46,5,0
     .goto 371,45.8,84.6,40 >>|cRXP_WARN_We pick up this quest for a teleport item to this area|r.
     *Click on the |cRXP_PICK_Portal|r to go back.
-    .itemcount 216712,1
+    .itemcount 216712,1 --Bronze Timepiece
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Jiayi Applebloom|r
     .goto 371,44.89,84.58,10,0
@@ -2716,14 +2716,14 @@ step
     #completewith Critical Condition
     .goto 371,65.25,37.20
     .cast 437035 >>Use |T134376:0|t[Bronze Timepiece] to teleport to the dragonriding quests.
-    .itemcount 216712,1
+    .itemcount 216712,1 --Bronze Timepiece
     .use 216712
 step
     #completewith Critical Condition
     .goto 371,65.21,37.46,5,0
     .goto 371,45.8,84.6,40 >>|cRXP_WARN_We pick up this quest for a teleport item to this area|r.
     *Click on the |cRXP_PICK_Portal|r to go back.
-    .itemcount 216712,1
+    .itemcount 216712,1 --Bronze Timepiece
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Nostwin|r
     .xp <14,1
@@ -2898,7 +2898,7 @@ step
     .target Rell Nightwind
 step
     #arrowtext Leave the Temple
-    .isOnQuest 31745
+    .isOnQuest 31745 --Onward and Inward
     .goto 371,41.46,79.84,10 >> Leave the Temple. |cRXP_WARN_Don't click on the Gyrocopter|r.
 step
     #include 1) Jade Forest Defiance Side Quests
@@ -2907,14 +2907,14 @@ step
     #completewith Paw'don Village
     .goto 371,65.25,37.20
     .cast 437035 >>Use |T134376:0|t[Bronze Timepiece] to teleport to the dragonriding quests.
-    .itemcount 216712,1
+    .itemcount 216712,1 --Bronze Timepiece
     .use 216712
 step
     #completewith Paw'don Village
     .goto 371,65.21,37.46,5,0
     .goto 371,45.8,84.6,40 >>|cRXP_WARN_We pick up this quest for a teleport item to this area|r.
     *Click on the |cRXP_PICK_Portal|r to go back.
-    .itemcount 216712,1
+    .itemcount 216712,1 --Bronze Timepiece
 step
     #arrowtext Follow the arrow
     #label Paw'don Village
@@ -2975,7 +2975,7 @@ step
     .target Alliance Banner
 step
     #arrowtext Leave the Ship
-    .isOnQuest 29556
+    .isOnQuest 29556 --Hozen Aren't Your Friends, Hozen Are Your Enemies
     .goto 371,49.98,90.89,5 >> Leave the Ship
 step
     #arrowtext Kill\n|cRXP_ENEMY_Hozen|r
@@ -3261,13 +3261,13 @@ step
     #completewith next
     .goto 371,65.25,37.20,20,0
     .cast 437035 >>Use |T134376:0|t[Bronze Timepiece] to teleport to the dragonriding quests.
-    .itemcount 216712,1
+    .itemcount 216712,1 --Bronze Timepiece
     .use 216712
 step
     .goto 371,65.21,37.46,5,0
     .goto 371,45.8,84.6,40 >>|cRXP_WARN_We pick up this quest for a teleport item to this area|r.
     *Click on the |cRXP_PICK_Portal|r to go back.
-    .itemcount 216712,1
+    .itemcount 216712,1 --Bronze Timepiece
 -- step
 --     .goto 371,31.96,27.76
 --     .cast 3365 >>Click on the Lucky Pandaren Coin

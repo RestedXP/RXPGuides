@@ -11,7 +11,7 @@ RXPGuides.RegisterGuide([[
 
 
 step
-    .isQuestAvailable 82702
+    .isQuestAvailable 82702 --Found Friends
     #completewith next
     +|cRXP_WARN_You have to complete the 'Lingering Shadows' chapter first|r
 step
@@ -265,7 +265,7 @@ step
     .complete 83556,1 --1/1 Emerald Necklace inspected
     .skipgossipid 123192
 step
-    .isOnQuest 83556
+    .isOnQuest 83556 --Maybe You Shouldn't Touch That
     #completewith PocketDimension
     +|cRXP_WARN_There are no coordinates available in this zone|r
 step
@@ -505,7 +505,7 @@ step
     .accept 82124 >>Accept The Beginning of the End
 step
     #arrowtext Leave the house
-    .isOnQuest 82124
+    .isOnQuest 82124 --The Beginning of the End
     #completewith next
     .goto 2213,50.22,44.84,15 >>Leave the House
 step
@@ -533,7 +533,7 @@ step
     .mob Loyalist Threadblade
 step
     #arrowtext Enter the house
-    .isOnQuest 82124
+    .isOnQuest 82124 --The Beginning of the End
     #completewith next
     .goto 2213,50.12,44.59,15 >> Enter the House
 step
@@ -545,7 +545,7 @@ step
     .accept 82125 >>Accept A Spy Like Us
 step
     #arrowtext Leave the house
-    .isOnQuest 82125
+    .isOnQuest 82125 --A Spy Like Us
     #completewith next
     .goto 2213,53.92,50.28,15 >> Leave the House
 step
@@ -559,7 +559,7 @@ step
     .accept 82127 >>Accept Make Them Prey
 step
     #arrowtext Leave the house
-    .isOnQuest 82127
+    .isOnQuest 82127 --Make Them Prey
     #completewith next
     .goto 2216,55.19,42.91,10 >> Leave the House
 step
@@ -645,7 +645,7 @@ step
     .complete 82141,1 --1/1 Queen Ansurek slain
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Kriz the "Loyal"|r
-    .isOnQuest 82141
+    .isOnQuest 82141 --To Kill a Queen
     .goto 2213,31.47,64.05
     .gossipoption 123174 >>Talk to |cRXP_FRIENDLY_Kriz the "Loyal"|r
     .mob Kriz the "Loyal"
@@ -727,7 +727,7 @@ step
 step
     #arrowtext Kill\n|cRXP_ENEMY_Voidbound Honor Guards|r and |cRXP_ENEMY_Thrall|r
     .zoneskip 2403,1
-    .isOnQuest 87329
+    .isOnQuest 87329 --Into the Darkest Memories
     .goto 2403,49.86,75.54,10,0
     .goto 2403,49.37,75.07,10,0
     .goto 2403,49.34,74.01,10,0
@@ -738,7 +738,7 @@ step
 step
     #arrowtext Kill\n|cRXP_ENEMY_Fallen Riftwalker|r and |cRXP_ENEMY_Alleria Windrunner|r
     .zoneskip 2404,1
-    .isOnQuest 87329
+    .isOnQuest 87329 --Into the Darkest Memories
     .goto 2404,52,54.15,15,0
     .goto 2404,53.53,52.32,15,0
     .goto 2404,52.97,51.12,10,0
@@ -752,23 +752,23 @@ step
 step
     #arrowtext Click\n|cRXP_PICK_Chest|r
     .zoneskip 2404,1
-    .isOnQuest 87329
+    .isOnQuest 87329 --Into the Darkest Memories
     .goto 2404,41.58,34.72
     .cast 3365 >>Click on the |cRXP_PICK_Chest|r
     .complete 87329,3 --100/20 Corrupted Mementos
 step
-    .isOnQuest 87329
+    .isOnQuest 87329 --Into the Darkest Memories
     .zoneskip 2404,1
     +Leave the Horrific Vision (Right-Click your player frame).
 step
     #arrowtext Click\n|cRXP_PICK_Chest|r
-    .isOnQuest 87329
+    .isOnQuest 87329 --Into the Darkest Memories
     .zoneskip 2403,1
     .goto 2403,51.99,85.64
     .cast 3365 >>Click on the |cRXP_PICK_Chest|r
     .complete 87329,3 --100/20 Corrupted Mementos
 step
-    .isOnQuest 87329
+    .isOnQuest 87329 --Into the Darkest Memories
     .zoneskip 2403,1
     +Leave the Horrific Vision (Right-Click your player frame).
 step
@@ -906,7 +906,7 @@ step
     .turnin 89493 >>Turn in Welcome to the Field
     .target Lars Bronsmaelt
 step
-    .isOnQuest 88711
+    .isOnQuest 88711 --Radiant Incursion: Toxins and Pheromones
     .goto 2215,26.48,55.11,40,0
     #completewith Radiant Incursion: Toxins and Pheromones
     >>Check your map to see if the Nightfall event is active. If it is, complete it now; if not, do it later.
@@ -923,7 +923,7 @@ step
 -----------------------------------------------------
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Sacred Alchemist|r
-    .isOnQuest 88916
+    .isOnQuest 88916 --Radiant Incursion: Sureki's End
     .goto 2274,48.6,57.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sacred Alchemist|r
     .complete 88916,1 --1/1 Field Elixir taken (Optional)
@@ -931,7 +931,7 @@ step
     .target Sacred Alchemist
 step
     #arrowtext Kill\n|cRXP_ENEMY_Sureki Forces|r
-    .isOnQuest 88916
+    .isOnQuest 88916 --Radiant Incursion: Sureki's End
     #loop
     .goto 2255,63.1,0.87,40,0
     .goto 2255,63.77,5.57,40,0
@@ -959,13 +959,13 @@ step
     .goto 2255,63.83,30.4,40,0
     .goto 2255,62.39,30.92,40,0
     .goto 2255,60.62,28.25,40,0
-    .isOnQuest 88945
+    .isOnQuest 88945 --Radiant Incursion: Rak-Zakaz
     >>Kill |cRXP_ENEMY_Sureki Forces|r
     .complete 88945,1 --Sureki Sympathizers disrupted (100%)
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Ysabel Gleamgaard|r
-    .isQuestComplete 88916
-    .isQuestComplete 88945
+    .isQuestComplete 88916 --Radiant Incursion: Sureki's End
+    .isQuestComplete 88945 --Radiant Incursion: Rak-Zakaz
     .goto 2255,60.65,18.72
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ysabel Gleamgaard|r
     .dailyturnin 88916 >>Turn in Radiant Incursion: Sureki's End
@@ -973,7 +973,7 @@ step
     .target Ysabel Gleamgaard
 step
     #arrowtext Kill\n|cRXP_ENEMY_Sureki Forces|r
-    .isOnQuest 88711
+    .isOnQuest 88711 --Radiant Incursion: Toxins and Pheromones
     .goto 2255,65.33,49.67,40,0
     .goto 2255,66.34,53.89,40,0
     .goto 2255,68.72,54.3,40,0
@@ -984,13 +984,13 @@ step
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Lamplighter Kaerter|r
     #label Radiant Incursion: Toxins and Pheromones
-    .isQuestComplete 88711
+    .isQuestComplete 88711 --Radiant Incursion: Toxins and Pheromones
     .goto 2255,65.98,59.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lamplighter Kaerter|r
     .dailyturnin 88711 >>Turn in Radiant Incursion: Toxins and Pheromones
     .target Lamplighter Kaerter
 step
-    .isQuestComplete 88711
+    .isQuestComplete 88711 --Radiant Incursion: Toxins and Pheromones
     #include a) DawnBreakerTeleport
 -----------------------------------------------------
 --- DAILIES BATCH 2
@@ -998,7 +998,7 @@ step
 step
     #arrowtext Kill\n|cRXP_ENEMY_Sureki Forces|r
     #loop
-    .isOnQuest 87475
+    .isOnQuest 87475 --Sureki Incursion: Hold the Wall
     .goto 2215,40.13,58.29,30,0
     .goto 2215,41.29,59.47,30,0
     .goto 2215,40.61,61.16,30,0
@@ -1010,14 +1010,14 @@ step
     .mob Sureki Siegelord
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Auralia Steelstrike|r
-    .isQuestComplete 87475
+    .isQuestComplete 87475 --Sureki Incursion: Hold the Wall
     .goto 2215,40.59,57.96
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auralia Steelstrike|r
     .turnin 87475 >>Turn in Sureki Incursion: Hold the Wall
     .target Auralia Steelstrike
 step
     #arrowtext Kill\n|cRXP_ENEMY_Sureki Forces|r
-    .isOnQuest 87477
+    .isOnQuest 87477 --Sureki Incursion: Southern Swarm
     #loop
     .goto 2215,47.5,68.2,30,0
     .goto 2215,48.06,69.2,30,0
@@ -1031,14 +1031,14 @@ step
     .mob Sureki Siegelord
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Meradyth Lacke|r
-    .isQuestComplete 87477
+    .isQuestComplete 87477 --Sureki Incursion: Southern Swarm
     .goto 2215,52.00,66.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meradyth Lacke|r
     .turnin 87477 >>Turn in Sureki Incursion: Southern Swarm
     .target Meradyth Lacke
 step
     #arrowtext Kill\n|cRXP_ENEMY_Sureki Forces|r
-    .isOnQuest 87480
+    .isOnQuest 87480 --Sureki Incursion: The Eastern Assault
     #loop
     .goto 2215,71.76,45.59,30,0
     .goto 2215,72.06,46.62,30,0
@@ -1052,7 +1052,7 @@ step
     >>Kill |cRXP_ENEMY_Sureki Forces|r and click on the nearby |cRXP_PICK_Objects|r.
     .complete 87480,1 --Sureki invasion disrupted (100%)
 step
-    .isQuestComplete 87480
+    .isQuestComplete 87480 --Sureki Incursion: The Eastern Assault
     #label Sureki Incursion: The Eastern Assault
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Izaeh Strongiron|r on a platform high above.
     .turnin 87480 >>Turn in Sureki Incursion: The Eastern Assault
