@@ -757,8 +757,8 @@ RXPGuides.RegisterGuide([[
 
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Chromie|r
-    #label ChromieTime
-    .isQuestAvailable 70122
+    #label ChromieTime1
+    .isQuestAvailable 70122 --Explorers in Peril
     .goto 84,56.257,17.311
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r.
     -- .complete 53500,1 --Talk to Chromie (1)
@@ -768,14 +768,15 @@ step
     .skipgossipid 51901
     .skipgossipid 51902
     .target Chromie
--- step
---     .goto 84,56.257,17.311
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
---     .accept 40519 >>Accept Legion: The Legion Returns
---     .chromietime 10
---     .skipgossipid 51901
---     .skipgossipid 51902
---     .target Chromie
+step
+    #label ChromieTime2
+    .goto 84,56.257,17.311
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
+    .accept 40519 >>Accept Legion: The Legion Returns
+    .chromietime 10
+    .skipgossipid 51901
+    .skipgossipid 51902
+    .target Chromie
 step
     #arrowtext Click\n|cRXP_PICK_Hero's Call Board|r
     #label CallBoardStart

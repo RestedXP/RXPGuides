@@ -9875,7 +9875,7 @@ step << Alliance
     .target Ambassador Moorgard
     .accept 81887 >>Accept Stranger in a Strange Land
 step << Alliance
-    #include RestedXP Speed Leveling\a) GC Chromie Time Normal@ChromieTime-ChromieTime
+    #include RestedXP Speed Leveling\a) GC Chromie Time Normal@ChromieTime1-ChromieTime2
 -- step << Alliance
 --     .goto 84,56.257,17.311
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
@@ -17477,7 +17477,7 @@ step
     .accept 40519 >>Accept Legion: The Legion Returns
     .choose 1851120
 step
-    #include RestedXP Speed Leveling\a) GC Chromie Time Normal@ChromieTime-ChromieTime
+    #include RestedXP Speed Leveling\a) GC Chromie Time Normal@ChromieTime1-ChromieTime2
 -- step
 --     .goto 84,56.257,17.311
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
@@ -22490,7 +22490,7 @@ step
     .accept 53500 >>Accept Stranger in a Strange Land
     .target Ambassador Moorgard
 step
-    #include RestedXP Speed Leveling\a) GC Chromie Time Normal@ChromieTime-ChromieTime
+    #include RestedXP Speed Leveling\a) GC Chromie Time Normal@ChromieTime1-ChromieTime2
 -- step
 --     .goto 84,56.257,17.311
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
@@ -22552,7 +22552,7 @@ step
     .accept 55146 >>Accept Stranger in a Strange Land
     .target Ambassador Moorgard
 step
-    #include RestedXP Speed Leveling\a) GC Chromie Time Normal@ChromieTime-ChromieTime
+    #include RestedXP Speed Leveling\a) GC Chromie Time Normal@ChromieTime1-ChromieTime2
 -- step
 --     .goto 84,56.257,17.311
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
@@ -22611,7 +22611,7 @@ step
     .accept 50313 >>Accept Stranger in a Strange Land
     .target Ambassador Moorgard
 step
-    #include RestedXP Speed Leveling\a) GC Chromie Time Normal@ChromieTime-ChromieTime
+    #include RestedXP Speed Leveling\a) GC Chromie Time Normal@ChromieTime1-ChromieTime2
 -- step
 --     .goto 84,56.257,17.311
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
@@ -22660,7 +22660,7 @@ step
     .accept 58147 >>Accept Stranger in a Strange Land
     .target Ambassador Moorgard
 step
-    #include RestedXP Speed Leveling\a) GC Chromie Time Normal@ChromieTime-ChromieTime
+    #include RestedXP Speed Leveling\a) GC Chromie Time Normal@ChromieTime1-ChromieTime2
 -- step
 --     .goto 84,56.257,17.311
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
@@ -22718,7 +22718,7 @@ step
     .accept 50305 >>Accept Stranger in a Strange Land
     .target Ambassador Moorgard
 step
-    #include RestedXP Speed Leveling\a) GC Chromie Time Normal@ChromieTime-ChromieTime
+    #include RestedXP Speed Leveling\a) GC Chromie Time Normal@ChromieTime1-ChromieTime2
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Keira Onyxraven|r
     .goto 84,56.199,17.671
