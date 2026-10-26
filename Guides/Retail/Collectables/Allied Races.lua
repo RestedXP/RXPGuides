@@ -9298,11 +9298,28 @@ step
     .turnin 77899 >>Turn in The Rush'kah
     .target Rokhan
 step
+    #include RestedXP Miscellaneous\a) Loa Trials@LorewalkingLoaStart-LorewalkingLoaEnd
+]])
+--Shared Loa trials for Lorewalking
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP Miscellaneous
+#name a) Loa Trials
+#internal
+
+step
+    #label LorewalkingLoaStart
     #arrowtext Talk to\n|cRXP_FRIENDLY_Rokhan|r
     .goto 463,60.09,62.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rokhan|r
     .target Rokhan
     .accept 77900 >>Accept The Loa Trials
+step
+    #completewith next
+    #label Loa Trial Ritual
+    >>|cRXP_WARN_Wait for the Roleplay|r.
+    .complete 77900,1 --1/1 Participate in trial ritual
 step
     #arrowtext Use [Loa Trial Ritual]
     #completewith next
@@ -9311,8 +9328,9 @@ step
     .use 427573
     .timer 46,RP
 step
-    .goto 463,58.5,65.57
-    >>Wait until the objective completes
+    #requires Loa Trial Ritual
+    .goto 463,58.52,65.53
+    >>|cRXP_WARN_Wait for the Roleplay|r.
     .complete 77900,1 --1/1 Participate in trial ritual
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Rokhan|r
@@ -9340,7 +9358,7 @@ step
     .mob Unfinished Rush'kah
 step
     #completewith Ritual Circle
-    >>When the |cRXP_ENEMY_Lost Trainee's|r health drops to 50%, click on them for credit.
+    >>Reduce a |cRXP_ENEMY_Lost Trainee|r to 50% health, then click on them for credit.
     .complete 77901,1 --8/8 Lost Trainee darkness removed
     .use 211000
     .mob Lost Trainee Warrior
@@ -9385,7 +9403,7 @@ step
     .mob Empowered Boneguard
     .mob Unfinished Rush'kah
 step
-    >>When the |cRXP_ENEMY_Lost Trainee's|r health drops to 50%, click on them for credit.
+    >>Reduce a |cRXP_ENEMY_Lost Trainee|r to 50% health, then click on them for credit.
     .complete 77901,1 --8/8 Lost Trainee darkness removed
     .use 211000
     .mob Lost Trainee Warrior
@@ -9418,34 +9436,43 @@ step
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Feather|r
     .complete 77905,1 --1/1 Jani's Blessing
 step
-    #arrowtext Kill\n|cRXP_ENEMY_Summoned Visage|r
+    #arrowtext Kill |cRXP_ENEMY_Summoned Visage|r\nClick |cRXP_PICK_Totems|r
     .goto 463,58.55,56.29
-    >>Kill |cRXP_ENEMY_Summoned Visage|r on the pillar and Click on the |cRXP_PICK_Totems|r.
+    >>Kill the |cRXP_ENEMY_Summoned Visage|r on the pillar, then click on the |cRXP_PICK_Totems|r.
+    *|cRXP_WARN_After finishing at each pillar, stand inside the green circle and use the Extra Action Button to travel to the next pillar|r.
     .complete 77905,3,1 --4/4 Tzadah's Empowerment destroyed
     .mob Summoned Visage
 step
-    #arrowtext Kill\n|cRXP_ENEMY_Summoned Visage|r
+    #arrowtext Kill |cRXP_ENEMY_Summoned Visage|r\nClick |cRXP_PICK_Totems|r
     .goto 463,54.39,56.53
-    >>Kill |cRXP_ENEMY_Summoned Visage|r on the pillar and Click on the |cRXP_PICK_Totems|r.
+    >>Kill the |cRXP_ENEMY_Summoned Visage|r on the pillar, then click on the |cRXP_PICK_Totems|r.
+    *|cRXP_WARN_After finishing at each pillar, stand inside the green circle and use the Extra Action Button to travel to the next pillar|r.
     .complete 77905,3,2 --4/4 Tzadah's Empowerment destroyed
     .mob Summoned Visage
 step
-    #arrowtext Kill\n|cRXP_ENEMY_Summoned Visage|r
+    #arrowtext Kill |cRXP_ENEMY_Summoned Visage|r\nClick |cRXP_PICK_Totems|r
     .goto 463,54.49,47.04
-    >>Kill |cRXP_ENEMY_Summoned Visage|r on the pillar and Click on the |cRXP_PICK_Totems|r.
+    >>Kill the |cRXP_ENEMY_Summoned Visage|r on the pillar, then click on the |cRXP_PICK_Totems|r.
+    *|cRXP_WARN_After finishing at each pillar, stand inside the green circle and use the Extra Action Button to travel to the next pillar|r.
     .complete 77905,3,3 --4/4 Tzadah's Empowerment destroyed
     .mob Summoned Visage
 step
-    #arrowtext Kill\n|cRXP_ENEMY_Summoned Visage|r
+    #arrowtext Kill |cRXP_ENEMY_Summoned Visage|r\nClick |cRXP_PICK_Totems|r
     .goto 463,58.48,46.89
-    >>Kill |cRXP_ENEMY_Summoned Visage|r on the pillar and Click on the |cRXP_PICK_Totems|r.
+    >>Kill the |cRXP_ENEMY_Summoned Visage|r on the pillar, then click on the |cRXP_PICK_Totems|r.
     .complete 77905,3,4 --4/4 Tzadah's Empowerment destroyed
     .mob Summoned Visage
 step
+    #label LorewalkingLoaEnd
     #arrowtext Talk to\n|cRXP_FRIENDLY_Rokhan|r
     .goto 463,58.50,65.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rokhan|r
     .turnin 77905 >>Turn in Avatar of Mueh'zala
+    .target Rokhan
+step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Rokhan|r
+    .goto 463,58.50,65.55
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rokhan|r
     .target Rokhan
     .accept 77906 >>Accept De Darkspear Loa
 step

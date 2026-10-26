@@ -2319,7 +2319,7 @@ RXPGuides.RegisterGuide([[
 #subgroup Lorewalking
 #name ad) The Elves of Quel'Thalas
 #displayname The Elves of Quel'Thalas
-#next a) Xal'atath
+#next ae) The Loa
 
 step << Alliance
     #arrowtext Talk to\n|cRXP_FRIENDLY_Lorewalker Cho|r
@@ -2537,4 +2537,477 @@ step
     .turnin 91843 >>Turn in Recap: The Harbinger
     .target Tome of History
     .accept 91864 >>Accept Recap: Fractured Visions
+]])
+--The Loa
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP Miscellaneous
+#subgroup Lorewalking
+#name ae) The Loa
+#displayname The Loa
+#next a) Xal'atath
+
+
+step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Li Li Stormstout|r
+    .goto 84,64.30,16.20,-1 << Alliance
+    .goto 85,54.30,56.60,-1 << Horde
+    .goto 2339,49.70,31.50,-1
+    .goto 2393,58.70,70.80,-1
+    >>|cRXP_WARN_If you are currently in Chromie Time, talk to Chromie to return to the present timeline before starting Lorewalking.|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Li Li Stormstout::253727|r.
+    .accept 92826 >>Accept Lorewalking: The Loa of Kings
+    .skipgossipid 124311
+    .choose 5420
+    .timer 60,RP
+    .target Li Li Stormstout::253727
+-- step
+--     #completewith LorewalkingCampaignEnd
+--     +Click on the |cRXP_PICK_Ask a Question|r button in the "Active Items Frame" to talk to the Lorewalker if needed.
+--     *To stop the campaign, click on |cRXP_PICK_Exit Lorewalking|r in the Lorewalking panel.
+--     .macro Ask a Question,2056011 >>/cast spell:1242675
+step
+    #arrowtext Wait for the roleplay
+    .goto 84,64.30,16.20,-1 << Alliance
+    .goto 85,54.30,56.60,-1 << Horde
+    .goto 2339,49.70,31.50,-1
+    .goto 2393,58.70,70.80,-1
+    >>|cRXP_WARN_Wait for the Roleplay|r.
+    .complete 92826,1 --1/1 Listen to Li Li to learn about the loa
+step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Li Li Stormstout|r
+    .goto 84,64.30,16.20,-1 << Alliance
+    .goto 85,54.30,56.60,-1 << Horde
+    .goto 2339,49.70,31.50,-1
+    .goto 2393,58.70,70.80,-1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Li Li Stormstout::253727|r.
+    .complete 92826,2 --1/1 Talk to Li Li to learn about Rezan and King Rastakhan
+    .skipgossipid 136652
+    .target Li Li Stormstout::253727
+step
+    #completewith endzul
+    +|cRXP_WARN_You can't skyride here|r
+step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_King Rastakhan|r
+    .goto 1165,38.93,27.16
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_King Rastakhan::129491|r at the start of the memory.
+    .accept 49965 >>Accept The Warpack
+    .target King Rastakhan::129491
+step
+    #completewith next
+    #label Ride with the Warpack
+    >>|cRXP_WARN_Wait for the Roleplay|r.
+    .complete 49965,1 --1/1 Ride with the Warpack
+    .target Wardruid Loti::134132
+step
+    #completewith Ride with the Warpack
+    #arrowtext Click\n|cRXP_FRIENDLY_Wardruid Loti|r
+    .goto 1165,38.83,27.04
+    .vehicle >>Click on |cRXP_FRIENDLY_Wardruid Loti::134132|r
+    .timer 80,RP
+    .target Wardruid Loti::134132
+step
+    #requires Ride with the Warpack
+    .goto 1165,38.83,27.04
+    >>|cRXP_WARN_Wait for the Roleplay|r.
+    .complete 49965,1 --1/1 Ride with the Warpack
+    .target Wardruid Loti::134132
+step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Gonk|r
+    .goto 862,49.27,44.36
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gonk::129740|r.
+    .turnin 49965 >>Turn in The Warpack
+    .accept 49422 >>Accept Heretics
+    .target Gonk::129740
+step
+    .goto 862/1642,1534.300,-1120.100
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raptari Druid::131682|r.
+    .accept 49424 >>Accept The Full Prophecy
+    .target Raptari Druid::131682
+step
+    #arrowtext Kill\n|cRXP_ENEMY_Zul's followers|r
+    #completewith LoaWordsRead
+    >>Kill |cRXP_ENEMY_Zul's followers|r and destroy |cRXP_PICK_Skykiller Ballistae|r around the temple to fill the progress bar.
+    .complete 49422,1 --Ruin wrought. (100%)
+    .mob Skykiller Ballista::129540
+    .mob Kao-Tien Battlemaster::129515
+    .mob Disciple of Zul::129504
+step
+    #arrowtext Click\n|cRXP_PICK_Word of Zul III|r
+    .goto 862,48.81,42.75
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Word of Zul|r on the temple wall.
+    .complete 49424,3 --1/1 The Word of Zul III read
+step
+    #arrowtext Click\n|cRXP_PICK_Word of Zul II|r
+    .goto 862,49.02,40.59
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Word of Zul II|r inside a house.
+    .complete 49424,2 --1/1 The Word of Zul II read
+step
+    #arrowtext Click\n|cRXP_PICK_Word of Zul|r
+    #label LoaWordsRead
+    .goto 862,48.93,39.43
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Word of Zul|r.
+    .complete 49424,1 --1/1 The Word of Zul I read
+step
+    #arrowtext Kill\n|cRXP_ENEMY_Zul's followers|r
+    #loop
+    .goto 862,49.7,38.47,40,0
+    .goto 862,49.94,39.51,40,0
+    .goto 862,49.84,40.79,40,0
+    .goto 862,50.04,43.26,40,0
+    .goto 862,49.08,42.76,40,0
+    >>Kill |cRXP_ENEMY_Zul's followers|r and destroy |cRXP_PICK_Skykiller Ballistae|r.
+    .complete 49422,1 --Ruin wrought. (100%)
+    .mob Skykiller Ballista::129540
+    .mob Kao-Tien Battlemaster::129515
+    .mob Disciple of Zul::129504
+step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Wardruid Loti|r
+    .goto 862,49.65,37.98
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wardruid Loti::134132|r and |cRXP_FRIENDLY_Hexlord Raal::127222|r at the exit.
+    .turnin 49424 >>Turn in The Full Prophecy
+    .turnin 49422 >>Turn in Heretics
+    .accept 49425 >>Accept City of Gold
+    .target Wardruid Loti::134132s
+    .target Hexlord Raal::127222
+step
+    #arrowtext Click\n|cRXP_FRIENDLY_Ata the Winglord|r
+    .goto 862,49.65,37.89
+    >>|TInterface/cursor/crosshair/interact.blp:20|tMount |cRXP_FRIENDLY_Ata the Winglord::127417|r.
+    .complete 49425,1 --1/1 Ride Ata the Winglord
+    .target Ata the Winglord::127417
+step
+    .goto 862,43.73,39.43
+    >>Use the vehicle abilities to attack |cRXP_ENEMY_Zul's forces|r along the road.
+    .complete 49425,2 --75/75 Forces of Zul slain
+    .mob Disciple of Zul::129504
+step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Rezan|r
+    .goto 862,43.73,39.43s
+    *|cRXP_WARN_Do not leave vehicle|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rezan::129492|r.
+    .turnin 49425 >>Turn in City of Gold
+    .accept 49426 >>Accept The King's Gambit
+    .target Rezan::129492
+step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_King Rastakhan|r
+    .goto 862,42.18,39.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_King Rastakhan::129757|r
+    .complete 49426,1 --1/1 March on Atal'Dazar
+    .complete 49426,2 --1/1 Speak with King Rastakhan
+    .skipgossipid 48457
+    .target King Rastakhan::129757
+step
+    .goto 862,42.71,37.61
+    >>Help |cRXP_FRIENDLY_King Rastakhan::129757|r reach safety.
+    .complete 49426,3 --1/1 Get Rastakhan to safety
+    .target King Rastakhan::129757
+step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_King Rastakhan|r
+    .goto 862,42.71,37.61
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_King Rastakhan::129757|r after escaping.
+    .turnin 49426 >>Turn in The King's Gambit
+    .target King Rastakhan::129757
+step
+    #label endzul
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Li Li Stormstout|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Li Li Stormstout::253727|r.
+    .turnin 92826 >>Turn in Lorewalking: The Loa of Kings
+    .accept 92829 >>Accept Lorewalking: Death of the Drakkari Loa
+    .target Li Li Stormstout::253727
+step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Witch Doctor Khufu|r
+    .goto 121,59.51,58.05
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Witch Doctor Khufu::28479|r.
+    .accept 12628 >>Accept To Speak With Har'koa
+    .target Witch Doctor Khufu::28479
+    .target Li Li Stormstout::253727
+step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Har'koa|r
+    .goto 121,63.70,70.40
+    *|cRXP_WARN_You can skyride here|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Har'koa::28401|r at her altar.
+    .turnin 12628 >>Turn in To Speak With Har'koa
+    .accept 12632 >>Accept But First My Offspring
+    .target Har'koa::28401
+step
+    #arrowtext Kill and Click\n|cRXP_ENEMY_Cursed Offspring of Har'koa|r
+    #loop
+    .goto 121,62.9,71.74,30,0
+    .goto 121,62.67,74.68,30,0
+    .goto 121,61.46,72.92,30,0
+    .goto 121,61.75,70.4,30,0
+    .goto 121,61.55,68.88,30,0
+    .goto 121,60.22,67.99,30,0
+    .goto 121,61.56,66.45,30,0
+    .goto 121,63.99,67.18,30,0
+    .goto 121,65.7,68.49,30,0
+    .goto 121,64.39,69.74,30,0
+    .goto 121,63.81,63.62,30,0
+    .goto 121,66.85,70.08,30,0
+    .goto 121,64.26,74.81,30,0
+    >>Kill |cRXP_ENEMY_Cursed Offspring of Har'koa::28404|r around the altar.
+    *Click on their corpses to revive them.
+    .complete 12632,1 --7/7 Cursed Offspring of Har'koa resurrected
+    .mob Cursed Offspring of Har'koa::28404
+step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Har'koa|r
+    .goto 121,63.70,70.40
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Har'koa::28401|r.
+    .turnin 12632 >>Turn in But First My Offspring
+    .accept 12642 >>Accept Spirit of Rhunok
+    .target Har'koa::28401
+step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Spirit of Rhunok|r
+    .goto 121,53.40,39.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Spirit of Rhunok::28561|r at the Altar of Rhunok.
+    .turnin 12642 >>Turn in Spirit of Rhunok
+    .accept 12646 >>Accept My Prophet, My Enemy
+    .target Spirit of Rhunok::28561
+step
+    #arrowtext Kill and Loot\n|cRXP_ENEMY_Prophet of Rhunok|r
+    .goto 121,54.10,47.50
+    >>Kill the |cRXP_ENEMY_Prophet of Rhunok::28442|r. Loot him for |TInterface/Icons/INV_Potion_31:0|t[|cRXP_LOOT_Arctic Bear God Mojo|r].
+    .complete 12646,1 --1/1 Arctic Bear God Mojo
+    .mob Prophet of Rhunok::28442
+step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Spirit of Rhunok|r
+    .goto 121,53.40,39.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Spirit of Rhunok::28561|r.
+    .turnin 12646 >>Turn in My Prophet, My Enemy
+    .accept 12647 >>Accept An End to the Suffering
+    .target Spirit of Rhunok::28561
+step
+    #arrowtext Kill and Loot\n|cRXP_ENEMY_Rhunok's Tormentor|r
+    .goto 121,53.40,35.80
+    >>Kill |cRXP_ENEMY_Rhunok's Tormentor::28575|r inside the altar building. Loot him for |TInterface/Icons/INV_Enchant_DustDream:0|t[|cRXP_LOOT_Tormentor's Incense|r].
+    .complete 12647,1 --1/1 Tormentor's Incense
+    .mob Rhunok's Tormentor::28575
+step
+    .goto 121,53.50,34.40
+    >>Click on the |cRXP_PICK_Tormentor's Incense|r macro in the "Active Items Frame", then kill |cRXP_ENEMY_Rhunok::28416|r.
+    *If you lose Rhunok's blessing, return to the |cRXP_FRIENDLY_Spirit of Rhunok::28561|r to receive it again.
+    .complete 12647,2 --1/1 Rhunok slain
+    .macro Tormentor's Incense,134400 >>/targetexact Rhunok\n/use item:38696
+    .mob Rhunok::28416
+step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Spirit of Rhunok|r
+    .goto 121,53.40,39.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Spirit of Rhunok::28561|r.
+    .turnin 12647 >>Turn in An End to the Suffering
+    .timer 10,RP
+    .target Spirit of Rhunok::28561
+step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Har'koa|r
+    .goto 121,60.25,57.74
+    >>Wait for |cRXP_FRIENDLY_Li Li Stormstout::253727|r for the transition. Talk to |cRXP_FRIENDLY_Har'koa::28401|r there.
+    .accept 12721 >>Accept Rampage
+    .target Har'koa::28401
+step
+    .isQuestNotComplete 12721 --Rampage
+    .isOnQuest 12721 --Rampage
+    .goto 121,78.18,25.62
+    .cast 52815 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Pylon|r.
+step
+    .isQuestNotComplete 12721 --Rampage
+    .isOnQuest 12721 --Rampage
+    .goto 121,78.16,24.23
+    .cast 52815 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Pylon|r.
+step
+    .isQuestNotComplete 12721 --Rampage
+    .isOnQuest 12721 --Rampage
+    .goto 121,79.08,24.2
+    .cast 52815 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Pylon|r.
+step
+    .isQuestNotComplete 12721 --Rampage
+    .isOnQuest 12721 --Rampage
+    .goto 121,79.11,25.54
+    .cast 52815 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Pylon|r.
+step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Witch Doctor Khufu|r
+    .goto 121,59.50,58.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Witch Doctor Khufu::28479|r in Zim'Torga.
+    .complete 12721,1 --1/1 Akali unfettered from his chains
+    .turnin 12721 >>Turn in Rampage
+    .accept 12729 >>Accept The Gods Have Spoken
+    .target Witch Doctor Khufu::28479
+step
+    #arrowtext Kill and Loot\n|cRXP_ENEMY_Guardian of Zim'Rhuk|r
+    #loop
+    .goto 121,59.26,48.9,40,0
+    .goto 121,59.4,46.36,40,0
+    .goto 121,60.85,44.2,40,0
+    .goto 121,61.95,41.7,40,0
+    .goto 121,59.56,41.49,40,0
+    .goto 121,58.91,39.37,40,0
+    .goto 121,58.13,44.35,40,0
+    >>Kill |cRXP_ENEMY_Guardian of Zim'Rhuk::28597|r. Loot them for |TInterface/Icons/INV_Ore_Arcanite_02:0|t[|cRXP_LOOT_Unblemished Heart of the Guardian|r].
+    *|cRXP_WARN_The dropchance is bad|r.
+    .complete 12729,1 --1/1 Unblemished Heart of the Guardian
+    .mob Guardian of Zim'Rhuk::28597
+step
+    #arrowtext Kill and Loot\n|cRXP_ENEMY_Altar Warden|r
+    #loop
+    .goto 121,68.63,56.11,30,0
+    .goto 121,70.06,54.6,30,0
+    .goto 121,72.46,55.6,30,0
+    .goto 121,72.74,59.47,30,0
+    .goto 121,70.74,62.26,30,0
+    .goto 121,68.49,61.54,30,0
+    >>Kill |cRXP_ENEMY_Altar Warden::28784|r. Loot them for |TInterface/Icons/Spell_Frost_Stun:0|t[|cRXP_LOOT_Gusty Essence of the Warden|r].
+    *|cRXP_WARN_The dropchance is bad|r.
+    .complete 12729,2 --1/1 Gusty Essence of the Warden
+    .mob Altar Warden::28784
+step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Har'koa|r
+    .goto 121,60.26,57.74
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Har'koa::28401|r in Zim'Torga.
+    .turnin 12729 >>Turn in The Gods Have Spoken
+    .accept 12730 >>Accept Convocation at Zol'Heb
+    .target Har'koa::28401
+step
+    #arrowtext Kill\n|cRXP_ENEMY_Prophet of Akali|r
+    .goto 121,77.60,36.60
+    >>Use the |cRXP_PICK_Prophet of Akali Convocation|r inside the summoning circle.
+    *Kill the |cRXP_ENEMY_Prophet of Akali::29028|r.
+    .complete 12730,1 --1/1 Prophet of Akali summoned and defeated
+    .use 39566
+    .mob Prophet of Akali::29028
+step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Har'koa|r
+    .goto 121,60.27,57.76
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Har'koa::28401|r in Zim'Torga.
+    .turnin 12730 >>Turn in Convocation at Zol'Heb
+    .target Har'koa::28401
+step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Li Li Stormstout|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Li Li Stormstout::253727|r
+    .turnin 92829 >>Turn in Lorewalking: Death of the Drakkari Loa
+    .accept 92831 >>Accept Lorewalking: The Blood Loa
+    .target Li Li Stormstout::253727
+step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Li Li Stormstout|r
+    >>|cRXP_WARN_Wait for the Roleplay|r.
+    .complete 92831,1 --1/1 Travel with Li Li to Atal'Hakkar
+    .target Li Li Stormstout::253727
+step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Li Li Stormstout|r
+    .goto 51,69.54,55.04
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Li Li Stormstout::253727|r about Hakkar.
+    .complete 92831,2 --1/1 Ask Li Li about Hakkar
+    .timer 60,RP
+    .skipgossipid 137513
+    .target Li Li Stormstout::253727
+step
+    #arrowtext Wait for the roleplay
+    >>|cRXP_WARN_Wait for the Roleplay|r.
+    .complete 92831,3 --1/1 Listen to Li Li to learn about Hakkar
+step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Lord Itharius|r
+    .goto 51,69.48,54.52
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Itharius::46071|r.
+    .accept 27704 >>Accept Legends of the Sunken Temple
+    .target Lord Itharius::46071
+step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Mishi|r
+    .goto 51,69.67,51.87,30,0
+    .goto 51,69.14,53.65,30,0
+    .goto 51,69.71,53.43,30,0
+    .goto 51,70.1,50.83,30,0
+    .goto 51,71.17,46.67,30,0
+    .goto 51,74.85,45.61
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mishi::260344|r and swim through the flooded passage, then follow the corridor to the Hall of Masks.
+    *|cRXP_WARN_These quests take place outside the Sunken Temple instance portal.|r
+    .complete 27704,1 --1/1 Hall of Masks found
+    .skipgossipid 138730
+    .target Mishi::260344
+step
+    .goto 51,74.85,45.61
+    >>Complete the quest through the quest tracker and accept the follow-up.
+    .turnin 27704 >>Turn in Legends of the Sunken Temple
+    .accept 27705 >>Accept Step One: The Priestess
+step
+    #arrowtext Kill\n|cRXP_ENEMY_Priestess Udum'bra|r
+    .goto 51,75.11,47.08,30,0
+    .goto 51,77.59,48.47,30,0
+    .goto 51,76.08,50.15,30,0
+    .goto 51,75.5,51.81,30,0
+    .goto 51,75.44,49.66,30,0
+    .goto 51,74.78,49.28
+    >>Kill |cRXP_ENEMY_Priestess Udum'bra::46424|r at the back of the chamber.
+    .complete 27705,1 --1/1 Priestess Udum'bra slain
+    -- .skipgossipid 138861
+    .mob Priestess Udum'bra::46424
+    .target Mishi::260348
+step
+    .goto 51,74.78,49.28
+    >>Complete the quest through the quest tracker and accept the follow-up.
+    .turnin 27705 >>Turn in Step One: The Priestess
+    .accept 27768 >>Accept Step Two: The Bloodletter
+step
+    .goto 51,72.94,47.08,30,0
+    .goto 51,77.21,47.79,30,0
+    .goto 51,77.56,46.07
+    >>Kill |cRXP_ENEMY_Gomora the Bloodletter::46623|r.
+    *|cRXP_WARN_If you die before reaching him take rez sickness|r
+    .complete 27768,1 --1/1 Gomora the Bloodletter slain
+    .mob Gomora the Bloodletter::46623
+    .target Mishi::260348
+step
+    .goto 51,77.56,46.07
+    >>Complete the quest through the quest tracker and accept the follow-up.
+    .turnin 27768 >>Turn in Step Two: The Bloodletter
+    .accept 27773 >>Accept Step Three: Prophet
+step
+    #arrowtext Kill\n|cRXP_ENEMY_Jammal'an the Prophet|r
+    .goto 51,77.34,48.7,30,0
+    .goto 51,76.84,49.64,30,0
+    .goto 51,78.99,50.49,30,0
+    .goto 51,79.98,43.84
+    >>Kill |cRXP_ENEMY_Jammal'an the Prophet::46656|r below.
+    .complete 27773,1 --1/1 Jammal'an the Prophet defeated
+    .mob Jammal'an the Prophet::46656
+    .target Mishi::260349
+step
+    .goto 51,79.98,43.84
+    >>Complete the quest through the quest tracker and accept the follow-up to return to |cRXP_FRIENDLY_Lord Itharius::46071|r.
+    .turnin 27773 >>Turn in Step Three: Prophet
+    .accept 27914 >>Accept Blessing of the Green Dragonflight
+    .target Lord Itharius::46071
+step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Lord Itharius|r
+    .goto 51,69.47,54.52
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Itharius::46071|r.
+    .turnin 27914 >>Turn in Blessing of the Green Dragonflight
+    .target Lord Itharius::46071
+step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Li Li Stormstout|r
+    *|cRXP_WARN_The arrow can't be displayed here|r
+    >>Kill |cRXP_ENEMY_Hakkar the Soulflayer|r after the roleplay
+    .complete 92831,5 --1/1 Hakkar the Soulflayer slain
+    .mob Hakkar the Soulflayer::254242
+    .target Li Li Stormstout::253727
+step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Li Li Stormstout|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Li Li Stormstout::253727|r
+    .turnin 92831 >>Turn in Lorewalking: The Blood Loa
+    .accept 92832 >>Accept Lorewalking: The Hash'ey
+    .target Li Li Stormstout::253727
+step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Rokhan|r
+    .goto 463,60.07,62.38
+    >>Wait for the rolplay then Talk to |cRXP_FRIENDLY_Rokhan::223215|r at the trial site.
+    .accept 77900 >>Accept The Loa Trials
+    .target Rokhan::223215
+    .target Li Li Stormstout::253727
+step
+    #include RestedXP Miscellaneous\a) Loa Trials@LorewalkingLoaStart-LorewalkingLoaEnd
+step
+--     #label LorewalkingCampaignEnd
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Li Li Stormstout|r
+    .goto 463,58.52,65.52
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Li Li Stormstout::253727|r to finish the Loa story and collect your rewards.
+    .turnin 92832 >>Turn in Lorewalking: The Hash'ey
+    .target Li Li Stormstout::253727
 ]])
