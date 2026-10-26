@@ -593,7 +593,7 @@ local function LoadGuide(guideData,n)
 
         if guide and guide.length == length then
             --print('w',guide.key)
-            if (guide.defaultFor and not applies(guide.defaultFor)) then
+            if (guide.defaultFor and not applies(guide.defaultFor)) or addon.game == "CLASSIC" and guide.forever and not guide.classic then
                 guide.lowPrio = "*" .. group
                 --print(group)
             else
@@ -811,7 +811,7 @@ function addon.LoadCachedGuides()
                 end
                 guide = guideData.metadata
                 local groupName = guide.group:gsub("^%*","")
-                if (guide.defaultFor and not applies(guide.defaultFor)) then
+                if (guide.defaultFor and not applies(guide.defaultFor)) or addon.game == "CLASSIC" and guide.forever and not guide.classic then
                     guide.lowPrio = "*" .. groupName
                 else
                     guide.lowPrio = nil
@@ -1151,7 +1151,11 @@ function addon.ParseGuide(groupOrContent, text, defaultFor, isEmbedded, group, k
         end
         defaultFor = "!tbc"
     end
-    if defaultFor then
+
+    if addon.game == "CLASSIC" and guide.forever and not guide.classic then
+        parentGroup = groupOrContent
+        guide.lowPrio = "*" .. groupOrContent
+    elseif defaultFor then
         local boost58
         if defaultFor == "58Boost" then
             if playerLevel >= 60 or playerLevel < 58 then

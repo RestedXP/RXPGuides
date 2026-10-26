@@ -204,6 +204,10 @@ function addon.GetExpectedQuestLog()
             startGuide = guide
         else
             local list = addon.guideList[guide.groupdisplayname or guide.group]
+            if not list and guide.group then
+                list = addon.guideList["*"..guide.group]
+            end
+            list = list or {}
             local group = list.defaultGroup_
             local name = list.defaultGuide_
             startGuide = addon:FetchGuide(group,name)
