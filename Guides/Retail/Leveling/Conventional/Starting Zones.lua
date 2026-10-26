@@ -26471,10 +26471,10 @@ step
     .goto 463,43.46,91.82,30,0
     .goto 463,43.81,88.49,30,0
     .goto 463,46.15,88.00,30,0
-    >>Use the |T134326:0|t[Bloodtalon Lasso] on |cRXP_FRIENDLY_Swiftclaw|r. He spawns next to you and then runs counter-clockwise around the island.
+    >>Click on the |cRXP_PICK_Bloodtalon Lasso|r macro in the "Active Items Frame" to use it on |cRXP_FRIENDLY_Swiftclaw|r. He runs counter-clockwise around the island.
     .complete 24626,1 --1/1 Capture Swiftclaw
 	.unitscan Swiftclaw
-    .use 50053
+    .macro Bloodtalon Lasso,134326 >>/targetexact Swiftclaw\n/use item:50053
 step
     #arrowtext Ride |cRXP_FRIENDLY_Swiftclaw|r back to the |cRXP_PICK_Raptor Pen|r
     .goto 463,50.42,66.82,40,0
@@ -27315,10 +27315,10 @@ step
     #loop
     .goto 7,48.25,60.43,20,0
     .goto 7,48.13,57.28,20,0
-    >>Kyle (a wolf) runs in a circle around/through the city. |cRXP_WARN_If you see him running towards you then wait until he is near you, target him and use the [|cRXP_LOOT_Tender Stride Meat|r|r].
+    >>Click on the |cRXP_PICK_Tender Stride Meat|r macro in the "Active Items Frame" to use it on |cRXP_FRIENDLY_Kyle|r. Wait until Kyle is nearby.
     .complete 11129,1 --1/1 Kyle fed
     .target Kyle
-    .use 33009
+    .macro Tender Stride Meat,134400 >>/targetexact Kyle\n/use item:33009
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Ahab Wheathoof|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ahab Wheathoof|r.
@@ -29652,37 +29652,37 @@ step
 step
     #sticky
     >>You need to collect a total of 9 Kaja'Colas Zero-One
-    >>Target a |cRXP_FRIENDLY_Kezan Citizen|r and use the cola
-    .use 52484
+    >>Click on the |cRXP_PICK_Kaja'Cola Zero-One|r macro in the "Active Items Frame" to use it on |cRXP_FRIENDLY_Kezan Citizen|r.
+    .macro Kaja'Cola Zero-One,134400 >>/targetexact Kezan Citizen\n/use item:52484
     .collect 52484,9,25122,0xF
     .complete 25122,4 --6/6 Other goblin's minds freed
     .target Kezan Citizen
 step
     #title Free Ace
-    >>Target |cRXP_FRIENDLY_Ace|r and use a Kaja'Cola Zero-One
+    >>Click on the |cRXP_PICK_Kaja'Cola Zero-One|r macro in the "Active Items Frame" to use it on |cRXP_FRIENDLY_Ace|r.
     .goto 174,57.1,36.9
-    .use 52484
+    .macro Kaja'Cola Zero-One,134400 >>/targetexact Ace\n/use item:52484
     .complete 25122,1 --1/1 Ace's mind freed
     .target Ace
 step
     #title Free Izzy
-    >>Target |cRXP_FRIENDLY_Izzy|r and use a Kaja'Cola Zero-One
+    >>Click on the |cRXP_PICK_Kaja'Cola Zero-One|r macro in the "Active Items Frame" to use it on |cRXP_FRIENDLY_Izzy|r.
     .goto 174,57.01,35.02
-    .use 52484
+    .macro Kaja'Cola Zero-One,134400 >>/targetexact Izzy\n/use item:52484
     .complete 25122,2 --1/1 Izzy's mind freed
     .target Izzy
 step
     #arrowtext Kill\n|cRXP_ENEMY_Blastshadow the Brutemaster|r
-    >>Kill |cRXP_ENEMY_Blastshadow the Brutemaster|r and pick up the flying purple |cRXP_PICK_Soulstone|r. Target the corpse of |cRXP_ENEMY_Blastshadow the Brutemaster|r and use |T134336:0|t[Blastshadow's Soulstone]
-    .use 52481
+    >>Kill |cRXP_ENEMY_Blastshadow the Brutemaster|r and click on the flying purple |cRXP_PICK_Soulstone|r. Click on the |cRXP_PICK_Blastshadow's Soulstone|r macro in the "Active Items Frame" to use it on his corpse.
+    .macro Blastshadow's Soulstone,134336 >>/targetexact Blastshadow the Brutemaster\n/use [@target,dead] item:52481
     .goto 174,56.18,32.29
     .complete 25123,1 --1/1 Blastshadow's Soulstone destroyed
     .mob Blastshadow the Brutemaster
 step
     #title Free Gobber
-    >>Target |cRXP_FRIENDLY_Gobber|r and use a Kaja'Cola Zero-One
+    >>Click on the |cRXP_PICK_Kaja'Cola Zero-One|r macro in the "Active Items Frame" to use it on |cRXP_FRIENDLY_Gobber|r.
     .goto 174,57.04,32.17
-    .use 52484
+    .macro Kaja'Cola Zero-One,134400 >>/targetexact Gobber\n/use item:52484
     .complete 25122,3 --1/1 Gobber's mind freed
     .target Gobber
 step

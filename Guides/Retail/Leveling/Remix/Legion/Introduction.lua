@@ -6077,32 +6077,32 @@ step
     #arrowtext Use [Radiant Ley Crystal]\non |cRXP_FRIENDLY_Berazus|r
     #requires OnTheBrinkB
     .goto 630,49.73,24.98
-    >>Use the |T133255:0|t[Radiant Ley Crystal] on |cRXP_FRIENDLY_Berazus|r.
+    >>Click on the |cRXP_PICK_Radiant Ley Crystal|r macro in the "Active Items Frame" to use it on |cRXP_FRIENDLY_Berazus|r.
     .complete 38015,4 --1/1 Heal Berazus
     .target Berazus
-    .use 138146
+    .macro Radiant Ley Crystal,133255 >>/targetexact Berazus\n/use item:138146
 step
     #arrowtext Use [Radiant Ley Crystal]\non |cRXP_FRIENDLY_Cedonu|r
     .goto 630,48.67,27.90
-    >>Use the |T133255:0|t[Radiant Ley Crystal] on |cRXP_FRIENDLY_Cedonu|r.
+    >>Click on the |cRXP_PICK_Radiant Ley Crystal|r macro in the "Active Items Frame" to use it on |cRXP_FRIENDLY_Cedonu|r.
     .complete 38015,1 --1/1 Heal Cedonu
     .target Cedonu
-    .use 138146
+    .macro Radiant Ley Crystal,133255 >>/targetexact Cedonu\n/use item:138146
 step
     #arrowtext Use [Radiant Ley Crystal]\non |cRXP_FRIENDLY_Emmigosa|r
     .goto 630,47.98,27.13
-    >>Use the |T133255:0|t[Radiant Ley Crystal] on |cRXP_FRIENDLY_Emmigosa|r.
+    >>Click on the |cRXP_PICK_Radiant Ley Crystal|r macro in the "Active Items Frame" to use it on |cRXP_FRIENDLY_Emmigosa|r.
     .complete 38015,3 --1/1 Heal Emmigosa
     .target Emmigosa
-    .use 138146
+    .macro Radiant Ley Crystal,133255 >>/targetexact Emmigosa\n/use item:138146
 step
     #arrowtext Use [Radiant Ley Crystal]\non |cRXP_FRIENDLY_Kharmeera|r
     #label OnTheBrinkA
     .goto 630,47.26,26.33
-    >>Use the |T133255:0|t[Radiant Ley Crystal] on |cRXP_FRIENDLY_Kharmeera|r.
+    >>Click on the |cRXP_PICK_Radiant Ley Crystal|r macro in the "Active Items Frame" to use it on |cRXP_FRIENDLY_Kharmeera|r.
     .complete 38015,2 --1/1 Heal Kharmeera
     .target Kharmeera
-    .use 138146
+    .macro Radiant Ley Crystal,133255 >>/targetexact Kharmeera\n/use item:138146
 step
     #arrowtext Kill\n|cRXP_ENEMY_Withered forces|r
     #loop
