@@ -1788,16 +1788,18 @@ end
 
 local function calculate(itemLink, scanData)
     if scanData.lowestPrice <= 0 then return end
-    local itemData = addon.itemUpgrades:GetItemData("item:" .. scanData.itemID)
+    local itemDataLink = "item:" .. scanData.itemID
+    local itemData = session.itemCache[itemDataLink] or
+                     addon.itemUpgrades:GetItemData(itemDataLink)
 
-    -- Should only have queried usable items, so not intentionally nil
     if not itemData then
         ahSession.pendingItemInfo[scanData.itemID] = true
-        -- print("itemData nil", itemLink)
         return
     end
 
     ahSession.pendingItemInfo[scanData.itemID] = nil
+    if itemData.unusable then return end
+
     scanData.totalWeight = itemData.totalWeight
     scanData.weightPerCopper = itemData.totalWeight / scanData.lowestPrice
     scanData.itemEquipLoc = itemData.itemEquipLoc
