@@ -4,6 +4,7 @@ RXPGuides.RegisterGuide([[
 #version 7
 #group RXP TBC Attunement Guide
 #name 1. Karazhan
+#guideKind attunement
 #title Karazhan
 
 step
@@ -186,6 +187,7 @@ RXPGuides.RegisterGuide([[
 #version 7
 #group RXP TBC Attunement Guide
 #name 2. Serpentshrine Cavern
+#guideKind attunement
 #title Serpentshrine Cavern
 
 step
@@ -219,6 +221,7 @@ RXPGuides.RegisterGuide([[
 #version 7
 #group RXP TBC Attunement Guide
 #name 3. Tempest Keep
+#guideKind attunement
 #title Tempest Keep
 
 step
@@ -623,6 +626,7 @@ RXPGuides.RegisterGuide([[
 #version 7
 #group RXP TBC Attunement Guide
 #name 4. Mount Hyjal
+#guideKind attunement
 #title Mount Hyjal
 
 step
@@ -664,6 +668,7 @@ RXPGuides.RegisterGuide([[
 #version 7
 #group RXP TBC Attunement Guide
 #name 5. Black Temple
+#guideKind attunement
 #title Black Temple
 
 step

@@ -13,6 +13,8 @@ RXPGuides.RegisterGuide([[
 #subgroup Guía del conjunto Heroísmo << Warrior
 #subgroup Guía del conjunto Virtuoso << Priest
 #name Parte 1: Brazales
+#guideKind set
+#guideIcon rxp-icon-quest
 #next Parte 2: Cinturón y Guantes
 
 
@@ -229,6 +231,8 @@ RXPGuides.RegisterGuide([[
 #subgroup Guía del conjunto Heroísmo << Warrior
 #subgroup Guía del conjunto Virtuoso << Priest
 #name Parte 2: Cinturón y Guantes
+#guideKind set
+#guideIcon rxp-icon-quest
 #next Parte 3: Pantalones, Hombreras y Botas
 
 
@@ -673,6 +677,8 @@ RXPGuides.RegisterGuide([[
 #subgroup Guía del conjunto Heroísmo << Warrior
 #subgroup Guía del conjunto Virtuoso << Priest
 #name Parte 3: Pantalones, Hombreras y Botas
+#guideKind set
+#guideIcon rxp-icon-quest
 #next Parte 4: Casco y Pechera
 
 step
@@ -1155,6 +1161,8 @@ RXPGuides.RegisterGuide([[
 #subgroup Guía del conjunto Heroísmo << Warrior
 #subgroup Guía del conjunto Virtuoso << Priest
 #name Parte 4: Casco y Pechera
+#guideKind set
+#guideIcon rxp-icon-quest
 
 
 step

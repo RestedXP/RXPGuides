@@ -4,6 +4,7 @@ RXPGuides.RegisterGuide([[
 #version 7
 #group RXP TBC Attunement Dungeonführer
 #name 1. Karazhan
+#guideKind attunement
 #title Karazhan
 
 step
@@ -186,6 +187,7 @@ RXPGuides.RegisterGuide([[
 #version 7
 #group RXP TBC Attunement Dungeonführer
 #name 2. Höhle des Schlangenschreins
+#guideKind attunement
 #title Höhle des Schlangenschreins
 
 step
@@ -219,6 +221,7 @@ RXPGuides.RegisterGuide([[
 #version 7
 #group RXP TBC Attunement Dungeonführer
 #name 3. Festung der Stürme
+#guideKind attunement
 #title Festung der Stürme
 
 step
@@ -623,6 +626,7 @@ RXPGuides.RegisterGuide([[
 #version 7
 #group RXP TBC Attunement Dungeonführer
 #name 4. Hyjal
+#guideKind attunement
 #title Hyjal
 
 step
@@ -664,6 +668,7 @@ RXPGuides.RegisterGuide([[
 #version 7
 #group RXP TBC Attunement Dungeonführer
 #name 5. Der Schwarze Tempel
+#guideKind attunement
 #title Der Schwarze Tempel
 
 step

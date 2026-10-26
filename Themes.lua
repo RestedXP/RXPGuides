@@ -252,6 +252,7 @@ function addon:ReloadTheme()
     end
 
     if self.guideImporter then self.guideImporter:UpdateTheme() end
+    self.ui.v2.configurator:UpdateTheme()
 end
 
 function addon:GetThemeOptions()
@@ -332,29 +333,30 @@ addon.v2.themes['RXP Blue V2'] = {
     font = _G.GameFontNormal:GetFont(),
     mapPins = {26 / 255, 28 / 255, 48 / 255, 0.95}, -- #1A1C30F2
     headerTexture = {
-        path = "Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-header-texture",
+        path = addon.ui.v2:GetTexture("rxp-header-texture"),
         texCoords = {0, 1, 0, 63 / 64}
     },
     guideWindow = {
-        logo = "Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-icon-logo",
-        settingsIcon = "Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-icon-cog",
-        guideSelectIcon = "Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-icon-scroll"
+        logo = addon.ui.v2:GetTexture("rxp-icon-logo"),
+        settingsIcon = addon.ui.v2:GetTexture("rxp-icon-cog"),
+        guideSelectIcon = addon.ui.v2:GetTexture("rxp-icon-scroll")
     },
     auctionHouse = {
         upgradeRatioColor = "|cffffff00",
         upgradeEPColor = "|cffff00ff",
-        upgradeIcon = "Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-reward-upgrade",
-        valueIcon = "Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-reward-gold",
+        upgradeIcon = addon.ui.v2:GetTexture("rxp-reward-upgrade"),
+        valueIcon = addon.ui.v2:GetTexture("rxp-reward-gold"),
         legacyUpgradeIcon = "Interface/AddOns/" .. addonName .. "/Textures/rxp_logo-64",
         legacyValueIcon = "Interface/GossipFrame/VendorGossipIcon.blp"
     },
-    navigationArrow = "Interface/AddOns/" .. addonName .. "/Textures/v2/rxp_navigation_arrow-1",
+    navigationArrow = addon.ui.v2:GetTexture("rxp_navigation_arrow-1"),
 
     backgroundColors = {
         common = {26 / 255, 28 / 255, 48 / 255, 0.95}, -- #1A1C30F2
         guideName = {26 / 255, 28 / 255, 48 / 255, 1}, -- #1A1C30FF
         guideWindow = {7 / 255, 8 / 255, 19 / 255, 0.95}, -- #070813F2
         scrollbar = {1 / 255, 1 / 255, 11 / 255, 1}, -- #01010BFF
+        guideSelector = {57 / 255, 51 / 255, 95 / 255, 1}, -- #39335FFF
         inactivePartyTab = {32 / 255, 33 / 255, 49 / 255, 1}, -- #202131FF
         activeStepCheckbox = {5 / 255, 7 / 255, 19 / 255, 1}, -- #050713FF
         activeStepCheckboxChecked = {17 / 255, 132 / 255, 1, 1} -- #118401FF
@@ -368,7 +370,7 @@ addon.v2.themes['RXP Blue V2'] = {
     },
 
     edge = {
-        edgeFile = "Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-borders-v2",
+        edgeFile = addon.ui.v2:GetTexture("rxp-borders-v2"),
         edgeSize = 1,
         texCoords = {
             top = {0, 0.25, 0, 1},
@@ -417,7 +419,7 @@ function addon.v2:ConvertThemes()
                 converted.guideWindow = {
                     logo = source.texturePath .. "rxp_logo-64",
                     settingsIcon = source.texturePath .. "rxp_cog-32",
-                    guideSelectIcon = "Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-minimap-icon"
+                    guideSelectIcon = addon.ui.v2:GetTexture("rxp-minimap-icon")
                 }
                 converted.navigationArrow = source.texturePath .. "rxp_navigation_arrow-1"
                 converted.edge.edgeFile = source.bgTextures and source.bgTextures.edge or "Interface/BUTTONS/WHITE8X8"

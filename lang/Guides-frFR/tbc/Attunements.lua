@@ -4,6 +4,7 @@ RXPGuides.RegisterGuide([[
 #version 7
 #group RXP TBC Guide des Harmonisations
 #name 1. Karazhan
+#guideKind attunement
 #title Karazhan
 
 step
@@ -186,6 +187,7 @@ RXPGuides.RegisterGuide([[
 #version 7
 #group RXP TBC Guide des Harmonisations
 #name 2. Caverne du Sanctuaire du Serpent
+#guideKind attunement
 #title Caverne du Sanctuaire du Serpent
 
 step
@@ -219,6 +221,7 @@ RXPGuides.RegisterGuide([[
 #version 7
 #group RXP TBC Guide des Harmonisations
 #name 3. Donjon de la Tempête
+#guideKind attunement
 #title Donjon de la Tempête
 
 step
@@ -623,6 +626,7 @@ RXPGuides.RegisterGuide([[
 #version 7
 #group RXP TBC Guide des Harmonisations
 #name 4. Mont Hyjal
+#guideKind attunement
 #title Mont Hyjal
 
 step
@@ -664,6 +668,7 @@ RXPGuides.RegisterGuide([[
 #version 7
 #group RXP TBC Guide des Harmonisations
 #name 5. Le Temple Noir
+#guideKind attunement
 #title Le Temple Noir
 
 step

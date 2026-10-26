@@ -5,6 +5,7 @@ RXPGuides.RegisterGuide([[
 #subgroup Herbalism
 << Horde
 #name 1-375 Horde_m1
+#guideKind profession
 #displayname 1-375 Horde
 
 --XX TBC Herbalism 1-375 guide
@@ -278,6 +279,7 @@ RXPGuides.RegisterGuide([[
 #subgroup Herbalism
 << Alliance
 #name 1-375 Alliance_m2
+#guideKind profession
 #displayname 1-375 Alliance
 
 

@@ -215,7 +215,7 @@ function addon.tips:GetHighlight(name)
     animOut:SetToAlpha(1)
     animOut:SetStartDelay(0.2)
 
-    border:SetTexture("Interface/AddOns/" .. addonName .. "/Textures/v2/configurator-option-hover")
+    border:SetTexture(addon.ui.v2:GetTexture("configurator-option-hover"))
     border:SetBlendMode("ADD")
     local theme = addon.v2:GetTheme()
     local borderColor = theme.borderColors and theme.borderColors.activeStepCheckboxChecked or

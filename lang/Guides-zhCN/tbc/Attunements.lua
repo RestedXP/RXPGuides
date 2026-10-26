@@ -3,7 +3,9 @@ RXPGuides.RegisterGuide([[
 #tbc
 #version 7
 #group RXP 燃烧的远征 团本前置任务
+#groupid RXP TBC Attunement Guide
 #name 1. 卡拉赞
+#guideKind attunement
 #title 卡拉赞
 
 step
@@ -185,7 +187,9 @@ RXPGuides.RegisterGuide([[
 #tbc
 #version 7
 #group RXP 燃烧的远征 团本前置任务
+#groupid RXP TBC Attunement Guide
 #name 2. 毒蛇神殿
+#guideKind attunement
 #title 毒蛇神殿
 
 step
@@ -218,7 +222,9 @@ RXPGuides.RegisterGuide([[
 #tbc
 #version 7
 #group RXP 燃烧的远征 团本前置任务
+#groupid RXP TBC Attunement Guide
 #name 3. 风暴要塞
+#guideKind attunement
 #title 风暴要塞
 
 step
@@ -622,7 +628,9 @@ RXPGuides.RegisterGuide([[
 #tbc
 #version 7
 #group RXP 燃烧的远征 团本前置任务
+#groupid RXP TBC Attunement Guide
 #name 4. 海加尔山
+#guideKind attunement
 #title 海加尔山
 
 step
@@ -663,7 +671,9 @@ RXPGuides.RegisterGuide([[
 #tbc
 #version 7
 #group RXP 燃烧的远征 团本前置任务
+#groupid RXP TBC Attunement Guide
 #name 5. 黑暗神殿
+#guideKind attunement
 #title 黑暗神殿
 
 step

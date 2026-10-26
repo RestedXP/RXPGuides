@@ -614,13 +614,8 @@ function addon.settings:CreateAceOptionsPanel()
                 name = L("Run Guide Configurator"),
                 type = "execute",
                 width = 1.2,
-                func = function ()
-                    if addon.ui and addon.ui.v2 and addon.ui.v2.LaunchConfigurator then
-                        addon.ui.v2.LaunchConfigurator()
-                    end
-                end,
-                hidden = not (addon.ui and addon.ui.v2 and
-                    addon.ui.v2.LaunchConfigurator)
+                hidden = not addon.ui.v2.configurator.IsSupportedClient(),
+                func = function() addon.ui.v2.configurator:Open() end
             },
             resetGuideProgressTop = {
                 name = L("Reset Guide Progress"),
@@ -1480,7 +1475,7 @@ function addon.settings:CreateAceOptionsPanel()
                     },
                     professions = {
                         hidden = function()
-                            return addon.game ~= "CLASSIC" or not next(addon.professions)
+                            return not next(addon.professions)
                         end,
                         --[[disabled = function()
                             return addon.settings.profile.enableAutomaticXpRate
@@ -2980,6 +2975,7 @@ function addon.settings:CreateAceOptionsPanel()
                         set = function(info, value)
                             SetProfileOption(info, value)
                             addon.RXPFrame:SetScale(value)
+                            addon.ui.v2.configurator:SetScale(value)
 
                             if addon.v2:IsGuideWindowEnabled() then
                                 local window = addon.v2:GetGuideWindowAnchorFrame()
@@ -3644,8 +3640,7 @@ function addon.settings:UpdateMinimapButton()
 
     local icon = addon.GetV1Texture("rxp_logo-64")
     if addon.v2:IsGuideWindowEnabled() then
-        icon = "Interface/AddOns/" .. addonName ..
-                   "/Textures/v2/rxp-minimap-icon"
+        icon = addon.ui.v2:GetTexture("rxp-minimap-icon")
     end
 
     local minimapButton = LibDataBroker:NewDataObject(addonName, {
@@ -4319,9 +4314,13 @@ function addon.settings:SaveFramePositions()
 
     for frameName, frame in pairs(addon.enabledFrames) do
         if frame.savePosition ~= false then
-            addon.settings.profile.frameSizes[frameName] = {
-                frame:GetWidth(), frame:GetHeight()
-            }
+            if frame.saveSize == false then
+                addon.settings.profile.frameSizes[frameName] = nil
+            else
+                addon.settings.profile.frameSizes[frameName] = {
+                    frame:GetWidth(), frame:GetHeight()
+                }
+            end
 
             addon.settings.profile.framePositions[frameName] = {}
 
@@ -4362,8 +4361,12 @@ function addon.settings:LoadFramePosition(frameName, frame)
         end
     end
 
-    local size = p.frameSizes and p.frameSizes[frameName]
-    if size then frame:SetSize(unpack(size)) end
+    if frame.saveSize == false then
+        if p.frameSizes then p.frameSizes[frameName] = nil end
+    else
+        local size = p.frameSizes and p.frameSizes[frameName]
+        if size then frame:SetSize(unpack(size)) end
+    end
 end
 
 function addon.settings:LoadFramePositions()
@@ -4376,6 +4379,7 @@ end
 
 function addon.settings:LoadScales()
     addon.RXPFrame:SetScale(self.profile.windowScale)
+    addon.ui.v2.configurator:SetScale(self.profile.windowScale)
 
     if addon.arrowFrame then
         addon.arrowFrame:SetSize(32 * self.profile.arrowScale,

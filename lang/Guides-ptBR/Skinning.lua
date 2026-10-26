@@ -4,6 +4,7 @@ RXPGuides.RegisterGuide([[
 #group Nivelamento de Profissão
 << Horde
 #name 1-450 Esfolamento (H)
+#guideKind profession
 #displayname 1-450 Esfolamento
 
 step << Mage
@@ -280,6 +281,7 @@ RXPGuides.RegisterGuide([[
 #group Nivelamento de Profissão
 << Alliance
 #name 1-450 Esfolamento (A)
+#guideKind profession
 #displayname 1-450 Esfolamento
 
 step << Mage

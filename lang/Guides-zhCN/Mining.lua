@@ -4,6 +4,7 @@ RXPGuides.RegisterGuide([[
 #group 专业技能升级
 << Horde
 #name 1-450 采矿 (部落)
+#guideKind profession
 #displayname 1-450 采矿
 
 step << Mage
@@ -319,6 +320,7 @@ RXPGuides.RegisterGuide([[
 #group 专业技能升级
 << Alliance
 #name 1-450 采矿 (联盟)
+#guideKind profession
 #displayname 1-450 采矿
 
 step << Mage

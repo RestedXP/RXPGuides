@@ -3,16 +3,12 @@ UI.xsd">
     <Button name="RXPV2ScrollUpButtonTemplate" virtual="true">
         <Size x="16" y="16"/>
         <NormalTexture parentKey="Normal" file="Interface\Addons\RXPGuides\Textures\v2\scrollbar_up"/>
-        <!-- <PushedTexture parentKey="Pushed" file="Interface\Buttons\UI-ScrollBar-ScrollUpButton-Down"/> -->
-        <!-- <DisabledTexture parentKey="Disabled" file="Interface\Buttons\UI-ScrollBar-ScrollUpButton-Disabled"/> -->
-        <HighlightTexture parentKey="Highlight" file="Interface\Buttons\ButtonHilight-Square" alphaMode="ADD"/>
+        <HighlightTexture parentKey="Highlight" file="Interface\Addons\RXPGuides\Textures\v2\scrollbar_up" alphaMode="ADD"/>
     </Button>
     <Button name="RXPV2ScrollDownButtonTemplate" virtual="true">
         <Size x="16" y="16"/>
         <NormalTexture parentKey="Normal" file="Interface\Addons\RXPGuides\Textures\v2\scrollbar_down"/>
-        <!-- <PushedTexture parentKey="Pushed" file="Interface\Buttons\UI-ScrollBar-ScrollDownButton-Down"/> -->
-        <!-- <DisabledTexture parentKey="Disabled" file="Interface\Buttons\UI-ScrollBar-ScrollDownButton-Disabled"/> -->
-        <HighlightTexture parentKey="Highlight" file="Interface\Buttons\ButtonHilight-Square" alphaMode="ADD"/>
+        <HighlightTexture parentKey="Highlight" file="Interface\Addons\RXPGuides\Textures\v2\scrollbar_down" alphaMode="ADD"/>
     </Button>
 	<Slider name="RXPV2ScrollBarTemplate" virtual="true">
 		<Size x="16" y="0"/>

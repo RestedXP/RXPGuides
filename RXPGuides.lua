@@ -1,4 +1,6 @@
 local addonName, addon = ...
+addon.v2 = addon.v2 or {}
+
 addon.startTime = debugprofilestop()
 
 local _G = _G
@@ -771,7 +773,7 @@ local function createRewardChoiceIcons()
     if not questRewardChoiceIcons["ratio"] then
         questRewardChoiceIcons["ratio"] = _G.QuestInfoRewardsFrame:CreateTexture()
         questRewardChoiceIcons["ratio"]:SetTexture(addon.v2:IsGuideWindowEnabled() and
-                                                         "Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-reward-upgrade" or
+                                                         addon.ui.v2:GetTexture("rxp-reward-upgrade") or
                                                          "Interface/AddOns/" .. addonName .. "/Textures/rxp_logo-64")
         questRewardChoiceIcons["ratio"]:SetSize(20, 20)
         questRewardChoiceIcons["ratio"]:SetDrawLayer("OVERLAY", 1)
@@ -782,7 +784,7 @@ local function createRewardChoiceIcons()
     if not questRewardChoiceIcons["value"] then
         questRewardChoiceIcons["value"] = _G.QuestInfoRewardsFrame:CreateTexture()
         questRewardChoiceIcons["value"]:SetTexture(addon.v2:IsGuideWindowEnabled() and
-                                                         "Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-reward-gold" or
+                                                         addon.ui.v2:GetTexture("rxp-reward-gold") or
                                                          "Interface/GossipFrame/VendorGossipIcon.blp")
         questRewardChoiceIcons["value"]:SetSize(20, 20)
         questRewardChoiceIcons["value"]:SetDrawLayer("OVERLAY", 1)
@@ -806,7 +808,7 @@ local function createLogRewardChoiceIcons()
     if not questLogRewardChoiceIcons["ratio"] then
         questLogRewardChoiceIcons["ratio"] = _G.QuestLogDetailScrollFrame:CreateTexture()
         questLogRewardChoiceIcons["ratio"]:SetTexture(addon.v2:IsGuideWindowEnabled() and
-                                                            "Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-reward-upgrade" or
+                                                            addon.ui.v2:GetTexture("rxp-reward-upgrade") or
                                                             "Interface/AddOns/" .. addonName .. "/Textures/rxp_logo-64")
         questLogRewardChoiceIcons["ratio"]:SetSize(20, 20)
         questLogRewardChoiceIcons["ratio"]:SetDrawLayer("OVERLAY", 1)
@@ -817,7 +819,7 @@ local function createLogRewardChoiceIcons()
     if not questLogRewardChoiceIcons["value"] then
         questLogRewardChoiceIcons["value"] = _G.QuestLogDetailScrollFrame:CreateTexture()
         questLogRewardChoiceIcons["value"]:SetTexture(addon.v2:IsGuideWindowEnabled() and
-                                                            "Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-reward-gold" or
+                                                            addon.ui.v2:GetTexture("rxp-reward-gold") or
                                                             "Interface/GossipFrame/VendorGossipIcon.blp")
         questLogRewardChoiceIcons["value"]:SetSize(20, 20)
         questLogRewardChoiceIcons["value"]:SetDrawLayer("OVERLAY", 1)
@@ -1807,9 +1809,7 @@ function addon:PLAYER_ENTERING_WORLD(_, isInitialLogin)
         end)
     end
 
-    if addon.ui and addon.ui.v2 and addon.ui.v2.LaunchConfigurator then
-        addon.ui.v2.LaunchConfigurator(true)
-    end
+    addon.ui.v2.configurator:Open(true)
 
     addon.targeting:Setup()
 end
@@ -2791,9 +2791,11 @@ function addon:ShowMenu(menu, menuFrame, anchor, x, y, displayMode, autoHideDela
     end
 end
 
-addon.v2 = addon.v2 or {}
+addon.ui.v2.configurator = addon:NewModule("GuideConfigurator", addon.ui.v2.configurator)
+
 function addon.v2:Setup()
     addon.v2.events:Setup()
+    addon.ui.v2.configurator:Setup()
     if not self:IsGuideWindowEnabled() then return end
 
     local legacy = addon.RXPFrame

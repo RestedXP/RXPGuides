@@ -264,9 +264,9 @@ function addon.ui.v2:RegisterRXPV2GuideImporter()
 
         local closebutton = CreateFrame("Button", nil, frame)
         closebutton:SetFrameLevel(frame:GetFrameLevel() + 3)
-        closebutton:SetNormalTexture("Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-btn-close")
-        closebutton:SetPushedTexture("Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-btn-close")
-        closebutton:SetHighlightTexture("Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-btn-close", "ADD")
+        closebutton:SetNormalTexture(addon.ui.v2:GetTexture("rxp-btn-close"))
+        closebutton:SetPushedTexture(addon.ui.v2:GetTexture("rxp-btn-close"))
+        closebutton:SetHighlightTexture(addon.ui.v2:GetTexture("rxp-btn-close"), "ADD")
         closebutton:SetSize(20, 20)
         closebutton:SetPoint("TOPRIGHT", frame, "TOPRIGHT", 6, 6)
         local title = frame:CreateFontString(nil, "ARTWORK", "GameFontNormal")
@@ -921,8 +921,7 @@ function addon.ui.v2:CreateGuideImporter()
     importButton.frame:SetPoint("TOPLEFT", importBox.frame, "BOTTOMLEFT", 0, -8)
     importButton.frame:SetPoint("TOPRIGHT", importBox.frame, "BOTTOMRIGHT", 0, -8)
     importButton:SetHeight(24)
-    importButton.frame:SetHighlightTexture(
-        "Interface/AddOns/" .. addonName .. "/Textures/v2/configurator-option-hover", "ADD")
+    importButton.frame:SetHighlightTexture(addon.ui.v2:GetTexture("configurator-option-hover"), "ADD")
     addon.ui.v2:ApplyFrameBackdrop(importButton.frame, theme.edge,
                                     theme.backgroundColors.inactivePartyTab,
                                     theme.borderColors.commonEdge)
@@ -939,8 +938,7 @@ function addon.ui.v2:CreateGuideImporter()
     importer:AddChild(spliceButton)
     spliceButton.frame:SetWidth((importBox.frame:GetWidth() - 8) / 2)
     spliceButton:SetHeight(24)
-    spliceButton.frame:SetHighlightTexture(
-        "Interface/AddOns/" .. addonName .. "/Textures/v2/configurator-option-hover", "ADD")
+    spliceButton.frame:SetHighlightTexture(addon.ui.v2:GetTexture("configurator-option-hover"), "ADD")
     addon.ui.v2:ApplyFrameBackdrop(spliceButton.frame, theme.edge,
                                     theme.backgroundColors.inactivePartyTab,
                                     theme.borderColors.commonEdge)
@@ -972,14 +970,10 @@ function addon.ui.v2:CreateGuideImporter()
     _G[dropdownName .. "Left"]:Hide()
     _G[dropdownName .. "Middle"]:Hide()
     _G[dropdownName .. "Right"]:Hide()
-    currentGuides.button:SetNormalTexture("Interface/AddOns/" .. addonName ..
-                                                       "/Textures/v2/scrollbar_down")
-    currentGuides.button:SetPushedTexture("Interface/AddOns/" .. addonName ..
-                                                       "/Textures/v2/scrollbar_down")
-    currentGuides.button:SetDisabledTexture("Interface/AddOns/" .. addonName ..
-                                                         "/Textures/v2/scrollbar_down")
-    currentGuides.button:SetHighlightTexture("Interface/AddOns/" .. addonName ..
-                                             "/Textures/v2/scrollbar_down", "ADD")
+    currentGuides.button:SetNormalTexture(addon.ui.v2:GetTexture("scrollbar_down"))
+    currentGuides.button:SetPushedTexture(addon.ui.v2:GetTexture("scrollbar_down"))
+    currentGuides.button:SetDisabledTexture(addon.ui.v2:GetTexture("scrollbar_down"))
+    currentGuides.button:SetHighlightTexture(addon.ui.v2:GetTexture("scrollbar_down"), "ADD")
     currentGuides.button:ClearAllPoints()
     currentGuides.button:SetSize(24, 24)
     currentGuides.button:SetPoint("TOPRIGHT", currentGuides.frame, "TOPRIGHT")
@@ -1004,8 +998,7 @@ function addon.ui.v2:CreateGuideImporter()
     purgeButton.frame:SetPoint("TOPLEFT", currentGuides.frame, "BOTTOMLEFT", 0, -8)
     purgeButton.frame:SetWidth(150)
     purgeButton:SetHeight(24)
-    purgeButton.frame:SetHighlightTexture(
-        "Interface/AddOns/" .. addonName .. "/Textures/v2/configurator-option-hover", "ADD")
+    purgeButton.frame:SetHighlightTexture(addon.ui.v2:GetTexture("configurator-option-hover"), "ADD")
     addon.ui.v2:ApplyFrameBackdrop(purgeButton.frame, theme.edge,
                                     theme.backgroundColors.inactivePartyTab,
                                     theme.borderColors.commonEdge)
@@ -1020,8 +1013,7 @@ function addon.ui.v2:CreateGuideImporter()
     reloadButton.frame:SetPoint("TOPLEFT", currentGuides.frame, "BOTTOMLEFT", 160, -8)
     reloadButton.frame:SetWidth(150)
     reloadButton:SetHeight(24)
-    reloadButton.frame:SetHighlightTexture(
-        "Interface/AddOns/" .. addonName .. "/Textures/v2/configurator-option-hover", "ADD")
+    reloadButton.frame:SetHighlightTexture(addon.ui.v2:GetTexture("configurator-option-hover"), "ADD")
     addon.ui.v2:ApplyFrameBackdrop(reloadButton.frame, theme.edge,
                                     theme.backgroundColors.inactivePartyTab,
                                     theme.borderColors.commonEdge)
@@ -1036,8 +1028,7 @@ function addon.ui.v2:CreateGuideImporter()
     deleteButton.frame:SetPoint("TOPLEFT", currentGuides.frame, "BOTTOMLEFT", 320, -8)
     deleteButton.frame:SetWidth(150)
     deleteButton:SetHeight(24)
-    deleteButton.frame:SetHighlightTexture(
-        "Interface/AddOns/" .. addonName .. "/Textures/v2/configurator-option-hover", "ADD")
+    deleteButton.frame:SetHighlightTexture(addon.ui.v2:GetTexture("configurator-option-hover"), "ADD")
     addon.ui.v2:ApplyFrameBackdrop(deleteButton.frame, theme.edge,
                                     theme.backgroundColors.inactivePartyTab,
                                     theme.borderColors.commonEdge)

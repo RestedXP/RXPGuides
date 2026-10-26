@@ -7,6 +7,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Guias de Fim de Jogo
 #subgroup Sintonizações
 #name Sintonização de Onyxia (A)
+#guideKind attunement
 
 
 step
@@ -344,6 +345,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Guias de Fim de Jogo
 #subgroup Sintonizações
 #name Onyxia Attunement (H)
+#guideKind attunement
 
 step
     #completewith next
@@ -794,6 +796,7 @@ RXPGuides.RegisterGuide([[
 #subgroup Sintonizações
 #group RestedXP Guias de Fim de Jogo
 #name Harmonização do Núcleo Derretido
+#guideKind attunement
 
 step
     #completewith next
@@ -840,6 +843,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Guias de Fim de Jogo
 #subgroup Sintonizações
 #name Harmonização de Blackwing Lair
+#guideKind attunement
 
 step
     #completewith next
@@ -885,6 +889,8 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Guias de Fim de Jogo
 #subgroup Chaves
 #name Chave do Pico da Rocha Negra Superior
+#guideKind key
+#guideIcon rxp-icon-ring
 
 step
     #completewith next
@@ -977,6 +983,8 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Guias de Fim de Jogo
 #subgroup Chaves
 #name Chave de Scolomântia (A)
+#guideKind key
+#guideIcon rxp-icon-key-2
 
 step
     #sticky
@@ -1236,6 +1244,8 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Guias de Fim de Jogo
 #subgroup Chaves
 #name Chave de Scholomância (H)
+#guideKind key
+#guideIcon rxp-icon-key-2
 
 
 step
@@ -1492,6 +1502,8 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Guias de Fim de Jogo
 #subgroup Chaves
 #name Abismo Rocha Negra Chave
+#guideKind key
+#guideIcon rxp-icon-key-3
 
 
 step
@@ -1556,6 +1568,8 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Guias de Fim de Jogo
 #subgroup Chaves
 #name Martelo do Gládio Cruel Chave
+#guideKind key
+
 
 step
     #completewith next
@@ -1584,6 +1598,7 @@ RXPGuides.RegisterGuide([[
 
 #group RestedXP Guias de Fim de Jogo
 #name Naxxramas Attunement
+#guideKind attunement
 #subgroup Sintonizações
 
 step
@@ -1657,6 +1672,7 @@ RXPGuides.RegisterGuide([[
 
 #group RestedXP Guias de Fim de Jogo
 #name Sintonização do Cânion do Demônio Caído
+#guideKind attunement
 #subgroup Sintonizações
 <<sod
 

@@ -7,6 +7,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Endgame Guides
 #subgroup Zutrittsvoraussetzungen
 #name Onyxias Zutrittsvoraussetzungen (A)
+#guideKind attunement
 
 
 step
@@ -344,6 +345,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Endgame Guides
 #subgroup Zutrittsvoraussetzungen
 #name Onyxias Zutrittsvoraussetzungen (H)
+#guideKind attunement
 
 step
     #completewith next
@@ -794,6 +796,7 @@ RXPGuides.RegisterGuide([[
 #subgroup Zutrittsvoraussetzungen
 #group RestedXP Endgame Guides
 #name Geschmolzener Kern Zutrittsvoraussetzung
+#guideKind attunement
 
 step
     #completewith next
@@ -840,6 +843,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Endgame Guides
 #subgroup Zutrittsvoraussetzungen
 #name Pechschwingenhort Zutrittsvorraussetzungen
+#guideKind attunement
 
 step
     #completewith next
@@ -885,6 +889,8 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Endgame Guides
 #subgroup Schlüssel
 #name Schlüssel der Obere Schwarzfelsspitze
+#guideKind key
+#guideIcon rxp-icon-ring
 
 step
     #completewith next
@@ -977,6 +983,8 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Endgame Guides
 #subgroup Schlüssel
 #name Scholomance Schlüssel (A)
+#guideKind key
+#guideIcon rxp-icon-key-2
 
 step
     #sticky
@@ -1236,6 +1244,8 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Endgame Guides
 #subgroup Schlüssel
 #name Scholomance Schlüssel (H)
+#guideKind key
+#guideIcon rxp-icon-key-2
 
 
 step
@@ -1492,6 +1502,8 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Endgame Guides
 #subgroup Schlüssel
 #name Schwarzfelstiefen Schlüssel
+#guideKind key
+#guideIcon rxp-icon-key-3
 
 
 step
@@ -1556,6 +1568,8 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Endgame Guides
 #subgroup Schlüssel
 #name Düsterbruch Schlüssel
+#guideKind key
+
 
 step
     #completewith next
@@ -1584,6 +1598,7 @@ RXPGuides.RegisterGuide([[
 
 #group RestedXP Endgame Guides
 #name Naxxramas-Zugangsberechtigung
+#guideKind attunement
 #subgroup Zutrittsvoraussetzungen
 
 step
@@ -1657,6 +1672,7 @@ RXPGuides.RegisterGuide([[
 
 #group RestedXP Endgame Guides
 #name Demon Fall Canyon Zugangsberechtigung
+#guideKind attunement
 #subgroup Zutrittsvoraussetzungen
 <<sod
 

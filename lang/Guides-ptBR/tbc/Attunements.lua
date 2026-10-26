@@ -4,6 +4,7 @@ RXPGuides.RegisterGuide([[
 #version 7
 #group Guia de Sintonia RXP TBC
 #name 1. Karazhan
+#guideKind attunement
 #title Karazhan
 
 step
@@ -186,6 +187,7 @@ RXPGuides.RegisterGuide([[
 #version 7
 #group Guia de Sintonia RXP TBC
 #name 2. Serpentshrine Cavern
+#guideKind attunement
 #title Serpentshrine Cavern
 
 step
@@ -219,6 +221,7 @@ RXPGuides.RegisterGuide([[
 #version 7
 #group Guia de Sintonia RXP TBC
 #name 3. Tempesto Keep
+#guideKind attunement
 #title Tempesto Keep
 
 step
@@ -623,6 +626,7 @@ RXPGuides.RegisterGuide([[
 #version 7
 #group Guia de Sintonia RXP TBC
 #name 4. Monte Hyjal
+#guideKind attunement
 #title Monte Hyjal
 
 step
@@ -664,6 +668,7 @@ RXPGuides.RegisterGuide([[
 #version 7
 #group Guia de Sintonia RXP TBC
 #name 5. Templo Preto
+#guideKind attunement
 #title Templo Preto
 
 step

@@ -7,6 +7,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Guides Endgame
 #subgroup Accès
 #name Accès au Repaire d'Onyxia (A)
+#guideKind attunement
 
 
 step
@@ -344,6 +345,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Guides Endgame
 #subgroup Accès
 #name Accès au Repaire d'Onyxia (H)
+#guideKind attunement
 
 step
     #completewith next
@@ -794,6 +796,7 @@ RXPGuides.RegisterGuide([[
 #subgroup Accès
 #group RestedXP Guides Endgame
 #name Accès pour le Cœur du Magma
+#guideKind attunement
 
 step
     #completewith next
@@ -840,6 +843,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Guides Endgame
 #subgroup Accès
 #name Accès au Repaire de l'Aile noire
+#guideKind attunement
 
 step
     #completewith next
@@ -885,6 +889,8 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Guides Endgame
 #subgroup Clés
 #name Clé du Sommet du pic Rochenoire
+#guideKind key
+#guideIcon rxp-icon-ring
 
 step
     #completewith next
@@ -977,6 +983,8 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Guides Endgame
 #subgroup Clés
 #name La clé de Scholomance (A)
+#guideKind key
+#guideIcon rxp-icon-key-2
 
 step
     #sticky
@@ -1236,6 +1244,8 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Guides Endgame
 #subgroup Clés
 #name La clé de Scholomance (H)
+#guideKind key
+#guideIcon rxp-icon-key-2
 
 
 step
@@ -1492,6 +1502,8 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Guides Endgame
 #subgroup Clés
 #name La clé des Profondeurs de Rochenoire
+#guideKind key
+#guideIcon rxp-icon-key-3
 
 
 step
@@ -1556,6 +1568,8 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Guides Endgame
 #subgroup Clés
 #name Clé de Hache-Tripes
+#guideKind key
+
 
 step
     #completewith next
@@ -1584,6 +1598,7 @@ RXPGuides.RegisterGuide([[
 
 #group RestedXP Guides Endgame
 #name Accès à Naxxramas
+#guideKind attunement
 #subgroup Accès
 
 step
@@ -1657,6 +1672,7 @@ RXPGuides.RegisterGuide([[
 
 #group RestedXP Guides Endgame
 #name Accès du Canyon de la Malechute
+#guideKind attunement
 #subgroup Accès
 <<sod
 
