@@ -4,6 +4,7 @@ RXPGuides.RegisterGuide([[
 #group Aumento de Profesión
 << Horde
 #name 1-450 Desuello (H)
+#guideKind profession
 #displayname 1-450 Desuello
 
 step << Mage
@@ -280,6 +281,7 @@ RXPGuides.RegisterGuide([[
 #group Aumento de Profesión
 << Alliance
 #name 1-450 Desuello (A)
+#guideKind profession
 #displayname 1-450 Desuello
 
 step << Mage

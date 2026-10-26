@@ -4,6 +4,7 @@ RXPGuides.RegisterGuide([[
 #group Beruf Leveling
 << Horde
 #name 1-450 Kräuterkunde (H)
+#guideKind profession
 #displayname 1-450 Kräuterkunde
 
 step << Mage
@@ -330,6 +331,7 @@ RXPGuides.RegisterGuide([[
 #group Beruf Leveling
 << Alliance
 #name 1-450 Kräuterkunde (A)
+#guideKind profession
 #displayname 1-450 Kräuterkunde
 
 

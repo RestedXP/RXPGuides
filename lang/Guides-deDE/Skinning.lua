@@ -4,6 +4,7 @@ RXPGuides.RegisterGuide([[
 #group Beruf Leveling
 << Horde
 #name 1-450 Kürschnerei (H)
+#guideKind profession
 #displayname 1-450 Kürschnerei
 
 step << Mage
@@ -280,6 +281,7 @@ RXPGuides.RegisterGuide([[
 #group Beruf Leveling
 << Alliance
 #name 1-450 Kürschnerei (A)
+#guideKind profession
 #displayname 1-450 Kürschnerei
 
 step << Mage

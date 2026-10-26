@@ -2520,93 +2520,74 @@ function RXPFrame:GenerateMenuTable(menu)
             hasArrow = true,
             menuList = {}
         }
-        item.subgroups = {}
         item.subtable = {}
         local submenuIndex = 0
         local nActive = 0
-        for j, g in ipairs(t.names_) do
-            local guideName = g.name
-            local groupName = g.group
-            local guide = addon.GetGuideTable(groupName, guideName)
-            --if not guide then print(guide,group,guideName) end
-            if IsGuideActive(guide) and not guide.chapter then
-                nActive = nActive + 1
-                if guide.subgroup then
-                    local subgroup = guide.subgroup
-                    local subtable = item.subtable[subgroup]
-                    if not subtable then
-                        local subname = subgroup:gsub("^(%d)-(%d%d?)",
-                                                      addon.affix)
-                        subtable = {
-                            text = SwapNames(subgroup),
-                            notCheckable = 1,
-                            hasArrow = true,
-                            menuList = {},
-                            subweight = 0
-                        }
-                        item.subtable[subname] = subtable
-                        tinsert(item.subgroups, subname)
-                    end
-                    local subitem = {}
-                    subitem.text = SwapNames(addon.GetGuideName(guide))
-                    if guide.disabled then
-                        subitem.isTitle = 1
-                    else
-                        subitem.func = OnClick
-                        subitem.arg1 = guide.group
-                        subitem.arg2 = guideName
-                    end
-                    subitem.notCheckable = 1
-                    subtable.subweight = tonumber(guide.subweight) or subtable.subweight
-                    ProcessChapters(guide,subitem)
-                    tinsert(subtable.menuList, subitem)
+        local guides = addon.GetActiveGuidesInGroup(group)
+        local subgroups = addon.GetGuideSubgroups(guides)
+        for _, guide in ipairs(guides) do
+            local guideName = guide.name
+            nActive = nActive + 1
+            if guide.subgroup then
+                local subgroup = guide.subgroup
+                local subtable = item.subtable[subgroup]
+                if not subtable then
+                    subtable = {
+                        text = SwapNames(subgroup),
+                        notCheckable = 1,
+                        hasArrow = true,
+                        menuList = {}
+                    }
+                    item.subtable[subgroup] = subtable
+                end
+                local subitem = {}
+                subitem.text = SwapNames(addon.GetGuideName(guide))
+                if guide.disabled then
+                    subitem.isTitle = 1
                 else
-                    submenuIndex = submenuIndex + 1
-                    guide.menuIndex = menuIndex
-                    guide.submenuIndex = submenuIndex
-                    local subitem = {}
-                    subitem.text = SwapNames(addon.GetGuideName(guide))
-                    if guide.disabled then
-                        subitem.isTitle = 1
-                    else
-                        subitem.func = OnClick
-                        subitem.arg1 = guide.group
-                        subitem.arg2 = guideName
-                    end
-                    subitem.notCheckable = 1
-                    ProcessChapters(guide,subitem)
-                    tinsert(item.menuList, subitem)
+                    subitem.func = OnClick
+                    subitem.arg1 = guide.group
+                    subitem.arg2 = guideName
                 end
-                if not defaultGuide and guide.group == addon.defaultGroup then
-                    addon.defaultGuide = guideName
-                    defaultGuide = true
+                subitem.notCheckable = 1
+                ProcessChapters(guide,subitem)
+                tinsert(subtable.menuList, subitem)
+            else
+                submenuIndex = submenuIndex + 1
+                guide.menuIndex = menuIndex
+                guide.submenuIndex = submenuIndex
+                local subitem = {}
+                subitem.text = SwapNames(addon.GetGuideName(guide))
+                if guide.disabled then
+                    subitem.isTitle = 1
+                else
+                    subitem.func = OnClick
+                    subitem.arg1 = guide.group
+                    subitem.arg2 = guideName
                 end
-                if not defaultGuideHC and guide.group == addon.defaultGroupHC then
-                    defaultGuideHC = true
-                    addon.defaultGuideHC = guideName
-                end
-                if nActive == 1 then
-                    t.defaultGuide_ = guide.name
-                    t.defaultGroup_ = guide.group
-                end
+                subitem.notCheckable = 1
+                ProcessChapters(guide,subitem)
+                tinsert(item.menuList, subitem)
+            end
+            if not defaultGuide and guide.group == addon.defaultGroup then
+                addon.defaultGuide = guideName
+                defaultGuide = true
+            end
+            if not defaultGuideHC and guide.group == addon.defaultGroupHC then
+                defaultGuideHC = true
+                addon.defaultGuideHC = guideName
+            end
+            if nActive == 1 then
+                t.defaultGuide_ = guide.name
+                t.defaultGroup_ = guide.group
             end
         end
 
-        if #item.subgroups > 0 then
-            table.sort(item.subgroups,function(s1,s2)
-                local w1 = item.subtable[s1].subweight
-                local w2 = item.subtable[s2].subweight
-                if w1 == w2 then
-                    return s1 < s2
-                else
-                    return w1 > w2
-                end
-            end)
-            for i, subgroup in ipairs(item.subgroups) do
-                tinsert(item.menuList, item.subtable[subgroup])
+        if #subgroups > 0 then
+            for _, category in ipairs(subgroups) do
+                tinsert(item.menuList, item.subtable[category.subgroup])
             end
         else
-            item.subgroups = nil
             item.subtable = nil
         end
         if #item.menuList > 0 then
@@ -2690,6 +2671,18 @@ function RXPFrame:GenerateMenuTable(menu)
             addon.settings.OpenSettings()
         end
     })
+
+    if addon.ui.v2.configurator.IsSupportedClient() and not addon.currentGuide and
+        not addon.ui.v2.configurator:IsShown() then
+        tinsert(menuList, {
+            text = L("Run Guide Configurator"),
+            notCheckable = 1,
+            func = function()
+                addon:CloseMenu()
+                addon.ui.v2.configurator:Open()
+            end
+        })
+    end
 
     tinsert(menuList, {
         text = L("Import guide"),

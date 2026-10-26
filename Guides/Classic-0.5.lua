@@ -13,6 +13,8 @@ RXPGuides.RegisterGuide([[
 #subgroup Heroism Set Guide << Warrior
 #subgroup Virtuous Set Guide << Priest
 #name Part 1: Bracers
+#guideKind gearset
+#guideIcon rxp-icon-quest
 #next Part 2: Belt & Gloves
 
 
@@ -229,6 +231,8 @@ RXPGuides.RegisterGuide([[
 #subgroup Heroism Set Guide << Warrior
 #subgroup Virtuous Set Guide << Priest
 #name Part 2: Belt & Gloves
+#guideKind gearset
+#guideIcon rxp-icon-quest
 #next Part 3: Pants, Shoulders & Boots
 
 
@@ -673,6 +677,8 @@ RXPGuides.RegisterGuide([[
 #subgroup Heroism Set Guide << Warrior
 #subgroup Virtuous Set Guide << Priest
 #name Part 3: Pants, Shoulders & Boots
+#guideKind gearset
+#guideIcon rxp-icon-quest
 #next Part 4: Helm & Chest
 
 step
@@ -1155,6 +1161,8 @@ RXPGuides.RegisterGuide([[
 #subgroup Heroism Set Guide << Warrior
 #subgroup Virtuous Set Guide << Priest
 #name Part 4: Helm & Chest
+#guideKind gearset
+#guideIcon rxp-icon-quest
 
 
 step

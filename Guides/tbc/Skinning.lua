@@ -6,6 +6,7 @@ RXPGuides.RegisterGuide([[
 #subgroup Skinning
 << Horde
 #name 1-375 Horde_b1
+#guideKind profession
 #displayname 1-375 Horde
 
 --XX TBC 1-375 Skinning guide
@@ -207,6 +208,7 @@ RXPGuides.RegisterGuide([[
 #subgroup Skinning
 << Alliance
 #name 1-375 Alliance_b2
+#guideKind profession
 #displayname 1-375 Alliance
 
 step << Mage

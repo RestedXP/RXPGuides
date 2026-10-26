@@ -5,6 +5,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP 终局指南
 #subgroup 开门任务
 #name 卡拉赞地穴开门任务
+#guideKind attunement
 
 step
     #completewith next
@@ -217,6 +218,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP 终局指南
 #subgroup 开门任务
 #name 血色领地序章
+#guideKind attunement
 
 step
    #completewith next

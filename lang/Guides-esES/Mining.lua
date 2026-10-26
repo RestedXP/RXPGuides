@@ -4,6 +4,7 @@ RXPGuides.RegisterGuide([[
 #group Aumento de Profesión
 << Horde
 #name 1-450 Minería (H)
+#guideKind profession
 #displayname 1-450 Minería
 
 step << Mage
@@ -319,6 +320,7 @@ RXPGuides.RegisterGuide([[
 #group Aumento de Profesión
 << Alliance
 #name 1-450 Minería (A)
+#guideKind profession
 #displayname 1-450 Minería
 
 step << Mage

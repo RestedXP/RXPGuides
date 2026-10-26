@@ -4,6 +4,7 @@ RXPGuides.RegisterGuide([[
 #group Leveling de Métier
 << Horde
 #name 1-450 Herboristerie (H)
+#guideKind profession
 #displayname 1-450 Herboristerie
 
 step << Mage
@@ -330,6 +331,7 @@ RXPGuides.RegisterGuide([[
 #group Leveling de Métier
 << Alliance
 #name 1-450 Herboristerie (A)
+#guideKind profession
 #displayname 1-450 Herboristerie
 
 

@@ -4,6 +4,7 @@ RXPGuides.RegisterGuide([[
 #group +Profession Leveling
 << Horde
 #name 1-450 Herbalism (H)
+#guideKind profession
 #displayname 1-450 Herbalism
 
 step << Mage
@@ -330,6 +331,7 @@ RXPGuides.RegisterGuide([[
 #group +Profession Leveling
 << Alliance
 #name 1-450 Herbalism (A)
+#guideKind profession
 #displayname 1-450 Herbalism
 
 

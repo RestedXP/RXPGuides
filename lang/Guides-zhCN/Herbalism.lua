@@ -4,6 +4,7 @@ RXPGuides.RegisterGuide([[
 #group 专业技能升级
 << Horde
 #name 1-450 草药学 (部落)
+#guideKind profession
 #displayname 1-450 草药学
 
 step << Mage
@@ -330,6 +331,7 @@ RXPGuides.RegisterGuide([[
 #group 专业技能升级
 << Alliance
 #name 1-450 草药学 (联盟)
+#guideKind profession
 #displayname 1-450 草药学
 
 

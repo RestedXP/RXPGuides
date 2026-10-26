@@ -193,9 +193,9 @@ function addon.ui.v2:RegisterRXPV2Popup()
 
         local closebutton = CreateFrame("Button", nil, frame)
         closebutton:SetFrameLevel(frame:GetFrameLevel() + 3)
-        closebutton:SetNormalTexture("Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-btn-close")
-        closebutton:SetPushedTexture("Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-btn-close")
-        closebutton:SetHighlightTexture("Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-btn-close", "ADD")
+        closebutton:SetNormalTexture(addon.ui.v2:GetTexture("rxp-btn-close"))
+        closebutton:SetPushedTexture(addon.ui.v2:GetTexture("rxp-btn-close"))
+        closebutton:SetHighlightTexture(addon.ui.v2:GetTexture("rxp-btn-close"), "ADD")
         closebutton:SetSize(20, 20)
         closebutton:SetPoint("TOPRIGHT", frame, "TOPRIGHT", 6, 6)
 
@@ -214,8 +214,7 @@ function addon.ui.v2:RegisterRXPV2Popup()
         for index = 1, 2 do
             button = CreateFrame("Button", nil, frame)
             button:SetHeight(24)
-            button:SetHighlightTexture("Interface/AddOns/" .. addonName ..
-                                       "/Textures/v2/configurator-option-hover", "ADD")
+            button:SetHighlightTexture(addon.ui.v2:GetTexture("configurator-option-hover"), "ADD")
             local highlight = button:GetHighlightTexture()
             highlight:ClearAllPoints()
             highlight:SetPoint("TOPLEFT", button, "TOPLEFT", 2, -2)
@@ -538,6 +537,10 @@ function addon.v2:IsGuideWindowEnabled()
     local profile = addon.settings and addon.settings.profile
 
     return profile and profile.enableBetaFeatures and profile.enableV2Interface
+end
+
+function addon.ui.v2:GetTexture(textureName)
+    return "Interface/AddOns/" .. addonName .. "/Textures/v2/" .. textureName
 end
 
 function addon.v2:UpdateMenuTheme(listFrame, enabled)
@@ -1010,7 +1013,7 @@ local function GetGuideWindowHeaderBackgroundColor(theme)
     return {color[1], color[2], color[3], 0.5}
 end
 
-local function GuideWindowButton_OnEnter(button)
+function addon.ui.v2.Button_OnEnter(button)
     if button:IsForbidden() or _G.GameTooltip:IsForbidden() then return end
 
     _G.GameTooltip:SetOwner(button, "ANCHOR_TOP")
@@ -1019,7 +1022,7 @@ local function GuideWindowButton_OnEnter(button)
     _G.GameTooltip:Show()
 end
 
-local function GuideWindowButton_OnLeave(button)
+function addon.ui.v2.Button_OnLeave(button)
     if not button:IsForbidden() and not _G.GameTooltip:IsForbidden() and _G.GameTooltip:IsOwned(button) then
         _G.GameTooltip:Hide()
     end
@@ -1324,8 +1327,8 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
         settingsButton:SetHighlightTexture(theme.guideWindow.settingsIcon, "ADD")
 
         settingsButton.rxpTooltipText = L("Open Settings")
-        settingsButton:SetScript("OnEnter", GuideWindowButton_OnEnter)
-        settingsButton:SetScript("OnLeave", GuideWindowButton_OnLeave)
+        settingsButton:SetScript("OnEnter", addon.ui.v2.Button_OnEnter)
+        settingsButton:SetScript("OnLeave", addon.ui.v2.Button_OnLeave)
         settingsButton:SetScript("OnClick", function() addon.v2:ShowSettingsMenu() end)
 
         local guideSelectButton = CreateFrame("Button", nil, guideNameFrame)
@@ -1336,8 +1339,8 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
         guideSelectButton:SetPushedTexture(theme.guideWindow.guideSelectIcon)
         guideSelectButton:SetHighlightTexture(theme.guideWindow.guideSelectIcon, "ADD")
         guideSelectButton.rxpTooltipText = L("Browse Guides")
-        guideSelectButton:SetScript("OnEnter", GuideWindowButton_OnEnter)
-        guideSelectButton:SetScript("OnLeave", GuideWindowButton_OnLeave)
+        guideSelectButton:SetScript("OnEnter", addon.ui.v2.Button_OnEnter)
+        guideSelectButton:SetScript("OnLeave", addon.ui.v2.Button_OnLeave)
         guideSelectButton:SetScript("OnClick", function() addon.v2:ShowGuideSelectionMenu() end)
 
         local title = guideNameFrame:CreateFontString(nil, "OVERLAY")
@@ -1359,9 +1362,9 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
         closebutton:SetFrameLevel(120)
         closebutton:SetPoint("TOPRIGHT", upperFrame.rxpShadow, "TOPRIGHT", 8, 4)
         closebutton:SetSize(24, 24)
-        closebutton:SetNormalTexture("Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-btn-close")
-        closebutton:SetPushedTexture("Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-btn-close")
-        closebutton:SetHighlightTexture("Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-btn-close", "ADD")
+        closebutton:SetNormalTexture(addon.ui.v2:GetTexture("rxp-btn-close"))
+        closebutton:SetPushedTexture(addon.ui.v2:GetTexture("rxp-btn-close"))
+        closebutton:SetHighlightTexture(addon.ui.v2:GetTexture("rxp-btn-close"), "ADD")
         closebutton:RegisterForClicks("LeftButtonUp")
         closebutton:SetShown(theme.version ~= 1)
 
@@ -1599,14 +1602,18 @@ function addon.ui.v2:RegisterRXPV2ScrollFrame()
     -------------------------------------------------------------------------------]]
     local methods = {
         ["OnAcquire"] = function(this)
+            this.v2 = addon.v2:IsGuideWindowEnabled()
+            this.theme = nil
             this.contentTopPadding = 0
             this:SetScroll(0)
             this.scrollframe:SetScript("OnUpdate", FixScrollOnUpdate)
+            this:RefreshVisuals()
         end,
 
         ["OnRelease"] = function(this)
             this.status = nil
             this.noScrollbar = nil
+            this.theme = nil
 
             for k in pairs(this.localstatus) do this.localstatus[k] = nil end
 
@@ -1749,16 +1756,19 @@ function addon.ui.v2:RegisterRXPV2ScrollFrame()
         end,
 
         ["RefreshVisuals"] = function(this)
-            local theme = addon.v2:GetTheme()
+            local theme = this.theme or (this.v2 and addon.v2:GetTheme() or addon.activeTheme)
+            local isLegacyTheme = not theme.backgroundColors or theme.version == 1
 
-            if theme.version == 1 then
-                this.scrollbg:SetColorTexture(unpack(theme.backgroundColors.common))
+            if isLegacyTheme then
+                local background = theme.backgroundColors and theme.backgroundColors.common or theme.background
+
+                this.scrollbg:SetColorTexture(unpack(background))
                 this.scrollbar.ThumbTexture:SetDesaturated(true)
-                this.scrollbar.ThumbTexture:SetVertexColor(unpack(theme.backgroundColors.common))
+                this.scrollbar.ThumbTexture:SetVertexColor(unpack(background))
 
                 for _, button in ipairs({this.scrollbar.ScrollUpButton, this.scrollbar.ScrollDownButton}) do
                     button.Normal:SetDesaturated(true)
-                    button.Normal:SetVertexColor(unpack(theme.backgroundColors.common))
+                    button.Normal:SetVertexColor(unpack(background))
                 end
             else
                 this.scrollbg:SetColorTexture(unpack(theme.backgroundColors.scrollbar))
@@ -1770,6 +1780,16 @@ function addon.ui.v2:RegisterRXPV2ScrollFrame()
                     button.Normal:SetVertexColor(1, 1, 1, 1)
                 end
             end
+        end,
+
+        ["SetTheme"] = function(this, theme)
+            this.theme = theme
+            this:RefreshVisuals()
+        end,
+
+        ["UpdateSubTheme"] = function(this)
+            this.theme = this.v2 and addon.v2:GetTheme() or addon.activeTheme
+            this:RefreshVisuals()
         end,
 
         ["UpdateTheme"] = updateTheme,
@@ -2417,9 +2437,9 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
         closebutton:SetFrameLevel(frame:GetFrameLevel() + 20)
         closebutton:SetSize(24, 24)
         closebutton:SetPoint("TOPRIGHT", frame.rxpShadow, "TOPRIGHT", 10, 10)
-        closebutton:SetNormalTexture("Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-btn-close")
-        closebutton:SetPushedTexture("Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-btn-close")
-        closebutton:SetHighlightTexture("Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-btn-close", "ADD")
+        closebutton:SetNormalTexture(addon.ui.v2:GetTexture("rxp-btn-close"))
+        closebutton:SetPushedTexture(addon.ui.v2:GetTexture("rxp-btn-close"))
+        closebutton:SetHighlightTexture(addon.ui.v2:GetTexture("rxp-btn-close"), "ADD")
         closebutton:RegisterForClicks("LeftButtonUp", "RightButtonUp")
         closebutton:SetScript("OnClick", CloseButton_OnClick)
 
@@ -2734,7 +2754,7 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
         local hoverIconInset = 2
         skipIcon:SetPoint("TOPLEFT", checkboxHoverFrame, "TOPLEFT", hoverIconInset, -hoverIconInset)
         skipIcon:SetPoint("BOTTOMRIGHT", checkboxHoverFrame, "BOTTOMRIGHT", -hoverIconInset, hoverIconInset)
-        skipIcon:SetTexture("Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-skip-step-hover")
+        skipIcon:SetTexture(addon.ui.v2:GetTexture("rxp-skip-step-hover"))
 
         updateElementCheckbox(button)
         button:SetScript("OnEnter", elementCheckboxOnEnter)

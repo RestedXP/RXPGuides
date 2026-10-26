@@ -13,6 +13,8 @@ RXPGuides.RegisterGuide([[
 #subgroup Guia do Set Heroísmo << Warrior
 #subgroup Guia do Set Virtuous << Priest
 #name Parte 1: Braçadeiras
+#guideKind gearset
+#guideIcon rxp-icon-quest
 #next Parte 2: Cinto e Luvas
 
 
@@ -229,6 +231,8 @@ RXPGuides.RegisterGuide([[
 #subgroup Guia do Set Heroísmo << Warrior
 #subgroup Guia do Set Virtuous << Priest
 #name Parte 2: Cinto e Luvas
+#guideKind gearset
+#guideIcon rxp-icon-quest
 #next Parte 3: Calças, Ombros e Botas
 
 
@@ -673,6 +677,8 @@ RXPGuides.RegisterGuide([[
 #subgroup Guia do Set Heroísmo << Warrior
 #subgroup Guia do Set Virtuous << Priest
 #name Parte 3: Calças, Ombros e Botas
+#guideKind gearset
+#guideIcon rxp-icon-quest
 #next Parte 4: Helm & Baú
 
 step
@@ -1155,6 +1161,8 @@ RXPGuides.RegisterGuide([[
 #subgroup Guia do Set Heroísmo << Warrior
 #subgroup Guia do Set Virtuous << Priest
 #name Parte 4: Helm & Baú
+#guideKind gearset
+#guideIcon rxp-icon-quest
 
 
 step

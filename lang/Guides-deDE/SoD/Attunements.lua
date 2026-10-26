@@ -5,6 +5,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Endgame Guides
 #subgroup Zutrittsvoraussetzungen
 #name Karazhan Crypts Attunement
+#guideKind attunement
 
 step
     #completewith next
@@ -217,6 +218,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Endgame Guides
 #subgroup Zutrittsvoraussetzungen
 #name Scarlet Enclave Vorstellung
+#guideKind attunement
 
 step
    #completewith next

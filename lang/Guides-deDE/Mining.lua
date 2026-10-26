@@ -4,6 +4,7 @@ RXPGuides.RegisterGuide([[
 #group Beruf Leveling
 << Horde
 #name 1-450 Bergbau (H)
+#guideKind profession
 #displayname 1-450 Bergbau
 
 step << Mage
@@ -319,6 +320,7 @@ RXPGuides.RegisterGuide([[
 #group Beruf Leveling
 << Alliance
 #name 1-450 Bergbau (A)
+#guideKind profession
 #displayname 1-450 Bergbau
 
 step << Mage

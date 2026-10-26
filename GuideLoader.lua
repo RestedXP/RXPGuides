@@ -205,6 +205,112 @@ function addon.AddGuide(guide)
     return true
 end
 
+function addon.GetActiveGuidesInGroup(groupName)
+    local group = addon.guideList[groupName]
+    if not group or not group.names_ then return {} end
+
+    local guides = {}
+    local guide
+    for _, identity in ipairs(group.names_) do
+        guide = addon.GetGuideTable(identity.group, identity.name)
+        if guide and addon.IsGuideActive(guide) and not guide.chapter then
+            guides[#guides + 1] = guide
+        end
+    end
+    return guides
+end
+
+function addon.GetActiveGuidesByGroupId(groupId)
+    local guides = {}
+    for _, guide in pairs(addon.guides) do
+        if guide.groupid == groupId and addon.IsGuideActive(guide) and not guide.chapter then
+            guides[#guides + 1] = guide
+        end
+    end
+    return guides
+end
+
+function addon.GetActiveGuidesByGroupNameOrId(groupName, groupId)
+    local guides, seen = {}, {}
+    if not groupName then return guides end
+
+    local function addGuide(guide)
+        if guide and not seen[guide] then
+            seen[guide] = true
+            guides[#guides + 1] = guide
+        end
+    end
+
+    local translatedName = L(groupName)
+    local unmarkedName
+    for displayName in pairs(addon.guideList) do
+        unmarkedName = displayName:gsub("^%*", "")
+        if unmarkedName == groupName or unmarkedName == translatedName then
+            for _, guide in ipairs(addon.GetActiveGuidesInGroup(displayName)) do
+                addGuide(guide)
+            end
+        end
+    end
+
+    if groupId then
+        for _, guide in ipairs(addon.GetActiveGuidesByGroupId(groupId)) do
+            addGuide(guide)
+        end
+    end
+
+    return guides
+end
+
+function addon.GetGuideSubgroups(guides)
+    local categories, byName = {}, {}
+    local category
+    for _, guide in ipairs(guides) do
+        if guide.subgroup then
+            category = byName[guide.subgroup]
+            if not category then
+                category = {subgroup = guide.subgroup, subweight = tonumber(guide.subweight) or 0}
+                byName[guide.subgroup] = category
+                categories[#categories + 1] = category
+            else
+                category.subweight = tonumber(guide.subweight) or category.subweight
+            end
+        end
+    end
+
+    table.sort(categories, function(first, second)
+        if first.subweight == second.subweight then
+            return first.subgroup:gsub("^(%d)-(%d%d?)", addon.affix) <
+                second.subgroup:gsub("^(%d)-(%d%d?)", addon.affix)
+        end
+        return first.subweight > second.subweight
+    end)
+
+    return categories
+end
+
+function addon.IsGuideSelectable(guide, subgroup, includeUnusedGuides)
+    local profile = addon.settings.profile
+    return not guide.disabled and
+        not ((addon.player.hardcore or profile.hardcore) and guide.softcore) and
+        (includeUnusedGuides or profile.showUnusedGuides or not guide.lowPrio) and
+        (not subgroup or guide.subgroup == subgroup or guide.subgroup == L(subgroup))
+end
+
+function addon.GetSelectableGuidesInGroup(groupName, subgroup, includeUnusedGuides)
+    local guides = {}
+    for _, guide in ipairs(addon.GetActiveGuidesByGroupNameOrId(groupName, groupName)) do
+        if addon.IsGuideSelectable(guide, subgroup, includeUnusedGuides) then
+            guides[#guides + 1] = guide
+        end
+    end
+
+    return guides
+end
+
+function addon.GroupHasGuides(groupName, subgroup, includeUnusedGuides)
+    return #addon.GetSelectableGuidesInGroup(groupName, subgroup, includeUnusedGuides) > 0
+end
+
 function addon.RemoveGuide(guideKey)
     if not guideKey then return false end
 
@@ -855,6 +961,17 @@ function addon.LoadAllGuides()
         end
     end
     print('L-total time: ', debugprofilestop() - addon.startTime)
+end
+
+function addon.SelectDefaultGuide()
+    if addon.player.level > 1 then return end
+    if addon.currentGuide and not addon.currentGuide.empty then return end
+
+    if addon.settings.profile.hardcore then
+        addon:LoadGuideTable(addon.defaultGroupHC, addon.defaultGuideHC)
+    else
+        addon:LoadGuideTable(addon.defaultGroup, addon.defaultGuide)
+    end
 end
 
 local function parseLine(linetext,step,parsingLogic)

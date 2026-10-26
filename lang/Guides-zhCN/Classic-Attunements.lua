@@ -7,6 +7,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP 终局指南
 #subgroup 开门任务
 #name 奥妮克希亚开门任务（联盟）
+#guideKind attunement
 
 
 step
@@ -344,6 +345,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP 终局指南
 #subgroup 开门任务
 #name 奥妮克希亚开门任务（部落）
+#guideKind attunement
 
 step
     #completewith next
@@ -794,6 +796,7 @@ RXPGuides.RegisterGuide([[
 #subgroup 开门任务
 #group RestedXP 终局指南
 #name 熔火之心开门任务
+#guideKind attunement
 
 step
     #completewith next
@@ -840,6 +843,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP 终局指南
 #subgroup 开门任务
 #name 黑翼之巢开门任务
+#guideKind attunement
 
 step
     #completewith next
@@ -885,6 +889,8 @@ RXPGuides.RegisterGuide([[
 #group RestedXP 终局指南
 #subgroup 钥匙
 #name 黑石塔上层钥匙
+#guideKind key
+#guideIcon rxp-icon-ring
 
 step
     #completewith next
@@ -977,6 +983,8 @@ RXPGuides.RegisterGuide([[
 #group RestedXP 终局指南
 #subgroup 钥匙
 #name 通灵学院钥匙（联盟）
+#guideKind key
+#guideIcon rxp-icon-key-2
 
 step
     #sticky
@@ -1236,6 +1244,8 @@ RXPGuides.RegisterGuide([[
 #group RestedXP 终局指南
 #subgroup 钥匙
 #name 通灵学院钥匙（部落）
+#guideKind key
+#guideIcon rxp-icon-key-2
 
 
 step
@@ -1492,6 +1502,8 @@ RXPGuides.RegisterGuide([[
 #group RestedXP 终局指南
 #subgroup 钥匙
 #name 黑石深渊钥匙
+#guideKind key
+#guideIcon rxp-icon-key-3
 
 
 step
@@ -1556,6 +1568,8 @@ RXPGuides.RegisterGuide([[
 #group RestedXP 终局指南
 #subgroup 钥匙
 #name 厄运之槌 钥匙
+#guideKind key
+
 
 step
     #completewith next
@@ -1584,6 +1598,7 @@ RXPGuides.RegisterGuide([[
 
 #group RestedXP 终局指南
 #name 纳克萨玛斯开门任务
+#guideKind attunement
 #subgroup 开门任务
 
 step
@@ -1657,6 +1672,7 @@ RXPGuides.RegisterGuide([[
 
 #group RestedXP 终局指南
 #name 屠魔峡谷开门任务
+#guideKind attunement
 #subgroup 开门任务
 <<sod
 

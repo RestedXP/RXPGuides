@@ -4,6 +4,7 @@ RXPGuides.RegisterGuide([[
 #version 7
 #group RXP TBC Guía de Requisitos de Acceso (Attunements)
 #name 1. Karazhan
+#guideKind attunement
 #title Karazhan
 
 step
@@ -186,6 +187,7 @@ RXPGuides.RegisterGuide([[
 #version 7
 #group RXP TBC Guía de Requisitos de Acceso (Attunements)
 #name 2. Caverna Santuario Serpiente
+#guideKind attunement
 #title Serpentshrine Cavern
 
 step
@@ -219,6 +221,7 @@ RXPGuides.RegisterGuide([[
 #version 7
 #group RXP TBC Guía de Requisitos de Acceso (Attunements)
 #name 3. El Castillo de la Tempestad
+#guideKind attunement
 #title El Castillo de la Tempestad
 
 step
@@ -623,6 +626,7 @@ RXPGuides.RegisterGuide([[
 #version 7
 #group RXP TBC Guía de Requisitos de Acceso (Attunements)
 #name 4. Monte Hyjal
+#guideKind attunement
 #title Monte Hyjal
 
 step
@@ -664,6 +668,7 @@ RXPGuides.RegisterGuide([[
 #version 7
 #group RXP TBC Guía de Requisitos de Acceso (Attunements)
 #name 5. Templo Oscuro
+#guideKind attunement
 #title Templo Oscuro
 
 step

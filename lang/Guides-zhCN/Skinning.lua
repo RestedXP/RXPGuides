@@ -4,6 +4,7 @@ RXPGuides.RegisterGuide([[
 #group 专业技能升级
 << Horde
 #name 1-450 剥皮 (部落)
+#guideKind profession
 #displayname 1-450 剥皮
 
 step << Mage
@@ -280,6 +281,7 @@ RXPGuides.RegisterGuide([[
 #group 专业技能升级
 << Alliance
 #name 1-450 剥皮 (联盟)
+#guideKind profession
 #displayname 1-450 剥皮
 
 step << Mage

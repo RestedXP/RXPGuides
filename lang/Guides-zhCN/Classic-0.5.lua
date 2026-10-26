@@ -13,6 +13,8 @@ RXPGuides.RegisterGuide([[
 #subgroup 英勇套装指南 << Warrior
 #subgroup 坚贞套装指南 << Priest
 #name 第1部：护腕
+#guideKind gearset
+#guideIcon rxp-icon-quest
 #next 第2部：腰带和手套
 
 
@@ -229,6 +231,8 @@ RXPGuides.RegisterGuide([[
 #subgroup 英勇套装指南 << Warrior
 #subgroup 坚贞套装指南 << Priest
 #name 第2部：腰带和手套
+#guideKind gearset
+#guideIcon rxp-icon-quest
 #next 第3部：腿甲、肩铠和战靴
 
 
@@ -673,6 +677,8 @@ RXPGuides.RegisterGuide([[
 #subgroup 英勇套装指南 << Warrior
 #subgroup 坚贞套装指南 << Priest
 #name 第3部：腿甲、肩铠和战靴
+#guideKind gearset
+#guideIcon rxp-icon-quest
 #next 第4部：头盔和胸部
 
 step
@@ -1155,6 +1161,8 @@ RXPGuides.RegisterGuide([[
 #subgroup 英勇套装指南 << Warrior
 #subgroup 坚贞套装指南 << Priest
 #name 第4部：头盔和胸部
+#guideKind gearset
+#guideIcon rxp-icon-quest
 
 
 step
