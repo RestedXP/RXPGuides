@@ -99,12 +99,12 @@ step << Horde
 	.isOnQuest 13116
 step << Alliance
 	.goto Dalaran,40.20,66.98
-	>>Use your Cooking proffession to cook 4 |cRXP_LOOT_Rhino Meat|r into 4 |cRXP_LOOT_Rhino Dogs|r
+	>>Use your Cooking profession to cook 4 |cRXP_LOOT_Rhino Meat|r into 4 |cRXP_LOOT_Rhino Dogs|r
 	.collect 34752,4 -- Rhino Dogs (4)
 	.isOnQuest 13107
 step << Horde
 	.goto Dalaran,70.44,39.80
-	>>Use your Cooking proffession to cook 4 |cRXP_LOOT_Rhino Meat|r into 4 |cRXP_LOOT_Rhino Dogs|r
+	>>Use your Cooking profession to cook 4 |cRXP_LOOT_Rhino Meat|r into 4 |cRXP_LOOT_Rhino Dogs|r
 	.collect 34752,4 -- Rhino Dogs (4)
 	.isOnQuest 13116
 step << Alliance
@@ -217,7 +217,7 @@ step
 	.target Orton Bennet
 -- Quest: Sewer Stew
 step
-	.zone CrystalsongForest >>In Dalaran go into the Violet Gate building and click the Violet Strand Crystal to teleport below to Crystalsong Forest
+	.zone CrystalsongForest >>In Dalaran go into the Violet Gate building and click the Violet Stand Crystal to teleport below to Crystalsong Forest
 	.goto Dalaran,57.32,46.55,6,0
 	.goto Dalaran,55.91,46.77
 	.isOnQuest 13102 << Alliance
@@ -428,13 +428,13 @@ step << Horde
 step << Alliance
     #label stew
 	.goto Dalaran,40.20,66.98
-	>>Use your Cooking proffession to cook 4 |cRXP_LOOT_Chilled Meat|r into 4 |cRXP_LOOT_Northern Stew|r
+	>>Use your Cooking profession to cook 4 |cRXP_LOOT_Chilled Meat|r into 4 |cRXP_LOOT_Northern Stew|r
 	.complete 13101,1 --Northern Stew (4)
 	.isOnQuest 13101
 step << Horde
     #label stew
 	.goto Dalaran,70.44,39.80
-	>>Use your Cooking proffession to cook 4 |cRXP_LOOT_Chilled Meat|r into 4 |cRXP_LOOT_Northern Stew|r
+	>>Use your Cooking profession to cook 4 |cRXP_LOOT_Chilled Meat|r into 4 |cRXP_LOOT_Northern Stew|r
 	.complete 13113,1 --Northern Stew (4)
 	.isOnQuest 13113
 step

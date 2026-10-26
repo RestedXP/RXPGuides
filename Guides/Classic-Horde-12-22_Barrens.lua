@@ -4625,7 +4625,7 @@ step
 step << !Tauren !Shaman !Warrior/Undead
     .goto The Barrens,44.55,59.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mangletooth|r
-    .aura 16618 >>|cRXP_WARN_If you have 10|r |T134128:0|t[|cRXP_LOOT_Blood Shards|r |cRXP_WARN_left, use them to obtain|r |T136022:0|t[Spirit of the Wind] |cRXP_WARN_from|r |cRXP_FRIENDLY_Mangletooth|r
+    .aura 16618 >>|cRXP_WARN_If you have 10|r |T134128:0|t[|cRXP_LOOT_Blood Shards|r] |cRXP_WARN_left, use them to obtain|r |T136022:0|t[Spirit of the Wind] |cRXP_WARN_from|r |cRXP_FRIENDLY_Mangletooth|r
     >>|cRXP_WARN_Skip this step if you have the Thunder Bluff flight path|r
     .itemcount 5075,10
     .target Mangletooth
@@ -5261,7 +5261,7 @@ step
     .dungeon WC
 step
     #optional
-    >>Kill |cRXP_ENEMY_Deviate Ravagers|r, |cRXP_ENEMY_Vipers|r, |cRXP_ENEMY_Shamblers|r and |cRXP_ENEMY_Dreadfangs|r. . Loot them for their |cRXP_ENEMY_Hides|r
+    >>Kill |cRXP_ENEMY_Deviate Ravagers|r, |cRXP_ENEMY_Vipers|r, |cRXP_ENEMY_Shamblers|r and |cRXP_ENEMY_Dreadfangs|r. Loot them for their |cRXP_ENEMY_Hides|r . Loot them for their |cRXP_ENEMY_Hides|r
     .complete 1487,1 --Deviate Ravager (7)
     .mob +Deviate Ravager
     .complete 1487,2 --Deviate Viper (7)
@@ -7036,7 +7036,7 @@ step << Warlock/Mage
     .itemcount 221499,1 << Warlock --Rune of the Felguard
     .itemcount 223147,1 << Mage --Spell Notes: Balefire Bolt
     .train 431756 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Felguard|r] |cRXP_WARN_to learn|r |T136216:0|t[Summon Felguard] << Warlock
-    .train 429311 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Balefire Bolt|r |cRXP_WARN_to train|r |T135809:0|t[Balefire Bolt] << Mage
+    .train 429311 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Balefire Bolt|r] |cRXP_WARN_to train|r |T135809:0|t[Balefire Bolt] << Mage
     .use 221499 << Warlock
     .use 223147 << Mage
 step
@@ -11032,7 +11032,7 @@ step << Warlock/Mage
     .itemcount 221499,1 << Warlock --Rune of the Felguard
     .itemcount 223147,1 << Mage --Spell Notes: Balefire Bolt
     .train 431756 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Felguard|r] |cRXP_WARN_to learn|r |T136216:0|t[Summon Felguard] << Warlock
-    .train 429311 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Balefire Bolt|r |cRXP_WARN_to train|r |T135809:0|t[Balefire Bolt] << Mage
+    .train 429311 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Balefire Bolt|r] |cRXP_WARN_to train|r |T135809:0|t[Balefire Bolt] << Mage
     .use 221499 << Warlock
     .use 223147 << Mage
 step
@@ -12041,7 +12041,7 @@ step
 step << !Tauren
     .goto The Barrens,44.55,59.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mangletooth|r
-    .aura 16618 >>|cRXP_WARN_If you have 10|r |T134128:0|t[|cRXP_LOOT_Blood Shards|r |cRXP_WARN_left, use them to obtain|r |T136022:0|t[Spirit of the Wind] |cRXP_WARN_from|r |cRXP_FRIENDLY_Mangletooth|r
+    .aura 16618 >>|cRXP_WARN_If you have 10|r |T134128:0|t[|cRXP_LOOT_Blood Shards|r] |cRXP_WARN_left, use them to obtain|r |T136022:0|t[Spirit of the Wind] |cRXP_WARN_from|r |cRXP_FRIENDLY_Mangletooth|r
     >>|cRXP_WARN_Skip this step if you have the Thunder Bluff flight path|r
     .itemcount 5075,10
     .target Mangletooth
@@ -12286,7 +12286,7 @@ step << Rogue
 step << Rogue
     #season 2
     .goto Thunder Bluff,53.00,56.63
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Kard|r|cRXP_BUY_. Buy one or two|r |T135342:0|t[Kris] |cRXP_BUY_from him|rr
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Kard|r|cRXP_BUY_. Buy one or two|r |T135342:0|t[Kris] |cRXP_BUY_from him|r
     .collect 2209,1,493,1 --Collect Kris (1)
     .money <0.7115
     .target Kard Ragetotem
@@ -12656,7 +12656,7 @@ step
     .dungeon WC
 step
     #optional
-    >>Kill |cRXP_ENEMY_Deviate Ravagers|r, |cRXP_ENEMY_Vipers|r, |cRXP_ENEMY_Shamblers|r and |cRXP_ENEMY_Dreadfangs|r. . Loot them for their |cRXP_ENEMY_Hides|r
+    >>Kill |cRXP_ENEMY_Deviate Ravagers|r, |cRXP_ENEMY_Vipers|r, |cRXP_ENEMY_Shamblers|r and |cRXP_ENEMY_Dreadfangs|r. Loot them for their |cRXP_ENEMY_Hides|r . Loot them for their |cRXP_ENEMY_Hides|r
     .complete 1487,1 --Deviate Ravager (7)
     .mob +Deviate Ravager
     .complete 1487,2 --Deviate Viper (7)

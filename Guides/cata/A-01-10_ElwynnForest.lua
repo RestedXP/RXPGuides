@@ -647,7 +647,7 @@ step << cata Shaman
 step << cata Shaman
     #xprate <1.2
     .goto 1426/0,-536.50000,-5581.50000
-    .train 331 >> Train |T136052:0|tHeaing Wave at the Kharanos Inn
+    .train 331 >> Train |T136052:0|tHealing Wave at the Kharanos Inn
 step << Gnome
 #xprate >1.19
     #optional

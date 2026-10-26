@@ -2200,13 +2200,13 @@ step
 step
     .line Eastern Plaguelands,28.6,84.2,33.2,83.0,35.30,82.55,41.19,81.68,45.42,80.68,48.8,79.9,51.5,78.3,55.1,76.4
     >>Procure por um |cRXP_ENEMY_Carniçal de Queixo Caído|r. Mate-o e |Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Orthas|r um espírito anão que aparecerá. Aceite sua missão
-    >>|cRXP_WARN_O|r |cRXP_ENEMY_Carniçal de Queixo Caído <Carniçal com Tamanho de Anão>|r |cRXP_WARN_patrulha a área ao sul da estrada entre o Undercroft e Corrin's Crossing|r
+    >>|cRXP_WARN_O|r |cRXP_ENEMY_Carniçal de Queixo Caído <Carniçal com Tamanho de Anão>|r |cRXP_WARN_patrulha a área ao sul da estrada entre o Undercroft e Corin's Crossing|r
     .accept 84318 >> Aceite Bah!
     .unitscan Slack-Jawed Ghoul
     .target Orthas
 step
     .goto Eastern Plaguelands,61.3,69.3 --Not sure if this is the house or the other one, need more info
-    >>Entre na casa em Corrin's Crossing. Saque o |T133040:0|t[|cRXP_PICK_Ornate Warhammer|r] |cRXP_WARN_no segundo andar|r
+    >>Entre na casa em Corin's Crossing. Saque o |T133040:0|t[|cRXP_PICK_Ornate Warhammer|r] |cRXP_WARN_no segundo andar|r
     .complete 84318,1
 step
     .goto Eastern Plaguelands,61.3,69.3

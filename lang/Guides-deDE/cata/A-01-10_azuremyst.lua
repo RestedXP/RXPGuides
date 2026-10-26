@@ -204,7 +204,7 @@ step << Mage
     .goto Azuremyst Isle,79.662,46.427
     >>|cRXP_WARN_Wirkt|r |T135812:0|t[Feuerball] |cRXP_WARN_auf die |cRXP_ENEMY_Trainingsattrappe|r, bis ihr einen|r |T135731:0|t[Arkan Missles!] |cRXP_WARN_Proc erhaltet, dann wirkt|r |T136096:0|t[Arkane Geschosse]|cRXP_WARN_. Wiederholt das zweimal|r
     >>|cRXP_WARN_Wirkt|r |T135848:0|t[Brunnenbehüter Solanian] |cRXP_WARN_auf die |cRXP_ENEMY_Training Attrappe|r. Wiederholt dies zweimal|r
-    .complete 26968,1 << cata -- Practice Arcane Missles (1)
+    .complete 26968,1 << cata -- Practice Arcane Missiles (1)
     .complete 26968,2 << !cata -- Practice Frost Nova (1)
     .mob Training Dummy
 step << Shaman

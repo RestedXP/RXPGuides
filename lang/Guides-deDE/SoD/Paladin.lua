@@ -2200,13 +2200,13 @@ step
 step
     .line Eastern Plaguelands,28.6,84.2,33.2,83.0,35.30,82.55,41.19,81.68,45.42,80.68,48.8,79.9,51.5,78.3,55.1,76.4
     >>Sucht nach einem |cRXP_ENEMY_Schlaffkiefrigen Ghul|r. Tötet ihn und |Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Orthas|r, einem Zwerggeist, der erscheinen wird. Akzeptiert seine Quest
-    >>|cRXP_WARN_Der|r |cRXP_ENEMY_Slack-Bissig Ghul|r |cRXP_WARN_patrouilliert den Bereich südlich der Straße zwischen Undercroft und Corrin's Crossing|r
+    >>|cRXP_WARN_Der|r |cRXP_ENEMY_Slack-Bissig Ghul|r |cRXP_WARN_patrouilliert den Bereich südlich der Straße zwischen Undercroft und Corin's Crossing|r
     .accept 84318 >> Akzeptiert die Quest Ey!
     .unitscan Slack-Jawed Ghoul
     .target Orthas
 step
     .goto Eastern Plaguelands,61.3,69.3 --Not sure if this is the house or the other one, need more info
-    >>BETRETET das Haus in Corrin's Crossing. Plündert den |T133040:0|t[|cRXP_PICK_Prunkvoller Kriegshammer|r] |cRXP_WARN_im zweiten Stock|r
+    >>BETRETET das Haus in Corin's Crossing. Plündert den |T133040:0|t[|cRXP_PICK_Prunkvoller Kriegshammer|r] |cRXP_WARN_im zweiten Stock|r
     .complete 84318,1
 step
     .goto Eastern Plaguelands,61.3,69.3

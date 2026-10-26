@@ -1380,7 +1380,7 @@ step
     .isInScenario 940
     .goto 714,22.14,50.77
     >>|cRXP_WARN_Folgt dem Pfeil|r.
-    .scenario 2154,1 --Follow Baron Silver
+    .scenario 2154,1 --Follow Baron Sliver
 step
     #label Baron Sliver
     .isInScenario 940

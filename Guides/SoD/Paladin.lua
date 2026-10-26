@@ -2200,13 +2200,13 @@ step
 step
     .line Eastern Plaguelands,28.6,84.2,33.2,83.0,35.30,82.55,41.19,81.68,45.42,80.68,48.8,79.9,51.5,78.3,55.1,76.4
     >>Look for a |cRXP_ENEMY_Slack-Jawed Ghoul|r. Kill him and |Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orthas|r a dwarf spirit that will appear. Accept his quest
-    >>|cRXP_WARN_The|r |cRXP_ENEMY_Slack-Jawed Ghoul|r |cRXP_WARN_patrols the area south of the road between the Undercroft and Corrin's Crossing|r
+    >>|cRXP_WARN_The|r |cRXP_ENEMY_Slack-Jawed Ghoul|r |cRXP_WARN_patrols the area south of the road between the Undercroft and Corin's Crossing|r
     .accept 84318 >> Accept Oi!
     .unitscan Slack-Jawed Ghoul
     .target Orthas
 step
     .goto Eastern Plaguelands,61.3,69.3 --Not sure if this is the house or the other one, need more info
-    >>Enter the house in Corrin's Crossing. Loot the |T133040:0|t[|cRXP_PICK_Ornate Warhammer|r] |cRXP_WARN_on the second floor|r
+    >>Enter the house in Corin's Crossing. Loot the |T133040:0|t[|cRXP_PICK_Ornate Warhammer|r] |cRXP_WARN_on the second floor|r
     .complete 84318,1
 step
     .goto Eastern Plaguelands,61.3,69.3

@@ -14,7 +14,7 @@ step
 -- 3 Quests from The Shadow Vault
 step
 	>>From The Shadow Vault accept the 3 daily quests
-    >>Talk to Silver
+    >>Talk to Sliver
 	.daily 12995 >>Accept Leave Our Mark
 	.goto Icecrown,42.84,24.92
 	>>Talk to The Leaper. He walks around the tent
@@ -61,7 +61,7 @@ step
     .complete 13071,1 --Vrykul buildings set ablaze (8)
 	.isOnQuest 13071
 step
-    >>Return to The Shadow Vault. Talk to Silver, The Leaper and Vile
+    >>Return to The Shadow Vault. Talk to Sliver, The Leaper and Vile
 	.turnin 12995 >>Turn in Leave Our Mark
 	.goto Icecrown,42.84,24.92
     .turnin 13069 >>Turn in Shoot'Em Up

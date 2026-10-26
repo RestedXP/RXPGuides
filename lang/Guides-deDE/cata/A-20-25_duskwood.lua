@@ -705,7 +705,7 @@ step
     .maxlevel 28
 step
     .goto 47,74.17,46.47
-    >>Tötet |cRXP_ENEMY_Stiches.|r
+    >>Tötet |cRXP_ENEMY_Stitches.|r
     .complete 26727,1 --1/1 Stitches slain
 	.mob Stitches
     .maxlevel 28

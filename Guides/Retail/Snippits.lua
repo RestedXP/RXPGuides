@@ -1501,7 +1501,7 @@ step
     .isInScenario 940
     .goto 714,22.14,50.77
     >>|cRXP_WARN_Follow the arrow|r.
-    .scenario 2154,1 --Follow Baron Silver
+    .scenario 2154,1 --Follow Baron Sliver
 step
     #arrowtext Kill\n|cRXP_ENEMY_Niskaran Doombringer|r and |cRXP_ENEMY_Felguard Sentry|r
     #label Baron Sliver
@@ -1512,10 +1512,10 @@ step
     .mob Niskaran Doombringer
     .mob Felguard Sentry
 step
-    #arrowtext |cFFFCDC00Escort Baron Silver|r
+    #arrowtext |cFFFCDC00Escort Baron Sliver|r
     .isInScenario 940
     .goto 714,37.70,47.45
-    >>Kill the |cRXP_ENEMY_Felguard Sentries|r on the way otherwise |cRXP_FRIENDLY_Baron Silver|r will get stuck.
+    >>Kill the |cRXP_ENEMY_Felguard Sentries|r on the way otherwise |cRXP_FRIENDLY_Baron Sliver|r will get stuck.
     .scenario 2136,1 --Search the Legion camp.
     .mob Felguard Sentry
 step
@@ -1546,7 +1546,7 @@ step
     .isInScenario 940
     .goto 714,47.96,58.44
     >>Use |T136120:0|t[Anti-Magic Shell] to avoid the damage from the fel voids.
-    >>|cRXP_WARN_Defend|r |cRXP_FRIENDLY_Baron Silver|r again.
+    >>|cRXP_WARN_Defend|r |cRXP_FRIENDLY_Baron Sliver|r again.
     .scenario 2139,1 --Citadel Barrier Disabled
     .usespell 48707
     .mob Niskaran Doombringer

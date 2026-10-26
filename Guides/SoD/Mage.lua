@@ -2892,7 +2892,7 @@ step
     .collect 223147,1 --Spell Notes: Balefire Bolt
     .mob Fel Interloper
 step
-    .train 429311 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Balefire Bolt|r |cRXP_WARN_to train|r |T135809:0|t[Balefire Bolt]
+    .train 429311 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Balefire Bolt|r] |cRXP_WARN_to train|r |T135809:0|t[Balefire Bolt]
     .use 223147
 ]])
 
@@ -2945,7 +2945,7 @@ step
     .collect 223147,1 --Spell Notes: Balefire Bolt
     .mob Fel Interloper
 step
-    .train 429311 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Balefire Bolt|r |cRXP_WARN_to train|r |T135809:0|t[Balefire Bolt.]
+    .train 429311 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Balefire Bolt|r] |cRXP_WARN_to train|r |T135809:0|t[Balefire Bolt.]
     .use 223147
 ]])
 
@@ -2998,7 +2998,7 @@ step
     .collect 223147,1 --Spell Notes: Balefire Bolt
     .mob Fel Interloper
 step
-    .train 429311 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Balefire Bolt|r |cRXP_WARN_to train|r |T135809:0|t[Balefire Bolt.]
+    .train 429311 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Balefire Bolt|r] |cRXP_WARN_to train|r |T135809:0|t[Balefire Bolt.]
     .use 223147
 ]])
 
@@ -3049,7 +3049,7 @@ step
     .collect 223147,1 --Spell Notes: Balefire Bolt
     .mob Fel Interloper
 step
-    .train 429311 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Balefire Bolt|r |cRXP_WARN_to train|r |T135809:0|t[Balefire Bolt.]
+    .train 429311 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Balefire Bolt|r] |cRXP_WARN_to train|r |T135809:0|t[Balefire Bolt.]
     .use 223147
 ]])
 
@@ -3100,7 +3100,7 @@ step
     .collect 223147,1 --Spell Notes: Balefire Bolt
     .mob Fel Interloper
 step
-    .train 429311 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Balefire Bolt|r |cRXP_WARN_to train|r |T135809:0|t[Balefire Bolt.]
+    .train 429311 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Balefire Bolt|r] |cRXP_WARN_to train|r |T135809:0|t[Balefire Bolt.]
     .use 223147
 ]])
 
@@ -3159,7 +3159,7 @@ step
     .collect 223147,1 --Spell Notes: Balefire Bolt
     .mob Fel Interloper
 step
-    .train 429311 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Balefire Bolt|r |cRXP_WARN_to train|r |T135809:0|t[Balefire Bolt.]
+    .train 429311 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Balefire Bolt|r] |cRXP_WARN_to train|r |T135809:0|t[Balefire Bolt.]
     .use 223147
 ]])
 
@@ -3210,7 +3210,7 @@ step
     .collect 223147,1 --Spell Notes: Balefire Bolt
     .mob Fel Interloper
 step
-    .train 429311 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Balefire Bolt|r |cRXP_WARN_to train|r |T135809:0|t[Balefire Bolt.]
+    .train 429311 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Balefire Bolt|r] |cRXP_WARN_to train|r |T135809:0|t[Balefire Bolt.]
     .use 223147
 ]])
 
@@ -3261,7 +3261,7 @@ step
     .collect 223147,1 --Spell Notes: Balefire Bolt
     .mob Fel Interloper
 step
-    .train 429311 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Balefire Bolt|r |cRXP_WARN_to train|r |T135809:0|t[Balefire Bolt.]
+    .train 429311 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Balefire Bolt|r] |cRXP_WARN_to train|r |T135809:0|t[Balefire Bolt.]
     .use 223147
 ]])
 
@@ -3325,7 +3325,7 @@ step
     .collect 223147,1 --Spell Notes: Balefire Bolt
     .mob Fel Interloper
 step
-    .train 429311 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Balefire Bolt|r |cRXP_WARN_to train|r |T135809:0|t[Balefire Bolt.]
+    .train 429311 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Balefire Bolt|r] |cRXP_WARN_to train|r |T135809:0|t[Balefire Bolt.]
     .use 223147
 ]])
 
@@ -3375,7 +3375,7 @@ step
     .collect 223147,1 --Spell Notes: Balefire Bolt
     .mob Fel Interloper
 step
-    .train 429311 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Balefire Bolt|r |cRXP_WARN_to train|r |T135809:0|t[Balefire Bolt.]
+    .train 429311 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Balefire Bolt|r] |cRXP_WARN_to train|r |T135809:0|t[Balefire Bolt.]
     .use 223147
 ]])
 

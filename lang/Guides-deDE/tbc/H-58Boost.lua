@@ -520,7 +520,7 @@ step
     .isQuestTurnedIn 5149
 step
 	#completewith RottingUndead
-	.subzone 2264 >> Reist nach Corrin's Crossing
+	.subzone 2264 >> Reist nach Corin's Crossing
 step
 	#completewith next
 	>>Tötet |cRXP_ENEMY_Untote|r. Plündert sie für |cRXP_LOOT_Lebendige Fäulnis|r.

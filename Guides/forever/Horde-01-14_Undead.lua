@@ -1062,7 +1062,7 @@ step
     .goto 1420/0,496.96,2256.54,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gordo|r
     >>|cRXP_WARN_He's an abomination that patrols along the road to Brill|r
-    >>|cRXP_WARN_Select "I need a report for Executor Zygand|r
+    >>|cRXP_WARN_Select "I need a report for Executor Zygand|r"
     .complete 99141,3 --|1/1 Gordo's Report
     .target Gordo
     --.gossipoption 142737
@@ -1187,7 +1187,7 @@ step
 step
     .goto 1420/0,403.300,2287.700
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathguard Dillinger|r
-    >>|cRXP_WARN_Select "I need a report for Executor Zygand|r
+    >>|cRXP_WARN_Select "I need a report for Executor Zygand|r"
     .turnin 404 >>Turn in A Putrid Task
     .accept 426 >>Accept The Mills Overrun
     .complete 99141,1 --|1/1 Dillinger's Report

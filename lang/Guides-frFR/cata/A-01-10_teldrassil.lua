@@ -125,8 +125,8 @@ step << Mage
     .goto 1438/1,787.40002,10393.00000,-1
     .goto 1438/1,781.90002,10389.90039,-1
     >>|cRXP_WARN_Lancez|r |T135812:0|t[Boule de feu] |cRXP_WARN_sur le |cRXP_ENEMY_Mannequin d'entraînement|r jusqu'à obtenir un|r |T135731:0|t[(Arcanes) Missles!] |cRXP_WARN_proc, puis lancez|r |T136096:0|t[Projectiles des Arcanes]|cRXP_WARN_. Répétez ceci deux fois|r
-    .complete 26940,1 << cata -- Practice Arcane Missles (1)
-    .complete 26940,2 << !cata -- Practice Arcane Missles (1)
+    .complete 26940,1 << cata -- Practice Arcane Missiles (1)
+    .complete 26940,2 << !cata -- Practice Arcane Missiles (1)
     .mob Training Dummy
 step << Mage
     #completewith next

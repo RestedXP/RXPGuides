@@ -2651,7 +2651,7 @@ step
     .goto 1411,47.07,30.87,40,0
     .goto 1411,47.16,29.67,40,0
     .goto 1411,48.95,22.34,40,0
-    >>Loot the |cRXP_LOOT_Kul Sack of Supplies|r on the ground
+    >>Loot the |cRXP_LOOT_Sack of Supplies|r on the ground
     .complete 834,1 --Sack of Supplies (5)
     .isOnQuest 834
 step

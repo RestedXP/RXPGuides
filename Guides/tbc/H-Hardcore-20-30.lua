@@ -6014,7 +6014,7 @@ step
 step
     .goto The Barrens,44.55,59.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mangletooth|r
-    .aura 16618 >>|cRXP_WARN_If you have 10|r |T134128:0|t[|cRXP_LOOT_Blood Shards|r |cRXP_WARN_left, use them to obtain|r |T136022:0|t[Spirit of the Wind] |cRXP_WARN_from|r |cRXP_FRIENDLY_Mangletooth|r
+    .aura 16618 >>|cRXP_WARN_If you have 10|r |T134128:0|t[|cRXP_LOOT_Blood Shards|r] |cRXP_WARN_left, use them to obtain|r |T136022:0|t[Spirit of the Wind] |cRXP_WARN_from|r |cRXP_FRIENDLY_Mangletooth|r
     .itemcount 5075,10
     .target Mangletooth
     .train 783,1 << Druid --Travel form
@@ -6024,7 +6024,7 @@ step << Druid/Shaman/Hunter
     #optional
     .goto The Barrens,44.55,59.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mangletooth|r
-    +|cRXP_WARN_If you have|r |T134128:0|t[|cRXP_LOOT_Blood Shards|r |cRXP_WARN_left, use them to obtain buffs of your choice from|r |cRXP_FRIENDLY_Mangletooth|r
+    +|cRXP_WARN_If you have|r |T134128:0|t[|cRXP_LOOT_Blood Shards|r] |cRXP_WARN_left, use them to obtain buffs of your choice from|r |cRXP_FRIENDLY_Mangletooth|r
     .itemcount 5075,4
     .target Mangletooth
     .train 783,3 << Druid --Travel form
@@ -7334,13 +7334,13 @@ step
     .maxlevel 31
 step
     .goto Thousand Needles,33.80,39.90
-    >>Open the |cRXP_PICK_Document Chest|r inside the big tent. Loot it for |cRXP_LOOT_Secret Note #1|r
+    >>Open the |cRXP_PICK_Document Chest|r inside the big tent. Loot it for |cRXP_LOOT_Secret Note #2|r
     .complete 5064,2 --Secret Note #2 (1)
     .isQuestTurnedIn 4841
     .maxlevel 31
 step
     .goto Thousand Needles,39.20,41.60
-    >>Open the |cRXP_PICK_Document Chest|r inside the tent on the eastern plateau. Loot it for |cRXP_LOOT_Secret Note #1|r
+    >>Open the |cRXP_PICK_Document Chest|r inside the tent on the eastern plateau. Loot it for |cRXP_LOOT_Secret Note #3|r
     .complete 5064,3 --Secret Note #3 (1)
     .isQuestTurnedIn 4841
     .maxlevel 31

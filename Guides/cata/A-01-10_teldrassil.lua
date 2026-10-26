@@ -124,9 +124,9 @@ step << Mage
     .goto 1438/1,793.29999,10397.10059,-1
     .goto 1438/1,787.40002,10393.00000,-1
     .goto 1438/1,781.90002,10389.90039,-1
-    >>|cRXP_WARN_Cast|r |T135812:0|t[Fireball] |cRXP_WARN_on the |cRXP_ENEMY_Training Dummy|r until you get a|r |T135731:0|t[Arcane Missles!] |cRXP_WARN_proc, then cast|r |T136096:0|t[Arcane Missiles]|cRXP_WARN_. Repeat this twice|r
-    .complete 26940,1 << cata -- Practice Arcane Missles (1)
-    .complete 26940,2 << !cata -- Practice Arcane Missles (1)
+    >>|cRXP_WARN_Cast|r |T135812:0|t[Fireball] |cRXP_WARN_on the |cRXP_ENEMY_Training Dummy|r until you get a|r |T135731:0|t[Arcane Missiles!] |cRXP_WARN_proc, then cast|r |T136096:0|t[Arcane Missiles]|cRXP_WARN_. Repeat this twice|r
+    .complete 26940,1 << cata -- Practice Arcane Missiles (1)
+    .complete 26940,2 << !cata -- Practice Arcane Missiles (1)
     .mob Training Dummy
 step << Mage
     #completewith next

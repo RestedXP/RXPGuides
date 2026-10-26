@@ -125,8 +125,8 @@ step << Mage
     .goto 1438/1,787.40002,10393.00000,-1
     .goto 1438/1,781.90002,10389.90039,-1
     >>|cRXP_WARN_施放|r |T135812:0|t[火球术] |cRXP_WARN_在|cRXP_ENEMY_训练假人|r上，直到触发|r |T135731:0|t[奥术飞弹！] |cRXP_WARN_效果，然后施放|r |T136096:0|t[奥术飞弹]|cRXP_WARN_。重复两次|r
-    .complete 26940,1 << cata -- Practice Arcane Missles (1)
-    .complete 26940,2 << !cata -- Practice Arcane Missles (1)
+    .complete 26940,1 << cata -- Practice Arcane Missiles (1)
+    .complete 26940,2 << !cata -- Practice Arcane Missiles (1)
     .mob Training Dummy
 step << Mage
     #completewith next

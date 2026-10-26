@@ -520,11 +520,11 @@ step
     .isQuestTurnedIn 5149
 step
 	#completewith RottingUndead
-	.subzone 2264 >> Travel to Corrin's Crossing
+	.subzone 2264 >> Travel to Corin's Crossing
 step
 	#completewith next
 	>>Kill |cRXP_ENEMY_Undead|r. Loot them for their |cRXP_LOOT_Living Rot|r.
-	>>|cRXP_WARN_Groups of elites patrol the north and east road. Invisible mobs patrol inside of Corrin's Crossing, so try to pull mobs out|r
+	>>|cRXP_WARN_Groups of elites patrol the north and east road. Invisible mobs patrol inside of Corin's Crossing, so try to pull mobs out|r
 	.collect 15447,7 --Living Rot (7)
 	.mob Hate Shrieker
 	.mob Scourge Warder

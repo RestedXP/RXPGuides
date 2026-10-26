@@ -204,7 +204,7 @@ step << Mage
     .goto Azuremyst Isle,79.662,46.427
     >>|cRXP_WARN_施放|r |T135812:0|t[火球术] |cRXP_WARN_在|cRXP_ENEMY_训练假人|r上，直到触发|r |T135731:0|t[奥术飞弹！] |cRXP_WARN_效果，然后施放|r |T136096:0|t[奥术飞弹]|cRXP_WARN_。重复两次|r
     >>|cRXP_WARN_对|r |T135848:0|t[训练假人] |cRXP_WARN_使用|cRXP_ENEMY_冰霜新星|r。重复两次|r
-    .complete 26968,1 << cata -- Practice Arcane Missles (1)
+    .complete 26968,1 << cata -- Practice Arcane Missiles (1)
     .complete 26968,2 << !cata -- Practice Frost Nova (1)
     .mob Training Dummy
 step << Shaman

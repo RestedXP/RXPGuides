@@ -204,7 +204,7 @@ step << Mage
     .goto Azuremyst Isle,79.662,46.427
     >>|cRXP_WARN_Use|r |T135812:0|t[Bola de Fogo] |cRXP_WARN_no |cRXP_ENEMY_Boneco de Treinamento|r até obter um|r |T135731:0|t[Mísseis Arcanos!] |cRXP_WARN_proc, depois lance|r |T136096:0|t[Mísseis Arcanos]|cRXP_WARN_. Repita isto duas vezes|r
     >>|cRXP_WARN_Use|r |T135848:0|t[Novane Congelante] |cRXP_WARN_no |cRXP_ENEMY_Boneco de Treinamento|r. Repita isto duas vezes|r
-    .complete 26968,1 << cata -- Practice Arcane Missles (1)
+    .complete 26968,1 << cata -- Practice Arcane Missiles (1)
     .complete 26968,2 << !cata -- Practice Frost Nova (1)
     .mob Training Dummy
 step << Shaman

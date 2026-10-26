@@ -38,7 +38,7 @@ step
 step
     .goto 47,75.56,45.37,8,0
     .goto 47,75.83,45.26
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to inside the house
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Madame Eva|r inside the house
     .turnin 26653 >>Turn in Supplies from Darkshire
     .accept 26652 >>Accept Ghost Hair Thread
 	.target Madame Eva
@@ -209,7 +209,7 @@ step
 step
     .goto 47,75.56,45.37,8,0
     .goto 47,75.83,45.26
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to inside the house
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Madame Eva|r inside the house
     .turnin 26654 >>Turn in Return the Comb
     .accept 26655 >>Accept Deliver the Thread
 	.target Madame Eva
@@ -705,7 +705,7 @@ step
     .maxlevel 28
 step
     .goto 47,74.17,46.47
-    >>Kill |cRXP_ENEMY_Stiches.|r
+    >>Kill |cRXP_ENEMY_Stitches.|r
     .complete 26727,1 --1/1 Stitches slain
 	.mob Stitches
     .maxlevel 28

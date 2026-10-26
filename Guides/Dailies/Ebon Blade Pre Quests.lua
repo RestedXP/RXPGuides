@@ -32,7 +32,7 @@ step
     .complete 12892,1 << Horde --The Ocular has been destroyed (1)
 step
     .goto IcecrownGlacier,44.1,24.7
-	>>Fly all the way down to Baron Silver on the ground. Talk to him
+	>>Fly all the way down to Baron Sliver on the ground. Talk to him
     .turnin 12887 >>Turn in It's All Fun and Games << Alliance
     .turnin 12892 >>Turn in It's All Fun and Games << Horde
     .accept 12891 >>Accept I Have an Idea, But First...
@@ -108,7 +108,7 @@ step << Horde
     .accept 12899 >>Accept The Shadow Vault
 step
     .goto IcecrownGlacier,42.8,24.9
-	>>Return to Baron Silver
+	>>Return to Baron Sliver
 	.turnin 12898 >>Turn in The Shadow Vault << Alliance
     .turnin 12899 >>Turn in The Shadow Vault << Horde
     .accept 12938 >>Accept The Duke
@@ -177,7 +177,7 @@ step
 step
     .goto IcecrownGlacier,39.01,23.99,25,0
     .goto IcecrownGlacier,42.9,24.9
-	>>Exit the Hall. Return to Baron Silver
+	>>Exit the Hall. Return to Baron Sliver
     .turnin 12951 >>Turn in Let the Baron Know
     .daily 12995 >>Accept Leave Our Mark
     .accept 13085 >>Accept Vaelen Has Returned
@@ -235,7 +235,7 @@ step
 	.isQuestComplete 12995
 step
     .goto IcecrownGlacier,42.9,24.9
-	>>Talk to Silver
+	>>Talk to Sliver
     .accept 12806 >>Accept To the Rise with all Due Haste!
 step
     .goto IcecrownGlacier,43.5,25.0

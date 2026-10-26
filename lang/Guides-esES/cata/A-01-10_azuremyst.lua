@@ -204,7 +204,7 @@ step << Mage
     .goto Azuremyst Isle,79.662,46.427
     >>|cRXP_WARN_Lanza|r |T135812:0|t[Bola de Fuego] |cRXP_WARN_sobre el |cRXP_ENEMY_Muñeco de Entrenamiento|r hasta que obtengas un|r |T135731:0|t[Arcano Missles!] |cRXP_WARN_proc, luego lanza|r |T136096:0|t[Misiles Arcanos]|cRXP_WARN_. Repite esto dos veces|r
     >>|cRXP_WARN_Lanza|r |T135848:0|t[Vigía del pozo Solanian] |cRXP_WARN_sobre el |cRXP_ENEMY_Muñeco de Entrenamiento|r. Repite esto dos veces|r
-    .complete 26968,1 << cata -- Practice Arcane Missles (1)
+    .complete 26968,1 << cata -- Practice Arcane Missiles (1)
     .complete 26968,2 << !cata -- Practice Frost Nova (1)
     .mob Training Dummy
 step << Shaman

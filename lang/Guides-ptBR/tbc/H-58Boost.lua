@@ -520,7 +520,7 @@ step
     .isQuestTurnedIn 5149
 step
 	#completewith RottingUndead
-	.subzone 2264 >> Vá para Corrin's Crossing
+	.subzone 2264 >> Vá para Corin's Crossing
 step
 	#completewith next
 	>>Abate os |cRXP_ENEMY_Mortos-vivos|r. Saque-os por seus |cRXP_LOOT_Putrefação Viva|r.

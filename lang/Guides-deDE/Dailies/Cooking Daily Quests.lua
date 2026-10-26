@@ -217,7 +217,7 @@ step
 	.target Orton Bennet
 -- Quest: Sewer Stew
 step
-	.zone CrystalsongForest >>Geht in Dalaran in das Violet Tor Gebäude und klickt den Violet Strand Kristall um euch unterhalb zu Kristallsangwald zu teleportieren
+	.zone CrystalsongForest >>Geht in Dalaran in das Violet Tor Gebäude und klickt den Violet Stand Kristall um euch unterhalb zu Kristallsangwald zu teleportieren
 	.goto Dalaran,57.32,46.55,6,0
 	.goto Dalaran,55.91,46.77
 	.isOnQuest 13102 << Alliance

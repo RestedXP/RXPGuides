@@ -7497,12 +7497,12 @@ step
     .maxlevel 31
 step
     .goto Thousand Needles,33.80,39.90
-    >>Open the |cRXP_PICK_Document Chest|r inside the big tent. Loot it for |cRXP_LOOT_Secret Note #1|r
+    >>Open the |cRXP_PICK_Document Chest|r inside the big tent. Loot it for |cRXP_LOOT_Secret Note #2|r
     .complete 5064,2 --Secret Note #2 (1)
     .maxlevel 31
 step
     .goto Thousand Needles,39.20,41.60
-    >>Open the |cRXP_PICK_Document Chest|r inside the tent on the eastern plateau. Loot it for |cRXP_LOOT_Secret Note #1|r
+    >>Open the |cRXP_PICK_Document Chest|r inside the tent on the eastern plateau. Loot it for |cRXP_LOOT_Secret Note #3|r
     .complete 5064,3 --Secret Note #3 (1)
     .maxlevel 31
 step
