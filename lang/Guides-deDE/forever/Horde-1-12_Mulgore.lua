@@ -1945,12 +1945,12 @@ step
     .turnin 765 >>Gebt die Quest Vorsteher Fizsprocket ab
     .turnin 98424 >>Gebt die Quest Fizsprockets Notizen ab
 	.unitscan Morin Cloudstalker
-step << Tauren
+step << skip -- Tauren
     #softcore
 	#completewith Thunderhorn2
     .deathskip >> Stirb und beleb dich am |cRXP_FRIENDLY_Geistheiler|r wieder
 step << Tauren
-    #hardcore
+    --#hardcore
     #completewith Thunderhorn2
     .subzone 222 >>Reist zum Dorf der Bluthufe
 step

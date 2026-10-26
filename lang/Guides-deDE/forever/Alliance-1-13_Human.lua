@@ -1192,7 +1192,7 @@ step << Warrior/Paladin/Rogue
     #label RoughStoneCraft1
     #completewith NecklaceStart
     +|T136241:0|t[Schmiedet] |cRXP_WARN_den|r |T135232:0|t|cRXP_LOOT_[Rauer Stein]|r |cRXP_WARN_zu|r |T135248:0|t[Rauer Wetzstein] << Warrior/Rogue
-    +|T136241:0|t[Schmiede] |cRXP_WARN_das|r |T135232:0|t|cRXP_LOOT_[Rauer Stein]|r |cRXP_WARN_in|r |T135255:0|t[Rough Weightstones] << Paladin
+    +|T136241:0|t[Schmiede] |cRXP_WARN_den|r |T135232:0|t|cRXP_LOOT_[Rauen Stein]|r |cRXP_WARN_in|r |T135255:0|t[Rauer Gewichtsstein] << Paladin
     .collect 2862,5 << Rogue/Warrior --Rough Sharpening Stone (5)
     .disablecheckbox
     .collect 3239,5 << Paladin --Rough Weightstone (5)
@@ -1273,7 +1273,7 @@ step << Warrior/Paladin/Rogue
     #label RoughStoneCraft2
     #completewith Lovers
     +|T136241:0|t[Schmiedet] |cRXP_WARN_den|r |T135232:0|t|cRXP_LOOT_[Rauer Stein]|r |cRXP_WARN_zu|r |T135248:0|t[Rauer Wetzstein] << Warrior/Rogue
-    +|T136241:0|t[Schmiede] |cRXP_WARN_das|r |T135232:0|t|cRXP_LOOT_[Rauer Stein]|r |cRXP_WARN_in|r |T135255:0|t[Rough Weightstones] << Paladin
+    +|T136241:0|t[Schmiede] |cRXP_WARN_den|r |T135232:0|t|cRXP_LOOT_[Rauen Stein]|r |cRXP_WARN_in|r |T135255:0|t[Rauer Gewichtsstein] << Paladin
     .collect 2862,5 << Rogue/Warrior --Rough Sharpening Stone (5)
     .disablecheckbox
     .collect 3239,5 << Paladin --Rough Weightstone (5)
@@ -1354,7 +1354,7 @@ step << Warrior/Paladin/Rogue
     #label RoughStoneCraft3
     #completewith Exchange
     +|T136241:0|t[Schmiedet] |cRXP_WARN_den|r |T135232:0|t|cRXP_LOOT_[Rauer Stein]|r |cRXP_WARN_zu|r |T135248:0|t[Rauer Wetzstein] << Warrior/Rogue
-    +|T136241:0|t[Schmiede] |cRXP_WARN_das|r |T135232:0|t|cRXP_LOOT_[Rauer Stein]|r |cRXP_WARN_in|r |T135255:0|t[Rough Weightstones] << Paladin
+    +|T136241:0|t[Schmiede] |cRXP_WARN_den|r |T135232:0|t|cRXP_LOOT_[Rauen Stein]|r |cRXP_WARN_in|r |T135255:0|t[Rauer Gewichtsstein] << Paladin
     .collect 2862,5 << Rogue/Warrior --Rough Sharpening Stone (5)
     .disablecheckbox
     .collect 3239,5 << Paladin --Rough Weightstone (5)
@@ -1869,7 +1869,7 @@ step << Warrior/Paladin/Rogue
     #label RoughStoneCraft4
     #completewith JasperlodeExplore
     +|T136241:0|t[Schmiedet] |cRXP_WARN_den|r |T135232:0|t|cRXP_LOOT_[Rauer Stein]|r |cRXP_WARN_zu|r |T135248:0|t[Rauer Wetzstein] << Warrior/Rogue
-    +|T136241:0|t[Schmiede] |cRXP_WARN_das|r |T135232:0|t|cRXP_LOOT_[Rauer Stein]|r |cRXP_WARN_in|r |T135255:0|t[Rough Weightstones] << Paladin
+    +|T136241:0|t[Schmiede] |cRXP_WARN_den|r |T135232:0|t|cRXP_LOOT_[Rauen Stein]|r |cRXP_WARN_in|r |T135255:0|t[Rauer Gewichtsstein] << Paladin
     .collect 2862,5 << Rogue/Warrior --Rough Sharpening Stone (5)
     .disablecheckbox
     .collect 3239,5 << Paladin --Rough Weightstone (5)
@@ -1956,7 +1956,7 @@ step << Warrior/Paladin/Rogue
     #label RoughStoneCraft5
     #completewith Find
     +|T136241:0|t[Schmiedet] |cRXP_WARN_den|r |T135232:0|t|cRXP_LOOT_[Rauer Stein]|r |cRXP_WARN_zu|r |T135248:0|t[Rauer Wetzstein] << Warrior/Rogue
-    +|T136241:0|t[Schmiede] |cRXP_WARN_das|r |T135232:0|t|cRXP_LOOT_[Rauer Stein]|r |cRXP_WARN_in|r |T135255:0|t[Rough Weightstones] << Paladin
+    +|T136241:0|t[Schmiede] |cRXP_WARN_den|r |T135232:0|t|cRXP_LOOT_[Rauen Stein]|r |cRXP_WARN_in|r |T135255:0|t[Rauer Gewichtsstein] << Paladin
     .collect 2862,5 << Rogue/Warrior --Rough Sharpening Stone (5)
     .disablecheckbox
     .collect 3239,5 << Paladin --Rough Weightstone (5)
@@ -2706,7 +2706,7 @@ step << Priest
     #requires GoldshireVendor
     .goto 1429/0,33.14,-9460.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Priesterin Josetta|r
-    .accept 94774 >> Akzeptiert die Quest Göttliche Barmherzigkeit
+    .accept 94774 >> Akzeptiert die Quest Göttliche Anmut
     .trainer >> Trainiere deine Klassenfähigkeiten
     .target Priestess Josetta
     .xp <10,1
@@ -3019,8 +3019,8 @@ step
     .goto 1453/0,625.48,-8857.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Morgan Pestle|r
     .turnin 61 >> Gebt die Quest Lieferung nach Sturmwind ab
-    -->>|cRXP_WARN_We choose the|r |T132383:0|t[Explosive Rockets] |cRXP_WARN_as the reward. It deals decent damage, and can be used for "Split pulling" which is incredibly useful|r
-    --.link https://www.youtube.com/watch?v=H-IwZ6P-ldY >> |cRXP_WARN_Click here for video reference on "Split pulling". It is a short video and invaluable to learn|r
+    >>|cRXP_WARN_Wir wählen die|r |T132383:0|t[Explosiv Raketen] |cRXP_WARN_als Belohnung. Sie verursachen ordentlichen Schaden und können für "Split-Pulls" genutzt werden, was unglaublich nützlich ist|r
+    .link https://www.youtube.com/watch?v=H-IwZ6P-ldY >> |cRXP_WARN_Klickt hier für eine Videoreferenz zu "Split-Pulling". Es ist ein kurzes Video und äußerst lehrreich|r
     .target Morgan Pestle
 step << Rogue
     .goto 1453/0,596.43,-8831.70
@@ -3501,7 +3501,7 @@ step << Priest
 step << Priest
     .goto 1453/0,862.89,-8519.61
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Hohepriesterin Laurena|r
-    .turnin -94774 >> Gebt die Quest Göttliche Barmherzigkeit ab
+    .turnin -94774 >> Gebt die Quest Göttliche Anmut ab
     .trainer >> Trainiere deine Klassenfähigkeiten
     .target High Priestess Laurena
 step << Priest
@@ -3648,7 +3648,7 @@ step << Warrior
     #optional
     #completewith next
     .goto 1455,67.400,84.909,15,0
-    .goto 1455/0,-1234.65,-5035.67,12 >> Reise in Richtung |cRXP_FRIENDLY_Bilban Tosslespanner|r
+    .goto 1455/0,-1234.65,-5035.67,12 >> Reist in Richtung |cRXP_FRIENDLY_Bilban Tosslespanner|r
 step << Warrior
     .goto 1455/0,-1234.65,-5035.67
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Bilban Tosslespanner|r
@@ -3723,7 +3723,7 @@ step << Mage/Paladin
     .goto 1455/0,-928.40,-4635.61,20,0 << Paladin
     .goto 1455/0,-931.8,-4627.59,20,0 << Mage
     .goto 1455/0,-928.40,-4614.51,12 >>Reist in Richtung |cRXP_FRIENDLY_Dink|r << Mage
-    .goto 1455/0,-896.47,-4601.65,12 >>Reist zu |cRXP_FRIENDLY_Brandur Ironhammer|r << Paladin
+    .goto 1455/0,-896.47,-4601.65,12 >>Reisen zu |cRXP_FRIENDLY_Brandur Ironhammer|r << Paladin
 step << Mage
     .goto 1455/0,-928.40,-4614.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Dink|r innerhalb
@@ -3964,9 +3964,9 @@ step
     .goto 1426/0,-1679.89,-5728.88,40,0
     .goto 1426/0,-1675.95,-5597.22,25,0
     .goto 1426/0,-1679.89,-5728.88
-    >>Tötet |cRXP_ENEMY_Rockjaw Skullthumpers|r und |cRXP_ENEMY_Rockjaw Bonesnappers|r in der Höhle. Plündert sie für |T132621:0|t[|cRXP_LOOT_Empty Pulverfass|r]
+    >>Tötet |cRXP_ENEMY_Schädelhauer der Felsenkiefer|r und |cRXP_ENEMY_Knochenknacker der Felsenkiefer|r in der Höhle. Plündert sie für |T132621:0|t[|cRXP_LOOT_Leeres Pulverfass|r]
     .use 268548 >> |cRXP_WARN_Benutzt das|r |T132621:0|t[|cRXP_LOOT_Leeres Pulverfass|r] |cRXP_WARN_um die Quest zu starten|r
-    >>|cRXP_WARN_HINWEIS: Dieser Gegenstand hat eine niedrige Drop-Rate. Überspringt diesen Schritt, wenn ihr ihn nicht findet|r
+    >>|cRXP_WARN_HINWEIS: Dieser Gegenstand hat eine niedrige Drop-Rate. Überspringt diesen Schritt, wenn ihr es nicht findet|r
     .complete 432,1 --Kill Rockjaw Skullthumper (x6)
     .mob +Rockjaw Skullthumper
     .complete 433,1 --Kill Rockjaw Bonesnapper (x10)
@@ -4013,10 +4013,10 @@ step
 step
     #completewith OII
     >>Tötet |cRXP_ENEMY_Wegelagerer der Felsenkiefer|r. Plündert sie für |T132621:0|t[|cRXP_LOOT_Leeres Pulverfass|r]
-    .use 268548 >> |cRXP_WARN_Benutzt das|r |T132621:0|t[|cRXP_LOOT_Leer Pulverfass|r] |cRXP_WARN_um die Quest zu starten|r
+    .use 268548 >> |cRXP_WARN_Benutzt das|r |T132621:0|t[|cRXP_LOOT_Leeres Pulverfass|r] |cRXP_WARN_um die Quest zu starten|r
     >>|cRXP_WARN_HINWEIS: Dieser Gegenstand hat eine niedrige Droprate. Überspringt diesen Schritt, wenn ihr ihn nicht findet, bis ihr mit den|r Spione der Dunkeleisenzwerge|cRXP_ENEMY_ fertig seid|r
     .collect 268548,1,95213,1 -- Empty Powder Keg (1)
-    .accept 95213 >> Akzeptiert die Quest Gestohlenes Schießpulver
+    .accept 95213 >> Akzeptiert die Quest Gestohlenes Sprengpulver
     .mob Rockjaw Ambusher
 step
     #label SpyMap
@@ -4037,7 +4037,7 @@ step
     .goto 1426/0,-1881.82,-5735.45,0
     .goto 1426/0,-1832.57,-5571.28,0
     .goto 1426/0,-1724.22,-5636.95,0
-    >>Tötet |cRXP_ENEMY_Rockjaw Ambushers|r. Plündert sie für |cRXP_LOOT_Stolen Zauberwucht Powder|r
+    >>Tötet |cRXP_ENEMY_Wegelagerer der Felsenkiefer|r. Plündert sie für |cRXP_LOOT_Gestohlenes Sprengpulver|r
     .complete 95214,1 -- Stolen Blasting Powder (16)
     .mob Rockjaw Ambusher
 step
@@ -4057,15 +4057,15 @@ step
 step
     .isOnQuest 95213
     .goto 1426/0,-1606.02,-5676.35
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Quarrymaster Thesten|r
-    .turnin 95213 >> Gebt die Quest Gestohlenes Schießpulver ab
-    .accept 95214 >> Akzeptiert die Quest Gestohlenes Schießpulver
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Steinbruchmeister Thesten|r
+    .turnin 95213 >> Gebt die Quest Gestohlenes Sprengpulver ab
+    .accept 95214 >> Akzeptiert die Quest Gestohlenes Sprengpulver
     .target Quarrymaster Thesten
 step
     .isQuestTurnedIn 95213
     .goto 1426/0,-1606.02,-5676.35
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Quarrymaster Thesten|r
-    .accept 95214 >> Akzeptiert die Quest Gestohlenes Schießpulver
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Steinbruchmeister Thesten|r
+    .accept 95214 >> Akzeptiert die Quest Gestohlenes Sprengpulver
     .target Quarrymaster Thesten
 step
     .isOnQuest 95214
@@ -4076,14 +4076,14 @@ step
     .goto 1426/0,-1881.82,-5735.45,0
     .goto 1426/0,-1832.57,-5571.28,0
     .goto 1426/0,-1724.22,-5636.95,0
-    >>Tötet |cRXP_ENEMY_Rockjaw Ambushers|r. Plündert sie für |cRXP_LOOT_Stolen Zauberwucht Powder|r
+    >>Tötet |cRXP_ENEMY_Wegelagerer der Felsenkiefer|r. Plündert sie für |cRXP_LOOT_Gestohlenes Sprengpulver|r
     .complete 95214,1 -- Stolen Blasting Powder (16)
     .mob Rockjaw Ambusher
 step
     .isQuestComplete 95214
     .goto 1426/0,-1606.02,-5676.35
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Quarrymaster Thesten|r
-    .turnin 95214 >> Gebt die Quest Gestohlenes Schießpulver ab
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Steinbruchmeister Thesten|r
+    .turnin 95214 >> Gebt die Quest Gestohlenes Sprengpulver ab
     .target Quarrymaster Thesten
 step
     .goto 1426/0,-2197.02,-5279.07,45,0
@@ -4878,7 +4878,7 @@ step << Hunter skip
     #requires DockTravel
     #label DarkshoreCook1
     #completewith DarkshoreBoat
-    >>|cRXP_WARN_Auf dem Boot, wenn es gerade angekommen ist, oder am Dock, wenn das Boot gerade abgefahren ist:|r
+    >>|cRXP_WARN_Während des Wartens auf das Boot am Dock:|r
     .cast 818 >>|cRXP_WARN_Erstellt ein|r |T135805:0|t[Einfaches Lagerfeuer] |cRXP_WARN_(in eurem Berufe-Buch)|r
     .usespell 818
     .zoneskip Darkshore
@@ -4892,7 +4892,7 @@ step << Hunter skip
     #requires DarkshoreCook1
     #label DarkshoreCook2
     #completewith DarkshoreBoat
-    >>|cRXP_WARN_Auf dem Boot, wenn es gerade angekommen ist, oder am Dock, wenn das Boot gerade abgefahren ist:|r
+    >>|cRXP_WARN_Während des Wartens auf das Boot am Dock:|r
     .cast 818 >>|cRXP_WARN_Erstellt ein|r |T135805:0|t[Einfaches Lagerfeuer] |cRXP_WARN_(in eurem Berufe-Buch)|r
     .usespell 818
     .zoneskip Darkshore
@@ -4906,7 +4906,7 @@ step << Hunter skip
     #requires DarkshoreCook2
     #label DarkshoreCook3
     #completewith DarkshoreBoat
-    >>|cRXP_WARN_Auf dem Boot, wenn es gerade angekommen ist, oder am Dock, wenn das Boot gerade abgefahren ist:|r
+    >>|cRXP_WARN_Während des Wartens auf das Boot am Dock:|r
     .cast 818 >>|cRXP_WARN_Erstellt ein|r |T135805:0|t[Einfaches Lagerfeuer] |cRXP_WARN_(in eurem Berufe-Buch)|r
     .usespell 818
     .zoneskip Darkshore

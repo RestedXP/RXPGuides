@@ -8,7 +8,7 @@ RXPGuides.RegisterGuide([[
 << Human Mage
 #name 1-10 Fortgeschrittener AoE-Guide für Mensch Magier im Wald von Elwynn
 #version 2
-#group RestedXP Forgeschrittener AoE Allianz Magier
+#group RestedXP ADV AoE Allianz Magier
 #defaultfor Human Mage
 #next 10-11 Fortgeschrittene AoE-Guide für Mensch Magier in Dun Morogh
 
@@ -1149,7 +1149,7 @@ RXPGuides.RegisterGuide([[
 << Human Mage
 #name 10-11 Fortgeschrittene AoE-Guide für Mensch Magier in Dun Morogh
 #version 2
-#group RestedXP Forgeschrittener AoE Allianz Magier
+#group RestedXP ADV AoE Allianz Magier
 #defaultfor Human Mage
 #next 10-12 ADV Dunkelküste 1 Magier AoE
 
@@ -1441,7 +1441,7 @@ RXPGuides.RegisterGuide([[
 << Gnome Mage
 #name 1-10 ADV Dun Morogh Gnomenmagier AoE
 #version 2
-#group RestedXP Forgeschrittener AoE Allianz Magier
+#group RestedXP ADV AoE Allianz Magier
 #defaultfor Gnome Mage
 #next 10-12 ADV Dunkelküste 1 Magier AoE
 
@@ -3001,7 +3001,7 @@ RXPGuides.RegisterGuide([[
 << Alliance Mage
 #name 10-12 ADV Dunkelküste 1 Magier AoE
 #version 2
-#group RestedXP Forgeschrittener AoE Allianz Magier
+#group RestedXP ADV AoE Allianz Magier
 #defaultfor Human Mage/Gnome Mage
 #next 12-14 Fortgeschrittender Loch Modan Magier AoE Guide
 
@@ -3558,7 +3558,7 @@ RXPGuides.RegisterGuide([[
 << Alliance Mage
 #name 10-12 Starte Fortgeschrittender Dunkelküste 1 Magier AoE Guide
 #version 2
-#group RestedXP Forgeschrittener AoE Allianz Magier
+#group RestedXP ADV AoE Allianz Magier
 #defaultfor none
 #next 12-14 Fortgeschrittender Loch Modan Magier AoE Guide
 
@@ -4126,7 +4126,7 @@ RXPGuides.RegisterGuide([[
 << Alliance Mage
 #name 12-14 Fortgeschrittender Loch Modan Magier AoE Guide
 #version 2
-#group RestedXP Forgeschrittener AoE Allianz Magier
+#group RestedXP ADV AoE Allianz Magier
 #defaultfor Human Mage/Gnome Mage
 #next 14-16 Fortgeschrittender Dunkelküste 2 Magier AoE Guide
 step
@@ -4907,7 +4907,7 @@ RXPGuides.RegisterGuide([[
 << Alliance Mage
 #name 14-16 Fortgeschrittender Dunkelküste 2 Magier AoE Guide
 #version 2
-#group RestedXP Forgeschrittener AoE Allianz Magier
+#group RestedXP ADV AoE Allianz Magier
 #defaultfor Human Mage/Gnome Mage
 #next 16-18 Fortgeschrittener Westfall Magier AoE Guide
 
@@ -5556,7 +5556,7 @@ RXPGuides.RegisterGuide([[
 << Alliance Mage
 #name 16-18 Fortgeschrittener Westfall Magier AoE Guide
 #version 2
-#group RestedXP Forgeschrittener AoE Allianz Magier
+#group RestedXP ADV AoE Allianz Magier
 #defaultfor Human Mage/Gnome Mage
 #next 18-20 Fortgeschrittener Dunkelküste 3 Magier AoE Guide
 
@@ -6287,7 +6287,7 @@ RXPGuides.RegisterGuide([[
 << Alliance Mage
 #name 18-20 Fortgeschrittener Dunkelküste 3 Magier AoE Guide
 #version 2
-#group RestedXP Forgeschrittener AoE Allianz Magier
+#group RestedXP ADV AoE Allianz Magier
 #defaultfor Human Mage/Gnome Mage
 #next 20-22 Fortgeschrittener Rotkammgebirge 1 Magier AoE Guide
 
@@ -7066,7 +7066,7 @@ RXPGuides.RegisterGuide([[
 << Alliance Mage
 #name 20-22 Fortgeschrittener Rotkammgebirge 1 Magier AoE Guide
 #version 2
-#group RestedXP Forgeschrittener AoE Allianz Magier
+#group RestedXP ADV AoE Allianz Magier
 #defaultfor Human Mage/Gnome Mage
 #next 22-26 ADV Sumpfland 1 Magier AoE
 

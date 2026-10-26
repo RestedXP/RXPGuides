@@ -42,7 +42,7 @@ RXPGuides.RegisterGuide([[
 --#groupid RXP-SRGCE-H1
 << Horde
 #version 11
-#defaultfor !Hunter !Shaman !Tauren !Skyborne
+#defaultfor !Hunter !Shaman !Tauren
 #forever
 #era/som--h
 #name 12-14 Silberwald

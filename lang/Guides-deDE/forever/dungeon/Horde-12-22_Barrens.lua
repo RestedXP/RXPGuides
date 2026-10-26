@@ -1335,6 +1335,7 @@ step << Tauren/Hunter/Orc Shaman/Troll Shaman
     .goto 1413/1,-1871.600,653.700,50,0
     .goto 1413/1,-1729.700,592.400,50,0
     >>Tötet |cRXP_ENEMY_Savannah Patriarchs|r. Plündert sie für |cRXP_LOOT_Hides|r und |cRXP_LOOT_Tusks|r
+    >>|cRXP_WARN_Falls es zu viel Konkurrenz gibt und ihr die Quest nicht schnell abschließen könnt, könnt ihr diesen Schritt gerne überspringen|r
     .complete 95494,1 --|6/6 Savannah Lion Hide
     .complete 821,1 --Savannah Lion Tusk (5)
     .disablecheckbox
@@ -1351,6 +1352,7 @@ step << Tauren/Hunter/Orc Shaman/Troll Shaman
     .goto 1413/1,-1871.600,653.700,50,0
     .goto 1413/1,-1729.700,592.400,50,0
     >>Tötet |cRXP_ENEMY_Savannah Patriarchs|r. Plündert sie für |cRXP_LOOT_Hides|r
+    >>|cRXP_WARN_Falls es zu viel Konkurrenz gibt und ihr die Quest nicht schnell abschließen könnt, könnt ihr diesen Schritt gerne überspringen|r
     .complete 95494,1 --|6/6 Savannah Lion Hide
     .mob Savannah Patriarch
     .isQuestAvailable 819
@@ -2707,7 +2709,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Sputtervalve|r und |cRXP_FRIENDLY_Dizzywig|r
     .turnin 902 >>Gebt die Quest Samophlang ab
     .turnin 863 >> Gebt die Quest Die Flucht ab
-    .accept 1483 >> Akzeptiert die Quest Ziz Fizziks
     .target +Sputtervalve
     .goto 1413/1,-3759.06,-902.18
     .turnin 896 >> Gebt die Quest Des Minenarbeiters Vermögen ab
@@ -2719,7 +2720,6 @@ step
     #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Sputtervalve|r und |cRXP_FRIENDLY_Dizzywig|r
     .turnin 902 >>Gebt die Quest Samophlang ab
-    .accept 1483 >> Akzeptiert die Quest Ziz Fizziks
     .target +Sputtervalve
     .goto 1413/1,-3759.06,-902.18
     .turnin 896 >> Gebt die Quest Des Minenarbeiters Vermögen ab
@@ -2731,21 +2731,13 @@ step
     .goto 1413/1,-3759.06,-902.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Sputtervalve|r
     .turnin 863 >> Gebt die Quest Die Flucht ab
-    .accept 1483 >> Akzeptiert die Quest Ziz Fizziks
     .target Sputtervalve
     .isQuestComplete 863
-step
-    #optional
-    .goto 1413/1,-3759.06,-902.18
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Sputtervalve|r
-    .accept 1483 >> Akzeptiert die Quest Ziz Fizziks
-    .target Sputtervalve
 step
     #label RapHornsPickup
     .goto 1413/1,-3697.24,-929.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Mebok|r
     .accept 865 >>Akzeptiert die Quest Raptorhörner
-    .accept 1069 >>Akzeptiert die Quest Eier der Kluftmoosspinnen
     .target Mebok Mizzyrix
 step << skip
     .goto 1413/1,-3664.82,-1050.14
@@ -3253,12 +3245,6 @@ step
     .turnin 888 >>Gebt die Quest Gestohlene Beute ab
     .target Gazlowe
 step
-    .goto 1413/1,-3759.06,-902.18
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Sputtervalve|r
-    .turnin 1094 >>Gebt die Quest Weitere Instruktionen ab
-    .accept 1095 >>Weitere Instruktionen annehmen
-    .target Sputtervalve
-step
     .goto 1413/1,-3720.300,-920.000
     >>Klickt das |cRXP_PICK_Gesucht-Plakat|r
     .accept 92706 >>Nehmt WANTED: Bruuz an
@@ -3267,13 +3253,8 @@ step
     .goto 1413/1,-3697.24,-929.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Mebok|r
     .turnin 865 >>Gebt die Quest Raptorhörner ab
-    .turnin 1069 >>Gebt die Quest Eier der Kluftmoosspinnen ab
     .accept 1491 >>Akzeptiert die Quest Klugheitstränke
     .target Mebok Mizzyrix
-step
-    #optional
-    #completewith XroadsHS2
-    .destroy 5570 >>|cRXP_WARN_Löscht beliebige|r |T132834:0|t[Eier der Kluftmoosspinnen] |cRXP_WARN_die ihr übrig habt|r
 step
     .goto 1413/1,-3687.11,-981.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Drohn|r
@@ -4000,7 +3981,7 @@ step
     .skill firstaid,<1,1
 step
     .goto 1456/1,206.88,-997.45
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |r |cRXP_FRIENDLY_Pand|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit|r |cRXP_FRIENDLY_Pand|r
     >>|cRXP_WARN_Überspringt diesen Schritt, wenn ihr nicht genug|r |T132889:0|t[Leinenstoff] |cRXP_WARN_hattet, um Skill 80 zu erreichen|r
     .train 3277 >> Erlernt |T133684:0|t[Wollverband]
     .train 7934 >> Erlernt |T134437:0|t[Gegengift] << Rogue
@@ -4600,9 +4581,36 @@ step
     .skill herbalism,1,1
     .isOnQuest 962
 step
-    #completewith next
+    #completewith GShard
     .subzone 380 >>Verlasst eure Gruppe, während ihr im Klagenden Abgrund seid, um zum Friedhof von Kreuzweg teleportiert zu werden (nach 1 Minute)
     .subzoneskip 392
+step
+    #completewith Cholaruk
+    >>|cRXP_WARN_Überprüft mit der Gruppe von Euch, ob sie die Quest "Chol'aruk the Ravener" machen möchten|r (lvl 20 elite)
+    .isQuestAvailable 97003
+step
+    .goto 1413/1,-2711.800,-350.500
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Gur'ak|r
+    .accept 97003 >>Akzeptiert die Quest Chol'aruk the Ravener
+    .target Gur'ak
+step
+    #completewith next
+    .goto 1413/1,-3257.300,-113.100,15,0
+    .goto 1413/1,-3217.100,-147.700,10,0
+    .goto 1413/1,-3236.000,-178.100,10,0
+    .goto 1413/1,-3259.700,-205.400,10,0
+    .goto 1413/1,-3226.900,-237.900,10 >>Reist in den hinteren Teil der Höhle zu |cRXP_ENEMY_Chol'aruk the Ravener|r
+step
+    #label Cholaruk
+    .goto 1413/1,-3206.800,-220.200
+    >>Tötet |cRXP_ENEMY_Chol'aruk the Ravener|r. Sammelt Beute von ihm für seinen |cRXP_LOOT_Kopf|r
+    .complete 97003,1 --Chol'aruk's Head (x1)
+    .mob Chol'aruk the Ravener
+    .isOnQuest 97003
+step
+    #completewith GShard
+    .subzone 392 >>Reist nach Ratschet
+    .subzoneskip 1699,1 --Thorn Hill
 step
     #completewith GShard
     .goto 1413/1,-2595.75,-437.35
@@ -4610,12 +4618,20 @@ step
     .fly Ratchet >> Fliege nach Ratschet
     .target Devrak
     .subzoneskip 392
+    .subzoneskip 1699 --Thorn Hill
 step
     .goto 1413/1,-3697.24,-929.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Mebok|r
     .turnin 1491 >>Gebt die Quest Klugheitstränke ab
+    .accept 1221 >> Blaulaubknollen annehmen
     .target Mebok Mizzyrix
     .isQuestComplete 1491
+step
+    #optional
+    .goto The Barrens,62.370,37.615
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Mebok|r
+    .accept 1221 >> Blaulaubknollen annehmen
+    .target Mebok Mizzyrix
 step
     .goto 1413/1,-3770.20,-928.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Bigglefuzz|r
@@ -4717,6 +4733,12 @@ step
     .fly Crossroads >> Fliege nach Das Wegekreuz
     .target Bragok
     .subzoneskip 380
+step
+    .goto 1413/1,-2711.800,-350.500
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Gur'ak|r
+    .accept 97003 >>Akzeptiert die Quest Chol'aruk the Ravener
+    .target Gur'ak
+    .isQuestComplete 97003
 step
     .goto 1413/1,-1972.55,-306.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Regthar|r
@@ -5186,26 +5208,6 @@ step << Hunter
     .train 24558 >> Erlernt eure Begleiterfähigkeiten
     .target Xao'tsu
     .xp <24,1
-step << skip
-    .goto 1454/1,-4746.58,2036.37
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Nogg|r
-    .accept 2841 >>Akzeptiert die Quest Maschinenkriege
-    .target Nogg
-step
-    .goto 1454/1,-4739.57,2036.84
-    .gossipoption 95758 >>Sprecht mit |cRXP_FRIENDLY_Sovik|r
-    .isNotOnQuest 2842
-    .target Sovik
-step
-    .goto 1454/1,-4739.57,2036.84
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Sovik|r
-    -->>|cRXP_WARN_You are required to have Rig Wars in your quest log to accept this quest|r
-    .accept 2842 >>Akzeptiert die Quest Chefingenieur Scooty
-    .target Sovik
-step << skip
-    #optional
-    .abandon 2841 >> Brecht die Quest Maschinenkriege ab. Stellt sicher, dass ihr die Quest Chefingenieur Scooty noch in eurem Questtagebuch habt.
-    .dungeon !GNOMER
 step << Rogue
     .goto 1454/1,-4355.53,1520.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Sprecht mit|r |cRXP_FRIENDLY_Trak'gen|r|cRXP_BUY_. Kauft|r |T135423:0|t[Tödliche Wurfaxt] |cRXP_BUY_von ihm|r

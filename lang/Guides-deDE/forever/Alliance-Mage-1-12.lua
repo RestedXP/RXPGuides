@@ -8,9 +8,9 @@ RXPGuides.RegisterGuide([[
 << Human Mage
 #name 1-10 Wald von Elwynn Magier AoE
 #version 1
-#group RestedXP Forever Dungeonführer (A)
-#subgroup Speedrun Guide Magier
-#defaultfor Human
+#group RestedXP Allianz Magier
+
+#defaultfor none Human
 #next 10-12 Loch Modan Magier AoE Guide
 step
     #sticky
@@ -816,9 +816,9 @@ RXPGuides.RegisterGuide([[
 << Gnome Mage
 #name 1-10 Dun Morogh Magier AoE
 #version 1
-#group RestedXP Forever Dungeonführer (A)
-#subgroup Speedrun Guide Magier
-#defaultfor Dwarf/Gnome
+#group RestedXP Allianz Magier
+
+#defaultfor none Gnome
 #next 10-12 Loch Modan Magier AoE Guide
 step
     #era/som
@@ -1467,9 +1467,9 @@ RXPGuides.RegisterGuide([[
 << Alliance Mage
 #name 10-12 Loch Modan Magier AoE Guide
 #version 1
-#group RestedXP Forever Dungeonführer (A)
-#subgroup Speedrun Guide Magier
-#defaultfor Human Mage/Gnome Mage
+#group RestedXP Allianz Magier
+
+#defaultfor none Mage
 #next 12-18 Dunkelküste Magier AoE
 step
     #era/som

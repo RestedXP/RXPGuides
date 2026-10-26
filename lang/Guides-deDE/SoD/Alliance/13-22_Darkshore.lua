@@ -228,7 +228,7 @@ step << Warlock/Mage
     #completewith DarkshoreEnd
     .itemcount 221499,1 << Warlock --Rune of the Felguard
     .itemcount 223147,1 << Mage --Spell Notes: Balefire Bolt
-    .train 427733 >>Benutzt die |T134419:0|t[|cRXP_WARN_Rune der Teufelswache|r] |cRXP_FRIENDLY_um|r |T136216:0|t[Teufelswache beschwören] |cRXP_WARN_zu erlernen|r << Warlock
+    .train 427733 >>|cRXP_WARN_Benutzt die|r |T134419:0|t[|cRXP_FRIENDLY_Rune der Teufelswache|r] |cRXP_WARN_um |r |T136216:0|t[Teufelswache beschwören] zu erlernen << Warlock
     .train 428878 >>|cRXP_WARN_Benutzt die|r |T134939:0|t[|cRXP_FRIENDLY_Zaubernotizen: Qualfeuerblitz|r |cRXP_WARN_zum Trainieren von|r |T135809:0|t[Qualfeuerblitz] << Mage
     .use 221499 << Warlock
     .use 223147 << Mage
@@ -1915,7 +1915,7 @@ step << !sod/Warrior/Rogue/Priest
     #optional
     #completewith next
     .goto 1439,36.806,44.137,8,0
-    .goto 1439,35.743,43.710,12 >> Kehrt zum |cRXP_FRIENDLY_Cerellean Whiteclaw|r auf dem Dock zurück
+    .goto 1439,35.743,43.710,12 >> Kehrt zu |cRXP_FRIENDLY_Cerellean Whiteclaw|r auf dem Dock zurück
 step << !sod/Warrior/Rogue/Priest
     #optional
     .goto 1439,35.743,43.710
@@ -2474,7 +2474,7 @@ step
     #optional
 	#xprate <1.5 --<< !NightElf/Hunter
     .goto 1439,51.288,24.554
-    >>Klickt auf die|cRXP_PICK_Dröhnkiste 323|r auf dem Boden
+    >>Klickt auf die |cRXP_PICK_Dröhnkiste 323|r auf dem Boden
     .turnin 1002 >> Gebt die Quest Dröhnkiste 323 ab
     .accept 1003 >> Akzeptiert die Quest Dröhnkiste 525
     .isQuestComplete 1002
@@ -3091,7 +3091,7 @@ step << !Warrior !Rogue !Priest
     #completewith next
     #season 2
     .goto 1439,36.806,44.137,8,0
-    .goto 1439,35.743,43.710,12 >> Kehrt zum |cRXP_FRIENDLY_Cerellean Whiteclaw|r auf dem Dock zurück
+    .goto 1439,35.743,43.710,12 >> Kehrt zu |cRXP_FRIENDLY_Cerellean Whiteclaw|r auf dem Dock zurück
 step << !Warrior !Rogue !Priest
     #optional
     #season 2
@@ -3574,7 +3574,7 @@ step << Warlock/Mage
     #completewith TravelMenethilNoDMBoat
     .itemcount 221499,1 << Warlock --Rune of the Felguard
     .itemcount 223147,1 << Mage --Spell Notes: Balefire Bolt
-    .train 427733 >>Benutzt die |T134419:0|t[|cRXP_WARN_Rune der Teufelswache|r] |cRXP_FRIENDLY_um|r |T136216:0|t[Teufelswache beschwören] |cRXP_WARN_zu erlernen|r << Warlock
+    .train 427733 >>|cRXP_WARN_Benutzt die|r |T134419:0|t[|cRXP_FRIENDLY_Rune der Teufelswache|r] |cRXP_WARN_um |r |T136216:0|t[Teufelswache beschwören] zu erlernen << Warlock
     .train 428878 >>|cRXP_WARN_Benutzt die|r |T134939:0|t[|cRXP_FRIENDLY_Zaubernotizen: Qualfeuerblitz|r |cRXP_WARN_zum Trainieren von|r |T135809:0|t[Qualfeuerblitz] << Mage
     .use 221499 << Warlock
     .use 223147 << Mage
@@ -5046,7 +5046,7 @@ step << !Dwarf Rogue
     #xprate >1.59
     #sticky
     #label AntiVenomStart
-    .collect 6452,1 >> Stelle ein |T134437:0|t[Gegengift] her
+    .collect 6452,1 >> Crafte ein |T134437:0|t[Gegengift]
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
     .train 7934,3 --Anti Venom spell trained
@@ -5116,7 +5116,7 @@ step << !Dwarf Rogue
     #xprate >1.59
     #sticky
     #label AntiVenomStart2
-    .collect 6452,1 >> Stelle ein |T134437:0|t[Gegengift] her
+    .collect 6452,1 >> Crafte ein |T134437:0|t[Gegengift]
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
     .train 7934,3 --Anti Venom spell trained
@@ -6399,7 +6399,7 @@ step << !Dwarf Rogue
     #xprate >1.59
     #sticky
     #label AntiVenomStart
-    .collect 6452,1 >> Stelle ein |T134437:0|t[Gegengift] her
+    .collect 6452,1 >> Crafte ein |T134437:0|t[Gegengift]
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
     .train 7934,3 --Anti Venom spell trained
@@ -6466,7 +6466,7 @@ step << !Dwarf Rogue
     #xprate >1.59
     #sticky
     #label AntiVenomStart2
-    .collect 6452,1 >> Stelle ein |T134437:0|t[Gegengift] her
+    .collect 6452,1 >> Crafte ein |T134437:0|t[Gegengift]
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
     .train 7934,3 --Anti Venom spell trained

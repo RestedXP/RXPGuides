@@ -4203,7 +4203,7 @@ step << Dwarf Paladin
     .goto 1455,44.403,49.020,20,0
     .goto 1455,35.239,32.789,20,0
     .goto 1455,27.208,12.552,20,0
-    .goto Ironforge,23.131,6.143,12 >>Reist zu |cRXP_FRIENDLY_Brandur Ironhammer|r
+    .goto Ironforge,23.131,6.143,12 >>Reisen zu |cRXP_FRIENDLY_Brandur Ironhammer|r
 step << Dwarf Paladin
     #xprate >1.49
     .goto Ironforge,23.131,6.143
@@ -6690,7 +6690,7 @@ step << Warrior
     #optional
     #completewith Deeprun
     .goto 1455,67.400,84.909,15,0
-    .goto Ironforge,65.905,88.405,12 >> Reise in Richtung |cRXP_FRIENDLY_Bilban Tosslespanner|r
+    .goto Ironforge,65.905,88.405,12 >> Reist in Richtung |cRXP_FRIENDLY_Bilban Tosslespanner|r
 step << Warrior
     #xprate <1.5
     .goto Ironforge,65.905,88.405
@@ -7174,7 +7174,7 @@ step << Warrior
     #optional
     #completewith Deeprun
     .goto 1455,67.400,84.909,15,0
-    .goto Ironforge,65.905,88.405,12 >> Reise in Richtung |cRXP_FRIENDLY_Bilban Tosslespanner|r
+    .goto Ironforge,65.905,88.405,12 >> Reist in Richtung |cRXP_FRIENDLY_Bilban Tosslespanner|r
 step << Warrior
     #xprate >1.49
     .goto Ironforge,65.905,88.405

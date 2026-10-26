@@ -1043,7 +1043,7 @@ step << Rogue
 step << !Dwarf Rogue
     #sticky
     #label AntiVenomStart
-    .collect 6452,1 >> Stelle ein |T134437:0|t[Gegengift] her
+    .collect 6452,1 >> Crafte ein |T134437:0|t[Gegengift]
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
     .train 7934,3 --Anti Venom spell trained
@@ -1096,7 +1096,7 @@ step << !Dwarf Rogue
 step << !Dwarf Rogue
     #sticky
     #label AntiVenomStart2
-    .collect 6452,1 >> Stelle ein |T134437:0|t[Gegengift] her
+    .collect 6452,1 >> Crafte ein |T134437:0|t[Gegengift]
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
     .train 7934,3 --Anti Venom spell trained
@@ -1485,7 +1485,7 @@ step
     .goto Wetlands,15.10,63.72,12,0
     >>|cRXP_WARN_Macht den Dun Morogh -> Sumpfland skip|r ohne zu sterben
     >>|cRXP_WARN_Seid vorsichtig vor |cRXP_ENEMY_Schlicker|r (selten), bevor ihr zur Küste hinuntergeht (falls er up ist)|r
-    >>|cRXP_WARN_Seid vorsichtig vor |cRXP_ENEMY_Räuber der Blaukiemen|r im Westen, wenn ihr das Meer erreicht|r
+    >>|cRXP_WARN_Seid vorsichtig vor den |cRXP_ENEMY_Räuber der Blaukiemen|r im Westen, wenn ihr das Meer erreicht|r
     .link https://youtu.be/QcEUvwu49KI?t=336 >> |cRXP_WARN_Klickt hier für eine Anleitung (Es wird dringend empfohlen, dies zu tun.)|r
     .goto Wetlands,12.69,60.97,15 >> Laufe zum Hafen von Menethil
     .mob Young Wetlands Crocolisk

@@ -820,6 +820,7 @@ step << Rogue
     .target Mrs. Winters
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.9
+    .money <0.07
 step << Rogue
     .goto 1420/0,316.66,2227.32
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Oliver|r
@@ -1940,6 +1941,12 @@ step
     #softcore
     #completewith FoodandWater2
     .deathskip >> Stirb und beleb dich am |cRXP_FRIENDLY_Geistheiler|r wieder
+    .xp <10,1
+step
+    #softcore
+    #completewith FoodandWater2
+    .subzone 159 >> Reist zurück nach Brill
+    .xp >10,1
 step
     .goto 1420/0,403.42,2287.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Dillinger|r
@@ -2241,6 +2248,7 @@ step << Rogue
     .target Nathaniel Steenwick
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.3
+    .money <0.03
 step << Rogue
     #optional
     #completewith LogoutSkip1
@@ -2748,7 +2756,7 @@ step
     >>Plündert die |cRXP_PICK_Flasche mit flüsterndem Elixier|r auf dem Boden und an den Wänden
     .complete 91316,1 << Paladin--|12/12 Sturdy Lumber
     .complete 95314,1 --|8/8 Bottle of Whispering Elixir
-step
+step << skip
     #softcore
     #completewith next
     .deathskip >> Stirb und beleb dich am |cRXP_FRIENDLY_Geistheiler|r wieder
@@ -3375,12 +3383,12 @@ step
     .turnin 435 >>Gebt die Quest Eskorte für Erland ab
     .accept 449 >>Akzeptiert die Quest Der Bericht der Todespirscher
     .target Rane Yorick
-step
+step << skip
     #softcore
     #completewith ProveyourWorth
     .deathskip >> Stirb und beleb dich am |cRXP_FRIENDLY_Geistheiler|r wieder
 step
-    #hardcore
+    --#hardcore
     #completewith next
     .goto 1421/0,1359.66,864.19,50,0
     .goto 1421/0,1359.66,741.27,50,0
@@ -3592,12 +3600,12 @@ step
     .mob Giant Grizzled Bear
     .unitscan Old VIcejaw
     .unitscan Son of Arugal
-step
+step << skip
     #softcore
     #completewith ArugalTurnin
     .deathskip >> Stirb und beleb dich am |cRXP_FRIENDLY_Geistheiler|r wieder
 step
-    #hardcore
+    --#hardcore
     #completewith next
     .goto 1421/0,1538.58,511.39,100,0
     .subzone 228 >>Reist zurück zum Grabmal

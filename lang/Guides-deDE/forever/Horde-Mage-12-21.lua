@@ -8,9 +8,9 @@ RXPGuides.RegisterGuide([[
 << Horde Mage
 #name 12-17 Das Brachland AoE
 #version 1
-#group RestedXP Forever Dungeonführer (H)
-#subgroup Speedrun Guide AoE Magier
-#defaultfor Horde Mage
+#group RestedXP Horde Magier AoE
+
+#defaultfor none Horde Mage
 #next 17-21 Steinkrallengebirge/Brachland AoE
 
 step << Mage
@@ -712,9 +712,9 @@ RXPGuides.RegisterGuide([[
 << Horde Mage
 #name 17-21 Steinkrallengebirge/Brachland AoE
 #version 1
-#group RestedXP Forever Dungeonführer (H)
-#subgroup Speedrun Guide AoE Magier
-#defaultfor Horde Mage
+#group RestedXP Horde Magier AoE
+
+#defaultfor none Horde Mage
 #next 21-30 Silberwald/Hillsbrad AoE
 
 step

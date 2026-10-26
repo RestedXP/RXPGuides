@@ -8,9 +8,9 @@ RXPGuides.RegisterGuide([[
 << Alliance Mage
 #name 12-18 Dunkelküste Magier AoE
 #version 1
-#group RestedXP Forever Dungeonführer (A)
-#subgroup Speedrun Guide Magier
-#defaultfor Alliance Mage
+#group RestedXP Allianz Magier
+
+#defaultfor none Alliance Mage
 #next 18-21 Rotkamm Magier AoE
 
 step
@@ -804,9 +804,9 @@ RXPGuides.RegisterGuide([[
 << Alliance Mage
 #name 18-21 Rotkamm Magier AoE
 #version 1
-#group RestedXP Forever Dungeonführer (A)
-#subgroup Speedrun Guide Magier
-#defaultfor Alliance Mage
+#group RestedXP Allianz Magier
+
+#defaultfor none Alliance Mage
 #next 21-22 Dämmerwald Mage AoE
 
 step

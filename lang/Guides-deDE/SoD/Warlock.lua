@@ -1604,7 +1604,7 @@ step
     .unitscan Fel Scar
     .unitscan Fel Rift
 step
-    .train 431756 >>Benutzt die |T134419:0|t[|cRXP_WARN_Rune der Teufelswache|r] |cRXP_FRIENDLY_um|r |T136216:0|t[Teufelswache beschwören] |cRXP_WARN_zu erlernen|r
+    .train 431756 >>|cRXP_WARN_Benutzt die|r |T134419:0|t[|cRXP_FRIENDLY_Rune der Teufelswache|r] |cRXP_WARN_um |r |T136216:0|t[Teufelswache beschwören] zu erlernen
     .use 221499
 
 ]])

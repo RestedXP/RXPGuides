@@ -851,7 +851,7 @@ step << skip
 	.link https://www.youtube.com/watch?v=7vmnvdjbUnM >> KLICKT HIER für ein Beispiel
 step
     #softcore
-    #completewith next
+    #completewith RazorHill1
     .goto 1411/1,-4326.01,-41.23
     .deathskip >> |cRXP_WARN_Sterbt und erscheint neu beim |cRXP_FRIENDLY_Geistheiler|r in der Nähe des Pfeils|r
     .target Geistheiler
@@ -864,6 +864,7 @@ step
     .accept 784 >>Akzeptiert die Quest Vernichtet die Verräter
     .target Gar'thok
 step
+    #softcore
     .goto 1411/1,-4665.400,311.900
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Koch Torka|r
     .accept 96825 >>Akzeptiert die Quest Diese Frucht beißt zurück
@@ -914,6 +915,8 @@ step << Warrior/Rogue
     .target Dwukk
     .skill blacksmithing,1,1
 step -- (Barracks)
+    #softcore
+    #label RazorHill1
     .goto 1411/1,-4815.200,306.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Turroc|r
     .accept 96822 >>Akzeptiert die Quest Für die Ehre
@@ -1168,6 +1171,7 @@ step << Rogue
     .target K'waii
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.9
+    .money <0.07
 step << Warlock/Mage/Priest
     .goto 1411/1,-4938.83,-779.37
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Sprecht mit|r |cRXP_FRIENDLY_K'waii|r
@@ -1655,6 +1659,12 @@ step
     .target Cook Torka
 step
     #hardcore
+    .goto 1411/1,-4665.400,311.900
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Cook Torka|r
+    .accept 96825 >>Akzeptiert die Quest This Fruit Could Biss Zurück
+    .target Cook Torka
+step
+    #hardcore
     #completewith next
     .goto 1411/1,-4617.88,290.47,12,0
     .goto 1411/1,-4611.01,293.64,8,0
@@ -1698,6 +1708,13 @@ step << Warrior/Rogue
     .train 2018 >> Erlerne |T136241:0|t[Schmiedekunst]
     .target Dwukk
     .skill blacksmithing,1,1
+step -- (Barracks)
+    #hardcore
+    #label RazorHill1
+    .goto 1411/1,-4815.200,306.800
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Turroc|r
+    .accept 96822 >>Akzeptiert die Quest For Ehre
+    .target Turroc
 step << Warrior/Rogue
     #hardcore
     #completewith TravelToTiragarde
@@ -1730,8 +1747,13 @@ step
     .mob +Kul Tiras Marine
     .mob +Kul Tiras Sailor
 step --south/west of keep
-    .goto 1411/1,-4992.700,-234.400
+    #completewith next
+    .goto 1411/1,-4992.700,-234.400,0
+    .goto 1411/1,-5101.700,-178.500,0
+    .goto 1411/1,-4992.700,-234.400,25,0
+    .goto 1411/1,-5101.700,-178.500,25,0
     >>Plündert den |cRXP_PICK_Räuberbogen|r vom Boden
+    >>|cRXP_WARN_Es gibt zwei verschiedene Spawnpositionen|r
     .complete 96822,1 --|1/1 Raider's Bow
 step --center in keep
     .goto 1411/1,-4994.900,-182.300
@@ -1769,6 +1791,15 @@ step
     .collect 4881,1,830 --Collect Aged Envelope (1)
     .accept 830 >>Akzeptiert die Quest Die Befehle des Admirals
     .use 4881
+step --south/west of keep
+    #loop
+    .goto 1411/1,-4992.700,-234.400,0
+    .goto 1411/1,-5101.700,-178.500,0
+    .goto 1411/1,-5101.700,-178.500,25,0
+    .goto 1411/1,-4992.700,-234.400,25,0
+    >>Plündert |cRXP_PICK_Raider's Verbeugen|r auf dem Boden
+    >>|cRXP_WARN_Es gibt zwei verschiedene Spawnpositionen|r
+    .complete 96822,1 --|1/1 Raider's Bow
 step  --northern tower
     #label AgedEnvelope
     .goto 1411/1,-4951.500,-59.600
@@ -1938,6 +1969,13 @@ step
     .accept 825 >>Akzeptiert die Quest Aus den Wrackteilen geborgen....
     .accept 831 >>Akzeptiert die Quest Die Befehle des Admirals
     .target +Gar'Thok
+step
+    #optional
+    .goto 1411/1,-4724.900,287.300
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Orgnil|r
+    .accept 99048 >>Akzeptiert die Quest Hand vermisst
+    .target Orgnil Soulscar
+    .xp <8,1
 step
     #softcore
     .goto 1411/1,-4663.88,310.56
@@ -2212,6 +2250,29 @@ step
     .collect 4496,1,825,1 --Small Brown Pouch (1)
     .target Jark
     .money <0.05
+step
+    .goto 1411/1,-4724.900,287.300
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Orgnil|r
+    .accept 99048 >>Akzeptiert die Quest Hand vermisst
+    .target Orgnil Soulscar
+step
+    .goto 1411/1,-5061.700,201.700
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Heglan Shadeeye|r
+    .turnin 99048 >>Gebt die Quest Hand vermisst ab
+    .accept 99049 >>Akzeptiert die Quest Bedrohung von unten
+    .target Heglan Shadeeye
+step
+    .goto 1411/1,-5073.900,244.700
+    >>Plündert den |cRXP_PICK_Zurückgelassenen Dolch|r vom Boden
+    .complete 99049,1 --|1/1 Orcish Dagger
+step
+    .goto 1411/1,-5140.800,229.100
+    >>Plündert die |cRXP_PICK_Waffenteile|r vom Boden
+    .complete 99049,3 --|1/1 Broken Bone Trident
+step
+    .goto 1411/1,-5138.000,314.100
+    >>Plündert die |cRXP_PICK_Seltsamen Trümmer|r vom Boden
+    .complete 99049,2 --|1/1 Banner Scrap
 step
     #completewith next
     >>Tötet |cRXP_ENEMY_Zwergbrandungskriecher|r und |cRXP_ENEMY_Brandungskriecher|r. Plündert sie für |cRXP_LOOT_Kriechersekret|r
@@ -2542,7 +2603,7 @@ step --at low lvl razormanes
     .goto 1411/1,-4459.000,66.300,40,0
     >>Plündert die |cRXP_PICK_Kaktusfeige|r auf dem Boden
     .complete 96825,1 --|8/8 Prickly Pear Fruit
-step
+step << Hunter
     #loop
     .goto 1411/1,-4312.79,407.50,0
     .goto 1411/1,-4312.79,407.50,50,0
@@ -2569,17 +2630,25 @@ step << Hunter
 	.goto 1411/1,-4208.1,98.71,50,0
 	.goto 1411/1,-4300.1,57.11,50,0
 	.goto 1411/1,-4456.61,65.57,50,0
-    .xp 9+4470 >> Farmt bis 4470+/6500 XP
-step << Hunter
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit|r |cRXP_FRIENDLY_Torka|r und |cRXP_FRIENDLY_Gar'Thok|r
+    .xp 9+4960 >> Farmt bis 4960+/6500xp
+step
+    .goto 1411/1,-4709.36,274.960
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Gar'Thok|r
+    .turnin 825 >>Gebt die Quest Aus den Wrackteilen geborgen... ab
+    .turnin 837 >>Gebt die Quest Übergriff ab << Hunter
+    .target Gar'Thok
+step
+    .goto 1411/1,-4725.000,287.200
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Orgnil Soulscar|r
+    .turnin 99049 >>Gebt die Quest Bedrohung von unten ab
+    --.accept 99051 >>Accept Threat from Below
+    .target Orgnil Soulscar
+step
+    .goto 1411/1,-4665.47,311.62
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Torka|r
     .turnin 815 >>Gebt die Quest Zerbrecht ein paar Eier ab
     .turnin 96825 >>Gebt die Quest Diese Frucht beißt zurück ab
-    .target +Cook Torka
-    .goto 1411/1,-4665.47,311.62
-    .turnin 825 >>Gebt die Quest Aus den Wrackteilen geborgen... ab
-    .turnin 837 >>Gebt die Quest Übergriff ab
-    .target +Gar'Thok
-    .goto 1411/1,-4709.36,274.960
+    .target Cook Torka
 step << Hunter
     .goto 1411/1,-4704.07,275.31
     >>Geht in den Bunker
@@ -2587,11 +2656,6 @@ step << Hunter
     .accept 6062 >>Akzeptiert die Quest Die Zähmung der Bestie
     .trainer >> Trainiere deine Klassenfähigkeiten
     .target Thotar
-step << Hunter
-    .goto 1411/1,-4724.900,287.300
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Orgnil Soulscar|r
-    .accept 99048 >>Akzeptiert die Quest Hand vermisst
-    .target Orgnil Soulscar
 step << Hunter
     .goto 1411/1,-4763.29,361.67
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Ghrawt|r. Kauft |T132382:0|t[Scharfe Pfeile] und einen |T134410:0|t[Mittleren Köcher] von ihm|r
@@ -2646,30 +2710,6 @@ step << Hunter
     .complete 6083,1 --Tame a Surf Crawler
     .mob Surf Crawler
     .isQuestTurnedIn 6062
-step << Hunter
-    .goto 1411/1,-5061.700,201.700
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Heglan Shadeeye|r
-    .turnin 99048 >>Gebt die Quest Hand vermisst ab
-    .accept 99049 >>Akzeptiert die Quest Bedrohung von unten
-    .target Heglan Shadeeye
-step << Hunter
-    .goto 1411/1,-5073.900,244.700
-    >>Plündert den |cRXP_PICK_Zurückgelassenen Dolch|r vom Boden
-    .complete 99049,1 --|1/1 Orcish Dagger
-step << Hunter
-    .goto 1411/1,-5140.800,229.100
-    >>Plündert die |cRXP_PICK_Waffenteile|r vom Boden
-    .complete 99049,3 --|1/1 Broken Bone Trident
-step << Hunter
-    .goto 1411/1,-5138.000,314.100
-    >>Plündert die |cRXP_PICK_Seltsamen Trümmer|r vom Boden
-    .complete 99049,2 --|1/1 Banner Scrap
-step << Hunter
-    .goto 1411/1,-4725.000,287.200
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Orgnil Soulscar|r
-    .turnin 99049 >>Gebt die Quest Bedrohung von unten ab
-    --.accept 99051 >>Accept Threat from Below
-    .target Orgnil Soulscar
 step << Hunter
     .goto 1411/1,-4704.07,275.31
     >>Geht in den Bunker
@@ -2727,6 +2767,70 @@ step << Hunter/Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Misha|r
     .accept 816 >>Akzeptiert die Quest Verloren, aber nicht vergessen
     .target Misha Tor'kren
+step << Warrior
+    .goto 1411/1,-4827.27,311.62
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Tarshaw|r
+    .train 6546 >> Trainiere deine Klassenfähigkeiten
+    --.accept 1505 >>Accept Veteran Uzzek
+    .target Tarshaw Jaggedscar
+    .xp <10,1
+step << Shaman
+    .goto 1411/1,-4839.96,307.04
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Swart|r
+    .train 8050 >> Trainiere deine Klassenfähigkeiten
+    .accept 2983 >>Akzeptiert die Quest Ruf des Feuers
+    .target Swart
+    .isNotOnQuest 1522
+    .xp <10,1
+step << Shaman
+    .goto 1411/1,-4839.96,307.04
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Swart|r
+    .train 8050 >> Trainiere deine Klassenfähigkeiten
+    .target Swart
+    .xp <10,1
+step << Warlock
+    .goto 1411/1,-4837.31,356.030
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Dhugru|r
+    .train 1120 >> Trainiere deine Klassenfähigkeiten
+    .target Dhugru Gorelust
+    .xp <10,1
+step << Warlock
+    .goto 1411/1,-4854.76,345.81
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Kitha|r und kauft |T133738:0|t[Feuerblitz Rang 2]
+    .collect 16302,1,837,1 --Grimoire of Firebolt (Rank 2) (1)
+    .target Kitha
+    .money <0.01
+    .train 7799,1
+    .xp <10,1
+step << Priest
+    .goto 1411/1,-4831.5,295.05
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Tai'jin|r
+    .accept 5654 >> Akzeptiert die Quest Verhexung der Schwäche << Troll
+    .accept 5660 >> Akzeptiert die Quest Berührung der Schwäche << Undead
+    .trainer >> Trainiere deine Klassenfähigkeiten
+    .target Tai'jin
+    .xp <10,1
+step << Rogue
+    .goto 1411/1,-4710.94,268.26
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Kaplak|r
+    .train 674 >> Trainiere deine Klassenfähigkeiten
+    .target Kaplak
+    .xp <10,1
+step << !Hunter
+    #loop
+    .goto 1411/1,-4312.79,407.50,0
+    .goto 1411/1,-4312.79,407.50,50,0
+    .goto 1411/1,-4314.91,487.52,50,0
+    .goto 1411/1,-4251.99,492.8,50,0
+    .goto 1411/1,-4167.39,500.91,50,0
+    .goto 1411/1,-4164.21,459.32,50,0
+    .goto 1411/1,-4180.08,382.12,50,0
+    .goto 1411/1,-4251.99,384.23,50,0
+    >>Tötet |cRXP_ENEMY_Staubläufer der Grimmhauer|r und |cRXP_ENEMY_Schlachtwache der Grimmhauer|r
+    .complete 837,3 --Razormane Dustrunner (4)
+    .mob +Razormane Dustrunner
+    .complete 837,4 --Razormane Battleguard (4)
+    .mob +Razormane Battleguard
 step
     #completewith next
     .goto 1411/1,-4414.31,999.70,50 >> Reist nach Rezlak
@@ -3017,24 +3121,12 @@ step
     .collect 2287,15,828,1 << Rogue/Warrior --Haunch of Meat (15)
     .target Innkeeper Grosk
     .money <0.0375
-step << Hunter
-    .goto 1411/1,-4724.69,287.30
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit|r |cRXP_FRIENDLY_Orgnil|r
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Orgnil|r und |cRXP_FRIENDLY_Gar'Thok|r
     .turnin 806 >>Gebt die Quest Dunkle Stürme ab
     .accept 828 >>Akzeptiert die Quest Margoz
-    .target Orgnil Soulscar
-step << !Hunter
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Torka|r, |cRXP_FRIENDLY_Orgnil|r und |cRXP_FRIENDLY_Gar'Thok|r
-    .turnin 815 >>Gebt die Quest Zerbrecht ein paar Eier ab
-    .turnin 96825 >>Gebt die Quest Diese Frucht beißt zurück ab
-    .target +Cook Torka
-    .goto 1411/1,-4665.47,311.62
-    .turnin 806 >>Gebt die Quest Dunkle Stürme ab
-    .accept 828 >>Akzeptiert die Quest Margoz
-    .accept 99048 >>Akzeptiert die Quest Hand vermisst << Shaman
     .target +Orgnil Soulscar
     .goto 1411/1,-4724.69,287.30
-    .turnin 825 >>Gebt die Quest Aus den Wrackteilen geborgen... ab
     .turnin 837 >>Gebt die Quest Übergriff ab
     .target +Gar'Thok
     .goto 1411/1,-4709.36,274.960
@@ -3150,33 +3242,9 @@ step << Shaman
     .turnin 1524 >>Gebt die Quest Ruf des Feuers ab
     .accept 1525 >>Akzeptiert die Quest Ruf des Feuers
     .target Telf Joolam
-step << Shaman
+step << skip --Shaman
     #completewith MargozTurnIn
     .deathskip >> Stirb und beleb dich am |cRXP_FRIENDLY_Geistheiler|r wieder
-step << Shaman
-    .goto 1411/1,-5061.700,201.700
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Heglan Shadeeye|r
-    .turnin 99048 >>Gebt die Quest Hand vermisst ab
-    .accept 99049 >>Akzeptiert die Quest Bedrohung von unten
-    .target Heglan Shadeeye
-step << Shaman
-    .goto 1411/1,-5073.900,244.700
-    >>Plündert den |cRXP_PICK_Zurückgelassenen Dolch|r vom Boden
-    .complete 99049,1 --|1/1 Orcish Dagger
-step << Shaman
-    .goto 1411/1,-5140.800,229.100
-    >>Plündert die |cRXP_PICK_Waffenteile|r vom Boden
-    .complete 99049,3 --|1/1 Broken Bone Trident
-step << Shaman
-    .goto 1411/1,-5138.000,314.100
-    >>Plündert die |cRXP_PICK_Seltsamen Trümmer|r vom Boden
-    .complete 99049,2 --|1/1 Banner Scrap
-step << Shaman
-    .goto 1411/1,-4725.000,287.200
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Orgnil Soulscar|r
-    .turnin 99049 >>Gebt die Quest Bedrohung von unten ab
-    --.accept 99051 >>Accept Threat from Below
-    .target Orgnil Soulscar
 step << Hunter
     #completewith MargozTurnIn
     +Zähmt einen |cRXP_ENEMY_Siechstachelskorpid|r
@@ -3255,7 +3323,7 @@ step
     .mob +Dustwind Storm Witch
     .collect 277661,1,97281 --Dull Storm Orb (x1)
     .accept 97281 >>Akzeptiert die Quest Ein Sturm braut sich zusammen
-step
+step << skip
     #softcore
     #completewith SecuringLinesTurnIn
     .deathskip >> Stirb und beleb dich am |cRXP_FRIENDLY_Geistheiler|r wieder
@@ -3309,7 +3377,7 @@ step
     .complete 97282,1 --|5/5 Charged Thunder Lizard Organ
     .mob Lightning Hide
     .mob Charged Thunder Lizard Organ
-step
+step << skip
     #softcore
     #completewith next
     .deathskip >> Stirb und beleb dich am |cRXP_FRIENDLY_Geistheiler|r wieder
@@ -3418,6 +3486,7 @@ step << Rogue
     .target Trak'gen
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.3
+    .money <0.03
 step << Rogue
     #optional
     #completewith ZeptoUC1
@@ -3617,33 +3686,33 @@ step
     .accept 809 >>Akzeptiert die Quest Ak'zeloth
     .target Neeru Fireblade
     .isQuestTurnedIn 827
-step << !Shaman !Hunter
+step << skip --!Shaman !Hunter
     #softcore
     #completewith ZeptoUC1
     .goto 1454/1,-4424.40,1817.58
     .subzone 2437 >> Betretet Der Flammenschlund
-step << !Shaman !Hunter
+step << skip --!Shaman !Hunter
     #softcore
     #completewith ZeptoUC1
     .goto 1411/1,-4450.27,1188.64
     .deathskip >> Sterbt und spawnt beim |cRXP_FRIENDLY_Geistheiler|r
 step << !Shaman !Hunter
-    #hardcore
+    --#hardcore
     #completewith ZeptoUC1
     .zone Durotar >> Verlass Orgrimmar
     .zoneskip Durotar
-step << Shaman/Hunter
+step << skip --Shaman/Hunter
     #softcore
     #completewith FoundtheCure
     .goto 1454/1,-4424.40,1817.58
     .subzone 2437 >> Betretet Der Flammenschlund
-step << Shaman/Hunter
+step << skip --Shaman/Hunter
     #softcore
     #completewith FoundtheCure
     .goto 1411/1,-4450.27,1188.64
     .deathskip >> Sterbt und spawnt beim |cRXP_FRIENDLY_Geistheiler|r
 step << Shaman/Hunter
-    #hardcore
+    --#hardcore
     #completewith FoundtheCure
     .zone Durotar >> Verlass Orgrimmar
     .zoneskip Durotar

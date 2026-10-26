@@ -657,7 +657,7 @@ RXPGuides.RegisterGuide([[
 #subgroup Speedrun Dungeonführer 1-20
 --#groupid RXP-SRGCE-A1
 #name 5-11 Dun Morogh
-#next 11-12 Elwynn (Zwerge/Gnome);11-12 Leerwandler-Quest;12-14 Loch Modan (Zwerge/Gnome);11-13 Loch Modan (Jäger)
+#next 11-12 Elwynn (Zwerge/Gnome);11-12 Leerwandler-Quest;12-14 Loch Modan (Zwerg/Gnom);11-13 Loch Modan (Jäger)
 #defaultfor Dwarf/Gnome
 
 step
@@ -1465,9 +1465,9 @@ step << Hunter
     .waypoint 1426,67.687,60.059,45,0
     .waypoint 1426,68.958,59.357,45,0
     .waypoint 1426,70.475,59.420,45,0
-    >>Tötet |cRXP_ENEMY_Rockjaw Skullthumpers|r außerhalb der Mine. Sammelt die Beute |T132621:0|t[|cRXP_LOOT_Empty Pulverfass|r]
+    >>Tötet |cRXP_ENEMY_Schädelhauer der Felsenkiefer|r außerhalb der Mine. Plündert sie für das |T132621:0|t[|cRXP_LOOT_Leere Pulverfass|r]
     .use 268548 >> |cRXP_WARN_Benutzt das|r |T132621:0|t[|cRXP_LOOT_Leeres Pulverfass|r] |cRXP_WARN_um die Quest zu starten|r
-    >>|cRXP_WARN_HINWEIS: Dieser Gegenstand hat eine niedrige Drop-Rate. Überspringt diesen Schritt, wenn ihr ihn nicht findet|r
+    >>|cRXP_WARN_HINWEIS: Dieser Gegenstand hat eine niedrige Drop-Rate. Überspringt diesen Schritt, wenn ihr es nicht findet|r
     .complete 432,1 --Kill Rockjaw Skullthumper (x6)
     .collect 268548,1,95213,1 -- Empty Powder Keg (1)
     .disablecheckbox
@@ -1916,11 +1916,11 @@ step
     .target +Foreman Stonebrow << !Hunter
 step
     #completewith RockjawBonesnappers
-    >>Sammelt die Beute |T132621:0|t[|cRXP_ENEMY_Empty Pulverfass|r] von den |cRXP_ENEMY_Rockjaw Skullthumpers|r und den |cRXP_LOOT_Rockjaw Bonesnappers|r
-    .use 268548 >> |cRXP_WARN_Benutzt das|r |T132621:0|t[|cRXP_LOOT_Leer Pulverfass|r] |cRXP_WARN_um die Quest zu starten|r
-    >>|cRXP_WARN_HINWEIS: Dieser Gegenstand hat eine niedrige Drop-Rate. Überspringt diesen Schritt, wenn ihr ihn nicht findet|r
+    >>Plündert die |cRXP_ENEMY_Schädelhauer der Felsenkiefer|r und |cRXP_ENEMY_Knochenknacker der Felsenkiefer|r für das|T132621:0|t[|cRXP_LOOT_Leeres Pulverfass|r]
+    .use 268548 >> |cRXP_WARN_Benutzt das|r |T132621:0|t[|cRXP_LOOT_Leeres Pulverfass|r] |cRXP_WARN_um die Quest zu starten|r
+    >>|cRXP_WARN_HINWEIS: Dieser Gegenstand hat eine niedrige Drop-Rate. Überspringt diesen Schritt, wenn ihr es nicht findet|r
     .collect 268548,1,95213,1 -- Empty Powder Keg (1)
-    .accept 95213 >> Akzeptiert die Quest Gestohlenes Schießpulver
+    .accept 95213 >> Akzeptiert die Quest Gestohlenes Sprengpulver
 step
     #sticky
     #label Skullthumpers
@@ -1981,14 +1981,14 @@ step
     .goto 1426/0,-1606.02,-5676.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Steinbruchmeister Thesten|r
     .turnin 95213 >> Gebt die Quest Gestohlenes Sprengpulver ab
-    .accept 95214 >> Akzeptiert die Quest Gestohlenes Schießpulver
+    .accept 95214 >> Akzeptiert die Quest Gestohlenes Sprengpulver
     .target Quarrymaster Thesten
 step
     #optional
     .isQuestTurnedIn 95213
     .goto 1426/0,-1606.02,-5676.35
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Quarrymaster Thesten|r
-    .accept 95214 >> Akzeptiert die Quest Gestohlenes Schießpulver
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Steinbruchmeister Thesten|r
+    .accept 95214 >> Akzeptiert die Quest Gestohlenes Sprengpulver
     .target Quarrymaster Thesten
 step
     #optional
@@ -2031,10 +2031,10 @@ step
 step
     #completewith OII
     >>Tötet |cRXP_ENEMY_Wegelagerer der Felsenkiefer|r. Plündert sie für |T132621:0|t[|cRXP_LOOT_Leeres Pulverfass|r]
-    .use 268548 >> |cRXP_WARN_Benutzt das|r |T132621:0|t[|cRXP_LOOT_Leer Pulverfass|r] |cRXP_WARN_um die Quest zu starten|r
+    .use 268548 >> |cRXP_WARN_Benutzt das|r |T132621:0|t[|cRXP_LOOT_Leeres Pulverfass|r] |cRXP_WARN_um die Quest zu starten|r
     >>|cRXP_WARN_HINWEIS: Dieser Gegenstand hat eine niedrige Droprate. Überspringt diesen Schritt, wenn ihr ihn nicht findet, bis ihr mit den|r Spione der Dunkeleisenzwerge|cRXP_ENEMY_ fertig seid|r
     .collect 268548,1,95213,1 -- Empty Powder Keg (1)
-    .accept 95213 >> Akzeptiert die Quest Gestohlenes Schießpulver
+    .accept 95213 >> Akzeptiert die Quest Gestohlenes Sprengpulver
     .mob Rockjaw Ambusher
 step
     #label SpyMap
@@ -2055,14 +2055,14 @@ step
     .goto 1426/0,-1881.82,-5735.45,0
     .goto 1426/0,-1832.57,-5571.28,0
     .goto 1426/0,-1724.22,-5636.95,0
-    >>Tötet |cRXP_ENEMY_Rockjaw Ambushers|r. Plündert sie für |cRXP_LOOT_Stolen Zauberwucht Powder|r
+    >>Tötet |cRXP_ENEMY_Wegelagerer der Felsenkiefer|r. Plündert sie für |cRXP_LOOT_Gestohlenes Sprengpulver|r
     .complete 95214,1 -- Stolen Blasting Powder (16)
     .mob Rockjaw Ambusher
 step
     .isQuestComplete 95214
     .goto 1426/0,-1606.02,-5676.35
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Quarrymaster Thesten|r
-    .turnin 95214 >> Gebt die Quest Gestohlenes Schießpulver ab
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Steinbruchmeister Thesten|r
+    .turnin 95214 >> Gebt die Quest Gestohlenes Sprengpulver ab
     .target Quarrymaster Thesten
 step
     #label OII
@@ -2075,15 +2075,15 @@ step
 step
     .isOnQuest 95213
     .goto 1426/0,-1606.02,-5676.35
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Quarrymaster Thesten|r
-    .turnin 95213 >> Gebt die Quest Gestohlenes Schießpulver ab
-    .accept 95214 >> Akzeptiert die Quest Gestohlenes Schießpulver
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Steinbruchmeister Thesten|r
+    .turnin 95213 >> Gebt die Quest Gestohlenes Sprengpulver ab
+    .accept 95214 >> Akzeptiert die Quest Gestohlenes Sprengpulver
     .target Quarrymaster Thesten
 step
     .isQuestTurnedIn 95213
     .goto 1426/0,-1606.02,-5676.35
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Quarrymaster Thesten|r
-    .accept 95214 >> Akzeptiert die Quest Gestohlenes Schießpulver
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Steinbruchmeister Thesten|r
+    .accept 95214 >> Akzeptiert die Quest Gestohlenes Sprengpulver
     .target Quarrymaster Thesten
 step
     .isOnQuest 95214
@@ -2094,14 +2094,14 @@ step
     .goto 1426/0,-1881.82,-5735.45,0
     .goto 1426/0,-1832.57,-5571.28,0
     .goto 1426/0,-1724.22,-5636.95,0
-    >>Tötet |cRXP_ENEMY_Rockjaw Ambushers|r. Plündert sie für |cRXP_LOOT_Stolen Zauberwucht Powder|r
+    >>Tötet |cRXP_ENEMY_Wegelagerer der Felsenkiefer|r. Plündert sie für |cRXP_LOOT_Gestohlenes Sprengpulver|r
     .complete 95214,1 -- Stolen Blasting Powder (16)
     .mob Rockjaw Ambusher
 step
     .isQuestComplete 95214
     .goto 1426/0,-1606.02,-5676.35
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Quarrymaster Thesten|r
-    .turnin 95214 >> Gebt die Quest Gestohlenes Schießpulver ab
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Steinbruchmeister Thesten|r
+    .turnin 95214 >> Gebt die Quest Gestohlenes Sprengpulver ab
     .target Quarrymaster Thesten
 step
     #completewith next
@@ -2175,7 +2175,7 @@ step << !Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Yanni Stoutheart|r
     >>|cRXP_BUY_Kauft ein|r |T135435:0|t[Einfaches Holz] |cRXP_BUY_und ein|r |T135237:0|t[Feuerstein und Zunder] |cRXP_BUY_von ihr|r
     >>|cRXP_BUY_Kauft einen|r |T133634:0|t[Kleiner brauner Beutel] |cRXP_BUY_von ihr, wenn nötig|r << !Rogue
-    >>|cRXP_WARN_Dies wird zum Erstellen von|r |T135805:0|t[Basic Campfires] |cRXP_WARN_benutzt, während ihr auf die Boote wartet, um eure|r |T133971:0|t[Kochkunst] |cRXP_WARN_-Fertigkeit zu leveln, ohne Zeit zu verschwenden|r
+    >>|cRXP_WARN_Dies wird zum Erstellen von|r |T135805:0|t[Einfaches Lagerfeuer] |cRXP_WARN_benutzt, während ihr auf die Boote wartet, um eure|r |T133971:0|t[Kochkunst] |cRXP_WARN_-Fertigkeit zu leveln, ohne Zeit zu verschwenden|r
     >>|cRXP_WARN_Ihr benötigt 50|r |T133971:0|t[Kochkunst] |cRXP_WARN_für eine spätere Quest im Dämmerwald|r
     .collect 4470,1 --Simple Wood (1)
     .collect 4471,1 --Flint and Tinder (1)
@@ -2793,7 +2793,7 @@ RXPGuides.RegisterGuide([[
 #name 11-12 Elwynn (Zwerge/Gnome)
 #version 1
 #defaultfor Gnome/Dwarf
-#next 12-14 Loch Modan (Zwerge/Gnome)
+#next 12-14 Loch Modan (Zwerg/Gnom)
 --#era << !Warlock
 
 step << Warlock
@@ -3196,7 +3196,8 @@ step
     .fp Redridge Mountains >> Erlernt die Flugroute zum Rotkammgebirge
     .fly Stormwind >> Fliege nach Sturmwind
     .target Ariena Stormfeather
-step << skip
+step
+    .isOnQuest 61
     .goto 1453/0,625.48,-8857.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Morgan Pestle|r
     .turnin 61,1 >> Gebt die Quest Lieferung nach Sturmwind ab
@@ -3454,7 +3455,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Forever Dungeonführer (A)
 #subgroup Speedrun Dungeonführer 1-20
 --#groupid RXP-SRGCE-A1
-#name 12-14 Loch Modan (Zwerge/Gnome)
+#name 12-14 Loch Modan (Zwerg/Gnom)
 #next 13-15 Westfall;14-16 Dunkelküste
 #defaultfor Gnome/Dwarf
 
@@ -3463,7 +3464,7 @@ step << Dwarf Paladin
     #completewith next
     .goto 1455,35.239,32.789,20,0
     .goto 1455,27.208,12.552,20,0
-    .goto 1455/0,-896.47,-4601.65,12 >>Reist zu |cRXP_FRIENDLY_Brandur Ironhammer|r
+    .goto 1455/0,-896.47,-4601.65,12 >>Reisen zu |cRXP_FRIENDLY_Brandur Ironhammer|r
 step << Dwarf Paladin
     .goto 1455/0,-896.47,-4601.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Brandur Ironhammer|r
@@ -3674,7 +3675,6 @@ step
     .subzoneskip 149 --Silver Stream Mine
 step
     .goto 1432/0,-3146.73,-4837.02
-    #arrowtext |cRXP_WARN_10-Minuten-Timer um die Quest abzugeben!|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Norric Lochthane|r
     >>Stellt sicher, dass ihr dies abgebt, bevor die 10-Minuten-Frist des |T1387609:0|t[Krug mit Schnee] |cRXP_WARN_abläuft|r
     .turnin 86667 >> Gebt die Quest Eingeschneit ab
@@ -4232,7 +4232,7 @@ step << Warrior
     #optional
     #completewith Deeprun
     .goto 1455,67.400,84.909,15,0
-    .goto 1455/0,-1234.65,-5035.67,12 >> Reise in Richtung |cRXP_FRIENDLY_Bilban Tosslespanner|r
+    .goto 1455/0,-1234.65,-5035.67,12 >> Reist in Richtung |cRXP_FRIENDLY_Bilban Tosslespanner|r
 step << Warrior
     .goto 1455/0,-1234.65,-5035.67
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Bilban Tosslespanner|r
@@ -4747,7 +4747,6 @@ step
     .complete 86667,1 -- Jar of Snow 1/1
 step
     .goto 1432/0,-3146.73,-4837.02
-    #arrowtext |cRXP_WARN_10-Minuten-Timer um die Quest abzugeben!|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Norric Lochthane|r
     >>Stellt sicher, dass ihr dies abgebt, bevor die 10-Minuten-Frist des |T1387609:0|t[Krug mit Schnee] |cRXP_WARN_abläuft|r
     .turnin 86667 >> Gebt die Quest Eingeschneit ab
@@ -4954,7 +4953,7 @@ step << Hunter skip
     #requires DockTravel
     #label DarkshoreCook1
     #completewith DarkshoreBoat
-    >>|cRXP_WARN_Auf dem Boot, wenn es gerade angekommen ist, oder am Dock, wenn das Boot gerade abgefahren ist:|r
+    >>|cRXP_WARN_Während des Wartens auf das Boot am Dock:|r
     .cast 818 >>|cRXP_WARN_Erstellt ein|r |T135805:0|t[Einfaches Lagerfeuer] |cRXP_WARN_(in eurem Berufe-Buch)|r
     .usespell 818
     .zoneskip Darkshore
@@ -4968,7 +4967,7 @@ step << Hunter skip
     #requires DarkshoreCook1
     #label DarkshoreCook2
     #completewith DarkshoreBoat
-    >>|cRXP_WARN_Auf dem Boot, wenn es gerade angekommen ist, oder am Dock, wenn das Boot gerade abgefahren ist:|r
+    >>|cRXP_WARN_Während des Wartens auf das Boot am Dock:|r
     .cast 818 >>|cRXP_WARN_Erstellt ein|r |T135805:0|t[Einfaches Lagerfeuer] |cRXP_WARN_(in eurem Berufe-Buch)|r
     .usespell 818
     .zoneskip Darkshore
@@ -4982,7 +4981,7 @@ step << Hunter skip
     #requires DarkshoreCook2
     #label DarkshoreCook3
     #completewith DarkshoreBoat
-    >>|cRXP_WARN_Auf dem Boot, wenn es gerade angekommen ist, oder am Dock, wenn das Boot gerade abgefahren ist:|r
+    >>|cRXP_WARN_Während des Wartens auf das Boot am Dock:|r
     .cast 818 >>|cRXP_WARN_Erstellt ein|r |T135805:0|t[Einfaches Lagerfeuer] |cRXP_WARN_(in eurem Berufe-Buch)|r
     .usespell 818
     .zoneskip Darkshore

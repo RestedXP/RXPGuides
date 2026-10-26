@@ -2614,7 +2614,7 @@ step
 step
 	#xprate <1.5 --<< !NightElf/Hunter
     .goto 1439,51.288,24.554
-    >>Klickt auf die|cRXP_PICK_Dröhnkiste 323|r auf dem Boden
+    >>Klickt auf die |cRXP_PICK_Dröhnkiste 323|r auf dem Boden
     .accept 1003 >> Akzeptiert die Quest Dröhnkiste 525
     .isQuestTurnedIn 1002
 
@@ -5245,7 +5245,7 @@ step << !Dwarf Rogue
     #xprate >1.59
     #sticky
     #label AntiVenomStart
-    .collect 6452,1 >> Stelle ein |T134437:0|t[Gegengift] her
+    .collect 6452,1 >> Crafte ein |T134437:0|t[Gegengift]
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
     .train 7934,3 --Anti Venom spell trained
@@ -7197,7 +7197,7 @@ step << !Dwarf Rogue
     #xprate >1.59
     #sticky
     #label AntiVenomStart
-    .collect 6452,1 >> Stelle ein |T134437:0|t[Gegengift] her
+    .collect 6452,1 >> Crafte ein |T134437:0|t[Gegengift]
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
     .train 7934,3 --Anti Venom spell trained
@@ -9720,7 +9720,7 @@ step << Rogue
 step << !Dwarf Rogue
     #sticky
     #label AntiVenomStart
-    .collect 6452,1 >> Stelle ein |T134437:0|t[Gegengift] her
+    .collect 6452,1 >> Crafte ein |T134437:0|t[Gegengift]
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
     .train 7934,3 --Anti Venom spell trained

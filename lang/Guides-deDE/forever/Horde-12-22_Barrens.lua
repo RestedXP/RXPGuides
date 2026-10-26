@@ -69,19 +69,19 @@ step << Tauren Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Thun'grim|r
     .turnin 1503 >>Gebt die Quest Geschmiedeter Stahl ab
     .target Thun'grim Firegaze
-step << !Tauren
+step << skip --!Tauren
     #softcore
     #completewith ThievesPickup
     .goto 1413/1,-2516.71,-590.71
     .deathskip >> Stirb und beleb dich am |cRXP_FRIENDLY_Geistheiler|r wieder
     .xp >15,1
-step << !Tauren
+step << skip --!Tauren
     #softcore
     #completewith ThievesPickup
     .subzone 380 >> Reist zum Wegekreuz
     .xp <15,1
 step << !Tauren
-    #hardcore
+    --#hardcore
     #completewith ThievesPickup
     .subzone 380 >> Reist zum Wegekreuz
 step << !Tauren
@@ -3166,7 +3166,7 @@ step
     >>Tötet |cRXP_ENEMY_Savannah Matriarchs|r und |cRXP_ENEMY_Savannah Patriarchs|r. Plündert sie für |cRXP_LOOT_Hides|r
     .complete 95494,1 --|6/6 Savannah Lion Hide
     .mob Savannah Matriarch
-    .mob Savannah Patriarchs
+    .mob Savannah Patriarch
 step
     #completewith next
     >>Tötet jedes |cRXP_ENEMY_Zhevra|r. Plündert sie für ein |cRXP_LOOT_Frischer Zhevra-Kadaver|r
@@ -3188,7 +3188,7 @@ step
     >>Tötet |cRXP_ENEMY_Savannah Matriarchs|r und |cRXP_ENEMY_Savannah Patriarchs|r. Plündert sie für |cRXP_LOOT_Hides|r
     .complete 95494,1 --|6/6 Savannah Lion Hide
     .mob Savannah Matriarch
-    .mob Savannah Patriarchs
+    .mob Savannah Patriarch
 step
     #completewith BootyTurnin
     .subzone 392 >> Reist nach Ratschet
@@ -3816,7 +3816,7 @@ step
     .skill firstaid,<1,1
 step
     .goto 1456/1,206.88,-997.45
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |r |cRXP_FRIENDLY_Pand|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit|r |cRXP_FRIENDLY_Pand|r
     >>|cRXP_WARN_Überspringt diesen Schritt, wenn ihr nicht genug|r |T132889:0|t[Leinenstoff] |cRXP_WARN_hattet, um Skill 80 zu erreichen|r
     .train 3277 >> Erlernt |T133684:0|t[Wollverband]
     .train 7934 >> Erlernt |T134437:0|t[Gegengift] << Rogue
@@ -4580,7 +4580,7 @@ step
     .goto 1440/1,-712.300,2023.900,50,0
     .goto 1440/1,-534.500,2045.100,50,0
     >>Tötet |cRXP_ENEMY_Ashenvalebären|r und |cRXP_ENEMY_Schattenhornhirsche|r
-    >>|cRXP_WARN_Passt auf die |cRXP_ENEMY_Ursangus|r auf (starke Stufe 25), welche in der Gegend patrouillieren|r
+    >>|cRXP_WARN_Passt auf vor |cRXP_ENEMY_Ursangus|r (starker Lvl 25), der in der Gegend patrouilliert|r
     .complete 98251,2 --|6/6 Ashenvale Bear slain
     .mob +Ashenvale Bear
     .complete 98251,1 --|6/6 Shadowhorn Stag slain

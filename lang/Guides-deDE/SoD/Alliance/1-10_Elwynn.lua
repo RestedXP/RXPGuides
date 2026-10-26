@@ -3061,7 +3061,7 @@ step << Warrior
     #optional
     #completewith WarriorTrain
     .goto 1455,67.400,84.909,15,0
-    .goto Ironforge,65.905,88.405,12 >> Reise in Richtung |cRXP_FRIENDLY_Bilban Tosslespanner|r
+    .goto Ironforge,65.905,88.405,12 >> Reist in Richtung |cRXP_FRIENDLY_Bilban Tosslespanner|r
 step << Warrior
     .goto Ironforge,65.905,88.405
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Bilban Tosslespanner|r
@@ -3247,7 +3247,7 @@ step << Mage/Paladin
     .goto Ironforge,27.17,12.58,20,0 << Paladin
     .goto Ironforge,27.60,11.06,20,0 << Mage
     .goto Ironforge,26.8,8.6,12 >>Reist in Richtung |cRXP_FRIENDLY_Dink|r << Mage
-    .goto Ironforge,23.131,6.143,12 >>Reist zu |cRXP_FRIENDLY_Brandur Ironhammer|r << Paladin
+    .goto Ironforge,23.131,6.143,12 >>Reisen zu |cRXP_FRIENDLY_Brandur Ironhammer|r << Paladin
 step << Mage
     #xprate >1.49
     .goto Ironforge,26.8,8.6

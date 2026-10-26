@@ -59,7 +59,7 @@ RXPGuides.RegisterGuide([[
 #defaultfor Gnome/Dwarf
 
 step
-#include RestedXP Forever Dungeonführer (A)\12-14 Loch Modan (Zwerge/Gnome)
+#include RestedXP Forever Dungeonführer (A)\12-14 Loch Modan (Zwerg/Gnom)
 ]])
 
 RXPGuides.RegisterGuide([[

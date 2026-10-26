@@ -623,7 +623,7 @@ step
     .goto Darkshore,39.79,58.33,50,0
     .goto Darkshore,38.86,60.72,50,0
     .goto Darkshore,38.47,57.92
-    .use 7586 >>|cRXP_WARN_Use|r |T134335:0|t[Tharnariuns Hoffnung] |cRXP_WARN_on a|r |cRXP_ENEMY_Rabid Distelbär|r
+    .use 7586 >>|cRXP_WARN_Benutzt|r |T134335:0|t[Tharnariuns Hoffnung] |cRXP_WARN_auf einen|r |cRXP_ENEMY_Tollwütigen Distelbären|r
     .complete 2118,1
     .unitscan Rabid Thistle Bear
 step
@@ -1457,7 +1457,7 @@ step
 step
 #map Darkshore
     .goto Winterspring,1.42,26.89
-    >>Klickt auf die|cRXP_PICK_Dröhnkiste 323|r auf dem Boden
+    >>Klickt auf die |cRXP_PICK_Dröhnkiste 323|r auf dem Boden
     .turnin 1002 >> Gebt die Quest Dröhnkiste 323 ab
     .accept 1003 >> Akzeptiert die Quest Dröhnkiste 525
 step
