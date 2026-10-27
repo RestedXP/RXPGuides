@@ -1309,15 +1309,17 @@ function addon.functions.daily(self, text, ...)
 
         local ids = {...}
         local err = #ids == 0
+        local questId
         for i, v in pairs(ids) do
-            local questId = tonumber(v)
-            if questId then
-                ids[i] = GetQuestId(questId)
-                addon.InsertQuestGuide(ids[i],addon.pickUpList)
-            else
+            questId = tonumber(v)
+            questId = questId and GetQuestId(questId)
+            if not questId then
                 err = true
                 break
             end
+
+            ids[i] = questId
+            addon.InsertQuestGuide(questId,addon.pickUpList)
         end
 
         if err then
@@ -1412,6 +1414,7 @@ function addon.functions.turnin(self, ...)
             return
         end
         local id = GetQuestId(element.questId,nil,true)
+        if not id then return end
         local isComplete = IsQuestTurnedIn(id)
 
         if step.active or element.retrieveText then
@@ -1527,15 +1530,17 @@ function addon.functions.dailyturnin(self, text, ...)
 
         local ids = {...}
         local err = #ids == 0
+        local questId
         for i, v in pairs(ids) do
-            local questId = tonumber(v)
-            if questId then
-                ids[i] = GetQuestId(questId)
-                addon.InsertQuestGuide(ids[i],addon.pickUpList)
-            else
+            questId = tonumber(v)
+            questId = questId and GetQuestId(questId)
+            if not questId then
                 err = true
                 break
             end
+
+            ids[i] = questId
+            addon.InsertQuestGuide(questId,addon.pickUpList)
         end
 
         if err then
