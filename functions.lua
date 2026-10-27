@@ -7080,7 +7080,7 @@ function addon.functions.collecttoy(self, ...)
     local itemID, toyName, icon, isFavorite, hasFanfare = C_ToyBox.GetToyInfo(element.id)
     local isCollected = PlayerHasToy(element.id) and C_ToyBox.IsToyUsable(element.id)
 
-    element.itemName = toyName
+    element.itemName = toyName or addon.GetItemName(element.id) or _G.TOY or L("Toy")
     if not element.textOnly then
         local current = isCollected and "1" or "0"
         if element.rawtext then
