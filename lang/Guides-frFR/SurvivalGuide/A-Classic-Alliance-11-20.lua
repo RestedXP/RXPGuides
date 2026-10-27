@@ -720,7 +720,7 @@ step
     .accept 4761 >> Acceptez la quête Thundris Tissevent
 step
 #map Darkshore
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Gorbold Steelhand|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|cRXP_FRIENDLY_Gorbold Steelhand|r
 	.target Gorbold Steelhand
     .goto Felwood,20.80,15.58
     .accept 982 >> Acceptez la quête Océan profond, mer immense
@@ -898,7 +898,7 @@ step
     .goto Darkshore,40.30,59.70,70 >> Voyagez au sud vers |cRXP_FRIENDLY_Sentinel Tysha Moonblade|r à Ameth'Aran
 step
     #label Ameth
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinelle Tysha Moonblade|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinel Tysha Moonblade|r
 	.target Sentinel Tysha Moonblade
     .goto Darkshore,40.30,59.70
     .accept 953 >> Acceptez la quête La Chute d'Ameth'Aran
@@ -971,7 +971,7 @@ step
 #map Darkshore
     .goto Felwood,23.29,36.73
     .target Sentinel Tysha Moonblade
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinelle Tysha Moonblade|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinel Tysha Moonblade|r
     .turnin 953 >> Rendez la quête La Chute d'Ameth'Aran
 step
     #era/som
@@ -1122,7 +1122,7 @@ step
     #completewith next
     .goto Darkshore,38.109,41.170,5,0
     .goto Darkshore,37.512,41.674
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Gorbold Steelhand|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|cRXP_FRIENDLY_Gorbold Steelhand|r
     +Achetez des |T134059:0|t[Epices douces]
     >>|cRXP_WARN_Utilisez des|r |T134059:0|t[Epices douces] |cRXP_WARN_et vos|r |T132832:0|t[Petits Oeufs] |cRXP_WARN_pour faire des Oeufs aux herbes. Faites cela jusqu'à ce que votre Cuisine ait atteint le niveau 10|r
     .skill cooking,10,1 -- step only displays if cooking skill is less than 10
@@ -1134,7 +1134,7 @@ step
     .target Gorbold Steelhand
 step
 #map Darkshore
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Gorbold Steelhand|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|cRXP_FRIENDLY_Gorbold Steelhand|r
 	.target Gorbold Steelhand
     .goto Felwood,20.80,15.58
     .turnin 982 >> Rendez la quête Océan profond, mer immense
@@ -1282,7 +1282,7 @@ step
     .goto Darkshore,54.99,32.04,30,0
     .goto Darkshore,54.99,33.41,15 >> Voyagez vers la Grotte de la Bondissante
 step << Druid
-    >>Utilisez la [Fiole d'échantillon des Chutes de la Bondissante vide] à l'entrée de la Grotte de la Bondissante
+    >>Utilisez la [Fiole d'échantillon des Chutes de la Bondissante vide] à la cascade à l'entrée de la grotte des Chutes de la Bondissante
     .goto Darkshore,54.99,33.41
     .complete 6122,1 --Filled Cliffspring Falls Sampler (1)
 step
@@ -1705,7 +1705,7 @@ step
     .target Gershala Nightwhisper
 step
 #map Darkshore
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tharnariun Soigneflore|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tharnariun Treetender|r
 	.target Tharnariun Treetender
     .goto Felwood,21.63,18.15
     .accept 2139 >> Acceptez la quête Espoir de Tharnariun
@@ -1822,7 +1822,7 @@ step
     .complete 944,1
 step
     #completewith next
-    .cast 5809 >> Utilisez la [Fiole de divination] et placez-la sur le sol
+    .cast 5809 >> Utilisez la [Fiole de divination] et placez la sur le sol
     .use 5251
 step
     .goto Darkshore,38.54,86.05
@@ -1840,7 +1840,7 @@ step
     >>Les |cRXP_ENEMY_Disciples du crépuscule|r |cRXP_WARN_lancent|r |T135953:0|t[Rénovation] |cRXP_WARN_et un sort de |T135915:0|t[Soins] de 3 secondes|r
 step
     .goto Ashenvale,22.36,3.98
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Therylune|r. Cela va démarrer une escorte
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Therylune|r. Cela va commencer une escorte
     >>Passez cette étape si elle n'est pas présente
     >>Les |cRXP_ENEMY_Nervis du crépuscule|r |cRXP_WARN_peuvent|r utiliser |T132343:0|t[Désarmement] |cRXP_WARN_sur vous pendant 6 secondes|r << Rogue/Paladin/Warrior
     >>Les |cRXP_ENEMY_Disciples du crépuscule|r |cRXP_WARN_lancent|r |T135953:0|t[Rénovation] |cRXP_WARN_et un sort de |T135915:0|t[Soins] de 3 secondes|r
@@ -1953,7 +1953,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Volcor|r
     .turnin 993 >> Rendez la quête Un maître perdu
     .accept 995 >> Acceptez la quête Évasion par la ruse
-    .timer 20,RP de Évasion par la ruse
+    .timer 20,Évasion par la ruse RP
     .target Volcor
     .isQuestTurnedIn 986
 step
@@ -1994,7 +1994,7 @@ step
 step
     .goto Ashenvale,27.26,35.58
     >>|cRXP_WARN_Escortez |cRXP_FRIENDLY_Kerlonian|r jusqu'au poste de Maestra à Orneval|r
-    .use 13536 >> |cRXP_WARN_Utilisez la|r |T134229:0|t[|cRXP_LOOT_Corne de l'éveil|r] |cRXP_WARN_dès que |cRXP_FRIENDLY_Kerlonian|r s'endort|r
+    .use 13536 >> Utilisez la [|cRXP_LOOT_Horn of Awakening|r] |cRXP_WARN_dès que |cRXP_FRIENDLY_Kerlonian|r s'endort|r
     >>|cRXP_WARN_Évitez de rester sur la route principale autant que possible. Les ennemis n'apparaîtront que si vous restez sur la route|r
     .complete 5321,2
     .isOnQuest 5321
@@ -2085,7 +2085,7 @@ step
     .subzone 415 >> Voyagez jusqu'à Astranaar
 step
     .goto Ashenvale,34.40,48.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Daelyshia|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|cRXP_FRIENDLY_Daelyshia|r
     .fp Astranaar>> Prenez le chemin de vol d'Astranaar
 	.target Daelyshia
 step
@@ -2169,7 +2169,7 @@ step
 step
 .dungeon WC
     #completewith EnterWC
-    >>Tuez tout type de créatures |cRXP_ENEMY_Deviate|r. Dépouillez-les pour leur |cRXP_LOOT_Deviate Hides|r
+    >>Tuez tous types de créatures |cRXP_ENEMY_Deviate|r. Dépouillez-les pour leur |cRXP_LOOT_Deviate Hides|r
     >>Cette quête peut être complétée à l'INTÉRIEUR et à l'EXTÉRIEUR des Cavernes des Lamentations
     .complete 1486,1 -- Deviate Hide (20)
     .isOnQuest 1486
@@ -2198,7 +2198,7 @@ step
     .zoneskip 1414,1 -- similar to stockades, no subzone for WC
 step
 .dungeon WC
-    >>Tuez tout type de créatures |cRXP_ENEMY_Deviate|r. Dépouillez-les pour leur |cRXP_LOOT_Deviate Hides|r
+    >>Tuez tous types de créatures |cRXP_ENEMY_Deviate|r. Dépouillez-les pour leur |cRXP_LOOT_Deviate Hides|r
     .complete 1487,1 -- Deviate Ravager slain (7)
     .complete 1487,2 -- Deviate Viper slain (7)
     .complete 1487,3 -- Deviate Shambler slain (7)
@@ -2218,7 +2218,7 @@ step
 step
 .dungeon WC
     #completewith next
-    >>Tuez tout type de créatures |cRXP_ENEMY_Deviate|r. Dépouillez-les pour leur |cRXP_LOOT_Deviate Hides|r
+    >>Tuez tous types de créatures |cRXP_ENEMY_Deviate|r. Dépouillez-les pour leur |cRXP_LOOT_Deviate Hides|r
     .complete 1486,1 -- Deviate Hide (20)
     .isOnQuest 1486
 step
@@ -2235,7 +2235,7 @@ step
     .mob Mutanus the Devourer
 step
 .dungeon WC
-    >>Tuez tout type de créatures |cRXP_ENEMY_Deviate|r. Dépouillez-les pour leur |cRXP_LOOT_Deviate Hides|r
+    >>Tuez tous types de créatures |cRXP_ENEMY_Deviate|r. Dépouillez-les pour leur |cRXP_LOOT_Deviate Hides|r
     >>Cette quête peut être complétée à l'INTÉRIEUR et à l'EXTÉRIEUR des Cavernes des Lamentations
     .complete 1486,1 -- Deviate Hide (20)
     .isOnQuest 1486

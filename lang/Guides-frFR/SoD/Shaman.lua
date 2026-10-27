@@ -969,7 +969,7 @@ step
     .xp <25,1
 step
     #completewith next
-    .zone Hillsbrad Foothills >>Voyagez aux Contreforts de Hautebrande
+    .zone Hillsbrad Foothills >>Voyagez aux Contreforts d'Hillsbrad
     .train 410095,1
     .xp <25,1
 step
@@ -1036,7 +1036,7 @@ step
     .xp >25,1
 step
     #completewith next
-    .zone Hillsbrad Foothills >>Voyagez aux Contreforts de Hautebrande
+    .zone Hillsbrad Foothills >>Voyagez aux Contreforts d'Hillsbrad
     .train 410095,1
 step
     #loop
@@ -2676,7 +2676,7 @@ step
     .waypoint Thousand Needles,54.29,48.10,40,0
     >>Tuez les |cRXP_ENEMY_Serpent-nuage|r. Dépouillez-les pour leurs |cRXP_LOOT_Crocs de serpent-nuage|r
     .collect 213709,3 --Cloud Serpent Fang (3x)
-    .mob Cloud Serpent
+    .mob Serpent-nuage
     .mob Venomous Cloud Serpent
     .mob Elder Cloud Serpent
 step

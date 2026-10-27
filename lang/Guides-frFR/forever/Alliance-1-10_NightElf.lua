@@ -4,6 +4,7 @@ if faction == "Horde" then return end
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 #season 0,1
 << Alliance
 #name 1-6 Sombrevallon
@@ -443,6 +444,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 #season 0,1
 << Alliance
 #name 6-11 Teldrassil
@@ -548,7 +550,7 @@ step << Hunter
     .target Jeena Featherbow
 step << Hunter
     #completewith next
-    +Équipez le [Arc courbe en bois de corne]
+    +Équipez l'[Arc courbe en bois de corne]
     .use 2506
     .itemcount 2506,1
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.37
@@ -682,7 +684,7 @@ step << Druid
     #optional
     #completewith end
     #label GatheringQ
-    .skill herbalism,15 >>Montez votre [Herboristerie] à un niveau de 15 pour vous permettre de récolter 5 [Terrestrine] pour une quête de classe importante plus tard. Vous pourrez ensuite oublier le métier
+    .skill herbalism,15 >>Montez votre [Herboristerie] à un niveau de 15 pour être capable de récolter 5 [Terrestrine] pour une quête de classe importante plus tard. Vous pourrez l'oublier plus tard
     .collect 2449,5,6123,1 --Earthroot (5)
     .disablecheckbox
 step << Druid
@@ -695,7 +697,7 @@ step << Druid
 step << Priest
     .goto 1438/1,900.01,9675.85
     >>Ciblez |cRXP_FRIENDLY_Sentinel Shaya|r
-    >>Lancez [Soins inférieurs (Rang 2)] |cRXP_WARN_and|r [Mot de pouvoir : Robustesse] sur |cRXP_FRIENDLY_Sentinel Shaya|r
+    >>Lancez |T135929:0|t[Soins inférieurs (Rang 2)] et |T135987:0|t[Mot de pouvoir : Robustesse] sur |cRXP_FRIENDLY_Sentinel Shaya|r
     .complete 5621,1 --Heal and fortify Sentinel Shaya
     .target Sentinel Shaya
 step
@@ -783,7 +785,7 @@ step
     >>Tuez les |cRXP_ENEMY_Sabres-de-nuit sauvages|r et dépouillez-les pour leurs |cRXP_LOOT_Crocs|r et |cRXP_LOOT_Fourrures|r
     >>Tuez les |cRXP_ENEMY_Strigid Owls|r. Dépouillez-les pour leur|cRXP_LOOT_Feathers|r
     >>Tuez les |cRXP_ENEMY_Webwood Lurkers|r. Dépouillez-les pour leur |cRXP_LOOT_Silk|r
-    >>Gardez vos [Petit oeuf] et vos [Petite patte d'araignée] pour monter votre niveau de [Cuisine] plus tard
+    >>Gardez vos [Petit oeuf] et vos [Petite pattes d'araignée] pour monter votre niveau de [Cuisine] plus tard
     >>===========================================
     >>|cRXP_WARN_Passez cette étape si vous ne trouvez pas de mob à proximité pour compléter l'objectif !|r
     .complete 87288,1 --Soft Nightsaber Pelt (x6)
@@ -862,7 +864,7 @@ step << Hunter
     .target Jeena Featherbow
 step << Hunter
     #completewith next
-    +Équipez le [Arc courbe en bois de corne]
+    +Équipez l'[Arc courbe en bois de corne]
     .use 2506
     .itemcount 2506,1
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.37
@@ -1174,7 +1176,7 @@ step
     >>Tuez les |cRXP_ENEMY_Sabres-de-nuit sauvages|r et dépouillez-les pour leurs |cRXP_LOOT_Crocs|r et |cRXP_LOOT_Fourrures|r
     >>Tuez les |cRXP_ENEMY_Strigid Owls|r. Dépouillez-les pour leur|cRXP_LOOT_Feathers|r
     >>Tuez les |cRXP_ENEMY_Webwood Lurkers|r. Dépouillez-les pour leur |cRXP_LOOT_Silk|r
-    >>Gardez vos [Petit oeuf] et vos [Petite patte d'araignée] pour monter votre niveau de [Cuisine] plus tard
+    >>Gardez vos [Petit oeuf] et vos [Petite pattes d'araignée] pour monter votre niveau de [Cuisine] plus tard
     >>====================================================================================
     >>|cRXP_WARN_Passez cette étape si vous ne trouvez pas de mob à proximité pour compléter l'objectif !|r
     .complete 87288,1 --Soft Nightsaber Pelt (x6)
@@ -1308,7 +1310,7 @@ step << Druid/Priest
     .turnin 487 >> Rendez la quête La route de Darnassus
 step
     #completewith next
-    .goto 1438/1,1863.46,10665.16,50 >> Voyagez jusqu'à la clairière de l'Oracle
+    .goto 1438/1,1899.700,10582.900,50 >> Voyagez jusqu'à la clairière de l'Oracle
 step
     .goto 1438/1,1899.700,10582.900
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à la |cRXP_FRIENDLY_Sentinelle Eralya Feuillombre::275683|r
@@ -1326,11 +1328,10 @@ step
     .complete 7383,1 --Collect Filled Amethyst Phial (x1)
 
 --with the new quests, druids can go straight to 10, a 5 minute save later down the road
---@TODO add mist here
 step << Druid/Priest
     #completewith next
     >>Tuez les |cRXP_ENEMY_Bloodfeather Harpies|r. Dépouillez les pour leur |cRXP_LOOT_Belts|r
-    >>Les |cRXP_ENEMY_Bloodfeather Matriarchs|r lancent [Vague de soins] et [Éclair] qui inflige des dégâts importants. Essayez de les tuer rapidement
+    >>Les |cRXP_ENEMY_Bloodfeather Matriarchs|r lancent [Vague de soins] et [Éclair] qui inflige énormément de dégâts. Essayez de les tuer rapidement
     >>|cRXP_WARN_Évitez-les autant que possible|r
     .complete 937,1 --Collect Bloodfeather Belt (x6)
     .mob Bloodfeather Harpy
@@ -1356,7 +1357,7 @@ step
 	#label harpies
     .goto 1438/1,2102.82,10819.27,0,0
     >>Tuez les |cRXP_ENEMY_Bloodfeather Harpies|r. Dépouillez les pour leur |cRXP_LOOT_Belts|r
-    >>Les |cRXP_ENEMY_Bloodfeather Matriarchs|r lancent [Vague de soins] et [Éclair] qui inflige des dégâts importants. Essayez de les tuer rapidement
+    >>Les |cRXP_ENEMY_Bloodfeather Matriarchs|r lancent [Vague de soins] et [Éclair] qui inflige énormément de dégâts. Essayez de les tuer rapidement
     >>|cRXP_WARN_Évitez-les autant que possible|r
     .complete 937,1 --Collect Bloodfeather Belt (x6)
     .mob Bloodfeather Harpy
@@ -1417,7 +1418,7 @@ step << Hunter
 step << Hunter
     #sticky
     #label xp10
-    .xp 9+800 >> Broyez jusqu'à ce que vous ayez 800 XP au niveau 9
+    .xp 9+800 >> Tuez des mobs jusqu'à avoir 800xp dans le niveau 9
     >>|cRXP_WARN_Une fois que vous atteignez ce seuil d'expérience, ignorez la quête des harpies/l'escorte et allez directement à Darnassus. Vous aurez une autre occasion de terminer ces quêtes plus tard|r
 step << Hunter
     #completewith xp10
@@ -1437,10 +1438,7 @@ step << Hunter
 step << !Rogue
     #softcore
     #requires xp10
-    #completewith next
     .deathskip >> Mourez et ressuscitez au Gardien des âmes de Darnassus
-    >>|cRXP_WARN_Assurez-vous que vous êtes plus proche du cimetière de Darnassus que de celui de Dolanaar, sinon vous pourriez atterrir au mauvais cimetière. Courez jusqu'à sortir complètement de la tanière, puis mourez si vous n'êtes pas sûr de la distance|r << sod Priest
-    >>|cRXP_WARN_Assurez-vous que vous êtes plus proche du cimetière de Darnassus que de celui de Dolanaar, sinon vous pourriez atterrir au mauvais cimetière. Courez sur le côté ouest de la rivière, puis mourez si vous n'êtes pas sûr de la distance|r << sod Hunter/sod Warrior/sod Druid
     .target Gardien des âmes
 step << !Rogue
     #hardcore
@@ -1636,7 +1634,7 @@ step << Druid NightElf
 step << Druid NightElf
 	#completewith next
 	.cast 18960 >> Lancez [Téléportation : Reflet-de-lune]
-    >>Ceci vous fera revenir plus vite
+    >>Ceci rendra votre retour plus rapide
 step << Druid NightElf
     .goto 1450/1,-2678.76,8019.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Dendrite Starblaze|r à l'étage
@@ -1660,12 +1658,6 @@ step << !Druid
     .collect 3371,1 --Empty Vial
     .target Narret Shadowgrove
 step
-    .goto 1438/1,984.94,9898.58
-    .target Tallonkai Swiftroot
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tallonkai Swiftroot|r au sommet de l'Arbre
-    .turnin 932 >> Rendez la quête Haine folle
-    .turnin 2459 >> Rendez la quête Ferocitas le Mangeur de rêves
-step
     #optional
     .goto 1438/1,988.30,9891.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Aldia|r en haut des escaliers
@@ -1673,10 +1665,16 @@ step
     .target Aldia
     .isQuestComplete 87288
 step
+    .goto 1438/1,984.94,9898.58
+    .target Tallonkai Swiftroot
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tallonkai Swiftroot|r au sommet de l'Arbre
+    .turnin 932 >> Rendez la quête Haine folle
+    .turnin 2459 >> Rendez la quête Ferocitas le Mangeur de rêves
+step
     >>Tuez les |cRXP_ENEMY_Sabres-de-nuit sauvages|r et dépouillez-les pour leurs |cRXP_LOOT_Crocs|r et |cRXP_LOOT_Fourrures|r
     >>Tuez les |cRXP_ENEMY_Strigid Owls|r. Dépouillez-les pour leur|cRXP_LOOT_Feathers|r
     >>Tuez les |cRXP_ENEMY_Webwood Lurkers|r. Dépouillez-les pour leur |cRXP_LOOT_Silk|r
-    >>Gardez vos [Petit oeuf] et vos [Petite patte d'araignée] pour monter votre niveau de [Cuisine] plus tard
+    >>Gardez vos [Petit oeuf] et vos [Petite pattes d'araignée] pour monter votre niveau de [Cuisine] plus tard
     >>====================================================================================
     >>|cRXP_WARN_Passez cette étape si vous ne trouvez pas de mob à proximité pour compléter l'objectif !|r
     .complete 87288,1 --Soft Nightsaber Pelt (x6)
@@ -1747,7 +1745,7 @@ step << Hunter/Warrior/Rogue
     .target Moon Priestess Amara
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Moon Priestess Amara|r
     .turnin 487 >> Rendez la quête La route de Darnassus
-	.maxlevel 9
+	.xp 9.56,1 --Only Turn in early if needed to ding 10
 step << Hunter
 #xprate <1.99
     #optional
@@ -1965,15 +1963,6 @@ step << Priest
 	.trainer >> Apprenez vos sorts de classe
     .target Laurna Morninglight
 step << Hunter
-	#xprate <1.5--money issues 1.5x
-    .goto 1438/1,947.57,9812.38
-    .money <0.0504
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Shalomon|r
-    >>|cRXP_BUY_Achetez une|r |T135145:0|t[Canne de marche]
-    >>|cRXP_WARN_Vous l'équiperez plus tard. Passez cette étape si vous trouvez un bâton différent|r
-    .collect 2495,1 -- Walking Stick (1)
-    .target Shalomon
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.20step
     .goto 1438/1,997.200,9903.601
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Byancie::6094|r
     .target Byancie::6094
@@ -2037,7 +2026,7 @@ step << Hunter
 	.goto 1438/1,1900.12,10853.85,0
     >>Lancez [Apprivoiser une bête] |cRXP_WARN_sur un |cRXP_ENEMY_Strigid Hunter|r pour le dompter|r -- .tame 1997
     .train 2981 >> Attaquez des mobs avec celui-ci pour qu'il apprenne [Claw (Rank 2)]
-    .link https://www.wow-petopia.com/classic/training.php >> |cRXP_WARN_Cliquez ici pour plus d'information sur le dressage des familiers|r
+    .link https://www.wow-petopia.com/classic/training.php >> Cliquez ici pour plus d'information sur le dressage des familiers
 	.unitscan Strigid Hunter
 step
     .goto 1438/1,1691.36,10412.66
@@ -2064,7 +2053,7 @@ step
 step << Rogue
     .goto 1438/1,1879.75,10976.02
     >>Lancez [Vol à la tire] sur |cRXP_ENEMY_Sethir the Ancient|r
-    >>Vous devez être en [Camouflage] pour utiliser votre [Vol à la tire]
+    >>Vous devez être en [Camouflage] pour utiliser [Vol à la tire]
     >>|cRXP_ENEMY_Sethir the Ancient|r marche le long de la grande branche d'arbre
     >>|cRXP_WARN_Évitez d'affronter |cRXP_ENEMY_Sethir the Ancient|r. Laissez le passez devant vous, puis utilisez|r [Camouflage] et ensuite [Vol à la tire] lorsque vous êtes derrière lui
     .complete 2242,1
@@ -2074,7 +2063,7 @@ step
 	#label harpies2
     .goto 1438/1,2102.82,10819.27,0,0
     >>Tuez les |cRXP_ENEMY_Bloodfeather Harpies|r. Dépouillez les pour leur |cRXP_LOOT_Belts|r
-    >>Les |cRXP_ENEMY_Bloodfeather Matriarchs|r lancent [Vague de soins] et [Éclair] qui inflige des dégâts importants. Essayez de les tuer rapidement
+    >>Les |cRXP_ENEMY_Bloodfeather Matriarchs|r lancent [Vague de soins] et [Éclair] qui inflige énormément de dégâts. Essayez de les tuer rapidement
     .complete 937,1 --Collect Bloodfeather Belt (x6)
     .mob Bloodfeather Harpy
     .mob Bloodfeather Rogue
@@ -2407,6 +2396,14 @@ step << Rogue
     >>|cRXP_BUY_Achetez une|r [Dague de lancer équilibrée]
     .collect 2946,1 -- Balanced Throwing Dagger
     .target Turian
+step << Hunter
+    #optional
+    .goto 1457/1,2511.04,10178.01
+    .target Jocaste
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Jocaste|r
+    .train 2974 >>Apprenez |T132309:0|t[|cRXP_LOOT_Coupure d'ailes|r]
+    .xp <12,1
+    .money <0.0600
 step
     #completewith NessaShadowsong
     .goto 1457/1,2636.53,9956.80

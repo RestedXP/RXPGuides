@@ -1960,7 +1960,7 @@ step
 	.goto Dun Morogh,49.09,54.74,40,0
 	.goto Dun Morogh,49.61,54.32,40,0
 	.goto Dun Morogh,51.43,53.21,40,0
-    .xp 5+2690 >> Monter votre expérience jusqu'à 2690+/2800xp
+    .xp 5+2690 >> Montez votre expérience jusqu'à 2690+/2800xp
     .mob Young Black Bear
     .mob Crag Boar
 step
@@ -3067,7 +3067,7 @@ step
 step
     #completewith next
     .goto Wetlands,10.80,59.80,10,0
-    .goto Wetlands,10.63,60.10,10 >>Entrez à l'intérieur de l'auberge
+    .goto Wetlands,10.63,60.10,10 >>Entrez dans l'auberge
 step
     .goto Wetlands,10.50,60.20
     >>Sautez sur le lustre en bas des escaliers
@@ -3623,7 +3623,7 @@ step
 step
     #completewith next
     .goto Wetlands,10.80,59.80,10,0
-    .goto Wetlands,10.63,60.10,10 >>Entrez à l'intérieur de l'auberge
+    .goto Wetlands,10.63,60.10,10 >>Entrez dans l'auberge
 step
     .goto Wetlands,10.50,60.20
     >>Sautez sur le lustre en bas des escaliers
@@ -4610,7 +4610,7 @@ step
     #completewith next
     .goto Loch Modan,35.25,47.74,12,0
     .goto Loch Modan,35.39,48.36,12,0
-    >>Entrez à l'intérieur de l'auberge
+    >>Entrez dans l'auberge
     .goto Loch Modan,34.828,49.283,10 >>Voyagez vers |cRXP_FRIENDLY_Vidra Poêlâtre|r
 step
     .goto Loch Modan,34.828,49.283

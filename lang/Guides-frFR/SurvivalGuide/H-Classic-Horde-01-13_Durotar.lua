@@ -64,7 +64,7 @@ step << Warlock
     .goto Durotar,41.52,68.36,12,0
     .goto Durotar,41.24,68.16,12,0
     .goto Durotar,40.82,68.03,12,0
-    .goto Durotar,40.56,68.44,12 >>Voyagez vers |cRXP_FRIENDLY_Hraug|r
+    .goto Durotar,40.56,68.44,12 >>Parlez à |cRXP_FRIENDLY_Hraug|r
 step << Warlock
     .goto Durotar,40.56,68.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Hraug|r
@@ -79,7 +79,7 @@ step << Warlock
 step << !Warrior !Rogue
     .goto Durotar,42.59,67.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Duokna|r
-    >>|cRXP_BUY_Achetez des|r [Refreshing Spring Water] |cRXP_BUY_à Duokna|r << !Hunter
+    >>|cRXP_BUY_Achetez des|r [Eau de source] |cRXP_BUY_à Shara|r << !Hunter
     >>|cRXP_BUY_Achetez des|r [Flèche grossière] |cRXP_BUY_à Duokna|r << Hunter
     .collect 159,30,6394,1 << !Hunter !Shaman --Refreshing Spring Water (30)
     .collect 2512,1000,6394,1 << Hunter --Rough Arrow (1000)
@@ -89,7 +89,7 @@ step << !Warrior !Rogue
 step << Warlock
     .goto Durotar,42.59,67.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Duokna|r
-    >>|cRXP_BUY_Achetez des|r [Refreshing Spring Water] |cRXP_BUY_à Duokna|r
+    >>|cRXP_BUY_Achetez des|r [Eau de source] |cRXP_BUY_à Shara|r
     .collect 159,5,6394,1 --Refreshing Spring Water (5)
     .target Duokna
     .money <0.0025
@@ -323,7 +323,7 @@ step << Warlock
     .goto Durotar,41.52,68.36,12,0
     .goto Durotar,41.24,68.16,12,0
     .goto Durotar,40.82,68.03,12,0
-    .goto Durotar,40.56,68.44,12 >>Voyagez vers |cRXP_FRIENDLY_Hraug|r
+    .goto Durotar,40.56,68.44,12 >>Parlez à |cRXP_FRIENDLY_Hraug|r
     .money >0.01
 step << Warlock
     .goto Durotar,40.56,68.44
@@ -346,7 +346,7 @@ step
 step << !Rogue
     .goto Durotar,42.59,67.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Duokna|r
-    >>|cRXP_BUY_Achetez des|r [Refreshing Spring Water] |cRXP_BUY_à Duokna|r << !Warrior !Hunter
+    >>|cRXP_BUY_Achetez des|r [Eau de source] |cRXP_BUY_à Shara|r << !Warrior !Hunter
     >>|cRXP_BUY_Achetez des|r [Flèche grossière] |cRXP_BUY_à Duokna|r << Hunter
     .collect 159,15,6394,1 << !Rogue !Warrior !Hunter --Refreshing Spring Water (15)
     .collect 2512,1000,6394,1 << Hunter --Rough Arrow (1000)
@@ -579,7 +579,7 @@ step
 step
     .goto Durotar,42.59,67.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Duokna|r
-    >>|cRXP_BUY_Achetez des|r [Refreshing Spring Water] |cRXP_BUY_à Duokna|r << !Rogue !Warrior !Hunter
+    >>|cRXP_BUY_Achetez des|r [Eau de source] |cRXP_BUY_à Shara|r << !Rogue !Warrior !Hunter
     >>|cRXP_BUY_Achetez des|r [Flèche grossière] |cRXP_BUY_à Duokna|r << Hunter
     .collect 159,5,6394,1 << !Rogue !Warrior !Hunter --Refreshing Spring Water (5)
     .collect 2512,1000,6394,1 << Hunter --Rough Arrow (1000)
@@ -974,14 +974,14 @@ step << Rogue
 step << Rogue
     .goto Durotar,41.27,68.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Rwag|r
-    .train 1757 >> Apprenez [Attaque Pernicieuse]
+    .train 1757 >> Apprenez [Attaque pernicieuse]
     .train 1776 >> Apprenez [Suriner]
     .target Rwag
     .money <0.02
 step << Rogue
     .goto Durotar,41.27,68.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Rwag|r
-    .train 1757 >> Apprenez [Attaque Pernicieuse]
+    .train 1757 >> Apprenez [Attaque pernicieuse]
     .target Rwag
 step << Warlock
     #completewith Hraug3
@@ -989,7 +989,7 @@ step << Warlock
     .goto Durotar,41.52,68.36,12,0
     .goto Durotar,41.24,68.16,12,0
     .goto Durotar,40.82,68.03,12,0
-    .goto Durotar,40.56,68.44,12 >>Voyagez vers |cRXP_FRIENDLY_Hraug|r
+    .goto Durotar,40.56,68.44,12 >>Parlez à |cRXP_FRIENDLY_Hraug|r
 step << Warlock
     #label Hraug3
     .goto Durotar,40.56,68.44
@@ -1114,14 +1114,14 @@ step << Rogue
 step << Warlock/Mage/Priest
     .goto Durotar,56.29,73.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Parlez à|r |cRXP_FRIENDLY_K'waii|r
-    >>|cRXP_BUY_Achetez des|r [Refreshing Spring Water] |cRXP_BUY_à Duokna|r --Refreshing Spring Water (20)
+    >>|cRXP_BUY_Achetez des|r [Eau de source] |cRXP_BUY_à Shara|r --Refreshing Spring Water (20)
     .collect 159,20,786,1
     .target K'waii
     .money <0.010
 step << Warlock/Mage/Priest
     .goto Durotar,56.29,73.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Parlez à|r |cRXP_FRIENDLY_K'waii|r
-    >>|cRXP_BUY_Achetez des|r [Refreshing Spring Water] |cRXP_BUY_à Duokna|r --Refreshing Spring Water (10)
+    >>|cRXP_BUY_Achetez des|r [Eau de source] |cRXP_BUY_à Shara|r --Refreshing Spring Water (10)
     .collect 159,10,786,1
     .target K'waii
     .money >0.001
@@ -1239,7 +1239,7 @@ step << Troll Warrior
 step << Hunter
     #optional
     #completewith Bonfire
-    +Équipez le [Arc courbe en bois de corne]
+    +Équipez l'[Arc courbe en bois de corne]
     .use 2506
     .itemcount 2506,1
     .itemStat 18,QUALITY,<7
@@ -1318,14 +1318,14 @@ step
 step << Warlock/Mage/Priest
     .goto Durotar,56.29,73.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Parlez à|r |cRXP_FRIENDLY_K'waii|r
-    >>|cRXP_BUY_Achetez des|r [Refreshing Spring Water] |cRXP_BUY_à Duokna|r --Refreshing Spring Water (20)
+    >>|cRXP_BUY_Achetez des|r [Eau de source] |cRXP_BUY_à Shara|r --Refreshing Spring Water (20)
     .collect 159,20,784,1
     .target K'waii
     .money <0.010
 step << Warlock/Mage/Priest
     .goto Durotar,56.29,73.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Parlez à|r |cRXP_FRIENDLY_K'waii|r
-    >>|cRXP_BUY_Achetez des|r [Refreshing Spring Water] |cRXP_BUY_à Duokna|r --Refreshing Spring Water (10)
+    >>|cRXP_BUY_Achetez des|r [Eau de source] |cRXP_BUY_à Shara|r --Refreshing Spring Water (10)
     .collect 159,10,784,1
     .target K'waii
     .money <0.0050
@@ -1450,7 +1450,7 @@ step << Troll Warrior
 step << Hunter
     #optional
     #completewith TravelToTiragarde
-    +Équipez le [Arc courbe en bois de corne]
+    +Équipez l'[Arc courbe en bois de corne]
     .use 2506
     .itemcount 2506,1
     .itemStat 18,QUALITY,<7
@@ -1519,7 +1519,7 @@ step
     #label TravelToTiragarde
     .goto Durotar,57.26,54.69,60,0
     .subzone 372 >> Voyagez vers le Donjon de Tiragarde
-    >>Tuez des mobs sur la route
+    >>Tuez des créatures sur la route
     .isOnQuest 784
 step
     #sticky
@@ -1559,7 +1559,7 @@ step
     .goto Durotar,59.94,57.61,5,0
     .goto Durotar,59.27,57.65
     >>Montez les escaliers dans le donjon
-    >>Ouvrez |cRXP_PICK_Benedict's Chest|r. Ramassez la [|cRXP_LOOT_Aged Envelope|r]
+    >>Ouvrez |cRXP_PICK_Benedict's Chest|r. Dépouillez-le pour son [|cRXP_LOOT_Aged Envelope|r]
     >>Utilisez l'[|cRXP_LOOT_Aged Envelope|r] pour commencer la quête
     .collect 4881,1,830 --Collect Aged Envelope (1)
     .accept 830 >>Acceptez la quête Les ordres de l'amiral
@@ -1819,7 +1819,7 @@ step << Hunter
 step << Hunter
     #optional
     #completewith Toolboxes
-    +Équipez le [Arc courbe en bois de corne]
+    +Équipez l'[Arc courbe en bois de corne]
     .use 2506
     .itemcount 2506,1
     .itemStat 18,QUALITY,<7
@@ -2125,7 +2125,7 @@ step
     .goto Durotar,55.95,73.93
 step
     #completewith Stolensupplies
-    +|cRXP_WARN_Mettez dans vos barres votre|r |T133728:0|t[Crâne au faible rougeoiement] |cRXP_WARN_et la|r |T134712:0|t[Colle très collante]. |cRXP_WARN_Gardez-les pour les situations d'urgence|r
+    +Mettez dans vos barres votre [Crâne au faible rougeoiement] et votre [Colle très collante]. Gardez-les pour des situations d'urgence
 step
     #loop
     .goto Durotar,49.22,48.96,0
@@ -3674,7 +3674,7 @@ step << Warrior
     .isOnQuest 1498
 step << Warrior
     .goto Tirisfal Glades,61.85,52.55
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à  |cRXP_FRIENDLY_Austil|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Austil|r
     .accept 1818 >> Acceptez la quête Parler à Dillinger
     .target Austil de Mon
     .xp <10,1
@@ -3937,7 +3937,7 @@ step << Warrior
     .isOnQuest 1498
 step << Warrior
     .goto Tirisfal Glades,61.85,52.55
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à  |cRXP_FRIENDLY_Austil|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Austil|r
     .accept 1818 >> Acceptez la quête Parler à Dillinger
     .target Austil de Mon
     .isQuestAvailable 1498
@@ -4162,7 +4162,7 @@ step << Warlock/Mage/Rogue
     .goto Undercity,27.39,30.23,35,0
     .goto Undercity,21.89,43.35,35,0
     .goto Tirisfal Glades,51.10,71.53,50,0
-    .zone Tirisfal Glades >> Quittez Undercity par les Égouts
+    .zone Tirisfal Glades >> Sortez de Fossoyeuse par les Égouts
     .zoneskip Tirisfal Glades
 step << Undead Priest
     #optional
@@ -4175,7 +4175,7 @@ step << Undead Priest
     .goto Undercity,27.39,30.23,35,0
     .goto Undercity,21.89,43.35,35,0
     .goto Tirisfal Glades,51.10,71.53,50,0
-    .zone Tirisfal Glades >> Quittez Undercity par les Égouts
+    .zone Tirisfal Glades >> Sortez de Fossoyeuse par les Égouts
     .zoneskip Tirisfal Glades
 step
     #optional
@@ -4622,7 +4622,7 @@ step << Mage
     .xp <12,1
 step << Warrior
     .goto Tirisfal Glades,61.85,52.53
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à  |cRXP_FRIENDLY_Austil|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Austil|r
     .train 7384 >>Apprenez |T132223:0|t[Fulgurance]
     .target Austil de Mon
     .xp <12,1
@@ -4939,7 +4939,7 @@ step << Mage
     .xp <12,1
 step << Warrior
     .goto Tirisfal Glades,61.85,52.53
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à  |cRXP_FRIENDLY_Austil|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Austil|r
     .train 7384,1 >>Apprenez |T132223:0|t[Fulgurance]
     .target Austil de Mon
     .xp <12,1
@@ -5106,7 +5106,7 @@ step << Mage
     .xp <14,1
 step << Warrior
     .goto Tirisfal Glades,61.85,52.53
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à  |cRXP_FRIENDLY_Austil|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Austil|r
     .train 7384,1 >>Apprenez |T132223:0|t[Fulgurance]
     .target Austil de Mon
     .xp <12,1
@@ -5114,7 +5114,7 @@ step << Warrior
 step << Warrior
     #optional
     .goto Tirisfal Glades,61.85,52.53
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à  |cRXP_FRIENDLY_Austil|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Austil|r
     .train 1160 >> Apprenez vos sorts de classe
     .target Austil de Mon
     .xp <14,1
@@ -5393,7 +5393,7 @@ step
     .goto Undercity,27.39,30.23,35,0
     .goto Undercity,21.89,43.35,35,0
     .goto Tirisfal Glades,51.10,71.53,50,0
-    .zone Tirisfal Glades >> Quittez Undercity par les Égouts
+    .zone Tirisfal Glades >> Sortez de Fossoyeuse par les Égouts
     .zoneskip Tirisfal Glades
     .zoneskip Silverpine Forest
 step

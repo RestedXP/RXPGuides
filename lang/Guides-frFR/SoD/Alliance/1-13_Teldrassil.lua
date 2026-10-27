@@ -320,7 +320,7 @@ step << Hunter
 step << Hunter
     #season 2
     #completewith next
-    +Équipez le [Arc courbe en bois de corne]
+    +Équipez l'[Arc courbe en bois de corne]
     .use 2506
     .itemcount 2506,1
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.37
@@ -421,7 +421,7 @@ step << Hunter
     .target Keina
 step << Hunter
     #completewith next
-    +Équipez le [Arc courbe en bois de corne]
+    +Équipez l'[Arc courbe en bois de corne]
     .use 2506
     .itemcount 2506,1
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.37
@@ -625,7 +625,7 @@ step << Hunter
     .target Jeena Featherbow
 step << Hunter
     #completewith next
-    +Équipez le [Arc courbe en bois de corne]
+    +Équipez l'[Arc courbe en bois de corne]
     .use 2506
     .itemcount 2506,1
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.37
@@ -724,7 +724,7 @@ step
 step << Priest
     .goto Teldrassil,57.242,63.511
     >>Ciblez |cRXP_FRIENDLY_Sentinel Shaya|r
-    >>Lancez [Soins inférieurs (Rang 2)] |cRXP_WARN_and|r [Mot de pouvoir : Robustesse] sur |cRXP_FRIENDLY_Sentinel Shaya|r
+    >>Lancez |T135929:0|t[Soins inférieurs (Rang 2)] et |T135987:0|t[Mot de pouvoir : Robustesse] sur |cRXP_FRIENDLY_Sentinel Shaya|r
     .complete 5621,1 --Heal and fortify Sentinel Shaya
     .target Sentinel Shaya
 step
@@ -1398,7 +1398,7 @@ step << Rogue
     #optional
     #label topleft
     >>Tuez ou utilisez |T133644:0|t[Vol à la tire] sur les |cRXP_ENEMY_Furbolgs Pin-tordu|r. Dépouillez-les pour obtenir le |T134327:0|t[|cRXP_LOOT_Morceau supérieur gauche de carte]|r
-    >>Vous devez être en [Camouflage] pour utiliser votre [Vol à la tire]
+    >>Vous devez être en [Camouflage] pour utiliser [Vol à la tire]
     .collect 208602,1 -- Top-Left Map Piece (1)
     .mob Gnarlpine Ambusher
     .mob Gnarlpine Shaman
@@ -1466,7 +1466,7 @@ step << Rogue
     #season 2
     .goto Teldrassil,38.92,79.93
     >>Tuez ou utilisez |T133644:0|t[Vol à la tire] sur les |cRXP_ENEMY_Furbolgs Pin-tordu|r. Dépouillez-les pour obtenir le |T134327:0|t[|cRXP_LOOT_Morceau supérieur gauche de carte]|r
-    >>Vous devez être en [Camouflage] pour utiliser votre [Vol à la tire]
+    >>Vous devez être en [Camouflage] pour utiliser [Vol à la tire]
     .collect 208602,1 -- Top-Left Map Piece (1)
     .mob Gnarlpine Ambusher
     .mob Gnarlpine Shaman
@@ -1530,7 +1530,7 @@ step << Rogue
     #season 2
     #completewith xp10
     >>Tuez ou utilisez le |T133644:0|tVol à la tire sur les |cRXP_ENEMY_Harpies Plumesang|r. Dépouillez-les pour le |T134327:0|t[|cRXP_LOOT_Morceau inférieur droit de carte]|r
-    >>Vous devez être en [Camouflage] pour utiliser votre [Vol à la tire]
+    >>Vous devez être en [Camouflage] pour utiliser [Vol à la tire]
     .collect 208603,1 -- Bottom-Right Map Piece (1)
     .mob Bloodfeather Harpy
     .mob Bloodfeather Rogue
@@ -1544,7 +1544,7 @@ step
     #completewith xp10
 	#label harpies
     >>Tuez les |cRXP_ENEMY_Bloodfeather Harpies|r. Dépouillez les pour leur |cRXP_LOOT_Belts|r
-    >>Les |cRXP_ENEMY_Bloodfeather Matriarchs|r lancent [Vague de soins] et [Éclair] qui inflige des dégâts importants. Essayez de les tuer rapidement
+    >>Les |cRXP_ENEMY_Bloodfeather Matriarchs|r lancent [Vague de soins] et [Éclair] qui inflige énormément de dégâts. Essayez de les tuer rapidement
     .complete 937,1 --Collect Bloodfeather Belt (x6)
     .mob Bloodfeather Harpy
     .mob Bloodfeather Rogue
@@ -1628,7 +1628,7 @@ step << Rogue
     .goto Teldrassil,34.6,28.8,60,0
     .goto Teldrassil,37.8,43.0
     >>Tuez ou utilisez le |T133644:0|tVol à la tire sur les |cRXP_ENEMY_Harpies Plumesang|r. Dépouillez-les pour le |T134327:0|t[|cRXP_LOOT_Morceau inférieur droit de carte]|r
-    >>Vous devez être en [Camouflage] pour utiliser votre [Vol à la tire]
+    >>Vous devez être en [Camouflage] pour utiliser [Vol à la tire]
     .collect 208603,1 -- Bottom-Right Map Piece (1)
     .mob Bloodfeather Harpy
     .mob Bloodfeather Rogue
@@ -2165,7 +2165,7 @@ step << Hunter
 	.goto Teldrassil,37.6,28.8,0
     >>Lancez [Apprivoiser une bête] |cRXP_WARN_sur un |cRXP_ENEMY_Strigid Hunter|r pour le dompter|r -- .tame 1997
     .train 2981 >> Attaquez des mobs avec celui-ci pour qu'il apprenne [Claw (Rank 2)]
-    .link https://www.wow-petopia.com/classic/training.php >> |cRXP_WARN_Cliquez ici pour plus d'information sur le dressage des familiers|r
+    .link https://www.wow-petopia.com/classic/training.php >> Cliquez ici pour plus d'information sur le dressage des familiers
 	.unitscan Strigid Hunter
 step << Hunter
     #sticky
@@ -2235,7 +2235,7 @@ step << Rogue
 step << Rogue
     .goto Teldrassil,38.0,25.2
     >>Lancez [Vol à la tire] sur |cRXP_ENEMY_Sethir the Ancient|r
-    >>Vous devez être en [Camouflage] pour utiliser votre [Vol à la tire]
+    >>Vous devez être en [Camouflage] pour utiliser [Vol à la tire]
     >>|cRXP_ENEMY_Sethir the Ancient|r marche le long de la grande branche d'arbre
     >>|cRXP_WARN_Évitez d'affronter |cRXP_ENEMY_Sethir the Ancient|r. Laissez le passez devant vous, puis utilisez|r [Camouflage] et ensuite [Vol à la tire] lorsque vous êtes derrière lui
     .complete 2242,1
@@ -2246,7 +2246,7 @@ step << Rogue
     #completewith MistStart
     #label BottomRightMapPiece
     >>Tuez ou utilisez le |T133644:0|tVol à la tire sur les |cRXP_ENEMY_Harpies Plumesang|r. Dépouillez-les pour le |T134327:0|t[|cRXP_LOOT_Morceau inférieur droit de carte]|r
-    >>Vous devez être en [Camouflage] pour utiliser votre [Vol à la tire]
+    >>Vous devez être en [Camouflage] pour utiliser [Vol à la tire]
     .collect 208603,1 -- Bottom-Right Map Piece (1)
     .mob Bloodfeather Harpy
     .mob Bloodfeather Rogue
@@ -2260,7 +2260,7 @@ step << !sod/Warrior/Rogue/Druid
 	#label harpies2
     .goto Teldrassil,33.619,29.819,0,0
     >>Tuez les |cRXP_ENEMY_Bloodfeather Harpies|r. Dépouillez les pour leur |cRXP_LOOT_Belts|r
-    >>Les |cRXP_ENEMY_Bloodfeather Matriarchs|r lancent [Vague de soins] et [Éclair] qui inflige des dégâts importants. Essayez de les tuer rapidement
+    >>Les |cRXP_ENEMY_Bloodfeather Matriarchs|r lancent [Vague de soins] et [Éclair] qui inflige énormément de dégâts. Essayez de les tuer rapidement
     .complete 937,1 --Collect Bloodfeather Belt (x6)
     .mob Bloodfeather Harpy
     .mob Bloodfeather Rogue
@@ -2298,7 +2298,7 @@ step << Rogue
     .goto Teldrassil,36.0,34.4,60,0
     .goto Teldrassil,34.6,28.8,60,0
     >>Tuez ou utilisez le |T133644:0|tVol à la tire sur les |cRXP_ENEMY_Harpies Plumesang|r. Dépouillez-les pour le |T134327:0|t[|cRXP_LOOT_Morceau inférieur droit de carte]|r
-    >>Vous devez être en [Camouflage] pour utiliser votre [Vol à la tire]
+    >>Vous devez être en [Camouflage] pour utiliser [Vol à la tire]
     .collect 208603,1 -- Bottom-Right Map Piece (1)
     .mob Bloodfeather Harpy
     .mob Bloodfeather Rogue

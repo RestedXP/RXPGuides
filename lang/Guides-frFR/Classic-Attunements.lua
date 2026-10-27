@@ -7,7 +7,6 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Guides Endgame
 #subgroup Accès
 #name Accès au Repaire d'Onyxia (A)
-#guideKind attunement
 
 
 step
@@ -345,7 +344,6 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Guides Endgame
 #subgroup Accès
 #name Accès au Repaire d'Onyxia (H)
-#guideKind attunement
 
 step
     #completewith next
@@ -796,7 +794,6 @@ RXPGuides.RegisterGuide([[
 #subgroup Accès
 #group RestedXP Guides Endgame
 #name Accès pour le Cœur du Magma
-#guideKind attunement
 
 step
     #completewith next
@@ -843,7 +840,6 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Guides Endgame
 #subgroup Accès
 #name Accès au Repaire de l'Aile noire
-#guideKind attunement
 
 step
     #completewith next
@@ -889,8 +885,6 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Guides Endgame
 #subgroup Clés
 #name Clé du Sommet du pic Rochenoire
-#guideKind key
-#guideIcon rxp-icon-ring
 
 step
     #completewith next
@@ -983,8 +977,6 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Guides Endgame
 #subgroup Clés
 #name La clé de Scholomance (A)
-#guideKind key
-#guideIcon rxp-icon-key-2
 
 step
     #sticky
@@ -1244,8 +1236,6 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Guides Endgame
 #subgroup Clés
 #name La clé de Scholomance (H)
-#guideKind key
-#guideIcon rxp-icon-key-2
 
 
 step
@@ -1338,8 +1328,8 @@ step
     .isQuestTurnedIn 5095
 step
     .goto Western Plaguelands,40.5,51.8
-    .use 12807 >>Cliquez sur la|cRXP_PICK_Command Tent|r, puis utilisez votre |T132484:0|t[Scourge Banner]
-	>>Ces créatures sont assez difficiles à tuer et peuvent chain-pull, faites attention
+    .use 12807 >>Cliquez sur la|cRXP_PICK_Command Tent|r, puis utilisez votre [Bannière du Fléau]
+	>>|cRXP_WARN_Ces créatures sont assez difficiles à tuer et peuvent chain-pull, faites attention|r
     .complete 5096,1 --Destroy the command tent and plant the Scourge banner in the camp (1)
 step
     .goto Tirisfal Glades,83.15,68.92
@@ -1502,8 +1492,6 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Guides Endgame
 #subgroup Clés
 #name La clé des Profondeurs de Rochenoire
-#guideKind key
-#guideIcon rxp-icon-key-3
 
 
 step
@@ -1568,8 +1556,6 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Guides Endgame
 #subgroup Clés
 #name Clé de Hache-Tripes
-#guideKind key
-
 
 step
     #completewith next
@@ -1598,7 +1584,6 @@ RXPGuides.RegisterGuide([[
 
 #group RestedXP Guides Endgame
 #name Accès à Naxxramas
-#guideKind attunement
 #subgroup Accès
 
 step
@@ -1672,7 +1657,6 @@ RXPGuides.RegisterGuide([[
 
 #group RestedXP Guides Endgame
 #name Accès du Canyon de la Malechute
-#guideKind attunement
 #subgroup Accès
 <<sod
 

@@ -218,7 +218,7 @@ step
     #season 2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sarvis|r et à |cRXP_FRIENDLY_Elreth|r << !Warlock !Mage !Priest
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sarvis|r, |cRXP_FRIENDLY_Elreth|r, et à |cRXP_FRIENDLY_Maximillion|r << Warlock
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sarvis|r, |cRXP_FRIENDLY_Elreth|r, et à |cRXP_FRIENDLY_Maximillion|r << Mage
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sarvis|r, |cRXP_FRIENDLY_Elreth|r, et à |cRXP_FRIENDLY_Isabella|r << Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sarvis|r, |cRXP_FRIENDLY_Elreth|r, et à |cRXP_FRIENDLY_Duesten|r << Priest
     .turnin 364 >> Rendez la quête Lever le voile
     .accept 3095 >> Acceptez la quête Parchemin simple << Warrior
@@ -248,7 +248,7 @@ step
     #season 0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sarvis|r et à |cRXP_FRIENDLY_Elreth|r << !Warlock !Mage !Priest
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sarvis|r, |cRXP_FRIENDLY_Elreth|r, et à |cRXP_FRIENDLY_Maximillion|r << Warlock
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sarvis|r, |cRXP_FRIENDLY_Elreth|r, et à |cRXP_FRIENDLY_Maximillion|r << Mage
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sarvis|r, |cRXP_FRIENDLY_Elreth|r, et à |cRXP_FRIENDLY_Isabella|r << Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sarvis|r, |cRXP_FRIENDLY_Elreth|r, et à |cRXP_FRIENDLY_Duesten|r << Priest
     .turnin 364 >> Rendez la quête Lever le voile
     .accept 3095 >> Acceptez la quête Parchemin simple << Warrior
@@ -362,7 +362,7 @@ step << Mage/Warlock/Priest
     .goto Tirisfal Glades,32.29,65.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Joshua|r
     >>|cRXP_BUY_Achetez des|r [Refreshing Spring Water] |cRXP_BUY_à Joshua|r
-    >>Ne descendez PAS à moins d'une pièce d'argent << Mage/Warlock/Priest
+    >>Ne descendez PAS à moins d'1 pièce d'argent << Mage/Warlock/Priest
     .vendor >> Vendez tout ce dont nous n'avez pas besoin
     .target Joshua Kien
     .money >0.1
@@ -925,7 +925,7 @@ step << Mage
     .target Cain Firesong
 step << Warrior
     .goto Tirisfal Glades,61.85,52.53
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à  |cRXP_FRIENDLY_Austil|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Austil|r
     .train 3127 >>Apprenez [Parade]
     .target Austil de Mon
     .money <0.01
@@ -933,14 +933,14 @@ step << Rogue
     #season 0
     .goto Tirisfal Glades,61.75,52.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Marion|r au second étage
-    .train 1757 >> Apprenez [Attaque Pernicieuse]
+    .train 1757 >> Apprenez [Attaque pernicieuse]
     .target Marion Call
     .money <0.01
 step << Rogue
     #season 2
     .goto Tirisfal Glades,61.75,52.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Marion|r au second étage
-    .train 1757 >> Apprenez [Attaque Pernicieuse]
+    .train 1757 >> Apprenez [Attaque pernicieuse]
     .train 921 >> Apprenez [Vol à la tire]
     .target Marion Call
     .money <0.02
@@ -1329,7 +1329,7 @@ step << Mage
     .xp <8,1
 step << Warrior
     .goto Tirisfal Glades,61.85,52.53
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à  |cRXP_FRIENDLY_Austil|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Austil|r
     .train 284 >> Apprenez vos sorts de classe
     .target Austil de Mon
     .xp <8,1
@@ -1572,7 +1572,7 @@ step << Mage
 step << Warrior
     #xprate <1.5
     .goto Tirisfal Glades,61.85,52.53
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à  |cRXP_FRIENDLY_Austil|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Austil|r
     .train 284 >> Apprenez vos sorts de classe
     .target Austil de Mon
     .xp <8,1
@@ -1988,7 +1988,7 @@ step << Mage
     .xp <8,1
 step << Warrior
     .goto Tirisfal Glades,61.85,52.53
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à  |cRXP_FRIENDLY_Austil|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Austil|r
     .train 284 >> Apprenez vos sorts de classe
     .target Austil de Mon
     .xp <8,1
@@ -2427,7 +2427,7 @@ step << Warrior
     .isOnQuest 1498
 step << Warrior
     .goto Tirisfal Glades,61.85,52.55
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à  |cRXP_FRIENDLY_Austil|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Austil|r
     .trainer >> Apprenez vos sorts de classe
     .accept 1818 >> Acceptez la quête Parler à Dillinger
     .target Austil de Mon << Warrior
@@ -2513,7 +2513,7 @@ step << Warlock
     .goto Undercity,27.39,30.23,35,0
     .goto Undercity,21.89,43.35,35,0
     .goto Tirisfal Glades,51.10,71.53,50,0
-    .zone Tirisfal Glades >> Quittez Undercity par les Égouts
+    .zone Tirisfal Glades >> Sortez de Fossoyeuse par les Égouts
     .zoneskip Tirisfal Glades
 step << Rogue
     #season 2
@@ -3375,8 +3375,8 @@ step << Rogue
     #xprate <1.5
     .goto Undercity,77.08,49.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Charles Seaton|r au Quartier des Voleurs
-    >>|cRXP_BUY_Achetez-lui un|r |T135346:0|t[Coutelas] |cRXP_BUY_|r
-    >>|cRXP_WARN_Sinon, vous pouvez regarder à l'Hôtel des Ventes si vous trouvez une alternative meilleure ou moins onéreuse|r
+    >>|cRXP_BUY_Achetez un|r [Coutelas] |cRXP_BUY_à Gunther|r
+    >>Sinon, vous pouvez regarder à l'Hôtel des Ventes si vous trouvez une alternative meilleure ou moins onéreuse
     .collect 851,1,372,1 --Collect Cutlass (1)
     .money <0.2023
     .itemStat 16,QUALITY,<7
@@ -3705,7 +3705,7 @@ step << Mage
     .xp <12,1
 step << Warrior
     .goto Tirisfal Glades,61.85,52.53
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à  |cRXP_FRIENDLY_Austil|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Austil|r
     .train 7384 >>Apprenez |T132223:0|t[Fulgurance]
     .target Austil de Mon
     .xp <12,1
@@ -4074,7 +4074,7 @@ step << Rogue/Warrior/Priest
     .goto Undercity,27.39,30.23,35,0
     .goto Undercity,21.89,43.35,35,0
     .goto Tirisfal Glades,51.10,71.53,50,0
-    .zone Tirisfal Glades >> Quittez Undercity par les Égouts
+    .zone Tirisfal Glades >> Sortez de Fossoyeuse par les Égouts
     .zoneskip Tirisfal Glades
     .isQuestAvailable 1978
 
@@ -4168,7 +4168,7 @@ step
 step
     #softcore
     #completewith ProveyourWorth
-    .deathskip >> Mourez et ressuscitez au |cRXP_FRIENDLY_Gardien des âmes|r.
+    .deathskip >> Mourez et ressuscitez au |cRXP_FRIENDLY_Gardien des âmes|r
 step
     #hardcore
     #completewith next
@@ -5114,7 +5114,7 @@ step << skip --Undead Mage
 step << Undead Warrior
     #xprate >1.49
     .goto Tirisfal Glades,61.85,52.53
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à  |cRXP_FRIENDLY_Austil|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Austil|r
     .train 285 >>Apprenez vos sorts de classe
     .target Austil de Mon
     .xp <16,1
@@ -5926,7 +5926,7 @@ step
     #season 2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sarvis|r et à |cRXP_FRIENDLY_Elreth|r << !Warlock !Mage !Priest
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sarvis|r, |cRXP_FRIENDLY_Elreth|r, et à |cRXP_FRIENDLY_Maximillion|r << Warlock
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sarvis|r, |cRXP_FRIENDLY_Elreth|r, et à |cRXP_FRIENDLY_Maximillion|r << Mage
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sarvis|r, |cRXP_FRIENDLY_Elreth|r, et à |cRXP_FRIENDLY_Isabella|r << Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sarvis|r, |cRXP_FRIENDLY_Elreth|r, et à |cRXP_FRIENDLY_Duesten|r << Priest
     .turnin 364 >> Rendez la quête Lever le voile
     .accept 3095 >> Acceptez la quête Parchemin simple << Warrior
@@ -5955,7 +5955,7 @@ step
     #season 0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sarvis|r et à |cRXP_FRIENDLY_Elreth|r << !Warlock !Mage !Priest
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sarvis|r, |cRXP_FRIENDLY_Elreth|r, et à |cRXP_FRIENDLY_Maximillion|r << Warlock
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sarvis|r, |cRXP_FRIENDLY_Elreth|r, et à |cRXP_FRIENDLY_Maximillion|r << Mage
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sarvis|r, |cRXP_FRIENDLY_Elreth|r, et à |cRXP_FRIENDLY_Isabella|r << Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sarvis|r, |cRXP_FRIENDLY_Elreth|r, et à |cRXP_FRIENDLY_Duesten|r << Priest
     .turnin 364 >> Rendez la quête Lever le voile
     .accept 3095 >> Acceptez la quête Parchemin simple << Warrior
@@ -6032,7 +6032,7 @@ step << Mage/Warlock/Priest
     .goto Tirisfal Glades,32.29,65.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Joshua|r
     >>|cRXP_BUY_Achetez des|r [Refreshing Spring Water] |cRXP_BUY_à Joshua|r
-    >>Ne descendez PAS à moins d'une pièce d'argent << Mage/Warlock/Priest
+    >>Ne descendez PAS à moins d'1 pièce d'argent << Mage/Warlock/Priest
     .vendor >> Vendez tout ce dont nous n'avez pas besoin
     .target Joshua Kien
     .money >0.1
@@ -6079,7 +6079,7 @@ step
     #season 2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sarvis|r et à |cRXP_FRIENDLY_Elreth|r << !Warlock !Mage !Priest
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sarvis|r, |cRXP_FRIENDLY_Elreth|r, et à |cRXP_FRIENDLY_Maximillion|r << Warlock
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sarvis|r, |cRXP_FRIENDLY_Elreth|r, et à |cRXP_FRIENDLY_Maximillion|r << Mage
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sarvis|r, |cRXP_FRIENDLY_Elreth|r, et à |cRXP_FRIENDLY_Isabella|r << Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sarvis|r, |cRXP_FRIENDLY_Elreth|r, et à |cRXP_FRIENDLY_Duesten|r << Priest
     .turnin 364 >> Rendez la quête Lever le voile
     .accept 3095 >> Acceptez la quête Parchemin simple << Warrior
@@ -6108,7 +6108,7 @@ step
     #season 0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sarvis|r et à |cRXP_FRIENDLY_Elreth|r << !Warlock !Mage !Priest
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sarvis|r, |cRXP_FRIENDLY_Elreth|r, et à |cRXP_FRIENDLY_Maximillion|r << Warlock
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sarvis|r, |cRXP_FRIENDLY_Elreth|r, et à |cRXP_FRIENDLY_Maximillion|r << Mage
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sarvis|r, |cRXP_FRIENDLY_Elreth|r, et à |cRXP_FRIENDLY_Isabella|r << Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sarvis|r, |cRXP_FRIENDLY_Elreth|r, et à |cRXP_FRIENDLY_Duesten|r << Priest
     .turnin 364 >> Rendez la quête Lever le voile
     .accept 3095 >> Acceptez la quête Parchemin simple << Warrior
@@ -6652,7 +6652,7 @@ step << Mage
     .target Cain Firesong
 step << Warrior
     .goto Tirisfal Glades,61.85,52.53
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à  |cRXP_FRIENDLY_Austil|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Austil|r
     .train 3127 >>Apprenez [Parade]
     .target Austil de Mon
     .money <0.01
@@ -6660,14 +6660,14 @@ step << Rogue
     #season 0
     .goto Tirisfal Glades,61.75,52.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Marion|r au second étage
-    .train 1757 >> Apprenez [Attaque Pernicieuse]
+    .train 1757 >> Apprenez [Attaque pernicieuse]
     .target Marion Call
     .money <0.01
 step << Rogue
     #season 2
     .goto Tirisfal Glades,61.75,52.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Marion|r au second étage
-    .train 1757 >> Apprenez [Attaque Pernicieuse]
+    .train 1757 >> Apprenez [Attaque pernicieuse]
     .train 921 >> Apprenez [Vol à la tire]
     .target Marion Call
     .money <0.02
@@ -7059,7 +7059,7 @@ step << Mage
     .xp <8,1
 step << Warrior
     .goto Tirisfal Glades,61.85,52.53
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à  |cRXP_FRIENDLY_Austil|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Austil|r
     .train 284 >> Apprenez vos sorts de classe
     .target Austil de Mon
     .xp <8,1
@@ -7307,7 +7307,7 @@ step << Mage
 step << Warrior
     #xprate <1.5
     .goto Tirisfal Glades,61.85,52.53
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à  |cRXP_FRIENDLY_Austil|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Austil|r
     .train 284 >> Apprenez vos sorts de classe
     .target Austil de Mon
     .xp <8,1
@@ -7770,7 +7770,7 @@ step << Mage
     .xp <10,1
 step << Warrior
     .goto Tirisfal Glades,61.85,52.53
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à  |cRXP_FRIENDLY_Austil|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Austil|r
     .train 284 >> Apprenez vos sorts de classe
     .target Austil de Mon
     .xp <8,1
@@ -7786,7 +7786,7 @@ step << Warrior
 step << Warrior
     #optional
     .goto Tirisfal Glades,61.85,52.55
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à  |cRXP_FRIENDLY_Austil|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Austil|r
     .trainer >> Apprenez vos sorts de classe
     .accept 1818 >> Acceptez la quête Parler à Dillinger
     .target Austil de Mon
@@ -8312,7 +8312,7 @@ step << Warrior
 step << Warrior
     #xprate <2.1
     .goto Tirisfal Glades,61.85,52.55
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à  |cRXP_FRIENDLY_Austil|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Austil|r
     .train 2687 >> Apprenez vos sorts de classe
     .accept 1818 >> Acceptez la quête Parler à Dillinger
     .target Austil de Mon << Warrior
@@ -8320,7 +8320,7 @@ step << Warrior
 step << Warrior
     #xprate <2.1
     .goto Tirisfal Glades,61.85,52.53
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à  |cRXP_FRIENDLY_Austil|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Austil|r
     .train 7384 >>Apprenez |T132223:0|t[Fulgurance]
     .accept 1818 >> Acceptez la quête Parler à Dillinger
     .target Austil de Mon
@@ -8434,7 +8434,7 @@ step << Warlock
     .goto Undercity,27.39,30.23,35,0
     .goto Undercity,21.89,43.35,35,0
     .goto Tirisfal Glades,51.10,71.53,50,0
-    .zone Tirisfal Glades >> Quittez Undercity par les Égouts
+    .zone Tirisfal Glades >> Sortez de Fossoyeuse par les Égouts
     .zoneskip Tirisfal Glades
 step << Warrior
     #season 2
@@ -9038,14 +9038,14 @@ step << Priest
 step << Warrior
     #xprate >2.09
     .goto Tirisfal Glades,61.85,52.55
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à  |cRXP_FRIENDLY_Austil|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Austil|r
     .train 2687 >> Apprenez vos sorts de classe
     .target Austil de Mon
     .xp >12,1
 step << Warrior
     #xprate >2.09
     .goto Tirisfal Glades,61.85,52.53
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à  |cRXP_FRIENDLY_Austil|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Austil|r
     .train 7384 >>Apprenez |T132223:0|t[Fulgurance]
     .target Austil de Mon
     .xp <12,1
@@ -9554,7 +9554,7 @@ step << Mage
     .xp >14,1
 step << Warrior
     .goto Tirisfal Glades,61.85,52.53
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à  |cRXP_FRIENDLY_Austil|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Austil|r
     .train 7384 >>Apprenez |T132223:0|t[Fulgurance]
     .target Austil de Mon
     .xp <12,1

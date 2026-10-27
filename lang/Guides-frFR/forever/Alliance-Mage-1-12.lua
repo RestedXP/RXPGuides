@@ -4,12 +4,13 @@ if faction == "Horde" then return end
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Human Mage
 #name 1-10 Forêt d'Elwynn Mage AoE
 #version 1
-#group RestedXP Guide Forever (A)
-#subgroup Guide Speedrun Mage
-#defaultfor Human
+#group RestedXP Mage Alliance
+
+#defaultfor none Human
 #next 10-12 Loch Modan Mage AoE Avancé
 step
     #sticky
@@ -811,12 +812,13 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Gnome Mage
 #name 1-10 Dun Morogh Mage AoE
 #version 1
-#group RestedXP Guide Forever (A)
-#subgroup Guide Speedrun Mage
-#defaultfor Dwarf/Gnome
+#group RestedXP Mage Alliance
+
+#defaultfor none Gnome
 #next 10-12 Loch Modan Mage AoE Avancé
 step
     #era/som
@@ -1461,12 +1463,13 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Alliance Mage
 #name 10-12 Loch Modan Mage AoE Avancé
 #version 1
-#group RestedXP Guide Forever (A)
-#subgroup Guide Speedrun Mage
-#defaultfor Human Mage/Gnome Mage
+#group RestedXP Mage Alliance
+
+#defaultfor none Mage
 #next 12-18 Sombrivage Mage AoE
 step
     #era/som

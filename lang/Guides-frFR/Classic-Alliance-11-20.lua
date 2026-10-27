@@ -828,13 +828,13 @@ step
     #xprate <1.5
     .goto 1439,36.976,44.135
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Wizbang Cranktoggle|r à l'étage
-    .accept 983 >> Acceptez la quête Bigobox 827
+    .accept 983 >> Acceptez Buzzbox 827
     .target Wizbang Cranktoggle
 step
     #xprate >1.49
     .goto 1439,36.976,44.135
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Wizbang Cranktoggle|r à l'étage
-    .accept 983 >> Acceptez la quête Bigobox 827
+    .accept 983 >> Acceptez Buzzbox 827
     .target Wizbang Cranktoggle
     .xp >15,1 --XX Skip if 15+
 step
@@ -955,7 +955,7 @@ step << Druid
     #completewith CliffspringEnd
     #label GatheringQ
     .skill herbalism,15 >>|cRXP_WARN_Montez votre|r |T136065:0|t[Herboristerie] |cRXP_WARN_à un niveau de 15 pour vous permettre de récolter des|r [Terrestrines] |cRXP_WARN_pour une quête de classe importante plus tard. Vous pourrez ensuite abandonner le métier|r
-    >>Si vous préférez acheter 5 [Terrestrine] à l'Hôtel des Ventes plus tard, vous pouvez passer cette étape
+    >>Si vous préférez acheter 5 [Terrestrine] à l'Hôtel des Ventes plus tard, passez cette étape
     .collect 2449,5,6123,1 --Earthroot (5)
     .disablecheckbox
 step << Druid
@@ -964,7 +964,7 @@ step << Druid
     #optional
     #completewith CliffspringEnd
     #label GatheringQ
-    .skill herbalism,15 >>Montez votre [Herboristerie] à un niveau de 15 pour vous permettre de récolter 5 [Terrestrine] pour une quête de classe importante plus tard. Vous pourrez ensuite oublier le métier
+    .skill herbalism,15 >>Montez votre [Herboristerie] à un niveau de 15 pour être capable de récolter 5 [Terrestrine] pour une quête de classe importante plus tard. Vous pourrez l'oublier plus tard
     .collect 2449,5,6123,1 --Earthroot (5)
     .disablecheckbox
 step << Druid
@@ -1134,7 +1134,7 @@ step << NightElf Warrior/NightElf Rogue
     #season 0
     #label DeepOceanStart
     .goto 1439,38.107,41.165,0,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Gorbold Steelhand|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|cRXP_FRIENDLY_Gorbold Steelhand|r
     .accept 982 >> Acceptez la quête Océan profond, mer immense
     .target Gorbold Steelhand
     .xp <13,1
@@ -1165,7 +1165,7 @@ step << NightElf Warrior/NightElf Rogue
 step << !NightElf/!Warrior !Rogue
     #xprate <1.5 --<< !NightElf/Hunter --XX Night Elves do it on 2x to catch up on xp EXCEPT Dwarf/NE Hunters (1x only)
     .goto 1439,38.107,41.165
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Gorbold Steelhand|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|cRXP_FRIENDLY_Gorbold Steelhand|r
     .accept 982 >> Acceptez la quête Océan profond, mer immense
     .target Gorbold Steelhand
     .xp <13,1
@@ -1965,7 +1965,7 @@ step
     #season 0
     #label EarlyAmethStart
     .goto 1439,40.302,59.731
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinelle Tysha Moonblade|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinel Tysha Moonblade|r
     .accept 953 >> Acceptez la quête La Chute d'Ameth'Aran
     .target Sentinel Tysha Moonblade
     .isQuestTurnedIn 4811
@@ -2094,7 +2094,7 @@ step
     #season 0
     #label AmethStart
     .goto 1439,40.302,59.731
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinelle Tysha Moonblade|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinel Tysha Moonblade|r
     .accept 953 >> Acceptez la quête La Chute d'Ameth'Aran
     .target Sentinel Tysha Moonblade
     .isQuestAvailable 4811
@@ -2128,7 +2128,7 @@ step
 step
     #xprate <1.59
     .goto 1439,40.302,59.731
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinelle Tysha Moonblade|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinel Tysha Moonblade|r
     .turnin 953 >> Rendez la quête La Chute d'Ameth'Aran
     .target Sentinel Tysha Moonblade
 step
@@ -2388,7 +2388,7 @@ step << !Hunter
     #optional
     #completewith Level10CookEnd
     .goto 1439,38.107,41.165
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Gorbold Steelhand|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|cRXP_FRIENDLY_Gorbold Steelhand|r
     .vendor 6301 >>|cRXP_BUY_Achetez-lui des|r [Epices douces] |cRXP_BUY_jusqu'à ce que vous ayez|r [Epices douces] |cRXP_BUY_autant ou plus que le montant de |r [Petit oeuf] |cRXP_BUY_que vous avez actuellement|r
     .collect 2678,50,90,1,0x20,cooking --Mild Spices (1-50)
     .disablecheckbox
@@ -2400,14 +2400,14 @@ step << !Hunter
 step
     #xprate <1.5 --<< !NightElf/Hunter
     .goto 1439,38.107,41.165
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Gorbold Steelhand|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|cRXP_FRIENDLY_Gorbold Steelhand|r
     .accept 982 >> Acceptez la quête Océan profond, mer immense
     .target Gorbold Steelhand
 step
     #xprate <1.5 --<< !NightElf/Hunter
     #optional
     .goto 1439,38.107,41.165
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Gorbold Steelhand|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|cRXP_FRIENDLY_Gorbold Steelhand|r
     .turnin 982 >> Rendez la quête Océan profond, mer immense
     .target Gorbold Steelhand
     .isQuestComplete 982
@@ -2801,7 +2801,7 @@ step
 step << Druid
     .goto Darkshore,54.99,33.41
     #season 0
-    >>Utilisez la [Fiole d'échantillon des Chutes de la Bondissante vide] à l'entrée de la Grotte de la Bondissante
+    >>Utilisez la [Fiole d'échantillon des Chutes de la Bondissante vide] à la cascade à l'entrée de la grotte des Chutes de la Bondissante
     .complete 6122,1 --Filled Cliffspring Falls Sampler (1)
 step
     #label CaveMushrooms
@@ -2899,7 +2899,7 @@ step << !NightElf
 step
     #xprate <1.5 --<< !NightElf/Hunter
     .goto 1439,38.107,41.165
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Gorbold Steelhand|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|cRXP_FRIENDLY_Gorbold Steelhand|r
     .turnin 982 >> Rendez la quête Océan profond, mer immense
     .target Gorbold Steelhand
 step << !NightElf
@@ -3397,7 +3397,7 @@ step
     #optional
     #completewith next
     #season 0
-    .cast 5809 >> Utilisez la [Fiole de divination] et placez-la sur le sol
+    .cast 5809 >> Utilisez la [Fiole de divination] et placez la sur le sol
     .use 5251
 step
     .goto 1439,38.537,86.050
@@ -3415,7 +3415,7 @@ step
 step
     .goto 1439,38.660,87.305
     #season 0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Therylune|r. Cela va démarrer une escorte
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Therylune|r. Cela va commencer une escorte
     >>Passez cette étape si elle n'est pas présente
     .accept 945 >> Acceptez la quête L'évasion de Therylune
     .target Therylune
@@ -4160,7 +4160,7 @@ step
     #xprate >1.59
     #optional
     .goto 1439,38.107,41.165
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Gorbold Steelhand|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|cRXP_FRIENDLY_Gorbold Steelhand|r
     .vendor 6301 >>|cRXP_BUY_Achetez-lui des|r [Epices douces] |cRXP_BUY_jusqu'à ce que vous ayez|r [Epices douces] |cRXP_BUY_autant ou plus que le montant de |r [Petit oeuf] |cRXP_BUY_que vous avez actuellement|r
     .collect 2678,50,90,1,0x20,cooking --Mild Spices (1-50)
     .disablecheckbox
@@ -4780,7 +4780,7 @@ step << NightElf Warrior
     #xprate >1.59
     #season 1 --Not loading for now
     .goto 1453,78.673,45.791
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Wu Shen|r dans le bâtiment à l'étage
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Wu Shen|r à l'étage
     .trainer >> Apprenez vos sorts de classe
     .target Wu Shen
     .zoneskip Darkshore
@@ -4804,7 +4804,7 @@ step << Rogue
     >>|cRXP_WARN_Assurez-vous d'apprendre|r |T132320:0|t[Camouflage]|cRXP_WARN_,|r |T133644:0|t[Vol à la tire]|cRXP_WARN_, et|r |T136058:0|t[Crochetage] |cRXP_WARN_comme vous en aurez besoin plus tard|r
     .train 1784 >>Apprenez [Camouflage]
     .train 921 >>Apprenez [Vol à la tire]
-    .train 1804 >> Apprenez [Crochetage]
+    .train 1804 >> Montez le niveau de votre [Crochetage]
     .trainer >> Apprenez vos sorts de classe
     .target Osborne the Night Man
     .dungeon !DM
@@ -4818,7 +4818,7 @@ step << Rogue
     >>|cRXP_WARN_Assurez-vous d'apprendre|r |T133644:0|t[Vol à la tire]|cRXP_WARN_et|r |T136058:0|t[Crochetage] |cRXP_WARN_comme vous en aurez besoin plus tard|r
     >>|cRXP_WARN_SOYEZ TRÈS PRUDENT avec la gestion de votre argent dans les prochaines étapes. N'achetez que les sorts essentiels. Vous devrez avoir de l'argent pour Disparition bientôt et 75 pièces d'argent pour obtenir une rune après votre retour des Paluns|r
     .train 921 >>Apprenez [Vol à la tire]
-    .train 1804 >> Apprenez [Crochetage]
+    .train 1804 >> Montez le niveau de votre [Crochetage]
     .trainer >> Apprenez vos sorts de classe
     .target Osborne the Night Man
     .dungeon !DM
@@ -4830,7 +4830,7 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Osborne the Night Man|r
     >>Faites bien attention à apprendre la capacité [Crochetage], vous en aurez besoin plus tard
     >>|cRXP_WARN_SOYEZ TRÈS PRUDENT avec la gestion de votre argent dans les prochaines étapes. N'achetez que les sorts essentiels. Vous devrez avoir de l'argent pour Disparition bientôt et 75 pièces d'argent pour obtenir une rune après votre retour des Paluns|r
-    .train 1804 >> Apprenez [Crochetage]
+    .train 1804 >> Montez le niveau de votre [Crochetage]
     .trainer >> Apprenez vos sorts de classe
     .target Osborne the Night Man
     .dungeon !DM
@@ -4944,7 +4944,7 @@ step << Rogue
     #xprate >1.59
     #ah
     .goto Stormwind City,53.612,59.764
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Commissaire-priseur Jaxon|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Auctioneer Jaxon|r
     >>Achetez l'|T134437:0|t[Anti-venin] pour votre quête de |T132290:0|t[Poisons] plus tard, et le reste pour rendre des quêtes plus rapidement aux Carmines très bientôt << !Dwarf
     >>Achetez les objets suivants pour rendre des quêtes plus rapidement aux Carmines très bientôt << Dwarf
     >>Ceux-ci vont feront gagner du temps comme vous n'aurez pas besoin de chercher des mobs à tuer. Passez cette étape si vous ne voulez pas les acheter
@@ -5211,7 +5211,7 @@ step << Rogue
     .goto Westfall,71.01,75.72,30,0
     .goto Westfall,69.58,73.07,30,0
     >>|T133644:0|tUtilisez [Vol à la tire] sur le |cRXP_ENEMY_Malformed Defias Drone|r. Volez-lui la |cRXP_LOOT_Defias Tower Key|r
-    >>Vous devez être en [Camouflage] pour utiliser votre [Vol à la tire]
+    >>Vous devez être en [Camouflage] pour utiliser [Vol à la tire]
     >>|cRXP_WARN_Le |cRXP_ENEMY_Malformed Defias Drone|r apparaissent à l'entrée de la tour, puis font le tour de celle-ci|r
     >>Faites attention car il fait BEAUCOUP de dégâts. Si vous perdez votre [Camouflage], utilisez vite votre [Sprint] pour vous enfuir
     .complete 2359,2 --Collect Defias Tower Key (x1)
@@ -5294,7 +5294,7 @@ step << !Dwarf Rogue
     .goto 1453,43.070,26.155
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Shaina Fuller|r
     >>Si vous avez un ami |cFFF48CBAPaladin|r ou |cFFFF7C0ADruid|r demandez-leur de vous enlever le debuff [Toucher de Zanzil]
-    .skill firstaid,80 >> Montez vos [Premier soins] à un niveau de compétence de 80
+    .skill firstaid,80 >> Montez votre niveau de compétence en [Premiers soins] jusqu'à 80
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
     .dungeon !DM
@@ -5304,7 +5304,7 @@ step << !Dwarf Rogue
     .goto 1453,43.070,26.155
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Shaina Fuller|r
     >>Si vous avez un ami |cFFF48CBAPaladin|r ou |cFFFF7C0ADruid|r demandez-leur de vous enlever le debuff [Toucher de Zanzil]
-    .train 7934 >> Apprenez [Anti-Venin]
+    .train 7934 >> Apprenez [Anti-Venom]
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
     .dungeon !DM
@@ -5580,7 +5580,7 @@ step << NightElf Warrior
     #label NEWarRogNoDMNoFP4
     #completewith NEWarRogNoDMIFPP
     .goto 1455,62.378,88.671
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Brenwyn Hiémacier|r en bas des escaliers
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Brenwyn Wintersteel|r en bas des escaliers
     >>|cRXP_BUY_Achetez-lui le|r |T135427:0|t[Couteau de lancer lourd] |cRXP_BUY_|r
     .collect 3108,200 --Collect Heavy Throwing Knife (200)
     .target Brenwyn Wintersteel
@@ -6591,7 +6591,7 @@ step << Rogue
     >>|cRXP_WARN_Assurez-vous d'apprendre|r |T132320:0|t[Camouflage]|cRXP_WARN_,|r |T133644:0|t[Vol à la tire]|cRXP_WARN_, et|r |T136058:0|t[Crochetage] |cRXP_WARN_comme vous en aurez besoin plus tard|r
     .train 1784 >>Apprenez [Camouflage]
     .train 921 >>Apprenez [Vol à la tire]
-    .train 1804 >> Apprenez [Crochetage]
+    .train 1804 >> Montez le niveau de votre [Crochetage]
     .trainer >> Apprenez vos sorts de classe
     .target Osborne the Night Man
     .dungeon DM
@@ -6604,7 +6604,7 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Osborne the Night Man|r
     >>|cRXP_WARN_Assurez-vous d'apprendre|r |T133644:0|t[Vol à la tire]|cRXP_WARN_et|r |T136058:0|t[Crochetage] |cRXP_WARN_comme vous en aurez besoin plus tard|r
     .train 921 >>Apprenez [Vol à la tire]
-    .train 1804 >> Apprenez [Crochetage]
+    .train 1804 >> Montez le niveau de votre [Crochetage]
     .trainer >> Apprenez vos sorts de classe
     .target Osborne the Night Man
     .dungeon DM
@@ -6615,7 +6615,7 @@ step << Rogue
     .goto StormwindClassic,74.65,52.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Osborne the Night Man|r
     >>Faites bien attention à apprendre la capacité [Crochetage], vous en aurez besoin plus tard
-    .train 1804 >> Apprenez [Crochetage]
+    .train 1804 >> Montez le niveau de votre [Crochetage]
     .trainer >> Apprenez vos sorts de classe
     .target Osborne the Night Man
     .dungeon DM
@@ -6650,7 +6650,7 @@ step << Warrior
 step << Warrior
     #xprate >1.59
     .goto 1453,78.673,45.791
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Wu Shen|r dans le bâtiment à l'étage
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Wu Shen|r à l'étage
     .trainer >> Apprenez vos sorts de classe
     .target Wu Shen
     .dungeon DM
@@ -7163,7 +7163,7 @@ step << Rogue
     .goto Westfall,71.01,75.72,30,0
     .goto Westfall,69.58,73.07,30,0
     >>|T133644:0|tUtilisez [Vol à la tire] sur le |cRXP_ENEMY_Malformed Defias Drone|r. Volez-lui la |cRXP_LOOT_Defias Tower Key|r
-    >>Vous devez être en [Camouflage] pour utiliser votre [Vol à la tire]
+    >>Vous devez être en [Camouflage] pour utiliser [Vol à la tire]
     >>|cRXP_WARN_Le |cRXP_ENEMY_Malformed Defias Drone|r apparaissent à l'entrée de la tour, puis font le tour de celle-ci|r
     >>Faites attention car il fait BEAUCOUP de dégâts. Si vous perdez votre [Camouflage], utilisez vite votre [Sprint] pour vous enfuir
     .complete 2359,2 --Collect Defias Tower Key (x1)
@@ -7246,7 +7246,7 @@ step << !Dwarf Rogue
     .goto 1453,43.070,26.155
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Shaina Fuller|r
     >>Si vous avez un ami |cFFF48CBAPaladin|r ou |cFFFF7C0ADruid|r demandez-leur de vous enlever le debuff [Toucher de Zanzil]
-    .skill firstaid,80 >> Montez vos [Premier soins] à un niveau de compétence de 80
+    .skill firstaid,80 >> Montez votre niveau de compétence en [Premiers soins] jusqu'à 80
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
     .dungeon DM
@@ -7256,7 +7256,7 @@ step << !Dwarf Rogue
     .goto 1453,43.070,26.155
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Shaina Fuller|r
     >>Si vous avez un ami |cFFF48CBAPaladin|r ou |cFFFF7C0ADruid|r demandez-leur de vous enlever le debuff [Toucher de Zanzil]
-    .train 7934 >> Apprenez [Anti-Venin]
+    .train 7934 >> Apprenez [Anti-Venom]
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
     .dungeon DM
@@ -7832,7 +7832,7 @@ step << Warrior
     #xprate >1.59
     #optional
     .goto 1453,78.673,45.791
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Wu Shen|r dans le bâtiment à l'étage
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Wu Shen|r à l'étage
     .train 6192 >> Apprenez vos sorts de classe
     .target Wu Shen
     .xp <22,1
@@ -7932,7 +7932,7 @@ step << Warrior
 step << Warrior
     #xprate >1.59
     .goto 1453,78.673,45.791
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Wu Shen|r dans le bâtiment à l'étage
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Wu Shen|r à l'étage
     .train 6192 >> Apprenez vos sorts de classe
     .target Wu Shen
     .xp <22,1
@@ -8098,7 +8098,7 @@ step << !Hunter
     #xprate <1.59
     #completewith next
     .goto 1439,38.107,41.165
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Gorbold Steelhand|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|cRXP_FRIENDLY_Gorbold Steelhand|r
     .vendor 6301 >>|cRXP_BUY_Achetez-lui des|r [Epices douces] |cRXP_BUY_jusqu'à ce que vous ayez|r [Epices douces] |cRXP_BUY_autant ou plus que le montant de |r [Petit oeuf] |cRXP_BUY_que vous avez actuellement|r
     .collect 2678,50,90,1,0x20,cooking --Mild Spices (1-50)
     .disablecheckbox
@@ -8440,7 +8440,7 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Osborne l'homme de la nuit|r
     >>|cRXP_WARN_Assurez-vous d'apprendre|r |T136058:0|t[Crochetage] |cRXP_WARN_comme vous en aurez besoin pour votre quête de classe Voleur bientôt|r
     .trainer >> Apprenez vos sorts de classe
-    .train 1804 >> Apprenez [Crochetage]
+    .train 1804 >> Montez le niveau de votre [Crochetage]
     .target Osborne the Night Man
 step << Rogue
     #completewith next
@@ -9692,7 +9692,7 @@ step << Rogue
     .goto Westfall,71.01,75.72,30,0
     .goto Westfall,69.58,73.07,30,0
     >>|T133644:0|tUtilisez [Vol à la tire] sur le |cRXP_ENEMY_Malformed Defias Drone|r. Volez-lui la |cRXP_LOOT_Defias Tower Key|r
-    >>Vous devez être en [Camouflage] pour utiliser votre [Vol à la tire]
+    >>Vous devez être en [Camouflage] pour utiliser [Vol à la tire]
     >>|cRXP_WARN_Le |cRXP_ENEMY_Malformed Defias Drone|r apparaissent à l'entrée de la tour, puis font le tour de celle-ci|r
     >>Faites attention car il fait BEAUCOUP de dégâts. Si vous perdez votre [Camouflage], utilisez vite votre [Sprint] pour vous enfuir
     .complete 2359,2 --Collect Defias Tower Key (x1)
@@ -9759,7 +9759,7 @@ step << !Dwarf Rogue
     .goto 1453,43.070,26.155
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Shaina Fuller|r
     >>Si vous avez un ami |cFFF48CBAPaladin|r ou |cFFFF7C0ADruid|r demandez-leur de vous enlever le debuff [Toucher de Zanzil]
-    .skill firstaid,80 >> Montez vos [Premier soins] à un niveau de compétence de 80
+    .skill firstaid,80 >> Montez votre niveau de compétence en [Premiers soins] jusqu'à 80
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
 step << !Dwarf Rogue
@@ -9767,7 +9767,7 @@ step << !Dwarf Rogue
     .goto 1453,43.070,26.155
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Shaina Fuller|r
     >>Si vous avez un ami |cFFF48CBAPaladin|r ou |cFFFF7C0ADruid|r demandez-leur de vous enlever le debuff [Toucher de Zanzil]
-    .train 7934 >> Apprenez [Anti-Venin]
+    .train 7934 >> Apprenez [Anti-Venom]
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
 step << !Dwarf Rogue
@@ -10009,7 +10009,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Alliance 1-20
 #groupid RXP-SRGCE-A1
 #name 19-21 Sombrivage/Orneval
-#next RestedXP Alliance 20-30\21-23 Orneval/Serres-Rocheuses
+#next RestedXP Alliance 20-30\21-23 Ashenvale/Serres-Rocheuses
 
 step
     #xprate >1.59
@@ -10135,7 +10135,7 @@ step
     --  .use 13536
 step
     .goto 1439,38.660,87.305
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Therylune|r. Cela va démarrer une escorte
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Therylune|r. Cela va commencer une escorte
     >>Passez cette étape si elle n'est pas présente
     .accept 945 >> Acceptez la quête L'évasion de Therylune
     .target Therylune
@@ -10294,7 +10294,7 @@ step
     #label Kerlonian
     .goto Ashenvale,27.26,35.58
     >>|cRXP_WARN_Escortez |cRXP_FRIENDLY_Kerlonian|r jusqu'au poste de Maestra à Orneval|r
-    .use 13536 >> |cRXP_WARN_Utilisez la|r |T134229:0|t[|cRXP_LOOT_Corne de l'éveil|r] |cRXP_WARN_dès que |cRXP_FRIENDLY_Kerlonian|r s'endort|r
+    .use 13536 >> Utilisez la [|cRXP_LOOT_Horn of Awakening|r] |cRXP_WARN_dès que |cRXP_FRIENDLY_Kerlonian|r s'endort|r
     >>|cRXP_WARN_Évitez de rester sur la route principale autant que possible. Les ennemis n'apparaîtront que si vous restez sur la route|r
     .complete 5321,2
     .isOnQuest 5321
@@ -10420,7 +10420,7 @@ step << Hunter
 step
     #label Astranaar
     .goto Ashenvale,34.40,48.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Daelyshia|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|cRXP_FRIENDLY_Daelyshia|r
     .fp Astranaar>> Prenez le chemin de vol d'Astranaar
 	.target Daelyshia
 step
@@ -10576,7 +10576,7 @@ step
     .goto Ashenvale,6.528,13.361
     >>Tuez |cRXP_ENEMY_Ruuzel|r. Dépouillez-la pour son |cRXP_LOOT_Ring of Zoram|r
     >>|cRXP_ENEMY_Ruuzel|r |cRXP_WARN_patrouille autour de l'île avec un |cRXP_ENEMY_Wrathtail Myrmidon|r et une |cRXP_ENEMY_Wrathtail Sea Witch|r. Tuez l'un des deux puis relancez le combat si nécessaire|r
-    >>Si vous avez des [Bombes]|cRXP_WARN_/|r[Grenades], vous pouvez vous en servir pour ramener |cRXP_ENEMY_Ruuzel|r à part
+    >>Si vous avez des [Bombes]|cRXP_WARN_/|r[Grenades], vous pouvez aussi vous en servir pour pull |cRXP_ENEMY_Ruuzel|r à part
     >>|cRXP_ENEMY_Lady Vespia|r |cRXP_WARN_ est un mob rare qui peut aussi donner le |cRXP_LOOT_Ring of Zoram|r si vous la voyez|r
     .link https://www.youtube.com/watch?v=H-IwZ6P-ldY >> Cliquez ici pour un exemple vidéo du "Split pulling"
 	.unitscan Lady Vespia
@@ -10637,7 +10637,7 @@ step
 step
     #label SoulGemStart
     #xprate <1.59
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Teronis' Corpse|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tInteragissez avec |cRXP_FRIENDLY_Teronis' Corpse|r
 	.target Teronis' Corpse
     .goto Ashenvale,20.31,42.33
     .turnin 991 >> Rendez la quête Le nettoyage selon Raene
@@ -10677,7 +10677,7 @@ step << !Dwarf/!Hunter
 step << !Dwarf/!Hunter
     #xprate <1.59
     .goto Ashenvale,34.41,47.98
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Daelyshia|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|cRXP_FRIENDLY_Daelyshia|r
     .fly Darkshore>> Volez à Sombrivage
     .target Daelyshia
 step
@@ -10802,7 +10802,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Alliance 1-20
 #groupid RXP-SRGCE-A1
 #name 20-21 Sombrivage/Orneval
-#next RestedXP Alliance 20-30\21-23 Serres-Rocheuses/Orneval; RestedXP Alliance 20-30\21-22 Orneval SoD
+#next RestedXP Alliance 20-30\21-23 Serres-Rocheuses/Orneval;RestedXP Alliance 20-30\21-22 Ashenvale SoD
 
 
 step << Druid
@@ -10901,7 +10901,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Volcor|r
     .turnin 993 >> Rendez la quête Un maître perdu
     .accept 995 >> Acceptez la quête Évasion par la ruse
-    .timer 20,RP de Évasion par la ruse
+    .timer 20,Évasion par la ruse RP
     .target Volcor
     .isOnQuest 993
 step
@@ -10910,7 +10910,7 @@ step
     .goto Darkshore,45.00,85.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Volcor|r
     .accept 995 >> Acceptez la quête Évasion par la ruse
-    .timer 20,RP de Évasion par la ruse
+    .timer 20,Évasion par la ruse RP
     .target Volcor
     .isQuestTurnedIn 993
 step
@@ -10960,7 +10960,7 @@ step
 step
     #xprate <1.5
     #completewith next
-    .cast 5809 >> Utilisez la [Fiole de divination] et placez-la sur le sol
+    .cast 5809 >> Utilisez la [Fiole de divination] et placez la sur le sol
     .use 5251
 step
     #xprate <1.5
@@ -10977,7 +10977,7 @@ step
     .accept 950 >> Acceptez la quête La page qui rend fou
 step
     .goto 1439,38.660,87.305
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Therylune|r. Cela va démarrer une escorte
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Therylune|r. Cela va commencer une escorte
     >>Passez cette étape si elle n'est pas présente
     .accept 945 >> Acceptez la quête L'évasion de Therylune
     .target Therylune
@@ -11201,7 +11201,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Volcor|r
     .turnin 993 >> Rendez la quête Un maître perdu
     .accept 995 >> Acceptez la quête Évasion par la ruse
-    .timer 20,RP de Évasion par la ruse
+    .timer 20,Évasion par la ruse RP
     .target Volcor
 step
 #xprate <1.5
@@ -11224,7 +11224,7 @@ step
 #xprate <1.5
     .goto Ashenvale,27.26,35.58
     >>|cRXP_WARN_Escortez |cRXP_FRIENDLY_Kerlonian|r jusqu'au poste de Maestra à Orneval|r
-    .use 13536 >> |cRXP_WARN_Utilisez la|r |T134229:0|t[|cRXP_LOOT_Corne de l'éveil|r] |cRXP_WARN_dès que |cRXP_FRIENDLY_Kerlonian|r s'endort|r
+    .use 13536 >> Utilisez la [|cRXP_LOOT_Horn of Awakening|r] |cRXP_WARN_dès que |cRXP_FRIENDLY_Kerlonian|r s'endort|r
     >>|cRXP_WARN_Évitez de rester sur la route principale autant que possible. Les ennemis n'apparaîtront que si vous restez sur la route|r
     .complete 5321,2
     .isOnQuest 5321
@@ -11391,7 +11391,7 @@ step
 step
     #label AshenvaleEnd
     .goto Ashenvale,34.40,48.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Daelyshia|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|cRXP_FRIENDLY_Daelyshia|r
     .fp Astranaar >> Prenez le chemin de vol d'Astranaar
 	.target Daelyshia
 step

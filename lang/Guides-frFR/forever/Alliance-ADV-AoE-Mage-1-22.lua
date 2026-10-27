@@ -4,11 +4,12 @@ if faction == "Horde" then return end
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Human Mage
 #name 1-10 Forêt d'Elwynn Humain Mage AoE Avancé
 #version 2
 #group RestedXP Alliance Mage AoE Avancé
-#defaultfor Human Mage
+#defaultfor none Human Mage
 #next 1-11 Dun Morogh Humain Mage AoE Avancé
 
 
@@ -1144,11 +1145,12 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Human Mage
 #name 1-11 Dun Morogh Humain Mage AoE Avancé
 #version 2
 #group RestedXP Alliance Mage AoE Avancé
-#defaultfor Human Mage
+#defaultfor none Human Mage
 #next 10-12 Sombrivage 1 Mage AoE Avancé
 
 step
@@ -1435,11 +1437,12 @@ step << skip
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Gnome Mage
 #name 1-10 Dun Morogh Gnome Mage AoE Avancé
 #version 2
 #group RestedXP Alliance Mage AoE Avancé
-#defaultfor Gnome Mage
+#defaultfor none Gnome Mage
 #next 10-12 Sombrivage 1 Mage AoE Avancé
 
 
@@ -1957,7 +1960,7 @@ step
 	.goto 1426/0,-615.60,-5674.38,40,0
 	.goto 1426/0,-641.21,-5660.59,40,0
 	.goto 1426/0,-730.84,-5624.15,40,0
-    .xp 5+2690 >> Monter votre expérience jusqu'à 2690+/2800xp
+    .xp 5+2690 >> Montez votre expérience jusqu'à 2690+/2800xp
     .mob Young Black Bear
     .mob Crag Boar
 step
@@ -2994,11 +2997,12 @@ step << skip
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Alliance Mage
 #name 10-12 Sombrivage 1 Mage AoE Avancé
 #version 2
 #group RestedXP Alliance Mage AoE Avancé
-#defaultfor Human Mage/Gnome Mage
+#defaultfor none Mage
 #next 12-14 Loch Modan Mage AoE Avancé
 
 step
@@ -3550,11 +3554,12 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Alliance Mage
 #name 10-12 Sombrivage 1 Mage AoE Nouveau serveur Avancé
 #version 2
 #group RestedXP Alliance Mage AoE Avancé
-#defaultfor none
+#defaultfor none none
 #next 12-14 Loch Modan Mage AoE Avancé
 
 --VV Make this an alternative route that must be manually selected
@@ -4117,11 +4122,12 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Alliance Mage
 #name 12-14 Loch Modan Mage AoE Avancé
 #version 2
 #group RestedXP Alliance Mage AoE Avancé
-#defaultfor Human Mage/Gnome Mage
+#defaultfor none Mage
 #next 14-16 Sombrivage 2 Mage AoE Avancé
 step
     #completewith next
@@ -4897,11 +4903,12 @@ step
 ]])
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Alliance Mage
 #name 14-16 Sombrivage 2 Mage AoE Avancé
 #version 2
 #group RestedXP Alliance Mage AoE Avancé
-#defaultfor Human Mage/Gnome Mage
+#defaultfor none Mage
 #next 16-18 Marche de l'Ouest Mage AoE Avancé
 
 
@@ -5545,11 +5552,12 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Alliance Mage
 #name 16-18 Marche de l'Ouest Mage AoE Avancé
 #version 2
 #group RestedXP Alliance Mage AoE Avancé
-#defaultfor Human Mage/Gnome Mage
+#defaultfor none Mage
 #next 18-20 Sombrivage 3 Mage AoE Avancé
 
 step
@@ -6275,11 +6283,12 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Alliance Mage
 #name 18-20 Sombrivage 3 Mage AoE Avancé
 #version 2
 #group RestedXP Alliance Mage AoE Avancé
-#defaultfor Human Mage/Gnome Mage
+#defaultfor none Mage
 #next 20-22 Carmines 1 Mage AoE Avancé
 
 step
@@ -7053,11 +7062,12 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Alliance Mage
 #name 20-22 Carmines 1 Mage AoE Avancé
 #version 2
 #group RestedXP Alliance Mage AoE Avancé
-#defaultfor Human Mage/Gnome Mage
+#defaultfor none Mage
 #next 22-26 Les Paluns 1 Mage AoE Avancé
 
 step

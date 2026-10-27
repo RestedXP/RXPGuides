@@ -3,64 +3,42 @@ if GetLocale() ~= "frFR" then return end
 RXPGuides.RegisterGuide([[
 #forever
 #version 1
-#beta
-#name 1-14 Île de Zéphras
-#displayname 1-13 Éolide << Alliance
-#displayname 1-12 Éolide << Horde
+#name 1-9 Île de Zéphras
+#displayname 1-9 Éolide << Alliance
+#displayname 1-9 Éolide << Horde
 #group Guide de donjon Forever RestedXP (A) << Alliance
 #group Guide de donjon Forever RestedXP (H) << Horde
-#subgroup (En développement) Guide de donjon 1-20 << Alliance
-#subgroup (En développement) Guide de donjon 1-22 << Horde
+#subgroup Guide de donjon 1-20 << Alliance
+#subgroup Guide de donjon 1-22 << Horde
 #defaultfor Skyborne
-#next "guide correct de la Marche de l'Ouest" << Alliance
+#next 9-13 Île de Zéphras
 
-step
-#include RestedXP Guide Forever (A)\1-14 Île de Zéphras
+step << Horde
+    .enabledungeon RFC
+    #include RestedXP Forever Guide (H)\1-9 Zephras Isle
+step << Alliance
+    #include RestedXP Forever Guide (A)\1-9 Zephras Isle
 ]])
 
-
---Hunter class quest chain
 RXPGuides.RegisterGuide([[
 #forever
 #version 1
-#beta
-#name Quêtes de classe de Chasseur Éolide
+#name 9-13 Île de Zéphras
+#displayname 9-13 Éolide << Alliance
+#displayname 9-12 Éolide << Horde
 #group Guide de donjon Forever RestedXP (A) << Alliance
 #group Guide de donjon Forever RestedXP (H) << Horde
-#internal
+#subgroup Guide de donjon 1-20 << Alliance
+#subgroup Guide de donjon 1-22 << Horde
+#defaultfor Skyborne
+#next 13-15 Marche de l’Ouest << Alliance
+#next 12-14 Forêt des Pins argentés << Horde !Hunter
+#next 12-16 Les Tarides << Horde Hunter
 
-step
-#include RestedXP Guide Forever (A)\Quêtes de classe de Chasseur Éolide
+step << Horde
+    .enabledungeon RFC
+    #include RestedXP Forever Guide (H)\9-13 Zephras Isle
+step << Alliance
+    #include RestedXP Forever Guide (A)\9-13 Zephras Isle
 ]])
---Druid class quest chain
-RXPGuides.RegisterGuide([[
-#forever
-#version 1
-#beta
-#name Quêtes de classe de Druide Éolide
-#displayname Quêtes de classe de Druide Éolide
-#group Guide de donjon Forever RestedXP (A) << Alliance
-#group Guide de donjon Forever RestedXP (H) << Horde
-#defaultfor Skyborne Druid
-#internal
 
--- The Great Ursera Spirit (94006) is accepted from the Druid trainer in Valanaar.
-step
-#include RestedXP Guide Forever (A)\Quêtes de classe de Druide Éolide
-]])
---Random Stuff
-RXPGuides.RegisterGuide([[
-#forever
-#version 1
-#beta
-#name Divers
-#group Guide de donjon Forever RestedXP (A) << Alliance
-#group Guide de donjon Forever RestedXP (H) << Horde
-#internal
-
-    .goto 2521,41.07,22.33 -- spirit healer thendal village
-    .goto 2521,40.23,63.82 --watchtower
-    .goto 2521,55.01,68.16 --gustberry highlands
--- step
-#include RestedXP Guide Forever (A)\Divers
-]])

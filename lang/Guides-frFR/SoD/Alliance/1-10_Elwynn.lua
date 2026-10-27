@@ -1089,7 +1089,7 @@ step
     .target Remy "Two Times"
 step << Priest
     .goto Elwynn Forest,48.148,68.046
-    >>Lancez [Soins inférieurs (Rang 2)] et [Mot de pouvoir : Robustesse] sur |cRXP_FRIENDLY_Guard Roberts|r
+    >>Lancez [Soins inférieurs (Rang 2)] et [Mot de pouvoir : Robustesse] sur le |cRXP_FRIENDLY_Guard Roberts|r
     .complete 5624,1 --Heal and fortify Guard Roberts
     .target Guard Roberts
 step
@@ -1133,7 +1133,7 @@ step << Warrior/Paladin/Rogue
     #label RoughStone1
     #completewith NecklaceStart
     >>Tuez les |cRXP_ENEMY_Kobold Tunnelers|r et les |cRXP_ENEMY_Kobold Miners|r. Ouvrez les |cRXP_PICK_Battered Chests|r. Ramassez les |cRXP_LOOT_[Rough Stones]|r << Warrior/Rogue
-    >>Tuez les |cRXP_ENEMY_Kobold Tunnelers|r et les |cRXP_ENEMY_Kobold Miners|r. Ouvrez les |cRXP_PICK_Battered Chests|r. Récupérez les |cRXP_LOOT_[Rough Stones]|r et les |cRXP_LOOT_[Linen Cloth]|r << Paladin
+    >>Tuez les |cRXP_ENEMY_Kobold Tunnelers|r et les |cRXP_ENEMY_Kobold Miners|r. Ouvrez les |cRXP_PICK_Battered Chests|r. Dépouillez-les pour leur |cRXP_LOOT_[Rough Stones]|r et leur |cRXP_LOOT_[Linen Cloth]|r << Paladin
     .collect 2835,1 --Rough Stone (1+)
     .collect 2589,1 << Paladin --Linen Cloth (1+)
     .itemcount 2862,<1 << Rogue/Warrior --Rough Sharpening Stone (<1)
@@ -1145,7 +1145,7 @@ step << Warrior/Paladin/Rogue
     #label RoughStoneCraft1
     #completewith NecklaceStart
     +|T136241:0|tÀ l'aide de votre [Forge], transformez les |cRXP_LOOT_[Rough Stones]|r en [Pierre à aiguiser brute] << Warrior/Rogue
-    +|T136241:0|tÀ l'aide de votre [Forge], transformez les |cRXP_LOOT_[Rough Stones]|r et les |cRXP_LOOT_[Linen Cloth]|r en [Caillou brut] << Paladin
+    +|T136241:0|tÀ l'aide de votre [Forge], transformez vos |cRXP_LOOT_[Rough Stones]|r et vos |cRXP_LOOT_[Linen Cloth]|r en [Caillou brut] << Paladin
     .collect 2862,5 << Rogue/Warrior --Rough Sharpening Stone (5)
     .disablecheckbox
     .collect 3239,5 << Paladin --Rough Weightstone (5)
@@ -1197,7 +1197,7 @@ step
     #completewith Lovers
     .goto Elwynn Forest,42.357,89.373
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Joshua Maclure|r
-    .vendor >>|cRXP_BUY_Achetez autant de|r [Lait glacé] que vous le pouvez << Priest/Warlock/Mage
+    .vendor >>|cRXP_BUY_Achetez autant de|r [Lait frais] que vous le pouvez << Priest/Warlock/Mage
     .vendor >>Vendez tout ce dont nous n'avez pas besoin << !Priest !Warlock !Mage
     .target Joshua Maclure
     .subzoneskip 64,1 --The Maclure Vineyards
@@ -1206,7 +1206,7 @@ step << Warrior/Paladin/Rogue
     #label RoughStone2
     #completewith Lovers
     >>Tuez les |cRXP_ENEMY_Kobold Tunnelers|r et les |cRXP_ENEMY_Kobold Miners|r. Ouvrez les |cRXP_PICK_Battered Chests|r. Ramassez les |cRXP_LOOT_[Rough Stones]|r << Warrior/Rogue
-    >>Tuez les |cRXP_ENEMY_Kobold Tunnelers|r et les |cRXP_ENEMY_Kobold Miners|r. Ouvrez les |cRXP_PICK_Battered Chests|r. Récupérez les |cRXP_LOOT_[Rough Stones]|r et les |cRXP_LOOT_[Linen Cloth]|r << Paladin
+    >>Tuez les |cRXP_ENEMY_Kobold Tunnelers|r et les |cRXP_ENEMY_Kobold Miners|r. Ouvrez les |cRXP_PICK_Battered Chests|r. Dépouillez-les pour leur |cRXP_LOOT_[Rough Stones]|r et leur |cRXP_LOOT_[Linen Cloth]|r << Paladin
     .collect 2835,1 --Rough Stone (1+)
     .collect 2589,1 << Paladin --Linen Cloth (1+)
     .itemcount 2862,<1 << Rogue/Warrior --Rough Sharpening Stone (<1)
@@ -1218,7 +1218,7 @@ step << Warrior/Paladin/Rogue
     #label RoughStoneCraft2
     #completewith Lovers
     +|T136241:0|tÀ l'aide de votre [Forge], transformez les |cRXP_LOOT_[Rough Stones]|r en [Pierre à aiguiser brute] << Warrior/Rogue
-    +|T136241:0|tÀ l'aide de votre [Forge], transformez les |cRXP_LOOT_[Rough Stones]|r et les |cRXP_LOOT_[Linen Cloth]|r en [Caillou brut] << Paladin
+    +|T136241:0|tÀ l'aide de votre [Forge], transformez vos |cRXP_LOOT_[Rough Stones]|r et vos |cRXP_LOOT_[Linen Cloth]|r en [Caillou brut] << Paladin
     .collect 2862,5 << Rogue/Warrior --Rough Sharpening Stone (5)
     .disablecheckbox
     .collect 3239,5 << Paladin --Rough Weightstone (5)
@@ -1279,7 +1279,7 @@ step << Warrior/Paladin/Rogue
     #label RoughStone3
     #completewith Exchange
     >>Tuez les |cRXP_ENEMY_Kobold Tunnelers|r et les |cRXP_ENEMY_Kobold Miners|r. Ouvrez les |cRXP_PICK_Battered Chests|r. Ramassez les |cRXP_LOOT_[Rough Stones]|r << Warrior/Rogue
-    >>Tuez les |cRXP_ENEMY_Kobold Tunnelers|r et les |cRXP_ENEMY_Kobold Miners|r. Ouvrez les |cRXP_PICK_Battered Chests|r. Récupérez les |cRXP_LOOT_[Rough Stones]|r et les |cRXP_LOOT_[Linen Cloth]|r << Paladin
+    >>Tuez les |cRXP_ENEMY_Kobold Tunnelers|r et les |cRXP_ENEMY_Kobold Miners|r. Ouvrez les |cRXP_PICK_Battered Chests|r. Dépouillez-les pour leur |cRXP_LOOT_[Rough Stones]|r et leur |cRXP_LOOT_[Linen Cloth]|r << Paladin
     .collect 2835,1 --Rough Stone (1+)
     .collect 2589,1 << Paladin --Linen Cloth (1+)
     .itemcount 2862,<1 << Rogue/Warrior --Rough Sharpening Stone (<1)
@@ -1292,7 +1292,7 @@ step << Warrior/Paladin/Rogue
     #label RoughStoneCraft3
     #completewith Exchange
     +|T136241:0|tÀ l'aide de votre [Forge], transformez les |cRXP_LOOT_[Rough Stones]|r en [Pierre à aiguiser brute] << Warrior/Rogue
-    +|T136241:0|tÀ l'aide de votre [Forge], transformez les |cRXP_LOOT_[Rough Stones]|r et les |cRXP_LOOT_[Linen Cloth]|r en [Caillou brut] << Paladin
+    +|T136241:0|tÀ l'aide de votre [Forge], transformez vos |cRXP_LOOT_[Rough Stones]|r et vos |cRXP_LOOT_[Linen Cloth]|r en [Caillou brut] << Paladin
     .collect 2862,5 << Rogue/Warrior --Rough Sharpening Stone (5)
     .disablecheckbox
     .collect 3239,5 << Paladin --Rough Weightstone (5)
@@ -1618,7 +1618,7 @@ step << Warlock
 step << Warlock
     .goto Elwynn Forest,44.397,65.989
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Cylina Darkheart|r
-    .vendor >> |cRXP_BUY_Achetez le|r [Grimoire de Pacte de Sang (Rang 2)] |cRXP_BUY_à Cylina si vous pouvez vous le permettre. Sinon vous pourrez l'acheter plus tard|r
+    .vendor >> |cRXP_BUY_Achetez le|r [Grimoire d'Eclair de feu (Rang 2)] |cRXP_BUY_à Cylina si vous pouvez vous le permettre. Sinon vous pourrez l'acheter plus tard|r
     .target Cylina Darkheart
     .money <0.100
     .itemcount 16302,<1 --Grimoire of Blood Pact (Rank 1)
@@ -1757,7 +1757,7 @@ step << Warrior/Paladin/Rogue
     #label RoughStoneCraft4
     #completewith JasperlodeExplore
     +|T136241:0|tÀ l'aide de votre [Forge], transformez les |cRXP_LOOT_[Rough Stones]|r en [Pierre à aiguiser brute] << Warrior/Rogue
-    +|T136241:0|tÀ l'aide de votre [Forge], transformez les |cRXP_LOOT_[Rough Stones]|r et les |cRXP_LOOT_[Linen Cloth]|r en [Caillou brut] << Paladin
+    +|T136241:0|tÀ l'aide de votre [Forge], transformez vos |cRXP_LOOT_[Rough Stones]|r et vos |cRXP_LOOT_[Linen Cloth]|r en [Caillou brut] << Paladin
     .collect 2862,5 << Rogue/Warrior --Rough Sharpening Stone (5)
     .disablecheckbox
     .collect 3239,5 << Paladin --Rough Weightstone (5)
@@ -1866,7 +1866,7 @@ step << Warrior/Paladin/Rogue
     #label RoughStoneCraft5
     #completewith Find
     +|T136241:0|tÀ l'aide de votre [Forge], transformez les |cRXP_LOOT_[Rough Stones]|r en [Pierre à aiguiser brute] << Warrior/Rogue
-    +|T136241:0|tÀ l'aide de votre [Forge], transformez les |cRXP_LOOT_[Rough Stones]|r et les |cRXP_LOOT_[Linen Cloth]|r en [Caillou brut] << Paladin
+    +|T136241:0|tÀ l'aide de votre [Forge], transformez vos |cRXP_LOOT_[Rough Stones]|r et vos |cRXP_LOOT_[Linen Cloth]|r en [Caillou brut] << Paladin
     .collect 2862,5 << Rogue/Warrior --Rough Sharpening Stone (5)
     .disablecheckbox
     .collect 3239,5 << Paladin --Rough Weightstone (5)
@@ -1962,7 +1962,7 @@ step << Rogue
     .goto 1429,68.102,45.049,60,0
     .goto 1429,66.618,40.849
     >>Utilisez |T133644:0|t[Vol à la tire] sur les |cRXP_ENEMY_Estafettes Rivepattes|r et les |cRXP_ENEMY_Rivepattes chétifs|r. Dépouillez-les pour obtenir le |T134327:0|t[|cRXP_LOOT_Morceau inférieur gauche de carte]|r
-    >>Vous devez être en [Camouflage] pour utiliser votre [Vol à la tire]
+    >>Vous devez être en [Camouflage] pour utiliser [Vol à la tire]
     >>|cRXP_ENEMY_NOTE:|r |cRXP_WARN_Tous les|r |T134327:0|t[|cRXP_LOOT_Morceaux de carte|r] |cRXP_WARN_servent à obtenir la rune|r |T134536:0|t[Tireur rapide] |cRXP_WARN_.|r |cRXP_WARN_Elle est utile, mais pas obligatoire pour monter de niveau, et devient obsolète vers le niveau 22 après avoir débloqué vos poisons. N'hésitez pas à passer toutes ces étapes si vous ne voulez pas obtenir la rune aussi rapidement que possible et préférez gagner un peu de temps à court terme.|r
     >>|cRXP_WARN_Si vous décidez de ne pas récupérer la rune, vous pouvez passer le passage aux Carmines pour le moment et juste utiliser votre Pierre de foyer ou mourir pour ressusciter à Goldshire|r
     .collect 203787,1 -- Bottom-Left Map Piece (1)
@@ -1994,7 +1994,7 @@ step << Rogue
     .goto Elwynn Forest,70.8,79.8,60,0
     .goto Elwynn Forest,89.2,78.8
     >>Utilisez|T133644:0|t[Vol à la tire] sur les |cRXP_ENEMY_Défias|r. Récupérez le |T134327:0|t[|cRXP_LOOT_Morceau supérieur gauche de carte]|r
-    >>Vous devez être en [Camouflage] pour utiliser votre [Vol à la tire]
+    >>Vous devez être en [Camouflage] pour utiliser [Vol à la tire]
     >>|cRXP_WARN_Note: Celui-ci peut aussi se trouver sur un autre membre des |cRXP_ENEMY_Défias|r dans la Forêt d'Elwynn|r
     .collect 203785,1 -- Top-Left Map Piece (1)
     .mob Defias Bandit
@@ -2492,7 +2492,7 @@ step << skip --Rogue
     .goto Westfall,50.81,47.15,50,0
     .goto Westfall,51.093,54.642
     >>Utilisez le|T133644:0|t[Vol à la tire] sur l' |cRXP_ENEMY_Eclaireur défias|r pour la |T134419:0|t[|cRXP_FRIENDLY_Rune de Coup de sabre|r]
-    >>Vous devez être en [Camouflage] pour utiliser votre [Vol à la tire]
+    >>Vous devez être en [Camouflage] pour utiliser [Vol à la tire]
     >>|cRXP_WARN_Il y a une très grande chance que le|r |T133644:0|t[Vol à la tire] |cRXP_WARN_échoue car votre niveau est trop bas. Si c'est le cas, passez cette étape et volez vers Stormwind. Vous la terminerez bientôt au Loch Modan|r
     >>|cRXP_WARN_N'engagez PAS l' |cRXP_ENEMY_Éclaireur défias|r sinon il utilisera|r |T132331:0|t[Disparition] |cRXP_WARN_et disparaîtra pour 3-5 minutes. Assurez-vous d'utiliser|r |T132320:0|t[Camouflage] |cRXP_WARN_au plus tôt!|r
     >>|cRXP_WARN_L' |cRXP_ENEMY_Éclaireur défias|r peut apparaître sur les collines|r

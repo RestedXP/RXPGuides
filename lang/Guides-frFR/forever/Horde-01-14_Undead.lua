@@ -4,9 +4,10 @@ if faction == "Alliance" then return end
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Horde
 #version 11
-#group RestedXP Guide Forever (H)
+#group Guide RestedXP Éternel (H)
 #subgroup Guide Speedrun 1-22
 --#groupid RXP-SRGCE-H1
 #defaultfor Undead
@@ -157,6 +158,9 @@ step << Warlock
 step << Warlock
     #completewith next
     .cast 688 >>Lancez [Invocation d'un diablotin]
+step << Priest
+    #completewith next
+    +|cRXP_WARN_Gardez vos|r |T132889:0|t[Étoffes de lin]|cRXP_WARN_. Cela vous permettra de fabriquer une baguette plus tard|r
 step
     #label Zombies
     #requires Piercing << Warlock/Mage
@@ -194,7 +198,6 @@ step << Mage/Warlock/Priest
     .collect 159,10,383,1 --Collect Refreshing Spring Water (10)
     .vendor >> Vendez tout ce dont nous n'avez pas besoin
     .target Joshua Kien
-    .isOnQuest 364
     .money <0.0050
     .itemcount 159,<10
  step << Mage/Warlock/Priest
@@ -206,13 +209,10 @@ step << Mage/Warlock/Priest
     .collect 159,5,383,1 --Collect Refreshing Spring Water (5)
     .vendor >> Vendez tout ce dont nous n'avez pas besoin
     .target Joshua Kien
-    .isOnQuest 364
-    .money >0.0050
-    .itemcount 159,<5
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sarvis|r et à |cRXP_FRIENDLY_Elreth|r << !Warlock !Mage !Priest
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sarvis|r, |cRXP_FRIENDLY_Elreth|r, et à |cRXP_FRIENDLY_Maximillion|r << Warlock
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sarvis|r, |cRXP_FRIENDLY_Elreth|r, et à |cRXP_FRIENDLY_Maximillion|r << Mage
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sarvis|r, |cRXP_FRIENDLY_Elreth|r, et à |cRXP_FRIENDLY_Isabella|r << Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sarvis|r, |cRXP_FRIENDLY_Elreth|r, et à |cRXP_FRIENDLY_Duesten|r << Priest
     .turnin 364 >> Rendez la quête Lever le voile
     .accept 3095 >> Acceptez la quête Parchemin simple << Warrior
@@ -257,6 +257,11 @@ step << Mage/Warlock/Priest
     .collect 159,10,383,1 --Collect Refreshing Spring Water (10)
     .target Joshua Kien
     .isOnQuest 364
+step
+    #completewith next
+    >>Tuez les |cRXP_ENEMY_Rattlecage Skeletons|r
+    .complete 3901,1 --Kill Rattlecage Skeleton (12)
+    .mob Rattlecage Skeleton
 step
     #loop
     .goto 1420/0,1482.50,2126.70,0
@@ -322,7 +327,7 @@ step << Mage/Warlock/Priest/Paladin
     .goto 1420/0,1574.23,1866.12
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Joshua|r
     >>|cRXP_BUY_Achetez des|r [Refreshing Spring Water] |cRXP_BUY_à Joshua|r << !Paladin
-    >>Ne descendez PAS à moins d'une pièce d'argent << Mage/Warlock/Priest
+    >>Ne descendez PAS à moins d'1 pièce d'argent << Mage/Warlock/Priest
     .vendor >> Vendez tout ce dont nous n'avez pas besoin
     .target Joshua Kien
     .money >0.1
@@ -379,7 +384,7 @@ step << Priest
     .train 2052 >> Apprenez [Soins inférieurs Rank 2]
     .train 589 >> Apprenez [Mot de l'ombre : Douleur]
     .target Dark Cleric Duesten
-    .money <0.02
+    .money <0.021
 step << Priest
     .goto 1420/0,1627.55,1848.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Duesten|r
@@ -701,11 +706,12 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Horde
 #name 6-12 Clairières de Tirisfal
 #displayname 6-13 Clairières de Tirisfal << Paladin
 #version 11
-#group RestedXP Guide Forever (H)
+#group Guide RestedXP Éternel (H)
 #subgroup Guide Speedrun 1-22
 --#groupid RXP-SRGCE-H1
 #defaultfor Undead
@@ -814,6 +820,7 @@ step << Rogue
     .target Mrs. Winters
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.9
+    .money <0.07
 step << Rogue
     .goto 1420/0,316.66,2227.32
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Oliver|r
@@ -945,14 +952,14 @@ step << Mage
     .target Cain Firesong
 step << Warrior
     .goto 1420/0,238.49,2255.03
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à  |cRXP_FRIENDLY_Austil|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Austil|r
     .train 3127 >>Apprenez [Parade]
     .target Austil de Mon
     .money <0.01
 step << Rogue
     .goto 1420/0,243.01,2271.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Marion|r au second étage
-    .train 1757 >> Apprenez [Attaque Pernicieuse]
+    .train 1757 >> Apprenez [Attaque pernicieuse]
     .target Marion Call
     .money <0.01
 step << Warlock
@@ -984,20 +991,15 @@ step << Priest/Warlock
 step
     .goto 1420/0,244.81,2269.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Innkeeper Renee|r
-    >>|cRXP_BUY_Achetez du|r [Lait frais] |cRXP_BUY_à Delaniel|r << Mage/Priest/Paladin
-    >>|cRXP_BUY_Achetez-lui des|r |T134532:0|t[Champignons à pois rouges] |cRXP_BUY_|r << Warrior/Rogue
-    >>|cRXP_BUY_Achetez-lui du|r |T132815:0|t[Lait glacé] |cRXP_BUY_et des|r |T134532:0|t[Champignons à pois rouges] |cRXP_BUY_|r << Warlock
-    .collect 1179,15,367,1 << Mage/Priest/Paladin --Ice Cold Milk (15)
-    .collect 4605,10,367,1 << Rogue/Warrior --Red-speckled Mushroom (10)
-    .collect 1179,10,367,1 << Warlock --Ice Cold Milk (10)
-    .collect 4605,5,367,1 << Warlock --Red-speckled Mushroom (5)
-    .money <0.025 << Warrior/Rogue
-    .money <0.0375 << Mage/Priest/Warlock/Paladin
+    .vendor >>|cRXP_BUY_Achetez autant|r |T132815:0|t[Lait glacé] |cRXP_BUY_d'elle que vous pouvez|r << Mage/Priest/Paladin
+    .vendor >>|cRXP_BUY_Achetez autant|r |T134532:0|t[rouge(s)-speckled Mushrooms] |cRXP_BUY_d'elle que vous pouvez|r << Warrior/Rogue
+    .vendor >>|cRXP_BUY_Achetez autant|r |T132815:0|t[Lait glacé] |cRXP_BUY_et|r |T134532:0|t[rouge(s)-speckled Mushrooms] |cRXP_BUY_d'elle que vous pouvez|r << Warlock
+    .money <0.0125
     .target Innkeeper Renee
 step
     .goto 1420/0,84.900,2023.500
     >>Parlez au |cRXP_FRIENDLY_Nécrogarde Kristof|r
-    >>|cRXP_WARN_Sélectionnez "J'ai besoin d'un rapport pour Exécuteur Zygand"|r
+    >>|cRXP_WARN_Sélectionnez "J'ai besoin d'un rapport pour l'exécuteur Zygand"|r
     .complete 99141,2 --|1/1 Kristof's Report
     .skipgossipid 142730
     .target Deathguard Kristof
@@ -1060,7 +1062,7 @@ step
     .goto 1420/0,496.96,2256.54,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Gordo|r.
     >>|cRXP_WARN_C'est une abomination qui patrouille le long de la route pour Brill|r
-    >>|cRXP_WARN_Sélectionnez "J'ai besoin d'un rapport pour Exécuteur Zygand"|r
+    >>|cRXP_WARN_Sélectionnez "J'ai besoin d'un rapport pour l'exécuteur Zygand"|r
     .complete 99141,3 --|1/1 Gordo's Report
     .target Gordo
     --.gossipoption 142737
@@ -1185,7 +1187,7 @@ step
 step
     .goto 1420/0,403.300,2287.700
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Nécrogarde Dillinger|r.
-    >>|cRXP_WARN_Sélectionnez "I need a report for Exécuteur Zygand|r
+    >>|cRXP_WARN_Sélectionnez "J'ai besoin d'un rapport pour l'exécuteur Zygand"|r
     .turnin 404 >>Rendez la quête Une tâche putride
     .accept 426 >>Acceptez la quête La chute des moulins
     .complete 99141,1 --|1/1 Dillinger's Report
@@ -1280,7 +1282,7 @@ step << Mage
     .xp <8,1
 step << Warrior
     .goto 1420/0,238.49,2255.03
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à  |cRXP_FRIENDLY_Austil|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Austil|r
     .train 284 >> Apprenez vos sorts de classe
     .target Austil de Mon
     .xp <8,1
@@ -1296,6 +1298,13 @@ step << Warlock
     .train 980 >> Apprenez vos sorts de classe
     .target Rupert Boch
     .xp <8,1
+step << Mage/Priest/Warlock
+    .goto 1420/0,244.81,2269.19
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Innkeeper Renee|r
+    .vendor >>|cRXP_BUY_Achetez autant|r |T132815:0|t[Lait glacé] |cRXP_BUY_d'elle que vous pouvez|r << Mage/Priest
+    .vendor >>|cRXP_BUY_Achetez autant|r |T132815:0|t[Lait glacé] |cRXP_BUY_et|r |T134532:0|t[rouge(s)-speckled Mushrooms] |cRXP_BUY_d'elle que vous pouvez|r << Warlock
+    .money <0.0125
+    .target Innkeeper Renee
 step
     .goto 1420/0,243.200,2288.100
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_William|r
@@ -1453,7 +1462,7 @@ step << Rogue/Warrior
     .isQuestComplete 375
 step << Warrior
     .goto 1420/0,238.49,2255.03
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à  |cRXP_FRIENDLY_Austil|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Austil|r
     .train 284 >> Apprenez vos sorts de classe
     .target Austil de Mon
     .xp <8,1
@@ -1654,7 +1663,6 @@ step
     >>|cRXP_BUY_Achetez-lui une|r |T132891:0|t[Bobine de fil grossier] |cRXP_BUY_|r
     .complete 375,2 --Coarse Thread (1)
     .target Abigail Shiel
-    .itemcount 2876,5 --Duskbat Pelt (5)
     .isQuestAvailable 375
 step
     .goto 1420/0,295.87,2277.93
@@ -1669,7 +1677,6 @@ step
     .accept 359 >>Acceptez la quête En mission pour les Réprouvés
     .target Magistrate Sevren
 step
-    #optional
     .goto 1420/0,236.68,2249.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Gretchen|r
     .turnin 375 >>Rendez la quête Le frisson de la mort
@@ -1689,7 +1696,7 @@ step << Mage
     .xp <8,1
 step << Warrior
     .goto 1420/0,238.49,2255.03
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à  |cRXP_FRIENDLY_Austil|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Austil|r
     .train 284 >> Apprenez vos sorts de classe
     .target Austil de Mon
     .xp <8,1
@@ -1934,6 +1941,12 @@ step
     #softcore
     #completewith FoodandWater2
     .deathskip >> Mourez et ressuscitez au |cRXP_FRIENDLY_Gardien des âmes|r
+    .xp <10,1
+step
+    #softcore
+    #completewith FoodandWater2
+    .subzone 159 >> Retournez à Brill
+    .xp >10,1
 step
     .goto 1420/0,403.42,2287.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Dillinger|r
@@ -1979,7 +1992,7 @@ step << Warrior
     .isOnQuest 1498
 step << Warrior
     .goto 1420/0,238.49,2254.43
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à  |cRXP_FRIENDLY_Austil|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Austil|r
     .trainer >> Apprenez vos sorts de classe
     .accept 1818 >> Acceptez la quête Parler à Dillinger
     .target Austil de Mon << Warrior
@@ -2081,7 +2094,7 @@ step << Warlock
     .goto 1458/0,610.42,1684.44,35,0
     .goto 1458/0,663.19,1600.46,35,0
     .goto 1420/0,724.25,1682.66,50,0
-    .zone Tirisfal Glades >> Quittez Undercity par les Égouts
+    .zone Tirisfal Glades >> Sortez de Fossoyeuse par les Égouts
     .zoneskip Tirisfal Glades
 step << Warlock
     #completewith next
@@ -2112,7 +2125,7 @@ step << Warlock
     .goto 1420/0,726.06,1801.95
     >>Ramassez le |cRXP_PICK_Perrine's Chest|r sur le sol pour le [Grimoire d'Egalin]
     .complete 1473,1 --Egalin's Grimoire (1)
-step
+step << !Priest
     #completewith UCHome
     .goto 1458/0,714.8,1604.24,35,0
     .goto 1458/0,652.73,1623.44,35,0
@@ -2235,6 +2248,7 @@ step << Rogue
     .target Nathaniel Steenwick
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.3
+    .money <0.03
 step << Rogue
     #optional
     #completewith LogoutSkip1
@@ -2295,7 +2309,7 @@ step << skip
     .goto 1458/0,221.78,1780.14,30 >>|cRXP_WARN_Effectuez un Logout skip en positionnant votre personnage sur la partie la plus élevée de l'escalier le plus bas jusqu'à ce qu'il semble flotter, puis en vous déconnectant et en vous reconnectant|r
     .link https://www.youtube.com/watch?v=-Bi95bCN8dM >> |cRXP_WARN_CLIQUEZ ICI pour un exemple vidéo|r
     >>|cRXP_WARN_Si vous n'arrivez pas à le faire, sortez simplement de Fossoyeuse normalement|r
-step
+step << !Priest
     #completewith AtWarS
     .goto 1420/0,235.32,1883.89
     .zone Tirisfal Glades >> Quittez Undercity
@@ -2333,6 +2347,20 @@ step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Coleman Farthing|r
     .turnin 1820 >>Rendez la quête Parler à Coleman
     .target Coleman Farthing
+step
+    #label Brill33
+    .goto 1420/0,244.81,2269.19
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Innkeeper Renee|r
+    >>|cRXP_BUY_Achetez du|r [Lait frais] |cRXP_BUY_à Delaniel|r << Mage/Priest/Paladin
+    >>|cRXP_BUY_Achetez-lui des|r |T134532:0|t[Champignons à pois rouges] |cRXP_BUY_|r << Warrior/Rogue
+    >>|cRXP_BUY_Achetez-lui du|r |T132815:0|t[Lait glacé] |cRXP_BUY_et des|r |T134532:0|t[Champignons à pois rouges] |cRXP_BUY_|r << Warlock
+    .collect 1179,20,96898,1 << Mage/Priest/Paladin --Ice Cold Milk (20)
+    .collect 4605,20,96898,1 << Rogue/Warrior --Red-speckled Mushroom (20)
+    .collect 1179,10,96898,1 << Warlock --Ice Cold Milk (10)
+    .collect 4605,10,96898,1 << Warlock --Red-speckled Mushroom (10)
+    .money <0.025 << Warrior/Rogue
+    .money <0.0375 << Mage/Priest/Warlock/Paladin
+    .target Innkeeper Renee
 step
     .goto 1420/0,54.600,1996.600
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Hadric Harlson|r
@@ -2533,7 +2561,7 @@ step << Priest
     .xp <12,1
 step << Warrior
     .goto 1420/0,238.49,2255.03--c:Tirisfal Glades,61.85,52.53
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à  |cRXP_FRIENDLY_Austil|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Austil|r
     .train 7384 >>Apprenez vos sorts de classe
     .target Austil de Mon
     .xp <12,1
@@ -2728,7 +2756,7 @@ step
     >>Récupérez les |cRXP_PICK_Bouteilles d’élixir des murmures|r au sol et sur les murs
     .complete 91316,1 << Paladin--|12/12 Sturdy Lumber
     .complete 95314,1 --|8/8 Bottle of Whispering Elixir
-step
+step << skip
     #softcore
     #completewith next
     .deathskip >> Mourez et ressuscitez au |cRXP_FRIENDLY_Gardien des âmes|r
@@ -2765,11 +2793,6 @@ step << !Paladin
     .subzone 159 >> Retournez à Brill
     .subzoneskip 159
     .cooldown item,6948,<0
-step << !Paladin
-    .goto 1420/0,347.600,2265.200
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Carolai Anise|r
-    .turnin 95314 >>Rendez la quête Cet élixir vert d’Ombreval
-    .target Carolai Anise
 step << Priest
     .goto 1420/0,251.14,2265.28--c:Tirisfal Glades,61.57,52.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Beryl|r au deuxième étage
@@ -2778,7 +2801,7 @@ step << Priest
     .xp <12,1
 step << Warrior
     .goto 1420/0,238.49,2255.03--c:Tirisfal Glades,61.85,52.53
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à  |cRXP_FRIENDLY_Austil|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Austil|r
     .train 7384 >>Apprenez vos sorts de classe
     .target Austil de Mon
     .xp <12,1
@@ -2795,6 +2818,46 @@ step << Rogue
     .target Marion Call
     .xp <12,1
 step << Mage
+    .goto 1420/0,233.52,2256.84--c:Tirisfal Glades,61.96,52.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Cain|r à l'intérieur de l'auberge
+    .train 145 >> Apprenez vos sorts de classe
+    .target Cain Firesong
+    .xp <12,1
+step << !Paladin
+    .goto 1420/0,347.600,2265.200
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Carolai Anise|r
+    .turnin 95314 >>Rendez la quête Cet élixir vert d’Ombreval
+    .target Carolai Anise
+step << Priest
+    #optional
+    .goto 1420/0,251.14,2265.28--c:Tirisfal Glades,61.57,52.19
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Beryl|r au deuxième étage
+	.trainer >> Apprenez vos sorts de classe
+    .target Dark Cleric Beryl
+    .xp <12,1
+step << Warrior
+    #optional
+    .goto 1420/0,238.49,2255.03--c:Tirisfal Glades,61.85,52.53
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Austil|r
+    .train 7384 >>Apprenez vos sorts de classe
+    .target Austil de Mon
+    .xp <12,1
+step << Warlock
+    #optional
+    .goto 1420/0,250.24,2259.25--c:Tirisfal Glades,61.59,52.39
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Rupert|r
+    .train 755 >> Apprenez vos sorts de classe
+    .target Rupert Boch
+    .xp <12,1
+step << Rogue
+    #optional
+    .goto 1420/0,243.01,2270.70--c:Tirisfal Glades,61.75,52.01
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Marion|r
+    .train 1766 >> Apprenez vos sorts de classe
+    .target Marion Call
+    .xp <12,1
+step << Mage
+    #optional
     .goto 1420/0,233.52,2256.84--c:Tirisfal Glades,61.96,52.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Cain|r à l'intérieur de l'auberge
     .train 145 >> Apprenez vos sorts de classe
@@ -3207,7 +3270,7 @@ step << !Paladin
     .goto 1458/0,610.42,1684.44,35,0
     .goto 1458/0,663.19,1600.46,35,0
     .goto 1420/0,724.25,1682.66,50,0
-    .zone Tirisfal Glades >> Quittez Undercity par les Égouts
+    .zone Tirisfal Glades >> Sortez de Fossoyeuse par les Égouts
 step
     #label Entersilverpine
     .goto 1420/0,629.36,1553.42
@@ -3216,13 +3279,14 @@ step
 
 
 RXPGuides.RegisterGuide([[
-#group RestedXP Guide Forever (H)
+#group Guide RestedXP Éternel (H)
 #subgroup Guide Speedrun 1-22
 --#groupid RXP-SRGCE-H1
 << Horde
 #version 11
 #defaultfor !Hunter !Shaman !Tauren
 #forever
+#disabledungeons
 #name 12-14 Forêt des Pins argentés
 #displayname 13-15 Forêt des Pins argentés << Paladin
 #next 12-17 Les Tarides
@@ -3274,7 +3338,12 @@ step
     .mob Mottled Worg
     .unitscan Gorefang
 step
-    .goto 1421/0,715.000,1335.400
+    #loop
+    .goto 1421/0,941.300,1210.400,0
+    .goto 1421/0,706.700,1317.400,0
+    .goto 1421/0,941.300,1210.400,50,0
+    .goto 1421/0,830.000,1309.400,50,0
+    .goto 1421/0,706.700,1317.400,50,0
     >>Tuez les |cRXP_ENEMY_Murlocs Ailerons noirs|r. Dépouillez-les pour leur |T133884:0|t[|cRXP_LOOT_Œil de murloc|r]
     .collect 730,3,91920,1 --Collect Murloc Eyes (x3)
     .mob Vile Vin Shredder
@@ -3445,7 +3514,12 @@ step
     .accept 91920 >>Acceptez la quête Yeux sauvages
     .target Quinn Yorick
 step
-    .goto 1421/0,715.000,1335.400
+    #loop
+    .goto 1421/0,941.300,1210.400,0
+    .goto 1421/0,706.700,1317.400,0
+    .goto 1421/0,941.300,1210.400,50,0
+    .goto 1421/0,830.000,1309.400,50,0
+    .goto 1421/0,706.700,1317.400,50,0
     >>Tuez les |cRXP_ENEMY_Murlocs Ailerons noirs|r. Dépouillez-les pour leur |T133884:0|t[|cRXP_LOOT_Œil de murloc|r]
     .collect 730,3,91920,1 --Collect Murloc Eyes (x3)
     .mob Vile Vin Shredder
@@ -3610,12 +3684,12 @@ step
     .goto 1421/0,1582.68,640.47,15,0--c:Silverpine Forest,44.46,36.65
     .goto 1421/0,1563.78,738.75,30 >> Descendez la colline--c:Silverpine Forest,44.91,33.14
 step
-    #completewith DecrepitFerry
+    #completewith Yorick3
     +|cRXP_WARN_Soyez prudent ! Il peut y avoir un|r |cRXP_ENEMY_Fils d'Arugal|r |cRXP_WARN_dans la zone ! C'est un élite de niveau 25, éloignez-vous de lui !|r
     .unitscan Son of Arugal
 step
     #label Shackles
-    #loop
+    #completewith Yorick3
     .goto 1421/0,1609.1399,798.6667,50,0,0
     .goto 1421/0,1609.1399,798.6667,50,0
     .goto 1421/0,1592.7599,783.2667,50,0
@@ -3642,6 +3716,7 @@ step
     .mob +Moonrage Darksoul
     .unitscan Son of Arugal
 step
+    #label Yorick3
     .goto 1421/0,1207.62,1293.71,8,0
     .goto 1421/0,1220.64,1299.59,8,0
     .goto 1421/0,1212.66,1298.19,8,0
@@ -3675,6 +3750,19 @@ step
     >>Cliquez sur le |cRXP_PICK_Bateau|r sur le côté des quais
     .turnin 438 >>Rendez la quête Le bac délabré
     .accept 439 >>Acceptez la quête Un indice vers les Poils-putrides
+step
+    #loop
+    .goto 1421/0,1079.000,375.000,0
+    .goto 1421/0,1079.000,375.000,30,0
+    .goto 1421/0,1015.900,417.200,20,0
+    .goto 1421/0,1134.400,301.200,40,0
+    >>Tuez les |cRXP_ENEMY_Gloutons Ragelunes|r et les |cRXP_ENEMY_Ténébreux Ragelunes|r. Dépouillez-les pour leurs |cRXP_LOOT_Bracelets|r
+    >>|cRXP_WARN_Attention !|r Les |cRXP_ENEMY_Ténébreux Ragelunes|r |cRXP_WARN_s'enragent quand ils sont en dessous de 25% de points de vie. Tuez-les rapidement quand ils sont affaiblis.|r
+    .complete 423,1 --Glutton Shackle (6)
+    .mob +Moonrage Glutton
+    .complete 423,2 --Darksoul Shackle (3)
+    .mob +Moonrage Darksoul
+    .unitscan Son of Arugal
 step
     #completewith next
     .goto 1421/0,1538.58,511.39,100 >> Retournez au Sépulcre
@@ -3749,6 +3837,13 @@ step
     .turnin 482 >>Rendez la quête Les intentions de Dalaran
     .target Shadow Priest Allister
 step
+    .goto 1421/0,1579.600,461.700
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tabitha Heartweaver::250686|r
+    .accept 92401 >>Acceptez la quête A Effrayé Request
+    .target Tabitha Heartweaver::250686
+    .xp <15,1
+    .dungeon ROL
+step
     .goto 1421/0,1533.96,474.43
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Karos|r
     .turnin 6321 >>Rendez la quête Approvisionner le Sépulcre << Undead
@@ -3773,7 +3868,7 @@ step << Rogue
     .goto 1458/0,286.53,1616.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParler à |cRXP_FRIENDLY_Louis Warren|r dans le Quartier des Marchands
     >>|cRXP_BUY_Achetez une|r [Cimeterre] |cRXP_BUY_au marchand|r
-    .collect 2027,1,809,1 --Collect Scimitar (1)
+    .collect 2027,1 --Collect Scimitar (1)
     .money <0.3815
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.6
@@ -3784,7 +3879,7 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParler à |cRXP_FRIENDLY_Louis Warren|r dans le Quartier des Marchands
     >>|cRXP_BUY_Achetez une|r [Cimeterre] |cRXP_BUY_au marchand|r
     >>Sinon, vous pouvez regarder à l'Hôtel des Ventes si vous trouvez une alternative meilleure ou moins onéreuse
-    .collect 2027,1,809,1 --Collect Scimitar (1)
+    .collect 2027,1 --Collect Scimitar (1)
     .money <0.3815
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.6
@@ -3802,15 +3897,6 @@ step << Undead
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Michael|r
     .turnin 6322 >>Rendez la quête Michael Garrett
     .target Michael Garrett
-step << Undead Warrior
-    #optional
-    .goto 1458/0,418.35,1767.02
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Baltus Fowler|r
-    .train 285 >> Apprenez vos sorts de classe
-    .target Baltus Fowler
-    .dungeon RFC
-    .xp <16,1
---XX 16+ Only for Heroic Strike, Undead only as other races train elsewhere more effectively. RFC So warriors have 16 spells for RFC
 step << Rogue/Warrior
     .goto 1458/0,171.03,1524.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Mary|r dans le Quartier des voleurs
@@ -3871,24 +3957,6 @@ step << Undead Rogue
     .xp <16,1
     .isOnQuest 1898 << Undead
 step << Undead Rogue
-    .goto 1458/0,68.66,1416.69
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Carolyn|r
-    .train 1758 >> Apprenez vos sorts de classe
-    .target Carolyn Ward
-    .xp <14,1
-    .xp >16,1
-    .dungeon RFC
---XX Force train if hs not in Brill as an undead ONLY + you want to do RFC. Optional left out on purpose
---XX This whole section of training across 3 different areas, 2 different xp rates and RFC is solidly in the top 10 worst experiences of my life and im still not 100% happy with it xd
-step << Undead Rogue
-    #optional
-    .goto 1458/0,68.66,1416.69
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Carolyn|r
-    .train 6761 >> Apprenez vos sorts de classe
-    .target Carolyn Ward
-    .xp <16,1
-    .dungeon RFC
-step << Undead Rogue
     .goto 1458/0,347.07,1389.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Andron Gant|r
     .turnin 1898 >>Rendez la quête Les nécrotraqueurs
@@ -3913,8 +3981,7 @@ step
     .goto 1458,52.275,79.254,15,0
     .goto 1458,51.279,79.923,15,0
     .goto 1458,49.693,78.903,15,0
-    .goto 1458,47.951,76.171,15,0
-    .goto 1458/0,404.63,1434.67,12 >> Voyagez vers |cRXP_FRIENDLY_Faranell|r dans l'Apothicarium
+    .goto 1458,47.951,76.171,15 >>Rendez-vous à l'Apothecarium
 step
     .goto 1458/0,426.100,1403.600
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Docteur Martin Felben|r
@@ -3930,6 +3997,12 @@ step
     .accept 1358 >> Acceptez la quête Un échantillon pour Helbrim
     .target +Apothecary Zinge
     .goto 1458/0,391.97,1442.87
+step
+    .goto Undercity,56.2,96.2
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Varimathras|r
+    .accept 5725 >>Acceptez la quête Le pouvoir de détruire...
+    .target Varimathras
+    .dungeon RFC
 step << Undead Rogue
     .goto 1458/0,71.83,1435.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Mennet Carkad|r
@@ -3937,24 +4010,6 @@ step << Undead Rogue
     .accept 1978 >>Acceptez la quête Les nécrotraqueurs
     .target Mennet Carkad
     .isQuestTurnedIn 1886
-step << Undead Rogue
-    #optional
-    .goto 1458/0,68.66,1416.69
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Carolyn|r
-    .train 1758 >> Apprenez vos sorts de classe
-    .target Carolyn Ward
-    .xp <14,1
-    .xp >16,1
-    .dungeon RFC
---XX Force train if hs not in Brill as an undead ONLY + you want to do RFC. Duplicate if you ding from prev optional quests
-step << Undead Rogue
-    #optional
-    .goto 1458/0,68.66,1416.69
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Carolyn|r
-    .train 6761 >> Apprenez vos sorts de classe
-    .target Carolyn Ward
-    .xp <16,1
-    .dungeon RFC
 step << Undead Rogue
     .goto 1420/0,373.60,1464.85,40,0
     .goto 1420/0,333.38,1287.72
@@ -4068,69 +4123,12 @@ step << Priest/Mage/Warlock
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<13.4
     .xp <15,1
-step << Undead Priest
-    #sticky
-    #label TouchOW
-    .goto 1458/0,403.29,1760.61
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Aelthalyste|r
-    .turnin 5658 >> Rendez la quête Toucher de faiblesse
-    .target Aelthalyste
-    .train 2652,1 --Touch of Weakness not trained
-    .dungeon RFC
-step << !Undead Priest
-    #sticky
-    #label TouchOW
-    .goto 1458/0,403.29,1760.61
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Aelthalyste|r
-    .turnin 5660 >> Rendez la quête Toucher de faiblesse
-    .target Aelthalyste
-    .train 2652,1 --Touch of Weakness not trained
-    .dungeon RFC
-    .isOnQuest 5660
---XX Not going out of the way for this outside of this edge case to train for RFC, waste of a gcd
-step << Undead Priest
-    .goto 1458/0,416.91,1757.03
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Père Lazarus|r
-	.train 6074 >> Apprenez vos sorts de classe
-    .target Father Lazarus
-    .xp <14,1
-    .xp >16,1
-    .dungeon RFC
-step << Undead Priest
-    #optional
-    .goto 1458/0,416.91,1757.03
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Père Lazarus|r
-	.train 8102 >> Apprenez vos sorts de classe
-    .target Father Lazarus
-    .xp <16,1
-    .dungeon RFC
 step << Undead Rogue
     #optional
     #completewith Conscript
     >>Abandonnez la quête Les nécrotraqueurs, vous n'aurez plus l'occasion de la faire
     .abandon 1886 >> Abandonnez la quête Les nécrotraqueurs
     .isOnQuest 1886
-step << skip --Undead !Rogue !Warrior
-    #requires TouchOW << Undead Priest
-    .goto 1458/0,327.4,1770.6 << Priest
-    .goto 1458/0,206.81,1712.48 << Mage/Warlock
-    .goto 1458/0,221.78,1780.14,30 >>|cRXP_WARN_Effectuez un Logout skip en sautant sur le broyeur du Chariot à viande, puis en vous déconnectant et en vous reconnectant|r << Priest
-    .goto 1458/0,221.78,1780.14,30 >>|cRXP_WARN_Effectuez un Logout skip en sautant sur les tonneaux, puis en vous déconnectant et en vous reconnectant|r << Mage/Warlock
-    >>|cRXP_WARN_Si vous n'arrivez pas à le faire, sortez simplement de Fossoyeuse normalement|r
-    .zoneskip Undercity,1
-    .dungeon RFC
-step << skip --Undead !Rogue !Warrior
-    .goto 1458/0,206.81,1712.48 << Priest/Mage/Warlock
-    .goto 1458/0,221.78,1780.14,30 >>|cRXP_WARN_Effectuez un Logout skip en sautant sur les tonneaux, puis en vous déconnectant et en vous reconnectant|r << Priest/Mage/Warlock
-    .link https://www.youtube.com/watch?v=-Bi95bCN8dM >> |cRXP_WARN_CLIQUEZ ICI pour un exemple vidéo|r
-    >>|cRXP_WARN_Si vous n'arrivez pas à le faire, sortez simplement de Fossoyeuse normalement|r
-    .zoneskip Undercity,1
-    .dungeon !RFC
-step << Undead/Skyborne
-    #sticky
-    #completewith EnterRFC
-    .subzone 2437 >> Maintenant vous devez trouver un groupe pour le Gouffre de Ragefeu
-    .dungeon RFC
 step << Undead
     #completewith next
     .goto 1420/0,235.32,1883.89,50,0
@@ -4181,9 +4179,6 @@ step << Skyborne
 step << Skyborne
     #optional
     #label Silverpineskip
-
-    --Start Undead/Skyborne RFC
-
 step << Undead
     #completewith HiddenEnemiesPickup
     .goto 1454/1,-4367.46,1405.44,50,0
@@ -4203,207 +4198,15 @@ step << Undead/Skyborne
     .target Thrall
     .dungeon RFC
 step << Undead/Skyborne
+    #completewith next
+    .goto 1454/1,-4367.46,1405.44,50,0
+    .zone Durotar >> Quittez Orgrimmar
+    .dungeon RFC
+step << Undead/Skyborne
     .goto 1411/1,-4769.10,1484.39,0
     >>Tuez les membres de la |cRXP_ENEMY_Lame Ardente|r au Rocher du Crâne jusqu'à ce que l' |cRXP_LOOT_Insigne de lieutenant|r tombe
     .complete 5726,1 --Lieutenant's Insignia (1)
     .dungeon RFC
-step << Undead/Skyborne
-    .goto 1454/1,-4125.79,1920.10
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Thrall|r
-    .turnin 5726 >> Rendez la quête Ennemis cachés
-    .accept 5727 >> Acceptez la quête Ennemis cachés
-    .target Thrall
-    .dungeon RFC
-step << Undead/Skyborne
-    .goto 1454/1,-4376.29,1802.43
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Neeru Fireblade|r
-    .accept 5761 >>Acceptez la quête Tuer la bête
-    .target Neeru Fireblade
-    .dungeon RFC
-step << Undead/Skyborne
-    .goto 1454/1,-4376.29,1802.43
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Neeru Fireblade|r
-    .complete 5727,1 --Gauge Neeru Fireblade's reaction to you being a member of the Burning Blade
-    .skipgossip
-    .target Neeru Fireblade
-    .dungeon RFC
-step << Undead/Skyborne
-    #label HiddenEnemiesPickup
-    .goto 1454/1,-4125.79,1920.10
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Thrall|r
-    .turnin 5727 >> Rendez la quête Ennemis cachés
-    .accept 5728 >> Acceptez la quête Ennemis cachés
-    .target Thrall
-    .dungeon RFC
-step << Undead/Skyborne
-    #completewith EnterRFC
-    .destroy 14544 >>|cRXP_WARN_Détruisez l'|r |T134417:0|t[Insigne de lieutenant] |cRXP_WARN_comme vous n'en avez plus besoin|r
-    .dungeon RFC
-step << Undead/Skyborne
-    #label EnterRFC
-    .goto 1454/1,-4420.76,1815.80
-    .subzone 2437 >> Entrez dans le portail de l'instance du Gouffre de Ragefeu
-    .dungeon RFC
-step << Undead/Skyborne
-    >>|cRXP_WARN_Si possible, faites en sorte que les membres du groupe vous partagent les quêtes suivantes|r
-    .accept 5722 >> Acceptez la quête À la recherche de la sacoche perdue
-    .accept 5723 >> Acceptez la quête Tester la force de l'ennemi
-    .disablecheckbox
-    .dungeon RFC
-step << Undead/Skyborne
-    #completewith next
-    >>Tuez les |cRXP_ENEMY_Troggs Ragefeu|r et les |cRXP_ENEMY_Chamans Ragefeu|r
-    .complete 5723,1 --Ragefire Trogg (8)
-    .mob +Ragefire Trogg
-    .complete 5723,2 --Ragefire Shaman (8)
-    .mob +Ragefire Shaman
-    .isOnQuest 5723
-    .dungeon RFC
-step << Undead/Skyborne
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Maur|r
-    .turnin 5722 >> Rendez la quête À la recherche de la sacoche perdue
-    .accept 5724 >> Acceptez la quête Rapporter la sacoche perdue
-    .target Maur Grimtotem
-    .isOnQuest 5722
-    .dungeon RFC
-step << Undead/Skyborne
-    #optional
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Maur|r
-    .accept 5724 >> Acceptez la quête Rapporter la sacoche perdue
-    .target Maur Grimtotem
-    .isQuestTurnedIn 5722
-    .dungeon RFC
-step << Undead/Skyborne
-    #label TroggsShamans
-    >>Tuez les |cRXP_ENEMY_Troggs Ragefeu|r et les |cRXP_ENEMY_Chamans Ragefeu|r
-    .complete 5723,1 --Ragefire Trogg (8)
-    .mob +Ragefire Trogg
-    .complete 5723,2 --Ragefire Shaman (8)
-    .mob +Ragefire Shaman
-    .isOnQuest 5723
-    .dungeon RFC
-step << Undead/Skyborne
-    #requires TroggsShamans
-    #completewith BazzalanandJergosh
-    >>Tuez les |cRXP_ENEMY_Searing Blade Cultists|r et les |cRXP_ENEMY_Searing Blade Warlocks|r. Dépouillez-les pour le |cRXP_LOOT_Spells of Shadow|r et le |cRXP_LOOT_Incantations from the Nether|r
-    .complete 5725,1 --Spells of Shadow (1)
-    .complete 5725,2 --	Incantations from the Nether (1)
-    .mob Searing Blade Cultist
-    .mob Searing Blade Warlock
-    .isOnQuest 5725
-    .dungeon RFC
-step << Undead/Skyborne
-    >>Tuez |cRXP_ENEMY_Taragaman the Hungerer|r. Dépouillez-le pour son |cRXP_LOOT_Heart|r
-    .complete 5761,1 -- Taragaman the Hungerer's Heart
-    .mob Taragaman the Hungerer
-    .isOnQuest 5761
-    .dungeon RFC
-step << Undead/Skyborne
-    #label BazzalanandJergosh
-    >>Tuez |cRXP_ENEMY_Bazzalan|r et |cRXP_ENEMY_Jergosh l'Invocateur|r
-    .complete 5728,1 --Bazzalan (1)
-    .mob +Bazzalan
-    .complete 5728,2 --Jergosh the Invoker (1)
-    .mob +Jergosh the Invoker
-    .isOnQuest 5728
-    .dungeon RFC
-step << Undead/Skyborne
-    >>Tuez les |cRXP_ENEMY_Searing Blade Cultists|r et les |cRXP_ENEMY_Searing Blade Warlocks|r. Dépouillez-les pour le |cRXP_LOOT_Spells of Shadow|r et le |cRXP_LOOT_Incantations from the Nether|r
-    .complete 5725,1 --Spells of Shadow (1)
-    .complete 5725,2 --	Incantations from the Nether (1)
-    .mob Searing Blade Cultist
-    .mob Searing Blade Warlock
-    .isOnQuest 5725
-    .dungeon RFC
-step << Undead/Skyborne
-    .goto 1454/1,-4376.29,1802.43
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Neeru Fireblade|r
-    .turnin 5761 >>Rendez la quête Tuer la bête
-    .target Neeru Fireblade
-    .isQuestComplete 5761
-    .dungeon RFC
-step << Undead/Skyborne
-    .goto 1454/1,-4125.79,1920.10
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Thrall|r
-    .turnin 5728 >> Rendez la quête Ennemis cachés
-    .accept 5729 >> Acceptez la quête Ennemis cachés
-    .target Thrall
-    .isQuestComplete 5728
-    .dungeon RFC
-step << Undead/Skyborne
-    .goto 1454/1,-4125.79,1920.10
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Thrall|r
-    .accept 5729 >> Acceptez la quête Ennemis cachés
-    .target Thrall
-    .isQuestTurnedIn 5728
-    .dungeon RFC
-step << Undead/Skyborne
-    .goto 1454/1,-4376.29,1802.43
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Neeru Fireblade|r
-    .turnin 5729 >> Rendez la quête Ennemis cachés
-    .accept 5730 >> Acceptez la quête Ennemis cachés
-    .target Neeru Fireblade
-    .dungeon RFC
-    .isQuestTurnedIn 5728
-step << Undead/Skyborne
-    .goto 1454/1,-4125.79,1920.10
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Thrall|r
-    .turnin 5730 >> Rendez la quête Ennemis cachés
-    .target Thrall
-    .isQuestTurnedIn 5728
-    .dungeon RFC
-step << Skyborne
-    #completewith RFCTurninsTB1
-    .goto 1454/1,-4313.46,1676.25--c:Orgrimmar,45.120,63.889
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|r |cRXP_FRIENDLY_Doras|r
-    .fly Thunder Bluff >>Volez à Thunder Bluff
-    .target Doras
-    .zoneskip Orgrimmar,1
-    .isOnQuest 5724
-    .isQuestComplete 5723
-    .dungeon RFC
-step << Skyborne
-    #completewith RFCTurninsTB1
-    .goto 1456/1,-212.71,-1065.010,80 >> Voyagez à la Cime des Anciens
-    .isOnQuest 5724
-    .isQuestComplete 5723
-    .dungeon RFC
-step << Skyborne
-    .goto 1456/1,-218.13,-1055.97
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Rahauro|r
-    .turnin 5724 >> Rendez la quête Rapporter la sacoche perdue
-    .turnin 5723 >> Rendez la quête Tester la force de l'ennemi
-    .target Rahauro
-    .isOnQuest 5724
-    .isQuestComplete 5723
-    .dungeon RFC
-step << Skyborne
-    .goto 1456/1,-218.13,-1055.97
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Rahauro|r
-    .turnin 5724 >> Rendez la quête Rapporter la sacoche perdue
-    .target Rahauro
-    .isOnQuest 5724
-    .dungeon RFC
-step << Skyborne
-    #completewith Conscript
-    .hs >> Utilisez votre Pierre de foyer pour revenir à Orgrimmar
-    .use 6948
-    .zoneskip Thunder Bluff,1
-    .bindlocation 1637,1
-    .cooldown item,6948,>0,1
-    .dungeon RFC
-step << Skyborne
-    #completewith Conscript
-    .goto Thunder Bluff,47.00,49.82
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tal|r
-    .fly Orgrimmar >>Volez à Orgrimmar
-    .target Tal
-    .zoneskip Thunder Bluff,1
-    .cooldown item,6948,<0
-    .dungeon RFC
-
-    --End Undead/Skyborne RFC
-
 step << Undead/Skyborne
     #completewith Conscript
     .subzone 362 >> Voyagez jusqu'à Tranchecolline

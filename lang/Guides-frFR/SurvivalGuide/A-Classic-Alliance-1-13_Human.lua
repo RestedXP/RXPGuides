@@ -511,7 +511,7 @@ step
     .goto Elwynn Forest,42.140,67.254
     .accept 47 >> Acceptez la quête L'échange de poussière d'or
 step << Priest
-    >>Lancez [Soins inférieurs (Rang 2)] et [Mot de pouvoir : Robustesse] sur |cRXP_FRIENDLY_Guard Roberts|r
+    >>Lancez [Soins inférieurs (Rang 2)] et [Mot de pouvoir : Robustesse] sur le |cRXP_FRIENDLY_Guard Roberts|r
     .target Guard Roberts
     .goto Elwynn Forest,48.148,68.046
     .complete 5624,1 --Heal and fortify Guard Roberts
@@ -553,7 +553,7 @@ step
     .goto Elwynn Forest,42.357,89.373
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Joshua Maclure|r
     .target Joshua Maclure
-    .vendor >>|cRXP_BUY_Achetez autant de|r [Lait glacé] que vous le pouvez << Priest/Warlock/Mage
+    .vendor >>|cRXP_BUY_Achetez autant de|r [Lait frais] que vous le pouvez << Priest/Warlock/Mage
     .vendor >>Vendez tout ce dont nous n'avez pas besoin << !Priest !Warlock !Mage
 step
     #completewith next
@@ -860,9 +860,9 @@ step
     >>|cRXP_ENEMY_Murloc Foragers|r vont utiliser [Boire une potion mineure] qui les soignera de 61-68 points de vie
     >>Lancez [Rénovation] et [Mot de pouvoir : Bouclier] |cRXP_WARN_puis remontez votre barre de mana à fond. Engagez les 2 |cRXP_ENEMY_Murlocs|r devant les huttes, écartez-vous, tuez-en un rapidement. Enfuyez-vous après en avoir tué un, puis tuez l'autre|r << Priest
     >>Engagez les 2 |cRXP_ENEMY_Murlocs|r devant les huttes, écartez-vous et lancez [Métamorphone] sur l'un d'entre eux avant de tuer l'autre. Tuez ensuite celui qui était métamorphosé << Mage
-    >>Gardez 100 points de rage. Engagez les 2 |cRXP_ENEMY_Murlocs|r devant les huttes, écartez-vous et maintenez [Brise-genou] sur l'un des deux avant de tuer l'autre. Utilisez le [Sac de billes] sur celui que vous tuez. Enfuyez-vous de celui que vous avez ralenti après avoir tué le premier << Warrior
-    >>Engagez les 2 |cRXP_ENEMY_Murlocs|r devant les huttes, écartez-vous et concentrez-vous sur l'un des deux. Utilisez [Évasion] une fois qu'ils vous attaquent tous les deux. C'est une bonne opportunité pour utiliser votre [Sac de billes]. Enfuyez-vous après avoir tué le premier << Rogue
-    >>Engagez les 2 |cRXP_ENEMY_Murlocs|r devant la hutte, écartez-vous et maintenez [Peur] sur l'un des deux, et essayez de maintenir vos DoTs sur les deux << Warlock
+    >>Maintenez 100 points de Rage. Engagez les 2 |cRXP_ENEMY_Murlocs|r devant les huttes, sortez et maintenez [Brise-genou] sur l'un des deux en tuant l'autre. Utilisez le [Sac de billes] sur celui que vous tuez. Enfuyez-vous de celui que vous avez semé avec [Brise-genou] après avoir tué le premier << Warrior
+    >>Engagez les 2 |cRXP_ENEMY_Murlocs|r devant les huttes, sortez et concentrez-vous sur l'un d'entre eux. Utilisez [Évasion] une fois qu'ils vous attaquent tous les deux. Il s'agit d'une bonne opportunité pour utiliser le [Sac de billes]. Enfuyez-vous une fois que vous avez tué l'un des deux << Rogue
+    >>Engagez les 2  |cRXP_ENEMY_Murlocs|r devant les huttes, sortez et maintenez [Peur] sur l'un d'entre eux en boucle, en essayant de maintenir vos DoTs sur les deux << Warlock
     >>Engagez les 2 |cRXP_ENEMY_Murlocs|r devant les huttes, écartez-vous et tuez rapidement l'un des deux. Utilisez [Protection Divine] et vos soins lorsque ceux-ci sont requis. C'est une bonne opportunité pour utiliser votre [Sac de billes]. Enfuyez-vous après avoir tué le premier << Paladin
     >>Rappelez-vous que vous ne pouvez pas attaquer après avoir lancé [Protection Divine] << Paladin
     .turnin 45 >> Rendez la quête La destinée de Rolf
@@ -1171,7 +1171,7 @@ step << !Warlock
     .goto Elwynn Forest,25.9,93.9
     >>Tuez |cRXP_ENEMY_Hogger|r. Dépouillez-les pour leur |cRXP_LOOT_Claw|r
     >>|cRXP_ENEMY_Hogger|r peut apparaître à de nombreux endroits
-    >>Cette quête est difficile. Montez un groupe pour le tuer si nécessaire. Passez cette étape si vous n'arrivez pas à monter un groupe ou à le tuer solo
+    >>|cRXP_WARN_Cette quête est difficile. Montez un groupe pour le tuer si nécessaire. Passez cette étape si vous n'arrivez pas à monter un groupe ou à le tuer seul|r
     .complete 176,1 --Huge Gnoll Claw (1)
     .unitscan Hogger
 step << Warlock
@@ -1197,7 +1197,7 @@ step << Warlock
     >>Tuez |cRXP_ENEMY_Hogger|r. Dépouillez-les pour leur |cRXP_LOOT_Claw|r
     >>|cRXP_ENEMY_Hogger|r peut apparaître à de nombreux endroits
     >>Lancez [Peur] |cRXP_WARN_sur |cRXP_ENEMY_Hogger|r en boucle et utilisez vos DoTs pour le tuer|r
-    >>Cette quête est difficile. Montez un groupe pour le tuer si nécessaire. Passez cette étape si vous n'arrivez pas à monter un groupe ou à le tuer solo
+    >>|cRXP_WARN_Cette quête est difficile. Montez un groupe pour le tuer si nécessaire. Passez cette étape si vous n'arrivez pas à monter un groupe ou à le tuer seul|r
     .complete 176,1 --Huge Gnoll Claw (1)
     .unitscan Hogger
 step
@@ -1390,7 +1390,7 @@ step << Warlock
     .target Marshal Dughan
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Marshal Dughan|r
     .turnin 176 >> Rendez la quête On recherche : "Lardeur"
-    >>Choisissez le [|cRXP_FRIENDLY_Bâton de combat équilibré|r] comme récompense. Équipez-le
+    >>Choisissez le  [|cRXP_FRIENDLY_Bâton de combat équilibrée|r] comme récompense. Équipez-le
     .turnin 123 >> Rendez la quête Le collecteur
     .accept 147 >> Acceptez la quête Chasse à l'homme
 step << Warlock
@@ -1398,7 +1398,7 @@ step << Warlock
     .target Marshal Dughan
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Marshal Dughan|r
     .turnin 176 >> Rendez la quête On recherche : "Lardeur"
-    >>Choisissez le [|cRXP_FRIENDLY_Bâton de combat équilibré|r] comme récompense. Équipez-le
+    >>Choisissez le  [|cRXP_FRIENDLY_Bâton de combat équilibrée|r] comme récompense. Équipez-le
 step << Warlock
     .isQuestTurnedIn 123
     .goto Elwynn Forest,42.105,65.927
@@ -1751,7 +1751,7 @@ step
 step
     .goto Dun Morogh,62.6,46.1
     >>Tuez |cRXP_ENEMY_Vagash|r. Dépouillez-le pour sa |cRXP_LOOT_Fang|r
-    >>Cette quête est difficile. Montez un groupe pour le tuer si nécessaire. Passez cette étape si vous n'arrivez pas à monter un groupe ou à le tuer solo
+    >>|cRXP_WARN_Cette quête est difficile. Montez un groupe pour le tuer si nécessaire. Passez cette étape si vous n'arrivez pas à monter un groupe ou à le tuer seul|r
     >>|cRXP_WARN_Regardez bien la vidéo avant de tenter de tuer|cRXP_ENEMY_Vagash|r. Il peut être tuer en solo par n'importe quelle classe|r
     .link https://www.youtube.com/watch?v=ZJX6sCkm5JY >> Cliquez ici pour un exemple vidéo
     .complete 314,1 --Collect Fang of Vagash (1)
@@ -1790,7 +1790,7 @@ step
     .goto Dun Morogh,70.7,56.4,40,0
     .goto Dun Morogh,70.62,52.39,25,0
     .goto Dun Morogh,70.7,56.4
-    >>Tuez les |cRXP_ENEMY_Brise-crânes Mâcherocs|r et les |cRXP_ENEMY_Briseurs d'os Mâcherocs|r
+    >>Tuez les |cRXP_ENEMY_Rockjaw Skullthumpers|r et les |cRXP_ENEMY_Rockjaw Bonesnappers|r
     .complete 432,1 --Kill Rockjaw Skullthumper (x6)
     .mob +Rockjaw Skullthumper
     .complete 433,1 --Kill Rockjaw Bonesnapper (x10)
@@ -1872,7 +1872,7 @@ step
 .group
     .goto Loch Modan,24.764,18.397
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Mountaineer Stormpike|r
-    .turnin 353 >> Rendez la quête Livraison pour Foudrepique
+    .turnin 353 >> Rendez la quête Livraison pour Stormpike
     .target Mountaineer Stormpike
     .accept 307 >> Acceptez la quête Bas les pattes !
     >>|cRXP_WARN_N'acceptez pas encore la quête La mission de Foudrepique|r
@@ -1880,7 +1880,7 @@ step
 .solo
     .goto Loch Modan,24.764,18.397
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Mountaineer Stormpike|r
-    .turnin 353 >> Rendez la quête Livraison pour Foudrepique
+    .turnin 353 >> Rendez la quête Livraison pour Stormpike
     .target Mountaineer Stormpike
     >>|cRXP_WARN_N'acceptez pas encore la quête La mission de Foudrepique|r
 step

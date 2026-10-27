@@ -4,6 +4,7 @@ if faction == "Horde" then return end
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 #season 0,1
 #version 1
 << Alliance
@@ -648,6 +649,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 #season 0,1
 #version 1
 << Alliance
@@ -663,7 +665,7 @@ step
     #label BoarMeatQuest
     #completewith SenirEnd
     >>Tuez les |cRXP_ENEMY_Crag Boars|r. Dépouillez-les pour leur |cRXP_LOOT_[Chunks of Boar Meat]|r et leur |cRXP_LOOT_Crag Boar Ribs|r
-    >>Gardez tous les |cRXP_LOOT_[Chunks of Boar Meat]|r que vous récupérez pour Ravitailler le Crache-vapeur et ensuite pour monter votre niveau de [Cuisine] plus tard
+    >>Gardez tous les |cRXP_LOOT_[Chunks of Boar Meat]|r que vous obtenez pour Ravitailler le Crache-vapeur et ensuite pour monter votre niveau en [Cuisine] plus tard
     >>Vous aurez besoin d'un niveau de 10 en [Cuisine] pour une quête à Auberdine plus tard
     >>Vous aurez besoin d'un niveau de 50 en [Cuisine] pour une quête au Bois de la Pénombre plus tard
     .collect 769,4,317,1 --Collect Chunk of Boar Meat (x4)
@@ -748,7 +750,7 @@ step
     .target Tannok Frosthammer
 step
     .goto 1426/0,-529.600,-5590.600
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Maxan Anvol::1226|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Maxan Anvol::1226|r
     .target Maxan Anvol::1226
     .accept 5625 >> Acceptez la quête Vêtements de la Lumière << Priest
     .accept 99158 >>Acceptez la quête Aube sur les montagnes
@@ -928,7 +930,7 @@ step << Shaman
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.20
 step
     .goto 1426/0,-431.000,-5582.400
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tognus Flintfire::1241|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tognus Flintfire::1241|r
     .target Tognus Flintfire::1241
     .accept 98321 >>Acceptez la quête Cargaison de Flammesilex
 step
@@ -979,7 +981,7 @@ step << Warrior/Paladin/Rogue
     .train 2575,3 --Mining
 step
     #completewith RumbleshotAmmo
-    >>Tuez |cRXP_ENEMY_Young Black Bears|r. Dépouillez-les pour leur |cRXP_LOOT_Thick Bear Fur|r
+    >>Tuez les |cRXP_ENEMY_Young Black Bears|r. Dépouillez-les pour leur |cRXP_LOOT_Thick Bear Fur|r
     >>Tuez les |cRXP_ENEMY_Crag Boars|r et les |cRXP_ENEMY_Large Crag Boars|r. Dépouillez-les pour leur |cRXP_LOOT_[Chunks of Boar Meat]|r et leur |cRXP_LOOT_Crag Boar Ribs|r
     .complete 317,2 --Collect Thick Bear Fur (x2)
     .mob +Young Black Bear
@@ -991,7 +993,7 @@ step
     .mob +Crag Boar
 step
     #completewith next
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à la |cRXP_FRIENDLY_Montagnarde Gretchen::271546|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à la |cRXP_FRIENDLY_Montagnarde Gretchen::271546|r
     .target Mountaineer Gretchen::271546
     .turnin 98322 >>Rendez la quête Sécuriser la montagne
     .accept 98319 >>Acceptez la quête Sécuriser la montagne
@@ -1002,7 +1004,7 @@ step
     .complete 5541,1 --Collect Rumbleshot's Ammo (x1)
 step
     .goto 1426/0,-371.400,-5746.900
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à la |cRXP_FRIENDLY_Montagnarde Gretchen::271546|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à la |cRXP_FRIENDLY_Montagnarde Gretchen::271546|r
     .target Mountaineer Gretchen::271546
     .turnin 98322 >>Rendez la quête Sécuriser la montagne
     .accept 98319 >>Acceptez la quête Sécuriser la montagne
@@ -1115,7 +1117,7 @@ step
     .xp 7 >> Montez jusqu'au niveau 7
 step
     .goto 1426/0,-501.500,-5643.900
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Senir Whitebeard::1252|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Senir Whitebeard::1252|r
     .target Senir Whitebeard::1252
     .accept 287 >>Acceptez la quête Le repaire des Crins-de-givre
 step
@@ -1448,10 +1450,10 @@ step << Hunter
     .turnin 314 >> Rendez la quête Protection du troupeau
     .target Rudra Amberstill
 step << Hunter
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Sénateur Mehr Sacrepierre|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Contremaître Front-de-Pierre|r
     .accept 432 >> Acceptez la quête Ces satanés Troggs !
-    .goto 1426/0,-1580.000,-5714.700
-    .target Senator Mehr Stonehallow
+    .goto 1426/0,-1600.30,-5726.590
+    .target Foreman Stonebrow
 step << Hunter
     #loop
     .goto 1426,70.073,57.030,0
@@ -1463,14 +1465,34 @@ step << Hunter
     .waypoint 1426,67.687,60.059,45,0
     .waypoint 1426,68.958,59.357,45,0
     .waypoint 1426,70.475,59.420,45,0
-    >>Tuez les |cRXP_ENEMY_Brise-crânes Mâcherocs|r à l'extérieur de la mine
+    >>Tuez les |cRXP_ENEMY_Rockjaw Skullthumpers|r à l'extérieur de la mine. Ramassez le butin pour le |T132621:0|t[|cRXP_LOOT_Empty Baril de poudre|r]
+    .use 268548 >> |cRXP_WARN_Utilisez le|r |T132621:0|t[|cRXP_LOOT_Baril de poudre vide|r] |cRXP_WARN_pour lancer une quête|r
+    >>|cRXP_WARN_NOTE: Cet objet a un faible taux de drop. Passez cette étape si vous ne le trouvez pas|r
     .complete 432,1 --Kill Rockjaw Skullthumper (x6)
+    .collect 268548,1,95213,1 -- Empty Powder Keg (1)
+    .disablecheckbox
+    .accept 95213 >> Acceptez la quête Poudre explosive volée
+    .disablecheckbox
     .mob Rockjaw Skullthumper
 step << Hunter
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Sénateur Mehr Sacrepierre|r
+    .isOnQuest 95213
+    .goto 1426/0,-1606.02,-5676.35
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Responsable Thesten|r
+    .turnin 95213 >> Rendez la quête Poudre explosive volée
+    .accept 95214 >> Acceptez la quête Poudre explosive volée
+    .target Quarrymaster Thesten
+step << Hunter
+    #optional
+    .isQuestTurnedIn 95213
+    .goto 1426/0,-1606.02,-5676.35
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Responsable Thesten|r
+    .accept 95214 >> Acceptez la quête Poudre explosive volée
+    .target Quarrymaster Thesten
+step << Hunter
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Contremaître Front-de-Pierre|r
     .turnin 432 >> Rendez la quête Ces satanés Troggs !
-    .target Senator Mehr Stonehallow
-    .goto 1426/0,-1580.000,-5714.700
+    .target Foreman Stonebrow
+    .goto 1426/0,-1600.30,-5726.590
 step << Hunter
     .goto 1426/0,-2197.02,-5279.07,45,0
     .goto 1426/0,-2329.60,-5163.76
@@ -1685,7 +1707,7 @@ step << Hunter
     .accept 6086 >>Acceptez la quête Entraîner la bête
 step
     .goto 1426/0,-682.300,-5489.000
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Beldin Steelgrill::1376|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Beldin Steelgrill::1376|r
     .target Beldin Steelgrill::1376
     .accept 96408 >>Acceptez la quête Une visite à Dun Morogh
 step << Warrior
@@ -1884,13 +1906,21 @@ step << !Hunter
 --XX Mud slappers instead
 step
     #label QuarryStart
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Senator Mehr Stonehallow|r et à |cRXP_FRIENDLY_Foreman Stonebrow|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Senator Mehr Stonehallow|r et à |cRXP_FRIENDLY_Foreman Stonebrow|r << !Hunter
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Sénateur Mehr Sacrepierre|r << Hunter
     .accept 433 >> Acceptez la quête Le serviteur public
     .target +Senator Mehr Stonehallow
     .goto 1426/0,-1579.96,-5714.73
-    .accept 432 >> Acceptez la quête Ces satanés Troggs !
-    .goto 1426/0,-1600.30,-5726.590
-    .target +Foreman Stonebrow
+    .accept 432 >> Acceptez la quête Ces satanés Troggs ! << !Hunter
+    .goto 1426/0,-1600.30,-5726.590 << !Hunter
+    .target +Foreman Stonebrow << !Hunter
+step
+    #completewith RockjawBonesnappers
+    >>Ramassez le butin des |cRXP_ENEMY_Rockjaw Skullthumpers|r et des |cRXP_ENEMY_Rockjaw Bonesnappers|r pour le |T132621:0|t[|cRXP_LOOT_Empty Baril de poudre|r]
+    .use 268548 >> |cRXP_WARN_Utilisez le|r |T132621:0|t[|cRXP_LOOT_Empty Baril de poudre|r] |cRXP_WARN_pour commencer la quête|r
+    >>|cRXP_WARN_NOTE: Cet objet a un faible taux de drop. Passez cette étape si vous ne le trouvez pas|r
+    .collect 268548,1,95213,1 -- Empty Powder Keg (1)
+    .accept 95213 >> Acceptez la quête Poudre explosive volée
 step
     #sticky
     #label Skullthumpers
@@ -1913,6 +1943,7 @@ step
     .goto 1426,70.750,56.219,20 >>Entrez dans la mine de la Carrière de Gol'Bolar
     .isOnQuest 433
 step
+    #label RockjawBonesnappers
     #loop
     .goto 1426,70.750,56.219,0
     .goto 1426,71.344,51.873,0
@@ -1937,13 +1968,28 @@ step
     #requires Skullthumpers
 --XXREQ Placeholder invis step until multiple requires per step
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Foreman Stonebrow|r et à |cRXP_FRIENDLY_Senator Mehr Stonehallow|r
-    .turnin 432 >> Rendez la quête Ces satanés Troggs !
-    .target +Senator Mehr Stonehallow
-    .goto 1426/0,-1600.30,-5726.590
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Senator Mehr Stonehallow|r et à |cRXP_FRIENDLY_Foreman Stonebrow|r << !Hunter
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Sénateur Mehr Sacrepierre|r << Hunter
     .turnin 433 >> Rendez la quête Le serviteur public
     .goto 1426/0,-1579.96,-5714.73
-    .target +Foreman Stonebrow  
+    .target +Senator Mehr Stonehallow
+    .turnin 432 >> Rendez la quête Ces satanés Troggs ! << !Hunter
+    .goto 1426/0,-1600.30,-5726.590 << !Hunter
+    .target +Foreman Stonebrow << !Hunter
+step
+    .isOnQuest 95213
+    .goto 1426/0,-1606.02,-5676.35
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Responsable Thesten|r
+    .turnin 95213 >> Rendez la quête Poudre explosive volée
+    .accept 95214 >> Acceptez la quête Poudre explosive volée
+    .target Quarrymaster Thesten
+step
+    #optional
+    .isQuestTurnedIn 95213
+    .goto 1426/0,-1606.02,-5676.35
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Responsable Thesten|r
+    .accept 95214 >> Acceptez la quête Poudre explosive volée
+    .target Quarrymaster Thesten
 step
     #optional
     #label BoarMeatDunMorogh3
@@ -1977,6 +2023,12 @@ step
 --  .skill cooking,<10,1
     .skill cooking,50,1 --XX Shows if cooking skill is between 1-50
 step
+    .isOnQuest 95214
+    #completewith SpyMap
+    >>Tuez les |cRXP_ENEMY_Embusqués Mâcherocs|r. Dépouillez-les pour leur |cRXP_LOOT_Poudre explosive volée|r
+    .complete 95214,1 -- Stolen Blasting Powder (16)
+    .mob Rockjaw Ambusher
+step
     #completewith OII
     >>Tuez les |cRXP_ENEMY_Embusqués Mâcherocs|r. Dépouillez-les pour le |T132621:0|t[|cRXP_LOOT_Baril de poudre vide|r]
     .use 268548 >> |cRXP_WARN_Utilisez le|r |T132621:0|t[|cRXP_LOOT_Baril de poudre vide|r] |cRXP_WARN_pour lancer une quête|r
@@ -1985,6 +2037,7 @@ step
     .accept 95213 >> Acceptez la quête Poudre explosive volée
     .mob Rockjaw Ambusher
 step
+    #label SpyMap
     .goto 1426/0,-2009.87,-5860.22,40,0
     .goto 1426/0,-2034.49,-5922.60
     >>Tuez les |cRXP_ENEMY_Espions Sombrefers|r. Dépouillez-les pour la |T237385:0|t[|cRXP_LOOT_Carte sombrefer|r]
@@ -1993,6 +2046,24 @@ step
     .collect 274268,1,96391,1 -- Dark Iron Map (1)
     .accept 96391 >> Acceptez la quête La carte souterraine
     .mob Dark Iron Spy
+step
+    .isOnQuest 95214
+    #loop
+    .goto 1426/0,-1881.82,-5735.45,50,0
+    .goto 1426/0,-1832.57,-5571.28,50,0
+    .goto 1426/0,-1724.22,-5636.95,50,0
+    .goto 1426/0,-1881.82,-5735.45,0
+    .goto 1426/0,-1832.57,-5571.28,0
+    .goto 1426/0,-1724.22,-5636.95,0
+    >>Tuez les |cRXP_ENEMY_Embusqués Mâcherocs|r. Dépouillez-les pour leur |cRXP_LOOT_Poudre explosive volée|r
+    .complete 95214,1 -- Stolen Blasting Powder (16)
+    .mob Rockjaw Ambusher
+step
+    .isQuestComplete 95214
+    .goto 1426/0,-1606.02,-5676.35
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Responsable Thesten|r
+    .turnin 95214 >> Rendez la quête Poudre explosive volée
+    .target Quarrymaster Thesten
 step
     #label OII
     .goto 1426/0,-1394.24,-5797.83
@@ -2104,7 +2175,7 @@ step << !Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Yanni Stoutheart|r
     >>|cRXP_BUY_Achetez un|r [Bois simple] |cRXP_BUY_et un|r [Silex et amadou] |cRXP_BUY_ à Yanni|r
     >>|cRXP_BUY_Achetez-lui une|r [Petite sacoche marron] |cRXP_BUY_si nécessaire|r << !Rogue
-    >>|cRXP_WARN_Ils sont utilisés pour fabriquer des|r |T135805:0|t[Feu de camp basique] |cRXP_WARN_sur les bateaux pour monter le niveau de votre|r |T133971:0|t[Cuisine] |cRXP_WARN_sans perdre de temps|r
+    >>|cRXP_WARN_Ceci est utilisé pour créer|r |T135805:0|t[Basic Campfires] |cRXP_WARN_en attendant les bateaux pour augmenter votre|r |T133971:0|t[Cuisine] |cRXP_WARN_compétence sans perdre de temps|r
     >>Vous avez besoin de 50 en [Cuisine] pour une quête au Bois de la Pénombre plus tard
     .collect 4470,1 --Simple Wood (1)
     .collect 4471,1 --Flint and Tinder (1)
@@ -2294,7 +2365,7 @@ step << Dwarf/Gnome
     .target Golnir Bouldertoe
 step << Shaman
     .goto 1455/0,-1086.500,-4642.400
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Eldrun Brise-tempête::258098|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Eldrun Brise-tempête::258098|r
     .target Eldrun Stormbreaker::258098
     .accept 94449 >>Acceptez la quête L'appel du feu
     .trainer >> Apprenez vos sorts de classe
@@ -2393,7 +2464,7 @@ step << Hunter
     .target Regnus Thundergranite
 step << Dawrf Priest
     .goto 1455/0,-897.200,-4607.200
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Grandprêtre Rohan|r  
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Grandprêtre Rohan|r
     .turnin 5639 >> Rendez la quête Prière du désespoir
     .trainer >> Apprenez vos sorts de classe
     .target High Priest Rohan
@@ -2713,6 +2784,7 @@ step << Rogue
 RXPGuides.RegisterGuide([[
 #xprate <1.5
 #forever
+#disabledungeons
 #season 0,1
 << Alliance !Hunter
 #group RestedXP Guide Forever (A)
@@ -2816,7 +2888,7 @@ step << Warlock
     >>Tuez |cRXP_ENEMY_Hogger|r. Dépouillez-les pour leur |cRXP_LOOT_Claw|r
     >>|cRXP_ENEMY_Hogger|r peut apparaître à de nombreux endroits
     >>Lancez [Peur] |cRXP_WARN_sur |cRXP_ENEMY_Hogger|r en boucle et utilisez vos DoTs pour le tuer|r
-    >>Cette quête est difficile. Montez un groupe pour le tuer si nécessaire. Passez cette étape si vous n'arrivez pas à monter un groupe ou à le tuer solo
+    >>|cRXP_WARN_Cette quête est difficile. Montez un groupe pour le tuer si nécessaire. Passez cette étape si vous n'arrivez pas à monter un groupe ou à le tuer seul|r
     .complete 176,1 --Huge Gnoll Claw (1)
     .unitscan Hogger
 step
@@ -3124,7 +3196,8 @@ step
     .fp Redridge Mountains >> Prenez le chemin de vol des Carmines
     .fly Stormwind >> Volez à Stormwind
     .target Ariena Stormfeather
-step << skip
+step
+    .isOnQuest 61
     .goto 1453/0,625.48,-8857.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Morgan Pestle|r
     .turnin 61,1 >> Rendez la quête Une cargaison pour Hurlevent
@@ -3375,6 +3448,7 @@ step << !Paladin
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 #season 0,1
 #version 1
 << Alliance !Hunter
@@ -3385,8 +3459,6 @@ RXPGuides.RegisterGuide([[
 #next 13-15 Marche de l’Ouest;14-16 Sombrivage
 #defaultfor Gnome/Dwarf
 
-step -- dont delete
-    #label LochStart
 step << Dwarf Paladin
     #optional
     #completewith next
@@ -3603,7 +3675,6 @@ step
     .subzoneskip 149 --Silver Stream Mine
 step
     .goto 1432/0,-3146.73,-4837.02
-    #arrowtext |cRXP_WARN_Vous avez 10 minutes pour rendre la quête !|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Norric Lochthane|r
     >>|cRXP_WARN_N'oubliez pas de rendre cette quête avant que les 10 minutes du|r |T1387609:0|t[Bocal de neige] n'expire
     .turnin 86667 >> Rendez la quête Enneigement
@@ -3628,7 +3699,7 @@ step
     .waypoint 1432/0,-2684.71,-5042.87,50,0
     .waypoint 1432/0,-2712.57,-5286.61,50,0
     >>Tuez les |cRXP_ENEMY_Tunnel Rats|r. Dépouillez-les pour leur |cRXP_LOOT_Piercings|r
-    >>Tuez les |cRXP_ENEMY_Géomanciens Rat des tunnels|r. Dépouillez-les pour leur |cRXP_LOOT_Goudron de feu|r << Shaman 
+    >>Tuez les |cRXP_ENEMY_Géomanciens Rat des tunnels|r. Dépouillez-les pour leur |cRXP_LOOT_Goudron de feu|r << Shaman
     >>Vous ne pouvez trouver les |cRXP_ENEMY_Géomanciens Rat des tunnels|r |cRXP_WARN_que à l'intérieur de la mine|r << Shaman
     .complete 416,1 --Collect Tunnel Rat Ear (x12)
     .mob +Tunnel Rat Scout
@@ -4091,7 +4162,7 @@ step << Dwarf Paladin
     .target Tiza Battleforge
 step << Shaman
     .goto 1455/0,-1086.500,-4642.400
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Eldrun Brise-tempête::258098|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Eldrun Brise-tempête::258098|r
     .target Eldrun Stormbreaker::258098
     .trainer >> Apprenez vos sorts de classe
 step << Mage/Priest/Warlock
@@ -4167,9 +4238,6 @@ step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Bilban Tosslespanner|r
     .trainer >> Apprenez vos sorts de classe
     .target Bilban Tosslespanner
-
-step -- dont delete
-    #label LochEnd
 
 step << skip --logout skip << Warrior
     #optional
@@ -4380,6 +4448,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 #season 0,1
 #era/som--h
 #version 1
@@ -4678,7 +4747,6 @@ step
     .complete 86667,1 -- Jar of Snow 1/1
 step
     .goto 1432/0,-3146.73,-4837.02
-    #arrowtext |cRXP_WARN_Vous avez 10 minutes pour rendre la quête !|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Norric Lochthane|r
     >>|cRXP_WARN_N'oubliez pas de rendre cette quête avant que les 10 minutes du|r |T1387609:0|t[Bocal de neige] n'expire
     .turnin 86667 >> Rendez la quête Enneigement
@@ -4875,17 +4943,17 @@ step
     .target Catherine Leland
 step
     .goto 1453/0,1269.100,-8540.601
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Gilbert Gray::267118|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Gilbert Gray::267118|r
     .target Gilbert Gray::267118
     .accept 95065 >>Acceptez la quête L'heure de la pêche
     .turnin 95065 >>Rendez la quête L'heure de la pêche
 --Hunter going Darkshore, rest Westfall
-step << Hunter
+step << Hunter skip
     #optional
     #requires DockTravel
     #label DarkshoreCook1
     #completewith DarkshoreBoat
-    >>Sur le bateau si il vient d'arriver, ou sur le quai si le bateau vient de partir:
+    >>|cRXP_WARN_En attendant le Bateau sur le quai:|r
     .cast 818 >>|cRXP_WARN_Fabriquez un|r |T135805:0|t[Feu de camp basique] |cRXP_WARN_(dans votre onglet de Cuisine)|r
     .usespell 818
     .zoneskip Darkshore
@@ -4894,12 +4962,12 @@ step << Hunter
     .itemcount 4470,1 --Simple Wood (1+)
     .itemcount 4471,1 --Flint and Tinder (1)
     .skill cooking,50,1 --XX Shows if cooking skill is <50
-step << Hunter
+step << Hunter skip
     #optional
     #requires DarkshoreCook1
     #label DarkshoreCook2
     #completewith DarkshoreBoat
-    >>Sur le bateau si il vient d'arriver, ou sur le quai si le bateau vient de partir:
+    >>|cRXP_WARN_En attendant le Bateau sur le quai:|r
     .cast 818 >>|cRXP_WARN_Fabriquez un|r |T135805:0|t[Feu de camp basique] |cRXP_WARN_(dans votre onglet de Cuisine)|r
     .usespell 818
     .zoneskip Darkshore
@@ -4908,12 +4976,12 @@ step << Hunter
     .itemcount 4470,1 --Simple Wood (1+)
     .itemcount 4471,1 --Flint and Tinder (1)
     .skill cooking,50,1 --XX Shows if cooking skill is <50
-step << Hunter
+step << Hunter skip
     #optional
     #requires DarkshoreCook2
     #label DarkshoreCook3
     #completewith DarkshoreBoat
-    >>Sur le bateau si il vient d'arriver, ou sur le quai si le bateau vient de partir:
+    >>|cRXP_WARN_En attendant le Bateau sur le quai:|r
     .cast 818 >>|cRXP_WARN_Fabriquez un|r |T135805:0|t[Feu de camp basique] |cRXP_WARN_(dans votre onglet de Cuisine)|r
     .usespell 818
     .zoneskip Darkshore
@@ -4922,7 +4990,7 @@ step << Hunter
     .itemcount 4470,1 --Simple Wood (1+)
     .itemcount 4471,1 --Flint and Tinder (1)
     .skill cooking,50,1 --XX Shows if cooking skill is <50
-step << Hunter
+step << Hunter skip
     #optional
     #requires DarkshoreCook3
     #label DarkshoreCook4
@@ -4937,7 +5005,7 @@ step << Hunter
     .itemcount 2672,1 --Stringy Wolf Meat (1+)
     .itemcount 4471,1 --Flint and Tinder (1)
     .skill cooking,50,1
-step << Hunter
+step << Hunter skip
     #optional
     #requires DarkshoreCook4
     #label DarkshoreCook5
@@ -4950,7 +5018,7 @@ step << Hunter
     .itemcount 2672,1 --Stringy Wolf Meat (1)
     .itemcount 4471,1 --Flint and Tinder (1)
     .skill cooking,50,1
-step << Hunter
+step << Hunter skip
     #optional
     #requires DarkshoreCook5
     #label DarkshoreCook6

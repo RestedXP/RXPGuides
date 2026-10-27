@@ -357,7 +357,7 @@ step
     .goto Darkshore,47.36,36.86,40,0
     .goto Darkshore,44.80,36.91,40,0
     .goto Darkshore,46.30,39.01
-    >>Tuez les |cRXP_ENEMY_Grells sauvages|r et les |cRXP_ENEMY_Fées viles|r. Dépouillez-les pour leurr |cRXP_LOOT_Boucles d'oreille de Grell|r
+    >>Tuez les |cRXP_ENEMY_Grell sauvage|r et les |cRXP_ENEMY_Fée vile|r. Dépouillez-les pour leur |cRXP_LOOT_Boucle d'oreille de Grell|r
     .complete 955,1
     .mob Wild Grell
     .mob Vile Sprite
@@ -392,7 +392,7 @@ step
 step
     #label Tysha
     .goto Darkshore,40.30,59.70
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinelle Tysha Moonblade|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinel Tysha Moonblade|r
     .accept 953 >> Acceptez la quête La Chute d'Ameth'Aran
     .target Sentinel Tysha Moonblade
 step
@@ -437,7 +437,7 @@ step
 #map Darkshore
     .goto Felwood,23.29,36.73
     .target Sentinel Tysha Moonblade
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinelle Tysha Moonblade|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinel Tysha Moonblade|r
     .turnin 953 >> Rendez la quête La Chute d'Ameth'Aran
 step
     #completewith BashalFinal
@@ -485,7 +485,7 @@ step
 step
     .goto Darkshore,38.109,41.170,5,0
     .goto Darkshore,37.512,41.674
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Gorbold Steelhand|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|cRXP_FRIENDLY_Gorbold Steelhand|r
     +Achetez des |T134059:0|t[Epices douces]
     >>|cRXP_WARN_Utilisez des|r |T134059:0|t[Epices douces] |cRXP_WARN_et vos|r |T132832:0|t[Petits Oeufs] |cRXP_WARN_pour faire des Oeufs aux herbes. Faites cela jusqu'à ce que votre Cuisine ait atteint le niveau 10|r
     .skill cooking,10,1 -- step only displays if cooking skill is less than 10
@@ -696,7 +696,7 @@ step
 step
     .goto Dun Morogh,62.6,46.1
     >>Tuez |cRXP_ENEMY_Vagash|r. Dépouillez-le pour sa |cRXP_LOOT_Fang|r
-    >>Cette quête est difficile. Montez un groupe pour le tuer si nécessaire. Passez cette étape si vous n'arrivez pas à monter un groupe ou à le tuer solo
+    >>|cRXP_WARN_Cette quête est difficile. Montez un groupe pour le tuer si nécessaire. Passez cette étape si vous n'arrivez pas à monter un groupe ou à le tuer seul|r
     >>|cRXP_WARN_Regardez bien la vidéo avant de tenter de tuer|cRXP_ENEMY_Vagash|r. Il peut être tuer en solo par n'importe quelle classe|r
     .link https://www.youtube.com/watch?v=ZJX6sCkm5JY >> Cliquez ici pour un exemple vidéo
     .complete 314,1 --Collect Fang of Vagash (1)

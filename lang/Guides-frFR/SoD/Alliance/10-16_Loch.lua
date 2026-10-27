@@ -137,7 +137,7 @@ step << !Human Rogue
     .waypoint 1426,68.958,59.357,45,0
     .waypoint 1426,70.475,59.420,45,0
     >>Utilisez |T133644:0|t[Vol à la tire] sur les |cRXP_ENEMY_Brise-crânes Mâcherocs|r et les |cRXP_ENEMY_Briseurs d’os Mâcherocs|r. Dépouillez-les pour le |T134327:0|t[|cRXP_LOOT_Morceau supérieur gauche de carte]|r
-    >>Vous devez être en [Camouflage] pour utiliser votre [Vol à la tire]
+    >>Vous devez être en [Camouflage] pour utiliser [Vol à la tire]
     .collect 208215,1 -- Top-Left Map Piece (1)
     .mob Rockjaw Skullthumper
     .mob Rockjaw Bonesnapper
@@ -146,7 +146,7 @@ step << !Human Rogue
     #season 2
     .goto Dun Morogh,77.86,61.66
     >>Utilisez |T133644:0|t[Vol à la tire] sur les |cRXP_ENEMY_Espion Sombrefer|r. Récupérez la |T134331:0|t[Note de Ratnoir] et le |T134327:0|t[|cRXP_LOOT_Morceau inférieur gauche de carte]|r
-    >>Vous devez être en [Camouflage] pour utiliser votre [Vol à la tire]
+    >>Vous devez être en [Camouflage] pour utiliser [Vol à la tire]
     .collect 208205,1 --Blackrat's Note (1)
     .collect 208219,1 -- Bottom-Left Map Piece (1)
     .mob Dark Iron Spy
@@ -157,7 +157,7 @@ step <<< !Human Rogue
     #optional
     .goto Dun Morogh,77.86,61.66
     >>Utilisez |T133644:0|t[Vol à la tire] sur les |cRXP_ENEMY_Espions Sombrefers|r. Récupérez la |T134331:0|t[Note de Ratnoir]
-    >>Vous devez être en [Camouflage] pour utiliser votre [Vol à la tire]
+    >>Vous devez être en [Camouflage] pour utiliser [Vol à la tire]
     .collect 208205,1
     .mob Dark Iron Spy
     .train 400094,1
@@ -166,7 +166,7 @@ step <<< !Human Rogue
     #optional
     .goto Dun Morogh,77.86,61.66
     >>Utilisez |T133644:0|t[Vol à la tire] sur les |cRXP_ENEMY_Espion Sombrefer|r. Récupérez le |T134327:0|t[|cRXP_LOOT_Morceau inférieur gauche de carte]|r
-    >>Vous devez être en [Camouflage] pour utiliser votre [Vol à la tire]
+    >>Vous devez être en [Camouflage] pour utiliser [Vol à la tire]
     .collect 208219,1 -- Bottom-Left Map Piece (1)
     .mob Dark Iron Spy
     .train 398196,1

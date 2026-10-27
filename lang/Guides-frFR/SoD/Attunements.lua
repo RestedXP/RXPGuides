@@ -5,7 +5,6 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Guides Endgame
 #subgroup Accès
 #name Accès aux Cryptes de Karazhan
-#guideKind attunement
 
 step
     #completewith next
@@ -218,7 +217,6 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Guides Endgame
 #subgroup Accès
 #name Introduction à l'Enclave Écarlate
-#guideKind attunement
 
 step
    #completewith next

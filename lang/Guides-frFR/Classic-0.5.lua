@@ -13,8 +13,6 @@ RXPGuides.RegisterGuide([[
 #subgroup Guide du Set Tenue de combat d'héroïsme << Warrior
 #subgroup Guide du Set Habits du Vertueux << Priest
 #name Partie 1 : Brassards
-#guideKind gearset
-#guideIcon rxp-icon-quest
 #next Partie 2 : Ceinture et Gants
 
 
@@ -231,8 +229,6 @@ RXPGuides.RegisterGuide([[
 #subgroup Guide du Set Tenue de combat d'héroïsme << Warrior
 #subgroup Guide du Set Habits du Vertueux << Priest
 #name Partie 2 : Ceinture et Gants
-#guideKind gearset
-#guideIcon rxp-icon-quest
 #next Partie 3 : Pantalon, Épaulières et Bottes
 
 
@@ -677,8 +673,6 @@ RXPGuides.RegisterGuide([[
 #subgroup Guide du Set Tenue de combat d'héroïsme << Warrior
 #subgroup Guide du Set Habits du Vertueux << Priest
 #name Partie 3 : Pantalon, Épaulières et Bottes
-#guideKind gearset
-#guideIcon rxp-icon-quest
 #next Partie 4: Casque et Plastron
 
 step
@@ -920,7 +914,7 @@ step
 step
     #optional
     #completewith AnthionsFriend
-    .goto Kalimdor,43.39,66.52,20 >>Entrez à Hache-Tripes par l'entrée nord
+    .goto Kalimdor,43.39,66.52,20 >>Entrez dans Hache-Tripes par l'entrée nord
     .itemcount 18249,1 << !Rogue --Crescent Key
     .skill lockpicking,<300,1 << Rogue
 step
@@ -1161,8 +1155,6 @@ RXPGuides.RegisterGuide([[
 #subgroup Guide du Set Tenue de combat d'héroïsme << Warrior
 #subgroup Guide du Set Habits du Vertueux << Priest
 #name Partie 4: Casque et Plastron
-#guideKind gearset
-#guideIcon rxp-icon-quest
 
 
 step

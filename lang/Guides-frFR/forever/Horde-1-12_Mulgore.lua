@@ -5,11 +5,11 @@ if faction == "Alliance" then return end
 
 RXPGuides.RegisterGuide([[
 #forever
-#era/som--h
+#disabledungeons
 << Horde
 #name 1-6 Mulgore
 #version 11
-#group RestedXP Guide Forever (H)
+#group Guide RestedXP Éternel (H)
 #subgroup Guide Speedrun 1-22
 --#groupid RXP-SRGCE-H1
 #defaultfor Tauren
@@ -108,6 +108,13 @@ step
     .target Chief Hawkwind
 step << Shaman
     .goto 1412/1,-216.18,-2926.26--c:Mulgore,44.07,77.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Marjak|r
+    .vendor >> Objets à vendre au marchand. Vendez votre arme si cela vous donne assez d'argent pour un |T135139:0|t[Bâton court] (1s 02c). Vous reviendrez plus tard si vous n'avez pas encore assez d'argent.
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<1.9
+    .target Marjak Keenblade
+step << Shaman
+    .goto 1412/1,-216.18,-2926.26--c:Mulgore,44.07,77.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Parlez à|r |cRXP_FRIENDLY_Marjak|r|cRXP_BUY_. Achetez un|r |T135139:0|t[Bâton court] |cRXP_BUY_à Marjak|r
     .collect 2132,1,750,1 --Collect Short Staff (1)
     .money <0.0102
@@ -122,6 +129,20 @@ step << Shaman
     .itemcount 2132,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<1.9
+step
+    #completewith next
+    >>Tuez les |cRXP_ENEMY_Mountain Cougars|r. Dépouillez-les pour leur |cRXP_LOOT_Pelts|r
+    .complete 750,1 --Mountain Cougar Pelt (10)
+    .mob Mountain Cougar
+step
+    #label RitesoftheEarthmother
+    .goto 1412/1,-139.63,-3430.08--c:Mulgore,42.58,92.18
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Seer Graytongue|r
+    >>|cRXP_WARN_Cela va commencer une quête chronométrée de 10 minutes|r
+    .turnin 755 >>Rendez la quête Les rites de la Terre-Mère
+    .accept 757 >>Acceptez la quête Le rite de force
+    .accept 95805 >>Acceptez la quête Grâce d’An’she et Mu’sha
+    .target Seer Graytongue
 step
     #loop
     .goto 1412/1,-243.41,-3384.87,0--c:Mulgore,44.60,90.86
@@ -139,15 +160,6 @@ step
     >>Tuez les |cRXP_ENEMY_Mountain Cougars|r. Dépouillez-les pour leur |cRXP_LOOT_Pelts|r
     .complete 750,1 --Mountain Cougar Pelt (10)
     .mob Mountain Cougar
-step
-    #label RitesoftheEarthmother
-    .goto 1412/1,-139.63,-3430.08--c:Mulgore,42.58,92.18
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Seer Graytongue|r
-    >>|cRXP_WARN_Cela va commencer une quête chronométrée de 10 minutes|r
-    .turnin 755 >>Rendez la quête Les rites de la Terre-Mère
-    .accept 757 >>Acceptez la quête Le rite de force
-    .accept 95805 >>Acceptez la quête Grâce d’An’she et Mu’sha
-    .target Seer Graytongue
 step
     #loop
 	.goto 1412/1,-292.73,-3285.20,40,0--c:Mulgore,45.56,87.95
@@ -234,6 +246,13 @@ step << Shaman
     .turnin 3093 >>Rendez la quête Note runique
     .train 8042 >>Apprenez [Horion de terre]
     .target Meela Dawnstrider
+step << Druid
+    .goto 1412/1,-279.37,-2893.73--c:Mulgore,45.30,76.52
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Kawnie Softbreeze|r
+    >>|cRXP_BUY_Achetez des|r [Eau de source] |cRXP_BUY_à Shara|r
+	.collect 159,5,383,1 --Collect Refreshing Spring Water (10)
+    .target Kawnie Softbreeze
+    .money <0.0025
 step
     #completewith next
     >>Tuez les |cRXP_ENEMY_Battleboars|r. Dépouillez-les pour leur |cRXP_LOOT_Flanks|r et leur |cRXP_LOOT_Snouts|r
@@ -361,7 +380,7 @@ step
     .target Brave Windfeather
 step
     .goto 1412/1,-279.37,-2893.73--c:Mulgore,45.30,76.52
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Kawnie Softbreeze|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Kawnie Douce-Brise|r
     .vendor >> Vendez tout ce dont nous n'avez pas besoin
     .target Kawnie Softbreeze
 step
@@ -456,11 +475,11 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
-#era/som--h
+#disabledungeons
 << Horde
 #name 6-12 Mulgore
 #version 11
-#group RestedXP Guide Forever (H)
+#group Guide RestedXP Éternel (H)
 #subgroup Guide Speedrun 1-22
 --#groupid RXP-SRGCE-H1
 #defaultfor Tauren
@@ -500,13 +519,13 @@ step
 step
     #softcore
     .goto 1412/1,-408.900,-2179.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Yaw Sharpmane|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Yaw Sharpmane|r
     .accept 96130 >>Acceptez la quête Chakuyak
     .target Yaw Sharpmane
 step
     #softcore
     .goto 1412/1,-430.600,-2097.600
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Ahab Sabot-de-Blé|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Ahab Sabot-de-Blé|r
     .accept 99411 >>Acceptez la quête Kyle a disparu !
     .target Ahab Wheathoof
 step
@@ -629,13 +648,13 @@ step
 step
     #hardcore
     .goto 1412/1,-408.900,-2179.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Yaw Sharpmane|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Yaw Sharpmane|r
     .accept 96130 >>Acceptez la quête Chakuyak
     .target Yaw Sharpmane
 step
     #hardcore
     .goto 1412/1,-430.600,-2097.600
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Ahab Sabot-de-Blé|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Ahab Sabot-de-Blé|r
     .accept 99411 >>Acceptez la quête Kyle a disparu !
     .target Ahab Wheathoof
 step
@@ -645,7 +664,7 @@ step
     .target Harken Windtotem
 step
     .goto 1412/1,-496.200,-2347.900
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Krang Stonehoof|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Krang Stonehoof|r
     .accept 99108 >>Acceptez la quête Combat d’entraînement
     .target Krang Stonehoof
 step
@@ -912,6 +931,7 @@ step
     .train 2550 >>Apprenez la Cuisine
     .turnin 96661 >>Rendez la quête Introduction au camping : la cuisine
     .target Pyall Silentstride
+    .money <0.01
 step
     #label Vision
     .goto 1412/1,-405.75,-2243.32--c:Mulgore,47.76,57.53
@@ -922,7 +942,7 @@ step
     .target Zarlman Two-Moons
 step
     .goto 1412/1,-430.600,-2097.600
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Ahab Sabot-de-Blé|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Ahab Sabot-de-Blé|r
     .turnin 99411 >>Rendez la quête Kyle a disparu !
     .target Ahab Wheathoof
     .isQuestComplete 99411
@@ -1009,6 +1029,38 @@ step << Tauren
     .mob +Prairie Stalker
     .complete 756,2 --Cougar Claws (6)
     .mob +Flatland Cougar
+step
+    #softcore
+	#completewith Escort1
+    .deathskip >> Mourez et ressuscitez au |cRXP_FRIENDLY_Gardien des âmes|r
+step << Hunter
+    #softcore
+    .goto 1412/1,-408.32,-2180.30--c:Mulgore,47.81,55.69
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Yaw|r
+    .train 5116 >> Apprenez vos sorts de classe
+    .target Yaw Sharpmane
+    .xp <8,1
+step << Druid
+    #softcore
+    .goto 1412/1,-442.74,-2315.59--c:Mulgore,48.48,59.64
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Gennia|r
+    .train 5186 >>Apprenez vos sorts de classe
+    .target Gennia Runetotem
+    .xp <8,1
+step << Warrior
+    #softcore
+    .goto 1412/1,-496.17,-2347.78--c:Mulgore,49.52,60.58
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Krang|r
+    .train 284 >> Apprenez vos sorts de classe
+    .target Krang Stonehoof
+    .xp <8,1
+step << Shaman
+    #softcore
+    .goto 1412/1,-437.61,-2298.80--c:Mulgore,48.38,59.15
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Narm|r
+    .train 8044 >> Apprenez vos sorts de classe
+    .target Narm Skychaser
+    .xp <8,1
 step
     .goto 1412/1,54.800,-2442.200
     >>Tuez |cRXP_ENEMY_Chakuyak|r. Dépouillez-le pour sa |cRXP_LOOT_Fourrure|r
@@ -1172,6 +1224,12 @@ step
     .vendor >> Vendez ce dont vous n'avez pas besoin, et réparez votre équipement
     .target Harant Ironbrace
 step
+    .goto 1412/1,-285.000,-2263.400
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Pyall|r
+    .train 2550 >>Apprenez la Cuisine
+    .turnin 96661 >>Rendre la quête Campement 101: Cuisine
+    .target Pyall Silentstride
+step
     .goto 1412/1,-392.500,-2318.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Brave Wildrunner|r
     >>|cRXP_WARN_Il patrouille dans les alentours|r
@@ -1251,7 +1309,7 @@ step
     .unitscan Kyle the Frenzied
 step
     .goto 1412/1,-430.600,-2097.600
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Ahab Sabot-de-Blé|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Ahab Sabot-de-Blé|r
     .turnin 99411 >>Rendez la quête Kyle a disparu !
     .target Ahab Wheathoof
 step
@@ -1318,7 +1376,7 @@ step
 step
     .goto 1456/1,104.500,-1308.400
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à Boarton Ombre-Totem|cRXP_FRIENDLY_
-    >>|cRXP_WARN_Il est|r |T132320:0|t[Camouflé] 
+    >>|cRXP_WARN_Il est|r |T132320:0|t[Camouflé]
     .accept 76156 >>Acceptez la quête La traque de la Terre-Mère
     .target Boarton Shadetotem
 step
@@ -1542,7 +1600,7 @@ step
     #sofcore
     #completewith Bloodhoofturnins1
     .goto 1412/1,-598.900,-1603.700
-    .deathskip >> Die at the waypoint arrow (or further south of it) and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
+    .deathskip >> Mourez à la flèche du point de repère (ou encore plus au sud), puis mourez et ressuscitez au |cRXP_FRIENDLY_Spirit Healer|r
 step
     #hardcore
     #completewith Bloodhoofturnins1
@@ -1598,7 +1656,7 @@ step << Tauren
     .target +Mull Thunderhorn
     .goto 1412/1,-445.83,-2340.93--c:Mulgore,48.54,60.38
 step << !Tauren
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Baine|r, |cRXP_FRIENDLY_Ruul|r et |cRXP_FRIENDLY_Harken|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Baine|r, |cRXP_FRIENDLY_Ruul|r et à |cRXP_FRIENDLY_Harken|r
     .turnin 746 >>Rendez la quête Les fouilles des nains
     .target +Baine Bloodhoof
     .goto 1412/1,-392.91,-2333.40--c:Mulgore,47.51,60.16
@@ -1671,7 +1729,7 @@ step << Hunter
     .goto 1412/1,-154.53,-2152.56,50,0--c:Mulgore,42.87,54.88
     .goto 1412/1,-44.59,-2177.22,50,0--c:Mulgore,40.73,55.60
     .goto 1412/1,24.77,-2239.89,50,0--c:Mulgore,39.38,57.43
-    .use 15914 >> Utilisez votre [Bâtonnet de domptage] sur un |cRXP_ENEMY_Adult Plainstrider|r à distance maximale
+    .use 15914 >> Utilisez votre [Bâtonnet de domptage] sur un |cRXP_ENEMY_Adult Plainstrider|r à la portée maximale
     .complete 6061,1 --Tame an Adult Plainstrider (1)
     .mob Adult Plainstrider
 step << Hunter
@@ -1921,7 +1979,7 @@ step << Druid
 step
     .goto 1456/1,104.500,-1308.400
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Boarton Ombre-Totem|r
-    >>|cRXP_WARN_Il est|r |T132320:0|t[Camouflé] 
+    >>|cRXP_WARN_Il est|r |T132320:0|t[Camouflé]
     .turnin 76156 >>Rendez la quête La traque de la Terre-Mère
     .accept 76160 >>Acceptez la quête La traque de la Terre-Mère
     .target Boarton Shadetotem

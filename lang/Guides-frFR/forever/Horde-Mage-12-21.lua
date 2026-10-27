@@ -4,12 +4,13 @@ if faction == "Alliance" then return end
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Horde Mage
 #name 12-17 Les Tarides AoE
 #version 1
-#group RestedXP Guide Forever (H)
-#subgroup Guide Speedrun Mage AoE
-#defaultfor Horde Mage
+#group RestedXP Horde Mage AoE
+
+#defaultfor none Horde Mage
 #next 17-21 Serres-Rocheuses /Les Tarides AoE
 
 step << Mage
@@ -146,7 +147,7 @@ step
 step
     #label Crates
 	.goto 1413/1,-3305.08,-231.96,40,0
-    .goto 1413/1,-3294.95,-211.69.0,40,0
+    .goto 1413/1,-3294.95,-211.69,40,0
     .goto 1413/1,-3305.08,-130.61,40,0
     .goto 1413/1,-3396.28,-63.05,40,0
     >>Récupérez les boîtes marrons dispersées dans la zone
@@ -450,7 +451,7 @@ step
 .target Gazrog
     .accept 3281 >>Acceptez la quête Argent volé
 step
-    .goto 1413/1,-2676.82,-481.94.0
+    .goto 1413/1,-2676.82,-481.94
 >>Parlez à |cRXP_FRIENDLY_Sergra Sombreronce|r
     .turnin 903 >>Rendez la quête Les rôdeurs des Tarides
 .target Sergra Darkthorn
@@ -466,7 +467,7 @@ step
 .target Sergra Darkthorn
     .accept 905 >>Acceptez la quête Les Faucheurs furieux
 step
-    .goto 1413/1,-2666.68,-481.94.90
+    .goto 1413/1,-2666.68,-481.94
 >>Parlez à |cRXP_FRIENDLY_Tonga Totem-runique|r
     .turnin 870 >> Rendez la quête Les Bassins oubliés
 .target Tonga Runetotem
@@ -707,23 +708,24 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Horde Mage
 #name 17-21 Serres-Rocheuses /Les Tarides AoE
 #version 1
-#group RestedXP Guide Forever (H)
-#subgroup Guide Speedrun Mage AoE
-#defaultfor Horde Mage
+#group RestedXP Horde Mage AoE
+
+#defaultfor none Horde Mage
 #next 21-30 Forêt des Pins argentés/Hautebrande AoE
 
 step
     .goto 1442/1,-695.02,12.09,50,0
     .goto 1442/1,-758.5,116.29,50,0
     .goto 1442/1,-890.35,171.65,50,0
-    .goto 1442/1,-773.15,-13.96.0,50,0
+    .goto 1442/1,-773.15,-13.96,50,0
     .goto 1442/1,-695.02,12.09,50,0
     .goto 1442/1,-758.5,116.29,50,0
     .goto 1442/1,-890.35,171.65,50,0
-    .goto 1442/1,-773.15,-13.96.0,50,0
+    .goto 1442/1,-773.15,-13.96,50,0
     >>Tuez les Totem-sinistres dans la zone
     .complete 6548,2 --Kill Grimtotem Mercenary (x6)
     .complete 6548,1 --Kill Grimtotem Ruffian (x8)
@@ -970,7 +972,7 @@ step
     #completewith next
     .goto 1413/1,-1856.02,-2583.13,0
     .goto 1413/1,-2362.68,-2616.91,0
-    .goto 1413/1,-2403.22,-2441.25.0,0
+    .goto 1413/1,-2403.22,-2441.25,0
     >>Cherchez Owatanka (Lézard-tonnerre bleu) dans cette zone. Si vous le trouvez, ramassez son Épine caudale et commencez la quête. Si vous ne le trouvez pas, passez cette quête
     .collect 5102,1,884 --Collect Owatanka's Tailspike
     .accept 884 >>Acceptez la quête Owatanka
@@ -1033,7 +1035,7 @@ step
     .accept 1131 >>Acceptez la quête Broie-l'acier
 step
  	>>Entrez dans le bassin des Visions
-	.goto 1456/1,202.5,-1058.75.0,30,0
+	.goto 1456/1,202.5,-1058.75,30,0
 	.goto 1456/1,276.6,-996.120
 .target Apothecary Zamah
 >>Parlez à l' |cRXP_FRIENDLY_Apothicaire Zamah|r
@@ -1116,7 +1118,7 @@ step
     .trainer >> Apprenez vos sorts de classe si nécessaire
 	>>Changez votre spécialisation pour la Givre AoE si vous ne l'avez pas encore fait
 step
-    .goto 1456/1,28.19,-1197.92.0
+    .goto 1456/1,28.19,-1197.92
     .fly The Crossroads >>Volez à la Croisée
 step
     .goto 1413/1,-2605.88,-475.180

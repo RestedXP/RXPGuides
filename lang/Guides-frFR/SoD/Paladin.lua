@@ -2120,7 +2120,7 @@ step << Alliance
     .train 410013,1
 step << Alliance
     #completewith next
-    .zone Hillsbrad Foothills >>Voyagez aux Contreforts de Hautebrande
+    .zone Hillsbrad Foothills >>Voyagez aux Contreforts d'Hillsbrad
     .train 410013,1
 step << Alliance
     #loop
@@ -2133,7 +2133,7 @@ step << Alliance
     .complete 81970,4 --1/1 Symbol of Faith
 step << Horde
     #completewith next
-    .zone Hillsbrad Foothills >>Voyagez aux Contreforts de Hautebrande
+    .zone Hillsbrad Foothills >>Voyagez aux Contreforts d'Hillsbrad
     .train 410013,1
 step << Horde
     #loop

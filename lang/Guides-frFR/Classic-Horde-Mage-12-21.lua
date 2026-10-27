@@ -729,7 +729,7 @@ step
     .complete 6548,1 --Kill Grimtotem Ruffian (x8)
 step
     .goto The Barrens,35.191,27.791
->>Parlez à |cRXP_FRIENDLY_Makaba Sabot-plat|r
+>>Parlez à |cRXP_FRIENDLY_Makaba Flathoof|r
     .turnin 6548 >> Rendez la quête Vengez mon village !
 .target Makaba Flathoof
     .accept 6629 >> Acceptez la quête Tuer Grundig Noir-nuage
@@ -743,7 +743,7 @@ step
     >>Démarrez l'escorte de Kaya
     .goto Stonetalon Mountains,73.5,85.8
 .target Kaya Flathoof
->>Parlez à |cRXP_FRIENDLY_Kaya Sabot-plat|r
+>>Parlez à |cRXP_FRIENDLY_Kaya Flathoof|r
     .accept 6523 >> Acceptez la quête Protéger Kaya
 step
      >>Escortez Kaya et restez proche d'elle. 3 Totem-sinistres apparaîtront près du feu de camp. Mangez/buvez avant qu'elle n'arrive au camp
@@ -816,8 +816,8 @@ step
     .hs >> Utilisez votre Pierre de foyer pour revenir au Camp Taurajo
 step
     .goto The Barrens,44.9,59.1
->>Parlez à |cRXP_FRIENDLY_Jorn Œil-des-cieux|r
-    .turnin 3261 >>Rendez la quête Jorn Œil-des-cieux
+>>Parlez à |cRXP_FRIENDLY_Jorn Skyseer|r
+    .turnin 3261 >>Rendez la quête Jorn Skyseer
 .target Jorn Skyseer
     .accept 882 >>Acceptez la quête Ishamuhale
 step
@@ -946,7 +946,7 @@ step
 --N Different classes needing different buffs, e.g. need speed buff later for Mulgore run for classes that didnt get FP earlier
 step
     .goto The Barrens,44.8,59.1
->>Parlez à |cRXP_FRIENDLY_Jorn Œil-des-cieux|r
+>>Parlez à |cRXP_FRIENDLY_Jorn Skyseer|r
     .turnin 882 >>Rendez la quête Ishamuhale
 .target Jorn Skyseer
     .accept 907 >>Acceptez la quête Les lézards-tonnerre enragés
@@ -955,11 +955,11 @@ step
     .goto The Barrens,44.8,59.1
     .isOnQuest 883
 .target Jorn Skyseer
->>Parlez à |cRXP_FRIENDLY_Jorn Œil-des-cieux|r
+>>Parlez à |cRXP_FRIENDLY_Jorn Skyseer|r
     .turnin 883 >>Rendez la quête Lakota'mani
 step
     .goto The Barrens,44.8,59.1
->>Parlez à |cRXP_FRIENDLY_Jorn Œil-des-cieux|r
+>>Parlez à |cRXP_FRIENDLY_Jorn Skyseer|r
     .turnin 882 >>Rendez la quête Ishamuhale
 .target Jorn Skyseer
     .accept 907 >>Acceptez la quête Les lézards-tonnerre enragés
@@ -982,19 +982,19 @@ step
     .complete 907,1 --Thunder Lizard Blood (3)
 step
     .goto The Barrens,44.9,59.1
->>Parlez à |cRXP_FRIENDLY_Jorn Œil-des-cieux|r
+>>Parlez à |cRXP_FRIENDLY_Jorn Skyseer|r
     .turnin 907 >>Rendez la quête Les lézards-tonnerre enragés
 .target Jorn Skyseer
     .accept 913 >>Acceptez la quête Le cri du faucon-tonnerre
 step
     .goto The Barrens,44.9,59.1
 .target Jorn Skyseer
->>Parlez à |cRXP_FRIENDLY_Jorn Œil-des-cieux|r
+>>Parlez à |cRXP_FRIENDLY_Jorn Skyseer|r
     .turnin 884 >>Rendez la quête Owatanka
     .isOnQuest 884
 step
     .goto The Barrens,44.9,59.1
->>Parlez à |cRXP_FRIENDLY_Jorn Œil-des-cieux|r
+>>Parlez à |cRXP_FRIENDLY_Jorn Skyseer|r
     .turnin 907 >>Rendez la quête Les lézards-tonnerre enragés
 .target Jorn Skyseer
     .accept 913 >>Acceptez la quête Le cri du faucon-tonnerre
@@ -1010,7 +1010,7 @@ step
 step
     .goto The Barrens,44.8,59.1
 .target Jorn Skyseer
->>Parlez à |cRXP_FRIENDLY_Jorn Œil-des-cieux|r
+>>Parlez à |cRXP_FRIENDLY_Jorn Skyseer|r
     .turnin 913 >>Rendez la quête Le cri du faucon-tonnerre
 --    .accept 874 >>Accept Mahren Skyseer
 step
@@ -1027,7 +1027,7 @@ step
     .home >>Liez votre Pierre de foyer à Pitons-du-Tonnerre
 step
     .goto Thunder Bluff,61.538,80.919
->>Parlez à |cRXP_FRIENDLY_Melor Sabot-de-pierre|r
+>>Parlez à |cRXP_FRIENDLY_Melor Stonehoof|r
     .turnin 1130 >>Rendez la quête Melor envoie un message
 .target Melor Stonehoof
     .accept 1131 >>Acceptez la quête Broie-l'acier
@@ -1059,7 +1059,7 @@ step
     .goto The Barrens,35.3,27.9
 >>Parlez à |cRXP_FRIENDLY_Seereth Bris-de-pierre|r
     .turnin 1062 >>Rendez la quête Les invasions gobelines
->>Parlez à |cRXP_FRIENDLY_Makaba Sabot-plat|r
+>>Parlez à |cRXP_FRIENDLY_Makaba Flathoof|r
     .turnin 6629 >>Rendez la quête Tuer Grundig Darkcloud
     .turnin 6523 >>Rendez la quête Protéger Kaya
 .target Makaba Flathoof
@@ -1080,7 +1080,7 @@ step
 step
     .goto Stonetalon Mountains,47.5,58.4
 .target Tammra Windfield
->>Parlez à |cRXP_FRIENDLY_Tammra Champ-des-vents|r
+>>Parlez à |cRXP_FRIENDLY_Tammra Windfield|r
     .turnin 6401 >>Rendez la quête Kaya est en vie
 step
     .goto Stonetalon Mountains,45.12,59.84
@@ -1090,20 +1090,20 @@ step
     .hs >> Utilisez votre Pierre de foyer pour revenir aux Pitons-du-Tonnerre
 step
     .goto Thunder Bluff,70.00,30.90
->>Parlez à |cRXP_FRIENDLY_Magatha Totem-sinistre|r
+>>Parlez à |cRXP_FRIENDLY_Magatha Grimtotem|r
     .turnin 1063 >> Rendez la quête L'Ancienne
 .target Magatha Grimtotem
     .accept 1064 >> Acceptez la quête L'aide des Réprouvés
 step
     .goto Thunder Bluff,78.62,28.56
->>Parlez à l' |cRXP_FRIENDLY_Archidruide Hamuul Totem-runique|r
-    .turnin 1489 >> Rendez la quête Hamuul Totem-runique
+>>Parlez à l' |cRXP_FRIENDLY_Archidruide Hamuul Runetotem|r
+    .turnin 1489 >> Rendez la quête Hamuul Runetotem
 .target Arch Druid Hamuul Runetotem
     .accept 1490 >> Acceptez la quête Nara Wildmane
 step
     .goto Thunder Bluff,75.65,31.62
 .target Nara Wildmane
->>Parlez à |cRXP_FRIENDLY_Nara Crin-sauvage|r
+>>Parlez à |cRXP_FRIENDLY_Nara Wildmane|r
     .turnin 1490 >> Rendez la quête Nara Crin-sauvage
 step
     .goto Thunder Bluff,23.00,21.0

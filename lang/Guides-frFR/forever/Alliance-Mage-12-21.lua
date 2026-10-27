@@ -4,12 +4,13 @@ if faction == "Horde" then return end
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Alliance Mage
 #name 12-18 Sombrivage Mage AoE
 #version 1
-#group RestedXP Guide Forever (A)
-#subgroup Guide Speedrun Mage
-#defaultfor Alliance Mage
+#group RestedXP Mage Alliance
+
+#defaultfor none Alliance Mage
 #next 18-21 Carmines Mage AoE
 
 step
@@ -799,12 +800,13 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Alliance Mage
 #name 18-21 Carmines Mage AoE
 #version 1
-#group RestedXP Guide Forever (A)
-#subgroup Guide Speedrun Mage
-#defaultfor Alliance Mage
+#group RestedXP Mage Alliance
+
+#defaultfor none Alliance Mage
 #next 21-22 Bois de la Pénombre Mage AoE
 
 step
