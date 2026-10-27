@@ -824,9 +824,16 @@ function addon.SetStep(n, n2, loopback)
     addon.inventoryManager:OpenItems(nil, true)
 
     local useV2GuideWindow = addon.v2:IsGuideWindowEnabled()
-    if not useV2GuideWindow then
-        ClearFrameData()
+    if useV2GuideWindow then
+        local playerState = addon.v2.state.player[addon.player.name]
+        if playerState and playerState.childContainer then
+            playerState.childContainer:ReleaseChildren()
+            playerState.activeStepItemsByKey = nil
+            playerState.activeStepItems = nil
+        end
         addon.v2:ClearActiveStepEventWatchers()
+    else
+        ClearFrameData()
     end
 
     local level = UnitLevel("player")
