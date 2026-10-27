@@ -1834,7 +1834,7 @@ step
 step
     .goto Dun Morogh,47.377,52.523
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Belm l'aubergiste|r dans l'auberge
-    >>|cRXP_BUY_Buy a|r |T132800:0|t[Rhapsody Malt] |cRXP_BUY_and a|r |T132800:0|t[Thunder Ale] |cRXP_BUY_from him|r
+    >>|cRXP_BUY_Achetez-lui une|r |T132800:0|t[Bière au malt Rhapsody] |cRXP_BUY_et une|r |T132800:0|t[Thunder Ale] |cRXP_BUY_|r
     .complete 384,2 --Collect Rhapsody Malt (x1)
     .itemcount 2886,6 --Crag Boar Rib (6)
     .target Innkeeper Belm
