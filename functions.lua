@@ -1338,6 +1338,8 @@ function addon.functions.daily(self, text, ...)
         return element
     else
         local element = self.element
+        if not (element and element.ids) then return end
+
         if RXPCData.skipDailies and element.tag == "daily" then
             addon.SetElementComplete(self, true)
             return
@@ -1559,6 +1561,8 @@ function addon.functions.dailyturnin(self, text, ...)
     end
 
     local element = self.element
+    if not (element and element.ids) then return end
+
     if RXPCData.skipDailies and element.tag == "dailyturnin" then
         addon.SetElementComplete(self, true)
         return
