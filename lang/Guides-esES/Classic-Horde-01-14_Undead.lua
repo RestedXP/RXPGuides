@@ -362,7 +362,7 @@ step << Mage/Warlock/Priest
     .goto Tirisfal Glades,32.29,65.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Joshua|r
     >>|cRXP_BUY_Compra|r |T132794:0|t[Agua de manantial refrescante] |cRXP_BUY_a este vendedor|r
-    >>|cRXP_WARN_NO dejes que tu dinero baje de 1 moneda de plata|r << Mage/Warlock/Priest
+    >>|cRXP_WARN_NO bajes de 1 moneda de plata|r << Mage/Warlock/Priest
     .vendor >> Vende la Basura
     .target Joshua Kien
     .money >0.1
@@ -593,13 +593,13 @@ step
     #xprate <1.5
     #softcore
     #completewith Scavenging
-    .deathskip >> Muere y reaparece en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
+    .deathskip >> Muere y resucita en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
     .target Ángel de la Resurrección
 step
     #xprate >1.49
     #softcore
     #completewith NightWebH
-    .deathskip >> Muere y reaparece en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
+    .deathskip >> Muere y resucita en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
     .target Ángel de la Resurrección
 step << Warlock
     #softcore
@@ -689,11 +689,11 @@ step
 step
     #softcore
     #completewith next
-    .deathskip >> Muere y reaparece en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
+    .deathskip >> Muere y resucita en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
     .target Ángel de la Resurrección
 step
     .goto Tirisfal Glades,31.17,65.08
-	>>Haz clic en la |cRXP_PICK_Tumba de Marla|r del suelo
+	>>Haz clic en la |cRXP_PICK_Tumba de Marla|r en el suelo
     .complete 6395,1 --Collect Samuel's Remains Buried (1)
  step << Warlock
     #softcore
@@ -1519,7 +1519,7 @@ step
     #xprate <1.5
     #softcore
     #completewith NewPlague1
-    .deathskip >> Muere y reaparece en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
+    .deathskip >> Muere y resucita en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
 step
     #label NewPlague1
     .goto Tirisfal Glades,59.45,52.40
@@ -1659,7 +1659,7 @@ step << Warrior
     .train 403475,1
 step
     #completewith next
-    >>Despoja la |cRXP_LOOT_Apocalísea|r del suelo
+    >>Despoja la |cRXP_LOOT_Apocalísea|r en el suelo
     >>|cRXP_WARN_Se encuentran cerca de los árboles en el área Gnoll|r
     .complete 5482,1 --Doom Weed (10)
     .isOnQuest 5482
@@ -1700,7 +1700,7 @@ step
     .goto Tirisfal Glades,58.83,40.68,30,0
     .goto Tirisfal Glades,58.36,38.55,30,0
     .goto Tirisfal Glades,57.48,35.95,30,0
-    >>Despoja la |cRXP_LOOT_Apocalísea|r del suelo
+    >>Despoja la |cRXP_LOOT_Apocalísea|r en el suelo
     >>|cRXP_WARN_Se encuentran cerca de los árboles en el área Gnoll|r
     .complete 5482,1 --Doom Weed (10)
     .isOnQuest 5482
@@ -1892,7 +1892,7 @@ step
     #softcore
     #completewith Brill3
     .goto Tirisfal Glades,64.50,29.41
-    .deathskip >> Muere y reaparece en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
+    .deathskip >> Muere y resucita en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
     >>|cRXP_WARN_Asegúrate de morir en (o al oeste de) la flecha|r
 step
     #label DoomedWeed
@@ -2372,7 +2372,7 @@ step
 step
     #softcore
     #completewith FoodandWater2
-    .deathskip >> Muere y reaparece en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
+    .deathskip >> Muere y resucita en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
 step
     .goto Tirisfal Glades,58.20,51.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Dillinger|r
@@ -2670,7 +2670,7 @@ step << Warrior
     .goto Undercity,77.08,49.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Charles Seaton|r en el Barrio de los Pícaros
     >>|cRXP_BUY_Compra un|r |T135350:0|t[Mandoble] |cRXP_BUY_a este vendedor|r
-    >>|cRXP_WARN_Alternativamente, busca en la Casa de subastas algo mejor o más barato|r
+    >>|cRXP_WARN_Alternativamente, puedes consultar la Casa de Subastas para ver si encuentras una opción mejor o más barata|r
     .collect 1198,1,371,1 --Collect Claymore (1)
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.0
@@ -2698,7 +2698,7 @@ step << Rogue
     .goto Undercity,77.08,49.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Charles Seaton|r en el Barrio de los Pícaros
     >>|cRXP_BUY_Compra un|r |T135346:0|t[Alfanje] |cRXP_BUY_a este vendedor|r
-    >>|cRXP_WARN_Alternativamente, busca en la Casa de subastas algo mejor o más barato|r
+    >>|cRXP_WARN_Alternativamente, puedes consultar la Casa de Subastas para ver si encuentras una opción mejor o más barata|r
     .collect 851,1,371,1 --Collect Cutlass (1)
     .money <0.2023
     .itemStat 16,QUALITY,<7
@@ -3376,7 +3376,7 @@ step << Rogue
     .goto Undercity,77.08,49.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Charles Seaton|r en el Barrio de los Pícaros
     >>|cRXP_BUY_Compra un|r |T135346:0|t[Alfanje] |cRXP_BUY_a este vendedor|r
-    >>|cRXP_WARN_Alternativamente, busca en la Casa de subastas algo mejor o más barato|r
+    >>|cRXP_WARN_Alternativamente, puedes consultar la Casa de Subastas para ver si encuentras una opción mejor o más barata|r
     .collect 851,1,372,1 --Collect Cutlass (1)
     .money <0.2023
     .itemStat 16,QUALITY,<7
@@ -3408,7 +3408,7 @@ step << Warrior
     .goto Undercity,77.08,49.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Charles Seaton|r en el Barrio de los Pícaros
     >>|cRXP_BUY_Compra un|r |T135350:0|t[Mandoble] |cRXP_BUY_a este vendedor|r
-    >>|cRXP_WARN_Alternativamente, busca en la Casa de subastas algo mejor o más barato|r
+    >>|cRXP_WARN_Alternativamente, puedes consultar la Casa de Subastas para ver si encuentras una opción mejor o más barata|r
     .collect 1198,1,372,1 --Collect Claymore (1)
     .money <0.2950
     .itemStat 16,QUALITY,<7
@@ -3819,7 +3819,7 @@ step << Warrior
     .goto Undercity,61.15,40.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Louis Warren|r en el Barrio del Comercio
     >>|cRXP_BUY_Compra un|r |T135350:0|t[Mandoble] |cRXP_BUY_a este vendedor|r
-    >>|cRXP_WARN_Alternativamente, busca en la Casa de subastas algo mejor o más barato|r
+    >>|cRXP_WARN_Alternativamente, puedes consultar la Casa de Subastas para ver si encuentras una opción mejor o más barata|r
     .collect 1198,1,435,1 --Collect Claymore (1)
     .money <0.2950
     .itemStat 16,QUALITY,<7
@@ -4168,7 +4168,7 @@ step
 step
     #softcore
     #completewith ProveyourWorth
-    .deathskip >> Muere y reaparece en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
+    .deathskip >> Muere y resucita en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
 step
     #hardcore
     #completewith next
@@ -4379,7 +4379,7 @@ step
 step
     #softcore
     #completewith ArugalTurnin
-    .deathskip >> Muere y reaparece en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
+    .deathskip >> Muere y resucita en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
 step
     #hardcore
     #completewith next
@@ -4538,7 +4538,7 @@ step
 step
     #softcore
     #completewith next
-    .deathskip >> Muere y reaparece en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
+    .deathskip >> Muere y resucita en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
 step
     #xprate <1.5
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Allister|r y |cRXP_FRIENDLY_Dalar|r
@@ -4636,7 +4636,7 @@ step << Rogue
     .goto Undercity,61.15,40.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Louis Warren|r en el Barrio del Comercio
     >>|cRXP_BUY_Compra una|r |T135343:0|t[Cimitarra] |cRXP_BUY_a este vendedor|r
-    >>|cRXP_WARN_Alternativamente, busca en la Casa de subastas algo mejor o más barato|r
+    >>|cRXP_WARN_Alternativamente, puedes consultar la Casa de Subastas para ver si encuentras una opción mejor o más barata|r
     .collect 2027,1,809,1 --Collect Scimitar (1)
     .money <0.3815
     .itemStat 16,QUALITY,<7
@@ -4958,7 +4958,7 @@ step << Priest/Mage/Warlock
     .goto Undercity,69.54,26.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Zane Bradford|r en el Barrio de Magia
     >>|cRXP_BUY_Compra una|r |T135468:0|t[Varita humeante] |cRXP_BUY_a este vendedor|r
-    >>|cRXP_WARN_Alternativamente, busca en la Casa de subastas algo mejor o más barato|r
+    >>|cRXP_WARN_Alternativamente, puedes consultar la Casa de Subastas para ver si encuentras una opción mejor o más barata|r
     .collect 5208,1 --Smoldering Wand (1)
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<13.4
@@ -5859,7 +5859,7 @@ step
     #completewith next
     >>Mata |cRXP_ENEMY_Carroñeros jóvenes|r y |cRXP_ENEMY_Carroñeros pulgosos|r. Despójalos para obtener sus |cRXP_LOOT_Garras de carroñero|r
     >>Mata |cRXP_ENEMY_Murciumbríos|r y |cRXP_ENEMY_Murciumbríos sarnosos|r. Despójalos para obtener sus |cRXP_LOOT_Alas de Murciumbrío|r
-    >>|cRXP_WARN_Intenta evitar |cRXP_ENEMY_Murciumbríos sarnosos|r si puedes debido a que son mucho más difíciles de matar que los |cRXP_ENEMY_Murciumbríos|r|r
+    >>|cRXP_WARN_Intenta evitar a los |cRXP_ENEMY_Murciumbríos sarnosos|r si puedes debido a que son mucho más difíciles de matar que los |cRXP_ENEMY_Murciumbríos|r|r
     .complete 376,1 --Collect Scavenger Paw (x6)
     .mob +Young Scavenger
     .mob +Ragged Scavenger
@@ -6337,13 +6337,13 @@ step
     #xprate <1.5
     #softcore
     #completewith Scavenging
-    .deathskip >> Muere y reaparece en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
+    .deathskip >> Muere y resucita en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
     .target Ángel de la Resurrección
 step
     #xprate >1.49
     #softcore
     #completewith NightWebH
-    .deathskip >> Muere y reaparece en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
+    .deathskip >> Muere y resucita en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
     .target Ángel de la Resurrección
 step << Warlock
     #softcore
@@ -6421,7 +6421,7 @@ step
 step
     #softcore
     #completewith next
-    .deathskip >> Muere y reaparece en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
+    .deathskip >> Muere y resucita en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
     .target Ángel de la Resurrección
 step
     .goto Tirisfal Glades,31.17,65.08
@@ -6999,7 +6999,7 @@ step
     .goto Tirisfal Glades,60.58,51.77
 step
     #xprate >1.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Burgess|r, el |cRXP_FRIENDLY_Cartel de Se busca|r y |cRXP_FRIENDLY_Sevren|r dentro del edificio
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Burgess|r, |cRXP_FRIENDLY_Cartel de Se busca|r y |cRXP_FRIENDLY_Sevren|r dentro del edificio
     .accept 374 >>Acepta la misión Prueba de defunción
     .target +Deathguard Burgess
     .goto Tirisfal Glades,60.93,52.01
@@ -7252,7 +7252,7 @@ step
     #xprate <1.5
     #softcore
     #completewith NewPlague1
-    .deathskip >> Muere y reaparece en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
+    .deathskip >> Muere y resucita en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
 step
     #label NewPlague1
     #optional
@@ -7394,7 +7394,7 @@ step << Warrior
     .train 403475,1
 step << skip
     #completewith next
-    >>Despoja la |cRXP_LOOT_Apocalísea|r del suelo
+    >>Despoja la |cRXP_LOOT_Apocalísea|r en el suelo
     >>|cRXP_WARN_Se encuentran cerca de los árboles en el área Gnoll|r
     .complete 5482,1 --Doom Weed (10)
     .isOnQuest 5482
@@ -7660,7 +7660,7 @@ step
     #softcore
     #completewith DoomedWeed
     .goto Tirisfal Glades,64.50,29.41
-    .deathskip >> Muere y reaparece en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
+    .deathskip >> Muere y resucita en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
     >>|cRXP_WARN_Asegúrate de morir en (o al oeste de) la flecha|r
 step << skip
     #label DoomedWeed
@@ -8237,7 +8237,7 @@ step
     #xprate <2.1
     #softcore
     #completewith FoodandWater2
-    .deathskip >> Muere y reaparece en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
+    .deathskip >> Muere y resucita en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
 step
     #xprate <2.1
     .goto Tirisfal Glades,58.20,51.44
@@ -8640,7 +8640,7 @@ step << Warrior
     .goto Undercity,77.08,49.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Charles Seaton|r en el Barrio de los Pícaros
     >>|cRXP_BUY_Compra un|r |T135350:0|t[Mandoble] |cRXP_BUY_a este vendedor|r
-    >>|cRXP_WARN_Alternativamente, busca en la Casa de subastas algo mejor o más barato|r
+    >>|cRXP_WARN_Alternativamente, puedes consultar la Casa de Subastas para ver si encuentras una opción mejor o más barata|r
     .collect 1198,1,371,1 --Collect Claymore (1)
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.0
@@ -8670,7 +8670,7 @@ step << Rogue
     .goto Undercity,77.08,49.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Charles Seaton|r en el Barrio de los Pícaros
     >>|cRXP_BUY_Compra un|r |T135346:0|t[Alfanje] |cRXP_BUY_a este vendedor|r
-    >>|cRXP_WARN_Alternativamente, busca en la Casa de subastas algo mejor o más barato|r
+    >>|cRXP_WARN_Alternativamente, puedes consultar la Casa de Subastas para ver si encuentras una opción mejor o más barata|r
     .collect 851,1,371,1 --Collect Cutlass (1)
     .money <0.2023
     .itemStat 16,QUALITY,<7
@@ -8692,7 +8692,7 @@ step << Rogue
     .goto Undercity,77.08,49.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Charles Seaton|r en el Barrio de los Pícaros
     .vendor >>|cRXP_BUY_Compra un|r |T135346:0|t[Alfanje] |cRXP_BUY_o una|r |T135640:0|t[Jambiya] |cRXP_BUY_a este vendedor|r
-    >>|cRXP_WARN_Alternativamente, busca en la Casa de subastas algo mejor o más barato|r
+    >>|cRXP_WARN_Alternativamente, puedes consultar la Casa de Subastas para ver si encuentras una opción mejor o más barata|r
     .money <0.2023
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
@@ -8818,7 +8818,7 @@ step << Mage
     #label AtWarS
     #softcore
     #completewith AtWarS
-    .deathskip >> Muere y reaparece en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
+    .deathskip >> Muere y resucita en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
 step
     #completewith AgamandStart
     #xprate >2.09
@@ -8976,7 +8976,7 @@ step
     #xprate >2.09
     #softcore
     #completewith FoodandWater2
-    .deathskip >> Muere y reaparece en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
+    .deathskip >> Muere y resucita en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
 step
     #xprate >2.09
     .goto Tirisfal Glades,58.20,51.44

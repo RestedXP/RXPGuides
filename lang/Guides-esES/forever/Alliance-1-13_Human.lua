@@ -4,6 +4,7 @@ if faction == "Horde" then return end
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 #season 0,1
 << Alliance
 #name 1-6 Villanorte
@@ -760,7 +761,7 @@ step
     #completewith RnR
     .isOnQuest 91772
     .goto 1429/0,-46.00,-9044.61,5 >>Haz clic en las |cRXP_PICK_Huellas de kóbold|r del suelo mientras te diriges hacia Villadorada
-    .use 247970 
+    .use 247970
     .complete 91772,1 -- Followed Kobold Tracks 6/6
     .disablecheckbox
 step
@@ -774,6 +775,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 #season 0,1
 #version 1
 << Alliance
@@ -1179,10 +1181,8 @@ step << Warrior/Paladin/Rogue
     #optional
     #label RoughStone1
     #completewith NecklaceStart
-    >>Mata |cRXP_ENEMY_Tuneladores kóbold|r y |cRXP_ENEMY_Mineros kóbold|r. Abre los |cRXP_PICK_Cofres maltrechos|r. Despójalos para obtener sus |T135232:0|t|cRXP_LOOT_[Piedras férreas]|r << Warrior/Rogue
-    >>Mata |cRXP_ENEMY_Tuneladores kóbold|r y |cRXP_ENEMY_Mineros kóbold|r. Abre los |cRXP_PICK_Cofres maltrechos|r. Despójalos para obtener sus |T135232:0|t|cRXP_LOOT_[Piedras férreas]|r y |T132889:0|t|cRXP_LOOT_[Paño de lino]|r << Paladin
+    >>Mata |cRXP_ENEMY_Tuneladores kóbold|r y |cRXP_ENEMY_Mineros kóbold|r. Abre los |cRXP_PICK_Cofres maltrechos|r. Despójalos para obtener sus |T135232:0|t|cRXP_LOOT_[Piedras férreas]|r
     .collect 2835,1 --Rough Stone (1+)
-    .collect 2589,1 << Paladin --Linen Cloth (1+)
     .itemcount 2862,<1 << Rogue/Warrior --Rough Sharpening Stone (<1)
     .itemcount 3239,<1 << Paladin --Rough Weightstone (<1)
     .train 2018,3 --Blacksmithing Trained
@@ -1192,17 +1192,15 @@ step << Warrior/Paladin/Rogue
     #label RoughStoneCraft1
     #completewith NecklaceStart
     +|T136241:0|tConvierte con [Herrería] |cRXP_WARN_las|r |T135232:0|t|cRXP_LOOT_[Piedras férreas]|r |cRXP_WARN_en|r |T135248:0|t[Piedras de afilar férreas] << Warrior/Rogue
-    +|T136241:0|tConvierte con [Herrería] |cRXP_WARN_las|r |T135232:0|t|cRXP_LOOT_[Piedras férreas]|r |cRXP_WARN_y|r |T132889:0|t|cRXP_LOOT_[Paño de lino]|r |cRXP_WARN_en|r |T135255:0|t[Contrapesos férreos] << Paladin
+    +|T136241:0|t[Herrería] |cRXP_WARN_la|r |T135232:0|t|cRXP_LOOT_[Piedra férrea]|r |cRXP_WARN_en|r |T135255:0|t[Rough Weightstones] << Paladin
     .collect 2862,5 << Rogue/Warrior --Rough Sharpening Stone (5)
     .disablecheckbox
     .collect 3239,5 << Paladin --Rough Weightstone (5)
     .disablecheckbox << Paladin
     .collect 2835,5 --Rough Stone (5)
     .disablecheckbox
-    .collect 2589,1 << Paladin --Linen Cloth (1+)
     .disablecheckbox << Paladin
     .itemcount 2835,1 --Rough Stone (1+)
-    .itemcount 2589,1 << Paladin --Linen Cloth (1+)
     .usespell 2018
     .train 2018,3
 step << Warrior/Paladin/Rogue
@@ -1264,10 +1262,8 @@ step << Warrior/Paladin/Rogue
     #optional
     #label RoughStone2
     #completewith Lovers
-    >>Mata |cRXP_ENEMY_Tuneladores kóbold|r y |cRXP_ENEMY_Mineros kóbold|r. Abre los |cRXP_PICK_Cofres maltrechos|r. Despójalos para obtener sus |T135232:0|t|cRXP_LOOT_[Piedras férreas]|r << Warrior/Rogue
-    >>Mata |cRXP_ENEMY_Tuneladores kóbold|r y |cRXP_ENEMY_Mineros kóbold|r. Abre los |cRXP_PICK_Cofres maltrechos|r. Despójalos para obtener sus |T135232:0|t|cRXP_LOOT_[Piedras férreas]|r y |T132889:0|t|cRXP_LOOT_[Paño de lino]|r << Paladin
+    >>Mata |cRXP_ENEMY_Tuneladores kóbold|r y |cRXP_ENEMY_Mineros kóbold|r. Abre los |cRXP_PICK_Cofres maltrechos|r. Despójalos para obtener sus |T135232:0|t|cRXP_LOOT_[Piedras férreas]|r
     .collect 2835,1 --Rough Stone (1+)
-    .collect 2589,1 << Paladin --Linen Cloth (1+)
     .itemcount 2862,<1 << Rogue/Warrior --Rough Sharpening Stone (<1)
     .itemcount 3239,<1 << Paladin --Rough Weightstone (<1)
     .train 2018,3 --Blacksmithing Trained
@@ -1277,17 +1273,14 @@ step << Warrior/Paladin/Rogue
     #label RoughStoneCraft2
     #completewith Lovers
     +|T136241:0|tConvierte con [Herrería] |cRXP_WARN_las|r |T135232:0|t|cRXP_LOOT_[Piedras férreas]|r |cRXP_WARN_en|r |T135248:0|t[Piedras de afilar férreas] << Warrior/Rogue
-    +|T136241:0|tConvierte con [Herrería] |cRXP_WARN_las|r |T135232:0|t|cRXP_LOOT_[Piedras férreas]|r |cRXP_WARN_y|r |T132889:0|t|cRXP_LOOT_[Paño de lino]|r |cRXP_WARN_en|r |T135255:0|t[Contrapesos férreos] << Paladin
+    +|T136241:0|t[Herrería] |cRXP_WARN_la|r |T135232:0|t|cRXP_LOOT_[Piedra férrea]|r |cRXP_WARN_en|r |T135255:0|t[Rough Weightstones] << Paladin
     .collect 2862,5 << Rogue/Warrior --Rough Sharpening Stone (5)
     .disablecheckbox
     .collect 3239,5 << Paladin --Rough Weightstone (5)
     .disablecheckbox << Paladin
     .collect 2835,5 --Rough Stone (5)
     .disablecheckbox
-    .collect 2589,1 << Paladin --Linen Cloth (1+)
-    .disablecheckbox << Paladin
     .itemcount 2835,1 --Rough Stone (1+)
-    .itemcount 2589,1 << Paladin --Linen Cloth (1+)
     .usespell 2018
     .train 2018,3
 step << Warrior/Paladin/Rogue
@@ -1349,10 +1342,8 @@ step << Warrior/Paladin/Rogue
     #optional
     #label RoughStone3
     #completewith Exchange
-    >>Mata |cRXP_ENEMY_Tuneladores kóbold|r y |cRXP_ENEMY_Mineros kóbold|r. Abre los |cRXP_PICK_Cofres maltrechos|r. Despójalos para obtener sus |T135232:0|t|cRXP_LOOT_[Piedras férreas]|r << Warrior/Rogue
-    >>Mata |cRXP_ENEMY_Tuneladores kóbold|r y |cRXP_ENEMY_Mineros kóbold|r. Abre los |cRXP_PICK_Cofres maltrechos|r. Despójalos para obtener sus |T135232:0|t|cRXP_LOOT_[Piedras férreas]|r y |T132889:0|t|cRXP_LOOT_[Paño de lino]|r << Paladin
+    >>Mata |cRXP_ENEMY_Tuneladores kóbold|r y |cRXP_ENEMY_Mineros kóbold|r. Abre los |cRXP_PICK_Cofres maltrechos|r. Despójalos para obtener sus |T135232:0|t|cRXP_LOOT_[Piedras férreas]|r
     .collect 2835,1 --Rough Stone (1+)
-    .collect 2589,1 << Paladin --Linen Cloth (1+)
     .itemcount 2862,<1 << Rogue/Warrior --Rough Sharpening Stone (<1)
     .itemcount 3239,<1 << Paladin --Rough Weightstone (<1)
     .train 2018,3 --Blacksmithing Trained
@@ -1363,17 +1354,14 @@ step << Warrior/Paladin/Rogue
     #label RoughStoneCraft3
     #completewith Exchange
     +|T136241:0|tConvierte con [Herrería] |cRXP_WARN_las|r |T135232:0|t|cRXP_LOOT_[Piedras férreas]|r |cRXP_WARN_en|r |T135248:0|t[Piedras de afilar férreas] << Warrior/Rogue
-    +|T136241:0|tConvierte con [Herrería] |cRXP_WARN_las|r |T135232:0|t|cRXP_LOOT_[Piedras férreas]|r |cRXP_WARN_y|r |T132889:0|t|cRXP_LOOT_[Paño de lino]|r |cRXP_WARN_en|r |T135255:0|t[Contrapesos férreos] << Paladin
+    +|T136241:0|t[Herrería] |cRXP_WARN_la|r |T135232:0|t|cRXP_LOOT_[Piedra férrea]|r |cRXP_WARN_en|r |T135255:0|t[Rough Weightstones] << Paladin
     .collect 2862,5 << Rogue/Warrior --Rough Sharpening Stone (5)
     .disablecheckbox
     .collect 3239,5 << Paladin --Rough Weightstone (5)
     .disablecheckbox << Paladin
     .collect 2835,5 --Rough Stone (5)
     .disablecheckbox
-    .collect 2589,1 << Paladin --Linen Cloth (1+)
-    .disablecheckbox << Paladin
     .itemcount 2835,1 --Rough Stone (1+)
-    .itemcount 2589,1 << Paladin --Linen Cloth (1+)
     .usespell 2018
     .train 2018,3
     .subzoneskip 87 --Goldshire
@@ -1869,10 +1857,8 @@ step << Warrior/Paladin/Rogue
     #optional
     #label RoughStone4
     #completewith JasperlodeExplore
-    >>Mata a los |cRXP_ENEMY_Mineros kóbold|r. Abre los |cRXP_PICK_Cofres maltrechos|r. Despójalos para obtener sus |T135232:0|t|cRXP_LOOT_[Piedras férreas]|r << Warrior/Rogue
-    >>Mata |cRXP_ENEMY_Mineros kóbold|r. Abre los |cRXP_PICK_Cofres maltrechos|r. Despójalos para obtener sus |T135232:0|t|cRXP_LOOT_[Piedras férreas]|r y |T132889:0|t|cRXP_LOOT_[Paño de lino]|r << Paladin
+    >>Mata a los |cRXP_ENEMY_Mineros kóbold|r. Abre los |cRXP_PICK_Cofres maltrechos|r. Despójalos para obtener sus |T135232:0|t|cRXP_LOOT_[Piedras férreas]|r
     .collect 2835,1 --Rough Stone (1+)
-    .collect 2589,1 << Paladin --Linen Cloth (1+)
     .itemcount 2862,<1 << Rogue/Warrior --Rough Sharpening Stone (<1)
     .itemcount 3239,<1 << Paladin --Rough Weightstone (<1)
     .train 2018,3 --Blacksmithing Trained
@@ -1883,17 +1869,14 @@ step << Warrior/Paladin/Rogue
     #label RoughStoneCraft4
     #completewith JasperlodeExplore
     +|T136241:0|tConvierte con [Herrería] |cRXP_WARN_las|r |T135232:0|t|cRXP_LOOT_[Piedras férreas]|r |cRXP_WARN_en|r |T135248:0|t[Piedras de afilar férreas] << Warrior/Rogue
-    +|T136241:0|tConvierte con [Herrería] |cRXP_WARN_las|r |T135232:0|t|cRXP_LOOT_[Piedras férreas]|r |cRXP_WARN_y|r |T132889:0|t|cRXP_LOOT_[Paño de lino]|r |cRXP_WARN_en|r |T135255:0|t[Contrapesos férreos] << Paladin
+    +|T136241:0|t[Herrería] |cRXP_WARN_la|r |T135232:0|t|cRXP_LOOT_[Piedra férrea]|r |cRXP_WARN_en|r |T135255:0|t[Rough Weightstones] << Paladin
     .collect 2862,5 << Rogue/Warrior --Rough Sharpening Stone (5)
     .disablecheckbox
     .collect 3239,5 << Paladin --Rough Weightstone (5)
     .disablecheckbox << Paladin
     .collect 2835,5 --Rough Stone (5)
     .disablecheckbox
-    .collect 2589,1 << Paladin --Linen Cloth (1+)
-    .disablecheckbox << Paladin
     .itemcount 2835,1 --Rough Stone (1+)
-    .itemcount 2589,1 << Paladin --Linen Cloth (1+)
     .usespell 2018
     .train 2018,3
 step << Warrior/Paladin/Rogue
@@ -1960,10 +1943,8 @@ step << Warrior/Paladin/Rogue
     #optional
     #label RoughStone5
     #completewith Find
-    >>Mata a los |cRXP_ENEMY_Mineros kóbold|r. Abre los |cRXP_PICK_Cofres maltrechos|r. Despójalos para obtener sus |T135232:0|t|cRXP_LOOT_[Piedras férreas]|r << Warrior/Rogue
-    >>Mata |cRXP_ENEMY_Mineros kóbold|r. Abre los |cRXP_PICK_Cofres maltrechos|r. Despójalos para obtener sus |T135232:0|t|cRXP_LOOT_[Piedras férreas]|r y |T132889:0|t|cRXP_LOOT_[Paño de lino]|r << Paladin
+    >>Mata a los |cRXP_ENEMY_Mineros kóbold|r. Abre los |cRXP_PICK_Cofres maltrechos|r. Despójalos para obtener sus |T135232:0|t|cRXP_LOOT_[Piedras férreas]|r
     .collect 2835,1 --Rough Stone (1+)
-    .collect 2589,1 << Paladin --Linen Cloth (1+)
     .itemcount 2862,<1 << Rogue/Warrior --Rough Sharpening Stone (<1)
     .itemcount 3239,<1 << Paladin --Rough Weightstone (<1)
     .train 2018,3 --Blacksmithing Trained
@@ -1975,17 +1956,14 @@ step << Warrior/Paladin/Rogue
     #label RoughStoneCraft5
     #completewith Find
     +|T136241:0|tConvierte con [Herrería] |cRXP_WARN_las|r |T135232:0|t|cRXP_LOOT_[Piedras férreas]|r |cRXP_WARN_en|r |T135248:0|t[Piedras de afilar férreas] << Warrior/Rogue
-    +|T136241:0|tConvierte con [Herrería] |cRXP_WARN_las|r |T135232:0|t|cRXP_LOOT_[Piedras férreas]|r |cRXP_WARN_y|r |T132889:0|t|cRXP_LOOT_[Paño de lino]|r |cRXP_WARN_en|r |T135255:0|t[Contrapesos férreos] << Paladin
+    +|T136241:0|t[Herrería] |cRXP_WARN_la|r |T135232:0|t|cRXP_LOOT_[Piedra férrea]|r |cRXP_WARN_en|r |T135255:0|t[Rough Weightstones] << Paladin
     .collect 2862,5 << Rogue/Warrior --Rough Sharpening Stone (5)
     .disablecheckbox
     .collect 3239,5 << Paladin --Rough Weightstone (5)
     .disablecheckbox << Paladin
     .collect 2835,5 --Rough Stone (5)
     .disablecheckbox
-    .collect 2589,1 << Paladin --Linen Cloth (1+)
-    .disablecheckbox << Paladin
     .itemcount 2835,1 --Rough Stone (1+)
-    .itemcount 2589,1 << Paladin --Linen Cloth (1+)
     .usespell 2018
     .train 2018,3
     .subzoneskip 54,1
@@ -2684,7 +2662,7 @@ step << Warrior
     #optional
     .goto 1429/0,109.36,-9461.84
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Lyria Du Lac|r
-    >>|cRXP_WARN_No entrenes, ya que necesitas ahorrar dinero para más adelante|r
+    >>|cRXP_WARN_No aprendas habilidades, ya que necesitas ahorrar dinero para más adelante|r
     .accept 1638 >> Acepta la misión Instrucción de guerrero
     .target Lyria Du Lac
 step << Paladin
@@ -2728,7 +2706,7 @@ step << Priest
     #requires GoldshireVendor
     .goto 1429/0,33.14,-9460.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con la |cRXP_FRIENDLY_Sacerdotisa Josetta|r
-    .accept 5635 >> Acepta la misión Oración desesperada
+    .accept 94774 >> Acepta la misión Sacroarcano Gracia
     .trainer >> Aprende tus hechizos de clase
     .target Priestess Josetta
     .xp <10,1
@@ -3040,7 +3018,7 @@ step
     #season 0,1 << Paladin
     .goto 1453/0,625.48,-8857.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Morgan Mortero|r
-    .turnin 61,1 >> Entrega la misión Un envío para Ventormenta
+    .turnin 61 >> Entrega la misión Un envío para Ventormenta
     >>|cRXP_WARN_Elegimos el|r |T132383:0|t[Cohete explosivo] |cRXP_WARN_como recompensa. Causa daño decente y puede usarse para "Split pulling" que es increíblemente útil|r
     .link https://www.youtube.com/watch?v=H-IwZ6P-ldY >> |cRXP_WARN_Haz clic aquí para ver un vídeo sobre el "Split pulling". Es un vídeo corto y muy útil para aprender|r
     .target Morgan Pestle
@@ -3521,20 +3499,11 @@ step << Priest
     #completewith Prayer
     .goto 1453/0,809.52,-8579.22,20 >> Entra en la Catedral de Ventormenta
 step << Priest
-    #optional
     .goto 1453/0,862.89,-8519.61
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con la |cRXP_FRIENDLY_Suma sacerdotisa Laurena|r
-    .turnin 5635 >> Entrega la misión Oración desesperada
-    .train 8092 >> Aprende tus hechizos de clase
+    .turnin -94774 >> Entrega la misión Sacroarcano Gracia
+    .trainer >> Aprende tus hechizos de clase
     .target High Priestess Laurena
-    .isOnQuest 5635
-step << Priest
-    .goto 1453/0,862.89,-8519.61
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con la |cRXP_FRIENDLY_Suma sacerdotisa Laurena|r
-    .turnin 5634 >> Entrega la misión Oración desesperada
-    .train 8092 >> Aprende tus hechizos de clase
-    .target High Priestess Laurena
-    .train 13908,1
 step << Priest
     #optional
     #label Prayer
@@ -3827,7 +3796,7 @@ step
 --logout skip - remove if logout skips re-added
 step
     .goto 1426/0,-682.300,-5489.000
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Beldin Brasacerada::1376|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Beldin Brasacerada::1376|r
     .target Beldin Steelgrill::1376
     .accept 96408 >>Acepta la misión A Visitor to Dun Morogh
 step
@@ -3930,12 +3899,12 @@ step
     .goto 1426/0,-1394.24,-5797.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Earthseer Farsen|r
     .turnin -96408 >> Entrega la misión A Visitor to Dun Morogh
-    .accept 96392 >> Acepta la misión Farsen's Observar
+    .accept 96392 >> Acepta la misión Vigía de Farsen
     .target Earthseer Farsen
 step
     .isOnQuest 96392
     .goto 1426/0,-1394.24,-5797.83
-    .gossipoption 139831 >> Habla con |cRXP_FRIENDLY_Earthseer Farsen|r para ver su vista lejana
+    .gossipoption 139831 >> Habla con |cRXP_FRIENDLY_Earthseer Farsen|r para ver su previsión
     >>|cRXP_WARN_Puedes cancelar la Vista lejana cuando se completa el objetivo|r
     .target Earthseer Farsen
 step
@@ -3952,7 +3921,7 @@ step
     .goto 1426/0,-1394.24,-5797.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Earthseer Farsen|r
     >>|cRXP_WARN_Presiona ESC para cancelar la Vista lejana|r
-    .turnin 96392 >> Entrega la misión Farsen's Observar
+    .turnin 96392 >> Entrega la misión Vigía de Farsen
     .accept 96390 >> Acepta la misión Nip 'Em in the Compa
     .target Earthseer Farsen
 step
@@ -3995,11 +3964,17 @@ step
     .goto 1426/0,-1679.89,-5728.88,40,0
     .goto 1426/0,-1675.95,-5597.22,25,0
     .goto 1426/0,-1679.89,-5728.88
-    >>Mata |cRXP_ENEMY_Aplastacráneos Comepiedras|r y |cRXP_ENEMY_Cascahuesos Comepiedras|r dentro de la cueva
+    >>Mata a |cRXP_ENEMY_Comepiedras Skullthumpers|r y |cRXP_ENEMY_Comepiedras Bonesnappers|r dentro de la cueva. Despójalos para obtener |T132621:0|t[|cRXP_LOOT_Empty Tonel de pólvora|r]
+    .use 268548 >> |cRXP_WARN_Usa el|r |T132621:0|t[|cRXP_LOOT_Tonel de pólvora vacío|r] |cRXP_WARN_para iniciar la misión|r
+    >>|cRXP_WARN_NOTA: Este objeto tiene una tasa de caída baja. Omite este paso si no lo encuentras|r
     .complete 432,1 --Kill Rockjaw Skullthumper (x6)
     .mob +Rockjaw Skullthumper
     .complete 433,1 --Kill Rockjaw Bonesnapper (x10)
     .mob +Rockjaw Bonesnapper
+    .collect 268548,1,95213,1 -- Empty Powder Keg (1)
+    .disablecheckbox
+    .accept 95213 >> Acepta la misión Stolen Reventar Powder
+    .disablecheckbox
 step
     #label QuarryEnd
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Supervisor Petrocejas|r y el |cRXP_FRIENDLY_Senador Mehr Piedrasanta|r
@@ -4009,12 +3984,32 @@ step
     .turnin 433 >> Entrega la misión El servidor público
     .goto 1426/0,-1579.96,-5714.73
     .target +Senator Mehr Stonehallow
+step
+    .isOnQuest 95213
+    .goto 1426/0,-1606.02,-5676.35
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Capataz de cantera Thesten|r
+    .turnin 95213 >> Entrega la misión Stolen Reventar Powder
+    .accept 95214 >> Acepta la misión Stolen Reventar Powder
+    .target Quarrymaster Thesten
+step
+    #optional
+    .isQuestTurnedIn 95213
+    .goto 1426/0,-1606.02,-5676.35
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Capataz de cantera Thesten|r
+    .accept 95214 >> Acepta la misión Stolen Reventar Powder
+    .target Quarrymaster Thesten
 step << !Warrior !Rogue !Paladin !Hunter
     .goto 1426/0,-1577.16,-5671.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Kazan Mogosh|r
     .vendor >> |cRXP_BUY_Compra hasta 20|r |T132815:0|t[Leche fría como el hielo] |cRXP_BUY_a este vendedor|r
     .target Kazan Mogosh
     .xp >15,1
+step
+    .isOnQuest 95214
+    #completewith SpyMap
+    >>Mata |cRXP_ENEMY_Emboscadores Comepiedras|r. Despójalos para obtener su |cRXP_LOOT_Pólvora explosiva robada|r
+    .complete 95214,1 -- Stolen Blasting Powder (16)
+    .mob Rockjaw Ambusher
 step
     #completewith OII
     >>Mata |cRXP_ENEMY_Emboscadores Comepiedras|r. Despójalos para obtener el |T132621:0|t[|cRXP_LOOT_Tonel de pólvora vacío|r]
@@ -4024,6 +4019,7 @@ step
     .accept 95213 >> Acepta la misión Stolen Reventar Powder
     .mob Rockjaw Ambusher
 step
+    #label SpyMap
     .goto 1426/0,-2009.87,-5860.22,40,0
     .goto 1426/0,-2034.49,-5922.60
     >>Mata |cRXP_ENEMY_Espías Hierro Negro|r. Despójalos para obtener el |T237385:0|t[|cRXP_LOOT_Mapa de Hierro Negro|r]
@@ -4033,11 +4029,29 @@ step
     .accept 96391 >> Acepta la misión Mapa subterráneo
     .mob Dark Iron Spy
 step
+    .isOnQuest 95214
+    #loop
+    .goto 1426/0,-1881.82,-5735.45,50,0
+    .goto 1426/0,-1832.57,-5571.28,50,0
+    .goto 1426/0,-1724.22,-5636.95,50,0
+    .goto 1426/0,-1881.82,-5735.45,0
+    .goto 1426/0,-1832.57,-5571.28,0
+    .goto 1426/0,-1724.22,-5636.95,0
+    >>Mata |cRXP_ENEMY_Emboscadores Comepiedras|r. Despójalos para obtener su |cRXP_LOOT_Pólvora explosiva robada|r
+    .complete 95214,1 -- Stolen Blasting Powder (16)
+    .mob Rockjaw Ambusher
+step
+    .isQuestComplete 95214
+    .goto 1426/0,-1606.02,-5676.35
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Capataz de cantera Thesten|r
+    .turnin 95214 >> Entrega la misión Stolen Reventar Powder
+    .target Quarrymaster Thesten
+step
     #label OII
     .goto 1426/0,-1394.24,-5797.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Earthseer Farsen|r
     .turnin 96390 >> Entrega la misión Nip 'Em in the Compa
-    .turnin 96391 >> Entrega la misión Subterráneo Mapa
+    .turnin 96391 >> Entrega la misión Mapa subterráneo
     .accept 96393 >> Acepta la misión Old Ironforge Incursion
     .target Earthseer Farsen
 step
@@ -4109,6 +4123,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 #season 0,1
 #version 1
 << Alliance
@@ -4575,7 +4590,7 @@ step << Warlock
     #optional
     #completewith next
     .goto 1432/0,-2747.60,-5530.540,0
-    +Grindea |cRXP_ENEMY_Troggs|r hasta que tengas 75 platas y 79 cobres en basura para vender o dinero
+    +Mata |cRXP_ENEMY_Troggs|r hasta que tengas 75 platas y 79 cobres en basura para vender o dinero
     .money >0.7579
 step << Warlock
     #optional
@@ -4612,9 +4627,6 @@ step << Human Warrior
     .trainer >> Aprende tus hechizos de clase
     .target Bilban Tosslespanner
     .zoneskip Ironforge,1
-
-step -- dont delete
-    #label NormalRouteEnd
 
 step
     .hs >> Usa tu Piedra de hogar para ir a Ventormenta
@@ -4670,10 +4682,9 @@ step << Warlock/Mage/Rogue/Priest/Warrior/Paladin
     #optional
     .goto 1453/0,613.0,-8796.03
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Woo Ping|r
-    .trainer >>Aprende Espadas de 1 mano y Bastones << Warlock/Mage
-    .trainer >>Aprende Espadas de 1 mano << Rogue
-    .trainer >>Aprende el uso de Bastones << Priest
-    .trainer >>Aprende Espadas de 2 manos << Warrior/Paladin
+    .train 201 >>Aprende Espadas de 1 mano << Warlock/Mage/Rogue
+    .train 227 >>Aprende el uso de Bastones << Warlock/Mage/Priest
+    .train 202 >>Aprende Espadas de 2 manos << Warrior/Paladin
     .target Woo Ping
 step
     .isOnQuest 6261
@@ -4845,6 +4856,9 @@ step << Rogue
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.7
     .xp <14,1
 
+step -- dont delete
+    #label NormalRouteEnd
+
 --Hunter going Darkshore, rest Westfall
 step << Hunter
     .goto 1453/0,765.700,-8804.000
@@ -4859,12 +4873,12 @@ step << Hunter
     .target Gilbert Gray::267118
     .accept 95065 >>Acepta la misión Fishin' Tiempo
     .turnin 95065 >>Entrega la misión Fishin' Tiempo
-step << Hunter
+step << Hunter skip
     #optional
     #requires DockTravel
     #label DarkshoreCook1
     #completewith DarkshoreBoat
-    >>|cRXP_WARN_En el barco si acaba de llegar o en el muelle si acaba de partir:|r
+    >>|cRXP_WARN_Mientras esperas al Bote en el muelle:|r
     .cast 818 >>|cRXP_WARN_Crea una|r |T135805:0|t[Hoguera básica] |cRXP_WARN_(en tu Libro de Profesiones)|r
     .usespell 818
     .zoneskip Darkshore
@@ -4873,12 +4887,12 @@ step << Hunter
     .itemcount 4470,1 --Simple Wood (1+)
     .itemcount 4471,1 --Flint and Tinder (1)
     .skill cooking,50,1 --XX Shows if cooking skill is <50
-step << Hunter
+step << Hunter skip
     #optional
     #requires DarkshoreCook1
     #label DarkshoreCook2
     #completewith DarkshoreBoat
-    >>|cRXP_WARN_En el barco si acaba de llegar o en el muelle si acaba de partir:|r
+    >>|cRXP_WARN_Mientras esperas al Bote en el muelle:|r
     .cast 818 >>|cRXP_WARN_Crea una|r |T135805:0|t[Hoguera básica] |cRXP_WARN_(en tu Libro de Profesiones)|r
     .usespell 818
     .zoneskip Darkshore
@@ -4887,12 +4901,12 @@ step << Hunter
     .itemcount 4470,1 --Simple Wood (1+)
     .itemcount 4471,1 --Flint and Tinder (1)
     .skill cooking,50,1 --XX Shows if cooking skill is <50
-step << Hunter
+step << Hunter skip
     #optional
     #requires DarkshoreCook2
     #label DarkshoreCook3
     #completewith DarkshoreBoat
-    >>|cRXP_WARN_En el barco si acaba de llegar o en el muelle si acaba de partir:|r
+    >>|cRXP_WARN_Mientras esperas al Bote en el muelle:|r
     .cast 818 >>|cRXP_WARN_Crea una|r |T135805:0|t[Hoguera básica] |cRXP_WARN_(en tu Libro de Profesiones)|r
     .usespell 818
     .zoneskip Darkshore
@@ -4901,7 +4915,7 @@ step << Hunter
     .itemcount 4470,1 --Simple Wood (1+)
     .itemcount 4471,1 --Flint and Tinder (1)
     .skill cooking,50,1 --XX Shows if cooking skill is <50
-step << Hunter
+step << Hunter skip
     #optional
     #requires DarkshoreCook3
     #label DarkshoreCook4
@@ -4916,7 +4930,7 @@ step << Hunter
     .itemcount 2672,1 --Stringy Wolf Meat (1+)
     .itemcount 4471,1 --Flint and Tinder (1)
     .skill cooking,50,1
-step << Hunter
+step << Hunter skip
     #optional
     #requires DarkshoreCook4
     #label DarkshoreCook5
@@ -4929,7 +4943,7 @@ step << Hunter
     .itemcount 2672,1 --Stringy Wolf Meat (1)
     .itemcount 4471,1 --Flint and Tinder (1)
     .skill cooking,50,1
-step << Hunter
+step << Hunter skip
     #optional
     #requires DarkshoreCook5
     #label DarkshoreCook6

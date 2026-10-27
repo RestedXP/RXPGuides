@@ -7,16 +7,16 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 1-6 Durotar
 #version 11
-#beta
 #group RestedXP Forever Guía de Mazmorras (H)
-#subgroup (En progreso) Guía de mazmorras 1-22
+#subgroup Guía de mazmorras 1-22
 --#groupid RXP-SRGCE-H1
 #defaultfor Troll/Orc
 #next 6-10 Durotar
 
 
 step
-#include RestedXP Guía Forever (A)\1-6 Durotar
+.enabledungeon RFC
+#include RestedXP Guía Forever (H)\1-6 Durotar
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -24,15 +24,15 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 6-10 Durotar
 #version 11
-#beta
 #group RestedXP Forever Guía de Mazmorras (H)
-#subgroup (En progreso) Guía de mazmorras 1-22
+#subgroup Guía de mazmorras 1-22
 --#groupid RXP-SRGCE-H1
 #defaultfor Troll/Orc
 #next 10-12 Durotar
 
 step
-#include RestedXP Guía Forever (A)\6-10 Durotar
+.enabledungeon RFC
+#include RestedXP Guía Forever (H)\6-10 Durotar
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -40,17 +40,17 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 10-12 Durotar
 #version 11
-#beta
 #group RestedXP Forever Guía de Mazmorras (H)
-#subgroup (En progreso) Guía de mazmorras 1-22
+#subgroup Guía de mazmorras 1-22
 --#groupid RXP-SRGCE-H1
 #defaultfor Troll/Orc
 #next 10-12 Tirisfal (Orco/Trol) << !Hunter !Shaman !Tauren !Skyborne
-#next 12-17 Los Baldíos << Orc Hunter/Troll Hunter/Orc Shaman/Troll Shaman
+#next 12-16 Los Baldíos << Orc Hunter/Troll Hunter/Orc Shaman/Troll Shaman
 
 
 step
-#include RestedXP Guía Forever (A)\10-12 Durotar
+.enabledungeon RFC
+#include RestedXP Guía Forever (H)\10-12 Durotar
 ]])
 
 
@@ -59,13 +59,13 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 10-12 Tirisfal (Orco/Trol)
 #version 11
-#beta
 #group RestedXP Forever Guía de Mazmorras (H)
-#subgroup (En progreso) Guía de mazmorras 1-22
+#subgroup Guía de mazmorras 1-22
 --#groupid RXP-SRGCE-H1
 #defaultfor !Hunter !Shaman !Tauren !Skyborne !Undead
 #next 12-14 Bosque de Argénteos << !Hunter !Shaman !Tauren !Skyborne !Undead
 
 step
-#include RestedXP Guía Forever (A)\10-12 Tirisfal (Orco/Trol)
+.enabledungeon RFC
+#include RestedXP Guía Forever (H)\10-12 Tirisfal (Orco/Trol)
 ]])

@@ -7,11 +7,9 @@ RXPGuides.RegisterGuide([[
 #season 0,1
 << Alliance
 #name 1-6 Cañada Umbría
-#displayname 1-7 Cañada Umbría << sod
 #version 1
-#beta
 #group RestedXP Forever Guía de Mazmorras (A)
-#subgroup (En progreso) Guía de mazmorras 1-20
+#subgroup Guía de mazmorras 1-20
 --#groupid RXP-SRGCE-A1
 #defaultfor NightElf
 #next 6-11 Teldrassil
@@ -24,14 +22,12 @@ RXPGuides.RegisterGuide([[
 #season 0,1
 << Alliance
 #name 6-11 Teldrassil
-#displayname 7-13 Teldrassil << SoD
 #version 1
-#beta
 #group RestedXP Forever Guía de Mazmorras (A)
-#subgroup (En progreso) Guía de mazmorras 1-20
+#subgroup Guía de mazmorras 1-20
 --#groupid RXP-SRGCE-A1
 #defaultfor NightElf
-#next 14-16 Costa Oscura
+#next 11-16 Costa Oscura/Loch Modan
 
 step
 #include RestedXP Guía Forever (A)\6-11 Teldrassil

@@ -4,6 +4,7 @@ if faction == "Alliance" then return end
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Horde
 #name 1-6 Durotar
 #version 11
@@ -12,7 +13,6 @@ RXPGuides.RegisterGuide([[
 --#groupid RXP-SRGCE-H1
 #defaultfor Troll/Orc
 #next 6-10 Durotar
-
 
 step << !Orc !Troll
     #completewith next
@@ -286,10 +286,12 @@ step
     .accept 3084 >>Acepta la misión La tablilla con runas grabadas << Troll Shaman
     .accept 3085 >>Acepta la misión Tablilla sacralizada << Troll Priest
     .accept 3086 >>Acepta la misión Tablilla glífica << Troll Mage
+    .accept 98575 >>Acepta la misión Contaminated Tablilla << Troll Warlock
     .accept 3087 >>Acepta la misión Papiro con grabados << Orc Hunter
     .accept 3088 >>Acepta la misión Papiro encriptado << Orc Rogue
     .accept 3089 >>Acepta la misión El papiro con runas grabadas << Orc Shaman
     .accept 3090 >>Acepta la misión Papiro corrupto << Orc Warlock
+    .accept 98576 >>Acepta la misión Papiro glífico << Orc Mage
     .turnin 804,1 >>Entrega la misión Sarkoth << Shaman
     .turnin 804 >>Entrega la misión Sarkoth << !Shaman
     .target Gornek
@@ -313,11 +315,16 @@ step << Rogue
     .turnin 3083 >>Entrega la misión Tablilla encriptada << Troll Rogue
     .turnin 3088 >>Entrega la misión Papiro encriptado << Orc Rogue
     .target Rwag
-step << skip
+step
+    #optional
     .goto 1411/1,-4102.400,-588.900
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Kzan Latispina|r al fondo de la cueva
     .turnin 97279 >>Entrega la misión Armas extraviadas
     .target Kzan Thornslash
+    .isQuestComplete 97279
+step
+    #optional
+    .abandon 97279 >>Abandona la misión Armas extraviadas
 step << Shaman
     .goto 1411/1,-4102.600,-588.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Kzan|r
@@ -352,7 +359,8 @@ step << Warlock
     #label Nartok2
     .goto 1411/1,-4111.87,-607.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Nartok|r
-    .turnin 3090 >>Entrega la misión Papiro corrupto
+    .turnin 3090 >>Entrega la misión Papiro corrupto << Orc Warlock
+    .turnin 98575 >>Entrega la misión Contaminated Tablilla << Troll Warlock
     .train 172 >> Aprende |T136118:0|t[Corrupción]
     .target Nartok
 step
@@ -383,7 +391,8 @@ step << Mage
     #requires Galgar
     .goto 1411/1,-4210.22,-625.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Mai'ah|r
-    .turnin 3086 >>Entrega la misión Tablilla glífica << Troll
+    .turnin 3086 >>Entrega la misión Tablilla glífica << Troll Mage
+    .turnin 98576 >>Entrega la misión Glyph Papyrus << Orc Mage
     .train 1459 >> Aprende |T135932:0|t[Intelecto Arcano]
     .target Mai'ah
 step << !Warlock
@@ -842,7 +851,7 @@ step << skip
 	.link https://www.youtube.com/watch?v=7vmnvdjbUnM >> HAZ CLIC AQUÍ para un ejemplo
 step
     #softcore
-    #completewith next
+    #completewith RazorHill1
     .goto 1411/1,-4326.01,-41.23
     .deathskip >> |cRXP_WARN_Muere y resucita en el |cRXP_FRIENDLY_Ángel de la Resurrección|r cerca de la flecha|r
     .target Ángel de la Resurrección
@@ -855,6 +864,7 @@ step
     .accept 784 >>Acepta la misión Vencer a los traidores
     .target Gar'thok
 step
+    #softcore
     .goto 1411/1,-4665.400,311.900
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Cocinero Torka|r
     .accept 96825 >>Acepta la misión Esta fruta sabe cómo defenderse
@@ -905,6 +915,8 @@ step << Warrior/Rogue
     .target Dwukk
     .skill blacksmithing,1,1
 step -- (Barracks)
+    #softcore
+    #label RazorHill1
     .goto 1411/1,-4815.200,306.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Turroc|r
     .accept 96822 >>Acepta la misión Por el honor
@@ -1086,6 +1098,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Horde
 #name 6-10 Durotar
 #version 11
@@ -1141,13 +1154,13 @@ step
     .goto 1411/1,-4939.89,-793.12,8 >> Entra en la gran cabaña
 step << !Rogue !Warrior
     .goto 1411/1,-4960.000,-791.300
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Pa'zula|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Pa'zula|r
     >>|cRXP_WARN_Esto desbloqueará una misión. Omite este paso si ya tienes 2 profesiones|r
     .train 7411 >> Aprende |T136244:0|t[Encantamiento]
     .target Pa'zula
 step << !Rogue !Warrior
     .goto 1411/1,-4960.000,-791.300
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Pa'zula|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Pa'zula|r
     .accept 96873 >>Acepta la misión Un dolor de cuello
     .target Pa'zula
     .skill enchanting,<1,1
@@ -1158,6 +1171,7 @@ step << Rogue
     .target K'waii
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.9
+    .money <0.07
 step << Warlock/Mage/Priest
     .goto 1411/1,-4938.83,-779.37
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Habla con|r |cRXP_FRIENDLY_K'waii|r
@@ -1645,6 +1659,12 @@ step
     .target Cook Torka
 step
     #hardcore
+    .goto 1411/1,-4665.400,311.900
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Cocinar Cocinero Torka|r
+    .accept 96825 >>Acepta la misión This Fruit Could Mordedura Atrás
+    .target Cook Torka
+step
+    #hardcore
     #completewith next
     .goto 1411/1,-4617.88,290.47,12,0
     .goto 1411/1,-4611.01,293.64,8,0
@@ -1688,6 +1708,13 @@ step << Warrior/Rogue
     .train 2018 >> Aprende |T136241:0|t[Herrería]
     .target Dwukk
     .skill blacksmithing,1,1
+step -- (Barracks)
+    #hardcore
+    #label RazorHill1
+    .goto 1411/1,-4815.200,306.800
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Turroc|r
+    .accept 96822 >>Acepta la misión Por el honor
+    .target Turroc
 step << Warrior/Rogue
     #hardcore
     #completewith TravelToTiragarde
@@ -1720,8 +1747,13 @@ step
     .mob +Kul Tiras Marine
     .mob +Kul Tiras Sailor
 step --south/west of keep
-    .goto 1411/1,-4992.700,-234.400
+    #completewith next
+    .goto 1411/1,-4992.700,-234.400,0
+    .goto 1411/1,-5101.700,-178.500,0
+    .goto 1411/1,-4992.700,-234.400,25,0
+    .goto 1411/1,-5101.700,-178.500,25,0
     >>Despoja el |cRXP_PICK_Arco de asaltante|r del suelo
+    >>|cRXP_WARN_Tiene dos ubicaciones de aparición diferentes|r
     .complete 96822,1 --|1/1 Raider's Bow
 step --center in keep
     .goto 1411/1,-4994.900,-182.300
@@ -1759,6 +1791,15 @@ step
     .collect 4881,1,830 --Collect Aged Envelope (1)
     .accept 830 >>Acepta la misión Las órdenes del almirante
     .use 4881
+step --south/west of keep
+    #loop
+    .goto 1411/1,-4992.700,-234.400,0
+    .goto 1411/1,-5101.700,-178.500,0
+    .goto 1411/1,-5101.700,-178.500,25,0
+    .goto 1411/1,-4992.700,-234.400,25,0
+    >>Despoja el |cRXP_PICK_Arco del Incursor|r en el suelo
+    >>|cRXP_WARN_Tiene dos ubicaciones de aparición diferentes|r
+    .complete 96822,1 --|1/1 Raider's Bow
 step  --northern tower
     #label AgedEnvelope
     .goto 1411/1,-4951.500,-59.600
@@ -1928,6 +1969,13 @@ step
     .accept 825 >>Acepta la misión Los restos del naufragio...
     .accept 831 >>Acepta la misión Las órdenes del almirante
     .target +Gar'Thok
+step
+    #optional
+    .goto 1411/1,-4724.900,287.300
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Orgnil|r
+    .accept 99048 >>Acepta la misión Una mano faltante
+    .target Orgnil Soulscar
+    .xp <8,1
 step
     #softcore
     .goto 1411/1,-4663.88,310.56
@@ -2202,6 +2250,29 @@ step
     .collect 4496,1,825,1 --Small Brown Pouch (1)
     .target Jark
     .money <0.05
+step
+    .goto 1411/1,-4724.900,287.300
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Orgnil|r
+    .accept 99048 >>Acepta la misión A Missing Hand
+    .target Orgnil Soulscar
+step
+    .goto 1411/1,-5061.700,201.700
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Heglan Shadeeye|r
+    .turnin 99048 >>Entrega la misión A Missing Hand
+    .accept 99049 >>Acepta la misión Amenaza desde las profundidades
+    .target Heglan Shadeeye
+step
+    .goto 1411/1,-5073.900,244.700
+    >>Despoja la |cRXP_PICK_Daga abandonada|r del suelo
+    .complete 99049,1 --|1/1 Orcish Dagger
+step
+    .goto 1411/1,-5140.800,229.100
+    >>Despoja la |cRXP_PICK_Parte de arma|r del suelo
+    .complete 99049,3 --|1/1 Broken Bone Trident
+step
+    .goto 1411/1,-5138.000,314.100
+    >>Despoja los |cRXP_PICK_Escombros extraños|r del suelo
+    .complete 99049,2 --|1/1 Banner Scrap
 step
     #completewith next
     >>Mata a los |cRXP_ENEMY_Reptadores de espuma pigmeo|r y a los |cRXP_ENEMY_Reptadores de espuma|r. Despójalos para obtener sus |cRXP_LOOT_Mucosidades|r
@@ -2532,7 +2603,7 @@ step --at low lvl razormanes
     .goto 1411/1,-4459.000,66.300,40,0
     >>Despoja el |cRXP_PICK_Fruto pera espinosa|r del suelo
     .complete 96825,1 --|8/8 Prickly Pear Fruit
-step
+step << Hunter
     #loop
     .goto 1411/1,-4312.79,407.50,0
     .goto 1411/1,-4312.79,407.50,50,0
@@ -2559,17 +2630,25 @@ step << Hunter
 	.goto 1411/1,-4208.1,98.71,50,0
 	.goto 1411/1,-4300.1,57.11,50,0
 	.goto 1411/1,-4456.61,65.57,50,0
-    .xp 9+4470 >> Mata enemigos hasta alcanzar 4470+/6500 xp
-step << Hunter
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con|r |cRXP_FRIENDLY_Torka|r y |cRXP_FRIENDLY_Gar'Thok|r
+    .xp 9+4960 >> Farmea hasta 4960+/6500xp
+step
+    .goto 1411/1,-4709.36,274.960
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con|r |cRXP_FRIENDLY_Gar'Thok|r
+    .turnin 825 >>Entrega la misión Los restos del naufragio...
+    .turnin 837 >>Entrega la misión Invasión << Hunter
+    .target Gar'Thok
+step
+    .goto 1411/1,-4725.000,287.200
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Orgnil Escaralma|r
+    .turnin 99049 >>Entrega la misión Amenaza desde las profundidades
+    --.accept 99051 >>Accept Threat from Below
+    .target Orgnil Soulscar
+step
+    .goto 1411/1,-4665.47,311.62
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con|r |cRXP_FRIENDLY_Torka|r
     .turnin 815 >>Entrega la misión Romper huevos
     .turnin 96825 >>Entrega la misión Esta fruta sabe cómo defenderse
-    .target +Cook Torka
-    .goto 1411/1,-4665.47,311.62
-    .turnin 825 >>Entrega la misión Los restos del naufragio...
-    .turnin 837 >>Entrega la misión Invasión
-    .target +Gar'Thok
-    .goto 1411/1,-4709.36,274.960
+    .target Cook Torka
 step << Hunter
     .goto 1411/1,-4704.07,275.31
     >>Ve dentro del búnker
@@ -2577,11 +2656,6 @@ step << Hunter
     .accept 6062 >>Acepta la misión Domesticar la bestia
     .trainer >> Aprende tus hechizos de clase
     .target Thotar
-step << Hunter
-    .goto 1411/1,-4724.900,287.300
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Orgnil Escaralma|r
-    .accept 99048 >>Acepta la misión Una mano faltante
-    .target Orgnil Soulscar
 step << Hunter
     .goto 1411/1,-4763.29,361.67
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Habla con |cRXP_FRIENDLY_Ghrawt|r. Compra|r |T132382:0|t[Flechas afiladas] |cRXP_BUY_y un|r |T134410:0|t[Carcaj medio] |cRXP_BUY_a este vendedor|r
@@ -2636,30 +2710,6 @@ step << Hunter
     .complete 6083,1 --Tame a Surf Crawler
     .mob Surf Crawler
     .isQuestTurnedIn 6062
-step << Hunter
-    .goto 1411/1,-5061.700,201.700
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Heglan Shadeeye|r
-    .turnin 99048 >>Entrega la misión A Missing Hand
-    .accept 99049 >>Acepta la misión Amenaza desde las profundidades
-    .target Heglan Shadeeye
-step << Hunter
-    .goto 1411/1,-5073.900,244.700
-    >>Despoja la |cRXP_PICK_Daga abandonada|r del suelo
-    .complete 99049,1 --|1/1 Orcish Dagger
-step << Hunter
-    .goto 1411/1,-5140.800,229.100
-    >>Despoja la |cRXP_PICK_Parte de arma|r del suelo
-    .complete 99049,3 --|1/1 Broken Bone Trident
-step << Hunter
-    .goto 1411/1,-5138.000,314.100
-    >>Despoja los |cRXP_PICK_Escombros extraños|r del suelo
-    .complete 99049,2 --|1/1 Banner Scrap
-step << Hunter
-    .goto 1411/1,-4725.000,287.200
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Orgnil Escaralma|r
-    .turnin 99049 >>Entrega la misión Amenaza desde las profundidades
-    --.accept 99051 >>Accept Threat from Below
-    .target Orgnil Soulscar
 step << Hunter
     .goto 1411/1,-4704.07,275.31
     >>Ve dentro del búnker
@@ -2717,6 +2767,70 @@ step << Hunter/Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Misha|r
     .accept 816 >>Acepta la misión Perdido, pero no olvidado
     .target Misha Tor'kren
+step << Warrior
+    .goto 1411/1,-4827.27,311.62
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Tarshaw|r
+    .train 6546 >> Aprende tus hechizos de clase
+    --.accept 1505 >>Accept Veteran Uzzek
+    .target Tarshaw Jaggedscar
+    .xp <10,1
+step << Shaman
+    .goto 1411/1,-4839.96,307.04
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Swart|r
+    .train 8050 >> Aprende tus hechizos de clase
+    .accept 2983 >>Acepta la misión La llamada del fuego
+    .target Swart
+    .isNotOnQuest 1522
+    .xp <10,1
+step << Shaman
+    .goto 1411/1,-4839.96,307.04
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Swart|r
+    .train 8050 >> Aprende tus hechizos de clase
+    .target Swart
+    .xp <10,1
+step << Warlock
+    .goto 1411/1,-4837.31,356.030
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Dhugru|r
+    .train 1120 >> Aprende tus hechizos de clase
+    .target Dhugru Gorelust
+    .xp <10,1
+step << Warlock
+    .goto 1411/1,-4854.76,345.81
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Kitha|r y compra |T133738:0|t[Descarga de Fuego Rango 2]
+    .collect 16302,1,837,1 --Grimoire of Firebolt (Rank 2) (1)
+    .target Kitha
+    .money <0.01
+    .train 7799,1
+    .xp <10,1
+step << Priest
+    .goto 1411/1,-4831.5,295.05
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Tai'jin|r
+    .accept 5654 >> Acepta la misión Maleficio de Debilidad << Troll
+    .accept 5660 >> Acepta la misión Toque de debilidad << Undead
+    .trainer >> Aprende tus hechizos de clase
+    .target Tai'jin
+    .xp <10,1
+step << Rogue
+    .goto 1411/1,-4710.94,268.26
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Kaplak|r
+    .train 674 >> Aprende tus hechizos de clase
+    .target Kaplak
+    .xp <10,1
+step << !Hunter
+    #loop
+    .goto 1411/1,-4312.79,407.50,0
+    .goto 1411/1,-4312.79,407.50,50,0
+    .goto 1411/1,-4314.91,487.52,50,0
+    .goto 1411/1,-4251.99,492.8,50,0
+    .goto 1411/1,-4167.39,500.91,50,0
+    .goto 1411/1,-4164.21,459.32,50,0
+    .goto 1411/1,-4180.08,382.12,50,0
+    .goto 1411/1,-4251.99,384.23,50,0
+    >>Mata |cRXP_ENEMY_Polvoroso Crines de Acero|r y |cRXP_ENEMY_Guardias de batalla Crines de Acero|r
+    .complete 837,3 --Razormane Dustrunner (4)
+    .mob +Razormane Dustrunner
+    .complete 837,4 --Razormane Battleguard (4)
+    .mob +Razormane Battleguard
 step
     #completewith next
     .goto 1411/1,-4414.31,999.70,50 >> Viaja a Rezlak
@@ -2833,7 +2947,6 @@ step << Hunter/Shaman
     #completewith next
     .goto 1454/1,-4367.46,1405.44,50,0
     .zone Orgrimmar >> Entra en Orgrimmar
-    .zoneskip Orgrimmar
 step << Hunter/Shaman
     .goto 1454/1,-4460.600,1584.300,10,0
     .goto 1454/1,-4460.000,1598.600
@@ -2855,7 +2968,7 @@ step << Hunter/Shaman
     .isOnQuest 96877
 step << Hunter/Shaman
     .goto 1454/1,-4466.800,1954.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Kor'geld|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Kor'geld|r
     .accept 97242 >>Acepta la misión La mezcla de Yelmak
     .target Kor'geld
 step << Hunter/Shaman
@@ -2938,7 +3051,7 @@ step << Hunter/Shaman
     .target Migi
 step << Hunter/Shaman
     .goto 1454/1,-4205.800,2007.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Thra|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Thra|r
     .accept 97326 >>Acepta la misión De rocas a descansos
     .target Thra
 step << Hunter/Shaman
@@ -3008,24 +3121,12 @@ step
     .collect 2287,15,828,1 << Rogue/Warrior --Haunch of Meat (15)
     .target Innkeeper Grosk
     .money <0.0375
-step << Hunter
-    .goto 1411/1,-4724.69,287.30
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con|r |cRXP_FRIENDLY_Orgnil|r
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Orgnil|r y |cRXP_FRIENDLY_Gar'Thok|r
     .turnin 806 >>Entrega la misión Oscuras tormentas
     .accept 828 >>Acepta la misión Margoz
-    .target Orgnil Soulscar
-step << !Hunter
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con|r |cRXP_FRIENDLY_Torka|r, |cRXP_FRIENDLY_Orgnil|r y |cRXP_FRIENDLY_Gar'Thok|r
-    .turnin 815 >>Entrega la misión Romper huevos
-    .turnin 96825 >>Entrega la misión Esta fruta sabe cómo defenderse
-    .target +Cook Torka
-    .goto 1411/1,-4665.47,311.62
-    .turnin 806 >>Entrega la misión Oscuras tormentas
-    .accept 828 >>Acepta la misión Margoz
-    .accept 99048 >>Acepta la misión A Missing Hand << Shaman
     .target +Orgnil Soulscar
     .goto 1411/1,-4724.69,287.30
-    .turnin 825 >>Entrega la misión Los restos del naufragio...
     .turnin 837 >>Entrega la misión Invasión
     .target +Gar'Thok
     .goto 1411/1,-4709.36,274.960
@@ -3081,6 +3182,7 @@ step << Rogue
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Horde
 #name 10-12 Durotar
 #version 11
@@ -3143,31 +3245,6 @@ step << Shaman
 step << skip --Shaman
     #completewith MargozTurnIn
     .deathskip >> Muere y reaparece en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
-    --TODO: Re-add deathskip after ress timer fix
-step << Shaman
-    .goto 1411/1,-5061.700,201.700
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Heglan Sombramira|r
-    .turnin 99048 >>Entrega la misión A Missing Hand
-    .accept 99049 >>Acepta la misión Amenaza from Below
-    .target Heglan Shadeeye
-step << Shaman
-    .goto 1411/1,-5073.900,244.700
-    >>Despoja el |cRXP_PICK_Abandoned Dagger|r en el suelo
-    .complete 99049,1 --|1/1 Orcish Dagger
-step << Shaman
-    .goto 1411/1,-5140.800,229.100
-    >>Recoge la |cRXP_PICK_Weapon Piece|r del suelo
-    .complete 99049,3 --|1/1 Broken Bone Trident
-step << Shaman
-    .goto 1411/1,-5138.000,314.100
-    >>Recoge los |cRXP_PICK_Strange Escombros|r del suelo
-    .complete 99049,2 --|1/1 Banner Scrap
-step << Shaman
-    .goto 1411/1,-4725.000,287.200
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Orgnil Escaralma|r
-    .turnin 99049 >>Entrega la misión Amenaza from Below
-    --.accept 99051 >>Accept Threat from Below
-    .target Orgnil Soulscar
 step << Hunter
     #completewith MargozTurnIn
     +Domestica a un |cRXP_ENEMY_Escórpido Venocola|r
@@ -3251,7 +3328,7 @@ step << skip
     #completewith SecuringLinesTurnIn
     .deathskip >> Muere y reaparece en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
 step
-    --#hardcore
+    #hardcore
     #completewith next
     .goto 1411/1,-4804.53,830.5,60,0
     .goto 1411/1,-4698.78,842.48,60,0
@@ -3409,6 +3486,7 @@ step << Rogue
     .target Trak'gen
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.3
+    .money <0.03
 step << Rogue
     #optional
     #completewith ZeptoUC1
@@ -3467,7 +3545,7 @@ step
     .isOnQuest 96877
 step
     .goto 1454/1,-4466.800,1954.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Kor'geld|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Kor'geld|r
     .accept 97242 >>Acepta la misión La mezcla de Yelmak
     .target Kor'geld
 step
@@ -3522,7 +3600,7 @@ step
     .target Migi
 step
     .goto 1454/1,-4205.800,2007.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Thra|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Thra|r
     .accept 97326 >>Acepta la misión De rocas a descansos
     .target Thra
 step
@@ -3543,6 +3621,12 @@ step << !Shaman !Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Nazgrel|r
     .turnin 831 >>Entrega la misión Las órdenes del almirante
     .target Nazgrel
+step << !Shaman !Hunter
+    .goto 1454/1,-4125.79,1920.10
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Thrall|r
+    .accept 5726 >>Acepta la misión Enemigos ocultos
+    .target Thrall
+    .dungeon RFC
 step << Shaman/Hunter
     .goto 1454/1,-4125.79,1920.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Thrall|r
@@ -3679,7 +3763,26 @@ step << Shaman/Hunter
     >>|cRXP_WARN_Despoja la|r |T134095:0|t[Piedra de energía con imperfecciones] |cRXP_WARN_junto a|r |cRXP_FRIENDLY_Ak'Zeloth|r|cRXP_WARN_. Este objeto tiene un temporizador de 30 minutos, así que date prisa|r
     .turnin 926 >>Entrega la misión La piedra de energía con imperfecciones
     .isOnQuest 924
-step << Rogue/Mage/Priest/Warlock/Warrior
+step << !Shaman !Hunter
+    #loop
+    .goto 1411/1,-4805.59,1495.67,0
+    .goto 1411/1,-4855.82,1498.84,15,0
+    .goto 1411/1,-4833.08,1494.96,15,0
+    .goto 1411/1,-4805.59,1495.67,15,0
+    .goto 1411/1,-4784.44,1535.85,15,0
+    .goto 1411/1,-4750.60,1531.62,15,0
+    .goto 1411/1,-4734.21,1505.54,15,0
+    .goto 1411/1,-4693.49,1519.64,15,0
+    .goto 1411/1,-4679.75,1501.31,15,0
+    .goto 1411/1,-4684.50,1466.06,15,0
+    .goto 1411/1,-4805.59,1495.67,15,0
+    >>Mata a los |cRXP_ENEMY_Orcos Filo Ardiente|r. Despójalos para obtener una |cRXP_LOOT_Insignia de Teniente|r
+    .complete 5726,1 --Lieutenant's Insignia (1)
+    .mob Burning Blade Fanatic
+    .mob Burning Blade Apprentice
+    .dungeon RFC
+    .isOnQuest 5726
+step << !Shaman !Hunter
     #label ZeptoUC1
     .goto 1411/1,-4648.55,1321.88,40 >>Sube a la Torre del Zepelín
     .zone Tirisfal Glades >>Toma el zepelín hacia los Claros de Tirisfal
@@ -3693,6 +3796,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Horde
 #name 10-12 Tirisfal (Orco/Trol)
 #version 11
@@ -4144,7 +4248,7 @@ step << Warrior
     .abandon 1821 >> Abandona la misión Reliquias Agamand
 step
     #optional
-    .abandon 375 >>Abandona la misión El frío de la muerte 
+    .abandon 375 >>Abandona la misión El frío de la muerte
 step
     #label LeaveUndercity3
     .goto 1458/0,419.89,1627.54,50,0

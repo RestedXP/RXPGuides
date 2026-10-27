@@ -3,64 +3,42 @@ if GetLocale() ~= "esES" and GetLocale() ~= "esMX" then return end
 RXPGuides.RegisterGuide([[
 #forever
 #version 1
-#beta
-#name 1-14 Isla de Zephras
-#displayname 1-13 Cielonato << Alliance
-#displayname 1-12 Cielonato << Horde
+#name 1-9 Isla de Zephras
+#displayname 1-9 Cielonato << Alliance
+#displayname 1-9 Cielonato << Horde
 #group RestedXP Forever Guía de Mazmorras (A) << Alliance
 #group RestedXP Forever Guía de Mazmorras (H) << Horde
-#subgroup (En progreso) Guía de mazmorras 1-20 << Alliance
-#subgroup (En progreso) Guía de mazmorras 1-22 << Horde
+#subgroup Guía de mazmorras 1-20 << Alliance
+#subgroup Guía de mazmorras 1-22 << Horde
 #defaultfor Skyborne
-#next "guía correcta de páramos de poniente" << Alliance
+#next 9-13 Isla de Zephras
 
-step
-#include RestedXP Guía Forever (A)\1-14 Isla de Zephras
+step << Horde
+    .enabledungeon RFC
+    #include RestedXP Forever Guía (H)\1-9 Isla de Zephras
+step << Alliance
+    #include RestedXP Forever Guía (H)\1-9 Isla de Zephras
 ]])
 
-
---Hunter class quest chain
 RXPGuides.RegisterGuide([[
 #forever
 #version 1
-#beta
-#name Cielonato: misiones de clase de cazador
+#name 9-13 Isla de Zephras
+#displayname 9-13 Cielonato << Alliance
+#displayname 9-12 Cielonato << Horde
 #group RestedXP Forever Guía de Mazmorras (A) << Alliance
 #group RestedXP Forever Guía de Mazmorras (H) << Horde
-#internal
+#subgroup Guía de mazmorras 1-20 << Alliance
+#subgroup Guía de mazmorras 1-22 << Horde
+#defaultfor Skyborne
+#next 13-15 Páramos de Poniente << Alliance
+#next 12-14 Bosque de Argénteos << Horde !Hunter
+#next 12-16 Los Baldíos << Horde Hunter
 
-step
-#include RestedXP Guía Forever (A)\Cielonato: misiones de clase de cazador
+step << Horde
+    .enabledungeon RFC
+    #include RestedXP Forever Guía (H)\9-13 Isla de Zephras
+step << Alliance
+    #include RestedXP Forever Guía (A)\9-13 Isla de Zephras
 ]])
---Druid class quest chain
-RXPGuides.RegisterGuide([[
-#forever
-#version 1
-#beta
-#name Cielonato: misiones de clase de druida
-#displayname Cielonato: misiones de clase de druida
-#group RestedXP Forever Guía de Mazmorras (A) << Alliance
-#group RestedXP Forever Guía de Mazmorras (H) << Horde
-#defaultfor Skyborne Druid
-#internal
 
--- The Great Ursera Spirit (94006) is accepted from the Druid trainer in Valanaar.
-step
-#include RestedXP Guía Forever (A)\Cielonato: misiones de clase de druida
-]])
---Random Stuff
-RXPGuides.RegisterGuide([[
-#forever
-#version 1
-#beta
-#name Cosas Aleatorias
-#group RestedXP Forever Guía de Mazmorras (A) << Alliance
-#group RestedXP Forever Guía de Mazmorras (H) << Horde
-#internal
-
-    .goto 2521,41.07,22.33 -- spirit healer thendal village
-    .goto 2521,40.23,63.82 --watchtower
-    .goto 2521,55.01,68.16 --gustberry highlands
--- step
-#include RestedXP Guía Forever (A)\Cosas Aleatorias
-]])

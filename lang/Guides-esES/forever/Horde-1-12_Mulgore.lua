@@ -5,7 +5,7 @@ if faction == "Alliance" then return end
 
 RXPGuides.RegisterGuide([[
 #forever
-#era/som--h
+#disabledungeons
 << Horde
 #name 1-6 Mulgore
 #version 11
@@ -108,6 +108,13 @@ step
     .target Chief Hawkwind
 step << Shaman
     .goto 1412/1,-216.18,-2926.26--c:Mulgore,44.07,77.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Marjak|r
+    .vendor >> Vende basura. Vende tu arma si te da suficiente dinero para un |T135139:0|t[Bastón corto] (1s 02c). Volverás más tarde si aún no tienes suficiente.
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<1.9
+    .target Marjak Keenblade
+step << Shaman
+    .goto 1412/1,-216.18,-2926.26--c:Mulgore,44.07,77.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Habla con|r |cRXP_FRIENDLY_Marjak Buenfilo|r|cRXP_BUY_. Compra un|r |T135139:0|t[Bastón corto] |cRXP_BUY_a este vendedor|r
     .collect 2132,1,750,1 --Collect Short Staff (1)
     .money <0.0102
@@ -122,6 +129,20 @@ step << Shaman
     .itemcount 2132,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<1.9
+step
+    #completewith next
+    >>Mata |cRXP_ENEMY_Puma monteses|r. Despójalos para obtener sus |cRXP_LOOT_Pelambres|r
+    .complete 750,1 --Mountain Cougar Pelt (10)
+    .mob Mountain Cougar
+step
+    #label RitesoftheEarthmother
+    .goto 1412/1,-139.63,-3430.08--c:Mulgore,42.58,92.18
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Vidente Lenguagris|r
+    >>|cRXP_WARN_Esto inicia una misión con tiempo límite de 10 minutos|r
+    .turnin 755 >>Entrega la misión Los ritos de la Madre Tierra
+    .accept 757 >>Acepta la misión Rito de la fuerza
+    .accept 95805 >>Acepta la misión Gracia de An'she y Mu'sha
+    .target Seer Graytongue
 step
     #loop
     .goto 1412/1,-243.41,-3384.87,0--c:Mulgore,44.60,90.86
@@ -139,15 +160,6 @@ step
     >>Mata |cRXP_ENEMY_Puma monteses|r. Despójalos para obtener sus |cRXP_LOOT_Pelambres|r
     .complete 750,1 --Mountain Cougar Pelt (10)
     .mob Mountain Cougar
-step
-    #label RitesoftheEarthmother
-    .goto 1412/1,-139.63,-3430.08--c:Mulgore,42.58,92.18
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Vidente Lenguagris|r
-    >>|cRXP_WARN_Esto inicia una misión con tiempo límite de 10 minutos|r
-    .turnin 755 >>Entrega la misión Los ritos de la Madre Tierra
-    .accept 757 >>Acepta la misión Rito de la fuerza
-    .accept 95805 >>Acepta la misión Gracia de An'she y Mu'sha
-    .target Seer Graytongue
 step
     #loop
 	.goto 1412/1,-292.73,-3285.20,40,0--c:Mulgore,45.56,87.95
@@ -234,6 +246,13 @@ step << Shaman
     .turnin 3093 >>Entrega la misión La nota con runas grabadas
     .train 8042 >>Aprende |T136026:0|t[Choque de tierra]
     .target Meela Dawnstrider
+step << Druid
+    .goto 1412/1,-279.37,-2893.73--c:Mulgore,45.30,76.52
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Kawnie Brisaleve|r
+    >>|cRXP_BUY_Compra|r |T132794:0|t[Agua de manantial refrescante] |cRXP_BUY_a esta vendedora|r
+	.collect 159,5,383,1 --Collect Refreshing Spring Water (10)
+    .target Kawnie Softbreeze
+    .money <0.0025
 step
     #completewith next
     >>Mata |cRXP_ENEMY_Jabaguerreros|r. Despójalos para obtener sus |cRXP_LOOT_Costillares|r y |cRXP_LOOT_Hocicos|r
@@ -456,7 +475,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
-#era/som--h
+#disabledungeons
 << Horde
 #name 6-12 Mulgore
 #version 11
@@ -500,13 +519,13 @@ step
 step
     #softcore
     .goto 1412/1,-408.900,-2179.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Yaw Crinafilada|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Yaw Crinafilada|r
     .accept 96130 >>Acepta la misión Chakuyak
     .target Yaw Sharpmane
 step
     #softcore
     .goto 1412/1,-430.600,-2097.600
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ahab Pezuña de Trigo|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ahab Pezuña de Trigo|r
     .accept 99411 >>Acepta la misión ¡Kyle ha desaparecido!
     .target Ahab Wheathoof
 step
@@ -629,13 +648,13 @@ step
 step
     #hardcore
     .goto 1412/1,-408.900,-2179.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Yaw Crinafilada|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Yaw Crinafilada|r
     .accept 96130 >>Acepta la misión Chakuyak
     .target Yaw Sharpmane
 step
     #hardcore
     .goto 1412/1,-430.600,-2097.600
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ahab Pezuña de Trigo|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ahab Pezuña de Trigo|r
     .accept 99411 >>Acepta la misión ¡Kyle ha desaparecido!
     .target Ahab Wheathoof
 step
@@ -645,7 +664,7 @@ step
     .target Harken Windtotem
 step
     .goto 1412/1,-496.200,-2347.900
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Krang Pezuña Pétrea|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Krang Pezuña Pétrea|r
     .accept 99108 >>Acepta la misión Combate de práctica
     .target Krang Stonehoof
 step
@@ -912,6 +931,7 @@ step
     .train 2550 >>Aprende Cocina
     .turnin 96661 >>Entrega la misión Campamento básico: Cocina
     .target Pyall Silentstride
+    .money <0.01
 step
     #label Vision
     .goto 1412/1,-405.75,-2243.32--c:Mulgore,47.76,57.53
@@ -922,7 +942,7 @@ step
     .target Zarlman Two-Moons
 step
     .goto 1412/1,-430.600,-2097.600
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ahab Pezuña de Trigo|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ahab Pezuña de Trigo|r
     .turnin 99411 >>Entrega la misión ¡Kyle ha desaparecido!
     .target Ahab Wheathoof
     .isQuestComplete 99411
@@ -1009,6 +1029,38 @@ step << Tauren
     .mob +Prairie Stalker
     .complete 756,2 --Cougar Claws (6)
     .mob +Flatland Cougar
+step
+    #softcore
+	#completewith Escort1
+    .deathskip >> Muere y reaparece en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
+step << Hunter
+    #softcore
+    .goto 1412/1,-408.32,-2180.30--c:Mulgore,47.81,55.69
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Yaw|r
+    .train 5116 >> Aprende tus hechizos de clase
+    .target Yaw Sharpmane
+    .xp <8,1
+step << Druid
+    #softcore
+    .goto 1412/1,-442.74,-2315.59--c:Mulgore,48.48,59.64
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Gennia|r
+    .train 5186 >>Aprende tus hechizos de clase
+    .target Gennia Runetotem
+    .xp <8,1
+step << Warrior
+    #softcore
+    .goto 1412/1,-496.17,-2347.78--c:Mulgore,49.52,60.58
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Krang|r
+    .train 284 >> Aprende tus hechizos de clase
+    .target Krang Stonehoof
+    .xp <8,1
+step << Shaman
+    #softcore
+    .goto 1412/1,-437.61,-2298.80--c:Mulgore,48.38,59.15
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Narm|r
+    .train 8044 >> Aprende tus hechizos de clase
+    .target Narm Skychaser
+    .xp <8,1
 step
     .goto 1412/1,54.800,-2442.200
     >>Mata a |cRXP_ENEMY_Chakuyak|r. Despoja para obtener su |cRXP_LOOT_Pelt|r
@@ -1172,6 +1224,12 @@ step
     .vendor >> Vende la basura y repara
     .target Harant Ironbrace
 step
+    .goto 1412/1,-285.000,-2263.400
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Pyall|r
+    .train 2550 >>Aprende Cocina
+    .turnin 96661 >>Entrega la misión Campamento básico: Cocina
+    .target Pyall Silentstride
+step
     .goto 1412/1,-392.500,-2318.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Valiente Corresalvaje|r
     >>|cRXP_WARN_Patrulla por la zona|r
@@ -1251,7 +1309,7 @@ step
     .unitscan Kyle the Frenzied
 step
     .goto 1412/1,-430.600,-2097.600
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ahab Pezuña de Trigo|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ahab Pezuña de Trigo|r
     .turnin 99411 >>Entrega la misión ¡Kyle ha desaparecido!
     .target Ahab Wheathoof
 step
@@ -1318,7 +1376,7 @@ step
 step
     .goto 1456/1,104.500,-1308.400
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con Boarton Totemsombrío|cRXP_FRIENDLY_
-    >>|cRXP_WARN_Está|r |T132320:0|t[En sigilo] 
+    >>|cRXP_WARN_Está|r |T132320:0|t[En sigilo]
     .accept 76156 >>Acepta la misión Acechanzas con la Madre Tierra
     .target Boarton Shadetotem
 step
@@ -1542,7 +1600,7 @@ step
     #sofcore
     #completewith Bloodhoofturnins1
     .goto 1412/1,-598.900,-1603.700
-    .deathskip >> Die at the waypoint arrow (or further south of it) and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
+    .deathskip >> Muere en la flecha de navegación (o más al sur) y resucita en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
 step
     #hardcore
     #completewith Bloodhoofturnins1
@@ -1830,7 +1888,7 @@ step
     .mob Supervisor Saltatuercas
 step
     .goto 1412/1,-1128.700,-1674.600
-    >>Despoja los |cRXP_PICK_Documentos|r del suelo
+    >>Despoja los |cRXP_PICK_Documents|r en el suelo
     .complete 98424,1 --|1/1 Shredder Operation Instructions
 step
     .goto 1412/1,-1315.800,-1672.100
@@ -1839,7 +1897,7 @@ step
 step
     #label Fizsprocket
     .goto 1412/1,-1153.900,-1637.800
-    >>Despoja los |cRXP_PICK_Documents|r en el suelo
+    >>Despoja los |cRXP_PICK_Documentos|r del suelo
     .complete 98424,3 --|1/1 One "Gerenzo", of Stonetalon
 step
     #label VentureCos
@@ -1921,7 +1979,7 @@ step << Druid
 step
     .goto 1456/1,104.500,-1308.400
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Boarton Totemsombrío|r
-    >>|cRXP_WARN_Está|r |T132320:0|t[En sigilo] 
+    >>|cRXP_WARN_Está|r |T132320:0|t[En sigilo]
     .turnin 76156 >>Entrega la misión Acechanzas con la Madre Tierra
     .accept 76160 >>Acepta la misión Acechanzas con la Madre Tierra
     .target Boarton Shadetotem
@@ -2110,7 +2168,7 @@ step
     .mob Flatland Prowler
 step
     #completewith next
-    >>Recoge las |cRXP_PICK_Piñas de Viento Furioso|r del suelo
+    >>Despoja los |cRXP_PICK_Conos de viento furioso|r del suelo
     >>|cRXP_WARN_Se pueden encontrar principalmente bajo/cerca de los árboles|r
     .collect 206170,8,76160,1 --Windfury Cone (8)
 step
@@ -2133,7 +2191,7 @@ step
     .goto 1412/1,530.000,-1074.100,40,0
     .goto 1412/1,593.200,-1003.200,40,0
     .goto 1412/1,460.000,-1055.700,40,0
-    >>Despoja los |cRXP_PICK_Conos de viento furioso|r del suelo
+    >>Recoge las |cRXP_PICK_Piñas de Viento Furioso|r del suelo
     >>|cRXP_WARN_Se pueden encontrar principalmente bajo/cerca de los árboles|r
     .collect 206170,8,76160,1 --Windfury Cone (8)
 step << Tauren

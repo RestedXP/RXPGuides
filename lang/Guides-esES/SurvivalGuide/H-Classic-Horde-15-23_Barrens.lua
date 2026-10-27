@@ -565,7 +565,7 @@ step
     .dungeon RFC
 step
     .goto Durotar,50.8,13.8,40 >>Sube a la Torre del Zepelín
-    .zone Tirisfal Glades >>Toma el zepelín hacia los Claros de Tirisfal
+    .zone Tirisfal Glades >>Toma el zepelín hacia Claros de Tirisfal
     .zoneskip Tirisfal Glades
     .isQuestComplete 5725
     .dungeon RFC
@@ -2863,7 +2863,7 @@ step << Rogue
     .xp <20,1
     .dungeon DM
 step << Warlock
-    .goto Undercity,48.47,45.42
+    .goto Orgrimmar,47.98,45.93
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Zevrost|r
     .train 1014 >> Aprende tus hechizos de clase
 	.target Zevrost
@@ -2872,7 +2872,7 @@ step << Warlock
     .dungeon DM
 step << Warlock
     #optional
-    .goto Undercity,48.47,45.42
+    .goto Orgrimmar,47.98,45.93
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Zevrost|r
     .train 706 >> Aprende tus hechizos de clase
 	.target Zevrost
@@ -5078,7 +5078,7 @@ step
     .zoneskip Durotar
 step
     .goto Durotar,50.8,13.8,40 >>Sube a la Torre del Zepelín
-    .zone Tirisfal Glades >>Toma el zepelín hacia los Claros de Tirisfal
+    .zone Tirisfal Glades >>Toma el zepelín hacia Claros de Tirisfal
     .zoneskip Tirisfal Glades
     .zoneskip Undercity
 

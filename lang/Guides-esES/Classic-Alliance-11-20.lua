@@ -497,7 +497,7 @@ step << Human Mage/Human Rogue/Human Warrior/Human Warlock/Human Paladin/Human P
 step << Human Warrior
     .goto Ironforge,62.0,89.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Bixi Tambaleapié|r
-    .train 2567 >>Aprende el uso de Arrojadizas
+    .train 2567 >>Aprende el uso de Armas arrojadizas
     .target Bixi Wobblebonk
 step << Human Rogue
     #ah
@@ -561,7 +561,7 @@ step
 step
     #hardcore
     #completewith next
-    .goto Dun Morogh,59.43,42.85,150 >> Viaja al punto de atajo (skip) entre Dun Morogh -> Los Humedales
+    .goto Dun Morogh,59.43,42.85,150 >> Viaja al punto de atajo entre Dun Morogh -> Los Humedales
 step
     #hardcore
     .goto Dun Morogh,59.5,42.8,40,0
@@ -582,8 +582,8 @@ step
     .goto Wetlands,16.8,65.3,40,0
     .goto Wetlands,15.1,64.0,40,0
     .goto Wetlands,12.1,60.3,40,0
-    >>|cRXP_WARN_¡Mira primero la guía en vídeo para obtener una referencia sobre cómo realizar el atajo (skip)!||r
-    >>|cRXP_WARN_Realiza el atajo (skip) sin morir de Dun Morogh a Los Humedales|r
+    >>|cRXP_WARN_¡Mira primero la guía en vídeo para obtener una referencia sobre cómo realizar el atajo!||r
+    >>|cRXP_WARN_Realiza el atajo sin morir de Dun Morogh a Los Humedales|r
     >>|cRXP_WARN_Evita a los |cRXP_ENEMY_Crocoliscos de Los Humedales|r y a los |cRXP_ENEMY_Múrlocs|r al cruzar el agua|r
     .link https://www.youtube.com/watch?v=9afQTimaiZQ >> |cRXP_WARN_Haz clic aquí para ver la guía en vídeo|r
     .goto Wetlands,12.1,60.3,80 >> Viaja al Puerto de Menethil
@@ -988,7 +988,7 @@ step
     .goto 1439,38.696,57.874,50,0
     .goto 1439,39.129,59.176,50,0
     >>|cRXP_WARN_Usa|r |T134335:0|t[La esperanza de Tharnariun] |cRXP_WARN_en un|r |cRXP_ENEMY_Oso cardo rabioso|r |cRXP_WARN_ .Se puede usar desde cualquier rango mientras selecciones como objetivo al oso|r
-    >>|cRXP_WARN_==NO USES EL OBJETO DE MISIÓN SI NO HAY OSO CERCA==|r
+    >>|cRXP_WARN_==NO USES EL OBJETO DE MISIÓN SI NO HAY UN OSO CERCA==|r
     >>|cRXP_WARN_¡Puedes desperdiciar la trampa y hacer que la misión sea imposible de completar! Si eso te sucede, tienes que volver a quien te dio la misión y pedirle otra trampa|r
     .complete 2118,1 --Rabid Thistle Bear Captured (1)
     .unitscan Rabid Thistle Bear
@@ -1657,7 +1657,7 @@ step << NightElf/Hunter/Druid
 step << NightElf/Hunter/Druid/Warrior
     #optional
     .goto 1439,37.767,44.001
-    >>|cRXP_WARN_Usa el|r |T134865:0|t[Tubo de agua vacío] |cRXP_WARN_en la Poza de la Luna de Auberdine|r
+    >>|cRXP_WARN_Usa el|r |T134865:0|t[Tubo de agua vacío] |cRXP_WARN_en el pozo lunar de Auberdine|r
     .complete 4812,1 --Moonwell Water Tube (1)
     .use 14338
     .isQuestTurnedIn 4811
@@ -2350,7 +2350,7 @@ step
 step
     #season 0
     .goto 1439,37.767,44.001
-    >>|cRXP_WARN_Usa el|r |T134865:0|t[Tubo de agua vacío] |cRXP_WARN_en la Poza de la Luna de Auberdine|r
+    >>|cRXP_WARN_Usa el|r |T134865:0|t[Tubo de agua vacío] |cRXP_WARN_en el pozo lunar de Auberdine|r
     .complete 4812,1 --Moonwell Water Tube (1)
     .use 14338
 step
@@ -2415,7 +2415,7 @@ step
     #label Level10CookEnd
     .goto 1439,37.511,41.670
     >>|cRXP_WARN_Viaja hacia la|cRXP_PICK_ Hoguera|r en el suelo|r
-    +Empieza con |T133971:0|t[Cocina] |cRXP_WARN_elaborando|r |T132834:0|t[Huevo a las finas hierbas]|cRXP_WARN_. Haz esto hasta que tu|r |T133971:0|t[Cocina] |cRXP_WARN_haya alcanzado al menos el nivel 10|r
+    +|cRXP_WARN_Empieza con|r |T133971:0|t[Cocina] |T132834:0|t[Huevo a las finas hierbas]|cRXP_WARN_. Haz esto hasta que tu|r |T133971:0|t[Cocina] |cRXP_WARN_haya alcanzado al menos el nivel 10|r
     >>|cRXP_WARN_Continúa subiendo el nivel de tu|r |T133971:0|t[Cocina] |cRXP_WARN_ hasta que se te acaben los|r |T132832:0|t[Huevos pequeños] << !sod
     >>|cRXP_WARN_Hay una misión en Bosque del Ocaso más adelante que requiere que tu|r |T133971:0|t[Cocina] |cRXP_WARN_sea de nivel 50 o superior. También puedes cocinar esto cuando subas al barco pronto|r << !sod
     .skill cooking,50,1
@@ -2829,7 +2829,7 @@ step << NightElf !Druid
     #optional
     #completewith CavetoAuber
     #season 0
-    .deathskip >> Muere y reaparece en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
+    .deathskip >> Muere y resucita en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
     .target Ángel de la Resurrección
 step << skip --logout skip
     #hardcore << NightElf !Druid
@@ -2838,7 +2838,7 @@ step << skip --logout skip
     #completewith CavetoAuber
     #season 0
     .goto 1439,54.964,34.536
-    .goto 1439,41.705,36.507,20 >>|cRXP_WARN_Salta encima de la roca en el piso superior dentro de la cueva. Posiciona tu personaje hasta que parezca que está flotando, luego realiza un Logout Skip desconectando y volviendo a entrar|r
+    .goto 1439,41.705,36.507,20 >>|cRXP_WARN_Salta en la cima de la roca en el piso superior dentro de la cueva. Posiciona tu personaje hasta que parezca que está flotando, luego realiza un Logout Skip desconectando y volviendo a entrar|r
 step
     #hardcore << NightElf !Druid
     #completewith CavetoAuber
@@ -2933,7 +2933,7 @@ step
 step
     .goto Darkshore,37.78,44.06
     #season 0
-    >>|cRXP_WARN_Usa el|r |T133748:0|t[Cuenco de purificación vacío] |cRXP_WARN_en la Poza de la Luna de Auberdine|r
+    >>|cRXP_WARN_Usa el|r |T133748:0|t[Cuenco de purificación vacío] |cRXP_WARN_en el pozo lunar de Auberdine|r
     .collect 12347,1,4763,1 --Filled Cleansing Bowl (1)
     .use 12346
     .isOnQuest 4763
@@ -3146,7 +3146,7 @@ step << NightElf Warrior
     #season 0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ilyenia Fuegolunar|r
     .skipgossip 11866,1
-    .train 2567 >> Aprende el uso de Arrojadizas
+    .train 2567 >> Aprende el uso de Armas arrojadizas
     .target Ilyenia Moonfire
 step << NightElf Hunter
     #completewith start
@@ -4020,7 +4020,7 @@ step
 step
     .goto 1439,56.654,13.484
     #optional
-    >>Escolta al |cRXP_FRIENDLY_El Trillomajareitor 4100|r hasta |cRXP_FRIENDLY_Gelkak Gyromast|r
+    >>Escolta al |cRXP_FRIENDLY_El Trillomajareitor 4100|r a |cRXP_FRIENDLY_Gelkak Gyromast|r
     >>Mata a |cRXP_ENEMY_El Trillomajareitor 4100|r cuando se vuelva hostil
     >>|cRXP_WARN_Esta misión es MUY difícil|r
     *Solo usa ataques a distancia mientras huyes de él, evita estar en rango de cuerpo a cuerpo << Druid
@@ -4508,7 +4508,7 @@ step << NightElf Warrior
     #optional
     .goto 1455,62.378,88.671
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Brenwyn Ventacerado|r escaleras abajo
-    >>|cRXP_BUY_Compra los|r |T135425:0|t[Cuchillos arrojadizos cortantes] |cRXP_BUY_a esta vendedora|r
+    >>|cRXP_BUY_Compra los|r |T135425:0|t[Cuchillos arrojadizo cortante] |cRXP_BUY_a esta vendedora|r
     .collect 3107,1 --Collect Keen Throwing Knife (200)
     .target Brenwyn Wintersteel
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.3
@@ -5743,7 +5743,7 @@ step << !NightElf !Hunter
     #softcore
     #optional
     #completewith next
-    .deathskip >> Muere y reaparece en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
+    .deathskip >> Muere y resucita en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
     .target Ángel de la Resurrección
 step << !NightElf
     #xprate <1.59
@@ -6277,7 +6277,7 @@ step << NightElf Warrior
     #optional
     .goto 1455,62.378,88.671
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Brenwyn Ventacerado|r escaleras abajo
-    >>|cRXP_BUY_Compra los|r |T135425:0|t[Cuchillos arrojadizos cortantes] |cRXP_BUY_a esta vendedora|r
+    >>|cRXP_BUY_Compra los|r |T135425:0|t[Cuchillos arrojadizo cortante] |cRXP_BUY_a esta vendedora|r
     .collect 3107,1 --Collect Keen Throwing Knife (200)
     .target Brenwyn Wintersteel
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.3
@@ -6949,7 +6949,7 @@ step
     #hardcore
     .goto Stormwind City,53.612,59.764
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con la |cRXP_FRIENDLY_Subastadora Jaxon|r
-    >>Compra el |T134437:0|t[Contraveneno] para tu misión posterior de |T132290:0|t[Venenos] , y el resto para entregar misiones más rápido en Montañas Crestagrana y Páramos de Poniente pronto << !Dwarf Rogue
+    >>Compra el |T134437:0|t[Contraveneno] para tu misión posterior de |T132290:0|t[Venenos] , y el resto para entregas más rápidas en Montañas Crestagrana y Páramos de Poniente pronto << !Dwarf Rogue
     >>Compra los siguientes objetos para entregas más rápidas en Montañas Crestagrana y Páramos de Poniente pronto << !Rogue/Dwarf Rogue
     >>Esto te ahorrará tiempo ya que no necesitarás correr buscando enemigos para matar. Omite este paso si prefieres no comprar nada
     >>|T134437:0|t[Contraveneno] << !Dwarf Rogue
@@ -8273,7 +8273,7 @@ step << !Hunter NightElf
     #xprate <1.5
     #softcore
     #completewith next
-    .deathskip >> Muere y reaparece en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
+    .deathskip >> Muere y resucita en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
 step << !Hunter NightElf
     #xprate <1.59
     .goto Loch Modan,33.938,50.954
@@ -9838,7 +9838,7 @@ step
     .goto StormwindClassic,66.30,62.30,-1
 	.goto Redridge Mountains,6.7,72.4,-1
     .zone Redridge Mountains >>Viaja a Montañas Crestagrana
-    .fly Redridge >> Vuela a Crestagrana
+    .fly Redridge >> Vuela a Montañas Crestagrana
     >>|cRXP_WARN_Si estás en Villadorada será más rápido volar desde Ventormenta|r
 	>>|cRXP_WARN_Si estás en la Torre de Azora simplemente corre a Montañas Crestagrana|r
 step
@@ -10802,7 +10802,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Alianza 1-20
 #groupid RXP-SRGCE-A1
 #name 20-21 Costa Oscura/Vallefresno
-#next Alianza 20-30\21-23 Espolón/Vallefresno;RestedXP Alianza 20-30\21-22 Vallefresno SoD
+#next RestedXP Alianza 20-30\21-23 Espolón/Vallefresno;RestedXP Alianza 20-30\21-22 Vallefresno SoD
 
 
 step << Druid

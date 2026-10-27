@@ -125,7 +125,7 @@ step << Warlock
     #softcore
     #completewith next
     .goto 1429,49.527,43.491,0
-    .deathskip >> Muere y reaparece en el Ángel de la Resurrección
+    .deathskip >> Muere y resucita en el Ángel de la Resurrección
     .target Ángel de la Resurrección
 step << Warlock
     #season 0,1
@@ -802,7 +802,7 @@ step << !Human/!Rogue
     #requires CALEENCI2 << Mage
     #requires Libram4 << Paladin
     #requires Shadowstrike2 << Rogue
-    .deathskip >> Muere y reaparece en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
+    .deathskip >> Muere y resucita en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
     .target Ángel de la Resurrección
 --   .subzoneskip 59,1
 step << Human Rogue
@@ -1083,7 +1083,7 @@ step
     #optional
     #softcore
     #completewith next
-    .deathskip >> Muere y reaparece en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
+    .deathskip >> Muere y resucita en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
     .target Ángel de la Resurrección
 -- .subzoneskip 59,1
 step << Priest/Mage
@@ -1198,7 +1198,7 @@ step
     #season 0,1 << Rogue
     #softcore
     #completewith Goldshire
-    .deathskip >> Muere y reaparece en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
+    .deathskip >> Muere y resucita en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
     .target Ángel de la Resurrección
     .subzoneskip 87
 step << Warrior/Rogue/Paladin
@@ -1831,7 +1831,7 @@ step
 step
     #softcore
     #completewith Exchange
-    .deathskip >> Muere y reaparece en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
+    .deathskip >> Muere y resucita en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
     .target Ángel de la Resurrección
 step
     #label Exchange
@@ -1914,7 +1914,7 @@ step << Paladin
     #season 2
     #xprate >1.59
     .goto Elwynn Forest,41.096,66.041
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Hermano Wilhelm|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Hermano Wilhelm|r
     >>|cRXP_WARN_Aprende|r |T135949:0|t[Purificar] |cRXP_WARN_para adquirir|r |T133815:0|t[Grabar pechera - Égida] |cRXP_WARN_pronto|r
     .train 1152 >>Aprende |T135949:0|t[Purificar]
     .trainer >> Aprende tus hechizos de clase
@@ -1923,7 +1923,7 @@ step << Paladin
     #season 0,1
     #xprate >1.59
     .goto Elwynn Forest,41.096,66.041
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Hermano Wilhelm|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Hermano Wilhelm|r
     .trainer >> Aprende tus hechizos de clase
     .target Brother Wilhelm
 step << Warrior
@@ -1956,7 +1956,7 @@ step << Paladin
     #season 2
     #xprate <1.59
     .goto Elwynn Forest,41.096,66.041
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Hermano Wilhelm|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Hermano Wilhelm|r
     >>|cRXP_WARN_Aprende|r |T135949:0|t[Purificar] |cRXP_WARN_para adquirir|r |T133815:0|t[Grabar pechera - Égida] |cRXP_WARN_pronto|r
     .train 1152 >>Aprende |T135949:0|t[Purificar]
     .trainer >> Aprende tus hechizos de clase
@@ -1965,7 +1965,7 @@ step << Paladin
     #season 0,1
     #xprate <1.59
     .goto Elwynn Forest,41.096,66.041
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Hermano Wilhelm|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Hermano Wilhelm|r
     .trainer >> Aprende tus hechizos de clase
     .target Brother Wilhelm
 step << Warlock
@@ -2769,7 +2769,7 @@ step << !Warlock
     #softcore
     #label EVDeathskip
     #completewith RedridgeS
-    .deathskip >> Muere y reaparece en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
+    .deathskip >> Muere y resucita en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
     .target Ángel de la Resurrección
     .zoneskip Redridge Mountains
 --XX not worth deathskipping as a warlock due to having to resumm pet
@@ -2830,7 +2830,7 @@ step << !Warlock
 step << !Warlock
     #softcore
     #completewith RRFP
-    .deathskip >> Muere y reaparece en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
+    .deathskip >> Muere y resucita en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
     .target Ángel de la Resurrección
 step << !Warlock
     #hardcore
@@ -3040,14 +3040,14 @@ step << Warrior
     #optional
     .goto Elwynn Forest,41.087,65.768
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Lyria Du Lac|r
-    >>|cRXP_WARN_No aprendas habilidades, ya que necesitas ahorrar dinero para más adelante|r
+    >>|cRXP_WARN_No entrenes, ya que necesitas ahorrar dinero para más adelante|r
     .accept 1638 >> Acepta la misión Instrucción de guerrero
     .target Lyria Du Lac
 step << Paladin
     #optional
     #requires GoldshireVendor
     .goto Elwynn Forest,41.096,66.041
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Hermano Wilhelm|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Hermano Wilhelm|r
     .trainer >> Aprende tus hechizos de clase
     .target Brother Wilhelm
     .xp <10,1
@@ -3056,7 +3056,7 @@ step << Paladin
     #optional
     #requires GoldshireVendor
     .goto Elwynn Forest,41.096,66.041
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Hermano Wilhelm|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Hermano Wilhelm|r
     .accept 2998 >> Acepta la misión Escrito sobre divinidad
     .trainer >> Aprende tus hechizos de clase
     .target Brother Wilhelm
@@ -3135,7 +3135,7 @@ step
     .goto Elwynn Forest,37.741,78.265,0
     .goto Elwynn Forest,41.576,69.499,0
     >>Mata |cRXP_ENEMY_Jabalíes Colmipétreo|r. Despójalos para obtener sus |T133970:0|t|cRXP_LOOT_[Trozos de carne de jabalí]|r
-    >>|cRXP_WARN_No te desvíes para farmear esto ahora. Simplemente mata y despoja todos los jabalíes que encuentres|r
+    >>|cRXP_WARN_No hagas esfuerzo extra por farmear esto ahora. Simplemente mata y despoja a todos los jabalíes que pases|r
     .collect 769,50,2178,1,0x20,cooking --Chunk of Boar Meat (10-50)
     .mob Stonetusk Boar
 --  .skill cooking,<10,1
@@ -3376,7 +3376,7 @@ step << Paladin
 step
     #softcore
     #completewith next
-    .deathskip >> Muere y reaparece en el Ángel de la Resurrección
+    .deathskip >> Muere y resucita en el Ángel de la Resurrección
     .target Ángel de la Resurrección
 -- .subzoneskip 108
 step
@@ -3591,7 +3591,7 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Gunther Pozador|r
     >>|cRXP_BUY_Compra un|r |T135346:0|t[Alfanje] |cRXP_BUY_a este vendedor|r
     >>|cRXP_WARN_Alternativamente, busca en la Casa de subastas algo mejor o más barato|r
-    >>|cRXP_WARN_Asegúrate de guardar 6 platas para aprender facultades después|r
+    >>|cRXP_WARN_Asegúrate de guardar 6 de plata para aprender facultades después|r
     .collect 851,1 -- Cutlass (1)
     .target Gunther Weller
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
@@ -3934,7 +3934,7 @@ step << Warlock
     .goto StormwindClassic,23.2,79.5,18,0
     .goto StormwindClassic,26.3,79.5,18,0
     .goto StormwindClassic,25.154,77.406
-    >>|cRXP_WARN_Viaja a la parte inferior de El Cordero Degollado|r
+    >>|cRXP_WARN_Viaja al fondo de El Cordero Degollado|r
     .cast 7728 >> |cRXP_WARN_Usa|r la |T133292:0|t[Gargantilla de sangrita] |cRXP_WARN_para invocar a un|r |cRXP_ENEMY_Abisario invocado|r
     .use 6928
 step << Warlock
@@ -4367,7 +4367,7 @@ step << Warrior
     .goto 1455,61.356,88.398,6 >> Entra en el edificio Armas Mil Maderas
 step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Bixi Tambaleapié|r y |cRXP_FRIENDLY_Buliwyf Petramano|r
-    .train 2567 >> Aprende el uso de Arrojadizas
+    .train 2567 >> Aprende el uso de Armas arrojadizas
     .goto Ironforge,62.237,89.628
     .target +Bixi Wobblebonk
     .train 199 >> Aprende Mazas de 2 manos
@@ -4377,7 +4377,7 @@ step << Warrior
     #xprate <1.5
     .goto Ironforge,62.375,88.679
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Brenwyn Ventacerado|r bajando las escaleras
-    >>|cRXP_BUY_Compra los|r |T135425:0|t[Cuchillos arrojadizos cortantes] |cRXP_BUY_a esta vendedora|r
+    >>|cRXP_BUY_Compra los|r |T135425:0|t[Cuchillos arrojadizo cortante] |cRXP_BUY_a esta vendedora|r
     .collect 3107,200 --Collect Keen Throwing Knife (200)
     .target Brenwyn Wintersteel
     .xp <10+7405,1
@@ -4397,7 +4397,7 @@ step << Warrior
     #xprate >1.49
     .goto Ironforge,62.375,88.679
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Brenwyn Ventacerado|r bajando las escaleras
-    >>|cRXP_BUY_Compra los|r |T135425:0|t[Cuchillos arrojadizos cortantes] |cRXP_BUY_a esta vendedora|r
+    >>|cRXP_BUY_Compra los|r |T135425:0|t[Cuchillos arrojadizo cortante] |cRXP_BUY_a esta vendedora|r
     .collect 3107,200 --Collect Keen Throwing Knife (200)
     .target Brenwyn Wintersteel
     .xp <10+7310,1
@@ -4661,7 +4661,7 @@ step
     >>Mata a los |cRXP_ENEMY_Jabalíes del risco anciano|r. Despójalos para obtener sus |T133970:0|t|cRXP_LOOT_[Trozos de carne de jabalí]|r
     >>|cRXP_WARN_Esto se usará para subir tu|r |T133971:0|t[Cocina] |cRXP_WARN_más tarde|r
     >>|cRXP_WARN_Necesitas 50 de|r |T133971:0|t[Cocina] |cRXP_WARN_para una misión en Villa Oscura más tarde|r
-    >>|cRXP_WARN_No te desvíes para farmear esto ahora. Simplemente mata y despoja todos los jabalíes que encuentres|r
+    >>|cRXP_WARN_No hagas esfuerzo extra por farmear esto ahora. Simplemente mata y despoja a todos los jabalíes que pases|r
     .collect 769,50,2178,1,0x20,cooking --Chunk of Boar Meat (10-50)
     .mob Elder Crag Boar
 --  .skill cooking,<10,1
@@ -4991,7 +4991,7 @@ step
     >>Mata a los |cRXP_ENEMY_Jabalíes monteses|r. Despójalos para obtener sus |T133970:0|t|cRXP_LOOT_[Trozo de carne de jabalí]|r
     >>|cRXP_WARN_Esto se usará para subir tu|r |T133971:0|t[Cocina] |cRXP_WARN_más tarde|r
     >>|cRXP_WARN_Necesitas 50 de|r |T133971:0|t[Cocina] |cRXP_WARN_para una misión en Villa Oscura más tarde|r
-    >>|cRXP_WARN_No te desvíes para farmear esto ahora. Simplemente mata y despoja todos los jabalíes que encuentres|r
+    >>|cRXP_WARN_No hagas esfuerzo extra por farmear esto ahora. Simplemente mata y despoja a todos los jabalíes que pases|r
     .collect 769,50,2178,1,0x20,cooking --Chunk of Boar Meat (10-50)
     .mob Mountain Boar
 --  .skill cooking,<10,1
@@ -5095,7 +5095,7 @@ step
     .goto 1426,81.040,43.456,0
     .goto 1426,80.583,36.040,0
     >>Mata a los |cRXP_ENEMY_Jabalíes monteses|r. Despójalos para obtener sus |T133970:0|t|cRXP_LOOT_[Trozo de carne de jabalí]|r
-    >>|cRXP_WARN_No te desvíes para farmear esto ahora. Simplemente mata y despoja todos los jabalíes que encuentres|r
+    >>|cRXP_WARN_No hagas esfuerzo extra por farmear esto ahora. Simplemente mata y despoja a todos los jabalíes que pases|r
     .collect 769,50,2178,1,0x20,cooking --Chunk of Boar Meat (10-50)
     .mob Mountain Boar
 --  .skill cooking,<10,1
@@ -5624,7 +5624,7 @@ step << Warlock
     #optional
     #completewith next
     .goto StormwindClassic,29.2,74.0,20,0
-    .goto StormwindClassic,27.2,78.1,15 >> Viaja a El Cordero Degollad y baja las escaleras
+    .goto StormwindClassic,27.2,78.1,15 >> Viaja a El Cordero Degollado y baja las escaleras
 step << Warlock
     #xprate <1.5
     .goto StormwindClassic,26.117,77.225

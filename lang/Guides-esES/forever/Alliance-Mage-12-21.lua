@@ -4,12 +4,13 @@ if faction == "Horde" then return end
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Alliance Mage
 #name 12-18 Costa Oscura Mago AoE
 #version 1
-#group RestedXP Guía Forever (A)
-#subgroup Guía de subida rápida de nivel de Mago
-#defaultfor Alliance Mage
+#group RestedXP Alianza Mago
+
+#defaultfor none Alliance Mage
 #next 18-21 Montañas Crestagrana Mago AoE
 
 step
@@ -799,12 +800,13 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Alliance Mage
 #name 18-21 Montañas Crestagrana Mago AoE
 #version 1
-#group RestedXP Guía Forever (A)
-#subgroup Guía de subida rápida de nivel de Mago
-#defaultfor Alliance Mage
+#group RestedXP Alianza Mago
+
+#defaultfor none Alliance Mage
 #next 21-22 Bosque del Ocaso Mago AoE
 
 step

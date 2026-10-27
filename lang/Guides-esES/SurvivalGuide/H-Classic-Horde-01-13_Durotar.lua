@@ -2354,7 +2354,7 @@ step << Shaman
     .target Kranal Fiss
 step << Shaman
     #completewith CallofFire2
-    .zone Durotar >> Regresa a Durotar
+    .zone Durotar >> Viaja de regreso a Durotar
     .zoneskip Durotar
 step << Shaman
     #completewith next
@@ -2389,7 +2389,7 @@ step << Shaman
     >>|cRXP_WARN_Ten cuidado de no caer de la montaña, el camino es muy estrecho. Podrías morir si caes|r
 step << Shaman
     #completewith next
-    .zone The Barrens >> Regresa a Los Baldíos
+    .zone The Barrens >> Viaja de regreso a Los Baldíos
     .zoneskip The Barrens
 step << Shaman
     #loop
@@ -4350,7 +4350,7 @@ step
     .goto Tirisfal Glades,55.84,32.28,15,0
     .goto Tirisfal Glades,56.55,32.43,40,0
     .goto Tirisfal Glades,57.77,31.69,50 >> Baja por las colinas.
-    >>|cRXP_WARN_Ten cuidado. No tomes demasiado daño de caída. Sigue la ruta marcada por seguridad|r
+    >>|cRXP_WARN_Ten cuidado. No sufras demasiado daño de caída. Sigue la ruta marcada por seguridad|r
     .isQuestComplete 354
 step
     #optional

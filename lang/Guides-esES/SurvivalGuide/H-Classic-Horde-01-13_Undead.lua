@@ -2776,7 +2776,7 @@ step
     .goto Tirisfal Glades,55.84,32.28,15,0
     .goto Tirisfal Glades,56.55,32.43,40,0
     .goto Tirisfal Glades,57.77,31.69,50 >> Baja por las colinas
-    >>|cRXP_WARN_Ten cuidado. No tomes demasiado daño de caída. Sigue la ruta marcada por seguridad|r
+    >>|cRXP_WARN_Ten cuidado. No sufras demasiado daño de caída. Sigue la ruta marcada por seguridad|r
 step
     #requires MillsOverun
     #completewith next

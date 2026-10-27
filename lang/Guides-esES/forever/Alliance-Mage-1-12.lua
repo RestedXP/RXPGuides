@@ -4,12 +4,13 @@ if faction == "Horde" then return end
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Human Mage
 #name 1-10 Bosque de Elwynn Mago AoE
 #version 1
-#group RestedXP Guía Forever (A)
-#subgroup Guía de subida rápida de nivel de Mago
-#defaultfor Human
+#group RestedXP Alianza Mago
+
+#defaultfor none Human
 #next 10-12 Loch Modan Mago AoE
 step
     #sticky
@@ -811,12 +812,13 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Gnome Mage
 #name 1-10 Dun Morogh Mago AoE
 #version 1
-#group RestedXP Guía Forever (A)
-#subgroup Guía de subida rápida de nivel de Mago
-#defaultfor Dwarf/Gnome
+#group RestedXP Alianza Mago
+
+#defaultfor none Gnome
 #next 10-12 Loch Modan Mago AoE
 step
     #era/som
@@ -1461,12 +1463,13 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Alliance Mage
 #name 10-12 Loch Modan Mago AoE
 #version 1
-#group RestedXP Guía Forever (A)
-#subgroup Guía de subida rápida de nivel de Mago
-#defaultfor Human Mage/Gnome Mage
+#group RestedXP Alianza Mago
+
+#defaultfor none Mage
 #next 12-18 Costa Oscura Mago AoE
 step
     #era/som

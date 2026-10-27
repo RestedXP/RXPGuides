@@ -4,11 +4,12 @@ if faction == "Horde" then return end
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Human Mage
 #name 1-10 ADV Bosque de Elwynn Humano Mago AoE
 #version 2
 #group RestedXP ADV AoE Alianza Mago
-#defaultfor Human Mage
+#defaultfor none Human Mage
 #next 10-11 ADV Dun Morogh Humano Mago AoE
 
 
@@ -1144,11 +1145,12 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Human Mage
 #name 10-11 ADV Dun Morogh Humano Mago AoE
 #version 2
 #group RestedXP ADV AoE Alianza Mago
-#defaultfor Human Mage
+#defaultfor none Human Mage
 #next 10-12 ADV Costa Oscura 1 Mago AoE
 
 step
@@ -1435,11 +1437,12 @@ step << skip
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Gnome Mage
 #name 1-10 ADV Dun Morogh Gnomo Mago AoE
 #version 2
 #group RestedXP ADV AoE Alianza Mago
-#defaultfor Gnome Mage
+#defaultfor none Gnome Mage
 #next 10-12 ADV Costa Oscura 1 Mago AoE
 
 
@@ -2994,11 +2997,12 @@ step << skip
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Alliance Mage
 #name 10-12 ADV Costa Oscura 1 Mago AoE
 #version 2
 #group RestedXP ADV AoE Alianza Mago
-#defaultfor Human Mage/Gnome Mage
+#defaultfor none Mage
 #next 12-14 ADV Loch Modan Mago AoE
 
 step
@@ -3010,7 +3014,7 @@ step
     #completewith next
     .goto 1426/0,-831.81,-5108.330,30,0
     .goto 1426/0,-859.39,-5144.450,30,0
-    .goto 1426/0,-1124.84,-5283.99,150 >> Viaja hasta el punto de skip. Ve pegado al lado izquierdo de la montaña durante el trayecto
+    .goto 1426/0,-1124.84,-5283.99,150 >> Viaja hasta el punto de "skip". Ve pegado al lado izquierdo de la montaña durante el trayecto
 step
     #label DeathlessSkip
     .goto 1426/0,-1161.78,-5289.24,12,0
@@ -3550,11 +3554,12 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Alliance Mage
 #name 10-12 LAUNCH ADV Costa Oscura 1 Mago AoE
 #version 2
 #group RestedXP ADV AoE Alianza Mago
-#defaultfor none
+#defaultfor none none
 #next 12-14 ADV Loch Modan Mago AoE
 
 --VV Make this an alternative route that must be manually selected
@@ -3565,7 +3570,7 @@ step
     #completewith next
     .goto 1426/0,-831.81,-5108.330,30,0
     .goto 1426/0,-859.39,-5144.450,30,0
-    .goto 1426/0,-1124.84,-5283.99,150 >> Viaja hasta el punto de skip. Ve pegado al lado izquierdo de la montaña durante el trayecto
+    .goto 1426/0,-1124.84,-5283.99,150 >> Viaja hasta el punto de "skip". Ve pegado al lado izquierdo de la montaña durante el trayecto
 step
     .goto 1426/0,-1161.78,-5289.24,12,0
     .goto 1426/0,-1173.60,-5313.54,12,0
@@ -4117,11 +4122,12 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Alliance Mage
 #name 12-14 ADV Loch Modan Mago AoE
 #version 2
 #group RestedXP ADV AoE Alianza Mago
-#defaultfor Human Mage/Gnome Mage
+#defaultfor none Mage
 #next 14-16 ADV Costa Oscura 2 Mago AoE
 step
     #completewith next
@@ -4897,11 +4903,12 @@ step
 ]])
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Alliance Mage
 #name 14-16 ADV Costa Oscura 2 Mago AoE
 #version 2
 #group RestedXP ADV AoE Alianza Mago
-#defaultfor Human Mage/Gnome Mage
+#defaultfor none Mage
 #next 16-18 ADV Páramos de Poniente Mago AoE
 
 
@@ -5545,11 +5552,12 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Alliance Mage
 #name 16-18 ADV Páramos de Poniente Mago AoE
 #version 2
 #group RestedXP ADV AoE Alianza Mago
-#defaultfor Human Mage/Gnome Mage
+#defaultfor none Mage
 #next 18-20 ADV Costa Oscura 3 Mago AoE
 
 step
@@ -6275,11 +6283,12 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Alliance Mage
 #name 18-20 ADV Costa Oscura 3 Mago AoE
 #version 2
 #group RestedXP ADV AoE Alianza Mago
-#defaultfor Human Mage/Gnome Mage
+#defaultfor none Mage
 #next 20-22 ADV Montañas Crestagrana 1 Mago AoE
 
 step
@@ -7053,11 +7062,12 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Alliance Mage
 #name 20-22 ADV Montañas Crestagrana 1 Mago AoE
 #version 2
 #group RestedXP ADV AoE Alianza Mago
-#defaultfor Human Mage/Gnome Mage
+#defaultfor none Mage
 #next 22-26 ADV Los Humedales 1 Mago AoE
 
 step

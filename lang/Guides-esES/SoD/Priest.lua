@@ -477,7 +477,7 @@ step << Priest
     .train 425215,1
 step << Priest
     .train 425215 >> |cRXP_WARN_Usa el|r |T136222:0|t[|cRXP_FRIENDLY_Recuerdo de un campeón devoto|r] |cRXP_WARN_para aprender|r |T237566:0|t[Fe distorsionada]
-    >>|cRXP_WARN_Debes tener el "buff" de|r |T135934:0|t|T136057:0|t[Meditación] |cRXP_WARN_escribiendo /kneel en un área sagrada, como la Abadía de Villanorte, Catedral de Ventormenta, los Altares de la Luz en Yunquemar, Loch Modan o la Sala Mística en Forjaz|r
+    >>|cRXP_WARN_Debes tener el buff de|r |T135934:0|t|T136057:0|t[Meditación] |cRXP_WARN_escribiendo /kneel en un área sagrada, como la Abadía de Villanorte, Catedral de Ventormenta, los Altares de la Luz en Yunquemar, Loch Modan o la Sala Mística en Forjaz|r
     .use 205905
     .itemcount 205905,1
 ]])
@@ -503,7 +503,7 @@ step << Priest
     .train 425215,1
 step << Priest
     .train 425215 >> |cRXP_WARN_Usa el|r |T136222:0|t[|cRXP_FRIENDLY_Recuerdo de un campeón devoto|r] |cRXP_WARN_para aprender|r |T237566:0|t[Fe distorsionada]
-    >>|cRXP_WARN_Debes tener el "buff" de|r |T135934:0|t|T136057:0|t[Meditación] |cRXP_WARN_escribiendo /kneel en un área sagrada, como la Abadía de Villanorte, Catedral de Ventormenta, los Altares de la Luz en Yunquemar, Loch Modan o la Sala Mística en Forjaz|r
+    >>|cRXP_WARN_Debes tener el buff de|r |T135934:0|t|T136057:0|t[Meditación] |cRXP_WARN_escribiendo /kneel en un área sagrada, como la Abadía de Villanorte, Catedral de Ventormenta, los Altares de la Luz en Yunquemar, Loch Modan o la Sala Mística en Forjaz|r
     .use 205905
     .itemcount 205905,1
 ]])
@@ -532,7 +532,7 @@ step << Priest
     .train 425215,1
 step << Priest
     .train 425215 >> |cRXP_WARN_Usa el|r |T136222:0|t[|cRXP_FRIENDLY_Recuerdo de un campeón devoto|r] |cRXP_WARN_para aprender|r |T237566:0|t[Fe distorsionada]
-    >>|cRXP_WARN_Debes tener el "buff" de|r |T135934:0|t|T136057:0|t[Meditación] |cRXP_WARN_escribiendo /kneel en un área sagrada, como la Abadía de Villanorte, Catedral de Ventormenta, los Altares de la Luz en Yunquemar, Loch Modan o la Sala Mística en Forjaz|r
+    >>|cRXP_WARN_Debes tener el buff de|r |T135934:0|t|T136057:0|t[Meditación] |cRXP_WARN_escribiendo /kneel en un área sagrada, como la Abadía de Villanorte, Catedral de Ventormenta, los Altares de la Luz en Yunquemar, Loch Modan o la Sala Mística en Forjaz|r
     .use 205905
     .itemcount 205905,1
 ]])
@@ -553,7 +553,7 @@ step << Priest
     .train 402854,1
 step << Priest
     .train 402854 >> |cRXP_WARN_Usa el|r |T136222:0|t[|cRXP_FRIENDLY_Recuerdo de un salvador encerrado|r] |cRXP_WARN_para aprender|r |T136160:0|t[Dolor compartido]
-    >>|cRXP_WARN_Debes tener el "buff" de|r |T135934:0|t|T136057:0|t[Meditación] |cRXP_WARN_escribiendo /kneel en un área sagrada, como la Abadía de Villanorte, Catedral de Ventormenta, los Altares de la Luz en Yunquemar, Loch Modan o la Sala Mística en Forjaz|r
+    >>|cRXP_WARN_Debes tener el buff de|r |T135934:0|t|T136057:0|t[Meditación] |cRXP_WARN_escribiendo /kneel en un área sagrada, como la Abadía de Villanorte, Catedral de Ventormenta, los Altares de la Luz en Yunquemar, Loch Modan o la Sala Mística en Forjaz|r
     .use 205945
     .itemcount 205945,1
 ]])
@@ -574,7 +574,7 @@ step << Priest
     .train 402854,1
 step << Priest
     .train 402854 >> |cRXP_WARN_Usa el|r |T136222:0|t[|cRXP_FRIENDLY_Recuerdo de un salvador encerrado|r] |cRXP_WARN_para aprender|r |T136160:0|t[Dolor compartido]
-    >>|cRXP_WARN_Debes tener el "buff" de|r |T135934:0|t|T136057:0|t[Meditación] |cRXP_WARN_escribiendo /kneel en un área sagrada, como la Abadía de Villanorte, Catedral de Ventormenta, los Altares de la Luz en Yunquemar, Loch Modan o la Sala Mística en Forjaz|r
+    >>|cRXP_WARN_Debes tener el buff de|r |T135934:0|t|T136057:0|t[Meditación] |cRXP_WARN_escribiendo /kneel en un área sagrada, como la Abadía de Villanorte, Catedral de Ventormenta, los Altares de la Luz en Yunquemar, Loch Modan o la Sala Mística en Forjaz|r
     .use 205945
     .itemcount 205945,1
 ]])

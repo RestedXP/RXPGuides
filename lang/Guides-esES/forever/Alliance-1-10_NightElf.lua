@@ -4,6 +4,7 @@ if faction == "Horde" then return end
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 #season 0,1
 << Alliance
 #name 1-6 Cañada Umbría
@@ -443,6 +444,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 #season 0,1
 << Alliance
 #name 6-11 Teldrassil
@@ -1308,7 +1310,7 @@ step << Druid/Priest
     .turnin 487 >> Entrega la misión El camino a Darnassus
 step
     #completewith next
-    .goto 1438/1,1863.46,10665.16,50 >> Viaja al Claro del Oráculo
+    .goto 1438/1,1899.700,10582.900,50 >> Viaja al Claro del Oráculo
 step
     .goto 1438/1,1899.700,10582.900
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Sentinel Eralya Sombra de Hoja::275683|r
@@ -1326,7 +1328,6 @@ step
     .complete 7383,1 --Collect Filled Amethyst Phial (x1)
 
 --with the new quests, druids can go straight to 10, a 5 minute save later down the road
---@TODO add mist here
 step << Druid/Priest
     #completewith next
     >>Mata a las |cRXP_ENEMY_Arpías Sangrepluma|r. Despójalas para conseguir sus |cRXP_LOOT_Cinturones|r
@@ -1418,7 +1419,7 @@ step << Hunter
     #sticky
     #label xp10
     .xp 9+800 >> Farmea hasta los 800 xp en el nivel 9
-    >>|cRXP_WARN_Una vez que llegues a este punto de ruptura de experiencia, omite la misión de harpías/escolta y ve directamente a Darnassus. Tendrás otra oportunidad para completar esas misiones más tarde|r
+    >>|cRXP_WARN_Una vez que llegues a este punto de ruptura de experiencia, omite la misión de arpías/escolta y ve directamente a Darnassus. Tendrás otra oportunidad para completar esas misiones más tarde|r
 step << Hunter
     #completewith xp10
     #requires mist1
@@ -1437,10 +1438,7 @@ step << Hunter
 step << !Rogue
     #softcore
     #requires xp10
-    #completewith next
     .deathskip >> Muere y resucita en el Ángel de la Resurrección en Darnassus
-    >>|cRXP_WARN_Asegúrate de estar más cerca del cementerio de Darnassus que del de Dolanaar o podrías acabar en la dirección equivocada. Corre hasta salir del todo de la guarida y luego muere si no estás seguro|r << sod Priest
-    >>|cRXP_WARN_Asegúrate de estar más cerca del cementerio de Darnassus que del de Dolanaar opodrías acabar en la dirección equivocada. Corre al lado oeste del río si no estás seguro|r << sod Hunter/sod Warrior/sod Druid
     .target Ángel de la Resurrección
 step << !Rogue
     #hardcore
@@ -1660,18 +1658,18 @@ step << !Druid
     .collect 3371,1 --Empty Vial
     .target Narret Shadowgrove
 step
-    .goto 1438/1,984.94,9898.58
-    .target Tallonkai Swiftroot
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Tallonkai Cruzarraíz|r en la cima del Árbol
-    .turnin 932 >> Entrega la misión Odio enraizado
-    .turnin 2459 >> Entrega la misión Ferocitas el Comesueños
-step
     #optional
     .goto 1438/1,988.30,9891.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Aldia|r escaleras arriba
     .turnin 87288 >> Entrega la misión Pelambres de sable suave
     .target Aldia
     .isQuestComplete 87288
+step
+    .goto 1438/1,984.94,9898.58
+    .target Tallonkai Swiftroot
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Tallonkai Cruzarraíz|r en la cima del Árbol
+    .turnin 932 >> Entrega la misión Odio enraizado
+    .turnin 2459 >> Entrega la misión Ferocitas el Comesueños
 step
     >>Mata |cRXP_ENEMY_Sables de la noche|r. Despójalos para obtener sus |cRXP_LOOT_Colmillos|r y |cRXP_LOOT_Pelambres|r
     >>Mata |cRXP_ENEMY_Lechuzas estrígidas|r. Despójalas para obtener sus |cRXP_LOOT_Plumas|r
@@ -1747,7 +1745,7 @@ step << Hunter/Warrior/Rogue
     .target Moon Priestess Amara
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con la |cRXP_FRIENDLY_Sacerdotisa Lunar Amara|r
     .turnin 487 >> Entrega la misión El camino a Darnassus
-	.maxlevel 9
+	.xp 9.56,1 --Only Turn in early if needed to ding 10
 step << Hunter
 #xprate <1.99
     #optional
@@ -1965,15 +1963,6 @@ step << Priest
 	.trainer >> Aprende tus hechizos de clase
     .target Laurna Morninglight
 step << Hunter
-	#xprate <1.5--money issues 1.5x
-    .goto 1438/1,947.57,9812.38
-    .money <0.0504
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Shalomon|r
-    >>|cRXP_BUY_Compra una|r |T135145:0|t[Cachava]
-    >>|cRXP_WARN_Lo equiparás más tarde. Omite este paso si encuentras un bastón diferente|r
-    .collect 2495,1 -- Walking Stick (1)
-    .target Shalomon
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.20step
     .goto 1438/1,997.200,9903.601
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Byancie::6094|r
     .target Byancie::6094
@@ -2407,6 +2396,14 @@ step << Rogue
     >>|cRXP_BUY_Compra una|r |T135641:0|t[Daga arrojadiza equilibrada]
     .collect 2946,1 -- Balanced Throwing Dagger
     .target Turian
+step << Hunter
+    #optional
+    .goto 1457/1,2511.04,10178.01
+    .target Jocaste
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Jocaste|r
+    .train 2974 >>Aprender |T132309:0|t[|cRXP_LOOT_Cortar alas|r]
+    .xp <12,1
+    .money <0.0600
 step
     #completewith NessaShadowsong
     .goto 1457/1,2636.53,9956.80

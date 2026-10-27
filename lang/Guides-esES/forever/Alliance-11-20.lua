@@ -4,8 +4,9 @@ if faction == "Horde" then return end
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 #version 1
-<< Alliance
+<< Alliance !NightElf
 #name 13-15 Páramos de Poniente
 #displayname 14-15 Páramos de Poniente << Dwarf/Gnome
 #group RestedXP Guía Forever (A)
@@ -40,22 +41,21 @@ step
     >>|T135997:0|t[Morro de dentrosangre]
     >>|T134185:0|t[Okra]
     >>|T134341:0|t[Hígado de Dentosangre]
-    >>|T4548890:0|t[Isorresorte de gólem]
-    >>|T132995:0|t[Giroestabilizador de cosechador]
+    -->>|T4548890:0|t[Golem Isospring]
+    -->>|T132995:0|t[Harvester Gyrostabilizer]
     .collect 729,3,38,1 -- Stringy Vulture Meat (3)
     .collect 730,3,38,1 -- Murloc Eye (3)
     .collect 731,3,38,1 -- Goretusk Snout (3)
     .collect 732,3,38,1 -- Okra (3)
     .collect 723,8,22,1 -- Goretusk Liver (8)
-    .collect 255007,14,92909,1 -- Golem Isospring (14)
-    .collect 255010,5,92909,1 -- Harvester Gyrostabilizer (5)
+    --.collect 255007,14,92909,1 -- Golem Isospring (14)
+    --.collect 255010,5,92909,1 -- Harvester Gyrostabilizer (5)
 step << Human
     .goto 1453/0,489.99,-8835.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Dungar Tragolargo|r
     .turnin 6261 >> Entrega la misión Dungar Tragolargo
     .accept 6285 >> Acepta la misión Regresa junto a Lewis
     .target Dungar Longdrink
-
 step << !Skyborne
     .goto 1453/0,490.03,-8835.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Dungar Tragolargo|r
@@ -86,7 +86,7 @@ step
     .target Farmer Saldean
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Granjero Saldean|r
     .accept 9 >> Acepta la misión Campos de la muerte
-    .accept 109 >>Acepta la misión Habla con Gryan Mantorrecio << NightElf
+    .accept 109 >>Acepta la misión Habla con Gryan Mantorrecio << !Human
 step
     #label SalmaS
     .goto 1436/0,1042.67,-10111.670
@@ -101,7 +101,7 @@ step << Human
     .target Quartermaster Lewis
     .goto 1436/0,1021.67,-10500.63
     .turnin 6285 >> Entrega la misión Regresa junto a Lewis
-step << Gnome/Dwarf/NightElf
+step << !Human
     #completewith next
     .goto 1436/0,1045.12,-10508.80
     .target Gryan Stoutmantle
@@ -114,7 +114,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Gryan Mantorrecio|r
     .accept 12 >> Acepta la misión La Milicia Popular
     .turnin 98021 >>Entrega la misión Viaje a la Colina del Centinela << Skyborne
-step
+step << skip
     .goto 1436/0,1041.97,-10511.13
     .target Captain Danuvin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Capitán Danuvin|r
@@ -142,7 +142,7 @@ step
     .accept 92742 >>Acepta la misión Pruebas en los pozos
     .accept 92744 >>Acepta la misión Branquias de múrloc
 step
-	#completewith GnollPaws
+	#completewith bennytime
     >>Abre los |cRXP_PICK_Sacos de avena|r del suelo. Despójalos para obtener el |cRXP_LOOT_Puñado de avena|r
     >>|cRXP_WARN_Generalmente puedes encontrarlos cerca de las vallas de las granjas o de los edificios|r
     .complete 151,1 --Handful of Oats (8)
@@ -190,6 +190,7 @@ step
 step
     .goto 1436/0,1748.27,-10672.13
     >>Abre el |cRXP_PICK_Cofre de Alexston|r. Despójalo para obtener |cRXP_LOOT_Una sencilla brújula|r
+    >>|cRXP_WARN_Evita a los mobs frente al edificio quemado. Despoja esto desde atrás, junto a la chimenea. Usa la chimenea para evadir los hechizos de |cRXP_ENEMY_Pillagers|r si es necesario|r
     .complete 399,1 --A Simple Compass (1)
     .isOnQuest 399
 step
@@ -227,7 +228,7 @@ step
     >>|cRXP_WARN_Puedes despojar el |cRXP_PICK_Guardarropa de Cejade|r desde fuera si orientas bien la cámara|r
 	>>|cRXP_WARN_Cuidado con |cRXP_ENEMY_Benny Blaanco|r. Pega fuerte|r
     .complete 64,1 --Furlbrow's Pocket Watch
-step
+step << skip
     #label GnollPaws
     .goto 1436/0,1042.67,-9715.0,60,0
     .goto 1436/0,1517.97,-9743.000,60,0
@@ -350,6 +351,7 @@ step
     .goto 1436/0,1238.67,-9907.73
     >>Mata a los |cRXP_ENEMY_Vigías de la cosecha|r. Despójalos para obtener su |cRXP_LOOT_Okra|r y sus |cRXP_LOOT_Frascos de aceite|r
     .complete 9,1 --Harvest Watcher (20)
+    .mob Harvest Watcher
     .collect 732,3,38,1 --Okra (3)
     .collect 814,5,103,1 --Flask of Oil (5)
 step
@@ -365,6 +367,7 @@ step
     .goto 1436/0,1460.22,-10224.83,60,0
     .goto 1436/0,1238.67,-9907.73
     >>Mata a los |cRXP_ENEMY_Vigías de la cosecha|r. Despójalos para obtener sus |cRXP_LOOT_Frascos de aceite|r
+    .mob Harvest Watcher
     .complete 9,1 --Harvest Watcher (20)
     .collect 814,5,103,1 --Flask of Oil (5)
 step
@@ -425,17 +428,6 @@ step
     .itemcount 255007,14 -- Golem Isospring (14)
     .itemcount 255010,5 -- Harvester Gyrostabilizer (5)
 step
-    #completewith next
-    >>Mata |cRXP_ENEMY_Tramperos Defias|r y |cRXP_ENEMY_Contrabandistas Defias|r. Despójalos para obtener sus |T133694:0|t|cRXP_LOOT_Pañuelos rojos de cuero|r
-    >>|cRXP_WARN_Es un área de reaparición dinámica, lo que significa que si matas a suficientes enemigos, seguirán reapareciendo|r
-    .complete 12,1 -- Defias Trapper slain (15)
-    .mob +Defias Trapper
-    .complete 12,2 -- Defias Smuggler slain (15)
-    .mob +Defias Smuggler
-    .complete 153,1 -- Red Leather Bandana (15)
-    .mob +Defias Trapper
-    .mob +Defias Smuggler
-step
     .goto 1436/0,1324.200,-10490.400
     >>Mata |cRXP_ENEMY_Tramperos Defias|r y |cRXP_ENEMY_Contrabandistas Defias|r. Despójalos para obtener sus |T133694:0|t|cRXP_LOOT_Pañuelos rojos de cuero|r
     >>|cRXP_WARN_Es un área de reaparición dinámica, lo que significa que si matas a suficientes enemigos, seguirán reapareciendo|r
@@ -457,7 +449,7 @@ step
 	.target Gryan Stoutmantle
     .goto 1436/0,1045.12,-10508.80
     .accept 65 >> Acepta la misión La hermandad de los Defias
-step
+step << skip
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Capitán Danuvin|r
 	.target Captain Danuvin
     .goto 1436/0,1041.97,-10511.13
@@ -487,11 +479,9 @@ step
     .target Thor
     .zoneskip Stormwind City
     .zoneskip Darkshore
-
 step
     #optional
     #label endOfTheGuide
-
 step << Human Rogue
     #ah
     .goto 1453/0,609.63,-8787.71
@@ -531,7 +521,7 @@ step << Skyborne
 step << Skyborne
     >>|cRXP_WARN_Usa la|r |T133942:0|t[Flauta cazarratas] |cRXP_WARN_en las |cRXP_ENEMY_Rata del subterráneo|r dentro del Tranvía Subterráneo|r
     .complete 6661,1 --Rats Captured (x5)
-    .use 17117
+    .macro Rat Catcher's Flute,133942 >>Rata Catcher's Flute
     .mob Deeprun Rat
 step << Skyborne
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Monty|r dentro del Tranvía Subterráneo
@@ -616,7 +606,7 @@ step << !NightElf
 step << NightElf Hunter
     .goto 1453/0,706.15,-8795.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Frederick Hornillos|r
-    >>|cRXP_BUY_Compra|r |T135489:0|t[Arco corvo pesado] |cRXP_BUY_a este vendedor|r. |cRXP_BUY_Si puedes te lo puedes permitir, compra|r |T135490:0|t[Arco reforzado] |cRXP_BUY_y|r |T134410:0|t[Carcaj medio] |cRXP_BUY_también|r 
+    >>|cRXP_BUY_Compra|r |T135489:0|t[Arco corvo pesado] |cRXP_BUY_a este vendedor|r. |cRXP_BUY_Si puedes te lo puedes permitir, compra|r |T135490:0|t[Arco reforzado] |cRXP_BUY_y|r |T134410:0|t[Carcaj medio] |cRXP_BUY_también|r
     .collect 3027,1 -- Heavy Recurve Bow (1)
     .collect 11362,1 -- Medium Quiver (1)
     .collect 3026,1 --Reinforced Bow (1)
@@ -652,7 +642,7 @@ step
     .target Baros Alexston
     .isQuestComplete 399
 step << NightElf Druid
-    .goto 1453/0,1347.6192,-8591.2168
+    .goto 1453/0,1095.500,-8741.700
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Theridran|r
     .trainer >>Aprende tus hechizos de clase
 	.target Theridran
@@ -679,9 +669,17 @@ step << Mage
     .target Elsharin
 step << Priest/Paladin
     #optional
-    #completewith next
+    #completewith train19742 << Paladin
+    #completewith next << Priest
     .goto 1453/0,809.52,-8579.22,20 >> Viaja a la Catedral de Ventormenta
+step << Human Paladin
+    .isOnQuest 1780
+    .goto 1453/0,845.800,-8545.800
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Duthorian Rall|r
+    .turnin 1780 >>Entrega la misión Escrito sobre divinidad
+    .target Duthorian Rall
 step << Paladin
+    #label train19742
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Arthur el Leal|r
     .goto 1453/0,859.13,-8559.14,10,0
     .goto 1453/0,861.14,-8573.03
@@ -705,7 +703,7 @@ step
     .target Catherine Leland
 step << Shaman -- Shaman accepts now isntead of later due to arriving back from tram, not boat like the rest
     .goto 1453/0,1193.100,-8328.900
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Manifest Clerk Philmor::268511|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Manifest Clerk Philmor::268511|r
     .target Manifest Clerk Philmor::268511
     .accept 97220 >>Acepta la misión Philmor's Favor
 step
@@ -719,7 +717,7 @@ step
     #requires DockTravel
     #label DarkshoreCook1
     #completewith DarkshoreBoat
-    >>|cRXP_WARN_En el barco si acaba de llegar o en el muelle si acaba de partir:|r
+    >>|cRXP_WARN_Mientras esperas al Bote en el muelle:|r
     .cast 818 >>|cRXP_WARN_Crea una|r |T135805:0|t[Hoguera básica] |cRXP_WARN_(en tu Libro de Profesiones)|r
     .usespell 818
     .zoneskip Darkshore
@@ -733,7 +731,7 @@ step
     #requires DarkshoreCook1
     #label DarkshoreCook2
     #completewith DarkshoreBoat
-    >>|cRXP_WARN_En el barco si acaba de llegar o en el muelle si acaba de partir:|r
+    >>|cRXP_WARN_Mientras esperas al Bote en el muelle:|r
     .cast 818 >>|cRXP_WARN_Crea una|r |T135805:0|t[Hoguera básica] |cRXP_WARN_(en tu Libro de Profesiones)|r
     .usespell 818
     .zoneskip Darkshore
@@ -747,7 +745,7 @@ step
     #requires DarkshoreCook2
     #label DarkshoreCook3
     #completewith DarkshoreBoat
-    >>|cRXP_WARN_En el barco si acaba de llegar o en el muelle si acaba de partir:|r
+    >>|cRXP_WARN_Mientras esperas al Bote en el muelle:|r
     .cast 818 >>|cRXP_WARN_Crea una|r |T135805:0|t[Hoguera básica] |cRXP_WARN_(en tu Libro de Profesiones)|r
     .usespell 818
     .zoneskip Darkshore
@@ -811,6 +809,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 #version 1
 << Alliance
 #group RestedXP Guía Forever (A)
@@ -852,7 +851,6 @@ step << NightElf
 step << !NightElf
     .goto 1439,35.743,43.710
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Cerellean Zarpablanca|r
-    >>|cRXP_WARN_Es posible que necesites esperar a que termine su Roleplay si alguien más acaba de entregar la misión|r
     .accept 963 >> Acepta la misión Un amor eterno
     .target Cerellean Whiteclaw
     .xp <11,1
@@ -1021,8 +1019,8 @@ step << Druid
     .skill herbalism,<15,1
 step
     #completewith next
-    >>|cRXP_WARN_Usa|r |T134335:0|t[La esperanza de Tharnariun] |cRXP_WARN_en un|r |cRXP_ENEMY_Oso cardo rabioso|r |cRXP_WARN_. Se puede usar desde cualquier rango mientras selecciones como objetivo al|r |cRXP_ENEMY_Oso|r
-    >>|cRXP_WARN_==NO USES EL OBJETO DE MISIÓN SI NO HAY UN |cRXP_ENEMY_OSO|r CERCA==|r
+    >>|cRXP_WARN_Usa|r |T134335:0|t[Esperanza de Tharnariun] |cRXP_WARN_en un|r |cRXP_ENEMY_Oso cardo rabioso|r --|cRXP_WARN_. It can be used from any range as long as you're targeting the|r |cRXP_ENEMY_Bear|r
+    -->>|cRXP_WARN_==DO NOT USE THE QUEST ITEM IF THERES NO |cRXP_ENEMY_BEAR|r NEARBY==|r
     >>|cRXP_WARN_¡Puedes desperdiciar la trampa y hacer que la misión sea imposible de completar! Si eso te sucede, tienes que volver a quien te dio la misión y pedirle otra trampa|r
     .complete 2118,1 --Rabid Thistle Bear Captured (1)
     .unitscan Rabid Thistle Bear
@@ -1044,8 +1042,8 @@ step
     .goto 1439,38.095,58.395,50,0
     .goto 1439,38.696,57.874,50,0
     .goto 1439,39.129,59.176,50,0
-    >>|cRXP_WARN_Usa|r |T134335:0|t[La esperanza de Tharnariun] |cRXP_WARN_en un|r |cRXP_ENEMY_Oso cardo rabioso|r |cRXP_WARN_. Se puede usar desde cualquier rango mientras selecciones como objetivo al oso|r
-    >>|cRXP_WARN_==NO USES EL OBJETO DE MISIÓN SI NO HAY UN OSO CERCA==|r
+    >>|cRXP_WARN_Usa|r |T134335:0|t[Esperanza de Tharnariun] |cRXP_WARN_en un|r |cRXP_ENEMY_Oso cardo rabioso|r --|cRXP_WARN_. It can be used from any range as long as you're targeting the bear|r
+    -->>|cRXP_WARN_==DO NOT USE THE QUEST ITEM IF THERES NO BEAR NEARBY==|r
     >>|cRXP_WARN_¡Puedes desperdiciar la trampa y hacer que la misión sea imposible de completar! Si eso te sucede, tienes que volver a quien te dio la misión y pedirle otra trampa|r
     .complete 2118,1 --Rabid Thistle Bear Captured (1)
     .unitscan Rabid Thistle Bear
@@ -1187,7 +1185,6 @@ step
 step
     .goto 1439,35.743,43.710
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Cerellean Zarpablanca|r
-    >>|cRXP_WARN_Es posible que necesites esperar a que termine su Roleplay si alguien más acaba de entregar la misión|r
     .accept 963 >> Acepta la misión Un amor eterno
     .target Cerellean Whiteclaw
 step
@@ -1595,6 +1592,7 @@ step
     .skill cooking,10,1 -- shows if cooking is <10
     .skill cooking,<1,1 -- shows if cooking is >1
 step
+    #completewith RedCrystal << !NightElf !Hunter !Druid !Warrior
     #completewith AuberdineTurnin2 << NightElf/Hunter/Druid/Warrior
     >>Mata a los |cRXP_ENEMY_Lechúcico lunar|r. Despójalos para obtener sus |T132832:0|t|cRXP_LOOT_[Huevos pequeños]|r
     >>|cRXP_WARN_Esto se usará para subir tu|r |T133971:0|t[Cocina] |cRXP_WARN_al 50 más adelante|r
@@ -1606,20 +1604,6 @@ step
     .mob Moonkin
     .skill cooking,<10,1 --XX Shows if cooking skill is 10-50
     .skill cooking,50,1
-step
-    #completewith LateTurtleStart
-    >>Mata a los |cRXP_ENEMY_Lechúcico lunar|r. Despójalos para obtener sus |T132832:0|t|cRXP_LOOT_[Huevos pequeños]|r
-    >>|cRXP_WARN_Esto se usará para subir tu|r |T133971:0|t[Cocina] |cRXP_WARN_al 50 más adelante|r
-    >>|cRXP_WARN_No te desvíes para "farmear" esto ahora. Solo recuerda guardar los huevos y empieza a pensar cuántos puntos de habilidad aún necesitas para alcanzar 50 de cocina|r
-    .collect 6889,50,90,1,0x20,cooking --Small Egg (10-49)
-    .mob Young Moonkin
-    .mob Raging Moonkin
-    .mob Moonkin Oracle
-    .mob Moonkin
-    .skill cooking,<10,1 --XX Shows if cooking skill is 10-50
-    .skill cooking,50,1
-    .subzoneskip 442 --Auberdine
-    .subzoneskip 447 --Ameth'Aran
 step
     #label RedCrystal
     .goto 1439,47.314,48.676
@@ -2103,7 +2087,6 @@ step << !NightElf
     #optional
     .goto 1439,35.743,43.710
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Cerellean Zarpablanca|r
-    >>|cRXP_WARN_Es posible que necesites esperar a que termine su Roleplay si alguien más acaba de entregar la misión|r
     .turnin 963 >> Entrega la misión Un amor eterno
     .target Cerellean Whiteclaw
     .isQuestComplete 963
@@ -2251,709 +2234,11 @@ step << NightElf
     #optional
     .goto 1439,35.743,43.710
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Cerellean Zarpablanca|r
-    >>|cRXP_WARN_Es posible que necesites esperar a que termine su Roleplay si alguien más acaba de entregar la misión|r
     .turnin 963 >> Entrega la misión Un amor eterno
     .target Cerellean Whiteclaw
     .isQuestComplete 963
-step << NightElf
-    #label SWBoat
-    .goto 1439/1,929.100,6543.600
-    >>|cRXP_WARN_Sube tus|r |T135966:0|t[Primeros auxilios] |cRXP_WARN_mientras esperas el barco|r << Rogue/Warrior
-    .zone Stormwind City >> Toma el barco hacia la Ciudad de Ventormenta
-    .zoneskip Loch Modan
-    .zoneskip Dun Morogh
-    .zoneskip Ironforge
-    .zoneskip Wetlands
-    .zoneskip Stormwind City
-    .zoneskip Redridge Mountains
-step << NightElf
-    .goto 1453/0,1268.800,-8540.700
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Gilbert Gray|r
-    .accept 95065 >>Acepta la misión Hora de la pesca
-    .turnin 95065 >>Entrega la misión Fishin' Tiempo
-    .target Gilbert Gray
-step << NightElf Rogue/NightElf Warrior/NightElf Hunter
-    .goto 1453/0,1194.500,-8332.101
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Manifest Clerk Philmor::268511|r
-    .target Manifest Clerk Philmor::268511
-    .accept 97220 >>Acepta la misión Philmor's Favor
-step << NightElf Rogue/NightElf Warrior/NightElf Hunter
-    #completewith next
-    .goto 1453/0,1194.200,-8360.900,10,0
-    .goto 1453/0,1076.300,-8408.500,15,0
-    .goto 1453/0,1001.400,-8499.700,10,0
-    .goto 1453/0,985.500,-8471.300,15,0
-    .goto 1453/0,960.100,-8501.800,15,0
-    .goto 1453/0,981.200,-8581.800,15,0
-    .goto 1453/0,875.500,-8680.900,10 >> Sal del puerto de Ventormenta
---@TODO add new coords for harbor exit cus no philmor's favor
-step << NightElf Druid
-    .goto 1453/0,1347.6192,-8591.2168
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Theridran|r
-    .trainer >>Aprende tus hechizos de clase
-	.target Theridran
-step << NightElf Priest
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Hermano Joshua|r
-    .goto 1453/0,862.89,-8519.61
-    .trainer >> Aprende tus hechizos de clase
-    .target Brother Joshua
-step << NightElf
-    .goto 1453/0,719.67,-8550.30
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Baros Alexston|r
-    .turnin 97914 >> Entrega la misión Expanding Horizons
-    .accept 97926 >> Acepta la misión Making Do
---    .accept 399 >> Accept Humble Beginnings
-    .target Baros Alexston
-step << NightElf Rogue
-    .goto 1453/0,377.47,-8752.39
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Osborne|r
-    .trainer >> Aprende tus hechizos de clase
-    .target Osborne the Night Man
-step << NightElf Warrior
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Wu|r o |cRXP_FRIENDLY_Ilsa|r
-    .goto 1453/0,358.25,-8728.28,15,0
-    .goto 1453/0,302.6,-8685.53,15,0
-	.goto 1453/0,323.3,-8689.29
-    .trainer >> Aprende tus hechizos de clase
-    .target Wu Shen
-    .target Ilsa Corbin
-step << NightElf Rogue/NightElf Warrior/NightElf Hunter
-    .goto 1453/0,613.12,-8795.96
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Woo Ping|r
-    .train 201 >> Aprende Espadas de 1 mano << Rogue
-    .train 202 >> Aprende Espadas de 2 manos << Warrior/Hunter
-    .target Woo Ping
-step << NightElf Rogue/NightElf Warrior/NightElf Hunter
-    .goto 1453/0,568.700,-8848.700
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Elaine Trias::483|r
-    .target Elaine Trias::483
-    .turnin 97220 >>Entrega la misión Philmor's Favor
-    .accept 97222 >>Acepta la misión Gatehouse Objetos
-step << NightElf Rogue/NightElf Warrior/NightElf Hunter
-    .goto 1453/0,569.400,-8860.300
-    >>Ve |cRXP_WARN_arriba|r y usa la |T132762:0|t[|cRXP_LOOT_Cargamento|r] frente a la |cRXP_PICK_Gatehouse Puerta|r
-    .use 277198 --Gatehouse Shipment
-    .complete 97222,1 --|1/1 Gatehouse Shipment delivered
-step << NightElf Rogue/NightElf Warrior/NightElf Hunter
-    #label Gatehouse
-    .goto 1453/0,566.900,-8847.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Elaine Trias::483|r
-    .target Elaine Trias::483
-    .turnin 97222 >>Entrega la misión Gatehouse Objetos
-step << NightElf Hunter
-    .goto 1453/0,552.78,-8415.71
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Einris Lanza Reluciente|r
-    .trainer >> Aprende tus hechizos de clase
-    .target Einris Brightspear
-step << NightElf Hunter
-    .goto 1453/0,553.22,-8422.23
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Karrina Mekenda|r
-    .trainer >> Entrena los hechizos de tu mascota
-    .target Karrina Mekenda
-step << NightElf
-    #label DeeprunEnter
-    #completewith next
-    .goto 1453/0,562.300,-8385.300,20,0
-    .goto 1453/0,522.000,-8352.101
-    .subzone 2257 >>Entra en el Tranvía Subterráneo
-    .zoneskip Ironforge
-    .zoneskip Loch Modan
-    .zoneskip Dun Morogh
-step << NightElf
-    .zone Ironforge >> Toma el Tranvía a Forjaz
-    .zoneskip Loch Modan
-    .zoneskip Dun Morogh
-step << NightElf
-    .goto Ironforge,55.491,47.751
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Gryth Thurden|r
-    .fp Ironforge >> Consigue la ruta de vuelo de Forjaz
-    .target Gryth Thurden
-step << NightElf Warrior
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Bixi Tambaleapié|r y |cRXP_FRIENDLY_Buliwyf Petramano|r
-    >>Aprende Armas arrojadizas y Mazas de 2 manos si no lo hiciste antes
-    .train 2567 >> Aprende el uso de Arrojadizas
-    .target +Bixi Wobblebonk
-    .goto 1455/0,-1205.65,-5042.12
-    .train 199 >> Aprende Mazas de 2 manos
-    .goto 1455/0,-1197.27,-5041.49
-    .target +Buliwyf Stonehand
-step << NightElf Warrior
-    .goto 1455,62.378,88.671
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Brenwyn Ventacerado|r escaleras abajo
-    >>|cRXP_BUY_Compra los|r |T135425:0|t[Cuchillos arrojadizos cortantes] |cRXP_BUY_a esta vendedora|r
-    .collect 3107,1 --Collect Keen Throwing Knife (200)
-    .target Brenwyn Wintersteel
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.3
-step << NightElf Warrior
-    #optional
-    #completewith DRT
-    +|cRXP_WARN_Equípate con el|r |T135425:0|t[Cuchillo arrojadizo cortante]
-    .use 3107
-    .itemcount 3107,1
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.3
-step << NightElf
-    #completewith next
-    .zone Dun Morogh >> Viaja a Dun Morogh
-step << NightElf
-    .goto Dun Morogh, 59.9, 49.5, 30, 0
-    .goto Dun Morogh, 61.2, 47.2, 15, 0
-    .goto Dun Morogh, 62.1, 47.3, 20 >>Sube corriendo por la rampa hacia |cRXP_ENEMY_Vagash|r
-step << NightElf
-    #completewith next
-    +"Kitea" a |cRXP_ENEMY_Vagash|r hacia |cRXP_FRIENDLY_Rudra Semperámbar|r
-    >>|cRXP_WARN_Intenta evitar acercarte a él o lanzará|r |T135848:16|t[Rugido glacial] |cRXP_WARN_lo que te aturdirá durante 3 segundos|r
-    .mob Vagash
-step << NightElf
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:16|tHabla con |cRXP_FRIENDLY_Rudra Semperámbar|r
-    .goto Dun Morogh, 63.1, 49.8
-    .target Rudra Amberstill
-    .accept 314 >>Acepta la misión La protección del rebaño
-step << NightElf
-    >>"Kitea" a |cRXP_ENEMY_Vagash|r hacia el |cRXP_FRIENDLY_Montaraz de Dun Morogh|r
-    >>|cRXP_WARN_Asegúrate de causarle al menos 50% de daño|r
-    .goto Dun Morogh, 62.8, 54.6, 10, 0
-    .mob Vagash
-    .target Dun Morogh Mountaineer
-    .complete 314, 1
-step << NightElf
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:16|tHabla con |cRXP_FRIENDLY_Rudra Semperámbar|r
-    .goto Dun Morogh, 63.1, 49.8
-    .target Rudra Amberstill
-    .turnin 314 >>Entrega la misión La protección del rebaño
-step << NightElf
-    #optional
-    #label LochEnter
-    .goto 1432,16.494,58.424,20,0
-    .goto 1432,19.594,62.735,20,0
-    .goto 1432,20.749,64.326,20,0
-    .goto 1432,21.106,65.007,20,0
-    .goto 1432,21.388,66.357,20,0
-    .goto 1432,21.498,67.840
-    .subzone 924 >> Viaja a Loch Modan a través del Paso de la Puerta Sur
-    .zoneskip Loch Modan
-step << NightElf
-    .goto 1432/0,-2602.54,-5832.73
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Montaraz Pedernal|r
-    .accept 224 >> Acepta la misión En defensa de las tierras del rey
-    .target Mountaineer Cobbleflint
-step << NightElf
-    #optional
-    #completewith next
-    .goto 1432/0,-2635.61,-5879.14,12,0
-    .goto 1432/0,-2645.27,-5874.91,12,0
-    .goto 1432/0,-2631.48,-5847.50,12 >> Entra en el Búnker. Ve al piso superior
-step << NightElf
-    .goto 1432/0,-2634.59,-5842.81
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Capitán Rugelfuss|r dentro del búnker
-    .accept 267 >> Acepta la misión La amenaza trogg
-    .target Captain Rugelfuss
-step << NightElf
-    .goto 1432/0,-2729.40,-5534.96
-    >>Mata |cRXP_ENEMY_Troggs Rompecantos|r y |cRXP_ENEMY_Exploradores Rompecantos|r. Despójalos para obtener sus |cRXP_LOOT_Dientes de trogg de piedra|r
-    >>|cRXP_WARN_Ten cuidado ya que los |cRXP_ENEMY_Exploradores Rompecantos|r lanzan|r |T132222:0|t[Disparar] |cRXP_WARN_(Lanzamiento a distancia: Inflige 14-20 de daño)|r
-    >>|cRXP_WARN_Esta es una zona de reaparición rápida. No deberías necesitar moverte de aquí|r
-    .complete 224,1 --Kill Stonesplinter Trogg (x10)
-    .mob +Stonesplinter Trogg
-    .complete 224,2 --Kill Stonesplinter Scout (x10)
-    .mob +Stonesplinter Scout
-    .complete 267,1 --Collect Trogg Stone Tooth (x8)
-    .mob +Stonesplinter Trogg
-    .mob +Stonesplinter Scout
-    .isOnQuest 224
-    .isOnQuest 267
-step << NightElf
-    #optional
-    #completewith next
-    #label Thelsamar
-    .subzone 144 >> Viaja a Thelsamar
-step << NightElf
-    #completewith next
-    #optional
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Montaraz Kadrell|r
-    >>|cRXP_FRIENDLY_Montaraz Kadrell|r |cRXP_WARN_patrulla la carretera que cruza Thelsamar|r
-    .accept 416 >> Acepta la misión Mata ratas
-    .accept 1339 >> Acepta la misión La tarea del montaraz Pico Tormenta
-    .target Mountaineer Kadrel
-step << NightElf
-    #label ThelsamarFirst
-    .goto 1432/0,-2954.42,-5394.10
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Vidra Hogartufa|r
-    .accept 418 >> Acepta la misión Morcillas de Thelsamar
-    .target Vidra Hearthstove
-step << NightElf
-    #optional
-    .goto 1432/0,-2954.42,-5394.10
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Vidra Hogartufa|r
-    .turnin 418 >> Entrega la misión Morcillas de Thelsamar
-    .target Vidra Hearthstove
-    .isQuestComplete 418
-step << NightElf
-    #optional
-    #completewith StormpikeO
-    .abandon 1338 >> Abandona la misión Un pedido de Pico Tormenta. Esto desbloquea la misión La tarea del montaraz Pico Tormenta que te dará 550xp gratuitos al entregar
-step << NightElf
-    #label StormpikeO
-    .line Loch Modan,36.72,41.97,37.24,43.19,37.33,45.63,36.77,46.20,35.19,46.88,32.67,49.71,35.19,46.88,36.77,46.20,37.33,45.63,37.24,43.19,36.72,41.97
-    .goto 1432/0,-3006.61,-5259.57,15,0
-    .goto 1432/0,-3020.95,-5282.02,15,0
-    .goto 1432/0,-3023.44,-5326.90,15,0
-    .goto 1432/0,-3007.99,-5337.390,15,0
-    .goto 1432/0,-2964.41,-5349.90,15,0
-    .goto 1432/0,-2894.90,-5401.96,20,0
-    .goto 1432/0,-3007.99,-5337.390
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Montaraz Kadrell|r
-    >>|cRXP_FRIENDLY_Montaraz Kadrell|r |cRXP_WARN_patrulla la carretera que cruza Thelsamar|r
-    .accept 416 >> Acepta la misión Mata ratas
-    .accept 1339 >> Acepta la misión La tarea del montaraz Pico Tormenta
-    .target Mountaineer Kadrell
-step << NightElf
-    .goto 1432/0,-2929.87,-5424.84
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Thorgrum Borrelson|r
-    .fp Thelsamar >> Consigue la ruta de vuelo de Thelsamar
-    .target Thorgrum Borrelson
-step << NightElf
-    #optional
-    #completewith Snowbound
-    >>Mata |cRXP_ENEMY_Osos negros mayores|r. Despójalos para obtener su |cRXP_LOOT_Carne de oso|r
-    >>Mata |cRXP_ENEMY_Jabalíes monteses|r. Despójalos para obtener sus |cRXP_LOOT_Intestinos de jabalí|r
-    >>Mata |cRXP_ENEMY_Rondadoras del bosque|r. Despójalos para obtener su |cRXP_LOOT_Icor de araña|r
-    .collect 3172,3,418,1 --Collect Boar Intestines (x3)
-    .mob +Mountain Boar
-    .collect 3173,3,418,1 --Collect Bear Meat (x3)
-    .mob +Elder Black Bear
-    .collect 3174,3,418,1 --Collect Spider Ichor (x3)
-    .mob +Forest Lurker
-    >>|cRXP_WARN_Guarda los|r |T133970:0|t|cRXP_LOOT_[Trozos de carne de jabalí]|r |cRXP_WARN_para subir de nivel |T133971:0|t[Cocina] |cRXP_WARN_más tarde|r
-    >>|cRXP_WARN_No te desvíes de tu camino para completar esto ahora. Volverás a Loch Modan pronto|r
-    .isOnQuest 418
-step << NightElf
-    #optional
-    #completewith next
-    .goto 1432/0,-2677.26,-5778.34,10,0
-    .goto 1432/0,-2648.30,-5876.75,15 >> Sube por el camino de tierra y luego déjate caer dentro del búnker
-step << NightElf
-    .goto 1432/0,-2634.59,-5842.81
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Capitán Rugelfuss|r dentro del búnker
-    .turnin 267 >> Entrega la misión La amenaza trogg
-    .target Captain Rugelfuss
-    .isQuestComplete 267
-step << NightElf
-    .goto 1432/0,-2602.54,-5832.73
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Montaraz Pedernal|r
-    .turnin 224 >> Entrega la misión En defensa de las tierras del rey
-    .target Mountaineer Cobbleflint
-    .isQuestComplete 224
-step << NightElf
-    #optional
-    #completewith Algaz
-    >>Mata |cRXP_ENEMY_Osos negros mayores|r. Despójalos para obtener su |cRXP_LOOT_Carne de oso|r
-    >>Mata |cRXP_ENEMY_Jabalíes monteses|r. Despójalos para obtener sus |cRXP_LOOT_Intestinos de jabalí|r
-    >>Mata |cRXP_ENEMY_Rondadoras del bosque|r. Despójalos para obtener su |cRXP_LOOT_Icor de araña|r
-    .collect 3172,3,418,1 --Collect Boar Intestines (x3)
-    .mob +Mountain Boar
-    .collect 3173,3,418,1 --Collect Bear Meat (x3)
-    .mob +Elder Black Bear
-    .collect 3174,3,418,1 --Collect Spider Ichor (x3)
-    .mob +Forest Lurker
-    >>|cRXP_WARN_Guarda los|r |T133970:0|t|cRXP_LOOT_[Trozos de carne de jabalí]|r |cRXP_WARN_para subir de nivel |T133971:0|t[Cocina] |cRXP_WARN_más tarde|r
-    >>|cRXP_WARN_No te desvíes de tu camino para completar esto ahora. Volverás a Loch Modan pronto|r
-    .isOnQuest 418
-    .subzoneskip 925 --Algaz Station
-step << NightElf
-    #optional
-    #label Algaz
-    #completewith Stormpike1
-    .goto 1432,23.490,18.008
-    .subzone 925 >>Viaja a la Estación de Algaz
-step << NightElf
-    #optional
-    #requires Algaz
-    #completewith Stormpike1
-    .goto 1432,23.490,18.008,15,0
-    .goto 1432,24.279,17.959,12 >> Entra en el Búnker. Ve al piso superior
-step << NightElf
-    #label Stormpike1
-    .goto Loch Modan,24.77,18.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Montaraz Pico Tormenta|r dentro del búnker
-    .turnin 1339 >> Entrega la misión La tarea del montaraz Pico Tormenta
-    .accept 307 >> Acepta la misión Zarpas asquerosas
-    .target Mountaineer Stormpike
-step << NightElf
-    #completewith Gear
-    #optional
-    #loop
-    .goto 1432/0,-2684.71,-5042.87,0
-    .goto 1432/0,-2712.57,-5286.61,0
-    .goto 1432/0,-3033.92,-4797.29,0
-    .waypoint 1432/0,-3033.92,-4797.29,50,0
-    .waypoint 1432/0,-2972.41,-4796.92,50,0
-    .waypoint 1432/0,-2684.71,-5042.87,50,0
-    .waypoint 1432/0,-2712.57,-5286.61,50,0
-    >>Mata |cRXP_ENEMY_Ratatúneles|r. Despójalas para obtener sus |cRXP_LOOT_Orejas|r
-    .complete 416,1 --Collect Tunnel Rat Ear (x12)
-    .mob +Tunnel Rat Scout
-    .mob +Tunnel Rat Vermin
-    .mob +Tunnel Rat Forager
-    .mob +Tunnel Rat Geomancer
-    .mob +Tunnel Rat Digger
-    .mob +Tunnel Rat Surveyor
-step << NightElf
-    #optional
-    #label SilverMine
-    #completewith next
-    .goto 1432/0,-2972.96,-4835.187,20 >> Entra en la Mina de Fuenteplata
-step << NightElf
-    .goto 1432/0,-2984.82,-4902.33
-    >>Abre los |cRXP_PICK_Cajones de la Liga de Mineros|r dentro de la mina. Despójalos para obtener el |cRXP_LOOT_Equipamiento de minero|r
-    .complete 307,1 --Miners' Gear (4)
-step << NightElf Warrior
-    #ssf
-    #label Gear
-    .goto 1432/0,-3176.16,-4669.34
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Nillen Andemar|r
-    >>|cRXP_BUY_Cómprale la|r |T133476:0|t[Maza con pinchos pesada] |cRXP_BUY_O la|r |T133053:0|t[Gran maza de maderaférrea] |cRXP_BUY_(si están disponibles)|r
-    >>|cRXP_WARN_Si no puedes pagarlo, entonces obtén dinero de los cercanos |cRXP_ENEMY_Ratatúneles|r hasta que tengas suficiente|r
-    >>|cRXP_WARN_Hazlo rápidamente ya que otro jugador podría comprarlo antes que tú|r
-    >>|cRXP_WARN_Si no deseas hacer esto, omite este paso|r
-    .collect 4778,1,307,1 --Heavy Spiked Mace (1)
-    .collect 4777,1,307,1 --Ironwood Maul (1)
-    .target Nillen Andemar
-    .itemcount 4778,<1 --Heavy Spiked Mace (<1)
-    .itemcount 4777,<1 --Ironwood Maul (<1)
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.8
-step << NightElf Warrior
-    #ah
-    #label Gear
-    .goto 1432/0,-3176.16,-4669.34
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Nillen Andemar|r
-    >>|cRXP_BUY_Cómprale la|r |T133476:0|t[Maza con pinchos pesada] |cRXP_BUY_O la|r |T133053:0|t[Gran maza de maderaférrea] |cRXP_BUY_(si están disponibles)|r
-    >>|cRXP_WARN_Si no puedes pagarlo, entonces obtén dinero de los cercanos |cRXP_ENEMY_Ratatúneles|r hasta que tengas suficiente|r
-    >>|cRXP_WARN_Hazlo rápidamente ya que otro jugador podría comprarlo antes que tú|r
-    >>|cRXP_WARN_Si no quieres hacer esto o prefieres intentar comprar un arma más barata/mejor de la Casa de Subastas pronto, omite este paso|r
-    .collect 4778,1,307,1 --Heavy Spiked Mace (1)
-    .collect 4777,1,307,1 --Ironwood Maul (1)
-    .target Nillen Andemar
-    .itemcount 4778,<1 --Heavy Spiked Mace (<1)
-    .itemcount 4777,<1 --Ironwood Maul (1)
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.8
-step << NightElf Warrior
-    #optional
-    #completewith PawsDelivery
-    +|cRXP_WARN_Equipa la|r |T133476:0|t[Maza con pinchos pesada]
-    .use 4778
-    .itemcount 4778,1
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.5
-    .xp <14,1
-step << NightElf Warrior
-    #optional
-    #completewith PawsDelivery
-    +|cRXP_WARN_Equipa la|r |T133053:0|t[Gran maza de maderaférrea]
-    .use 4777
-    .itemcount 4777,1
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.7
-    .xp <13,1
-step
-    #label Gear
-step << NightElf
-    .goto 1432/0,-2684.71,-5042.87,0
-    .goto 1432/0,-2712.57,-5286.61,0
-    .goto 1432/0,-3033.92,-4797.29,0
-    .goto 1432/0,-3033.92,-4797.29,50,0
-    .goto 1432/0,-2972.41,-4796.92,50,0
-    .goto 1432/0,-2684.71,-5042.87,50,0
-    .goto 1432/0,-2712.57,-5286.61,50,0
-    .goto 1432/0,-3033.92,-4797.29,50,0
-    .goto 1432/0,-2972.41,-4796.92
-    >>Mata |cRXP_ENEMY_Ratatúneles|r. Despójalas para obtener sus |cRXP_LOOT_Orejas|r
-    .complete 416,1 --Collect Tunnel Rat Ear (x12)
-    .mob +Tunnel Rat Scout
-    .mob +Tunnel Rat Vermin
-    .mob +Tunnel Rat Forager
-    .mob +Tunnel Rat Geomancer
-    .mob +Tunnel Rat Digger
-    .mob +Tunnel Rat Surveyor
-step << NightElf
-    #optional
-    #completewith PawsDelivery
-    >>Mata |cRXP_ENEMY_Osos negros mayores|r. Despójalos para obtener su |cRXP_LOOT_Carne de oso|r
-    >>Mata |cRXP_ENEMY_Jabalíes monteses|r. Despójalos para obtener sus |cRXP_LOOT_Intestinos de jabalí|r
-    >>Mata |cRXP_ENEMY_Rondadoras del bosque|r. Despójalas para obtener su |cRXP_LOOT_Icor|r
-    .collect 3172,3,418,1 --Collect Boar Intestines (x3)
-    .mob +Mountain Boar
-    .collect 3173,3,418,1 --Collect Bear Meat (x3)
-    .mob +Elder Black Bear
-    .collect 3174,3,418,1 --Collect Spider Ichor (x3)
-    .mob +Forest Lurker
-    .subzoneskip 925 --Algaz Station
-step << NightElf
-    #optional
-    #completewith next
-    .goto 1432,23.490,18.008,15,0
-    .goto 1432,24.279,17.959,15 >> Entra en el Búnker
-step << NightElf
-    #optional
-    #completewith next
-    .goto 1432/0,-2659.45,-4822.45
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Gothor Brumn|r
-    .vendor 1362 >>|cRXP_WARN_Vende y repara si es necesario|r
-    .target Gothor Brumn
-step << NightElf
-    #label PawsDelivery
-    .goto 1432/0,-2676.99,-4825.980
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Montaraz Pico Tormenta|r
-    .turnin 307 >> Entrega la misión Zarpas asquerosas
-    .target Mountaineer Stormpike
-step << NightElf
-    >>Mata |cRXP_ENEMY_Osos negros mayores|r. Despójalos para obtener su |cRXP_LOOT_Carne de oso|r
-    >>Mata |cRXP_ENEMY_Jabalíes monteses|r. Despójalos para obtener sus |cRXP_LOOT_Intestinos de jabalí|r
-    >>Mata |cRXP_ENEMY_Rondadoras del bosque|r. Despójalas para obtener su |cRXP_LOOT_Icor|r
-    .collect 3173,3,418,1 --Bear Meat (3)
-    .mob +Elder Black Bear
-    .goto 1432/0,-2735.74,-4684.34,90,0
-    .goto 1432/0,-2846.07,-4682.50,90,0
-    .goto 1432/0,-2782.63,-4770.80,90,0
-    .goto 1432/0,-2835.04,-4976.83,90,0
-    .goto 1432/0,-2915.03,-5044.89,90,0
-    .goto 1432/0,-3080.53,-5100.08,90,0
-    .goto 1432/0,-2735.74,-4684.34,90,0
-    .goto 1432/0,-2846.07,-4682.50,90,0
-    .goto 1432/0,-2782.63,-4770.80,90,0
-    .goto 1432/0,-2835.04,-4976.83,90,0
-    .goto 1432/0,-2915.03,-5044.89,90,0
-    .goto 1432/0,-3080.53,-5100.08,90,0
-    .goto 1432/0,-2735.74,-4684.34
-    .collect 3172,3,418,1 --Boar Intestines (3)
-    .mob +Mountain Boar
-    .goto 1432/0,-3041.92,-5129.51,90,0
-    .goto 1432/0,-3017.09,-5219.65,90,0
-    .goto 1432/0,-2815.73,-5147.91,90,0
-    .goto 1432/0,-2757.81,-4952.91,90,0
-    .goto 1432/0,-2782.63,-4903.25,90,0
-    .goto 1432/0,-3041.92,-5129.51,90,0
-    .goto 1432/0,-3017.09,-5219.65,90,0
-    .goto 1432/0,-2815.73,-5147.91,90,0
-    .goto 1432/0,-2757.81,-4952.91,90,0
-    .goto 1432/0,-2782.63,-4903.25,90,0
-    .goto 1432/0,-3041.92,-5129.51
-    .collect 3174,3,418,1 --Spider Ichor (3)
-    .mob +Forest Lurker
-    .goto 1432/0,-2873.66,-4789.19,90,0
-    .goto 1432/0,-2766.08,-4866.45,90,0
-    .goto 1432/0,-2926.07,-5232.53,90,0
-    .goto 1432/0,-2992.27,-5055.93,90,0
-    .goto 1432/0,-3069.5,-5078.01,90,0
-    .goto 1432/0,-2873.66,-4789.19,90,0
-    .goto 1432/0,-2766.08,-4866.45,90,0
-    .goto 1432/0,-2926.07,-5232.53,90,0
-    .goto 1432/0,-2992.27,-5055.93,90,0
-    .goto 1432/0,-3069.5,-5078.01,90,0
-    .goto 1432/0,-2873.66,-4789.19
-step << NightElf
-    #completewith FlintTinder
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Montaraz Kadrell|r
-    >>|cRXP_FRIENDLY_Montaraz Kadrell|r |cRXP_WARN_patrulla la carretera que cruza Thelsamar|r
-    .target Mountaineer Kadrell
-    .turnin 416 >> Entrega la misión Mata ratas
-step << NightElf
-    #optional
-    #completewith FlintTinder
-    .goto 1432,35.273,47.750,10,0
-    .goto 1432,35.433,48.243,12 >> Entra en la Pensión La Cebada
-step << NightElf
-    .goto 1432/0,-2954.42,-5394.10
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Vidra Hogartufa|r
-    .turnin 418 >> Entrega la misión Morcillas de Thelsamar
-    .target Vidra Hearthstove
-step << NightElf
-    .goto Loch Modan,37.17,47.94,8,0
-    .goto Loch Modan,37.24,47.38
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Jern Cornamenta|r
-    .accept 436 >> Acepta la misión La excavación de Vetaferro
-    .target Jern Hornhelm
-step << NightElf
-    .line Loch Modan,36.72,41.97,37.24,43.19,37.33,45.63,36.77,46.20,35.19,46.88,32.67,49.71,35.19,46.88,36.77,46.20,37.33,45.63,37.24,43.19,36.72,41.97
-    .goto 1432/0,-3006.61,-5259.57,15,0
-    .goto 1432/0,-3020.95,-5282.02,15,0
-    .goto 1432/0,-3023.44,-5326.90,15,0
-    .goto 1432/0,-3007.99,-5337.390,15,0
-    .goto 1432/0,-2964.41,-5349.90,15,0
-    .goto 1432/0,-2894.90,-5401.96,20,0
-    .goto 1432/0,-3007.99,-5337.390
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Montaraz Kadrell|r
-    >>|cRXP_FRIENDLY_Montaraz Kadrell|r |cRXP_WARN_patrulla la carretera que cruza Thelsamar|r
-    .target Mountaineer Kadrell
-    .turnin 416 >> Entrega la misión Mata ratas
-step << NightElf
-    #loop
-    .goto 1432/0,-3319.800,-5217.600,20,0
-    .goto 1432/0,-3251.5499,-5285.8790,20,0
-    .goto 1432/0,-3342.5748,-5484.5540,20,0
-    .goto 1432/0,-3386.7082,-5462.4790,20,0
-    .goto 1432/0,-3319.800,-5217.600,0
-    .goto 1432/0,-3251.5499,-5285.8790,0
-    .goto 1432/0,-3342.5748,-5484.5540,0
-    .goto 1432/0,-3386.7082,-5462.4790,0
-    >>Haz clic en la |cRXP_PICK_Caja de herramientas de pesca descartada|r en el piso del lago
-    >>|cRXP_WARN_NOTA: Esto puede aparecer en una de muchas ubicaciones diferentes. Nada alrededor hasta que veas el signo de exclamación en tu minimapa|r
-    >>|cRXP_WARN_Ten cuidado con los de alto nivel|r al |cRXP_ENEMY_Joven trillanodonte|r
-    .accept 86614 >>Acepta la misión Plateado of the Waves
-step << NightElf
-    .goto Loch Modan,64.89,66.66
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Magmar Ceñimal|r
-    .turnin 436 >> Entrega la misión La excavación de Vetaferro
-    .target Magmar Fellhew
-step << NightElf
-    .goto Loch Modan,65.934,65.622
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Prospector Vetaferro|r
-    .accept 298 >> Acepta la misión Un informe sobre el avance de la excavación
-    .target Prospector Ironband
-step << NightElf
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Daryl el Jovenzuelo|r
-    .accept 257 >> Acepta la misión La fanfarronada de un cazador
-    .goto Loch Modan,83.49,65.40
-    .target Daryl the Youngling
-step << NightElf Rogue/NightElf Hunter/NightElf Warrior/NightElf Druid
-    .goto Loch Modan,82.6,64.0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con la |cRXP_FRIENDLY_Kat|r
-    .vendor >> |cRXP_BUY_Compra las|r |T132539:0|t[Botas de agilidad] |cRXP_BUY_a ella si están disponibles|r
-    .target Kat Sampson
-step << NightElf
-    .goto Loch Modan,80.09,64.16,60,0
-    .goto Loch Modan,77.16,75.57,60,0
-    .goto Loch Modan,70.78,72.91,60,0
-    .goto Loch Modan,76.65,62.27,60,0
-    .goto Loch Modan,76.36,56.05,60,0
-    .goto Loch Modan,80.09,64.16,60,0
-    .goto Loch Modan,77.16,75.57,60,0
-    .goto Loch Modan,70.78,72.91,60,0
-    .goto Loch Modan,76.65,62.27,60,0
-    .goto Loch Modan,76.36,56.05,60,0
-    .goto Loch Modan,80.09,64.16
-    >>Mata |cRXP_ENEMY_Águilas ratoneras montesas|r
-    >>|cRXP_WARN_Debes completar la misión y regresar a |cRXP_FRIENDLY_Daryl el Jovenzuelo|r en menos de 15 minutos. Si fallas la misión, abandónala y vuelve a aceptarla|r
-    .complete 257,1 -- Mountain Buzzard slain (6)
-    .mob Mountain Buzzard
-step << NightElf
-    #completewith next
-    .goto Loch Modan,82.92,59.37,80,0
-    .goto Loch Modan,83.28,62.97,25 >> Viaja hacia |cRXP_FRIENDLY_Daryl el Jovenzuelo|r
-step << NightElf
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Daryl el Jovenzuelo|r
-    .goto Loch Modan,83.49,65.40
-    .turnin 257 >> Entrega la misión La fanfarronada de un cazador
-    .target Daryl the Youngling
-step << NightElf
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Marek Coracero|r
-    .accept 385 >> Acepta la misión La caza de crocoliscos
-    .accept 86758 >>Acepta la misión Twisting the Cuchillo
-    .goto Loch Modan,81.76,61.66
-    .target Marek Ironheart
-step << NightElf
-    #completewith next
-    >>Mata |cRXP_ENEMY_Crocoliscos del lago|r. Despójalos para obtener su |cRXP_LOOT_Carne|r y |cRXP_LOOT_Piel|r
-    .complete 385,1 -- Crocolisk Meat (5)
-    .complete 385,2 -- Crocolisk Skin (6)
-    .mob Loch Crocolisk
-step
-    --@TODO add a line for this
-    .goto Loch Modan,62,44
-    >>Mata a |cRXP_ENEMY_Daggerfang|r, |cRXP_WARN_podría estar patrullando en la orilla|r. Despójalo para obtener |T3736888:0|t[|cRXP_LOOT_Marek's Crocolisco-Cuchillo de caza|r]
-    .complete 86758,1 --Marek's Croc Hunting Knife (1)
-    .mob Daggerfang
-step << NightElf
-    #completewith next
-    .goto Loch Modan,54.7,38.3,200 >> Viaja a la isla ubicada en el centro de El Lago
-step << NightElf
-    .goto Loch Modan,58.86,38.32,80,0
-    .goto Loch Modan,54.80,40.02,60,0
-    .goto Loch Modan,54.16,35.79,60,0
-    .goto Loch Modan,54.72,38.15
-    >>Mata |cRXP_ENEMY_Crocoliscos del lago|r. Despójalos para obtener su |cRXP_LOOT_Carne|r y |cRXP_LOOT_Piel|r
-    .complete 385,1 -- Crocolisk Meat (5)
-    .complete 385,2 -- Crocolisk Skin (6)
-    .mob Loch Crocolisk
-step << NightElf
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Marek Coracero|r
-    .turnin 385 >>Entrega la misión La caza de crocoliscos
-    .turnin 86758 >>Entrega la misión Twisting the Cuchillo
-    .goto Loch Modan,81.76,61.66
-    .target Marek Ironheart
-step << NightElf
-    >>Salta fuera de la cabaña y muere a los mobs de abajo
-    .deathskip >> Muere y reaparece en el cementerio de Thelsamar
-step << NightElf
-    .goto Loch Modan,37.17,47.94,8,0
-    .goto Loch Modan,37.24,47.38
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Jern Cornamenta|r
-    .turnin 298 >> Entrega la misión Un informe sobre el avance de la excavación
-    .accept 301 >> Acepta la misión Informe a Forjaz
-    .target Jern Hornhelm
-step << NightElf
-    .goto 1432/0,-3104.900,-5210.100,5,0
-    .goto 1432/0,-3086.600,-5216.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Khara Deepwater::1684|r
-    .target Khara Deepwater::1684
-    .turnin 86614 >>Entrega la misión Plateado of the Waves
-step << NightElf
-    #label flyIF
-    .goto 1432/0,-2929.87,-5424.84
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Thorgrum Borrelson|r
-    .fly Ironforge >> Vuela a Forjaz
-    .target Thorgrum Borrelson
-    .zoneskip Ironforge
-step << NightElf
-    .goto Ironforge,74.645,11.742
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Prospector Pico Tormenta|r
-    .turnin 301 >> Entrega la misión Informe a Forjaz
-    .target Prospector Stormpike
-step << NightElf Hunter
-    .goto 1455/0,-1266.100,-5006.700
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Belia Tronagranito|r
-    .trainer >> Aprende tus hechizos de clase
-    .target Regnus Thundergranite
-step << NightElf Priest
-    .goto 1455/0,-897.200,-4607.200
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Sumo sacerdote Rohan|r  
-    .trainer >> Aprende tus hechizos de clase
-    .target High Priest Rohan
-step << NightElf Priest/NightElf Druid
-    #ah
-    #label OilWandFood
-    #completewith AHCheck
-    .goto 1455/0,-917.57,-4967.58,-1--c:Ironforge,25.800,75.500
-    .goto 1455/0,-904.92,-4962.83,-1--c:Ironforge,24.200,74.600
-    .goto 1455/0,-901.76,-4948.06,-1--c:Ironforge,23.800,71.800
-    >>|cRXP_WARN_Compra lo siguiente si puedes permitírtelo:|r
-    >>|T134711:0|t[Aceite de zahorí menor] |cRXP_WARN_y|r |T133906:0|t[Sabiola ahumada]
-    >>|cRXP_WARN_También busca mejoras de DPS altas|r |T132317:0|t[Varita] |cRXP_WARN_que puedas usar ahora/pronto|r << Priest
-    >>|cRXP_WARN_Estos proporcionarán un aumento de DPS alto en los primeros niveles. Si no quieres hacerlo o no puedes, omite este paso|r
-    .collect 20744,1 -- Minor Wizard Oil (1)
-    .collect 21072,20 -- Smoked Sagefish (20)
-    .target Auctioneer Lympkin
-    .target Auctioneer Redmuse
-    .target Auctioneer Buckler
-step << NightElf Rogue
-    .goto Ironforge,51.495,15.330
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Fenthwick|r
-    .trainer >> Aprende tus hechizos de clase
-    .target Fenthwick
-step << NightElf Warrior
-    .goto Ironforge,65.905,88.405
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Bilban Cálculo|r
-    .trainer >> Aprende tus hechizos de clase
-    .target Bilban Tosslespanner
-step << NightElf Druid
-    #completewith next
-	.cast 18960 >> Lanza Teletransporte a: Claro de la Luna
-	.zoneskip Moonglade
-step << NightElf Druid
-    .goto Moonglade,52.53,40.57
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Loganaar|r
-    .trainer >> Aprende tus hechizos de clase
-    .target Loganaar
-step << NightElf
-    .hs >>Usa tu Piedra de hogar para ir a Auberdine
-    .zoneskip Darkshore
+step  << NightElf
+    #include 15-16 Loch Modan
 step << NightElf
     .goto 1439/1,577.38,6371.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Gubber Blump|r
@@ -3317,7 +2602,7 @@ step << skip --logout skip
     #label MushroomLS
     #completewith CavetoAuber
     .goto 1439,54.964,34.536
-    .goto 1439,41.705,36.507,20 >>|cRXP_WARN_Salta en la cima de la roca en el piso superior dentro de la cueva. Posiciona tu personaje hasta que parezca que está flotando, luego realiza un Logout Skip desconectando y volviendo a entrar|r
+    .goto 1439,41.705,36.507,20 >>|cRXP_WARN_Salta encima de la roca en el piso superior dentro de la cueva. Posiciona tu personaje hasta que parezca que está flotando, luego realiza un "Logout Skip" desconectando y volviendo a entrar|r
 step
     #completewith CavetoAuber
     >>Mata |cRXP_ENEMY_Volantones zancudo del bosque|r. Despójalos para obtener su |cRXP_LOOT_Carne de zancudo|r
@@ -3406,7 +2691,7 @@ step
     .target Sentinel Glynda Nal'Shea
 step
     .goto 1439/1,467.08,6409.38
-    >>|cRXP_WARN_Usa el|r |T133748:0|t[Cuenco de purificación vacío] |cRXP_WARN_en la Poza de la Luna de Auberdine|r
+    >>|cRXP_WARN_Usa el|r |T133748:0|t[Cuenco de purificación vacío] |cRXP_WARN_en el pozo lunar de Auberdine|r
     .collect 12347,1,4763,1 --Filled Cleansing Bowl (1)
     .use 12346
     .isOnQuest 4763
@@ -3553,6 +2838,771 @@ step << Druid
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
+#version 1
+<< Alliance
+#defaultfor None
+#group RestedXP Guía Forever (A)
+#subgroup Guía de subida rápida de nivel (Speedrun) 1-20
+--#groupid RXP-SRGCE-A1
+#name 15-16 Loch Modan
+step
+    #label SWBoat
+    .goto 1439/1,929.100,6543.600
+    >>|cRXP_WARN_Sube tus|r |T135966:0|t[Primeros auxilios] |cRXP_WARN_mientras esperas el barco|r << Rogue/Warrior
+    .zone Stormwind City >> Toma el barco hacia la Ciudad de Ventormenta
+    .zoneskip Loch Modan
+    .zoneskip Dun Morogh
+    .zoneskip Ironforge
+    .zoneskip Wetlands
+    .zoneskip Stormwind City
+    .zoneskip Redridge Mountains
+step
+    .goto 1453/0,1268.800,-8540.700
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Gilbert Gray|r
+    .accept 95065 >>Acepta la misión Hora de la pesca
+    .turnin 95065 >>Entrega la misión Fishin' Tiempo
+    .target Gilbert Gray
+step << Rogue/Warrior/Hunter
+    .goto 1453/0,1194.500,-8332.101
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Manifest Clerk Philmor::268511|r
+    .target Manifest Clerk Philmor::268511
+    .accept 97220 >>Acepta la misión Philmor's Favor
+step << Rogue/Warrior/Hunter
+    #completewith next
+    .goto 1453/0,1194.200,-8360.900,10,0
+    .goto 1453/0,1076.300,-8408.500,15,0
+    .goto 1453/0,1001.400,-8499.700,10,0
+    .goto 1453/0,985.500,-8471.300,15,0
+    .goto 1453/0,960.100,-8501.800,15,0
+    .goto 1453/0,981.200,-8581.800,15,0
+    .goto 1453/0,875.500,-8680.900,10 >> Sal del puerto de Ventormenta
+--@TODO add new coords for harbor exit cus no philmor's favor
+step << Druid
+    .goto 1453/0,1095.500,-8741.700
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Theridran|r
+    .trainer >>Aprende tus hechizos de clase
+	.target Theridran
+step << Priest
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Hermano Joshua|r
+    .goto 1453/0,862.89,-8519.61
+    .trainer >> Aprende tus hechizos de clase
+    .target Brother Joshua
+step
+    .goto 1453/0,719.67,-8550.30
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Baros Alexston|r
+    .turnin -97914 >> Entrega la misión Expanding Horizons
+    .accept 97926 >> Acepta la misión Making Do
+--    .accept 399 >> Accept Humble Beginnings
+    .target Baros Alexston
+step << Rogue/Warrior/Hunter
+    .goto 1453/0,613.12,-8795.96
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Woo Ping|r
+    .train 201 >> Aprende Espadas de 1 mano << Rogue
+    .train 202 >> Aprende Espadas de 2 manos << Warrior/Hunter
+    .target Woo Ping
+step << Rogue/Warrior/Hunter
+    .goto 1453/0,568.700,-8848.700
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Elaine Trias::483|r
+    .target Elaine Trias::483
+    .turnin 97220 >>Entrega la misión Philmor's Favor
+    .accept 97222 >>Acepta la misión Gatehouse Objetos
+step << Rogue/Warrior/Hunter
+    .goto 1453/0,569.400,-8860.300
+    >>Ve |cRXP_WARN_arriba|r y usa la |T132762:0|t[|cRXP_LOOT_Cargamento|r] frente a la |cRXP_PICK_Gatehouse Puerta|r
+    .use 277198 --Gatehouse Shipment
+    .complete 97222,1 --|1/1 Gatehouse Shipment delivered
+step << Rogue/Warrior/Hunter
+    #label Gatehouse
+    .goto 1453/0,566.900,-8847.800
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Elaine Trias::483|r
+    .target Elaine Trias::483
+    .turnin 97222 >>Entrega la misión Gatehouse Objetos
+step << Rogue
+    .goto 1453/0,377.47,-8752.39
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Osborne|r
+    .trainer >> Aprende tus hechizos de clase
+    .target Osborne the Night Man
+step << Hunter
+    .goto 1453/0,552.78,-8415.71
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Einris Lanza Reluciente|r
+    .trainer >> Aprende tus hechizos de clase
+    .target Einris Brightspear
+step << Hunter
+    .goto 1453/0,553.22,-8422.23
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Karrina Mekenda|r
+    .trainer >> Entrena los hechizos de tu mascota
+    .target Karrina Mekenda
+step
+    #label DeeprunEnter
+    #completewith next
+    .goto 1453/0,562.300,-8385.300,20,0
+    .goto 1453/0,522.000,-8352.101
+    .subzone 2257 >>Entra en el Tranvía Subterráneo
+    .zoneskip Ironforge
+    .zoneskip Loch Modan
+    .zoneskip Dun Morogh
+step
+    #completewith next
+    .zone Ironforge >> Toma el Tranvía a Forjaz
+    .zoneskip Loch Modan
+    .zoneskip Dun Morogh
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Monty|r en la plataforma del medio en el Deeprun Tram |cRXP_WARN_en el lado de Forjaz!|r
+    .accept 6661 >> Acepta la misión A por las ratas del tranvía subterráneo
+    .target Monty
+step
+    >>Usa la |T133942:0|t[Flauta cazarratas] en las |cRXP_FRIENDLY_Ratas del subterráneo|r en el Tranvía Subterráneo
+    .complete 6661,1 --Rats Captured (x5)
+    .macro Rat Catcher's Flute,133942 >>Rata Catcher's Flute
+    .mob Deeprun Rat
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Monty|r en el andén central del Tranvía Subterráneo
+    .turnin 6661 >> Entrega la misión A por las ratas del tranvía subterráneo
+    .target Monty
+step
+    .goto Ironforge,55.491,47.751
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Gryth Thurden|r
+    .fp Ironforge >> Consigue la ruta de vuelo de Forjaz
+    .target Gryth Thurden
+step Warrior
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Bilban Cálculo|r
+    .goto Ironforge,65.905,88.405
+    .trainer >> Aprende tus hechizos de clase
+    .target Bilban Tosslespanner
+step << Warrior
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Bixi Tambaleapié|r y |cRXP_FRIENDLY_Buliwyf Petramano|r
+    >>Aprende Armas arrojadizas y Mazas de 2 manos si no lo hiciste antes
+    .train 2567 >> Aprende el uso de Arrojadizas
+    .target +Bixi Wobblebonk
+    .goto 1455/0,-1205.65,-5042.12
+    .train 199 >> Aprende Mazas de 2 manos
+    .goto 1455/0,-1197.27,-5041.49
+    .target +Buliwyf Stonehand
+step << Warrior
+    .goto 1455,62.378,88.671
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Brenwyn Ventacerado|r escaleras abajo
+    >>|cRXP_BUY_Compra los|r |T135425:0|t[Cuchillos arrojadizos cortantes] |cRXP_BUY_a esta vendedora|r
+    .collect 3107,1 --Collect Keen Throwing Knife (200)
+    .target Brenwyn Wintersteel
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.3
+step << Warrior
+    #optional
+    #completewith DRT
+    +|cRXP_WARN_Equípate con el|r |T135425:0|t[Cuchillo arrojadizo cortante]
+    .use 3107
+    .itemcount 3107,1
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.3
+step
+    #label IFExit
+step
+    #completewith next
+    .zone Dun Morogh >> Viaja a Dun Morogh
+step
+    .goto Dun Morogh,59.9,49.5,30,0
+    .goto Dun Morogh,61.2,47.2,15,0
+    .goto Dun Morogh,62.1,47.3,20 >>Sube corriendo por la rampa hacia |cRXP_ENEMY_Vagash|r
+step
+    #completewith next
+    +"Kitea" a |cRXP_ENEMY_Vagash|r hacia |cRXP_FRIENDLY_Rudra Semperámbar|r
+    >>|cRXP_WARN_Intenta evitar acercarte a él o lanzará|r |T135848:16|t[Rugido glacial] |cRXP_WARN_lo que te aturdirá durante 3 segundos|r
+    .mob Vagash
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:16|tHabla con |cRXP_FRIENDLY_Rudra Semperámbar|r
+    .goto Dun Morogh,63.1,49.8
+    .target Rudra Amberstill
+    .accept 314 >>Acepta la misión La protección del rebaño
+step
+    >>"Kitea" a |cRXP_ENEMY_Vagash|r hacia el |cRXP_FRIENDLY_Montaraz de Dun Morogh|r
+    >>|cRXP_WARN_Asegúrate de causarle al menos 50% de daño|r
+    .goto Dun Morogh,62.8,54.6,10,0
+    .mob Vagash
+    .target Dun Morogh Mountaineer
+    .complete 314, 1
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:16|tHabla con |cRXP_FRIENDLY_Rudra Semperámbar|r
+    .goto Dun Morogh, 63.1, 49.8
+    .target Rudra Amberstill
+    .turnin 314 >>Entrega la misión La protección del rebaño
+step
+    #label LochEnter
+    .goto 1432,16.494,58.424,20,0
+    .goto 1432,19.594,62.735,20,0
+    .goto 1432,20.749,64.326,20,0
+    .goto 1432,21.106,65.007,20,0
+    .goto 1432,21.388,66.357,20,0
+    .goto 1432,21.498,67.840
+    .subzone 924 >> Viaja a Loch Modan a través del Paso de la Puerta Sur
+    .zoneskip Loch Modan
+step
+    .goto 1432/0,-2602.54,-5832.73
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Montaraz Pedernal|r
+    .accept 224 >> Acepta la misión En defensa de las tierras del rey
+    .target Mountaineer Cobbleflint
+step
+    #optional
+    #completewith next
+    .goto 1432/0,-2635.61,-5879.14,12,0
+    .goto 1432/0,-2645.27,-5874.91,12,0
+    .goto 1432/0,-2631.48,-5847.50,12 >> Entra en el Búnker. Ve al piso superior
+step
+    .goto 1432/0,-2634.59,-5842.81
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Capitán Rugelfuss|r dentro del búnker
+    .accept 267 >> Acepta la misión La amenaza trogg
+    .target Captain Rugelfuss
+step
+    .goto 1432/0,-2729.40,-5534.96
+    >>Mata |cRXP_ENEMY_Troggs Rompecantos|r y |cRXP_ENEMY_Exploradores Rompecantos|r. Despójalos para obtener sus |cRXP_LOOT_Dientes de trogg de piedra|r
+    >>|cRXP_WARN_Ten cuidado ya que los |cRXP_ENEMY_Exploradores Rompecantos|r lanzan|r |T132222:0|t[Disparar] |cRXP_WARN_(Lanzamiento a distancia: Inflige 14-20 de daño)|r
+    >>|cRXP_WARN_Esta es una zona de reaparición rápida. No deberías necesitar moverte de aquí|r
+    .complete 224,1 --Kill Stonesplinter Trogg (x10)
+    .mob +Stonesplinter Trogg
+    .complete 224,2 --Kill Stonesplinter Scout (x10)
+    .mob +Stonesplinter Scout
+    .complete 267,1 --Collect Trogg Stone Tooth (x8)
+    .mob +Stonesplinter Trogg
+    .mob +Stonesplinter Scout
+    .isOnQuest 224
+    .isOnQuest 267
+step
+    #optional
+    #completewith next
+    #label Thelsamar
+    .subzone 144 >> Viaja a Thelsamar
+step
+    #completewith next
+    #optional
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Montaraz Kadrell|r
+    >>|cRXP_FRIENDLY_Montaraz Kadrell|r |cRXP_WARN_patrulla la carretera que cruza Thelsamar|r
+    .accept 416 >> Acepta la misión Mata ratas
+    .accept 1339 >> Acepta la misión La tarea del montaraz Pico Tormenta
+    .target Mountaineer Kadrel
+step
+    #label ThelsamarFirst
+    .goto 1432/0,-2954.42,-5394.10
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Vidra Hogartufa|r
+    .accept 418 >> Acepta la misión Morcillas de Thelsamar
+    .target Vidra Hearthstove
+step
+    #optional
+    .goto 1432/0,-2954.42,-5394.10
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Vidra Hogartufa|r
+    .turnin 418 >> Entrega la misión Morcillas de Thelsamar
+    .target Vidra Hearthstove
+    .isQuestComplete 418
+step
+    #optional
+    #completewith StormpikeO
+    .abandon 1338 >> Abandona la misión Un pedido de Pico Tormenta. Esto desbloquea la misión La tarea del montaraz Pico Tormenta que te dará 550xp gratuitos al entregar
+step
+    #label StormpikeO
+    .line Loch Modan,36.72,41.97,37.24,43.19,37.33,45.63,36.77,46.20,35.19,46.88,32.67,49.71,35.19,46.88,36.77,46.20,37.33,45.63,37.24,43.19,36.72,41.97
+    .goto 1432/0,-3006.61,-5259.57,15,0
+    .goto 1432/0,-3020.95,-5282.02,15,0
+    .goto 1432/0,-3023.44,-5326.90,15,0
+    .goto 1432/0,-3007.99,-5337.390,15,0
+    .goto 1432/0,-2964.41,-5349.90,15,0
+    .goto 1432/0,-2894.90,-5401.96,20,0
+    .goto 1432/0,-3007.99,-5337.390
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Montaraz Kadrell|r
+    >>|cRXP_FRIENDLY_Montaraz Kadrell|r |cRXP_WARN_patrulla la carretera que cruza Thelsamar|r
+    .accept 416 >> Acepta la misión Mata ratas
+    .accept 1339 >> Acepta la misión La tarea del montaraz Pico Tormenta
+    .target Mountaineer Kadrell
+step
+    .goto 1432/0,-2929.87,-5424.84
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Thorgrum Borrelson|r
+    .fp Thelsamar >> Consigue la ruta de vuelo de Thelsamar
+    .target Thorgrum Borrelson
+step
+    #optional
+    #completewith KingsLands
+    >>Mata |cRXP_ENEMY_Osos negros mayores|r. Despójalos para obtener su |cRXP_LOOT_Carne de oso|r
+    >>Mata |cRXP_ENEMY_Jabalíes monteses|r. Despójalos para obtener sus |cRXP_LOOT_Intestinos de jabalí|r
+    >>Mata |cRXP_ENEMY_Rondadoras del bosque|r. Despójalos para obtener su |cRXP_LOOT_Icor de araña|r
+    .collect 3172,3,418,1 --Collect Boar Intestines (x3)
+    .mob +Mountain Boar
+    .collect 3173,3,418,1 --Collect Bear Meat (x3)
+    .mob +Elder Black Bear
+    .collect 3174,3,418,1 --Collect Spider Ichor (x3)
+    .mob +Forest Lurker
+    >>|cRXP_WARN_Guarda los|r |T133970:0|t|cRXP_LOOT_[Trozos de carne de jabalí]|r |cRXP_WARN_para subir de nivel |T133971:0|t[Cocina] |cRXP_WARN_más tarde|r
+    >>|cRXP_WARN_No te desvíes de tu camino para completar esto ahora. Volverás a Loch Modan pronto|r
+    .isOnQuest 418
+step
+    #optional
+    #completewith next
+    .goto 1432/0,-2677.26,-5778.34,10,0
+    .goto 1432/0,-2648.30,-5876.75,15 >> Sube por el camino de tierra y luego déjate caer dentro del búnker
+step
+    .goto 1432/0,-2634.59,-5842.81
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Capitán Rugelfuss|r dentro del búnker
+    .turnin 267 >> Entrega la misión La amenaza trogg
+    .target Captain Rugelfuss
+    .isQuestComplete 267
+step
+    #label KingsLands
+    .goto 1432/0,-2602.54,-5832.73
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Montaraz Pedernal|r
+    .turnin 224 >> Entrega la misión En defensa de las tierras del rey
+    .target Mountaineer Cobbleflint
+    .isQuestComplete 224
+step
+    #optional
+    #completewith Algaz
+    >>Mata |cRXP_ENEMY_Osos negros mayores|r. Despójalos para obtener su |cRXP_LOOT_Carne de oso|r
+    >>Mata |cRXP_ENEMY_Jabalíes monteses|r. Despójalos para obtener sus |cRXP_LOOT_Intestinos de jabalí|r
+    >>Mata |cRXP_ENEMY_Rondadoras del bosque|r. Despójalos para obtener su |cRXP_LOOT_Icor de araña|r
+    .collect 3172,3,418,1 --Collect Boar Intestines (x3)
+    .mob +Mountain Boar
+    .collect 3173,3,418,1 --Collect Bear Meat (x3)
+    .mob +Elder Black Bear
+    .collect 3174,3,418,1 --Collect Spider Ichor (x3)
+    .mob +Forest Lurker
+    >>|cRXP_WARN_Guarda los|r |T133970:0|t|cRXP_LOOT_[Trozos de carne de jabalí]|r |cRXP_WARN_para subir de nivel |T133971:0|t[Cocina] |cRXP_WARN_más tarde|r
+    >>|cRXP_WARN_No te desvíes de tu camino para completar esto ahora. Volverás a Loch Modan pronto|r
+    .isOnQuest 418
+    .subzoneskip 925 --Algaz Station
+step
+    #optional
+    #label Algaz
+    #completewith Stormpike1
+    .goto 1432,23.490,18.008
+    .subzone 925 >>Viaja a la Estación de Algaz
+step
+    #optional
+    #requires Algaz
+    #completewith Stormpike1
+    .goto 1432,23.490,18.008,15,0
+    .goto 1432,24.279,17.959,12 >> Entra en el Búnker. Ve al piso superior
+step
+    #label Stormpike1
+    .goto Loch Modan,24.77,18.40
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Montaraz Pico Tormenta|r dentro del búnker
+    .turnin 1339 >> Entrega la misión La tarea del montaraz Pico Tormenta
+    .accept 307 >> Acepta la misión Zarpas asquerosas
+    .target Mountaineer Stormpike
+step
+    #completewith Gear
+    #optional
+    #loop
+    .goto 1432/0,-2684.71,-5042.87,0
+    .goto 1432/0,-2712.57,-5286.61,0
+    .goto 1432/0,-3033.92,-4797.29,0
+    .waypoint 1432/0,-3033.92,-4797.29,50,0
+    .waypoint 1432/0,-2972.41,-4796.92,50,0
+    .waypoint 1432/0,-2684.71,-5042.87,50,0
+    .waypoint 1432/0,-2712.57,-5286.61,50,0
+    >>Mata |cRXP_ENEMY_Ratatúneles|r. Despójalas para obtener sus |cRXP_LOOT_Orejas|r
+    .complete 416,1 --Collect Tunnel Rat Ear (x12)
+    .mob +Tunnel Rat Scout
+    .mob +Tunnel Rat Vermin
+    .mob +Tunnel Rat Forager
+    .mob +Tunnel Rat Geomancer
+    .mob +Tunnel Rat Digger
+    .mob +Tunnel Rat Surveyor
+step
+    #optional
+    #label SilverMine
+    #completewith next
+    .goto 1432/0,-2972.96,-4835.187,20 >> Entra en la Mina de Fuenteplata
+step
+    .goto 1432/0,-2984.82,-4902.33
+    >>Abre los |cRXP_PICK_Cajones de la Liga de Mineros|r dentro de la mina. Despójalos para obtener el |cRXP_LOOT_Equipamiento de minero|r
+    .complete 307,1 --Miners' Gear (4)
+step << Warrior
+    #ssf
+    #label Gear
+    .goto 1432/0,-3176.16,-4669.34
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Nillen Andemar|r
+    >>|cRXP_BUY_Cómprale la|r |T133476:0|t[Maza con pinchos pesada] |cRXP_BUY_O la|r |T133053:0|t[Gran maza de maderaférrea] |cRXP_BUY_(si están disponibles)|r
+    >>|cRXP_WARN_Si no puedes pagarlo, entonces obtén dinero de los cercanos |cRXP_ENEMY_Ratatúneles|r hasta que tengas suficiente|r
+    >>|cRXP_WARN_Hazlo rápidamente ya que otro jugador podría comprarlo antes que tú|r
+    >>|cRXP_WARN_Si no deseas hacer esto, omite este paso|r
+    .collect 4778,1,307,1 --Heavy Spiked Mace (1)
+    .collect 4777,1,307,1 --Ironwood Maul (1)
+    .target Nillen Andemar
+    .itemcount 4778,<1 --Heavy Spiked Mace (<1)
+    .itemcount 4777,<1 --Ironwood Maul (<1)
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.8
+step << Warrior
+    #ah
+    #label Gear
+    .goto 1432/0,-3176.16,-4669.34
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Nillen Andemar|r
+    >>|cRXP_BUY_Cómprale la|r |T133476:0|t[Maza con pinchos pesada] |cRXP_BUY_O la|r |T133053:0|t[Gran maza de maderaférrea] |cRXP_BUY_(si están disponibles)|r
+    >>|cRXP_WARN_Si no puedes pagarlo, entonces obtén dinero de los cercanos |cRXP_ENEMY_Ratatúneles|r hasta que tengas suficiente|r
+    >>|cRXP_WARN_Hazlo rápidamente ya que otro jugador podría comprarlo antes que tú|r
+    >>|cRXP_WARN_Si no quieres hacer esto o prefieres intentar comprar un arma más barata/mejor de la Casa de Subastas pronto, omite este paso|r
+    .collect 4778,1,307,1 --Heavy Spiked Mace (1)
+    .collect 4777,1,307,1 --Ironwood Maul (1)
+    .target Nillen Andemar
+    .itemcount 4778,<1 --Heavy Spiked Mace (<1)
+    .itemcount 4777,<1 --Ironwood Maul (1)
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.8
+step << Warrior
+    #optional
+    #completewith PawsDelivery
+    +|cRXP_WARN_Equipa la|r |T133476:0|t[Maza con pinchos pesada]
+    .use 4778
+    .itemcount 4778,1
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.5
+    .xp <14,1
+step << Warrior
+    #optional
+    #completewith PawsDelivery
+    +|cRXP_WARN_Equipa la|r |T133053:0|t[Gran maza de maderaférrea]
+    .use 4777
+    .itemcount 4777,1
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.7
+    .xp <13,1
+step
+    #label Gear
+step
+    .goto 1432/0,-2684.71,-5042.87,0
+    .goto 1432/0,-2712.57,-5286.61,0
+    .goto 1432/0,-3033.92,-4797.29,0
+    .goto 1432/0,-3033.92,-4797.29,50,0
+    .goto 1432/0,-2972.41,-4796.92,50,0
+    .goto 1432/0,-2684.71,-5042.87,50,0
+    .goto 1432/0,-2712.57,-5286.61,50,0
+    .goto 1432/0,-3033.92,-4797.29,50,0
+    .goto 1432/0,-2972.41,-4796.92
+    >>Mata |cRXP_ENEMY_Ratatúneles|r. Despójalas para obtener sus |cRXP_LOOT_Orejas|r
+    .complete 416,1 --Collect Tunnel Rat Ear (x12)
+    .mob +Tunnel Rat Scout
+    .mob +Tunnel Rat Vermin
+    .mob +Tunnel Rat Forager
+    .mob +Tunnel Rat Geomancer
+    .mob +Tunnel Rat Digger
+    .mob +Tunnel Rat Surveyor
+step
+    #optional
+    #completewith PawsDelivery
+    >>Mata |cRXP_ENEMY_Osos negros mayores|r. Despójalos para obtener su |cRXP_LOOT_Carne de oso|r
+    >>Mata |cRXP_ENEMY_Jabalíes monteses|r. Despójalos para obtener sus |cRXP_LOOT_Intestinos de jabalí|r
+    >>Mata |cRXP_ENEMY_Rondadoras del bosque|r. Despójalas para obtener su |cRXP_LOOT_Icor|r
+    .collect 3172,3,418,1 --Collect Boar Intestines (x3)
+    .mob +Mountain Boar
+    .collect 3173,3,418,1 --Collect Bear Meat (x3)
+    .mob +Elder Black Bear
+    .collect 3174,3,418,1 --Collect Spider Ichor (x3)
+    .mob +Forest Lurker
+    .subzoneskip 925 --Algaz Station
+step
+    #optional
+    #completewith next
+    .goto 1432,23.490,18.008,15,0
+    .goto 1432,24.279,17.959,15 >> Entra en el Búnker
+step
+    #optional
+    #completewith next
+    .goto 1432/0,-2659.45,-4822.45
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Gothor Brumn|r
+    .vendor 1362 >>|cRXP_WARN_Vende y repara si es necesario|r
+    .target Gothor Brumn
+step
+    #label PawsDelivery
+    .goto 1432/0,-2676.99,-4825.980
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Montaraz Pico Tormenta|r
+    .turnin 307 >> Entrega la misión Zarpas asquerosas
+    .target Mountaineer Stormpike
+step
+    >>Mata |cRXP_ENEMY_Osos negros mayores|r. Despójalos para obtener su |cRXP_LOOT_Carne de oso|r
+    >>Mata |cRXP_ENEMY_Jabalíes monteses|r. Despójalos para obtener sus |cRXP_LOOT_Intestinos de jabalí|r
+    >>Mata |cRXP_ENEMY_Rondadoras del bosque|r. Despójalas para obtener su |cRXP_LOOT_Icor|r
+    .collect 3173,3,418,1 --Bear Meat (3)
+    .mob +Elder Black Bear
+    .goto 1432/0,-2735.74,-4684.34,90,0
+    .goto 1432/0,-2846.07,-4682.50,90,0
+    .goto 1432/0,-2782.63,-4770.80,90,0
+    .goto 1432/0,-2835.04,-4976.83,90,0
+    .goto 1432/0,-2915.03,-5044.89,90,0
+    .goto 1432/0,-3080.53,-5100.08,90,0
+    .goto 1432/0,-2735.74,-4684.34,90,0
+    .goto 1432/0,-2846.07,-4682.50,90,0
+    .goto 1432/0,-2782.63,-4770.80,90,0
+    .goto 1432/0,-2835.04,-4976.83,90,0
+    .goto 1432/0,-2915.03,-5044.89,90,0
+    .goto 1432/0,-3080.53,-5100.08,90,0
+    .goto 1432/0,-2735.74,-4684.34
+    .collect 3172,3,418,1 --Boar Intestines (3)
+    .mob +Mountain Boar
+    .goto 1432/0,-3041.92,-5129.51,90,0
+    .goto 1432/0,-3017.09,-5219.65,90,0
+    .goto 1432/0,-2815.73,-5147.91,90,0
+    .goto 1432/0,-2757.81,-4952.91,90,0
+    .goto 1432/0,-2782.63,-4903.25,90,0
+    .goto 1432/0,-3041.92,-5129.51,90,0
+    .goto 1432/0,-3017.09,-5219.65,90,0
+    .goto 1432/0,-2815.73,-5147.91,90,0
+    .goto 1432/0,-2757.81,-4952.91,90,0
+    .goto 1432/0,-2782.63,-4903.25,90,0
+    .goto 1432/0,-3041.92,-5129.51
+    .collect 3174,3,418,1 --Spider Ichor (3)
+    .mob +Forest Lurker
+    .goto 1432/0,-2873.66,-4789.19,90,0
+    .goto 1432/0,-2766.08,-4866.45,90,0
+    .goto 1432/0,-2926.07,-5232.53,90,0
+    .goto 1432/0,-2992.27,-5055.93,90,0
+    .goto 1432/0,-3069.5,-5078.01,90,0
+    .goto 1432/0,-2873.66,-4789.19,90,0
+    .goto 1432/0,-2766.08,-4866.45,90,0
+    .goto 1432/0,-2926.07,-5232.53,90,0
+    .goto 1432/0,-2992.27,-5055.93,90,0
+    .goto 1432/0,-3069.5,-5078.01,90,0
+    .goto 1432/0,-2873.66,-4789.19
+step
+    #completewith FlintTinder
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Montaraz Kadrell|r
+    >>|cRXP_FRIENDLY_Montaraz Kadrell|r |cRXP_WARN_patrulla la carretera que cruza Thelsamar|r
+    .target Mountaineer Kadrell
+    .turnin 416 >> Entrega la misión Mata ratas
+step
+    #optional
+    #completewith FlintTinder
+    .goto 1432,35.273,47.750,10,0
+    .goto 1432,35.433,48.243,12 >> Entra en la Pensión La Cebada
+step
+    .goto 1432/0,-2954.42,-5394.10
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Vidra Hogartufa|r
+    .turnin 418 >> Entrega la misión Morcillas de Thelsamar
+    .target Vidra Hearthstove
+step
+    #label FlintTinder
+    .goto Loch Modan,37.17,47.94,8,0
+    .goto Loch Modan,37.24,47.38
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Jern Cornamenta|r
+    .accept 436 >> Acepta la misión La excavación de Vetaferro
+    .target Jern Hornhelm
+step
+    .line Loch Modan,36.72,41.97,37.24,43.19,37.33,45.63,36.77,46.20,35.19,46.88,32.67,49.71,35.19,46.88,36.77,46.20,37.33,45.63,37.24,43.19,36.72,41.97
+    .goto 1432/0,-3006.61,-5259.57,15,0
+    .goto 1432/0,-3020.95,-5282.02,15,0
+    .goto 1432/0,-3023.44,-5326.90,15,0
+    .goto 1432/0,-3007.99,-5337.390,15,0
+    .goto 1432/0,-2964.41,-5349.90,15,0
+    .goto 1432/0,-2894.90,-5401.96,20,0
+    .goto 1432/0,-3007.99,-5337.390
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Montaraz Kadrell|r
+    >>|cRXP_FRIENDLY_Montaraz Kadrell|r |cRXP_WARN_patrulla la carretera que cruza Thelsamar|r
+    .target Mountaineer Kadrell
+    .turnin 416 >> Entrega la misión Mata ratas
+step
+    #loop
+    .goto 1432/0,-3319.800,-5217.600,20,0
+    .goto 1432/0,-3251.5499,-5285.8790,20,0
+    .goto 1432/0,-3342.5748,-5484.5540,20,0
+    .goto 1432/0,-3386.7082,-5462.4790,20,0
+    .goto 1432/0,-3319.800,-5217.600,0
+    .goto 1432/0,-3251.5499,-5285.8790,0
+    .goto 1432/0,-3342.5748,-5484.5540,0
+    .goto 1432/0,-3386.7082,-5462.4790,0
+    >>Haz clic en la |cRXP_PICK_Caja de herramientas de pesca descartada|r en el piso del lago
+    >>|cRXP_WARN_NOTA: Esto puede aparecer en una de muchas ubicaciones diferentes. Nada alrededor hasta que veas el signo de exclamación en tu minimapa|r
+    >>|cRXP_WARN_Ten cuidado con los de alto nivel|r al |cRXP_ENEMY_Joven trillanodonte|r
+    .accept 86614 >>Acepta la misión Plateado of the Waves
+step
+    .goto Loch Modan,64.89,66.66
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Magmar Ceñimal|r
+    .turnin 436 >> Entrega la misión La excavación de Vetaferro
+    .target Magmar Fellhew
+step
+    .goto Loch Modan,65.934,65.622
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Prospector Vetaferro|r
+    .accept 298 >> Acepta la misión Un informe sobre el avance de la excavación
+    .target Prospector Ironband
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Daryl el Jovenzuelo|r
+    .accept 257 >> Acepta la misión La fanfarronada de un cazador
+    .goto Loch Modan,83.49,65.40
+    .target Daryl the Youngling
+step Rogue/NightElf Hunter/NightElf Warrior/NightElf Druid
+    .goto Loch Modan,82.6,64.0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con la |cRXP_FRIENDLY_Kat|r
+    .vendor >> |cRXP_BUY_Compra las|r |T132539:0|t[Botas de agilidad] |cRXP_BUY_a ella si están disponibles|r
+    .target Kat Sampson
+step
+    .goto Loch Modan,80.09,64.16,60,0
+    .goto Loch Modan,77.16,75.57,60,0
+    .goto Loch Modan,70.78,72.91,60,0
+    .goto Loch Modan,76.65,62.27,60,0
+    .goto Loch Modan,76.36,56.05,60,0
+    .goto Loch Modan,80.09,64.16,60,0
+    .goto Loch Modan,77.16,75.57,60,0
+    .goto Loch Modan,70.78,72.91,60,0
+    .goto Loch Modan,76.65,62.27,60,0
+    .goto Loch Modan,76.36,56.05,60,0
+    .goto Loch Modan,80.09,64.16
+    >>Mata |cRXP_ENEMY_Águilas ratoneras montesas|r
+    >>|cRXP_WARN_Debes completar la misión y regresar a |cRXP_FRIENDLY_Daryl el Jovenzuelo|r en menos de 15 minutos. Si fallas la misión, abandónala y vuelve a aceptarla|r
+    .complete 257,1 -- Mountain Buzzard slain (6)
+    .mob Mountain Buzzard
+step
+    #completewith next
+    .goto Loch Modan,82.92,59.37,80,0
+    .goto Loch Modan,83.28,62.97,25 >> Viaja hacia |cRXP_FRIENDLY_Daryl el Jovenzuelo|r
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Daryl el Jovenzuelo|r
+    .goto Loch Modan,83.49,65.40
+    .turnin 257 >> Entrega la misión La fanfarronada de un cazador
+    .target Daryl the Youngling
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Marek Coracero|r
+    .accept 385 >> Acepta la misión La caza de crocoliscos
+    .accept 86758 >>Acepta la misión Twisting the Cuchillo
+    .goto Loch Modan,81.76,61.66
+    .target Marek Ironheart
+step
+    #completewith next
+    >>Mata |cRXP_ENEMY_Crocoliscos del lago|r. Despójalos para obtener su |cRXP_LOOT_Carne|r y |cRXP_LOOT_Piel|r
+    .complete 385,1 -- Crocolisk Meat (5)
+    .complete 385,2 -- Crocolisk Skin (6)
+    .mob Loch Crocolisk
+step
+    .goto Loch Modan,62,44
+    >>Mata a |cRXP_ENEMY_Daggerfang|r, |cRXP_WARN_podría estar patrullando en la orilla|r. Despójalo para obtener |T3736888:0|t[|cRXP_LOOT_Marek's Crocolisco-Cuchillo de caza|r]
+    .complete 86758,1 --Marek's Croc Hunting Knife (1)
+    .mob Daggerfang
+step
+    #completewith next
+    .goto Loch Modan,54.7,38.3,200 >> Viaja a la isla ubicada en el centro de El Lago
+step
+    .goto Loch Modan,58.86,38.32,80,0
+    .goto Loch Modan,54.80,40.02,60,0
+    .goto Loch Modan,54.16,35.79,60,0
+    .goto Loch Modan,54.72,38.15
+    >>Mata |cRXP_ENEMY_Crocoliscos del lago|r. Despójalos para obtener su |cRXP_LOOT_Carne|r y |cRXP_LOOT_Piel|r
+    .complete 385,1 -- Crocolisk Meat (5)
+    .complete 385,2 -- Crocolisk Skin (6)
+    .mob Loch Crocolisk
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Marek Coracero|r
+    .turnin 385 >>Entrega la misión La caza de crocoliscos
+    .turnin 86758 >>Entrega la misión Twisting the Cuchillo
+    .goto Loch Modan,81.76,61.66
+    .target Marek Ironheart
+step
+    #optional
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Daryl el Jovenzuelo|r
+    .goto Loch Modan,83.49,65.40
+    .accept 258 >> Acepta la misión El reto de un cazador
+    .target Daryl the Youngling
+    .xp >16,1
+step
+    #optional
+    .goto Loch Modan,74.65,49.60,70,0
+    .goto Loch Modan,75.80,43.43,70,0
+    .goto Loch Modan,71.10,38.98,70,0
+    .goto Loch Modan,65.59,41.89,70,0
+    .goto Loch Modan,61.66,32.02,70,0
+    .goto Loch Modan,72.79,39.86,70,0
+    .goto Loch Modan,73.87,51.85,70,0
+    .goto Loch Modan,69.45,39.18
+    >>Mata |cRXP_ENEMY_Jabalíes monteses mayores|r
+    >>|cRXP_WARN_Debes completar la misión y regresar junto a |cRXP_FRIENDLY_Daryl el Jovenzuelo|r en 12 minutos. Si fallas la misión, abandónala y vuelve a aceptarla|r
+    .complete 258,1 -- Elder Mountain Boar slain (5)
+    .mob Elder Mountain Boar
+    .isOnQuest 258
+step
+    #completewith next
+    #optional
+    .goto Loch Modan,82.92,59.37,80,0
+    .goto Loch Modan,83.28,62.97,25 >> Viaja hacia |cRXP_FRIENDLY_Daryl el Jovenzuelo|r
+step
+    #optional
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Daryl el Jovenzuelo|r
+    .goto Loch Modan,83.49,65.40
+    .turnin 258 >> Entrega la misión El reto de un cazador
+    .target Daryl the Youngling
+    .isOnQuest 258
+step
+    #optional
+    .xp 16-2360 >> Farmea hasta que falten 2360 puntos de experiencia para el nivel 16 (12.040/14.400)
+step
+    >>Salta fuera de la cabaña y muere a los mobs de abajo
+    .deathskip >> Muere y reaparece en el cementerio de Thelsamar
+step
+    .goto Loch Modan,37.17,47.94,8,0
+    .goto Loch Modan,37.24,47.38
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Jern Cornamenta|r
+    .turnin 298 >> Entrega la misión Un informe sobre el avance de la excavación
+    .accept 301 >> Acepta la misión Informe a Forjaz
+    .target Jern Hornhelm
+step
+    .goto 1432/0,-3104.900,-5210.100,5,0
+    .goto 1432/0,-3086.600,-5216.800
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Khara Deepwater::1684|r
+    .target Khara Deepwater::1684
+    .turnin 86614 >>Entrega la misión Plateado of the Waves
+step
+    #label LochEnd
+step
+    #label flyIF
+    .goto 1432/0,-2929.87,-5424.84
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Thorgrum Borrelson|r
+    .fly Ironforge >> Vuela a Forjaz
+    .target Thorgrum Borrelson
+    .zoneskip Ironforge
+step
+    .goto Ironforge,74.645,11.742
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Prospector Pico Tormenta|r
+    .turnin 301 >> Entrega la misión Informe a Forjaz
+    .target Prospector Stormpike
+step << Hunter
+    .goto 1455/0,-1266.100,-5006.700
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Belia Tronagranito|r
+    .trainer >> Aprende tus hechizos de clase
+    .target Regnus Thundergranite
+step << Priest
+    .goto 1455/0,-897.200,-4607.200
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Sumo sacerdote Rohan|r
+    .trainer >> Aprende tus hechizos de clase
+    .target High Priest Rohan
+step << Priest/Druid
+    #ah
+    #label OilWandFood
+    #completewith AHCheck
+    .goto 1455/0,-917.57,-4967.58,-1--c:Ironforge,25.800,75.500
+    .goto 1455/0,-904.92,-4962.83,-1--c:Ironforge,24.200,74.600
+    .goto 1455/0,-901.76,-4948.06,-1--c:Ironforge,23.800,71.800
+    >>|cRXP_WARN_Compra lo siguiente si puedes permitírtelo:|r
+    >>|T134711:0|t[Aceite de zahorí menor] |cRXP_WARN_y|r |T133906:0|t[Sabiola ahumada]
+    >>|cRXP_WARN_También busca mejoras de DPS altas|r |T132317:0|t[Varita] |cRXP_WARN_que puedas usar ahora/pronto|r << Priest
+    >>|cRXP_WARN_Estos proporcionarán un aumento de DPS alto en los primeros niveles. Si no quieres hacerlo o no puedes, omite este paso|r
+    .collect 20744,1 -- Minor Wizard Oil (1)
+    .collect 21072,20 -- Smoked Sagefish (20)
+    .target Auctioneer Lympkin
+    .target Auctioneer Redmuse
+    .target Auctioneer Buckler
+step << Rogue
+    .goto Ironforge,51.495,15.330
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Fenthwick|r
+    .trainer >> Aprende tus hechizos de clase
+    .target Fenthwick
+step << Warrior
+    .goto Ironforge,65.905,88.405
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Bilban Cálculo|r
+    .trainer >> Aprende tus hechizos de clase
+    .target Bilban Tosslespanner
+step << Druid
+    #completewith next
+	.cast 18960 >> Lanza Teletransporte a: Claro de la Luna
+	.zoneskip Moonglade
+step << Druid
+    .goto Moonglade,52.53,40.57
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Loganaar|r
+    .trainer >> Aprende tus hechizos de clase
+    .target Loganaar
+step
+    .hs >>Usa tu Piedra de hogar para ir a Auberdine
+    .zoneskip Darkshore
+
+]])
+
+RXPGuides.RegisterGuide([[
+#forever
+#disabledungeons
 #version 1
 << Alliance
 #group RestedXP Guía Forever (A)
@@ -3826,7 +3876,7 @@ step
     >>Haz clic en el |cRXP_PICK_Libro del Crepúsculo|r en el pedestal del norte
     .turnin 949 >> Entrega la misión El campamento del Martillo Crepuscular
     .accept 950 >> Acepta la misión Regresa junto a Onus
-    .accept 98042 >>Acepta la misión Pura diversión Until...
+    .accept 98042 >>Acepta la misión Es pura diversión y juegos hasta que...
 step
     #completewith TheryluneEnd
     >>Mata a los |cRXP_ENEMY_Discípulos Crepuscular|r y a los |cRXP_ENEMY_Matones Crepuscular|r. Despójalos para obtener el |cRXP_LOOT_Ojo incomparable|r y el |T133743:0|t[|cRXP_LOOT_Libro: Los Poderes inferiores|r]
@@ -4031,7 +4081,6 @@ step
     #optional
     .goto 1439,35.743,43.710
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Cerellean Zarpablanca|r
-    >>|cRXP_WARN_Es posible que necesites esperar a que termine su Roleplay si alguien más acaba de entregar la misión|r
     .turnin 963 >> Entrega la misión Un amor eterno
     .target Cerellean Whiteclaw
     .isQuestComplete 963
@@ -4517,7 +4566,7 @@ step << Dwarf Hunter/Human Hunter/Skyborne Hunter
     #label DarnDwarfHCook1
     #requires TravelDarnDwarfHBoat
     #completewith DarnDwarfHBoat
-    >>|cRXP_WARN_En el barco si acaba de llegar o en el muelle si acaba de partir:|r
+    >>|cRXP_WARN_Mientras esperas al Bote en el muelle:|r
     .cast 818 >>|cRXP_WARN_Crea una|r |T135805:0|t[Hoguera básica] |cRXP_WARN_(en la pestaña General de tu Libro de Hechizos)|r
     .usespell 818
     .zoneskip Teldrassil
@@ -4554,14 +4603,12 @@ step << Dwarf Hunter/Human Hunter/Skyborne Hunter
     .goto 1438/1,965.80,8780.95
     .zone Darnassus >> Toma el portal morado a Darnassus
 step << Dwarf Hunter/Human Hunter/Skyborne Hunter
-    #completewith next
     .goto 1457/1,2511.01,10178.05
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Jocaste|r
     .trainer >> Aprende tus hechizos de clase
     .target Jocaste
 step << Dwarf Hunter/Human Hunter/Skyborne Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ilyenia Fuegolunar|r
-    .skipgossipid 96881
     .goto 1457/1,2329.19,9908.60
     .train 264 >> Aprende el uso de Arcos
     .train 227 >> Aprende el uso de Bastones
@@ -4724,7 +4771,7 @@ step << !Hunter
     #label DarkshoreRRCook1
     #requires TravelMenethilRRBoat
     #completewith MenethilRRBoat
-    >>|cRXP_WARN_En el barco si acaba de llegar o en el muelle si acaba de partir:|r
+    >>|cRXP_WARN_Mientras esperas al Bote en el muelle:|r
     .cast 818 >>|cRXP_WARN_Crea una|r |T135805:0|t[Hoguera básica] |cRXP_WARN_(en la pestaña General de tu Libro de Hechizos)|r
     .usespell 818
     .zoneskip Loch Modan
@@ -4812,6 +4859,7 @@ step << Shaman
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 #version 1
 << Alliance !Hunter
 #group RestedXP Guía Forever (A)
@@ -4822,11 +4870,11 @@ RXPGuides.RegisterGuide([[
 
 step << !Shaman
     .goto 1453/0,1193.100,-8328.900
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Manifest Clerk Philmor::268511|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Manifest Clerk Philmor::268511|r
     .target Manifest Clerk Philmor::268511
     .accept 97220 >>Acepta la misión Philmor's Favor
 step << Shaman
-    .goto 1453/0,758.4316,-8140.6689
+    .goto 1453/0,634.800,-8390.900
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Shoni la Shilenshiosha|r
     .accept 2040 >> Acepta la misión Asalto subterráneo
     .target Shoni the Shilent
@@ -4834,7 +4882,7 @@ step << Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Wilder Cardortiga|r
     .accept 167 >> Acepta la misión Oh, hermano...
     .accept 168 >> Acepta la misión Recolección de recuerdos
-    .goto 1453/0,585.9322,-8241.1085
+    .goto 1453/0,501.200,-8468.601
     .target Wilder Thistlenettle
 step << Mage
     #completewith next
@@ -4901,7 +4949,7 @@ step << !NightElf
     .target Furen Longbeard
     .isOnQuest 1338
 step << !Shaman
-    .goto 1453/0,758.4316,-8140.6689
+    .goto 1453/0,634.800,-8390.900
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Shoni la Shilenshiosha|r
     .accept 2040 >> Acepta la misión Asalto subterráneo
     .target Shoni the Shilent
@@ -4918,7 +4966,7 @@ step << !Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Wilder Cardortiga|r
     .accept 167 >> Acepta la misión Oh, hermano...
     .accept 168 >> Acepta la misión Recolección de recuerdos
-    .goto 1453/0,585.9322,-8241.1085
+    .goto 1453/0,501.200,-8468.601
     .target Wilder Thistlenettle
 step << Rogue
     .goto 1453/0,377.61,-8752.30
@@ -5015,16 +5063,16 @@ step
     #completewith orcs
     .goto 1453/0,490.12,-8835.67
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Dungar Tragolargo|r
-    .fly Redridge >> Vuela a Montañas Crestagrana << !NightElf
-    .fp Stormwind >> Aprende la ruta de vuelo hacia Ventormenta << NightElf
+    .fly Redridge >> Vuela a Montañas Crestagrana << !NightElf !Skyborne
+    .fp Stormwind >> Aprende la ruta de vuelo hacia Ventormenta << NightElf/Skyborne
     .target Dungar Longdrink
     .zoneskip Redridge Mountains
-step << NightElf
+step << NightElf/Skyborne
     #completewith RRFP
     .goto 1429/0,389.800,-9119.900
     .zone Elwynn Forest >> Sal de Ventormenta
     .zoneskip Redridge Mountains
-step << NightElf
+step << NightElf/Skyborne
     #completewith RRFP
     .goto 1433/0,-1948.56,-9582.75
     .zone Redridge Mountains >> Viaja a las Montañas Crestagrana
@@ -5040,7 +5088,7 @@ step
     .accept 246 >> Acepta la misión Evaluar la amenaza
     .accept 98407 >>Acepta la misión Muestra de fuerza
     .target Deputy Feldon
-step << NightElf
+step << NightElf/Skyborne
     #label RRFP
     .goto 1433/0,-2234.900,-9435.300
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ariena Tempespluma|r
@@ -5067,7 +5115,7 @@ step
     .group
     .goto 1433/0,-2208.600,-9243.500
     >>Haz clic en el |cRXP_PICK_Cartel de Se busca|r
-    .accept 95999 >>Acepta la misión WANTED: Incinerador Gar'im
+    .accept 95999 >>Acepta la misión SE BUSCA: Incinerador Gar'im
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Magistrado Solomon|r
 	.target Magistrate Solomon
@@ -5244,14 +5292,14 @@ step
     #sticky
     #label IncineratorGarim
     .waypoint 1433/0,-3261.400,-9824.700
-    >>Mata al |cRXP_ENEMY_Incinerador Gar'im|r dentro de la cueva. Despójalo para obtener el |cRXP_LOOT_Roto Bastón de Incinerador Gar'im|r
-    >>|cRXP_WARN_Omite este paso si no eres capaz de encontrar un grupo para él|r
+    >>Mata a |cRXP_ENEMY_Incinerador Gar'im|r dentro de la cueva. Despójalo para obtener el |cRXP_LOOT_Broken Bastón of Incinerador Gar'im|r
+    >>|cRXP_WARN_Omite este paso si no puedes encontrar un grupo para él|r
     .complete 95999,1 -- Broken Staff of Incinerator Gar'im (1)
     .mob Incinerator Gar'im
 step
     #completewith next
-    >>Despoja los |cRXP_PICK_Grain Sacks|r y los |cRXP_PICK_Meat Haunches|r en el suelo para obtener los |cRXP_LOOT_Suministros robados|r
-    >>Despoja los |cRXP_PICK_Weapon Racks|r y las |cRXP_PICK_Stolen Armas|r en el suelo
+    >>Despoja los |cRXP_PICK_Grain Sacks|r y los |cRXP_PICK_Meat Haunches|r del suelo para obtener los |cRXP_LOOT_Suministros robados|r
+    >>Despoja los |cRXP_PICK_Weapon Racks|r y las |cRXP_PICK_Stolen Armas|r del suelo
     .complete 98387,1 -- Stolen Supplies (10)
     .complete 98387,2 -- Stolen Weapon (8)
 step
@@ -5274,8 +5322,8 @@ step
     .goto 1433/0,-3259.74,-9566.82,60,0
     .goto 1433/0,-3092.80,-9694.82,60,0
     .goto 1433/0,-3177.25,-9718.85,60,0
-    >>Despoja los |cRXP_PICK_Grain Sacks|r y los |cRXP_PICK_Meat Haunches|r en el suelo para obtener los |cRXP_LOOT_Suministros robados|r
-    >>Despoja los |cRXP_PICK_Weapon Racks|r y las |cRXP_PICK_Stolen Armas|r en el suelo
+    >>Despoja los |cRXP_PICK_Grain Sacks|r y los |cRXP_PICK_Meat Haunches|r del suelo para obtener los |cRXP_LOOT_Suministros robados|r
+    >>Despoja los |cRXP_PICK_Weapon Racks|r y las |cRXP_PICK_Stolen Armas|r del suelo
     .complete 98387,1 -- Stolen Supplies (10)
     .complete 98387,2 -- Stolen Weapon (8)
 step
@@ -5420,28 +5468,32 @@ step << Druid
     .goto 1457/1,2564.600,10179.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Mathrengyl Garroso::4217|r
     .target Mathrengyl Bearwalker::4217
-    .accept 98393 >>Acepta la misión Great Gato Espíritu
+    .accept 98393 >>Acepta la misión El Gran espíritu felino
 
+step << Druid
+    #completewith next
+	.cast 18960 >> Lanza Teletransporte a: Claro de la Luna
+    .zoneskip Moonglade
 step << Druid
     .goto 1450/1,-2678.900,8020.000
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Dendrita Rafagaestelar::11802|r
     .target Dendrite Starblaze::11802
-    .turnin 98393 >>Entrega la misión Great Gato Espíritu
-    .accept 98341 >>Acepta la misión The Great Windborne Gato Espíritu << Skyborne
-    .accept 98341 >>Acepta la misión Great Gato Espíritu << !Skyborne
+    .turnin 98393 >>Entrega la misión El Gran espíritu felino
+    .accept 98341 >>Acepta la misión El gran espíritu felino del viento << Skyborne
+    .accept 98394 >>Acepta la misión El Gran espíritu felino << !Skyborne
 step << Druid !Skyborne
     .goto 1450/1,-2640.000,7338.900
-     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Gran espíritu felino|r
-    .turnin 98394 >>Entrega la misión Great Gato Espíritu
-    .accept 98396 >>Acepta la misión Great Gato Espíritu
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Gran espíritu felino|r
+    .turnin 98394 >>Entrega la misión El Gran espíritu felino
+    .accept 98396 >>Acepta la misión El Gran espíritu felino
     .target Great Cat Spirit
 step << Druid Skyborne
     .goto 1450/1,-2352.700,7375.600,10,0
     .goto 1450/1,-2394.300,7361.200
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Avatar de Saeyleenan::272054|r
     .target Avatar of Saeyleenan::272054
-    .turnin 98341 >>Entrega la misión The Great Windborne Gato Espíritu
-    .accept 98404 >>Acepta la misión The Great Windborne Gato Espíritu
+    .turnin 98341 >>Entrega la misión El gran espíritu felino del viento
+    .accept 98404 >>Acepta la misión El gran espíritu felino del viento
 step << Druid
     #completewith next
     .goto 1450/1,-3046.700,7534.400
@@ -5468,21 +5520,21 @@ step << Druid
 step << Druid !Skyborne
     .goto 1450/1,-2640.000,7338.900
      >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Gran espíritu felino|r
-    .turnin 98396 >>Entrega la misión Great Gato Espíritu
-    .accept 98731 >>Acepta la misión Blessings of the Great Gato Espíritu
+    .turnin 98396 >>Entrega la misión El Gran espíritu felino
+    .accept 98731 >>Acepta la misión Bendiciones del Gran espíritu felino
     .target Great Cat Spirit
 step << Druid Skyborne
     .goto 1450/1,-2395.400,7361.400
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Avatar de Saeyleenan::272054|r
     .target Avatar of Saeyleenan::272054
-    .turnin 98404 >>Entrega la misión The Great Windborne Gato Espíritu
-    .accept 98738 >>Acepta la misión Blessings of the Great Windborne Gato Espíritu
+    .turnin 98404 >>Entrega la misión El gran espíritu felino del viento
+    .accept 98738 >>Acepta la misión Bendiciones del gran espíritu felino del viento
 step << Druid
     .goto 1450/1,-2678.200,8021.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTeletranspórtate a Claro de la Luna y habla con |cRXP_FRIENDLY_Dendrita Rafagaestelar::11802|r
     .target Dendrite Starblaze::11802
     .usespell 18960
-    .turnin 98738 >>Entrega la misión Blessings of the Great Windborne Gato Espíritu << Skyborne
+    .turnin 98738 >>Entrega la misión Bendiciones del gran espíritu felino del viento << Skyborne
     .accept 98397 >>Acepta la misión A Darnassus --<< Alliance
     --.accept 98362 >>Accept To Thunder Bluff << Horde
 step << Druid
@@ -5553,7 +5605,7 @@ step << Rogue
 step
     #optional
     .isQuestComplete 2040
-    .goto 1453/0,758.4316,-8140.6689
+    .goto 1453/0,634.800,-8390.900
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Shoni la Shilenshiosha|r
     .turnin 2040 >> Entrega la misión Asalto subterráneo
     .target Shoni the Shilent
@@ -5562,14 +5614,14 @@ step
     .isQuestComplete 168
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Wilder Cardortiga|r
     .turnin 168 >> Entrega la misión Recolección de recuerdos
-    .goto 1453/0,585.9322,-8241.1085
+    .goto 1453/0,501.200,-8468.601
     .target Wilder Thistlenettle
 step
     #optional
     .isQuestComplete 167
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Wilder Cardortiga|r
     .turnin 167 >> Entrega la misión Oh, hermano...
-    .goto 1453/0,585.9322,-8241.1085
+    .goto 1453/0,501.200,-8468.601
     .target Wilder Thistlenettle
 step << Warrior/Paladin
     #ah
@@ -5643,7 +5695,7 @@ step << Paladin/Priest
 step << Paladin
     .goto 1453/0,845.95,-8545.70
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Duthorian Rall|r. Te dará el |T133739:0|t[|cRXP_LOOT_Escrito sobre Valor|r]
-    use 6776 >>|cRXP_WARN_Use the |T133739:0|t[|cRXP_LOOT_Tome of Valor|r] to start the quest|r
+    .use 6776 >>|cRXP_WARN_Usa el |T133739:0|t[|cRXP_LOOT_Escrito sobre Valor|r] para iniciar la misión|r
     .collect 6776,1,1649 --Tome of Valor (1)
     .accept 1649 >>Acepta la misión Escrito sobre valor
     .target Duthorian Rall
@@ -5717,7 +5769,7 @@ step << !Dwarf Rogue
     >>Mata |cRXP_ENEMY_Telarácnidas venenosa pigmeas|r y |cRXP_ENEMY_Telarácnidas venenosas|r. Despójalas para obtener una |cRXP_LOOT_Glándula de veneno pequeña|r y sus |cRXP_LOOT_Patas pegajosas de araña|r
     >>|cRXP_WARN_Necesitas una|cRXP_LOOT_ Glándula de veneno pequeña|r para hacer un|r |T134437:0|t[Contraveneno] |cRXP_WARN_más tarde para quitar el perjuicio|r |T136230:0|t[Toque de Zanzil] |cRXP_WARN_más tarde|r
     >>|cRXP_WARN_Guarda las |cRXP_LOOT_Patas pegajosas de araña|r para más tarde|r
-    >>|cRXP_WARN_Si tienes un|r |T626003:0|t|cFFF48CBAPaladín|r |cRXP_WARN_o|r |T625999:0|t|cFFFF7C0ADruida|r |cRXP_WARN_amigo puedes omitir este paso y pedirles que lo eliminen por ti|r
+    >>|cRXP_WARN_Si tienes un|r |T626003:0|t|cFFF48CBAPaladín|r|cRXP_WARN_,|r |T625999:0|t|cFFFF7C0ADruida|r |cRXP_WARN_o|r |T626006:0|t|cFF0070DDChamán|r |cRXP_WARN_amigo, puedes omitir este paso y pedirle que lo quite por ti|r
     .collect 1475,1,2359,1 -- Small Venom Sac (1)
     .collect 2251,6,93,1,1 -- Gooey Spider Legs (6)
     .disablecheckbox
@@ -5814,7 +5866,7 @@ step << !Dwarf Rogue
     #requires AntiVenomEnd
     .goto 1453,43.070,26.155
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Shaina Fuller|r
-    >>|cRXP_WARN_Si tienes un|r |T626003:0|t|cFFF48CBAPaladin|r |cRXP_WARN_o|r |T625999:0|t|cFFFF7C0ADruida|r |cRXP_WARN_amigo, pídele que te quite el|r |T136230:0|t[Toque de Zanzil] |cRXP_WARN_en su lugar|r
+    >>|cRXP_WARN_Si tienes un|r |T626003:0|t|cFFF48CBAPaladín|r|cRXP_WARN_,|r |T625999:0|t|cFFFF7C0ADruida|r |cRXP_WARN_o|r |T626006:0|t|cFF0070DDChamán|r |cRXP_WARN_amigo, pídele que elimine el|r |T136230:0|t[Toque de Zanzil] |cRXP_WARN_por ti en su lugar|r
     .skill firstaid,80 >> |cRXP_WARN_Sube tus|r |T135966:0|t[Primeros auxilios] |cRXP_WARN_al 80|r
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
@@ -5822,7 +5874,7 @@ step << !Dwarf Rogue
     #label FirstAidEnd
     .goto 1453,43.070,26.155
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Shaina Fuller|r
-    >>|cRXP_WARN_Si tienes un|r |T626003:0|t|cFFF48CBAPaladin|r |cRXP_WARN_o|r |T625999:0|t|cFFFF7C0ADruida|r |cRXP_WARN_amigo, pídele que te quite el|r |T136230:0|t[Toque de Zanzil] |cRXP_WARN_en su lugar|r
+    >>|cRXP_WARN_Si tienes un|r |T626003:0|t|cFFF48CBAPaladín|r|cRXP_WARN_,|r |T625999:0|t|cFFFF7C0ADruida|r |cRXP_WARN_o|r |T626006:0|t|cFF0070DDChamán|r |cRXP_WARN_amigo, pídele que elimine el|r |T136230:0|t[Toque de Zanzil] |cRXP_WARN_por ti en su lugar|r
     .train 7934 >> |cRXP_WARN_Aprende|r |T134437:0|t[Contraveneno]
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
@@ -6021,6 +6073,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 #version 1
 << Alliance Hunter
 #group RestedXP Guía Forever (A)
@@ -6041,7 +6094,7 @@ step
     .goto 1439,44.401,76.425
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Kerlonian Semprumbrío|r para empezar la escolta
     >>|cRXP_WARN_Omite este paso si no está allí. Puede tomar hasta 25 minutos para que reaparezca|r
-    >>|cRXP_WARN_Esta es una misión cronometrada, tienes que escoltarlo a su bolsa en 20 minutos|r
+    >>|cRXP_WARN_Esta es una misión cronometrada. Tienes que escoltarlo a su bolsa en 20 minutos|r
     .accept 5321 >> Acepta la misión El despertar
     .target Kerlonian Evershade
     .isQuestTurnedIn 731 --Only shows if Prospector was already escorted
@@ -6176,7 +6229,7 @@ step
     .goto 1439,44.401,76.425
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Kerlonian Semprumbrío|r para empezar la escolta
     >>|cRXP_WARN_Omite este paso si no está allí. Puede tomar hasta 25 minutos para que reaparezca|r
-    >>|cRXP_WARN_Esta es una misión cronometrada, tienes que escoltarlo a su bolsa en 20 minutos|r
+    >>|cRXP_WARN_Esta es una misión cronometrada. Tienes que escoltarlo a su bolsa en 20 minutos|r
     .accept 5321 >> Acepta la misión El despertar
     .target Kerlonian Evershade
     .itemcount 13536,<1 --Horn of Awakening
@@ -6188,7 +6241,7 @@ step
     .itemcount 13536,<1 --Horn of Awakening
 step
     #label Kerlonian
-    --@TODO add coordinates for this
+    .goto 1439/1,206.400,4402.500
     >>|cRXP_WARN_Escolta a |cRXP_FRIENDLY_Kerlonian|r a su bolsa |cRXP_WARN_en Costa Oscura|r|r
     .use 13536 >> |cRXP_WARN_Usa el |T134229:0|t[|cRXP_LOOT_Cuerno de Despertar|r] siempre que |cRXP_FRIENDLY_Kerlonian|r se adormezca|r
     >>|cRXP_WARN_Evita correr por la carretera principal lo más posible. Los enemigos aparecerán sólo si estás en el camino|r
@@ -6540,6 +6593,12 @@ step << NightElf Hunter
     #completewith next
     .goto 1440/1,-283.73,2827.92,200 >> Viaja a Astranaar
 step << NightElf Hunter
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Shindrell Fuegoveloz|r
+	.target Shindrell Swiftfire
+    .goto 1440/1,-299.30,2796.01
+    .turnin 1008 >> Entrega la misión La Ensenada de Zoram
+    .accept 1134 >> Acepta la misión Alaorgullo del Espolón
+step << NightElf Hunter
     .goto 1440/1,-284.31,2828.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Daelyshia|r
     .fly Darkshore>> Vuela a Costa Oscura
@@ -6640,6 +6699,7 @@ step << Dwarf Hunter/Human Hunter/Skyborne Hunter
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 #version 1
 << Alliance !Hunter
 #group RestedXP Guía Forever (A)
@@ -6663,6 +6723,13 @@ step
     #optional
     #completewith AshenvaleEnd
     .hs >> Usa tu Piedra de hogar para ir a Auberdine
+    .cooldown item,6948,>2,1
+step << Druid
+    .goto 1450/1,-2491.79,7454.76
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Sindrayl|r
+    .fly Auberdine >> Vuela a Costa Oscura
+    .target Sindrayl
+    .zoneskip Darkshore
 step
     #optional
     #sticky
@@ -6759,7 +6826,7 @@ step
     >>Haz clic en el |cRXP_PICK_Libro del Crepúsculo|r en el pedestal del norte
     .turnin 949 >> Entrega la misión El campamento del Martillo Crepuscular
     .accept 950 >> Acepta la misión Regresa junto a Onus
-    .accept 98042 >>Acepta la misión Pura diversión hasta...
+    .accept 98042 >>Acepta la misión Es pura diversión y juegos hasta que...
 step
     #completewith TheryluneEnd
     >>Mata a los |cRXP_ENEMY_Discípulos Crepuscular|r y a los |cRXP_ENEMY_Matones Crepuscular|r. Despójalos para obtener el |cRXP_LOOT_Ojo incomparable|r y el |T133743:0|t[|cRXP_LOOT_Libro: Los Poderes inferiores|r]
@@ -6927,7 +6994,7 @@ step
     .goto 1439,44.401,76.425
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Kerlonian Semprumbrío|r para empezar la escolta
     >>|cRXP_WARN_Omite este paso si no está allí. Puede tomar hasta 25 minutos para que reaparezca|r
-    >>|cRXP_WARN_Esta es una misión cronometrada, tienes que escoltarlo a su bolsa en 20 minutos|r
+    >>|cRXP_WARN_Esta es una misión cronometrada. Tienes que escoltarlo a su bolsa en 20 minutos|r
     .accept 5321 >> Acepta la misión El despertar
     .target Kerlonian Evershade
 step
@@ -6961,8 +7028,8 @@ step
     .isOnQuest 995
 step
     #label KerlonianTwo
-    --@TODO add coordinates for this
-    >>|cRXP_WARN_Escolta |cRXP_FRIENDLY_Kerlonian|r a su bolsa |cRXP_WARN_en Costa Oscura|r|r
+    .goto 1439/1,206.400,4402.500
+    >>|cRXP_WARN_Escolta a |cRXP_FRIENDLY_Kerlonian|r a su bolsa |cRXP_WARN_en Costa Oscura|r|r
     .use 13536 >> |cRXP_WARN_Usa el |T134229:0|t[|cRXP_LOOT_Cuerno de Despertar|r] siempre que |cRXP_FRIENDLY_Kerlonian|r se adormezca|r
     >>|cRXP_WARN_Evita correr por la carretera principal lo más posible. Los enemigos aparecerán sólo si estás en el camino|r
     .complete 5321,2

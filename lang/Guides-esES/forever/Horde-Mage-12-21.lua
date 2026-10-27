@@ -4,12 +4,13 @@ if faction == "Alliance" then return end
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Horde Mage
 #name 12-17 Los Baldíos AoE
 #version 1
-#group RestedXP Guía Forever (H)
-#subgroup Guía de subida rápida de nivel: Mago de daño en área (AoE)
-#defaultfor Horde Mage
+#group RestedXP Horda Mago AoE
+
+#defaultfor none Horde Mage
 #next 17-21 Espolón/Baldíos AoE
 
 step << Mage
@@ -146,7 +147,7 @@ step
 step
     #label Crates
 	.goto 1413/1,-3305.08,-231.96,40,0
-    .goto 1413/1,-3294.95,-211.69.0,40,0
+    .goto 1413/1,-3294.95,-211.69,40,0
     .goto 1413/1,-3305.08,-130.61,40,0
     .goto 1413/1,-3396.28,-63.05,40,0
     >>Despoja las cajas marrones que se encuentran en la zona
@@ -450,7 +451,7 @@ step
 .target Gazrog
     .accept 3281 >>Acepta la misión La plata robada
 step
-    .goto 1413/1,-2676.82,-481.94.0
+    .goto 1413/1,-2676.82,-481.94
 >>Habla con |cRXP_FRIENDLY_Sergra Espinoscura|r
     .turnin 903 >>Entrega la misión Merodeadores en Los Baldíos
 .target Sergra Darkthorn
@@ -466,7 +467,7 @@ step
 .target Sergra Darkthorn
     .accept 905 >>Acepta la misión Los segadores furiosos
 step
-    .goto 1413/1,-2666.68,-481.94.90
+    .goto 1413/1,-2666.68,-481.94
 >>Habla con |cRXP_FRIENDLY_Tonga Tótem de Runa|r
     .turnin 870 >> Entrega la misión Las Charcas del Olvido
 .target Tonga Runetotem
@@ -707,23 +708,24 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Horde Mage
 #name 17-21 Espolón/Baldíos AoE
 #version 1
-#group RestedXP Guía Forever (H)
-#subgroup Guía de subida rápida de nivel: Mago de daño en área (AoE)
-#defaultfor Horde Mage
+#group RestedXP Horda Mago AoE
+
+#defaultfor none Horde Mage
 #next 21-30 Argénteos/Laderas de Trabalomas AoE
 
 step
     .goto 1442/1,-695.02,12.09,50,0
     .goto 1442/1,-758.5,116.29,50,0
     .goto 1442/1,-890.35,171.65,50,0
-    .goto 1442/1,-773.15,-13.96.0,50,0
+    .goto 1442/1,-773.15,-13.96,50,0
     .goto 1442/1,-695.02,12.09,50,0
     .goto 1442/1,-758.5,116.29,50,0
     .goto 1442/1,-890.35,171.65,50,0
-    .goto 1442/1,-773.15,-13.96.0,50,0
+    .goto 1442/1,-773.15,-13.96,50,0
     >>Mata a los Tótem Siniestro del área
     .complete 6548,2 --Kill Grimtotem Mercenary (x6)
     .complete 6548,1 --Kill Grimtotem Ruffian (x8)
@@ -970,7 +972,7 @@ step
     #completewith next
     .goto 1413/1,-1856.02,-2583.13,0
     .goto 1413/1,-2362.68,-2616.91,0
-    .goto 1413/1,-2403.22,-2441.25.0,0
+    .goto 1413/1,-2403.22,-2441.25,0
     >>Busca a Owatanka (Lagarto Trueno Azul) en esta zona. Si lo encuentras, despójalo para obtener su Punta de cola e inicia la misión. Si no puedes encontrarlo, omite esta misión
     .collect 5102,1,884 --Collect Owatanka's Tailspike
     .accept 884 >>Acepta la misión Owatanka
@@ -1033,7 +1035,7 @@ step
     .accept 1131 >>Acepta la misión Metaleador
 step
  	>>Entra en las Pozas de las Visiones
-	.goto 1456/1,202.5,-1058.75.0,30,0
+	.goto 1456/1,202.5,-1058.75,30,0
 	.goto 1456/1,276.6,-996.120
 .target Apothecary Zamah
 >>Habla con la |cRXP_FRIENDLY_Boticaria Zamah|r
@@ -1116,7 +1118,7 @@ step
     .trainer >> Aprende tus hechizos de clase si es necesario
 	>>Cambia tu especialización a Escarcha AoE si no lo has hecho
 step
-    .goto 1456/1,28.19,-1197.92.0
+    .goto 1456/1,28.19,-1197.92
     .fly The Crossroads >>Vuela a El Cruce
 step
     .goto 1413/1,-2605.88,-475.180

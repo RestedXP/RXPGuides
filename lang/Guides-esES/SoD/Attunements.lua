@@ -5,7 +5,6 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Guías de Contenido de Nivel Máximo
 #subgroup Requisitos de Acceso (Attunements)
 #name Requisitos de acceso a Criptas de Karazhan (Karazhan Crypts Attunement)
-#guideKind attunement
 
 step
     #completewith next
@@ -218,7 +217,6 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Guías de Contenido de Nivel Máximo
 #subgroup Requisitos de Acceso (Attunements)
 #name Introducción al Enclave Escarlata
-#guideKind attunement
 
 step
    #completewith next

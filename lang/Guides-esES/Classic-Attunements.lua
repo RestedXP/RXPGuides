@@ -7,7 +7,6 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Guías de Contenido de Nivel Máximo
 #subgroup Requisitos de Acceso (Attunements)
 #name Requisitos de acceso a Onyxia (A) (Onyxia Attunement)
-#guideKind attunement
 
 
 step
@@ -345,7 +344,6 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Guías de Contenido de Nivel Máximo
 #subgroup Requisitos de Acceso (Attunements)
 #name Requisitos de acceso a Onyxia (H) (Onyxia Attunement)
-#guideKind attunement
 
 step
     #completewith next
@@ -796,7 +794,6 @@ RXPGuides.RegisterGuide([[
 #subgroup Requisitos de Acceso (Attunements)
 #group RestedXP Guías de Contenido de Nivel Máximo
 #name Requisitos de acceso a Núcleo de Magma (Molten Core Attunement)
-#guideKind attunement
 
 step
     #completewith next
@@ -843,7 +840,6 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Guías de Contenido de Nivel Máximo
 #subgroup Requisitos de Acceso (Attunements)
 #name Requisitos de acceso a Guarida de Alanegra (Blackwing Lair Attunement)
-#guideKind attunement
 
 step
     #completewith next
@@ -889,8 +885,6 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Guías de Contenido de Nivel Máximo
 #subgroup Llaves
 #name Llave de Cumbre de Roca Negra Superior
-#guideKind key
-#guideIcon rxp-icon-ring
 
 step
     #completewith next
@@ -983,8 +977,6 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Guías de Contenido de Nivel Máximo
 #subgroup Llaves
 #name Llave de Scholomance (A)
-#guideKind key
-#guideIcon rxp-icon-key-2
 
 step
     #sticky
@@ -1244,8 +1236,6 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Guías de Contenido de Nivel Máximo
 #subgroup Llaves
 #name Llave de Scholomance (H)
-#guideKind key
-#guideIcon rxp-icon-key-2
 
 
 step
@@ -1502,8 +1492,6 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Guías de Contenido de Nivel Máximo
 #subgroup Llaves
 #name Llave de Profundidades de Roca Negra
-#guideKind key
-#guideIcon rxp-icon-key-3
 
 
 step
@@ -1568,8 +1556,6 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Guías de Contenido de Nivel Máximo
 #subgroup Llaves
 #name Llave de La Masacre
-#guideKind key
-
 
 step
     #completewith next
@@ -1598,7 +1584,6 @@ RXPGuides.RegisterGuide([[
 
 #group RestedXP Guías de Contenido de Nivel Máximo
 #name Requisitos de acceso a Naxxramas (Naxxramas Attunement)
-#guideKind attunement
 #subgroup Requisitos de Acceso (Attunements)
 
 step
@@ -1672,7 +1657,6 @@ RXPGuides.RegisterGuide([[
 
 #group RestedXP Guías de Contenido de Nivel Máximo
 #name Requisitos de acceso a Barranco del Demonio (Demon Fall Canyon Attunement)
-#guideKind attunement
 #subgroup Requisitos de Acceso (Attunements)
 <<sod
 
