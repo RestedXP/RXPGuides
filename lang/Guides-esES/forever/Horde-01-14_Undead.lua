@@ -3608,7 +3608,7 @@ step
     --#hardcore
     #completewith next
     .goto 1421/0,1538.58,511.39,100,0
-    .subzone 228 >>Viaja de vuelta a El Sepulcro
+    .subzone 228 >>Viaja de regreso a El Sepulcro
 step
     .goto 1421/0,1593.6,554.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Dalar|r
@@ -3734,7 +3734,7 @@ step
     .goto 1421/0,1270.62,1279.71,6,0
     .goto 1421/0,1285.32,1277.19
     >>Mata a |cRXP_ENEMY_Ivar el Hediondo|r. Despójalo para obtener su |cRXP_LOOT_Cabeza|r
-    >>|cRXP_WARN_Ivar está protegido por dos|r |cRXP_ENEMY_Esclavos Corvozarpa|r |cRXP_WARN_dentro del granero. Puedes atraer a uno de ellos cuando patrulle hacia adelante.|r
+    >>|cRXP_WARN_Ivar está protegido por dos|r |cRXP_ENEMY_Esclavos Corvozarpa|r |cRXP_WARN_dentro del granero. Puedes atraer a uno de ellos cuando patrulle hacia adelante|r
     >>|cRXP_WARN_¡Son inmunes al miedo!|r << Priest/Warlock
     .complete 425,1 --Ivar's Head (1)
     .target Ivar the Foul
@@ -3765,7 +3765,7 @@ step
     .unitscan Son of Arugal
 step
     #completewith next
-    .goto 1421/0,1538.58,511.39,100 >> Viaja de vuelta a El Sepulcro
+    .goto 1421/0,1538.58,511.39,100 >> Viaja de regreso a El Sepulcro
     .subzoneskip 228
 step
     .goto 1421/0,1593.6,554.23
@@ -3814,7 +3814,7 @@ step
 step
     #completewith next
     #hardcore
-    .goto 1421/0,1538.58,511.39,100 >> Viaja de vuelta a El Sepulcro--c:Silverpine Forest,45.51,41.26
+    .goto 1421/0,1538.58,511.39,100 >> Viaja de regreso a El Sepulcro--c:Silverpine Forest,45.51,41.26
     .subzoneskip 228
 step
     #softcore

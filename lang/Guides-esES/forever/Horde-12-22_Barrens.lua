@@ -3229,7 +3229,7 @@ step
 step
     #optional
     #completewith XroadsHS2
-    .destroy 5570 >>|cRXP_WARN_Elimina|r |T132834:0|t[[DEPRICATED] Huevos de arañas Musgondo] |cRXP_WARN_que tengas|r
+    .destroy 5570 >>|cRXP_WARN_Elimina|r |T132834:0|t[Huevos de Musgondo] |cRXP_WARN_que tengas|r
 step
     .goto 1413/1,-3687.11,-981.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Drohn|r

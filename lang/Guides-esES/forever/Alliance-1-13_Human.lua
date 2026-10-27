@@ -4590,7 +4590,7 @@ step << Warlock
     #optional
     #completewith next
     .goto 1432/0,-2747.60,-5530.540,0
-    +Mata |cRXP_ENEMY_Troggs|r hasta que tengas 75 platas y 79 cobres en basura para vender o dinero
+    +Grindea |cRXP_ENEMY_Troggs|r hasta que tengas 75 platas y 79 cobres en basura para vender o dinero
     .money >0.7579
 step << Warlock
     #optional

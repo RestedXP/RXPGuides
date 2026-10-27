@@ -2258,7 +2258,7 @@ step
     .goto 1426/0,151.72,-5436.670,50,0
     .goto 1426/0,-12.78,-5370.34,50,0
     >>Mata |cRXP_ENEMY_Osos zarpahelada|r, |cRXP_ENEMY_Jabalíes del risco ancianos|r y |cRXP_ENEMY_Leopardos de las nieves|r de camino hacia la Cueva. Despoja a los |cRXP_ENEMY_Jabalíes del risco ancianos|r para obtener |cRXP_LOOT_Costillas de jabalí del risco|r
-    >>|cRXP_WARN_Concéntrate en los|r |cRXP_ENEMY_Leopardos de las nieves|r
+    >>|cRXP_WARN_Enfócate en los|r |cRXP_ENEMY_Leopardos de las nieves|r
     >>|cRXP_WARN_Ten cuidado ya que los |cRXP_ENEMY_Osos zarpahelada|r lanzan|r |T135853:0|t[Garra de hielo] |cRXP_WARN_(Cuerpo a cuerpo Instantáneo: Causa 4 puntos de daño cuerpo a cuerpo adicionales), y los |cRXP_ENEMY_Jabalíes del risco ancianos|r lanzan|r |T132337:0|t[Cargar] |cRXP_WARN_(Instantáneo sobre sí mismo: Aumenta la velocidad de movimiento durante 3 segundos, causando 25-70 puntos de daño cuerpo a cuerpo al golpear. Solo se puede lanzar a distancia)|r
     .complete 319,1 --Kill Ice Claw Bear (x6)
     .mob +Ice Claw Bear
@@ -2274,7 +2274,7 @@ step
     .goto 1426/0,151.72,-5436.670,50,0
     .goto 1426/0,-12.78,-5370.34,50,0
     >>Mata |cRXP_ENEMY_Osos zarpahelada|r, |cRXP_ENEMY_Jabalíes del risco ancianos|r y |cRXP_ENEMY_Leopardos de las nieves|r de camino a la Cueva
-    >>|cRXP_WARN_Concéntrate en los|r |cRXP_ENEMY_Leopardos de las nieves|r
+    >>|cRXP_WARN_Enfócate en los|r |cRXP_ENEMY_Leopardos de las nieves|r
     >>|cRXP_WARN_Ten cuidado ya que los |cRXP_ENEMY_Osos zarpahelada|r lanzan|r |T135853:0|t[Garra de hielo] |cRXP_WARN_(Cuerpo a cuerpo Instantáneo: Causa 4 puntos de daño cuerpo a cuerpo adicionales), y los |cRXP_ENEMY_Jabalíes del risco ancianos|r lanzan|r |T132337:0|t[Cargar] |cRXP_WARN_(Instantáneo sobre sí mismo: Aumenta la velocidad de movimiento durante 3 segundos, causando 25-70 puntos de daño cuerpo a cuerpo al golpear. Solo se puede lanzar a distancia)|r
     .complete 319,1 --Kill Ice Claw Bear (x6)
     .mob +Ice Claw Bear
@@ -3014,7 +3014,7 @@ step
     #completewith next
     .goto 1426/0,-831.81,-5108.330,30,0
     .goto 1426/0,-859.39,-5144.450,30,0
-    .goto 1426/0,-1124.84,-5283.99,150 >> Viaja hasta el punto de "skip". Ve pegado al lado izquierdo de la montaña durante el trayecto
+    .goto 1426/0,-1124.84,-5283.99,150 >> Viaja hasta el punto de skip. Ve pegado al lado izquierdo de la montaña durante el trayecto
 step
     #label DeathlessSkip
     .goto 1426/0,-1161.78,-5289.24,12,0
@@ -3570,7 +3570,7 @@ step
     #completewith next
     .goto 1426/0,-831.81,-5108.330,30,0
     .goto 1426/0,-859.39,-5144.450,30,0
-    .goto 1426/0,-1124.84,-5283.99,150 >> Viaja hasta el punto de "skip". Ve pegado al lado izquierdo de la montaña durante el trayecto
+    .goto 1426/0,-1124.84,-5283.99,150 >> Viaja hasta el punto de skip. Ve pegado al lado izquierdo de la montaña durante el trayecto
 step
     .goto 1426/0,-1161.78,-5289.24,12,0
     .goto 1426/0,-1173.60,-5313.54,12,0
