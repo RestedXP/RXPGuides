@@ -3319,20 +3319,6 @@ step << Druid
     .trainer >> Train your class spells
     .target Loganaar
 step << Druid
-    .goto 1450/1,-2212.25,7854.28
-    .use 15883 >>|cRXP_WARN_Use the|r |T133443:0|t[Half Pendant of Aquatic Agility] |cRXP_WARN_to combine it with the|r |T133442:0|t[Half Pendant of Aquatic Endurance] |cRXP_WARN_at the Shrine of Remulos|r
-    .complete 272,1 --Collect Pendant of the Sea Lion (x1)
-step << Druid
-    #completewith next
-	.cast 18960 >> Cast Teleport: Moonglade
-    >>|cRXP_WARN_This will save you time from running back|r
-step << Druid
-    .goto 1450/1,-2678.74,8020.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dendrite Starblaze|r
-    .turnin 272 >> Turn in Trial of the Sea Lion
-    .accept 5061 >> Accept Aquatic Form
-    .target Dendrite Starblaze
-step << Druid
     .hs >> Hearth to Sentinel Hill
 step << !Druid
     .goto 1436/0,1707.2116,-10583.0227
@@ -4218,6 +4204,35 @@ step << Druid
     >>|cRXP_WARN_Swim out in the water|r
     >>Open the |cRXP_PICK_Strange Lockbox|r. Loot it for the |cRXP_LOOT_Half Pendant of Aquatic Agility|r
     .collect 15883,1,272,1 --Collect Half Pendant of Aquatic Agility (x1)
+step << Druid
+    #completewith next
+	.cast 18960 >> Cast Teleport: Moonglade
+step << Druid
+    .goto Moonglade,52.53,40.57
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loganaar|r
+    .trainer >> Train your class spells
+    .target Loganaar
+step << Druid
+    .goto 1450/1,-2212.25,7854.28
+    .use 15883 >>|cRXP_WARN_Use the|r |T133443:0|t[Half Pendant of Aquatic Agility] |cRXP_WARN_to combine it with the|r |T133442:0|t[Half Pendant of Aquatic Endurance] |cRXP_WARN_at the Shrine of Remulos|r
+    .complete 272,1 --Collect Pendant of the Sea Lion (x1)
+step << Druid
+    #completewith next
+	.cast 18960 >> Cast Teleport: Moonglade
+    >>|cRXP_WARN_This will save you time from running back|r
+step << Druid
+    .goto 1450/1,-2678.74,8020.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dendrite Starblaze|r
+    .turnin 272 >> Turn in Trial of the Sea Lion
+    .accept 5061 >> Accept Aquatic Form
+    .target Dendrite Starblaze
+step << Druid
+    .isOnQuest 5061
+    .goto 1450/1,-2489.25,7457.07
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sindrayl|r
+    .target Sindrayl
+    .fly Darkshore >> Fly to Darkshore
+    .zoneskip Darkshore
 step
     #sticky
     #optional
