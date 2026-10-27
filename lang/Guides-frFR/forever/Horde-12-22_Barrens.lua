@@ -3229,7 +3229,7 @@ step
 step
     #optional
     #completewith XroadsHS2
-    .destroy 5570 >>|cRXP_WARN_Suppr. tout|r |T132834:0|t[[PÉRIMÉ]Omelette de mousses-profondes] |cRXP_WARN_que vous avez laissées|r
+    .destroy 5570 >>|cRXP_WARN_Suppr. tout|r |T132834:0|t[Oeufs des mousses profondes] |cRXP_WARN_que vous avez laissées|r
 step
     .goto 1413/1,-3687.11,-981.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Drohn|r
