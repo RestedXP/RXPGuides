@@ -695,7 +695,7 @@ step
     .goto Hillsbrad Foothills,58.2,19.6,40,0
     .goto Hillsbrad Foothills,57.5,36.4,50,0
     .goto Hillsbrad Foothills,51.1,46.4,40,0
-    >>Busca a |cRXP_FRIENDLY_Zixil|r. Patrulla entre Tarren Molino y Costasur. Cómprale el |T134041:0|t[Freshwater Mordedor Cebo]
+    >>Busca a |cRXP_FRIENDLY_Zixil|r. Patrulla entre Molino Tarren y Costasur. Cómprale el |T134041:0|t[Cebo de mordedor de agua fresca]
     .collect 210410,1 --Freshwater Snapper Bait (1)
     .target Zixil
     .train 425759,1

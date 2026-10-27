@@ -1104,7 +1104,7 @@ step
     .goto 1436/0,1324.200,-10490.400
     >>Mata |cRXP_ENEMY_Tramperos Defias|r y |cRXP_ENEMY_Contrabandistas Defias|r. Despójalos para obtener sus |T133694:0|t|cRXP_LOOT_Pañuelos rojos de cuero|r
     >>|cRXP_WARN_Es un área de reaparición dinámica, lo que significa que si matas a suficientes enemigos, seguirán reapareciendo|r
-    >>|cRXP_WARN_Si aún estás muy rezagado en |T133694:0|t|cRXP_LOOT_Pañuelos rojos de cuero|r y has matado a todos los |cRXP_ENEMY_Defias|r requeridos, abandona la misión|r [Pañuelos rojos de cuero]
+    >>|cRXP_WARN_Si aún estás muy rezagado con los |T133694:0|t|cRXP_LOOT_Pañuelos de cuero rojo|r y has matado a todos los |cRXP_ENEMY_Defias|r requeridos, abandona la misión|r [Pañuelos rojos de cuero]
     .complete 12,1 -- Defias Trapper slain (15)
     .mob +Defias Trapper
     .complete 12,2 -- Defias Smuggler slain (15)
@@ -1206,14 +1206,14 @@ step << Warrior
 step
     .goto 1453/0,765.700,-8804.000
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Catherine Leland|r
-    >>|cRXP_BUY_Compra uno|r |T134335:0|t[Adorno lustroso] |cRXP_BUY_y tres|r |T134324:0|t[Reptadores nocturnos] |cRXP_BUY_de ella. Esto es para una misión de 900 xp|r
+    >>|cRXP_BUY_Cómprale un|r |T134335:0|t[Adorno lustroso] |cRXP_BUY_y tres|r |T134324:0|t[Reptadores nocturnos] |cRXP_BUY_. Esto es para una misión de 900xp|r
     .collect 6529,1,95065,1 --|1/1 Shiny Bauble
     .collect 6530,3,95065,1 --|3/3 Nightcrawlers
     .target Catherine Leland
 step << Hunter
     .goto 1453/0,552.78,-8415.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Einris Lanza Reluciente|r dentro
-    >>|cRXP_WARN_Si acababas de entrenar hace poco, omite este paso|r
+    >>|cRXP_WARN_Si acabas de aprender habilidades antes, omite este paso|r
     .trainer >> Aprende tus hechizos de clase
     .target Einris Brightspear
 step

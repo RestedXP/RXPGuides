@@ -72,7 +72,7 @@ step
     .mob Juvenile Vuldren::250873
 step << Horde Shaman
     #label Juvenile Vuldren Grind
-    .xp 2+480 >>Sube al nivel 3 (480+/900XP) después de completar las entregas para la misión del tótem.
+    .xp 2+480 >>Mata enemigos hasta 480+/900XP para alcanzar el nivel 3 después de entregar la misión del tótem.
 step
     .goto 2521,43.44,24.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Elatrell Plumaligera::251368|r.
@@ -100,20 +100,20 @@ step
     .goto 2521,43.83,24.18,5,0
     .goto 2521,43.83,24.32,8,0
     .goto 2521,43.80,24.05
-    >>Sube la escalera de caracol, luego |Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Halaan Ojo de halcón::257554|r en la cima de la torre.
-    .accept 94414 >>Acepta la misión The Anchors of Zephras
+    >>Sube la escalera de caracol, luego |Tinterface/worldmap/chatbubble_64grey.blp:20|thabla con |cRXP_FRIENDLY_Halaan Ojo de halcón::257554|r en lo alto de la torre.
+    .accept 94414 >>Acepta la misión Las anclas de Zephras
     .target Halaan Hawk-Eye::257554
 step
     .goto 2521,43.80,24.05
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Halaan Ojo de halcón::257554|r.
-    *|cRXP_WARN_Mover o presiona ESC para cancelar|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Halaan Ojo de Halcón::257554|r.
+    *|cRXP_WARN_Muévete o pulsa ESC para cancelar|r.
     .complete 94414,1 --View the Anchor Pylon
     .skipgossipid 137720,1
     .target Halaan Hawk-Eye::257554
 step
     .goto 2521,43.80,24.05
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Halaan Ojo de halcón::257554|r.
-    *|cRXP_WARN_Mover o presiona ESC para cancelar|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Halaan Ojo de Halcón::257554|r.
+    *|cRXP_WARN_Muévete o pulsa ESC para cancelar|r.
     .turnin 94414 >>Entrega la misión Las anclas de Zephras
     .target Halaan Hawk-Eye::257554
 step << Skyborne
@@ -133,7 +133,7 @@ step << Skyborne
     .goto 2521,42.06,23.48
     >>Mientras caes desde la torre, usa |T132845:0|t[Caminar en el aire] y apunta hacia quien da la misión.
     *También puedes simplemente saltar y presionar el botón en el suelo.
-    *Si está en recarga, este paso se saltará en la entrega de Armonía in Equilibrio. Puedes completarlo más tarde.
+    *Si está en recarga, este paso se saltará en la entrega de Armonía en equilibrio. Puedes completarlo más tarde.
     .complete 92474,1 --Use Walk on Air
     .macro Walk on Air, 132845 >>Caminar en el aire
     -- .macro Cancel Walk on Air,132745 >>/cancelaura Walk on Air
@@ -241,7 +241,7 @@ step << Horde !Warrior !Rogue/Alliance !Warrior !Rogue !Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Uualia Crestasol::251537|r
     >>|cRXP_BUY_Compra|r |T132794:0|t[Agua de manantial refrescante] |cRXP_BUY_a esta vendedora|r << !Hunter !Shaman
     .vendor 251537 >>|cRXP_WARN_Vende la basura|r
-    *No vendas |T133970:0|t[Stringy Carne] o |T132889:0|t[Paño de lino]. << Alliance
+    *No vendas |T133970:0|t[Carne fibrosa] o |T132889:0|t[Paño de lino]. << Alliance
     .collect 159,20 << !Hunter !Shaman --Refreshing Spring Water (20)
     .target Uualia Suncrest::251537
     -- .money <0.0050 << !Hunter !Shaman
@@ -265,7 +265,7 @@ step << Alliance Hunter/Horde Rogue/Horde Warrior
     .collect 1194,1 >>Compra y equipa una |T135276:0|t[Espada bastarda] << Hunter/Horde Warrior
     .collect 2131,1 >>Compra y equipa una |T135274:0|t[Espada corta] << Horde Rogue
     .vendor 251364 >>|cRXP_WARN_Vende la basura|r
-    *No vendas |T133970:0|t[Stringy Carne] o |T132889:0|t[Paño de lino].
+    *No vendas |T133970:0|t[Carne fibrosa] o |T132889:0|t[Paño de lino].
     .target Destin Thriceforged::251364
 step << Alliance
     .goto 2521,43.33,24.92
@@ -459,7 +459,7 @@ step << Horde !Shaman
     #label UseRacialAbility
     .goto 2521,48.4,20.4
     >>Usa |T1029587:0|t[Vista celeste] cerca de la |cRXP_PICK_Convergencia elemental|r.
-    *|cRXP_WARN_Se encuentra en toda la zona. Usa la |T1029587:0|t[Vista celeste] cerca de uno para obtener 10% de velocidad de movimiento durante 15 min en lugar de 15 seg|r.
+    *|cRXP_WARN_Se encuentran por toda la zona. Usa |T1029587:0|t[Vista celeste] cerca de uno para ganar un 10% de aumento de velocidad de movimiento durante 15 min en lugar de 15 seg|r.
     .complete 92598,1 --Use your Skysight ability near the Elemental Convergence
     .macro Skysight,1029587 >>Vista celeste
 step << Alliance/!Shaman
@@ -615,7 +615,7 @@ step << Horde
 step << Horde Skyborne
     .isQuestComplete 92474 --Falling With Style
     .goto 2521,42.06,23.48
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Rorian the Dayseeker::251361|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Rorian, el Buscadías::251361|r.
     .target Rorian the Dayseeker::251361
     .turnin 92474 >>Entrega la misión Caer con estilo
 step << Horde Druid
@@ -635,7 +635,7 @@ step << Horde
     .target Aetheen of the Gales::251366
 step << Shaman
     .goto 2521,42.787,23.564
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Windshaper Boro::251374|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Formavientos Boro ::251374|r
     .turnin 92468 >>Entrega la misión La llamada de la tierra
     .target Windshaper Boro::251374
 step << Horde Shaman
@@ -686,7 +686,7 @@ step << Alliance Mage
     .money <0.01
     .xp <4,1
     .goto 2521,41.55,23.67
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Dorii Brightwhisper::251379|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Dorii Susurro Alegre::251379|r.
     .train 116 >>Aprende |T135846:0|t[Descarga de Escarcha]
     .skipgossipid 136807,1
     .target Dorii Brightwhisper::251379
@@ -782,7 +782,7 @@ step
 step
     #optional
     #completewith next
-    >>Mata a los |cRXP_ENEMY_Ursera Scavengers::250937|r.
+    >>Mata a los |cRXP_ENEMY_Carroñeros urseras::250937|r.
     .complete 92470,1 --8/8 Ursera Scavenger slain
     .mob Ursera Scavenger::250937
 step

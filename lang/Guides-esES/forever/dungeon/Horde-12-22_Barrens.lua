@@ -591,7 +591,7 @@ step
 step
     .goto 1413/1,-3767.800,-842.900
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Desdio|r
-    .accept 97253 >>Acepta la misión Parts and Pieces
+    .accept 97253 >>Acepta la misión Partes y piezas
     .target Wrenix the Wretched
 step
     .goto 1413/1,-3728.66,-835.29

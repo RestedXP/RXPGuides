@@ -109,7 +109,7 @@ step
 step << Shaman
     .goto 1412/1,-216.18,-2926.26--c:Mulgore,44.07,77.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Marjak|r
-    .vendor >> Vende basura. Vende tu arma si te da suficiente dinero para un |T135139:0|t[Bastón corto] (1s 02c). Volverás más tarde si aún no tienes suficiente.
+    .vendor >> Vende la basura. Vende tu arma si te da suficiente dinero para un |T135139:0|t[Bastón corto] (1s 02c). Volverás más tarde si aún no tienes suficiente
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<1.9
     .target Marjak Keenblade

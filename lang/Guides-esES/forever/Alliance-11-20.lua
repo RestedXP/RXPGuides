@@ -190,7 +190,7 @@ step
 step
     .goto 1436/0,1748.27,-10672.13
     >>Abre el |cRXP_PICK_Cofre de Alexston|r. Despójalo para obtener |cRXP_LOOT_Una sencilla brújula|r
-    >>|cRXP_WARN_Evita a los mobs frente al edificio quemado. Despoja esto desde atrás, junto a la chimenea. Usa la chimenea para evadir los hechizos de |cRXP_ENEMY_Pillagers|r si es necesario|r
+    >>|cRXP_WARN_Evita a los enemigos frente al edificio quemado. Despoja esto desde atrás, junto a la chimenea. Usa la chimenea para evadir los hechizos de |cRXP_ENEMY_Saqueadores|r si es necesario|r
     .complete 399,1 --A Simple Compass (1)
     .isOnQuest 399
 step
@@ -521,7 +521,7 @@ step << Skyborne
 step << Skyborne
     >>|cRXP_WARN_Usa la|r |T133942:0|t[Flauta cazarratas] |cRXP_WARN_en las |cRXP_ENEMY_Rata del subterráneo|r dentro del Tranvía Subterráneo|r
     .complete 6661,1 --Rats Captured (x5)
-    .macro Rat Catcher's Flute,133942 >>Rata Catcher's Flute
+    .macro Rat Catcher's Flute,133942 >>Flauta cazarratas
     .mob Deeprun Rat
 step << Skyborne
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Monty|r dentro del Tranvía Subterráneo
