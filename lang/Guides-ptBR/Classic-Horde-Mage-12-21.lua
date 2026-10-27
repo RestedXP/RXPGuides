@@ -399,7 +399,7 @@ step
 >>Fale com |cRXP_FRIENDLY_Retalhador do Manivela|r
     .turnin 858 >>Entregue Ignição
 .target Wizzlecrank's Shredder
-    .accept 863 >>Aceite A Fuga
+    .accept 863 >>Aceite A fuga
 step
     #label Slugs
     >>2 inimigos aparecerão em algum momento. Mate-os e aguarde a cena dele no final
@@ -437,7 +437,7 @@ step
     .accept 1061 >>Aceite Os espíritos das Torres de Pedra
 step
     #completewith next
-    .hs >>Use sua Pedra de Retorno para ir à Encruzilhada
+    .hs >>Use sua Pedra de Retorno para ir a Encruzilhada
 step << Troll Mage
     .goto The Barrens,52.6,29.9
 .target Zargh
@@ -529,7 +529,7 @@ step
     .complete 3281,1 --Stolen Silver (1)
 step
     #completewith Verog
-    >>Colete |cRXP_LOOT_Laden Mushrooms|r ao redor do Oásis Estagnado
+    >>Pegue |cRXP_LOOT_Cogumelos Carregados|r ao redor do Oásis Estagnado
     .complete 848,1 --Collect Fungal Spores (x4)
 step
     >>Clique na Rachadura Borbulhante debaixo d'água
@@ -557,7 +557,7 @@ step
 	.goto The Barrens,56.15,43.28,25,0
 	.goto The Barrens,56.08,42.58,25,0
 	.goto The Barrens,55.72,42.14,25,0
-    >>Colete |cRXP_LOOT_Cogumelos Carregados|r ao redor de O Oásis Estagnado
+    >>Pegue |cRXP_LOOT_Cogumelos Carregados|r ao redor do Oásis Estagnado
     .complete 848,1 --Collect Fungal Spores (x4)
 step
     >>Clique no ovo. Você precisa das Penas Helióscamas dos raptores
@@ -931,7 +931,7 @@ step
     .accept 853 >>Aceite Boticária Zaqueia
 step
     .goto The Barrens,51.5,30.3
-    .fly Camp Taurajo >>Voe para Camp Taurajo
+    .fly Camp Taurajo >>Voe para o Acampamento Taurajo
 step
     .goto The Barrens,53.0,52.1
     >>Mate Javatuscos para pegar Estilhaço de Sangue
@@ -1037,7 +1037,7 @@ step
 	.goto Thunder Bluff,23.00,21.00
 .target Apothecary Zamah
 >>Fale com o |cRXP_FRIENDLY_Boticário Zaqueu|r
-    .turnin 853 >> Entregue Boticário Zaqueu
+    .turnin 853 >> Entregue Boticária Zaqueia
 step
     .goto Thunder Bluff,25.16,20.95
     .trainer >> Treine suas magias de classe

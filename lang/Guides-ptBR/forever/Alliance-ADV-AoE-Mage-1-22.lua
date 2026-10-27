@@ -4,11 +4,12 @@ if faction == "Horde" then return end
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Human Mage
 #name 1-10 ADV Elwynn Forest Humano Mago AdE
 #version 2
 #group RestedXP ADV AdE Maga da Aliança
-#defaultfor Human Mage
+#defaultfor none Human Mage
 #next 10-11 ADV Dun Morogh Humano Mago AdE
 
 
@@ -343,7 +344,7 @@ step
 	.goto 1429/0,-353.76,-9052.900,35,0
 	.goto 1429/0,-327.73,-9034.15,35,0
     >>Saque o |cRXP_PICK_Buckets of Grapes|r no chão
-    >>|cRXP_WARN_Isto leva 5 segundos|r
+    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
     .complete 3904,1 --Collect Milly's Harvest (x8)
 step
     .goto 1429/0,-461.01,-9056.37
@@ -363,7 +364,7 @@ step
 	.goto 1429/0,-353.76,-9052.900,35,0
 	.goto 1429/0,-327.73,-9034.15,35,0
     >>Saque o |cRXP_PICK_Buckets of Grapes|r no chão
-    >>|cRXP_WARN_Isto leva 5 segundos|r
+    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
     .complete 3904,1 --Collect Milly's Harvest (x8)
 step
 #loop
@@ -701,7 +702,7 @@ step
 step
     .goto 1429/0,-986.14,-9335.97
 	>>Clique em |cRXP_PICK_corpo semicomido|r no chão
-    >>|cRXP_WARN_Isto leva 5 segundos|r
+    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
     .turnin 37 >> Entregue Encontre os Guardas Perdidos
     .accept 45 >> Aceite Descubra o Destino de Rodolfo
 step
@@ -720,7 +721,7 @@ step
 step
     #completewith next
     >>Pegue os |cRXP_PICK_Feixes de Madeira|r na base das árvores
-    >>|cRXP_WARN_Isto leva 5 segundos|r
+    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
     .complete 5545,1 --Collect Bundle of Wood (x8)
 step
     .goto 1429/0,-1233.96,-9224.41,45 >> Viaje para |cRXP_PICK_Cadáver de Rolf|r
@@ -731,7 +732,7 @@ step
     >>|cRXP_WARN_Você pode ter que matar um e depois reiniciar|r
     >>Tenha cuidado, pois |cRXP_ENEMY_Murloc Lurkers|r lançam |T132090:0|t[Punhalada pelas Costas] |cRXP_WARN_(Ataque Corpo a Corpo Instantâneo: Causa dano duplo quando atacado pelas costas) e |cRXP_ENEMY_Murloc Foragers|r lançam|r |T135915:0|t[Beber Poção Menor] |cRXP_WARN_(Auto-lançamento: Cura aproximadamente 65 de vida)|r
 	>>Clique em |cRXP_PICK_Cadáver de Rolf|r no chão
-    >>|cRXP_WARN_Isto leva 5 segundos|r
+    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
     .turnin 45 >> Entregue Descubra o Destino de Rodolfo
     .accept 71 >> Aceite Apresente-se a Tomás
 step
@@ -754,7 +755,7 @@ step
 	.goto 1429/0,-1302.68,-9309.12,35,0
 	.goto 1429/0,-1257.91,-9216.77,35,0
     >>Pegue os |cRXP_PICK_Feixes de Madeira|r na base das árvores
-    >>|cRXP_WARN_Isto leva 5 segundos|r
+    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
     .complete 5545,1 --Collect Bundle of Wood (x8)
 step
     .goto 1429/0,-1289.22,-9469.80
@@ -937,7 +938,7 @@ step
 step
     #completewith next
     >>Abra os |cRXP_PICK_Sacos de Aveia|r no chão. Saque-os por |cRXP_LOOT_Handfuls of Oats|r
-    >>|cRXP_WARN_Isto leva 5 segundos|r
+    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
     .complete 151,1 --Handful of Oats (8)
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Fazendeiro Saldanha|r e depois com |cRXP_FRIENDLY_Salma|r dentro
@@ -1059,7 +1060,7 @@ step
     #label Monty
     .goto 1455/0,-1317.71,-4839.48,30,0
     >>Fale com |cRXP_FRIENDLY_Monty|r depois de pegar o bonde
-    .accept 6661 >> Aceite Caçada aos Ratos das Profundezas
+    .accept 6661 >> Aceite Ratos de Porão
     .target Monty
 step
     >>Usar o |T133942:0|t[Rato Catcher's Flute] nos |cRXP_FRIENDLY_Deeprun Ratos|r no Deeprun Tram
@@ -1069,7 +1070,7 @@ step
 step
     >>Fale com |cRXP_FRIENDLY_Monty|r
 --  >>|cRXP_WARN_Wait out the RP|r
-    .turnin 6661 >> Entregue Caçada aos Ratos das Profundezas
+    .turnin 6661 >> Entregue Ratos de Porão
     .target Monty
     .zoneskip Stormwind City
 step
@@ -1144,11 +1145,12 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Human Mage
 #name 10-11 ADV Dun Morogh Humano Mago AdE
 #version 2
 #group RestedXP ADV AdE Maga da Aliança
-#defaultfor Human Mage
+#defaultfor none Human Mage
 #next 10-12 ADV Costa Negra 1 Mago AdE
 
 step
@@ -1167,7 +1169,7 @@ step
     #label Rudra
     .goto 1426/0,-1304.61,-5513.82
     >>Fale com |cRXP_FRIENDLY_Rudra|r
-    .accept 314 >> Aceite Amarre Sua Cabra Pois Ragash Está Solto
+    .accept 314 >> Aceite Amarre Sua Cabra pois Ragash Está Solto
     .target Rudra Amberstill
 step
     .goto 1426/0,-1279.49,-5392.01,0
@@ -1181,7 +1183,7 @@ step
 step
     .goto 1426/0,-1304.61,-5513.82
     >>Fale com |cRXP_FRIENDLY_Rudra|r
-    .turnin 314,3 >> Entregue Amarre Sua Cabra Pois Ragash Está Solto
+    .turnin 314,3 >> Entregue Amarre Sua Cabra pois Ragash Está Solto
     .target Rudra Amberstill
 step
     #completewith Ghilm
@@ -1435,11 +1437,12 @@ step << skip
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Gnome Mage
 #name 1-10 ADV Dun Morogh Mago Gnomo AdE
 #version 2
 #group RestedXP ADV AdE Maga da Aliança
-#defaultfor Gnome Mage
+#defaultfor none Gnome Mage
 #next 10-12 ADV Costa Negra 1 Mago AdE
 
 
@@ -2139,7 +2142,7 @@ step
 step
     .goto 1426/0,-371.32,-5746.94
     >>Abra o |cRXP_PICK_Caixote de Munição|r no chão. Saque-o por |cRXP_LOOT_Munição de Rumbleshot|r
-    >>|cRXP_WARN_Isto leva 5 segundos|r
+    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
     .complete 5541,1 --Collect Rumbleshot's Ammo (x1)
 step
     #completewith Ammo
@@ -2392,7 +2395,7 @@ step
     .goto 1426/0,-258.54,-5046.93
     >>Mate os |cRXP_ENEMY_Frostmane Seers|r. Saque-os para obter suas |cRXP_LOOT_Tremulerva|r
     >>Abra os |cRXP_PICK_Tremulerva Cestos|r no chão. Saque-os para obter |cRXP_LOOT_Tremulerva|r
-    >>|cRXP_WARN_Isto leva 5 segundos|r
+    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
     >>|cRXP_WARN_Tenha cuidado pois eles lançam|r |T136048:0|t[Raio] |cRXP_WARN_(Ataque à Distância: Causa 15-30 dano de Natureza)|r
     .complete 315,1 --Collect Shimmerweed (x6)
     .mob Frostmane Seer
@@ -2421,7 +2424,7 @@ step
     .goto 1426/0,-94.53,-5647.79
     >>|cRXP_WARN_Se o |cRXP_ENEMY_Velho Barbafria|r está na caverna, puxe-o pela lateral da caverna, depois todo o caminho acima dela. Espere ele chegar perto, depois pule para baixo e vá em direção ao fundo da caverna|r
     >>Abra |cRXP_PICK_MacGrann's Carne Locker|r no chão. Saque-o para obter |cRXP_LOOT_Macgrann's Dried Meats|r
-    >>|cRXP_WARN_Isto leva 5 segundos|r
+    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
     .link https://youtu.be/Zg4FNWw-P5k?t=3120 >>|cRXP_WARN_CLIQUE AQUI Se você está tendo dificuldades|r
     .complete 312,1 --Collect MacGrann's Dried Meats (x1)
     .mob Old Icebeard
@@ -2608,7 +2611,7 @@ step
     #label Rudra
     .goto 1426/0,-1304.61,-5513.82
     >>Fale com |cRXP_FRIENDLY_Rudra|r
-    .accept 314 >> Aceite Amarre Sua Cabra Pois Ragash Está Solto
+    .accept 314 >> Aceite Amarre Sua Cabra pois Ragash Está Solto
     .target Rudra Amberstill
 step
     .goto 1426/0,-1279.49,-5392.01,0
@@ -2623,7 +2626,7 @@ step
 step
     .goto 1426/0,-1304.61,-5513.82
     >>Fale com |cRXP_FRIENDLY_Rudra|r
-    .turnin 314,3 >> Entregue Amarre Sua Cabra Pois Ragash Está Solto
+    .turnin 314,3 >> Entregue Amarre Sua Cabra pois Ragash Está Solto
     .target Rudra Amberstill
 step << skip
     #completewith Ghilm
@@ -2994,11 +2997,12 @@ step << skip
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Alliance Mage
 #name 10-12 ADV Costa Negra 1 Mago AdE
 #version 2
 #group RestedXP ADV AdE Maga da Aliança
-#defaultfor Human Mage/Gnome Mage
+#defaultfor none Mage
 #next 12-14 ADV Loch Modan Mago AdE
 
 step
@@ -3248,12 +3252,12 @@ step
 step
     .goto 1439/1,148.09,5575.78
     >>Clique em |cRXP_PICK_The Queda of Ameth'Aran|r no chão
-    >>|cRXP_WARN_Isto leva 5 segundos|r
+    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
     .complete 953,2 --Read the Fall of Ameth'Aran (1)
 step
     .goto 1439/1,105.52,5770.100
     >>Clique em |cRXP_PICK_The Lay of Ameth'Aran|r no chão
-    >>|cRXP_WARN_Isto leva 5 segundos|r
+    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
     .complete 953,1 --Read the Lay of Ameth'Aran (1)
 step
     #label Fall
@@ -3430,7 +3434,7 @@ step
     .goto 1439/1,558.78,6111.57
     >>Saqueie a |cRXP_LOOT_Beached Sea Criatura - Missão|r
     >>|cRXP_WARN_Tenha cuidado pois os |cRXP_ENEMY_Brumagris Coastrunners|r próximos têm |T132307:0|t[Velocidade de Movimento Aumentada]
-    >>|cRXP_WARN_Isto leva 5 segundos|r
+    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
     .complete 3524,1 --Sea Creature Bones (1)
 step
     .goto 1439/1,569.26,6373.14
@@ -3550,11 +3554,12 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Alliance Mage
 #name 10-12 LANÇAMENTO ADV Costa Negra 1 Mago AdE
 #version 2
 #group RestedXP ADV AdE Maga da Aliança
-#defaultfor none
+#defaultfor none none
 #next 12-14 ADV Loch Modan Mago AdE
 
 --VV Make this an alternative route that must be manually selected
@@ -3882,7 +3887,7 @@ step
     .goto 1439/1,558.78,6111.57
     >>Saqueie a |cRXP_LOOT_Beached Sea Criatura - Missão|r
     >>|cRXP_WARN_Tenha cuidado pois os |cRXP_ENEMY_Brumagris Coastrunners|r próximos têm |T132307:0|t[Velocidade de Movimento Aumentada]
-    >>|cRXP_WARN_Isto leva 5 segundos|r
+    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
     .complete 3524,1 --Sea Creature Bones (1)
 step
     .goto 1439/1,569.26,6373.14
@@ -3921,17 +3926,17 @@ step
 step
     .goto 1439/1,166.43,5633.86
     >>Clique na |cRXP_PICK_Chama Antiga|r
-    >>|cRXP_WARN_Isto leva 5 segundos|r
+    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
     .complete 957,1 --Destroy the seal at the ancient flame (1)
 step
     .goto 1439/1,148.09,5575.78
     >>Clique em |cRXP_PICK_The Queda of Ameth'Aran|r no chão
-    >>|cRXP_WARN_Isto leva 5 segundos|r
+    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
     .complete 953,2 --Read the Fall of Ameth'Aran (1)
 step
     .goto 1439/1,105.52,5770.100
     >>Clique em |cRXP_PICK_The Lay of Ameth'Aran|r no chão
-    >>|cRXP_WARN_Isto leva 5 segundos|r
+    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
     .complete 953,1 --Read the Lay of Ameth'Aran (1)
 step
     #label Fall
@@ -4117,11 +4122,12 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Alliance Mage
 #name 12-14 ADV Loch Modan Mago AdE
 #version 2
 #group RestedXP ADV AdE Maga da Aliança
-#defaultfor Human Mage/Gnome Mage
+#defaultfor none Mage
 #next 14-16 ADV Costa Negra 2 Mago AdE
 step
     #completewith next
@@ -4657,7 +4663,7 @@ step << Gnome
     .goto 1455/0,-1317.71,-4839.48,30,0
     >>Entre no Deeprun Tram
     >>Fale com |cRXP_FRIENDLY_Monty|r
-    .accept 6661 >> Aceite Caçada aos Ratos das Profundezas
+    .accept 6661 >> Aceite Ratos de Porão
     .target Monty
 step << Gnome
     >>Usar o |T133942:0|t[Rato Catcher's Flute] nos |cRXP_FRIENDLY_Deeprun Ratos|r no Deeprun Tram
@@ -4667,7 +4673,7 @@ step << Gnome
 step
     >>Fale com |cRXP_FRIENDLY_Monty|r
     >>|cRXP_WARN_Espere a sequência de RP terminar|r << Gnome
-    .turnin 6661 >> Entregue Caçada aos Ratos das Profundezas << Gnome
+    .turnin 6661 >> Entregue Ratos de Porão << Gnome
     .timer 13,Ratos de Deeprun RP << Gnome
     .accept 6662 >> Aceite Espetinhos de... Rato
     .target Monty
@@ -4696,7 +4702,7 @@ step
 step
     .goto 1453/0,600.08,-8427.20
     >>Converse com |cRXP_FRIENDLY_Furen|r
-    .turnin 1338 >> Entregue Pedidos de Pico da Tempestade
+    .turnin 1338 >> Entregue Ordens dos Lançatroz
     .target Furen Longbeard
 step
     #completewith next
@@ -4897,11 +4903,12 @@ step
 ]])
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Alliance Mage
 #name 14-16 ADV Costa Negra 2 Mago AdE
 #version 2
 #group RestedXP ADV AdE Maga da Aliança
-#defaultfor Human Mage/Gnome Mage
+#defaultfor none Mage
 #next 16-18 ADV Cerro Oeste Mago AdE
 
 
@@ -4917,7 +4924,7 @@ step
     .isQuestAvailable 982
 step
     >>Fale com |cRXP_FRIENDLY_Barithras|r e |cRXP_FRIENDLY_Glynda|r
-    .accept 947 >>Aceite Cogumelos da Caverna
+    .accept 947 >>Aceite Cave Mushrooms
     .target +Barithras Moonshade
     .goto 1439/1,497.21,6427.72
     .accept 4811 >>Aceite O Cristal Vermelho
@@ -4927,7 +4934,7 @@ step
     #label DeepO
     .goto 1439/1,445.46,6536.01
     >>Fale com |cRXP_FRIENDLY_Gorbold|r
-    .accept 982 >> Aceite Oceano Profundo, Mar Vasto
+    .accept 982 >> Aceite Deep Oceano, Vast Sea
     .target Gorbold Steelhand
 step
     .goto 1439/1,492.62,6580.99
@@ -4948,7 +4955,7 @@ step
 --  .goto 1439/1,437.60,7076.17
     >>Pegue a |cRXP_LOOT_Silver Dawning Caixa-forte|r através da parede do barco
     >>|cRXP_WARN_Use a tecla de atalho 'Interagir com Alvo' debaixo da água ao lado da seta|r
-    >>|cRXP_WARN_Isto leva 5 segundos|r
+    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
    .complete 982,1 --Silver Dawning's Lockbox (1)
 step
    #label MistV
@@ -4956,7 +4963,7 @@ step
 --  .goto 1439/1,345.90,7134.68
    >>Pegue a |cRXP_LOOT_Mist Véu Caixa-forte|r através da parede do barco
    >>|cRXP_WARN_Use a tecla de atalho 'Interagir com Alvo' debaixo da água ao lado da seta|r
-   >>|cRXP_WARN_Isto leva 5 segundos|r
+   >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
    .complete 982,2 --Mist Veil's Lockbox (1)
 step
    .goto 1439/1,292.85,7083.16,50,0
@@ -4976,7 +4983,7 @@ step
 step
    .goto 1439/1,196.56,6958.71
    >>Pegue a |cRXP_LOOT_Beached Sea Criatura - Missão|r no chão
-   >>|cRXP_WARN_Isto leva 5 segundos|r
+   >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
    .accept 4723 >> Aceite Criatura Marinha Encalhada
 step
    .goto 1439/1,193.29,7084.03
@@ -5011,7 +5018,7 @@ step
 step
     .goto 1439/1,46.57,7433.800
     >>Pegue o |cRXP_LOOT_Beached Tartaruga Marinha|r no chão
-    >>|cRXP_WARN_Isto leva 5 segundos|r
+    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
     .accept 4725 >> Aceite Tartaruga Marinha Encalhada
 step
     #completewith River
@@ -5079,7 +5086,7 @@ step
 step
     .goto 1439/1,166.43,5633.86
     >>Clique na |cRXP_PICK_Chama Antiga|r
-    >>|cRXP_WARN_Isto leva 5 segundos|r
+    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
     .complete 957,1 --Destroy the seal at the ancient flame (1)
 step
     .goto 1439/1,161.19,5684.51,50,0
@@ -5111,7 +5118,7 @@ step
     #label BeachedST
     .goto 1439/1,511.62,5618.58
     >>Clique na |cRXP_PICK_Tartaruga Marinha Encalhada|r
-    >>|cRXP_WARN_Isto leva 5 segundos|r
+    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
     .accept 4722 >> Aceite Tartaruga Marinha Encalhada
 step
 #loop
@@ -5248,7 +5255,7 @@ step
     .goto 1439/1,492.62,6580.99
     >>Fale com |cRXP_FRIENDLY_Thundris|r
     .turnin 4762 >> Entregue Rio Fontescarpa
-    .accept 4763 >> Aceite A Corrupção de Bosque Negro
+    .accept 4763 >> Aceite O Blackwood Corrompido
     .target Thundris Windweaver
 step
     .goto 1439/1,472.97,6557.85
@@ -5260,7 +5267,7 @@ step
     #label DeepO
     .goto 1439/1,445.46,6536.01
     >>Fale com |cRXP_FRIENDLY_Gorbold|r
-    .turnin 982,2 >> Entregue Oceano Profundo, Vasto Mar
+    .turnin 982,2 >> Entregue Deep Oceano, Vast Sea
     .target Gorbold Steelhand
 step
     #completewith next
@@ -5303,7 +5310,7 @@ step << Gnome
 step
     .goto 1439/1,-157.79,6206.770
     >>Clique em |cRXP_PICK_The Vermelho Cristal|r
-    >>|cRXP_WARN_Isto leva 5 segundos|r
+    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
     >>|cRXP_WARN_Lembre-se de puxar os |cRXP_ENEMY_Raging Moonkins|r que estão ligados entre si|r
     .turnin 4812 >> Entregue Como cascatas
     .accept 4813 >> Aceite Fragmentos incrustados
@@ -5323,7 +5330,7 @@ step
     .goto 1439/1,-376.56,6805.87
     >>Abra |cRXP_PICK_Blackwood Grão Stores|r. Saque a |cRXP_LOOT_Amostra de Grão Bosquenero|r
     >>|cRXP_WARN_Agro os inimigos que o protegem, lance|r |T135848:0|t[Novane Congelante]|cRXP_WARN_, saque a |cRXP_LOOT_Amostra de Grão Bosquenero|r, depois corra em direção à |cRXP_ENEMY_Matriarca do Covil|r para longe dos inimigos que aparecem|r
-    >>|cRXP_WARN_Isto leva 5 segundos|r
+    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
     .collect 12342,1,4673,1 --Blackwood Grain Sample (1)
 step
     #completewith next
@@ -5337,7 +5344,7 @@ step
     .goto 1439/1,-436.82,6694.96,30 >>Vá para |cRXP_ENEMY_Matriarca do Covil|r
 step
     .goto 1439/1,-432.24,6664.39
-    >>Mate a |cRXP_ENEMY_Matriarca do Covil|r
+    >>Mate |cRXP_ENEMY_Matriarca do Covil|r
     >>|cRXP_WARN_Cuidado quando a |cRXP_ENEMY_Matriarca do Covil|r e seus |cRXP_ENEMY_Filhotes Espinhosos|r lançarem|r |T132141:0|t[Assolar] |cRXP_WARN_(atordoamento de 2 segundos)|r
     .complete 2139,1 --Den Mother (1)
     .mob Den Mother
@@ -5345,7 +5352,7 @@ step
 step
     #label DenM
     .goto 1439/1,-432.24,6664.39
-    >>Mate a |cRXP_ENEMY_Matriarca do Covil|r
+    >>Mate |cRXP_ENEMY_Matriarca do Covil|r
     >>|cRXP_WARN_Cuidado quando a |cRXP_ENEMY_Matriarca do Covil|r e seus |cRXP_ENEMY_Filhotes Espinhosos|r lançarem|r |T132141:0|t[Assolar] |cRXP_WARN_(atordoamento de 2 segundos)|r
     >>|cRXP_WARN_Divida e Puxe |cRXP_ENEMY_Matriarca do Covil|r com sua|r |T133714:0|t[Dinamite Grosseira]
     .complete 2139,1 --Den Mother (1)
@@ -5360,19 +5367,19 @@ step
     .goto 1439/1,-451.23,6870.06
     >>Abra |cRXP_PICK_Blackwood Nut Stores|r. Saque a |cRXP_LOOT_Amostra de Castanha Bosquenero|r :3
     >>|cRXP_WARN_Agro os inimigos que o protegem, lance|r |T135848:0|t[Novane Congelante]|cRXP_WARN_, saque a |cRXP_LOOT_Amostra de Castanha Bosquenero|r, depois corra para o norte|r
-    >>|cRXP_WARN_Isto leva 5 segundos|r
+    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
     .collect 12343,1,4673,1 --Blackwood Nut Sample (1)
 step
     .goto 1439/1,-520.01,6873.99
     >>Abra |cRXP_PICK_Blackwood Fruit Stores|r. Saque a |cRXP_LOOT_Amostra de Fruta Bosquenero|r
     >>Mate os |cRXP_ENEMY_Blackwood Warriors|r que atacam
-    >>|cRXP_WARN_Isto leva 5 segundos|r
+    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
     .collect 12341,1,4673,1 --Blackwood Fruit Sample (1)
 step
     #completewith next
     .goto 1439/1,-497.74,6887.53
     .cast 16072 >>Usar |T134712:0|t[Cheio Purificação Tigela] perto da fogueira para invocar |cRXP_ENEMY_Zabraxxis|r
-    >>|cRXP_WARN_Isto leva 5 segundos|r
+    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
     .timer 20,O RP Corrompido Bosquenero
     .use 12347
 step
@@ -5381,7 +5388,7 @@ step
     >>|cRXP_WARN_Espere a sequência de RP terminar|r
     >>Mate |cRXP_ENEMY_Zabraxxis|r
     >>Saque |cRXP_PICK_Saco de Demônio de Zabraxxis|r que cai no chão. Saque dele o |cRXP_LOOT_Talisman of Corrupção|r
-    >>|cRXP_WARN_Isto leva 5 segundos|r
+    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
     .complete 4763,1 --Talisman of Corruption (1)
     .mob Xabraxxis
 step
@@ -5409,7 +5416,7 @@ step
 step
     .goto 1439/1,-537.04,7542.970
     >>Saque a |cRXP_LOOT_Tartaruga Marinha Encalhada|r
-    >>|cRXP_WARN_Isto leva 5 segundos|r
+    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
     .accept 4727 >>Aceite Tartaruga Marinha Encalhada
 step
     .goto 1439/1,-578.30,6956.96,60,0
@@ -5468,7 +5475,7 @@ step
     .goto 1439/1,-666.73,6819.41,8,0
     .goto 1439/1,-680.48,6779.67,8,0
     >>Saque os azuis |cRXP_LOOT_Scaber Stalks|r no chão
-    >>|cRXP_WARN_Isto leva 5 segundos|r
+    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
     .complete 947,1,4 --Scaber Stalk (5)
 step
     .goto 1439/1,-690.31,6751.29,12,0
@@ -5476,7 +5483,7 @@ step
     .goto 1439/1,-719.13,6787.530,12,0
     >>Fique no nível superior da caverna. Desça se não houver |cRXP_LOOT_Death Cap|r no nível superior
     >>Saque a laranja |cRXP_LOOT_Death Cap|r no chão, no final do caminho superior da caverna
-    >>|cRXP_WARN_Isto leva 5 segundos|r
+    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
     .complete 947,2 --Death Cap (1)
 step
     #label CapCave1
@@ -5485,7 +5492,7 @@ step
     .goto 1439/1,-666.73,6819.41,8,0
     .goto 1439/1,-680.48,6779.67
     >>Saque a primeira |cRXP_LOOT_Scaber Stalks|r na entrada da caverna depois de saquear a |cRXP_LOOT_Death Cap|r
-    >>|cRXP_WARN_Isto leva 5 segundos|r
+    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
     .complete 947,1 --Scaber Stalk (5)
 step << skip
     .goto 1439/1,-658.21,6825.96
@@ -5498,7 +5505,7 @@ step
 step
     .goto 1439/1,492.62,6580.99
     >>Fale com |cRXP_FRIENDLY_Thundris|r
-    .turnin 4763,1 >> Entregue O Bosque Negro Corrompido
+    .turnin 4763,1 >> Entregue Os Corrompidos de Bosque Negro
     .target Thundris Windweaver
 step
     .goto 1439/1,488.69,6564.830
@@ -5520,7 +5527,7 @@ step
     .accept 948 >>Aceite Onu
     .target +Barithras Moonshade
     .goto 1439/1,497.21,6427.72
-    .accept 4740 >> Aceite WANTED: Lodofundo!
+    .accept 4740 >> Aceite PROCURADO: Lodofundo!
     .goto 1439/1,503.76,6402.39
 step
     .goto 1439/1,533.23,6399.77
@@ -5545,11 +5552,12 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Alliance Mage
 #name 16-18 ADV Cerro Oeste Mago AdE
 #version 2
 #group RestedXP ADV AdE Maga da Aliança
-#defaultfor Human Mage/Gnome Mage
+#defaultfor none Mage
 #next 18-20 ADV Costa Negra 3 Mago AdE
 
 step
@@ -5582,8 +5590,8 @@ step
 step
     .goto 1453/0,614.33,-8932.92
     >>Fale com |cRXP_FRIENDLY_Newton|r
-    .bankwithdraw 730,7207 >> Retire os seguintes itens do seu banco: << Gnome
-    .bankwithdraw 730,16115 >> Retire os seguintes itens do seu banco: << Human
+    .bankwithdraw 730,7207 >> Retire os itens a seguir do seu banco: << Gnome
+    .bankwithdraw 730,16115 >> Retire os itens a seguir do seu banco: << Human
     >>|T133884:0|t[Olhos Murloc]
     >>|T132788:0|t[Frasco de Jennea] << Gnome
     >>|T132763:0|t[Caixote de Osric] << Human
@@ -5680,7 +5688,7 @@ step << skip
 step << Gnome
     .goto 1429/0,529.57,-9363.050
     >>Usar |T132788:0|t[Jennea's Frasco] na cachoeira
-    >>|cRXP_WARN_Isto leva 5 segundos|r
+    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
     .use 7207
     .complete 1861,1 --Mirror Lake Water Sample (1)
 step
@@ -5696,7 +5704,7 @@ step
 step << Gnome
     #completewith Gryan
     >>Abra os |cRXP_PICK_Sacos de Aveia|r no chão. Saque-os por |cRXP_LOOT_Handfuls of Oats|r
-    >>|cRXP_WARN_Isto leva 5 segundos|r
+    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
     .complete 151,1 --Handful of Oats (8)
 step
     >>Fale com o |cRXP_FRIENDLY_Fazendeiro Saldanha|r e depois |cRXP_FRIENDLY_Salma|r dentro
@@ -5814,7 +5822,7 @@ step
 step
     #completewith Grayson
     >>Abra os |cRXP_PICK_Sacos de Aveia|r no chão. Saque-os por |cRXP_LOOT_Handfuls of Oats|r
-    >>|cRXP_WARN_Isto leva 5 segundos|r
+    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
     .complete 151,1 --Handful of Oats (8)
 step
     #completewith Oil
@@ -5846,7 +5854,7 @@ step
     #label Compass
     .goto 1436/0,1748.27,-10672.13
     >>Abra o |cRXP_PICK_Alexston's Baú|r. Saqueie-o para obter o |cRXP_LOOT_A Simple Compass|r
-    >>|cRXP_WARN_Isto leva 5 segundos|r
+    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
     .complete 399,1 --A Simple Compass (1)
 step
     #label Oil
@@ -5925,7 +5933,7 @@ step
     .goto 1436/0,1965.97,-11407.13
     >>Fale com |cRXP_FRIENDLY_Grayson|r
     .accept 103 >> Aceite A chama não pode apagar
-    .turnin 103,1 >> Entregue Keeper of the Chamas
+    .turnin 103,1 >> Entregue A chama não pode apagar
     .turnin 104,3 >> Entregue O mar não está para peixe
     .target Captain Grayson
 step
@@ -5957,7 +5965,7 @@ step
 step
     #completewith Footpads
     >>Abra os |cRXP_PICK_Sacos de Aveia|r no chão. Saque-os por |cRXP_LOOT_Handfuls of Oats|r
-    >>|cRXP_WARN_Isto leva 5 segundos|r
+    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
     .complete 151,1 --Handful of Oats (8)
 step
     #completewith AoE1
@@ -6031,7 +6039,7 @@ step
     #label Watch
     .goto 1436/0,1290.12,-9849.40
     >>Abra o |cRXP_PICK_Furlbrow's Wardrobe|r. Saqueie-o para obter o |cRXP_LOOT_Furlbrow's Pocket Vigiar|r
-    >>|cRXP_WARN_Isto leva 5 segundos|r
+    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
     .complete 64,1 --Furlbrow's Pocket Watch (1)
 step
     #completewith Oats
@@ -6066,7 +6074,7 @@ step
     #label Oats
     .goto 1436/0,1037.07,-9849.17
     >>Abra os |cRXP_PICK_Sacos de Aveia|r no chão. Saque-os por |cRXP_LOOT_Handfuls of Oats|r
-    >>|cRXP_WARN_Isto leva 5 segundos|r
+    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
     .complete 151,1 --Handful of Oats (8)
 step
     #label Furlbrows
@@ -6234,7 +6242,7 @@ step
     #label Bank4
     .goto 1453/0,614.33,-8932.92
     >>Fale com |cRXP_FRIENDLY_Newton|r
-    .bankwithdraw 769,5354,6889 >> Retire os seguintes itens do seu banco:
+    .bankwithdraw 769,5354,6889 >> Retire os itens a seguir do seu banco:
     >>|T133970:0|t[Pedaço de Carne de Javali]
     >>|T133469:0|t[Carta para Delgren]
     >>|T132832:0|t[Ovo Pequeno]
@@ -6275,11 +6283,12 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Alliance Mage
 #name 18-20 ADV Costa Negra 3 Mago AdE
 #version 2
 #group RestedXP ADV AdE Maga da Aliança
-#defaultfor Human Mage/Gnome Mage
+#defaultfor none Mage
 #next 20-22 ADV Redridge 1 Mago AdE
 
 step
@@ -6353,7 +6362,7 @@ step
     .target Laird
 step
     >>REMOVE THIS STEP LATER
-    .accept 4740 >> Aceite WANTED: Lodofundo!
+    .accept 4740 >> Aceite PROCURADO: Lodofundo!
     .goto 1439/1,503.76,6402.39
 step
     .goto 1439/1,577.77,6371.39
@@ -6364,7 +6373,7 @@ step
     .goto 1439/1,89.14,5002.00
     >>Fale com |cRXP_FRIENDLY_Onu|r
     .turnin 948 >> Entregue Onu
-    .accept 944 >> Aceite A Alameda do Mestre
+    .accept 944 >> Aceite A Alveola do Mestre
     .target Onu
 step
     .goto 1439/1,33.47,4996.33
@@ -6398,7 +6407,7 @@ step
 step
     #label Glaive1
    .goto 1439/1,410.09,4519.49
-    >>Vá para The Master's Glaive
+    >>Vá para A Alveola do Mestre
    .complete 944,1 --Enter the Master's Glaive (1)
    .use 13536
    .isOnQuest 5321
@@ -6416,10 +6425,10 @@ step
     #completewith next
     .goto 1439/1,410.09,4519.49
     >>Coloque o |T134715:0|t[Frasco de Vidência] no chão
-    >>|cRXP_WARN_Isto leva 5 segundos|r
+    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
     >>Clique no |cRXP_PICK_Frasco de Vidência|r no chão
-    .turnin 944 >> Entregue The Master's Glaive
-    .accept 949 >> Aceite O Acampamento Crepuscular
+    .turnin 944 >> Entregue A Alveola do Mestre
+    .accept 949 >> Aceite O Acampamento do Crepúsculo
     .use 13536
     .use 5251
     .isOnQuest 5321
@@ -6441,10 +6450,10 @@ step
 step
    .goto 1439/1,416.64,4576.69
    >>Coloque o |T134715:0|t[Frasco de Vidência] no chão
-   >>|cRXP_WARN_Isto leva 5 segundos|r
+   >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
    >>Clique no |cRXP_PICK_Frasco de Vidência|r no chão
-   .turnin 944 >> Entregue The Master's Glaive
-   .accept 949 >> Aceite O Acampamento Crepuscular
+   .turnin 944 >> Entregue A Alveola do Mestre
+   .accept 949 >> Aceite O Acampamento do Crepúsculo
    .use 13536
    .use 5251
    .isOnQuest 5321
@@ -6452,8 +6461,8 @@ step
     #label Tome1
    .goto 1439/1,416.64,4576.69
     >>Clique no |cRXP_PICK_Twilight Tomo|r
-   .turnin 949 >> Entregue O Acampamento Crepuscular
-   .accept 950 >> Aceite Devolver a Onu
+   .turnin 949 >> Entregue O Acampamento do Crepúsculo
+   .accept 950 >> Aceite Retornar a Onu
    .use 13536
    .isOnQuest 5321
 step
@@ -6530,7 +6539,7 @@ step
     .goto 1439/1,892.83,4517.30
     >>Pegue a |cRXP_LOOT_Beached Sea Criatura - Missão|r no chão
     >>|cRXP_WARN_saque-o no Neck|r
-    >>|cRXP_WARN_Isto leva 5 segundos|r
+    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
     .accept 4733 >>Aceite Criatura Marinha Encalhada
     .isOnQuest 950
 step
@@ -6541,7 +6550,7 @@ step
     .goto 1439/1,896.76,4597.21
     >>Pegue o |cRXP_LOOT_Beached Tartaruga Marinha|r no chão
     >>|cRXP_WARN_a concha da Tartaruga tem LoS|r
-    >>|cRXP_WARN_Isto leva 5 segundos|r
+    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
     .accept 4732 >>Aceite Tartaruga Marinha Encalhada
     .isOnQuest 950
 step
@@ -6554,14 +6563,14 @@ step
     .goto 1439/1,865.32,4678.432
     >>Pegue o |cRXP_LOOT_Beached Tartaruga Marinha|r no chão
     >>|cRXP_WARN_a concha da Tartaruga tem LoS|r
-    >>|cRXP_WARN_Isto leva 5 segundos|r
+    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
     .accept 4731 >>Aceite Tartaruga Marinha Encalhada
     .isOnQuest 950
 step
     #label SeaCreature
     .goto 1439/1,799.82,4808.12
     >>Pegue a |cRXP_LOOT_Beached Sea Criatura - Missão|r no chão
-    >>|cRXP_WARN_Isto leva 5 segundos|r
+    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
     .accept 4730 >>Aceite Criatura Marinha Encalhada
     .isOnQuest 950
 step
@@ -6591,7 +6600,7 @@ step
 step
     .goto 1439/1,585.63,5237.370
     >>Pegue a |cRXP_LOOT_Beached Sea Criatura - Missão|r no chão
-    >>|cRXP_WARN_Isto leva 5 segundos|r
+    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
     .accept 4728 >>Aceite Criatura Marinha Encalhada
     .isOnQuest 950
 step
@@ -6624,14 +6633,14 @@ step
     #label Onu2
     .goto 1439/1,89.14,5002.00
     >>Fale com |cRXP_FRIENDLY_Onu|r
-    .turnin 950 >> Entregue Devolver a Onu
+    .turnin 950 >> Entregue Retornar a Onu
     .target Onu
     .isQuestComplete 950
 step
     #label SeaCreatureGiga
     .goto 1439/1,585.63,5237.370
     >>Pegue a |cRXP_LOOT_Beached Sea Criatura - Missão|r no chão
-    >>|cRXP_WARN_Isto leva 5 segundos|r
+    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
     .accept 4728 >>Aceite Criatura Marinha Encalhada
 step
     #completewith next
@@ -6639,7 +6648,7 @@ step
     .goto 1439/1,647.86,5180.600,60,0
     .goto 1439/1,583.01,5124.71,60,0
     .goto 1439/1,586.29,5048.73,60,0
-    >>AdE os |cRXP_ENEMY_Reef Crawlers|r. Saque-os para seus |cRXP_LOOT_Fine Caranguejo Chunks|r
+    >>AdE os |cRXP_ENEMY_Reef Crawlers|r. Saqueie-os para obter seus |cRXP_LOOT_Fine Caranguejo Chunks|r
     .complete 1138,1 --Fine Crab Chunks (6)
     .mob Reef Crawler
 step
@@ -6654,13 +6663,13 @@ step
     .goto 1439/1,609.21,4921.66,60,0
     .goto 1439/1,631.48,4858.78,60,0
     .goto 1439/1,702.88,4809.00,60,0
-    >>AdE os |cRXP_ENEMY_Reef Crawlers|r. Saqueie-os para obter seus |cRXP_LOOT_Fine Caranguejo Chunks|r
+    >>AdE os |cRXP_ENEMY_Reef Crawlers|r. Saque-os para seus |cRXP_LOOT_Fine Caranguejo Chunks|r
     .complete 1138,1 --Fine Crab Chunks (6)
     .mob Reef Crawler
 step
     .goto 1439/1,799.82,4808.12
     >>Pegue a |cRXP_LOOT_Beached Sea Criatura - Missão|r no chão
-    >>|cRXP_WARN_Isto leva 5 segundos|r
+    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
     .accept 4730 >>Aceite Criatura Marinha Encalhada
 step
     .goto 1439/1,793.27,4764.89,60,0
@@ -6672,19 +6681,19 @@ step
     .goto 1439/1,865.32,4678.432
     >>Pegue o |cRXP_LOOT_Beached Tartaruga Marinha|r no chão
     >>|cRXP_WARN_The Tartaruga Casca has LoS|r
-    >>|cRXP_WARN_Isto leva 5 segundos|r
+    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
     .accept 4731 >>Aceite Tartaruga Marinha Encalhada
 step
     .goto 1439/1,896.76,4597.21
     >>Pegue o |cRXP_LOOT_Beached Tartaruga Marinha|r no chão
     >>|cRXP_WARN_The Tartaruga Casca has LoS|r
-    >>|cRXP_WARN_Isto leva 5 segundos|r
+    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
     .accept 4732 >>Aceite Tartaruga Marinha Encalhada
 step
     .goto 1439/1,892.83,4517.30
     >>Pegue a |cRXP_LOOT_Beached Sea Criatura - Missão|r no chão
     >>|cRXP_WARN_Saqueie-o no Neck|r
-    >>|cRXP_WARN_Isto leva 5 segundos|r
+    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
     .accept 4733 >>Aceite Criatura Marinha Encalhada
 step
     #completewith Remtravel3
@@ -6739,7 +6748,7 @@ step
 step
     #label Glaive2
    .goto 1439/1,410.09,4519.49
-    >>Vá para The Master's Glaive
+    >>Vá para A Alveola do Mestre
    .complete 944,1 --Enter the Master's Glaive (1)
 step
     #completewith Therylune2
@@ -6753,10 +6762,10 @@ step
     #completewith next
     .goto 1439/1,410.09,4519.49
     >>Coloque |T134715:0|t[Frasco de Vidência] no chão
-    >>|cRXP_WARN_Isto leva 5 segundos|r
+    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
     >>Clique em |cRXP_PICK_Frasco de Vidência|r no chão
-    .turnin 944 >> Entregue The Master's Glaive
-    .accept 949 >> Aceite O Acampamento Crepuscular
+    .turnin 944 >> Entregue A Alveola do Mestre
+    .accept 949 >> Aceite O Acampamento do Crepúsculo
     .use 5251
 step
     .goto 1439/1,410.09,4519.49
@@ -6772,17 +6781,17 @@ step
 step
     .goto 1439/1,416.64,4576.69
     >>Coloque |T134715:0|t[Frasco de Vidência] no chão
-    >>|cRXP_WARN_Isto leva 5 segundos|r
+    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
     >>Clique em |cRXP_PICK_Frasco de Vidência|r no chão
-    .turnin 944 >> Entregue The Master's Glaive
-    .accept 949 >> Aceite O Acampamento Crepuscular
+    .turnin 944 >> Entregue A Alveola do Mestre
+    .accept 949 >> Aceite O Acampamento do Crepúsculo
     .use 5251
 step
     #label Tome2
     .goto 1439/1,416.64,4576.69
     >>Clique em |cRXP_PICK_Twilight Tomo|r
-    .turnin 949 >> Entregue O Acampamento Crepuscular
-    .accept 950 >> Aceite Devolver a Onu
+    .turnin 949 >> Entregue O Acampamento do Crepúsculo
+    .accept 950 >> Aceite Retornar a Onu
     .use 13536
 step
     #label Therylune2
@@ -6814,7 +6823,7 @@ step
     #label Onu3
     .goto 1439/1,89.14,5002.00,-1
     >>Fale com |cRXP_FRIENDLY_Onu|r
-    .turnin 950 >> Entregue Devolver a Onu
+    .turnin 950 >> Entregue Retornar a Onu
     .target Onu
 step
     .goto 1439/1,33.47,4996.33
@@ -6825,7 +6834,7 @@ step
 step
     .goto 1439/1,34.12,5001.570
     >>Abra |cRXP_PICK_Baú de Kerlonian|r. Saque-o para obter a |cRXP_LOOT_Corneta do Despertar|r
-    >>|cRXP_WARN_Isto leva 5 segundos|r
+    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
     .complete 5321,1 --Horn of Awakening (1)
     .isOnQuest 5321
 step
@@ -7005,7 +7014,7 @@ step
     #completewith Teldrassil
     #requires BoatT
     .cast 818 >> Use |T135805:0|t[Fogo para Cozinhar] no barco (ou no Dock se o barco ainda não estiver visível)
-    >>|cRXP_WARN_Isto leva 5 segundos|r
+    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
     .skill cooking,50,1
 step
     #completewith Teldrassil
@@ -7053,11 +7062,12 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Alliance Mage
 #name 20-22 ADV Redridge 1 Mago AdE
 #version 2
 #group RestedXP ADV AdE Maga da Aliança
-#defaultfor Human Mage/Gnome Mage
+#defaultfor none Mage
 #next 22-26 Avançado Pantanal 1 Mago AdE
 
 step
@@ -7077,7 +7087,7 @@ step
     #label Bank1
     .goto 1453/0,614.33,-8932.92
     >>Fale com |cRXP_FRIENDLY_Newton|r
-    .bankwithdraw 4371,1941,1711,1478,1712,3012,1180,1181,3013,2998 >> Retire os seguintes itens do seu banco:
+    .bankwithdraw 4371,1941,1711,1478,1712,3012,1180,1181,3013,2998 >> Retire os itens a seguir do seu banco:
     >>|T133024:0|t[Tubo de Bronze]
     >>|T134943:0|t[Pergaminhos]
     >>|T132620:0|t[Cask of Merlot]
@@ -7306,8 +7316,8 @@ step
     #sticky
     #label Dawn
     .goto 1429/0,-716.46,-9541.04,0,0
-    >>Fale com |cRXP_FRIENDLY_Sol|r lá em cima
-    .vendor 958 >> |cRXP_BUY_Compre não-Intelecto|r |T134943:0|t[Pergaminhos]|cRXP_BUY_,|r |T134850:0|t[Poções de Mana Menor]|cRXP_BUY_, e|r |T134830:0|t[Poções de Cura Menores] |cRXP_BUY_dela (se estiverem disponíveis)|r
+    >>Fale com |cRXP_FRIENDLY_Sol|r em cima
+    .vendor 958 >> |cRXP_BUY_Compre sem inteligência|r |T134943:0|t[Pergaminhos]|cRXP_BUY_,|r |T134850:0|t[Mana Menor Potions]|cRXP_BUY_, e|r |T134830:0|t[Lesser Cura Potions] |cRXP_BUY_dela (se estiverem disponíveis)|r
     >>|cRXP_WARN_NÃO vá abaixo de 11s 38c|r
     .money <0.1138
     .target Dawn Brightstar
@@ -7316,8 +7326,8 @@ step
     #sticky
     #label Dawn2
     .goto 1429/0,-716.46,-9541.04,0,0
-    >>Fale com |cRXP_FRIENDLY_Sol|r em cima
-    .vendor 958 >> |cRXP_BUY_Compre sem inteligência|r |T134943:0|t[Pergaminhos]|cRXP_BUY_,|r |T134850:0|t[Mana Menor Potions]|cRXP_BUY_, e|r |T134830:0|t[Lesser Cura Potions] |cRXP_BUY_dela (se estiverem disponíveis)|r
+    >>Fale com |cRXP_FRIENDLY_Sol|r lá em cima
+    .vendor 958 >> |cRXP_BUY_Compre não-Intelecto|r |T134943:0|t[Pergaminhos]|cRXP_BUY_,|r |T134850:0|t[Poções de Mana Menor]|cRXP_BUY_, e|r |T134830:0|t[Poções de Cura Menores] |cRXP_BUY_dela (se estiverem disponíveis)|r
     >>|cRXP_WARN_NÃO vá abaixo de 19s 38c|r
     .money <0.1938
     .target Dawn Brightstar
@@ -7353,8 +7363,8 @@ step
 step
     .goto 1431/0,-1200.85,-10593.99
     >>Fale com |cRXP_FRIENDLY_Elaine|r
-    .accept 163 >>Aceite Corvo Hill
-    .accept 164 >>Aceite Entregas para Sven
+    .accept 163 >>Aceite Monte Corvo
+    .accept 164 >>Aceite Deliveries to Sven
     .accept 165 >>Aceite O Eremita
     .target Elaine Carevin
 step
@@ -7446,7 +7456,7 @@ step
     .goto 1433/0,-1893.64,-9592.880,60,0
     .goto 1433/0,-1938.36,-9591.440
     >>Fale com |cRXP_FRIENDLY_Parker|r
-    .accept 244 >>Aceite Gnolls Invasores
+    .accept 244 >>Aceite Encroaching Gnolls
     .target Guard Parker
 step << skip
     #label AoE1
@@ -7469,8 +7479,8 @@ step
     #label Gnolls
     .goto 1433/0,-2238.15,-9443.60
     >>Fale com |cRXP_FRIENDLY_Feldon|r
-    .turnin 244 >>Entregue Gnolls Invasores
-    .accept 246 >>Aceite Avaliando a Ameaça
+    .turnin 244 >>Entregue Encroaching Gnolls
+    .accept 246 >>Aceite Assessing the Ameaça
     .target Deputy Feldon
 step
     .goto 1433/0,-2234.89,-9435.060
@@ -7505,7 +7515,7 @@ step
     >>Fale com |cRXP_FRIENDLY_Baren|r e o |cRXP_PICK_Wanted Poster|r
     .accept 127 >>Aceite O lago está para peixe
     .goto 1433/0,-2172.59,-9261.02
-    .accept 180 >>Aceite Wanted: General Mordente
+    .accept 180 >>Aceite Procurado: General Mordente
     .goto 1433/0,-2151.53,-9247.12
     .target Dockmaster Baren
 step
@@ -7546,7 +7556,7 @@ step
     .goto 1433/0,-2397.70,-9363.97
     >>|cRXP_WARN_Nade debaixo d'água e verifique os locais de spawn. Existem 8 locais com 2 aparições de uma vez|r
     >>Abra a |cRXP_PICK_Glinting Mud|r. Saqueie-a para |cRXP_LOOT_Hilary's Colar|r
-    >>|cRXP_WARN_Isto leva 5 segundos|r
+    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
     .complete 3741,1 --Hilary's Necklace (1)
 step
     .goto 1433/0,-2205.58,-9351.52
@@ -7575,7 +7585,7 @@ step
     .mob Redridge Thrasher
 step
     #completewith Gnolls3
-    >>AdE |cRXP_ENEMY_Tarantulas|r. Saqueie-as para obter |cRXP_LOOT_Crisp Aranha Carne|r
+    >>Ataque em área os |cRXP_ENEMY_Tarantulas|r. Saqueie-os para obter |cRXP_LOOT_Crisp Aranha Carne|r
     >>Ataque em área os |cRXP_ENEMY_Great Goretusks|r. Saqueie-os para obter |cRXP_LOOT_Great Goretusco Snouts|r e |T133970:0|t|cRXP_LOOT_[Naco de Carne de Javali]|r
     .collect 1081,5,92,1 --Crisp Spider Meat (5)
     .mob +Tarantula
@@ -7586,7 +7596,7 @@ step
     .skill cooking,50,1
 step
     #completewith Gnolls3
-    >>Ataque em área os |cRXP_ENEMY_Tarantulas|r. Saqueie-os para obter |cRXP_LOOT_Crisp Aranha Carne|r
+    >>AdE |cRXP_ENEMY_Tarantulas|r. Saqueie-as para obter |cRXP_LOOT_Crisp Aranha Carne|r
     >>Ataque em área os |cRXP_ENEMY_Great Goretusks|r. Saqueie-os para obter |cRXP_LOOT_Great Goretusco Snouts|r
     .collect 1081,5,92,1 --Crisp Spider Meat (5)
     .mob +Tarantula
@@ -7627,8 +7637,8 @@ step
 step
     .goto 1433/0,-2472.16,-9366.72,-1
     >>Vá para debaixo da água
-    >>Abra o |cRXP_PICK_Sunken Baú|r. Pegue |cRXP_LOOT_Oslow's Caixa de Ferramentas|r
-    >>|cRXP_WARN_Isto leva 5 segundos|r
+    >>Abra o |cRXP_PICK_Sunken Baú|r. Saque-o para obter |cRXP_LOOT_Oslow's Caixa de Ferramentas|r
+    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
     .complete 125,1 --Oslow's Toolbox (1)
 step
     #completewith next
@@ -7641,7 +7651,7 @@ step
 step
     .goto 1433/0,-2268.54,-9279.12
     >>Fale com |cRXP_FRIENDLY_Oslow|r
-    .turnin 125 >>Entregue The Perdida Ferramentas
+    .turnin 125 >>Entregue As Ferramentas Perdidas
     .accept 89 >>Aceite The Everstill Ponte
     .target Foreman Oslow
 step
@@ -7884,7 +7894,7 @@ step
     >>Fale com |cRXP_FRIENDLY_Baren|r
     .turnin 127 >> Entregue O lago está para peixe
     .accept 150 >> Aceite Caçadores de murlocs
-    .turnin 150 >> Entregue Murloc Poachers
+    .turnin 150 >> Entregue Caçadores de murlocs
     .goto 1433/0,-2172.59,-9261.02
     .target Dockmaster Baren
 step
@@ -7928,8 +7938,8 @@ step
 step
     .goto 1429/0,-186.46,-8874.91
     >>Fale com |cRXP_FRIENDLY_Paxton|r
-    .turnin 347 >> Entregue Minério de Rethban
-    .accept 346 >> Aceite Devolver a Kristoff
+    .turnin 347 >> Entregue Rethban Ore
+    .accept 346 >> Aceite Voltar para Kristoff
     .target Brother Paxton
 step
     #completewith CharysEnd
@@ -8017,7 +8027,7 @@ step
 step
     .goto 1453/0,766.64,-8623.23
     >>Fale com |cRXP_FRIENDLY_Kristoff|r
-    .turnin 346 >> Entregue Devolver a Kristoff
+    .turnin 346 >> Entregue Voltar para Kristoff
     .target Brother Kristoff
 step
     .goto 1453/0,638.26,-8342.22
@@ -8060,7 +8070,7 @@ step
 step
     #label BankDeposit
     .goto 1455/0,-997.66,-4886.49
-    .bankwithdraw 4654 >> Retire os seguintes itens do seu banco:
+    .bankwithdraw 4654 >> Retire os itens a seguir do seu banco:
     >>|T134431:0|t[Mysterious Fossil]
     .target Bailey Stonemantle
 step

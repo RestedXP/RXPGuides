@@ -6,8 +6,8 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 13-15 Floresta de Pinhaprata
 #version 1
-#group Guia de Sobrevivência (H)
-#subgroup RXP Sobrevivência Guia 1-20
+#group Guia de Sobrevivência RestedXP (H)
+#subgroup RXP Guia de Sobrevivência 1-20
 #next 15-19 Savanas
 
 step << Undead Rogue
@@ -19,7 +19,7 @@ step << Undead Rogue
 step
     #label WorgHearts
     #completewith next
-    >>Abate os |cRXP_ENEMY_Worgs|r enquanto você viaja para |cRXP_FRIENDLY_Erland|r. Saque os |cRXP_LOOT_Corações|r deles
+    >>Mate os |cRXP_ENEMY_Worgs|r enquanto viaja em direção a |cRXP_FRIENDLY_Erland|r. Saque-os pelos |cRXP_LOOT_Corações|r.
     .collect 3164,6,429,1 --Collect Discolored Worg Heart (x6)
     .mob Worg
     .mob Mottled Worg
@@ -27,7 +27,7 @@ step
 step
     .goto Silverpine Forest,56.18,9.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Erland|r
-    >>|cRXP_WARN_Certifique-se de estar com a vida e a mana cheias antes de começar esta missão!|r
+    >>|cRXP_WARN_Certifique-se de estar com vida/mana cheios antes de iniciar|r
     .accept 435 >>Aceite Uma escolta para Orlando
     .target Deathstalker Erland
 step
@@ -42,8 +42,8 @@ step
     .goto Silverpine Forest,56.25,11.43,30,0
     .goto Silverpine Forest,56.17,12.62,30,0
     .goto Silverpine Forest,53.46,13.45
-    >>Escolte |cRXP_FRIENDLY_Erland|r com segurança para |cRXP_FRIENDLY_Rane Yorick|r
-    >>|cRXP_WARN_Cuidado!|r |cRXP_ENEMY_Worgs|r |cRXP_WARN_podem aparecer um sobre o outro, coma e beba sempre que conseguir|r
+    >>Acompanhe |cRXP_FRIENDLY_Erland|r com segurança até |cRXP_FRIENDLY_Rane Yorick|r
+    >>|cRXP_WARN_Tenha cuidado!|r |cRXP_ENEMY_Worgs|r |cRXP_WARN_podem surgir um em cima do outro, coma e beba sempre que conseguir|r
     .complete 435,1 --Erland must reach Rane Yorick (1)
     .mob Worg
 step
@@ -76,7 +76,7 @@ step
 step
     .goto Silverpine Forest,44.20,39.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dalar Tessalba|r
-    .accept 421 >>Aceite Provando Seu Valor
+    .accept 421 >>Aceite Prove Your Worth
     .target Dalar Dawnweaver
 step << !Mage !Priest
     .goto Silverpine Forest,44.05,39.78
@@ -95,17 +95,17 @@ step
     .money <0.05 << Mage/Warlock/Priest/Shaman/Druid
 step << Undead
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sacerdote Sombrio Allister|r e |cRXP_FRIENDLY_Necroguarda Rodrigo|r
-    .accept 477 >>Aceite Travessia de Fronteiras
+    .accept 477 >>Aceite Border Crossings
     .target +Shadow Priest Allister
     .goto Silverpine Forest,43.98,40.93
-    .accept 6321 >>Aceite Abastecendo The Sepulcher
+    .accept 6321 >>Aceite Supplying the Sepulcher
     .target +Deathguard Podrig
     .goto Silverpine Forest,43.43,41.67
 step
     #label BorderCrossings
     .goto Silverpine Forest,43.98,40.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Allister|r
-    .accept 477 >>Aceite Travessias da Fronteira
+    .accept 477 >>Aceite Border Crossings
     .target Shadow Priest Allister
 step
     #completewith next
@@ -116,7 +116,7 @@ step
 step
     .goto Silverpine Forest,43.43,40.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Alto-executor Hadrec|r na cripta
-    .turnin 449 >>Entregue The Deathstalkers - Missão - Missão - Missão Relatório
+    .turnin 449 >>Entregue Relatório dos Sicários
     .accept 3221 >>Aceite Fale com Renferrel
     .accept 437 >>Aceite Os Campos Estéreis
     .target High Executor Hadrec
@@ -141,7 +141,7 @@ step
     .goto Silverpine Forest,51.80,46.60,50,0
     .goto Silverpine Forest,50.83,47.74,50,0
     .goto Silverpine Forest,49.12,36.72,50,0
-    >>Abate os |cRXP_ENEMY_Moonrage Whitescalps|r
+    >>Mate |cRXP_ENEMY_Grenhalva Lunafúria|r
     .complete 421,1 --Moonrage Whitescalp (5)
     .mob Moonrage Whitescalp
     .unitscan Son of Arugal
@@ -164,7 +164,7 @@ step
     .complete 422,1 --Remedy of Arugal (1)
 step
     #completewith next
-    .goto Silverpine Forest,53.39,13.32,80 >> Vá para The Ivar Mathiaz
+    .goto Silverpine Forest,53.39,13.32,80 >> Vá para A Horta do Ivar
 step
     #label QuinnYorick
     .goto Silverpine Forest,53.39,13.32,8,0
@@ -184,8 +184,8 @@ step
     .goto Silverpine Forest,51.89,13.82,6,0
     .goto Silverpine Forest,51.54,13.91
     >>Mate |cRXP_ENEMY_Ivar, o Imundo|r. Saqueie-o para pegar sua |cRXP_LOOT_Cabeça|r
-    >>|cRXP_WARN_Tenha cuidado! Limpe toda a área frontal do celeiro e puxe os|r |cRXP_ENEMY_Ravenclaw Slaves|r |cRXP_WARN_para fora um a um.|r
-    >>|cRXP_WARN_Ivar é protegido por dois|r |cRXP_ENEMY_Ravenclaw Slaves|r |cRXP_WARN_dentro do celeiro. Você pode puxar um deles sozinho enquanto ele patrula para a frente.|r
+    >>|cRXP_WARN_Cuidado! Limpe toda a área frontal do celeiro e puxe os|r |cRXP_ENEMY_Ravenclaw Slaves|r |cRXP_WARN_um por um.|r
+    >>|cRXP_WARN_Ivar está protegido por dois|r |cRXP_ENEMY_Ravenclaw Slaves|r |cRXP_WARN_dentro do celeiro. Você pode puxar um deles isoladamente enquanto ele patrulha|r
     >>|cRXP_WARN_Eles são imunes a Medo!|r << Priest/Warlock
     .complete 425,1 --Ivar's Head (1)
     .target Ivar the Foul
@@ -209,7 +209,7 @@ step
 step
     #label Nightlash
     .goto Silverpine Forest,45.44,21.01
-    >>Mate os |cRXP_ENEMY_Rot Esconder-se Gnolls|r ao redor de The Morto Field até que |cRXP_ENEMY_Vergasta|r apareça. Mate-a e saqueie a |cRXP_LOOT_Essência|r dela
+    >>Mate os |cRXP_ENEMY_Rot Esconder-se Gnolls|r ao redor de Os Campos Mortos até que |cRXP_ENEMY_Vergasta|r apareça. Mate e saqueie-a para obter sua |cRXP_LOOT_Essência|r
     >>|cRXP_WARN_Eles são imunes a Medo!|r << Priest/Warlock
     .complete 437,1 --Enter the Dead Fields (1)
     .complete 437,2 --Essence of Nightlash (1)
@@ -226,8 +226,8 @@ step
     .unitscan Son of Arugal
 step
     #completewith next
-    >>Mate as |cRXP_ENEMY_Aranhas|r. Saqueie-as pelos seus |cRXP_LOOT_Sanguíneo|r
-    >>|cRXP_WARN_Tenha cuidado se|r |cRXP_ENEMY_Krethis Umbrateia|r |cRXP_WARN_está ativa, ELA VAI MATAR VOCÊ! Ela tem um escudo de 130 de dano em uma recarga de 15s, e uma habilidade de choque instantâneo de 110 de dano.|r
+    >>Mate as |cRXP_ENEMY_Aranhas|r. Saque-as para obter seu |cRXP_LOOT_Sanguíneo|r
+    >>|cRXP_WARN_Cuidado se|r |cRXP_ENEMY_Krethis Umbrateia|r |cRXP_WARN_está ativa, ELA VAI TE MATAR! Ela tem um escudo de 130 de dano com recarga de 15s e uma habilidade de choque instantâneo de 110 de dano|r
     .complete 447,2 --Skittering Blood (6)
     .mob Moss Stalker
     .unitscan Krethis Shadowspinner
@@ -236,7 +236,7 @@ step
     #label KillianVendor
     .goto Silverpine Forest,33.00,17.84
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Quim Sanatha|r
-    .vendor >> Lixo Comerciante
+    .vendor >> Venda os lixos
     .target Killian Sanatha
     .isOnQuest 447
 step
@@ -251,7 +251,7 @@ step
 	.goto Silverpine Forest,35.85,13.83,50,0
 	.goto Silverpine Forest,36.33,14.20,50,0
     >>Mate as |cRXP_ENEMY_Aranhas|r. Saque-as para obter seu |cRXP_LOOT_Sanguíneo|r
-    >>|cRXP_WARN_Tenha cuidado se|r |cRXP_ENEMY_Krethis Umbrateia|r |cRXP_WARN_está ativa, ELA VAI TE MATAR! Ela tem um escudo de 130 de dano com recarga de 15s e uma habilidade de choque instantâneo com 110 de dano|r
+    >>|cRXP_WARN_Cuidado se|r |cRXP_ENEMY_Krethis Umbrateia|r |cRXP_WARN_está ativa, ELA VAI TE MATAR! Ela tem um escudo de 130 de dano com recarga de 15s e uma habilidade de choque instantâneo de 110 de dano|r
     .complete 447,2 --Skittering Blood (6)
     .mob Moss Stalker
     .unitscan Krethis Shadowspinner
@@ -297,7 +297,7 @@ step << !Mage !Priest
     .goto Silverpine Forest,44.05,39.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Guida Farrow|r
     >>|cRXP_BUY_Compre|r |T134532:0|t[Cogumelo de Bolinhas Vermelhas] |cRXP_BUY_dela|r
-    .vendor >> Lixo Comerciante
+    .vendor >> Venda os lixos
     .collect 4605,20,423,1 --Red-speckled Mushroom (20)
     .target Gwyn Farrow
 step
@@ -405,7 +405,7 @@ step
 	.goto Silverpine Forest,42.01,29.27,50,0
 	.goto Silverpine Forest,43.83,31.00,50,0
     >>Mate |cRXP_ENEMY_Glutão Lunafúria|r e |cRXP_ENEMY_Almanegra Lunafúria|r. Saque-os para pegar seus |cRXP_LOOT_Grilhões|r
-    >>|cRXP_WARN_Tenha cuidado!|r Os |cRXP_ENEMY_Moonrage Darksouls|r |cRXP_WARN_entram em fúria quando estão com menos de 25% de vida. Mate-os rapidamente quando estão com pouca vida|r
+    >>|cRXP_WARN_Cuidado!|r |cRXP_ENEMY_Almanegras Lunafúrias|r |cRXP_WARN_entram em frenesi abaixo de 25% de vida. Mate-os rapidamente quando estiverem com pouca vida|r
     .complete 423,1 --Glutton Shackle (6)
     .mob +Moonrage Glutton
     .complete 423,2 --Darksoul Shackle (3)
@@ -415,7 +415,7 @@ step
     #label DecrepitFerry
     .goto Silverpine Forest,58.39,34.79
     >>Clique no |cRXP_PICK_Barco|r ao lado do cais
-    >>|cRXP_WARN_Tenha cuidado!|r Os |cRXP_ENEMY_Hands of Ravenclaw|r |cRXP_WARN_chegam até o nível 16 e possuem uma habilidade de atordoamento de alcance corpo a corpo de 5 segundos|r
+    >>|cRXP_WARN_Tenha cuidado!|r |cRXP_ENEMY_Mãos of Ravenclaw|r |cRXP_WARN_são até o nível 16 e possuem uma habilidade de atordoamento corpo a corpo de 5 segundos|r
     .turnin 438 >>Entregue Os Campos Apodrecidos
     .accept 439 >>Aceite Pistas dos Putricouro
 step
@@ -461,7 +461,7 @@ step
 step
     .goto Silverpine Forest,43.98,40.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Allister|r
-    .accept 479 >>Aceite Investigações em Moinho de Âmbar
+    .accept 479 >>Aceite Investigações de Ambermill
     .target Shadow Priest Allister
     .group
 step
@@ -492,7 +492,7 @@ step
     #completewith ZingeAndFaranell
     .goto Silverpine Forest,45.62,42.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Carlos Razok|r
-    .fp Sepulcher >> Pegue o ponto de voo do Sepulcro << !Undead
+    .fp Sepulcher >> Aprenda a rota de voo para o Sepulcro << !Undead
     .fly Undercity >> Voe para Cidade Baixa
     .target Karos Razok
     .zoneskip Undercity
@@ -519,7 +519,7 @@ step << Troll Warrior/Undead Warrior
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.9
 step << Orc Warrior
     .goto Undercity,61.15,40.89
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Converse com|r |cRXP_FRIENDLY_Louis|r|cRXP_BUY_. Compre um|r |T132394:0|t[Machado Farpado] |cRXP_BUY_dele|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Conversar com|r |cRXP_FRIENDLY_Louis|r|cRXP_BUY_. Compre um|r |T132394:0|t[Machado Farpado] |cRXP_BUY_dele|r
     .collect 2025,1,479,1 --Collect Bearded Axe (1)
     .money <0.5304
     .itemStat 16,QUALITY,<7
@@ -533,7 +533,7 @@ step << Orc Warrior
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.8
 step << Tauren Warrior
     .goto Undercity,61.15,40.89
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Converse com|r |cRXP_FRIENDLY_Louis|r|cRXP_BUY_. Compre um|r |T133046:0|t[Martelo de Rocha] |cRXP_BUY_dele|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Conversar com|r |cRXP_FRIENDLY_Louis|r|cRXP_BUY_. Compre um|r |T133046:0|t[Martelo de Rocha] |cRXP_BUY_dele|r
     .collect 2026,1,479,1 --Collect Rock Hammer (1)
     .money <0.6286
     .target Louis Warren
@@ -549,7 +549,7 @@ step << Tauren Warrior
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.5
 step << Shaman
     .goto Undercity,61.15,40.89
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Converse com|r |cRXP_FRIENDLY_Louis|r|cRXP_BUY_. Compre um|r |T135147:0|t[Cajado Nodoso] |cRXP_BUY_dele|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Conversar com|r |cRXP_FRIENDLY_Louis|r|cRXP_BUY_. Compre um|r |T135147:0|t[Cajado Nodoso] |cRXP_BUY_dele|r
     .collect 2030,1,479,1 --Collect Gnarled Staff (1)
     .money <0.5544
     .target Louis Warren
@@ -565,7 +565,7 @@ step << Shaman
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.9
 step << Rogue
     .goto Undercity,61.15,40.89
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Conversar com|r |cRXP_FRIENDLY_Louis|r|cRXP_BUY_. Compre uma|r |T135343:0|t[Cimitarra] |cRXP_BUY_dele.|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Converse com|r |cRXP_FRIENDLY_Louis|r|cRXP_BUY_. Compre uma|r |T135343:0|t[Cimitarra] |cRXP_BUY_dele.|r
     .collect 2027,1,479,1 --Collect Scimitar (1)
     .money <0.3815
     .itemStat 16,QUALITY,<7
@@ -584,7 +584,7 @@ step
     .goto Undercity,47.20,59.69,0
     .goto Undercity,47.20,59.69,12,0
     .goto Undercity,43.55,68.11,12,0
-    .goto Undercity,45.20,71.67,12 >>Viaje para |cRXP_FRIENDLY_Zinge|r e |cRXP_FRIENDLY_Faranell|r
+    .goto Undercity,45.20,71.67,12 >>Vá para |cRXP_FRIENDLY_Zinge|r e |cRXP_FRIENDLY_Faranell|r
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mestre-boticário Faranello|r e |cRXP_FRIENDLY_Boticária Zilda|r no Boticarium
     .turnin 447 >>Entregue Receita mortal
@@ -611,7 +611,7 @@ step
     #label ZingeAndFaranell
 step << Mage
     .goto Undercity,85.14,10.02
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConversar com |cRXP_FRIENDLY_Anastasia|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Anastasia|r
     .train 2137 >> Treine suas magias de classe
     .target Anastasia Hartwell
     .xp <14,1
@@ -619,7 +619,7 @@ step << Mage
 step << Mage
     #optional
     .goto Undercity,85.14,10.02
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConversar com |cRXP_FRIENDLY_Anastasia|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Anastasia|r
     .train 2120 >> Treine suas magias de classe
     .target Anastasia Hartwell
     .xp <16,1
@@ -655,7 +655,7 @@ step << Warlock
     .group
 step << Priest/Mage/Warlock
     .goto Undercity,69.54,26.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Conversar com|r |cRXP_FRIENDLY_Zane|r|cRXP_BUY_. Compre uma|r |T133718:0|t[Varinha Fumegante] |cRXP_BUY_dele.|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Converse com|r |cRXP_FRIENDLY_Zane|r|cRXP_BUY_. Compre uma|r |T133718:0|t[Varinha Fumegante] |cRXP_BUY_dele|r
     .collect 5208,1 --Smoldering Wand (1)
     .money <0.3515
     .itemStat 18,QUALITY,<7
@@ -707,7 +707,7 @@ step
     .skill firstaid,<40,1
 step
     .goto Undercity,73.19,55.17
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConversar com|r |cRXP_FRIENDLY_Mary|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com|r |cRXP_FRIENDLY_Mary|r
     .train 3274 >> Aprenda Socorrista Profissional
     .target Mary Edras
     .skill firstaid,<50,1
@@ -761,7 +761,7 @@ step << Undead
 step
     #completewith GrimsonthePale
     .goto Undercity,63.27,48.55
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConversar com |cRXP_FRIENDLY_Miguel|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Miguel|r
     .fly The Supulcher >> Voe para o Sepulcro
     .target Michael Garrett
     .zoneskip Silverpine Forest
@@ -797,8 +797,8 @@ step
     .group 2
 step << skip
     .goto Silverpine Forest,58.12,45.50
-    .goto Silverpine Forest,44.29,41.09,30 >>|cRXP_WARN_Salte sobre a roda de madeira. Realize um Pulo de Logout ao fazer logout e entrar novamente. Se não conseguir fazer isso, corra de volta para The Sepulcher|r
-    .link https://www.youtube.com/watch?v=uD2CUb3rdQ0&ab >> |cRXP_WARN_Clique aqui para um exemplo|r
+    .goto Silverpine Forest,44.29,41.09,30 >>|cRXP_WARN_Salte sobre a roda de madeira. Realize um Logout Pular ao sair e voltar a entrar. Se você não conseguir fazer isso, corra de volta para The Sepulcher|r
+    .link https://www.youtube.com/watch?v=uD2CUb3rdQ0&ab >> |cRXP_WARN_CLICK HERE for an example|r
     .group
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dalar Tessalba|r
@@ -810,7 +810,7 @@ step
 step
     #completewith next
     .goto Silverpine Forest,57.90,63.10,120,0
-    .subzone 233 >> Vá para Ambermill
+    .subzone 233 >> Viaje para Ambermill
     .group
 step
     #loop
@@ -826,19 +826,19 @@ step
 	.goto Silverpine Forest,57.56,67.57,50,0
 	.goto Silverpine Forest,57.62,65.17,50,0
 	.goto Silverpine Forest,57.12,63.39,50,0
-    >>Mate os |cRXP_ENEMY_Protetores de Dalaran|r e os |cRXP_ENEMY_Magos de Dalaran|r. Saque-os para seus |cRXP_LOOT_Pendants|r
+    >>Mate os |cRXP_ENEMY_Dalaran Protectors|r e os |cRXP_ENEMY_Dalaran Mages|r. Saque seus |cRXP_LOOT_Pendants|r
     .complete 479,1 --Dalaran Pendant (8)
     .mob Dalaran Mage
     .mob Dalaran Protector
     .group 2
 step
     #completewith BerardsJournal
-    .goto Silverpine Forest,48.20,71.94,50 >> Vá para Pyrewood Village
+    .goto Silverpine Forest,48.20,71.94,50 >> Viaje para Pyrewood Village
     .isOnQuest 99
     .group
 step
     #completewith PyrewoodAmbush
-    >>Mate os |cRXP_ENEMY_Pyrewood|r inimigos. Saque-os para seus |cRXP_LOOT_Grilhões|r
+    >>Mate os |cRXP_ENEMY_Pyrewood|r. Saque seus |cRXP_LOOT_Grilhões|r
     .complete 99,1 -- Pyrewood Shackle (6)
     .mob Pyrewood Watcher
     .mob Pyrewood Tailor
@@ -856,27 +856,27 @@ step
 step
     #label BerardsJournal
     .goto Silverpine Forest,42.98,73.22
-    >>Mate o |cRXP_ENEMY_Boticário Berardo|r. Saque o seu |cRXP_LOOT_Livro|r localizado na estante
+    >>Mate |cRXP_ENEMY_Boticário Berardo|r. Saque seu |cRXP_LOOT_Livro|r localizado na estante
     .complete 450,1 --Berard's Journal (1)
     .mob Apothecary Berard
     .isOnQuest 450
     .group 4
 step
     #completewith next
-    .goto Silverpine Forest,45.89,74.17,10 >> Entre na Capela
+    .goto Silverpine Forest,45.89,74.17,10 >> Entre na capela
     .isOnQuest 99
     .group
 step
     .goto Silverpine Forest,46.50,74.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Faerleia|r
-    .accept 452 >>Aceite Pyrewood Emboscar
+    .accept 452 >>Aceite Emboscada de Pyrewood
     .mob Deathstalker Faerleia
     .isOnQuest 99
     .group 4
 step
     #label PyrewoodAmbush
     .goto Silverpine Forest,46.48,74.10
-    >>Mate o |cRXP_ENEMY_Vereador|r e o |cRXP_ENEMY_Prefeito Morrison|r que aparecem
+    >>Mate o |cRXP_ENEMY_Councilman|r e o |cRXP_ENEMY_Prefeito Morrison|r que aparecem
     .complete 452,1 --Aid Faerleia in killing the Pyrewood Council
     .mob Councilman Smithers
     .mob Councilman Hendricks
@@ -892,7 +892,7 @@ step
 step
     .goto Silverpine Forest,46.50,74.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Faerleia|r
-    .turnin 452 >>Entregue Pyrewood Emboscar
+    .turnin 452 >>Entregue Emboscada de Pyrewood
     .mob Deathstalker Faerleia
     .isQuestComplete 452
     .group
@@ -904,7 +904,7 @@ step
     .goto Silverpine Forest,45.41,72.42,40,0
     .goto Silverpine Forest,46.61,73.00,40,0
     .goto Silverpine Forest,45.48,73.43,40,0
-    >>Conclua matando os |cRXP_ENEMY_Pyrewood|r inimigos. Saque-os para seus |cRXP_LOOT_Grilhões|r
+    >>Termine de matar os |cRXP_ENEMY_Pyrewood|r. Saque seus |cRXP_LOOT_Grilhões|r
     .complete 99,1 -- Pyrewood Shackle (6)
     .mob Pyrewood Watcher
     .mob Pyrewood Tailor
@@ -929,7 +929,7 @@ step
 step
     .goto Silverpine Forest,42.79,40.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Boticário Renferrel|r
-    .turnin 450 >> Entregue A Recipe for Morte
+    .turnin 450 >> Entregue Uma Receita para a Morte
     .target Apothecary Renferrel
     .isQuestComplete 450
     .group
@@ -937,7 +937,7 @@ step
     #label AmbermillTurnin
     .goto Silverpine Forest,43.98,40.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Allister|r
-    .turnin 479 >>Entregue Ambermill Investigations
+    .turnin 479 >>Entregue Investigações de Ambermill
     .target Shadow Priest Allister
     .isQuestComplete 479
     .group
@@ -967,7 +967,7 @@ step
     .isOnQuest 424
 step
     #optional
-    .abandon 479 >> Abandone Ambermill Investigations
+    .abandon 479 >> Abandone Investigações de Ambermill
     .isOnQuest 479
 step
     #optional
@@ -975,11 +975,11 @@ step
     .isOnQuest 99
 step
     #optional
-    .abandon 450 >> Abandone A Recipe For Morte
+    .abandon 450 >> Abandone Uma Receita para a Morte
     .isOnQuest 450
 step
     #optional
-    .abandon 452 >> Abandone Pyrewood Emboscar
+    .abandon 452 >> Abandone Emboscada de Pyrewood
     .isOnQuest 452
 step << Tauren/Shaman/Hunter
     .hs >> Use sua Pedra de Regresso para ir à Encruzilhada

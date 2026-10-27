@@ -1490,7 +1490,7 @@ step
     .isQuestAvailable 79947
 step
     #completewith next
-    .zone Tanaris >>Vá para |cFFfa9602Tanaris|r
+    .zone Tanaris >>Vá a |cFFfa9602Tanaris|r
     .fly Tanaris >>Aprenda a rota de voo para |cFFfa9602Tanaris|r |cRXP_WARN_se você a tem desbloqueada.|r
     .disablecheckbox
     .isQuestAvailable 81949
@@ -1621,7 +1621,7 @@ RXPGuides.RegisterGuide[[
 
 step
     #completewith next
-    .zone Orgrimmar >>Voe para |cFFfa9602Orgrimmar|r
+    .zone Orgrimmar >>Vá para |cFFfa9602Orgrimmar|r
     .cast 3567 >>Usar [Teleportar Orgrimmar] |cRXP_WARN_se você tiver|r |T134419:0|t[Runa de Teleporte]
     .disablecheckbox
     .isQuestAvailable 79094
@@ -1772,7 +1772,7 @@ step
     .isQuestAvailable 79947
 step
     #completewith next
-    .zone Tanaris >>Vá para |cFFfa9602Tanaris|r
+    .zone Tanaris >>Vá a |cFFfa9602Tanaris|r
     .fly Tanaris >>Aprenda a rota de voo para |cFFfa9602Tanaris|r |cRXP_WARN_se você a tem desbloqueada.|r
     .disablecheckbox
     .isQuestAvailable 81949
@@ -2212,7 +2212,7 @@ step
 step
     .train 401768,1
     #completewith next
-    .zone Tirisfal Glades >>Voe para |cFFfa9602Tirisfal Glades|r
+    .zone Tirisfal Glades >>Vá às |cFFfa9602Clareiras de Tirisfal|r
 step
     .train 401768,1
     #loop
@@ -2845,7 +2845,7 @@ step << Alliance
 step << Horde
     .train 429311,1
     #completewith Scroll of Spatial Mending
-    .zone Undercity >> Vá para Undercity
+    .zone Undercity >> Vá à Cidade Baixa
 step
     .train 429311,1
     #label Scroll of Spatial Mending
@@ -3068,7 +3068,7 @@ step << Alliance
 step << Horde
     .train 429311,1
     #completewith Scroll of Spatial Mending
-    .zone Undercity >> Vá para Undercity
+    .zone Undercity >> Vá à Cidade Baixa
 step
     .train 429311,1
     #label Scroll of Spatial Mending
@@ -3229,7 +3229,7 @@ step << Alliance
 step << Horde
     .train 429311,1
     #completewith Scroll of Spatial Mending
-    .zone Undercity >> Vá para Undercity
+    .zone Undercity >> Vá à Cidade Baixa
 step
     .train 429311,1
     #label Scroll of Spatial Mending
@@ -3280,7 +3280,7 @@ step << Alliance
 step << Horde
     .train 429311,1
     #completewith Scroll of Spatial Mending
-    .zone Undercity >> Vá para Undercity
+    .zone Undercity >> Vá à Cidade Baixa
 step
     .train 429311,1
     #label Scroll of Spatial Mending
@@ -3344,7 +3344,7 @@ step << Alliance
 step << Horde
     .train 429311,1
     #completewith Scroll of Spatial Mending
-    .zone Undercity >> Vá para Undercity
+    .zone Undercity >> Vá à Cidade Baixa
 step
     .train 429311,1
     #label Scroll of Spatial Mending

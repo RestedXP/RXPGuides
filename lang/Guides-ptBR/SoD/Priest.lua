@@ -1155,7 +1155,7 @@ RXPGuides.RegisterGuide([[
 
 step
     .train 402855,1
-    .zone Tirisfal Glades >>Voe para |cFFfa9602Tirisfal Glades|r
+    .zone Tirisfal Glades >>Vá às |cFFfa9602Clareiras de Tirisfal|r
 step
     .train 402855,1
     .goto 1415,47.44,19.75,10,0
@@ -1193,7 +1193,7 @@ step
     .collect 215425,1
 step
     .train 402855,1
-    .zone Tirisfal Glades >>Voe para |cFFfa9602Tirisfal Glades|r
+    .zone Tirisfal Glades >>Vá às |cFFfa9602Clareiras de Tirisfal|r
 step
     .train 402855,1
     .goto 1415,47.44,19.75,10,0
@@ -1248,7 +1248,7 @@ step
     .train 402864,1
 step
     #completewith next
-    .zone Searing Gorge >>Vá para Garganta Abrasadora
+    .zone Searing Gorge >>Viaje para Garganta Abrasadora
     .train 402864,1
 step
     .goto Searing Gorge,43.8,45.8
@@ -1257,7 +1257,7 @@ step
     .train 402864,1
 step
     #completewith next
-    .zone Stranglethorn Vale >>Viagem para Stranglethorn Vale
+    .zone Stranglethorn Vale >>Vá para Stranglethorn Vale
     .train 402864,1
 step
     .goto Stranglethorn Vale,33,88
@@ -1420,7 +1420,7 @@ step
     .train 431669,1
 step
     #completewith next
-    .zone Stranglethorn Vale >>Viagem para Stranglethorn Vale
+    .zone Stranglethorn Vale >>Vá para Stranglethorn Vale
     .train 431669,1
 step
     .train 431669,1
@@ -1453,7 +1453,7 @@ step
     .train 431669,1
 step
     #completewith next
-    .zone Stranglethorn Vale >>Viagem para Stranglethorn Vale
+    .zone Stranglethorn Vale >>Vá para Stranglethorn Vale
     .train 431669,1
 step
     .train 431669,1

@@ -1017,7 +1017,7 @@ step
 step
     #optional
     #completewith next
-    .zone Stranglethorn Vale >>Viagem para Stranglethorn Vale
+    .zone Stranglethorn Vale >>Vá para Stranglethorn Vale
     .train 410114,1
 step
     .goto Stranglethorn Vale,35.658,10.808
@@ -1057,7 +1057,7 @@ step
     .train 410114,1
 step
     #completewith next
-    .zone Stranglethorn Vale >>Viagem para Stranglethorn Vale
+    .zone Stranglethorn Vale >>Vá para Stranglethorn Vale
     .train 410114,1
 step
     .goto Stranglethorn Vale,35.658,10.808
@@ -1119,7 +1119,7 @@ step
     .train 1543 >>|cRXP_WARN_You must train|r |T135815:0|t[Flare] |cRXP_WARN_to acquire the|r |T132147:0|t[Dual Wield Specialization] |cRXP_WARN_rune|r
 step
     #completewith next
-    .zone Stranglethorn Vale >>Viagem para Stranglethorn Vale
+    .zone Stranglethorn Vale >>Vá para Stranglethorn Vale
 step
     .train 410116,1
     .goto Stranglethorn Vale,31.84,15.61
@@ -1252,7 +1252,7 @@ RXPGuides.RegisterGuide([[
     #name Matança Veloz - 45 (Garganta Abrasadora & Barreira do Inferno)
 step
     #completewith next
-    .zone Searing Gorge >>Vá para Garganta Abrasadora
+    .zone Searing Gorge >>Viaje para Garganta Abrasadora
 step
     .goto 1427/0,-832.800,-6647.500,10
     >>Voe para a entrada da caverna em Firewatch Serra. Nota que você precisará entrar em uma caverna cheia de elites de nível 47-48. Dito isto, é possível completar esta parte usando deathruns.

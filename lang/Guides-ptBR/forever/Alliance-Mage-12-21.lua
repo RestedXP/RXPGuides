@@ -4,12 +4,13 @@ if faction == "Horde" then return end
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Alliance Mage
 #name 12-18 Costa Negra Mago AdE
 #version 1
-#group Guia Forever (A)
-#subgroup Guia Speedrun de Mago
-#defaultfor Alliance Mage
+#group RestedXP Maga da Aliança
+
+#defaultfor none Alliance Mage
 #next 18-21 Redridge Mago AdE
 
 step
@@ -30,7 +31,7 @@ step
     .goto 1439/1,497.21,6427.72
 .target Barithras Moonshade
 >>Fale com |cRXP_FRIENDLY_Barithras Sombraluna|r
-    .accept 947 >>Aceite Cogumelos da Caverna
+    .accept 947 >>Aceite Cave Mushrooms
 step
     .goto 1439/1,473.63,6439.07
 .target Sentinel Glynda Nal'Shea
@@ -156,7 +157,7 @@ step
     .goto 1439/1,445.46,6536.01
 .target Gorbold Steelhand
 >>Fale com |cRXP_FRIENDLY_Gorbold Manácero|r
-    .accept 982 >> Aceite Oceano Profundo, Mar Vasto
+    .accept 982 >> Aceite Deep Oceano, Vast Sea
 step
     #label Thundris
     .goto 1439/1,492.62,6580.99
@@ -303,7 +304,7 @@ step
     .goto 1439/1,445.46,6535.58
 .target Gorbold Steelhand
 >>Fale com o |cRXP_FRIENDLY_Gorbold Manácero|r
-    .turnin 982 >>Entregue Oceano Profundo, Vasto Mar
+    .turnin 982 >>Entregue Deep Oceano, Vast Sea
     .vendor >> Compre alguns Temperos Suaves de Gorbold até ter o suficiente para cozinhar todos os ovos
 step
     .goto 1439/1,472.97,6557.85
@@ -318,7 +319,7 @@ step
     .turnin 958 >>Entregue Ferramentas dos Altaneiros
     .turnin 4762 >>Entregue Rio Fontescarpa
 .target Thundris Windweaver
-    .accept 4763 >>Aceite A Corrupção de Bosque Negro
+    .accept 4763 >>Aceite O Blackwood Corrompido
 step
     .goto 1439/1,489.35,6506.32
 .target Archaeologist Hollee
@@ -456,7 +457,7 @@ step
     >>Equipe seu novo cajado
 .target Thundris Windweaver
 >>Fale com |cRXP_FRIENDLY_Trovejius Tecevento|r
-    .turnin 4763 >> Entregue O Bosque Negro Corrompido
+    .turnin 4763 >> Entregue Os Corrompidos de Bosque Negro
 step
     .goto 1439/1,397.65,6437.33
 .target Tharnariun Treetender
@@ -476,7 +477,7 @@ step
 step
     .goto 1439/1,503.10,6401.96
      >> Clique no cartaz de procurado fora da estalagem
-    .accept 4740 >> Aceite WANTED: Lodofundo!
+    .accept 4740 >> Aceite PROCURADO: Lodofundo!
 step
     .isQuestComplete 1138
     .goto 1439/1,577.77,6371.39
@@ -506,7 +507,7 @@ step
 >>Fale com |cRXP_FRIENDLY_Onu|r
     .turnin 948 >> Entregue Onu
 .target Onu
-    .accept 944 >> Aceite A Alameda do Mestre
+    .accept 944 >> Aceite A Alveola do Mestre
 step
     #completewith next
     .goto 1439/1,79.97,4986.72
@@ -595,13 +596,13 @@ step
     .accept 945 >> Aceite A Fuga de Therylune
 step
      >> Largue o caldeirão de adivinhação do seu inventário no chão
-    .turnin 944 >> Entregue The Master's Glaive
-    .accept 949 >> Aceite O Acampamento Crepuscular
+    .turnin 944 >> Entregue A Alveola do Mestre
+    .accept 949 >> Aceite O Acampamento do Crepúsculo
 step
     .goto 1439/1,416.64,4576.69
      >> Clique no livro no topo do pedestal. Cuidado para que Therylune não corra se você já começou
-    .turnin 949 >> Entregue O Acampamento Crepuscular
-    .accept 950 >> Aceite Devolver a Onu
+    .turnin 949 >> Entregue O Acampamento do Crepúsculo
+    .accept 950 >> Aceite Retornar a Onu
 step
     #label Therylune
     #requires TheryluneE
@@ -632,7 +633,7 @@ step
     .goto 1439/1,89.14,5002.00
 .target Onu
 >>Fale com |cRXP_FRIENDLY_Onu|r
-    .turnin 950 >> Entregue Devolver a Onu
+    .turnin 950 >> Entregue Retornar a Onu
 step
     #completewith next
     .goto 1439/1,79.97,4987.16
@@ -799,18 +800,19 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Alliance Mage
 #name 18-21 Redridge Mago AdE
 #version 1
-#group Guia Forever (A)
-#subgroup Guia Speedrun de Mago
-#defaultfor Alliance Mage
+#group RestedXP Maga da Aliança
+
+#defaultfor none Alliance Mage
 #next 21-22 Floresta do Crepúsculo Mago AdE
 
 step
     #sticky
     #completewith Gnolls
-    +Comece a fazer AdE nos inimigos de missão em grupos de 3 ou mais que você encontrar.
+    +Comece a usar AdE em inimigos de missão em grupos de 3+
     >>Mantenha este tutorial aberto em outra aba para a Seção AdE de Redridge se necessário:
     .link https://youtu.be/SxMc2GoP33c?t=56 >> CLIQUE AQUI
 step
@@ -818,15 +820,15 @@ step
     .goto 1429/0,-1902.44,-9609.56
 .target Guard Parker
 >>Fale com o |cRXP_FRIENDLY_Guarda Capitão da Guarda Florestan|r
-    .accept 244 >>Aceite Gnolls Invasores
+    .accept 244 >>Aceite Encroaching Gnolls
 step
     #sticky
     #label Gnolls
     .goto 1433/0,-2238.15,-9443.60
 >>Fale com o |cRXP_FRIENDLY_Subdelegado David|r
-    .turnin 244 >>Entregue Gnolls Invasores
+    .turnin 244 >>Entregue Encroaching Gnolls
 .target Deputy Feldon
-    .accept 246 >>Aceite Avaliando a Ameaça
+    .accept 246 >>Aceite Assessing the Ameaça
 step
     .goto 1433/0,-2234.89,-9435.060
     .fp Redridge Mountains >> Aprenda a rota de voo para Montanhas Cristarrubra
@@ -865,7 +867,7 @@ step
     .accept 127 >>Aceite O lago está para peixe
 step
     .goto 1433/0,-2151.53,-9247.12
-    .accept 180 >>Aceite Wanted: General Mordente
+    .accept 180 >>Aceite Procurado: General Mordente
 step
     >>Entre na Estalagem
     .goto 1433/0,-2158.91,-9235.97
@@ -964,7 +966,7 @@ step
 >>Fale com o |cRXP_FRIENDLY_Magistrado Salomão|r
     .turnin 121 >>Entregue Messenger to Objetos de TBC
 .target Magistrate Solomon
-    .accept 143 >>Aceite Mensageiro para Cerro Oeste
+    .accept 143 >>Aceite Messenger to Cerro Oeste
 .target Bailiff Conacher
 >>Fale com o |cRXP_FRIENDLY_Meirinho Conacher|r
     .accept 91 >>Aceite Solomon's Law
@@ -1055,7 +1057,7 @@ step
 step
     .goto 1433/0,-2268.54,-9279.12
 >>Fale com o |cRXP_FRIENDLY_Encarregado Oslow|r
-    .turnin 125 >>Entregue The Perdida Ferramentas
+    .turnin 125 >>Entregue As Ferramentas Perdidas
 .target Foreman Oslow
     .accept 89 >>Aceite The Everstill Ponte
 step
@@ -1070,7 +1072,7 @@ step
     .turnin 127 >>Entregue O lago está para peixe
 .target Dockmaster Baren
     .accept 150 >>Aceite Caçadores de murlocs
-    .turnin 150 >>Entregue Murloc Poachers
+    .turnin 150 >>Entregue Caçadores de murlocs
 step
     .goto 1433/0,-2172.59,-9261.02
 .target Dockmaster Baren
@@ -1147,7 +1149,7 @@ step
 >>Fale com |cRXP_FRIENDLY_Vervo Obom|r
     .turnin 124 >>Entregue A Baying of Gnolls
 .target Verner Osgood
-    .accept 126 >>Aceite Uivando nas Colinas
+    .accept 126 >>Aceite Howling in the Hills
 step
     .goto 1433/0,-2158.91,-9235.97
 .target Darcy
@@ -1172,5 +1174,5 @@ step
     >>Se você não tem carne suficiente, farme alguns javalis a caminho de Darkshire
 step
     .goto 1433/0,-1711.94,-9895.21,90,0
-    .zone Duskwood >> Voe para Floresta do Crepúsculo
+    .zone Duskwood >> Vá para Floresta do Crepúsculo
 ]])

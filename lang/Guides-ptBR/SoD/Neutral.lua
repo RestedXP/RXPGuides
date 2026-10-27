@@ -16,11 +16,11 @@ RXPGuides.RegisterGuide([[
 step
     #season 2
     #completewith next
-    .zone Wetlands >>Viaje para Terras do Interior
+    .zone Wetlands >>Vá para o Pantanal
 step
     #season 2
     #completewith next
-    .goto Wetlands,51.914,62.692,30 >> Entre na caverna Thelgen Pedra
+    .goto Wetlands,51.914,62.692,30 >> Entre na caverna de Thelgen Pedra
     .train 425446,1 << Warrior
     .train 410115,1 << Hunter
 step
@@ -943,7 +943,7 @@ step
     .mob Dark Rider
 step
     #completewith next
-    .zone Duskwood >>Voe para Floresta do Crepúsculo
+    .zone Duskwood >>Vá para Floresta do Crepúsculo
 step
     .train 425312,1 << Priest
     .train 426180,1 << Paladin
@@ -1259,9 +1259,9 @@ step
     .train 426452,1 << Warlock
     .train 425102,1 << Rogue
     .train 425883,1 << Shaman
-    >>Clique na |cRXP_PICK_Extinto Fogueira de Acampamento|r
+    >>Clique na |cRXP_PICK_Fogueira de Acampamento Extinta|r
     .goto Desolace,47.532,54.605
-    .accept 79229 >>Aceite Roubo na estrada
+    .accept 79229 >>Aceite Roubo na Estrada
 step
     .train 431663,1 << Priest
     .train 416031,1 << Paladin
@@ -1293,7 +1293,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tokal|r
     .goto Stranglethorn Vale,26.988,77.284
     .turnin 79235 >>Entregue Em Fuga
-    .accept 79236 >>Aceite Vai uma Cerejinha aí?
+    .accept 79236 >>Aceite Vai uma Cerejinha Aí?
     .target Tokal
 step
     .train 431663,1 << Priest
@@ -1369,7 +1369,7 @@ step << !NightElf
     .train 425883,1 << Shaman
     #completewith next
     .goto Arathi Highlands,93.90,71.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Illari Duskfeather|r. Você precisará lutar contra ela depois
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Illari Duskfeather|r. Você terá que lutar contra ela depois.
     .complete 79242,1 --Found Illari Duskfeather
     .skipgossip 215655,1,1,1
     .target Illari Duskfeather
@@ -1384,7 +1384,7 @@ step << !NightElf
     .train 425102,1 << Rogue
     .train 425883,1 << Shaman
     .goto Arathi Highlands,93.90,71.49
-    >>Mate |cRXP_ENEMY_Illari Duskfeather|r. Abra o |cRXP_PICK_Bolsa Descartada|r que ela deixa no chão. Saque-o para |cRXP_LOOT_Illari's Chave|r
+    >>Mate |cRXP_ENEMY_Illari Duskfeather|r. Abra o |cRXP_PICK_Dropped Pouch|r que ela deixa cair no chão. Pegue |cRXP_LOOT_Illari's Chave|r
     .collect 212347,1,79242,1 --Illari's Key
     .skipgossip 215655,1,1,1
     .mob Illari Duskfeather
@@ -1475,7 +1475,7 @@ step
     .itemcount 212560,1 << Shaman
 step
     .goto 1417,89.536,78.149
-    .cast 6477 >>Entre no |cRXP_PICK_Barco a Remo|r na água para voltar para Arathi
+    .cast 6477 >>Entre no |cRXP_PICK_Barco a Remo|r na água para voltar a Arathi
     .subzoneskip 308,1
 ]])
 
@@ -1629,7 +1629,7 @@ step
     .train 416089,1 << Hunter
     .train 410027,1 << Druid
     #completewith next
-    .zone Stranglethorn Vale >>Viagem para Stranglethorn Vale
+    .zone Stranglethorn Vale >>Vá para Stranglethorn Vale
 step
     .train 416089,1 << Hunter
     .train 410027,1 << Druid
@@ -1724,14 +1724,14 @@ step << Alliance
     .zone Westfall >> Viaje até Cerro Oeste
 step << Alliance
     .goto Westfall,37.413,50.701
-    >>Clique nos |cRXP_PICK_Restos Queimados|r no chão
-    .accept 79008 >> Aceite ... e aquele bilhete, hein?
+    >>Clique em |cRXP_PICK_Burned-Saída Remains|r no chão
+    .accept 79008 >> Aceite ...e aquele bilhete que você encontrou
 step << Alliance
     #completewith next
     .zone The Barrens >> Viaje para os Sertões
 step << Alliance
     .goto The Barrens,46.361,73.904
-    >>Clique nos |cRXP_PICK_Restos Queimados|r no chão
+    >>Clique em |cRXP_PICK_Burned-Saída Remains|r no chão
     .turnin 79008 >> Entregue ... e aquele bilhete, hein?
     .accept 79192 >> Aceite Degraus
 step << Horde
@@ -1739,14 +1739,14 @@ step << Horde
     .zone The Barrens >> Viaje para os Sertões
 step << Horde
     .goto The Barrens,46.361,73.904
-    >>Clique nos |cRXP_PICK_Restos Queimados|r no chão
-    .accept 79007 >> Aceite ... e aquele bilhete, hein?
+    >>Clique em |cRXP_PICK_Burned-Saída Remains|r no chão
+    .accept 79007 >> Aceite ...e aquele bilhete que você encontrou
 step << Horde
     #completewith next
     .zone Westfall >> Viaje até Cerro Oeste
 step << Horde
     .goto Westfall,37.413,50.701
-    >>Clique nos |cRXP_PICK_Restos Queimados|r no chão
+    >>Clique em |cRXP_PICK_Burned-Saída Remains|r no chão
     .turnin 79007 >> Entregue ... e aquele bilhete, hein?
     .accept 79192 >> Aceite Degraus
 step
@@ -1754,7 +1754,7 @@ step
     .zone Stonetalon Mountains >> Viaje para as Montanhas de Pedralva
 step
     #completewith next
-    .goto Stonetalon Mountains,50.29,52.94,25 >> Suba e siga o caminho de terra ao norte de Refúgio da Rocha do Sol
+    .goto Stonetalon Mountains,50.29,52.94,25 >> Suba e siga pelo caminho de terra ao norte de Sol Pedra Recuar
 step
     .goto Stonetalon Mountains,40.748,52.576
     >>Clique em |cRXP_PICK_Pocket Litter|r na caixa
@@ -1762,12 +1762,12 @@ step
     .accept 79980 >> Aceite Rabisco
 step
     #completewith next
-    .goto Stonetalon Mountains,40.19,50.80,15 >> Siga o caminho através das montanhas
+    .goto Stonetalon Mountains,40.19,50.80,15 >> Siga o caminho pelas montanhas
 step
     .goto Stonetalon Mountains,39.614,49.783
     >>Clique no |cRXP_PICK_Monte de Terra|r no chão
     .turnin 79980 >> Entregue Rabisco
-    .accept 79974 >> Aceite Trabalho Suado
+    .accept 79974 >> Aceite Trabalho suado
 step
     #completewith next
     .zone Loch Modan >> Voe para Loch Modan
@@ -1775,27 +1775,27 @@ step
     #completewith next
     .goto Loch Modan,41.01,12.60,50,0
     .goto Loch Modan,42.86,10.36,60,0
-    .goto Loch Modan,49.4,12.9,8 >> |cRXP_WARN_Suba na parede da barragem de Loch Modan e desça cuidadosamente para a saliência no centro da barragem. Siga a seta|r
+    .goto Loch Modan,49.4,12.9,8 >> |cRXP_WARN_Dirija-se para a parede da Barragem de Loch Modan e desça cuidadosamente para a saliência no centro da Barragem. Siga a seta|r
 step
     .goto Loch Modan,49.421,12.917
-    >>Clique em |cRXP_PICK_Estatueta Entalhada|r na saliência
-    .turnin 79974 >> Entregue Trabalho Suado
+    >>Clique em |cRXP_PICK_Carved Figurine|r na saliência
+    .turnin 79974 >> Entregue Trabalho suado
     .accept 79975 >> Aceite Punho da Águia
 step
     #completewith next
-    .goto Hillsbrad Foothills,87.691,48.166,10 >> Vá para o Muro de Thoradin na fronteira entre Planalto Arathi e Piemonte de Braidosol
+    .goto Hillsbrad Foothills,87.691,48.166,10 >> Vá para a Parede de Thoradin na borda entre Planalto Arathi e Contraforte de Eira dos Montes
 step
     #completewith next
-    .goto Arathi Highlands,24.132,21.470,7 >> Suba no carrinho e suba ao longo da parede
+    .goto Arathi Highlands,24.132,21.470,7 >> Suba no carrinho e continue subindo ao longo da parede
 step
     .goto Arathi Highlands,22.466,24.127
-    >>Clique em |cRXP_PICK_Messenger Bolsa|r pendurada na parede
-    .turnin 79975 >> Entregue Punho da Águia
+    >>Clique em |cRXP_PICK_Messenger Bolsa|r pendurado na parede
+    .turnin 79975 >> Vire em Punho da Águia
     .accept 79976 >> Aceite Deve Ser Aqui
 step
     .goto Arathi Highlands,22.466,24.127
     >>Clique em |cRXP_PICK_Hastily Rolled-Up Satchel|r no chão
-    .turnin 79976 >> Entregue Deve Ser Aqui
+    .turnin 79976 >> Vire em Deve Ser Aqui
 step
     +|cRXP_WARN_É altamente recomendado que você guarde seu|r |T134057:0|t[|cRXP_LOOT_Ração de Estudante|r] |cRXP_WARN_para níveis mais altos antes de consumi-los. Cada uso de|r |T134057:0|t[|cRXP_LOOT_Ração de Estudante|r] |cRXP_WARN_adiciona 20% de experiência descansada ao seu personagem, portanto é mais eficiente usar em níveis mais altos|r
 ]])
@@ -2248,7 +2248,7 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith next
-    .zone Searing Gorge >> Vá para Garganta Abrasadora
+    .zone Searing Gorge >> Viaje para Garganta Abrasadora
 step
     .goto 1427/0,-1425.800,-6772.400,25 >> Entre em Slag Pits através da entrada da caverna marcada no seu mapa
 step
@@ -2420,7 +2420,7 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith next
-    .zone Deadwind Pass >> Voe para Trilha do Vento Morto
+    .zone Deadwind Pass >> Vá para Trilha do Vento Morto
 step
     .goto Deadwind Pass,47.40,75.50 >> Vá para Karazhan
 step

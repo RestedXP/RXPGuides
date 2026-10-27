@@ -630,7 +630,7 @@ RXPGuides.RegisterGuide([[
 step << Undead
     #season 2
     .goto Tirisfal Glades,32.68,65.56
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dannal|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dannal Stern|r
     .accept 77668 >>Aceite A Runa Perdida
     .target Dannal Stern
 step
@@ -647,7 +647,7 @@ step
 step << Undead
     #season 2
     .goto Tirisfal Glades,32.68,65.56
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dannal|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dannal Stern|r
     .turnin 77668 >>Entregue A Runa Perdida
     .target Dannal Stern
 
@@ -1195,7 +1195,7 @@ step << Warrior
     .collect 208778,1 -- Rune of Quick Strike (1)
     .train 425443,1
 step << Warrior
-    .train 425443 >> |cRXP_WARN_Use o|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Golpe Rápido|r] |cRXP_WARN_para treinar|r |T132394:0|t[Golpe Rápido]
+    .train 425443 >> |cRXP_WARN_Use a|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Golpe Rápido|r] |cRXP_WARN_para aprender|r |T132394:0|t[Golpe Rápido]
     .use 208778
     .itemcount 208778,1
 ]])
@@ -1221,7 +1221,7 @@ step
     #completewith next
     .goto The Barrens,51.50,30.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Devrak|r
-    .fly Ratchet >> Voe para Ponto de Ancoragem
+    .fly Ratchet >> Voe para Vila Catraca
     .target Devrak
 step
     #completewith next
@@ -1309,7 +1309,7 @@ step << Warrior
     .use 209047
     .train 425443,1
 step << Warrior
-    .train 425443 >> |cRXP_WARN_Use o|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Golpe Rápido|r] |cRXP_WARN_para treinar|r |T132394:0|t[Golpe Rápido]
+    .train 425443 >> |cRXP_WARN_Use a|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Golpe Rápido|r] |cRXP_WARN_para aprender|r |T132394:0|t[Golpe Rápido]
     .use 208778
     .itemcount 208778,1
 ]])

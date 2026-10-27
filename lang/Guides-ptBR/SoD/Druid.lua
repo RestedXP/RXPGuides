@@ -750,7 +750,7 @@ step << Horde
     .train 410059,1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tal|r
     .goto Thunder Bluff,47.00,49.82
-    .fly Ratchet >>Voe para Ponto de Ancoragem
+    .fly Ratchet >>Voe para Vila Catraca
     .target Tal
 step << Horde
     .goto The Barrens,63.677,38.618

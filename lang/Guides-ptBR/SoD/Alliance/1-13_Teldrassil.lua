@@ -1246,7 +1246,7 @@ step
 	#xprate <1.5
     .goto Teldrassil,57.121,61.296
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zarrin|r
-    .train 2550 >>Treine Culinária
+    .train 2550 >>Treinar Culinária
     .accept 4161 >> Aceite Recipe of the Kaldorei
     .turnin 4161 >> Entregue Recipe of the Kaldorei
     .target Zarrin
@@ -1260,7 +1260,7 @@ step
     #season 1 << Warrior
     #season 2 << Hunter/Druid/Priest/Rogue
     .goto Teldrassil,57.121,61.296
-    .train 2550 >>Treine Culinária
+    .train 2550 >>Treinar Culinária
     .target Zarrin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zarrin|r
     .accept 4161 >> Aceite Recipe of the Kaldorei
@@ -1315,7 +1315,7 @@ step << Rogue
     .goto Teldrassil,56.381,60.139
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Jannok Brisacanto|r
 	.trainer >> Treine suas magias de classe
-    .train 5171 >> Treine |T132306:0|t[Retalhar] << !sod
+    .train 5171 >> Aprenda |T132306:0|t[Retalhar] << !sod
     .train 921 >> Aprenda |T133644:0|t[Bater Carteira] também, que é necessária para sua missão de Ladino nível 10
     .target Jannok Breezesong
 step << Hunter
@@ -1831,7 +1831,7 @@ step << Warrior
 step << Warrior
     #season 2
     .goto Teldrassil,57.121,61.296
-    .train 2550 >>Treine Culinária
+    .train 2550 >>Treinar Culinária
     .target Zarrin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zarrin|r
     .accept 4161 >> Aceite Recipe of the Kaldorei
@@ -1882,7 +1882,7 @@ step << Hunter
 step
 	#xprate 1.49-1.99
     .goto Teldrassil,57.121,61.296
-    .train 2550 >>Treine Culinária
+    .train 2550 >>Treinar Culinária
     .target Zarrin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zarrin|r
     .accept 4161 >> Aceite Recipe of the Kaldorei
@@ -1991,7 +1991,7 @@ step << Rogue
     .goto Teldrassil,56.381,60.139
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Jannok Brisacanto|r
 	.trainer >> Treine suas magias de classe
-    .train 5171 >> Treine |T132306:0|t[Retalhar]
+    .train 5171 >> Aprenda |T132306:0|t[Retalhar]
     .train 921 >> Aprenda |T133644:0|t[Bater Carteira] também, que é necessária para sua missão de Ladino nível 10
     .target Jannok Breezesong
 step << Hunter
@@ -2604,8 +2604,8 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com um |cRXP_FRIENDLY_Darnassus Auctioneer|r
     >>Compre os itens a seguir para entrega imediata em Costa Negra mais tarde:
     >>|T134187:0|t[Earthroot] << Druid era
-    >>|T133912:0|t[Costa Negra Grouper]
-    >>|T133972:0|t[Strider Carne]
+    >>|T133912:0|t[Garoupa da Costa Negra]
+    >>|T133972:0|t[Carne de Moa]
     *Pule esta etapa se você não quiser comprar nenhum
     .collect 5469,5,2178,1 -- Strider Meat (5)
     .collect 12238,6,1141,1 -- Darkshore Grouper (6)
@@ -2714,7 +2714,7 @@ step << Warrior
     #season 2
 	.goto Darnassus,58.6,35.6
     .target Arias'ta Bladesinger
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Arias'ta Cantalâmina|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Arias'ta Cantalâmina|r
     .trainer >> Treine suas magias de classe
 step << Rogue
     #season 0

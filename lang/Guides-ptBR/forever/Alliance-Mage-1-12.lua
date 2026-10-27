@@ -4,12 +4,13 @@ if faction == "Horde" then return end
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Human Mage
 #name 1-10 Floresta de Elwynn Mago AdE
 #version 1
-#group Guia Forever (A)
-#subgroup Guia Speedrun de Mago
-#defaultfor Human
+#group RestedXP Maga da Aliança
+
+#defaultfor none Human
 #next 10-12 Lagoa Modan Mago AdE
 step
     #sticky
@@ -95,7 +96,7 @@ step
     .xp 3+1110 >>Farme até 1110+/1400xp no caminho de volta para a cidade
 step
     .goto 1429/0,-120.17,-8897.82
-    .vendor >>vender lixo
+    .vendor >>lixo para vender
 step
     .goto 1429/0,-162.62,-8902.59
 >>Fale com o |cRXP_FRIENDLY_Major Belmonte|r
@@ -641,7 +642,7 @@ step
     .turnin 109 >> Entregue Miguel Mantoforte
 step
     .goto 1436/0,1021.60,-10500.61
-    .vendor >>vender lixo
+    .vendor >>lixo para vender
 .target Quartermaster Lewis
 >>Fale com o |cRXP_FRIENDLY_Intendente Ludovico|r
     .accept 6181 >> Aceite Um Recado Rápido
@@ -692,14 +693,14 @@ step
     >>Pegue o bonde quando chegar, depois desça quando chegar do outro lado
 .target Monty
 >>Fale com |cRXP_FRIENDLY_Monty|r
-    .accept 6661 >> Aceite Caçada aos Ratos das Profundezas
+    .accept 6661 >> Aceite Ratos de Porão
 step
     >>Usar a flauta nos ratos espalhados ao redor
     .complete 6661,1 --Rats Captured (x5)
 step
 .target Monty
 >>Fale com |cRXP_FRIENDLY_Monty|r
-    .turnin 6661 >> Entregue Caçada aos Ratos das Profundezas
+    .turnin 6661 >> Entregue Ratos de Porão
 step
     .goto 1455/0,-1322.37,-4838.32,30 >>Entre em Ironforge
 step
@@ -718,7 +719,7 @@ step
     .goto 1426/0,-1305.59,-5512.18
 .target Rudra Amberstill
 >>Fale com |cRXP_FRIENDLY_Rudra Ambarmanso|r
-    .accept 314 >> Aceite Amarre Sua Cabra Pois Ragash Está Solto
+    .accept 314 >> Aceite Amarre Sua Cabra pois Ragash Está Solto
 step
     #sticky
     #completewith next
@@ -736,7 +737,7 @@ step
     .goto 1426/0,-1305.59,-5512.18
 .target Rudra Amberstill
 >>Fale com |cRXP_FRIENDLY_Rudra Ambarmanso|r
-    .turnin 314 >> Entregue Amarre Sua Cabra Pois Ragash Está Solto
+    .turnin 314 >> Entregue Amarre Sua Cabra pois Ragash Está Solto
 step
     >>Farme um pouco durante o trajeto
     .goto 1426/0,-1576.47,-5673.07
@@ -811,12 +812,13 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Gnome Mage
 #name 1-10 Dun Morogh Mago AdE
 #version 1
-#group Guia Forever (A)
-#subgroup Guia Speedrun de Mago
-#defaultfor Dwarf/Gnome
+#group RestedXP Maga da Aliança
+
+#defaultfor none Gnome
 #next 10-12 Lagoa Modan Mago AdE
 step
     #era/som
@@ -939,7 +941,7 @@ step
     .turnin 3364 >> Entregue Rabo-de-galo Escaldante Entrega
 .target Durnan Furcutter
     .accept 3365 >> Aceite Trazer a Caneca
-    .vendor >> vender lixo
+    .vendor >> lixo para vender
 step
     .goto 1426/0,388.17,-6056.10
 .target Marryk Nurribit
@@ -1035,7 +1037,7 @@ step
 step
     #completewith next
     .goto 1426/0,-497.89,-5633.67
-    .vendor >>vender lixo
+    .vendor >>lixo para vender
 step
     .goto 1426/0,-502.82,-5597.55
 .target Ragnar Thunderbrew
@@ -1261,7 +1263,7 @@ step
     .turnin 320 >> Fale novamente com Urrabolha
 step
     #era/som
-    >>Entre no edifício
+    >>Dentro do prédio
     .goto 1426/0,-453.57,-5499.05
 .target Razzle Sprysprocket
 >>Fale com |cRXP_FRIENDLY_Razzle Molavivaz|r
@@ -1358,7 +1360,7 @@ step
     .goto 1426/0,-1305.59,-5512.18
 .target Rudra Amberstill
 >>Fale com |cRXP_FRIENDLY_Rudra Ambarmanso|r
-    .accept 314 >> Aceite Amarre Sua Cabra Pois Ragash Está Solto
+    .accept 314 >> Aceite Amarre Sua Cabra pois Ragash Está Solto
 step
     #sticky
     #completewith next
@@ -1375,7 +1377,7 @@ step
     .goto 1426/0,-1305.59,-5512.18
 .target Rudra Amberstill
 >>Fale com |cRXP_FRIENDLY_Rudra Ambarmanso|r
-    .turnin 314 >> Entregue Amarre Sua Cabra Pois Ragash Está Solto
+    .turnin 314 >> Entregue Amarre Sua Cabra pois Ragash Está Solto
 step
     >>Farme um pouco durante o trajeto
     .goto 1426/0,-1576.47,-5673.07
@@ -1461,12 +1463,13 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Alliance Mage
 #name 10-12 Lagoa Modan Mago AdE
 #version 1
-#group Guia Forever (A)
-#subgroup Guia Speedrun de Mago
-#defaultfor Human Mage/Gnome Mage
+#group RestedXP Maga da Aliança
+
+#defaultfor none Mage
 #next 12-18 Costa Negra Mago AdE
 step
     #era/som
@@ -1777,7 +1780,7 @@ step << Human
     .goto 1455/0,-810.36,-5039.71,120 >> Saia de Altaforja
 step << Gnome
     .goto 1455/0,-1303.79,-4631.18
->>Fale com o |cRXP_FRIENDLY_Prospector Lançatroz|r
+>>Converse com o |cRXP_FRIENDLY_Prospector Lançatroz|r
     .turnin 301 >>Entregue Apresente-se a Altaforja
 .target Prospector Stormpike
     .accept 302 >>Aceite Pólvora para Bandaferro

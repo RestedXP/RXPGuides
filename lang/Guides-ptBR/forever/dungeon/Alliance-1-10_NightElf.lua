@@ -7,16 +7,14 @@ RXPGuides.RegisterGuide([[
 #season 0,1
 << Alliance
 #name 1-6 Shadowglen
-#displayname 1-7 Shadowglen << sod
 #version 1
-#beta
-#group RestedXP Forever Guia de Masmorra (A)
-#subgroup (WIP) Guia de Masmorra 1-20
+#group RestedXP Guia de Masmorra Eterna (A)
+#subgroup Guia da Masmorra 1-20
 --#groupid RXP-SRGCE-A1
 #defaultfor NightElf
 #next 6-11 Teldrassil
 step
-#include Guia Forever (A)\1-6 Shadowglen
+#include RestedXP Forever Guia (A)\1-6 Shadowglen
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -24,15 +22,13 @@ RXPGuides.RegisterGuide([[
 #season 0,1
 << Alliance
 #name 6-11 Teldrassil
-#displayname 7-13 Teldrassil << SoD
 #version 1
-#beta
-#group RestedXP Forever Guia de Masmorra (A)
-#subgroup (WIP) Guia de Masmorra 1-20
+#group RestedXP Guia de Masmorra Eterna (A)
+#subgroup Guia da Masmorra 1-20
 --#groupid RXP-SRGCE-A1
 #defaultfor NightElf
-#next 14-16 Costa Negra
+#next 11-16 Costa Negra/Loch Modan
 
 step
-#include Guia Forever (A)\6-11 Teldrassil
+#include RestedXP Forever Guia (A)\6-11 Teldrassil
 ]])

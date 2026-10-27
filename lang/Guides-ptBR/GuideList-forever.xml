@@ -35,5 +35,7 @@
 	<Script file="SurvivalGuide\H-Classic-Horde-1-13_Mulgore.lua"/>
 	<Script file="SurvivalGuide\H-Classic-Horde-13-15_Silverpine.lua"/>
 	<Script file="SurvivalGuide\H-Classic-Horde-15-23_Barrens.lua"/>
+	<Script file="Classic-Attunements.lua"/>
+	<Script file="Classic-0.5.lua"/>
 
 </Ui>

@@ -4,13 +4,14 @@ if faction == "Horde" then return end
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 #season 0,1
 << Alliance
 #name 1-6 Shadowglen
 #displayname 1-7 Shadowglen << sod
 #version 1
-#group Guia Forever (A)
-#subgroup Guia Speedrun 1-20
+#group RestedXP Forever Guia (A)
+#subgroup Speedrun Guia 1-20
 --#groupid RXP-SRGCE-A1
 #defaultfor NightElf
 #next 6-11 Teldrassil
@@ -443,13 +444,14 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 #season 0,1
 << Alliance
 #name 6-11 Teldrassil
 #displayname 7-13 Teldrassil << SoD
 #version 1
-#group Guia Forever (A)
-#subgroup Guia Speedrun 1-20
+#group RestedXP Forever Guia (A)
+#subgroup Speedrun Guia 1-20
 --#groupid RXP-SRGCE-A1
 #defaultfor NightElf
 #next 14-16 Costa Negra
@@ -636,7 +638,7 @@ step
 step
     .goto 1438/1,906.17,9751.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zarrin|r
-    .train 2550 >>Treine Culinária
+    .train 2550 >>Treinar Culinária
     .accept 4161 >> Aceite Recipe of the Kaldorei
     .turnin 96634 >> Entregue Acampamento 101: Culinária
     .target Zarrin
@@ -682,14 +684,14 @@ step << Druid
     #optional
     #completewith end
     #label GatheringQ
-    .skill herbalism,15 >>|cRXP_WARN_Suba seu|r |T136065:0|t[Herborismo] |cRXP_WARN_para 15 para conseguir coletar 5|r |T134187:0|t[Earthroot] |cRXP_WARN_para uma importante missão de classe em breve. Você pode desaprender depois|r
+    .skill herbalism,15 >>|cRXP_WARN_Aumente seu|r |T136065:0|t[Herborismo] |cRXP_WARN_para 15 para conseguir coletar 5|r |T134187:0|t[Earthroot] |cRXP_WARN_para uma missão de classe importante em breve. Você pode desaprendê-lo depois|r
     .collect 2449,5,6123,1 --Earthroot (5)
     .disablecheckbox
 step << Druid
     #optional
     #completewith end
     #requires GatheringQ
-    >>|cRXP_WARN_Colete 5 |T134187:0|t[Earthroot] via |T136065:0|t[Herborismo] e raramente |cRXP_PICK_Baús Danificados|r para uma futura missão de classe|r
+    >>Coletar 5 |T134187:0|t[Earthroot] via |T136065:0|t[Herborismo] |cRXP_WARN_e raramente|cRXP_PICK_ Battered Chests|r para uma missão de classe futura|r
     .collect 2449,5,6123,1 --Earthroot (5)
     .skill herbalism,<15,1
 step << Priest
@@ -1130,7 +1132,7 @@ step
     #label SpiderLegsEnd
     .goto 1438/1,906.17,9751.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zarrin|r
-    .train 2550 >>Treine Culinária
+    .train 2550 >>Treinar Culinária
     .turnin 96634 >> Entregue Acampamento 101: Culinária
     .accept 4161 >> Aceite Recipe of the Kaldorei
     .turnin 4161 >> Entregue Receita dos Kaldorei
@@ -1308,7 +1310,7 @@ step << Druid/Priest
     .turnin 487 >> Entregue A Estrada para Darnassus
 step
     #completewith next
-    .goto 1438/1,1863.46,10665.16,50 >> Vá para A Clareira do Oráculo
+    .goto 1438/1,1899.700,10582.900,50 >> Vá para A Clareira do Oráculo
 step
     .goto 1438/1,1899.700,10582.900
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Sentinel Eralya Sombrafolha::275683|r
@@ -1326,7 +1328,6 @@ step
     .complete 7383,1 --Collect Filled Amethyst Phial (x1)
 
 --with the new quests, druids can go straight to 10, a 5 minute save later down the road
---@TODO add mist here
 step << Druid/Priest
     #completewith next
     >>Mate as |cRXP_ENEMY_Harpias Sangue-Pena|r. Saqueie-as para obter os |cRXP_LOOT_Cintos|r
@@ -1437,10 +1438,7 @@ step << Hunter
 step << !Rogue
     #softcore
     #requires xp10
-    #completewith next
     .deathskip >> Morra e reaparça no Anjo da Cura em Darnassus
-    >>|cRXP_WARN_Certifique-se de estar mais perto do cemitério de Darnassus do que do de Dolanaar, senão você pode acabar indo na direção errada. Corra completamente para fora da toca e depois morra se você não tiver certeza sobre isso|r << sod Priest
-    >>|cRXP_WARN_Certifique-se de estar mais perto do cemitério de Darnassus do que do de Dolanaar, senão você pode acabar indo na direção errada. Corra para o lado oeste do rio se você não tiver certeza sobre isso|r << sod Hunter/sod Warrior/sod Druid
     .target Anjo da Cura
 step << !Rogue
     #hardcore
@@ -1548,7 +1546,7 @@ step << Priest
     .goto 1457/1,2341.74,9872.610,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com um |cRXP_FRIENDLY_Darnassus Auctioneer|r
     >>|T134711:0|t[Óleo Menor de Teurgo] |cRXP_WARN_e|r |T133906:0|t[Sabichão Defumado] |cRXP_WARN_fornecerão um grande aumento de DPS nos níveis iniciais|r
-    >>|cRXP_WARN_Procure por atualizações|r |T132317:0|t[Varinha] |cRXP_WARN_com DPS alto que você pode usar agora/em breve|r
+    >>|cRXP_WARN_Também procure por melhorias de alto DPS|r |T132317:0|t[Varinha] |cRXP_WARN_que você pode usar agora/em breve|r
     *|cRXP_WARN_Pule este passo se não quiser comprar nada|r
     .collect 20744,1 -- Minor Wizard Oil (1)
     .collect 21072,20 -- Smoked Sagefish (20)
@@ -1660,18 +1658,18 @@ step << !Druid
     .collect 3371,1 --Empty Vial
     .target Narret Shadowgrove
 step
-    .goto 1438/1,984.94,9898.58
-    .target Tallonkai Swiftroot
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tallonkai Radicélere|r no topo da Árvore
-    .turnin 932 >> Entregue Aversão Pervertida
-    .turnin 2459 >> Entregue Ferócitas, o Comedor de Sonhos
-step
     #optional
     .goto 1438/1,988.30,9891.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Áldia|r acima das escadas
     .turnin 87288 >> Entregue Pelegos Macios de Sabre
     .target Aldia
     .isQuestComplete 87288
+step
+    .goto 1438/1,984.94,9898.58
+    .target Tallonkai Swiftroot
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tallonkai Radicélere|r no topo da Árvore
+    .turnin 932 >> Entregue Aversão Pervertida
+    .turnin 2459 >> Entregue Ferócitas, o Comedor de Sonhos
 step
     >>Abate os |cRXP_ENEMY_Nightsabers|r. Saque-os em busca de |cRXP_LOOT_Presas|r e |cRXP_LOOT_Pelegos|r
     >>Abate os |cRXP_ENEMY_Corujas Strigid|r. Saque-os em busca de |cRXP_LOOT_Peninha|r
@@ -1747,7 +1745,7 @@ step << Hunter/Warrior/Rogue
     .target Moon Priestess Amara
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Sacerdotisa da Lua Amara|r
     .turnin 487 >> Entregue A Estrada para Darnassus
-	.maxlevel 9
+	.xp 9.56,1 --Only Turn in early if needed to ding 10
 step << Hunter
 #xprate <1.99
     #optional
@@ -1879,7 +1877,7 @@ step << Rogue
     .goto 1438/1,943.85,9790.28
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Jannok Brisacanto|r
 	.trainer >> Treine suas magias de classe
-    .train 5171 >> Treine |T132306:0|t[Retalhar]
+    .train 5171 >> Aprenda |T132306:0|t[Retalhar]
     .train 921 >> Aprenda |T133644:0|t[Bater Carteira] também, que é necessária para sua missão de Ladino nível 10
     .target Jannok Breezesong
 step << Hunter
@@ -1965,15 +1963,6 @@ step << Priest
 	.trainer >> Treine suas magias de classe
     .target Laurna Morninglight
 step << Hunter
-	#xprate <1.5--money issues 1.5x
-    .goto 1438/1,947.57,9812.38
-    .money <0.0504
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Shalomon|r
-    >>|cRXP_BUY_Compre uma|r |T135145:0|t[Bengala]
-    >>|cRXP_WARN_Você vai equipar isto mais tarde. Pule este passo se você encontrou um bastão diferente|r
-    .collect 2495,1 -- Walking Stick (1)
-    .target Shalomon
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.20step
     .goto 1438/1,997.200,9903.601
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Byancie::6094|r
     .target Byancie::6094
@@ -2307,12 +2296,12 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com um |cRXP_FRIENDLY_Darnassus Auctioneer|r
     >>Compre os itens a seguir para entrega imediata em Costa Negra mais tarde:
     -- >>|T134187:0|t[Earthroot] << Druid era
-    >>|T133912:0|t[Costa Negra Grouper]
-    >>|T133972:0|t[Strider Carne]
+    >>|T133912:0|t[Garoupa da Costa Negra]
+    >>|T133972:0|t[Carne de Moa]
     >>|T134711:0|t[Óleo Menor de Teurgo] << Priest/Druid
     >>|T133906:0|t[Sabichão Defumado] << Priest/Druid
     >>|T134711:0|t[Óleo Menor de Teurgo] |cRXP_WARN_e|r |T133906:0|t[Sabichão Defumado] |cRXP_WARN_fornecerão um grande aumento de DPS nos níveis iniciais|r << Priest/Druid
-    >>|cRXP_WARN_Procure por atualizações|r |T132317:0|t[Varinha] |cRXP_WARN_com DPS alto que você pode usar agora/em breve|r << Priest
+    >>|cRXP_WARN_Também procure por melhorias de alto DPS|r |T132317:0|t[Varinha] |cRXP_WARN_que você pode usar agora/em breve|r << Priest
     *|cRXP_WARN_Pule este passo se não quiser comprar nada|r
     .collect 5469,5,2178,1 -- Strider Meat (5)
     .collect 12238,6,1141,1 -- Darkshore Grouper (6)
@@ -2407,6 +2396,14 @@ step << Rogue
     >>|cRXP_BUY_Compre uma|r |T135641:0|t[Adaga Equilibrada de Arremesso]
     .collect 2946,1 -- Balanced Throwing Dagger
     .target Turian
+step << Hunter
+    #optional
+    .goto 1457/1,2511.04,10178.01
+    .target Jocaste
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Jocaste|r
+    .train 2974 >>Aprenda |T132309:0|t[|cRXP_LOOT_Cortar Asas|r]
+    .xp <12,1
+    .money <0.0600
 step
     #completewith NessaShadowsong
     .goto 1457/1,2636.53,9956.80

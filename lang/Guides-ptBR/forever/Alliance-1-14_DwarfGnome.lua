@@ -4,11 +4,12 @@ if faction == "Horde" then return end
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 #season 0,1
 #version 1
 << Alliance
-#group Guia Forever (A)
-#subgroup Guia Speedrun 1-20
+#group RestedXP Forever Guia (A)
+#subgroup Speedrun Guia 1-20
 --#groupid RXP-SRGCE-A1
 #name 1-5 Coldridge Valley
 #next 5-11 Dun Morogh
@@ -334,7 +335,7 @@ step << Warlock
     .goto 1426/0,391.07,-6048.84--c:Dun Morogh,28.650,66.145
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Alamar Carranca|r acima
     .turnin 3115 >> Entregue Memorando Conspurcado
-    .train 172 >>Treine |T136118:0|t[Corrupção]
+    .train 172 >>Treine |T136118:0|t [Corrupção]
     .target Alamar Grimm
 step << Shaman
     .goto 1426/0,384.000,-6050.200
@@ -648,11 +649,12 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 #season 0,1
 #version 1
 << Alliance
-#group Guia Forever (A)
-#subgroup Guia Speedrun 1-20
+#group RestedXP Forever Guia (A)
+#subgroup Speedrun Guia 1-20
 --#groupid RXP-SRGCE-A1
 #name 5-11 Dun Morogh
 #next 11-12 Elwynn (Anão/Gnomo);11-12 Missão do Emissário do Caos;12-14 Loch Modan (Anão/Gnomo);11-13 Loch Modan (Caçador)
@@ -665,7 +667,7 @@ step
     >>Mate os |cRXP_ENEMY_Crag Boars|r. Saqueie-os para |T133970:0|t|cRXP_LOOT_[Naco de Carne de Javali]|r e |cRXP_LOOT_Crag Javali Ribs|r
     >>|cRXP_WARN_Guarde todos os|r |T133970:0|t|cRXP_LOOT_[Naco de Carne de Javali]|r |cRXP_WARN_que você conseguir para Provisões para a Vaporeta e depois para subir seu|r |T133971:0|t[Culinária] |cRXP_WARN_depois|r
     >>|cRXP_WARN_Você precisa de 10|r |T133971:0|t[Culinária] |cRXP_WARN_para uma missão em Auberdine depois|r
-    >>|cRXP_WARN_Você precisa de 50|r |T133971:0|t[Culinária] |cRXP_WARN_para uma missão em Darkshire mais tarde|r
+    >>|cRXP_WARN_Você precisará de 50 em|r |T133971:0|t[Culinária] |cRXP_WARN_para uma missão em Vila Sombria mais tarde|r
     .collect 769,4,317,1 --Collect Chunk of Boar Meat (x4)
     .collect 2886,6,384,1 --Collect Crag Boar Rib (x6)
     .mob Crag Boar
@@ -748,7 +750,7 @@ step
     .target Tannok Frosthammer
 step
     .goto 1426/0,-529.600,-5590.600
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConversar com |cRXP_FRIENDLY_Maxan Begurno::1226|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConversar com |cRXP_FRIENDLY_Maxan Begurno::1226|r
     .target Maxan Anvol::1226
     .accept 5625 >> Aceite Vestimentas da Luz << Priest
     .accept 99158 >>Aceite Amanhecer nas Montanhas
@@ -928,7 +930,7 @@ step << Shaman
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.20
 step
     .goto 1426/0,-431.000,-5582.400
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tognus Pederfogo::1241|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tognus Pederfogo::1241|r
     .target Tognus Flintfire::1241
     .accept 98321 >>Aceite Carregamento de Flintfire
 step
@@ -991,7 +993,7 @@ step
     .mob +Crag Boar
 step
     #completewith next
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Montanhista Gretchen::271546|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Montanhista Gretchen::271546|r
     .target Mountaineer Gretchen::271546
     .turnin 98322 >>Entregue Segure a Montanha
     .accept 98319 >>Aceite Segure a Montanha
@@ -1002,7 +1004,7 @@ step
     .complete 5541,1 --Collect Rumbleshot's Ammo (x1)
 step
     .goto 1426/0,-371.400,-5746.900
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Montanhista Gretchen::271546|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Montanhista Gretchen::271546|r
     .target Mountaineer Gretchen::271546
     .turnin 98322 >>Entregue Segure a Montanha
     .accept 98319 >>Aceite Segure a Montanha
@@ -1115,7 +1117,7 @@ step
     .xp 7 >> Farme até o nível 7
 step
     .goto 1426/0,-501.500,-5643.900
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Senir Barbabranca::1252|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Senir Barbabranca::1252|r
     .target Senir Whitebeard::1252
     .accept 287 >>Aceite A Fortaleza Jubafria
 step
@@ -1429,7 +1431,7 @@ step << Hunter
     #label Rudra
     .goto 1426/0,-1304.71,-5513.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com Rudra Ambarmanso|r
-    .accept 314 >> Aceite Amarre Sua Cabra Pois Ragash Está Solto
+    .accept 314 >> Aceite Amarre Sua Cabra pois Ragash Está Solto
     .target Rudra Amberstill
 step << Hunter
     .goto 1426,62.094,47.154,40,0
@@ -1445,13 +1447,13 @@ step << Hunter
 step << Hunter
     .goto 1426/0,-1304.71,-5513.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com Rudra Ambarmanso|r
-    .turnin 314 >> Entregue Amarre Sua Cabra Pois Ragash Está Solto
+    .turnin 314 >> Entregue Amarre Sua Cabra pois Ragash Está Solto
     .target Rudra Amberstill
 step << Hunter
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Senador Mehr Sacrapetra|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Encarregado Pedracenho|r
     .accept 432 >> Aceite Malditos Troggs!
-    .goto 1426/0,-1580.000,-5714.700
-    .target Senator Mehr Stonehallow
+    .goto 1426/0,-1600.30,-5726.590
+    .target Foreman Stonebrow
 step << Hunter
     #loop
     .goto 1426,70.073,57.030,0
@@ -1463,14 +1465,34 @@ step << Hunter
     .waypoint 1426,67.687,60.059,45,0
     .waypoint 1426,68.958,59.357,45,0
     .waypoint 1426,70.475,59.420,45,0
-    >>Mate os |cRXP_ENEMY_Rockjaw Skullthumpers|r fora da mina
+    >>Mate os |cRXP_ENEMY_Rockjaw Skullthumpers|r fora da mina. Saqueie-os para o |T132621:0|t[|cRXP_LOOT_Empty Barril de Pólvora|r]
+    .use 268548 >> |cRXP_WARN_Use o|r |T132621:0|t[|cRXP_LOOT_Empty Barril de Pólvora|r] |cRXP_WARN_para iniciar a missão|r
+    >>|cRXP_WARN_NOTA: Este item tem uma taxa de queda baixa. Pule este passo se você não o encontrar|r
     .complete 432,1 --Kill Rockjaw Skullthumper (x6)
+    .collect 268548,1,95213,1 -- Empty Powder Keg (1)
+    .disablecheckbox
+    .accept 95213 >> Aceite Stolen Impacto Powder
+    .disablecheckbox
     .mob Rockjaw Skullthumper
 step << Hunter
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Senador Mehr Sacrapetra|r
+    .isOnQuest 95213
+    .goto 1426/0,-1606.02,-5676.35
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Mestre de Pedreira Thesten|r
+    .turnin 95213 >> Entregue Stolen Impacto Powder
+    .accept 95214 >> Aceite Stolen Impacto Powder
+    .target Quarrymaster Thesten
+step << Hunter
+    #optional
+    .isQuestTurnedIn 95213
+    .goto 1426/0,-1606.02,-5676.35
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Mestre de Pedreira Thesten|r
+    .accept 95214 >> Aceite Stolen Impacto Powder
+    .target Quarrymaster Thesten
+step << Hunter
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Encarregado Pedracenho|r
     .turnin 432 >> Entregue Malditos Troggs!
-    .target Senator Mehr Stonehallow
-    .goto 1426/0,-1580.000,-5714.700
+    .target Foreman Stonebrow
+    .goto 1426/0,-1600.30,-5726.590
 step << Hunter
     .goto 1426/0,-2197.02,-5279.07,45,0
     .goto 1426/0,-2329.60,-5163.76
@@ -1643,7 +1665,7 @@ step << Hunter
     .turnin 412 >> Entregue em Operação Remendão
 step << Hunter
     #optional
-    .xp 10 >> Suba até o nível 10
+    .xp 10 >> Farme até o nível 10
 step << Hunter
     .goto 1426/0,-454.06,-5618.53--c:Dun Morogh,45.810,53.039
     .target Grif Wildheart
@@ -1685,7 +1707,7 @@ step << Hunter
     .accept 6086 >>Aceite Treinamento da Fera - Missão
 step
     .goto 1426/0,-682.300,-5489.000
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Beldin Steelgrill::1376|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Beldin Steelgrill::1376|r
     .target Beldin Steelgrill::1376
     .accept 96408 >>Aceite Uma Visita a Dun Morogh
 step << Warrior
@@ -1759,7 +1781,7 @@ step
     .goto 1426,57.936,50.787,0
     >>Mate os |cRXP_ENEMY_Javalis de Rochedo Anciões|r. Saque-os para obter |T133970:0|t|cRXP_LOOT_[Naco de Carne de Javali]|r
     >>|cRXP_WARN_Isto será usado para melhorar sua|r |T133971:0|t[Culinária] |cRXP_WARN_depois|r
-    >>|cRXP_WARN_Você precisa de 50|r |T133971:0|t[Culinária] |cRXP_WARN_para uma missão em Darkshire mais tarde|r
+    >>|cRXP_WARN_Você precisará de 50 em|r |T133971:0|t[Culinária] |cRXP_WARN_para uma missão em Vila Sombria mais tarde|r
     >>|cRXP_WARN_Não faça um esforço especial. Simplesmente mate e saqueie todos os javalis que encontrar.|r
     .collect 769,50,2178,1,0x20,cooking --Chunk of Boar Meat (10-50)
     .mob Elder Crag Boar
@@ -1787,7 +1809,7 @@ step << !Hunter
     #label Rudra
     .goto 1426/0,-1304.71,-5513.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com Rudra Ambarmanso|r
-    .accept 314 >> Aceite Amarre Sua Cabra Pois Ragash Está Solto
+    .accept 314 >> Aceite Amarre Sua Cabra pois Ragash Está Solto
     .target Rudra Amberstill
 step << !Hunter
     .goto 1426,62.094,47.154,40,0
@@ -1803,7 +1825,7 @@ step << !Hunter
 step << !Hunter
     .goto 1426/0,-1304.71,-5513.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com Rudra Ambarmanso|r
-    .turnin 314 >> Entregue Amarre Sua Cabra Pois Ragash Está Solto
+    .turnin 314 >> Entregue Amarre Sua Cabra pois Ragash Está Solto
     .target Rudra Amberstill
 step
     #optional
@@ -1831,13 +1853,13 @@ step
     .goto 1426/0,-1394.24,-5797.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Earthseer Farsen|r
     .turnin 96408 >> Entregue Uma Visita a Dun Morogh
-    .accept 96392 >> Aceite Vigiar de Farsen
+    .accept 96392 >> Aceite A Vigília de Farsen
     .target Earthseer Farsen
 step
     .isOnQuest 96392
     .goto 1426/0,-1394.24,-5797.83
     .gossipoption 139831 >> Fale com |cRXP_FRIENDLY_Earthseer Farsen|r para ver sua visão distante
-    >>|cRXP_WARN_Você pode cancelar a Visão Distante quando o objetivo for concluído|r
+    >>|cRXP_WARN_Você pode cancelar a Visão Distante uma vez que o objetivo seja concluído|r
     .target Earthseer Farsen
 step
     .isOnQuest 96392
@@ -1845,7 +1867,7 @@ step
 step << skip
     .goto 1426/0,-1394.24,-5797.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Earthseer Farsen|r
-    >>|cRXP_WARN_Você pode cancelar a Visão Distante quando o objetivo for concluído|r
+    >>|cRXP_WARN_Você pode cancelar a Visão Distante uma vez que o objetivo seja concluído|r
     .complete 96392,1 -- Use Farsen's Farsight
     .skipgossip
     .target Earthseer Farsen
@@ -1884,13 +1906,21 @@ step << !Hunter
 --XX Mud slappers instead
 step
     #label QuarryStart
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Senador Mehr Sacrapetra|r e com o |cRXP_FRIENDLY_Encarregado Pedracenho|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Senador Mehr Sacrapetra|r e o |cRXP_FRIENDLY_Encarregado Pedracenho|r << !Hunter
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Senador Mehr Sacrapetra|r << Hunter
     .accept 433 >> Aceite O Funcionário Público
     .target +Senator Mehr Stonehallow
     .goto 1426/0,-1579.96,-5714.73
-    .accept 432 >> Aceite Malditos Troggs!
-    .goto 1426/0,-1600.30,-5726.590
-    .target +Foreman Stonebrow
+    .accept 432 >> Aceite Malditos Troggs! << !Hunter
+    .goto 1426/0,-1600.30,-5726.590 << !Hunter
+    .target +Foreman Stonebrow << !Hunter
+step
+    #completewith RockjawBonesnappers
+    >>Saqueie os |cRXP_ENEMY_Rockjaw Skullthumpers|r e os |cRXP_ENEMY_Rockjaw Bonesnappers|r para o |T132621:0|t[|cRXP_LOOT_Empty Barril de Pólvora|r]
+    .use 268548 >> |cRXP_WARN_Use o|r |T132621:0|t[|cRXP_LOOT_Empty Barril de Pólvora|r] |cRXP_WARN_para iniciar a missão|r
+    >>|cRXP_WARN_NOTA: Este item tem uma taxa de queda baixa. Pule este passo se você não o encontrar|r
+    .collect 268548,1,95213,1 -- Empty Powder Keg (1)
+    .accept 95213 >> Aceite Stolen Impacto Powder
 step
     #sticky
     #label Skullthumpers
@@ -1913,6 +1943,7 @@ step
     .goto 1426,70.750,56.219,20 >>Entre em Gol'Bolar Pedreira Mina
     .isOnQuest 433
 step
+    #label RockjawBonesnappers
     #loop
     .goto 1426,70.750,56.219,0
     .goto 1426,71.344,51.873,0
@@ -1937,13 +1968,28 @@ step
     #requires Skullthumpers
 --XXREQ Placeholder invis step until multiple requires per step
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Encarregado Pedracenho|r e com o |cRXP_FRIENDLY_Senador Mehr Sacrapetra|r
-    .turnin 432 >> Entregue Malditos Troggs!
-    .target +Senator Mehr Stonehallow
-    .goto 1426/0,-1600.30,-5726.590
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Senador Mehr Sacrapetra|r e o |cRXP_FRIENDLY_Encarregado Pedracenho|r << !Hunter
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Senador Mehr Sacrapetra|r << Hunter
     .turnin 433 >> Entregue O Funcionário Público
     .goto 1426/0,-1579.96,-5714.73
-    .target +Foreman Stonebrow  
+    .target +Senator Mehr Stonehallow
+    .turnin 432 >> Entregue Malditos Troggs! << !Hunter
+    .goto 1426/0,-1600.30,-5726.590 << !Hunter
+    .target +Foreman Stonebrow << !Hunter
+step
+    .isOnQuest 95213
+    .goto 1426/0,-1606.02,-5676.35
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Mestre de Pedreira Thesten|r
+    .turnin 95213 >> Entregue Stolen Impacto Powder
+    .accept 95214 >> Aceite Stolen Impacto Powder
+    .target Quarrymaster Thesten
+step
+    #optional
+    .isQuestTurnedIn 95213
+    .goto 1426/0,-1606.02,-5676.35
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Mestre de Pedreira Thesten|r
+    .accept 95214 >> Aceite Stolen Impacto Powder
+    .target Quarrymaster Thesten
 step
     #optional
     #label BoarMeatDunMorogh3
@@ -1977,41 +2023,66 @@ step
 --  .skill cooking,<10,1
     .skill cooking,50,1 --XX Shows if cooking skill is between 1-50
 step
+    .isOnQuest 95214
+    #completewith SpyMap
+    >>Mate os |cRXP_ENEMY_Rockjaw Ambushers|r. Saqueie-os para obter o |cRXP_LOOT_Stolen Impacto Powder|r
+    .complete 95214,1 -- Stolen Blasting Powder (16)
+    .mob Rockjaw Ambusher
+step
     #completewith OII
     >>Abata |cRXP_ENEMY_Rockjaw Ambushers|r. Saqueie-os para obter |T132621:0|t[|cRXP_LOOT_Barril de Pólvora Vazio|r]
-    .use 268548 >> |cRXP_WARN_Use |r|T132621:0|t[|cRXP_LOOT_Barril de Pólvora Vazio|r] |cRXP_WARN_para iniciar a missão|r
+    .use 268548 >> |cRXP_WARN_Use o|r |T132621:0|t[|cRXP_LOOT_Empty Barril de Pólvora|r] |cRXP_WARN_para iniciar a missão|r
     >>|cRXP_WARN_NOTA: Este item tem uma chance de drop baixa. Pule este passo se você não o encontrar até terminar com o|r |cRXP_ENEMY_Dark Ferro Spies|r
     .collect 268548,1,95213,1 -- Empty Powder Keg (1)
     .accept 95213 >> Aceite Stolen Impacto Powder
     .mob Rockjaw Ambusher
 step
+    #label SpyMap
     .goto 1426/0,-2009.87,-5860.22,40,0
     .goto 1426/0,-2034.49,-5922.60
-    >>Mate os |cRXP_ENEMY_Dark Ferro Spies|r. Saqueie-os para obter o |T237385:0|t[|cRXP_LOOT_Dark Ferro Mapa|r]
+    >>Mate os |cRXP_ENEMY_Dark Ferro Spies|r. Saque-os para obter o |T237385:0|t[|cRXP_LOOT_Dark Ferro Mapa|r]
     .use 274268 >>|cRXP_WARN_Use o|r |T237385:0|t[|cRXP_LOOT_Dark Ferro Mapa|r] |cRXP_WARN_para iniciar a missão|r
     .complete 96390,1 -- Dark Iron Spy slain 10/10
     .collect 274268,1,96391,1 -- Dark Iron Map (1)
     .accept 96391 >> Aceite Mapa Subterrâneo
     .mob Dark Iron Spy
 step
+    .isOnQuest 95214
+    #loop
+    .goto 1426/0,-1881.82,-5735.45,50,0
+    .goto 1426/0,-1832.57,-5571.28,50,0
+    .goto 1426/0,-1724.22,-5636.95,50,0
+    .goto 1426/0,-1881.82,-5735.45,0
+    .goto 1426/0,-1832.57,-5571.28,0
+    .goto 1426/0,-1724.22,-5636.95,0
+    >>Mate os |cRXP_ENEMY_Rockjaw Ambushers|r. Saqueie-os para obter o |cRXP_LOOT_Stolen Impacto Powder|r
+    .complete 95214,1 -- Stolen Blasting Powder (16)
+    .mob Rockjaw Ambusher
+step
+    .isQuestComplete 95214
+    .goto 1426/0,-1606.02,-5676.35
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Mestre de Pedreira Thesten|r
+    .turnin 95214 >> Entregue Stolen Impacto Powder
+    .target Quarrymaster Thesten
+step
     #label OII
     .goto 1426/0,-1394.24,-5797.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Earthseer Farsen|r
-    .turnin 96390 >> Entregue Nip 'Em in the Migo
+    .turnin 96390 >> Entregue Corte o Mal pela Raiz
     .turnin 96391 >> Entregue Mapa Subterrâneo
-    .accept 96393 >> Aceite Old Ironforge Incursion
+    .accept 96393 >> Aceite Incursão em Old Ironforge
     .target Earthseer Farsen
 step
     .isOnQuest 95213
     .goto 1426/0,-1606.02,-5676.35
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Quarrymaster Thesten|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Mestre de Pedreira Thesten|r
     .turnin 95213 >> Entregue Stolen Impacto Powder
     .accept 95214 >> Aceite Stolen Impacto Powder
     .target Quarrymaster Thesten
 step
     .isQuestTurnedIn 95213
     .goto 1426/0,-1606.02,-5676.35
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Quarrymaster Thesten|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Mestre de Pedreira Thesten|r
     .accept 95214 >> Aceite Stolen Impacto Powder
     .target Quarrymaster Thesten
 step
@@ -2023,13 +2094,13 @@ step
     .goto 1426/0,-1881.82,-5735.45,0
     .goto 1426/0,-1832.57,-5571.28,0
     .goto 1426/0,-1724.22,-5636.95,0
-    >>Abata |cRXP_ENEMY_Rockjaw Ambushers|r. Saqueie-os para obter |cRXP_LOOT_Stolen Impacto Powder|r
+    >>Mate os |cRXP_ENEMY_Rockjaw Ambushers|r. Saqueie-os para obter o |cRXP_LOOT_Stolen Impacto Powder|r
     .complete 95214,1 -- Stolen Blasting Powder (16)
     .mob Rockjaw Ambusher
 step
     .isQuestComplete 95214
     .goto 1426/0,-1606.02,-5676.35
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Quarrymaster Thesten|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Mestre de Pedreira Thesten|r
     .turnin 95214 >> Entregue Stolen Impacto Powder
     .target Quarrymaster Thesten
 step
@@ -2083,7 +2154,7 @@ step
     .line Loch Modan,36.72,41.97,37.24,43.19,37.33,45.63,36.77,46.20,35.19,46.88,32.67,49.71,35.19,46.88,36.77,46.20,37.33,45.63,37.24,43.19,36.72,41.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Montanhista Kadrell|r
     >>|cRXP_FRIENDLY_Montanhista Kadrell|r |cRXP_WARN_patrulha a estrada através de Thelsamar|r
-    .turnin 414 >> Vire em Cerveja para Kadrell
+    .turnin 414 >> Entregue Cerveja para Kadrell
     .accept 416 >> Aceite Caçando Ratos
     .accept 1339 >> Aceite Tarefa de Montanhista Lançatroz
     .target Mountaineer Kadrell
@@ -2104,7 +2175,7 @@ step << !Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Yanni Cuoreforte|r
     >>|cRXP_BUY_Compre uma|r |T135435:0|t[Simple Madeira] |cRXP_BUY_e uma|r |T135237:0|t[Pederneira e Lenha] |cRXP_BUY_dela|r
     >>|cRXP_BUY_Compre também uma|r |T133634:0|t[Pequeno Brown Pouch] |cRXP_BUY_dela se necessário|r << !Rogue
-    >>|cRXP_WARN_Isto é usado para fazer|r |T135805:0|t[Basic Campfires] |cRXP_WARN_em Barcos para aumentar sua|r |T133971:0|t[Culinária] |cRXP_WARN_habilidade sem perder tempo|r
+    >>|cRXP_WARN_Isto é usado para fazer|r |T135805:0|t[Fogueiras Básicas] |cRXP_WARN_enquanto aguarda Boats para elevar sua|r |T133971:0|t[Culinária] |cRXP_WARN_habilidade sem perder tempo|r
     >>Você precisa de 50 em [Culinária] para uma missão mais tarde na Floresta do Crepúsculo
     .collect 4470,1 --Simple Wood (1)
     .collect 4471,1 --Flint and Tinder (1)
@@ -2113,8 +2184,8 @@ step << !Hunter
 step
     #label ThelsaHS
     .goto 1432/0,-2973.90,-5377.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Estalajadeiro Fornalenha|r dentro
-    .home >> Defina sua Pedra de Regresso em Thelsamar
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estalajadeiro Fornalenha|r dentro
+    .home >> Defina sua Pedra de Retorno em Thelsamar
     .target Innkeeper Hearthstove
 step
     #optional
@@ -2143,7 +2214,7 @@ step
     .goto 1432/0,-3007.99,-5337.390
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Montanhista Kadrell|r
     >>|cRXP_FRIENDLY_Montanhista Kadrell|r |cRXP_WARN_patrulha a estrada através de Thelsamar|r
-    .turnin 414 >> Entregue Cerveja para Kadrell
+    .turnin 414 >> Vire em Cerveja para Kadrell
     .accept 416 >> Aceite Caçando Ratos
     .accept 1339 >> Aceite Tarefa de Montanhista Lançatroz
     .target Mountaineer Kadrell
@@ -2176,7 +2247,7 @@ step
     .goto 1426,80.583,36.040,0
     >>Mate os |cRXP_ENEMY_Mountain Boars|r. Saqueie-os por sua |T133970:0|t|cRXP_LOOT_[Naco de Carne de Javali]|r
     >>|cRXP_WARN_Isto será usado para melhorar sua|r |T133971:0|t[Culinária] |cRXP_WARN_depois|r
-    >>|cRXP_WARN_Você precisa de 50|r |T133971:0|t[Culinária] |cRXP_WARN_para uma missão em Darkshire mais tarde|r
+    >>|cRXP_WARN_Você precisará de 50 em|r |T133971:0|t[Culinária] |cRXP_WARN_para uma missão em Vila Sombria mais tarde|r
     >>|cRXP_WARN_Não faça um esforço especial. Simplesmente mate e saqueie todos os javalis que encontrar.|r
     .collect 769,50,2178,1,0x20,cooking --Chunk of Boar Meat (10-50)
     .mob Mountain Boar
@@ -2248,7 +2319,7 @@ step << !Hunter
     .target Pilot Hammerfoot
 step << !Hunter
     #completewith flyIF
-    .hs >> Use sua Pedra de Retorno para ir a Thelsamar
+    .hs >> Vá para Thelsamar
     >>|cRXP_BUY_Compre comida/água se necessário|r << !Warrior !Rogue
 	>>|cRXP_BUY_Compre comida se necessário|r << Warrior/Rogue
     .cooldown item,6948,>2,1
@@ -2294,7 +2365,7 @@ step << Dwarf/Gnome
     .target Golnir Bouldertoe
 step << Shaman
     .goto 1455/0,-1086.500,-4642.400
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Eldrun Rompe-procelas::258098|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Eldrun Rompe-procelas::258098|r
     .target Eldrun Stormbreaker::258098
     .accept 94449 >>Aceite Clamor do Fogo
     .trainer >> Treine suas magias de classe
@@ -2311,7 +2382,7 @@ step
 step
     .goto 1455/0,-1152.40,-4821.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Grif Trovino|r
-    >>|cRXP_WARN_NÃO voe para lugar algum|r
+    >>|cRXP_WARN_Não voe para lugar nenhum|r
     .turnin 6388 >> Entregue Grif Trovino
     .accept 6392 >> Aceite Retornar com Brock
     .target Gryth Thurden
@@ -2393,7 +2464,7 @@ step << Hunter
     .target Regnus Thundergranite
 step << Dawrf Priest
     .goto 1455/0,-897.200,-4607.200
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Alto Sacerdote Rohan|r  
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Sumo Sacerdote Rohan|r
     .turnin 5639 >> Entregue Prece Desesperada
     .trainer >> Treine suas magias de classe
     .target High Priest Rohan
@@ -2404,10 +2475,10 @@ step << Priest/Mage/Warlock
     .goto 1455/0,-917.57,-4967.58,-1--c:Ironforge,25.800,75.500
     .goto 1455/0,-904.92,-4962.83,-1--c:Ironforge,24.200,74.600
     .goto 1455/0,-901.76,-4948.06,-1--c:Ironforge,23.800,71.800
-    >>|cRXP_WARN_Compre o seguinte se puder pagar:|r
+    >>|cRXP_WARN_Compre o seguinte se você puder pagar:|r
     >>|T134711:0|t[Óleo Menor de Teurgo] |cRXP_WARN_e|r |T133906:0|t[Sabichão Defumado]
-    >>|cRXP_WARN_Procure por atualizações|r |T132317:0|t[Varinha] |cRXP_WARN_com DPS alto que você pode usar agora/em breve|r
-    >>|cRXP_WARN_Estes fornecerão um grande aumento de DPS nos primeiros níveis. Se você não quer ou não pode fazer isso, pule este passo|r
+    >>|cRXP_WARN_Também procure por melhorias de alto DPS|r |T132317:0|t[Varinha] |cRXP_WARN_que você pode usar agora/em breve|r
+    >>|cRXP_WARN_Estes fornecerão um grande aumento de DPS nos primeiros níveis. Se você não quer ou não consegue fazer isso, pule este passo|r
     .collect 20744,1 -- Minor Wizard Oil (1)
     .collect 21072,20 -- Smoked Sagefish (20)
     .target Auctioneer Lympkin
@@ -2418,16 +2489,16 @@ step
     .goto 1455/0,-917.57,-4967.58,-1--c:Ironforge,25.800,75.500
     .goto 1455/0,-904.92,-4962.83,-1--c:Ironforge,24.200,74.600
     .goto 1455/0,-901.76,-4948.06,-1--c:Ironforge,23.800,71.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com um |cRXP_FRIENDLY_Leiloeiro|r de Ironforge
-    >>|cRXP_BUY_Compre|r |T133970:0|t|cRXP_LOOT_[Naco de Carne de Javali]|r |cRXP_BUY_e/ou|r |T133970:0|t|cRXP_LOOT_[Stringy Lobo Carne]|r |cRXP_BUY_para aumentar sua|r |T133971:0|t[Culinária] |cRXP_BUY_mais tarde|r
-    >>|cRXP_WARN_Você precisa de 50|r |T133971:0|t[Culinária] |cRXP_WARN_para uma missão em Darkshire mais tarde|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com um |cRXP_FRIENDLY_Leiloeiro de Ironforge|r
+    >>|cRXP_BUY_Compre|r |T133970:0|t|cRXP_LOOT_[Nacos de Carne de Javali]|r |cRXP_BUY_e/ou|r |T133970:0|t|cRXP_LOOT_[Acém de Lobo]|r |cRXP_BUY_para aumentar sua habilidade de|r |T133971:0|t[Culinária] |cRXP_BUY_mais tarde|r
+    >>|cRXP_WARN_Você precisará de 50 em|r |T133971:0|t[Culinária] |cRXP_WARN_para uma missão em Vila Sombria mais tarde|r
     >>Se você não quiser ou não puder fazer isso, pule esta etapa
     >>|cRXP_BUY_Compre os itens a seguir para uma entrega mais rápida em Loch Modan em breve e para subir seu nível de|r |T133971:0|t[Culinária] |cRXP_BUY_habilidade com:|r
     >>|T134342:0|t[Javali Intestines]
     >>|T134027:0|t[Urso Carne]
     >>|T134437:0|t[Aranha Ichor]
-    >>|T133970:0|t|cRXP_LOOT_[Naco de Carne de Javali]|r
-    >>|T133970:0|t|cRXP_LOOT_[Stringy Lobo Carne]|r
+    >>|T133970:0|t|cRXP_LOOT_[Nacos de Carne de Javali]|r
+    >>|T133970:0|t|cRXP_LOOT_[Acém de Lobo]|r
     .collect 3172,3,418,1 -- Boar Intestines (3)
     .collect 3173,3,418,1 -- Bear Meat (3)
     .collect 3174,3,418,1 -- Spider Ichor (3)
@@ -2448,7 +2519,7 @@ step
     .goto 1455/0,-917.57,-4967.58,-1--c:Ironforge,25.800,75.500
     .goto 1455/0,-904.92,-4962.83,-1--c:Ironforge,24.200,74.600
     .goto 1455/0,-901.76,-4948.06,-1--c:Ironforge,23.800,71.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com um |cRXP_FRIENDLY_Leiloeiro|r de Ironforge
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com um |cRXP_FRIENDLY_Leiloeiro de Ironforge|r
     >>Se você não quiser ou não puder fazer isso, pule esta etapa
     >>|cRXP_BUY_Compre os itens a seguir para uma entrega mais rápida em Loch Modan em breve:|r
     >>|T134342:0|t[Javali Intestines]
@@ -2472,7 +2543,7 @@ step << Dwarf Paladin
     .target Innkeeper Firebrew
     .bindlocation 1537
 step << Hunter
-    .hs >> Use sua Pedra de Retorno para ir a Thelsamar
+    .hs >> Vá para Thelsamar
     >>|cRXP_BUY_Compre comida/água se necessário|r << !Warrior !Rogue
 	>>|cRXP_BUY_Compre comida se necessário|r << Warrior/Rogue
     .cooldown item,6948,>2,1
@@ -2490,17 +2561,17 @@ step << !Hunter
     .goto 1455/0,-1330.28,-4840.430
     .subzone 2257 >>Entre no Metrô Correfundo
 step << !Hunter
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Monty|r na plataforma intermediária no Deeprun Tram
-    .accept 6661 >> Aceite Caçada aos Ratos das Profundezas
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Monty|r na plataforma do meio no Deeprun Tram
+    .accept 6661 >> Aceite Ratos de Porão
     .target Monty
 step << !Hunter
-    >>Usar o |T133942:0|t[Rato Catcher's Flute] em |cRXP_FRIENDLY_Deeprun Ratos|r no Deeprun Tram
+    >>Usar |T133942:0|t[Rato Catcher's Flute] em |cRXP_FRIENDLY_Deeprun Ratos|r no Deeprun Tram
     .complete 6661,1 --Rats Captured (x5)
     .use 17117
     .mob Deeprun Rat
 step << !Hunter
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Monty|r na plataforma intermediária no Deeprun Tram
-    .turnin 6661 >> Entregue Caçada aos Ratos das Profundezas
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Monty|r na plataforma do meio no Deeprun Tram
+    .turnin 6661 >> Entregue Ratos de Porão
     .timer 11,Ratos de Deeprun RP
     .accept 6662 >> Aceite Espetinhos de... Rato
     .target Monty
@@ -2613,7 +2684,7 @@ step << !Hunter
     #label Order
     .goto 1453/0,600.07,-8427.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Furen Barbalonga|r
-    .turnin 1338 >> Entregue Pedidos de Pico da Tempestade
+    .turnin 1338 >> Entregue Ordens dos Lançatroz
     .target Furen Longbeard
 step << Warrior
     .goto 1453/0,358.25,-8728.28,15,0
@@ -2713,10 +2784,11 @@ step << Rogue
 RXPGuides.RegisterGuide([[
 #xprate <1.5
 #forever
+#disabledungeons
 #season 0,1
 << Alliance !Hunter
-#group Guia Forever (A)
-#subgroup Guia Speedrun 1-20
+#group RestedXP Forever Guia (A)
+#subgroup Speedrun Guia 1-20
 --#groupid RXP-SRGCE-A1
 #name 11-12 Elwynn (Anão/Gnomo)
 #version 1
@@ -2764,7 +2836,7 @@ step << Mage
     .goto 1429/0,34.28,-9471.61
     .trainer >> Treine suas magias de classe
 step << Rogue
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Anabela Cabreira|r
+    >>|interface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Anabela Cabreira|r
     >>|cRXP_WARN_Dê prioridade ao treinamento|r |T132147:0|t[Empunhar Duas Armas]
     .target Keryn Sylvius
     .goto 1429/0,12.69,-9465.75
@@ -3108,15 +3180,15 @@ step
     .goto 1433/0,-1948.56,-9582.75
     .zone Redridge Mountains >> Viaje para as Montanhas Cristarrubra
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Guarda Capitão da Guarda Florestan|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Capitão da Guarda Florestan|r
     .target Guard Parker
     .goto 1433/0,-1906.400,-9606.800
-    .accept 244 >> Aceite Gnolls Invasores
+    .accept 244 >> Aceite Encroaching Gnolls
 step
     .goto 1433/0,-2238.00,-9443.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Subdelegado David|r
     >>|cRXP_WARN_Cuidado com os inimigos de nível alto no caminho|r
-    .turnin 244 >> Entregue Gnolls Invasores
+    .turnin 244 >> Entregue Encroaching Gnolls
     .target Deputy Feldon
 step
     .goto 1433/0,-2234.900,-9435.300
@@ -3124,7 +3196,8 @@ step
     .fp Redridge Mountains >> Aprenda a rota de voo para Montanhas Cristarrubra
     .fly Stormwind >> Voe para Ventobravo
     .target Ariena Stormfeather
-step << skip
+step
+    .isOnQuest 61
     .goto 1453/0,625.48,-8857.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Morgado Pilão|r
     .turnin 61,1 >> Entregue Carregamento para Ventobravo
@@ -3242,7 +3315,7 @@ step << Priest
     .trainer >> Treine suas magias de classe
     .xp <12,1
 step << Rogue
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Anabela Cabreira|r
+    >>|interface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Anabela Cabreira|r
     .target Keryn Sylvius
     .goto 1429/0,12.69,-9465.75
     .trainer >> Treine suas magias de classe
@@ -3358,7 +3431,7 @@ step << Dwarf Paladin
     .zoneskip Ironforge
     .zoneskip Loch Modan
 step << !Paladin
-    .hs >> Use sua Pedra de Retorno para ir a Thelsamar
+    .hs >> Vá para Thelsamar
     >>|cRXP_BUY_Compre comida/água se necessário|r << !Warrior !Rogue
 	>>|cRXP_BUY_Compre comida se necessário|r << Warrior/Rogue
     .cooldown item,6948,>2,1
@@ -3375,18 +3448,17 @@ step << !Paladin
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 #season 0,1
 #version 1
 << Alliance !Hunter
-#group Guia Forever (A)
-#subgroup Guia Speedrun 1-20
+#group RestedXP Forever Guia (A)
+#subgroup Speedrun Guia 1-20
 --#groupid RXP-SRGCE-A1
 #name 12-14 Loch Modan (Anão/Gnomo)
 #next 13-15 Cerro Oeste; 14-16 Costa Negra
 #defaultfor Gnome/Dwarf
 
-step -- dont delete
-    #label LochStart
 step << Dwarf Paladin
     #optional
     #completewith next
@@ -3498,7 +3570,7 @@ step
     .target Yanni Stoutheart
 step << !Hunter
     .goto 1432/0,-2973.90,-5377.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Estalajadeiro Fornalenha|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estalajadeiro Fornalenha|r
     .vendor 6734 >> |cRXP_BUY_Compre alguns|r |T133968:0|t[Pão Fresquinho] |cRXP_BUY_se necessário|r << Warrior/Rogue
     .vendor 6734 >> |cRXP_BUY_Compre alguns|r |T133968:0|t[Pão Fresquinho] |cRXP_BUY_e|r |T132815:0|t[Leite Gelado] |cRXP_BUY_dela se necessário|r << !Warrior !Rogue
     .target Innkeeper Hearthstove
@@ -3603,7 +3675,6 @@ step
     .subzoneskip 149 --Silver Stream Mine
 step
     .goto 1432/0,-3146.73,-4837.02
-    #arrowtext |cRXP_WARN_cronômetro de 10 minutos para entregar a missão!|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Norric Lochthane|r
     >>|cRXP_WARN_Certifique-se de entregar isto antes do vencimento de 10 minutos no|r |T1387609:0|t[Jar of Neve]
     .turnin 86667 >> Entregue Snowbound
@@ -3628,7 +3699,7 @@ step
     .waypoint 1432/0,-2684.71,-5042.87,50,0
     .waypoint 1432/0,-2712.57,-5286.61,50,0
     >>Mate os |cRXP_ENEMY_Tunnel Ratos|r. Saqueie-os para obter |cRXP_LOOT_Orelhas|r
-    >>Mate os |cRXP_ENEMY_Tunnel Rato Geomancers|r. Saqueie-os para obter |cRXP_LOOT_Fire Piche|r << Shaman 
+    >>Mate os |cRXP_ENEMY_Tunnel Rato Geomancers|r. Saqueie-os para obter |cRXP_LOOT_Fire Piche|r << Shaman
     >>|cRXP_ENEMY_Tunnel Rato Geomancers|r |cRXP_WARN_são encontrados apenas dentro da mina|r << Shaman
     .complete 416,1 --Collect Tunnel Rat Ear (x12)
     .mob +Tunnel Rat Scout
@@ -4091,7 +4162,7 @@ step << Dwarf Paladin
     .target Tiza Battleforge
 step << Shaman
     .goto 1455/0,-1086.500,-4642.400
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Eldrun Rompe-procelas::258098|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Eldrun Rompe-procelas::258098|r
     .target Eldrun Stormbreaker::258098
     .trainer >> Treine suas magias de classe
 step << Mage/Priest/Warlock
@@ -4099,7 +4170,7 @@ step << Mage/Priest/Warlock
     .goto 1455/0,-894.15,-4659.43,8,0
     .goto 1455/0,-880.66,-4660.39,5,0
     .goto 1455/0,-896.50,-4653.32
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Harick Batesseixo|r lá em baixo
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Harick Batesseixo|r embaixo
     >>|cRXP_WARN_Compre uma|r |T135468:0|t[Varinha Fumegante] |cRXP_WARN_dela|r
     .collect 5208,1 --Smoldering Wand (1)
     .target Harick Boulderdrum
@@ -4167,9 +4238,6 @@ step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Bilban Arremessaporca|r
     .trainer >> Treine suas magias de classe
     .target Bilban Tosslespanner
-
-step -- dont delete
-    #label LochEnd
 
 step << skip --logout skip << Warrior
     #optional
@@ -4380,12 +4448,13 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 #season 0,1
 #era/som--h
 #version 1
 << Alliance Hunter
-#group Guia Forever (A)
-#subgroup Guia Speedrun 1-20
+#group RestedXP Forever Guia (A)
+#subgroup Speedrun Guia 1-20
 --#groupid RXP-SRGCE-A1
 #name 11-13 Loch Modan (Caçador)
 #next 14-16 Costa Negra
@@ -4431,8 +4500,8 @@ step
     .accept 418 >> Aceite Chouriço de Thelsamar
 step
     .goto 1432/0,-2973.90,-5377.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Estalajadeiro Fornalenha|r
-    .home >> Defina sua Pedra de Regresso em Thelsamar
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estalajadeiro Fornalenha|r
+    .home >> Defina sua Pedra de Retorno em Thelsamar
     .target Innkeeper Hearthstove
 step
     .goto 1432/0,-3019.02,-5369.40,8,0
@@ -4678,7 +4747,6 @@ step
     .complete 86667,1 -- Jar of Snow 1/1
 step
     .goto 1432/0,-3146.73,-4837.02
-    #arrowtext |cRXP_WARN_cronômetro de 10 minutos para entregar a missão!|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Norric Lochthane|r
     >>|cRXP_WARN_Certifique-se de entregar isto antes do vencimento de 10 minutos no|r |T1387609:0|t[Jar of Neve]
     .turnin 86667 >> Entregue Snowbound
@@ -4756,7 +4824,7 @@ step
     .skill cooking,50,1 --XX Shows if cooking skill is <50
 step
     #hardcore
-    .hs >> Use sua Pedra de Retorno para ir a Thelsamar
+    .hs >> Vá para Thelsamar
 step
     #softcore
     #completewith next
@@ -4782,7 +4850,7 @@ step
     .train 2550 >> Aprenda |T133971:0|t[Culinária]
 step
     .goto 1455/0,-1303.75,-4631.19
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Prospector Lançatroz|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Prospector Lançatroz|r
     .turnin 301 >> Entregue Apresente-se a Altaforja
     .target Prospector Stormpike
 step
@@ -4793,7 +4861,7 @@ step
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Monty|r no meio da plataforma
     .target Monty
-    .accept 6661 >> Aceite Caçada aos Ratos das Profundezas
+    .accept 6661 >> Aceite Ratos de Porão
 step
     .use 17117 >>|cRXP_WARN_Use o|r |T133942:0|t[Rato Catcher's Flute] |cRXP_WARN_em|r |cRXP_ENEMY_Deeprun Ratos|r
     .complete 6661,1 --Rats Captured (x5)
@@ -4801,7 +4869,7 @@ step
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Monty|r
     .target Monty
-    .turnin 6661 >> Entregue Caçada aos Ratos das Profundezas
+    .turnin 6661 >> Entregue Ratos de Porão
     .timer 11,Ratos de Deeprun RP
     .accept 6662 >> Aceite Espetinhos de... Rato
 step
@@ -4822,7 +4890,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Furen Barbalonga|r
     .target Furen Longbeard
     .goto 1453/0,600.07,-8427.22
-    .turnin 1338 >> Entregue Pedidos de Pico da Tempestade
+    .turnin 1338 >> Entregue Ordens dos Lançatroz
 step << Hunter
     .goto 1453/0,552.78,-8415.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Einris Setalume|r dentro
@@ -4841,14 +4909,14 @@ step
     #ah
     .goto 1453/0,660.28,-8814.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Leiloeira Jasona|r
-    >>|cRXP_BUY_Compre|r |T133970:0|t|cRXP_LOOT_[Naco de Carne de Javali]|r |cRXP_BUY_e/ou|r |T133970:0|t|cRXP_LOOT_[Stringy Lobo Carne]|r |cRXP_BUY_para aumentar sua|r |T133971:0|t[Culinária] |cRXP_BUY_mais tarde|r
-    >>|cRXP_WARN_Você precisa de 50|r |T133971:0|t[Culinária] |cRXP_WARN_para uma missão em Darkshire mais tarde|r
+    >>|cRXP_BUY_Compre|r |T133970:0|t|cRXP_LOOT_[Nacos de Carne de Javali]|r |cRXP_BUY_e/ou|r |T133970:0|t|cRXP_LOOT_[Acém de Lobo]|r |cRXP_BUY_para aumentar sua habilidade de|r |T133971:0|t[Culinária] |cRXP_BUY_mais tarde|r
+    >>|cRXP_WARN_Você precisará de 50 em|r |T133971:0|t[Culinária] |cRXP_WARN_para uma missão em Vila Sombria mais tarde|r
     >>Se você não quiser ou não puder fazer isso, pule esta etapa
     >>|cRXP_BUY_Compre os itens a seguir para entregas mais rápidas em Costa Negra em breve:|r
-    >>|T133972:0|t[Strider Carne]
-    >>|T133912:0|t[Costa Negra Grouper]
-    >>|T133970:0|t|cRXP_LOOT_[Naco de Carne de Javali]|r
-    >>|T133970:0|t|cRXP_LOOT_[Stringy Lobo Carne]|r
+    >>|T133972:0|t[Carne de Moa]
+    >>|T133912:0|t[Garoupa da Costa Negra]
+    >>|T133970:0|t|cRXP_LOOT_[Nacos de Carne de Javali]|r
+    >>|T133970:0|t|cRXP_LOOT_[Acém de Lobo]|r
     .collect 5469,5,2178,1 -- Strider Meat (5)
     .collect 12238,6,1141,1 -- Darkshore Grouper (6)
     .target Auctioneer Jaxon
@@ -4860,8 +4928,8 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Leiloeira Jasona|r
     >>Se você não quiser ou não puder fazer isso, pule esta etapa
     >>|cRXP_BUY_Compre os itens a seguir para entregas mais rápidas em Costa Negra em breve:|r
-    >>|T133972:0|t[Strider Carne]
-    >>|T133912:0|t[Costa Negra Grouper]
+    >>|T133972:0|t[Carne de Moa]
+    >>|T133912:0|t[Garoupa da Costa Negra]
     .collect 5469,5,2178,1 -- Strider Meat (5)
     .collect 12238,6,1141,1 -- Darkshore Grouper (6)
     .target Auctioneer Jaxon
@@ -4875,18 +4943,18 @@ step
     .target Catherine Leland
 step
     .goto 1453/0,1269.100,-8540.601
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gilbert Cinza::267118|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gilbert Cinza::267118|r
     .target Gilbert Gray::267118
     .accept 95065 >>Aceite Fishin' Tempo
     .turnin 95065 >>Entregue Fishin' Tempo
 --Hunter going Darkshore, rest Westfall
-step << Hunter
+step << Hunter skip
     #optional
     #requires DockTravel
     #label DarkshoreCook1
     #completewith DarkshoreBoat
-    >>No barco, se ele acabou de chegar, ou na doca, se o barco acabou de sair:
-    .cast 818 >>|cRXP_WARN_Crie|r |T135805:0|t[Fogo para Cozinhar] |cRXP_WARN_(no seu Livro de Profissão)|r
+    >>|cRXP_WARN_Enquanto espera o barco no cais:|r
+    .cast 818 >>|cRXP_WARN_Crie uma|r |T135805:0|t[Fogo para Cozinhar] |cRXP_WARN_(no seu Livro de Profissão)|r
     .usespell 818
     .zoneskip Darkshore
     .itemcount 769,1 --Chunk of Boar Meat (1+)
@@ -4894,13 +4962,13 @@ step << Hunter
     .itemcount 4470,1 --Simple Wood (1+)
     .itemcount 4471,1 --Flint and Tinder (1)
     .skill cooking,50,1 --XX Shows if cooking skill is <50
-step << Hunter
+step << Hunter skip
     #optional
     #requires DarkshoreCook1
     #label DarkshoreCook2
     #completewith DarkshoreBoat
-    >>No barco, se ele acabou de chegar, ou na doca, se o barco acabou de sair:
-    .cast 818 >>|cRXP_WARN_Crie|r |T135805:0|t[Fogo para Cozinhar] |cRXP_WARN_(no seu Livro de Profissão)|r
+    >>|cRXP_WARN_Enquanto espera o barco no cais:|r
+    .cast 818 >>|cRXP_WARN_Crie uma|r |T135805:0|t[Fogo para Cozinhar] |cRXP_WARN_(no seu Livro de Profissão)|r
     .usespell 818
     .zoneskip Darkshore
     .itemcount 769,<1 --Chunk of Boar Meat (<1)
@@ -4908,13 +4976,13 @@ step << Hunter
     .itemcount 4470,1 --Simple Wood (1+)
     .itemcount 4471,1 --Flint and Tinder (1)
     .skill cooking,50,1 --XX Shows if cooking skill is <50
-step << Hunter
+step << Hunter skip
     #optional
     #requires DarkshoreCook2
     #label DarkshoreCook3
     #completewith DarkshoreBoat
-    >>No barco, se ele acabou de chegar, ou na doca, se o barco acabou de sair:
-    .cast 818 >>|cRXP_WARN_Crie|r |T135805:0|t[Fogo para Cozinhar] |cRXP_WARN_(no seu Livro de Profissão)|r
+    >>|cRXP_WARN_Enquanto espera o barco no cais:|r
+    .cast 818 >>|cRXP_WARN_Crie uma|r |T135805:0|t[Fogo para Cozinhar] |cRXP_WARN_(no seu Livro de Profissão)|r
     .usespell 818
     .zoneskip Darkshore
     .itemcount 769,1 --Chunk of Boar Meat (1+)
@@ -4922,7 +4990,7 @@ step << Hunter
     .itemcount 4470,1 --Simple Wood (1+)
     .itemcount 4471,1 --Flint and Tinder (1)
     .skill cooking,50,1 --XX Shows if cooking skill is <50
-step << Hunter
+step << Hunter skip
     #optional
     #requires DarkshoreCook3
     #label DarkshoreCook4
@@ -4937,7 +5005,7 @@ step << Hunter
     .itemcount 2672,1 --Stringy Wolf Meat (1+)
     .itemcount 4471,1 --Flint and Tinder (1)
     .skill cooking,50,1
-step << Hunter
+step << Hunter skip
     #optional
     #requires DarkshoreCook4
     #label DarkshoreCook5
@@ -4950,7 +5018,7 @@ step << Hunter
     .itemcount 2672,1 --Stringy Wolf Meat (1)
     .itemcount 4471,1 --Flint and Tinder (1)
     .skill cooking,50,1
-step << Hunter
+step << Hunter skip
     #optional
     #requires DarkshoreCook5
     #label DarkshoreCook6
@@ -4966,7 +5034,7 @@ step << Hunter
 step << Hunter
     #optional
     .goto 1453/0,1330.100,-8645.400
-    >>|cRXP_WARN_Suba de Nível em|r |T135966:0|t[Primeiros Socorros] |cRXP_WARN_enquanto espera o barco para Costa Negra se necessário|r
+    >>|cRXP_WARN_Aumente sua habilidade de|r |T135966:0|t[Primeiros Socorros] |cRXP_WARN_enquanto espera o barco para Costa Negra, se necessário|r
     .zone Darkshore >> Pegue o barco para Costa Negra
     .skill firstaid,<1,1 -- shows if firstaid is >1
 step << Hunter

@@ -1898,7 +1898,7 @@ step << Rogue
     .goto Dun Morogh,47.563,52.608
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConversar com |cRXP_FRIENDLY_Hogral Bakkan|r na sala de trás
     >>|cRXP_WARN_apenas treine|r |T132147:0|t[Empunhar Duas Armas] |cRXP_WARN_e|r |T132307:0|t[Disparada]|cRXP_WARN_. Não treine outros feitiços para economizar dinheiro para depois|r
-    .train 674 >> Treine |T132147:0|t[Empunhar Duas Armas]
+    .train 674 >> Aprenda |T132147:0|t[Empunhar Duas Armas]
     .train 2983 >> Treine |T132307:0|t[Disparada]
     .accept 2218 >> Aceite Estrada para a Salvação
     .target Hogral Bakkan

@@ -720,7 +720,7 @@ step << Horde
     .isOnQuest 78994
     .goto The Barrens,45.58,59.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estalajadeira Byula|r
-    .home >> Defina sua Pedra de Regresso em Camp Taurajo
+    .home >> Defina sua Pedra de Retorno em Camp Taurajo
     .target Innkeeper Byula
 step << Alliance
     .train 426445,1
@@ -734,7 +734,7 @@ step << Horde
     .isOnQuest 78994
     .goto The Barrens,44.45,59.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Omusa Chifre Troante|r
-    .fly Splintertree Post >>Voe para Posto Avançado de Machado
+    .fly Splintertree Post >>Voe até o Posto Machadada
     .target Omusa Thunderhorn
 step
     .train 426445,1

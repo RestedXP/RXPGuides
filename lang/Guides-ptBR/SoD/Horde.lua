@@ -83,7 +83,7 @@ step
     .train 416091,1 << Hunter
 step << Warrior
     #season 2
-    .train 425443 >>|cRXP_WARN_Use o|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Golpe Rápido|r] |cRXP_WARN_para treinar|r |T132394:0|t[Golpe Rápido]
+    .train 425443 >>|cRXP_WARN_Use a|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Golpe Rápido|r] |cRXP_WARN_para aprender|r |T132394:0|t[Golpe Rápido]
     .use 208778
     .itemcount 208778,1
 step << Hunter

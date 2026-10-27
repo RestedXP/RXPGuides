@@ -5,11 +5,11 @@ if faction == "Alliance" then return end
 
 RXPGuides.RegisterGuide([[
 #forever
-#era/som--h
+#disabledungeons
 << Horde
 #name 1-6 Mulgore
 #version 11
-#group Guia Forever (H)
+#group Guia RestedXP Forever (H)
 #subgroup Guia Speedrun 1-22
 --#groupid RXP-SRGCE-H1
 #defaultfor Tauren
@@ -108,6 +108,13 @@ step
     .target Chief Hawkwind
 step << Shaman
     .goto 1412/1,-216.18,-2926.26--c:Mulgore,44.07,77.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Marjak|r
+    .vendor >> Vendedor de itens inúteis. Venda sua arma se lhe der dinheiro suficiente para um |T135139:0|t[Cajado Curto] (1s 02c). Você voltará depois se ainda não tiver dinheiro suficiente.
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<1.9
+    .target Marjak Keenblade
+step << Shaman
+    .goto 1412/1,-216.18,-2926.26--c:Mulgore,44.07,77.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Fale com|r |cRXP_FRIENDLY_Marjak Lâmina Mordaz|r|cRXP_BUY_. Compre um|r |T135139:0|t[Cajado Curto] |cRXP_BUY_dele|r
     .collect 2132,1,750,1 --Collect Short Staff (1)
     .money <0.0102
@@ -122,6 +129,20 @@ step << Shaman
     .itemcount 2132,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<1.9
+step
+    #completewith next
+    >>Mate |cRXP_ENEMY_Pumas da Montanha|r. Pegue suas |cRXP_LOOT_Pelagens|r
+    .complete 750,1 --Mountain Cougar Pelt (10)
+    .mob Mountain Cougar
+step
+    #label RitesoftheEarthmother
+    .goto 1412/1,-139.63,-3430.08--c:Mulgore,42.58,92.18
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Vidente Grislíngua|r
+    >>|cRXP_WARN_Isso inicia uma missão com limite de 10 minutos|r
+    .turnin 755 >>Entregue Ritos da Mãe Terra
+    .accept 757 >>Aceite Rito de força
+    .accept 95805 >>Aceite Graça de An'she e Mu'sha
+    .target Seer Graytongue
 step
     #loop
     .goto 1412/1,-243.41,-3384.87,0--c:Mulgore,44.60,90.86
@@ -139,15 +160,6 @@ step
     >>Mate |cRXP_ENEMY_Pumas da Montanha|r. Pegue suas |cRXP_LOOT_Pelagens|r
     .complete 750,1 --Mountain Cougar Pelt (10)
     .mob Mountain Cougar
-step
-    #label RitesoftheEarthmother
-    .goto 1412/1,-139.63,-3430.08--c:Mulgore,42.58,92.18
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Vidente Grislíngua|r
-    >>|cRXP_WARN_Isso inicia uma missão com limite de 10 minutos|r
-    .turnin 755 >>Entregue Ritos da Mãe Terra
-    .accept 757 >>Aceite Rito de força
-    .accept 95805 >>Aceite Graça de An'she e Mu'sha
-    .target Seer Graytongue
 step
     #loop
 	.goto 1412/1,-292.73,-3285.20,40,0--c:Mulgore,45.56,87.95
@@ -234,6 +246,13 @@ step << Shaman
     .turnin 3093 >>Entregue Bilhete inscrito em runas
     .train 8042 >>Aprenda |T136026:0|t[Choque Terreno]
     .target Meela Dawnstrider
+step << Druid
+    .goto 1412/1,-279.37,-2893.73--c:Mulgore,45.30,76.52
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kaunie Brisa Suave|r
+    >>|cRXP_BUY_Compre|r |T132794:0|t[Água Refrescante da Fonte] |cRXP_BUY_dela|r
+	.collect 159,5,383,1 --Collect Refreshing Spring Water (10)
+    .target Kawnie Softbreeze
+    .money <0.0025
 step
     #completewith next
     >>Mate |cRXP_ENEMY_Javaliços|r. Pegue seus |cRXP_LOOT_Flancos|r e |cRXP_LOOT_Focinhos|r
@@ -456,11 +475,11 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
-#era/som--h
+#disabledungeons
 << Horde
 #name 6-12 Mulgore
 #version 11
-#group Guia Forever (H)
+#group Guia RestedXP Forever (H)
 #subgroup Guia Speedrun 1-22
 --#groupid RXP-SRGCE-H1
 #defaultfor Tauren
@@ -500,13 +519,13 @@ step
 step
     #softcore
     .goto 1412/1,-408.900,-2179.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Yaw Crina Cortante|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Yaw Crina Cortante|r
     .accept 96130 >>Aceite Chakuyak
     .target Yaw Sharpmane
 step
     #softcore
     .goto 1412/1,-430.600,-2097.600
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ahab Casco Trigo|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ahab Casco Trigo|r
     .accept 99411 >>Aceite Quico Sumiu!
     .target Ahab Wheathoof
 step
@@ -629,13 +648,13 @@ step
 step
     #hardcore
     .goto 1412/1,-408.900,-2179.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Yaw Crina Cortante|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Yaw Crina Cortante|r
     .accept 96130 >>Aceite Chakuyak
     .target Yaw Sharpmane
 step
     #hardcore
     .goto 1412/1,-430.600,-2097.600
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ahab Casco Trigo|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ahab Casco Trigo|r
     .accept 99411 >>Aceite Quico Sumiu!
     .target Ahab Wheathoof
 step
@@ -645,7 +664,7 @@ step
     .target Harken Windtotem
 step
     .goto 1412/1,-496.200,-2347.900
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Krang Casco de Pedra|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Krang Casco de Pedra|r
     .accept 99108 >>Aceite Treinamento de pugilato
     .target Krang Stonehoof
 step
@@ -912,6 +931,7 @@ step
     .train 2550 >>Aprenda Culinária
     .turnin 96661 >>Entregue Introdução ao Acampamento: Cozinha
     .target Pyall Silentstride
+    .money <0.01
 step
     #label Vision
     .goto 1412/1,-405.75,-2243.32--c:Mulgore,47.76,57.53
@@ -922,7 +942,7 @@ step
     .target Zarlman Two-Moons
 step
     .goto 1412/1,-430.600,-2097.600
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ahab Casco Trigo|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ahab Casco Trigo|r
     .turnin 99411 >>Entregue Quico Sumiu!
     .target Ahab Wheathoof
     .isQuestComplete 99411
@@ -974,7 +994,7 @@ step
     .target Malah Longwind
 step
     #completewith EnterCave
-    >>|cRXP_WARN_Obtenha os itens para Mazzranache enquanto faz missões por toda a zona|r
+    >>|cRXP_WARN_Pegue os itens para Mazzranache enquanto faz missões por toda a zona|r
     .complete 766,1 --Prairie Wolf Heart (1)
     .complete 766,2 --Flatland Cougar Femur (1)
     .complete 766,3 --Plainstrider Scale (1)
@@ -1009,6 +1029,38 @@ step << Tauren
     .mob +Prairie Stalker
     .complete 756,2 --Cougar Claws (6)
     .mob +Flatland Cougar
+step
+    #softcore
+	#completewith Escort1
+    .deathskip >> Morra e reviva no |cRXP_FRIENDLY_Anjo da Cura|r
+step << Hunter
+    #softcore
+    .goto 1412/1,-408.32,-2180.30--c:Mulgore,47.81,55.69
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Yaw Crina Cortante|r
+    .train 5116 >> Treine suas magias de classe
+    .target Yaw Sharpmane
+    .xp <8,1
+step << Druid
+    #softcore
+    .goto 1412/1,-442.74,-2315.59--c:Mulgore,48.48,59.64
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gennia Runa Totem|r
+    .train 5186 >>Treine suas magias de classe
+    .target Gennia Runetotem
+    .xp <8,1
+step << Warrior
+    #softcore
+    .goto 1412/1,-496.17,-2347.78--c:Mulgore,49.52,60.58
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Krang Casco de Pedra|r
+    .train 284 >> Treine suas magias de classe
+    .target Krang Stonehoof
+    .xp <8,1
+step << Shaman
+    #softcore
+    .goto 1412/1,-437.61,-2298.80--c:Mulgore,48.38,59.15
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Narm Persegue-céus|r
+    .train 8044 >> Treine suas magias de classe
+    .target Narm Skychaser
+    .xp <8,1
 step
     .goto 1412/1,54.800,-2442.200
     >>Mate o |cRXP_ENEMY_Chakuyak|r. Saque-o por sua |cRXP_LOOT_Pelt|r
@@ -1064,7 +1116,7 @@ step
 step
     #softcore
 	#completewith Thunderhorn
-    .deathskip >> Morra e reviva no |cRXP_FRIENDLY_Anjo da Cura|r
+    .deathskip >> Morra e ressuscite no |cRXP_FRIENDLY_Anjo da Cura|r
 step
     #hardcore
     #completewith Thunderhorn
@@ -1172,6 +1224,12 @@ step
     .vendor >> Venda os lixos e repare seu equipamento
     .target Harant Ironbrace
 step
+    .goto 1412/1,-285.000,-2263.400
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Pyall|r
+    .train 2550 >>Treinar Culinária
+    .turnin 96661 >>Entregue Acampamento 101: Culinária
+    .target Pyall Silentstride
+step
     .goto 1412/1,-392.500,-2318.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Valente Trilha Selvagem|r
     >>|cRXP_WARN_Ele patrulha um pouco pela área|r
@@ -1251,7 +1309,7 @@ step
     .unitscan Kyle the Frenzied
 step
     .goto 1412/1,-430.600,-2097.600
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ahab Casco Trigo|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ahab Casco Trigo|r
     .turnin 99411 >>Entregue Quico Sumiu!
     .target Ahab Wheathoof
 step
@@ -1318,7 +1376,7 @@ step
 step
     .goto 1456/1,104.500,-1308.400
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com Javaton Totem das Sombras|cRXP_FRIENDLY_
-    >>|cRXP_WARN_Ele está|r |T132320:0|t[Furtivo] 
+    >>|cRXP_WARN_Ele está|r |T132320:0|t[Furtivo]
     .accept 76156 >>Aceite À espreita com a Mãe Terra
     .target Boarton Shadetotem
 step
@@ -1542,7 +1600,7 @@ step
     #sofcore
     #completewith Bloodhoofturnins1
     .goto 1412/1,-598.900,-1603.700
-    .deathskip >> Die at the waypoint arrow (or further south of it) and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
+    .deathskip >> Morra na seta (ou mais ao sul) e ressuscite no |cRXP_FRIENDLY_Anjo da Cura|r
 step
     #hardcore
     #completewith Bloodhoofturnins1
@@ -1921,7 +1979,7 @@ step << Druid
 step
     .goto 1456/1,104.500,-1308.400
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Javaton Totem das Sombras|r
-    >>|cRXP_WARN_Ele está|r |T132320:0|t[Furtivo] 
+    >>|cRXP_WARN_Ele está|r |T132320:0|t[Furtivo]
     .turnin 76156 >>Entregue À espreita com a Mãe Terra
     .accept 76160 >>Aceite À espreita com a Mãe Terra
     .target Boarton Shadetotem
@@ -2043,7 +2101,7 @@ step << Tauren Druid
     #completewith next
     .goto 1450/1,-2403.61,7785.46--c:Moonglade,44.29,45.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Bonthen Vento do Prado|r
-    .fly Thunder Bluff >> Voe para Penhasco do Trovão
+    .fly Thunder Bluff >> Voe para Trovão Blefe
     .target Bunthen Plainswind
     .zoneskip Thunder Bluff
     .cooldown item,6948,<0
@@ -2292,7 +2350,7 @@ step << Shaman
     .xp <12,1
 step << Druid
     .goto 1412/1,-442.74,-2315.59--c:Mulgore,48.48,59.64
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gennia Runa Totem|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gennia|r
     .train 8936 >>Treine suas magias de classe
     .target Gennia Runetotem
     .xp <12,1

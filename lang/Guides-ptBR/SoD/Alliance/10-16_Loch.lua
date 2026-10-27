@@ -49,7 +49,7 @@ step
     #label Rudra
     .goto Dun Morogh,63.082,49.851
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com Rudra Ambarmanso|r
-    .accept 314 >> Aceite Amarre Sua Cabra Pois Ragash Está Solto
+    .accept 314 >> Aceite Amarre Sua Cabra pois Ragash Está Solto
     .target Rudra Amberstill
 step << Warrior/Mage
     #season 2
@@ -92,7 +92,7 @@ step << Mage
 step
     .goto Dun Morogh,63.082,49.851
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com Rudra Ambarmanso|r
-    .turnin 314 >> Entregue Amarre Sua Cabra Pois Ragash Está Solto
+    .turnin 314 >> Entregue Amarre Sua Cabra pois Ragash Está Solto
     .target Rudra Amberstill
 step
     #optional
@@ -116,7 +116,7 @@ step << Human Warrior/Paladin/Rogue
     .skill mining,1
 step
     #label QuarryStart
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Senador Mehr Sacrapetra|r e com o |cRXP_FRIENDLY_Encarregado Pedracenho|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Senador Mehr Sacrapetra|r e o |cRXP_FRIENDLY_Encarregado Pedracenho|r
     .accept 433 >> Aceite O Funcionário Público
     .goto Dun Morogh,68.671,55.969
     .accept 432 >> Aceite Malditos Troggs!
@@ -467,8 +467,8 @@ step << Human
 step << Dwarf/Gnome
     #label ThelsaHS
     .goto Loch Modan,35.534,48.404
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Estalajadeiro Fornalenha|r dentro
-    .home >> Defina sua Pedra de Regresso em Thelsamar
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estalajadeiro Fornalenha|r dentro
+    .home >> Defina sua Pedra de Retorno em Thelsamar
     .target Innkeeper Hearthstove
 step << Dwarf/Gnome
     #label HonorStudents
@@ -676,7 +676,7 @@ step << Dwarf/Gnome
     .goto Ironforge,25.800,75.500,-1
     .goto Ironforge,24.200,74.600,-1
     .goto Ironforge,23.800,71.800,-1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com um |cRXP_FRIENDLY_Leiloeiro|r de Ironforge
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com um |cRXP_FRIENDLY_Leiloeiro de Ironforge|r
     >>Se você não quiser ou não puder fazer isso, pule esta etapa
     >>|cRXP_BUY_Compre os itens a seguir para uma entrega mais rápida em Loch Modan em breve:|r
     >>|T134342:0|t[Javali Intestines]
@@ -850,18 +850,18 @@ step << Dwarf/Gnome
     .goto Ironforge,78.00,51.40
     .subzone 2257 >>Entre no Metrô Correfundo
 step << Dwarf/Gnome
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Monty|r na plataforma intermediária no Deeprun Tram
-    .accept 6661 >> Aceite Caçada aos Ratos das Profundezas
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Monty|r na plataforma do meio no Deeprun Tram
+    .accept 6661 >> Aceite Ratos de Porão
     .target Monty
 step << Dwarf/Gnome
-    >>Usar o |T133942:0|t[Rato Catcher's Flute] em |cRXP_FRIENDLY_Deeprun Ratos|r no Deeprun Tram
+    >>Usar |T133942:0|t[Rato Catcher's Flute] em |cRXP_FRIENDLY_Deeprun Ratos|r no Deeprun Tram
     .complete 6661,1 --Rats Captured (x5)
     .use 17117
     .mob Deeprun Rat
 step << Dwarf/Gnome
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Monty|r na plataforma intermediária no Deeprun Tram
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Monty|r na plataforma do meio no Deeprun Tram
     >>Ele fará uma encenação por alguns segundos após entregar a primeira missão. |cRXP_WARN_Pule a continuação se esperar faria você perder o bonde|r
-    .turnin 6661 >> Entregue Caçada aos Ratos das Profundezas
+    .turnin 6661 >> Entregue Ratos de Porão
     .timer 11,Ratos de Deeprun RP
     .accept 6662 >> Aceite Espetinhos de... Rato
     .target Monty
@@ -981,14 +981,14 @@ step << Warlock !Human
     .zone Redridge Mountains >> Viaje para as Montanhas Cristarrubra
 step << Warlock !Human
     .goto Redridge Mountains,17.4,69.6
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Guarda Capitão da Guarda Florestan|r
-    .accept 244 >> Aceite Gnolls Invasores
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Capitão da Guarda Florestan|r
+    .accept 244 >> Aceite Encroaching Gnolls
     .target Guard Parker
 step << Warlock !Human
     .goto Redridge Mountains,30.733,59.996
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Subdelegado David|r
     >>|cRXP_WARN_Cuidado com os inimigos de nível alto no caminho|r
-    .turnin 244 >> Entregue Gnolls Invasores
+    .turnin 244 >> Entregue Encroaching Gnolls
     .target Deputy Feldon
 step << Warlock !Human
     .goto Redridge Mountains,30.590,59.410
@@ -996,7 +996,7 @@ step << Warlock !Human
     .fp Redridge Mountains >> Aprenda a rota de voo para Montanhas Cristarrubra
     .target Ariena Stormfeather
 step << !Human
-    .hs >> Vá para Loch Modan
+    .hs >> Volte para Loch Modan
     .cooldown item,6948,>0,1 << !Warlock
 step << !Warlock !Human
     #label end
@@ -1188,7 +1188,7 @@ step
     .target Mountaineer Cobbleflint
 step << !Human
     #completewith Algaz
-    .hs >> Use sua Pedra de Retorno para ir a Thelsamar
+    .hs >> Vá para Thelsamar
     .cooldown item,6948,>0
     .subzoneskip 924,1--valley of kings
 

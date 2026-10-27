@@ -1646,7 +1646,7 @@ step
 step
     .train 425103,1
     #completewith next
-    .zone Stranglethorn Vale >>Viagem para Stranglethorn Vale
+    .zone Stranglethorn Vale >>Vá para Stranglethorn Vale
 step
     .train 425103,1
     #completewith Uniform
@@ -1662,7 +1662,7 @@ step
     #label Uniform
     .train 425103,1
     .goto Stranglethorn Vale,49.616,7.743
-    >>Abra o |cRXP_PICK_Caixote de Suprimentos de Kurzen|r. Pegue o |cRXP_LOOT_Uniforme do Combatente de Kurzen|r
+    >>Abra o |cRXP_PICK_Kurzen Caixote de Suprimentos|r. Pegue o |cRXP_LOOT_Uniforme do Combatente de Kurzen|r
     .collect 216617,1
 step
     .train 425103,1
@@ -1689,10 +1689,10 @@ step
 step
     .train 425103,1
     #completewith next
-    .subzone 35 >>Viaje para Booty Bay
+    .subzone 35 >>Viaje para Baía das Bruxas
 step
     .train 425103,1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Capitã Aransas|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Capitã Aransas|r
     >>Ela lhe dará |T133640:0|t[|cRXP_LOOT_Recompensa da Capitã Aransas|r]
     .goto Stranglethorn Vale,27.681,76.648
     .skipgossip
@@ -1812,7 +1812,7 @@ step
     .zone Tanaris >>|cRXP_WARN_Viagem para|r |cFFfa9602Tanaris|r
 step
     #completewith next
-    .subzone 1336 >>Vá para a Enseada dos Riggers Perdidos
+    .subzone 1336 >>Viaje para a Perdida Rigger Cove
 step
     #label CoinPurse
 	.line Tanaris,70.94,42.85,72.22,44.35,72.58,45.30,71.07,46.03,71.25,47.98,72.39,48.23,72.59,47.10,73.27,47.99,74.25,47.27,73.68,45.89,72.58,45.30,72.22,44.35,70.94,42.85

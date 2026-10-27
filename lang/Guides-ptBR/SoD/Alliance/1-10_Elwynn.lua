@@ -784,7 +784,7 @@ step << Warlock
     .goto Elwynn Forest,49.873,42.649
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Drusilla La Salle|r
     .turnin 3105 >> Entregue Carta Corrompida
-    .train 172 >>Treine |T136118:0|t[Corrupção]
+    .train 172 >>Treine |T136118:0|t [Corrupção]
     .target Drusilla La Salle
 
 
@@ -1050,7 +1050,7 @@ step << Priest
     .trainer >> Treine suas magias de classe
 step << Rogue
     .money <0.01
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Anabela Cabreira|r
+    >>|interface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Anabela Cabreira|r
     .target Keryn Sylvius
     .goto Elwynn Forest,43.872,65.937
     .trainer >> Treine suas magias de classe
@@ -1639,7 +1639,7 @@ step << Priest
     .turnin 5624 >> Entregue Vestes da Luz
     .trainer >> Treine suas magias de classe
 step << Rogue
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Anabela Cabreira|r
+    >>|interface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Anabela Cabreira|r
     .target Keryn Sylvius
     .goto Elwynn Forest,43.872,65.937
     .trainer >> Treine suas magias de classe
@@ -2052,8 +2052,8 @@ step << Priest/Rogue
 step << Priest/Rogue
     #optional
     .goto Redridge Mountains,17.4,69.6
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Guarda Capitão da Guarda Florestan|r
-    .accept 244 >> Aceite Gnolls Invasores
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Capitão da Guarda Florestan|r
+    .accept 244 >> Aceite Encroaching Gnolls
     .target Guard Parker
     .xp <11,1
     .subzoneskip 87 --Skip the Quick Draw steps if the user went back to goldshire instead
@@ -2076,7 +2076,7 @@ step << Priest/Rogue
     #optional
     .goto Redridge Mountains,30.73,59.99
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Subdelegado David|r
-    .turnin 244 >> Entregue Gnolls Invasores
+    .turnin 244 >> Entregue Encroaching Gnolls
     .target Deputy Feldon
     .isOnQuest 244
     .xp <11,1
@@ -2115,9 +2115,9 @@ step << Rogue
     #optional
     #label RogueOptTrain
     .goto Elwynn Forest,43.872,65.937
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Anabela Cabreira|r
+    >>|interface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Anabela Cabreira|r
     >>|cRXP_WARN_apenas treine|r |T132147:0|t[Empunhar Duas Armas] |cRXP_WARN_e|r |T132307:0|t[Disparada]|cRXP_WARN_. Não treine outros feitiços para economizar dinheiro para depois|r
-    .train 674 >> Treine |T132147:0|t[Empunhar Duas Armas]
+    .train 674 >> Aprenda |T132147:0|t[Empunhar Duas Armas]
     .train 2983 >> Treine |T132307:0|t[Disparada]
     .target Keryn Sylvius
     .xp <10,1
@@ -2208,9 +2208,9 @@ step << skip --Rogue
     #optional
     #requires GoldshireVendor
     .goto Elwynn Forest,43.872,65.937
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Anabela Cabreira|r
+    >>|interface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Anabela Cabreira|r
     >>|cRXP_WARN_apenas treine|r |T132147:0|t[Empunhar Duas Armas] |cRXP_WARN_e|r |T132307:0|t[Disparada]|cRXP_WARN_. Não treine outros feitiços para economizar dinheiro para depois|r
-    .train 674 >> Treine |T132147:0|t[Empunhar Duas Armas]
+    .train 674 >> Aprenda |T132147:0|t[Empunhar Duas Armas]
     .train 2983 >> Treine |T132307:0|t[Disparada]
     .target Keryn Sylvius
 --XX skip quest, not worth going inside for
@@ -2555,7 +2555,7 @@ step << Warlock
 step
     .goto StormwindClassic,52.623,65.701
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estalajadeira Cristine|r
-    .home >> Defina sua Pedra de Retorno em Cidade de Ventobravo
+    .home >> Defina sua Pedra de Retorno em Ventobravo
     .target Innkeeper Allison
 step << Human Paladin
     #xprate >1.59
@@ -2745,15 +2745,15 @@ step << Warlock
     .collect 6265,2 --Soul Shard (2)
 step << Warlock
     .goto Redridge Mountains,17.4,69.6
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Guarda Capitão da Guarda Florestan|r
-    .accept 244 >> Aceite Gnolls Invasores
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Capitão da Guarda Florestan|r
+    .accept 244 >> Aceite Encroaching Gnolls
     .target Guard Parker
 step << Warlock
     #softcore
     .goto Redridge Mountains,30.733,59.996
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Subdelegado David|r
     >>|cRXP_WARN_Cuidado com inimigos no caminho|r
-    .turnin 244 >> Entregue Gnolls Invasores
+    .turnin 244 >> Entregue Encroaching Gnolls
     .target Deputy Feldon
 step << Warlock
     #hardcore
@@ -2763,7 +2763,7 @@ step << Warlock
     .goto Redridge Mountains,30.733,59.996
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Subdelegado David|r
     >>|cRXP_WARN_MANTENHA-SE NA ESTRADA PRINCIPAL E EVITE QUALQUER INIMIGO PRÓXIMO NO CAMINHO|r
-    .turnin 244 >> Entregue Gnolls Invasores
+    .turnin 244 >> Entregue Encroaching Gnolls
     .target Deputy Feldon
 step << Warlock
     .goto Redridge Mountains,30.590,59.410
@@ -2876,7 +2876,7 @@ step << Rogue
     .goto 1453,74.645,52.818
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Osborne, o Homem da Madrugada|r
     >>|cRXP_WARN_Certifique-se de que você tem pelo menos 24 de prata restante após o treinamento. Você precisará disso para obter uma Gun em Ironforge para usar suas runas|r
-    .train 674 >> Treine |T132147:0|t[Empunhar Duas Armas]
+    .train 674 >> Aprenda |T132147:0|t[Empunhar Duas Armas]
     .train 2983 >> Treine |T132307:0|t[Disparada]
     .target Osborne the Night Man
     .xp <10,1
@@ -3010,7 +3010,7 @@ step
     >>|cRXP_WARN_Você precisará de sua|r |T135966:0|t[Primeiros Socorros] |cRXP_WARN_estar em nível 80 para uma missão do nível 24|r << Rogue !Dwarf
     >>|cRXP_WARN_Lance|r |T136221:0|t[Evocar Emissário do Caos] |cRXP_WARN_e|r |T135230:0|t[Criar Pedra de Vida] |cRXP_WARN_enquanto espera pelo Bonde para Ironforge se necessário|r << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Monty|r na plataforma do meio no lado de Ironforge do Tram de Profundezas
-    .accept 6661 >> Aceite Caçada aos Ratos das Profundezas
+    .accept 6661 >> Aceite Ratos de Porão
     .target Monty
 step
     #xprate <1.59
@@ -3021,7 +3021,7 @@ step
 step
     #xprate <1.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Monty|r dentro do Tram de Profundezas
-    .turnin 6661 >> Entregue Caçada aos Ratos das Profundezas
+    .turnin 6661 >> Entregue Ratos de Porão
     .target Monty
 step
     #xprate >1.59
@@ -3032,7 +3032,7 @@ step
     >>|cRXP_WARN_Você precisará de sua|r |T135966:0|t[Primeiros Socorros] |cRXP_WARN_estar em nível 80 para uma missão do nível 24|r << Rogue !Dwarf
     >>|cRXP_WARN_Lance|r |T136221:0|t[Evocar Emissário do Caos] |cRXP_WARN_e|r |T135230:0|t[Criar Pedra de Vida] |cRXP_WARN_enquanto espera pelo Bonde para Ironforge se necessário|r << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Monty|r na plataforma do meio no lado de Ironforge do Tram de Profundezas
-    .accept 6661 >> Aceite Caçada aos Ratos das Profundezas
+    .accept 6661 >> Aceite Ratos de Porão
     .target Monty
     .zoneskip Ironforge
 step
@@ -3045,14 +3045,14 @@ step
 step
     #xprate >1.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Monty|r dentro do Tram de Profundezas
-    .turnin 6661 >> Entregue Caçada aos Ratos das Profundezas
+    .turnin 6661 >> Entregue Ratos de Porão
     .target Monty
     .zoneskip Ironforge
 step
     #completewith next
     .goto StormwindClassic,61.149,11.568,25,0
     .goto StormwindClassic,64.0,8.10
-    >>|cRXP_WARN_Aumente seu Nível de|r |T135966:0|t[Primeiros Socorros] |cRXP_WARN_se necessário enquanto espera o trem|r << Rogue/Warrior/Paladin
+    >>|cRXP_WARN_Nível seu|r |T135966:0|t[Primeiros Socorros] |cRXP_WARN_se necessário enquanto aguarda o bonde|r << Rogue/Warrior/Paladin
     .zone Ironforge >>Pegue o Bonde para Ironforge
 step
     .zone Ironforge >>Entre em Ironforge
@@ -3308,7 +3308,7 @@ step
     .goto Ironforge,25.800,75.500,-1
     .goto Ironforge,24.200,74.600,-1
     .goto Ironforge,23.800,71.800,-1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com um |cRXP_FRIENDLY_Leiloeiro|r de Ironforge
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com um |cRXP_FRIENDLY_Leiloeiro de Ironforge|r
     >>Se você não quiser ou não puder fazer isso, pule esta etapa
     >>|cRXP_BUY_Compre os itens a seguir para uma entrega mais rápida em Loch Modan em breve:|r
     >>|T134342:0|t[Javali Intestines]

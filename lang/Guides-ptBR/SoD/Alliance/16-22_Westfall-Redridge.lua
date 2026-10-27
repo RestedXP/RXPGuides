@@ -21,7 +21,7 @@ step << Paladin
 step
     .goto StormwindClassic,58.08,16.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Furen Barbalonga|r
-    .turnin 1338 >> Entregue Pedidos de Pico da Tempestade
+    .turnin 1338 >> Entregue Ordens dos Lançatroz
     .target Furen Longbeard
 step << Priest !NightElf
     #season 2
@@ -96,7 +96,7 @@ step << Warlock
     .target Ursula Deline
 step << Warlock
     .goto Elwynn Forest,44.397,65.989
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com Spackle Cardopomo|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Spackle Cardopomo|r
     >> |cRXP_BUY_Compre o |T133738:0|t[Grimório de Consumir Sombras (Rank 1)]|r
     .collect 16357,1
     .target Spackle Thornberry
@@ -293,14 +293,14 @@ step << !Warlock
     .zone Redridge Mountains >> Viaje para as Montanhas Cristarrubra
 step
     .goto Redridge Mountains,17.4,69.6
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Guarda Capitão da Guarda Florestan|r
-    .accept 244 >> Aceite Gnolls Invasores
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Capitão da Guarda Florestan|r
+    .accept 244 >> Aceite Encroaching Gnolls
     .target Guard Parker
 step
     .goto Redridge Mountains,30.73,59.99
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Subdelegado David|r
-    .turnin 244 >> Entregue Gnolls Invasores
-    .accept 246 >> Aceite Avaliando a Ameaça
+    .turnin 244 >> Entregue Encroaching Gnolls
+    .accept 246 >> Aceite Assessing the Ameaça
     .target Deputy Feldon
 step << !Warlock
     .goto Redridge Mountains,30.590,59.410
@@ -361,7 +361,7 @@ step << Rogue
     .goto Westfall,52.8,53.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Estalajadeira Érica|r
     .target Innkeeper Heather
-    .home >> Defina sua Pedra de Retorno em Cerro Oeste
+    .home >> Defina sua Pedra de Regresso em Cerro Oeste
 step
     >>Mate os |cRXP_ENEMY_Defias Trappers|r e os |cRXP_ENEMY_Defias Smugglers|r. Saqueie-os pelas suas |cRXP_LOOT_Red Couro Bandanas|r
     .goto Westfall,48.21,46.70,60,0
@@ -525,7 +525,7 @@ step
     .accept 129 >> Aceite Um Almoço Grátis
 step << !Rogue
     .goto Redridge Mountains,27.0,44.8
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Estalajadeira Briana|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Estalajadeira Briana|r
     .target Innkeeper Brianna
     .home >> Defina sua Pedra de Regresso para Vila Plácida
     .isQuestAvailable 20
@@ -580,14 +580,14 @@ step
     .goto Redridge Mountains,38.09,54.49,70,0
     .complete 3741,1 --Hilary's Necklace (1)
 step
-    >>Abra o |cRXP_PICK_Sunken Baú|r. Pegue |cRXP_LOOT_Oslow's Caixa de Ferramentas|r
+    >>Abra o |cRXP_PICK_Sunken Baú|r. Saque-o para obter |cRXP_LOOT_Oslow's Caixa de Ferramentas|r
     .goto Redridge Mountains,41.52,54.68
     .complete 125,1 --Oslow's Toolbox (1)
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Encarregado Oslow|r
 	.target Foreman Oslow
     .goto Redridge Mountains,32.13,48.63
-    .turnin 125 >> Entregue The Perdida Ferramentas
+    .turnin 125 >> Entregue As Ferramentas Perdidas
     .accept 89 >> Aceite The Everstill Ponte
 step
     #label BMenace
@@ -615,7 +615,7 @@ step
     .collect 2296,5,92,1
     .mob Great Goretusk
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Guarda Capitão da Guarda Florestan|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Capitão da Guarda Florestan|r
 	.target Guard Parker
     .goto Redridge Mountains,15.27,71.45
     .turnin 129 >> Entregue Um Almoço Grátis
@@ -639,7 +639,7 @@ step
     .goto Redridge Mountains,32.52,81.78,45,0
     .goto Redridge Mountains,43.18,72.22,45,0
     .goto Redridge Mountains,31.13,82.18,45,0
-	>>Mate os |cRXP_ENEMY_Redridge Mongrels|r e os |cRXP_ENEMY_Redridge Poachers|r
+	>>Abata os |cRXP_ENEMY_Redridge Mongrels|r e os |cRXP_ENEMY_Redridge Poachers|r
     .complete 246,1 --Redridge Mongrel (10)
     .complete 246,2 --Redridge Poacher (6)
     .mob Redridge Mongrel
@@ -785,12 +785,12 @@ step
 step
     .goto Redridge Mountains,29.71,44.26
     .target Bailiff Conacher
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Meirinho Conacher|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com o |cRXP_FRIENDLY_Meirinho Conacher|r
     .accept 91 >> Aceite Solomon's Law
 step
     .goto Redridge Mountains,26.75,46.43
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tClique em |cRXP_FRIENDLY_The Wanted Poster|r
-    .accept 180 >> Aceite Wanted: General Mordente
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tClique em |cRXP_FRIENDLY_O Cartaz Procurado|r
+    .accept 180 >> Aceite Procurado: General Mordente
 step
     .goto Redridge Mountains,21.85,46.32
     .target Martie Jainrose
@@ -877,7 +877,7 @@ step
 	.target Verner Osgood
     .goto Redridge Mountains,31.00,47.30
     .turnin 124 >> Entregue A Baying of Gnolls
-    .accept 126 >> Aceite Uivando nas Colinas
+    .accept 126 >> Aceite Howling in the Hills
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Encarregado Oslow|r
 	.target Foreman Oslow
@@ -994,10 +994,10 @@ step
 step << Rogue
     #optional
     #completewith TowerKey
-    +|cRXP_WARN_==PRESTE ATENÇÃO À PRÓXIMA SEÇÃO==|r
+    +|cRXP_WARN_==PRESTE ATENÇÃO NA PRÓXIMA SEÇÃO==|r
     >>Pressione Escape, depois vá em -> Opções -> Controles
     >>Marque "Ativar Tecla de Interação" e vincule a opção "Interagir com o Alvo" a uma tecla
-    >>|cRXP_WARN_Além disso, é recomendado que você ative Placas de Nome de Inimigos (Tecla Padrão: V) pois permite que você veja inimigos atrás de alguns dos cantos dentro da torre|r
+    >>|cRXP_WARN_Além disso, recomenda-se ativar as Placas de Nome de Inimigos (Tecla Padrão: V) para ver inimigos atrás de alguns cantos da torre|r
 step << Rogue
     .goto Westfall,68.50,70.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Agente Marta Hari|r
@@ -1017,7 +1017,7 @@ step << Rogue
     >>|T133644:0|t[Bater de Carteira] o |cRXP_ENEMY_Drone Défias Malformado|r. Saqueie-o para obter a |cRXP_LOOT_Chave da Torre Défias|r
     >>Você deve estar em [Furtividade] para usar [Bater Carteira]
     >>|cRXP_WARN_O |cRXP_ENEMY_Drone Défias Malformado|r surge na entrada da torre, depois patrulha ao redor da parte externa|r
-    >>|cRXP_WARN_Tenha cuidado, pois ele causa MUITO dano. Se o seu|r |T132320:0|t[Furtividade] |cRXP_WARN_interrompa, use rapidamente|r |T132307:0|t[Disparada] |cRXP_WARN_e fuja|r
+    >>Tome cuidado, pois ele causa MUITO dano. Se sua [Furtividade] quebrar, use rapidamente [Disparada] e fuja
     .complete 2359,2 --Collect Defias Tower Key (x1)
     .link https://www.youtube.com/watch?v=5sIew15IcG0 >> Clique AQUI para o guia em vídeo
     .mob Malformed Defias Drone
@@ -1120,7 +1120,7 @@ step << Rogue
     #requires AntiVenomEnd2 << Rogue
     .goto StormwindClassic,75.78,59.84
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mestre Mathias Shaw|r
-    >>|cRXP_WARN_Lembre-se de reequipar sua arma principal se você trocou para uma|r |T135641:0|t[Dagger] |cRXP_WARN_mais cedo|r << Rogue
+    >>|cRXP_WARN_Lembre-se de reequipar sua arma principal se você trocou para um|r |T135641:0|t[Dagger] |cRXP_WARN_antes|r << Rogue
     .turnin 2359 >> Entregue A Torre de Klaven
     .turnin 135 >> Entregue A Irmandade Défias
     .target Master Mathias Shaw
@@ -1288,7 +1288,7 @@ step << Warlock
 step
     #loop
     >>Mate |cRXP_ENEMY_Brutos Rocha Negra|r e |cRXP_ENEMY_Vanguardeiros Rocha Negra|r. Saqueie-os em busca de seus |cRXP_LOOT_Machados|r
-	>>|cRXP_WARN_Saiba que os |cRXP_ENEMY_Blackrock Outrunners|r vão lançar |T132149:0|t[Rede] em você|r
+	>>|cRXP_WARN_Cuidado com o |cRXP_ENEMY_Blackrock Outrunners|r que lançará |T132149:0|t[Rede] em você|r
     .goto Redridge Mountains,74.00,79.00,60,0
     .goto Redridge Mountains,76.18,83.39,60,0
     .goto Redridge Mountains,77.80,68.50,60,0
@@ -1351,7 +1351,7 @@ step
     .goto Redridge Mountains,27.72,47.38
     .turnin 127 >> Entregue O lago está para peixe
     .accept 150 >> Aceite Caçadores de murlocs
-    .turnin 150 >> Entregue Murloc Poachers
+    .turnin 150 >> Entregue Caçadores de murlocs
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Vervo Obom|r
 	.target Verner Osgood
@@ -1370,7 +1370,7 @@ step
 step << !Mage/Paladin/Warlock
     .goto StormwindClassic,52.623,65.701
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estalajadeira Cristine|r
-    .home >> Defina sua Pedra de Retorno em Cidade de Ventobravo
+    .home >> Defina sua Pedra de Retorno em Ventobravo
     .target Innkeeper Allison
 step << Mage
     .goto Stormwind City,39.681,79.538
@@ -1416,7 +1416,7 @@ step << Hunter
 step
     .goto StormwindClassic,61.149,11.568,25,0
     .goto StormwindClassic,64.0,8.10
-    .zone Ironforge >> Entre no Deeprun Tram. Pegue o Bonde para Ironforge
+    .zone Ironforge >> Entre no Deeprun Tram. Pegue o metrô para Ironforge
 step << Warlock
     .goto Ironforge,51.1,8.7,15,0
     .goto Ironforge,50.343,5.657

@@ -4,12 +4,13 @@ if faction == "Alliance" then return end
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Horde Mage
 #name 12-17 Sertões AoE
 #version 1
-#group Guia Forever (H)
-#subgroup Guia Speedrun Mago AoE
-#defaultfor Horde Mage
+#group RestedXP Mago AdE Horda
+
+#defaultfor none Horde Mage
 #next 17-21 Cordilheira das Torres de Pedra/Sertões AoE
 
 step << Mage
@@ -146,7 +147,7 @@ step
 step
     #label Crates
 	.goto 1413/1,-3305.08,-231.96,40,0
-    .goto 1413/1,-3294.95,-211.69.0,40,0
+    .goto 1413/1,-3294.95,-211.69,40,0
     .goto 1413/1,-3305.08,-130.61,40,0
     .goto 1413/1,-3396.28,-63.05,40,0
     >>Pegue as caixas marrons na área
@@ -450,7 +451,7 @@ step
 .target Gazrog
     .accept 3281 >>Aceite Prata roubada
 step
-    .goto 1413/1,-2676.82,-481.94.0
+    .goto 1413/1,-2676.82,-481.94
 >>Fale com |cRXP_FRIENDLY_Sergra Espinhonegro|r
     .turnin 903 >>Entregue Predadores dos Sertões
 .target Sergra Darkthorn
@@ -466,7 +467,7 @@ step
 .target Sergra Darkthorn
     .accept 905 >>Aceite Garrafoices furiosos
 step
-    .goto 1413/1,-2666.68,-481.94.90
+    .goto 1413/1,-2666.68,-481.94
 >>Fale com |cRXP_FRIENDLY_Tonga Runa Totem|r
     .turnin 870 >> Entregue Os Charcos Esquecidos
 .target Tonga Runetotem
@@ -707,23 +708,24 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
+#disabledungeons
 << Horde Mage
 #name 17-21 Cordilheira das Torres de Pedra/Sertões AoE
 #version 1
-#group Guia Forever (H)
-#subgroup Guia Speedrun Mago AoE
-#defaultfor Horde Mage
+#group RestedXP Mago AdE Horda
+
+#defaultfor none Horde Mage
 #next 21-30 Floresta de Pinhaprata/Contraforte de Eira dos Montes AdE
 
 step
     .goto 1442/1,-695.02,12.09,50,0
     .goto 1442/1,-758.5,116.29,50,0
     .goto 1442/1,-890.35,171.65,50,0
-    .goto 1442/1,-773.15,-13.96.0,50,0
+    .goto 1442/1,-773.15,-13.96,50,0
     .goto 1442/1,-695.02,12.09,50,0
     .goto 1442/1,-758.5,116.29,50,0
     .goto 1442/1,-890.35,171.65,50,0
-    .goto 1442/1,-773.15,-13.96.0,50,0
+    .goto 1442/1,-773.15,-13.96,50,0
     >>Mate Temíveis Totens na área
     .complete 6548,2 --Kill Grimtotem Mercenary (x6)
     .complete 6548,1 --Kill Grimtotem Ruffian (x8)
@@ -970,7 +972,7 @@ step
     #completewith next
     .goto 1413/1,-1856.02,-2583.13,0
     .goto 1413/1,-2362.68,-2616.91,0
-    .goto 1413/1,-2403.22,-2441.25.0,0
+    .goto 1413/1,-2403.22,-2441.25,0
     >>Procure Owatanka (lagarto trovejante azul) nesta área. Se o encontrar, pegue a Ponta da Cauda de Owatanka e inicie a missão. Se não o encontrar, pule esta missão
     .collect 5102,1,884 --Collect Owatanka's Tailspike
     .accept 884 >>Aceite Owatanka
@@ -1033,11 +1035,11 @@ step
     .accept 1131 >>Aceite Estalaço
 step
  	>>Entre nos Poços da Visão
-	.goto 1456/1,202.5,-1058.75.0,30,0
+	.goto 1456/1,202.5,-1058.75,30,0
 	.goto 1456/1,276.6,-996.120
 .target Apothecary Zamah
 >>Fale com o |cRXP_FRIENDLY_Boticário Zaqueu|r
-    .turnin 853 >> Entregue para o Boticário Zamah
+    .turnin 853 >> Entregue Boticária Zaqueia
 step
     .goto 1456/1,254.06,-995.78
     .trainer >> Treine suas magias de classe
@@ -1116,7 +1118,7 @@ step
     .trainer >> Aprenda os feitiços da sua classe se precisar
 	>>Redistribua seus talentos para Gélido AoE se ainda não fez isso
 step
-    .goto 1456/1,28.19,-1197.92.0
+    .goto 1456/1,28.19,-1197.92
     .fly The Crossroads >>Voe para A Encruzilhada
 step
     .goto 1413/1,-2605.88,-475.180

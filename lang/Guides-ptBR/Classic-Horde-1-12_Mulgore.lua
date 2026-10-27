@@ -11,7 +11,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 1-6 Mulgore
 #version 11
-#group Horda 1-22
+#group RestedXP Horda 1-22
 #groupid RXP-SRGCE-H1
 #defaultfor Tauren
 #next 6-12 Mulgore;6-13 Mulgore
@@ -34,7 +34,7 @@ step
 step << Warrior/Shaman
     #completewith next
     .goto Mulgore,46.05,75.32,30,0
-    +|cRXP_WARN_Abate |cRXP_ENEMY_Plainstriders|r. Saque-os até ter 10 moedas de cobre em itens vendáveis (incluindo sua armadura)|r << Warrior/Shaman
+    +|cRXP_WARN_Mate |cRXP_ENEMY_Pinotes|r. Pegue itens deles até somar 10 moedas de cobre em valor de venda (incluindo sua armadura)|r << Warrior/Shaman
     .mob Plainstrider
     .money >0.01
 step << Warrior/Shaman
@@ -67,7 +67,7 @@ step
     .target Greatmother Hawkwind
 step
     .goto Mulgore,50.22,81.37
-    >>Saque o |cRXP_LOOT_Jarro de Água|r no poço atrás de |cRXP_FRIENDLY_Hawkwind|r
+    >>Pegue o |cRXP_LOOT_Water Pitcher|r no poço atrás de |cRXP_FRIENDLY_Hawkwind|r
     .complete 753,1 --Water Pitcher (1)
 step
     #loop
@@ -110,7 +110,7 @@ step
     .target Chief Hawkwind
 step << Shaman
     .goto Mulgore,44.07,77.47
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Converse com|r |cRXP_FRIENDLY_Marjak|r |cRXP_BUY_. Compre um|r |T135139:0|t[Cajado Curto] |cRXP_BUY_dele|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Conversar com|r |cRXP_FRIENDLY_Marjak|r|cRXP_BUY_. Compre um|r |T135139:0|t[Cajado Curto] |cRXP_BUY_dele|r
     .collect 2132,1,750,1 --Collect Short Staff (1)
     .money <0.0102
     .itemStat 16,QUALITY,<7
@@ -196,7 +196,7 @@ step
 	.goto Mulgore,45.03,82.15,40,0
 	.goto Mulgore,44.09,83.89,40,0
 	.goto Mulgore,43.90,86.08,40,0
-    .xp 3+1025 >> Triturar para 1025+/1400xp
+    .xp 3+1025 >> Farme até 1025+/1400xp
     .mob Plainstrider
 step << Warrior/Druid
     #completewith GrullTurnin2
@@ -222,7 +222,7 @@ step
     .target Kawnie Softbreeze
 step
     .goto Mulgore,44.67,76.68
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Brave|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Brave|r
     .accept 3376 >>Aceite Quebra-presadura!
     .target Brave Windfeather
 step << Warrior
@@ -230,8 +230,8 @@ step << Warrior
     .goto Mulgore,44.02,76.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Harutt|r
     .turnin 3091 >>Entregue Bilhete
-    .accept 77651 >>Aceitar Entre as Espinheiras
-    .train 100 >> Aprenda |T132337:0|t[carga]
+    .accept 77651 >>Aceite Entre as Espinheiras
+    .train 100 >> Treine |T132337:0|t[Carga]
     .train 772 >> Aprenda |T132155:0|t[Dilacerar]
     .target Harutt Thunderhorn
     .money <0.02
@@ -248,7 +248,7 @@ step << Warrior
     .goto Mulgore,44.02,76.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Harutt|r
     .turnin 3091 >>Entregue Bilhete
-    .train 100 >> Aprenda |T132337:0|t[carga]
+    .train 100 >> Treine |T132337:0|t[Carga]
     .train 772 >> Aprenda |T132155:0|t[Dilacerar]
     .target Harutt Thunderhorn
     .money <0.02
@@ -264,7 +264,7 @@ step << Hunter
     .goto Mulgore,44.26,75.70
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Lanka|r
     .turnin 3092 >>Entregue Bilhete cinzelado
-    .accept 77649 >>Aceitar A Força de um Caçador
+    .accept 77649 >>Aceite A Força de um Caçador
     .train 1978 >> Aprenda |T132204:0|t[Picada de Serpente]
     .target Lanka Farshot
 step << Hunter
@@ -279,7 +279,7 @@ step << Druid
     .goto Mulgore,45.09,75.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gart|r
     .turnin 3094 >>Entregue Bilhete verdejante
-    .accept 77648 >>Aceitar Relíquias dos Taurens
+    .accept 77648 >>Aceite Relíquias dos Taurens
     .train 8921 >> Treine |T136096:0|t[Fogo Lunar]
     .target Gart Mistrunner
 step << Druid
@@ -422,7 +422,7 @@ step
     .goto Mulgore,61.03,82.32,40,0
     .goto Mulgore,62.27,82.03,40,0
     .xp 5 >> Mate inimigos até atingir o nível 5 << !Shaman
-    .xp 4+700 >> Triturar para 700/2100xp << Shaman
+    .xp 4+700 >> Farme até 700/2100xp << Shaman
 step
     #completewith next
     .hs >> Use a Pedra de Regresso para voltar à Aldeia Narache
@@ -514,7 +514,7 @@ step << Druid
     #season 2
     .goto Mulgore,45.09,75.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gart|r
-    .train 467 >>Aprenda |T136104:0|t[Espinhos]
+    .train 467 >>Treine |T136104:0|t[Espinhos]
     .train 5177 >>Aprenda |T136006:0|t[Ira]
     .turnin 77648 >>Entregue Relíquias dos Taurens
     .target Gart Mistrunner
@@ -530,7 +530,7 @@ step << Druid
     #season 0
     .goto Mulgore,45.09,75.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gart|r
-    .train 467 >>Aprenda |T136104:0|t[Espinhos]
+    .train 467 >>Treine |T136104:0|t[Espinhos]
     .train 5177 >>Aprenda |T136006:0|t[Ira]
     .target Gart Mistrunner
     .money <0.02
@@ -573,7 +573,7 @@ step << Warrior
 step
     .goto Mulgore,38.51,81.54
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Antur|r
-    .accept 1656 >>Aceite A Tarefa Inacabada
+    .accept 1656 >>Aceite Uma Tarefa Inacabada
     .target Antur Fallow
 ]])
 
@@ -585,7 +585,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 6-12 Mulgore
 #version 11
-#group Horda 1-22
+#group RestedXP Horda 1-22
 #groupid RXP-SRGCE-H1
 #defaultfor Tauren
 #next 12-17 Sertões
@@ -594,14 +594,14 @@ RXPGuides.RegisterGuide([[
 step << Druid
     #season 2
     .goto Mulgore,35.72,69.57
-    >>|cRXP_WARN_Invoque|r |T136096:0|t[Fogo Lunar] |cRXP_WARN_nos três|r |cRXP_ENEMY_Pedras Lunares|r|cRXP_WARN_. Um baú aparecerá entre as pedras|r
-    >>Abra o |cRXP_PICK_Baú Lunar|r para |T134419:0|t[|cRXP_FRIENDLY_Runa do Sol|r]
+    >>|cRXP_WARN_Use|r |T136096:0|t[Fogo Lunar] |cRXP_WARN_em três|r |cRXP_ENEMY_Pedras Lunares|r|cRXP_WARN_. Um baú aparecerá entre as pedras|r
+    >>Abra o |cRXP_PICK_Baú Lunar|r para a |T134419:0|t[|cRXP_FRIENDLY_Runa do Sol|r]
     .collect 206989,1 --Rune of the Sun (1)
     .mob Lunar Stone
     .train 416044,1
 step << Druid
     #season 2
-    .train 416044 >> |cRXP_WARN_Use o|r |T134419:0|t[|cRXP_FRIENDLY_Runa do Sol|r] |cRXP_WARN_para treinar|r |T236216:0|t[Fogo Solar]
+    .train 416044 >> |cRXP_WARN_Use a|r |T134419:0|t[|cRXP_FRIENDLY_Runa do Sol|r] |cRXP_WARN_para treinar|r |T236216:0|t[Fogo Solar]
     .use 206989
     .itemcount 206989,1
 step
@@ -656,7 +656,7 @@ step << Shaman/Druid
 step << Warrior
     .goto Mulgore,45.66,58.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mahnott Ferida Aberta|r
-    .vendor >> Lixo. Venda sua arma se der a você dinheiro suficiente para uma |T133053:0|t[Marreta de Madeira] (7s 1c). Você voltará mais tarde se ainda não tiver o suficiente
+    .vendor >> Lixo de vendedor. Venda sua arma se ela render dinheiro suficiente para uma |T133053:0|t[Marreta de Madeira] (7s 1c). Volte depois se ainda não tiver o suficiente
     .target Mahnott Roughwound
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.9
@@ -676,7 +676,7 @@ step << Hunter
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.0
 step << Hunter
     .goto Mulgore,45.50,58.47
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Conversar com|r |cRXP_FRIENDLY_Kennah|r|cRXP_BUY_. Compre um|r |T135611:0|t[Bacamarte Ornado] |cRXP_BUY_dele|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Fale com|r |cRXP_FRIENDLY_Kennah|r|cRXP_BUY_. Compre um|r |T135611:0|t[Bacamarte Ornado] |cRXP_BUY_dele|r
     .collect 2509,1,761,1 --Collect Ornate Blunderbuss (1)
     .money <0.0414
     .itemStat 18,QUALITY,<7
@@ -712,11 +712,11 @@ step << Hunter
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.0
 step << Tauren
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Maur|r, |cRXP_FRIENDLY_Zarlman|r, |cRXP_FRIENDLY_Harken|r e |cRXP_FRIENDLY_Mull|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Maur|r, |cRXP_FRIENDLY_Zarlman|r, |cRXP_FRIENDLY_Harken|r e |cRXP_FRIENDLY_Mull|r
     .accept 766 >>Aceite Mazzranache
     .target +Maur Raincaller
     .goto Mulgore,46.97,57.07
-    .turnin 767 >>Entregue Rito de Visão
+    .turnin 767 >>Entregue Rito de visão
     .accept 771 >>Aceite Rito de visão
     .target +Zarlman Two-Moons
     .goto Mulgore,47.76,57.53
@@ -727,11 +727,11 @@ step << Tauren
     .target +Mull Thunderhorn
     .goto Mulgore,48.53,60.40
 step << !Tauren
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Maur|r, |cRXP_FRIENDLY_Zarlman|r e |cRXP_FRIENDLY_Harken|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Maur|r, |cRXP_FRIENDLY_Zarlman|r e |cRXP_FRIENDLY_Harken|r
     .accept 766 >>Aceite Mazzranache
     .target +Maur Raincaller
     .goto Mulgore,46.97,57.07
-    .turnin 767 >>Entregue Rito de Visão
+    .turnin 767 >>Entregue Rito de visão
     .accept 771 >>Aceite Rito de visão
     .target +Zarlman Two-Moons
     .goto Mulgore,47.76,57.53
@@ -741,14 +741,14 @@ step << !Tauren
 step
     #sticky
     #completewith Well
-    >>|cRXP_WARN_Obtenha os itens para Mazzranache enquanto você cumpre missões por toda a zona|r
+    >>|cRXP_WARN_Pegue os itens para Mazzranache enquanto faz missões por toda a zona|r
     .complete 766,1 --Prairie Wolf Heart (1)
     .complete 766,2 --Flatland Cougar Femur (1)
     .complete 766,3 --Plainstrider Scale (1)
     .complete 766,4 --Swoop Gizzard (1)
 step << Tauren
     #completewith Ambercorns
-    >>Mate os |cRXP_ENEMY_Prairie Wolves|r e os |cRXP_ENEMY_Adult Plainstriders|r. Saque-os para obter seus |cRXP_LOOT_Paws|r e |cRXP_LOOT_Garras|r
+    >>Mate os |cRXP_ENEMY_Prairie Wolves|r e os |cRXP_ENEMY_Adult Plainstriders|r. Saqueie-os para obter seus |cRXP_LOOT_Paws|r e |cRXP_LOOT_Garras|r
     .complete 748,1 --Prairie Wolf Paw (6)
     .mob +Prairie Wolf
     .complete 748,2 --Plainstrider Talon (4)
@@ -756,15 +756,15 @@ step << Tauren
 step << Hunter
     #season 2
     .goto Mulgore,59.02,54.36
-    >>Invoque |T132212:0|t[Marca do Caçador] no |cRXP_ENEMY_Farfalhar Arbusto|r
-    >>Mate o |cRXP_ENEMY_Venture Co. Poacher|r que aparece. Saqueie-o para |T134419:0|t[|cRXP_FRIENDLY_Runa de Precisão|r]
+    >>Use a |T132212:0|t[Marca do Caçador] no |cRXP_ENEMY_Rustling Arbusto|r
+    >>Mate o |cRXP_ENEMY_Venture Co. Poacher|r que aparece. Saqueie-o para obter |T134419:0|t[|cRXP_FRIENDLY_Rune of Precisão|r]
     .collect 206155,1 --Rune of Marksmanship (1)
     .mob Rustling Bush
     .mob Venture Co. Poacher
     .train 410113,1
 step << Hunter
     #season 2
-    .train 410113 >>Usar o |T134419:0|t[|cRXP_FRIENDLY_Runa de Precisão|r]
+    .train 410113 >>Usar a |T134419:0|t[|cRXP_FRIENDLY_Rune of Precisão|r]
     .use 206155
     .itemcount 206155,1
 step
@@ -776,7 +776,7 @@ step
     .goto Mulgore,51.92,63.85,15,0
     .goto Mulgore,51.13,71.06,15,0
     .goto Mulgore,50.36,66.49,15,0
-    >>Colete os |cRXP_PICK_Ambercorns|r. Eles podem ser encontrados sob as árvores no chão
+    >>Colete os |cRXP_PICK_Ambercorns|r. Encontram-se sob as árvores no chão
     .complete 771,2 --Ambercorn (2)
 step
 	#completewith next
@@ -800,7 +800,7 @@ step << Tauren
 	.goto Mulgore,48.60,69.43,50,0
 	.goto Mulgore,45.98,69.70,50,0
 	.goto Mulgore,48.58,67.37,50,0
-    >>Mate os |cRXP_ENEMY_Prairie Wolves|r e os |cRXP_ENEMY_Adult Plainstriders|r. Saque-os para obter seus |cRXP_LOOT_Paws|r e |cRXP_LOOT_Garras|r
+    >>Mate os |cRXP_ENEMY_Prairie Wolves|r e os |cRXP_ENEMY_Adult Plainstriders|r. Saqueie-os para obter seus |cRXP_LOOT_Paws|r e |cRXP_LOOT_Garras|r
     .complete 748,1 --Prairie Wolf Paw (6)
     .mob +Prairie Wolf
     .complete 748,2 --Plainstrider Talon (4)
@@ -833,7 +833,7 @@ step
     .complete 771,1 --Well Stone (2)
 step
     #completewith Gnolls
-    >>|cRXP_WARN_Obtenha os itens para Mazzranache enquanto você cumpre missões por toda a zona|r
+    >>|cRXP_WARN_Pegue os itens para Mazzranache enquanto faz missões por toda a zona|r
     .complete 766,1 --Prairie Wolf Heart (1)
     .complete 766,2 --Flatland Cougar Femur (1)
     .complete 766,3 --Plainstrider Scale (1)
@@ -845,8 +845,8 @@ step << Warrior
     .goto Mulgore,48.3,72.0,0
     .goto Mulgore,53.5,73.0,90,0
     .goto Mulgore,48.3,72.0,90,0
-    >>Vá e volte entre os dois acampamentos. Abata os |cRXP_ENEMY_Palemane Tanners|r, os |cRXP_ENEMY_Palemane Skinners|r e os |cRXP_ENEMY_Palemane Poachers|r. Saque-os para a |cRXP_LOOT_Cortado Gnoll Cabeça|r
-    >>|cRXP_WARN_Tenha cuidado com|r |cRXP_ENEMY_Lança Infame|r |cRXP_WARN_(Nível 9 raro). É muito difícil de matar.|r
+    >>Vá de um lado a outro entre os dois acampamentos. Mate os |cRXP_ENEMY_Palemane Tanners|r, os |cRXP_ENEMY_Palemane Skinners|r e os |cRXP_ENEMY_Palemane Poachers|r. Saqueie-os para obter uma |cRXP_LOOT_Cabeça de Gnoll Decepada|r
+    >>|cRXP_WARN_Cuidado com|r |cRXP_ENEMY_Lança Infame|r |cRXP_WARN_(Nível 9 Raro). É muito difícil de matar.|r
     .complete 745,1 --Palemane Tanner (10)
     .mob +Palemane Tanner
     .complete 745,2 --Palemane Skinner (8)
@@ -863,8 +863,8 @@ step
     .goto Mulgore,48.3,72.0,0
     .goto Mulgore,53.5,73.0,90,0
     .goto Mulgore,48.3,72.0,90,0
-    >>Vá de um lado para o outro entre os dois acampamentos. Mate os |cRXP_ENEMY_Palemane Tanners|r, os |cRXP_ENEMY_Palemane Skinners|r e os |cRXP_ENEMY_Palemane Poachers|r
-    >>|cRXP_WARN_Tenha cuidado com|r |cRXP_ENEMY_Lança Infame|r |cRXP_WARN_(Nível 9 raro). É muito difícil de matar.|r
+    >>Vá de um lado a outro entre os dois acampamentos. Mate os |cRXP_ENEMY_Palemane Tanners|r, os |cRXP_ENEMY_Palemane Skinners|r e os |cRXP_ENEMY_Palemane Poachers|r
+    >>|cRXP_WARN_Cuidado com|r |cRXP_ENEMY_Lança Infame|r |cRXP_WARN_(Nível 9 Raro). É muito difícil de matar.|r
     .complete 745,1 --Palemane Tanner (10)
     .mob +Palemane Tanner
     .complete 745,2 --Palemane Skinner (8)
@@ -877,13 +877,13 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Jhauna Ventos d'Aveia|r
     >>|cRXP_BUY_Compre|r |T132815:0|t[Leite Gelado] |cRXP_BUY_dela|r << Shaman/Druid
     >>|cRXP_BUY_Compre|r |T133968:0|t[Pão Fresquinho] |cRXP_BUY_dela|r << Warrior
-    .vendor >> Lixo Comerciante
+    .vendor >> Venda os lixos
     .collect 1179,10,746,1 << Shaman/Druid --Ice Cold Milk (10)
     .collect 4541,10,746,1 << Warrior --Freshly Baked Bread (10)
     .target Jhawna Oatwind
     .money <0.025
 step << Tauren
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mull|r e |cRXP_FRIENDLY_Baine|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Mull|r e |cRXP_FRIENDLY_Baine|r
     .turnin 754 >>Entregue A purificação de Casco Invernal
     .accept 756 >>Aceite Totem de Chifre Troante
     .target +Mull Thunderhorn
@@ -893,7 +893,7 @@ step << Tauren
     .goto Mulgore,47.51,60.16
 step << !Tauren
     .goto Mulgore,47.51,60.16
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mull|r e |cRXP_FRIENDLY_Baine|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Mull|r e |cRXP_FRIENDLY_Baine|r
     .turnin 745 >>Entregue Dividindo a terra
     .target Baine Bloodhoof
 step << Warrior
@@ -919,7 +919,7 @@ step << Shaman/Druid
 step << Warrior
     .goto Mulgore,45.66,58.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mahnott Ferida Aberta|r
-    .vendor >> Lixo. Venda sua arma se der a você dinheiro suficiente para uma |T133053:0|t[Marreta de Madeira] (7s 1c). Você voltará mais tarde se ainda não tiver o suficiente
+    .vendor >> Lixo de vendedor. Venda sua arma se ela render dinheiro suficiente para uma |T133053:0|t[Marreta de Madeira] (7s 1c). Volte depois se ainda não tiver o suficiente
     .target Mahnott Roughwound
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.9
@@ -939,7 +939,7 @@ step << Hunter
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.0
 step << Hunter
     .goto Mulgore,45.50,58.47
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Conversar com|r |cRXP_FRIENDLY_Kennah|r|cRXP_BUY_. Compre um|r |T135611:0|t[Bacamarte Ornado] |cRXP_BUY_dele|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Fale com|r |cRXP_FRIENDLY_Kennah|r|cRXP_BUY_. Compre um|r |T135611:0|t[Bacamarte Ornado] |cRXP_BUY_dele|r
     .collect 2509,1,749,1 --Collect Ornate Blunderbuss (1)
     .money <0.0414
     .itemStat 18,QUALITY,<7
@@ -973,7 +973,7 @@ step
     .goto Mulgore,47.76,57.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zarlman Duas Luas|r
     >>|cRXP_WARN_Não siga o lobo que aparecer|r
-    .turnin 771 >>Entregue Rito de Visão
+    .turnin 771 >>Entregue Rito de visão
     .accept 772 >>Aceite Rito de visão
     .target Zarlman Two-Moons
 step << Hunter
@@ -990,7 +990,7 @@ step << Druid
     .xp <8,1
 step << Warrior
     .goto Mulgore,49.52,60.58
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Krang|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Krang Casco de Pedra|r
     .train 284 >> Treine suas magias de classe
     .target Krang Stonehoof
     .xp <8,1
@@ -1016,7 +1016,7 @@ step
 	.unitscan Morin Cloudstalker
 step
     #completewith Clawsx
-    >>|cRXP_WARN_Obtenha os itens para Mazzranache enquanto você cumpre missões por toda a zona|r
+    >>|cRXP_WARN_Pegue os itens para Mazzranache enquanto faz missões por toda a zona|r
     .complete 766,1 --Prairie Wolf Heart (1)
     .complete 766,2 --Flatland Cougar Femur (1)
     .complete 766,3 --Plainstrider Scale (1)
@@ -1093,7 +1093,7 @@ step << Shaman/Druid
 step << Warrior
     .goto Mulgore,45.66,58.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mahnott Ferida Aberta|r
-    .vendor >> Lixo. Venda sua arma se der a você dinheiro suficiente para uma |T133053:0|t[Marreta de Madeira] (7s 1c). Você voltará mais tarde se ainda não tiver o suficiente
+    .vendor >> Lixo de vendedor. Venda sua arma se ela render dinheiro suficiente para uma |T133053:0|t[Marreta de Madeira] (7s 1c). Volte depois se ainda não tiver o suficiente
     .target Mahnott Roughwound
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.9
@@ -1113,7 +1113,7 @@ step << Hunter
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.0
 step << Hunter
     .goto Mulgore,45.50,58.47
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Conversar com|r |cRXP_FRIENDLY_Kennah|r|cRXP_BUY_. Compre um|r |T135611:0|t[Bacamarte Ornado] |cRXP_BUY_dele|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Fale com|r |cRXP_FRIENDLY_Kennah|r|cRXP_BUY_. Compre um|r |T135611:0|t[Bacamarte Ornado] |cRXP_BUY_dele|r
     .collect 2509,1,743,1 --Collect Ornate Blunderbuss (1)
     .money <0.0414
     .itemStat 18,QUALITY,<7
@@ -1184,7 +1184,7 @@ step << Druid
     .xp <8,1
 step << Warrior
     .goto Mulgore,49.52,60.58
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Krang|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Krang Casco de Pedra|r
     .train 284 >> Treine suas magias de classe
     .target Krang Stonehoof
     .xp <8,1
@@ -1226,7 +1226,7 @@ step << Tauren
 step << Shaman
     #season 2
     #completewith next
-    >>Abata os |cRXP_ENEMY_Bael'dun Diggers|r e os |cRXP_ENEMY_Bael'dun Appraisers|r. Saque-os para a |cRXP_LOOT_Artefato Chave de Armazenamento|r
+    >>Abate |cRXP_ENEMY_Bael'dun Diggers|r e |cRXP_ENEMY_Bael'dun Appraisers|r. Saque-os para o |cRXP_LOOT_Artifact Storage Chave|r
     .collect 206975,1 --Artifact Storage Key (1)
     .mob Bael'dun Digger
     .mob Bael'dun Appraiser
@@ -1236,7 +1236,7 @@ step
     .goto Mulgore,31.27,49.87
     >>Mate |cRXP_ENEMY_Escavadores de Bael'Dun|r e |cRXP_ENEMY_Avaliadores de Bael'Dun|r. Pegue suas |cRXP_LOOT_Picaretas do Prospector|r
     .use 4702 >> |cRXP_WARN_Quebre as|r |T134707:0|t[Picaretas] |cRXP_WARN_na forja|r
-    >>|cRXP_WARN_Tenha cuidado pois |cRXP_ENEMY_Bael'dun Appraisers|r lançam|r |T135929:0|t[Cura Inferior] |cRXP_WARN_(Ranged Cast: Heals themselves or a nearby mob below 50% dos pontos de vida for about 75 health)|r
+    >>|cRXP_WARN_Tenha cuidado pois |cRXP_ENEMY_Bael'dun Appraisers|r lançam|r |T135929:0|t[Cura Inferior] |cRXP_WARN_(Lançamento à distância: Curam a si mesmos ou um inimigo próximo abaixo de 50% dos pontos de vida por cerca de 75 pontos de vida)|r
     .complete 746,1 --Broken Tools (5)
     .mob Bael'dun Digger
     .mob Bael'dun Appraiser
@@ -1252,8 +1252,8 @@ step << Shaman
     .goto Mulgore,30.98,48.24,40,0
     .goto Mulgore,31.59,48.19,40,0
     .goto Mulgore,33.10,47.69,40,0
-    >>Abata os |cRXP_ENEMY_Bael'dun Diggers|r e os |cRXP_ENEMY_Bael'dun Appraisers|r. Saque-os para a |cRXP_LOOT_Artefato Chave de Armazenamento|r
-    >>|cRXP_WARN_Tenha cuidado pois |cRXP_ENEMY_Bael'dun Appraisers|r lançam|r |T135929:0|t[Cura Inferior] |cRXP_WARN_(Ranged Cast: Heals themselves or a nearby mob below 50% dos pontos de vida for about 75 health)|r
+    >>Abate |cRXP_ENEMY_Bael'dun Diggers|r e |cRXP_ENEMY_Bael'dun Appraisers|r. Saque-os para o |cRXP_LOOT_Artifact Storage Chave|r
+    >>|cRXP_WARN_Tenha cuidado pois |cRXP_ENEMY_Bael'dun Appraisers|r lançam|r |T135929:0|t[Cura Inferior] |cRXP_WARN_(Lançamento à distância: Curam a si mesmos ou um inimigo próximo abaixo de 50% dos pontos de vida por cerca de 75 pontos de vida)|r
     .collect 206975,1 --Artifact Storage Key (1)
     .mob Bael'dun Digger
     .mob Bael'dun Appraiser
@@ -1262,7 +1262,7 @@ step << Shaman
 step << Shaman
     #season 2
     .goto Mulgore,31.56,49.54
-    >>Abra o |cRXP_PICK_Artefato Armazenamento|r baú. Saque-o para o |T134918:0|t|cRXP_LOOT_[Ícone Sulfúreo]|r
+    >>Abra o |cRXP_PICK_Artifact Storage|r baú. Saque-o para o |T134918:0|t|cRXP_LOOT_[Ícone Sulfúreo]|r
     .collect 206388,1 --Sulfurous Icon (1)
     .train 425344,1
     .xp <3,1
@@ -1277,8 +1277,8 @@ step << Shaman
     #season 2
     #label MoltenBlast
     #completewith Burial
-    .aura 408828 >>|cRXP_WARN_Mate inimigos tendo causado dano usando|r |T136026:0|t[Choque Terreno] |cRXP_WARN_neles pelo menos uma vez. Faça isto 10 vezes para ganhar|r |T136116:0|t[Inspirado] |cRXP_WARN_Bônus|r
-    >>|cRXP_WARN_AVISO: Você deve fazer isto em inimigos que possam fornecer experiência para ganhar camadas|r
+    .aura 408828 >>|cRXP_WARN_Abate inimigos tendo causado dano com|r |T136026:0|t[Choque Terreno] |cRXP_WARN_neles pelo menos uma vez. Faça isto 10 vezes para obter|r |T136116:0|t[Inspirado] |cRXP_WARN_efeito|r
+    >>|cRXP_WARN_NOTA: Você deve fazer isto em inimigos que podem fornecer experiência para ganhar acúmulos|r
     .mob Bael'dun Digger
     .mob Bael'dun Appraiser
     .train 425344,1
@@ -1299,7 +1299,7 @@ step << Warrior
 	.goto Mulgore,33.82,40.26,50,0
 	.goto Mulgore,34.48,41.21,50,0
 	.goto Mulgore,34.50,42.29,50,0
-    >>Abata os |cRXP_ENEMY_Fúria dos Ventos Vento Bruxas|r e os |cRXP_ENEMY_Fúria dos Ventos Harpias|r. Saque-os para suas |cRXP_LOOT_Garras|r e a |cRXP_LOOT_Cortado Harpia Cabeça|r
+    >>Abate |cRXP_ENEMY_Windfury Vento Witches|r e |cRXP_ENEMY_Windfury Harpies|r. Saque-os para as |cRXP_LOOT_Garras|r e uma |cRXP_LOOT_Severed Harpia Cabeça|r
     .complete 743,1 --Windfury Talon (8)
     .collect 206995,1 ---Severed Harpy Head (1)
     .mob Windfury Wind Witch
@@ -1325,18 +1325,18 @@ step
     .mob Windfury Harpy
 step
     #completewith next
-    .goto Mulgore,33.37,36.52,50 >> Entre na caverna logo ao norte das Harpias Fúria dos Ventos
+    .goto Mulgore,33.37,36.52,50 >> Entre na caverna ao norte das Harpias Ventofúria
 step
 	#label Burial
     .goto Mulgore,32.72,36.09
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Vidente Trilha Astuta|r
-    .turnin 772 >>Entregue Rito de Visão
+    .turnin 772 >>Entregue Rito de visão
     .accept 773 >>Aceite Rito de sabedoria
     .target Seer Wiserunner
 step << Shaman
     #season 2
     #requires MoltenBlast
-    .cast 402265 >>|cRXP_WARN_Use o|r |T134918:0|t|cRXP_LOOT_[Ícone Sulfúreo]|r |cRXP_WARN_para aprender|r |T133816:0|t[Entalhe de Luvas: Impacto Derretido]
+    .cast 402265 >>|cRXP_WARN_Use o|r |T134918:0|t|cRXP_LOOT_[Ícone Sulfúreo]|r |cRXP_WARN_para aprender|r |T133816:0|t[Engrave Gloves: Impacto Derretido]
     .use 206388
     .aura -408828
     .itemStat 18,QUALITY,2
@@ -1376,7 +1376,7 @@ step
 step << Warrior
     #season 2
     #completewith RiteofWisdom
-    >>Abata |cRXP_ENEMY_Intrusos Costagulha|r. Saqueie-os por uma |cRXP_LOOT_Cabeça de Quilboar Cortada|r
+    >>Abate |cRXP_ENEMY_Bristleback Interlopers|r. Saque-os para uma |cRXP_LOOT_Severed Quilboar Cabeça|r
     .collect 206994,1 ---Severed Quilboar Head (1)
     .mob Bristleback Interloper
     .train 403475,1
@@ -1406,7 +1406,7 @@ step << Warrior
 	.goto Mulgore,60.16,21.06,25,0
 	.goto Mulgore,60.41,21.96,25,0
 	.goto Mulgore,61.12,22.88,25,0
-    >>Abata |cRXP_ENEMY_Intrusos Costagulha|r. Saqueie-os por uma |cRXP_LOOT_Cabeça de Quilboar Cortada|r
+    >>Abate |cRXP_ENEMY_Bristleback Interlopers|r. Saque-os para uma |cRXP_LOOT_Severed Quilboar Cabeça|r
     .complete 833,1 --Bristleback Interloper (8)
     .collect 206994,1 ---Severed Quilboar Head (1)
     .mob Bristleback Interloper
@@ -1601,7 +1601,7 @@ step
 	.goto Mulgore,58.79,28.52,60,0
 	.goto Mulgore,60.56,25.88,60,0
 	.goto Mulgore,59.52,23.36,60,0
-    .xp 9+1280 >> Triturar para 1280+/6500xp
+    .xp 9+1280 >> Farme até 1280+/6500 XP
     .isQuestComplete 761
     .isQuestComplete 766
 step
@@ -1625,7 +1625,7 @@ step
 	.goto Mulgore,58.79,28.52,60,0
 	.goto Mulgore,60.56,25.88,60,0
 	.goto Mulgore,59.52,23.36,60,0
-    .xp 9+2330 >> Triturar para 2330+/6500xp
+    .xp 9+2330 >> Farme até 2330+/6500 XP
     .isQuestComplete 761
 step
     #xprate >1.49
@@ -1648,7 +1648,7 @@ step
 	.goto Mulgore,58.79,28.52,60,0
 	.goto Mulgore,60.56,25.88,60,0
 	.goto Mulgore,59.52,23.36,60,0
-    .xp 9+2300 >> Triturar para 2300+/6500xp
+    .xp 9+2300 >> Farme até 2300+/6500 XP
     .isQuestComplete 766
 step
     #xprate >1.49
@@ -1671,10 +1671,10 @@ step
 	.goto Mulgore,58.79,28.52,60,0
 	.goto Mulgore,60.56,25.88,60,0
 	.goto Mulgore,59.52,23.36,60,0
-    .xp 9+3350 >> Triturar para 3350+/6500xp
+    .xp 9+3350 >> Farme até 3350+/6500 XP
 step << !Druid
     #completewith Bloodhoofturnins1
-    .hs >>Vá para Bloodhoof Village
+    .hs >>Use a Pedra de Retorno para ir a Bloodhoof Village
     .use 6948
     .bindlocation 222,1
     .subzoneskip 222
@@ -1690,7 +1690,7 @@ step << Druid
 step
     .goto Mulgore,46.62,61.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Estalajadeiro Kauth|r
-    .vendor >> Lixo Comerciante
+    .vendor >> Venda os lixos
     .target Innkeeper Kauth
     .isQuestAvailable 870
 step
@@ -1702,8 +1702,8 @@ step
 step << Warrior
     #season 2
     .goto Mulgore,46.29,61.76
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Vateya|r em Bloodhoof Village
-    >>Entregue as |cRXP_LOOT_Cabeças|r que você coletou em troca de |T134455:0|t[Runa Fragmentos]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com Vateya em Bloodhoof Village
+    >>Entregue as |cRXP_LOOT_Cabeças|r que coletou em troca de |T134455:0|t[Runa Fragmentos]
     .collect 204688,1 --Monster Hunter's First Rune Fragment (1)
     .collect 204689,1 --Monster Hunter's Second Rune Fragment (1)
     .collect 204690,1 --Monster Hunter's Third Rune Fragment (1)
@@ -1711,12 +1711,12 @@ step << Warrior
     .train 403475,1
 step << Warrior
     #season 2
-    .use 204688 >>Usar os |T134455:0|t[Runa Fragmentos] para criar |T134419:0|t[|cRXP_FRIENDLY_Runa de Devastar|r]
+    .use 204688 >>Usar |T134455:0|t[Runa Fragmentos] para criar |T134419:0|t[|cRXP_FRIENDLY_Rune of Devastar|r]
     .collect 204703,1 --Rune of Devastate (1)
     .train 403475,1
 step << Warrior
     #season 2
-    .train 403475 >>Usar |T134419:0|t[|cRXP_FRIENDLY_Runa de Devastar|r]
+    .train 403475 >>Usar |T134419:0|t[|cRXP_FRIENDLY_Rune of Devastar|r]
     .use 204703
     .itemcount 204703,1
 step << Tauren
@@ -1790,7 +1790,7 @@ step
     .isQuestComplete 766
 step << Warrior
     .goto Mulgore,49.52,60.58
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Krang|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Krang Casco de Pedra|r
     .trainer >> Treine suas magias de classe
     .accept 1505 >>Aceite Veterano Uzzek
     .target Krang Stonehoof
@@ -1803,7 +1803,7 @@ step << Shaman
 step << Hunter
     .goto Mulgore,47.81,55.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Yaw Crina Cortante|r
-    .accept 6061 >>Aceite Domando a Fera
+    .accept 6061 >>Aceite Adestramento da Fera - Missão
     .trainer >> Treine suas magias de classe
     .target Yaw Sharpmane
 step << Druid
@@ -1824,14 +1824,14 @@ step << Hunter
     .goto Mulgore,42.87,54.88,50,0
     .goto Mulgore,40.73,55.60,50,0
     .goto Mulgore,39.38,57.43,50,0
-    .use 15914 >> |cRXP_WARN_Use o seu|r |T132164:0|t[Bastão de Adestramento] |cRXP_WARN_em um|r |cRXP_ENEMY_Pinote Adulto|r |cRXP_WARN_na distância máxima|r
+    .use 15914 >> |cRXP_WARN_Use seu|r |T132164:0|t[Bastão de Adestramento] |cRXP_WARN_em um|r |cRXP_ENEMY_Pinote Adulto|r |cRXP_WARN_ao alcance máximo|r
     .complete 6061,1 --Tame an Adult Plainstrider (1)
     .mob Adult Plainstrider
 step << Hunter
     .goto Mulgore,47.81,55.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Yaw Crina Cortante|r
-    .turnin 6061 >>Entregue Domar a Fera - Missão
-    .accept 6087 >>Aceite Domando a Fera
+    .turnin 6061 >>Entregue Adestramento da Fera - Missão
+    .accept 6087 >>Aceite Adestramento da Fera - Missão
     .target Yaw Sharpmane
 step << Hunter
     #loop
@@ -1846,8 +1846,8 @@ step << Hunter
 step << Hunter
     .goto Mulgore,47.81,55.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Yaw Crina Cortante|r
-    .turnin 6087 >>Entregue Domar a Fera - Missão
-    .accept 6088 >>Aceite Domando a Fera
+    .turnin 6087 >>Entregue Adestramento da Fera - Missão
+    .accept 6088 >>Aceite Adestramento da Fera - Missão
     .target Yaw Sharpmane
 step << Hunter
     #loop
@@ -1862,8 +1862,8 @@ step << Hunter
 step << Hunter
     .goto Mulgore,47.81,55.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Yaw Crina Cortante|r
-    .turnin 6088 >>Entregue Domar a Fera - Missão
-    .accept 6089 >>Aceite Treinando a Fera
+    .turnin 6088 >>Entregue Adestramento da Fera - Missão
+    .accept 6089 >>Aceite Treinamento da Fera - Missão
     .target Yaw Sharpmane
 step
     .goto Mulgore,47.63,61.49
@@ -1951,7 +1951,7 @@ step << Druid
     .goto The Barrens,44.45,59.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Omusa Chifre Troante|r
     .fp Camp Taurajo >> Aprenda a rota de voo de Acampamento Taurajo
-    .fly Thunder Bluff >>Voe para Penhasco do Trovão
+    .fly Thunder Bluff >>Voe para Trovão Blefe
     .target Omusa Thunderhorn
     .isQuestAvailable 848
 step
@@ -1975,7 +1975,7 @@ step << Druid
 step << Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Turak Runa Totem|r
     .goto Thunder Bluff,76.7,27.3
-    .turnin 5928 >>Entregue Heeding the Call - Missão - Missão - Missão
+    .turnin 5928 >>Entregue Heeding the Call - Missão
     .accept 5922 >>Aceite Moonglade
     .target Arch Druid Hamuul Runetotem
     .target Turak Runetotem
@@ -1993,7 +1993,7 @@ step << Druid
 step << Druid
     .goto Moonglade,56.21,30.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dendrite Stellardor|r
-    .turnin 5922 >>Entregue Moonglade
+    .turnin 5922 >>Vá para Moonglade
     .accept 5930 >>Aceite Espírito do Grande Urso
     .target Dendrite Starblaze
 step << Druid
@@ -2022,7 +2022,7 @@ step << Druid
     #completewith next
     .goto Moonglade,44.29,45.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Bonthen Vento do Prado|r
-    .fly Thunder Bluff >> Voe para Penhasco do Trovão
+    .fly Thunder Bluff >> Voe para Trovão Blefe
     .target Bunthen Plainswind
     .zoneskip Thunder Bluff
     .cooldown item,6948,<0
@@ -2037,7 +2037,7 @@ step << Druid
     #completewith next
     .goto Thunder Bluff,47.00,49.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tal|r
-    .fly Camp Taurajo >>Voe para Camp Taurajo
+    .fly Camp Taurajo >>Voe para o Acampamento Taurajo
     .target Tal
     .zoneskip The Barrens
 step << Druid
@@ -2088,8 +2088,8 @@ step
 step
     #completewith next
     >>Pegue |cRXP_LOOT_Cogumelos Carregados|r ao redor dos Charcos Esquecidos
-    >>|cRXP_WARN_Mantenha distância máxima de |cRXP_ENEMY_Kolkar|r |cRXP_WARN_enquanto coleta os cogumelos. Eles são nível 12-14|r
-    >>|cRXP_WARN_A continuação dessa missão tem o poderoso |cRXP_FRIENDLY_Mexedor de Caldeirão|r |cRXP_WARN_como recompensa. Você pode pular essa missão por enquanto se não pretender usá-lo|r
+    >>|cRXP_WARN_Mantenha distância máxima de|cRXP_ENEMY_ Kolkar|r |cRXP_WARN_ao saquear os cogumelos. Eles são nível 12-14|r
+    >>|cRXP_WARN_A continuação desta missão tem o poderoso |cRXP_FRIENDLY_Mexedor de Caldeirão|r |cRXP_WARN_como recompensa. Você pode pular esta missão por enquanto se não pretender usá-la|r
     .complete 848,1 --Collect Fungal Spores (x4)
 step
     .goto The Barrens,45.06,22.54
@@ -2103,8 +2103,8 @@ step
     .goto The Barrens,44.6,22.5,40,0
     .goto The Barrens,43.9,24.4,40,0
     >>Pegue |cRXP_LOOT_Cogumelos Carregados|r ao redor dos Charcos Esquecidos
-    >>|cRXP_WARN_Mantenha distância máxima de |cRXP_ENEMY_Kolkar|r |cRXP_WARN_na área. Eles são nível 12-14|r
-    >>|cRXP_WARN_A continuação dessa missão tem o poderoso |cRXP_FRIENDLY_Mexedor de Caldeirão|r |cRXP_WARN_como recompensa. Você pode pular essa missão por enquanto se não pretender usá-lo|r
+    >>|cRXP_WARN_Mantenha distância máxima de|cRXP_ENEMY_ Kolkar|r |cRXP_WARN_na área. Eles são nível 12-14|r
+    >>|cRXP_WARN_A continuação desta missão tem o poderoso |cRXP_FRIENDLY_Mexedor de Caldeirão|r |cRXP_WARN_como recompensa. Você pode pular esta missão por enquanto se não pretender usá-la|r
     .complete 848,1 --Collect Fungal Spores (x4)
 step
     #softcore
@@ -2113,7 +2113,7 @@ step
 step
     #hardcore
     #completewith ZamahPickup
-    .subzone 380 >> Vá para a Encruzilhada
+    .subzone 380 >> Viaje de volta para a Encruzilhada
 step
     .goto The Barrens,52.26,31.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tonga Runa Totem|r
@@ -2139,7 +2139,7 @@ step
     .goto The Barrens,51.44,30.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Boticário Hermógenes|r
     >>|cRXP_WARN_Espere a cena terminar|r
-    >>|cRXP_WARN_Isso inicia uma missão cronometrada de 45 minutos|r
+    >>|cRXP_WARN_Isto inicia uma missão com limite de 45 minutos|r
     .turnin 848 >>Entregue Esporos de Fungos
     .timer 7,Esporos de Fungos RP
     .accept 853 >>Aceite Boticária Zaqueia
@@ -2150,7 +2150,7 @@ step
     #label ZamahPickup
     .goto The Barrens,51.44,30.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Boticário Hermógenes|r
-    >>|cRXP_WARN_Isso inicia uma missão cronometrada de 45 minutos|r
+    >>|cRXP_WARN_Isto inicia uma missão com limite de 45 minutos|r
     .accept 853 >>Aceite Boticária Zaqueia
     .target Apothecary Helbrim
     .isQuestTurnedIn 848
@@ -2164,19 +2164,19 @@ step
     #completewith RideToTB
     .goto The Barrens,51.50,30.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Devrak|r
-    .fly Thunder Bluff >>Voe para Penhasco do Trovão
+    .fly Thunder Bluff >>Voe para Trovão Blefe
     .target Devrak
     .zoneskip Thunder Bluff
 step
     #sticky
     #completewith CauldronStirrer
-    +|cRXP_WARN_Você está em uma missão cronometrada, não fique ausente. Ela será entregue em torno de 5-10 minutos após a coleta|r
+    +|cRXP_WARN_Você está em uma missão cronometrada, não fique inativo. Ela será entregue automaticamente cerca de 5-10 minutos após ser aceita.|r
     .isOnQuest 853
 step
     #label RideToTB
     .goto Thunder Bluff,45.6,55.9
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ahanu|r
-    .turnin 6362 >>Voe para o Penhasco do Trovão
+    .turnin 6362 >>Entregue Voo para o Penhasco do Trovão
     .accept 6363 >>Aceite Tal, o Mestre de Mantícoras
     .target Ahanu
 step << Hunter
@@ -2204,7 +2204,7 @@ step << Hunter
     .target Hesuwa Thunderhorn
 step << Hunter
     #completewith CauldronStirrer
-    +|cRXP_WARN_Arrastar|r |T132162:0|t[Treinamento de Feras] |cRXP_WARN_para suas barras de ação. Ensine habilidades ao seu mascote|r
+    +|cRXP_WARN_Arrastar|r |T132162:0|t[Treinamento de Feras] |cRXP_WARN_Nas suas barras de ação. Ensine habilidades para seu mascote|r
 step << Druid
     .goto Thunder Bluff,40.93,62.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ansekhwa|r
@@ -2238,7 +2238,7 @@ step
     #label CauldronStirrer
     .goto Thunder Bluff,22.82,20.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Boticário Zaqueu|r
-    .turnin 853 >>Entregue Boticário Zaqueu
+    .turnin 853 >>Entregue Boticária Zaqueia
     .target Apothecary Zamah
     .isOnQuest 853
 step
@@ -2253,8 +2253,8 @@ step << Warrior
     #completewith next
     .goto Thunder Bluff,28.73,18.00,-1
     .goto Thunder Bluff,26.19,18.65,-1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Netali|r e |cRXP_FRIENDLY_Mugildo|r no Alto do Espírito
-    +Mate |cRXP_FRIENDLY_Mugildo|r quando ele se tornar hostil
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Netali|r e |cRXP_FRIENDLY_Mugildo|r no Espírito Erga-se
+    +Mate |cRXP_FRIENDLY_Mugildo|r quando ele fica hostil
     .target Netali Proudwind
     .target Mooart
     .skipgossip
@@ -2263,14 +2263,14 @@ step << Warrior
     #season 2
     .goto Thunder Bluff,28.73,18.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Netali|r
-    >>Obtenha |T134419:0|t[|cRXP_FRIENDLY_Runa de Ataque Frenético|r] dela
+    >>Obtenha |T134419:0|t[|cRXP_FRIENDLY_Rune of Ataque Frenético|r] dela
     .collect 204716,1 --Rune of Frenzied Assault (1)
     .target Netali
     .train 425447,1
     .skipgossip
 step << Warrior
     #season 2
-    .train 425447 >>Usar |T134419:0|t[|cRXP_FRIENDLY_Runa de Ataque Frenético|r]
+    .train 425447 >>Usar |T134419:0|t[|cRXP_FRIENDLY_Rune of Ataque Frenético|r]
     .use 204716
     .itemcount 204716,1
 step
@@ -2298,7 +2298,7 @@ step
     #ah
     .goto Thunder Bluff,44.43,43.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mooranta|r
-    >>|cRXP_WARN_Isto desbloqueará uma missão fácil. Se você já tem 2 profissões, pule este passo|r
+    >>|cRXP_WARN_Isso desbloqueia uma missão fácil. Se já tiver 2 profissões, pule esta etapa|r
     .train 8613 >>Aprenda |T134366:0|t[Esfolamento]
     .target Mooranta
 step
@@ -2326,7 +2326,7 @@ step
 step << Hunter
     .goto Thunder Bluff,52.32,47.79
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kara Corre com a Névoa|r
-    >>|cRXP_BUY_Compre um|r |T133972:0|t[Carne Seca Fortalecedora] |cRXP_BUY_dela para alimentar seu mascote|r
+    >>|cRXP_BUY_Compre|r |T133972:0|t[Fortalecer Jerky] |cRXP_BUY_dela para alimentar seu animal de estimação|r
     .collect 117,5,744,1 --Tough Jerky (5)
     .target Kaga Mistrunner
 step << Shaman
@@ -2355,8 +2355,8 @@ step << Shaman
     #season 2
     #label Fizsprocket1
     .goto Mulgore,64.95,43.33
-    >>Abate |cRXP_ENEMY_Supervisor Geringonça|r. Saque a |cRXP_LOOT_Prancheta|r dela
-    >>|cRXP_WARN_Entre na mina e siga o lado direito/leste para alcançá-lo|r
+    >>Mate |cRXP_ENEMY_Supervisor Geringonça|r. Saque-o para obter sua |cRXP_LOOT_Prancheta|r
+    >>|cRXP_WARN_Corra para dentro da mina e abrace o lado direito/leste para alcançá-lo|r
     .complete 765,1 --Fizsprocket's Clipboard (1)
     .mob Supervisor Geringonça
 step << Shaman
@@ -2422,7 +2422,7 @@ step
 step << Druid
     #season 2
     #completewith ProwlerClaws
-    >>Mate os |cRXP_ENEMY_Flatland Prowlers|r e os |cRXP_ENEMY_Prairie Lobo Alphas|r. Saqueie-os para obter o |T134903:0|t[|cRXP_FRIENDLY_Ídolo de Raiva Ursina|r]
+    >>Mate os |cRXP_ENEMY_Flatland Prowlers|r e os |cRXP_ENEMY_Prairie Lobo Alphas|r. Saqueie-os para |T134903:0|t[|cRXP_FRIENDLY_Ídolo de Raiva Ursina|r]
     .collect 206954,1 --Idol of Ursine Rage (1)
     .mob Flatland Prowler
     .mob Prairie Wolf Alpha
@@ -2459,7 +2459,7 @@ step << Shaman
     .goto Mulgore,36.55,12.84,10,0
     .goto Mulgore,36.65,13.26,10,0
     .goto Mulgore,37.18,12.36,10,0
-    >>Saque |cRXP_LOOT_Pinhões de Fúria dos Ventos|r no chão
+    >>Pegue |cRXP_LOOT_Windfury Cones|r no chão
     .collect 206170,8,76160,1 --Windfury Cone (8)
     .train 410104,1
 step
@@ -2487,8 +2487,8 @@ step << Warrior/Hunter
     .goto Mulgore,51.8,33.8,90,0
     .goto Mulgore,56.2,32.9,90,0
     >>Mate |cRXP_ENEMY_Arra'chea|r (kodo preto grande). Pegue seu |cRXP_LOOT_Chifre|r << !Warrior !Hunter
-    >>Mate |cRXP_ENEMY_Arra'Chea|r (Grande kodo negro). Mate-o e saque-o pelo |cRXP_LOOT_Chifre|r e |T134419:0|t[|cRXP_FRIENDLY_Runa de Trovão Furioso|r] << Warrior
-    >>Mate |cRXP_ENEMY_Arra'Chea|r (Grande kodo negro). Mate-o e saque-o pelo |cRXP_LOOT_Chifre|r e |T134419:0|t[|cRXP_FRIENDLY_Runa de Tiro Explosivo|r] << Hunter
+    >>Mate |cRXP_ENEMY_Arra'Chea|r (grande kodo preto). Mate-o e saqueie-o pelo |cRXP_LOOT_Chifre|r e pela |T134419:0|t[|cRXP_FRIENDLY_Runa de Trovão Furioso|r] << Warrior
+    >>Mate |cRXP_ENEMY_Arra'Chea|r (grande kodo preto). Mate-o e saqueie-o pelo |cRXP_LOOT_Chifre|r e pela |T134419:0|t[|cRXP_FRIENDLY_Runa de Tiro Explosivo|r] << Hunter
     >>|cRXP_WARN_Ele patrulha o norte de Mulgore no sentido horário|r
     .complete 776,1 --Horn of Arra'chea (1)
     .collect 204809,1 << Warrior --Rune of Furious Thunder(1)
@@ -2541,7 +2541,7 @@ step << Druid
     .goto Mulgore,37.12,16.84,90,0
     .goto Mulgore,44.57,17.39,90,0
     .goto Mulgore,48.70,20.85,90,0
-    >>Mate os |cRXP_ENEMY_Flatland Prowlers|r e os |cRXP_ENEMY_Prairie Lobo Alphas|r. Saqueie-os para obter o |T134903:0|t[|cRXP_FRIENDLY_Ídolo de Raiva Ursina|r]
+    >>Mate os |cRXP_ENEMY_Flatland Prowlers|r e os |cRXP_ENEMY_Prairie Lobo Alphas|r. Saqueie-os para |T134903:0|t[|cRXP_FRIENDLY_Ídolo de Raiva Ursina|r]
     .collect 206954,1 --Idol of Ursine Rage (1)
     .mob Flatland Prowler
     .mob Prairie Wolf Alpha
@@ -2554,7 +2554,7 @@ step << Druid
 step << Druid
     #season 2
     #completewith next
-    +|cRXP_WARN_Mantenha 50+ de fúria por pelo menos 60 segundos para poder aprender|r |T132135:0|t[Destroçar]
+    +|cRXP_WARN_Mantenha 50+ de Fúria por pelo menos 60 segundos para conseguir aprender|r |T132135:0|t[Destroçar]
 step << Druid
     #season 2
     .train 410025 >> |cRXP_WARN_Use o|r |T134903:0|t[|cRXP_FRIENDLY_Ídolo de Raiva Ursina|r] |cRXP_WARN_para treinar|r |T132135:0|t[Destroçar]
@@ -2612,7 +2612,7 @@ step << Shaman
     .goto Thunder Bluff,46.49,49.16,4,0
     .goto Thunder Bluff,46.05,49.74,4,0
     .goto Thunder Bluff,46.34,50.50,4,0
-    .goto Thunder Bluff,55.78,47.02,15 >>Vá em direção a |cRXP_FRIENDLY_Sewa Corre com a Névoa|r
+    .goto Thunder Bluff,55.78,47.02,15 >>Vá até |cRXP_FRIENDLY_Sewa Corre com a Névoa|r
     .train 410104,1
     .xp <4,1
 step << Shaman
@@ -2644,7 +2644,7 @@ step << Shaman
     #completewith Fish
     #requires Kah
     #label Pole
-    .equip 16,6256 >> |cRXP_WARN_Equipe a|r |T132932:0|t[Vara de Pescar]
+    .equip 16,6256 >> |cRXP_WARN_Equipe o|r |T132932:0|t[Vara de Pescar]
     .use 6256
     .train 410104,1
     .xp <4,1
@@ -2669,7 +2669,7 @@ step << Shaman
     .xp <4,1
 step << Shaman
     #season 2
-    >>Usar |T132147:0|t[Conjunto de Facas] para criar |T134007:0|t[Pedaços de Peixe]
+    >>Usar o |T132147:0|t[Conjunto de Faca] para criar |T134007:0|t[Pedaços de Peixe]
     .complete 76240,1 --Fish Chunks (1)
     .use 206344
     .train 410104,1
@@ -2692,7 +2692,7 @@ step
     .target Melor Stonehoof
 step
     #completewith WildManeTurnIn
-    .subzone 222 >>Vá para Bloodhoof Village
+    .subzone 222 >>Vá à Aldeia Casco Sangrento
 step
     .goto Mulgore,46.75,60.24
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Skorn Nuvem Branca|r
@@ -2718,7 +2718,7 @@ step << Druid
     .xp <12,1
 step << Warrior
     .goto Mulgore,49.52,60.58
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Krang|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Krang Casco de Pedra|r
     .train 7384 >> Treine suas magias de classe
     .target Krang Stonehoof
     .xp <12,1
@@ -2744,8 +2744,8 @@ step
 step
     #label Fizsprocket
     .goto Mulgore,64.95,43.33
-    >>Abate |cRXP_ENEMY_Supervisor Geringonça|r. Saque a |cRXP_LOOT_Prancheta|r dela
-    >>|cRXP_WARN_Entre na mina e siga o lado direito/leste para alcançá-lo|r
+    >>Mate |cRXP_ENEMY_Supervisor Geringonça|r. Saque-o para obter sua |cRXP_LOOT_Prancheta|r
+    >>|cRXP_WARN_Corra para dentro da mina e abrace o lado direito/leste para alcançá-lo|r
     .complete 765,1 --Fizsprocket's Clipboard (1)
     .mob Supervisor Geringonça
 step
@@ -2814,7 +2814,7 @@ step << Druid
     .xp <12,1
 step << Warrior
     .goto Mulgore,49.52,60.58
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Krang|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Krang Casco de Pedra|r
     .train 5242 >> Treine suas magias de classe
     .target Krang Stonehoof
     .xp <12,1
@@ -2833,7 +2833,7 @@ step
     .cooldown item,6948,>0
 step
     #completewith next
-    .subzone 378 >> Viaje para Camp Taurajo
+    .subzone 378 >> Vá para Camp Taurajo
     .cooldown item,6948,<0,1
 step
     .goto The Barrens,44.45,59.15
@@ -2845,7 +2845,7 @@ step
     #label HidesTurnIn
     .goto The Barrens,51.21,29.05
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Jahan Asa de Falcão|r
-    .turnin 6364 >>Entregue Retorno a Jahan
+    .turnin 6364 >>Entregue Volte para Jahan
     .target Jahan Hawkwing
 step
     .goto The Barrens,51.44,30.15
@@ -2885,7 +2885,7 @@ step << Shaman
 step << Shaman
     .goto The Barrens,55.86,19.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kranal|r
-    .turnin 2984 >>Entregue Call of Fogo - Missão - Missão
+    .turnin 2984 >>Entregue Call of Fogo
     .accept 1524 >>Aceite Clamor do Fogo
     .target Kranal Fiss
 step << Shaman
@@ -2900,13 +2900,13 @@ step << Shaman
     .goto Durotar,38.05,57.79,8,0
     .goto Durotar,38.93,57.54,8,0
     .goto Durotar,39.19,57.90,8,0
-    .goto Durotar,39.16,58.56,10 >> Siga o caminho para cima da montanha até |cRXP_FRIENDLY_Telf|r
+    .goto Durotar,39.16,58.56,10 >> Siga o caminho montanha acima até |cRXP_FRIENDLY_Telf|r
     >>|cRXP_WARN_Tome cuidado para não cair da montanha, pois o caminho é muito estreito. Você pode morrer se cair|r
 step << Shaman
     #label CallofFire2
     .goto Durotar,38.52,58.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Telf|r
-    .turnin 1524 >>Entregue Call of Fogo - Missão - Missão
+    .turnin 1524 >>Entregue Call of Fogo
     .accept 1525 >>Aceite Clamor do Fogo
     .target Telf Joolam
 step << Warrior
@@ -2948,7 +2948,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #xprate >1.99
 #version 1
-#group Horda 1-22
+#group RestedXP Horda 1-22
 #groupid RXP-SRGCE-H1
 #name 1-7 Mulgore
 #next 7-13 Mulgore
@@ -2967,13 +2967,13 @@ step
 step
     #season 2
     .goto Mulgore,44.35,76.68
-    >> |Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Runa Corretor de Runas|r
-    >> |cRXP_WARN_Não venda equipamento que pode ser equipado|r
-    >> |cRXP_BUY_Venda seu|r |T135005:0|t[Shirt] |cRXP_BUY_e um de seus|r |T133964:0|t[Hunks of Bread] |cRXP_WARN_(podem ser divididos com shift-clique)|r |cRXP_BUY_e compre |T134419:0|t[|cRXP_FRIENDLY_Rune of Ataque Frenético|r] e |T134419:0|t[|cRXP_FRIENDLY_Runa do Ímpeto da Vitória|r] dele|r << Warrior
-    >> |cRXP_BUY_Venda seu|r |T135005:0|t[Shirt] |cRXP_BUY_e um de seus|r |T134534:0|t[Cogumelo Caps] |cRXP_WARN_(podem ser divididos com shift-clique)|r |cRXP_BUY_e compre |T134920:0|t[|cRXP_FRIENDLY_Ícone Jakárico|r] |cRXP_BUY_e|r |T134918:0|t[|cRXP_FRIENDLY_Ícone Diádico|r] |cRXP_BUY_dele|r << Shaman
-    >> |cRXP_BUY_Venda seu|r |T135005:0|t[Shirt] |cRXP_BUY_e|r |T132794:0|t[Água] |cRXP_BUY_e compre as seguintes runas:|r  << Hunter
-    >> |cRXP_BUY_Venda seu|r |T133975:0|t[Apples] |cRXP_BUY_e compre as seguintes runas:|r << Druid
-    >> |cRXP_BUY_Venda lixo ao Comerciante e compre todas as seguintes runas:|r << Shaman
+    >> |Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Corretor de Runas|r
+    >> |cRXP_WARN_Não venda itens que possam ser equipados|r
+    >> |cRXP_BUY_Venda seu|r |T135005:0|t[Shirt] |cRXP_BUY_e um dos seus|r |T133964:0|t[Hunks of Bread] |cRXP_WARN_(podem ser divididos com Shift+clique)|r |cRXP_BUY_e compre a |T134419:0|t[|cRXP_FRIENDLY_Runa de Ataque Frenético|r] e a |T134419:0|t[|cRXP_FRIENDLY_Runa de Ímpeto da Vitória|r] dele|r << Warrior
+    >> |cRXP_BUY_Venda seu|r |T135005:0|t[Shirt] |cRXP_BUY_e seus|r |T134534:0|t[Cogumelo Caps] |cRXP_WARN_(podem ser divididos com Shift+clique)|r |cRXP_BUY_e compre o |T134920:0|t[|cRXP_FRIENDLY_Ícone Jakárico|r] e o |T134918:0|t[|cRXP_FRIENDLY_Ícone Diádico|r] dele|r << Shaman
+    >> |cRXP_BUY_Venda seu|r |T135005:0|t[Shirt] |cRXP_BUY_e|r |T132794:0|t[Água] |cRXP_BUY_e compre as runas a seguir:|r  << Hunter
+    >> |cRXP_BUY_Venda seu|r |T133975:0|t[Apples] |cRXP_BUY_e compre as runas a seguir:|r << Druid
+    >> |cRXP_BUY_Venda o lixo e compre todas as runas a seguir:|r << Shaman
     .collect 204716,1 << Warrior --Rune of Frenzied Assault
     .collect 204806,1 << Warrior --Rune of Victory Rush
     .collect 209852,1 << Hunter --Rune of Kill Command
@@ -2986,7 +2986,7 @@ step
     .collect 210500,1 << Druid --Rune of the Stars
     .collect 206989,1 << Druid --Rune of the Sun
     .collect 227749,1 << Druid --Rune of the Falling Star
-    >>Você receberá o resto de suas runas em breve
+    >>Você receberá o resto de suas runas muito em breve
     .target Rune Broker
     .skipgossip
 step
@@ -3005,9 +3005,9 @@ step
     .use 206989 << Druid --Rune of the Sun
     .use 227749 << Druid --Rune of the Falling Star
     .equip 18 >> Equipe o |T134920:0|t[|cRXP_FRIENDLY_Ícone Jakárico|r], você pode usá-lo após 30 segundos para treinar |T237582:0|t[Estouro de lava] << Shaman
-    .equip 18 >> Equipe o |T134903:0|t[|cRXP_FRIENDLY_Lunar Ídolo|r], você pode usá-lo após 30 segundos para treinar |T237472:0|t[Fúria de Tempesfúria] << Druid
-    .train 425447 >> Usar |T134419:0|t[|cRXP_FRIENDLY_Runa de Ataque Frenético|r] << Warrior
-    .train 403470 >> Usar o |T134419:0|t[|cRXP_FRIENDLY_Runa do Ímpeto da Vitória|r] para treinar |T132342:0|t[Ímpeto da Vitória], você o gravará em breve << Warrior
+    .equip 18 >> Equipe o |T134903:0|t[|cRXP_FRIENDLY_Ídolo Lunar|r], você pode usá-lo após 30 segundos para treinar |T237472:0|t[Fúria de Tempesfúria] << Druid
+    .train 425447 >> Usar |T134419:0|t[|cRXP_FRIENDLY_Rune of Ataque Frenético|r] << Warrior
+    .train 403470 >> Usar o |T134419:0|t[|cRXP_FRIENDLY_Runa de Ímpeto da Vitória|r] para treinar |T132342:0|t[Ímpeto da Vitória], você a graverá em breve << Warrior
     .train 410111 >> Usar o |T134419:0|t[|cRXP_FRIENDLY_Rune of Comando para Matar|r] para treinar |T236174:0|t[Tiro Mortal] << Hunter
     .train 410121 >> Usar o |T134419:0|t[|cRXP_FRIENDLY_Runa da Quimera|r] para treinar |T236176:0|t[Tiro Quimérico] << Hunter
     .train 409580 >> Usar o |T133739:0|t[|cRXP_FRIENDLY_Tratado do Coração de Leão|r] para treinar |T132185:0|t[Coração de Leão] << Hunter
@@ -3015,33 +3015,33 @@ step
     .train 424718 >> Usar o |T134419:0|t[|cRXP_FRIENDLY_Runa das Estrelas|r] para treinar |T135730:0|t[Surto Estelar] << Druid
     .train 416044 >> Usar o |T134419:0|t[|cRXP_FRIENDLY_Runa do Sol|r] para treinar |T236216:0|t[Fogo Solar] << Druid
     .train 439770 >> Usar a |T134419:0|t[|cRXP_FRIENDLY_Runa da Estrela Cadente|r] para treinar |T236168:0|t[Chuva Estelar] << Druid
-    .engrave 7 >> Grave |T236174:0|t[Tiro Mortal] em suas calças << Hunter
-    .engrave 7 >> Grave |T236317:0|t[Ataque Frenético] em suas calças << Warrior
-    .engrave 7 >> Grave |T135730:0|t[Surto Estelar] em suas calças << Druid
+    .engrave 7 >> Grave |T236174:0|t[Tiro Mortal] nas calças << Hunter
+    .engrave 7 >> Grave |T236317:0|t[Ataque Frenético] nas calças << Warrior
+    .engrave 7 >> Grave |T135730:0|t[Surto Estelar] nas calças << Druid
 step << Hunter
     #season 2
     #optional
     #sticky
-    .aura 409583 >> Lembre-se de ativar seu |T132185:0|t[Coração de Leão]
+    .aura 409583 >> Lembre de ativar o |T132185:0|t[Coração de Leão]
 step << Shaman
     #season 2
     #optional
     #label LavaBurst
     #sticky
-    .train 410095 >> Usar o |T134920:0|t[|cRXP_FRIENDLY_Kajaric Ícone|r] do painel de personagem para treinar |T237582:0|t[Estouro de Lava - Feitiço - Feitiço]
+    .train 410095 >> Usar o |T134920:0|t[|cRXP_FRIENDLY_Ícone Jakárico|r] do painel de personagem para treinar |T237582:0|t[Estouro de lava]
 step << Druid
     #season 2
     #optional
     #sticky
-    .train 410061 >> Usar o |T134903:0|t[|cRXP_FRIENDLY_Lunar Ídolo|r] do painel de personagem para treinar |T237472:0|t[Fúria de Tempesfúria]
-    .engrave 5 >> Grave seu peito com |T237472:0|t[Fúria de Tempesfúria]
+    .train 410061 >> Usar o |T134903:0|t[|cRXP_FRIENDLY_Ídolo Lunar|r] do painel de personagem para treinar |T237472:0|t[Fúria de Tempesfúria]
+    .engrave 5 >> Grave |T237472:0|t[Fúria de Tempesfúria] no peito
 step << Shaman
     #season 2
     #optional
     #requires LavaBurst
     #label Overload
     #sticky
-    .equip 18,206381 >> Equipe o |T134918:0|t[|cRXP_FRIENDLY_Dyadic Ícone|r]
+    .equip 18,206381 >> Equipe o |T134918:0|t[|cRXP_FRIENDLY_Ícone Diádico|r]
     .train 410094 >> Usar-o após 30 segundos para treinar |T136050:0|t[Sobrecarga]
     .use 206381
 step
@@ -3053,30 +3053,30 @@ step << Warrior/Shaman
     #season 0
     #completewith next
     .goto Mulgore,46.05,75.32,30,0
-    +|cRXP_WARN_Abate |cRXP_ENEMY_Plainstriders|r. Saque-os até ter 10 moedas de cobre em itens vendáveis (incluindo sua armadura)|r << Warrior/Shaman
+    +|cRXP_WARN_Mate |cRXP_ENEMY_Pinotes|r. Pegue itens deles até somar 10 moedas de cobre em valor de venda (incluindo sua armadura)|r << Warrior/Shaman
     .mob Plainstrider
     .money >0.01
 step
     #season 2
     .goto Mulgore,46.05,75.32
-    .xp 2 >>|cRXP_WARN_Abate 4 |cRXP_ENEMY_Plainstriders|r para atingir o nível 2. Saque-os até ter 10 de cobre em itens|r << !Shaman !Druid
-    .xp 2 >>|cRXP_WARN_Abate 4 |cRXP_ENEMY_Plainstriders|r para atingir o nível 2. Saque-os até ter 42 de cobre em itens|r << Shaman
-    .xp 2 >>|cRXP_WARN_Abate 4 |cRXP_ENEMY_Plainstriders|r para atingir o nível 2. Saque-os até ter 20 de cobre em itens|r << Druid
+    .xp 2 >>|cRXP_WARN_Abate 4 |cRXP_ENEMY_Plainstriders|r para alcançar o nível 2. Saque-os até obter itens de vendedor no valor de 10 cobre|r << !Shaman !Druid
+    .xp 2 >>|cRXP_WARN_Abate 4 |cRXP_ENEMY_Plainstriders|r para alcançar o nível 2. Saque-os até obter itens de vendedor no valor de 42 cobre|r << Shaman
+    .xp 2 >>|cRXP_WARN_Abate 4 |cRXP_ENEMY_Plainstriders|r para alcançar o nível 2. Saque-os até obter itens de vendedor no valor de 20 cobre|r << Druid
     .mob Plainstrider
 step << Shaman/Druid
     #season 2
     .goto Mulgore,46.36,75.89,50,0
     #completewith next
-    +|cRXP_WARN_Continue matando |cRXP_ENEMY_Plainstriders|r até ter 42 de cobre em itens|r << Shaman
-    +|cRXP_WARN_Continue matando |cRXP_ENEMY_Plainstriders|r até ter 20 de cobre em itens|r << Druid
+    +|cRXP_WARN_Mantenha matando |cRXP_ENEMY_Plainstriders|r até obter itens de vendedor no valor de 42 cobre|r << Shaman
+    +|cRXP_WARN_Mantenha matando |cRXP_ENEMY_Plainstriders|r até obter itens de vendedor no valor de 20 cobre|r << Druid
     .money >0.0042 << Shaman
     .money >0.002 << Druid
 step << Druid
     #season 2
     .goto Mulgore,45.08,75.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gart|r
-    .accept 77648 >>Aceite Relíquias dos Tauren
-    .turnin 77648 >>Entregue Relíquias dos Tauren
+    .accept 77648 >>Aceite Relíquias dos Taurens
+    .turnin 77648 >>Entregue Relíquias dos Taurens
     .target Gart Mistrunner
 step << Warrior/Shaman
     #season 0
@@ -3089,7 +3089,7 @@ step << Warrior/Shaman
     #season 2
     .goto Mulgore,45.30,76.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kawnie|r
-    >>|cRXP_WARN_Não venda equipamento que pode ser equipado|r
+    >>|cRXP_WARN_Não venda itens que possam ser equipados|r
     .vendor >> Venda os itens de lixo
     .target Kawnie Softbreeze
     .money >0.01
@@ -3125,7 +3125,7 @@ step << Shaman/Druid
     #season 2
     .goto Mulgore,44.15,77.25
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Varia|r
-    >>|cRXP_BUY_Lixo do Comerciante|r |cRXP_WARN_NÃO VENDA EQUIPAMENTO QUE PODE SER EQUIPADO|r << Druid
+    >>|cRXP_BUY_Venda o lixo|r |cRXP_WARN_NÃO VENDA ITENS QUE POSSAM SER EQUIPADOS|r << Druid
     >>|cRXP_BUY_Compre um par de|r |T132952:0|t[Luvas de Couro Sujas] |cRXP_BUY_para gravar uma runa em|r
     .collect 714,1 -- Dirty Leather Gloves
     .target Varia Hardhide
@@ -3140,50 +3140,50 @@ step << Warrior/Shaman/Druid
     #season 2
     .equip 10 >> Equipe as |T132938:0|t[Luvas Encadeadas Manchadas] << Warrior
     .equip 10 >> Equipe as |T132952:0|t[Luvas de Couro Sujas] << Shaman/Druid
-    .engrave 10 >> Grave |T132342:0|t[Ímpeto da Vitória] em suas luvas << Warrior
+    .engrave 10 >> Grave |T132342:0|t[Ímpeto da Vitória] nas luvas << Warrior
     .equip 5 >> Equipe a |T135010:0|t[Vestimenta de Couro Rachado] << Shaman
-    .engrave 5 >> Grave |T136050:0|t[Sobrecarga] em seu peito << Shaman
-    .engrave 10 >> Grave |T237582:0|t[Estouro de Lava - Feitiço - Feitiço] em suas luvas << Shaman
-    .engrave 10 >> Grave |T236216:0|t[Fogo Solar] em suas luvas << Druid
+    .engrave 5 >> Grave |T136050:0|t[Sobrecarga] no peito << Shaman
+    .engrave 10 >> Grave |T237582:0|t[Estouro de lava] nas luvas << Shaman
+    .engrave 10 >> Grave |T236216:0|t[Fogo Solar] nas luvas << Druid
     .use 2127 << Shaman/Druid --Cracked Leather Vest
     .use 2385 << Warrior -- Tarnished Chain Gloves
     .use 714 << Shaman --Dirty Leather Gloves
 step << Hunter
     #season 2
     .goto Mulgore,44.35,76.68
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Runa Corretor de Runas|r
-    >>|cRXP_WARN_Não venda equipamento que pode ser equipado|r
-    .vendor >>|cRXP_BUY_Venda lixo do comerciante e compre todas as seguintes runas:|r << Hunter
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Corretor de Runas|r
+    >>|cRXP_WARN_Não venda itens que possam ser equipados|r
+    .vendor >>|cRXP_BUY_Venda o lixo e compre todas as runas a seguir:|r << Hunter
     .collect 210818,1 << Hunter --Rune of Lone Wolf
     .collect 213124,1 << Hunter --Rune of Close Combat
     .collect 226252,1 << Hunter --Rune of the Guerrilla
-    >>|cRXP_WARN_Você obterá o resto de suas runas mais tarde|r
+    >>|cRXP_WARN_Você obterá as outras runas mais tarde|r
     .target Rune Broker
     .skipgossip
 step << Hunter
     #season 2
-    .train 410122 >> Usar o |T134419:0|t[|cRXP_FRIENDLY_Runa de Lobo Solitário|r] para treinar |T132266:0|t[Lobo Solitário] << Hunter
-    .train 416086 >> Usar o |T134419:0|t[|cRXP_FRIENDLY_Runa de Fechar Combate|r] para treinar |T132394:0|t[Especialista em Corpo a Corpo] << Hunter
-    .train 440563 >> Usar o |T134419:0|t[|cRXP_FRIENDLY_Runa de Guerrilla|r] para treinar |T132171:0|t[Bater e Correr] << Hunter
+    .train 410122 >> Usar a |T134419:0|t[|cRXP_FRIENDLY_Runa do Lobo Solitário|r] para treinar |T132266:0|t[Lobo solitário] << Hunter
+    .train 416086 >> Usar a |T134419:0|t[|cRXP_FRIENDLY_Rune of Fechar Combate|r] para treinar |T132394:0|t[Especialista em Corpo a Corpo] << Hunter
+    .train 440563 >> Usar a |T134419:0|t[|cRXP_FRIENDLY_Runa de Guerrilla|r] para treinar |T132171:0|t[Bater e Correr] << Hunter
     .use 210818 << Hunter --Rune of Lone Wolf
     .use 213124 << Hunter --Rune of Close Combat
     .use 226252 << Hunter --Rune of the Guerrilla
 step << Hunter
     .equip 10 >> Equipe as |T132952:0|t[Luvas de Couro Rachado]
-    .engrave 10 >> Grave |T236176:0|t[Tiro Quimérico] em suas luvas
+    .engrave 10 >> Grave |T236176:0|t[Tiro Quimérico] nas luvas
     .use 2125 --Cracked Leather Gloves
 step << Hunter
     #sticky
     #optional
-    >> |cRXP_WARN_Procure por qualquer|r Baú/Cinto/Manto |cRXP_WARN_drops|r|cRXP_WARN_. Equipe-os e grave as runas respectivas|r
-    .engrave 5 >> Grave |T132266:0|t[Lobo Solitário] em seu |T132724:0|t[Baú]
-    .engrave 6 >> Grave |T132394:0|t[Especialista em Corpo a Corpo] no seu |T132513:0|t[Belt]
-    .engrave 15 >> Grave |T132171:0|t[Bater e Correr] em seu |T133771:0|t[Manto]
+    >> |cRXP_WARN_Fique atento a quaisquer|r Baú/Belt/Manto |cRXP_WARN_quedas|r|cRXP_WARN_. Equipe-os e grave as runas respectivas|r
+    .engrave 5 >> Grave |T132266:0|t[Lobo solitário] no |T132724:0|t[Baú]
+    .engrave 6 >> Grave |T132394:0|t[Especialista em Corpo a Corpo] no |T132513:0|t[Belt]
+    .engrave 15 >> Grave |T132171:0|t[Bater e Correr] no |T133771:0|t[Manto]
 step << Druid
     #sticky
     #optional
-    >> |cRXP_WARN_Procure por qualquer|r Manto |cRXP_WARN_drops|r|cRXP_WARN_. Equipe-o e grave|r |T236168:0|t[Chuva Estelar] |cRXP_WARN_nele|r
-    .engrave 15 >> Grave |T236168:0|t[Chuva Estelar] em seu |T133771:0|t[Manto]
+    >> |cRXP_WARN_Fique atento a qualquer|r Manto |cRXP_WARN_queda|r|cRXP_WARN_. Equipe-o e grave|r |T236168:0|t[Chuva Estelar] |cRXP_WARN_nele|r
+    .engrave 15 >> Grave |T236168:0|t[Chuva Estelar] no |T133771:0|t[Manto]
 step
     #completewith next
     >>Mate |cRXP_ENEMY_Pinotes|r. Pegue deles a |cRXP_LOOT_Carne|r e as |cRXP_LOOT_Penas|r
@@ -3198,7 +3198,7 @@ step
     .target Greatmother Hawkwind
 step
     .goto Mulgore,50.22,81.37
-    >>Saque o |cRXP_LOOT_Jarro de Água|r no poço atrás de |cRXP_FRIENDLY_Hawkwind|r
+    >>Pegue o |cRXP_LOOT_Water Pitcher|r no poço atrás de |cRXP_FRIENDLY_Hawkwind|r
     .complete 753,1 --Water Pitcher (1)
 step
     #loop
@@ -3241,7 +3241,7 @@ step
     .target Chief Hawkwind
 step << Shaman
     .goto Mulgore,44.07,77.47
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Converse com|r |cRXP_FRIENDLY_Marjak|r |cRXP_BUY_. Compre um|r |T135139:0|t[Cajado Curto] |cRXP_BUY_dele|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Conversar com|r |cRXP_FRIENDLY_Marjak|r|cRXP_BUY_. Compre um|r |T135139:0|t[Cajado Curto] |cRXP_BUY_dele|r
     .collect 2132,1,750,1 --Collect Short Staff (1)
     .money <0.0102
     .itemStat 16,QUALITY,<7
@@ -3331,7 +3331,7 @@ step
     .target Kawnie Softbreeze
 step
     .goto Mulgore,44.67,76.68
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Brave|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Brave|r
     .accept 3376 >>Aceite Quebra-presadura!
     .target Brave Windfeather
 step << Warrior
@@ -3339,7 +3339,7 @@ step << Warrior
     .goto Mulgore,44.02,76.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Harutt|r
     .turnin 3091 >>Entregue Bilhete
-    .train 100 >> Aprenda |T132337:0|t[carga]
+    .train 100 >> Treine |T132337:0|t[Carga]
     .train 772 >> Aprenda |T132155:0|t[Dilacerar]
     .target Harutt Thunderhorn
     .money <0.02
@@ -3355,7 +3355,7 @@ step << Warrior
     .goto Mulgore,44.02,76.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Harutt|r
     .turnin 3091 >>Entregue Bilhete
-    .train 100 >> Aprenda |T132337:0|t[carga]
+    .train 100 >> Treine |T132337:0|t[Carga]
     .train 772 >> Aprenda |T132155:0|t[Dilacerar]
     .target Harutt Thunderhorn
     .money <0.02
@@ -3578,7 +3578,7 @@ step << Druid
     #season 2
     .goto Mulgore,45.09,75.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gart|r
-    .train 467 >>Aprenda |T136104:0|t[Espinhos]
+    .train 467 >>Treine |T136104:0|t[Espinhos]
     .train 5177 >>Aprenda |T136006:0|t[Ira]
     .target Gart Mistrunner
     .money <0.02
@@ -3586,7 +3586,7 @@ step << Druid
     #season 0
     .goto Mulgore,45.09,75.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gart|r
-    .train 467 >>Aprenda |T136104:0|t[Espinhos]
+    .train 467 >>Treine |T136104:0|t[Espinhos]
     .train 5177 >>Aprenda |T136006:0|t[Ira]
     .target Gart Mistrunner
     .money <0.02
@@ -3627,15 +3627,15 @@ step << Warrior
 step
     #season 2
     .goto Mulgore,44.35,76.68
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Runa Corretor de Runas|r
-    >>|cRXP_WARN_Não venda equipamento que pode ser equipado|r
-    .vendor >> |cRXP_BUY_Compre lixo do Comerciante e compre todas as |T134419:0|t|cRXP_WARN_[Runas]|r que você precisa dele|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Corretor de Runas|r
+    >>|cRXP_WARN_Não venda itens que possam ser equipados|r
+    .vendor >> |cRXP_BUY_Venda o refugo para ele e compre todas as |T134419:0|t|cRXP_WARN_[Runas]|r que você precisar|r
     .target Rune Broker
     .skipgossip
 step
     .goto Mulgore,38.51,81.54
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Antur|r
-    .accept 1656 >>Aceite A Tarefa Inacabada
+    .accept 1656 >>Aceite Uma Tarefa Inacabada
     .target Antur Fallow
 ]])
 
@@ -3646,7 +3646,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #xprate >1.99
 #version 1
-#group Horda 1-22
+#group RestedXP Horda 1-22
 #groupid RXP-SRGCE-H1
 #name 7-13 Mulgore
 #next 13-20 Savanas
@@ -3656,14 +3656,14 @@ RXPGuides.RegisterGuide([[
 step << Druid
     #season 2
     .goto Mulgore,35.72,69.57
-    >>|cRXP_WARN_Invoque|r |T136096:0|t[Fogo Lunar] |cRXP_WARN_nos três|r |cRXP_ENEMY_Pedras Lunares|r|cRXP_WARN_. Um baú aparecerá entre as pedras|r
-    >>Abra o |cRXP_PICK_Baú Lunar|r para |T134419:0|t[|cRXP_FRIENDLY_Runa do Sol|r]
+    >>|cRXP_WARN_Use|r |T136096:0|t[Fogo Lunar] |cRXP_WARN_em três|r |cRXP_ENEMY_Pedras Lunares|r|cRXP_WARN_. Um baú aparecerá entre as pedras|r
+    >>Abra o |cRXP_PICK_Baú Lunar|r para a |T134419:0|t[|cRXP_FRIENDLY_Runa do Sol|r]
     .collect 206989,1 --Rune of the Sun (1)
     .mob Lunar Stone
     .train 416044,1
 step << Druid
     #season 2
-    .train 416044 >> |cRXP_WARN_Use o|r |T134419:0|t[|cRXP_FRIENDLY_Runa do Sol|r] |cRXP_WARN_para treinar|r |T236216:0|t[Fogo Solar]
+    .train 416044 >> |cRXP_WARN_Use a|r |T134419:0|t[|cRXP_FRIENDLY_Runa do Sol|r] |cRXP_WARN_para treinar|r |T236216:0|t[Fogo Solar]
     .use 206989
     .itemcount 206989,1
 step
@@ -3730,7 +3730,7 @@ step << Shaman/Druid
 step << Warrior
     .goto Mulgore,45.66,58.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mahnott Ferida Aberta|r
-    .vendor >> Lixo. Venda sua arma se der a você dinheiro suficiente para uma |T133053:0|t[Marreta de Madeira] (7s 1c). Você voltará mais tarde se ainda não tiver o suficiente
+    .vendor >> Lixo de vendedor. Venda sua arma se ela render dinheiro suficiente para uma |T133053:0|t[Marreta de Madeira] (7s 1c). Volte depois se ainda não tiver o suficiente
     .target Mahnott Roughwound
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.9
@@ -3750,7 +3750,7 @@ step << Hunter
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.0
 step << Hunter
     .goto Mulgore,45.50,58.47
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Conversar com|r |cRXP_FRIENDLY_Kennah|r|cRXP_BUY_. Compre um|r |T135611:0|t[Bacamarte Ornado] |cRXP_BUY_dele|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Fale com|r |cRXP_FRIENDLY_Kennah|r|cRXP_BUY_. Compre um|r |T135611:0|t[Bacamarte Ornado] |cRXP_BUY_dele|r
     .collect 2509,1,761,1 --Collect Ornate Blunderbuss (1)
     .money <0.0414
     .itemStat 18,QUALITY,<7
@@ -3786,11 +3786,11 @@ step << Hunter
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.0
 step << Tauren
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Maur|r, |cRXP_FRIENDLY_Zarlman|r, |cRXP_FRIENDLY_Harken|r e |cRXP_FRIENDLY_Mull|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Maur|r, |cRXP_FRIENDLY_Zarlman|r, |cRXP_FRIENDLY_Harken|r e |cRXP_FRIENDLY_Mull|r
     .accept 766 >>Aceite Mazzranache
     .target +Maur Raincaller
     .goto Mulgore,46.97,57.07
-    .turnin 767 >>Entregue Rito de Visão
+    .turnin 767 >>Entregue Rito de visão
     .accept 771 >>Aceite Rito de visão
     .target +Zarlman Two-Moons
     .goto Mulgore,47.76,57.53
@@ -3801,11 +3801,11 @@ step << Tauren
     .target +Mull Thunderhorn
     .goto Mulgore,48.53,60.40
 step << !Tauren
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Maur|r, |cRXP_FRIENDLY_Zarlman|r e |cRXP_FRIENDLY_Harken|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Maur|r, |cRXP_FRIENDLY_Zarlman|r e |cRXP_FRIENDLY_Harken|r
     .accept 766 >>Aceite Mazzranache
     .target +Maur Raincaller
     .goto Mulgore,46.97,57.07
-    .turnin 767 >>Entregue Rito de Visão
+    .turnin 767 >>Entregue Rito de visão
     .accept 771 >>Aceite Rito de visão
     .target +Zarlman Two-Moons
     .goto Mulgore,47.76,57.53
@@ -3815,14 +3815,14 @@ step << !Tauren
 step
     #sticky
     #completewith Well
-    >>|cRXP_WARN_Obtenha os itens para Mazzranache enquanto você cumpre missões por toda a zona|r
+    >>|cRXP_WARN_Pegue os itens para Mazzranache enquanto faz missões por toda a zona|r
     .complete 766,1 --Prairie Wolf Heart (1)
     .complete 766,2 --Flatland Cougar Femur (1)
     .complete 766,3 --Plainstrider Scale (1)
     .complete 766,4 --Swoop Gizzard (1)
 step << Tauren
     #completewith Ambercorns
-    >>Mate os |cRXP_ENEMY_Prairie Wolves|r e os |cRXP_ENEMY_Adult Plainstriders|r. Saque-os para obter seus |cRXP_LOOT_Paws|r e |cRXP_LOOT_Garras|r
+    >>Mate os |cRXP_ENEMY_Prairie Wolves|r e os |cRXP_ENEMY_Adult Plainstriders|r. Saqueie-os para obter seus |cRXP_LOOT_Paws|r e |cRXP_LOOT_Garras|r
     .complete 748,1 --Prairie Wolf Paw (6)
     .mob +Prairie Wolf
     .complete 748,2 --Plainstrider Talon (4)
@@ -3830,15 +3830,15 @@ step << Tauren
 step << Hunter
     #season 2
     .goto Mulgore,59.02,54.36
-    >>Invoque |T132212:0|t[Marca do Caçador] no |cRXP_ENEMY_Farfalhar Arbusto|r
-    >>Mate o |cRXP_ENEMY_Venture Co. Poacher|r que aparece. Saqueie-o para |T134419:0|t[|cRXP_FRIENDLY_Runa de Precisão|r]
+    >>Use a |T132212:0|t[Marca do Caçador] no |cRXP_ENEMY_Rustling Arbusto|r
+    >>Mate o |cRXP_ENEMY_Venture Co. Poacher|r que aparece. Saqueie-o para obter |T134419:0|t[|cRXP_FRIENDLY_Rune of Precisão|r]
     .collect 206155,1 --Rune of Marksmanship (1)
     .mob Rustling Bush
     .mob Venture Co. Poacher
     .train 410113,1
 step << Hunter
     #season 2
-    .train 410113 >>Usar o |T134419:0|t[|cRXP_FRIENDLY_Runa de Precisão|r]
+    .train 410113 >>Usar a |T134419:0|t[|cRXP_FRIENDLY_Rune of Precisão|r]
     .use 206155
     .itemcount 206155,1
 step
@@ -3850,7 +3850,7 @@ step
     .goto Mulgore,51.92,63.85,15,0
     .goto Mulgore,51.13,71.06,15,0
     .goto Mulgore,50.36,66.49,15,0
-    >>Colete os |cRXP_PICK_Ambercorns|r. Eles podem ser encontrados sob as árvores no chão
+    >>Colete os |cRXP_PICK_Ambercorns|r. Encontram-se sob as árvores no chão
     .complete 771,2 --Ambercorn (2)
 step
 	#completewith next
@@ -3874,7 +3874,7 @@ step << Tauren
 	.goto Mulgore,48.60,69.43,50,0
 	.goto Mulgore,45.98,69.70,50,0
 	.goto Mulgore,48.58,67.37,50,0
-    >>Mate os |cRXP_ENEMY_Prairie Wolves|r e os |cRXP_ENEMY_Adult Plainstriders|r. Saque-os para obter seus |cRXP_LOOT_Paws|r e |cRXP_LOOT_Garras|r
+    >>Mate os |cRXP_ENEMY_Prairie Wolves|r e os |cRXP_ENEMY_Adult Plainstriders|r. Saqueie-os para obter seus |cRXP_LOOT_Paws|r e |cRXP_LOOT_Garras|r
     .complete 748,1 --Prairie Wolf Paw (6)
     .mob +Prairie Wolf
     .complete 748,2 --Plainstrider Talon (4)
@@ -3908,7 +3908,7 @@ step
 step
     #xprate <2.1
     #completewith Gnolls
-    >>|cRXP_WARN_Obtenha os itens para Mazzranache enquanto você cumpre missões por toda a zona|r
+    >>|cRXP_WARN_Pegue os itens para Mazzranache enquanto faz missões por toda a zona|r
     .complete 766,1 --Prairie Wolf Heart (1)
     .complete 766,2 --Flatland Cougar Femur (1)
     .complete 766,3 --Plainstrider Scale (1)
@@ -3921,8 +3921,8 @@ step << Warrior
     .goto Mulgore,48.3,72.0,0
     .goto Mulgore,53.5,73.0,90,0
     .goto Mulgore,48.3,72.0,90,0
-    >>Vá e volte entre os dois acampamentos. Abata os |cRXP_ENEMY_Palemane Tanners|r, os |cRXP_ENEMY_Palemane Skinners|r e os |cRXP_ENEMY_Palemane Poachers|r. Saque-os para a |cRXP_LOOT_Cortado Gnoll Cabeça|r
-    >>|cRXP_WARN_Tenha cuidado com|r |cRXP_ENEMY_Lança Infame|r |cRXP_WARN_(Nível 9 raro). É muito difícil de matar.|r
+    >>Vá de um lado a outro entre os dois acampamentos. Mate os |cRXP_ENEMY_Palemane Tanners|r, os |cRXP_ENEMY_Palemane Skinners|r e os |cRXP_ENEMY_Palemane Poachers|r. Saqueie-os para obter uma |cRXP_LOOT_Cabeça de Gnoll Decepada|r
+    >>|cRXP_WARN_Cuidado com|r |cRXP_ENEMY_Lança Infame|r |cRXP_WARN_(Nível 9 Raro). É muito difícil de matar.|r
     .complete 745,1 --Palemane Tanner (10)
     .mob +Palemane Tanner
     .complete 745,2 --Palemane Skinner (8)
@@ -3940,8 +3940,8 @@ step
     .goto Mulgore,48.3,72.0,0
     .goto Mulgore,53.5,73.0,90,0
     .goto Mulgore,48.3,72.0,90,0
-    >>Vá de um lado para o outro entre os dois acampamentos. Mate os |cRXP_ENEMY_Palemane Tanners|r, os |cRXP_ENEMY_Palemane Skinners|r e os |cRXP_ENEMY_Palemane Poachers|r
-    >>|cRXP_WARN_Tenha cuidado com|r |cRXP_ENEMY_Lança Infame|r |cRXP_WARN_(Nível 9 raro). É muito difícil de matar.|r
+    >>Vá de um lado a outro entre os dois acampamentos. Mate os |cRXP_ENEMY_Palemane Tanners|r, os |cRXP_ENEMY_Palemane Skinners|r e os |cRXP_ENEMY_Palemane Poachers|r
+    >>|cRXP_WARN_Cuidado com|r |cRXP_ENEMY_Lança Infame|r |cRXP_WARN_(Nível 9 Raro). É muito difícil de matar.|r
     .complete 745,1 --Palemane Tanner (10)
     .mob +Palemane Tanner
     .complete 745,2 --Palemane Skinner (8)
@@ -3954,14 +3954,14 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Jhauna Ventos d'Aveia|r
     >>|cRXP_BUY_Compre|r |T132815:0|t[Leite Gelado] |cRXP_BUY_dela|r << Shaman/Druid
     >>|cRXP_BUY_Compre|r |T133968:0|t[Pão Fresquinho] |cRXP_BUY_dela|r << Warrior
-    .vendor >> Lixo Comerciante
+    .vendor >> Venda os lixos
     .collect 1179,10,746,1 << Shaman/Druid --Ice Cold Milk (10)
     .collect 4541,10,746,1 << Warrior --Freshly Baked Bread (10)
     .target Jhawna Oatwind
     .money <0.025
 step << Tauren
     #xprate <2.1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mull|r e |cRXP_FRIENDLY_Baine|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Mull|r e |cRXP_FRIENDLY_Baine|r
     .turnin 754 >>Entregue A purificação de Casco Invernal
     .accept 756 >>Aceite Totem de Chifre Troante
     .target +Mull Thunderhorn
@@ -3972,7 +3972,7 @@ step << Tauren
 step << !Tauren
     #xprate <2.1
     .goto Mulgore,47.51,60.16
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mull|r e |cRXP_FRIENDLY_Baine|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Mull|r e |cRXP_FRIENDLY_Baine|r
     .turnin 745 >>Entregue Dividindo a terra
     .target Baine Bloodhoof
 step << Tauren
@@ -4004,7 +4004,7 @@ step << Shaman/Druid
 step << Warrior
     .goto Mulgore,45.66,58.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mahnott Ferida Aberta|r
-    .vendor >> Lixo. Venda sua arma se der a você dinheiro suficiente para uma |T133053:0|t[Marreta de Madeira] (7s 1c). Você voltará mais tarde se ainda não tiver o suficiente
+    .vendor >> Lixo de vendedor. Venda sua arma se ela render dinheiro suficiente para uma |T133053:0|t[Marreta de Madeira] (7s 1c). Volte depois se ainda não tiver o suficiente
     .target Mahnott Roughwound
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.9
@@ -4024,7 +4024,7 @@ step << Hunter
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.0
 step << Hunter
     .goto Mulgore,45.50,58.47
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Conversar com|r |cRXP_FRIENDLY_Kennah|r|cRXP_BUY_. Compre um|r |T135611:0|t[Bacamarte Ornado] |cRXP_BUY_dele|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Fale com|r |cRXP_FRIENDLY_Kennah|r|cRXP_BUY_. Compre um|r |T135611:0|t[Bacamarte Ornado] |cRXP_BUY_dele|r
     .collect 2509,1,749,1 --Collect Ornate Blunderbuss (1)
     .money <0.0414
     .itemStat 18,QUALITY,<7
@@ -4058,7 +4058,7 @@ step
     .goto Mulgore,47.76,57.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zarlman Duas Luas|r
     >>|cRXP_WARN_Não siga o lobo que aparecer|r
-    .turnin 771 >>Entregue Rito de Visão
+    .turnin 771 >>Entregue Rito de visão
     .accept 772 >>Aceite Rito de visão
     .target Zarlman Two-Moons
 step << Hunter
@@ -4078,7 +4078,7 @@ step << Druid
 step << Warrior
     #xprate <2.1
     .goto Mulgore,49.52,60.58
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Krang|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Krang Casco de Pedra|r
     .train 284 >> Treine suas magias de classe
     .target Krang Stonehoof
     .xp <8,1
@@ -4107,7 +4107,7 @@ step
 step
     #xprate <2.1
     #completewith Clawsx
-    >>|cRXP_WARN_Obtenha os itens para Mazzranache enquanto você cumpre missões por toda a zona|r
+    >>|cRXP_WARN_Pegue os itens para Mazzranache enquanto faz missões por toda a zona|r
     .complete 766,1 --Prairie Wolf Heart (1)
     .complete 766,2 --Flatland Cougar Femur (1)
     .complete 766,3 --Plainstrider Scale (1)
@@ -4192,7 +4192,7 @@ step << Warrior
     #xprate <2.1
     .goto Mulgore,45.66,58.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mahnott Ferida Aberta|r
-    .vendor >> Lixo. Venda sua arma se der a você dinheiro suficiente para uma |T133053:0|t[Marreta de Madeira] (7s 1c). Você voltará mais tarde se ainda não tiver o suficiente
+    .vendor >> Lixo de vendedor. Venda sua arma se ela render dinheiro suficiente para uma |T133053:0|t[Marreta de Madeira] (7s 1c). Volte depois se ainda não tiver o suficiente
     .target Mahnott Roughwound
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.9
@@ -4215,7 +4215,7 @@ step << Hunter
 step << Hunter
     #xprate <2.1
     .goto Mulgore,45.50,58.47
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Conversar com|r |cRXP_FRIENDLY_Kennah|r|cRXP_BUY_. Compre um|r |T135611:0|t[Bacamarte Ornado] |cRXP_BUY_dele|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Fale com|r |cRXP_FRIENDLY_Kennah|r|cRXP_BUY_. Compre um|r |T135611:0|t[Bacamarte Ornado] |cRXP_BUY_dele|r
     .collect 2509,1,743,1 --Collect Ornate Blunderbuss (1)
     .money <0.0414
     .itemStat 18,QUALITY,<7
@@ -4312,7 +4312,7 @@ step << Druid
     .xp <10,1
 step << Warrior
     .goto Mulgore,49.52,60.58
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Krang|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Krang Casco de Pedra|r
     .train 284 >> Treine suas magias de classe
     .target Krang Stonehoof
     .xp <8,1
@@ -4320,7 +4320,7 @@ step << Warrior
 step << Warrior
     #optional
     .goto Mulgore,49.52,60.58
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Krang|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Krang Casco de Pedra|r
     .trainer >> Treine suas magias de classe
     .accept 1505 >>Aceite Veterano Uzzek
     .target Krang Stonehoof
@@ -4336,7 +4336,7 @@ step << Hunter
     #optional
     .goto Mulgore,47.81,55.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Yaw Crina Cortante|r
-    .accept 6061 >>Aceite Domando a Fera
+    .accept 6061 >>Aceite Adestramento da Fera - Missão
     .trainer >> Treine suas magias de classe
     .target Yaw Sharpmane
     .xp <10,1
@@ -4347,7 +4347,7 @@ step << Hunter
     .goto Mulgore,42.87,54.88,50,0
     .goto Mulgore,40.73,55.60,50,0
     .goto Mulgore,39.38,57.43,50,0
-    .use 15914 >> |cRXP_WARN_Use o seu|r |T132164:0|t[Bastão de Adestramento] |cRXP_WARN_em um|r |cRXP_ENEMY_Pinote Adulto|r |cRXP_WARN_na distância máxima|r
+    .use 15914 >> |cRXP_WARN_Use seu|r |T132164:0|t[Bastão de Adestramento] |cRXP_WARN_em um|r |cRXP_ENEMY_Pinote Adulto|r |cRXP_WARN_ao alcance máximo|r
     .complete 6061,1 --Tame an Adult Plainstrider (1)
     .mob Adult Plainstrider
     .isOnQuest 6061
@@ -4355,15 +4355,15 @@ step << Hunter
     #optional
     .goto Mulgore,47.81,55.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Yaw Crina Cortante|r
-    .turnin 6061 >>Entregue Domar a Fera - Missão
-    .accept 6087 >>Aceite Domando a Fera
+    .turnin 6061 >>Entregue Adestramento da Fera - Missão
+    .accept 6087 >>Aceite Adestramento da Fera - Missão
     .target Yaw Sharpmane
     .isQuestComplete 6061
 step << Hunter
     #optional
     .goto Mulgore,47.81,55.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Yaw Crina Cortante|r
-    .accept 6087 >>Aceite Domando a Fera
+    .accept 6087 >>Aceite Adestramento da Fera - Missão
     .target Yaw Sharpmane
     .isQuestTurnedIn 6061
 step << Hunter
@@ -4382,8 +4382,8 @@ step << Hunter
     #optional
     .goto Mulgore,47.81,55.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Yaw Crina Cortante|r
-    .turnin 6087 >>Entregue Domar a Fera - Missão
-    .accept 6088 >>Aceite Domando a Fera
+    .turnin 6087 >>Entregue Adestramento da Fera - Missão
+    .accept 6088 >>Aceite Adestramento da Fera - Missão
     .target Yaw Sharpmane
     .isQuestTurnedIn 6061
 step << Hunter
@@ -4402,8 +4402,8 @@ step << Hunter
     #optional
     .goto Mulgore,47.81,55.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Yaw Crina Cortante|r
-    .turnin 6088 >>Entregue Domar a Fera - Missão
-    .accept 6089 >>Aceite Treinando a Fera
+    .turnin 6088 >>Entregue Adestramento da Fera - Missão
+    .accept 6089 >>Aceite Treinamento da Fera - Missão
     .target Yaw Sharpmane
     .isQuestTurnedIn 6061
 step
@@ -4438,7 +4438,7 @@ step << Tauren
 step << Shaman
     #season 2
     #completewith next
-    >>Abata os |cRXP_ENEMY_Bael'dun Diggers|r e os |cRXP_ENEMY_Bael'dun Appraisers|r. Saque-os para a |cRXP_LOOT_Artefato Chave de Armazenamento|r
+    >>Abate |cRXP_ENEMY_Bael'dun Diggers|r e |cRXP_ENEMY_Bael'dun Appraisers|r. Saque-os para o |cRXP_LOOT_Artifact Storage Chave|r
     .collect 206975,1 --Artifact Storage Key (1)
     .mob Bael'dun Digger
     .mob Bael'dun Appraiser
@@ -4446,7 +4446,7 @@ step << Shaman
 step
     .goto Mulgore,31.27,49.87
     >>Mate |cRXP_ENEMY_Escavadores de Bael'Dun|r e |cRXP_ENEMY_Avaliadores de Bael'Dun|r. Pegue suas |cRXP_LOOT_Picaretas do Prospector|r
-    >>|cRXP_WARN_Tenha cuidado pois |cRXP_ENEMY_Bael'dun Appraisers|r lançam|r |T135929:0|t[Cura Inferior] |cRXP_WARN_(Ranged Cast: Heals themselves or a nearby mob below 50% dos pontos de vida for about 75 health)|r
+    >>|cRXP_WARN_Tenha cuidado pois |cRXP_ENEMY_Bael'dun Appraisers|r lançam|r |T135929:0|t[Cura Inferior] |cRXP_WARN_(Lançamento à distância: Curam a si mesmos ou um inimigo próximo abaixo de 50% dos pontos de vida por cerca de 75 pontos de vida)|r
     .use 4702 >> Arrebente o |T134707:0|t[Picks] na Forja
     .complete 746,1 --Broken Tools (5)
     .mob Bael'dun Digger
@@ -4463,8 +4463,8 @@ step << Shaman
     .goto Mulgore,30.98,48.24,40,0
     .goto Mulgore,31.59,48.19,40,0
     .goto Mulgore,33.10,47.69,40,0
-    >>Abata os |cRXP_ENEMY_Bael'dun Diggers|r e os |cRXP_ENEMY_Bael'dun Appraisers|r. Saque-os para a |cRXP_LOOT_Artefato Chave de Armazenamento|r
-    >>|cRXP_WARN_Tenha cuidado pois |cRXP_ENEMY_Bael'dun Appraisers|r lançam|r |T135929:0|t[Cura Inferior] |cRXP_WARN_(Ranged Cast: Heals themselves or a nearby mob below 50% dos pontos de vida for about 75 health)|r
+    >>Abate |cRXP_ENEMY_Bael'dun Diggers|r e |cRXP_ENEMY_Bael'dun Appraisers|r. Saque-os para o |cRXP_LOOT_Artifact Storage Chave|r
+    >>|cRXP_WARN_Tenha cuidado pois |cRXP_ENEMY_Bael'dun Appraisers|r lançam|r |T135929:0|t[Cura Inferior] |cRXP_WARN_(Lançamento à distância: Curam a si mesmos ou um inimigo próximo abaixo de 50% dos pontos de vida por cerca de 75 pontos de vida)|r
     .collect 206975,1 --Artifact Storage Key (1)
     .mob Bael'dun Digger
     .mob Bael'dun Appraiser
@@ -4472,7 +4472,7 @@ step << Shaman
 step << Shaman
     #season 2
     .goto Mulgore,31.56,49.54
-    >>Abra o |cRXP_PICK_Artefato Armazenamento|r baú. Saque-o para o |T134918:0|t|cRXP_LOOT_[Ícone Sulfúreo]|r
+    >>Abra o |cRXP_PICK_Artifact Storage|r baú. Saque-o para o |T134918:0|t|cRXP_LOOT_[Ícone Sulfúreo]|r
     .collect 206388,1 --Sulfurous Icon (1)
     .train 425344,1
 step << Shaman
@@ -4485,8 +4485,8 @@ step << Shaman
     #season 2
     #label MoltenBlast
     #completewith Burial
-    .aura 408828 >>|cRXP_WARN_Mate inimigos tendo causado dano usando|r |T136026:0|t[Choque Terreno] |cRXP_WARN_neles pelo menos uma vez. Faça isto 10 vezes para ganhar|r |T136116:0|t[Inspirado] |cRXP_WARN_Bônus|r
-    >>|cRXP_WARN_AVISO: Você deve fazer isto em inimigos que possam fornecer experiência para ganhar camadas|r
+    .aura 408828 >>|cRXP_WARN_Abate inimigos tendo causado dano com|r |T136026:0|t[Choque Terreno] |cRXP_WARN_neles pelo menos uma vez. Faça isto 10 vezes para obter|r |T136116:0|t[Inspirado] |cRXP_WARN_efeito|r
+    >>|cRXP_WARN_NOTA: Você deve fazer isto em inimigos que podem fornecer experiência para ganhar acúmulos|r
     .mob Bael'dun Digger
     .mob Bael'dun Appraiser
     .train 425344,1
@@ -4506,7 +4506,7 @@ step << Warrior
 	.goto Mulgore,33.82,40.26,50,0
 	.goto Mulgore,34.48,41.21,50,0
 	.goto Mulgore,34.50,42.29,50,0
-    >>Abata os |cRXP_ENEMY_Fúria dos Ventos Vento Bruxas|r e os |cRXP_ENEMY_Fúria dos Ventos Harpias|r. Saque-os para suas |cRXP_LOOT_Garras|r e a |cRXP_LOOT_Cortado Harpia Cabeça|r
+    >>Abate |cRXP_ENEMY_Windfury Vento Witches|r e |cRXP_ENEMY_Windfury Harpies|r. Saque-os para as |cRXP_LOOT_Garras|r e uma |cRXP_LOOT_Severed Harpia Cabeça|r
     .complete 743,1 --Windfury Talon (8)
     .collect 206995,1 ---Severed Harpy Head (1)
     .mob Windfury Wind Witch
@@ -4532,13 +4532,13 @@ step
     .mob Windfury Harpy
 step
     #completewith next
-    .goto Mulgore,33.37,36.52,50 >> Entre na caverna logo ao norte das Harpias Fúria dos Ventos
+    .goto Mulgore,33.37,36.52,50 >> Entre na caverna logo ao norte das Harpias da Fúria dos Ventos
 step
     #xprate <2.1
 	#label Burial
     .goto Mulgore,32.72,36.09
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Vidente Trilha Astuta|r
-    .turnin 772 >>Entregue Rito de Visão
+    .turnin 772 >>Entregue Rito de visão
     .accept 773 >>Aceite Rito de sabedoria
     .target Seer Wiserunner
 step
@@ -4546,12 +4546,12 @@ step
 	#label Burial
     .goto Mulgore,32.72,36.09
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Vidente Trilha Astuta|r
-    .turnin 772 >>Entregue Rito de Visão
+    .turnin 772 >>Entregue Rito de visão
     .target Seer Wiserunner
 step << Shaman
     #season 2
     #requires MoltenBlast
-    .cast 402265 >>|cRXP_WARN_Use o|r |T134918:0|t|cRXP_LOOT_[Ícone Sulfúreo]|r |cRXP_WARN_para aprender|r |T133816:0|t[Entalhe de Luvas: Impacto Derretido]
+    .cast 402265 >>|cRXP_WARN_Use o|r |T134918:0|t|cRXP_LOOT_[Ícone Sulfúreo]|r |cRXP_WARN_para aprender|r |T133816:0|t[Engrave Gloves: Impacto Derretido]
     .use 206388
     .aura -408828
     .itemStat 18,QUALITY,2
@@ -4569,8 +4569,8 @@ step << Druid/Hunter/Shaman
 step << Shaman
     #season 2
     .goto Thunder Bluff,39.45,65.86
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Javaton Totem das Sombras|r
-    >>|cRXP_WARN_Ele está|r |T132320:0|t[Furtivo]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Javaton Totem das Sombras|r
+    >>|cRXP_WARN_Ele é|r |T132320:0|t[Furtivo]
     .accept 76156 >>Aceite À espreita com a Mãe Terra
     .target Boarton Shadetotem
     .train 410104,1
@@ -4591,7 +4591,7 @@ step << Druid
 step << Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Turak Runa Totem|r
     .goto Thunder Bluff,76.7,27.3
-    .turnin 5928 >>Entregue Heeding the Call - Missão - Missão - Missão
+    .turnin 5928 >>Entregue Heeding the Call - Missão
     .accept 5922 >>Aceite Moonglade
     .target Turak Runetotem
     .isOnQuest 5928
@@ -4608,7 +4608,7 @@ step << Druid
 step << Druid
     .goto Moonglade,56.21,30.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dendrite Stellardor|r
-    .turnin 5922 >>Entregue Moonglade
+    .turnin 5922 >>Vá para Moonglade
     .accept 5930 >>Aceite Espírito do Grande Urso
     .target Dendrite Starblaze
     .isOnQuest 5922
@@ -4648,7 +4648,7 @@ step << Druid
     #completewith next
     .goto Moonglade,44.29,45.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Bonthen Vento do Prado|r
-    .fly Thunder Bluff >> Voe para Penhasco do Trovão
+    .fly Thunder Bluff >> Voe para Trovão Blefe
     .target Bunthen Plainswind
     .cooldown item,6948,<0
 step << Druid
@@ -4673,13 +4673,13 @@ step << Hunter
     .isQuestTurnedIn 6089
 step << Hunter
     #completewith SacredBurial
-    +|cRXP_WARN_Arrastar|r |T132162:0|t[Treinamento de Feras] |cRXP_WARN_para suas barras de ação. Ensine habilidades ao seu mascote|r
+    +|cRXP_WARN_Arrastar|r |T132162:0|t[Treinamento de Feras] |cRXP_WARN_Nas suas barras de ação. Ensine habilidades para seu mascote|r
     .isQuestTurnedIn 6089
 step << Druid/Hunter/Shaman
     #xprate <2.1
     .goto Thunder Bluff,53.81,27.82,30,0
     .goto Mulgore,59.85,25.62
-    .zone Mulgore >>Saia do Penhasco do Trovão perto do elevador do norte
+    .zone Mulgore >>Saia de Penhasco do Trovão pelo elevador norte
     .zoneskip Thunder Bluff,1
     .isQuestTurnedIn 6089 << Hunter
     .isQuestTurnedIn 5932 << Druid
@@ -4727,7 +4727,7 @@ step << Warrior
     #xprate <2.1
     #season 2
     #completewith RiteofWisdom
-    >>Abata os |cRXP_ENEMY_Costagulha Intrusos|r. Saque-os para a |cRXP_LOOT_Cortado Quilboar Cabeça|r
+    >>Abate |cRXP_ENEMY_Bristleback Interlopers|r. Saque-os para uma |cRXP_LOOT_Severed Quilboar Cabeça|r
     .collect 206994,1 ---Severed Quilboar Head (1)
     .mob Bristleback Interloper
     .train 403475,1
@@ -4760,7 +4760,7 @@ step << Warrior
 	.goto Mulgore,60.16,21.06,25,0
 	.goto Mulgore,60.41,21.96,25,0
 	.goto Mulgore,61.12,22.88,25,0
-    >>Abata |cRXP_ENEMY_Intrusos Costagulha|r. Saqueie-os por uma |cRXP_LOOT_Cabeça de Quilboar Cortada|r
+    >>Abate |cRXP_ENEMY_Bristleback Interlopers|r. Saque-os para uma |cRXP_LOOT_Severed Quilboar Cabeça|r
     .complete 833,1 --Bristleback Interloper (8)
     .collect 206994,1 ---Severed Quilboar Head (1)
     .mob Bristleback Interloper
@@ -4852,9 +4852,9 @@ step << skip --Cannon removed from game
     #softcore
     #completewith Bloodhoofturnins1
     .goto Thunder Bluff,41.17,67.66
-    +Clique no |cRXP_PICK_Ultra Canhão|r para se impulsionar de volta a Aldeia de Bloodhoof
-    >>|cRXP_WARN_Você morrerá ao chegar, mas pode voltar instantaneamente|r
-    >>|cRXP_WARN_Remova suas|r |T135992:0|t[Asas Mágicas] |cRXP_WARN_bônus quando elas tiverem 2 segundos restantes para tentar pousar no rio e evitar a morte
+    +Clique em |cRXP_PICK_Ultra Canhão|r para se lançar de volta a Bloodhoof Village
+    >>|cRXP_WARN_Você vai morrer ao chegar, mas pode renascer instantaneamente|r
+    >>Remover seu|cRXP_WARN_ |T135992:0|t[Asas Mágicas] |rbuff quando tiver 2 segundos restantes para tentar pousar no rio e evitar a morte|cRXP_WARN_
     .zoneskip Thunder Bluff,1
 step
     #completewith Bloodhoofturnins1
@@ -4865,7 +4865,7 @@ step
     #completewith Bloodhoofturnins1
     .goto Mulgore,48.22,38.85
     .deathskip >> Morra e reviva no |cRXP_FRIENDLY_Anjo da Cura|r
-    >>|cRXP_WARN_Morra na seta do marcador ou mais ao sul dela|r
+    >>|cRXP_WARN_Morra na seta do ponto de referência ou mais ao sul dela|r
     .zoneskip Thunder Bluff
 step
     #hardcore
@@ -4888,8 +4888,8 @@ step << Warrior
     #xprate <2.1
     #season 2
     .goto Mulgore,46.29,61.76
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Vateya|r em Bloodhoof Village
-    >>Entregue as |cRXP_LOOT_Cabeças|r que você coletou em troca de |T134455:0|t[Runa Fragmentos]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com Vateya em Bloodhoof Village
+    >>Entregue as |cRXP_LOOT_Cabeças|r que coletou em troca de |T134455:0|t[Runa Fragmentos]
     .collect 204688,1 --Monster Hunter's First Rune Fragment (1)
     .collect 204689,1 --Monster Hunter's Second Rune Fragment (1)
     .collect 204690,1 --Monster Hunter's Third Rune Fragment (1)
@@ -4898,13 +4898,13 @@ step << Warrior
 step << Warrior
     #xprate <2.1
     #season 2
-    .use 204688 >>Usar os |T134455:0|t[Runa Fragmentos] para criar |T134419:0|t[|cRXP_FRIENDLY_Runa de Devastar|r]
+    .use 204688 >>Usar |T134455:0|t[Runa Fragmentos] para criar |T134419:0|t[|cRXP_FRIENDLY_Rune of Devastar|r]
     .collect 204703,1 --Rune of Devastate (1)
     .train 403475,1
 step << Warrior
     #xprate <2.1
     #season 2
-    .train 403475 >>Usar |T134419:0|t[|cRXP_FRIENDLY_Runa de Devastar|r]
+    .train 403475 >>Usar |T134419:0|t[|cRXP_FRIENDLY_Rune of Devastar|r]
     .use 204703
     .itemcount 204703,1
 step << Tauren
@@ -4995,14 +4995,14 @@ step << Hunter
     .target Kennah Hawkseye
 step << Warrior
     .goto Mulgore,49.52,60.58
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Krang|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Krang Casco de Pedra|r
     .train 2687 >>Treine suas magias de classe
     .accept 1505 >>Aceite Veterano Uzzek
     .target Krang Stonehoof
 step << Warrior
     #optional
     .goto Mulgore,49.52,60.58
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Krang|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Krang Casco de Pedra|r
     .train 7384 >>Treine suas magias de classe
     .target Krang Stonehoof
     .xp <12,1
@@ -5022,7 +5022,7 @@ step << Shaman
 step << Hunter
     .goto Mulgore,47.81,55.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Yaw Crina Cortante|r
-    .accept 6061 >>Aceite Domando a Fera
+    .accept 6061 >>Aceite Adestramento da Fera - Missão
     .train 13165 >>Treine suas magias de classe
     .target Yaw Sharpmane
     .isQuestAvailable 6061
@@ -5053,14 +5053,14 @@ step << Hunter
     .goto Mulgore,42.87,54.88,50,0
     .goto Mulgore,40.73,55.60,50,0
     .goto Mulgore,39.38,57.43,50,0
-    .use 15914 >> |cRXP_WARN_Use o seu|r |T132164:0|t[Bastão de Adestramento] |cRXP_WARN_em um|r |cRXP_ENEMY_Pinote Adulto|r |cRXP_WARN_na distância máxima|r
+    .use 15914 >> |cRXP_WARN_Use seu|r |T132164:0|t[Bastão de Adestramento] |cRXP_WARN_em um|r |cRXP_ENEMY_Pinote Adulto|r |cRXP_WARN_ao alcance máximo|r
     .complete 6061,1 --Tame an Adult Plainstrider (1)
     .mob Adult Plainstrider
 step << Hunter
     .goto Mulgore,47.81,55.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Yaw Crina Cortante|r
-    .turnin 6061 >>Entregue Domar a Fera - Missão
-    .accept 6087 >>Aceite Domando a Fera
+    .turnin 6061 >>Entregue Adestramento da Fera - Missão
+    .accept 6087 >>Aceite Adestramento da Fera - Missão
     .target Yaw Sharpmane
 step << Hunter
     #loop
@@ -5075,8 +5075,8 @@ step << Hunter
 step << Hunter
     .goto Mulgore,47.81,55.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Yaw Crina Cortante|r
-    .turnin 6087 >>Entregue Domar a Fera - Missão
-    .accept 6088 >>Aceite Domando a Fera
+    .turnin 6087 >>Entregue Adestramento da Fera - Missão
+    .accept 6088 >>Aceite Adestramento da Fera - Missão
     .target Yaw Sharpmane
 step << Hunter
     #loop
@@ -5091,8 +5091,8 @@ step << Hunter
 step << Hunter
     .goto Mulgore,47.81,55.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Yaw Crina Cortante|r
-    .turnin 6088 >>Entregue Domar a Fera - Missão
-    .accept 6089 >>Aceite Treinando a Fera
+    .turnin 6088 >>Entregue Adestramento da Fera - Missão
+    .accept 6089 >>Aceite Treinamento da Fera - Missão
     .target Yaw Sharpmane
 step
     .goto Mulgore,47.63,61.49
@@ -5137,7 +5137,7 @@ step << Hunter
     .goto Mulgore,65.56,59.37,50,0
     .goto Mulgore,67.62,59.06,50,0
     .goto Mulgore,66.34,67.01,50,0
-    .train 16828 >>|cRXP_WARN_Cast|r |T132164:0|t[Domar Fera] |cRXP_WARN_em um |cRXP_ENEMY_Lobo-da-pradaria Alfa|r. Ataque os inimigos com ele para aprender|r |T132140:0|t[Garra (Rank 3)]
+    .train 16828 >>|cRXP_WARN_Lance|r |T132164:0|t[Domar Fera] |cRXP_WARN_em um |cRXP_ENEMY_Lobo-da-pradaria Alfa|r. Ataque inimigos com ele para aprender|r |T132140:0|t[Garra (Rank 3)]
     .link https://www.wow-petopia.com/classic/training.php >> Clique no link para mais informações sobre treinamento de pets: https://www.wow-petopia.com/classic/training.php
     .mob Prairie Wolf Alpha
 step
@@ -5183,8 +5183,8 @@ step
 step
     #label Fizsprocket1
     .goto Mulgore,64.95,43.33
-    >>Abate |cRXP_ENEMY_Supervisor Geringonça|r. Saque a |cRXP_LOOT_Prancheta|r dela
-    >>|cRXP_WARN_Entre na mina e siga o lado direito/leste para alcançá-lo|r
+    >>Mate |cRXP_ENEMY_Supervisor Geringonça|r. Saque-o para obter sua |cRXP_LOOT_Prancheta|r
+    >>|cRXP_WARN_Corra para dentro da mina e abrace o lado direito/leste para alcançá-lo|r
     .complete 765,1 --Fizsprocket's Clipboard (1)
     .mob Supervisor Geringonça
 step
@@ -5247,7 +5247,7 @@ step << Druid
     .goto Mulgore,63.58,60.51,50,0
     .goto Mulgore,65.56,59.37,50,0
     .goto Mulgore,67.62,59.06,50,0
-    >>Mate os |cRXP_ENEMY_Flatland Prowlers|r e os |cRXP_ENEMY_Prairie Lobo Alphas|r. Saqueie-os para obter o |T134903:0|t[|cRXP_FRIENDLY_Ídolo de Raiva Ursina|r]
+    >>Mate os |cRXP_ENEMY_Flatland Prowlers|r e os |cRXP_ENEMY_Prairie Lobo Alphas|r. Saqueie-os para |T134903:0|t[|cRXP_FRIENDLY_Ídolo de Raiva Ursina|r]
     .collect 206954,1 --Idol of Ursine Rage (1)
     .mob Flatland Prowler
     .mob Prairie Wolf Alpha
@@ -5261,7 +5261,7 @@ step << Druid
 step << Druid
     #season 2
     #completewith next
-    +|cRXP_WARN_Mantenha 50+ de fúria por pelo menos 60 segundos para poder aprender|r |T132135:0|t[Destroçar]
+    +|cRXP_WARN_Mantenha 50+ de Fúria por pelo menos 60 segundos para conseguir aprender|r |T132135:0|t[Destroçar]
 step << Druid
     #season 2
     .train 410025 >> |cRXP_WARN_Use o|r |T134903:0|t[|cRXP_FRIENDLY_Ídolo de Raiva Ursina|r] |cRXP_WARN_para treinar|r |T132135:0|t[Destroçar]
@@ -5304,7 +5304,7 @@ step << Druid
     .goto The Barrens,44.45,59.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Omusa Chifre Troante|r
     .fp Camp Taurajo >> Aprenda a rota de voo de Acampamento Taurajo
-    .fly Thunder Bluff >>Voe para Penhasco do Trovão
+    .fly Thunder Bluff >>Voe para Trovão Blefe
     .target Omusa Thunderhorn
     .isQuestAvailable 5922
 step << Druid
@@ -5323,7 +5323,7 @@ step << Druid
 step << Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Turak Runa Totem|r
     .goto Thunder Bluff,76.7,27.3
-    .turnin 5928 >>Entregue Heeding the Call - Missão - Missão - Missão
+    .turnin 5928 >>Entregue Heeding the Call - Missão
     .accept 5922 >>Aceite Moonglade
     .target Arch Druid Hamuul Runetotem
     .target Turak Runetotem
@@ -5341,7 +5341,7 @@ step << Druid
 step << Druid
     .goto Moonglade,56.21,30.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dendrite Stellardor|r
-    .turnin 5922 >>Entregue Moonglade
+    .turnin 5922 >>Vá para Moonglade
     .accept 5930 >>Aceite Espírito do Grande Urso
     .target Dendrite Starblaze
 step << Druid
@@ -5370,7 +5370,7 @@ step << Druid
     #completewith next
     .goto Moonglade,44.29,45.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Bonthen Vento do Prado|r
-    .fly Thunder Bluff >> Voe para Penhasco do Trovão
+    .fly Thunder Bluff >> Voe para Trovão Blefe
     .target Bunthen Plainswind
     .zoneskip Thunder Bluff
     .cooldown item,6948,<0
@@ -5385,12 +5385,12 @@ step << Druid
     #completewith next
     .goto Thunder Bluff,47.00,49.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tal|r
-    .fly Camp Taurajo >>Voe para Camp Taurajo
+    .fly Camp Taurajo >>Voe para o Acampamento Taurajo
     .target Tal
     .zoneskip Thunder Bluff,1
 step << Druid
     .goto The Barrens,42.00,60.86
-    .use 15710 >>Corra para a Pedra Luastra e use o |T132857:0|t[Cenarion Lunardust]. Mate |cRXP_ENEMY_Lunagarra|r
+    .use 15710 >>Corra até a Pedra dos Luniscante e use o |T132857:0|t[Cenarion Lunardust]. Mate o |cRXP_ENEMY_Lunagarra|r
     >>|cRXP_WARN_Fique longe dos|r |cRXP_ENEMY_Cabeças-de-trovão|r |cRXP_WARN_na área|r
     .complete 6002,1 --Face Lunaclaw and earn the strength of body and heart it possesses. (1)
     .use 15710
@@ -5443,8 +5443,8 @@ step
     #xprate <2.1
     #completewith next
     >>Pegue |cRXP_LOOT_Cogumelos Carregados|r ao redor dos Charcos Esquecidos
-    >>|cRXP_WARN_Mantenha distância máxima de |cRXP_ENEMY_Kolkar|r |cRXP_WARN_enquanto coleta os cogumelos. Eles são nível 12-14|r
-    >>|cRXP_WARN_A continuação dessa missão tem o poderoso |cRXP_FRIENDLY_Mexedor de Caldeirão|r |cRXP_WARN_como recompensa. Você pode pular essa missão por enquanto se não pretender usá-lo|r
+    >>|cRXP_WARN_Mantenha distância máxima de|cRXP_ENEMY_ Kolkar|r |cRXP_WARN_ao saquear os cogumelos. Eles são nível 12-14|r
+    >>|cRXP_WARN_A continuação desta missão tem o poderoso |cRXP_FRIENDLY_Mexedor de Caldeirão|r |cRXP_WARN_como recompensa. Você pode pular esta missão por enquanto se não pretender usá-la|r
     .complete 848,1 --Collect Fungal Spores (x4)
 step
     #xprate <2.1
@@ -5460,8 +5460,8 @@ step
     .goto The Barrens,44.6,22.5,40,0
     .goto The Barrens,43.9,24.4,40,0
     >>Pegue |cRXP_LOOT_Cogumelos Carregados|r ao redor dos Charcos Esquecidos
-    >>|cRXP_WARN_Mantenha distância máxima de |cRXP_ENEMY_Kolkar|r |cRXP_WARN_na área. Eles são nível 12-14|r
-    >>|cRXP_WARN_A continuação dessa missão tem o poderoso |cRXP_FRIENDLY_Mexedor de Caldeirão|r |cRXP_WARN_como recompensa. Você pode pular essa missão por enquanto se não pretender usá-lo|r
+    >>|cRXP_WARN_Mantenha distância máxima de|cRXP_ENEMY_ Kolkar|r |cRXP_WARN_na área. Eles são nível 12-14|r
+    >>|cRXP_WARN_A continuação desta missão tem o poderoso |cRXP_FRIENDLY_Mexedor de Caldeirão|r |cRXP_WARN_como recompensa. Você pode pular esta missão por enquanto se não pretender usá-la|r
     .complete 848,1 --Collect Fungal Spores (x4)
 step
     #xprate <2.1
@@ -5472,7 +5472,7 @@ step
     #xprate <2.1
     #hardcore
     #completewith ZamahPickup
-    .subzone 380 >> Vá para a Encruzilhada
+    .subzone 380 >> Viaje de volta para a Encruzilhada
 step
     #xprate <2.1
     .goto The Barrens,52.26,31.93
@@ -5495,7 +5495,7 @@ step
     .goto The Barrens,51.44,30.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Boticário Hermógenes|r
     >>|cRXP_WARN_Espere a cena terminar|r
-    >>|cRXP_WARN_Isso inicia uma missão cronometrada de 45 minutos|r
+    >>|cRXP_WARN_Isto inicia uma missão com limite de 45 minutos|r
     .turnin 848 >>Entregue Esporos de Fungos
     .timer 7,Esporos de Fungos RP
     .accept 853 >>Aceite Boticária Zaqueia
@@ -5507,7 +5507,7 @@ step
     #label ZamahPickup
     .goto The Barrens,51.44,30.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Boticário Hermógenes|r
-    >>|cRXP_WARN_Isso inicia uma missão cronometrada de 45 minutos|r
+    >>|cRXP_WARN_Isto inicia uma missão com limite de 45 minutos|r
     .accept 853 >>Aceite Boticária Zaqueia
     .target Apothecary Helbrim
     .isQuestTurnedIn 848
@@ -5515,7 +5515,7 @@ step
     #xprate <2.1
     #sticky
     #completewith CauldronStirrer
-    +|cRXP_WARN_Você está em uma missão cronometrada, não fique ausente. Ela será entregue em torno de 5-10 minutos após a coleta|r
+    +|cRXP_WARN_Você está em uma missão cronometrada, não fique inativo. Ela será entregue automaticamente cerca de 5-10 minutos após ser aceita.|r
     .isOnQuest 853
 step
     .goto The Barrens,51.50,30.34
@@ -5527,13 +5527,13 @@ step
     #completewith CauldronStirrer
     .goto The Barrens,51.50,30.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Devrak|r
-    .fly Thunder Bluff >>Voe para Penhasco do Trovão
+    .fly Thunder Bluff >>Voe para Trovão Blefe
     .target Devrak
     .zoneskip Thunder Bluff
 step
     .goto Thunder Bluff,45.6,55.9
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ahanu|r
-    .turnin 6362 >>Voe para o Penhasco do Trovão
+    .turnin 6362 >>Entregue Voo para o Penhasco do Trovão
     .accept 6363 >>Aceite Tal, o Mestre de Mantícoras
     .target Ahanu
 step
@@ -5564,7 +5564,7 @@ step << Hunter
 step << Hunter
     .goto Thunder Bluff,54.08,84.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Hesuwa Chifre Troante|r
-    >>|cRXP_WARN_Arrastar|r |T132162:0|t[Treinamento de Feras] |cRXP_WARN_para suas barras de ação. Ensine habilidades ao seu mascote|r
+    >>|cRXP_WARN_Arrastar|r |T132162:0|t[Treinamento de Feras] |cRXP_WARN_Nas suas barras de ação. Ensine habilidades para seu mascote|r
     .train 24547 >>Treine as magias do seu mascote
     .target Hesuwa Thunderhorn
 step << Warrior
@@ -5610,7 +5610,7 @@ step
     #label CauldronStirrer
     .goto Thunder Bluff,22.82,20.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Boticário Zaqueu|r
-    .turnin 853 >>Entregue Boticário Zaqueu
+    .turnin 853 >>Entregue Boticária Zaqueia
     .target Apothecary Zamah
     .isOnQuest 853
 step
@@ -5633,8 +5633,8 @@ step << Warrior
     #completewith next
     .goto Thunder Bluff,28.73,18.00,-1
     .goto Thunder Bluff,26.19,18.65,-1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Netali|r e |cRXP_FRIENDLY_Mugildo|r no Alto do Espírito
-    +Mate |cRXP_FRIENDLY_Mugildo|r quando ele se tornar hostil
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Netali|r e |cRXP_FRIENDLY_Mugildo|r no Espírito Erga-se
+    +Mate |cRXP_FRIENDLY_Mugildo|r quando ele fica hostil
     .target Netali Proudwind
     .target Mooart
     .skipgossip
@@ -5643,14 +5643,14 @@ step << Warrior
     #season 2
     .goto Thunder Bluff,28.73,18.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Netali|r
-    >>Obtenha |T134419:0|t[|cRXP_FRIENDLY_Runa de Ataque Frenético|r] dela
+    >>Obtenha |T134419:0|t[|cRXP_FRIENDLY_Rune of Ataque Frenético|r] dela
     .collect 204716,1 --Rune of Frenzied Assault (1)
     .target Netali
     .train 425447,1
     .skipgossip
 step << Warrior
     #season 2
-    .train 425447 >>Usar |T134419:0|t[|cRXP_FRIENDLY_Runa de Ataque Frenético|r]
+    .train 425447 >>Usar |T134419:0|t[|cRXP_FRIENDLY_Rune of Ataque Frenético|r]
     .use 204716
     .itemcount 204716,1
 step
@@ -5690,7 +5690,7 @@ step
     #ah
     .goto Thunder Bluff,44.43,43.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mooranta|r
-    >>|cRXP_WARN_Isto desbloqueará uma missão fácil. Se você já tem 2 profissões, pule este passo|r
+    >>|cRXP_WARN_Isso desbloqueia uma missão fácil. Se já tiver 2 profissões, pule esta etapa|r
     .train 8613 >>Aprenda |T134366:0|t[Esfolamento]
     .target Mooranta
 step
@@ -5721,13 +5721,13 @@ step
 step << Hunter
     .goto Thunder Bluff,52.32,47.79
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kara Corre com a Névoa|r
-    >>|cRXP_BUY_Compre um|r |T133972:0|t[Carne Seca Fortalecedora] |cRXP_BUY_dela para alimentar seu mascote|r
+    >>|cRXP_BUY_Compre|r |T133972:0|t[Fortalecer Jerky] |cRXP_BUY_dela para alimentar seu animal de estimação|r
     .collect 117,5,744,1 --Tough Jerky (5)
     .target Kaga Mistrunner
 step << Shaman
     #season 2
     #completewith next
-    >>Abate |cRXP_ENEMY_Windfury Sorceresses|r. Saque-as para obter |cRXP_LOOT_Azure Feather|r
+    >>Abate as |cRXP_ENEMY_Windfury Sorceresses|r. Saque-as para obter |cRXP_LOOT_Azure Feather|r
     >>Mate |cRXP_ENEMY_Matriarcas Ventofúria|r. Pegue suas |cRXP_LOOT_Penas Bronze|r
     .complete 744,1 --Azure Feather (6)
     .mob +Windfury Sorceress
@@ -5751,7 +5751,7 @@ step << Shaman
     .goto Mulgore,36.55,12.84,10,0
     .goto Mulgore,36.65,13.26,10,0
     .goto Mulgore,37.18,12.36,10,0
-    >>Saque |cRXP_LOOT_Pinhões de Fúria dos Ventos|r no chão
+    >>Pegue |cRXP_LOOT_Windfury Cones|r no chão
     .collect 206170,8,76160,1 --Windfury Cone (8)
     .train 410104,1
 step << Shaman
@@ -5805,7 +5805,7 @@ step << Shaman
     .goto Thunder Bluff,46.49,49.16,4,0
     .goto Thunder Bluff,46.05,49.74,4,0
     .goto Thunder Bluff,46.34,50.50,4,0
-    .goto Thunder Bluff,55.78,47.02,15 >>Vá em direção a |cRXP_FRIENDLY_Sewa Corre com a Névoa|r
+    .goto Thunder Bluff,55.78,47.02,15 >>Vá até |cRXP_FRIENDLY_Sewa Corre com a Névoa|r
     .train 410104,1
 step << Shaman
     #season 2
@@ -5834,7 +5834,7 @@ step << Shaman
     #completewith Fish
     #requires Kah
     #label Pole
-    .equip 16,6256 >> |cRXP_WARN_Equipe a|r |T132932:0|t[Vara de Pescar]
+    .equip 16,6256 >> |cRXP_WARN_Equipe o|r |T132932:0|t[Vara de Pescar]
     .use 6256
     .train 410104,1
 step << Shaman
@@ -5856,7 +5856,7 @@ step << Shaman
     .train 410104,1
 step << Shaman
     #season 2
-    >>Usar |T132147:0|t[Conjunto de Facas] para criar |T134007:0|t[Pedaços de Peixe]
+    >>Usar o |T132147:0|t[Conjunto de Faca] para criar |T134007:0|t[Pedaços de Peixe]
     .complete 76240,1 --Fish Chunks (1)
     .use 206344
     .train 410104,1
@@ -5888,7 +5888,7 @@ step
     #label HidesTurnIn
     .goto The Barrens,51.21,29.05
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Jahan Asa de Falcão|r
-    .turnin 6364 >>Entregue Retorno a Jahan
+    .turnin 6364 >>Entregue Volte para Jahan
     .target Jahan Hawkwing
 step
     .goto The Barrens,51.44,30.15
@@ -5952,7 +5952,7 @@ step << Shaman
 step << Shaman
     .goto The Barrens,55.86,19.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kranal|r
-    .turnin 2984 >>Entregue Call of Fogo - Missão - Missão
+    .turnin 2984 >>Entregue Call of Fogo
     .accept 1524 >>Aceite Clamor do Fogo
     .target Kranal Fiss
 step << Shaman
@@ -5967,13 +5967,13 @@ step << Shaman
     .goto Durotar,38.05,57.79,8,0
     .goto Durotar,38.93,57.54,8,0
     .goto Durotar,39.19,57.90,8,0
-    .goto Durotar,39.16,58.56,10 >> Siga o caminho para cima da montanha até |cRXP_FRIENDLY_Telf|r
+    .goto Durotar,39.16,58.56,10 >> Siga o caminho montanha acima até |cRXP_FRIENDLY_Telf|r
     >>|cRXP_WARN_Tome cuidado para não cair da montanha, pois o caminho é muito estreito. Você pode morrer se cair|r
 step << Shaman
     #label CallofFire2
     .goto Durotar,38.52,58.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Telf|r
-    .turnin 1524 >>Entregue Call of Fogo - Missão - Missão
+    .turnin 1524 >>Entregue Call of Fogo
     .accept 1525 >>Aceite Clamor do Fogo
     .target Telf Joolam
 step << Shaman
@@ -6031,7 +6031,7 @@ step << Warrior
     .target Uzzek
 step
     #optional
-    .abandon 761 >>Abandone Caçada ao Rapineiro
+    .abandon 761 >>Abandone Caça ao Rapineiro
 step
     #optional
     .abandon 766 >>Abandone Mazzranache

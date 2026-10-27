@@ -401,7 +401,7 @@ step
 step
     .goto Thunder Bluff,39.45,65.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Javaton Totem das Sombras|r
-    >>|cRXP_WARN_ele é|r |T132320:0|t[Furtivo]
+    >>|cRXP_WARN_Ele é|r |T132320:0|t[Furtivo]
     .accept 76156 >>Aceite À espreita com a Mãe Terra
     .target Boarton Shadetotem
     .train 410104,1
@@ -470,7 +470,7 @@ step
 step
     .goto Thunder Bluff,39.45,65.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Javaton Totem das Sombras|r
-    >>|cRXP_WARN_ele é|r |T132320:0|t[Furtivo]
+    >>|cRXP_WARN_Ele é|r |T132320:0|t[Furtivo]
     .turnin 76156 >>Entregue À Espreita com a Mãe Terra
     .accept 76160 >>Aceite À espreita com a Mãe Terra
     .target Boarton Shadetotem
@@ -510,7 +510,7 @@ step
 step
     .goto Thunder Bluff,39.45,65.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Javaton Totem das Sombras|r
-    >>|cRXP_WARN_ele é|r |T132320:0|t[Furtivo]
+    >>|cRXP_WARN_Ele é|r |T132320:0|t[Furtivo]
     .turnin 76160 >>Entregue À Espreita com a Mãe Terra
     .accept 76240 >>Aceite À espreita com a Mãe Terra
     .target Boarton Shadetotem
@@ -534,7 +534,7 @@ step
     .goto Thunder Bluff,46.49,49.16,4,0
     .goto Thunder Bluff,46.05,49.74,4,0
     .goto Thunder Bluff,46.34,50.50,4,0
-    .goto Thunder Bluff,55.78,47.02,15 >>Vá para |cRXP_FRIENDLY_Sewa Corre com a Névoa|r
+    .goto Thunder Bluff,55.78,47.02,15 >>Vá até |cRXP_FRIENDLY_Sewa Corre com a Névoa|r
     .train 410104,1
     .xp <4,1
 step
@@ -593,7 +593,7 @@ step
 step
     .goto Thunder Bluff,39.45,65.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Javaton Totem das Sombras|r
-    >>|cRXP_WARN_ele é|r |T132320:0|t[Furtivo]
+    >>|cRXP_WARN_Ele é|r |T132320:0|t[Furtivo]
     .turnin 76240 >>Entregue À Espreita com a Mãe Terra
 -- .train 410104 >>|cRXP_WARN_You will train|r |T236289:0|t[Lava Lash] |cRXP_WARN_and|r |T132147:0|t[Dual Wield] |cRXP_WARN_upon turnin|r
     .target Boarton Shadetotem
@@ -2389,7 +2389,7 @@ step
     .collect 213553,1
 step
     #completewith next
-    .zone Orgrimmar >>Voe para |cFFfa9602Orgrimmar|r
+    .zone Orgrimmar >>Vá para |cFFfa9602Orgrimmar|r
 step
     .goto Orgrimmar,38.94,38.39
     .gossip 4047 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zor Solárbol|r e selecione a opção de diálogo
@@ -2699,7 +2699,7 @@ step
     .use 213709 >>|cRXP_WARN_Use suas|r |T133723:0|t[Serpente das Nuvens Presas] |cRXP_WARN_para criar|r |T133291:0|t[Oferenda ao Espírito do Vento]
     .collect 213737,1 --Offering to the Wind Spirit (1x)
 step
-    .goto Thousand Needles,31.47,36.71,30 >> Vá para Darkcloud Pinnacle
+    .goto Thousand Needles,31.47,36.71,30 >> Dirija-se para Darkcloud Pinnacle
 step
     #completewith next
     .goto Thousand Needles,33.08,35.33,20,0
@@ -2709,7 +2709,7 @@ step
     .goto Thousand Needles,32.60,27.51,20,0
     .goto Thousand Needles,34.87,31.76,20,0
     .goto Thousand Needles,34.15,35.77,20,0
-    .goto Thousand Needles,33.32,36.24,20 >> Suba no Darkcloud Pinnacle
+    .goto Thousand Needles,33.32,36.24,20 >> Suba Darkcloud Pinnacle
 step
     .train 425882,1
     .goto Thousand Needles,39.44,41.98
@@ -2972,7 +2972,7 @@ step
     .train 432241,1
 step
     #completewith next
-    .zone Searing Gorge >>Vá para Garganta Abrasadora
+    .zone Searing Gorge >>Viaje para Garganta Abrasadora
     .train 432241,1
 step
     #loop
