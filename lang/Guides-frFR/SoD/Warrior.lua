@@ -423,7 +423,7 @@ step << Warrior
     #season 2
     #completewith RoDSW
     .goto Stormwind City,69.690,51.023
-    .gossipoption 109027 >>Parlez à |cRXP_FRIENDLY_Viktoria Desbois|r pour lui donner votre |T134169:0|t[|cRXP_LOOT_Tête de Murloc coupée|r afin de recevoir le |T134455:0|t[Deuxième fragment de rune de chasseurs de monstres]
+    .gossipoption 109027 >>Talk to |cRXP_FRIENDLY_Viktoria Woods|r to turn in your |T134169:0|t[|cRXP_LOOT_Severed Murloc Head|r] to receive |T134455:0|t[Monster Hunter's Second Rune Fragment]
     .collect 204689,1 -- Monster Hunter's Second Rune Fragment (1)
     .itemcount 204477,1 -- Severed Murloc Head (1)
     .target Viktoria Woods

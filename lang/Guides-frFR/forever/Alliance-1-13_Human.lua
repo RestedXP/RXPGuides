@@ -2743,7 +2743,7 @@ step
 
 step << skip
     >>Ramassez les |cRXP_PICK_Pétales de brunelle|r dans les fermes de la Forêt d'Elwynn
-    >>Tuez les Sangliers Brocherocs|cRXP_ENEMY_. Dépouillez-les pour leur |rFioles de sang d’animal|cRXP_LOOT_ [|r
+    >>Kill |cRXP_ENEMY_Stonetusk Boars|r. Loot them for their |cRXP_LOOT_Vials of Animal Blood|r
     .complete 99130,1 -- Duskweed Petal 18/18
     .complete 99130,2 -- Vial of Animal Blood 6/6
     .mob +Stonetusk Boar
