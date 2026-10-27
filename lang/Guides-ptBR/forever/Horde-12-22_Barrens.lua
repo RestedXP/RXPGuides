@@ -3229,7 +3229,7 @@ step
 step
     #optional
     #completewith XroadsHS2
-    .destroy 5570 >>|cRXP_WARN_Remova qualquer|r |T132834:0|t[[DEPRECATED] [DEPRECATED] Deepmoss Ovos de Aranha] |cRXP_WARN_que você tiver deixado|r
+    .destroy 5570 >>|cRXP_WARN_Remova qualquer|r |T132834:0|t[Ovos de Fundolimo] |cRXP_WARN_que você tiver deixado|r
 step
     .goto 1413/1,-3687.11,-981.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Cervejeiro Drohn|r
