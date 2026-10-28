@@ -6,7 +6,7 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #name 11-13 Costa Oscura (Elfo de la noche)
 #version 1
-#group RestedXP Guía de Supervivencia (A)
+#group Guía de Supervivencia de RestedXP (A)
 #subgroup RXP Guía de Supervivencia 1-20
 #next 13-13 Loch Modan (Elfo de la noche)
 #defaultfor NightElf
@@ -539,7 +539,7 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #name 13-13 Loch Modan (Elfo de la noche)
 #version 1
-#group RestedXP Guía de Supervivencia (A)
+#group Guía de Supervivencia de RestedXP (A)
 #subgroup RXP Guía de Supervivencia 1-20
 #next 13-15 Páramos de Poniente
 #defaultfor NightElf

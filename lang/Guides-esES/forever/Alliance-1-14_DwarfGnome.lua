@@ -157,6 +157,11 @@ step
     .target Sten Stoutarm
 
 step << Warlock
+    .goto 1426,25.077,75.711
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Grelin Barbablanca|r
+    .accept 182 >> Acepta la misión La cueva de los trols
+    .target Grelin Whitebeard
+step << Warlock
     #season 0,1
     #optional
     #requires FrostmaneC1
@@ -209,6 +214,7 @@ step << Warlock
     #label BeginningsHS
     #completewith BeginningsEnd
     .deathskip >> Muere y reaparece en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
+    >>|cRXP_WARN_¡Asegúrate de que tu subzona sea Coldridge Valley cuando mueras! De lo contrario, serás enviado al cementerio de Kharanos|r
     .target Ángel de la Resurrección
 step << Warlock
     #season 0,1
@@ -281,7 +287,7 @@ step
     .goto 1426,25.077,75.711
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Grelin Barbablanca|r
     .turnin 234 >> Entrega la misión Entrega de correo en el Valle de Crestanevada
-    .accept 182 >> Acepta la misión La cueva de los trols
+    .accept 182 >> Acepta la misión La cueva de los trols << !Warlock
     .target Grelin Whitebeard
 step << Hunter
     #completewith next
@@ -1465,9 +1471,9 @@ step << Hunter
     .waypoint 1426,67.687,60.059,45,0
     .waypoint 1426,68.958,59.357,45,0
     .waypoint 1426,70.475,59.420,45,0
-    >>Mata a los |cRXP_ENEMY_Rockjaw Skullthumpers|r fuera de la mina. Despójalos para obtener el |T132621:0|t[|cRXP_LOOT_Empty Tonel de pólvora|r]
+    >>Mata a los |cRXP_ENEMY_Aplastacráneos Comepiedras|r fuera de la mina. Despójalos para obtener el |T132621:0|t[|cRXP_LOOT_Tonel de pólvora vacío|r]
     .use 268548 >> |cRXP_WARN_Usa el|r |T132621:0|t[|cRXP_LOOT_Tonel de pólvora vacío|r] |cRXP_WARN_para iniciar la misión|r
-    >>|cRXP_WARN_NOTA: Este objeto tiene una tasa de caída baja. Omite este paso si no lo encuentras|r
+    >>|cRXP_WARN_NOTA: Este objeto tiene una probabilidad de caida baja. Salta este paso si no lo encuentras|r
     .complete 432,1 --Kill Rockjaw Skullthumper (x6)
     .collect 268548,1,95213,1 -- Empty Powder Keg (1)
     .disablecheckbox
@@ -1916,9 +1922,9 @@ step
     .target +Foreman Stonebrow << !Hunter
 step
     #completewith RockjawBonesnappers
-    >>Despoja a los |cRXP_ENEMY_Rockjaw Skullthumpers|r y a los |cRXP_ENEMY_Rockjaw Bonesnappers|r para obtener el |T132621:0|t[|cRXP_LOOT_Empty Tonel de pólvora|r]
+    >>Despoja a los |cRXP_ENEMY_Aplastacráneos Comepiedras|r y a los |cRXP_ENEMY_Cascahuesos Comepiedras|r para obtener el |T132621:0|t[|cRXP_LOOT_Tonel de pólvora vacío|r]
     .use 268548 >> |cRXP_WARN_Usa el|r |T132621:0|t[|cRXP_LOOT_Tonel de pólvora vacío|r] |cRXP_WARN_para iniciar la misión|r
-    >>|cRXP_WARN_NOTA: Este objeto tiene una tasa de caída baja. Omite este paso si no lo encuentras|r
+    >>|cRXP_WARN_NOTA: Este objeto tiene una probabilidad de caida baja. Salta este paso si no lo encuentras|r
     .collect 268548,1,95213,1 -- Empty Powder Keg (1)
     .accept 95213 >> Acepta la misión Stolen Reventar Powder
 step
@@ -2175,7 +2181,7 @@ step << !Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Yanni Cuoreforte|r
     >>|cRXP_BUY_Compra una|r |T135435:0|t[Madera simple] |cRXP_BUY_y un|r |T135237:0|t[Sílex y yesca] |cRXP_BUY_a esta vendedora|r
     >>|cRXP_BUY_Cómprale también una|r |T133634:0|t[Faltriquera marrón pequeña] |cRXP_BUY_si es necesario|r << !Rogue
-    >>|cRXP_WARN_Esto se usa para hacer|r |T135805:0|t[Basic Campfires] |cRXP_WARN_mientras esperas a los Boats para subir tu|r |T133971:0|t[Cocina] |cRXP_WARN_habilidad sin perder tiempo|r
+    >>|cRXP_WARN_Se usa para hacer|r |T135805:0|t[Hogueras básicas] |cRXP_WARN_mientras esperas a los barcos para subir tu habilidad de|r |T133971:0|t[Cocina] |cRXP_WARN_sin perder tiempo|r
     >>|cRXP_WARN_Necesitas 50 de|r |T133971:0|t[Cocina] |cRXP_WARN_para una misión en Bosque del Ocaso más adelante|r
     .collect 4470,1 --Simple Wood (1)
     .collect 4471,1 --Flint and Tinder (1)
@@ -2802,7 +2808,7 @@ step << Warlock
     #completewith next
     +|cRXP_WARN_Lanza|r |T136126:0|t[Transfusión de vida] |cRXP_WARN_repetidamente hasta que tengas <10% de salud mientras te diriges hasta|r |cRXP_FRIENDLY_Dungar Tragolargo|r
 step
-    .goto 1453/0,490.03,-8835.82
+    .goto 1453/0,484.200,-8832.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Dungar Tragolargo|r
     .fp Stormwind >> Consigue la ruta de vuelo de la Ciudad de Ventormenta
     .target Dungar Longdrink
@@ -4072,7 +4078,7 @@ step
     .goto 1432/0,-3342.5748,-5484.5540,0
     .goto 1432/0,-3386.7082,-5462.4790,0
     >>Haz clic en la |cRXP_PICK_Caja de herramientas de pesca descartada|r en el piso del lago
-    >>|cRXP_WARN_NOTA: Esto puede aparecer en una de muchas ubicaciones diferentes. Nada alrededor hasta que veas el signo de exclamación en tu minimapa|r
+    >>|cRXP_WARN_NOTA: Esto puede aparecer en una de muchas ubicaciones distintas. Nada por los alrededores hasta que veas el signo de exclamación en tu minimapa|r
     >>|cRXP_WARN_Ten cuidado con los|r Jóvenes trillanodontes|cRXP_ENEMY_ de nivel alto|r
     .accept 86614 >>Acepta la misión Plateado of the Waves
     .xp <13,1
@@ -4762,7 +4768,7 @@ step
     .goto 1432/0,-3342.5748,-5484.5540,0
     .goto 1432/0,-3386.7082,-5462.4790,0
     >>Haz clic en la |cRXP_PICK_Caja de herramientas de pesca descartada|r en el piso del lago
-    >>|cRXP_WARN_NOTA: Esto puede aparecer en una de muchas ubicaciones diferentes. Nada alrededor hasta que veas el signo de exclamación en tu minimapa|r
+    >>|cRXP_WARN_NOTA: Esto puede aparecer en una de muchas ubicaciones distintas. Nada por los alrededores hasta que veas el signo de exclamación en tu minimapa|r
     >>|cRXP_WARN_Ten cuidado con los|r Jóvenes trillanodontes|cRXP_ENEMY_ de nivel alto|r
     .accept 86614 >>Acepta la misión Plateado of the Waves
     .xp <13,1
@@ -4953,7 +4959,7 @@ step << Hunter skip
     #requires DockTravel
     #label DarkshoreCook1
     #completewith DarkshoreBoat
-    >>|cRXP_WARN_Mientras esperas al Bote en el muelle:|r
+    >>|cRXP_WARN_Mientras esperas el barco en el muelle:|r
     .cast 818 >>|cRXP_WARN_Crea una|r |T135805:0|t[Hoguera básica] |cRXP_WARN_(en tu Libro de Profesiones)|r
     .usespell 818
     .zoneskip Darkshore
@@ -4967,7 +4973,7 @@ step << Hunter skip
     #requires DarkshoreCook1
     #label DarkshoreCook2
     #completewith DarkshoreBoat
-    >>|cRXP_WARN_Mientras esperas al Bote en el muelle:|r
+    >>|cRXP_WARN_Mientras esperas el barco en el muelle:|r
     .cast 818 >>|cRXP_WARN_Crea una|r |T135805:0|t[Hoguera básica] |cRXP_WARN_(en tu Libro de Profesiones)|r
     .usespell 818
     .zoneskip Darkshore
@@ -4981,7 +4987,7 @@ step << Hunter skip
     #requires DarkshoreCook2
     #label DarkshoreCook3
     #completewith DarkshoreBoat
-    >>|cRXP_WARN_Mientras esperas al Bote en el muelle:|r
+    >>|cRXP_WARN_Mientras esperas el barco en el muelle:|r
     .cast 818 >>|cRXP_WARN_Crea una|r |T135805:0|t[Hoguera básica] |cRXP_WARN_(en tu Libro de Profesiones)|r
     .usespell 818
     .zoneskip Darkshore

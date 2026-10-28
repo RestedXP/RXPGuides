@@ -10,7 +10,7 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #name 13-15 Páramos de Poniente
 #version 1
-#group RestedXP Guía de Supervivencia (A)
+#group Guía de Supervivencia de RestedXP (A)
 #subgroup RXP Guía de Supervivencia 1-20
 #defaultfor Human/Gnome/Dwarf/NightElf
 #next 15-18 Costa Oscura
@@ -545,7 +545,7 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #name 15-18 Costa Oscura
 #version 1
-#group RestedXP Guía de Supervivencia (A)
+#group Guía de Supervivencia de RestedXP (A)
 #subgroup RXP Guía de Supervivencia 1-20
 --#defaultfor !NightElf
 #next 18-19 Loch Modan
@@ -1654,7 +1654,7 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #name 20-21 Costa Oscura/Vallefresno
 #version 1
-#group RestedXP Guía de Supervivencia (A)
+#group Guía de Supervivencia de RestedXP (A)
 #subgroup RXP Guía de Supervivencia 1-20
 #next 21-23 Espolón/Vallefresno
 

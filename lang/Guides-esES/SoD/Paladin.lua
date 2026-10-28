@@ -2200,13 +2200,13 @@ step
 step
     .line Eastern Plaguelands,28.6,84.2,33.2,83.0,35.30,82.55,41.19,81.68,45.42,80.68,48.8,79.9,51.5,78.3,55.1,76.4
     >>Busca a un |cRXP_ENEMY_Necrófago de mandíbula floja|r. Mátalo y |Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Orthas|r, un espíritu enano que aparecerá. Acepta su misión
-    >>|cRXP_WARN_El|r |cRXP_ENEMY_Necrófago de mandíbula floja|r |cRXP_WARN_patrulla la zona al sur del camino entre la Subgranja y el Cruce de Corin|r
+    >>|cRXP_WARN_El|r |cRXP_ENEMY_Necrófago de boca desencajada|r |cRXP_WARN_patrulla el área al sur del camino entre el Undercroft y Corin's Crossing|r
     .accept 84318 >> Acepta la misión ¡Ey!
     .unitscan Slack-Jawed Ghoul
     .target Orthas
 step
     .goto Eastern Plaguelands,61.3,69.3 --Not sure if this is the house or the other one, need more info
-    >>Entra en la casa en el Cruce de Corin. Despoja el |T133040:0|t[|cRXP_PICK_Martillo de guerra ornamentado|r] |cRXP_WARN_en el segundo piso|r
+    >>Entra en la casa en Corin's Crossing. Despoja el |T133040:0|t[|cRXP_PICK_Ornate Warhammer|r] |cRXP_WARN_en el segundo piso|r
     .complete 84318,1
 step
     .goto Eastern Plaguelands,61.3,69.3

@@ -1453,7 +1453,7 @@ step
     .train 410029 >>|cRXP_WARN_Usa la|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Eclipse|r] |cRXP_WARN_para aprender|r |T236151:0|t[Eclipse] << Druid
     .train 403467 >>|cRXP_WARN_Usa la|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Ira curativa|r] |cRXP_WARN_para aprender|r |T132345:0|t[Regeneración iracunda] << Warrior
     .train 426452 >>|cRXP_WARN_Usa la|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Oscuridad ardiente|r] |cRXP_WARN_para aprender|r |T135823:0|t[Sombras y llamas] << Warlock
-    .train 425102 >>|cRXP_WARN_Usa la|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Hoja envenenada|r] |cRXP_WARN_para entrenar|r |T236270:0|t[Cuchillo envenenado] << Rogue
+    .train 425102 >>|cRXP_WARN_Usa la|r |T134419:0|t[|cRXP_FRIENDLY_Runa de la Hoja envenenada|r] |cRXP_WARN_para aprender|r |T236270:0|t[Cuchillo envenenado] << Rogue
     .train 425883 >>|cRXP_WARN_Usa la|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Despertar ancestral|r] |cRXP_WARN_para aprender|r |T237571:0|t[Despertar ancestral] << Shaman
     .use 212552 << Priest
     .use 212551 << Paladin

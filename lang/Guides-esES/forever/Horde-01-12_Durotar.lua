@@ -1655,13 +1655,13 @@ step
     .goto 1411/1,-4663.88,310.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con|r |cRXP_FRIENDLY_Torka|r
     .train 2550 >>Aprende Cocina
-    .turnin 96655 >>Entrega la misión Campamento 101: Cocina
+    .turnin 96655 >>Entrega la misión Campamento básico: Cocina
     .target Cook Torka
 step
     #hardcore
     .goto 1411/1,-4665.400,311.900
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Cocinar Cocinero Torka|r
-    .accept 96825 >>Acepta la misión This Fruit Could Mordedura Atrás
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Cocinero Torka|r
+    .accept 96825 >>Acepta la misión Esta fruta sabe cómo defenderse
     .target Cook Torka
 step
     #hardcore
@@ -1797,7 +1797,7 @@ step --south/west of keep
     .goto 1411/1,-5101.700,-178.500,0
     .goto 1411/1,-5101.700,-178.500,25,0
     .goto 1411/1,-4992.700,-234.400,25,0
-    >>Despoja el |cRXP_PICK_Arco del Incursor|r en el suelo
+    >>Despoja el |cRXP_PICK_Arco de asaltante|r del suelo
     >>|cRXP_WARN_Tiene dos ubicaciones de aparición diferentes|r
     .complete 96822,1 --|1/1 Raider's Bow
 step  --northern tower
@@ -1923,7 +1923,7 @@ step --camp quest
 step
     #softcore
     .goto 1411/1,-4715.200,140.100
-    >>|cRXP_WARN_Escribe /sit en la hoguera y espera un minuto hasta que obtengas el efecto "Camp Benefits"|r
+    >>|cRXP_WARN_Escribe /sit (sentarse) junto a la hoguera y espera un minuto hasta obtener la mejora de "Beneficios del campamento"|r
     .complete 96604,1 --|1/1 Use the /sit emote near the campfire
     .macro Sit,134400 >>Siéntate
     .timer 59, RP
@@ -1932,7 +1932,7 @@ step
     #softcore
     .goto 1411/1,-4713.000,140.600
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Brakk|r
-    .turnin 96604 >>Entrega la misión El gran mundo exterior
+    .turnin 96604 >>Entrega la misión Bendita naturaleza
     --.accept 97900 >>Accept Camping 101: Blacksmithing
     .accept 96655 >>Acepta la misión Campamento básico: Cocina
     --.accept 97907 >>Accept Camping 101: Mining
@@ -2253,12 +2253,12 @@ step
 step
     .goto 1411/1,-4724.900,287.300
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Orgnil|r
-    .accept 99048 >>Acepta la misión A Missing Hand
+    .accept 99048 >>Acepta la misión Una mano faltante
     .target Orgnil Soulscar
 step
     .goto 1411/1,-5061.700,201.700
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Heglan Shadeeye|r
-    .turnin 99048 >>Entrega la misión A Missing Hand
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Heglan Sombramira|r
+    .turnin 99048 >>Entrega la misión Una mano faltante
     .accept 99049 >>Acepta la misión Amenaza desde las profundidades
     .target Heglan Shadeeye
 step
@@ -2630,7 +2630,7 @@ step << Hunter
 	.goto 1411/1,-4208.1,98.71,50,0
 	.goto 1411/1,-4300.1,57.11,50,0
 	.goto 1411/1,-4456.61,65.57,50,0
-    .xp 9+4960 >> Farmea hasta 4960+/6500xp
+    .xp 9+4960 >> Mata enemigos hasta alcanzar 4960+/6500xp
 step
     .goto 1411/1,-4709.36,274.960
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con|r |cRXP_FRIENDLY_Gar'Thok|r
@@ -3606,7 +3606,6 @@ step
 step
     .goto 1454/1,-4293.600,1949.900
     >>Despoja las |cRXP_PICK_Rocas|r naranjas del suelo
-    >>|cRXP_WARN_¡Omite esta misión si hay mucha competencia! No hay tantas |cRXP_PICK_Rocas|r y no reaparecen rápidamente|r
     .complete 97326,1 --|8/8 Smooth Boulder
     .isOnQuest 97326
 step
@@ -3764,6 +3763,27 @@ step << Shaman/Hunter
     .turnin 926 >>Entrega la misión La piedra de energía con imperfecciones
     .isOnQuest 924
 step << !Shaman !Hunter
+    #completewith Gazzuz
+    >>Mata a los |cRXP_ENEMY_Orcos Filo Ardiente|r. Despójalos para obtener una |cRXP_LOOT_Insignia de Teniente|r
+    >>|cRXP_WARN_Esta es una misión previa para RFC. Tiene una baja tasa de caída|r
+    .complete 5726,1 --Lieutenant's Insignia (1)
+    .mob Burning Blade Fanatic
+    .mob Burning Blade Apprentice
+    .dungeon RFC
+step << !Shaman !Hunter
+    #label Gazzuz
+    .goto 1411/1,-4701.42,1455.83
+    >>Mata a |cRXP_ENEMY_Gazz'uz|r. Despójalo para obtener su |T134085:0|t[|cRXP_LOOT_Ojo de la Sombra ardiente|r]
+    >>|cRXP_WARN_Ten cuidado, es MUY difícil. No dudes en omitir esta misión si no puedes conseguir un grupo o hacerlo en solitario|r
+    >>|cRXP_WARN_Usa el |T134085:0|t[|cRXP_LOOT_Ojo de la Sombra ardiente|r] para empezar la misión|r
+    >>|cRXP_WARN_Usa LoS (línea de visión) para evitar |cRXP_ENEMY_Gazz'uz|r sus Descargas de las Sombras|r
+    >>|cRXP_WARN_Puedes correr hacia las zonas de agua que hay dentro de la cueva para evadir al|r |cRXP_ENEMY_Abisario|r |cRXP_WARN_después de matar a|r |cRXP_ENEMY_Gazz'uz|r
+    .collect 4903,1,832,1 --Collect Eye of Burning Shadow
+    .accept 832 >>Acepta la misión Sombras Ardientes
+    .use 4903
+	.unitscan Gazz'uz
+    .dungeon RFC
+step << !Shaman !Hunter
     #loop
     .goto 1411/1,-4805.59,1495.67,0
     .goto 1411/1,-4855.82,1498.84,15,0
@@ -3777,11 +3797,11 @@ step << !Shaman !Hunter
     .goto 1411/1,-4684.50,1466.06,15,0
     .goto 1411/1,-4805.59,1495.67,15,0
     >>Mata a los |cRXP_ENEMY_Orcos Filo Ardiente|r. Despójalos para obtener una |cRXP_LOOT_Insignia de Teniente|r
+    >>|cRXP_WARN_Esta es una misión previa para RFC. Tiene una baja tasa de caída|r
     .complete 5726,1 --Lieutenant's Insignia (1)
     .mob Burning Blade Fanatic
     .mob Burning Blade Apprentice
     .dungeon RFC
-    .isOnQuest 5726
 step << !Shaman !Hunter
     #label ZeptoUC1
     .goto 1411/1,-4648.55,1321.88,40 >>Sube a la Torre del Zepelín
@@ -3812,7 +3832,7 @@ step
 step
     .goto 1420/0,254.600,2225.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Guardia de la Muerte Terrence|r
-    .accept 96895 >>Acepta la misión The Argent Emisario
+    .accept 96895 >>Acepta la misión El emisario Argenta
     .target Deathguard Terrence
 step << Warrior
     #optional
@@ -3924,10 +3944,11 @@ step
 step
     .goto 1420/0,54.600,1996.600
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Hadric Harlson|r
-    .turnin 96895 >>Entrega la misión The Argent Emisario
+    .turnin 96895 >>Entrega la misión El emisario Argenta
     .accept 96897 >>Acepta la misión El Culto de los Malditos
     .accept 96898 >>Acepta la misión Los restos de la guerra
     .target Hadric Harlson
+    .maxlevel 11
 step
     .goto 1420/0,-130.500,1907.800
     >>Mata |cRXP_ENEMY_Déspotas oscuros|r y |cRXP_ENEMY_Neófitos oscuros|r. Despójalos para obtener los |cRXP_LOOT_Trozos de cristal necrótico|r
@@ -3938,6 +3959,7 @@ step
     .complete 96897,1 --|8/8 Dark Neophyte slain
     .mob +Dark Neophyte
     .complete 96898,1 --|12/12 Necrotic Crystal Fragment
+    .isOnQuest 96897,96898
 step
     #label HorrorsandSpirits
     #loop
@@ -3962,8 +3984,23 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Hadric Harlson|r
     .turnin 96897 >>Entrega la misión El Culto de los Malditos
     .turnin 96898 >>Entrega la misión Los restos de la guerra
-    --.accept 96899 >>Accept Bandarion Keep
     .target Hadric Harlson
+    .isQuestComplete 96897
+    .isQuestComplete 96898
+step
+    #optional
+    .goto 1420/0,54.500,1996.400
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Hadric Harlson|r
+    .turnin 96897 >>Entrega la misión El Culto de los Condenados
+    .target Hadric Harlson
+    .isQuestComplete 96897
+step
+    #optional
+    .goto 1420/0,54.500,1996.400
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Hadric Harlson|r
+    .turnin 96898 >>Entrega la misión Restos de guerra
+    .target Hadric Harlson
+    .isQuestComplete 96898
 step
     #label LinneaTurnin
     .goto 1420/0,74.00,2022.47
@@ -4059,7 +4096,7 @@ step << Troll Warrior/Undead Warrior/Tauren Shaman/Troll Shaman/Orc Shaman
 step
     #ah
     .goto 1458/0,224.300,1648.200
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Subastador Cain|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Subastador Cain|r
     >>|cRXP_BUY_Compra tres|r |T133884:0|t[Ojos de múrloc] |cRXP_BUY_en la Casa de subastas|r
     >>|cRXP_WARN_Omitir esto si quieres, es solo un pequeño ahorro de tiempo|r
     .collect 730,3,91920,1 --Collect Murloc Eyes (x3)

@@ -10,7 +10,7 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #name 1-6 Valle de Crestanevada
 #version 1
-#group RestedXP Guía de Supervivencia (A)
+#group Guía de Supervivencia de RestedXP (A)
 #subgroup RXP Guía de Supervivencia 1-20
 #defaultfor Dwarf/Gnome
 #next 6-10 Dun Morogh
@@ -416,7 +416,7 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #name 6-10 Dun Morogh
 #version 1
-#group RestedXP Guía de Supervivencia (A)
+#group Guía de Supervivencia de RestedXP (A)
 #subgroup RXP Guía de Supervivencia 1-20
 #defaultfor Dwarf/Gnome
 #next 10-11 Elwynn (Enano/Gnomo)
@@ -1703,7 +1703,7 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #name 10-11 Elwynn (Enano/Gnomo)
 #version 1
-#group RestedXP Guía de Supervivencia (A)
+#group Guía de Supervivencia de RestedXP (A)
 #subgroup RXP Guía de Supervivencia 1-20
 #defaultfor Gnome/Dwarf
 #next 11-13 Loch Modan (Enano/Gnomo)
@@ -2366,7 +2366,7 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #name 11-13 Loch Modan (Enano/Gnomo)
 #version 1
-#group RestedXP Guía de Supervivencia (A)
+#group Guía de Supervivencia de RestedXP (A)
 #subgroup RXP Guía de Supervivencia 1-20
 #defaultfor Gnome/Dwarf
 #next 13-15 Páramos de Poniente

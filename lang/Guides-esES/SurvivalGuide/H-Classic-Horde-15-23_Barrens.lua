@@ -3233,7 +3233,7 @@ step
     .target Jorn Skyseer
 step << !Tauren
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Quebrantadientes|r
-    .aura 16618 >>|cRXP_WARN_Si te quedan 10|r |T134128:0|t[|cRXP_LOOT_Esquirlas de sangre|r |cRXP_WARN_, úsalas para obtener|r |T136022:0|t[Espíritu del viento] |cRXP_WARN_de|r |cRXP_FRIENDLY_Quebrantadientes|r
+    .aura 16618 >>|cRXP_WARN_Si tienes 10|r |T134128:0|t[|cRXP_LOOT_Esquirlas sangrientas|r] |cRXP_WARN_restantes, úsalos para obtener|r |T136022:0|t[El espíritu del viento] |cRXP_WARN_de|r |cRXP_FRIENDLY_Quebrantadientes|r
     >>|cRXP_WARN_Omite este paso si tienes la ruta de vuelo de Cima del Trueno|r
     .itemcount 5075,10
     .target Mangletooth
@@ -3811,7 +3811,7 @@ step
     .dungeon WC
 step
     #optional
-    >>Mata |cRXP_ENEMY_Devastadores descarriado|r, |cRXP_ENEMY_Víboras|r, |cRXP_ENEMY_Arrastrapiés|r y |cRXP_ENEMY_Colminfernos|r. . Despójalos para obtener sus |cRXP_ENEMY_Pellejos|r
+    >>Mata a los |cRXP_ENEMY_Deviate Ravagers|r, a los |cRXP_ENEMY_Vipers|r, a los |cRXP_ENEMY_Shamblers|r y a los |cRXP_ENEMY_Dreadfangs|r. Despójalos para obtener sus |cRXP_ENEMY_Hides|r . Despójalos para obtener sus |cRXP_ENEMY_Hides|r
     .complete 1487,1 --Deviate Ravager (7)
     .mob +Deviate Ravager
     .complete 1487,2 --Deviate Viper (7)

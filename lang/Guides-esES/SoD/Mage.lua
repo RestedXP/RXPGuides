@@ -2892,7 +2892,7 @@ step
     .collect 223147,1 --Spell Notes: Balefire Bolt
     .mob Fel Interloper
 step
-    .train 429311 >>|cRXP_WARN_Usa las|r |T134939:0|t[|cRXP_FRIENDLY_Notas de hechizo: Descarga de fuego fardo|r |cRXP_WARN_para aprender|r |T135809:0|t[Descarga de fuego fardo]
+    .train 429311 >>|cRXP_WARN_Usa el|r |T134939:0|t[|cRXP_FRIENDLY_Notas sobre hechizos: Descarga de Fuegotorvo|r] |cRXP_WARN_para entrenar|r |T135809:0|t[Descarga de fuego fardo]
     .use 223147
 ]])
 
@@ -2945,7 +2945,7 @@ step
     .collect 223147,1 --Spell Notes: Balefire Bolt
     .mob Fel Interloper
 step
-    .train 429311 >>|cRXP_WARN_Usa las|r |T134939:0|t[|cRXP_FRIENDLY_Notas de hechizo: Descarga de fuego fardo|r |cRXP_WARN_para aprender|r |T135809:0|t[Descarga de fuego fardo]
+    .train 429311 >>|cRXP_WARN_Usa el|r |T134939:0|t[|cRXP_FRIENDLY_Notas sobre hechizos: Descarga de Fuegotorvo|r] |cRXP_WARN_para entrenar|r |T135809:0|t[Descarga de Fuegotorvo.]
     .use 223147
 ]])
 
@@ -2998,7 +2998,7 @@ step
     .collect 223147,1 --Spell Notes: Balefire Bolt
     .mob Fel Interloper
 step
-    .train 429311 >>|cRXP_WARN_Usa las|r |T134939:0|t[|cRXP_FRIENDLY_Notas de hechizo: Descarga de fuego fardo|r |cRXP_WARN_para aprender|r |T135809:0|t[Descarga de fuego fardo]
+    .train 429311 >>|cRXP_WARN_Usa el|r |T134939:0|t[|cRXP_FRIENDLY_Notas sobre hechizos: Descarga de Fuegotorvo|r] |cRXP_WARN_para entrenar|r |T135809:0|t[Descarga de Fuegotorvo.]
     .use 223147
 ]])
 
@@ -3049,7 +3049,7 @@ step
     .collect 223147,1 --Spell Notes: Balefire Bolt
     .mob Fel Interloper
 step
-    .train 429311 >>|cRXP_WARN_Usa las|r |T134939:0|t[|cRXP_FRIENDLY_Notas de hechizo: Descarga de fuego fardo|r |cRXP_WARN_para aprender|r |T135809:0|t[Descarga de fuego fardo]
+    .train 429311 >>|cRXP_WARN_Usa el|r |T134939:0|t[|cRXP_FRIENDLY_Notas sobre hechizos: Descarga de Fuegotorvo|r] |cRXP_WARN_para entrenar|r |T135809:0|t[Descarga de Fuegotorvo.]
     .use 223147
 ]])
 
@@ -3100,7 +3100,7 @@ step
     .collect 223147,1 --Spell Notes: Balefire Bolt
     .mob Fel Interloper
 step
-    .train 429311 >>|cRXP_WARN_Usa las|r |T134939:0|t[|cRXP_FRIENDLY_Notas de hechizo: Descarga de fuego fardo|r |cRXP_WARN_para aprender|r |T135809:0|t[Descarga de fuego fardo]
+    .train 429311 >>|cRXP_WARN_Usa el|r |T134939:0|t[|cRXP_FRIENDLY_Notas sobre hechizos: Descarga de Fuegotorvo|r] |cRXP_WARN_para entrenar|r |T135809:0|t[Descarga de Fuegotorvo.]
     .use 223147
 ]])
 
@@ -3159,7 +3159,7 @@ step
     .collect 223147,1 --Spell Notes: Balefire Bolt
     .mob Fel Interloper
 step
-    .train 429311 >>|cRXP_WARN_Usa las|r |T134939:0|t[|cRXP_FRIENDLY_Notas de hechizo: Descarga de fuego fardo|r |cRXP_WARN_para aprender|r |T135809:0|t[Descarga de fuego fardo]
+    .train 429311 >>|cRXP_WARN_Usa el|r |T134939:0|t[|cRXP_FRIENDLY_Notas sobre hechizos: Descarga de Fuegotorvo|r] |cRXP_WARN_para entrenar|r |T135809:0|t[Descarga de Fuegotorvo.]
     .use 223147
 ]])
 
@@ -3210,7 +3210,7 @@ step
     .collect 223147,1 --Spell Notes: Balefire Bolt
     .mob Fel Interloper
 step
-    .train 429311 >>|cRXP_WARN_Usa las|r |T134939:0|t[|cRXP_FRIENDLY_Notas de hechizo: Descarga de fuego fardo|r |cRXP_WARN_para aprender|r |T135809:0|t[Descarga de fuego fardo]
+    .train 429311 >>|cRXP_WARN_Usa el|r |T134939:0|t[|cRXP_FRIENDLY_Notas sobre hechizos: Descarga de Fuegotorvo|r] |cRXP_WARN_para entrenar|r |T135809:0|t[Descarga de Fuegotorvo.]
     .use 223147
 ]])
 
@@ -3261,7 +3261,7 @@ step
     .collect 223147,1 --Spell Notes: Balefire Bolt
     .mob Fel Interloper
 step
-    .train 429311 >>|cRXP_WARN_Usa las|r |T134939:0|t[|cRXP_FRIENDLY_Notas de hechizo: Descarga de fuego fardo|r |cRXP_WARN_para aprender|r |T135809:0|t[Descarga de fuego fardo]
+    .train 429311 >>|cRXP_WARN_Usa el|r |T134939:0|t[|cRXP_FRIENDLY_Notas sobre hechizos: Descarga de Fuegotorvo|r] |cRXP_WARN_para entrenar|r |T135809:0|t[Descarga de Fuegotorvo.]
     .use 223147
 ]])
 
@@ -3325,7 +3325,7 @@ step
     .collect 223147,1 --Spell Notes: Balefire Bolt
     .mob Fel Interloper
 step
-    .train 429311 >>|cRXP_WARN_Usa las|r |T134939:0|t[|cRXP_FRIENDLY_Notas de hechizo: Descarga de fuego fardo|r |cRXP_WARN_para aprender|r |T135809:0|t[Descarga de fuego fardo]
+    .train 429311 >>|cRXP_WARN_Usa el|r |T134939:0|t[|cRXP_FRIENDLY_Notas sobre hechizos: Descarga de Fuegotorvo|r] |cRXP_WARN_para entrenar|r |T135809:0|t[Descarga de Fuegotorvo.]
     .use 223147
 ]])
 
@@ -3375,7 +3375,7 @@ step
     .collect 223147,1 --Spell Notes: Balefire Bolt
     .mob Fel Interloper
 step
-    .train 429311 >>|cRXP_WARN_Usa las|r |T134939:0|t[|cRXP_FRIENDLY_Notas de hechizo: Descarga de fuego fardo|r |cRXP_WARN_para aprender|r |T135809:0|t[Descarga de fuego fardo]
+    .train 429311 >>|cRXP_WARN_Usa el|r |T134939:0|t[|cRXP_FRIENDLY_Notas sobre hechizos: Descarga de Fuegotorvo|r] |cRXP_WARN_para entrenar|r |T135809:0|t[Descarga de Fuegotorvo.]
     .use 223147
 ]])
 

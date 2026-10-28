@@ -9,7 +9,7 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #name 1-6 Cañada Umbría
 #version 1
-#group RestedXP Guía de Supervivencia (A)
+#group Guía de Supervivencia de RestedXP (A)
 #subgroup RXP Guía de Supervivencia 1-20
 #defaultfor NightElf
 #next 6-11 Teldrassil
@@ -304,7 +304,7 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #name 6-11 Teldrassil
 #version 1
-#group RestedXP Guía de Supervivencia (A)
+#group Guía de Supervivencia de RestedXP (A)
 #subgroup RXP Guía de Supervivencia 1-20
 #defaultfor NightElf
 #next 11-13 Costa Oscura (Elfo de la noche)

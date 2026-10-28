@@ -1192,7 +1192,7 @@ step << Warrior/Paladin/Rogue
     #label RoughStoneCraft1
     #completewith NecklaceStart
     +|T136241:0|tConvierte con [Herrería] |cRXP_WARN_las|r |T135232:0|t|cRXP_LOOT_[Piedras férreas]|r |cRXP_WARN_en|r |T135248:0|t[Piedras de afilar férreas] << Warrior/Rogue
-    +|T136241:0|t[Herrería] |cRXP_WARN_la|r |T135232:0|t|cRXP_LOOT_[Piedra férrea]|r |cRXP_WARN_en|r |T135255:0|t[Rough Weightstones] << Paladin
+    +Usa|T136241:0|t[Herrería] |cRXP_WARN_las|r |T135232:0|t|cRXP_LOOT_[Piedras férreas]|r |cRXP_WARN_en|r |T135255:0|t[Contrapesos férreos] << Paladin
     .collect 2862,5 << Rogue/Warrior --Rough Sharpening Stone (5)
     .disablecheckbox
     .collect 3239,5 << Paladin --Rough Weightstone (5)
@@ -1273,7 +1273,7 @@ step << Warrior/Paladin/Rogue
     #label RoughStoneCraft2
     #completewith Lovers
     +|T136241:0|tConvierte con [Herrería] |cRXP_WARN_las|r |T135232:0|t|cRXP_LOOT_[Piedras férreas]|r |cRXP_WARN_en|r |T135248:0|t[Piedras de afilar férreas] << Warrior/Rogue
-    +|T136241:0|t[Herrería] |cRXP_WARN_la|r |T135232:0|t|cRXP_LOOT_[Piedra férrea]|r |cRXP_WARN_en|r |T135255:0|t[Rough Weightstones] << Paladin
+    +Usa|T136241:0|t[Herrería] |cRXP_WARN_las|r |T135232:0|t|cRXP_LOOT_[Piedras férreas]|r |cRXP_WARN_en|r |T135255:0|t[Contrapesos férreos] << Paladin
     .collect 2862,5 << Rogue/Warrior --Rough Sharpening Stone (5)
     .disablecheckbox
     .collect 3239,5 << Paladin --Rough Weightstone (5)
@@ -1354,7 +1354,7 @@ step << Warrior/Paladin/Rogue
     #label RoughStoneCraft3
     #completewith Exchange
     +|T136241:0|tConvierte con [Herrería] |cRXP_WARN_las|r |T135232:0|t|cRXP_LOOT_[Piedras férreas]|r |cRXP_WARN_en|r |T135248:0|t[Piedras de afilar férreas] << Warrior/Rogue
-    +|T136241:0|t[Herrería] |cRXP_WARN_la|r |T135232:0|t|cRXP_LOOT_[Piedra férrea]|r |cRXP_WARN_en|r |T135255:0|t[Rough Weightstones] << Paladin
+    +Usa|T136241:0|t[Herrería] |cRXP_WARN_las|r |T135232:0|t|cRXP_LOOT_[Piedras férreas]|r |cRXP_WARN_en|r |T135255:0|t[Contrapesos férreos] << Paladin
     .collect 2862,5 << Rogue/Warrior --Rough Sharpening Stone (5)
     .disablecheckbox
     .collect 3239,5 << Paladin --Rough Weightstone (5)
@@ -1869,7 +1869,7 @@ step << Warrior/Paladin/Rogue
     #label RoughStoneCraft4
     #completewith JasperlodeExplore
     +|T136241:0|tConvierte con [Herrería] |cRXP_WARN_las|r |T135232:0|t|cRXP_LOOT_[Piedras férreas]|r |cRXP_WARN_en|r |T135248:0|t[Piedras de afilar férreas] << Warrior/Rogue
-    +|T136241:0|t[Herrería] |cRXP_WARN_la|r |T135232:0|t|cRXP_LOOT_[Piedra férrea]|r |cRXP_WARN_en|r |T135255:0|t[Rough Weightstones] << Paladin
+    +Usa|T136241:0|t[Herrería] |cRXP_WARN_las|r |T135232:0|t|cRXP_LOOT_[Piedras férreas]|r |cRXP_WARN_en|r |T135255:0|t[Contrapesos férreos] << Paladin
     .collect 2862,5 << Rogue/Warrior --Rough Sharpening Stone (5)
     .disablecheckbox
     .collect 3239,5 << Paladin --Rough Weightstone (5)
@@ -1956,7 +1956,7 @@ step << Warrior/Paladin/Rogue
     #label RoughStoneCraft5
     #completewith Find
     +|T136241:0|tConvierte con [Herrería] |cRXP_WARN_las|r |T135232:0|t|cRXP_LOOT_[Piedras férreas]|r |cRXP_WARN_en|r |T135248:0|t[Piedras de afilar férreas] << Warrior/Rogue
-    +|T136241:0|t[Herrería] |cRXP_WARN_la|r |T135232:0|t|cRXP_LOOT_[Piedra férrea]|r |cRXP_WARN_en|r |T135255:0|t[Rough Weightstones] << Paladin
+    +Usa|T136241:0|t[Herrería] |cRXP_WARN_las|r |T135232:0|t|cRXP_LOOT_[Piedras férreas]|r |cRXP_WARN_en|r |T135255:0|t[Contrapesos férreos] << Paladin
     .collect 2862,5 << Rogue/Warrior --Rough Sharpening Stone (5)
     .disablecheckbox
     .collect 3239,5 << Paladin --Rough Weightstone (5)
@@ -3076,7 +3076,7 @@ step << Priest/Mage/Warlock
     #ah
     .goto 1453/0,660.28,-8814.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con la |cRXP_FRIENDLY_Subastadora Jaxon|r
-    >>|cRXP_WARN_Compra lo siguiente si puedes permitírtelo:|r
+    >>|cRXP_WARN_Compra lo siguiente si te lo puedes permitir:|r
     >>|T134711:0|t[Aceite de zahorí menor] |cRXP_WARN_y|r |T133906:0|t[Sabiola ahumada]
     >>|cRXP_WARN_También busca mejoras de DPS altas|r |T132317:0|t[Varita] |cRXP_WARN_que puedas usar ahora/pronto|r
     >>|cRXP_WARN_Estos proporcionarán un aumento de DPS alto en los primeros niveles. Si no quieres hacerlo o no puedes, omite este paso|r
@@ -3964,9 +3964,9 @@ step
     .goto 1426/0,-1679.89,-5728.88,40,0
     .goto 1426/0,-1675.95,-5597.22,25,0
     .goto 1426/0,-1679.89,-5728.88
-    >>Mata a |cRXP_ENEMY_Comepiedras Skullthumpers|r y |cRXP_ENEMY_Comepiedras Bonesnappers|r dentro de la cueva. Despójalos para obtener |T132621:0|t[|cRXP_LOOT_Empty Tonel de pólvora|r]
+    >>Mata |cRXP_ENEMY_Aplastacráneos Comepiedra|r y |cRXP_ENEMY_Cascahuesos Comepiedras|r dentro de la cueva. Despójalos para obtener |T132621:0|t[|cRXP_LOOT_Tonel de pólvora vacío|r]
     .use 268548 >> |cRXP_WARN_Usa el|r |T132621:0|t[|cRXP_LOOT_Tonel de pólvora vacío|r] |cRXP_WARN_para iniciar la misión|r
-    >>|cRXP_WARN_NOTA: Este objeto tiene una tasa de caída baja. Omite este paso si no lo encuentras|r
+    >>|cRXP_WARN_NOTA: Este objeto tiene una probabilidad de caida baja. Salta este paso si no lo encuentras|r
     .complete 432,1 --Kill Rockjaw Skullthumper (x6)
     .mob +Rockjaw Skullthumper
     .complete 433,1 --Kill Rockjaw Bonesnapper (x10)
@@ -4688,7 +4688,7 @@ step << Warlock/Mage/Rogue/Priest/Warrior/Paladin
     .target Woo Ping
 step
     .isOnQuest 6261
-    .goto 1453/0,489.99,-8835.76
+    .goto 1453/0,484.200,-8832.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Dungar Tragolargo|r
     .turnin 6261 >> Entrega la misión Dungar Tragolargo
     .target Dungar Longdrink
@@ -4863,22 +4863,22 @@ step -- dont delete
 step << Hunter
     .goto 1453/0,765.700,-8804.000
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Catherine Leland|r
-    >>|cRXP_BUY_Compra uno|r |T134335:0|t[Adorno lustroso] |cRXP_BUY_y tres|r |T134324:0|t[Reptadores nocturnos] |cRXP_BUY_de ella. Esto es para una misión de 900 xp|r
+    >>|cRXP_BUY_Cómprale un|r |T134335:0|t[Adorno lustroso] |cRXP_BUY_y tres|r |T134324:0|t[Reptadores nocturnos] |cRXP_BUY_. Esto es para una misión de 900xp|r
     .collect 6529,1,95065,1 --|1/1 Shiny Bauble
     .collect 6530,3,95065,1 --|3/3 Nightcrawlers
     .target Catherine Leland
 step << Hunter
     .goto 1453/0,1269.100,-8540.601
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Gilbert Gris::267118|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Gilbert Gray::267118|r
     .target Gilbert Gray::267118
-    .accept 95065 >>Acepta la misión Fishin' Tiempo
-    .turnin 95065 >>Entrega la misión Fishin' Tiempo
+    .accept 95065 >>Acepta la misión Hora de la pesca
+    .turnin 95065 >>Entrega la misión Hora de la pesca
 step << Hunter skip
     #optional
     #requires DockTravel
     #label DarkshoreCook1
     #completewith DarkshoreBoat
-    >>|cRXP_WARN_Mientras esperas al Bote en el muelle:|r
+    >>|cRXP_WARN_Mientras esperas el barco en el muelle:|r
     .cast 818 >>|cRXP_WARN_Crea una|r |T135805:0|t[Hoguera básica] |cRXP_WARN_(en tu Libro de Profesiones)|r
     .usespell 818
     .zoneskip Darkshore
@@ -4892,7 +4892,7 @@ step << Hunter skip
     #requires DarkshoreCook1
     #label DarkshoreCook2
     #completewith DarkshoreBoat
-    >>|cRXP_WARN_Mientras esperas al Bote en el muelle:|r
+    >>|cRXP_WARN_Mientras esperas el barco en el muelle:|r
     .cast 818 >>|cRXP_WARN_Crea una|r |T135805:0|t[Hoguera básica] |cRXP_WARN_(en tu Libro de Profesiones)|r
     .usespell 818
     .zoneskip Darkshore
@@ -4906,7 +4906,7 @@ step << Hunter skip
     #requires DarkshoreCook2
     #label DarkshoreCook3
     #completewith DarkshoreBoat
-    >>|cRXP_WARN_Mientras esperas al Bote en el muelle:|r
+    >>|cRXP_WARN_Mientras esperas el barco en el muelle:|r
     .cast 818 >>|cRXP_WARN_Crea una|r |T135805:0|t[Hoguera básica] |cRXP_WARN_(en tu Libro de Profesiones)|r
     .usespell 818
     .zoneskip Darkshore

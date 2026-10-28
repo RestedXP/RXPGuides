@@ -1000,7 +1000,7 @@ step
     .group 3
     .goto The Hinterlands,46.0,39.8
     >>Mata a |cRXP_ENEMY_Florius|r, el dragón verde que vuela sobre las ruinas
-    >>|cRXP_WARN_Cuidado, tiene un grupo de vida masivo, es inmune a los hechizos de naturaleza, tiene un|r|T132338:0|t[Rajar]|cRXP_WARN_,|r |T134307:0|t[Flagelo de cola] |cRXP_WARN_y|r |T135745:0|t[Summons] |cRXP_WARN_un|r |cRXP_ENEMY_Draco|r |cRXP_WARN_agregado que lanza un aliento frontal que causa un daño enorme|r
+    >>|cRXP_WARN_Ten cuidado, ya que tiene una enorme cantidad de salud, es inmune a los hechizos de naturaleza, tiene un|r|T132338:0|t[Rajar]|cRXP_WARN_,|r |T134307:0|t[Barrido de cola] |cRXP_WARN_e|r |T135745:0|t[Invoca] |cRXP_WARN_a un|r |cRXP_ENEMY_Draco|r |cRXP_WARN_esbirro que lanza un aliento frontal que inflige un daño enorme|r
     .complete 81837,1 --Defeat Florius
     .mob Florius
     .isOnQuest 81837
@@ -1308,7 +1308,7 @@ step
     .group 3
     .goto Feralas,53.2,16.6
     >>Mata al dragón jefe |cRXP_ENEMY_Tyrannikus|r
-    >>|cRXP_WARN_Cuidado, tiene un grupo de vida masivo, es inmune a los hechizos de naturaleza, tiene un|r|T132338:0|t[Rajar]|cRXP_WARN_,|r |T134307:0|t[Flagelo de cola] |cRXP_WARN_y|r |T135745:0|t[Summons] |cRXP_WARN_un|r |cRXP_ENEMY_Draco|r |cRXP_WARN_agregado que lanza un aliento frontal que causa un daño enorme|r
+    >>|cRXP_WARN_Ten cuidado, ya que tiene una enorme cantidad de salud, es inmune a los hechizos de naturaleza, tiene un|r|T132338:0|t[Rajar]|cRXP_WARN_,|r |T134307:0|t[Barrido de cola] |cRXP_WARN_e|r |T135745:0|t[Invoca] |cRXP_WARN_a un|r |cRXP_ENEMY_Draco|r |cRXP_WARN_esbirro que lanza un aliento frontal que inflige un daño enorme|r
     .complete 81868,1 --Tyrannikus slain
     .mob Tyrannikus
     .maxlevel 53

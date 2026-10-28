@@ -4625,7 +4625,7 @@ step
 step << !Tauren !Shaman !Warrior/Undead
     .goto The Barrens,44.55,59.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Quebrantadientes|r
-    .aura 16618 >>|cRXP_WARN_Si te quedan 10|r |T134128:0|t[|cRXP_LOOT_Esquirlas de sangre|r |cRXP_WARN_, úsalas para obtener|r |T136022:0|t[Espíritu del viento] |cRXP_WARN_de|r |cRXP_FRIENDLY_Quebrantadientes|r
+    .aura 16618 >>|cRXP_WARN_Si tienes 10|r |T134128:0|t[|cRXP_LOOT_Esquirlas sangrientas|r] |cRXP_WARN_restantes, úsalos para obtener|r |T136022:0|t[El espíritu del viento] |cRXP_WARN_de|r |cRXP_FRIENDLY_Quebrantadientes|r
     >>|cRXP_WARN_Omite este paso si tienes la ruta de vuelo de Cima del Trueno|r
     .itemcount 5075,10
     .target Mangletooth
@@ -5261,7 +5261,7 @@ step
     .dungeon WC
 step
     #optional
-    >>Mata |cRXP_ENEMY_Devastadores descarriado|r, |cRXP_ENEMY_Víboras|r, |cRXP_ENEMY_Arrastrapiés|r y |cRXP_ENEMY_Colminfernos|r. . Despójalos para obtener sus |cRXP_ENEMY_Pellejos|r
+    >>Mata a los |cRXP_ENEMY_Deviate Ravagers|r, a los |cRXP_ENEMY_Vipers|r, a los |cRXP_ENEMY_Shamblers|r y a los |cRXP_ENEMY_Dreadfangs|r. Despójalos para obtener sus |cRXP_ENEMY_Hides|r . Despójalos para obtener sus |cRXP_ENEMY_Hides|r
     .complete 1487,1 --Deviate Ravager (7)
     .mob +Deviate Ravager
     .complete 1487,2 --Deviate Viper (7)
@@ -7036,7 +7036,7 @@ step << Warlock/Mage
     .itemcount 221499,1 << Warlock --Rune of the Felguard
     .itemcount 223147,1 << Mage --Spell Notes: Balefire Bolt
     .train 431756 >>|cRXP_WARN_Usa la|r |T134419:0|t[|cRXP_FRIENDLY_Runa del Guardia vil|r] |cRXP_WARN_para aprender|r |T136216:0|t[Invocar guardia vil] << Warlock
-    .train 429311 >>|cRXP_WARN_Usa las|r |T134939:0|t[|cRXP_FRIENDLY_Notas de hechizo: Descarga de fuego fardo|r |cRXP_WARN_para aprender|r |T135809:0|t[Descarga de fuego fardo] << Mage
+    .train 429311 >>|cRXP_WARN_Usa el|r |T134939:0|t[|cRXP_FRIENDLY_Notas sobre hechizos: Descarga de Fuegotorvo|r] |cRXP_WARN_para entrenar|r |T135809:0|t[Descarga de fuego fardo] << Mage
     .use 221499 << Warlock
     .use 223147 << Mage
 step
@@ -11032,7 +11032,7 @@ step << Warlock/Mage
     .itemcount 221499,1 << Warlock --Rune of the Felguard
     .itemcount 223147,1 << Mage --Spell Notes: Balefire Bolt
     .train 431756 >>|cRXP_WARN_Usa la|r |T134419:0|t[|cRXP_FRIENDLY_Runa del Guardia vil|r] |cRXP_WARN_para aprender|r |T136216:0|t[Invocar guardia vil] << Warlock
-    .train 429311 >>|cRXP_WARN_Usa las|r |T134939:0|t[|cRXP_FRIENDLY_Notas de hechizo: Descarga de fuego fardo|r |cRXP_WARN_para aprender|r |T135809:0|t[Descarga de fuego fardo] << Mage
+    .train 429311 >>|cRXP_WARN_Usa el|r |T134939:0|t[|cRXP_FRIENDLY_Notas sobre hechizos: Descarga de Fuegotorvo|r] |cRXP_WARN_para entrenar|r |T135809:0|t[Descarga de fuego fardo] << Mage
     .use 221499 << Warlock
     .use 223147 << Mage
 step
@@ -12041,7 +12041,7 @@ step
 step << !Tauren
     .goto The Barrens,44.55,59.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Quebrantadientes|r
-    .aura 16618 >>|cRXP_WARN_Si te quedan 10|r |T134128:0|t[|cRXP_LOOT_Esquirlas de sangre|r |cRXP_WARN_, úsalas para obtener|r |T136022:0|t[Espíritu del viento] |cRXP_WARN_de|r |cRXP_FRIENDLY_Quebrantadientes|r
+    .aura 16618 >>|cRXP_WARN_Si tienes 10|r |T134128:0|t[|cRXP_LOOT_Esquirlas sangrientas|r] |cRXP_WARN_restantes, úsalos para obtener|r |T136022:0|t[El espíritu del viento] |cRXP_WARN_de|r |cRXP_FRIENDLY_Quebrantadientes|r
     >>|cRXP_WARN_Omite este paso si tienes la ruta de vuelo de Cima del Trueno|r
     .itemcount 5075,10
     .target Mangletooth
@@ -12286,7 +12286,7 @@ step << Rogue
 step << Rogue
     #season 2
     .goto Thunder Bluff,53.00,56.63
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Habla con|r |cRXP_FRIENDLY_Kard|r|cRXP_BUY_. Compra uno o dos|r |T135342:0|t[Kris] |cRXP_BUY_a este vendedor|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Habla con|r |cRXP_FRIENDLY_Kard|r|cRXP_BUY_. Compra uno o dos|r |T135342:0|t[Kris] |cRXP_BUY_de él|r
     .collect 2209,1,493,1 --Collect Kris (1)
     .money <0.7115
     .target Kard Ragetotem
@@ -12656,7 +12656,7 @@ step
     .dungeon WC
 step
     #optional
-    >>Mata |cRXP_ENEMY_Devastadores descarriado|r, |cRXP_ENEMY_Víboras|r, |cRXP_ENEMY_Arrastrapiés|r y |cRXP_ENEMY_Colminfernos|r. . Despójalos para obtener sus |cRXP_ENEMY_Pellejos|r
+    >>Mata a los |cRXP_ENEMY_Deviate Ravagers|r, a los |cRXP_ENEMY_Vipers|r, a los |cRXP_ENEMY_Shamblers|r y a los |cRXP_ENEMY_Dreadfangs|r. Despójalos para obtener sus |cRXP_ENEMY_Hides|r . Despójalos para obtener sus |cRXP_ENEMY_Hides|r
     .complete 1487,1 --Deviate Ravager (7)
     .mob +Deviate Ravager
     .complete 1487,2 --Deviate Viper (7)

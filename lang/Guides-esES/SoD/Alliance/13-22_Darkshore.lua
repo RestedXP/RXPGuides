@@ -229,7 +229,7 @@ step << Warlock/Mage
     .itemcount 221499,1 << Warlock --Rune of the Felguard
     .itemcount 223147,1 << Mage --Spell Notes: Balefire Bolt
     .train 427733 >>|cRXP_WARN_Usa la|r |T134419:0|t[|cRXP_FRIENDLY_Runa del Guardia vil|r] |cRXP_WARN_para aprender|r |T136216:0|t[Invocar guardia vil] << Warlock
-    .train 428878 >>|cRXP_WARN_Usa las|r |T134939:0|t[|cRXP_FRIENDLY_Notas de hechizo: Descarga de fuego fardo|r |cRXP_WARN_para aprender|r |T135809:0|t[Descarga de fuego fardo] << Mage
+    .train 428878 >>|cRXP_WARN_Usa el|r |T134939:0|t[|cRXP_FRIENDLY_Notas sobre hechizos: Descarga de Fuegotorvo|r] |cRXP_WARN_para entrenar|r |T135809:0|t[Descarga de fuego fardo] << Mage
     .use 221499 << Warlock
     .use 223147 << Mage
 step
@@ -3575,7 +3575,7 @@ step << Warlock/Mage
     .itemcount 221499,1 << Warlock --Rune of the Felguard
     .itemcount 223147,1 << Mage --Spell Notes: Balefire Bolt
     .train 427733 >>|cRXP_WARN_Usa la|r |T134419:0|t[|cRXP_FRIENDLY_Runa del Guardia vil|r] |cRXP_WARN_para aprender|r |T136216:0|t[Invocar guardia vil] << Warlock
-    .train 428878 >>|cRXP_WARN_Usa las|r |T134939:0|t[|cRXP_FRIENDLY_Notas de hechizo: Descarga de fuego fardo|r |cRXP_WARN_para aprender|r |T135809:0|t[Descarga de fuego fardo] << Mage
+    .train 428878 >>|cRXP_WARN_Usa el|r |T134939:0|t[|cRXP_FRIENDLY_Notas sobre hechizos: Descarga de Fuegotorvo|r] |cRXP_WARN_para entrenar|r |T135809:0|t[Descarga de fuego fardo] << Mage
     .use 221499 << Warlock
     .use 223147 << Mage
 step

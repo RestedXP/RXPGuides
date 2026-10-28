@@ -846,7 +846,7 @@ step
 step
     .goto 1413/1,-3767.800,-842.900
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Desdio|r
-    .turnin 97253 >>Entrega la misión Parts and Pieces
+    .turnin 97253 >>Entrega la misión Partes y piezas
     .target Wrenix the Wretched
     .isQuestComplete 97253
 step
@@ -1276,7 +1276,7 @@ step
     .goto 1413/1,-1483.11,66.67,50,0
     .goto 1413/1,-1531.75,180.85,50,0
     .goto 1413/1,-1462.84,214.63,50,0
-    >>Mata a los |cRXP_ENEMY_Savannah Prowlers|r. Despójalos para obtener sus |cRXP_LOOT_Claws|r
+    >>Mata |cRXP_ENEMY_Merodeadores de la sabana|r. Despójalos para obtener sus |cRXP_LOOT_Garras|r
     .complete 903,1 --Prowler Claws (7)
     .mob Savannah Prowler
     .isQuestAvailable 819
@@ -1322,7 +1322,7 @@ step
     .isQuestAvailable 95494,95507
 step
     #completewith next
-    >>Despoja las |cRXP_PICK_Sprung Traps|r en el suelo
+    >>Despoja las |cRXP_PICK_Trampas activadas|r del suelo
     .complete 95507,1 --|8/8 Trapped Game
 step
     #loop
@@ -1333,8 +1333,8 @@ step
     .goto 1413/1,-1960.600,653.700,50,0
     .goto 1413/1,-1871.600,653.700,50,0
     .goto 1413/1,-1729.700,592.400,50,0
-    >>Mata a los |cRXP_ENEMY_Savannah Patriarchs|r. Despójalos para obtener sus |cRXP_LOOT_Hides|r y |cRXP_LOOT_Tusks|r
-    >>|cRXP_WARN_Si los |cRXP_ENEMY_Savannah Patriarchs|r están muy disputados, considera omitir esta misión por ahora, se puede completar más tarde|r
+    >>Mata |cRXP_ENEMY_Patriarcas de la sabana|r. Despójalos para obtener sus |cRXP_LOOT_Cueros|r y |cRXP_LOOT_Colmillos|r
+    >>|cRXP_WARN_Si los |cRXP_ENEMY_Patriarcas de la sabana|r están muy disputados, considera omitir esta misión por ahora, se puede completar más tarde|r
     .complete 95494,1 --|6/6 Savannah Lion Hide
     .complete 821,1 --Savannah Lion Tusk (5)
     .disablecheckbox
@@ -1350,8 +1350,8 @@ step
     .goto 1413/1,-1960.600,653.700,50,0
     .goto 1413/1,-1871.600,653.700,50,0
     .goto 1413/1,-1729.700,592.400,50,0
-    >>Mata a los |cRXP_ENEMY_Savannah Patriarchs|r. Despójalos para obtener sus |cRXP_LOOT_Hides|r
-    >>|cRXP_WARN_Si los |cRXP_ENEMY_Savannah Patriarchs|r están muy disputados, considera omitir esta misión por ahora, se puede completar más tarde|r
+    >>Mata a los |cRXP_ENEMY_Patriarcas de la sabana|r. Despójalos para obtener sus |cRXP_LOOT_Cueros|r
+    >>|cRXP_WARN_Si los |cRXP_ENEMY_Patriarcas de la sabana|r están muy disputados, considera omitir esta misión por ahora, se puede completar más tarde|r
     .complete 95494,1 --|6/6 Savannah Lion Hide
     .mob Savannah Patriarch
     .isQuestAvailable 819
@@ -1475,7 +1475,7 @@ step
 step
     #optional
     #completewith RaptorHeadsComplete
-    >>Mata a los |cRXP_ENEMY_Savannah Prowlers|r. Despójalos para obtener sus |cRXP_LOOT_Claws|r
+    >>Mata |cRXP_ENEMY_Merodeadores de la sabana|r. Despójalos para obtener sus |cRXP_LOOT_Garras|r
     .complete 903,1 --Prowler Claws (7)
     .mob Savannah Prowler
     .isQuestAvailable 819
@@ -1512,7 +1512,7 @@ step
     .goto 1413/1,-2859.800,565.900,50,0
     .goto 1413/1,-3023.000,530.700,50,0
     .goto 1413/1,-2897.500,642.200,50,0
-    >>Mata a los |cRXP_ENEMY_Savannah Prowlers|r. Despójalos para obtener sus |cRXP_LOOT_Claws|r
+    >>Mata |cRXP_ENEMY_Merodeadores de la sabana|r. Despójalos para obtener sus |cRXP_LOOT_Garras|r
     .complete 903,1 --Prowler Claws (7)
     .mob Savannah Prowler
     .isQuestAvailable 819
@@ -1961,8 +1961,8 @@ step
 step
     #completewith RapHornsPickup
     .goto 1413/1,-3262.600,-99.400,0
-    +|cRXP_WARN_Mientras continúas haciendo misiones a través de The Barrens, intenta encontrar un grupo de 5 jugadores para "Chol'aruk the Ravener" en algún momento|r
-    >>|cRXP_WARN_Completar esto te dará 4100xp. La entrada a la cueva donde está está marcada en tu mapa (|cRXP_ENEMY_Razormane|r zona)|r
+    +|cRXP_WARN_Mientras sigues haciendo misiones en Los Baldíos, intenta encontrar un grupo de 5 personas para "Chol'aruk, el Insaciable" en algún momento|r
+    >>|cRXP_WARN_Completar esto otorgará 4100 xp. La entrada a la cueva donde se encuentra está marcada en tu mapa (zona de |cRXP_ENEMY_Crines de Acero|r)|r
     .isOnQuest 97003
 step
     .goto 1413/1,-3031.48,461.91
@@ -2294,7 +2294,7 @@ step
     #label Xroadsturnins2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Mankrik|r, |cRXP_FRIENDLY_Tonga|r, |cRXP_FRIENDLY_Sergra|r y |cRXP_FRIENDLY_Gazrog|r
     .turnin 4921 >>Entrega la misión Perdida en la batalla
-    .accept 95774 >>Acepta la misión Her Name Is Olgra
+    .accept 95774 >>Acepta la misión Su nombre es Olgra
     .target +Mankrik
     .goto 1413/1,-2641.35,-521.12
     .turnin 877 >>Entrega la misión El Oasis Estancado
@@ -2482,7 +2482,7 @@ step
     #label CounterattackComplete
     .goto 1413/1,-1884.39,-289.38
     >>Mata a |cRXP_ENEMY_Señor de la guerra Krom'zar|r (élite nivel 20) una vez que aparece. Despoja el |cRXP_PICK_Estandarte|r que él suelta en el suelo
-    >>|cRXP_WARN_¡Ten cuidado! Es fuerte y está protegido por al menos dos|r |cRXP_ENEMY_Kolkar|r |cRXP_WARN_mobs|r
+    >>|cRXP_WARN_¡Ten cuidado! Es fuerte y está protegido por al menos dos esbirros|r |cRXP_ENEMY_Kolkar|r |cRXP_WARN_|r
     >>|cRXP_WARN_Puede tardar hasta 3 minutos en reaparecer|r
     .complete 4021,1 --Piece of Krom'zar's Banner (1)
     .unitscan Warlord Krom'zar
@@ -2604,7 +2604,7 @@ step
     .goto 1442/1,-774.61,-5.17,40,0
     .goto 1442/1,-774.61,-27.96,40,0
     .goto 1442/1,-726.27,-39.36,40,0
-    >>Mata a los |cRXP_ENEMY_Grimtotem Ruffians|r y a los |cRXP_ENEMY_Grimtotem Mercenarios|r
+    >>Mata |cRXP_ENEMY_Rufianes Tótem Siniestro|r y |cRXP_ENEMY_Mercenarios Tótem Siniestro|r
     .complete 6548,1 --Kill Grimtotem Ruffian (x8)
     .mob +Grimtotem Ruffian
     .complete 6548,2 --Kill Grimtotem Mercenary (x6)
@@ -3036,7 +3036,7 @@ step
     .goto 1413/1,-2346.200,-1788.600,50,0
     .goto 1413/1,-2458.300,-1824.400,50,0
     .goto 1413/1,-2381.000,-2061.000,50,0
-    >>Mata a los |cRXP_ENEMY_Razormane Raiders|r. Despójalos para obtener los |cRXP_LOOT_Olgra's Adornments|r
+    >>Mata a los |cRXP_ENEMY_Asaltantes Crines de Acero|r. Despójalos para obtener los |cRXP_LOOT_Adornos de Olgra|r
     .complete 95774,1 --|4/4 Olgra's Adornments
     .mob Razormane Raider
 step
@@ -3163,7 +3163,7 @@ step
     .mob Oasis Snapjaw
 step
     #completewith IshamuhalesFang
-    >>Mata a los |cRXP_ENEMY_Savannah Matriarchs|r y a los |cRXP_ENEMY_Savannah Patriarchs|r. Despójalos para obtener sus |cRXP_LOOT_Hides|r
+    >>Mata a las |cRXP_ENEMY_Matriarcas de la sabana|r y a los |cRXP_ENEMY_Patriarcas de la sabana|r. Despójalos para obtener sus |cRXP_LOOT_Cueros|r
     .complete 95494,1 --|6/6 Savannah Lion Hide
     .mob Savannah Matriarch
     .mob Savannah Patriarch
@@ -3185,7 +3185,7 @@ step
     .goto 1413/1,-3633.200,-600.500,50,0
     .goto 1413/1,-3469.100,-495.000,50,0
     .goto 1413/1,-3428.300,-584.300,50,0
-    >>Mata a los |cRXP_ENEMY_Savannah Matriarchs|r y a los |cRXP_ENEMY_Savannah Patriarchs|r. Despójalos para obtener sus |cRXP_LOOT_Hides|r
+    >>Mata a las |cRXP_ENEMY_Matriarcas de la sabana|r y a los |cRXP_ENEMY_Patriarcas de la sabana|r. Despójalos para obtener sus |cRXP_LOOT_Cueros|r
     .complete 95494,1 --|6/6 Savannah Lion Hide
     .mob Savannah Matriarch
     .mob Savannah Patriarch
@@ -3218,7 +3218,7 @@ step
 step
     .goto 1413/1,-3720.300,-920.000
     >>Haz clic en el |cRXP_PICK_Cartel de Se busca|r
-    .accept 92706 >>Acepta la misión WANTED: Bruuz
+    .accept 92706 >>Acepta la misión SE BUSCA: Bruuz
     .group << Rogue/Warrior
 step
     .goto 1413/1,-3697.24,-929.20
@@ -3279,9 +3279,9 @@ step
     .goto 1413/1,-3951.600,-1093.500
     .goto 1413/1,-4012.800,-1081.800
     .goto 1413/1,-3973.000,-1028.700
-    >>Mata a |cRXP_PICK_Bruuz|r (nivel 20 élite) en el mar cerca de Ratchet
-    >>|cRXP_WARN_¡Esto es difícil! Agrúpate si es posible|r << !Rogue !Warrior
-    >>|cRXP_WARN_Intenta llevar al enemigo a Ratchet a los guardias que te ayudarán, ¡pero asegúrate de causarle al menos 50% de daño!|r
+    >>Mata a |cRXP_PICK_Bruuz|r (nivel 20 élite) en el mar cerca de Trinquete
+    >>|cRXP_WARN_¡Esto es difícil! Monta grupo si es posible|r << !Rogue !Warrior
+    >>|cRXP_WARN_Intenta "kitearlo" hasta Trinquete hacia los guardias para que te ayuden, ¡pero asegúrate de infligir al menos el 50% del daño!|r
     .complete 92706,1 --Kill Bruuz
     .mob Bruuz
     .isOnQuest 92706
@@ -3289,7 +3289,7 @@ step
 step
     .goto 1413/1,-3728.66,-835.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Gazlowe|r
-    .turnin 92706 >>Entrega la misión WANTED: Bruuz
+    .turnin 92706 >>Entrega la misión SE BUSCA: Bruuz
     .target Gazlowe
     .group << Rogue/Warrior
     .isQuestComplete 92706
@@ -3521,8 +3521,8 @@ step
 step
     #label SleepingBag1
     .goto The Barrens,46.361,73.904
-    >>Haz clic en los |cRXP_PICK_Burned-Fuera Remains|r en el suelo
-    .accept 79007 >> Acepta ...y esa nota que encontraste
+    >>Haz clic en los |cRXP_PICK_Restos quemados|r en el suelo
+    .accept 79007 >> Acepta la misión ... Y la nota que encontraste
 step
     #label LizardBlood
     #loop
@@ -3659,7 +3659,7 @@ step
 step << !Tauren !Skyborne
     .goto 1413/1,-1891.48,-2391.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Quebrantadientes|r
-    .aura 16618 >>|cRXP_WARN_Si te quedan 10|r |T134128:0|t[|cRXP_LOOT_Esquirlas de sangre|r |cRXP_WARN_, úsalas para obtener|r |T136022:0|t[Espíritu del viento] |cRXP_WARN_de|r |cRXP_FRIENDLY_Quebrantadientes|r
+    .aura 16618 >>|cRXP_WARN_Si tienes 10|r |T134128:0|t[|cRXP_LOOT_Esquirlas sangrientas|r] |cRXP_WARN_restantes, úsalos para obtener|r |T136022:0|t[El espíritu del viento] |cRXP_WARN_de|r |cRXP_FRIENDLY_Quebrantadientes|r
     >>|cRXP_WARN_Omite este paso si tienes la ruta de vuelo de Cima del Trueno|r
     .itemcount 5075,10
     .target Mangletooth
@@ -3739,6 +3739,38 @@ step
     .target Innkeeper Pala
     .bindlocation 1638
     .isQuestAvailable 6442
+step << Hunter
+    #completewith HunterTraining2
+    .goto 1456/1,-123.26,-1394.49,60 >> Viaja al Alto de los Cazadores
+step << Hunter
+    .goto 1456/1,-100.50,-1454.75
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Urek|r
+    .train 5118 >> Aprende tus hechizos de clase
+    .target Urek Thunderhorn
+    .xp <20,1
+    .xp >22,1
+step << Hunter
+    #label HunterTraining2
+    #optional
+    .goto 1456/1,-100.50,-1454.75
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Urek|r
+    .train 5118 >> Aprende tus hechizos de clase
+    .target Urek Thunderhorn
+    .xp <22,1
+step << Hunter
+    .goto 1456/1,-47.69,-1434.64
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Hesuwa|r
+    .train 24494 >> Entrena los hechizos de tu mascota
+    .target Hesuwa Thunderhorn
+step << Warrior
+    #completewith next
+    .goto 1456/1,-123.26,-1394.49,60 >> Viaja al Alto de los Cazadores
+step << Warrior
+    .goto 1456/1,-81.09,-1457.74
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Torm|r
+    .train 845 >>Aprende tus hechizos de clase
+    .accept 1823 >>Acepta la misión Habla con Ruga
+    .target Torm Ragetotem
 step
     #completewith next
     .goto 1456/1,222.96,-1079.42,40,0
@@ -3798,7 +3830,7 @@ step
     #label DeathDUPpickup
 step << Shaman
     .goto 1456/1,269.92,-980.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Tigor|r |cRXP_WARN_afuera|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Tigor|r |cRXP_WARN_fuera|r
     .train 2645 >> Aprende tus hechizos de clase
     .target Tigor Skychaser
     .xp <20,1
@@ -3806,7 +3838,7 @@ step << Shaman
 step << Shaman
     #optional
     .goto 1456/1,269.92,-980.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Tigor|r |cRXP_WARN_afuera|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Tigor|r |cRXP_WARN_fuera|r
     .train 8498 >> Aprende tus hechizos de clase
     .target Tigor Skychaser
     .xp <22,1
@@ -3955,38 +3987,6 @@ step << Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Turak|r
     .turnin 98362 >>Entrega la misión Trueno Engaño
     .target Turak Runetotem
-step << Hunter
-    #completewith HunterTraining2
-    .goto 1456/1,-123.26,-1394.49,60 >> Viaja al Alto de los Cazadores
-step << Hunter
-    .goto 1456/1,-100.50,-1454.75
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Urek|r
-    .train 5118 >> Aprende tus hechizos de clase
-    .target Urek Thunderhorn
-    .xp <20,1
-    .xp >22,1
-step << Hunter
-    #label HunterTraining2
-    #optional
-    .goto 1456/1,-100.50,-1454.75
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Urek|r
-    .train 5118 >> Aprende tus hechizos de clase
-    .target Urek Thunderhorn
-    .xp <22,1
-step << Hunter
-    .goto 1456/1,-47.69,-1434.64
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Hesuwa|r
-    .train 24494 >> Entrena los hechizos de tu mascota
-    .target Hesuwa Thunderhorn
-step << Warrior
-    #completewith next
-    .goto 1456/1,-123.26,-1394.49,60 >> Viaja al Alto de los Cazadores
-step << Warrior
-    .goto 1456/1,-81.09,-1457.74
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Torm|r
-    .train 845 >>Aprende tus hechizos de clase
-    .accept 1823 >>Acepta la misión Habla con Ruga
-    .target Torm Ragetotem
 step << Rogue
     .goto 1456/1,-36.52,-1244.05
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Habla con|r |cRXP_FRIENDLY_Kard|r|cRXP_BUY_. Compra una|r |T135324:0|t[Tizona] |cRXP_BUY_a este vendedor.|r
@@ -4131,7 +4131,7 @@ step
     .isQuestTurnedIn 875
 step
     #completewith next
-    >>Despoja las |cRXP_PICK_Sprung Traps|r en el suelo
+    >>Despoja las |cRXP_PICK_Trampas activadas|r del suelo
     .complete 95507,1 --|8/8 Trapped Game
 step
     #loop
@@ -4154,14 +4154,14 @@ step
     .goto 1413/1,-1960.600,653.700,50,0
     .goto 1413/1,-1871.600,653.700,50,0
     .goto 1413/1,-1729.700,592.400,50,0
-    >>Despoja las |cRXP_PICK_Sprung Traps|r en el suelo
+    >>Despoja las |cRXP_PICK_Trampas activadas|r del suelo
     .complete 95507,1 --|8/8 Trapped Game
 step
     .goto 1413/1,-1812.600,789.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Vrang Sangrevaje|r
-    .turnin 95494 >>Entrega la misión Orgullo Magullado y la misión Lion Hides
-    .turnin 95507 >>Entrega la misión Vrang's Game
-    .accept 95495 >>Acepta la misión El ermitaño Curtidor
+    .turnin 95494 >>Entrega la misión El orgullo herido y la piel del león
+    .turnin 95507 >>Entrega la misión Las presas de Vrang
+    .accept 95495 >>Acepta la misión El peletero ermitaño
     .target Vrang Sangrevaje
     .isQuestComplete 95494
 step
@@ -4173,14 +4173,14 @@ step
 step
     .goto 1413/1,-1635.400,838.900
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Walton|r
-    .turnin 95495 >>Entrega la misión El ermitaño Curtidor
-    .accept 95621 >>Acepta la misión Trouble in the Valley
+    .turnin 95495 >>Entrega la misión El peletero ermitaño
+    .accept 95621 >>Acepta la misión Problemas en el valle
     .target Walton
     .isQuestTurnedIn 95494
 step
     .goto 1413/1,-1611.500,549.000
-    >>Mata al |cRXP_ENEMY_Corporal Adamore|r
-    >>|cRXP_WARN_¡Ten cuidado! Podrías agarrar a 2-3 criaturas al mismo tiempo|r
+    >>Mata al |cRXP_ENEMY_Cabo Adamore|r
+    >>|cRXP_WARN_¡Ten cuidado! Podrías llamar la atención (aggro) de 2 o 3 bichos a la vez|r
     .complete 95621,1 --|1/1 Learn why the Kul Tirans are here
     .mob Corporal Adamore
     .isQuestTurnedIn 95494
@@ -4193,15 +4193,15 @@ step
 step
     .goto 1413/1,-1635.500,838.900
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Walton|r
-    .turnin 95621 >>Entrega la misión Trouble in the Valley
+    .turnin 95621 >>Entrega la misión Problemas en el valle
     .accept 95508 >>Acepta la misión Huéspedes no deseados
     .timer 67,Huéspedes no deseados RP
     .target Walton
     .isQuestTurnedIn 95494
 step
     .goto 1413/1,-1629.200,835.600
-    >>Muévete detrás de la casa mientras esperas a que termine el Roleplay para evitar agarrar todas las criaturas a la vez
-    >>|cRXP_WARN_No necesitas asistir a |cRXP_FRIENDLY_Walton|r, sobrevivirá con la ayuda de|r |cRXP_FRIENDLY_Vrang Sangrevaje|r
+    >>Ponte detrás de la casa mientras esperas a que termine el RP para evitar llamar la atención (aggro) de todos los enemigos a la vez
+    >>|cRXP_WARN_En realidad no necesitas ayudar a |cRXP_FRIENDLY_Walton|r, sobrevivirá con la ayuda de|r |cRXP_FRIENDLY_Vrang Sangrevaje|r
     .complete 95508,1 --|1/1 Assist Walton
     .mob Terry Longdrink
     .isQuestTurnedIn 95494
@@ -4598,7 +4598,7 @@ step
     .target Eye of Kilrogg
 step
     .goto 1440/1,-545.500,2445.400
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ojo de Kilrogg|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Ojo de Kilrogg|r
     .turnin 98252 >>Entrega la misión A Vacío Camino
     .target Eye of Kilrogg
     .isQuestComplete 98252
@@ -5104,6 +5104,12 @@ step << Troll Warrior/Undead Warrior/Tauren Warrior/Undead Paladin
     .goto 1454/1,-4824.00,2090.540
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Hanashi|r
     .train 197 >>Aprende el uso de Hachas de dos manos
+    .train 2567 >> Aprende el uso de Arrojadizas << !Paladin
+    .target Hanashi
+step << Orc Warrior
+    .goto 1454/1,-4824.00,2090.540
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Hanashi|r
+    .train 2567 >> Aprende el uso de Arrojadizas
     .target Hanashi
 step << Warrior
     .goto 1454/1,-4801.42,1980.53

@@ -991,9 +991,9 @@ step << Priest/Warlock
 step
     .goto 1420/0,244.81,2269.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con la |cRXP_FRIENDLY_Tabernera Renee|r
-    .vendor >>|cRXP_BUY_Compra la mayor cantidad de|r |T132815:0|t[Leche fría como el hielo] |cRXP_BUY_de ella que puedas|r << Mage/Priest/Paladin
-    .vendor >>|cRXP_BUY_Compra la mayor cantidad de|r |T134532:0|t[Rojo-speckled Mushrooms] |cRXP_BUY_de ella que puedas|r << Warrior/Rogue
-    .vendor >>|cRXP_BUY_Compra la mayor cantidad de|r |T132815:0|t[Leche fría como el hielo] |cRXP_BUY_y|r |T134532:0|t[Rojo-speckled Mushrooms] |cRXP_BUY_de ella que puedas|r << Warlock
+    .vendor >>|cRXP_BUY_Cómprale la mayor cantidad de|r |T132815:0|t[Leche fría como el hielo] |cRXP_BUY_que puedas|r << Mage/Priest/Paladin
+    .vendor >>|cRXP_BUY_Cómprale la mayor cantidad de|r |T134532:0|t[Champiñones con motas rojas] |cRXP_BUY_que puedas|r << Warrior/Rogue
+    .vendor >>|cRXP_BUY_Cómprale la mayor cantidad de|r |T132815:0|t[Leche fría como el hielo] |cRXP_BUY_y|r |T134532:0|t[Champiñones con motas rojas] |cRXP_BUY_que puedas|r << Warlock
     .money <0.0125
     .target Innkeeper Renee
 step
@@ -1062,7 +1062,7 @@ step
     .goto 1420/0,496.96,2256.54,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Gordo|r
     >>|cRXP_WARN_Es una abominación que patrulla por el camino a Rémol|r
-    >>|cRXP_WARN_Selecciona "Necesito un reporte para el Ejecutor Zygand"|r
+    >>|cRXP_WARN_Selecciona "Necesito un informe para Ejecutor Zygand|r"
     .complete 99141,3 --|1/1 Gordo's Report
     .target Gordo
     --.gossipoption 142737
@@ -1187,7 +1187,7 @@ step
 step
     .goto 1420/0,403.300,2287.700
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Guardia de la Muerte Dillinger|r
-    >>|cRXP_WARN_Selecciona "Necesito un reporte para el Ejecutor Zygand"|r
+    >>|cRXP_WARN_Selecciona "Necesito un informe para Ejecutor Zygand|r"
     .turnin 404 >>Entrega la misión Una tarea pútrida
     .accept 426 >>Acepta la misión La invasión de los molinos
     .complete 99141,1 --|1/1 Dillinger's Report
@@ -1301,15 +1301,15 @@ step << Warlock
 step << Mage/Priest/Warlock
     .goto 1420/0,244.81,2269.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con la |cRXP_FRIENDLY_Tabernera Renee|r
-    .vendor >>|cRXP_BUY_Compra la mayor cantidad de|r |T132815:0|t[Leche fría como el hielo] |cRXP_BUY_de ella que puedas|r << Mage/Priest
-    .vendor >>|cRXP_BUY_Compra la mayor cantidad de|r |T132815:0|t[Leche fría como el hielo] |cRXP_BUY_y|r |T134532:0|t[Rojo-speckled Mushrooms] |cRXP_BUY_de ella que puedas|r << Warlock
+    .vendor >>|cRXP_BUY_Cómprale la mayor cantidad de|r |T132815:0|t[Leche fría como el hielo] |cRXP_BUY_que puedas|r << Mage/Priest
+    .vendor >>|cRXP_BUY_Cómprale la mayor cantidad de|r |T132815:0|t[Leche fría como el hielo] |cRXP_BUY_y|r |T134532:0|t[Champiñones con motas rojas] |cRXP_BUY_que puedas|r << Warlock
     .money <0.0125
     .target Innkeeper Renee
 step
     .goto 1420/0,243.200,2288.100
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_William|r
     .train 2550 >>Aprende Cocina
-    .turnin 96658 >>Entrega la misión Campamento 101: Cocina
+    .turnin 96658 >>Entrega la misión Campamento básico: Cocina
     .target William Pickman
 step << Rogue/Warrior
     .goto 1420/0,240.29,2246.30
@@ -2053,12 +2053,12 @@ step << Warrior
 step
     .goto 1420/0,254.600,2225.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Guardia de la Muerte Terrence|r
-    .accept 96895 >>Acepta la misión The Argent Emisario
+    .accept 96895 >>Acepta la misión El emisario Argenta
     .target Deathguard Terrence
 step << Paladin
     .goto 1420/0,311.600,2251.000
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Shari Fontana|r
-    .accept 91282 >>Acepta la misión A Second Home
+    .accept 91282 >>Acepta la misión Segundo hogar
     .trainer >>Aprende tus hechizos de clase
     .target Shari Stilwell
 step << Warlock
@@ -2597,7 +2597,7 @@ step
     .goto 1420/0,355.52,2429.76,30,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Holland|r
     >>|cRXP_WARN_Patrulla alrededor del cementerio|r
-    .turnin 99142 >>Entrega la misión Tomb Weed
+    .turnin 99142 >>Entrega la misión Tumbalíseas
     .target Junior Apothecary Holland
 
     --Bandarion Keep section
@@ -2615,7 +2615,7 @@ step
 step << Paladin
     .goto 1420/0,2045.900,2475.400
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Breton Samuels|r
-    .turnin 91282 >>Entrega la misión A Second Home
+    .turnin 91282 >>Entrega la misión Segundo hogar
     .accept 91285 >>Acepta la misión Múrlocs al acecho
     .target Breton Samuels
 step
@@ -3254,11 +3254,11 @@ step << Paladin
 step << !Paladin
     #completewith Entersilverpine
     #optional
-    .abandon 96899 >>Abandona la misión Bandarion Keep
+    .abandon 96899 >>Abandona la misión Fuerte de Bandarion
 step << !Paladin
     #completewith Entersilverpine
     #optional
-    .abandon 95314 >>Abandona la misión That Shadowvale Verde Elixir
+    .abandon 95314 >>Abandona la misión Aquel elixir verde de Vallesombra
 step << !Paladin
     #completewith next
     .goto 1458/0,419.89,1627.54,50,0
@@ -3291,9 +3291,6 @@ RXPGuides.RegisterGuide([[
 #displayname 13-15 Bosque de Argénteos << Paladin
 #next 12-17 Los Baldíos
 
-step << Skyborne
-    #optional
-    .maxlevel 13,Silverpineskip
 step << Undead Rogue
     #sticky
     #completewith RotHideCluesTurnIn
@@ -3445,6 +3442,11 @@ step
     .accept 3221 >>Acepta la misión Habla con Renferrel
     .accept 437 >>Acepta la misión El Campo Muerto
     .target High Executor Hadrec
+step << Mage/Priest/Warlock
+    .goto 1421/0,1626.100,511.500
+    >>Despoja el |cRXP_PICK_Libro Luminoso|r en el suelo
+    .collect 210177,1,79096,1 --Ataeric: On Arcane Curiosities
+    --Other classes won't be nearby turnin in UC, probably not worth since it's only 160xp
 step
     .goto 1421/0,1652.82,522.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Renferrel|r
@@ -3468,6 +3470,11 @@ step
     .accept 430 >>Acepta la misión Regresa junto a Quinn
     .target Apothecary Renferrel
     .addquestitem 3164,429
+step
+    #completewith next
+    >>Mata |cRXP_ENEMY_Osos|r. Despójalos para obtener sus|cRXP_LOOT_Corazones|r
+    .complete 447,1 --Grizzled Bear Heart (6)
+    .mob Ferocious Grizzled Bear
 step
     #loop
     .goto 1421/0,1386.96,638.51,0
@@ -3501,6 +3508,11 @@ step
     .complete 422,1 --Remedy of Arugal (1)
 step
     #completewith next
+    >>Mata |cRXP_ENEMY_Osos|r. Despójalos para obtener sus|cRXP_LOOT_Corazones|r
+    .complete 447,1 --Grizzled Bear Heart (6)
+    .mob Ferocious Grizzled Bear
+step
+    #completewith next
     .goto 1421/0,1207.62,1293.71,80,0
     .subzone 239 >>Viaja a Los Dominios de Ivar
 step
@@ -3520,7 +3532,7 @@ step
     .goto 1421/0,941.300,1210.400,50,0
     .goto 1421/0,830.000,1309.400,50,0
     .goto 1421/0,706.700,1317.400,50,0
-    >>Mata a los |cRXP_ENEMY_Vile Fin Murlocs|r. Despójalos para obtener los |T133884:0|t[|cRXP_LOOT_Murloc Ojos|r]
+    >>Mata |cRXP_ENEMY_Múrlocs Anca Vil|r. Despójalos para obtener sus |T133884:0|t[|cRXP_LOOT_Ojos de múrloc|r]
     .collect 730,3,91920,1 --Collect Murloc Eyes (x3)
     .mob Vile Vin Shredder
     .mob Vile Vin Tidehunter
@@ -3838,8 +3850,8 @@ step
     .target Shadow Priest Allister
 step
     .goto 1421/0,1579.600,461.700
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Tabitha Heartweaver::250686|r
-    .accept 92401 >>Acepta la misión A Terrorized Request
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Tabitha Tejecorazones::250686|r
+    .accept 92401 >>Acepta la misión Una pregunta con miedo
     .target Tabitha Heartweaver::250686
     .xp <15,1
     .dungeon ROL
@@ -4086,6 +4098,12 @@ step << Paladin
     .target Garen Largo
     .xp <16,1
 step << Priest/Mage/Warlock
+    .goto 1458/0,168.200,1663.100
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Owen Thadd <Bibliotecario>::211022|r
+    .target Owen Thadd::211022
+    .turnin 79096 >>Entrega la misión Ataeric: Sobre curiosidades arcanas
+    .itemcount 210177,1
+step << Priest/Mage/Warlock
     #ssf
     .goto 1458/0,206.04,1705.57
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Zane Bradford|r en el Barrio de Magia
@@ -4176,9 +4194,6 @@ step << Skyborne
     .use 6948
     .zoneskip Orgrimmar
     .bindlocation 1637,1
-step << Skyborne
-    #optional
-    #label Silverpineskip
 step << Undead
     #completewith HiddenEnemiesPickup
     .goto 1454/1,-4367.46,1405.44,50,0
@@ -4198,14 +4213,49 @@ step << Undead/Skyborne
     .target Thrall
     .dungeon RFC
 step << Undead/Skyborne
-    #completewith next
+    #completewith Gazzuz
     .goto 1454/1,-4367.46,1405.44,50,0
     .zone Durotar >> Sal de Orgrimmar
     .dungeon RFC
 step << Undead/Skyborne
-    .goto 1411/1,-4769.10,1484.39,0
-    >>Mata a los |cRXP_ENEMY_Filo Ardiente|r en Roca del Cráneo hasta que obtengas una |cRXP_LOOT_Insignia de Teniente|r
+    #completewith Gazzuz
+    >>Mata a los |cRXP_ENEMY_Orcos Filo Ardiente|r. Despójalos para obtener una |cRXP_LOOT_Insignia de Teniente|r
+    >>|cRXP_WARN_Esta es una misión previa para RFC. Tiene una baja tasa de caída|r
     .complete 5726,1 --Lieutenant's Insignia (1)
+    .mob Burning Blade Fanatic
+    .mob Burning Blade Apprentice
+    .dungeon RFC
+step << Undead/Skyborne
+    #label Gazzuz
+    .goto 1411/1,-4701.42,1455.83
+    >>Mata a |cRXP_ENEMY_Gazz'uz|r. Despójalo para obtener su |T134085:0|t[|cRXP_LOOT_Ojo de la Sombra ardiente|r]
+    >>|cRXP_WARN_Usa el |T134085:0|t[|cRXP_LOOT_Ojo de la Sombra ardiente|r] para empezar la misión|r
+    >>|cRXP_WARN_Usa LoS (línea de visión) para evitar |cRXP_ENEMY_Gazz'uz|r sus Descargas de las Sombras|r
+    >>|cRXP_WARN_Puedes correr hacia las zonas de agua que hay dentro de la cueva para evadir al|r |cRXP_ENEMY_Abisario|r |cRXP_WARN_después de matar a|r |cRXP_ENEMY_Gazz'uz|r
+    >>|cRXP_WARN_Ten cuidado ya que es difícil. Puedes omitir esta misión si lo necesitas|r
+    .collect 4903,1,832,1 --Collect Eye of Burning Shadow
+    .accept 832 >>Acepta la misión Sombras Ardientes
+    .use 4903
+	.unitscan Gazz'uz
+    .dungeon RFC
+step << Undead/Skyborne
+    #loop
+    .goto 1411/1,-4805.59,1495.67,0
+    .goto 1411/1,-4855.82,1498.84,15,0
+    .goto 1411/1,-4833.08,1494.96,15,0
+    .goto 1411/1,-4805.59,1495.67,15,0
+    .goto 1411/1,-4784.44,1535.85,15,0
+    .goto 1411/1,-4750.60,1531.62,15,0
+    .goto 1411/1,-4734.21,1505.54,15,0
+    .goto 1411/1,-4693.49,1519.64,15,0
+    .goto 1411/1,-4679.75,1501.31,15,0
+    .goto 1411/1,-4684.50,1466.06,15,0
+    .goto 1411/1,-4805.59,1495.67,15,0
+    >>Mata a los |cRXP_ENEMY_Orcos Filo Ardiente|r. Despójalos para obtener una |cRXP_LOOT_Insignia de Teniente|r
+    >>|cRXP_WARN_Esta es una misión previa para RFC. Tiene una baja tasa de caída|r
+    .complete 5726,1 --Lieutenant's Insignia (1)
+    .mob Burning Blade Fanatic
+    .mob Burning Blade Apprentice
     .dungeon RFC
 step << Undead/Skyborne
     #completewith Conscript

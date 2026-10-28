@@ -2689,7 +2689,7 @@ step
     .waypoint Thousand Needles,26.29,52.79,15,0
     .waypoint Thousand Needles,27.23,54.04,15,0
     .waypoint Thousand Needles,26.55,55.77,15,0
-    >>Mata a las |cRXP_ENEMY_Screeching Harpies|r. Despójalas para obtener sus |cRXP_LOOT_Plumas de Arpía Fuertes|r
+    >>Mata |cRXP_ENEMY_Arpías estridentes|r. Despójalas para obtener sus |cRXP_LOOT_Plumas de arpía fuertes|r
     .collect 213701,10 --Strong Harpy Feather (10x)
     .mob Screeching Harpy
     .mob Screeching Roguefeather

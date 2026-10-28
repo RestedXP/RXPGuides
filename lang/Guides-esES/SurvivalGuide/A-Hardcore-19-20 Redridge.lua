@@ -7,7 +7,7 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #name 19-20 Montañas Crestagrana
 #version 1
-#group RestedXP Guía de Supervivencia (A)
+#group Guía de Supervivencia de RestedXP (A)
 #subgroup RXP Guía de Supervivencia 1-20
 #next 20-21 Costa Oscura/Vallefresno
 

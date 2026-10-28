@@ -9,7 +9,7 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #name 1-6 Villanorte
 #version 1
-#group RestedXP Guía de Supervivencia (A)
+#group Guía de Supervivencia de RestedXP (A)
 #subgroup RXP Guía de Supervivencia 1-20
 #defaultfor Human
 #next 6-11 Bosque de Elwynn; 6-13 Bosque de Elwynn
@@ -374,7 +374,7 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #name 6-11 Bosque de Elwynn
 #version 1
-#group RestedXP Guía de Supervivencia (A)
+#group Guía de Supervivencia de RestedXP (A)
 #subgroup RXP Guía de Supervivencia 1-20
 #defaultfor Human
 #next 11-13 Loch Modan
@@ -1857,7 +1857,7 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #name 11-13 Loch Modan
 #version 1
-#group RestedXP Guía de Supervivencia (A)
+#group Guía de Supervivencia de RestedXP (A)
 #subgroup RXP Guía de Supervivencia 1-20
 #defaultfor Human
 #next 13-15 Páramos de Poniente

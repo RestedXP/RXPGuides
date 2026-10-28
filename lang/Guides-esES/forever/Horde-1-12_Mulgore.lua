@@ -727,8 +727,8 @@ step
     .complete 766,4 --Swoop Gizzard (1)
 step << Tauren
     #completewith Ambercorns
-    >>Mata a los |cRXP_ENEMY_Prairie Wolves|r. Despoja para obtener sus |cRXP_LOOT_Paws|r
-    >>Mata a los |cRXP_ENEMY_Adult Plainstriders|r. Despójalos para obtener su |T134028:0|t[|cRXP_LOOT_Carne de zancudo tierna|r] y sus |cRXP_LOOT_Garras|r
+    >>Mata a los |cRXP_ENEMY_Lobos de pradera|r. Despójalos para obtener sus |cRXP_LOOT_Garras|r
+    >>Mata a los |cRXP_ENEMY_Zancudos de llanura adultos|r. Despójalos para obtener su |T134028:0|t[|cRXP_LOOT_Carne de zancudo tierna|r] y sus |cRXP_LOOT_Garfas|r
     .complete 748,1 --Prairie Wolf Paw (6)
     .mob +Prairie Wolf
     .complete 748,2 --Plainstrider Talon (4)
@@ -736,7 +736,7 @@ step << Tauren
     .mob +Adult Plainstrider
 step << !Tauren
     #completewith Ambercorns
-    >>Mata a los |cRXP_ENEMY_Adult Plainstriders|r. Despójalos para obtener su |T134028:0|t[|cRXP_LOOT_Carne de zancudo tierna|r]
+    >>Mata a los |cRXP_ENEMY_Zancudos de llanura adultos|r. Despójalos para obtener su |T134028:0|t[|cRXP_LOOT_Carne de zancudo tierna|r]
     .collect 287505,1,99411,1 --Collect Tender Strider Meat (1)
     .mob Adult Plainstrider
 step
@@ -773,8 +773,8 @@ step << Tauren
 	.goto 1412/1,-448.91,-2650.89,50,0--c:Mulgore,48.60,69.43
 	.goto 1412/1,-314.31,-2660.14,50,0--c:Mulgore,45.98,69.70
 	.goto 1412/1,-447.88,-2580.34,50,0--c:Mulgore,48.58,67.37
-    >>Mata a los |cRXP_ENEMY_Prairie Wolves|r. Despoja para obtener sus |cRXP_LOOT_Paws|r
-    >>Mata a los |cRXP_ENEMY_Adult Plainstriders|r. Despójalos para obtener su |T134028:0|t[|cRXP_LOOT_Carne de zancudo tierna|r] y sus |cRXP_LOOT_Garras|r
+    >>Mata a los |cRXP_ENEMY_Lobos de pradera|r. Despójalos para obtener sus |cRXP_LOOT_Garras|r
+    >>Mata a los |cRXP_ENEMY_Zancudos de llanura adultos|r. Despójalos para obtener su |T134028:0|t[|cRXP_LOOT_Carne de zancudo tierna|r] y sus |cRXP_LOOT_Garfas|r
     .complete 748,1 --Prairie Wolf Paw (6)
     .mob +Prairie Wolf
     .complete 748,2 --Plainstrider Talon (4)
@@ -796,7 +796,7 @@ step << !Tauren
 	.goto 1412/1,-448.91,-2650.89,50,0--c:Mulgore,48.60,69.43
 	.goto 1412/1,-314.31,-2660.14,50,0--c:Mulgore,45.98,69.70
 	.goto 1412/1,-447.88,-2580.34,50,0--c:Mulgore,48.58,67.37
-    >>Mata a los |cRXP_ENEMY_Adult Plainstriders|r. Despójalos para obtener su |T134028:0|t[|cRXP_LOOT_Carne de zancudo tierna|r]
+    >>Mata a los |cRXP_ENEMY_Zancudos de llanura adultos|r. Despójalos para obtener su |T134028:0|t[|cRXP_LOOT_Carne de zancudo tierna|r]
     .collect 287505,1,99411,1 --Collect Tender Strider Meat (1)
     .mob Adult Plainstrider
 step << Tauren
@@ -1063,7 +1063,7 @@ step << Shaman
     .xp <8,1
 step
     .goto 1412/1,54.800,-2442.200
-    >>Mata a |cRXP_ENEMY_Chakuyak|r. Despoja para obtener su |cRXP_LOOT_Pelt|r
+    >>Mata a |cRXP_ENEMY_Chakuyak|r. Despójalo para obtener su |cRXP_LOOT_Pelambre|r
     .complete 96130,1 --|1/1 Chakuyak's Pelt
     .mob Chakuyak
 step
@@ -1888,7 +1888,7 @@ step
     .mob Supervisor Saltatuercas
 step
     .goto 1412/1,-1128.700,-1674.600
-    >>Despoja los |cRXP_PICK_Documents|r en el suelo
+    >>Despoja los |cRXP_PICK_Documentos|r del suelo
     .complete 98424,1 --|1/1 Shredder Operation Instructions
 step
     .goto 1412/1,-1315.800,-1672.100
@@ -2327,7 +2327,7 @@ step
     .goto 1456/1,-141.400,-1432.700,10,0
     .goto 1456/1,-161.300,-1454.200,10,0
     .zone Mulgore >>Salta desde la Loma del Cazador a la pequeña colina para salir de Cima del Trueno
-    >>|cRXP_WARN_Sigue la flecha precisamente para evitar morir. Recupera algo de salud antes del segundo salto|r
+    >>|cRXP_WARN_Sigue la flecha con precisión para evitar morir. Recupera algo de salud antes del segundo salto|r
 step
     #completewith WildManeTurnIn
     .subzone 222 >>Viaja al Poblado Pezuña de Sangre
