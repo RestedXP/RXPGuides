@@ -974,7 +974,7 @@ step
 step
     #completewith theairissalt
     .goto StormwindClassic,66.28,62.13
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
     .fly Redridge >> 飞往赤脊山
     .zoneskip Redridge Mountains
     .target 杜加尔·朗德瑞克
@@ -2200,13 +2200,13 @@ step
 step
     .line Eastern Plaguelands,28.6,84.2,33.2,83.0,35.30,82.55,41.19,81.68,45.42,80.68,48.8,79.9,51.5,78.3,55.1,76.4
     >>寻找一只 |cRXP_ENEMY_错颚的食尸鬼|r。击杀他并与出现的一只矮人灵魂 |Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_奥尔塔兹|r 对话。开始这个任务
-    >>|cRXP_WARN_|r错颚的食尸鬼|cRXP_ENEMY_|r |cRXP_WARN_在墓穴与科林路口之间的道路以南区域巡逻|r
+    >>|cRXP_WARN_这只|r |cRXP_ENEMY_错颚的食尸鬼|r |cRXP_WARN_在Undercroft和考林路口之间的道路南侧巡逻|r
     .accept 84318 >> 接受任务 喂！
     .unitscan Slack-Jawed Ghoul
     .target Orthas
 step
     .goto Eastern Plaguelands,61.3,69.3 --Not sure if this is the house or the other one, need more info
-    >>进入考林路口的那间房子。拾取二楼的 |T133040:0|t[|cRXP_PICK_华丽的战锤|r] |cRXP_WARN_|r
+    >>进入考林路口的房子，|cRXP_PICK_在二层|r拾取|T133040:0|t[|cRXP_WARN_Ornate Warhammer|r]
     .complete 84318,1
 step
     .goto Eastern Plaguelands,61.3,69.3

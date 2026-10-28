@@ -226,7 +226,7 @@ step << Priest
 step << Mage
     #season 2
     .goto Dun Morogh,26.733,72.552
-    >>打开地上的|cRXP_PICK_石颚储物箱|r，拾取里面的|T134939:0|t|T134939:0|t|cRXP_LOOT_[法术笔记：NNGABIIHGQSU|r
+    >>Open the |cRXP_PICK_Rockjaw Footlocker|r on the ground. Loot it for the |T134939:0|t|cRXP_LOOT_[Spell Notes: CALE ENCI]|r
     >>|cRXP_WARN_注意：你无法在此处学习|r |T133816:0|t|T133736:0|t[铭刻手套 - 冰枪术] |cRXP_WARN_，因为你只能在种族出生区域获得|r |T133736:0|t|T133736:0|t[理解入门] |cRXP_WARN_|r << !Gnome
     .collect 203751,1,77667,1 -- Spell Notes: CALE ENCI (1)
     .train 401760,1
@@ -1029,7 +1029,7 @@ step << Gnome Mage
     #xprate >1.59
     #season 2
     #completewith next
-    .train 401760 >>|cRXP_WARN_使用|r |T134939:0|t|cRXP_LOOT_法术笔记：NNGABIIHGQSU]|r |cRXP_WARN_学习|r |T133816:0|t[铭刻手套 - 冰枪术]
+    .train 401760 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: CALE ENCI]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Ice Lance]
     .use 203751
     .itemcount 203751,1 -- Spell Notes: CALE ENCI (1)
 step << Gnome Mage
@@ -1149,7 +1149,7 @@ step << Gnome Mage
     #xprate <1.59
     #season 2
     #completewith next
-    .train 401760 >>|cRXP_WARN_使用|r |T134939:0|t|cRXP_LOOT_法术笔记：NNGABIIHGQSU]|r |cRXP_WARN_学习|r |T133816:0|t[铭刻手套 - 冰枪术]
+    .train 401760 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: CALE ENCI]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Ice Lance]
     .use 203751
     .itemcount 203751,1 -- Spell Notes: CALE ENCI (1)
 step << Gnome Mage
@@ -1403,7 +1403,7 @@ step << !Priest
     #xprate <1.5
     #optional
     .goto Dun Morogh,48.3,57.0
-    .xp 5+2690 >> 刷怪达到 2690+/2800 经验
+    .xp 5+2690 >> 刷怪达到2690+/2800经验
 step << !Priest
     #xprate 1.49-1.59
     #optional
@@ -4582,7 +4582,7 @@ step
     .goto Ironforge,78.00,51.40
     .subzone 2257 >>进入矿道地铁
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在矿道地铁的中间平台上与 |cRXP_FRIENDLY_蒙提|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 在矿道地铁的中间平台上与 |cRXP_FRIENDLY_蒙提|r 对话
     .accept 6661 >> 接受任务 捕捉矿道老鼠
     .target 蒙提
 step
@@ -4591,7 +4591,7 @@ step
     .use 17117
     .mob 矿道老鼠
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在矿道地铁的中间平台上与 |cRXP_FRIENDLY_蒙提|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 在矿道地铁的中间平台上与 |cRXP_FRIENDLY_蒙提|r 对话
     .turnin 6661 >> 交任务 捕捉矿道老鼠
     .timer 11,捕捉矿道老鼠剧情表演
     .accept 6662 >> 接受任务 我的兄弟，尼普希
@@ -4807,7 +4807,7 @@ step << Warlock
     .goto StormwindClassic,27.2,78.1,15 >> 前往屠宰场，进入地下室
 step << Warlock
     .goto StormwindClassic,26.117,77.225
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
     .trainer >> 训练你的职业技能
     .target 厄苏拉·德林
 step << Warlock
@@ -4855,7 +4855,7 @@ step
     .target 黑暗缚灵者加科因
 step
     .goto StormwindClassic,66.277,62.137
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
     .fp Stormwind >> 获取暴风城的飞行路径
     .target 杜加尔·朗德瑞克
 step
@@ -5069,7 +5069,7 @@ step
     .goto StormwindClassic,27.2,78.1,15 >> 前往屠宰场，进入地下室
 step
     .goto StormwindClassic,26.117,77.225
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
     .trainer >> 训练你的职业技能
     .target 厄苏拉·德林
 step
@@ -5122,7 +5122,7 @@ step << Warlock
     +在前往|cRXP_FRIENDLY_杜加尔·朗德瑞克|r的路上，反复施放|T136126:0|t|T136126:0|t[生命分流]，直到生命值低于10%
 step
     .goto StormwindClassic,66.277,62.137
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
     .fp Stormwind >> 获取暴风城的飞行路径
     .target 杜加尔·朗德瑞克
 step << Warlock
@@ -5633,7 +5633,7 @@ step << Warlock
     .goto StormwindClassic,27.2,78.1,15 >> 前往屠宰场，进入地下室
 step << Warlock
     .goto StormwindClassic,26.117,77.225
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
     .trainer >> 训练你的职业技能
     .target 厄苏拉·德林
 step << Warlock
@@ -5942,13 +5942,13 @@ step << Rogue
 step
     #xprate 1.49-1.59
     .goto StormwindClassic,66.277,62.137
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
     .fp Stormwind >> 获取暴风城的飞行路径
     .target 杜加尔·朗德瑞克
 step
     #xprate >1.59
     .goto StormwindClassic,66.277,62.137
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
     .fp Stormwind >> 获取暴风城的飞行路径
     .target 杜加尔·朗德瑞克
     .dungeon !DM
@@ -7057,7 +7057,7 @@ step
     #xprate <1.5
     #label Fly2WF
     .goto StormwindClassic,66.277,62.137
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
     .fly Westfall >> 飞往西部荒野
     .target 杜加尔·朗德瑞克
 

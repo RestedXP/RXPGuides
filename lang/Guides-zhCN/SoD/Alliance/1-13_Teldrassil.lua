@@ -197,7 +197,7 @@ step << Hunter/Rogue/Priest
     .train 402862 >> 使用 |T136222:0|t[|cRXP_FRIENDLY_忧虑助祭的回忆|r] 来训练 |T237545:0|t[苦修] << Priest
     .train 402849 >> 使用 |T135975:0|t[|cRXP_FRIENDLY_帝王消陨的预言|r] 来训练 |T136149:0|t[暗言术：灭] << Priest
     .train 410121 >> 使用 |T134419:0|t[|cRXP_FRIENDLY_奇美拉符文|r] 来学习 |T236176:0|t[奇美拉射击] << Hunter
-    .train 415423 >> 使用 |T133739:0|t[论述：蝰蛇守护|cRXP_FRIENDLY_] 来学习 |T132160:0|t[蝰蛇守护]|r] << Hunter
+    .train 415423 >> Use the |T133739:0|t[|cRXP_FRIENDLY_Treatise on Aspect of the Viper|r] to train |T132160:0|t[Heart of the Viper] << Hunter
     .train 410122 >> 使用 |T134419:0|t[|cRXP_FRIENDLY_独来独往符文|r] 来学习 |T132266:0|t[独来独往] << Hunter
     .train 416086 >> 使用 |T134419:0|t[|cRXP_FRIENDLY_短兵相接符文|r] 来学习 |T132394:0|t[近战专家] << Hunter
     .train 440563 >> 使用 |T134419:0|t[|cRXP_FRIENDLY_游击符文|r] 来学习 |T132171:0|t[一击脱离] << Hunter

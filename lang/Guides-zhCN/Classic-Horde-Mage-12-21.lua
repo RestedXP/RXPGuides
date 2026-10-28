@@ -8,7 +8,7 @@ RXPGuides.RegisterGuide([[
 << Horde Mage
 #name 12-17级 贫瘠之地 A怪指南
 #version 1
-#group RestedXP 部落法师 A怪指南
+#group RestedXP 部落法师 AOE攻略
 #defaultfor Horde Mage
 #next 17-21级 石爪山脉/荒芜之地 A怪指南
 
@@ -609,7 +609,7 @@ step
 >>与 |cRXP_FRIENDLY_瑟格拉·黑棘|r 对话
     .turnin 905 >>交任务  在迅猛龙的巢穴里
 .target 瑟格拉·黑棘
-    .accept 3261 >>接受任务 乔恩·星眼
+    .accept 3261 >>接受任务 [DEPRECATED in 4.x] 乔恩·星眼
 step
     .goto The Barrens,52.2,31.9
 >>与 |cRXP_FRIENDLY_图加·符文图腾|r 对话
@@ -699,7 +699,7 @@ step
 >>与 |cRXP_FRIENDLY_希雷斯·碎石|r 对话
     .turnin 1061 >> 交任务  石爪之灵
 .target 希雷斯·碎石
-    .accept 1062 >> 接受任务地精侵略者
+    .accept 1062 >> 接受任务 地精侵略者
 .target 玛卡巴·扁蹄
 >>与 |cRXP_FRIENDLY_玛卡巴·扁蹄|r 对话
     .accept 6548 >> 接受任务 为我的村庄复仇
@@ -711,7 +711,7 @@ RXPGuides.RegisterGuide([[
 << Horde Mage
 #name 17-21级 石爪山脉/荒芜之地 A怪指南
 #version 1
-#group RestedXP 部落法师 A怪指南
+#group RestedXP 部落法师 AOE攻略
 #defaultfor Horde Mage
 #next 21-30级 银松森林/希尔斯布莱德 A怪指南
 
@@ -939,10 +939,10 @@ step
 step
     .goto The Barrens,44.6,59.2
 >>与 |cRXP_FRIENDLY_碎牙|r 对话
-    .turnin 878 >>交任务  野猪人的内战
+    .turnin 878 >>交任务野猪人的内战
 .target 碎牙
-    .accept 5052 >>接受任务 阿迦玛甘的血岩碎片
-    .turnin 5052 >>交任务  阿迦玛甘的血岩碎片
+    .accept 5052 >>接受任务阿迦玛甘的血岩碎片
+    .turnin 5052 >>交任务阿迦玛甘的血岩碎片
 --N Different classes needing different buffs, e.g. need speed buff later for Mulgore run for classes that didnt get FP earlier
 step
     .goto The Barrens,44.8,59.1
@@ -1058,12 +1058,12 @@ step
 step
     .goto The Barrens,35.3,27.9
 >>与 |cRXP_FRIENDLY_希雷斯·碎石|r 对话
-    .turnin 1062 >>交任务地精侵略者
+    .turnin 1062 >>交任务  地精侵略者
 >>与 |cRXP_FRIENDLY_玛卡巴·扁蹄|r 对话
     .turnin 6629 >>交任务  杀死格鲁迪格·黑云
-    .turnin 6523 >>交任务保护卡雅
+    .turnin 6523 >>交任务  保护卡雅
 .target 玛卡巴·扁蹄
-    .accept 6401 >>接受任务卡雅还活着
+    .accept 6401 >>接受任务 卡雅还活着
 .target 希雷斯·碎石
     .accept 1063 >>接受任务 巫婆长老
 --    .accept 1068 >> Accept Shredding Machines

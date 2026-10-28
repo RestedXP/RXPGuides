@@ -12,7 +12,9 @@ RXPGuides.RegisterGuide([[
 #next 17-18级 领主大厅
 
 step
-    #include RestedXP 永久向导 A\14-16级 黑海岸@WashedA-IFExit
+    #include RestedXP无限服指南（联盟）\14-16级 黑海岸@WashedA-DarkshoreEndNE
+step
+    #include RestedXP无限服指南（联盟）\15-16级 洛克莫丹@SWBoat-IFExit
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_旅店老板洛雷·火酒|r 对话
     >>|cRXP_WARN_如果你的队伍里有法师，那就把炉石绑定在湖畔镇|r
@@ -102,7 +104,7 @@ step
     .turnin 96390 >> 交任务 防患于未然
     .target Earthseer Farsen
 step
-    #include RestedXP 永久向导 A\14-16级 黑海岸@LochEnter-LochEnd
+    #include RestedXP无限服指南（联盟）\15-16级 洛克莫丹@LochEnter-LochEnd
 step << NightElf Druid
     #completewith next
 	.cast 18960 >> 施放传送：月光林地
@@ -123,14 +125,16 @@ step << Druid
 	.trainer >> 训练你的职业技能
 	.target 玛斯雷·驭熊者
 step << Druid
-    #season 0
+	#completewith next
+	.cast 18960 >> 施放传送：月光林地
+	.zoneskip Moonglade
+step << Druid
     .goto Moonglade,56.1,30.7
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德迪利特·星焰|r 对话
     .turnin 26 >> 交任务必修的课程
     .accept 29 >> 接受任务湖中试炼
     .target 德迪利特·星焰
 step << Druid
-    #season 0
     .goto Moonglade,52.6,51.6
     >>游入月神湖
     >>打开一个 |cRXP_PICK_神殿灵珠容器|r。拾取 |T134125:0|t[神殿灵珠]
@@ -138,19 +142,16 @@ step << Druid
     .collect 15877,1,29,1 -- Shrine Bauble (1)
 step << Druid
     #optional
-    #season 0
     #completewith next
     .cast 18960 >> 施放传送：月光林地
     .itemcount 15877,1 -- Shrine Bauble (1)
 step << Druid
-    #season 0
     .goto Moonglade,36.026,41.374
     >>|cRXP_WARN_在雷姆洛斯神殿使用|r |T134125:0|t[神殿灵珠] |cRXP_WARN_|r
     .complete 29,1 --Complete the Trial of the Lake.
     .use 15877
 step << Druid
     #label TotL
-    #season 0
     .goto Moonglade,36.517,40.104
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塔加里|r 对话
     .turnin 29 >> 交任务 湖中试炼
@@ -238,7 +239,7 @@ step << NightElf
 --     .collect 255010,5,92909,1 -- Harvester Gyrostabilizer (5)
 --     .target Auctioneer Jaxon
 -- step
---     .goto 1453/0,490.03,-8835.82
+--     .goto 1453/0,484.200,-8832.500
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r
 --     .fp Stormwind >> Get the Stormwind Flight Path
 --     .target Dungar Longdrink
@@ -700,17 +701,17 @@ step
     .target 拍卖师亚克森
 
 step << Human
-    .goto 1453/0,489.99,-8835.76
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
+    .goto 1453/0,484.200,-8832.500
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
     .turnin 6261 >> 交任务 杜加尔·朗德瑞克
     .accept 6285 >> 接受任务 返回西部荒野
     .target 杜加尔·朗德瑞克
 
 step << !Skyborne
-    .goto 1453/0,490.03,-8835.82
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
-    .fly Westfall >> 飞往西部荒野 << !NightElf
-    .fp Stormwind >> 开启暴风城的飞行点 << NightElf
+    .goto 1453/0,484.200,-8832.500
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
+    .fly Westfall >> 飞往西部荒野 << !NightElf !Dwarf/!Hunter
+    .fp Stormwind >> 开启暴风城的飞行点 << NightElf/Dwarf Hunter
     .target 杜加尔·朗德瑞克
 step
     #completewith SaldeanVendor
@@ -782,7 +783,7 @@ step << !Human
 step
     .goto 1436/0,1166.57,-10653.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_与旅店老板对话|r
-    .vendor >>|cRXP_BUY_按需购买食物/水|r
+    .vendor >>|cRXP_BUY_如有需要，购买食物/水|r
 	.target 旅店老板希瑟尔
 step
     .goto 1436/0,1179.800,-10635.601
@@ -1234,7 +1235,7 @@ step << Warlock
     .goto 1453/0,1015.33,-8978.9,15 >> 前往屠宰场，进入地下室
 step << Warlock
     .goto 1453/0,1029.89,-8971.06
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
     .trainer >> 训练你的职业技能
     .train 6222,1
     .target 厄苏拉·德林
@@ -2349,7 +2350,7 @@ step << Warlock
     .zoneskip Ironforge
 step << Warlock
     .goto 1453/0,1029.89,-8971.06
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
     .trainer >> 训练你的职业技能
     .target 厄苏拉·德林
     .zoneskip Dun Morogh
@@ -2672,6 +2673,12 @@ step << Warrior/Hunter
     .trainer >> 训练你的职业技能
     .target 雷格努斯·雷石 << Hunter
     .target 比尔班·飞钳 << Warrior
+step << Hunter/Druid
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布里维夫·石拳|r 对话
+    .train 266 >> 学习枪械 << Hunter
+    .train 199 >> 学习双手锤 << Druid
+    .goto 1455/0,-1197.27,-5041.49
+    .target 布里维夫·石拳
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -2755,7 +2762,7 @@ step
     .subzoneskip 16611 -- ruins of lordaeron
 step
     #completewith next
-    .goto 1424/0,-136.700,-535.800,125 >> |cRXP_WARN_注意：你在前往希尔斯布莱德农场的途中可能会遇到更高等级的 |cRXP_ENEMY_Lions|r 和 |cRXP_ENEMY_熊|r|r
+    .goto 1424/0,-136.700,-535.800,125 >> |cRXP_WARN_注意：你在前往希尔斯布莱德农场的途中可能会遇到更高等级的 |cRXP_ENEMY_狮子|r 和 |cRXP_ENEMY_熊|r|r
     >>|cRXP_WARN_如果你在PvP服务器上，请小心部落玩家|r
     .zoneskip 1424,1 
 step
@@ -2773,9 +2780,9 @@ step
     .goto 1420/0,4.300,1847.500,10,0
     .goto 1458/0,238.400,1872.200,20,0
     .goto 1458/0,170.700,1804.700,20 >>前往幽暗城的洛丹伦废墟。进入地下城
-    >>|cRXP_WARN_跑过去的时候小心高等级的 |cRXP_ENEMY_Lions|r、|cRXP_ENEMY_熊|r、|cRXP_ENEMY_Spiders|r 或者 |cRXP_ENEMY_Murlocs|r|r
+    >>|cRXP_WARN_跑过去时小心高等级的 |cRXP_ENEMY_豹子|r、|cRXP_ENEMY_熊|r、|cRXP_ENEMY_蜘蛛|r 或 |cRXP_ENEMY_渔人|r|r
     >>|cRXP_WARN_一旦进入 幽暗城，你将自动被标记为PvP状态，|r |cRXP_ENEMY_部落|r 可以攻击你
-    .link https://www.youtube.com/watch?v=jxmG6_JPFMc >> |cRXP_WARN_点击此处查看进入Lordaeon地下城废墟的视频指南|r
+    .link https://www.youtube.com/watch?v=jxmG6_JPFMc >> |cRXP_WARN_点击此处查看进入洛丹伦废墟地下城的视频指南|r
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_图曼上尉|r 对话
     .accept 95250 >> 接受任务 憎恶生物
@@ -2824,73 +2831,170 @@ step
     .turnin 95250 >> 交任务 憎恶生物
     .target Captain Truman
 step
-    .hs >> 将炉石使用回暴风城
-    .zoneskip Stormwind City
-    .bindlocation 1519,1 --HS in SW
-step
-    #optional
-    .hs >> 将炉石使用回铁炉堡
+    .hs >> 将炉石使用回暴风城 << !NightElf
+    .hs >> 将炉石使用回铁炉堡 << NightElf
     .zoneskip Ironforge
     .zoneskip Stormwind City
-    .bindlocation 1537,1 --HS in IF
 step 
     #optional
     .goto Ironforge,76.61,51.28,10,0
     .zone Stormwind City >> 乘坐地铁前往暴风城
-    .zoneskip Ironforge,1
-step
-    #optional
-    #completewith next
-    .zone Stormwind City >>前往暴风城
-step
-    .isOnQuest 92415
-    .goto 1453/0,744.400,-8621.101
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_孤儿监护员奈丁加尔|r 对话
-    .turnin 92415 >> 交任务 记住我爱你
-    .accept 95161 >> 接受任务 记住我爱你
-    .target Orphan Matron Nightingale
-step
-    #optional
-    .isQuestTurnedIn 92415
-    .goto 1453/0,744.400,-8621.101
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_孤儿监护员奈丁加尔|r 对话
-    .accept 95161 >> 接受任务 记住我爱你
-    .target Orphan Matron Nightingale
-step
-    .goto 1453/0,634.700,-8390.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_沉默的舒尼|r 对话
-    .accept 2040 >> 接受任务 地底突袭
-    .target 沉默的舒尼
-step
+step << NightElf
     .goto 1453/0,501.200,-8468.601
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_维尔德·蓟草|r 对话
     .accept 167 >> 接受任务 我的兄弟……
     .accept 168 >> 接受任务 收集记忆
     .target 维尔德·蓟草
-step
+step << NightElf
     #completewith next
     .goto 1453/0,437.600,-8524.5000,20,0
     .goto 1453/0,408.100,-8478.500,15,0
     .goto 1453/0,502.900,-8358.800,15 >> 前往暴风城图书馆
-step
+step << NightElf
     .isOnQuest 95189
     .goto 1453/0,531.000,-8322.400
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德娜·肯尼迪|r 对话
     >>|cRXP_WARN_她在皇家画廊里走来走去|r
     .turnin 95189 >> 交任务 洛丹伦纹章
     .target 德娜·肯尼迪
-step
+step << NightElf
+    .goto 1453/0,634.700,-8390.800
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_沉默的舒尼|r 对话
+    .accept 2040 >> 接受任务 地底突袭
+    .target 沉默的舒尼
+step << NightElf
+    #optional
+    .goto 1453/0,600.22,-8426.93
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_弗伦·长须|r 对话
+    .turnin 1338 >> 交任务 卡尔·雷矛的订单
+    .target 弗伦·长须
+    .isOnQuest 1338
+step << NightElf
+    .isOnQuest 92415
+    .goto 1453/0,744.400,-8621.101
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_孤儿监护员奈丁加尔|r 对话
+    .turnin 92415 >> 交任务 记住我爱你
+    .accept 95161 >> 接受任务 记住我爱你
+    .target Orphan Matron Nightingale
+step << NightElf
+    #optional
+    .isQuestTurnedIn 92415
+    .goto 1453/0,744.400,-8621.101
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_孤儿监护员奈丁加尔|r 对话
+    .accept 95161 >> 接受任务 记住我爱你
+    .target Orphan Matron Nightingale
+step << NightElf Rogue
+    .goto 1453/0,377.61,-8752.30
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥斯本|r 对话
+    >>|cRXP_WARN_确保你学习|r |T136058:0|t[开锁] |cRXP_WARN_因为你的潜行者职业任务中很快就会需要它|r
+    .train 1804 >> 学习 |T136058:0|t[开锁]
+    .target 夜行者奥斯伯
+    .xp >20,1
+    .xp <18,1
+step << NightElf Rogue
+    .goto 1453/0,377.61,-8752.30
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥斯本|r 对话
+    >>|cRXP_WARN_确保你学习|r |T136058:0|t[开锁] |cRXP_WARN_因为你的潜行者职业任务中很快就会需要它|r
+    .train 1804 >> 学习 |T136058:0|t[开锁]
+    .trainer >> 训练你的职业技能
+    .target 夜行者奥斯伯
+    .xp <20,1
+step << NightElf Rogue
+    #completewith next
+    .goto 1453/0,374.11,-8762.88,20,0
+    .goto 1453/0,326.66,-8818.01,20,0
+    .goto 1453/0,323.43,-8817.83,5 >> 进入军情7处总部。上楼去找 |cRXP_FRIENDLY_"剃刀"雷吉克|r
+step << NightElf Rogue
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_"剃刀"雷吉克|r对话
+    .accept 2281 >> 接受任务 赤脊山的联络员
+    .goto 1453/0,362.55,-8819.80
+    .target Renzik "The Shiv"
+step << NightElf
+    .goto 1453/0,673.58,-8867.76
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_旅店老板奥里森|r 对话
+    .home >> 将你的炉石设置为暴风城
+    .target 旅店老板奥里森
+    .bindlocation 16509
+step << NightElf
+    .goto 1453/0,484.200,-8832.500
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
+    .fp Stormwind >> 开启暴风城的飞行点
+    .target 杜加尔·朗德瑞克
+step << NightElf
     .isOnQuest 95195
     .goto 1453/0,521.000,-8954.101
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_马库斯·乔纳森将军|r对话
     .turnin 95195 >> 交任务 血污徽章
     .target General Marcus Jonathan
-step << Rogue
-    .goto 1453/0,377.47,-8752.39
+step << !NightElf
+    .isOnQuest 92415
+    .goto 1453/0,744.400,-8621.101
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_???????????????????????????|r 对话
+    .turnin 92415 >> 交任务 Remember That I Love 你
+    .accept 95161 >> 接受任务 Remember That I Love 你
+    .target Orphan Matron Nightingale
+step << !NightElf
+    #optional
+    .isQuestTurnedIn 92415
+    .goto 1453/0,744.400,-8621.101
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_???????????????????????????|r 对话
+    .accept 95161 >> 接受任务 Remember That I Love 你
+    .target Orphan Matron Nightingale
+step << !NightElf
+    .goto 1453/0,634.700,-8390.800
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_沉默的舒尼|r 对话
+    .accept 2040 >> 接受任务 地底突袭
+    .target 沉默的舒尼
+step << !NightElf
+    .goto 1453/0,501.200,-8468.601
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_维尔德·蓟草|r 对话
+    .accept 167 >> 接受任务 我的兄弟……
+    .accept 168 >> 接受任务 收集记忆
+    .target 维尔德·蓟草
+step << !NightElf
+    #completewith next
+    .goto 1453/0,437.600,-8524.5000,20,0
+    .goto 1453/0,408.100,-8478.500,15,0
+    .goto 1453/0,502.900,-8358.800,15 >> 前往暴风城图书馆
+step << !NightElf
+    .isOnQuest 95189
+    .goto 1453/0,531.000,-8322.400
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德娜·肯尼迪|r 对话
+    >>|cRXP_WARN_她在 Royal Gallery 附近稍微走动|r
+    .turnin 95189 >> 交任务 洛丹伦之徽
+    .target 德娜·肯尼迪
+step << !NightElf
+    .isOnQuest 95195
+    .goto 1453/0,521.000,-8954.101
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_马库斯·乔纳森将军|r对话
+    .turnin 95195 >> 交任务 Bloodied Insignia
+    .target General Marcus Jonathan
+step << !NightElf Rogue
+    .goto 1453/0,377.61,-8752.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥斯本|r 对话
+    >>|cRXP_WARN_确保你学习|r |T136058:0|t[开锁] |cRXP_WARN_因为你的潜行者职业任务中很快就会需要它|r
+    .train 1804 >> 学习 |T136058:0|t[开锁]
+    .target 夜行者奥斯伯
+    .xp >20,1
+    .xp <18,1
+step << !NightElf Rogue
+    .goto 1453/0,377.61,-8752.30
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥斯本|r 对话
+    >>|cRXP_WARN_确保你学习|r |T136058:0|t[开锁] |cRXP_WARN_因为你的潜行者职业任务中很快就会需要它|r
+    .train 1804 >> 学习 |T136058:0|t[开锁]
     .trainer >> 训练你的职业技能
     .target 夜行者奥斯伯
     .xp <20,1
+step << !NightElf Rogue
+    #completewith next
+    .goto 1453/0,374.11,-8762.88,20,0
+    .goto 1453/0,326.66,-8818.01,20,0
+    .goto 1453/0,323.43,-8817.83,5 >> 进入军情7处总部。上楼去找 |cRXP_FRIENDLY_"剃刀"雷吉克|r
+step << !NightElf Rogue
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_"剃刀"雷吉克|r对话
+    .accept 2281 >> 接受任务 赤脊山的联络员
+    .goto 1453/0,362.55,-8819.80
+    .target Renzik "The Shiv"
 step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_吴|r 或 |cRXP_FRIENDLY_伊尔莎|r 对话
     .goto 1453/0,358.25,-8728.28,15,0
@@ -2919,7 +3023,7 @@ step << Warlock
     .goto 1453/0,1015.33,-8978.9,15 >> 前往屠宰场，进入地下室
 step << Warlock
     .goto 1453/0,1029.89,-8971.06
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
     .trainer >> 训练你的职业技能
     .target 厄苏拉·德林
     .xp <20,1
@@ -2964,44 +3068,53 @@ RXPGuides.RegisterGuide([[
 #next 20-21级 黑海岸/灰谷
 
 step
+    #optional
     .goto 1453/0,673.58,-8867.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_旅店老板奥里森|r 对话
     .home >> 将你的炉石设置为暴风城
     .target 旅店老板奥里森
     .bindlocation 16509
-step
+step << !NightElf !Dwarf/!Hunter
     #completewith TDB1
-    #label FlyWestfall
-    .goto 1453/0,490.03,-8835.82
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
-    >>|cRXP_WARN_如果你还没有开启西西部荒野的飞行点，跳过此步骤|r << !Human !Gnome !Dwarf
+    .goto 1453/0,484.200,-8832.500
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
     .fly Westfall >> 飞往西部荒野
     .target 杜加尔·朗德瑞克
-step
+step << Dwarf Hunter/NightElf
     #optional
-    #requires FlyWestfall
     #completewith TDB1
-    .zone Westfall >> 前往西部荒野
+    .zone Westfall >> 离开暴风城。前往西部荒野
 step
     #label TDB1
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格里安·斯托曼|r 对话
 	.target 格里安·斯托曼
     .goto 1436/0,1045.12,-10508.80
     .accept 65 >> 接受任务 迪菲亚兄弟会
-step
+step << !Skyborne
     #completewith RRDB
-    .goto 1453/0,490.03,-8835.82,-1
+    .goto 1453/0,484.200,-8832.500,-1
     .goto 1436/0,1037.42,-10628.27,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 或 |cRXP_FRIENDLY_索尔|r 对话
-    >>|cRXP_WARN_如果你还没有开启赤脊山的飞行路线，跳过这一步|r << !Human !Gnome !Dwarf
-    .fly Redridge >> 飞往赤脊山
+    .fly Redridge >> 飞往赤脊山 << !NightElf !Dwarf/!Hunter
+    .fp Westfall >> 开启西部荒野的飞行路径 << NightElf/Dwarf Hunter
     .target 杜加尔·朗德瑞克
+    .target 索尔
     .zoneskip Redridge Mountains
     .zoneskip Elwynn Forest
 step
     .isQuestAvailable 132
     .goto 1433/0,-1906.400,-9606.800
     .zone Redridge Mountains >> 前往赤脊山
+step << NightElf/Skyborne/Dwarf Hunter
+    .goto 1433/0,-1906.400,-9606.800
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_守卫帕克|r 对话
+    .accept 244 >> 接受任务 豺狼人的入侵
+    .target 卫兵帕克
+step << NightElf/Skyborne/Dwarf Hunter
+    .goto 1433/0,-2237.93,-9443.60
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_菲尔顿副队长|r 对话
+    .turnin 244 >> 交任务豺狼人的入侵
+    .target 菲尔顿副队长
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_工头奥斯洛|r 对话
     .goto 1433/0,-2268.32,-9279.12
@@ -3015,6 +3128,12 @@ step
     .turnin 65 >> 交任务 迪菲亚兄弟会
     .accept 132 >> 接受任务 迪菲亚兄弟会
 	.target Wiley the Black
+step << Rogue
+    .goto 1433/0,-2180.19,-9328.21
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_卢修斯|r 对话
+    .turnin 2281 >> 交任务 赤脊山的联络员
+    .accept 2282 >> 接受任务 奥瑟尔伐木场
+    .target Lucius
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_肖恩|r对话
 	.target 肖恩
@@ -3038,16 +3157,38 @@ step
     >>打开 |cRXP_PICK_沉没的箱子|r。拾取 |cRXP_LOOT_奥斯洛的工具箱|r
     .goto 1433/0,-2472.16,-9366.72
     .complete 125,1 --Oslow's Toolbox (1)
+step << Rogue
+    #completewith next
+    .subzone 97 >> 前往奥瑟尔伐木场
+step << Rogue
+    .goto 1433,51.846,45.116
+    >>|cRXP_WARN_你必须完成这一步，才能进行之后的|r |T132290:0|t[毒药] |cRXP_WARN_任务|r
+    >>|cRXP_WARN_站在路径点位置。调整你的镜头和鼠标位置，使你无需移动即可一次性点击 3 个|cRXP_PICK_ |r练习用保险箱|r
+    .skill lockpicking,80 >>|cRXP_WARN_在奥瑟尔磨坊打开地上的 |cRXP_PICK_练习用保险箱|r，直到你的|r |T136058:0|t[开锁] 技能达到 80|r
+step << Rogue
+	.goto 1433/0,-2700.75,-9222.07
+    >>打开 |cRXP_PICK_卢修斯的保险箱|r。从中拾取 |cRXP_LOOT_盗贼徽记|r
+    .complete 2282,1 --Token of Thievery
+    .skill lockpicking,<80,1
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_工头奥斯洛|r 对话
     .goto 1433/0,-2268.32,-9279.12
     .turnin 125 >> 交任务 丢失的工具
     .target Foreman Oslow
+step << Rogue
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_卢修斯|r 对话
+	.target Lucius
+    .goto 1433/0,-2180.19,-9328.21
+    .turnin 2282 >> 交任务 奥瑟尔伐木场
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_希拉里|r 对话
 	.target Hilary
     .goto 1433/0,-2205.58,-9351.52
     .turnin 3741 >> 交任务 希拉里的项链
+step << Rogue
+    #optional
+	#sticky
+	.destroy 7907 >> 摧毁 |T134328:0|t[偷窃技能认证书]。你不需要它了
 step
     #completewith next
     .goto 1433/0,-2234.900,-9435.300
@@ -3096,8 +3237,8 @@ step
     .target 拍卖师亚克森
 step
     #completewith EnterDM
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
-    .goto 1453/0,490.03,-8835.82
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
+    .goto 1453/0,484.200,-8832.500
     .fly Westfall >> 飞往西部荒野
     .target 杜加尔·朗德瑞克
 step
@@ -3270,20 +3411,6 @@ step << Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_洛甘纳尔|r 对话
     .trainer >> 训练你的职业技能
     .target 洛甘纳尔
-step << Druid
-    .goto 1450/1,-2212.25,7854.28
-    .use 15883 >>|cRXP_WARN_使用|r |T133443:0|t[水兽敏捷坠饰] |cRXP_WARN_将其与|r |T133442:0|t[水兽耐力坠饰] |cRXP_WARN_在雷姆洛斯神殿合并|r
-    .complete 272,1 --Collect Pendant of the Sea Lion (x1)
-step << Druid
-    #completewith next
-	.cast 18960 >> 施放传送：月光林地
-    >>|cRXP_WARN_这样可以节省你跑回去的时间|r
-step << Druid
-    .goto 1450/1,-2678.74,8020.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德迪利特·星焰|r 对话
-    .turnin 272 >> 交任务海狮试炼
-    .accept 5061 >> 接受任务水栖形态
-    .target 德迪利特·星焰
 step << Druid
     .hs >> 炉石到哨兵岭
 step << !Druid
@@ -3459,8 +3586,8 @@ step << Rogue
     .target 马迪亚斯·肖尔大师
 step << Rogue
     #completewith RoguePoison
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
-    .goto 1453/0,490.03,-8835.82
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
+    .goto 1453/0,484.200,-8832.500
     .fly Westfall >> 飞往西部荒野
     .target 杜加尔·朗德瑞克
 step << !Dwarf Rogue
@@ -3470,7 +3597,7 @@ step << !Dwarf Rogue
     >>击杀|cRXP_ENEMY_小型结网毒蜘蛛|r和|cRXP_ENEMY_结网毒蜘蛛|r，拾取|cRXP_LOOT_小毒囊|r和|cRXP_LOOT_粘糊的蜘蛛腿|r
     >>|cRXP_WARN_你需要一个|cRXP_LOOT_小毒囊|r来做成|r |T134437:0|t[抗毒药剂] |cRXP_WARN_，后面用来解除|r |T136230:0|t[赞吉尔之触] |cRXP_WARN_的debuff|r
     >>|cRXP_WARN_把|cRXP_LOOT_粘糊的蜘蛛腿|r留着后面用|r
-    >>|cRXP_WARN_如果你有一个|r |T626003:0|t|cFFF48CBA迪菲亚兄弟会|r|cRXP_WARN_、|r |T625999:0|t|cFFFF7C0A德鲁伊|r |cRXP_WARN_或者|r |T626006:0|t|cFF0070DD萨满祭司|r |cRXP_WARN_朋友，你可以跳过这一步并请他们为你移除它|r
+    >>|cRXP_WARN_如果你有一个|r |T626003:0|t|cFFF48CBA圣骑士|r|cRXP_WARN_、|r |T625999:0|t|cFFFF7C0A德鲁伊|r |cRXP_WARN_或者|r |T626006:0|t|cFF0070DD萨满|r |cRXP_WARN_朋友，你可以跳过这一步并请他们为你移除它|r
     .collect 1475,1,2359,1 -- Small Venom Sac (1)
     .collect 2251,6,93,1,1 -- Gooey Spider Legs (6)
     .disablecheckbox
@@ -3500,7 +3627,7 @@ step << Rogue
     .goto 1436/0,514.52,-11114.77,30,0
     .goto 1436/0,531.32,-11166.80,30,0
     .goto 1436/0,581.37,-11104.97,30,0
-    >>|T133644:0|t[搜索] |cRXP_ENEMY_丑陋的迪菲亚懒汉|r。拾取 |cRXP_LOOT_迪菲亚塔楼钥匙|r
+    >>|T133644:0|t[搜索] |cRXP_ENEMY_丑陋的迪菲亚懒汉|r。拾取地上的物品以获得 |cRXP_LOOT_迪菲亚塔楼钥匙|r
     >>|cRXP_WARN_你必须处于|r |T132320:0|t[潜行] |cRXP_WARN_状态下才能使用|r |T133644:0|t[偷窃]
     >>|cRXP_WARN_|cRXP_ENEMY_丑陋的迪菲亚懒汉|r 出现在塔楼入口处，随后会在塔楼外侧巡逻|r
     >>|cRXP_WARN_小心，他伤害很高。如果你的|r |T132320:0|t[潜行] |cRXP_WARN_被打破，立刻使用|r |T132307:0|t[疾跑] |cRXP_WARN_并逃离|r
@@ -3545,7 +3672,7 @@ step << Dwarf Rogue
     #optional
     #sticky
     #label AntiVenomEnd2
-    .cast 20594 >>|cRXP_WARN_施放 |T136225:0|t[石像形态] 来移除 |T136230:0|t[赞吉尔之触] 的减益效果|r
+    .cast 20594 >>|cRXP_WARN_施放 |T136225:0|t[石像形态] ，来移除 |T136230:0|t[赞吉尔之触] 的减益效果|r
     .aura -9991
 step << Rogue
     .hs >> 将炉石使用回暴风城
@@ -3573,7 +3700,7 @@ step << !Dwarf Rogue
     #requires AntiVenomEnd
     .goto 1453,43.070,26.155
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_珊娜·弗勒|r 对话
-    >>|cRXP_WARN_如果你有一个|r |T626003:0|t|cFFF48CBA迪菲亚兄弟会|r|cRXP_WARN_、|r |T625999:0|t|cFFFF7C0A德鲁伊|r |cRXP_WARN_或者|r |T626006:0|t|cFF0070DD萨满祭司|r |cRXP_WARN_朋友，请他们为你移除|r |T136230:0|t[赞吉尔之触] |cRXP_WARN_来代替|r
+    >>|cRXP_WARN_如果你有一个|r |T626003:0|t|cFFF48CBA圣骑士|r|cRXP_WARN_、|r |T625999:0|t|cFFFF7C0A德鲁伊|r |cRXP_WARN_或者|r |T626006:0|t|cFF0070DD萨满|r |cRXP_WARN_朋友，|r |cRXP_WARN_请他们为你移除|r |T136230:0|t[赞吉尔之触]
     .skill firstaid,80 >> |cRXP_WARN_将你的|r |T135966:0|t[急救] |cRXP_WARN_提升到 80|r
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
@@ -3581,7 +3708,7 @@ step << !Dwarf Rogue
     #label FirstAidEnd
     .goto 1453,43.070,26.155
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_珊娜·弗勒|r 对话
-    >>|cRXP_WARN_如果你有一个|r |T626003:0|t|cFFF48CBA迪菲亚兄弟会|r|cRXP_WARN_、|r |T625999:0|t|cFFFF7C0A德鲁伊|r |cRXP_WARN_或者|r |T626006:0|t|cFF0070DD萨满祭司|r |cRXP_WARN_朋友，请他们为你移除|r |T136230:0|t[赞吉尔之触] |cRXP_WARN_来代替|r
+    >>|cRXP_WARN_如果你有一个|r |T626003:0|t|cFFF48CBA圣骑士|r|cRXP_WARN_、|r |T625999:0|t|cFFFF7C0A德鲁伊|r |cRXP_WARN_或者|r |T626006:0|t|cFF0070DD萨满|r |cRXP_WARN_朋友，|r |cRXP_WARN_请他们为你移除|r |T136230:0|t[赞吉尔之触]
     .train 7934 >> |cRXP_WARN_学习|r |T134437:0|t[抗毒药剂]
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
@@ -3628,7 +3755,7 @@ step << Rogue
     #requires AntiVenomEnd2 << Rogue
     .goto 1453/0,362.28,-8815.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_马迪亚斯·肖尔大师|r 对话
-    >>|cRXP_WARN_如果你之前切换成了|r |T135641:0|t[匕首] |cRXP_WARN_，记得重新装备你的主武器|r << Rogue
+    >>|cRXP_WARN_如果你之前切换成了|r |T135641:0|t[匕首] |cRXP_WARN_，记得重新装备上你的主武器|r << Rogue
     .turnin 2359 >> 交任务 克拉文之塔
     .target 马迪亚斯·肖尔大师
 step << Warrior
@@ -3705,7 +3832,7 @@ step << Warlock
     .goto 1453/0,1015.33,-8978.9,15 >> 前往屠宰场，进入地下室
 step << Warlock
     .goto 1453/0,1029.89,-8971.06
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
     .trainer >> 训练你的职业技能
     .target 厄苏拉·德林
 step << Warlock
@@ -3948,6 +4075,13 @@ step
     .collect 12347,1,4763,1 --Filled Cleansing Bowl (1)
     .use 12346
 step
+    #optional
+    .goto 1439,44.168,36.289
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿斯特利安|r 对话
+    .turnin 957 >> 交任务 巴莎兰
+    .isOnQuest 957
+    .target 阿斯特利安
+step
     .isOnQuest 4763
     #sticky
     #label Blackwood1
@@ -4170,6 +4304,35 @@ step << Druid
     >>|cRXP_WARN_游到水中|r
     >>打开 |cRXP_PICK_奇怪的保险箱|r，并从中拾取 |cRXP_LOOT_水兽敏捷坠饰|r
     .collect 15883,1,272,1 --Collect Half Pendant of Aquatic Agility (x1)
+step << Druid
+    #completewith next
+	.cast 18960 >> 施放传送：月光林地
+step << Druid
+    .goto Moonglade,52.53,40.57
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_洛甘纳尔|r 对话
+    .trainer >> 训练你的职业技能
+    .target 洛甘纳尔
+step << Druid
+    .goto 1450/1,-2212.25,7854.28
+    .use 15883 >>|cRXP_WARN_使用|r |T133443:0|t[水兽敏捷坠饰] |cRXP_WARN_将其与|r |T133442:0|t[水兽耐力坠饰] |cRXP_WARN_在雷姆洛斯神殿合并|r
+    .complete 272,1 --Collect Pendant of the Sea Lion (x1)
+step << Druid
+    #completewith next
+	.cast 18960 >> 施放传送：月光林地
+    >>|cRXP_WARN_这样可以节省你跑回去的时间|r
+step << Druid
+    .goto 1450/1,-2678.74,8020.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德迪利特·星焰|r 对话
+    .turnin 272 >> 交任务海狮试炼
+    .accept 5061 >> 接受任务水栖形态
+    .target 德迪利特·星焰
+step << Druid
+    .isOnQuest 5061
+    .goto 1450/1,-2489.25,7457.07
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_辛德拉尔|r 对话
+    .target 辛德拉尔
+    .fly Darkshore >> 飞往黑海岸
+    .zoneskip Darkshore
 step
     #sticky
     #optional
@@ -4226,6 +4389,7 @@ step
     .mob 灰雾猎人
     .mob 灰雾滩行者
 step
+    #label Onu
     .goto 1439,43.555,76.293
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_安努|r 对话
     .turnin 948 >> 交任务 安努
@@ -4399,6 +4563,10 @@ step
     >>|cRXP_WARN_尽可能避免在主干道上奔跑。只有当你在路上时敌人才会刷新|r
     .complete 5321,2
     .isOnQuest 5321
+step
+    #optional
+    .abandon 2138 >> 放弃任务清除疫病
+    .abandon 1002 >> 放弃任务传声盒323号
 step
     #completewith tower
     .zone Ashenvale >> 向南前往灰谷

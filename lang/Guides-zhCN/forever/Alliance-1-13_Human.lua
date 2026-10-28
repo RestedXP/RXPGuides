@@ -9,7 +9,7 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #name 1-6级 北郡
 #version 1
-#group RestedXP 永久向导 A
+#group RestedXP无限服指南（联盟）
 #subgroup 速通指南 1-20级
 --#groupid RXP-SRGCE-A1
 #defaultfor Human
@@ -244,13 +244,13 @@ step << Warlock
     #hardcore
 --   .goto 1429/0,-300.65,-8964.94,60,0
     .goto 1429/0,-432.55,-8958.00
-    >>打开 |cRXP_PICK_被偷走的书|r。从中拾取 |cRXP_LOOT_虚空灵能|r
+    >>打开 |cRXP_PICK_被偷走的书|r。并从中拾取 |cRXP_LOOT_虚空灵能|r
     .complete 1598,1 --Collect Powers of the Void (x1)
 step << Warlock
     #softcore
 --  .goto 1429/0,-300.65,-8964.94,60,0
     .goto 1429/0,-432.55,-8958.00
-    >>打开 |cRXP_PICK_被偷走的书|r。从中拾取 |cRXP_LOOT_虚空灵能|r
+    >>打开 |cRXP_PICK_被偷走的书|r。并从中拾取 |cRXP_LOOT_虚空灵能|r
     .complete 1598,1 --Collect Powers of the Void (x1)
 step << Warlock
     #softcore
@@ -779,7 +779,7 @@ RXPGuides.RegisterGuide([[
 #season 0,1
 #version 1
 << Alliance
-#group RestedXP 永久向导 A
+#group RestedXP无限服指南（联盟）
 #subgroup 速通指南 1-20级
 --#groupid RXP-SRGCE-A1
 #name 6-11级 艾尔文森林
@@ -2167,7 +2167,7 @@ step << Paladin
     >>点击地上的 |cRXP_PICK_罗尔夫的尸体|r
     >>|cRXP_WARN_小心，|cRXP_ENEMY_鱼人强盗|r 会施放|r |T135915:0|t[喝下初级药水]|cRXP_WARN_，为自己回复 61-68 点生命值|r
     >>|cRXP_WARN_拉小屋前的2只|r|cRXP_ENEMY_鱼人|r|cRXP_WARN_，拉开距离后快速集火秒掉一只。必要时使用|r|T135954:0|t|T133581:0|t[圣佑术]|cRXP_WARN_和治疗技能。这里很适合用|r|T133581:0|t|T133581:0|t[弹子球]|cRXP_WARN_。击杀一只后跑开脱战重置|r << Paladin
-    >>|cRXP_WARN_记住，在|r |T135954:0|t|T135954:0|t[圣佑术] |cRXP_WARN_期间你无法攻击|r << Paladin
+    >>|cRXP_WARN_记住，在|r |T135954:0|t[圣佑术] |cRXP_WARN_期间你无法攻击|r << Paladin
     .turnin 45 >> 交任务 罗尔夫的下落
     .accept 71 >> 接受任务 回复托马斯
 step << !Paladin
@@ -2706,7 +2706,7 @@ step << Priest
     #requires GoldshireVendor
     .goto 1429/0,33.14,-9460.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_女牧师洁塞塔|r 对话
-    .accept 94774 >> 接受任务 Holy 格蕾丝
+    .accept 94774 >> 接受任务 神圣恩典
     .trainer >> 训练你的职业技能
     .target 女牧师洁塞塔
     .xp <10,1
@@ -3172,7 +3172,7 @@ step << Warlock
 step << Warlock
     #xprate >1.59
     .goto 1453/0,1029.98,-8971.01
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
     .train 705 >> 训练你的职业技能
     .target 厄苏拉·德林
     .xp <12,1
@@ -3181,7 +3181,7 @@ step << Warlock
     #xprate >1.59
     #optional
     .goto 1453/0,1029.98,-8971.01
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
     .train 689 >> 训练你的职业技能
     .target 厄苏拉·德林
     .xp <14,1
@@ -3377,7 +3377,7 @@ step << Warlock
 step << Warlock
     #optional
     .goto 1453/0,1029.89,-8971.06
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
     .trainer >> 训练你的职业技能
     .target 厄苏拉·德林
     .xp <12,1
@@ -3501,7 +3501,7 @@ step << Priest
 step << Priest
     .goto 1453/0,862.89,-8519.61
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_高阶牧师劳瑞娜|r 对话
-    .turnin -94774 >> 交任务 Holy 格蕾丝
+    .turnin -94774 >> 交任务 神圣恩典
     .trainer >> 训练你的职业技能
     .target 高阶牧师劳瑞娜
 step << Priest
@@ -3731,7 +3731,7 @@ step << Mage
     .target 丁克
 step << Paladin
     .goto 1455/0,-896.47,-4601.65
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布兰度尔·铁锤|r 对话，NPC在里面
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_布兰度尔·铁锤|r 对话，NPC在里面
     .train 633 >> 训练你的职业技能
     .target 布兰度尔·铁锤
 step << skip -- for dungeon route only
@@ -4127,7 +4127,7 @@ RXPGuides.RegisterGuide([[
 #season 0,1
 #version 1
 << Alliance
-#group RestedXP 永久向导 A
+#group RestedXP无限服指南（联盟）
 #subgroup 速通指南 1-20级
 --#groupid RXP-SRGCE-A1
 #name 11-13级 洛克莫丹
@@ -4688,8 +4688,8 @@ step << Warlock/Mage/Rogue/Priest/Warrior/Paladin
     .target 吴平
 step
     .isOnQuest 6261
-    .goto 1453/0,489.99,-8835.76
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
+    .goto 1453/0,484.200,-8832.500
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
     .turnin 6261 >> 交任务 杜加尔·朗德瑞克
     .target 杜加尔·朗德瑞克
     .xp <15,1
@@ -4735,7 +4735,7 @@ step << Warlock
     .goto 1453/0,1015.33,-8978.9,15 >> 前往屠宰场，进入地下室
 step << Warlock
     .goto 1453/0,1029.89,-8971.06
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
     .trainer >> 训练你的职业技能
     .target 厄苏拉·德林
 step << Warlock
@@ -4878,7 +4878,7 @@ step << Hunter skip
     #requires DockTravel
     #label DarkshoreCook1
     #completewith DarkshoreBoat
-    >>|cRXP_WARN_在码头等待船只时:|r
+    >>|cRXP_WARN_在码头等待船只期间：|r
     .cast 818 >>|cRXP_WARN_创建|r |T135805:0|t[基础营火] |cRXP_WARN_（在你的专业技能书中）|r
     .usespell 818
     .zoneskip Darkshore
@@ -4892,7 +4892,7 @@ step << Hunter skip
     #requires DarkshoreCook1
     #label DarkshoreCook2
     #completewith DarkshoreBoat
-    >>|cRXP_WARN_在码头等待船只时:|r
+    >>|cRXP_WARN_在码头等待船只期间：|r
     .cast 818 >>|cRXP_WARN_创建|r |T135805:0|t[基础营火] |cRXP_WARN_（在你的专业技能书中）|r
     .usespell 818
     .zoneskip Darkshore
@@ -4906,7 +4906,7 @@ step << Hunter skip
     #requires DarkshoreCook2
     #label DarkshoreCook3
     #completewith DarkshoreBoat
-    >>|cRXP_WARN_在码头等待船只时:|r
+    >>|cRXP_WARN_在码头等待船只期间：|r
     .cast 818 >>|cRXP_WARN_创建|r |T135805:0|t[基础营火] |cRXP_WARN_（在你的专业技能书中）|r
     .usespell 818
     .zoneskip Darkshore

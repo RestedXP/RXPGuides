@@ -69,7 +69,7 @@ step
     .train 401760,1
     .xp <2,1
 step
-    .train 401760 >>|cRXP_WARN_使用|r |T134939:0|t|cRXP_FRIENDLY_法术笔记：NNGABIIHGQSU]|r |cRXP_WARN_学习|r |T133816:0|t[铭刻手套 - 冰枪术]
+    .train 401760 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_FRIENDLY_[Spell Notes: CALE ENCI]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Ice Lance]
     .use 203751
     .itemcount 203751,1 -- Spell Notes: CALE ENCI (1)
     .xp <2,1
@@ -150,12 +150,12 @@ step
     .xp <2,1
 step
     .goto Dun Morogh,26.733,72.552
-    >>打开|cRXP_PICK_石颚储物箱|r。拾取|T134939:0|t|cRXP_FRIENDLY_[法术笔记：NNGABIIHGQSU|r
+    >>Open the |cRXP_PICK_Rockjaw Footlocker|r. Loot it for the |T134939:0|t|cRXP_FRIENDLY_[Spell Notes: CALE ENCI]|r
     .collect 203751,1,77667,1 -- Spell Notes: CALE ENCI (1)
     .train 401760,1
     .xp <2,1
 step
-    .train 401760 >>|cRXP_WARN_使用|r |T134939:0|t|cRXP_FRIENDLY_法术笔记：NNGABIIHGQSU]|r |cRXP_WARN_学习|r |T133816:0|t[铭刻手套 - 冰枪术]
+    .train 401760 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_FRIENDLY_[Spell Notes: CALE ENCI]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Ice Lance]
     .use 203751
     .itemcount 203751,1 -- Spell Notes: CALE ENCI (1)
     .xp <2,1
@@ -229,7 +229,7 @@ step
     .train 401760,1
     .xp <2,1
 step
-    .train 401760 >>|cRXP_WARN_使用|r |T134939:0|t|cRXP_FRIENDLY_法术笔记：NNGABIIHGQSU]|r |cRXP_WARN_学习|r |T133816:0|t[铭刻手套 - 冰枪术]
+    .train 401760 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_FRIENDLY_[Spell Notes: CALE ENCI]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Ice Lance]
     .use 203751
     .itemcount 203751,1 -- Spell Notes: CALE ENCI (1)
     .xp <2,1
@@ -312,7 +312,7 @@ step
     .train 401760,1
     .xp <2,1
 step
-    .train 401760 >>|cRXP_WARN_使用|r |T134939:0|t|cRXP_FRIENDLY_法术笔记：NNGABIIHGQSU]|r |cRXP_WARN_学习|r |T133816:0|t[铭刻手套 - 冰枪术]
+    .train 401760 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_FRIENDLY_[Spell Notes: CALE ENCI]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Ice Lance]
     .use 203751
     .itemcount 203751,1 -- Spell Notes: CALE ENCI (1)
     .xp <2,1
@@ -2212,7 +2212,7 @@ step
 step
     .train 401768,1
     #completewith next
-    .zone Tirisfal Glades >>前往 |cFFfa9602提瑞斯法林地|r
+    .zone Tirisfal Glades >>前去 |cFFfa9602提瑞斯法林地|r
 step
     .train 401768,1
     #loop
@@ -2892,7 +2892,7 @@ step
     .collect 223147,1 --Spell Notes: Balefire Bolt
     .mob Fel Interloper
 step
-    .train 429311 >>|cRXP_WARN_使用|r |T134939:0|t[|cRXP_FRIENDLY_法术笔记：怨火之箭|r |cRXP_WARN_来学习|r |T135809:0|t[怨火之箭]
+    .train 429311 >>|cRXP_WARN_使用|r |T134939:0|t[|cRXP_FRIENDLY_法术笔记：怨火之箭|r] |cRXP_WARN_来训练|r |T135809:0|t[怨火之箭]
     .use 223147
 ]])
 
@@ -2945,7 +2945,7 @@ step
     .collect 223147,1 --Spell Notes: Balefire Bolt
     .mob Fel Interloper
 step
-    .train 429311 >>|cRXP_WARN_使用|r |T134939:0|t[|cRXP_FRIENDLY_法术笔记：怨火之箭|r |cRXP_WARN_来学习|r |T135809:0|t[怨火之箭]
+    .train 429311 >>|cRXP_WARN_使用|r |T134939:0|t[|cRXP_FRIENDLY_法术笔记: 怨火之箭|r] |cRXP_WARN_来训练|r |T135809:0|t[怨火之箭.]
     .use 223147
 ]])
 
@@ -2998,7 +2998,7 @@ step
     .collect 223147,1 --Spell Notes: Balefire Bolt
     .mob Fel Interloper
 step
-    .train 429311 >>|cRXP_WARN_使用|r |T134939:0|t[|cRXP_FRIENDLY_法术笔记：怨火之箭|r |cRXP_WARN_来学习|r |T135809:0|t[怨火之箭]
+    .train 429311 >>|cRXP_WARN_使用|r |T134939:0|t[|cRXP_FRIENDLY_法术笔记: 怨火之箭|r] |cRXP_WARN_来训练|r |T135809:0|t[怨火之箭.]
     .use 223147
 ]])
 
@@ -3049,7 +3049,7 @@ step
     .collect 223147,1 --Spell Notes: Balefire Bolt
     .mob Fel Interloper
 step
-    .train 429311 >>|cRXP_WARN_使用|r |T134939:0|t[|cRXP_FRIENDLY_法术笔记：怨火之箭|r |cRXP_WARN_来学习|r |T135809:0|t[怨火之箭]
+    .train 429311 >>|cRXP_WARN_使用|r |T134939:0|t[|cRXP_FRIENDLY_法术笔记: 怨火之箭|r] |cRXP_WARN_来训练|r |T135809:0|t[怨火之箭.]
     .use 223147
 ]])
 
@@ -3100,7 +3100,7 @@ step
     .collect 223147,1 --Spell Notes: Balefire Bolt
     .mob Fel Interloper
 step
-    .train 429311 >>|cRXP_WARN_使用|r |T134939:0|t[|cRXP_FRIENDLY_法术笔记：怨火之箭|r |cRXP_WARN_来学习|r |T135809:0|t[怨火之箭]
+    .train 429311 >>|cRXP_WARN_使用|r |T134939:0|t[|cRXP_FRIENDLY_法术笔记: 怨火之箭|r] |cRXP_WARN_来训练|r |T135809:0|t[怨火之箭.]
     .use 223147
 ]])
 
@@ -3159,7 +3159,7 @@ step
     .collect 223147,1 --Spell Notes: Balefire Bolt
     .mob Fel Interloper
 step
-    .train 429311 >>|cRXP_WARN_使用|r |T134939:0|t[|cRXP_FRIENDLY_法术笔记：怨火之箭|r |cRXP_WARN_来学习|r |T135809:0|t[怨火之箭]
+    .train 429311 >>|cRXP_WARN_使用|r |T134939:0|t[|cRXP_FRIENDLY_法术笔记: 怨火之箭|r] |cRXP_WARN_来训练|r |T135809:0|t[怨火之箭.]
     .use 223147
 ]])
 
@@ -3210,7 +3210,7 @@ step
     .collect 223147,1 --Spell Notes: Balefire Bolt
     .mob Fel Interloper
 step
-    .train 429311 >>|cRXP_WARN_使用|r |T134939:0|t[|cRXP_FRIENDLY_法术笔记：怨火之箭|r |cRXP_WARN_来学习|r |T135809:0|t[怨火之箭]
+    .train 429311 >>|cRXP_WARN_使用|r |T134939:0|t[|cRXP_FRIENDLY_法术笔记: 怨火之箭|r] |cRXP_WARN_来训练|r |T135809:0|t[怨火之箭.]
     .use 223147
 ]])
 
@@ -3261,7 +3261,7 @@ step
     .collect 223147,1 --Spell Notes: Balefire Bolt
     .mob Fel Interloper
 step
-    .train 429311 >>|cRXP_WARN_使用|r |T134939:0|t[|cRXP_FRIENDLY_法术笔记：怨火之箭|r |cRXP_WARN_来学习|r |T135809:0|t[怨火之箭]
+    .train 429311 >>|cRXP_WARN_使用|r |T134939:0|t[|cRXP_FRIENDLY_法术笔记: 怨火之箭|r] |cRXP_WARN_来训练|r |T135809:0|t[怨火之箭.]
     .use 223147
 ]])
 
@@ -3325,7 +3325,7 @@ step
     .collect 223147,1 --Spell Notes: Balefire Bolt
     .mob Fel Interloper
 step
-    .train 429311 >>|cRXP_WARN_使用|r |T134939:0|t[|cRXP_FRIENDLY_法术笔记：怨火之箭|r |cRXP_WARN_来学习|r |T135809:0|t[怨火之箭]
+    .train 429311 >>|cRXP_WARN_使用|r |T134939:0|t[|cRXP_FRIENDLY_法术笔记: 怨火之箭|r] |cRXP_WARN_来训练|r |T135809:0|t[怨火之箭.]
     .use 223147
 ]])
 
@@ -3375,7 +3375,7 @@ step
     .collect 223147,1 --Spell Notes: Balefire Bolt
     .mob Fel Interloper
 step
-    .train 429311 >>|cRXP_WARN_使用|r |T134939:0|t[|cRXP_FRIENDLY_法术笔记：怨火之箭|r |cRXP_WARN_来学习|r |T135809:0|t[怨火之箭]
+    .train 429311 >>|cRXP_WARN_使用|r |T134939:0|t[|cRXP_FRIENDLY_法术笔记: 怨火之箭|r] |cRXP_WARN_来训练|r |T135809:0|t[怨火之箭.]
     .use 223147
 ]])
 

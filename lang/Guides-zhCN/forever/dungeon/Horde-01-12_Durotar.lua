@@ -7,7 +7,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 1-6级 杜隆塔尔
 #version 11
-#group RestedXP 无限 地下城指南 (部落)
+#group RestedXP无限服地下城指南（部落）
 #subgroup 地下城指南 1-22级
 --#groupid RXP-SRGCE-H1
 #defaultfor Troll/Orc
@@ -16,7 +16,7 @@ RXPGuides.RegisterGuide([[
 
 step
 .enabledungeon RFC
-#include RestedXP 永久指南 (H)\1-6级 杜隆塔尔
+#include RestedXP无限服指南（部落）\1-6级 杜隆塔尔
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -24,7 +24,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 6-10级 杜隆塔尔
 #version 11
-#group RestedXP 无限 地下城指南 (部落)
+#group RestedXP无限服地下城指南（部落）
 #subgroup 地下城指南 1-22级
 --#groupid RXP-SRGCE-H1
 #defaultfor Troll/Orc
@@ -32,7 +32,7 @@ RXPGuides.RegisterGuide([[
 
 step
 .enabledungeon RFC
-#include RestedXP 永久指南 (H)\6-10级 杜隆塔尔
+#include RestedXP无限服指南（部落）\6-10级 杜隆塔尔
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -40,7 +40,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 10-12级 杜隆塔尔
 #version 11
-#group RestedXP 无限 地下城指南 (部落)
+#group RestedXP无限服地下城指南（部落）
 #subgroup 地下城指南 1-22级
 --#groupid RXP-SRGCE-H1
 #defaultfor Troll/Orc
@@ -50,7 +50,7 @@ RXPGuides.RegisterGuide([[
 
 step
 .enabledungeon RFC
-#include RestedXP 永久指南 (H)\10-12级 杜隆塔尔
+#include RestedXP无限服指南（部落）\10-12级 杜隆塔尔
 ]])
 
 
@@ -59,7 +59,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 10-12级 提瑞斯法 （兽人/巨魔）
 #version 11
-#group RestedXP 无限 地下城指南 (部落)
+#group RestedXP无限服地下城指南（部落）
 #subgroup 地下城指南 1-22级
 --#groupid RXP-SRGCE-H1
 #defaultfor !Hunter !Shaman !Tauren !Skyborne !Undead
@@ -67,5 +67,5 @@ RXPGuides.RegisterGuide([[
 
 step
 .enabledungeon RFC
-#include RestedXP 永久指南 (H)\10-12级 提瑞斯法 （兽人/巨魔）
+#include RestedXP无限服指南（部落）\10-12级 提瑞斯法 （兽人/巨魔）
 ]])

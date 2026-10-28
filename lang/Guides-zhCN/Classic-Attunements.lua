@@ -8,7 +8,7 @@ RXPGuides.RegisterGuide([[
 #subgroup 开门任务
 #name 奥妮克希亚开门任务（联盟）
 #guideKind attunement
-
+#guideIcon rxp-icon-ony
 
 step
     #completewith next
@@ -98,7 +98,7 @@ step
     .isQuestTurnedIn 4182
     #completewith next
     .goto Stormwind City,66.277,62.137
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
     .fly Redridge>> 飞往赤脊山
     .target 杜加尔·朗德瑞克
 step
@@ -337,6 +337,7 @@ step
     .target Haleh
 
 ]])
+
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
@@ -346,6 +347,7 @@ RXPGuides.RegisterGuide([[
 #subgroup 开门任务
 #name 奥妮克希亚开门任务（部落）
 #guideKind attunement
+#guideIcon rxp-icon-ony
 
 step
     #completewith next
@@ -787,8 +789,6 @@ step
 
 ]])
 
-
-
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
@@ -797,6 +797,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP 终局指南
 #name 熔火之心开门任务
 #guideKind attunement
+#guideIcon rxp-icon-mc
 
 step
     #completewith next
@@ -834,8 +835,6 @@ step
 
 ]])
 
-
-
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
@@ -844,6 +843,7 @@ RXPGuides.RegisterGuide([[
 #subgroup 开门任务
 #name 黑翼之巢开门任务
 #guideKind attunement
+#guideIcon rxp-icon-bwl
 
 step
     #completewith next
@@ -879,8 +879,6 @@ step
     .turnin 7761 >>交任务 黑手的命令
 
 ]])
-
-
 
 RXPGuides.RegisterGuide([[
 #classic
@@ -972,8 +970,6 @@ step
     .target Vaelan
 
 ]])
-
-
 
 RXPGuides.RegisterGuide([[
 #classic
@@ -1234,8 +1230,6 @@ step
 
 ]])
 
-
-
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
@@ -1246,7 +1240,6 @@ RXPGuides.RegisterGuide([[
 #name 通灵学院钥匙（部落）
 #guideKind key
 #guideIcon rxp-icon-key-2
-
 
 step
     #sticky
@@ -1505,7 +1498,6 @@ RXPGuides.RegisterGuide([[
 #guideKind key
 #guideIcon rxp-icon-key-3
 
-
 step
     #completewith next
     .subzone 254 >>前往 |cFFfa9602黑石山|r
@@ -1558,8 +1550,7 @@ step
     .turnin 3802 >> 交任务 黑铁的遗产
     .isQuestComplete 3802
 
-    ]])
-
+]])
 
 RXPGuides.RegisterGuide([[
 #classic
@@ -1569,7 +1560,6 @@ RXPGuides.RegisterGuide([[
 #subgroup 钥匙
 #name 厄运之槌 钥匙
 #guideKind key
-
 
 step
     #completewith next
@@ -1664,7 +1654,6 @@ step
     .isQuestAvailable 9123 --The Dread Citadel - Naxxramas
 
 ]])
-
 
 RXPGuides.RegisterGuide([[
 #classic

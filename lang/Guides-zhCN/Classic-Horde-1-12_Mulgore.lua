@@ -3011,7 +3011,7 @@ step
     .train 410111 >> 使用 |T134419:0|t[|cRXP_FRIENDLY_杀戮命令符文|r] 来训练 |T236174:0|t[夺命射击] << Hunter
     .train 410121 >> 使用 |T134419:0|t[|cRXP_FRIENDLY_奇美拉符文|r] 来学习 |T236176:0|t[奇美拉射击] << Hunter
     .train 409580 >> 使用 |T133739:0|t[|cRXP_FRIENDLY_论述：雄狮之心|r] 来学习 |T132185:0|t[雄狮之心] << Hunter
-    .train 415423 >> 使用 |T133739:0|t[论述：蝰蛇守护|cRXP_FRIENDLY_] 来学习 |T132160:0|t[蝰蛇守护]|r] << Hunter
+    .train 415423 >> Use the |T133739:0|t[|cRXP_FRIENDLY_Treatise on Aspect of the Viper|r] to train |T132160:0|t[Heart of the Viper] << Hunter
     .train 424718 >> 使用 |T134419:0|t[|cRXP_FRIENDLY_星辰符文|r] 来训练 |T135730:0|t[星涌术] << Druid
     .train 416044 >> 使用 |T134419:0|t[|cRXP_FRIENDLY_日灼符文|r] 来训练 |T236216:0|t[阳炎术] << Druid
     .train 439770 >> 使用 |T134419:0|t[|cRXP_FRIENDLY_坠落星辰符文|r] 来训练 |T236168:0|t[星辰坠落] << Druid

@@ -229,7 +229,7 @@ step << Warlock/Mage
     .itemcount 221499,1 << Warlock --Rune of the Felguard
     .itemcount 223147,1 << Mage --Spell Notes: Balefire Bolt
     .train 427733 >>|cRXP_WARN_使用|r |T134419:0|t|T136216:0|t[|cRXP_FRIENDLY_恶魔卫士符文|r] |cRXP_WARN_学习|r |T136216:0|t|T136216:0|t[召唤恶魔卫士] << Warlock
-    .train 428878 >>|cRXP_WARN_使用|r |T134939:0|t|T135809:0|t[|cRXP_FRIENDLY_法术笔记：怨火之箭|r |cRXP_WARN_来学习|r |T135809:0|t|T135809:0|t[怨火之箭] << Mage
+    .train 428878 >>|cRXP_WARN_使用|r |T134939:0|t[|cRXP_FRIENDLY_法术笔记：怨火之箭|r] |cRXP_WARN_来训练|r |T135809:0|t[怨火之箭] << Mage
     .use 221499 << Warlock
     .use 223147 << Mage
 step
@@ -1184,7 +1184,7 @@ step << !Warrior !Rogue
     .goto Darkshore,55.38,36.34
 step << !Warrior !Rogue
     .hs >> 炉石返回到奥伯丁
-    >>|cRXP_BUY_按需购买食物/水|r << !Warrior !Rogue
+    >>|cRXP_BUY_如有需要，购买食物/水|r << !Warrior !Rogue
 	>>|cRXP_BUY_如有需要，购买食物|r << Warrior/Rogue
     .cooldown item,6948,>0,1
 step << skip --logout skip !Warrior !Rogue
@@ -3575,7 +3575,7 @@ step << Warlock/Mage
     .itemcount 221499,1 << Warlock --Rune of the Felguard
     .itemcount 223147,1 << Mage --Spell Notes: Balefire Bolt
     .train 427733 >>|cRXP_WARN_使用|r |T134419:0|t|T136216:0|t[|cRXP_FRIENDLY_恶魔卫士符文|r] |cRXP_WARN_学习|r |T136216:0|t|T136216:0|t[召唤恶魔卫士] << Warlock
-    .train 428878 >>|cRXP_WARN_使用|r |T134939:0|t|T135809:0|t[|cRXP_FRIENDLY_法术笔记：怨火之箭|r |cRXP_WARN_来学习|r |T135809:0|t|T135809:0|t[怨火之箭] << Mage
+    .train 428878 >>|cRXP_WARN_使用|r |T134939:0|t[|cRXP_FRIENDLY_法术笔记：怨火之箭|r] |cRXP_WARN_来训练|r |T135809:0|t[怨火之箭] << Mage
     .use 221499 << Warlock
     .use 223147 << Mage
 step
@@ -4569,7 +4569,7 @@ step << Rogue
     #xprate >1.59
     .goto Ironforge,50.826,5.613
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与里面的 |cRXP_FRIENDLY_葛利·硬骨|r 对话
-    .turnin 968 >> 交任务深渊之神
+    .turnin 968 >> 交任务 深渊之神
     .target 葛利·硬骨
     .isOnQuest 968
     .zoneskip Darkshore << Warrior/Paladin
@@ -4768,7 +4768,7 @@ step << Rogue
     .goto StormwindClassic,63.301,62.103,30,0
     .goto StormwindClassic,63.047,65.744,15,0
     .goto StormwindClassic,66.276,62.135
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
     .fp Stormwind >> 获取暴风城的飞行路径 << !Human
     .fly Westfall >> 飞往西部荒野 << Human
     .target 杜加尔·朗德瑞克
@@ -4804,7 +4804,7 @@ step << Human Rogue
     .goto StormwindClassic,63.301,62.103,30,0
     .goto StormwindClassic,63.047,65.744,15,0
     .goto StormwindClassic,66.276,62.135
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
     .fly Redridge >> 飞往赤脊山
     .target 杜加尔·朗德瑞克
     .zoneskip Stormwind City,1
@@ -5265,7 +5265,7 @@ step << NightElf Rogue
     #xprate >1.59
     .goto Ironforge,50.826,5.613
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与里面的 |cRXP_FRIENDLY_葛利·硬骨|r 对话
-    .turnin 968 >> 交任务深渊之神
+    .turnin 968 >> 交任务 深渊之神
     .target 葛利·硬骨
     .zoneskip Ironforge,1
     .zoneskip Wetlands
@@ -5538,7 +5538,7 @@ step
     #optional << NightElf
     .goto Ironforge,50.826,5.613
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与里面的 |cRXP_FRIENDLY_葛利·硬骨|r 对话
-    .turnin 968 >> 交任务深渊之神
+    .turnin 968 >> 交任务 深渊之神
     .target 葛利·硬骨
     .zoneskip Wetlands << NightElf
     .zoneskip Elwynn Forest
@@ -6030,7 +6030,7 @@ step << Warlock
 step << Warlock
     #xprate >1.59
     .goto StormwindClassic,26.117,77.225
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
     .trainer >> 训练你的职业技能
     .target 厄苏拉·德林
     .dungeon DM
@@ -6175,7 +6175,7 @@ step
     .goto StormwindClassic,63.301,62.103,30,0
     .goto StormwindClassic,63.047,65.744,15,0
     .goto StormwindClassic,66.276,62.135
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
     .fp Stormwind >> 获取暴风城的飞行路径 << !Human
     .fly Westfall >> 飞往西部荒野 << Human
     .target 杜加尔·朗德瑞克
@@ -6214,7 +6214,7 @@ step << Human
     .goto StormwindClassic,63.301,62.103,30,0
     .goto StormwindClassic,63.047,65.744,15,0
     .goto StormwindClassic,66.276,62.135
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
     .fly Redridge >> 飞往赤脊山
     .target 杜加尔·朗德瑞克
     .zoneskip Stormwind City,1
@@ -6511,7 +6511,7 @@ step
     #optional
     #completewith next
     .goto StormwindClassic,66.277,62.137
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
     .fly Westfall >> 飞往西部荒野
     .target 杜加尔·朗德瑞克
     .dungeon DM
@@ -6959,7 +6959,7 @@ step << Warlock
     #xprate >1.59
     #optional
     .goto StormwindClassic,26.117,77.225
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
     .train 6202 >> 训练你的职业技能
     .target 厄苏拉·德林
     .xp <22,1
@@ -7258,7 +7258,7 @@ step << NightElf
     #xprate >1.59 << !Hunter
     .goto Ironforge,50.826,5.613
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与里面的 |cRXP_FRIENDLY_葛利·硬骨|r 对话
-    .turnin 968 >> 交任务深渊之神
+    .turnin 968 >> 交任务 深渊之神
     .target 葛利·硬骨
     .zoneskip Ironforge,1
     .isOnQuest 968

@@ -221,7 +221,7 @@ step
     .goto 1429/0,-288.51,-9068.87,0
     .goto 1429/0,-388.47,-9001.28,0
     >>击杀|cRXP_ENEMY_迪菲亚暴徒|r。拾取他们的|T134939:0|t|cRXP_LOOT_[法术笔记：NNGABIIHGQSU]|r
-    >>|cRXP_WARN_注意：你无法在此处学习|r |T133816:0|t|T133736:0|t[铭刻手套 - 冰枪术] |cRXP_WARN_，因为你只能在种族出生区域获得|r |T133736:0|t|T133736:0|t[理解入门] |cRXP_WARN_|r << !Human
+    >>|cRXP_WARN_注意：你无法在此处学习|r |T133816:0|t[铭刻手套 - 冰枪术] |cRXP_WARN_，因为你只能在种族出生区域获得|r |T133736:0|t[理解入门] |cRXP_WARN_|r << !Human
     .collect 203751,1,77620,1 -- Spell Notes: CALE ENCI (1)
     .mob 迪菲亚暴徒
     .train 401760,1
@@ -229,7 +229,7 @@ step << Human
     #season 2
     #requires CALEENCI
     #completewith RedBurlapBandana
-    .train 401760 >>|cRXP_WARN_使用|r |T134939:0|t|cRXP_LOOT_法术笔记：NNGABIIHGQSU]|r |cRXP_WARN_学习|r |T133816:0|t[铭刻手套 - 冰枪术]
+    .train 401760 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: CALE ENCI]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Ice Lance]
     .use 203751
     .itemcount 203751,1 -- Spell Notes: CALE ENCI (1)
 step
@@ -267,14 +267,14 @@ step
     .goto 1429/0,-388.47,-9001.28,50,0
     .goto 1429/0,-333.97,-9028.59,50,0
     >>击杀|cRXP_ENEMY_迪菲亚暴徒|r。拾取他们的|T134939:0|t|cRXP_LOOT_[法术笔记：NNGABIIHGQSU]|r
-    >>|cRXP_WARN_注意：你无法在此处学习|r |T133816:0|t|T133736:0|t[铭刻手套 - 冰枪术] |cRXP_WARN_，因为你只能在种族出生区域获得|r |T133736:0|t|T133736:0|t[理解入门] |cRXP_WARN_|r << !Human
+    >>|cRXP_WARN_注意：你无法在此处学习|r |T133816:0|t[铭刻手套 - 冰枪术] |cRXP_WARN_，因为你只能在种族出生区域获得|r |T133736:0|t[理解入门] |cRXP_WARN_|r << !Human
     .collect 203751,1,77620,1 -- Spell Notes: CALE ENCI (1)
     .mob 迪菲亚暴徒
     .train 401760,1
 step << Human
     #optional
     #season 2
-    .train 401760 >>|cRXP_WARN_使用|r |T134939:0|t|cRXP_LOOT_法术笔记：NNGABIIHGQSU]|r |cRXP_WARN_学习|r |T133816:0|t[铭刻手套 - 冰枪术]
+    .train 401760 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: CALE ENCI]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Ice Lance]
     .use 203751
     .itemcount 203751,1 -- Spell Notes: CALE ENCI (1)
 step
@@ -1091,7 +1091,7 @@ step
     .goto 1455/0,-1152.31,-4821.12,10 >>前去找 |cRXP_FRIENDLY_格莱斯|r
 step
     .goto 1455/0,-1152.39,-4820.914
-    >>与|cRXP_FRIENDLY_格莱斯|r 对话
+    >>与 |cRXP_FRIENDLY_格莱斯|r 对话
     .fp Ironforge >> 获取铁炉堡的飞行路径
     .target 格莱斯·瑟登
 step
@@ -1539,13 +1539,13 @@ step
 step
     #season 2
     .goto 1426/0,485.48,-6259.21
-    >>打开地上的|cRXP_PICK_石颚储物箱|r，拾取里面的|T134939:0|t|T134939:0|t|cRXP_LOOT_[法术笔记：NNGABIIHGQSU|r
-    >>|cRXP_WARN_注意：你无法在此处学习|r |T133816:0|t|T133736:0|t[铭刻手套 - 冰枪术] |cRXP_WARN_，因为你只能在种族出生区域获得|r |T133736:0|t|T133736:0|t[理解入门] |cRXP_WARN_|r << !Gnome
+    >>Open the |cRXP_PICK_Rockjaw Footlocker|r on the ground. Loot it for the |T134939:0|t|cRXP_LOOT_[Spell Notes: CALE ENCI]|r
+    >>|cRXP_WARN_注意：你无法在此处学习|r |T133816:0|t[铭刻手套 - 冰枪术] |cRXP_WARN_，因为你只能在种族出生区域获得|r |T133736:0|t[理解入门] |cRXP_WARN_|r << !Gnome
     .collect 203751,1,77667,1 -- Spell Notes: CALE ENCI (1)
     .train 401760,1
 step << Gnome
     #season 2
-    .train 401760 >>|cRXP_WARN_使用|r |T134939:0|t|cRXP_LOOT_法术笔记：NNGABIIHGQSU]|r |cRXP_WARN_学习|r |T133816:0|t[铭刻手套 - 冰枪术]
+    .train 401760 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: CALE ENCI]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Ice Lance]
     .use 203751
     .itemcount 203751,1 -- Spell Notes: CALE ENCI (1)
 step
@@ -1960,7 +1960,7 @@ step
 	.goto 1426/0,-615.60,-5674.38,40,0
 	.goto 1426/0,-641.21,-5660.59,40,0
 	.goto 1426/0,-730.84,-5624.15,40,0
-    .xp 5+2690 >> 刷怪达到 2690+/2800 经验
+    .xp 5+2690 >> 刷怪达到2690+/2800经验
     .mob 黑熊幼崽
     .mob 峭壁野猪
 step
@@ -2152,7 +2152,7 @@ step
     >>|cRXP_WARN_小心，因为 |cRXP_ENEMY_峭壁野猪|r 会施放 |r|T132337:0|t[冲锋]|cRXP_WARN_（自身瞬发：提高移动速度，持续3秒，并在击中时造成25-70点近战伤害。仅可在远处施放）|r
     .complete 384,1 --Crag Boar Rib (6)
     .disablecheckbox
-    .goto 1426/0,-201.51,-6015.520,20 >>去找 |cRXP_FRIENDLY_海格纳|r
+    .goto 1426/0,-201.51,-6015.520,20 >>前往 |cRXP_FRIENDLY_海格纳|r
     .mob 峭壁野猪
     .mob 雪豹幼崽
     .xp >7-1000,1
@@ -2162,7 +2162,7 @@ step
     .goto 1426/0,-197.47,-5920.63,45,0
     >>击杀沿途的 |cRXP_ENEMY_峭壁野猪|r 和 |cRXP_ENEMY_雪豹幼崽|r
     >>|cRXP_WARN_小心，因为 |cRXP_ENEMY_峭壁野猪|r 会施放 |r|T132337:0|t[冲锋]|cRXP_WARN_（自身瞬发：提高移动速度，持续3秒，并在击中时造成25-70点近战伤害。仅可在远处施放）|r
-    .goto 1426/0,-201.51,-6015.520,20 >>去找 |cRXP_FRIENDLY_海格纳|r
+    .goto 1426/0,-201.51,-6015.520,20 >>前往 |cRXP_FRIENDLY_海格纳|r
     .mob 峭壁野猪
     .mob 雪豹幼崽
     .xp >7-1000,1
@@ -2170,7 +2170,7 @@ step
 step
     #completewith next
     .goto 1426/0,-197.47,-5920.63,45,0
-    .goto 1426/0,-201.51,-6015.520,20 >>去找 |cRXP_FRIENDLY_海格纳|r
+    .goto 1426/0,-201.51,-6015.520,20 >>前往 |cRXP_FRIENDLY_海格纳|r
     .xp <7-1000,1
 step
     #label Ammo
@@ -2224,7 +2224,7 @@ step
     >>|cRXP_WARN_确保对他造成 51% 以上的伤害，以获得击杀判定|r
     .mob 冰爪熊
 step
-    >>与 |cRXP_FRIENDLY_雷杰德|r 和 |cRXP_FRIENDLY_Marleth|r 对话
+    >>与 |cRXP_FRIENDLY_雷杰德|r 和 |cRXP_FRIENDLY_马莱斯|r 对话
     .turnin 318 >> 交任务 艾沃沙酒
     .accept 319 >> 接受任务 艾沃沙酒
     .accept 315 >> 接受任务 完美烈酒
@@ -2483,7 +2483,7 @@ step
     .mob 雪豹
     .isQuestTurnedIn 384
 step
-    >>与 |cRXP_FRIENDLY_雷杰德|r 和 |cRXP_FRIENDLY_Marleth|r 对话
+    >>与 |cRXP_FRIENDLY_雷杰德|r 和 |cRXP_FRIENDLY_马莱斯|r 对话
     .turnin 315,1 >> 交任务 完美烈酒
     .accept 413 >> 接受任务 微光酒
     .turnin 319 >> 交任务 艾沃沙酒
@@ -2941,7 +2941,7 @@ step
     .goto 1455/0,-1152.31,-4821.12,10 >>前去找 |cRXP_FRIENDLY_格莱斯|r
 step
     .goto 1455/0,-1152.39,-4820.914
-    >>与|cRXP_FRIENDLY_格莱斯|r 对话
+    >>与 |cRXP_FRIENDLY_格莱斯|r 对话
     .turnin 6388 >>交任务 格莱斯·瑟登
 --   .accept 6392 >>Accept Return to Brock
 -- .fly Thelsamar >> Fly to Thelsamar
@@ -3071,10 +3071,10 @@ step
 step
     .goto 1437/0,-823.8,-3807.180
     >>起跳到楼下的吊灯上
-    >>透过墙壁，与|cRXP_FRIENDLY_萨莫尔|r对话
+    >>透过墙壁与|cRXP_FRIENDLY_萨莫尔|r对话
     >>|cRXP_WARN_注意：要实现此操作，请在选项菜单的“游戏功能 -> 控制”中绑定“与目标互动”按键|r
     >>|cRXP_WARN_如果船只刚刚抵达，跳过此步骤|r
-    .vendor 1457 >> |cRXP_BUY_购买|r |T134831:0|t[治疗药水] |cRXP_BUY_从他那里(如果有)|r
+    .vendor 1457 >> |cRXP_BUY_从他那里购买|r |T134831:0|t[治疗药水] |cRXP_BUY_(如果有)|r
     .target 萨莫尔·菲斯蒂沃斯
     .money <0.03
 step
@@ -3092,7 +3092,7 @@ step
     .goto 1437/0,-715.87,-3697.48
     >>隔墙与 |cRXP_FRIENDLY_德温|r 对话
     >>|cRXP_WARN_如果船只刚刚抵达，跳过此步骤|r
-    .vendor 1453 >> |cRXP_BUY_购买|r |T134831:0|t[治疗药水] |cRXP_BUY_从他那里(如果有)|r
+    .vendor 1453 >> |cRXP_BUY_从他那里购买|r |T134831:0|t[治疗药水] |cRXP_BUY_(如果有)|r
     .target 德温·晨光
     .money <0.03
 step
@@ -3103,7 +3103,7 @@ step
 step
     #completewith next
     #requires DarkshoreBoat
-    +|cRXP_WARN_开始狂按|r |T132794:0|t[造水术 等级2] |cRXP_WARN_以制造尽可能多的水|r
+    +|cRXP_WARN_开始狂按|r |T132794:0|t|T132794:0|t[造水术 等级2] |cRXP_WARN_以制造尽可能多的水|r
 step
     #label Darkshore
     .goto 1437/0,-565.34,-3724.77
@@ -3542,12 +3542,12 @@ step
     +|cRXP_WARN_开始狂按|r |T132794:0|t|T132794:0|t[造水术 等级2] |cRXP_WARN_在乘坐飞行前尽可能多地造水|r
 step << Gnome
     .goto 1455/0,-1152.39,-4820.914
-    >>与|cRXP_FRIENDLY_格莱斯|r 对话
+    >>与 |cRXP_FRIENDLY_格莱斯|r 对话
     .accept 6392 >>接受任务 向格雷姆罗克回复
     .target 格莱斯·瑟登
 step
     .goto 1455/0,-1152.39,-4820.914
-    >>与|cRXP_FRIENDLY_格莱斯|r 对话
+    >>与 |cRXP_FRIENDLY_格莱斯|r 对话
     .fly Thelsamar >> 飞往塞尔萨玛
     .target 格莱斯·瑟登
 ]])
@@ -3627,10 +3627,10 @@ step
 step
     .goto 1437/0,-823.8,-3807.180
     >>起跳到楼下的吊灯上
-    >>透过墙壁，与|cRXP_FRIENDLY_萨莫尔|r对话
+    >>透过墙壁与|cRXP_FRIENDLY_萨莫尔|r对话
     >>|cRXP_WARN_注意：要实现此操作，请在选项菜单的“游戏功能 -> 控制”中绑定“与目标互动”按键|r
     >>|cRXP_WARN_如果船只刚刚抵达，跳过此步骤|r
-    .vendor 1457 >> |cRXP_BUY_购买|r |T134831:0|t[治疗药水] |cRXP_BUY_从他那里(如果有)|r
+    .vendor 1457 >> |cRXP_BUY_从他那里购买|r |T134831:0|t[治疗药水] |cRXP_BUY_(如果有)|r
     .target 萨莫尔·菲斯蒂沃斯
     .money <0.03
 step
@@ -3648,7 +3648,7 @@ step
     .goto 1437/0,-715.87,-3697.48
     >>隔墙与 |cRXP_FRIENDLY_德温|r 对话
     >>|cRXP_WARN_如果船只刚刚抵达，跳过此步骤|r
-    .vendor 1453 >> |cRXP_BUY_购买|r |T134831:0|t[治疗药水] |cRXP_BUY_从他那里(如果有)|r
+    .vendor 1453 >> |cRXP_BUY_从他那里购买|r |T134831:0|t[治疗药水] |cRXP_BUY_(如果有)|r
     .target 德温·晨光
     .money <0.03
 step
@@ -3659,7 +3659,7 @@ step
 step
     #completewith next
     #requires DarkshoreBoat
-    +|cRXP_WARN_开始狂按|r |T132794:0|t[造水术 等级2] |cRXP_WARN_以制造尽可能多的水|r
+    +|cRXP_WARN_开始狂按|r |T132794:0|t|T132794:0|t[造水术 等级2] |cRXP_WARN_以制造尽可能多的水|r
 step
     #label Darkshore
     .goto 1437/0,-565.34,-3724.77
@@ -4110,12 +4110,12 @@ step
     +|cRXP_WARN_开始狂按|r |T132794:0|t|T132794:0|t[造水术 等级2] |cRXP_WARN_在乘坐飞行前尽可能多地造水|r
 step << Gnome
     .goto 1455/0,-1152.39,-4820.914
-    >>与|cRXP_FRIENDLY_格莱斯|r 对话
+    >>与 |cRXP_FRIENDLY_格莱斯|r 对话
     .accept 6392 >>接受任务 向格雷姆罗克回复
     .target 格莱斯·瑟登
 step
     .goto 1455/0,-1152.39,-4820.914
-    >>与|cRXP_FRIENDLY_格莱斯|r 对话
+    >>与 |cRXP_FRIENDLY_格莱斯|r 对话
     .fly Thelsamar >> 飞往塞尔萨玛
     .target 格莱斯·瑟登
 ]])
@@ -4672,7 +4672,7 @@ step << Gnome
     .use 17117
 step
     >>与|cRXP_FRIENDLY_蒙提|r 对话
-    >>|cRXP_WARN_等剧情结束|r << Gnome
+    >>|cRXP_WARN_等待剧情演出完成|r << Gnome
     .turnin 6661 >> 交任务 捕捉矿道老鼠 << Gnome
     .timer 13,捕捉矿道老鼠剧情表演 << Gnome
     .accept 6662 >> 接受任务 我的兄弟，尼普希
@@ -4775,7 +4775,7 @@ step
 step
     .goto 1453/0,822.16,-8865.60
     >>进入建筑
-    >>与 |cRXP_FRIENDLY_艾代尔|r 对话
+    >>与|cRXP_FRIENDLY_艾代尔|r 对话
     .vendor 1316 >> |cRXP_BUY_从他那里购买非智力|r |T134943:0|t|T134943:0|t[卷轴] |cRXP_BUY_（如果有货）|r
     .money <0.0090
     .target 艾代尔·吉尔罗
@@ -4998,7 +4998,7 @@ step
     .mob Foreststrider Fledgeling
 step
     #completewith SeaTurtle1
-    >>杀死 |cRXP_ENEMY_月夜猛虎幼崽|r 和 |cRXP_ENEMY_月夜猛虎|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
+    >>击杀 |cRXP_ENEMY_月夜猛虎幼崽|r 和 |cRXP_ENEMY_月夜猛虎|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
     .complete 1002,1 --Moonstalker Fang (6)
     .mob 月夜猛虎幼崽
     .mob Moonstalker
@@ -5027,7 +5027,7 @@ step
     .mob Foreststrider Fledgeling
 step
     #completewith River
-    >>杀死 |cRXP_ENEMY_月夜猛虎幼崽|r 和 |cRXP_ENEMY_月夜猛虎|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
+    >>击杀 |cRXP_ENEMY_月夜猛虎幼崽|r 和 |cRXP_ENEMY_月夜猛虎|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
     .complete 1002,1 --Moonstalker Fang (6)
     .mob 月夜猛虎幼崽
     .mob Moonstalker
@@ -5050,7 +5050,7 @@ step
     .mob 森林陆行鸟
 step
     #completewith RedC
-    >>杀死 |cRXP_ENEMY_月夜猛虎幼崽|r 和 |cRXP_ENEMY_月夜猛虎|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
+    >>击杀 |cRXP_ENEMY_月夜猛虎幼崽|r 和 |cRXP_ENEMY_月夜猛虎|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
     .complete 1002,1 --Moonstalker Fang (6)
     .mob 月夜猛虎幼崽
     .mob Moonstalker
@@ -5107,7 +5107,7 @@ step
     .mob 森林陆行鸟雏鸟
 step
     #completewith RBears
-    >>杀死 |cRXP_ENEMY_月夜猛虎幼崽|r 和 |cRXP_ENEMY_月夜猛虎|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
+    >>击杀 |cRXP_ENEMY_月夜猛虎幼崽|r 和 |cRXP_ENEMY_月夜猛虎|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
     .complete 1002,1 --Moonstalker Fang (6)
     .mob 月夜猛虎幼崽
     .mob Moonstalker
@@ -5316,7 +5316,7 @@ step
     .accept 4813 >> 接受任务 水晶中的碎骨
 step
     #completewith GrainSample
-    >>杀死 |cRXP_ENEMY_月夜猛虎幼崽|r 和 |cRXP_ENEMY_月夜猛虎|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
+    >>击杀 |cRXP_ENEMY_月夜猛虎幼崽|r 和 |cRXP_ENEMY_月夜猛虎|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
     .complete 1002,1 --Moonstalker Fang (6)
     .mob 月夜猛虎幼崽
     .mob Moonstalker
@@ -5385,7 +5385,7 @@ step
 step
     #label Talisman
     .goto 1439/1,-480.05,6888.84
-    >>|cRXP_WARN_等剧情结束|r
+    >>|cRXP_WARN_等待剧情演出完成|r
     >>击杀|cRXP_ENEMY_萨巴克希斯|r
     >>拾取掉落地上的|cRXP_PICK_萨布拉克斯的恶魔之袋|r，从中获得|cRXP_LOOT_堕落护符|r
     >>|cRXP_WARN_该操作有 5 秒施法时间|r
@@ -5562,7 +5562,7 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith JenneaT
-    +|cRXP_WARN_注意：每种布料需要准备12组（|r|T132911:0|t|T132905:0|t[毛料]|cRXP_WARN_、|r |T132892:0|t|T132903:0|t[丝绸]|cRXP_WARN_、|r |T132892:0|t|T132892:0|t[魔纹布]|cRXP_WARN_、|r 和 |T132903:0|t|T132903:0|t[符文布]|cRXP_WARN_），用于后续的布料捐献任务。这些布料在升级过程中会自然获得|r
+    +|cRXP_WARN_注意：每种布料需要准备12组（|r|T132911:0|t|T132905:0|t[毛料]|cRXP_WARN_、|r |T132892:0|t|T132903:0|t[丝绸]|cRXP_WARN_、|r |T132892:0|t|T132892:0|t[魔纹布]|cRXP_WARN_、|r 和 |T132903:0|t|T132903:0|t[符文布]|cRXP_WARN_），用于后续的布料捐献任务.这些布料在升级过程中会自然获得|r
 step << skip
     #completewith next
     .goto 1453/0,661.38,-8858.16,12,0
@@ -5636,7 +5636,7 @@ step
     .goto 1453/0,612.45,-8806.18,12,0
     .goto 1453/0,528.43,-8850.28,20,0
     .goto 1453/0,532.20,-8863.72,15,0
-    .goto 1453/0,490.12,-8835.67,10 >>朝|cRXP_FRIENDLY_杜加尔|r 走去
+    .goto 1453/0,490.12,-8835.67,10 >>朝|cRXP_FRIENDLY_杜加尔|r走去
 step << Human
     .goto 1453/0,490.12,-8835.67
     >>与|cRXP_FRIENDLY_杜加尔|r交谈
@@ -5826,7 +5826,7 @@ step
     .complete 151,1 --Handful of Oats (8)
 step
     #completewith Oil
-    >>AOE |cRXP_ENEMY_血牙野猪|r。拾取|cRXP_LOOT_血牙野猪肝|r和|cRXP_LOOT_血牙野猪鼻|r
+    >>AOE击杀 |cRXP_ENEMY_血牙野猪|r。拾取|cRXP_LOOT_血牙野猪肝|r和|cRXP_LOOT_血牙野猪鼻|r
     >>AOE击杀 |cRXP_ENEMY_剥肉者|r。拾取它们身上的|cRXP_LOOT_秃鹫肉条|r
     .collect 723,8,22,1 --Goretusk Liver (8)
     .mob +Goretusk
@@ -5969,7 +5969,7 @@ step
     .complete 151,1 --Handful of Oats (8)
 step
     #completewith AoE1
-    >>AOE |cRXP_ENEMY_血牙野猪|r。拾取|cRXP_LOOT_血牙野猪肝|r和|cRXP_LOOT_血牙野猪鼻|r
+    >>AOE击杀 |cRXP_ENEMY_血牙野猪|r。拾取|cRXP_LOOT_血牙野猪肝|r和|cRXP_LOOT_血牙野猪鼻|r
     >>AOE击杀 |cRXP_ENEMY_剥肉者|r。拾取它们身上的|cRXP_LOOT_秃鹫肉条|r
     .collect 723,8,22,1 --Goretusk Liver (8)
     .mob +Great Goretusk
@@ -6208,7 +6208,7 @@ step
 step
     .goto 1453/0,822.16,-8865.60
     >>进入建筑
-    >>与 |cRXP_FRIENDLY_艾代尔|r 对话
+    >>与|cRXP_FRIENDLY_艾代尔|r 对话
     .vendor 1316 >> |cRXP_BUY_从他那里购买非智力|r |T134943:0|t|T134943:0|t[卷轴] |cRXP_BUY_（如果有货）|r
     .target 艾代尔·吉尔罗
 step
@@ -6250,7 +6250,7 @@ step
     #label Bank3
     .goto 1453/0,614.33,-8932.92
     >>与|cRXP_FRIENDLY_牛顿|r 交谈
-    >>|cRXP_WARN_注意：每种布料需要准备12组（|r|T132911:0|t|T132905:0|t[毛料]|cRXP_WARN_、|r |T132892:0|t|T132903:0|t[丝绸]|cRXP_WARN_、|r |T132892:0|t|T132892:0|t[魔纹布]|cRXP_WARN_、|r 和 |T132903:0|t|T132903:0|t[符文布]|cRXP_WARN_），用于后续的布料捐献任务。这些布料在升级过程中会自然获得|r
+    >>|cRXP_WARN_注意：每种布料需要准备12组（|r|T132911:0|t|T132905:0|t[毛料]|cRXP_WARN_、|r |T132892:0|t|T132903:0|t[丝绸]|cRXP_WARN_、|r |T132892:0|t|T132892:0|t[魔纹布]|cRXP_WARN_、|r 和 |T132903:0|t|T132903:0|t[符文布]|cRXP_WARN_），用于后续的布料捐献任务.这些布料在升级过程中会自然获得|r
     .bankdeposit 2998,4371,1711,1478,1712,3012,1180,1181,3013,17056,2592,2998,1941 >> 将以下物品存入银行：
     >>|T133024:0|t[青铜管]
     >>|T134943:0|t|T134943:0|t[卷轴]
@@ -6398,7 +6398,7 @@ step
    .isOnQuest 5321
 step
     #completewith next
-    >>AOE |cRXP_ENEMY_灰鬃蓟熊|r。拾取它们的|cRXP_LOOT_灰鬃头皮|r
+    >>AOE击杀 |cRXP_ENEMY_灰鬃蓟熊|r。拾取它们的|cRXP_LOOT_灰鬃头皮|r
     >>|cRXP_ENEMY_灰鬃蓟熊|r与|cRXP_ENEMY_月夜猛虎领主|r和|cRXP_ENEMY_巨型森林行者|r共享刷新点
    .complete 1003,1 --Grizzled Scalp (4)
    .mob Grizzled Thistle Bear
@@ -6483,7 +6483,7 @@ step
     .isOnQuest 950
 step
     #completewith next
-    >>AOE |cRXP_ENEMY_灰鬃蓟熊|r。拾取它们的|cRXP_LOOT_灰鬃头皮|r
+    >>AOE击杀 |cRXP_ENEMY_灰鬃蓟熊|r。拾取它们的|cRXP_LOOT_灰鬃头皮|r
     >>|cRXP_ENEMY_灰鬃蓟熊|r与|cRXP_ENEMY_月夜猛虎领主|r和|cRXP_ENEMY_巨型森林行者|r共享刷新点
     .complete 1003,1 --Grizzled Scalp (4)
     .mob Grizzled Thistle Bear
@@ -6522,7 +6522,7 @@ step
     .isOnQuest 950
 step
     #completewith SeaC
-    >>AOE |cRXP_ENEMY_灰鬃蓟熊|r。拾取它们的|cRXP_LOOT_灰鬃头皮|r
+    >>AOE击杀 |cRXP_ENEMY_灰鬃蓟熊|r。拾取它们的|cRXP_LOOT_灰鬃头皮|r
     >>|cRXP_ENEMY_灰鬃蓟熊|r与|cRXP_ENEMY_月夜猛虎领主|r和|cRXP_ENEMY_巨型森林行者|r共享刷新点
     .complete 1003,1 --Grizzled Scalp (4)
     .mob Grizzled Thistle Bear
@@ -6624,7 +6624,7 @@ step
     .use 13536
 step
     #completewith SeaCreatureGiga
-    >>AOE |cRXP_ENEMY_灰鬃蓟熊|r。拾取它们的|cRXP_LOOT_灰鬃头皮|r
+    >>AOE击杀 |cRXP_ENEMY_灰鬃蓟熊|r。拾取它们的|cRXP_LOOT_灰鬃头皮|r
     >>|cRXP_ENEMY_灰鬃蓟熊|r与|cRXP_ENEMY_月夜猛虎领主|r和|cRXP_ENEMY_巨型森林行者|r共享刷新点
     .complete 1003,1 --Grizzled Scalp (4)
     .mob Grizzled Thistle Bear
@@ -6704,7 +6704,7 @@ step
     .use 13536
 step
     #completewith Remtravel3
-    >>AOE |cRXP_ENEMY_灰鬃蓟熊|r。拾取它们的|cRXP_LOOT_灰鬃头皮|r
+    >>AOE击杀 |cRXP_ENEMY_灰鬃蓟熊|r。拾取它们的|cRXP_LOOT_灰鬃头皮|r
     >>|cRXP_ENEMY_灰鬃蓟熊|r与|cRXP_ENEMY_月夜猛虎领主|r和|cRXP_ENEMY_巨型森林行者|r共享刷新点
     .complete 1003,1 --Grizzled Scalp (4)
     .mob Grizzled Thistle Bear
@@ -6741,7 +6741,7 @@ step
     .mob 月夜雄虎
 step
     #completewith next
-    >>AOE |cRXP_ENEMY_灰鬃蓟熊|r。拾取它们的|cRXP_LOOT_灰鬃头皮|r
+    >>AOE击杀 |cRXP_ENEMY_灰鬃蓟熊|r。拾取它们的|cRXP_LOOT_灰鬃头皮|r
     >>|cRXP_ENEMY_灰鬃蓟熊|r与|cRXP_ENEMY_月夜猛虎领主|r和|cRXP_ENEMY_巨型森林行者|r共享刷新点
     .complete 1003,1 --Grizzled Scalp (4)
     .mob Grizzled Thistle Bear
@@ -6809,7 +6809,7 @@ step
 step
     #completewith Onu3
     #label Scalps2
-    >>AOE |cRXP_ENEMY_灰鬃蓟熊|r。拾取它们的|cRXP_LOOT_灰鬃头皮|r
+    >>AOE击杀 |cRXP_ENEMY_灰鬃蓟熊|r。拾取它们的|cRXP_LOOT_灰鬃头皮|r
     >>|cRXP_ENEMY_灰鬃蓟熊|r与|cRXP_ENEMY_月夜猛虎领主|r和|cRXP_ENEMY_巨型森林行者|r共享刷新点
     .complete 1003,1 --Grizzled Scalp (4)
     .mob Grizzled Thistle Bear
@@ -6858,7 +6858,7 @@ step
     .goto 1439/1,406.82,4733.45,60,0
     .goto 1439/1,444.15,4850.92,60,0
     .goto 1439/1,287.61,4815.11
-    >>AOE |cRXP_ENEMY_灰鬃蓟熊|r。拾取它们的|cRXP_LOOT_灰鬃头皮|r
+    >>AOE击杀 |cRXP_ENEMY_灰鬃蓟熊|r。拾取它们的|cRXP_LOOT_灰鬃头皮|r
     >>|cRXP_ENEMY_灰鬃蓟熊|r与|cRXP_ENEMY_月夜猛虎领主|r和|cRXP_ENEMY_巨型森林行者|r共享刷新点
     .complete 1003,1 --Grizzled Scalp (4)
     .mob Grizzled Thistle Bear
@@ -7026,7 +7026,7 @@ step
 step
     #completewith next
     #requires BoarM
-    +|cRXP_WARN_开始狂按|r |T132794:0|t[造水术 等级2] |cRXP_WARN_以制造尽可能多的水|r
+    +|cRXP_WARN_开始狂按|r |T132794:0|t|T132794:0|t[造水术 等级2] |cRXP_WARN_以制造尽可能多的水|r
 step
     #label Teldrassil
     .goto 1438/1,1018.75,8564.77,100 >> 乘船前往泰达希尔
@@ -7097,12 +7097,12 @@ step
     #label Bank
     .goto 1453/0,614.33,-8932.92
     >>与|cRXP_FRIENDLY_牛顿|r 交谈
-    >>|cRXP_WARN_注意：每种布料需要准备12组（|r|T132911:0|t|T132905:0|t[毛料]|cRXP_WARN_、|r |T132892:0|t|T132903:0|t[丝绸]|cRXP_WARN_、|r |T132892:0|t|T132892:0|t[魔纹布]|cRXP_WARN_、|r 和 |T132903:0|t|T132903:0|t[符文布]|cRXP_WARN_），用于后续的布料捐献任务。这些布料在升级过程中会自然获得|r
+    >>|cRXP_WARN_注意：每种布料需要准备12组（|r|T132911:0|t|T132905:0|t[毛料]|cRXP_WARN_、|r |T132892:0|t|T132903:0|t[丝绸]|cRXP_WARN_、|r |T132892:0|t|T132892:0|t[魔纹布]|cRXP_WARN_、|r 和 |T132903:0|t|T132903:0|t[符文布]|cRXP_WARN_），用于后续的布料捐献任务.这些布料在升级过程中会自然获得|r
     .bankdeposit 17056,2592,1015,4654 >> 将以下物品存入银行：
     >>|T132917:0|t[轻羽毛]
     >>|T132911:0|t|T132911:0|t[毛料]
     >>|T133970:0|t[狼肋排]
-    >>|T134431:0|t|T134431:0|t[神秘的化石]
+    >>|T134431:0|t[神秘的化石]
     .target 牛顿·伯恩赛德
 step
     #completewith next
@@ -7188,7 +7188,7 @@ step
 step
     .goto 1453/0,822.16,-8865.60
     >>进入建筑
-    >>与 |cRXP_FRIENDLY_艾代尔|r 对话
+    >>与|cRXP_FRIENDLY_艾代尔|r 对话
     .vendor 1316 >> |cRXP_BUY_从他那里购买非智力|r |T134943:0|t|T134943:0|t[卷轴] |cRXP_BUY_（如果有货）|r
     >>|cRXP_WARN_不要让你的钱低于18银31铜|r
     .money <0.1831
@@ -7197,7 +7197,7 @@ step
     #label Adair
     .goto 1453/0,822.16,-8865.60
     >>进入建筑
-    >>与 |cRXP_FRIENDLY_艾代尔|r 对话
+    >>与|cRXP_FRIENDLY_艾代尔|r 对话
     .vendor 1316 >> |cRXP_BUY_从他那里购买非智力|r |T134943:0|t|T134943:0|t[卷轴] |cRXP_BUY_（如果有货）|r
     >>|cRXP_WARN_不要让你的钱低于 26银31铜|r
     .money <0.2631
@@ -7507,7 +7507,7 @@ step
     >>与 |cRXP_FRIENDLY_科纳彻尔|r 对话
 --  .accept 120 >>Accept Messenger to Stormwind
 --  .goto 1433/0,-2221.87,-9218.60
-    .accept 91 >>接受任务 所罗门的律法
+    .accept 91 >>接受任务所罗门的律法
     .goto 1433/0,-2216.00,-9215.85
 --  .target Magistrate Solomon
     .target 拜里弗·科纳彻尔
@@ -8017,7 +8017,7 @@ step
     #label AdairX
     .goto 1453/0,822.16,-8865.60
     >>进入建筑
-    >>与 |cRXP_FRIENDLY_艾代尔|r 对话
+    >>与|cRXP_FRIENDLY_艾代尔|r 对话
     .vendor 1316 >> |cRXP_BUY_从他那里购买非智力|r |T134943:0|t|T134943:0|t[卷轴] |cRXP_BUY_（如果有货）|r
     .target 艾代尔·吉尔罗
 step
@@ -8057,21 +8057,21 @@ step
 step
     .goto 1455/0,-997.66,-4886.49
     >>与 |cRXP_FRIENDLY_拜雷|r 对话
-    >>|cRXP_WARN_注意：每种布料需要准备12组（|r|T132911:0|t|T132905:0|t[毛料]|cRXP_WARN_、|r |T132892:0|t|T132903:0|t[丝绸]|cRXP_WARN_、|r |T132892:0|t|T132892:0|t[魔纹布]|cRXP_WARN_、|r 和 |T132903:0|t|T132903:0|t[符文布]|cRXP_WARN_），用于后续的布料捐献任务。这些布料在升级过程中会自然获得|r
+    >>|cRXP_WARN_注意：每种布料需要准备12组（|r|T132911:0|t|T132905:0|t[毛料]|cRXP_WARN_、|r |T132892:0|t|T132903:0|t[丝绸]|cRXP_WARN_、|r |T132892:0|t|T132892:0|t[魔纹布]|cRXP_WARN_、|r 和 |T132903:0|t|T132903:0|t[符文布]|cRXP_WARN_），用于后续的布料捐献任务.这些布料在升级过程中会自然获得|r
     .bankdeposit 17056,2592,1015,1083,2665,1922,1284 >> 将以下物品存入银行：
     >>|T132917:0|t[轻羽毛]
     >>|T132911:0|t|T132911:0|t[毛料]
     >>|T133970:0|t[狼肋排]
-    >>|T133277:0|t|T133277:0|t[阿祖拉的铭文饰品]
-    >>|T133849:0|t|T133849:0|t[暴风城特产调料]
-    >>|T133629:0|t|T133629:0|t[斯温的货物]
-    >>|T132761:0|t[一箱马掌]
+    >>|T133277:0|t[阿祖拉的铭文饰品]
+    >>|T133849:0|t[暴风城特产调料]
+    >>|T133629:0|t[斯温的货物]
+    >>|T132761:0|t|T132761:0|t[一箱马掌]
     .target 拜雷·石衣
 step
     #label BankDeposit
     .goto 1455/0,-997.66,-4886.49
     .bankwithdraw 4654 >> 从你的银行中取出以下物品：
-    >>|T134431:0|t|T134431:0|t[神秘的化石]
+    >>|T134431:0|t[神秘的化石]
     .target 拜雷·石衣
 step
     .goto 1455/0,-915.2,-4606.38
@@ -8094,7 +8094,7 @@ step
     #completewith next
     #label FlyMene
     .goto 1455/0,-1152.39,-4820.914
-    >>与|cRXP_FRIENDLY_格莱斯|r 对话
+    >>与 |cRXP_FRIENDLY_格莱斯|r 对话
     .fly Menethil >> 飞往米奈希尔港，湿地
     .target 格莱斯·瑟登
 step

@@ -2230,7 +2230,7 @@ step << Horde
     .zone Orgrimmar >>前往|cFFfa9602奥格瑞玛|r
 step << Horde
     .goto Orgrimmar,34.96,38.28
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莫克瓦尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_莫克瓦尔|r 对话
     .turnin 8998 >>交任务 回到起点
     .accept 9007 >>接受任务 最后的奖赏 << Druid
     .accept 9008 >>接受任务 最后的奖赏 << Hunter
@@ -2243,7 +2243,7 @@ step << Horde
     .target Mokvar
 step << Horde
     .goto Orgrimmar,34.96,38.28
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_莫克瓦尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莫克瓦尔|r 对话
     >>你需要 |T133129:0|t[|cRXP_LOOT_野性之心兜帽|r] 和 |T132741:0|t[|cRXP_LOOT_野性之心外衣|r] 来完成任务 << Druid
     >>你需要 |T133126:0|t[|cRXP_LOOT_野兽追猎者之帽|r] 和 |T132625:0|t[|cRXP_LOOT_野兽追猎者外套|r] 来完成任务 <<  Hunter
     >>你需要 |T132768:0|t[|cRXP_LOOT_博学者头冠|r] 和 |T132666:0|t[|cRXP_LOOT_博学者长袍|r] 来完成任务 << Mage

@@ -14,7 +14,7 @@ RXPGuides.RegisterGuide([[
 #defaultfor NightElf
 #next 6-11级 泰达希尔
 step
-#include RestedXP 永久向导 A\1-6级 幽影谷
+#include RestedXP无限服指南（联盟）\1-6级 幽影谷
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -30,5 +30,5 @@ RXPGuides.RegisterGuide([[
 #next 11-16级 黑海岸/洛克莫丹
 
 step
-#include RestedXP 永久向导 A\6-11级 泰达希尔
+#include RestedXP无限服指南（联盟）\6-11级 泰达希尔
 ]])

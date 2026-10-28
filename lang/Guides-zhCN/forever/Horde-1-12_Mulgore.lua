@@ -9,7 +9,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 1-6级 莫高雷
 #version 11
-#group RestedXP 永久指南 (H)
+#group RestedXP无限服指南（部落）
 #subgroup 速通指南 1-22级
 --#groupid RXP-SRGCE-H1
 #defaultfor Tauren
@@ -479,7 +479,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 6-12级 莫高雷
 #version 11
-#group RestedXP 永久指南 (H)
+#group RestedXP无限服指南（部落）
 #subgroup 速通指南 1-22级
 --#groupid RXP-SRGCE-H1
 #defaultfor Tauren
@@ -2257,7 +2257,7 @@ step
     .goto Thunder Bluff,45.23,59.40,0
     .goto Thunder Bluff,40.41,51.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拍卖师斯塔比|r 对话
-    >>|cRXP_BUY_从拍卖行购买1条|r |T133894:0|t|T133894:0|t[新鲜的美味小鱼] |cRXP_BUY_|r
+    >>|cRXP_BUY_从拍卖行购买1条|r |T133894:0|t[新鲜的美味小鱼] |cRXP_BUY_|r
     .collect 6291,1,76240,1 --Raw Brilliant Smallfish (1)
     .target Auctioneer Stampi
 step

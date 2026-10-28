@@ -14,7 +14,7 @@ RXPGuides.RegisterGuide([[
 #defaultfor Dwarf/Gnome
 
 step
-#include RestedXP 永久向导 A\1-5级 寒脊山谷
+#include RestedXP无限服指南（联盟）\1-5级 寒脊山谷
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -29,7 +29,7 @@ RXPGuides.RegisterGuide([[
 #defaultfor Dwarf/Gnome
 
 step
-#include RestedXP 永久向导 A\5-11级 丹莫罗
+#include RestedXP无限服指南（联盟）\5-11级 丹莫罗
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -44,7 +44,7 @@ RXPGuides.RegisterGuide([[
 #next 12-14级 洛克莫丹 (矮人/侏儒)
 
 step
-#include RestedXP 永久向导 A\11-12级 艾尔文森林 (矮人/侏儒)
+#include RestedXP无限服指南（联盟）\11-12级 艾尔文森林 (矮人/侏儒)
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -59,7 +59,7 @@ RXPGuides.RegisterGuide([[
 #defaultfor Gnome/Dwarf
 
 step
-#include RestedXP 永久向导 A\12-14级 洛克莫丹 (矮人/侏儒)
+#include RestedXP无限服指南（联盟）\12-14级 洛克莫丹 (矮人/侏儒)
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -74,5 +74,5 @@ RXPGuides.RegisterGuide([[
 #defaultfor Dwarf
 
 step
-#include RestedXP 永久向导 A\11-13级 洛克莫丹 (猎人)@NormalRouteStart-NormalRouteEnd
+#include RestedXP无限服指南（联盟）\11-13级 洛克莫丹 (猎人)@NormalRouteStart-NormalRouteEnd
 ]])

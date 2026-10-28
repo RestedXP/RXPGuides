@@ -8,7 +8,7 @@ RXPGuides.RegisterGuide([[
 #season 0,1
 #version 1
 << Alliance
-#group RestedXP 永久向导 A
+#group RestedXP无限服指南（联盟）
 #subgroup 速通指南 1-20级
 --#groupid RXP-SRGCE-A1
 #name 1-5级 寒脊山谷
@@ -157,6 +157,11 @@ step
     .target 斯登·粗臂
 
 step << Warlock
+    .goto 1426,25.077,75.711
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格瑞林·白须|r 对话
+    .accept 182 >> 接受任务 巨魔洞穴
+    .target 格瑞林·白须
+step << Warlock
     #season 0,1
     #optional
     #requires FrostmaneC1
@@ -209,6 +214,7 @@ step << Warlock
     #label BeginningsHS
     #completewith BeginningsEnd
     .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    >>|cRXP_WARN_确保当你死亡时，你的子区域是寒脊山谷！否则你将被传送到卡拉诺斯墓地|r
     .target 灵魂医者
 step << Warlock
     #season 0,1
@@ -281,7 +287,7 @@ step
     .goto 1426,25.077,75.711
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格瑞林·白须|r 对话
     .turnin 234 >> 交任务 寒脊山谷的送信任务
-    .accept 182 >> 接受任务 巨魔洞穴
+    .accept 182 >> 接受任务 巨魔洞穴 << !Warlock
     .target 格瑞林·白须
 step << Hunter
     #completewith next
@@ -653,7 +659,7 @@ RXPGuides.RegisterGuide([[
 #season 0,1
 #version 1
 << Alliance
-#group RestedXP 永久向导 A
+#group RestedXP无限服指南（联盟）
 #subgroup 速通指南 1-20级
 --#groupid RXP-SRGCE-A1
 #name 5-11级 丹莫罗
@@ -2320,7 +2326,7 @@ step << !Hunter
 step << !Hunter
     #completewith flyIF
     .hs >> 炉石到塞尔萨玛
-    >>|cRXP_BUY_按需购买食物/水|r << !Warrior !Rogue
+    >>|cRXP_BUY_如有需要，购买食物/水|r << !Warrior !Rogue
 	>>|cRXP_BUY_如有需要，购买食物|r << Warrior/Rogue
     .cooldown item,6948,>2,1
 step << Hunter
@@ -2544,7 +2550,7 @@ step << Dwarf Paladin
     .bindlocation 1537
 step << Hunter
     .hs >> 炉石到塞尔萨玛
-    >>|cRXP_BUY_按需购买食物/水|r << !Warrior !Rogue
+    >>|cRXP_BUY_如有需要，购买食物/水|r << !Warrior !Rogue
 	>>|cRXP_BUY_如有需要，购买食物|r << Warrior/Rogue
     .cooldown item,6948,>2,1
     .zoneskip Loch Modan
@@ -2561,7 +2567,7 @@ step << !Hunter
     .goto 1455/0,-1330.28,-4840.430
     .subzone 2257 >>进入矿道地铁
 step << !Hunter
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在矿道地铁的中间平台上与 |cRXP_FRIENDLY_蒙提|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 在矿道地铁的中间平台上与 |cRXP_FRIENDLY_蒙提|r 对话
     .accept 6661 >> 接受任务 捕捉矿道老鼠
     .target 蒙提
 step << !Hunter
@@ -2570,7 +2576,7 @@ step << !Hunter
     .use 17117
     .mob 矿道老鼠
 step << !Hunter
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在矿道地铁的中间平台上与 |cRXP_FRIENDLY_蒙提|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 在矿道地铁的中间平台上与 |cRXP_FRIENDLY_蒙提|r 对话
     .turnin 6661 >> 交任务 捕捉矿道老鼠
     .timer 11,捕捉矿道老鼠剧情表演
     .accept 6662 >> 接受任务 我的兄弟，尼普希
@@ -2734,7 +2740,7 @@ step << Warlock
     .goto 1453/0,1015.33,-8978.9,15 >> 前往屠宰场，进入地下室
 step << Warlock
     .goto 1453/0,1029.89,-8971.06
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
     .trainer >> 训练你的职业技能
     .target 厄苏拉·德林
 step << Warlock
@@ -2787,7 +2793,7 @@ RXPGuides.RegisterGuide([[
 #disabledungeons
 #season 0,1
 << Alliance !Hunter
-#group RestedXP 永久向导 A
+#group RestedXP无限服指南（联盟）
 #subgroup 速通指南 1-20级
 --#groupid RXP-SRGCE-A1
 #name 11-12级 艾尔文森林 (矮人/侏儒)
@@ -2802,8 +2808,8 @@ step << Warlock
     #completewith next
     +|cRXP_WARN_在前往|r 杜加尔·朗德瑞克|cRXP_WARN_ 的路上，重复施放|r |T136126:0|t[生命分流] |cRXP_FRIENDLY_直到你的生命值低于10%|r
 step
-    .goto 1453/0,490.03,-8835.82
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
+    .goto 1453/0,484.200,-8832.500
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
     .fp Stormwind >> 获取暴风城的飞行路径
     .target 杜加尔·朗德瑞克
 step << Warlock
@@ -2923,7 +2929,7 @@ step << skip
 step << skip
     .goto 1429/0,193.00,-9832.40,50,0
     .goto 1429/0,129.73,-9844.49
-    >>|cRXP_WARN_进入并且探察法戈第矿洞|r
+    >>|cRXP_WARN_进入并探察法戈第矿洞|r
     .complete 62,1 --Scout Through the Fargodeep Mine
 step << skip
     .goto 1429/0,129.73,-9844.49,25,0
@@ -3227,7 +3233,7 @@ step << Warlock
     .goto 1453/0,1015.33,-8978.9,15 >> 前往屠宰场，进入地下室
 step << Warlock
     .goto 1453/0,1029.89,-8971.06
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
     .trainer >> 训练你的职业技能
     .target 厄苏拉·德林
 step << Warlock
@@ -3418,7 +3424,7 @@ step
     .target 索尔
 step << Dwarf Paladin
     .hs >> 将炉石使用回铁炉堡
-    >>|cRXP_BUY_按需购买食物/水|r << !Warrior !Rogue
+    >>|cRXP_BUY_如有需要，购买食物/水|r << !Warrior !Rogue
 	>>|cRXP_BUY_如有需要，购买食物|r << Warrior/Rogue
     .cooldown item,6948,>2,1
     .bindlocation 1537,1
@@ -3432,7 +3438,7 @@ step << Dwarf Paladin
     .zoneskip Loch Modan
 step << !Paladin
     .hs >> 炉石到塞尔萨玛
-    >>|cRXP_BUY_按需购买食物/水|r << !Warrior !Rogue
+    >>|cRXP_BUY_如有需要，购买食物/水|r << !Warrior !Rogue
 	>>|cRXP_BUY_如有需要，购买食物|r << Warrior/Rogue
     .cooldown item,6948,>2,1
     .zoneskip Loch Modan
@@ -3452,7 +3458,7 @@ RXPGuides.RegisterGuide([[
 #season 0,1
 #version 1
 << Alliance !Hunter
-#group RestedXP 永久向导 A
+#group RestedXP无限服指南（联盟）
 #subgroup 速通指南 1-20级
 --#groupid RXP-SRGCE-A1
 #name 12-14级 洛克莫丹 (矮人/侏儒)
@@ -4453,7 +4459,7 @@ RXPGuides.RegisterGuide([[
 #era/som--h
 #version 1
 << Alliance Hunter
-#group RestedXP 永久向导 A
+#group RestedXP无限服指南（联盟）
 #subgroup 速通指南 1-20级
 --#groupid RXP-SRGCE-A1
 #name 11-13级 洛克莫丹 (猎人)
@@ -4953,7 +4959,7 @@ step << Hunter skip
     #requires DockTravel
     #label DarkshoreCook1
     #completewith DarkshoreBoat
-    >>|cRXP_WARN_在码头等待船只时:|r
+    >>|cRXP_WARN_在码头等待船只期间：|r
     .cast 818 >>|cRXP_WARN_创建|r |T135805:0|t[基础营火] |cRXP_WARN_（在你的专业技能书中）|r
     .usespell 818
     .zoneskip Darkshore
@@ -4967,7 +4973,7 @@ step << Hunter skip
     #requires DarkshoreCook1
     #label DarkshoreCook2
     #completewith DarkshoreBoat
-    >>|cRXP_WARN_在码头等待船只时:|r
+    >>|cRXP_WARN_在码头等待船只期间：|r
     .cast 818 >>|cRXP_WARN_创建|r |T135805:0|t[基础营火] |cRXP_WARN_（在你的专业技能书中）|r
     .usespell 818
     .zoneskip Darkshore
@@ -4981,7 +4987,7 @@ step << Hunter skip
     #requires DarkshoreCook2
     #label DarkshoreCook3
     #completewith DarkshoreBoat
-    >>|cRXP_WARN_在码头等待船只时:|r
+    >>|cRXP_WARN_在码头等待船只期间：|r
     .cast 818 >>|cRXP_WARN_创建|r |T135805:0|t[基础营火] |cRXP_WARN_（在你的专业技能书中）|r
     .usespell 818
     .zoneskip Darkshore

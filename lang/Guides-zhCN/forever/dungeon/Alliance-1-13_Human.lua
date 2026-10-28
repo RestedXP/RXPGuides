@@ -15,7 +15,7 @@ RXPGuides.RegisterGuide([[
 
 
 step
-#include RestedXP 永久向导 A\1-6级 北郡
+#include RestedXP无限服指南（联盟）\1-6级 北郡
 ]])
 
 
@@ -31,7 +31,7 @@ RXPGuides.RegisterGuide([[
 #defaultfor Human
 
 step
-#include RestedXP 永久向导 A\6-11级 艾尔文森林
+#include RestedXP无限服指南（联盟）\6-11级 艾尔文森林
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -46,5 +46,5 @@ RXPGuides.RegisterGuide([[
 #defaultfor Human
 
 step
-    #include RestedXP 永久向导 A\11-13级 洛克莫丹@NormalRouteStart-NormalRouteEnd
+    #include RestedXP无限服指南（联盟）\11-13级 洛克莫丹@NormalRouteStart-NormalRouteEnd
 ]])

@@ -1193,7 +1193,7 @@ step
     .collect 215425,1
 step
     .train 402855,1
-    .zone Tirisfal Glades >>前往 |cFFfa9602提瑞斯法林地|r
+    .zone Tirisfal Glades >>前去 |cFFfa9602提瑞斯法林地|r
 step
     .train 402855,1
     .goto 1415,47.44,19.75,10,0

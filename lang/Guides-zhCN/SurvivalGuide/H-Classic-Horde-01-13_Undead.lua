@@ -38,7 +38,7 @@ step << Warrior/Warlock/Priest/Mage
     .goto Tirisfal Glades,29.18,68.94,40,0 << Priest/Mage
     .goto Tirisfal Glades,29.10,67.66,40,0 << Priest/Mage
     .goto Tirisfal Glades,30.19,65.32,40,0 << Priest/Mage
-    +|cRXP_WARN_击杀 |cRXP_ENEMY_食腐狼幼崽|r 和 |cRXP_ENEMY_夜行蝙蝠|r。拾取它们的掉落，直到你拥有价值60铜币的可出售物品（包括你的护甲）|r << Mage
+    +|cRXP_WARN_击杀 |cRXP_ENEMY_食腐狼幼崽|r 和 |cRXP_ENEMY_夜行蝙蝠|r，拾取它们的掉落，直到你拥有价值60铜币的可出售物品（包括你的护甲）|r << Mage
     +|cRXP_WARN_击杀 |cRXP_ENEMY_食腐狼幼崽|r 和 |cRXP_ENEMY_夜行蝙蝠|r。拾取它们的掉落，直到你拥有价值50铜币的可出售物品（包括你的护甲）|r << Priest
     +|cRXP_WARN_击杀 |cRXP_ENEMY_食腐狼幼崽|r 和 |cRXP_ENEMY_夜行蝙蝠|r，拾取它们的掉落，直到你拥有价值10铜币的可出售物品（包括你的护甲）|r << Warrior/Warlock
     .mob 食腐狼幼崽
@@ -1678,7 +1678,7 @@ step << Warlock
     .target 杜格鲁·血怒
 step << Warlock
     .goto Durotar,54.70,41.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_基萨|r 对话并购买 |T133738:0|t[火焰箭（等级 2）]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_基萨|r 对话并购买 |T133738:0|t[火焰箭（等级2）]
     .collect 16302,1,818,1 --Grimoire of Firebolt (Rank 2) (1)
     .target 基萨
     .money <0.01
@@ -2540,13 +2540,13 @@ step << Mage
 step << Priest
     #optional
     .goto Undercity,48.98,18.33
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_艾萨莱斯特|r对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_艾萨莱斯特|r 对话
     .turnin 5660 >> 交任务 虚弱之触
     .target Aelthalyste
     .isOnQuest 5660
 step << Priest
     .goto Undercity,48.98,18.33
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_艾萨莱斯特|r对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_艾萨莱斯特|r 对话
     .accept 5658 >> 接受任务 虚弱之触
     .turnin 5658 >> 交任务 虚弱之触
     .target Aelthalyste
@@ -2579,7 +2579,7 @@ step << Rogue
     #optional
     #label Swordtraining1
     .goto Undercity,57.29,32.72
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|Tinterface/worldmap/chatbubble_64grey.blp:20|t与战争军需区的|r|cRXP_FRIENDLY_阿基巴德|r交谈
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与战争军需区的|r |cRXP_FRIENDLY_阿基巴德|r 对话
     .train 201 >>学习单手剑
     .target 阿基巴德
     .money <0.3023

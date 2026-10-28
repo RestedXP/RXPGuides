@@ -3712,7 +3712,7 @@ step << Warlock
 step << Warlock
     #xprate >1.59
     .goto StormwindClassic,26.11,77.22
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
     .train 705 >> 训练你的职业技能
     .target 厄苏拉·德林
     .xp <12,1
@@ -3721,7 +3721,7 @@ step << Warlock
     #xprate >1.59
     #optional
     .goto StormwindClassic,26.11,77.22
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
     .train 689 >> 训练你的职业技能
     .target 厄苏拉·德林
     .xp <14,1
@@ -3918,7 +3918,7 @@ step << Warlock
 step << Warlock
     #optional
     .goto StormwindClassic,26.117,77.225
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
     .trainer >> 训练你的职业技能
     .target 厄苏拉·德林
     .xp <12,1
@@ -5628,7 +5628,7 @@ step << Warlock
 step << Warlock
     #xprate <1.5
     .goto StormwindClassic,26.117,77.225
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
     .trainer >> 训练你的职业技能
     .target 厄苏拉·德林
 step << Warlock
@@ -5862,14 +5862,14 @@ step
 step
     #xprate <1.5
     .goto StormwindClassic,66.28,62.13
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
     .turnin 6261 >> 交任务 杜加尔·朗德瑞克
     .accept 6285 >> 接受任务 返回西部荒野
     .target 杜加尔·朗德瑞克
 step
     #xprate <1.5
     .goto StormwindClassic,66.277,62.137
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
     .fly Westfall >> 飞往西部荒野
     .target 杜加尔·朗德瑞克
 
@@ -5917,7 +5917,7 @@ step << Priest/Warlock
     .goto Ironforge,21.131,17.276,5,0
     .goto Ironforge,23.135,15.936
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哈瑞克·石鼓|r 在楼下对话
-    >>|cRXP_BUY_从他那里|r购买1把|cRXP_BUY_ |T135468:0|t[烟尘魔杖]|r
+    >>|cRXP_BUY_购买1根|r |T135468:0|t[烟尘魔杖] |cRXP_BUY_从他那里|r
     .collect 5208,1 --Smoldering Wand (1)
     .target 哈瑞克·石鼓
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<13.4

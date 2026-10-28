@@ -89,7 +89,7 @@ step << !Human
 step
     .goto Westfall,52.86,53.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_与旅店老板对话|r
-    >>|cRXP_BUY_按需购买食物/水|r
+    >>|cRXP_BUY_如有需要，购买食物/水|r
     .vendor >>|T133918:0|t[长嘴泥鳅] |cRXP_WARN_非常便宜|r
 	.target 旅店老板希瑟尔
 step
@@ -4610,7 +4610,7 @@ step << Paladin/Mage/Warlock/Rogue
     #xprate >1.59
     .goto Ironforge,50.826,5.613
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与里面的 |cRXP_FRIENDLY_葛利·硬骨|r 对话
-    .turnin 968 >> 交任务深渊之神
+    .turnin 968 >> 交任务 深渊之神
     .target 葛利·硬骨
     .isOnQuest 968
     .zoneskip Darkshore << Warrior/Paladin
@@ -4966,7 +4966,7 @@ step << Rogue
     .goto StormwindClassic,63.301,62.103,30,0
     .goto StormwindClassic,63.047,65.744,15,0
     .goto StormwindClassic,66.276,62.135
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
     .fp Stormwind >> 获取暴风城的飞行路径 << !Human
     .fly Westfall >> 飞往西部荒野 << Human
     .target 杜加尔·朗德瑞克
@@ -5002,7 +5002,7 @@ step << Human Rogue
     .goto StormwindClassic,63.301,62.103,30,0
     .goto StormwindClassic,63.047,65.744,15,0
     .goto StormwindClassic,66.276,62.135
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
     .fly Redridge >> 飞往赤脊山
     .target 杜加尔·朗德瑞克
     .zoneskip Stormwind City,1
@@ -5049,7 +5049,7 @@ step << Rogue
     #xprate >1.59
     #label Rendevous
     .goto Redridge Mountains,28.07,52.02
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_卢修斯|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_卢修斯|r 对话
     .turnin 2281 >> 交任务 赤脊山的联络员
     .accept 2282 >> 接受任务 奥瑟尔伐木场
     .target Lucius
@@ -5429,7 +5429,7 @@ step << Warlock
 step << Warlock
     #xprate >1.59
     .goto StormwindClassic,26.117,77.225
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
     .trainer >> 训练你的职业技能
     .target 厄苏拉·德林
     .dungeon !DM
@@ -5632,7 +5632,7 @@ step << NightElf Rogue
     #xprate >1.59
     .goto Ironforge,50.826,5.613
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与里面的 |cRXP_FRIENDLY_葛利·硬骨|r 对话
-    .turnin 968 >> 交任务深渊之神
+    .turnin 968 >> 交任务 深渊之神
     .target 葛利·硬骨
     .zoneskip Ironforge,1
     .zoneskip Wetlands
@@ -6328,7 +6328,7 @@ step
     #optional << NightElf
     .goto Ironforge,50.826,5.613
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与里面的 |cRXP_FRIENDLY_葛利·硬骨|r 对话
-    .turnin 968 >> 交任务深渊之神
+    .turnin 968 >> 交任务 深渊之神
     .target 葛利·硬骨
     .zoneskip Wetlands << NightElf
     .zoneskip Elwynn Forest
@@ -6820,7 +6820,7 @@ step << Warlock
 step << Warlock
     #xprate >1.59
     .goto StormwindClassic,26.117,77.225
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
     .trainer >> 训练你的职业技能
     .target 厄苏拉·德林
     .dungeon DM
@@ -6972,7 +6972,7 @@ step
     .goto StormwindClassic,63.301,62.103,30,0
     .goto StormwindClassic,63.047,65.744,15,0
     .goto StormwindClassic,66.276,62.135
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
     .fp Stormwind >> 获取暴风城的飞行路径 << !Human
     .fly Westfall >> 飞往西部荒野 << Human
     .target 杜加尔·朗德瑞克
@@ -7011,7 +7011,7 @@ step << Human
     .goto StormwindClassic,63.301,62.103,30,0
     .goto StormwindClassic,63.047,65.744,15,0
     .goto StormwindClassic,66.276,62.135
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
     .fly Redridge >> 飞往赤脊山
     .target 杜加尔·朗德瑞克
     .zoneskip Stormwind City,1
@@ -7057,7 +7057,7 @@ step
 step << Rogue
     #xprate >1.59
     .goto Redridge Mountains,28.07,52.02
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_卢修斯|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_卢修斯|r 对话
     .turnin 2281 >> 交任务 赤脊山的联络员
     .accept 2282 >> 接受任务 奥瑟尔伐木场
     .target Lucius
@@ -7309,7 +7309,7 @@ step
     #optional
     #completewith next
     .goto StormwindClassic,66.277,62.137
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
     .fly Westfall >> 飞往西部荒野
     .target 杜加尔·朗德瑞克
     .dungeon DM
@@ -7757,7 +7757,7 @@ step << Warlock
     #xprate >1.59
     #optional
     .goto StormwindClassic,26.117,77.225
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
     .train 6202 >> 训练你的职业技能
     .target 厄苏拉·德林
     .xp <22,1
@@ -8056,7 +8056,7 @@ step << NightElf
     #xprate >1.59 << !Hunter
     .goto Ironforge,50.826,5.613
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与里面的 |cRXP_FRIENDLY_葛利·硬骨|r 对话
-    .turnin 968 >> 交任务深渊之神
+    .turnin 968 >> 交任务 深渊之神
     .target 葛利·硬骨
     .zoneskip Ironforge,1
     .isOnQuest 968
@@ -8432,7 +8432,7 @@ step << Warlock
     .goto StormwindClassic,27.2,78.1,15 >> 前往屠宰场，进入地下室
 step << Warlock
     .goto StormwindClassic,26.11,77.22
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
     .trainer >> 训练你的职业技能
     .target 厄苏拉·德林
 step << Rogue
@@ -8523,7 +8523,7 @@ step
     .dungeon !DM
 step << !Human !Warlock
     #completewith start
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
     .goto StormwindClassic,66.27,62.12
     .fp Stormwind >> 开启暴风城的飞行点
     .target 杜加尔·朗德瑞克
@@ -8535,7 +8535,7 @@ step << !NightElf
 .dungeon DM
     #completewith next
     .goto StormwindClassic,66.27,62.12
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
     .fly Westfall >> 飞往西部荒野
     .target 杜加尔·朗德瑞克
     .zoneskip Westfall
@@ -8612,7 +8612,7 @@ step << !NightElf
     #xprate <1.5 << !Human
     #completewith next
     .goto StormwindClassic,66.27,62.13
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
     .fly Redridge >>飞往赤脊山
     .target 杜加尔·朗德瑞克
 step << !Human !Warlock
@@ -8656,7 +8656,7 @@ step
     .accept 120 >> 接受任务 送往暴风城的信
 step
 .dungeon DM
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_弗纳·奥斯古|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_弗纳·奥斯古|r 对话
 	.target Verner Osgood
     .goto Redridge Mountains,30.97,47.27
     .accept 118 >> 接受任务 马掌
@@ -8691,7 +8691,7 @@ step
 step
 .dungeon DM
     .goto StormwindClassic,66.277,62.137
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
     .fly Westfall >> 飞往西部荒野
     .target 杜加尔·朗德瑞克
 step
@@ -8873,7 +8873,7 @@ step << Warlock
 step << Warlock
 .dungeon DM
     .goto StormwindClassic,26.11,77.22
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
     .trainer >> 训练你的职业技能
     .target 厄苏拉·德林
 step << Warlock
@@ -9141,14 +9141,14 @@ step
     .accept 125 >> 接受任务 丢失的工具
     .target Foreman Oslow
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_弗纳·奥斯古|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_弗纳·奥斯古|r 对话
 	.target Verner Osgood
     .goto Redridge Mountains,30.97,47.27
     .accept 118 >> 接受任务 马掌
 step
 .dungeon DM
 #xprate >1.49
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_弗纳·奥斯古|r 对话
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_弗纳·奥斯古|r 对话
 	.target Verner Osgood
     .goto Redridge Mountains,30.97,47.27
     .turnin 119 >> 交任务 回复弗纳
@@ -9156,7 +9156,7 @@ step
 step
 .dungeon DM
 #xprate <1.5
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_弗纳·奥斯古|r 对话
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_弗纳·奥斯古|r 对话
 	.target Verner Osgood
     .goto Redridge Mountains,30.97,47.27
     .turnin 119 >> 交任务 回复弗纳
@@ -9422,7 +9422,7 @@ step
     .goto Redridge Mountains,26.80,44.30
     .turnin 131 >> 交任务 水仙诉衷情
 step << Rogue
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_卢修斯|r 对话
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_卢修斯|r 对话
 	.target Lucius
     .goto Redridge Mountains,28.07,52.02
     .turnin 2282 >> 交任务 奥瑟尔伐木场
@@ -9529,7 +9529,7 @@ step << Warlock
 step << Warlock
 .dungeon !DM
     .goto StormwindClassic,26.11,77.22
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
     .trainer >> 训练你的职业技能
     .target 厄苏拉·德林
 step << Warlock
@@ -9651,7 +9651,7 @@ step << NightElf Rogue
     .isOnQuest 2360
 step << !NightElf Rogue
     .goto StormwindClassic,66.277,62.137
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
     .fly Westfall >> 飞往西部荒野
     .target 杜加尔·朗德瑞克
 step << !Dwarf Rogue
@@ -9842,14 +9842,14 @@ step
     >>|cRXP_WARN_如果你在闪金镇，从暴风城飞过去会更快|r
 	>>|cRXP_WARN_如果你在阿祖拉之塔，直接跑去赤脊山|r
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_弗纳·奥斯古|r 对话
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_弗纳·奥斯古|r 对话
 	.target Verner Osgood
     .goto Redridge Mountains,30.97,47.27
     .turnin 119 >> 交任务 回复弗纳
     .accept 124 >> 接受任务 豺狼人的乱吠
 step
     #xprate <1.2
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_弗纳·奥斯古|r 对话
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_弗纳·奥斯古|r 对话
 	.target Verner Osgood
     .goto Redridge Mountains,30.97,47.27
     .accept 122 >> 接受任务 雏龙的鳞片
@@ -10249,7 +10249,7 @@ step
 step
 	#xprate >1.49
     .goto Darkshore,44.44,84.69
-    >>|cRXP_WARN_等剧情结束|r
+    >>|cRXP_WARN_等待剧情演出完成|r
     .complete 995,1 --Help Volcor escape the cave (1)
     .isQuestTurnedIn 993
 step
@@ -10916,7 +10916,7 @@ step
 step
     #xprate >1.49
     .goto Darkshore,44.44,84.69
-    >>|cRXP_WARN_等剧情结束|r
+    >>|cRXP_WARN_等待剧情演出完成|r
     .complete 995,1 --Help Volcor escape the cave (1)
     .isOnQuest 995
 step
@@ -11207,7 +11207,7 @@ step
 #xprate <1.5
     #label volcorEnd
     .goto Darkshore,44.44,84.69
-    >>|cRXP_WARN_等剧情结束|r
+    >>|cRXP_WARN_等待剧情演出完成|r
     .complete 995,1
     .isOnQuest 995
 step -- adjusted to heading there straight from southern most beached sea creature

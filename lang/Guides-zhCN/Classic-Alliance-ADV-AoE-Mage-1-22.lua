@@ -229,7 +229,7 @@ step << Human
     #season 2
     #requires CALEENCI
     #completewith RedBurlapBandana
-    .train 401760 >>|cRXP_WARN_使用|r |T134939:0|t|cRXP_LOOT_法术笔记：NNGABIIHGQSU]|r |cRXP_WARN_学习|r |T133816:0|t[铭刻手套 - 冰枪术]
+    .train 401760 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: CALE ENCI]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Ice Lance]
     .use 203751
     .itemcount 203751,1 -- Spell Notes: CALE ENCI (1)
 step
@@ -274,7 +274,7 @@ step
 step << Human
     #optional
     #season 2
-    .train 401760 >>|cRXP_WARN_使用|r |T134939:0|t|cRXP_LOOT_法术笔记：NNGABIIHGQSU]|r |cRXP_WARN_学习|r |T133816:0|t[铭刻手套 - 冰枪术]
+    .train 401760 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: CALE ENCI]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Ice Lance]
     .use 203751
     .itemcount 203751,1 -- Spell Notes: CALE ENCI (1)
 step
@@ -1091,7 +1091,7 @@ step
     .goto Ironforge,55.49,47.74,10 >>前去找 |cRXP_FRIENDLY_格莱斯|r
 step
     .goto Ironforge,55.50,47.74
-    >>与|cRXP_FRIENDLY_格莱斯|r 对话
+    >>与 |cRXP_FRIENDLY_格莱斯|r 对话
     .fp Ironforge >> 获取铁炉堡的飞行路径
     .target 格莱斯·瑟登
 step
@@ -1539,13 +1539,13 @@ step
 step
     #season 2
     .goto Dun Morogh,26.733,72.552
-    >>打开地上的|cRXP_PICK_石颚储物箱|r，拾取里面的|T134939:0|t|T134939:0|t|cRXP_LOOT_[法术笔记：NNGABIIHGQSU|r
+    >>Open the |cRXP_PICK_Rockjaw Footlocker|r on the ground. Loot it for the |T134939:0|t|cRXP_LOOT_[Spell Notes: CALE ENCI]|r
     >>|cRXP_WARN_注意：你无法在此处学习|r |T133816:0|t|T133736:0|t[铭刻手套 - 冰枪术] |cRXP_WARN_，因为你只能在种族出生区域获得|r |T133736:0|t|T133736:0|t[理解入门] |cRXP_WARN_|r << !Gnome
     .collect 203751,1,77667,1 -- Spell Notes: CALE ENCI (1)
     .train 401760,1
 step << Gnome
     #season 2
-    .train 401760 >>|cRXP_WARN_使用|r |T134939:0|t|cRXP_LOOT_法术笔记：NNGABIIHGQSU]|r |cRXP_WARN_学习|r |T133816:0|t[铭刻手套 - 冰枪术]
+    .train 401760 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: CALE ENCI]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Ice Lance]
     .use 203751
     .itemcount 203751,1 -- Spell Notes: CALE ENCI (1)
 step
@@ -1960,7 +1960,7 @@ step
 	.goto Dun Morogh,49.09,54.74,40,0
 	.goto Dun Morogh,49.61,54.32,40,0
 	.goto Dun Morogh,51.43,53.21,40,0
-    .xp 5+2690 >> 刷怪达到 2690+/2800 经验
+    .xp 5+2690 >> 刷怪达到2690+/2800经验
     .mob 黑熊幼崽
     .mob 峭壁野猪
 step
@@ -3648,7 +3648,7 @@ step
     .goto Wetlands,7.89,56.22
     >>隔墙与 |cRXP_FRIENDLY_德温|r 对话
     >>|cRXP_WARN_如果船只刚刚抵达，跳过此步骤|r
-    .vendor 1453 >> |cRXP_BUY_购买|r |T134831:0|t[治疗药水] |cRXP_BUY_从他那里(如果有)|r
+    .vendor 1453 >> |cRXP_BUY_从他那里购买|r |T134831:0|t[治疗药水] |cRXP_BUY_(如果有)|r
     .target 德温·晨光
     .money <0.03
 step
@@ -4672,7 +4672,7 @@ step << Gnome
     .use 17117
 step
     >>与|cRXP_FRIENDLY_蒙提|r 对话
-    >>|cRXP_WARN_等剧情结束|r << Gnome
+    >>|cRXP_WARN_等待剧情演出完成|r << Gnome
     .turnin 6661 >> 交任务 捕捉矿道老鼠 << Gnome
     .timer 13,捕捉矿道老鼠剧情表演 << Gnome
     .accept 6662 >> 接受任务 我的兄弟，尼普希
@@ -5385,7 +5385,7 @@ step
 step
     #label Talisman
     .goto Darkshore,52.24,33.08
-    >>|cRXP_WARN_等剧情结束|r
+    >>|cRXP_WARN_等待剧情演出完成|r
     >>击杀|cRXP_ENEMY_萨巴克希斯|r
     >>拾取掉落地上的|cRXP_PICK_萨布拉克斯的恶魔之袋|r，从中获得|cRXP_LOOT_堕落护符|r
     >>|cRXP_WARN_该操作有 5 秒施法时间|r
@@ -7507,7 +7507,7 @@ step
     >>与 |cRXP_FRIENDLY_科纳彻尔|r 对话
 --  .accept 120 >>Accept Messenger to Stormwind
 --  .goto Redridge Mountains,29.99,44.45
-    .accept 91 >>接受任务 所罗门的律法
+    .accept 91 >>接受任务所罗门的律法
     .goto Redridge Mountains,29.72,44.26
 --  .target Magistrate Solomon
     .target 拜里弗·科纳彻尔

@@ -731,7 +731,7 @@ step
     #season 2
     .goto Orgrimmar,58.52,52.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_扎姆沙|r 对话
-    >>从她那里获得|T134419:0|t|T134419:0|t[|cRXP_FRIENDLY_狂乱攻击符文|r]
+    >>从她那里获得|T134419:0|t[|cRXP_FRIENDLY_狂乱攻击符文|r]
     .collect 204716,1 --Rune of Frenzied Assault (1)
     .target Zamja
     .train 425447,1
@@ -770,7 +770,7 @@ step
     #season 2
     .goto Thunder Bluff,28.73,18.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奈塔里|r 对话
-    >>从她那里获得|T134419:0|t|T134419:0|t[|cRXP_FRIENDLY_狂乱攻击符文|r]
+    >>从她那里获得|T134419:0|t[|cRXP_FRIENDLY_狂乱攻击符文|r]
     .collect 204716,1 --Rune of Frenzied Assault (1)
     .target Netali
     .train 425447,1
@@ -808,7 +808,7 @@ step
     #season 2
     .goto Tirisfal Glades,61.72,51.91
     >>击杀 |cRXP_ENEMY_蓝心|r，然后与楼上的 |cRXP_FRIENDLY_本尼|r 对话
-    .gossipoption 110751 >>从她那里获得|T134419:0|t|T134419:0|t[|cRXP_FRIENDLY_狂乱攻击符文|r]
+    .gossipoption 110751 >>从她那里获得|T134419:0|t[|cRXP_FRIENDLY_狂乱攻击符文|r]
     .collect 204716,1 --Rune of Frenzied Assault (1)
     .target Netali
     .mob Blueheart
@@ -1195,7 +1195,7 @@ step << Warrior
     .collect 208778,1 -- Rune of Quick Strike (1)
     .train 425443,1
 step << Warrior
-    .train 425443 >> |cRXP_WARN_使用|r |T134419:0|t|T132394:0|t[|cRXP_FRIENDLY_迅捷打击符文|r] |cRXP_WARN_训练|r |T132394:0|t|T132394:0|t[迅捷打击]
+    .train 425443 >> |cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_迅捷打击符文|r] |cRXP_WARN_训练|r |T132394:0|t[迅捷打击]
     .use 208778
     .itemcount 208778,1
 ]])
@@ -1309,7 +1309,7 @@ step << Warrior
     .use 209047
     .train 425443,1
 step << Warrior
-    .train 425443 >> |cRXP_WARN_使用|r |T134419:0|t|T132394:0|t[|cRXP_FRIENDLY_迅捷打击符文|r] |cRXP_WARN_训练|r |T132394:0|t|T132394:0|t[迅捷打击]
+    .train 425443 >> |cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_迅捷打击符文|r] |cRXP_WARN_训练|r |T132394:0|t[迅捷打击]
     .use 208778
     .itemcount 208778,1
 ]])

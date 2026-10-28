@@ -7,7 +7,7 @@ RXPGuides.RegisterGuide([[
 #disabledungeons
 << Horde
 #version 11
-#group RestedXP 永久指南 (H)
+#group RestedXP无限服指南（部落）
 #subgroup 速通指南 1-22级
 --#groupid RXP-SRGCE-H1
 #defaultfor Undead
@@ -38,7 +38,7 @@ step << Warrior/Warlock/Priest/Mage
     .goto 1420/0,1714.76,1760.68,40,0 << Priest/Mage
     .goto 1420/0,1718.38,1799.24,40,0 << Priest/Mage
     .goto 1420/0,1669.12,1869.73,40,0 << Priest/Mage
-    +|cRXP_WARN_击杀 |cRXP_ENEMY_食腐狼幼崽|r 和 |cRXP_ENEMY_夜行蝙蝠|r。拾取它们的掉落，直到你拥有价值60铜币的可出售物品（包括你的护甲）|r << Mage
+    +|cRXP_WARN_击杀 |cRXP_ENEMY_食腐狼幼崽|r 和 |cRXP_ENEMY_夜行蝙蝠|r，拾取它们的掉落，直到你拥有价值60铜币的可出售物品（包括你的护甲）|r << Mage
     +|cRXP_WARN_击杀 |cRXP_ENEMY_食腐狼幼崽|r 和 |cRXP_ENEMY_夜行蝙蝠|r。拾取它们的掉落，直到你拥有价值50铜币的可出售物品（包括你的护甲）|r << Priest
     +|cRXP_WARN_击杀 |cRXP_ENEMY_食腐狼幼崽|r 和 |cRXP_ENEMY_夜行蝙蝠|r，拾取它们的掉落，直到你拥有价值10铜币的可出售物品（包括你的护甲）|r << Warrior/Warlock
     .mob 食腐狼幼崽
@@ -453,7 +453,7 @@ step << Rogue
 step << Rogue/Warrior/Paladin
     .goto 1420/0,1577.100,1854.600
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_沃尔特·梅森|r 在楼上对话
-    >>|cRXP_BUY_购买一把|r |T134708:0|t[矿工锄] |cRXP_BUY_从他|r |cRXP_BUY_那里|r
+    >>|cRXP_BUY_从他那里购买一把|r |T134708:0|t[矿工锄] |cRXP_BUY_|r |cRXP_BUY_|r
     .train 2575 >> 学习 |T136248:0|t[采矿]
     .collect 2901,1,792,1 --Mining Pick (1)
     >>|cRXP_WARN_这将使你能够从矿点中获得|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r|cRXP_WARN_，从而制作|r |T135248:0|t[磨刀石]|cRXP_WARN_(使武器伤害 +2，持续 30 分钟)|r
@@ -711,7 +711,7 @@ RXPGuides.RegisterGuide([[
 #name 6-12级 提瑞斯法林地
 #displayname 6-13级 提瑞斯法林地 << Paladin
 #version 11
-#group RestedXP 永久指南 (H)
+#group RestedXP无限服指南（部落）
 #subgroup 速通指南 1-22级
 --#groupid RXP-SRGCE-H1
 #defaultfor Undead
@@ -1062,7 +1062,7 @@ step
     .goto 1420/0,496.96,2256.54,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_葛尔多|r 对话
     >>|cRXP_WARN_他是一个在通往布瑞尔的道路上巡逻的憎恶|r
-    >>|cRXP_WARN_选择“我需要一份给执行官塞加德的报告”|r
+    >>|cRXP_WARN_选择 "我需要执行官塞加德的报告"|r
     .complete 99141,3 --|1/1 Gordo's Report
     .target Gordo
     --.gossipoption 142737
@@ -1187,7 +1187,7 @@ step
 step
     .goto 1420/0,403.300,2287.700
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_亡灵卫兵迪林格尔|r 对话
-    >>|cRXP_WARN_选择“我需要一份给执行官塞加德的报告”|r
+    >>|cRXP_WARN_选择 "我需要执行官塞加德的报告"|r
     .turnin 404 >>交任务 腐烂的爪子
     .accept 426 >>接受任务 磨坊告急
     .complete 99141,1 --|1/1 Dillinger's Report
@@ -2139,7 +2139,7 @@ step << !Priest
     .zoneskip Undercity
 step << Rogue
     .goto 1458/0,323.57,1668.50
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|Tinterface/worldmap/chatbubble_64grey.blp:20|t与战争军需区的|r|cRXP_FRIENDLY_阿基巴德|r交谈
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与战争军需区的|r |cRXP_FRIENDLY_阿基巴德|r 对话
     .train 201 >>学习单手剑
     .target 阿基巴德
 step << Warrior/Rogue
@@ -3047,7 +3047,7 @@ step << Priest
 step << Priest
     #optional
     .goto 1458/0,403.29,1760.61
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_艾萨莱斯特|r对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_艾萨莱斯特|r 对话
     .turnin 5658 >> 交任务 虚弱之触
     .target Aelthalyste
     .itemStat 18,QUALITY,<7
@@ -3279,7 +3279,7 @@ step
 
 
 RXPGuides.RegisterGuide([[
-#group RestedXP 永久指南 (H)
+#group RestedXP无限服指南（部落）
 #subgroup 速通指南 1-22级
 --#groupid RXP-SRGCE-H1
 << Horde
@@ -3291,9 +3291,6 @@ RXPGuides.RegisterGuide([[
 #displayname 13-15级 银松森林 << Paladin
 #next 12-17级 贫瘠之地
 
-step << Skyborne
-    #optional
-    .maxlevel 13,Silverpineskip
 step << Undead Rogue
     #sticky
     #completewith RotHideCluesTurnIn
@@ -3445,6 +3442,11 @@ step
     .accept 3221 >>接受任务 与伦弗利尔会面
     .accept 437 >>接受任务 亡者农场
     .target 高级执行官哈德瑞克
+step << Mage/Priest/Warlock
+    .goto 1421/0,1626.100,511.500
+    >>在地上拾取战利品 |cRXP_PICK_发光的书籍|r
+    .collect 210177,1,79096,1 --Ataeric: On Arcane Curiosities
+    --Other classes won't be nearby turnin in UC, probably not worth since it's only 160xp
 step
     .goto 1421/0,1652.82,522.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_伦弗利尔|r 对话
@@ -3468,6 +3470,11 @@ step
     .accept 430 >>接受任务 回到奎恩身旁
     .target 药剂师伦弗利尔
     .addquestitem 3164,429
+step
+    #completewith next
+    >>杀死 |cRXP_ENEMY_熊|r。拾取它们的 |cRXP_LOOT_心|r
+    .complete 447,1 --Grizzled Bear Heart (6)
+    .mob Ferocious Grizzled Bear
 step
     #loop
     .goto 1421/0,1386.96,638.51,0
@@ -3499,6 +3506,11 @@ step
     .goto 1421/0,1231.14,866.99
     >>进入房子，上到二楼。拾取地上的|cRXP_PICK_暗色法术书|r
     .complete 422,1 --Remedy of Arugal (1)
+step
+    #completewith next
+    >>杀死 |cRXP_ENEMY_熊|r。拾取它们的 |cRXP_LOOT_心|r
+    .complete 447,1 --Grizzled Bear Heart (6)
+    .mob Ferocious Grizzled Bear
 step
     #completewith next
     .goto 1421/0,1207.62,1293.71,80,0
@@ -3848,7 +3860,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡鲁斯|r 对话
     .turnin 6321 >>交任务 资助墓穴 << Undead
     .accept 6323 >>接受任务 飞往幽暗城 << Undead
-    .fp Sepulcher >> 获得瑟伯切尔飞行路径 << !Undead
+    .fp Sepulcher >> 获取泰雷多尔的飞行路径 << !Undead
     .fly Undercity >> 飞往幽暗城 << !Undead
     .target 卡洛斯·拉佐克
     .zoneskip Undercity
@@ -4086,10 +4098,16 @@ step << Paladin
     .target Garen Largo
     .xp <16,1
 step << Priest/Mage/Warlock
+    .goto 1458/0,168.200,1663.100
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Owen Thadd::211022|r 对话
+    .target Owen Thadd::211022
+    .turnin 79096 >>交任务"阿塔里克：奥术珍闻"
+    .itemcount 210177,1
+step << Priest/Mage/Warlock
     #ssf
     .goto 1458/0,206.04,1705.57
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|Tinterface/worldmap/chatbubble_64grey.blp:20|t与魔法区的|cRXP_FRIENDLY_赞恩·布拉德福德|r交谈
-    >>|cRXP_BUY_从他那里|r购买1把|cRXP_BUY_ |T135468:0|t[烟尘魔杖]|r
+    >>|cRXP_BUY_购买1根|r |T135468:0|t[烟尘魔杖] |cRXP_BUY_从他那里|r
     .collect 5208,1 --Smoldering Wand (1)
     .money <0.3515
     .itemStat 18,QUALITY,<7
@@ -4099,7 +4117,7 @@ step << Priest/Mage/Warlock
     #ah
     .goto 1458/0,206.04,1705.57
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|Tinterface/worldmap/chatbubble_64grey.blp:20|t与魔法区的|cRXP_FRIENDLY_赞恩·布拉德福德|r交谈
-    >>|cRXP_BUY_从他那里|r购买1把|cRXP_BUY_ |T135468:0|t[烟尘魔杖]|r
+    >>|cRXP_BUY_购买1根|r |T135468:0|t[烟尘魔杖] |cRXP_BUY_从他那里|r
     >>|cRXP_WARN_或者你也可以稍后去拍卖行看看是否有更好或更便宜的替代品|r
     .collect 5208,1 --Smoldering Wand (1)
     .itemStat 18,QUALITY,<7
@@ -4176,9 +4194,6 @@ step << Skyborne
     .use 6948
     .zoneskip Orgrimmar
     .bindlocation 1637,1
-step << Skyborne
-    #optional
-    #label Silverpineskip
 step << Undead
     #completewith HiddenEnemiesPickup
     .goto 1454/1,-4367.46,1405.44,50,0
@@ -4198,14 +4213,49 @@ step << Undead/Skyborne
     .target 萨尔
     .dungeon RFC
 step << Undead/Skyborne
-    #completewith next
+    #completewith Gazzuz
     .goto 1454/1,-4367.46,1405.44,50,0
     .zone Durotar >> 离开奥格瑞玛
     .dungeon RFC
 step << Undead/Skyborne
-    .goto 1411/1,-4769.10,1484.39,0
-    >>在骷髅石击杀|cRXP_ENEMY_火刃氏族|r 小怪，直到掉落|cRXP_LOOT_军官的徽章|r
+    #completewith Gazzuz
+    >>击杀 |cRXP_ENEMY_火刃兽人|r，拾取他们掉落的 |cRXP_LOOT_军官的徽章|r
+    >>|cRXP_WARN_这是RFC的前置任务，掉落率很低。|r
     .complete 5726,1 --Lieutenant's Insignia (1)
+    .mob 火刃狂热者
+    .mob 火刃学徒
+    .dungeon RFC
+step << Undead/Skyborne
+    #label Gazzuz
+    .goto 1411/1,-4701.42,1455.83
+    >>击杀 |cRXP_ENEMY_加祖兹|r。拾取他的 |T134085:0|t[|cRXP_LOOT_燃影之眼|r]
+    >>|cRXP_WARN_使用 |T134085:0|t[|cRXP_LOOT_燃影之眼|r] 以开启任务|r
+    >>|cRXP_WARN_利用视线规则躲避 |cRXP_ENEMY_加祖兹|r 的小影箭|r
+    >>|cRXP_WARN_在击杀 |r加祖兹|cRXP_ENEMY_ 后，你可以跑到洞穴内的水体中以躲避 |r|cRXP_WARN_虚空行者|r|cRXP_ENEMY_|r
+    >>|cRXP_WARN_小心，他很强。必要时可以跳过此任务。|r
+    .collect 4903,1,832,1 --Collect Eye of Burning Shadow
+    .accept 832 >>接受任务 燃影之眼
+    .use 4903
+	.unitscan 加祖兹
+    .dungeon RFC
+step << Undead/Skyborne
+    #loop
+    .goto 1411/1,-4805.59,1495.67,0
+    .goto 1411/1,-4855.82,1498.84,15,0
+    .goto 1411/1,-4833.08,1494.96,15,0
+    .goto 1411/1,-4805.59,1495.67,15,0
+    .goto 1411/1,-4784.44,1535.85,15,0
+    .goto 1411/1,-4750.60,1531.62,15,0
+    .goto 1411/1,-4734.21,1505.54,15,0
+    .goto 1411/1,-4693.49,1519.64,15,0
+    .goto 1411/1,-4679.75,1501.31,15,0
+    .goto 1411/1,-4684.50,1466.06,15,0
+    .goto 1411/1,-4805.59,1495.67,15,0
+    >>击杀 |cRXP_ENEMY_火刃兽人|r，拾取他们掉落的 |cRXP_LOOT_军官的徽章|r
+    >>|cRXP_WARN_这是RFC的前置任务，掉落率很低。|r
+    .complete 5726,1 --Lieutenant's Insignia (1)
+    .mob 火刃狂热者
+    .mob 火刃学徒
     .dungeon RFC
 step << Undead/Skyborne
     #completewith Conscript

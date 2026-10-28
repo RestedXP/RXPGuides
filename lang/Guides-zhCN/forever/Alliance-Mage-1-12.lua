@@ -96,7 +96,7 @@ step
     .xp 3+1110 >>在回城的路上刷到1110+/1400经验值
 step
     .goto 1429/0,-120.17,-8897.82
-    .vendor >>把垃圾物品卖给商人
+    .vendor >>垃圾卖店
 step
     .goto 1429/0,-162.62,-8902.59
 >>与|cRXP_FRIENDLY_治安官玛克布莱德|r 对话
@@ -135,7 +135,7 @@ step
     .accept 3903 >> 接受任务 米莉·奥斯沃斯
 step
     .goto 1429/0,-120.17,-8897.82
-    .vendor >>出售垃圾物品并修理装备
+    .vendor >>垃圾卖店，修理装备
 step
     .goto 1429/0,-363.13,-8909.39,60,0
     .goto 1429/0,-120.17,-8673.31,60,0
@@ -215,7 +215,7 @@ step
     .goto 1429/0,164.44,-9339.91,200 >> 死掉之后在墓地复活，或者跑到闪金镇
 step
     .goto 1429/0,88.08,-9464.89
-    .vendor >> 出售垃圾物品并修理装备
+    .vendor >> 垃圾卖店，修理装备
 step
     .goto 1429/0,74.02,-9465.52
 >>与|cRXP_FRIENDLY_治安官杜汉|r 对话
@@ -364,7 +364,7 @@ step
     .accept 40 >> 接受任务 鱼人的威胁
 step
     .goto 1429/0,88.08,-9464.89
-    .vendor >>出售垃圾物品并修理装备
+    .vendor >>垃圾卖店，修理装备
 step
     .goto 1429/0,74.02,-9465.52
 >>与|cRXP_FRIENDLY_治安官杜汉|r 对话
@@ -375,7 +375,7 @@ step
     .accept 76 >> 接受任务 玉石矿洞
 step
     .goto 1429/0,88.08,-9464.89
-    .vendor >> 出售垃圾物品并修理装备
+    .vendor >> 垃圾卖店，修理装备
 step
     .goto 1429/0,33.14,-9460.75
 >>与|cRXP_FRIENDLY_威廉·匹斯特|r 对话
@@ -438,7 +438,7 @@ step
     .accept 5545 >> 接受任务 木材危机
 step
     .goto 1429/0,-1355.79,-9469.52
-    .vendor >> 出售垃圾物品并修理装备
+    .vendor >> 垃圾卖店，修理装备
 step
     #sticky
     #completewith Bundles
@@ -592,7 +592,7 @@ step
     .accept 1097 >> 接受任务 艾尔默的任务
 step
     .goto 1429/0,88.08,-9464.89
-    .vendor >>出售垃圾物品并修理装备
+    .vendor >>垃圾卖店，修理装备
 step
     .goto 1429/0,33.14,-9460.75
 .target 威廉·匹斯特
@@ -642,7 +642,7 @@ step
     .turnin 109 >> 交任务 向格里安·斯托曼报到
 step
     .goto 1436/0,1021.60,-10500.61
-    .vendor >>把垃圾物品卖给商人
+    .vendor >>垃圾卖店
 .target 军需官刘易斯
 >>与|cRXP_FRIENDLY_军需官刘易斯|r 对话
     .accept 6181 >> 接受任务 快捷的消息
@@ -775,7 +775,7 @@ step
 step
     #completewith next
     .goto 1426/0,-1591.24,-5712.47
-    .vendor >> 出售垃圾物品并修理装备
+    .vendor >> 垃圾卖店，修理装备
 step
     .goto 1426/0,-1581.39,-5715.75
 .target Senator Mehr Stonehallow
@@ -941,7 +941,7 @@ step
     .turnin 3364 >> 交任务 热酒快递
 .target 德南·弗卡特
     .accept 3365 >> 接受任务 归还酒杯
-    .vendor >> 把垃圾物品卖给商人
+    .vendor >> 垃圾卖店
 step
     .goto 1426/0,388.17,-6056.10
 .target 玛瑞克·斯托纳尔
@@ -1037,7 +1037,7 @@ step
 step
     #completewith next
     .goto 1426/0,-497.89,-5633.67
-    .vendor >>把垃圾物品卖给商人
+    .vendor >>垃圾卖店
 step
     .goto 1426/0,-502.82,-5597.55
 .target 拉格纳·雷酒
@@ -1068,7 +1068,7 @@ step
     .goto 1426/0,-632.15,-5466.540
     >>不要在途中杀熊
 .target 驾驶员贝隆·风箱
->>与|cRXP_FRIENDLY_驾驶员贝隆·风箱|r 对话
+>>与 |cRXP_FRIENDLY_驾驶员贝隆·风箱|r 对话
     .accept 317 >> 接受任务 贝尔丁的补给
 step
     .goto 1426/0,-641.80,-5473.18
@@ -1120,7 +1120,7 @@ step
     .complete 317,2 --Collect Thick Bear Fur (x2)
 step
     .goto 1426/0,-632.15,-5466.540
->>与|cRXP_FRIENDLY_驾驶员贝隆·风箱|r 对话
+>>与 |cRXP_FRIENDLY_驾驶员贝隆·风箱|r 对话
     .turnin 317 >> 交任务 贝尔丁的补给
 .target 驾驶员贝隆·风箱
     .accept 318 >> 接受任务 艾沃沙酒
@@ -1146,7 +1146,7 @@ step
     >> 进入洞穴，击杀宰杀雪怪，从它们身上拾取鬃毛
     .complete 313,1 --Collect Wendigo Mane (x8)
 step
-    >>拾取箱子中的物品
+    >>拾取箱子
     .goto 1426/0,-369.84,-5745.30
     .complete 5541,1 --Collect Rumbleshot's Ammo (x1)
 step
@@ -1259,7 +1259,7 @@ step
 step
     .goto 1426/0,-632.15,-5466.540
 .target 驾驶员贝隆·风箱
->>与|cRXP_FRIENDLY_驾驶员贝隆·风箱|r 对话
+>>与 |cRXP_FRIENDLY_驾驶员贝隆·风箱|r 对话
     .turnin 320 >> 交任务 艾沃沙酒
 step
     #era/som
@@ -1390,7 +1390,7 @@ step
 step
     #completewith next
     .goto 1426/0,-1591.24,-5712.47
-    .vendor >> 出售垃圾物品并修理装备
+    .vendor >> 垃圾卖店，修理装备
 step
     .goto 1426/0,-1600.30,-5726.590
 .target Foreman Stonebrow
@@ -1416,7 +1416,7 @@ step
 step
     #completewith next
     .goto 1426/0,-1591.24,-5712.47
-    .vendor >> 出售垃圾物品并修理装备
+    .vendor >> 垃圾卖店，修理装备
 step
     .goto 1426/0,-1581.39,-5715.75
 .target Senator Mehr Stonehallow
@@ -1636,7 +1636,7 @@ step
     .goto 1432/0,-2636.44,-4816.79,60 >>跑回地堡，路上刷小怪
 step
     .goto 1432/0,-2658.51,-4822.30
-    .vendor >>出售物品并修理装备
+    .vendor >>垃圾卖店，修理装备
 step
     .goto 1432/0,-2675.06,-4824.14
 >>与|cRXP_FRIENDLY_巡山人雷矛|r 对话
@@ -1844,7 +1844,7 @@ step
     .goto 1437/0,-1014.03,-3911.92,40,0
     .goto 1437/0,-889.97,-3809.94,40,0
     >>打开这个链接，并在另一个屏幕上跟随它。
-    >>走无伤翻山路线，从丹莫罗直接翻山前往湿地
+    >>走无伤翻山路线。从丹莫罗直接翻山前往湿地
     >>走水路的时候小心避开海里的鳄鱼
     .link https://www.youtube.com/watch?v=9afQTimaiZQ >> 点击此处查看参考视频
     .goto 1437/0,-889.97,-3809.94,80 >> 前往米奈希尔港，湿地

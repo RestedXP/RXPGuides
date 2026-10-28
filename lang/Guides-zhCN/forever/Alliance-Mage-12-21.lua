@@ -853,7 +853,7 @@ step
     .goto 1433/0,-2216.00,-9215.85
 .target 拜里弗·科纳彻尔
 >>与|cRXP_FRIENDLY_拜里弗·科纳彻尔|r交谈
-    .accept 91 >>接受任务 所罗门的律法
+    .accept 91 >>接受任务所罗门的律法
 step
     .goto 1433/0,-2221.87,-9218.60
     >>进入建筑内
@@ -950,7 +950,7 @@ step
     #completewith hsLakeshire
     #label WFFP
     .goto 1436/0,1037.42,-10628.50
-    .fp Westfall >> 解锁西部荒野飞行路线 << Gnome
+    .fp Westfall >> 开启西部荒野的飞行路径 << Gnome
     .fly Redridge >> 飞往 Redridge
 step
     #requires WFFP
@@ -969,7 +969,7 @@ step
     .accept 143 >>接受任务 送往西部荒野的信
 .target 拜里弗·科纳彻尔
 >>与|cRXP_FRIENDLY_拜里弗·科纳彻尔|r交谈
-    .accept 91 >>接受任务 所罗门的律法
+    .accept 91 >>接受任务所罗门的律法
 step
     >>进入旅馆的顶楼
     .goto 1433/0,-2145.45,-9231.63

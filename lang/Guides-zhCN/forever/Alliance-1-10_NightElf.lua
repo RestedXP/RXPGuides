@@ -10,7 +10,7 @@ RXPGuides.RegisterGuide([[
 #name 1-6级 幽影谷
 #displayname 1-7级 幽影谷 << sod
 #version 1
-#group RestedXP 永久向导 A
+#group RestedXP无限服指南（联盟）
 #subgroup 速通指南 1-20级
 --#groupid RXP-SRGCE-A1
 #defaultfor NightElf
@@ -121,7 +121,7 @@ step << !Priest !Rogue
 	.accept 3120 >> 接受任务 绿色符记 << Druid
 step << !Hunter !Druid !Warrior
     #completewith next
-    >>在去找埃沃隆的路上击杀 |cRXP_ENEMY_草刺野猪|r
+    >>在前往埃沃隆的路上击杀 |cRXP_ENEMY_Thistle Boars|r。你不必现在完成此任务
     .complete 457,2 --Kill Thistle Boar (x7)
     .mob 草刺野猪
 step << !Hunter !Druid !Warrior
@@ -162,7 +162,7 @@ step << Druid
     .mob 劣魔
 step << Druid
     #completewith next
-    >>在去找埃沃隆的路上击杀 |cRXP_ENEMY_草刺野猪|r
+    >>在前往埃沃隆的路上击杀 |cRXP_ENEMY_Thistle Boars|r。你不必现在完成此任务
     .complete 457,2 --Kill Thistle Boar (x7)
     .mob 草刺野猪
 step << Druid
@@ -257,7 +257,7 @@ step
     .mob 树林蜘蛛
 step
     #completewith next
-    >>在去找小劣魔的路上击杀 |cRXP_ENEMY_草刺野猪|r
+    >>在前往格瑞尔的路上击杀 |cRXP_ENEMY_Thistle Boars|r。你不必现在完成此任务
     .complete 457,2 --Kill Thistle Boar (x7)
     .mob 草刺野猪
 step << !Druid
@@ -284,7 +284,7 @@ step
     .turnin 97977 >>交任务 自然的呼唤
 step
     #completewith next
-    >>在去找埃沃隆的路上击杀 |cRXP_ENEMY_草刺野猪|r
+    >>在前往埃沃隆的路上击杀 |cRXP_ENEMY_Thistle Boars|r。你不必现在完成此任务
     .complete 457,2 --Kill Thistle Boar (x7)
     .mob 草刺野猪
 step
@@ -320,7 +320,7 @@ step << Hunter/Rogue
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.05
 step
     #completewith next
-    >>在去找埃沃隆的路上击杀 |cRXP_ENEMY_草刺野猪|r
+    >>在前往埃沃隆的路上击杀 |cRXP_ENEMY_Thistle Boars|r。你不必现在完成此任务
     .complete 457,2 --Kill Thistle Boar (x7)
     .mob 草刺野猪
 step
@@ -450,7 +450,7 @@ RXPGuides.RegisterGuide([[
 #name 6-11级 泰达希尔
 #displayname 7-13级 泰达希尔 << SoD
 #version 1
-#group RestedXP 永久向导 A
+#group RestedXP无限服指南（联盟）
 #subgroup 速通指南 1-20级
 --#groupid RXP-SRGCE-A1
 #defaultfor NightElf
@@ -491,6 +491,8 @@ step
 step
     .goto 1438/1,882.300,9909.101
     >>在营火旁输入 |cRXP_WARN_/sit|r 表情，|cRXP_WARN_原地坐下保持1分钟|r 来完成目标
+    >>|cRXP_WARN_如果你坐下后没有获得任务奖励，放弃任务并重新接受！|r
+    .complete 96606,1 --Sit
     .complete 96606,2 --Gain the Boosted Rest buff
 step
     .goto 1438/1,879.700,9907.601
@@ -2040,9 +2042,6 @@ step
     #loop
     .goto 1438/1,1828.600,10964.800
     >>击杀 |cRXP_ENEMY_萨丝拉|r。拾取她的 |cRXP_LOOT_丝囊|r
-    >>|cRXP_ENEMY_萨丝拉|r |cRXP_WARN_可能在3个不同地点刷新，请查看地图以获取推荐路线|r
-    >>|cRXP_WARN_沿河向北前进，先检查最东边的刷新点。在途中完成 |r|T134339:0|t[肿瘤] |cRXP_WARN_任务|r
-    >>|cRXP_WARN_如果她不在河的东侧，则在前往西侧之前完成|r |T134339:0|t[肿瘤]|cRXP_WARN_ 任务|r
     .complete 2518,1 --Collect Silvery Spinnerets (x1)
     .mob 萨丝拉
 step
@@ -2318,14 +2317,12 @@ step << Hunter
     >>|cRXP_WARN_你需要用它来喂养你的猫头鹰，它们只吃肉类，而黑海岸没有出售肉类的商人|r
     .collect 117,15
     .target 加伊娜
-step << Hunter/Warrior/Priest/Sod Rogue
+step << Hunter/Warrior/Priest
     .goto 1457/1,2329.19,9908.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_伊琳尼雅·月火|r 对话
     .skipgossipid 96881
     .train 227 >>学习法杖 << Hunter/Warrior/Priest
-    .train 265 >>学习 弩 << Sod Rogue
     >>如果你的背包里有一个法杖，请装备它 << Hunter
-    >>如果你的背包里有一把弓，就装备它 << Rogue
     .target 伊琳尼雅·月火
 step << Hunter
     #optional

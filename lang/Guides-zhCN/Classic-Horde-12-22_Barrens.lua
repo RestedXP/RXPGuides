@@ -2901,7 +2901,7 @@ step
     .target 图加·符文图腾
     .goto The Barrens,52.26,31.93
     .turnin 905 >>交任务  在迅猛龙的巢穴里
-    .accept 3261 >>接受任务 乔恩·星眼
+    .accept 3261 >>接受任务 [DEPRECATED in 4.x] 乔恩·星眼
     .target 瑟格拉·黑棘
     .goto The Barrens,52.24,31.01
     .turnin 3281 >>交任务  被偷走的银币
@@ -3190,7 +3190,7 @@ step
     #label StonetalonPickups
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_希雷斯|r 和 |cRXP_FRIENDLY_玛卡巴|r 对话
     .turnin 1061 >> 交任务  石爪之灵
-    .accept 1062 >> 接受任务地精侵略者
+    .accept 1062 >> 接受任务 地精侵略者
     .target 希雷斯·碎石
     .goto The Barrens,35.26,27.88
     .accept 6548 >> 接受任务 为我的村庄复仇
@@ -3204,7 +3204,7 @@ step
     .goto The Barrens,35.26,27.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_希雷斯|r 对话
     .turnin 1061 >> 交任务  石爪之灵
-    .accept 1062 >> 接受任务地精侵略者
+    .accept 1062 >> 接受任务 地精侵略者
     .target 希雷斯·碎石
 ]])
 
@@ -4449,9 +4449,9 @@ step
     #label TribesTurnin
     .goto The Barrens,44.55,59.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_碎牙|r 对话
-    .turnin 878 >>交任务  野猪人的内战
-    .accept 5052 >>接受任务 阿迦玛甘的血岩碎片
-    .turnin 5052 >>交任务  阿迦玛甘的血岩碎片
+    .turnin 878 >>交任务野猪人的内战
+    .accept 5052 >>接受任务阿迦玛甘的血岩碎片
+    .turnin 5052 >>交任务阿迦玛甘的血岩碎片
     .target 碎牙
 step
     #completewith IshamuhaleTurnin
@@ -4625,7 +4625,7 @@ step
 step << !Tauren !Shaman !Warrior/Undead
     .goto The Barrens,44.55,59.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_碎牙|r 对话
-    .aura 16618 >>|cRXP_WARN_如果你剩余 10 个|r |T134128:0|t[|cRXP_LOOT_血岩碎片|r]|cRXP_WARN_，可用它们从|r 撕牙鱼人|cRXP_WARN_ |r处兑换|cRXP_FRIENDLY_ |T136022:0|t[风之精灵]|r
+    .aura 16618 >>|cRXP_WARN_如果你还有10个|r |T134128:0|t[|cRXP_LOOT_经典怀旧服 道具|r]|cRXP_WARN_，就用它们从|r |cRXP_WARN_碎牙|r |cRXP_FRIENDLY_处获得|r |T136022:0|t[风之魂]
     >>|cRXP_WARN_如果你已经拥有雷霆崖的飞行点，请跳过此步骤|r
     .itemcount 5075,10
     .target 碎牙
@@ -5261,7 +5261,7 @@ step
     .dungeon WC
 step
     #optional
-    >>击杀 |cRXP_ENEMY_变异破坏者|r, |cRXP_ENEMY_蝰蛇|r, |cRXP_ENEMY_蹒跚者|r 和 |cRXP_ENEMY_恐惧之牙|r 。拾取它们的|cRXP_ENEMY_皮|r
+    >>击杀 |cRXP_ENEMY_Deviate Ravagers|r、|cRXP_ENEMY_Vipers|r、|cRXP_ENEMY_Shamblers|r 和 |cRXP_ENEMY_Dreadfangs|r。拾取它们的 |cRXP_ENEMY_Hides|r。拾取它们的 |cRXP_ENEMY_Hides|r
     .complete 1487,1 --Deviate Ravager (7)
     .mob 变异破坏者
     .complete 1487,2 --Deviate Viper (7)
@@ -5668,15 +5668,15 @@ step
 step
     #map Stonetalon Mountains
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_希雷斯|r 和 |cRXP_FRIENDLY_玛卡巴|r 对话
-    .turnin 1062 >>交任务地精侵略者
+    .turnin 1062 >>交任务  地精侵略者
     .timer 4,地精侵略者 剧情
     .accept 1063 >>接受任务 巫婆长老
     .accept 1068 >>接受任务伐木机
     .target 希雷斯·碎石
     .goto The Barrens,35.26,27.88
     .turnin 6629 >>交任务  杀死格鲁迪格·黑云
-    .turnin 6523 >>交任务保护卡雅
-    .accept 6401 >>接受任务卡雅还活着
+    .turnin 6523 >>交任务  保护卡雅
+    .accept 6401 >>接受任务 卡雅还活着
     .target 玛卡巴·扁蹄
     .goto The Barrens,35.19,27.79
     .isQuestComplete 6629
@@ -5685,7 +5685,7 @@ step
     #optional
     #map Stonetalon Mountains
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_希雷斯|r 和 |cRXP_FRIENDLY_玛卡巴|r 对话
-    .turnin 1062 >>交任务地精侵略者
+    .turnin 1062 >>交任务  地精侵略者
     .timer 4,地精侵略者 剧情
     .accept 1063 >>接受任务 巫婆长老
     .accept 1068 >>接受任务伐木机
@@ -5699,14 +5699,14 @@ step
     #optional
     #map Stonetalon Mountains
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_希雷斯|r 和 |cRXP_FRIENDLY_玛卡巴|r 对话
-    .turnin 1062 >>交任务地精侵略者
+    .turnin 1062 >>交任务  地精侵略者
     .timer 4,地精侵略者 剧情
     .accept 1063 >>接受任务 巫婆长老
     .accept 1068 >>接受任务伐木机
     .target 希雷斯·碎石
     .goto The Barrens,35.26,27.88
-    .turnin 6523 >>交任务保护卡雅
-    .accept 6401 >>接受任务卡雅还活着
+    .turnin 6523 >>交任务  保护卡雅
+    .accept 6401 >>接受任务 卡雅还活着
     .target 玛卡巴·扁蹄
     .goto The Barrens,35.19,27.79
     .isQuestComplete 6523
@@ -5715,7 +5715,7 @@ step
     #optional
     #map Stonetalon Mountains
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_希雷斯|r 对话
-    .turnin 1062 >>交任务地精侵略者
+    .turnin 1062 >>交任务  地精侵略者
     .timer 4,地精侵略者 剧情
     .accept 1063 >>接受任务 巫婆长老
     .accept 1068 >>接受任务伐木机
@@ -6070,7 +6070,7 @@ step
    .goto Ashenvale,12.06,34.63
    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_穆格拉什|r 对话
    >>|cRXP_WARN_这将开始一个护送任务。小心，任务难度较高|r
-   .accept 6641,1 >> 接受任务鞭笞者沃尔沙
+   .accept 6641,1 >> 接受任务 鞭笞者沃尔沙
    .target 穆格拉什
 step
     #xprate <1.5
@@ -6608,7 +6608,7 @@ step << Rogue
     .goto The Barrens,55.44,5.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |r|cRXP_FRIENDLY_工头费苏勒|r 对话
     .turnin 2458 >>交任务  卧底密探
-    .accept 2478 >>接受任务基本不可能的任务
+    .accept 2478 >>接受任务 基本不可能的任务
     .target 工头费苏勒
 step << Rogue/Druid
     #optional
@@ -7036,7 +7036,7 @@ step << Warlock/Mage
     .itemcount 221499,1 << Warlock --Rune of the Felguard
     .itemcount 223147,1 << Mage --Spell Notes: Balefire Bolt
     .train 431756 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_恶魔卫士符文|r] |cRXP_WARN_学习|r |T136216:0|t[召唤恶魔卫士] << Warlock
-    .train 429311 >>|cRXP_WARN_使用|r |T134939:0|t[|cRXP_FRIENDLY_法术笔记：怨火之箭|r |cRXP_WARN_来学习|r |T135809:0|t[怨火之箭] << Mage
+    .train 429311 >>|cRXP_WARN_使用|r |T134939:0|t[|cRXP_FRIENDLY_法术笔记：怨火之箭|r] |cRXP_WARN_来训练|r |T135809:0|t[怨火之箭] << Mage
     .use 221499 << Warlock
     .use 223147 << Mage
 step
@@ -10075,7 +10075,7 @@ step
     .target 图加·符文图腾
     .goto The Barrens,52.26,31.93
     .turnin 905 >>交任务  在迅猛龙的巢穴里
-    .accept 3261 >>接受任务 乔恩·星眼
+    .accept 3261 >>接受任务 [DEPRECATED in 4.x] 乔恩·星眼
     .target 瑟格拉·黑棘
     .goto The Barrens,52.24,31.01
     .turnin 3281 >>交任务  被偷走的银币
@@ -10366,7 +10366,7 @@ step
     #map Stonetalon Mountains
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_希雷斯|r 和 |cRXP_FRIENDLY_玛卡巴|r 对话
     .turnin 1061 >> 交任务  石爪之灵
-    .accept 1062 >> 接受任务地精侵略者
+    .accept 1062 >> 接受任务 地精侵略者
     .target 希雷斯·碎石
     .goto The Barrens,35.26,27.88
     .accept 6548 >> 接受任务 为我的村庄复仇
@@ -10380,7 +10380,7 @@ step
     .goto The Barrens,35.26,27.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_希雷斯|r 对话
     .turnin 1061 >> 交任务  石爪之灵
-    .accept 1062 >> 接受任务地精侵略者
+    .accept 1062 >> 接受任务 地精侵略者
     .target 希雷斯·碎石
 
     ]])
@@ -10532,8 +10532,8 @@ step
     .goto The Barrens,35.19,27.79
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_玛卡巴|r 对话
     .turnin 6629 >>交任务  杀死格鲁迪格·黑云
-    .turnin 6523 >>交任务保护卡雅
-    .accept 6401 >>接受任务卡雅还活着
+    .turnin 6523 >>交任务  保护卡雅
+    .accept 6401 >>接受任务 卡雅还活着
     .target 玛卡巴·扁蹄
     .isQuestComplete 6523
     .isQuestComplete 6629
@@ -10543,8 +10543,8 @@ step
     #map Stonetalon Mountains
     .goto The Barrens,35.19,27.79
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_玛卡巴|r 对话
-    .turnin 6523 >>交任务保护卡雅
-    .accept 6401 >>接受任务卡雅还活着
+    .turnin 6523 >>交任务  保护卡雅
+    .accept 6401 >>接受任务 卡雅还活着
     .target 玛卡巴·扁蹄
     .isQuestComplete 6523
 step
@@ -10562,7 +10562,7 @@ step
     #map Stonetalon Mountains
     .goto The Barrens,35.19,27.79
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_玛卡巴|r 对话
-    .accept 6401 >>接受任务卡雅还活着
+    .accept 6401 >>接受任务 卡雅还活着
     .target 玛卡巴·扁蹄
     .isQuestTurnedIn 6523
 step
@@ -11032,7 +11032,7 @@ step << Warlock/Mage
     .itemcount 221499,1 << Warlock --Rune of the Felguard
     .itemcount 223147,1 << Mage --Spell Notes: Balefire Bolt
     .train 431756 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_恶魔卫士符文|r] |cRXP_WARN_学习|r |T136216:0|t[召唤恶魔卫士] << Warlock
-    .train 429311 >>|cRXP_WARN_使用|r |T134939:0|t[|cRXP_FRIENDLY_法术笔记：怨火之箭|r |cRXP_WARN_来学习|r |T135809:0|t[怨火之箭] << Mage
+    .train 429311 >>|cRXP_WARN_使用|r |T134939:0|t[|cRXP_FRIENDLY_法术笔记：怨火之箭|r] |cRXP_WARN_来训练|r |T135809:0|t[怨火之箭] << Mage
     .use 221499 << Warlock
     .use 223147 << Mage
 step
@@ -11846,9 +11846,9 @@ step
     #label TribesTurnin
     .goto The Barrens,44.55,59.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_碎牙|r 对话
-    .turnin 878 >>交任务  野猪人的内战
-    .accept 5052 >>接受任务 阿迦玛甘的血岩碎片
-    .turnin 5052 >>交任务  阿迦玛甘的血岩碎片
+    .turnin 878 >>交任务野猪人的内战
+    .accept 5052 >>接受任务阿迦玛甘的血岩碎片
+    .turnin 5052 >>交任务阿迦玛甘的血岩碎片
     .target 碎牙
     .addquestitem 5075,5052
 step
@@ -12041,7 +12041,7 @@ step
 step << !Tauren
     .goto The Barrens,44.55,59.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_碎牙|r 对话
-    .aura 16618 >>|cRXP_WARN_如果你剩余 10 个|r |T134128:0|t[|cRXP_LOOT_血岩碎片|r]|cRXP_WARN_，可用它们从|r 撕牙鱼人|cRXP_WARN_ |r处兑换|cRXP_FRIENDLY_ |T136022:0|t[风之精灵]|r
+    .aura 16618 >>|cRXP_WARN_如果你还有10个|r |T134128:0|t[|cRXP_LOOT_经典怀旧服 道具|r]|cRXP_WARN_，就用它们从|r |cRXP_WARN_碎牙|r |cRXP_FRIENDLY_处获得|r |T136022:0|t[风之魂]
     >>|cRXP_WARN_如果你已经拥有雷霆崖的飞行点，请跳过此步骤|r
     .itemcount 5075,10
     .target 碎牙
@@ -12286,7 +12286,7 @@ step << Rogue
 step << Rogue
     #season 2
     .goto Thunder Bluff,53.00,56.63
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|T135342:0|t|cRXP_BUY_与|r |cRXP_FRIENDLY_卡德|r|cRXP_BUY_对话。从他那里购买一把或两把|r |T135342:0|t|T135342:0|t[波刃短剑] |cRXP_BUY_|rr
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_Kard|r|cRXP_BUY_对话。购买一两个|r |T135342:0|t[波刃短剑] |cRXP_BUY_从他那里|r
     .collect 2209,1,493,1 --Collect Kris (1)
     .money <0.7115
     .target 卡德·暴怒图腾
@@ -12656,7 +12656,7 @@ step
     .dungeon WC
 step
     #optional
-    >>击杀 |cRXP_ENEMY_变异破坏者|r, |cRXP_ENEMY_蝰蛇|r, |cRXP_ENEMY_蹒跚者|r 和 |cRXP_ENEMY_恐惧之牙|r 。拾取它们的|cRXP_ENEMY_皮|r
+    >>击杀 |cRXP_ENEMY_Deviate Ravagers|r、|cRXP_ENEMY_Vipers|r、|cRXP_ENEMY_Shamblers|r 和 |cRXP_ENEMY_Dreadfangs|r。拾取它们的 |cRXP_ENEMY_Hides|r。拾取它们的 |cRXP_ENEMY_Hides|r
     .complete 1487,1 --Deviate Ravager (7)
     .mob 变异破坏者
     .complete 1487,2 --Deviate Viper (7)
@@ -13091,7 +13091,7 @@ step
     #map Stonetalon Mountains
     .goto The Barrens,35.26,27.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_希雷斯|r 对话
-    .turnin 1062 >>交任务地精侵略者
+    .turnin 1062 >>交任务  地精侵略者
     .timer 4,地精侵略者 剧情
     .accept 1063 >>接受任务 巫婆长老
     --.accept 1068 >> Accept Shredding Machines
@@ -13263,7 +13263,7 @@ step << Rogue
     .goto The Barrens,55.44,5.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |r|cRXP_FRIENDLY_工头费苏勒|r 对话
     .turnin 2458 >>交任务  卧底密探
-    .accept 2478 >>接受任务基本不可能的任务
+    .accept 2478 >>接受任务 基本不可能的任务
     .target 工头费苏勒
 step << Rogue
     .goto The Barrens,54.80,5.97

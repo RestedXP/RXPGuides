@@ -6,7 +6,7 @@ RXPGuides.RegisterGuide([[
 #forever
 << Horde
 #version 11
-#group RestedXP 无限 地下城指南 (部落)
+#group RestedXP无限服地下城指南（部落）
 #subgroup 地下城指南 1-22级
 --#groupid RXP-SRGCE-H1
 #defaultfor Undead
@@ -15,7 +15,7 @@ RXPGuides.RegisterGuide([[
 
 step
 .enabledungeon RFC
-#include RestedXP 永久指南 (H)\1-6级 提瑞斯法林地
+#include RestedXP无限服指南（部落）\1-6级 提瑞斯法林地
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -24,7 +24,7 @@ RXPGuides.RegisterGuide([[
 #name 6-12级 提瑞斯法林地
 #displayname 6-13级 提瑞斯法林地 << Paladin
 #version 11
-#group RestedXP 无限 地下城指南 (部落)
+#group RestedXP无限服地下城指南（部落）
 #subgroup 地下城指南 1-22级
 --#groupid RXP-SRGCE-H1
 #defaultfor Undead
@@ -32,12 +32,12 @@ RXPGuides.RegisterGuide([[
 
 step
 .enabledungeon RFC
-#include RestedXP 永久指南 (H)\6-12级 提瑞斯法林地
+#include RestedXP无限服指南（部落）\6-12级 提瑞斯法林地
 ]])
 
 
 RXPGuides.RegisterGuide([[
-#group RestedXP 无限 地下城指南 (部落)
+#group RestedXP无限服地下城指南（部落）
 #subgroup 地下城指南 1-22级
 --#groupid RXP-SRGCE-H1
 << Horde
@@ -53,5 +53,5 @@ RXPGuides.RegisterGuide([[
 step
 .enabledungeon RFC
 .enabledungeon ROL
-#include RestedXP 永久指南 (H)\12-14级 银松森林
+#include RestedXP无限服指南（部落）\12-14级 银松森林
 ]])
