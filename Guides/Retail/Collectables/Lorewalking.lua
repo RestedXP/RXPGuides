@@ -10,19 +10,26 @@ RXPGuides.RegisterGuide([[
 #displayname Xal'atath
 #next ab) Ethereals
 
--- step
---     #sticky
---     #completewith LorewalkingCampaignEnd
---     +Click on the |cRXP_PICK_Ask a Question|r button in the "Active Items Frame" to talk to the Lorewalker if needed.
---     *To stop the campaign, click on |cRXP_PICK_Exit Lorewalking|r in the Lorewalking panel.
---     .macro Ask a Question,2056011 >>/cast spell:1242675
+step
+    .chromieon
+    .goto 84,56.27,17.32 << Alliance
+    .goto 85,40.84,80.17 << Horde
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Chromie|r
+    +|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r in Stormwind and ask her to return you to the present timeline. << Alliance
+    +|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r in Orgrimmar and ask her to return you to the present timeline. << Horde
+    .skipgossipid 51903
+    .target Chromie
+step
+    #completewith LorewalkingCampaignEnd
+    +Click on the |cRXP_PICK_Ask a Question|r button in the "Active Items Frame" to talk to the Lorewalker if needed.
+    *To stop the campaign, click on |cRXP_PICK_Exit Lorewalking|r in the Lorewalking panel.
+    .macro Ask a Question,2056011 >>/cast spell:1242675
 step << Alliance
     #arrowtext Talk to\n|cRXP_FRIENDLY_Lorewalker Cho|r
     .isOnQuest 90705 --Lorewalking
     .goto 84,64.24,16.10,-1
     .goto 2339,49.62,31.52,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorewalker Cho|r |cRXP_WARN_in Dornogal or Stormwind|r.
-    >>|cRXP_WARN_If you are currently in Chromie Time, talk to Chromie to return to the present timeline before starting Lorewalking.|r
     .accept 90705 >>Accept Lorewalking
     .turnin 90705 >>Turn in Lorewalking
     .target Lorewalker Cho
@@ -32,7 +39,6 @@ step << Horde
     .goto 85,54.24,56.59,-1
     .goto 2339,49.62,31.52,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorewalker Cho|r |cRXP_WARN_in Dornogal or Orgrimmar|r.
-    >>|cRXP_WARN_If you are currently in Chromie Time, talk to Chromie to return to the present timeline before starting Lorewalking.|r
     .accept 90705 >>Accept Lorewalking
     .turnin 90705 >>Turn in Lorewalking
     .target Lorewalker Cho
@@ -43,7 +49,6 @@ step
     .goto 84,64.24,16.10,-1 << Alliance
     .goto 2339,49.6,31.63,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorewalker Cho|r
-    >>|cRXP_WARN_If you are currently in Chromie Time, talk to Chromie to return to the present timeline before starting Lorewalking.|r
     .accept 84371 >>Accept Lorewalking: The Blade and the High Priest
     .skipgossipid 124311
     .choose 6403389
@@ -703,7 +708,7 @@ step
     .complete 84789,2 --1/1 Xal'atath defeated
     .mob Xal'atath
 step
---     #label LorewalkingCampaignEnd
+    #label LorewalkingCampaignEnd
     #arrowtext Talk to\n|cRXP_FRIENDLY_Lorewalker Cho|r
     .goto 85,54.35,56.66,-1
     .goto 84,64.24,16.10,-1
@@ -722,20 +727,26 @@ RXPGuides.RegisterGuide([[
 #displayname Ethereals
 #next ac) The Lich King
 
-
--- step
---     #sticky
---     #completewith LorewalkingCampaignEnd
---     +Click on the |cRXP_PICK_Ask a Question|r button in the "Active Items Frame" to talk to the Lorewalker if needed.
---     *To stop the campaign, click on |cRXP_PICK_Exit Lorewalking|r in the Lorewalking panel.
---     .macro Ask a Question,2056011 >>/cast spell:1242675
+step
+    .chromieon
+    .goto 84,56.27,17.32 << Alliance
+    .goto 85,40.84,80.17 << Horde
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Chromie|r
+    +|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r in Stormwind and ask her to return you to the present timeline. << Alliance
+    +|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r in Orgrimmar and ask her to return you to the present timeline. << Horde
+    .skipgossipid 51903
+    .target Chromie
+step
+    #completewith LorewalkingCampaignEnd
+    +Click on the |cRXP_PICK_Ask a Question|r button in the "Active Items Frame" to talk to the Lorewalker if needed.
+    *To stop the campaign, click on |cRXP_PICK_Exit Lorewalking|r in the Lorewalking panel.
+    .macro Ask a Question,2056011 >>/cast spell:1242675
 step << Alliance
     #arrowtext Talk to\n|cRXP_FRIENDLY_Lorewalker Cho|r
     .isOnQuest 90705 --Lorewalking
     .goto 84,64.24,16.10,-1
     .goto 2339,49.62,31.52,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorewalker Cho|r |cRXP_WARN_in Dornogal or Stormwind|r.
-    >>|cRXP_WARN_If you are currently in Chromie Time, talk to Chromie to return to the present timeline before starting Lorewalking.|r
     .accept 90705 >>Accept Lorewalking
     .turnin 90705 >>Turn in Lorewalking
     .target Lorewalker Cho
@@ -745,7 +756,6 @@ step << Horde
     .goto 85,54.24,56.59,-1
     .goto 2339,49.62,31.52,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorewalker Cho|r |cRXP_WARN_in Dornogal or Orgrimmar|r.
-    >>|cRXP_WARN_If you are currently in Chromie Time, talk to Chromie to return to the present timeline before starting Lorewalking.|r
     .accept 90705 >>Accept Lorewalking
     .turnin 90705 >>Turn in Lorewalking
     .target Lorewalker Cho
@@ -755,7 +765,6 @@ step
     .goto 85,54.28,56.56,-1 <<Horde
     .goto 2339,49.62,31.52,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorewalker Cho|r
-    >>|cRXP_WARN_If you are currently in Chromie Time, talk to Chromie to return to the present timeline before starting Lorewalking.|r
     .accept 85027 >>Accept Lorewalking: The Protectorate
     .timer 39,RP
     .skipgossipid 124311
@@ -1871,7 +1880,7 @@ step
     .complete 85036,2 --1/1 Return to Lorewalker Cho
     .timer 70,RP
 step
---     #label LorewalkingCampaignEnd
+    #label LorewalkingCampaignEnd
     #arrowtext Talk to\n|cRXP_FRIENDLY_Lorewalker Cho|r
     .goto 85,54.35,56.66,-1
     .goto 84,64.19,16.26,-1
@@ -1890,19 +1899,26 @@ RXPGuides.RegisterGuide([[
 #displayname The Lich King
 #next ad) The Elves of Quel'Thalas
 
--- step
---     #sticky
---     #completewith LorewalkingCampaignEnd
---     +Click on the |cRXP_PICK_Ask a Question|r button in the "Active Items Frame" to talk to the Lorewalker if needed.
---     *To stop the campaign, click on |cRXP_PICK_Exit Lorewalking|r in the Lorewalking panel.
---     .macro Ask a Question,2056011 >>/cast spell:1242675
+step
+    .chromieon
+    .goto 84,56.27,17.32 << Alliance
+    .goto 85,40.84,80.17 << Horde
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Chromie|r
+    +|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r in Stormwind and ask her to return you to the present timeline. << Alliance
+    +|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r in Orgrimmar and ask her to return you to the present timeline. << Horde
+    .skipgossipid 51903
+    .target Chromie
+step
+    #completewith LorewalkingCampaignEnd
+    +Click on the |cRXP_PICK_Ask a Question|r button in the "Active Items Frame" to talk to the Lorewalker if needed.
+    *To stop the campaign, click on |cRXP_PICK_Exit Lorewalking|r in the Lorewalking panel.
+    .macro Ask a Question,2056011 >>/cast spell:1242675
 step << Alliance
     #arrowtext Talk to\n|cRXP_FRIENDLY_Lorewalker Cho|r
     .isOnQuest 90705 --Lorewalking
     .goto 84,64.24,16.10,-1
     .goto 2339,49.62,31.52,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorewalker Cho|r |cRXP_WARN_in Dornogal or Stormwind|r.
-    >>|cRXP_WARN_If you are currently in Chromie Time, talk to Chromie to return to the present timeline before starting Lorewalking.|r
     .accept 90705 >>Accept Lorewalking
     .turnin 90705 >>Turn in Lorewalking
     .target Lorewalker Cho
@@ -1912,7 +1928,6 @@ step << Horde
     .goto 85,54.24,56.59,-1
     .goto 2339,49.62,31.52,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorewalker Cho|r |cRXP_WARN_in Dornogal or Orgrimmar|r.
-    >>|cRXP_WARN_If you are currently in Chromie Time, talk to Chromie to return to the present timeline before starting Lorewalking.|r
     .accept 90705 >>Accept Lorewalking
     .turnin 90705 >>Turn in Lorewalking
     .target Lorewalker Cho
@@ -1922,7 +1937,6 @@ step
     .goto 84,64.19,16.26,-1
     .goto 2339,49.6,31.63,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorewalker Cho|r
-    >>|cRXP_WARN_If you are currently in Chromie Time, talk to Chromie to return to the present timeline before starting Lorewalking.|r
     .accept 85884 >>Accept Lorewalking: The Prince Who Would Be King
     .skipgossipid 124311
     .choose 6403388
@@ -2332,7 +2346,7 @@ step
     *Use |T135833:0|t[Remorseless Winter] on cooldown.
     .complete 85878,1 --1/1 Complete "O'Thanagor"
 step
---     #label LorewalkingCampaignEnd
+    #label LorewalkingCampaignEnd
     #arrowtext Talk to\n|cRXP_FRIENDLY_Lorewalker Cho|r
     .goto 85,54.35,56.66,-1
     .goto 84,64.19,16.26,-1
@@ -2352,19 +2366,26 @@ RXPGuides.RegisterGuide([[
 #displayname The Elves of Quel'Thalas
 #next ae) The Loa
 
--- step
---     #sticky
---     #completewith LorewalkingCampaignEnd
---     +Click on the |cRXP_PICK_Ask a Question|r button in the "Active Items Frame" to talk to the Lorewalker if needed.
---     *To stop the campaign, click on |cRXP_PICK_Exit Lorewalking|r in the Lorewalking panel.
---     .macro Ask a Question,2056011 >>/cast spell:1242675
+step
+    .chromieon
+    .goto 84,56.27,17.32 << Alliance
+    .goto 85,40.84,80.17 << Horde
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Chromie|r
+    +|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r in Stormwind and ask her to return you to the present timeline. << Alliance
+    +|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r in Orgrimmar and ask her to return you to the present timeline. << Horde
+    .skipgossipid 51903
+    .target Chromie
+step
+    #completewith LorewalkingCampaignEnd
+    +Click on the |cRXP_PICK_Ask a Question|r button in the "Active Items Frame" to talk to the Lorewalker if needed.
+    *To stop the campaign, click on |cRXP_PICK_Exit Lorewalking|r in the Lorewalking panel.
+    .macro Ask a Question,2056011 >>/cast spell:1242675
 step << Alliance
     #arrowtext Talk to\n|cRXP_FRIENDLY_Lorewalker Cho|r
     .isOnQuest 90705 --Lorewalking
     .goto 84,64.24,16.10,-1
     .goto 2339,49.62,31.52,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorewalker Cho|r |cRXP_WARN_in Dornogal or Stormwind|r.
-    >>|cRXP_WARN_If you are currently in Chromie Time, talk to Chromie to return to the present timeline before starting Lorewalking.|r
     .accept 90705 >>Accept Lorewalking
     .turnin 90705 >>Turn in Lorewalking
     .target Lorewalker Cho
@@ -2374,7 +2395,6 @@ step << Horde
     .goto 85,54.24,56.59,-1
     .goto 2339,49.62,31.52,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorewalker Cho|r |cRXP_WARN_in Dornogal or Orgrimmar|r.
-    >>|cRXP_WARN_If you are currently in Chromie Time, talk to Chromie to return to the present timeline before starting Lorewalking.|r
     .accept 90705 >>Accept Lorewalking
     .turnin 90705 >>Turn in Lorewalking
     .target Lorewalker Cho
@@ -2384,7 +2404,6 @@ step
     .goto 84,64.19,16.26,-1
     .goto 2339,49.6,31.63,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorewalker Cho|r
-    >>|cRXP_WARN_If you are currently in Chromie Time, talk to Chromie to return to the present timeline before starting Lorewalking.|r
     .accept 85252 >>Accept Lorewalking: Children of the Blood
     .skipgossipid 124311
     .choose 6403386
@@ -2542,7 +2561,7 @@ step
     .complete 85254,5 --1/1 Complete the Void Elf Quests
     .target Lorewalker Cho
 step
---     #label LorewalkingCampaignEnd
+    #label LorewalkingCampaignEnd
     #arrowtext Talk to\n|cRXP_FRIENDLY_Lorewalker Cho|r
     .goto 972,27.94,24.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorewalker Cho|r
@@ -2559,25 +2578,33 @@ RXPGuides.RegisterGuide([[
 #displayname The Loa
 #next a) Xal'atath
 
-
+step
+    .chromieon
+    .goto 84,56.27,17.32 << Alliance
+    .goto 85,40.84,80.17 << Horde
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Chromie|r
+    +|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r in Stormwind and ask her to return you to the present timeline. << Alliance
+    +|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r in Orgrimmar and ask her to return you to the present timeline. << Horde
+    .skipgossipid 51903
+    .target Chromie
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Li Li Stormstout|r
     .goto 84,64.30,16.20,-1 << Alliance
     .goto 85,54.30,56.60,-1 << Horde
     .goto 2339,49.70,31.50,-1
     .goto 2393,58.70,70.80,-1
-    >>|cRXP_WARN_If you are currently in Chromie Time, talk to Chromie to return to the present timeline before starting Lorewalking.|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Li Li Stormstout::253727|r.
     .accept 92826 >>Accept Lorewalking: The Loa of Kings
     .skipgossipid 124311
     .choose 5420
+    .choose 5419
     .timer 60,RP
     .target Li Li Stormstout::253727
--- step
---     #completewith LorewalkingCampaignEnd
---     +Click on the |cRXP_PICK_Ask a Question|r button in the "Active Items Frame" to talk to the Lorewalker if needed.
---     *To stop the campaign, click on |cRXP_PICK_Exit Lorewalking|r in the Lorewalking panel.
---     .macro Ask a Question,2056011 >>/cast spell:1242675
+step
+    #completewith LorewalkingCampaignEnd
+    +Click on the |cRXP_PICK_Ask a Question|r button in the "Active Items Frame" to talk to the Lorewalker if needed.
+    *To stop the campaign, click on |cRXP_PICK_Exit Lorewalking|r in the Lorewalking panel.
+    .macro Ask a Question,2056011 >>/cast spell:1242675
 step
     #arrowtext Wait for the roleplay
     .goto 84,64.30,16.20,-1 << Alliance

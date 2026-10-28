@@ -15758,12 +15758,10 @@ step
     #hidewindow
     +test
     .usespell 1231411
-
 step
     .xp >10,1
     #completewith Beating Them Back!
     +If you want to level as fast as possible, choose Exile’s Reach as your starting zone. This requires recreating your character.
-
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Marshal McBride|r
     .xp >10,1
