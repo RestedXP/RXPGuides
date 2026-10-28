@@ -13,6 +13,8 @@ RXPGuides.RegisterGuide([[
 #subgroup Guide du Set Tenue de combat d'héroïsme << Warrior
 #subgroup Guide du Set Habits du Vertueux << Priest
 #name Partie 1 : Brassards
+#guideKind gearset
+#guideIcon rxp-icon-quest
 #next Partie 2 : Ceinture et Gants
 
 
@@ -229,6 +231,8 @@ RXPGuides.RegisterGuide([[
 #subgroup Guide du Set Tenue de combat d'héroïsme << Warrior
 #subgroup Guide du Set Habits du Vertueux << Priest
 #name Partie 2 : Ceinture et Gants
+#guideKind gearset
+#guideIcon rxp-icon-quest
 #next Partie 3 : Pantalon, Épaulières et Bottes
 
 
@@ -673,6 +677,8 @@ RXPGuides.RegisterGuide([[
 #subgroup Guide du Set Tenue de combat d'héroïsme << Warrior
 #subgroup Guide du Set Habits du Vertueux << Priest
 #name Partie 3 : Pantalon, Épaulières et Bottes
+#guideKind gearset
+#guideIcon rxp-icon-quest
 #next Partie 4: Casque et Plastron
 
 step
@@ -1155,6 +1161,8 @@ RXPGuides.RegisterGuide([[
 #subgroup Guide du Set Tenue de combat d'héroïsme << Warrior
 #subgroup Guide du Set Habits du Vertueux << Priest
 #name Partie 4: Casque et Plastron
+#guideKind gearset
+#guideIcon rxp-icon-quest
 
 
 step

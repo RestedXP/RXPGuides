@@ -1361,7 +1361,7 @@ step << Priest
 step
     #sticky
     #completewith Bonfire
-    +Faites attention si |cRXP_ENEMY_Kolkanis|r est présent, c'est un mob rare de niveau 9. Vous allez peut-être utiliser une [Potion de soins mineure] si vous en avez
+    +Faites attention si |cRXP_ENEMY_Kolkanis|r est présent, c'est un rare de niveau 9. Vous devrez peut-être utiliser une  [Potion de soins mineure] si vous en avez une
     .unitscan Warlord Kolkanis
 step
     .goto 1411/1,-4596.20,-1057.14
@@ -1619,7 +1619,7 @@ step
     .goto 1411/1,-4715.200,140.100
     >>|cRXP_WARN_Tapez /assis près du feu de camp et attendez une minute jusqu'à ce que vous obteniez le buff "Avantages du camp"|r
     .complete 96604,1 --|1/1 Use the /sit emote near the campfire
-    .macro Sit,134400 >>Asseyez-vous 
+    .macro Sit,134400 >>Asseyez-vous
     .timer 59, RP
     .complete 96604,2 --|Gain the Boosted Rest buff
 step
@@ -1925,7 +1925,7 @@ step
     .goto 1411/1,-4715.200,140.100
     >>|cRXP_WARN_Tapez /assis près du feu de camp et attendez une minute jusqu'à ce que vous obteniez le buff "Avantages du camp"|r
     .complete 96604,1 --|1/1 Use the /sit emote near the campfire
-    .macro Sit,134400 >>Asseyez-vous 
+    .macro Sit,134400 >>Asseyez-vous
     .timer 59, RP
     .complete 96604,2 --|Gain the Boosted Rest buff
 step
@@ -3606,7 +3606,6 @@ step
 step
     .goto 1454/1,-4293.600,1949.900
     >>Ramassez les |cRXP_PICK_Rochers|r oranges par terre
-    >>|cRXP_WARN_Passez cette quête s'il y a beaucoup de concurrence ! Il n'y a pas beaucoup de |cRXP_PICK_Rochers|r et ils prennent du temps à réapparaître|r
     .complete 97326,1 --|8/8 Smooth Boulder
     .isOnQuest 97326
 step
@@ -3764,6 +3763,27 @@ step << Shaman/Hunter
     .turnin 926 >>Rendez la quête Pierre de puissance imparfaite
     .isOnQuest 924
 step << !Shaman !Hunter
+    #completewith Gazzuz
+    >>Tuez les |cRXP_ENEMY_Burning Blade Orcs|r. Dépouillez-les pour une |cRXP_LOOT_Lieutenant's Insignia|r
+    >>|cRXP_WARN_C'est une quête préalable pour RFC. Elle a un faible taux de loot|r
+    .complete 5726,1 --Lieutenant's Insignia (1)
+    .mob Burning Blade Fanatic
+    .mob Burning Blade Apprentice
+    .dungeon RFC
+step << !Shaman !Hunter
+    #label Gazzuz
+    .goto 1411/1,-4701.42,1455.83
+    >>Tuez |cRXP_ENEMY_Gazz'uz|r. Dépouillez-le pour son [|cRXP_LOOT_Eye of Burning Shadow|r]
+    >>|cRXP_WARN_Soyez prudents car il est TRÈS difficile. N'hésitez pas à sauter cette quête si vous ne pouvez pas former un groupe ou le vaincre en solo|r
+    >>|cRXP_WARN_Utilisez le [|cRXP_LOOT_Eye of Burning Shadow|r] pour commencer la quête|r
+    >>|cRXP_WARN_Utilisez LoS (ligne de mire) pour éviter |cRXP_ENEMY_Gazz'uz|r ses Traits de l'ombre|r
+    >>Vous pouvez aller dans les points d'eau dans la grotte pour vous échapper (evade) des |cRXP_ENEMY_Voidwalker|r après avoir tué |cRXP_ENEMY_Gazz'uz|r
+    .collect 4903,1,832,1 --Collect Eye of Burning Shadow
+    .accept 832 >>Acceptez la quête Ombres ardentes
+    .use 4903
+	.unitscan Gazz'uz
+    .dungeon RFC
+step << !Shaman !Hunter
     #loop
     .goto 1411/1,-4805.59,1495.67,0
     .goto 1411/1,-4855.82,1498.84,15,0
@@ -3777,11 +3797,11 @@ step << !Shaman !Hunter
     .goto 1411/1,-4684.50,1466.06,15,0
     .goto 1411/1,-4805.59,1495.67,15,0
     >>Tuez les |cRXP_ENEMY_Burning Blade Orcs|r. Dépouillez-les pour une |cRXP_LOOT_Lieutenant's Insignia|r
+    >>|cRXP_WARN_C'est une quête préalable pour RFC. Elle a un faible taux de loot|r
     .complete 5726,1 --Lieutenant's Insignia (1)
     .mob Burning Blade Fanatic
     .mob Burning Blade Apprentice
     .dungeon RFC
-    .isOnQuest 5726
 step << !Shaman !Hunter
     #label ZeptoUC1
     .goto 1411/1,-4648.55,1321.88,40 >>Montez la Tour des Zeppelins
@@ -3928,6 +3948,7 @@ step
     .accept 96897 >>Acceptez la quête Le Culte des damnés
     .accept 96898 >>Acceptez la quête Les vestiges de la guerre
     .target Hadric Harlson
+    .maxlevel 11
 step
     .goto 1420/0,-130.500,1907.800
     >>Tuez les |cRXP_ENEMY_Massacreurs sombres|r et les |cRXP_ENEMY_Néophytes sombres|r. Dépouillez-les pour leur |cRXP_LOOT_Fragment de cristal nécrotique|r
@@ -3938,6 +3959,7 @@ step
     .complete 96897,1 --|8/8 Dark Neophyte slain
     .mob +Dark Neophyte
     .complete 96898,1 --|12/12 Necrotic Crystal Fragment
+    .isOnQuest 96897,96898
 step
     #label HorrorsandSpirits
     #loop
@@ -3962,8 +3984,23 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Hadric Harlson|r
     .turnin 96897 >>Rendez la quête Le Culte des damnés
     .turnin 96898 >>Rendez la quête Les vestiges de la guerre
-    --.accept 96899 >>Accept Bandarion Keep
     .target Hadric Harlson
+    .isQuestComplete 96897
+    .isQuestComplete 96898
+step
+    #optional
+    .goto 1420/0,54.500,1996.400
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Hadric Harlson|r
+    .turnin 96897 >>Rendez la quête Le culte des Damnés
+    .target Hadric Harlson
+    .isQuestComplete 96897
+step
+    #optional
+    .goto 1420/0,54.500,1996.400
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Hadric Harlson|r
+    .turnin 96898 >>Rendez la quête Vestiges de guerre
+    .target Hadric Harlson
+    .isQuestComplete 96898
 step
     #label LinneaTurnin
     .goto 1420/0,74.00,2022.47
@@ -4081,7 +4118,7 @@ step << Warlock
     .goto 1458/0,610.42,1684.44,35,0
     .goto 1458/0,663.19,1600.46,35,0
     .goto 1420/0,724.25,1682.66,50,0
-    .zone Tirisfal Glades >> Sortez de Fossoyeuse par les Égouts
+    .zone Tirisfal Glades >> Quittez Undercity par les Égouts
     .zoneskip Tirisfal Glades
 step << Warlock
     #optional
@@ -4260,7 +4297,7 @@ step
     .goto 1458/0,610.42,1684.44,35,0
     .goto 1458/0,663.19,1600.46,35,0
     .goto 1420/0,724.25,1682.66,50,0
-    .zone Tirisfal Glades >> Sortez de Fossoyeuse par les Égouts
+    .zone Tirisfal Glades >> Quittez Undercity par les Égouts
     .zoneskip Silverpine Forest
 step
     #label Entersilverpine

@@ -398,7 +398,7 @@ step
     .goto 1413/1,-3021.35,-231.96,20,0
     .goto 1413/1,-3029.46,261.25
     .use 4926 >> Ramassez le |cRXP_PICK_Chen's Empty Keg|r sur le sol et commencez la quête
-    >>Attendez qu'il revienne si il n'est pas là
+    >>Attendez qu'il revienne si il n'est pas présent
     .collect 4926,1,819 --Collect Chen's Empty Keg
     .accept 819 >> Acceptez la quête Tonneau vide de Chen
     .isOnQuest 872
@@ -561,7 +561,7 @@ step << Orc Shaman/Troll Shaman/Tauren Shaman
 step << Orc Shaman/Troll Shaman/Tauren Shaman
     .goto 1413/1,-3029.46,261.25
     .use 4926 >> Ramassez le |cRXP_PICK_Chen's Empty Keg|r sur le sol et commencez la quête
-    >>Attendez qu'il revienne si il n'est pas là
+    >>Attendez qu'il revienne si il n'est pas présent
     .collect 4926,1,819 --Collect Chen's Empty Keg
     .accept 819 >> Acceptez la quête Tonneau vide de Chen
 step
@@ -3659,7 +3659,7 @@ step
 step << !Tauren !Skyborne
     .goto 1413/1,-1891.48,-2391.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Mangletooth|r
-    .aura 16618 >>Si il vous reste 10 [|cRXP_LOOT_Blood Shards|r, utilisez les pour obtenir [L'esprit du vent] à |cRXP_FRIENDLY_Mangletooth|r
+    .aura 16618 >>|cRXP_WARN_Si vous avez 10|r |T134128:0|t[|cRXP_LOOT_Cristaux de sang|r] |cRXP_WARN_restants, utilisez-les pour obtenir|r |T136022:0|t[L'esprit du vent] |cRXP_WARN_de|r |cRXP_FRIENDLY_Mutiledent|r
     >>Passez cette étape si vous pouvez voler jusqu'à Pitons-du-Tonnerre
     .itemcount 5075,10
     .target Mangletooth
@@ -3739,6 +3739,38 @@ step
     .target Innkeeper Pala
     .bindlocation 1638
     .isQuestAvailable 6442
+step << Hunter
+    #completewith HunterTraining2
+    .goto 1456/1,-123.26,-1394.49,60 >> Voyagez au sommet du chasseur
+step << Hunter
+    .goto 1456/1,-100.50,-1454.75
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Urek|r
+    .train 5118 >> Apprenez vos sorts de classe
+    .target Urek Thunderhorn
+    .xp <20,1
+    .xp >22,1
+step << Hunter
+    #label HunterTraining2
+    #optional
+    .goto 1456/1,-100.50,-1454.75
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Urek|r
+    .train 5118 >> Apprenez vos sorts de classe
+    .target Urek Thunderhorn
+    .xp <22,1
+step << Hunter
+    .goto 1456/1,-47.69,-1434.64
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Hesuwa|r
+    .train 24494 >> Apprenez les compétences de votre familier
+    .target Hesuwa Thunderhorn
+step << Warrior
+    #completewith next
+    .goto 1456/1,-123.26,-1394.49,60 >> Voyagez au sommet du chasseur
+step << Warrior
+    .goto 1456/1,-81.09,-1457.74
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Torm|r
+    .train 845 >>Apprenez vos sorts de classe
+    .accept 1823 >>Acceptez la quête Parler à Ruga
+    .target Torm Ragetotem
 step
     #completewith next
     .goto 1456/1,222.96,-1079.42,40,0
@@ -3955,38 +3987,6 @@ step << Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Turak|r
     .turnin 98362 >>Rendez la quête Les Pitons-du-Tonnerre
     .target Turak Runetotem
-step << Hunter
-    #completewith HunterTraining2
-    .goto 1456/1,-123.26,-1394.49,60 >> Voyagez au sommet du chasseur
-step << Hunter
-    .goto 1456/1,-100.50,-1454.75
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Urek|r
-    .train 5118 >> Apprenez vos sorts de classe
-    .target Urek Thunderhorn
-    .xp <20,1
-    .xp >22,1
-step << Hunter
-    #label HunterTraining2
-    #optional
-    .goto 1456/1,-100.50,-1454.75
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Urek|r
-    .train 5118 >> Apprenez vos sorts de classe
-    .target Urek Thunderhorn
-    .xp <22,1
-step << Hunter
-    .goto 1456/1,-47.69,-1434.64
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Hesuwa|r
-    .train 24494 >> Apprenez les compétences de votre familier
-    .target Hesuwa Thunderhorn
-step << Warrior
-    #completewith next
-    .goto 1456/1,-123.26,-1394.49,60 >> Voyagez au sommet du chasseur
-step << Warrior
-    .goto 1456/1,-81.09,-1457.74
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Torm|r
-    .train 845 >>Apprenez vos sorts de classe
-    .accept 1823 >>Acceptez la quête Parler à Ruga
-    .target Torm Ragetotem
 step << Rogue
     .goto 1456/1,-36.52,-1244.05
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Parlez à|r |cRXP_FRIENDLY_Kard|r|cRXP_BUY_. Achetez une|r [Epée longue] |cRXP_BUY_à Kard.|r
@@ -5104,6 +5104,12 @@ step << Troll Warrior/Undead Warrior/Tauren Warrior/Undead Paladin
     .goto 1454/1,-4824.00,2090.540
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Hanashi|r
     .train 197 >>Achetez la compétence pour porter des Haches à deux mains
+    .train 2567 >> Apprenez la compétence Armes de jet << !Paladin
+    .target Hanashi
+step << Orc Warrior
+    .goto 1454/1,-4824.00,2090.540
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Hanashi|r
+    .train 2567 >> Apprenez la compétence Armes de jet
     .target Hanashi
 step << Warrior
     .goto 1454/1,-4801.42,1980.53

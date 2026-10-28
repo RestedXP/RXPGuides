@@ -382,7 +382,7 @@ step << Druid
     .train 410028,1
 step << Druid
     #completewith next
-    .zone Hillsbrad Foothills >> Voyagez aux Contreforts d'Hillsbrad
+    .zone Hillsbrad Foothills >> Voyagez aux Contreforts de Hautebrande
     .train 410028,1
 step << Druid
     .goto Hillsbrad Foothills,36.914,76.142
@@ -1766,7 +1766,7 @@ step
 step
     .goto Stonetalon Mountains,39.614,49.783
     >>Cliquez sur le |cRXP_PICK_Monticule de poussière|r sur le sol
-    .turnin 79980 >> Rendre la quête Décaniller
+    .turnin 79980 >> Rendez la quête Décaniller
     .accept 79974 >> Acceptez la quête Travail humide
 step
     #completewith next

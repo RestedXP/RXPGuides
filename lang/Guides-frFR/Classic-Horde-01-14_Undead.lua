@@ -2513,7 +2513,7 @@ step << Warlock
     .goto Undercity,27.39,30.23,35,0
     .goto Undercity,21.89,43.35,35,0
     .goto Tirisfal Glades,51.10,71.53,50,0
-    .zone Tirisfal Glades >> Sortez de Fossoyeuse par les Égouts
+    .zone Tirisfal Glades >> Quittez Undercity par les Égouts
     .zoneskip Tirisfal Glades
 step << Rogue
     #season 2
@@ -4074,7 +4074,7 @@ step << Rogue/Warrior/Priest
     .goto Undercity,27.39,30.23,35,0
     .goto Undercity,21.89,43.35,35,0
     .goto Tirisfal Glades,51.10,71.53,50,0
-    .zone Tirisfal Glades >> Sortez de Fossoyeuse par les Égouts
+    .zone Tirisfal Glades >> Quittez Undercity par les Égouts
     .zoneskip Tirisfal Glades
     .isQuestAvailable 1978
 
@@ -8434,7 +8434,7 @@ step << Warlock
     .goto Undercity,27.39,30.23,35,0
     .goto Undercity,21.89,43.35,35,0
     .goto Tirisfal Glades,51.10,71.53,50,0
-    .zone Tirisfal Glades >> Sortez de Fossoyeuse par les Égouts
+    .zone Tirisfal Glades >> Quittez Undercity par les Égouts
     .zoneskip Tirisfal Glades
 step << Warrior
     #season 2

@@ -542,7 +542,7 @@ step << Tauren Shaman
 step << Tauren Shaman
     .goto The Barrens,55.78,20.00
     .use 4926 >> Ramassez le |cRXP_PICK_Chen's Empty Keg|r sur le sol et commencez la quête
-    >>Attendez qu'il revienne si il n'est pas là
+    >>Attendez qu'il revienne si il n'est pas présent
     .collect 4926,1,819 --Collect Chen's Empty Keg
     .accept 819 >> Acceptez la quête Tonneau vide de Chen
     .dungeon RFC
@@ -824,7 +824,7 @@ step
     .goto The Barrens,55.70,27.30,20,0
     .goto The Barrens,55.78,20.00
     .use 4926 >> Ramassez le |cRXP_PICK_Chen's Empty Keg|r sur le sol et commencez la quête
-    >>Attendez qu'il revienne si il n'est pas là
+    >>Attendez qu'il revienne si il n'est pas présent
     .collect 4926,1,819 --Collect Chen's Empty Keg
     .accept 819 >> Acceptez la quête Tonneau vide de Chen
 step
@@ -996,7 +996,7 @@ step << Shaman
 step << Shaman
     .goto The Barrens,55.78,20.00
     .use 4926 >> Ramassez le |cRXP_PICK_Chen's Empty Keg|r sur le sol et commencez la quête
-    >>Attendez qu'il revienne si il n'est pas là
+    >>Attendez qu'il revienne si il n'est pas présent
     .collect 4926,1,819 --Collect Chen's Empty Keg
     .accept 819 >> Acceptez la quête Tonneau vide de Chen
 step << skip
@@ -1197,7 +1197,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Wiley l'aubergiste|r
     >>|cRXP_BUY_Buy|r Achetez des [Lutjan à longue mâchoire]|cRXP_BUY_à Drohn|r
     >>|cRXP_BUY_Achetez du|r [Jus de melon] |cRXP_BUY_au marchand|r << Mage/Warlock/Priest/Shaman/Druid
-    >>|T133918:0|tLes [Lutjan à longue mâchoire] sont très abordables, achetez-en autant que vous voulez
+    >>|T133918:0|tLes [Lutjan à longue mâchoire] sont très abordables, achetez-en autant que vous le voulez
     .vendor >> Vendez tout ce dont nous n'avez pas besoin
     .collect 4592,20,895,1 --Longjaw Mud Snapper (20)
     .collect 1205,10,895,1 << Mage/Warlock/Priest/Shaman/Druid --Melon Juice (10)
@@ -2513,7 +2513,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|cRXP_FRIENDLY_Innkeeper Wiley|r
     >>|cRXP_BUY_Buy|r Achetez des [Lutjan à longue mâchoire]|cRXP_BUY_à Drohn|r
     >>|cRXP_BUY_Achetez du|r [Jus de melon] |cRXP_BUY_au marchand|r << Mage/Warlock/Priest/Shaman/Druid
-    >>|T133918:0|tLes [Lutjan à longue mâchoire] sont très abordables, achetez-en autant que vous voulez
+    >>|T133918:0|tLes [Lutjan à longue mâchoire] sont très abordables, achetez-en autant que vous le voulez
     .vendor >> Vendez tout ce dont nous n'avez pas besoin
     .collect 4592,20,888,1 --Longjaw Mud Snapper (20)
     .collect 1205,10,888,1 << Mage/Warlock/Priest/Shaman/Druid --Melon Juice (10)
@@ -4625,7 +4625,7 @@ step
 step << !Tauren !Shaman !Warrior/Undead
     .goto The Barrens,44.55,59.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Mangletooth|r
-    .aura 16618 >>Si il vous reste 10 [|cRXP_LOOT_Blood Shards|r, utilisez les pour obtenir [L'esprit du vent] à |cRXP_FRIENDLY_Mangletooth|r
+    .aura 16618 >>|cRXP_WARN_Si vous avez 10|r |T134128:0|t[|cRXP_LOOT_Cristaux de sang|r] |cRXP_WARN_restants, utilisez-les pour obtenir|r |T136022:0|t[L'esprit du vent] |cRXP_WARN_de|r |cRXP_FRIENDLY_Mutiledent|r
     >>Passez cette étape si vous pouvez voler jusqu'à Pitons-du-Tonnerre
     .itemcount 5075,10
     .target Mangletooth
@@ -5261,7 +5261,7 @@ step
     .dungeon WC
 step
     #optional
-    >>Tuez les |cRXP_ENEMY_Ravageurs déviants|r, les |cRXP_ENEMY_Vipères déviantes|r, les |cRXP_ENEMY_Traînards déviants|r et les |cRXP_ENEMY_Croc-d'effrois déviants|r. Dépouillez-les pour obtenir leur |cRXP_ENEMY_Peaux|r
+    >>Tuez |cRXP_ENEMY_Deviate Ravagers|r, |cRXP_ENEMY_Vipers|r, |cRXP_ENEMY_Shamblers|r et |cRXP_ENEMY_Dreadfangs|r. Récupérez leurs |cRXP_ENEMY_Hides|r . Récupérez leurs |cRXP_ENEMY_Hides|r
     .complete 1487,1 --Deviate Ravager (7)
     .mob +Deviate Ravager
     .complete 1487,2 --Deviate Viper (7)
@@ -7036,7 +7036,7 @@ step << Warlock/Mage
     .itemcount 221499,1 << Warlock --Rune of the Felguard
     .itemcount 223147,1 << Mage --Spell Notes: Balefire Bolt
     .train 431756 >>|cRXP_WARN_Utilisez la|r |T134419:0|t[|cRXP_FRIENDLY_Rune du gangregarde|r] |cRXP_WARN_pour apprendre|r |T136216:0|t[Invocation d'un gangregarde] << Warlock
-    .train 429311 >>|cRXP_WARN_Utilisez les|r |T134939:0|t[|cRXP_FRIENDLY_Notes de sort : Trait de bûcher|r] |cRXP_WARN_pour apprendre|r |T135809:0|t[Trait de bûcher] << Mage
+    .train 429311 >>|cRXP_WARN_Utilisez|r les |T134939:0|t[|cRXP_FRIENDLY_Sorts Notes: Trait de bûcher|r] |cRXP_WARN_pour entraîner|r le |T135809:0|t[Trait de bûcher] << Mage
     .use 221499 << Warlock
     .use 223147 << Mage
 step
@@ -7770,7 +7770,7 @@ step
     .goto The Barrens,55.70,27.30,20,0
     .goto The Barrens,55.78,20.00
     .use 4926 >> Ramassez le |cRXP_PICK_Chen's Empty Keg|r sur le sol et commencez la quête
-    >>Attendez qu'il revienne si il n'est pas là
+    >>Attendez qu'il revienne si il n'est pas présent
     .collect 4926,1,819 --Collect Chen's Empty Keg
     .accept 819 >> Acceptez la quête Tonneau vide de Chen
 step
@@ -7940,7 +7940,7 @@ step << Shaman
 step << Shaman
     .goto The Barrens,55.78,20.00
     .use 4926 >> Ramassez le |cRXP_PICK_Chen's Empty Keg|r sur le sol et commencez la quête
-    >>Attendez qu'il revienne si il n'est pas là
+    >>Attendez qu'il revienne si il n'est pas présent
     .collect 4926,1,819 --Collect Chen's Empty Keg
     .accept 819 >> Acceptez la quête Tonneau vide de Chen
 step << skip
@@ -8167,7 +8167,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Wiley l'aubergiste|r
     >>|cRXP_BUY_Buy|r Achetez des [Lutjan à longue mâchoire]|cRXP_BUY_à Drohn|r
     >>|cRXP_BUY_Achetez du|r [Jus de melon] |cRXP_BUY_au marchand|r << Mage/Warlock/Priest/Shaman/Druid
-    >>|T133918:0|tLes [Lutjan à longue mâchoire] sont très abordables, achetez-en autant que vous voulez
+    >>|T133918:0|tLes [Lutjan à longue mâchoire] sont très abordables, achetez-en autant que vous le voulez
     .vendor >> Vendez tout ce dont nous n'avez pas besoin
     .collect 4592,20,895,1 --Longjaw Mud Snapper (20)
     .collect 1205,10,895,1 << Mage/Warlock/Priest/Shaman/Druid --Melon Juice (10)
@@ -9742,7 +9742,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Wiley l'aubergiste|r
     >>|cRXP_BUY_Buy|r Achetez des [Lutjan à longue mâchoire]|cRXP_BUY_à Drohn|r
     >>|cRXP_BUY_Achetez du|r [Jus de melon] |cRXP_BUY_au marchand|r << Mage/Warlock/Priest/Shaman/Druid
-    >>|T133918:0|tLes [Lutjan à longue mâchoire] sont très abordables, achetez-en autant que vous voulez
+    >>|T133918:0|tLes [Lutjan à longue mâchoire] sont très abordables, achetez-en autant que vous le voulez
     .vendor >> Vendez tout ce dont nous n'avez pas besoin
     .collect 4592,20,888,1 --Longjaw Mud Snapper (20)
     .collect 1205,10,888,1 << Mage/Warlock/Priest/Shaman/Druid --Melon Juice (10)
@@ -11032,7 +11032,7 @@ step << Warlock/Mage
     .itemcount 221499,1 << Warlock --Rune of the Felguard
     .itemcount 223147,1 << Mage --Spell Notes: Balefire Bolt
     .train 431756 >>|cRXP_WARN_Utilisez la|r |T134419:0|t[|cRXP_FRIENDLY_Rune du gangregarde|r] |cRXP_WARN_pour apprendre|r |T136216:0|t[Invocation d'un gangregarde] << Warlock
-    .train 429311 >>|cRXP_WARN_Utilisez les|r |T134939:0|t[|cRXP_FRIENDLY_Notes de sort : Trait de bûcher|r] |cRXP_WARN_pour apprendre|r |T135809:0|t[Trait de bûcher] << Mage
+    .train 429311 >>|cRXP_WARN_Utilisez|r les |T134939:0|t[|cRXP_FRIENDLY_Sorts Notes: Trait de bûcher|r] |cRXP_WARN_pour entraîner|r le |T135809:0|t[Trait de bûcher] << Mage
     .use 221499 << Warlock
     .use 223147 << Mage
 step
@@ -12041,7 +12041,7 @@ step
 step << !Tauren
     .goto The Barrens,44.55,59.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Mangletooth|r
-    .aura 16618 >>Si il vous reste 10 [|cRXP_LOOT_Blood Shards|r, utilisez les pour obtenir [L'esprit du vent] à |cRXP_FRIENDLY_Mangletooth|r
+    .aura 16618 >>|cRXP_WARN_Si vous avez 10|r |T134128:0|t[|cRXP_LOOT_Cristaux de sang|r] |cRXP_WARN_restants, utilisez-les pour obtenir|r |T136022:0|t[L'esprit du vent] |cRXP_WARN_de|r |cRXP_FRIENDLY_Mutiledent|r
     >>Passez cette étape si vous pouvez voler jusqu'à Pitons-du-Tonnerre
     .itemcount 5075,10
     .target Mangletooth
@@ -12286,7 +12286,7 @@ step << Rogue
 step << Rogue
     #season 2
     .goto Thunder Bluff,53.00,56.63
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Parlez à|r |cRXP_FRIENDLY_Kard Totem-de-rage|r|cRXP_BUY_. Achetez un ou deux|r |T135342:0|t[Kriss] |cRXP_BUY_à Kard|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Parlez à|r |cRXP_FRIENDLY_Kard|r|cRXP_BUY_. Achetez un ou deux|r |T135342:0|t[Kriss] |cRXP_BUY_auprès de lui|r
     .collect 2209,1,493,1 --Collect Kris (1)
     .money <0.7115
     .target Kard Ragetotem
@@ -12656,7 +12656,7 @@ step
     .dungeon WC
 step
     #optional
-    >>Tuez les |cRXP_ENEMY_Ravageurs déviants|r, les |cRXP_ENEMY_Vipères déviantes|r, les |cRXP_ENEMY_Traînards déviants|r et les |cRXP_ENEMY_Croc-d'effrois déviants|r. Dépouillez-les pour obtenir leur |cRXP_ENEMY_Peaux|r
+    >>Tuez |cRXP_ENEMY_Deviate Ravagers|r, |cRXP_ENEMY_Vipers|r, |cRXP_ENEMY_Shamblers|r et |cRXP_ENEMY_Dreadfangs|r. Récupérez leurs |cRXP_ENEMY_Hides|r . Récupérez leurs |cRXP_ENEMY_Hides|r
     .complete 1487,1 --Deviate Ravager (7)
     .mob +Deviate Ravager
     .complete 1487,2 --Deviate Viper (7)

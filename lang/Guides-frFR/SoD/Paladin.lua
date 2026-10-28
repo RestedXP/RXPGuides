@@ -2120,7 +2120,7 @@ step << Alliance
     .train 410013,1
 step << Alliance
     #completewith next
-    .zone Hillsbrad Foothills >>Voyagez aux Contreforts d'Hillsbrad
+    .zone Hillsbrad Foothills >>Voyagez aux Contreforts de Hautebrande
     .train 410013,1
 step << Alliance
     #loop
@@ -2133,7 +2133,7 @@ step << Alliance
     .complete 81970,4 --1/1 Symbol of Faith
 step << Horde
     #completewith next
-    .zone Hillsbrad Foothills >>Voyagez aux Contreforts d'Hillsbrad
+    .zone Hillsbrad Foothills >>Voyagez aux Contreforts de Hautebrande
     .train 410013,1
 step << Horde
     #loop
@@ -2200,13 +2200,13 @@ step
 step
     .line Eastern Plaguelands,28.6,84.2,33.2,83.0,35.30,82.55,41.19,81.68,45.42,80.68,48.8,79.9,51.5,78.3,55.1,76.4
     >>Cherchez une |cRXP_ENEMY_Goule à gueule béante|r. Tuez-la et |Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Orthas|r, un esprit de nain qui apparaîtra ensuite. Acceptez sa quête
-    >>|cRXP_WARN_La|r |cRXP_ENEMY_Goule à gueule béante|r |cRXP_WARN_patrouille dans la zone au sud de la route entre le caveau de Zaeldarr et la Croisée de Corin|r
+    >>|cRXP_WARN_La|r |cRXP_ENEMY_Goule à gueule béante <Goule grande comme un Nain>|r |cRXP_WARN_patrouille la zone au sud de la route entre l'Undercroft et la Croisée de Corin|r
     .accept 84318 >> Acceptez la quête Ohé !
     .unitscan Slack-Jawed Ghoul
     .target Orthas
 step
     .goto Eastern Plaguelands,61.3,69.3 --Not sure if this is the house or the other one, need more info
-    >>Entrez dans la maison dans la Croisée de Corin. Ramassez le |T133040:0|t[|cRXP_PICK_Marteau de guerre orné|r] |cRXP_WARN_au deuxième étage|r
+    >>Entrez dans la maison à La Croisée de Corin. Ramassez le |T133040:0|t[|cRXP_PICK_Ornate Warhammer|r] |cRXP_WARN_au deuxième étage|r
     .complete 84318,1
 step
     .goto Eastern Plaguelands,61.3,69.3

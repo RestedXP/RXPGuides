@@ -1279,7 +1279,7 @@ step << Priest/Warlock
 step
     #sticky
     #completewith Bonfire
-    +Faites attention si |cRXP_ENEMY_Kolkanis|r est présent, c'est un mob rare de niveau 9. Vous allez peut-être utiliser une [Potion de soins mineure] si vous en avez
+    +Faites attention si |cRXP_ENEMY_Kolkanis|r est présent, c'est un rare de niveau 9. Vous devrez peut-être utiliser une  [Potion de soins mineure] si vous en avez une
     .unitscan Warlord Kolkanis
 step
     >>Brûlez les |cRXP_PICK_Plans d'attaque|r au sol à l'intérieur de la tente
@@ -4162,7 +4162,7 @@ step << Warlock/Mage/Rogue
     .goto Undercity,27.39,30.23,35,0
     .goto Undercity,21.89,43.35,35,0
     .goto Tirisfal Glades,51.10,71.53,50,0
-    .zone Tirisfal Glades >> Sortez de Fossoyeuse par les Égouts
+    .zone Tirisfal Glades >> Quittez Undercity par les Égouts
     .zoneskip Tirisfal Glades
 step << Undead Priest
     #optional
@@ -4175,7 +4175,7 @@ step << Undead Priest
     .goto Undercity,27.39,30.23,35,0
     .goto Undercity,21.89,43.35,35,0
     .goto Tirisfal Glades,51.10,71.53,50,0
-    .zone Tirisfal Glades >> Sortez de Fossoyeuse par les Égouts
+    .zone Tirisfal Glades >> Quittez Undercity par les Égouts
     .zoneskip Tirisfal Glades
 step
     #optional
@@ -5393,7 +5393,7 @@ step
     .goto Undercity,27.39,30.23,35,0
     .goto Undercity,21.89,43.35,35,0
     .goto Tirisfal Glades,51.10,71.53,50,0
-    .zone Tirisfal Glades >> Sortez de Fossoyeuse par les Égouts
+    .zone Tirisfal Glades >> Quittez Undercity par les Égouts
     .zoneskip Tirisfal Glades
     .zoneskip Silverpine Forest
 step

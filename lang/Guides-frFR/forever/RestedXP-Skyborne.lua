@@ -709,7 +709,7 @@ step
     .goto 2521,42.76,24.5
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Uualia Solcrête::251537|r
     .collect 277113,1 >>Achetez une |T133637:0|t[Bourse d’herbes d’apprenti]
-    .macro Buy Herbalism Supplies,133637 >>Achetez les fournitures d'Herboristerie
+    -- .macro Buy Herbalism Supplies,133637 >>/run local t={[277113]=1};local m=C_MerchantFrame;for i=1,(m.GetNumItems or GetMerchantNumItems)()do local k=tonumber(((m.GetItemLink or GetMerchantItemLink)(i)or""):match("item:(%d+)"));if t[k]then BuyMerchantItem(i,t[k]);t[k]=nil end end
     .target Uualia Suncrest::251537
 step
     #completewith Aggressive Encroachment
@@ -718,7 +718,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Uualia Solcrête::251537|r
     .collect 2901,1 >>Achetez une |T134708:0|t[Pioche de mineur]
     .collect 277115,1 >>Achetez un |T133635:0|t[Pack de minage d’apprenti]
-    .macro Buy Mining Supplies,134708 >>Achetez les fournitures de Minage
+    -- .macro Buy Mining Supplies,134708 >>/run local t={[2901]=1,[277115]=1};local m=C_MerchantFrame;for i=1,(m.GetNumItems or GetMerchantNumItems)()do local k=tonumber(((m.GetItemLink or GetMerchantItemLink)(i)or""):match("item:(%d+)"));if t[k]then BuyMerchantItem(i,t[k]);t[k]=nil end end
     .target Uualia Suncrest::251537
 step
     #completewith Aggressive Encroachment
@@ -979,6 +979,11 @@ step
     #hidewindow
     +Position d'apparition possible de Tornade
     #icon |TInterface/Icons/Spell_Nature_Cyclone:0|t
+    .pin 2521,48.14,56.56,Tornado
+    .pin 2521,54.92,44.76,Tornado
+    .pin 2521,39.6,45.11,Tornado
+    .pin 2521,58.55,52.75,Tornado
+    .pin 2521,47.74,69.57,Tornado
     .pin 2521,50.22,76.77,Tornado
     .pin 2521,53.51,71.46,Tornado
     .pin 2521,54.46,60.13,Tornado
@@ -1873,15 +1878,15 @@ step
     .goto 2521,43.073,46.306
     .itemcount 2589,5 -- Linen Cloth
     .money <0.01
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Naleeia Racommode::257018|r.
-    .train 3273 >>Apprenez Premiers soins
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Naleeia Tattermend::257018|r.
+    .train 3273 >>S'entraîner au Secourisme
     .skipgossipid 137555
     .target Naleeia Tattermend::257018
 step << Rogue/Warrior
     .goto 2521,43.073,46.306
     .money <0.01
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Naleeia Tattermend::257018|r.
-    .train 3273 >>S'entraîner au Secourisme
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Naleeia Racommode::257018|r.
+    .train 3273 >>Apprenez Premiers soins
     .skipgossipid 137555
     .target Naleeia Tattermend::257018
 step
@@ -1895,7 +1900,7 @@ step
     .goto 2521,41.67,44.79
     >>Cliquez sur la macro dans le cadre des Objets actifs pour vous asseoir.
     .complete 96101,1 --1/1 Use the /sit emote near the campfire
-    .macro Sit,134400 >>Asseyez-vous 
+    .macro Sit,134400 >>Asseyez-vous
     .timer 59,Temps jusqu'à la fin 1
 step << Alliance
     .aura -1289723
@@ -1941,7 +1946,7 @@ step
     *|cRXP_WARN_Ne vous déplacez pas et ne sautez pas jusqu'à ce que la quête soit terminée|r.
     .complete 96101,2 --Gain the Boosted Rest buff
     .timer 59,Temps jusqu'à la fin 2
-    .macro Sit,134400 >>Asseyez-vous 
+    .macro Sit,134400 >>Asseyez-vous
 step << Alliance
     .train 3273,3 -- First Aid Trained
     .itemcount 2589,1 -- Linen Cloth
@@ -3226,6 +3231,11 @@ step
     #hidewindow
     +Position d'apparition possible de Tornade
     #icon |TInterface/Icons/Spell_Nature_Cyclone:0|t
+    .pin 2521,48.14,56.56,Tornado
+    .pin 2521,39.6,45.11,Tornado
+    .pin 2521,54.92,44.76,Tornado
+    .pin 2521,58.55,52.75,Tornado
+    .pin 2521,47.74,69.57,Tornado
     .pin 2521,50.22,76.77,Tornado
     .pin 2521,53.51,71.46,Tornado
     .pin 2521,54.46,60.13,Tornado
@@ -3383,7 +3393,7 @@ step << Alliance Shaman/Alliance Druid
     .isQuestAvailable 92679 --Blood Tithe
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.48
     .goto 2521,59.395,75.730
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Falfaan Demivent::271465|r dans la maison.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Falfaan Halfwind::271465|r à l'intérieur de la maison.
     >>|cRXP_BUY_Achetez et équipez un|r |T7798447:0|t[Grand bâton zéphrali].
     .collect 277109,1 --Zephrali Greatstaff
     .skipgossipid 141556
@@ -3402,7 +3412,7 @@ step << Alliance Rogue
     .isQuestAvailable 92679 --Blood Tithe
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.35
     .goto 2521,59.395,75.730
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Falfaan Halfwind::271465|r à l'intérieur de la maison.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Falfaan Demivent::271465|r dans la maison.
     >>|cRXP_BUY_Achetez et équipez un|r |T7791298:0|t[Gourdin zéphrali].
     .collect 277107,1 --Zephrali Bludgeon
     .vendor 271465 >>Vendez les rebuts et réparez si nécessaire.
@@ -3673,7 +3683,6 @@ step << Alliance
     .goto 2521,51.16,67.53,20,0
     .goto 2521,51.31,68.99,25 >>Quittez la grotte
 step << Alliance
-    #optional
     #completewith FindAameliaWindfieldA
     >>Tuez les |cRXP_ENEMY_Clampant chantevent::254588|r. Dépouillez-les pour la |T133972:0|t[|cRXP_LOOT_Viande de clampant chantevent|r].
     .complete 93317,1 --6/6 Windsong Crawler Meat
@@ -3725,7 +3734,6 @@ step << Horde
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Endaria Mistgaze::254344|r.
 --     .accept 93736 >>Accept Unwelcome Spirits
 --     .target Endaria Mistgaze::254344
-
 step << Horde Hunter
     .xp <9,1
     .money <0.1345
@@ -3815,7 +3823,6 @@ step << Horde Rogue
     .itemcount 277107,1 --Zephrali Bludgeon
     +|cRXP_WARN_Équipez|r |T7791298:0|t[Gourdin zéphrali].
     .use 277107 --Zephrali Bludgeon
-
 step << Horde
     .train 2366,3 -- Herbalism Trained
     .isQuestComplete 97968 -- Camping 101: Herbalism
@@ -3895,9 +3902,8 @@ step << Horde
 step
     #requires BrokenConstructB << Horde
     #label FindAameliaWindfieldA
-    #loop
-    .goto 2521,46.71,81.94,30,0
-    .goto 2521,47.511,78.490,10,0
+    .goto 2521,46.71,81.94
+    --fix loop later
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Aamelia Champ-des-Vents::252800|r.
     *|cRXP_WARN_Elle peut se déplacer entre les emplacements lors d'une séquence de jeu de rôle|r.
     *|cRXP_WARN_Cherchez-la à distance ou suivez son dialogue ; la flèche marque uniquement une position approximative|r.
@@ -3906,9 +3912,8 @@ step
     .complete 92679,1 --1/1 Find Aamelia Windfield
     .target Aamelia Windfield::252800
 step
-    #loop
-    .goto 2521,46.71,81.94,30,0
-    .goto 2521,47.511,78.490,10,0
+    --fix loop later
+    .goto 2521,46.71,81.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Aamelia Champ-des-Vents::252800|r.
     *|cRXP_WARN_Elle peut se déplacer entre les emplacements lors d'une séquence de jeu de rôle|r.
     *|cRXP_WARN_Cherchez-la à distance ou suivez son dialogue ; la flèche marque uniquement une position approximative|r.
@@ -3917,7 +3922,6 @@ step
     .accept 92684 >>Acceptez la quête Trotteurs gloutons
     .accept 92683 >>Acceptez la quête Poussière de voltemouche
     .target Aamelia Windfield::252800
-
 -- step << Alliance
 --     .isOnQuest 92682 -- Make Yourself Useful
 --     .isQuestNotComplete 92682 -- Make Yourself Useful
@@ -3928,9 +3932,12 @@ step
 --     .usespell 1259705
 step
     -- #label RipBanditsA
-    #loop
-    .goto 2521,46.164,78.043,30,0
-    .goto 2521,48.920,84.441,30,0
+    --fix loop later
+    -- #loop
+    -- .goto 2521,46.92,81.63,30,0
+    -- .goto 2521,48.08,80.63,30,0
+    -- .goto 2521,47.43,79.26,30,0
+    .goto 2521,46.26,78.04
     >>|TInterface/cursor/crosshair/interact.blp:20|tCliquez sur les |cRXP_PICK_Ripe Stormapples|r.
     >>Tuez les |cRXP_ENEMY_Bandits affamés::252802|r |cRXP_WARN_(camouflés)|r.
     *Conseils pour Chasseur: Spammez Tab pour les cibler rapidement, utilisez Marque du chasseur sur eux pour pouvoir vous éloigner et les attaquer en restant à distance. << Hunter
@@ -4498,7 +4505,7 @@ step << Horde Druid
 step << Horde Druid
     .goto 2521,63.983,75.093
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Lotheluum Brise-Stellaire::252359|r.
-    .accept 94006 >>Acceptez la quête The Great Ursera Esprit
+    .accept 94006 >>Acceptez la quête Le grand esprit ursera
     .target Lotheluum Starbreeze::252359
 step << Alliance Druid
     .xp <10,1
@@ -4512,7 +4519,7 @@ step << Alliance Druid
     .xp <10,1
     .goto 2521,63.983,75.093
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Lotheluum Brise-Stellaire::252359|r.
-    .accept 94006 >>Acceptez la quête Le grand esprit ursera
+    .accept 94006 >>Acceptez la quête The Great Ursera Esprit
     .target Lotheluum Starbreeze::252359
 step << Druid
     .money <0.12
@@ -4659,7 +4666,7 @@ step << Horde Hunter
     >>|cRXP_WARN_Lancez|r |T132164:0|t[Apprivoise une bête] |cRXP_WARN_sur un|cRXP_ENEMY_ Windsong Clampant::254588|r pour l'apprivoiser|r -- .tame 1997
     *|cRXP_WARN_NOTE :|r Si tous les crabes sont morts, alors vous pouvez aussi apprivoiser un |cRXP_ENEMY_Ornery Galestrider::251707|r jusqu'à ce que vous trouviez un crabe.
     .train 2981 >> Attaquez des mobs avec celui-ci pour qu'il apprenne [Claw (Rank 2)]
-    .link https://www.wow-petopia.com/classic/training.php >> Cliquez ici pour plus d'information sur le dressage des familiers
+    .link https://www.wow-petopia.com/classic/training.php >> |cRXP_WARN_Cliquez ici pour plus d'information sur le dressage des familiers|r
 	.mob Windsong Crawler::254588
 
 -- ============================================================================
@@ -4866,7 +4873,7 @@ step << Alliance Hunter
     >>|cRXP_WARN_Lancez|r |T132164:0|t[Apprivoise une bête] |cRXP_WARN_sur un |cRXP_ENEMY_Clampant chantevent::254588|r pour le dompter|r -- .tame 1997
     *|cRXP_WARN_NOTE:|r Si tous les crabes sont morts, vous pouvez aussi dompter un |cRXP_ENEMY_Trotteur des trombes hargneux::251707|r jusqu'à ce que vous trouviez un crabe.
     .train 2981 >> Attaquez des mobs avec celui-ci pour qu'il apprenne [Claw (Rank 2)]
-    .link https://www.wow-petopia.com/classic/training.php >> Cliquez ici pour plus d'information sur le dressage des familiers
+    .link https://www.wow-petopia.com/classic/training.php >> |cRXP_WARN_Cliquez ici pour plus d'information sur le dressage des familiers|r
 	.mob Windsong Crawler::254588
 step << Mage
     #label SkyhopperMultiClass
@@ -5333,9 +5340,9 @@ step << Alliance Druid
 step << Alliance
     .goto 2521,69.61,67.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Yorana Roseauvent::252378|r.
-    .turnin 92645,1 >>Rendez la quête Briser la Briseuse << Rogue/Hunter/Druid/Shaman
+    .turnin 92645,1 >>Rendez la quête Briser le Briseur << Rogue/Hunter/Druid/Shaman
     .turnin 92645,2 >>Rendez la quête Briser le Briseur << Mage/Priest/Warlock
-    .turnin 92645,3 >>Rendez la quête Briser le Briseur << Warrior/Paladin
+    .turnin 92645,3 >>Rendez la quête Briser la Briseuse << Warrior/Paladin
     .turnin 92642 >>Rendez la quête Perturbation logistique
     .accept 92880 >>Acceptez la quête Retour à Valanaar
     .target Yorana Windyreed::252378
@@ -5694,7 +5701,7 @@ step << Alliance Druid
     .goto 2521,52.49,57.3,35,0
     .goto 2521,53.55,55.55,35,0
     .goto 2521,54.3,57.94,35,0
-    >>Tuez les |cRXP_ENEMY_Clampant chantevent::254588|r. Dépouillez-les pour la |T133972:0|t[|cRXP_LOOT_Viande de clampant chantevent|r].
+    >>Tuez |cRXP_ENEMY_Windsong Crawlers::254588|r. Pillez-les pour obtenir |T133972:0|t[|cRXP_LOOT_Windsong Clampant Viande|r].
     .complete 93317,1 --6/6 Windsong Crawler Meat
     .mob Windsong Crawler::254588
 step << Alliance
@@ -5706,7 +5713,7 @@ step << Alliance
     .goto 2521,52.49,57.3,35,0
     .goto 2521,53.55,55.55,35,0
     .goto 2521,54.3,57.94,35,0
-    >>Tuez |cRXP_ENEMY_Windsong Crawlers::254588|r. Pillez-les pour obtenir |T133972:0|t[|cRXP_LOOT_Windsong Clampant Viande|r].
+    >>Tuez les |cRXP_ENEMY_Clampant chantevent::254588|r. Dépouillez-les pour la |T133972:0|t[|cRXP_LOOT_Viande de clampant chantevent|r].
     .complete 93317,1 --6/6 Windsong Crawler Meat
     .mob Windsong Crawler::254588
 
@@ -6034,7 +6041,7 @@ step << Horde
     .goto 2521,53.97,38.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à l' |cRXP_FRIENDLY_Ermite étrange::251684|r.
     .turnin 93160 >>Rendez la quête Les richesses de la forêt
-    .turnin 93172,1 >>Rendez la quête Libérez les creux << Rogue/Hunter/Druid/Shaman
+    .turnin 93172,1 >>Rendez la quête Libre the Hollows << Rogue/Hunter/Druid/Shaman
     .turnin 93172,2 >>Rendez la quête Libérez les creux << Mage/Priest/Warlock
     .turnin 93172,3 >>Rendez la quête Libre the Hollows << Warrior/Paladin
     .target Strange Hermit::251684
@@ -6053,7 +6060,7 @@ step << Alliance
     .turnin 93160 >>Rendez la quête Les richesses de la forêt
     .turnin 93172,1 >>Rendez la quête Libre the Hollows << Rogue/Hunter/Druid/Shaman
     .turnin 93172,2 >>Rendez la quête Libre the Hollows << Mage/Priest/Warlock
-    .turnin 93172,3 >>Rendez la quête Libre the Hollows << Warrior/Paladin
+    .turnin 93172,3 >>Rendez la quête Libérez les creux << Warrior/Paladin
     .target Strange Hermit::251684
 step
     .train 4036,3 -- Engineering Trained
@@ -6143,9 +6150,9 @@ step
     .goto 2521,63.75,36.44,30,0
     .goto 2521,63.80,36.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Vayn Mirelune::254151|r à l'entrée de la grotte.
-    .turnin 93165,1 >>Rendez la quête La miséricorde tombe dans l’oreille d’un sourd << Rogue/Hunter/Druid/Shaman
+    .turnin 93165,1 >>Rendez la quête Miséricorde Falls on Deaf Piercings << Rogue/Hunter/Druid/Shaman
     .turnin 93165,2 >>Rendez la quête Miséricorde Falls on Deaf Piercings << Mage/Priest/Warlock
-    .turnin 93165,3 >>Rendez la quête Miséricorde Falls on Deaf Piercings << Warrior/Paladin
+    .turnin 93165,3 >>Rendez la quête La miséricorde tombe dans l’oreille d’un sourd << Warrior/Paladin
     .target Vayn Moongaze::254151
 step
     .goto 2521,63.93,33.76,20,0
@@ -6321,9 +6328,9 @@ step << Horde
     #optional
     .isQuestComplete 94896
     .goto 2521,65.95,74.31
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Ealaane Foulenimbus::259012|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Ealaane Nimbuswalker::259012|r.
     .turnin 94896 >>Rendez la quête Un coup de main pour les réfugiés
-    .turnin 94897 >>Rendez la quête Le sort de l’être aimé
+    .turnin 94897 >>Rendez la quête The Destin of a Être aimé Un
     .target Ealaane Nimbuswalker::259012
 step << Horde
     .goto 2521,65.95,74.31
@@ -6335,18 +6342,18 @@ step << Horde
     .abandon 94896 >>Abandonnez la quête Assister For The Refugees
 step << Alliance
     .goto 2521,65.95,74.31
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Ealaane Nimbuswalker::259012|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Ealaane Foulenimbus::259012|r.
     .turnin 94896 >>Rendez la quête Assister For The Refugees
-    .turnin 94897 >>Rendez la quête The Destin of a Être aimé Un
+    .turnin 94897 >>Rendez la quête Le sort de l’être aimé
     .target Ealaane Nimbuswalker::259012
 step << Alliance
     #optional
     #completewith next
     #label Unfortunate News
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Talaanis Chantelombre::252476|r.
-    .turnin 92644,1 >>Rendez la quête Des nouvelles regrettables << Rogue/Hunter/Druid/Shaman
+    .turnin 92644,1 >>Rendez la quête Unfortunate Actus << Rogue/Hunter/Druid/Shaman
     .turnin 92644,2 >>Rendez la quête Des nouvelles regrettables << Mage/Priest/Warlock
-    .turnin 92644,3 >>Rendez la quête Unfortunate Actus << Warrior/Paladin
+    .turnin 92644,3 >>Rendez la quête Des nouvelles regrettables << Warrior/Paladin
     .accept 94568 >>Acceptez la quête Le véritable objectif de la secte
     .disablecheckbox
     .target Talaanis Shadowsong::252476
@@ -6433,17 +6440,17 @@ step << Alliance
     .target Iaadaria Bitterwind::253004
 step << Alliance
     .goto 2521,66.54,79.89
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Elaadrin Trombecalme::252475|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Elaadrin Evengale::252475|r.
     .complete 92640,3 --1/1 Recruit the High Order
     .skipgossipid 136547
     .skipgossipid 136546
     .target Elaadrin Evengale::252475
 step << Alliance
     .goto 2521,66.628,79.936
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Elaadrin Evengale::252475|r.
-    .turnin 92834,1 >>Rendez la quête Rendre au centuple << Rogue/Hunter/Druid/Shaman
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Elaadrin Trombecalme::252475|r.
+    .turnin 92834,1 >>Rendez la quête Avenged Tenfold << Rogue/Hunter/Druid/Shaman
     .turnin 92834,2 >>Rendez la quête Avenged Tenfold << Mage/Priest/Warlock
-    .turnin 92834,3 >>Rendez la quête Avenged Tenfold << Warrior/Paladin
+    .turnin 92834,3 >>Rendez la quête Rendre au centuple << Warrior/Paladin
     .turnin -92709 >>Rendez la quête Une grande aventure
     .target Elaadrin Evengale::252475
 step << Alliance Mage
@@ -7117,14 +7124,14 @@ step << Horde
     #optional
     .isQuestComplete 93737 -- The Broken Construct
     .goto 2521,59.066,72.987
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Riaani Ventenuit::256083|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Riaani Nightwind::256083|r.
     .turnin 93737 >>Rendez la quête L’assemblage brisé
     .target Riaani Nightwind::256083
 step << Horde
     #optional
     .isQuestTurnedIn 93737 -- The Broken Construct
     .goto 2521,59.066,72.987
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Riaani Nightwind::256083|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Riaani Ventenuit::256083|r.
     .accept 93738 >>Acceptez la quête L’assemblage brisé
     .target Riaani Nightwind::256083
 -- step << Horde
@@ -7369,7 +7376,17 @@ step << Horde
     --.accept 93739 >>Accept Exploring the Horde
     --.accept 5726 >>Accept Hidden Enemies
     .target Thrall::4949
+    .dungeon !RFC
     --93739 will take too long, won't be able to fully complete and turnin until lvl 22/23 and at that point you get no xp
+step << Horde
+    .goto 1454/1,-4126.300,1920.100
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Thrall::4949|r.
+    .turnin 95350 >>Rendez la quête Bienvenue à Azeroth
+    .accept 98024 >>Acceptez la quête Un voyage à la Croisée
+    --.accept 93739 >>Accept Exploring the Horde
+    .accept 5726 >>Acceptez la quête Ennemis cachés
+    .target Thrall::4949
+    .dungeon RFC
 step << skip --Horde
     .goto 1454/1,-4133.400,1938.600
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Nazgrel::3230|r.
@@ -7429,9 +7446,6 @@ step << Horde Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Pephredo::5882|r
     .train 1449 >> Apprenez vos sorts de classe
     .target Pephredo::5882
-step << !Hunter
-    #optional
-    .maxlevel 13,Silverpineskip
 step << Horde
     #completewith next
     .zone Durotar >> Quittez Orgrimmar
@@ -7538,13 +7552,10 @@ step << Horde !Hunter
     .goto 1458/0,610.42,1684.44,35,0
     .goto 1458/0,663.19,1600.46,35,0
     .goto 1420/0,724.25,1682.66,50,0
-    .zone Tirisfal Glades >> Sortez de Fossoyeuse par les Égouts
+    .zone Tirisfal Glades >> Quittez Undercity par les Égouts
 step << Horde !Hunter
     #label Entersilverpine
     .zoneskip Silverpine Forest
     .goto 1420/0,629.36,1553.42
     .zone Silverpine Forest >> Voyagez à la Forêt des Pins argentés
-step << !Hunter
-    #optional
-    #label Silverpineskip
 ]])

@@ -7,7 +7,8 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Guides Endgame
 #subgroup Accès
 #name Accès au Repaire d'Onyxia (A)
-
+#guideKind attunement
+#guideIcon rxp-icon-ony
 
 step
     #completewith next
@@ -336,6 +337,7 @@ step
     .target Haleh
 
 ]])
+
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
@@ -344,6 +346,8 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Guides Endgame
 #subgroup Accès
 #name Accès au Repaire d'Onyxia (H)
+#guideKind attunement
+#guideIcon rxp-icon-ony
 
 step
     #completewith next
@@ -785,8 +789,6 @@ step
 
 ]])
 
-
-
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
@@ -794,6 +796,8 @@ RXPGuides.RegisterGuide([[
 #subgroup Accès
 #group RestedXP Guides Endgame
 #name Accès pour le Cœur du Magma
+#guideKind attunement
+#guideIcon rxp-icon-mc
 
 step
     #completewith next
@@ -831,8 +835,6 @@ step
 
 ]])
 
-
-
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
@@ -840,6 +842,8 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Guides Endgame
 #subgroup Accès
 #name Accès au Repaire de l'Aile noire
+#guideKind attunement
+#guideIcon rxp-icon-bwl
 
 step
     #completewith next
@@ -876,8 +880,6 @@ step
 
 ]])
 
-
-
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
@@ -885,6 +887,8 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Guides Endgame
 #subgroup Clés
 #name Clé du Sommet du pic Rochenoire
+#guideKind key
+#guideIcon rxp-icon-ring
 
 step
     #completewith next
@@ -967,8 +971,6 @@ step
 
 ]])
 
-
-
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
@@ -977,6 +979,8 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Guides Endgame
 #subgroup Clés
 #name La clé de Scholomance (A)
+#guideKind key
+#guideIcon rxp-icon-key-2
 
 step
     #sticky
@@ -1226,8 +1230,6 @@ step
 
 ]])
 
-
-
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
@@ -1236,7 +1238,8 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Guides Endgame
 #subgroup Clés
 #name La clé de Scholomance (H)
-
+#guideKind key
+#guideIcon rxp-icon-key-2
 
 step
     #sticky
@@ -1328,8 +1331,8 @@ step
     .isQuestTurnedIn 5095
 step
     .goto Western Plaguelands,40.5,51.8
-    .use 12807 >>Cliquez sur la|cRXP_PICK_Command Tent|r, puis utilisez votre [Bannière du Fléau]
-	>>|cRXP_WARN_Ces créatures sont assez difficiles à tuer et peuvent chain-pull, faites attention|r
+    .use 12807 >>Cliquez sur la|cRXP_PICK_Command Tent|r, puis utilisez votre |T132484:0|t[Scourge Banner]
+	>>Ces créatures sont assez difficiles à tuer et peuvent chain-pull, faites attention
     .complete 5096,1 --Destroy the command tent and plant the Scourge banner in the camp (1)
 step
     .goto Tirisfal Glades,83.15,68.92
@@ -1492,7 +1495,8 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Guides Endgame
 #subgroup Clés
 #name La clé des Profondeurs de Rochenoire
-
+#guideKind key
+#guideIcon rxp-icon-key-3
 
 step
     #completewith next
@@ -1546,8 +1550,7 @@ step
     .turnin 3802 >> Rendez la quête Héritage Sombrefer
     .isQuestComplete 3802
 
-    ]])
-
+]])
 
 RXPGuides.RegisterGuide([[
 #classic
@@ -1556,6 +1559,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Guides Endgame
 #subgroup Clés
 #name Clé de Hache-Tripes
+#guideKind key
 
 step
     #completewith next
@@ -1584,6 +1588,7 @@ RXPGuides.RegisterGuide([[
 
 #group RestedXP Guides Endgame
 #name Accès à Naxxramas
+#guideKind attunement
 #subgroup Accès
 
 step
@@ -1650,13 +1655,13 @@ step
 
 ]])
 
-
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
 
 #group RestedXP Guides Endgame
 #name Accès du Canyon de la Malechute
+#guideKind attunement
 #subgroup Accès
 <<sod
 

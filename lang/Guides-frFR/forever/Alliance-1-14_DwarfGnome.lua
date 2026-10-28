@@ -157,6 +157,11 @@ step
     .target Sten Stoutarm
 
 step << Warlock
+    .goto 1426,25.077,75.711
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Grelin Whitebeard|r
+    .accept 182 >> Acceptez la quête La caverne des trolls
+    .target Grelin Whitebeard
+step << Warlock
     #season 0,1
     #optional
     #requires FrostmaneC1
@@ -209,6 +214,7 @@ step << Warlock
     #label BeginningsHS
     #completewith BeginningsEnd
     .deathskip >> Mourez et ressuscitez au |cRXP_FRIENDLY_Gardien des âmes|r
+    >>|cRXP_WARN_Assurez-vous que votre sous-zone est Vallée des Frigères quand vous mourez! Sinon, vous serez envoyé au cimetière de Kharanos|r
     .target Gardien des âmes
 step << Warlock
     #season 0,1
@@ -281,7 +287,7 @@ step
     .goto 1426,25.077,75.711
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Grelin Whitebeard|r
     .turnin 234 >> Rendez la quête La distribution du courrier de la Vallée des Frigères
-    .accept 182 >> Acceptez la quête La caverne des trolls
+    .accept 182 >> Acceptez la quête La caverne des trolls << !Warlock
     .target Grelin Whitebeard
 step << Hunter
     #completewith next
@@ -1336,7 +1342,7 @@ step
     #optional
     .goto 1426/0,-531.23,-5601.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Belm l'aubergiste|r dans l'auberge
-    >>|cRXP_BUY_Achetez-lui une|r |T132800:0|t[Bière au malt Rhapsody] |cRXP_BUY_et une|r |T132800:0|t[Thunder Ale] |cRXP_BUY_|r
+    >>|cRXP_BUY_Buy a|r |T132800:0|t[Rhapsody Malt] |cRXP_BUY_and a|r |T132800:0|t[Thunder Ale] |cRXP_BUY_from him|r
     .complete 384,2 --Collect Rhapsody Malt (x1)
     .collect 2686,1,311 --Collect Thunder Ale (x1)
     .target Innkeeper Belm
@@ -2802,7 +2808,7 @@ step << Warlock
     #completewith next
     +|cRXP_WARN_Lancez|r |T136126:0|t[Connexion] |cRXP_WARN_en boucle jusqu'à avoir moins de 10% de vie en vous dirigeant vers|r |cRXP_FRIENDLY_Dungar Longdrink|r
 step
-    .goto 1453/0,490.03,-8835.82
+    .goto 1453/0,484.200,-8832.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Dungar Longdrink|r
     .fp Stormwind >> Apprenez le chemin de vol de Hurlevent
     .target Dungar Longdrink

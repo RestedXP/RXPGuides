@@ -969,7 +969,7 @@ step
     .xp <25,1
 step
     #completewith next
-    .zone Hillsbrad Foothills >>Voyagez aux Contreforts d'Hillsbrad
+    .zone Hillsbrad Foothills >>Voyagez aux Contreforts de Hautebrande
     .train 410095,1
     .xp <25,1
 step
@@ -1036,7 +1036,7 @@ step
     .xp >25,1
 step
     #completewith next
-    .zone Hillsbrad Foothills >>Voyagez aux Contreforts d'Hillsbrad
+    .zone Hillsbrad Foothills >>Voyagez aux Contreforts de Hautebrande
     .train 410095,1
 step
     #loop

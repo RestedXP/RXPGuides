@@ -2892,7 +2892,7 @@ step
     .collect 223147,1 --Spell Notes: Balefire Bolt
     .mob Fel Interloper
 step
-    .train 429311 >>|cRXP_WARN_Utilisez les|r |T134939:0|t[|cRXP_FRIENDLY_Notes de sort : Trait de bûcher|r] |cRXP_WARN_pour apprendre|r |T135809:0|t[Trait de bûcher]
+    .train 429311 >>|cRXP_WARN_Utilisez|r les |T134939:0|t[|cRXP_FRIENDLY_Sorts Notes: Trait de bûcher|r] |cRXP_WARN_pour entraîner|r le |T135809:0|t[Trait de bûcher]
     .use 223147
 ]])
 
@@ -2945,7 +2945,7 @@ step
     .collect 223147,1 --Spell Notes: Balefire Bolt
     .mob Fel Interloper
 step
-    .train 429311 >>|cRXP_WARN_Utilisez les|r |T134939:0|t[|cRXP_FRIENDLY_Notes de sort : Trait de bûcher|r] |cRXP_WARN_pour apprendre|r |T135809:0|t[Trait de bûcher]
+    .train 429311 >>|cRXP_WARN_Utilisez le|r |T134939:0|t[|cRXP_FRIENDLY_Notes de sort : Trait de bûcher|r] |cRXP_WARN_pour entraîner|r |T135809:0|t[Trait de bûcher.]
     .use 223147
 ]])
 
@@ -2998,7 +2998,7 @@ step
     .collect 223147,1 --Spell Notes: Balefire Bolt
     .mob Fel Interloper
 step
-    .train 429311 >>|cRXP_WARN_Utilisez les|r |T134939:0|t[|cRXP_FRIENDLY_Notes de sort : Trait de bûcher|r] |cRXP_WARN_pour apprendre|r |T135809:0|t[Trait de bûcher]
+    .train 429311 >>|cRXP_WARN_Utilisez le|r |T134939:0|t[|cRXP_FRIENDLY_Notes de sort : Trait de bûcher|r] |cRXP_WARN_pour entraîner|r |T135809:0|t[Trait de bûcher.]
     .use 223147
 ]])
 
@@ -3049,7 +3049,7 @@ step
     .collect 223147,1 --Spell Notes: Balefire Bolt
     .mob Fel Interloper
 step
-    .train 429311 >>|cRXP_WARN_Utilisez les|r |T134939:0|t[|cRXP_FRIENDLY_Notes de sort : Trait de bûcher|r] |cRXP_WARN_pour apprendre|r |T135809:0|t[Trait de bûcher]
+    .train 429311 >>|cRXP_WARN_Utilisez le|r |T134939:0|t[|cRXP_FRIENDLY_Notes de sort : Trait de bûcher|r] |cRXP_WARN_pour entraîner|r |T135809:0|t[Trait de bûcher.]
     .use 223147
 ]])
 
@@ -3100,7 +3100,7 @@ step
     .collect 223147,1 --Spell Notes: Balefire Bolt
     .mob Fel Interloper
 step
-    .train 429311 >>|cRXP_WARN_Utilisez les|r |T134939:0|t[|cRXP_FRIENDLY_Notes de sort : Trait de bûcher|r] |cRXP_WARN_pour apprendre|r |T135809:0|t[Trait de bûcher]
+    .train 429311 >>|cRXP_WARN_Utilisez le|r |T134939:0|t[|cRXP_FRIENDLY_Notes de sort : Trait de bûcher|r] |cRXP_WARN_pour entraîner|r |T135809:0|t[Trait de bûcher.]
     .use 223147
 ]])
 
@@ -3159,7 +3159,7 @@ step
     .collect 223147,1 --Spell Notes: Balefire Bolt
     .mob Fel Interloper
 step
-    .train 429311 >>|cRXP_WARN_Utilisez les|r |T134939:0|t[|cRXP_FRIENDLY_Notes de sort : Trait de bûcher|r] |cRXP_WARN_pour apprendre|r |T135809:0|t[Trait de bûcher]
+    .train 429311 >>|cRXP_WARN_Utilisez le|r |T134939:0|t[|cRXP_FRIENDLY_Notes de sort : Trait de bûcher|r] |cRXP_WARN_pour entraîner|r |T135809:0|t[Trait de bûcher.]
     .use 223147
 ]])
 
@@ -3210,7 +3210,7 @@ step
     .collect 223147,1 --Spell Notes: Balefire Bolt
     .mob Fel Interloper
 step
-    .train 429311 >>|cRXP_WARN_Utilisez les|r |T134939:0|t[|cRXP_FRIENDLY_Notes de sort : Trait de bûcher|r] |cRXP_WARN_pour apprendre|r |T135809:0|t[Trait de bûcher]
+    .train 429311 >>|cRXP_WARN_Utilisez le|r |T134939:0|t[|cRXP_FRIENDLY_Notes de sort : Trait de bûcher|r] |cRXP_WARN_pour entraîner|r |T135809:0|t[Trait de bûcher.]
     .use 223147
 ]])
 
@@ -3261,7 +3261,7 @@ step
     .collect 223147,1 --Spell Notes: Balefire Bolt
     .mob Fel Interloper
 step
-    .train 429311 >>|cRXP_WARN_Utilisez les|r |T134939:0|t[|cRXP_FRIENDLY_Notes de sort : Trait de bûcher|r] |cRXP_WARN_pour apprendre|r |T135809:0|t[Trait de bûcher]
+    .train 429311 >>|cRXP_WARN_Utilisez le|r |T134939:0|t[|cRXP_FRIENDLY_Notes de sort : Trait de bûcher|r] |cRXP_WARN_pour entraîner|r |T135809:0|t[Trait de bûcher.]
     .use 223147
 ]])
 
@@ -3325,7 +3325,7 @@ step
     .collect 223147,1 --Spell Notes: Balefire Bolt
     .mob Fel Interloper
 step
-    .train 429311 >>|cRXP_WARN_Utilisez les|r |T134939:0|t[|cRXP_FRIENDLY_Notes de sort : Trait de bûcher|r] |cRXP_WARN_pour apprendre|r |T135809:0|t[Trait de bûcher]
+    .train 429311 >>|cRXP_WARN_Utilisez le|r |T134939:0|t[|cRXP_FRIENDLY_Notes de sort : Trait de bûcher|r] |cRXP_WARN_pour entraîner|r |T135809:0|t[Trait de bûcher.]
     .use 223147
 ]])
 
@@ -3375,7 +3375,7 @@ step
     .collect 223147,1 --Spell Notes: Balefire Bolt
     .mob Fel Interloper
 step
-    .train 429311 >>|cRXP_WARN_Utilisez les|r |T134939:0|t[|cRXP_FRIENDLY_Notes de sort : Trait de bûcher|r] |cRXP_WARN_pour apprendre|r |T135809:0|t[Trait de bûcher]
+    .train 429311 >>|cRXP_WARN_Utilisez le|r |T134939:0|t[|cRXP_FRIENDLY_Notes de sort : Trait de bûcher|r] |cRXP_WARN_pour entraîner|r |T135809:0|t[Trait de bûcher.]
     .use 223147
 ]])
 

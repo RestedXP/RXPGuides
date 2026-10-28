@@ -1803,7 +1803,7 @@ step
     #sticky
     #xprate <1.5
     #completewith Bonfire
-    +Faites attention si |cRXP_ENEMY_Kolkanis|r est présent, c'est un mob rare de niveau 9. Vous allez peut-être utiliser une [Potion de soins mineure] si vous en avez
+    +Faites attention si |cRXP_ENEMY_Kolkanis|r est présent, c'est un rare de niveau 9. Vous devrez peut-être utiliser une  [Potion de soins mineure] si vous en avez une
     .unitscan Warlord Kolkanis
 step << Warrior
     #xprate <1.5
@@ -3681,7 +3681,7 @@ step << Hunter
     .target Orgnil Soulscar
 step << !Hunter
     #xprate <1.5
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|r |cRXP_FRIENDLY_Torka|r, |cRXP_FRIENDLY_Orgnil|r et |cRXP_FRIENDLY_Gar'Thok|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|r |cRXP_FRIENDLY_Torka|r, à |cRXP_FRIENDLY_Orgnil|r et à |cRXP_FRIENDLY_Gar'Thok|r
     .turnin 815 >>Rendez la quête Des œufs pour l'omelette
     .target +Cook Torka
     .goto Durotar,51.12,42.46
@@ -5802,7 +5802,7 @@ step << Warlock/Mage/Rogue
     .goto Undercity,27.39,30.23,35,0
     .goto Undercity,21.89,43.35,35,0
     .goto Tirisfal Glades,51.10,71.53,50,0
-    .zone Tirisfal Glades >> Sortez de Fossoyeuse par les Égouts
+    .zone Tirisfal Glades >> Quittez Undercity par les Égouts
     .zoneskip Tirisfal Glades
 step << Undead Priest
     #optional
@@ -5815,7 +5815,7 @@ step << Undead Priest
     .goto Undercity,27.39,30.23,35,0
     .goto Undercity,21.89,43.35,35,0
     .goto Tirisfal Glades,51.10,71.53,50,0
-    .zone Tirisfal Glades >> Sortez de Fossoyeuse par les Égouts
+    .zone Tirisfal Glades >> Quittez Undercity par les Égouts
     .zoneskip Tirisfal Glades
 step
     #optional
@@ -6988,7 +6988,7 @@ step
     .goto Undercity,27.39,30.23,35,0
     .goto Undercity,21.89,43.35,35,0
     .goto Tirisfal Glades,51.10,71.53,50,0
-    .zone Tirisfal Glades >> Sortez de Fossoyeuse par les Égouts
+    .zone Tirisfal Glades >> Quittez Undercity par les Égouts
     .zoneskip Tirisfal Glades
 step
     #label Entersilverpine

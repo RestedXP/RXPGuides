@@ -1743,7 +1743,7 @@ step << Shaman/Druid
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.4
 step << Warrior
     .goto The Barrens,51.24,29.15
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Parlez à|r |cRXP_FRIENDLY_Nargal|r|cRXP_BUY_. Achetez une|r |T133477:0|t[Masse géante] |cRXP_BUY_à Nargal|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Parlez à|r |cRXP_FRIENDLY_Nargal|r|cRXP_BUY_. Achetez une|r [Masse géante] |cRXP_BUY_à Nargal|r
     .collect 1197,1,784,1 --Collect Giant Mace (1)
     .money <0.2666
     .target Nargal Deatheye
@@ -2190,7 +2190,7 @@ step
     .complete 837,4 --Razormane Battleguard (4)
     .mob +Razormane Battleguard
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|r |cRXP_FRIENDLY_Torka|r, |cRXP_FRIENDLY_Orgnil|r et |cRXP_FRIENDLY_Gar'Thok|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|r |cRXP_FRIENDLY_Torka|r, à |cRXP_FRIENDLY_Orgnil|r et à |cRXP_FRIENDLY_Gar'Thok|r
     .turnin 815 >>Rendez la quête Des œufs pour l'omelette
     .target +Cook Torka
     .goto Durotar,51.12,42.46
@@ -2206,7 +2206,7 @@ step
     .goto Durotar,51.95,43.50
     .group
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|r |cRXP_FRIENDLY_Torka|r, |cRXP_FRIENDLY_Orgnil|r et |cRXP_FRIENDLY_Gar'Thok|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|r |cRXP_FRIENDLY_Torka|r, à |cRXP_FRIENDLY_Orgnil|r et à |cRXP_FRIENDLY_Gar'Thok|r
     .turnin 815 >>Rendez la quête Des œufs pour l'omelette
     .target +Cook Torka
     .goto Durotar,51.12,42.46
@@ -2227,7 +2227,7 @@ step << Hunter
     .xp <12,1
 step
     .goto Durotar,51.51,41.64
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |r |cRXP_FRIENDLY_Innkeeper Grosk|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |r |cRXP_FRIENDLY_Grosk l'aubergiste|r
     .turnin 2161 >>Rendez la quête Un Fardeau de Péon
     .target Innkeeper Grosk
 step
@@ -3254,7 +3254,7 @@ step
     .goto Undercity,34.80,33.19,15,0
     .goto Undercity,27.39,30.23,35,0
     .goto Undercity,21.89,43.35,35,0
-    .goto Tirisfal Glades,51.10,71.53,50 >> Sortez de Fossoyeuse par les Égouts
+    .goto Tirisfal Glades,51.10,71.53,50 >> Quittez Undercity par les Égouts
     .zoneskip Tirisfal Glades
     .zoneskip Tirisfal Glades
 step

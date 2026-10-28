@@ -784,7 +784,7 @@ step
     .goto 1411/1,-4715.200,140.100
     >>|cRXP_WARN_Tapez /assis près du feu de camp et attendez une minute jusqu'à ce que vous obteniez le buff "Avantages du camp"|r
     .complete 96607,1 --|1/1 Use the /sit emote near the campfire
-    .macro Sit,134400 >>Asseyez-vous 
+    .macro Sit,134400 >>Asseyez-vous
     .timer 59, RP
     .complete 96607,2 --|Gain the Boosted Rest buff
 step
@@ -1062,7 +1062,7 @@ step
     .goto 1420/0,496.96,2256.54,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Gordo|r.
     >>|cRXP_WARN_C'est une abomination qui patrouille le long de la route pour Brill|r
-    >>|cRXP_WARN_Sélectionnez "J'ai besoin d'un rapport pour l'exécuteur Zygand"|r
+    >>|cRXP_WARN_Sélectionnez "I need a report for Exécuteur Zygand|r"
     .complete 99141,3 --|1/1 Gordo's Report
     .target Gordo
     --.gossipoption 142737
@@ -1187,7 +1187,7 @@ step
 step
     .goto 1420/0,403.300,2287.700
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Nécrogarde Dillinger|r.
-    >>|cRXP_WARN_Sélectionnez "J'ai besoin d'un rapport pour l'exécuteur Zygand"|r
+    >>|cRXP_WARN_Sélectionnez "I need a report for Exécuteur Zygand|r"
     .turnin 404 >>Rendez la quête Une tâche putride
     .accept 426 >>Acceptez la quête La chute des moulins
     .complete 99141,1 --|1/1 Dillinger's Report
@@ -2094,7 +2094,7 @@ step << Warlock
     .goto 1458/0,610.42,1684.44,35,0
     .goto 1458/0,663.19,1600.46,35,0
     .goto 1420/0,724.25,1682.66,50,0
-    .zone Tirisfal Glades >> Sortez de Fossoyeuse par les Égouts
+    .zone Tirisfal Glades >> Quittez Undercity par les Égouts
     .zoneskip Tirisfal Glades
 step << Warlock
     #completewith next
@@ -3270,7 +3270,7 @@ step << !Paladin
     .goto 1458/0,610.42,1684.44,35,0
     .goto 1458/0,663.19,1600.46,35,0
     .goto 1420/0,724.25,1682.66,50,0
-    .zone Tirisfal Glades >> Sortez de Fossoyeuse par les Égouts
+    .zone Tirisfal Glades >> Quittez Undercity par les Égouts
 step
     #label Entersilverpine
     .goto 1420/0,629.36,1553.42
@@ -3291,9 +3291,6 @@ RXPGuides.RegisterGuide([[
 #displayname 13-15 Forêt des Pins argentés << Paladin
 #next 12-17 Les Tarides
 
-step << Skyborne
-    #optional
-    .maxlevel 13,Silverpineskip
 step << Undead Rogue
     #sticky
     #completewith RotHideCluesTurnIn
@@ -3445,6 +3442,11 @@ step
     .accept 3221 >>Acceptez la quête Parler à Renferrel
     .accept 437 >>Acceptez la quête Le Champ des morts
     .target High Executor Hadrec
+step << Mage/Priest/Warlock
+    .goto 1421/0,1626.100,511.500
+    >>Ramassez le |cRXP_PICK_Glowing Livre|r sur le sol
+    .collect 210177,1,79096,1 --Ataeric: On Arcane Curiosities
+    --Other classes won't be nearby turnin in UC, probably not worth since it's only 160xp
 step
     .goto 1421/0,1652.82,522.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Renferrel|r
@@ -3468,6 +3470,11 @@ step
     .accept 430 >>Acceptez la quête Retour vers Quinn
     .target Apothecary Renferrel
     .addquestitem 3164,429
+step
+    #completewith next
+    >>Tuez les |cRXP_ENEMY_Ours|r. Dépouillez-les pour leur |cRXP_LOOT_Cœurs|r
+    .complete 447,1 --Grizzled Bear Heart (6)
+    .mob Ferocious Grizzled Bear
 step
     #loop
     .goto 1421/0,1386.96,638.51,0
@@ -3499,6 +3506,11 @@ step
     .goto 1421/0,1231.14,866.99
     >>Entrez dans la maison et allez au deuxième étage. Ramassez les |cRXP_PICK_Livres de sorts poussiéreux|r sur le sol
     .complete 422,1 --Remedy of Arugal (1)
+step
+    #completewith next
+    >>Tuez les |cRXP_ENEMY_Ours|r. Dépouillez-les pour leur |cRXP_LOOT_Cœurs|r
+    .complete 447,1 --Grizzled Bear Heart (6)
+    .mob Ferocious Grizzled Bear
 step
     #completewith next
     .goto 1421/0,1207.62,1293.71,80,0
@@ -4086,6 +4098,12 @@ step << Paladin
     .target Garen Largo
     .xp <16,1
 step << Priest/Mage/Warlock
+    .goto 1458/0,168.200,1663.100
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Owen Thadd::211022|r
+    .target Owen Thadd::211022
+    .turnin 79096 >>Rendre la quête Ataeric : À propos des curiosités des arcanes
+    .itemcount 210177,1
+step << Priest/Mage/Warlock
     #ssf
     .goto 1458/0,206.04,1705.57
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Zane Bradford|r dans le Quartier magique
@@ -4176,9 +4194,6 @@ step << Skyborne
     .use 6948
     .zoneskip Orgrimmar
     .bindlocation 1637,1
-step << Skyborne
-    #optional
-    #label Silverpineskip
 step << Undead
     #completewith HiddenEnemiesPickup
     .goto 1454/1,-4367.46,1405.44,50,0
@@ -4198,14 +4213,49 @@ step << Undead/Skyborne
     .target Thrall
     .dungeon RFC
 step << Undead/Skyborne
-    #completewith next
+    #completewith Gazzuz
     .goto 1454/1,-4367.46,1405.44,50,0
     .zone Durotar >> Quittez Orgrimmar
     .dungeon RFC
 step << Undead/Skyborne
-    .goto 1411/1,-4769.10,1484.39,0
-    >>Tuez les membres de la |cRXP_ENEMY_Lame Ardente|r au Rocher du Crâne jusqu'à ce que l' |cRXP_LOOT_Insigne de lieutenant|r tombe
+    #completewith Gazzuz
+    >>Tuez les |cRXP_ENEMY_Burning Blade Orcs|r. Dépouillez-les pour une |cRXP_LOOT_Lieutenant's Insignia|r
+    >>|cRXP_WARN_C'est une quête préalable pour RFC. Elle a un faible taux de loot|r
     .complete 5726,1 --Lieutenant's Insignia (1)
+    .mob Burning Blade Fanatic
+    .mob Burning Blade Apprentice
+    .dungeon RFC
+step << Undead/Skyborne
+    #label Gazzuz
+    .goto 1411/1,-4701.42,1455.83
+    >>Tuez |cRXP_ENEMY_Gazz'uz|r. Dépouillez-le pour son [|cRXP_LOOT_Eye of Burning Shadow|r]
+    >>|cRXP_WARN_Utilisez le [|cRXP_LOOT_Eye of Burning Shadow|r] pour commencer la quête|r
+    >>|cRXP_WARN_Utilisez LoS (ligne de mire) pour éviter |cRXP_ENEMY_Gazz'uz|r ses Traits de l'ombre|r
+    >>Vous pouvez aller dans les points d'eau dans la grotte pour vous échapper (evade) des |cRXP_ENEMY_Voidwalker|r après avoir tué |cRXP_ENEMY_Gazz'uz|r
+    >>|cRXP_WARN_Soyez prudents car c'est difficile. Vous pouvez passer cette quête si vous le souhaitez|r
+    .collect 4903,1,832,1 --Collect Eye of Burning Shadow
+    .accept 832 >>Acceptez la quête Ombres ardentes
+    .use 4903
+	.unitscan Gazz'uz
+    .dungeon RFC
+step << Undead/Skyborne
+    #loop
+    .goto 1411/1,-4805.59,1495.67,0
+    .goto 1411/1,-4855.82,1498.84,15,0
+    .goto 1411/1,-4833.08,1494.96,15,0
+    .goto 1411/1,-4805.59,1495.67,15,0
+    .goto 1411/1,-4784.44,1535.85,15,0
+    .goto 1411/1,-4750.60,1531.62,15,0
+    .goto 1411/1,-4734.21,1505.54,15,0
+    .goto 1411/1,-4693.49,1519.64,15,0
+    .goto 1411/1,-4679.75,1501.31,15,0
+    .goto 1411/1,-4684.50,1466.06,15,0
+    .goto 1411/1,-4805.59,1495.67,15,0
+    >>Tuez les |cRXP_ENEMY_Burning Blade Orcs|r. Dépouillez-les pour une |cRXP_LOOT_Lieutenant's Insignia|r
+    >>|cRXP_WARN_C'est une quête préalable pour RFC. Elle a un faible taux de loot|r
+    .complete 5726,1 --Lieutenant's Insignia (1)
+    .mob Burning Blade Fanatic
+    .mob Burning Blade Apprentice
     .dungeon RFC
 step << Undead/Skyborne
     #completewith Conscript

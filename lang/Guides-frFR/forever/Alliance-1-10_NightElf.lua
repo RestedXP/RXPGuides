@@ -121,7 +121,7 @@ step << !Priest !Rogue
 	.accept 3120 >> Acceptez la quête Sceau verdoyant << Druid
 step << !Hunter !Druid !Warrior
     #completewith next
-    >>Tuez les |cRXP_ENEMY_Sangliers des chardons|r en rejoignant Iverron
+    >>Tuez les |cRXP_ENEMY_Thistle Boars|r sur le chemin vers Iverron. Vous n'êtes pas obligés de terminer cela maintenant
     .complete 457,2 --Kill Thistle Boar (x7)
     .mob +Thistle Boar
 step << !Hunter !Druid !Warrior
@@ -162,7 +162,7 @@ step << Druid
     .mob Grellkin
 step << Druid
     #completewith next
-    >>Tuez les |cRXP_ENEMY_Sangliers des chardons|r en rejoignant Iverron
+    >>Tuez les |cRXP_ENEMY_Thistle Boars|r sur le chemin vers Iverron. Vous n'êtes pas obligés de terminer cela maintenant
     .complete 457,2 --Kill Thistle Boar (x7)
     .mob +Thistle Boar
 step << Druid
@@ -257,7 +257,7 @@ step
     .mob Webwood Spider
 step
     #completewith next
-    >>Tuez les |cRXP_ENEMY_Sangliers des chardons|r sur la route vers les Grells
+    >>Tuez les |cRXP_ENEMY_Thistle Boars|r sur le chemin vers les Grells. Vous n'êtes pas obligés de terminer cela maintenant
     .complete 457,2 --Kill Thistle Boar (x7)
     .mob +Thistle Boar
 step << !Druid
@@ -284,7 +284,7 @@ step
     .turnin 97977 >>Rendez la quête L’appel de la nature
 step
     #completewith next
-    >>Tuez les |cRXP_ENEMY_Sangliers des chardons|r en rejoignant Iverron
+    >>Tuez les |cRXP_ENEMY_Thistle Boars|r sur le chemin vers Iverron. Vous n'êtes pas obligés de terminer cela maintenant
     .complete 457,2 --Kill Thistle Boar (x7)
     .mob +Thistle Boar
 step
@@ -320,7 +320,7 @@ step << Hunter/Rogue
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.05
 step
     #completewith next
-    >>Tuez les |cRXP_ENEMY_Sangliers des chardons|r en rejoignant Iverron
+    >>Tuez les |cRXP_ENEMY_Thistle Boars|r sur le chemin vers Iverron. Vous n'êtes pas obligés de terminer cela maintenant
     .complete 457,2 --Kill Thistle Boar (x7)
     .mob +Thistle Boar
 step
@@ -491,6 +491,8 @@ step
 step
     .goto 1438/1,882.300,9909.101
     >>Utilisez l'émote |cRXP_WARN_/assis|r à côté du feu de camp et |cRXP_WARN_restez immobile pendant 1 minute|r afin de compléter l'objectif
+    >>|cRXP_WARN_Si vous n'obtenez pas le crédit de la quête en vous asseyant, abandonnez la quête et acceptez-la à nouveau!|r
+    .complete 96606,1 --Sit
     .complete 96606,2 --Gain the Boosted Rest buff
 step
     .goto 1438/1,879.700,9907.601
@@ -2026,7 +2028,7 @@ step << Hunter
 	.goto 1438/1,1900.12,10853.85,0
     >>Lancez [Apprivoiser une bête] |cRXP_WARN_sur un |cRXP_ENEMY_Strigid Hunter|r pour le dompter|r -- .tame 1997
     .train 2981 >> Attaquez des mobs avec celui-ci pour qu'il apprenne [Claw (Rank 2)]
-    .link https://www.wow-petopia.com/classic/training.php >> Cliquez ici pour plus d'information sur le dressage des familiers
+    .link https://www.wow-petopia.com/classic/training.php >> |cRXP_WARN_Cliquez ici pour plus d'information sur le dressage des familiers|r
 	.unitscan Strigid Hunter
 step
     .goto 1438/1,1691.36,10412.66
@@ -2040,9 +2042,6 @@ step
     #loop
     .goto 1438/1,1828.600,10964.800
     >>Tuez |cRXP_ENEMY_Lady Sathrah|r. Dépouillez-la pour ses |cRXP_LOOT_Spinnerets|r
-    >>|cRXP_ENEMY_Lady Sathrah|r peut apparaître à 3 endroits différents, regardez votre carte pour le chemin que nous vous recommandons de prendre
-    >>Dirigez-vous au nord le long de la rivière et vérifiez le premier endroit le plus à l'est. Commencez la quête des [Tumeurs] sur la route
-    >>Si elle n'est pas à l'est de la rivière, complétez la quête des [Tumeurs] avant de vous diriger vers l'ouest
     .complete 2518,1 --Collect Silvery Spinnerets (x1)
     .mob Lady Sathrah
 step
@@ -2318,14 +2317,12 @@ step << Hunter
     >>|cRXP_WARN_Vous allez en avoir besoin pour nourrir votre chouette, elles ne mangent que de la viande et il n'y a pas de vendeur de viande à Sombrivage|r
     .collect 117,15
     .target Jaeana
-step << Hunter/Warrior/Priest/Sod Rogue
+step << Hunter/Warrior/Priest
     .goto 1457/1,2329.19,9908.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Ilyenia Moonfire|r
     .skipgossipid 96881
     .train 227 >>Apprenez la compétence Bâtons << Hunter/Warrior/Priest
-    .train 265 >>Apprenez la compétence Arcs << Sod Rogue
     >>Si vous avez un Bâton dans votre sac, équipez-le. << Hunter
-    >>Si vous avez un Arc dans votre sac, équipez-le. << Rogue
     .target Ilyenia Moonfire
 step << Hunter
     #optional

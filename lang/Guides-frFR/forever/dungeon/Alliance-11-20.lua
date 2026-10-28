@@ -12,7 +12,9 @@ RXPGuides.RegisterGuide([[
 #next 17-18 Salle des Thanes
 
 step
-    #include RestedXP Guide Forever (A)\14-16 Sombrivage@WashedA-IFExit
+    #include RestedXP Guide Forever (A)\14-16 Sombrivage@WashedA-DarkshoreEndNE
+step
+    #include RestedXP Guide Forever (A)\15-16 Loch Modan@SWBoat-IFExit
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Innkeeper Firebrew|r
     >>|cRXP_WARN_Si vous avez un Mage dans votre groupe, liez plutôt votre Pierre de foyer à Comté-du-Lac|r
@@ -102,7 +104,7 @@ step
     .turnin 96390 >> Rendez la quête Étouffer le mal dans l’œuf
     .target Earthseer Farsen
 step
-    #include RestedXP Guide Forever (A)\14-16 Sombrivage@LochEnter-LochEnd
+    #include RestedXP Guide Forever (A)\15-16 Loch Modan@LochEnter-LochEnd
 step << NightElf Druid
     #completewith next
 	.cast 18960 >> Lancez [Téléportation : Reflet-de-lune]
@@ -123,14 +125,16 @@ step << Druid
 	.trainer >> Apprenez vos sorts de classe
 	.target Mathrengyl Bearwalker
 step << Druid
-    #season 0
+	#completewith next
+	.cast 18960 >> Lancez [Téléportation : Reflet-de-lune]
+	.zoneskip Moonglade
+step << Druid
     .goto Moonglade,56.1,30.7
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Dendrite Starblaze|r
     .turnin 26 >> Rendez la quête Une leçon à apprendre
     .accept 29 >> Acceptez la quête L'épreuve du lac
     .target Dendrite Starblaze
 step << Druid
-    #season 0
     .goto Moonglade,52.6,51.6
     >>Nagez au lac Élune’ara
     >>Ouvrez le |cRXP_PICK_Conteneur de babioles|r. Récupérez le |T134125:0|t[Colifichet du sanctuaire]
@@ -138,19 +142,16 @@ step << Druid
     .collect 15877,1,29,1 -- Shrine Bauble (1)
 step << Druid
     #optional
-    #season 0
     #completewith next
     .cast 18960 >> Lancez [Téléportation : Reflet-de-lune]
     .itemcount 15877,1 -- Shrine Bauble (1)
 step << Druid
-    #season 0
     .goto Moonglade,36.026,41.374
     >>Utilisez le [Colifichet du sanctuaire] à l'arbre de l'Autel de Remulos
     .complete 29,1 --Complete the Trial of the Lake.
     .use 15877
 step << Druid
     #label TotL
-    #season 0
     .goto Moonglade,36.517,40.104
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tajarri|r
     .turnin 29 >> Rendez la quête L'épreuve du lac
@@ -238,7 +239,7 @@ step << NightElf
 --     .collect 255010,5,92909,1 -- Harvester Gyrostabilizer (5)
 --     .target Auctioneer Jaxon
 -- step
---     .goto 1453/0,490.03,-8835.82
+--     .goto 1453/0,484.200,-8832.500
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r
 --     .fp Stormwind >> Get the Stormwind Flight Path
 --     .target Dungar Longdrink
@@ -700,17 +701,17 @@ step
     .target Auctioneer Jaxon
 
 step << Human
-    .goto 1453/0,489.99,-8835.76
+    .goto 1453/0,484.200,-8832.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Dungar Longdrink|r
     .turnin 6261 >> Rendez la quête Dungar Grangodet
     .accept 6285 >> Acceptez la quête Aller voir Lewis
     .target Dungar Longdrink
 
 step << !Skyborne
-    .goto 1453/0,490.03,-8835.82
+    .goto 1453/0,484.200,-8832.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Dungar Longdrink|r
-    .fly Westfall >> Volez vers la Marche de l'Ouest << !NightElf
-    .fp Stormwind >> Apprenez le chemin de vol de Stormwind << NightElf
+    .fly Westfall >> Volez vers la Marche de l'Ouest << !NightElf !Dwarf/!Hunter
+    .fp Stormwind >> Apprenez le chemin de vol de Stormwind << NightElf/Dwarf Hunter
     .target Dungar Longdrink
 step
     #completewith SaldeanVendor
@@ -2672,6 +2673,12 @@ step << Warrior/Hunter
     .trainer >> Apprenez vos sorts de classe
     .target Regnus Thundergranite << Hunter
     .target Bilban Tosslespanner << Warrior
+step << Hunter/Druid
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Buliwyf Stonehand|r
+    .train 266 >> Apprenez la compétence pour porter des Fusils << Hunter
+    .train 199 >> Acheter la compétence pour porter des masses à deux mains << Druid
+    .goto 1455/0,-1197.27,-5041.49
+    .target Buliwyf Stonehand
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -2824,73 +2831,170 @@ step
     .turnin 95250 >> Rendez la quête Abominables créatures
     .target Captain Truman
 step
-    .hs >> Utilisez votre Pierre de foyer pour revenir à Stormwind
-    .zoneskip Stormwind City
-    .bindlocation 1519,1 --HS in SW
-step
-    #optional
-    .hs >> Utilisez votre Pierre de foyer pour revenir à Ironforge
+    .hs >> Utilisez votre Pierre de foyer pour revenir à Stormwind << !NightElf
+    .hs >> Utilisez votre Pierre de foyer pour revenir à Ironforge << NightElf
     .zoneskip Ironforge
     .zoneskip Stormwind City
-    .bindlocation 1537,1 --HS in IF
 step 
     #optional
     .goto Ironforge,76.61,51.28,10,0
     .zone Stormwind City >> Prenez le Tram des profondeurs pour Stormwind
-    .zoneskip Ironforge,1
-step
-    #optional
-    #completewith next
-    .zone Stormwind City >>Allez à Stormwind
-step
-    .isOnQuest 92415
-    .goto 1453/0,744.400,-8621.101
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à la |cRXP_FRIENDLY_Directrice de l'orphelinat Nightingale|r
-    .turnin 92415 >> Rendez la quête N’oublie pas que je t’aime
-    .accept 95161 >> Acceptez la quête N’oublie pas que je t’aime
-    .target Orphan Matron Nightingale
-step
-    #optional
-    .isQuestTurnedIn 92415
-    .goto 1453/0,744.400,-8621.101
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à la |cRXP_FRIENDLY_Directrice de l'orphelinat Nightingale|r
-    .accept 95161 >> Acceptez la quête N’oublie pas que je t’aime
-    .target Orphan Matron Nightingale
-step
-    .goto 1453/0,634.700,-8390.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Shoni the Shilent|r
-    .accept 2040 >> Acceptez la quête Assaut souterrain
-    .target Shoni the Shilent
-step
+step << NightElf
     .goto 1453/0,501.200,-8468.601
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Wilder Thistlenettle|r
     .accept 167 >> Acceptez la quête Adieu mon frère…
     .accept 168 >> Acceptez la quête À la recherche de cartes du syndicat des mineurs
     .target Wilder Thistlenettle
-step
+step << NightElf
     #completewith next
     .goto 1453/0,437.600,-8524.5000,20,0
     .goto 1453/0,408.100,-8478.500,15,0
     .goto 1453/0,502.900,-8358.800,15 >> Allez à la Bibliothèque de Stormwind
-step
+step << NightElf
     .isOnQuest 95189
     .goto 1453/0,531.000,-8322.400
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Lady Dena Kennedy|r
     >>|cRXP_WARN_Elle patrouille non loin dans la Galerie royale|r
     .turnin 95189 >> Rendez la quête Écu de Lordaeron
     .target Lady Dena Kennedy
-step
+step << NightElf
+    .goto 1453/0,634.700,-8390.800
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Shoni the Shilent|r
+    .accept 2040 >> Acceptez la quête Assaut souterrain
+    .target Shoni the Shilent
+step << NightElf
+    #optional
+    .goto 1453/0,600.22,-8426.93
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Furen Longbeard|r
+    .turnin 1338 >> Rendez la quête La mission de Foudrepique
+    .target Furen Longbeard
+    .isOnQuest 1338
+step << NightElf
+    .isOnQuest 92415
+    .goto 1453/0,744.400,-8621.101
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à la |cRXP_FRIENDLY_Directrice de l'orphelinat Nightingale|r
+    .turnin 92415 >> Rendez la quête N’oublie pas que je t’aime
+    .accept 95161 >> Acceptez la quête N’oublie pas que je t’aime
+    .target Orphan Matron Nightingale
+step << NightElf
+    #optional
+    .isQuestTurnedIn 92415
+    .goto 1453/0,744.400,-8621.101
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à la |cRXP_FRIENDLY_Directrice de l'orphelinat Nightingale|r
+    .accept 95161 >> Acceptez la quête N’oublie pas que je t’aime
+    .target Orphan Matron Nightingale
+step << NightElf Rogue
+    .goto 1453/0,377.61,-8752.30
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Osborne l'homme de la nuit|r
+    >>|cRXP_WARN_Assurez-vous d'entraîner|r |T136058:0|t[Crochetage] |cRXP_WARN_car vous en aurez besoin pour votre quête de classe Voleur bientôt|r
+    .train 1804 >> Montez le niveau de votre [Crochetage]
+    .target Osborne the Night Man
+    .xp >20,1
+    .xp <18,1
+step << NightElf Rogue
+    .goto 1453/0,377.61,-8752.30
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Osborne l'homme de la nuit|r
+    >>|cRXP_WARN_Assurez-vous d'entraîner|r |T136058:0|t[Crochetage] |cRXP_WARN_car vous en aurez besoin pour votre quête de classe Voleur bientôt|r
+    .train 1804 >> Montez le niveau de votre [Crochetage]
+    .trainer >> Apprenez vos sorts de classe
+    .target Osborne the Night Man
+    .xp <20,1
+step << NightElf Rogue
+    #completewith next
+    .goto 1453/0,374.11,-8762.88,20,0
+    .goto 1453/0,326.66,-8818.01,20,0
+    .goto 1453/0,323.43,-8817.83,5 >> Entrez au Quartier général du SI:7. Montez les escaliers vers |cRXP_FRIENDLY_Renzik "le kriss"|r
+step << NightElf Rogue
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Renzik "le kriss"|r
+    .accept 2281 >> Acceptez la quête Le Rendez-vous des Carmines
+    .goto 1453/0,362.55,-8819.80
+    .target Renzik "The Shiv"
+step << NightElf
+    .goto 1453/0,673.58,-8867.76
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à l' |cRXP_FRIENDLY_Aubergiste Allison|r
+    .home >> Liez votre Pierre de foyer à Stormwind
+    .target Innkeeper Allison
+    .bindlocation 16509
+step << NightElf
+    .goto 1453/0,484.200,-8832.500
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Dungar Longdrink|r
+    .fp Stormwind >> Apprenez le chemin de vol de Stormwind
+    .target Dungar Longdrink
+step << NightElf
     .isOnQuest 95195
     .goto 1453/0,521.000,-8954.101
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Général Marcus Jonathan|r
     .turnin 95195 >> Rendez la quête Insigne ensanglanté
     .target General Marcus Jonathan
-step << Rogue
-    .goto 1453/0,377.47,-8752.39
+step << !NightElf
+    .isOnQuest 92415
+    .goto 1453/0,744.400,-8621.101
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Directrice de l'orphelinat Rossignol|r
+    .turnin 92415 >> Rendez la quête Se souvenir That I Love Votre personnage
+    .accept 95161 >> Acceptez la quête Se souvenir That I Love Votre personnage
+    .target Orphan Matron Nightingale
+step << !NightElf
+    #optional
+    .isQuestTurnedIn 92415
+    .goto 1453/0,744.400,-8621.101
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Directrice de l'orphelinat Rossignol|r
+    .accept 95161 >> Acceptez la quête Se souvenir That I Love Votre personnage
+    .target Orphan Matron Nightingale
+step << !NightElf
+    .goto 1453/0,634.700,-8390.800
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Shoni the Shilent|r
+    .accept 2040 >> Acceptez la quête Assaut souterrain
+    .target Shoni the Shilent
+step << !NightElf
+    .goto 1453/0,501.200,-8468.601
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Wilder Thistlenettle|r
+    .accept 167 >> Acceptez la quête Adieu mon frère…
+    .accept 168 >> Acceptez la quête À la recherche de cartes du syndicat des mineurs
+    .target Wilder Thistlenettle
+step << !NightElf
+    #completewith next
+    .goto 1453/0,437.600,-8524.5000,20,0
+    .goto 1453/0,408.100,-8478.500,15,0
+    .goto 1453/0,502.900,-8358.800,15 >> Rendez-vous à la Bibliothèque de Hurlevent
+step << !NightElf
+    .isOnQuest 95189
+    .goto 1453/0,531.000,-8322.400
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Lady Dena Kennedy|r
+    >>|cRXP_WARN_Elle se promène un peu dans la Galerie royale|r
+    .turnin 95189 >> Rendez la quête Crest of Lordaeron
+    .target Lady Dena Kennedy
+step << !NightElf
+    .isOnQuest 95195
+    .goto 1453/0,521.000,-8954.101
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Général Marcus Jonathan|r
+    .turnin 95195 >> Rendez la quête Insigne ensanglanté
+    .target General Marcus Jonathan
+step << !NightElf Rogue
+    .goto 1453/0,377.61,-8752.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Osborne l'homme de la nuit|r
+    >>|cRXP_WARN_Assurez-vous d'entraîner|r |T136058:0|t[Crochetage] |cRXP_WARN_car vous en aurez besoin pour votre quête de classe Voleur bientôt|r
+    .train 1804 >> Montez le niveau de votre [Crochetage]
+    .target Osborne the Night Man
+    .xp >20,1
+    .xp <18,1
+step << !NightElf Rogue
+    .goto 1453/0,377.61,-8752.30
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Osborne l'homme de la nuit|r
+    >>|cRXP_WARN_Assurez-vous d'entraîner|r |T136058:0|t[Crochetage] |cRXP_WARN_car vous en aurez besoin pour votre quête de classe Voleur bientôt|r
+    .train 1804 >> Montez le niveau de votre [Crochetage]
     .trainer >> Apprenez vos sorts de classe
     .target Osborne the Night Man
     .xp <20,1
+step << !NightElf Rogue
+    #completewith next
+    .goto 1453/0,374.11,-8762.88,20,0
+    .goto 1453/0,326.66,-8818.01,20,0
+    .goto 1453/0,323.43,-8817.83,5 >> Entrez au Quartier général du SI:7. Montez les escaliers vers |cRXP_FRIENDLY_Renzik "le kriss"|r
+step << !NightElf Rogue
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Renzik "le kriss"|r
+    .accept 2281 >> Acceptez la quête Le Rendez-vous des Carmines
+    .goto 1453/0,362.55,-8819.80
+    .target Renzik "The Shiv"
 step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Wu|r ou |cRXP_FRIENDLY_Ilsa|r
     .goto 1453/0,358.25,-8728.28,15,0
@@ -2964,44 +3068,53 @@ RXPGuides.RegisterGuide([[
 #next 20-21 Sombrivage/Orneval
 
 step
+    #optional
     .goto 1453/0,673.58,-8867.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à l' |cRXP_FRIENDLY_Aubergiste Allison|r
     .home >> Liez votre Pierre de foyer à Stormwind
     .target Innkeeper Allison
     .bindlocation 16509
-step
+step << !NightElf !Dwarf/!Hunter
     #completewith TDB1
-    #label FlyWestfall
-    .goto 1453/0,490.03,-8835.82
+    .goto 1453/0,484.200,-8832.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Dungar Longdrink|r
-    >>|cRXP_WARN_Si vous n'avez pas déjà le trajet Vol pour Marche de l'Ouest, passez cette étape|r << !Human !Gnome !Dwarf
     .fly Westfall >> Volez vers la Marche de l'Ouest
     .target Dungar Longdrink
-step
+step << Dwarf Hunter/NightElf
     #optional
-    #requires FlyWestfall
     #completewith TDB1
-    .zone Westfall >> Voyagez vers les Marches de l'Ouest
+    .zone Westfall >> Quittez Hurlevent. Rendez-vous à la Marche de l'Ouest
 step
     #label TDB1
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Gryan Stoutmantle|r
 	.target Gryan Stoutmantle
     .goto 1436/0,1045.12,-10508.80
     .accept 65 >> Acceptez la quête La Confrérie défias
-step
+step << !Skyborne
     #completewith RRDB
-    .goto 1453/0,490.03,-8835.82,-1
+    .goto 1453/0,484.200,-8832.500,-1
     .goto 1436/0,1037.42,-10628.27,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Dungar Longdrink|r ou à |cRXP_FRIENDLY_Thor|r
-    >>|cRXP_WARN_Si vous n'avez pas appris le chemin de vol des Carmines, passez cette étape|r << !Human !Gnome !Dwarf
-    .fly Redridge >> Volez vers Les Carmines
+    .fly Redridge >> Volez vers Les Carmines << !NightElf !Dwarf/!Hunter
+    .fp Westfall >> Prenez le chemin de vol de la Marche de l'Ouest << NightElf/Dwarf Hunter
     .target Dungar Longdrink
+    .target Thor
     .zoneskip Redridge Mountains
     .zoneskip Elwynn Forest
 step
     .isQuestAvailable 132
     .goto 1433/0,-1906.400,-9606.800
     .zone Redridge Mountains >> Voyagez vers Les Carmines
+step << NightElf/Skyborne/Dwarf Hunter
+    .goto 1433/0,-1906.400,-9606.800
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Guard Parker|r
+    .accept 244 >> Acceptez la quête Des gnolls encombrants
+    .target Guard Parker
+step << NightElf/Skyborne/Dwarf Hunter
+    .goto 1433/0,-2237.93,-9443.60
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Deputy Feldon|r
+    .turnin 244 >> Rendez la quête Des gnolls encombrants
+    .target Deputy Feldon
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Contremaître Oslow|r
     .goto 1433/0,-2268.32,-9279.12
@@ -3015,6 +3128,12 @@ step
     .turnin 65 >> Rendez la quête La Confrérie défias
     .accept 132 >> Acceptez la quête La Confrérie défias
 	.target Wiley the Black
+step << Rogue
+    .goto 1433/0,-2180.19,-9328.21
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Lucius|r
+    .turnin 2281 >> Rendez la quête Le Rendez-vous des Carmines
+    .accept 2282 >> Acceptez la quête La scierie d'Alther
+    .target Lucius
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Shawn|r
 	.target Shawn
@@ -3038,16 +3157,38 @@ step
     >>Ouvrez le |cRXP_PICK_Coffre englouti|r. Récupérez la |cRXP_LOOT_Boîte d'outils d'Oslow|r
     .goto 1433/0,-2472.16,-9366.72
     .complete 125,1 --Oslow's Toolbox (1)
+step << Rogue
+    #completewith next
+    .subzone 97 >> Voyagez vers La scierie d'Alther
+step << Rogue
+    .goto 1433,51.846,45.116
+    >>Vous DEVEZ le faire pour votre quête de [Poisons] plus tard
+    >>|cRXP_WARN_Restez sur la location du point de repère. Positionnez votre caméra et votre curseur jusqu'à ce que vous puissiez cliquer sur 3 |cRXP_PICK_Practice Lockboxes|r en même temps et sans avoir à bouger|r
+    .skill lockpicking,80 >>|cRXP_WARN_Ouvrez les |cRXP_PICK_Practice Lockboxes|r sur le sol dans la scierie d'Alther jusqu'à ce que votre score de|r [Crochetage] soit de 80|r
+step << Rogue
+	.goto 1433/0,-2700.75,-9222.07
+    >>Ouvrez les |cRXP_PICK_Lucius's Lockbox|r. Récupérez les |cRXP_LOOT_Token of Thievery|r
+    .complete 2282,1 --Token of Thievery
+    .skill lockpicking,<80,1
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Contremaître Oslow|r
     .goto 1433/0,-2268.32,-9279.12
     .turnin 125 >> Rendez la quête Les outils perdus
     .target Foreman Oslow
+step << Rogue
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Lucius|r
+	.target Lucius
+    .goto 1433/0,-2180.19,-9328.21
+    .turnin 2282 >> Rendez la quête La scierie d'Alther
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Hilary|r
 	.target Hilary
     .goto 1433/0,-2205.58,-9351.52
     .turnin 3741 >> Rendez la quête Le collier d'Hilary
+step << Rogue
+    #optional
+	#sticky
+	.destroy 7907 >> Détruisez le |T134328:0|t[Certificat des voleurs]. Vous n'en avez pas besoin
 step
     #completewith next
     .goto 1433/0,-2234.900,-9435.300
@@ -3097,7 +3238,7 @@ step
 step
     #completewith EnterDM
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Dungar Longdrink|r
-    .goto 1453/0,490.03,-8835.82
+    .goto 1453/0,484.200,-8832.500
     .fly Westfall >> Volez vers la Marche de l'Ouest
     .target Dungar Longdrink
 step
@@ -3270,20 +3411,6 @@ step << Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Loganaar|r
     .trainer >> Apprenez vos sorts de classe
     .target Loganaar
-step << Druid
-    .goto 1450/1,-2212.25,7854.28
-    .use 15883 >>Utilisez le [Demi-pendentif d'agilité aquatique] pour le combiner avec le [Demi-pendentif d'endurance aquatique] au sanctuaire de Remulos
-    .complete 272,1 --Collect Pendant of the Sea Lion (x1)
-step << Druid
-    #completewith next
-	.cast 18960 >> Lancez [Téléportation : Reflet-de-lune]
-    >>Ceci vous fera gagner le temps du retour
-step << Druid
-    .goto 1450/1,-2678.74,8020.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Dendrite Starblaze|r
-    .turnin 272 >> Rendez la quête L'épreuve du lion de mer
-    .accept 5061 >> Acceptez la quête Forme aquatique
-    .target Dendrite Starblaze
 step << Druid
     .hs >> Utilisez votre Pierre de foyer pour revenir à la Colline des Sentinelles
 step << !Druid
@@ -3460,7 +3587,7 @@ step << Rogue
 step << Rogue
     #completewith RoguePoison
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Dungar Longdrink|r
-    .goto 1453/0,490.03,-8835.82
+    .goto 1453/0,484.200,-8832.500
     .fly Westfall >> Volez vers la Marche de l'Ouest
     .target Dungar Longdrink
 step << !Dwarf Rogue
@@ -3503,14 +3630,14 @@ step << Rogue
     >>|T133644:0|tUtilisez [Vol à la tire] sur le |cRXP_ENEMY_Malformed Defias Drone|r. Volez-lui la |cRXP_LOOT_Defias Tower Key|r
     >>Vous devez être en [Camouflage] pour utiliser [Vol à la tire]
     >>|cRXP_WARN_Le |cRXP_ENEMY_Malformed Defias Drone|r apparaissent à l'entrée de la tour, puis font le tour de celle-ci|r
-    >>Faites attention car il fait BEAUCOUP de dégâts. Si vous perdez votre [Camouflage], utilisez vite votre [Sprint] pour vous enfuir
+    >>Faites attention, il tape TRÈS fort. Si vous perdez votre [Camouflage], utilisez rapidement votre [Sprint] et enfuyez-vous
     .complete 2359,2 --Collect Defias Tower Key (x1)
     .link https://www.youtube.com/watch?v=5sIew15IcG0 >> Cliquez ICI pour un guide vidéo
     .mob Malformed Defias Drone
 step << Rogue
     #optional
     #completewith Mortwake
-    +Équipez la [Dague de Curvewood] pour cette quête si vous n'avez pas déjà de [Dague] équipée
+    +Équipez la [Dague de Curvewood] pour cette quête si vous n'avez pas déjà de [Dagues] équipée
     .use 15396
     .itemcount 15396,1
 step << Rogue
@@ -3518,7 +3645,7 @@ step << Rogue
     .goto 1436,70.421,74.031
     >>Allez jusqu'à l'avant dernier étage de la tour. Lorsque vous êtes en [Camouflage] |cRXP_WARN_et que les |cRXP_ENEMY_Defias Tower Sentries|r ne sont pas proches de vous, sautez sur la chaise, puis sur la lampe, et ensuite sur la bibliothèque au-dessus du point de repère|r
     >>Enlevez votre [Camouflage] manuellement|cRXP_WARN_, puis appuyez sur votre touche "Interagir avec la cible" pour ouvrir le |cRXP_PICK_Duskwood Chest|r. Récupérez le|r |cRXP_LOOT_Klaven Mortwake's Journal|r
-    >>NOTE: Votre [Camouflage] ne fonctionnera pas un moment après avoir récupéré le |cRXP_LOOT_Klaven Mortwake's Journal|r
+    >>NOTE: Votre [Camouflage] ne marchera pas plus temporairement après avoir récupéré le |cRXP_LOOT_Klaven Mortwake's Journal|r
     >>|cRXP_WARN_Soyez prêt à courir si vous ne voulez pas tuer les |cRXP_ENEMY_Defias Tower Sentries|r au deuxième étage. Ils vont sûrement vous aggro de manière permanente (mais sans vous attaquer) lorsque vous êtes en haut de la bibliothèque comme il s'agit d'un evade spot|r
     >>Si vous avez une [Dague] dans vos sacs ou déjà équipée, vous pouvez lancez [Embuscade] |cRXP_WARN_sur le |cRXP_ENEMY_Defias Tower Patrollers|r et sur les |cRXP_ENEMY_Defias Tower Sentries|r à l'intérieur pour les tuer instantanément. Soyez prêt à vous enfuir après avoir tué le premier|cRXP_ENEMY_Defias Tower Sentry|r  et n'oubliez pas que vous pouvez être touché d'en dessous. Cette technique est plus lente, mais BEAUCOUP plus sure|r
     >>|cRXP_WARN_Faites attention car les |cRXP_ENEMY_Malformed Defias Drone|r et les |cRXP_ENEMY_Defias Drones|r peuvent se trouver à l'entrée de la tour si vous devez vous enfuir de celle-ci|r
@@ -3765,7 +3892,7 @@ RXPGuides.RegisterGuide([[
 #subgroup Guide de donjon 1-20
 --#groupid RXP-SRGCE-A1
 #name 20-21 Sombrivage/Orneval
-#next Guide de donjon Forever RestedXP (A)\21-23 Orneval/Stonetalon
+#next Guide de donjon Forever RestedXP (A)\21-23 Orneval/Serres-Rocheuses
 
 step << Druid
     #completewith catspirit1
@@ -3800,21 +3927,21 @@ step << Druid
     .goto 1450/1,-2678.900,8020.000
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Dendrite Starblaze::11802|r
     .target Dendrite Starblaze::11802
-    .turnin 98393 >>Rendez la quête L’esprit du Grand félin
+    .turnin 98393 >>Rendez la quête Esprit du Grand félin
     .accept 98341 >>Acceptez la quête L’esprit du Grand félin du vent << Skyborne
     .accept 98394 >>Acceptez la quête L’esprit du Grand félin << !Skyborne
 step << Druid !Skyborne
     .goto 1450/1,-2640.000,7338.900
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à l' |cRXP_FRIENDLY_Esprit du Grand félin|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Esprit du Grand félin|r
     .turnin 98394 >>Rendez la quête L’esprit du Grand félin
     .accept 98396 >>Acceptez la quête L’esprit du Grand félin
     .target Great Cat Spirit
 step << Druid Skyborne
     .goto 1450/1,-2352.700,7375.600,10,0
     .goto 1450/1,-2394.300,7361.200
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à l' |cRXP_FRIENDLY_Avatar de Saeyleenan::272054|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Avatar of Saeyleenan::272054|r
     .target Avatar of Saeyleenan::272054
-    .turnin 98341 >>Rendez la quête L’esprit du Grand félin du vent
+    .turnin 98341 >>Rendez la quête The Great Windborne Chat Esprit
     .accept 98404 >>Acceptez la quête L’esprit du Grand félin du vent
 step << Druid
     #completewith next
@@ -3841,15 +3968,15 @@ step << Druid
     .complete 98396,1  << !Skyborne --|1/1 Relic of the Fang
 step << Druid !Skyborne
     .goto 1450/1,-2640.000,7338.900
-     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Esprit du Grand félin|r
-    .turnin 98396 >>Rendez la quête Esprit du Grand félin
+     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à l' |cRXP_FRIENDLY_Esprit du Grand félin|r
+    .turnin 98396 >>Rendez la quête L’esprit du Grand félin
     .accept 98731 >>Acceptez la quête Blessings of the Esprit du Grand f??lin
     .target Great Cat Spirit
 step << Druid Skyborne
     .goto 1450/1,-2395.400,7361.400
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Avatar of Saeyleenan::272054|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à l' |cRXP_FRIENDLY_Avatar de Saeyleenan::272054|r
     .target Avatar of Saeyleenan::272054
-    .turnin 98404 >>Rendez la quête The Great Windborne Chat Esprit
+    .turnin 98404 >>Rendez la quête L’esprit du Grand félin du vent
     .accept 98738 >>Acceptez la quête Blessings of the Great Windborne Chat Esprit
 step << Druid
     .goto 1450/1,-2678.200,8021.500
@@ -3947,6 +4074,13 @@ step
     >>|cRXP_WARN_Utilisez le|r |T133748:0|t[Bol de purification vide] |cRXP_WARN_au Puits de lune d'Auberdine|r
     .collect 12347,1,4763,1 --Filled Cleansing Bowl (1)
     .use 12346
+step
+    #optional
+    .goto 1439,44.168,36.289
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Asterion|r
+    .turnin 957 >> Rendez la quête Bashal'Aran
+    .isOnQuest 957
+    .target Asterion
 step
     .isOnQuest 4763
     #sticky
@@ -4170,6 +4304,35 @@ step << Druid
     >>Nagez jusqu'à sortir de l'eau
     >>Ouvrez le |cRXP_PICK_Strange Lockbox|r. Récupérez le |cRXP_LOOT_Demi-pendentif d'agilité aquatique|r
     .collect 15883,1,272,1 --Collect Half Pendant of Aquatic Agility (x1)
+step << Druid
+    #completewith next
+	.cast 18960 >> Lancez [Téléportation : Reflet-de-lune]
+step << Druid
+    .goto Moonglade,52.53,40.57
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Loganaar|r
+    .trainer >> Apprenez vos sorts de classe
+    .target Loganaar
+step << Druid
+    .goto 1450/1,-2212.25,7854.28
+    .use 15883 >>Utilisez le [Demi-pendentif d'agilité aquatique] pour le combiner avec le [Demi-pendentif d'endurance aquatique] au sanctuaire de Remulos
+    .complete 272,1 --Collect Pendant of the Sea Lion (x1)
+step << Druid
+    #completewith next
+	.cast 18960 >> Lancez [Téléportation : Reflet-de-lune]
+    >>Ceci vous fera gagner le temps du retour
+step << Druid
+    .goto 1450/1,-2678.74,8020.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Dendrite Starblaze|r
+    .turnin 272 >> Rendez la quête L'épreuve du lion de mer
+    .accept 5061 >> Acceptez la quête Forme aquatique
+    .target Dendrite Starblaze
+step << Druid
+    .isOnQuest 5061
+    .goto 1450/1,-2489.25,7457.07
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sindrayl|r
+    .target Sindrayl
+    .fly Darkshore >> Volez à Sombrivage
+    .zoneskip Darkshore
 step
     #sticky
     #optional
@@ -4226,6 +4389,7 @@ step
     .mob Greymist Hunter
     .mob Greymist Coastrunner
 step
+    #label Onu
     .goto 1439,43.555,76.293
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Onu|r
     .turnin 948 >> Rendez la quête Onu
@@ -4399,6 +4563,10 @@ step
     >>|cRXP_WARN_Évitez de rester sur la route principale autant que possible. Les ennemis n'apparaîtront que si vous restez sur la route|r
     .complete 5321,2
     .isOnQuest 5321
+step
+    #optional
+    .abandon 2138 >> Abandonnez la quête Nettoyage de l'infection
+    .abandon 1002 >> Abandonnez la quête Bigobox 323
 step
     #completewith tower
     .zone Ashenvale >> Voyagez jusqu'au sud d'Ashenvale

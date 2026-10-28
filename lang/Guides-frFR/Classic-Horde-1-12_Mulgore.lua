@@ -5138,7 +5138,7 @@ step << Hunter
     .goto Mulgore,67.62,59.06,50,0
     .goto Mulgore,66.34,67.01,50,0
     .train 16828 >>|cRXP_WARN_Lancez|r |T132164:0|t[Apprivoiser une bête] |cRXP_WARN_sur un |cRXP_ENEMY_Loup Alpha des prairies|r. Attaquez des mobs avec le loup pour apprendre|r |T132140:0|t[Griffe (Rang 3)]
-    .link https://www.wow-petopia.com/classic/training.php >> Cliquez ici pour plus d'information sur le dressage des familiers
+    .link https://www.wow-petopia.com/classic/training.php >> |cRXP_WARN_Cliquez ici pour plus d'information sur le dressage des familiers|r
     .mob Prairie Wolf Alpha
 step
     #xprate >2.09

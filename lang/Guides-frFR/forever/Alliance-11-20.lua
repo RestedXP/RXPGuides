@@ -51,13 +51,13 @@ step
     --.collect 255007,14,92909,1 -- Golem Isospring (14)
     --.collect 255010,5,92909,1 -- Harvester Gyrostabilizer (5)
 step << Human
-    .goto 1453/0,489.99,-8835.76
+    .goto 1453/0,484.200,-8832.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Dungar Longdrink|r
     .turnin 6261 >> Rendez la quête Dungar Grangodet
     .accept 6285 >> Acceptez la quête Aller voir Lewis
     .target Dungar Longdrink
 step << !Skyborne
-    .goto 1453/0,490.03,-8835.82
+    .goto 1453/0,484.200,-8832.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Dungar Longdrink|r
     .fly Westfall >> Volez vers la Marche de l'Ouest << !NightElf
     .fp Stormwind >> Apprenez le chemin de vol de Stormwind << NightElf
@@ -2073,6 +2073,13 @@ step
     .target Gwennyth Bly'Leggonde
     .isOnQuest 4723
 step
+    #optional
+    .goto 1439,36.701,45.122,8,0
+    .goto 1439,36.621,45.596
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
+    .turnin 4722 >> Rendez la quête La tortue de mer échouée
+    .target Gwennyth Bly'Leggonde
+step
     .goto 1439/1,577.38,6371.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Gubber Blump|r
     .accept 1138 >> Acceptez la quête Fruit de la mer
@@ -2224,7 +2231,6 @@ step
 ----End of small south loop for ERA and SoD Warrior/Rogue/Priest----
 
 
----Start of Night Elf Westfall section----
 step << NightElf
     #optional
     #completewith next
@@ -2237,6 +2243,8 @@ step << NightElf
     .turnin 963 >> Rendez la quête Un amour éternel
     .target Cerellean Whiteclaw
     .isQuestComplete 963
+step
+    #label DarkshoreEndNE --hidden step for #include
 step  << NightElf
     #include 15-16 Loch Modan
 step << NightElf
@@ -2244,7 +2252,6 @@ step << NightElf
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Gubber Blump|r
     .accept 1138 >> Acceptez la quête Fruit de la mer
     .target Gubber Blump
-----End of Night Elf Westfall section
 step
     #optional
     #completewith next
@@ -2961,6 +2968,16 @@ step
     .turnin 6661 >> Rendez la quête Chasse au rat dans les profondeurs
     .target Monty
 step
+    #completewith next
+    .zone Ironforge >> Sortez du tramway et entrez dans Forgefer
+    .zoneskip Loch Modan
+    .zoneskip Dun Morogh
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Gnoarn|r
+    .accept 2039 >> Acceptez la quête Trouvez Bingles
+    .target Gnoarn
+    .goto Ironforge,69.182,50.556
+step
     .goto Ironforge,55.491,47.751
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Gryth Thurden|r
     .fp Ironforge >> Prenez le chemin de vol de Forgefer
@@ -3079,17 +3096,6 @@ step
     .target Mountaineer Kadrel
 step
     #label ThelsamarFirst
-    .goto 1432/0,-2954.42,-5394.10
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Vidra Hearthstove|r
-    .accept 418 >> Acceptez la quête Les boudins de Thelsamar
-    .target Vidra Hearthstove
-step
-    #optional
-    .goto 1432/0,-2954.42,-5394.10
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Vidra Hearthstove|r
-    .turnin 418 >> Rendez la quête Les boudins de Thelsamar
-    .target Vidra Hearthstove
-    .isQuestComplete 418
 step
     #optional
     #completewith StormpikeO
@@ -3128,7 +3134,6 @@ step
     .mob +Forest Lurker
     >>Gardez tous vos |cRXP_LOOT_[Chunks of Boar Meat]|r |cRXP_WARN_pour monter votre niveau de [Cuisine] plus tard
     >>|cRXP_WARN_Ne changez pas vos plans pour cet objectif pour l'instant. Vous reviendrez au Loch Modan bientôt|r
-    .isOnQuest 418
 step
     #optional
     #completewith next
@@ -3161,7 +3166,6 @@ step
     .mob +Forest Lurker
     >>Gardez tous vos |cRXP_LOOT_[Chunks of Boar Meat]|r |cRXP_WARN_pour monter votre niveau de [Cuisine] plus tard
     >>|cRXP_WARN_Ne changez pas vos plans pour cet objectif pour l'instant. Vous reviendrez au Loch Modan bientôt|r
-    .isOnQuest 418
     .subzoneskip 925 --Algaz Station
 step
     #optional
@@ -3306,6 +3310,7 @@ step
     .goto 1432/0,-2676.99,-4825.980
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Mountaineer Stormpike|r
     .turnin 307 >> Rendez la quête Bas les pattes !
+    .accept 1338 >> Acceptez la quête La mission de Foudrepique
     .target Mountaineer Stormpike
 step
     >>Tuez les |cRXP_ENEMY_Elder Black Bears|r. Dépouillez-les pour leur |cRXP_LOOT_Bear Meat|r
@@ -3366,6 +3371,7 @@ step
 step
     .goto 1432/0,-2954.42,-5394.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Vidra Hearthstove|r
+    .accept 418 >> Acceptez la quête Les boudins de Thelsamar
     .turnin 418 >> Rendez la quête Les boudins de Thelsamar
     .target Vidra Hearthstove
 step
@@ -3464,6 +3470,11 @@ step
     >>Tuez |cRXP_ENEMY_Daguecroc|r, il |cRXP_WARN_peut être en patrouille le long de la rive|r. Dépouillez-le pour le |T3736888:0|t[|cRXP_LOOT_Couteau de chasse-croc de Marek|r]
     .complete 86758,1 --Marek's Croc Hunting Knife (1)
     .mob Daggerfang
+step
+    .goto 48,81.647,64.750
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Bingles Explonheimer|r
+    .target Bingles Blastenheimer
+    .turnin 2039 >>Rendez la quête Trouvez Bingles
 step
     #completewith next
     .goto Loch Modan,54.7,38.3,200 >> Allez jusqu'à l'île située au milieu du Loch
@@ -4401,6 +4412,7 @@ step
     .mob Moonstalker Sire
     .mob Moonstalker Matriarch
     .mob Moonstalker Runt
+    .isOnQuest 986
 step << Warrior/Paladin/Rogue/Shaman
     #requires foreststriders
     .goto 1439,56.654,13.484
@@ -4543,9 +4555,17 @@ step << !NightElf
     .turnin 2139 >> Rendez la quête Espoir de Tharnariun
     .target Tharnariun Treetender
 step << !NightElf
+    .isQuestComplete 986
     .goto 1439,39.373,43.483
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Terenthis|r
     .turnin 986 >> Rendez la quête Un maître perdu
+    .accept 993 >> Acceptez la quête Un maître perdu
+    .target Terenthis
+step << !NightElf
+    #optional
+    .isQuestTurnedIn 986
+    .goto 1439,39.373,43.483
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Terenthis|r
     .accept 993 >> Acceptez la quête Un maître perdu
     .target Terenthis
 step << !NightElf
@@ -4714,10 +4734,17 @@ step << NightElf
     .turnin 2139 >> Rendez la quête Espoir de Tharnariun
     .target Tharnariun Treetender
 step << NightElf
-    #label LostMasters
+    .isQuestComplete 986
     .goto 1439,39.373,43.483
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Terenthis|r
     .turnin 986 >> Rendez la quête Un maître perdu
+    .accept 993 >> Acceptez la quête Un maître perdu
+    .target Terenthis
+step << NightElf
+    #label LostMasters
+    .isQuestTurnedIn 986
+    .goto 1439,39.373,43.483
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Terenthis|r
     .accept 993 >> Acceptez la quête Un maître perdu
     .target Terenthis
 
@@ -4868,22 +4895,37 @@ RXPGuides.RegisterGuide([[
 #name 19-20 Les Carmines
 #next 20-21 Sombrivage/Orneval
 
-step << !Shaman
-    .goto 1453/0,1193.100,-8328.900
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Responsable des manifestes Philmor::268511|r
-    .target Manifest Clerk Philmor::268511
-    .accept 97220 >>Acceptez la quête La faveur de Philmor
+step << Shaman
+    .goto 1453/0,638.8,-8341.95
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Billibub Cogspinner|r
+    .vendor >> |cRXP_WARN_Achetez un|r |T133024:0|t[Tube en bronze]
+    >>|cRXP_WARN_Cet objet est en stock limité. Passez cette étape si |cRXP_FRIENDLY_Billibub Cogspinner|r n'en a plus en stock|r
+--    >>You will need 2 bronze tubes for a quest later << Rogue
+    .bronzetube
+    .target Billibub Cogspinner
+    .zoneskip Stormwind City,1
 step << Shaman
     .goto 1453/0,634.800,-8390.900
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Shoni the Shilent|r
     .accept 2040 >> Acceptez la quête Assaut souterrain
     .target Shoni the Shilent
 step << Shaman
+    .goto 1453/0,600.22,-8426.93
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Furen Longbeard|r
+    .turnin 1338 >> Rendez la quête La mission de Foudrepique
+    .target Furen Longbeard
+    .isOnQuest 1338
+step << Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Wilder Thistlenettle|r
     .accept 167 >> Acceptez la quête Adieu mon frère…
     .accept 168 >> Acceptez la quête À la recherche de cartes du syndicat des mineurs
     .goto 1453/0,501.200,-8468.601
     .target Wilder Thistlenettle
+step << !Shaman
+    .goto 1453/0,1193.100,-8328.900
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Responsable des manifestes Philmor::268511|r
+    .target Manifest Clerk Philmor::268511
+    .accept 97220 >>Acceptez la quête La faveur de Philmor
 step << Mage
     #completewith next
     .goto 1453/0,874.32,-9014.67,10 >> Allez à la Tour des Mages
@@ -4942,7 +4984,7 @@ step
     .turnin 399 >> Rendez la quête Débuts modestes
     .target Baros Alexston
     .isQuestComplete 399
-step << !NightElf
+step << !Shaman
     .goto 1453/0,600.22,-8426.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Furen Longbeard|r
     .turnin 1338 >> Rendez la quête La mission de Foudrepique
@@ -4953,8 +4995,7 @@ step << !Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Shoni the Shilent|r
     .accept 2040 >> Acceptez la quête Assaut souterrain
     .target Shoni the Shilent
-step
-    #completewith BMenace
+step << !Shaman
     .goto 1453/0,638.8,-8341.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Billibub Cogspinner|r
     .vendor >> |cRXP_WARN_Achetez un|r |T133024:0|t[Tube en bronze]
@@ -4962,6 +5003,7 @@ step
 --    >>You will need 2 bronze tubes for a quest later << Rogue
     .bronzetube
     .target Billibub Cogspinner
+    .zoneskip Stormwind City,1
 step << !Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Wilder Thistlenettle|r
     .accept 167 >> Acceptez la quête Adieu mon frère…
@@ -5059,20 +5101,20 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Elaine Trias::483|r
     .target Elaine Trias::483
     .turnin 97222 >>Rendez la quête Livraison au corps de garde
-step
+step << !Skyborne
     #completewith orcs
-    .goto 1453/0,490.12,-8835.67
+    .goto 1453/0,484.200,-8832.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Dungar Longdrink|r
-    .fly Redridge >> Volez vers Les Carmines << !NightElf !Skyborne
-    .fp Stormwind >> Apprenez le chemin de vol de Stormwind << NightElf/Skyborne
+    .fly Redridge >> Volez vers Les Carmines << !NightElf !Dwarf/!Hunter
+    .fp Stormwind >> Apprenez le chemin de vol de Stormwind << NightElf/Dwarf Hunter
     .target Dungar Longdrink
     .zoneskip Redridge Mountains
-step << NightElf/Skyborne
+step << NightElf/Skyborne/Dwarf Hunter
     #completewith RRFP
     .goto 1429/0,389.800,-9119.900
     .zone Elwynn Forest >> Quittez Stormwind
     .zoneskip Redridge Mountains
-step << NightElf/Skyborne
+step << NightElf/Skyborne/Dwarf Hunter
     #completewith RRFP
     .goto 1433/0,-1948.56,-9582.75
     .zone Redridge Mountains >> Voyagez vers Les Carmines
@@ -5088,7 +5130,7 @@ step
     .accept 246 >> Acceptez la quête L'appréciation du danger
     .accept 98407 >>Acceptez la quête Démonstration de force
     .target Deputy Feldon
-step << NightElf/Skyborne
+step << NightElf/Skyborne/Dwarf Hunter
     #label RRFP
     .goto 1433/0,-2234.900,-9435.300
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Ariena Stormfeather|r
@@ -5758,7 +5800,7 @@ step << NightElf Rogue/Skyborne Rogue
     .target Thor
     .isOnQuest 2360
 step << Human Rogue/Dwarf Rogue
-    .goto 1453/0,490.03,-8835.82
+    .goto 1453/0,484.200,-8832.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Dungar Longdrink|r
     .fly Westfall >> Volez vers la Marche de l'Ouest
     .target Dungar Longdrink
@@ -5802,14 +5844,14 @@ step << Rogue
     >>|T133644:0|tUtilisez [Vol à la tire] sur le |cRXP_ENEMY_Malformed Defias Drone|r. Volez-lui la |cRXP_LOOT_Defias Tower Key|r
     >>Vous devez être en [Camouflage] pour utiliser [Vol à la tire]
     >>|cRXP_WARN_Le |cRXP_ENEMY_Malformed Defias Drone|r apparaissent à l'entrée de la tour, puis font le tour de celle-ci|r
-    >>Faites attention car il fait BEAUCOUP de dégâts. Si vous perdez votre [Camouflage], utilisez vite votre [Sprint] pour vous enfuir
+    >>Faites attention, il tape TRÈS fort. Si vous perdez votre [Camouflage], utilisez rapidement votre [Sprint] et enfuyez-vous
     .complete 2359,2 --Collect Defias Tower Key (x1)
     .link https://www.youtube.com/watch?v=5sIew15IcG0 >> Cliquez ICI pour un guide vidéo
     .mob Malformed Defias Drone
 step << Rogue
     #optional
     #completewith Mortwake
-    +Équipez la [Dague de Curvewood] pour cette quête si vous n'avez pas déjà de [Dague] équipée
+    +Équipez la [Dague de Curvewood] pour cette quête si vous n'avez pas déjà de [Dagues] équipée
     .use 15396
     .itemcount 15396,1
 step << Rogue
@@ -5817,7 +5859,7 @@ step << Rogue
     .goto 1436,70.421,74.031
     >>Allez jusqu'à l'avant dernier étage de la tour. Lorsque vous êtes en [Camouflage] |cRXP_WARN_et que les |cRXP_ENEMY_Defias Tower Sentries|r ne sont pas proches de vous, sautez sur la chaise, puis sur la lampe, et ensuite sur la bibliothèque au-dessus du point de repère|r
     >>Enlevez votre [Camouflage] manuellement|cRXP_WARN_, puis appuyez sur votre touche "Interagir avec la cible" pour ouvrir le |cRXP_PICK_Duskwood Chest|r. Récupérez le|r |cRXP_LOOT_Klaven Mortwake's Journal|r
-    >>NOTE: Votre [Camouflage] ne fonctionnera pas un moment après avoir récupéré le |cRXP_LOOT_Klaven Mortwake's Journal|r
+    >>NOTE: Votre [Camouflage] ne marchera pas plus temporairement après avoir récupéré le |cRXP_LOOT_Klaven Mortwake's Journal|r
     >>|cRXP_WARN_Soyez prêt à courir si vous ne voulez pas tuer les |cRXP_ENEMY_Defias Tower Sentries|r au deuxième étage. Ils vont sûrement vous aggro de manière permanente (mais sans vous attaquer) lorsque vous êtes en haut de la bibliothèque comme il s'agit d'un evade spot|r
     >>Si vous avez une [Dague] dans vos sacs ou déjà équipée, vous pouvez lancez [Embuscade] |cRXP_WARN_sur le |cRXP_ENEMY_Defias Tower Patrollers|r et sur les |cRXP_ENEMY_Defias Tower Sentries|r à l'intérieur pour les tuer instantanément. Soyez prêt à vous enfuir après avoir tué le premier|cRXP_ENEMY_Defias Tower Sentry|r  et n'oubliez pas que vous pouvez être touché d'en dessous. Cette technique est plus lente, mais BEAUCOUP plus sure|r
     >>|cRXP_WARN_Faites attention car les |cRXP_ENEMY_Malformed Defias Drone|r et les |cRXP_ENEMY_Defias Drones|r peuvent se trouver à l'entrée de la tour si vous devez vous enfuir de celle-ci|r
@@ -7014,11 +7056,18 @@ step
     .goto 1439/1,-5.83,4608.57,30 >> Parlez à |cRXP_FRIENDLY_Volcor|r dans la Grotte
     .isOnQuest 993
 step
+    .isOnQuest 993
     .goto 1439/1,-5.83,4608.570
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Volcor|r
     .turnin 993 >> Rendez la quête Un maître perdu
     .accept 995 >> Acceptez la quête Évasion par la ruse
     .timer 20,Évasion par la ruse RP
+    .target Volcor
+step
+    .isQuestTurnedIn 993
+    .goto 1439/1,-5.83,4608.570
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Volcor|r
+    .accept 995 >> Acceptez la quête Évasion par la ruse
     .target Volcor
 step
     #label volcorEnd

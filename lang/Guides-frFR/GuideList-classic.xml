@@ -47,5 +47,23 @@
 	<Script file="SoD\Alliance\16-22_Westfall-Redridge.lua"/>
 	<Script file="Classic-Attunements.lua"/>
 	<Script file="Classic-0.5.lua"/>
+	<Script file="forever\RestedXP-Skyborne.lua"/>
+	<Script file="forever\Alliance-1-10_NightElf.lua"/>
+	<Script file="forever\Alliance-1-13_Human.lua"/>
+	<Script file="forever\Alliance-1-14_DwarfGnome.lua"/>
+	<Script file="forever\Alliance-11-20.lua"/>
+	<Script file="forever\Horde-01-12_Durotar.lua"/>
+	<Script file="forever\Horde-01-14_Undead.lua"/>
+	<Script file="forever\Horde-1-12_Mulgore.lua"/>
+	<Script file="forever\Horde-12-22_Barrens.lua"/>
+	<Script file="forever\dungeon\RestedXP-Skyborne.lua"/>
+	<Script file="forever\dungeon\Alliance-1-10_NightElf.lua"/>
+	<Script file="forever\dungeon\Alliance-1-13_Human.lua"/>
+	<Script file="forever\dungeon\Alliance-1-14_DwarfGnome.lua"/>
+	<Script file="forever\dungeon\Alliance-11-20.lua"/>
+	<Script file="forever\dungeon\Horde-01-12_Durotar.lua"/>
+	<Script file="forever\dungeon\Horde-01-14_Undead.lua"/>
+	<Script file="forever\dungeon\Horde-1-12_Mulgore.lua"/>
+	<Script file="forever\dungeon\Horde-12-22_Barrens.lua"/>
 
 </Ui>
