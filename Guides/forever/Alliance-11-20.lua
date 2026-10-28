@@ -3310,6 +3310,7 @@ step
     .goto 1432/0,-2676.99,-4825.980
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Stormpike|r
     .turnin 307 >> Turn in Filthy Paws
+    .accept 1338 >> Accept Stormpike's Order
     .target Mountaineer Stormpike
 step
     >>Kill |cRXP_ENEMY_Elder Black Bears|r. Loot them for their |cRXP_LOOT_Bear Meat|r
@@ -4894,22 +4895,37 @@ RXPGuides.RegisterGuide([[
 #name 19-20 Redridge
 #next 20-21 Darkshore/Ashenvale
 
-step << !Shaman
-    .goto 1453/0,1193.100,-8328.900
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Manifest Clerk Philmor::268511|r
-    .target Manifest Clerk Philmor::268511
-    .accept 97220 >>Accept Philmor's Favor
+step << Shaman
+    .goto 1453/0,638.8,-8341.95
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Billibub Cogspinner|r
+    .vendor >> |cRXP_WARN_Buy a|r |T133024:0|t[Bronze Tube]
+    >>|cRXP_WARN_This is a limited supply item. Skip this step if |cRXP_FRIENDLY_Billibub Cogspinner|r doesn't have one|r
+--    >>You will need 2 bronze tubes for a quest later << Rogue
+    .bronzetube
+    .target Billibub Cogspinner
+    .zoneskip Stormwind City,1
 step << Shaman
     .goto 1453/0,634.800,-8390.900
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shoni the Shilent|r
     .accept 2040 >> Accept Underground Assault
     .target Shoni the Shilent
 step << Shaman
+    .goto 1453/0,600.22,-8426.93
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Furen Longbeard|r
+    .turnin 1338 >> Turn in Stormpike's Order
+    .target Furen Longbeard
+    .isOnQuest 1338
+step << Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wilder Thistlenettle|r
     .accept 167 >> Accept Oh Brother. . .
     .accept 168 >> Accept Collecting Memories
     .goto 1453/0,501.200,-8468.601
     .target Wilder Thistlenettle
+step << !Shaman
+    .goto 1453/0,1193.100,-8328.900
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Manifest Clerk Philmor::268511|r
+    .target Manifest Clerk Philmor::268511
+    .accept 97220 >>Accept Philmor's Favor
 step << Mage
     #completewith next
     .goto 1453/0,874.32,-9014.67,10 >> Travel to the Mage Tower
@@ -4968,7 +4984,7 @@ step
     .turnin 399 >> Turn in Humble Beginnings
     .target Baros Alexston
     .isQuestComplete 399
-step << !NightElf
+step << !Shaman
     .goto 1453/0,600.22,-8426.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Furen Longbeard|r
     .turnin 1338 >> Turn in Stormpike's Order
@@ -4979,8 +4995,7 @@ step << !Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shoni the Shilent|r
     .accept 2040 >> Accept Underground Assault
     .target Shoni the Shilent
-step
-    #completewith BMenace
+step << !Shaman
     .goto 1453/0,638.8,-8341.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Billibub Cogspinner|r
     .vendor >> |cRXP_WARN_Buy a|r |T133024:0|t[Bronze Tube]
@@ -4988,6 +5003,7 @@ step
 --    >>You will need 2 bronze tubes for a quest later << Rogue
     .bronzetube
     .target Billibub Cogspinner
+    .zoneskip Stormwind City,1
 step << !Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wilder Thistlenettle|r
     .accept 167 >> Accept Oh Brother. . .
@@ -5085,20 +5101,20 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elaine Trias::483|r
     .target Elaine Trias::483
     .turnin 97222 >>Turn in Gatehouse Goods
-step
+step << !Skyborne
     #completewith orcs
     .goto 1453/0,484.200,-8832.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r
-    .fly Redridge >> Fly to Redridge Mountains << !NightElf !Skyborne
-    .fp Stormwind >> Get the Stormwind Flight Path << NightElf/Skyborne
+    .fly Redridge >> Fly to Redridge Mountains << !NightElf !Dwarf/!Hunter
+    .fp Stormwind >> Get the Stormwind Flight Path << NightElf/Dwarf Hunter
     .target Dungar Longdrink
     .zoneskip Redridge Mountains
-step << NightElf/Skyborne
+step << NightElf/Skyborne/Dwarf Hunter
     #completewith RRFP
     .goto 1429/0,389.800,-9119.900
     .zone Elwynn Forest >> Exit Stormwind
     .zoneskip Redridge Mountains
-step << NightElf/Skyborne
+step << NightElf/Skyborne/Dwarf Hunter
     #completewith RRFP
     .goto 1433/0,-1948.56,-9582.75
     .zone Redridge Mountains >> Travel to Redridge Mountains
@@ -5114,7 +5130,7 @@ step
     .accept 246 >> Accept Assessing the Threat
     .accept 98407 >>Accept Show of Force
     .target Deputy Feldon
-step << NightElf/Skyborne
+step << NightElf/Skyborne/Dwarf Hunter
     #label RRFP
     .goto 1433/0,-2234.900,-9435.300
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariena Stormfeather|r
