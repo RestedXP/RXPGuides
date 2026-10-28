@@ -709,7 +709,7 @@ step
     .goto 2521,42.76,24.5
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Uualia Cristassol::251537|r
     .collect 277113,1 >>Compre uma |T133637:0|t[Bolsa de Herborismo do Aprendiz]
-    .macro Buy Herbalism Supplies,133637 >>Compre suprimentos de Herborismo
+    -- .macro Buy Herbalism Supplies,133637 >>/run local t={[277113]=1};local m=C_MerchantFrame;for i=1,(m.GetNumItems or GetMerchantNumItems)()do local k=tonumber(((m.GetItemLink or GetMerchantItemLink)(i)or""):match("item:(%d+)"));if t[k]then BuyMerchantItem(i,t[k]);t[k]=nil end end
     .target Uualia Suncrest::251537
 step
     #completewith Aggressive Encroachment
@@ -718,7 +718,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Uualia Cristassol::251537|r
     .collect 2901,1 >>Compre uma |T134708:0|t[Picareta de Mineração]
     .collect 277115,1 >>Compre uma |T133635:0|t[Mochila de Mineração do Aprendiz]
-    .macro Buy Mining Supplies,134708 >>Compre suprimentos de Mineração
+    -- .macro Buy Mining Supplies,134708 >>/run local t={[2901]=1,[277115]=1};local m=C_MerchantFrame;for i=1,(m.GetNumItems or GetMerchantNumItems)()do local k=tonumber(((m.GetItemLink or GetMerchantItemLink)(i)or""):match("item:(%d+)"));if t[k]then BuyMerchantItem(i,t[k]);t[k]=nil end end
     .target Uualia Suncrest::251537
 step
     #completewith Aggressive Encroachment
@@ -979,6 +979,11 @@ step
     #hidewindow
     +Local possível de surgimento de Tornado
     #icon |TInterface/Icons/Spell_Nature_Cyclone:0|t
+    .pin 2521,48.14,56.56,Tornado
+    .pin 2521,54.92,44.76,Tornado
+    .pin 2521,39.6,45.11,Tornado
+    .pin 2521,58.55,52.75,Tornado
+    .pin 2521,47.74,69.57,Tornado
     .pin 2521,50.22,76.77,Tornado
     .pin 2521,53.51,71.46,Tornado
     .pin 2521,54.46,60.13,Tornado
@@ -3226,6 +3231,11 @@ step
     #hidewindow
     +Local possível de surgimento de Tornado
     #icon |TInterface/Icons/Spell_Nature_Cyclone:0|t
+    .pin 2521,48.14,56.56,Tornado
+    .pin 2521,39.6,45.11,Tornado
+    .pin 2521,54.92,44.76,Tornado
+    .pin 2521,58.55,52.75,Tornado
+    .pin 2521,47.74,69.57,Tornado
     .pin 2521,50.22,76.77,Tornado
     .pin 2521,53.51,71.46,Tornado
     .pin 2521,54.46,60.13,Tornado
@@ -3673,7 +3683,6 @@ step << Alliance
     .goto 2521,51.16,67.53,20,0
     .goto 2521,51.31,68.99,25 >>Saia da caverna
 step << Alliance
-    #optional
     #completewith FindAameliaWindfieldA
     >>Mate |cRXP_ENEMY_Rastejantes Cantéolo::254588|r. Pegue |T133972:0|t[|cRXP_LOOT_Carne de Rastejante Cantéolo|r].
     .complete 93317,1 --6/6 Windsong Crawler Meat
@@ -3725,7 +3734,6 @@ step << Horde
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Endaria Mistgaze::254344|r.
 --     .accept 93736 >>Accept Unwelcome Spirits
 --     .target Endaria Mistgaze::254344
-
 step << Horde Hunter
     .xp <9,1
     .money <0.1345
@@ -3815,7 +3823,6 @@ step << Horde Rogue
     .itemcount 277107,1 --Zephrali Bludgeon
     +|cRXP_WARN_Equipe o|r |T7791298:0|t[Porrete Zefrali].
     .use 277107 --Zephrali Bludgeon
-
 step << Horde
     .train 2366,3 -- Herbalism Trained
     .isQuestComplete 97968 -- Camping 101: Herbalism
@@ -3895,9 +3902,8 @@ step << Horde
 step
     #requires BrokenConstructB << Horde
     #label FindAameliaWindfieldA
-    #loop
-    .goto 2521,46.71,81.94,30,0
-    .goto 2521,47.511,78.490,10,0
+    .goto 2521,46.71,81.94
+    --fix loop later
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Aamelia Campo de Vento::252800|r.
     *|cRXP_WARN_Ela pode se deslocar entre locais durante uma sequência de diálogos e ações|r.
     *|cRXP_WARN_Procure-a à distância ou acompanhe o diálogo dela; a seta indica apenas uma localização aproximada|r.
@@ -3906,9 +3912,8 @@ step
     .complete 92679,1 --1/1 Find Aamelia Windfield
     .target Aamelia Windfield::252800
 step
-    #loop
-    .goto 2521,46.71,81.94,30,0
-    .goto 2521,47.511,78.490,10,0
+    --fix loop later
+    .goto 2521,46.71,81.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Aamelia Campo de Vento::252800|r.
     *|cRXP_WARN_Ela pode se deslocar entre locais durante uma sequência de diálogos e ações|r.
     *|cRXP_WARN_Procure-a à distância ou acompanhe o diálogo dela; a seta indica apenas uma localização aproximada|r.
@@ -3917,7 +3922,6 @@ step
     .accept 92684 >>Aceite Vagaventos turrões turrões
     .accept 92683 >>Aceite Pó de asaleve
     .target Aamelia Windfield::252800
-
 -- step << Alliance
 --     .isOnQuest 92682 -- Make Yourself Useful
 --     .isQuestNotComplete 92682 -- Make Yourself Useful
@@ -3928,9 +3932,12 @@ step
 --     .usespell 1259705
 step
     -- #label RipBanditsA
-    #loop
-    .goto 2521,46.164,78.043,30,0
-    .goto 2521,48.920,84.441,30,0
+    --fix loop later
+    -- #loop
+    -- .goto 2521,46.92,81.63,30,0
+    -- .goto 2521,48.08,80.63,30,0
+    -- .goto 2521,47.43,79.26,30,0
+    .goto 2521,46.26,78.04
     >>|TInterface/cursor/crosshair/interact.blp:20|tClique nas |cRXP_PICK_Maçãs-dos-raios Maduras|r.
     >>Mate os |cRXP_ENEMY_Bandidos Famintos::252802|r |cRXP_WARN_(furtivos)|r.
     *Dicas para caçadores: pressione Tab repetidamente para selecioná-los logo e use Marca do Caçador neles para poder se afastar e atacá-los de mais longe. << Hunter
@@ -5333,9 +5340,9 @@ step << Alliance Druid
 step << Alliance
     .goto 2521,69.61,67.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Yorana Canavento::252378|r.
-    .turnin 92645,1 >>Entregue Quebrando a quebradora << Rogue/Hunter/Druid/Shaman
+    .turnin 92645,1 >>Entregue Quebrando o Rachador << Rogue/Hunter/Druid/Shaman
     .turnin 92645,2 >>Entregue Quebrando o Rachador << Mage/Priest/Warlock
-    .turnin 92645,3 >>Entregue Quebrando o Rachador << Warrior/Paladin
+    .turnin 92645,3 >>Entregue Quebrando a quebradora << Warrior/Paladin
     .turnin 92642 >>Entregue Sabotando a logística
     .accept 92880 >>Aceite Retorno a Valanaar
     .target Yorana Windyreed::252378
@@ -6034,7 +6041,7 @@ step << Horde
     .goto 2521,53.97,38.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Eremita Estranho::251684|r.
     .turnin 93160 >>Entregue O tesouro da floresta
-    .turnin 93172,1 >>Entregue Liberte os Abantesmas << Rogue/Hunter/Druid/Shaman
+    .turnin 93172,1 >>Entregue Grátis the Hollows << Rogue/Hunter/Druid/Shaman
     .turnin 93172,2 >>Entregue Liberte os Abantesmas << Mage/Priest/Warlock
     .turnin 93172,3 >>Entregue Grátis the Hollows << Warrior/Paladin
     .target Strange Hermit::251684
@@ -6053,7 +6060,7 @@ step << Alliance
     .turnin 93160 >>Entregue O tesouro da floresta
     .turnin 93172,1 >>Entregue Grátis the Hollows << Rogue/Hunter/Druid/Shaman
     .turnin 93172,2 >>Entregue Grátis the Hollows << Mage/Priest/Warlock
-    .turnin 93172,3 >>Entregue Grátis the Hollows << Warrior/Paladin
+    .turnin 93172,3 >>Entregue Liberte os Abantesmas << Warrior/Paladin
     .target Strange Hermit::251684
 step
     .train 4036,3 -- Engineering Trained
@@ -6143,9 +6150,9 @@ step
     .goto 2521,63.75,36.44,30,0
     .goto 2521,63.80,36.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Vayn Miralua::254151|r na entrada da caverna.
-    .turnin 93165,1 >>Entregue Menos misericórdia, mais orelhas << Rogue/Hunter/Druid/Shaman
+    .turnin 93165,1 >>Entregue Misericórdia Falls on Deaf Orelhas << Rogue/Hunter/Druid/Shaman
     .turnin 93165,2 >>Entregue Misericórdia Falls on Deaf Orelhas << Mage/Priest/Warlock
-    .turnin 93165,3 >>Entregue Misericórdia Falls on Deaf Orelhas << Warrior/Paladin
+    .turnin 93165,3 >>Entregue Menos misericórdia, mais orelhas << Warrior/Paladin
     .target Vayn Moongaze::254151
 step
     .goto 2521,63.93,33.76,20,0
@@ -6321,9 +6328,9 @@ step << Horde
     #optional
     .isQuestComplete 94896
     .goto 2521,65.95,74.31
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ealaane Correnimbo::259012|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ealaane Nimbuswalker::259012|r.
     .turnin 94896 >>Entregue Auxílio aos refugiados
-    .turnin 94897 >>Entregue O destino de um amor
+    .turnin 94897 >>Entregue The Sina of a Ente Querido Um
     .target Ealaane Nimbuswalker::259012
 step << Horde
     .goto 2521,65.95,74.31
@@ -6335,18 +6342,18 @@ step << Horde
     .abandon 94896 >>Abandone Ajudar For The Refugees
 step << Alliance
     .goto 2521,65.95,74.31
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ealaane Nimbuswalker::259012|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ealaane Correnimbo::259012|r.
     .turnin 94896 >>Entregue Ajudar For The Refugees
-    .turnin 94897 >>Entregue The Sina of a Ente Querido Um
+    .turnin 94897 >>Entregue O destino de um amor
     .target Ealaane Nimbuswalker::259012
 step << Alliance
     #optional
     #completewith next
     #label Unfortunate News
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Talaanis Cantonegro::252476|r.
-    .turnin 92644,1 >>Entregue Uma notícia infeliz << Rogue/Hunter/Druid/Shaman
+    .turnin 92644,1 >>Entregue Unfortunate News << Rogue/Hunter/Druid/Shaman
     .turnin 92644,2 >>Entregue Uma notícia infeliz << Mage/Priest/Warlock
-    .turnin 92644,3 >>Entregue Unfortunate News << Warrior/Paladin
+    .turnin 92644,3 >>Entregue Uma notícia infeliz << Warrior/Paladin
     .accept 94568 >>Aceite Os verdadeiros planos da seita
     .disablecheckbox
     .target Talaanis Shadowsong::252476
@@ -6433,17 +6440,17 @@ step << Alliance
     .target Iaadaria Bitterwind::253004
 step << Alliance
     .goto 2521,66.54,79.89
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Elaadrin Plenovento::252475|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Elaadrin Evengale::252475|r.
     .complete 92640,3 --1/1 Recruit the High Order
     .skipgossipid 136547
     .skipgossipid 136546
     .target Elaadrin Evengale::252475
 step << Alliance
     .goto 2521,66.628,79.936
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Elaadrin Evengale::252475|r.
-    .turnin 92834,1 >>Entregue Paz não é opção << Rogue/Hunter/Druid/Shaman
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Elaadrin Plenovento::252475|r.
+    .turnin 92834,1 >>Entregue Avenged Tenfold << Rogue/Hunter/Druid/Shaman
     .turnin 92834,2 >>Entregue Avenged Tenfold << Mage/Priest/Warlock
-    .turnin 92834,3 >>Entregue Avenged Tenfold << Warrior/Paladin
+    .turnin 92834,3 >>Entregue Paz não é opção << Warrior/Paladin
     .turnin -92709 >>Entregue Uma grande aventura
     .target Elaadrin Evengale::252475
 step << Alliance Mage
@@ -6462,9 +6469,9 @@ step << Alliance
     #completewith next
     #label Prepare for Battle
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Valennia Tempespunho::252383|r.
-    .turnin 92640,1 >>Entregue Tempos desesperados << Rogue/Hunter/Druid/Shaman
+    .turnin 92640,1 >>Entregue Tempos de Desespero << Rogue/Hunter/Druid/Shaman
     .turnin 92640,2 >>Entregue Tempos desesperados << Warrior/Paladin
-    .turnin 92640,3 >>Entregue Tempos de Desespero << Mage/Priest/Warlock
+    .turnin 92640,3 >>Entregue Tempos desesperados << Mage/Priest/Warlock
     .accept 93065 >>Aceite Prepare-se para a batalha
     .disablecheckbox
     .target Valennia Stormfist::252383
@@ -7117,14 +7124,14 @@ step << Horde
     #optional
     .isQuestComplete 93737 -- The Broken Construct
     .goto 2521,59.066,72.987
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Riaani Ventonegro::256083|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Riaani Nightwind::256083|r.
     .turnin 93737 >>Entregue O constructo quebrado
     .target Riaani Nightwind::256083
 step << Horde
     #optional
     .isQuestTurnedIn 93737 -- The Broken Construct
     .goto 2521,59.066,72.987
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Riaani Nightwind::256083|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Riaani Ventonegro::256083|r.
     .accept 93738 >>Aceite O constructo quebrado
     .target Riaani Nightwind::256083
 -- step << Horde
@@ -7369,7 +7376,17 @@ step << Horde
     --.accept 93739 >>Accept Exploring the Horde
     --.accept 5726 >>Accept Hidden Enemies
     .target Thrall::4949
+    .dungeon !RFC
     --93739 will take too long, won't be able to fully complete and turnin until lvl 22/23 and at that point you get no xp
+step << Horde
+    .goto 1454/1,-4126.300,1920.100
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thrall::4949|r.
+    .turnin 95350 >>Entregue Bem-vindo a Azeroth
+    .accept 98024 >>Aceite Jornada para a Encruzilhada
+    --.accept 93739 >>Accept Exploring the Horde
+    .accept 5726 >>Aceite Escondido Enemies
+    .target Thrall::4949
+    .dungeon RFC
 step << skip --Horde
     .goto 1454/1,-4133.400,1938.600
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Nazgrel::3230|r.
@@ -7429,9 +7446,6 @@ step << Horde Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Pefreda::5882|r
     .train 1449 >> Treine suas magias de classe
     .target Pephredo::5882
-step << !Hunter
-    #optional
-    .maxlevel 13,Silverpineskip
 step << Horde
     #completewith next
     .zone Durotar >> Saia de Orgrimmar
@@ -7544,7 +7558,4 @@ step << Horde !Hunter
     .zoneskip Silverpine Forest
     .goto 1420/0,629.36,1553.42
     .zone Silverpine Forest >> Vá para Floresta de Pinhaprata
-step << !Hunter
-    #optional
-    #label Silverpineskip
 ]])

@@ -1639,7 +1639,7 @@ step
     .goto 1426,25.077,75.711
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Grolin Barbabranca|r
     .turnin 234 >> Entregue Coldridge Valley Malha Entrega
-    .accept 182 >> Aceite The Trolls Cave
+    .accept 182 >> Aceite A Caverna dos Trolls
     .target Grelin Whitebeard
 step
     #completewith next
@@ -7456,7 +7456,7 @@ step
     .goto Redridge Mountains,14.87,70.30,60,0
     .goto Redridge Mountains,16.93,70.20
     >>Fale com |cRXP_FRIENDLY_Parker|r
-    .accept 244 >>Aceite Encroaching Gnolls
+    .accept 244 >>Aceite Gnolls Invasores
     .target Guard Parker
 step << skip
     #label AoE1
@@ -7479,7 +7479,7 @@ step
     #label Gnolls
     .goto Redridge Mountains,30.74,59.99
     >>Fale com |cRXP_FRIENDLY_Feldon|r
-    .turnin 244 >>Entregue Encroaching Gnolls
+    .turnin 244 >>Entregue Gnolls Invasores
     .accept 246 >>Aceite Assessing the Ameaça
     .target Deputy Feldon
 step

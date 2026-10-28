@@ -613,7 +613,7 @@ step
     .goto Wetlands,10.6,57.2,15,0
     .goto 1437,10.760,56.721
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Nélio Allen|r
-    .vendor 1448 >> |cRXP_WARN_compre um|r |T133024:0|t[Tubo de Bronze]
+    .vendor 1448 >> |cRXP_WARN_Compre um|r |T133024:0|t[Tubo de Bronze]
     >>|cRXP_WARN_Este é um item de suprimento limitado. Pule esta etapa se o|cRXP_FRIENDLY_ Nélio Allen|r não tiver uma|r
 	.target Neal Allen
     .bronzetube
@@ -8166,7 +8166,7 @@ step << !NightElf !Hunter
     .goto Wetlands,10.6,57.2,25,0
     .goto 1437,10.760,56.721
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Nélio Allen|r
-    .vendor >> |cRXP_WARN_compre um|r |T133024:0|t[Tubo de Bronze]
+    .vendor >> |cRXP_WARN_Compre um|r |T133024:0|t[Tubo de Bronze]
     >>|cRXP_WARN_Este é um item de suprimento limitado. Pule esta etapa se o|cRXP_FRIENDLY_ Nélio Allen|r não tiver uma|r
 	.target Neal Allen
     .bronzetube
@@ -8203,7 +8203,7 @@ step << !Hunter NightElf
     .goto Wetlands,10.6,57.2,25,0
     .goto 1437,10.760,56.721
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Nélio Allen|r
-    .vendor >> |cRXP_WARN_compre um|r |T133024:0|t[Tubo de Bronze]
+    .vendor >> |cRXP_WARN_Compre um|r |T133024:0|t[Tubo de Bronze]
     >>|cRXP_WARN_Este é um item de suprimento limitado. Pule esta etapa se o|cRXP_FRIENDLY_ Nélio Allen|r não tiver uma|r
 	.target Neal Allen
     .bronzetube
@@ -8322,7 +8322,7 @@ step << !Hunter
     #completewith next
     .goto Ironforge,67.84,42.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Cortarroda Rodagiros|r
-    .vendor >> |cRXP_WARN_compre um|r |T133024:0|t[Tubo de Bronze]
+    .vendor >> |cRXP_WARN_Compre um|r |T133024:0|t[Tubo de Bronze]
     >>|cRXP_WARN_Este é um item de suprimento limitado. Pule esta etapa se o|cRXP_FRIENDLY_ Cortarroda Rodagiros|r não tiver um|r
 --  >>You will need 2 bronze tubes for a quest later << Rogue
     .bronzetube
@@ -8363,7 +8363,7 @@ step
     #completewith BMenace
     .goto StormwindClassic,55.21,7.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Billibub Rodagiros|r
-    .vendor >> |cRXP_WARN_compre um|r |T133024:0|t[Tubo de Bronze]
+    .vendor >> |cRXP_WARN_Compre um|r |T133024:0|t[Tubo de Bronze]
     >>|cRXP_WARN_Este é um item de suprimento limitado. Pule esta etapa se o|cRXP_FRIENDLY_ Bilubub Rodagiros|r não tiver um|r
 --    >>You will need 2 bronze tubes for a quest later << Rogue
     .bronzetube
@@ -8446,7 +8446,7 @@ step << Rogue
     #completewith next
     .goto StormwindClassic,74.90,54.00,20,0
     .goto StormwindClassic,78.43,60.15,20,0
-    .goto StormwindClassic,78.67,60.13,5 >> Entre na Sede da SI:7. Suba as escadas em direção a |cRXP_FRIENDLY_Renzik, "O Bicudo"|r
+    .goto StormwindClassic,78.67,60.13,5 >> Entre na Sede do SI:7. Suba as escadas em direção a |cRXP_FRIENDLY_Renzik, "O Bicudo"|r
 step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Renzik, "O Bicudo"|r
     .accept 2281 >> Aceite Encontro em Cristarrubra
@@ -8625,13 +8625,13 @@ step << !Human !Warlock
     #xprate >1.49 << Gnome/Dwarf
     .goto Redridge Mountains,15.27,71.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Capitão da Guarda Florestan|r
-    .accept 244 >> Aceite Encroaching Gnolls
+    .accept 244 >> Aceite Gnolls Invasores
     .target Guard Parker
 step << !Human !Warlock
     #xprate >1.49 << Gnome/Dwarf
     .goto Redridge Mountains,30.73,59.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Subdelegado David|r
-    .turnin 244 >> Entregue Encroaching Gnolls
+    .turnin 244 >> Entregue Gnolls Invasores
     .target Deputy Feldon
 step << NightElf
     #xprate <1.5
@@ -9118,14 +9118,14 @@ step
     #label GParker
     .goto Redridge Mountains,15.27,71.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Capitão da Guarda Florestan|r
-    .accept 244 >> Aceite Encroaching Gnolls
+    .accept 244 >> Aceite Gnolls Invasores
     .target Guard Parker
 step
 .dungeon DM
     #xprate <1.5
     .goto Redridge Mountains,30.73,59.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Subdelegado David|r
-    .turnin 244 >> Entregue Encroaching Gnolls
+    .turnin 244 >> Entregue Gnolls Invasores
     .target Deputy Feldon
 
 
@@ -9278,7 +9278,7 @@ step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Capitão da Guarda Florestan|r
 	.target Guard Parker
     .goto Redridge Mountains,15.30,71.50
-    .accept 244 >> Aceite Encroaching Gnolls
+    .accept 244 >> Aceite Gnolls Invasores
 step
     #xprate <1.5
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Capitão da Guarda Florestan|r
@@ -9291,7 +9291,7 @@ step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Subdelegado David|r
 	.target Deputy Feldon
     .goto Redridge Mountains,30.70,60.00
-    .turnin 244 >> Entregue Encroaching Gnolls
+    .turnin 244 >> Entregue Gnolls Invasores
     .accept 246 >> Aceite Assessing the Ameaça
 step
     #xprate <1.5
@@ -9434,7 +9434,7 @@ step
 step << Rogue
     #optional
 	#completewith InRR
-	.destroy 7907 >> Destrua a |T134328:0|t[Certificate of Thievery]. Você não precisa disso
+	.destroy 7907 >> Destrua o |T134328:0|t[Certificate of Thievery]. Você não precisa disso
 step
     #xprate <1.5
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Subdelegado David|r

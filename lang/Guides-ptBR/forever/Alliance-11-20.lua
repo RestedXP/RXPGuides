@@ -23,7 +23,7 @@ step
 step
     .goto 1453/0,673.58,-8867.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estalajadeira Cristine|r
-    .home >> Defina sua Pedra de Retorno em Ventobravo
+    .home >> Defina sua Pedra de Retorno na Cidade de Ventobravo
     .target Innkeeper Allison
     .bindlocation 16509
 
@@ -51,13 +51,13 @@ step
     --.collect 255007,14,92909,1 -- Golem Isospring (14)
     --.collect 255010,5,92909,1 -- Harvester Gyrostabilizer (5)
 step << Human
-    .goto 1453/0,489.99,-8835.76
+    .goto 1453/0,484.200,-8832.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dungar Tragolongo|r
     .turnin 6261 >> Entregue Dungar Tragolongo
     .accept 6285 >> Aceite Retornar a Lewis
     .target Dungar Longdrink
 step << !Skyborne
-    .goto 1453/0,490.03,-8835.82
+    .goto 1453/0,484.200,-8832.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dungar Tragolongo|r
     .fly Westfall >> Voe para Cerro Oeste << !NightElf
     .fp Stormwind >> Obtenha a Rota de Voo de Ventobravo << NightElf
@@ -502,7 +502,7 @@ step << Skyborne
     #optional
     .goto 1453/0,673.58,-8867.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estalajadeira Cristine|r
-    .home >> Defina sua Pedra de Retorno em Ventobravo
+    .home >> Defina sua Pedra de Retorno na Cidade de Ventobravo
     .target Innkeeper Allison
     .bindlocation 16509
 step << Skyborne
@@ -2073,6 +2073,13 @@ step
     .target Gwennyth Bly'Leggonde
     .isOnQuest 4723
 step
+    #optional
+    .goto 1439,36.701,45.122,8,0
+    .goto 1439,36.621,45.596
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
+    .turnin 4722 >> Entregue Tartaruga Marinha Encalhada
+    .target Gwennyth Bly'Leggonde
+step
     .goto 1439/1,577.38,6371.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gubber Blump|r
     .accept 1138 >> Aceite Fruit of the Sea
@@ -2224,7 +2231,6 @@ step
 ----End of small south loop for ERA and SoD Warrior/Rogue/Priest----
 
 
----Start of Night Elf Westfall section----
 step << NightElf
     #optional
     #completewith next
@@ -2237,6 +2243,8 @@ step << NightElf
     .turnin 963 >> Entregue Amor Eterno
     .target Cerellean Whiteclaw
     .isQuestComplete 963
+step
+    #label DarkshoreEndNE --hidden step for #include
 step  << NightElf
     #include 15-16 Loch Modan
 step << NightElf
@@ -2244,7 +2252,6 @@ step << NightElf
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gubber Blump|r
     .accept 1138 >> Aceite Fruit of the Sea
     .target Gubber Blump
-----End of Night Elf Westfall section
 step
     #optional
     #completewith next
@@ -2961,6 +2968,16 @@ step
     .turnin 6661 >> Entregue Ratos de Porão
     .target Monty
 step
+    #completewith next
+    .zone Ironforge >> Saia do bonde e entre em Ironforge
+    .zoneskip Loch Modan
+    .zoneskip Dun Morogh
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gnoarn|r
+    .accept 2039 >> Aceite Cadê o Bingles?
+    .target Gnoarn
+    .goto Ironforge,69.182,50.556
+step
     .goto Ironforge,55.491,47.751
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Grif Trovino|r
     .fp Ironforge >> Aprenda a rota de voo para Ironforge
@@ -3079,17 +3096,6 @@ step
     .target Mountaineer Kadrel
 step
     #label ThelsamarFirst
-    .goto 1432/0,-2954.42,-5394.10
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Vidra Fornalenha|r
-    .accept 418 >> Aceite Chouriço de Thelsamar
-    .target Vidra Hearthstove
-step
-    #optional
-    .goto 1432/0,-2954.42,-5394.10
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Vidra Fornalenha|r
-    .turnin 418 >> Entregue Chouriço em Thelsamar
-    .target Vidra Hearthstove
-    .isQuestComplete 418
 step
     #optional
     #completewith StormpikeO
@@ -3128,7 +3134,6 @@ step
     .mob +Forest Lurker
     >>|cRXP_WARN_Guarde qualquer|r |T133970:0|t|cRXP_LOOT_[Naco de Carne de Javali]|r |cRXP_WARN_para treinar |T133971:0|t[Culinária] |cRXP_WARN_depois|r
     >>|cRXP_WARN_Não se esforce para completar isto agora. Você voltará a Loch Modan em breve|r
-    .isOnQuest 418
 step
     #optional
     #completewith next
@@ -3161,7 +3166,6 @@ step
     .mob +Forest Lurker
     >>|cRXP_WARN_Guarde qualquer|r |T133970:0|t|cRXP_LOOT_[Naco de Carne de Javali]|r para usar para subir de nível|cRXP_WARN_ |T133971:0|t[Culinária] |cRXP_WARN_depois|r
     >>|cRXP_WARN_Não se desvie do seu caminho para completar isto agora. Você voltará para Loch Modan em breve|r
-    .isOnQuest 418
     .subzoneskip 925 --Algaz Station
 step
     #optional
@@ -3306,6 +3310,7 @@ step
     .goto 1432/0,-2676.99,-4825.980
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Montanhista Lançatroz|r
     .turnin 307 >> Entregue Patas Nojentas
+    .accept 1338 >> Aceite Ordens dos Lançatroz
     .target Mountaineer Stormpike
 step
     >>Mate os |cRXP_ENEMY_Elder Preto Ursos|r. Saqueie-os para obter |cRXP_LOOT_Bear Carne|r
@@ -3366,6 +3371,7 @@ step
 step
     .goto 1432/0,-2954.42,-5394.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Vidra Fornalenha|r
+    .accept 418 >> Aceite Chouriço de Thelsamar
     .turnin 418 >> Entregue Chouriço de Thelsamar
     .target Vidra Hearthstove
 step
@@ -3464,6 +3470,11 @@ step
     >>Mate |cRXP_ENEMY_Daggerfang|r, |cRXP_WARN_ele pode estar patrulhando ao longo da costa|r. Saqueie-o para obter |T3736888:0|t[|cRXP_LOOT_Marek's Croc-Faca de Caça|r]
     .complete 86758,1 --Marek's Croc Hunting Knife (1)
     .mob Daggerfang
+step
+    .goto 48,81.647,64.750
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gomez Plosivo|r
+    .target Bingles Blastenheimer
+    .turnin 2039 >>Entregue Cadê o Bingles?
 step
     #completewith next
     .goto Loch Modan,54.7,38.3,200 >> Vá até a ilha localizada no meio de The Loch
@@ -4401,6 +4412,7 @@ step
     .mob Moonstalker Sire
     .mob Moonstalker Matriarch
     .mob Moonstalker Runt
+    .isOnQuest 986
 step << Warrior/Paladin/Rogue/Shaman
     #requires foreststriders
     .goto 1439,56.654,13.484
@@ -4543,9 +4555,17 @@ step << !NightElf
     .turnin 2139 >> Entregue A Esperança de Tharnariun
     .target Tharnariun Treetender
 step << !NightElf
+    .isQuestComplete 986
     .goto 1439,39.373,43.483
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Terenthis|r
     .turnin 986 >> Entregue Um Mestre Perdido
+    .accept 993 >> Aceite Um Mestre Perdido
+    .target Terenthis
+step << !NightElf
+    #optional
+    .isQuestTurnedIn 986
+    .goto 1439,39.373,43.483
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Terenthis|r
     .accept 993 >> Aceite Um Mestre Perdido
     .target Terenthis
 step << !NightElf
@@ -4714,10 +4734,17 @@ step << NightElf
     .turnin 2139 >> Entregue A Esperança de Tharnariun
     .target Tharnariun Treetender
 step << NightElf
-    #label LostMasters
+    .isQuestComplete 986
     .goto 1439,39.373,43.483
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Terenthis|r
     .turnin 986 >> Entregue Um Mestre Perdido
+    .accept 993 >> Aceite Um Mestre Perdido
+    .target Terenthis
+step << NightElf
+    #label LostMasters
+    .isQuestTurnedIn 986
+    .goto 1439,39.373,43.483
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Terenthis|r
     .accept 993 >> Aceite Um Mestre Perdido
     .target Terenthis
 
@@ -4820,7 +4847,7 @@ step << Shaman
     .goto 1437/0,-827.94,-3724.49,25,0
     .goto 1437,10.760,56.721
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Nélio Allen|r
-    .vendor >> |cRXP_WARN_compre um|r |T133024:0|t[Tubo de Bronze]
+    .vendor >> |cRXP_WARN_Compre um|r |T133024:0|t[Tubo de Bronze]
     >>|cRXP_WARN_Este é um item de suprimento limitado. Pule esta etapa se o|cRXP_FRIENDLY_ Nélio Allen|r não tiver uma|r
 	.target Neal Allen
     .bronzetube
@@ -4845,7 +4872,7 @@ step << Shaman
     #completewith next
     .goto 1455/0,-1249.95,-4793.470
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Cortarroda Rodagiros|r
-    .vendor >> |cRXP_WARN_compre um|r |T133024:0|t[Tubo de Bronze]
+    .vendor >> |cRXP_WARN_Compre um|r |T133024:0|t[Tubo de Bronze]
     >>|cRXP_WARN_Este é um item de suprimento limitado. Pule esta etapa se o|cRXP_FRIENDLY_ Cortarroda Rodagiros|r não tiver um|r
 --  >>You will need 2 bronze tubes for a quest later << Rogue
     .bronzetube
@@ -4868,22 +4895,37 @@ RXPGuides.RegisterGuide([[
 #name 19-20 Redridge
 #next 20-21 Costa Negra/Vale Gris
 
-step << !Shaman
-    .goto 1453/0,1193.100,-8328.900
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Manifest Clerk Philmor::268511|r
-    .target Manifest Clerk Philmor::268511
-    .accept 97220 >>Aceite O Simpatia de Philmor
+step << Shaman
+    .goto 1453/0,638.8,-8341.95
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Billibub Rodagiros|r
+    .vendor >> |cRXP_WARN_Compre um|r |T133024:0|t[Tubo de Bronze]
+    >>|cRXP_WARN_Este é um item de suprimento limitado. Pule esta etapa se o|cRXP_FRIENDLY_ Bilubub Rodagiros|r não tiver um|r
+--    >>You will need 2 bronze tubes for a quest later << Rogue
+    .bronzetube
+    .target Billibub Cogspinner
+    .zoneskip Stormwind City,1
 step << Shaman
     .goto 1453/0,634.800,-8390.900
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Shoni, a Shilenchiosa|r
     .accept 2040 >> Aceite Ataque Subterrâneo
     .target Shoni the Shilent
 step << Shaman
+    .goto 1453/0,600.22,-8426.93
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Furen Barbalonga|r
+    .turnin 1338 >> Entregue Ordens dos Lançatroz
+    .target Furen Longbeard
+    .isOnQuest 1338
+step << Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Wilder Urtigão|r
     .accept 167 >> Aceite Oh, Irmão...
     .accept 168 >> Aceite Coletando Memórias
     .goto 1453/0,501.200,-8468.601
     .target Wilder Thistlenettle
+step << !Shaman
+    .goto 1453/0,1193.100,-8328.900
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Manifest Clerk Philmor::268511|r
+    .target Manifest Clerk Philmor::268511
+    .accept 97220 >>Aceite O Simpatia de Philmor
 step << Mage
     #completewith next
     .goto 1453/0,874.32,-9014.67,10 >> Vá para Mago Torre
@@ -4942,7 +4984,7 @@ step
     .turnin 399 >> Entregue Começos Humildes
     .target Baros Alexston
     .isQuestComplete 399
-step << !NightElf
+step << !Shaman
     .goto 1453/0,600.22,-8426.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Furen Barbalonga|r
     .turnin 1338 >> Entregue Ordens dos Lançatroz
@@ -4953,15 +4995,15 @@ step << !Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Shoni, a Shilenchiosa|r
     .accept 2040 >> Aceite Ataque Subterrâneo
     .target Shoni the Shilent
-step
-    #completewith BMenace
+step << !Shaman
     .goto 1453/0,638.8,-8341.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Billibub Rodagiros|r
-    .vendor >> |cRXP_WARN_compre um|r |T133024:0|t[Tubo de Bronze]
+    .vendor >> |cRXP_WARN_Compre um|r |T133024:0|t[Tubo de Bronze]
     >>|cRXP_WARN_Este é um item de suprimento limitado. Pule esta etapa se o|cRXP_FRIENDLY_ Bilubub Rodagiros|r não tiver um|r
 --    >>You will need 2 bronze tubes for a quest later << Rogue
     .bronzetube
     .target Billibub Cogspinner
+    .zoneskip Stormwind City,1
 step << !Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Wilder Urtigão|r
     .accept 167 >> Aceite Oh, Irmão...
@@ -4979,7 +5021,7 @@ step << Rogue
     #completewith next
     .goto 1453/0,374.11,-8762.88,20,0
     .goto 1453/0,326.66,-8818.01,20,0
-    .goto 1453/0,323.43,-8817.83,5 >> Entre na Sede da SI:7. Suba as escadas em direção a |cRXP_FRIENDLY_Renzik, "O Bicudo"|r
+    .goto 1453/0,323.43,-8817.83,5 >> Entre na Sede do SI:7. Suba as escadas em direção a |cRXP_FRIENDLY_Renzik, "O Bicudo"|r
 step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Renzik, "O Bicudo"|r
     .accept 2281 >> Aceite Encontro em Cristarrubra
@@ -5059,36 +5101,36 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Elaine Trias::483|r
     .target Elaine Trias::483
     .turnin 97222 >>Entregue Gatehouse Mercadorias
-step
+step << !Skyborne
     #completewith orcs
-    .goto 1453/0,490.12,-8835.67
+    .goto 1453/0,484.200,-8832.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dungar Tragolongo|r
-    .fly Redridge >> Voe para Montanhas Cristarrubra << !NightElf !Skyborne
-    .fp Stormwind >> Aprenda o Ponto de Voo de Ventabela << NightElf/Skyborne
+    .fly Redridge >> Voe para Montanhas Cristarrubra << !NightElf !Dwarf/!Hunter
+    .fp Stormwind >> Aprenda o Ponto de Voo de Ventabela << NightElf/Dwarf Hunter
     .target Dungar Longdrink
     .zoneskip Redridge Mountains
-step << NightElf/Skyborne
+step << NightElf/Skyborne/Dwarf Hunter
     #completewith RRFP
     .goto 1429/0,389.800,-9119.900
     .zone Elwynn Forest >> Saia de Ventobravo
     .zoneskip Redridge Mountains
-step << NightElf/Skyborne
+step << NightElf/Skyborne/Dwarf Hunter
     #completewith RRFP
     .goto 1433/0,-1948.56,-9582.75
     .zone Redridge Mountains >> Viaje para as Montanhas Cristarrubra
 step
     .goto 1433/0,-1906.400,-9606.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Capitão da Guarda Florestan|r
-    .accept 244 >> Aceite Encroaching Gnolls
+    .accept 244 >> Aceite Gnolls Invasores
     .target Guard Parker
 step
     .goto 1433/0,-2237.93,-9443.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Subdelegado David|r
-    .turnin 244 >> Entregue Encroaching Gnolls
+    .turnin 244 >> Entregue Gnolls Invasores
     .accept 246 >> Aceite Assessing the Ameaça
     .accept 98407 >>Aceite Demonstração de Força
     .target Deputy Feldon
-step << NightElf/Skyborne
+step << NightElf/Skyborne/Dwarf Hunter
     #label RRFP
     .goto 1433/0,-2234.900,-9435.300
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ariena Penafúria|r
@@ -5225,7 +5267,7 @@ step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Capitão da Guarda Florestan|r
 	.target Guard Parker
     .goto 1433/0,-1906.400,-9606.800
-    .accept 244 >> Aceite Encroaching Gnolls
+    .accept 244 >> Aceite Gnolls Invasores
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Capitão da Guarda Florestan|r
 	.target Guard Parker
@@ -5236,7 +5278,7 @@ step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Subdelegado David|r
 	.target Deputy Feldon
     .goto 1433/0,-2237.28,-9443.750
-    .turnin 244 >> Entregue Encroaching Gnolls
+    .turnin 244 >> Entregue Gnolls Invasores
     .accept 246 >> Aceite Assessing the Ameaça
 step
     #completewith next
@@ -5431,7 +5473,7 @@ step
 step << Rogue
     #optional
 	#completewith InRR
-	.destroy 7907 >> Destrua a |T134328:0|t[Certificate of Thievery]. Você não precisa disso
+	.destroy 7907 >> Destrua o |T134328:0|t[Certificate of Thievery]. Você não precisa disso
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Subdelegado David|r
 	.target Deputy Feldon
@@ -5758,7 +5800,7 @@ step << NightElf Rogue/Skyborne Rogue
     .target Thor
     .isOnQuest 2360
 step << Human Rogue/Dwarf Rogue
-    .goto 1453/0,490.03,-8835.82
+    .goto 1453/0,484.200,-8832.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dungar Tragolongo|r
     .fly Westfall >> Voe para Cerro Oeste
     .target Dungar Longdrink
@@ -7014,11 +7056,18 @@ step
     .goto 1439/1,-5.83,4608.57,30 >> Vá em direção a |cRXP_FRIENDLY_Volcor|r na caverna
     .isOnQuest 993
 step
+    .isOnQuest 993
     .goto 1439/1,-5.83,4608.570
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Volcor|r
     .turnin 993 >> Entregue Um Mestre Perdido
     .accept 995 >> Aceite Fuga pela Furtividade
     .timer 20,Fuga pela Furtividade RP
+    .target Volcor
+step
+    .isQuestTurnedIn 993
+    .goto 1439/1,-5.83,4608.570
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Volcor|r
+    .accept 995 >> Aceite Fuga pela Furtividade
     .target Volcor
 step
     #label volcorEnd

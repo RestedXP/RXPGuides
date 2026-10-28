@@ -3606,7 +3606,6 @@ step
 step
     .goto 1454/1,-4293.600,1949.900
     >>Pegue as |cRXP_PICK_Pedras|r laranjas que estão no chão
-    >>|cRXP_WARN_Pule esta missão se houver muita concorrência! Não há muitas |cRXP_PICK_Pedras|r e elas demoram para reaparecer|r
     .complete 97326,1 --|8/8 Smooth Boulder
     .isOnQuest 97326
 step
@@ -3764,6 +3763,27 @@ step << Shaman/Hunter
     .turnin 926 >>Entregue Pedra do Poder Defeituosa
     .isOnQuest 924
 step << !Shaman !Hunter
+    #completewith Gazzuz
+    >>Mate os |cRXP_ENEMY_Burning Blade Orcs|r. Saqueie-os para obter a |cRXP_LOOT_Lieutenant's Insignia|r
+    >>|cRXP_WARN_Esta é uma pré-missão para RFC. Tem uma chance de drop baixa|r
+    .complete 5726,1 --Lieutenant's Insignia (1)
+    .mob Burning Blade Fanatic
+    .mob Burning Blade Apprentice
+    .dungeon RFC
+step << !Shaman !Hunter
+    #label Gazzuz
+    .goto 1411/1,-4701.42,1455.83
+    >>Mate o |cRXP_ENEMY_Gazz'uz|r. Saqueie-o para pegar |T134085:0|t[|cRXP_LOOT_Olho da Sombra Ardente|r]
+    >>|cRXP_WARN_Cuidado pois ele é MUITO difícil. Sinta-se à vontade para pular esta missão se você não conseguir se agrupar ou enfrentá-lo sozinho|r
+    >>|cRXP_WARN_Use o |T134085:0|t[|cRXP_LOOT_Olho da Sombra Ardente|r] para iniciar a missão|r
+    >>|cRXP_WARN_Use LoS (linha de visão) para evitar |cRXP_ENEMY_Gazz'uz|r suas Setas das Sombras|r
+    >>|cRXP_WARN_Você pode correr até as poças de água dentro da caverna para despistar o|r |cRXP_ENEMY_Emissário do Caos|r |cRXP_WARN_depois de matar|r |cRXP_ENEMY_Gazz'uz|r
+    .collect 4903,1,832,1 --Collect Eye of Burning Shadow
+    .accept 832 >>Aceite Sombras incandescentes
+    .use 4903
+	.unitscan Gazz'uz
+    .dungeon RFC
+step << !Shaman !Hunter
     #loop
     .goto 1411/1,-4805.59,1495.67,0
     .goto 1411/1,-4855.82,1498.84,15,0
@@ -3776,12 +3796,12 @@ step << !Shaman !Hunter
     .goto 1411/1,-4679.75,1501.31,15,0
     .goto 1411/1,-4684.50,1466.06,15,0
     .goto 1411/1,-4805.59,1495.67,15,0
-    >>Mate os |cRXP_ENEMY_Burning Blade Orcs|r. Saqueie-os para obter uma |cRXP_LOOT_Lieutenant's Insignia|r
+    >>Mate os |cRXP_ENEMY_Burning Blade Orcs|r. Saqueie-os para obter a |cRXP_LOOT_Lieutenant's Insignia|r
+    >>|cRXP_WARN_Esta é uma pré-missão para RFC. Tem uma chance de drop baixa|r
     .complete 5726,1 --Lieutenant's Insignia (1)
     .mob Burning Blade Fanatic
     .mob Burning Blade Apprentice
     .dungeon RFC
-    .isOnQuest 5726
 step << !Shaman !Hunter
     #label ZeptoUC1
     .goto 1411/1,-4648.55,1321.88,40 >>Suba a Torre do Zepelim
@@ -3928,6 +3948,7 @@ step
     .accept 96897 >>Aceite The Cult of the Maldição
     .accept 96898 >>Aceite Remnants of Guerra
     .target Hadric Harlson
+    .maxlevel 11
 step
     .goto 1420/0,-130.500,1907.800
     >>Mate |cRXP_ENEMY_Impositores Sombrios|r e |cRXP_ENEMY_Neófitos Sombrios|r. Saqueie-os para pegar |cRXP_LOOT_Fragmento de Cristal Necrótico|r
@@ -3938,6 +3959,7 @@ step
     .complete 96897,1 --|8/8 Dark Neophyte slain
     .mob +Dark Neophyte
     .complete 96898,1 --|12/12 Necrotic Crystal Fragment
+    .isOnQuest 96897,96898
 step
     #label HorrorsandSpirits
     #loop
@@ -3960,10 +3982,25 @@ step
 step
     .goto 1420/0,54.500,1996.400
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Hadric Harlson|r
-    .turnin 96897 >>Entregue The Cult of the Maldição
-    .turnin 96898 >>Entregue Remnants of Guerra
-    --.accept 96899 >>Accept Bandarion Keep
+    .turnin 96897 >>Entregue A Seita da Maldição
+    .turnin 96898 >>Entregue Remanescentes de Guerra
     .target Hadric Harlson
+    .isQuestComplete 96897
+    .isQuestComplete 96898
+step
+    #optional
+    .goto 1420/0,54.500,1996.400
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Hadric Harlson|r
+    .turnin 96897 >>Entregue A Seita da Maldição
+    .target Hadric Harlson
+    .isQuestComplete 96897
+step
+    #optional
+    .goto 1420/0,54.500,1996.400
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Hadric Harlson|r
+    .turnin 96898 >>Entregue Remanescentes de Guerra
+    .target Hadric Harlson
+    .isQuestComplete 96898
 step
     #label LinneaTurnin
     .goto 1420/0,74.00,2022.47

@@ -5,6 +5,7 @@ RXPGuides.RegisterGuide([[
 #group Guias de Fim de Jogo
 #subgroup Sintonias
 #name Atunamento das Catacumbas de Karazhan
+#guideKind attunement
 
 step
     #completewith next
@@ -217,6 +218,7 @@ RXPGuides.RegisterGuide([[
 #group Guias de Fim de Jogo
 #subgroup Sintonias
 #name Introdução ao Enclave Escarlate
+#guideKind attunement
 
 step
    #completewith next

@@ -1062,7 +1062,7 @@ step
     .goto 1420/0,496.96,2256.54,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gordo|r
     >>|cRXP_WARN_Ele é uma abominação que patrulha a estrada até Montalvo|r
-    >>|cRXP_WARN_Selecione "Preciso de um relatório para o Executor Zigano|r
+    >>|cRXP_WARN_Selecione "I need a report for Executor Zigano|r"
     .complete 99141,3 --|1/1 Gordo's Report
     .target Gordo
     --.gossipoption 142737
@@ -1187,7 +1187,7 @@ step
 step
     .goto 1420/0,403.300,2287.700
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Necroguarda Dinis|r
-    >>|cRXP_WARN_Selecione "Preciso de um relatório para o Executor Zigano|r
+    >>|cRXP_WARN_Selecione "I need a report for Executor Zigano|r"
     .turnin 404 >>Entregue Uma tarefa podre
     .accept 426 >>Aceite Os moinhos invadidos
     .complete 99141,1 --|1/1 Dillinger's Report
@@ -3291,9 +3291,6 @@ RXPGuides.RegisterGuide([[
 #displayname 13-15 Floresta de Pinhaprata << Paladin
 #next 12-17 Sertões
 
-step << Skyborne
-    #optional
-    .maxlevel 13,Silverpineskip
 step << Undead Rogue
     #sticky
     #completewith RotHideCluesTurnIn
@@ -3445,6 +3442,11 @@ step
     .accept 3221 >>Aceite Fale com Renferrel
     .accept 437 >>Aceite Os Campos Estéreis
     .target High Executor Hadrec
+step << Mage/Priest/Warlock
+    .goto 1421/0,1626.100,511.500
+    >>Pegue o |cRXP_PICK_Livro Brilhante|r no chão
+    .collect 210177,1,79096,1 --Ataeric: On Arcane Curiosities
+    --Other classes won't be nearby turnin in UC, probably not worth since it's only 160xp
 step
     .goto 1421/0,1652.82,522.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Boticário Renferrel|r
@@ -3468,6 +3470,11 @@ step
     .accept 430 >>Aceite Reencontrando Quintino
     .target Apothecary Renferrel
     .addquestitem 3164,429
+step
+    #completewith next
+    >>Mate |cRXP_ENEMY_Ursos|r. Saqueie-os para pegar seus |cRXP_LOOT_Corações|r
+    .complete 447,1 --Grizzled Bear Heart (6)
+    .mob Ferocious Grizzled Bear
 step
     #loop
     .goto 1421/0,1386.96,638.51,0
@@ -3499,6 +3506,11 @@ step
     .goto 1421/0,1231.14,866.99
     >>Entre na casa e suba ao segundo andar. Pegue os |cRXP_PICK_Grimórios Empoeirados|r que estão no chão
     .complete 422,1 --Remedy of Arugal (1)
+step
+    #completewith next
+    >>Mate |cRXP_ENEMY_Ursos|r. Saqueie-os para pegar seus |cRXP_LOOT_Corações|r
+    .complete 447,1 --Grizzled Bear Heart (6)
+    .mob Ferocious Grizzled Bear
 step
     #completewith next
     .goto 1421/0,1207.62,1293.71,80,0
@@ -4086,6 +4098,12 @@ step << Paladin
     .target Garen Largo
     .xp <16,1
 step << Priest/Mage/Warlock
+    .goto 1458/0,168.200,1663.100
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Owen Thadd::211022|r
+    .target Owen Thadd::211022
+    .turnin 79096 >>Entregue Ataeric: Sobre Curiosidades Arcanas
+    .itemcount 210177,1
+step << Priest/Mage/Warlock
     #ssf
     .goto 1458/0,206.04,1705.57
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zeno Valforte|r no Distrito da Magia
@@ -4176,9 +4194,6 @@ step << Skyborne
     .use 6948
     .zoneskip Orgrimmar
     .bindlocation 1637,1
-step << Skyborne
-    #optional
-    #label Silverpineskip
 step << Undead
     #completewith HiddenEnemiesPickup
     .goto 1454/1,-4367.46,1405.44,50,0
@@ -4198,14 +4213,49 @@ step << Undead/Skyborne
     .target Thrall
     .dungeon RFC
 step << Undead/Skyborne
-    #completewith next
+    #completewith Gazzuz
     .goto 1454/1,-4367.46,1405.44,50,0
     .zone Durotar >> Saia de Orgrimmar
     .dungeon RFC
 step << Undead/Skyborne
-    .goto 1411/1,-4769.10,1484.39,0
-    >>Mate inimigos da |cRXP_ENEMY_Lâmina Ardente|r na Rocha da Caveira até cair a |cRXP_LOOT_Insígnia do Tenente|r
+    #completewith Gazzuz
+    >>Mate os |cRXP_ENEMY_Burning Blade Orcs|r. Saqueie-os para obter a |cRXP_LOOT_Lieutenant's Insignia|r
+    >>|cRXP_WARN_Esta é uma pré-missão para RFC. Tem uma chance de drop baixa|r
     .complete 5726,1 --Lieutenant's Insignia (1)
+    .mob Burning Blade Fanatic
+    .mob Burning Blade Apprentice
+    .dungeon RFC
+step << Undead/Skyborne
+    #label Gazzuz
+    .goto 1411/1,-4701.42,1455.83
+    >>Mate o |cRXP_ENEMY_Gazz'uz|r. Saqueie-o para pegar |T134085:0|t[|cRXP_LOOT_Olho da Sombra Ardente|r]
+    >>|cRXP_WARN_Use o |T134085:0|t[|cRXP_LOOT_Olho da Sombra Ardente|r] para iniciar a missão|r
+    >>|cRXP_WARN_Use LoS (linha de visão) para evitar |cRXP_ENEMY_Gazz'uz|r suas Setas das Sombras|r
+    >>|cRXP_WARN_Você pode correr até as poças de água dentro da caverna para despistar o|r |cRXP_ENEMY_Emissário do Caos|r |cRXP_WARN_depois de matar|r |cRXP_ENEMY_Gazz'uz|r
+    >>|cRXP_WARN_Tenha cuidado, pois ele é difícil. Você pode pular esta missão se precisar.|r
+    .collect 4903,1,832,1 --Collect Eye of Burning Shadow
+    .accept 832 >>Aceite Sombras incandescentes
+    .use 4903
+	.unitscan Gazz'uz
+    .dungeon RFC
+step << Undead/Skyborne
+    #loop
+    .goto 1411/1,-4805.59,1495.67,0
+    .goto 1411/1,-4855.82,1498.84,15,0
+    .goto 1411/1,-4833.08,1494.96,15,0
+    .goto 1411/1,-4805.59,1495.67,15,0
+    .goto 1411/1,-4784.44,1535.85,15,0
+    .goto 1411/1,-4750.60,1531.62,15,0
+    .goto 1411/1,-4734.21,1505.54,15,0
+    .goto 1411/1,-4693.49,1519.64,15,0
+    .goto 1411/1,-4679.75,1501.31,15,0
+    .goto 1411/1,-4684.50,1466.06,15,0
+    .goto 1411/1,-4805.59,1495.67,15,0
+    >>Mate os |cRXP_ENEMY_Burning Blade Orcs|r. Saqueie-os para obter a |cRXP_LOOT_Lieutenant's Insignia|r
+    >>|cRXP_WARN_Esta é uma pré-missão para RFC. Tem uma chance de drop baixa|r
+    .complete 5726,1 --Lieutenant's Insignia (1)
+    .mob Burning Blade Fanatic
+    .mob Burning Blade Apprentice
     .dungeon RFC
 step << Undead/Skyborne
     #completewith Conscript

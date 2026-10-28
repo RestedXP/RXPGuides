@@ -185,7 +185,7 @@ step
     .target Grelin Whitebeard
     .goto Dun Morogh,25.076,75.713
     .turnin 234 >> Entregue Coldridge Valley Malha Entrega
-    .accept 182 >> Aceite The Trolls Cave
+    .accept 182 >> Aceite A Caverna dos Trolls
 step << Paladin/Mage/Warlock/Hunter
     .xp 4
 step << Paladin/Mage/Warlock/Hunter
@@ -2011,7 +2011,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Capitão da Guarda Florestan|r
     .target Guard Parker
     .goto Redridge Mountains,17.4,69.6
-    .accept 244 >> Aceite Encroaching Gnolls
+    .accept 244 >> Aceite Gnolls Invasores
 step
     .goto Redridge Mountains,18.581,69.208,15,0
     .goto Redridge Mountains,23.325,71.373,25,0
@@ -2019,7 +2019,7 @@ step
     .goto Redridge Mountains,30.733,59.996
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Subdelegado David|r
     >>|cRXP_WARN_MANTENHA-SE NA ESTRADA PRINCIPAL E EVITE QUALQUER INIMIGO PRÓXIMO NO CAMINHO|r
-    .turnin 244 >> Entregue Encroaching Gnolls
+    .turnin 244 >> Entregue Gnolls Invasores
     .target Deputy Feldon
 step
     .goto Redridge Mountains,30.590,59.410

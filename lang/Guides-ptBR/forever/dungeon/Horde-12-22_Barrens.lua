@@ -1799,7 +1799,7 @@ step << Orc/Troll
     .accept 6386 >> Aceite Retorno à Encruzilhada
     .target Doras
     .isQuestTurnedIn 6385
-step << Tauren/Undead
+step << Tauren
     .goto 1454/1,-4313.60,1676.24
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Doraso|r
     >>|cRXP_WARN_Não voe para lugar nenhum!|r
@@ -1840,7 +1840,7 @@ step << Hunter
     .train 24557 >> Treine as magias do seu mascote
     .target Xao'tsu
     .xp <18,1
-step << Troll Hunter/Orc Hunter/Priest
+step << Troll Hunter/Orc Hunter/Priest/Warlock
     .goto 1454/1,-4824.00,2090.540
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Hanashi|r
     .train 227 >>Treine Cajados
@@ -1933,9 +1933,43 @@ step
     .goto 1454/1,-4367.46,1405.44,50,0
     .zone Durotar >>Saia de Orgrimmar
 step
-    .goto Durotar,53.08,9.19,0
-    >>Mate inimigos da |cRXP_ENEMY_Lâmina Ardente|r na Rocha da Caveira até cair a |cRXP_LOOT_Insígnia do Tenente|r
+    #completewith Gazzuz
+    >>Mate os |cRXP_ENEMY_Burning Blade Orcs|r. Saqueie-os para obter a |cRXP_LOOT_Lieutenant's Insignia|r
+    >>|cRXP_WARN_Esta é uma pré-missão para RFC. Tem uma chance de drop baixa|r
     .complete 5726,1 --Lieutenant's Insignia (1)
+    .mob Burning Blade Fanatic
+    .mob Burning Blade Apprentice
+step
+    #label Gazzuz
+    .goto 1411/1,-4701.42,1455.83
+    >>Mate o |cRXP_ENEMY_Gazz'uz|r. Saqueie-o para pegar |T134085:0|t[|cRXP_LOOT_Olho da Sombra Ardente|r]
+    >>|cRXP_WARN_Use o |T134085:0|t[|cRXP_LOOT_Olho da Sombra Ardente|r] para iniciar a missão|r
+    >>|cRXP_WARN_Use LoS (linha de visão) para evitar |cRXP_ENEMY_Gazz'uz|r suas Setas das Sombras|r
+    >>|cRXP_WARN_Você pode correr até as poças de água dentro da caverna para despistar o|r |cRXP_ENEMY_Emissário do Caos|r |cRXP_WARN_depois de matar|r |cRXP_ENEMY_Gazz'uz|r
+    >>|cRXP_WARN_Tenha cuidado, pois ele é difícil. Você pode pular esta missão se precisar.|r
+    .collect 4903,1,832,1 --Collect Eye of Burning Shadow
+    .accept 832 >>Aceite Sombras incandescentes
+    .use 4903
+	.unitscan Gazz'uz
+    .isOnQuest 5726
+step
+    #loop
+    .goto 1411/1,-4805.59,1495.67,0
+    .goto 1411/1,-4855.82,1498.84,15,0
+    .goto 1411/1,-4833.08,1494.96,15,0
+    .goto 1411/1,-4805.59,1495.67,15,0
+    .goto 1411/1,-4784.44,1535.85,15,0
+    .goto 1411/1,-4750.60,1531.62,15,0
+    .goto 1411/1,-4734.21,1505.54,15,0
+    .goto 1411/1,-4693.49,1519.64,15,0
+    .goto 1411/1,-4679.75,1501.31,15,0
+    .goto 1411/1,-4684.50,1466.06,15,0
+    .goto 1411/1,-4805.59,1495.67,15,0
+    >>Mate os |cRXP_ENEMY_Burning Blade Orcs|r. Saqueie-os para obter a |cRXP_LOOT_Lieutenant's Insignia|r
+    >>|cRXP_WARN_Esta é uma pré-missão para RFC. Tem uma chance de drop baixa|r
+    .complete 5726,1 --Lieutenant's Insignia (1)
+    .mob Burning Blade Fanatic
+    .mob Burning Blade Apprentice
 step
     #completewith next
     .goto 1454/1,-4367.46,1405.44,50,0
@@ -2026,6 +2060,12 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Neeru Cortafogo|r
     .accept 5761 >>Aceite Mate a besta
     .target Neeru Fireblade
+step
+    .goto 1454/1,-4374.75,1800.93
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Neeru|r
+    .turnin 832 >>Entregue Sombras incandescentes
+    .target Neeru Fireblade
+    .isOnQuest 832
 step
     .goto Orgrimmar,49.6,50.4
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Neeru Cortafogo|r
@@ -2167,6 +2207,23 @@ step
     .zoneskip Undercity
     .zoneskip Silverpine Forest
 step
+    #completewith next
+    .subzone 159 >> Vá para Montalvo
+step
+    .goto Tirisfal Glades,61.26,50.84
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Magistrado Sevren|r
+    .turnin 440 >> Entregue O Anel Gravado
+    .accept 441 >> Aceite Raleigh and the Undercity
+    .target Magistrate Sevren
+    .isOnQuest 440
+step
+    #optional
+    .goto Tirisfal Glades,61.26,50.84
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Magistrado Sevren|r
+    .accept 441 >> Aceite Raleigh and the Undercity
+    .target Magistrate Sevren
+    .isQuestTurnedIn 440
+step
     .goto 1420/0,84.900,2023.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Deathguard Kristof::251001|r
     .accept 92422 >>Aceite A Ira de Rath'mael
@@ -2188,6 +2245,13 @@ step
     .goto 1458/0,257.08,1623.38,10,0
     .goto 1458/0,244.51,1598.73,15,0
     .goto 1458/0,266.300,1567.200,20 >>Pegue o elevador até Cidade Baixa
+step
+    .goto Undercity,62.02,42.76
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Raleigh|r
+    .turnin 441 >>Entregue Raleigh and the Undercity
+    .accept 530 >>Aceite A Vingança de um Marido
+    .target Raleigh Andrean
+    .isQuestTurnedIn 440
 step << Tauren/Hunter/Orc Shaman/Troll Shaman
     .goto 1458/0,266.300,1567.200
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Michael Garrett::4551|r
@@ -2282,6 +2346,7 @@ step
     #completewith RuinsRathma
     .isOnQuest 92421
     >>Mate o |cRXP_ENEMY_Morto-vivo|r. Saque seus |T458717:0|t[|cRXP_LOOT_Intact Limbs|r]
+    >>|cRXP_WARN_Certifique-se de matar todos os inimigos na masmorra, senão você pode não concluir esta missão|r
     .complete 92421,1 --Intact Limbs (25)
     .mob Skeleton::250618
     --.mob Cadaver::250621
@@ -2333,6 +2398,7 @@ step
     #label RuinsLimbs
     .isOnQuest 92421
     >>Mate o |cRXP_ENEMY_Morto-vivo|r. Saque seus |T458717:0|t[|cRXP_LOOT_Intact Limbs|r]
+    >>|cRXP_WARN_Certifique-se de matar todos os inimigos na masmorra, senão você pode não concluir esta missão|r
     .complete 92421,1 --Intact Limbs (25)
     .mob Skeleton::250618
     --.mob Cadaver::250621
@@ -2375,9 +2441,28 @@ step
     .goto 1458/0,244.51,1598.73,15,0
     .goto 1458/0,266.300,1567.200,20 >>Pegue o elevador até Cidade Baixa
 step
+    .goto 1458/0,241.700,1633.200
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tawny Grisette::4554|r
+    >>|cRXP_WARN_Ela patrulha na Trade Quarter|r
+    >>|cRXP_BUY_Compre um|r |T134522:0|t[|cRXP_LOOT_Toxic Morrião|r]
+    .collect 281246,1,97291,1 --Toxic Skullcap (1)
+    .target Tawny Grisette::4554
+step
+    .isOnQuest 95204
+    .goto 1458/0,172.100,1667.800
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Oran Snakewrithe::7825|r
+    .turnin 95204 >>Entregue Brasão de Lordaeron
+    .target Oran Snakewrithe::7825
+step
+    .goto 1458/0,151.500,1550.200
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ezekiel Tumbas::4585|r
+    >>|cRXP_BUY_Compre uma|r |T134799:0|t[|cRXP_LOOT_Essence of Agonia|r]
+    .collect 8923,1,97291,1 --Essence of Agony (1)
+    .target Ezekiel Graves::4585
+step
     .isQuestComplete 95216
-    .goto 1458/0,344.000,1423.800,50,0
-    .goto 1458/0,373.200,1362.100,50,0
+    .goto 1458/0,344.000,1423.800,15,0
+    .goto 1458/0,373.200,1362.100,15,0
     .goto 1458/0,428.400,1417.700
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Theodore Griffs::11835|r
     .turnin 95216 >>Entregue A Nova Peste
@@ -2387,11 +2472,13 @@ step
     .goto 1458/0,404.800,1434.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Master Apothecary Faranell::2055|r
     .turnin 97288 >>Entregue Tormento Infinito
+    .accept 97289 >>Aceite Tormento Infinito
     .target Master Apothecary Faranell::2055
 step
+    #optional
     .isQuestTurnedIn 97288
     .goto 1458/0,404.800,1434.500
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Master Apothecary Faranell::2055|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Master Apothecary Faranell::2055|r
     .accept 97289 >>Aceite Tormento Infinito
     .target Master Apothecary Faranell::2055
 step
@@ -2399,8 +2486,10 @@ step
     .goto 1458/0,433.300,1482.600
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Unfinished Abominação::271613|r
     .turnin 97289 >>Entregue Tormento Infinito
+    .accept 97290 >>Aceite Tormento Infinito
     .target Unfinished Abomination::271613
 step
+    #optional
     .isQuestTurnedIn 97289
     .goto 1458/0,433.300,1482.600
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Unfinished Abominação::271613|r
@@ -2411,60 +2500,34 @@ step
     .goto 1458/0,404.800,1434.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Master Apothecary Faranell::2055|r
     .turnin 97290 >>Entregue Tormento Infinito
+    .accept 97291 >>Aceite Tormento Infinito
     .target Master Apothecary Faranell::2055
 step
+    #optional
     .isQuestTurnedIn 97290
     .goto 1458/0,404.800,1434.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Master Apothecary Faranell::2055|r
     .accept 97291 >>Aceite Tormento Infinito
     .target Master Apothecary Faranell::2055
 step
-    .isQuestComplete 92421
-    .goto 1458/0,344.000,1423.800,50,0
-    .goto 1458/0,373.200,1362.100,50,0
-    .goto 1458/0,371.600,1465.600,50,0
-    .goto 1458/0,437.100,1399.300,50,0
-    .goto 1458/0,430.600,1342.100,50,0
-    .goto 1458/0,397.500,1311.400,50,0
-    .goto 1458/0,315.800,1304.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Morbin Lightbane::266484|r
-    .turnin 92421 >>Entregue Justiça da Luz
-    *Escolha |T133483:0|t[|cRXP_LOOT_The Stitcher|r] para uma melhoria na mão principal. Treine Maças se necessário << Rogue
-    .target Morbin Lightbane::266484
+    .goto 1458/0,357.62,1529.15
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Guardião Bel'dugur|r
+    .accept 1013 >>Aceite O Livro de Ur
+    .target Keeper Bel'dugur
 step
-    .isOnQuest 97291
     .goto 1458/0,356.700,1563.500
-    >>|cRXP_WARN_Saque a|r |T134181:0|t[|cRXP_LOOT_Erva Ardente|r] |cRXP_WARN_do vaso atrás|r |cRXP_FRIENDLY_Katrina Alliestar::4615|r
-    .complete 97291,2 --Blisterweed (1)
+    >>|cRXP_WARN_Saque a|r |T134181:0|t[|cRXP_LOOT_Blisterweed|r] |cRXP_WARN_do pote atrás de|r |cRXP_FRIENDLY_Marta Bas??lico|r
+    .collect 281300,1,97291,1 --Blisterweed (1)
+    .target Martha Alliestar
 step
     .isOnQuest 97291
-    .goto 1458/0,151.500,1550.200
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ezekiel Tumbas::4585|r
-    >>|cRXP_BUY_Compre uma|r |T134799:0|t[|cRXP_LOOT_Essence of Agonia|r]
-    .complete 97291,3 --Essence of Agony (1)
-    .target Ezekiel Graves::4585
-step
-    .isOnQuest 95204
-    .goto 1458/0,172.100,1667.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Oran Snakewrithe::7825|r
-    .turnin 95204 >>Entregue Crest of Lordaeron
-    .target Oran Snakewrithe::7825
-step
-    .isOnQuest 97291
-    .goto 1458/0,241.700,1633.200
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tawny Grisette::4554|r
-    >>|cRXP_BUY_Compre um|r |T134522:0|t[|cRXP_LOOT_Toxic Morrião|r]
-    .complete 97291,1 --Toxic Skullcap (1)
-    .target Tawny Grisette::4554
-step
-    .isOnQuest 97291
-    .goto 1458/0,344.000,1423.800,50,0
-    .goto 1458/0,373.200,1362.100,50,0
     .goto 1458/0,404.800,1434.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Master Apothecary Faranell::2055|r
     .turnin 97291 >>Entregue Tormento Infinito
+    .accept 97292 >>Aceite Tormento Infinito
     .target Master Apothecary Faranell::2055
 step
+    #optional
     .isQuestTurnedIn 97291
     .goto 1458/0,404.800,1434.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Master Apothecary Faranell::2055|r
@@ -2472,17 +2535,27 @@ step
     .target Master Apothecary Faranell::2055
 step
     .isOnQuest 97292
-    .goto 1458/0,442.700,1419.600,50,0
-    .goto 1458/0,458.900,1438.600,50,0
+    .goto 1458/0,444.300,1421.500,10,0
+    .goto 1458/0,455.400,1442.500,10,0
     .goto 1458/0,438.800,1468.700
     .use 281327 >>|cRXP_WARN_Usar|r |T134837:0|t[|cRXP_LOOT_Soro Sibilante|r] |cRXP_WARN_perto do verme no andar de cima|r
     .complete 97292,1
 step
     .isQuestComplete 97292
     .goto 1458/0,404.800,1434.500
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Master Apothecary Faranell::2055|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Master Apothecary Faranell::2055|r
     .turnin 97292 >>Entregue Tormento Infinito
     .target Master Apothecary Faranell::2055
+step
+    .isQuestComplete 92421
+    .goto 1458/0,377.100,1461.700,15,0
+    .goto 1458/0,431.500,1407.800,10,0
+    .goto 1458/0,429.200,1340.400,10,0
+    .goto 1458/0,368.600,1305.000,10,0
+    .goto 1458/0,315.600,1304.800
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Morbin Lightbane::266484|r
+    .turnin 92421 >>Entregue Justiça da Luz
+    .target Morbin Lightbane::266484
 step << Rogue
     #completewith RuinsRogueTurnin
     #optional
@@ -2662,8 +2735,17 @@ step << !Tauren !Hunter !Shaman/Skyborne
     .mob Sunscale Screecher
     .mob Sunscale Scytheclaw
 step << !Tauren !Hunter !Shaman/Skyborne
+    #optional
+    #completewith FoodandWater2
+    .hs >> Use sua Pedra de Regresso para ir à Encruzilhada
+    .use 6948
+    .bindlocation 380,1
+    .zoneskip The Barrens
+    .cooldown item,6948,>0
+step << !Tauren !Hunter !Shaman/Skyborne
     #completewith
     .subzone 380 >>Vá para A Encruzilhada
+    .cooldown item,6948,<0
 step
     .goto 1413/1,-2639.32,-436.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gazrog|r
@@ -3810,7 +3892,7 @@ step
 step << !Tauren !Skyborne
     .goto 1413/1,-1891.48,-2391.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Denterroto|r
-    .aura 16618 >>|cRXP_WARN_Se você tem 10|r |T134128:0|t[|cRXP_LOOT_Estilhaços de Sangue|r |cRXP_WARN_sobrando, use-os para obter|r |T136022:0|t[Espírito do vento] |cRXP_WARN_de|r |cRXP_FRIENDLY_Denterroto|r
+    .aura 16618 >>|cRXP_WARN_Se você tem 10|r |T134128:0|t[|cRXP_LOOT_Estilhaços de Sangue|r] |cRXP_WARN_restantes, use-os para obter|r |T136022:0|t[Espírito of the Vento - Missão - Missão] |cRXP_WARN_de|r |cRXP_FRIENDLY_Denterroto|r
     >>|cRXP_WARN_Pule esta etapa se tiver a rota de voo de Penhasco do Trovão|r
     .itemcount 5075,10
     .target Mangletooth
@@ -3891,6 +3973,38 @@ step
     .bindlocation 1638
     .isQuestAvailable 6442
     .dungeon !WC
+step << Hunter
+    #completewith HunterTraining2
+    .goto 1456/1,-123.26,-1394.49,60 >> Vá ao Platô dos Caçadores
+step << Hunter
+    .goto 1456/1,-100.50,-1454.75
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Urek Chifre Troante|r
+    .train 5118 >> Treine suas magias de classe
+    .target Urek Thunderhorn
+    .xp <20,1
+    .xp >22,1
+step << Hunter
+    #label HunterTraining2
+    #optional
+    .goto 1456/1,-100.50,-1454.75
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Urek Chifre Troante|r
+    .train 5118 >> Treine suas magias de classe
+    .target Urek Thunderhorn
+    .xp <22,1
+step << Hunter
+    .goto 1456/1,-47.69,-1434.64
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Hesuwa Chifre Troante|r
+    .train 24494 >> Treine as magias do seu mascote
+    .target Hesuwa Thunderhorn
+step << Warrior
+    #completewith next
+    .goto 1456/1,-123.26,-1394.49,60 >> Vá ao Platô dos Caçadores
+step << Warrior
+    .goto 1456/1,-81.09,-1457.74
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Torm Totem da Fúria|r
+    .train 845 >>Treine suas magias de classe
+    .accept 1823 >>Aceite Fale com Ruga
+    .target Torm Ragetotem
 step
     #completewith next
     .goto 1456/1,222.96,-1079.42,40,0
@@ -4150,38 +4264,6 @@ step << Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Turak Runa Totem|r
     .turnin 98362 >>Entregue Penhasco do Trovão
     .target Turak Runetotem
-step << Hunter
-    #completewith HunterTraining2
-    .goto 1456/1,-123.26,-1394.49,60 >> Vá ao Platô dos Caçadores
-step << Hunter
-    .goto 1456/1,-100.50,-1454.75
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Urek Chifre Troante|r
-    .train 5118 >> Treine suas magias de classe
-    .target Urek Thunderhorn
-    .xp <20,1
-    .xp >22,1
-step << Hunter
-    #label HunterTraining2
-    #optional
-    .goto 1456/1,-100.50,-1454.75
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Urek Chifre Troante|r
-    .train 5118 >> Treine suas magias de classe
-    .target Urek Thunderhorn
-    .xp <22,1
-step << Hunter
-    .goto 1456/1,-47.69,-1434.64
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Hesuwa Chifre Troante|r
-    .train 24494 >> Treine as magias do seu mascote
-    .target Hesuwa Thunderhorn
-step << Warrior
-    #completewith next
-    .goto 1456/1,-123.26,-1394.49,60 >> Vá ao Platô dos Caçadores
-step << Warrior
-    .goto 1456/1,-81.09,-1457.74
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Torm Totem da Fúria|r
-    .train 845 >>Treine suas magias de classe
-    .accept 1823 >>Aceite Fale com Ruga
-    .target Torm Ragetotem
 step << Rogue
     .goto 1456/1,-36.52,-1244.05
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Fale com|r |cRXP_FRIENDLY_Kard Totem da Fúria|r|cRXP_BUY_. Compre uma|r |T135324:0|t[Espada Longa] |cRXP_BUY_dele.|r
@@ -4510,8 +4592,8 @@ step
     #optional
     #completewith Ectoplasms
     >>Pegue as|cRXP_PICK_Ofídeas|r no chão
-    >>|cRXP_WARN_Recomenda-se que no máximo 3 jogadores tentem concluir esta missão se fizerem apenas uma incursão. Não há|r |cRXP_PICK_Ofídeas|r |cRXP_WARN_suficientes para todos|r
     >>|cRXP_WARN_Lance|r |T133939:0|t[Localizar Plantas] |cRXP_WARN_para vê-las no minimapa|r
+    >>|cRXP_WARN_A maioria dos |cRXP_PICK_Serpentbloom|r deveria ter reaparecido após matar o chefe final!|r
     .complete 962,1 --Serpentbloom (10)
     .skill herbalism,<1,1
     .isOnQuest 962
@@ -4519,13 +4601,13 @@ step
     #optional
     #completewith Ectoplasms
     >>Pegue as|cRXP_PICK_Ofídeas|r no chão
-    >>|cRXP_WARN_Recomenda-se que no máximo 3 jogadores tentem concluir esta missão se fizerem apenas uma incursão. Não há|r |cRXP_PICK_Ofídeas|r |cRXP_WARN_suficientes para todos|r
+    >>|cRXP_WARN_A maioria dos |cRXP_PICK_Serpentbloom|r deveria ter reaparecido após matar o chefe final!|r
     .complete 962,1 --Serpentbloom (10)
     .skill herbalism,1,1
     .isOnQuest 962
 step
     #optional
-    >>Mate |cRXP_ENEMY_Assoladores Anormais|r, |cRXP_ENEMY_Víboras|r, |cRXP_ENEMY_Trôpegos|r e |cRXP_ENEMY_Presáteras|r. Pegue seus |cRXP_ENEMY_Pelegos|r
+    >>Mate os Deviate Ravagers, os Vipers, os Shamblers e os Dreadfangs. Saque-os por seus |cRXP_ENEMY_Hides|r . Saque-os por seus |cRXP_ENEMY_Hides|r
     .complete 1487,1 --Deviate Ravager (7)
     .mob +Deviate Ravager
     .complete 1487,2 --Deviate Viper (7)
@@ -5173,6 +5255,12 @@ step << Troll Warrior/Undead Warrior/Tauren Warrior/Undead Paladin
     .goto 1454/1,-4824.00,2090.540
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Hanashi|r
     .train 197 >>Aprenda a usar Machados de Duas Mãos
+    .train 2567 >> Treine Arremesso << !Paladin
+    .target Hanashi
+step << Orc Warrior
+    .goto 1454/1,-4824.00,2090.540
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Hanashi|r
+    .train 2567 >> Treine Arremesso
     .target Hanashi
 step << Warrior
     .goto 1454/1,-4801.42,1980.53

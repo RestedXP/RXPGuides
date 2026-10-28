@@ -2471,7 +2471,7 @@ step << !Warlock
     #optional
     .goto 1433/0,-1906.400,-9606.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Capitão da Guarda Florestan|r
-    .accept 244 >> Aceite Encroaching Gnolls
+    .accept 244 >> Aceite Gnolls Invasores
     .target Guard Parker
     .xp <11,1
 step << !Warlock
@@ -2491,7 +2491,7 @@ step << !Warlock
     #optional
     .goto 1433/0,-2237.93,-9443.60
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Subdelegado David|r
-    .turnin 244 >> Entregue Encroaching Gnolls
+    .turnin 244 >> Entregue Gnolls Invasores
     .target Deputy Feldon
     .isOnQuest 244
     .xp <11,1
@@ -3140,7 +3140,7 @@ step << Rogue
 step
     .goto 1453/0,673.58,-8867.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estalajadeira Cristine|r
-    .home >> Defina sua Pedra de Retorno em Ventobravo
+    .home >> Defina sua Pedra de Retorno na Cidade de Ventobravo
     .target Innkeeper Allison
     .bindlocation 16509
 step << Hunter
@@ -3351,7 +3351,7 @@ step << Warlock
     #requires SoulShards
     .goto 1433/0,-1906.400,-9606.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Capitão da Guarda Florestan|r
-    .accept 244 >> Aceite Encroaching Gnolls
+    .accept 244 >> Aceite Gnolls Invasores
     .target Guard Parker
 step << Warlock
     .goto 1433/0,-1974.20,-9577.07,15,0
@@ -3363,7 +3363,7 @@ step << Warlock
 step << Warlock
     .goto 1433/0,-2238.00,-9443.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Subdelegado David|r
-    .turnin 244 >> Entregue Encroaching Gnolls
+    .turnin 244 >> Entregue Gnolls Invasores
 step << Warlock
     .goto 1433/0,-2234.900,-9435.300
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ariena Penafúria|r
@@ -4688,7 +4688,7 @@ step << Warlock/Mage/Rogue/Priest/Warrior/Paladin
     .target Woo Ping
 step
     .isOnQuest 6261
-    .goto 1453/0,489.99,-8835.76
+    .goto 1453/0,484.200,-8832.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dungar Tragolongo|r
     .turnin 6261 >> Entregue Dungar Tragolongo
     .target Dungar Longdrink

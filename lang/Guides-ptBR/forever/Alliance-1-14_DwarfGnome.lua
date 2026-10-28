@@ -157,6 +157,11 @@ step
     .target Sten Stoutarm
 
 step << Warlock
+    .goto 1426,25.077,75.711
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Grolin Barbabranca|r
+    .accept 182 >> Aceite A Caverna dos Trolls
+    .target Grelin Whitebeard
+step << Warlock
     #season 0,1
     #optional
     #requires FrostmaneC1
@@ -209,6 +214,7 @@ step << Warlock
     #label BeginningsHS
     #completewith BeginningsEnd
     .deathskip >> Morra e reviva no |cRXP_FRIENDLY_Anjo da Cura|r
+    >>|cRXP_WARN_Certifique-se de que sua subzona seja Coldridge Valley quando você morrer! Caso contrário, você será enviado para o cemitério Kharanos|r
     .target Anjo da Cura
 step << Warlock
     #season 0,1
@@ -281,7 +287,7 @@ step
     .goto 1426,25.077,75.711
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Grolin Barbabranca|r
     .turnin 234 >> Entregue Coldridge Valley Malha Entrega
-    .accept 182 >> Aceite The Trolls Cave
+    .accept 182 >> Aceite A Caverna dos Trolls << !Warlock
     .target Grelin Whitebeard
 step << Hunter
     #completewith next
@@ -2802,7 +2808,7 @@ step << Warlock
     #completewith next
     +|cRXP_WARN_Lance|r |T136126:0|t[Conversão de Vida] |cRXP_WARN_repetidamente até que você tenha <10% dos pontos de vida enquanto a caminho de|r |cRXP_FRIENDLY_Dungar Tragolongo|r
 step
-    .goto 1453/0,490.03,-8835.82
+    .goto 1453/0,484.200,-8832.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dungar Tragolongo|r
     .fp Stormwind >> Pegue o ponto de voo de Ventobravo
     .target Dungar Longdrink
@@ -3183,12 +3189,12 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Capitão da Guarda Florestan|r
     .target Guard Parker
     .goto 1433/0,-1906.400,-9606.800
-    .accept 244 >> Aceite Encroaching Gnolls
+    .accept 244 >> Aceite Gnolls Invasores
 step
     .goto 1433/0,-2238.00,-9443.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Subdelegado David|r
     >>|cRXP_WARN_Cuidado com os inimigos de nível alto no caminho|r
-    .turnin 244 >> Entregue Encroaching Gnolls
+    .turnin 244 >> Entregue Gnolls Invasores
     .target Deputy Feldon
 step
     .goto 1433/0,-2234.900,-9435.300

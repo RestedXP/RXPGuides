@@ -909,7 +909,7 @@ step
 >>Fale com |cRXP_FRIENDLY_Grolin Barbabranca|r
     .turnin 234 >> Entregue Coldridge Valley Malha Entrega
 .target Grelin Whitebeard
-    .accept 182 >> Aceite The Trolls Cave
+    .accept 182 >> Aceite A Caverna dos Trolls
 step
     .goto Dun Morogh,25.0,76.0
 .target Nori Pridedrift

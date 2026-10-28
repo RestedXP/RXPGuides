@@ -818,13 +818,13 @@ step
     .goto Elwynn Forest,99.05,72.15
 .target Guard Parker
 >>Fale com o |cRXP_FRIENDLY_Guarda Capitão da Guarda Florestan|r
-    .accept 244 >>Aceite Encroaching Gnolls
+    .accept 244 >>Aceite Gnolls Invasores
 step
     #sticky
     #label Gnolls
     .goto Redridge Mountains,30.74,59.99
 >>Fale com o |cRXP_FRIENDLY_Subdelegado David|r
-    .turnin 244 >>Entregue Encroaching Gnolls
+    .turnin 244 >>Entregue Gnolls Invasores
 .target Deputy Feldon
     .accept 246 >>Aceite Assessing the Ameaça
 step

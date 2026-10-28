@@ -7,7 +7,8 @@ RXPGuides.RegisterGuide([[
 #group Guias de Fim de Jogo
 #subgroup Sintonias
 #name Sintonia de Onyxia (A)
-
+#guideKind attunement
+#guideIcon rxp-icon-ony
 
 step
     #completewith next
@@ -336,6 +337,7 @@ step
     .target Haleh
 
 ]])
+
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
@@ -344,6 +346,8 @@ RXPGuides.RegisterGuide([[
 #group Guias de Fim de Jogo
 #subgroup Sintonias
 #name Sintonização de Onyxia (H)
+#guideKind attunement
+#guideIcon rxp-icon-ony
 
 step
     #completewith next
@@ -785,8 +789,6 @@ step
 
 ]])
 
-
-
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
@@ -794,6 +796,8 @@ RXPGuides.RegisterGuide([[
 #subgroup Sintonias
 #group Guias de Fim de Jogo
 #name Sintonização com o Núcleo Derretido
+#guideKind attunement
+#guideIcon rxp-icon-mc
 
 step
     #completewith next
@@ -831,8 +835,6 @@ step
 
 ]])
 
-
-
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
@@ -840,6 +842,8 @@ RXPGuides.RegisterGuide([[
 #group Guias de Fim de Jogo
 #subgroup Sintonias
 #name Harmonização com o Blackwing Lair
+#guideKind attunement
+#guideIcon rxp-icon-bwl
 
 step
     #completewith next
@@ -876,8 +880,6 @@ step
 
 ]])
 
-
-
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
@@ -885,6 +887,8 @@ RXPGuides.RegisterGuide([[
 #group Guias de Fim de Jogo
 #subgroup Chaves
 #name Chave do Pico da Rocha Negra Superior
+#guideKind key
+#guideIcon rxp-icon-ring
 
 step
     #completewith next
@@ -967,8 +971,6 @@ step
 
 ]])
 
-
-
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
@@ -977,6 +979,8 @@ RXPGuides.RegisterGuide([[
 #group Guias de Fim de Jogo
 #subgroup Chaves
 #name Scolomântia Chave (A)
+#guideKind key
+#guideIcon rxp-icon-key-2
 
 step
     #sticky
@@ -1226,8 +1230,6 @@ step
 
 ]])
 
-
-
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
@@ -1236,7 +1238,8 @@ RXPGuides.RegisterGuide([[
 #group Guias de Fim de Jogo
 #subgroup Chaves
 #name Scolomântia Chave (H)
-
+#guideKind key
+#guideIcon rxp-icon-key-2
 
 step
     #sticky
@@ -1492,7 +1495,8 @@ RXPGuides.RegisterGuide([[
 #group Guias de Fim de Jogo
 #subgroup Chaves
 #name Chave das Profundezas Rocha Negra
-
+#guideKind key
+#guideIcon rxp-icon-key-3
 
 step
     #completewith next
@@ -1546,8 +1550,7 @@ step
     .turnin 3802 >> Entregue Legado dos Ferros Negros
     .isQuestComplete 3802
 
-    ]])
-
+]])
 
 RXPGuides.RegisterGuide([[
 #classic
@@ -1556,6 +1559,7 @@ RXPGuides.RegisterGuide([[
 #group Guias de Fim de Jogo
 #subgroup Chaves
 #name Chave do Martelo do Gládio Cruel
+#guideKind key
 
 step
     #completewith next
@@ -1584,6 +1588,7 @@ RXPGuides.RegisterGuide([[
 
 #group Guias de Fim de Jogo
 #name Sintonia de Naxxramas
+#guideKind attunement
 #subgroup Sintonias
 
 step
@@ -1650,13 +1655,13 @@ step
 
 ]])
 
-
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
 
 #group Guias de Fim de Jogo
 #name Sintonia do Cânion do Demônio Caído
+#guideKind attunement
 #subgroup Sintonias
 <<sod
 

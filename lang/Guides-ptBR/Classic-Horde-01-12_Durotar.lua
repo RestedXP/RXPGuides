@@ -10147,7 +10147,7 @@ step << Warlock
     .unitscan Gazz'uz
 step << Warlock
     #completewith next
-    >>Mate os |cRXP_ENEMY_Burning Blade Orcs|r. Saqueie-os para obter uma |cRXP_LOOT_Lieutenant's Insignia|r
+    >>Mate os |cRXP_ENEMY_Burning Blade Orcs|r. Saqueie-os para obter a |cRXP_LOOT_Lieutenant's Insignia|r
     >>|cRXP_WARN_Pular isto se você tiver azar com o drop|r
     .complete 5726,1 --Lieutenant's Insignia (1)
     .mob Burning Blade Fanatic
