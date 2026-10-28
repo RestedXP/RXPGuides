@@ -88,6 +88,18 @@ function addon.settings.OpenSettings(panelName)
     _G.Settings.OpenToCategory(category.ID)
 end
 
+function addon.settings.CloseSettings()
+    AceConfigDialog:CloseAll()
+
+    if _G.InterfaceOptionsFrame and _G.InterfaceOptionsFrame:IsShown() then
+        _G.InterfaceOptionsFrame:Hide()
+    end
+
+    if _G.SettingsPanel and _G.SettingsPanel:IsShown() then
+        _G.SettingsPanel:Hide()
+    end
+end
+
 function addon.settings.ChatCommand(input)
     if not input then addon.settings.OpenSettings() end
 
@@ -597,7 +609,7 @@ function addon.settings:CreateAceOptionsPanel()
                 width = "normal",
                 func = function()
                     _G.RunNextFrame(function()
-                        AceConfigDialog:CloseAll()
+                        addon.settings.CloseSettings()
                         addon.guideImporter:Open()
                     end)
                 end
@@ -607,7 +619,12 @@ function addon.settings:CreateAceOptionsPanel()
                 name = L("Open Feedback Form"),
                 type = "execute",
                 width = "normal",
-                func = addon.comms.OpenBugReport
+                func = function()
+                    C_Timer.After(0, function()
+                        addon.settings.CloseSettings()
+                        addon.comms.OpenBugReport()
+                    end)
+                end
             },
             splashUI = {
                 order = 1.1,
@@ -615,7 +632,12 @@ function addon.settings:CreateAceOptionsPanel()
                 type = "execute",
                 width = 1.2,
                 hidden = not addon.ui.v2.configurator.IsSupportedClient(),
-                func = function() addon.ui.v2.configurator:Open() end
+                func = function()
+                    C_Timer.After(0, function()
+                        addon.settings.CloseSettings()
+                        addon.ui.v2.configurator:Open()
+                    end)
+                end
             },
             resetGuideProgressTop = {
                 name = L("Reset Guide Progress"),
