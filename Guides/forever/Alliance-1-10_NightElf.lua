@@ -121,7 +121,7 @@ step << !Priest !Rogue
 	.accept 3120 >> Accept Verdant Sigil << Druid
 step << !Hunter !Druid !Warrior
     #completewith next
-    >>Kill |cRXP_ENEMY_Thistle Boars|r on the way to Iverron
+    >>Kill |cRXP_ENEMY_Thistle Boars|r on the way to Iverron. You don't have to complete this now
     .complete 457,2 --Kill Thistle Boar (x7)
     .mob +Thistle Boar
 step << !Hunter !Druid !Warrior
@@ -162,7 +162,7 @@ step << Druid
     .mob Grellkin
 step << Druid
     #completewith next
-    >>Kill |cRXP_ENEMY_Thistle Boars|r on the way to Iverron
+    >>Kill |cRXP_ENEMY_Thistle Boars|r on the way to Iverron. You don't have to complete this now
     .complete 457,2 --Kill Thistle Boar (x7)
     .mob +Thistle Boar
 step << Druid
@@ -257,7 +257,7 @@ step
     .mob Webwood Spider
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Thistle Boars|r on the way to the Grells
+    >>Kill |cRXP_ENEMY_Thistle Boars|r on the way to the Grells. You don't have to complete this now
     .complete 457,2 --Kill Thistle Boar (x7)
     .mob +Thistle Boar
 step << !Druid
@@ -284,7 +284,7 @@ step
     .turnin 97977 >>Turn in Nature's Call
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Thistle Boars|r on the way to Iverron
+    >>Kill |cRXP_ENEMY_Thistle Boars|r on the way to Iverron. You don't have to complete this now
     .complete 457,2 --Kill Thistle Boar (x7)
     .mob +Thistle Boar
 step
@@ -320,7 +320,7 @@ step << Hunter/Rogue
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.05
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Thistle Boars|r on the way to Iverron
+    >>Kill |cRXP_ENEMY_Thistle Boars|r on the way to Iverron. You don't have to complete this now
     .complete 457,2 --Kill Thistle Boar (x7)
     .mob +Thistle Boar
 step
@@ -491,6 +491,8 @@ step
 step
     .goto 1438/1,882.300,9909.101
     >>Use the |cRXP_WARN_/sit|r emote next to the campfire and |cRXP_WARN_sit still for 1 minute|r to complete the objective
+    >>|cRXP_WARN_If you don't get the quest credit for sitting down abandon the quest and pick it up again!|r
+    .complete 96606,1 --Sit
     .complete 96606,2 --Gain the Boosted Rest buff
 step
     .goto 1438/1,879.700,9907.601
@@ -2040,9 +2042,6 @@ step
     #loop
     .goto 1438/1,1828.600,10964.800
     >>Kill |cRXP_ENEMY_Lady Sathrah|r. Loot her for her |cRXP_LOOT_Spinnerets|r
-    >>|cRXP_ENEMY_Lady Sathrah|r |cRXP_WARN_can spawn in 3 different locations, check your map for a recomended path to take|r
-    >>|cRXP_WARN_Head north along the river and check the easternmost spawn point first. Work on the|r |T134339:0|t[Tumors] |cRXP_WARN_quest as you go|r
-    >>|cRXP_WARN_If she's not east of the river complete the|r |T134339:0|t[Tumors] |cRXP_WARN_quest before heading west|r
     .complete 2518,1 --Collect Silvery Spinnerets (x1)
     .mob Lady Sathrah
 step
@@ -2318,14 +2317,12 @@ step << Hunter
     >>|cRXP_WARN_You will need it to feed your owl, they only eat meat and there's no meat vendor in Darkshore|r
     .collect 117,15
     .target Jaeana
-step << Hunter/Warrior/Priest/Sod Rogue
+step << Hunter/Warrior/Priest
     .goto 1457/1,2329.19,9908.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ilyenia Moonfire|r
     .skipgossipid 96881
     .train 227 >>Train Staves << Hunter/Warrior/Priest
-    .train 265 >>Train Bows << Sod Rogue
     >>If you have a Staff in your bags, equip it << Hunter
-    >>If you have a Bow in your bags, equip it << Rogue
     .target Ilyenia Moonfire
 step << Hunter
     #optional

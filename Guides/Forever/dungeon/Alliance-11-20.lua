@@ -12,7 +12,9 @@ RXPGuides.RegisterGuide([[
 #next 17-18 Hall of Thanes
 
 step
-    #include RestedXP Forever Guide (A)\14-16 Darkshore@WashedA-IFExit
+    #include RestedXP Forever Guide (A)\14-16 Darkshore@WashedA-DarkshoreEndNE
+step
+    #include RestedXP Forever Guide (A)\15-16 Loch Modan@SWBoat-IFExit
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Firebrew|r
     >>|cRXP_WARN_If you have a Mage in your group you will set your Hearth to Lakeshire instead|r
@@ -102,7 +104,7 @@ step
     .turnin 96390 >> Turn in Nip 'Em in the Bud
     .target Earthseer Farsen
 step
-    #include RestedXP Forever Guide (A)\14-16 Darkshore@LochEnter-LochEnd
+    #include RestedXP Forever Guide (A)\15-16 Loch Modan@LochEnter-LochEnd
 step << NightElf Druid
     #completewith next
 	.cast 18960 >> Cast Teleport: Moonglade
@@ -127,14 +129,12 @@ step << Druid
 	.cast 18960 >> Cast Teleport: Moonglade
 	.zoneskip Moonglade
 step << Druid
-    #season 0
     .goto Moonglade,56.1,30.7
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dendrite Starblaze|r
     .turnin 26 >> Turn in A Lesson to Learn
     .accept 29 >> Accept Trial of the Lake
     .target Dendrite Starblaze
 step << Druid
-    #season 0
     .goto Moonglade,52.6,51.6
     >>Swim into Lake Elune'Ara
     >>Open a |cRXP_PICK_Bauble Container|r. Loot it for a |T134125:0|t[Shrine Bauble]
@@ -142,19 +142,16 @@ step << Druid
     .collect 15877,1,29,1 -- Shrine Bauble (1)
 step << Druid
     #optional
-    #season 0
     #completewith next
     .cast 18960 >> Cast Teleport: Moonglade
     .itemcount 15877,1 -- Shrine Bauble (1)
 step << Druid
-    #season 0
     .goto Moonglade,36.026,41.374
     >>|cRXP_WARN_Use the|r |T134125:0|t[Shrine Bauble] |cRXP_WARN_at the Shrine of Remulos tree|r
     .complete 29,1 --Complete the Trial of the Lake.
     .use 15877
 step << Druid
     #label TotL
-    #season 0
     .goto Moonglade,36.517,40.104
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tajarri|r
     .turnin 29 >> Turn in Trial of the Lake
@@ -2843,6 +2840,24 @@ step
     .goto Ironforge,76.61,51.28,10,0
     .zone Stormwind City >> Take the tram to Stormwind
 step << NightElf
+    .goto 1453/0,501.200,-8468.601
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wilder Thistlenettle|r
+    .accept 167 >> Accept Oh Brother. . .
+    .accept 168 >> Accept Collecting Memories
+    .target Wilder Thistlenettle
+step << NightElf
+    #completewith next
+    .goto 1453/0,437.600,-8524.5000,20,0
+    .goto 1453/0,408.100,-8478.500,15,0
+    .goto 1453/0,502.900,-8358.800,15 >> Travel to the Stormwind Library
+step << NightElf
+    .isOnQuest 95189
+    .goto 1453/0,531.000,-8322.400
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Dena Kennedy|r
+    >>|cRXP_WARN_She walks around slightly in the Royal Gallery|r
+    .turnin 95189 >> Turn in Crest of Lordaeron
+    .target Lady Dena Kennedy
+step << NightElf
     .goto 1453/0,634.700,-8390.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shoni the Shilent|r
     .accept 2040 >> Accept Underground Assault
@@ -2868,24 +2883,6 @@ step << NightElf
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orphan Matron Nightingale|r
     .accept 95161 >> Accept Remember That I Love You
     .target Orphan Matron Nightingale
-step << NightElf
-    .goto 1453/0,501.200,-8468.601
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wilder Thistlenettle|r
-    .accept 167 >> Accept Oh Brother. . .
-    .accept 168 >> Accept Collecting Memories
-    .target Wilder Thistlenettle
-step << NightElf
-    #completewith next
-    .goto 1453/0,437.600,-8524.5000,20,0
-    .goto 1453/0,408.100,-8478.500,15,0
-    .goto 1453/0,502.900,-8358.800,15 >> Travel to the Stormwind Library
-step << NightElf
-    .isOnQuest 95189
-    .goto 1453/0,531.000,-8322.400
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Dena Kennedy|r
-    >>|cRXP_WARN_She walks around slightly in the Royal Gallery|r
-    .turnin 95189 >> Turn in Crest of Lordaeron
-    .target Lady Dena Kennedy
 step << NightElf Rogue
     .goto 1453/0,377.61,-8752.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Osborne|r
@@ -4078,6 +4075,13 @@ step
     .collect 12347,1,4763,1 --Filled Cleansing Bowl (1)
     .use 12346
 step
+    #optional
+    .goto 1439,44.168,36.289
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Asterion|r
+    .turnin 957 >> Turn in Bashal'Aran
+    .isOnQuest 957
+    .target Asterion
+step
     .isOnQuest 4763
     #sticky
     #label Blackwood1
@@ -4385,6 +4389,7 @@ step
     .mob Greymist Hunter
     .mob Greymist Coastrunner
 step
+    #label Onu
     .goto 1439,43.555,76.293
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Onu|r
     .turnin 948 >> Turn in Onu
@@ -4558,6 +4563,10 @@ step
     >>|cRXP_WARN_Avoid running on the main road as much as possible. Enemies will only spawn if you're on the road|r
     .complete 5321,2
     .isOnQuest 5321
+step
+    #optional
+    .abandon 2138 >> Abandon Cleansing of the Infected
+    .abandon 1002 >> Abandon Buzzbox 323
 step
     #completewith tower
     .zone Ashenvale >> Travel south to Ashenvale

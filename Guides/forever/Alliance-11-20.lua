@@ -2073,6 +2073,13 @@ step
     .target Gwennyth Bly'Leggonde
     .isOnQuest 4723
 step
+    #optional
+    .goto 1439,36.701,45.122,8,0
+    .goto 1439,36.621,45.596
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
+    .turnin 4722 >> Turn in Beached Sea Turtle
+    .target Gwennyth Bly'Leggonde
+step
     .goto 1439/1,577.38,6371.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gubber Blump|r
     .accept 1138 >> Accept Fruit of the Sea
@@ -2224,7 +2231,6 @@ step
 ----End of small south loop for ERA and SoD Warrior/Rogue/Priest----
 
 
----Start of Night Elf Westfall section----
 step << NightElf
     #optional
     #completewith next
@@ -2237,6 +2243,8 @@ step << NightElf
     .turnin 963 >> Turn in For Love Eternal
     .target Cerellean Whiteclaw
     .isQuestComplete 963
+step
+    #label DarkshoreEndNE --hidden step for #include
 step  << NightElf
     #include 15-16 Loch Modan
 step << NightElf
@@ -2244,7 +2252,6 @@ step << NightElf
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gubber Blump|r
     .accept 1138 >> Accept Fruit of the Sea
     .target Gubber Blump
-----End of Night Elf Westfall section
 step
     #optional
     #completewith next
@@ -2961,6 +2968,16 @@ step
     .turnin 6661 >> Turn in Deeprun Rat Roundup
     .target Monty
 step
+    #completewith next
+    .zone Ironforge >> Leave the tram and enter Ironforge
+    .zoneskip Loch Modan
+    .zoneskip Dun Morogh
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gnoarn|r
+    .accept 2039 >> Accept Find Bingles
+    .target Gnoarn
+    .goto Ironforge,69.182,50.556
+step
     .goto Ironforge,55.491,47.751
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryth Thurden|r
     .fp Ironforge >> Get the Ironforge flight path
@@ -3079,17 +3096,6 @@ step
     .target Mountaineer Kadrel
 step
     #label ThelsamarFirst
-    .goto 1432/0,-2954.42,-5394.10
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vidra Hearthstove|r
-    .accept 418 >> Accept Thelsamar Blood Sausages
-    .target Vidra Hearthstove
-step
-    #optional
-    .goto 1432/0,-2954.42,-5394.10
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vidra Hearthstove|r
-    .turnin 418 >> Turn in Thelsamar Blood Sausages
-    .target Vidra Hearthstove
-    .isQuestComplete 418
 step
     #optional
     #completewith StormpikeO
@@ -3128,7 +3134,6 @@ step
     .mob +Forest Lurker
     >>|cRXP_WARN_Save any|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r |cRXP_WARN_to use for leveling |T133971:0|t[Cooking] |cRXP_WARN_later|r
     >>|cRXP_WARN_Don't go out of your way to complete this right now. You'll come back to Loch Modan soon|r
-    .isOnQuest 418
 step
     #optional
     #completewith next
@@ -3161,7 +3166,6 @@ step
     .mob +Forest Lurker
     >>|cRXP_WARN_Save any|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r |cRXP_WARN_to use for leveling |T133971:0|t[Cooking] |cRXP_WARN_later|r
     >>|cRXP_WARN_Don't go out of your way to complete this right now. You'll come back to Loch Modan soon|r
-    .isOnQuest 418
     .subzoneskip 925 --Algaz Station
 step
     #optional
@@ -3366,6 +3370,7 @@ step
 step
     .goto 1432/0,-2954.42,-5394.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vidra Hearthstove|r
+    .accept 418 >> Accept Thelsamar Blood Sausages
     .turnin 418 >> Turn in Thelsamar Blood Sausages
     .target Vidra Hearthstove
 step
@@ -3464,6 +3469,11 @@ step
     >>Kill |cRXP_ENEMY_Daggerfang|r, he |cRXP_WARN_might be patroling along the shore|r. Loot him for |T3736888:0|t[|cRXP_LOOT_Marek's Croc-Hunting Knife|r]
     .complete 86758,1 --Marek's Croc Hunting Knife (1)
     .mob Daggerfang
+step
+    .goto 48,81.647,64.750
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bingles Blastenheimer|r
+    .target Bingles Blastenheimer
+    .turnin 2039 >>Turn in Find Bingles
 step
     #completewith next
     .goto Loch Modan,54.7,38.3,200 >> Travel to the island located in the middle of The Loch
