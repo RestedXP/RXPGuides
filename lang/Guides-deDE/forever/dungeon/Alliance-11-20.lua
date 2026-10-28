@@ -12,7 +12,9 @@ RXPGuides.RegisterGuide([[
 #next 17-18 Die Halle der Thanen
 
 step
-    #include RestedXP Forever Dungeonführer (A)\14-16 Dunkelküste@WashedA-IFExit
+    #include RestedXP Forever Dungeonführer (A)\14-16 Dunkelküste@WashedA-DarkshoreEndNE
+step
+    #include RestedXP Forever Dungeonführer (A)\15-16 Loch Modan@SWBoat-IFExit
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gastwirt Feuerbräu|r
     >>|cRXP_WARN_Falls ihr einen Magier in eurer Gruppe habt, setzt euren Ruhestein stattdessen in Seenhain|r
@@ -102,7 +104,7 @@ step
     .turnin 96390 >> Gebt die Quest Erstickt sie im Keim ab
     .target Earthseer Farsen
 step
-    #include RestedXP Forever Dungeonführer (A)\14-16 Dunkelküste@LochEnter-LochEnd
+    #include RestedXP Forever Dungeonführer (A)\15-16 Loch Modan@LochEnter-LochEnd
 step << NightElf Druid
     #completewith next
 	.cast 18960 >> Caste Teleportieren: Moonglade
@@ -123,14 +125,16 @@ step << Druid
 	.trainer >> Trainiere deine Klassenfähigkeiten
 	.target Mathrengyl Bearwalker
 step << Druid
-    #season 0
+	#completewith next
+	.cast 18960 >> Caste Teleportieren: Moonglade
+	.zoneskip Moonglade
+step << Druid
     .goto Moonglade,56.1,30.7
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Dendrite Sternenschauer|r
     .turnin 26 >> Gebt die Quest Eine wertvolle Lektion ab
     .accept 29 >> Akzeptiert die Quest Prüfung des Sees
     .target Dendrite Starblaze
 step << Druid
-    #season 0
     .goto Moonglade,52.6,51.6
     >>Schwimmen into Lake Elune'Ara
     >>Öffnet einen |cRXP_PICK_Schmuckstückbehälter|r. Plündert sie für ein |T134125:0|t[Schrein-Schmuckstück]
@@ -138,19 +142,16 @@ step << Druid
     .collect 15877,1,29,1 -- Shrine Bauble (1)
 step << Druid
     #optional
-    #season 0
     #completewith next
     .cast 18960 >> Caste Teleportieren: Moonglade
     .itemcount 15877,1 -- Shrine Bauble (1)
 step << Druid
-    #season 0
     .goto Moonglade,36.026,41.374
     >>|cRXP_WARN_Benutzt das|r |T134125:0|t[Schrein-Schmuckstück] |cRXP_WARN_beim Schrein von Remulos Baum|r
     .complete 29,1 --Complete the Trial of the Lake.
     .use 15877
 step << Druid
     #label TotL
-    #season 0
     .goto Moonglade,36.517,40.104
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Tajarri|r
     .turnin 29 >> Gebt die Quest Prüfung des Sees ab
@@ -238,7 +239,7 @@ step << NightElf
 --     .collect 255010,5,92909,1 -- Harvester Gyrostabilizer (5)
 --     .target Auctioneer Jaxon
 -- step
---     .goto 1453/0,490.03,-8835.82
+--     .goto 1453/0,484.200,-8832.500
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r
 --     .fp Stormwind >> Get the Stormwind Flight Path
 --     .target Dungar Longdrink
@@ -700,17 +701,17 @@ step
     .target Auctioneer Jaxon
 
 step << Human
-    .goto 1453/0,489.99,-8835.76
+    .goto 1453/0,484.200,-8832.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Dungar Trinkfest|r
     .turnin 6261 >> Gebt die Quest Dungar Longdrink ab
     .accept 6285 >> Akzeptiert die Quest Zurück zu Lewis
     .target Dungar Longdrink
 
 step << !Skyborne
-    .goto 1453/0,490.03,-8835.82
+    .goto 1453/0,484.200,-8832.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Dungar Trinkfest|r
-    .fly Westfall >> Fliegt nach Westfall << !NightElf
-    .fp Stormwind >> Erlernt die Flugroute in Sturmwind << NightElf
+    .fly Westfall >> Fliegt nach Westfall << !NightElf !Dwarf/!Hunter
+    .fp Stormwind >> Erlernt die Flugroute in Sturmwind << NightElf/Dwarf Hunter
     .target Dungar Longdrink
 step
     #completewith SaldeanVendor
@@ -1776,7 +1777,7 @@ step
     .isOnQuest 1001
 step
     .goto 1439,41.901,31.339
-    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4723 >> Akzeptiert die Quest Gestrandete Meereskreatur
 step
     .goto 1439,41.960,28.616
@@ -2672,6 +2673,12 @@ step << Warrior/Hunter
     .trainer >> Trainiere deine Klassenfähigkeiten
     .target Regnus Thundergranite << Hunter
     .target Bilban Tosslespanner << Warrior
+step << Hunter/Druid
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Buliwyf Stonehand|r
+    .train 266 >> Erlerne Schusswaffen << Hunter
+    .train 199 >> Erlernen 2h Streitkolben << Druid
+    .goto 1455/0,-1197.27,-5041.49
+    .target Buliwyf Stonehand
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -2824,73 +2831,170 @@ step
     .turnin 95250 >> Gebt die Quest Scheußliche Kreaturen ab
     .target Captain Truman
 step
-    .hs >> Ruhestein nach Sturmwind
-    .zoneskip Stormwind City
-    .bindlocation 1519,1 --HS in SW
-step
-    #optional
-    .hs >> Ruhestein nach Eisenschmiede
+    .hs >> Ruhestein nach Sturmwind << !NightElf
+    .hs >> Ruhestein nach Eisenschmiede << NightElf
     .zoneskip Ironforge
     .zoneskip Stormwind City
-    .bindlocation 1537,1 --HS in IF
 step 
     #optional
     .goto Ironforge,76.61,51.28,10,0
     .zone Stormwind City >> Nimm die Bahn Richtung Sturmwind
-    .zoneskip Ironforge,1
-step
-    #optional
-    #completewith next
-    .zone Stormwind City >>Begebt euch nach Sturmwind
-step
-    .isOnQuest 92415
-    .goto 1453/0,744.400,-8621.101
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Waisenmatrone Nightingale|r
-    .turnin 92415 >> Gebt die Quest Denk daran, ich liebe dich ab
-    .accept 95161 >> Akzeptiert die Quest Denk daran, ich liebe dich
-    .target Orphan Matron Nightingale
-step
-    #optional
-    .isQuestTurnedIn 92415
-    .goto 1453/0,744.400,-8621.101
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Waisenmatrone Nightingale|r
-    .accept 95161 >> Akzeptiert die Quest Denk daran, ich liebe dich
-    .target Orphan Matron Nightingale
-step
-    .goto 1453/0,634.700,-8390.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Shoni die Schtille|r
-    .accept 2040 >> Unterirdischer Angriff annehmen
-    .target Shoni the Shilent
-step
+step << NightElf
     .goto 1453/0,501.200,-8468.601
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Wilder Thistlenettle|r
     .accept 167 >> Akzeptiert die Quest Oh Bruder...
     .accept 168 >> Akzeptiert Die Suche nach Andenken
     .target Wilder Thistlenettle
-step
+step << NightElf
     #completewith next
     .goto 1453/0,437.600,-8524.5000,20,0
     .goto 1453/0,408.100,-8478.500,15,0
     .goto 1453/0,502.900,-8358.800,15 >> Reist zur Sturmwind-Bibliothek
-step
+step << NightElf
     .isOnQuest 95189
     .goto 1453/0,531.000,-8322.400
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Lady Dena Kennedy|r
     >>|cRXP_WARN_Sie läuft etwas in der Königlichen Gallerie herum|r
     .turnin 95189 >> Gebt die Quest Wappen von Lordaeron ab
     .target Lady Dena Kennedy
-step
+step << NightElf
+    .goto 1453/0,634.700,-8390.800
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Shoni die Schtille|r
+    .accept 2040 >> Unterirdischer Angriff annehmen
+    .target Shoni the Shilent
+step << NightElf
+    #optional
+    .goto 1453/0,600.22,-8426.93
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Furen Longbeard|r
+    .turnin 1338 >> Gebt die Quest Stormpikes Bestellung ab
+    .target Furen Longbeard
+    .isOnQuest 1338
+step << NightElf
+    .isOnQuest 92415
+    .goto 1453/0,744.400,-8621.101
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Waisenmatrone Nightingale|r
+    .turnin 92415 >> Gebt die Quest Denk daran, ich liebe dich ab
+    .accept 95161 >> Akzeptiert die Quest Denk daran, ich liebe dich
+    .target Orphan Matron Nightingale
+step << NightElf
+    #optional
+    .isQuestTurnedIn 92415
+    .goto 1453/0,744.400,-8621.101
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Waisenmatrone Nightingale|r
+    .accept 95161 >> Akzeptiert die Quest Denk daran, ich liebe dich
+    .target Orphan Matron Nightingale
+step << NightElf Rogue
+    .goto 1453/0,377.61,-8752.30
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Osborne|r
+    >>|cRXP_WARN_Stellt sicher, dass ihr es trainiert|r |T136058:0|t[Schlossknacken] |cRXP_WARN_da ihr es bald für eure Schurken-Klassenquest brauchen werdet|r
+    .train 1804 >> Erlernt |T136058:0|t[Schloss knacken]
+    .target Osborne the Night Man
+    .xp >20,1
+    .xp <18,1
+step << NightElf Rogue
+    .goto 1453/0,377.61,-8752.30
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Osborne|r
+    >>|cRXP_WARN_Stellt sicher, dass ihr es trainiert|r |T136058:0|t[Schlossknacken] |cRXP_WARN_da ihr es bald für eure Schurken-Klassenquest brauchen werdet|r
+    .train 1804 >> Erlernt |T136058:0|t[Schloss knacken]
+    .trainer >> Trainiere deine Klassenfähigkeiten
+    .target Osborne the Night Man
+    .xp <20,1
+step << NightElf Rogue
+    #completewith next
+    .goto 1453/0,374.11,-8762.88,20,0
+    .goto 1453/0,326.66,-8818.01,20,0
+    .goto 1453/0,323.43,-8817.83,5 >> Betretet das SI:7-Hauptquartier. Geht die Treppen nach oben zu |cRXP_FRIENDLY_Renzik "Das Messer"|r
+step << NightElf Rogue
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Renzik "Das Messer"|r
+    .accept 2281 >> Akzeptiert die Quest Rendezvous im Rotkammgebirge
+    .goto 1453/0,362.55,-8819.80
+    .target Renzik "The Shiv"
+step << NightElf
+    .goto 1453/0,673.58,-8867.76
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gastwirtin Allison|r
+    .home >> Setzt euren Ruhestein in Sturmwind
+    .target Innkeeper Allison
+    .bindlocation 16509
+step << NightElf
+    .goto 1453/0,484.200,-8832.500
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Dungar Trinkfest|r
+    .fp Stormwind >> Erlernt die Flugroute in Sturmwind
+    .target Dungar Longdrink
+step << NightElf
     .isOnQuest 95195
     .goto 1453/0,521.000,-8954.101
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_General Marcus Jonathan|r
     .turnin 95195 >> Gebt die Quest Blutverschmiertes Insigne ab
     .target General Marcus Jonathan
-step << Rogue
-    .goto 1453/0,377.47,-8752.39
+step << !NightElf
+    .isOnQuest 92415
+    .goto 1453/0,744.400,-8621.101
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Orphan Matron Nightingale|r
+    .turnin 92415 >> Gebt die Quest Erinnern That I Love Ihr ab
+    .accept 95161 >> Akzeptiert die Quest Erinnern That I Love Ihr
+    .target Orphan Matron Nightingale
+step << !NightElf
+    #optional
+    .isQuestTurnedIn 92415
+    .goto 1453/0,744.400,-8621.101
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Orphan Matron Nightingale|r
+    .accept 95161 >> Akzeptiert die Quest Erinnern That I Love Ihr
+    .target Orphan Matron Nightingale
+step << !NightElf
+    .goto 1453/0,634.700,-8390.800
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Shoni die Schtille|r
+    .accept 2040 >> Unterirdischer Angriff annehmen
+    .target Shoni the Shilent
+step << !NightElf
+    .goto 1453/0,501.200,-8468.601
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Wilder Thistlenettle|r
+    .accept 167 >> Akzeptiert die Quest Oh Bruder...
+    .accept 168 >> Akzeptiert Die Suche nach Andenken
+    .target Wilder Thistlenettle
+step << !NightElf
+    #completewith next
+    .goto 1453/0,437.600,-8524.5000,20,0
+    .goto 1453/0,408.100,-8478.500,15,0
+    .goto 1453/0,502.900,-8358.800,15 >> Reist zur Bibliothek von Sturmwind
+step << !NightElf
+    .isOnQuest 95189
+    .goto 1453/0,531.000,-8322.400
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Lady Dena Kennedy|r
+    >>|cRXP_WARN_Sie läuft leicht in der Royal Gallery herum|r
+    .turnin 95189 >> Gebt die Quest Crest of Lordaeron ab
+    .target Lady Dena Kennedy
+step << !NightElf
+    .isOnQuest 95195
+    .goto 1453/0,521.000,-8954.101
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_General Marcus Jonathan|r
+    .turnin 95195 >> Gebt die Quest Blutig geschlagen Insignia ab
+    .target General Marcus Jonathan
+step << !NightElf Rogue
+    .goto 1453/0,377.61,-8752.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Osborne|r
+    >>|cRXP_WARN_Stellt sicher, dass ihr es trainiert|r |T136058:0|t[Schlossknacken] |cRXP_WARN_da ihr es bald für eure Schurken-Klassenquest brauchen werdet|r
+    .train 1804 >> Erlernt |T136058:0|t[Schloss knacken]
+    .target Osborne the Night Man
+    .xp >20,1
+    .xp <18,1
+step << !NightElf Rogue
+    .goto 1453/0,377.61,-8752.30
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Osborne|r
+    >>|cRXP_WARN_Stellt sicher, dass ihr es trainiert|r |T136058:0|t[Schlossknacken] |cRXP_WARN_da ihr es bald für eure Schurken-Klassenquest brauchen werdet|r
+    .train 1804 >> Erlernt |T136058:0|t[Schloss knacken]
     .trainer >> Trainiere deine Klassenfähigkeiten
     .target Osborne the Night Man
     .xp <20,1
+step << !NightElf Rogue
+    #completewith next
+    .goto 1453/0,374.11,-8762.88,20,0
+    .goto 1453/0,326.66,-8818.01,20,0
+    .goto 1453/0,323.43,-8817.83,5 >> Betretet das SI:7-Hauptquartier. Geht die Treppen nach oben zu |cRXP_FRIENDLY_Renzik "Das Messer"|r
+step << !NightElf Rogue
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Renzik "Das Messer"|r
+    .accept 2281 >> Akzeptiert die Quest Rendezvous im Rotkammgebirge
+    .goto 1453/0,362.55,-8819.80
+    .target Renzik "The Shiv"
 step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Wu|r oder |cRXP_FRIENDLY_Ilsa|r
     .goto 1453/0,358.25,-8728.28,15,0
@@ -2964,44 +3068,53 @@ RXPGuides.RegisterGuide([[
 #next 20-21 Dunkelküste/Eschental
 
 step
+    #optional
     .goto 1453/0,673.58,-8867.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gastwirtin Allison|r
     .home >> Setzt euren Ruhestein in Sturmwind
     .target Innkeeper Allison
     .bindlocation 16509
-step
+step << !NightElf !Dwarf/!Hunter
     #completewith TDB1
-    #label FlyWestfall
-    .goto 1453/0,490.03,-8835.82
+    .goto 1453/0,484.200,-8832.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Dungar Trinkfest|r
-    >>|cRXP_WARN_Falls ihr nicht bereits die Westfall-Flugroute habt, überspringt diesen Schritt|r << !Human !Gnome !Dwarf
     .fly Westfall >> Fliegt nach Westfall
     .target Dungar Longdrink
-step
+step << Dwarf Hunter/NightElf
     #optional
-    #requires FlyWestfall
     #completewith TDB1
-    .zone Westfall >> Lauf nach Westfall
+    .zone Westfall >> Verlasst Sturmwind. Reist nach Westfall
 step
     #label TDB1
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gryan Starkmantel|r
 	.target Gryan Stoutmantle
     .goto 1436/0,1045.12,-10508.80
     .accept 65 >> Die Bruderschaft der Defias annehmen
-step
+step << !Skyborne
     #completewith RRDB
-    .goto 1453/0,490.03,-8835.82,-1
+    .goto 1453/0,484.200,-8832.500,-1
     .goto 1436/0,1037.42,-10628.27,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Dungar Longdrink|r oder |cRXP_FRIENDLY_Thor|r
-    >>|cRXP_WARN_Falls ihr nicht bereits die Flugroute nach Rotkammgebirge habt, überspringt diesen Schritt|r << !Human !Gnome !Dwarf
-    .fly Redridge >> Fliegt ins Rotkammgebirge
+    .fly Redridge >> Fliegt ins Rotkammgebirge << !NightElf !Dwarf/!Hunter
+    .fp Westfall >> Erlernt die Flugroute nach Westfall << NightElf/Dwarf Hunter
     .target Dungar Longdrink
+    .target Thor
     .zoneskip Redridge Mountains
     .zoneskip Elwynn Forest
 step
     .isQuestAvailable 132
     .goto 1433/0,-1906.400,-9606.800
     .zone Redridge Mountains >> Reist ins Rotkammgebirge
+step << NightElf/Skyborne/Dwarf Hunter
+    .goto 1433/0,-1906.400,-9606.800
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Wache Parker|r
+    .accept 244 >> Akzeptiert die Quest Eindringende Gnolle
+    .target Guard Parker
+step << NightElf/Skyborne/Dwarf Hunter
+    .goto 1433/0,-2237.93,-9443.60
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Stellvertreter Feldon|r
+    .turnin 244 >> Gebt die Quest Eindringende Gnolle ab
+    .target Deputy Feldon
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Großknecht Oslow|r
     .goto 1433/0,-2268.32,-9279.12
@@ -3015,6 +3128,12 @@ step
     .turnin 65 >> Gebt die Quest Die Bruderschaft der Defias ab
     .accept 132 >> Die Bruderschaft der Defias annehmen
 	.target Wiley the Black
+step << Rogue
+    .goto 1433/0,-2180.19,-9328.21
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Lucius|r
+    .turnin 2281 >> Gebt die Quest Rendezvous im Rotkammgebirge ab
+    .accept 2282 >> Akzeptiert die Quest Althers Mühle
+    .target Lucius
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Shawn|r
 	.target Shawn
@@ -3038,16 +3157,38 @@ step
     >>Öffnet die |cRXP_PICK_Versunkene Truhe|r. Plündert sie für |cRXP_LOOT_Oslows Werkzeugkasten|r
     .goto 1433/0,-2472.16,-9366.72
     .complete 125,1 --Oslow's Toolbox (1)
+step << Rogue
+    #completewith next
+    .subzone 97 >> Reist zu Althers Mühle
+step << Rogue
+    .goto 1433,51.846,45.116
+    >>|cRXP_WARN_Ihr MÜSST dies für eure|r |T132290:0|t[Gifte]|cRXP_WARN_ Quest später machen|r
+    >>|cRXP_WARN_Steht auf dem Wegpunkt. Positioniert eure Kamera und euren Cursor, bis ihr 3 |cRXP_PICK_Übungsschließkisten|r gleichzeitig anklicken könnt, ohne das ihr euch bewegen müsst|r
+    .skill lockpicking,80 >>|cRXP_WARN_Öffnet die |cRXP_PICK_Übungsschließkassette|r am Boden in Althers Mühle, bis euer|r |T136058:0|t[Schlossknacken] 80 erreicht|r
+step << Rogue
+	.goto 1433/0,-2700.75,-9222.07
+    >>Öffnet die |cRXP_PICK_Lucius's Schließkassette|r. Sammelt die Beute für die |cRXP_LOOT_Marke der Diebeskunst|r
+    .complete 2282,1 --Token of Thievery
+    .skill lockpicking,<80,1
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Großknecht Oslow|r
     .goto 1433/0,-2268.32,-9279.12
     .turnin 125 >> Gebt die Quest Die verlorenen Werkzeuge ab
     .target Foreman Oslow
+step << Rogue
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Lucius|r
+	.target Lucius
+    .goto 1433/0,-2180.19,-9328.21
+    .turnin 2282 >> Gebt die Quest Althers Mühle ab
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Hilary|r
 	.target Hilary
     .goto 1433/0,-2205.58,-9351.52
     .turnin 3741 >> Gebt die Quest Hilarys Halskette ab
+step << Rogue
+    #optional
+	#sticky
+	.destroy 7907 >> Zerstört die |T134328:0|t[Zertifikat der Diebeskunst]. Ihr braucht es nicht mehr
 step
     #completewith next
     .goto 1433/0,-2234.900,-9435.300
@@ -3097,7 +3238,7 @@ step
 step
     #completewith EnterDM
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Dungar Trinkfest|r
-    .goto 1453/0,490.03,-8835.82
+    .goto 1453/0,484.200,-8832.500
     .fly Westfall >> Fliegt nach Westfall
     .target Dungar Longdrink
 step
@@ -3270,20 +3411,6 @@ step << Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Loganaar|r
     .trainer >> Trainiere deine Klassenfähigkeiten
     .target Loganaar
-step << Druid
-    .goto 1450/1,-2212.25,7854.28
-    .use 15883 >>|cRXP_WARN_Benutzt den|r |T133443:0|t[Halber Anhänger der Wasserbeweglichkeit] |cRXP_WARN_um es mit dem|r |T133442:0|t[Halber Anhänger der Wasser-Belastbarkeit] |cRXP_WARN_am Schrein von Remulos|r zu kombinieren
-    .complete 272,1 --Collect Pendant of the Sea Lion (x1)
-step << Druid
-    #completewith next
-	.cast 18960 >> Caste Teleportieren: Moonglade
-    >>|cRXP_WARN_Das erspart euch Zeit beim Zurücklaufen|r
-step << Druid
-    .goto 1450/1,-2678.74,8020.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Dendrite Sternenschauer|r
-    .turnin 272 >> Gebt die Quest Prüfung des Seelöwen ab
-    .accept 5061 >> Accept Wassergestalt
-    .target Dendrite Starblaze
 step << Druid
     .hs >> Benutzt euren Ruhestein zur Späherkuppe
 step << !Druid
@@ -3460,7 +3587,7 @@ step << Rogue
 step << Rogue
     #completewith RoguePoison
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Dungar Trinkfest|r
-    .goto 1453/0,490.03,-8835.82
+    .goto 1453/0,484.200,-8832.500
     .fly Westfall >> Fliegt nach Westfall
     .target Dungar Longdrink
 step << !Dwarf Rogue
@@ -3529,7 +3656,7 @@ step << Rogue
 step << !Dwarf Rogue
     #sticky
     #label AntiVenomStart
-    .collect 6452,1 >> Crafte ein |T134437:0|t[Gegengift]
+    .collect 6452,1 >> Stelle ein |T134437:0|t[Gegengift] her
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
     .train 7934,3 --Anti Venom spell trained
@@ -3545,7 +3672,7 @@ step << Dwarf Rogue
     #optional
     #sticky
     #label AntiVenomEnd2
-    .cast 20594 >>|cRXP_WARN_Wirkt|T136225:0|t[Steingestalt],um|T136230:0|t[Berührung von Zanzil] Debuff zu entfernen|r
+    .cast 20594 >>|cRXP_WARN_Wirkt |T136225:0|t[Steingestalt], um |T136230:0|t[Berührung von Zanzil]-Debuff zu entfernen|r
     .aura -9991
 step << Rogue
     .hs >> Ruhestein nach Sturmwind
@@ -3588,7 +3715,7 @@ step << !Dwarf Rogue
 step << !Dwarf Rogue
     #sticky
     #label AntiVenomStart2
-    .collect 6452,1 >> Crafte ein |T134437:0|t[Gegengift]
+    .collect 6452,1 >> Stelle ein |T134437:0|t[Gegengift] her
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
     .train 7934,3 --Anti Venom spell trained
@@ -3948,6 +4075,13 @@ step
     .collect 12347,1,4763,1 --Filled Cleansing Bowl (1)
     .use 12346
 step
+    #optional
+    .goto 1439,44.168,36.289
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Asterion|r
+    .turnin 957 >> Gebt die Quest Bashal'Aran ab
+    .isOnQuest 957
+    .target Asterion
+step
     .isOnQuest 4763
     #sticky
     #label Blackwood1
@@ -4170,6 +4304,35 @@ step << Druid
     >>|cRXP_WARN_Schwimmt hinaus ins Wasser|r
     >>Öffnet die |cRXP_PICK_Merkwürdige Schließkassette|r. Plündert sie für den |cRXP_LOOT_Halber Anhänger der Wasser-Beweglichkeit|r
     .collect 15883,1,272,1 --Collect Half Pendant of Aquatic Agility (x1)
+step << Druid
+    #completewith next
+	.cast 18960 >> Caste Teleportieren: Moonglade
+step << Druid
+    .goto Moonglade,52.53,40.57
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Loganaar|r
+    .trainer >> Trainiere deine Klassenfähigkeiten
+    .target Loganaar
+step << Druid
+    .goto 1450/1,-2212.25,7854.28
+    .use 15883 >>|cRXP_WARN_Benutzt den|r |T133443:0|t[Halber Anhänger der Wasserbeweglichkeit] |cRXP_WARN_um es mit dem|r |T133442:0|t[Halber Anhänger der Wasser-Belastbarkeit] |cRXP_WARN_am Schrein von Remulos|r zu kombinieren
+    .complete 272,1 --Collect Pendant of the Sea Lion (x1)
+step << Druid
+    #completewith next
+	.cast 18960 >> Caste Teleportieren: Moonglade
+    >>|cRXP_WARN_Das erspart euch Zeit beim Zurücklaufen|r
+step << Druid
+    .goto 1450/1,-2678.74,8020.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Dendrite Sternenschauer|r
+    .turnin 272 >> Gebt die Quest Prüfung des Seelöwen ab
+    .accept 5061 >> Accept Wassergestalt
+    .target Dendrite Starblaze
+step << Druid
+    .isOnQuest 5061
+    .goto 1450/1,-2489.25,7457.07
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Sindrayl|r
+    .target Sindrayl
+    .fly Darkshore >> Fliegt zur Dunkelküste
+    .zoneskip Darkshore
 step
     #sticky
     #optional
@@ -4209,7 +4372,7 @@ step
     .target Gwennyth Bly'Leggonde
 step
     .goto 1439,35.968,70.807
-    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4728 >> Akzeptiert die Quest Gestrandete Meereskreatur
     .isQuestTurnedIn 4681
 step
@@ -4226,6 +4389,7 @@ step
     .mob Greymist Hunter
     .mob Greymist Coastrunner
 step
+    #label Onu
     .goto 1439,43.555,76.293
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Onu|r
     .turnin 948 >> Gebt die Quest Onu ab
@@ -4329,7 +4493,7 @@ step
 step
     .isQuestTurnedIn 4681
     .goto 1439,32.644,80.711
-    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4730 >> Akzeptiert die Quest Gestrandete Meereskreatur
 step
     .isQuestTurnedIn 4681
@@ -4346,7 +4510,7 @@ step
 step
     .isQuestTurnedIn 4681
     .goto 1439,31.251,87.419
-    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4733 >> Akzeptiert die Quest Gestrandete Meereskreatur
     >>|cRXP_WARN_Achtet auf |cRXP_ENEMY_Orakel der Grauflossen|r'|r |T136048:0|t[Blitzschlag] |cRXP_WARN_Schaden, sie können auch mit|r |T136052:0|t[Welle der Heilung]|r heilen
 step
@@ -4399,6 +4563,10 @@ step
     >>|cRXP_WARN_Vermeidet es so weit wie möglich, auf der Hauptstraße zu laufen. Feinde spawnen nur, wenn ihr auf der Straße seid|r
     .complete 5321,2
     .isOnQuest 5321
+step
+    #optional
+    .abandon 2138 >> Brecht die Quest Ausrottung der Infizierten ab
+    .abandon 1002 >> Brecht die Quest Dröhnkiste 323 ab
 step
     #completewith tower
     .zone Ashenvale >> Reist südlich ins Eschental

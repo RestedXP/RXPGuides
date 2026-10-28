@@ -1108,7 +1108,7 @@ step
 step
     #completewith next
     .goto Dun Morogh,43.1,45.0,20,0
-    .goto Dun Morogh,42.1,45.4,20 >> Reist nach Schimmergrat. Folgt dem Pfeil und lauft den Berg hinauf
+    .goto Dun Morogh,42.1,45.4,20 >> Reist zum Schimmergrat. Folgt dem Pfeil und lauft den Berg hinauf
 step
     .goto Dun Morogh,40.9,45.3,50,0
     .goto Dun Morogh,41.5,43.6,50,0
@@ -2091,7 +2091,7 @@ step << Warlock
     #softcore
     #completewith next
     .goto StormwindClassic,25.2,78.5
-    .deathskip >> Sterbt und respawnt beim Geistheiler, indem ihr Aderlass benutzt und auf dem Freudenfeuer neben euch steht
+    .deathskip >> Sterbt und respawnt beim Geistheiler, indem ihr Aderlass benutzt und euch auf das Lagerfeuer neben euch stellt
 step
     #completewith next
     .goto Elwynn Forest,42.20,66.00,100 >> Lauf nach Goldhain

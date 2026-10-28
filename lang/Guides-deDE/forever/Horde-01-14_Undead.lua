@@ -1062,7 +1062,7 @@ step
     .goto 1420/0,496.96,2256.54,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Gordo|r
     >>|cRXP_WARN_Er ist eine Abscheulichkeit, welches die Straße nach Brill patrouilliert.|r
-    >>|cRXP_WARN_Wählt „Ich benötige einen Bericht für Executor Zygand aus|r
+    >>|cRXP_WARN_Wählt aus "Ich benötige einen Bericht für Exekutor Zygand|r"
     .complete 99141,3 --|1/1 Gordo's Report
     .target Gordo
     --.gossipoption 142737
@@ -1187,7 +1187,7 @@ step
 step
     .goto 1420/0,403.300,2287.700
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Todeswache Dillinger|r
-    >>|cRXP_WARN_Wählt „Ich benötige einen Bericht für Executor Zygand aus|r
+    >>|cRXP_WARN_Wählt aus "Ich benötige einen Bericht für Exekutor Zygand|r"
     .turnin 404 >>Gebt die Quest Eine eitrige Aufgabe ab
     .accept 426 >>Akzeptiert die Quest Die überrannte Mühle
     .complete 99141,1 --|1/1 Dillinger's Report
@@ -3291,9 +3291,6 @@ RXPGuides.RegisterGuide([[
 #displayname 13-15 Silberwald << Paladin
 #next 12-17 das Brachland
 
-step << Skyborne
-    #optional
-    .maxlevel 13,Silverpineskip
 step << Undead Rogue
     #sticky
     #completewith RotHideCluesTurnIn
@@ -3445,6 +3442,11 @@ step
     .accept 3221 >>Akzeptiert die Quest Sprecht mit Renferrel
     .accept 437 >>Akzeptiert die Quest Das Todesfeld
     .target High Executor Hadrec
+step << Mage/Priest/Warlock
+    .goto 1421/0,1626.100,511.500
+    >>Sammelt das |cRXP_PICK_Glowing Buch|r vom Boden
+    .collect 210177,1,79096,1 --Ataeric: On Arcane Curiosities
+    --Other classes won't be nearby turnin in UC, probably not worth since it's only 160xp
 step
     .goto 1421/0,1652.82,522.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Renferrel|r
@@ -3468,6 +3470,11 @@ step
     .accept 430 >>Akzeptiert die Quest Rückkehr zu Quinn
     .target Apothecary Renferrel
     .addquestitem 3164,429
+step
+    #completewith next
+    >>Tötet |cRXP_ENEMY_Bären|r. Plündert sie für ihre |cRXP_LOOT_Herzen|r
+    .complete 447,1 --Grizzled Bear Heart (6)
+    .mob Ferocious Grizzled Bear
 step
     #loop
     .goto 1421/0,1386.96,638.51,0
@@ -3499,6 +3506,11 @@ step
     .goto 1421/0,1231.14,866.99
     >>Betretet das Haus und geht in den zweiten Stock. Plündert die |cRXP_PICK_Staubige Zauberbücher|r vom Boden
     .complete 422,1 --Remedy of Arugal (1)
+step
+    #completewith next
+    >>Tötet |cRXP_ENEMY_Bären|r. Plündert sie für ihre |cRXP_LOOT_Herzen|r
+    .complete 447,1 --Grizzled Bear Heart (6)
+    .mob Ferocious Grizzled Bear
 step
     #completewith next
     .goto 1421/0,1207.62,1293.71,80,0
@@ -4086,6 +4098,12 @@ step << Paladin
     .target Garen Largo
     .xp <16,1
 step << Priest/Mage/Warlock
+    .goto 1458/0,168.200,1663.100
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Owen Thadd::211022|r
+    .target Owen Thadd::211022
+    .turnin 79096 >>Gebt die Quest Ataeric: Arkane Merkwürdigkeiten ab
+    .itemcount 210177,1
+step << Priest/Mage/Warlock
     #ssf
     .goto 1458/0,206.04,1705.57
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Zane Bradford|r im Magieviertel
@@ -4176,9 +4194,6 @@ step << Skyborne
     .use 6948
     .zoneskip Orgrimmar
     .bindlocation 1637,1
-step << Skyborne
-    #optional
-    #label Silverpineskip
 step << Undead
     #completewith HiddenEnemiesPickup
     .goto 1454/1,-4367.46,1405.44,50,0
@@ -4198,14 +4213,49 @@ step << Undead/Skyborne
     .target Thrall
     .dungeon RFC
 step << Undead/Skyborne
-    #completewith next
+    #completewith Gazzuz
     .goto 1454/1,-4367.46,1405.44,50,0
     .zone Durotar >> Verlasst Orgrimmar
     .dungeon RFC
 step << Undead/Skyborne
-    .goto 1411/1,-4769.10,1484.39,0
-    >>Tötet |cRXP_ENEMY_Burning Blade|r Gegner in  der Knochenhöhle, bis |cRXP_LOOT_Insignien des Lieutenants|r dropt
+    #completewith Gazzuz
+    >>Tötet |cRXP_ENEMY_Burning Blade Orks|r. Plündert sie für |cRXP_LOOT_Insignien des Lieutenants|r
+    >>|cRXP_WARN_Das ist eine Vor-Quest für RFC mit niedriger Fallquote|r
     .complete 5726,1 --Lieutenant's Insignia (1)
+    .mob Burning Blade Fanatic
+    .mob Burning Blade Apprentice
+    .dungeon RFC
+step << Undead/Skyborne
+    #label Gazzuz
+    .goto 1411/1,-4701.42,1455.83
+    >>Tötet |cRXP_ENEMY_Gazz'uz|r. Plündert ihn für |T134085:0|t[|cRXP_LOOT_Auge des brennenden Schatten|r]
+    >>|cRXP_WARN_Benutzt |T134085:0|t[|cRXP_LOOT_Auge des brennenden Schatten|r] um die Quest zu starten|r
+    >>|cRXP_WARN_Benutzt LoS (Sichtlinie), um |cRXP_ENEMY_Gazz'uz|r seine Schattenblitze zu vermeiden|r
+    >>|cRXP_WARN_Ihr könnt zu Gewässern innerhalb der Höhle fliehen um dem|r Leerwandler|cRXP_ENEMY_ nach dem Töten von|r |cRXP_WARN_Gazz'uz|r |cRXP_ENEMY_zu entkommen|r
+    >>|cRXP_WARN_Seid vorsichtig, er ist schwierig. Ihr könnt diese Quest überspringen, falls erforderlich|r
+    .collect 4903,1,832,1 --Collect Eye of Burning Shadow
+    .accept 832 >>Akzeptiert die Quest Brennende Schatten
+    .use 4903
+	.unitscan Gazz'uz
+    .dungeon RFC
+step << Undead/Skyborne
+    #loop
+    .goto 1411/1,-4805.59,1495.67,0
+    .goto 1411/1,-4855.82,1498.84,15,0
+    .goto 1411/1,-4833.08,1494.96,15,0
+    .goto 1411/1,-4805.59,1495.67,15,0
+    .goto 1411/1,-4784.44,1535.85,15,0
+    .goto 1411/1,-4750.60,1531.62,15,0
+    .goto 1411/1,-4734.21,1505.54,15,0
+    .goto 1411/1,-4693.49,1519.64,15,0
+    .goto 1411/1,-4679.75,1501.31,15,0
+    .goto 1411/1,-4684.50,1466.06,15,0
+    .goto 1411/1,-4805.59,1495.67,15,0
+    >>Tötet |cRXP_ENEMY_Burning Blade Orks|r. Plündert sie für |cRXP_LOOT_Insignien des Lieutenants|r
+    >>|cRXP_WARN_Das ist eine Vor-Quest für RFC mit niedriger Fallquote|r
+    .complete 5726,1 --Lieutenant's Insignia (1)
+    .mob Burning Blade Fanatic
+    .mob Burning Blade Apprentice
     .dungeon RFC
 step << Undead/Skyborne
     #completewith Conscript

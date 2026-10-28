@@ -2709,7 +2709,7 @@ step
     .goto Thousand Needles,32.60,27.51,20,0
     .goto Thousand Needles,34.87,31.76,20,0
     .goto Thousand Needles,34.15,35.77,20,0
-    .goto Thousand Needles,33.32,36.24,20 >> Reisen up Der Düsterwolkengipfel
+    .goto Thousand Needles,33.32,36.24,20 >> Reisen zum Düsterwolkengipfel
 step
     .train 425882,1
     .goto Thousand Needles,39.44,41.98

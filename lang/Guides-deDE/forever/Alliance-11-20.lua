@@ -51,13 +51,13 @@ step
     --.collect 255007,14,92909,1 -- Golem Isospring (14)
     --.collect 255010,5,92909,1 -- Harvester Gyrostabilizer (5)
 step << Human
-    .goto 1453/0,489.99,-8835.76
+    .goto 1453/0,484.200,-8832.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Dungar Trinkfest|r
     .turnin 6261 >> Gebt die Quest Dungar Longdrink ab
     .accept 6285 >> Akzeptiert die Quest Zurück zu Lewis
     .target Dungar Longdrink
 step << !Skyborne
-    .goto 1453/0,490.03,-8835.82
+    .goto 1453/0,484.200,-8832.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Dungar Trinkfest|r
     .fly Westfall >> Fliegt nach Westfall << !NightElf
     .fp Stormwind >> Erlernt die Flugroute in Sturmwind << NightElf
@@ -1395,13 +1395,13 @@ step
 step
     #optional
     .goto 1439,41.901,31.339
-    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4723 >> Akzeptiert die Quest Gestrandete Meereskreatur
     .isOnQuest 1001
 step
     #optional
     .goto 1439,41.901,31.339
-    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4723 >> Akzeptiert die Quest Gestrandete Meereskreatur
     .isOnQuest 982
 step
@@ -2073,6 +2073,13 @@ step
     .target Gwennyth Bly'Leggonde
     .isOnQuest 4723
 step
+    #optional
+    .goto 1439,36.701,45.122,8,0
+    .goto 1439,36.621,45.596
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
+    .turnin 4722 >> Gebt die Quest Gestrandete Meeresschildkröte ab
+    .target Gwennyth Bly'Leggonde
+step
     .goto 1439/1,577.38,6371.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gubber Blump|r
     .accept 1138 >> Akzeptiert die Quest Meeresfrüchte
@@ -2224,7 +2231,6 @@ step
 ----End of small south loop for ERA and SoD Warrior/Rogue/Priest----
 
 
----Start of Night Elf Westfall section----
 step << NightElf
     #optional
     #completewith next
@@ -2237,6 +2243,8 @@ step << NightElf
     .turnin 963 >> Gebt die Quest In ewiger Liebe ab
     .target Cerellean Whiteclaw
     .isQuestComplete 963
+step
+    #label DarkshoreEndNE --hidden step for #include
 step  << NightElf
     #include 15-16 Loch Modan
 step << NightElf
@@ -2244,7 +2252,6 @@ step << NightElf
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gubber Blump|r
     .accept 1138 >> Akzeptiert die Quest Meeresfrüchte
     .target Gubber Blump
-----End of Night Elf Westfall section
 step
     #optional
     #completewith next
@@ -2272,7 +2279,7 @@ step
 step
     #optional
     .goto 1439,41.901,31.339
-    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4723 >> Akzeptiert die Quest Gestrandete Meereskreatur
     .isOnQuest 982
 
@@ -2335,7 +2342,7 @@ step
 step
     #label BoatSeaCreature
     .goto 1439,41.901,31.339
-    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4723 >> Akzeptiert die Quest Gestrandete Meereskreatur
 step
     #optional
@@ -2390,13 +2397,13 @@ step
 step
     #optional
     .goto 1439,51.288,24.554
-    >>Klickt auf die |cRXP_PICK_Dröhnkiste 323|r auf dem Boden
+    >>Klickt auf die|cRXP_PICK_Dröhnkiste 323|r auf dem Boden
     .turnin 1002 >> Gebt die Quest Dröhnkiste 323 ab
     .accept 1003 >> Akzeptiert die Quest Dröhnkiste 525
     .isQuestComplete 1002
 step
     .goto 1439,51.288,24.554
-    >>Klickt auf die |cRXP_PICK_Dröhnkiste 323|r auf dem Boden
+    >>Klickt auf die|cRXP_PICK_Dröhnkiste 323|r auf dem Boden
     .accept 1003 >> Akzeptiert die Quest Dröhnkiste 525
     .isQuestTurnedIn 1002
 
@@ -2555,7 +2562,7 @@ step
 step
     #optional
     .goto 1439,51.288,24.554
-    >>Klickt auf die |cRXP_PICK_Dröhnkiste 323|r auf dem Boden
+    >>Klickt auf die|cRXP_PICK_Dröhnkiste 323|r auf dem Boden
     .turnin 1002 >> Gebt die Quest Dröhnkiste 323 ab
     .accept 1003 >> Akzeptiert die Quest Dröhnkiste 525
     .isQuestComplete 1002
@@ -2961,6 +2968,16 @@ step
     .turnin 6661 >> Gebt die Quest Tiefenbahn-Ratten-Razzia ab
     .target Monty
 step
+    #completewith next
+    .zone Ironforge >> Verlasst die Straßenbahn und betretet Eisenschmiede
+    .zoneskip Loch Modan
+    .zoneskip Dun Morogh
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Gnoarn|r
+    .accept 2039 >> Akzeptiert die Quest Find Bingles
+    .target Gnoarn
+    .goto Ironforge,69.182,50.556
+step
     .goto Ironforge,55.491,47.751
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gryth Thurden|r
     .fp Ironforge >> Holt euch den Flugpunkt in Eisenschmiede
@@ -3079,17 +3096,6 @@ step
     .target Mountaineer Kadrel
 step
     #label ThelsamarFirst
-    .goto 1432/0,-2954.42,-5394.10
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Vidra Hearthstove|r
-    .accept 418 >> Akzeptiert die Quest Blutwurst aus Thelsamar
-    .target Vidra Hearthstove
-step
-    #optional
-    .goto 1432/0,-2954.42,-5394.10
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Vidra Hearthstove|r
-    .turnin 418 >> Gebt die Blutwurst in Thelsamar ab
-    .target Vidra Hearthstove
-    .isQuestComplete 418
 step
     #optional
     #completewith StormpikeO
@@ -3128,7 +3134,6 @@ step
     .mob +Forest Lurker
     >>|cRXP_WARN_Behaltet alle|r |T133970:0|t|cRXP_LOOT_[Brocken Eberfleisch]|r |cRXP_WARN_zum späteren Leveln von |T133971:0|t[Kochkunst] |cRXP_WARN_|r
     >>|cRXP_WARN_Macht euch nicht extra auf den Weg, um das jetzt abzuschließen. Ihr kommt bald nach Loch Modan zurück|r
-    .isOnQuest 418
 step
     #optional
     #completewith next
@@ -3161,7 +3166,6 @@ step
     .mob +Forest Lurker
     >>|cRXP_WARN_Behaltet alle|r |T133970:0|t|cRXP_LOOT_[Brocken Eberfleisch]|r |cRXP_WARN_zum späteren Leveln von |T133971:0|t[Kochkunst] |cRXP_WARN_|r
     >>|cRXP_WARN_Macht euch nicht extra auf den Weg, um das jetzt abzuschließen. Ihr kommt bald nach Loch Modan zurück|r
-    .isOnQuest 418
     .subzoneskip 925 --Algaz Station
 step
     #optional
@@ -3306,6 +3310,7 @@ step
     .goto 1432/0,-2676.99,-4825.980
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gebirgsjäger Sturmlanze|r
     .turnin 307 >> Gebt die Quest Schmutzige Pfoten ab
+    .accept 1338 >> Akzeptiert die Quest Stormpikes Bestellung
     .target Mountaineer Stormpike
 step
     >>Tötet |cRXP_ENEMY_Alter Schwarzbär|r. Plündert sie für |T134027:0|t|cRXP_LOOT_Bärenfleisch|r
@@ -3366,6 +3371,7 @@ step
 step
     .goto 1432/0,-2954.42,-5394.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Vidra Hearthstove|r
+    .accept 418 >> Akzeptiert die Quest Blutwurst aus Thelsamar
     .turnin 418 >> Gebt die Blutwurst in Thelsamar ab
     .target Vidra Hearthstove
 step
@@ -3464,6 +3470,11 @@ step
     >>Tötet |cRXP_ENEMY_Dolchzahn|r, er |cRXP_WARN_könnte die Küste entlang patrouillieren|r. Plündert ihr für|T3736888:0|t[|cRXP_LOOT_Mareks Krokojagdmesser|r]
     .complete 86758,1 --Marek's Croc Hunting Knife (1)
     .mob Daggerfang
+step
+    .goto 48,81.647,64.750
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Bingles Blastenheimer|r
+    .target Bingles Blastenheimer
+    .turnin 2039 >>Gebt die Quest Find Bingles ab
 step
     #completewith next
     .goto Loch Modan,54.7,38.3,200 >> Reist zu der Insel, die mitten im Loch liegt
@@ -3987,7 +3998,7 @@ step << Hunter
     .isOnQuest 731
 step << Hunter
     .goto 1439,31.251,87.419
-    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4733 >> Akzeptiert die Quest Gestrandete Meereskreatur
     >>|cRXP_WARN_Diese Quest kann SEHR schwierig sein. Bekämpft die |cRXP_ENEMY_Murlocs|r einzeln, Andernfalls könntest du die Aggro von mehreren gleichzeitig auf dich ziehen.|r
     >>|cRXP_WARN_Achtet auf |cRXP_ENEMY_Orakel der Grauflossen|r'|r |T136048:0|t[Blitzschlag] |cRXP_WARN_Schaden, sie können auch mit|r |T136052:0|t[Welle der Heilung]|r heilen
@@ -4014,11 +4025,11 @@ step
     .accept 4731 >> Akzeptiert die Quest Gestrandete Meeresschildkröte
 step << !Hunter
     .goto 1439,32.644,80.711
-    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4730 >> Akzeptiert die Quest Gestrandete Meereskreatur
 step << Hunter
     .goto 1439,32.644,80.711
-    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4730 >> Akzeptiert die Quest Gestrandete Meereskreatur
 step << Druid
     #optional
@@ -4045,7 +4056,7 @@ step
 step
     #label CompleteThistleBears
     .goto 1439,35.968,70.807
-    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4728 >> Akzeptiert die Quest Gestrandete Meereskreatur
 step << Druid
     #label Southcrabs
@@ -4298,14 +4309,14 @@ step
     #label Buzzbox323End
     #requires SicklyDeers << Druid
     .goto 1439,51.288,24.554
-    >>Klickt auf die |cRXP_PICK_Dröhnkiste 323|r auf dem Boden
+    >>Klickt auf die|cRXP_PICK_Dröhnkiste 323|r auf dem Boden
     .turnin 1002 >> Gebt die Quest Dröhnkiste 323 ab
     .accept 1003 >> Akzeptiert die Quest Dröhnkiste 525
 step
     #optional
     .isQuestTurnedIn 1002
     .goto 1439,51.288,24.554
-    >>Klickt auf die |cRXP_PICK_Dröhnkiste 323|r auf dem Boden
+    >>Klickt auf die|cRXP_PICK_Dröhnkiste 323|r auf dem Boden
     .accept 1003 >> Akzeptiert die Quest Dröhnkiste 525
 step << !Hunter !Druid
     .goto 1439,54.973,24.885
@@ -4401,6 +4412,7 @@ step
     .mob Moonstalker Sire
     .mob Moonstalker Matriarch
     .mob Moonstalker Runt
+    .isOnQuest 986
 step << Warrior/Paladin/Rogue/Shaman
     #requires foreststriders
     .goto 1439,56.654,13.484
@@ -4543,9 +4555,17 @@ step << !NightElf
     .turnin 2139 >> Gebt die Quest Tharnariuns Hoffnung ab
     .target Tharnariun Treetender
 step << !NightElf
+    .isQuestComplete 986
     .goto 1439,39.373,43.483
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Terenthis|r
     .turnin 986 >> Gebt die Quest Ein verirrter Meister ab
+    .accept 993 >> Akzeptiert die Quest Ein verirrter Meister
+    .target Terenthis
+step << !NightElf
+    #optional
+    .isQuestTurnedIn 986
+    .goto 1439,39.373,43.483
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Terenthis|r
     .accept 993 >> Akzeptiert die Quest Ein verirrter Meister
     .target Terenthis
 step << !NightElf
@@ -4714,10 +4734,17 @@ step << NightElf
     .turnin 2139 >> Gebt die Quest Tharnariuns Hoffnung ab
     .target Tharnariun Treetender
 step << NightElf
-    #label LostMasters
+    .isQuestComplete 986
     .goto 1439,39.373,43.483
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Terenthis|r
     .turnin 986 >> Gebt die Quest Ein verirrter Meister ab
+    .accept 993 >> Akzeptiert die Quest Ein verirrter Meister
+    .target Terenthis
+step << NightElf
+    #label LostMasters
+    .isQuestTurnedIn 986
+    .goto 1439,39.373,43.483
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Terenthis|r
     .accept 993 >> Akzeptiert die Quest Ein verirrter Meister
     .target Terenthis
 
@@ -4868,22 +4895,37 @@ RXPGuides.RegisterGuide([[
 #name 19-20 Rotkammgebirge
 #next 20-21 Dunkelküste/Eschental
 
-step << !Shaman
-    .goto 1453/0,1193.100,-8328.900
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Ladungsbuchhalter Philmor::268511|r
-    .target Manifest Clerk Philmor::268511
-    .accept 97220 >>Akzeptiert die Quest Philmors Bitte
+step << Shaman
+    .goto 1453/0,638.8,-8341.95
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Billibub Zahnrad|r
+    .vendor >> |cRXP_WARN_Kaufe eine|r |T133024:0|t[Bronzeröhre]
+    >>|cRXP_WARN_Dieses Item hat limitierte Verfügbarkeit. Überspringe den Schritt, wenn |cRXP_FRIENDLY_Billibub Zahnrad|r keine hat|r
+--    >>You will need 2 bronze tubes for a quest later << Rogue
+    .bronzetube
+    .target Billibub Cogspinner
+    .zoneskip Stormwind City,1
 step << Shaman
     .goto 1453/0,634.800,-8390.900
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Shoni die Schtille|r
     .accept 2040 >> Unterirdischer Angriff annehmen
     .target Shoni the Shilent
 step << Shaman
+    .goto 1453/0,600.22,-8426.93
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Furen Longbeard|r
+    .turnin 1338 >> Gebt die Quest Stormpikes Bestellung ab
+    .target Furen Longbeard
+    .isOnQuest 1338
+step << Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Wilder Thistlenettle|r
     .accept 167 >> Akzeptiert die Quest Oh Bruder...
     .accept 168 >> Akzeptiert Die Suche nach Andenken
     .goto 1453/0,501.200,-8468.601
     .target Wilder Thistlenettle
+step << !Shaman
+    .goto 1453/0,1193.100,-8328.900
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Ladungsbuchhalter Philmor::268511|r
+    .target Manifest Clerk Philmor::268511
+    .accept 97220 >>Akzeptiert die Quest Philmors Bitte
 step << Mage
     #completewith next
     .goto 1453/0,874.32,-9014.67,10 >> Reist zum Magierturm
@@ -4942,7 +4984,7 @@ step
     .turnin 399 >> Gebt die Quest Ein bescheidener Anfang ab
     .target Baros Alexston
     .isQuestComplete 399
-step << !NightElf
+step << !Shaman
     .goto 1453/0,600.22,-8426.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Furen Longbeard|r
     .turnin 1338 >> Gebt die Quest Stormpikes Bestellung ab
@@ -4953,8 +4995,7 @@ step << !Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Shoni die Schtille|r
     .accept 2040 >> Unterirdischer Angriff annehmen
     .target Shoni the Shilent
-step
-    #completewith BMenace
+step << !Shaman
     .goto 1453/0,638.8,-8341.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Billibub Zahnrad|r
     .vendor >> |cRXP_WARN_Kaufe eine|r |T133024:0|t[Bronzeröhre]
@@ -4962,6 +5003,7 @@ step
 --    >>You will need 2 bronze tubes for a quest later << Rogue
     .bronzetube
     .target Billibub Cogspinner
+    .zoneskip Stormwind City,1
 step << !Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Wilder Thistlenettle|r
     .accept 167 >> Akzeptiert die Quest Oh Bruder...
@@ -5059,20 +5101,20 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Elaine Trias::483|r
     .target Elaine Trias::483
     .turnin 97222 >>Gebt die Quest Torhauswaren ab
-step
+step << !Skyborne
     #completewith orcs
-    .goto 1453/0,490.12,-8835.67
+    .goto 1453/0,484.200,-8832.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Dungar Trinkfest|r
-    .fly Redridge >> Fliegt ins Rotkammgebirge << !NightElf !Skyborne
-    .fp Stormwind >> Erlernt die Flugroute in Sturmwind << NightElf/Skyborne
+    .fly Redridge >> Fliegt ins Rotkammgebirge << !NightElf !Dwarf/!Hunter
+    .fp Stormwind >> Erlernt die Flugroute in Sturmwind << NightElf/Dwarf Hunter
     .target Dungar Longdrink
     .zoneskip Redridge Mountains
-step << NightElf/Skyborne
+step << NightElf/Skyborne/Dwarf Hunter
     #completewith RRFP
     .goto 1429/0,389.800,-9119.900
     .zone Elwynn Forest >> Verlasst Sturmwind
     .zoneskip Redridge Mountains
-step << NightElf/Skyborne
+step << NightElf/Skyborne/Dwarf Hunter
     #completewith RRFP
     .goto 1433/0,-1948.56,-9582.75
     .zone Redridge Mountains >> Reist ins Rotkammgebirge
@@ -5088,7 +5130,7 @@ step
     .accept 246 >> Akzeptiert die Quest Einschätzung der Gefahr
     .accept 98407 >>Akzeptiert die Quest Machtdemonstration
     .target Deputy Feldon
-step << NightElf/Skyborne
+step << NightElf/Skyborne/Dwarf Hunter
     #label RRFP
     .goto 1433/0,-2234.900,-9435.300
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Ariena Sturmfeder|r
@@ -5758,7 +5800,7 @@ step << NightElf Rogue/Skyborne Rogue
     .target Thor
     .isOnQuest 2360
 step << Human Rogue/Dwarf Rogue
-    .goto 1453/0,490.03,-8835.82
+    .goto 1453/0,484.200,-8832.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Dungar Trinkfest|r
     .fly Westfall >> Fliegt nach Westfall
     .target Dungar Longdrink
@@ -5828,7 +5870,7 @@ step << Rogue
 step << !Dwarf Rogue
     #sticky
     #label AntiVenomStart
-    .collect 6452,1 >> Crafte ein |T134437:0|t[Gegengift]
+    .collect 6452,1 >> Stelle ein |T134437:0|t[Gegengift] her
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
     .train 7934,3 --Anti Venom spell trained
@@ -5844,7 +5886,7 @@ step << Dwarf Rogue
     #optional
     #sticky
     #label AntiVenomEnd2
-    .cast 20594 >>|cRXP_WARN_Wirkt|T136225:0|t[Steingestalt],um|T136230:0|t[Berührung von Zanzil] Debuff zu entfernen|r
+    .cast 20594 >>|cRXP_WARN_Wirkt |T136225:0|t[Steingestalt], um |T136230:0|t[Berührung von Zanzil]-Debuff zu entfernen|r
     .aura -9991
 step << Rogue
     #optional
@@ -5881,7 +5923,7 @@ step << !Dwarf Rogue
 step << !Dwarf Rogue
     #sticky
     #label AntiVenomStart2
-    .collect 6452,1 >> Crafte ein |T134437:0|t[Gegengift]
+    .collect 6452,1 >> Stelle ein |T134437:0|t[Gegengift] her
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
     .train 7934,3 --Anti Venom spell trained
@@ -6155,7 +6197,7 @@ step
 step
     #optional
     .goto 1439,31.251,87.419
-    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4733 >> Akzeptiert die Quest Gestrandete Meereskreatur
     >>|cRXP_WARN_Diese Quest kann SEHR schwierig sein. Bekämpft die |cRXP_ENEMY_Murlocs|r einzeln, Andernfalls könntest du die Aggro von mehreren gleichzeitig auf dich ziehen.|r
     .link https://youtu.be/lfQM3Q-Ag5A >> |cRXP_WARN_Klickt hier für einen Videoleitfaden|r
@@ -6172,7 +6214,7 @@ step
 step
     #optional
     .goto 1439,32.644,80.711
-    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4730 >> Akzeptiert die Quest Gestrandete Meereskreatur
 step
     #optional
@@ -6911,7 +6953,7 @@ step
     .mob Reef Crawler
 step
     .goto 1439,31.251,87.419
-    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4733 >> Akzeptiert die Quest Gestrandete Meereskreatur
     >>|cRXP_WARN_Diese Quest kann SEHR schwierig sein. Bekämpft die |cRXP_ENEMY_Murlocs|r einzeln, Andernfalls könntest du die Aggro von mehreren gleichzeitig auf dich ziehen.|r
     .link https://youtu.be/lfQM3Q-Ag5A >> |cRXP_WARN_Klickt hier für einen Videoleitfaden|r
@@ -6927,7 +6969,7 @@ step
 step
     #optional
     .goto 1439,32.644,80.711
-    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4730 >> Akzeptiert die Quest Gestrandete Meereskreatur
 step
     #optional
@@ -7014,11 +7056,18 @@ step
     .goto 1439/1,-5.83,4608.57,30 >> Reist zu |cRXP_FRIENDLY_Volcor|r in der Höhle
     .isOnQuest 993
 step
+    .isOnQuest 993
     .goto 1439/1,-5.83,4608.570
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Volcor|r
     .turnin 993 >> Gebt die Quest Ein verirrter Meister ab
     .accept 995 >> Akzeptiert die Quest Flucht durch Verstohlenheit
     .timer 20,Flucht durch Verstohlenheit RP
+    .target Volcor
+step
+    .isQuestTurnedIn 993
+    .goto 1439/1,-5.83,4608.570
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Volcor|r
+    .accept 995 >> Akzeptiert die Quest Flucht durch Verstohlenheit
     .target Volcor
 step
     #label volcorEnd

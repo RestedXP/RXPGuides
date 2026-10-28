@@ -111,7 +111,7 @@ step << !Hunter
 step << Human Warrior/Paladin/Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Dank Drizzlecut|r
     .goto Dun Morogh,69.3,55.5
-    .train 2581 >>Erlernen Bergbau, wirkt Mineraliensuche
+    .train 2581 >>Erlernt Bergbau, wirkt Mineraliensuche
     .target Dank Drizzlecut
     .skill mining,1
 step
@@ -238,7 +238,7 @@ step << Dwarf Paladin
     .waypoint 1426,68.958,59.357,45,0
     .waypoint 1426,70.475,59.420,45,0
     >>Tötet |cRXP_ENEMY_Schädelhauer der Felsenkiefer|r und |cRXP_ENEMY_Knochenknacker der Felsenkiefer|r. Plündert sie für |T132889:0|t[Leinenstoff] << Dwarf Paladin
-    >>|cRXP_WARN_behaltet den|r |T132889:0|t[Leinenstoff] |cRXP_WARN_für eine spätere Quest|r << Dwarf Paladin
+    >>|cRXP_WARN_Behaltet den|r |T132889:0|t[Leinenstoff] |cRXP_WARN_für eine spätere Quest|r << Dwarf Paladin
     .collect 2589,10,1648,1 --Linen Cloth (10)
     .mob Rockjaw Skullthumper
     .mob Rockjaw Bonesnapper
@@ -541,7 +541,7 @@ step << Rogue !Human
     .goto 1455,59.236,14.974,30,0
     .goto 1455,52.941,12.466,12,0
     .goto 1455,51.919,14.468,12,0
-    .goto 1455,51.438,16.000,10 >>Reisen zu |cRXP_FRIENDLY_Hulfdan Blackbeard|r innerhalb unten
+    .goto 1455,51.438,16.000,10 >>Reist zu |cRXP_FRIENDLY_Hulfdan Blackbeard|r innerhalb unten
 step << Rogue !Human
     .goto Ironforge,51.958,14.838
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Hulfdan Blackbeard|r unten
@@ -599,7 +599,7 @@ step << Dwarf Paladin
     .goto 1455,44.403,49.020,20,0
     .goto 1455,35.239,32.789,20,0
     .goto 1455,27.208,12.552,20,0
-    .goto Ironforge,24.2,6.8,12 >>Reisen zu |cRXP_FRIENDLY_Brandur Ironhammer|r
+    .goto Ironforge,24.2,6.8,12 >>Reist zu |cRXP_FRIENDLY_Brandur Ironhammer|r
 step << Dwarf Paladin
     .goto Ironforge,23.131,6.143
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Brandur Ironhammer|r

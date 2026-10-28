@@ -1380,7 +1380,7 @@ step << Warlock
     .accept 1688 >> Akzeptiert die Quest Surena Caledon
 step << Warlock
     #softcore
-    .deathskip >> Sterbt und respawnt beim Geistheiler, indem ihr Aderlass benutzt und auf dem Freudenfeuer neben euch steht
+    .deathskip >> Sterbt und respawnt beim Geistheiler, indem ihr Aderlass benutzt und euch auf das Lagerfeuer neben euch stellt
 step << Warlock
     .goto Elwynn Forest,42.105,65.927
     .zone Elwynn Forest >> Verlasst Sturmwind. Reist nach Goldhain

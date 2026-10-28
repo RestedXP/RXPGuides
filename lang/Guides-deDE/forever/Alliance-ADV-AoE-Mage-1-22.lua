@@ -1971,7 +1971,7 @@ step
 step
     #completewith Tannok
     .cast 1459 >> |T135932:0|t[Arkane Intelligenz] nachbuffen
-    .cast 168 >> |T135843:0|t[Frostschadenrüstung] Nachbuffen
+    .cast 168 >> |T135843:0|t[Frostrüstung] Nachbuffen
 step
     .goto 1426/0,-504.29,-5596.24
     >>Sprecht mit |cRXP_FRIENDLY_Ragnar|r
@@ -2580,7 +2580,7 @@ step
 step
     #completewith next
     .cast 1459 >> |T135932:0|t[Arkane Intelligenz] nachbuffen
-    .cast 168 >> |T135843:0|t[Frostschadenrüstung] Nachbuffen
+    .cast 168 >> |T135843:0|t[Frostrüstung] Nachbuffen
 step
     >>Sprecht mit |cRXP_FRIENDLY_Bellowfiz|r und |cRXP_FRIENDLY_Stonegear|r
     .turnin 320,2 >> Gebt die Quest Rückkehr zu Bellowfiz ab
@@ -3221,7 +3221,7 @@ step
 step
     .goto 1439/1,393.72,5993.24
     >>Lauft zum Furbolg Camp
-    >>|cRXP_WARN_Versucht nicht gegen die, |rWindsprecher der Schwarzfelle|cRXP_ENEMY_ zu kämpfen|r
+    >>|cRXP_WARN_Versucht nicht gegen den|r |cRXP_ENEMY_Windsprecher der Schwarzfelle|r zu kämpfen
     .complete 984,1 --Find a corrupt furbolg camp (1)
 step
     .goto 1439/1,411.40,5873.15,60,0
@@ -3899,7 +3899,7 @@ step
     #requires Gwennyth
     .goto 1439/1,393.72,5993.24
     >>Lauft zum Furbolg Camp
-    >>|cRXP_WARN_Versucht nicht gegen die, |rWindsprecher der Schwarzfelle|cRXP_ENEMY_ zu kämpfen|r
+    >>|cRXP_WARN_Versucht nicht gegen den|r |cRXP_ENEMY_Windsprecher der Schwarzfelle|r zu kämpfen
     .complete 984,1 --Find a corrupt furbolg camp (1)
 step
     .goto 1439/1,302.02,5726.433
@@ -4754,7 +4754,7 @@ step
     .goto 1453/0,949.86,-9009.380,10,0
     .goto 1453/0,942.34,-9001.49,8,0
     >>Verlasst den Magierturm
-    .goto 1453/0,948.65,-8994.50,10 >>Reist zu |cRXP_FRIENDLY_Charys|r
+    .goto 1453/0,948.65,-8994.50,10 >>Reisen zu |cRXP_FRIENDLY_Charys|r
 step
     .goto 1453/0,948.65,-8994.50
     >>Betretet das Gebäude
@@ -4770,7 +4770,7 @@ step
     .goto 1453/0,758.31,-8878.78,20,0
     .goto 1453/0,810.33,-8832.44,20,0
     .goto 1453/0,827.54,-8850.19,15,0
-    .goto 1453/0,822.16,-8865.60,10 >>Reisen zu |cRXP_FRIENDLY_Adair|r
+    .goto 1453/0,822.16,-8865.60,10 >>Reist zu |cRXP_FRIENDLY_Adair|r
     .money <0.0090
 step
     .goto 1453/0,822.16,-8865.60
@@ -6182,7 +6182,7 @@ step
     .goto 1453/0,949.86,-9009.380,10,0
     .goto 1453/0,942.34,-9001.49,8,0
     >>Verlasst den Magierturm
-    .goto 1453/0,948.65,-8994.50,10 >>Reist zu |cRXP_FRIENDLY_Charys|r
+    .goto 1453/0,948.65,-8994.50,10 >>Reisen zu |cRXP_FRIENDLY_Charys|r
 step
     .goto 1453/0,948.65,-8994.50
     >>Betretet das Gebäude
@@ -7156,7 +7156,7 @@ step
     .goto 1453/0,949.86,-9009.380,10,0
     .goto 1453/0,942.34,-9001.49,8,0
     >>Verlasst den Magierturm
-    .goto 1453/0,948.65,-8994.50,10 >>Reist zu |cRXP_FRIENDLY_Charys|r
+    .goto 1453/0,948.65,-8994.50,10 >>Reisen zu |cRXP_FRIENDLY_Charys|r
 step
     .goto 1453/0,948.65,-8994.50
     >>Betretet das Gebäude
@@ -7184,7 +7184,7 @@ step
     .goto 1453/0,758.31,-8878.78,20,0
     .goto 1453/0,810.33,-8832.44,20,0
     .goto 1453/0,827.54,-8850.19,15,0
-    .goto 1453/0,822.16,-8865.60,10 >>Reisen zu |cRXP_FRIENDLY_Adair|r
+    .goto 1453/0,822.16,-8865.60,10 >>Reist zu |cRXP_FRIENDLY_Adair|r
 step
     .goto 1453/0,822.16,-8865.60
     >>Betretet das Gebäude
@@ -7968,7 +7968,7 @@ step
     .goto 1453/0,949.86,-9009.380,10,0
     .goto 1453/0,942.34,-9001.49,8,0
     >>Verlasst den Magierturm
-    .goto 1453/0,948.65,-8994.50,10 >>Reist zu |cRXP_FRIENDLY_Charys|r
+    .goto 1453/0,948.65,-8994.50,10 >>Reisen zu |cRXP_FRIENDLY_Charys|r
 step
     #completewith BankDeposit
     +|cRXP_WARN_Geht nicht unter 1g 43s 30c|r
@@ -8012,7 +8012,7 @@ step
     .goto 1453/0,758.31,-8878.78,20,0
     .goto 1453/0,810.33,-8832.44,20,0
     .goto 1453/0,827.54,-8850.19,15,0
-    .goto 1453/0,822.16,-8865.60,10 >>Reisen zu |cRXP_FRIENDLY_Adair|r
+    .goto 1453/0,822.16,-8865.60,10 >>Reist zu |cRXP_FRIENDLY_Adair|r
 step
     #label AdairX
     .goto 1453/0,822.16,-8865.60

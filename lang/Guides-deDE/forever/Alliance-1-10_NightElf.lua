@@ -121,7 +121,7 @@ step << !Priest !Rogue
 	.accept 3120 >> Akzeptiert die Quest Tiefgrünes Siegelzeichen << Druid
 step << !Hunter !Druid !Warrior
     #completewith next
-    >>Tötet |cRXP_ENEMY_Disteleber|r auf dem Weg zu Iverron
+    >>Tötet |cRXP_ENEMY_Thistle Boars|r auf dem Weg zu Iverron. Ihr müsst das jetzt nicht fertigstellen.
     .complete 457,2 --Kill Thistle Boar (x7)
     .mob +Thistle Boar
 step << !Hunter !Druid !Warrior
@@ -162,7 +162,7 @@ step << Druid
     .mob Grellkin
 step << Druid
     #completewith next
-    >>Tötet |cRXP_ENEMY_Disteleber|r auf dem Weg zu Iverron
+    >>Tötet |cRXP_ENEMY_Thistle Boars|r auf dem Weg zu Iverron. Ihr müsst das jetzt nicht fertigstellen.
     .complete 457,2 --Kill Thistle Boar (x7)
     .mob +Thistle Boar
 step << Druid
@@ -257,7 +257,7 @@ step
     .mob Webwood Spider
 step
     #completewith next
-    >>Tötet |cRXP_ENEMY_Disteleber|r auf dem Weg zu den Grells
+    >>Tötet |cRXP_ENEMY_Thistle Boars|r auf dem Weg zu den Grells. Ihr müsst das jetzt nicht fertigstellen.
     .complete 457,2 --Kill Thistle Boar (x7)
     .mob +Thistle Boar
 step << !Druid
@@ -284,7 +284,7 @@ step
     .turnin 97977 >>Gebt die Quest Ruf der Natur ab
 step
     #completewith next
-    >>Tötet |cRXP_ENEMY_Disteleber|r auf dem Weg zu Iverron
+    >>Tötet |cRXP_ENEMY_Thistle Boars|r auf dem Weg zu Iverron. Ihr müsst das jetzt nicht fertigstellen.
     .complete 457,2 --Kill Thistle Boar (x7)
     .mob +Thistle Boar
 step
@@ -320,7 +320,7 @@ step << Hunter/Rogue
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.05
 step
     #completewith next
-    >>Tötet |cRXP_ENEMY_Disteleber|r auf dem Weg zu Iverron
+    >>Tötet |cRXP_ENEMY_Thistle Boars|r auf dem Weg zu Iverron. Ihr müsst das jetzt nicht fertigstellen.
     .complete 457,2 --Kill Thistle Boar (x7)
     .mob +Thistle Boar
 step
@@ -491,6 +491,8 @@ step
 step
     .goto 1438/1,882.300,9909.101
     >>Benutzt das |cRXP_WARN_/sitzen|r Emote neben dem Lagerfeuer und |cRXP_WARN_bleibt 1 Minute lang sitzen|r um das Ziel zu abzuschließen
+    >>|cRXP_WARN_Falls das Sitzen nicht für die Quest zählt, brecht sie ab und nehmt sie erneut auf!|r
+    .complete 96606,1 --Sit
     .complete 96606,2 --Gain the Boosted Rest buff
 step
     .goto 1438/1,879.700,9907.601
@@ -2040,9 +2042,6 @@ step
     #loop
     .goto 1438/1,1828.600,10964.800
     >>Tötet |cRXP_ENEMY_Lady Sathrah|r. Plündert sie für ihre |cRXP_LOOT_Spinndrüsen|r
-    >>|cRXP_ENEMY_Lady Sathrah|r |cRXP_WARN_kann an 3 verschiedenen Orten erscheinen, prüft die Karte für einen empfohlenen Weg|r
-    >>|cRXP_WARN_Geh am Fluss entlang nach Norden und überprüfe zuerst den östlichsten Spawn-Punkt. Arbeitet an der|r |T134339:0|t[Tumoren] |cRXP_WARN_Quest im Vorbeigehen|r
-    >>|cRXP_WARN_Falls Sie sich nicht östlich des Flusses befinden, vervollständige die|r |T134339:0|t[Tumore] |cRXP_WARN_Quest, bevor du dich nach Westen begibst|r
     .complete 2518,1 --Collect Silvery Spinnerets (x1)
     .mob Lady Sathrah
 step
@@ -2318,14 +2317,12 @@ step << Hunter
     >>|cRXP_WARN_Ihr werdet es brauchen um die Eule von Euch zu füttern, sie essen nur Fleisch und es gibt keinen Fleischhändler in der Dunkelküste|r
     .collect 117,15
     .target Jaeana
-step << Hunter/Warrior/Priest/Sod Rogue
+step << Hunter/Warrior/Priest
     .goto 1457/1,2329.19,9908.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Ilyenia Mondfeuer|r
     .skipgossipid 96881
     .train 227 >>Erlernt Stäbe << Hunter/Warrior/Priest
-    .train 265 >>Erlernen Bogen << Sod Rogue
     >>Falls ihr einen Stab in der Tasche habt, rüstet ihn aus << Hunter
-    >>Falls ihr einen Bogen der Tasche habt, rüstet ihn aus << Rogue
     .target Ilyenia Moonfire
 step << Hunter
     #optional

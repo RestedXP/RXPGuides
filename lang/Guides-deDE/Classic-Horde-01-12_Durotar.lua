@@ -10225,7 +10225,7 @@ step << Warlock
     .target Thrall
     .isQuestTurnedIn 5726
 step << Warlock
-    .destroy 14544 >>|cRXP_WARN_Zerstört|r |T134417:0|tInsignien des Lieutenants] |cRXP_WARN_da ihr es nicht mehr braucht|r
+    .destroy 14544 >>|cRXP_WARN_Destroy|r |T134417:0|t[Lieutenant's Insignia] |cRXP_WARN_as you no longer need it|r
 step << Shaman/Mage/Hunter
     #xprate >2.09
     #completewith next

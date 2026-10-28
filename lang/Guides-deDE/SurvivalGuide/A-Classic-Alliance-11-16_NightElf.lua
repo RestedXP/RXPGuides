@@ -90,7 +90,7 @@ step
 step << Warrior/Rogue/Paladin
     .goto Darkshore,38.250,41.008
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Kurdram Stonehammer|r
-    .train 2581 >> Erlernen Bergbau, wirkt Mineraliensuche
+    .train 2581 >> Erlernt Bergbau, wirkt Mineraliensuche
     .skill mining,1,1
     .target Kurdram Stonehammer
 step << Warrior/Rogue/Paladin

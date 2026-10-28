@@ -3606,7 +3606,6 @@ step
 step
     .goto 1454/1,-4293.600,1949.900
     >>Plündert die orangen |cRXP_PICK_Steine|r auf dem Boden
-    >>|cRXP_WARN_Überspringt diese Quest, wenn es viel Konkurrenz gibt! Es gibt nicht so viele |cRXP_PICK_Steine|r und sie erscheinen nicht schnell wieder.|r
     .complete 97326,1 --|8/8 Smooth Boulder
     .isOnQuest 97326
 step
@@ -3764,6 +3763,27 @@ step << Shaman/Hunter
     .turnin 926 >>Gebt die Quest Fehlerhafter Kraftstein ab
     .isOnQuest 924
 step << !Shaman !Hunter
+    #completewith Gazzuz
+    >>Tötet |cRXP_ENEMY_Burning Blade Orks|r. Plündert sie für |cRXP_LOOT_Insignien des Lieutenants|r
+    >>|cRXP_WARN_Das ist eine Vor-Quest für RFC mit niedriger Fallquote|r
+    .complete 5726,1 --Lieutenant's Insignia (1)
+    .mob Burning Blade Fanatic
+    .mob Burning Blade Apprentice
+    .dungeon RFC
+step << !Shaman !Hunter
+    #label Gazzuz
+    .goto 1411/1,-4701.42,1455.83
+    >>Tötet |cRXP_ENEMY_Gazz'uz|r. Plündert ihn für |T134085:0|t[|cRXP_LOOT_Auge des brennenden Schatten|r]
+    >>|cRXP_WARN_Seid vorsichtig, da er SEHR schwierig ist. Falls ihr ihn nicht in einer Gruppe oder solo schafft, könnt ihr diese Quest gerne überspringen|r
+    >>|cRXP_WARN_Benutzt |T134085:0|t[|cRXP_LOOT_Auge des brennenden Schatten|r] um die Quest zu starten|r
+    >>|cRXP_WARN_Benutzt LoS (Sichtlinie), um |cRXP_ENEMY_Gazz'uz|r seine Schattenblitze zu vermeiden|r
+    >>|cRXP_WARN_Ihr könnt zu Gewässern innerhalb der Höhle fliehen um dem|r Leerwandler|cRXP_ENEMY_ nach dem Töten von|r |cRXP_WARN_Gazz'uz|r |cRXP_ENEMY_zu entkommen|r
+    .collect 4903,1,832,1 --Collect Eye of Burning Shadow
+    .accept 832 >>Akzeptiert die Quest Brennende Schatten
+    .use 4903
+	.unitscan Gazz'uz
+    .dungeon RFC
+step << !Shaman !Hunter
     #loop
     .goto 1411/1,-4805.59,1495.67,0
     .goto 1411/1,-4855.82,1498.84,15,0
@@ -3777,11 +3797,11 @@ step << !Shaman !Hunter
     .goto 1411/1,-4684.50,1466.06,15,0
     .goto 1411/1,-4805.59,1495.67,15,0
     >>Tötet |cRXP_ENEMY_Burning Blade Orks|r. Plündert sie für |cRXP_LOOT_Insignien des Lieutenants|r
+    >>|cRXP_WARN_Das ist eine Vor-Quest für RFC mit niedriger Fallquote|r
     .complete 5726,1 --Lieutenant's Insignia (1)
     .mob Burning Blade Fanatic
     .mob Burning Blade Apprentice
     .dungeon RFC
-    .isOnQuest 5726
 step << !Shaman !Hunter
     #label ZeptoUC1
     .goto 1411/1,-4648.55,1321.88,40 >>Geh auf den Zeppelin-Turm
@@ -3928,6 +3948,7 @@ step
     .accept 96897 >>Akzeptiert die Quest Der Kult der Verdammten
     .accept 96898 >>Akzeptiert die Quest Überreste des Krieges
     .target Hadric Harlson
+    .maxlevel 11
 step
     .goto 1420/0,-130.500,1907.800
     >>Tötet |cRXP_ENEMY_Dunkler Vollstrecker|r und |cRXP_ENEMY_Dunkler Neophyt|r. Plündert sie für |cRXP_LOOT_Nekrotisches Kristallfragment|r
@@ -3938,6 +3959,7 @@ step
     .complete 96897,1 --|8/8 Dark Neophyte slain
     .mob +Dark Neophyte
     .complete 96898,1 --|12/12 Necrotic Crystal Fragment
+    .isOnQuest 96897,96898
 step
     #label HorrorsandSpirits
     #loop
@@ -3962,8 +3984,23 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Hadric Harlson|r
     .turnin 96897 >>Gebt die Quest Der Kult der Verdammten ab
     .turnin 96898 >>Gebt die Quest Überreste des Krieges ab
-    --.accept 96899 >>Accept Bandarion Keep
     .target Hadric Harlson
+    .isQuestComplete 96897
+    .isQuestComplete 96898
+step
+    #optional
+    .goto 1420/0,54.500,1996.400
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Hadric Harlson|r
+    .turnin 96897 >>Gebt die Quest Der Kult der Verdammten ab
+    .target Hadric Harlson
+    .isQuestComplete 96897
+step
+    #optional
+    .goto 1420/0,54.500,1996.400
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Hadric Harlson|r
+    .turnin 96898 >>Gebt die Quest Reste des Krieges ab
+    .target Hadric Harlson
+    .isQuestComplete 96898
 step
     #label LinneaTurnin
     .goto 1420/0,74.00,2022.47

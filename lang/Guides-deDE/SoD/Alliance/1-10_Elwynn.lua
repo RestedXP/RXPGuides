@@ -3247,7 +3247,7 @@ step << Mage/Paladin
     .goto Ironforge,27.17,12.58,20,0 << Paladin
     .goto Ironforge,27.60,11.06,20,0 << Mage
     .goto Ironforge,26.8,8.6,12 >>Reist in Richtung |cRXP_FRIENDLY_Dink|r << Mage
-    .goto Ironforge,23.131,6.143,12 >>Reisen zu |cRXP_FRIENDLY_Brandur Ironhammer|r << Paladin
+    .goto Ironforge,23.131,6.143,12 >>Reist zu |cRXP_FRIENDLY_Brandur Ironhammer|r << Paladin
 step << Mage
     #xprate >1.49
     .goto Ironforge,26.8,8.6

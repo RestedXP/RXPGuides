@@ -709,7 +709,7 @@ step
     .goto 2521,42.76,24.5
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Uualia Suncrest::251537|r
     .collect 277113,1 >>Kauft an |T133637:0|t[Lehrling's Herb Pouch]
-    .macro Buy Herbalism Supplies,133637 >>Kauft Kräuterkunde Vorräte
+    -- .macro Buy Herbalism Supplies,133637 >>/run local t={[277113]=1};local m=C_MerchantFrame;for i=1,(m.GetNumItems or GetMerchantNumItems)()do local k=tonumber(((m.GetItemLink or GetMerchantItemLink)(i)or""):match("item:(%d+)"));if t[k]then BuyMerchantItem(i,t[k]);t[k]=nil end end
     .target Uualia Suncrest::251537
 step
     #completewith Aggressive Encroachment
@@ -718,7 +718,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Uualia Suncrest::251537|r
     .collect 2901,1 >>Kauft a |T134708:0|t[Spitzhacke]
     .collect 277115,1 >>Kauft an |T133635:0|t[Lehrling's Bergbau Pack]
-    .macro Buy Mining Supplies,134708 >>Kauft Bergbau Vorräte
+    -- .macro Buy Mining Supplies,134708 >>/run local t={[2901]=1,[277115]=1};local m=C_MerchantFrame;for i=1,(m.GetNumItems or GetMerchantNumItems)()do local k=tonumber(((m.GetItemLink or GetMerchantItemLink)(i)or""):match("item:(%d+)"));if t[k]then BuyMerchantItem(i,t[k]);t[k]=nil end end
     .target Uualia Suncrest::251537
 step
     #completewith Aggressive Encroachment
@@ -979,6 +979,11 @@ step
     #hidewindow
     +Possible Tornado Erschaffen Ort
     #icon |TInterface/Icons/Spell_Nature_Cyclone:0|t
+    .pin 2521,48.14,56.56,Tornado
+    .pin 2521,54.92,44.76,Tornado
+    .pin 2521,39.6,45.11,Tornado
+    .pin 2521,58.55,52.75,Tornado
+    .pin 2521,47.74,69.57,Tornado
     .pin 2521,50.22,76.77,Tornado
     .pin 2521,53.51,71.46,Tornado
     .pin 2521,54.46,60.13,Tornado
@@ -1933,7 +1938,7 @@ step << Alliance
 step
     .aura -1289723
     >>|cRXP_WARN_Bewegt euch nicht und springt nicht, bis die Quest abgeschlossen ist|r.
-    *Ihr könnt craften und euch erneut buffen, ohne Questguthaben zu verlieren. Ihr könnt auch hier Buff-Nahrung essen, um 5% erhöhte Erfahrung aus Kills zu erhalten.
+    *Ihr könnt hier craften und euch selbst neu bufffen, ohne den Questfortschritt zu verlieren. Ihr könnt hier auch Buffessen konsumieren, um 5% erhöhte Erfahrung aus Kills zu erhalten.
     .complete 96101,2 --Gain the Boosted Rest buff
 step
     .aura 1289723
@@ -1974,7 +1979,7 @@ step << Alliance
     .macro Cooking,133971 >>Kochkunst
 step
     >>|cRXP_WARN_Bewegt euch nicht und springt nicht, bis die Quest abgeschlossen ist|r.
-    *Ihr könnt hier craften und euch selbst neu bufffen, ohne den Questfortschritt zu verlieren. Ihr könnt hier auch Buffessen konsumieren, um 5% erhöhte Erfahrung aus Kills zu erhalten.
+    *Ihr könnt craften und euch erneut buffen, ohne Questguthaben zu verlieren. Ihr könnt auch hier Buff-Nahrung essen, um 5% erhöhte Erfahrung aus Kills zu erhalten.
     .complete 96101,2 --Gain the Boosted Rest buff
 step
     .goto 2521,41.67,44.79
@@ -2773,12 +2778,12 @@ step
 step
     .goto 2521,40.988,64.088
     >>|TInterface/cursor/crosshair/interact.blp:20|tKlickt |cRXP_PICK_Arvensus Shadowsong|r\n |cRXP_WARN_aus der Ferne|r.
-    *|cRXP_WARN_Haltet einen Taschenplatz frei.|r
+    *|cRXP_WARN_Haltet einen Taschenplatz frei|r.
     .complete 93927,4 --1/1 Shadowsong Family Signet
 step
     .goto 2521,41.12,64.09
     >>|TInterface/cursor/crosshair/interact.blp:20|tKlickt |cRXP_PICK_Raani Windgazer|r\n |cRXP_WARN_aus der Ferne|r.
-    *|cRXP_WARN_Haltet einen Taschenplatz frei|r.
+    *|cRXP_WARN_Haltet einen Taschenplatz frei.|r
     .complete 93927,3 --1/1 Raani's Favorite Feather
 step
     #label Skypriest Aanders
@@ -3226,6 +3231,11 @@ step
     #hidewindow
     +Possible Tornado Erschaffen Ort
     #icon |TInterface/Icons/Spell_Nature_Cyclone:0|t
+    .pin 2521,48.14,56.56,Tornado
+    .pin 2521,39.6,45.11,Tornado
+    .pin 2521,54.92,44.76,Tornado
+    .pin 2521,58.55,52.75,Tornado
+    .pin 2521,47.74,69.57,Tornado
     .pin 2521,50.22,76.77,Tornado
     .pin 2521,53.51,71.46,Tornado
     .pin 2521,54.46,60.13,Tornado
@@ -3509,7 +3519,7 @@ step
     #completewith next
     #label DeliverTheSignetA
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Talaanis Shadowsong::252476|r.
-    .turnin 93948 >>Gebt die Quest Deliver the Signet ab
+    .turnin 93948 >>Gebt die Quest Deliver the Signet ab.
     .target Talaanis Shadowsong::252476
 step
     #completewith DeliverTheSignetA
@@ -3526,7 +3536,7 @@ step
     #label Deliver the Signet
     .goto 2521,66.17,76.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Talaanis Shadowsong::252476|r.
-    .turnin 93948 >>Gebt die Quest Deliver the Signet ab.
+    .turnin 93948 >>Gebt die Quest Deliver the Signet ab
     .target Talaanis Shadowsong::252476
 step
     #label BuggedAcceptedA
@@ -3615,7 +3625,7 @@ step << Alliance
     .isQuestNotComplete 92849 -- The Missing Scholar
     .goto 2521,50.7,65.36
     .aura 1258429 >>|TInterface/cursor/crosshair/interact.blp:20|tKlickt |cRXP_FRIENDLY_Fillion Flamebreeze::253002|r in der Höhle.
-    *|cRXP_WARN_Weicht den Vögeln aus und klickt Fillion außerhalb des Kampfes an, sonst werdet ihr nach draußen teleportiert|r.
+    *|cRXP_WARN_Weicht den Vögeln aus und klickt Fillion außerhalb des Kampfes an, oder ihr werdet nach draußen teleportiert|r.
     .skipgossipid 136430
     .target Fillion Flamebreeze::253002
 step << Alliance
@@ -3626,7 +3636,7 @@ step << Alliance
     .goto 2521,51.55,69.2,35,0
     .goto 2521,52.08,69.41
     >>Tragt |cRXP_FRIENDLY_Fillion Flamebreeze::253281|r in Sicherheit.
-    *|cRXP_WARN_Weicht den Vögeln aus und klickt Fillion außerhalb des Kampfes an, oder ihr werdet nach draußen teleportiert|r.
+    *|cRXP_WARN_Weicht den Vögeln aus und klickt Fillion außerhalb des Kampfes an, sonst werdet ihr nach draußen teleportiert|r.
     *|cRXP_WARN_Wenn ein Vogel euch angreift, brecht die carrying aura ab, um nicht nach außen teleportiert zu werden|r.
     .complete 92849,2 --1/1 Carry Fillion Flamebreeze to safety while avoiding enemies
     .skipgossipid 136430
@@ -3673,7 +3683,6 @@ step << Alliance
     .goto 2521,51.16,67.53,20,0
     .goto 2521,51.31,68.99,25 >>Verlasst die Höhle
 step << Alliance
-    #optional
     #completewith FindAameliaWindfieldA
     >>Tötet |cRXP_ENEMY_Windsong Crawlers::254588|r. Plündert sie für |T133972:0|t[|cRXP_LOOT_Windsong Kriecher Fleisch|r].
     .complete 93317,1 --6/6 Windsong Crawler Meat
@@ -3725,7 +3734,6 @@ step << Horde
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Endaria Mistgaze::254344|r.
 --     .accept 93736 >>Accept Unwelcome Spirits
 --     .target Endaria Mistgaze::254344
-
 step << Horde Hunter
     .xp <9,1
     .money <0.1345
@@ -3815,7 +3823,6 @@ step << Horde Rogue
     .itemcount 277107,1 --Zephrali Bludgeon
     +|cRXP_WARN_Legt|r |T7791298:0|t[Knüppel der Zephrali] an.
     .use 277107 --Zephrali Bludgeon
-
 step << Horde
     .train 2366,3 -- Herbalism Trained
     .isQuestComplete 97968 -- Camping 101: Herbalism
@@ -3895,9 +3902,8 @@ step << Horde
 step
     #requires BrokenConstructB << Horde
     #label FindAameliaWindfieldA
-    #loop
-    .goto 2521,46.71,81.94,30,0
-    .goto 2521,47.511,78.490,10,0
+    .goto 2521,46.71,81.94
+    --fix loop later
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Aamelia Windfield::252800|r.
     *|cRXP_WARN_Sie könnte sich während einer Rollenspielbewegung zwischen Orten bewegen|r.
     *|cRXP_WARN_Sucht sie aus der Ferne oder folgt ihrem Dialog; der Pfeil markiert nur einen ungefähren Ort|r.
@@ -3906,9 +3912,8 @@ step
     .complete 92679,1 --1/1 Find Aamelia Windfield
     .target Aamelia Windfield::252800
 step
-    #loop
-    .goto 2521,46.71,81.94,30,0
-    .goto 2521,47.511,78.490,10,0
+    --fix loop later
+    .goto 2521,46.71,81.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Aamelia Windfield::252800|r.
     *|cRXP_WARN_Sie könnte sich während einer Rollenspielbewegung zwischen Orten bewegen|r.
     *|cRXP_WARN_Sucht sie aus der Ferne oder folgt ihrem Dialog; der Pfeil markiert nur einen ungefähren Ort|r.
@@ -3917,7 +3922,6 @@ step
     .accept 92684 >>Akzeptiert die Quest Ornery Ornery Galestriders
     .accept 92683 >>Akzeptiert die Quest Flutterfly-Staub
     .target Aamelia Windfield::252800
-
 -- step << Alliance
 --     .isOnQuest 92682 -- Make Yourself Useful
 --     .isQuestNotComplete 92682 -- Make Yourself Useful
@@ -3928,9 +3932,12 @@ step
 --     .usespell 1259705
 step
     -- #label RipBanditsA
-    #loop
-    .goto 2521,46.164,78.043,30,0
-    .goto 2521,48.920,84.441,30,0
+    --fix loop later
+    -- #loop
+    -- .goto 2521,46.92,81.63,30,0
+    -- .goto 2521,48.08,80.63,30,0
+    -- .goto 2521,47.43,79.26,30,0
+    .goto 2521,46.26,78.04
     >>|TInterface/cursor/crosshair/interact.blp:20|tKlickt auf die |cRXP_PICK_Reife Stormapples|r.
     >>Tötet |cRXP_ENEMY_Hungry Bandits::252802|r |cRXP_WARN_(stealthed)|r.
     *Jäger-Tipps: Drückt Tab schnell, um sie frühzeitig anzuvisieren. Nutzt Mal des Jägers gegen sie, damit ihr weglaufen und sie von weiter weg treffen könnt. << Hunter
@@ -4307,8 +4314,8 @@ step
     .goto 2521,62.11,73.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Alvarion Windfield::252448|r |cRXP_WARN_auf dem zweiten Stock|r.
     .turnin 92703,1 >>Gebt die Quest Deliver the Neues ab << Warrior/Shaman/Paladin
-    .turnin 92703,2 >>Gebt die Quest Lieferung des Neuen ab << Druid/Priest
-    .turnin 92703,3 >>Gebt die Quest Deliver the Neues ab << Rogue
+    .turnin 92703,2 >>Gebt die Quest Deliver the Neues ab << Druid/Priest
+    .turnin 92703,3 >>Gebt die Quest Lieferung des Neuen ab << Rogue
     .turnin 92703 >>Gebt die Quest Deliver the Neues ab << Hunter/Mage/Warlock
     .target Alvarion Windfield::252448
 step
@@ -5293,7 +5300,7 @@ step << Alliance Druid
     #optional
     #completewith next
     #label Commander Belguilos Druid
-    >>Tötet |cRXP_ENEMY_Commander Belguilos::252666|r |cRXP_WARN_auf der zweiten Etage|r im Haus.
+    >>Tötet |cRXP_ENEMY_Commander Belguilos::252666|r |cRXP_WARN_auf dem zweiten Stock|r im Haus.
     .complete 92645,1 --1/1 Commander Belguilos slain
     .mob Commander Belguilos::252666
 step << Alliance Druid
@@ -5304,7 +5311,7 @@ step << Alliance Druid
     #label Commander Belguilos Druid2
     .goto 2521,65.31,65.33,20,0
     .goto 2521,65.58,65.63
-    >>Tötet |cRXP_ENEMY_Commander Belguilos::252666|r |cRXP_WARN_auf dem zweiten Stock|r im Haus.
+    >>Tötet |cRXP_ENEMY_Commander Belguilos::252666|r |cRXP_WARN_auf der zweiten Etage|r im Haus.
     .complete 92645,1 --1/1 Commander Belguilos slain
     .mob Commander Belguilos::252666
 step << Alliance Druid
@@ -6373,7 +6380,7 @@ step << Alliance
     #optional
     #completewith next
     #label Talaanis Shadowsong
-    >>|cRXP_WARN_Wartet auf das Rollenspiel|r.
+    >>|cRXP_WARN_Wait for the Roleplay|r.
     .complete 94568,1 --1/1 Learn what you can from the crystal
     .target Talaanis Shadowsong::252476
 step << Alliance
@@ -6384,7 +6391,7 @@ step << Alliance
 step << Alliance
     #requires Talaanis Shadowsong
     .goto 2521,66.17,76.52
-    >>|cRXP_WARN_Wait for the Roleplay|r.
+    >>|cRXP_WARN_Wartet auf das Rollenspiel|r.
     -- *Cook |T132834:0|t[Herb Baked Eggs] and |T133974:0|t[Charred Wolf Meat] if you have the required materials.
     -- *Otherwise, craft any items you can using your other professions.
     .complete 94568,1 --1/1 Learn what you can from the crystal
@@ -6949,7 +6956,7 @@ step << Alliance
     .goto 1453/0,332.000,-8443.101
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Highlord Bolvar Fordragon::1748|r in der Burg.
     .target Highlord Bolvar Fordragon::1748
-    .turnin 94947 >>Gebt die Quest Welcome to Azeroth ab
+    .turnin 94947 >>Gebt die Quest Willkommen in Azeroth ab
     .accept 93963 >>Akzeptiert die Quest Exploring the Allianz
     .accept 98021 >>Akzeptiert die Quest Journey to Späherkuppe << !Hunter
 
@@ -7364,12 +7371,22 @@ step << Horde
 step << Horde
     .goto 1454/1,-4126.300,1920.100
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Thrall::4949|r.
-    .turnin 95350 >>Gebt die Quest Welcome to Azeroth ab
+    .turnin 95350 >>Gebt die Quest Willkommen in Azeroth ab
     .accept 98024 >>Akzeptiert die Quest Reise nach Crossroads
     --.accept 93739 >>Accept Exploring the Horde
     --.accept 5726 >>Accept Hidden Enemies
     .target Thrall::4949
+    .dungeon !RFC
     --93739 will take too long, won't be able to fully complete and turnin until lvl 22/23 and at that point you get no xp
+step << Horde
+    .goto 1454/1,-4126.300,1920.100
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Thrall::4949|r.
+    .turnin 95350 >>Gebt die Quest Willkommen in Azeroth ab
+    .accept 98024 >>Akzeptiert die Quest Reise nach Crossroads
+    --.accept 93739 >>Accept Exploring the Horde
+    .accept 5726 >>Akzeptiert die Quest Verborgene Feinde
+    .target Thrall::4949
+    .dungeon RFC
 step << skip --Horde
     .goto 1454/1,-4133.400,1938.600
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Nazgrel::3230|r.
@@ -7429,9 +7446,6 @@ step << Horde Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Pephredo::5882|r
     .train 1449 >> Trainiere deine Klassenfähigkeiten
     .target Pephredo::5882
-step << !Hunter
-    #optional
-    .maxlevel 13,Silverpineskip
 step << Horde
     #completewith next
     .zone Durotar >> Verlass Orgrimmar
@@ -7500,8 +7514,8 @@ step << Horde !Hunter
     .isQuestComplete 96898 -- Remnants of War
     .goto 1420/0,54.500,1996.400
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Hadric Harlson::267009|r
-    .turnin 96897 >>Gebt die Quest The Cult of the Verdammt ab
-    .turnin 96898 >>Gebt die Quest Remnants of Krieg ab
+    .turnin 96897 >>Gebt die Quest Der Kult der Verdammten ab
+    .turnin 96898 >>Gebt die Quest Reste des Krieges ab
     --.accept 96899 >>Accept Bandarion Keep
     .target Hadric Harlson::267009
 step << Horde !Hunter
@@ -7544,7 +7558,4 @@ step << Horde !Hunter
     .zoneskip Silverpine Forest
     .goto 1420/0,629.36,1553.42
     .zone Silverpine Forest >> Reist nach Silberwald
-step << !Hunter
-    #optional
-    #label Silverpineskip
 ]])

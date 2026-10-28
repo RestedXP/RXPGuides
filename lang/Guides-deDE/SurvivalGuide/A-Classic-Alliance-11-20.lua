@@ -790,7 +790,7 @@ step
 step
 #map Darkshore
     .goto Felwood,25.15,4.61
-    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4723 >> Akzeptiert die Quest Gestrandete Meereskreatur
 step << Druid
     #completewith cure1
@@ -1014,7 +1014,7 @@ step
 #map Darkshore
     #label Beached4728
     .goto Felwood,18.41,49.43
-    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4728 >> Akzeptiert die Quest Gestrandete Meereskreatur
 step
     #label BearComplete
@@ -1394,7 +1394,7 @@ step
     .goto Darkshore,61.40,9.40,45,0
     .goto Darkshore,62.42,7.67
     >>Tötet |cRXP_ENEMY_Moonstalker Sires|r und |cRXP_ENEMY_Moonstalker Matriarchs|r. Plündert sie für |cRXP_LOOT_Pelts|r und |cRXP_LOOT_Fangs|r
-    >>|cRXP_WARN_Seid vorsichtig vor |cRXP_ENEMY_Moonstalker Matriarchs|r. Sie greifen immer mit einem |cRXP_ENEMY_Mondpirscherwicht|r an ihrer Seite an|r
+    >>|cRXP_WARN_Seid vorsichtig vor den |cRXP_ENEMY_Mondpirschermatriarchin|r. Sie greifen immer mit einem |cRXP_ENEMY_Mondpirscherwicht|r an ihrer Seite an|r
     >>|cRXP_ENEMY_Mondpirscherpatriarch|r wirken |T132090:0|t[Schwäche ausnutzen] als Hinterhaltangriff, der 20-40 Schaden verursacht, wenn ihr ihnen den Rücken zudreht
     .complete 986,1 -- Fine Moonstalker Pelt (5)
     .complete 1002,1 -- Moonstalker Fang (6)
@@ -1457,7 +1457,7 @@ step
 step
 #map Darkshore
     .goto Winterspring,1.42,26.89
-    >>Klickt auf die |cRXP_PICK_Dröhnkiste 323|r auf dem Boden
+    >>Klickt auf die|cRXP_PICK_Dröhnkiste 323|r auf dem Boden
     .turnin 1002 >> Gebt die Quest Dröhnkiste 323 ab
     .accept 1003 >> Akzeptiert die Quest Dröhnkiste 525
 step
@@ -1780,7 +1780,7 @@ step
 step
     #completewith moonstalkers
     >>Tötet |cRXP_ENEMY_Moonstalker Sires|r und |cRXP_ENEMY_Moonstalker Matriarchs|r. Plündert sie für |cRXP_LOOT_Pelts|r und |cRXP_LOOT_Fangs|r
-    >>|cRXP_WARN_Seid vorsichtig vor |cRXP_ENEMY_Moonstalker Matriarchs|r. Sie greifen immer mit einem |cRXP_ENEMY_Mondpirscherwicht|r an ihrer Seite an|r
+    >>|cRXP_WARN_Seid vorsichtig vor den |cRXP_ENEMY_Mondpirschermatriarchin|r. Sie greifen immer mit einem |cRXP_ENEMY_Mondpirscherwicht|r an ihrer Seite an|r
     >>|cRXP_ENEMY_Mondpirscherpatriarch|r wirken |T132090:0|t[Schwäche ausnutzen] als Hinterhaltangriff, der 20-40 Schaden verursacht, wenn ihr ihnen den Rücken zudreht
     .complete 986,1 --Fine Moonstalker Pelt (5)
     .mob Moonstalker Sire
@@ -1863,7 +1863,7 @@ step
     .goto Darkshore,38.96,80.07,0
 	.goto Darkshore,39.3,91.8
     >>Tötet |cRXP_ENEMY_Moonstalker Sires|r und |cRXP_ENEMY_Moonstalker Matriarchs|r. Plündert sie für |cRXP_LOOT_Pelts|r und |cRXP_LOOT_Fangs|r
-    >>|cRXP_WARN_Seid vorsichtig vor |cRXP_ENEMY_Moonstalker Matriarchs|r. Sie greifen immer mit einem |cRXP_ENEMY_Mondpirscherwicht|r an ihrer Seite an|r
+    >>|cRXP_WARN_Seid vorsichtig vor den |cRXP_ENEMY_Mondpirschermatriarchin|r. Sie greifen immer mit einem |cRXP_ENEMY_Mondpirscherwicht|r an ihrer Seite an|r
     >>|cRXP_ENEMY_Mondpirscherpatriarch|r wirken |T132090:0|t[Schwäche ausnutzen] als Hinterhaltangriff, der 20-40 Schaden verursacht, wenn ihr ihnen den Rücken zudreht
     .complete 986,1 --Fine Moonstalker Pelt (5)
     .mob Moonstalker Sire
@@ -1894,7 +1894,7 @@ step
     .isOnQuest 731
 step
     .goto Ashenvale,13.97,4.10
-    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4733 >> Akzeptiert die Quest Gestrandete Meereskreatur
     >>|cRXP_WARN_Diese Quest kann SEHR schwierig sein. Bekämpft die |cRXP_ENEMY_Murlocs|r einzeln, Andernfalls könntest du die Aggro von mehreren gleichzeitig auf dich ziehen.|r
     .link https://youtu.be/lfQM3Q-Ag5A >> |cRXP_WARN_Klickt hier für einen Videoleitfaden|r
@@ -1910,7 +1910,7 @@ step
 step
 #map Darkshore
     .goto Felwood,14.62,60.72
-    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4730 >> Akzeptiert die Quest Gestrandete Meereskreatur
 step
     #label Murkdeep

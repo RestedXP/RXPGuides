@@ -157,6 +157,11 @@ step
     .target Sten Stoutarm
 
 step << Warlock
+    .goto 1426,25.077,75.711
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Grelin Whitebeard|r
+    .accept 182 >> Akzeptiert die Quest Die Trollhöhle
+    .target Grelin Whitebeard
+step << Warlock
     #season 0,1
     #optional
     #requires FrostmaneC1
@@ -209,6 +214,7 @@ step << Warlock
     #label BeginningsHS
     #completewith BeginningsEnd
     .deathskip >> Stirb und beleb dich am |cRXP_FRIENDLY_Geistheiler|r wieder
+    >>|cRXP_WARN_Stellt sicher, dass eure Subzone Das Eisklammtal ist, wenn ihr sterbt! Andernfalls werdet ihr zum Kharanos-Friedhof geschickt.|r
     .target Geistheiler
 step << Warlock
     #season 0,1
@@ -281,7 +287,7 @@ step
     .goto 1426,25.077,75.711
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Grelin Whitebeard|r
     .turnin 234 >> Gebt die Quest Postbeförderung im Eisklammtal ab
-    .accept 182 >> Akzeptiert die Quest Die Trollhöhle
+    .accept 182 >> Akzeptiert die Quest Die Trollhöhle << !Warlock
     .target Grelin Whitebeard
 step << Hunter
     #completewith next
@@ -657,7 +663,7 @@ RXPGuides.RegisterGuide([[
 #subgroup Speedrun Dungeonführer 1-20
 --#groupid RXP-SRGCE-A1
 #name 5-11 Dun Morogh
-#next 11-12 Elwynn (Zwerge/Gnome);11-12 Leerwandler-Quest;12-14 Loch Modan (Zwerg/Gnom);11-13 Loch Modan (Jäger)
+#next 11-12 Elwynn (Zwerge/Gnome);11-12 Leerwandler-Quest;12-14 Loch Modan (Zwerge/Gnome);11-13 Loch Modan (Jäger)
 #defaultfor Dwarf/Gnome
 
 step
@@ -2793,7 +2799,7 @@ RXPGuides.RegisterGuide([[
 #name 11-12 Elwynn (Zwerge/Gnome)
 #version 1
 #defaultfor Gnome/Dwarf
-#next 12-14 Loch Modan (Zwerg/Gnom)
+#next 12-14 Loch Modan (Zwerge/Gnome)
 --#era << !Warlock
 
 step << Warlock
@@ -2802,7 +2808,7 @@ step << Warlock
     #completewith next
     +|cRXP_WARN_Wirkt|r |T136126:0|t[Aderlass] |cRXP_WARN_wiederholt bis ihr 10 Prozent Gesundheit habt, während ihr auf dem Weg zu|r |cRXP_FRIENDLY_Dungar Longdrink|r
 step
-    .goto 1453/0,490.03,-8835.82
+    .goto 1453/0,484.200,-8832.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Dungar Trinkfest|r
     .fp Stormwind >> Holt euch den Flugpunkt in Sturmwind
     .target Dungar Longdrink
@@ -3455,7 +3461,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Forever Dungeonführer (A)
 #subgroup Speedrun Dungeonführer 1-20
 --#groupid RXP-SRGCE-A1
-#name 12-14 Loch Modan (Zwerg/Gnom)
+#name 12-14 Loch Modan (Zwerge/Gnome)
 #next 13-15 Westfall;14-16 Dunkelküste
 #defaultfor Gnome/Dwarf
 
@@ -3464,7 +3470,7 @@ step << Dwarf Paladin
     #completewith next
     .goto 1455,35.239,32.789,20,0
     .goto 1455,27.208,12.552,20,0
-    .goto 1455/0,-896.47,-4601.65,12 >>Reisen zu |cRXP_FRIENDLY_Brandur Ironhammer|r
+    .goto 1455/0,-896.47,-4601.65,12 >>Reist zu |cRXP_FRIENDLY_Brandur Ironhammer|r
 step << Dwarf Paladin
     .goto 1455/0,-896.47,-4601.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Brandur Ironhammer|r
