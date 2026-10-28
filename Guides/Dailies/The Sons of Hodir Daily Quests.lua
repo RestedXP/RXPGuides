@@ -97,7 +97,7 @@ step
 	.goto TheStormPeaks,55.94,65.69,60,0
 	.goto TheStormPeaks,59.25,59.94
 	.use 42769 >> Use the Spear of Hodir in your bags to hook onto a Wild Wyrm. Make sure you are full health before doing this
-	>>Use Grab On (1) repeatedly to incrase your Grip. When the wyrm swipes at you use Dodge Claws (2). Use Thrust Spear (3) and Vengeful Spear Thrust (4) on cooldown
+	>>Use Grab On (1) repeatedly to increase your Grip. When the wyrm swipes at you use Dodge Claws (2). Use Thrust Spear (3) and Vengeful Spear Thrust (4) on cooldown
 	>>Remember to continously Grab On (1) otherwise you will fall off if you only spam your attacks using (3) and (4)!
 	>>Once the Wild Wyrm is below 30% your attack bar will change. Use Pry Jaws Open (1) five times then use Fatal Strike (3). If the Fatal Strike fails continue using Pry Jaws Open (1) until the cooldown is ready for Fatal Strike (3)
 	.complete 13003,1 --Stormforged Infiltrators Slain (3)
