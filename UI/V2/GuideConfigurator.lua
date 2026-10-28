@@ -354,7 +354,7 @@ function addon.ui.v2.configurator:RegisterRXPV2GuideConfigurator()
                 this.frame:SetPoint("TOP", UIParent, "BOTTOM", 0, status.top)
                 this.frame:SetPoint("LEFT", UIParent, "LEFT", status.left, 0)
             else
-                this.frame:SetPoint("CENTER")
+                this.frame:SetPoint("TOP", UIParent, "TOP", 400, -60)
             end
         end,
 
