@@ -2724,7 +2724,7 @@ step
     .goto 1426,32.645,27.740,15,0
     .goto 1415,44.910,52.022,15,0
     .goto 1415,44.910,52.030
-    .subzone 207 >>|cRXP_WARN_Sube la montaña, luego baja pasando el patrón dentado hasta que tu zona cambie a Los Humedales|r
+    .subzone 207 >>|cRXP_WARN_Sube la montaña y luego baja pasando el patrón irregular hasta que tu zona cambie a Los Humedales|r
     .zoneskip Hillsbrad Foothills
     .subzoneskip 150 -- menethil
     .subzoneskip 16611 -- ruins of lordaeron
@@ -2826,8 +2826,12 @@ step
 step
     #requires CrumpledPaper
 step
+    #completewith next
+    .goto 1458/0,170.700,1804.700,15 >> |cRXP_WARN_Muere por los enemigos adentro para regresar al inicio de la instancia más rápido. El cementerio está justo fuera del portal de la instancia.|r
+    >>|cRXP_WARN_¡NO revivas de espíritu! Corre de vuelta como un|r |T132331:0|t[Fantasma] |cRXP_WARN_hacia el portal de la instancia|r
+step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Capitán Truman|r
-    >>|cRXP_FRIENDLY_Capitán Truman|r |cRXP_WARN_está de vuelta al inicio de la mazmorra|r
+    >>|cRXP_FRIENDLY_Capitán Truman|r |cRXP_WARN_está de vuelta al principio de la mazmorra|r
     .turnin 95250 >> Entrega la misión Abominable Creatures
     .target Captain Truman
 step
@@ -2886,7 +2890,7 @@ step << NightElf
 step << NightElf Rogue
     .goto 1453/0,377.61,-8752.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Osborne|r
-    >>|cRXP_WARN_Asegúrate de entrenar|r |T136058:0|t[Forzar cerraduras] |cRXP_WARN_ya que lo necesitarás para tu misión de clase Pícaro pronto|r
+    >>|cRXP_WARN_Asegúrate de entrenar|r |T136058:0|t[Forzar cerraduras] |cRXP_WARN_ya que lo necesitarás pronto para la misión de clase de pícaro|r
     .train 1804 >> Aprende |T136058:0|t[Forzar cerradura]
     .target Osborne the Night Man
     .xp >20,1
@@ -2894,7 +2898,7 @@ step << NightElf Rogue
 step << NightElf Rogue
     .goto 1453/0,377.61,-8752.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Osborne|r
-    >>|cRXP_WARN_Asegúrate de entrenar|r |T136058:0|t[Forzar cerraduras] |cRXP_WARN_ya que lo necesitarás para tu misión de clase Pícaro pronto|r
+    >>|cRXP_WARN_Asegúrate de entrenar|r |T136058:0|t[Forzar cerraduras] |cRXP_WARN_ya que lo necesitarás pronto para la misión de clase de pícaro|r
     .train 1804 >> Aprende |T136058:0|t[Forzar cerradura]
     .trainer >> Aprende tus hechizos de clase
     .target Osborne the Night Man
@@ -2929,7 +2933,7 @@ step << NightElf
 step << !NightElf
     .isOnQuest 92415
     .goto 1453/0,744.400,-8621.101
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Supervisora de Huérfanos Ruiseñor|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con la |cRXP_FRIENDLY_Supervisora de huérfanos Ruiseñor|r
     .turnin 92415 >> Entrega la misión Recuérdame que te amo
     .accept 95161 >> Acepta la misión Recuérdame que te amo
     .target Orphan Matron Nightingale
@@ -2937,7 +2941,7 @@ step << !NightElf
     #optional
     .isQuestTurnedIn 92415
     .goto 1453/0,744.400,-8621.101
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Supervisora de Huérfanos Ruiseñor|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con la |cRXP_FRIENDLY_Supervisora de huérfanos Ruiseñor|r
     .accept 95161 >> Acepta la misión Recuérdame que te amo
     .target Orphan Matron Nightingale
 step << !NightElf
@@ -2972,7 +2976,7 @@ step << !NightElf
 step << !NightElf Rogue
     .goto 1453/0,377.61,-8752.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Osborne|r
-    >>|cRXP_WARN_Asegúrate de entrenar|r |T136058:0|t[Forzar cerraduras] |cRXP_WARN_ya que lo necesitarás para tu misión de clase Pícaro pronto|r
+    >>|cRXP_WARN_Asegúrate de entrenar|r |T136058:0|t[Forzar cerraduras] |cRXP_WARN_ya que lo necesitarás pronto para la misión de clase de pícaro|r
     .train 1804 >> Aprende |T136058:0|t[Forzar cerradura]
     .target Osborne the Night Man
     .xp >20,1
@@ -2980,7 +2984,7 @@ step << !NightElf Rogue
 step << !NightElf Rogue
     .goto 1453/0,377.61,-8752.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Osborne|r
-    >>|cRXP_WARN_Asegúrate de entrenar|r |T136058:0|t[Forzar cerraduras] |cRXP_WARN_ya que lo necesitarás para tu misión de clase Pícaro pronto|r
+    >>|cRXP_WARN_Asegúrate de entrenar|r |T136058:0|t[Forzar cerraduras] |cRXP_WARN_ya que lo necesitarás pronto para la misión de clase de pícaro|r
     .train 1804 >> Aprende |T136058:0|t[Forzar cerradura]
     .trainer >> Aprende tus hechizos de clase
     .target Osborne the Night Man
@@ -3412,7 +3416,7 @@ step << Druid
     .trainer >> Aprende tus hechizos de clase
     .target Loganaar
 step << Druid
-    .hs >> Usa la Piedra de Hoguera para ir a Colina del Centinela
+    .hs >> Usa la Piedra de hogar para ir a Colina del Centinela
 step << !Druid
     .goto 1436/0,1707.2116,-10583.0227
     >>Haz clic en los |cRXP_PICK_Restos quemados|r en el suelo
@@ -3493,7 +3497,7 @@ step
 step
     #completewith next
     >>Despoja los |cRXP_PICK_Grain Sacks|r y los |cRXP_PICK_Meat Haunches|r del suelo para obtener los |cRXP_LOOT_Suministros robados|r
-    >>Despoja los |cRXP_PICK_Weapon Racks|r y las |cRXP_PICK_Stolen Armas|r del suelo
+    >>Despoja los |cRXP_PICK_Expositores de armas|r y las |cRXP_PICK_Armas robadas|r del suelo
     .complete 98387,1 -- Stolen Supplies (10)
     .complete 98387,2 -- Stolen Weapon (8)
 step
@@ -3533,7 +3537,7 @@ step
 	.target Deputy Feldon
     .goto 1433/0,-2237.93,-9443.60
     .turnin 246 >> Entrega la misión Evaluar la amenaza
-    .turnin 98407 >>Entrega la misión Muestra de fuerza
+    .turnin 98407 >>Entrega la misión Demostración de fuerza
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Alguacil Marris|r
 	.target Marshal Marris
@@ -3597,7 +3601,7 @@ step << !Dwarf Rogue
     >>Mata |cRXP_ENEMY_Telarácnidas venenosa pigmeas|r y |cRXP_ENEMY_Telarácnidas venenosas|r. Despójalas para obtener una |cRXP_LOOT_Glándula de veneno pequeña|r y sus |cRXP_LOOT_Patas pegajosas de araña|r
     >>|cRXP_WARN_Necesitas una|cRXP_LOOT_ Glándula de veneno pequeña|r para hacer un|r |T134437:0|t[Contraveneno] |cRXP_WARN_más tarde para quitar el perjuicio|r |T136230:0|t[Toque de Zanzil] |cRXP_WARN_más tarde|r
     >>|cRXP_WARN_Guarda las |cRXP_LOOT_Patas pegajosas de araña|r para más tarde|r
-    >>|cRXP_WARN_Si tienes un|r |T626003:0|t|cFFF48CBAPaladín|r|cRXP_WARN_,|r |T625999:0|t|cFFFF7C0ADruida|r |cRXP_WARN_o|r |T626006:0|t|cFF0070DDChamán|r |cRXP_WARN_amigo, puedes omitir este paso y pedirle que lo quite por ti|r
+    >>|cRXP_WARN_Si tienes un amigo|r |T626003:0|t|cFFF48CBAPaladín|r|cRXP_WARN_,|r |T625999:0|t|cFFFF7C0ADruida|r |cRXP_WARN_o|r |T626006:0|t|cFF0070DDChamán|r |cRXP_WARN_puedes saltarte este paso y pedirle que te lo disipe|r
     .collect 1475,1,2359,1 -- Small Venom Sac (1)
     .collect 2251,6,93,1,1 -- Gooey Spider Legs (6)
     .disablecheckbox
@@ -3700,7 +3704,7 @@ step << !Dwarf Rogue
     #requires AntiVenomEnd
     .goto 1453,43.070,26.155
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Shaina Fuller|r
-    >>|cRXP_WARN_Si tienes un|r |T626003:0|t|cFFF48CBAPaladín|r|cRXP_WARN_,|r |T625999:0|t|cFFFF7C0ADruida|r |cRXP_WARN_o|r |T626006:0|t|cFF0070DDChamán|r |cRXP_WARN_amigo, pídele que elimine el|r |T136230:0|t[Toque de Zanzil] |cRXP_WARN_por ti en su lugar|r
+    >>|cRXP_WARN_Si tienes un amigo|r |T626003:0|t|cFFF48CBAPaladín|r|cRXP_WARN_,|r |T625999:0|t|cFFFF7C0ADruida|r |cRXP_WARN_o|r |T626006:0|t|cFF0070DDChamán|r |cRXP_WARN_amigo, pídele en su lugar que te disipe el|r |T136230:0|t[Tacto de Zanzil] |cRXP_WARN_por ti|r
     .skill firstaid,80 >> |cRXP_WARN_Sube tus|r |T135966:0|t[Primeros auxilios] |cRXP_WARN_al 80|r
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
@@ -3708,7 +3712,7 @@ step << !Dwarf Rogue
     #label FirstAidEnd
     .goto 1453,43.070,26.155
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Shaina Fuller|r
-    >>|cRXP_WARN_Si tienes un|r |T626003:0|t|cFFF48CBALa hermandad de los Defias|r|cRXP_WARN_,|r |T625999:0|t|cFFFF7C0ADruida|r |cRXP_WARN_o|r |T626006:0|t|cFF0070DDChamán|r |cRXP_WARN_amigo, pídele que elimine el|r |T136230:0|t[Toque de Zanzil] |cRXP_WARN_en tu lugar|r
+    >>|cRXP_WARN_Si tienes un amigo|r |T626003:0|t|cFFF48CBAPaladín|r|cRXP_WARN_,|r |T625999:0|t|cFFFF7C0ADruida|r |cRXP_WARN_o|r |T626006:0|t|cFF0070DDChamán|r |cRXP_WARN_amigo, pídele en su lugar que te disipe el|r |T136230:0|t[Tacto de Zanzil] |cRXP_WARN_por ti|r
     .train 7934 >> |cRXP_WARN_Aprende|r |T134437:0|t[Contraveneno]
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
@@ -3881,7 +3885,7 @@ step << !Druid
     .zone Darkshore >> Toma el barco hacia Costa Oscura
 step
     #optional
-    .abandon 95999 >>Abandona la misión WANTED: Incinerador Gar'im
+    .abandon 95999 >>Abandona la misión Se busca: incinerador Gar'im
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -4566,7 +4570,7 @@ step
 step
     #optional
     .abandon 2138 >> Abandona la misión La limpieza de la infección
-    .abandon 1002 >> Abandona la misión La caja mecánica 323
+    .abandon 1002 >> Abandona la misión La Caja Mecánica 323
 step
     #completewith tower
     .zone Ashenvale >> Viaja al sur a Vallefresno

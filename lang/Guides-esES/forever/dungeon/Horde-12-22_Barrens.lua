@@ -1946,7 +1946,7 @@ step
     >>|cRXP_WARN_Usa el |T134085:0|t[|cRXP_LOOT_Ojo de la Sombra ardiente|r] para empezar la misión|r
     >>|cRXP_WARN_Usa LoS (línea de visión) para evitar |cRXP_ENEMY_Gazz'uz|r sus Descargas de las Sombras|r
     >>|cRXP_WARN_Puedes correr hacia las zonas de agua que hay dentro de la cueva para evadir al|r |cRXP_ENEMY_Abisario|r |cRXP_WARN_después de matar a|r |cRXP_ENEMY_Gazz'uz|r
-    >>|cRXP_WARN_Ten cuidado ya que es difícil. Puedes omitir esta misión si lo necesitas|r
+    >>|cRXP_WARN_Ten cuidado, ya que es difícil. Puedes saltarte esta misión si lo necesitas|r
     .collect 4903,1,832,1 --Collect Eye of Burning Shadow
     .accept 832 >>Acepta la misión Sombras Ardientes
     .use 4903
@@ -1966,7 +1966,7 @@ step
     .goto 1411/1,-4684.50,1466.06,15,0
     .goto 1411/1,-4805.59,1495.67,15,0
     >>Mata a los |cRXP_ENEMY_Orcos Filo Ardiente|r. Despójalos para obtener una |cRXP_LOOT_Insignia de Teniente|r
-    >>|cRXP_WARN_Esta es una misión previa para RFC. Tiene una baja tasa de caída|r
+    >>|cRXP_WARN_Esta misión es un prerrequisito para Sima Ígnea. Tiene una baja probabilidad de caída|r
     .complete 5726,1 --Lieutenant's Insignia (1)
     .mob Burning Blade Fanatic
     .mob Burning Blade Apprentice
@@ -2341,12 +2341,12 @@ step
 step
     #label EnterRoL
     .goto 1458/0,188.400,1804.500
-    .subzone 16611 >>Entra en Ruins of Lordaeron
+    .subzone 16611 >>Entra en las Ruinas de Lordaeron
 step
     #completewith RuinsRathma
     .isOnQuest 92421
     >>Mata a los |cRXP_ENEMY_No-muertos|r. Despójalos para obtener sus |T458717:0|t[|cRXP_LOOT_Extremidades intactas|r]
-    >>|cRXP_WARN_Mata a todos los monstruos de la mazmorra, de lo contrario es posible que no completes esta misión|r
+    >>|cRXP_WARN_Asegúrate de matar a todos los monstruos de la mazmorra; de lo contrario, puede que no completes esta misión|r
     .complete 92421,1 --Intact Limbs (25)
     .mob Skeleton::250618
     --.mob Cadaver::250621
@@ -2377,7 +2377,7 @@ step
 step
     .isQuestAvailable 97288
     .isNotOnQuest 97288
-    >>Mata a |cRXP_ENEMY_The Barón::250660|r. Despoja y usa su |T2492254:0|t[|cRXP_LOOT_Abominable Cabeza|r] para iniciar la misión
+    >>Mata a |cRXP_ENEMY_El barón::250660|r. Despoja y usa su |T2492254:0|t[|cRXP_LOOT_Cabeza abominable|r] para iniciar la misión
     .collect 280438,1,97288 --Abominable Head (1)
     .accept 97288 >>Acepta la misión Tormento eterno
     .use 280438
@@ -2397,8 +2397,8 @@ step
 step
     #label RuinsLimbs
     .isOnQuest 92421
-    >>Mata a los |cRXP_ENEMY_No-muertos|r. Despójalos para obtener sus |T458717:0|t[|cRXP_LOOT_Intact Limbs|r]
-    >>|cRXP_WARN_Mata a todos los monstruos de la mazmorra, de lo contrario es posible que no completes esta misión|r
+    >>Mata a los |cRXP_ENEMY_No-muertos|r. Despójalos para obtener sus |T458717:0|t[|cRXP_LOOT_Extremidades intactas|r]
+    >>|cRXP_WARN_Asegúrate de matar a todos los monstruos de la mazmorra; de lo contrario, puede que no completes esta misión|r
     .complete 92421,1 --Intact Limbs (25)
     .mob Skeleton::250618
     --.mob Cadaver::250621
@@ -2415,7 +2415,7 @@ step
 step
     .isQuestAvailable 95204
     .isNotOnQuest 95204
-    >>Despoja y usa la |T4504543:0|t[|cRXP_LOOT_Crest of Lordaeron|r] para iniciar la misión
+    >>Despoja y usa el |T4504543:0|t[|cRXP_LOOT_Blasón de Lordaeron|r] para iniciar la misión
     >>|cRXP_WARN_Tiene 5 posibles ubicaciones de aparición|r
     .collect 275521,1,95204 --Crest of Lordaeron (1)
     .accept 95204 >>Acepta la misión Crest of Lordaeron
@@ -2431,7 +2431,7 @@ step
     .target Deathguard Kristof::251001
 step
     .goto 1420/0,240.75,1877.57
-    .zone Undercity >>Regresa a Undercity
+    .zone Undercity >>Regresa a Entrañas
 step
     .goto 1458/0,239.14,1749.54,35,0
     .goto 1458/0,255.64,1724.70,35,0
@@ -2443,8 +2443,8 @@ step
 step
     .goto 1458/0,241.700,1633.200
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Tawny Grisette::4554|r
-    >>|cRXP_WARN_Ella patrulla por Trade Quarter|r
-    >>|cRXP_BUY_Compra una|r |T134522:0|t[|cRXP_LOOT_Toxic Champicráneo|r]
+    >>|cRXP_WARN_Ella patrulla por el Barrio del Comercio|r
+    >>|cRXP_BUY_Compra un|r |T134522:0|t[|cRXP_LOOT_Capacete tóxico|r]
     .collect 281246,1,97291,1 --Toxic Skullcap (1)
     .target Tawny Grisette::4554
 step
@@ -2507,7 +2507,7 @@ step
     .isQuestTurnedIn 97290
     .goto 1458/0,404.800,1434.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Maestro boticario Faranell::2055|r
-    .accept 97291 >>Acepta la misión Tormento infinito
+    .accept 97291 >>Acepta la misión Tormento eterno
     .target Master Apothecary Faranell::2055
 step
     .goto 1458/0,357.62,1529.15
@@ -2516,7 +2516,7 @@ step
     .target Keeper Bel'dugur
 step
     .goto 1458/0,356.700,1563.500
-    >>|cRXP_WARN_Despoja la|r |T134181:0|t[|cRXP_LOOT_Blisterweed|r] |cRXP_WARN_de la vasija detrás de|r |cRXP_FRIENDLY_Martha Alliestar|r
+    >>|cRXP_WARN_Despoja una|r |T134181:0|t[|cRXP_LOOT_Hierba ampolla|r] |cRXP_WARN_de la olla detrás de|r |cRXP_FRIENDLY_Martha Alliestar|r
     .collect 281300,1,97291,1 --Blisterweed (1)
     .target Martha Alliestar
 step
@@ -2524,14 +2524,14 @@ step
     .goto 1458/0,404.800,1434.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Maestro boticario Faranell::2055|r
     .turnin 97291 >>Entrega la misión Tormento eterno
-    .accept 97292 >>Acepta la misión Tormento infinito
+    .accept 97292 >>Acepta la misión Tormento eterno
     .target Master Apothecary Faranell::2055
 step
     #optional
     .isQuestTurnedIn 97291
     .goto 1458/0,404.800,1434.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Maestro boticario Faranell::2055|r
-    .accept 97292 >>Acepta la misión Tormento infinito
+    .accept 97292 >>Acepta la misión Tormento eterno
     .target Master Apothecary Faranell::2055
 step
     .isOnQuest 97292
@@ -2543,8 +2543,8 @@ step
 step
     .isQuestComplete 97292
     .goto 1458/0,404.800,1434.500
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Master Apothecary Faranell::2055|r
-    .turnin 97292 >>Entrega la misión Tormento infinito
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Maestro boticario Faranell::2055|r
+    .turnin 97292 >>Entrega la misión Tormento eterno
     .target Master Apothecary Faranell::2055
 step
     .isQuestComplete 92421
@@ -2563,16 +2563,16 @@ step << Rogue
     .zoneskip Undercity,1
     .goto 1458/0,266.300,1567.200
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Michael Garrett::4551|r
-    .fly Sepulcher >>Vuela a Sepulcher si tienes la ruta de vuelo
+    .fly Sepulcher >>Vuela a El Sepulcro si tienes la ruta de vuelo
     .target Michael Garrett::4551
 step << Rogue
     #label RuinsRogueTurnin
     #optional
     .isQuestComplete 92401
     .goto 1421/0,1579.600,461.700
-    >>|cRXP_WARN_Solo entrega ahora para una mejora de mano izquierda|r
-    >>Toma las cloacas y sigue el camino a Sepulcher si no puedes volar
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Tabitha Heartweaver::250686|r
+    >>|cRXP_WARN_Entrégala ahora solo para conseguir una mejora de mano izquierda (off-hand)|r
+    >>Toma las cloacas y sigue el camino hacia El Sepulcro si no puedes volar
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Tabitha Tejecorazones::250686|r
     .turnin 92401 >>Entrega la misión Una pregunta con miedo
     .target Tabitha Heartweaver::250686
 
@@ -3169,7 +3169,7 @@ step
     .goto 1413/1,-2346.200,-1788.600,50,0
     .goto 1413/1,-2458.300,-1824.400,50,0
     .goto 1413/1,-2381.000,-2061.000,50,0
-    >>Mata a los |cRXP_ENEMY_Razormane Raiders|r. Despójalos para obtener los |cRXP_LOOT_Olgra's Adornments|r
+    >>Mata a los |cRXP_ENEMY_Asaltantes Crines de Acero|r. Despójalos para obtener los |cRXP_LOOT_Adornos de Olgra|r
     .complete 95774,1 --|4/4 Olgra's Adornments
     .mob Razormane Raider
 step
@@ -3233,7 +3233,7 @@ step << Warlock
 	.goto 1413/1,-2687.96,-1973.04,60,0
 	.goto 1413/1,-2678.84,-2016.28,60,0
 	.goto 1413/1,-2584.6,-2050.74,60,0
-    .xp 19+9500 >> Farmea hasta 9500+/21300 xp
+    .xp 19+9500 >> Mata enemigos hasta alcanzar 9500+/21300xp
 step
     #loop
     .goto 1413/1,-2532.92,-1965.61,0
@@ -3329,7 +3329,7 @@ step
 step
     .goto 1413/1,-3720.300,-920.000
     >>Haz clic en el |cRXP_PICK_Cartel de Se busca|r
-    .accept 92706 >>Acepta la misión WANTED: Bruuz
+    .accept 92706 >>Acepta la misión SE BUSCA: Bruuz
     .group << Rogue/Warrior
 step
     .goto 1413/1,-3697.24,-929.20
@@ -3422,7 +3422,7 @@ step
     #label XroadsHS2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Mankrik|r y |cRXP_FRIENDLY_Tonga|r
     .turnin 899 >>Entrega la misión Consumido por el odio
-    .turnin 95774 >>Entrega la misión Her Name Is Olgra
+    .turnin 95774 >>Entrega la misión Su nombre es Olgra
     .target +Mankrik
     .goto 1413/1,-2641.35,-521.12
     .turnin 880 >>Entrega la misión Seres alterados
@@ -3892,7 +3892,7 @@ step
 step << !Tauren !Skyborne
     .goto 1413/1,-1891.48,-2391.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Quebrantadientes|r
-    .aura 16618 >>|cRXP_WARN_Si tienes 10|r |T134128:0|t[|cRXP_LOOT_Esquirlas sangrientas|r] |cRXP_WARN_restantes, úsalos para obtener|r |T136022:0|t[El espíritu del viento] |cRXP_WARN_de|r |cRXP_FRIENDLY_Quebrantadientes|r
+    .aura 16618 >>|cRXP_WARN_Si te quedan 10|r |T134128:0|t[|cRXP_LOOT_Esquirlas de sangre|r] |cRXP_WARN_, úsalas para obtener|r |T136022:0|t[Espíritu del viento] |cRXP_WARN_de|r |cRXP_FRIENDLY_Quebrantadientes|r
     >>|cRXP_WARN_Omite este paso si tienes la ruta de vuelo de Cima del Trueno|r
     .itemcount 5075,10
     .target Mangletooth
@@ -4469,8 +4469,8 @@ step
     .goto 1414/1,-2039.86,-801.31
 step
     #completewith EnterWC
-    +|cRXP_WARN_Se recomienda dividir las misiones "Reptilia" y "Pellejos descarriados" si solo haces 1 pasada|r
-    >>|cRXP_WARN_No habrá suficientes |cRXP_PICK_Reptilia|r y |cRXP_LOOT_Pellejos descarriados|r para todos|r
+    +|cRXP_WARN_Se recomienda dividir las misiones "Reptilia" y "Pellejos descarriados" si solo vas a hacerla 1 vez|r
+    >>|cRXP_WARN_No habrá suficientes |cRXP_PICK_Reptilia|r ni |cRXP_LOOT_Pellejos descarriados|r para todos|r
     .isOnQuest 962,1486
 step
     #optional
@@ -4593,7 +4593,7 @@ step
     #completewith Ectoplasms
     >>Despoja la |cRXP_PICK_Reptilia|r del suelo
     >>|cRXP_WARN_Lanza|r |T133939:0|t[Buscar hierbas] |cRXP_WARN_para verlas en tu minimapa|r
-    >>|cRXP_WARN_La mayor parte de la |cRXP_PICK_Serpentbloom|r debería haber reaparecido después de matar al jefe final!|r
+    >>|cRXP_WARN_¡La mayor parte de la |cRXP_PICK_Reptilia|r debería haber reaparecido después de matar al jefe final!|r
     .complete 962,1 --Serpentbloom (10)
     .skill herbalism,<1,1
     .isOnQuest 962
@@ -4601,13 +4601,13 @@ step
     #optional
     #completewith Ectoplasms
     >>Despoja la |cRXP_PICK_Reptilia|r del suelo
-    >>|cRXP_WARN_La mayor parte de la |cRXP_PICK_Serpentbloom|r debería haber reaparecido después de matar al jefe final!|r
+    >>|cRXP_WARN_¡La mayor parte de la |cRXP_PICK_Reptilia|r debería haber reaparecido después de matar al jefe final!|r
     .complete 962,1 --Serpentbloom (10)
     .skill herbalism,1,1
     .isOnQuest 962
 step
     #optional
-    >>Mata a los |cRXP_ENEMY_Deviate Ravagers|r, a los |cRXP_ENEMY_Vipers|r, a los |cRXP_ENEMY_Shamblers|r y a los |cRXP_ENEMY_Dreadfangs|r. Despójalos para obtener sus |cRXP_ENEMY_Hides|r . Despójalos para obtener sus |cRXP_ENEMY_Hides|r
+    >>Mata a los |cRXP_ENEMY_Deviate Ravagers|r, a los |cRXP_ENEMY_Vipers|r, a los |cRXP_ENEMY_Shamblers|r y a los |cRXP_ENEMY_Dreadfangs|r. Despójalos para obtener sus |cRXP_ENEMY_Hides|r
     .complete 1487,1 --Deviate Ravager (7)
     .mob +Deviate Ravager
     .complete 1487,2 --Deviate Viper (7)

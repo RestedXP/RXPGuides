@@ -2481,7 +2481,7 @@ step
 step
     #label CounterattackComplete
     .goto 1413/1,-1884.39,-289.38
-    >>Mata a |cRXP_ENEMY_Señor de la guerra Krom'zar|r (élite nivel 20) una vez que aparece. Despoja el |cRXP_PICK_Estandarte|r que él suelta en el suelo
+    >>Mata al |cRXP_ENEMY_Señor de la guerra Krom'zar|r (élite lvl 20) una vez que aparece. Despoja el |cRXP_PICK_Estandarte|r que deja en el suelo
     >>|cRXP_WARN_¡Ten cuidado! Es fuerte y está protegido por al menos dos esbirros|r |cRXP_ENEMY_Kolkar|r |cRXP_WARN_|r
     >>|cRXP_WARN_Puede tardar hasta 3 minutos en reaparecer|r
     .complete 4021,1 --Piece of Krom'zar's Banner (1)
@@ -3100,7 +3100,7 @@ step << Warlock/Shaman
 	.goto 1413/1,-2687.96,-1973.04,60,0
 	.goto 1413/1,-2678.84,-2016.28,60,0
 	.goto 1413/1,-2584.6,-2050.74,60,0
-    .xp 19+9500 >> Farmea hasta 9500+/21300 xp
+    .xp 19+9500 >> Mata enemigos hasta alcanzar 9500+/21300xp
 step
     #loop
     .goto 1413/1,-2532.92,-1965.61,0
@@ -3326,7 +3326,7 @@ step
     #label XroadsHS2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Mankrik|r y |cRXP_FRIENDLY_Tonga|r
     .turnin 899 >>Entrega la misión Consumido por el odio
-    .turnin 95774 >>Entrega la misión Her Name Is Olgra
+    .turnin 95774 >>Entrega la misión Su nombre es Olgra
     .target +Mankrik
     .goto 1413/1,-2641.35,-521.12
     .turnin 880 >>Entrega la misión Seres alterados
@@ -3659,7 +3659,7 @@ step
 step << !Tauren !Skyborne
     .goto 1413/1,-1891.48,-2391.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Quebrantadientes|r
-    .aura 16618 >>|cRXP_WARN_Si tienes 10|r |T134128:0|t[|cRXP_LOOT_Esquirlas sangrientas|r] |cRXP_WARN_restantes, úsalos para obtener|r |T136022:0|t[El espíritu del viento] |cRXP_WARN_de|r |cRXP_FRIENDLY_Quebrantadientes|r
+    .aura 16618 >>|cRXP_WARN_Si te quedan 10|r |T134128:0|t[|cRXP_LOOT_Esquirlas de sangre|r] |cRXP_WARN_, úsalas para obtener|r |T136022:0|t[Espíritu del viento] |cRXP_WARN_de|r |cRXP_FRIENDLY_Quebrantadientes|r
     >>|cRXP_WARN_Omite este paso si tienes la ruta de vuelo de Cima del Trueno|r
     .itemcount 5075,10
     .target Mangletooth
@@ -4142,7 +4142,7 @@ step
     .goto 1413/1,-1960.600,653.700,50,0
     .goto 1413/1,-1871.600,653.700,50,0
     .goto 1413/1,-1729.700,592.400,50,0
-    >>Mata a los |cRXP_ENEMY_Savannah Patriarchs|r. Despójalos para obtener sus |cRXP_LOOT_Hides|r
+    >>Mata a los |cRXP_ENEMY_Patriarcas de la sabana|r. Despójalos para obtener sus |cRXP_LOOT_Cueros|r
     .complete 95494,1 --|6/6 Savannah Lion Hide
     .mob Savannah Patriarch
 step

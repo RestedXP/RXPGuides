@@ -3765,7 +3765,7 @@ step << Shaman/Hunter
 step << !Shaman !Hunter
     #completewith Gazzuz
     >>Mata a los |cRXP_ENEMY_Orcos Filo Ardiente|r. Despójalos para obtener una |cRXP_LOOT_Insignia de Teniente|r
-    >>|cRXP_WARN_Esta es una misión previa para RFC. Tiene una baja tasa de caída|r
+    >>|cRXP_WARN_Esta misión es un prerrequisito para Sima Ígnea. Tiene una baja probabilidad de caída|r
     .complete 5726,1 --Lieutenant's Insignia (1)
     .mob Burning Blade Fanatic
     .mob Burning Blade Apprentice
@@ -3991,14 +3991,14 @@ step
     #optional
     .goto 1420/0,54.500,1996.400
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Hadric Harlson|r
-    .turnin 96897 >>Entrega la misión El Culto de los Condenados
+    .turnin 96897 >>Entrega la misión El Culto de los Malditos
     .target Hadric Harlson
     .isQuestComplete 96897
 step
     #optional
     .goto 1420/0,54.500,1996.400
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Hadric Harlson|r
-    .turnin 96898 >>Entrega la misión Restos de guerra
+    .turnin 96898 >>Entrega la misión Los restos de la guerra
     .target Hadric Harlson
     .isQuestComplete 96898
 step

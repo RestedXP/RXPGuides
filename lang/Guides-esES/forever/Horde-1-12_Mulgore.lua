@@ -2191,7 +2191,7 @@ step
     .goto 1412/1,530.000,-1074.100,40,0
     .goto 1412/1,593.200,-1003.200,40,0
     .goto 1412/1,460.000,-1055.700,40,0
-    >>Recoge las |cRXP_PICK_Piñas de Viento Furioso|r del suelo
+    >>Despoja los |cRXP_PICK_Conos de viento furioso|r del suelo
     >>|cRXP_WARN_Se pueden encontrar principalmente bajo/cerca de los árboles|r
     .collect 206170,8,76160,1 --Windfury Cone (8)
 step << Tauren
@@ -2307,7 +2307,7 @@ step
     >>Pesca en el estanque hasta que obtengas un |T133894:0|t[|cRXP_LOOT_Pececito luminoso crudo|r]
     .collect 6291,1,76240,1 --Raw Brilliant Smallfish (1)
 step
-    >>|cRXP_WARN_Usa el|r |T132147:0|t[Cuchillo Set] |cRXP_WARN_para crear|r |T134007:0|t[Pez Chunks]
+    >>|cRXP_WARN_Usa el|r |T132147:0|t[Conjunto de cuchillos] |cRXP_WARN_para crear|r |T134007:0|t[Trozos de pescado]
     .complete 76240,1 --Fish Chunks (1)
     .use 206344
 step
@@ -2326,7 +2326,7 @@ step
     #completewith next
     .goto 1456/1,-141.400,-1432.700,10,0
     .goto 1456/1,-161.300,-1454.200,10,0
-    .zone Mulgore >>Salta desde la Loma del Cazador a la pequeña colina para salir de Cima del Trueno
+    .zone Mulgore >>Salta desde el Alto de los Cazadores hacia la pequeña colina para salir de Cima del Trueno
     >>|cRXP_WARN_Sigue la flecha con precisión para evitar morir. Recupera algo de salud antes del segundo salto|r
 step
     #completewith WildManeTurnIn

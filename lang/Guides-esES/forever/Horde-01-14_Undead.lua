@@ -2633,7 +2633,7 @@ step
 step
     .goto 1420/0,2041.200,2416.200
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Hilda, la Ultrajadora|r fuera
-    .accept 99152 >>Acepta la misión As Above, So Below
+    .accept 99152 >>Acepta la misión Sea abajo como arriba
     .target Hilda the Breaker
 step
     .goto 1420/0,2122.100,2436.800
@@ -2979,7 +2979,7 @@ step << Warrior
 step
     #ah
     .goto 1458/0,224.300,1648.200
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Subastador Cain|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Subastador Cain|r
     >>|cRXP_BUY_Compra tres|r |T133884:0|t[Ojos de múrloc] |cRXP_BUY_en la Casa de subastas|r
     >>|cRXP_WARN_Omitir esto si quieres, es solo un pequeño ahorro de tiempo|r
     .collect 730,3,91920,1 --Collect Murloc Eyes (x3)
@@ -3341,7 +3341,7 @@ step
     .goto 1421/0,941.300,1210.400,50,0
     .goto 1421/0,830.000,1309.400,50,0
     .goto 1421/0,706.700,1317.400,50,0
-    >>Mata a los |cRXP_ENEMY_Vile Fin Murlocs|r. Despójalos para obtener los |T133884:0|t[|cRXP_LOOT_Murloc Ojos|r]
+    >>Mata |cRXP_ENEMY_Múrlocs Anca Vil|r. Despójalos para obtener sus |T133884:0|t[|cRXP_LOOT_Ojos de múrloc|r]
     .collect 730,3,91920,1 --Collect Murloc Eyes (x3)
     .mob Vile Vin Shredder
     .mob Vile Vin Tidehunter
@@ -3746,7 +3746,7 @@ step
     .goto 1421/0,1270.62,1279.71,6,0
     .goto 1421/0,1285.32,1277.19
     >>Mata a |cRXP_ENEMY_Ivar el Hediondo|r. Despójalo para obtener su |cRXP_LOOT_Cabeza|r
-    >>|cRXP_WARN_Ivar está protegido por dos|r |cRXP_ENEMY_Esclavos Corvozarpa|r |cRXP_WARN_dentro del granero. Puedes atraer a uno de ellos cuando patrulle hacia adelante|r
+    >>|cRXP_WARN_Ivar está protegido por dos|r |cRXP_ENEMY_Esclavos Corvozarpa|r |cRXP_WARN_dentro del granero. Puedes atraer a uno de ellos cuando patrulle hacia adelante.|r
     >>|cRXP_WARN_¡Son inmunes al miedo!|r << Priest/Warlock
     .complete 425,1 --Ivar's Head (1)
     .target Ivar the Foul
@@ -3993,7 +3993,7 @@ step
     .goto 1458,52.275,79.254,15,0
     .goto 1458,51.279,79.923,15,0
     .goto 1458,49.693,78.903,15,0
-    .goto 1458,47.951,76.171,15 >>Viaja a The Apothecarium
+    .goto 1458,47.951,76.171,15 >>Viaja a El Apothecarium
 step
     .goto 1458/0,426.100,1403.600
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Doctor Martin Felben|r
@@ -4099,9 +4099,9 @@ step << Paladin
     .xp <16,1
 step << Priest/Mage/Warlock
     .goto 1458/0,168.200,1663.100
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Owen Thadd <Bibliotecario>::211022|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Owen Thadd::211022|r
     .target Owen Thadd::211022
-    .turnin 79096 >>Entrega la misión Ataeric: Sobre curiosidades arcanas
+    .turnin 79096 >>Entrega la misión Ataeric: Tratado de curiosidades arcanas
     .itemcount 210177,1
 step << Priest/Mage/Warlock
     #ssf
@@ -4220,7 +4220,7 @@ step << Undead/Skyborne
 step << Undead/Skyborne
     #completewith Gazzuz
     >>Mata a los |cRXP_ENEMY_Orcos Filo Ardiente|r. Despójalos para obtener una |cRXP_LOOT_Insignia de Teniente|r
-    >>|cRXP_WARN_Esta es una misión previa para RFC. Tiene una baja tasa de caída|r
+    >>|cRXP_WARN_Esta misión es un prerrequisito para Sima Ígnea. Tiene una baja probabilidad de caída|r
     .complete 5726,1 --Lieutenant's Insignia (1)
     .mob Burning Blade Fanatic
     .mob Burning Blade Apprentice
@@ -4230,9 +4230,9 @@ step << Undead/Skyborne
     .goto 1411/1,-4701.42,1455.83
     >>Mata a |cRXP_ENEMY_Gazz'uz|r. Despójalo para obtener su |T134085:0|t[|cRXP_LOOT_Ojo de la Sombra ardiente|r]
     >>|cRXP_WARN_Usa el |T134085:0|t[|cRXP_LOOT_Ojo de la Sombra ardiente|r] para empezar la misión|r
-    >>|cRXP_WARN_Usa LoS (línea de visión) para evitar |cRXP_ENEMY_Gazz'uz|r sus Descargas de las Sombras|r
+    >>|cRXP_WARN_Corta la línea de visión (LoS) para evitar las Descargas de las Sombras de |cRXP_ENEMY_Gazz'uz|r|r
     >>|cRXP_WARN_Puedes correr hacia las zonas de agua que hay dentro de la cueva para evadir al|r |cRXP_ENEMY_Abisario|r |cRXP_WARN_después de matar a|r |cRXP_ENEMY_Gazz'uz|r
-    >>|cRXP_WARN_Ten cuidado ya que es difícil. Puedes omitir esta misión si lo necesitas|r
+    >>|cRXP_WARN_Ten cuidado, ya que es difícil. Puedes saltarte esta misión si lo necesitas|r
     .collect 4903,1,832,1 --Collect Eye of Burning Shadow
     .accept 832 >>Acepta la misión Sombras Ardientes
     .use 4903
@@ -4252,7 +4252,7 @@ step << Undead/Skyborne
     .goto 1411/1,-4684.50,1466.06,15,0
     .goto 1411/1,-4805.59,1495.67,15,0
     >>Mata a los |cRXP_ENEMY_Orcos Filo Ardiente|r. Despójalos para obtener una |cRXP_LOOT_Insignia de Teniente|r
-    >>|cRXP_WARN_Esta es una misión previa para RFC. Tiene una baja tasa de caída|r
+    >>|cRXP_WARN_Esta misión es un prerrequisito para Sima Ígnea. Tiene una baja probabilidad de caída|r
     .complete 5726,1 --Lieutenant's Insignia (1)
     .mob Burning Blade Fanatic
     .mob Burning Blade Apprentice

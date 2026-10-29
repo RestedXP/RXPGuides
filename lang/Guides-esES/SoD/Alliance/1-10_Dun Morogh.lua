@@ -385,7 +385,7 @@ step << Rogue
     .turnin 3109 >> Entrega la misión Runa codificada << Dwarf
     .turnin 3113 >> Entrega la misión Memorándum encriptado << Gnome
     .accept 77658 >> Acepta la misión Robo por triplicado << Dwarf
-    .turn in 77658 >> Entrega la misión Robo por triplicado << Dwarf
+    .turnin 77658 >> Entrega la misión Robo por triplicado << Dwarf
     .accept 77659 >> Acepta la misión Robo por triplicado << Gnome
     .turnin 77659 >> Entrega la misión Robo por triplicado << Gnome
     .train 1784 >>Aprende |T132320:0|t[Sigilo]

@@ -3099,7 +3099,7 @@ step << Rogue
     #optional
     .goto 1453/0,607.38,-8790.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Gunther Pozador|r
-    >>|cRXP_BUY_Compra una|r |T132402:0|t[Hachuela] |cRXP_BUY_de él|r
+    >>|cRXP_BUY_Compra una|r |T132402:0|t[Hachuela] |cRXP_BUY_a este vendedor|r
     .collect 853,1 -- Hatchet (1)
     .target Gunther Weller
     .money <0.2490
@@ -3110,7 +3110,7 @@ step << Rogue
     #ah
     .goto 1453/0,607.38,-8790.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Gunther Pozador|r
-    >>|cRXP_BUY_Compra una|r |T132402:0|t[Hachuela] |cRXP_BUY_de él. Equípala más tarde cuando llegues al nivel 11|r
+    >>|cRXP_BUY_Cómprale una|r |T132402:0|t[Hachuela] |cRXP_BUY_. Equípala más tarde cuando llegues al nivel 11|r
     >>|cRXP_WARN_Alternativamente, busca en la Casa de subastas algo mejor o más barato|r
     >>|cRXP_WARN_Asegúrate de guardar 6 de plata para aprender facultades después|r
     .collect 853,1 -- Hatchet (1)
@@ -3122,7 +3122,7 @@ step << Rogue
     #ah
     .goto 1453/0,607.38,-8790.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Gunther Pozador|r
-    >>|cRXP_BUY_Compra una|r |T132402:0|t[Hachuela] |cRXP_BUY_de él|r
+    >>|cRXP_BUY_Compra una|r |T132402:0|t[Hachuela] |cRXP_BUY_a este vendedor|r
     >>|cRXP_WARN_Alternativamente, busca en la Casa de subastas algo mejor o más barato|r
     >>|cRXP_WARN_Asegúrate de guardar 6 platas para aprender facultades después|r
     .collect 853,1 -- Hatchet (1)
@@ -3132,7 +3132,7 @@ step << Rogue
 step << Rogue
     #optional
     #completewith Continue
-    +|cRXP_WARN_Equipa la|r |T132402:0|t[Hachuela]
+    +|cRXP_WARN_Equipa el|r |T132402:0|t[Hachuela]
     .use 853
     .itemcount 853,1
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<7.2
@@ -4590,7 +4590,7 @@ step << Warlock
     #optional
     #completewith next
     .goto 1432/0,-2747.60,-5530.540,0
-    +Grindea |cRXP_ENEMY_Troggs|r hasta que tengas 75 platas y 79 cobres en basura para vender o dinero
+    +Mata |cRXP_ENEMY_Troggs|r hasta que tengas 75 platas y 79 cobres en basura para vender o dinero
     .money >0.7579
 step << Warlock
     #optional

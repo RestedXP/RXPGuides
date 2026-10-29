@@ -385,7 +385,7 @@ step << Warlock
     #softcore
     #label BeginningsHS
     #completewith BeginningsEnd
-    .deathskip >> Muere y reaparece en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
+    .deathskip >> Muere y resucita en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
     .target Ángel de la Resurrección
 step << Warlock
     #season 0,1
@@ -897,7 +897,7 @@ step << !Paladin !Warlock !Hunter
     #softcore
     #requires Grelin << Rogue
     #completewith next
-    .deathskip >> Muere y reaparece en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
+    .deathskip >> Muere y resucita en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
     .target Ángel de la Resurrección
 step
     #hardcore << !Paladin !Warlock !Hunter
@@ -1391,7 +1391,7 @@ step
     #softcore
     #completewith next
     >>|cRXP_WARN_Asegúrate de que tu subzona NO es el Desfiladero de Crestanevada|r
-    .deathskip >> Muere y reaparece en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
+    .deathskip >> Muere y resucita en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
     .target Ángel de la Resurrección
 step
     #label SenirEnd
@@ -1536,7 +1536,7 @@ step << Gnome Warrior
 step << Dwarf Warrior
     .goto 1426,45.288,52.193
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Graun Thromwyn|r
-    >>|cRXP_BUY_Compra un|r |T132401:0|t[Hacha grande]
+    >>|cRXP_BUY_Compra el|r |T132401:0|t[Hacha grande]
     .target Grawn Thromwyn
     .money <0.0460
     .collect 2491,1 --Collect Large Axe (1)
@@ -1801,7 +1801,7 @@ step << Gnome Warrior
 step << Dwarf Warrior
     .goto 1426,45.288,52.193
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Graun Thromwyn|r
-    >>|cRXP_BUY_Compra un|r |T132401:0|t[Hacha grande]
+    >>|cRXP_BUY_Compra el|r |T132401:0|t[Hacha grande]
     .target Grawn Thromwyn
     .money <0.0460
     .collect 2491,1 --Collect Large Axe (1)
@@ -2167,7 +2167,7 @@ step << Gnome Warrior
 step << Dwarf Warrior
     #xprate <1.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Graun Thromwyn|r
-    >>|cRXP_BUY_Compra un|r |T132401:0|t[Hacha grande]
+    >>|cRXP_BUY_Compra el|r |T132401:0|t[Hacha grande]
     .target Grawn Thromwyn
     .money <0.0460
     .goto Dun Morogh,45.290,52.190
@@ -3364,7 +3364,7 @@ step << Warrior
 step << Warrior
     .goto Ironforge,62.237,89.628
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Bixi Tambaleapié|r o |cRXP_FRIENDLY_Buliwyf Petramano|r
-    .trainer >> Si estás en un grupo o tienes a alguien que te ayude a matar |cRXP_ENEMY_Vagash|r ahora, aprende Mazas de 2 manos de |cRXP_FRIENDLY_Buliwyf Petramano|r, si no aprende Arrojadizas de |cRXP_FRIENDLY_Bixi Tambaleapié|r. Si no estás seguro de cuál aprender, solo aprende Arrojadizas
+    .trainer >> Si estás en un grupo o tienes a alguien que te ayude a matar |cRXP_ENEMY_Vagash|r ahora, aprende Mazas de 2 manos de |cRXP_FRIENDLY_Buliwyf Petramano|r, si no aprende Armas arrojadizas de |cRXP_FRIENDLY_Bixi Tambaleapié|r. Si no estás seguro de cuál aprender, solo aprende Armas arrojadizas
     .target Bixi Wobblebonk
     .target Buliwyf Stonehand
 step << Warrior
@@ -3676,7 +3676,7 @@ step << Warrior/Rogue
     #softcore
     #optional
     #completewith next
-    .deathskip >> Muere y reaparece en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
+    .deathskip >> Muere y resucita en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
     .target Ángel de la Resurrección
     .train 403475,1 << Warrior
     .train 398196,1 << Rogue
@@ -4029,7 +4029,7 @@ step << Human
 step
     #softcore
     #completewith flyIF
-    .deathskip >> Muere y reaparece en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
+    .deathskip >> Muere y resucita en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
     .target Ángel de la Resurrección
 step
     #optional
@@ -4462,7 +4462,7 @@ step << Paladin
 step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Bixi Tambaleapié|r y |cRXP_FRIENDLY_Buliwyf Petramano|r
     >>Aprende Armas arrojadizas y Mazas de 2 manos si no lo hiciste antes
-    .train 2567 >> Aprende el uso de Arrojadizas
+    .train 2567 >> Aprende el uso de Armas arrojadizas
     .target +Bixi Wobblebonk
     .goto Ironforge,62.237,89.628
     .train 199 >> Aprende Mazas de 2 manos
@@ -4471,7 +4471,7 @@ step << Warrior
 step << Warrior
     .goto 1455,62.378,88.671
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Brenwyn Ventacerado|r escaleras abajo
-    >>|cRXP_BUY_Compra los|r |T135425:0|t[Cuchillos arrojadizos cortantes] |cRXP_BUY_a esta vendedora|r
+    >>|cRXP_BUY_Compra los|r |T135425:0|t[Cuchillos arrojadizo cortante] |cRXP_BUY_a esta vendedora|r
     .collect 3107,1 --Collect Keen Throwing Knife (200)
     .target Brenwyn Wintersteel
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.3
@@ -5066,7 +5066,7 @@ step
     #optional
     #completewith next
     .goto StormwindClassic,29.2,74.0,20,0
-    .goto StormwindClassic,27.2,78.1,15 >> Viaja a El Cordero Degollad y baja las escaleras
+    .goto StormwindClassic,27.2,78.1,15 >> Viaja a El Cordero Degollado y baja las escaleras
 step
     .goto StormwindClassic,26.117,77.225
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ursula Deline|r
@@ -5085,7 +5085,7 @@ step
     .goto StormwindClassic,23.2,79.5,18,0
     .goto StormwindClassic,26.3,79.5,18,0
     .goto StormwindClassic,25.154,77.406
-    >>|cRXP_WARN_Viaja a la parte inferior de El Cordero Degollado|r
+    >>|cRXP_WARN_Viaja al fondo de El Cordero Degollado|r
     .cast 7728 >> |cRXP_WARN_Usa|r la |T133292:0|t[Gargantilla de sangrita] |cRXP_WARN_para invocar a un|r |cRXP_ENEMY_Abisario invocado|r
     .use 6928
 step
@@ -5586,7 +5586,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Morgan Mortero|r
     .turnin 61,1 >> Entrega la misión Un envío para Ventormenta
     >>|cRXP_WARN_Elegimos el|r |T132383:0|t[Cohete explosivo] |cRXP_WARN_como recompensa. Causa daño decente y puede usarse para "Split pulling" que es increíblemente útil|r
-    .link https://www.youtube.com/watch?v=H-IwZ6P-ldY >> |cRXP_WARN_Haz clic aquí para ver un vídeo sobre el "Split pulling". Es un vídeo corto y muy útil para aprender|r
+    .link https://www.youtube.com/watch?v=H-IwZ6P-ldY >> |cRXP_WARN_Haz clic aquí para ver un vídeo sobre el "Split pulling". Es un video corto y de incalculable valor para aprender|r
     .target Morgan Pestle
 step
     #ah
@@ -5630,7 +5630,7 @@ step
 step << Warlock
     #completewith next
     .goto StormwindClassic,29.2,74.0,20,0
-    .goto StormwindClassic,27.2,78.1,15 >> Viaja a El Cordero Degollad y baja las escaleras
+    .goto StormwindClassic,27.2,78.1,15 >> Viaja a El Cordero Degollado y baja las escaleras
 step << Warlock
     .goto StormwindClassic,26.117,77.225
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ursula Deline|r
@@ -5648,7 +5648,7 @@ step << Warlock
     .goto StormwindClassic,23.2,79.5,18,0
     .goto StormwindClassic,26.3,79.5,18,0
     .goto StormwindClassic,25.154,77.406
-    >>|cRXP_WARN_Viaja a la parte inferior de El Cordero Degollado|r
+    >>|cRXP_WARN_Viaja al fondo de El Cordero Degollado|r
     .cast 7728 >> |cRXP_WARN_Usa|r la |T133292:0|t[Gargantilla de sangrita] |cRXP_WARN_para invocar a un|r |cRXP_ENEMY_Abisario invocado|r
     .use 6928
 step << Warlock
@@ -5873,7 +5873,7 @@ step << Rogue
     .goto 1453,53.615,59.767,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Gunther Pozador|r
     >>|cRXP_BUY_Compra un|r |T135346:0|t[Alfanje] |cRXP_BUY_a este vendedor|r
-    >>|cRXP_WARN_Alternativamente, busca en la Casa de subastas algo mejor o más barato|r
+    >>|cRXP_WARN_Alternativamente, puedes consultar la Casa de Subastas para ver si encuentras una opción mejor o más barata|r
     .collect 851,1 -- Cutlass (1)
     .target Gunther Weller
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.7
@@ -7186,7 +7186,7 @@ step << Warrior
     #optional
     .goto Ironforge,62.0,89.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Bixi Tambaleapié|r
-    .train 2567 >>Aprende el uso de Arrojadizas
+    .train 2567 >>Aprende el uso de Armas arrojadizas
     .target Bixi Wobblebonk
 step << skip --logout skip << Warrior
     #xprate >1.49
@@ -8042,7 +8042,7 @@ step
 step
     #completewith next
     .goto Dun Morogh,43.1,45.0,20,0
-    .goto Dun Morogh,42.1,45.4,20 >> Viaja a Monte Luz. Sigue la flecha y escala la montaña
+    .goto Dun Morogh,42.1,45.4,20 >> Viaja a Monte Luz. Sigue la flecha y sube la montaña corriendo
 step
     #label FinishShimmerweed
     .goto Dun Morogh,40.9,45.3,50,0
@@ -8127,7 +8127,7 @@ step
 step
 #sticky
 #label explore
-    >>|cRXP_WARN_Baja hasta esta ubicación para explorar el Poblado Peloescarcha. Si hay enemigos abajo, limpia los alrededores con normalidad y NO bajes|r
+    >>|cRXP_WARN_Baja hasta esta ubicación para explorar el Poblado Peloescarcha. Si hay enemigos abajo, limpia los alrededores normalmente y NO bajes|r
     .goto Dun Morogh,22.86,52.16
     .complete 287,2 --Fully explore Frostmane Hold
 step

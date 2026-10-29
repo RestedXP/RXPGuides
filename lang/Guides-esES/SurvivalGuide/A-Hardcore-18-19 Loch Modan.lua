@@ -6,7 +6,7 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #name 18-19 Loch Modan
 #version 1
-#group Guía de Supervivencia de RestedXP (A)
+#group RestedXP Guía de Supervivencia (A)
 #subgroup RXP Guía de Supervivencia 1-20
 #next 19-20 Montañas Crestagrana
 

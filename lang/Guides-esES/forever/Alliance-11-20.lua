@@ -2609,7 +2609,7 @@ step << skip --logout skip
     #label MushroomLS
     #completewith CavetoAuber
     .goto 1439,54.964,34.536
-    .goto 1439,41.705,36.507,20 >>|cRXP_WARN_Salta encima de la roca en el piso superior dentro de la cueva. Posiciona tu personaje hasta que parezca que está flotando, luego realiza un Logout Skip desconectando y volviendo a entrar|r
+    .goto 1439,41.705,36.507,20 >>|cRXP_WARN_Salta encima de la roca en el piso superior dentro de la cueva. Posiciona tu personaje hasta que parezca que está flotando, luego realiza un "Logout Skip" desconectando y volviendo a entrar|r
 step
     #completewith CavetoAuber
     >>Mata |cRXP_ENEMY_Volantones zancudo del bosque|r. Despójalos para obtener su |cRXP_LOOT_Carne de zancudo|r
@@ -3567,7 +3567,7 @@ step << Hunter
     .target Regnus Thundergranite
 step << Priest
     .goto 1455/0,-897.200,-4607.200
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Sumo sacerdote Rohan|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Sumo sacerdote Rohan|r
     .trainer >> Aprende tus hechizos de clase
     .target High Priest Rohan
 step << Priest/Druid
@@ -3577,10 +3577,10 @@ step << Priest/Druid
     .goto 1455/0,-917.57,-4967.58,-1--c:Ironforge,25.800,75.500
     .goto 1455/0,-904.92,-4962.83,-1--c:Ironforge,24.200,74.600
     .goto 1455/0,-901.76,-4948.06,-1--c:Ironforge,23.800,71.800
-    >>|cRXP_WARN_Compra lo siguiente si puedes permitírtelo:|r
+    >>|cRXP_WARN_Compra lo siguiente si te lo puedes permitir:|r
     >>|T134711:0|t[Aceite de zahorí menor] |cRXP_WARN_y|r |T133906:0|t[Sabiola ahumada]
-    >>|cRXP_WARN_También busca mejoras de DPS altas|r |T132317:0|t[Varita] |cRXP_WARN_que puedas usar ahora/pronto|r << Priest
-    >>|cRXP_WARN_Estos proporcionarán un aumento de DPS alto en los primeros niveles. Si no quieres hacerlo o no puedes, omite este paso|r
+    >>|cRXP_WARN_Comprueba también si hay mejoras de|r |T132317:0|t[Varita] |cRXP_WARN_de alto DPS que puedas usar ahora o pronto|r << Priest
+    >>|cRXP_WARN_Te proporcionarán un gran aumento de DPS en los niveles iniciales. Si no quieres o no puedes hacer esto, omite este paso|r
     .collect 20744,1 -- Minor Wizard Oil (1)
     .collect 21072,20 -- Smoked Sagefish (20)
     .target Auctioneer Lympkin
@@ -4798,7 +4798,7 @@ step << !Hunter
     #label DarkshoreRRCook1
     #requires TravelMenethilRRBoat
     #completewith MenethilRRBoat
-    >>|cRXP_WARN_Mientras esperas al Bote en el muelle:|r
+    >>|cRXP_WARN_Mientras esperas el barco en el muelle:|r
     .cast 818 >>|cRXP_WARN_Crea una|r |T135805:0|t[Hoguera básica] |cRXP_WARN_(en la pestaña General de tu Libro de Hechizos)|r
     .usespell 818
     .zoneskip Loch Modan
