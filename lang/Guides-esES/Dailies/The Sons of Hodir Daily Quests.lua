@@ -97,7 +97,7 @@ step
 	.goto TheStormPeaks,55.94,65.69,60,0
 	.goto TheStormPeaks,59.25,59.94
 	.use 42769 >> Usa la Lanza de Hodir en tus bolsas para engancharte a un vermio salvaje. Asegúrate de tener toda la salud antes de hacer esto
-	>>Usa Agarrarse (1) repetidamente para aumentar tu Agarre. Cuando el vermio te ataque, usa Esquivar garras (2). Usa Estocada de lanza (3) y Estocada de lanza vengativa (4) cada vez que estén disponibles
+	>>Usa Coger (1) repetidamente para aumentar tu Agarre. Cuando el wyrm te golpee, usa Esquivar zarpazos (2). Usa Lanza perforante (3) y Estocada con lanza vengativa (4) cada vez que esté disponible
 	>>Recuerda usar Coger (1) continuamente; de lo contrario, te caerás si solo spameas tus ataques con (3) y (4).
 	>>Cuando el vermio salvaje esté por debajo del 30%, tu barra de ataque cambiará. Usa Abrir fauces (1) cinco veces y luego usa Golpe mortal (3). Si Golpe mortal falla, sigue usando Abrir fauces (1) hasta que Golpe mortal (3) vuelva a estar disponible
 	.complete 13003,1 --Stormforged Infiltrators Slain (3)

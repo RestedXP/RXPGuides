@@ -32,7 +32,7 @@ step
     .complete 12892,1 << Horde --The Ocular has been destroyed (1)
 step
     .goto IcecrownGlacier,44.1,24.7
-	>>Vuela hasta Barón Plateado en el suelo. Habla con él
+	>>Fly all the way down to Baron Sliver on the ground. Talk to him
     .turnin 12887 >>Entrega la misión Pura diversión << Alliance
     .turnin 12892 >>Entrega la misión Pura diversión << Horde
     .accept 12891 >>Acepta la misión Tengo una idea, pero primero…
@@ -108,7 +108,7 @@ step << Horde
     .accept 12899 >>Acepta la misión La Cámara de las Sombras
 step
     .goto IcecrownGlacier,42.8,24.9
-	>>Regresa con Barón Plateado
+	>>Return to Baron Sliver
 	.turnin 12898 >>Entrega la misión La Cámara de las Sombras << Alliance
     .turnin 12899 >>Entrega la misión La Cámara de las Sombras << Horde
     .accept 12938 >>Acepta la misión El Duque
@@ -177,7 +177,7 @@ step
 step
     .goto IcecrownGlacier,39.01,23.99,25,0
     .goto IcecrownGlacier,42.9,24.9
-	>>Sal de la Sala. Regresa con el Barón de Plata.
+	>>Exit the Hall. Return to Baron Sliver
     .turnin 12951 >>Entrega la misión Que el Barón lo sepa
     .daily 12995 >>Acepta la misión Dejar nuestra huella
     .accept 13085 >>Acepta la misión Vaelen ha vuelto
@@ -235,7 +235,7 @@ step
 	.isQuestComplete 12995
 step
     .goto IcecrownGlacier,42.9,24.9
-	>>Habla con Plateado.
+	>>Talk to Sliver
     .accept 12806 >>Acepta la misión ¡A Ascenso a toda prisa!
 step
     .goto IcecrownGlacier,43.5,25.0

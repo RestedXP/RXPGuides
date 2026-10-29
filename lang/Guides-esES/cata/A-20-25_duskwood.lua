@@ -38,7 +38,7 @@ step
 step
     .goto 47,75.56,45.37,8,0
     .goto 47,75.83,45.26
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla dentro de la casa
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Lady Eva|r dentro de la casa
     .turnin 26653 >>Entrega la misión Suministros de Villa Oscura
     .accept 26652 >>Acepta la misión Hilo de cabello de fantasma
 	.target Madame Eva
@@ -209,7 +209,7 @@ step
 step
     .goto 47,75.56,45.37,8,0
     .goto 47,75.83,45.26
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla dentro de la casa
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Lady Eva|r dentro de la casa
     .turnin 26654 >>Entrega la misión Devuelve el peine
     .accept 26655 >>Acepta la misión Devolver el pelo
 	.target Madame Eva
@@ -705,7 +705,7 @@ step
     .maxlevel 28
 step
     .goto 47,74.17,46.47
-    >>Mata a |cRXP_ENEMY_Stitches|r.
+    >>Mata a |cRXP_ENEMY_Stitches|r
     .complete 26727,1 --1/1 Stitches slain
 	.mob Stitches
     .maxlevel 28

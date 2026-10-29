@@ -1605,14 +1605,14 @@ step
     .complete 25122,4 --6/6 Other goblin's minds freed
     .target Kezan Citizen
 step
-    #title Liberar As
+    #title Libera a As
     >>Selecciona a |cRXP_FRIENDLY_As|r y usa la |T132808:0|t[|cRXP_LOOT_Kaja'Cola Zero-Uno|r]
     .goto 174,57.1,36.9
     .use 52484
     .complete 25122,1 --1/1 Ace's mind freed
     .target Ace
 step
-    #title Liberar Izzy
+    #title Libera a Izzy
     >>Selecciona a |cRXP_FRIENDLY_Izzy|r y usa la |T132808:0|t[|cRXP_LOOT_Kaja'Cola Zero-Uno|r]
     .goto 174,57.01,35.02
     .use 52484

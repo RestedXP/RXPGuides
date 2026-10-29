@@ -2651,7 +2651,7 @@ step
     .goto 1411,47.07,30.87,40,0
     .goto 1411,47.16,29.67,40,0
     .goto 1411,48.95,22.34,40,0
-    >>Despoja el |cRXP_LOOT_Kul Saco of Suministros|r en el suelo
+    >>Despoja el |cRXP_LOOT_Sack of Suministros|r en el suelo
     .complete 834,1 --Sack of Supplies (5)
     .isOnQuest 834
 step

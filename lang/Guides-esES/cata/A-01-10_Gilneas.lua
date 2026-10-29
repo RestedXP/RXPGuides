@@ -911,7 +911,7 @@ step
     #optional
     #completewith Morris
     #label Catapult3
-    .goto 179,24.94,76.50,6 >> Regresa arriba
+    .goto 179,24.94,76.50,6 >> Vuelve a subir las escaleras
 step
     #optional
     #requires Catapult3
