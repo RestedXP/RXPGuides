@@ -1524,7 +1524,7 @@ step
     .goto Eversong Woods,25.09,71.12,40,0
     .goto Eversong Woods,24.36,72.66,40,0
     >>Kill |cRXP_ENEMY_Mmmrrrggglll|r. Loote ihn für den |cRXP_LOOT_Ring of Mmmrrrggglll|r
-    >>|cRXP_WARN_Er patrouilliert in der Gegend herum|r
+    >>|cRXP_WARN_Er patrouilliert ein wenig umher|r
     >>|cRXP_WARN_Benutzen|r |T136222:0|t[Arcane Torrent] |cRXP_WARN_to interrupt|r |cRXP_ENEMY_Mmmrrrggglll|r's |T136052:0|t[Healing Wave] << BloodElf
     .complete 8885,1 --Collect Ring of Mmmrrrggglll (x1)
     .unitscan Mmmrrrggglll
@@ -6601,7 +6601,7 @@ step
     .dungeon RFC
 step
     #completewith EnterRFC
-    .destroy 14544 >>|cRXP_WARN_Zerstört|r |T134417:0|tInsignien des Lieutenants] |cRXP_WARN_da ihr es nicht mehr braucht|r
+    .destroy 14544 >>|cRXP_WARN_Destroy|r |T134417:0|t[Lieutenant's Insignia] |cRXP_WARN_as you no longer need it|r
     .dungeon RFC
 step
     #label EnterRFC
@@ -8842,7 +8842,7 @@ step
     .goto Ghostlands,37.73,61.43,50,0
     .goto Ghostlands,37.06,65.52,50,0
     .goto Ghostlands,36.25,70.35,50,0
-    .xp 20 >>Grinde to 20
+    .xp 20 >>Farmt bis Stufe 20
 step
     #completewith SMTraining5
     .goto Ghostlands,45.42,30.52

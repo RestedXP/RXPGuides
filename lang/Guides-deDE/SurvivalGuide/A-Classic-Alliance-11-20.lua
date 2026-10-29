@@ -210,7 +210,7 @@ step
     .goto Westfall,53.84,32.00,60,0
     .goto Westfall,44.47,35.35,60,0
     .goto Westfall,50.80,21.76
-    >>Tötet |cRXP_ENEMY_Harvest Watchers|r. Plündert sie nach |cRXP_LOOT_Fläschchen Öl|r und |cRXP_LOOT_Okra|r
+    >>Tötet |cRXP_ENEMY_Erntewächter|r. Plündert sie für ihr |cRXP_LOOT_Fläschchen Öl|r und |cRXP_LOOT_Okra|r
     .complete 9,1 --Harvest Watcher (20)
     .collect 732,3,38,1 --Okra (3)
     .collect 814,5,103,1
@@ -276,7 +276,7 @@ step << Druid
     .goto Westfall,41.0,12.0,0
     .goto Westfall,47.6,9.0,0
     .goto Westfall,51.8,9.4,0
-    .xp 16 >> Farmt Krabben in Westfall bis Stufe 16
+    .xp 16 >> Farmt Krebse in Westfall bis Stufe 16
 step << Dwarf !Paladin/Gnome
     #label end
     .hs >> Benutzt euren Ruhestein nach Thelsamar
@@ -335,7 +335,7 @@ step
     .goto Ironforge,24.200,74.600,-1
     .goto Ironforge,23.800,71.800,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit einem |cRXP_FRIENDLY_Ironforge Auktionator|r
-    >>Kauft die folgenden Gegenstände für sofortige Questabgaben in Dunkelküste. Überspringt diesen Schritt, wenn ihr nicht kaufen wollt
+    >>Kauft die folgenden Gegenstände für sofortige Questabgaben in Dunkelküste in Kürze. Überspringt diesen Schritt, wenn ihr nichts kaufen möchtet
     >>|T133972:0|t[Schreiterfleisch]
     >>|T133912:0|t[Dunkelküstenbarsch]
     .collect 5469,5,2178,1 -- Strider Meat (5)
@@ -419,11 +419,11 @@ step << !NightElf
 step << !NightElf
     #completewith next
     .goto Wetlands,7.10,57.96,30,0
-    .goto Wetlands,4.61,57.26,15 >> Reist zum Hafen von Menethil. Wartet auf das Boot nach Dunkelküste
+    .goto Wetlands,4.61,57.26,15 >> Reist zu den Docks im Hafen von Menethil. Wartet auf das Boot nach Dunkelküste
 step << !NightElf
     .zone Darkshore >> Nimm das Boot nach Dunkelküste
-    >>|cRXP_WARN_Skillt eure|r |T135966:0|t[Erste Hilfe] |cRXP_WARN_und|r |T133971:0|t[Kochkunst] |cRXP_WARN_während ihr auf das Boot nach Dunkelküste wartet|r
-    >>|cRXP_WARN_Skillt eure|r |T133971:0|t[Kochkunst] |cRXP_WARN_mit|r |T133970:0|t|cRXP_LOOT_[Brocken Eberfleisch]|r |cRXP_WARN_die ihr zuvor gefarmt habt. Skillt sie auf Stufe 10 idealerweise|r
+    >>|cRXP_WARN_Steigert|r |T135966:0|t[Erste Hilfe] |cRXP_WARN_und|r |T133971:0|t[Kochkunst] |cRXP_WARN_, während ihr auf das Boot nach Dunkelküste wartet|r
+    >>|cRXP_WARN_Steigert|r |T133971:0|t[Kochkunst] |cRXP_WARN_mit dem|r |T133970:0|t|cRXP_LOOT_[Brocken Eberfleisch]|r |cRXP_WARN_, das ihr zuvor gefarmt habt. Idealerweise auf Stufe 10|r
 step << NightElf !Druid
     .goto Westfall,56.556,52.643
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Thor|r
@@ -472,7 +472,7 @@ step << Druid
 step << Druid
     #completewith next
     .cast 18960 >> Caste Teleportieren: Moonglade
-    >>|cRXP_WARN_Es wird auf diese Weise schneller sein, damit ihr nicht länger schwimmen müsst|r
+    >>|cRXP_WARN_So geht es schneller, damit ihr nicht so lange schwimmen müsst|r
 step << Druid
     .goto Moonglade,36.026,41.374
     .use 15877 >>|cRXP_WARN_Benutzt das|r |T134125:0|t[Schrein-Schmuckstück] |cRXP_WARN_beim Schrein von Remulos Baum|r
@@ -610,12 +610,12 @@ step
 step
 #map Darkshore
     .goto Felwood,18.81,26.69
-    >>Plündert |cRXP_PICK_Gestrandete Seekreatur|r für |cRXP_LOOT_Seekreatur-Knochen|r
+    >>Beute |cRXP_PICK_Gestrandete Meereskreatur|r für die |cRXP_LOOT_Meereskreatur-Knochen|r
     .complete 3524,1
 step
 #map Darkshore
     .goto Felwood,22.39,29.45
-    >>Entdeckt das Furbolg-Lager
+    >>Entdeckt das Furbolg Camp
     .complete 984,1 -- Find a corrupt furbolg camp
 step
     #label RabidThistle
@@ -668,7 +668,7 @@ step
     .target Cerellean Whiteclaw
 step
     #completewith next
-    .goto 1439,32.432,43.744,15 >> Reist zum Ende des Docks, dann springt ins Wasser
+    .goto 1439,32.432,43.744,15 >> Reist bis zum Ende des Docks und springt dann ins Wasser
 step
     #completewith washed1
     .goto Darkshore,33.59,40.36,0
@@ -680,7 +680,7 @@ step
 step
 #map Darkshore
     .goto Felwood,13.63,21.44
-    >>Plündert die |cRXP_PICK_Skelettartige Meeresschildkröte|r für die |cRXP_LOOT_Meeresschildkrötenüberreste|r
+    >>Beute |cRXP_PICK_Skelettartig Meeresschildkröte|r für die |cRXP_LOOT_Sea Schildkröte Remains|r
     .complete 4681,1
 step
 #map Darkshore
@@ -753,8 +753,8 @@ step
 #map Darkshore
     .goto Darkshore,38.95,29.36,10,0
     .goto Felwood,20.94,1.49
-    >>|cRXP_WARN_Betretet das Wrack der Silber Dawning durch den Rumpf am Boden. Achtet darauf, dass eure Atemleiste voll ist, bevor ihr taucht|r
-    >>Plündert |cRXP_LOOT_Schließkassette der Silber Dawning|r auf dem Boden
+    >>|cRXP_WARN_ENTER das Wrack der Silber Dawning durch den zerbrochenen Rumpf auf der Unterseite. Stellt sicher, dass ihr eine volle Atemleiste habt, bevor ihr hinuntertaucht und hineingeht|r
+    >>Beute |cRXP_LOOT_Silber Dawning's Schließkassette|r auf dem Boden
     .complete 982,1
 step
     #completewith next
@@ -763,8 +763,8 @@ step
     #label MistVeil
     .goto Darkshore,40.30,27.56,10,0
     .goto Darkshore,39.63,27.45
-    >>|cRXP_WARN_Betretet das Wrack der Nebel Schleier durch den Rumpf am Boden. Achtet darauf, dass eure Atemleiste voll ist, bevor ihr taucht|r
-    >>Plündert |cRXP_LOOT_Schließkassette der Nebel Schleier|r auf dem Boden
+    >>|cRXP_WARN_ENTER das Wrack der Nebel Schleier durch den zerbrochenen Rumpf auf der Unterseite. Stellt sicher, dass ihr eine volle Atemleiste habt, bevor ihr hinuntertaucht und hineingeht|r
+    >>Beute |cRXP_LOOT_Nebel Schleier's Schließkassette|r auf dem Boden
     .complete 982,2
 step
     .goto Darkshore,40.17,28.76,0
@@ -794,7 +794,7 @@ step
     .accept 4723 >> Akzeptiert die Quest Gestrandete Meereskreatur
 step << Druid
     #completewith cure1
-    >>Sammelt 5 |T134187:0|t[Earthroot] während ihr Quests absolviert
+    >>Sammelt 5 |T134187:0|t[Earthroot], während ihr Quests erledigt
     .collect 2449,5,6123,1
 step
     #completewith Ameth
@@ -871,14 +871,14 @@ step << !NightElf
 #map Darkshore
     .goto Felwood,31.29,24.14
     >>Tötet |cRXP_ENEMY_Moonkin|r. Plündert sie für |T132832:0|t[|cRXP_LOOT_Small Eggs|r]
-    >>|cRXP_WARN_Ihr werdet aufleveln|r |T133971:0|t[Kochkunst] |cRXP_WARN_auf Stufe 10 später mit|r |T132832:0|t[|cRXP_LOOT_Klein Eier|r]
+    >>Ihr werdet später mit |T133971:0|t[Kochkunst] |cRXP_WARN_Stufe 10 erreichen, indem ihr|r |T132832:0|t[|cRXP_WARN_Klein Eggs|r] |cRXP_LOOT_benutzt|r
     .collect 6889,10,2178,1,0x21,cooking -- Small Egg
-    >>Reist zu |cRXP_PICK_The Rot Kristall|r
+    >>Reist zu |cRXP_PICK_Der rote Kristall|r
     .complete 4811,1
 step << NightElf
 #map Darkshore
     .goto Felwood,31.29,24.14
-    >>Reist zu |cRXP_PICK_Rotem Kristall|r
+    >>Reist zu |cRXP_PICK_Der rote Kristall|r
     .complete 4811,1
 step
     .goto Darkshore,45.34,49.70,60,0
@@ -895,7 +895,7 @@ step
     .mob Moonkin
 step
     #completewith next
-    .goto Darkshore,40.30,59.70,70 >> Reist südlich zu |cRXP_FRIENDLY_Schildwache Tysha Mondklinge|r in Ameth'Aran
+    .goto Darkshore,40.30,59.70,70 >> Reist nach Süden zu |cRXP_FRIENDLY_Wächtereule Tysha Mondklinge|r in Ameth'Aran
 step
     #label Ameth
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Schildwache Tysha Moonblade|r
@@ -905,7 +905,7 @@ step
 step
     #completewith TheLay
     >>Tötet |cRXP_ENEMY_Anaya Dawnrunner|r. Plündert sie für ihren |cRXP_LOOT_Anhänger|r
-    >>|cRXP_ENEMY_Anaya Dämmerflucht|r |cRXP_WARN_patrouilliert Ameth'Aran|r
+    >>|cRXP_ENEMY_Anaya Dämmerflucht|r |cRXP_WARN_patrouilliert in Ameth'Aran|r
     .complete 963,1
     .unitscan Anaya Dawnrunner
 step
@@ -933,7 +933,7 @@ step
 step
     #completewith next
     >>Tötet |cRXP_ENEMY_Anaya Dawnrunner|r. Plündert sie für ihren |cRXP_LOOT_Anhänger|r
-    >>|cRXP_ENEMY_Anaya Dämmerflucht|r |cRXP_WARN_patrouilliert Ameth'Aran|r
+    >>|cRXP_ENEMY_Anaya Dämmerflucht|r |cRXP_WARN_patrouilliert in Ameth'Aran|r
     .complete 963,1
     .unitscan Anaya Dawnrunner
 step
@@ -964,7 +964,7 @@ step
     .goto Darkshore,42.92,62.50,50,0
     .goto Darkshore,43.30,58.70
     >>Tötet |cRXP_ENEMY_Anaya Dawnrunner|r. Plündert sie für ihren |cRXP_LOOT_Anhänger|r
-    >>|cRXP_ENEMY_Anaya Dämmerflucht|r |cRXP_WARN_patrouilliert Ameth'Aran. Ihr Respawn-Timer ist lang, und wenn sie gerade nicht da ist, könnt ihr diesen Schritt überspringen|r
+    >>|cRXP_ENEMY_Anaya Dämmerflucht|r |cRXP_WARN_patrouilliert in Ameth'Aran. Sie hat eine lange Wiederspawnzeit, und wenn sie gerade nicht da ist, könnt ihr diesen Schritt überspringen|r
     .complete 963,1
     .unitscan Anaya Dawnrunner
 step
@@ -1124,12 +1124,12 @@ step
     .goto Darkshore,37.512,41.674
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Gorbold Steelhand|r
     +Kauft |T134059:0|t[Milde Gewürze]
-    >>|cRXP_WARN_Benutzt die|r |T134059:0|t[Milde Gewürze] |cRXP_WARN_und Eure|r |T132832:0|t[Kleine Eier] |cRXP_WARN_um Kräuterbackeier herzustellen. Macht dies, bis Eure Kochkunst Stufe 10 erreicht hat|r
+    >>Benutzt die |T134059:0|t[Milde Gewürze] |cRXP_WARN_und|r |T132832:0|t[Klein Eggs] |cRXP_WARN_von Euch, um Herb Baked Eggs herzustellen. Macht das, bis|r |T133971:0|t[Kochkunst] |cRXP_WARN_von Euch Stufe 10 erreicht hat|r
     .skill cooking,10,1 -- step only displays if cooking skill is less than 10
     .target Gorbold Steelhand
 step
     #completewith ezstrider
-    +|cRXP_WARN_Benutzt euer|r |T133971:0|t[Kochkunst]|cRXP_WARN_-Handwerk, um Herb Baked Eggs zuzubereiten. Tut dies, bis eure|r |T133971:0|t[Kochkunst] |cRXP_WARN_Stufe 10 erreicht hat|r
+    +|cRXP_WARN_Benutzt die|r |T133971:0|t[Kochkunst] |cRXP_WARN_von Euch, um Herb Baked Eggs herzustellen. Tut dies, bis die|r |T133971:0|t[Kochkunst] |cRXP_WARN_von Euch Stufe 10 erreicht hat|r
     .skill cooking,10,1 -- step only displays if cooking skill is less than 10
     .target Gorbold Steelhand
 step
@@ -1208,17 +1208,17 @@ step
 step
 #map Darkshore
     #completewith next
-    .goto Felwood,31.29,24.14,15 >> Reist zum Roten Kristall erneut
+    .goto Felwood,31.29,24.14,15 >> Reist wieder zu Der rote Kristall
 step
 #map Darkshore
     .goto Felwood,31.29,24.14
-    >>Klickt auf |cRXP_PICK_Der Rote Kristall|r
+    >>Klickt |cRXP_PICK_Der rote Kristall|r
     .turnin 4812 >> Gebt die Quest Wenn das Wasser fließt ab
     .accept 4813 >> Akzeptiert die Quest Die Fragmente im Inneren
 step
 #map Darkshore
     #completewith next
-    .goto Felwood,27.70,10.03,70 >> Reist zu |cRXP_FRIENDLY_Asterion|r bei Bashal'Aran
+    .goto Felwood,27.70,10.03,70 >> Reist zu |cRXP_FRIENDLY_Asterion|r in Bashal'Aran
 step
 #map Darkshore
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Asterion|r
@@ -1228,7 +1228,7 @@ step
 step << Paladin
     .goto Darkshore,50.74,34.68
 	>>Tötet |cRXP_ENEMY_Blackwood Warriors|r und |cRXP_ENEMY_Blackwood Totemics|r. Plündert sie für |T132889:0|t[Linen Stoff]
-    >>|cRXP_WARN_Ihr müsst 10|r |T132889:0|t[Leinenstoff] |cRXP_WARN_für eure spätere|r |T626003:0|t|cFFF48CBAPaladin|r |cRXP_WARN_Klassen-Quest aufheben|r
+    >>|cRXP_WARN_Ihr müsst 10|r |T132889:0|t[Leinenstoff] |cRXP_WARN_für die spätere Klassenquest von Euch als|r |T626003:0|t|cFFF48CBAPaladin|r |cRXP_WARN_aufheben|r
 	.collect 2589,10,1,1644 --Linen Cloth (10)
     .mob Blackwood Warrior
     .mob Blackwood Totemic
@@ -1236,7 +1236,7 @@ step
 .group
     .goto Darkshore,50.66,34.94
     >>Öffnet |cRXP_PICK_Getreidelager der Schwarzfelle|r. Plündert es für die |cRXP_LOOT_Getreideprobe der Schwarzfelle|r
-    >>|cRXP_WARN_Plündern wird 2 |cRXP_ENEMY_Blackwood Furbolgs|r spawnen, die euch angreifen und auf euch zulaufen werden. Seid bereit, gegen sie zu kämpfen oder setzt sie zurück|r
+    >>|cRXP_WARN_Plündern wird 2 |cRXP_ENEMY_Blackwood Furbolgs|r spawnen, die aggressiv werden und auf euch zurennen. Seid bereit, gegen sie zu kämpfen oder sie zurückzusetzen|r
     .collect 12342,1,4763,1 -- Blackwood Grain Stores (1)
 step
 .group
@@ -1250,15 +1250,15 @@ step
 step
 .group
     .goto Darkshore,51.83,33.50
-    >>Öffnet |cRXP_PICK_Blackwood Nussvorräte|r. Plündert |cRXP_LOOT_Nussprobe der Schwarzfelle|r
-    >>|cRXP_WARN_Plündern wird 2 |cRXP_ENEMY_Blackwood Furbolgs|r spawnen, die euch angreifen und auf euch zulaufen werden. Seid bereit, gegen sie zu kämpfen oder setzt sie zurück|r
+    >>Öffnet |cRXP_PICK_Blackwood Nusslager|r. Beute es für die |cRXP_LOOT_Nussprobe der Schwarzfelle|r
+    >>|cRXP_WARN_Plündern wird 2 |cRXP_ENEMY_Blackwood Furbolgs|r spawnen, die aggressiv werden und auf euch zurennen. Seid bereit, gegen sie zu kämpfen oder sie zurückzusetzen|r
     .collect 12343,1,4763,1 -- Blackwood Nut Sample (1)
 step
 .group
     #label Fruit
     .goto Darkshore,52.86,33.41
     >>Öffnet |cRXP_PICK_Obstlager der Schwarzfelle|r. Plündert es für |cRXP_LOOT_Obstprobe der Schwarzfelle|r
-    >>|cRXP_WARN_Plündern wird 2 |cRXP_ENEMY_Blackwood Furbolgs|r spawnen, die euch angreifen und auf euch zulaufen werden. Seid bereit, gegen sie zu kämpfen oder setzt sie zurück|r
+    >>|cRXP_WARN_Plündern wird 2 |cRXP_ENEMY_Blackwood Furbolgs|r spawnen, die aggressiv werden und auf euch zurennen. Seid bereit, gegen sie zu kämpfen oder sie zurückzusetzen|r
     .collect 12341,1,4763,1 -- Blackwood Fruit Sample (1)
 step
 .group
@@ -1288,15 +1288,15 @@ step << Druid
 step
 .group
     .goto Darkshore,55.66,34.89
-    >>Plündert |cRXP_LOOT_Scaber-Stängel|r und |cRXP_LOOT_Todes-Kappe|r auf dem Boden
-    >>|cRXP_WARN_Bleibt in der oberen Sektion. Wenn |cRXP_LOOT_Todes-Kappe|r nicht am Ende der oberen Seite ist, lasst euch fallen und holt eine von unten|r
-    >>|cRXP_WARN_Stellt euch nicht mit dem Rücken zur Mitte hin! |cRXP_ENEMY_Sturmschuppen-Wellenreiter|r können euch zurückwerfen!|r
+    >>Beute |cRXP_LOOT_Scaber Stalks|r und |cRXP_LOOT_Tod Cap|r auf dem Boden
+    >>|cRXP_WARN_Bleiben auf dem oberen Abschnitt. Falls der |cRXP_LOOT_Tod Cap|r nicht am Ende der Oberseite liegt, springt hinunter und holt euch unten einen|r
+    >>|cRXP_WARN_Dreht dem Zentrum nicht den Rücken von Euch zu! |cRXP_ENEMY_Sturmschuppe Winken Rider's|r können euch zurückstoßen!|r
     .complete 947,1 --Scaber Stalk (5)
     .complete 947,2 --Death Cap (1)
 step
 .group
     .isQuestComplete 947
-    .goto Darkshore,54.81,32.92,30 >> Verlasst die Klippenquell-Höhle
+    .goto Darkshore,54.81,32.92,30 >> Verlasst Der Klippenquell Cave
 step
     #completewith next
     >>Tötet |cRXP_ENEMY_Moonstalkers|r und |cRXP_ENEMY_Moonstalker Schlaffi|r. Plündert sie für |cRXP_LOOT_Fangs|r
@@ -1325,7 +1325,7 @@ step << Paladin
     .goto Darkshore,56.92,27.27,40,0
     .goto Darkshore,55.27,27.74
     >>Tötet |cRXP_ENEMY_Dark Strand Fanatics|r. Plündert sie für |cRXP_LOOT_Parchments|r und |T132889:0|t[Linen Stoff]
-    >>|cRXP_WARN_Ihr müsst 10|r |T132889:0|t[Leinenstoff] |cRXP_WARN_für eure|r |T626003:0|t|cFFF48CBAPaladin|r |cRXP_WARN_Klassenquest später aufbewahren|r
+    >>|cRXP_WARN_Ihr müsst 10|r |T132889:0|t[Leinenstoff] |cRXP_WARN_für die spätere Klassenquest von Euch als|r |T626003:0|t|cFFF48CBAPaladin|r |cRXP_WARN_aufheben|r
     .complete 966,1 --Worn Parchment (4)
     .collect 2589,10,1,1644 --Linen Cloth (10)
     .mob Dark Strand Fanatic
@@ -1340,7 +1340,7 @@ step
 .group 3
 #map Darkshore
     #completewith next
-    .goto Winterspring,6.37,16.66,50 >> Reist zum Nebelrand
+    .goto Winterspring,6.37,16.66,50 >> Reist nach Der Nebelrand
 step
 .group 3
 #map Darkshore
@@ -1353,7 +1353,7 @@ step
     #completewith next
     .goto Darkshore,56.10,16.88,0
     >>Tötet |cRXP_ENEMY_Tobender Riffkriecher|r und |cRXP_ENEMY_Verkrusteter Gezeitenkriecher|r. Plündert sie für den |cRXP_LOOT_Unterteil von Gelkaks Schlüssel|r
-    >>Achtet auf |cRXP_WARN_Wütende Riff-Kriechende|cRXP_ENEMY_ |T132152:0|t[Hauen] |rFähigkeit. Ihr könnt 200 Schaden augenblicklich von ihren Nahkampfangriffen erhalten|r
+    >>|cRXP_WARN_Passt auf die Fähigkeit |T132152:0|t[Hauen] von |cRXP_ENEMY_Wütend Reef Crawlers|r auf. Ihr könnt durch ihre Nahkampftreffer sofort 200 Schaden erleiden|r
     .complete 2098,3 -- Bottom of Gelkak's Key
     .mob Raging Reef Crawler
     .mob Encrusted Tide Crawler
@@ -1361,7 +1361,7 @@ step
 .group 3
     .goto Darkshore,54.93,12.19
     >>Tötet die |cRXP_ENEMY_Orakel der Grauflossen|r und die |cRXP_ENEMY_Gezeitenjäger der Grauflossen|r. Plündert sie für den |cRXP_LOOT_Mitte von Gelkaks Schlüssel|r
-    >>|cRXP_WARN_Passt auf vor |cRXP_ENEMY_Grauflossenwurf Oracles|r |T136048:0|t[Blitzschlag] Schaden, sie können auch mit |T136052:0|t[Welle der Heilung] heilen|r
+    >>|cRXP_WARN_Passt auf den Schaden von |cRXP_ENEMY_Grauflossenwurf Oracles|r durch |T136048:0|t[Blitzschlag] auf, sie können sich auch mit |T136052:0|t[Welle der Heilung] heilen|r
     >>Passt auf, denn |cRXP_ENEMY_Gezeitenjäger der Grauflossen|r können |T136016:0|t[|cRXP_FRIENDLY_Gift|r] wirken im Nahkampf und hinterlassen einen DoT, der 13 Schaden alle 3 Sek. für 30 Sek. verursacht
     .complete 2098,2 -- Middle of Gelkak's Key (1)
     .mob Greymist Oracle
@@ -1373,7 +1373,7 @@ step
     .goto Darkshore,51.34,22.00,45,0
     .goto Darkshore,56.63,12.08
     >>Tötet |cRXP_ENEMY_Tobender Riffkriecher|r und |cRXP_ENEMY_Verkrusteter Gezeitenkriecher|r. Plündert sie für den |cRXP_LOOT_Unterteil von Gelkaks Schlüssel|r
-    >>|cRXP_WARN_Beachtet die |cRXP_ENEMY_Raging Reef Crawlers|r |T132152:0|t[Hauen]-Fähigkeit. Ihr könnt sofort 200 Schaden von ihren Nahkampfschlägen erhalten|r
+    >>|cRXP_WARN_Passt auf die Fähigkeit |T132152:0|t[Hauen] von |cRXP_ENEMY_Wütend Reef Crawlers|r auf. Ihr könnt durch ihre Nahkampftreffer sofort 200 Schaden erleiden|r
     .complete 2098,3 -- Bottom of Gelkak's Key
     .mob Raging Reef Crawler
     .mob Encrusted Tide Crawler
@@ -1416,7 +1416,7 @@ step
 #map Darkshore
     .goto Winterspring,5.59,21.09,10,0
     .goto Winterspring,6.37,16.66
-    >>Sprecht mit dem |cRXP_FRIENDLY_Dreschonator 4100|r um die Eskorte zu starten
+    >>Sprecht mit |cRXP_FRIENDLY_Der Dreschonator 4100|r, um die Eskorte zu starten
     >>Escortier |cRXP_FRIENDLY_Der Dreschonator 4100|r bis zu |cRXP_FRIENDLY_Gelkak Gyromast|r
     >>Tötet |cRXP_ENEMY_The Threshwackonator 4100|r sobald er feindselig ist
     >>|cRXP_WARN_Diese Quest ist SEHR schwierig|r
@@ -1449,7 +1449,7 @@ step << Druid
 step
     #completewith next
     >>Tötet |cRXP_ENEMY_Encrusted Tide Crawlers|r und |cRXP_ENEMY_Reef Crawlers|r. Plündert sie für |cRXP_LOOT_Crab Chunks|r
-    >>|cRXP_WARN_Wenn |cRXP_ENEMY_Verkrustete Gezeiten-Kriechende|r zu stark sind, konzentriert euch auf|r |cRXP_ENEMY_Riff-Kriechende|r
+    >>|cRXP_WARN_Falls die |cRXP_ENEMY_Encrusted Tide Crawlers|r zu stark sind, konzentriert euch nur auf|r |cRXP_ENEMY_Reef Crawlers|r
     >>Seid vorsichtig da die |cRXP_ENEMY_Riffkriecher|r |T132155:0|t[Muskelriss] wirken.Ein sofortiger Angriff, der 30-55 Schaden verursacht
     .complete 1138,1 -- Fine Crab Chunks (6)
     .mob Encrusted Tide Crawler
@@ -1471,7 +1471,7 @@ step
     .mob Reef Crawler
 step
     .goto Darkshore,50.74,34.68
-	.xp 18-2750 >>Farmt bis ihr 2750 XP von Stufe 18 entfernt seid
+	.xp 18-2750 >>Farmt, bis ihr 2750 EP von Stufe 18 entfernt seid
     >>Tötet |cRXP_ENEMY_Blackwood Warriors|r und |cRXP_ENEMY_Blackwood Totemics|r.
     .mob Blackwood Warrior
     .mob Blackwood Totemic
@@ -1558,7 +1558,7 @@ step << Druid
     .goto Darkshore,42.4,52.6,0
     .goto Darkshore,45.7,50.3,0
     >>Tötet |cRXP_ENEMY_Moonkin|r. Plündert sie für |T132832:0|t[|cRXP_LOOT_Small Eggs|r]
-    >>Ihr benötigt Kochen 50 für eine Quest später
+    >>Ihr benötigt später 50 Kochkunst für eine Quest
     .collect 6889,40,90,1,0x21,cooking
     >>Beute |cRXP_LOOT_Lunarfungus|r auf dem Boden in der Höhle
     .complete 6123,2
@@ -1570,7 +1570,7 @@ step
     .goto Darkshore,45.48,45.24,60,0
     .goto Darkshore,42.73,45.67
     >>Tötet |cRXP_ENEMY_Moonkin|r. Plündert sie für |T132832:0|t[|cRXP_LOOT_Small Eggs|r]
-    >>Ihr benötigt Kochen auf Stufe 50 für eine spätere Quest
+    >>Ihr benötigt später 50 Kochkunst für eine Quest
     .collect 6889,40,90,1,0x20,cooking
     .mob Young Moonkin
     .mob Raging Moonkin
@@ -1589,7 +1589,7 @@ step << Druid
     .target Alanndarian Nightsong
 step << Druid
     .goto Darkshore,41.0,79.6
-    >>|cRXP_WARN_Kopf südlich während ihr|r |T132801:0|t[Curative Animal Salve] |cRXP_WARN_auf|r |cRXP_ENEMY_Sickly Reh|r benutzt
+    >>|cRXP_WARN_Kopf nach Süden, während ihr die|r |T132801:0|t[Curative Animal Salve] |cRXP_WARN_auf|r Sickly Reh|cRXP_ENEMY_ benutzt|r
     .complete 6124,1 -- Sickly Deer cured (10)
     .unitscan Sickly Deer
 step << Druid
@@ -1696,7 +1696,7 @@ step
     .accept 4763 >> Akzeptiert die Quest Die verderbten Schwarzfelle
 step
     .goto Darkshore,37.78,44.06
-    .use 12346 >>|cRXP_WARN_Benutzt die|r |T133748:0|t[Leer Läutern Schale] |cRXP_WARN_in the Auberdine Mondbrunnen|r
+    .use 12346 >>|cRXP_WARN_Benutzt die|r |T133748:0|t[Leer Läutern Schale] |cRXP_WARN_im Auberdine Mondbrunnen|r
     .collect 12347,1,4763,1
 step
     .goto Darkshore,38.326,43.040
@@ -1712,7 +1712,7 @@ step
 step
     .goto Darkshore,50.66,34.94
     >>Öffnet |cRXP_PICK_Getreidelager der Schwarzfelle|r. Plündert es für die |cRXP_LOOT_Getreideprobe der Schwarzfelle|r
-    >>|cRXP_WARN_Plündern wird 2 |cRXP_ENEMY_Blackwood Furbolgs|r spawnen, die euch angreifen und auf euch zulaufen werden. Seid bereit, gegen sie zu kämpfen oder setzt sie zurück|r
+    >>|cRXP_WARN_Plündern wird 2 |cRXP_ENEMY_Blackwood Furbolgs|r spawnen, die aggressiv werden und auf euch zurennen. Seid bereit, gegen sie zu kämpfen oder sie zurückzusetzen|r
     .collect 12342,1,4763,1 -- Blackwood Grain Stores (1)
 step
     .goto Darkshore,52.60,36.65,45,0
@@ -1724,14 +1724,14 @@ step
     .mob Thistle Cub
 step
     .goto Darkshore,51.83,33.50
-    >>Öffnet |cRXP_PICK_Blackwood Nut Stores|r. Plündert es für |cRXP_LOOT_Nussprobe der Schwarzfelle|r
-    >>|cRXP_WARN_Plündern wird 2 |cRXP_ENEMY_Blackwood Furbolgs|r spawnen, die euch angreifen und auf euch zulaufen werden. Seid bereit, gegen sie zu kämpfen oder setzt sie zurück|r
+    >>Öffnet |cRXP_PICK_Blackwood Nusslager|r. Beute es für die |cRXP_LOOT_Nussprobe der Schwarzfelle|r
+    >>|cRXP_WARN_Plündern wird 2 |cRXP_ENEMY_Blackwood Furbolgs|r spawnen, die aggressiv werden und auf euch zurennen. Seid bereit, gegen sie zu kämpfen oder sie zurückzusetzen|r
     .collect 12343,1,4763,1 -- Blackwood Nut Sample (1)
 step
     #label Fruit
     .goto Darkshore,52.86,33.41
     >>Öffnet |cRXP_PICK_Obstlager der Schwarzfelle|r. Plündert es für |cRXP_LOOT_Obstprobe der Schwarzfelle|r
-    >>|cRXP_WARN_Plündern wird 2 |cRXP_ENEMY_Blackwood Furbolgs|r spawnen, die euch angreifen und auf euch zulaufen werden. Seid bereit, gegen sie zu kämpfen oder setzt sie zurück|r
+    >>|cRXP_WARN_Plündern wird 2 |cRXP_ENEMY_Blackwood Furbolgs|r spawnen, die aggressiv werden und auf euch zurennen. Seid bereit, gegen sie zu kämpfen oder sie zurückzusetzen|r
     .collect 12341,1,4763,1 -- Blackwood Fruit Sample (1)
 step
     #completewith next
@@ -1747,9 +1747,9 @@ step
     .mob Xabraxxis
 step
     .goto Darkshore,55.66,34.89
-    >>Plündert |cRXP_LOOT_Scaber Stalks|r und |cRXP_LOOT_Death Cap|r vom Boden
-    >>|cRXP_WARN_Bleibt im oberen Bereich. Falls die |cRXP_LOOT_Death Cap|r am Ende der oberen Seite nicht ist, springt hinunter und holt euch eine von unten|r
-    >>|cRXP_WARN_Wendet euren Rücken nicht dem Zentrum zu! |cRXP_ENEMY_Stormscale Winken Rider's|r können euch zurückstoßen!|r
+    >>Beute |cRXP_LOOT_Scaber Stalks|r und |cRXP_LOOT_Tod Cap|r auf dem Boden
+    >>|cRXP_WARN_Bleiben auf dem oberen Abschnitt. Falls der |cRXP_LOOT_Tod Cap|r nicht am Ende der Oberseite liegt, springt hinunter und holt euch unten einen|r
+    >>|cRXP_WARN_Dreht dem Zentrum nicht den Rücken von Euch zu! |cRXP_ENEMY_Sturmschuppe Winken Rider's|r können euch zurückstoßen!|r
     .complete 947,1 --Scaber Stalk (5)
     .complete 947,2 --Death Cap (1)
 --TODO: Add logout skip video
@@ -1817,8 +1817,8 @@ step
 #label moonstalkers
     .goto Darkshore,38.54,86.05
     >>Entdeckt Die Meistergleve
-    >>|cRXP_ENEMY_Zwielicht-Schläger|r |cRXP_WARN_können|r |T132343:0|t[Entwaffnen] |cRXP_WARN_euch für 6 Sek.|r << Rogue/Paladin/Warrior
-    >>|cRXP_ENEMY_Zwielicht-Jünger|r |cRXP_WARN_wirkt|r |T135953:0|t[Erneuerung] |cRXP_WARN_und eine 3 Sekunden|r |T135915:0|t[Heilung]
+    >>|cRXP_ENEMY_Zwielicht-Schläger|r |cRXP_WARN_können|r |T132343:0|t[Entwaffnen] |cRXP_WARN_euch für 6 Sek. entwaffnen|r << Rogue/Paladin/Warrior
+    >>|cRXP_ENEMY_Zwielicht-Jünger|r |cRXP_WARN_wirkt|r |T135953:0|t[Erneuerung] |cRXP_WARN_und eine 3-sekündige|r |T135915:0|t[Heilung]
     .complete 944,1
 step
     #completewith next
@@ -1826,35 +1826,35 @@ step
     .use 5251
 step
     .goto Darkshore,38.54,86.05
-    .use 5251 >> Klickt auf die |cRXP_PICK_Wahrsageschale|r
+    .use 5251 >> Klickt |cRXP_PICK_Klarsichtschale|r
     .turnin 944 >> Gebt die Quest Die Meistergleve ab
     .accept 949 >> Akzeptiert die Quest Das Twilight-Lager
-    >>|cRXP_ENEMY_Zwielicht-Schläger|r |cRXP_WARN_können|r |T132343:0|t[Entwaffnen] |cRXP_WARN_euch für 6 Sek.|r << Rogue/Paladin/Warrior
-    >>|cRXP_ENEMY_Zwielicht-Jünger|r |cRXP_WARN_wirkt|r |T135953:0|t[Erneuerung] |cRXP_WARN_und eine 3 Sekunden|r |T135915:0|t[Heilung]
+    >>|cRXP_ENEMY_Zwielicht-Schläger|r |cRXP_WARN_können|r |T132343:0|t[Entwaffnen] |cRXP_WARN_euch für 6 Sek. entwaffnen|r << Rogue/Paladin/Warrior
+    >>|cRXP_ENEMY_Zwielicht-Jünger|r |cRXP_WARN_wirkt|r |T135953:0|t[Erneuerung] |cRXP_WARN_und eine 3-sekündige|r |T135915:0|t[Heilung]
 step
     .goto Ashenvale,22.24,2.52
     >>Klickt das |cRXP_PICK_Twilight-Foliant|r
     .turnin 949 >> Gebt die Quest Das Twilight-Lager ab
     .accept 950 >> Akzeptiert die Quest Rückkehr zu Onu
-    >>|cRXP_ENEMY_Zwielicht-Schläger|r |cRXP_WARN_können|r |T132343:0|t[Entwaffnen] |cRXP_WARN_euch für 6 Sek.|r << Rogue/Paladin/Warrior
-    >>|cRXP_ENEMY_Zwielicht-Jünger|r |cRXP_WARN_wirkt|r |T135953:0|t[Erneuerung] |cRXP_WARN_und eine 3-Sekunden-|r |T135915:0|t[Heilung]
+    >>|cRXP_ENEMY_Zwielicht-Schläger|r |cRXP_WARN_können|r |T132343:0|t[Entwaffnen] |cRXP_WARN_euch für 6 Sek. entwaffnen|r << Rogue/Paladin/Warrior
+    >>|cRXP_ENEMY_Zwielicht-Jünger|r |cRXP_WARN_wirkt|r |T135953:0|t[Erneuerung] |cRXP_WARN_und eine 3-sekündige|r |T135915:0|t[Heilung]
 step
     .goto Ashenvale,22.36,3.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Therylune|r. Es wird eine Escort quest starten
     >>|cRXP_WARN_Überspringt diesen Schritt, falls sie nicht da ist|r
-    >>|cRXP_ENEMY_Zwielicht-Schläger|r |cRXP_WARN_können|r |T132343:0|t[Entwaffnen] |cRXP_WARN_euch für 6 Sek.|r << Rogue/Paladin/Warrior
-    >>|cRXP_ENEMY_Zwielicht-Jünger|r |cRXP_WARN_wirkt|r |T135953:0|t[Erneuerung] |cRXP_WARN_und eine 3 Sekunden|r |T135915:0|t[Heilung]
+    >>|cRXP_ENEMY_Zwielicht-Schläger|r |cRXP_WARN_können|r |T132343:0|t[Entwaffnen] |cRXP_WARN_euch für 6 Sek. entwaffnen|r << Rogue/Paladin/Warrior
+    >>|cRXP_ENEMY_Zwielicht-Jünger|r |cRXP_WARN_wirkt|r |T135953:0|t[Erneuerung] |cRXP_WARN_und eine 3-sekündige|r |T135915:0|t[Heilung]
     .accept 945 >> Akzeptiert die Quest Therylunes Flucht
     .target Therylune
 step
     .goto Darkshore,40.51,87.09
     >>|cRXP_WARN_Eskortiert |cRXP_FRIENDLY_Therylune|r aus Der Meistergleve|r
-    >>|cRXP_ENEMY_Zwielicht-Schläger|r |cRXP_WARN_können|r |T132343:0|t[Entwaffnen] |cRXP_WARN_euch für 6 Sek.|r << Rogue/Paladin/Warrior
-    >>|cRXP_ENEMY_Zwielicht-Jünger|r |cRXP_WARN_wirkt|r |T135953:0|t[Erneuerung] |cRXP_WARN_und eine 3 Sekunden|r |T135915:0|t[Heilung]
+    >>|cRXP_ENEMY_Zwielicht-Schläger|r |cRXP_WARN_können|r |T132343:0|t[Entwaffnen] |cRXP_WARN_euch für 6 Sek. entwaffnen|r << Rogue/Paladin/Warrior
+    >>|cRXP_ENEMY_Zwielicht-Jünger|r |cRXP_WARN_wirkt|r |T135953:0|t[Erneuerung] |cRXP_WARN_und eine 3-sekündige|r |T135915:0|t[Heilung]
     .complete 945,1 -- Escort Therylune
     .isOnQuest 945
 step
-    .destroy 5251 >> Zerstört das |T134715:0|t[Wahrsagephiole]. Ihr braucht sie nicht mehr.
+    .destroy 5251 >> Zerstört den |T134715:0|t[Wahrsagephiole]. Ihr braucht sie nicht mehr
 step
     .goto Darkshore,39.3,91.8,60,0
     .goto Darkshore,37.38,91.87,100,0
@@ -1915,9 +1915,9 @@ step
 step
     #label Murkdeep
     .goto Darkshore,36.64,76.53
-    >>Tötet |cRXP_ENEMY_Greymist Warriors|r und |cRXP_ENEMY_Greymist Hunters|r im Lager
-    >>|cRXP_WARN_Bewegt euch zum Freudenfeuer in der Mitte des Lagers, um|r Gurgelbacke|cRXP_ENEMY_ zu beschwören|r
-    >>Tötet |cRXP_ENEMY_Gurgelbacke|r. Er wird aus dem Wasser herbeirennen.
+    >>Tötet |cRXP_ENEMY_Grauflossenwurf-Krieger|r und |cRXP_ENEMY_Grauflossenwurf-Jäger|r im Lager
+    >>|cRXP_WARN_Bewegen euch zum Freudenfeuer in der Mitte des Lagers, um|r |cRXP_ENEMY_Gurgelbacke|r herbeizurufen
+    >>Tötet |cRXP_ENEMY_Gurgelbacke|r. Er kommt aus dem Wasser herangelaufen
     .complete 4740,1
     .unitscan Murkdeep
     .mob Greymist Warrior

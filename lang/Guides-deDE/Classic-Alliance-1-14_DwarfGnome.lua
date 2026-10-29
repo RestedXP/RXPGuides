@@ -107,7 +107,7 @@ step << Warrior/Warlock
     #optional
     #requires WarriorHS
     #completewith WolfMeat
-	.destroy 6948 >> Zerstört den |T134414:0|t[Ruhestein] aus der Tasche von Euch, da er nicht mehr benötigt wird
+	.destroy 6948 >> Entfernt den |T134414:0|t[Ruhestein] aus den Taschen von Euch, da er nicht mehr benötigt wird
 --XX Era Warriors, Era Softcore Warlocks drop HS
 step << Warlock
     #season 0,1
@@ -440,7 +440,7 @@ step
     #label Talin
     .goto Dun Morogh,22.601,71.433
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Talin Keeneye|r
-    .turnin 233 >> Gebt die Quest Postbeförderung im Coldridgetal ab
+    .turnin 233 >> Gebt die Quest Postbeförderung im Eisklammtal ab
     .accept 234 >> Akzeptiert die Quest Postbeförderung im Coldridgetal
     .target Talin Keeneye
 step
@@ -520,7 +520,7 @@ step
     #label Rockjaw
     .goto 1426,25.077,75.711
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Grelin Whitebeard|r
-    .turnin 234 >> Gebt die Quest Postbeförderung im Coldridgetal ab
+    .turnin 234 >> Gebt die Quest Postbeförderung im Eisklammtal ab
     .accept 182 >> Akzeptiert die Quest Die Trollhöhle
     .target Grelin Whitebeard
 step << Hunter
@@ -652,7 +652,7 @@ step << Warlock
     .goto Dun Morogh,30.087,71.563
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Adlin Pridedrift|r
     >>Verkauft Müll
-    >>|cRXP_BUY_Kauft 15|r |T132794:0|t[Erfrischendes Quellwasser] |cRXP_BUY_von ihm|r
+    >>|cRXP_BUY_Kauft 15|r |T132794:0|t[Erfrischendes Quellwasser] |cRXP_BUY_bei ihm|r
     .collect 159,15 --Collect Refreshing Spring Water (x15)
     .target Adlin Pridedrift
     .xp >6,1
@@ -2072,7 +2072,7 @@ step << Warrior/Paladin/Rogue
     #optional
     .goto Dun Morogh,50.01,50.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Yarr Hammerstone|r innerhalb unten
-    .train 2575 >>Erlernt |T134708:0|t[Bergbau]
+    .train 2575 >>Erlerne |T134708:0|t[Bergbau]
     .target Yarr Hammerstone
     .train 2018,3 --Blacksmithing
 step << Warrior/Paladin/Rogue
@@ -2828,7 +2828,7 @@ step << Priest
 step << Warrior/Rogue/Paladin
     .goto Dun Morogh,47.180,52.610
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Thamner Pol|r
-    .train 3273 >> Erlernt |T135966:0|t[Erste Hilfe]
+    .train 3273 >> Erlerne |T135966:0|t[Erste Hilfe]
     .target Thamner Pol
     .money <0.01
 step << Gnome Warrior
@@ -2962,7 +2962,7 @@ step << Gnome Rogue/Dwarf Rogue
     .goto 1455,59.236,14.974,30,0
     .goto 1455,52.941,12.466,12,0
     .goto 1455,51.919,14.468,12,0
-    .goto 1455,51.438,16.000,10 >>Reisen zu |cRXP_FRIENDLY_Hulfdan Blackbeard|r innerhalb unten
+    .goto 1455,51.438,16.000,10 >>Reist zu |cRXP_FRIENDLY_Hulfdan Blackbeard|r innerhalb unten
 step << Gnome Rogue/Dwarf Rogue
     #xprate >1.59
     .goto Ironforge,51.958,14.838
@@ -3444,7 +3444,7 @@ step
 step
     #label Rudra
     .goto Dun Morogh,63.082,49.851
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Rudra Amberstill|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Rudra Bernruh|r
     .accept 314 >> Akzeptiert die Quest Die Herde beschützen
     .target Rudra Amberstill
 step << Warrior/Mage
@@ -3487,7 +3487,7 @@ step << Mage
     .use 203753
 step
     .goto Dun Morogh,63.082,49.851
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Rudra Amberstill|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Rudra Bernruh|r
     .turnin 314 >> Gebt die Quest Die Herde beschützen ab
     .target Rudra Amberstill
 step
@@ -3759,7 +3759,7 @@ step
     .goto Dun Morogh,83.892,39.188,20 >> Reisen zu |cRXP_FRIENDLY_Pilot Hammerfoot|r
 step
     .goto Dun Morogh,83.892,39.188
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Pilot Hammerfoot|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Pilot Hammerfuß|r
     .accept 419 >> Akzeptiert die Quest Der vermisste Pilot
     .target Pilot Hammerfoot
 step
@@ -3797,7 +3797,7 @@ step << Mage
 step
     #xprate <1.49 << Rogue
     .goto Dun Morogh,83.892,39.188
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Pilot Hammerfoot|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Pilot Hammerfuß|r
     >>|cRXP_WARN_Wählt den|r |T135641:0|t[Handwerkerdolch] |cRXP_WARN_. Sichert ihn für später|r << Rogue
     .turnin 417 >> Gebt die Quest Pilotenrache ab << !Rogue
     .turnin 417,1 >> Gebt die Quest Pilotenrache ab << Rogue
@@ -3805,7 +3805,7 @@ step
 step << Rogue
     #xprate >1.49
     .goto Dun Morogh,83.892,39.188
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Pilot Hammerfoot|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Pilot Hammerfuß|r
     >>|cRXP_WARN_Wählt den|r |T135641:0|t[Handwerkerdolch]
     .turnin 417,1 >> Gebt die Quest Pilotenrache ab
     .target Pilot Hammerfoot
@@ -4010,7 +4010,7 @@ step << Human
     #xprate <1.59
     #label Stormpike1
     .goto Loch Modan,24.77,18.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gebirgsjäger Stormpike|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gebirgsjäger Sturmlanze|r
     .turnin 1339 >> Gebt die Quest Gebirgsjäger Stormpikes Aufgabe ab
     .accept 1338 >> Akzeptiert die Quest Stormpikes Bestellung
     .accept 307 >> Akzeptiert die Quest Schmutzige Pfoten
@@ -4020,7 +4020,7 @@ step << Human
     #xprate >1.59
     #label Stormpike1
     .goto Loch Modan,24.77,18.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gebirgsjäger Stormpike|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gebirgsjäger Sturmlanze|r
     .turnin 1339 >> Gebt die Quest Gebirgsjäger Stormpikes Aufgabe ab
     .accept 1338 >> Akzeptiert die Quest Stormpikes Bestellung << Mage/Warlock/Rogue
     .accept 307 >> Akzeptiert die Quest Schmutzige Pfoten
@@ -4279,7 +4279,7 @@ step
     .goto Ironforge,25.800,75.500,-1
     .goto Ironforge,24.200,74.600,-1
     .goto Ironforge,23.800,71.800,-1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit einem |cRXP_FRIENDLY_Auktionator in Eisenschmiede|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit einem |cRXP_FRIENDLY_Ironforge Auktionator|r
     >>|cRXP_BUY_Kauft|r |T133970:0|t|cRXP_LOOT_[Brocken Eberfleisch]|r |cRXP_BUY_und/oder|r |T133970:0|t|cRXP_LOOT_[Sehniges Wolfsfleisch]|r |cRXP_BUY_um eure|r |T133971:0|t[Kochkunst] |cRXP_BUY_später zu skillen|r
     >>|cRXP_WARN_Ihr braucht 50|r |T133971:0|t[Kochkunst]|cRXP_WARN_ für eine spätere Quest in Dunkelhain.|r
     >>|cRXP_WARN_Falls ihr das nicht wollt oder könnt, überspringt diesen Schritt|r
@@ -4308,7 +4308,7 @@ step
     .goto Ironforge,25.800,75.500,-1
     .goto Ironforge,24.200,74.600,-1
     .goto Ironforge,23.800,71.800,-1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit einem |cRXP_FRIENDLY_Auktionator in Eisenschmiede|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit einem |cRXP_FRIENDLY_Ironforge Auktionator|r
     >>|cRXP_WARN_Falls ihr das nicht wollt oder könnt, überspringt diesen Schritt|r
     >>|cRXP_BUY_Kauft die folgenden Gegenstände für einen schnelleren Abschluss in Loch Modan in Kürze:|r
     >>|T134342:0|t[Ebergedärme]
@@ -4340,7 +4340,7 @@ step << Dwarf Paladin
     .goto 1455,22.014,4.533,10,0
     .goto 1455,21.831,7.651,10,0
     .goto 1455,23.766,11.636,10,0
-    .goto 1455,27.622,12.177,12 >> Reisen zu |cRXP_FRIENDLY_Tiza Battleforge|r oben
+    .goto 1455,27.622,12.177,12 >> Reist zu |cRXP_FRIENDLY_Tiza Battleforge|r oben
 step << Dwarf Paladin
     #xprate >1.49
     #label Tiza2
@@ -4568,7 +4568,7 @@ step << Hunter
     .goto Ironforge,70.86,85.83,15 >>Reisen zu |cRXP_FRIENDLY_Belia Thundergranite|r
 step << Hunter
     .goto Ironforge,70.86,85.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Belia Thundergranite|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Belia Donnerstein|r
     .turnin 6086 >> Gebt die Quest Die Ausbildung des Tiers ab
     .target Belia Thundergranite
 step << skip --logout skip << Hunter
@@ -4797,14 +4797,14 @@ step << Warrior
     .target Bartleby
 step << Warrior
     .goto StormwindClassic,74.249,37.244
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Harry Burlguard|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Harry Burlwacht|r
     .turnin 1665 >> Gebt die Quest Bartlebys Becher ab
     .target Harry Burlguard
 step << Warlock
     #optional
     #completewith next
     .goto StormwindClassic,29.2,74.0,20,0
-    .goto StormwindClassic,27.2,78.1,15 >> Geht Zum geschlachtete Lamm und dann in den Keller
+    .goto StormwindClassic,27.2,78.1,15 >> Geh ins geschlachtete Lamm und dann in den Keller
 step << Warlock
     .goto StormwindClassic,26.117,77.225
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Ursula Deline|r
@@ -4847,7 +4847,7 @@ RXPGuides.RegisterGuide([[
 step
     #completewith next
     .goto StormwindClassic,29.2,74.0,20,0
-    .goto StormwindClassic,27.2,78.1,15 >> Geht Zum geschlachtete Lamm und dann in den Keller
+    .goto StormwindClassic,27.2,78.1,15 >> Geh ins geschlachtete Lamm und dann in den Keller
 step
     .goto StormwindClassic,25.25,78.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gakin der Dunkelbinder|r
@@ -4864,7 +4864,7 @@ step
     .goto StormwindClassic,73.2,92.1
     .zone Elwynn Forest >> Verlasst Sturmwind
 step
-    >>Klickt das|cRXP_PICK_Gesucht-Plakat|r
+    >>Klickt das |cRXP_PICK_Gesucht-Plakat|r
     .accept 176 >> Akzeptiert die Quest Gesucht: "Hogger"
     .goto Elwynn Forest,24.548,74.672
     .target Deputy Rainer
@@ -5050,7 +5050,7 @@ step
     #ah
     #optional
     .goto Stormwind City,53.612,59.764
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Auktionator Jaxon|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Auktionatorin Jaxon|r
     >>|cRXP_WARN_Falls ihr das nicht wollt oder könnt, überspringt diesen Schritt|r
     >>|cRXP_BUY_Kauft die folgenden Gegenstände für einen schnelleren Abschluss in Loch Modan in Kürze:|r
     >>|T134342:0|t[Ebergedärme]
@@ -5066,7 +5066,7 @@ step
     #optional
     #completewith next
     .goto StormwindClassic,29.2,74.0,20,0
-    .goto StormwindClassic,27.2,78.1,15 >> Geht Zum geschlachtete Lamm und dann in den Keller
+    .goto StormwindClassic,27.2,78.1,15 >> Geh ins geschlachtete Lamm und dann in den Keller
 step
     .goto StormwindClassic,26.117,77.225
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Ursula Deline|r
@@ -5122,7 +5122,7 @@ step << Warlock
     +Wirkt |T136126:0|t[Aderlass] wiederholt bis ihr <10 Prozent Gesundheit habt, während ihr auf dem Weg zu |cRXP_FRIENDLY_Dungar Longdrink|r seid
 step
     .goto StormwindClassic,66.277,62.137
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Dungar Longdrink|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Dungar Trinkfest|r
     .fp Stormwind >> Holt euch den Flugpunkt in Sturmwind
     .target Dungar Longdrink
 step << Warlock
@@ -5350,10 +5350,10 @@ step << Paladin
     .turnin 176,2 >> Gebt die Quest Gesucht: "Hogger" ab
     .isQuestComplete 176
 step << Warlock
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Marshall Dughan|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Marschall Dughan|r
     .target Marshal Dughan
     .goto Elwynn Forest,42.108,65.928
-    .turnin 62 >> Die Tiefenschachtmine abgeben
+    .turnin 62 >> Die Fargodeep Mine abgeben
     .turnin 40 >> Gebt die Quest Gefahr aus dem Wasser ab
     .accept 35 >> Weitere Sorgen annehmen
     .turnin 176,3 >> Gebt die Quest Gesucht: "Hogger" ab
@@ -5630,7 +5630,7 @@ step
 step << Warlock
     #completewith next
     .goto StormwindClassic,29.2,74.0,20,0
-    .goto StormwindClassic,27.2,78.1,15 >> Geht Zum geschlachtete Lamm und dann in den Keller
+    .goto StormwindClassic,27.2,78.1,15 >> Geh ins geschlachtete Lamm und dann in den Keller
 step << Warlock
     .goto StormwindClassic,26.117,77.225
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Ursula Deline|r
@@ -5765,8 +5765,8 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Salma Saldean|r
     .target Salma Saldean
     .goto Westfall,56.40,30.50
-    .turnin 36 >> Gebt die Quest Westfall-Eintopf ab
-    .accept 38 >> Akzeptiert die Quest Westfall-Eintopf
+    .turnin 36 >> Gebt die Quest Westfalleintopf ab
+    .accept 38 >> Akzeptiert die Quest Westfalleintopf
     .accept 22 >> Akzeptiert die Quest Pastete aus Geiferzahnleber
 step
     #softcore
@@ -6483,7 +6483,7 @@ step
     #optional
     #completewith FlintTinder
     .goto 1432,35.273,47.750,10,0
-    .goto 1432,35.433,48.243,12 >> BETRETET das Gasthaus zum Starkbierlager
+    .goto 1432,35.433,48.243,12 >> BETRETET den Gasthof zum Starkbierlager
 step
     .goto Loch Modan,34.828,49.283
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Vidra Hearthstove|r
@@ -6559,11 +6559,11 @@ step
     #optional
     #completewith next
     .goto Loch Modan,24.78,70.17,10,0
-    .goto Loch Modan,23.73,75.52,15 >> Lauft den Erdpfad hinauf und springt dann in den Bunker hinein
+    .goto Loch Modan,23.73,75.52,15 >> Lauft den Schmutzpfad hinauf und springt dann in den Bunker hinunter
 step
     #label TroggEnd
     .goto Loch Modan,23.233,73.675
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Captain Rugelfuss|r im Bunker
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Hauptmann Rugelfuß|r im Bunker
     .turnin 267 >> Gebt die Quest Die Bedrohung durch die Troggs ab
     .target Captain Rugelfuss
     .isQuestComplete 267 << !Dwarf/!Paladin
@@ -8172,7 +8172,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Senir Whitebeard|r
     .target Senir Whitebeard
     .goto Dun Morogh,46.726,53.826
-    .turnin 287 >> Gebt die Quest Höhle der Frostmane ab
+    .turnin 287 >> Gebt die Quest Höhle der Frostmähnen ab
     .accept 291 >> Akzeptiert die Quest Die Berichte
 step
 #xprate <1.5
@@ -8257,7 +8257,7 @@ step << skip
     .goto Dun Morogh,68.4,54.5
     .train 2550 >> Erlernt Kochkunst von Ghilm
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Gebirgsjäger Gerstenbräu|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Mountaineer Barleybrew|r
     .target Mountaineer Barleybrew
     .goto Dun Morogh,79.6,50.7,50,0
     .goto Dun Morogh,82.3,53.5,25,0
@@ -8343,7 +8343,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Golnir Bouldertoe|r
     .target Golnir Bouldertoe
     .goto Ironforge,51.521,26.311
-    .turnin 6391 >> Gebt die Quest Flug nach Eisenschmiede ab
+    .turnin 6391 >> Gebt die Quest Fahrt nach Eisenschmiede ab
     .accept 6388 >> Akzeptiert die Quest Gryth Thurden
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Senator Barin Redstone|r
@@ -8553,7 +8553,7 @@ step
     .complete 224,2 --Kill Stonesplinter Scout (x10)
     .mob +Stonesplinter Scout
     .complete 267,1 --Collect Trogg Stone Tooth (x8)
-    .mob +Splittersteintrogg
+    .mob +Stonesplinter Trogg
     .mob +Stonesplinter Scout
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Gebirgsjäger Cobbleflint|r
@@ -8670,7 +8670,7 @@ step
     .target Monty
     .turnin 6661 >> Gebt die Quest Tiefenbahn-Ratten-Razzia ab
     .timer 11,Tiefenbahn-Ratteten-Razzia RP
-    .accept 6662 >> Akzeptiert die Quest Mein Bruder Nipsy
+    .accept 6662 >> Akzeptiert die Quest Mein Bruder Nipsy...
 step
     #completewith next
     .zone Stormwind City >> Nehmt die Tiefenbahn nach Sturmwind

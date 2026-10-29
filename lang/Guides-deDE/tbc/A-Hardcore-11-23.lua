@@ -517,7 +517,7 @@ step
 step
 #map Darkshore
     .goto Felwood,25.15,4.61
-    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4723 >> Akzeptiert die Quest Gestrandete Meereskreatur
 step
 #map Darkshore
@@ -906,7 +906,7 @@ step
     .accept 4722 >> Akzeptiert die Quest Gestrandete Meeresschildkröte
 step
     .goto 1439/1,579.500,5240.300
-    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4728 >>Akzeptiert die Quest Gestrandete Meereskreatur
 step
     #requires bears1A
@@ -4002,7 +4002,7 @@ step << Dwarf Rogue
     #optional
     #sticky
     #label AntiVenomEnd2
-    .cast 20594 >>|cRXP_WARN_Wirkt|T136225:0|t[Steingestalt],um|T136230:0|t[Berührung von Zanzil] Debuff zu entfernen|r
+    .cast 20594 >>|cRXP_WARN_Wirkt |T136225:0|t[Steingestalt], um |T136230:0|t[Berührung von Zanzil]-Debuff zu entfernen|r
     .aura -9991
 step << Rogue
 .dungeon DM
@@ -4398,7 +4398,7 @@ step
     .goto Darkshore,61.40,9.40,0
     .goto Darkshore,62.42,7.67,0
     >>Tötet |cRXP_ENEMY_Mondpirscherpatriarch|r und |cRXP_ENEMY_Mondpirschermatriarchin|r. Plündert sie für ihre |cRXP_LOOT_Pelze|r
-    >>|cRXP_WARN_Passt auf |cRXP_ENEMY_Mondpirscher Matriarchs|r auf. Sie greifen immer mit einem |cRXP_ENEMY_Mondpirscher Mondpirscherwicht|r an ihrer Seite an|r
+    >>|cRXP_WARN_Seid vorsichtig vor den |cRXP_ENEMY_Mondpirschermatriarchin|r. Sie greifen immer mit einem |cRXP_ENEMY_Mondpirscherwicht|r an ihrer Seite an|r
     .complete 986,1 -- Fine Moonstalker Pelt (5)
     .mob Moonstalker Sire
     .mob Moonstalker Matriarch
@@ -4433,7 +4433,7 @@ step
 step
     #optional
     #sticky
-    .destroy 7442 >> Entfernt Gyromast's Schlüssel aus dem Inventar von Euch
+    .destroy 7442 >> Zerstört Gyromast's Schlüssel aus eurem Inventar
 step
     .goto 1439,54.973,24.885
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Balthule Schattenhieb|r
@@ -4743,7 +4743,7 @@ step
     .complete 945,1 --Escort Therylune away from the Master's Glaive (1)
 step
     .goto Ashenvale,13.97,4.10
-    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4733 >> Akzeptiert die Quest Gestrandete Meereskreatur
     >>|cRXP_WARN_Diese Quest kann SEHR schwierig sein. Bekämpft die |cRXP_ENEMY_Murlocs|r einzeln, Andernfalls könntest du die Aggro von mehreren gleichzeitig auf dich ziehen.|r
     .link https://youtu.be/lfQM3Q-Ag5A >> |cRXP_WARN_Klickt hier für einen Videoleitfaden|r
@@ -4759,7 +4759,7 @@ step
 step
 #map Darkshore
     .goto Felwood,14.62,60.72
-    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4730 >> Akzeptiert die Quest Gestrandete Meereskreatur
 step
     .goto 1439,35.724,83.696
@@ -5945,7 +5945,7 @@ step
 #optional
     .goto Darkshore,32.44,43.71
     .zone Wetlands >> Nimm das Boot zum Hafen von Menethil
-    >>|cRXP_WARN_Level your|r |T135966:0|t[First Aid]|cRXP_WARN_while waiting for the Menethil Harbor boat|r
+    >>|cRXP_WARN_Level eure|r |T135966:0|t[Erste Hilfe]|cRXP_WARN_während ihr auf das Boot nach Menethil wartet|r
     .skill firstaid,<1,1
 step
     #label MeneBoat

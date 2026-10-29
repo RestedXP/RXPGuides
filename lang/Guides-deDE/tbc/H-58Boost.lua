@@ -34,7 +34,7 @@ step << Mage
     .goto Orgrimmar,38.66,85.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit|r |cRXP_FRIENDLY_Thuul|r oben auf der Hütte
     .train 3567 >> Erlernt |T135759:0|t[Teleportieren: Orgrimmar]
-    .train 11417 >> Erlernen |T135744:0|t[Portal: Orgrimmar]
+    .train 11417 >> Erlernt |T135744:0|t[Portal: Orgrimmar]
     .target Thuul
 step << Warlock
     .goto Orgrimmar,47.52,46.73
@@ -177,7 +177,7 @@ step
 step
     .goto Western Plaguelands,39.46,66.76
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Chromie|r auf der obersten Etage der Taverne
-    .accept 4971 >>Eine Frage der Zeit annehmen
+    .accept 4971 >>Akzeptiert die Quest Eine Frage der Zeit
 	.target Chromie
 step
     .goto Western Plaguelands,44.24,63.06
@@ -354,7 +354,7 @@ step
 	.goto Western Plaguelands,39.46,66.76
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Chromie|r auf der obersten Etage der Taverne
     .turnin 4971 >>Gebt die Quest Eine Frage der Zeit ab
-    .accept 4972 >>Tempus fugit annehmen
+    .accept 4972 >>Akzeptiert die Quest Tempus fugit
 	.target Chromie
 step
 	#completewith next
@@ -440,7 +440,7 @@ step
 	.goto Western Plaguelands,51.00,53.20,70,0
 	.goto Western Plaguelands,50.00,46.60,70,0
 	.goto Western Plaguelands,47.80,43.40,70,0
-	>>Kill |cRXP_ENEMY_Diseased Wolves|r
+	>>Tötet |cRXP_ENEMY_Kranke Wölfe|r
 	>>|cRXP_ENEMY_Diseased Wolves|r |cRXP_WARN_share spawns with|r |cRXP_ENEMY_Aaslauerer|r|cRXP_WARN_. If necessary, kill them to reset the area|r
     .complete 4984,1 --Diseased Wolf (8)
 	.unitscan Diseased Wolf
@@ -457,7 +457,7 @@ step
     .goto Western Plaguelands,60.15,59.93,90,0
     .goto Western Plaguelands,59.43,52.40,90,0
     .goto Western Plaguelands,68.18,46.23,90,0
-	>>Töte |cRXP_ENEMY_Kranker Grizzly|r
+	>>Tötet |cRXP_ENEMY_kranke Grizzlies|r
 	>>|cRXP_ENEMY_Kranker Grizzly|r |cRXP_WARN_share spawns with|r |cRXP_ENEMY_Plague Lurkers|r|cRXP_WARN_. If necessary, kill them to reset the area|r
     .complete 4985,1 --Diseased Grizzly (8)
 	.unitscan Diseased Grizzly
@@ -469,12 +469,12 @@ step
 step
 	.goto Eastern Plaguelands,27.28,85.22
 	>>Klick auf das big |cRXP_PICK_Torn Scroll|ron the ground inside the crypt
-    .accept 6024 >>Hameyas Bitte annehmen
+    .accept 6024 >>Akzeptiert die Quest Hameyas Bitte
 step
     .goto Eastern Plaguelands,36.47,90.80
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Pamela|r
     .turnin 5142 >>Gebt die Quest Klein-Pamela ab
-    .accept 5149 >>Akzeptiert die Quest Pamelas Puppe
+    .accept 5149 >>Pamelas Puppe annehmen
 	.target Pamela Redpath
 step
     .goto Eastern Plaguelands,38.10,92.24
@@ -520,11 +520,11 @@ step
     .isQuestTurnedIn 5149
 step
 	#completewith RottingUndead
-	.subzone 2264 >> Reist nach Corin's Crossing
+	.subzone 2264 >> Travel to Corin's Crossing (NOT TRANSLATED IN :deDE YET)
 step
 	#completewith next
 	>>Tötet |cRXP_ENEMY_Untote|r. Plündert sie für |cRXP_LOOT_Lebendige Fäulnis|r.
-	>>|cRXP_WARN_Gruppen von Elites patroullieren auf der nördlichen und östlichen Straße. Unsichtbare Mobs patroullieren im Innern von Corins Kreuzung, also versucht, Mobs herauszuziehen|r
+	>>|cRXP_WARN_Groups of elites patrol the north and east road. Invisible mobs patrol inside of Corin's Crossing, so try to pull mobs out|r (NOT TRANSLATED IN :deDE YET)
 	.collect 15447,7 --Living Rot (7)
 	.mob Hate Shrieker
 	.mob Scourge Warder
@@ -761,7 +761,7 @@ step
     .goto Western Plaguelands,39.46,66.76
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Chromie|r auf der obersten Etage der Taverne
     .turnin 5153 >>Gebt die Quest Ein seltsamer Historiker ab
-    .accept 5154 >>Die Annalen von Darroheim annehmen
+    .accept 5154 >>Akzeptiert die Quest Die Annalen von Darrowshire
     .turnin 4972 >>Gebt die Quest Tempus fugit ab
 	.target Chromie
 step
@@ -773,8 +773,8 @@ step
 step
     .goto Western Plaguelands,39.46,66.76
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Chromie|r auf der obersten Etage der Taverne
-    .turnin 5154 >>Gebt die Quest Die Annalen von Darroheim ab
-    .accept 5210 >>Bruder Carlin annehmen
+    .turnin 5154 >>Gebt die Quest Die Annalen von Darrowshire ab
+    .accept 5210 >>Akzeptiert die Quest Bruder Carlin
 	.target Chromie
 step
     .goto Western Plaguelands,53.73,64.66
@@ -816,7 +816,7 @@ step
 step
     .goto Western Plaguelands,39.46,66.76
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Chromie|r auf der obersten Etage der Taverne
-    .turnin 5154 >>Gebt die Quest Die Annalen von Darroheim ab
+    .turnin 5154 >>Gebt die Quest Die Annalen von Darrowshire ab
 	.target Chromie
 step
 	#completewith next
@@ -834,7 +834,7 @@ step
 step
     .goto Tirisfal Glades,83.15,68.92
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Derrington|r
-    .turnin 5238 >>Gebt die Quest Mission erfüllt! ab
+    .turnin 5238 >>Gebt die Quest Mission erfüllt ab
 	.target High Executor Derrington
 step << skip
     .goto Tirisfal Glades,61.87,59.11

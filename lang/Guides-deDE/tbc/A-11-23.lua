@@ -767,7 +767,7 @@ step
 step << Draenei
 #xprate <1.5
     .goto 1439/1,579.500,5240.300
-    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4728 >>Akzeptiert die Quest Gestrandete Meereskreatur
 step
 #xprate <1.5
@@ -3189,7 +3189,7 @@ step << Dwarf Rogue
     #optional
     #sticky
     #label AntiVenomEnd2
-    .cast 20594 >>|cRXP_WARN_Wirkt|T136225:0|t[Steingestalt],um|T136230:0|t[Berührung von Zanzil] Debuff zu entfernen|r
+    .cast 20594 >>|cRXP_WARN_Wirkt |T136225:0|t[Steingestalt], um |T136230:0|t[Berührung von Zanzil]-Debuff zu entfernen|r
     .aura -9991
 step << Rogue
 .dungeon DM
@@ -3643,7 +3643,7 @@ step
     .goto Darkshore,61.40,9.40,0
     .goto Darkshore,62.42,7.67,0
     >>Tötet |cRXP_ENEMY_Mondpirscherpatriarch|r und |cRXP_ENEMY_Mondpirschermatriarchin|r. Plündert sie für ihre |cRXP_LOOT_Pelze|r
-    >>|cRXP_WARN_Passt auf |cRXP_ENEMY_Mondpirscher Matriarchs|r auf. Sie greifen immer mit einem |cRXP_ENEMY_Mondpirscher Mondpirscherwicht|r an ihrer Seite an|r
+    >>|cRXP_WARN_Seid vorsichtig vor den |cRXP_ENEMY_Mondpirschermatriarchin|r. Sie greifen immer mit einem |cRXP_ENEMY_Mondpirscherwicht|r an ihrer Seite an|r
     .complete 986,1 -- Fine Moonstalker Pelt (5)
     .mob Moonstalker Sire
     .mob Moonstalker Matriarch

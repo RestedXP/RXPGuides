@@ -2610,7 +2610,7 @@ step << Priest/Paladin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit einem |cRXP_FRIENDLY_Ironforge Auktionator|r
     >>|cRXP_BUY_Kauft|r |T133970:0|t|cRXP_LOOT_[Brocken Eberfleisch]|r |cRXP_BUY_und/oder|r |T133970:0|t|cRXP_LOOT_[Sehniges Wolfsfleisch]|r |cRXP_BUY_um eure|r |T133971:0|t[Kochkunst] |cRXP_BUY_später zu skillen|r
     >>|cRXP_WARN_Ihr braucht 50|r |T133971:0|t[Kochkunst]|cRXP_WARN_ für eine spätere Quest in Dunkelhain.|r
-    >>|cRXP_BUY_Buy the following items for faster turn ins at Darkshore shortly:|r (NOT TRANSLATED IN :deDE YET)
+    >>|cRXP_BUY_Kauft die folgenden Gegenstände bald für schnellere Abgaben in Dunkelküste:|r
     >>|cRXP_WARN_Falls ihr das nicht wollt oder könnt, überspringt diesen Schritt|r
     >>|T133972:0|t[Schreiterfleisch]
     >>|T133912:0|t[Dunkelküstenbarsch]
@@ -2821,7 +2821,7 @@ step << Rogue/Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Auktionatorin Jaxon|r
     >>|cRXP_BUY_Kauft|r |T133970:0|t|cRXP_LOOT_[Brocken Eberfleisch]|r |cRXP_BUY_und/oder|r |T133970:0|t|cRXP_LOOT_[Sehniges Wolfsfleisch]|r |cRXP_BUY_um eure|r |T133971:0|t[Kochkunst] |cRXP_BUY_später zu skillen|r
     >>|cRXP_WARN_Ihr braucht 50|r |T133971:0|t[Kochkunst]|cRXP_WARN_ für eine spätere Quest in Dunkelhain.|r
-    >>|cRXP_BUY_Buy the following items for faster turn ins at Darkshore shortly:|r (NOT TRANSLATED IN :deDE YET)
+    >>|cRXP_BUY_Kauft die folgenden Gegenstände bald für schnellere Abgaben in Dunkelküste:|r
     >>|cRXP_WARN_Falls ihr das nicht wollt oder könnt, überspringt diesen Schritt|r
     >>|T133972:0|t[Schreiterfleisch]
     >>|T133912:0|t[Dunkelküstenbarsch]
@@ -5074,7 +5074,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit einem |cRXP_FRIENDLY_Ironforge Auktionator|r
     >>|cRXP_BUY_Kauft|r |T133970:0|t|cRXP_LOOT_[Brocken Eberfleisch]|r |cRXP_BUY_und/oder|r |T133970:0|t|cRXP_LOOT_[Sehniges Wolfsfleisch]|r |cRXP_BUY_um eure|r |T133971:0|t[Kochkunst] |cRXP_BUY_später zu skillen|r
     >>|cRXP_WARN_Ihr braucht 50|r |T133971:0|t[Kochkunst]|cRXP_WARN_ für eine spätere Quest in Dunkelhain.|r
-    >>|cRXP_BUY_Buy the following items for faster turn ins at Darkshore shortly:|r (NOT TRANSLATED IN :deDE YET)
+    >>|cRXP_BUY_Kauft die folgenden Gegenstände bald für schnellere Abgaben in Dunkelküste:|r
     >>|cRXP_WARN_Falls ihr das nicht wollt oder könnt, überspringt diesen Schritt|r
     >>|T133972:0|t[Schreiterfleisch]
     >>|T133912:0|t[Dunkelküstenbarsch]

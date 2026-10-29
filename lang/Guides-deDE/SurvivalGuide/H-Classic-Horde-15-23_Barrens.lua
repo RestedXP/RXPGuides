@@ -373,7 +373,7 @@ step << skip --!Tauren
     .dungeon RFC
 step << skip --!Tauren
     #completewith RFCPickups
-    .goto Thunder Bluff,50.75,37.07,40 >> Nehmt den Aufzug nach Donnerfels
+    .goto Thunder Bluff,50.75,37.07,40 >> Nehmt den Aufzug nach Donnerfels hinauf
     .dungeon RFC
 step << Tauren
     #completewith RFCPickups
@@ -681,7 +681,7 @@ step
     .isOnQuest 872
 step
     #completewith next
-    >>Plündert |cRXP_PICK_Kreuzweg-Versorgungskisten|r. Es hat mehrere Spawn-Orte
+    >>Plündert |cRXP_PICK_Versorgungskisten des Kreuzwegs|r. Es gibt mehrere Spawnpunkte
     .complete 5041,1 --Crossroads' Supply Crates (1)
     .isOnQuest 5041
 step
@@ -788,7 +788,7 @@ step << Troll Warrior/Undead Warrior
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.9
 step << Orc Warrior
     .goto The Barrens,62.24,37.48
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Sprecht mit|r |cRXP_FRIENDLY_Eisenzar|r|cRXP_BUY_. Kauft einen|r |T132394:0|t[Hakenaxt] |cRXP_BUY_von ihm|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Sprecht mit|r |cRXP_FRIENDLY_Eisenzar|r|cRXP_BUY_. Kauft bei ihm eine|r |T132394:0|t[Hakenaxt]
     .collect 2025,1,895,1 --Collect Bearded Axe (1)
     .money <0.5304
     .itemStat 16,QUALITY,<7
@@ -1008,7 +1008,7 @@ step << Shaman
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.9
 step << Rogue
     .goto The Barrens,62.24,37.48
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Sprecht mit|r |cRXP_FRIENDLY_Eisenzar|r|cRXP_BUY_. Kauft einen|r |T135343:0|t[Krummsäbel] |cRXP_BUY_von ihm.|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Eisenzar|r|cRXP_BUY_. Buy a|r |T135343:0|t[Scimitar] |cRXP_BUY_from him.|r
     .collect 2027,1,850,1 --Collect Scimitar (1)
     .money <0.3815
     .itemStat 16,QUALITY,<7
@@ -1016,7 +1016,7 @@ step << Rogue
     .target Ironzar
 step << Rogue
     .goto The Barrens,62.24,37.48
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Sprecht mit|r |cRXP_FRIENDLY_Eisenzar|r|cRXP_BUY_. Kauft einen zweiten|r |T135343:0|t[Krummsäbel] |cRXP_BUY_von ihm für die Nebenhand von Euch.|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Eisenzar|r|cRXP_BUY_. Buy a second|r |T135343:0|t[Scimitar] |cRXP_BUY_from him for your off-hand.|r
     .collect 2027,2,850,1 --Collect Scimitar (1)
     .money <0.3815
     .itemStat 17,QUALITY,<7
@@ -1121,7 +1121,7 @@ step
 step
     .goto The Barrens,42.82,23.52
     >>Tötet |cRXP_ENEMY_Barak Kodobann|r. Plündert ihn für seinen |cRXP_LOOT_kopf|r
-    >>|cRXP_WARN_Seid vorsichtig! Seine Nahkampfanschläge verursachen viel Schaden und er wird von einem|r |cRXP_ENEMY_Zänker der Kolkar|r|cRXP_WARN_ geschützt. Sie können euch fesseln und aus der Ferne auf euch schießen|r
+    >>|cRXP_WARN_Seid vorsichtig! Seine Nahkampftreffer verursachen viel Schaden und er wird von einem|r |cRXP_ENEMY_Zänker der Kolkar|r|cRXP_WARN_ beschützt. Sie können euch mit einem Netz belegen und aus der Distanz auf euch schießen|r
     .complete 850,1 --Kodobane's Head (1)
     .mob Barak Kodobane
 step
@@ -1173,7 +1173,7 @@ step
     .mob Witchwing Roguefeather
 step
     #completewith Samophlange
-    +|cRXP_WARN_Seid vorsichtig vor|r |cRXP_ENEMY_Sunscale Scytheclaws|r |cRXP_WARN_in der Gegend. Sie sind bis zu Stufe 18 und können|r |T132152:0|t[Hauen] |cRXP_WARN_(Aufladungen 2 zusätzliche Anschläge alle 10 Sek.)|r
+    +|cRXP_WARN_Nehmt euch vor|r |cRXP_ENEMY_Sunscale Scytheclaws|r |cRXP_WARN_in der Gegend in Acht. Sie sind bis Stufe 18 und können|r |T132152:0|t[Hauen] |cRXP_WARN_(Aufladungen 2 zusätzliche Angriffe alle 10 Sek.)|r
 step
     #sticky
     #completewith Samophlange
@@ -1195,12 +1195,12 @@ step
     .accept 900 >>Akzeptiert die Quest Samophlang
 step
     .goto The Barrens,52.33,11.57
-    >>Klickt das |cRXP_PICK_Ventil|r
+    >>Klickt |cRXP_PICK_Ventil|r
     >>|cRXP_WARN_Vorsicht! Zwei Mobs werden spawn, nachdem ihr das Ventil ausgeschaltet habt|r
     .complete 900,2 --Shut off Fuel Control Valve (1)
 step
     .goto The Barrens,52.29,11.40
-    >>Klickt das |cRXP_PICK_Ventil|r
+    >>Klickt |cRXP_PICK_Ventil|r
     >>|cRXP_WARN_Ein Mob wird spawnen, nachdem ihr das Ventil ausgeschaltet habt|r
     .complete 900,3 --Shut off Regulator Valve (1)
 step
@@ -1547,7 +1547,7 @@ step
     .goto The Barrens,61.17,5.05,40,0
     .goto The Barrens,61.51,4.43,40,0
     >>Tötet |cRXP_ENEMY_Vollstrecker der Venture Co.|r und |cRXP_ENEMY_Vorarbeiter der Venture Co.|r. Plündert sie für |cRXP_LOOT_Katzenaugensmaragd|r
-    >>|cRXP_WARN_Weicht aus von der Mine. Mobs werden leicht doppelt gezogen und es gibt wenig Platz zum Entkommen|r
+    >>|cRXP_WARN_Vermeidet es, in die Mine zu gehen. Gegner werden leicht doppelt gepullt, und es gibt nur wenig Platz zur Flucht|r
     .complete 896,1 -- Cats Eye Emerald (1)
     .mob Venture Co. Enforcer
     .mob Venture Co. Overseer
@@ -1660,7 +1660,7 @@ step
     .complete 3922,1 --Nugget Slugs (15)
 step
 	#completewith NuggetSlugsTurnIn
-	+|cRXP_WARN_Falls ihr über 15 |cRXP_LOOT_Klumpen Schraubnieten|r|cRXP_WARN_ habt, teilt den Stapel weiterer auf (Umschalt+Klick), dann löscht sie|r
+	+|cRXP_WARN_Falls ihr über 15 |cRXP_LOOT_Klumpen Schraubnieten|r|cRXP_WARN_ habt, teilt den Stapel (Umschalt+Klick) auf und löscht die Extras|r
 step
     #sticky
     #completewith NuggetSlugsTurnIn
@@ -1708,7 +1708,7 @@ step
     .goto The Barrens,49.05,11.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Wenikee|r
     .turnin 3922 >>Gebt die Quest Schraubnieten ab
-    .accept 3923 >>Akzeptiert die Quest Rilli Schmierklump
+    .accept 3923 >>Akzeptiert Rilli Schmierklump
     .target Wenikee Boltbucket
 step
     #loop
@@ -1743,7 +1743,7 @@ step
 	.goto The Barrens,39.87,16.66,50,0
 	.goto The Barrens,40.15,15.98,50,0
     >>Tötet |cRXP_ENEMY_Töterin der Hexenschwingen|r. Plündert sie für ihre |cRXP_LOOT_Ringe|r
-    >>|cRXP_WARN_Seid vorsichtig!|r |cRXP_ENEMY_Witchwing Slayers|r |cRXP_WARN_ können hinrichten. Bleibt über 20% Gesundheit|r
+    >>|cRXP_WARN_Seid vorsichtig!|r |cRXP_ENEMY_Witchwing-Schläger|r |cRXP_WARN_können ausführen. Bleibt über 20% Gesundheit|r
     >>|cRXP_WARN_Passt auf|r |cRXP_ENEMY_Wegelagerin der Hexenschwingen|r|cRXP_WARN_. Sie sind verstohlen und patrouillieren in der Gegend|r
     .complete 875,1 --Harpy Lieutenant Ring (6)
     .mob Witchwing Slayer
@@ -1763,7 +1763,7 @@ step
     .subzoneskip 380
 step
     #completewith next
-    +|cRXP_WARN_Stellt sicher, dass ihr von Euch nicht verkauft|r |T132794:0|t[|cRXP_LOOT_Fläschchen Öl|r]|cRXP_WARN_!|r
+    +|cRXP_WARN_Stellt sicher, dass ihr den|r |T132794:0|t[|cRXP_LOOT_Fläschchen Öl|r]|cRXP_WARN_ von Euch nicht verkauft!|r
     .itemcount 814,5
     .dungeon DM
 step
@@ -1862,7 +1862,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gastwirt Wiley|r
     >>|cRXP_BUY_Kauft|r |T133918:0|t[Roher Langzahniger Matschschnapper] |cRXP_BUY_bei ihm|r
     >>|cRXP_BUY_Kauft|r |T132796:0|t[Melonensaft] |cRXP_BUY_von ihm|r << Mage/Warlock/Priest/Shaman/Druid
-    >>|cRXP_WARN_Sie sind extrem günstig, kauft so viele wie ihr wollt|r
+    >>|cRXP_WARN_Sie sind extrem günstig, kauft so viele, wie ihr wollt|r
     .vendor >> Verkauft Müll
     .collect 4592,40,888,1 --Longjaw Mud Snapper (40)
     .collect 1205,20,888,1 << Mage/Warlock/Priest/Shaman/Druid --Melon Juice (20)
@@ -1896,7 +1896,7 @@ step
     .mob Ornery Plainstrider
 step
     #completewith TestSeeds
-    >>Tötet die |cRXP_ENEMY_Sonnenschuppensensenklaue|r, die ihr seht. Plündert sie für ihre |cRXP_LOOT_Hörner|r und |cRXP_LOOT_Feders|r
+    >>Tötet |cRXP_ENEMY_Sonnenschuppensensenklaue|r, die ihr seht. Plündert sie für |cRXP_LOOT_Hörner|r und |cRXP_LOOT_Federn|r
     >>|cRXP_WARN_Seid vorsichtig denn sie wirken|r |T132152:0|t[Hauen] |cRXP_WARN_(Aufladungen 2 extra Angriffe alle 10 Sek.)|r
     .complete 865,1 --Intact Raptor Horn (5)
     .collect 5165,3,905,3 --Sunscale Feather (3)
@@ -1913,7 +1913,7 @@ step
 step
     #label TestSeeds
     .goto The Barrens,55.61,42.75
-    >>Taucht in der Mitte des Sees unter Wasser und klickt |cRXP_PICK_Blubbernde Kluft|r
+    >>Taucht unter Wasser in der Mitte des Sees und klickt auf |cRXP_PICK_Blubbernde Kluft|r.
     .complete 877,1 --Test the Dried Seeds (1)
 step
     #completewith next
@@ -1934,7 +1934,7 @@ step
     .goto The Barrens,53.41,40.26,50,0
     .goto The Barrens,52.99,44.73,50,0
     .goto The Barrens,54.31,46.81,50,0
-    >>Schleift die |cRXP_ENEMY_Zentauren|r um die Oase. Plündert sie für ihre |cRXP_LOOT_Armschienen|r
+    >>Schleift |cRXP_ENEMY_Zentauren|r rund um die Oase. Plündert sie für |cRXP_LOOT_Armschienen|r
     .complete 855,1 --Centaur Bracers (15)
     .mob Kolkar Bloodcharger
     .mob Kolkar Pack runner
@@ -1952,7 +1952,7 @@ step
     .goto The Barrens,53.41,40.26,50,0
     .goto The Barrens,52.99,44.73,50,0
     .goto The Barrens,54.31,46.81,50,0
-    >>Schleift die |cRXP_ENEMY_Zentauren|r um die Oase. Sobald |cRXP_ENEMY_Verog|r spawnt, tötet ihn und plündert ihn für seinen |cRXP_LOOT_Kopf|r
+    >>Schleift |cRXP_ENEMY_Zentauren|r rund um die Oase. Sobald |cRXP_ENEMY_Verog|r spawnt, tötet ihn und plündert seinen |cRXP_LOOT_Kopf|r
     >>|cRXP_ENEMY_Verog|r |cRXP_WARN_hat eine Chance zu spawnen, jedes Mal wenn ein|r |cRXP_ENEMY_Zentaur|r |cRXP_WARN_besiegt wird|r
     .complete 851,1 --Verog's Head (1)
     .mob Verog the Dervish
@@ -2014,7 +2014,7 @@ step
 step
     #label LizardHorn
     #completewith SetCampTaurajoHS
-    >>Tötet |cRXP_ENEMY_Sturmschnauze|r. Plündert sie für ein |cRXP_LOOT_Horn|r. Dies muss nicht jetzt abgeschlossen werden.
+    >>Tötet |cRXP_ENEMY_Sturmschnauze|r. Plündert sie für ein |cRXP_LOOT_Horn|r. Das muss nicht jetzt erledigt werden.
     .complete 821,3 --Thunder Lizard Horn (1)
     .mob Stormsnout
 step
@@ -2118,12 +2118,12 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Überlebens-Guide (H)
 #subgroup RXP Überlebens-Guide 1-20
-#next 23-25 Vorgebirge des Hügellands
+#next 23-25 Hillsbrad
 
 step
     #optional
     #completewith next
-    >>Brecht die Quest Meldung ab bei Kadrak, um Probleme im Questtagebuch zu vermeiden. Ihr werdet sie später erneut aufheben
+    >>Brecht die Quest Meldung bei Kadrak ab, um Probleme mit eurem Questtagebuch zu vermeiden. Ihr werdet sie später erneut annehmen.
     .abandon 6541 >> Brecht die Quest Meldung bei Kadrak ab
     .isOnQuest 6541
 step
@@ -2204,7 +2204,7 @@ step
     .goto Stonetalon Mountains,49.38,61.68,20,0
     .goto Stonetalon Mountains,48.92,62.71,30,0
     .goto Stonetalon Mountains,48.11,63.88,30,0
-    .goto Stonetalon Mountains,47.21,64.05,30 >> Lauft den Weg nach links hinauf
+    .goto Stonetalon Mountains,47.21,64.05,30 >> Lauft den Pfad links hinauf
     .group
 step
     #label InDeepTrouble
@@ -2326,7 +2326,7 @@ step << Orc Warrior
     .xp <20,1
 step << Tauren Warrior
     .goto Stonetalon Mountains,58.22,51.74
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Sprecht mit|r |cRXP_FRIENDLY_Veenix|r|cRXP_BUY_. Kauft ein|r |T133044:0|t[Zermalmen] |cRXP_BUY_bei ihm|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Sprecht mit|r |cRXP_FRIENDLY_Veenix|r|cRXP_BUY_. Kauft einen|r |T133044:0|t[Zermalmen] |cRXP_BUY_bei ihm|r
     .collect 924,1,899,1 --Collect Maul (1)
     .money <1.0972
     .target Veenix
@@ -2335,7 +2335,7 @@ step << Tauren Warrior
 step << Tauren Warrior
     #optional
     #completewith BluePrints
-    +|cRXP_WARN_Legt an|r |T133044:0|t[Zermalmen]
+    +Rüstet |T133044:0|t[Zermalmen] |cRXP_WARN_aus|r
     .use 924
     .itemcount 924,1
     .itemStat 16,QUALITY,<7
@@ -3233,7 +3233,7 @@ step
     .target Jorn Skyseer
 step << !Tauren
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Quetschzahn|r
-    .aura 16618 >>|cRXP_WARN_Wenn ihr 10|r |T134128:0|t[|cRXP_LOOT_Blutsplitter|r] |cRXP_WARN_übrig habt, benutzt sie, um|r |T136022:0|t[Geist des Windes] |cRXP_WARN_von|r Quetschzahn|cRXP_FRIENDLY_ zu erhalten|r
+    .aura 16618 >>|cRXP_WARN_Falls ihr 10|r |T134128:0|t[|cRXP_LOOT_Blutsplitter|r] |cRXP_WARN_übrig habt, verwendet sie, um bei|r |cRXP_WARN_Quetschzahn|r |cRXP_FRIENDLY_|T136022:0|t[Geist des Windes] zu erhalten|r
     >>|cRXP_WARN_Überspringen diesen Schritt, falls ihr die Donnerfels-Flugroute habt|r
     .itemcount 5075,10
     .target Mangletooth
@@ -3912,7 +3912,7 @@ step
     .isQuestComplete 1491
     .dungeon WC
 step
-    .use 10441 >>Benutzt den |T135229:0|t[|cRXP_LOOT_Leuchtenden Splitter|r], um die Quest anzunehmen
+    .use 10441 >>Benutzt |T135229:0|t[|cRXP_LOOT_Leuchtender Splitter|r] um die Quest zu akzeptieren
     .accept 6981 >> Der leuchtende Splitter annehmen
     .itemcount 10441,1
     .dungeon WC
@@ -4081,7 +4081,7 @@ step
     .group
 step
     #optional
-    >>Brecht die Quest Zentaurenarmschienen ab, falls ihr sie bis zu diesem Punkt nicht abgeschlossen habt
+    >>Falls ihr die Quest Zentaurenarmschienen noch nicht abgeschlossen habt, brecht sie ab.
     .abandon 855 >> Brecht die Quest Zentaurenarmschienen ab
     .isOnQuest 855
 step
@@ -4153,13 +4153,13 @@ step
     .goto Stonetalon Mountains,67.41,87.92,60,0
     .goto Stonetalon Mountains,65.93,89.87,40,0
     .goto Stonetalon Mountains,63.66,93.80,40,0
-    .goto Stonetalon Mountains,61.75,93.06,40 >> Reist in Steinschlagklamm und betretet die nördliche Höhle
+    .goto Stonetalon Mountains,61.75,93.06,40 >> Reist nach Steinschlagklamm und betretet die nördliche Höhle
     .group
 step
     .goto Stonetalon Mountains,60.16,90.92,30,0
     .goto Stonetalon Mountains,58.44,89.90
-    >>Klickt |cRXP_PICK_Resonite Kristalle|r und lauft weit genug in die Höhle, um die Gegend zu untersuchen
-    >>|cRXP_WARN_Seid vorsichtig! Diese Gegner sind stärker, als sie aussehen, und lassen sich leicht doppelt ziehen.|r |cRXP_ENEMY_Gogger Stein Keepers|r |cRXP_WARN_wirken|r |T136026:0|t[Erdschock] |cRXP_WARN_das viel Schaden verursacht!|r
+    >>Greift |cRXP_PICK_Resonite Kristalle|r an und lauft weit genug in die Höhle, um die Gegend zu untersuchen
+    >>|cRXP_WARN_Passt auf! Diese Monster sind stärker als sie aussehen und können leicht doppelt gepullt werden.|r |cRXP_ENEMY_Gogger Felsbewahrer|r |cRXP_WARN_wirkt|r |T136026:0|t[Erdschock] |cRXP_WARN_der einen hohen Schaden verursacht!|r
     .complete 6421,1 --Investigate Cave in Boulderslide Ravine
     .complete 6421,2 --Resonity Crystal (x10)
     .isOnQuest 6421
@@ -4168,12 +4168,12 @@ step << skip
     #completewith next
     .goto Stonetalon Mountains,64.62,93.86,25,0
     .goto Stonetalon Mountains,64.80,95.27,20,0
-    .goto Stonetalon Mountains,64.32,95.84,15 >> Betretet die südliche Höhle in Steinschlagklamm
+    .goto Stonetalon Mountains,64.32,95.84,15 >> BETRETET die südliche Höhle in Steinschlagklamm
     .group
 step << skip
     .goto Stonetalon Mountains,64.28,96.60
-    .goto Thunder Bluff,56.65,18.96,30 >>|cRXP_WARN_Springt über den Felsen auf der rechten Seite. Führt einen Ausloggen-Überspringen durch, indem ihr euren Charakter positioniert, bis es aussieht, als würde er schweben, und loggt euch dann aus und wieder ein|r
-    .link https://www.youtube.com/watch?v=j_DRDkqWeuE&ab >> |cRXP_WARN_KLICKT HIER für ein Beispiel|r
+    .goto Thunder Bluff,56.65,18.96,30 >>|cRXP_WARN_Springt auf den Stein auf der rechten Seite. Macht einen Ausloggen-Überspringen, indem ihr euren Charakter so positioniert, bis es aussieht als würde er schweben, dann meldet euch ab und wieder an.|r
+    .link https://www.youtube.com/watch?v=j_DRDkqWeuE&ab >> |cRXP_WARN_HIER KLICKEN für ein Beispiel|r
     .group
 step
     #completewith next
@@ -4243,7 +4243,7 @@ step
     .goto Stonetalon Mountains,52.46,71.67,50,0
     .goto Stonetalon Mountains,54.80,71.95,50,0
     >>Tötet |cRXP_ENEMY_Besseleth|r. Plündert sie für ihren |cRXP_LOOT_Fangzahn|r
-    >>|cRXP_WARN_Räumt das Gebiet auf, bevor ihr sie pullt. Seid vorsichtig, sie kann euch für 10 Sek. in Netze einwickeln!|r
+    >>|cRXP_WARN_Löscht das Gebiet, bevor ihr sie angreift. Seid vorsichtig, sie kann euch 10 Sek. lang einweben!|r
     .complete 6284,1 --Collect Besseleth's Fang (x1)
 	.unitscan Besseleth
     .group 3
@@ -4258,14 +4258,14 @@ step
 step
     .goto Stonetalon Mountains,59.50,90.40,40,0
     .goto Stonetalon Mountains,57.65,89.52
-    >>Klickt |cRXP_PICK_Resonite Cask|r, um |cRXP_ENEMY_Goggeroc|r zu beschwören. Tötet ihn, wenn er spawnt.
+    >>Klickt |cRXP_PICK_Resonite Cask|r, um |cRXP_ENEMY_Goggeroc|r zu beschwören. Tötet ihn, wenn er erscheint
     .complete 6481,1 --Goggeroc slain (1)
     .mob Goggeroc
     .group 2
     .isOnQuest 6481
 step << skip
     .goto Stonetalon Mountains,58.24,89.81
-    .goto Stonetalon Mountains,57.57,61.99,30 >>|cRXP_WARN_Springt auf einen gelben Pilz. Führt einen Ausloggen Überspringen durch, indem ihr in die Luft springt und euch gleichzeitig ausloggt und wieder einloggt. Lauft zurück zur Sonnenfelszuflucht, falls es nicht klappt|r
+    .goto Stonetalon Mountains,57.57,61.99,30 >>|cRXP_WARN_Springt auf einen gelben Pilz. Führt einen Ausloggen-Überspringen aus, indem ihr in die Luft springt und euch gleichzeitig aus- und wieder einloggt. Lauft zurück nach Sonnenfels, wenn es euch nicht gelingt|r
     .link https://www.youtube.com/watch?v=DGsL3FX9_TE&ab >> |cRXP_WARN_KLICKT HIER für ein Beispiel|r
     .group
     .isQuestComplete 6481
@@ -4280,7 +4280,7 @@ step
     .goto Stonetalon Mountains,49.38,61.68,20,0
     .goto Stonetalon Mountains,48.92,62.71,30,0
     .goto Stonetalon Mountains,48.11,63.88,30,0
-    .goto Stonetalon Mountains,47.21,64.05,30 >> Lauft den Weg nach links hinauf
+    .goto Stonetalon Mountains,47.21,64.05,30 >> Lauft den Pfad links hinauf
     .group
     .isQuestComplete 6481
 step
@@ -4331,7 +4331,7 @@ step
     .goto Stonetalon Mountains,70.82,55.25,50,0
     .goto Stonetalon Mountains,59.66,52.14,0
     >>Tötet |cRXP_ENEMY_XT:9|r. Er patrouilliert auf der südlichen Seite des Flusses
-    >>|cRXP_WARN_Diese Quest muss nicht jetzt abgeschlossen werden|r
+    >>|cRXP_WARN_Diese Quest muss jetzt nicht abgeschlossen werden|r
     .complete 1068,2 --XT:9 (1)
     .unitscan XT:9
 step
@@ -4360,7 +4360,7 @@ step
     .goto Stonetalon Mountains,64.82,47.23,50,0
     .goto Stonetalon Mountains,64.82,47.23,0
     >>Tötet |cRXP_ENEMY_XT:4|r. Er patrouilliert auf der nördlichen Seite des Flusses
-    >>|cRXP_WARN_Diese Quest muss nicht jetzt abgeschlossen werden|r
+    >>|cRXP_WARN_Diese Quest muss jetzt nicht abgeschlossen werden|r
     .complete 1068,1 --XT:4 (1)
     .unitscan XT:4
 step
@@ -4544,7 +4544,7 @@ step
     .group
 step
     #completewith next
-    >>Sammelt |cRXP_PICK_Saphir von Aku'mai|r von der Wand
+    >>Plündert |cRXP_PICK_Saphir von Aku'mai|r von der Wand
     .complete 6563,1 --Sapphire of Aku'Mai (20)
     .group 4
 step
@@ -4575,7 +4575,7 @@ step
     .goto Kalimdor,43.94,34.86,20,0
     .goto Kalimdor,43.81,35.16,20,0
     .goto Kalimdor,44.34,35.11,20,0
-    >>Beute |cRXP_PICK_Saphir von Aku'mai|r von der Wand
+    >>Plündert |cRXP_PICK_Saphir von Aku'mai|r von der Wand
     .complete 6563,1 --Sapphire of Aku'Mai (20)
     .group 4
 step
@@ -4904,7 +4904,7 @@ step << Rogue
     --VV Video?
 step << Rogue
     .goto The Barrens,54.77,5.57
-    >>Benutzt das Lockpicking von Euch, um |cRXP_PICK_Gallywix's Schließkassette|r zu öffnen und plündert |cRXP_LOOT_Mixtur|r.
+    >>Benutzen von Euch Schlossknacken, um |cRXP_PICK_Gallywix's Schließkassette|r zu öffnen, und plündert die |cRXP_LOOT_Mixtur|r.
     .complete 2478,6 --Cache of Zanzil's Altered Mixture (1)
 step << Rogue/Druid
     #completewith SamophlangePages
@@ -4925,7 +4925,7 @@ step
     #label SamophlangePages
     .goto The Barrens,60.90,3.84,20,0
     .goto The Barrens,59.99,4.13
-    >>Tötet |cRXP_ENEMY_Boss Kupferdraht|r im hinteren Teil der Mine. Sammelt |cRXP_LOOT_Samophlang Manuell Deckung|r.
+    >>Tötet |cRXP_ENEMY_Boss Kupferdraht|r hinten in der Mine. Beute ihn für das |cRXP_LOOT_Samophlang-Handbuchdeckblatt|r
     .collect 11147,1 --Samophlange Manual Cover (1)
     .mob Boss Copperplug
     .mob Venture Co. Enforcer
@@ -4950,7 +4950,7 @@ step
 step
     #requires SamophlangePages
     #requires SamophlangePages2
-    >>|cRXP_WARN_Klickt|r |T133735:0|t[Samophlanghandbuch Deckung] |cRXP_WARN_um das|r Manuell|cRXP_LOOT_ zu erstellen|r
+    >>|cRXP_WARN_Klickt auf das|r |T133735:0|t[Samophlanghandbuch Deckung] |cRXP_WARN_um das|r Manuell|cRXP_LOOT_ zu erstellen|r
     .complete 3924,1 -- Samophlange Manual
     .use 6626
 ste
@@ -4959,7 +4959,7 @@ ste
     .isQuestComplete 3924
 step << skip
     .goto The Barrens,60.00,4.09
-    .goto Orgrimmar,40.05,68.05,30 >>|cRXP_WARN_Springt auf das Zelt. Führt einen Ausloggen Überspringen durch, indem ihr euch ausloggt und wieder einloggt. Lauft zurück nach Orgrimmar, falls es nicht klappt|r
+    .goto Orgrimmar,40.05,68.05,30 >>|cRXP_WARN_Springt auf das Zelt. Führt einen Ausloggen-Überspringen durch, indem ihr euch aus- und wieder einloggt. Lauft zurück nach Orgrimmar, falls es euch nicht gelingt|r
     .link https://www.youtube.com/watch?v=cOxspH4RcI8&ab >> |cRXP_WARN_KLICKT HIER für ein Beispiel|r
 step << Rogue
     .goto Orgrimmar,43.05,53.73

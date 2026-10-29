@@ -1913,8 +1913,8 @@ step
 step
     .goto Duskwood,7.78,34.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Sven Yorgen|r
-    .turnin 268 >> Turn in Return to Sven (NOT TRANSLATED IN :deDE YET)
-    .accept 323 >> Bewährungsprobe annehmen
+    .turnin 268 >> Gebt die Quest Rückkehr zu Sven ab
+    .accept 323 >> Akzeptiert die Quest Bewährungsprobe
     .target Sven Yorgen
 step
     .isOnQuest 231
@@ -2807,7 +2807,7 @@ step << Gnome !Warlock -- checking if gnomes can get mount
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Binjy Featherwhistle|r und |cRXP_FRIENDLY_Milli Federpfiff|r
     .train 33388 >>Erlernen |T136103:0|t[Unerfahrener Reiter]
     .goto Dun Morogh,49.148,48.126
-    .vendor >>|cRXP_BUY_Kauft|r |T132247:0|t[|cFF0070FFRoboschreiter|r]
+    .vendor >>|cRXP_BUY_Kauft einen|r |T132247:0|t[|cFF0070FFRoboschreiter|r]
     .goto Dun Morogh,49.123,47.956
     .xp <30,1
     .money <38
@@ -2822,7 +2822,7 @@ step << Dwarf !Paladin -- checking if dwarfs can get mount
 .dungeon Gnomer
     #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Veron Bernruh|r und |cRXP_FRIENDLY_Ultham Eisenhorn|r
-    .vendor >>|cRXP_BUY_Kauft|r |T132248:0|t[|cFF0070FFHarrison Jones|r]
+    .vendor >>|cRXP_BUY_Kauft einen|r |T132248:0|t[|cFF0070FFWidder|r]
     .goto Dun Morogh,63.467,50.557
     .train 33388 >>Erlernen |T136103:0|t[Unerfahrener Reiter]
     .goto Dun Morogh,63.944,50.095
@@ -4022,14 +4022,14 @@ step
 step << Gnome !Warlock/Dwarf !Paladin
     #completewith next
     .zone Dun Morogh >>|cRXP_WARN_Reist nach Kharanos und kauft euren|r |T132247:0|t[Roboschreiter] << Gnome !Warlock
-    .zone Dun Morogh >>|cRXP_WARN_Reist nach Gehöft Bernruh und kauft euren|r |T132248:0|t[Harrison Jones] << Dwarf !Paladin
+    .zone Dun Morogh >>|cRXP_WARN_Reist zum Gehöft Bernruh und kauft euren|r |T132248:0|t[Widder] << Dwarf !Paladin
     .xp <30,1
     .money <38
 step << Gnome !Warlock -- checking if gnomes can get mount
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Binjy Featherwhistle|r und |cRXP_FRIENDLY_Milli Federpfiff|r
     .train 33388 >>Erlernen |T136103:0|t[Unerfahrener Reiter]
     .goto Dun Morogh,49.148,48.126
-    .vendor >>|cRXP_BUY_Kauft|r |T132247:0|t[|cFF0070FFRoboschreiter|r]
+    .vendor >>|cRXP_BUY_Kauft einen|r |T132247:0|t[|cFF0070FFRoboschreiter|r]
     .goto Dun Morogh,49.123,47.956
     .xp <30,1
     .money <38
@@ -4041,7 +4041,7 @@ step << Gnome !Warlock -- checking if gnomes can get mount
     .itemcount 13322,<1 --Unpainted Mechanostrider
 step << Dwarf !Paladin -- checking if dwarfs can get mount
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Veron Bernruh|r und |cRXP_FRIENDLY_Ultham Eisenhorn|r
-    .vendor >>|cRXP_BUY_Kauft|r |T132248:0|t[|cFF0070FFHarrison Jones|r]
+    .vendor >>|cRXP_BUY_Kauft einen|r |T132248:0|t[|cFF0070FFWidder|r]
     .goto Dun Morogh,63.467,50.557
     .train 33388 >>Erlernen |T136103:0|t[Unerfahrener Reiter]
     .goto Dun Morogh,63.944,50.095
@@ -5061,7 +5061,7 @@ step << Druid
 step << Druid
     #label DruidMount
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Lelanai|r und |cRXP_FRIENDLY_Jartsam|r
-    .vendor >>|cRXP_BUY_Buy a|r |T132267:0|t[|cFF0070FFFrostsaber|r] |cRXP_BUY_oder|r |T132225:0|t[|cFF0070FFNachtsäbler|r]
+    .vendor >>|cRXP_BUY_Kauft einen|r |T132267:0|t[|cFF0070FFFrostsäbler|r] |cRXP_BUY_oder|r |T132225:0|t[|cFF0070FFNachtsäbler|r]
     .goto Darnassus,38.283,15.365
     .train 33388 >>Erlernen |T136103:0|t[Unerfahrener Reiter]
     .goto Darnassus,38.694,15.857
@@ -5107,14 +5107,14 @@ step << Mage
 step << Gnome !Warlock/Dwarf !Paladin
     #completewith next
     .zone Dun Morogh >>|cRXP_WARN_Reist nach Kharanos und kauft euren|r |T132247:0|t[Roboschreiter] << Gnome !Warlock
-    .zone Dun Morogh >>|cRXP_WARN_Reist nach Gehöft Bernruh und kauft euren|r |T132248:0|t[Harrison Jones] << Dwarf !Paladin
+    .zone Dun Morogh >>|cRXP_WARN_Reist zum Gehöft Bernruh und kauft euren|r |T132248:0|t[Widder] << Dwarf !Paladin
     .xp <30,1
     .money <38
 step << Gnome !Warlock -- checking if gnomes can get mount
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Binjy Featherwhistle|r und |cRXP_FRIENDLY_Milli Federpfiff|r
     .train 33388 >>Erlernen |T136103:0|t[Unerfahrener Reiter]
     .goto Dun Morogh,49.148,48.126
-    .vendor >>|cRXP_BUY_Kauft|r |T132247:0|t[|cFF0070FFRoboschreiter|r]
+    .vendor >>|cRXP_BUY_Kauft einen|r |T132247:0|t[|cFF0070FFRoboschreiter|r]
     .goto Dun Morogh,49.123,47.956
     .xp <30,1
     .money <38
@@ -5126,7 +5126,7 @@ step << Gnome !Warlock -- checking if gnomes can get mount
     .itemcount 13322,<1 --Unpainted Mechanostrider
 step << Dwarf !Paladin -- checking if dwarfs can get mount
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Veron Bernruh|r und |cRXP_FRIENDLY_Ultham Eisenhorn|r
-    .vendor >>|cRXP_BUY_Kauft|r |T132248:0|t[|cFF0070FFHarrison Jones|r]
+    .vendor >>|cRXP_BUY_Kauft einen|r |T132248:0|t[|cFF0070FFWidder|r]
     .goto Dun Morogh,63.467,50.557
     .train 33388 >>Erlernen |T136103:0|t[Unerfahrener Reiter]
     .goto Dun Morogh,63.944,50.095
@@ -5214,7 +5214,7 @@ step << NightElf !Druid
     .zone Darnassus >> Nimm das Lila Portal nach Darnassus
 step << NightElf !Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Lelanai|r und |cRXP_FRIENDLY_Jartsam|r
-    .vendor >>|cRXP_BUY_Buy a|r |T132267:0|t[|cFF0070FFFrostsaber|r] |cRXP_BUY_oder|r |T132225:0|t[|cFF0070FFNachtsäbler|r]
+    .vendor >>|cRXP_BUY_Kauft einen|r |T132267:0|t[|cFF0070FFFrostsäbler|r] |cRXP_BUY_oder|r |T132225:0|t[|cFF0070FFNachtsäbler|r]
     .goto Darnassus,38.283,15.365
     .train 33388 >>Erlernen |T136103:0|t[Unerfahrener Reiter]
     .goto Darnassus,38.694,15.857

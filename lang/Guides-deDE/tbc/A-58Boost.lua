@@ -226,7 +226,7 @@ step
     .goto Eastern Plaguelands,26.5,37.5,70,0
     .goto Eastern Plaguelands,20.4,20.8,70,0
     .goto Eastern Plaguelands,31.4,29.6,70,0
-    >>Öffnet |cRXP_PICK_Große Termitenhügel|r überall in Der Pestwald. Plündert sie für die |cRXP_LOOT_Pestlandtermiten|r
+    >>Öffnet die |cRXP_PICK_Großen Termitenhügel|r überall im Pestwald. Plündert sie für die |cRXP_LOOT_Pestlandtermiten|r
     .complete 5903,1 --Collect Plagueland Termites (x100)
 step
     #label Egan
@@ -264,7 +264,7 @@ step
 step
     .goto Western Plaguelands,49.2,78.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Marlene Rotpfad|r
-    >>|cRXP_FRIENDLY_Marlene Rotpfad|r kann auch oben sein
+    >>|cRXP_FRIENDLY_Marlene Redpath|r könnte auch oben sein
     .accept 5142 >> Akzeptiert die Quest Klein-Pamela
     .target Marlene Redpath
 step
@@ -299,7 +299,7 @@ step
     .unitscan Cauldron Lord Bilemaw
 step
     .goto Western Plaguelands,37.194,56.860
-    >>Click on the |cRXP_PICK_Scourge Cauldron|r (NOT TRANSLATED IN :deDE YET)
+    >>Klickt auf den |cRXP_PICK_Geißelkessel|r
     .turnin 5216 >> Gebt die Quest Ziel: Teufelssteinfeld ab
     .accept 5217 >> Rückkehr zum Zugwindlager annehmen
 step
@@ -342,7 +342,7 @@ step
 step
     .goto Western Plaguelands,42.972,84.501
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Hohepriesterin MacDonnell|r
-    .turnin 5217 >> Gebt die Quest Rückkehr zum Zugwindlager ab
+    .turnin 5217 >> Gebt die Quest Rückkehr zum Chillwind-Lager ab
     .accept 5219 >> Ziel: Dalsons Tränenfeld annehmen
     .target High Priestess MacDonnell
 step
@@ -363,14 +363,14 @@ step
     .goto Western Plaguelands,43.0,48.2,70,0
     .goto Western Plaguelands,43.4,57.8,70,0
     .goto Western Plaguelands,46.6,40.4,70,0
-    >>Kill |cRXP_ENEMY_Diseased Wolves|r (NOT TRANSLATED IN :deDE YET)
+    >>Tötet |cRXP_ENEMY_Kranke Wölfe|r
     >>|cRXP_ENEMY_Diseased Wolves|r |cRXP_WARN_share spawns with |cRXP_ENEMY_Carrion Lurkers|r. You may need to kill them to force |cRXP_ENEMY_Diseased Wolves|r to spawn|r (NOT TRANSLATED IN :deDE YET)
     .complete 4984,1 --Kill Diseased Wolf (x8)
     .unitscan Diseased Wolf
 step
     .goto Western Plaguelands,47.796,50.671
-    >>|cRXP_WARN_ENTER die Dalson's Tränen-Scheune|r
-    >>Zwicken |cRXP_PICK_Mrs. Dalson's Diary|r auf dem Boden
+    >>|cRXP_WARN_Betretet Dalsons Tränenfeld|r
+    >>Klickt |cRXP_PICK_Mrs. Dalsons Tagebuch|r auf dem Boden
     .accept 5058 >> Mrs. Dalsons Tagebuch annehmen
     .turnin 5058 >> Gebt die Quest Mrs. Dalsons Tagebuch ab
 step
@@ -386,16 +386,16 @@ step
 step
     #completewith next
     .goto Western Plaguelands,48.109,49.654
-    >>Klickt |cRXP_PICK_Plumpsklo|r, um |cRXP_ENEMY_Bauer Dalson|r zu beschwören
+    >>Klickt das |cRXP_PICK_Plumpsklo|r, um |cRXP_ENEMY_Bauer Dalson|r zu beschwören.
     .turnin 5059 >> Gebt die Quest Weggeschlossen ab
 step
     .goto Western Plaguelands,48.115,49.814
-    >>Tötet |cRXP_ENEMY_Farmer Dalson|r. Plündert sie für |cRXP_LOOT_Dalson Cabinet Schlüssel|r
+    >>Tötet |cRXP_ENEMY_Bauer Dalson|r. Plündert ihn für |cRXP_LOOT_Dalsons Schrankschlüssel|r
     .collect 12739,1,5060,1 --Collect Dalson Cabinet Key (x1)
     .mob Farmer Dalson
 step
     .goto Western Plaguelands,47.353,49.626
-    >>Klickt |cRXP_PICK_Verschlossenen Schrank|r oben im Haus an
+    >>Klickt den |cRXP_PICK_Verschlossenen Schrank|r oben im Haus
     .turnin 5060 >> Gebt die Quest Weggeschlossen ab
 step
     .goto Western Plaguelands,46.156,52.427
@@ -406,7 +406,7 @@ step
 step
     #label DalsonCauldron
     .goto Western Plaguelands,46.176,52.009
-    >>Click on the |cRXP_PICK_Scourge Cauldron|r (NOT TRANSLATED IN :deDE YET)
+    >>Klickt auf den |cRXP_PICK_Geißelkessel|r
     .turnin 5219 >> Gebt die Quest Ziel: Dalsons Tränenfeld ab
     .accept 5220 >> Rückkehr zum Zugwindlager annehmen
 step
@@ -425,9 +425,9 @@ step
     .goto Western Plaguelands,51.97,44.47,60,0
     .goto Western Plaguelands,41.23,51.54,60,0
     .goto Western Plaguelands,50.85,40.68
-    >>Kill |cRXP_ENEMY_Scharlachroter Sanitäter|r, |cRXP_ENEMY_Scharlachroter Jäger|r, |cRXP_ENEMY_Scharlachroter Magier|r und |cRXP_ENEMY_Scharlachroter Ritter|r
-    >>|cRXP_ENEMY_Scharlachroter Sanitäter|r |cRXP_WARN_and |cRXP_ENEMY_Scharlachroter Jäger|r share spawns|r
-    >>|cRXP_ENEMY_Scharlachroter Magier|r |cRXP_WARN_and |cRXP_ENEMY_Scharlachroter Ritter|r share spawns|r
+    >>Tötet |cRXP_ENEMY_Scharlachroter Sanitäter|r, |cRXP_ENEMY_Scharlachroter Jäger|r, |cRXP_ENEMY_Scharlachroter Magier|r und |cRXP_ENEMY_Scharlachroter Ritter|r
+    >>|cRXP_ENEMY_Scharlachrote Sanitäter|r |cRXP_WARN_und |cRXP_ENEMY_Scharlachrote Jäger|r teilen sich Spawns.|r
+    >>|cRXP_ENEMY_Scharlachrote Magier|r |cRXP_WARN_und |cRXP_ENEMY_Scharlachrote Ritter|r teilen sich Spawns.|r
     .complete 6004,1 --Scarlet Medic (2)
     .mob +Scarlet Medic
     .complete 6004,2 --Scarlet Hunter (2)
@@ -479,7 +479,7 @@ step
 step
     .goto Western Plaguelands,45.7,18.8
     >>Lauf den Herdweiler Turm hoch
-    >>|cRXP_WARN_Ihr könnt entweder direkt nach oben laufen und hinunterspringen oder euch den Weg nach oben freikämpfen|r
+    >>|cRXP_WARN_Ihr könnt entweder direkt nach oben rennen und hinunterspringen oder euch den Weg nach oben freikämpfen.|r
     >>|cRXP_WARN_Vermeide |cRXP_ENEMY_Hochbeschützer Lorik|r , denn er ist ein starker Elite, der hier rumpatrouilliert|r
     .complete 6025,1 -- Overlook Hearthglen from a high vantage point
     .unitscan High Protector Lorik
@@ -496,7 +496,7 @@ step
     .goto Western Plaguelands,42.972,84.501
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Hohepriesterin MacDonnell|r
     .target High Priestess MacDonnell
-    .turnin 5220 >> Gebt die Quest Rückkehr zum Zugwindlager ab
+    .turnin 5220 >> Gebt die Quest Rückkehr zum Chillwind-Lager ab
     .accept 5222 >> Ziel: Das Trostlose Feld annehmen
 step
     .isQuestComplete 9474
@@ -518,7 +518,7 @@ step
 step
     .goto Western Plaguelands,39.456,66.760
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Chromie|r eine Etage drüber
-    .accept 4971 >> Eine Frage der Zeit annehmen
+    .accept 4971 >> Akzeptiert die Quest Eine Frage der Zeit
     .target Chromie
 step
     .goto Western Plaguelands,45.172,62.559,25,0
@@ -559,7 +559,7 @@ step
     .mob Skeletal Acolyte
 step
     .goto Western Plaguelands,53.020,65.718
-    >>Klick auf das |cRXP_PICK_Scourge Cauldron|r
+    >>Klickt auf den |cRXP_PICK_Geißelkessel|r
     .turnin 5222 >> Gebt die Quest Ziel: Das Trostlose Feld ab
     .accept 5223 >> Rückkehr zum Zugwindlager annehmen
 step
@@ -584,7 +584,7 @@ step
     .goto Western Plaguelands,67.2,46.6,70,0
     .goto Western Plaguelands,66.0,55.6,70,0
     .goto Western Plaguelands,60.8,50.8,70,0
-    >>Kill |cRXP_ENEMY_Diseased Grizzlies|r (NOT TRANSLATED IN :deDE YET)
+    >>Tötet |cRXP_ENEMY_kranke Grizzlies|r
     >>|cRXP_ENEMY_Verseucht Grizzlies|r |cRXP_WARN_teilen sich Spawnpunkte mit |cRXP_ENEMY_Seuche Lurkers|r. Ihr müsst sie möglicherweise töten, damit |cRXP_ENEMY_Verseucht Grizzlies|r erscheinen|r
     .complete 4985,1 -- Diseased Grizzly slain (8)
     .unitscan Diseased Grizzly
@@ -603,12 +603,12 @@ step
 step
     .goto Western Plaguelands,42.972,84.501
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Hohepriesterin MacDonnell|r
-    .turnin 5223 >> Gebt die Quest Rückkehr zum Zugwindlager ab
+    .turnin 5223 >> Gebt die Quest Rückkehr zum Chillwind-Lager ab
     .accept 5225 >> Akzeptiert die Quest Ziel: Gahrrons Trauerfeld
     .target High Priestess MacDonnell
 step
     .goto Western Plaguelands,62.573,58.573
-    >>Klick auf das |cRXP_PICK_Scourge Cauldron|r
+    >>Klickt auf den |cRXP_PICK_Geißelkessel|r
     .turnin 5225 >> Gebt die Quest Ziel: Gahrrons Trauerfeld ab
     .accept 5226 >> Rückkehr zum Zugwindlager annehmen
 step
@@ -624,20 +624,20 @@ step
     .goto Eastern Plaguelands,36.489,90.718
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Pamela Rotpfad|r
     .turnin 5142 >> Gebt die Quest Klein-Pamela ab
-    .accept 5149 >> Akzeptiert die Quest Pamelas Puppe
+    .accept 5149 >> Pamelas Puppe annehmen
     .target Pamela Redpath
 step
     .isQuestTurnedIn 5601,5142
     .goto Eastern Plaguelands,36.489,90.718
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Pamela Rotpfad|r
-    .accept 5149 >> Akzeptiert die Quest Pamelas Puppe
+    .accept 5149 >> Pamelas Puppe annehmen
     .target Pamela Redpath
 step
     .goto Eastern Plaguelands,38.038,92.549,15,0
     .goto Eastern Plaguelands,39.643,92.522,15,0
     .goto Eastern Plaguelands,39.622,90.079
-    >>Plündert |T134164:0|t[|cRXP_LOOT_Pamelas Puppenkopf|r], |T134230:0|t[|cRXP_LOOT_Linke Seite von Pamelas Puppe|r] und |T134230:0|t[|cRXP_LOOT_Rechte Seite von Pamelas Puppe|r] in den Gebäuden
-    >>|cRXP_WARN_Sie erscheinen zufällig in einem der 3 Gebäude in Darroheim|r
+    >>Sammelt |T134164:0|t[|cRXP_LOOT_Pamelas Puppenkopf|r], |T134230:0|t[|cRXP_LOOT_Pamelas Puppe, linke Seite|r] und |T134230:0|t[|cRXP_LOOT_Pamelas Puppe, rechte Seite|r] in den Gebäuden
+    >>|cRXP_WARN_Sie spawnen alle zufällig in einem der 3 Gebäude in Darrowshire|r
     .collect 12886,1,5149,1 -- Pamela's Doll's Head (1)
     .collect 12887,1,5149,1 -- Pamela's Doll's Left Side (1)
     .collect 12888,1,5149,1 -- Pamela's Doll's Right Side (1)
@@ -651,8 +651,8 @@ step
     .goto Eastern Plaguelands,36.489,90.718
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Pamela Rotpfad|r
     .turnin 5149 >> Gebt die Quest Pamelas Puppe ab
-    .accept 5152 >> Accept Auntie Marlene (NOT TRANSLATED IN :deDE YET)
-    .accept 5241 >> Accept Uncle Carlin (NOT TRANSLATED IN :deDE YET)
+    .accept 5152 >> Tante Marlene annehmen
+    .accept 5241 >> Onkel Carlin annehmen
     .target Pamela Redpath
 step
     .hs >> Ruhestein nach Süderstade
@@ -670,7 +670,7 @@ step
 step
     .goto Western Plaguelands,42.972,84.501
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Hohepriesterin MacDonnell|r
-    .turnin 5226 >> Gebt die Quest Rückkehr zum Zugwindlager ab
+    .turnin 5226 >> Gebt die Quest Rückkehr zum Chillwind-Lager ab
     .target High Priestess MacDonnell
 step
     .isQuestComplete 9474
@@ -683,7 +683,7 @@ step
     .target Commander Ashlam Valorfist
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Kommandant Ashlam Valorfist|r
     .accept 5237 >> Accept Mission Accomplished! (NOT TRANSLATED IN :deDE YET)
-    .turnin 5237 >> Gebt die Quest Mission erfüllt! ab
+    .turnin 5237 >> Gebt die Quest Mission erfüllt ab
 step
     .goto Western Plaguelands,42.665,83.774
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Alchemist Arbington|r
@@ -692,7 +692,7 @@ step
 step
     .goto Western Plaguelands,49.2,78.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Marlene Rotpfad|r
-    >>|cRXP_FRIENDLY_Marlene Rotpfad|r kann auch oben sein
+    >>|cRXP_FRIENDLY_Marlene Redpath|r könnte auch oben sein
     .turnin 5152 >> Gebt die Quest Tante Marlene ab
     .accept 5153 >> Accept A Strange Historian (NOT TRANSLATED IN :deDE YET)
     .target Marlene Redpath
@@ -705,9 +705,9 @@ step
     .goto Western Plaguelands,39.456,66.760
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Chromie|r eine Etage drüber
     .turnin 4971 >>Gebt die Quest Eine Frage der Zeit ab
-    .accept 4972 >>Tempus fugit annehmen
+    .accept 4972 >>Akzeptiert die Quest Tempus fugit
     .turnin 5153 >>Gebt die Quest Ein seltsamer Historiker ab
-    .accept 5154 >>Accept The Annals of Darrowshire (NOT TRANSLATED IN :deDE YET)
+    .accept 5154 >>Akzeptiert die Quest Die Annalen von Darrowshire
     .target Chromie
 step
     .isQuestTurnedIn 4971
@@ -728,8 +728,8 @@ step
     .goto Western Plaguelands,41.46,69.85,15,0
     .goto Western Plaguelands,42.17,68.88,20,0
     .goto Western Plaguelands,42.67,70.31,20,0
-    >>Öffne den |cRXP_PICK_Small Lockboxes|r. Loote sie für |cRXP_LOOT_Andorhal Watches|r
-    >>|cRXP_WARN_Diese findet ihr in den niedergebrannten Häusern|r
+    >>Öffnet die |cRXP_PICK_Kleine Schließkassetten|r. Plündert sie für |cRXP_LOOT_Andorhal-Uhr|r
+    >>|cRXP_WARN_Diese befinden sich in den niedergebrannten Häusern|r
     .complete 4972,1 --Collect Andorhal Watch (x5)
 step
     #completewith next
@@ -737,17 +737,17 @@ step
 step
     .goto Western Plaguelands,43.50,69.46
     >>Betrete das Rathaus in den Ruinen von Andorhal
-    >>Open the |cRXP_PICK_Musty Tomes|r. Loot them for the |cRXP_LOOT_Annals of Darrowshire|r (NOT TRANSLATED IN :deDE YET)
+    >>Öffnet die |cRXP_PICK_Modrigen Folianten|r. Plündert sie für die |cRXP_LOOT_Annalen von Darrowshire|r
     >>|cRXP_WARN_The correct |cRXP_PICK_Musty Foliant|r will have its pages be a completely dark-shade, oder have a brown stain. If it's only half white und half black, that is a trap|r
-    >>|cRXP_WARN_Manchmal sind alle |cRXP_PICK_Muffigen Folianten|r Fallen, und ihr müsst sie öffnen, damit ein richtiger erscheint|r
+    >>|cRXP_WARN_Es kann vorkommen, dass alle |cRXP_PICK_Modrigen Folianten|r Fallen sind und ihr sie öffnen müsst, um das Richtige zu spawnen|r
     .complete 5154,1 --Collect Annals of Darrowshire (x1)
-    .link https://youtu.be/GUb1Ny4NwQw >> |cRXP_WARN_Click here for video reference on how to identify the correct|r |cRXP_PICK_Musty Tome|r (NOT TRANSLATED IN :deDE YET)
+    .link https://youtu.be/GUb1Ny4NwQw >> |cRXP_WARN_Klickt hier für die Videoreferenz, um zu sehen, wie ihr das Richtige identifiziert|r |cRXP_PICK_Modriger Foliant|r
 step
     .goto Western Plaguelands,39.456,66.760
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Chromie|r
     .turnin 4972 >>Gebt die Quest Tempus fugit ab
-    .turnin 5154 >>Gebt die Quest Die Annalen von Darroheim ab
-    .accept 5210 >>Accept Brother Carlin (NOT TRANSLATED IN :deDE YET)
+    .turnin 5154 >>Gebt die Quest Die Annalen von Darrowshire ab
+    .accept 5210 >>Akzeptiert die Quest Bruder Carlin
     .target Chromie
 step
     .goto Western Plaguelands,42.924,85.061
@@ -760,7 +760,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Carlin Rotpfad|r
     .turnin 5241 >>Gebt die Quest Onkel Carlin ab
     .turnin 5210 >>Gebt die Quest Bruder Carlin ab
-    .accept 5181 >>Accept Villains of Darrowshire (NOT TRANSLATED IN :deDE YET)
+    .accept 5181 >>Akzeptiert die Quest Bösewichte von Darrowshire
     .target Carlin Redpath
 step
     .goto Eastern Plaguelands,79.405,63.983
@@ -772,11 +772,11 @@ step
     .xp 60-8750 >> Grinde, bis dir nur noch 15k EXP bis Level 30 fehlen
 step
     .goto Eastern Plaguelands,51.106,49.937
-    >>Loot the |cRXP_LOOT_Skull of Horgus|r underwater (NOT TRANSLATED IN :deDE YET)
+    >>Sammelt den |cRXP_LOOT_Schädel von Horgus|r unter Wasser
     .complete 5181,1 --Collect Skull of Horgus (x1)
 step
     .goto Eastern Plaguelands,53.913,65.755
-    >>Loot the |cRXP_LOOT_Shattered Sword of Marduk|r on the ground (NOT TRANSLATED IN :deDE YET)
+    >>Plündert das |cRXP_LOOT_Zertrümmerte Schwert von Marduk|r auf dem Boden
     .complete 5181,2 --Collect Shattered Sword of Marduk (x1)
 step
     .goto Eastern Plaguelands,81.518,59.766

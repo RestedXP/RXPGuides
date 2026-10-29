@@ -2698,7 +2698,7 @@ step << Orc Warlock
     .abandon 5726 >>Brecht die Quest Verborgene Feinde ab
 step << Orc Warlock
     #optional
-    .destroy 14544 >>|cRXP_WARN_Zerstört|r |T134417:0|tInsignien des Lieutenants] |cRXP_WARN_da ihr es nicht mehr braucht|r
+    .destroy 14544 >>|cRXP_WARN_Destroy|r |T134417:0|t[Lieutenant's Insignia] |cRXP_WARN_as you no longer need it|r
 step
     #completewith ZeptoUC1
     .goto Durotar,45.54,12.14

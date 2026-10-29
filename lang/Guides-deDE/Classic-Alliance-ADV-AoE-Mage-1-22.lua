@@ -207,7 +207,7 @@ step
     .goto Elwynn Forest,49.66,40.15,10,0
     .goto Elwynn Forest,49.26,40.67,10,0
     .goto Elwynn Forest,48.97,41.14,10,0
-    .goto Elwynn Forest,48.171,42.943,10 >>Reist zu |cRXP_FRIENDLY_Willem|r
+    .goto Elwynn Forest,48.171,42.943,10 >>Reisen zu |cRXP_FRIENDLY_Willem|r
 step
     .goto Elwynn Forest,48.171,42.943
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Willem|r
@@ -405,7 +405,7 @@ step
     .goto Elwynn Forest,49.20,41.81,10,0
     .goto Elwynn Forest,49.57,41.46,10,0
     .goto Elwynn Forest,49.33,40.93,10,0
-    >>Geht die Treppe nach oben
+    >>Geh nach oben
     .goto Elwynn Forest,49.471,41.586,10 >> Reisen zu |cRXP_FRIENDLY_Neals|r
 step
     .goto Elwynn Forest,49.471,41.586
@@ -493,7 +493,7 @@ step
     .goto Elwynn Forest,43.132,85.722
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Billy|r
     .turnin 85 >> Gebt die Quest Die verlorene Halskette ab
-    .accept 86 >> Pastete für Billy annehmen
+    .accept 86 >> Kuchen für Billy annehmen
     .target Billy Maclure
 step
     #label BoarMeat1
@@ -921,7 +921,7 @@ step
     .turnin 184 >> Gebt die Quest Furlbrows Urkunde ab
     .target +Farmer Furlbrow
     .goto Westfall,59.95,19.35
-    .accept 36 >> Akzeptiert die Quest Westfall-Eintopf
+    .accept 36 >> Akzeptiert die Quest Westfalleintopf
     .accept 151 >> Akzeptiert die Quest Die arme Graumähne
     .goto Westfall,59.91,19.41
     .target +Verna Furlbrow
@@ -931,7 +931,7 @@ step
     .accept 64 >> Akzeptiert die Quest Das vergessene Erbstück
     .target +Farmer Furlbrow
     .goto Westfall,59.95,19.35
-    .accept 36 >> Akzeptiert die Quest Westfall-Eintopf
+    .accept 36 >> Akzeptiert die Quest Westfalleintopf
     .accept 151 >> Akzeptiert die Quest Die arme Graumähne
     .target +Verna Furlbrow
     .goto Westfall,59.91,19.41
@@ -946,7 +946,7 @@ step
     .target +Farmer Saldean
     .goto Westfall,56.04,31.23
     .turnin 36 >> Gebt die Quest Westfalleintopf ab
-    .accept 38 >> Akzeptiert die Quest Westfall-Eintopf
+    .accept 38 >> Akzeptiert die Quest Westfalleintopf
     .accept 22 >> Akzeptiert die Quest Pastete aus Geiferzahnleber
     .target +Salma Saldean
     .goto Westfall,56.42,30.52
@@ -1151,7 +1151,7 @@ RXPGuides.RegisterGuide([[
 #version 2
 #group RestedXP ADV AoE Allianz Magier
 #defaultfor Human Mage
-#next 10-12 ADV Dunkelküste 1 Magier AoE
+#next 10-12 Fortgeschrittender Dunkelküste 1 Magier AoE Guide
 
 step
     #completewith Rudra
@@ -1443,7 +1443,7 @@ RXPGuides.RegisterGuide([[
 #version 2
 #group RestedXP ADV AoE Allianz Magier
 #defaultfor Gnome Mage
-#next 10-12 ADV Dunkelküste 1 Magier AoE
+#next 10-12 Fortgeschrittender Dunkelküste 1 Magier AoE Guide
 
 
 step << !Gnome Mage
@@ -1605,7 +1605,7 @@ step
     #label Talin
     .goto Dun Morogh,22.601,71.433
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Talin Keeneye|r
-    .turnin 233 >> Gebt die Quest Postbeförderung im Coldridgetal ab
+    .turnin 233 >> Gebt die Quest Postbeförderung im Eisklammtal ab
     .accept 183 >> Akzeptiert die Quest Der Eberjäger
     .accept 234 >> Akzeptiert die Quest Postbeförderung im Coldridgetal
     .target Talin Keeneye
@@ -1638,7 +1638,7 @@ step
     #label Rockjaw
     .goto 1426,25.077,75.711
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Grelin Whitebeard|r
-    .turnin 234 >> Gebt die Quest Postbeförderung im Coldridgetal ab
+    .turnin 234 >> Gebt die Quest Postbeförderung im Eisklammtal ab
     .accept 182 >> Akzeptiert die Quest Die Trollhöhle
     .target Grelin Whitebeard
 step
@@ -2295,7 +2295,7 @@ step << skip
 step
     .goto Dun Morogh,46.726,53.826
     >>Sprecht mit |cRXP_FRIENDLY_Senir|r
-    .accept 287 >> Akzeptiert die Quest Höhle der Frostmane
+    .accept 287 >> Akzeptiert die QuestHöhle der Frostmane
     .target Senir Whitebeard
 step
     #completewith Rhapsody1
@@ -2580,7 +2580,7 @@ step
 step
     #completewith next
     .cast 1459 >> |T135932:0|t[Arkane Intelligenz] nachbuffen
-    .cast 168 >> |T135843:0|t[Frostschadenrüstung] Nachbuffen
+    .cast 168 >> |T135843:0|t[Frostrüstung] Nachbuffen
 step
     >>Sprecht mit |cRXP_FRIENDLY_Bellowfiz|r und |cRXP_FRIENDLY_Stonegear|r
     .turnin 320,2 >> Gebt die Quest Rückkehr zu Bellowfiz ab
@@ -2829,7 +2829,7 @@ step
     #label CragB1
     #completewith Cobbleflint
     .goto Loch Modan,16.45,58.54,20,0
-    .goto Loch Modan,19.59,62.76,30 >>Zieht einen |cRXP_ENEMY_Vernarbter Klippeneber|r durch den Tunnel
+    .goto Loch Modan,19.59,62.76,30 >>Lockt einen |cRXP_ENEMY_Vernarbter Klippeneber|r durch den Tunnel
     >>|cRXP_WARN_Seid vorsichtig, da sie|r |T132337:0|t[Ansturm] wirken|cRXP_WARN_(Selbst Sofort: Erhöht die Bewegungsgeschwindigkeit für 3 Sek., verursacht 40-100 Nahkampfschaden bei Treffer. Nur in der Ferne wirkbar)|r
     .mob Scarred Crag Boar
 step
@@ -2928,7 +2928,7 @@ step
 step
     .goto Ironforge,51.54,26.30
     >>Sprecht mit |cRXP_FRIENDLY_Golnir|r
-    .turnin 6391 >>Gebt die Quest Flug nach Eisenschmiede ab
+    .turnin 6391 >>Gebt die Quest Fahrt nach Eisenschmiede ab
     .accept 6388 >>Akzeptiert die Quest Gryth Thurden
     .vendor >> Verkauft Müll
     .target Golnir Bouldertoe
@@ -2965,12 +2965,12 @@ step
     .goto Ironforge,40.84,44.59,20,0
     .goto Ironforge,35.30,32.76,20,0
     .goto Ironforge,27.60,11.06,20,0
-    .goto Ironforge,27.17,8.58,10 >>Reist zu |cRXP_FRIENDLY_Dink|r
+    .goto Ironforge,27.17,8.58,10 >>Reist in Richtung |cRXP_FRIENDLY_Dink|r
 step
     .goto Ironforge,27.17,8.58
     >>Sprich mit |cRXP_FRIENDLY_Dink|r
     .trainer >> Erlernt eure Klassanfähigkeiten (Frostrüstung Rang 2, Frostnova, Verwandlung, Wasser herbeizaubern Rang 1 & Rang 2)
-    >>Gesamtpreis Kostet: 15s
+    >>Gesamtpreis Kosten: 15s
     >>Bedenkt: Ihr braucht möglicherweise Geld für Heiltränke (3s je Stück), Bronzeröhre (8s je Stück) und Stufe-5-Nahrung (20c pro 5)
     .target Dink
 step << skip
@@ -2999,7 +2999,7 @@ RXPGuides.RegisterGuide([[
 #classic
 #tbc
 << Alliance Mage
-#name 10-12 ADV Dunkelküste 1 Magier AoE
+#name 10-12 Fortgeschrittender Dunkelküste 1 Magier AoE Guide
 #version 2
 #group RestedXP ADV AoE Allianz Magier
 #defaultfor Human Mage/Gnome Mage
@@ -3056,7 +3056,7 @@ step
     .goto Wetlands,15.10,63.72,12,0
     >>|cRXP_WARN_Macht den Dun Morogh -> Sumpfland skip|r ohne zu sterben
     >>|cRXP_WARN_Seid vorsichtig vor |cRXP_ENEMY_Schlicker|r (selten), bevor ihr zur Küste hinuntergeht (falls er up ist)|r
-    >>|cRXP_WARN_Seid vorsichtig vor |cRXP_ENEMY_Räuber der Blaukiemen|r im Westen, wenn ihr das Meer erreicht|r
+    >>|cRXP_WARN_Seid vorsichtig vor den |cRXP_ENEMY_Räuber der Blaukiemen|r im Westen, wenn ihr das Meer erreicht|r
     >>|cRXP_WARN_Weicht den |cRXP_ENEMY_Junger Sumpflandkrokilisk|r aus wenn ihr das Meer überquert. Wartet, bis sie wegpatroullieren|r
     .link https://youtu.be/QcEUvwu49KI?t=336 >> |cRXP_WARN_Klickt hier für eine Anleitung (Es wird dringend empfohlen, dies zu tun.)|r
     .goto Wetlands,12.69,60.97,15 >> Laufe zum Hafen von Menethil
@@ -3860,7 +3860,7 @@ step
 step
     .goto Darkshore,36.34,45.58
     >>Sprich mit |cRXP_FRIENDLY_Caylais|r
-    .fp Auberdine >> Hol dir den Flugpunkt von Auberdine
+    .fp Auberdine >> Erlernt die Flugroute nach Auberdine
     .target Caylais Moonfeather
 step
     #requires Gwennyth
@@ -3899,7 +3899,7 @@ step
     #requires Gwennyth
     .goto Darkshore,38.90,53.59
     >>Lauft zum Furbolg Camp
-    >>|cRXP_WARN_Versucht nicht gegen die, |rWindsprecher der Schwarzfelle|cRXP_ENEMY_ zu kämpfen|r
+    >>|cRXP_WARN_Versucht nicht gegen den|r |cRXP_ENEMY_Windsprecher der Schwarzfelle|r zu kämpfen
     .complete 984,1 --Find a corrupt furbolg camp (1)
 step
     .goto Darkshore,40.30,59.73
@@ -3908,7 +3908,7 @@ step
     .target Sentinel Tysha Moonblade
 step
     #completewith Anaya
-    +|cRXP_WARN_Meidet es |cRXP_ENEMY_Lady Mondblick|r (rare) zu pullen, wenn sie up ist|r
+    +|cRXP_WARN_Meidet es |cRXP_ENEMY_Lady Mondblick|r (rare) wenn sie up ist|r zu pullen
     .unitscan Lady Moongazer
  step
     #completewith Relics
@@ -3919,7 +3919,7 @@ step
 step
     #completewith Fall
     >>Tötet |cRXP_ENEMY_Verfluchte Hochgeborene|r und |cRXP_ENEMY_Zuckender Hochgeborener|r. Plündert sie für |cRXP_LOOT_Hochgeborenenrelikt|r
-    >>|cRXP_WARN_Tötet |cRXP_ENEMY_Wailing Highbornes|r nur falls sie sich auf euren Weg befinden|r
+    >>|cRXP_WARN_Tötet |cRXP_ENEMY_Klagende Hochgeborene|r nur, wenn sie euch im Weg sind|r
     .complete 958,1 --Highborne Relic (7)
     .mob Cursed Highborne
     .mob Writhing Highborne
@@ -3955,7 +3955,7 @@ step
     .goto Darkshore,41.21,61.64,50,0
     .goto Darkshore,41.76,57.96
     >>Tötet |cRXP_ENEMY_Verfluchte Hochgeborene|r und |cRXP_ENEMY_Zuckender Hochgeborener|r
-    >>|cRXP_WARN_Tötet |cRXP_ENEMY_Wailing Highbornes|r nur falls sie sich auf euren Weg befinden|r
+    >>|cRXP_WARN_Tötet |cRXP_ENEMY_Klagende Hochgeborene|r nur, wenn sie euch im Weg sind|r
     .complete 958,1 --Highborne Relic (7)
     .mob Cursed Highborne
     .mob Writhing Highborne
@@ -4012,7 +4012,7 @@ step
     .target Terenthis
 step
     .goto Darkshore,36.64,46.26
-    >>Clickt die |cRXP_PICK_Buzzbox 827|r
+    >>Klickt |cRXP_PICK_Buzzbox 827|r
     .turnin 983 >>Gebt die Quest Dröhnkiste 827 ab
     .accept 1001 >>Akzeptiert die Quest Dröhnkiste 411
 step
@@ -4674,7 +4674,7 @@ step
     >>Sprecht mit |cRXP_FRIENDLY_Monty|r
     >>Warte auf das RP << Gnome
     .turnin 6661 >> Gebt die Quest Tiefenbahn-Ratten-Razzia ab << Gnome
-    .timer 13,Tiefenbahn-Ratten-Razzia RP << Gnome
+    .timer 13,Tiefenbahn-Ratteten-Razzia RP << Gnome
     .accept 6662 >> Akzeptiert die Quest Mein Bruder Nipsy...
     .target Monty
     .zoneskip Stormwind City
@@ -4770,7 +4770,7 @@ step
     .goto Stormwind City,46.32,66.93,20,0
     .goto Stormwind City,42.45,61.76,20,0
     .goto Stormwind City,41.17,63.74,15,0
-    .goto Stormwind City,41.57,65.46,10 >>Reisen zu |cRXP_FRIENDLY_Adair|r
+    .goto Stormwind City,41.57,65.46,10 >>Reist zu |cRXP_FRIENDLY_Adair|r
     .money <0.0090
 step
     .goto Stormwind City,41.57,65.46
@@ -4889,7 +4889,7 @@ step
     #completewith next
     .goto Stormwind City,53.45,64.92,10,0
     >>Betretet das Gasthaus
-    .goto Stormwind City,52.61,65.72,10 >>Reisen zu |cRXP_FRIENDLY_Allison|r
+    .goto Stormwind City,52.61,65.72,10 >>Reist zu |cRXP_FRIENDLY_Allison|r
     .target Innkeeper Allison
 step
     .goto Stormwind City,52.61,65.72
@@ -5697,7 +5697,7 @@ step
     .accept 109 >> Akzeptiert die Quest Meldung bei Gryan Stoutmantle
     .target +Farmer Furlbrow
     .goto Westfall,59.95,19.35
-    .accept 36 >> Akzeptiert die Quest Westfall-Eintopf
+    .accept 36 >> Akzeptiert die Quest Westfalleintopf
     .accept 151 >> Akzeptiert die Quest Die arme Graumähne
     .goto Westfall,59.91,19.41
     .target +Verna Furlbrow
@@ -5712,7 +5712,7 @@ step
     .target +Farmer Saldean
     .goto Westfall,56.04,31.23
     .turnin 36 >> Gebt die Quest Westfalleintopf ab
-    .accept 38 >> Akzeptiert die Quest Westfall-Eintopf
+    .accept 38 >> Akzeptiert die Quest Westfalleintopf
     .accept 22 >> Akzeptiert die Quest Pastete aus Geiferzahnleber
     .goto Westfall,56.42,30.52
     .target +Salma Saldean
@@ -6182,7 +6182,7 @@ step
     .goto Stormwind City,32.07,81.50,10,0
     .goto Stormwind City,32.63,80.62,8,0
     >>Verlasst den Magierturm
-    .goto Stormwind City,32.16,79.84,10 >>Reist zu |cRXP_FRIENDLY_Charys|r
+    .goto Stormwind City,32.16,79.84,10 >>Reisen zu |cRXP_FRIENDLY_Charys|r
 step
     .goto Stormwind City,32.16,79.84
     >>Betretet das Gebäude
@@ -7156,7 +7156,7 @@ step
     .goto Stormwind City,32.07,81.50,10,0
     .goto Stormwind City,32.63,80.62,8,0
     >>Verlasst den Magierturm
-    .goto Stormwind City,32.16,79.84,10 >>Reist zu |cRXP_FRIENDLY_Charys|r
+    .goto Stormwind City,32.16,79.84,10 >>Reisen zu |cRXP_FRIENDLY_Charys|r
 step
     .goto Stormwind City,32.16,79.84
     >>Betretet das Gebäude
@@ -7278,7 +7278,7 @@ step << skip
     .goto Elwynn Forest,48.79,41.56,10,0
     .goto Elwynn Forest,49.26,40.69,10,0
     >>Nehmt den Bergpfad zu |cRXP_FRIENDLY_Paxton|r
-    .goto Elwynn Forest,49.61,40.41,10 >>Reist zu toward |cRXP_FRIENDLY_Paxton|r
+    .goto Elwynn Forest,49.61,40.41,10 >>Reist zu |cRXP_FRIENDLY_Paxton|r
 step
     .goto Elwynn Forest,44.00,65.69
     >>Sprecht mit |cRXP_FRIENDLY_Dobbins|r
@@ -7297,7 +7297,7 @@ step
     #requires FarleyHome
     .goto Elwynn Forest,48.79,41.56,10,0
     .goto Elwynn Forest,49.26,40.69,10,0
-    .goto Elwynn Forest,49.61,40.41,10 >>Reist zu toward |cRXP_FRIENDLY_Paxton|r
+    .goto Elwynn Forest,49.61,40.41,10 >>Reist zu |cRXP_FRIENDLY_Paxton|r
 step
     #requires FarleyHome
     .goto Elwynn Forest,49.61,40.41
@@ -7769,7 +7769,7 @@ step
     >>Sprecht mit |cRXP_FRIENDLY_Martie|r
     .turnin 130 >>Gebt die Quest Besuch im Kräuterladen ab
     .accept 131 >>Akzeptiert die Quest Narzissen für eine Dame
-    .accept 34 >>Ein ungebetener Gast annehmen
+    .accept 34 >>Akzeptiert die Quest Ein ungebetener Gast
     .target Martie Jainrose
 step
     #completewith next
@@ -7968,7 +7968,7 @@ step
     .goto Stormwind City,32.07,81.50,10,0
     .goto Stormwind City,32.63,80.62,8,0
     >>Verlasst den Magierturm
-    .goto Stormwind City,32.16,79.84,10 >>Reist zu |cRXP_FRIENDLY_Charys|r
+    .goto Stormwind City,32.16,79.84,10 >>Reisen zu |cRXP_FRIENDLY_Charys|r
 step
     #completewith BankDeposit
     +|cRXP_WARN_Geht nicht unter 1g 43s 30c|r
@@ -8038,7 +8038,7 @@ step
     .isQuestAvailable 174
 step
     #completewith next
-    .goto Stormwind City,63.89,8.25,20 >> Reist zu der Tiefenbahn
+    .goto Stormwind City,63.89,8.25,20 >> Reist zu Die Tiefenbahn
 step
     #completewith next
     +|cRXP_WARN_Fahrt mit der Tiefenbahn, während ihr Pausenlos |r ||T132816:0|t[Wasser herbeizaubern Rang 3] wirkt

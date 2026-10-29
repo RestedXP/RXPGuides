@@ -1444,7 +1444,7 @@ step
     .dungeon RFC
 step
     #completewith EnterRFC
-    .destroy 14544 >>|cRXP_WARN_Zerstört|r |T134417:0|tInsignien des Lieutenants] |cRXP_WARN_da ihr es nicht mehr braucht|r
+    .destroy 14544 >>|cRXP_WARN_Destroy|r |T134417:0|t[Lieutenant's Insignia] |cRXP_WARN_as you no longer need it|r
     .dungeon RFC
 step
     #label EnterRFC
@@ -2407,7 +2407,7 @@ step
     .goto The Barrens,47.43,51.37,80,0
     .goto The Barrens,50.10,53.34,80,0
 	>>Find & kill |cRXP_ENEMY_Lakota'mani|r (Gray Kodo) around this area. Loot him for |T132318:0|t[|cRXP_LOOT_Huf von Lakota'mani|r]. Use it to start the quest
-    >>|cRXP_WARN_Skip this quest if you can't find him|r (NOT TRANSLATED IN :deDE YET)
+    >>|cRXP_WARN_Überspringt diese Quest, falls ihr ihn nicht finden könnt|r
 	.collect 5099,1,883 --Collect Hoof of Lakota'Mani
 	.accept 883 >>Akzeptiert die Quest Lakota'Mani
     .use 5099
@@ -2751,7 +2751,7 @@ step
     .subzoneskip 378
 step
     .goto The Barrens,44.55,59.27
-    >>Tötet |cRXP_ENEMY_Stacheleber der Borstennacken|r. Plündert sie für einen |T134128:0|t[|cRXP_LOOT_Blutsplitter|r
+    >>Kill |cRXP_ENEMY_Bristleback Quilboars|r. Loot them for a |T134128:0|t[|cRXP_LOOT_Blood Shard|r]
     .collect 5075,1,5052,1 --Blood Shard (1)
     .mob Bristleback Water Seeker
     .mob Bristleback Thornweaver
@@ -2880,7 +2880,7 @@ step
 step << !Tauren !Shaman
     .goto The Barrens,44.55,59.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Quetschzahn|r
-    .aura 16618 >>|cRXP_WARN_Falls ihr 10|r |T134128:0|t[|cRXP_LOOT_Blutsplitter|r übrig habt, benutzt sie, um|cRXP_WARN_ |T136022:0|t[Geist des Windes] |rvon|cRXP_WARN_ Quetschzahn|r |cRXP_FRIENDLY_zu erhalten|r
+    .aura 16618 >>|cRXP_WARN_Falls ihr 10|r |T134128:0|t[|cRXP_LOOT_Blutsplitter|r] |cRXP_WARN_übrig habt, verwendet sie, um bei|r |cRXP_WARN_Quetschzahn|r |cRXP_FRIENDLY_|T136022:0|t[Geist des Windes] zu erhalten|r
     >>|cRXP_WARN_Überspringen diesen Schritt, falls ihr die Donnerfels-Flugroute habt|r
     .itemcount 5075,10
     .train 5118,1 << Hunter --skips step if aspect of the cheetah trained
@@ -4704,7 +4704,7 @@ step << Shaman
     .subzoneskip 378
 step << Shaman
     #completewith FlyOrg
-    .goto The Barrens,44.85,59.14,200 >>Travel back to Camp Taurajo (NOT TRANSLATED IN :deDE YET)
+    .goto The Barrens,44.85,59.14,200 >>Reist zurück zum Camp Taurajo
     .cooldown item,6948,<0
     .subzoneskip 378
 step << Shaman
