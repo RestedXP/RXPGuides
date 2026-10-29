@@ -584,6 +584,7 @@ local function ProcessSpells(names, rank)
         return
     end
 
+    local playerLevelMax = GetEffectivePlayerMaxLevel and GetEffectivePlayerMaxLevel() or 90
     local _, race = UnitRace("player")
     local level = UnitLevel("player")
     local entries = {race, addon.player.class}
@@ -591,8 +592,9 @@ local function ProcessSpells(names, rank)
 	local spellsToBuy = {}
     for _, entry in pairs(entries) do
         if addon.defaultSpellList[entry] then
-            for spellLvl, spells in pairs(addon.defaultSpellList[entry]) do
-                if spellLvl <= level then
+            for spellLvl = 1,playerLevelMax do
+                local spells = addon.defaultSpellList[entry][spellLvl]
+                if spells and spellLvl <= level then
                     for i, spellId in ipairs(spells) do
                         if not (spellRequest[spellId] or
                             C_Spell.IsSpellDataCached(spellId)) then
@@ -610,6 +612,9 @@ local function ProcessSpells(names, rank)
                                 end
                             end
                         end
+                    end
+                    if next(spellsToBuy) then
+                        break
                     end
                 end
             end
