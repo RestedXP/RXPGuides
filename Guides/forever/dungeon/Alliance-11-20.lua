@@ -2844,6 +2844,18 @@ step
     .goto Ironforge,76.61,51.28,10,0
     .zone Stormwind City >> Take the tram to Stormwind
 step << NightElf
+    .goto 1453/0,634.700,-8390.800
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shoni the Shilent|r
+    .accept 2040 >> Accept Underground Assault
+    .target Shoni the Shilent
+step << NightElf
+    #optional
+    .goto 1453/0,600.22,-8426.93
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Furen Longbeard|r
+    .turnin 1338 >> Turn in Stormpike's Order
+    .target Furen Longbeard
+    .isOnQuest 1338
+step << NightElf
     .goto 1453/0,501.200,-8468.601
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wilder Thistlenettle|r
     .accept 167 >> Accept Oh Brother. . .
@@ -2861,18 +2873,6 @@ step << NightElf
     >>|cRXP_WARN_She walks around slightly in the Royal Gallery|r
     .turnin 95189 >> Turn in Crest of Lordaeron
     .target Lady Dena Kennedy
-step << NightElf
-    .goto 1453/0,634.700,-8390.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shoni the Shilent|r
-    .accept 2040 >> Accept Underground Assault
-    .target Shoni the Shilent
-step << NightElf
-    #optional
-    .goto 1453/0,600.22,-8426.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Furen Longbeard|r
-    .turnin 1338 >> Turn in Stormpike's Order
-    .target Furen Longbeard
-    .isOnQuest 1338
 step << NightElf
     .isOnQuest 92415
     .goto 1453/0,744.400,-8621.101
