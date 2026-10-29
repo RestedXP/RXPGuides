@@ -46,7 +46,7 @@ step << Druid
     .mob +Young Thistle Boar
 step << Druid
     #completewith next
-    +|cRXP_WARN_Make sure that you have at least 96 copper worth of vendor trash|r, you can count your staff that vendors for 9c
+    +|cRXP_WARN_Make sure that you have at least 1 silver 2 copper worth of vendor trash|r, you can count your staff that vendors for 9c
 step << !sod/Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dirania Silvershine|r and |cRXP_FRIENDLY_Melithar Staghelm|r
     #label GoodProtector
@@ -146,6 +146,7 @@ step << Priest/Rogue
 	.goto 1438/1,826.03,10328.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Conservator Ilthalaine|r
     .turnin 456 >> Turn in The Balance of Nature
+    .accept 457 >> Accept The Balance of Nature
     .target Conservator Ilthalaine
 	.accept 3119 >> Accept Hallowed Sigil << Priest
 step << Druid
@@ -601,7 +602,7 @@ step << Rogue
 step << Druid
     .goto 1438/1,947.57,9812.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shalomon|r
-    >>|cRXP_BUY_Buy and equip a|r |T135145:0|t[Walking Stick] |cRXP_BUY_if you can afford it (4s 79c), if not skip this step|r
+    >>|cRXP_BUY_Buy and equip a|r |T135145:0|t[Walking Stick] |cRXP_BUY_if you can afford it (5s 4c), if not skip this step|r
     .collect 2495,1 --Walking Stick (1)
     .target Shalomon
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.20
@@ -1408,7 +1409,7 @@ step << Druid/Priest
     .accept 940 >> Accept Teldrassil
 step << Druid/Priest
     #label xp10
-    .xp 10-900 >> Grind until you are 900 xp off level 10 (5600/6500)
+    .xp 10-870 >> Grind until you are 870 xp off level 10 (5630/6500)
 step << Hunter
     #completewith xp10
     #label mist1
@@ -2125,22 +2126,20 @@ step
     >>Go to the |cRXP_FRIENDLY_Oracle Tree Bark|r
     .turnin 98398 >> Turn in The Oracle Tree
     .accept 940 >> Accept Teldrassil
-step
+step << !Warrior --remove warrior tag if they fix the ress sickness
     #softcore
 	#completewith darn << era
     #completewith darnSoD << sod
     .deathskip >>Die and respawn at the Darnassus graveyard
     >>|cRXP_WARN_Make sure you're on the west side of the river or you might end up going the wrong way|r << sod
     .target Spirit Healer
-step
-    #hardcore
+step << Warrior --remove warrior tag if they fix the ress sickness
     #completewith next
     .goto 1457/1,2070.42,9979.310
     .zone Darnassus >> Travel to Darnassus
-step
+step << !Warrior --remove warrior tag if they fix the ress sickness 
     #hardcore
     #completewith next
-    #season 2
     .goto 1457/1,2070.42,9979.310
     .zone Darnassus >> Travel to Darnassus
 step << !Warrior

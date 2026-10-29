@@ -1067,7 +1067,7 @@ step << NightElf
     .goto 1439,35.088,55.085,60,0
     .goto 1439,35.275,53.464,60,0
     .goto 1439,36.091,51.501,60,0
-    .xp 11+7300 >> Grind to 7300+/8800xp
+    .xp 12-2500 >> Grind to 6300+/8800xp
 step
     #label invisThistle
     #optional
@@ -1087,7 +1087,57 @@ step
     .turnin 3524 >> Turn in Washed Ashore
     .accept 4681 >> Accept Washed Ashore
     .target Gwennyth Bly'Leggonde
-
+step
+    #optional
+    #completewith next
+    .goto 1439,36.806,44.137,8,0
+    .goto 1439,35.743,43.710,12 >> Travel toward |cRXP_FRIENDLY_Cerellean Whiteclaw|r on the dock
+step
+    .goto 1439,35.743,43.710
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cerellean Whiteclaw|r
+    .accept 963 >> Accept For Love Eternal
+    .target Cerellean Whiteclaw
+step
+    #optional
+    #completewith SeaT1
+    .goto 1439,32.432,43.744,15 >> Travel to the end of the dock, then jump into the water
+step
+    #optional
+    #completewith washed1
+    .goto 1439/1,741.52,6570.95,0
+    .goto 1439/1,915.10,6333.84,0
+    .goto 1439/1,778.20,6231.66,0
+    >>Kill |cRXP_ENEMY_Darkshore Threshers|r. Loot them for their |cRXP_LOOT_Thresher Eyes|r
+    .complete 1001,1 --Thresher Eye (3)
+    .mob Darkshore Thresher
+    .isOnQuest 1001
+step
+    #label SeaT1
+    .goto 1439,31.841,46.304
+    >>Open the |cRXP_PICK_Skeletal Sea Turtle|r. Loot it for the |cRXP_LOOT_Sea Turtle Remains|r
+    .complete 4681,1 --Sea Turtle Remains (1)
+step
+    #optional
+    .goto 1439/1,577.38,6371.35
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gubber Blump|r
+    .accept 1138 >> Accept Fruit of the Sea
+    .target Gubber Blump
+    .xp <15,1
+step
+    #label washed1
+    .goto 1439,36.701,45.122,8,0
+    .goto 1439,36.621,45.596
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
+    .turnin 4681 >> Turn in Washed Ashore
+    .target Gwennyth Bly'Leggonde
+step << Druid NightElf
+    #optional
+    .xp 12 >> Grind to level 12
+step << Druid NightElf
+    .goto 1439,37.703,43.393
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
+    .accept 4811 >> Accept The Red Crystal
+    .target Sentinel Glynda Nal'Shea   
 step << Druid NightElf
     #optional
     #completewith Lunaclaw
@@ -1177,49 +1227,6 @@ step << Druid NightElf
     >>|cRXP_WARN_Use the|r |T134865:0|t[Empty Water Tube] |cRXP_WARN_at the Auberdine moonwell|r
     .complete 4812,1 --Moonwell Water Tube (1)
     .use 14338
-step
-    #optional
-    #completewith next
-    .goto 1439,36.806,44.137,8,0
-    .goto 1439,35.743,43.710,12 >> Travel toward |cRXP_FRIENDLY_Cerellean Whiteclaw|r on the dock
-step
-    .goto 1439,35.743,43.710
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cerellean Whiteclaw|r
-    .accept 963 >> Accept For Love Eternal
-    .target Cerellean Whiteclaw
-step
-    #optional
-    #completewith SeaT1
-    .goto 1439,32.432,43.744,15 >> Travel to the end of the dock, then jump into the water
-step
-    #optional
-    #completewith washed1
-    .goto 1439/1,741.52,6570.95,0
-    .goto 1439/1,915.10,6333.84,0
-    .goto 1439/1,778.20,6231.66,0
-    >>Kill |cRXP_ENEMY_Darkshore Threshers|r. Loot them for their |cRXP_LOOT_Thresher Eyes|r
-    .complete 1001,1 --Thresher Eye (3)
-    .mob Darkshore Thresher
-    .isOnQuest 1001
-step
-    #label SeaT1
-    .goto 1439,31.841,46.304
-    >>Open the |cRXP_PICK_Skeletal Sea Turtle|r. Loot it for the |cRXP_LOOT_Sea Turtle Remains|r
-    .complete 4681,1 --Sea Turtle Remains (1)
-step
-    #optional
-    .goto 1439/1,577.38,6371.35
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gubber Blump|r
-    .accept 1138 >> Accept Fruit of the Sea
-    .target Gubber Blump
-    .xp <15,1
-step
-    #label washed1
-    .goto 1439,36.701,45.122,8,0
-    .goto 1439,36.621,45.596
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
-    .turnin 4681 >> Turn in Washed Ashore
-    .target Gwennyth Bly'Leggonde
 step
     .goto 1439,37.322,43.640
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Barithras Moonshade|r
