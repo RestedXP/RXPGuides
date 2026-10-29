@@ -32,7 +32,7 @@ step
     .complete 12892,1 << Horde --The Ocular has been destroyed (1)
 step
     .goto IcecrownGlacier,44.1,24.7
-	>>Fliegt ganz hinunter zu Baron Silber. Sprecht mit ihm
+	>>Fly all the way down to Baron Sliver on the ground. Talk to him
     .turnin 12887 >>Gebt die Quest Nichts als Spaß und Spiele ab << Alliance
     .turnin 12892 >>Gebt die Quest Nichts als Spaß und Spiele ab << Horde
     .accept 12891 >>Akzeptiert die Quest Ich habe da eine Idee, aber zuerst...
@@ -108,7 +108,7 @@ step << Horde
     .accept 12899 >>Akzeptiert die Quest Das Schattengewölbe
 step
     .goto IcecrownGlacier,42.8,24.9
-	>>Kehrt zu Baron Silber zurück
+	>>Return to Baron Sliver
 	.turnin 12898 >>Gebt die Quest Das Schattengewölbe ab << Alliance
     .turnin 12899 >>Gebt die Quest Das Schattengewölbe ab << Horde
     .accept 12938 >>Akzeptiert die Quest Der Herzog
@@ -177,7 +177,7 @@ step
 step
     .goto IcecrownGlacier,39.01,23.99,25,0
     .goto IcecrownGlacier,42.9,24.9
-	>>Verlasst die Halle. Kehrt zu Baron Silber zurück
+	>>Exit the Hall. Return to Baron Sliver
     .turnin 12951 >>Gebt die Quest Gebt dem Baron Bescheid ab
     .daily 12995 >>Akzeptiert die Quest Setzt ein Zeichen
     .accept 13085 >>Akzeptiert die Quest Vaelen ist zurückgekehrt
@@ -235,7 +235,7 @@ step
 	.isQuestComplete 12995
 step
     .goto IcecrownGlacier,42.9,24.9
-	>>Sprecht mit Silber
+	>>Talk to Sliver
     .accept 12806 >>Akzeptiert die Quest Zur Todesanhöhe so schnell Ihr könnt!
 step
     .goto IcecrownGlacier,43.5,25.0

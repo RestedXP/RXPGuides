@@ -66,7 +66,7 @@ step
 	.goto 1411,43.43,70.84,30,0
 	.goto 1411,44.39,70.04,30,0
     >>Tötet |cRXP_ENEMY_Northwatch Späher|r
-    >>|cRXP_WARN_Sie sind unsichtbar|r
+    >>|cRXP_WARN_Sie sind in Verstohlenheit|r
     .complete 25172,1 --Northwatch Scout (7)
     .mob Northwatch Scout
     --VV Check on yard range for these stealthed mobs
@@ -1495,7 +1495,7 @@ step << Hunter
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.2
 step << Warrior/Shaman/Paladin
     #completewith Bombay
-    +Legt den |T133053:0|t[Hölzerner Schlaghammer] an
+    +Legt den |T133053:0|t[Hölzernen Schlaghammer] an.
     .use 2493
     .itemcount 2493,1
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.9
@@ -1672,7 +1672,7 @@ step << Hunter
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.2
 step << Warrior/Shaman/Paladin
     #completewith AttackPlans
-    +Legt den |T133053:0|t[Hölzerner Schlaghammer] an
+    +Legt den |T133053:0|t[Hölzernen Schlaghammer] an.
     .use 2493
     .itemcount 2493,1
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.9
@@ -2651,7 +2651,7 @@ step
     .goto 1411,47.07,30.87,40,0
     .goto 1411,47.16,29.67,40,0
     .goto 1411,48.95,22.34,40,0
-    >>Plündert |cRXP_LOOT_Kul Sack of Vorräte|r vom Boden
+    >>Plündert den |cRXP_LOOT_Sack of Vorräte|r vom Boden
     .complete 834,1 --Sack of Supplies (5)
     .isOnQuest 834
 step

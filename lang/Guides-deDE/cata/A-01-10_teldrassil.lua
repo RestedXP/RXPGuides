@@ -124,7 +124,7 @@ step << Mage
     .goto 1438/1,793.29999,10397.10059,-1
     .goto 1438/1,787.40002,10393.00000,-1
     .goto 1438/1,781.90002,10389.90039,-1
-    >>|cRXP_WARN_Wirkt|r |T135812:0|t[Feuerball] |cRXP_WARN_auf die |cRXP_ENEMY_Trainingsattrappe|r, bis ihr einen|r |T135731:0|t[Arkan Missles!] |cRXP_WARN_Proc erhaltet, dann wirkt|r |T136096:0|t[Arkane Geschosse]|cRXP_WARN_. Wiederholt das zweimal|r
+    >>|cRXP_WARN_Wirkt|r |T135812:0|t[Feuerball] |cRXP_WARN_auf die |cRXP_ENEMY_Trainingsattrappe|r, bis ihr|r |T135731:0|t[Arkane Geschosse!] |cRXP_WARN_erhaltet, dann wirkt|r |T136096:0|t[Arkane Geschosse]|cRXP_WARN_. Wiederholt dies zweimal|r
     .complete 26940,1 << cata -- Practice Arcane Missiles (1)
     .complete 26940,2 << !cata -- Practice Arcane Missiles (1)
     .mob Training Dummy

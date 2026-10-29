@@ -647,7 +647,7 @@ step << cata Shaman
 step << cata Shaman
     #xprate <1.2
     .goto 1426/0,-536.50000,-5581.50000
-    .train 331 >> Lernt |T136052:0|tHealing Winken beim Wirtshaus Kharanos
+    .train 331 >> Erlernt |T136052:0|tWelle der Heilung im Gasthof in Kharanos
 step << Gnome
 #xprate >1.19
     #optional

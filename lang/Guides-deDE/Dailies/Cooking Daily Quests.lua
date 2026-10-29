@@ -99,12 +99,12 @@ step << Horde
 	.isOnQuest 13116
 step << Alliance
 	.goto Dalaran,40.20,66.98
-	>>Benutzt eure Kochkunst-Fertigkeit, um 4 |cRXP_LOOT_Rhino Fleisch|r in 4 |cRXP_LOOT_Rhinowürstchen|r zu kochen.
+	>>Benutzt die Kochkunst-Fertigkeit von Euch, um 4 |cRXP_LOOT_Rhino Fleisch|r in 4 |cRXP_LOOT_Rhinowürstchen|r zu kochen
 	.collect 34752,4 -- Rhino Dogs (4)
 	.isOnQuest 13107
 step << Horde
 	.goto Dalaran,70.44,39.80
-	>>Benutzt eure Kochkunst-Fertigkeit, um 4 |cRXP_LOOT_Rhino Fleisch|r in 4 |cRXP_LOOT_Rhinowürstchen|r zu kochen.
+	>>Benutzt die Kochkunst-Fertigkeit von Euch, um 4 |cRXP_LOOT_Rhino Fleisch|r in 4 |cRXP_LOOT_Rhinowürstchen|r zu kochen
 	.collect 34752,4 -- Rhino Dogs (4)
 	.isOnQuest 13116
 step << Alliance
@@ -217,7 +217,7 @@ step
 	.target Orton Bennet
 -- Quest: Sewer Stew
 step
-	.zone CrystalsongForest >>Geht in Dalaran in das Violet Tor Gebäude und klickt den Violet Stand Kristall um euch unterhalb zu Kristallsangwald zu teleportieren
+	.zone CrystalsongForest >>In Dalaran begebt euch in das Gebäude Violettes Tor und klickt den Kristall des Violetten Postens an, um euch nach unten nach Kristallsangwald zu teleportieren
 	.goto Dalaran,57.32,46.55,6,0
 	.goto Dalaran,55.91,46.77
 	.isOnQuest 13102 << Alliance
@@ -428,13 +428,13 @@ step << Horde
 step << Alliance
     #label stew
 	.goto Dalaran,40.20,66.98
-	>>Benutzt eure Kochkunst-Fertigkeit, um 4 |cRXP_LOOT_Chilled Fleisch|r in 4 |cRXP_LOOT_Nordischer Eintopf|r zu kochen.
+	>>Benutzt die Kochkunst-Fertigkeit von Euch, um 4 |cRXP_LOOT_Kälte Fleisch|r in 4 |cRXP_LOOT_Nordischer Eintopf|r zu kochen
 	.complete 13101,1 --Northern Stew (4)
 	.isOnQuest 13101
 step << Horde
     #label stew
 	.goto Dalaran,70.44,39.80
-	>>Benutzt eure Kochkunst-Fertigkeit, um 4 |cRXP_LOOT_Chilled Fleisch|r in 4 |cRXP_LOOT_Nordischer Eintopf|r zu kochen.
+	>>Benutzt die Kochkunst-Fertigkeit von Euch, um 4 |cRXP_LOOT_Kälte Fleisch|r in 4 |cRXP_LOOT_Nordischer Eintopf|r zu kochen
 	.complete 13113,1 --Northern Stew (4)
 	.isOnQuest 13113
 step

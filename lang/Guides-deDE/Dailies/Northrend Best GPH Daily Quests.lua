@@ -480,7 +480,7 @@ step
 -- 3 Quests from The Shadow Vault
 step
 	>>Akzeptiert in Das Schattengewölbe die 3 Täglichen Quests
-    >>Sprecht mit Silber
+    >>Talk to Sliver
 	.daily 12995 >>Akzeptiert die Quest Setzt ein Zeichen
 	.goto Icecrown,42.84,24.92
 	>>Sprecht mit dem Springer. Er läuft um das Zelt herum
@@ -527,7 +527,7 @@ step
     .complete 13071,1 --Vrykul buildings set ablaze (8)
 	.isOnQuest 13071
 step
-    >>Kehrt zu Das Schattengewölbe zurück. Sprecht mit Silber, Der Springer und Ekel
+    >>Return to The Shadow Vault. Talk to Sliver, The Leaper and Vile
 	.turnin 12995 >>Gebt die Quest Setzt ein Zeichen ab
 	.goto Icecrown,42.84,24.92
     .turnin 13069 >>Gebt die Quest Schießen'Em Up ab

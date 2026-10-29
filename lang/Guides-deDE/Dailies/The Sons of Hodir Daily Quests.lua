@@ -97,7 +97,7 @@ step
 	.goto TheStormPeaks,55.94,65.69,60,0
 	.goto TheStormPeaks,59.25,59.94
 	.use 42769 >> Benutzt den Speer von Hodir, um euch an einen wilden Wyrm zu befestigen. Stellt sicher, dass ihr volle Gesundheit habt, bevor ihr das macht.
-	>>Benutzt Zupacken (1) wiederholt, um euren Griff zu erhöhen. Wenn der Wyrm nach euch schlägt, benutzt Klauen ausweichen (2). Benutzt Speerstoß (3) und Rachsüchtiger Speerstoß (4) sobald ihr könnt.
+	>>Benutzt Zupacken (1) wiederholt, um von Euch Griff zu erhöhen. Wenn der Wyrm nach Euch schlägt, benutzt Klauen ausweichen (2). Benutzt Speerstoß (3) und Rachsüchtiger Speerstoß (4) so oft wie möglich.
 	>>Denkt daran, Zupacken (1) kontinuierlich zu benutzen, ansonsten fallt ihr runter, wenn ihr nur die Angriffe (3) und (4) spamt!
 	>>Sobald der wilde Wyrm unter 30% Gesundheit ist, ändert sich eure Aktionsleiste. Benutzt Kiefer auseinanderdrücken (1) fünfmal, dann benutzt Fataler Stoß (3). Falls Fataler Stoß fehlschlägt, benutzt weiter Kiefer auseinanderdrücken (1), bis der Cooldown für Fataler Stoß (3) bereit ist.
 	.complete 13003,1 --Stormforged Infiltrators Slain (3)

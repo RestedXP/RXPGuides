@@ -390,7 +390,7 @@ step
     .accept 26291 >>Akzeptiert die Quest Viel Ärger in Mondbruch
 step
     #completewith next
-    .hs >> Benutzt euren Ruhestein zum Späherkuppe
+    .hs >> Benutzt euren Ruhestein zur Späherkuppe
     .cooldown item,6948,>2,1
 step
     .goto 1436/0,1045.300,-10508.800
@@ -496,7 +496,7 @@ step
     .complete 26320,1 -- Vision of the Past uncovered 1/1
 step
     #completewith next
-    .hs >> Benutzt euren Ruhestein zum Späherkuppe
+    .hs >> Benutzt euren Ruhestein zur Späherkuppe
     .cooldown item,6948,>2,1
 step
     .goto 1436/0,1045.100,-10508.800

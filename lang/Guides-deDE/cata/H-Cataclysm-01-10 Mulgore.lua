@@ -423,7 +423,7 @@ step << Hunter
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.9
 step << Warrior/Shaman/Paladin
     #completewith PalemaneGnolls
-    +Legt den |T133053:0|t[Hölzerner Schlaghammer] an
+    +Legt den |T133053:0|t[Hölzernen Schlaghammer] an.
     .use 2493
     .itemcount 2493,1
     .itemStat 16,QUALITY,<7
@@ -630,7 +630,7 @@ step << Hunter
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.9
 step << Warrior/Shaman/Paladin
     #completewith WinterhoofWell
-    +Legt den |T133053:0|t[Hölzerner Schlaghammer] an
+    +Legt den |T133053:0|t[Hölzernen Schlaghammer] an.
     .use 2493
     .itemcount 2493,1
     .itemStat 16,QUALITY,<7

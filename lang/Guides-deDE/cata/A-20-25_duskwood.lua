@@ -38,7 +38,7 @@ step
 step
     .goto 47,75.56,45.37,8,0
     .goto 47,75.83,45.26
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht im Haus
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Madame Eva|r im Haus
     .turnin 26653 >>Gebt die Quest Lieferung aus Dunkelhain ab
     .accept 26652 >>Geisterhaarfaden annehmen
 	.target Madame Eva
@@ -209,7 +209,7 @@ step
 step
     .goto 47,75.56,45.37,8,0
     .goto 47,75.83,45.26
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht im Haus
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Madame Eva|r im Haus
     .turnin 26654 >>Gebt die Quest Rückkehr mit dem Kamm ab
     .accept 26655 >>Abliefern des Fadens annehmen
 	.target Madame Eva

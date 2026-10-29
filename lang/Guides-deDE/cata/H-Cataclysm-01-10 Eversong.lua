@@ -627,7 +627,7 @@ step << Rogue
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.8
 step << Warrior/Paladin
     #completewith Thaelis
-    +Legt den |T133053:0|t[Hölzerner Schlaghammer] an
+    +Legt den |T133053:0|t[Hölzernen Schlaghammer] an.
     .use 2493
     .itemcount 2493,1
     .itemStat 16,QUALITY,<7
@@ -832,7 +832,7 @@ step << Rogue
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.8
 step << Warrior/Paladin
     #completewith Caidanis
-    +Legt den |T133053:0|t[Hölzerner Schlaghammer] an
+    +Legt den |T133053:0|t[Hölzernen Schlaghammer] an.
     .use 2493
     .itemcount 2493,1
     .itemStat 16,QUALITY,<7
@@ -1075,7 +1075,7 @@ step
     .goto Eversong Woods,25.09,71.12,40,0
     .goto Eversong Woods,24.36,72.66,40,0
     >>Tötet den |cRXP_ENEMY_Mmmrrrggglll|r. Plündert |cRXP_LOOT_Mmmrrrgggllls Läuten|r
-    >>|cRXP_WARN_Er patrouilliert leicht in der Gegend|r
+    >>|cRXP_WARN_Er patrouilliert ein wenig umher|r
     >>|cRXP_WARN_Benutzt|r |T136222:0|t[Arkaner Strom] |cRXP_WARN_um|r |cRXP_ENEMY_Mmmrrrggglll|r's |T136052:0|t[Welle der Heilung] zu unterbrechen << BloodElf
     .complete 8885,1 --Collect Ring of Mmmrrrggglll (x1)
     .unitscan Mmmrrrggglll
