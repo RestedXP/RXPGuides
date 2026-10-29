@@ -7,7 +7,7 @@ RXPGuides.RegisterGuide([[
 #group RXP MoP 1-80 (A) << mop
 #cata
 #mop
-#name 1-6 Vallée de Comté-du-Nord
+#name 1-6 Comté-du-Nord
 #version 1
 #next 6-9 Forêt d'Elwynn
 #defaultfor Human !DK
@@ -36,8 +36,8 @@ step
     .goto 425,29.25,38.05,40,0
     .goto 425,26.25,40.59,40,0
     .goto 425,26.09,53.65,40,0
-    >>Tuez |cRXP_ENEMY_Blackrock Worgs|r << !mop
-    >>Tuez |cRXP_ENEMY_Blackrock Bataille Worgs|r << mop
+    >>Tuez les |cRXP_ENEMY_Worgs rochenoires|r << !mop
+    >>Tuez les |cRXP_ENEMY_Worgs de guerre rochenoires|r << mop
     .complete 28757,1 << Human Mage --Blackrock Worgs (6)
     .complete 28762,1 << Human Paladin --Blackrock Worgs (6)
     .complete 28763,1 << Human Priest --Blackrock Worgs (6)
@@ -83,8 +83,8 @@ step
     .goto 425,24.84,50.52,40,0
     .goto 425,23.64,51.42,40,0
     .goto 425,26.60,54.71,40,0
-    >>Tuez |cRXP_ENEMY_Blackrock Spies|r
-    >>|cRXP_WARN_Ils sont|r |T132320:0|t[Camouflé] |cRXP_WARN_(mais facilement visible)|r
+    >>Tuez les |cRXP_ENEMY_Espions rochenoires|r
+    >>|cRXP_WARN_Ils sont|r |T132320:0|t[Camouflés] |cRXP_WARN_(mais facilement visible)|r
     .complete 31140,1 << Human Death Knight/Human Monk --Blackrock Spies (8)
     .complete 28769,1 << Human Mage --Blackrock Spies (8)
     .complete 28759,1 << Human Hunter --Blackrock Spies (8)
@@ -145,15 +145,15 @@ step << Human Monk
     .goto 425/0,-212.100,-8907.400
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Bao|r
     .target Bao
-    .turnin 31141 >>Rendre la quête Lettre calligraphiée
+    .turnin 31141 >>Rendez la quête Lettre calligraphiée
     .accept 31142 >>Acceptez la quête Paume du tigre
 step << Warrior/Paladin
     #optional
     #completewith next
     .goto 425,35.84,51.87,8,0
     .goto 425,38.46,52.30,8,0
-    .goto 425,40.87,53.80,10 >> Rendez-vous vers |cRXP_FRIENDLY_Llane Beshere|r dans l'Abbaye << Warrior
-    .goto 425,41.55,53.23,10 >> Rendez-vous vers |cRXP_FRIENDLY_Frère Sammuel|r dans l'Abbaye << Paladin
+    .goto 425,40.87,53.80,10 >> Voyagez vers |cRXP_FRIENDLY_Llane Beshere|r dans l'abbaye << Warrior
+    .goto 425,41.55,53.23,10 >> Voyagez jusqu'au |cRXP_FRIENDLY_Frère Sammuel|r dans l'abbaye << Paladin
 step << Warrior
     .goto 425,40.87,53.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Llane Beshere|r
@@ -166,15 +166,15 @@ step << Paladin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Brother Sammuel|r
     .turnin 3101 >>Rendez la quête Lettre consacrée << Human
     .accept 26918 >>Acceptez la quête Le pouvoir de la Lumière << Human
-    .train 20154 >>S'entraîner |T135960:0|t[Sceau de piété] << Cata
+    .train 20154 >>Apprenez |T135960:0|t[Sceau de piété] << Cata
     .train 20271 >>Apprenez [Jugement] << Cata
     .target Brother Sammuel
 step << Rogue
     .goto 425,41.13,45.32
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Jorik Kerridan|r à l'extérieur de l'autre côté de l'Abbaye
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Jorik Kerridan|r à l'extérieur, du côté opposé de l'abbaye
     .turnin 3102 >>Rendez Lettre codée << Human
-    .accept 26915 >>Acceptez la quête La Meurtrissure la plus profonde << Human
-    .train 2098 >>Entraînez-vous |T132292:0|t[L'éviscération] << Cata
+    .accept 26915 >>Acceptez la quête Du fond des tripes << Human
+    .train 2098 >>Apprenez |T132292:0|t[Eviscération] << Cata
     .target Jorik Kerridan
 step << Human Priest/Human Mage
     #optional
@@ -184,15 +184,15 @@ step << Human Priest/Human Mage
     .goto 425,38.95,46.52,8,0 << Priest
     .goto 425,38.31,46.07,8,0 << Mage
     .goto 425,37.94,45.13,5,0 << Mage
-    .goto 425,39.31,43.78,10 >> Rendez-vous vers |cRXP_FRIENDLY_Prêtresse Anetta|r dans l'Abbaye << Priest
-    .goto 425,38.78,43.47,10 >> Rendez-vous vers |cRXP_FRIENDLY_Khelden Bremen|r dans l'Abbaye à l'étage. Sautez depuis les escaliers par la rampe à l'extérieur de sa chambre si vous pouvez << Mage
+    .goto 425,39.31,43.78,10 >> Voyagez vers la |cRXP_FRIENDLY_Prêtresse Anetta|r dans l'abbaye << Priest
+    .goto 425,38.78,43.47,10 >> Voyagez vers |cRXP_FRIENDLY_Khelden Bremen|r à l'étage dans l'abbaye . Sautez depuis les escaliers par la rampe à l'extérieur de sa salle si vous le pouvez << Mage
 step << Human Priest
     .goto 425,39.31,43.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Priestess Anetta|r
     .turnin 3103 >>Rendez la quête Lettre bénie
-    .accept 26919 >>Acceptez la quête Soins du Blessé << cata
-    .accept 26919 >>Acceptez la quête Apprendre la parole << !cata
-    .train 2061 >>Entraînez-vous |T135907:0|t[Soins rapides] << Cata
+    .accept 26919 >>Acceptez la quête Soigner les blessés << cata
+    .accept 26919 >>Acceptez la quête Apprendre le mot << !cata
+    .train 2061 >>Apprenez |T135907:0|t[Soins rapides] << Cata
     .target Priestess Anetta
 --XX Human Priest only since Flash Heal is somewhat useless when you just smite spam
 step << Cata Human Priest
@@ -207,7 +207,7 @@ step << Cata Human Priest
     .goto 425,37.84,53.31,10,0
     .goto 425,37.00,54.53,10,0
     .goto 425,36.36,53.06,10,0
-    >>Lancez |T135907:0|t[Soins rapides] sur 5 |cRXP_FRIENDLY_Recrues blessées|r dans l'Abbaye
+    >>Lancez |T135907:0|t[Soins rapides] sur 5 |cRXP_FRIENDLY_Jeunes recrues blessées|r dans l'abbaye
     .complete 26919,1 --Cast Flash Heal (5)
     .target Wounded Trainee
 step << !Cata Human Priest
@@ -219,14 +219,14 @@ step << !Cata Human Priest
     .goto 425,34.74,62.27,-1
     .goto 425,34.48,61.76,-1
     .goto 425,34.46,61.13,-1
-    >>Lancez |T136207:0|t[Mot de l'ombre : Douleur] sur un |cRXP_ENEMY_Mannequin d'entraînement|r 5 fois
+    >>Lancez |T136207:0|t[Mot de l'ombre : Douleur] sur un |cRXP_ENEMY_Mannequin d'entraînement|r à 5 reprises
     .complete 26919,2 --Cast Flash Heal (5)
     .target Training Dummy
 step << Human Mage
     .goto 425,38.78,43.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Khelden Bremen|r
     .turnin 3104 >>Rendez la quête Lettre glyphée << Human
-    .accept 26916 >>Acceptez la quête L'apprentissage des Arcanes << Human
+    .accept 26916 >>Acceptez la quête L’apprentissage des Arcanes << Human
     .train 5143 >>Apprenez |T136096:0|t[Projectiles des Arcanes] << Cata
     .target Khelden Bremen
 --XX Human Mage only since Arcane Missiles is somewhat useless when you just fireball spam
@@ -234,15 +234,15 @@ step << Warlock
     .goto 425,39.55,55.12
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Drusilla La Salle|r
     .turnin 3105 >>Rendez la quête Lettre contaminée << Human
-    .accept 26914 >>Acceptez la quête Immoler << Human
+    .accept 26914 >>Acceptez la quête L'immolation << Human
     .train 348 >>Apprenez [Immolation] << Cata
     .target Drusilla La Salle
 step << Hunter
     .goto 425,34.83,54.79
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Ashley Vide|r
-    .turnin 26910 >>Rendre la quête La lettre gravée << Human
-    .accept 26917 >>Acceptez la quête L'assurance de bien tirer << Human
-    .train 56641 >>S'entraîner |T132213:0|t[Veilleur du puits Solanian] << Cata
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Ashley Blank|r
+    .turnin 26910 >>Rendez la quête La lettre gravée << Human
+    .accept 26917 >>Acceptez la quête L’assurance de bien tirer << Human
+    .train 56641 >>Apprenez |T132213:0|t[Tir assuré] << Cata
     .target Ashley Blank
 step << Human Warrior/Human Paladin/Human Mage
     #optional
@@ -252,7 +252,7 @@ step << Human Warrior/Human Paladin/Human Mage
     .goto 425,37.20,48.32,8,0 << Mage
     .goto 425,35.61,51.32,8,0 << Mage
     .goto 425,33.82,53.38,10,0
-    .goto 425,35.58,60.57,40 >> Rendez-vous vers les |cRXP_ENEMY_Training Dummies|r
+    .goto 425,35.58,60.57,40 >> Voyagez vers les |cRXP_ENEMY_Mannequins d'entraînement|r
 step << !Priest Human
     .goto 425,35.58,60.57,-1
     .goto 425,35.82,61.08,-1
@@ -262,12 +262,12 @@ step << !Priest Human
     .goto 425,34.74,62.27,-1
     .goto 425,34.48,61.76,-1
     .goto 425,34.46,61.13,-1
-    >>Lancez |T574576:0|t[Coup direct] suivi de |T606551:0|t[Paume du tigre] sur un |cRXP_ENEMY_Mannequin d'entraînement|r << Monk
-    >>Lancez |T132337:0|t[À la charge !] sur un |cRXP_ENEMY_Mannequin d'entraînement|r << Warrior
-    >>Lancez |T135817:0|t[Immolation] sur un |cRXP_ENEMY_Mannequin d'entraînement|r 5 fois << Warlock
-    >>Lancez |T136189:0|t[Attaque pernicieuse] puis |T132292:0|t[L'éviscération] sur un |cRXP_ENEMY_Mannequin d'entraînement|r 3 fois << Rogue
-    >>Lancez |T135812:0|t[Boule de feu] puis |T136096:0|t[Projectiles des Arcanes] quand elle se déclenche sur un |cRXP_ENEMY_Mannequin d'entraînement|r 2 fois << Mage
-    >>Lancez |T132213:0|t[Veilleur du puits Solanian] sur un |cRXP_ENEMY_Mannequin d'entraînement|r 5 fois << Hunter
+    >>Lancez |T574576:0|t[Coup direct] suivi d'une |T606551:0|t[Paume du tigre] sur un |cRXP_ENEMY_Mannequin d'entraînement|r << Monk
+    >>Lancez |T132337:0|t[Charge] sur un |cRXP_ENEMY_Mannequin d'entraînement|r << Warrior
+    >>Lancez |T135817:0|t[Immolation] sur un |cRXP_ENEMY_Mannequin d'entraînement|r à 5 reprises << Warlock
+    >>Lancez |T136189:0|t[Attaque pernicieuse] puis |T132292:0|t[Eviscération] sur un |cRXP_ENEMY_Mannequin d'entraînement|r à 3 reprises << Rogue
+    >>Lancez |T135812:0|t[Boule de feu] puis |T136096:0|t[Projectiles des Arcanes] lorsque vous avez un proc sur un |cRXP_ENEMY_Mannequin d'entraînement|r à 2 reprises << Mage
+    >>Lancez |T132213:0|t[Tir assuré] sur un |cRXP_ENEMY_Mannequin d'entraînement|r à 5 reprises << Hunter
     >>Lancez |T135960:0|t[Sceau de piété] puis |T135959:0|t[Jugement] sur un |cRXP_ENEMY_Mannequin d'entraînement|r << Paladin
 --cata ids
     .complete 26913,1 << Warrior Cata --Cast Charge (1)
@@ -294,57 +294,57 @@ step << Human Warrior/Human Paladin/Human Mage/Human Monk
     .goto 425,37.20,48.32,8,0 << Mage
     .goto 425,38.31,46.07,8,0 << Mage
     .goto 425,37.94,45.13,5,0 << Mage
-    .goto 425,40.87,53.80,10 >> Retournez à |cRXP_FRIENDLY_Llane Beshere|r dans l'Abbaye << Warrior
-    .goto 425,41.55,53.23,10 >> Retournez à |cRXP_FRIENDLY_Frère Sammuel|r dans l'Abbaye << Paladin
-    .goto 425,38.78,43.47,10 >> Retournez à |cRXP_FRIENDLY_Khelden Bremen|r dans l'Abbaye << Mage
-    .goto 425/0,-212.100,-8907.400,10 >> Retournez à |cRXP_FRIENDLY_Bao|r dans l'Abbaye << Monk
+    .goto 425,40.87,53.80,10 >> Retournez auprès de |cRXP_FRIENDLY_Llane Beshere|r dans l'abbaye << Warrior
+    .goto 425,41.55,53.23,10 >> Retournez au |cRXP_FRIENDLY_Frère Sammuel|r dans l'abbaye << Paladin
+    .goto 425,38.78,43.47,10 >> Retournez auprès de |cRXP_FRIENDLY_Khelden Bremen|r dans l'abbaye << Mage
+    .goto 425/0,-212.100,-8907.400,10 >> Retournez auprès de |cRXP_FRIENDLY_Bao|r dans l'abbaye << Monk
 step << Human Monk
     .goto 425/0,-212.100,-8907.400
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Priestess Anetta|r
-    .turnin 31142 >>Rendre la quête Soins du Blessé
+    .turnin 31142 >>Rendez la quête Soigner les blessés
     .accept 31143 >>Acceptez la quête Rejoignez la bataille !
     .target Priestess Anetta
 step << Human Priest
     .goto 425,39.31,43.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Priestess Anetta|r
-    .turnin 26919 >>Rendre la quête Soins du Blessé
+    .turnin 26919 >>Rendez la quête Soigner les blessés
     .accept 28786 >>Acceptez la quête Rejoignez la bataille !
     .target Priestess Anetta
 step << Human Mage
     .goto 425,38.78,43.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Khelden Bremen|r
-    .turnin 26916 >>Rendre la quête L'apprentissage des Arcanes
+    .turnin 26916 >>Rendez la quête L’apprentissage des Arcanes
     .accept 28784 >>Acceptez la quête Rejoignez la bataille !
     .target Khelden Bremen
 step << Human Warrior
     .goto 425,40.87,53.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Llane Beshere|r
-    .turnin 26913 >>Rendre la quête La charge héroïque
+    .turnin 26913 >>Rendez la quête La charge héroïque
     .accept 28789 >>Acceptez la quête Rejoignez la bataille !
     .target Llane Beshere
 step << Human Paladin
     .goto 425,41.55,53.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Brother Sammuel|r
-    .turnin 26918 >>Rendre la quête Le pouvoir de la Lumière
+    .turnin 26918 >>Rendez la quête Le pouvoir de la Lumière
     .accept 28785 >>Acceptez la quête Rejoignez la bataille !
     .target Brother Sammuel
 step << Human Rogue
     .goto 425,41.13,45.32
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Jorik Kerridan|r
-    .turnin 26915 >>Rendez la quête La plus profonde des blessures
+    .turnin 26915 >>Rendez la quête Du fond des tripes
     .accept 28787 >>Acceptez la quête Rejoignez la bataille !
     .target Jorik Kerridan
 step << Human Warlock
     .goto 425,39.55,55.12
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Drusilla La Salle|r
-    .turnin 26914 >>Rendre la quête Immoler
+    .turnin 26914 >>Rendez la quête L'immolation
     .accept 28788 >>Acceptez la quête Rejoignez la bataille !
     .target Drusilla La Salle
 --XX May not need to turn in class quest to accept followup (aka can turn in later)
 step << Human Hunter
     .goto 425,34.83,54.79
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Ashley Vide|r
-    .turnin 26917 >>Rendre la quête L'assurance de bien tirer
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Ashley Blank|r
+    .turnin 26917 >>Rendez la quête L’assurance de bien tirer
     .accept 28780 >>Acceptez la quête Rejoignez la bataille !
     .target Ashley Blank
 
@@ -353,7 +353,7 @@ step << Human Hunter
 
 step
     .goto 425,35.73,39.80
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sergent Willem|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Sergent Willem|r
     .turnin 28780 >>Rendez la quête Rejoignez la bataille ! << Human Hunter
     .turnin 28784 >>Rendez la quête Rejoignez la bataille ! << Human Mage
     .turnin 28785 >>Rendez la quête Rejoignez la bataille ! << Human Paladin
@@ -393,8 +393,8 @@ step << !DK !Monk
 step << skip
     #optional
     #completewith Rear
-    .goto 425,31.59,16.72,40 >> |cRXP_WARN_[RARE] Vérification pour |cRXP_ENEMY_Gug Grosse-Bougie|r. Tuez-le s'il est actif|r
-    *|cRXP_WARN_Il est important de tuer des Rares et de piller les Coffres de Trésor, car ils accordent beaucoup d'expérience|r
+    .goto 425,31.59,16.72,40 >> |cRXP_WARN_[RARE] Vérifiez la présence de |cRXP_ENEMY_Gug Grosse-Bougie|r. Tuez-le s'il est disponible|r.
+    *|cRXP_WARN_Il est important de tuer des mobs Rares et d'ouvrir les Coffres au Trésor, comme ils vous octroient beaucoup d'expérience|r
 	.unitscan Gug Fatcandle
     .noflyable
 step << !DK !Monk
@@ -410,7 +410,7 @@ step << !DK !Monk
     .goto 425,31.56,25.82,15,0
     .goto 425,33.45,24.77,15,0
     .goto 425,36.08,23.69,15,0
-    >>Cliquez sur les |cRXP_PICK_Injured Entités de BC Infantries|r au sol pour les ressusciter
+    >>Cliquez sur les |cRXP_PICK_Soldats d'infanterie de Hurlevent blessés|r au sol pour les ressusciter
     .complete 28806,1 << Human Hunter --Revive Injured Soldiers (4)
     .complete 28808,1 << Human Mage --Revive Injured Soldiers (4)
     .complete 28809,1 << Human Paladin --Revive Injured Soldiers (4)
@@ -432,7 +432,7 @@ step
     .goto 425,29.65,31.64,45,0
     .goto 425,28.45,27.49,45,0
     .goto 425,27.16,18.98,45,0
-    >>Tuez les |cRXP_ENEMY_Gobelin Assassins|r
+    >>Tuez les |cRXP_ENEMY_Assassins gobelins|r
     .complete 28791,1 << Human Hunter --Goblin Assassins (8)
     .complete 28792,1 << Human Mage --Goblin Assassins (8)
     .complete 28793,1 << Human Paladin --Goblin Assassins (8)
@@ -464,7 +464,7 @@ step << !DK !Monk
 step
     #label Rear
     .goto 425,35.73,39.80
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sergent Willem|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Sergent Willem|r
     .turnin 28791 >>Rendez la quête Ils ont envoyé des assassins << Human Hunter
     .turnin 28792 >>Rendez la quête Ils ont envoyé des assassins << Human Mage
     .turnin 28793 >>Rendez la quête Ils ont envoyé des assassins << Human Paladin
@@ -485,7 +485,7 @@ step
     .accept 31145 >>Acceptez la quête La zone est dégagée << Human Death Knight/Human Monk
     .target Sergeant Willem
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Maréchal McBride|r et |cRXP_FRIENDLY_Milly Osworth|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Maréchal McBride|r et à |cRXP_FRIENDLY_Milly Osworth|r
     .turnin 28817 >>Rendez la quête La zone est dégagée << Human Hunter
     .turnin 28818 >>Rendez la quête La zone est dégagée << Human Mage
     .turnin 28819 >>Rendez la quête La zone est dégagée << Human Paladin
@@ -503,15 +503,15 @@ step
     .target +Milly Osworth
 step << skip
     #completewith next
-    +|cRXP_WARN_Pour activer la liaison de touches pour les objets de quête, suivez ces étapes:|r
-    *[1] Appuyez sur la |cRXP_WARN_Echap./Esc.|r touche.
+    +|cRXP_WARN_Pour activer les raccourcis claviers pour les objets de quête, suivez ces étapes:|r
+    *[1] Appuyez sur la |cRXP_WARN_touche Echap.|r
     *[2] Sélectionnez |cRXP_WARN_Options|r.
-    *[3] Accédez à |cRXP_WARN_Keybindings|r.
-    *[4] Dans |cRXP_WARN_Keybindings|r, trouvez |cRXP_WARN_RestedXP Guides|r.
-    *[5] Sélectionnez et liez les |cRXP_WARN_Active Boutons|r.
+    *[3] Accédez à |cRXP_WARN_Raccourcis|r.
+    *[4] Dans |cRXP_WARN_Raccourcis|r, cherchez |cRXP_WARN_Guides RestedXP|r.
+    *[5] Sélectionnez et définissez une touche pour |cRXP_WARN_Boutons actifs|r.
 step
     #completewith next
-    >>Tuez les |cRXP_ENEMY_Blackrock Invaders|r. Ramassez-les pour leur Butin: les |cRXP_LOOT_Blackrock Orc Armes|r
+    >>Tuez les |cRXP_ENEMY_Envahisseurs rochenoires|r. Dépouillez-les pour leur |cRXP_LOOT_Arme d'orc rochenoire|r
     .complete 26389,1 --Blackrock Orc Weapon (8)
     .mob Blackrock Invader
 step
@@ -535,7 +535,7 @@ step
     .goto 425,55.49,70.94,20,0
     .goto 425,53.67,68.68,20,0
     .goto 425,50.63,73.13,20,0
-    >>|cRXP_WARN_Canal|r |T308321:0|t[Milly's Extincteur] |cRXP_WARN_sur les feux à travers le Vignoble de Comté-du-Nord|r
+    >>|cRXP_WARN_Canalisez l'|r |T308321:0|t[Extincteur de Milly] |cRXP_WARN_sur les feux dans le Vignoble de Comté-du-Nord|r
     .complete 26391,1 --Vineyard Fire extinguished (8)
     .use 58362
 step
@@ -548,14 +548,14 @@ step
     .goto 425,57.63,77.83,50,0
     .goto 425,57.48,71.22,50,0
     .goto 425,56.07,62.66,50,0
-    >>Tuez les |cRXP_ENEMY_Blackrock Invaders|r. Ramassez-les pour leur Butin: les |cRXP_LOOT_Blackrock Orc Armes|r
+    >>Tuez les |cRXP_ENEMY_Envahisseurs rochenoires|r. Dépouillez-les pour leur |cRXP_LOOT_Arme d'orc rochenoire|r
     .complete 26389,1 --Blackrock Orc Weapon (8)
     .mob Blackrock Invader
 step
     #completewith next
     .deathskip >> Mourez et ressuscitez au |cRXP_FRIENDLY_Gardien des âmes|r
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Milly Osworth|r et |cRXP_FRIENDLY_Maréchal McBride|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Milly Osworth|r et au |cRXP_FRIENDLY_Maréchal McBride|r
     .turnin 26391 >>Rendez la quête Un espoir d'extinction
     .target +Milly Osworth
     .goto 425,33.38,54.67
@@ -581,7 +581,7 @@ step
     #optional
     #completewith next
     .goto 37,46.877,48.018,20,0
-    .goto 37,45.563,47.738,15 >> Rendez-vous vers |cRXP_FRIENDLY_Falkhaan Isenrôde|r
+    .goto 37,45.563,47.738,15 >> Voyagez vers |cRXP_FRIENDLY_Falkhaan Isenrôde|r
     .skill riding,75,1
 step
     .goto 37,45.563,47.738
@@ -615,7 +615,7 @@ step << Dwarf/Gnome
     #completewith Belm
     .goto 27,54.083,50.335,8,0
     .goto 27,54.277,50.312,8,0
-    .goto 27,54.485,50.847,10 >> Entrez dans la Distillerie Tonnebière. Rendez-vous vers |cRXP_FRIENDLY_Belm l'aubergiste|r à l'intérieur
+    .goto 27,54.485,50.847,10 >> Entrez dans la Distillerie Tonnebière. Dirigez-vous vers |cRXP_FRIENDLY_Belm l'aubergiste|r à l'intérieur
     .subzoneskip 2102
 step << Gnome
 #xprate >1.19
@@ -638,7 +638,7 @@ step << Dwarf/Gnome/DarkIronDwarf
     .goto 27,54.784,50.629,8,0
     .goto 27,54.733,50.815,8,0
     .goto 27,54.733,50.815
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Gremlock Pilsnor|r à l'intérieur de l'arrière-salle
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Gremlock Pilsnor|r dans la salle au fond
     .accept 6387 >>Acceptez la quête L'honneur des étudiants
 	.target Gremlock Pilsnor
 step << cata Shaman
@@ -647,14 +647,14 @@ step << cata Shaman
 step << cata Shaman
     #xprate <1.2
     .goto 1426/0,-536.50000,-5581.50000
-    .train 331 >> Entraînez-vous à |T136052:0|tVague de soins à l'auberge de Kharanos
+    .train 331 >> Apprenez |T136052:0|tVague de soins à l'auberge de Kharanos
 step << Gnome
 #xprate >1.19
     #optional
     #questguide
     .goto 27,53.713,52.190
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Capitaine Tharran|r
-    .turnin 26373 >>Rendre la quête Prochaine étape : Kharanos
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Capitaine Tharran|r
+    .turnin 26373 >>Rendez la quête Prochaine étape : Kharanos
 	.target Captain Tharran
     .isOnQuest 26373
 step << Dwarf/Gnome
@@ -733,7 +733,7 @@ step << skip
     #optional
     #completewith RemyTT
     .goto 37,41.95,67.16,0
-    +|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Lien Farner|r à côté de |cRXP_FRIENDLY_Remy « Deux fois »|r si vous souhaitez apprendre les Métiers
+    +|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Lien Farner|r près de |cRXP_FRIENDLY_Remy « Deux fois »|r si vous voulez apprendre des métiers
     .target Lien Farner
 step
     #optional
@@ -752,7 +752,7 @@ step
     #optional
     #completewith Necklace1
     .goto 37,38.22,83.41,0
-    >>Tuez les |cRXP_ENEMY_Kobold Tunnelers|r. Ramassez leurs |cRXP_LOOT_Large Bougies|r et |cRXP_LOOT_Gold Poussière|r
+    >>Tuez les |cRXP_ENEMY_Tunneliers kobolds|r. Dépouillez-les pour leurs |cRXP_LOOT_Grandes bougies|r et leur |cRXP_LOOT_Poussière d'or|r
     .complete 60,1 --8/8 Large Candle
     .complete 47,1 --10/10 Gold Dust
 	.mob Kobold Tunneler
@@ -775,7 +775,7 @@ step
 step
     #completewith Billy1
     .goto 37,38.22,83.41,0
-    >>Tuez les |cRXP_ENEMY_Kobold Tunnelers|r et les |cRXP_ENEMY_Kobold Miners|r. Ramassez leurs |cRXP_LOOT_Large Bougies|r et |cRXP_LOOT_Gold Poussière|r
+    >>Tuez les |cRXP_ENEMY_Tunneliers kobolds|r et les |cRXP_ENEMY_Mineurs kobolds|r. Dépouillez-les pour leur |cRXP_LOOT_Grandes bougies|r et leur |cRXP_LOOT_Poussière d'or|r.
     .complete 60,1 --8/8 Large Candle
     .complete 47,1 --10/10 Gold Dust
 	.mob Kobold Tunneler
@@ -791,7 +791,7 @@ step
     #completewith TommyJoe
     .goto 37,41.69,86.91,0
     .goto 37,32.54,85.26,0
-    >>Tuez les |cRXP_ENEMY_Stonetusk Boars|r. Ramassez leurs |cRXP_LOOT_Tender Sanglier Viande|r
+    >>Tuez les |cRXP_ENEMY_Sangliers brocherocs|r. Dépouillez-les pour leur |cRXP_LOOT_Viande de sanglier tendre|r
     .complete 86,1 --Tender Boar Meat (4)
     .mob Stonetusk Boar
 step
@@ -813,12 +813,12 @@ step
     #optional
     #completewith PrincessEnd
     .goto 37,38.22,83.41,0
-    >>Tuez les |cRXP_ENEMY_Kobold Tunnelers|r. Ramassez leurs |cRXP_LOOT_Large Bougies|r et |cRXP_LOOT_Gold Poussière|r
+    >>Tuez les |cRXP_ENEMY_Tunneliers kobolds|r. Dépouillez-les pour leurs |cRXP_LOOT_Grandes bougies|r et leur |cRXP_LOOT_Poussière d'or|r
     .complete 60,1 --8/8 Large Candle
     .complete 47,1 --10/10 Gold Dust
 	.mob *Kobold Tunneler
 step << skip
-    .goto 37,33.64,87.76,15 >>|cRXP_WARN_[CHEST] Vérification du |cRXP_PICK_Coffre|r à l'intérieur des écuries. Ramassez-le s'il est disponible|r
+    .goto 37,33.64,87.76,15 >>|cRXP_WARN_[COFFRE] Vérifiez la présence d'un |cRXP_PICK_Coffre|r dans les écuries. Ouvrez-le s'il est disponible|r.
     .isOnQuest 60
 step
     #loop
@@ -830,7 +830,7 @@ step
     .goto 37,33.32,84.95,20,0
     .goto 37,33.41,86.16,20,0
     .goto 37,32.48,86.81,20,0
-    >>Tuez la |cRXP_ENEMY_Princesse|r. Ramassez-la pour ses |cRXP_LOOT_Brass Collar|r et |cRXP_LOOT_Tender Sanglier Viande|r
+    >>Tuez la |cRXP_ENEMY_Princesse|r. Dépouillez-la pour son |cRXP_LOOT_Collier de cuivre|r et la |cRXP_LOOT_Viande de sanglier tendre|r
     .complete 88,1 --1/1 Brass Collar
     .complete 86,1 --Tender Boar Meat (4)
     .disablecheckbox
@@ -847,7 +847,7 @@ step
     .goto 37,33.32,84.95,20,0
     .goto 37,33.41,86.16,20,0
     .goto 37,32.48,86.81,20,0
-    >>Tuez la |cRXP_ENEMY_Princesse|r. Ramassez-la pour son |cRXP_LOOT_Brass Collar|r
+    >>Tuez |cRXP_ENEMY_Princesse|r. Dépouillez-la pour son |cRXP_LOOT_Collier de cuivre|r
     .complete 88,1 --1/1 Brass Collar
 	.mob Princess
 --XX Will users struggle if they're still level 6?
@@ -868,7 +868,7 @@ step
     .goto 37,33.18,86.66,40,0 --Yes it's the same Y coordinate
     .goto 37,33.64,85.47,40,0
     .goto 37,31.93,83.57,40,0
-    >>Tuez les |cRXP_ENEMY_Stonetusk Boars|r. Ramassez leurs |cRXP_LOOT_Tender Sanglier Viande|r
+    >>Tuez les |cRXP_ENEMY_Sangliers brocherocs|r. Dépouillez-les pour leur |cRXP_LOOT_Viande de sanglier tendre|r
     .complete 86,1 --Tender Boar Meat (4)
     .mob Stonetusk Boar
 step
@@ -900,7 +900,7 @@ step << Human
 #xprate <1.2
     #completewith Goldtooth
     .goto 37,38.22,83.41,0
-    >>Tuez les |cRXP_ENEMY_Kobold Tunnelers|r. Ramassez leurs |cRXP_LOOT_Large Bougies|r et |cRXP_LOOT_Gold Poussière|r
+    >>Tuez les |cRXP_ENEMY_Tunneliers kobolds|r. Dépouillez-les pour leurs |cRXP_LOOT_Grandes bougies|r et leur |cRXP_LOOT_Poussière d'or|r
     .complete 60,1 --8/8 Large Candle
     .complete 47,1 --10/10 Gold Dust
 	.mob *Kobold Tunneler
@@ -919,12 +919,12 @@ step << Human
 #xprate <1.2
     #label Goldtooth
     .goto Elwynn Forest,40.08,80.62
-    >>Tuez |cRXP_ENEMY_Dent-d'or|r |cRXP_WARN_à l'extérieur|r de la mine. Ramassez-le pour le |cRXP_LOOT_Bernice's Collier|r
+    >>Tuez |cRXP_ENEMY_Dent-d'or|r |cRXP_WARN_à l'extérieur|r de la mine. Dépouillez-le pour le |cRXP_LOOT_Collier de Bernice|r
     .complete 87,1 --Collect Bernice's Necklace (x1)
     .mob Goldtooth
 step << skip
     #optional
-    .goto 37,38.22,83.41,40 >>|cRXP_WARN_[RARE] Vérification pour |cRXP_ENEMY_Narg le Sous-chef|r. Tuez-le s'il est là|r
+    .goto 37,38.22,83.41,40 >>|cRXP_WARN_[RARE] Vérifiez la présence du rare |cRXP_ENEMY_Narg le Sous-chef|r. Tuez-le s'il est présent|r
 	.unitscan Narg the Taskmaster
     .isOnQuest 60
     .noflyable
@@ -949,7 +949,7 @@ step
     .goto 39,78.65,28.65,20,0
     .goto 39,57.67,25.29,20,0
     .goto 38,53.73,72.25
-    >>Tuez les |cRXP_ENEMY_Kobold Tunnelers|r et les |cRXP_ENEMY_Kobold Miners|r. Ramassez leurs |cRXP_LOOT_Large Bougies|r et |cRXP_LOOT_Gold Poussière|r
+    >>Tuez les |cRXP_ENEMY_Tunneliers kobolds|r et les |cRXP_ENEMY_Mineurs kobolds|r. Dépouillez-les pour leur |cRXP_LOOT_Grandes bougies|r et leur |cRXP_LOOT_Poussière d'or|r.
     .complete 60,1 --8/8 Large Candle
     .complete 47,1 --10/10 Gold Dust
     .mob *Kobold Tunneler
@@ -978,7 +978,7 @@ step
     .goto 39,78.65,28.65,20,0
     .goto 39,57.67,25.29,20,0
     .goto 38,53.73,72.25
-    .xp 6+2275 >> Farmez jusqu'à 2275+/3600 points d'expérience
+    .xp 6+2275 >> Montez votre expérience jusqu'à 2275+/3600xp
     .mob Kobold Tunneler
     .mob Kobold Miner
 --XX 625 (Gold Dust) 700 (Goldtooth) - Ensure "A Fishy Peril"
@@ -1019,7 +1019,7 @@ step
     .goto 37,43.23,65.95,5,0
     .goto 37,43.13,65.74,5,0
     .goto 37,42.93,65.71,6,0
-    .goto 37,42.14,67.26,12 >>Rendez la quête à |cRXP_FRIENDLY_Rémi « Deux fois »|r
+    .goto 37,42.14,67.26,12 >>Retournez voir |cRXP_FRIENDLY_Remy « Deux fois »|r
 step
     .goto 37,42.14,67.26
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Remy "Two Times"|r
@@ -1043,7 +1043,7 @@ step << Warrior cata
     .target Lyria Du Lac
 step << Warlock cata
     #completewith next
-    .goto 37,44.54,65.76,15 >> Descendez dans le sous-sol de l'auberge de Comté-de-l'Or
+    .goto 37,44.54,65.76,15 >> Descendez dans la cave de l'auberge de Comté-de-l'Or
 step << Warlock cata
     .goto 37,44.389,66.240
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Maximillian Crowe|r
@@ -1051,7 +1051,7 @@ step << Warlock cata
     .target Maximillian Crowe
 step << Mage/Priest/Rogue cata
     #completewith next
-    .goto 37,43.86,66.40,15 >> Montez les escaliers dans l'auberge de Comté-de-l'Or
+    .goto 37,43.86,66.40,15 >> Montez les escaliers de l'auberge de Comté-de-l'Or
 step << Mage cata
     .goto 37,43.246,66.192
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Zaldimar Wefhellt|r
@@ -1094,8 +1094,8 @@ step << Human
     #completewith Frond
     #label ChargerMurloc
     .goto 37,42.105,65.927
-    >>|cRXP_WARN_Quand le minuteur de 20 secondes expire (20 secondes après avoir accepté la course), déconnectez-vous puis reconnectez-vous tant que vous êtes sur le |cRXP_FRIENDLY_Destrier de Hurlevent|r pour en descendre|r
-    .vehicle >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Maréchal Dughan|r pour monter le |cRXP_FRIENDLY_Destrier de Hurlevent|r vers |cRXP_FRIENDLY_Garde Thomas|r
+    >>|cRXP_WARN_Quand le chronomètre de 20 secondes expire (20 secondes après avoir accepté la course), déconnectez-vous puis reconnectez-vous tant que vous êtes sur le |cRXP_FRIENDLY_Destrier de Hurlevent|r pour en descendre|r
+    .vehicle >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Maréchal Dughan|r pour monter le |cRXP_FRIENDLY_Destrier de Hurlevent|r jusqu'au |cRXP_FRIENDLY_Garde Thomas|r
     .timer 20,Déconnectez-vous quand le minuteur se termine
     .target Marshal Dughan
     .isOnQuest 76
@@ -1107,8 +1107,8 @@ step << Human
     #completewith Frond
     #requires ChargerMurloc
     .goto 37,56.23,66.64
-    >>|cRXP_WARN_Quand le minuteur de 20 secondes expire (20 secondes après avoir accepté la course), déconnectez-vous puis reconnectez-vous tant que vous êtes sur le |cRXP_FRIENDLY_Destrier de Hurlevent|r pour en descendre|r
-    .subzone 18 >> Rendez-vous à Lac de Cristal
+    >>|cRXP_WARN_Quand le chronomètre de 20 secondes expire (20 secondes après avoir accepté la course), déconnectez-vous puis reconnectez-vous tant que vous êtes sur le |cRXP_FRIENDLY_Destrier de Hurlevent|r pour en descendre|r
+    .subzone 18 >> Voyagez jusqu'au Lac de Cristal
     .isOnQuest 76
     .skill riding,75,1
 step << Human
@@ -1121,7 +1121,7 @@ step << Human
     .goto 37,57.29,62.51,40,0
     .goto 37,55.14,63.48,40,0
     .goto 37,54.79,66.42,40,0
-    >>Tuez |cRXP_ENEMY_Murloc Streamrunners|r et |cRXP_ENEMY_Murlocs|r. Dépouillez-les pour leur |cRXP_LOOT_Crystal Varech Frond|r
+    >>Tuez les |cRXP_ENEMY_Ruisseliers murlocs|r et les |cRXP_ENEMY_Murlocs|r. Dépouillez-les pour leurs |cRXP_LOOT_Feuilles de varech cristallin|r
     .complete 112,1 --Crystal Kelp Frond (4)
     .mob Murloc Steamrunner
     .mob Murloc
@@ -1161,14 +1161,14 @@ step
     #xprate >1.19 << !Human
     #completewith Thomas
     .goto 37,42.105,65.927
-    .vehicle >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Maréchal Dughan|r pour monter le |cRXP_FRIENDLY_Destrier de Hurlevent|r vers |cRXP_FRIENDLY_Garde Thomas|r
-    .timer 90,Dialogue : Préoccupations supplémentaires
+    .vehicle >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Maréchal Dughan|r pour monter le |cRXP_FRIENDLY_Destrier de Hurlevent|r jusqu'au |cRXP_FRIENDLY_Garde Thomas|r
+    .timer 90,RP de Inquiétudes supplémentaires
     .target Marshal Dughan
     .skipgossip 240,1
     .subzoneskip 87,1 --Goldshire
 step
     #label Thomas
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tCliquez sur |cRXP_PICK_Bounty Embarquement|r et parlez à |cRXP_FRIENDLY_Garde Thomas|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tCliquez sur le |cRXP_PICK_Tableau de récompense|r et parlez au |cRXP_FRIENDLY_Garde Thomas|r
     --.accept 46 >>Accept Bounty on Murlocs
     .accept 26152 >>Acceptez la quête ON RECHERCHE : James Clark
     .goto 37,74.025,72.310
@@ -1183,8 +1183,8 @@ step
     .goto 37,71.58,60.84,0
     .goto 37,74.75,67.13,0
     .goto 37,87.15,64.63,0
-    >>Tuez |cRXP_ENEMY_Prowlers|r et |cRXP_ENEMY_Gray Forest Wolves|r
-    >>Tuez tous les |cRXP_ENEMY_Young Forest Bears|r que vous voyez
+    >>Tuez les |cRXP_ENEMY_Rôdeurs|r et les |cRXP_ENEMY_Loups forestiers gris|r
+    >>Tuez tous les |cRXP_ENEMY_Jeune ours des forêts|r que vous voyez
     .complete 52,1 --Kill Prowler or Forest Wolf (8)
     .mob +*Prowler
     .mob +*Gray Forest Wolf
@@ -1199,8 +1199,8 @@ step
     #label James
     .goto 37,78.87,67.20,10,0
     .goto 37,78.637,67.157
-    >>Tuez |cRXP_FRIENDLY_James Clark|r à l'intérieur. Ramassez-le pour |cRXP_LOOT_Tête de James Clark|r et |T134939:0|t|cRXP_LOOT_[Plan de route du Collecteur]|r
-    >>|cRXP_WARN_Utilisez |T134939:0|t|cRXP_LOOT_[Plan de route du Collecteur]|r pour commencer la quête|r
+    >>Tuez |cRXP_FRIENDLY_James Clark|r à l'intérieur. Dépouillez-le pour la |cRXP_LOOT_Tête de James Clark|r et le |T134939:0|t|cRXP_LOOT_Plan de route du Collecteur|r.
+    >>|cRXP_WARN_Utilisez le |T134939:0|t|cRXP_LOOT_[Plan de route du Collecteur]|r pour lancer une quête|r
     .complete 26152,1 --James Clark's Head (1)
     .collect 1307,1,123,1 --Gold Pickup Schedule (1)
     .accept 123 >>Acceptez la quête Le collecteur
@@ -1229,8 +1229,8 @@ step
     .goto 37,87.15,64.63,0
     .goto 37,81.56,58.15,0
     .goto 37,87.15,64.63,60,0
-    >>Tuez |cRXP_ENEMY_Prowlers|r et |cRXP_ENEMY_Gray Forest Wolves|r
-    >>Tuez tous les |cRXP_ENEMY_Young Forest Bears|r que vous voyez
+    >>Tuez les |cRXP_ENEMY_Rôdeurs|r et les |cRXP_ENEMY_Loups forestiers gris|r
+    >>Tuez tous les |cRXP_ENEMY_Jeune ours des forêts|r que vous voyez
     .complete 52,1 --Kill Prowler or Forest Wolf (8)
     .mob +*Prowler
     .mob +*Gray Forest Wolf
@@ -1242,7 +1242,7 @@ step
     .goto 37,80.63,62.25,0
     .goto 37,82.79,60.12,0
     .goto 37,84.20,61.55,20,0
-    >>Ramassez |cRXP_LOOT_Bundles of Bois|r sur le sol à côté des arbres
+    >>Ramassez les |cRXP_LOOT_Fagot de bois|r sur le sol à côté des arbres
     .complete 5545,1 -- Bundle of Wood (8)
 step
     .goto 37,79.795,55.510
@@ -1263,8 +1263,8 @@ step
     .waypoint 37,71.58,60.84,60,0
     .waypoint 37,74.75,67.13,60,0
     .waypoint 37,87.15,64.63,60,0
-    >>Tuez |cRXP_ENEMY_Prowlers|r et |cRXP_ENEMY_Gray Forest Wolves|r
-    >>Tuez tous les |cRXP_ENEMY_Young Forest Bears|r que vous voyez
+    >>Tuez les |cRXP_ENEMY_Rôdeurs|r et les |cRXP_ENEMY_Loups forestiers gris|r
+    >>Tuez tous les |cRXP_ENEMY_Jeune ours des forêts|r que vous voyez
     .complete 52,1 --Kill Prowler or Forest Wolf (8)
     .mob +*Prowler
     .mob +*Gray Forest Wolf
@@ -1294,7 +1294,7 @@ step
     .goto 37,84.20,61.55,20,0
     .goto 37,83.85,60.48,20,0
     .goto 37,82.79,60.12,20,0
-    >>Ramassez |cRXP_LOOT_Bundles of Bois|r sur le sol à côté des arbres
+    >>Ramassez les |cRXP_LOOT_Fagot de bois|r sur le sol à côté des arbres
     .complete 5545,1 -- Bundle of Wood (8)
 step
     #requires PTFrontier
@@ -1308,7 +1308,7 @@ step
 --XX     #optional if above not skipped
 step
     .goto 37,71.02,80.67
-    >>Tuez |cRXP_ENEMY_Morgan le Collecteur|r à l'intérieur. Dépouillez-le pour |cRXP_LOOT_The Collector's Anneau|r
+    >>Tuez |cRXP_ENEMY_Morgan le Collecteur|r à l'intérieur. Dépouillez-le pour l' |cRXP_LOOT_Anneau du Collecteur|r.
     .complete 147,1 --The Collector's Ring (1)
     .mob Morgan the Collector
 step
@@ -1338,7 +1338,7 @@ step << Hunter
 step << Human
     #optional
     #completewith hs1
-    .hs >> Utilisez votre Pierre de foyer pour vous téléporter à Comté-de-l'Or
+    .hs >> Utilisez votre Pierre de foyer pour revenir à Comté-de-l'or
     .cooldown item,6948,<0,1
 step << Human
     #completewith hs1
@@ -1357,7 +1357,7 @@ step << Human !Paladin !Warrior !Rogue
     #xprate >1.19
     .goto 37,81.829,66.556
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Goss le Preste|r
-    .fly Gol'Bolar Quarry >> Envolez-vous vers Carrière de Gol'Bolar
+    .fly Gol'Bolar Quarry >> Volez à la Carrière de Gol'Bolar
     .target Goss the Swift
     .cooldown item,6948,>0,1
 step << Human
@@ -1387,14 +1387,14 @@ step << Human
     .goto 37,41.715,64.636
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Bartlett le Brave|r
     .fly Stormwind >> Volez à Stormwind << Rogue/Paladin/Warrior
-    .fly Gol'Bolar Quarry >> Envolez-vous vers Carrière de Gol'Bolar << !Rogue !Paladin !Warrior
+    .fly Gol'Bolar Quarry >> Volez à la Carrière de Gol'Bolar << !Rogue !Paladin !Warrior
 	.target Bartlett the Brave
     .zoneskip Stormwind City
     .itemStat 16,QUALITY,<7
 step << Human (Warrior/Paladin)
     .goto 84,64.074,68.362
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Marda Weller|r
-    >>|cRXP_BUY_Achetez un|r |T135350:0|t[Claymore] |cRXP_BUY_auprès d'elle|r
+    >>|cRXP_BUY_Achetez-lui une|r |T135350:0|t[Claymore] |cRXP_BUY_|r
     >>Sinon, vous pouvez regarder à l'Hôtel des Ventes si vous trouvez une alternative meilleure ou moins onéreuse
     .collect 1198,1 -- Claymore (1)
     .money <0.2142
@@ -1404,7 +1404,7 @@ step << Human (Warrior/Paladin)
 step << Human Rogue
     .goto 84,64.074,68.362
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Marda Weller|r
-    >>|cRXP_BUY_Achetez un|r |T135346:0|t[Sabre d'abordage] |cRXP_BUY_auprès d'elle|r
+    >>|cRXP_BUY_Achetez-lui un|r |T135346:0|t[Sabre d'abordage] |cRXP_BUY_|r
     >>Sinon, vous pouvez regarder à l'Hôtel des Ventes si vous trouvez une alternative meilleure ou moins onéreuse
     .collect 851,1 -- Cutlass (1)
     .money <0.1618
@@ -1416,7 +1416,7 @@ step << Human Rogue
 step << Human Rogue
     .goto 84,64.074,68.362
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Marda Weller|r
-    >>|cRXP_BUY_Achetez une|r |T132402:0|t[Hachette] |cRXP_BUY_auprès d'elle|r
+    >>|cRXP_BUY_Achetez-lui une|r |T132402:0|t[Hachette] |cRXP_BUY_|r
     >>Sinon, vous pouvez regarder à l'Hôtel des Ventes si vous trouvez une alternative meilleure ou moins onéreuse
     .collect 853,1 -- Hatchet (1)
     .money <0.1927
@@ -1444,7 +1444,7 @@ step << Human Rogue
 step << Human Rogue
     #optional
     #completewith end
-    +|cRXP_WARN_Équipez la|r |T132402:0|t[Hachette] |cRXP_WARN_à votre main principale|r
+    +|cRXP_WARN_Équipez la|r |T132402:0|t[Hachette] |cRXP_WARN_dans votre main droite|r
     .use 853
     .itemcount 853,1
     .itemStat 16,QUALITY,<7
@@ -1452,8 +1452,8 @@ step << Human Rogue
 step << Human (Rogue/Paladin/Warrior)
     .goto 84,70.938,72.472,-1
     .goto 37,81.829,66.556,-1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Dungar Grangodet|r ou |cRXP_FRIENDLY_Goss le Preste|r
-    .fly Gol'Bolar Quarry >> Envolez-vous vers Carrière de Gol'Bolar
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Dungar Grangodet|r ou à |cRXP_FRIENDLY_Goss le Preste|r
+    .fly Gol'Bolar Quarry >> Volez à la Carrière de Gol'Bolar
 	.target Dungar Longdrink
     .zoneskip 27 --Dun Morogh
     .target Goss the Swift
@@ -1464,18 +1464,18 @@ step << Dwarf/Gnome
     .zoneskip Dun Morogh
 step << Dwarf/Gnome
     .goto 27,54.733,50.815
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Gremlock Pilsnor|r dans l'arrière-salle
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Gremlock Pilsnor|r dans la salle au fond
     .turnin 6392 >>Rendez la quête Retourner vers Gremlock
 	.target Gremlock Pilsnor
 --TODO: Training for dwarf/gnomes
 step << Dwarf/Gnome
     .goto 27,53.802,52.762
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Brolan Barbetrombe|r
-    .fly Gol'Bolar Quarry >> Envolez-vous vers Carrière de Gol'Bolar
+    .fly Gol'Bolar Quarry >> Volez à la Carrière de Gol'Bolar
 	.target Brolan Galebeard
 step << Human
-    .abandon 26394 >> Abandonnez toutes les quêtes de la Forêt d'Elwynn de votre journal de quêtes
+    .abandon 26394 >> Abandonnez toutes les quêtes de la Forêt d'Elwynn dans votre journal de quêtes
 step
 #label end
-.zone Dun Morogh >> Allez à l'Est de Dun Morogh
+.zone Dun Morogh >> Dirigez-vous vers l'Est de Dun Morogh
 ]])

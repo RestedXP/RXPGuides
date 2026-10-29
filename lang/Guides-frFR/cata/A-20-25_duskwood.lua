@@ -22,7 +22,7 @@ step
 step
     .goto 47,78.74,44.53,8,0
     .goto 47,79.09,44.17
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tobias|r à l'intérieur de la maison
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tobias|r dans la maison
     .accept 26666 >>Acceptez la quête La légende de Stalvan
 	.target Tobias Mistmantle
 step
@@ -38,14 +38,14 @@ step
 step
     .goto 47,75.56,45.37,8,0
     .goto 47,75.83,45.26
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à l'intérieur de la maison
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Madame Eva|r à l'intérieur de la maison
     .turnin 26653 >>Acceptez la quête Les denrées de Sombre-Comté
     .accept 26652 >>Acceptez la quête Mèche de cheveux fantômes
 	.target Madame Eva
 step
 	#completewith next
     .goto 47,73.82,45.95,8,0
-    .goto 47,74.07,45.32,8 >>Entrez à l'intérieur de l'auberge
+    .goto 47,74.07,45.32,8 >>Entrez dans l'auberge
 step
     #completewith Daltry1
     .goto 47,73.87,44.41
@@ -83,20 +83,20 @@ step
 step
     #optional
     #completewith Letters
-    >>Tuez des |cRXP_ENEMY_Venom Rets Araignées|r. Fouillez-les pour récupérer leurs |cRXP_LOOT_Lumps|r
+    >>Tuez les |cRXP_ENEMY_Araignées Tisse-venin|r. Dépouillez-les pour leur |cRXP_LOOT_Chair de crabe|r
     .complete 26623,1 --6/6 Dusky Lump
 	.mob Venom Web Spider
 step
 #completewith next
 #optional
     .goto 47,64.12,51.62,0,0
-    >>Tuez |cRXP_ENEMY_Nightbane Worgens|r
+    >>Tuez les |cRXP_ENEMY_Worgens Plaie-de-nuit|r
     .complete 26688,1 --7/7 Nightbane Worgen slain
 	.mob Nightbane Worgen
 step
 	#label Letters
     .goto 47,61.24,40.50
-    >>Ramassez la |cRXP_PICK_Pile of Loque|r sur le sol pour |cRXP_LOOT_A Slashed Bundle of Lettres|r
+    >>Ramassez les |cRXP_PICK_Piles de morceaux de papier|r au sol pour |cRXP_LOOT_Un paquet de lettres lacérées|r
     .complete 26667,1 --1/1 A Slashed Bundle of Letters
 step
 #loop
@@ -106,12 +106,12 @@ step
     .goto 47,64.12,51.62,0
     .goto 47,60.883,40.830,0
     .goto 47,65.304,44.317,0
-    >>Tuez les |cRXP_ENEMY_Nightbane Worgens|r
+    >>Tuez les |cRXP_ENEMY_Worgens Plaie-de-nuit|r
     .complete 26688,1 --7/7 Nightbane Worgen slain
 	.mob Nightbane Worgen
 step
 	#completewith next
-    >>Tuez les |cRXP_ENEMY_Dire Wolves|r. Ramassez-les pour leurs |cRXP_LOOT_Steaks|r
+    >>Tuez les |cRXP_ENEMY_Loups redoutables|r. Dépouillez-les pour leurs |cRXP_LOOT_Steaks|r
     .complete 26618,1 --12/12 Dire Wolf slain
     .complete 26620,1 --5/5 Wolf Skirt Steak
 	.mob Dire Wolf
@@ -130,7 +130,7 @@ step
     .goto 47,65.54,30.32,40,0
     .goto 47,73.29,20.23,40,0
     .goto 47,63.90,19.41,0
-    >>Tuez les |cRXP_ENEMY_Venom Rets Araignées|r. Ramassez-les pour leurs |cRXP_LOOT_Lumps|r
+    >>Tuez les |cRXP_ENEMY_Araignées Tisse-venin|r. Dépouillez-les pour leur |cRXP_LOOT_Chair de crabe|r
     .complete 26623,1 --6/6 Dusky Lump
 	.mob Venom Web Spider
 step
@@ -145,16 +145,16 @@ step
     .goto 47,60.93,27.34,40,0
     .goto 47,65.54,30.32,40,0
     .goto 47,59.00,20.72,0
-    >>Tuez des |cRXP_ENEMY_Dire Wolves|r. Fouillez-les pour récupérer leurs |cRXP_LOOT_Steaks|r
+    >>Tuez les |cRXP_ENEMY_Loups redoutables|r. Dépouillez-les pour leurs |cRXP_LOOT_Steaks|r
     .complete 26618,1 --12/12 Dire Wolf slain
     .complete 26620,1 --5/5 Wolf Skirt Steak
 	.mob Dire Wolf
 step
     .isOnQuest 26620,26618,26623,26688,26667
-    .hs >> Utilisez votre Pierre de foyer pour vous téléporter à Sombre-Comté
+    .hs >> Utilisez votre Pierre de foyer pour revenir à Sombre-Comté
     .cooldown item,6948,>2
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Daltry|r à l'intérieur et |cRXP_FRIENDLY_Althea|r à l'extérieur
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Daltry|r à l'intérieur et à |cRXP_FRIENDLY_Althea|r à l'extérieur
     .turnin 26667 >>Rendez la quête Les lettres volées
     .accept 26669 >>Acceptez la quête Dans un coin sombre
     .target +Clerk Daltry
@@ -179,14 +179,14 @@ step
 	.target Viktori Prism'Antras
 step
 	#completewith next
-    >>Tuez des |cRXP_ENEMY_Rotting Horrors|r
+    >>Tuez les |cRXP_ENEMY_Horreurs pourrissantes|r
 	.complete 26645,1 --8/8 Rotting Horror slain
 	.mob Rotting Horror
 step
     .goto 47,81.66,59.16,8,0
     .goto 47,81.92,58.98,5,0
     .goto 47,82.05,59.32
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Mary|r à l'intérieur de la maison
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Mary|r dans la maison
     .turnin 26652 >>Rendez la quête Mèche de cheveux fantômes
     .accept 26654 >>Acceptez la quête Le retour du peigne
     .turnin 26683 >>Rendez la quête Un œil dans les étoiles
@@ -200,16 +200,16 @@ step
 	.goto 47,80.91,56.65,30,0
 	.goto 47,79.48,60.41,30,0
 	.goto 47,82.30,61.22,30,0
-    >>Tuez les |cRXP_ENEMY_Rotting Horrors|r
+    >>Tuez les |cRXP_ENEMY_Horreurs pourrissantes|r
 	.complete 26645,1 --8/8 Rotting Horror slain
 	.mob Rotting Horror
 step
     #completewith next
-    .subzone 42 >> Rendez la quête à Sombre-Comté
+    .subzone 42 >> Retournez à Sombre-Comté
 step
     .goto 47,75.56,45.37,8,0
     .goto 47,75.83,45.26
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à l'intérieur de la maison
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Madame Eva|r à l'intérieur de la maison
     .turnin 26654 >>Rendez la quête Le retour du peigne
     .accept 26655 >>Acceptez la quête Apporter la mèche
 	.target Madame Eva
@@ -223,12 +223,12 @@ step << skip
     #completewith next
     .goto 47,87.98,33.16,20,0
     .goto 47,88.1,31.33,20,0
-    .goto 47,90.98,30.53,30 >>Cherchez le |cRXP_ENEMY_Soldat inconnu|r (Rare). Tuez-le s'il est là
+    .goto 47,90.98,30.53,30 >>Cherchez le |cRXP_ENEMY_Soldat inconnu|r (Rare). Tuez-le s'il est disponible
 	.unitscan Unknown Soldier
 step
 	#completewith next
     .goto 47,73.82,45.95,8,0
-    .goto 47,74.07,45.32,8 >>Entrez à l'intérieur de l'auberge
+    .goto 47,74.07,45.32,8 >>Entrez dans l'auberge
 step
     .goto 47,74.09,44.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Smitts|r
@@ -252,7 +252,7 @@ step
 #optional
 	#completewith next
     >>Tuez les |cRXP_ENEMY_Skeletal Warriors|r et les |cRXP_ENEMY_Skeletal Mages|r
-	>>Ramassez les |cRXP_LOOT_Rot Blossoms|r sur le sol
+	>>Ramassez les |cRXP_LOOT_Racines pourries|r sur le sol.
     .complete 26686,1 --5/5 Skeletal Warrior slain
 	.mob +Skeletal Warrior
     .complete 26686,2 --5/5 Skeletal Mage
@@ -261,7 +261,7 @@ step
 step
     .goto 47,80.31,71.10,15,0
     .goto 47,80.88,71.58
-    >>Tuez la |cRXP_ENEMY_Goule folle|r dans le cimetière. Fouillez-la pour |cRXP_LOOT_Mary's Regarde Verre|r
+    >>Tuez la |cRXP_ENEMY_Goule folle|r dans le cimetière. Dépouillez-la pour le |cRXP_LOOT_Miroir de Marie|r
     .complete 26684,1 --1/1 Mary's Looking Glass
 	.mob Insane Ghoul
 step
@@ -273,7 +273,7 @@ step
     .goto 47,80.89,74.21,30,0
     .goto 47,81.85,68.34,30,0
     >>Tuez les |cRXP_ENEMY_Skeletal Warriors|r et les |cRXP_ENEMY_Skeletal Mages|r
-	>>Ramassez les |cRXP_LOOT_Rot Blossoms|r sur le sol
+	>>Ramassez les |cRXP_LOOT_Racines pourries|r sur le sol.
     .complete 26686,1 --5/5 Skeletal Warrior slain
 	.mob +Skeletal Warrior
     .complete 26686,2 --5/5 Skeletal Mage
@@ -292,7 +292,7 @@ step
 step
 #label journal1
     .goto 47,66.59,76.44
-    >>Ramassez le |cRXP_LOOT_A Torn Entités de MoP|r sur le sol
+    >>Ramassez |cRXP_LOOT_Un journal déchiré|r au sol
     .complete 26669,1 --1/1 A Torn Journal
 step
 #loop
@@ -307,7 +307,7 @@ step
     .complete 26689,1 --10/10 Nightbane Shadow Weaver slain
 	.mob Nightbane Shadow Weaver
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Althea|r à l'extérieur et |cRXP_FRIENDLY_Daltry|r à l'intérieur
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Althea|r à l'extérieur et à |cRXP_FRIENDLY_Daltry|r à l'intérieur
     .turnin 26686 >>Rendez la quête Les os qui marchent
     .goto 47,73.523,46.925
 	.target +Commander Althea Ebonlocke
@@ -318,7 +318,7 @@ step
 step
 	#completewith next
     .goto 47,73.82,45.95,8,0
-    .goto 47,74.07,45.32,8 >>Entrez à l'intérieur de l'auberge
+    .goto 47,74.07,45.32,8 >>Entrez dans l'auberge
 step
     .goto 47,74.09,44.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Smitts|r
@@ -363,7 +363,7 @@ step
     .goto 47,73.44,76.86,20,0
     .goto 47,74.26,77.92,20,0
     .goto 47,73.62,79.21
-    >>Ramassez les |cRXP_LOOT_Muddy Entités de MoP Pages|r sur le sol
+    >>Ramassez les |cRXP_LOOT_Pages de journal maculées de boue|r au sol
     .complete 26670,1 --1/1 Muddy Journal Pages
 step
 #loop
@@ -401,7 +401,7 @@ step
 step
     .goto 47,78.74,44.53,8,0
     .goto 47,79.084,44.173
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tobias|r à l'intérieur de la maison
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tobias|r dans la maison
     .turnin 26671 >>Rendez la quête Le destin de Stalvan Mantebrume
     .accept 26672 >>Acceptez la quête Il n'y a que la vérité qui blesse
     .target Tobias Mistmantle
@@ -415,7 +415,7 @@ step
 	.target Madame Eva
 step
     #completewith next
-	.cast 82029 >> |cRXP_WARN_Utilisez le|r |T133343:0|t[Mistmantle Family Anneau] |cRXP_WARN_pour invoquer|r |cRXP_ENEMY_Stalvan Mantebrume|r
+	.cast 82029 >> |cRXP_WARN_Utilisez la|r |T133343:0|t[Chevalière des Mantebrume] |cRXP_WARN_pour invoquer|r |cRXP_ENEMY_Stalvan Mantebrume|r
 	.timer 33,RP de La revanche de Mantebrume
 step
     .goto 47,77.42,35.85,10,0
@@ -426,15 +426,15 @@ step
 step
     .goto 47,78.74,44.53,8,0
     .goto 47,79.084,44.173
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tobias|r à l'intérieur de la maison
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tobias|r dans la maison
     .turnin 26674 >>Rendez la quête La revanche de Mantebrume
     .accept 26785 >>Acceptez la quête Un membre de la meute
 	.target Tobias Mistmantle
 step
 	#completewith next
-    .goto 47,69.51,48.83,30 >> Prenez le sentier derrière l'Hôtel de ville vers Bosquet de Clairbois
+    .goto 47,69.51,48.83,30 >> Prenez le chemin derrière l'Hôtel de ville vers le Bosquet de Clairbois
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Dodds|r et à |cRXP_FRIENDLY_Fess|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Dodds|r et à |cRXP_FRIENDLY_Foss|r
     .accept 25235 >>Acceptez la quête Les vulgaires Vul'Gol
 	.target +Watcher Dodds
     .goto 47,45.12,67.02
@@ -448,12 +448,12 @@ step
     .maxlevel 25,endOfTheGuide
 step
     #completewith next
-    >>Tuez |cRXP_ENEMY_Corpseweeds|r. Ramassez-les pour leurs |cRXP_LOOT_Charognelle|r
+    >>Tuez les |cRXP_ENEMY_Charognelles|r. Dépouillez-les pour leur |cRXP_LOOT_Charognelle|r
     .complete 26707,1 --5/5 Corpseweed
 	.mob Corpseweed
 step
     .goto 47,49.86,77.69
-    >>Cliquez sur |cRXP_PICK_Mound of Loose Dirt|r sur le sol
+    >>Cliquez sur le |cRXP_PICK_Monticule de poussière flottante|r au sol
     .complete 26717,1 --1/1 Mound of Loose Dirt
 step
     #loop
@@ -464,12 +464,12 @@ step
     .goto 47,51.99,73.61,60,0
     .goto 47,49.04,70.73,60,0
     .goto 47,47.12,73.79,60,0
-    >>Tuez |cRXP_ENEMY_Corpseweeds|r. Ramassez-les pour leurs |cRXP_LOOT_Charognelle|r
+    >>Tuez les |cRXP_ENEMY_Charognelles|r. Dépouillez-les pour leur |cRXP_LOOT_Charognelle|r
     .complete 26707,1 --5/5 Corpseweed
 	.mob Corpseweed
 step
     #completewith Zzarc
-	>>Tuez les |cRXP_ENEMY_Splinter Fist Ogres|r, les |cRXP_ENEMY_Splinter Fist Firemongers|r et les |cRXP_ENEMY_Splinter Fist Warriors|r
+	>>Tuez les |cRXP_ENEMY_Ogres Brisepoings|r, les |cRXP_ENEMY_Incendiaires Brisepoings|r, et les |cRXP_ENEMY_Guerriers Brisepoings|r
     .complete 25235,1 --15/15 Splinter Fist Ogre slain
 	.mob Splinter Fist Ogre
 	.mob Splinter Fist Firemonger
@@ -480,7 +480,7 @@ step
     .complete 26680,1 --1/1 Abercrombie's Crate
 step
     #completewith next
-    .goto 47,34.23,77.47,15 >> Entrez dans la Caverne Ogre Brisepoing
+    .goto 47,34.23,77.47,15 >> Entrez dans la grotte des Ogres Brisepoings
 step
 	#label Zzarc
     .goto 47,37.87,84.33
@@ -489,7 +489,7 @@ step
 	.unitscan Zzarc' Vul
 step
 	#completewith next
-    .goto 47,34.20,77.47,15 >>Quittez la Caverne Ogre Brisepoing
+    .goto 47,34.20,77.47,15 >>Sortez de la grotte des Ogres Brisepoings
 	.isOnQuest 25235,26685
 step
     #loop
@@ -502,13 +502,13 @@ step
     .goto 47,39.06,70.59,60,0
     .goto 47,40.66,74.97,60,0
     .goto 47,34.261,73.014,0
-	>>Tuez les |cRXP_ENEMY_Splinter Fist Ogres|r, les |cRXP_ENEMY_Splinter Fist Firemongers|r et les |cRXP_ENEMY_Splinter Fist Warriors|r
+	>>Tuez les |cRXP_ENEMY_Ogres Brisepoings|r, les |cRXP_ENEMY_Incendiaires Brisepoings|r, et les |cRXP_ENEMY_Guerriers Brisepoings|r
     .complete 25235,1 --15/15 Splinter Fist Ogre slain
 	.mob Splinter Fist Ogre
 	.mob Splinter Fist Firemonger
 	.mob Splinter Fist Warrior
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Fess|r et à |cRXP_FRIENDLY_Dodds|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Foss|r et à |cRXP_FRIENDLY_Dodds|r
     .turnin 26707 >>Rendez la quête Une funeste vigne
     .turnin 26717 >>Rendez la quête Le worgen de Yorgen
     .accept 26719 >>Acceptez la quête Une livraison pour maître Harris
@@ -519,7 +519,7 @@ step
 	.target +Watcher Dodds
 step
     .goto 47,20.015,57.884
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sœur Elsington|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à la |cRXP_FRIENDLY_Sœur Elsington|r
     .target Sister Elsington
     .accept 26777 >>Acceptez la quête Apaisons les esprits
 step
@@ -536,18 +536,18 @@ step
 step
 #optional
     #completewith LurkingW
-    .use 60225 >>|cRXP_WARN_Utilisez le|r |T134547:0|t[(Sacré) Censer] |cRXP_WARN_sur|r |cRXP_FRIENDLY_Forlorn Esprits|r
+    .use 60225 >>|cRXP_WARN_Utilisez l'|r |T134547:0|t[Encensoir sacré] |cRXP_WARN_sur les|r |cRXP_FRIENDLY_Esprits chagrins|r
     .complete 26777,1 --5/5 Forlorn Spirit soothed
 	.target Forlorn Spirit
 step
 #optional
 	#completewith next
     .goto 47,21.65,72.34,8,0
-    .goto 47,21.29,72.73,8 >>|cRXP_WARN_Allez à l'intérieur de l'Étable de la Grange|r
+    .goto 47,21.29,72.73,8 >>|cRXP_WARN_Allez dans l'étable de la Grange|r
 step
     #label LurkingW
     .goto 47,21.61,73.15
-	>>|cRXP_WARN_Infligez des dégâts au |cRXP_ENEMY_Worgen en maraude|r qui apparaît à 20 % ou moins de santé, puis utilisez|r |T134825:0|t[Ampoule de Harris] |cRXP_WARN_sur celui-ci|r
+	>>|cRXP_WARN_Infligez des dégâts au |cRXP_ENEMY_Worgen en maraude|r qui arrive jusqu'à ce qu'ils soit à 20% de vie ou moins, puis utilisez l' |r |T134825:0|t[Ampoule de Harris] |cRXP_WARN_sur lui|r.
     .complete 26720,1 --1/1 Lurking Worgen captured
 	.mob Lurking Worgen
     .use 60206
@@ -564,12 +564,12 @@ step
     .goto 47,25.13,70.24,60,0
     .goto 47,22.85,72.11,60,0
     .goto 47,21.695,68.981,0
-    .use 60225 >>|cRXP_WARN_Utilisez le|r |T134547:0|t[(Sacré) Censer] |cRXP_WARN_sur|r |cRXP_FRIENDLY_Forlorn Esprits|r
+    .use 60225 >>|cRXP_WARN_Utilisez l'|r |T134547:0|t[Encensoir sacré] |cRXP_WARN_sur les|r |cRXP_FRIENDLY_Esprits chagrins|r
     .complete 26777,1 --5/5 Forlorn Spirit soothed
 	.target Forlorn Spirit
     .use 60225
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Oliver Harris|r et à |cRXP_FRIENDLY_Sœur Elsington|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Oliver Harris|r et à la |cRXP_FRIENDLY_Sœur Elsington|r
     .turnin 26720 >>Rendez la quête L'immuable malédiction
     .accept 26760 >>Acceptez la quête Hurler à la lune
 	.timer 58,RP de Hurler à la lune
@@ -580,8 +580,8 @@ step
 	.target Sister Elsington
 step
     >>Attendez le temps du RP
-    >>|cRXP_WARN_Si vous n'avez pas reçu de crédit après l'expiration du minuteur, abandonnez "Hurler à la lune" et acceptez la quête à nouveau|r
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Oliver Harris|r, à |cRXP_FRIENDLY_Sven Yorgen|r et à |cRXP_FRIENDLY_Sœur Elsington|r
+    >>|cRXP_WARN_Si vous n'obtenez pas la complétion de la quête à la fin du temps, abandonnez "Hurler à la lune" et acceptez la quête de nouveau|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Oliver Harris|r, à |cRXP_FRIENDLY_Sven Yorgen|r, et à la |cRXP_FRIENDLY_Sœur Elsington|r
     .complete 26760,1 --1/1 Worgen cured
     .turnin 26760 >>Rendez la quête Hurler à la lune
     .goto 47,18.32,57.67
@@ -599,7 +599,7 @@ step
     .goto Duskwood,21.08,56.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_John Shelby|r
     .target John Shelby
-    .fp Raven Hill>>Apprenez le trajet aérien de Colline-aux-Corbeaux
+    .fp Raven Hill>>Apprenez le chemin de vol de Colline-aux-Corbeaux
 step
     .goto 47,31.66,50.31,50,0
     .goto 47,37.52,25.18,50,0
@@ -607,23 +607,23 @@ step
     .goto 47,31.66,50.31,50,0
     .goto 47,37.52,25.18,50,0
     .goto 47,30.98,31.14
-    >>Tuez les |cRXP_ENEMY_Black Widows|r. Ramassez-les pour leurs |cRXP_LOOT_Widow Toxine Sacs|r
-	>>|cRXP_WARN_Ils disparaissent parfois pendant 1-2s en combat|r
+    >>Tuez les |cRXP_ENEMY_Veuves noires|r. Dépouillez-les pour leur |cRXP_LOOT_Glandes à venin de veuve|r.
+	>>|cRXP_WARN_Elles disparaissent parfois pendant 1-2sec en combat|r
     .complete 26721,1 --8/8 Widow Venom Sac
 	.mob Black Widow
 step
     .goto 47,17.72,29.05
-    >>Cliquez sur la |cRXP_PICK_A Weathered Grave|r
+    >>Cliquez sur le |cRXP_PICK_A Weathered Grave|r
     .accept 26793 >>Acceptez la quête La tombe effritée
 step
     .goto 47,17.49,33.40,8,0
     .goto 47,17.44,34.17,5,0
     .goto 47,16.97,33.42
-    >>Cliquez sur |cRXP_PICK_Bloodsoaked Chapeau|r à l'étage sur le sol
+    >>Cliquez sur le |cRXP_PICK_Chapeau imprégné de sang|r au sol à l'étage
     .complete 26723,1 --1/1 Remains of Morbent Fel
 step
     .isOnQuest 26793,26685,26680
-    .hs >> Utilisez votre Pierre de foyer pour vous téléporter à Sombre-Comté
+    .hs >> Utilisez votre Pierre de foyer pour revenir à Sombre-Comté
     .cooldown item,6948,>2
 step
     .goto 47,72.43,46.80,15,0
@@ -672,8 +672,8 @@ step
     .goto 47,81.23,32.15,40,0
     .goto 47,79.79,35.41,40,0
     .goto 47,77.760,33.889
-    >>Tuez |cRXP_ENEMY_Fetid Cadavres|r. Ramassez-les pour leurs |cRXP_LOOT_Ghoul Ribs|r
-	>>|cRXP_WARN_Vérifiez s'il y a un |cRXP_PICK_Chest|r dans et autour de la maison|r
+    >>Tuez les |cRXP_ENEMY_Cadavres fétides|r. Dépouillez-les pour leurs |cRXP_LOOT_Côtes de goule|r
+	>>|cRXP_WARN_Vérifiez l'emplacement du |cRXP_PICK_Coffre|r à l'intérieur et autour de la maison|r
     .complete 26677,1 --7/7 Ghoul Rib
 	.mob Fetid Corpse
     .maxlevel 28
@@ -713,23 +713,23 @@ step
 	#completewith next
 	.goto 47,72.86,46.82,10,0
 	.goto 47,72.53,47.21,8,0
-	.goto 47,72.35,47.75,8 >>|cRXP_WARN_Entrez dans l'hôtel de ville|r
+	.goto 47,72.35,47.75,8 >>|cRXP_WARN_Entrez dans l'Hôtel de ville|r
     .maxlevel 28
 step
     .goto 47,71.93,46.43
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Seigneur Ello Bouclenoire|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Seigneur Ello Ebonlocke|r
     .turnin 26727 >>Rendez la quête La vengeance de l'embaumeur
 	.target Lord Ello Ebonlocke
     .maxlevel 28
 step
 	#completewith next
     .goto 47,77.48,44.28
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Felicia Maline|r.
-    .fly Raven Hill >>Envolez-vous vers Colline-aux-Corbeaux
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Felicia Maline.|r
+    .fly Raven Hill >>Volez à Colline-aux-Corbeaux
 	.target Felicia Maline
     .subzoneskip 94
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sven Yorgen|r et |cRXP_FRIENDLY_La Tremblote|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sven Yorgen|r et à |cRXP_FRIENDLY_La Tremblote|r
     .turnin 26723 >>Rendez la quête Le destin de Morbent Lagangrène
     .accept 26724 >>Acceptez la quête Le jeu de cache-liche
     .goto 47,18.34,58.06
@@ -741,11 +741,11 @@ step
 step
     #optional
     #completewith next
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sœur Elsington|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à la |cRXP_FRIENDLY_Sœur Elsington.|r
     .turnin 26778 >>Rendez la quête Les hurlements des morts
     .isQuestComplete 26778
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sœur Elsington|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à la |cRXP_FRIENDLY_Sœur Elsington.|r
     .turnin 26724 >>Rendez la quête Le jeu de cache-liche
     .accept 26725 >>Acceptez la quête Le sentier lumineux
     .goto 47,20.03,57.82
@@ -753,7 +753,7 @@ step
 step
 #optional
     #completewith LightforgedRod
-    >>Tuez |cRXP_ENEMY_Plague Spreaders|r, |cRXP_ENEMY_Flesh Eaters|r, |cRXP_ENEMY_Rotted Ones|r, et |cRXP_ENEMY_Bone Chewers.|r
+    >>Tuez les |cRXP_ENEMY_Répandeurs de pestes|r, |cRXP_ENEMY_Dévoreurs|r, les |cRXP_ENEMY_Pourris|r, et les |cRXP_ENEMY_Mâcheurs d'os.|r
     .complete 26778,1 --20/20 Ghoul slain
 	.mob Plague Spreader
 	.mob Flesh Eater
@@ -763,14 +763,14 @@ step
 #optional
     #completewith LightforgedRod
     >>Tuez |cRXP_ENEMY_Mor'Ladim|r. Dépouillez-le pour son |cRXP_LOOT_Crâne|r
-    >>|cRXP_ENEMY_Mor'Ladim|r |cRXP_WARN_fait une patrouille au Cimetière de Colline-aux-Corbeaux|r
+    >>|cRXP_ENEMY_Mor'Ladim|r |cRXP_WARN_patrouille dans le Cimetière de Colline-aux-Corbeaux|r
     .complete 26795,1 --Mor'Ladim's Skull (1)
     .unitscan Mor'Ladim
     .isOnQuest 26795
 step
     #label LightforgedRod
     .goto 47,23.45,35.41
-    >>Cliquez sur le |cRXP_PICK_Lightforged Rod|r sur le sol
+    >>Cliquez sur le |cRXP_PICK_Bâtonnet de Sancteforge|r au sol
     .turnin 26725 >>Rendez la quête Le sentier lumineux
     .accept 26753 >>Acceptez la quête Les salles des morts
 step
@@ -780,10 +780,10 @@ step
     .goto 47,25.68,33.76,15,0
     .goto 47,25.46,31.50,15,0
     .goto 47,23.47,27.99,15,0
-    .goto 47,20.37,27.46,20 >>|cRXP_WARN_Descendez dans les Catacombes. Évitez de marcher sur les tombes car cela va faire apparaître|r |cRXP_ENEMY_Buried Cadavres|r
+    .goto 47,20.37,27.46,20 >>|cRXP_WARN_Descendez dans les Catacombes. Évitez de marcher sur les tombes comme elles feront apparaître des|r |cRXP_ENEMY_Cadavres ensevelis|r
 step
     .goto 47,20.37,27.46
-    >>Cliquez sur le |cRXP_PICK_Lightforged Arch|r sur le sol
+    >>Cliquez sur l' |cRXP_PICK_Arche de Sancteforge|r au sol
     .turnin 26753 >>Rendez la quête Les salles des morts
     .accept 26722 >>Acceptez la quête Les profondeurs de la terre
 step
@@ -794,7 +794,7 @@ step
     .goto 47,18.01,25.37,10 >>|cRXP_WARN_Passez par le trou dans le mur|r
 step
     .goto 47,18.01,25.37
-    >>Cliquez sur le |cRXP_FRIENDLY_Lightforged Crest|r sur le sol
+    >>Cliquez sur l' |cRXP_FRIENDLY_Écu de Sancteforge|r au sol
     .turnin 26722 >>Rendez la quête Les profondeurs de la terre
     .accept 26754 >>Acceptez la quête Le fléau de Morbent
 step
@@ -828,7 +828,7 @@ step
     .goto 47,14.27,41.46,40,0
     .goto 47,22.922,37.687,0
     >>Tuez |cRXP_ENEMY_Mor'Ladim|r. Dépouillez-le pour son |cRXP_LOOT_Crâne|r
-    >>|cRXP_ENEMY_Mor'Ladim|r |cRXP_WARN_patrols the Cimetière de Colline-aux-Corbeaux|r
+    >>|cRXP_ENEMY_Mor'Ladim|r |cRXP_WARN_patrouille dans le Cimetière de Colline-aux-Corbeaux|r
     .complete 26795,1 --Mor'Ladim's Skull (1)
 	.unitscan Mor'Ladim
     .isOnQuest 26795
@@ -843,7 +843,7 @@ step
     .goto 47,16.20,33.17,40,0
     .goto 47,14.27,41.46,40,0
     .goto 47,22.922,37.687,0
-    >>Tuez |cRXP_ENEMY_Plague Spreaders|r, |cRXP_ENEMY_Flesh Eaters|r, |cRXP_ENEMY_Rotted Ones|r, et |cRXP_ENEMY_Bone Chewers.|r
+    >>Tuez les |cRXP_ENEMY_Répandeurs de pestes|r, |cRXP_ENEMY_Dévoreurs|r, les |cRXP_ENEMY_Pourris|r, et les |cRXP_ENEMY_Mâcheurs d'os.|r
 	.complete 26778,1 --20/20 Ghoul slain
 	.mob Plague Spreader
 	.mob Flesh Eater
@@ -859,11 +859,11 @@ step
     .goto 47,10.144,41.314,0
     .goto 47,11.636,54.060,0
     .goto 47,13.663,69.726,0
-    >>Tuez |cRXP_ENEMY_Coalpelt Ours|r. Ramassez-les pour leurs |cRXP_LOOT_Black Ours Brains|r
+    >>Tuez les |cRXP_ENEMY_Ours peau-de-charbon|r. Dépouillez-les pour leur |cRXP_LOOT_Cervelle d'ours noir|r
     .complete 26787,1 --8/8 Black Bear Brain
 	.mob Coalpelt Bear
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sven Yorgen|r et |cRXP_FRIENDLY_La Tremblote|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sven Yorgen|r et à |cRXP_FRIENDLY_La Tremblote|r
     .turnin 26754 >>Rendez la quête Le fléau de Morbent
 	.target +Sven Yorgen
     .goto 47,18.34,58.06
@@ -872,7 +872,7 @@ step
 	.target +Jitters
 step
     .goto 47,19.929,57.803
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sœur Elsington|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à la |cRXP_FRIENDLY_Sœur Elsington|r
     .target Sister Elsington
     .turnin 26778 >>Rendez la quête Les hurlements des morts
     .accept 26838 >>Acceptez la quête Les rebelles de la forêt
@@ -881,5 +881,5 @@ step
     #label endOfTheGuide
 step
     .goto 50,51.88,12.10
-    .zone 50 >> Voyage vers Strangleronce septentrionale
+    .zone 50 >> Voyagez à la Strangleronce septentrionale
 ]])

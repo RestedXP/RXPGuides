@@ -19,7 +19,7 @@ step
     #optional
     .goto 63,94.410,46.819
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Kulg Crachetripes|r
-    .gossipoption 111683 >>Envolez-vous vers les Remparts de Mor'shan
+    .gossipoption 111683 >>Volez aux Remparts de Mor'shan
     .target Kulg Gorespatter
     .subzoneskip 2457,1
     .subzoneskip 1703
@@ -27,24 +27,24 @@ step
 step
     .goto 1413/1,-2251.30005,1236.80005
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Kadrak|r
-    .turnin 13866 >>Rendre la quête Au Rempart !
+    .turnin 13866 >>Rendez la quête Au Rempart !
     .accept 13612 >>Acceptez la quête La défense de Mor'shan
-    .accept 13618 >>Acceptez la quête Trouvez Gorat !
+    .accept 13618 >>Acceptez la quête Trouvez Gorat !
     .target Kadrak
     .isOnQuest 13866
 step
     .goto 1413/1,-2251.30005,1236.80005
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Kadrak|r
-    .turnin 28493 >>Rendre la quête Ordre du chef de guerre : Orneval !
+    .turnin 28493 >>Rendez la quête Ordre du chef de guerre : Orneval !
     .accept 13612 >>Acceptez la quête La défense de Mor'shan
-    .accept 13618 >>Acceptez la quête Trouvez Gorat !
+    .accept 13618 >>Acceptez la quête Trouvez Gorat !
     .target Kadrak
     .isOnQuest 28493
 step
     .goto 1413/1,-2251.30005,1236.80005
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Kadrak|r
     .accept 13612 >>Acceptez la quête La défense de Mor'shan
-    .accept 13618 >>Acceptez la quête Trouvez Gorat !
+    .accept 13618 >>Acceptez la quête Trouvez Gorat !
     .target Kadrak
 step
     .goto 10,42.27,15.19
@@ -59,7 +59,7 @@ step
 step
     .goto 10,41.99,15.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Gort|r
-    .fp The Mor'shan Rampart >> Apprenez le trajet de vol vers Le Rempart de Mor'shan
+    .fp The Mor'shan Rampart >> Apprenez le chemin de vol du Rempart de Mor'shan
     .target Gort Goreflight
     .subzoneskip 1703,1
 step
@@ -808,7 +808,7 @@ step
     .isQuestAvailable 13712
 step
     .goto 63,11.16,34.43
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Andruk|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Andruk, Zoram'gar|r
     .fp >>Apprenez le Trajet aérien d'Avant-poste de Zoram'gar
     .target Andruk
     .isQuestAvailable 26890
@@ -989,7 +989,7 @@ step
 step
     #completewith HellscreamsWatchPickups
     .goto 63,11.16,34.43
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Andruk|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Andruk, Zoram'gar|r
     .gossipoption 111691 >>Envolez-vous vers Guet de Hurlenfer
     .target Andruk
 step

@@ -38,7 +38,7 @@ step
     .target Proenitus
 step
     .goto Azuremyst Isle,79.139,46.536
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Botaniste Taerix|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à la |cRXP_FRIENDLY_Botaniste Taerix|r
     .accept 10302 >> Acceptez la quête Mutations volatiles
     .target Botanist Taerix
 step
@@ -50,7 +50,7 @@ step
     .complete 10302,1 --Kill Volatile Mutation (x8)
     .mob Volatile Mutation
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Botaniste Taerix|r et |cRXP_FRIENDLY_Apprentie Vishael|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à la |cRXP_FRIENDLY_Botaniste Ferrah|r et à l' |cRXP_FRIENDLY_Apprentie Vishael|r
     .turnin 10302 >> Rendez la quête Mutations volatiles
     .accept 9293 >> Acceptez la quête Ce qui doit être fait...
     .target +Botanist Taerix
@@ -70,9 +70,9 @@ step
     .mob Mutated Root Lasher
 step << cata Priest/Shaman
     .goto Azuremyst Isle,79.1,46.5
-	.xp 4-470 >>Broyez jusqu'à être à 470 XP du niveau 4 (930/1400)
+	.xp 4-470 >>Gagnez en expérience jusqu'à ce qu'il ne vous manque que 470xp pour le niveau 4 (930/1400)
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Botaniste Taerix|r et |cRXP_FRIENDLY_Apprentie Vishael|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à la |cRXP_FRIENDLY_Botaniste Ferrah|r et à l' |cRXP_FRIENDLY_Apprentie Vishael|r
     .turnin 9293 >> Rendez la quête Ce qui doit être fait...
     .accept 9294 >> Acceptez la quête Guérir le lac
     .target +Botanist Taerix
@@ -94,15 +94,15 @@ step
     >>|cRXP_FRIENDLY_Zalduun|r patrouille aux alentours
     .turnin 9409 >> Rendez la quête Livraison urgente
     .accept 9283 >> Acceptez la quête Sauvez les rescapés !
-    .accept 26970 >> Acceptez la quête Aider le Blessé << cata Priest
-    .accept 26970 >> Acceptez la quête Apprendre la parole << !cata Priest
-    .train 2061 >> Entraînez-vous |T135907:0|t[Soins rapides] << cata Priest
+    .accept 26970 >> Acceptez la quête Aider les blessés << cata Priest
+    .accept 26970 >> Acceptez la quête Apprendre le mot << !cata Priest
+    .train 2061 >> Apprenez |T135907:0|t[Soins rapides] << cata Priest
     .train 589 >> Apprenez [Mot de l'ombre : Douleur] << cata Priest
     .target Zalduun
 step << Priest cata
     .goto Azuremyst Isle,80.32,48.30,10,0
     .goto Azuremyst Isle,80.12,49.23
-    >>|cRXP_WARN_Lancez|r |T135907:0|t[Soins rapides] |cRXP_WARN_5 fois sur un |cRXP_FRIENDLY_Draeneï blessé|r à côté de vous|r
+    >>|cRXP_WARN_Lancez|r |T135907:0|t[Soins rapides] |cRXP_WARN_sur un |cRXP_FRIENDLY_Draeneï blessé|r à côté de vous à 5 reprises|r
     .complete 26970,1 -- Heal Injured Draenei
     .target Injured Draenei
 step << Priest cata
@@ -111,7 +111,7 @@ step << Priest cata
     .goto Azuremyst Isle,80.01,49.42,10,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Zalduun|r
     >>|cRXP_FRIENDLY_Zalduun|r patrouille aux alentours
-    .turnin 26970 >> Rendez la quête Aider le Blessé
+    .turnin 26970 >> Rendez la quête Aider les blessés
     .target Zalduun
 step << Mage
 	.goto Azuremyst Isle,79.582,48.762
@@ -126,37 +126,37 @@ step << Paladin
     .goto Azuremyst Isle,80.12,49.13,7,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Aurelon|r
     >>|cRXP_FRIENDLY_Aurelon|r peut patrouiller aux alentours
-    .accept 26966 >> Acceptez la quête La puissance de la Lumière
-    .train 20154 >> S'entraîner |T135960:0|t[Sceau de piété] << cata
+    .accept 26966 >> Acceptez la quête Le pouvoir de la Lumière
+    .train 20154 >> Apprenez |T135960:0|t[Sceau de piété] << cata
 	.train 20271 >> Apprenez [Jugement] << cata
     .target Aurelon
 step << Warrior
     .goto Azuremyst Isle,79.587,49.446
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Kore|r
-    .accept 26958 >> Acceptez Votre première leçon
+    .accept 26958 >> Acceptez la quête Votre première leçon
 	.train 100 >> Apprenez [Charge] << cata
     .target Kore
 step << Shaman
     .goto Azuremyst Isle,79.278,49.126
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Firmanvaar|r
     .accept 26969 >> Acceptez la quête La frappe primordiale
-    .train 8075 >> Entraînez-vous |T136023:0|t[Totem de force de la terre] << cata
-    .train 73899 >> S'entraîner |T460956:0|t[La frappe primordiale] << cata
+    .train 8075 >> Apprenez |T136023:0|t[Totem de force de la terre] << cata
+    .train 73899 >> Apprenez |T460956:0|t[Frappe primordiale] << cata
     .target Firmanvaar
 step << Hunter
 	.goto Azuremyst Isle,79.886,49.711
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Keilnei|r
 	.accept 26963 >> Acceptez la quête Comment assurer vos tirs
-    .train 56641 >> S'entraîner |T132213:0|t[Veilleur du puits Solanian] << cata
+    .train 56641 >> Apprenez |T132213:0|t[Tir assuré] << cata
     .target Keilnei
 step
     .goto Azuremyst Isle,79.419,51.235
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Technicienne Zhanaa|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à la |cRXP_FRIENDLY_Technicienne Zhanaa|r
     .accept 9305 >> Acceptez la quête Pièces de rechange
     .target Technician Zhanaa
 step
     .goto Azuremyst Isle,79.486,51.620
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Redresseur de torts Aldar|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Redresseur de torts Aldar|r
     .accept 9303 >> Acceptez la quête Inoculation
     .target Vindicator Aldar
 step
@@ -197,43 +197,43 @@ step
     .deathskip >> Mourez et ressuscitez au |cRXP_FRIENDLY_Gardien des âmes|r
 step
     .goto Azuremyst Isle,79.139,46.536
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Botaniste Taerix|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à la |cRXP_FRIENDLY_Botaniste Taerix|r
     .turnin 9294 >> Rendez la quête Guérir le lac
     .target Botanist Taerix
 step << Mage
     .goto Azuremyst Isle,79.662,46.427
-    >>|cRXP_WARN_Lancez|r |T135812:0|t[Boule de feu] |cRXP_WARN_sur le |cRXP_ENEMY_Mannequin d'entraînement|r jusqu'à obtenir un|r |T135731:0|t[(Arcanes) Missles!] |cRXP_WARN_proc, puis lancez|r |T136096:0|t[Projectiles des Arcanes]|cRXP_WARN_. Répétez ceci deux fois|r
-    >>|cRXP_WARN_Lancez|r |T135848:0|t[Veilleur du puits Solanian] |cRXP_WARN_sur le |cRXP_ENEMY_Mannequin d'entraînement|r. Répétez ceci deux fois|r
+    >>|cRXP_WARN_Lancez|r |T135812:0|t[Boule de feu] |cRXP_WARN_sur le |cRXP_ENEMY_Mannequin d'entraînement|r jusqu'à obtenir un|r |T135731:0|t[Projectiles des Arcanes !] |cRXP_WARN_proc, puis lancez|r |T136096:0|t[Projectiles des Arcanes]|cRXP_WARN_. Répétez ceci deux fois|r
+    >>|cRXP_WARN_Lancez|r |T135848:0|t[Nova de givre] |cRXP_WARN_sur le |cRXP_ENEMY_Mannequin d'entraînement|r. Répétez cela à deux reprises|r
     .complete 26968,1 << cata -- Practice Arcane Missiles (1)
     .complete 26968,2 << !cata -- Practice Frost Nova (1)
     .mob Training Dummy
 step << Shaman
     .goto Azuremyst Isle,79.662,46.427
-    >>|cRXP_WARN_Lancez|r |T460956:0|t[La frappe primordiale] |cRXP_WARN_sur le |cRXP_ENEMY_Entraînement Leurre|r 3 fois|r
+    >>|cRXP_WARN_Lancez|r |T460956:0|t[Frappe primordiale] |cRXP_WARN_sur le |cRXP_ENEMY_Mannequin d'entraînement|r à 3 reprises|r
     .complete 26969,1 << cata -- Practice Primal Strike (1)
     .complete 26969,2 << !cata -- Practice Primal Strike (1)
     .mob Training Dummy
 step << Hunter
     .goto Azuremyst Isle,79.662,46.427
-    >>|cRXP_WARN_Lancez|r |T132213:0|t[Tir Stable] |cRXP_WARN_sur le |cRXP_ENEMY_Mannequin d'entraînement|r 5 fois|r
+    >>|cRXP_WARN_Lancez|r |T132213:0|t[Tir assuré] |cRXP_WARN_sur le |cRXP_ENEMY_Mannequin d'entraînement|r à 5 reprises|r
     .complete 26963,1 << cata -- Practice Steady Shot (1)
     .complete 26963,2 << !cata -- Practice Steady Shot (1)
     .mob Training Dummy
 step << Warrior
     .goto Azuremyst Isle,79.662,46.427
-    >>|cRXP_WARN_Lancez|r |T132337:0|t[À la charge !] |cRXP_WARN_sur le|r |cRXP_ENEMY_Mannequin d'entraînement|r
+    >>|cRXP_WARN_Lancez|r |T132337:0|t[Charge] |cRXP_WARN_sur le|r |cRXP_ENEMY_Mannequin d'entraînement|r
     .complete 26958,1 << cata -- Practice Charge (1)
     .complete 26958,2 << !cata -- Practice Charge (1)
     .mob Training Dummy
 step << Paladin
     .goto Azuremyst Isle,79.662,46.427
-    >>|cRXP_WARN_Lancez|r |T135960:0|t[Sceau de piété] |cRXP_WARN_suivi de|r |T135959:0|t[Jugement] |cRXP_WARN_sur le|r |cRXP_ENEMY_Entraînement Leurre|r
+    >>|cRXP_WARN_Lancez|r |T135960:0|t[Sceau de piété] |cRXP_WARN_suivi de|r |T135959:0|t[Jugement] |cRXP_WARN_sur le|r |cRXP_ENEMY_Mannequin d'entraînement|r
     .complete 26966,1 << cata -- Practice Charge (1)
     .complete 26966,2 << !cata -- Practice Charge (1)
     .mob Training Dummy
 step << Priest !cata
     .goto Azuremyst Isle,79.662,46.427
-    >>|cRXP_WARN_Lancez|r |T136207:0|t[Mot de l'ombre : Douleur] |cRXP_WARN_sur un |cRXP_ENEMY_Entraînement Leurre|r 5 fois|r
+    >>|cRXP_WARN_Lancez|r |T136207:0|t[Mot de l'ombre : Douleur] |cRXP_WARN_sur un |cRXP_ENEMY_Mannequin d'entraînement|r à 5 reprises|r
     .complete 26970,2 -- Shadow Word: Pain (5)
     .mob Training Dummy
 step
@@ -257,7 +257,7 @@ step << !cata Priest
     .goto Azuremyst Isle,80.01,49.42,10,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Zalduun|r
     >>|cRXP_FRIENDLY_Zalduun|r patrouille aux alentours
-    .turnin 26970 >> Rendre la quête Veilleur du puits Solanian
+    .turnin 26970 >> Rendez la quête Apprendre le mot
     .target Zalduun
 step << Mage
 	.goto Azuremyst Isle,79.582,48.762
@@ -268,7 +268,7 @@ step << Mage
 step << Shaman
     .goto Azuremyst Isle,79.278,49.126
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Firmanvaar|r
-    .turnin 26969 >> Rendre la quête La frappe primordiale
+    .turnin 26969 >> Rendez la quête La frappe primordiale
     .target Firmanvaar
 step << Hunter
 	.goto Azuremyst Isle,79.886,49.711
@@ -286,17 +286,17 @@ step << Paladin
     .goto Azuremyst Isle,80.12,49.13,7,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Aurelon|r
     >>|cRXP_FRIENDLY_Aurelon|r peut patrouiller aux alentours
-    .turnin 26966 >> Rendez la quête La puissance de la Lumière
+    .turnin 26966 >> Rendez la quête Le pouvoir de la Lumière
     .target Aurelon
 step
     #label SpareParts
     .goto Azuremyst Isle,79.419,51.235
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Technicienne Zhanaa|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à la |cRXP_FRIENDLY_Technicienne Zhanaa|r
     .turnin 9305 >> Rendez la quête Pièces de rechange
     .target Technician Zhanaa
 step
     .goto Azuremyst Isle,79.486,51.620
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Redresseur de torts Aldar|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Redresseur de torts Aldar|r
     .turnin 9303 >> Rendez la quête Inoculation
     .accept 9309 >> Acceptez la quête L'éclaireur disparu
     .target Vindicator Aldar
@@ -354,14 +354,14 @@ step
 step
     #label BloodElfSpy
     .goto Azuremyst Isle,79.488,51.622
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Redresseur de torts Aldar|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Redresseur de torts Aldar|r
     .turnin 9311 >> Rendez la quête L'espionne elfe de sang
     .turnin 9798 >> Rendez la quête Les plans des Elfes de sang
     .accept 9312 >> Acceptez la quête L'émetteur
     .target Vindicator Aldar
 step
     .goto Azuremyst Isle,79.422,51.234
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Technicienne Zhanaa|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à la |cRXP_FRIENDLY_Technicienne Zhanaa|r
     .turnin 9312 >> Rendez la quête L'émetteur
     .accept 9313 >> Acceptez la quête En route pour le Guet d'azur
     .target Technician Zhanaa
@@ -389,7 +389,7 @@ step << Paladin cata
 step << Warrior cata
     .goto Azuremyst Isle,79.587,49.446
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Kore|r
-	.train 34428 >> Entraînez-vous à |T132342:0|t[Ivresse de la victoire]
+	.train 34428 >> Apprenez |T132342:0|t[Ivresse de la victoire]
     .target Kore
 step << Shaman cata
     .goto Azuremyst Isle,79.278,49.126
@@ -417,7 +417,7 @@ step
 	#completewith next
     >>Gardez un œil pour un |cRXP_FRIENDLY_Draenei Youngling|r
     >>Lorsqu'ils sont en combat, lancez [Don des Naaru] sur eux, puis acceptez la quête
-	.accept 9612 >> Acceptez la quête Merci du fond du cœur !
+	.accept 9612 >> Acceptez la quête Merci du fond du cœur !
 	.unitscan Draenei Youngling
 step
     .goto Azuremyst Isle,53.9,34.4
@@ -444,7 +444,7 @@ step << Shaman
     .money <0.0480
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.20
 step << Shaman
-    +Équipez le |T135145:0|t[Canne de marche]
+    +Équipez la |T135145:0|t[Canne de marche]
     .use 2495
     .itemcount 2495,1
     .itemStat 16,QUALITY,<7
@@ -456,14 +456,14 @@ step
     .target Dulvi
 step
     .goto Azuremyst Isle,48.391,51.771
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Anachorète Fateema|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à l' |cRXP_FRIENDLY_Anachorète Fateema|r
     .accept 9463 >> Acceptez la quête Usage médical
     .target Anchorite Fateema
 step
 	.isOnQuest 9612
     .goto Azuremyst Isle,47.110,50.603
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à l' |cRXP_FRIENDLY_Exarque Menelaous|r
-	.turnin 9612 >> Rendez la quête Merci du fond du cœur !
+	.turnin 9612 >> Rendez la quête Merci du fond du cœur !
     .turnin 9455 >> Rendez la quête Une étrange trouvaille
     .accept 9456 >> Acceptez la quête Nettoyage des traquenuits, île n°2
     .target Exarch Menelaous
@@ -482,7 +482,7 @@ step << Shaman cata
     .xp <7,1
 step
     .goto Azuremyst Isle,48.7,50.2
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Technicien Dyvuun|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Technicien Dyvuun|r
     .turnin 9313 >> Rendez la quête En route pour le Guet d'azur
     .target Technician Dyvuun
 step
@@ -494,7 +494,7 @@ step
 step
 	.goto Azuremyst Isle,48.336,49.144
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à l' |cRXP_FRIENDLY_Hôtesse Chellan|r.
-    .home >> Liez votre Pierre de foyer à Guet d'azur
+    .home >> Liez votre Pierre de foyer au Guet d'azur
     .target Caregiver Chellan
 step
     .goto Azuremyst Isle,49.67,49.19
@@ -504,7 +504,7 @@ step
 step << Paladin cata
     .goto Azuremyst Isle,48.356,49.558
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tullas|r
-    .train 635 >> Entraînez-vous à |T135920:0|t[Lumière sacrée]
+    .train 635 >> Apprenez |T135920:0|t[Lumière sacrée]
     .target Tullas
     .xp <7,1
 step << Priest cata
@@ -534,7 +534,7 @@ step
 	#completewith level8
     >>Gardez un œil pour un |cRXP_FRIENDLY_Draenei Youngling|r
     >>Lorsqu'ils sont en combat, lancez [Don des Naaru] sur eux, puis acceptez la quête
-	.accept 9612 >> Acceptez la quête Merci du fond du cœur !
+	.accept 9612 >> Acceptez la quête Merci du fond du cœur !
 	.unitscan Draenei Youngling
 step
     #completewith LeavesTree
@@ -561,7 +561,7 @@ step
     .target "Cookie" McWeaksauce
 step << Warrior/Rogue/Paladin
     .goto Azuremyst Isle,46.355,71.188
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Forgeron Calypso|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Forgeron Calypso|r
     >>Ceci vous permettra de créer des [Pierre à aiguiser brute] qui vont augmenter vos dégâts des armes de 2 << Warrior/Rogue
     >>Ceci pour permettra de créer des [Caillou brut] qui vont augmenter vos dégâts des armes de 2 << Paladin
     >>Si vous ne voulez pas le faire, vous pouvez passer cette étape
@@ -590,7 +590,7 @@ step
     .turnin 9512 >> Rendez la quête Jumbo gumbo du cuistot
     .target "Cookie" McWeaksauce
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Amiral Odesyus|r et à |cRXP_FRIENDLY_Prêtresse Kyleen Il'dinare|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à l' |cRXP_FRIENDLY_Amiral Odesyus|r et à la |cRXP_FRIENDLY_Prêtresse Kyleen Il'dinare|r
     .turnin 9506 >> Rendez la quête Il faut bien commencer quelque part
     .target +Admiral Odesyus
     .goto Azuremyst Isle,47.038,70.206
@@ -600,7 +600,7 @@ step
     .goto Azuremyst Isle,47.131,70.289
 step
     .goto Azuremyst Isle,47.243,69.998
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Archéologue Adamant Cœur-de-Fer|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à l' |cRXP_FRIENDLY_Archéologue Adamant Cœur-de-Fer|r
     .accept 9523 >> Acceptez la quête Fragile et précieux - à manipuler avec précaution
     .target Archaeologist Adamant Ironheart
 step
@@ -657,7 +657,7 @@ step << Hunter cata
     .train 82243 >> Apprenez [Parade]
     .target Acteon
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Anachorète Fateema|r et |cRXP_FRIENDLY_Daedal|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à l' |cRXP_FRIENDLY_Anachorète Fateema|r et à |cRXP_FRIENDLY_Daedal|r
     .turnin 9463 >> Rendez la quête Usage médical
     .target +Anchorite Fateema
     .goto Azuremyst Isle,48.390,51.770
@@ -669,17 +669,17 @@ step << Shaman cata
     .goto Azuremyst Isle,48.053,50.419
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tuluun|r
     .train 331 >> Apprenez [Vague de soins]
-    .train 324 >> Entraînez-vous à |T136051:0|t[Bouclier de foudre]
+    .train 324 >> Apprenez |T136051:0|t[Bouclier de foudre]
     .target Tuluun
 step << Shaman cata
     .goto Azuremyst Isle,48.053,50.419
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tuluun|r
-    .train 324 >> Entraînez-vous à |T136051:0|t[Bouclier de foudre]
+    .train 324 >> Apprenez |T136051:0|t[Bouclier de foudre]
     .target Tuluun
 step << Paladin cata
     .goto Azuremyst Isle,48.356,49.558
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tullas|r
-    .train 635 >> Entraînez-vous à |T135920:0|t[Lumière sacrée]
+    .train 635 >> Apprenez |T135920:0|t[Lumière sacrée]
     .target Tullas
 step << Priest cata
     .goto Azuremyst Isle,48.603,49.285
@@ -704,7 +704,7 @@ step
     .target Dulvi
 step
     .goto Azuremyst Isle,49.365,51.086
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Cryptographe Aurren|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Cryptographe Aurren|r
     .accept 9538 >> Acceptez la quête Apprendre la langue
     .target Cryptographer Aurren
 step
@@ -712,7 +712,7 @@ step
     .complete 9538,1 --Stillpine Furbolg Language Primer Read
 step
     .goto Azuremyst Isle,49.439,50.977
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Totem d'Akida|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Totem d'Akida|r
     .turnin 9538 >> Rendez la quête Apprendre la langue
     .accept 9539 >> Acceptez la quête Le totem de Coo
     .target Totem of Akida
@@ -720,7 +720,7 @@ step
 	#completewith AncientRelics
     >>Gardez un œil pour un |cRXP_FRIENDLY_Draenei Youngling|r
     >>Lorsqu'ils sont en combat, lancez [Don des Naaru] sur eux, puis acceptez la quête
-	.accept 9612 >> Acceptez la quête Merci du fond du cœur !
+	.accept 9612 >> Acceptez la quête Merci du fond du cœur !
 	.unitscan Draenei Youngling
 step
 	#completewith TotemofTikti
@@ -733,7 +733,7 @@ step
 step
 	.goto Azuremyst Isle,49.9,45.9,100,0
     .goto Azuremyst Isle,55.233,41.643
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Le totem de Coo|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Totem de Coo|r
     .turnin 9539 >> Rendez la quête Le totem de Coo
     .accept 9540 >> Acceptez la quête Le totem de Tikti
     .target Totem of Coo
@@ -749,8 +749,8 @@ step
 step
     #label TotemofTikti
     .goto Azuremyst Isle,64.475,39.772
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Le totem de Tikti|r
-    .turnin 9540 >> Rendez la quête Le totem de Tikti
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Totem de Tikti|r
+    .turnin 9540 >> Rendez la quête Totem de Tikti
     .accept 9541 >> Acceptez la quête Le totem de Yor
     .timer 30,Le Totem de Yor RP
     .target Totem of Tikti
@@ -771,7 +771,7 @@ step
     .target Diktynna
 step
     .goto Azuremyst Isle,63.116,67.880
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Le totem de Yor|r sous l'eau
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Totem de Yor|r sous l'eau
     .turnin 9541 >> Rendez la quête Le totem de Yor
     .accept 9542 >> Acceptez la quête Le totem de Vark
     .timer 71,Le Totem de Vark RP
@@ -785,7 +785,7 @@ step
     .goto Azuremyst Isle,28.115,62.391,30 >> Voyagez vers l'ouest de l'Île de Brume-Azur
 step
     .goto Azuremyst Isle,28.115,62.391
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Le totem de Vark|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Totem de Vark|r
     .turnin 9542 >> Rendez la quête Le totem de Vark
     .accept 9544 >> Acceptez la quête La prophétie d'Akida
     .target Totem of Vark
@@ -877,14 +877,14 @@ step
     .deathskip >> Mourez et ressuscitez au |cRXP_FRIENDLY_Gardien des âmes|r
 step
     .goto Azuremyst Isle,47.243,69.998
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Archéologue Adamant Cœur-de-Fer|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à l' |cRXP_FRIENDLY_Archéologue Adamant Cœur-de-Fer|r
     .turnin 9523 >> Rendez la quête Fragile et précieux - à manipuler avec précaution
     .target Archaeologist Adamant Ironheart
 step
     .goto Azuremyst Isle,47.038,70.206
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Admiral Odesyus|r
     .turnin 9531 >> Rendez la quête L'art du camouflage ne se perd pas
-    .accept 9537 >> Acceptez la quête Le gnominé est…
+    .accept 9537 >> Acceptez la quête Le gnominé est...
     .target Admiral Odesyus
 step
     .goto Azuremyst Isle,47.131,70.289
@@ -909,15 +909,15 @@ step
 step
     .goto Azuremyst Isle,47.038,70.206
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Admiral Odesyus|r
-    .turnin 9537 >> Rendez la quête Le gnominé est…
-    .accept 9602 >> Acceptez la quête Délivrez-les du mal…
+    .turnin 9537 >> Rendez la quête Le gnominé est...
+    .accept 9602 >> Acceptez la quête Délivrez-les du mal...
     .target Admiral Odesyus
 step
     .goto Azuremyst Isle,49.9,51.9
-    .xp 9+2430 >> Farmez jusqu'à 2430+/6500xp
+    .xp 9+2430 >> Montez votre expérience jusqu'à 2430+/6500xp
 step
     #completewith next
-    .hs >> Utilisez votre Pierre de foyer pour vous téléporter à Guet d'azur
+    .hs >> Utilisez votre Pierre de foyer pour revenir au Guet d'azur
 step
     .goto Azuremyst Isle,49.367,51.082
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Arugoo des Calmepins|r
@@ -938,13 +938,13 @@ step
     .goto Azuremyst Isle,47.110,50.603
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à l' |cRXP_FRIENDLY_Exarque Menelaous|r
     .turnin 9456 >> Rendez la quête Nettoyage des traquenuits, île n°2
-    .turnin 9602 >> Rendez la quête Délivrez-les du mal…
+    .turnin 9602 >> Rendez la quête Délivrez-les du mal...
     .target Exarch Menelaous
 step
     .isOnQuest 9612
     .goto Azuremyst Isle,47.110,50.603
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à l' |cRXP_FRIENDLY_Exarque Menelaous|r
-    .turnin 9612 >> Rendez la quête Merci du fond du cœur !
+    .turnin 9612 >> Rendez la quête Merci du fond du cœur !
     .target Exarch Menelaous
 step << Shaman cata
     .goto Azuremyst Isle,48.053,50.419
@@ -1015,7 +1015,7 @@ step << Shaman
 step << Hunter
     .goto The Exodar,47.904,89.780
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Ven|r
-    >>|cRXP_BUY_Achetez un|r |T135499:0|t[Arc laminé à double courbure] |cRXP_BUY_chez elle|r
+    >>|cRXP_BUY_Achetez-lui un|r |T135499:0|t[Arc laminé à double courbure] |cRXP_BUY_|r
     >>Sinon, vous pouvez regarder à l'Hôtel des Ventes si vous trouvez une alternative meilleure ou moins onéreuse
     .collect 2507,1 --Collect Laminated Recurve Bow (1)
     .money <0.1402
@@ -1033,7 +1033,7 @@ step << Warrior/Paladin
 step << Shaman
     #optional
     #completewith end
-    +|cRXP_WARN_Équipez la|r |T132402:0|t[Hachette] |cRXP_WARN_à votre main principale|r
+    +|cRXP_WARN_Équipez la|r |T132402:0|t[Hachette] |cRXP_WARN_dans votre main droite|r
     .use 853
     .itemcount 853,1
     .itemStat 16,QUALITY,<7
@@ -1055,6 +1055,6 @@ step
     #label end
     .goto The Exodar,54.488,36.285
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Stephanos|r
-    .fly Lor'danel >> Envolez-vous vers Lor’danel
+    .fly Lor'danel >> Volez à Lor’danel
     .target Stephanos
 ]])

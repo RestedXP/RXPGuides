@@ -3,7 +3,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #wotlk
 #cata
-#group RestedXP Northrend Quêtes journalières
+#group RestedXP Quêtes journalières du Norfendre
 #name Meilleure route de quêtes journalières pour l'or par heure
 
 --20 daily quests total
@@ -186,11 +186,11 @@ step
 step << Mage
 	#completewith next
 	.zone Dalaran >> Téléportez-vous à Dalaran
-	>>Envolez-vous vers La Couronne de glace
+	>>Volez à la Couronne de glace
 step << !Mage
 	#completewith next
     .hs >>Utilisez votre Pierre de foyer pour vous téléporter à Dalaran si elle est définie là-bas ou quelque part près de la Couronne de glace.
-	>>Envolez-vous vers La Couronne de glace
+	>>Volez à la Couronne de glace
 
 --9 Quest section from Icecrown Gunship and close surroundings section. 6 Quests from the gunship, other 3 from on the ground/in Ymirheim
 
@@ -480,7 +480,7 @@ step
 -- 3 Quests from The Shadow Vault
 step
 	>>Du Caveau des Ombres, acceptez les 3 quêtes journalières
-    >>Parlez à Argent
+    >>Talk to Sliver
 	.daily 12995 >>Acceptez la quête Laisser notre marque
 	.goto Icecrown,42.84,24.92
 	>>Parlez au Bondisseur. Il se promène autour de la tente
@@ -527,7 +527,7 @@ step
     .complete 13071,1 --Vrykul buildings set ablaze (8)
 	.isOnQuest 13071
 step
-    >>Retournez au Caveau des Ombres. Parlez à Argent, au Bondisseur et à Vil
+    >>Return to The Shadow Vault. Talk to Sliver, The Leaper and Vile
 	.turnin 12995 >>Rendez la quête Laisser notre marque
 	.goto Icecrown,42.84,24.92
     .turnin 13069 >>Rendez la quête Tir'Em Up
@@ -540,7 +540,7 @@ step
 step
 	>>De la Cime de la Mort, acceptez les 3 quêtes journalières
 	>>Parlez à Setaal
-	.daily 12813 >>Acceptez la quête Réanimez leurs cadavres !
+	.daily 12813 >>Acceptez la quête Réanimez leurs cadavres !
 	.goto Icecrown,19.67,48.39
 	>>Parlez à Aurochs. Il patrouille autour du feu central
     .daily 12838 >>Acceptez la quête Trouver des informations
@@ -549,7 +549,7 @@ step
     .goto IcecrownGlacier,20.1,48.4,20,0
     .goto IcecrownGlacier,19.7,47.9
 	>>Parlez à Uzo
-    .daily 12815 >>Acceptez la quête Région d'exclusion aérienne
+    .daily 12815 >>Acceptez la quête Zone d'exclusion aérienne
 	.goto Icecrown,19.64,47.80
 step
 	#sticky
@@ -606,7 +606,7 @@ step
 	>>Retournez à la Cime de la Mort. Parlez à Uzo, à Setaal et à Aurochs
     .turnin 12815 >>Rendez la quête Région d'exclusion aérienne
     .goto Icecrown,19.64,47.80
-    .turnin 12813 >>Rendez la quête Réanimez leurs cadavres !
+    .turnin 12813 >>Rendez la quête Réanimez leurs cadavres !
     .goto Icecrown,19.67,48.39
     .turnin 12838 >>Rendez la quête Trouver des informations
     .goto IcecrownGlacier,20.1,47.5,20,0

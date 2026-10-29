@@ -1,7 +1,7 @@
 if GetLocale() ~= "frFR" then return end
 RXPGuides.RegisterGuide([[
 #wotlk
-#group Leveling de Métier
+#group Guide de métiers
 << Horde
 #name 1-450 Dépeçage (H)
 #guideKind profession
@@ -13,14 +13,14 @@ step << Mage
     .skill skinning,75,1
 step << !Mage
     #completewith next
-    .hs >> Utilisez votre Pierre de foyer pour vous téléporter à Dalaran
+    .hs >> Utilisez votre Pierre de foyer pour revenir à Dalaran
     .zoneskip Orgrimmar
     .zoneskip Dalaran
     .skill skinning,75,1
 step << !Mage
     #completewith Thuwd
     .goto Dalaran,55.5,25.5
-    .zone Orgrimmar >> À Dalaran, prenez le portail vers Orgrimmar
+    .zone Orgrimmar >> À Dalaran, prenez le portail pour Orgrimmar
     .skill skinning,75,1
 step
     #sticky
@@ -57,13 +57,13 @@ step << Mage
     .skill skinning,125,1
 step << !Mage
     #completewith next
-    .hs >> Utilisez votre Pierre de foyer pour vous téléporter à Dalaran
+    .hs >> Utilisez votre Pierre de foyer pour revenir à Dalaran
     .skill skinning,125,1
     .zoneskip Orgrimmar
 step << !Mage
     #completewith next
     .goto Dalaran,55.5,25.5
-    .zone Orgrimmar >> À Dalaran, prenez le portail vers Orgrimmar
+    .zone Orgrimmar >> À Dalaran, prenez le portail pour Orgrimmar
     .skill skinning,125,1
 step
     .goto Orgrimmar,62.1,45.7,20,0
@@ -127,7 +127,7 @@ step
     #completewith next
     .goto Feralas,75.4,44.4
     >>Retournez au Camp Mojache en monture
-    .fly Marshal's Refuge >> Envolez-vous vers Refuge de Maréchal
+    .fly Marshal's Refuge >> Volez au Rebut des Marshal
     .zoneskip Un'Goro Crater
     .skill skinning,300,1
 step
@@ -140,13 +140,13 @@ step << Mage
     .zoneskip Hellfire Peninsula
 step << !Mage
     #completewith next
-    .hs >> Utilisez votre Pierre de foyer pour vous téléporter à Dalaran
+    .hs >> Utilisez votre Pierre de foyer pour revenir à Dalaran
     .skill skinning,305,1
     .zoneskip Hellfire Peninsula
 step << !Mage
     #completewith next
     .goto Dalaran,37.3,66.2
-    .zone Shattrath City >> À Dalaran, prenez le portail vers Shattrath
+    .zone Shattrath City >> À Dalaran, prenez le portail pour Shattrath
     .skill skinning,305,1
     .zoneskip Hellfire Peninsula
 step
@@ -191,12 +191,12 @@ step
     .skill skinning,375,1
 step
     >>Tuez des Talbuks et des Sabots-fourchu, puis dépecez-les
-    .skill skinning,350 >> Montez votre Dépeçage de 330 à 350 à Nagrand
+    .skill skinning,350 >> Montez les niveaux 330-350 de votre Dépeçage dans Nagrand
     .loop 45,Nagrand,51.3,37.6,52.3,33.6,54.1,30.0,52.8,26.1,50.6,25.3,48.4,26.8,46.6,27.2,46.6,33.6,46.5,40.3,47.0,45.1,49.2,49.2,53.5,53.8,55.3,52.8,57.3,49.8,60.1,48.4,62.0,46.1,60.6,43.4,57.9,42.5,54.7,42.5,52.7,40.7,51.3,37.6
 step << !Mage
     #completewith next
     .goto Shattrath City,52.3,52.5,40,0
-    .zone Orgrimmar >> Prenez le portail vers Orgrimmar
+    .zone Orgrimmar >> Prenez le portail pour Orgrimmar
     .skill skinning,375,1
     .cooldown item,6948,<0,1
 step << !Mage
@@ -205,80 +205,80 @@ step << !Mage
     .goto Durotar,41.4,18.0,40,0
     .skill skinning,375,1
     .cooldown item,6948,<0,1
-    .zone Borean Tundra >> Escaladez la Tour du Zeppelin. Prenez le Zeppelin vers Toundra Boréenne
+    .zone Borean Tundra >> Monter la tour Zeppelin. Prenez le Zeppelin pour la Toundra Boréenne
 step << Mage
     #completewith next
-    .zone Dalaran >> Téléportation à Dalaran
+    .zone Dalaran >> Téléportez-vous à Dalaran
     .skill skinning,375,1
     .zoneskip Borean Tundra
 step << !Mage
     #completewith next
-    .hs >> Utilisez votre Pierre de foyer pour vous téléporter à Dalaran
+    .hs >> Utilisez votre Pierre de foyer pour revenir à Dalaran
     .zoneskip Shattrath City
     .skill skinning,375,1
 step << !Mage
     #completewith next
     .goto Borean Tundra,42.6,53.2
-    .zone Borean Tundra >> Envolez-vous vers Toundra Boréenne sur votre Monture volante
+    .zone Borean Tundra >> Volez à la Toundra Boréenne sur votre monture volante
     .skill skinning,375,1
     .skill riding,<300,1
 step << !Mage
     #completewith next
     .goto Dalaran,71.8,45.6
-    .fly Taunka'le Village >> Envolez-vous vers Toundra Boréenne (Taunka'le)
+    .fly Taunka'le Village >> Volez à la Toundra Boréenne (Taunka'le)
     .skill skinning,375,1
     .skill riding,300,1
     .zoneskip Borean Tundra
 step
     #label Tiponi
     .goto Borean Tundra,76.2,37.6
-    .train 50305 >> Apprenez le Grand maître Dépeçage (350-450) auprès de Tiponi Stormwhisper à Taunka'le
+    .train 50305 >> Apprenez le Grand maître dépeceur (350-450) auprès de Tiponi Murmure-d'orage à Taunka'le
     .skill skinning,375,1
 step
     #label BoreanTundra
-    .skill skinning,375 >> Montez votre Dépeçage de 350 à 375 à Toundra Boréenne
+    .skill skinning,375 >> Montez les niveaux 350-375 de votre Dépeçage à la Toundra Boréenne
     .loop 20,Borean Tundra,47.3,39.4,44.7,39.8,42.2,42.6,40.6,42.8,42.1,48.0,42.2,48.9,47.9,48.0,47.3,39.4
     .loop 20,Borean Tundra,49.7,74.3,43.4,76.4,40.1,73.8,40.6,70.3,45.8,69.7,48.7,68.9,50.7,66.7,52.1,68.7,49.7,74.3
 step << Mage
     #completewith next
-    .zone Dalaran >> Téléportation à Dalaran
+    .zone Dalaran >> Téléportez-vous à Dalaran
     .skill skinning,400,1
     .zoneskip Zul'Drak
 step << !mage
     #completewith next
-    .hs >> Utilisez votre Pierre de foyer pour vous téléporter à Dalaran
+    .hs >> Utilisez votre Pierre de foyer pour revenir à Dalaran
     .skill skinning,400,1
     .zoneskip Zul'Drak
 step << !Mage
     #completewith next
-    .zone Zul'Drak >> Envolez-vous vers Zul’Drak sur votre Monture volante
+    .zone Zul'Drak >> Volez vers Zul'Drak sur votre monture volante
     .skill skinning,400,1
     .skill riding,<300,1
 step << !Mage
     #completewith next
     .goto Dalaran,71.8,45.6
-    .fly The Argent Stand >> Envolez-vous vers Zul’Drak (Le Bastion de l'Argent)
+    .fly The Argent Stand >> Volez à Zul’Drak (Séjour d'Argent)
     .skill skinning,400,1
     .skill riding,300,1
     .zoneskip Borean Tundra
 step
     #label ZulDrak
-    .skill skinning,400 >> Montez votre Dépeçage de 375 à 400 à Zul’Drak
+    .skill skinning,400 >> Montez les niveaux 375-400 de votre Dépeçage à Zul'Drak
     .loop 20,Zul'Drak,34.7,58.1,34.5,46.1,37.1,46.5,43.3,49.2,43.5,36.8,46.4,36.0,46.3,50.8,39.9,58.2,34.7,58.1
 step
     #completewith next
-    .zone The Storm Peaks >> Envolez-vous vers Les pics Foudroyés sur votre Monture volante
+    .zone The Storm Peaks >> Volez aux Pics Foudroyés sur votre monture volante
     .skill skinning 450,1
 step
-    .skill skinning,400 >> Montez votre Dépeçage de 400 à 450 à Les pics Foudroyés
+    .skill skinning,400 >> Montez votre niveau de compétence en Dépeçage de 400 à 450 aux Pics Foudroyés
     .loop 20,The Storm Peaks,60.6,61.7,59.9,57.5,57.9,58.7,56.4,63.4,53.5,65.5,56.0,68.2,60.6,61.7,
 step
-    +Félicitations d'avoir atteint le niveau 450 en Dépeçage !
+    +Félicitations, vous avez maintenant atteint une compétence de 450 en Dépeçage !
 ]])
 
 RXPGuides.RegisterGuide([[
 #wotlk
-#group Leveling de Métier
+#group Guide de métiers
 << Alliance
 #name 1-450 Dépeçage (A)
 #guideKind profession
@@ -290,7 +290,7 @@ step << Mage
     .skill skinning,75,1
 step << !Mage
     #completewith next
-    .hs >> Utilisez votre Pierre de foyer pour vous téléporter à Dalaran
+    .hs >> Utilisez votre Pierre de foyer pour revenir à Dalaran
     .skill skinning,75,1
     .zoneskip Stormwind City
 step << !Mage
@@ -336,13 +336,13 @@ step << !Mage
     .cooldown item,6948,<0,1
 step << !Mage
     #completewith next
-    .hs >> Utilisez votre Pierre de foyer pour vous téléporter à Dalaran
+    .hs >> Utilisez votre Pierre de foyer pour revenir à Dalaran
     .skill skinning,125,1
     .zoneskip Ironforge
 step << !Mage
     #completewith next
     .goto Dalaran,39.2,63.7
-    .zone Ironforge >> À Dalaran, prenez le portail vers Forgefer
+    .zone Ironforge >> À Dalaran, prenez le portail pour Forgefer
     .skill skinning,125,1
 step
     .goto Ironforge,42.1,33.2,15,0
@@ -376,13 +376,13 @@ step << !Mage
     .cooldown item,6948,<0,1
 step << !Mage
     #completewith next
-    .hs >> Utilisez votre Pierre de foyer pour vous téléporter à Dalaran
+    .hs >> Utilisez votre Pierre de foyer pour revenir à Dalaran
     .skill skinning,155,1
     .zoneskip Ironforge
 step << !Mage
     #completewith next
     .goto Dalaran,39.2,63.7
-    .zone Ironforge >> À Dalaran, prenez le portail vers Forgefer
+    .zone Ironforge >> À Dalaran, prenez le portail pour Forgefer
     .skill skinning,155,1
 step
     .goto Ironforge,42.1,33.2,15,0
@@ -403,7 +403,7 @@ step
     #completewith next
     .goto Wetlands,9.5,59.7
     >>Retournez à Menethil en monture
-    .fly Refuge Pointe >> Envolez-vous vers Refuge de l'Orne
+    .fly Refuge Pointe >> Volez au Refuge de l'Ornière
     .zoneskip Arathi Highlands
 step
     .skill skinning,185 >> Montez les niveaux 155-185 de votre Dépeçage dans les Hautes-terres d'Arathi
@@ -425,13 +425,13 @@ step << !Mage
     .cooldown item,6948,<0,1
 step << !Mage
     #completewith next
-    .hs >> Utilisez votre Pierre de foyer pour vous téléporter à Dalaran
+    .hs >> Utilisez votre Pierre de foyer pour revenir à Dalaran
     .skill skinning,230,1
     .zoneskip Ironforge
 step << !Mage
     #completewith next
     .goto Dalaran,39.2,63.7
-    .zone Ironforge >> À Dalaran, prenez le portail vers Forgefer
+    .zone Ironforge >> À Dalaran, prenez le portail pour Forgefer
     .skill skinning,230,1
 step
     .goto Ironforge,42.1,33.2,15,0
@@ -446,7 +446,7 @@ step << Mage
 step << !Mage
     #completewith next
     .goto Ironforge,55.5,47.7
-    .fly Menethil >> Envolez-vous vers Port de Menethil. Sinon, payez un mage pour un portail vers Theramore
+    .fly Menethil >> Volez au Port de Menethil. Sinon, vous pouvez payer un mage pour un portail vers Theramore
     .skill skinning,230,1
     .zoneskip Dustwallow Marsh
     .zoneskip Feralas
@@ -481,7 +481,7 @@ step
     .goto Dustwallow Marsh,67.5,51.3 << Mage
     .goto Feralas,30.2,43.2 << !Mage
     >>Voyagez au Bastion de Pennelune << !Mage
-    .fly Marshal's Refuge >> Envolez-vous vers Refuge de Maréchal
+    .fly Marshal's Refuge >> Volez au Rebut des Marshal
     .skill skinning,300,1
     .zoneskip Un'Goro Crater
 step
@@ -494,13 +494,13 @@ step << Mage
     .zoneskip Hellfire Peninsula
 step << !Mage
     #completewith next
-    .hs >> Utilisez votre Pierre de foyer pour vous téléporter à Dalaran
+    .hs >> Utilisez votre Pierre de foyer pour revenir à Dalaran
     .skill skinning,330,1
     .zoneskip Hellfire Peninsula
 step >> !mage
     #completewith next
     .goto Dalaran,37.2,66.4
-    .zone Shattrath City >> À Dalaran, prenez le portail vers Shattrath
+    .zone Shattrath City >> À Dalaran, prenez le portail pour Shattrath
     .skill skinning,330.1
     .zoneskip Hellfire Peninsula
 step
@@ -556,29 +556,29 @@ step
     .loop 45,Nagrand,51.3,37.6,52.3,33.6,54.1,30.0,52.8,26.1,50.6,25.3,48.4,26.8,46.6,27.2,46.6,33.6,46.5,40.3,47.0,45.1,49.2,49.2,53.5,53.8,55.3,52.8,57.3,49.8,60.1,48.4,62.0,46.1,60.6,43.4,57.9,42.5,54.7,42.5,52.7,40.7,51.3,37.6
 step << Mage
     #completewith next
-    .zone Dalaran >> Téléportation à Dalaran
+    .zone Dalaran >> Téléportez-vous à Dalaran
     .skill skinning,375,1
 step << !Mage
     #completewith next
-    .hs >> Utilisez votre Pierre de foyer pour vous téléporter à Dalaran
+    .hs >> Utilisez votre Pierre de foyer pour revenir à Dalaran
     .skill skinning,375,1
 step
     #completewith next
     .goto Dalaran,72.4,45.5
-    .fly Valiance Keep >> Envolez-vous vers Toundra Boréenne (Donjon de la Bravoure)
+    .fly Valiance Keep >> Volez à la Toundra Boréenne (Donjon de la Bravoure)
     .skill riding,300,1
     .skill skinning,375,1
 step
     #completewith next
-    .goto Borean Tundra,57.6,71.8 >> Envolez-vous vers Donjon de la Bravoure dans Toundra Boréenne sur votre monture volante
+    .goto Borean Tundra,57.6,71.8 >> Volez au Donjon de la Bravoure dans la Toundra Boréenne sur votre monture volante
     .skill riding,<300,1
     .skill skinning,375,1
 step
     #label Jack
-    .train 50305 >> Apprenez Grand maître Dépeçage (350-450) auprès de Trappeur Jack’o'o dans Donjon de la Bravoure
+    .train 50305 >> Apprenez Grand maître dépeceur (350-450) auprès du Trappeur Jack dans le Donjon de la Bravoure
     .skill skinning,375,1
 step
-    .skill skinning 375 >> Montez votre Dépeçage de 350 à 375 dans Toundra Boréenne
+    .skill skinning 375 >> Montez les niveaux 350-375 de votre Dépeçage à la Toundra Boréenne
     .loop 20,Borean Tundra,47.3,39.4,44.7,39.8,42.2,42.6,40.6,42.8,42.1,48.0,42.2,48.9,47.9,48.0,47.3,39.4
     .loop 20,Borean Tundra,49.7,74.3,43.4,76.4,40.1,73.8,40.6,70.3,45.8,69.7,48.7,68.9,50.7,66.7,52.1,68.7,49.7,74.3
 step << Mage
@@ -588,32 +588,32 @@ step << Mage
     .zoneskip Zul'Drak
 step << !mage
     #completewith next
-    .hs >> Utilisez votre Pierre de foyer à Dalaran
+    .hs >> Utilisez votre Pierre de foyer pour revenir à Dalaran
     .skill skinning,400,1
     .zoneskip Zul'Drak
 step << !Mage
     #completewith next
-    .zone Zul'Drak >> Envolez-vous vers Zul’Drak sur votre monture volante
+    .zone Zul'Drak >> Volez vers Zul'Drak sur votre monture volante
     .skill skinning,400,1
     .skill riding,<300,1
 step << !Mage
     #completewith next
     .goto Dalaran,71.8,45.6
-    .fly The Argent Stand >> Envolez-vous vers Zul’Drak (Le séjour d'Argent)
+    .fly The Argent Stand >> Volez à Zul’Drak (Séjour d'Argent)
     .skill skinning,400,1
     .skill riding,300,1
     .zoneskip Borean Tundra
 step
     #label ZulDrak
-    .skill skinning,400 >> Montez votre Dépeçage de 375 à 400 dans Zul’Drak
+    .skill skinning,400 >> Montez les niveaux 375-400 de votre Dépeçage à Zul'Drak
     .loop 20,Zul'Drak,34.7,58.1,34.5,46.1,37.1,46.5,43.3,49.2,43.5,36.8,46.4,36.0,46.3,50.8,39.9,58.2,34.7,58.1
 step
     #completewith next
-    .zone The Storm Peaks >> Envolez-vous vers Les pics Foudroyés sur votre monture volante
+    .zone The Storm Peaks >> Volez aux Pics Foudroyés sur votre monture volante
     .skill skinning 450,1
 step
-    .skill skinning,400 >> Montez votre Dépeçage de 400 à 450 dans Les pics Foudroyés
+    .skill skinning,400 >> Montez votre niveau de compétence en Dépeçage de 400 à 450 aux Pics Foudroyés
     .loop 20,The Storm Peaks,60.6,61.7,59.9,57.5,57.9,58.7,56.4,63.4,53.5,65.5,56.0,68.2,60.6,61.7,
 step
-    +Félicitations d'avoir atteint le niveau 450 en Dépeçage!
+    +Félicitations, vous avez maintenant atteint une compétence de 450 en Dépeçage !
 ]])

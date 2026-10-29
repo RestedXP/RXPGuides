@@ -982,7 +982,7 @@ step
 step
 #questguide
     .goto 48,64.085,26.707
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Ashlan Rictus-de-pierre|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Ashlan Stonesmirk|r
     .target Ashlan Stonesmirk
     .turnin 27074 >>Rendre la quête Combattre le Marteau
     .accept 27075 >>Accepter Les serviteurs de Cho’gall
@@ -1006,7 +1006,7 @@ step
 step
 #questguide
     .goto 48,64.049,26.693
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Ashlan Rictus-de-pierre|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Ashlan Stonesmirk|r
     .target Ashlan Stonesmirk
     .turnin 27075 >>Rendre la quête Les serviteurs de Cho’gall
     .turnin 27077 >>Rendre la quête Prendre le chaos à la gorge
@@ -1023,7 +1023,7 @@ step
 step
 #questguide
     .goto 48,64.145,26.705
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Ashlan Rictus-de-pierre|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Ashlan Stonesmirk|r
     .target Ashlan Stonesmirk
     .turnin 27078 >>Rendre la quête Gor’kresh
     .accept 27115 >>Accepter L'appel d'Ando

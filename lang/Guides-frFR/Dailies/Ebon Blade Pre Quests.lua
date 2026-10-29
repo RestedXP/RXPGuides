@@ -1,7 +1,7 @@
 if GetLocale() ~= "frFR" then return end
 RXPGuides.RegisterGuide([[
 #version 1
-#group RestedXP Northrend Quêtes journalières
+#group RestedXP Quêtes journalières du Norfendre
 #subgroup Faction Quêtes journalières
 #wotlk
 #cata
@@ -32,7 +32,7 @@ step
     .complete 12892,1 << Horde --The Ocular has been destroyed (1)
 step
     .goto IcecrownGlacier,44.1,24.7
-	>>Envolez-vous jusqu'à Baron Argent au sol. Parlez à lui
+	>>Fly all the way down to Baron Sliver on the ground. Talk to him
     .turnin 12887 >>Rendez la quête Qu'est-ce qu'on se marre << Alliance
     .turnin 12892 >>Rendez la quête Qu'est-ce qu'on se marre << Horde
     .accept 12891 >>Acceptez la quête J'ai une idée mais d'abord…
@@ -108,7 +108,7 @@ step << Horde
     .accept 12899 >>Acceptez la quête Le caveau des Ombres
 step
     .goto IcecrownGlacier,42.8,24.9
-	>>Rendez-vous à Baron Argent
+	>>Return to Baron Sliver
 	.turnin 12898 >>Rendez la quête Le caveau des Ombres << Alliance
     .turnin 12899 >>Rendez la quête Le caveau des Ombres << Horde
     .accept 12938 >>Acceptez la quête Le duc
@@ -177,7 +177,7 @@ step
 step
     .goto IcecrownGlacier,39.01,23.99,25,0
     .goto IcecrownGlacier,42.9,24.9
-	>>Quittez la Salle. Parlez au Baron Argent
+	>>Exit the Hall. Return to Baron Sliver
     .turnin 12951 >>Rendez la quête Informer le baron
     .daily 12995 >>Acceptez la quête Laisser notre marque
     .accept 13085 >>Acceptez la quête Vaelen est de retour
@@ -235,7 +235,7 @@ step
 	.isQuestComplete 12995
 step
     .goto IcecrownGlacier,42.9,24.9
-	>>Parlez à Argent
+	>>Talk to Sliver
     .accept 12806 >>Acceptez la quête Se lever en toute hâte !
 step
     .goto IcecrownGlacier,43.5,25.0
@@ -285,7 +285,7 @@ step
     .fp Death's Rise >> Apprenez le Vol vers Cime de la Mort
 step
 	>>Parlez à Setaal
-    .daily 12813 >>Acceptez la quête Réanimez leurs cadavres !
+    .daily 12813 >>Acceptez la quête Réanimez leurs cadavres !
     .goto Icecrown,19.67,48.39
 	>>Parlez à Aurochs. Il patrouille autour du feu central
     .daily 12838 >>Acceptez la quête Trouver des informations
@@ -357,7 +357,7 @@ step
     .goto IcecrownGlacier,20.1,48.4,20,0
     .goto IcecrownGlacier,19.7,47.9
 	>>Parlez à Setaal
-    .turnin -12813 >>Rendez la quête Réanimez leurs cadavres !
+    .turnin -12813 >>Rendez la quête Réanimez leurs cadavres !
     .goto IcecrownGlacier,19.7,48.4
 step
     .goto IcecrownGlacier,10.4,44.1
@@ -372,7 +372,7 @@ step
     .goto Icecrown,19.64,47.80
 	>>Parlez à Uzo Mandemort
     .turnin 12814 >>Rendez la quête Vous aurez besoin d'un griffon
-    .daily 12815 >>Acceptez la quête Région d'exclusion aérienne
+    .daily 12815 >>Acceptez la quête Zone d'exclusion aérienne
 step
     .goto IcecrownGlacier,10.5,44.1,70,0
     .goto IcecrownGlacier,5.0,43.4,70,0

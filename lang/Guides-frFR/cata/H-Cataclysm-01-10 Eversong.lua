@@ -21,7 +21,7 @@ RXPGuides.RegisterGuide([[
 step
     #label SunstriderIsleFirstQuestCheck
     .goto Eversong Woods,38.02,21.01
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Magistrice Erona|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à la |cRXP_FRIENDLY_Magistrice Erona|r
     .accept 8325 >>Acceptez la quête La reconquête de l'île de Haut-Soleil
     .target Magistrix Erona
 step
@@ -36,7 +36,7 @@ step
     .mob Mana Wyrm
 step
     .goto Eversong Woods,38.02,21.01
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Magistrice Erona|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à la |cRXP_FRIENDLY_Magistrice Erona|r
     .turnin 8325 >>Rendez la quête La reconquête de l'île de Haut-Soleil
     .accept 8326 >>Acceptez la quête Des mesures regrettables
     .target Magistrix Erona
@@ -48,7 +48,7 @@ step
     .goto Eversong Woods,40.54,16.43,30,0
     .goto Eversong Woods,40.05,20.44,30,0
     .goto Eversong Woods,39.32,22.18,30,0
-    >>Tuez |cRXP_ENEMY_Springpaw Cubs|r et |cRXP_ENEMY_Lynx Preste-patte|r. Ramassez-les pour leurs |cRXP_LOOT_Collars|r
+    >>Tuez les |cRXP_ENEMY_Jeunes Prestes-pattes|r et les |cRXP_ENEMY_Lynx Prestes-pattes|r. Dépouillez-les pour leur |cRXP_LOOT_Collier|r
     .complete 8326,1 --8/8 Lynx Collar
     .mob Springpaw Cub
     .mob Springpaw Lynx
@@ -60,20 +60,20 @@ step
     .goto Eversong Woods,40.54,16.43,30,0
     .goto Eversong Woods,40.05,20.44,30,0
     .goto Eversong Woods,39.32,22.18,30,0
-    .xp 2+650 >>Farmez jusqu'à 650/900 xp
+    .xp 2+650 >>Montez votre expérience jusqu'à 650/900xp
 step
     .goto Eversong Woods,38.02,21.01
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Magistrice Erona|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à la |cRXP_FRIENDLY_Magistrice Erona|r
     .turnin 8326 >>Rendez la quête Des mesures regrettables
     .accept 8327 >>Acceptez la quête Se présenter à Lanthan Perilon
     .accept 31170 >>Acceptez la quête La formation de moine << Monk
     .accept 9393 >>Acceptez la quête La formation de chasseur << Hunter
     .accept 8328 >>Acceptez la quête La formation de mage << Mage
     .accept 9676 >>Acceptez la quête La formation du paladin << Paladin
-    .accept 8564 >>Acceptez la quête La formation de prêtre << Priest
+    .accept 8564 >>Acceptez la quête La formation du prêtre << Priest
     .accept 9392 >>Acceptez la quête La formation de voleur << Rogue
     .accept 8563 >>Acceptez la quête La formation de démoniste << Warlock
-    .accept 8329 >>Acceptez la quête La formation de guerrier << Warrior
+    .accept 8329 >>Acceptez la quête La formation du guerrier << Warrior
     .target Magistrix Erona
 step << Monk
     .goto 467/0,-3998.000,7978.900
@@ -83,10 +83,10 @@ step << Monk
     .target Pao
 step << Hunter
     .goto Eversong Woods,39.05,20.01
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Forestier Sallina|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Forestier Sallina|r
     .turnin 9393 >>Rendez la quête La formation de chasseur
-    .accept 10070 >> Acceptez la quête Tir régulier
-    .train 56641 >>S'entraîner |T132213:0|t[Veilleur du puits Solanian] << Cata
+    .accept 10070 >> Acceptez la quête Le tir assuré
+    .train 56641 >>Apprenez |T132213:0|t[Tir assuré] << Cata
     .target Ranger Sallina
 step << Mage cata
     .goto Eversong Woods,39.23,21.46
@@ -105,47 +105,47 @@ step << Paladin
     .goto Eversong Woods,39.47,20.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Jesthenis Heurtesoleil|r
     .turnin 9676 >>Rendez la quête La formation du paladin
-    .accept 10069 >>Acceptez la quête Les voies de la Lumière
+    .accept 10069 >>Acceptez la quête La voie de la Lumière
     .train 20271 >>Apprenez [Jugement] << Cata
-    .train 20154 >>S'entraîner |T135960:0|t[Sceau de piété] << Cata
+    .train 20154 >>Apprenez |T135960:0|t[Sceau de piété] << Cata
     .target Jesthenis Sunstriker
 step << Priest cata
     .goto Eversong Woods,39.41,20.38
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Matron Arène|r
-    .turnin 8564 >>Rendez la quête La formation de prêtre
-    .accept 10072 >>Acceptez la quête Soins du Blessé
-    .train 2061 >>Entraînez-vous |T135907:0|t[Soins rapides] << Cata
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à la |cRXP_FRIENDLY_Matrone Arène|r
+    .turnin 8564 >>Rendez la quête La formation du prêtre
+    .accept 10072 >>Acceptez la quête Soigner les blessés
+    .train 2061 >>Apprenez |T135907:0|t[Soins rapides] << Cata
     .target Matron Arena
 step << Priest !cata
     .goto Eversong Woods,39.41,20.38
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Matron Arène|r
-    .turnin 8564 >>Rendez la quête La formation de prêtre
-    .accept 10072 >>Acceptez la quête Apprendre la parole
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à la |cRXP_FRIENDLY_Matrone Arène|r
+    .turnin 8564 >>Rendez la quête La formation du prêtre
+    .accept 10072 >>Acceptez la quête Apprendre le mot
     .target Matron Arena
 step << Rogue
     .goto Eversong Woods,38.93,20.01
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Pathstalker Avokor|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à l' |cRXP_FRIENDLY_Eclaireur Avokor|r
     .turnin 9392 >>Rendez la quête La formation de voleur
-    .accept 10071 >>Acceptez la quête Éviscération
-    .train 2098 >>Entraînez-vous |T132292:0|t[L'éviscération] << Cata
+    .accept 10071 >>Acceptez la quête L'éviscération
+    .train 2098 >>Apprenez |T132292:0|t[Eviscération] << Cata
     .target Pathstalker Avokor
 step << Warlock cata
     .goto Eversong Woods,38.94,21.45
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Invocateur Teli'Larien|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à l' |cRXP_FRIENDLY_Invocateur Teli'Larien|r
     .turnin 8563 >>Rendez la quête La formation de démoniste
-    .accept 10073 >>Acceptez la quête Immoler
+    .accept 10073 >>Acceptez la quête L'immolation
     .train 348 >>Apprenez [Immolation] << Cata
     .target Summoner Teli'Larien
 step << Warlock !cata
     .goto Eversong Woods,38.94,21.45
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Invocateur Teli'Larien|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à l' |cRXP_FRIENDLY_Invocateur Teli'Larien|r
     .turnin 8563 >>Rendez la quête La formation de démoniste
-    .accept 10073 >>Acceptez la quête Veilleur du puits Solanian
+    .accept 10073 >>Acceptez la quête Corruption
     .target Summoner Teli'Larien
 step << Warrior
     .goto Eversong Woods,39.29,20.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Delios Lame-d'argent|r
-    .turnin 8329 >>Rendre la quête La formation de guerrier
+    .turnin 8329 >>Rendre la quête La formation du guerrier
     .accept 27091 >>Acceptez la quête À la charge !
     .train 100 >>Apprenez [Charge] << Cata
     .target Delios Silverblade
@@ -156,7 +156,7 @@ step << Monk
 	.mob Training Dummy
 step << Hunter
     .goto Eversong Woods,38.34,20.64
-	>>Lancez |T132213:0|t[Veilleur du puits Solanian] sur un |cRXP_ENEMY_Mannequin d'entraînement|r à l'extérieur
+	>>Lancez |T132213:0|t[Tir assuré] sur un |cRXP_ENEMY_Mannequin d'entraînement|r à l'extérieur
 	.complete 10070,2 << !Cata --Cast Steady Shot
 	.complete 10070,1 << Cata --Cast Steady Shot
 	.mob Training Dummy
@@ -167,12 +167,12 @@ step << Mage cata
 	.mob Training Dummy
 step << Mage !cata
     .goto Eversong Woods,38.34,20.64
-	>>Lancez |T135848:0|t[Veilleur du puits Solanian] sur un |cRXP_ENEMY_Mannequin d'entraînement|r à l'extérieur
+	>>Lancez |T135848:0|t[Nova de givre] sur un |cRXP_ENEMY_Mannequin d'entraînement|r à l'extérieur
 	.complete 10068,2 --Cast Frost Nova
 	.mob Training Dummy
 step << Paladin cata
     .goto Eversong Woods,38.34,20.64
-	>>Lancez |T135960:0|t[Sceau de piété] sur vous-même, puis lancez |T135959:0|t[Jugement] sur un |cRXP_ENEMY_Mannequin d'entraînement|r à l'extérieur
+	>>Lancez |T135960:0|t[Sceau de piété] sur vous, puis lancez |T135959:0|t[Jugement] sur un |cRXP_ENEMY_Mannequin d'entraînement|r à l'extérieur
 	.complete 10069,1 << Cata --Cast Judgement
 	.mob Training Dummy
 step << Paladin !cata
@@ -192,7 +192,7 @@ step << Priest cata
 	.mob Training Dummy
 step << Rogue
     .goto Eversong Woods,38.34,20.64
-	>>Lancez |T132292:0|t[L'éviscération] sur un |cRXP_ENEMY_Mannequin d'entraînement|r à l'extérieur
+	>>Lancez |T132292:0|t[Eviscération] sur un |cRXP_ENEMY_Mannequin d'entraînement|r à l'extérieur
 	.complete 10071,2 << !Cata --Cast Eviscerate
 	.complete 10071,1 << Cata --Cast Eviscerate
 	.mob Training Dummy
@@ -203,24 +203,24 @@ step << Warlock cata
 	.mob Training Dummy
 step << Warlock !cata
     .goto Eversong Woods,38.34,20.64
-	>>Lancez |T136118:0|t[Veilleur du puits Solanian] sur un |cRXP_ENEMY_Mannequin d'entraînement|r à l'extérieur
+	>>Lancez |T136118:0|t[Corruption] sur un |cRXP_ENEMY_Mannequin d'entraînement|r à l'extérieur
 	.complete 10073,2 --Cast Corruption
 	.mob Training Dummy
 step << Warrior
     .goto Eversong Woods,38.34,20.64
-	>>Lancez |T132337:0|t[À la charge !] sur un |cRXP_ENEMY_Mannequin d'entraînement|r à l'extérieur
+	>>Lancez |T132337:0|t[Charge] sur un |cRXP_ENEMY_Mannequin d'entraînement|r à l'extérieur
 	.complete 27091,2 << !Cata --Cast Charge
 	.complete 27091,1 << Cata --Cast Charge
 	.mob Training Dummy
 step << Monk
     .goto 467/0,-3998.200,7978.700
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Pao|r
-    .turnin 31171 >>Rendre la quête Paume du tigre
+    .turnin 31171 >>Rendez la quête Paume du tigre
     .target Pao
 step << Hunter
     .goto Eversong Woods,39.05,20.01
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Forestier Sallina|r
-    .turnin 10070 >>Rendez la quête Visée
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Forestier Sallina|r
+    .turnin 10070 >>Rendez la quête Le tir assuré
     .target Ranger Sallina
 step << Mage cata
     .goto Eversong Woods,39.23,21.46
@@ -239,33 +239,33 @@ step << Paladin
     .target Jesthenis Sunstriker
 step << Priest cata
     .goto Eversong Woods,39.41,20.38
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Matron Arène|r
-    .turnin 10072 >>Rendre la quête Soins du Blessé
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à la |cRXP_FRIENDLY_Matrone Arène|r
+    .turnin 10072 >>Rendez la quête Soigner les blessés
     .target Matron Arena
 step << Priest !cata
     .goto Eversong Woods,39.41,20.38
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Matron Arène|r
-    .turnin 10072 >>Rendre la quête Veilleur du puits Solanian
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à la |cRXP_FRIENDLY_Matrone Arène|r
+    .turnin 10072 >>Rendez la quête Apprendre le mot
     .target Matron Arena
 step << Rogue
     .goto Eversong Woods,38.93,20.01
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Pathstalker Avokor|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à l' |cRXP_FRIENDLY_Eclaireur Avokor|r
     .turnin 10071 >>Rendez la quête L'éviscération
     .target Pathstalker Avokor
 step << Warlock cata
     .goto Eversong Woods,38.94,21.45
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Invocateur Teli'Larien|r
-    .turnin 10073 >>Rendre la quête Immoler
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à l' |cRXP_FRIENDLY_Invocateur Teli'Larien|r
+    .turnin 10073 >>Rendez la quête L'immolation
     .target Summoner Teli'Larien
 step << Warlock !cata
     .goto Eversong Woods,38.94,21.45
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Invocateur Teli'Larien|r
-    .turnin 10073 >>Rendez la quête Veilleur du puits Solanian
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à l' |cRXP_FRIENDLY_Invocateur Teli'Larien|r
+    .turnin 10073 >>Rendez la quête Corruption
     .target Summoner Teli'Larien
 step << Warrior
     .goto Eversong Woods,39.29,20.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Delios Lame-d'argent|r
-    .turnin 27091 >>Rendre la quête À la charge !
+    .turnin 27091 >>Rendez la quête À la charge !
     .target Delios Silverblade
 step
     #completewith next
@@ -274,24 +274,24 @@ step
     .goto Eversong Woods,39.10,20.04,10 >>Montez à l'étage
 step
     .goto Eversong Woods,38.97,20.26
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Veilleur du puits Solanian|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Veilleur du puits Solanian|r
     .accept 8330 >>Acceptez la quête Les possessions de Solanian
     .accept 8345 >>Acceptez la quête Le sanctuaire de Dath'Remar
     .target Well Watcher Solanian
 step
     .goto Eversong Woods,38.27,19.13
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Arcaniste Ithanas|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à l' |cRXP_FRIENDLY_Arcaniste Ithanas|r
     .accept 8336 >>Acceptez la quête Pour une poignée d'esquilles
     .target Arcanist Ithanas
 step
     .goto Eversong Woods,37.18,18.94
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Arcaniste Helion|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à l' |cRXP_FRIENDLY_Arcaniste Helion|r
     .accept 8346 >>Acceptez la quête L'insatiable soif
     .target Arcanist Helion
 step
     #completewith Journal
-    >>Lancez |T136222:0|t[Torrent arcanique] quand vous êtes à portée de mêlée d'un |cRXP_ENEMY_Wyrm de mana|r
-    >>Tuez les |cRXP_ENEMY_Mana Wyrms|r et les |cRXP_ENEMY_Feral Tenders|r. Dépouillez-les pour obtenir leurs |cRXP_LOOT_Slivers|r
+    >>Utilisez |T136222:0|t[Torrent arcanique] lorsque vous passez en portée de mêlée d'une |cRXP_ENEMY_Wyrm de mana|r
+    >>Tuez les |cRXP_ENEMY_Wyrms de mana|r et les |cRXP_ENEMY_Sylveniers farouches|r. Dépouillez-les pour leurs |cRXP_LOOT_Esquilles|r
     .complete 8346,1 --Cast Arcane Torrent on Mana Wyrm (x1)
     .complete 8336,1 --Collect Arcane Sliver (x6)
     .mob Mana Wyrm
@@ -309,7 +309,7 @@ step
     .complete 8330,3 --Collect Solanian's Journal (x1)
 step
     #completewith next
-    >>Tuez les |cRXP_ENEMY_Tenders|r et les |cRXP_ENEMY_Feral Tenders|r. Dépouillez-les pour obtenir leurs |cRXP_LOOT_Slivers|r
+    >>Tuez les |cRXP_ENEMY_Sylveniers|r et les |cRXP_ENEMY_Sylveniers farouches|r. Dépouillez-les pour leurs |cRXP_LOOT_Esquilles|r
     .complete 8334,1 --Kill Tender (x7)
     .complete 8334,2 --Kill Feral Tender (x7)
     .complete 8336,1--Collect Arcane Sliver (x6)
@@ -329,7 +329,7 @@ step
 	.goto Eversong Woods,36.52,29.35,40,0
 	.goto Eversong Woods,35.58,27.42,40,0
 	.goto Eversong Woods,33.92,26.49,40,0
-    >>Tuez les |cRXP_ENEMY_Tenders|r et les |cRXP_ENEMY_Feral Tenders|r. Dépouillez-les pour obtenir leurs |cRXP_LOOT_Slivers|r
+    >>Tuez les |cRXP_ENEMY_Sylveniers|r et les |cRXP_ENEMY_Sylveniers farouches|r. Dépouillez-les pour leurs |cRXP_LOOT_Esquilles|r
     .complete 8334,1 --Kill Tender (x7)
     .mob +Tender
     .complete 8334,2 --Kill Feral Tender (x7)
@@ -344,7 +344,7 @@ step
     .target Lanthan Perilon
 step
     #completewith RunRamp
-    >>Tuez les |cRXP_ENEMY_Feral Tenders|r. Dépouillez-les pour obtenir leurs |cRXP_LOOT_Slivers|r
+    >>Tuez les |cRXP_ENEMY_Sylveniers farouches|r. Dépouillez-les pour leurs |cRXP_LOOT_Esquilles|r
     .complete 8336,1 --Collect Arcane Sliver (x6)
     .mob Feral Tender
 step
@@ -379,7 +379,7 @@ step
     .goto Eversong Woods,30.09,27.41,10,0
     .goto Eversong Woods,30.48,27.90,10,0
     .goto Eversong Woods,30.84,27.13
-    >>Tuez les |cRXP_ENEMY_Arcane Wraiths|r et les |cRXP_ENEMY_Tainted (Arcanes) Wraiths|r en montant à l'Académie. Dépouillez-les pour obtenir leurs |cRXP_LOOT_Slivers|r
+    >>Tuez les |cRXP_ENEMY_Ames en peine arcanique|r et les |cRXP_ENEMY_Ames en peine arcanique contaminées|r en montant à l'Académie. Dépouillez-les pour leurs |cRXP_LOOT_Esquilles|r
     >>Tuez |cRXP_ENEMY_Felendren the Banished|r tout en haut. Dépouillez-le pour sa |cRXP_LOOT_Head|r
     .complete 8335,1 --Kill Arcane Wraith (x8)
     .complete 8335,2 --Kill Tainted Arcane Wraith (x2)
@@ -401,7 +401,7 @@ step
     .deathskip >> Mourez et ressuscitez au |cRXP_FRIENDLY_Gardien des âmes|r
 step
     #completewith next
-    >>Tuez les |cRXP_ENEMY_Mana Wyrms|r. Dépouillez-les pour obtenir leurs |cRXP_LOOT_Slivers|r
+    >>Tuez les |cRXP_ENEMY_Wyrms de mana|r. Dépouillez-les pour leurs |cRXP_LOOT_Esquilles|r
     .complete 8336,1 --Collect Arcane Sliver (x6)
     .mob Mana Wyrm
 step
@@ -411,7 +411,7 @@ step
     .goto Eversong Woods,34.64,18.82,40,0
     .goto Eversong Woods,33.78,19.46,40,0
     .goto Eversong Woods,34.17,20.59,40,0
-    >>Lancez |T136222:0|t[Torrent arcanique] quand vous êtes à portée de mêlée d'un |cRXP_ENEMY_Wyrm de mana|r
+    >>Utilisez |T136222:0|t[Torrent arcanique] lorsque vous passez en portée de mêlée d'une |cRXP_ENEMY_Wyrm de mana|r
     .complete 8346,1 --Cast Arcane Torrent on Mana Wyrm (x1)
     .mob Mana Wyrm
 step
@@ -421,7 +421,7 @@ step
     .goto Eversong Woods,34.64,18.82,40,0
     .goto Eversong Woods,33.78,19.46,40,0
     .goto Eversong Woods,34.17,20.59,40,0
-    >>Tuez les |cRXP_ENEMY_Mana Wyrms|r. Ramassez leurs |cRXP_LOOT_Slivers|r
+    >>Tuez les |cRXP_ENEMY_Wyrms de mana|r. Dépouillez-les pour leurs |cRXP_LOOT_Esquilles|r
     .complete 8336,1 --Collect Arcane Sliver (x6)
     .mob Mana Wyrm
 step
@@ -447,7 +447,7 @@ step
     .target Well Watcher Solanian
 step << Hunter Cata
     .goto Eversong Woods,39.05,20.01
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Forestier Sallina|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Forestier Sallina|r
     .train 2973 >>Apprenez [Attaque du Raptor]
     .target Ranger Sallina
     .xp <6,1
@@ -465,26 +465,26 @@ step << Paladin Cata
     .xp <5,1
 step << Priest Cata
     .goto Eversong Woods,39.41,20.38
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Matron Arène|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à la |cRXP_FRIENDLY_Matrone Arène|r
     .train 17 >>Apprenez [Mot de pouvoir : Bouclier]
     .target Matron Arena
     .xp <5,1
 step << Rogue Cata
     .goto Eversong Woods,38.93,20.01
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Pathstalker Avokor|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à l' |cRXP_FRIENDLY_Eclaireur Avokor|r
     .train 1784 >>Apprenez [Camouflage]
     .target Pathstalker Avokor
     .xp <5,1
 step << Warlock Cata
     .goto Eversong Woods,38.94,21.45
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Invocateur Teli'Larien|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à l' |cRXP_FRIENDLY_Invocateur Teli'Larien|r
     .train 1454 >>Apprenez [Connexion]
     .target Summoner Teli'Larien
     .xp <5,1
 step << Warrior Cata
     .goto Eversong Woods,39.29,20.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Delios Lame-d'argent|r
-    .train 34428 >>Entraînez-vous à |T132342:0|t[Ivresse de la victoire]
+    .train 34428 >>Apprenez |T132342:0|t[Ivresse de la victoire]
     .target Delios Silverblade
     .xp <5,1
 step
@@ -496,7 +496,7 @@ step
 step
     #completewith next
     .goto Eversong Woods,39.283,30.747,30,0
-    .goto Eversong Woods,40.177,31.700,30 >>Passez le Pont
+    .goto Eversong Woods,40.177,31.700,30 >>Passez sur le pont
 step
     .goto Eversong Woods,40.420,32.217
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Alarion|r
@@ -535,7 +535,7 @@ RXPGuides.RegisterGuide([[
 
 step << Undead
     .goto Eversong Woods,50.331,50.770
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Forestier Jaela|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Forestier Jaela|r
     .accept 8475 >>Acceptez la quête La Malebrèche
     .target Ranger Jaela
 step << Undead
@@ -551,7 +551,7 @@ step << Undead
     .mob Plaguebone Pillager
 step << Undead
     .goto Eversong Woods,50.331,50.770
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Forestier Jaela|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Forestier Jaela|r
     .turnin 8475 >>Rendez la quête La Malebrèche
     .target Ranger Jaela
 step
@@ -580,7 +580,7 @@ step << !Undead
 step
     .goto Eversong Woods,48.166,46.311
     >>Cliquez sur l' |cRXP_PICK_l'Affiche de recherche|r
-    .accept 8468 >>Acceptez la quête Recherche : Thaelis l'Affameur
+    .accept 8468 >>Acceptez la quête On recherche : Thaelis l'Affameur
 step
     .goto Eversong Woods,48.165,45.999
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Aeldon Signesol|r
@@ -612,7 +612,7 @@ step << Warrior/Paladin
 step << Warrior/Paladin
     .goto Eversong Woods,48.492,45.905
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Geron|r
-    >>|cRXP_BUY_Achetez une|r |T133053:0|t[Massette en bois] |cRXP_BUY_auprès de lui|r
+    >>|cRXP_BUY_Achetez-lui une|r |T133053:0|t[Massette en bois] |cRXP_BUY_|r
     .collect 2493,1,8468,1 --Collect Wooden Mallet (1)
     .target Geron
     .money <0.0666
@@ -675,8 +675,8 @@ step
     .target Magister Jaronis
 step
     .goto Eversong Woods,47.77,46.58
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sergent Kan'ren|r
-    .turnin 8468 >>Rendez la quête Recherche : Thaelis l'Affameur
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Sergent Kan'ren|r
+    .turnin 8468 >>Rendez la quête On recherche : Thaelis l'Affameur
     .target Sergeant Kan'ren
 step
     .goto Eversong Woods,48.165,45.999
@@ -817,7 +817,7 @@ step << Warrior/Paladin
 step << Warrior/Paladin
     .goto Eversong Woods,48.492,45.905
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Geron|r
-    >>|cRXP_BUY_Achetez une|r |T133053:0|t[Massette en bois] |cRXP_BUY_chez lui|r
+    >>|cRXP_BUY_Achetez-lui une|r |T133053:0|t[Massette en bois] |cRXP_BUY_|r
     .collect 2493,1,9062,1 --Collect Wooden Mallet (1)
     .target Geron
     .money <0.0666
@@ -844,13 +844,13 @@ step
 step
     #label Caidanis
     .goto Eversong Woods,44.63,53.13
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Telluriste Caidanis|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Telluriste Caidanis|r
     .turnin 8895 >>Rendez la quête Une livraison au sanctum septentrional
     .accept 9119 >>Acceptez la quête Panne au sanctum occidental
     .target Ley-Keeper Caidanis
 step
     .goto Eversong Woods,36.70,57.44
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Telluriste Velania|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à la |cRXP_FRIENDLY_Telluriste Velania|r
     .turnin 9119 >>Rendez la quête Panne au sanctum occidental
     .accept 8486 >>Acceptez la quête L'instabilité arcanique
     .target Ley-Keeper Velania
@@ -889,7 +889,7 @@ step
     .mob +Mana Stalker
 step
     .goto Eversong Woods,36.70,57.44
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Telluriste Velania|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à la |cRXP_FRIENDLY_Telluriste Velania|r
     .turnin 8486 >>Rendez la quête L'instabilité arcanique
     .turnin 9352 >>Rendez la quête Les intrusions darnassiennes
     .target Ley-Keeper Velania
@@ -911,7 +911,7 @@ step
     .goto Eversong Woods,25.70,60.50,40,0
     .goto Eversong Woods,25.36,62.88,40,0
     .goto Eversong Woods,25.61,64.29,40,0
-    >>Tuez |cRXP_ENEMY_Grimscale Foragers|r et |cRXP_ENEMY_Grimscale Seers|r. Ramassez-les pour leurs |cRXP_LOOT_Murloc Face|r et |T134939:0|t[|cRXP_LOOT_Les portulans perdus du capitaine Kelisendra|r]
+    >>Tuez les |cRXP_ENEMY_Fourrageurs sinistrécailles|r et les |cRXP_ENEMY_Prophètes sinistrécailles|r. Dépouillez-les pour leur |cRXP_LOOT_Tête de murloc|r et les |T134939:0|t[|cRXP_LOOT_Portulans perdus du capitaine Kelisendra|r]
     >>|cRXP_WARN_Utilisez [|cRXP_LOOT_Captain Kelisendra's Lost Rutters|r] pour commencer la quête|r
     .complete 8884,1 --Collect Grimscale Murloc Head (x8)
     .collect 21776,1,8887,1 --Captain Kelisendra's Lost Rutters
@@ -945,7 +945,7 @@ step
     .goto Eversong Woods,43.61,70.66,10 >>Montez à l'étage
 step
     .goto Eversong Woods,43.34,70.82
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Forestier Degolien|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Forestier Degolien|r
     .accept 8892 >> Acceptez la quête La situation au mouillage des Voiles du soleil
     .target Ranger Degolien
 step << BloodElf
@@ -970,7 +970,7 @@ step
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Kelisendra|r et |cRXP_FRIENDLY_Velendris|r
     .turnin 8887 >>Rendez la quête Les portulans perdus du capitaine Kelisendra
-    .accept 8886 >>Acceptez la quête Les pirates Sinistrécaille !
+    .accept 8886 >>Acceptez la quête Les pirates Sinistrécaille !
     .goto Eversong Woods,36.36,66.62
     .accept 8480 >>Acceptez la quête Les armes perdues
     .goto Eversong Woods,36.36,66.78
@@ -1018,7 +1018,7 @@ step
 step
     #label Aldaron
     .goto Eversong Woods,32.80,69.40
-    >>Tuez |cRXP_ENEMY_Aldaron the Téméraire|r au sommet. Ramassez-le pour le |cRXP_LOOT_Aldaron's Tête|r
+    >>Tuez |cRXP_ENEMY_Aldaron le Téméraire|r au sommet. Dépouillez-le pour la |cRXP_LOOT_Tête d'Aldaron|r
     .complete 9076,1 --Collect Aldaron's Head (x1)
     .mob Aldaron the Reckless
 step
@@ -1111,7 +1111,7 @@ step
     .mob Springpaw Stalker
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Kelisendra|r et |cRXP_FRIENDLY_Velendris|r
-    .turnin 8886 >>Rendez la quête Les pirates Sinistrécaille !
+    .turnin 8886 >>Rendez la quête Les pirates Sinistrécaille !
     .goto Eversong Woods,36.36,66.62
     .turnin 9076 >>Rendez la quête Le maître des Déshérités
     .goto Eversong Woods,36.36,66.78
@@ -1126,12 +1126,12 @@ step
     .waypoint Eversong Woods,34.94,74.229,60,0
     .waypoint Eversong Woods,28.840,71.832,60,0
     .waypoint Eversong Woods,26.134,73.852,60,0
-    >>Tuez les |cRXP_ENEMY_Springpaw Stalkers|r. Ramassez-les pour leurs |cRXP_LOOT_Pelts|r
+    >>Terminez de tuer les |cRXP_ENEMY_Traqueurs Prestes-pattes|r. Dépouillez-les pour leur |cRXP_LOOT_Fourrure|r
     .complete 8491,1 --Collect Springpaw Pelt (x6)
     .mob Springpaw Stalker
 step
     #completewith SunsailTurnin
-    .deathskip >> Mourez et réapparaissez à l'|cRXP_FRIENDLY_Esprit Gardien des âmes|r ou courez vers Brise-Clémente
+    .deathskip >> Mourez et ressuscitez au |cRXP_FRIENDLY_Gardien des âmes|r ou dirigez-vous vers Brise-Clémente
 step
     #xprate <1.2
     .goto Eversong Woods,44.72,69.63
@@ -1157,7 +1157,7 @@ step
 step
     #xprate <1.2
     .goto Eversong Woods,44.030,70.760
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Magistrice Landra Aube-glorieuse|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à la |cRXP_FRIENDLY_Magistrice Landra Aube-glorieuse|r
     .accept 9254 >>Acceptez la quête L'apprentie égarée
     .target Magistrix Landra Dawnstrider
     .maxlevel 9
@@ -1279,12 +1279,12 @@ step
 step
     #xprate <1.2
     #completewith DefendingFBV
-    .deathskip >> Mourez et réapparaissez à l'|cRXP_FRIENDLY_Esprit Gardien des âmes|r ou courez vers Brise-Clémente
+    .deathskip >> Mourez et ressuscitez au |cRXP_FRIENDLY_Gardien des âmes|r ou dirigez-vous vers Brise-Clémente
     .isQuestComplete 9252
 step
     #xprate <1.2
     .goto Eversong Woods,44.029,70.765
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Magistrice Landra Aube-glorieuse|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à la |cRXP_FRIENDLY_Magistrice Landra Aube-glorieuse|r
     .turnin 9255 >>Rendez la quête Les notes de recherche
     .target Magistrix Landra Dawnstrider
     .isQuestComplete 9255
@@ -1298,7 +1298,7 @@ step
     .isQuestComplete 9252
 step << !Undead
     #completewith IncrDocs
-    .hs >> Utilisez votre Pierre de foyer pour vous téléporter à la Place de l'Épervier
+    .hs >> Utilisez votre Pierre de foyer pour revenir à la Place de l’Épervier
     .cooldown item,6948,>2,1
 step
     #completewith IncrDocs
@@ -1363,7 +1363,7 @@ step << Warlock Cata
 step << !Undead
     #completewith next
     .goto Eversong Woods,46.244,46.786
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Maître du ciel Célestin|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Maître du ciel Célestin|r
     .fly Silvermoon >>Volez jusqu'à Lune-d'Argent
     .target Skymaster Skyles
 step << !Undead
@@ -1371,7 +1371,7 @@ step << !Undead
     .goto Eversong Woods,56.253,49.224,10,0
     .goto 110,70.881,86.623,10,0
     .goto 110,72.396,85.242
-    .zone Silvermoon City >>Entrez à Lune-d'Argent
+    .zone Silvermoon City >>Entrez dans Lune-d'Argent
 step << BloodElf
     .goto Silvermoon City,53.92,71.03
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sathren Aube-azur|r

@@ -1,7 +1,7 @@
 if GetLocale() ~= "frFR" then return end
 RXPGuides.RegisterGuide([[
 #wotlk
-#group Leveling de Métier
+#group Guide de métiers
 << Horde
 #name 1-450 Herboristerie (H)
 #guideKind profession
@@ -13,14 +13,14 @@ step << Mage
     .skill herbalism,70,1
 step << !Mage
     #completewith next
-    .hs >> Utilisez votre Pierre de foyer à Dalaran
+    .hs >> Utilisez votre Pierre de foyer pour revenir à Dalaran
     .zoneskip Dalaran
     .zoneskip Undercity
     .skill herbalism,70,1
 step << !Mage
     #completewith next
     .goto Dalaran,55.9,24.1
-    .zone Undercity >> À Dalaran, prenez le portail vers Fossoyeuse
+    .zone Undercity >> À Dalaran, prenez le portail vers Undercity
     .skill herbalism,70,1
 step
     .goto Undercity,54.0,49.5
@@ -54,13 +54,13 @@ step << !Mage
     .skill herbalism,115,1
     .cooldown item,6948,<0,1
 step << !Mage
-    .hs >> Utilisez votre Pierre de foyer à Dalaran
+    .hs >> Utilisez votre Pierre de foyer pour revenir à Dalaran
     .zoneskip Undercity
     .skill herbalism,115,1
 step << !Mage
     #completewith next
     .goto Dalaran,55.9,24.1
-    .zone Undercity >> À Dalaran, prenez le portail vers Fossoyeuse
+    .zone Undercity >> À Dalaran, prenez le portail vers Undercity
     .skill herbalism,115,1
 step
     .goto Undercity,54.0,49.5
@@ -121,13 +121,13 @@ step << !Mage
     .cooldown item,6948,<0,1
 step << !Mage
     #completewith next
-    .hs >> Utilisez votre Pierre de foyer à Dalaran
+    .hs >> Utilisez votre Pierre de foyer pour revenir à Dalaran
     .zoneskip Hellfire Peninsula
     .skill herbalism,300,1
 step << !Mage
     #completewith next
     .goto Dalaran,55.5,25.5
-    .zone Orgrimmar >> À Dalaran, prenez le portail vers Orgrimmar
+    .zone Orgrimmar >> À Dalaran, prenez le portail pour Orgrimmar
     .skill herbalism,300,1
 step
     #completewith next
@@ -178,13 +178,13 @@ step << Mage
     .zoneskip Hellfire Peninsula
 step << !Mage
     #completewith next
-    .hs >> Utilisez votre Pierre de foyer à Dalaran
+    .hs >> Utilisez votre Pierre de foyer pour revenir à Dalaran
     .zoneskip Shattrath City
     .skill herbalism,325,1
 step << !Mage
     #completewith next
     .goto Dalaran,56.4,22.8
-    .zone Shattrath City >> À Dalaran, prenez le portail vers Shattrath
+    .zone Shattrath City >> À Dalaran, prenez le portail pour Shattrath
     .skill herbalism,325,1
 step
     #completewith Ruak
@@ -221,13 +221,13 @@ step << !Mage
     .cooldown item,6948,<0,1
 step << !Mage
     #completewith next
-    .hs >> Utilisez votre Pierre de foyer à Dalaran
+    .hs >> Utilisez votre Pierre de foyer pour revenir à Dalaran
     .zoneskip Shattrath City
     .skill herbalism,350,1
 step << !Mage
     #completewith next
     .goto Dalaran,56.4,22.8
-    .zone Shattrath City >> À Dalaran, prenez le portail vers Shattrath
+    .zone Shattrath City >> À Dalaran, prenez le portail pour Shattrath
     .skill herbalism,350,1
 step
     #completewith next
@@ -241,7 +241,7 @@ step
 step << !Mage
     #completewith next
     .goto Shattrath City,52.3,52.5,40,0
-    .zone Orgrimmar >> Prenez le portail vers Orgrimmar
+    .zone Orgrimmar >> Prenez le portail pour Orgrimmar
     .skill herbalism,375,1
     .cooldown item,6948,<0,1
 step << !Mage
@@ -250,7 +250,7 @@ step << !Mage
     .goto Durotar,41.4,18.0,40,0
     .skill herbalism,375,1
     .cooldown item,6948,<0,1
-    .zone Borean Tundra >> Escaladez la Tour du Zeppelin. Prenez le Zeppelin vers Toundra Boréenne
+    .zone Borean Tundra >> Monter la tour Zeppelin. Prenez le Zeppelin pour la Toundra Boréenne
 step << Mage
     #completewith next
     .zone Dalaran >> Téléportez-vous à Dalaran
@@ -258,43 +258,43 @@ step << Mage
     .zoneskip Borean Tundra
 step << !Mage
     #completewith next
-    .hs >> Utilisez votre Pierre de foyer à Dalaran
+    .hs >> Utilisez votre Pierre de foyer pour revenir à Dalaran
     .zoneskip Shattrath City
     .skill herbalism,375,1
 step << !Mage
     #completewith next
     .goto Borean Tundra,42.6,53.2
-    .zone Borean Tundra >> Envolez-vous vers Toundra Boréenne sur votre Monture volante
+    .zone Borean Tundra >> Volez à la Toundra Boréenne sur votre monture volante
     .skill herbalism,375,1
     .skill riding,<300,1
 step << !mage
     #completewith next
     .goto Dalaran,71.8,45.6
-    .fly Warsong Hold >> Envolez-vous vers Toundra Boréenne (Bastion Chanteguerre)
+    .fly Warsong Hold >> Volez à la Toundra Boréenne (Bastion Chanteguerre)
     .skill herbalism,375,1
     .skill riding,300,1
     .zoneskip Borean Tundra
 step
     #label Tansy
     .goto Borean Tundra,42.0,53.6
-    .train 50300 >> Apprenez Grand maître Herboristerie (350-450) de Tansy Wildmane à Bastion Chanteguerre
+    .train 50300 >> Apprenez Grand maître herboriste (350-450) auprès de Tansy Crin-Sauvage au Bastion Chanteguerre
     .skill herbalism,375,1
 step
     #label BoreanTundra
-    .skill herbalism,375 >> Montez votre Herboristerie de 350 à 400 à Toundra Boréenne
+    .skill herbalism,375 >> Montez votre niveau de compétence en Herboristerie de 350 à 400 à la Toundra Boréenne
     .loop 20,Borean Tundra,77.0,30.1,77.5,35.8,75.5,41.7,69.0,41.8,64.5,39.8,60.7,42.5,61.6,58.4,57.4,48.8,49.8,69.5,49.2,74.9,46.2,72.2,32.8,63.5,32.5,54.3,44.0,43.9,52.7,49.0,52.7,41.0,58.0,40.4,60.1,32.5,54.9,27.9,48.4,23.2,50.0,20.0,58.1,18.7,61.8,14.3,66.0,16.1,73.4,25.9,70.1,31.0,72.6,34.2,77.0,30.1
 step
     #completewith next
     .goto Sholazar Basin,50,50
-    .zone Sholazar Basin >> Envolez-vous vers Bassin de Sholazar
+    .zone Sholazar Basin >> Volez au Bassin de Sholazar
     .skill herbalism,425,1
 step
-    .skill herbalism,425 >> Montez votre Herboristerie de 375 à 425 à Bassin de Sholazar
+    .skill herbalism,425 >> Montez votre niveau de compétence en Herboristerie de 375 à 425 au Bassin de Sholazar
     .loop 20,Sholazar Basin,70.1,68.4,67.1,70.9,65.7,75.3,58.3,77.7,60.9,84.4,54.4,85.7,48.6,83.5,48.1,71.7,47.8,65.8,49.6,52.4,46.4,51.7,45.1,56.3,42.1,58.0,40.9,64.3,42.2,83.2,33.5,83.1,27.2,80.1,26.6,72.8,34.2,66.3,33.8,59.8,22.2,59.2,23.1,48.1,28.6,52.7,30.1,44.5,35.4,45.0,33.4,35.1,41.4,22.8,58.3,27.8,62.1,35.0,56.1,35.7,57.3,42.3,59.2,47.0,56.7,55.9,54.2,61.5,61.7,67.2,70.1,68.4
 step
     #completewith next
     .goto The Storm Peaks,50.0,50.0
-    .zone The Storm Peaks >> Envolez-vous vers Les pics Foudroyés sur votre monture volante
+    .zone The Storm Peaks >> Volez aux Pics Foudroyés sur votre monture volante
     .skill herbalism,450,1
     .skill riding,<300,1
 step << Mage
@@ -306,7 +306,7 @@ step << Mage
     .zoneskip The Storm Peaks
 step << !Mage
     #completewith next
-    .hs >> Utilisez votre Pierre de foyer à Dalaran
+    .hs >> Utilisez votre Pierre de foyer pour revenir à Dalaran
     .skill riding,300,1
     .skill herbalism 450,1
     .zoneskip The Storm Peaks
@@ -314,21 +314,21 @@ step << !Mage
 step << !Mage
     #completewith next
     .goto Sholazar Basin,50.2,61.5
-    .fly K3 >> Envolez-vous vers Pics Foudroyés (K3)
+    .fly K3 >> Volez aux Pics Foudroyés (K3)
     .skill riding,300,1
     .skill herbalism 450,1
     .zoneskip The Storm Peaks
 step
     #label TheStormPeaks
-    .skill herbalism,450 >> Montez votre Herboristerie de 425 à 450 aux Pics Foudroyés
+    .skill herbalism,450 >> Montez votre niveau de compétence en Herboristerie de 425 à 450 aux Pics Foudroyés
     .loop 20,The Storm Peaks,56.1,65.5,59.2,59.3,63.5,62.6,72.5,63.3,71.1,55.4,71.9,48.3,67.0,45.9,65.4,41.6,61.1,44.2,58.8,48.7,55.7,50.2,50.5,53.3,49.8,59.8,46.9,62.5,38.0,62.9,38.0,53.9,44.0,52.8,43.1,43.6,37.6,44.5,34.9,40.1,32.3,49.3,28.4,50.3,26.7,56.7,22.6,57.0,25.0,63.1,27.8,61.8,26.7,72.5,31.5,65.8,36.9,66.3,37.4,77.0,30.6,83.4,32.7,89.9,39.0,88.5,39.6,80.7,50.0,74.3,56.1,65.5
 step
-    +Félicitations pour avoir atteint le niveau 450 en Herboristerie!
+    +Félicitations, vous avez maintenant atteint une compétence de 450 en Herboristerie !
 ]])
 
 RXPGuides.RegisterGuide([[
 #wotlk
-#group Leveling de Métier
+#group Guide de métiers
 << Alliance
 #name 1-450 Herboristerie (A)
 #guideKind profession
@@ -341,7 +341,7 @@ step << Mage
     .skill herbalism,70,1
 step << !Mage
     #completewith next
-    .hs >> Utilisez votre Pierre de foyer à Dalaran
+    .hs >> Utilisez votre Pierre de foyer pour revenir à Dalaran
     .zoneskip Dalaran
     .skill herbalism,70,1
 step << !Mage
@@ -373,7 +373,7 @@ step << !Mage
     .cooldown item,6948,<0,1
 step << !Mage
     #completewith next
-    .hs >> Utilisez votre Pierre de foyer à Dalaran
+    .hs >> Utilisez votre Pierre de foyer pour revenir à Dalaran
     .zoneskip Stormwind City
     .skill herbalism,150,1
 step << !Mage
@@ -459,13 +459,13 @@ step << Mage
     .zoneskip Hellfire Peninsula
 step << !Mage
     #completewith next
-    .hs >> Utilisez votre Pierre de foyer à Dalaran
+    .hs >> Utilisez votre Pierre de foyer pour revenir à Dalaran
     .skill herbalism,325,1
     .zoneskip Hellfire Peninsula
 step << !Mage
     #completewith next
     .goto Dalaran,37.2,66.2
-    .zone Shattrath City >> Prenez le portail vers Shattrath
+    .zone Shattrath City >> Prenez le portail pour Shattrath
     .skill herbalism,325,1
     .zoneskip Hellfire Peninsula
 step
@@ -509,41 +509,41 @@ step << Mage
     .zone Dalaran >> Téléportez-vous à Dalaran
 step << !Mage
     #completewith next
-    .hs >> Utilisez votre Pierre de foyer à Dalaran
+    .hs >> Utilisez votre Pierre de foyer pour revenir à Dalaran
     .zoneskip Borean Tundra
     .skill herbalism,400,1
 step
     #completewith next
-    .zone Borean Tundra >> Envolez-vous vers Toundra Boréenne sur votre Monture volante
+    .zone Borean Tundra >> Volez à la Toundra Boréenne sur votre monture volante
     .skill herbalism,400,1
     .skill riding,300,1
 step
     #completewith next
     .goto Dalaran, 72.2,45.8
-    .fly Valiance Keep >> Envolez-vous vers Toundra Boréenne (Donjon de la Bravoure)
+    .fly Valiance Keep >> Volez à la Toundra Boréenne (Donjon de la Bravoure)
     .skill herbalism,400,1
     .skill riding,<300,1
 step
     #label Kirea
     .goto Borean Tundra,57.8,71.8
-    .train 50300 >> Apprenez Grand maître Herboristerie (350-450) de Kirea Moondancer à Donjon de la Bravoure
+    .train 50300 >> Apprenez Grand maître Herboristerie (350-450) après de Kirea Danselune au Donjon de la Bravoure
     .skill herbalism,400,1
 step
     #label BoreanTundra
-    .skill herbalism,400 >> Montez votre Herboristerie de 350 à 400 à Toundra Boréenne
+    .skill herbalism,400 >> Montez votre niveau de compétence en Herboristerie de 350 à 400 à la Toundra Boréenne
     .loop 20,Borean Tundra,77.0,30.1,77.5,35.8,75.5,41.7,69.0,41.8,64.5,39.8,60.7,42.5,61.6,58.4,57.4,48.8,49.8,69.5,49.2,74.9,46.2,72.2,32.8,63.5,32.5,54.3,44.0,43.9,52.7,49.0,52.7,41.0,58.0,40.4,60.1,32.5,54.9,27.9,48.4,23.2,50.0,20.0,58.1,18.7,61.8,14.3,66.0,16.1,73.4,25.9,70.1,31.0,72.6,34.2,77.0,30.1
 step
     #completewith next
     .goto Sholazar Basin,50,50
-    .zone Sholazar Basin >> Envolez-vous vers Bassin de Sholazar
+    .zone Sholazar Basin >> Volez au Bassin de Sholazar
     .skill herbalism,425,1
 step
-    .skill herbalism,425 >> Montez votre Herboristerie de 375 à 425 à Bassin de Sholazar
+    .skill herbalism,425 >> Montez votre niveau de compétence en Herboristerie de 375 à 425 au Bassin de Sholazar
     .loop 20,Sholazar Basin,70.1,68.4,67.1,70.9,65.7,75.3,58.3,77.7,60.9,84.4,54.4,85.7,48.6,83.5,48.1,71.7,47.8,65.8,49.6,52.4,46.4,51.7,45.1,56.3,42.1,58.0,40.9,64.3,42.2,83.2,33.5,83.1,27.2,80.1,26.6,72.8,34.2,66.3,33.8,59.8,22.2,59.2,23.1,48.1,28.6,52.7,30.1,44.5,35.4,45.0,33.4,35.1,41.4,22.8,58.3,27.8,62.1,35.0,56.1,35.7,57.3,42.3,59.2,47.0,56.7,55.9,54.2,61.5,61.7,67.2,70.1,68.4
 step
     #completewith next
     .goto The Storm Peaks,50.0,50.0
-    .zone The Storm Peaks >> Envolez-vous vers Les pics Foudroyés sur votre monture volante
+    .zone The Storm Peaks >> Volez aux Pics Foudroyés sur votre monture volante
     .skill herbalism,450,1
     .skill riding,<300,1
 step << Mage
@@ -555,7 +555,7 @@ step << Mage
     .zoneskip The Storm Peaks
 step << !Mage
     #completewith next
-    .hs >> Utilisez votre Pierre de foyer à Dalaran
+    .hs >> Utilisez votre Pierre de foyer pour revenir à Dalaran
     .skill riding,300,1
     .skill herbalism 450,1
     .zoneskip The Storm Peaks
@@ -563,14 +563,14 @@ step << !Mage
 step << !Mage
     #completewith next
     .goto Sholazar Basin,50.2,61.5
-    .fly K3 >> Envolez-vous vers Pics Foudroyés (K3)
+    .fly K3 >> Volez aux Pics Foudroyés (K3)
     .skill riding,300,1
     .skill herbalism 450,1
     .zoneskip The Storm Peaks
 step
     #label TheStormPeaks
-    .skill herbalism,450 >> Montez votre Herboristerie de 425 à 450 aux Pics Foudroyés
+    .skill herbalism,450 >> Montez votre niveau de compétence en Herboristerie de 425 à 450 aux Pics Foudroyés
     .loop 20,The Storm Peaks,56.1,65.5,59.2,59.3,63.5,62.6,72.5,63.3,71.1,55.4,71.9,48.3,67.0,45.9,65.4,41.6,61.1,44.2,58.8,48.7,55.7,50.2,50.5,53.3,49.8,59.8,46.9,62.5,38.0,62.9,38.0,53.9,44.0,52.8,43.1,43.6,37.6,44.5,34.9,40.1,32.3,49.3,28.4,50.3,26.7,56.7,22.6,57.0,25.0,63.1,27.8,61.8,26.7,72.5,31.5,65.8,36.9,66.3,37.4,77.0,30.6,83.4,32.7,89.9,39.0,88.5,39.6,80.7,50.0,74.3,56.1,65.5
 step
-    +Félicitations d'avoir atteint le niveau 450 en Herboristerie !
+    +Félicitations, vous avez maintenant atteint une compétence de 450 en Herboristerie !
 ]])

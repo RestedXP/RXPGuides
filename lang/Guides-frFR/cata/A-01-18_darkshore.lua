@@ -663,7 +663,7 @@ step
 step << skip
 #requires glynda2
     .goto 62,50.986,19.229
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Gorbold Steelhand|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|cRXP_FRIENDLY_Gorbold Steelhand|r
     .target Gorbold Steelhand
     .accept 13560 >>Accepter la quête Un océan pas si profond
 step << skip--terrible xp/hr
@@ -720,7 +720,7 @@ step
     .turnin 13589 >>Rendre la quête Les envahisseurs briselances
 step
     .goto 62,58.893,19.411
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinelle Tysha Moonblade|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinel Tysha Moonblade|r
     .accept 13504 >>Accepter la quête Les travailleurs briselances
     .target Sentinel Tysha Moonblade
 step
@@ -763,7 +763,7 @@ step
     .target Balthule Shadowstrike
 step
     .goto 62,58.893,19.411
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinelle Tysha Moonblade|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinel Tysha Moonblade|r
     .turnin 13504 >>Rendre la quête Les travailleurs briselances
     .accept 13507 >>Accepter la quête Privation de personnel
     .target Sentinel Tysha Moonblade
@@ -822,7 +822,7 @@ step
     .complete 13509,1 --|12/12 Shatterspear Armaments burned
 step
     .goto 62,58.893,19.411
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinelle Tysha Moonblade|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinel Tysha Moonblade|r
     .turnin 13507 >>Rendez la quête Privation de personnel
     .target Sentinel Tysha Moonblade
 step
@@ -952,7 +952,7 @@ step
     .hs >> Utilisez votre Pierre de foyer pour vous téléporter à Lor’danel
 step << skip
     .goto 62,51.004,19.217
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Gorbold Steelhand|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|cRXP_FRIENDLY_Gorbold Steelhand|r
     .target Gorbold Steelhand
     .turnin 13560 >>Rendez la quête Un océan pas si profond
 step

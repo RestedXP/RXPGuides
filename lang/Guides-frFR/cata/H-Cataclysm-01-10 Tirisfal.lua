@@ -35,10 +35,10 @@ step
     .goto 18,30.33,72.31,8,0
     .goto 18,30.28,72.78,5,0
     .goto 18,30.04,72.78,5,0
-    .goto 18,29.94,72.45,5 >>Entrez dans la tombe de l'ombre
+    .goto 18,29.94,72.45,5 >>Entrez dans le Tombeau des Ombres
 step
     .goto 18,29.67,71.98
-    >>Ramassez le |cRXP_LOOT_Corpse-Stitching Twine|r et le |cRXP_LOOT_Thick Fluide d’embaumement|r sur la table
+    >>Récupérez le |cRXP_LOOT_Ficelle suture-cadavres|r et le |cRXP_LOOT_Fluide d'embaumement épais|r sur la table
     .complete 28608,2 --Corpse-Stitching Twine (1)
     .complete 28608,1 --Thick Embalming Fluid (1)
 step
@@ -60,12 +60,12 @@ step
     .target Caretaker Caice
 step
     #completewith ValdredMoray
-    >>Tuez les |cRXP_ENEMY_Mindless Zombies|r
+    >>Tuez les |cRXP_ENEMY_Zombies lunatiques|r
     .complete 26799,1 --6/6 Mindless Zombie slain
     .mob Mindless Zombie
 step
     .goto 1420/0,1640.59998,1753.80005
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Redpath|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Senterouge|r
     .complete 24960,2 --1/1 Speak with Marshal Redpath
     .skipgossip
     .target Marshal Redpath
@@ -91,7 +91,7 @@ step
     .waypoint 18,29.27,70.03,30,0
     .waypoint 18,29.50,71.75,30,0
     .waypoint 18,30.39,69.59,30,0
-    >>Tuez les |cRXP_ENEMY_Mindless Zombies|r
+    >>Tuez les |cRXP_ENEMY_Zombies lunatiques|r
     .complete 26799,1 --6/6 Mindless Zombie slain
     .mob Mindless Zombie
 step
@@ -121,7 +121,7 @@ step
     .target Deathguard Saltain
 step
     #completewith next
-    >>Tuez les |cRXP_ENEMY_Rattlecage Skeletons|r et les |cRXP_ENEMY_Wretches Goules|r
+    >>Tuez les |cRXP_ENEMY_Squelettes cliquethorax|r et les |cRXP_ENEMY_Goules déshéritées|r
     .complete 26801,1 --8/8 Deathknell Scourge slain
     .mob Rattlecage Skeleton
     .mob Wretches Ghoul
@@ -136,7 +136,7 @@ step
     .waypoint 18,33.32,64.56,20,0
     .waypoint 18,32.87,64.62,20,0
     .waypoint 18,31.97,61.99,20,0
-    >>Cliquez sur les |cRXP_ENEMY_Scarlet Cadavres|r sur le sol
+    >>Cliquez sur les |cRXP_ENEMY_Cadavres écarlates|r au sol
     .complete 26800,1 --6/6 Scarlet Corpses gathered
     .mob Scarlet Corpse
 step
@@ -148,7 +148,7 @@ step
     .waypoint 18,31.26,61.24,30,0
     .waypoint 18,30.95,62.35,30,0
     .waypoint 18,31.24,63.43,30,0
-    >>Tuez les |cRXP_ENEMY_Rattlecage Skeletons|r et les |cRXP_ENEMY_Wretches Goules|r
+    >>Tuez les |cRXP_ENEMY_Squelettes cliquethorax|r et les |cRXP_ENEMY_Goules déshéritées|r
     .complete 26801,1 --8/8 Deathknell Scourge slain
     .mob Rattlecage Skeleton
     .mob Wretches Ghoul
@@ -189,14 +189,14 @@ step << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Xavier|r
     .turnin 24962 >>Rendez la quête Un parchemin abîmé
     .accept 24964 >>Acceptez la quête La chasse : des sensations fortes
-    .train 56641 >>S'entraîner |T132213:0|t[Veilleur du puits Solanian] << Cata
+    .train 56641 >>Apprenez |T132213:0|t[Tir assuré] << Cata
     .target Xavier the Huntsman
 step << Priest
     .goto 18,31.10,66.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Duesten|r
     .turnin 3097 >>Rendez la quête Parchemin béni
-    .accept 24966 >>Acceptez la quête La lumière et l'ombre
-    .train 2061 >>Entraînez-vous |T135907:0|t[Soins rapides] << Cata
+    .accept 24966 >>Acceptez la quête La lumière et l’ombre
+    .train 2061 >>Apprenez |T135907:0|t[Soins rapides] << Cata
     .target Dark Cleric Duesten
 step << Warlock
     .goto 18,30.92,66.35
@@ -212,7 +212,7 @@ step << Mage cata
 	.mob Training Dummy
 step << Mage !cata
     .goto 18,31.64,66.91
-	>>Lancez |T135848:0|t[Veilleur du puits Solanian] sur un |cRXP_ENEMY_Mannequin d'entraînement|r
+	>>Lancez |T135848:0|t[Nova de givre] sur un |cRXP_ENEMY_Mannequin d'entraînement|r
 	.complete 24965,2 --Cast Frost Nova
 	.mob Training Dummy
 step << Priest cata
@@ -222,7 +222,7 @@ step << Priest cata
 	.target Wounded Deathguard
 step << Priest !cata
     .goto 18,31.64,66.91
-	>>Lancez |T136207:0|t[Mot de l'ombre : Douleur] sur un |cRXP_ENEMY_Mannequin d'entraînement|r
+	>>Lancez |T136207:0|t[Mot de l'ombre : Douleur] sur un |cRXP_ENEMY_Mannequin d'entraînement|r
 	.complete 24966,2 --Cast Shadow Word: Pain
 	.mob Training Dummy
 step << Warlock
@@ -239,7 +239,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Lilian|r
     >>|cRXP_WARN_Elle peut être à l'étage. N'attendez pas le RP|r
     .complete 24961,1 --1/1 Show Lilian her reflection
-    .timer 9,La vérité de la tombe RP
+    .timer 9,RP de La vérité de la tombe
     .skipgossip
     .target Lilian Voss
 step << Monk
@@ -253,7 +253,7 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_David|r
     .turnin 3096 >>Rendez la quête Parchemin codé
     .accept 24967 >>Acceptez la quête Étripage
-    .train 2098 >>Entraînez-vous |T132292:0|t[L'éviscération] << Cata
+    .train 2098 >>Apprenez |T132292:0|t[Eviscération] << Cata
     .target David Trias
 step << Warrior
     .goto 18,32.67,65.61
@@ -269,26 +269,26 @@ step << Monk
 	.mob Training Dummy
 step << Rogue
     .goto 18,31.64,66.91
-	>>Lancez |T132292:0|t[L'éviscération] sur un |cRXP_ENEMY_Mannequin d'entraînement|r
+	>>Lancez |T132292:0|t[Eviscération] sur un |cRXP_ENEMY_Mannequin d'entraînement|r
 	.complete 24967,2 << !Cata --Cast Eviscerate (x3)
 	.complete 24967,1 << Cata --Cast Eviscerate (x3)
 	.mob Training Dummy
 step << Warrior
     .goto 18,31.64,66.91
-    >>Lancez |T132337:0|t[À la charge !] sur un |cRXP_ENEMY_Mannequin d'entraînement|r
+    >>Lancez |T132337:0|t[Charge] sur un |cRXP_ENEMY_Mannequin d'entraînement|r
 	.complete 24969,2 << !Cata --Cast Charge (x3)
 	.complete 24969,1 << Cata --Cast Charge (x3)
 	.mob Training Dummy
 step << Hunter
     .goto 18,31.64,66.91
-	>>Lancez |T132213:0|t[Veilleur du puits Solanian] sur un |cRXP_ENEMY_Mannequin d'entraînement|r
+	>>Lancez |T132213:0|t[Tir assuré] sur un |cRXP_ENEMY_Mannequin d'entraînement|r
 	.complete 24964,2 << !Cata --Steady Shot (x3)
 	.complete 24964,1 << Cata --Steady Shot (x3)
 	.mob Training Dummy
 step << Monk
     .goto 465/0,1568.100,1857.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Ting, le Ventre gaillard|r
-    .turnin 31147 >>Rendre la quête Paume du tigre
+    .turnin 31147 >>Rendez la quête Paume du tigre
     .target Ting, Strong of Stomach
 step << Rogue
     .goto 18,32.53,65.66
@@ -322,7 +322,7 @@ step << Mage
 step << Priest
     .goto 18,31.10,66.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Duesten|r
-    .turnin 24966 >>Rendez la quête La lumière et l'ombre
+    .turnin 24966 >>Rendez la quête La lumière et l’ombre
     .target Dark Cleric Duesten
 step << Warlock
     .goto 18,30.92,66.35
@@ -349,8 +349,8 @@ step
     .waypoint 18,34.92,59.39,40,0
     .waypoint 18,34.19,59.64,40,0
     .waypoint 18,32.90,58.08,40,0
-    >>Tuez les |cRXP_ENEMY_Duskbats|r. Pillez-les pour leurs |cRXP_LOOT_Ailes|r
-    >>Tuez les |cRXP_ENEMY_Wolves|r. Pillez-les pour leurs |cRXP_LOOT_Paws|r
+    >>Tuez les |cRXP_ENEMY_Duskbats|r. Dépouillez-les pour leurs |cRXP_LOOT_Ailes|r
+    >>Tuez les |cRXP_ENEMY_Loups|r. Dépouillez-les pour leurs |cRXP_LOOT_Pattes|r
     .complete 26802,2 --4/4 Duskbat Wing
     .mob +Duskbat
     .mob +Mangy Duskbat
@@ -365,10 +365,10 @@ step
     .target Executor Arren
 step
     #completewith NWSpiders
-    .subzone 155 >>Rendez-vous à la grotte de la Nuit Trépassée
+    .subzone 155 >>Allez aux grottes des Tisse-nuit
 step
     #completewith next
-    >>Tuez |cRXP_ENEMY_Young Nuit Rets Araignées|r |cRXP_WARN_outside the mine|r
+    >>Tuez les |cRXP_ENEMY_Jeunes tisse-nuit|r |cRXP_WARN_à l'extérieur de la mina|r
     .complete 24973,1 --8/8 Young Night Web Spider slain
     .mob Young Night Web Spider
 step
@@ -382,7 +382,7 @@ step
     .waypoint 18,24.15,60.82,8,0
     .waypoint 18,23.23,60.06,8,0
     .waypoint 18,23.68,58.52,8,0
-    >>Tuez |cRXP_ENEMY_Night Rets Araignées|r |cRXP_WARN_inside the mine|r
+    >>Tuez les |cRXP_ENEMY_Araignées tisse-nuit|r |cRXP_WARN_à l'intérieur de la mine|r
     .complete 24973,2 --5/5 Night Web Spider slain
     .mob Night Web Spider
 step
@@ -393,7 +393,7 @@ step
     .waypoint 18,29.77,56.26,40,0
     .waypoint 18,29.44,58.33,40,0
     .waypoint 18,28.63,59.20,40,0
-    >>Tuez |cRXP_ENEMY_Young Nuit Rets Araignées|r outside the mine
+    >>Tuez les |cRXP_ENEMY_Jeunes tisse-nuit|r à l'extérieur de la mine
     .complete 24973,1 --8/8 Young Night Web Spider slain
     .mob Young Night Web Spider
 step
@@ -410,7 +410,7 @@ step
     .target Darnell
 step
     #completewith next
-    >>Tuez |cRXP_ENEMY_Magus de Putresprit|r et les |cRXP_ENEMY_Rotbrain Berserkers|r
+    >>Tuez les |cRXP_ENEMY_Magus de Putresprit|r et les |cRXP_ENEMY_Berserkers de Putresprit|r
     .complete 24971,2 --8/8 Rotbrain undead slain
     .mob Rotbrain Magus
     .mob Rotbrain Berserker
@@ -426,13 +426,13 @@ step
     .waypoint 18,38.07,67.55,40,0
     .waypoint 18,37.07,67.02,40,0
     .waypoint 18,35.94,68.27,40,0
-    >>Tuez |cRXP_ENEMY_Magus de Putresprit|r et les |cRXP_ENEMY_Rotbrain Berserkers|r
+    >>Tuez les |cRXP_ENEMY_Magus de Putresprit|r et les |cRXP_ENEMY_Berserkers de Putresprit|r
     .complete 24971,2 --8/8 Rotbrain undead slain
     .mob Rotbrain Magus
     .mob Rotbrain Berserkers
 step
     #completewith next
-    .subzone 154 >>Rendez-vous au Glas
+    .subzone 154 >>Voyagez au Glas
 step
     .goto 18,30.83,66.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sarvis|r
@@ -443,10 +443,10 @@ step
     #completewith next
     .goto 18,38.09,56.48,20,0
     .goto 18,38.41,55.69,20,0
-    .goto 18,38.78,55.57,20 >>Sortez du Glas
+    .goto 18,38.78,55.57,20 >>Quittez le Glas
 step
     #completewith next
-    .subzone 4916 >>Rendez-vous à Domaine Calston
+    .subzone 4916 >>Voyagez au Domaine Calston
 step
     #xprate <1.2
     .goto 18,44.75,53.68
@@ -479,38 +479,38 @@ step
     .target Sedrick Calston
 step << Hunter Cata
     .goto 18,44.97,53.57
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Darna|r dehors
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Darna|r à l'extérieur
     .train 2973 >>Apprenez vos sorts de classe
     .target Darna Woad
     .xp <6,1
 step << Warrior Cata
     .goto 18,45.03,53.54
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Karla|r dehors
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Karla|r à l'extérieur
     .train 34428 >>Apprenez vos sorts de classe
     .target Karla Fain
     .xp <5,1
 step << Mage Cata
     .goto 18,44.78,53.26
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Larah|r dehors
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Larah|r à l'extérieur
     .train 2136 >>Apprenez vos sorts de classe
     .target Larah Firesong
     .xp <5,1
 step << Priest Cata
     .goto 18,44.78,53.16
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Claressa|r dehors
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Claressa|r à l'extérieur
     .train 589 >>Apprenez vos sorts de classe
     .target Dark Cleric Claressa
     .xp <5,1
 step << Warlock Cata
     .goto 18,44.73,53.18
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Maressa|r dehors
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Maressa|r à l'extérieur
     .train 87389 >>Apprenez vos sorts de classe
     .target Maressa Milner
     .xp <5,1
 step
     #xprate <1.2
     #completewith next
-    >>Tuez les |cRXP_ENEMY_Tirisfal Farmers|r
+    >>Tuez les |cRXP_ENEMY_Fermiers de Tirisfal|r
     .complete 24978,1 --10/10 Tirisfal Farmer slain
     .mob Tirisfal Farmer
 step
@@ -523,7 +523,7 @@ step
     .waypoint 18,36.95,51.78,30,0
     .waypoint 18,35.25,50.90,30,0
     .waypoint 18,36.88,49.70,30,0
-    >>Ramassez les |cRXP_LOOT_Tirisfal Pumpkins|r sur le sol
+    >>Ramassez les |cRXP_LOOT_Potirons de Tirisfal|r au sol
     .complete 24975,1 --10/10 Tirisfal Pumpkin
 step
     #xprate <1.2
@@ -535,7 +535,7 @@ step
     .waypoint 18,36.95,51.78,30,0
     .waypoint 18,35.25,50.90,30,0
     .waypoint 18,36.88,49.70,30,0
-    >>Tuez les |cRXP_ENEMY_Tirisfal Farmers|r
+    >>Tuez les |cRXP_ENEMY_Fermiers de Tirisfal|r
     .complete 24978,1 --10/10 Tirisfal Farmer slain
     .mob Tirisfal Farmer
 step
@@ -544,14 +544,14 @@ step
     .goto 18,35.90,42.92,40,0
     .goto 18,36.66,40.40,40,0
     .goto 18,35.91,43.85
-    .use 52059 >>Attaquez un |cRXP_ENEMY_Murloc Aileron noir|r jusqu'à ce qu'il commence à fuir, puis utilisez votre |T133802:0|t[Laisse de murloc] pour le capturer
+    .use 52059 >>Attaquez un |cRXP_ENEMY_Murloc Aileron noir|r jusqu'à ce qu'il commence à s'enfuir, puis utilisez votre |T133802:0|t[Laisse de murloc] pour le capturer
     .complete 24974,1 --1/1 Vile Fin captured
     .mob File Vin Puddlejumper
     .mob File Vin Minor Oracle
 step
     #xprate <1.2
     #completewith next
-    .subzone 4916 >>Rendez-vous à Domaine Calston
+    .subzone 4916 >>Voyagez au Domaine Calston
 step
     #xprate <1.2
     .goto 18,44.75,53.68
@@ -586,7 +586,7 @@ step
     #xprate <1.2
     #completewith next
     .goto 18,44.49,53.86,5,0
-    .goto 18,44.75,53.65 >> Montez pour rendre le |cRXP_FRIENDLY_Murloc|r
+    .goto 18,44.75,53.65 >> Allez à l'étage pour livrer le |cRXP_FRIENDLY_Murloc|r
     .complete 24974,2 --1/1 Vile Fin returned
 step
     #xprate <1.2
@@ -597,14 +597,14 @@ step
 step << Hunter Cata
     #xprate <1.2
     .goto 18,44.97,53.57
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Darna|r dehors
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Darna|r à l'extérieur
     .train 2973 >>Apprenez vos sorts de classe
     .target Darna Woad
     .xp <6,1
 step << Warrior Cata
     #xprate <1.2
     .goto 18,45.03,53.54
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Karla|r dehors
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Karla|r à l'extérieur
     .train 34428 >>Apprenez vos sorts de classe
     .target Karla Fain
     .xp <5,1
@@ -634,7 +634,7 @@ step
     .goto 18,45.86,48.38,40,0
     .goto 18,46.61,47.42,40,0
     .goto 18,47.75,47.67
-    .deathskip >>Attirez autant de mobs que vous pouvez pour mourir et réapparaître au |cRXP_FRIENDLY_Gardien des âmes|r, ou rendez-vous à Brill
+    .deathskip >>Engagez autant de mobs que possible pour mourir et ressuscitez au |cRXP_FRIENDLY_Gardien des âmes|r, ou allez à Brill
 step << Undead
     .goto 18,60.13,52.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Morris|r
@@ -643,7 +643,7 @@ step << Undead
 step
     .goto 18,60.87,51.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Innkeeper Renee|r
-    .home >>Liez votre Pierre de foyer à Brill
+    .home >>Liez votre Pierre de Foyer à Brill
     .target Innkeeper Renee
     .isQuestAvailable 6323
 step << Undead
@@ -673,7 +673,7 @@ step << Undead
     #completewith SilvermoonPort
     .goto 90,59.98,47.60,10,0
     .goto 90,59.16,44.02,8,0
-    .goto 90,65.87,43.99,15 >>Montez par l'ascenseur
+    .goto 90,65.87,43.99,15 >>Prenez l'ascenseur pour monter
 step << !Undead
     #completewith SilvermoonPort
     .goto 18,66.21,1.16,20,0
@@ -682,14 +682,14 @@ step
     #label SilvermoonPort
     .goto 1420/0,269.10001,1804.59998,15,0
     .goto 1420/0,346.60001,1806.00000
-    .zone Silvermoon City >>Cliquez sur le |cRXP_PICK_Orb of Transposition|r pour aller à Lune-d'Argent
+    .zone Silvermoon City >>Cliquez sur |cRXP_PICK_l'Orbe de transposition|r pour Lune-d'Argent
 step
     .goto 110,72.396,85.242,12,0
     .goto 1941/0,-4877.20020,7012.10059
-    .zone Eversong Woods >>Quittez Lune-d'Argent
+    .zone Eversong Woods >>Sortez de Lune-d'Argent
 step
     .goto Eversong Woods,50.331,50.770
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Forestier Jaela|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Forestier Jaela|r
     .accept 8475 >>Acceptez la quête La Malebrèche
     .target Ranger Jaela
     ]])

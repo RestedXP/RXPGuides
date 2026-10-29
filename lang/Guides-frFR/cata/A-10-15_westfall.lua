@@ -390,7 +390,7 @@ step
     .accept 26291 >>Acceptez la quête Du rififi à Ruisselune
 step
     #completewith next
-    .hs >> Foyer à Colline des Sentinelles
+    .hs >> Utilisez votre Pierre de foyer pour revenir à la Colline des Sentinelles
     .cooldown item,6948,>2,1
 step
     .goto 1436/0,1045.300,-10508.800
@@ -496,7 +496,7 @@ step
     .complete 26320,1 -- Vision of the Past uncovered 1/1
 step
     #completewith next
-    .hs >> Utilisez votre Pierre de foyer pour vous téléporter à Colline des Sentinelles
+    .hs >> Utilisez votre Pierre de foyer pour revenir à la Colline des Sentinelles
     .cooldown item,6948,>2,1
 step
     .goto 1436/0,1045.100,-10508.800

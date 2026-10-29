@@ -1,7 +1,7 @@
 if GetLocale() ~= "frFR" then return end
 RXPGuides.RegisterGuide([[
 #version 1
-#group RestedXP Northrend Quêtes journalières
+#group RestedXP Quêtes journalières du Norfendre
 #subgroup Faction Quêtes journalières
 #wotlk
 #cata

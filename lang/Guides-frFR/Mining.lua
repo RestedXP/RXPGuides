@@ -1,7 +1,7 @@
 if GetLocale() ~= "frFR" then return end
 RXPGuides.RegisterGuide([[
 #wotlk
-#group Leveling de Métier
+#group Guide de métiers
 << Horde
 #name 1-450 Minage (H)
 #guideKind profession
@@ -13,12 +13,12 @@ step << Mage
     .skill mining,65,1
 step << !Mage
     #completewith next
-    .hs >> Utilisez votre Pierre de foyer à Dalaran
+    .hs >> Utilisez votre Pierre de foyer pour revenir à Dalaran
     .zoneskip Orgrimmar
     .skill mining,65,1
 step << !Mage
     .goto Dalaran,55.5,25.5
-    .zone Orgrimmar >> À Dalaran, prenez le portail vers Orgrimmar
+    .zone Orgrimmar >> À Dalaran, prenez le portail pour Orgrimmar
     .skill mining,65,1
 step
     #sticky
@@ -54,13 +54,13 @@ step << !Mage
     .cooldown item,6948,<0,1
 step << !Mage
     #completewith next
-    .hs >> Utilisez votre Pierre de foyer à Dalaran
+    .hs >> Utilisez votre Pierre de foyer pour revenir à Dalaran
     .zoneskip Orgrimmar
     .skill mining,125,1
 step << !Mage
     #completewith next
     .goto Dalaran,55.5,25.5
-    .zone Orgrimmar >> À Dalaran, prenez le portail vers Orgrimmar
+    .zone Orgrimmar >> À Dalaran, prenez le portail pour Orgrimmar
     .skill mining,125,1
 step
     .goto Orgrimmar,73.1,26.1
@@ -89,13 +89,13 @@ step << !Mage
     .cooldown item,6948,<0,1
 step << !Mage
     #completewith next
-    .hs >> Utilisez votre Pierre de foyer à Dalaran
+    .hs >> Utilisez votre Pierre de foyer pour revenir à Dalaran
     .skill mining,175,1
     .zoneskip Orgrimmar
 step << !Mage
     #completewith next
     .goto Dalaran,55.5,25.5
-    .zone Orgrimmar >> À Dalaran, prenez le portail vers Orgrimmar
+    .zone Orgrimmar >> À Dalaran, prenez le portail pour Orgrimmar
     .skill mining,175,1
 step
     .goto Orgrimmar,73.1,26.1
@@ -146,13 +146,13 @@ step << Mage
     .skill mining,245,1
 step << !Mage
     #completewith next
-    .hs >> Utilisez votre Pierre de foyer à Dalaran
+    .hs >> Utilisez votre Pierre de foyer pour revenir à Dalaran
     .skill mining,245,1
     .zoneskip Orgrimmar
 step << !Mage
     #completewith next
     .goto Dalaran,55.5,25.5
-    .zone Orgrimmar >> À Dalaran, prenez le portail vers Orgrimmar
+    .zone Orgrimmar >> À Dalaran, prenez le portail pour Orgrimmar
     .skill mining,245,1
 step
     .goto Orgrimmar,73.1,26.1
@@ -184,7 +184,7 @@ step
     #completewith next
     .goto Tanaris,51.6,25.4,-1
     .goto Un'Goro Crater,70.7,90.7,-1
-    .fly Marshal's Refuge >> Envolez-vous vers le Refuge du Maréchal depuis Gadgetzan, ou chevauchez vers Un'Goro si c'est plus proche
+    .fly Marshal's Refuge >> Volez au Rebut des Marshal depuis Gadgetzan, ou allez-y sur votre monture depuis Un'Goro si vous êtes plus proche
     .skill mining,275,1
     .zoneskip Un'Goro Crater
 step
@@ -200,13 +200,13 @@ step << Mage
     .zoneskip Hellfire Peninsula
 step << !Mage
     #completewith next
-    .hs >> Utilisez votre Pierre de foyer à Dalaran
+    .hs >> Utilisez votre Pierre de foyer pour revenir à Dalaran
     .skill mining,325,1
     .zoneskip Hellfire Peninsula
 step
     #completewith next
     .goto Dalaran,55.5,25.5
-    .zone Shattrath City >> À Dalaran, Téléportation à Shattrath
+    .zone Shattrath City >> À Dalaran, téléportez-vous à Shattrath
 step
     #completewith Krugosh
     .goto Shattrath City,64.1,41.1
@@ -272,52 +272,52 @@ step << Mage
     .skill mining 400,1
 step << !Mage
     #completewith next
-    .hs >> Utilisez votre Pierre de foyer à Dalaran
+    .hs >> Utilisez votre Pierre de foyer pour revenir à Dalaran
     .zoneskip Borean Tundra
     .skill mining 400,1
 step
     #completewith next
-    .zone Borean Tundra >> Envolez-vous vers Toundra Boréenne sur votre Monture volante
+    .zone Borean Tundra >> Volez à la Toundra Boréenne sur votre monture volante
     .skill mining,400,1
     .skill riding,300,1
 step
     #completewith next
     .goto Dalaran, 72.2,45.8
-    .fly Warsong Hold >> Envolez-vous vers Toundra Boréenne (Bastion Chanteguerre)
+    .fly Warsong Hold >> Volez à la Toundra Boréenne (Bastion Chanteguerre)
     .skill mining,400,1
     .skill riding,<300,1
 step
     #label Brunna
     .goto Borean Tundra,42.6,53.2
-    .train 50310 >> Apprenez Grand maître Minage (350-450) auprès de Brunna Ironaxe à Bastion Chanteguerre
+    .train 50310 >> Apprenez Grand maître mineur (350-450) auprès de Brunna Hachefer au Bastion Chanteguerre
     .skill mining,400,1
 step
     #label Borean Tundra
-    .skill mining,400 >> Montez votre minage de 375 à 400 à Toundra Boréenne
+    .skill mining,400 >> Montez votre minage de 375 à 400 à la Toundra Boréenne
     .loop 20,Borean Tundra,91.1,33.6,87.8,44.7,78.9,44.7,78.9,30.0,73.4,32.7,72.6,28.0,68.2,25.5,69.3,31.5,64.1,33.4,61.7,37.7,66.3,38.8,72.6,45.3,66.0,46.6,59.6,59.4,56.6,57.8,52.8,73.2,49.3,69.4,50.6,57.1,43.1,70.4,34.1,67.0,29.5,56.5,49.2,49.1,52.3,35.9,50.0,33.3,41.7,41.6,23.8,33.6,22.7,28.9,25.0,22.0,30.4,22.3,33.2,27.6,39.9,20.0,44.2,21.3,41.9,13.7,48.7,15.3,55.5,11.8,60.0,11.7,59.4,19.2,61.1,22.3,65.9,16.6,74.2,17.1,78.0,21.3,84.1,32.3,91.1,33.6
 step
     #completewith next
     .goto Sholazar Basin,50,50
-    .zone Sholazar Basin >> Envolez-vous vers Bassin de Sholazar
+    .zone Sholazar Basin >> Volez au Bassin de Sholazar
     .skill mining,425,1
 step
-    .skill mining,425 >> Montez votre minage de 400 à 425 à Bassin de Sholazar
+    .skill mining,425 >> Montez votre minage de 400 à 425 au Bassin de Sholazar
     .loop 20,Sholazar Basin,77.7,56.8,76.3,65.9,64.0,81.0,60.2,80.3,59.7,87.0,54.0,88.3,59.3,66.8,53.8,64.0,47.7,60.4,45.9,63.5,50.2,78.8,48.5,87.0,40.3,87.1,37.4,83.7,40.4,76.5,36.6,69.1,32.2,75.0,31.8,80.2,32.2,83.6,22.8,82.4,20.8,70.3,23.5,52.8,25.8,47.2,31.9,59.5,36.3,57.5,39.5,51.2,31.4,37.9,35.2,32.8,37.6,37.0,40.8,38.4,43.1,35.8,49.7,43.3,53.5,38.7,51.0,31.6,43.6,22.3,58.9,25.0,59.0,29.4,62.9,31.8,67.2,42.9,61.3,50.4,64.2,53.8,67.3,50.7,67.8,55.2,74.2,55.5,77.7,56.8
 step
     #completewith next
     .goto Icecrown,50,50
-    .zone Icecrown >> Envolez-vous vers La Couronne de glace
+    .zone Icecrown >> Volez à la Couronne de glace
     .skill mining,450,1
 step
-    .skill nining,450 >> Montez votre minage de 425 à 450 à La Couronne de glace
+    .skill nining,450 >> Montez votre minage de 425 à 450 à la Couronne de glace
     .loop 20, Icecrown,65.6,35.1,59.3,29.4,54.9,38.6,47.8,35.1,42.8,37.8,39.3,33.4,37.9,36.2,37.2,41.7,41.6,41.1,38.0,50.8,37.9,57.1,40.2,59.8,31.5,58.1,30.8,64.5,36.2,68.9,39.9,65.6,49.6,61.4,48.5,51.2,56.5,44.7,65.6,59.8,67.1,72.2,72.0,63.8,74.2,65.0,77.8,64.3,79.3,57.0,75.8,46.4,67.6,46.5,67.3,42.9,74.1,40.1,74.7,35.3,65.6,35.1
 step
-    +Félicitations pour avoir atteint le niveau 450 en Minage !
+    +Félicitations, vous avez maintenant atteint une compétence de 450 en Minage !
 ]])
 
 RXPGuides.RegisterGuide([[
 #wotlk
-#group Leveling de Métier
+#group Guide de métiers
 << Alliance
 #name 1-450 Minage (A)
 #guideKind profession
@@ -329,7 +329,7 @@ step << Mage
     .skill mining,65,1
 step << !Mage
     #completewith next
-    .hs >> Utilisez votre Pierre de foyer à Dalaran
+    .hs >> Utilisez votre Pierre de foyer pour revenir à Dalaran
     .skill mining,65,1
     .zoneskip Stormwind City
 step << !Mage
@@ -371,7 +371,7 @@ step << !Mage
     .cooldown item,6948,<0,1
 step << !Mage
     #completewith next
-    .hs >> Utilisez votre Pierre de foyer à Dalaran
+    .hs >> Utilisez votre Pierre de foyer pour revenir à Dalaran
     .skill mining,125,1
     .zoneskip Stormwind City
 step << !Mage
@@ -406,7 +406,7 @@ step << !Mage
     .cooldown item,6948,<0,1
 step << !Mage
     #completewith next
-    .hs >> Utilisez votre Pierre de foyer à Dalaran
+    .hs >> Utilisez votre Pierre de foyer pour revenir à Dalaran
     .skill mining,175,1
     .zoneskip Stormwind City
 step << !Mage
@@ -423,7 +423,7 @@ step
     #completewith next
     .goto Stormwind City,68.2,72.9,20,0
     .goto Stormwind City,71.0,72.5
-    .fly Refuge Pointe >> Envolez-vous vers Refuge de l'Orne
+    .fly Refuge Pointe >> Volez au Refuge de l'Ornière
     .skill mining,175,1
     .zoneskip Arathi Highlands
 step
@@ -432,7 +432,7 @@ step
 step
     #completewith next
     .goto Arathi Highlands,45.8,46.1
-    .fly Aerie Peak >> Envolez-vous vers Nid-de-l'Aigle
+    .fly Aerie Peak >> Volez au Nid-de-l'Aigle
     .skill mining,225,1
     .zoneskip The Hinterlands
 step
@@ -444,13 +444,13 @@ step << Mage
     .skill mining,245,1
 step << !Mage
     #completewith next
-    .hs >> Utilisez votre Pierre de foyer à Dalaran
+    .hs >> Utilisez votre Pierre de foyer pour revenir à Dalaran
     .skill mining,245,1
     .zoneskip Stormwind City
 step << !Mage
     #completewith next
     .goto Dalaran,39.2,63.7
-    .zone Stormwind City >> À Dalaran, prenez le portail vers Forgefer
+    .zone Stormwind City >> À Dalaran, prenez le portail pour Forgefer
     .skill mining,245,1
 step
     .goto Ironforge,51.8,29.5,15,0
@@ -499,7 +499,7 @@ step
     #completewith next
     .goto Tanaris,51.0,29.4,-1
     .goto Un'Goro Crater,70.7,90.7,-1
-    .fly Marshal's Refuge >> Envolez-vous vers le Refuge du Maréchal depuis Gadgetzan, ou chevauchez vers Un'Goro si c'est plus proche
+    .fly Marshal's Refuge >> Volez au Rebut des Marshal depuis Gadgetzan, ou allez-y sur votre monture depuis Un'Goro si vous êtes plus proche
     .skill mining,275,1
     .zoneskip Un'Goro Crater
 step
@@ -515,13 +515,13 @@ step << Mage
     .zoneskip Hellfire Peninsula
 step << !Mage
     #completewith next
-    .hs >> Utilisez votre Pierre de foyer à Dalaran
+    .hs >> Utilisez votre Pierre de foyer pour revenir à Dalaran
     .skill mining,325,1
     .zoneskip Hellfire Peninsula
 step
     #completewith next
     .goto Dalaran,37.3,66.2
-    .zone Shattrath City >> À Dalaran, prenez le portail vers Shattrath
+    .zone Shattrath City >> À Dalaran, prenez le portail pour Shattrath
     .skill mining,325,1
     .zoneskip Hellfire Peninsula
 step
@@ -584,45 +584,45 @@ step << Mage
     .skill mining 400,1
 step << !Mage
     #completewith next
-    .hs >> Utilisez votre Pierre de foyer à Dalaran
+    .hs >> Utilisez votre Pierre de foyer pour revenir à Dalaran
     .zoneskip Borean Tundra
     .skill mining 400,1
 step
     #completewith next
-    .zone Borean Tundra >> Envolez-vous vers Toundra Boréenne sur votre Monture volante
+    .zone Borean Tundra >> Volez à la Toundra Boréenne sur votre monture volante
     .skill mining,400,1
     .skill riding,300,1
 step
     #completewith next
     .goto Dalaran, 72.2,45.8
-    .fly Valiance Keep >> Envolez-vous vers Toundra Boréenne (Donjon de la Bravoure)
+    .fly Valiance Keep >> Volez à la Toundra Boréenne (Donjon de la Bravoure)
     .skill mining,400,1
     .skill riding,<300,1
 step
     #label Fendrig
     .goto Borean Tundra,57.4,66.2
-    .train 50310 >> Apprenez Grand Maître Minage (350-450) auprès de Fendrig Redbeard au Donjon de la Bravoure
+    .train 50310 >> Apprenez Grand maître mineur (350-450) auprès de Fendrig Barbe-Rouge au Donjon de la Bravoure
     .skill mining,400,1
 step
     #label Borean Tundra
-    .skill mining,400 >> Montez votre Minage de 375 à 400 à la Toundra Boréenne
+    .skill mining,400 >> Montez votre minage de 375 à 400 à la Toundra Boréenne
     .loop 20,Borean Tundra,91.1,33.6,87.8,44.7,78.9,44.7,78.9,30.0,73.4,32.7,72.6,28.0,68.2,25.5,69.3,31.5,64.1,33.4,61.7,37.7,66.3,38.8,72.6,45.3,66.0,46.6,59.6,59.4,56.6,57.8,52.8,73.2,49.3,69.4,50.6,57.1,43.1,70.4,34.1,67.0,29.5,56.5,49.2,49.1,52.3,35.9,50.0,33.3,41.7,41.6,23.8,33.6,22.7,28.9,25.0,22.0,30.4,22.3,33.2,27.6,39.9,20.0,44.2,21.3,41.9,13.7,48.7,15.3,55.5,11.8,60.0,11.7,59.4,19.2,61.1,22.3,65.9,16.6,74.2,17.1,78.0,21.3,84.1,32.3,91.1,33.6
 step
     #completewith next
     .goto Sholazar Basin,50,50
-    .zone Sholazar Basin >> Envolez-vous vers Bassin de Sholazar
+    .zone Sholazar Basin >> Volez au Bassin de Sholazar
     .skill mining,425,1
 step
-    .skill mining,425 >> Montez votre Minage de 400 à 425 au Bassin de Sholazar
+    .skill mining,425 >> Montez votre minage de 400 à 425 au Bassin de Sholazar
     .loop 20,Sholazar Basin,77.7,56.8,76.3,65.9,64.0,81.0,60.2,80.3,59.7,87.0,54.0,88.3,59.3,66.8,53.8,64.0,47.7,60.4,45.9,63.5,50.2,78.8,48.5,87.0,40.3,87.1,37.4,83.7,40.4,76.5,36.6,69.1,32.2,75.0,31.8,80.2,32.2,83.6,22.8,82.4,20.8,70.3,23.5,52.8,25.8,47.2,31.9,59.5,36.3,57.5,39.5,51.2,31.4,37.9,35.2,32.8,37.6,37.0,40.8,38.4,43.1,35.8,49.7,43.3,53.5,38.7,51.0,31.6,43.6,22.3,58.9,25.0,59.0,29.4,62.9,31.8,67.2,42.9,61.3,50.4,64.2,53.8,67.3,50.7,67.8,55.2,74.2,55.5,77.7,56.8
 step
     #completewith next
     .goto Icecrown,50,50
-    .zone Icecrown >> Envolez-vous vers La Couronne de glace
+    .zone Icecrown >> Volez à la Couronne de glace
     .skill mining,450,1
 step
-    .skill nining,450 >> Montez votre Minage de 425 à 450 à La Couronne de glace
+    .skill nining,450 >> Montez votre minage de 425 à 450 à la Couronne de glace
     .loop 20, Icecrown,65.6,35.1,59.3,29.4,54.9,38.6,47.8,35.1,42.8,37.8,39.3,33.4,37.9,36.2,37.2,41.7,41.6,41.1,38.0,50.8,37.9,57.1,40.2,59.8,31.5,58.1,30.8,64.5,36.2,68.9,39.9,65.6,49.6,61.4,48.5,51.2,56.5,44.7,65.6,59.8,67.1,72.2,72.0,63.8,74.2,65.0,77.8,64.3,79.3,57.0,75.8,46.4,67.6,46.5,67.3,42.9,74.1,40.1,74.7,35.3,65.6,35.1
 step
-    +Félicitations d'avoir atteint le niveau 450 en Minage!
+    +Félicitations, vous avez maintenant atteint une compétence de 450 en Minage !
 ]])
