@@ -658,7 +658,7 @@ step
     .unitscan Snagglespear
 step
     .goto Mulgore,47.63,61.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jhawna|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Jhwana|r
     >>|cRXP_BUY_Achetez du|r [Lait frais] |cRXP_BUY_à Delaniel|r << Shaman/Druid
     >>|cRXP_BUY_Achetez des|r [Pain sorti du four] |cRXP_BUY_à Delaniel|r << Warrior
     .vendor >> Vendez tout ce dont nous n'avez pas besoin
@@ -899,7 +899,7 @@ step << Hunter
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.0
 step << Hunter
     .goto Mulgore,45.86,57.67
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Moorat|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Parlez à|r |cRXP_FRIENDLY_Loorat|r
     .collect 2516,1000,743,1 << Hunter --Light Shot (1000)
     .target Moorat Longstride
     .itemcount 2512,<800 << Hunter
@@ -1394,7 +1394,7 @@ step << Hunter
     .target Yaw Sharpmane
 step
     .goto Mulgore,47.63,61.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jhawna|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Jhwana|r
     >>|cRXP_BUY_Achetez du|r [Lait frais] |cRXP_BUY_à Delaniel|r << Shaman/Druid
     >>|cRXP_BUY_Achetez des|r [Pain sorti du four] |cRXP_BUY_à Delaniel|r << Warrior
     .collect 1179,20,818,1 << Shaman/Druid --Ice Cold Milk (20)
@@ -1743,7 +1743,7 @@ step << Shaman/Druid
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.4
 step << Warrior
     .goto The Barrens,51.24,29.15
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Parlez à|r |cRXP_FRIENDLY_Nargal|r|cRXP_BUY_. Achetez une|r [Masse géante] |cRXP_BUY_à Nargal|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Parlez à|r |cRXP_FRIENDLY_Nargal|r|cRXP_BUY_. Achetez une|r |T133477:0|t[Masse géante] |cRXP_BUY_à Nargal|r
     .collect 1197,1,784,1 --Collect Giant Mace (1)
     .money <0.2666
     .target Nargal Deatheye
@@ -2082,7 +2082,7 @@ step
     #completewith next
     >>Tuez |cRXP_ENEMY_Pygmy Surf Crawlers|r et les |cRXP_ENEMY_Surf Crawlers|r. Dépouillez-les pour leur |cRXP_LOOT_Mucus|r
     >>Tuez les |cRXP_ENEMY_Coquillards makrura|r et les |cRXP_ENEMY_Claqueur makrura|r. Dépouillez-les pour leurs |cRXP_LOOT_Yeux|r
-    >>Allez aux îles du sud si vous n'avez pas encore bientôt terminé cette quête à ce moment. De nombreux |cRXP_ENEMY_Crawlers|r et de |cRXP_ENEMY_Makruras|r peuvent être trouvé ici
+    >>|cRXP_WARN_Allez aux îles du sud si vous n'avez pas encore bientôt terminé cette quête à ce moment. De nombreux|r |cRXP_ENEMY_Clampants|r |cRXP_WARN_et de|r |cRXP_ENEMY_Makruras|r |cRXP_WARN_peuvent être trouvé ici|r
     .complete 818,2 --Crawler Mucus (8)
     .mob +Pygmy Surf Crawler
     .mob +Surf Crawler
@@ -2154,7 +2154,7 @@ step
     .goto Durotar,55.95,73.93
 step
     #completewith Stolensupplies
-    +Mettez dans vos barres votre [Crâne au faible rougeoiement] et votre [Colle très collante]. Gardez-les pour des situations d'urgence
+    +|cRXP_WARN_Mettez dans vos barres votre|r |T133728:0|t[Crâne au faible rougeoiement] |cRXP_WARN_et la|r |T134712:0|t[Colle très collante]. |cRXP_WARN_Gardez-les pour les situations d'urgence|r
 step
     #loop
     .goto Durotar,49.22,48.96,0
@@ -2691,7 +2691,7 @@ step << !Shaman
     .goto Durotar,34.27,47.02,50,0
     .goto Durotar,34.71,42.30
     >>Voyagez au sud le long de la rivière vers le poste de Guet-Lointain
-    >>Tuez les |cRXP_ENEMY_Dreadmaw Crocolisks|r sur le chemin. Dépouillez-les pour la |cRXP_LOOT_Kron's Amulet|r
+    >>Tuez les |cRXP_ENEMY_Crocilisques Gueule-d'effrois|r sur la route. Dépouillez-les pour l' |cRXP_LOOT_Amulette de Kron|r
     >>|cRXP_WARN_Passez et abandonnez cette quête si elle ne tombe pas|r
     .complete 816,1 --Kron's Amulet (1)
     .mob Dreadmaw Crocolisk

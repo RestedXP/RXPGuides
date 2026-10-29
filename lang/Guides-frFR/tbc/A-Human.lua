@@ -3182,7 +3182,7 @@ step
     .goto Wetlands,10.1,56.9,15,0
     .goto Wetlands,10.6,57.2,15,0
     .goto 1437,10.760,56.721
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Neal Allen|r dans l'étage inférieure de la caserne
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Neal Allen|r à l'étage inférieur de la caserne
     .vendor 1448 >> Achetez un [Tube en bronze] |cRXP_BUY_à Neal (si il en a en stock)|r
 	.target Neal Allen
     .bronzetube
@@ -3281,7 +3281,7 @@ step
 step
     #optional
     .goto 1437,4.370,56.762
-    >>Montez en niveau vos [Premiers soins] en attendant le bateau pour Sombrivage
+    >>Montez votre niveau de compétence en [Premiers soins] pendant que vous attendez le bateau pour Sombrivage
     .zone Darkshore >> Prenez le bateau pour Sombrivage
     .skill firstaid,75,1 -- shows if firstaid is <75
     .skill firstaid,<1,1 -- shows if firstaid is >1

@@ -1705,7 +1705,7 @@ step
     .target Gershala Nightwhisper
 step
 #map Darkshore
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tharnariun Treetender|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tharnariun Soigneflore|r
 	.target Tharnariun Treetender
     .goto Felwood,21.63,18.15
     .accept 2139 >> Acceptez la quête Espoir de Tharnariun
@@ -1953,7 +1953,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Volcor|r
     .turnin 993 >> Rendez la quête Un maître perdu
     .accept 995 >> Acceptez la quête Évasion par la ruse
-    .timer 20,Évasion par la ruse RP
+    .timer 20,RP de Évasion par la ruse
     .target Volcor
     .isQuestTurnedIn 986
 step
@@ -1994,7 +1994,7 @@ step
 step
     .goto Ashenvale,27.26,35.58
     >>|cRXP_WARN_Escortez |cRXP_FRIENDLY_Kerlonian|r jusqu'au poste de Maestra à Orneval|r
-    .use 13536 >> Utilisez la [|cRXP_LOOT_Horn of Awakening|r] |cRXP_WARN_dès que |cRXP_FRIENDLY_Kerlonian|r s'endort|r
+    .use 13536 >> |cRXP_WARN_Utilisez la|r |T134229:0|t[|cRXP_LOOT_Corne de l'éveil|r] |cRXP_WARN_dès que |cRXP_FRIENDLY_Kerlonian|r s'endort|r
     >>|cRXP_WARN_Évitez de rester sur la route principale autant que possible. Les ennemis n'apparaîtront que si vous restez sur la route|r
     .complete 5321,2
     .isOnQuest 5321

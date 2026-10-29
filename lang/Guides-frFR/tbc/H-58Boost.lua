@@ -520,11 +520,11 @@ step
     .isQuestTurnedIn 5149
 step
 	#completewith RottingUndead
-	.subzone 2264 >> Voyagez à la Croisée de Corin
+	.subzone 2264 >> Travel to Corin's Crossing (NOT TRANSLATED IN :frFR YET)
 step
 	#completewith next
 	>>Tuez les |cRXP_ENEMY_Mort-vivant|r. Dépouillez-les pour leur |cRXP_LOOT_Living Rot|r.
-	>>Des groupes d'Elite patrouillent la route au nord et la route à l'est. Des mobs invisibles patrouillent à l'intérieur de la Croisée de Corin, donc essayez de sortir les mobs que vous engagez
+	>>|cRXP_WARN_Groups of elites patrol the north and east road. Invisible mobs patrol inside of Corin's Crossing, so try to pull mobs out|r (NOT TRANSLATED IN :frFR YET)
 	.collect 15447,7 --Living Rot (7)
 	.mob Hate Shrieker
 	.mob Scourge Warder

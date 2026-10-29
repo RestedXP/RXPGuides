@@ -2280,7 +2280,7 @@ step << Warrior
     .isOnQuest 1498
 step << Warrior
     .goto Tirisfal Glades,61.85,52.55
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à  |cRXP_FRIENDLY_Austil|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Austil|r
     .trainer >> Apprenez vos sorts de classe
     .accept 1818 >> Acceptez la quête Parler à Dillinger
     .target Austil de Mon

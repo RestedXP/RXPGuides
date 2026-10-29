@@ -4155,7 +4155,7 @@ step
 step
     #label AshenvaleEnd
     .goto Ashenvale,34.40,48.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Daelyshia|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|cRXP_FRIENDLY_Daelyshia|r
     .fp Astranaar >> Prenez le chemin de vol d'Astranaar
 	.target Daelyshia
 step
@@ -4628,7 +4628,7 @@ step
 #requires manuscript
 .dungeon BFD
     #label Kelris
-    >>Tuez  |cRXP_ENEMY_Twilight Lord Kelris|r. Dépouillez-le pour sa |cRXP_LOOT_Head|r
+    >>Tuez|cRXP_ENEMY_Twilight Lord Kelris|r. Dépouillez-le pour sa |cRXP_LOOT_Tête|r
     .complete 1200,1 -- Head of Kelris (1)
     .isOnQuest 1200
 step
@@ -5400,7 +5400,7 @@ step
 #requires manuscript
 .dungeon BFD
     #label Kelris
-    >>Tuez  |cRXP_ENEMY_Twilight Lord Kelris|r. Dépouillez-le pour sa |cRXP_LOOT_Head|r
+    >>Tuez|cRXP_ENEMY_Twilight Lord Kelris|r. Dépouillez-le pour sa |cRXP_LOOT_Tête|r
     .complete 1200,1 -- Head of Kelris (1)
     .isOnQuest 1200
 step

@@ -78,7 +78,7 @@ step << Warlock
     .goto Durotar,41.52,68.36,12,0
     .goto Durotar,41.24,68.16,12,0
     .goto Durotar,40.82,68.03,12,0
-    .goto Durotar,40.56,68.44,12 >>Parlez à |cRXP_FRIENDLY_Hraug|r
+    .goto Durotar,40.56,68.44,12 >>Voyagez vers |cRXP_FRIENDLY_Hraug|r
     .money >0.01
 step << Warlock
     #hardcore
@@ -2941,7 +2941,7 @@ step << Priest
     .itemcount 205947,1
 step
     #completewith QuilboarsScouts
-    +Mettez dans vos barres votre [Crâne au faible rougeoiement] et votre [Colle très collante]. Gardez-les pour des situations d'urgence
+    +|cRXP_WARN_Mettez dans vos barres votre|r |T133728:0|t[Crâne au faible rougeoiement] |cRXP_WARN_et la|r |T134712:0|t[Colle très collante]. |cRXP_WARN_Gardez-les pour les situations d'urgence|r
 step << Warrior
     #season 2
     #loop
@@ -3644,7 +3644,7 @@ step
     #xprate <1.5 << Mage/Warlock/Priest/Rogue
     #requires NeedACure
     .goto Durotar,51.51,41.64
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Innkeeper Grosk|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Grosk l'aubergiste|r
     .vendor >> Vendez tout ce dont nous n'avez pas besoin
     >>|cRXP_BUY_Achetez du|r [Lait frais] |cRXP_BUY_à Kauth|r << Mage/Warlock/Priest/Shaman
     >>|cRXP_BUY_Achetez des|r [Cuissot] |cRXP_BUY_à Hai'zan|r << Rogue/Warrior
@@ -5802,7 +5802,7 @@ step << Warlock/Mage/Rogue
     .goto Undercity,27.39,30.23,35,0
     .goto Undercity,21.89,43.35,35,0
     .goto Tirisfal Glades,51.10,71.53,50,0
-    .zone Tirisfal Glades >> Quittez Undercity par les Égouts
+    .zone Tirisfal Glades >> Sortez de Fossoyeuse par les Égouts
     .zoneskip Tirisfal Glades
 step << Undead Priest
     #optional
@@ -5815,7 +5815,7 @@ step << Undead Priest
     .goto Undercity,27.39,30.23,35,0
     .goto Undercity,21.89,43.35,35,0
     .goto Tirisfal Glades,51.10,71.53,50,0
-    .zone Tirisfal Glades >> Quittez Undercity par les Égouts
+    .zone Tirisfal Glades >> Sortez de Fossoyeuse par les Égouts
     .zoneskip Tirisfal Glades
 step
     #optional
@@ -8927,7 +8927,7 @@ step << Priest
     .itemcount 205947,1
 step
     #completewith TravelToTiragarde
-    +Mettez dans vos barres votre [Crâne au faible rougeoiement] et votre [Colle très collante]. Gardez-les pour des situations d'urgence
+    +|cRXP_WARN_Mettez dans vos barres votre|r |T133728:0|t[Crâne au faible rougeoiement] |cRXP_WARN_et la|r |T134712:0|t[Colle très collante]. |cRXP_WARN_Gardez-les pour les situations d'urgence|r
 step << Rogue
     #season 2
     .goto Durotar,51.82,58.67

@@ -1713,7 +1713,7 @@ step << Warrior
     .isQuestComplete 375
 step << Warrior
     .goto Tirisfal Glades,61.85,52.53
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à  |cRXP_FRIENDLY_Austil|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Austil|r
     .train 284 >>Apprenez vos sorts de classe
     .target Austil de Mon
 step << !Shaman !Hunter !Warlock
@@ -2196,7 +2196,7 @@ step << Warrior/Rogue/Shaman
 step << skip --Warlock/Mage/Priest
     .goto Durotar,56.29,73.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Parlez à|r |cRXP_FRIENDLY_K'waii|r
-    >>|cRXP_BUY_Achetez des|r [Refreshing Spring Water] |cRXP_BUY_à Duokna|r --Refreshing Spring Water (20)
+    >>|cRXP_BUY_Achetez des|r [Eau de source] |cRXP_BUY_à Shara|r --Refreshing Spring Water (20)
     .collect 159,20,784,1
     .target K'waii
     .money <0.010
@@ -2204,7 +2204,7 @@ step << skip --Warlock/Mage/Priest
     #xprate <1.5
     .goto Durotar,56.29,73.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Parlez à|r |cRXP_FRIENDLY_K'waii|r
-    >>|cRXP_BUY_Achetez des|r [Refreshing Spring Water] |cRXP_BUY_à Duokna|r --Refreshing Spring Water (10)
+    >>|cRXP_BUY_Achetez des|r [Eau de source] |cRXP_BUY_à Shara|r --Refreshing Spring Water (10)
     .collect 159,10,784,1
     .target K'waii
     .money <0.0050

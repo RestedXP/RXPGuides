@@ -2596,7 +2596,7 @@ step
 .dungeon Stockades
     #ah
     >>Ramassez les |cRXP_LOOT_Clara's Fresh Apples|r sur la table
-    >>Si vous avez toujours besoin d' [Etoffe de soie] vous pouvez en acheter à l'Hôtel des Ventes
+    >>Si vous avez besoin d'[Etoffe de soie] achetez-en à l'Hôtel des Ventes
     .complete 2746,2 -- Clara's Fresh Apple (2)
     .goto Elwynn Forest,33.952,57.162
     .complete 2746,1 -- Silk Cloth (3)
@@ -4310,7 +4310,7 @@ step << Human Paladin
     .goto Elwynn Forest,74.2,46.8,60,0
     .goto Elwynn Forest,76.6,53.6,60,0
     .goto Elwynn Forest,73.0,54.2,60,0
-    >>Tuez |cRXP_ENEMY_Defias Voleur Wizards|r. Dépouillez-les pour obtenir le |cRXP_LOOT_Defias Script|r
+    >>Tuez les |cRXP_ENEMY_Sorciers-voleurs défias|r. Dépouillez-les pour le |cRXP_LOOT_Script défias|r
     .complete 1787,1 --Defias Script (1)
     .mob Defias Rogue Wizard
 step << !Shaman
@@ -5298,7 +5298,7 @@ step << !Mage
     .zone Stormwind City >> Prenez le Tram des profondeurs pour Stormwind
 step << Mage
     #optional
-    .cast 3561 >>|cRXP_WARN_Lancez|r |T135763:0|t[Téléportation : Hurlevent]
+    .cast 3561 >>Lancez [Téléportation : Stormwind]
     .usespell 3561
     .zoneskip Stormwind City
 step
@@ -5526,7 +5526,7 @@ step << Human Paladin
     .goto Elwynn Forest,74.2,46.8,60,0
     .goto Elwynn Forest,76.6,53.6,60,0
     .goto Elwynn Forest,73.0,54.2,60,0
-    >>Tuez |cRXP_ENEMY_Defias Voleur Wizards|r. Dépouillez-les pour obtenir le |cRXP_LOOT_Defias Script|r
+    >>Tuez les |cRXP_ENEMY_Sorciers-voleurs défias|r. Dépouillez-les pour le |cRXP_LOOT_Script défias|r
     .complete 1787,1 --Defias Script (1)
     .mob Defias Rogue Wizard
 step << !Shaman
@@ -5788,7 +5788,7 @@ step << Human !Paladin !Warlock
     .itemcount 2411,<1 -- Black Stallion Bridle
 step << Mage
     #optional
-    .cast 3561 >>|cRXP_WARN_Lancez|r |T135763:0|t[Téléportation : Hurlevent]
+    .cast 3561 >>Lancez [Téléportation : Stormwind]
     .usespell 3561
     .zoneskip Stormwind City
 step << !Mage

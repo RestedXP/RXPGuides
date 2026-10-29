@@ -1446,7 +1446,7 @@ step
     #optional
     .goto Dun Morogh,47.377,52.523
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Belm l'aubergiste|r dans l'auberge
-    >>|cRXP_BUY_Achetez-lui une|r [Bière au malt Rhapsody |cRXP_BUY_et une|r [Thunder Ale] |cRXP_BUY_|r
+    >>|cRXP_BUY_Buy a|r |T132800:0|t[Rhapsody Malt] |cRXP_BUY_and a|r |T132800:0|t[Thunder Ale] |cRXP_BUY_from him|r
     .complete 384,2 --Collect Rhapsody Malt (x1)
     .collect 2686,1,311 --Collect Thunder Ale (x1)
     .target Innkeeper Belm
@@ -3053,7 +3053,7 @@ step
     >>|cRXP_ENEMY_Hogger|r peut apparaître à de nombreux endroits
     >>Lancez [Peur] |cRXP_WARN_sur |cRXP_ENEMY_Hogger|r en boucle et utilisez vos DoTs pour le tuer|r
     >>Vous pouvez le ramener (Kite) à la Tour de Garde, faites bien en sorte de lui infliger au moins 51% de dégâts
-    >>Cette quête est difficile. Montez un groupe pour le tuer si nécessaire. Passez cette étape si vous n'arrivez pas à monter un groupe ou à le tuer solo
+    >>|cRXP_WARN_Cette quête est difficile. Montez un groupe pour le tuer si nécessaire. Passez cette étape si vous n'arrivez pas à monter un groupe ou à le tuer seul|r
     .complete 176,1 --Huge Gnoll Claw (1)
     .unitscan Hogger
 step
@@ -4598,7 +4598,7 @@ step
     #optional
     .goto Dun Morogh,47.377,52.523
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Belm l'aubergiste|r dans l'auberge
-    >>|cRXP_BUY_Achetez-lui une|r [Bière au malt Rhapsody |cRXP_BUY_et une|r [Thunder Ale] |cRXP_BUY_|r
+    >>|cRXP_BUY_Buy a|r |T132800:0|t[Rhapsody Malt] |cRXP_BUY_and a|r |T132800:0|t[Thunder Ale] |cRXP_BUY_from him|r
     .complete 384,2 --Collect Rhapsody Malt (x1)
     .collect 2686,1,311 --Collect Thunder Ale (x1)
     .target Innkeeper Belm

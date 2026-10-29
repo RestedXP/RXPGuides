@@ -1378,7 +1378,7 @@ step
     #xprate >1.49 << !Hunter
     #completewith harpies2
     >>Tuez les |cRXP_ENEMY_Bloodfeather Harpies|r. Dépouillez les pour leur |cRXP_LOOT_Belts|r
-    >>Les |cRXP_ENEMY_Bloodfeather Matriarchs|r lancent [Vague de soins] et [Éclair] qui inflige des dégâts importants. Essayez de les tuer rapidement
+    >>Les |cRXP_ENEMY_Bloodfeather Matriarchs|r lancent [Vague de soins] et [Éclair] qui inflige énormément de dégâts. Essayez de les tuer rapidement
     .complete 937,1 --Collect Bloodfeather Belt (x6)
     .mob Bloodfeather Harpy
     .mob Bloodfeather Rogue
@@ -1405,7 +1405,7 @@ step
     #xprate >1.49 << !Hunter
     .goto Teldrassil,33.619,29.819
     >>Tuez les |cRXP_ENEMY_Bloodfeather Harpies|r. Dépouillez les pour leur |cRXP_LOOT_Belts|r
-    >>Les |cRXP_ENEMY_Bloodfeather Matriarchs|r lancent [Vague de soins] et [Éclair] qui inflige des dégâts importants. Essayez de les tuer rapidement
+    >>Les |cRXP_ENEMY_Bloodfeather Matriarchs|r lancent [Vague de soins] et [Éclair] qui inflige énormément de dégâts. Essayez de les tuer rapidement
     .complete 937,1 --Collect Bloodfeather Belt (x6)
     .mob Bloodfeather Harpy
     .mob Bloodfeather Rogue

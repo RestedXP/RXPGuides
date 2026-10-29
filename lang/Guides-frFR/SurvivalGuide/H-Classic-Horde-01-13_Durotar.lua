@@ -2125,7 +2125,7 @@ step
     .goto Durotar,55.95,73.93
 step
     #completewith Stolensupplies
-    +Mettez dans vos barres votre [Crâne au faible rougeoiement] et votre [Colle très collante]. Gardez-les pour des situations d'urgence
+    +|cRXP_WARN_Mettez dans vos barres votre|r |T133728:0|t[Crâne au faible rougeoiement] |cRXP_WARN_et la|r |T134712:0|t[Colle très collante]. |cRXP_WARN_Gardez-les pour les situations d'urgence|r
 step
     #loop
     .goto Durotar,49.22,48.96,0

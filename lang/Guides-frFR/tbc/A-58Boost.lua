@@ -29,7 +29,7 @@ step
     .goto Stormwind City,66.277,62.137
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Dungar Longdrink|r
     .complete 64038,1 --Speak to Dungar Longdrink, the Gryphon Master (1)
-    .fly Morgan's Vigil >> Fly to Veille de Morgan
+    .fly Morgan's Vigil >> Volez à la Veille de Morgan
     .target Dungar Longdrink
 step
     .goto Burning Steppes,85.820,68.948

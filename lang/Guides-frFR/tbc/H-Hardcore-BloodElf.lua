@@ -34,12 +34,12 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Erona|r
     .turnin 8325 >> Rendez la quête La reconquête de l'île de Haut-Soleil
     .accept 8326 >> Acceptez la quête Des mesures regrettables
-    .accept 8328 >> Acceptez Mirages Training << Mage
-    .accept 8563 >> Acceptez Warlock Training << Warlock
-    .accept 8564 >> Acceptez Priest Training << Priest
-    .accept 9392 >> Acceptez Rogue Training << Rogue
-	.accept 9393 >> Acceptez Hunter Training << Hunter
-    .accept 9676 >> Acceptez Paladin Training << Paladin
+    .accept 8328 >> Acceptez la quête La formation de mage << Mage
+    .accept 8563 >> Acceptez la quête La formation de démoniste << Warlock
+    .accept 8564 >> Acceptez la quête La formation du prêtre << Priest
+    .accept 9392 >> Acceptez la quête La formation de voleur << Rogue
+	.accept 9393 >> Acceptez la quête La formation de chasseur << Hunter
+    .accept 9676 >> Acceptez la quête La formation du paladin << Paladin
     .target Magistrix Erona
 step
     #completewith next
@@ -54,14 +54,14 @@ step
 step << Mage
     .goto Eversong Woods,39.23,21.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Julia|r
-    .turnin 8328 >> Rendez Mirages Training
+    .turnin 8328 >> Rendez la quête La formation de mage
     .accept 10068 >> Acceptez Well Watcher Solanian
     .train 1459 >> Apprenez vos sorts de classe
     .target Julia Sunstriker
 step << Warlock
     .goto Eversong Woods,38.93,21.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Teli'Larien|r
-    .turnin 8563 >> Rendez Warlock Training
+    .turnin 8563 >> Rendez la quête La formation de démoniste
     .accept 10073 >> Acceptez Well Watcher Solanian
     .accept 8344 >> Acceptez Windows to the Source
     .trainer>> Train your class spells
@@ -69,26 +69,26 @@ step << Warlock
 step << Priest
     .goto Eversong Woods,39.42,20.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Arena|r
-    .turnin 8564 >> Rendez Priest Training
+    .turnin 8564 >> Rendez la quête La formation du prêtre
     .accept 10072 >> Acceptez Well Watcher Solanian
     .train 1243 >> Apprenez vos sorts de classe
     .target Matron Arena
 step << Rogue
     .goto Eversong Woods,38.93,20.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Kariel|r
-    .turnin 9392 >> Rendez Rogue Training
+    .turnin 9392 >> Rendez la quête La formation de voleur
     .accept 10071 >> Acceptez Well Watcher Solanian
     .target Pathstalker Kariel
 step << Hunter
     .goto Eversong Woods,39.05,20.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sallina|r
-    .turnin 9393 >> Rendez Hunter Training
+    .turnin 9393 >> Rendez la quête La formation de chasseur
     .accept 10070 >> Acceptez Well Watcher Solanian
     .target Ranger Sallina
 step << Paladin
     .goto Eversong Woods,39.47,20.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Jesthenis|r
-    .turnin 9676 >> Rendez Paladin Training
+    .turnin 9676 >> Rendez la quête La formation du paladin
     .accept 10069 >> Acceptez Well Watcher Solanian
     .target Jesthenis Sunstriker
 step
@@ -622,14 +622,14 @@ step << BloodElf
     .goto Eversong Woods,48.16,47.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Delaniel|r
     .turnin 8350 >> Rendez la quête Achever la livraison
-    .home >> Liez votre Pierre de Foyer à Ironforge Square
+    .home >> Liez votre Pierre de foyer à la Place de l'Épervier
     .target Innkeeper Delaniel
     .bindlocation 3665
 step << !BloodElf
     #label FalconHS
     .goto Eversong Woods,48.16,47.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Delaniel|r
-    .home >> Liez votre Pierre de Foyer à Ironforge Square
+    .home >> Liez votre Pierre de foyer à la Place de l'Épervier
     .target Innkeeper Delaniel
     .bindlocation 3665
 step << Priest/Mage/Warlock/Warrior/Rogue
@@ -670,7 +670,7 @@ step
     .goto Eversong Woods,47.79,47.35,8 >> Sortez à l'extérieur
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Wanted Poster|r et à |cRXP_FRIENDLY_Aeldon|r
-    .accept 8468 >> Acceptez Wanted: Thaelis the Hungerer
+    .accept 8468 >> Acceptez la quête On recherche : Thaelis l'Affameur
     .goto Eversong Woods,48.18,46.31
     .accept 8463 >> Acceptez la quête Les cristaux de mana instables
     .target +Aeldon Sunbrand
@@ -789,7 +789,7 @@ step
     .accept 8895 >> Acceptez la quête Une livraison au sanctum septentrional
     .target +Magister Jaronis
     .goto Eversong Woods,47.26,46.31
-    .turnin 8468 >> Rendez Wanted: Thaelis the Hungerer
+    .turnin 8468 >> Rendez la quête On recherche : Thaelis l'Affameur
     .target +Sergeant Kan'ren
     .goto Eversong Woods,47.77,46.58
     .turnin 8463 >> Rendez la quête Les cristaux de mana instables
@@ -1028,7 +1028,7 @@ step
     .goto Eversong Woods,36.70,57.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Velania|r
     .turnin 9119 >> Rendez la quête Panne au sanctum occidental
-    .accept 8486 >> Acceptez Arcane Instability
+    .accept 8486 >> Acceptez la quête L'instabilité arcanique
     .target Ley-Keeper Velania
 step
     #completewith next
@@ -1067,7 +1067,7 @@ step
 step
     .goto Eversong Woods,36.70,57.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Velania|r
-    .turnin 8486 >> Rendez Arcane Instability
+    .turnin 8486 >> Rendez la quête L'instabilité arcanique
     .turnin 9352 >> Rendez la quête Les intrusions darnassiennes
     .target Ley-Keeper Velania
 step
@@ -1113,8 +1113,8 @@ step
     .goto Eversong Woods,30.23,58.44,10,0
     .goto Eversong Woods,30.22,58.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Hathvelion|r
-    .turnin 8884 >> Rendez Fish Heads, Fish Heads...
-    .accept 8885 >> Accept Les Ring of Mmmrrrggglll
+    .turnin 8884 >> Rendez la quête Des têtes de poisson à la pelle
+    .accept 8885 >> Acceptez la quête L'anneau de Mmmrrrggglll
     .target Hathvelion Sungaze
 step << Warlock/Hunter/Rogue
     #completewith next
@@ -1246,7 +1246,7 @@ step
 step
     .goto Eversong Woods,43.34,70.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Degolien|r
-    .accept 8892 >> Acceptez Situation at Sunsail Anchorage
+    .accept 8892 >> Acceptez la quête La situation au mouillage des Voiles du soleil
     .target Ranger Degolien
     --TODO: Beta check if 9256 is a needed prereq for this quest
 step
@@ -1268,7 +1268,7 @@ step
     .target Halis Dawnstrider
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Velan|r et |cRXP_FRIENDLY_Landra|r
-    .accept 8491 >> Acceptez Pelt Collection
+    .accept 8491 >> Acceptez la quête Récupérer des fourrures
     .target +Velan Brightoak
     .goto Eversong Woods,44.72,69.63
     .accept 9395 >> Acceptez Le havre de Saltheril
@@ -1293,10 +1293,10 @@ step
     #label Sunsail
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Kelisendra|r et |cRXP_FRIENDLY_Velendris|r
     .turnin 8887 >> Rendez la quête Les portulans perdus du capitaine Kelisendra
-    .accept 8886 >> Acceptez Grimscale Pirates!
+    .accept 8886 >> Acceptez la quête Les pirates Sinistrécaille !
     .target +Captain Kelisendra
     .goto Eversong Woods,36.36,66.62
-    .accept 8480 >> Acceptez Lost Armaments
+    .accept 8480 >> Acceptez la quête Les armes perdues
     .target +Velendris Whitemorn
     .goto Eversong Woods,36.36,66.78
 step
@@ -1326,8 +1326,8 @@ step
 step
     .goto Eversong Woods,36.36,66.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Velendris|r
-    .turnin 8480 >>Rendez Lost Armaments
-    .accept 9076 >>Acceptez Wretched Ringleader
+    .turnin 8480 >>Rendez la quête Les armes perdues
+    .accept 9076 >>Acceptez la quête Le maître des Déshérités
     .target Velendris Whitemorn
 step
     #completewith next
@@ -1425,7 +1425,7 @@ step
     .goto Eversong Woods,30.23,58.44,10,0
     .goto Eversong Woods,30.22,58.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Hathvelion|r
-    .turnin 8885 >> Turn in Les Ring of Mmmrrrggglll
+    .turnin 8885 >> Rendez la quête L'anneau de Mmmrrrggglll
     .target Hathvelion Sungaze
 step
     #completewith next
@@ -1434,10 +1434,10 @@ step
     .mob Springpaw Stalker
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Kelisendra|r et |cRXP_FRIENDLY_Velendris|r
-    .turnin 8886 >> Rendez Grimscale Pirates!
+    .turnin 8886 >> Rendez la quête Les pirates Sinistrécaille !
     .target +Captain Kelisendra
     .goto Eversong Woods,36.36,66.62
-    .turnin 9076 >> Rendez Wretched Ringleader
+    .turnin 9076 >> Rendez la quête Le maître des Déshérités
     .target +Velendris Whitemorn
     .goto Eversong Woods,36.36,66.78
 step << Hunter
@@ -1469,7 +1469,7 @@ step
 step
     .goto Eversong Woods,43.34,70.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Degolien|r
-    .turnin 8892 >>Rendez Situation at Sunsail Anchorage
+    .turnin 8892 >>Rendez la quête La situation au mouillage des Voiles du soleil
     .accept 9359 >>Acceptez Farstrider Retreat
     .target Ranger Degolien
 step
@@ -1478,7 +1478,7 @@ step
 step
     .goto Eversong Woods,44.72,69.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Velan|r
-    .turnin 8491 >> Rendez Pelt Collection
+    .turnin 8491 >> Rendez la quête Récupérer des fourrures
     .target Velan Brightoak
     .isQuestComplete 8491
 step
@@ -1587,7 +1587,7 @@ step << Undead Warlock/Undead Warrior
     .xp 9+5950 >> Montez votre expérience jusqu'à 5950+/6500xp
 step << !Warlock !Warrior/!Undead
     #completewith ExitFalcon
-    .hs >> Dirigez-vous vers la place de l'Epervier
+    .hs >> Utilisez votre Pierre de foyer pour revenir à la Place de l’Épervier
     .bindlocation 3665,1
     .subzoneskip 3665
 step << Undead Warlock/Undead Warrior
@@ -1772,7 +1772,7 @@ step << Undead Warrior
     .isQuestTurnedIn 1819
 step << Undead Warlock/Undead Warrior
     #completewith ExitFalcon
-    .hs >>Dirigez-vous vers la place de l'Epervier
+    .hs >>Utilisez votre Pierre de foyer pour revenir à la Place de l’Épervier
     .bindlocation 3665,1
     .subzoneskip 3665
 step
@@ -2723,7 +2723,7 @@ step
     #label SMtraining01
 step << BloodElf !Hunter !Warlock/Undead
     #completewith Defending
-    .hs >> Dirigez-vous vers la place de l'Epervier
+    .hs >> Utilisez votre Pierre de foyer pour revenir à la Place de l’Épervier
     .cooldown item,6948,>0
     .bindlocation 3665,1
     .subzoneskip 3665
@@ -2819,7 +2819,7 @@ step << Undead/BloodElf
 step << Undead/BloodElf
     .goto Eversong Woods,44.72,69.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Velan|r
-    .turnin 8491 >> Rendez Pelt Collection
+    .turnin 8491 >> Rendez la quête Récupérer des fourrures
     .target Velan Brightoak
 step
     .goto Eversong Woods,44.0,70.4

@@ -52,7 +52,7 @@ step << Priest/Mage
     .target Ryosh
 step
     .goto Azuremyst Isle,79.139,46.536
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Botanist Taerix|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à la |cRXP_FRIENDLY_Botaniste Taerix|r
     .accept 10302 >> Acceptez la quête Mutations volatiles
     .target Botanist Taerix
 step
@@ -80,7 +80,7 @@ step
     .accept 9409 >> Acceptez la quête Livraison urgente
     .target Proenitus
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Botanist Taerix|r et les |cRXP_FRIENDLY_Apprentice Vishael|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à la |cRXP_FRIENDLY_Botaniste Ferrah|r et à l' |cRXP_FRIENDLY_Apprentie Vishael|r
     .turnin 10302 >> Rendez la quête Mutations volatiles
     .accept 9293 >> Acceptez la quête Ce qui doit être fait...
     .target +Botanist Taerix
@@ -164,7 +164,7 @@ step
     .mob Volatile Mutation
     .mob Vale Moth
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Botanist Taerix|r et les |cRXP_FRIENDLY_Apprentice Vishael|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à la |cRXP_FRIENDLY_Botaniste Ferrah|r et à l' |cRXP_FRIENDLY_Apprentie Vishael|r
     .turnin 9293 >> Rendez la quête Ce qui doit être fait...
     .accept 9294 >> Acceptez la quête Guérir le lac
     .target +Botanist Taerix
@@ -187,8 +187,8 @@ step
 step << Mage
 	.goto Azuremyst Isle,79.582,48.762
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Valaatu|r
-	.accept 9290 >> Acceptez Mirages Training
-	.turnin 9290 >> Rendez Mirages Training
+	.accept 9290 >> Acceptez la quête La formation de mage
+	.turnin 9290 >> Rendez la quête La formation de mage
     .train 1459 >> Apprenez [Intelligence des Arcanes]
     .train 116 >> Apprenez [Eclair de givre]
     .target Valaatu
@@ -198,8 +198,8 @@ step << Paladin
     .goto Azuremyst Isle,80.12,49.13,7,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Aurelon|r
     >>|cRXP_FRIENDLY_Aurelon|r peut patrouiller aux alentours
-	.accept 9287 >> Acceptez Paladin Training
-	.turnin 9287 >> Rendez Paladin Training
+	.accept 9287 >> Acceptez la quête La formation du paladin
+	.turnin 9287 >> Rendez la quête La formation du paladin
     .train 465 >>Apprenez [Aura de dévotion]
     .train 19740 >> Apprenez [Bénédiction de puissance]
     .train 20271 >> Apprenez [Jugement]
@@ -212,8 +212,8 @@ step
     >>|cRXP_FRIENDLY_Zalduun|r patrouille aux alentours
     .turnin 9409 >> Rendez la quête Livraison urgente
     .accept 9283 >> Acceptez la quête Sauvez les rescapés !
-    .accept 9291 >> Acceptez Priest Training << Priest
-    .turnin 9291 >> Rendez Priest Training << Priest
+    .accept 9291 >> Acceptez la quête La formation du prêtre << Priest
+    .turnin 9291 >> Rendez la quête La formation du prêtre << Priest
     .train 1243 >> Apprenez [Mot de pouvoir : Robustesse] << Priest
     .train 2052 >> Apprenez [Soins inférieurs] << Priest
     .train 589 >> Apprenez [Mot de l'ombre : Douleur] << Priest
@@ -274,16 +274,16 @@ step << Shaman
 step << Warrior
     .goto Azuremyst Isle,79.587,49.446
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Kore|r
-    .accept 9289 >> Acceptez Warrior Training
-	.turnin 9289 >> Rendez Warrior Training
+    .accept 9289 >> Acceptez la quête La formation du guerrier
+	.turnin 9289 >> Rendre la quête La formation du guerrier
     .train 100 >> Apprenez [Charge]
     .train 772 >> Apprenez [Pourfendre]
     .target Kore
 step << Hunter
 	.goto Azuremyst Isle,79.886,49.711
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Keilnei|r
-	.accept 9288 >> Acceptez Hunter Training
-	.turnin 9288 >> Rendez Hunter Training
+	.accept 9288 >> Acceptez la quête La formation de chasseur
+	.turnin 9288 >> Rendez la quête La formation de chasseur
     .train 1978 >>Apprenez [Morsure de serpent]
     .target Keilnei
 
@@ -311,12 +311,12 @@ step << Shaman/Hunter
     .target Mura
 step
     .goto Azuremyst Isle,79.419,51.235
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Technician Zhanaa|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à la |cRXP_FRIENDLY_Technicienne Zhanaa|r
     .accept 9305 >> Acceptez la quête Pièces de rechange
     .target Technician Zhanaa
 step
     .goto Azuremyst Isle,79.486,51.620
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Vindicator Aldar|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Redresseur de torts Aldar|r
     .accept 9303 >> Acceptez la quête Inoculation
     .target Vindicator Aldar
 step
@@ -357,18 +357,18 @@ step
     .subzone 3527 >> Retournez sur le Site du Crash
 step
     .goto 1943/1,3865.399,6144.700
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Vindicator Aldar|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Redresseur de torts Aldar|r
     .target Vindicator Aldar
     .turnin 9303 >>Rendez la quête Inoculation
     .accept 9309 >>Acceptez la quête L'éclaireur disparu
 step
     .goto 1943/1,3865.000,6157.200
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Technician Zhanaa|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à la |cRXP_FRIENDLY_Technicienne Zhanaa|r
     .target Technician Zhanaa
     .turnin 9305 >>Rendez la quête Pièces de rechange
 step
     .goto 1943/1,3877.000,6284.400
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Botanist Taerix|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à la |cRXP_FRIENDLY_Botaniste Taerix|r
     .target Botanist Taerix
     .turnin 9294 >>Rendez la quête Guérir le lac
 step
@@ -394,7 +394,7 @@ step
     .target Aurok
 step
     .goto Azuremyst Isle,79.139,46.536
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Botanist Taerix|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à la |cRXP_FRIENDLY_Botaniste Taerix|r
     .turnin 9294 >> Rendez la quête Guérir le lac
     .target Botanist Taerix
 step
@@ -459,14 +459,14 @@ step
 step
     #label BloodElfSpy
     .goto Azuremyst Isle,79.488,51.622
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Vindicator Aldar|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Redresseur de torts Aldar|r
     .turnin 9311 >> Rendez la quête L'espionne elfe de sang
     .turnin 9798 >> Rendez la quête Les plans des Elfes de sang
     .accept 9312 >> Acceptez la quête L'émetteur
     .target Vindicator Aldar
 step
     .goto Azuremyst Isle,79.422,51.234
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Technician Zhanaa|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à la |cRXP_FRIENDLY_Technicienne Zhanaa|r
     .turnin 9312 >> Rendez la quête L'émetteur
     .accept 9313 >> Acceptez la quête En route pour le Guet d'azur
     .target Technician Zhanaa
@@ -500,7 +500,7 @@ step
 	#completewith next
     >>Gardez un œil pour un |cRXP_FRIENDLY_Draenei Youngling|r
     >>Lorsqu'ils sont en combat, lancez [Don des Naaru] sur eux, puis acceptez la quête
-	.accept 9612 >> Acceptez A Hearty Thanks!
+	.accept 9612 >> Acceptez la quête Merci du fond du cœur !
 	.unitscan Draenei Youngling
 step
     .goto Azuremyst Isle,53.9,34.4
@@ -517,14 +517,14 @@ step
     .subzone 3576 >> Voyagez vers le guet d'Azur. Suivez la flèche pour y arriver en sécurité
 step
     .goto Azuremyst Isle,48.391,51.771
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Anchorite Fateema|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à l' |cRXP_FRIENDLY_Anachorète Fateema|r
     .accept 9463 >> Acceptez la quête Usage médical
     .target Anchorite Fateema
 step
 	.isOnQuest 9612
     .goto Azuremyst Isle,47.110,50.603
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à l' |cRXP_FRIENDLY_Exarque Menelaous|r
-	.turnin 9612 >> Rendez A Hearty Thanks!
+	.turnin 9612 >> Rendez la quête Merci du fond du cœur !
     .turnin 9455 >> Rendez la quête Une étrange trouvaille
     .accept 9456 >> Acceptez la quête Nettoyage des traquenuits, île n°2
     .target Exarch Menelaous
@@ -537,7 +537,7 @@ step
     .target Exarch Menelaous
 step
     .goto Azuremyst Isle,48.7,50.2
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Technician Dyvuun|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Technicien Dyvuun|r
     .turnin 9313 >> Rendez la quête En route pour le Guet d'azur
     .target Technician Dyvuun
 step
@@ -548,14 +548,14 @@ step
 step
 	.goto Azuremyst Isle,48.336,49.144
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à l' |cRXP_FRIENDLY_Hôtesse Chellan|r.
-    .home >> Liez votre Pierre de Foyer à Southshore Watch
+    .home >> Liez votre Pierre de foyer au Guet d'azur
     .target Caregiver Chellan
     .bindlocation 3576
     .subzoneskip 3576,1
 step << Priest
     .goto Azuremyst Isle,48.603,49.285
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Guvan|r
-    .accept 9586 >> Acceptez Help Tavara
+    .accept 9586 >> Acceptez la quête Aider Tavara
     .train 591 >>Apprenez [Châtiment]
     .train 17 >>Apprenez [Mot de pouvoir : Bouclier]
     .target Guvan
@@ -632,7 +632,7 @@ step
 	#completewith level8
     >>Gardez un œil pour un |cRXP_FRIENDLY_Draenei Youngling|r
     >>Lorsqu'ils sont en combat, lancez [Don des Naaru] sur eux, puis acceptez la quête
-	.accept 9612 >> Acceptez A Hearty Thanks!
+	.accept 9612 >> Acceptez la quête Merci du fond du cœur !
 	.unitscan Draenei Youngling
 step
     #completewith LeavesTree
@@ -660,7 +660,7 @@ step
     .target "Cookie" McWeaksauce
 step << Warrior/Paladin
     .goto Azuremyst Isle,46.355,71.192
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Blacksmith Calypso|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Forgeron Calypso|r
     >>Ceci vous permettra de fabriquer des [Pierre à aiguiser brute] et des [Caillou brut] qui augmenteront vos dégâts en mêlée de 2
     .train 2018 >> Apprenez [Forge]
     .target Blacksmith Calypso
@@ -690,7 +690,7 @@ step
     .turnin 9512 >> Rendez la quête Jumbo gumbo du cuistot
     .target "Cookie" McWeaksauce
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Admiral Odesyus|r et les |cRXP_FRIENDLY_Priestess Kyleen Il'dinare|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à l' |cRXP_FRIENDLY_Amiral Odesyus|r et à la |cRXP_FRIENDLY_Prêtresse Kyleen Il'dinare|r
     .turnin 9506 >> Rendez la quête Il faut bien commencer quelque part
     .accept 9530 >> Acceptez la quête Un plan bourgeonne
     .target +Admiral Odesyus
@@ -700,7 +700,7 @@ step
     .goto Azuremyst Isle,47.131,70.289
 step
     .goto Azuremyst Isle,47.243,69.998
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Archaeologist Adamant Ironheart|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à l' |cRXP_FRIENDLY_Archéologue Adamant Cœur-de-Fer|r
     .accept 9523 >> Acceptez la quête Fragile et précieux - à manipuler avec précaution
     .target Archaeologist Adamant Ironheart
 step
@@ -756,7 +756,7 @@ step << Hunter
     .train 14260 >> Apprenez [Attaque du raptor]
     .target Acteon
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Anchorite Fateema|r et les |cRXP_FRIENDLY_Daedal|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à l' |cRXP_FRIENDLY_Anachorète Fateema|r et à |cRXP_FRIENDLY_Daedal|r
     .turnin 9463 >> Rendez la quête Usage médical
     .target +Anchorite Fateema
     .goto Azuremyst Isle,48.390,51.770
@@ -768,7 +768,7 @@ step
     .isOnQuest 9612
     .goto Azuremyst Isle,47.110,50.603
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à l' |cRXP_FRIENDLY_Exarque Menelaous|r
-    .turnin 9612 >> Rendez A Hearty Thanks!
+    .turnin 9612 >> Rendez la quête Merci du fond du cœur !
     .target Exarch Menelaous
 step << Shaman
     .goto Azuremyst Isle,48.053,50.419
@@ -784,22 +784,22 @@ step
 step
     #label TenderloinRecipe
     .goto Azuremyst Isle,49.365,51.086
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Cryptographer Aurren|r
-    .accept 9538 >> Acceptez Learning the Language
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Cryptographe Aurren|r
+    .accept 9538 >> Acceptez la quête Apprendre la langue
     .target Cryptographer Aurren
 step
 	.use 23818 >>Utilisez le [Manuel de langue furbolg calmepin]
     .complete 9538,1 --Stillpine Furbolg Language Primer Read
 step
     .goto Azuremyst Isle,49.439,50.977
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Totem of Akida|r
-    .turnin 9538 >> Rendez Learning the Language
-    .accept 9539 >> Acceptez Totem of Coo
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Totem d'Akida|r
+    .turnin 9538 >> Rendez la quête Apprendre la langue
+    .accept 9539 >> Acceptez la quête Le totem de Coo
     .target Totem of Akida
 step << Priest
     .goto Azuremyst Isle,48.603,49.285
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Guvan|r
-    .turnin 9586 >> Rendez Help Tavara
+    .turnin 9586 >> Rendez la quête Aider Tavara
     .trainer >> Apprenez vos sorts de classe
     .target Guvan
 step << Paladin
@@ -824,7 +824,7 @@ step
 	#completewith AncientRelics
     >>Gardez un œil pour un |cRXP_FRIENDLY_Draenei Youngling|r
     >>Lorsqu'ils sont en combat, lancez [Don des Naaru] sur eux, puis acceptez la quête
-	.accept 9612 >> Acceptez A Hearty Thanks!
+	.accept 9612 >> Acceptez la quête Merci du fond du cœur !
 	.unitscan Draenei Youngling
 step
 	#completewith TotemofTikti
@@ -837,9 +837,9 @@ step
 step
 	.goto Azuremyst Isle,49.9,45.9,100,0
     .goto Azuremyst Isle,55.233,41.643
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Totem of Coo|r
-    .turnin 9539 >> Rendez Totem of Coo
-    .accept 9540 >> Acceptez Totem of Tikti
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Totem de Coo|r
+    .turnin 9539 >> Rendez la quête Le totem de Coo
+    .accept 9540 >> Acceptez la quête Le totem de Tikti
     .target Totem of Coo
 step
     #loop
@@ -853,9 +853,9 @@ step
 step
     #label TotemofTikti
     .goto Azuremyst Isle,64.475,39.772
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Totem of Tikti|r
-    .turnin 9540 >> Rendez Totem of Tikti
-    .accept 9541 >> Accept Le Totem de Yor RP
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Totem de Tikti|r
+    .turnin 9540 >> Rendez la quête Totem de Tikti
+    .accept 9541 >> Acceptez la quête Le totem de Yor
     .timer 30,Le Totem de Yor RP
     .target Totem of Tikti
 step
@@ -875,9 +875,9 @@ step
     .target Diktynna
 step
     .goto Azuremyst Isle,63.116,67.880
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Totem of Yor|r sous l'eau
-    .turnin 9541 >> Turn in Le Totem de Yor RP
-    .accept 9542 >> Accept Le Totem de Vark RP
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Totem de Yor|r sous l'eau
+    .turnin 9541 >> Rendez la quête Le totem de Yor
+    .accept 9542 >> Acceptez la quête Le totem de Vark
     .timer 71,Le Totem de Vark RP
     .target Totem of Yor
 step
@@ -889,9 +889,9 @@ step
     .goto Azuremyst Isle,28.115,62.391,30 >> Voyagez vers l'ouest de l'Île de Brume-Azur
 step
     .goto Azuremyst Isle,28.115,62.391
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Totem of Vark|r
-    .turnin 9542 >> Turn in Le Totem de Vark RP
-    .accept 9544 >> Accept Les Prophecy of Akida
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Totem de Vark|r
+    .turnin 9542 >> Rendez la quête Le totem de Vark
+    .accept 9544 >> Acceptez la quête La prophétie d'Akida
     .target Totem of Vark
 step
     .aura -30448
@@ -990,7 +990,7 @@ step
     .target Cowlen
 step
     #completewith next
-	.hs >> Hearth to Guet d'azur
+	.hs >> Utilisez votre Pierre de foyer pour revenir au Guet d'azur
     .bindlocation 3576,1
 step
     .goto 1943/1,5182.200,6172.300
@@ -1004,9 +1004,9 @@ step
     .turnin 9473 >>Rendez la quête Une tentative alternative
 step
     .goto 1943/1,5090.399,6159.300
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Arugoo of the Stillpine|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Arugoo des Calmepins|r
     .target Arugoo of the Stillpine
-    .turnin 9544 >>Turn in Les Prophecy of Akida
+    .turnin 9544 >>Rendez la quête La prophétie d'Akida
     .accept 9559 >>Acceptez Stillpine Hold
 step
     .goto 1943/1,5073.300,6136.100
@@ -1016,14 +1016,14 @@ step
     .turnin 10324 >>Rendez la quête La grande chasse aux frôle-lune
 step
     .goto Azuremyst Isle,47.243,69.998
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Archaeologist Adamant Ironheart|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à l' |cRXP_FRIENDLY_Archéologue Adamant Cœur-de-Fer|r
     .turnin 9523 >> Rendez la quête Fragile et précieux - à manipuler avec précaution
     .target Archaeologist Adamant Ironheart
 step
     .goto Azuremyst Isle,47.038,70.206
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Admiral Odesyus|r
     .turnin 9531 >> Rendez la quête L'art du camouflage ne se perd pas
-    .accept 9537 >> Acceptez Show Gnomercy
+    .accept 9537 >> Acceptez la quête Le gnominé est...
     .target Admiral Odesyus
 step
     .goto Azuremyst Isle,47.131,70.289
@@ -1061,8 +1061,8 @@ step
 step
     .goto Azuremyst Isle,47.038,70.206
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Admiral Odesyus|r
-    .turnin 9537 >> Rendez Show Gnomercy
-    .accept 9602 >> Acceptez Deliver Them From Evil...
+    .turnin 9537 >> Rendez la quête Le gnominé est...
+    .accept 9602 >> Acceptez la quête Délivrez-les du mal...
     .target Admiral Odesyus
 step << !Hunter
     .isOnQuest 9515
@@ -1087,7 +1087,7 @@ step << !Hunter
 	#completewith next
     >>Gardez un œil pour un |cRXP_FRIENDLY_Draenei Youngling|r
     >>Lorsqu'ils sont en combat, lancez [Don des Naaru] sur eux, puis acceptez la quête
-	.accept 9612 >> Acceptez A Hearty Thanks!
+	.accept 9612 >> Acceptez la quête Merci du fond du cœur !
 	.unitscan Draenei Youngling
 step << !Hunter
     .goto Azuremyst Isle,47.131,70.289
@@ -1107,14 +1107,14 @@ step << !Hunter
 step
     .goto Azuremyst Isle,47.110,50.603
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à l' |cRXP_FRIENDLY_Exarque Menelaous|r
-    .turnin 9602 >> Rendez Deliver Them From Evil...
+    .turnin 9602 >> Rendez la quête Délivrez-les du mal...
     .accept 9623 >> Acceptez la quête Il est temps de grandir
     .target Exarch Menelaous
 step
     .isOnQuest 9612
     .goto Azuremyst Isle,47.110,50.603
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à l' |cRXP_FRIENDLY_Exarque Menelaous|r
-    .turnin 9612 >> Rendez A Hearty Thanks!
+    .turnin 9612 >> Rendez la quête Merci du fond du cœur !
     .target Exarch Menelaous
 step << Shaman
     .goto Azuremyst Isle,48.053,50.419
@@ -1848,11 +1848,11 @@ step
     .isOnQuest 9612
     .goto Azuremyst Isle,47.110,50.603
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à l' |cRXP_FRIENDLY_Exarque Menelaous|r
-    .turnin 9612 >> Rendez A Hearty Thanks!
+    .turnin 9612 >> Rendez la quête Merci du fond du cœur !
     .target Exarch Menelaous
 step
     .goto Azuremyst Isle,48.391,51.771
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Anchorite Fateema|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à l' |cRXP_FRIENDLY_Anachorète Fateema|r
     .train 3273 >> Apprenez [Premiers soins]
     .target Anchorite Fateema
 step

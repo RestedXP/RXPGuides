@@ -2880,7 +2880,7 @@ step
 step << !Tauren !Shaman
     .goto The Barrens,44.55,59.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Mangletooth|r
-    .aura 16618 >>Si il vous reste 10 [|cRXP_LOOT_Blood Shards|r, utilisez les pour obtenir [L'esprit du vent] à |cRXP_FRIENDLY_Mangletooth|r
+    .aura 16618 >>|cRXP_WARN_Si vous avez 10|r |T134128:0|t[|cRXP_LOOT_Cristaux de sang|r] |cRXP_WARN_restants, utilisez-les pour obtenir|r |T136022:0|t[L'esprit du vent] |cRXP_WARN_de|r |cRXP_FRIENDLY_Mutiledent|r
     >>Passez cette étape si vous pouvez voler jusqu'à Pitons-du-Tonnerre
     .itemcount 5075,10
     .train 5118,1 << Hunter --skips step if aspect of the cheetah trained
@@ -4363,7 +4363,7 @@ step
     .isOnQuest 6921
     .dungeon BFD
 step
-    >>Tuez  |cRXP_ENEMY_Twilight Lord Kelris|r. Dépouillez-le pour sa |cRXP_LOOT_Head|r
+    >>Tuez|cRXP_ENEMY_Twilight Lord Kelris|r. Dépouillez-le pour sa |cRXP_LOOT_Tête|r
     .complete 6561,1 --Head of Kelris (1)
     .mob Twilight Lord Kelris
     .isOnQuest 6561
@@ -4465,7 +4465,7 @@ step
 step
     #completewith JourneytoTM
     .goto Ashenvale,12.24,33.80
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Andruk|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Andruk, Zoram'gar|r
     .fly Thunder Bluff >>Volez à Thunder Bluff
     .target Andruk
     .zoneskip Thunder Bluff

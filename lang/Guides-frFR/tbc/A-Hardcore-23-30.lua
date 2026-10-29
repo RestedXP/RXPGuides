@@ -3787,7 +3787,7 @@ step
 step
     #optional
     .goto Ashenvale,34.41,47.98
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Daelyshia|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|cRXP_FRIENDLY_Daelyshia|r
     .fly Darkshore >> Volez à Sombrivage
     .target Daelyshia
     .zoneskip Darkshore
