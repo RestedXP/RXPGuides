@@ -364,7 +364,7 @@ step
     .goto Western Plaguelands,43.4,57.8,70,0
     .goto Western Plaguelands,46.6,40.4,70,0
     >>击杀 |cRXP_ENEMY_生病的狼|r
-    >>|cRXP_ENEMY_生病的狼|r |cRXP_WARN_和共享刷新 |cRXP_ENEMY_腐虫潜伏者|r. 你可能需要击杀它们来强制 |cRXP_ENEMY_生病的狼|r 刷新|r
+    >>|cRXP_ENEMY_生病的狼|r |cRXP_WARN_和 |cRXP_ENEMY_腐虫潜伏者|r共享刷新。你可能需要击杀它们来强制 |cRXP_ENEMY_生病的狼|r 刷新|r
     .complete 4984,1 --Kill Diseased Wolf (x8)
     .unitscan 生病的狼
 step

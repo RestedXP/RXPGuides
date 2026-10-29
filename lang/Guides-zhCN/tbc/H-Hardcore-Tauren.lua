@@ -4,7 +4,7 @@ RXPGuides.RegisterGuide([[
 #version 7
 #group RXP TBC 生存指南 (H)
 << Horde
-#name 1-6 莫高雷
+#name 1-6级 莫高雷
 #version 7
 #subgroup RXP TBC Survival Guide 1-30
 #defaultfor Tauren

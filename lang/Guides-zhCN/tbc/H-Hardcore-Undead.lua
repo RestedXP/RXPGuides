@@ -3,7 +3,7 @@ RXPGuides.RegisterGuide([[
 #tbc
 #group RXP TBC 生存指南 (H)
 << Horde
-#name 1-6 提瑞斯法林地
+#name 1-6级 提瑞斯法林地
 #version 7
 #subgroup RXP TBC Survival Guide 1-30
 #defaultfor Scourge

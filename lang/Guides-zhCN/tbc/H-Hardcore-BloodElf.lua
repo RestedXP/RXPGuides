@@ -4,7 +4,7 @@ RXPGuides.RegisterGuide([[
 #version 7
 #group RXP TBC 生存指南 (H)
 << Horde
-#name 1-6 永歌森林
+#name 1-6级 永歌森林
 #version 7
 #subgroup RXP TBC Survival Guide 1-30
 #defaultfor BloodElf
@@ -594,7 +594,7 @@ step
     .goto Eversong Woods,45.97,43.35,40,0
     .goto Eversong Woods,46.57,35.10,40,0
     .goto Eversong Woods,43.62,34.88,40,0
-    .xp 5+2690 >> 刷怪达到 2690+/2800 经验
+    .xp 5+2690 >> 刷怪达到2690+/2800经验
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -3550,7 +3550,7 @@ RXPGuides.RegisterGuide([[
 #name 12-14 幽魂之地
 #version 7
 #subgroup RXP TBC Survival Guide 1-30
-#next 14-16 The Barrens
+#next 14-16级 贫瘠之地
 
 
 step

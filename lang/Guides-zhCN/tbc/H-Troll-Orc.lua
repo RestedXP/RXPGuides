@@ -3731,7 +3731,7 @@ step << !Tauren
     #softcore
     #completewith Xroads1
     .goto The Barrens,50.72,32.61
-    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
     .subzoneskip 380
 step << !Tauren
     #hardcore
@@ -3821,7 +3821,7 @@ step << !Tauren
     #xprate <1.5
     #softcore
     #completewith PoolsTurnin
-    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
 step << !Tauren
     #xprate <1.5
     #label FungalSporesComplete
@@ -4187,7 +4187,7 @@ step
     #softcore
     #completewith FizzleKill
     .goto Durotar,47.05,17.58
-    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
 step
     #hardcore
     #completewith FizzleKill
@@ -4437,7 +4437,7 @@ step
 step
     #softcore
     #completewith next
-    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
     .isQuestComplete 813 --don't want ress sickness if more Scorpids need to get killed before entering ORG
 step
     #hardcore
@@ -4508,7 +4508,7 @@ step
     #softcore
     #completewith FoundtheCure
     .goto Durotar,47.05,17.58
-    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
 step
     #label FoundtheCure
     .goto Durotar,41.54,18.59

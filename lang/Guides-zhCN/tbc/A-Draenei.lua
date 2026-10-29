@@ -961,7 +961,7 @@ step
     .timer 73,间谍之树剧情表演
     .use 23792
 step
-    >>|cRXP_WARN_等剧情结束|r
+    >>|cRXP_WARN_等待剧情演出完成|r
     .complete 9531,1 -- The Traitor Uncovered
 step
     +|cRXP_WARN_点掉|r |T132288:0|t[大树伪装] |cRXP_WARN_buff|r
@@ -5200,7 +5200,7 @@ step
     .goto Wetlands,10.89,59.66
     .target 大副菲兹莫斯
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_大副菲兹莫斯|r 对话
-    .accept 288 >> 接受任务 第三舰队
+    .accept 288 >> 接受任务第三舰队
 step
 #xprate >1.49
     .goto Wetlands,10.69,60.95
@@ -5287,7 +5287,7 @@ step
 .dungeon SFK
 	.goto Wetlands,63.9,78.6
 	.hs >> 将炉石使用回米奈希尔港
-    >>|cRXP_BUY_按需购买食物/水|r << !Warrior !Rogue
+    >>|cRXP_BUY_如有需要，购买食物/水|r << !Warrior !Rogue
 	>>|cRXP_BUY_如有需要，购买食物|r << Warrior/Rogue
     .subzoneskip 150
     .subzoneskip 2103

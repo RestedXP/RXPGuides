@@ -4,7 +4,7 @@ RXPGuides.RegisterGuide([[
 #version 7
 #group RXP TBC 生存指南 (H)
 << Horde
-#name 14-16 The Barrens
+#name 14-16级 贫瘠之地
 #version 7
 #subgroup RXP TBC Survival Guide 1-30
 #next 16-18 幽魂之地
@@ -876,7 +876,7 @@ step
     .goto The Barrens,52.26,31.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_图加|r 对话
     .turnin 870 >> 交任务  遗忘之池
-    .accept 877 >> 接受任务 死水绿洲
+    .accept 877 >> 接受任务死水绿洲
     .target 图加·符文图腾
 step
     .goto The Barrens,51.93,30.32

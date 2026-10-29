@@ -4,11 +4,11 @@ RXPGuides.RegisterGuide([[
 #version 7
 #group RXP TBC 生存指南 (H)
 << Horde
-#name 1-6 杜隆塔尔
+#name 1-6级 杜隆塔尔
 #version 7
 #subgroup RXP TBC Survival Guide 1-30
 #defaultfor Orc/Troll
-#next 6-10 杜隆塔尔
+#next 6-10级 杜隆塔尔
 
 step << !Orc !Troll
     #completewith next
@@ -960,7 +960,7 @@ RXPGuides.RegisterGuide([[
 #version 7
 #group RXP TBC 生存指南 (H)
 << Horde
-#name 6-10 杜隆塔尔
+#name 6-10级 杜隆塔尔
 #version 7
 #subgroup RXP TBC Survival Guide 1-30
 #defaultfor Orc/Troll
@@ -1158,7 +1158,7 @@ step
     .goto Durotar,55.72,79.62,40,0
     .goto Durotar,54.23,82.26,40,0
     .goto Durotar,52.20,83.00,40,0
-    >>沿着海滩往下跑。击杀|cRXP_ENEMY_海浪蟹|r和|cRXP_ENEMY_龙虾人|r。拾取它们的|cRXP_LOOT_蟹胶|r 和 |cRXP_LOOT_眼球|r。你不需要在这里完成这一步。
+    >>沿着海滩前进。击杀 |cRXP_ENEMY_海蟹|r 和 |cRXP_ENEMY_龙虾人|r，拾取它们掉落的 |cRXP_LOOT_粘液|r 和 |cRXP_LOOT_眼睛|r。你不需要在这里完成这一步。
     .complete 818,2 --Crawler Mucus (8)
     .mob 海浪蟹
     .mob 成熟海浪蟹

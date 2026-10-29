@@ -4165,7 +4165,7 @@ step << Priest/Mage/Warlock/Rogue/Druid/Warrior
     #xprate <1.5 << !Warrior
     #softcore
     #completewith SuncrownTurnin
-    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
     .target 灵魂医者
 step << Priest/Mage/Warlock/Rogue/Druid/Warrior
     #hardcore
@@ -8659,7 +8659,7 @@ step
 step
     #softcore
     #completewith HeroSindorei
-    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
     .target 灵魂医者
 step
     #hardcore

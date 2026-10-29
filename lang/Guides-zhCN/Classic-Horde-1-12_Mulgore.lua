@@ -230,7 +230,7 @@ step << Warrior
     .goto Mulgore,44.02,76.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哈鲁特|r 对话
     .turnin 3091 >>交任务 简易便笺
-    .accept 77651 >>Accept 深入荆棘
+    .accept 77651 >>接受任务 深入荆棘
     .train 100 >> 学习 |T132337:0|t[冲锋]
     .train 772 >> 学习 |T132155:0|t[撕裂]
     .target 哈鲁特·雷角
@@ -240,7 +240,7 @@ step << Warrior
     .goto Mulgore,44.02,76.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哈鲁特|r 对话
     .turnin 3091 >>交任务 简易便笺
-    .accept 77651 >>Accept 深入荆棘
+    .accept 77651 >>接受任务 深入荆棘
     .train 772 >> 学习 |T132155:0|t[撕裂]
     .target 哈鲁特·雷角
 step << Warrior
@@ -714,11 +714,11 @@ step << Hunter
 step << Tauren
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_玛尔|r，|cRXP_FRIENDLY_扎尔曼|r，|cRXP_FRIENDLY_哈肯|r 和 |cRXP_FRIENDLY_穆尔|r 对话
     .accept 766 >>接受任务 马兹拉纳其
-    .target +Maur Raincaller
+    .target 装备你的普通 |T133127:0|t[经典怀旧服 道具]
     .goto Mulgore,46.97,57.07
     .turnin 767 >>交任务 幻象仪祭
     .accept 771 >>接受任务 幻象仪祭
-    .target +Zarlman Two-Moons
+    .target 仲裁者索鲁斯
     .goto Mulgore,47.76,57.53
     .accept 761 >>接受任务 猎捕猛鹫
     .target 哈肯·风之图腾
@@ -729,11 +729,11 @@ step << Tauren
 step << !Tauren
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_玛尔|r，|cRXP_FRIENDLY_扎尔曼|r 和 |cRXP_FRIENDLY_哈肯|r 对话
     .accept 766 >>接受任务 马兹拉纳其
-    .target +Maur Raincaller
+    .target +愤怒的火灵
     .goto Mulgore,46.97,57.07
     .turnin 767 >>交任务 幻象仪祭
     .accept 771 >>接受任务 幻象仪祭
-    .target +Zarlman Two-Moons
+    .target 大地治愈者托洛克
     .goto Mulgore,47.76,57.53
     .accept 761 >>接受任务 猎捕猛鹫
     .target 哈肯·风之图腾
@@ -756,7 +756,7 @@ step << Tauren
 step << Hunter
     #season 2
     .goto Mulgore,59.02,54.36
-    >>对|cRXP_ENEMY_沙沙作响的灌木丛|r施放|T132212:0|t[猎人印记]
+    >>对|cRXP_ENEMY_沙沙作响的灌木丛|r 施放|T132212:0|t[猎人印记]
     >>击杀 |cRXP_ENEMY_风险投资公司偷猎者|r。拾取他的 |T134419:0|t[|cRXP_FRIENDLY_神射手符文|r]
     .collect 206155,1 --Rune of Marksmanship (1)
     .mob Rustling Bush
@@ -764,7 +764,7 @@ step << Hunter
     .train 410113,1
 step << Hunter
     #season 2
-    .train 410113 >>使用|T134419:0|t[|cRXP_FRIENDLY_神射手符文|r]
+    .train 410113 >>使用|T134419:0|t|T134419:0|t[|cRXP_FRIENDLY_神射手符文|r]
     .use 206155
     .itemcount 206155,1
 step
@@ -2263,7 +2263,7 @@ step << Warrior
     #season 2
     .goto Thunder Bluff,28.73,18.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奈塔里|r 对话
-    >>从她那里获得|T134419:0|t[|cRXP_FRIENDLY_狂乱攻击符文|r]
+    >>从她那里获得|T134419:0|t|T134419:0|t[|cRXP_FRIENDLY_狂乱攻击符文|r]
     .collect 204716,1 --Rune of Frenzied Assault (1)
     .target Netali
     .train 425447,1
@@ -2314,7 +2314,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拍卖师斯塔比|r 对话
     >>|cRXP_BUY_从拍卖行购买12个|r |T134252:0|t[轻皮] |cRXP_BUY_|r
     .collect 2318,12,768,1 --Light Leather (12)
-    .target Auctioneer Stampi
+    .target 拍卖师斯塔比
     .skill skinning,<1,1
 step
     #ah
@@ -2598,9 +2598,9 @@ step << Shaman
     .goto Thunder Bluff,45.23,59.40,0
     .goto Thunder Bluff,40.41,51.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拍卖师斯塔比|r 对话
-    >>|cRXP_BUY_从拍卖行购买1条|r |T133894:0|t[新鲜的美味小鱼] |cRXP_BUY_|r
+    >>|cRXP_BUY_从拍卖行购买1条|r |T133894:0|t|T133894:0|t[新鲜的美味小鱼] |cRXP_BUY_|r
     .collect 6291,1,76240,1 --Raw Brilliant Smallfish (1)
-    .target Auctioneer Stampi
+    .target 拍卖师斯塔比
     .train 410104,1
     .xp <4,1
 step << Shaman
@@ -3786,13 +3786,13 @@ step << Hunter
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.0
 step << Tauren
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_玛尔|r，|cRXP_FRIENDLY_扎尔曼|r，|cRXP_FRIENDLY_哈肯|r 和 |cRXP_FRIENDLY_穆尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_茂尔|r, |cRXP_FRIENDLY_扎尔曼|r, |cRXP_FRIENDLY_哈肯|r 和 |cRXP_FRIENDLY_穆尔|r 对话
     .accept 766 >>接受任务 马兹拉纳其
-    .target +Maur Raincaller
+    .target 茂尔·祈雨
     .goto Mulgore,46.97,57.07
     .turnin 767 >>交任务 幻象仪祭
     .accept 771 >>接受任务 幻象仪祭
-    .target +Zarlman Two-Moons
+    .target 扎尔曼·双月
     .goto Mulgore,47.76,57.53
     .accept 761 >>接受任务 猎捕猛鹫
     .target 哈肯·风之图腾
@@ -3801,13 +3801,13 @@ step << Tauren
     .target 穆尔·雷角
     .goto Mulgore,48.53,60.40
 step << !Tauren
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_玛尔|r，|cRXP_FRIENDLY_扎尔曼|r 和 |cRXP_FRIENDLY_哈肯|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_茂尔|r, |cRXP_FRIENDLY_扎尔曼|r 和 |cRXP_FRIENDLY_哈肯|r 对话
     .accept 766 >>接受任务 马兹拉纳其
-    .target +Maur Raincaller
+    .target 茂尔·祈雨
     .goto Mulgore,46.97,57.07
     .turnin 767 >>交任务 幻象仪祭
     .accept 771 >>接受任务 幻象仪祭
-    .target +Zarlman Two-Moons
+    .target 扎尔曼·双月
     .goto Mulgore,47.76,57.53
     .accept 761 >>接受任务 猎捕猛鹫
     .target 哈肯·风之图腾
@@ -3830,7 +3830,7 @@ step << Tauren
 step << Hunter
     #season 2
     .goto Mulgore,59.02,54.36
-    >>对|cRXP_ENEMY_沙沙作响的灌木丛|r施放|T132212:0|t[猎人印记]
+    >>对|cRXP_ENEMY_沙沙作响的灌木丛|r 施放|T132212:0|t[猎人印记]
     >>击杀 |cRXP_ENEMY_风险投资公司偷猎者|r。拾取他的 |T134419:0|t[|cRXP_FRIENDLY_神射手符文|r]
     .collect 206155,1 --Rune of Marksmanship (1)
     .mob Rustling Bush
@@ -3838,7 +3838,7 @@ step << Hunter
     .train 410113,1
 step << Hunter
     #season 2
-    .train 410113 >>使用|T134419:0|t[|cRXP_FRIENDLY_神射手符文|r]
+    .train 410113 >>使用|T134419:0|t|T134419:0|t[|cRXP_FRIENDLY_神射手符文|r]
     .use 206155
     .itemcount 206155,1
 step
@@ -4940,7 +4940,7 @@ step << !Tauren
 step << Tauren
     #xprate <2.1
     #label Bloodhoofturnins1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_贝恩|r 和 |cRXP_FRIENDLY_卢尔|r对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Baine|r 和 |cRXP_FRIENDLY_卢尔|r 对话
     .turnin 746 >>交任务 矮人的挖掘场
     .target 贝恩·血蹄
     .goto Mulgore,47.51,60.16
@@ -5643,7 +5643,7 @@ step << Warrior
     #season 2
     .goto Thunder Bluff,28.73,18.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奈塔里|r 对话
-    >>从她那里获得|T134419:0|t[|cRXP_FRIENDLY_狂乱攻击符文|r]
+    >>从她那里获得|T134419:0|t|T134419:0|t[|cRXP_FRIENDLY_狂乱攻击符文|r]
     .collect 204716,1 --Rune of Frenzied Assault (1)
     .target Netali
     .train 425447,1
@@ -5708,7 +5708,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拍卖师斯塔比|r 对话
     >>|cRXP_BUY_从拍卖行购买12个|r |T134252:0|t[轻皮] |cRXP_BUY_|r
     .collect 2318,12,768,1 --Light Leather (12)
-    .target Auctioneer Stampi
+    .target 拍卖师斯塔比
     .skill skinning,<1,1
 step
     #optional
@@ -5792,9 +5792,9 @@ step << Shaman
     .goto Thunder Bluff,45.23,59.40,0
     .goto Thunder Bluff,40.41,51.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拍卖师斯塔比|r 对话
-    >>|cRXP_BUY_从拍卖行购买1条|r |T133894:0|t[新鲜的美味小鱼] |cRXP_BUY_|r
+    >>|cRXP_BUY_从拍卖行购买1条|r |T133894:0|t|T133894:0|t[新鲜的美味小鱼] |cRXP_BUY_|r
     .collect 6291,1,76240,1 --Raw Brilliant Smallfish (1)
-    .target Auctioneer Stampi
+    .target 拍卖师斯塔比
     .train 410104,1
 step << Shaman
     #season 2

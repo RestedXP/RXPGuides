@@ -1066,7 +1066,7 @@ step
     .goto Dun Morogh,49.426,48.410
     >>不要在途中杀熊
 .target 驾驶员贝隆·风箱
->>与 |cRXP_FRIENDLY_驾驶员贝隆·风箱|r 对话
+>>与|cRXP_FRIENDLY_驾驶员贝隆·风箱|r 对话
     .accept 317 >> 接受任务 贝尔丁的补给
 step
     .goto Dun Morogh,49.622,48.612
@@ -1118,7 +1118,7 @@ step
     .complete 317,2 --Collect Thick Bear Fur (x2)
 step
     .goto Dun Morogh,49.426,48.410
->>与 |cRXP_FRIENDLY_驾驶员贝隆·风箱|r 对话
+>>与|cRXP_FRIENDLY_驾驶员贝隆·风箱|r 对话
     .turnin 317 >> 交任务 贝尔丁的补给
 .target 驾驶员贝隆·风箱
     .accept 318 >> 接受任务 艾沃沙酒
@@ -1154,7 +1154,7 @@ step
 .target 海格纳·重枪
 >>与|cRXP_FRIENDLY_海格纳·重枪|r 对话
     .turnin 5541 >> 交任务 海格纳的弹药
-    .vendor >> 出售物品并修理装备
+    .vendor >> 垃圾卖店并修理装备
 step
     .xp 7 >> 刷怪至7级
 step
@@ -1252,7 +1252,7 @@ step
 step
     .goto Dun Morogh,49.622,48.612
 .target 驾驶员迪恩·石轮
->>与|cRXP_FRIENDLY_驾驶员迪恩·石轮|r 对话
+>>与 |cRXP_FRIENDLY_驾驶员迪恩·石轮|r 对话
     .turnin 313 >> 交任务 灰色洞穴
 step
     .goto Dun Morogh,49.426,48.410
@@ -1569,7 +1569,7 @@ step
     .collect 3172,3,418,1 --Collect Boar Intestines (x3)
 step << Gnome
     .goto Loch Modan,24.1,18.2
-    .vendor >>出售物品并修理装备
+    .vendor >>垃圾卖店并修理装备
 step << Gnome
     .goto Loch Modan,24.764,18.397
 >>与|cRXP_FRIENDLY_巡山人雷矛|r 对话

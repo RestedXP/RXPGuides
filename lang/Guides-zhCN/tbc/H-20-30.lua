@@ -813,7 +813,7 @@ step
     .goto The Barrens,52.26,31.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_图加|r 对话
     .turnin 870 >>交任务遗忘之池
-    .accept 877 >>接受任务 死水绿洲
+    .accept 877 >>接受任务死水绿洲
     .target 图加·符文图腾
 step
     #xprate <1.5
@@ -4820,7 +4820,7 @@ step << Hunter
     .goto Ashenvale,68.59,60.53,50,0
     .goto Ashenvale,66.62,62.81,50,0
     .goto Ashenvale,65.31,64.65,50,0
-    .train 16830 >>|cRXP_WARN_对 |r老灰谷熊|cRXP_WARN_ |cRXP_ENEMY_施放 |T132164:0|t[驯服野兽]|r。使用它攻击怪物以学习 |T132140:0|t[爪击(等级4) |r
+    .train 16830 >>|cRXP_WARN_Cast|r |T132164:0|t[Tame Beast] |cRXP_WARN_on a |cRXP_ENEMY_Elder Ashenvale Bear|r. Attack mobs with it to learn|r |T132140:0|t[Claw (Rank 4)]
     .mob 老灰谷熊
     .train 17264 >>|cRXP_WARN_对 |r鬼爪狼王|cRXP_WARN_ |cRXP_ENEMY_|r 施放 |T132164:0|t[驯服野兽]。使用它攻击怪物以学习 |T132278:0|t[撕咬(等级4)]|r
     .mob 幽爪前锋
@@ -4834,7 +4834,7 @@ step << Hunter
     .goto Ashenvale,68.59,60.53,50,0
     .goto Ashenvale,66.62,62.81,50,0
     .goto Ashenvale,65.31,64.65,50,0
-    .train 16830 >>|cRXP_WARN_对 |r老灰谷熊|cRXP_WARN_ |cRXP_ENEMY_施放 |T132164:0|t[驯服野兽]|r。使用它攻击怪物以学习 |T132140:0|t[爪击(等级4) |r
+    .train 16830 >>|cRXP_WARN_Cast|r |T132164:0|t[Tame Beast] |cRXP_WARN_on a |cRXP_ENEMY_Elder Ashenvale Bear|r. Attack mobs with it to learn|r |T132140:0|t[Claw (Rank 4)]
     .mob 老灰谷熊
     .link https://www.wow-petopia.com/classic/training.php >> |cRXP_WARN_点击此处了解更多关于宠物训练的信息|r
     .xp >27,1 --Ghostpaw Alphas are lvl 27-28
@@ -5335,7 +5335,7 @@ step << Hunter
     .goto Ashenvale,68.59,60.53,50,0
     .goto Ashenvale,66.62,62.81,50,0
     .goto Ashenvale,65.31,64.65,50,0
-    .train 16830 >>|cRXP_WARN_对 |r老灰谷熊|cRXP_WARN_ |cRXP_ENEMY_施放 |T132164:0|t[驯服野兽]|r。使用它攻击怪物以学习 |T132140:0|t[爪击(等级4) |r
+    .train 16830 >>|cRXP_WARN_Cast|r |T132164:0|t[Tame Beast] |cRXP_WARN_on a |cRXP_ENEMY_Elder Ashenvale Bear|r. Attack mobs with it to learn|r |T132140:0|t[Claw (Rank 4)]
     .mob 老灰谷熊
     .train 17264 >>|cRXP_WARN_对 |r鬼爪狼王|cRXP_WARN_ |cRXP_ENEMY_|r 施放 |T132164:0|t[驯服野兽]。使用它攻击怪物以学习 |T132278:0|t[撕咬(等级4)]|r
     .mob 幽爪前锋
@@ -5349,7 +5349,7 @@ step << Hunter
     .goto Ashenvale,68.59,60.53,50,0
     .goto Ashenvale,66.62,62.81,50,0
     .goto Ashenvale,65.31,64.65,50,0
-    .train 16830 >>|cRXP_WARN_对 |r老灰谷熊|cRXP_WARN_ |cRXP_ENEMY_施放 |T132164:0|t[驯服野兽]|r。使用它攻击怪物以学习 |T132140:0|t[爪击(等级4) |r
+    .train 16830 >>|cRXP_WARN_Cast|r |T132164:0|t[Tame Beast] |cRXP_WARN_on a |cRXP_ENEMY_Elder Ashenvale Bear|r. Attack mobs with it to learn|r |T132140:0|t[Claw (Rank 4)]
     .mob 老灰谷熊
     .link https://www.wow-petopia.com/classic/training.php >> |cRXP_WARN_点击此处了解更多关于宠物训练的信息|r
     .xp >26,1 --Ghostpaw Alphas are lvl 27-28
@@ -6550,7 +6550,7 @@ step
     .goto Thousand Needles,45.70,50.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_图林·长角|r 对话
     .turnin 4841 >> 交任务清除半人马
-    .accept 5064 >> 接受任务 恐怖图腾的密信
+    .accept 5064 >> 接受任务恐怖图腾的密信
     .target 峭壁卫兵图林·长角
     .isQuestComplete 4841
 step
@@ -6822,39 +6822,17 @@ step
 step
     #loop
     .line Thousand Needles,14.34,30.13,15.08,31.63,15.67,31.56,16.59,30.34,17.19,29.60,17.82,27.50,18.48,26.74,18.64,25.90,18.68,24.68,18.57,24.07,18.11,23.65,17.66,22.98,17.24,22.32,17.54,21.49,17.87,20.78,17.96,20.18,17.66,19.46,17.28,18.93,16.70,18.61,16.20,18.53,15.69,18.65,14.49,20.04,12.89,19.97,11.88,20.90,11.50,21.61,11.20,22.29,11.16,23.21,11.49,24.07,11.55,24.44,11.91,25.02,13.01,26.31,13.36,26.97,13.75,28.54,14.34,30.13
-    .goto Thousand Needles,11.50,21.61,0
-    .goto Thousand Needles,11.50,21.61,40,0
-    .goto Thousand Needles,11.88,20.90,40,0
-    .goto Thousand Needles,12.89,19.97,40,0
-    .goto Thousand Needles,14.49,20.04,40,0
-    .goto Thousand Needles,15.69,18.65,40,0
-    .goto Thousand Needles,16.20,18.53,40,0
-    .goto Thousand Needles,16.70,18.61,40,0
-    .goto Thousand Needles,17.28,18.93,40,0
-    .goto Thousand Needles,17.66,19.46,40,0
-    .goto Thousand Needles,17.96,20.18,40,0
-    .goto Thousand Needles,17.87,20.78,40,0
-    .goto Thousand Needles,17.54,21.49,40,0
-    .goto Thousand Needles,17.24,22.32,40,0
-    .goto Thousand Needles,17.66,22.98,40,0
-    .goto Thousand Needles,18.11,23.65,40,0
-    .goto Thousand Needles,18.57,24.07,40,0
-    .goto Thousand Needles,18.68,24.68,40,0
-    .goto Thousand Needles,18.64,25.90,40,0
-    .goto Thousand Needles,18.48,26.74,40,0
-    .goto Thousand Needles,17.82,27.50,40,0
-    .goto Thousand Needles,17.19,29.60,40,0
-    .goto Thousand Needles,15.67,31.56,40,0
-    .goto Thousand Needles,15.08,31.63,40,0
-    .goto Thousand Needles,14.34,30.13,40,0
-    .goto Thousand Needles,13.75,28.54,40,0
-    .goto Thousand Needles,13.36,26.97,40,0
-    .goto Thousand Needles,13.01,26.31,40,0
-    .goto Thousand Needles,11.91,25.02,40,0
-    .goto Thousand Needles,11.55,24.44,40,0
-    .goto Thousand Needles,11.49,24.07,40,0
-    .goto Thousand Needles,11.16,23.21,40,0
-    .goto Thousand Needles,11.20,22.29,40,0
+    .goto 1441/1,-1200.300,-4617.700,0
+    .goto 1441/1,-1200.300,-4617.700,50,0
+    .goto 1441/1,-1209.500,-4538.400,50,0
+    .goto 1441/1,-1132.900,-4505.800,50,0
+    .goto 1441/1,-1053.200,-4554.600,50,0
+    .goto 1441/1,-977.200,-4563.400,50,0
+    .goto 1441/1,-920.300,-4635.000,50,0
+    .goto 1441/1,-979.500,-4719.800,50,0
+    .goto 1441/1,-1088.500,-4871.300,50,0
+    .goto 1441/1,-1195.600,-4825.600,50,0
+    .goto 1441/1,-1256.300,-4693.300,50,0
     >>击杀 |cRXP_ENEMY_钢牙|r，并拾取他的 |cRXP_LOOT_钢牙的肋骨|r
     >>|cRXP_WARN_他会逆时针方向巡逻|r
     >>|cRXP_WARN_小心，有两只 |cRXP_ENEMY_土狼|r 守卫他!|r
@@ -7519,12 +7497,12 @@ step
     .maxlevel 31
 step
     .goto Thousand Needles,33.80,39.90
-    >>打开 |cRXP_PICK_文件箱|r 并对话，NPC 在大帐篷内。拾取地上的它以获取 |cRXP_LOOT_秘密便条 #1|r
+    >>Open the |cRXP_PICK_Document Chest|r inside the big tent. Loot it for |cRXP_LOOT_Secret Note #2|r
     .complete 5064,2 --Secret Note #2 (1)
     .maxlevel 31
 step
     .goto Thousand Needles,39.20,41.60
-    >>打开东部高地帐篷内的 |cRXP_PICK_文件箱|r。拾取它以获取 |cRXP_LOOT_秘密便条 #1|r
+    >>Open the |cRXP_PICK_Document Chest|r inside the tent on the eastern plateau. Loot it for |cRXP_LOOT_Secret Note #3|r
     .complete 5064,3 --Secret Note #3 (1)
     .maxlevel 31
 step
@@ -7619,7 +7597,7 @@ step
     .goto Thousand Needles,17.33,36.72,60,0
     >>找到并击杀 |cRXP_ENEMY_罗卡里姆|r。拾取他的 |cRXP_LOOT_碎片|r
     >>|cRXP_WARN_他会在该区域北部和西部的大范围内巡逻|r
-    >>|cRXP_WARN_Skip this quest if you cannot find him|r (NOT TRANSLATED IN :zhCN YET)
+    >>|cRXP_WARN_如果找不到他，请跳过此任务|r
     .complete 1151,1 -- Fragments of Rok'Alim (1)
     .unitscan 罗卡里姆
 	.isOnQuest 1151

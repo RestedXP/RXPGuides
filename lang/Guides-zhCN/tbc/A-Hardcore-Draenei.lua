@@ -6,7 +6,7 @@ RXPGuides.RegisterGuide([[
 #defaultfor Draenei
 #group RXP TBC 生存指南 A
 #subgroup RXP 生存指南 1-20级
-#name 1-12 秘蓝岛
+#name 1-12级 秘蓝岛
 #next 12-14级 黑海岸
 
 step
