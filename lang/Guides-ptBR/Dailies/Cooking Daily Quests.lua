@@ -99,12 +99,12 @@ step << Horde
 	.isOnQuest 13116
 step << Alliance
 	.goto Dalaran,40.20,66.98
-	>>Usar sua profissão de Culinária para converter 4 |cRXP_LOOT_Rhino Carne|r em 4 |cRXP_LOOT_Rinocerontes-quentes|r
+	>>Usar sua profissão de Culinária para cozinhar 4 |cRXP_LOOT_Rhino Carne|r em 4 |cRXP_LOOT_Rinocerontes-quentes|r
 	.collect 34752,4 -- Rhino Dogs (4)
 	.isOnQuest 13107
 step << Horde
 	.goto Dalaran,70.44,39.80
-	>>Usar sua profissão de Culinária para converter 4 |cRXP_LOOT_Rhino Carne|r em 4 |cRXP_LOOT_Rinocerontes-quentes|r
+	>>Usar sua profissão de Culinária para cozinhar 4 |cRXP_LOOT_Rhino Carne|r em 4 |cRXP_LOOT_Rinocerontes-quentes|r
 	.collect 34752,4 -- Rhino Dogs (4)
 	.isOnQuest 13116
 step << Alliance
@@ -217,7 +217,7 @@ step
 	.target Orton Bennet
 -- Quest: Sewer Stew
 step
-	.zone CrystalsongForest >>Em Dalaran entre no prédio Portão Violeta e clique no Cristal da Trilha Violeta para se teletransportar para Floresta do Canto Cristalino
+	.zone CrystalsongForest >>Em Dalaran, entre no prédio Violet Portal e clique no Violet Parado Cristal para se teletransportar para baixo, até Crystalsong Forest
 	.goto Dalaran,57.32,46.55,6,0
 	.goto Dalaran,55.91,46.77
 	.isOnQuest 13102 << Alliance
@@ -428,13 +428,13 @@ step << Horde
 step << Alliance
     #label stew
 	.goto Dalaran,40.20,66.98
-	>>Usar sua profissão de Culinária para converter 4 |cRXP_LOOT_Gelado Carne|r em 4 |cRXP_LOOT_Ensopado do Norte|r
+	>>Usar sua profissão de Culinária para cozinhar 4 |cRXP_LOOT_Chilled Carne|r em 4 |cRXP_LOOT_Ensopado do Norte|r
 	.complete 13101,1 --Northern Stew (4)
 	.isOnQuest 13101
 step << Horde
     #label stew
 	.goto Dalaran,70.44,39.80
-	>>Usar sua profissão de Culinária para converter 4 |cRXP_LOOT_Gelado Carne|r em 4 |cRXP_LOOT_Ensopado do Norte|r
+	>>Usar sua profissão de Culinária para cozinhar 4 |cRXP_LOOT_Chilled Carne|r em 4 |cRXP_LOOT_Ensopado do Norte|r
 	.complete 13113,1 --Northern Stew (4)
 	.isOnQuest 13113
 step

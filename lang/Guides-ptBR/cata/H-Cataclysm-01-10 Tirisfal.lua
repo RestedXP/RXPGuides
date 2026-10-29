@@ -193,7 +193,7 @@ step << Hunter
     .target Xavier the Huntsman
 step << Priest
     .goto 18,31.10,66.02
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Duesten|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Clérigo das Trevas Duesten|r
     .turnin 3097 >>Entregue Pergaminho consagrado
     .accept 24966 >>Aceite Luz e Sombras
     .train 2061 >>Treine |T135907:0|t[Cura Célere] << Cata
@@ -257,7 +257,7 @@ step << Rogue
     .target David Trias
 step << Warrior
     .goto 18,32.67,65.61
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dannal|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dannal Stern|r
     .turnin 3095 >>Entregue Pergaminho simples
     .accept 24969 >>Aceite Com Toda a Carga
     .train 100 >>Treine |T132337:0|t[Carga] << Cata
@@ -297,7 +297,7 @@ step << Rogue
     .target David Trias
 step << Warrior
     .goto 18,32.67,65.61
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dannal|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dannal Stern|r
     .turnin 24969 >>Entregue Pergaminho simples
     .target Dannal Stern
 step << Hunter
@@ -321,7 +321,7 @@ step << Mage
     .target Isabella
 step << Priest
     .goto 18,31.10,66.02
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Duesten|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Clérigo das Trevas Duesten|r
     .turnin 24966 >>Entregue Luz e Sombras
     .target Dark Cleric Duesten
 step << Warlock

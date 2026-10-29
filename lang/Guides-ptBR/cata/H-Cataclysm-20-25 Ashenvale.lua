@@ -383,7 +383,7 @@ step
     .isQuestTurnedIn 13712
 step
     #completewith DorDanilDen
-    >>Abate |cRXP_ENEMY_Garraguda|r. Saque-o para obter |T136063:0|t[|cRXP_LOOT_Garra de Garraguda|r] e use-a para iniciar a missão
+    >>Mate |cRXP_ENEMY_Garraguda|r. Pegue a |T136063:0|t[|cRXP_LOOT_Garra de Garraguda|r] e use-a para iniciar a missão
     .collect 16305,1,2 --Sharptalon's Claw (1)
     .accept 2 >> Aceite Garra de Garraguda
     .unitscan Sharptalon
@@ -429,7 +429,7 @@ step
     .isQuestTurnedIn 13712
 step
     #completewith next
-    >>Abate |cRXP_ENEMY_Garraguda|r. Saque-o para obter |T136063:0|t[|cRXP_LOOT_Garra de Garraguda|r] e use-a para iniciar a missão
+    >>Mate |cRXP_ENEMY_Garraguda|r. Pegue a |T136063:0|t[|cRXP_LOOT_Garra de Garraguda|r] e use-a para iniciar a missão
     .collect 16305,1,2 --Sharptalon's Claw (1)
     .accept 2 >> Aceite Garra de Garraguda
     .unitscan Sharptalon
@@ -463,7 +463,7 @@ step
     .waypoint 1440/1,-2416.10010,1835.40002,40,0
     .waypoint 1440/1,-2387.90015,1787.09998,40,0
     .waypoint 1440/1,-2480.90015,1737.70007,40,0
-    >>Abate |cRXP_ENEMY_Garraguda|r. Saque-o para obter |T136063:0|t[|cRXP_LOOT_Garra de Garraguda|r] e use-a para iniciar a missão
+    >>Mate |cRXP_ENEMY_Garraguda|r. Pegue a |T136063:0|t[|cRXP_LOOT_Garra de Garraguda|r] e use-a para iniciar a missão
     .collect 16305,1,2 --Sharptalon's Claw (1)
     .accept 2 >> Aceite Garra de Garraguda
     .unitscan Sharptalon
@@ -746,7 +746,7 @@ step
 step
     #questguide
     #completewith next
-    >>Mate os |cRXP_ENEMY_Sátiros|r. Saque-os para obter os |cRXP_LOOT_Chifres|r
+    >>Mate |cRXP_ENEMY_Sátiros|r. Saqueie-os para obter os seus |cRXP_LOOT_Chifres|r
     .complete 6441,1 --16/16 Satyr Horns
     .mob Bleakheart Hellcaller
     .mob Bleakheart Satyr
@@ -1365,7 +1365,7 @@ step
     >>Mate |cRXP_ENEMY_Mareante|r. Pegue o |T136222:0|t[|cRXP_LOOT_Globo d'Água Conspurcado|r] e use-o para iniciar a missão
     .complete 25,2 --1/1 Tideress slain
     .collect 16408,1,1918 --Collect Befouled Water Globe (x1)
-    .accept 1918 >>Aceite O Elemento Conspurcado
+    .accept 1918 >>Aceite O elemento conspurcado
     .mob Tideress
 step
     #loop
@@ -1518,7 +1518,7 @@ step
     #completewith next
     .goto 63,38.08,42.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thraka|r
-    .fly Splintertree Post >>Voe para Posto Machadada
+    .fly Splintertree Post >>Voe até o Posto Machadada
     .target Thraka
 step
     .goto 63,74.12,60.92
@@ -1528,7 +1528,7 @@ step
 step
     .goto 63,74.19,60.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mastok Wrilehiss|r
-    .accept 1918 >>Aceite O Elemento Conspurcado
+    .accept 1918 >>Aceite O elemento conspurcado
     .turnin 1918 >>Entregue O elemento conspurcado
     .target Mastok Wrilehiss
     .itemcount 16408,1
@@ -1640,7 +1640,7 @@ step
     #completewith STV1
     .goto 85,49.64,59.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Doraso|r
-    .fly Splintertree Post >>Voe para Posto Machadada
+    .fly Splintertree Post >>Voe até o Posto Machadada
     .target Doras
     .zoneskip Ashenvale
     .isQuestTurnedIn 13841

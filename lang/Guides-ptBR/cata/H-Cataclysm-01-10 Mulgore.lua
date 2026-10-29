@@ -485,7 +485,7 @@ step
     .target Mull Thunderhorn
 step << Warrior Cata
     .goto 7,49.55,59.97
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Krang|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Krang Casco de Pedra|r
     .train 34428 >> Treine suas magias de classe
     .target Krang Stonehoof
 step
@@ -677,7 +677,7 @@ step
     .target Mull Thunderhorn
 step << Warrior Cata
     .goto 7,49.55,59.97
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Krang|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Krang Casco de Pedra|r
     .train 84939 >> Treine suas magias de classe
     .target Krang Stonehoof
     .xp <7,1
@@ -874,7 +874,7 @@ step
     .target Harken Windtotem
 step << Warrior Cata
     .goto 7,49.55,59.97
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Krang|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Krang Casco de Pedra|r
     .train 84939 >> Treine suas magias de classe
     .target Krang Stonehoof
 step << Shaman Cata
@@ -1047,7 +1047,7 @@ step << Hunter Cata
     .xp <10,1
 step << Warrior Cata
     .goto 7,49.55,59.97
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Krang|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Krang Casco de Pedra|r
     .train 71 >> Treine suas magias de classe
     .target Krang Stonehoof
     .xp <10,1
@@ -1079,7 +1079,7 @@ step
     #xprate <1.2
     .goto 7,47.889,57.097
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zarlman Duas Luas|r
-    .turnin 24457 >>Entregue Rito de Visão
+    .turnin 24457 >>Entregue Rito de visão
     .accept 20441 >>Aceite Rito de visão
     .target Zarlman Two-Moons
 step
@@ -1096,7 +1096,7 @@ step
     #xprate <1.2
     .goto 7,49.370,17.324
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Una|r
-    .turnin 20441 >>Entregue Rito de Visão
+    .turnin 20441 >>Entregue Rito de visão
     .accept 24523 >>Aceite Totem de Juba Agreste
     .target Una Wildmane
 step

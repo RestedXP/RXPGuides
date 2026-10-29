@@ -97,7 +97,7 @@ step
 	.goto TheStormPeaks,55.94,65.69,60,0
 	.goto TheStormPeaks,59.25,59.94
 	.use 42769 >> Usar a Lança de Hodir em sua mochila para se aferrar a um Wyrm Selvagem. Certifique-se de que está com vida completa antes de fazer isso
-	>>Usar Agarrar (1) repetidamente para aumentar seu Agarre. Quando o wyrm atacar com suas garras, use Esquivar de Garras (2). Usar Estocada de Lança (3) e Estocada de Lança Vingativa (4) quando estiverem disponíveis
+	>>Usar Agarrar (1) repetidamente para aumentar seu Agarre. Quando o wyrm golpeia você, use Esquivar de Garras (2). Usar Estocada de Lança (3) e Estocada de Lança Vingativa (4) sempre que disponível.
 	>>Lembre-se de continuamente usar Agarrar (1), senão você vai cair se apenas usar os ataques (3) e (4)!
 	>>Quando o Wyrm Selvagem estiver abaixo de 30%, sua barra de ataque vai mudar. Usar Abrir Mandíbulas (1) cinco vezes, depois use Golpe Fatal (3). Se Golpe Fatal falhar, continue usando Abrir Mandíbulas (1) até que Golpe Fatal (3) esteja disponível
 	.complete 13003,1 --Stormforged Infiltrators Slain (3)

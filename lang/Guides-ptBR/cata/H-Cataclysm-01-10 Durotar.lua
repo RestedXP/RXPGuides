@@ -113,7 +113,7 @@ step << Monk
 step << Rogue
     .goto 1411,42.37,68.81
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Rwag|r
-    .turnin 3088 >>Entregue Pergaminho Cifrado
+    .turnin 3088 >>Entregue Pergaminho cifrado
     .accept 25141 >>Aceite Eviscerar
     .train 2098 >> Treine |T132292:0|t[Eviscerar] << Cata
     .target Rwag
@@ -1460,7 +1460,7 @@ step
 step << Mage/Priest/Warlock/Druid
     .goto 1411,56.41,73.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tai'tasi|r
-    .vendor >> Comerciante de Lixo
+    .vendor >> Venda os lixos
     .target Tai'tasi
 step << Warrior Cata
     .goto 1411,56.70,73.75
@@ -1875,7 +1875,7 @@ step << !cata
 step
     .goto 1411,51.51,41.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Grosk|r
-    .home >> Defina sua Pedra de Retorno em Razor Hill
+    .home >> Defina sua Pedra de Regresso em Monte Navalha
     .target Innkeeper Grosk
     .isQuestAvailable 2517
 step
@@ -2651,7 +2651,7 @@ step
     .goto 1411,47.07,30.87,40,0
     .goto 1411,47.16,29.67,40,0
     .goto 1411,48.95,22.34,40,0
-    >>Saque o |cRXP_LOOT_Kul Saco de Suprimentos|r no chão
+    >>Saque o |cRXP_LOOT_Saco de Suprimentos|r no chão
     .complete 834,1 --Sack of Supplies (5)
     .isOnQuest 834
 step

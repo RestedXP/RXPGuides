@@ -38,7 +38,7 @@ step
 step
     .goto 47,75.56,45.37,8,0
     .goto 47,75.83,45.26
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com [Name] dentro da casa
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Madame Eva|r dentro da casa
     .turnin 26653 >>Entregue Suprimentos de Vila Sombria
     .accept 26652 >>Aceite Linha de Cabelo de Fantasma
 	.target Madame Eva
@@ -209,7 +209,7 @@ step
 step
     .goto 47,75.56,45.37,8,0
     .goto 47,75.83,45.26
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com [Name] dentro da casa
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Madame Eva|r dentro da casa
     .turnin 26654 >>Entregue Devolver o Pente
     .accept 26655 >>Aceite Entregue a Linha
 	.target Madame Eva
@@ -322,7 +322,7 @@ step
 step
     .goto 47,74.09,44.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Smitts|r
-    .turnin 26661 >>Entregue Flores do Mal
+    .turnin 26661 >>Entregue Coleta de flores do mal
     .accept 26676 >>Aceite Alguém Pediu um Suco?
 	.target Tavernkeep Smitts
 step
@@ -705,7 +705,7 @@ step
     .maxlevel 28
 step
     .goto 47,74.17,46.47
-    >>Abate |cRXP_ENEMY_Stitches|r.
+    >>Abata |cRXP_ENEMY_Stitches.|r
     .complete 26727,1 --1/1 Stitches slain
 	.mob Stitches
     .maxlevel 28

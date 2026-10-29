@@ -32,7 +32,7 @@ step
     .complete 12892,1 << Horde --The Ocular has been destroyed (1)
 step
     .goto IcecrownGlacier,44.1,24.7
-	>>Voe até o Barão Prateado no chão. Fale com ele
+	>>Fly all the way down to Baron Sliver on the ground. Talk to him
     .turnin 12887 >>Entregue Só Diversão << Alliance
     .turnin 12892 >>Entregue Só Diversão << Horde
     .accept 12891 >>Aceite Tenho uma Ideia, mas Antes...
@@ -108,7 +108,7 @@ step << Horde
     .accept 12899 >>Aceite A Abóbada das Sombras
 step
     .goto IcecrownGlacier,42.8,24.9
-	>>Entregue para o Barão Prateado
+	>>Return to Baron Sliver
 	.turnin 12898 >>Entregue A Abóbada das Sombras << Alliance
     .turnin 12899 >>Entregue A Abóbada das Sombras << Horde
     .accept 12938 >>Aceite O Duque
@@ -177,7 +177,7 @@ step
 step
     .goto IcecrownGlacier,39.01,23.99,25,0
     .goto IcecrownGlacier,42.9,24.9
-	>>Saia de Hall. Entregue a Barão Prateado.
+	>>Exit the Hall. Return to Baron Sliver
     .turnin 12951 >>Entregue Deixa o Barão Saber Disso...
     .daily 12995 >>Aceite Deixando Nossa Marca
     .accept 13085 >>Aceite O Retorno de Vaelen
@@ -235,7 +235,7 @@ step
 	.isQuestComplete 12995
 step
     .goto IcecrownGlacier,42.9,24.9
-	>>Fale com Prateado
+	>>Talk to Sliver
     .accept 12806 >>Aceite A Toda Velocidade, Rumo ao Beiral!
 step
     .goto IcecrownGlacier,43.5,25.0

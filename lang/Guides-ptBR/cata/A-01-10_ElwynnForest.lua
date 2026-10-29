@@ -647,7 +647,7 @@ step << cata Shaman
 step << cata Shaman
     #xprate <1.2
     .goto 1426/0,-536.50000,-5581.50000
-    .train 331 >> Treinar |T136052:0|tOnda de Cura na Estalagem de Kharanos
+    .train 331 >> Aprenda |T136052:0|tOnda Curativa na Estalagem de Kharanos
 step << Gnome
 #xprate >1.19
     #optional
@@ -1064,7 +1064,7 @@ step << Priest cata
     .target Priestess Josetta
 step << Rogue cata
     .goto 37,43.872,65.943
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Anabela Cabreira|r
+    >>|interface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Anabela Cabreira|r
     .trainer >> Treine suas magias de classe
     .target Keryn Sylvius
 step << Human
@@ -1395,7 +1395,7 @@ step << Human (Warrior/Paladin)
     .goto 84,64.074,68.362
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Marcia Weller|r
     >>|cRXP_BUY_Compre um|r |T135350:0|t[Espadão] |cRXP_BUY_dela|r
-    >>|cRXP_WARN_Alternatively, check the Auction House for something better or cheaper|r
+    >>|cRXP_WARN_Alternativamente, verifique a Casa de Leilões por algo melhor ou mais barato|r
     .collect 1198,1 -- Claymore (1)
     .money <0.2142
     .itemStat 16,QUALITY,<7
@@ -1405,7 +1405,7 @@ step << Human Rogue
     .goto 84,64.074,68.362
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Marcia Weller|r
     >>|cRXP_BUY_Compre um|r |T135346:0|t[Alfanje] |cRXP_BUY_dela|r
-    >>|cRXP_WARN_Alternatively, check the Auction House for something better or cheaper|r
+    >>|cRXP_WARN_Alternativamente, verifique a Casa de Leilões por algo melhor ou mais barato|r
     .collect 851,1 -- Cutlass (1)
     .money <0.1618
     .itemStat 16,QUALITY,<7
@@ -1417,7 +1417,7 @@ step << Human Rogue
     .goto 84,64.074,68.362
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Marcia Weller|r
     >>|cRXP_BUY_Compre um|r |T132402:0|t[Machadinha] |cRXP_BUY_dela|r
-    >>|cRXP_WARN_Alternatively, check the Auction House for something better or cheaper|r
+    >>|cRXP_WARN_Alternativamente, verifique a Casa de Leilões por algo melhor ou mais barato|r
     .collect 853,1 -- Hatchet (1)
     .money <0.1927
     .itemStat 16,QUALITY,<7

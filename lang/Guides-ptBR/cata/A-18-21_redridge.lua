@@ -146,7 +146,7 @@ step << Warrior/Paladin
     .goto 84,64.074,68.362
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Marcia Weller|r
     >>|cRXP_BUY_Compre uma|r |T135280:0|t[Falx Dácia] |cRXP_BUY_dela|r
-    >>|cRXP_WARN_Alternatively, check the Auction House for something better or cheaper|r
+    >>|cRXP_WARN_Alternativamente, verifique a Casa de Leilões por algo melhor ou mais barato|r
     .collect 922,1 -- Dacian Falx (1)
     .money <1.0233
     .itemStat 16,QUALITY,<7
@@ -157,7 +157,7 @@ step << Warrior/Paladin
     .goto 84,64.074,68.362
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Marcia Weller|r
     >>|cRXP_BUY_Compre uma|r |T135280:0|t[Falx Dácia] |cRXP_BUY_dela. Equipe quando estiver no nível 21|r
-    >>|cRXP_WARN_Alternatively, check the Auction House for something better or cheaper|r
+    >>|cRXP_WARN_Alternativamente, verifique a Casa de Leilões por algo melhor ou mais barato|r
     .collect 922,1 -- Dacian Falx (1)
     .money <1.0233
     .itemStat 16,QUALITY,<7
@@ -168,7 +168,7 @@ step << Rogue
     .goto 84,64.074,68.362
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Marcia Weller|r
     >>|cRXP_BUY_Compre uma|r |T135324:0|t[Espada Longa] |cRXP_BUY_dela|r
-    >>|cRXP_WARN_Alternatively, check the Auction House for something better or cheaper|r
+    >>|cRXP_WARN_Alternativamente, verifique a Casa de Leilões por algo melhor ou mais barato|r
     .collect 923,1 -- Longsword (1)
     .money <0.7432
     .itemStat 16,QUALITY,<7
@@ -179,7 +179,7 @@ step << Rogue
     .goto 84,64.074,68.362
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Marcia Weller|r
     >>|cRXP_BUY_Compre uma|r |T135324:0|t[Espada Longa] |cRXP_BUY_dela. Equipe quando estiver no nível 21|r
-    >>|cRXP_WARN_Alternatively, check the Auction House for something better or cheaper|r
+    >>|cRXP_WARN_Alternativamente, verifique a Casa de Leilões por algo melhor ou mais barato|r
     .collect 923,1 -- Longsword (1)
     .money <0.7432
     .itemStat 16,QUALITY,<7
@@ -190,7 +190,7 @@ step << Shaman
     .goto 84,64.074,68.362
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Marcia Weller|r
     >>|cRXP_BUY_Compre um|r |T132415:0|t[Machado Duplo] |cRXP_BUY_dela|r
-    >>|cRXP_WARN_Alternatively, check the Auction House for something better or cheaper|r
+    >>|cRXP_WARN_Alternativamente, verifique a Casa de Leilões por algo melhor ou mais barato|r
     .collect 927,1 -- Double Axe (1)
     .money <0.5911
     .itemStat 16,QUALITY,<7
@@ -200,7 +200,7 @@ step << Hunter
     .goto 84,58.720,68.721
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Lina Fornalha|r
     >>|cRXP_BUY_Compre um|r |T135612:0|t[Persuasor BKP 2700] |cRXP_BUY_dela|r
-    >>|cRXP_WARN_Alternatively, check the Auction House for something better or cheaper|r
+    >>|cRXP_WARN_Alternativamente, verifique a Casa de Leilões por algo melhor ou mais barato|r
     .collect 3024,1 -- BKP 2700 "Enforcer" (1)
     .money <0.6033
     .itemStat 16,QUALITY,<7
@@ -211,7 +211,7 @@ step << Hunter
     .goto 84,58.720,68.721
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Lina Fornalha|r
     >>|cRXP_BUY_Compre um|r |T135612:0|t[Persuasor BKP 2700] |cRXP_BUY_dela. Equipe quando estiver no nível 21|r
-    >>|cRXP_WARN_Alternatively, check the Auction House for something better or cheaper|r
+    >>|cRXP_WARN_Alternativamente, verifique a Casa de Leilões por algo melhor ou mais barato|r
     .collect 3024,1 -- BKP 2700 "Enforcer" (1)
     .money <0.6033
     .itemStat 16,QUALITY,<7

@@ -480,7 +480,7 @@ step
 -- 3 Quests from The Shadow Vault
 step
 	>>De A Abóbada das Sombras aceite as 3 missões diárias
-    >>Fale com Prateado
+    >>Talk to Sliver
 	.daily 12995 >>Aceite Deixando Nossa Marca
 	.goto Icecrown,42.84,24.92
 	>>Fale com o Saltador. Ele anda ao redor da tenda
@@ -527,7 +527,7 @@ step
     .complete 13071,1 --Vrykul buildings set ablaze (8)
 	.isOnQuest 13071
 step
-    >>Vá à Abóbada das Sombras. Fale com Prateado, com o Saltador e com Torpe
+    >>Return to The Shadow Vault. Talk to Sliver, The Leaper and Vile
 	.turnin 12995 >>Entregue Deixando Nossa Marca
 	.goto Icecrown,42.84,24.92
     .turnin 13069 >>Entregue Atirar'Em Up
