@@ -389,14 +389,14 @@ step
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Dual-Function Magnifiers|r.
     .turnin 89124 >>Jewelcrafting Knowledge Treasure
     .train 471011,3
-step
-    #label LostVoidstormSatchel
-    #arrowtext Click on |cRXP_PICK_Lost Voidstorm Satchel|r
-    .isQuestAvailable 89146
-    .goto 2393,49.11,75.86
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Lost Voidstorm Satchel|r
-    .turnin 89146 >>Mining Knowledge Treasure
-    .train 471013,3
+-- step
+--     #label LostVoidstormSatchel
+--     #arrowtext Click on |cRXP_PICK_Lost Voidstorm Satchel|r
+--     .isQuestAvailable 89146
+--     .goto 2393,49.11,75.86
+--     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Lost Voidstorm Satchel|r
+--     .turnin 89146 >>Mining Knowledge Treasure
+--     .train 471013,3
 step
     #label EnchantedSunfireSilk
     #arrowtext Click on |cRXP_PICK_Enchanted Sunfire Silk|r
