@@ -2828,7 +2828,7 @@ step
 step
     #completewith next
     .goto 1458/0,170.700,1804.700,15 >> |cRXP_WARN_Die to any mobs inside to get back to the start of the instance faster. The graveyard is right outside the instance portal|r
-    >>|cRXP_WARN_Do NOT spirit res. Run back as a |T132331:0|t[Ghost] into the instance portal|r
+    >>|cRXP_WARN_Do NOT spirit res! Run back as a|r |T132331:0|t[Ghost] |cRXP_WARN_into the instance portal|r
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Truman|r
     >>|cRXP_FRIENDLY_Captain Truman|r |cRXP_WARN_is back at the start of the dungeon|r
