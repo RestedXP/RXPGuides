@@ -2826,6 +2826,10 @@ step
 step
     #requires CrumpledPaper
 step
+    #completewith next
+    .goto 1458/0,170.700,1804.700,15 >> |cRXP_WARN_Sterbt an beliebigen Mobs in der Instanz, um schneller zum Anfang der Instanz zurückzukehren. Der Friedhof liegt direkt außerhalb des Instanzportals|r
+    >>|cRXP_WARN_Benutzt NICHT den Geistheiler! Lauft zurück als ein|r |T132331:0|t[Geist] |cRXP_WARN_ins Instanzportal|r
+step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Captain Truman|r
     >>|cRXP_FRIENDLY_Captain Truman|r |cRXP_WARN_ist wieder am Anfang des Dungeons|r
     .turnin 95250 >> Gebt die Quest Scheußliche Kreaturen ab
@@ -3656,7 +3660,7 @@ step << Rogue
 step << !Dwarf Rogue
     #sticky
     #label AntiVenomStart
-    .collect 6452,1 >> Stelle ein |T134437:0|t[Gegengift] her
+    .collect 6452,1 >> Crafte ein |T134437:0|t[Gegengift]
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
     .train 7934,3 --Anti Venom spell trained
@@ -3715,7 +3719,7 @@ step << !Dwarf Rogue
 step << !Dwarf Rogue
     #sticky
     #label AntiVenomStart2
-    .collect 6452,1 >> Stelle ein |T134437:0|t[Gegengift] her
+    .collect 6452,1 >> Crafte ein |T134437:0|t[Gegengift]
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
     .train 7934,3 --Anti Venom spell trained

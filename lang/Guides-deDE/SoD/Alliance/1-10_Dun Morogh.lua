@@ -385,7 +385,7 @@ step << Rogue
     .turnin 3109 >> Gebt die Quest Verschlüsselte Rune ab << Dwarf
     .turnin 3113 >> Gebt die Quest Verschlüsseltes Memorandum ab << Gnome
     .accept 77658 >> Akzeptiert die Quest Dreimal geklaut << Dwarf
-    .turn in 77658 >> Gebt die Quest Dreimal geklaut ab << Dwarf
+    .turnin 77658 >> Gebt die Quest Dreimal geklaut ab << Dwarf
     .accept 77659 >> Akzeptiert die Quest Dreimal geklaut << Gnome
     .turnin 77659 >> Gebt die Quest Dreimal geklaut ab << Gnome
     .train 1784 >>Erlernt |T132320:0|t[Verstohlenheit]

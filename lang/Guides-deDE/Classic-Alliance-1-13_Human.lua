@@ -1192,7 +1192,7 @@ step
     .goto Elwynn Forest,42.105,65.927
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Marschall Dughan|r
     .turnin 54 >> Gebt die Quest Meldung in Goldhain ab
-    .accept 62 >> Die Fargodeep Mine annehmen
+    .accept 62 >> Die Tiefenschachtmine annehmen
     .target Marshal Dughan
 step
     #season 0,1 << Rogue
@@ -1267,7 +1267,7 @@ step
     .goto Elwynn Forest,42.105,65.927
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Marschall Dughan|r
     .turnin 54 >> Gebt die Quest Meldung in Goldhain ab
-    .accept 62 >> Die Fargodeep Mine annehmen
+    .accept 62 >> Die Tiefenschachtmine annehmen
     .target Marshal Dughan
 step
     .goto Elwynn Forest,43.318,65.705
@@ -1428,7 +1428,7 @@ step
     .goto Elwynn Forest,37.741,78.265,0
     .goto Elwynn Forest,41.576,69.499,0
     >>Tötet |cRXP_ENEMY_Steinhauereber|r. Plündert sie für |T133970:0|t|cRXP_LOOT_[Brocken Eberfleisch]|r
-    >>|cRXP_WARN_Das wird verwendet, um eure|r |T133971:0|t[Kochkunst] |cRXP_WARN_später zu leveln|r
+    >>|cRXP_WARN_Dies wird verwendet, um von eure|r |T133971:0|t[Kochkunst] |cRXP_WARN_später zu trainieren|r
     >>|cRXP_WARN_Ihr braucht 50|r |T133971:0|t[Kochkunst]|cRXP_WARN_ für eine spätere Quest in Dunkelhain.|r
     >>|cRXP_WARN_Macht euch jetzt nicht unnötig die Mühe, dies zu farmen. Tötet und plündert einfach alle Wildschweine, an denen du vorbei kommst|r
     .collect 769,50,86,1,0x20,cooking --Chunk of Boar Meat (10-50)
@@ -1500,7 +1500,7 @@ step
     .goto Elwynn Forest,43.131,85.722
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Billy Maclure|r
     .turnin 85 >> Gebt die Quest Die verlorene Halskette ab
-    .accept 86 >> Kuchen für Billy annehmen
+    .accept 86 >> Pastete für Billy annehmen
     .target Billy Maclure
 step
     .goto Elwynn Forest,43.154,89.625
@@ -1699,14 +1699,14 @@ step
 step
     #season 0,1
     .goto 1429,41.732,78.024
-    >>Tötet |cRXP_ENEMY_Goldzahn|r. Plündert ihn für |cRXP_LOOT_Bernice's Halskette|r
+    >>Tötet |cRXP_ENEMY_Goldzahn|r. Plündert sie für |cRXP_LOOT_Bernice's Halskette|r
     >>|cRXP_WARN_Seid vorsichtig, da er normalerweise den |cRXP_ENEMY_Koboldminenarbeiter|r neben ihm mit in den Kampf zieht|r
     .complete 87,1 --Bernice's Necklace (1)
     .mob Goldtooth
 step
     #season 2
     .goto 1429,41.732,78.024
-    >>Tötet |cRXP_ENEMY_Goldzahn|r. Plündert ihn für |cRXP_LOOT_Bernice's Halskette|r << !Warrior !Priest
+    >>Tötet |cRXP_ENEMY_Goldzahn|r. Plündert sie für |cRXP_LOOT_Bernice's Halskette|r << !Warrior !Priest
     >>Tötet |cRXP_ENEMY_Goldzahn|r. Plündert ihn für die |cRXP_LOOT_Bernice's Halskette|r und die |T134419:0|t|cRXP_LOOT_[Rune des wütenden Donners]|r << Warrior
     >>Tötet |cRXP_ENEMY_Goldzahn|r. Plündert ihn für die |cRXP_LOOT_Bernice's Halskette|r und die |T136222:0|t|cRXP_LOOT_[Erinnerung an einen dunklen Zweck]|r << Priest
     >>|cRXP_WARN_Seid vorsichtig, da er normalerweise den |cRXP_ENEMY_Koboldminenarbeiter|r neben ihm mit in den Kampf zieht|r
@@ -2643,7 +2643,7 @@ step << skip --Paladin
     #optional
     #completewith next
     >>Tötet |cRXP_ENEMY_Bandit der Defias|r. Plündert sie für |cRXP_LOOT_Rotes Leinenkopftuch|r und |T132889:0|t[Leinenstoff]
-    >>|cRXP_WARN_Behaltet den|r |T132889:0|t[Leinenstoff] |cRXP_WARN_für eine spätere Quest|r
+    >>|cRXP_WARN_behaltet den|r |T132889:0|t[Leinenstoff] |cRXP_WARN_für eine spätere Quest|r
     .complete 83,1 --Collect Red Linen Bandana (x6)
     .collect 2589,10,1644,1 --Linen Cloth (10)
     .disablecheckbox
@@ -2691,7 +2691,7 @@ step << skip --Paladin
     .goto Elwynn Forest,70.8,80.9,60,0
     >>Tötet |cRXP_ENEMY_Bandit der Defias|r. Plündert sie für |cRXP_LOOT_Rotes Leinenkopftuch|r
     >>Tötet |cRXP_ENEMY_Bandit der Defias|r. Plündert sie für |cRXP_LOOT_Rotes Leinenkopftuch|r und |T132889:0|t[Leinenstoff]
-    >>|cRXP_WARN_Behaltet den|r |T132889:0|t[Leinenstoff] |cRXP_WARN_für eine spätere Quest|r
+    >>|cRXP_WARN_behaltet den|r |T132889:0|t[Leinenstoff] |cRXP_WARN_für eine spätere Quest|r
     .complete 83,1 --Collect Red Linen Bandana (x6)
     .collect 2589,10,1644,1 --Linen Cloth (10)
     .disablecheckbox
@@ -2756,7 +2756,7 @@ step << Rogue
 step << Rogue
     #season 2
     .goto Elwynn Forest,80.365,79.134
-    >>Öffnet den |cRXP_PICK_Vergrabenen Schatz|r. Plündert ihn für die |T134419:0|t[|cRXP_FRIENDLY_Rune des Pistolenhelden|r]
+    >>Öffnet den |cRXP_PICK_Begraben Schatz|r. Plündert ihn für die |T134419:0|t[|cRXP_FRIENDLY_Rune des Pistolenhelden|r]
     .collect 203991,1 -- Rune of Quick Draw (1)
     .train 398196,1
 step << Rogue
@@ -2785,7 +2785,7 @@ step
     #xprate <1.5 << !Warlock
     #optional << Warlock
     .goto Elwynn Forest,79.457,68.789
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Sara Roderwald|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Sara Timberlain|r
     .turnin 83 >> Gebt die Quest Rote Leinenwaren ab
     .target Sara Timberlain
     .isQuestComplete 83
@@ -2843,7 +2843,7 @@ step << !Warlock
 step << !Warlock
     #optional
     .goto Redridge Mountains,30.73,59.99
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Stellvertreter Feldon|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Deputy Feldon|r
     .turnin 244 >> Gebt die Quest Eindringende Gnolle ab
     .target Deputy Feldon
     .isOnQuest 244
@@ -2860,14 +2860,14 @@ step << Paladin
     #season 2
     #label RRFP
     .goto Redridge Mountains,30.590,59.410
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Ariena Sturmfeder|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Ariena Stormfeather|r
     .fp Redridge Mountains >> Erlernt die Flugroute zum Rotkammgebirge
     .target Ariena Stormfeather
 step << Paladin
     #xprate >1.49
     #season 2
     .goto Redridge Mountains,30.590,59.410
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Ariena Sturmfeder|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Ariena Stormfeather|r
     .fp Redridge Mountains >> Erlernt die Flugroute zum Rotkammgebirge
     .target Ariena Stormfeather
     .train 410015,3
@@ -2876,7 +2876,7 @@ step << Paladin
     #season 2
     #label RRFP
     .goto Redridge Mountains,30.590,59.410
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Ariena Sturmfeder|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Ariena Stormfeather|r
     .fp Redridge Mountains >> Erlernt die Flugroute zum Rotkammgebirge
     .fly Stormwind >> Flieg nach Sturmwind
     .target Ariena Stormfeather
@@ -3009,7 +3009,7 @@ step
     .turnin 39 >> Gebt die Quest Zustellung von Thomas' Bericht ab
     .turnin 76 >> Gebt die Quest Die Jaspismine ab
     .accept 239 >> Akzeptiert die Quest Hilfe für die Weststromgarnison!
-    .accept 59 >> Cloth und Leather Armor annehmen << Warlock
+    .accept 59 >> Rüstung aus Tuch und aus Leder annehmen << Warlock
     .accept 109 >> Akzeptiert die Quest Meldung bei Gryan Stoutmantle
     .target Marshal Dughan
 step
@@ -3258,7 +3258,7 @@ step << Warlock
     .isOnQuest 11
 step << Warlock
     .goto Elwynn Forest,24.234,74.450
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Stellvertreter Rainer|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Deputy Rainer|r
     .turnin 11 >> Gebt die Quest Kopfgeld auf die Flusspfotengnolle ab
     .target Deputy Rainer
 step << !Warrior !Warlock
@@ -3296,7 +3296,7 @@ step
 step
 #xprate >1.49
     #label WestEntry
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Verna Brauenwirbel|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Verna Furlbrow|r
     >>|cRXP_WARN_Akzeptiert die anderen Quests nicht|r
     .accept 36 >> Akzeptiert die Quest Westfalleintopf
     .goto Westfall,59.92,19.42
@@ -3644,7 +3644,7 @@ step << Human Paladin
     #optional
     .goto StormwindClassic,39.80,29.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Duthorian Rall|r
-    .turnin 2998 >> Gebt die Quest Foliant der Offenbarung ab
+    .turnin 2998 >> Gebt die Quest Der Foliant der Offenbarung ab
     .accept 1641 >> Akzeptiert die Quest Der Foliant der Offenbarung
     .turnin 1641 >> Gebt die Quest Der Foliant der Offenbarung ab
     .target Duthorian Rall
@@ -3863,7 +3863,7 @@ step << Warlock
 step << Warlock
     #requires WLBandanaEnd
     .goto Elwynn Forest,79.457,68.789
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Sara Roderwald|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Sara Timberlain|r
     .turnin 59 >> Gebt die Quest Rüstung aus Tuch und aus Leder ab
     .turnin 83 >> Gebt die Quest Rote Leinenwaren ab
     .target Sara Timberlain
@@ -3872,7 +3872,7 @@ step << Warlock
     #optional
     #requires WLBandanaEnd
     .goto Elwynn Forest,79.457,68.789
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Sara Roderwald|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Sara Timberlain|r
     .turnin 59 >> Gebt die Quest Rüstung aus Tuch und aus Leder ab
     .target Sara Timberlain
 step << Warlock
@@ -3903,11 +3903,11 @@ step << Warlock
     .target Deputy Feldon
 step << Warlock
     .goto Redridge Mountains,30.733,59.996
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Stellvertreter Feldon|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Deputy Feldon|r
     .turnin 244 >> Gebt die Quest Eindringende Gnolle ab
 step << Warlock
     .goto Redridge Mountains,30.590,59.410
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Ariena Sturmfeder|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Ariena Stormfeather|r
     .fp Redridge Mountains >> Erlernt die Flugroute zum Rotkammgebirge
     .fly Stormwind >> Fliege nach Sturmwind
     .target Ariena Stormfeather
@@ -4039,7 +4039,7 @@ step << Warrior
     .accept 1665 >> Akzeptiert die Quest Bartlebys Becher
 step << Warrior
     .goto StormwindClassic,74.249,37.244
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Harry Burlwacht|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Harry Burlguard|r
     .turnin 1665 >> Gebt die Quest Bartlebys Becher ab
     .target Harry Burlguard
 step << Priest
@@ -4123,7 +4123,7 @@ step
     #optional
     #label TramCook1
     #completewith TramEnd
-    >>|cRXP_WARN_Auf der Tiefenbahn, wenn sie ankommt:|r
+    >>|cRXP_WARN_Geht auf die Tiefenbahn wenn sie ankommt:|r
     .cast 818 >>|cRXP_WARN_Erstellt eine|r |T135805:0|t[Einfaches Lagerfeuer] |cRXP_WARN_(unter dem Allgemeinen-Reiter eures Zauberbuches)|r
     .usespell 818
     .zoneskip Ironforge
@@ -4151,7 +4151,7 @@ step
     #requires TramCook2
     #label TramCook3
     #completewith TramEnd
-    >>|cRXP_WARN_Auf der Tiefenbahn, wenn sie ankommt:|r
+    >>|cRXP_WARN_Geht auf die Tiefenbahn wenn sie ankommt:|r
     .cast 818 >>|cRXP_WARN_Erstellt eine|r |T135805:0|t[Einfaches Lagerfeuer] |cRXP_WARN_(unter dem Allgemeinen-Reiter eures Zauberbuches)|r
     .usespell 818
     .zoneskip Ironforge
@@ -4342,7 +4342,7 @@ step << Warrior
     #optional
     #completewith WarriorTrain
     .goto 1455,67.400,84.909,15,0
-    .goto Ironforge,65.905,88.405,12 >> Reist in Richtung |cRXP_FRIENDLY_Bilban Tosslespanner|r
+    .goto Ironforge,65.905,88.405,12 >> Reise in Richtung |cRXP_FRIENDLY_Bilban Tosslespanner|r
 step << Warrior
     .goto Ironforge,65.905,88.405
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Bilban Tosslespanner|r
@@ -4457,8 +4457,8 @@ step << Mage/Paladin
     .goto Ironforge,35.30,32.76,20,0
     .goto Ironforge,27.17,12.58,20,0 << Paladin
     .goto Ironforge,27.60,11.06,20,0 << Mage
-    .goto Ironforge,27.17,8.58,12 >>Reist in Richtung |cRXP_FRIENDLY_Dink|r << Mage
-    .goto Ironforge,23.131,6.143,12 >>Reist zu |cRXP_FRIENDLY_Brandur Ironhammer|r << Paladin
+    .goto Ironforge,27.17,8.58,12 >>Reisenzu |cRXP_FRIENDLY_Dink|r << Mage
+    .goto Ironforge,23.131,6.143,12 >>Reisen zu |cRXP_FRIENDLY_Brandur Ironhammer|r << Paladin
 step << Mage
     #xprate >1.49
     .goto Ironforge,27.17,8.58
@@ -4616,7 +4616,7 @@ step
     .goto Ironforge,25.800,75.500,-1
     .goto Ironforge,24.200,74.600,-1
     .goto Ironforge,23.800,71.800,-1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit einem |cRXP_FRIENDLY_Ironforge Auktionator|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit einem |cRXP_FRIENDLY_Auktionator in Eisenschmiede|r
     >>|cRXP_WARN_Falls ihr das nicht wollt oder könnt, überspringt diesen Schritt|r
     >>|cRXP_BUY_Kauft die folgenden Gegenstände für einen schnelleren Abschluss in Loch Modan in Kürze:|r
     >>|T134342:0|t[Ebergedärme]
@@ -4659,7 +4659,7 @@ step
     #completewith Dirt
     .goto 1426,57.936,50.787,0
     >>Tötet |cRXP_ENEMY_Alter Klippeneber|r. Plündert sie für |T133970:0|t|cRXP_LOOT_[Brocken Eberfleisch]|r
-    >>|cRXP_WARN_Das wird verwendet, um eure|r |T133971:0|t[Kochkunst] |cRXP_WARN_später zu leveln|r
+    >>|cRXP_WARN_Dies wird verwendet, um eure|r |T133971:0|t[Kochkunst] |cRXP_WARN_später zu leveln|r
     >>|cRXP_WARN_Ihr braucht 50|r |T133971:0|t[Kochkunst]|cRXP_WARN_ für eine spätere Quest in Dunkelhain.|r
     >>|cRXP_WARN_Macht euch jetzt nicht unnötig die Mühe, dies zu farmen. Tötet und plündert einfach alle Wildschweine, an denen du vorbei kommst|r
     .collect 769,50,2178,1,0x20,cooking --Chunk of Boar Meat (10-50)
@@ -4694,7 +4694,7 @@ step << Warrior/Rogue
 step
     #label Rudra
     .goto Dun Morogh,63.082,49.851
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Rudra Bernruh|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Rudra Amberstill|r
     .accept 314 >> Akzeptiert die Quest Die Herde beschützen
     .target Rudra Amberstill
 step
@@ -4712,7 +4712,7 @@ step
     .mob Vagash
 step
     .goto Dun Morogh,63.082,49.851
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Rudra Bernruh|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Rudra Amberstill|r
     .turnin 314 >> Gebt die Quest Die Herde beschützen ab
     .target Rudra Amberstill
 step
@@ -4792,7 +4792,7 @@ step
     #xprate >1.49
     #label QuarryStart
     .goto Dun Morogh,69.084,56.330
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Großknecht Steinbraue|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Großknecht Stonebrow|r
     .accept 432 >> Akzeptiert die Quest Diese verfluchten Troggs!
     .target Foreman Stonebrow
     .xp >14,1
@@ -4808,7 +4808,7 @@ step << Warrior/Paladin/Rogue
 step << Warrior/Paladin/Rogue
     #optional
     #completewith QuarryEnd
-    .cast 2580 >> |cRXP_WARN_Benutzt die|r |T136025:0|t[Mineraliensuche]
+    .cast 2580 >> |cRXP_WARN_Wirks|r |T136025:0|t[Mineraliensuche]
     .usespell 2580
     .train 2575,3 --Mining Trained
 step
@@ -4844,7 +4844,7 @@ step
     #xprate >1.49
     #label QuarryEnd
     .goto Dun Morogh,69.084,56.330
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Großknecht Steinbraue|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Großknecht Stonebrow|r
     .turnin 432 >> Gebt die Quest Diese verfluchten Troggs! ab
     .target Foreman Stonebrow
     .isQuestComplete 432
@@ -4889,7 +4889,7 @@ step
 step
     .goto Dun Morogh,81.2,42.7,45,0
     .goto Dun Morogh,83.892,39.188
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Pilot Hammerfuß|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Pilot Hammerfoot|r
     .accept 419 >> Akzeptiert die Quest Der vermisste Pilot
     .target Pilot Hammerfoot
 step
@@ -4917,14 +4917,14 @@ step << Mage
 step
     #label Revenge
     .goto Dun Morogh,83.892,39.188
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Pilot Hammerfuß|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Pilot Hammerfoot|r
     .turnin 417,1 >> Gebt die Quest Pilotenrache ab << Rogue
     .turnin 417 >> Gebt die Quest Pilotenrache ab << !Rogue
     .target Pilot Hammerfoot
 step << Rogue
     #optional
     #completewith next
-    +|cRXP_WARN_Legt den|r |T135641:0|t[Handwerkerdolch] |cRXP_WARN_in eurer Nebenhand an|r
+    +|cRXP_WARN_Legt|r |T135641:0|t[Handwerkerdolch] |cRXP_WARN_in eurer Nebenhand an|r
     .use 2218
     .itemcount 2218,1
     .itemStat 17,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
@@ -4956,7 +4956,7 @@ step
     .target Gothor Brumn
 step
     .goto Loch Modan,24.764,18.397
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gebirgsjäger Sturmlanze|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gebirgsjäger Stormpike|r
     >>|cRXP_WARN_Nehmt Sturmlanze's Order noch nicht an|r
     .turnin 353 >> Gebt die Quest Stormpikes Lieferung ab
     .accept 307 >> Akzeptiert die Quest Schmutzige Pfoten
@@ -5049,7 +5049,7 @@ step
     .target Yanni Stoutheart
 step
     .goto Loch Modan,35.534,48.404
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gastwirt Ofenglut|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gastwirt Hearthstove|r
     .vendor 6734 >> |cRXP_BUY_Kauft|r |T132815:0|t[Eiskalte Milch] |cRXP_BUY_. Versucht, etwa 20 zu haben|r << !Warrior !Rogue
     .target Innkeeper Hearthstove
     .xp >15,1
@@ -5305,7 +5305,7 @@ step << Human
     #xprate <1.59
     #label StormpikeDelivery
     .goto Loch Modan,24.77,18.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gebirgsjäger Sturmlanze|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gebirgsjäger Stormpike|r
     .turnin 307 >> Gebt die Quest Schmutzige Pfoten ab
     .turnin 1339 >> Gebt die Quest Gebirgsjäger Stormpikes Aufgabe ab
     .accept 1338 >> Akzeptiert die Quest Stormpikes Bestellung
@@ -5315,7 +5315,7 @@ step << Human
     #xprate >1.59
     #label StormpikeDelivery
     .goto Loch Modan,24.77,18.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gebirgsjäger Sturmlanze|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gebirgsjäger Stormpike|r
     .turnin 307 >> Gebt die Quest Schmutzige Pfoten ab
     .turnin 1339 >> Gebt die Quest Gebirgsjäger Stormpikes Aufgabe ab
     .accept 1338 >> Akzeptiert die Quest Stormpikes Bestellung << Mage/Warlock/Rogue
@@ -5391,7 +5391,7 @@ step
     #optional
     #completewith next
     .goto Loch Modan,24.78,70.17,10,0
-    .goto Loch Modan,23.73,75.52,15 >> Lauft den Schmutzpfad hinauf und springt dann in den Bunker hinunter
+    .goto Loch Modan,23.73,75.52,15 >> Lauft den Erdpfad hinauf und springt dann in den Bunker hinein
 step
     #xprate <1.59
     .goto Loch Modan,23.233,73.675
@@ -5716,7 +5716,7 @@ step << Paladin
     .train 410015,1
 step << Priest
     #xprate <1.5
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Brother Joshua|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Bruder Joshua|r
     .goto StormwindClassic,38.54,26.86
     .trainer >> Trainiere deine Klassenfähigkeiten
     .target Brother Joshua
@@ -5808,7 +5808,7 @@ step
     #xprate <1.5
     #ah
     .goto Stormwind City,53.612,59.764
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Auktionatorin Jaxon|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Auktionator Jaxon|r
     >>|cRXP_BUY_Kauft|r |T133970:0|t|cRXP_LOOT_[Brocken Eberfleisch]|r |cRXP_BUY_und/oder|r |T133970:0|t|cRXP_LOOT_[Sehniges Wolfsfleisch]|r |cRXP_BUY_um eure|r |T133971:0|t[Kochkunst] |cRXP_BUY_später zu skillen|r
     >>|cRXP_WARN_Ihr braucht 50|r |T133971:0|t[Kochkunst]|cRXP_WARN_ für eine spätere Quest in Dunkelhain.|r
     >>|cRXP_WARN_Falls ihr das nicht wollt oder könnt, überspringt diesen Schritt|r
@@ -5840,7 +5840,7 @@ step
     #ah
     #optional
     .goto Stormwind City,53.612,59.764
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Auktionatorin Jaxon|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Auktionator Jaxon|r
     >>|cRXP_WARN_Falls ihr das nicht wollt oder könnt, überspringt diesen Schritt|r
     >>|cRXP_BUY_Kauft die folgenden Gegenstände für schnellere Abgaben bald in Westfall und Dunkelküste |r
     >>|T133972:0|t[Sehniges Geierfleisch]
@@ -5862,7 +5862,7 @@ step
 step
     #xprate <1.5
     .goto StormwindClassic,66.28,62.13
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Dungar Trinkfest|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Dungar Longdrink|r
     .turnin 6261 >> Gebt die Quest Dungar Longdrink ab
     .accept 6285 >> Akzeptiert die Quest Zurück zu Lewis
     .target Dungar Longdrink
@@ -5916,7 +5916,7 @@ step << Priest/Warlock
     .goto Ironforge,22.837,17.094,8,0
     .goto Ironforge,21.131,17.276,5,0
     .goto Ironforge,23.135,15.936
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich unten mit |cRXP_FRIENDLY_Harick Felstrommel|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich unten mit |cRXP_FRIENDLY_Harick Boulderdrum|r
     >>|cRXP_BUY_Kauft einen|r |T135468:0|t[Glimmender Zauberstab] |cRXP_BUY_von ihm|r
     .collect 5208,1 --Smoldering Wand (1)
     .target Harick Boulderdrum
@@ -5935,7 +5935,7 @@ step << Priest/Warlock
     #xprate >1.49
     #optional
     #completewith next
-    +|cRXP_WARN_Vergesst nicht, den|r |T135468:0|t[Glimmender Zauberstab] |cRXP_WARN_später auszurüsten, wenn ihr Stufe 15 erreicht|r
+    +|cRXP_WARN_Erinnert euch, den|r |T135468:0|t[Glimmender Zauberstab] anzulegen |cRXP_WARN_später, wenn ihr auf Stufe 15 seid|r
     .use 5208
     .itemcount 5208,1
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<13.4
@@ -5947,7 +5947,7 @@ step
     .goto Ironforge,25.800,75.500,-1
     .goto Ironforge,24.200,74.600,-1
     .goto Ironforge,23.800,71.800,-1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit einem |cRXP_FRIENDLY_Ironforge Auktionator|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit einem |cRXP_FRIENDLY_Auktionator in Eisenschmiede|r
     >>|cRXP_BUY_Kauft|r |T133970:0|t|cRXP_LOOT_[Brocken Eberfleisch]|r |cRXP_BUY_und/oder|r |T133970:0|t|cRXP_LOOT_[Sehniges Wolfsfleisch]|r |cRXP_BUY_um eure|r |T133971:0|t[Kochkunst] |cRXP_BUY_später zu skillen|r
     >>|cRXP_WARN_Ihr braucht 50|r |T133971:0|t[Kochkunst]|cRXP_WARN_ für eine spätere Quest in Dunkelhain.|r
     >>|cRXP_WARN_Falls ihr das nicht wollt oder könnt, überspringt diesen Schritt|r
@@ -5974,7 +5974,7 @@ step
     .goto Ironforge,25.800,75.500,-1
     .goto Ironforge,24.200,74.600,-1
     .goto Ironforge,23.800,71.800,-1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit einem |cRXP_FRIENDLY_Ironforge Auktionator|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit einem |cRXP_FRIENDLY_Auktionator in Eisenschmiede|r
     >>|cRXP_WARN_Falls ihr das nicht wollt oder könnt, überspringt diesen Schritt|r
     >>|cRXP_BUY_Kauft die folgenden Gegenstände in Kürze für schnellere Abgaben in Dunkelküste:|r
     >>|T133972:0|t[Schreiterfleisch]
@@ -6042,7 +6042,7 @@ step << Warlock
     #xprate >1.49
     .goto Ironforge,51.1,8.7,15,0
     .goto Ironforge,50.343,5.657
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Wilddornrose|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Briarthorn|r
     .trainer >> Trainiere deine Klassenfähigkeiten
     .target Briarthorn
 step << Gnome Rogue/Dwarf Rogue
@@ -6065,12 +6065,12 @@ step << Warlock/Rogue
     #optional
     #label Jubahl
     #completewith next
-    .goto 1455,53.164,7.037,10 >> Betretet |cRXP_FRIENDLY_Jubahl Corpseseekers|r Haus
+    .goto 1455,53.164,7.037,10 >> Betretet |cRXP_FRIENDLY_Jubahl Corpseseeker|r's Haus
 step << Warlock
     #xprate >1.49
     .goto Ironforge,53.2,7.8,15,0
     .goto Ironforge,52.701,6.070
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Jubaal Leichenfund|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Jubahl Corpseseeker|r
     .vendor >> |cRXP_BUY_Kauft|r |T133738:0|t[Zauberfoliant des Schattenverzehrens (Rang 1)] |cRXP_BUY_und|r |T133738:0|t[Zauberfoliant der Opferung (Rang 1)] |cRXP_BUY_falls ihr es euch leisten könnt|r
     .target Jubahl Corpseseeker
 step << skip --logout skip << Warlock/Rogue
@@ -6118,7 +6118,7 @@ step
     #xprate >1.49
     #hardcore
     #completewith next
-    .goto Dun Morogh,59.43,42.85,150 >> Reist zum Dun Morogh -> Sumpfland Skip-Spot
+    .goto Dun Morogh,59.43,42.85,150 >> Reist zum Dun Morogh -> Sumpfland Skip Point
 step
     #xprate >1.49
     #hardcore
@@ -6142,9 +6142,9 @@ step
     .goto Wetlands,12.1,60.3,40,0
     >>|cRXP_WARN_Schaut das Video-Handbuch zuerst als Referenz!|r
     >>|cRXP_WARN_Macht den Dun Morogh -> Sumpfland skip|r ohne zu sterben
-    >>|cRXP_WARN_Weicht den |cRXP_ENEMY_Sumpflandkrokilisks|r und den |cRXP_ENEMY_Murlocs|r beim Durchqueren des Wassers aus|r
-    .link https://www.youtube.com/watch?v=9afQTimaiZQ >> |cRXP_WARN_Clickt hier für die Videoanleitung|r
-    .goto Wetlands,12.1,60.3,80 >> Laufe zum Hafen von Menethil
+    >>|cRXP_WARN_Weicht den |cRXP_ENEMY_Sumpflandkrokilisk|r und |cRXP_ENEMY_Murlocs|r aus, wenn ihr das Wasser durchquert|r
+    .link https://www.youtube.com/watch?v=9afQTimaiZQ >> |cRXP_WARN_Klickt hier für die Videoanleitung|r
+    .goto Wetlands,12.1,60.3,80 >> Lauft zum Hafen von Menethil
     .mob Wetlands Crocolisk
     .mob Young Wetlands Crocolisk
     .mob Bluegill Raider
@@ -6181,7 +6181,7 @@ step << Human
     >>|cRXP_WARN_Macht den Dun Morogh -> Sumpfland skip|r ohne zu sterben
     >>|cRXP_WARN_Weicht den |cRXP_ENEMY_Sumpflandkrokilisks|r und den |cRXP_ENEMY_Murlocs|r beim Durchqueren des Wassers aus|r
     >>|cRXP_WARN_HINWEIS: Ihr führt den langsameren ohne zu sterben skip durch, da ihr|r |T134916:0|t[Funke der Inspiration] |cRXP_WARN_Weltbuff|r habt
-    .link https://www.youtube.com/watch?v=9afQTimaiZQ >> |cRXP_WARN_Clickt hier für die Videoanleitung|r
+    .link https://www.youtube.com/watch?v=9afQTimaiZQ >> |cRXP_WARN_klickt hier für die Videoanleitung|r
     .subzone 150 >> Laufe zum Hafen von Menethil
     .mob Wetlands Crocolisk
     .mob Young Wetlands Crocolisk
@@ -6248,7 +6248,7 @@ step
     #hardcore << !Human
     .goto Wetlands,9.49,59.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Shellei|r außerhalb
-    .fp Wetlands >> Erlernt die Flugroute nach Sumpfland
+    .fp Wetlands >> Erlernt die Flugroute ins Sumpfland
     .target Shellei Brondir
 step
     #xprate >1.49
@@ -6301,7 +6301,7 @@ step
     #label DarkshoreCook3
     #completewith DarkshoreBoat
     >>|cRXP_WARN_Auf dem Boot, wenn es gerade angekommen ist, oder am Dock, wenn das Boot gerade abgefahren ist:|r
-    .cast 818 >>|cRXP_WARN_Erstellt eine|r |T135805:0|t[Einfaches Lagerfeuer] |cRXP_WARN_(unter dem Allgemeinen-Reiter eures Zauberbuches)|r
+    .cast 818 >>|cRXP_WARN_Erstellt ein|r |T135805:0|t[Einfaches Lagerfeuer] |cRXP_WARN_(unter dem Allgemeinen-Reiter eures Zauberbuches)|r
     .usespell 818
     .zoneskip Darkshore
     .itemcount 769,1 --Chunk of Boar Meat (1+)

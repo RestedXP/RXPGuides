@@ -1151,7 +1151,7 @@ RXPGuides.RegisterGuide([[
 #version 2
 #group RestedXP ADV AoE Allianz Magier
 #defaultfor none Human Mage
-#next 10-12 ADV Dunkelküste 1 Magier AoE
+#next 10-12 Fortgeschrittender Dunkelküste 1 Magier AoE Guide
 
 step
     #completewith Rudra
@@ -1443,7 +1443,7 @@ RXPGuides.RegisterGuide([[
 #version 2
 #group RestedXP ADV AoE Allianz Magier
 #defaultfor none Gnome Mage
-#next 10-12 ADV Dunkelküste 1 Magier AoE
+#next 10-12 Fortgeschrittender Dunkelküste 1 Magier AoE Guide
 
 
 step << !Gnome Mage
@@ -2999,7 +2999,7 @@ RXPGuides.RegisterGuide([[
 #forever
 #disabledungeons
 << Alliance Mage
-#name 10-12 ADV Dunkelküste 1 Magier AoE
+#name 10-12 Fortgeschrittender Dunkelküste 1 Magier AoE Guide
 #version 2
 #group RestedXP ADV AoE Allianz Magier
 #defaultfor none Mage
@@ -3444,7 +3444,7 @@ step
     .mob Young Reef Crawler
 step
     .goto 1439/1,541.75,6313.31
-    >>Clickt die |cRXP_PICK_Buzzbox 827|r
+    >>Klickt |cRXP_PICK_Buzzbox 827|r
     .turnin 983 >>Gebt die Quest Dröhnkiste 827 ab
     .accept 1001 >>Akzeptiert die Quest Dröhnkiste 411
 step
@@ -4012,7 +4012,7 @@ step
     .target Terenthis
 step
     .goto 1439/1,541.75,6313.31
-    >>Clickt die |cRXP_PICK_Buzzbox 827|r
+    >>Klickt |cRXP_PICK_Buzzbox 827|r
     .turnin 983 >>Gebt die Quest Dröhnkiste 827 ab
     .accept 1001 >>Akzeptiert die Quest Dröhnkiste 411
 step
