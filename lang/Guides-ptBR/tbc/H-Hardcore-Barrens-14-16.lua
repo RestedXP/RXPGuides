@@ -100,7 +100,7 @@ step << Undead/BloodElf
     .goto The Barrens,52.24,31.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sergra Espinhonegro|r
     .turnin 842 >>Entregue Recrutamento na Encruzilhada
-    .accept 844 >>Aceite A Ameaça Pinote
+    .accept 844 >>Aceite A ameaça pinote
     .target Sergra Darkthorn
 step
     #label CrossRoads1
@@ -122,7 +122,7 @@ step
 step
     #optional
     #completewith next
-    >>Mate os |cRXP_ENEMY_Buscadores de Água|r, os |cRXP_ENEMY_Thornweavers|r e os |cRXP_ENEMY_Hunters|r
+    >>Mate |cRXP_ENEMY_Rabdomantes|r, |cRXP_ENEMY_Tecespinhos|r e |cRXP_ENEMY_Caçadores|r
     .complete 871,1 --Razormane Water Seeker (8)
     .mob +Razormane Water Seeker
     .complete 871,2 --Razormane Thornweaver (8)
@@ -158,7 +158,7 @@ step
 	.goto The Barrens,54.05,26.11,25,0
 	.goto The Barrens,53.51,25.24,25,0
 	.goto The Barrens,53.63,24.50,25,0
-    >>Mate os |cRXP_ENEMY_Buscadores de Água|r, os |cRXP_ENEMY_Thornweavers|r e os |cRXP_ENEMY_Hunters|r
+    >>Mate |cRXP_ENEMY_Rabdomantes|r, |cRXP_ENEMY_Tecespinhos|r e |cRXP_ENEMY_Caçadores|r
     .complete 871,1 --Razormane Water Seeker (8)
     .mob +Razormane Water Seeker
     .complete 871,2 --Razormane Thornweaver (8)
@@ -222,7 +222,7 @@ step
 step
     #optional
     #completewith next
-    >>Saque os |cRXP_PICK_Caixotes de Suprimento da Encruzilhada|r
+    >>Pegue os |cRXP_PICK_Caixotes de Suprimentos da Encruzilhada|r
     >>|cRXP_WARN_Pode aparecer em vários locais|r
     .complete 5041,1 --Crossroads' Supply Crates (1)
 step
@@ -247,7 +247,7 @@ step
     .goto The Barrens,59.46,24.58,30,0
     .goto The Barrens,58.38,27.01,0
     .goto The Barrens,59.46,24.58,0
-    >>Saque os |cRXP_PICK_Caixotes de Suprimento da Encruzilhada|r
+    >>Pegue os |cRXP_PICK_Caixotes de Suprimentos da Encruzilhada|r
     >>|cRXP_WARN_Pode aparecer em vários locais|r
     .complete 5041,1 --Crossroads' Supply Crates (1)
 step
@@ -536,7 +536,7 @@ step
     >>|cRXP_BUY_Compre|r |T133918:0|t[Pargos-da-lama Bocalonga] |cRXP_BUY_dele|r
     >>|cRXP_BUY_Compre|r |T132796:0|t[Suco de Melão] |cRXP_BUY_dele|r << Mage/Warlock/Priest/Shaman/Druid/Paladin
     >>|T133918:0|t[Pargos-da-lama Bocalonga] |cRXP_WARN_são muito baratos, compre quantos quiser|r
-    .home >>Defina sua Pedra de Retorno em Ratchet << !BloodElf !Undead
+    .home >>Defina sua Pedra de Regresso em Vila Catraca << !BloodElf !Undead
     .vendor >> Venda os itens de lixo
     .collect 4592,20,895,1 --Longjaw Mud Snapper (20)
     .collect 1205,10,895,1 << Mage/Warlock/Priest/Shaman/Druid/Paladin --Melon Juice (10)
@@ -786,7 +786,7 @@ step
     .goto The Barrens,52.23,31.00
 step << Hunter
     .goto The Barrens,51.67,29.95
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Converse com|r |cRXP_FRIENDLY_Barg|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Fale com|r |cRXP_FRIENDLY_Barg|r
     .vendor >>|cRXP_BUY_Buy|r |T132382:0|t[Sharp Arrows] |cRXP_BUY_ou|r |T132384:0|t[Heavy Shots] |cRXP_BUY_from him|r
     .target Barg
 step
@@ -896,7 +896,7 @@ step
     .goto The Barrens,55.80,17.03
     >>Usar o |T134227:0|t[Berrante de Echeyaki] para invocar |cRXP_ENEMY_Echeyaki|r
     >>Mate |cRXP_ENEMY_Echeyaki|r. Pegue o |cRXP_LOOT_Pelego de Echeyaki|r
-    >>|cRXP_WARN_Se |cRXP_ENEMY_Echeyaki|r não aparece após usar o|r |T134227:0|t[Berrante de Echeyaki]|cRXP_WARN_ ou você não recebeu a tag quando apareceu, pule este passo|r
+    >>|cRXP_WARN_Se |cRXP_ENEMY_Echeyaki|r não aparecer após usar o|r |T134227:0|t[Berrante de Echeyaki]|cRXP_WARN_ ou você não garantir o primeiro ataque quando ele aparecer, pule esta etapa|r
     .complete 881,1 --Echeyakee's Hide (1)
     .mob Echeyakee
     .use 10327
@@ -1290,7 +1290,7 @@ step
 step
     .goto Orgrimmar,31.74,37.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thrall|r
-    .turnin 5726 >>Entregue Escondido Enemies
+    .turnin 5726 >>Entregue Inimigos ocultos
     .accept 5727 >>Aceite Escondido Enemies
     .target Thrall
     .isQuestComplete 5726
@@ -1320,7 +1320,7 @@ step
 step
     .goto Orgrimmar,31.74,37.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thrall|r
-    .turnin 5727 >>Entregue Escondido Enemies
+    .turnin 5727 >>Entregue Inimigos ocultos
     .accept 5728 >>Aceite Escondido Enemies
     .target Thrall
     .isQuestComplete 5727
@@ -1424,7 +1424,7 @@ step
 step
     .goto Orgrimmar,31.74,37.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thrall|r
-    .turnin 5728 >>Entregue Escondido Enemies
+    .turnin 5728 >>Entregue Inimigos ocultos
     .accept 5729 >>Aceite Escondido Enemies
     .target Thrall
     .isQuestComplete 5728
@@ -1439,7 +1439,7 @@ step
 step
     .goto Orgrimmar,49.6,50.4
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Neeru Cortafogo|r
-    .turnin 5729 >>Entregue Escondido Enemies
+    .turnin 5729 >>Entregue Inimigos ocultos
     .accept 5730 >>Aceite Escondido Enemies
     .target Neeru Fireblade
     .isQuestTurnedIn 5728
@@ -1447,7 +1447,7 @@ step
 step
     .goto Orgrimmar,31.74,37.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thrall|r
-    .turnin 5730 >>Entregue Escondido Enemies
+    .turnin 5730 >>Entregue Inimigos ocultos
     .target Thrall
     .isQuestTurnedIn 5728
     .dungeon RFC

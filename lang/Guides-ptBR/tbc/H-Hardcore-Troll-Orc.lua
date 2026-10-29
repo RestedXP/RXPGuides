@@ -207,7 +207,7 @@ step << Warlock
     .mob Mottled Boar
 step << Warlock
     #completewith Ruzan2
-	>>|cRXP_WARN_Triturar os |cRXP_ENEMY_Mottled Boars|r. Saque-os até que você tenha 1 silver de valor em itens do vendedor|r
+	>>|cRXP_WARN_Mate |cRXP_ENEMY_Mosquetuscos|r. Saqueie-os até ter itens que somem 1 moeda de prata ao vendê-los a um vendedor|r
     .mob Mottled Boar
 	.money >0.01
 step << Rogue
@@ -299,7 +299,7 @@ step << Warlock
     .goto Durotar,40.65,68.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Nartok|r
     .turnin 3090 >>Entregue Pergaminho Maculado
-    .train 172 >> Treine |T136118:0|t[Corrupção]
+    .train 172 >> Treine |T136118:0|t [Corrupção]
     .target Nartok
 step
     #label Galgar
@@ -984,7 +984,7 @@ step
     .target Lar Prowltusk
 step
     #label SenjinPickups
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Vel'rin|r, |cRXP_FRIENDLY_Vornal|r e |cRXP_FRIENDLY_Gadrin|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Vel'rin Presa|r, |cRXP_FRIENDLY_Mestre Vornal|r e |cRXP_FRIENDLY_Mestre Gadrin|r
     .accept 817 >>Aceite Presa prática
     .goto Durotar,55.95,73.93
     .target +Vel'rin Fang
@@ -1327,7 +1327,7 @@ step << Warrior/Rogue/Shaman
     .goto Durotar,55.62,73.61
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Hai'zan|r
     >>|cRXP_BUY_Compre|r |T133974:0|t[Pernil de Carne] |cRXP_BUY_dele|r
-    .vendor >> Lixo Comerciante
+    .vendor >> Venda os lixos
     .collect 2287,10,823,1 --Haunch of Meat (10)
     .money <0.025
     .target Hai'zan
@@ -2094,7 +2094,7 @@ step
     .isOnQuest 826
 step
     #completewith MinshinasSkull
-    >>Abate |cRXP_ENEMY_Hexed Trolls|r e |cRXP_ENEMY_Voodoo Trolls|r
+    >>Mate |cRXP_ENEMY_Trolls Bagateado|r e os |cRXP_ENEMY_Trolls Vodu|r
     .complete 826,1 --Hexed Troll (8)
     .mob +Hexed Troll
     .complete 826,2 --Voodoo Troll (8)
@@ -2138,7 +2138,7 @@ step
 	.goto Durotar,68.50,84.32,40,0
 	.goto Durotar,68.47,86.77,40,0
 	.goto Durotar,67.23,88.00,40,0
-    >>Abate |cRXP_ENEMY_Hexed Trolls|r e |cRXP_ENEMY_Voodoo Trolls|r
+    >>Mate |cRXP_ENEMY_Trolls Bagateado|r e os |cRXP_ENEMY_Trolls Vodu|r
     .complete 826,1 --Hexed Troll (8)
     .mob +Hexed Troll
     .complete 826,2 --Voodoo Troll (8)
@@ -2353,7 +2353,7 @@ step << Hunter
     .target Thotar
 step << Hunter
     .goto Durotar,52.97,41.04
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Conversar com |cRXP_FRIENDLY_Ghrawt|r. Compre|r |T132382:0|t[Flechas Afiadas] |cRXP_BUY_e um|r |T134410:0|t[Aljava Média] |cRXP_BUY_dele|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Fale com |cRXP_FRIENDLY_Ghrawt|r. Compre|r |T132382:0|t[Flechas Afiadas] |cRXP_BUY_e uma|r |T134410:0|t[Aljava Média] |cRXP_BUY_dele|r
     .collect 2515,1200,6082,1 --Sharp Arrow (1200)
     .collect 11362,1,6082,1 --Medium Quiver (1)
     .target Ghrawt
@@ -2380,7 +2380,7 @@ step << Hunter
     .goto Durotar,51.85,43.49
     >>Entre no bunker
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thotar|r dentro
-    .turnin 6062 >>Entregue Domar a Fera - Missão
+    .turnin 6062 >>Entregue Domando a fera
     .accept 6083 >>Aceite Domando a Fera
     .target Thotar
 step << Hunter
@@ -2407,7 +2407,7 @@ step << Hunter
     .goto Durotar,51.85,43.49
     >>Entre no bunker
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thotar|r dentro
-    .turnin 6083 >>Entregue Domar a Fera - Missão
+    .turnin 6083 >>Entregue Domando a fera
     .accept 6082 >>Aceite Domando a Fera
     .target Thotar
 step << Hunter
@@ -2430,7 +2430,7 @@ step << Hunter
     .goto Durotar,51.85,43.49
     >>Entre no bunker
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thotar|r dentro
-    .turnin 6082 >>Entregue Domar a Fera - Missão
+    .turnin 6082 >>Entregue Domando a fera
     .accept 6081 >>Aceite Treinando a Fera
     .target Thotar
 step << Hunter
@@ -2533,7 +2533,7 @@ step
     .goto The Barrens,52.24,31.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sergra Espinhonegro|r
     .turnin 842 >>Entregue Recrutamento na Encruzilhada
-    .accept 844 >>Aceite A Ameaça Pinote
+    .accept 844 >>Aceite A ameaça pinote
 step
     .goto The Barrens,51.99,29.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estalajadeiro Boorand Vento das Planícies|r
@@ -2566,7 +2566,7 @@ step << Orc Warlock
     .target Thrall
 step << Hunter
     #completewith next
-    .goto Orgrimmar,68.02,38.69,30 >> Vá para o Vale da Honra
+    .goto Orgrimmar,68.02,38.69,30 >> Vá ao Vale da Honra
 step << Hunter
     .goto Orgrimmar,66.05,18.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ormak|r
@@ -2583,7 +2583,7 @@ step << Hunter
     >>|cRXP_WARN_Lembre-se de treinar seu ajudante sempre que ele ganhar Pontos de Treinamento para|r |T132162:0|t[Treinamento de Feras]
 step << Orc/Troll
     .goto Orgrimmar,54.097,68.407
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com|r |cRXP_FRIENDLY_Gryshka|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com|r |cRXP_FRIENDLY_Estalajadeira Gryshka|r
     .turnin 6384 >>Entregue Carona para Orgrimmar
     .accept 6385 >>Aceite Doraso, o mestre de mantícoras
     .target Innkeeper Gryshka
@@ -2640,7 +2640,7 @@ step << Orc Warlock
 step << Orc Warlock
     .goto Orgrimmar,31.74,37.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thrall|r
-    .turnin 5726 >>Entregue Escondido Enemies
+    .turnin 5726 >>Entregue Inimigos ocultos
     .accept 5727 >>Aceite Escondido Enemies
     .target Thrall
     .isQuestComplete 5726
@@ -2690,7 +2690,7 @@ step << Orc Warlock
 step << Orc Warlock
     .goto Orgrimmar,31.74,37.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thrall|r
-    .turnin 5727 >>Entregue Escondido Enemies
+    .turnin 5727 >>Entregue Inimigos ocultos
     .target Thrall
     .isQuestTurnedIn 5726
 step << Orc Warlock

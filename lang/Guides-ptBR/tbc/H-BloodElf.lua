@@ -1380,7 +1380,7 @@ step
     #completewith next
     .goto Eversong Woods,44.04,70.35,0
     >>|cRXP_BUY_Compre|r |T133634:0|t[Bolsa Marrom Pequena] |cRXP_BUY_de|r |cRXP_FRIENDLY_Halis|r |cRXP_BUY_se você precisa de bolsas|r
-    .vendor >> Lixo Comerciante
+    .vendor >> Venda os lixos
     .target Halis Dawnstrider
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Velan|r e |cRXP_FRIENDLY_Landra|r
@@ -2320,7 +2320,7 @@ step << BloodElf Hunter
 step << BloodElf Hunter
     .goto Eversong Woods,60.32,62.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dawnrunner|r
-    .turnin 9484 >> Entregue Domar a Fera - Missão
+    .turnin 9484 >> Entregue Domando a fera
     .accept 9486 >> Aceite Domando a Fera
     .target Lieutenant Dawnrunner
 step << BloodElf Hunter
@@ -2341,7 +2341,7 @@ step << BloodElf Hunter
 step << BloodElf Hunter
     .goto Eversong Woods,60.32,62.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dawnrunner|r
-    .turnin 9486 >> Entregue Domar a Fera - Missão
+    .turnin 9486 >> Entregue Domando a fera
     .accept 9485 >> Aceite Domando a Fera
     .target Lieutenant Dawnrunner
 step
@@ -2520,7 +2520,7 @@ step << BloodElf Hunter
     .turnin 8476 >> Entregue Defendendo o Terreno
     .turnin 9360 >> Entregue Invasão Amani
     .accept 9363 >> Aceite Aviso à Vila de Brisabela
-    .turnin 9485 >> Entregue Domar a Fera - Missão
+    .turnin 9485 >> Entregue Domando a fera
     .accept 9673 >> Aceite Treinamento de Feras
     .target Lieutenant Dawnrunner
 step
@@ -6555,7 +6555,7 @@ step
 step
     .goto Orgrimmar,31.74,37.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thrall|r
-    .turnin 5726 >>Entregue Escondido Enemies
+    .turnin 5726 >>Entregue Inimigos ocultos
     .accept 5727 >>Aceite Escondido Enemies
     .target Thrall
     .isQuestComplete 5726
@@ -6585,7 +6585,7 @@ step
 step
     .goto Orgrimmar,31.74,37.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thrall|r
-    .turnin 5727 >>Entregue Escondido Enemies
+    .turnin 5727 >>Entregue Inimigos ocultos
     .accept 5728 >>Aceite Escondido Enemies
     .target Thrall
     .isQuestComplete 5727
@@ -6689,7 +6689,7 @@ step
 step
     .goto Orgrimmar,31.74,37.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thrall|r
-    .turnin 5728 >>Entregue Escondido Enemies
+    .turnin 5728 >>Entregue Inimigos ocultos
     .accept 5729 >>Aceite Escondido Enemies
     .target Thrall
     .isQuestComplete 5728
@@ -6704,7 +6704,7 @@ step
 step
     .goto Orgrimmar,49.6,50.4
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Neeru Cortafogo|r
-    .turnin 5729 >>Entregue Escondido Enemies
+    .turnin 5729 >>Entregue Inimigos ocultos
     .accept 5730 >>Aceite Escondido Enemies
     .target Neeru Fireblade
     .isQuestTurnedIn 5728
@@ -6712,7 +6712,7 @@ step
 step
     .goto Orgrimmar,31.74,37.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thrall|r
-    .turnin 5730 >>Entregue Escondido Enemies
+    .turnin 5730 >>Entregue Inimigos ocultos
     .target Thrall
     .isQuestTurnedIn 5728
     .dungeon RFC

@@ -1209,7 +1209,7 @@ step << Hunter
 step << Hunter
     .goto Dun Morogh,45.810,53.039
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Grif Selvacuore|r
-    .turnin 6064 >>Entregue Domar a Fera - Missão
+    .turnin 6064 >>Entregue Domando a fera
     .target Grif Wildheart
     .accept 6084 >>Aceite Domando a Fera
 step << Hunter
@@ -1220,7 +1220,7 @@ step << Hunter
 step << Hunter
     .goto Dun Morogh,45.810,53.039
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Grif Selvacuore|r
-    .turnin 6084 >>Entregue Domar a Fera - Missão
+    .turnin 6084 >>Entregue Domando a fera
     .target Grif Wildheart
     .accept 6085 >>Aceite Domando a Fera
 step << Hunter
@@ -1231,7 +1231,7 @@ step << Hunter
 step << Hunter
     .goto Dun Morogh,45.810,53.039
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Grif Selvacuore|r
-    .turnin 6085 >>Entregue Domar a Fera - Missão
+    .turnin 6085 >>Entregue Domando a fera
     .target Grif Wildheart
     .accept 6086 >>Aceite Treinando a Fera
 step << Warrior
@@ -1632,7 +1632,7 @@ step << Mage
     .goto Elwynn Forest,43.25,66.19
     .trainer >> Treine suas magias de classe
 step << Rogue
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Anabela Cabreira|r
+    >>|interface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Anabela Cabreira|r
     .target Keryn Sylvius
     .goto Elwynn Forest,43.872,65.937
     .trainer >> Treine suas magias de classe
@@ -1981,7 +1981,7 @@ step
     >>|interface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Durval Pilão|r
     .goto Elwynn Forest,43.318,65.705
     .turnin 112 >> Entregue Coletando Alga
-    .accept 114 >> Aceite A Fuga
+    .accept 114 >> Aceite A fuga
     .target William Pestle
 step << Mage/Rogue/Priest
     #completewith next
@@ -1992,7 +1992,7 @@ step << Mage
     .goto Elwynn Forest,43.25,66.19
     .trainer >> Treine suas magias de classe
 step << Rogue
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Anabela Cabreira|r
+    >>|interface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Anabela Cabreira|r
     .target Keryn Sylvius
     .goto Elwynn Forest,43.872,65.937
     .trainer >> Treine suas magias de classe

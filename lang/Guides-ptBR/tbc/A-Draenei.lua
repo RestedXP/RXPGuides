@@ -183,7 +183,7 @@ step
 	#completewith next
 	.goto Azuremyst Isle,79.987,47.117
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Aurok|r
-	.vendor >> Lixo Comerciante
+	.vendor >> Venda os lixos
     .target Aurok
 step << Mage
 	.goto Azuremyst Isle,79.582,48.762
@@ -306,7 +306,7 @@ step << Shaman/Hunter
 	#completewith next
 	.goto Azuremyst Isle,79.188,50.928
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mura|r
-	.vendor >> Lixo Comerciante
+	.vendor >> Venda os lixos
     >>|cRXP_BUY_Compre 5 pacotes de|r |T132382:0|t[Rough Flechas] |cRXP_BUY_dela|r << Hunter
     .collect 2512,1000 << Hunter --Rough Arrow (1000)
     .target Mura
@@ -366,7 +366,7 @@ step
 	#completewith SpareParts
 	.goto Azuremyst Isle,79.987,47.117
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Aurok|r
-	.vendor >> Lixo Comerciante
+	.vendor >> Venda os lixos
     .target Aurok
 step
     .isQuestComplete 9283
@@ -1152,7 +1152,7 @@ step << Hunter
 step << Hunter
     .goto Azuremyst Isle,24.183,54.341
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Caçadora Kella Arconyx|r
-    .turnin 9591 >> Entregue Domar a Fera - Missão
+    .turnin 9591 >> Entregue Domando a fera
     .accept 9592 >> Aceite Domando a Fera
     .target Huntress Kella Nightbow
 step
@@ -1171,7 +1171,7 @@ step << Hunter
 step << Hunter
     .goto Azuremyst Isle,24.183,54.341
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Caçadora Kella Arconyx|r
-    .turnin 9592 >> Entregue Domar a Fera - Missão
+    .turnin 9592 >> Entregue Domando a fera
     .accept 9593 >> Aceite Domando a Fera
     .target Huntress Kella Nightbow
 step << Hunter
@@ -1183,7 +1183,7 @@ step << Hunter
 step << Hunter
     .goto Azuremyst Isle,24.183,54.341
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Caçadora Kella Arconyx|r
-    .turnin 9593 >> Entregue Domar a Fera - Missão
+    .turnin 9593 >> Entregue Domando a fera
     .accept 9675 >> Aceite Treinamento de Feras
     .target Huntress Kella Nightbow
 step << Hunter
@@ -2564,8 +2564,8 @@ step
     #optional
     .goto Bloodmyst Isle,55.429,55.266
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Vindicante Boros|r
-    +Lembre-se de entregar seus [Estilhaços de Cristal Irradiado] para o buff consumível [Cristal da Percepção] (Aumenta o Intelecto em 5. Dura 30 min.) << !Warrior !Paladin !Shaman !Rogue
-    +Lembre-se de entregar seus [Estilhaços de Cristal Irradiado] para obter o buff consumível [Cristal da Ferocidade] (Aumenta o poder de ataque em 10. Dura 30 min.) << Warrior/Paladin/Shaman/Rogue
+    +Lembre-se de entregar seus [Estilhaços de Cristal Irradiado] para obter o buff consumível [Cristal da Perspicácia] (Aumenta o Intelecto em 5. Dura 30 min.) << !Warrior !Paladin !Shaman !Rogue
+    +Lembre-se de entregar seus [Estilhaços de Cristal Irradiado] para o buff consumível [Cristal da Ferocidade] (Aumenta o poder de ataque em 10. Dura 30 min.) << Warrior/Paladin/Shaman/Rogue
     .target Vindicator Boros
     .itemcount 23984,>9
 step
@@ -2798,8 +2798,8 @@ step
     #optional
     .goto Bloodmyst Isle,55.429,55.266
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Vindicante Boros|r
-    +Lembre-se de entregar seus [Estilhaços de Cristal Irradiado] para o buff consumível [Cristal da Percepção] (Aumenta o Intelecto em 5. Dura 30 min.) << !Warrior !Paladin !Shaman !Rogue
-    +Lembre-se de entregar seus [Estilhaços de Cristal Irradiado] para obter o buff consumível [Cristal da Ferocidade] (Aumenta o poder de ataque em 10. Dura 30 min.) << Warrior/Paladin/Shaman/Rogue
+    +Lembre-se de entregar seus [Estilhaços de Cristal Irradiado] para obter o buff consumível [Cristal da Perspicácia] (Aumenta o Intelecto em 5. Dura 30 min.) << !Warrior !Paladin !Shaman !Rogue
+    +Lembre-se de entregar seus [Estilhaços de Cristal Irradiado] para o buff consumível [Cristal da Ferocidade] (Aumenta o poder de ataque em 10. Dura 30 min.) << Warrior/Paladin/Shaman/Rogue
     .target Vindicator Boros
     .itemcount 23984,>9
 step
@@ -3344,7 +3344,7 @@ step << Shaman/Hunter/Priest/Mage/Warrior
 step << Shaman
     .goto The Exodar,32.450,23.996
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sulaa|r
-    .accept 9502 >> Aceite Chamado da Água
+    .accept 9502 >> Aceite Clamor da água
     .trainer >> Treine suas magias de classe
     .target Sulaa
 step << Shaman
@@ -3356,7 +3356,7 @@ step << Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Clarividente Nobambo|r
     >>|cRXP_FRIENDLY_Clarividente Nobambo|r |cRXP_WARN_patrulha levemente|r
     .turnin 9502 >> Entregue Clamor da água
-    .accept 9501 >> Aceite Chamado da Água
+    .accept 9501 >> Aceite Clamor da água
     .target Farseer Nobundo
 step << Shaman
     #completewith next
@@ -3376,7 +3376,7 @@ step << Shaman
     .goto Bloodmyst Isle,32.302,16.198
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Aquos|r submerso
     .turnin 9501 >> Entregue Clamor da água
-    .accept 9503 >> Aceite Chamado da Água
+    .accept 9503 >> Aceite Clamor da água
     .target Aqueous
 step << Shaman
     #loop
@@ -3408,7 +3408,7 @@ step << Shaman
     .goto Bloodmyst Isle,32.302,16.198
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Aquos|r submerso
     .turnin 9503 >> Entregue Clamor da água
-    .accept 9504 >> Aceite Chamado da Água
+    .accept 9504 >> Aceite Clamor da água
     .target Aqueous
 step << Shaman
 	#completewith ShamFlyExo
@@ -4629,7 +4629,7 @@ step
 .dungeon WC
     #completewith EnterWC
     >>Mate todos os tipos de criaturas |cRXP_ENEMY_Desviantes|r. Saqueie-as para obter seus |cRXP_LOOT_Pelegos Anormal|r
-    >>Isso pode ser concluído DENTRO e FORA das Cavernas do Lamento
+    >>Isso pode ser concluído DENTRO e FORA da Caverna Ululante
     .complete 1486,1 -- Deviate Hide (20)
     .isOnQuest 1486
 step
@@ -4695,7 +4695,7 @@ step
 step
 .dungeon WC
     >>Mate todos os tipos de criaturas |cRXP_ENEMY_Desviantes|r. Saqueie-as para obter seus |cRXP_LOOT_Pelegos Anormal|r
-    >>Isso pode ser concluído DENTRO e FORA das Cavernas do Lamento
+    >>Isso pode ser concluído DENTRO e FORA da Caverna Ululante
     .complete 1486,1 -- Deviate Hide (20)
     .isOnQuest 1486
 step
@@ -5335,7 +5335,7 @@ step << skip --logout skip Draenei
 	>>Entre na caverna dos troggs no sudeste. Faça um skip de logout
     .goto Dun Morogh,70.63,56.70,60,0
     .goto Dun Morogh,70.60,54.86
-	.link https://www.youtube.com/watch?v=yQBW3KyguCM >> |cRXP_WARN_CLIQUE AQUI para referência|r
+	.link https://www.youtube.com/watch?v=yQBW3KyguCM >> CLIQUE AQUI para referência
 	.zone Ironforge >> Desconecte-se e pule esta etapa ou viaje para Altaforja
 step << Draenei
 #xprate >1.49

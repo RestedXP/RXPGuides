@@ -1264,7 +1264,7 @@ step
     #completewith next
     .goto Eversong Woods,44.04,70.35,0
     >>|cRXP_BUY_Compre|r |T133634:0|t[Bolsa Marrom Pequena] |cRXP_BUY_de|r |cRXP_FRIENDLY_Halis|r |cRXP_BUY_se você precisa de bolsas|r
-    .vendor >> Lixo Comerciante
+    .vendor >> Venda os lixos
     .target Halis Dawnstrider
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Velan|r e |cRXP_FRIENDLY_Landra|r
@@ -2196,7 +2196,7 @@ step << BloodElf Hunter
 step << BloodElf Hunter
     .goto Eversong Woods,60.32,62.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dawnrunner|r
-    .turnin 9484 >> Entregue Domar a Fera - Missão
+    .turnin 9484 >> Entregue Domando a fera
     .accept 9486 >> Aceite Domando a Fera
     .target Lieutenant Dawnrunner
 step << BloodElf Hunter
@@ -2217,7 +2217,7 @@ step << BloodElf Hunter
 step << BloodElf Hunter
     .goto Eversong Woods,60.32,62.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dawnrunner|r
-    .turnin 9486 >> Entregue Domar a Fera - Missão
+    .turnin 9486 >> Entregue Domando a fera
     .accept 9485 >> Aceite Domando a Fera
     .target Lieutenant Dawnrunner
 step << Undead/BloodElf
@@ -2383,7 +2383,7 @@ step
     .turnin 8476 >> Entregue Defendendo o Terreno << !Troll
     .turnin 9360 >> Entregue Invasão Amani
     .accept 9363 >> Aceite Aviso à Vila de Brisabela
-    .turnin 9485 >> Entregue Domar a Fera - Missão << BloodElf Hunter
+    .turnin 9485 >> Entregue Domando a fera << BloodElf Hunter
     .accept 9673 >> Aceite Treinamento de Feras << BloodElf Hunter
     .target Lieutenant Dawnrunner
 step << Undead/BloodElf

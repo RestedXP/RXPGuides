@@ -32,14 +32,14 @@ step << Druid
     .zoneskip Orgrimmar
 step << Mage
     .goto Orgrimmar,38.66,85.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com|r |cRXP_FRIENDLY_Thuul|r no topo da cabana
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thuul|r no topo da cabana
     .train 3567 >> Aprenda |T135759:0|t[Teleporte: Orgrimmar]
     .train 11417 >> |T135744:0|tAprenda Portal: Orgrimmar
     .target Thuul
 step << Warlock
     .goto Orgrimmar,47.52,46.73
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kurgul|r
-	.vendor >>Compre qualquer melhoria de mascote que possa pagar
+	.vendor >>Compre as melhorias para seu ajudante que puder pagar
 	.target Kurgul
 step
     .goto Orgrimmar,54.65,67.65
@@ -520,11 +520,11 @@ step
     .isQuestTurnedIn 5149
 step
 	#completewith RottingUndead
-	.subzone 2264 >> Vá para Corin's Crossing
+	.subzone 2264 >> Travel to Corin's Crossing (NOT TRANSLATED IN :ptBR YET)
 step
 	#completewith next
-	>>Abate os |cRXP_ENEMY_Mortos-vivos|r. Saque-os por seus |cRXP_LOOT_Putrefação Viva|r.
-	>>|cRXP_WARN_Grupos de elites patrulham as estradas ao norte e a leste. Inimigos invisíveis patrulham o Cruzamento de Corin, então tente atrair os inimigos para fora|r
+	>>Mate |cRXP_ENEMY_Mortos-vivos|r. Pegue deles a |cRXP_LOOT_Putrefação Viva|r.
+	>>|cRXP_WARN_Groups of elites patrol the north and east road. Invisible mobs patrol inside of Corin's Crossing, so try to pull mobs out|r (NOT TRANSLATED IN :ptBR YET)
 	.collect 15447,7 --Living Rot (7)
 	.mob Hate Shrieker
 	.mob Scourge Warder

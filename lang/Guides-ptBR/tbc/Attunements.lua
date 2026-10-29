@@ -727,13 +727,13 @@ step
 step
 #aldor
     .goto Shadowmoon Valley,57.191,32.877
-    >>Abate |cRXP_ENEMY_Oronu|r na varanda
+    >>Mate |cRXP_ENEMY_Oronu|r na varanda
     .complete 10571,1 --Collect Orders From Akama (x1)
 	.mob Oronu the Elder
 step
 #scryer
     .goto Shadowmoon Valley,57.191,32.877
-    >>Mate |cRXP_ENEMY_Oronu|r na varanda
+    >>Abate |cRXP_ENEMY_Oronu|r na varanda
     .complete 10684,1 --Collect Orders From Akama (x1)
 	.mob Oronu the Elder
 step
@@ -771,13 +771,13 @@ step
 step
 #aldor
     .goto Shadowmoon Valley,57.083,73.687
-    >>Destrua os totens que protegem |cRXP_ENEMY_Haalum|r. Abate-o e saqueie o |cRXP_LOOT_Haalum's Medallion Fragmento|r
+    >>Destrua os totens que protegem |cRXP_ENEMY_Haalum|r. Mate e saqueie-o para obter o |cRXP_LOOT_Medallion Fragmento de Haalum|r
     .complete 10574,2 --Collect Haalum's Medallion Fragment (x1)
 	.mob Haalum
 step
 #scryer
     .goto Shadowmoon Valley,57.083,73.687
-    >>Destrua os totens que protegem |cRXP_ENEMY_Haalum|r. Mate e saqueie-o para obter o |cRXP_LOOT_Medallion Fragmento de Haalum|r
+    >>Destrua os totens que protegem |cRXP_ENEMY_Haalum|r. Abate-o e saqueie o |cRXP_LOOT_Haalum's Medallion Fragmento|r
     .complete 10685,2 --Collect Haalum's Medallion Fragment (x1)
 	.mob Haalum
 step

@@ -1042,7 +1042,7 @@ step << Hunter
 step << Hunter
     .goto Teldrassil,56.676,59.489
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dazalar|r
-    .turnin 6063 >> Entregue Domar a Fera - Missão
+    .turnin 6063 >> Entregue Domando a fera
     .target Dazalar
     .accept 6101 >> Aceite Domando a Fera
 step << !Rogue
@@ -1071,7 +1071,7 @@ step << !Rogue
 step << Hunter
     .goto Teldrassil,56.676,59.489
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dazalar|r
-    .turnin 6101 >> Entregue Domar a Fera - Missão
+    .turnin 6101 >> Entregue Domando a fera
     .target Dazalar
     .accept 6102 >> Aceite Domando a Fera
 step << Hunter
@@ -1083,7 +1083,7 @@ step << Hunter
 step << Hunter
     .goto Teldrassil,56.676,59.489
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dazalar|r
-    .turnin 6102 >> Entregue Domar a Fera - Missão
+    .turnin 6102 >> Entregue Domando a fera
     .target Dazalar
     .accept 6103 >> Aceite Treinando a Fera
     .train 1130 >> |cRXP_WARN_Certifique-se de que você treinou Marca do Caçador. Você vai precisar dela para obter uma runa em breve|r
@@ -1138,7 +1138,7 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Jannok Brisacanto|r
     .accept 2241 >> Aceite The Maçã Falls
 	.trainer >> Treine suas magias de classe
-    .train 5171 >> Treine |T132306:0|t[Retalhar]
+    .train 5171 >> Aprenda |T132306:0|t[Retalhar]
     .train 921 >> Treine |T133644:0|t[Bater Carteira] também, necessário para a missão de Ladino de nível 10
     .target Jannok Breezesong
 step << Rogue
@@ -1390,7 +1390,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Leiloeiro de Darnassus|r
     >>|cRXP_BUY_Compre os itens a seguir para entregas mais rápidas em Costa Negra em breve:|r
     >>Se você não quiser ou não puder fazer isso, pule esta etapa
-    >>|T133912:0|t[Costa Negra Grouper]
+    >>|T133912:0|t[Garoupa da Costa Negra]
     >>|T134187:0|t[Earthroot] << Druid
     .collect 12238,6,1141,1 -- Darkshore Grouper (6)
     .collect 2449,5,6123,1 << Druid
@@ -1405,8 +1405,8 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Leiloeiro de Darnassus|r
     >>|cRXP_BUY_Compre os itens a seguir para entregas mais rápidas em Costa Negra em breve:|r
     >>Se você não quiser ou não puder fazer isso, pule esta etapa
-    >>|T133972:0|t[Strider Carne]
-    >>|T133912:0|t[Costa Negra Grouper]
+    >>|T133972:0|t[Carne de Moa]
+    >>|T133912:0|t[Garoupa da Costa Negra]
     >>|T134187:0|t[Earthroot] << Druid
     .collect 5469,5,2178,1 -- Strider Meat (5)
     .collect 12238,6,1141,1 -- Darkshore Grouper (6)

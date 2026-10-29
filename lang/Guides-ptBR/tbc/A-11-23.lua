@@ -4968,7 +4968,7 @@ step << skip --logout skip NightElf/Draenei
 	>>Entre na caverna dos troggs no sudeste. Faça um skip de logout
     .goto Dun Morogh,70.63,56.70,60,0
     .goto Dun Morogh,70.60,54.86
-	.link https://www.youtube.com/watch?v=yQBW3KyguCM >> |cRXP_WARN_CLIQUE AQUI para referência|r
+	.link https://www.youtube.com/watch?v=yQBW3KyguCM >> CLIQUE AQUI para referência
 	.zone Ironforge >> Desconecte-se e pule esta etapa ou viaje para Altaforja
 step << NightElf/Draenei
 #xprate >1.49

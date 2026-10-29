@@ -182,7 +182,7 @@ step
 	#completewith next
 	.goto Azuremyst Isle,79.987,47.117
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Aurok|r
-	.vendor >> Lixo Comerciante
+	.vendor >> Venda os lixos
     .target Aurok
 step << Mage
 	.goto Azuremyst Isle,79.582,48.762
@@ -305,7 +305,7 @@ step << Shaman/Hunter
 	#completewith next
 	.goto Azuremyst Isle,79.188,50.928
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mura|r
-	.vendor >> Lixo Comerciante
+	.vendor >> Venda os lixos
     >>|cRXP_BUY_Compre 5 pacotes de|r |T132382:0|t[Rough Flechas] |cRXP_BUY_dela|r << Hunter
     .collect 2512,1000 << Hunter --Rough Arrow (1000)
     .target Mura
@@ -390,7 +390,7 @@ step
 	#completewith next
 	.goto Azuremyst Isle,79.987,47.117
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Aurok|r
-	.vendor >> Lixo Comerciante
+	.vendor >> Venda os lixos
     .target Aurok
 step
     .goto Azuremyst Isle,79.139,46.536
@@ -1198,7 +1198,7 @@ step << Hunter
 step << Hunter
     .goto Azuremyst Isle,24.183,54.341
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Caçadora Kella Arconyx|r
-    .turnin 9591 >> Entregue Domar a Fera - Missão
+    .turnin 9591 >> Entregue Domando a fera
     .accept 9592 >> Aceite Domando a Fera
     .target Huntress Kella Nightbow
 step
@@ -1217,7 +1217,7 @@ step << Hunter
 step << Hunter
     .goto Azuremyst Isle,24.183,54.341
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Caçadora Kella Arconyx|r
-    .turnin 9592 >> Entregue Domar a Fera - Missão
+    .turnin 9592 >> Entregue Domando a fera
     .accept 9593 >> Aceite Domando a Fera
     .target Huntress Kella Nightbow
 step << Hunter
@@ -1229,7 +1229,7 @@ step << Hunter
 step << Hunter
     .goto Azuremyst Isle,24.183,54.341
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Caçadora Kella Arconyx|r
-    .turnin 9593 >> Entregue Domar a Fera - Missão
+    .turnin 9593 >> Entregue Domando a fera
     .accept 9675 >> Aceite Treinamento de Feras
     .target Huntress Kella Nightbow
 step << Hunter
@@ -1887,7 +1887,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com um |cRXP_FRIENDLY_Leiloeiro de Exodar|r
     >>|cRXP_BUY_Compre os itens a seguir para entregas mais rápidas em Costa Negra em breve:|r
     >>Se você não quiser ou não puder fazer isso, pule esta etapa
-    >>|T133912:0|t[Costa Negra Grouper]
+    >>|T133912:0|t[Garoupa da Costa Negra]
     .collect 12238,6,1141,1 -- Darkshore Grouper (6)
     .target Auctioneer Iressa
     .target Auctioneer Fanin
@@ -1903,8 +1903,8 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com um |cRXP_FRIENDLY_Leiloeiro de Exodar|r
     >>|cRXP_BUY_Compre os itens a seguir para entregas mais rápidas em Costa Negra em breve:|r
     >>Se você não quiser ou não puder fazer isso, pule esta etapa
-    >>|T133972:0|t[Strider Carne]
-    >>|T133912:0|t[Costa Negra Grouper]
+    >>|T133972:0|t[Carne de Moa]
+    >>|T133912:0|t[Garoupa da Costa Negra]
     .collect 5469,5,2178,1 -- Strider Meat (5)
     .collect 12238,6,1141,1 -- Darkshore Grouper (6)
     .target Auctioneer Iressa

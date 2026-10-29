@@ -28,7 +28,7 @@ step
 step << Warrior/Shaman
     #completewith next
     .goto Mulgore,46.05,75.32,30,0
-    +|cRXP_WARN_Abate |cRXP_ENEMY_Plainstriders|r. Saque-os até ter 10 moedas de cobre em itens vendáveis (incluindo sua armadura)|r << Warrior/Shaman
+    +|cRXP_WARN_Mate |cRXP_ENEMY_Pinotes|r. Pegue itens deles até somar 10 moedas de cobre em valor de venda (incluindo sua armadura)|r << Warrior/Shaman
     .mob Plainstrider
     .money >0.01
 step << Warrior/Shaman
@@ -559,7 +559,7 @@ step
 step
     .goto Mulgore,47.76,57.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zarlman Duas Luas|r
-    .turnin 767 >>Entregue Rito de Visão
+    .turnin 767 >>Entregue Rito de visão
     .accept 771 >>Aceite Rito de visão
     .target Zarlman Two-Moons
 step
@@ -580,7 +580,7 @@ step << Tauren
 step
     #sticky
     #completewith Well
-    >>|cRXP_WARN_Obtenha os itens para Mazzranache enquanto você cumpre missões por toda a zona|r
+    >>|cRXP_WARN_Pegue os itens para Mazzranache enquanto faz missões por toda a zona|r
     .complete 766,1 --Prairie Wolf Heart (1)
     .complete 766,2 --Flatland Cougar Femur (1)
     .complete 766,3 --Plainstrider Scale (1)
@@ -691,7 +691,7 @@ step
     .complete 771,1 --Well Stone (2)
 step
     #completewith Gnolls
-    >>|cRXP_WARN_Obtenha os itens para Mazzranache enquanto você cumpre missões por toda a zona|r
+    >>|cRXP_WARN_Pegue os itens para Mazzranache enquanto faz missões por toda a zona|r
     .complete 766,1 --Prairie Wolf Heart (1)
     .complete 766,2 --Flatland Cougar Femur (1)
     .complete 766,3 --Plainstrider Scale (1)
@@ -723,7 +723,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jhawna|r
     >>|cRXP_BUY_Compre|r |T132815:0|t[Leite Gelado] |cRXP_BUY_dela|r << Shaman/Druid
     >>|cRXP_BUY_Compre|r |T133968:0|t[Pão Fresquinho] |cRXP_BUY_dela|r << Warrior
-    .vendor >> Lixo Comerciante
+    .vendor >> Venda os lixos
     .collect 1179,10,749,1 << Shaman/Druid --Ice Cold Milk (10)
     .collect 4541,10,749,1 << Warrior --Freshly Baked Bread (10)
     .target Jhawna Oatwind
@@ -823,7 +823,7 @@ step
     .goto Mulgore,47.76,57.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zarlman Duas Luas|r
     >>|cRXP_WARN_Não siga o lobo que aparecer|r
-    .turnin 771 >>Entregue Rito de Visão
+    .turnin 771 >>Entregue Rito de visão
     .accept 772 >>Aceite Rito de visão
     .target Zarlman Two-Moons
 step << Hunter
@@ -840,7 +840,7 @@ step << Druid
     .xp <8,1
 step << Warrior
     .goto Mulgore,49.52,60.58
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Krang|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Krang Casco de Pedra|r
     .train 284 >> Treine suas magias de classe
     .target Krang Stonehoof
     .xp <8,1
@@ -884,7 +884,7 @@ step
 	.unitscan Morin Cloudstalker
 step
     #completewith Clawsx
-    >>|cRXP_WARN_Obtenha os itens para Mazzranache enquanto você cumpre missões por toda a zona|r
+    >>|cRXP_WARN_Pegue os itens para Mazzranache enquanto faz missões por toda a zona|r
     .complete 766,1 --Prairie Wolf Heart (1)
     .complete 766,2 --Flatland Cougar Femur (1)
     .complete 766,3 --Plainstrider Scale (1)
@@ -1046,7 +1046,7 @@ step << Druid
     .xp <8,1
 step << Warrior
     .goto Mulgore,49.52,60.58
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Krang|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Krang Casco de Pedra|r
     .train 284 >> Treine suas magias de classe
     .target Krang Stonehoof
     .xp <8,1
@@ -1114,12 +1114,12 @@ step
     .mob Windfury Harpy
 step
     #completewith next
-    .goto Mulgore,33.37,36.52,50 >> Entre na caverna logo ao norte das Harpias Fúria dos Ventos
+    .goto Mulgore,33.37,36.52,50 >> Entre na caverna ao norte das Harpias Ventofúria
 step
 	#label Burial
     .goto Mulgore,32.72,36.09
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Vidente Trilha Astuta|r
-    .turnin 772 >>Entregue Rito de Visão
+    .turnin 772 >>Entregue Rito de visão
     .accept 773 >>Aceite Rito de sabedoria
     .target Seer Wiserunner
 step
@@ -1345,7 +1345,7 @@ step << Druid
 step
     .goto Mulgore,46.62,61.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Estalajadeiro Kauth|r
-    .vendor >> Lixo Comerciante
+    .vendor >> Venda os lixos
     .target Innkeeper Kauth
     .isQuestAvailable 765
 step
@@ -1426,7 +1426,7 @@ step
     .isQuestComplete 766
 step << Warrior
     .goto Mulgore,49.52,60.58
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Krang|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Krang Casco de Pedra|r
     .trainer >> Treine suas magias de classe
     .accept 1505 >>Aceite Veterano Uzzek
     .target Krang Stonehoof
@@ -1467,7 +1467,7 @@ step << Hunter
 step << Hunter
     .goto Mulgore,47.81,55.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Yaw Crina Cortante|r
-    .turnin 6061 >>Entregue Domar a Fera - Missão
+    .turnin 6061 >>Entregue Domando a fera
     .accept 6087 >>Aceite Domando a Fera
     .target Yaw Sharpmane
 step << Hunter
@@ -1483,7 +1483,7 @@ step << Hunter
 step << Hunter
     .goto Mulgore,47.81,55.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Yaw Crina Cortante|r
-    .turnin 6087 >>Entregue Domar a Fera - Missão
+    .turnin 6087 >>Entregue Domando a fera
     .accept 6088 >>Aceite Domando a Fera
     .target Yaw Sharpmane
 step << Hunter
@@ -1499,7 +1499,7 @@ step << Hunter
 step << Hunter
     .goto Mulgore,47.81,55.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Yaw Crina Cortante|r
-    .turnin 6088 >>Entregue Domar a Fera - Missão
+    .turnin 6088 >>Entregue Domando a fera
     .accept 6089 >>Aceite Treinando a Fera
     .target Yaw Sharpmane
 step << !Hunter
@@ -1635,7 +1635,7 @@ step
     .accept 870 >>Aceite Os Charcos Esquecidos
     .target +Tonga Runetotem
     .goto The Barrens,52.26,31.93
-    .accept 844 >>Aceite A Ameaça Pinote
+    .accept 844 >>Aceite A ameaça pinote
     .target +Sergra Darkthorn
     .goto The Barrens,52.24,31.00
     .accept 869 >>Aceite Raptores ladrões
@@ -1783,7 +1783,7 @@ step
     #ah
     .goto Thunder Bluff,44.43,43.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mooranta|r
-    >>|cRXP_WARN_Isto desbloqueará uma missão fácil. Se você já tem 2 profissões, pule este passo|r
+    >>|cRXP_WARN_Isso desbloqueia uma missão fácil. Se já tiver 2 profissões, pule esta etapa|r
     .train 8613 >>Aprenda |T134366:0|t[Esfolamento]
     .target Mooranta
     .dungeon RFC !Hunter !Druid
@@ -1823,7 +1823,7 @@ step << Druid
     #completewith next
     .goto Thunder Bluff,47.00,49.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tal|r
-    .fly Camp Taurajo >>Voe para Camp Taurajo
+    .fly Camp Taurajo >>Voe para o Acampamento Taurajo
     .target Tal
     .zoneskip The Barrens
 step << Druid
@@ -1907,7 +1907,7 @@ step << Tauren Hunter
     >>|cRXP_BUY_Compre muitos|r |T132384:0|t[Heavy Shots] |cRXP_BUY_dele|r
     >>|cRXP_WARN_Você não poderá comprar mais por um tempo!|r
     .collect 2519,1600,6061,1 --Heavy Shot (1600)
-    .vendor >> Lixo Comerciante
+    .vendor >> Venda os lixos
     .target Uthrok
     --Tauren Hunter gun not worth? Making them train bows in Org
 step << Shaman
@@ -2105,7 +2105,7 @@ step
     .target Ukor
 step
     #label SenjinPickups
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Vel'rin|r, |cRXP_FRIENDLY_Vornal|r e |cRXP_FRIENDLY_Gadrin|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Vel'rin Presa|r, |cRXP_FRIENDLY_Mestre Vornal|r e |cRXP_FRIENDLY_Mestre Gadrin|r
     .accept 817 >>Aceite Presa prática
     .target +Vel'rin Fang
     .goto Durotar,55.95,73.93
@@ -2212,7 +2212,7 @@ step
     .goto Durotar,68.50,84.32,40,0
     .goto Durotar,68.47,86.77,40,0
     .goto Durotar,67.23,88.00,40,0
-    >>Abate |cRXP_ENEMY_Hexed Trolls|r e |cRXP_ENEMY_Voodoo Trolls|r
+    >>Mate |cRXP_ENEMY_Trolls Bagateado|r e os |cRXP_ENEMY_Trolls Vodu|r
     .complete 826,1 --Hexed Troll (8)
     .mob +Hexed Troll
     .complete 826,2 --Voodoo Troll (8)

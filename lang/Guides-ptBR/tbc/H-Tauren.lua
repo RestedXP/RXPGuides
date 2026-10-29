@@ -28,7 +28,7 @@ step
 step << Warrior/Shaman
     #completewith next
     .goto Mulgore,46.05,75.32,30,0
-    +|cRXP_WARN_Abate |cRXP_ENEMY_Plainstriders|r. Saque-os até ter 10 moedas de cobre em itens vendáveis (incluindo sua armadura)|r << Warrior/Shaman
+    +|cRXP_WARN_Mate |cRXP_ENEMY_Pinotes|r. Pegue itens deles até somar 10 moedas de cobre em valor de venda (incluindo sua armadura)|r << Warrior/Shaman
     .mob Plainstrider
     .money >0.01
 step << Warrior/Shaman
@@ -614,7 +614,7 @@ step
 step
     .goto Mulgore,47.76,57.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zarlman Duas Luas|r
-    .turnin 767 >>Entregue Rito de Visão
+    .turnin 767 >>Entregue Rito de visão
     .accept 771 >>Aceite Rito de visão
     .target Zarlman Two-Moons
 step
@@ -643,7 +643,7 @@ step
 step
     #sticky
     #completewith Well
-    >>|cRXP_WARN_Obtenha os itens para Mazzranache enquanto você cumpre missões por toda a zona|r
+    >>|cRXP_WARN_Pegue os itens para Mazzranache enquanto faz missões por toda a zona|r
     .complete 766,1 --Prairie Wolf Heart (1)
     .complete 766,2 --Flatland Cougar Femur (1)
     .complete 766,3 --Plainstrider Scale (1)
@@ -755,7 +755,7 @@ step
 step
     #xprate <1.5
     #completewith Gnolls
-    >>|cRXP_WARN_Obtenha os itens para Mazzranache enquanto você cumpre missões por toda a zona|r
+    >>|cRXP_WARN_Pegue os itens para Mazzranache enquanto faz missões por toda a zona|r
     .complete 766,1 --Prairie Wolf Heart (1)
     .complete 766,2 --Flatland Cougar Femur (1)
     .complete 766,3 --Plainstrider Scale (1)
@@ -788,7 +788,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Jhauna Ventos d'Aveia|r
     >>|cRXP_BUY_Compre|r |T132815:0|t[Leite Gelado] |cRXP_BUY_dela|r << Shaman/Druid
     >>|cRXP_BUY_Compre|r |T133968:0|t[Pão Fresquinho] |cRXP_BUY_dela|r << Warrior
-    .vendor >> Lixo Comerciante
+    .vendor >> Venda os lixos
     .collect 1179,10,749,1 << Shaman/Druid --Ice Cold Milk (10)
     .collect 4541,10,749,1 << Warrior --Freshly Baked Bread (10)
     .target Jhawna Oatwind
@@ -898,7 +898,7 @@ step
     .goto Mulgore,47.76,57.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zarlman Duas Luas|r
     >>|cRXP_WARN_Não siga o lobo que aparecer|r
-    .turnin 771 >>Entregue Rito de Visão
+    .turnin 771 >>Entregue Rito de visão
     .accept 772 >>Aceite Rito de visão
     .target Zarlman Two-Moons
 step << !Shaman
@@ -907,7 +907,7 @@ step << !Shaman
     .goto Mulgore,47.76,57.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zarlman Duas Luas|r
     >>|cRXP_WARN_Não siga o lobo que aparecer|r
-    .turnin 771 >>Entregue Rito de Visão
+    .turnin 771 >>Entregue Rito de visão
     .target Zarlman Two-Moons
 step << Hunter
     .goto Mulgore,47.81,55.69
@@ -923,7 +923,7 @@ step << Druid
     .xp <8,1
 step << Warrior
     .goto Mulgore,49.52,60.58
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Krang|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Krang Casco de Pedra|r
     .train 284 >> Treine suas magias de classe
     .target Krang Stonehoof
     .xp <8,1
@@ -967,7 +967,7 @@ step
 	.unitscan Morin Cloudstalker
 step
     #completewith Clawsx
-    >>|cRXP_WARN_Obtenha os itens para Mazzranache enquanto você cumpre missões por toda a zona|r
+    >>|cRXP_WARN_Pegue os itens para Mazzranache enquanto faz missões por toda a zona|r
     .complete 766,1 --Prairie Wolf Heart (1)
     .complete 766,2 --Flatland Cougar Femur (1)
     .complete 766,3 --Plainstrider Scale (1)
@@ -1233,7 +1233,7 @@ step << Druid
 step << Warrior
     #xprate <1.5
     .goto Mulgore,49.52,60.58
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Krang|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Krang Casco de Pedra|r
     .train 284 >> Treine suas magias de classe
     .target Krang Stonehoof
     .xp <8,1
@@ -1309,13 +1309,13 @@ step
 step
     #xprate <1.5 << !Shaman
     #completewith next
-    .goto Mulgore,33.37,36.52,50 >> Entre na caverna logo ao norte das Harpias Fúria dos Ventos
+    .goto Mulgore,33.37,36.52,50 >> Entre na caverna ao norte das Harpias Ventofúria
 step
     #xprate <1.5 << !Shaman
 	#label Burial
     .goto Mulgore,32.72,36.09
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Vidente Trilha Astuta|r
-    .turnin 772 >>Entregue Rito de Visão
+    .turnin 772 >>Entregue Rito de visão
     .accept 773 >>Aceite Rito de sabedoria
     .target Seer Wiserunner
 step
@@ -1691,7 +1691,7 @@ step << !Druid
     .isQuestComplete 766
 step << Warrior
     .goto Mulgore,49.52,60.58
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Krang|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Krang Casco de Pedra|r
     .trainer >> Treine suas magias de classe
     --.accept 1505 >>Accept Veteran Uzzek
     .target Krang Stonehoof
@@ -1726,7 +1726,7 @@ step << Hunter
 step << Hunter
     .goto Mulgore,47.81,55.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Yaw Crina Cortante|r
-    .turnin 6061 >>Entregue Domar a Fera - Missão
+    .turnin 6061 >>Entregue Domando a fera
     .accept 6087 >>Aceite Domando a Fera
     .target Yaw Sharpmane
 step << Hunter
@@ -1742,7 +1742,7 @@ step << Hunter
 step << Hunter
     .goto Mulgore,47.81,55.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Yaw Crina Cortante|r
-    .turnin 6087 >>Entregue Domar a Fera - Missão
+    .turnin 6087 >>Entregue Domando a fera
     .accept 6088 >>Aceite Domando a Fera
     .target Yaw Sharpmane
 step << Hunter
@@ -1758,7 +1758,7 @@ step << Hunter
 step << Hunter
     .goto Mulgore,47.81,55.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Yaw Crina Cortante|r
-    .turnin 6088 >>Entregue Domar a Fera - Missão
+    .turnin 6088 >>Entregue Domando a fera
     .accept 6089 >>Aceite Treinando a Fera
     .target Yaw Sharpmane
 step << !Hunter
@@ -2029,7 +2029,7 @@ step << Druid
     #completewith next
     .goto Thunder Bluff,47.00,49.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tal|r
-    .fly Camp Taurajo >>Voe para Camp Taurajo
+    .fly Camp Taurajo >>Voe para o Acampamento Taurajo
     .target Tal
     .subzoneskip 378
 step << Druid
@@ -2177,7 +2177,7 @@ step
     #label CauldronStirrer
     .goto Thunder Bluff,22.82,20.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Boticário Zaqueu|r
-    .turnin 853 >>Entregue Boticário Zaqueu
+    .turnin 853 >>Entregue Boticária Zaqueia
     .target Apothecary Zamah
 step
     #completewith EndGuide
@@ -2460,7 +2460,7 @@ step
 step
     #xprate <1.5
     #completewith WildManeTurnIn
-    .subzone 222 >>Vá para Bloodhoof Village
+    .subzone 222 >>Vá à Aldeia Casco Sangrento
 step
     #xprate <1.5
     .goto Mulgore,46.75,60.24
@@ -2491,7 +2491,7 @@ step << Druid
 step << Warrior
     #xprate <1.5
     .goto Mulgore,49.52,60.58
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Krang|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Krang Casco de Pedra|r
     .train 7384 >> Treine suas magias de classe
     .target Krang Stonehoof
     .xp <12,1
@@ -2653,13 +2653,13 @@ step
     .goto The Barrens,52.23,31.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sergra Espinhonegro|r
     .turnin 860 >>Entregue Sergra Espinhonegro
-    .accept 844 >>Aceite A Ameaça Pinote
+    .accept 844 >>Aceite A ameaça pinote
     .target Sergra Darkthorn
     .isOnQuest 860
 step
     .goto The Barrens,52.23,31.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sergra Espinhonegro|r
-    .accept 844 >>Aceite A Ameaça Pinote
+    .accept 844 >>Aceite A ameaça pinote
     .target Sergra Darkthorn
 step
     .goto The Barrens,51.93,30.32
