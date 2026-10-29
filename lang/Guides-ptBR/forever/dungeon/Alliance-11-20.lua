@@ -1159,7 +1159,7 @@ step
     .target Alba Fairmoon::253092
     .turnin 92742 >>Entregue Testando os Poços
 step
-    .hs >> Use sua Pedra de Retorno para ir a Ventobravo
+    .hs >> Use a Pedra de Regresso para Ventobravo
     .bindlocation 16509,1
     .cooldown item,6948,>2,1
     .zoneskip Stormwind City
@@ -2314,7 +2314,7 @@ step << Druid
     .accept 272 >> Aceitar Prova do Leão Marinho
     .target Tajarri
 step
-    .hs >> Use sua Pedra de Retorno para ir a Ventobravo
+    .hs >> Use a Pedra de Regresso para Ventobravo
     .zoneskip Stormwind City
     .zoneskip Darkshore
     .zoneskip Ironforge
@@ -2826,12 +2826,16 @@ step
 step
     #requires CrumpledPaper
 step
+    #completewith next
+    .goto 1458/0,170.700,1804.700,15 >> |cRXP_WARN_Morra por qualquer inimigo dentro para voltar ao início da instância mais rápido. O cemitério fica logo fora do portal da instância|r
+    >>|cRXP_WARN_NÃO ressuscite! Corra de volta como um|r |T132331:0|t[Fantasma] |cRXP_WARN_para o portal da instância|r
+step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Capitão Truman|r
     >>|cRXP_FRIENDLY_Capitão Truman|r |cRXP_WARN_está de volta no início da masmorra|r
     .turnin 95250 >> Entregue Abominable Creatures
     .target Captain Truman
 step
-    .hs >> Use sua Pedra de Retorno para ir a Ventobravo << !NightElf
+    .hs >> Use a Pedra de Regresso para Ventobravo << !NightElf
     .hs >> Use sua Pedra de Retorno para ir a Ironforge << NightElf
     .zoneskip Ironforge
     .zoneskip Stormwind City
@@ -3542,7 +3546,7 @@ step
     .turnin 98387 >>Entregue Blackrock Blockade
 step
     .isQuestComplete 95999
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Magistrado Salomão|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Magistrado Salomão|r
 	.target Magistrate Solomon
     .goto 1433/0,-2207.10,-9231.34,15,0
     .goto 1433/0,-2221.65,-9218.60
@@ -3555,7 +3559,7 @@ step
     #label Level20Check
 
 step << !Druid !Rogue
-    .hs >> Use sua Pedra de Retorno para ir a Ventobravo
+    .hs >> Use a Pedra de Regresso para Ventobravo
     .cooldown item,6948,>2,1
     .zoneskip Stormwind City
     .zoneskip Darkshore
@@ -3675,7 +3679,7 @@ step << Dwarf Rogue
     .cast 20594 >>Conjure [Forma de Pedra] para remover o debuff [Toque de Zanzil]
     .aura -9991
 step << Rogue
-    .hs >> Use sua Pedra de Retorno para ir a Ventobravo
+    .hs >> Use a Pedra de Regresso para Ventobravo
     .cooldown item,6948,>2,1
     .zoneskip Stormwind City
     .zoneskip Darkshore

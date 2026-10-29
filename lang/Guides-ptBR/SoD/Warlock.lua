@@ -713,7 +713,7 @@ step << Alliance
     .isOnQuest 78994
     .goto The Barrens,62.05,39.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Estalajadeiro Wiley|r
-    .home >> Defina sua Pedra de Retorno em Ratchet
+    .home >> Defina sua Pedra de Regresso em Vila Catraca
     .target Innkeeper Wiley
 step << Horde
     .train 426445,1

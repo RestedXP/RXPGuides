@@ -7216,7 +7216,7 @@ step << Horde Druid Skyborne
     .goto 1456/1,-281.500,-1039.900
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Turak Runa Totem::3033|r.
     .turnin 94911 >>Entregue Child of Nature
-    .accept 94913 >>Aceite Moonglade
+    .accept 94913 >>Aceite Clareira da Lua
     .target Turak Runetotem::3033
 step << Horde Druid Skyborne
     #optional

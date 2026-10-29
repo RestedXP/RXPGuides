@@ -466,7 +466,7 @@ step
     .turnin 92742 >>Entregue Testando os Poços
     .turnin 92744 >>Entregue Brânquias de Murloc
 step << !Skyborne
-    .hs >> Use sua Pedra de Retorno para ir a Ventobravo
+    .hs >> Use a Pedra de Regresso para Ventobravo
     .bindlocation 16509,1
     .cooldown item,6948,>2,1
     .zoneskip Stormwind City
@@ -555,7 +555,7 @@ step << Skyborne Warrior
     .itemcount 3107,1
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.3
 step << Skyborne
-    .hs >> Use sua Pedra de Retorno para ir a Ventobravo
+    .hs >> Use a Pedra de Regresso para Ventobravo
     .bindlocation 16509,1
     .cooldown item,6948,>2,1
     .zoneskip Stormwind City
@@ -5159,7 +5159,7 @@ step
     >>Clique no |cRXP_PICK_Cartaz de Procurado|r
     .accept 95999 >>Aceite WANTED: Incinerador Gar'im
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Magistrado Salomão|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Magistrado Salomão|r
 	.target Magistrate Solomon
     .goto 1433/0,-2221.65,-9218.60
     .accept 120 >> Aceite Mensageiro para Ventobravo
@@ -5416,7 +5416,7 @@ step
 step
     #optional
     .isQuestComplete 95999
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Magistrado Salomão|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Magistrado Salomão|r
 	.target Magistrate Solomon
     .goto 1433/0,-2207.10,-9231.34,15,0
     .goto 1433/0,-2221.65,-9218.60
@@ -6004,7 +6004,7 @@ step
     .accept 122 >> Aceite Underbelly Escamoso
 step
     #label FlyR
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Magistrado Salomão|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Magistrado Salomão|r
 	.target Magistrate Solomon
     .goto 1433/0,-2207.10,-9231.34,15,0
     .goto 1433/0,-2221.65,-9218.60

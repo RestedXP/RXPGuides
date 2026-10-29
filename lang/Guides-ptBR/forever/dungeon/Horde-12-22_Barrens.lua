@@ -4607,7 +4607,7 @@ step
     .isOnQuest 962
 step
     #optional
-    >>Mate os Deviate Ravagers, os Vipers, os Shamblers e os Dreadfangs. Saque-os por seus |cRXP_ENEMY_Hides|r . Saque-os por seus |cRXP_ENEMY_Hides|r
+    >>Mate os |cRXP_ENEMY_Deviate Ravagers|r, os |cRXP_ENEMY_Vipers|r, os |cRXP_ENEMY_Shamblers|r e os |cRXP_ENEMY_Dreadfangs|r. Saqueie-os para obter seus |cRXP_ENEMY_Hides|r.
     .complete 1487,1 --Deviate Ravager (7)
     .mob +Deviate Ravager
     .complete 1487,2 --Deviate Viper (7)

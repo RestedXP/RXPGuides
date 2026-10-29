@@ -7515,7 +7515,7 @@ step
     >>Fale com |cRXP_FRIENDLY_Baren|r e o |cRXP_PICK_Wanted Poster|r
     .accept 127 >>Aceite O lago está para peixe
     .goto 1433/0,-2172.59,-9261.02
-    .accept 180 >>Aceite Procurado: General Mordente
+    .accept 180 >>Aceite Procura-se: Tenente Mordente
     .goto 1433/0,-2151.53,-9247.12
     .target Dockmaster Baren
 step

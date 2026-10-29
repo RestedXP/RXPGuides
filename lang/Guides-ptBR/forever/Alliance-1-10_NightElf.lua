@@ -1582,7 +1582,7 @@ step << Druid NightElf
     .goto 1457/1,2563.92,10179.040
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mathrengyl Ursivagus|r no nível intermediário
     .turnin 5923 >> Entregue Heeding the Call - Missão
-    .accept 5921 >> Aceite Moonglade
+    .accept 5921 >> Aceite Clareira da Lua
 	.trainer >> Treine suas magias de classe
     .target Mathrengyl Bearwalker
 step << Druid NightElf
@@ -1590,13 +1590,13 @@ step << Druid NightElf
     .goto 1457/1,2563.92,10179.040
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mathrengyl Ursivagus|r no nível intermediário
     .turnin 5925 >> Entregue Heeding the Call - Missão
-    .accept 5921 >> Aceite Moonglade
+    .accept 5921 >> Aceite Clareira da Lua
 	.trainer >> Treine suas magias de classe
     .target Mathrengyl Bearwalker
 step << Druid NightElf
     .goto 1457/1,2563.92,10179.040
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mathrengyl Ursivagus|r no nível intermediário
-    .accept 5921 >> Aceite Moonglade
+    .accept 5921 >> Aceite Clareira da Lua
     .target Mathrengyl Bearwalker
 step << !Rogue
     .goto 1457/1,2508.68,9605.98--c:Darnassus,40.6,89.6
@@ -1778,7 +1778,7 @@ step << Hunter
     #requires beast2
     .goto 1438/1,928.83,9812.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dazalar|r
-    .turnin 6063 >> Entregue Adestramento da Fera - Missão
+    .turnin 6063 >> Entregue Domando a fera
     .target Dazalar
     .accept 6101 >> Aceite Adestramento da Fera - Missão
 step
@@ -1896,7 +1896,7 @@ step << Hunter
 step << Hunter
     .goto 1438/1,928.83,9812.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dazalar|r
-    .turnin 6063 >> Entregue Adestramento da Fera - Missão
+    .turnin 6063 >> Entregue Domando a fera
     .target Dazalar
     .accept 6101 >> Aceite Adestramento da Fera - Missão
 step << Hunter
@@ -1924,7 +1924,7 @@ step << !Druid
 step << Hunter
     .goto 1438/1,928.83,9812.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dazalar|r
-    .turnin 6101 >> Entregue Adestramento da Fera - Missão
+    .turnin 6101 >> Entregue Domando a fera
     .target Dazalar
     .accept 6102 >> Aceite Adestramento da Fera - Missão
 step << Hunter
@@ -1936,7 +1936,7 @@ step << Hunter
 step << Hunter
     .goto 1438/1,928.83,9812.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dazalar|r
-    .turnin 6102 >> Entregue Adestramento da Fera - Missão
+    .turnin 6102 >> Entregue Domando a fera
     .target Dazalar
     .accept 6103 >> Aceite Treinamento da Fera - Missão
 step << Warrior

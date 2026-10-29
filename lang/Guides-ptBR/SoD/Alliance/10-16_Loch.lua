@@ -1424,7 +1424,7 @@ step
     .turnin 418 >> Entregue Chouriço em Thelsamar
 step << Human
     #requires ratcatching
-    .hs >> Use sua Pedra de Retorno para ir a Ventobravo
+    .hs >> Use a Pedra de Regresso para Ventobravo
 step << !Human
     #requires ratcatching
     .goto Loch Modan,33.938,50.954

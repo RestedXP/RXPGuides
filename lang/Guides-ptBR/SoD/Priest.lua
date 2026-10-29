@@ -149,7 +149,7 @@ RXPGuides.RegisterGuide([[
 step << Priest
     #season 2
     .goto Tirisfal Glades,31.11,66.02
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Duesten|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Clérigo das Trevas Duesten|r
     .accept 77670 >>Aceite Meditação da Morte-Viva
     .target Dark Cleric Duesten
 step << Priest
@@ -161,7 +161,7 @@ step << Priest
 step << Priest
     #season 2
     .goto Tirisfal Glades,31.11,66.02
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Duesten|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Clérigo das Trevas Duesten|r
     .turnin 77670 >>Entregue Meditação da Morte-Viva
     .target Dark Cleric Duesten
 

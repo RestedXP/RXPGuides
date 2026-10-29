@@ -2614,7 +2614,7 @@ step << Hunter
     .goto 1429/0,107.200,-9472.400
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Josephine Carson::251507|r
     .target Josephine Carson::251507
-    .turnin 94792 >>Entregue Adestramento da Fera - Missão
+    .turnin 94792 >>Entregue Domando a fera
     .accept 94863 >>Aceite Adestramento da Fera - Missão
 step << Hunter
     #loop
@@ -2628,7 +2628,7 @@ step << Hunter
     .goto 1429/0,107.200,-9472.400
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Josephine Carson::251507|r
     .target Josephine Carson::251507
-    .turnin 94863 >>Entregue Adestramento da Fera - Missão
+    .turnin 94863 >>Entregue Domando a fera
     .accept 94864 >>Aceite Adestramento da Fera - Missão
 step << Hunter
     #loop
@@ -2643,7 +2643,7 @@ step << Hunter
     .goto 1429/0,107.200,-9472.400
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Josephine Carson::251507|r
     .target Josephine Carson::251507
-    .turnin 94864 >>Entregue Adestramento da Fera - Missão
+    .turnin 94864 >>Entregue Domando a fera
     .accept 94793 >>Aceite Treinamento da Fera - Missão
 step << Hunter
     .goto 1429/0,85.000,-9475.800
@@ -3123,7 +3123,7 @@ step << Rogue
     .goto 1453/0,607.38,-8790.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gunther Weller|r
     >>|cRXP_BUY_Compre uma|r |T132402:0|t[Machadinha] |cRXP_BUY_dela|r
-    >>|cRXP_WARN_Como alternativa, procure na Casa de Leilões algo melhor ou mais barato|r
+    >>|cRXP_WARN_Alternativamente, verifique a Casa de Leilões por algo melhor ou mais barato|r
     >>|cRXP_WARN_Economize 6s para treinamento depois|r
     .collect 853,1 -- Hatchet (1)
     .target Gunther Weller
@@ -4740,7 +4740,7 @@ step << Warlock
     .target Ursula Deline
 step << Warlock
     .goto 1453/0,1035.96,-8974.86
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Spackle Cardopomo|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com Spackle Cardopomo|r
     .vendor >> |cRXP_BUY_Compre|r |T133738:0|t[Grimório of Consumir Sombras (Rank 1)] |cRXP_BUY_e|r |T133738:0|t[Grimório de Sacrificar (Rank 1)] |cRXP_BUY_se você conseguir pagá-los. Se não, você pode comprá-los mais tarde|r
     .target Spackle Thornberry
 step << Mage

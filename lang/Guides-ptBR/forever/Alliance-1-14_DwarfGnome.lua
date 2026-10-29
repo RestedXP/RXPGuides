@@ -551,7 +551,7 @@ step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thran Khorman|r
     .turnin 3106 >> Entregue Runa Simples << Dwarf
     .turnin 3112 >> Entregue Memorando Simples << Gnome
-    .train 100 >> Treine |T132337:0|t[Carga]
+    .train 100 >> Aprenda |T132337:0|t[Investida]
     .train 772 >> Aprenda |T132155:0|t[Dilacerar]
     .target Thran Khorman
 step << Shaman
@@ -1686,7 +1686,7 @@ step << Hunter
 step << Hunter
     .goto 1426/0,-454.06,-5618.53--c:Dun Morogh,45.810,53.039
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Grif Selvacuore|r
-    .turnin 6064 >>Entregue Adestramento da Fera - Missão
+    .turnin 6064 >>Entregue Domando a fera
     .target Grif Wildheart
     .accept 6084 >>Aceite Adestramento da Fera - Missão
 step << Hunter
@@ -1697,7 +1697,7 @@ step << Hunter
 step << Hunter
     .goto 1426/0,-454.06,-5618.53--c:Dun Morogh,45.810,53.039
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Grif Selvacuore|r
-    .turnin 6084 >>Entregue Adestramento da Fera - Missão
+    .turnin 6084 >>Entregue Domando a fera
     .target Grif Wildheart
     .accept 6085 >>Aceite Adestramento da Fera - Missão
 step << Hunter
@@ -1708,7 +1708,7 @@ step << Hunter
 step << Hunter
     .goto 1426/0,-454.06,-5618.53--c:Dun Morogh,45.810,53.039
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Grif Selvacuore|r
-    .turnin 6085 >>Entregue Adestramento da Fera - Missão
+    .turnin 6085 >>Entregue Domando a fera
     .target Grif Wildheart
     .accept 6086 >>Aceite Treinamento da Fera - Missão
 step

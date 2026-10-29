@@ -385,7 +385,7 @@ step << Rogue
     .turnin 3109 >> Entregue Runa Cifrada << Dwarf
     .turnin 3113 >> Entregue Memorando Criptografado << Gnome
     .accept 77658 >> Aceite Três Vezes Roubado << Dwarf
-    .turn in 77658 >> Entregue Três Vezes Roubado << Dwarf
+    .turnin 77658 >> Entregue Três Vezes Roubado << Dwarf
     .accept 77659 >> Aceite Três Vezes Roubado << Gnome
     .turnin 77659 >> Entregue Três Vezes Roubado << Gnome
     .train 1784 >>Treine |T132320:0|t [Furtividade]
@@ -1002,7 +1002,7 @@ step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thran Khorman|r
     .turnin 3106 >> Entregue Runa Simples << Dwarf
     .turnin 3112 >> Entregue Memorando Simples << Gnome
-    .train 100 >> Treine |T132337:0|t[Carga]
+    .train 100 >> Aprenda |T132337:0|t[Investida]
     .train 772 >> Aprenda |T132155:0|t[Dilacerar]
     .target Thran Khorman
 step << Warrior
@@ -1012,7 +1012,7 @@ step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thran Khorman|r
     .turnin 77655 >> Entregue A Runa Perdida << Dwarf
     .turnin 77656 >> Entregue A Runa Perdida << Gnome
-    .train 100 >> Treine |T132337:0|t[Carga]
+    .train 100 >> Aprenda |T132337:0|t[Investida]
     .train 772 >> Aprenda |T132155:0|t[Dilacerar]
     .target Thran Khorman
 
@@ -1867,7 +1867,7 @@ step << Dwarf Hunter
 step << Dwarf Hunter
     .goto Dun Morogh,45.810,53.039
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Grif Selvacuore|r
-    .turnin 6064 >>Entregue Adestramento da Fera - Missão
+    .turnin 6064 >>Entregue Domando a fera
     .accept 6084 >>Aceite Adestramento da Fera - Missão
     .target Grif Wildheart
 step << Dwarf Hunter
@@ -1879,7 +1879,7 @@ step << Dwarf Hunter
 step << Dwarf Hunter
     .goto Dun Morogh,45.810,53.039
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Grif Selvacuore|r
-    .turnin 6084 >>Entregue Adestramento da Fera - Missão
+    .turnin 6084 >>Entregue Domando a fera
     .accept 6085 >>Aceite Adestramento da Fera - Missão
     .target Grif Wildheart
 step << Dwarf Hunter
@@ -1891,7 +1891,7 @@ step << Dwarf Hunter
 step << Dwarf Hunter
     .goto Dun Morogh,45.810,53.039
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Grif Selvacuore|r
-    .turnin 6085 >>Entregue Adestramento da Fera - Missão
+    .turnin 6085 >>Entregue Domando a fera
     .accept 6086 >>Aceite Treinamento da Fera - Missão
     .target Grif Wildheart
 step << Rogue

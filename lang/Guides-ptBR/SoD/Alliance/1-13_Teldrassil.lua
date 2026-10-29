@@ -336,7 +336,7 @@ step << !Hunter !Druid !Priest
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Alyissia|r
     .turnin 3116 >> Entregue O Selo Simples
     .train 772 >> Aprenda |T132155:0|t[Dilacerar]
-    .train 100 >> Treine |T132337:0|t[Carga]
+    .train 100 >> Aprenda |T132337:0|t[Investida]
     .target Alyissia
 step << Druid/Priest
     #season 2
@@ -1335,7 +1335,7 @@ step << Hunter
 #xprate >1.99
     .goto Teldrassil,56.676,59.489
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dazalar|r
-    .turnin 6063 >> Entregue Adestramento da Fera - Missão
+    .turnin 6063 >> Entregue Domando a fera
     .target Dazalar
     .accept 6101 >> Aceite Adestramento da Fera - Missão
 step << Hunter
@@ -1349,7 +1349,7 @@ step << Hunter
 #xprate >1.99
     .goto Teldrassil,56.676,59.489
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dazalar|r
-    .turnin 6101 >> Entregue Adestramento da Fera - Missão
+    .turnin 6101 >> Entregue Domando a fera
     .target Dazalar
     .accept 6102 >> Aceite Adestramento da Fera - Missão
 step << Hunter
@@ -1363,7 +1363,7 @@ step << Hunter
 #xprate >1.99
     .goto Teldrassil,56.676,59.489
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dazalar|r
-    .turnin 6102 >> Entregue Adestramento da Fera - Missão
+    .turnin 6102 >> Entregue Domando a fera
     .target Dazalar
     .accept 6103 >> Aceite Treinamento da Fera - Missão
     .train 1130 >> |cRXP_WARN_Certifique-se de ter treinado Marca do Caçador. Você precisará dela para obter uma runa em breve|r
@@ -1774,7 +1774,7 @@ step << Druid
     .goto Darnassus,35.38,8.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mathrengyl Ursivagus|r no nível intermediário
     .turnin 5925 >>  Entregue Heeding the Call - Missão << sod
-    .accept 5921 >> Aceite Moonglade
+    .accept 5921 >> Aceite Clareira da Lua
 	.trainer >> Treine suas magias de classe
     .target Mathrengyl Bearwalker
 step << Hunter
@@ -1925,7 +1925,7 @@ step << Hunter
     #requires beast2
     .goto Teldrassil,56.676,59.489
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dazalar|r
-    .turnin 6063 >> Entregue Adestramento da Fera - Missão
+    .turnin 6063 >> Entregue Domando a fera
     .target Dazalar
     .accept 6101 >> Aceite Adestramento da Fera - Missão
 step
@@ -2011,7 +2011,7 @@ step << Hunter
 #xprate <1.99
     .goto Teldrassil,56.676,59.489
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dazalar|r
-    .turnin 6063 >> Entregue Adestramento da Fera - Missão
+    .turnin 6063 >> Entregue Domando a fera
     .target Dazalar
     .accept 6101 >> Aceite Adestramento da Fera - Missão
 step << Hunter
@@ -2025,7 +2025,7 @@ step << Hunter
 #xprate <1.99
     .goto Teldrassil,56.676,59.489
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dazalar|r
-    .turnin 6101 >> Entregue Adestramento da Fera - Missão
+    .turnin 6101 >> Entregue Domando a fera
     .target Dazalar
     .accept 6102 >> Aceite Adestramento da Fera - Missão
 step << Hunter
@@ -2039,7 +2039,7 @@ step << Hunter
 #xprate <1.99
     .goto Teldrassil,56.676,59.489
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dazalar|r
-    .turnin 6102 >> Entregue Adestramento da Fera - Missão
+    .turnin 6102 >> Entregue Domando a fera
     .target Dazalar
     .accept 6103 >> Aceite Treinamento da Fera - Missão
 step << Warrior

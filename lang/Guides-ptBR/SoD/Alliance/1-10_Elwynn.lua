@@ -591,7 +591,7 @@ step << Warrior
     .turnin 3100 >> Entregue Carta Simples
     .accept 77616 >> Aceite A Runa Perdida << Human
     .turnin 77616 >> Entregue A Runa Perdida << Human
-    .train 100 >> Treine |T132337:0|t[Carga]
+    .train 100 >> Aprenda |T132337:0|t[Investida]
     .target Llane Beshere
 step << Paladin
     #xprate >1.59

@@ -96,7 +96,7 @@ step << Warlock
     .target Ursula Deline
 step << Warlock
     .goto Elwynn Forest,44.397,65.989
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Spackle Cardopomo|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com Spackle Cardopomo|r
     >> |cRXP_BUY_Compre o |T133738:0|t[Grimório de Consumir Sombras (Rank 1)]|r
     .collect 16357,1
     .target Spackle Thornberry
@@ -509,7 +509,7 @@ step
 step
     .goto Redridge Mountains,29.31,45.33,15,0
     .goto Redridge Mountains,29.98,44.45
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Magistrado Salomão|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Magistrado Salomão|r
 	.target Magistrate Solomon
     .accept 120 >> Aceite Mensageiro para Ventobravo
 step
@@ -777,7 +777,7 @@ step
     .accept 124 >> Aceite A Baying of Gnolls
     .accept 122 >> Aceite Underbelly Escamoso
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Magistrado Salomão|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Magistrado Salomão|r
 	.target Magistrate Solomon
     .goto Redridge Mountains,29.31,45.33,15,0
     .goto Redridge Mountains,29.98,44.45
@@ -785,12 +785,12 @@ step
 step
     .goto Redridge Mountains,29.71,44.26
     .target Bailiff Conacher
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com o |cRXP_FRIENDLY_Meirinho Conacher|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Meirinho Conacher|r
     .accept 91 >> Aceite Solomon's Law
 step
     .goto Redridge Mountains,26.75,46.43
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tClique em |cRXP_FRIENDLY_O Cartaz Procurado|r
-    .accept 180 >> Aceite Procurado: General Mordente
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tClique em |cRXP_FRIENDLY_O Cartaz de Procurado|r
+    .accept 180 >> Aceite Procura-se: Tenente Mordente
 step
     .goto Redridge Mountains,21.85,46.32
     .target Martie Jainrose
@@ -877,7 +877,7 @@ step
 	.target Verner Osgood
     .goto Redridge Mountains,31.00,47.30
     .turnin 124 >> Entregue A Baying of Gnolls
-    .accept 126 >> Aceite Howling in the Hills
+    .accept 126 >> Aceite O gnoll de Vila Plácida
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Encarregado Oslow|r
 	.target Foreman Oslow

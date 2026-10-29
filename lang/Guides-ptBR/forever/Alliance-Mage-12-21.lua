@@ -867,7 +867,7 @@ step
     .accept 127 >>Aceite O lago está para peixe
 step
     .goto 1433/0,-2151.53,-9247.12
-    .accept 180 >>Aceite Procurado: General Mordente
+    .accept 180 >>Aceite Procura-se: Tenente Mordente
 step
     >>Entre na Estalagem
     .goto 1433/0,-2158.91,-9235.97
@@ -1149,7 +1149,7 @@ step
 >>Fale com |cRXP_FRIENDLY_Vervo Obom|r
     .turnin 124 >>Entregue A Baying of Gnolls
 .target Verner Osgood
-    .accept 126 >>Aceite Howling in the Hills
+    .accept 126 >>Aceite O gnoll de Vila Plácida
 step
     .goto 1433/0,-2158.91,-9235.97
 .target Darcy
