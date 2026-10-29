@@ -38,7 +38,7 @@ step << Warrior/Warlock/Priest/Mage
     .goto 1420/0,1714.76,1760.68,40,0 << Priest/Mage
     .goto 1420/0,1718.38,1799.24,40,0 << Priest/Mage
     .goto 1420/0,1669.12,1869.73,40,0 << Priest/Mage
-    +|cRXP_WARN_击杀 |cRXP_ENEMY_食腐狼幼崽|r 和 |cRXP_ENEMY_夜行蝙蝠|r，拾取它们的掉落，直到你拥有价值60铜币的可出售物品（包括你的护甲）|r << Mage
+    +|cRXP_WARN_击杀 |cRXP_ENEMY_食腐狼幼崽|r 和 |cRXP_ENEMY_夜行蝙蝠|r。拾取它们的掉落，直到你拥有价值60铜币的可出售物品（包括你的护甲）|r << Mage
     +|cRXP_WARN_击杀 |cRXP_ENEMY_食腐狼幼崽|r 和 |cRXP_ENEMY_夜行蝙蝠|r。拾取它们的掉落，直到你拥有价值50铜币的可出售物品（包括你的护甲）|r << Priest
     +|cRXP_WARN_击杀 |cRXP_ENEMY_食腐狼幼崽|r 和 |cRXP_ENEMY_夜行蝙蝠|r，拾取它们的掉落，直到你拥有价值10铜币的可出售物品（包括你的护甲）|r << Warrior/Warlock
     .mob 食腐狼幼崽
@@ -1062,7 +1062,7 @@ step
     .goto 1420/0,496.96,2256.54,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_葛尔多|r 对话
     >>|cRXP_WARN_他是一个在通往布瑞尔的道路上巡逻的憎恶|r
-    >>|cRXP_WARN_选择 "我需要执行官塞加德的报告"|r
+    >>|cRXP_WARN_选择“我需要一份给执行官塞加德的报告”|r
     .complete 99141,3 --|1/1 Gordo's Report
     .target Gordo
     --.gossipoption 142737
@@ -1187,7 +1187,7 @@ step
 step
     .goto 1420/0,403.300,2287.700
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_亡灵卫兵迪林格尔|r 对话
-    >>|cRXP_WARN_选择 "我需要执行官塞加德的报告"|r
+    >>|cRXP_WARN_选择“我需要一份给执行官塞加德的报告”|r
     .turnin 404 >>交任务 腐烂的爪子
     .accept 426 >>接受任务 磨坊告急
     .complete 99141,1 --|1/1 Dillinger's Report
@@ -2139,7 +2139,7 @@ step << !Priest
     .zoneskip Undercity
 step << Rogue
     .goto 1458/0,323.57,1668.50
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与战争军需区的|r |cRXP_FRIENDLY_阿基巴德|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|Tinterface/worldmap/chatbubble_64grey.blp:20|t与战争军需区的|r|cRXP_FRIENDLY_阿基巴德|r交谈
     .train 201 >>学习单手剑
     .target 阿基巴德
 step << Warrior/Rogue
@@ -3444,7 +3444,7 @@ step
     .target 高级执行官哈德瑞克
 step << Mage/Priest/Warlock
     .goto 1421/0,1626.100,511.500
-    >>在地上拾取战利品 |cRXP_PICK_发光的书籍|r
+    >>拾取在地上的|cRXP_PICK_发光的书籍|r
     .collect 210177,1,79096,1 --Ataeric: On Arcane Curiosities
     --Other classes won't be nearby turnin in UC, probably not worth since it's only 160xp
 step
@@ -4099,9 +4099,9 @@ step << Paladin
     .xp <16,1
 step << Priest/Mage/Warlock
     .goto 1458/0,168.200,1663.100
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Owen Thadd::211022|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_欧文·萨德::211022|r对话
     .target Owen Thadd::211022
-    .turnin 79096 >>交任务"阿塔里克：奥术珍闻"
+    .turnin 79096 >>交任务 阿塔瑞克：论奥术奇迹
     .itemcount 210177,1
 step << Priest/Mage/Warlock
     #ssf
@@ -4220,7 +4220,7 @@ step << Undead/Skyborne
 step << Undead/Skyborne
     #completewith Gazzuz
     >>击杀 |cRXP_ENEMY_火刃兽人|r，拾取他们掉落的 |cRXP_LOOT_军官的徽章|r
-    >>|cRXP_WARN_这是RFC的前置任务，掉落率很低。|r
+    >>|cRXP_WARN_这是怒焰裂谷的前置任务，掉落率很低。|r
     .complete 5726,1 --Lieutenant's Insignia (1)
     .mob 火刃狂热者
     .mob 火刃学徒
@@ -4230,9 +4230,9 @@ step << Undead/Skyborne
     .goto 1411/1,-4701.42,1455.83
     >>击杀 |cRXP_ENEMY_加祖兹|r。拾取他的 |T134085:0|t[|cRXP_LOOT_燃影之眼|r]
     >>|cRXP_WARN_使用 |T134085:0|t[|cRXP_LOOT_燃影之眼|r] 以开启任务|r
-    >>|cRXP_WARN_利用视线规则躲避 |cRXP_ENEMY_加祖兹|r 的小影箭|r
+    >>|cRXP_WARN_使用视线（视野范围）来躲避 |cRXP_ENEMY_加祖兹|r 的暗影箭|r
     >>|cRXP_WARN_在击杀 |r加祖兹|cRXP_ENEMY_ 后，你可以跑到洞穴内的水体中以躲避 |r|cRXP_WARN_虚空行者|r|cRXP_ENEMY_|r
-    >>|cRXP_WARN_小心，他很强。必要时可以跳过此任务。|r
+    >>|cRXP_WARN_注意他比较难对付，如有需要可以跳过这个任务|r
     .collect 4903,1,832,1 --Collect Eye of Burning Shadow
     .accept 832 >>接受任务 燃影之眼
     .use 4903
@@ -4252,7 +4252,7 @@ step << Undead/Skyborne
     .goto 1411/1,-4684.50,1466.06,15,0
     .goto 1411/1,-4805.59,1495.67,15,0
     >>击杀 |cRXP_ENEMY_火刃兽人|r，拾取他们掉落的 |cRXP_LOOT_军官的徽章|r
-    >>|cRXP_WARN_这是RFC的前置任务，掉落率很低。|r
+    >>|cRXP_WARN_这是怒焰裂谷的前置任务，掉落率很低。|r
     .complete 5726,1 --Lieutenant's Insignia (1)
     .mob 火刃狂热者
     .mob 火刃学徒

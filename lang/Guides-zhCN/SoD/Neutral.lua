@@ -1528,7 +1528,7 @@ step
     .goto Stormwind City,74.182,7.465 << Alliance
     .goto Orgrimmar,38.923,38.398 << Horde
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_米尔顿·西弗|r 对话 << Alliance
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_佐尔·孤树|r对话 << Horde
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_佐尔·孤树|r 对话 << Horde
     >>|cRXP_WARN_注意：|T133736:0|t|cRXP_LOOT_[秘典：智慧延展]|r 需要达到25级才能使用 |r << Mage
     >>|cRXP_WARN_注意：|T133733:0|t|cRXP_LOOT_[魔典：灵魂收割]|r 和 |T133733:0|t|cRXP_LOOT_[魔典：召唤传送门]|r 需要达到25级才能使用|r << Warlock
     >>|cRXP_WARN_注意：|T133733:0|t|cRXP_LOOT_[魔典：邪甲术]|r 需要达到50级才能使用|r << Warlock

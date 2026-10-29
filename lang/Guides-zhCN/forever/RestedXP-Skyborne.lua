@@ -2578,7 +2578,7 @@ step << Mage
     .xp <8,1
     .goto 2521,45.1,45.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_申安·咒风::254086|r 对话
-    .train 5143 >> 训练 |T136096:0|t[奥术飞弹]
+    .train 5143 >> 学习 |T136096:0|t[奥术飞弹]
     -- .train 205 >> Train |T135846:0|t[Frostbolt (Rank 2)]
     -- .train 118 >> Train |T136071:0|t[Polymorph]
     .skipgossipid 136807
@@ -7380,8 +7380,8 @@ step << Horde
     --93739 will take too long, won't be able to fully complete and turnin until lvl 22/23 and at that point you get no xp
 step << Horde
     .goto 1454/1,-4126.300,1920.100
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Thrall::4949|r 对话。
-    .turnin 95350 >>交还 欢迎来到艾泽拉斯
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_萨尔::4949|r 对话。
+    .turnin 95350 >>交任务 欢迎来到艾泽拉斯
     .accept 98024 >>接受任务 十字路口之旅
     --.accept 93739 >>Accept Exploring the Horde
     .accept 5726 >>接受任务 隐藏的敌人

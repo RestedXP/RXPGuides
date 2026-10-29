@@ -135,7 +135,7 @@ step
     .accept 3903 >> 接受任务 米莉·奥斯沃斯
 step
     .goto 1429/0,-120.17,-8897.82
-    .vendor >>垃圾卖店，修理装备
+    .vendor >>出售垃圾物品并修理装备
 step
     .goto 1429/0,-363.13,-8909.39,60,0
     .goto 1429/0,-120.17,-8673.31,60,0
@@ -215,7 +215,7 @@ step
     .goto 1429/0,164.44,-9339.91,200 >> 死掉之后在墓地复活，或者跑到闪金镇
 step
     .goto 1429/0,88.08,-9464.89
-    .vendor >> 垃圾卖店，修理装备
+    .vendor >> 出售垃圾物品并修理装备
 step
     .goto 1429/0,74.02,-9465.52
 >>与|cRXP_FRIENDLY_治安官杜汉|r 对话
@@ -364,7 +364,7 @@ step
     .accept 40 >> 接受任务 鱼人的威胁
 step
     .goto 1429/0,88.08,-9464.89
-    .vendor >>垃圾卖店，修理装备
+    .vendor >>出售垃圾物品并修理装备
 step
     .goto 1429/0,74.02,-9465.52
 >>与|cRXP_FRIENDLY_治安官杜汉|r 对话
@@ -375,7 +375,7 @@ step
     .accept 76 >> 接受任务 玉石矿洞
 step
     .goto 1429/0,88.08,-9464.89
-    .vendor >> 垃圾卖店，修理装备
+    .vendor >> 出售垃圾物品并修理装备
 step
     .goto 1429/0,33.14,-9460.75
 >>与|cRXP_FRIENDLY_威廉·匹斯特|r 对话
@@ -438,7 +438,7 @@ step
     .accept 5545 >> 接受任务 木材危机
 step
     .goto 1429/0,-1355.79,-9469.52
-    .vendor >> 垃圾卖店，修理装备
+    .vendor >> 出售垃圾物品并修理装备
 step
     #sticky
     #completewith Bundles
@@ -592,7 +592,7 @@ step
     .accept 1097 >> 接受任务 艾尔默的任务
 step
     .goto 1429/0,88.08,-9464.89
-    .vendor >>垃圾卖店，修理装备
+    .vendor >>出售垃圾物品并修理装备
 step
     .goto 1429/0,33.14,-9460.75
 .target 威廉·匹斯特
@@ -775,7 +775,7 @@ step
 step
     #completewith next
     .goto 1426/0,-1591.24,-5712.47
-    .vendor >> 垃圾卖店，修理装备
+    .vendor >> 出售垃圾物品并修理装备
 step
     .goto 1426/0,-1581.39,-5715.75
 .target Senator Mehr Stonehallow
@@ -1068,7 +1068,7 @@ step
     .goto 1426/0,-632.15,-5466.540
     >>不要在途中杀熊
 .target 驾驶员贝隆·风箱
->>与 |cRXP_FRIENDLY_驾驶员贝隆·风箱|r 对话
+>>与|cRXP_FRIENDLY_驾驶员贝隆·风箱|r 对话
     .accept 317 >> 接受任务 贝尔丁的补给
 step
     .goto 1426/0,-641.80,-5473.18
@@ -1120,7 +1120,7 @@ step
     .complete 317,2 --Collect Thick Bear Fur (x2)
 step
     .goto 1426/0,-632.15,-5466.540
->>与 |cRXP_FRIENDLY_驾驶员贝隆·风箱|r 对话
+>>与|cRXP_FRIENDLY_驾驶员贝隆·风箱|r 对话
     .turnin 317 >> 交任务 贝尔丁的补给
 .target 驾驶员贝隆·风箱
     .accept 318 >> 接受任务 艾沃沙酒
@@ -1259,7 +1259,7 @@ step
 step
     .goto 1426/0,-632.15,-5466.540
 .target 驾驶员贝隆·风箱
->>与 |cRXP_FRIENDLY_驾驶员贝隆·风箱|r 对话
+>>与|cRXP_FRIENDLY_驾驶员贝隆·风箱|r 对话
     .turnin 320 >> 交任务 艾沃沙酒
 step
     #era/som
@@ -1390,7 +1390,7 @@ step
 step
     #completewith next
     .goto 1426/0,-1591.24,-5712.47
-    .vendor >> 垃圾卖店，修理装备
+    .vendor >> 出售垃圾物品并修理装备
 step
     .goto 1426/0,-1600.30,-5726.590
 .target Foreman Stonebrow
@@ -1416,7 +1416,7 @@ step
 step
     #completewith next
     .goto 1426/0,-1591.24,-5712.47
-    .vendor >> 垃圾卖店，修理装备
+    .vendor >> 出售垃圾物品并修理装备
 step
     .goto 1426/0,-1581.39,-5715.75
 .target Senator Mehr Stonehallow
@@ -1636,7 +1636,7 @@ step
     .goto 1432/0,-2636.44,-4816.79,60 >>跑回地堡，路上刷小怪
 step
     .goto 1432/0,-2658.51,-4822.30
-    .vendor >>垃圾卖店，修理装备
+    .vendor >>出售物品并修理装备
 step
     .goto 1432/0,-2675.06,-4824.14
 >>与|cRXP_FRIENDLY_巡山人雷矛|r 对话

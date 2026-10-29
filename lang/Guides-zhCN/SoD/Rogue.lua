@@ -415,7 +415,7 @@ step << Rogue
     .train 400081,1
 step << Rogue
     #season 2
-    .train 400081 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_精准符文|r] |cRXP_WARN_来训练|r |T135610:0|t[正中眉心]
+    .train 400081 >>|cRXP_WARN_使用|r |T134419:0|t|T135610:0|t[|cRXP_FRIENDLY_精准符文|r] |cRXP_WARN_训练|r |T135610:0|t|T135610:0|t[正中眉心]
     .use 204174
     .itemcount 204174,1
 ]])
@@ -438,7 +438,7 @@ step << Rogue
     .train 400081,1
 step << Rogue
     #season 2
-    .train 400081 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_精准符文|r] |cRXP_WARN_来训练|r |T135610:0|t[正中眉心]
+    .train 400081 >>|cRXP_WARN_使用|r |T134419:0|t|T135610:0|t[|cRXP_FRIENDLY_精准符文|r] |cRXP_WARN_训练|r |T135610:0|t|T135610:0|t[正中眉心]
     .use 204174
     .itemcount 204174,1
 ]])
@@ -468,7 +468,7 @@ step << Rogue
     .train 400081,1
 step << Rogue
     #season 2
-    .train 400081 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_精准符文|r] |cRXP_WARN_来训练|r |T135610:0|t[正中眉心]
+    .train 400081 >>|cRXP_WARN_使用|r |T134419:0|t|T135610:0|t[|cRXP_FRIENDLY_精准符文|r] |cRXP_WARN_训练|r |T135610:0|t|T135610:0|t[正中眉心]
     .use 204174
     .itemcount 204174,1
 ]])
@@ -1347,7 +1347,7 @@ step
     .train 400081,1
 step
     #season 2
-    .train 400081 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_精准符文|r] |cRXP_WARN_来训练|r |T135610:0|t[正中眉心]
+    .train 400081 >>|cRXP_WARN_使用|r |T134419:0|t|T135610:0|t[|cRXP_FRIENDLY_精准符文|r] |cRXP_WARN_训练|r |T135610:0|t|T135610:0|t[正中眉心]
     .use 204174
     .itemcount 204174,1
 
@@ -1368,13 +1368,13 @@ RXPGuides.RegisterGuide([[
 step
     #season 2
     .goto Orgrimmar,55.87,44.89
-    >>打开|cRXP_PICK_布满灰尘的箱子|r获取|T134419:0|t|T134419:0|t[|cRXP_FRIENDLY_精准符文|r]
+    >>打开|cRXP_PICK_布满灰尘的箱子|r 获取 |T134419:0|t[|cRXP_FRIENDLY_精准符文|r]
     >>|cRXP_WARN_它位于暗影裂口的二楼|r
     .collect 204174,1 --Rune of Precision (1)
     .train 400081,1
 step
     #season 2
-    .train 400081 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_精准符文|r] |cRXP_WARN_来训练|r |T135610:0|t[正中眉心]
+    .train 400081 >>|cRXP_WARN_使用|r |T134419:0|t|T135610:0|t[|cRXP_FRIENDLY_精准符文|r] |cRXP_WARN_训练|r |T135610:0|t|T135610:0|t[正中眉心]
     .use 204174
     .itemcount 204174,1
 

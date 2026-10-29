@@ -214,7 +214,7 @@ step << Warlock
     #label BeginningsHS
     #completewith BeginningsEnd
     .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
-    >>|cRXP_WARN_确保当你死亡时，你的子区域是寒脊山谷！否则你将被传送到卡拉诺斯墓地|r
+    >>|cRXP_WARN_确保当你死亡时，你所在的子区域是寒脊山谷！否则你将被传送到卡拉诺斯墓地|r
     .target 灵魂医者
 step << Warlock
     #season 0,1
@@ -2920,7 +2920,7 @@ step << skip
     .accept 86 >> 接受任务 比利的馅饼
 step << skip
     #completewith next
-    >>击杀 |cRXP_ENEMY_狗头人隧道工|r 和 |cRXP_ENEMY_狗头人矿工|r。拾取他们的 |cRXP_LOOT_蜡烛|r 和 |cRXP_LOOT_金砂|r
+    >>击杀 |cRXP_ENEMY_狗头人隧道工|r 和 |cRXP_ENEMY_狗头人矿工|r，拾取他们的 |cRXP_LOOT_蜡烛|r 和 |cRXP_LOOT_金砂|r
     >>|cRXP_WARN_任务过程中5级怪物可能会变灰，但仍需完成此任务以解锁后续任务|r
     .complete 60,1 --Kobold Candle (8)
     .complete 47,1 --Gold Dust (10)
@@ -2929,7 +2929,7 @@ step << skip
 step << skip
     .goto 1429/0,193.00,-9832.40,50,0
     .goto 1429/0,129.73,-9844.49
-    >>|cRXP_WARN_进入并探察法戈第矿洞|r
+    >>|cRXP_WARN_进入并且探察法戈第矿洞|r
     .complete 62,1 --Scout Through the Fargodeep Mine
 step << skip
     .goto 1429/0,129.73,-9844.49,25,0
@@ -2937,7 +2937,7 @@ step << skip
     .goto 1429/0,129.73,-9844.49,25,0
     .goto 1429/0,226.57,-9878.28,25,0
     .goto 1429/0,129.73,-9844.49
-    >>击杀 |cRXP_ENEMY_狗头人隧道工|r 和 |cRXP_ENEMY_狗头人矿工|r。拾取他们的 |cRXP_LOOT_蜡烛|r 和 |cRXP_LOOT_金砂|r
+    >>击杀 |cRXP_ENEMY_狗头人隧道工|r 和 |cRXP_ENEMY_狗头人矿工|r，拾取他们的 |cRXP_LOOT_蜡烛|r 和 |cRXP_LOOT_金砂|r
     >>|cRXP_WARN_任务过程中5级怪物可能会变灰，但仍需完成此任务以解锁后续任务|r
     .complete 60,1 --Kobold Candle (8)
     .complete 47,1 --Gold Dust (10)

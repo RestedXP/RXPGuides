@@ -1324,7 +1324,7 @@ step
     .goto 1411/1,-4908.69,-998.27,40,0
     .goto 1411/1,-4829.91,-1091.33,40,0
     .goto 1411/1,-4722.57,-1117.42,40,0
-    >>沿着海滩往下跑。击杀|cRXP_ENEMY_海浪蟹|r和|cRXP_ENEMY_龙虾人|r。拾取它们的|cRXP_LOOT_蟹胶|r 和 |cRXP_LOOT_眼球|r。你不需要在这里完成这一步。
+    >>沿着海滩前进。击杀 |cRXP_ENEMY_海蟹|r 和 |cRXP_ENEMY_龙虾人|r，拾取它们掉落的 |cRXP_LOOT_粘液|r 和 |cRXP_LOOT_眼睛|r。你不需要在这里完成这一步。
     .complete 818,2 --Crawler Mucus (8)
     .mob 海浪蟹
     .mob 成熟海浪蟹
@@ -2203,7 +2203,7 @@ step << Warlock
     .target 杜格鲁·血怒
 step << Warlock
     .goto 1411/1,-4854.76,345.81
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_基萨|r 对话并购买 |T133738:0|t[火焰箭（等级2）]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_基萨|r 对话并购买 |T133738:0|t[火焰箭（等级 2）]
     .collect 16302,1,825,1 --Grimoire of Firebolt (Rank 2) (1)
     .target 基萨
     .money <0.01
@@ -2796,7 +2796,7 @@ step << Warlock
     .xp <10,1
 step << Warlock
     .goto 1411/1,-4854.76,345.81
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_基萨|r 对话并购买 |T133738:0|t[火焰箭（等级2）]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_基萨|r 对话并购买 |T133738:0|t[火焰箭（等级 2）]
     .collect 16302,1,837,1 --Grimoire of Firebolt (Rank 2) (1)
     .target 基萨
     .money <0.01
@@ -2867,7 +2867,7 @@ step
     .goto 1411/1,-4327.07,932.02,40,0
     .goto 1411/1,-4198.05,911.22,30,0
     .goto 1411/1,-4165.27,903.11,20 >>跳入雷霆山脊 << !Hunter !Warlock
-    .goto 1411/1,-4165.27,903.11,20 >>|cRXP_WARN_右键点击|r |T136218:0|t[小鬼] |cRXP_WARN_的头像并点击解散，将其解散|r << Warlock
+    .goto 1411/1,-4165.27,903.11,20 >>|cRXP_WARN_解散你的|r |T136218:0|t|T136218:0|t[小鬼] |cRXP_WARN_——右键点击其单位框架并选择“解散”|r << Warlock
     .cast 2641 >>|cRXP_WARN_施放|r |T136095:0|t[解散宠物] |cRXP_WARN_然后跳入雷霆山脊|r << Hunter
 step
     #softcore
@@ -3155,7 +3155,7 @@ step << Warlock
     .target 杜格鲁·血怒
 step << Warlock
     .goto 1411/1,-4854.76,345.81
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_基萨|r 对话并购买 |T133738:0|t[火焰箭（等级2）]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_基萨|r 对话并购买 |T133738:0|t[火焰箭（等级 2）]
     .collect 16302,1,837,1 --Grimoire of Firebolt (Rank 2) (1)
     .target 基萨
     .money <0.01
@@ -3765,7 +3765,7 @@ step << Shaman/Hunter
 step << !Shaman !Hunter
     #completewith Gazzuz
     >>击杀 |cRXP_ENEMY_火刃兽人|r，拾取他们掉落的 |cRXP_LOOT_军官的徽章|r
-    >>|cRXP_WARN_这是RFC的前置任务，掉落率很低。|r
+    >>|cRXP_WARN_这是怒焰裂谷的前置任务，掉落率很低。|r
     .complete 5726,1 --Lieutenant's Insignia (1)
     .mob 火刃狂热者
     .mob 火刃学徒
@@ -3774,9 +3774,9 @@ step << !Shaman !Hunter
     #label Gazzuz
     .goto 1411/1,-4701.42,1455.83
     >>击杀 |cRXP_ENEMY_加祖兹|r。拾取他的 |T134085:0|t[|cRXP_LOOT_燃影之眼|r]
-    >>|cRXP_WARN_要小心，他非常困难。如果你无法组队或独自击杀他，可以跳过此任务|r
+    >>|cRXP_WARN_小心，他非常困难。如果你无法组队或独自击杀他，可以跳过此任务|r
     >>|cRXP_WARN_使用 |T134085:0|t[|cRXP_LOOT_燃影之眼|r] 以开启任务|r
-    >>|cRXP_WARN_利用视线规则躲避 |cRXP_ENEMY_加祖兹|r 的小影箭|r
+    >>|cRXP_WARN_使用视线（视野范围）来躲避 |cRXP_ENEMY_加祖兹|r 的暗影箭|r
     >>|cRXP_WARN_在击杀 |r加祖兹|cRXP_ENEMY_ 后，你可以跑到洞穴内的水体中以躲避 |r|cRXP_WARN_虚空行者|r|cRXP_ENEMY_|r
     .collect 4903,1,832,1 --Collect Eye of Burning Shadow
     .accept 832 >>接受任务 燃影之眼
@@ -3797,7 +3797,7 @@ step << !Shaman !Hunter
     .goto 1411/1,-4684.50,1466.06,15,0
     .goto 1411/1,-4805.59,1495.67,15,0
     >>击杀 |cRXP_ENEMY_火刃兽人|r，拾取他们掉落的 |cRXP_LOOT_军官的徽章|r
-    >>|cRXP_WARN_这是RFC的前置任务，掉落率很低。|r
+    >>|cRXP_WARN_这是怒焰裂谷的前置任务，掉落率很低。|r
     .complete 5726,1 --Lieutenant's Insignia (1)
     .mob 火刃狂热者
     .mob 火刃学徒
@@ -3990,15 +3990,15 @@ step
 step
     #optional
     .goto 1420/0,54.500,1996.400
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Hadric Harlson|r 对话
-    .turnin 96897 >>交任务 The Cult of the Damned
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哈德里克·哈尔森|r 对话
+    .turnin 96897 >>交任务 诅咒神教
     .target Hadric Harlson
     .isQuestComplete 96897
 step
     #optional
     .goto 1420/0,54.500,1996.400
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Hadric Harlson|r 对话
-    .turnin 96898 >>交任务 Remnants of War
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哈德里克·哈尔森|r 对话
+    .turnin 96898 >>交任务 战争的残迹
     .target Hadric Harlson
     .isQuestComplete 96898
 step

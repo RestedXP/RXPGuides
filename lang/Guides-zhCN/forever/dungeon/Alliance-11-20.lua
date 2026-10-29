@@ -2886,7 +2886,7 @@ step << NightElf
 step << NightElf Rogue
     .goto 1453/0,377.61,-8752.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥斯本|r 对话
-    >>|cRXP_WARN_确保你学习|r |T136058:0|t[开锁] |cRXP_WARN_因为你的潜行者职业任务中很快就会需要它|r
+    >>|cRXP_WARN_确保你训练|r |T136058:0|t[开锁] |cRXP_WARN_，因为你很快需要它来完成你的潜行者职业任务|r
     .train 1804 >> 学习 |T136058:0|t[开锁]
     .target 夜行者奥斯伯
     .xp >20,1
@@ -2894,7 +2894,7 @@ step << NightElf Rogue
 step << NightElf Rogue
     .goto 1453/0,377.61,-8752.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥斯本|r 对话
-    >>|cRXP_WARN_确保你学习|r |T136058:0|t[开锁] |cRXP_WARN_因为你的潜行者职业任务中很快就会需要它|r
+    >>|cRXP_WARN_确保你训练|r |T136058:0|t[开锁] |cRXP_WARN_，因为你很快需要它来完成你的潜行者职业任务|r
     .train 1804 >> 学习 |T136058:0|t[开锁]
     .trainer >> 训练你的职业技能
     .target 夜行者奥斯伯
@@ -2906,7 +2906,7 @@ step << NightElf Rogue
     .goto 1453/0,323.43,-8817.83,5 >> 进入军情7处总部。上楼去找 |cRXP_FRIENDLY_"剃刀"雷吉克|r
 step << NightElf Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_"剃刀"雷吉克|r对话
-    .accept 2281 >> 接受任务 赤脊山的联络员
+    .accept 2281 >> 接受任务赤脊山的联络员
     .goto 1453/0,362.55,-8819.80
     .target Renzik "The Shiv"
 step << NightElf
@@ -2929,16 +2929,16 @@ step << NightElf
 step << !NightElf
     .isOnQuest 92415
     .goto 1453/0,744.400,-8621.101
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_???????????????????????????|r 对话
-    .turnin 92415 >> 交任务 Remember That I Love 你
-    .accept 95161 >> 接受任务 Remember That I Love 你
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_孤儿监护员奈丁加尔|r 对话
+    .turnin 92415 >> 交任务 记住我爱你
+    .accept 95161 >> 接受任务 记住我爱你
     .target Orphan Matron Nightingale
 step << !NightElf
     #optional
     .isQuestTurnedIn 92415
     .goto 1453/0,744.400,-8621.101
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_???????????????????????????|r 对话
-    .accept 95161 >> 接受任务 Remember That I Love 你
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_孤儿监护员奈丁加尔|r 对话
+    .accept 95161 >> 接受任务 记住我爱你
     .target Orphan Matron Nightingale
 step << !NightElf
     .goto 1453/0,634.700,-8390.800
@@ -2960,19 +2960,19 @@ step << !NightElf
     .isOnQuest 95189
     .goto 1453/0,531.000,-8322.400
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德娜·肯尼迪|r 对话
-    >>|cRXP_WARN_她在 Royal Gallery 附近稍微走动|r
-    .turnin 95189 >> 交任务 洛丹伦之徽
+    >>|cRXP_WARN_她在皇家画廊里走来走去|r
+    .turnin 95189 >> 交任务 洛丹伦纹章
     .target 德娜·肯尼迪
 step << !NightElf
     .isOnQuest 95195
     .goto 1453/0,521.000,-8954.101
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_马库斯·乔纳森将军|r对话
-    .turnin 95195 >> 交任务 Bloodied Insignia
+    .turnin 95195 >> 交任务 血污徽章
     .target General Marcus Jonathan
 step << !NightElf Rogue
     .goto 1453/0,377.61,-8752.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥斯本|r 对话
-    >>|cRXP_WARN_确保你学习|r |T136058:0|t[开锁] |cRXP_WARN_因为你的潜行者职业任务中很快就会需要它|r
+    >>|cRXP_WARN_确保你训练|r |T136058:0|t[开锁] |cRXP_WARN_，因为你很快需要它来完成你的潜行者职业任务|r
     .train 1804 >> 学习 |T136058:0|t[开锁]
     .target 夜行者奥斯伯
     .xp >20,1
@@ -2980,7 +2980,7 @@ step << !NightElf Rogue
 step << !NightElf Rogue
     .goto 1453/0,377.61,-8752.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥斯本|r 对话
-    >>|cRXP_WARN_确保你学习|r |T136058:0|t[开锁] |cRXP_WARN_因为你的潜行者职业任务中很快就会需要它|r
+    >>|cRXP_WARN_确保你训练|r |T136058:0|t[开锁] |cRXP_WARN_，因为你很快需要它来完成你的潜行者职业任务|r
     .train 1804 >> 学习 |T136058:0|t[开锁]
     .trainer >> 训练你的职业技能
     .target 夜行者奥斯伯
@@ -2992,7 +2992,7 @@ step << !NightElf Rogue
     .goto 1453/0,323.43,-8817.83,5 >> 进入军情7处总部。上楼去找 |cRXP_FRIENDLY_"剃刀"雷吉克|r
 step << !NightElf Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_"剃刀"雷吉克|r对话
-    .accept 2281 >> 接受任务 赤脊山的联络员
+    .accept 2281 >> 接受任务赤脊山的联络员
     .goto 1453/0,362.55,-8819.80
     .target Renzik "The Shiv"
 step << Warrior
@@ -3083,7 +3083,7 @@ step << !NightElf !Dwarf/!Hunter
 step << Dwarf Hunter/NightElf
     #optional
     #completewith TDB1
-    .zone Westfall >> 离开暴风城。前往西部荒野
+    .zone Westfall >> 离开暴风城，前往西部荒野
 step
     #label TDB1
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格里安·斯托曼|r 对话
@@ -3610,13 +3610,13 @@ step << Rogue
     +|cRXP_WARN_==注意接下来的内容==|r
     >>|cRXP_WARN_按下 Esc，然后进入 → 选项 → 控制|r
     >>|cRXP_WARN_勾选 "启用交互键" 并将 "与目标互动" 绑定到一个按键|r
-    >>|cRXP_WARN_另外，建议启用敌方姓名板（默认按键：V）这样可以在塔内的一些拐角处看到躲在后面的敌人|r
+    >>|cRXP_WARN_另外，建议启用敌方姓名板 (默认按键：V) 这样可以在塔内的一些拐角处看到躲在后面的敌人|r
 step << Rogue
     .goto 1436/0,619.17,-11035.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_密探吉尔妮|r 对话
     >>这个任务是必须完成的，关系到你的|cRXP_WARN_ |T132290:0|t[毒药]|r
-    .turnin 2360 >> 交任务 马迪亚斯和迪菲亚盗贼
-    .accept 2359 >> 接受任务 克拉文之塔
+    .turnin 2360 >> 交任务马迪亚斯和迪菲亚盗贼
+    .accept 2359 >> 接受任务克拉文之塔
     .target Agent Kearnen
 step << Rogue
     #label TowerKey
@@ -3672,7 +3672,7 @@ step << Dwarf Rogue
     #optional
     #sticky
     #label AntiVenomEnd2
-    .cast 20594 >>|cRXP_WARN_施放 |T136225:0|t[石像形态] ，来移除 |T136230:0|t[赞吉尔之触] 的减益效果|r
+    .cast 20594 >>|cRXP_WARN_施放 |T136225:0|t[石像形态] 来移除 |T136230:0|t[赞吉尔之触] 的减益效果|r
     .aura -9991
 step << Rogue
     .hs >> 将炉石使用回暴风城
@@ -4565,8 +4565,8 @@ step
     .isOnQuest 5321
 step
     #optional
-    .abandon 2138 >> 放弃任务清除疫病
-    .abandon 1002 >> 放弃任务传声盒323号
+    .abandon 2138 >> 放弃任务 清除疫病
+    .abandon 1002 >> 放弃任务 传声盒323号
 step
     #completewith tower
     .zone Ashenvale >> 向南前往灰谷

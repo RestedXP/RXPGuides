@@ -121,7 +121,7 @@ step << !Priest !Rogue
 	.accept 3120 >> 接受任务 绿色符记 << Druid
 step << !Hunter !Druid !Warrior
     #completewith next
-    >>在前往埃沃隆的路上击杀 |cRXP_ENEMY_Thistle Boars|r。你不必现在完成此任务
+    >>在前往埃沃隆的路上击杀 |cRXP_ENEMY_草刺野猪|r。你不必现在完成此任务
     .complete 457,2 --Kill Thistle Boar (x7)
     .mob 草刺野猪
 step << !Hunter !Druid !Warrior
@@ -162,7 +162,7 @@ step << Druid
     .mob 劣魔
 step << Druid
     #completewith next
-    >>在前往埃沃隆的路上击杀 |cRXP_ENEMY_Thistle Boars|r。你不必现在完成此任务
+    >>在前往埃沃隆的路上击杀 |cRXP_ENEMY_草刺野猪|r。你不必现在完成此任务
     .complete 457,2 --Kill Thistle Boar (x7)
     .mob 草刺野猪
 step << Druid
@@ -257,7 +257,7 @@ step
     .mob 树林蜘蛛
 step
     #completewith next
-    >>在前往格瑞尔的路上击杀 |cRXP_ENEMY_Thistle Boars|r。你不必现在完成此任务
+    >>在前往格瑞尔的路上击杀 |cRXP_ENEMY_草刺野猪|r。你不必现在完成此任务
     .complete 457,2 --Kill Thistle Boar (x7)
     .mob 草刺野猪
 step << !Druid
@@ -284,7 +284,7 @@ step
     .turnin 97977 >>交任务 自然的呼唤
 step
     #completewith next
-    >>在前往埃沃隆的路上击杀 |cRXP_ENEMY_Thistle Boars|r。你不必现在完成此任务
+    >>在前往埃沃隆的路上击杀 |cRXP_ENEMY_草刺野猪|r。你不必现在完成此任务
     .complete 457,2 --Kill Thistle Boar (x7)
     .mob 草刺野猪
 step
@@ -320,7 +320,7 @@ step << Hunter/Rogue
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.05
 step
     #completewith next
-    >>在前往埃沃隆的路上击杀 |cRXP_ENEMY_Thistle Boars|r。你不必现在完成此任务
+    >>在前往埃沃隆的路上击杀 |cRXP_ENEMY_草刺野猪|r。你不必现在完成此任务
     .complete 457,2 --Kill Thistle Boar (x7)
     .mob 草刺野猪
 step
@@ -491,7 +491,7 @@ step
 step
     .goto 1438/1,882.300,9909.101
     >>在营火旁输入 |cRXP_WARN_/sit|r 表情，|cRXP_WARN_原地坐下保持1分钟|r 来完成目标
-    >>|cRXP_WARN_如果你坐下后没有获得任务奖励，放弃任务并重新接受！|r
+    >>|cRXP_WARN_如果你坐下后没有获得任务奖励，放弃任务再重新接一次！|r
     .complete 96606,1 --Sit
     .complete 96606,2 --Gain the Boosted Rest buff
 step

@@ -1935,7 +1935,7 @@ step
 step
     #completewith Gazzuz
     >>击杀 |cRXP_ENEMY_火刃兽人|r，拾取他们掉落的 |cRXP_LOOT_军官的徽章|r
-    >>|cRXP_WARN_这是RFC的前置任务，掉落率很低。|r
+    >>|cRXP_WARN_这是怒焰裂谷的前置任务，掉落率很低。|r
     .complete 5726,1 --Lieutenant's Insignia (1)
     .mob 火刃狂热者
     .mob 火刃学徒
@@ -1944,9 +1944,9 @@ step
     .goto 1411/1,-4701.42,1455.83
     >>击杀 |cRXP_ENEMY_加祖兹|r。拾取他的 |T134085:0|t[|cRXP_LOOT_燃影之眼|r]
     >>|cRXP_WARN_使用 |T134085:0|t[|cRXP_LOOT_燃影之眼|r] 以开启任务|r
-    >>|cRXP_WARN_利用视线规则躲避 |cRXP_ENEMY_加祖兹|r 的小影箭|r
+    >>|cRXP_WARN_使用视线（视野范围）来躲避 |cRXP_ENEMY_加祖兹|r 的暗影箭|r
     >>|cRXP_WARN_在击杀 |r加祖兹|cRXP_ENEMY_ 后，你可以跑到洞穴内的水体中以躲避 |r|cRXP_WARN_虚空行者|r|cRXP_ENEMY_|r
-    >>|cRXP_WARN_小心，他很强。必要时可以跳过此任务。|r
+    >>|cRXP_WARN_注意他比较难对付，如有需要可以跳过这个任务|r
     .collect 4903,1,832,1 --Collect Eye of Burning Shadow
     .accept 832 >>接受任务 燃影之眼
     .use 4903
@@ -1966,7 +1966,7 @@ step
     .goto 1411/1,-4684.50,1466.06,15,0
     .goto 1411/1,-4805.59,1495.67,15,0
     >>击杀 |cRXP_ENEMY_火刃兽人|r，拾取他们掉落的 |cRXP_LOOT_军官的徽章|r
-    >>|cRXP_WARN_这是RFC的前置任务，掉落率很低。|r
+    >>|cRXP_WARN_这是怒焰裂谷的前置任务，掉落率很低。|r
     .complete 5726,1 --Lieutenant's Insignia (1)
     .mob 火刃狂热者
     .mob 火刃学徒
@@ -2212,15 +2212,15 @@ step
 step
     .goto Tirisfal Glades,61.26,50.84
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_执政官塞弗伦|r 对话
-    .turnin 440 >> 交还 黛丽娅的戒指
-    .accept 441 >> 接受 拉林夫与幽暗城
+    .turnin 440 >> 交任务 黛丽娅的戒指
+    .accept 441 >> 接受任务 拉林夫与幽暗城
     .target Magistrate Sevren
     .isOnQuest 440
 step
     #optional
     .goto Tirisfal Glades,61.26,50.84
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_执政官塞弗伦|r 对话
-    .accept 441 >> 接受 拉林夫与幽暗城
+    .accept 441 >> 接受任务 拉林夫与幽暗城
     .target Magistrate Sevren
     .isQuestTurnedIn 440
 step
@@ -2247,9 +2247,9 @@ step
     .goto 1458/0,266.300,1567.200,20 >>乘电梯下去到幽暗城
 step
     .goto Undercity,62.02,42.76
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Raleigh|r 对话
-    .turnin 441 >>交还 拉林夫与幽暗城
-    .accept 530 >>接受 丈夫的复仇
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莱雷恩|r 对话
+    .turnin 441 >>交任务 拉林夫与幽暗城
+    .accept 530 >>接受任务 丈夫的复仇
     .target Raleigh Andrean
     .isQuestTurnedIn 440
 step << Tauren/Hunter/Orc Shaman/Troll Shaman
@@ -2346,7 +2346,7 @@ step
     #completewith RuinsRathma
     .isOnQuest 92421
     >>击杀 |cRXP_ENEMY_亡灵|r。从他们身上拾取 |T458717:0|t[|cRXP_LOOT_完好的肢体|r]
-    >>|cRXP_WARN_确保击杀地牢中的所有小怪，否则你可能无法完成此任务|r
+    >>|cRXP_WARN_确保击杀副本中的所有怪物，否则你可能无法完成此任务|r
     .complete 92421,1 --Intact Limbs (25)
     .mob Skeleton::250618
     --.mob Cadaver::250621
@@ -2398,7 +2398,7 @@ step
     #label RuinsLimbs
     .isOnQuest 92421
     >>击杀 |cRXP_ENEMY_亡灵|r。从他们身上拾取 |T458717:0|t[|cRXP_LOOT_完好的肢体|r]
-    >>|cRXP_WARN_确保击杀地牢中的所有小怪，否则你可能无法完成此任务|r
+    >>|cRXP_WARN_确保击杀副本中的所有怪物，否则你可能无法完成此任务|r
     .complete 92421,1 --Intact Limbs (25)
     .mob Skeleton::250618
     --.mob Cadaver::250621
@@ -2443,7 +2443,7 @@ step
 step
     .goto 1458/0,241.700,1633.200
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塔文·格瑞斯特::4554|r 对话
-    >>|cRXP_WARN_她在 交易区 巡逻|r
+    >>|cRXP_WARN_她在交易区巡逻|r
     >>|cRXP_BUY_购买一个|r |T134522:0|t[|cRXP_LOOT_剧毒骨帽|r]
     .collect 281246,1,97291,1 --Toxic Skullcap (1)
     .target Tawny Grisette::4554
@@ -2500,14 +2500,14 @@ step
     .goto 1458/0,404.800,1434.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_大药剂师法拉尼尔::2055|r 对话
     .turnin 97290 >>交任务 无尽的折磨
-    .accept 97291 >>接受任务 无尽折磨
+    .accept 97291 >>接受任务 无尽的折磨
     .target Master Apothecary Faranell::2055
 step
     #optional
     .isQuestTurnedIn 97290
     .goto 1458/0,404.800,1434.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_大药剂师法拉尼尔::2055|r 对话
-    .accept 97291 >>接受任务 无尽折磨
+    .accept 97291 >>接受任务 无尽的折磨
     .target Master Apothecary Faranell::2055
 step
     .goto 1458/0,357.62,1529.15
@@ -2516,7 +2516,7 @@ step
     .target 看守者贝尔杜加
 step
     .goto 1458/0,356.700,1563.500
-    >>|cRXP_WARN_从|r |cRXP_LOOT_马尔萨·奥列斯塔|r |cRXP_WARN_后面的罐子里拾取|r |T134181:0|t[|cRXP_FRIENDLY_Blisterweed|r]
+    >>|cRXP_WARN_从|r |cRXP_LOOT_马尔萨·奥列斯塔|r |cRXP_WARN_后面的罐子里拾取|r |T134181:0|t[|cRXP_FRIENDLY_水疱草|r]
     .collect 281300,1,97291,1 --Blisterweed (1)
     .target Martha Alliestar
 step
@@ -2524,14 +2524,14 @@ step
     .goto 1458/0,404.800,1434.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_大药剂师法拉尼尔::2055|r 对话
     .turnin 97291 >>交任务 无尽的折磨
-    .accept 97292 >>接受任务 无尽折磨
+    .accept 97292 >>接受任务 无尽的折磨
     .target Master Apothecary Faranell::2055
 step
     #optional
     .isQuestTurnedIn 97291
     .goto 1458/0,404.800,1434.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_大药剂师法拉尼尔::2055|r 对话
-    .accept 97292 >>接受任务 无尽折磨
+    .accept 97292 >>接受任务 无尽的折磨
     .target Master Apothecary Faranell::2055
 step
     .isOnQuest 97292
@@ -3892,7 +3892,7 @@ step
 step << !Tauren !Skyborne
     .goto 1413/1,-1891.48,-2391.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_碎牙|r 对话
-    .aura 16618 >>|cRXP_WARN_如果你还有10个|r |T134128:0|t[|cRXP_LOOT_经典怀旧服 道具|r]|cRXP_WARN_，就用它们从|r |cRXP_WARN_碎牙|r |cRXP_FRIENDLY_处获得|r |T136022:0|t[风之魂]
+    .aura 16618 >>|cRXP_WARN_如果你剩余 10 个|r |T134128:0|t[|cRXP_LOOT_血岩碎片|r]|cRXP_WARN_，可用它们从|r 撕牙鱼人|cRXP_WARN_ |r处兑换|cRXP_FRIENDLY_ |T136022:0|t[风之精灵]|r
     >>|cRXP_WARN_如果你已经拥有雷霆崖的飞行点，请跳过此步骤|r
     .itemcount 5075,10
     .target 碎牙
@@ -4593,7 +4593,7 @@ step
     #completewith Ectoplasms
     >>拾取地上的 the |cRXP_PICK_毒蛇花|r
     >>|cRXP_WARN_施放|r |T133939:0|t[寻找草药] |cRXP_WARN_以便在小地图上显示草药位置|r
-    >>|cRXP_WARN_大多数 |cRXP_PICK_毒蛇花|r 应该在杀死了最终Boss后重新刷新!|r
+    >>|cRXP_WARN_击杀最终Boss后，大部分|cRXP_PICK_毒蛇花|r 会重新刷新!|r
     .complete 962,1 --Serpentbloom (10)
     .skill herbalism,<1,1
     .isOnQuest 962
@@ -4601,13 +4601,13 @@ step
     #optional
     #completewith Ectoplasms
     >>拾取地上的 the |cRXP_PICK_毒蛇花|r
-    >>|cRXP_WARN_大多数 |cRXP_PICK_毒蛇花|r 应该在杀死了最终Boss后重新刷新!|r
+    >>|cRXP_WARN_击杀最终Boss后，大部分|cRXP_PICK_毒蛇花|r 会重新刷新!|r
     .complete 962,1 --Serpentbloom (10)
     .skill herbalism,1,1
     .isOnQuest 962
 step
     #optional
-    >>击杀 |cRXP_ENEMY_Deviate Ravagers|r、|cRXP_ENEMY_Vipers|r、|cRXP_ENEMY_Shamblers|r 和 |cRXP_ENEMY_Dreadfangs|r。拾取它们的 |cRXP_ENEMY_Hides|r。拾取它们的 |cRXP_ENEMY_Hides|r
+    >>击杀 |cRXP_ENEMY_变异破坏者|r, |cRXP_ENEMY_蝰蛇|r, |cRXP_ENEMY_蹒跚者|r 和 |cRXP_ENEMY_恐惧之牙|r 。拾取它们的|cRXP_ENEMY_皮|r，拾取它们的|cRXP_ENEMY_皮|r
     .complete 1487,1 --Deviate Ravager (7)
     .mob 变异破坏者
     .complete 1487,2 --Deviate Viper (7)
