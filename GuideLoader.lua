@@ -676,7 +676,7 @@ local function LoadGuide(guideData,n)
                     if not enabled then
                         local u = strupper(line)
                         if u:find("#" .. addon.game) or
-                            (addon.game == "RETAIL" and u:find("#DF")) then
+                            (addon.game == "RETAIL" and u:find("#DF")) or (addon.game == "CLASSIC" and u:find("#FOREVER")) then
                             enabled = true
                         end
                     end
@@ -1167,8 +1167,8 @@ function addon.ParseGuide(groupOrContent, text, defaultFor, isEmbedded, group, k
             if currentStep == 0 then
                 if guide.df then guide.retail = true end
 
-                hasGameTag = guide.classic or guide.tbc or guide.wotlk or guide.df or guide.retail or guide.cata
-                isGameCompatible = guide[game] or (addon.game == "FOREVER" and guide.classic)
+                hasGameTag = guide.classic or guide.tbc or guide.wotlk or guide.df or guide.retail or guide.cata or guide.forever
+                isGameCompatible = guide[game] or (addon.game == "FOREVER" and guide.classic or addon.game == "CLASSIC" and guide.forever)
                 hasGuideMetadata = guide.name and guide.group
 
                 if (hasGameTag and not isGameCompatible) or not hasGuideMetadata then
