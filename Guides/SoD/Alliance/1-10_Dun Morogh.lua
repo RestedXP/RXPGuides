@@ -385,7 +385,7 @@ step << Rogue
     .turnin 3109 >> Turn in Encrypted Rune << Dwarf
     .turnin 3113 >> Turn in Encrypted Memorandum << Gnome
     .accept 77658 >> Accept Thrice Stolen << Dwarf
-    .turn in 77658 >> Turn in Thrice Stolen << Dwarf
+    .turnin 77658 >> Turn in Thrice Stolen << Dwarf
     .accept 77659 >> Accept Thrice Stolen << Gnome
     .turnin 77659 >> Turnin Thrice Stolen << Gnome
     .train 1784 >>Train |T132320:0|t[Stealth]
