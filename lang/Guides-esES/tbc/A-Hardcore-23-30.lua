@@ -3423,7 +3423,7 @@ step
     .isQuestComplete 303
 step
     #completewith MenethilTurnins2
-    .subzone 150 >> Regresa a Menethil Harbor
+    .subzone 150 >> Regresa al Puerto Menethil
     .subzoneskip 2104
 step
     .isQuestComplete 474

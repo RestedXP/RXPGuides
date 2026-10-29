@@ -1799,14 +1799,14 @@ step
 step
     #som
     .goto Dun Morogh,83.892,39.188
-    >>Elige la daga, úsala en la mano izquierda hasta que obtengas una espada de un vendedor << Rogue
+    >>Elige la daga, úsala en la mano izquierda hasta que obtengas una espada de vendedor << Rogue
     .target Pilot Hammerfoot
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Piloto Podomartillo|r
     .turnin 417 >> Entrega la misión Vengar al piloto
 step
     #era
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Piloto Podomartillo|r
-    >>|cRXP_WARN_Elige la|r |T135641:0|t[|cRXP_FRIENDLY_Daga de artesano|r] |cRXP_WARN_como tu recompensa. Equípala en tu mano izquierda|r << Rogue
+    >>|cRXP_WARN_Elige la|r |T135641:0|t[|cRXP_FRIENDLY_Daga de artesano|r] |cRXP_WARN_como tu recompensa. Equípala en tu mano secundaria|r << Rogue
     .target Pilot Hammerfoot
     .goto Dun Morogh,83.892,39.188
     .turnin 417 >> Entrega la misión Vengar al piloto

@@ -565,7 +565,7 @@ step
     .dungeon RFC
 step
     .goto Durotar,50.8,13.8,40 >>Sube a la Torre del Zepelín
-    .zone Tirisfal Glades >>Toma el zepelín hacia Claros de Tirisfal
+    .zone Tirisfal Glades >>Toma el zepelín hacia los Claros de Tirisfal
     .zoneskip Tirisfal Glades
     .isQuestComplete 5725
     .dungeon RFC
@@ -3233,7 +3233,7 @@ step
     .target Jorn Skyseer
 step << !Tauren
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Quebrantadientes|r
-    .aura 16618 >>|cRXP_WARN_Si tienes 10|r |T134128:0|t[|cRXP_LOOT_Esquirlas sangrientas|r] |cRXP_WARN_restantes, úsalos para obtener|r |T136022:0|t[El espíritu del viento] |cRXP_WARN_de|r |cRXP_FRIENDLY_Quebrantadientes|r
+    .aura 16618 >>|cRXP_WARN_Si tienes 10|r |T134128:0|t[|cRXP_LOOT_Esquirlas sangrientas|r] |cRXP_WARN_restantes, úsalas para obtener|r |T136022:0|t[El espíritu del viento] |cRXP_WARN_de|r |cRXP_FRIENDLY_Quebrantadientes|r
     >>|cRXP_WARN_Omite este paso si tienes la ruta de vuelo de Cima del Trueno|r
     .itemcount 5075,10
     .target Mangletooth
@@ -3811,7 +3811,7 @@ step
     .dungeon WC
 step
     #optional
-    >>Mata a los |cRXP_ENEMY_Deviate Ravagers|r, a los |cRXP_ENEMY_Vipers|r, a los |cRXP_ENEMY_Shamblers|r y a los |cRXP_ENEMY_Dreadfangs|r. Despójalos para obtener sus |cRXP_ENEMY_Hides|r . Despójalos para obtener sus |cRXP_ENEMY_Hides|r
+    >>Mata a los |cRXP_ENEMY_Deviate Ravagers|r, a los |cRXP_ENEMY_Vipers|r, a los |cRXP_ENEMY_Shamblers|r y a los |cRXP_ENEMY_Dreadfangs|r. Despójalos para obtener sus |cRXP_ENEMY_Cueros|r . Despójalos para obtener sus |cRXP_ENEMY_Cueros|r
     .complete 1487,1 --Deviate Ravager (7)
     .mob +Deviate Ravager
     .complete 1487,2 --Deviate Viper (7)
@@ -5078,7 +5078,7 @@ step
     .zoneskip Durotar
 step
     .goto Durotar,50.8,13.8,40 >>Sube a la Torre del Zepelín
-    .zone Tirisfal Glades >>Toma el zepelín hacia Claros de Tirisfal
+    .zone Tirisfal Glades >>Toma el zepelín hacia los Claros de Tirisfal
     .zoneskip Tirisfal Glades
     .zoneskip Undercity
 

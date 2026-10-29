@@ -587,8 +587,8 @@ step
     .complete 766,4 --Swoop Gizzard (1)
 step << Tauren
     #completewith Ambercorns
-    >>Kill |cRXP_ENEMY_Prairie Wolves|r. Loot them for their |cRXP_LOOT_Paws|r (NOT TRANSLATED IN :esMX YET)
-    >>Kill |cRXP_ENEMY_Zancudo de llanura adulto|r. Loot them for their |T134028:0|t[|cRXP_LOOT_Tender Strider Meat|r] and |cRXP_LOOT_Garfas|r
+    >>Mata a los |cRXP_ENEMY_Lobos de pradera|r. Despójalos para obtener sus |cRXP_LOOT_Garras|r
+    >>Mata a los |cRXP_ENEMY_Zancudos de llanura adultos|r. Despójalos para obtener su |T134028:0|t[|cRXP_LOOT_Carne de zancudo tierna|r] y sus |cRXP_LOOT_Garfas|r
     .complete 748,1 --Prairie Wolf Paw (6)
     .mob +Prairie Wolf
     .collect 33009,1,11129,1 --Collect Tender Strider Meat (1)
@@ -596,7 +596,7 @@ step << Tauren
     .mob +Adult Plainstrider
 step << !Tauren
     #completewith Ambercorns
-    >>Kill |cRXP_ENEMY_Zancudo de llanura adulto|r. Loot them for their |T134028:0|t[|cRXP_LOOT_Tender Strider Meat|r]
+    >>Mata a los |cRXP_ENEMY_Zancudos de llanura adultos|r. Despójalos para obtener su |T134028:0|t[|cRXP_LOOT_Carne de zancudo tierna|r]
     .collect 33009,1,11129,1 --Collect Tender Strider Meat (1)
     .mob Adult Plainstrider
 step
@@ -632,7 +632,7 @@ step << Tauren
 	.goto Mulgore,48.60,69.43,60,0
 	.goto Mulgore,45.98,69.70,60,0
 	.goto Mulgore,48.58,67.37,60,0
-    >>Kill |cRXP_ENEMY_Prairie Wolves|r. Loot them for their |cRXP_LOOT_Paws|r (NOT TRANSLATED IN :esMX YET)
+    >>Mata a los |cRXP_ENEMY_Lobos de pradera|r. Despójalos para obtener sus |cRXP_LOOT_Garras|r
     >>Loot |cRXP_ENEMY_Zancudo de llanura adulto|r. Loot them for their |T134028:0|t[|cRXP_LOOT_Tender Strider Meat|r] and |cRXP_LOOT_Garfas|r
     .complete 748,1 --Prairie Wolf Paw (6)
     .mob +Prairie Wolf
@@ -655,7 +655,7 @@ step << !Tauren
 	.goto Mulgore,48.60,69.43,60,0
 	.goto Mulgore,45.98,69.70,60,0
 	.goto Mulgore,48.58,67.37,60,0
-    >>Kill |cRXP_ENEMY_Zancudo de llanura adulto|r. Loot them for their |T134028:0|t[|cRXP_LOOT_Tender Strider Meat|r]
+    >>Mata a los |cRXP_ENEMY_Zancudos de llanura adultos|r. Despójalos para obtener su |T134028:0|t[|cRXP_LOOT_Carne de zancudo tierna|r]
     .collect 33009,1,11129,1 --Collect Tender Strider Meat (1)
     .mob Adult Plainstrider
 step << Tauren

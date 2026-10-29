@@ -501,7 +501,7 @@ step << Warrior
     .goto Elwynn Forest,41.087,65.768
     .trainer >> Aprende tus hechizos de clase
 step << Paladin
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Hermano Wilhelm|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Hermano Wilhelm|r
     .target Brother Wilhelm
     .goto Elwynn Forest,41.096,66.041
     .trainer >> Aprende tus hechizos de clase
@@ -734,7 +734,7 @@ step << Warrior
     .goto Elwynn Forest,41.087,65.768
     .trainer >> Aprende tus hechizos de clase
 step << Paladin
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Hermano Wilhelm|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Hermano Wilhelm|r
     .target Brother Wilhelm
     .goto Elwynn Forest,41.096,66.041
     .trainer >> Aprende tus hechizos de clase
@@ -1041,7 +1041,7 @@ step << Warrior
     .accept 1638 >> Acepta la misión Instrucción de guerrero
     .trainer >> Aprende tus hechizos de clase
 step << Paladin
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Hermano Wilhelm|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Hermano Wilhelm|r
     .target Brother Wilhelm
     .goto Elwynn Forest,41.096,66.041
     .trainer >> Aprende tus hechizos de clase
@@ -1498,7 +1498,7 @@ step << Warlock
     .goto StormwindClassic,23.2,79.5,18,0
     .goto StormwindClassic,26.3,79.5,18,0
     .goto StormwindClassic,25.154,77.406
-    >>|cRXP_WARN_Viaja al fondo de El Cordero Degollado|r
+    >>|cRXP_WARN_Viaja a la parte inferior de El Cordero Degollado|r
     .cast 7728 >> |cRXP_WARN_Usa|r la |T133292:0|t[Gargantilla de sangrita] |cRXP_WARN_para invocar a un|r |cRXP_ENEMY_Abisario invocado|r
     .use 6928
 step << Warlock
@@ -1607,7 +1607,7 @@ step
     .target Gryth Thurden
 step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Bixi Tambaleapié|r y |cRXP_FRIENDLY_Buliwyf Petramano|r
-    .train 2567 >> Aprende el uso de Armas arrojadizas
+    .train 2567 >> Aprende el uso de Arrojadizas
     .target +Bixi Wobblebonk
     .goto Ironforge,62.237,89.628
     .train 199 >> Aprende Mazas de 2 manos
@@ -1624,7 +1624,7 @@ step
     .goto Ironforge,24.200,74.600,-1
     .goto Ironforge,23.800,71.800,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con un |cRXP_FRIENDLY_Subastador de Forjaz|r
-    >>Compra los siguientes objetos para entregas de misiones más rápidas en Loch Modan pronto
+    >>Compra los siguientes objetos para entregar misiones más rápido en Loch Modan pronto
     >>Esto te ahorrará tiempo ya que no necesitarás correr buscando enemigos para matar. Omite este paso si prefieres no comprar nada
     >>|T134342:0|t[Intestinos de jabalí]
     >>|T134027:0|t[Carne de oso]
@@ -1834,14 +1834,14 @@ step
 step
     #som
     .goto Dun Morogh,83.892,39.188
-    >>Elige la daga, úsala en la mano izquierda hasta que obtengas una espada de un vendedor << Rogue
+    >>Elige la daga, úsala en la mano izquierda hasta que obtengas una espada de vendedor << Rogue
     .target Pilot Hammerfoot
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Piloto Podomartillo|r
     .turnin 417 >> Entrega la misión Vengar al piloto
 step
     #era
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Piloto Podomartillo|r
-    >>|cRXP_WARN_Elige la|r |T135641:0|t[|cRXP_FRIENDLY_Daga de artesano|r] |cRXP_WARN_como tu recompensa. Equípala en tu mano izquierda|r << Rogue
+    >>|cRXP_WARN_Elige la|r |T135641:0|t[|cRXP_FRIENDLY_Daga de artesano|r] |cRXP_WARN_como tu recompensa. Equípala en tu mano secundaria|r << Rogue
     .target Pilot Hammerfoot
     .goto Dun Morogh,83.892,39.188
     .turnin 417 >> Entrega la misión Vengar al piloto

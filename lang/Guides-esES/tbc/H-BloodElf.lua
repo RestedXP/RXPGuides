@@ -2255,7 +2255,7 @@ step << Mage/Priest/Warlock
 step
     #optional
     .goto Eversong Woods,60.32,62.76
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Dawnrunner|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Correalba|r
     .turnin 9359 >>Entrega la misión El Retiro del Errante << !Tauren !Hunter/BloodElf
     .accept 8476 >>Acepta la misión Asentamiento Amani
     .accept 9484 >>Acepta la misión Domesticar la bestia << BloodElf Hunter
@@ -2263,7 +2263,7 @@ step
     .isOnQuest 9359
 step
     .goto Eversong Woods,60.32,62.76
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Dawnrunner|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Correalba|r
     .accept 8476 >>Accept Amani Encroachment (NOT TRANSLATED IN :esMX YET)
     .accept 9484 >>Acepta la misión Domesticar la bestia << BloodElf Hunter
     .target Lieutenant Dawnrunner
@@ -2319,7 +2319,7 @@ step << BloodElf Hunter
     .use 23702
 step << BloodElf Hunter
     .goto Eversong Woods,60.32,62.76
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Dawnrunner|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Correalba|r
     .turnin 9484 >> Entrega la misión Domesticar la bestia
     .accept 9486 >> Acepta la misión Domesticar la bestia
     .target Lieutenant Dawnrunner
@@ -2516,7 +2516,7 @@ step << BloodElf Hunter
 step << BloodElf Hunter
     #label AmaniTurnins
     .goto Eversong Woods,60.32,62.76
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dawnrunner|r (NOT TRANSLATED IN :esMX YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Correalba|r
     .turnin 8476 >> Entrega la misión Asentamiento Amani
     .turnin 9360 >> Entrega la misión La invasión Amani
     .accept 9363 >> Acepta la misión Aviso a la Aldea Brisa Pura
@@ -8842,7 +8842,7 @@ step
     .goto Ghostlands,37.73,61.43,50,0
     .goto Ghostlands,37.06,65.52,50,0
     .goto Ghostlands,36.25,70.35,50,0
-    .xp 20 >>Farmea hasta el nivel 20
+    .xp 20 >>Mata enemigos hasta el nivel 20
 step
     #completewith SMTraining5
     .goto Ghostlands,45.42,30.52

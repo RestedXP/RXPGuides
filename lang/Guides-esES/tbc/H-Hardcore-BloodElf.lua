@@ -2195,7 +2195,7 @@ step << BloodElf Hunter
     .use 23702
 step << BloodElf Hunter
     .goto Eversong Woods,60.32,62.76
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Dawnrunner|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Correalba|r
     .turnin 9484 >> Entrega la misión Domesticar la bestia
     .accept 9486 >> Acepta la misión Domesticar la bestia
     .target Lieutenant Dawnrunner
@@ -2216,7 +2216,7 @@ step << BloodElf Hunter
     .use 23702
 step << BloodElf Hunter
     .goto Eversong Woods,60.32,62.76
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Dawnrunner|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Correalba|r
     .turnin 9486 >> Entrega la misión Domesticar la bestia
     .accept 9485 >> Acepta la misión Domesticar la bestia
     .target Lieutenant Dawnrunner
@@ -7262,7 +7262,7 @@ step
     .goto Ghostlands,37.73,61.43,50,0
     .goto Ghostlands,37.06,65.52,50,0
     .goto Ghostlands,36.25,70.35,50,0
-    .xp 20 >>Farmea hasta el nivel 20
+    .xp 20 >>Mata enemigos hasta el nivel 20
 step
     #completewith SMTraining5
     .goto Ghostlands,45.42,30.52

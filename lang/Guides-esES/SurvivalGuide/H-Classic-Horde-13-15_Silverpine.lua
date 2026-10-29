@@ -272,7 +272,7 @@ step
     .unitscan Son of Arugal
 step
     #completewith next
-    .goto Silverpine Forest,45.51,41.26,100 >> Viaja de vuelta a El Sepulcro
+    .goto Silverpine Forest,45.51,41.26,100 >> Viaja de regreso a El Sepulcro
     .subzoneskip 228
 step
     #label ArugalTurnin
@@ -916,7 +916,7 @@ step
     .group 4
 step
     #completewith AmbermillTurnin
-    .goto Silverpine Forest,45.51,41.26,100 >> Viaja de vuelta a El Sepulcro
+    .goto Silverpine Forest,45.51,41.26,100 >> Viaja de regreso a El Sepulcro
     .subzoneskip 228
     .group
 step

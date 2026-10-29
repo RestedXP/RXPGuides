@@ -6014,7 +6014,7 @@ step
 step
     .goto The Barrens,44.55,59.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Quebrantadientes|r
-    .aura 16618 >>|cRXP_WARN_Si te quedan 10|r |T134128:0|t[|cRXP_LOOT_Esquirlas de sangre|r |cRXP_WARN_, úsalas para obtener|r |T136022:0|t[Espíritu del viento] |cRXP_WARN_de|r |cRXP_FRIENDLY_Quebrantadientes|r
+    .aura 16618 >>|cRXP_WARN_Si tienes 10|r |T134128:0|t[|cRXP_LOOT_Esquirlas sangrientas|r] |cRXP_WARN_restantes, úsalas para obtener|r |T136022:0|t[El espíritu del viento] |cRXP_WARN_de|r |cRXP_FRIENDLY_Quebrantadientes|r
     .itemcount 5075,10
     .target Mangletooth
     .train 783,1 << Druid --Travel form
@@ -6024,7 +6024,7 @@ step << Druid/Shaman/Hunter
     #optional
     .goto The Barrens,44.55,59.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Quebrantadientes|r
-    +|cRXP_WARN_Si tienes|r |T134128:0|t[|cRXP_LOOT_Esquirlas de sangre|r |cRXP_WARN_sobrantes, úsalas para obtener "buffs" a tu elección de|r |cRXP_FRIENDLY_Quebrantadientes|r
+    +|cRXP_WARN_If you have|r |T134128:0|t[|cRXP_LOOT_Blood Shards|r] |cRXP_WARN_left, use them to obtain buffs of your choice from|r |cRXP_FRIENDLY_Mangletooth|r (NOT TRANSLATED IN :esMX YET)
     .itemcount 5075,4
     .target Mangletooth
     .train 783,3 << Druid --Travel form
@@ -6645,39 +6645,17 @@ step
 step
     #loop
     .line Thousand Needles,14.34,30.13,15.08,31.63,15.67,31.56,16.59,30.34,17.19,29.60,17.82,27.50,18.48,26.74,18.64,25.90,18.68,24.68,18.57,24.07,18.11,23.65,17.66,22.98,17.24,22.32,17.54,21.49,17.87,20.78,17.96,20.18,17.66,19.46,17.28,18.93,16.70,18.61,16.20,18.53,15.69,18.65,14.49,20.04,12.89,19.97,11.88,20.90,11.50,21.61,11.20,22.29,11.16,23.21,11.49,24.07,11.55,24.44,11.91,25.02,13.01,26.31,13.36,26.97,13.75,28.54,14.34,30.13
-    .goto Thousand Needles,11.50,21.61,0
-    .goto Thousand Needles,11.50,21.61,40,0
-    .goto Thousand Needles,11.88,20.90,40,0
-    .goto Thousand Needles,12.89,19.97,40,0
-    .goto Thousand Needles,14.49,20.04,40,0
-    .goto Thousand Needles,15.69,18.65,40,0
-    .goto Thousand Needles,16.20,18.53,40,0
-    .goto Thousand Needles,16.70,18.61,40,0
-    .goto Thousand Needles,17.28,18.93,40,0
-    .goto Thousand Needles,17.66,19.46,40,0
-    .goto Thousand Needles,17.96,20.18,40,0
-    .goto Thousand Needles,17.87,20.78,40,0
-    .goto Thousand Needles,17.54,21.49,40,0
-    .goto Thousand Needles,17.24,22.32,40,0
-    .goto Thousand Needles,17.66,22.98,40,0
-    .goto Thousand Needles,18.11,23.65,40,0
-    .goto Thousand Needles,18.57,24.07,40,0
-    .goto Thousand Needles,18.68,24.68,40,0
-    .goto Thousand Needles,18.64,25.90,40,0
-    .goto Thousand Needles,18.48,26.74,40,0
-    .goto Thousand Needles,17.82,27.50,40,0
-    .goto Thousand Needles,17.19,29.60,40,0
-    .goto Thousand Needles,15.67,31.56,40,0
-    .goto Thousand Needles,15.08,31.63,40,0
-    .goto Thousand Needles,14.34,30.13,40,0
-    .goto Thousand Needles,13.75,28.54,40,0
-    .goto Thousand Needles,13.36,26.97,40,0
-    .goto Thousand Needles,13.01,26.31,40,0
-    .goto Thousand Needles,11.91,25.02,40,0
-    .goto Thousand Needles,11.55,24.44,40,0
-    .goto Thousand Needles,11.49,24.07,40,0
-    .goto Thousand Needles,11.16,23.21,40,0
-    .goto Thousand Needles,11.20,22.29,40,0
+    .goto 1441/1,-1200.300,-4617.700,0
+    .goto 1441/1,-1200.300,-4617.700,50,0
+    .goto 1441/1,-1209.500,-4538.400,50,0
+    .goto 1441/1,-1132.900,-4505.800,50,0
+    .goto 1441/1,-1053.200,-4554.600,50,0
+    .goto 1441/1,-977.200,-4563.400,50,0
+    .goto 1441/1,-920.300,-4635.000,50,0
+    .goto 1441/1,-979.500,-4719.800,50,0
+    .goto 1441/1,-1088.500,-4871.300,50,0
+    .goto 1441/1,-1195.600,-4825.600,50,0
+    .goto 1441/1,-1256.300,-4693.300,50,0
     >>Mata a |cRXP_ENEMY_Metaleador|r. Despójalo para obtener |cRXP_LOOT_Costilla de Metaleador|r
     >>|cRXP_WARN_Patrulla en sentido contrario a las agujas del reloj|r
     >>|cRXP_WARN_¡Ten cuidado, tiene dos |cRXP_ENEMY_Hienas|r defendiéndolo!|r
@@ -7356,13 +7334,13 @@ step
     .maxlevel 31
 step
     .goto Thousand Needles,33.80,39.90
-    >>Abre el |cRXP_PICK_Cofre de documentos|r dentro de la gran tienda. Despójalo para obtener la |cRXP_LOOT_Nota secreta n.º 1|r
+    >>Open the |cRXP_PICK_Document Chest|r inside the big tent. Loot it for |cRXP_LOOT_Secret Note #2|r (NOT TRANSLATED IN :esMX YET)
     .complete 5064,2 --Secret Note #2 (1)
     .isQuestTurnedIn 4841
     .maxlevel 31
 step
     .goto Thousand Needles,39.20,41.60
-    >>Abre el |cRXP_PICK_Cofre de documentos|r dentro de la tienda en la meseta oriental. Despójalo para obtener la |cRXP_LOOT_Nota secreta n.º 1|r
+    >>Open the |cRXP_PICK_Document Chest|r inside the tent on the eastern plateau. Loot it for |cRXP_LOOT_Secret Note #3|r (NOT TRANSLATED IN :esMX YET)
     .complete 5064,3 --Secret Note #3 (1)
     .isQuestTurnedIn 4841
     .maxlevel 31

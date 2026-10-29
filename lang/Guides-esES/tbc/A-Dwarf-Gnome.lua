@@ -2610,7 +2610,7 @@ step << Priest/Paladin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con un |cRXP_FRIENDLY_Subastador de Forjaz|r
     >>|cRXP_BUY_Compra|r |T133970:0|t|cRXP_LOOT_[Trozos de carne de jabalí]|r |cRXP_BUY_y/o|r |T133970:0|t|cRXP_LOOT_[Carne de lobo fibrosa]|r |cRXP_BUY_para subir tu|r |T133971:0|t[Cocina] |cRXP_BUY_más tarde|r
     >>|cRXP_WARN_Necesitas 50 de|r |T133971:0|t[Cocina] |cRXP_WARN_para una misión en Villa Oscura más tarde|r
-    >>|cRXP_BUY_Compra los siguientes objetos para entregas rápidas en Costa Oscura pronto:|r
+    >>|cRXP_BUY_Compra los siguientes objetos para entregas más rápidas en Costa Oscura pronto:|r
     >>|cRXP_WARN_Si no quieres o no puedes hacer esto, omite este paso|r
     >>|T133972:0|t[Carne de zancudo]
     >>|T133912:0|t[Mero de Costa Oscura]
@@ -2821,7 +2821,7 @@ step << Rogue/Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con la |cRXP_FRIENDLY_Subastadora Jaxon|r
     >>|cRXP_BUY_Compra|r |T133970:0|t|cRXP_LOOT_[Trozos de carne de jabalí]|r |cRXP_BUY_y/o|r |T133970:0|t|cRXP_LOOT_[Carne de lobo fibrosa]|r |cRXP_BUY_para subir tu|r |T133971:0|t[Cocina] |cRXP_BUY_más tarde|r
     >>|cRXP_WARN_Necesitas 50 de|r |T133971:0|t[Cocina] |cRXP_WARN_para una misión en Villa Oscura más tarde|r
-    >>|cRXP_BUY_Compra los siguientes objetos para entregas rápidas en Costa Oscura pronto:|r
+    >>|cRXP_BUY_Compra los siguientes objetos para entregas más rápidas en Costa Oscura pronto:|r
     >>|cRXP_WARN_Si no quieres o no puedes hacer esto, omite este paso|r
     >>|T133972:0|t[Carne de zancudo]
     >>|T133912:0|t[Mero de Costa Oscura]
@@ -5074,7 +5074,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con un |cRXP_FRIENDLY_Subastador de Forjaz|r
     >>|cRXP_BUY_Compra|r |T133970:0|t|cRXP_LOOT_[Trozos de carne de jabalí]|r |cRXP_BUY_y/o|r |T133970:0|t|cRXP_LOOT_[Carne de lobo fibrosa]|r |cRXP_BUY_para subir tu|r |T133971:0|t[Cocina] |cRXP_BUY_más tarde|r
     >>|cRXP_WARN_Necesitas 50 de|r |T133971:0|t[Cocina] |cRXP_WARN_para una misión en Villa Oscura más tarde|r
-    >>|cRXP_BUY_Compra los siguientes objetos para entregas rápidas en Costa Oscura pronto:|r
+    >>|cRXP_BUY_Compra los siguientes objetos para entregas más rápidas en Costa Oscura pronto:|r
     >>|cRXP_WARN_Si no quieres o no puedes hacer esto, omite este paso|r
     >>|T133972:0|t[Carne de zancudo]
     >>|T133912:0|t[Mero de Costa Oscura]

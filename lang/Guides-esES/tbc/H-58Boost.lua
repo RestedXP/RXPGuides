@@ -520,11 +520,11 @@ step
     .isQuestTurnedIn 5149
 step
 	#completewith RottingUndead
-	.subzone 2264 >> Viaja al Cruce de Corin
+	.subzone 2264 >> Travel to Corin's Crossing (NOT TRANSLATED IN :esMX YET)
 step
 	#completewith next
 	>>Mata a los |cRXP_ENEMY_No-muerto|r. Despójalos para obtener su |cRXP_LOOT_Putrefacción viva|r.
-	>>|cRXP_WARN_Grupos de élites patrullan los caminos del norte y del este. Hay enemigos invisibles patrullando dentro del Cruce de Corin, así que intenta atraer a los enemigos hacia afuera|r
+	>>|cRXP_WARN_Groups of elites patrol the north and east road. Invisible mobs patrol inside of Corin's Crossing, so try to pull mobs out|r (NOT TRANSLATED IN :esMX YET)
 	.collect 15447,7 --Living Rot (7)
 	.mob Hate Shrieker
 	.mob Scourge Warder
