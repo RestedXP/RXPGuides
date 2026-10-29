@@ -2044,14 +2044,14 @@ step << Warlock
     .xp <18,1
 step << Warlock
     .goto 1454/1,-4347.4,1836.57
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_库古尔|r 对话，购买 |T133738:0|t[牺牲魔典]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_库古尔|r 对话并购买 |T133738:0|t[牺牲魔典]
     .collect 16351,1,896,1 --Grimoire of Sacrifice (Rank 1) (1)
     .target 库古尔
     .xp <16,1
     .xp >18,1
 step << Warlock
     .goto 1454/1,-4347.4,1836.57
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 库古尔|cRXP_FRIENDLY_ 对话，并购买 |T133738:0|t[火焰箭典籍(等级 3)]|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 库古尔|cRXP_FRIENDLY_ 对话，购买 |T133738:0|t[火焰箭典籍(等级 3)]|r
     .collect 16316,1,896,1 --Grimoire of Firebolt (Rank 3) (1)
     .target 库古尔
     .xp <18,1
@@ -3463,13 +3463,13 @@ step << Warlock
     .target 甘鲁尔·血眼
 step << Warlock
     .goto 1454/1,-4347.4,1836.57
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 库古尔|cRXP_FRIENDLY_ 对话，并购买 |T133738:0|t[折磨典籍(等级 2)]|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 库古尔|cRXP_FRIENDLY_ 对话，购买 |T133738:0|t[折磨典籍(等级 2)]|r
     .collect 16346,1,1507,1 --Grimoire of Torment (Rank 2)
     .target 库古尔
 step << Warlock
     .goto 1454/1,-4340.53,1839.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡祖尔|r 对话
-    .turnin 1507 >>交任务 噬魂者
+    .turnin 1507 >>交任务  噬魂者
     .accept 1508 >>接受任务 盲眼卡祖尔
     .target 卡祖尔
 step << Warlock
@@ -3483,8 +3483,8 @@ step << Warlock
 step << Warlock
     .goto 1454/1,-4199.99,1717.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_赞卡沙|r 对话
-    .turnin 1508 >>交任务盲眼卡祖尔
-    .accept 1509 >>接受任务多格兰的消息
+    .turnin 1508 >>交任务  盲眼卡祖尔
+    .accept 1509 >>接受任务 多格兰的消息
     .target 赞卡沙
 step
     #completewith EnterDM
@@ -3720,7 +3720,7 @@ step << Warlock
     .goto 1413/1,-2639.32,-436.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_加兹罗格|r 对话
     .turnin 1509 >>交任务  多格兰的消息
-    .accept 1510 >>接受任务多格兰的消息
+    .accept 1510 >>接受任务 多格兰的消息
     .target 加兹罗格
 step
     .goto 1413/1,-2589.67,-424.51
@@ -4380,7 +4380,7 @@ step << Warlock
     .goto 1442/1,-331.21,-181.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_肯兹格拉|r 对话
     .turnin 1510 >>交任务  多格兰的消息
-    .accept 1511 >>接受任务 肯兹格拉的伤药
+    .accept 1511 >>接受任务肯兹格拉的伤药
     .target 肯兹格拉
 
     ]])
@@ -4607,7 +4607,7 @@ step
     .isOnQuest 962
 step
     #optional
-    >>击杀 |cRXP_ENEMY_变异破坏者|r, |cRXP_ENEMY_蝰蛇|r, |cRXP_ENEMY_蹒跚者|r 和 |cRXP_ENEMY_恐惧之牙|r 。拾取它们的|cRXP_ENEMY_皮|r，拾取它们的|cRXP_ENEMY_皮|r
+    >>击杀 |cRXP_ENEMY_Deviate Ravagers|r、|cRXP_ENEMY_Vipers|r、|cRXP_ENEMY_Shamblers|r 和 |cRXP_ENEMY_Dreadfangs|r。拾取他们的战利品 |cRXP_ENEMY_Hides|r
     .complete 1487,1 --Deviate Ravager (7)
     .mob 变异破坏者
     .complete 1487,2 --Deviate Viper (7)
@@ -4735,7 +4735,7 @@ step << Shaman
     .target 水之先知伊斯伦
     .goto The Barrens,65.83,43.78
     .turnin 874 >>交任务  玛伦·星眼
-    .accept 873 >>接受任务依沙瓦克
+    .accept 873 >>接受任务 依沙瓦克
     .target 玛伦·星眼
     .goto The Barrens,65.83,43.86
     .isOnQuest 1529
@@ -4747,7 +4747,7 @@ step << Shaman
     .target 水之先知伊斯伦
     .goto The Barrens,65.83,43.78
     .turnin 874 >>交任务  玛伦·星眼
-    .accept 873 >>接受任务依沙瓦克
+    .accept 873 >>接受任务 依沙瓦克
     .target 玛伦·星眼
     .goto The Barrens,65.83,43.86
     .isOnQuest 1528
@@ -4758,7 +4758,7 @@ step << Shaman
     .target 水之先知伊斯伦
     .goto The Barrens,65.83,43.78
     .turnin 874 >>交任务  玛伦·星眼
-    .accept 873 >>接受任务依沙瓦克
+    .accept 873 >>接受任务 依沙瓦克
     .target 玛伦·星眼
     .goto The Barrens,65.83,43.86
     .isQuestTurnedIn 1529
@@ -4769,7 +4769,7 @@ step << Shaman
     .target 水之先知伊斯伦
     .goto The Barrens,65.83,43.78
     .turnin 874 >>交任务  玛伦·星眼
-    .accept 873 >>接受任务依沙瓦克
+    .accept 873 >>接受任务 依沙瓦克
     .target 玛伦·星眼
     .goto The Barrens,65.83,43.86
     .isQuestTurnedIn 1528
@@ -4778,14 +4778,14 @@ step
     .goto 1413/1,-4048.87,-1350.79
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_玛伦|r 对话
     .turnin 874 >>交任务  玛伦·星眼
-    .accept 873 >>接受任务依沙瓦克
+    .accept 873 >>接受任务 依沙瓦克
     .target 玛伦·星眼
     .isOnQuest 874
 step
     #optional
     .goto 1413/1,-4048.87,-1350.79
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_玛伦|r 对话
-    .accept 873 >>接受任务依沙瓦克
+    .accept 873 >>接受任务 依沙瓦克
     .target 玛伦·星眼
     .isQuestTurnedIn 874
 step
@@ -4878,7 +4878,7 @@ step
 step
     .goto 1413/1,-2259.32,-602.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_菲拉|r 对话
-    .turnin 6981 >> 交任务 发光的碎片
+    .turnin 6981 >> 交任务发光的碎片
     .accept 3369 >> 接受任务 在噩梦中
     .target 菲拉·古风
     .isOnQuest 6981
@@ -4992,7 +4992,7 @@ step << Warlock
 step << Warlock
     .goto 1413/1,-1765.83,-1622.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_多格兰|r 对话
-    .turnin 1515 >>交任务  多格兰之囚
+    .turnin 1515 >>交任务多格兰之囚
     .accept 1512 >>接受任务爱的礼物
     .target 步兵多格兰
 step << Shaman
@@ -5070,7 +5070,7 @@ step << Rogue
     .train 1856 >>学习 |T132331:0|t[消失]
     .train 1725 >>学习 |T132289:0|t[扰乱]
     .train 1785 >>学习 |T132320:0|t[潜行 等级2]
-    .accept 2460 >>接受任务 碎手军礼
+    .accept 2460 >>接受任务碎手军礼
     .target 申苏尔
 step << Rogue
     .goto 1454/1,-4284.42,1771.28
@@ -5081,7 +5081,7 @@ step << Rogue
     .goto 1454/1,-4284.42,1771.28
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_申苏尔|r 对话
     .turnin 2460 >>交任务  碎手军礼
-    .accept 2458 >>接受任务卧底密探
+    .accept 2458 >>接受任务 卧底密探
     .target 申苏尔
 step << Rogue
     .goto 1454/1,-4271.1,1810.94
@@ -5161,7 +5161,7 @@ step << Rogue
     .goto 1413/1,-2995.0,1236.85
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |r|cRXP_FRIENDLY_工头费苏勒|r 对话
     .turnin 2458 >>交任务  卧底密探
-    .accept 2478 >>接受任务 基本不可能的任务
+    .accept 2478 >>接受任务基本不可能的任务
     .target 工头费苏勒
 step << Rogue/Druid
     #optional
@@ -5229,7 +5229,7 @@ step << Rogue
     .goto 1454/1,-4284.42,1771.28
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_申苏尔|r 对话
     .turnin 2478 >>交任务基本不可能的任务
-    .accept 2479 >>接受任务希诺特的帮助
+    .accept 2479 >>接受任务 希诺特的帮助
     .target 申苏尔
 step << Rogue
     .goto 1454/1,-4271.1,1810.94

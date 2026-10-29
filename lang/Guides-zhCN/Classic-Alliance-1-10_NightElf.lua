@@ -98,7 +98,7 @@ step << Hunter
 step << Druid
     .goto Teldrassil,59.602,40.696
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德林拉尔|r 对话
-    .vendor >> 出售垃圾物品
+    .vendor >> |cRXP_WARN_出售垃圾物品|r
     >>|cRXP_BUY_购买15瓶|r |T132794:0|t[清凉的泉水]
     .collect 159,15 --Collect Refreshing Spring Water (x15)
     .target 德林拉尔
@@ -120,7 +120,7 @@ step << Warrior
     #season 0
     .goto Teldrassil,59.306,41.091
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奇娜|r 对话
-	.vendor >> 出售垃圾物品
+	.vendor >> |cRXP_WARN_出售垃圾物品|r
     .target 奇娜
 step << Warrior
     #season 0
@@ -183,7 +183,7 @@ step << Druid
     #season 0,1
     .goto Teldrassil,59.602,40.696
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德林拉尔|r 对话
-    .vendor >> 出售垃圾物品
+    .vendor >> |cRXP_WARN_出售垃圾物品|r
     >>|cRXP_BUY_购买20|r |T132794:0|t[清凉的泉水]
     .collect 159,20 --Collect Refreshing Spring Water (x20)
     .target 德林拉尔
@@ -271,7 +271,7 @@ step << !Priest !Warrior
     #season 0 << Hunter
     .goto Teldrassil,59.306,41.091
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奇娜|r 对话
-	.vendor >> 出售垃圾物品 << !Hunter
+	.vendor >> |cRXP_WARN_出售垃圾物品|r << !Hunter
 	.vendor >> |cRXP_BUY_购买3或4组|r |T132382:0|t[劣质箭] << Hunter
     .target 奇娜
 step << Warrior
@@ -284,7 +284,7 @@ step << Priest
     #completewith next
     .goto Teldrassil,59.456,41.050
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与楼上的 |cRXP_FRIENDLY_简娜·明月|r 对话
-	.vendor >> 出售垃圾物品
+	.vendor >> |cRXP_WARN_出售垃圾物品|r
     .target Janna Brightmoon
 step << Priest
     #season 0,1,2
@@ -566,8 +566,8 @@ step
     .goto Teldrassil,55.619,59.788
     .target 旅店老板凯达米尔
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_旅店老板凯达米尔|r 对话
-    .turnin 2159,2 >> 交任务 多兰纳尔的货物 << Hunter
-    .turnin 2159 >> 交任务 多兰纳尔的货物 << !Hunter
+    .turnin 2159,2 >> 交任务  多兰纳尔的货物 << Hunter
+    .turnin 2159 >> 交任务  多兰纳尔的货物 << !Hunter
     .vendor >>|cRXP_BUY_购买10瓶|T132815:0|t|cRXP_LOOT_冰镇牛奶|r 或者能买多少买多少 << Priest
     .home >> 将你的炉石绑定在多兰纳尔
 step << Hunter
@@ -773,7 +773,7 @@ step
     .goto Teldrassil,55.954,57.272
     .target 阿斯瑞达斯·熊皮
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿斯瑞达斯·熊皮|r 对话
-    .turnin 476 >> 交任务 瘤背熊怪的堕落
+    .turnin 476 >> 交任务  瘤背熊怪的堕落
 step << Priest
     .goto Teldrassil,55.564,56.746
     .target 劳尔娜·晨光
@@ -1848,7 +1848,7 @@ step
     .goto Darnassus,39.72,92.68,10,0
     .goto Darnassus,36.65,85.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_女祭司艾茉拉|r 对话
-    .turnin 2518 >> 交任务 月神的泪水
+    .turnin 2518 >> 交任务  月神的泪水
     .target 女祭司艾茉拉
     .accept 2520 >> 接受任务 萨丝拉的祭品
 step

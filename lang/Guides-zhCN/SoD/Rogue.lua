@@ -920,14 +920,14 @@ step
 step << Horde
     #season 2
     .goto Undercity,63.27,48.55
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迈克尔 |r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_麦克尔|r 对话
     .fly The Sepulcher>> 飞往瑟伯切尔
     .target 迈克尔·加勒特
     .zoneskip Silverpine Forest
     .train 400080,1
 step << Alliance
     .goto Ironforge,55.501,47.742
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
     .fly Southshore >> 飞往南海镇
     .target 格莱斯·瑟登
     .zoneskip Silverpine Forest
@@ -1576,14 +1576,14 @@ step
     +|cRXP_WARN_打开邮箱，阅读*C*寄来的信件。准备好后飞回南海镇然后前往银松森林|r << Alliance
 step << Horde
     .goto Undercity,63.27,48.55
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迈克尔 |r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_麦克尔|r 对话
     .fly The Sepulcher>> 飞往瑟伯切尔
     .target 迈克尔·加勒特
     .zoneskip Silverpine Forest
     .train 400101,1
 step << Alliance
     .goto Ironforge,55.501,47.742
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
     .fly Southshore >> 飞往南海镇
     .target 格莱斯·瑟登
     .zoneskip Silverpine Forest

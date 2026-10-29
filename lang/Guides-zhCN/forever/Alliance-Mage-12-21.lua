@@ -548,7 +548,7 @@ step
     .goto 1439/1,602.01,4678.87
 .target 勘察员雷塔维
 >>与|cRXP_FRIENDLY_勘察员雷塔维|r 对话
-    .turnin 729 >> 交任务 健忘的勘察员
+    .turnin 729 >> 交任务健忘的勘察员
 step
     .goto 1439/1,602.01,4678.87
      >>这个任务非常难。如果可能的话，和另一个玩家一起做。
@@ -712,7 +712,7 @@ step
     .goto 1439/1,489.35,6506.32
 .target 考古学家霍莉
 >>与|cRXP_FRIENDLY_考古学家 霍莉|r 对话
-    .turnin 731 >> 交任务 健忘的勘察员
+    .turnin 731 >> 交任务健忘的勘察员
     .isQuestComplete 731
 step
     .goto 1439/1,489.35,6506.32
@@ -736,13 +736,13 @@ step
     .isOnQuest 741
     .goto 1457/1,2607.74,9642.04
 >>与|cRXP_FRIENDLY_首席考古学家杜瑟·灰胡|r 对话
-    .turnin 741 >>交任务 健忘的勘察员
+    .turnin 741 >>交任务健忘的勘察员
 .target 首席考古学家杜瑟·灰胡
     .accept 942 >>接受任务 健忘的勘察员
 step
     .goto 1438/1,841.05,8641.122
     .fp Teldrassil >> 开启泰达希尔的飞行路径
-    .fly Auberdine >> 飞往奥伯丁，黑海岸
+    .fly Auberdine >> 飞往奥伯丁
 step
     .goto 1439/1,818.16,6422.92,50,0
     .zone Wetlands >> 乘船前往米奈希尔

@@ -206,7 +206,7 @@ step << Horde Shaman
     .xp <1,1
     .goto 2521,42.79,23.57
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塑风者波罗::251374|r 对话。
-    .train 8017 >>学习 |T136086:0|t[石化武器]
+    .train 8017 >>影袭 |T136086:0|t[石化武器]
     .target Windshaper Boro::251374
     .skipgossipid 136811
 step << Hunter
@@ -224,7 +224,7 @@ step << Alliance Rogue/Alliance Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德斯汀·三铸::251364|r 对话。
     .collect 2131,1 >>购买并装备 |T135274:0|t[农夫之剑] << Rogue
     .collect 1194,1 >>购买并装备 |T135276:0|t[损坏的双刃刀] << Warrior
-    .vendor 251364 >>出售垃圾物品
+    .vendor 251364 >>|cRXP_WARN_出售垃圾物品|r
     *不要出售 |T133970:0|t[多汁肉] 或 |T132889:0|t[亚麻布]。
     .target Destin Thriceforged::251364
 step << Horde
@@ -240,7 +240,7 @@ step << Horde !Warrior !Rogue/Alliance !Warrior !Rogue !Hunter
     .goto 2521,42.749,24.496
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乌阿莉亚·日冠::251537|r 对话
     >>|cRXP_BUY_从她那里|r|cRXP_BUY_购买|r |T132794:0|t[清凉的泉水] << !Hunter !Shaman
-    .vendor 251537 >>出售垃圾物品
+    .vendor 251537 >>|cRXP_WARN_出售垃圾物品|r
     *不要出售 |T133970:0|t[多汁肉] 或 |T132889:0|t[亚麻布]。 << Alliance
     .collect 159,20 << !Hunter !Shaman --Refreshing Spring Water (20)
     .target Uualia Suncrest::251537
@@ -264,7 +264,7 @@ step << Alliance Hunter/Horde Rogue/Horde Warrior
     .goto 2521,43.41,23.51
     .collect 1194,1 >>购买并装备 |T135276:0|t[损坏的双刃刀] << Hunter/Horde Warrior
     .collect 2131,1 >>购买并装备 |T135274:0|t[农夫之剑] << Horde Rogue
-    .vendor 251364 >>出售垃圾物品
+    .vendor 251364 >>|cRXP_WARN_出售垃圾物品|r
     *不要出售 |T133970:0|t[多汁肉] 或 |T132889:0|t[亚麻布]。
     .target Destin Thriceforged::251364
 step << Alliance
@@ -733,7 +733,7 @@ step
     #label AggressiveVendor
     #completewith Aggressive Encroachment
     .goto 2521,42.76,24.5
-    .vendor 251537 >>出售垃圾物品
+    .vendor 251537 >>|cRXP_WARN_出售垃圾物品|r
     *不要出售 |T133970:0|t[多汁肉] 或 |T132889:0|t[亚麻布]。 << Alliance
     .collect 2512,1200 << Hunter --Rough Arrow (1200)
     .collect 159,20 >>购买 |T132794:0|t[清凉的泉水] << Druid/Mage/Priest/Warlock/Paladin
@@ -864,7 +864,7 @@ step
 step
     #completewith Aggressive Encroachment2
     .goto 2521,42.76,24.52
-    .vendor 251537 >>出售垃圾物品
+    .vendor 251537 >>|cRXP_WARN_出售垃圾物品|r
     *不要出售 |T133970:0|t[多汁肉]、|T132832:0|t[小蛋] 或 |T132889:0|t[亚麻布]。 << Alliance
     *不要出售 |T132832:0|t[小蛋] 或 |T132889:0|t[亚麻布]。 << Horde
     *|cRXP_WARN_之后烹饪会用到它们|r。
@@ -2458,7 +2458,7 @@ step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_科尔桑·裂地者::254088|r 对话
     .train 284 >> 学习 |T132282:0|t[英勇打击 (等级 2)]
     .train 1715 >> 学习 |T132316:0|t[断筋]
-    .train 6343 >> 学习 |T136105:0|t[雷霆一击]
+    .train 6343 >> 训练|T136105:0|t|T136105:0|t[雷霆一击]
     .skipgossipid 136813
     .target Corsan Earthrazer::254088
 step
@@ -7538,7 +7538,7 @@ step << Horde !Hunter
     .goto 1458/0,224.300,1648.200
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拍卖师凯恩::15682|r 对话
     >>|cRXP_BUY_从拍卖行|r |cRXP_BUY_购买三个|r |T133884:0|t[鱼人的眼球]
-    >>|cRXP_WARN_如果你愿意，可以跳过这一步，这只能节省一点点时间|r
+    >>|cRXP_WARN_如果你愿意的话可以跳过，这只是个小捷径|r
     .collect 730,3,91920,1 --Collect Murloc Eyes (x3)
     .target Auctioneer Cain::15682
 step << Horde !Hunter

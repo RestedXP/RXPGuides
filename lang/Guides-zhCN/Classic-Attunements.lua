@@ -130,7 +130,7 @@ step
 step
     .isQuestTurnedIn 4182
     .goto Burning Steppes,65.012,23.757
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_狼狈不堪的约翰|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_狼狈不堪的约翰|r 对话
     .complete 4224,1 -- Ragged John's Story (1)
     .skipgossip
     .target Ragged John

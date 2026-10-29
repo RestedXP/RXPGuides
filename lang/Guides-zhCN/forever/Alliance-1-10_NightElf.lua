@@ -59,7 +59,7 @@ step << !sod/Warrior
 step << Priest
     .goto 1438/1,779.8482,10450.1295
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德林拉尔|r 对话
-    .vendor >> 出售垃圾物品
+    .vendor >> |cRXP_WARN_出售垃圾物品|r
     >>|cRXP_BUY_购买15瓶|r |T132794:0|t[清凉的泉水]
     .collect 159,15 --Collect Refreshing Spring Water (x15)
     .target 德林拉尔
@@ -73,7 +73,7 @@ step << !Druid
 step << Warrior
     .goto 1438/1,794.92,10436.72
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奇娜|r 对话
-	.vendor >> 出售垃圾物品
+	.vendor >> |cRXP_WARN_出售垃圾物品|r
     .target 奇娜
 step << Warrior
 	.goto 1438/1,778.07,10526.62
@@ -206,7 +206,7 @@ step << Warrior
 step << Priest
     .goto 1438/1,779.8482,10450.1295
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德林拉尔|r 对话
-    .vendor >> 出售垃圾物品
+    .vendor >> |cRXP_WARN_出售垃圾物品|r
     >>|cRXP_BUY_购买最多25个|r |T132794:0|t[清凉的泉水]
     .collect 159,25 --Collect Refreshing Spring Water (x25)
     .target 德林拉尔
@@ -296,14 +296,14 @@ step
 step << Priest
     .goto 1438/1,779.8482,10450.1295
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德林拉尔|r 对话
-    .vendor >> 出售垃圾物品
+    .vendor >> |cRXP_WARN_出售垃圾物品|r
     >>|cRXP_BUY_购买最多25个|r |T132794:0|t[清凉的泉水]
     .collect 159,25 --Collect Refreshing Spring Water (x25)
     .target 德林拉尔
 step << !Priest
     .goto 1438/1,794.92,10436.72
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奇娜|r 对话
-	.vendor >> 出售垃圾物品 << !Hunter
+	.vendor >> |cRXP_WARN_出售垃圾物品|r << !Hunter
 	.vendor >> |cRXP_BUY_购买3或4组|r |T132382:0|t[劣质箭] << Hunter
     .target 奇娜
 step
@@ -409,7 +409,7 @@ step << Priest
     #completewith next
     .goto 1438/1,787.28,10438.120
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与楼上的 |cRXP_FRIENDLY_简娜·明月|r 对话
-	.vendor >> 出售垃圾物品
+	.vendor >> |cRXP_WARN_出售垃圾物品|r
     .target Janna Brightmoon
 step << Priest
 	.goto 1438/1,801.64,10458.75
@@ -615,8 +615,8 @@ step
     .goto 1438/1,982.65,9802.19
     .target 旅店老板凯达米尔
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_旅店老板凯达米尔|r 对话
-    .turnin 2159,2 >> 交任务 多兰纳尔的货物 << Hunter
-    .turnin 2159 >> 交任务 多兰纳尔的货物 << !Hunter
+    .turnin 2159,2 >> 交任务  多兰纳尔的货物 << Hunter
+    .turnin 2159 >> 交任务  多兰纳尔的货物 << !Hunter
     .vendor >>|cRXP_BUY_购买10瓶|T132815:0|t|cRXP_LOOT_冰镇牛奶|r 或者能买多少买多少 << Priest
     .home >> 将你的炉石绑定在多兰纳尔
 step << Hunter
@@ -831,7 +831,7 @@ step
     .goto 1438/1,965.59,9887.58
     .target 阿斯瑞达斯·熊皮
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿斯瑞达斯·熊皮|r 对话
-    .turnin 476 >> 交任务 瘤背熊怪的堕落
+    .turnin 476 >> 交任务  瘤背熊怪的堕落
 step << Priest
     .goto 1438/1,985.45,9905.43
     .target 劳尔娜·晨光
@@ -2266,7 +2266,7 @@ step
     .goto 1457/1,2517.99,9584.25,10,0
     .goto 1457/1,2550.48,9631.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_女祭司艾茉拉|r 对话
-    .turnin 2518 >> 交任务 月神的泪水
+    .turnin 2518 >> 交任务  月神的泪水
     .target 女祭司艾茉拉
     .accept 2520 >> 接受任务 萨丝拉的祭品
 step

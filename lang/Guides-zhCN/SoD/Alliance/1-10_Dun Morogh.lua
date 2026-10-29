@@ -192,7 +192,7 @@ step << !Priest !Mage !Warlock !Warrior !Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾德林·怒流|r 对话
     >>把垃圾物品卖给商人 << Hunter
     >>|cRXP_BUY_从他那里|r|cRXP_BUY_购买 600发|r |T132384:0|t[轻弹丸] << Hunter
-    .vendor >> 出售垃圾物品 << !Hunter
+    .vendor >> |cRXP_WARN_出售垃圾物品|r << !Hunter
     .collect 2516,600 << Hunter --Light Shot (600)
     .target 艾德林·怒流
     .xp >6,1
@@ -385,7 +385,7 @@ step << Rogue
     .turnin 3109 >> 交任务 密文符文 << Dwarf
     .turnin 3113 >> 交任务 密文备忘录 << Gnome
     .accept 77658 >> 接受任务 三度失窃 << Dwarf
-    .turn in 77658 >> 交任务 三度失窃 << Dwarf
+    .turnin 77658 >> 交任务 三度失窃 << Dwarf
     .accept 77659 >> 接受任务 三度失窃 << Gnome
     .turnin 77659 >> 交任务 三度失窃 << Gnome
     .train 1784 >>学习 |T132320:0|t[潜行]

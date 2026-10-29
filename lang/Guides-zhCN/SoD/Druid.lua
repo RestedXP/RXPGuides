@@ -674,7 +674,7 @@ step << Alliance
     .train 410059,1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_辛德拉尔|r 对话
     .goto Moonglade,48.11,67.37
-    .fly Auberdine >>飞往奥伯丁，黑海岸
+    .fly Auberdine >>飞往奥伯丁
     .target 辛德拉尔
 step << Alliance
     .train 410059,1

@@ -8,7 +8,7 @@ RXPGuides.RegisterGuide([[
 << Horde Mage
 #name 12-17级 贫瘠之地 A怪指南
 #version 1
-#group RestedXP 部落法师 AOE攻略
+#group RestedXP 部落法师 A怪指南
 #defaultfor Horde Mage
 #next 17-21级 石爪山脉/荒芜之地 A怪指南
 
@@ -697,7 +697,7 @@ step
 step
     .goto The Barrens,35.3,27.9
 >>与 |cRXP_FRIENDLY_希雷斯·碎石|r 对话
-    .turnin 1061 >> 交任务  石爪之灵
+    .turnin 1061 >> 交任务石爪之灵
 .target 希雷斯·碎石
     .accept 1062 >> 接受任务 地精侵略者
 .target 玛卡巴·扁蹄
@@ -711,7 +711,7 @@ RXPGuides.RegisterGuide([[
 << Horde Mage
 #name 17-21级 石爪山脉/荒芜之地 A怪指南
 #version 1
-#group RestedXP 部落法师 AOE攻略
+#group RestedXP 部落法师 A怪指南
 #defaultfor Horde Mage
 #next 21-30级 银松森林/希尔斯布莱德 A怪指南
 
@@ -1030,7 +1030,7 @@ step
 >>与 |cRXP_FRIENDLY_梅洛·石蹄|r 对话
     .turnin 1130 >>交任务 梅洛的关注
 .target 梅洛·石蹄
-    .accept 1131 >>接受任务钢齿土狼
+    .accept 1131 >>接受任务 钢齿土狼
 step
  	>>进入幻象之池
 	.goto Thunder Bluff,30.1,30.0,30,0
@@ -1060,18 +1060,18 @@ step
 >>与 |cRXP_FRIENDLY_希雷斯·碎石|r 对话
     .turnin 1062 >>交任务  地精侵略者
 >>与 |cRXP_FRIENDLY_玛卡巴·扁蹄|r 对话
-    .turnin 6629 >>交任务  杀死格鲁迪格·黑云
+    .turnin 6629 >>交任务杀死格鲁迪格·黑云
     .turnin 6523 >>交任务  保护卡雅
 .target 玛卡巴·扁蹄
-    .accept 6401 >>接受任务 卡雅还活着
+    .accept 6401 >>接受任务卡雅还活着
 .target 希雷斯·碎石
-    .accept 1063 >>接受任务 巫婆长老
+    .accept 1063 >>接受任务巫婆长老
 --    .accept 1068 >> Accept Shredding Machines
 step
     .goto Stonetalon Mountains,71.3,95.1
 .target 辛吉拉
 >>与 |cRXP_FRIENDLY_辛吉拉|r 对话
-    .turnin 6461 >>交任务盗窃的蜘蛛
+    .turnin 6461 >>交任务  盗窃的蜘蛛
 step
     .goto Stonetalon Mountains,58.989,62.599
 .target 菲兹克斯
