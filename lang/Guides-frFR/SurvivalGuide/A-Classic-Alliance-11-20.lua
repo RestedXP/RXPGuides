@@ -83,7 +83,7 @@ step << !Human
     .accept 153 >> Acceptez la quête Les masques en cuir rouge
 step
     .goto Westfall,52.86,53.71
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Aubergiste Heather|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Innkeeper Heather|r
 	>>|cRXP_BUY_Achetez de la nourriture/eau si besoin|r << !Warrior !Rogue
 	>>|cRXP_BUY_Achetez de la nourriture si besoin|r << Warrior/Rogue
     .vendor >>Les |T133918:0|t[Lutjans à longue mâchoire] |cRXP_WARN_sont très peu coûteux|r
@@ -579,7 +579,7 @@ step
 step
 #map Darkshore
     .goto Felwood,21.63,18.15
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tharnariun Treetender|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tharnariun Soigneflore|r
     .accept 2118 >> Acceptez Plagued Lands
     .target Tharnariun Treetender
 step
@@ -705,7 +705,7 @@ step
     .accept 4811 >> Accept Les Red Crystal
 step
 #map Darkshore
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tharnariun Treetender|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tharnariun Soigneflore|r
 	.target Tharnariun Treetender
     .goto Felwood,21.63,18.15
     .turnin 2118 >> Rendez la quête Terres malades
@@ -1103,7 +1103,7 @@ step << !NightElf Rogue
     .target Syurna
 step << !NightElf Hunter/!NightElf Warrior
     #sticky
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Ilyenia Moonfire|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t Parlez à |cRXP_FRIENDLY_Ilyenia Moonfire|r
     .skipgossip 11866,1
     .goto Darnassus,57.56,46.72
     .train 264 >> Apprenez la compétence Arcs
@@ -1174,7 +1174,7 @@ step
 step
 #requires tube1
 #map Darkshore
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tharnariun Treetender|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tharnariun Soigneflore|r
 	.target Tharnariun Treetender
     .goto Felwood,21.63,18.15
     .turnin 2138 >> Rendez la quête Nettoyage de l'infection
@@ -1515,7 +1515,7 @@ step
 step
 .group
 #map Darkshore
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tharnariun Treetender|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tharnariun Soigneflore|r
 	.target Tharnariun Treetender
     .goto Felwood,21.63,18.15
     .turnin 2139 >> Rendez la quête Espoir de Tharnariun
@@ -1768,7 +1768,7 @@ step
     .accept 948 >> Acceptez la quête Onu
 step
 #map Darkshore
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tharnariun Treetender|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tharnariun Soigneflore|r
 	.target Tharnariun Treetender
     .goto Felwood,21.63,18.15
     .turnin 2139 >> Rendez la quête Espoir de Tharnariun
@@ -1994,7 +1994,7 @@ step
 step
     .goto Ashenvale,27.26,35.58
     >>|cRXP_WARN_Escortez |cRXP_FRIENDLY_Kerlonian|r jusqu'au poste de Maestra à Orneval|r
-    .use 13536 >> |cRXP_WARN_Utilisez la|r |T134229:0|t[|cRXP_LOOT_Corne de l'éveil|r] |cRXP_WARN_dès que |cRXP_FRIENDLY_Kerlonian|r s'endort|r
+    .use 13536 >> Utilisez la [|cRXP_LOOT_Horn of Awakening|r] |cRXP_WARN_dès que |cRXP_FRIENDLY_Kerlonian|r s'endort|r
     >>|cRXP_WARN_Évitez de rester sur la route principale autant que possible. Les ennemis n'apparaîtront que si vous restez sur la route|r
     .complete 5321,2
     .isOnQuest 5321
@@ -2225,7 +2225,7 @@ step
 .dungeon WC
     >>Tuez |cRXP_ENEMY_Lord Cobrahn|r, |cRXP_ENEMY_Lord Pythas|r, |cRXP_ENEMY_Lord Serpentis|r et |cRXP_ENEMY_Lady Anacondra|r puis parlez au |cRXP_FRIENDLY_Disciple of Naralex|r au début du donjon pour commencer son escorte
     >>Escortez le |cRXP_FRIENDLY_Disciple of Naralex|r à travers les Cavernes des Lamentations et compléter son rituel
-    >>Tuez|cRXP_ENEMY_Mutanus the Devourer|r. Dépouillez-le pour son [|cRXP_LOOT_Glowing Shard|r]
+    >>Tuez |cRXP_ENEMY_Mutanus the Devourer|r. Dépouillez-le pour le [|cRXP_LOOT_Glowing Shard|r]
     >>|cRXP_WARN_Utilisez le [|cRXP_LOOT_Glowing Shard|r] pour commencer la quête|r
     .collect 10441,1,6981,1 -- Glowing Shard (1)
     .accept 6981 >> Acceptez la quête L'Éclat luminescent

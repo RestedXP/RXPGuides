@@ -385,7 +385,7 @@ step << Rogue
     .turnin 3109 >> Rendez la quête Rune codée << Dwarf
     .turnin 3113 >> Rendez la quête Note de service codée << Gnome
     .accept 77658 >> Acceptez la quête Triple vol << Dwarf
-    .turn in 77658 >> Rendez la quête Triple vol << Dwarf
+    .turnin 77658 >> Rendez la quête Triple vol << Dwarf
     .accept 77659 >> Acceptez la quête Triple vol << Gnome
     .turnin 77659 >> Rendez la quête Triple vol << Gnome
     .train 1784 >>Apprenez [Camouflage]
@@ -1346,7 +1346,7 @@ step
     .accept 313 >> Acceptez la quête L'antre Gris
     .target +Pilot Stonegear
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Beldin Steelgrill|r et |cRXP_FRIENDLY_Loslor Rudge|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Beldin Steelgrill|r et à |cRXP_FRIENDLY_Loslor Rudge|r
     .turnin 400 >> Rendez la quête Des outils pour Grillacier
     .goto Dun Morogh,50.443,49.092
     .target +Beldin Steelgrill
@@ -1389,7 +1389,7 @@ step
     .goto Dun Morogh,48.0,49.5,75,0
     .goto Dun Morogh,48.2,46.9,75,0
     .goto Dun Morogh,43.5,52.5,75,0
-    >>Tuez les |cRXP_ENEMY_Young Black Bears|r. Dépouillez-les pour leur |cRXP_LOOT_Thick Bear Fur|r
+    >>Tuez |cRXP_ENEMY_Young Black Bears|r. Dépouillez-les pour leur |cRXP_LOOT_Thick Bear Fur|r
     >>Tuez les |cRXP_ENEMY_Crag Boars|r et les |cRXP_ENEMY_Large Crag Boars|r. Dépouillez-les pour leur |cRXP_LOOT_[Chunks of Boar Meat]|r et leur |cRXP_LOOT_Crag Boar Ribs|r
     .complete 317,2 --Collect Thick Bear Fur (x2)
     .mob +Young Black Bear

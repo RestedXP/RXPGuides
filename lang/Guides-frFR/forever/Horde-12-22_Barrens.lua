@@ -680,7 +680,7 @@ step << Tauren Warrior
 step << Tauren Warrior
     #optional
     #completewith BaronLongshore
-    +Équipez le [Marteau en pierre] lorsque vous passez niveau 16
+    +Équipez le [Marteau en pierre] lorsque vous passez au niveau 16
     .use 2026
     .itemcount 2026,1
     .itemStat 16,QUALITY,<7
@@ -931,7 +931,7 @@ step << Tauren Warrior
 step << Tauren Warrior
     #optional
     #completewith FlyToXroads1
-    +Équipez le [Marteau en pierre] lorsque vous passez niveau 16
+    +Équipez le [Marteau en pierre] lorsque vous passez au niveau 16
     .use 2026
     .itemcount 2026,1
     .itemStat 16,QUALITY,<7
@@ -1019,7 +1019,7 @@ step
     .goto 1413/1,-2710.26,-959.6,80,0
     .goto 1413/1,-2392.07,-900.83,80,0
     .goto 1413/1,-2274.52,-870.42,80,0
-    >>Tuez tous les |cRXP_ENEMY_Zhevra|r que vous croisez. Dépouillez-les pour leur |cRXP_LOOT_Hooves|r
+    >>Terminez de tuer tous les |cRXP_ENEMY_Zhévras|r que vous croisez. Dépouillez-les pour leur |cRXP_LOOT_Sabots|r
     .complete 845,1 --Zhevra Hooves (4)
     .mob Zhevra Runner
 step << Tauren Druid
@@ -1146,7 +1146,7 @@ step << Tauren
 step << Troll Hunter/Orc Hunter
     .goto 1413/1,-2612.98,-411.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Parlez à|r |cRXP_FRIENDLY_Barg|r
-    >>|cRXP_BUY_Achetez des|r [Flèches pointues] |cRXP_BUY_à Kayren|r
+    >>|cRXP_BUY_Achetez des|r [Flèche grossières] |cRXP_BUY_à Barg|r
     .collect 2515,1200,850,1 << Hunter --Sharp Arrow (1200)
     .target Barg
 step << Tauren Hunter
@@ -1159,7 +1159,7 @@ step << Troll Hunter/Orc Hunter/Skyborne Hunter
     .goto 1413/1,-2556.23,-351.54
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Parlez à|r |cRXP_FRIENDLY_Uthrok|r
     .vendor >> |cRXP_BUY_Achetez un|r [|cRXP_FRIENDLY_Bon arc long|r] |cRXP_BUY_à Uthrok si il en a en stock et faites un stock de flèches|r
-    >>Si il n'est pas disponible, achetez à la place un [Arc renforcé]
+    >>Si il n'est pas disponible, achetez un [Arc renforcé] à la place
     .collect 2515,1200,870,1 << Hunter --Sharp Arrow (1200)
     .target Uthrok
     .isOnQuest 903
@@ -1296,7 +1296,7 @@ step
     .mob Witchwing Roguefeather
 step
     #completewith Samophlange
-    +Faites attention aux |cRXP_ENEMY_Sunscale Scytheclaws|r dans la zone. Ils vont jusqu'au niveau 18 et peuvent utiliser [Rosser]
+    +Faites attention aux |cRXP_ENEMY_Sunscale Scytheclaws|r dans la zone. Ils sont niveau 18 et peuvent utiliser [Rosser]
     .xp >17,1
 step
     #optional
@@ -1627,7 +1627,7 @@ step
 step
     .goto 1454/1,-4160.01,1483.17
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|r |cRXP_FRIENDLY_Arnok|r
-    >>Passez cette étape si vous avez pas assez d'[Étoffe de lin] pour monter votre compétence à 50
+    >>Passez cette étape si vous n'avez pas assez d'[Etoffe de lin] pour monter votre compétence à 50
     .train 3274 >> Apprenez Premiers soins compagnon
     .target Arnok
     .skill firstaid,<40,1
@@ -1648,7 +1648,7 @@ step << Priest
     .xp <18,1
 step << Mage
     .goto 1454/1,-4218.64,1473.72
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |r |cRXP_FRIENDLY_Pephredo|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|r |cRXP_FRIENDLY_Pephredo|r
     .train 2120 >> Apprenez vos sorts de classe
     .target Pephredo
     .xp <16,1
@@ -1656,7 +1656,7 @@ step << Mage
 step << Mage
     #optional
     .goto 1454/1,-4218.64,1473.72
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |r |cRXP_FRIENDLY_Pephredo|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|r |cRXP_FRIENDLY_Pephredo|r
     .train 3140 >> Apprenez vos sorts de classe
     .target Pephredo
     .xp <18,1
@@ -1880,7 +1880,7 @@ step << Warlock
     .xp >18,1
 step << Warlock
     .goto 1454/1,-4347.4,1836.57
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Kurgul|r et achetez un [Grimoire d’Éclair de feu(Rang 3)]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Kurgul|r et achetez le [Grimoire d’Éclair de feu (Rang 3)]
     .collect 16316,1,896,1 --Grimoire of Firebolt (Rank 3) (1)
     .target Kurgul
     .xp <18,1
@@ -2003,7 +2003,7 @@ step
 step << Hunter
     .goto 1413/1,-2612.98,-411.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Parlez à|r |cRXP_FRIENDLY_Barg|r
-    >>|cRXP_BUY_Achetez des|r [Flèches pointues] |cRXP_BUY_à Kayren|r
+    >>|cRXP_BUY_Achetez des|r [Flèche grossières] |cRXP_BUY_à Barg|r
     .collect 2515,1800,888,1 << Hunter --Sharp Arrow (1800)
     .target Barg
 step
@@ -2633,7 +2633,7 @@ step
     .isQuestTurnedIn 6548
 step
     .goto 1442/1,-350.74,112.06
-    >>Tuez |cRXP_ENEMY_Grundig Darkcloud|r et |cRXP_ENEMY_Grimtotem Brutes|r
+    >>Tuez les |cRXP_ENEMY_Grundig Darkcloud|r et les |cRXP_ENEMY_Grimtotem Brutes|r
     >>Tuez bien les 6 |cRXP_ENEMY_Grimtotem Brutes|r avant de commencer la quête à l'intérieur
     .complete 6629,1 --Kill Grundig Darkcloud (x1)
     .mob +Grundig Darkcloud
@@ -3266,7 +3266,7 @@ step << Warrior
 step << Rogue/Hunter/Warrior/Shaman/Druid
     #optional
     #completewith FlytoXroads
-    +Équipez les [|cRXP_FRIENDLY_Wolf Bracers|r]
+    +Équipez le [|cRXP_FRIENDLY_Wolf Bracers|r]
     .use 4794
     .itemcount 4794,1
     .itemStat 9,ITEM_MOD_ARMOR_SHORT,<37
@@ -3850,7 +3850,7 @@ step
     .goto 1456/1,206.88,-997.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|r |cRXP_FRIENDLY_Pand|r
     >>Passez cette étape si vous n'avez pas assez d'[Etoffe de lin] pour atteindre une compétence de 80
-    .train 3277 >> Apprenez  [Bandage en laine]
+    .train 3277 >> Apprenez [Bandage en laine]
     .train 7934 >> Apprenez [Anti-venin] << Rogue
     .target Pand Stonebinder
     .skill firstaid,<1,1
@@ -4881,7 +4881,7 @@ step << Warlock
     .use 6626
 step << Warlock
     .goto 1454/1,-4377.13,1804.77
-    >>Tuez les |cRXP_ENEMY_Summoned Succubus|r
+    >>Tuez la |cRXP_ENEMY_Summoned Succubus|r
     .complete 1513,1 --Kill Summoned Succubus (1)
     .mob Summoned Succubus
     .use 6626
@@ -4949,7 +4949,7 @@ step << Priest/Warlock
     .target Katis
 step << Mage
     .goto 1454/1,-4218.64,1473.72
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |r |cRXP_FRIENDLY_Pephredo|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|r |cRXP_FRIENDLY_Pephredo|r
     .train 2138 >> Apprenez vos sorts de classe
     .target Pephredo
     .xp <22,1
@@ -4957,7 +4957,7 @@ step << Mage
 step << Mage
     #optional
     .goto 1454/1,-4218.64,1473.72
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |r |cRXP_FRIENDLY_Pephredo|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|r |cRXP_FRIENDLY_Pephredo|r
     .train 2121 >> Apprenez vos sorts de classe
     .target Pephredo
     .xp <24,1
@@ -5040,7 +5040,7 @@ step << Rogue
     .goto 1413/1,-2927.11,1236.18
     >>Au sommet de la tour vous trouverez |cRXP_ENEMY_Gallywix|r. Dépouillez-le pour sa |cRXP_LOOT_Tête|r
     >>Utilisez [Embuscade] pour réduire ses PV de moitié. Utilisez [Suriner] pour récupérer votre énergie et utiliser [Évasion]
-	>>Rappelez-vous d'utiliser une potion et un [Thé aux chardons] si nécessaire
+	>>N'oubliez pas d'utiliser une Potion et un [Thé aux chardons] si nécessaire
     .complete 2478,4 --Gallywix's Head (1)
     .mob Grand Foreman Puzik Gallywix
     --VV Video?
@@ -5173,7 +5173,7 @@ step << Rogue
     .aura -9991
 step << Rogue
     #optional
-    .destroy 8051 >> Détruisez le [Lance-fusée] de vos sacs, il n'est plus nécessaire
+    .destroy 8051 >> Détruisez le [Lance-fusée] dans votre sac, il n'est plus nécessaire
     .destroy 8066 >> Détruisez le [Sifflet de Fizzule] de vos sacs, il n'est plus nécessaire
 step
     #optional

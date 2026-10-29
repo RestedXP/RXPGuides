@@ -672,7 +672,7 @@ step
     #completewith SenirEnd
     >>Tuez les |cRXP_ENEMY_Crag Boars|r. Dépouillez-les pour leur |cRXP_LOOT_[Chunks of Boar Meat]|r et leur |cRXP_LOOT_Crag Boar Ribs|r
     >>Gardez tous les |cRXP_LOOT_[Chunks of Boar Meat]|r que vous obtenez pour Ravitailler le Crache-vapeur et ensuite pour monter votre niveau en [Cuisine] plus tard
-    >>Vous aurez besoin d'un niveau de 10 en [Cuisine] pour une quête à Auberdine plus tard
+    >>Vous aurez besoin d'un niveau de [Cuisine] de 10 pour une quête à Auberdine plus tard
     >>Vous aurez besoin d'un niveau de 50 en [Cuisine] pour une quête au Bois de la Pénombre plus tard
     .collect 769,4,317,1 --Collect Chunk of Boar Meat (x4)
     .collect 2886,6,384,1 --Collect Crag Boar Rib (x6)
@@ -956,7 +956,7 @@ step
     .goto 1426/0,-641.80,-5473.18
     .target +Pilot Stonegear
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Beldin Steelgrill|r et |cRXP_FRIENDLY_Loslor Rudge|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Beldin Steelgrill|r et à |cRXP_FRIENDLY_Loslor Rudge|r
     .turnin 400 >> Rendez la quête Des outils pour Grillacier
     .goto 1426/0,-682.23,-5488.94
     .target +Beldin Steelgrill
@@ -987,7 +987,7 @@ step << Warrior/Paladin/Rogue
     .train 2575,3 --Mining
 step
     #completewith RumbleshotAmmo
-    >>Tuez les |cRXP_ENEMY_Young Black Bears|r. Dépouillez-les pour leur |cRXP_LOOT_Thick Bear Fur|r
+    >>Tuez |cRXP_ENEMY_Young Black Bears|r. Dépouillez-les pour leur |cRXP_LOOT_Thick Bear Fur|r
     >>Tuez les |cRXP_ENEMY_Crag Boars|r et les |cRXP_ENEMY_Large Crag Boars|r. Dépouillez-les pour leur |cRXP_LOOT_[Chunks of Boar Meat]|r et leur |cRXP_LOOT_Crag Boar Ribs|r
     .complete 317,2 --Collect Thick Bear Fur (x2)
     .mob +Young Black Bear
@@ -1776,7 +1776,7 @@ step
     .goto 1426,57.936,50.787,0
     >>Tuez les |cRXP_ENEMY_Elder Crag Boars|r. Dépouillez-les pour leur|cRXP_LOOT_[Chunks of Boar Meat]|r
     >>Ils seront utilisés pour monter votre niveau de [Cuisine] plus tard
-    >>Vous aurez besoin d'un niveau de 10 en [Cuisine] pour une quête à Auberdine plus tard
+    >>Vous aurez besoin d'un niveau de [Cuisine] de 10 pour une quête à Auberdine plus tard
     .collect 769,10,2178,1,0x20,cooking --Chunk of Boar Meat (1-10)
     .mob Elder Crag Boar
     .skill cooking,10,1 --XX Shows if cooking skill is <10
@@ -2236,7 +2236,7 @@ step
     .goto 1426,80.583,36.040,0
     >>Tuez  les|cRXP_ENEMY_Mountain Boars|r. Dépouillez-les pour leur|cRXP_LOOT_[Chunks of Boar Meat]|r
     >>Ils seront utilisés pour monter votre niveau de [Cuisine] plus tard
-    >>Vous aurez besoin d'un niveau de 10 en [Cuisine] pour une quête à Auberdine plus tard
+    >>Vous aurez besoin d'un niveau de [Cuisine] de 10 pour une quête à Auberdine plus tard
     .collect 769,10,2178,1,0x20,cooking --Chunk of Boar Meat (1-10)
     .mob Mountain Boar
     .skill cooking,10,1 --XX Shows if cooking skill is <10
@@ -2894,7 +2894,7 @@ step << Warlock
     >>Tuez |cRXP_ENEMY_Hogger|r. Dépouillez-les pour leur |cRXP_LOOT_Claw|r
     >>|cRXP_ENEMY_Hogger|r peut apparaître à de nombreux endroits
     >>Lancez [Peur] |cRXP_WARN_sur |cRXP_ENEMY_Hogger|r en boucle et utilisez vos DoTs pour le tuer|r
-    >>|cRXP_WARN_Cette quête est difficile. Montez un groupe pour le tuer si nécessaire. Passez cette étape si vous n'arrivez pas à monter un groupe ou à le tuer seul|r
+    >>Cette quête est difficile. Montez un groupe pour le tuer si nécessaire. Passez cette étape si vous n'arrivez pas à monter un groupe ou à le tuer solo
     .complete 176,1 --Huge Gnoll Claw (1)
     .unitscan Hogger
 step
@@ -3494,7 +3494,7 @@ step << Dwarf Paladin
     .target Tiza Battleforge
 step << Dwarf Paladin
     .goto 1455,27.622,12.177
-    >>|cRXP_WARN_Utilisez le [|T133739:0|t|cRXP_LOOT_The Tome of Divinity|r] pour commencer la quête|r
+    >>|cRXP_WARN_Utilisez le [|T133739:0|t|cRXP_LOOT_Tome de divinité|r] pour commencer la quête|r
     .accept 1646 >>Acceptez la quête Le Tome de divinité
     .use 6916
 step << Dwarf Paladin

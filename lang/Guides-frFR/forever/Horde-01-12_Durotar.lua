@@ -1299,7 +1299,7 @@ step << Troll Warrior
 step << Hunter
     #optional
     #completewith Bonfire
-    +Équipez l'[Arc courbe en bois de corne]
+    +Équipez le [Arc courbe en bois de corne]
     .use 2506
     .itemcount 2506,1
     .itemStat 18,QUALITY,<7
@@ -1541,7 +1541,7 @@ step << Troll Warrior
 step << Hunter
     #optional
     #completewith TravelToTiragarde
-    +Équipez l'[Arc courbe en bois de corne]
+    +Équipez le [Arc courbe en bois de corne]
     .use 2506
     .itemcount 2506,1
     .itemStat 18,QUALITY,<7
@@ -2135,7 +2135,7 @@ step << Hunter
 step << Hunter
     #optional
     #completewith Toolboxes
-    +Équipez l'[Arc courbe en bois de corne]
+    +Équipez le [Arc courbe en bois de corne]
     .use 2506
     .itemcount 2506,1
     .itemStat 18,QUALITY,<7
@@ -2155,7 +2155,7 @@ step
 step
     .goto 1411/1,-4686.09,340.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Innkeeper Grosk|r
-    >>|cRXP_BUY_Achetez du|r [Lait frais] |cRXP_BUY_à Kauth|r << Mage/Warlock/Priest/Shaman/Druid
+    >>|cRXP_BUY_Achetez du|r [Lait frais] |cRXP_BUY_à Heron|r << Mage/Warlock/Priest/Shaman/Druid
     >>|cRXP_BUY_Achetez des|r [Cuissot] |cRXP_BUY_à Hai'zan|r << Rogue/Warrior
     >>Gardez 4 pièces d'argent pour vos sorts de classe ! << Rogue/Warrior/Shaman/Warlock
     >>Gardez 2 pièces d'argent pour vos sorts de classe ! << Priest
@@ -2171,7 +2171,7 @@ step << !Mage !Hunter !Druid
     #optional
     .goto 1411/1,-4686.09,340.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Innkeeper Grosk|r
-    >>|cRXP_BUY_Achetez du|r [Lait frais] |cRXP_BUY_à Kauth|r << Mage/Warlock/Priest/Shaman/Druid
+    >>|cRXP_BUY_Achetez du|r [Lait frais] |cRXP_BUY_à Heron|r << Mage/Warlock/Priest/Shaman/Druid
     >>|cRXP_BUY_Achetez des|r [Cuissot] |cRXP_BUY_à Hai'zan|r << Rogue/Warrior
     .vendor >> Vendez tout ce dont nous n'avez pas besoin
     .turnin 2161 >>Rendez la quête Un Fardeau de Péon
@@ -2566,7 +2566,7 @@ step
     .target Xar'Ti
 step
     #completewith QuilboarsScouts
-    +Mettez dans vos barres votre [Crâne au faible rougeoiement] et votre [Colle très collante]. Gardez-les pour des situations d'urgence
+    +|cRXP_WARN_Mettez dans vos barres votre|r |T133728:0|t[Crâne au faible rougeoiement] |cRXP_WARN_et la|r |T134712:0|t[Colle très collante]. |cRXP_WARN_Gardez-les pour les situations d'urgence|r
 step
     .goto 1411/1,-4715.100,-599.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Ukor|r
@@ -3115,7 +3115,7 @@ step
     .goto 1411/1,-4686.09,340.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Innkeeper Grosk|r
     .vendor >> Vendez tout ce dont nous n'avez pas besoin
-    >>|cRXP_BUY_Achetez du|r [Lait frais] |cRXP_BUY_à Kauth|r << Mage/Warlock/Priest/Shaman
+    >>|cRXP_BUY_Achetez du|r [Lait frais] |cRXP_BUY_à Heron|r << Mage/Warlock/Priest/Shaman
     >>|cRXP_BUY_Achetez des|r [Cuissot] |cRXP_BUY_à Hai'zan|r << Rogue/Warrior
     .collect 1179,15,828,1 << Mage/Warlock/Priest/Shaman --Ice Cold Milk (15)
     .collect 2287,15,828,1 << Rogue/Warrior --Haunch of Meat (15)
@@ -3868,7 +3868,7 @@ step << Warrior
     .isQuestAvailable 1498
 step << Warrior
     .goto 1420/0,360.04,2376.14
-    >>|cRXP_WARN_Cliquez sur le|r |cRXP_WARN_Déclencheur du mausolée|r |cRXP_WARN_au sol. Cela va invoquer|r |cRXP_ENEMY_Ulag.|r |cRXP_WARN_Tuez-le|r
+    >>Cliquez sur le Déclencheur du mausolée sur le sol. Cela va invoquer |cRXP_ENEMY_Ulag.|r. Tuez-le
     .complete 1819,1 --Ulag the Cleaver (1)
     .mob Ulag the Cleaver
     .isQuestAvailable 1498

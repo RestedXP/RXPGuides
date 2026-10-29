@@ -88,7 +88,7 @@ step << !Mage !Priest
 step
     .goto Silverpine Forest,43.98,39.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Edwin|r
-    >>|cRXP_BUY_Achetez du|r [Lait frais] |cRXP_BUY_à Kauth|r << Mage/Warlock/Priest/Shaman/Druid
+    >>|cRXP_BUY_Achetez du|r [Lait frais] |cRXP_BUY_à Heron|r << Mage/Warlock/Priest/Shaman/Druid
     .vendor >> |cRXP_BUY_Achetez-lui des|r |T134830:0|t[Potions de soins inférieure] |cRXP_BUY_si elles sont disponibles|r
     .collect 1179,20,421,1 << Mage/Warlock/Priest/Shaman/Druid --Ice Cold Milk (20)
     .target Edwin Harly
@@ -303,7 +303,7 @@ step << !Mage !Priest
 step
     .goto Silverpine Forest,43.98,39.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Edwin|r
-    >>|cRXP_BUY_Achetez du|r [Lait frais] |cRXP_BUY_à Kauth|r << Warlock/Priest/Shaman/Druid
+    >>|cRXP_BUY_Achetez du|r [Lait frais] |cRXP_BUY_à Heron|r << Warlock/Priest/Shaman/Druid
     .vendor >> |cRXP_BUY_Achetez-lui des|r |T134830:0|t[Potions de soins inférieure] |cRXP_BUY_si elles sont disponibles|r
     .collect 1179,20,421,1 << Warlock/Priest/Shaman/Druid --Ice Cold Milk (20)
     .target Edwin Harly
@@ -542,7 +542,7 @@ step << Tauren Warrior
 step << Tauren Warrior
     #optional
     #completewith PyrewoodAmbush
-    +Équipez le [Marteau en pierre] lorsque vous passez niveau 16
+    +Équipez le [Marteau en pierre] lorsque vous passez au niveau 16
     .use 2026
     .itemcount 2026,1
     .itemStat 16,QUALITY,<7

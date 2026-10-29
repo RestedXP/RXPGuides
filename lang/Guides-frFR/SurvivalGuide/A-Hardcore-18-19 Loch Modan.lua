@@ -103,8 +103,8 @@ step
 step
     .goto Loch Modan,23.85,17.92,10,0
     .goto Loch Modan,24.77,18.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Montagnard Foudrepique|r
-    .turnin 353 >> Rendez la quête Livraison pour Foudrepique << NightElf
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Mountaineer Stormpike|r
+    .turnin 353 >> Rendez la quête Livraison pour Stormpike << NightElf
     .accept 307 >> Acceptez la quête Bas les pattes !
     .target Mountaineer Stormpike
 step

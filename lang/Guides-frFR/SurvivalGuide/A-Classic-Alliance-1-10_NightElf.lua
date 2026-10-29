@@ -256,7 +256,7 @@ step
     #sticky
     #label vial1
     .goto Teldrassil,59.9,33.0
-	.use 5185 >> Utilisez la [Flasque de cristal] au puits de lune
+	.use 5185 >> Utilisez la [Fiole de cristal] au puits de lune
     .complete 921,1 --Collect Filled Crystal Phial (x1)
 step << Hunter
     .goto Teldrassil,59.8,34.1
@@ -441,7 +441,7 @@ step << Druid
 step << Priest
     .goto Teldrassil,57.242,63.511
     >>Ciblez |cRXP_FRIENDLY_Sentinel Shaya|r
-    >>Lancez |T135929:0|t[Soins inférieurs (Rang 2)] et |T135987:0|t[Mot de pouvoir : Robustesse] sur |cRXP_FRIENDLY_Sentinel Shaya|r
+    >>Lancez [Soins inférieurs (Rang 2)] |cRXP_WARN_and|r [Mot de pouvoir : Robustesse] sur |cRXP_FRIENDLY_Sentinel Shaya|r
     .complete 5621,1 --Heal and fortify Sentinel Shaya
     .target Sentinel Shaya
 step
@@ -1139,7 +1139,7 @@ step << Hunter
 	.goto Teldrassil,45.6,31.4,0
 	.goto Teldrassil,37.6,28.8,0
     >>Lancez [Apprivoiser une bête] |cRXP_WARN_sur un |cRXP_ENEMY_Strigid Hunter|r pour le dompter|r -- .tame 1997
-    .train 2981 >> Attaquez des mobs avec celui-ci pour qu'il apprenne [Claw (Rank 2)]
+    .train 2981 >> Attaquez des créatures avec pour qu'il apprenne [Griffe (Rang 2)]
     .link https://www.wow-petopia.com/classic/training.php >> |cRXP_WARN_Cliquez ici pour plus d'information sur le dressage des familiers|r
 	.unitscan Strigid Hunter
 step
@@ -1328,7 +1328,7 @@ step << Druid
     .target Firodren Mooncaller
 step << Hunter/Warrior/Priest
     .goto Darnassus,57.56,46.73
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Ilyenia Moonfire|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t Parlez à |cRXP_FRIENDLY_Ilyenia Moonfire|r
     .skipgossip 11866,1
     .train 227 >>Apprenez la compétence Bâtons
     >>Si vous avez un Bâton dans votre sac, équipez-le. << Hunter
@@ -1358,7 +1358,7 @@ step << Warrior
     .goto Darnassus,58.76,44.48
     .money <0.2023
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Ariyell Skyshadow|r
-	>>|cRXP_BUY_Achetez et équipez un|r |T135346:0|t[Sabre d’abordage] |cRXP_BUY_si vous ne pouvez pas vous offrir un|r |T135154:0|t[Bâton de combat]
+	>>|cRXP_BUY_Achetez et équipez un|r [Coutelas] |cRXP_BUY_si vous ne pouvez pas acheter un|r [Bâton]
 	.collect 851,1
     .target Ariyell Skyshadow
 step

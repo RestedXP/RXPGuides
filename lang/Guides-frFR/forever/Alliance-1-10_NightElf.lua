@@ -372,7 +372,7 @@ step
     #sticky
     #label vial1
     .goto 1438/1,764.68,10711.31
-	.use 5185 >> Utilisez la [Flasque de cristal] au puits de lune
+	.use 5185 >> Utilisez la [Fiole de cristal] au puits de lune
     .complete 921,1 --Collect Filled Crystal Phial (x1)
 step << Hunter/Druid/Warrior/Priest
     .goto 1438/1,769.77,10673.98
@@ -552,7 +552,7 @@ step << Hunter
     .target Jeena Featherbow
 step << Hunter
     #completewith next
-    +Équipez l'[Arc courbe en bois de corne]
+    +Équipez le [Arc courbe en bois de corne]
     .use 2506
     .itemcount 2506,1
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.37
@@ -699,7 +699,7 @@ step << Druid
 step << Priest
     .goto 1438/1,900.01,9675.85
     >>Ciblez |cRXP_FRIENDLY_Sentinel Shaya|r
-    >>Lancez |T135929:0|t[Soins inférieurs (Rang 2)] et |T135987:0|t[Mot de pouvoir : Robustesse] sur |cRXP_FRIENDLY_Sentinel Shaya|r
+    >>Lancez [Soins inférieurs (Rang 2)] |cRXP_WARN_and|r [Mot de pouvoir : Robustesse] sur |cRXP_FRIENDLY_Sentinel Shaya|r
     .complete 5621,1 --Heal and fortify Sentinel Shaya
     .target Sentinel Shaya
 step
@@ -787,7 +787,7 @@ step
     >>Tuez les |cRXP_ENEMY_Sabres-de-nuit sauvages|r et dépouillez-les pour leurs |cRXP_LOOT_Crocs|r et |cRXP_LOOT_Fourrures|r
     >>Tuez les |cRXP_ENEMY_Strigid Owls|r. Dépouillez-les pour leur|cRXP_LOOT_Feathers|r
     >>Tuez les |cRXP_ENEMY_Webwood Lurkers|r. Dépouillez-les pour leur |cRXP_LOOT_Silk|r
-    >>Gardez vos [Petit oeuf] et vos [Petite pattes d'araignée] pour monter votre niveau de [Cuisine] plus tard
+    >>Gardez vos [Petit oeuf] et vos [Petite patte d'araignée] pour monter votre niveau de [Cuisine] plus tard
     >>===========================================
     >>|cRXP_WARN_Passez cette étape si vous ne trouvez pas de mob à proximité pour compléter l'objectif !|r
     .complete 87288,1 --Soft Nightsaber Pelt (x6)
@@ -866,7 +866,7 @@ step << Hunter
     .target Jeena Featherbow
 step << Hunter
     #completewith next
-    +Équipez l'[Arc courbe en bois de corne]
+    +Équipez le [Arc courbe en bois de corne]
     .use 2506
     .itemcount 2506,1
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.37
@@ -1178,7 +1178,7 @@ step
     >>Tuez les |cRXP_ENEMY_Sabres-de-nuit sauvages|r et dépouillez-les pour leurs |cRXP_LOOT_Crocs|r et |cRXP_LOOT_Fourrures|r
     >>Tuez les |cRXP_ENEMY_Strigid Owls|r. Dépouillez-les pour leur|cRXP_LOOT_Feathers|r
     >>Tuez les |cRXP_ENEMY_Webwood Lurkers|r. Dépouillez-les pour leur |cRXP_LOOT_Silk|r
-    >>Gardez vos [Petit oeuf] et vos [Petite pattes d'araignée] pour monter votre niveau de [Cuisine] plus tard
+    >>Gardez vos [Petit oeuf] et vos [Petite patte d'araignée] pour monter votre niveau de [Cuisine] plus tard
     >>====================================================================================
     >>|cRXP_WARN_Passez cette étape si vous ne trouvez pas de mob à proximité pour compléter l'objectif !|r
     .complete 87288,1 --Soft Nightsaber Pelt (x6)
@@ -1466,7 +1466,7 @@ step << Hunter
     .target Ariyell Skyshadow
 step << Hunter
     .goto 1457/1,2329.19,9908.53
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Ilyenia Moonfire|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t Parlez à |cRXP_FRIENDLY_Ilyenia Moonfire|r
     .skipgossipid 96881
     .train 227 >>Apprenez la compétence Bâtons
     >>Si vous avez un Bâton dans votre sac, équipez-le.
@@ -1676,7 +1676,7 @@ step
     >>Tuez les |cRXP_ENEMY_Sabres-de-nuit sauvages|r et dépouillez-les pour leurs |cRXP_LOOT_Crocs|r et |cRXP_LOOT_Fourrures|r
     >>Tuez les |cRXP_ENEMY_Strigid Owls|r. Dépouillez-les pour leur|cRXP_LOOT_Feathers|r
     >>Tuez les |cRXP_ENEMY_Webwood Lurkers|r. Dépouillez-les pour leur |cRXP_LOOT_Silk|r
-    >>Gardez vos [Petit oeuf] et vos [Petite pattes d'araignée] pour monter votre niveau de [Cuisine] plus tard
+    >>Gardez vos [Petit oeuf] et vos [Petite patte d'araignée] pour monter votre niveau de [Cuisine] plus tard
     >>====================================================================================
     >>|cRXP_WARN_Passez cette étape si vous ne trouvez pas de mob à proximité pour compléter l'objectif !|r
     .complete 87288,1 --Soft Nightsaber Pelt (x6)
@@ -2027,7 +2027,7 @@ step << Hunter
 	.goto 1438/1,1492.78,10765.61,0
 	.goto 1438/1,1900.12,10853.85,0
     >>Lancez [Apprivoiser une bête] |cRXP_WARN_sur un |cRXP_ENEMY_Strigid Hunter|r pour le dompter|r -- .tame 1997
-    .train 2981 >> Attaquez des mobs avec celui-ci pour qu'il apprenne [Claw (Rank 2)]
+    .train 2981 >> Attaquez des créatures avec pour qu'il apprenne [Griffe (Rang 2)]
     .link https://www.wow-petopia.com/classic/training.php >> |cRXP_WARN_Cliquez ici pour plus d'information sur le dressage des familiers|r
 	.unitscan Strigid Hunter
 step
@@ -2319,7 +2319,7 @@ step << Hunter
     .target Jaeana
 step << Hunter/Warrior/Priest
     .goto 1457/1,2329.19,9908.53
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Ilyenia Moonfire|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t Parlez à |cRXP_FRIENDLY_Ilyenia Moonfire|r
     .skipgossipid 96881
     .train 227 >>Apprenez la compétence Bâtons << Hunter/Warrior/Priest
     >>Si vous avez un Bâton dans votre sac, équipez-le. << Hunter
@@ -2370,7 +2370,7 @@ step << Warrior
 step << Warrior
     .goto 1457/1,2316.49,9924.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Ariyell Skyshadow|r
-	>>|cRXP_BUY_Achetez et équipez un|r |T135346:0|t[Sabre d’abordage] |cRXP_BUY_si vous ne pouvez pas vous offrir un|r |T135154:0|t[Bâton de combat]
+	>>|cRXP_BUY_Achetez et équipez un|r [Coutelas] |cRXP_BUY_si vous ne pouvez pas acheter un|r [Bâton]
 	.collect 851,1
     .target Ariyell Skyshadow
     .money <0.2023

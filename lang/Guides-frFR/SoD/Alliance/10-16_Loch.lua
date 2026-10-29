@@ -624,7 +624,7 @@ step << Dwarf Paladin
     .target Tiza Battleforge
 step << Dwarf Paladin
     .goto 1455,27.622,12.177
-    >>|cRXP_WARN_Utilisez le [|T133739:0|t|cRXP_LOOT_The Tome of Divinity|r] pour commencer la quête|r
+    >>|cRXP_WARN_Utilisez le [|T133739:0|t|cRXP_LOOT_Tome de divinité|r] pour commencer la quête|r
     .accept 1646 >>Acceptez la quête Le Tome de divinité
     .use 6916
 step << Dwarf Paladin

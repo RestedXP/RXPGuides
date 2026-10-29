@@ -206,7 +206,7 @@ step
 step
     .goto 1412/1,-247.00,-2899.21--c:Mulgore,44.67,76.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Brave Windfeather|r
-    >>Elle patrouille dans les alentours
+    >>Elle patrouille aux alentours
     .accept 3376 >>Acceptez la quête La fin de Brochaigu !
     .target Brave Windfeather
 step << Warrior
@@ -375,7 +375,7 @@ step
     #optional
     #completewith next
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Brave Windfeather|r
-    >>Elle patrouille dans les alentours
+    >>Elle patrouille aux alentours
     .turnin 3376 >>Rendez la quête La fin de Brochaigu !
     .target Brave Windfeather
 step
@@ -386,7 +386,7 @@ step
 step
     .goto 1412/1,-247.00,-2899.21--c:Mulgore,44.67,76.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Brave Windfeather|r
-    >>Elle patrouille dans les alentours
+    >>Elle patrouille aux alentours
     .turnin 3376 >>Rendez la quête La fin de Brochaigu !
     .target Brave Windfeather
 step << Shaman
@@ -1287,7 +1287,7 @@ step
     #label KyleFed2
     .goto 1412/1,-347.70,-2364.91--c:Mulgore,46.63,61.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Innkeeper Kauth|r
-    >>|cRXP_BUY_Achetez du|r [Lait frais] |cRXP_BUY_à Kauth|r << Shaman/Druid
+    >>|cRXP_BUY_Achetez du|r [Lait frais] |cRXP_BUY_à Heron|r << Shaman/Druid
     >>|cRXP_BUY_Achetez des|r [Pain sorti du four] |cRXP_BUY_à Kauth|r << Warrior
     .vendor >> Vendez tout ce dont nous n'avez pas besoin << !Hunter
     .collect 1179,10,746,1 << Shaman/Druid --Ice Cold Milk (10)
@@ -1400,7 +1400,7 @@ step
     .complete 766,4 --Swoop Gizzard (1)
 step
     #completewith SacredBurial
-    >>Gardez un œil ouvert sur le |cRXP_ENEMY_Hurleur fantomatique|r. Dépouillez-le pour sa |T134358:0|t[|cRXP_LOOT_Cape griffée par les démons|r]. Utilisez la pour commencer la quête
+    >>Gardez un œil sur |cRXP_ENEMY_Ghost Howl|r. Dépouillez-les le pour sa [|cRXP_LOOT_Demon Scarred Cloak|r]. Utilisez la pour commencer la quête
     >>|cRXP_WARN_Faites attention car |cRXP_ENEMY_Ghost Howl|r est difficile comme il est niveau 12|r
     .collect 4854,1,770 --Collect Demon Scarred Cloak
     .accept 770 >>Acceptez la quête La cape griffée par les démons
@@ -2155,7 +2155,7 @@ step
     .zone Mulgore >>Sortez de Pitons-du-Tonnerre
 step
     #completewith ThunderBluff2
-    >>Gardez un œil ouvert sur le |cRXP_ENEMY_Hurleur fantomatique|r. Dépouillez-le pour sa |T134358:0|t[|cRXP_LOOT_Cape griffée par les démons|r]. Utilisez la pour commencer la quête
+    >>Gardez un œil sur |cRXP_ENEMY_Ghost Howl|r. Dépouillez-les le pour sa [|cRXP_LOOT_Demon Scarred Cloak|r]. Utilisez la pour commencer la quête
     >>|cRXP_WARN_Passez cette étape si vous n'arrivez pas à le trouver|r
     .collect 4854,1,770 --Collect Demon Scarred Cloak
     .accept 770 >>Acceptez la quête La cape griffée par les démons

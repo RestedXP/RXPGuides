@@ -366,7 +366,7 @@ step
     #sticky
     #label vial1
     .goto Teldrassil,59.9,33.0
-	.use 5185 >> Utilisez la [Flasque de cristal] au puits de lune
+	.use 5185 >> Utilisez la [Fiole de cristal] au puits de lune
     .complete 921,1 --Collect Filled Crystal Phial (x1)
 step << Hunter
 #xprate <1.99
@@ -507,7 +507,7 @@ step << Hunter
     .target Jeena Featherbow
 step << Hunter
     #completewith next
-    +Équipez l'[Arc courbe en bois de corne]
+    +Équipez le [Arc courbe en bois de corne]
     .use 2506
     .itemcount 2506,1
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.37
@@ -649,7 +649,7 @@ step << Druid
 step << Priest
     .goto Teldrassil,57.242,63.511
     >>Ciblez |cRXP_FRIENDLY_Sentinel Shaya|r
-    >>Lancez |T135929:0|t[Soins inférieurs (Rang 2)] et |T135987:0|t[Mot de pouvoir : Robustesse] sur |cRXP_FRIENDLY_Sentinel Shaya|r
+    >>Lancez [Soins inférieurs (Rang 2)] |cRXP_WARN_and|r [Mot de pouvoir : Robustesse] sur |cRXP_FRIENDLY_Sentinel Shaya|r
     .complete 5621,1 --Heal and fortify Sentinel Shaya
     .target Sentinel Shaya
 step
@@ -733,7 +733,7 @@ step
     >>Tuez les |cRXP_ENEMY_Nightsabers|r. Dépouillez les pour leur |cRXP_LOOT_Fangs|r
     >>Tuez les |cRXP_ENEMY_Strigid Owls|r. Dépouillez-les pour leur|cRXP_LOOT_Feathers|r
     >>Tuez les |cRXP_ENEMY_Webwood Lurkers|r. Dépouillez-les pour leur |cRXP_LOOT_Silk|r
-    >>Gardez vos [Petit oeuf] et vos [Petite pattes d'araignée] pour monter votre niveau de [Cuisine] plus tard
+    >>Gardez vos [Petit oeuf] et vos [Petite patte d'araignée] pour monter votre niveau de [Cuisine] plus tard
     .complete 488,1 --Collect Nightsaber Fang (x3)
     .mob +Nightsaber
     .goto Teldrassil,66.10,52.43,60,0
@@ -803,7 +803,7 @@ step << Hunter
 step << Hunter
     #completewith next
     #season 0
-    +Équipez l'[Arc courbe en bois de corne]
+    +Équipez le [Arc courbe en bois de corne]
     .use 2506
     .itemcount 2506,1
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.37
@@ -1655,7 +1655,7 @@ step << Hunter
 	.goto Teldrassil,45.6,31.4,0
 	.goto Teldrassil,37.6,28.8,0
     >>Lancez [Apprivoiser une bête] |cRXP_WARN_sur un |cRXP_ENEMY_Strigid Hunter|r pour le dompter|r -- .tame 1997
-    .train 2981 >> Attaquez des mobs avec celui-ci pour qu'il apprenne [Claw (Rank 2)]
+    .train 2981 >> Attaquez des créatures avec pour qu'il apprenne [Griffe (Rang 2)]
     .link https://www.wow-petopia.com/classic/training.php >> |cRXP_WARN_Cliquez ici pour plus d'information sur le dressage des familiers|r
 	.unitscan Strigid Hunter
 step
@@ -1679,7 +1679,7 @@ step
     >>Tuez |cRXP_ENEMY_Lady Sathrah|r. Dépouillez-la pour ses |cRXP_LOOT_Spinnerets|r
     >>|cRXP_ENEMY_Lady Sathrah|r peut apparaître à 3 endroits différents, regardez votre carte pour le chemin que nous vous recommandons de prendre
     >>Dirigez-vous au nord le long de la rivière et vérifiez le premier endroit le plus à l'est. Commencez la quête des [Tumeurs] sur la route
-    >>Si elle n'est pas à l'est de la rivière, complétez la quête des [Tumeurs] avant de vous diriger vers l'ouest
+    >>Si elle n'est pas à l'est de la rivière, terminez la quête des [Tumeurs] avant de vous rendre à l'ouest
     .complete 2518,1 --Collect Silvery Spinnerets (x1)
     .mob Lady Sathrah
 step
@@ -1895,7 +1895,7 @@ step << Hunter
     .target Jaeana
 step << Hunter/Warrior/Priest/Sod Rogue
     .goto Darnassus,57.56,46.73
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Ilyenia Lunéclat|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t Parlez à |cRXP_FRIENDLY_Ilyenia Moonfire|r
     .skipgossip 11866,1
     .train 227 >>Apprenez la compétence Bâtons << Hunter/Warrior/Priest
     .train 265 >>Apprenez la compétence Arcs << Sod Rogue
