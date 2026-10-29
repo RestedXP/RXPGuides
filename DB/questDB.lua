@@ -1750,7 +1750,8 @@ end
 
 local SendChatMessage = C_ChatInfo and C_ChatInfo.SendChatMessage or _G.SendChatMessage
 function addon.CompleteStep()
-    if _G.C_SettingsUtil then
+    local ptr = select(2,GetBuildInfo()) == "70532"
+    if _G.C_SettingsUtil and not ptr then
         return
     end
     for i,step in pairs(addon.RXPFrame.activeSteps) do
@@ -1777,7 +1778,8 @@ end
 local cs
 local mobData = {}
 function addon.Goto()
-    if _G.C_SettingsUtil then
+    local ptr = select(2,GetBuildInfo()) == "70532"
+    if _G.C_SettingsUtil and not ptr then
         return
     end
     local currentStep = addon.GetGuideProgress()
@@ -1793,23 +1795,30 @@ function addon.Goto()
         end
     end
 
-    for index,name in ipairs(targetList) do
-        if not mobData[name] then
-            local p = '.go c "%s"'
-            if name:find("\"") then
-                p = ".go c '%s'"
+    if not ptr then
+        for index,name in ipairs(targetList) do
+            if not mobData[name] then
+                local p = '.go cr "%s"'
+                if name:find("\"") then
+                    p = ".go cr '%s'"
+                end
+                mobData[name] = true
+                SendChatMessage(format(p,name), "WHISPER", nil, addon.player.name)
+                print(name)
+                return
             end
-            mobData[name] = true
-            SendChatMessage(format(p,name), "WHISPER", nil, addon.player.name)
-            print(name)
+        end
+        local element = addon.arrowFrame.element
+        if element then
+            SendChatMessage(format(".go xy %.3f %.3f %d",element.wy,element.wx,element.instance), "WHISPER", nil, addon.player.name)
             return
         end
-    end
-
-    local element = addon.arrowFrame.element
-    if element then
-        SendChatMessage(format(".go xy %.3f %.3f %d",element.wy,element.wx,element.instance), "WHISPER", nil, addon.player.name)
-        return
+    else
+        local element = addon.arrowFrame.element
+        if element then
+            SendChatMessage(format(".go xy %.3f %.3f",element.wy,element.wx,element.instance), "WHISPER", nil, addon.player.name)
+            return
+        end
     end
 
 end
