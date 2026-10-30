@@ -471,10 +471,10 @@ L[" (level %d)"] = "(nível %d)"
 L["Cleanup: no orphaned quests to abandon."] = "Limpeza: nenhuma missão órfã para abandonar."
 L["Cleanup: abandoning %d orphaned quest(s)..."] = "Limpeza: abandonando %d missões órfãs..."
 L["Cleanup: Settings handler did not complete; using fallback."] = "Limpeza: gerenciador de configurações não concluiu; usando alternativa."
-L["Cleanup: completed via Settings handler."] = "Limpeza: concluído via gerenciador de configurações."
+L["Cleanup: completed via Settings handler."] = "Limpeza: concluída pelo gerenciador de configurações."
 L["Cleanup: no active guide detected."] = "Limpeza: nenhum guia ativo detectado."
 L["Cleanup: no orphaned quests found."] = "Limpeza: nenhuma missão órfã encontrada."
-L["Abandon the following quests?\n%s"] = "Abandonar as seguintes missões?\n%s"
+L["Abandon the following quests?\n%s"] = "Abandonar estas missões?\n%s"
 L["You can't do that in combat."] = "Você não pode fazer isso em combate."
 
 -- RXPGuides.lua file
