@@ -127,6 +127,14 @@ step
     .disablecheckbox
     .mob Kobold Vermin
 step
+    #optional
+    .isQuestComplete 33
+    .goto 1429/0,-163.24,-8869.26
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eagan Peltskinner|r
+    .turnin 33,2 >> Turn in Wolves Across The Border << Warrior/Paladin/Rogue/Hunter
+    .turnin 33,1 >> Turn in Wolves Across The Border << !Warrior !Paladin !Rogue !Hunter
+    .target Eagan Peltskinner
+step
     #completewith next
     .goto 1429/0,-136.900,-8913.800,10,0
     .goto 1429/0,-176.000,-8880.900,10 >> |cRXP_WARN_Travel toward |cRXP_FRIENDLY_Brother Paxton|r in Northshire Abbey. Don't worry about completing |cRXP_ENEMY_Vermins|r or |cRXP_ENEMY_Wolves|r straight away|r
@@ -172,8 +180,8 @@ step
     #requires WolfMeatEnd
     .goto 1429/0,-163.24,-8869.26
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eagan Peltskinner|r
-    .turnin 33,2 >> Turn in Wolves Across The Border << Warrior/Paladin/Rogue
-    .turnin 33,1 >> Turn in Wolves Across The Border << !Warrior !Paladin !Rogue
+    .turnin 33,2 >> Turn in Wolves Across The Border << Warrior/Paladin/Rogue/Hunter
+    .turnin 33,1 >> Turn in Wolves Across The Border << !Warrior !Paladin !Rogue !Hunter
     .target Eagan Peltskinner
 step << Priest/Mage/Warlock
     .goto 1429/0,-112.74,-8901.66
@@ -637,8 +645,8 @@ step << Priest/Mage
 step
     .goto 1429/0,-136.48,-8933.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Willem|r
-    .turnin 6,2 >> Turn in Bounty on Garrick Padfoot << Warrior/Rogue/Paladin
-    .turnin 6,1 >> Turn in Bounty on Garrick Padfoot << !Warrior !Rogue !Paladin
+    .turnin 6,2 >> Turn in Bounty on Garrick Padfoot << Warrior/Rogue/Paladin/Hunter
+    .turnin 6,1 >> Turn in Bounty on Garrick Padfoot << !Warrior !Rogue !Paladin !Hunter
     .target Deputy Willem
 step
     #optional
@@ -659,9 +667,9 @@ step
     #label RestandR
     .goto 1429/0,-162.62,-8902.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal McBride|r inside
-    .turnin 21,1 >> Turn in Skirmish at Echo Ridge << Rogue
+    .turnin 21,1 >> Turn in Skirmish at Echo Ridge << Rogue/Hunter
     .turnin 21,2 >> Turn in Skirmish at Echo Ridge << Warrior/Paladin
-    .turnin 21,3 >> Turn in Skirmish at Echo Ridge << !Warrior !Paladin !Rogue
+    .turnin 21,3 >> Turn in Skirmish at Echo Ridge << !Warrior !Paladin !Rogue !Hunter
     .accept 54 >> Accept Report to Goldshire
     .accept 96627 >> Accept The Adventurer
     .target Marshal McBride
