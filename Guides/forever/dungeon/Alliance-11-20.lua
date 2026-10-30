@@ -17,17 +17,16 @@ step
     #include RestedXP Forever Guide (A)\15-16 Loch Modan@SWBoat-IFExit
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Firebrew|r
-    >>|cRXP_WARN_If you have a Mage in your group you will set your Hearth to Lakeshire instead|r
-    .goto Ironforge,18.10,51.60
+    .goto 1455/0,-856.69,-4841.490
     .home >> Set your Hearthstone to Ironforge
     .target Innkeeper Firebrew
 step
     #completewith next
     .zone Dun Morogh >> Travel to Dun Morogh
 step
-    .goto Dun Morogh,59.9,49.5,30,0
-    .goto Dun Morogh,61.2,47.2,15,0
-    .goto Dun Morogh,62.1,47.3,20 >>Run up the ramp to |cRXP_ENEMY_Vagash|r
+    .goto 1426/0,-1147.9916,-5502.3333,30,0
+    .goto 1426/0,-1212.0166,-5426.8167,15,0
+    .goto 1426/0,-1256.3416,-5430.1000,20 >>Run up the ramp to |cRXP_ENEMY_Vagash|r
 step
     #completewith next
     +Kite |cRXP_ENEMY_Vagash|r to |cRXP_FRIENDLY_Rudra Amberstill|r
@@ -35,19 +34,19 @@ step
     .mob Vagash
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:16|tTalk to |cRXP_FRIENDLY_Rudra Amberstill|r
-    .goto Dun Morogh,63.1,49.8
+    .goto 1426/0,-1304.71,-5513.86
     .target Rudra Amberstill
     .accept 314 >>Accept Protecting the Herd
 step
     >>Kite |cRXP_ENEMY_Vagash|r into the |cRXP_FRIENDLY_Dun Morogh Mountaineer|r
     >>|cRXP_WARN_Make sure you deal at least 50% damage to him|r
-    .goto Dun Morogh,62.8,54.6,10,0
+    .goto 1426/0,-1290.8166,-5669.7833,10,0
     .mob Vagash
     .target Dun Morogh Mountaineer
     .complete 314, 1
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:16|tTalk to |cRXP_FRIENDLY_Rudra Amberstill|r
-    .goto Dun Morogh, 63.1, 49.8
+    .goto 1426/0,-1304.71,-5513.86
     .target Rudra Amberstill
     .turnin 314 >>Turn in Protecting the Herd
 step
@@ -110,16 +109,16 @@ step << NightElf Druid
 	.cast 18960 >> Cast Teleport: Moonglade
 	.zoneskip Moonglade
 step << Druid
-	.goto Moonglade,44.2,45.2
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Silva|r
+	.goto 1450/1,-2400.33,7795.33--c:Moonglade,44.148,45.229
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Silva Fil'naveth|r
 	.fly Teldrassil >>Fly to Rutheran Village
-	.target Silva
+	.target Silva Fil'naveth
 step << Druid
     #completewith next
-    .goto Teldrassil,55.95,89.88
+    .goto 1438/1,965.7958,8780.9475
     .zone Darnassus >> Take the purple portal into Darnassus
 step << Druid
-	.goto Darnassus,35.375,8.405
+	.goto 1457/1,2563.92,10179.040
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mathrengyl Bearwalker|r
 	.accept 26 >>Accept A Lesson to Learn
 	.trainer >> Train your class spells
@@ -129,13 +128,13 @@ step << Druid
 	.cast 18960 >> Cast Teleport: Moonglade
 	.zoneskip Moonglade
 step << Druid
-    .goto Moonglade,56.1,30.7
+    .goto 1450/1,-2676.22,8019.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dendrite Starblaze|r
     .turnin 26 >> Turn in A Lesson to Learn
     .accept 29 >> Accept Trial of the Lake
     .target Dendrite Starblaze
 step << Druid
-    .goto Moonglade,52.6,51.6
+    .goto 1450/1,-2595.43,7697.24
     >>Swim into Lake Elune'Ara
     >>Open a |cRXP_PICK_Bauble Container|r. Loot it for a |T134125:0|t[Shrine Bauble]
     >>|cRXP_WARN_It may spawn in different locations underwater|r
@@ -146,13 +145,13 @@ step << Druid
     .cast 18960 >> Cast Teleport: Moonglade
     .itemcount 15877,1 -- Shrine Bauble (1)
 step << Druid
-    .goto Moonglade,36.026,41.374
+    .goto 1450/1,-2212.85,7854.68
     >>|cRXP_WARN_Use the|r |T134125:0|t[Shrine Bauble] |cRXP_WARN_at the Shrine of Remulos tree|r
     .complete 29,1 --Complete the Trial of the Lake.
     .use 15877
 step << Druid
     #label TotL
-    .goto Moonglade,36.517,40.104
+    .goto 1450/1,-2224.18,7874.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tajarri|r
     .turnin 29 >> Turn in Trial of the Lake
     .accept 272 >> Accept Trial of the Sea Lion
@@ -187,17 +186,17 @@ step << NightElf Priest
     .trainer >> Train your class spells
     .target High Priest Rohan
 step << NightElf Rogue
-    .goto Ironforge,51.495,15.330
+    .goto 1455/0,-1120.72,-4650.120
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fenthwick|r
     .trainer >> Train your class spells
     .target Fenthwick
 step << NightElf Warrior
-    .goto Ironforge,65.905,88.405
+    .goto 1455/0,-1234.65,-5035.67
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bilban Tosslespanner|r
     .trainer >> Train your class spells
     .target Bilban Tosslespanner
 step << NightElf
-    .goto Ironforge,74.645,11.742
+    .goto 1455/0,-1303.75,-4631.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prospector Stormpike|r
     .turnin 301 >> Turn in Report to Ironforge
     .target Prospector Stormpike
@@ -2444,7 +2443,7 @@ RXPGuides.RegisterGuide([[
 #displayname 16-17 Hall of Thanes << NightElf
 
 step << Skyborne
-    .goto Ironforge,55.491,47.751
+    .goto 1455/0,-1152.40,-4821.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryth Thurden|r
     .fp Ironforge >> Get the Ironforge flight path
     .target Gryth Thurden
@@ -2841,7 +2840,7 @@ step
     .zoneskip Stormwind City
 step 
     #optional
-    .goto Ironforge,76.61,51.28,10,0
+    .goto 1455/0,-1319.2893,-4839.7968,10,0
     .zone Stormwind City >> Take the tram to Stormwind
 step << NightElf
     .goto 1453/0,634.700,-8390.800
@@ -3252,7 +3251,7 @@ step
     .accept 142 >> Accept The Defias Brotherhood
     .target Gryan Stoutmantle
 step << Druid
-    .goto Westfall,52.8,53.6
+    .goto 1436/0,1166.500,-10653.200
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Heather|r
     .target Innkeeper Heather
     .home >> Set your Hearthstone to Westfall
@@ -3402,16 +3401,16 @@ step << Druid
     .accept 79008 >> Accept ...and that note you found
 step << Druid
     #completewith next
-    .goto Westfall,17.928,33.099,50 >> Swim out to sea
+    .goto 1436/0,2389.19,-10172.31,50 >> Swim out to sea
 step << Druid
-    .goto Westfall,17.928,33.099
+    .goto 1436/0,2389.19,-10172.31
     >>Open the |cRXP_PICK_Strange Lockbox|r. Loot it for the |cRXP_LOOT_Half Pendant of Aquatic Endurance|r
     .collect 15882,1,272,1 --Collect Half Pendant of Aquatic Endurance (x1)
 step << Druid
     #completewith next
 	.cast 18960 >> Cast Teleport: Moonglade
 step << Druid
-    .goto Moonglade,52.53,40.57
+    .goto 1450/1,-2593.82,7867.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loganaar|r
     .trainer >> Train your class spells
     .target Loganaar
@@ -4051,13 +4050,13 @@ step
     .target Thundris Windweaver
 step
     .isOnQuest 3765
-    .goto 1439,38.325,43.039
+    .goto 1439/1,431.300,6454.000
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gershala Nightwhisper|r
     .turnin 3765 >> Turn in The Corruption Abroad
     .target Gershala Nightwhisper
 step
 .dungeon BFD
-    .goto 1439,38.325,43.039
+    .goto 1439/1,431.300,6454.000
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gershala Nightwhisper|r
     .accept 1275 >> Accept Researching the Corruption
     .target Gershala Nightwhisper
@@ -4304,7 +4303,7 @@ step
     >>Click the |cRXP_PICK_Beached Sea Turtle|r
     .accept 4727 >> Accept Beached Sea Turtle
 step << Druid
-    .goto Darkshore,48.87,11.32
+    .goto 1439/1,-259.32,7839.03
     >>|cRXP_WARN_Swim out in the water|r
     >>Open the |cRXP_PICK_Strange Lockbox|r. Loot it for the |cRXP_LOOT_Half Pendant of Aquatic Agility|r
     .collect 15883,1,272,1 --Collect Half Pendant of Aquatic Agility (x1)
@@ -4312,7 +4311,7 @@ step << Druid
     #completewith next
 	.cast 18960 >> Cast Teleport: Moonglade
 step << Druid
-    .goto Moonglade,52.53,40.57
+    .goto 1450/1,-2593.82,7867.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loganaar|r
     .trainer >> Train your class spells
     .target Loganaar

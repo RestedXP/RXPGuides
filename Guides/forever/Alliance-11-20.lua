@@ -528,7 +528,7 @@ step << Skyborne
     .turnin 6661 >> Turn in Deeprun Rat Roundup
     .target Monty
 step << Skyborne
-    .goto Ironforge,55.491,47.751
+    .goto 1455/0,-1152.40,-4821.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryth Thurden|r
     .fp Ironforge >> Get the Ironforge flight path
     .target Gryth Thurden
@@ -2983,15 +2983,15 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gnoarn|r
     .accept 2039 >> Accept Find Bingles
     .target Gnoarn
-    .goto Ironforge,69.182,50.556
+    .goto 1455/0,-1260.5616,-4835.9769
 step
-    .goto Ironforge,55.491,47.751
+    .goto 1455/0,-1152.40,-4821.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryth Thurden|r
     .fp Ironforge >> Get the Ironforge flight path
     .target Gryth Thurden
 step Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bilban Tosslespanner|r
-    .goto Ironforge,65.905,88.405
+    .goto 1455/0,-1234.65,-5035.67
     .trainer >> Train your class spells
     .target Bilban Tosslespanner
 step << Warrior
@@ -3023,9 +3023,9 @@ step
     #completewith next
     .zone Dun Morogh >> Travel to Dun Morogh
 step
-    .goto Dun Morogh,59.9,49.5,30,0
-    .goto Dun Morogh,61.2,47.2,15,0
-    .goto Dun Morogh,62.1,47.3,20 >>Run up the ramp to |cRXP_ENEMY_Vagash|r
+    .goto 1426/0,-1147.9916,-5502.3333,30,0
+    .goto 1426/0,-1212.0166,-5426.8167,15,0
+    .goto 1426/0,-1256.3416,-5430.1000,20 >>Run up the ramp to |cRXP_ENEMY_Vagash|r
 step
     #completewith next
     +Kite |cRXP_ENEMY_Vagash|r to |cRXP_FRIENDLY_Rudra Amberstill|r
@@ -3033,19 +3033,19 @@ step
     .mob Vagash
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:16|tTalk to |cRXP_FRIENDLY_Rudra Amberstill|r
-    .goto Dun Morogh,63.1,49.8
+    .goto 1426/0,-1304.71,-5513.86
     .target Rudra Amberstill
     .accept 314 >>Accept Protecting the Herd
 step
     >>Kite |cRXP_ENEMY_Vagash|r into the |cRXP_FRIENDLY_Dun Morogh Mountaineer|r
     >>|cRXP_WARN_Make sure you deal at least 50% damage to him|r
-    .goto Dun Morogh,62.8,54.6,10,0
+    .goto 1426/0,-1290.8166,-5669.7833,10,0
     .mob Vagash
     .target Dun Morogh Mountaineer
     .complete 314, 1
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:16|tTalk to |cRXP_FRIENDLY_Rudra Amberstill|r
-    .goto Dun Morogh, 63.1, 49.8
+    .goto 1426/0,-1304.71,-5513.86
     .target Rudra Amberstill
     .turnin 314 >>Turn in Protecting the Herd
 step
@@ -3188,7 +3188,7 @@ step
     .goto 1432,24.279,17.959,12 >> Enter the Bunker. Go to the top floor
 step
     #label Stormpike1
-    .goto Loch Modan,24.77,18.40
+    .goto 1432/0,-2676.82,-4825.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Stormpike|r inside the bunker
     .turnin 1339 >> Turn in Mountaineer Stormpike's Task
     .accept 307 >> Accept Filthy Paws
@@ -3383,8 +3383,8 @@ step
     .target Vidra Hearthstove
 step
     #label FlintTinder
-    .goto Loch Modan,37.17,47.94,8,0
-    .goto Loch Modan,37.24,47.38
+    .goto 1432/0,-3019.0224,-5369.3961,8,0
+    .goto 1432/0,-3020.9532,-5359.0944
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jern Hornhelm|r
     .accept 436 >> Accept Ironband's Excavation
     .target Jern Hornhelm
@@ -3416,55 +3416,50 @@ step
     >>|cRXP_WARN_Be careful of high level|r |cRXP_ENEMY_Young Threshadon|r
     .accept 86614 >>Accept Silver of the Waves
 step
-    .goto Loch Modan,64.89,66.66
+    .goto 1432/0,-3783.6323,-5713.7660
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magmar Fellhew|r
     .turnin 436 >> Turn in Ironband's Excavation
     .target Magmar Fellhew
 step
-    .goto Loch Modan,65.934,65.622
+    .goto 1432/0,-3812.4293,-5694.6712
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prospector Ironband|r
     .accept 298 >> Accept Excavation Progress Report
     .target Prospector Ironband
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Daryl the Youngling|r
     .accept 257 >> Accept A Hunter's Boast
-    .goto Loch Modan,83.49,65.40
+    .goto 1432/0,-4296.6822,-5690.5873
     .target Daryl the Youngling
-step Rogue/NightElf Hunter/NightElf Warrior/NightElf Druid
-    .goto Loch Modan,82.6,64.0
+step << Rogue/Hunter/Warrior/Druid
+    .goto 1432/0,-4272.1331,-5664.8331
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kat|r
     .vendor >> |cRXP_BUY_Buy|r |T132539:0|t[Agile Boots] |cRXP_BUY_from her if they're up|r
     .target Kat Sampson
 step
-    .goto Loch Modan,80.09,64.16,60,0
-    .goto Loch Modan,77.16,75.57,60,0
-    .goto Loch Modan,70.78,72.91,60,0
-    .goto Loch Modan,76.65,62.27,60,0
-    .goto Loch Modan,76.36,56.05,60,0
-    .goto Loch Modan,80.09,64.16,60,0
-    .goto Loch Modan,77.16,75.57,60,0
-    .goto Loch Modan,70.78,72.91,60,0
-    .goto Loch Modan,76.65,62.27,60,0
-    .goto Loch Modan,76.36,56.05,60,0
-    .goto Loch Modan,80.09,64.16
+    #loop
+    .goto 1432/0,-4202.8989,-5667.7765,60,0
+    .goto 1432/0,-4122.0797,-5877.6729,60,0
+    .goto 1432/0,-3946.0981,-5828.7400,60,0
+    .goto 1432/0,-4108.0123,-5633.0083,60,0
+    .goto 1432/0,-4100.0131,-5518.5863,60,0
     >>Kill |cRXP_ENEMY_Mountain Buzzards|r
     >>|cRXP_WARN_You must complete this quest and return to |cRXP_FRIENDLY_Daryl the Youngling|r within 15 minutes. If you fail the quest, abandon it and pick it up again|r
     .complete 257,1 -- Mountain Buzzard slain (6)
     .mob Mountain Buzzard
 step
     #completewith next
-    .goto Loch Modan,82.92,59.37,80,0
-    .goto Loch Modan,83.28,62.97,25 >> Travel toward |cRXP_FRIENDLY_Daryl the Youngling|r
+    .goto 1432/0,-4280.9597,-5579.6604,80,0
+    .goto 1432/0,-4290.8897,-5645.8854,25 >> Travel toward |cRXP_FRIENDLY_Daryl the Youngling|r
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Daryl the Youngling|r
-    .goto Loch Modan,83.49,65.40
+    .goto 1432/0,-4296.6822,-5690.5873
     .turnin 257 >> Turn in A Hunter's Boast
     .target Daryl the Youngling
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marek Ironheart|r
     .accept 385 >> Accept Crocolisk Hunting
     .accept 86758 >>Accept Twisting the Knife
-    .goto Loch Modan,81.76,61.66
+    .goto 1432/0,-4248.9631,-5621.7869
     .target Marek Ironheart
 step
     #completewith next
@@ -3473,23 +3468,23 @@ step
     .complete 385,2 -- Crocolisk Skin (6)
     .mob Loch Crocolisk
 step
-    .goto Loch Modan,62,44
-    >>Kill |cRXP_ENEMY_Daggerfang|r, he |cRXP_WARN_might be patroling along the shore|r. Loot him for |T3736888:0|t[|cRXP_LOOT_Marek's Croc-Hunting Knife|r]
+    .goto 1432/0,-3703.9165,-5296.9165
+    >>Kill |cRXP_ENEMY_Daggerfang|r, he |cRXP_WARN_might be patrolling along the shore|r. Loot him for |T3736888:0|t[|cRXP_LOOT_Marek's Croc-Hunting Knife|r]
     .complete 86758,1 --Marek's Croc Hunting Knife (1)
     .mob Daggerfang
 step
-    .goto 48,81.647,64.750
+    .goto 1432/0,-3747.000,-5369.000
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bingles Blastenheimer|r
     .target Bingles Blastenheimer
     .turnin 2039 >>Turn in Find Bingles
 step
     #completewith next
-    .goto Loch Modan,54.7,38.3,200 >> Travel to the island located in the middle of The Loch
+    .goto 1432/0,-3502.5582,-5192.0603,200 >> Travel to the island located in the middle of The Loch
 step
-    .goto Loch Modan,58.86,38.32,80,0
-    .goto Loch Modan,54.80,40.02,60,0
-    .goto Loch Modan,54.16,35.79,60,0
-    .goto Loch Modan,54.72,38.15
+    .goto 1432/0,-3617.3048,-5192.4282,80,0
+    .goto 1432/0,-3505.3165,-5223.7011,60,0
+    .goto 1432/0,-3487.6632,-5145.8868,60,0
+    .goto 1432/0,-3503.1098,-5189.3009
     >>Kill |cRXP_ENEMY_Loch Crocolisks|r. Loot them for their |cRXP_LOOT_Meat|r and |cRXP_LOOT_Skin|r
     .complete 385,1 -- Crocolisk Meat (5)
     .complete 385,2 -- Crocolisk Skin (6)
@@ -3498,25 +3493,25 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marek Ironheart|r
     .turnin 385 >>Turn in Crocolisk Hunting
     .turnin 86758 >>Turn in Twisting the Knife
-    .goto Loch Modan,81.76,61.66
+    .goto 1432/0,-4248.9631,-5621.7869
     .target Marek Ironheart
 step
     #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Daryl the Youngling|r
-    .goto Loch Modan,83.49,65.40
+    .goto 1432/0,-4296.6822,-5690.5873
     .accept 258 >> Accept A Hunter's Challenge
     .target Daryl the Youngling
     .xp >16,1
 step
     #optional
-    .goto Loch Modan,74.65,49.60,70,0
-    .goto Loch Modan,75.80,43.43,70,0
-    .goto Loch Modan,71.10,38.98,70,0
-    .goto Loch Modan,65.59,41.89,70,0
-    .goto Loch Modan,61.66,32.02,70,0
-    .goto Loch Modan,72.79,39.86,70,0
-    .goto Loch Modan,73.87,51.85,70,0
-    .goto Loch Modan,69.45,39.18
+    .goto 1432/0,-4052.8456,-5399.9332,70,0
+    .goto 1432/0,-4084.5664,-5286.4309,70,0
+    .goto 1432/0,-3954.9248,-5204.5695,70,0
+    .goto 1432/0,-3802.9406,-5258.1013,70,0
+    .goto 1432/0,-3694.5381,-5076.5345,70,0
+    .goto 1432/0,-4001.5406,-5220.7578,70,0
+    .goto 1432/0,-4031.3306,-5441.3238,70,0
+    .goto 1432/0,-3909.4123,-5208.2486
     >>Kill |cRXP_ENEMY_Elder Mountain Boars|r
     >>|cRXP_WARN_You must complete this quest and return to |cRXP_FRIENDLY_Daryl the Youngling|r with 12 minutes. If you fail the quest, abandon it and pick it up again|r
     .complete 258,1 -- Elder Mountain Boar slain (5)
@@ -3525,12 +3520,12 @@ step
 step
     #completewith next
     #optional
-    .goto Loch Modan,82.92,59.37,80,0
-    .goto Loch Modan,83.28,62.97,25 >> Travel toward |cRXP_FRIENDLY_Daryl the Youngling|r
+    .goto 1432/0,-4280.9597,-5579.6604,80,0
+    .goto 1432/0,-4290.8897,-5645.8854,25 >> Travel toward |cRXP_FRIENDLY_Daryl the Youngling|r
 step
     #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Daryl the Youngling|r
-    .goto Loch Modan,83.49,65.40
+    .goto 1432/0,-4296.6822,-5690.5873
     .turnin 258 >> Turn in A Hunter's Challenge
     .target Daryl the Youngling
     .isOnQuest 258
@@ -3541,8 +3536,8 @@ step
     >>Jump out of the lodge and die to the mobs below
     .deathskip >> Die and respawn at the Thelsamar graveyard
 step
-    .goto Loch Modan,37.17,47.94,8,0
-    .goto Loch Modan,37.24,47.38
+    .goto 1432/0,-3019.0224,-5369.3961,8,0
+    .goto 1432/0,-3020.9532,-5359.0944
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jern Hornhelm|r
     .turnin 298 >> Turn in Excavation Progress Report
     .accept 301 >> Accept Report to Ironforge
@@ -3563,7 +3558,7 @@ step
     .target Thorgrum Borrelson
     .zoneskip Ironforge
 step
-    .goto Ironforge,74.645,11.742
+    .goto 1455/0,-1303.75,-4631.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prospector Stormpike|r
     .turnin 301 >> Turn in Report to Ironforge
     .target Prospector Stormpike
@@ -3594,12 +3589,12 @@ step << Priest/Druid
     .target Auctioneer Redmuse
     .target Auctioneer Buckler
 step << Rogue
-    .goto Ironforge,51.495,15.330
+    .goto 1455/0,-1120.72,-4650.120
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fenthwick|r
     .trainer >> Train your class spells
     .target Fenthwick
 step << Warrior
-    .goto Ironforge,65.905,88.405
+    .goto 1455/0,-1234.65,-5035.67
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bilban Tosslespanner|r
     .trainer >> Train your class spells
     .target Bilban Tosslespanner
@@ -3608,7 +3603,7 @@ step << Druid
 	.cast 18960 >> Cast Teleport: Moonglade
 	.zoneskip Moonglade
 step << Druid
-    .goto Moonglade,52.53,40.57
+    .goto 1450/1,-2593.82,7867.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loganaar|r
     .trainer >> Train your class spells
     .target Loganaar
@@ -6800,7 +6795,7 @@ step
     .accept 729 >> Accept The Absent Minded Prospector
     .target Archaeologist Hollee
 step
-    .goto 1439,38.325,43.039
+    .goto 1439/1,431.300,6454.000
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gershala Nightwhisper|r
     .turnin 3765 >> Turn in The Corruption Abroad
     .target Gershala Nightwhisper
