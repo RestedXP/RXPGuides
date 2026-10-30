@@ -4454,7 +4454,7 @@ step
     >>Kill |cRXP_ENEMY_The Threshwackonator 4100|r once it turns hostile
     >>|cRXP_WARN_This quest is VERY difficult|r
     *Only use ranged attacks while running from it, avoid being at melee range << Druid
-    >>|cRXP_WARN_Try to do this quest if you can as it'll save you time later as it rewards|r |T134797:0|t[Elixirs of Water Breathing] |cRXP_WARN_for underwater quests later|r << !Druid !Warlock !Shaman
+    >>|cRXP_WARN_Try to do this quest if you can as it'll save you time later as it rewards|r |T134797:0|t[Draught of Water Breathing] |cRXP_WARN_for underwater quests later|r << !Druid !Warlock !Shaman
     >>|cRXP_WARN_Use|r |T136100:0|t[Entangling Roots] |cRXP_WARN_on him when he turns hostile then create distance and kite using instant cast spells|r << Druid
     >>|cRXP_WARN_If you are unable to kill the |cRXP_ENEMY_The Threshwackonator 4100|r, skip this step|r
     .complete 2078,1 --Gyromast's Revenge (1)
@@ -6698,7 +6698,7 @@ step
     .goto 1457/1,2515.03,9940.50
     .bankdeposit 5996,1468,2251,1015 >> Deposit the following items into your bank
     .target Garryeth
-    >>|T134797:0|t[Elixir of Water Breathing] --5996
+    >>|T134797:0|t[Draught of Water Breathing] --5996
     >>|T134304:0|t[Murloc Fins] --1468
     >>|T134321:0|t[Gooey Spider Legs] --2251
     >>|T133970:0|t[Lean Wolf Flanks] --1015
