@@ -2580,7 +2580,7 @@ step << skip
 	.target 高尼尔·石趾
 step << skip
     .goto 87,55.508,47.742
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
     .turnin 6388 >>交任务 格莱斯·瑟登
 	.target 格莱斯·瑟登
 step << skip

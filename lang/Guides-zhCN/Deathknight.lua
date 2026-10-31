@@ -16,7 +16,7 @@ RXPGuides.RegisterGuide([[
 #next RXP 熊猫人之谜 60-80级 (部落)\59-61级 地狱火半岛 << Horde !wotlk !cata
 #next RXP 熊猫人之谜 60-80级 (联盟)\59-61级 地狱火半岛 << Alliance !wotlk !cata
 #defaultfor DK
-#name 55-58 血色领地
+#name 55-58级 血色领地
 
 step
     .goto 124,51.345,35.205

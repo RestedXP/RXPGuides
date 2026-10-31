@@ -7,7 +7,7 @@ RXPGuides.RegisterGuide([[
 #group RXP 熊猫人之谜1-80级(联盟) << mop
 #cata
 #mop
-#name 1-6 幽影谷
+#name 1-6级 幽影谷
 #next 6-10级 泰达希尔
 #defaultfor NightElf
 <<Alliance
@@ -124,7 +124,7 @@ step << Mage
     .goto 1438/1,793.29999,10397.10059,-1
     .goto 1438/1,787.40002,10393.00000,-1
     .goto 1438/1,781.90002,10389.90039,-1
-    >>|cRXP_WARN_施放|r |T135812:0|t[火球术] |cRXP_WARN_在|cRXP_ENEMY_训练假人|r上，直到触发|r |T135731:0|t[奥术飞弹！] |cRXP_WARN_效果，然后施放|r |T136096:0|t[奥术飞弹]|cRXP_WARN_。重复两次|r
+    >>|cRXP_WARN_施放|r |T135812:0|t[火球术] |cRXP_WARN_对着 |cRXP_ENEMY_训练假人|r 直到你获得|r |T135731:0|t[雷霆蜥蜴的血液!] |cRXP_WARN_触发，然后施放|r |T136096:0|t[雷霆蜥蜴的血液]|cRXP_WARN_。重复两次|r
     .complete 26940,1 << cata -- Practice Arcane Missiles (1)
     .complete 26940,2 << !cata -- Practice Arcane Missiles (1)
     .mob Training Dummy
@@ -379,7 +379,7 @@ step
 step
     .goto 57,55.37,52.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_旅店老板凯达米尔|r 对话
-    .turnin 2159,1 >>交任务 多兰纳尔的货物
+    .turnin 2159,1 >>交任务  多兰纳尔的货物
 	.target 旅店老板凯达米尔
 step
     #completewith next
@@ -476,7 +476,7 @@ step
 step
     .goto 57,55.69,52.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿斯瑞达斯·熊皮|r 对话
-    .turnin 476 >>交任务 瘤背熊怪的堕落
+    .turnin 476 >>交任务  瘤背熊怪的堕落
 	.target 阿斯瑞达斯·熊皮
 step
     .goto 57,55.56,50.00
@@ -942,7 +942,7 @@ step
     .goto 57,39.174,29.898
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_女祭司艾茉拉|r 对话
     .target 女祭司艾茉拉
-    .turnin 2518 >>交任务 月神的泪水
+    .turnin 2518 >>交任务  月神的泪水
 step
     .goto 57,39.448,29.823
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哨兵阿瑞尼亚·碎云|r 对话

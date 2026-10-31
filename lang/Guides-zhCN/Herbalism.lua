@@ -54,7 +54,7 @@ step << !Mage
     .skill herbalism,115,1
     .cooldown item,6948,<0,1
 step << !Mage
-    .hs >> 炉石返回达拉然
+    .hs >> 炉石返回到达拉然
     .zoneskip Undercity
     .skill herbalism,115,1
 step << !Mage
@@ -81,7 +81,7 @@ step
     .goto Silverpine Forest,45.6,42.6,-1
     .goto Hillsbrad Foothills,21.0,46.2,-1
     >>前往希尔斯布莱德丘陵。如果你靠近边界，就骑马去那里；否则骑马回到瑟伯切尔并飞到塔伦米尔
-    .fly Tarren Mill >> 飞往塔伦米尔，希尔斯布莱德
+    .fly Tarren Mill >> 飞往塔伦米尔
     .zoneskip Hillsbrad Foothills
     .skill herbalism,150,1
 step
@@ -221,7 +221,7 @@ step << !Mage
     .cooldown item,6948,<0,1
 step << !Mage
     #completewith next
-    .hs >> 炉石返回达拉然
+    .hs >> 炉石返回到达拉然
     .zoneskip Shattrath City
     .skill herbalism,350,1
 step << !Mage

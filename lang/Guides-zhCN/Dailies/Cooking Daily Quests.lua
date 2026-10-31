@@ -99,12 +99,12 @@ step << Horde
 	.isOnQuest 13116
 step << Alliance
 	.goto Dalaran,40.20,66.98
-	>>使用你的烹饪专业，将4块|cRXP_LOOT_犀牛肉|r烹饪成4份|cRXP_LOOT_犀牛热狗|r
+	>>用你的烹饪专业将4个|cRXP_LOOT_Rhino 肉|r烹制成4个|cRXP_LOOT_犀牛热狗|r
 	.collect 34752,4 -- Rhino Dogs (4)
 	.isOnQuest 13107
 step << Horde
 	.goto Dalaran,70.44,39.80
-	>>使用你的烹饪专业，将4块|cRXP_LOOT_犀牛肉|r烹饪成4份|cRXP_LOOT_犀牛热狗|r
+	>>用你的烹饪专业将4个|cRXP_LOOT_Rhino 肉|r烹制成4个|cRXP_LOOT_犀牛热狗|r
 	.collect 34752,4 -- Rhino Dogs (4)
 	.isOnQuest 13116
 step << Alliance
@@ -217,7 +217,7 @@ step
 	.target Orton Bennet
 -- Quest: Sewer Stew
 step
-	.zone CrystalsongForest >>在达拉然进入紫罗兰之门建筑，点击紫罗兰之线水晶传送至下方的晶歌森林
+	.zone CrystalsongForest >>在达拉然进入Violet大门，点击紫罗兰哨站水晶向下传送至晶歌森林
 	.goto Dalaran,57.32,46.55,6,0
 	.goto Dalaran,55.91,46.77
 	.isOnQuest 13102 << Alliance
@@ -428,13 +428,13 @@ step << Horde
 step << Alliance
     #label stew
 	.goto Dalaran,40.20,66.98
-	>>使用你的烹饪专业，将4块|cRXP_LOOT_冰冷的肉|r烹饪成4份|cRXP_LOOT_诺森德炖肉|r
+	>>用你的烹饪专业将4个|cRXP_LOOT_Chilled 肉|r烹制成4个|cRXP_LOOT_Northern Stew|r
 	.complete 13101,1 --Northern Stew (4)
 	.isOnQuest 13101
 step << Horde
     #label stew
 	.goto Dalaran,70.44,39.80
-	>>使用你的烹饪专业，将4块|cRXP_LOOT_冰冷的肉|r烹饪成4份|cRXP_LOOT_诺森德炖肉|r
+	>>用你的烹饪专业将4个|cRXP_LOOT_Chilled 肉|r烹制成4个|cRXP_LOOT_Northern Stew|r
 	.complete 13113,1 --Northern Stew (4)
 	.isOnQuest 13113
 step

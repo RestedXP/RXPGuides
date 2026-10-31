@@ -4337,7 +4337,7 @@ step -- this step will autoskip if they completed 29276 earlier
     .goto 338,65.959,66.093
     .isQuestTurnedIn 29272 -- Only offered if completed Druids questline
     +|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_安伦·觅影者|r 对话
-    >>如果他不在就跳过这一步
+    >>|cRXP_WARN_如果他不在就跳过这一步|r
     .daily 29275 >>接受任务 范达尔的研究
     .disablecheckbox
     .target Anren Shadowseeker

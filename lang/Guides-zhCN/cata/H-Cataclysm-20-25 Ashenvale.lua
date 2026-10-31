@@ -7,7 +7,7 @@ RXPGuides.RegisterGuide([[
 #mop
 << Horde
 #name 22-27级 灰谷
-#next 27-31 北荆棘谷
+#next 27-31级 北荆棘谷
 #version 1
 --#group RXP Cataclysm (H) << cata
 
@@ -841,7 +841,7 @@ step
     .goto 63,12.77,34.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_穆格拉什|r 对话
     >>|cRXP_WARN_这将开始一个护送任务。小心，任务难度较高|r
-    .accept 6641,1 >> 接受任务 鞭笞者沃尔沙
+    .accept 6641,1 >> 接受任务鞭笞者沃尔沙
     .target 穆格拉什
 step
     #completewith LitLightHouse
@@ -916,7 +916,7 @@ step
 step
     .goto 63,12.46,35.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_战歌信使|r 对话
-    .turnin 6641 >>交任务鞭笞者沃尔沙
+    .turnin 6641 >>交任务  鞭笞者沃尔沙
     .target Warsong Runner
 step
     .goto 63,12.66,35.39
@@ -984,7 +984,7 @@ step
 step
     .goto 63,11.57,35.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达格鲁·怒锤|r 对话
-    .turnin 26890 >>交任务  阿库麦尔的精华
+    .turnin 26890 >>交任务阿库麦尔的精华
     .target Dagrun Ragehammer
 step
     #completewith HellscreamsWatchPickups

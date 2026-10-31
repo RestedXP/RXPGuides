@@ -647,7 +647,7 @@ step << cata Shaman
 step << cata Shaman
     #xprate <1.2
     .goto 1426/0,-536.50000,-5581.50000
-    .train 331 >> 在卡拉诺斯旅店学习 |T136052:0|t[治疗波]
+    .train 331 >> 在卡拉诺斯旅馆训练 |T136052:0|t治疗波
 step << Gnome
 #xprate >1.19
     #optional
@@ -677,14 +677,14 @@ step << Dwarf/Gnome
     .accept 6388 >>接受任务 格莱斯·瑟登
 step << Dwarf/Gnome
     .goto 1455/0,-1154.90002,-4820.70020
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
     .target 格莱斯·瑟登
     .turnin 6388 >>交任务 格莱斯·瑟登
     .accept 6392 >>接受任务 向布洛克回复
 step << Dwarf/Gnome
 #completewith next
     .goto Ironforge,55.501,47.743
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
     .target 格莱斯·瑟登
     .fly Goldshire >> 飞往闪金镇
 step << Human

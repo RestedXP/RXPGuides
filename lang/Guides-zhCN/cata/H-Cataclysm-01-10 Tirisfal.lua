@@ -6,7 +6,7 @@ RXPGuides.RegisterGuide([[
 #cata
 #mop
 << Horde
-#name 1-6 提瑞斯法林地
+#name 1-6级 提瑞斯法林地
 #next 6-10 永歌森林
 #version 1
 --#group RXP Cataclysm (H) << cata
@@ -665,7 +665,7 @@ step << Undead
     .target Gordon Wendham
 step << Undead
     .goto 90,63.28,48.57
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迈克尔 |r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_麦克尔|r 对话
     .turnin 6322 >>交任务 迈克尔·加勒特
     .accept 6324 >>接受任务 向莫里斯回报
     .target 迈克尔·加勒特

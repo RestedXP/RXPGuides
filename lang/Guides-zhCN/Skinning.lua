@@ -13,7 +13,7 @@ step << Mage
     .skill skinning,75,1
 step << !Mage
     #completewith next
-    .hs >> 炉石返回达拉然
+    .hs >> 炉石返回到达拉然
     .zoneskip Orgrimmar
     .zoneskip Dalaran
     .skill skinning,75,1
@@ -57,7 +57,7 @@ step << Mage
     .skill skinning,125,1
 step << !Mage
     #completewith next
-    .hs >> 炉石返回达拉然
+    .hs >> 炉石返回到达拉然
     .skill skinning,125,1
     .zoneskip Orgrimmar
 step << !Mage
@@ -140,7 +140,7 @@ step << Mage
     .zoneskip Hellfire Peninsula
 step << !Mage
     #completewith next
-    .hs >> 炉石返回达拉然
+    .hs >> 炉石返回到达拉然
     .skill skinning,305,1
     .zoneskip Hellfire Peninsula
 step << !Mage
@@ -213,7 +213,7 @@ step << Mage
     .zoneskip Borean Tundra
 step << !Mage
     #completewith next
-    .hs >> 炉石返回达拉然
+    .hs >> 炉石返回到达拉然
     .zoneskip Shattrath City
     .skill skinning,375,1
 step << !Mage
@@ -246,7 +246,7 @@ step << Mage
     .zoneskip Zul'Drak
 step << !mage
     #completewith next
-    .hs >> 炉石返回达拉然
+    .hs >> 炉石返回到达拉然
     .skill skinning,400,1
     .zoneskip Zul'Drak
 step << !Mage
@@ -290,7 +290,7 @@ step << Mage
     .skill skinning,75,1
 step << !Mage
     #completewith next
-    .hs >> 炉石返回达拉然
+    .hs >> 炉石返回到达拉然
     .skill skinning,75,1
     .zoneskip Stormwind City
 step << !Mage
@@ -336,7 +336,7 @@ step << !Mage
     .cooldown item,6948,<0,1
 step << !Mage
     #completewith next
-    .hs >> 炉石返回达拉然
+    .hs >> 炉石返回到达拉然
     .skill skinning,125,1
     .zoneskip Ironforge
 step << !Mage
@@ -376,7 +376,7 @@ step << !Mage
     .cooldown item,6948,<0,1
 step << !Mage
     #completewith next
-    .hs >> 炉石返回达拉然
+    .hs >> 炉石返回到达拉然
     .skill skinning,155,1
     .zoneskip Ironforge
 step << !Mage
@@ -425,7 +425,7 @@ step << !Mage
     .cooldown item,6948,<0,1
 step << !Mage
     #completewith next
-    .hs >> 炉石返回达拉然
+    .hs >> 炉石返回到达拉然
     .skill skinning,230,1
     .zoneskip Ironforge
 step << !Mage
@@ -494,7 +494,7 @@ step << Mage
     .zoneskip Hellfire Peninsula
 step << !Mage
     #completewith next
-    .hs >> 炉石返回达拉然
+    .hs >> 炉石返回到达拉然
     .skill skinning,330,1
     .zoneskip Hellfire Peninsula
 step >> !mage
@@ -560,7 +560,7 @@ step << Mage
     .skill skinning,375,1
 step << !Mage
     #completewith next
-    .hs >> 炉石返回达拉然
+    .hs >> 炉石返回到达拉然
     .skill skinning,375,1
 step
     #completewith next
@@ -588,7 +588,7 @@ step << Mage
     .zoneskip Zul'Drak
 step << !mage
     #completewith next
-    .hs >> 炉石返回达拉然
+    .hs >> 炉石返回到达拉然
     .skill skinning,400,1
     .zoneskip Zul'Drak
 step << !Mage

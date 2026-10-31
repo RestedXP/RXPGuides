@@ -9,7 +9,7 @@ RXPGuides.RegisterGuide([[
 #mop
 << Horde
 #name 1-6级 试炼谷
-#next 6-10 杜隆塔尔
+#next 6-10级 杜隆塔尔
 #version 1
 --#group RXP Cataclysm (H) << cata
 #defaultfor Orc
@@ -503,7 +503,7 @@ RXPGuides.RegisterGuide([[
 #mop
 << Horde
 #name 1-6级 暗矛岛
-#next 6-10 杜隆塔尔
+#next 6-10级 杜隆塔尔
 #version 1
 --#group RXP Cataclysm (H) << cata
 #defaultfor Troll
@@ -1397,7 +1397,7 @@ RXPGuides.RegisterGuide([[
 #cata
 #mop
 << Horde
-#name 6-10 杜隆塔尔
+#name 6-10级 杜隆塔尔
 #next 10-22级 艾萨拉
 #version 1
 --#group RXP Cataclysm (H) << cata
@@ -2651,7 +2651,7 @@ step
     .goto 1411,47.07,30.87,40,0
     .goto 1411,47.16,29.67,40,0
     .goto 1411,48.95,22.34,40,0
-    >>拾取地上的|cRXP_LOOT_装满货物的袋子|r
+    >>拾取地上的 |cRXP_LOOT_Sack of 补给|r
     .complete 834,1 --Sack of Supplies (5)
     .isOnQuest 834
 step

@@ -480,7 +480,7 @@ step
 -- 3 Quests from The Shadow Vault
 step
 	>>从暗影拱顶接受3个日常任务
-    >>与白银级对话
+    >>Talk to Sliver
 	.daily 12995 >>接受任务 彰显军威
 	.goto Icecrown,42.84,24.92
 	>>与跳跃者对话，他在帐篷周围走动
@@ -527,7 +527,7 @@ step
     .complete 13071,1 --Vrykul buildings set ablaze (8)
 	.isOnQuest 13071
 step
-    >>返回暗影拱顶。与白银级、跳跃者和劣尸维尔对话
+    >>Return to The Shadow Vault. Talk to Sliver, The Leaper and Vile
 	.turnin 12995 >>交任务 彰显军威
 	.goto Icecrown,42.84,24.92
     .turnin 13069 >>交任务 把它们打下来！

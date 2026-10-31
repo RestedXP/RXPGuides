@@ -38,7 +38,7 @@ step
 step
     .goto 47,75.56,45.37,8,0
     .goto 47,75.83,45.26
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与房子里的人对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在房子里与 |cRXP_FRIENDLY_伊瓦夫人|r 对话
     .turnin 26653 >>交任务 夜色镇的补给
     .accept 26652 >>接受任务 幽灵的发丝
 	.target 伊瓦夫人
@@ -76,7 +76,7 @@ step
 	.target +Commander Althea Ebonlocke
 step
     .goto 47,75.33,48.02
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_卡洛尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡洛尔|r 对话
     .accept 26688 >>接受任务 林子里的狼人
 	.target 卡洛尔
 
@@ -165,7 +165,7 @@ step
 	.target +Commander Althea Ebonlocke
 step
     .goto 47,75.33,48.02
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_卡洛尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡洛尔|r 对话
     .turnin 26688 >>交任务 林子里的狼人
     .accept 26689 >>接受任务 烂果园
 	.target 卡洛尔
@@ -209,7 +209,7 @@ step
 step
     .goto 47,75.56,45.37,8,0
     .goto 47,75.83,45.26
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与房子里的人对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在房子里与 |cRXP_FRIENDLY_伊瓦夫人|r 对话
     .turnin 26654 >>交任务 归还梳子
     .accept 26655 >>接受任务 送交发丝
 	.target 伊瓦夫人
@@ -331,7 +331,7 @@ step
 	.goto 47,73.82,45.95,8 >>离开旅店
 step
     .goto 47,75.33,48.02
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_卡洛尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡洛尔|r 对话
     .turnin 26689,1 >>交任务 烂果园
     .accept 26690 >>接受任务 邪齿和堕落
 	.target 卡洛尔
@@ -705,7 +705,7 @@ step
     .maxlevel 28
 step
     .goto 47,74.17,46.47
-    >>击杀|cRXP_ENEMY_缝合怪|r
+    >>杀死 |cRXP_ENEMY_缝合怪.|r
     .complete 26727,1 --1/1 Stitches slain
 	.mob Stitches
     .maxlevel 28

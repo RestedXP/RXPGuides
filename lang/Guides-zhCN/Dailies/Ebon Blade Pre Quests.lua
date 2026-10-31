@@ -32,7 +32,7 @@ step
     .complete 12892,1 << Horde --The Ocular has been destroyed (1)
 step
     .goto IcecrownGlacier,44.1,24.7
-	>>一直飞到地面上的男爵白银级那里，和他对话
+	>>Fly all the way down to Baron Sliver on the ground. Talk to him
     .turnin 12887 >>交任务 乐趣十足 << Alliance
     .turnin 12892 >>交任务 乐趣十足 << Horde
     .accept 12891 >>接受任务 我有一计……
@@ -108,7 +108,7 @@ step << Horde
     .accept 12899 >>接受任务 暗影拱顶
 step
     .goto IcecrownGlacier,42.8,24.9
-	>>回到男爵白银级
+	>>Return to Baron Sliver
 	.turnin 12898 >>交任务 暗影拱顶 << Alliance
     .turnin 12899 >>交任务 暗影拱顶 << Horde
     .accept 12938 >>接受任务 公爵
@@ -177,7 +177,7 @@ step
 step
     .goto IcecrownGlacier,39.01,23.99,25,0
     .goto IcecrownGlacier,42.9,24.9
-	>>退出大厅。返回到男爵白银级
+	>>Exit the Hall. Return to Baron Sliver
     .turnin 12951 >>交任务 通知男爵
     .daily 12995 >>接受任务 彰显军威
     .accept 13085 >>接受任务 维林回来了
@@ -235,7 +235,7 @@ step
 	.isQuestComplete 12995
 step
     .goto IcecrownGlacier,42.9,24.9
-	>>与白银级对话
+	>>Talk to Sliver
     .accept 12806 >>接受任务 全速赶往死亡高地！
 step
     .goto IcecrownGlacier,43.5,25.0

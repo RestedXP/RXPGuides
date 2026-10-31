@@ -8,7 +8,7 @@ RXPGuides.RegisterGuide([[
 #cata
 #mop
 << Horde
-#name 1-6 逐日者岛
+#name 1-6级 逐日者岛
 #next 6-10 永歌森林
 #version 1
 --#group RXP Cataclysm (H) << cata

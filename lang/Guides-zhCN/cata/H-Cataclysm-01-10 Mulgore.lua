@@ -6,7 +6,7 @@ RXPGuides.RegisterGuide([[
 #cata
 #mop
 << Horde
-#name 1-6 莫高雷
+#name 1-6级 莫高雷
 #next 6-10级 莫高雷
 #version 1
 --#group RXP Cataclysm (H) << cata
