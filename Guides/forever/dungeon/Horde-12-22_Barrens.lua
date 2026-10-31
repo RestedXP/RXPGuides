@@ -2338,6 +2338,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Karos Razok::2226|r
     .fly Undercity >>Fly to Undercity
     .target Karos Razok::2226
+    .zoneskip Undercity
 step
     #label EnterRoL
     .goto 1458/0,188.400,1804.500
@@ -2575,6 +2576,7 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tabitha Heartweaver::250686|r
     .turnin 92401 >>Turn in A Frightened Request
     .target Tabitha Heartweaver::250686
+
 
     ]])
 
@@ -4818,7 +4820,7 @@ step
 step
     .goto 1413/1,-2711.800,-350.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gur'ak|r
-    .accept 97003 >>Accept Chol'aruk the Ravener
+    .turnin 97003 >>Turn in Chol'aruk the Ravener
     .target Gur'ak
     .isQuestComplete 97003
 step
@@ -4869,6 +4871,14 @@ step
     #optional
     #completewith TopofWCturnins
     .abandon 855 >>Abandon Centaur Bracers
+step
+    #optional
+    #completewith TopofWCturnins
+    .abandon 97003 >>Abandon Chol'aruk the Ravener
+step
+    #optional
+    #completewith TopofWCturnins
+    .abandon 4021 >>Abandon Counterattack!
 step
     #completewith next
     .goto 1413/1,-2493.40,-708.95,20,0
