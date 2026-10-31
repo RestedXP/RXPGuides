@@ -1777,7 +1777,7 @@ step
     .isOnQuest 1001
 step
     .goto 1439,41.901,31.339
-    >>点击地上的 |cRXP_PICK_搁浅的海洋生物|r
+    >>点击 |cRXP_PICK_搁浅的海洋生物|r
     .accept 4723 >> 接受任务 搁浅的海洋生物
 step
     .goto 1439,41.960,28.616
@@ -2827,8 +2827,8 @@ step
     #requires CrumpledPaper
 step
     #completewith next
-    .goto 1458/0,170.700,1804.700,15 >> |cRXP_WARN_死于副本内的小怪可以更快回到副本起点。灵魂治疗点就在副本传送门外面|r
-    >>|cRXP_WARN_不要灵魂复活！作为|r |T132331:0|t[幽灵] |cRXP_WARN_进入副本传送门|r
+    .goto 1458/0,170.700,1804.700,15 >> |cRXP_WARN_死在里面的任意怪物手中，以便更快回到副本起点。墓地就在副本传送门外|r
+    >>|cRXP_WARN_不要用灵魂复活！以|r |T132331:0|t[鬼魂] |cRXP_WARN_状态跑进副本传送门|r
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_图曼上尉|r 对话
     >>|cRXP_FRIENDLY_图曼上尉|r |cRXP_WARN_在地下城的起点处|r
@@ -2910,7 +2910,7 @@ step << NightElf Rogue
     .goto 1453/0,323.43,-8817.83,5 >> 进入军情7处总部。上楼去找 |cRXP_FRIENDLY_"剃刀"雷吉克|r
 step << NightElf Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_"剃刀"雷吉克|r对话
-    .accept 2281 >> 接受任务 赤脊山的联络员
+    .accept 2281 >> 接受任务赤脊山的联络员
     .goto 1453/0,362.55,-8819.80
     .target Renzik "The Shiv"
 step << NightElf
@@ -2996,7 +2996,7 @@ step << !NightElf Rogue
     .goto 1453/0,323.43,-8817.83,5 >> 进入军情7处总部。上楼去找 |cRXP_FRIENDLY_"剃刀"雷吉克|r
 step << !NightElf Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_"剃刀"雷吉克|r对话
-    .accept 2281 >> 接受任务 赤脊山的联络员
+    .accept 2281 >> 接受任务赤脊山的联络员
     .goto 1453/0,362.55,-8819.80
     .target Renzik "The Shiv"
 step << Warrior
@@ -3134,7 +3134,7 @@ step
 	.target Wiley the Black
 step << Rogue
     .goto 1433/0,-2180.19,-9328.21
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_卢修斯|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_卢修斯|r 对话
     .turnin 2281 >> 交任务 赤脊山的联络员
     .accept 2282 >> 接受任务 奥瑟尔伐木场
     .target Lucius
@@ -3180,7 +3180,7 @@ step
     .turnin 125 >> 交任务 丢失的工具
     .target Foreman Oslow
 step << Rogue
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_卢修斯|r 对话
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_卢修斯|r 对话
 	.target Lucius
     .goto 1433/0,-2180.19,-9328.21
     .turnin 2282 >> 交任务 奥瑟尔伐木场
@@ -3618,9 +3618,9 @@ step << Rogue
 step << Rogue
     .goto 1436/0,619.17,-11035.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_密探吉尔妮|r 对话
-    >>这个任务是必须完成的，关系到你的|cRXP_WARN_ |T132290:0|t[毒药]|r
+    >>|cRXP_WARN_你必须完成这个任务来获取你的|r|T132290:0|t[毒药]
     .turnin 2360 >> 交任务马迪亚斯和迪菲亚盗贼
-    .accept 2359 >> 接受任务 克拉文之塔
+    .accept 2359 >> 接受任务克拉文之塔
     .target Agent Kearnen
 step << Rogue
     #label TowerKey
@@ -4376,7 +4376,7 @@ step
     .target 温尼斯·布莱葛
 step
     .goto 1439,35.968,70.807
-    >>点击地上的 |cRXP_PICK_搁浅的海洋生物|r
+    >>点击 |cRXP_PICK_搁浅的海洋生物|r
     .accept 4728 >> 接受任务 搁浅的海洋生物
     .isQuestTurnedIn 4681
 step
@@ -4497,7 +4497,7 @@ step
 step
     .isQuestTurnedIn 4681
     .goto 1439,32.644,80.711
-    >>点击地上的 |cRXP_PICK_搁浅的海洋生物|r
+    >>点击 |cRXP_PICK_搁浅的海洋生物|r
     .accept 4730 >> 接受任务 搁浅的海洋生物
 step
     .isQuestTurnedIn 4681
@@ -4514,7 +4514,7 @@ step
 step
     .isQuestTurnedIn 4681
     .goto 1439,31.251,87.419
-    >>点击地上的 |cRXP_PICK_搁浅的海洋生物|r
+    >>点击 |cRXP_PICK_搁浅的海洋生物|r
     .accept 4733 >> 接受任务 搁浅的海洋生物
     >>|cRXP_WARN_注意 |cRXP_ENEMY_灰雾智者|r 的|r |T136048:0|t[闪电箭] |cRXP_WARN_伤害，他们还会使用|r |T136052:0|t[治疗波]|r
 step

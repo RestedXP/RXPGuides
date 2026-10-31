@@ -3144,7 +3144,7 @@ step << Paladin
     .goto 1458/0,365.30,1304.41,10 >>进入皇家区--c:Undercity,52.94,89.60
 step << Paladin
     .goto 1458/0,316.200,1290.600
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_希尔瓦娜斯·风行者|r对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_希尔瓦娜斯·风行者|r 对话
     .turnin 95803 >>交任务 善意的信物
     .target Lady Sylvanas Windrunner
 
