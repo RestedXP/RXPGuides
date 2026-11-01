@@ -2604,6 +2604,12 @@ step
     .vendor >>|cRXP_BUY_Sell your junk, then restock on food if necessary|r << Rogue/Warrior
     .target Innkeeper Boorand Plainswind
     .isQuestAvailable 3281,865,905
+step << Orc/Troll
+    .goto 1413/1,-2709.24,-404.24
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zargh|r
+    .turnin 6386 >> Turn in Return to the Crossroads
+    .target Zargh
+    .isOnQuest 6386
 step << !Tauren !Hunter !Shaman/Skyborne
     #completewith Ignition
     >>Kill every |cRXP_ENEMY_Raptor|r you see. Loot them for their |cRXP_LOOT_Heads|r
@@ -4391,7 +4397,7 @@ RXPGuides.RegisterGuide([[
 #forever
 << Horde
 #name 21-22 Wailing Caverns
-#next RestedXP Horde 22-30\22-24 Hillsbrad
+#next 22-24 Hillsbrad
 #version 11
 #group RestedXP Forever Dungeon Guide (H)
 #subgroup Dungeon Guide 1-22

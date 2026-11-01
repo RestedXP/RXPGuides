@@ -1675,6 +1675,7 @@ step << Orc/Troll
     .target Doras
     .isOnQuest 6385
 step << Orc/Troll
+    #optional
     .goto 1454/1,-4313.46,1676.25--c:Orgrimmar,45.120,63.889
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Doras|r
     .accept 6386 >> Accept Return to the Crossroads
@@ -5198,4 +5199,13 @@ step
 step
     #optional
     .abandon 6563 >>Abandon The Essence of Aku'Mai
+step
+    #optional
+    .abandon 97003 >>Abandon Chol'aruk the Ravener
+step
+    .zone Durotar >> Leave Orgrimmar
+    .zoneskip Tirisfal Glades
+    .zoneskip Undercity
+    .zoneskip Silverpine Forest
+    .zoneskip Hillsbrad Foothills
 ]])
