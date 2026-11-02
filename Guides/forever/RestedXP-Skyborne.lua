@@ -7301,7 +7301,7 @@ step << Horde
     .fly Orgrimmar >>Fly to Orgrimmar
     .target Tal::2995
 step << Horde
-    .goto Orgrimmar,54.10,68.42
+    .goto 1454/1,-4439.41,1633.87--c:Orgrimmar,54.10,68.42
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Gryshka::6929|r
     .home >> Set your Hearthstone to Orgrimmar
 	.target Innkeeper Gryshka::6929
