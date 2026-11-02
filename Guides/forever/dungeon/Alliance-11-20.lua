@@ -3617,7 +3617,7 @@ step << Rogue
 step << Rogue
     .goto 1436/0,619.17,-11035.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Agent Kearnen|r
-    >>|cRXP_WARN_You MUST do this quest your|r |T132290:0|t[Poisons]
+    >>|cRXP_WARN_You MUST complete this quest to unlock|r |T132290:0|t[Poisons].
     .turnin 2360 >> Turn in Mathias and the Defias
     .accept 2359 >> Accept Klaven's Tower
     .target Agent Kearnen
