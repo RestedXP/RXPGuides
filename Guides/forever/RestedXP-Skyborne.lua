@@ -979,6 +979,12 @@ step
     #hidewindow
     +Possible Tornado Spawn Location
     #icon |TInterface/Icons/Spell_Nature_Cyclone:0|t
+    .pin 2521,50.27,76.45,Tornado
+    .pin 2521,57.91,75.86,Tornado
+    .pin 2521,42.13,39.24,Tornado
+    .pin 2521,64,75.79,Tornado
+    .pin 2521,52.67,41.92,Tornado
+    .pin 2521,68.63,65.95,Tornado
     .pin 2521,48.14,56.56,Tornado
     .pin 2521,54.92,44.76,Tornado
     .pin 2521,39.6,45.11,Tornado
@@ -2214,6 +2220,7 @@ step
     >>Kill |cRXP_ENEMY_Hippogryph Youths::251291|r, |cRXP_ENEMY_Hippogryph Protectors::251284|r and the |cRXP_ENEMY_Hippogryph Matriarch::251261|r.
     *|cRXP_WARN_Loot them for valuable vendor trash to help pay for weapon upgrades and class training|r.
     *|cRXP_WARN_Prioritize the |cRXP_ENEMY_Matriarch::251261|r|r
+    *|cRXP_WARN_Hippogryphs are extremely fast. Do not rely on outrunning them if things get dangerous|r.
     .complete 92516,1 --|8/8 Hippogryph Youth slain
     .mob +Hippogryph Youth::251291
     .complete 92516,2 --|6/6 Hippogryph Protector slain
@@ -2228,6 +2235,7 @@ step
     >>Kill |cRXP_ENEMY_Hippogryph Youths::251291|r, |cRXP_ENEMY_Hippogryph Protectors::251284|r and the |cRXP_ENEMY_Hippogryph Matriarch::251261|r.
     *|cRXP_WARN_Loot them for valuable vendor trash to help pay for weapon upgrades and class training|r.
     *|cRXP_WARN_Prioritize the |cRXP_ENEMY_Matriarch::251261|r|r
+    *|cRXP_WARN_Hippogryphs are extremely fast. Do not rely on outrunning them if things get dangerous|r.
     .complete 92516,1 --|8/8 Hippogryph Youth slain
     .mob +Hippogryph Youth::251291
     .complete 92516,2 --|6/6 Hippogryph Protector slain
@@ -2810,6 +2818,7 @@ step  << Alliance
     #optional
     #completewith NearCommander
     >>Kill |cRXP_ENEMY_Al'Aketh Stormcallers::252068|r. Loot them for the |T133647:0|t[|cRXP_LOOT_Stolen Shen'dar Supplies|r].
+    *|cRXP_WARN_|cRXP_ENEMY_Al'Aketh Stormcallers|r cast|r |T136014:0|t[Lightning Cloud]. |cRXP_WARN_Move out of the cloud without pulling nearby enemies|r.
     >>|TInterface/cursor/crosshair/interact.blp:16|tClick on the |cRXP_PICK_Supply Caches|r (small bags).
     .complete 92550,1 --6/6 Al'Aketh Stormcaller slain
     .complete 92551,1 --10/10 Stolen Shen'dar Supplies
@@ -2854,12 +2863,14 @@ step
     #optional
     #completewith CommanderCyclasHeadA
     >>Kill |cRXP_ENEMY_Living Lightning::251662|r.
+    *|cRXP_WARN_Be careful: |cRXP_ENEMY_Living Lightning|r use an ability similar to Thunder Clap that deals three times their melee damage in a single hit|r.
     .complete 92550,2 --4/4 Living Lightning slain
     .mob Living Lightning::251662
 step
     #optional
     #completewith CommanderCyclasHeadA
     >>Kill |cRXP_ENEMY_Al'Aketh Stormcallers::252068|r. Loot them for the |T133647:0|t[|cRXP_LOOT_Stolen Shen'dar Supplies|r].
+    *|cRXP_WARN_|cRXP_ENEMY_Al'Aketh Stormcallers|r cast|r |T136014:0|t[Lightning Cloud]. |cRXP_WARN_Move out of the cloud without pulling nearby enemies|r.
     >>|TInterface/cursor/crosshair/interact.blp:16|tClick on the |cRXP_PICK_Supply Caches|r.
     .complete 92550,1 --6/6 Al'Aketh Stormcaller slain
     .complete 92551,1 --10/10 Stolen Shen'dar Supplies
@@ -2890,10 +2901,12 @@ step
     #optional
     #completewith next
     >>Kill |cRXP_ENEMY_Living Lightning::251662|r.
+    *|cRXP_WARN_Be careful: |cRXP_ENEMY_Living Lightning|r use an ability similar to Thunder Clap that deals three times their melee damage in a single hit|r.
     .complete 92550,2 --4/4 Living Lightning slain
     .mob Living Lightning::251662
 step
     >>Kill |cRXP_ENEMY_Al'Aketh Stormcallers::252068|r. Loot them for the |T133647:0|t[|cRXP_LOOT_Stolen Shen'dar Supplies|r].
+    *|cRXP_WARN_|cRXP_ENEMY_Al'Aketh Stormcallers|r cast|r |T136014:0|t[Lightning Cloud]. |cRXP_WARN_Move out of the cloud without pulling nearby enemies|r.
     >>|TInterface/cursor/crosshair/interact.blp:16|tClick on the |cRXP_PICK_Supply Caches|r.
     .complete 92550,1 --6/6 Al'Aketh Stormcaller slain
     .complete 92551,1 --10/10 Stolen Shen'dar Supplies
@@ -2901,6 +2914,7 @@ step
 step
     #label LivingLightningA
     >>Kill |cRXP_ENEMY_Living Lightning::251662|r.
+    *|cRXP_WARN_Be careful: |cRXP_ENEMY_Living Lightning|r use an ability similar to Thunder Clap that deals three times their melee damage in a single hit|r.
     .complete 92550,2 --4/4 Living Lightning slain
     .mob Living Lightning::251662
 step << Horde
@@ -3231,6 +3245,12 @@ step
     #hidewindow
     +Possible Tornado Spawn Location
     #icon |TInterface/Icons/Spell_Nature_Cyclone:0|t
+    .pin 2521,50.27,76.45,Tornado
+    .pin 2521,57.91,75.86,Tornado
+    .pin 2521,42.13,39.24,Tornado
+    .pin 2521,64,75.79,Tornado
+    .pin 2521,52.67,41.92,Tornado
+    .pin 2521,68.63,65.95,Tornado
     .pin 2521,48.14,56.56,Tornado
     .pin 2521,39.6,45.11,Tornado
     .pin 2521,54.92,44.76,Tornado
@@ -3953,6 +3973,7 @@ step
     #optional
     #completewith WhatIsMyPurposeA
     >>Kill |cRXP_ENEMY_Ornery Galestriders::251707|r. Loot them for |T2066012:0|t[|cRXP_LOOT_Lowlands Galestrider Tenderloins|r].
+    *|cRXP_WARN_Be careful: |cRXP_ENEMY_Ornery Galestriders|r use |T132156:0|t[Dust Cloud] to reduce your chance to hit.
     .complete 92684,1 --7/7 Lowlands Galestrider Tenderloin
     .mob Ornery Galestrider::251707
 step
@@ -3994,6 +4015,7 @@ step
     #optional
     #completewith next
     >>Kill |cRXP_ENEMY_Ornery Galestriders::251707|r. Loot them for |T2066012:0|t[|cRXP_LOOT_Lowlands Galestrider Tenderloins|r].
+        *|cRXP_WARN_Be careful: |cRXP_ENEMY_Ornery Galestriders|r use |T132156:0|t[Dust Cloud] to reduce your chance to hit.
     .complete 92684,1 --7/7 Lowlands Galestrider Tenderloin
     .mob Ornery Galestrider::251707
 step
@@ -4008,6 +4030,7 @@ step
 step
     #label GalestriderTenderloinA
     >>Kill |cRXP_ENEMY_Ornery Galestriders::251707|r. Loot them for |T2066012:0|t[|cRXP_LOOT_Lowlands Galestrider Tenderloins|r].
+    *|cRXP_WARN_Be careful: |cRXP_ENEMY_Ornery Galestriders|r use |T132156:0|t[Dust Cloud] to reduce your chance to hit.
     .complete 92684,1 --7/7 Lowlands Galestrider Tenderloin
     .mob Ornery Galestrider::251707
 step
@@ -5036,6 +5059,7 @@ step << Horde
     .goto 2521,55.93,60.3,35,0
     .goto 2521,56.04,59.08,35,0
     >>Kill |cRXP_ENEMY_Al'Aketh Assassins::254626|r.
+    *|cRXP_WARN_Be careful: |cRXP_ENEMY_Al'Aketh Assassins|r use|r |T132357:0|t[Slam] |cRXP_WARN_to knock you down and|r |T136189:0|t[Sinister Strike] |cRXP_WARN_alongside their melee attacks|r.
     .complete 98512,1 --10/10 Al'Aketh Assassin slain
     .mob Al'Aketh Assassin::254626
 step << Horde !Druid
@@ -5189,6 +5213,8 @@ step << Alliance
     >>Kill |cRXP_ENEMY_Al'Aketh Brawlers::270201|r.
     *Loot them for |T1379232:0|t[|cRXP_LOOT_Al'Aketh Windstone Charms|r].
    *|cRXP_WARN_You will make progress here but likely finish the quest at another location later|r.
+    *|cRXP_WARN_|cRXP_ENEMY_Al'Aketh Healers|r can heal themselves or others. Stun their heals if you can|r. << !Rogue
+    *|cRXP_WARN_|cRXP_ENEMY_Al'Aketh Healers|r can heal themselves or others. Pool Energy to stun their heals if you cannot kill them before they cast|r. << Rogue
     .complete 92834,1 --10/10 Al'Aketh Windstone Charm
     .mob Al'Aketh Healer::254596
     .mob Al'Aketh Brawler::270201
@@ -5221,6 +5247,8 @@ step << Alliance !Druid
     #optional
     #completewith Commander Belguilos2
     >>Kill |cRXP_ENEMY_Al'Aketh Healers::254596|r and |cRXP_ENEMY_Al'Aketh Brawlers::270201|r.
+    *|cRXP_WARN_|cRXP_ENEMY_Al'Aketh Healers|r can heal themselves or others. Stun their heals if you can|r. << !Rogue
+    *|cRXP_WARN_|cRXP_ENEMY_Al'Aketh Healers|r can heal themselves or others. Pool Energy to stun their heals if you cannot kill them before they cast|r. << Rogue
     .complete 92642,1 --4/4 Al'Aketh Healer slain
     .mob +Al'Aketh Healer::254596
     .complete 92642,2 --8/8 Al'Aketh Brawler slain
@@ -5250,6 +5278,8 @@ step << Alliance !Druid
     .goto 2521,64.71,67.65,40,0
     .goto 2521,66.59,67.5,40,0
     >>Kill |cRXP_ENEMY_Al'Aketh Brawlers::270201|r and |cRXP_ENEMY_Al'Aketh Healers::254596|r.
+    *|cRXP_WARN_|cRXP_ENEMY_Al'Aketh Healers|r can heal themselves or others. Stun their heals if you can|r. << !Rogue
+    *|cRXP_WARN_|cRXP_ENEMY_Al'Aketh Healers|r can heal themselves or others. Pool Energy to stun their heals if you cannot kill them before they cast|r. << Rogue
     .complete 92642,1 --4/4 Al'Aketh Healer slain
     .mob +Al'Aketh Healer::254596
     .complete 92642,2 --8/8 Al'Aketh Brawler slain
@@ -5290,6 +5320,8 @@ step << Alliance Druid
     #optional
     #completewith Commander Belguilos Druid2
     >>Kill |cRXP_ENEMY_Al'Aketh Healers::254596|r and |cRXP_ENEMY_Al'Aketh Brawlers::270201|r.
+    *|cRXP_WARN_|cRXP_ENEMY_Al'Aketh Healers|r can heal themselves or others. Stun their heals if you can|r. << !Rogue
+    *|cRXP_WARN_|cRXP_ENEMY_Al'Aketh Healers|r can heal themselves or others. Pool Energy to stun their heals if you cannot kill them before they cast|r. << Rogue
     .complete 92642,1 --4/4 Al'Aketh Healer slain
     .mob +Al'Aketh Healer::254596
     .complete 92642,2 --8/8 Al'Aketh Brawler slain
@@ -5331,6 +5363,8 @@ step << Alliance Druid
     .goto 2521,64.71,67.65,40,0
     .goto 2521,66.59,67.5,40,0
     >>Kill |cRXP_ENEMY_Al'Aketh Brawlers::270201|r and |cRXP_ENEMY_Al'Aketh Healers::254596|r.
+    *|cRXP_WARN_|cRXP_ENEMY_Al'Aketh Healers|r can heal themselves or others. Stun their heals if you can|r. << !Rogue
+    *|cRXP_WARN_|cRXP_ENEMY_Al'Aketh Healers|r can heal themselves or others. Pool Energy to stun their heals if you cannot kill them before they cast|r. << Rogue
     .complete 92642,1 --4/4 Al'Aketh Healer slain
     .mob +Al'Aketh Healer::254596
     .complete 92642,2 --8/8 Al'Aketh Brawler slain
@@ -5620,6 +5654,7 @@ step << Alliance
     #optional
     #completewith Fendaal Windstone
     >>Kill |cRXP_ENEMY_Al'Aketh Assassins::254626|r.
+    *|cRXP_WARN_Be careful: |cRXP_ENEMY_Al'Aketh Assassins|r use|r |T132357:0|t[Slam] |cRXP_WARN_to knock you down and|r |T136189:0|t[Sinister Strike] |cRXP_WARN_alongside their melee attacks|r.
     .complete 98512,1 --10/10 Al'Aketh Assassin slain
     .mob Al'Aketh Assassin::254626
 step << Alliance
@@ -5647,6 +5682,7 @@ step << Alliance
     .goto 2521,55.93,60.3,35,0
     .goto 2521,56.04,59.08,35,0
     >>Kill |cRXP_ENEMY_Al'Aketh Assassins::254626|r.
+    *|cRXP_WARN_Be careful: |cRXP_ENEMY_Al'Aketh Assassins|r use|r |T132357:0|t[Slam] |cRXP_WARN_to knock you down and|r |T136189:0|t[Sinister Strike] |cRXP_WARN_alongside their melee attacks|r.
     .complete 98512,1 --10/10 Al'Aketh Assassin slain
     .mob Al'Aketh Assassin::254626
 step << Alliance
