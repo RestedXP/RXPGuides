@@ -752,7 +752,7 @@ step
     .goto 1437/0,-819.67,-3691.42,15,0
     .goto 1437/0,-807.26,-3716.22,15,0
     .goto 1437/0,-827.94,-3724.49,15,0
-    .goto 1437,10.760,56.721
+    .goto 1437/0,-834.55,-3711.29--c:1437,10.760,56.721
     >> If you have 8s, Check for Bronze Tube from Neal Allen and buy it if it's there. Otherwise, skip this step
     .collect 4371,1,175,1
 step

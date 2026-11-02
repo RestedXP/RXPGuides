@@ -31,8 +31,8 @@ step
 step << Warrior/Warlock/Shaman
     #season 0,1
     #completewith next
-    .goto 1426,28.533,72.587,50,0
-    .goto 1426,28.239,71.707,50,0
+    .goto 1426/0,396.83,-6260.36,50,0--c:1426,28.533,72.587
+    .goto 1426/0,411.31,-6231.46,50,0--c:1426,28.239,71.707
     +|cRXP_WARN_Kill and loot |cRXP_ENEMY_Ragged Young Wolves|r until you have 10 copper or more of vendor trash|r
     >>|cRXP_WARN_Unequip your|r |T132665:0|t[Acolyte's Robe]|cRXP_WARN_,|r |T135005:0|t[Acolyte's Shirt]|cRXP_WARN_,|r |T134581:0|t[Acolyte's Pants]|cRXP_WARN_, and|r |T132535:0|t[Acolyte's Shoes] |cRXP_WARN_so you can vendor them for 4 copper|r << Warlock
     >>|cRXP_WARN_Unequip your|r |T135009:0|t[Recruit's Shirt]|cRXP_WARN_,|r |T134582:0|t[Recruit's Pants]|cRXP_WARN_, and|r |T132540:0|t[Recruit's Boots] |cRXP_WARN_so you can vendor them for 3 copper|r << Warrior
@@ -44,11 +44,11 @@ step << Warrior/Warlock/Shaman
     #season 0,1
     #optional
     #completewith next
-    .goto 1426,28.792,68.804,12,0
-    .goto 1426,28.939,68.387,12 >> Enter Anvilmar
+    .goto 1426/0,384.08,-6136.15,12,0--c:1426,28.792,68.804
+    .goto 1426/0,376.84,-6122.46,12 >> Enter Anvilmar--c:1426,28.939,68.387
 step << Warrior/Warlock/Shaman
     #season 0,1
-    .goto 1426,28.792,67.837
+    .goto 1426/0,384.08,-6104.40--c:1426,28.792,67.837
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grundel Harkin|r inside
     .vendor >> Vendor Trash
     .target Grundel Harkin
@@ -57,7 +57,7 @@ step << Warrior/Warlock/Shaman
     .train 8017,1 << Shaman
 step << Warrior
     #season 0,1
-    .goto 1426,28.831,67.238
+    .goto 1426/0,382.16,-6084.73--c:1426,28.831,67.238
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thran Khorman|r inside
     .train 6673 >>Train |T132333:0|t[Battle Shout]
     .target Thran Khorman
@@ -90,31 +90,31 @@ step << Warrior/Warlock
 
 step
     #label WolfMeat
-    .goto 1426,29.529,73.286,0
-    .goto 1426,28.117,75.088,0
-    .goto 1426,28.557,72.487,0
-    .goto 1426,29.529,73.286,60,0
-    .goto 1426,29.054,74.608,60,0
-    .goto 1426,28.558,75.781,60,0
-    .goto 1426,28.117,75.088,60,0
-    .goto 1426,27.562,74.331,60,0
-    .goto 1426,27.793,73.123,60,0
-    .goto 1426,28.557,72.487,60,0
+    .goto 1426/0,347.78,-6283.31,0--c:1426,29.529,73.286
+    .goto 1426/0,417.32,-6342.47,0--c:1426,28.117,75.088
+    .goto 1426/0,395.65,-6257.07,0--c:1426,28.557,72.487
+    .goto 1426/0,347.78,-6283.31,60,0--c:1426,29.529,73.286
+    .goto 1426/0,371.17,-6326.71,60,0--c:1426,29.054,74.608
+    .goto 1426/0,395.60,-6365.23,60,0--c:1426,28.558,75.781
+    .goto 1426/0,417.32,-6342.47,60,0--c:1426,28.117,75.088
+    .goto 1426/0,444.65,-6317.62,60,0--c:1426,27.562,74.331
+    .goto 1426/0,433.28,-6277.96,60,0--c:1426,27.793,73.123
+    .goto 1426/0,395.65,-6257.07,60,0--c:1426,28.557,72.487
     >>Kill |cRXP_ENEMY_Ragged Young Wolves|r. Loot them for their |cRXP_LOOT_Tough Wolf Meat|r
     .complete 179,1 --Collect Tough Wolf Meat (x8)
     .mob Ragged Young Wolf
 step
     #optional
-    .goto 1426,29.529,73.286,0
-    .goto 1426,28.117,75.088,0
-    .goto 1426,28.557,72.487,0
-    .goto 1426,29.529,73.286,60,0
-    .goto 1426,29.054,74.608,60,0
-    .goto 1426,28.558,75.781,60,0
-    .goto 1426,28.117,75.088,60,0
-    .goto 1426,27.562,74.331,60,0
-    .goto 1426,27.793,73.123,60,0
-    .goto 1426,28.557,72.487,60,0
+    .goto 1426/0,347.78,-6283.31,0--c:1426,29.529,73.286
+    .goto 1426/0,417.32,-6342.47,0--c:1426,28.117,75.088
+    .goto 1426/0,395.65,-6257.07,0--c:1426,28.557,72.487
+    .goto 1426/0,347.78,-6283.31,60,0--c:1426,29.529,73.286
+    .goto 1426/0,371.17,-6326.71,60,0--c:1426,29.054,74.608
+    .goto 1426/0,395.60,-6365.23,60,0--c:1426,28.558,75.781
+    .goto 1426/0,417.32,-6342.47,60,0--c:1426,28.117,75.088
+    .goto 1426/0,444.65,-6317.62,60,0--c:1426,27.562,74.331
+    .goto 1426/0,433.28,-6277.96,60,0--c:1426,27.793,73.123
+    .goto 1426/0,395.65,-6257.07,60,0--c:1426,28.557,72.487
     .xp 2 >> Grind to level 2
     .mob Ragged Young Wolf
 step << Priest/Mage/Warlock/Shaman
@@ -157,7 +157,7 @@ step
     .target Sten Stoutarm
 
 step << Warlock
-    .goto 1426,25.077,75.711
+    .goto 1426/0,567.04,-6362.93--c:1426,25.077,75.711
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grelin Whitebeard|r
     .accept 182 >> Accept The Troll Cave
     .target Grelin Whitebeard
@@ -173,22 +173,22 @@ step << Warlock
     #optional
     #requires FrostmaneC
     #completewith Feathers
-    .goto 1426,27.095,80.702,20,0
-    .goto 1426,27.265,80.848,20,0
-    .goto 1426,27.857,81.067,20,0
-    .goto 1426,28.696,83.148,50 >> Travel toward the |cRXP_ENEMY_Frostmane Novices|r inside
+    .goto 1426/0,467.65,-6526.80,20,0--c:1426,27.095,80.702
+    .goto 1426/0,459.28,-6531.59,20,0--c:1426,27.265,80.848
+    .goto 1426/0,430.13,-6538.78,20,0--c:1426,27.857,81.067
+    .goto 1426/0,388.81,-6607.11,50 >> Travel toward the |cRXP_ENEMY_Frostmane Novices|r inside--c:1426,28.696,83.148
 step << Warlock
     #season 0,1
     #label Feathers
-    .goto 1426,28.696,83.148,0
-    .goto 1426,30.216,80.254,0
-    .goto 1426,28.696,83.148,40,0
-    .goto 1426,28.999,82.504,40,0
-    .goto 1426,29.298,81.579,15,0
-    .goto 1426,29.041,81.168,40,0
-    .goto 1426,30.055,82.385,40,0
-    .goto 1426,30.381,80.766,40,0
-    .goto 1426,30.216,80.254,40,0
+    .goto 1426/0,388.81,-6607.11,0--c:1426,28.696,83.148
+    .goto 1426/0,313.95,-6512.09,0--c:1426,30.216,80.254
+    .goto 1426/0,388.81,-6607.11,40,0--c:1426,28.696,83.148
+    .goto 1426/0,373.88,-6585.96,40,0--c:1426,28.999,82.504
+    .goto 1426/0,359.16,-6555.59,15,0--c:1426,29.298,81.579
+    .goto 1426/0,371.81,-6542.10,40,0--c:1426,29.041,81.168
+    .goto 1426/0,321.87,-6582.06,40,0--c:1426,30.055,82.385
+    .goto 1426/0,305.82,-6528.90,40,0--c:1426,30.381,80.766
+    .goto 1426/0,313.95,-6512.09,40,0--c:1426,30.216,80.254
     >>Kill |cRXP_ENEMY_Frostmane Novices|r inside. Loot them for their |cRXP_LOOT_Feather Charms|r
     .complete 1599,1 --Collect Feather Charm (x3)
     .mob Frostmane Novice
@@ -221,8 +221,8 @@ step << Warlock
     #optional
     #requires BeginningsHS
     #completewith next
-    .goto 1426,28.792,68.804,12,0
-    .goto 1426,28.939,68.387,12 >> Enter Anvilmar << Warlock
+    .goto 1426/0,384.08,-6136.15,12,0--c:1426,28.792,68.804
+    .goto 1426/0,376.84,-6122.46,12 >> Enter Anvilmar << Warlock--c:1426,28.939,68.387
 step << Warlock
     #season 0,1
     #label BeginningsEnd
@@ -245,21 +245,21 @@ step
 step
 #season 0,1
     #loop
-    .goto 1426,22.276,72.549,0
-    .goto 1426,20.924,70.393,0
-    .goto 1426,22.662,69.331,0
-    .goto 1426,24.358,72.591,0
-    .goto 1426,22.276,72.549,45,0
-    .goto 1426,21.209,72.266,45,0
-    .goto 1426,20.880,71.470,45,0
-    .goto 1426,20.924,70.393,45,0
-    .goto 1426,21.330,69.261,45,0
-    .goto 1426,22.035,69.231,45,0
-    .goto 1426,22.662,69.331,45,0
-    .goto 1426,24.317,68.026,45,0
-    .goto 1426,24.754,69.257,45,0
-    .goto 1426,24.878,71.191,45,0
-    .goto 1426,24.358,72.591,45,0
+    .goto 1426/0,704.99,-6259.11,0--c:1426,22.276,72.549
+    .goto 1426/0,771.58,-6188.32,0--c:1426,20.924,70.393
+    .goto 1426/0,685.98,-6153.45,0--c:1426,22.662,69.331
+    .goto 1426/0,602.45,-6260.49,0--c:1426,24.358,72.591
+    .goto 1426/0,704.99,-6259.11,45,0--c:1426,22.276,72.549
+    .goto 1426/0,757.54,-6249.82,45,0--c:1426,21.209,72.266
+    .goto 1426/0,773.74,-6223.68,45,0--c:1426,20.880,71.470
+    .goto 1426/0,771.58,-6188.32,45,0--c:1426,20.924,70.393
+    .goto 1426/0,751.58,-6151.15,45,0--c:1426,21.330,69.261
+    .goto 1426/0,716.86,-6150.17,45,0--c:1426,22.035,69.231
+    .goto 1426/0,685.98,-6153.45,45,0--c:1426,22.662,69.331
+    .goto 1426/0,604.47,-6110.60,45,0--c:1426,24.317,68.026
+    .goto 1426/0,582.95,-6151.02,45,0--c:1426,24.754,69.257
+    .goto 1426/0,576.84,-6214.52,45,0--c:1426,24.878,71.191
+    .goto 1426/0,602.45,-6260.49,45,0--c:1426,24.358,72.591
     >>Kill |cRXP_ENEMY_Small Crag Boars|r
     .complete 183,1 --Kill Small Crag Boar (x12)
     .mob Small Crag Boar
@@ -272,43 +272,43 @@ step
 
 step << Paladin/Warlock/Shaman
     #loop
-    .goto 1426,23.595,72.462,0
-    .goto 1426,26.117,74.469,0
-    .goto 1426,26.832,74.649,0
-    .goto 1426,26.884,72.733,0
-    .goto 1426,23.595,72.462,50,0
-    .goto 1426,24.290,73.406,50,0
-    .goto 1426,24.642,74.138,50,0
-    .goto 1426,26.117,74.469,50,0
-    .goto 1426,26.832,74.649,50,0
-    .goto 1426,26.884,72.733,50,0
+    .goto 1426/0,640.03,-6256.25,0--c:1426,23.595,72.462
+    .goto 1426/0,515.82,-6322.15,0--c:1426,26.117,74.469
+    .goto 1426/0,480.61,-6328.06,0--c:1426,26.832,74.649
+    .goto 1426/0,478.05,-6265.15,0--c:1426,26.884,72.733
+    .goto 1426/0,640.03,-6256.25,50,0--c:1426,23.595,72.462
+    .goto 1426/0,605.80,-6287.25,50,0--c:1426,24.290,73.406
+    .goto 1426/0,588.46,-6311.28,50,0--c:1426,24.642,74.138
+    .goto 1426/0,515.82,-6322.15,50,0--c:1426,26.117,74.469
+    .goto 1426/0,480.61,-6328.06,50,0--c:1426,26.832,74.649
+    .goto 1426/0,478.05,-6265.15,50,0--c:1426,26.884,72.733
     .xp 3+1130 >> Grind to 1130+/1400xp
 step
-    .goto 1426,25.077,75.711
+    .goto 1426/0,567.04,-6362.93--c:1426,25.077,75.711
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grelin Whitebeard|r
     .turnin 234 >> Turn in Coldridge Valley Mail Delivery
     .accept 182 >> Accept The Troll Cave << !Warlock
     .target Grelin Whitebeard
 step << Hunter
     #completewith next
-    .goto 1426,25.861,78.197,0
-    .goto 1426,23.716,80.257,0
-    .goto 1426,20.671,75.838,0
-    .goto 1426,25.861,78.197,45,0
-    .goto 1426,26.382,78.409,45,0
-    .goto 1426,26.031,79.854,45,0
-    .goto 1426,23.716,80.257,45,0
-    .goto 1426,22.836,79.962,45,0
-    .goto 1426,22.684,78.888,45,0
-    .goto 1426,21.029,76.459,45,0
-    .goto 1426,20.671,75.838,45,0
+    .goto 1426/0,528.43,-6444.55,0--c:1426,25.861,78.197
+    .goto 1426/0,634.07,-6512.19,0--c:1426,23.716,80.257
+    .goto 1426/0,784.04,-6367.10,0--c:1426,20.671,75.838
+    .goto 1426/0,528.43,-6444.55,45,0--c:1426,25.861,78.197
+    .goto 1426/0,502.77,-6451.51,45,0--c:1426,26.382,78.409
+    .goto 1426/0,520.06,-6498.96,45,0--c:1426,26.031,79.854
+    .goto 1426/0,634.07,-6512.19,45,0--c:1426,23.716,80.257
+    .goto 1426/0,677.41,-6502.50,45,0--c:1426,22.836,79.962
+    .goto 1426/0,684.90,-6467.24,45,0--c:1426,22.684,78.888
+    .goto 1426/0,766.41,-6387.49,45,0--c:1426,21.029,76.459
+    .goto 1426/0,784.04,-6367.10,45,0--c:1426,20.671,75.838
     >>Kill |cRXP_ENEMY_Frostmane Troll Whelps|r
     .complete 182,1 --Kill Frostmane Troll Whelp (x14)
     .mob Frostmane Troll Whelp
 step << Hunter
-    .goto 1426,25.861,78.197,0
-    .goto 1426,23.716,80.257,0
-    .goto 1426,20.671,75.838,0
+    .goto 1426/0,528.43,-6444.55,0--c:1426,25.861,78.197
+    .goto 1426/0,634.07,-6512.19,0--c:1426,23.716,80.257
+    .goto 1426/0,784.04,-6367.10,0--c:1426,20.671,75.838
     .xp 4 >> Grind to level 4
 step << Paladin/Warlock/Hunter/Shaman
     .goto 1426/0,571.82,-6371.20--c:Dun Morogh,24.980,75.963
@@ -319,9 +319,9 @@ step << Paladin/Warlock/Hunter/Shaman
 step << Paladin/Warlock/Hunter/Shaman
     #optional
     #completewith next
-    .goto 1426,28.792,68.804,12,0
+    .goto 1426/0,384.08,-6136.15,12,0--c:1426,28.792,68.804
     >>|cRXP_WARN_You have 5 minutes to return to Anvilmar before|r |T132791:0|t[Durnan's Scalding Mornbrew] |cRXP_WARN_expires|r
-    .goto 1426,28.939,68.387,12 >> Enter Anvilmar
+    .goto 1426/0,376.84,-6122.46,12 >> Enter Anvilmar--c:1426,28.939,68.387
 step << Paladin/Warlock/Hunter/Shaman
     .goto 1426/0,385.21,-6056.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Durnan Furcutter|r inside
@@ -391,17 +391,17 @@ step << Paladin/Warlock/Hunter/Shaman
     .target Nori Pridedrift
 step
     #loop
-    .goto 1426,25.861,78.197,0
-    .goto 1426,23.716,80.257,0
-    .goto 1426,20.671,75.838,0
-    .goto 1426,25.861,78.197,45,0
-    .goto 1426,26.382,78.409,45,0
-    .goto 1426,26.031,79.854,45,0
-    .goto 1426,23.716,80.257,45,0
-    .goto 1426,22.836,79.962,45,0
-    .goto 1426,22.684,78.888,45,0
-    .goto 1426,21.029,76.459,45,0
-    .goto 1426,20.671,75.838,45,0
+    .goto 1426/0,528.43,-6444.55,0--c:1426,25.861,78.197
+    .goto 1426/0,634.07,-6512.19,0--c:1426,23.716,80.257
+    .goto 1426/0,784.04,-6367.10,0--c:1426,20.671,75.838
+    .goto 1426/0,528.43,-6444.55,45,0--c:1426,25.861,78.197
+    .goto 1426/0,502.77,-6451.51,45,0--c:1426,26.382,78.409
+    .goto 1426/0,520.06,-6498.96,45,0--c:1426,26.031,79.854
+    .goto 1426/0,634.07,-6512.19,45,0--c:1426,23.716,80.257
+    .goto 1426/0,677.41,-6502.50,45,0--c:1426,22.836,79.962
+    .goto 1426/0,684.90,-6467.24,45,0--c:1426,22.684,78.888
+    .goto 1426/0,766.41,-6387.49,45,0--c:1426,21.029,76.459
+    .goto 1426/0,784.04,-6367.10,45,0--c:1426,20.671,75.838
     >>Kill |cRXP_ENEMY_Frostmane Troll Whelps|r << !Shaman
     >>Kill |cRXP_ENEMY_Frostmane Troll Whelps|r. Loot them for their |cRXP_LOOT_Iceclaw Bear Pendants|r << Shaman
     .complete 182,1 --Kill Frostmane Troll Whelp (x14)
@@ -429,17 +429,17 @@ step
     #optional
     #label FrostMCave1
     #completewith Grelin
-    .goto 1426,27.098,80.707,20 >> Enter the Frostmane Cave
+    .goto 1426/0,467.51,-6526.96,20 >> Enter the Frostmane Cave--c:1426,27.098,80.707
 step
     #optional
     #requires FrostMCave1
     #completewith Grelin
-    .goto 1426,28.298,79.836,15,0
-    .goto 1426,29.252,79.043,15,0
-    .goto 1426,30.489,80.165,50 >> Travel towards |cRXP_ENEMY_Grik'nir the Cold|r inside
+    .goto 1426/0,408.41,-6498.37,15,0--c:1426,28.298,79.836
+    .goto 1426/0,361.42,-6472.33,15,0--c:1426,29.252,79.043
+    .goto 1426/0,300.50,-6509.17,50 >> Travel towards |cRXP_ENEMY_Grik'nir the Cold|r inside--c:1426,30.489,80.165
 step
     #label Grelin
-    .goto 1426,30.489,80.165,0,0
+    .goto 1426/0,300.50,-6509.17,0,0--c:1426,30.489,80.165
     >>Kill |cRXP_ENEMY_Grik'nir the Cold|r inside. Loot him for |cRXP_LOOT_Grelin Whitebeard's Journal|r
     .complete 218,1 --Collect Grelin Whitebeard's Journal (x1)
     .mob Grik'nir the Cold
@@ -452,9 +452,9 @@ step
     #hardcore << !Paladin !Warlock !Hunter !Shaman
     #optional
     #completewith Stolen
-    .goto 1426,29.252,79.043,15,0
-    .goto 1426,28.298,79.836,15,0
-    .goto 1426,27.098,80.707,20 >> Exit the Frostmane Cave
+    .goto 1426/0,361.42,-6472.33,15,0--c:1426,29.252,79.043
+    .goto 1426/0,408.41,-6498.37,15,0--c:1426,28.298,79.836
+    .goto 1426/0,467.51,-6526.96,20 >> Exit the Frostmane Cave--c:1426,27.098,80.707
     .subzoneskip 132
 step << !Paladin !Warlock !Hunter !Shaman
     #hardcore
@@ -573,7 +573,7 @@ step << !Paladin !Warlock !Hunter !Shaman
 step << !Paladin !Warlock !Hunter
     #optional
     #completewith Stolen
-    .goto 1426,28.831,68.698,12 >> Exit Anvilmar
+    .goto 1426/0,382.16,-6132.67,12 >> Exit Anvilmar--c:1426,28.831,68.698
     .subzoneskip 77,1
 step << !Paladin !Warlock !Hunter
     #completewith next
@@ -680,9 +680,9 @@ step
     .subzoneskip 131 --Kharanos
 step
     #optional
-    .goto 1426,43.316,56.283,60,0
-    .goto 1426,43.949,52.524,60,0
-    .goto 1426,38.677,60.561,60,0
+    .goto 1426/0,-331.23,-5725.04,60,0--c:1426,43.316,56.283
+    .goto 1426/0,-362.40,-5601.62,60,0--c:1426,43.949,52.524
+    .goto 1426/0,-102.76,-5865.50,60,0--c:1426,38.677,60.561
     .goto 1426/0,-499.17,-5644.37
     .xp 5+1325 >> Travel to Kharanos. Grind to 1325+/2800xp killing |cRXP_ENEMY_Crag Boars|r en-route << Priest
     .xp 5+1595 >> Travel to Kharanos. Grind to 1595+/2800xp killing |cRXP_ENEMY_Crag Boars|r en-route << !Priest
@@ -746,8 +746,8 @@ step
 step
     #optional
     #completewith next
-    .goto 1426,46.952,52.050,8,0
-    .goto 1426,47.153,51.939,8 >> Enter the Thunderbrew Distillery
+    .goto 1426/0,-510.30,-5586.06,8,0--c:1426,46.952,52.050
+    .goto 1426/0,-520.20,-5582.41,8 >> Enter the Thunderbrew Distillery--c:1426,47.153,51.939
 step
     .goto 1426/0,-523.35,-5590.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tannok Frosthammer|r
@@ -852,9 +852,9 @@ step
 step << Paladin/Warrior/Rogue
     #optional
     #completewith Blacksmithing1
-    .goto 1426,45.695,51.911,20 >> Enter the Blacksmith building
+    .goto 1426/0,-448.40,-5581.49,20 >> Enter the Blacksmith building--c:1426,45.695,51.911
 step << Gnome Warrior
-    .goto 1426,45.288,52.193
+    .goto 1426/0,-428.35,-5590.75--c:1426,45.288,52.193
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grawn Thromwyn|r
     >>|cRXP_BUY_Buy a|r |T135321:0|t[Gladius]
     .target Grawn Thromwyn
@@ -868,7 +868,7 @@ step << Gnome Warrior
     .itemcount 2488,1
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.79
 step << Dwarf Warrior
-    .goto 1426,45.288,52.193
+    .goto 1426/0,-428.35,-5590.75--c:1426,45.288,52.193
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grawn Thromwyn|r
     >>|cRXP_BUY_Buy a|r |T132401:0|t[Large Axe]
     .target Grawn Thromwyn
@@ -882,7 +882,7 @@ step << Dwarf Warrior
     .itemcount 2491,1
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.29
 step << Rogue
-    .goto 1426,45.288,52.193
+    .goto 1426/0,-428.35,-5590.75--c:1426,45.288,52.193
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grawn Thromwyn|r
     >>|cRXP_BUY_Buy a|r |T135641:0|t[Stiletto]
     .target Grawn Thromwyn
@@ -896,7 +896,7 @@ step << Rogue
     .itemcount 2494,1
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.29
 step << Paladin
-    .goto 1426,45.288,52.193
+    .goto 1426/0,-428.35,-5590.75--c:1426,45.288,52.193
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grawn Thromwyn|r
     >>|cRXP_BUY_Buy a|r |T133053:0|t[Wooden Mallet]
     .target Grawn Thromwyn
@@ -913,7 +913,7 @@ step << Paladin
 step << Warrior/Rogue/Paladin
     #label Blacksmithing1
     #requires DeleteOldDaggers << Rogue
-    .goto 1426,45.344,51.936
+    .goto 1426/0,-431.11,-5582.32--c:1426,45.344,51.936
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tognus Flintfire|r
     >>|cRXP_WARN_This will allow you to make|r |T135248:0|t[Rough Sharpening Stones] |cRXP_WARN_which increase your melee damage by 2|r << Warrior/Rogue
     >>|cRXP_WARN_This will allow you to make|r |T135255:0|t[Rough Weightstones] |cRXP_WARN_which increase your melee damage by 2|r << Paladin
@@ -921,7 +921,7 @@ step << Warrior/Rogue/Paladin
     .train 2018 >> Train |T136241:0|t[Blacksmithing]
     .target Tognus Flintfire
 step << Shaman
-    .goto 1426,45.288,52.193
+    .goto 1426/0,-428.35,-5590.75--c:1426,45.288,52.193
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grawn Thromwyn|r
     >>|cRXP_BUY_Buy a|r |T135145:0|t[Walking Stick]
     .target Grawn Thromwyn
@@ -1034,14 +1034,14 @@ step
     .complete 98319,1 --|Mountaineer Cornelius found
 step
     #loop
-    .goto 1426,42.982,54.755,0
-    .goto 1426,41.918,54.053,0
-    .goto 1426,41.100,48.927,0
-    .goto 1426,42.982,54.755,40,0
-    .goto 1426,41.901,55.217,40,0
-    .goto 1426,41.918,54.053,40,0
-    .goto 1426,42.177,53.274,40,0
-    .goto 1426,41.100,48.927,40,0
+    .goto 1426/0,-314.78,-5674.87,0--c:1426,42.982,54.755
+    .goto 1426/0,-262.38,-5651.82,0--c:1426,41.918,54.053
+    .goto 1426/0,-222.09,-5483.52,0--c:1426,41.100,48.927
+    .goto 1426/0,-314.78,-5674.87,40,0--c:1426,42.982,54.755
+    .goto 1426/0,-261.54,-5690.04,40,0--c:1426,41.901,55.217
+    .goto 1426/0,-262.38,-5651.82,40,0--c:1426,41.918,54.053
+    .goto 1426/0,-275.13,-5626.25,40,0--c:1426,42.177,53.274
+    .goto 1426/0,-222.09,-5483.52,40,0--c:1426,41.100,48.927
     .goto 1426/0,-274.900,-5423.500,40,0
     .goto 1426/0,-312.500,-5506.300,40,0
     .goto 1426/0,-275.000,-5623.200,40,0
@@ -1062,34 +1062,34 @@ step
     >>Kill |cRXP_ENEMY_Young Black Bears|r or |cRXP_ENEMY_Ice Claw Bears|r. Loot them for their |cRXP_LOOT_Thick Bear Fur|r
     >>Kill |cRXP_ENEMY_Large Crag Boars|r and |cRXP_ENEMY_Crag Boars|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r and |cRXP_LOOT_Crag Boar Ribs|r
     .complete 317,2 --Collect Thick Bear Fur (x2)
-    .goto 1426,43.704,65.296,0
-    .goto 1426,47.657,64.039,0
-    .goto 1426,46.285,59.797,0
-    .goto 1426,43.704,65.296,60,0
-    .goto 1426,44.729,65.685,60,0
-    .goto 1426,45.128,64.702,60,0
-    .goto 1426,46.111,64.349,60,0
-    .goto 1426,47.657,64.039,60,0
-    .goto 1426,49.484,62.370,60,0
-    .goto 1426,49.156,59.842,60,0
-    .goto 1426,49.403,58.855,60,0
-    .goto 1426,48.523,57.088,60,0
-    .goto 1426,46.285,59.797,60,0
+    .goto 1426/0,-350.34,-6020.97,0--c:1426,43.704,65.296
+    .goto 1426/0,-545.02,-5979.70,0--c:1426,47.657,64.039
+    .goto 1426/0,-477.45,-5840.42,0--c:1426,46.285,59.797
+    .goto 1426/0,-350.34,-6020.97,60,0--c:1426,43.704,65.296
+    .goto 1426/0,-400.82,-6033.74,60,0--c:1426,44.729,65.685
+    .goto 1426/0,-420.47,-6001.47,60,0--c:1426,45.128,64.702
+    .goto 1426/0,-468.88,-5989.88,60,0--c:1426,46.111,64.349
+    .goto 1426/0,-545.02,-5979.70,60,0--c:1426,47.657,64.039
+    .goto 1426/0,-635.00,-5924.90,60,0--c:1426,49.484,62.370
+    .goto 1426/0,-618.85,-5841.90,60,0--c:1426,49.156,59.842
+    .goto 1426/0,-631.01,-5809.49,60,0--c:1426,49.403,58.855
+    .goto 1426/0,-587.67,-5751.47,60,0--c:1426,48.523,57.088
+    .goto 1426/0,-477.45,-5840.42,60,0--c:1426,46.285,59.797
     .mob +Young Black Bear
     .mob +Ice Claw Bears
     .complete 317,1 --Collect Chunk of Boar Meat (x4)
-    .goto 1426,43.452,58.760,0
-    .goto 1426,44.898,50.142,0
-    .goto 1426,50.555,51.778,0
-    .goto 1426,43.452,58.760,60,0
-    .goto 1426,44.969,55.078,60,0
-    .goto 1426,43.748,51.885,60,0
-    .goto 1426,44.243,50.923,60,0
-    .goto 1426,44.898,50.142,60,0
-    .goto 1426,45.395,49.347,60,0
-    .goto 1426,48.092,49.904,60,0
-    .goto 1426,49.177,51.013,60,0
-    .goto 1426,50.555,51.778,60,0
+    .goto 1426/0,-337.93,-5806.37,0--c:1426,43.452,58.760
+    .goto 1426/0,-409.14,-5523.41,0--c:1426,44.898,50.142
+    .goto 1426/0,-687.75,-5577.13,0--c:1426,50.555,51.778
+    .goto 1426/0,-337.93,-5806.37,60,0--c:1426,43.452,58.760
+    .goto 1426/0,-412.64,-5685.48,60,0--c:1426,44.969,55.078
+    .goto 1426/0,-352.51,-5580.64,60,0--c:1426,43.748,51.885
+    .goto 1426/0,-376.88,-5549.06,60,0--c:1426,44.243,50.923
+    .goto 1426/0,-409.14,-5523.41,60,0--c:1426,44.898,50.142
+    .goto 1426/0,-433.62,-5497.31,60,0--c:1426,45.395,49.347
+    .goto 1426/0,-566.45,-5515.60,60,0--c:1426,48.092,49.904
+    .goto 1426/0,-619.88,-5552.01,60,0--c:1426,49.177,51.013
+    .goto 1426/0,-687.75,-5577.13,60,0--c:1426,50.555,51.778
     .mob +Large Crag Boar
     .mob +Crag Boar
     .collect 2886,6,384,1 --Collect Crag Boar Rib (x6)
@@ -1141,7 +1141,7 @@ step
 step
     #optional
     #completewith AfR
-    .goto 1426,40.632,62.794,40,0
+    .goto 1426/0,-199.04,-5938.82,40,0--c:1426,40.632,62.794
     .goto 1426/0,-201.51,-6015.520,15 >>Travel toward |cRXP_FRIENDLY_Hegnar Rumbleshot|r
 step << Hunter
     #optional
@@ -1162,8 +1162,8 @@ step
 step
     #optional
     #completewith next
-    .goto 1426,36.368,52.354,20,0
-    .goto 1426,35.942,52.030,15,0
+    .goto 1426/0,10.96,-5596.04,20,0--c:1426,36.368,52.354
+    .goto 1426/0,31.94,-5585.40,15,0--c:1426,35.942,52.030
     .goto 1426/0,99.17,-5572.99,20 >> Travel toward |cRXP_FRIENDLY_Tundra MacGrann|r
 step
     .goto 1426/0,99.17,-5572.99
@@ -1203,28 +1203,28 @@ step
     #sticky
     #label ForceFavorRibNo
     #loop
-    .goto 1426,31.212,39.189,0
-    .goto 1426,27.876,45.549,0
-    .goto 1426,29.443,50.102,0
-    .goto 1426,31.691,46.837,0
-    .waypoint 1426,31.212,39.189,60,0
-    .waypoint 1426,30.049,38.561,60,0
-    .waypoint 1426,29.198,40.458,60,0
-    .waypoint 1426,29.362,42.975,60,0
-    .waypoint 1426,28.298,44.441,60,0
-    .waypoint 1426,27.876,45.549,60,0
-    .waypoint 1426,26.294,46.484,60,0
-    .waypoint 1426,27.562,47.657,60,0
-    .waypoint 1426,28.020,48.267,60,0
-    .waypoint 1426,27.874,49.402,60,0
-    .waypoint 1426,29.443,50.102,60,0
-    .waypoint 1426,28.412,52.449,60,0
-    .waypoint 1426,27.650,53.709,60,0
-    .waypoint 1426,26.769,55.778,60,0
-    .waypoint 1426,29.294,54.249,60,0
-    .waypoint 1426,31.767,49.790,60,0
-    .waypoint 1426,33.832,48.153,60,0
-    .waypoint 1426,31.691,46.837,60,0
+    .goto 1426/0,264.89,-5163.79,0--c:1426,31.212,39.189
+    .goto 1426/0,429.19,-5372.61,0--c:1426,27.876,45.549
+    .goto 1426/0,352.02,-5522.10,0--c:1426,29.443,50.102
+    .goto 1426/0,241.30,-5414.90,0--c:1426,31.691,46.837
+    .waypoint 1426/0,264.89,-5163.79,60,0--c:1426,31.212,39.189
+    .waypoint 1426/0,322.17,-5143.17,60,0--c:1426,30.049,38.561
+    .waypoint 1426/0,364.08,-5205.45,60,0--c:1426,29.198,40.458
+    .waypoint 1426/0,356.00,-5288.10,60,0--c:1426,29.362,42.975
+    .waypoint 1426/0,408.41,-5336.23,60,0--c:1426,28.298,44.441
+    .waypoint 1426/0,429.19,-5372.61,60,0--c:1426,27.876,45.549
+    .waypoint 1426/0,507.10,-5403.31,60,0--c:1426,26.294,46.484
+    .waypoint 1426/0,444.65,-5441.82,60,0--c:1426,27.562,47.657
+    .waypoint 1426/0,422.10,-5461.85,60,0--c:1426,28.020,48.267
+    .waypoint 1426/0,429.29,-5499.12,60,0--c:1426,27.874,49.402
+    .waypoint 1426/0,352.02,-5522.10,60,0--c:1426,29.443,50.102
+    .waypoint 1426/0,402.79,-5599.16,60,0--c:1426,28.412,52.449
+    .waypoint 1426/0,440.32,-5640.53,60,0--c:1426,27.650,53.709
+    .waypoint 1426/0,483.71,-5708.46,60,0--c:1426,26.769,55.778
+    .waypoint 1426/0,359.35,-5658.26,60,0--c:1426,29.294,54.249
+    .waypoint 1426/0,237.56,-5511.85,60,0--c:1426,31.767,49.790
+    .waypoint 1426/0,135.86,-5458.11,60,0--c:1426,33.832,48.153
+    .waypoint 1426/0,241.30,-5414.90,60,0--c:1426,31.691,46.837
     >>Kill |cRXP_ENEMY_Elder Crag Boars|r. Loot them for their |cRXP_LOOT_Crag Boar Ribs|r
     >>Kill |cRXP_ENEMY_Ice Claw Bears|r and |cRXP_ENEMY_Snow Leopards|r
     .complete 319,2 --Kill Elder Crag Boar (x8)
@@ -1240,28 +1240,28 @@ step
     #sticky
     #label ForceFavorRibYes
     #loop
-    .goto 1426,31.212,39.189,0
-    .goto 1426,27.876,45.549,0
-    .goto 1426,29.443,50.102,0
-    .goto 1426,31.691,46.837,0
-    .waypoint 1426,31.212,39.189,60,0
-    .waypoint 1426,30.049,38.561,60,0
-    .waypoint 1426,29.198,40.458,60,0
-    .waypoint 1426,29.362,42.975,60,0
-    .waypoint 1426,28.298,44.441,60,0
-    .waypoint 1426,27.876,45.549,60,0
-    .waypoint 1426,26.294,46.484,60,0
-    .waypoint 1426,27.562,47.657,60,0
-    .waypoint 1426,28.020,48.267,60,0
-    .waypoint 1426,27.874,49.402,60,0
-    .waypoint 1426,29.443,50.102,60,0
-    .waypoint 1426,28.412,52.449,60,0
-    .waypoint 1426,27.650,53.709,60,0
-    .waypoint 1426,26.769,55.778,60,0
-    .waypoint 1426,29.294,54.249,60,0
-    .waypoint 1426,31.767,49.790,60,0
-    .waypoint 1426,33.832,48.153,60,0
-    .waypoint 1426,31.691,46.837,60,0
+    .goto 1426/0,264.89,-5163.79,0--c:1426,31.212,39.189
+    .goto 1426/0,429.19,-5372.61,0--c:1426,27.876,45.549
+    .goto 1426/0,352.02,-5522.10,0--c:1426,29.443,50.102
+    .goto 1426/0,241.30,-5414.90,0--c:1426,31.691,46.837
+    .waypoint 1426/0,264.89,-5163.79,60,0--c:1426,31.212,39.189
+    .waypoint 1426/0,322.17,-5143.17,60,0--c:1426,30.049,38.561
+    .waypoint 1426/0,364.08,-5205.45,60,0--c:1426,29.198,40.458
+    .waypoint 1426/0,356.00,-5288.10,60,0--c:1426,29.362,42.975
+    .waypoint 1426/0,408.41,-5336.23,60,0--c:1426,28.298,44.441
+    .waypoint 1426/0,429.19,-5372.61,60,0--c:1426,27.876,45.549
+    .waypoint 1426/0,507.10,-5403.31,60,0--c:1426,26.294,46.484
+    .waypoint 1426/0,444.65,-5441.82,60,0--c:1426,27.562,47.657
+    .waypoint 1426/0,422.10,-5461.85,60,0--c:1426,28.020,48.267
+    .waypoint 1426/0,429.29,-5499.12,60,0--c:1426,27.874,49.402
+    .waypoint 1426/0,352.02,-5522.10,60,0--c:1426,29.443,50.102
+    .waypoint 1426/0,402.79,-5599.16,60,0--c:1426,28.412,52.449
+    .waypoint 1426/0,440.32,-5640.53,60,0--c:1426,27.650,53.709
+    .waypoint 1426/0,483.71,-5708.46,60,0--c:1426,26.769,55.778
+    .waypoint 1426/0,359.35,-5658.26,60,0--c:1426,29.294,54.249
+    .waypoint 1426/0,237.56,-5511.85,60,0--c:1426,31.767,49.790
+    .waypoint 1426/0,135.86,-5458.11,60,0--c:1426,33.832,48.153
+    .waypoint 1426/0,241.30,-5414.90,60,0--c:1426,31.691,46.837
     >>Kill |cRXP_ENEMY_Ice Claw Bears|r, |cRXP_ENEMY_Elder Crag Boars|r, and |cRXP_ENEMY_Snow Leopards|r
     .complete 319,1 --Kill Ice Claw Bear (x6)
     .mob +Ice Claw Bear
@@ -1291,8 +1291,8 @@ step
     .mob Frostmane Headhunter
 step
     #optional
-    .goto 1426,24.975,50.473,20,0
-    .goto 1426,24.682,50.836,20 >> Run up the side of the cave entrance. Jump down into Frostmane Hold
+    .goto 1426/0,572.06,-5534.28,20,0--c:1426,24.975,50.473
+    .goto 1426/0,586.49,-5546.20,20 >> Run up the side of the cave entrance. Jump down into Frostmane Hold--c:1426,24.682,50.836
     .isOnQuest 287
 step
     #label Headhunters
@@ -1305,17 +1305,17 @@ step
     .complete 287,2 --Fully explore Frostmane Hold
 step
     #loop
-    .goto 1426,22.390,51.701,0
-    .goto 1426,23.136,50.886,0
-    .goto 1426,24.301,50.898,0
-    .waypoint 1426,22.390,51.701,30,0
-    .waypoint 1426,21.113,51.717,30,0
-    .waypoint 1426,21.131,51.024,30,0
-    .waypoint 1426,22.067,50.215,30,0
-    .waypoint 1426,23.136,50.886,30,0
-    .waypoint 1426,23.373,51.385,30,0
-    .waypoint 1426,23.568,50.924,30,0
-    .waypoint 1426,24.301,50.898,30,0
+    .goto 1426/0,699.38,-5574.60,0--c:1426,22.390,51.701
+    .goto 1426/0,662.64,-5547.84,0--c:1426,23.136,50.886
+    .goto 1426/0,605.26,-5548.23,0--c:1426,24.301,50.898
+    .waypoint 1426/0,699.38,-5574.60,30,0--c:1426,22.390,51.701
+    .waypoint 1426/0,762.27,-5575.12,30,0--c:1426,21.113,51.717
+    .waypoint 1426/0,761.38,-5552.37,30,0--c:1426,21.131,51.024
+    .waypoint 1426/0,715.28,-5525.81,30,0--c:1426,22.067,50.215
+    .waypoint 1426/0,662.64,-5547.84,30,0--c:1426,23.136,50.886
+    .waypoint 1426/0,650.96,-5564.22,30,0--c:1426,23.373,51.385
+    .waypoint 1426/0,641.36,-5549.09,30,0--c:1426,23.568,50.924
+    .waypoint 1426/0,605.26,-5548.23,30,0--c:1426,24.301,50.898
     >>Kill |cRXP_ENEMY_Frostmane Headhunters|r inside the cave
     .complete 287,1 --Kill Frostmane Headhunter (x5)
     .mob Frostmane Headhunter
@@ -1440,9 +1440,9 @@ step << Hunter
     .accept 314 >> Accept Protecting the Herd
     .target Rudra Amberstill
 step << Hunter
-    .goto 1426,62.094,47.154,40,0
-    .goto 1426,62.434,48.989,40,0
-    .goto 1426,62.538,46.195
+    .goto 1426/0,-1256.05,-5425.31,40,0--c:1426,62.094,47.154
+    .goto 1426/0,-1272.79,-5485.56,40,0--c:1426,62.434,48.989
+    .goto 1426/0,-1277.91,-5393.82--c:1426,62.538,46.195
     >>Kill |cRXP_ENEMY_Vagash|r. Loot him for his |cRXP_LOOT_Fang|r
     >>|cRXP_WARN_Kite him to the guard south of the ranch. Make sure you do 51%+ damage to him|r
     >>|cRXP_WARN_Watch the video below before you attempt to kill |cRXP_ENEMY_Vagash|r. It can be soloed on any class|r
@@ -1462,15 +1462,15 @@ step << Hunter
     .target Foreman Stonebrow
 step << Hunter
     #loop
-    .goto 1426,70.073,57.030,0
-    .goto 1426,68.533,58.372,0
-    .goto 1426,68.958,59.357,0
-    .waypoint 1426,70.073,57.030,45,0
-    .waypoint 1426,69.223,58.242,45,0
-    .waypoint 1426,68.533,58.372,45,0
-    .waypoint 1426,67.687,60.059,45,0
-    .waypoint 1426,68.958,59.357,45,0
-    .waypoint 1426,70.475,59.420,45,0
+    .goto 1426/0,-1649.01,-5749.57,0--c:1426,70.073,57.030
+    .goto 1426/0,-1573.17,-5793.63,0--c:1426,68.533,58.372
+    .goto 1426/0,-1594.10,-5825.97,0--c:1426,68.958,59.357
+    .waypoint 1426/0,-1649.01,-5749.57,45,0--c:1426,70.073,57.030
+    .waypoint 1426/0,-1607.15,-5789.36,45,0--c:1426,69.223,58.242
+    .waypoint 1426/0,-1573.17,-5793.63,45,0--c:1426,68.533,58.372
+    .waypoint 1426/0,-1531.50,-5849.02,45,0--c:1426,67.687,60.059
+    .waypoint 1426/0,-1594.10,-5825.97,45,0--c:1426,68.958,59.357
+    .waypoint 1426/0,-1668.81,-5828.04,45,0--c:1426,70.475,59.420
     >>Kill |cRXP_ENEMY_Rockjaw Skullthumpers|r outside the mine. Loot them for the |T132621:0|t[|cRXP_LOOT_Empty Powder Keg|r]
     .use 268548 >> |cRXP_WARN_Use the|r |T132621:0|t[|cRXP_LOOT_Empty Powder Keg|r] |cRXP_WARN_to start the quest|r
     >>|cRXP_WARN_NOTE: This item has a low drop rate. Skip this step if you do not find it|r
@@ -1534,8 +1534,8 @@ step
     .isOnQuest 315
     #completewith ShimmerweedCollect
     #optional
-    .goto 1426,42.935,45.216,20,0
-    .goto 1426,42.254,45.301,15 >> Travel up the mountain slope to Shimmer Ridge
+    .goto 1426/0,-312.47,-5361.68,20,0--c:1426,42.935,45.216
+    .goto 1426/0,-278.93,-5364.47,15 >> Travel up the mountain slope to Shimmer Ridge--c:1426,42.254,45.301
 step
     #label ShimmerweedCollect
     .goto 1426/0,-212.24,-5364.43,60,0
@@ -1598,55 +1598,55 @@ step << Hunter
     .isQuestTurnedIn 320
 step << !Hunter
     #loop
-    .goto 1426,31.212,39.189,0
-    .goto 1426,27.876,45.549,0
-    .goto 1426,29.443,50.102,0
-    .goto 1426,31.691,46.837,0
-    .waypoint 1426,31.212,39.189,60,0
-    .waypoint 1426,30.049,38.561,60,0
-    .waypoint 1426,29.198,40.458,60,0
-    .waypoint 1426,29.362,42.975,60,0
-    .waypoint 1426,28.298,44.441,60,0
-    .waypoint 1426,27.876,45.549,60,0
-    .waypoint 1426,26.294,46.484,60,0
-    .waypoint 1426,27.562,47.657,60,0
-    .waypoint 1426,28.020,48.267,60,0
-    .waypoint 1426,27.874,49.402,60,0
-    .waypoint 1426,29.443,50.102,60,0
-    .waypoint 1426,28.412,52.449,60,0
-    .waypoint 1426,27.650,53.709,60,0
-    .waypoint 1426,26.769,55.778,60,0
-    .waypoint 1426,29.294,54.249,60,0
-    .waypoint 1426,31.767,49.790,60,0
-    .waypoint 1426,33.832,48.153,60,0
-    .waypoint 1426,31.691,46.837,60,0
+    .goto 1426/0,264.89,-5163.79,0--c:1426,31.212,39.189
+    .goto 1426/0,429.19,-5372.61,0--c:1426,27.876,45.549
+    .goto 1426/0,352.02,-5522.10,0--c:1426,29.443,50.102
+    .goto 1426/0,241.30,-5414.90,0--c:1426,31.691,46.837
+    .waypoint 1426/0,264.89,-5163.79,60,0--c:1426,31.212,39.189
+    .waypoint 1426/0,322.17,-5143.17,60,0--c:1426,30.049,38.561
+    .waypoint 1426/0,364.08,-5205.45,60,0--c:1426,29.198,40.458
+    .waypoint 1426/0,356.00,-5288.10,60,0--c:1426,29.362,42.975
+    .waypoint 1426/0,408.41,-5336.23,60,0--c:1426,28.298,44.441
+    .waypoint 1426/0,429.19,-5372.61,60,0--c:1426,27.876,45.549
+    .waypoint 1426/0,507.10,-5403.31,60,0--c:1426,26.294,46.484
+    .waypoint 1426/0,444.65,-5441.82,60,0--c:1426,27.562,47.657
+    .waypoint 1426/0,422.10,-5461.85,60,0--c:1426,28.020,48.267
+    .waypoint 1426/0,429.29,-5499.12,60,0--c:1426,27.874,49.402
+    .waypoint 1426/0,352.02,-5522.10,60,0--c:1426,29.443,50.102
+    .waypoint 1426/0,402.79,-5599.16,60,0--c:1426,28.412,52.449
+    .waypoint 1426/0,440.32,-5640.53,60,0--c:1426,27.650,53.709
+    .waypoint 1426/0,483.71,-5708.46,60,0--c:1426,26.769,55.778
+    .waypoint 1426/0,359.35,-5658.26,60,0--c:1426,29.294,54.249
+    .waypoint 1426/0,237.56,-5511.85,60,0--c:1426,31.767,49.790
+    .waypoint 1426/0,135.86,-5458.11,60,0--c:1426,33.832,48.153
+    .waypoint 1426/0,241.30,-5414.90,60,0--c:1426,31.691,46.837
     .xp 8+4525 >> Grind to 4525+/5400xp
     .isQuestAvailable 320
 step << !Hunter
     #optional
     #loop
-    .goto 1426,31.212,39.189,0
-    .goto 1426,27.876,45.549,0
-    .goto 1426,29.443,50.102,0
-    .goto 1426,31.691,46.837,0
-    .waypoint 1426,31.212,39.189,60,0
-    .waypoint 1426,30.049,38.561,60,0
-    .waypoint 1426,29.198,40.458,60,0
-    .waypoint 1426,29.362,42.975,60,0
-    .waypoint 1426,28.298,44.441,60,0
-    .waypoint 1426,27.876,45.549,60,0
-    .waypoint 1426,26.294,46.484,60,0
-    .waypoint 1426,27.562,47.657,60,0
-    .waypoint 1426,28.020,48.267,60,0
-    .waypoint 1426,27.874,49.402,60,0
-    .waypoint 1426,29.443,50.102,60,0
-    .waypoint 1426,28.412,52.449,60,0
-    .waypoint 1426,27.650,53.709,60,0
-    .waypoint 1426,26.769,55.778,60,0
-    .waypoint 1426,29.294,54.249,60,0
-    .waypoint 1426,31.767,49.790,60,0
-    .waypoint 1426,33.832,48.153,60,0
-    .waypoint 1426,31.691,46.837,60,0
+    .goto 1426/0,264.89,-5163.79,0--c:1426,31.212,39.189
+    .goto 1426/0,429.19,-5372.61,0--c:1426,27.876,45.549
+    .goto 1426/0,352.02,-5522.10,0--c:1426,29.443,50.102
+    .goto 1426/0,241.30,-5414.90,0--c:1426,31.691,46.837
+    .waypoint 1426/0,264.89,-5163.79,60,0--c:1426,31.212,39.189
+    .waypoint 1426/0,322.17,-5143.17,60,0--c:1426,30.049,38.561
+    .waypoint 1426/0,364.08,-5205.45,60,0--c:1426,29.198,40.458
+    .waypoint 1426/0,356.00,-5288.10,60,0--c:1426,29.362,42.975
+    .waypoint 1426/0,408.41,-5336.23,60,0--c:1426,28.298,44.441
+    .waypoint 1426/0,429.19,-5372.61,60,0--c:1426,27.876,45.549
+    .waypoint 1426/0,507.10,-5403.31,60,0--c:1426,26.294,46.484
+    .waypoint 1426/0,444.65,-5441.82,60,0--c:1426,27.562,47.657
+    .waypoint 1426/0,422.10,-5461.85,60,0--c:1426,28.020,48.267
+    .waypoint 1426/0,429.29,-5499.12,60,0--c:1426,27.874,49.402
+    .waypoint 1426/0,352.02,-5522.10,60,0--c:1426,29.443,50.102
+    .waypoint 1426/0,402.79,-5599.16,60,0--c:1426,28.412,52.449
+    .waypoint 1426/0,440.32,-5640.53,60,0--c:1426,27.650,53.709
+    .waypoint 1426/0,483.71,-5708.46,60,0--c:1426,26.769,55.778
+    .waypoint 1426/0,359.35,-5658.26,60,0--c:1426,29.294,54.249
+    .waypoint 1426/0,237.56,-5511.85,60,0--c:1426,31.767,49.790
+    .waypoint 1426/0,135.86,-5458.11,60,0--c:1426,33.832,48.153
+    .waypoint 1426/0,241.30,-5414.90,60,0--c:1426,31.691,46.837
     .xp 9 >> Grind to level 9
 step
     #completewith next
@@ -1734,7 +1734,7 @@ step << Warrior
     .target Bixi Wobblebonk
     .target Buliwyf Stonehand
 step << Warrior
-    .goto 1455,62.378,88.671
+    .goto 1455/0,-1206.77,-5037.07--c:1455,62.378,88.671
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brenwyn Wintersteel|r downstairs
     >>|cRXP_BUY_Buy the|r |T135425:0|t[Keen Throwing Knives] |cRXP_BUY_from her|r
     .collect 3107,1 --Collect Keen Throwing Knife (1)
@@ -1742,7 +1742,7 @@ step << Warrior
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.3
     .xp <11,1
 step << Warrior
-    .goto 1455,62.378,88.671
+    .goto 1455/0,-1206.77,-5037.07--c:1455,62.378,88.671
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brenwyn Wintersteel|r downstairs
     >>|cRXP_BUY_Buy the|r |T135641:0|t[Balanced Throwing Daggers] |cRXP_BUY_from her|r
     .collect 2946,1 --Collect Balanced Throwing Dagger (1)
@@ -1765,7 +1765,7 @@ step << Warrior
     .itemcount 2946,1
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.0
 step << Warrior
-    .goto 1426,53.47,35.02
+    .goto 1426/0,-831.31,-5026.91--c:1426,53.47,35.02
     >>Exit Ironforge. Return to Dun Morogh
     .zone Dun Morogh >> Travel to Dun Morogh
     .zoneskip Ironforge,1
@@ -1773,7 +1773,7 @@ step
     #optional
     #label BoarMeatDunMorogh1
     #completewith Dirt
-    .goto 1426,57.936,50.787,0
+    .goto 1426/0,-1051.26,-5544.59,0--c:1426,57.936,50.787
     >>Kill |cRXP_ENEMY_Elder Crag Boars|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
     >>|cRXP_WARN_This will be used to level your|r |T133971:0|t[Cooking] |cRXP_WARN_later|r
     >>|cRXP_WARN_You need 10|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Auberdine later|r
@@ -1784,7 +1784,7 @@ step
     #optional
     #requires BoarMeatDunMorogh1
     #completewith Dirt
-    .goto 1426,57.936,50.787,0
+    .goto 1426/0,-1051.26,-5544.59,0--c:1426,57.936,50.787
     >>Kill |cRXP_ENEMY_Elder Crag Boars|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
     >>|cRXP_WARN_This will be used to level your|r |T133971:0|t[Cooking] |cRXP_WARN_later|r
     >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Darkshire later|r
@@ -1818,9 +1818,9 @@ step << !Hunter
     .accept 314 >> Accept Protecting the Herd
     .target Rudra Amberstill
 step << !Hunter
-    .goto 1426,62.094,47.154,40,0
-    .goto 1426,62.434,48.989,40,0
-    .goto 1426,62.538,46.195
+    .goto 1426/0,-1256.05,-5425.31,40,0--c:1426,62.094,47.154
+    .goto 1426/0,-1272.79,-5485.56,40,0--c:1426,62.434,48.989
+    .goto 1426/0,-1277.91,-5393.82--c:1426,62.538,46.195
     >>Kill |cRXP_ENEMY_Vagash|r. Loot him for his |cRXP_LOOT_Fang|r
     >>|cRXP_WARN_Kite him to the guard south of the ranch. Make sure you do 51%+ damage to him|r
     >>|cRXP_WARN_Watch the video below before you attempt to kill |cRXP_ENEMY_Vagash|r. It can be soloed on any class|r
@@ -1837,7 +1837,7 @@ step
     #optional
     #label BoarMeatDunMorogh2
     #completewith QuarryStart
-    .goto 1426,66.356,51.02,0
+    .goto 1426/0,-1465.95,-5552.24,0--c:1426,66.356,51.02
     >>Kill |cRXP_ENEMY_Large Crag Boars|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
     .collect 769,10,2178,1,0x20,cooking --Chunk of Boar Meat (1-10)
     .mob Large Crag Boar
@@ -1847,7 +1847,7 @@ step
     #optional
     #requires BoarMeatDunMorogh2
     #completewith QuarryStart
-    .goto 1426,66.356,51.02,0
+    .goto 1426/0,-1465.95,-5552.24,0--c:1426,66.356,51.02
     >>Kill |cRXP_ENEMY_Large Crag Boars|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
     >>|cRXP_WARN_Don't go out of your way to farm this now. Simply kill and loot all the boars you're passing by|r
     .collect 769,50,2178,1,0x20,cooking --Chunk of Boar Meat (10-50)
@@ -1931,40 +1931,40 @@ step
     #sticky
     #label Skullthumpers
     #loop
-    .goto 1426,70.073,57.030,0
-    .goto 1426,68.533,58.372,0
-    .goto 1426,68.958,59.357,0
-    .waypoint 1426,70.073,57.030,45,0
-    .waypoint 1426,69.223,58.242,45,0
-    .waypoint 1426,68.533,58.372,45,0
-    .waypoint 1426,67.687,60.059,45,0
-    .waypoint 1426,68.958,59.357,45,0
-    .waypoint 1426,70.475,59.420,45,0
+    .goto 1426/0,-1649.01,-5749.57,0--c:1426,70.073,57.030
+    .goto 1426/0,-1573.17,-5793.63,0--c:1426,68.533,58.372
+    .goto 1426/0,-1594.10,-5825.97,0--c:1426,68.958,59.357
+    .waypoint 1426/0,-1649.01,-5749.57,45,0--c:1426,70.073,57.030
+    .waypoint 1426/0,-1607.15,-5789.36,45,0--c:1426,69.223,58.242
+    .waypoint 1426/0,-1573.17,-5793.63,45,0--c:1426,68.533,58.372
+    .waypoint 1426/0,-1531.50,-5849.02,45,0--c:1426,67.687,60.059
+    .waypoint 1426/0,-1594.10,-5825.97,45,0--c:1426,68.958,59.357
+    .waypoint 1426/0,-1668.81,-5828.04,45,0--c:1426,70.475,59.420
     >>Kill |cRXP_ENEMY_Rockjaw Skullthumpers|r in or outside the mine
     .complete 432,1 --Kill Rockjaw Skullthumper (x6)
     .mob Rockjaw Skullthumper
 step
     #optional
     #completewith next
-    .goto 1426,70.750,56.219,20 >>Enter the Gol'Bolar Quarry Mine
+    .goto 1426/0,-1682.35,-5722.94,20 >>Enter the Gol'Bolar Quarry Mine--c:1426,70.750,56.219
     .isOnQuest 433
 step
     #label RockjawBonesnappers
     #loop
-    .goto 1426,70.750,56.219,0
-    .goto 1426,71.344,51.873,0
-    .goto 1426,72.570,53.488,0
-    .goto 1426,70.750,56.219,30,0
-    .goto 1426,70.964,54.538,30,0
-    .goto 1426,70.679,53.301,30,0
-    .goto 1426,70.461,52.292,30,0
-    .goto 1426,71.344,51.873,30,0
-    .goto 1426,71.999,50.204,30,0
-    .goto 1426,72.456,51.300,30,0
-    .goto 1426,72.613,52.509,30,0
-    .goto 1426,72.570,53.488,30,0
-    .goto 1426,71.790,52.278,30,0
-    .goto 1426,71.591,51.831,30,0
+    .goto 1426/0,-1682.35,-5722.94,0--c:1426,70.750,56.219
+    .goto 1426/0,-1711.61,-5580.25,0--c:1426,71.344,51.873
+    .goto 1426/0,-1771.99,-5633.27,0--c:1426,72.570,53.488
+    .goto 1426/0,-1682.35,-5722.94,30,0--c:1426,70.750,56.219
+    .goto 1426/0,-1692.89,-5667.75,30,0--c:1426,70.964,54.538
+    .goto 1426/0,-1678.86,-5627.13,30,0--c:1426,70.679,53.301
+    .goto 1426/0,-1668.12,-5594.00,30,0--c:1426,70.461,52.292
+    .goto 1426/0,-1711.61,-5580.25,30,0--c:1426,71.344,51.873
+    .goto 1426/0,-1743.87,-5525.45,30,0--c:1426,71.999,50.204
+    .goto 1426/0,-1766.37,-5561.43,30,0--c:1426,72.456,51.300
+    .goto 1426/0,-1774.11,-5601.13,30,0--c:1426,72.613,52.509
+    .goto 1426/0,-1771.99,-5633.27,30,0--c:1426,72.570,53.488
+    .goto 1426/0,-1733.57,-5593.54,30,0--c:1426,71.790,52.278
+    .goto 1426/0,-1723.77,-5578.87,30,0--c:1426,71.591,51.831
     >>Kill |cRXP_ENEMY_Rockjaw Bonesnappers|r inside the mine
     .complete 433,1 --Kill Rockjaw Bonesnapper (x10)
     .mob Rockjaw Bonesnapper
@@ -2000,12 +2000,12 @@ step
     #optional
     #label BoarMeatDunMorogh3
     #completewith LochEnter
-    .goto 1426,70.845,51.784,0
-    .goto 1426,73.533,50.850,0
-    .goto 1426,75.353,48.533,0
-    .goto 1426,79.881,46.805,0
-    .goto 1426,81.040,43.456,0
-    .goto 1426,80.583,36.040,0
+    .goto 1426/0,-1687.03,-5577.32,0--c:1426,70.845,51.784
+    .goto 1426/0,-1819.42,-5546.66,0--c:1426,73.533,50.850
+    .goto 1426/0,-1909.05,-5470.58,0--c:1426,75.353,48.533
+    .goto 1426/0,-2132.06,-5413.85,0--c:1426,79.881,46.805
+    .goto 1426/0,-2189.14,-5303.89,0--c:1426,81.040,43.456
+    .goto 1426/0,-2166.63,-5060.40,0--c:1426,80.583,36.040
     >>Kill |cRXP_ENEMY_Scarred Crag Boars|r and |cRXP_ENEMY_Elder Crag Boars|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
     .collect 769,10,2178,1,0x20,cooking --Chunk of Boar Meat (1-10)
     .mob Scarred Crag Boar
@@ -2015,12 +2015,12 @@ step
     #optional
     #requires BoarMeatDunMorogh3
     #completewith LochEnter
-    .goto 1426,70.845,51.784,0
-    .goto 1426,73.533,50.850,0
-    .goto 1426,75.353,48.533,0
-    .goto 1426,79.881,46.805,0
-    .goto 1426,81.040,43.456,0
-    .goto 1426,80.583,36.040,0
+    .goto 1426/0,-1687.03,-5577.32,0--c:1426,70.845,51.784
+    .goto 1426/0,-1819.42,-5546.66,0--c:1426,73.533,50.850
+    .goto 1426/0,-1909.05,-5470.58,0--c:1426,75.353,48.533
+    .goto 1426/0,-2132.06,-5413.85,0--c:1426,79.881,46.805
+    .goto 1426/0,-2189.14,-5303.89,0--c:1426,81.040,43.456
+    .goto 1426/0,-2166.63,-5060.40,0--c:1426,80.583,36.040
     >>Kill |cRXP_ENEMY_Scarred Crag Boars|r and |cRXP_ENEMY_Elder Crag Boars|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
     >>|cRXP_WARN_Don't go out of your way to farm this now. Simply kill and loot all the boars you're passing by|r
     .collect 769,50,2178,1,0x20,cooking --Chunk of Boar Meat (10-50)
@@ -2124,12 +2124,12 @@ step
     #optional
     #label LochEnter
     #completewith next
-    .goto 1432,16.494,58.424,20,0
-    .goto 1432,19.594,62.735,20,0
-    .goto 1432,20.749,64.326,20,0
-    .goto 1432,21.106,65.007,20,0
-    .goto 1432,21.388,66.357,20,0
-    .goto 1432,21.498,67.840
+    .goto 1432/0,-2448.71,-5562.26,20,0--c:1432,16.494,58.424
+    .goto 1432/0,-2534.22,-5641.56,20,0--c:1432,19.594,62.735
+    .goto 1432/0,-2566.08,-5670.83,20,0--c:1432,20.749,64.326
+    .goto 1432/0,-2575.92,-5683.36,20,0--c:1432,21.106,65.007
+    .goto 1432/0,-2583.70,-5708.19,20,0--c:1432,21.388,66.357
+    .goto 1432/0,-2586.74,-5735.47--c:1432,21.498,67.840
     .subzone 924 >> Travel through the South Gate Pass into Loch Modan
 step
     .goto 1432/0,-2602.54,-5832.73
@@ -2149,9 +2149,9 @@ step
     .target Captain Rugelfuss
 step
     #optional
-    .goto 1432,23.522,70.102,40,0
-    .goto 1432,27.501,65.367,30,0
-    .goto 1432,34.405,48.276
+    .goto 1432/0,-2642.56,-5777.08,40,0--c:1432,23.522,70.102
+    .goto 1432/0,-2752.32,-5689.98,30,0--c:1432,27.501,65.367
+    .goto 1432/0,-2942.75,-5375.58--c:1432,34.405,48.276
     .subzone 144 >> Travel to Thelsamar
     .isOnQuest 414
 step
@@ -2167,8 +2167,8 @@ step
 step
     #optional
     #completewith ThelsaHS
-    .goto 1432,35.273,47.750,10,0
-    .goto 1432,35.433,48.243,12 >> Enter the Stoutlager Inn
+    .goto 1432/0,-2966.70,-5365.90,10,0--c:1432,35.273,47.750
+    .goto 1432/0,-2971.11,-5374.97,12 >> Enter the Stoutlager Inn--c:1432,35.433,48.243
 step
     .goto 1432/0,-2954.42,-5394.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vidra Hearthstove|r inside
@@ -2196,7 +2196,7 @@ step
 step
     #optional
     #completewith next
-    .goto 1432,35.273,47.750,10 >> Exit the Stoutlager Inn
+    .goto 1432/0,-2966.70,-5365.90,10 >> Exit the Stoutlager Inn--c:1432,35.273,47.750
 step << Hunter
     .goto 1432/0,-3003.30,-5376.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grenhild Darktalon|r
@@ -2228,12 +2228,12 @@ step
     #optional
     #label BoarMeatLoch1
     #completewith Algaz
-    .goto 1426,70.845,51.784,0
-    .goto 1426,73.533,50.850,0
-    .goto 1426,75.353,48.533,0
-    .goto 1426,79.881,46.805,0
-    .goto 1426,81.040,43.456,0
-    .goto 1426,80.583,36.040,0
+    .goto 1426/0,-1687.03,-5577.32,0--c:1426,70.845,51.784
+    .goto 1426/0,-1819.42,-5546.66,0--c:1426,73.533,50.850
+    .goto 1426/0,-1909.05,-5470.58,0--c:1426,75.353,48.533
+    .goto 1426/0,-2132.06,-5413.85,0--c:1426,79.881,46.805
+    .goto 1426/0,-2189.14,-5303.89,0--c:1426,81.040,43.456
+    .goto 1426/0,-2166.63,-5060.40,0--c:1426,80.583,36.040
     >>Kill |cRXP_ENEMY_Mountain Boars|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
     >>|cRXP_WARN_This will be used to level your|r |T133971:0|t[Cooking] |cRXP_WARN_later|r
     >>|cRXP_WARN_You need 10|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Auberdine later|r
@@ -2245,12 +2245,12 @@ step
     #optional
     #requires BoarMeatLoch1
     #completewith Algaz
-    .goto 1426,70.845,51.784,0
-    .goto 1426,73.533,50.850,0
-    .goto 1426,75.353,48.533,0
-    .goto 1426,79.881,46.805,0
-    .goto 1426,81.040,43.456,0
-    .goto 1426,80.583,36.040,0
+    .goto 1426/0,-1687.03,-5577.32,0--c:1426,70.845,51.784
+    .goto 1426/0,-1819.42,-5546.66,0--c:1426,73.533,50.850
+    .goto 1426/0,-1909.05,-5470.58,0--c:1426,75.353,48.533
+    .goto 1426/0,-2132.06,-5413.85,0--c:1426,79.881,46.805
+    .goto 1426/0,-2189.14,-5303.89,0--c:1426,81.040,43.456
+    .goto 1426/0,-2166.63,-5060.40,0--c:1426,80.583,36.040
     >>Kill |cRXP_ENEMY_Mountain Boars|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
     >>|cRXP_WARN_This will be used to level your|r |T133971:0|t[Cooking] |cRXP_WARN_later|r
     >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Darkshire later|r
@@ -2280,14 +2280,14 @@ step
     #optional
     #label Algaz
     #completewith Stormpike1
-    .goto 1432,23.490,18.008
+    .goto 1432/0,-2641.68,-4818.77--c:1432,23.490,18.008
     .subzone 925 >>Travel to Algaz Station
 step
     #optional
     #requires Algaz
     #completewith Stormpike1
-    .goto 1432,23.490,18.008,15,0
-    .goto 1432,24.279,17.959,12 >> Enter the Bunker. Go to the top floor
+    .goto 1432/0,-2641.68,-4818.77,15,0--c:1432,23.490,18.008
+    .goto 1432/0,-2663.45,-4817.87,12 >> Enter the Bunker. Go to the top floor--c:1432,24.279,17.959
 step
     #label Stormpike1
     .goto 1432/0,-2676.99,-4825.980
@@ -2358,10 +2358,10 @@ step
 step << Dwarf/Gnome
     #optional
     #completewith next
-    .goto 1455,56.714,41.945,20,0
-    .goto 1455,55.748,38.127,20,0
-    .goto 1455,51.569,29.956,15,0
-    .goto 1455,49.645,28.195,12,0
+    .goto 1455/0,-1161.99,-4790.54,20,0--c:1455,56.714,41.945
+    .goto 1455/0,-1154.35,-4770.40,20,0--c:1455,55.748,38.127
+    .goto 1455/0,-1121.31,-4727.29,15,0--c:1455,51.569,29.956
+    .goto 1455/0,-1106.10,-4718.00,12,0--c:1455,49.645,28.195
     .goto 1455/0,-1120.93,-4708.06,10 >>Travel toward |cRXP_FRIENDLY_Golnir Bouldertoe|r inside the building
 step << Dwarf/Gnome
     .goto 1455/0,-1120.93,-4708.06
@@ -2378,7 +2378,7 @@ step << Shaman
 step
     #optional
     #completewith next
-    .goto 1455,44.029,50.074,20,0
+    .goto 1455/0,-1061.70,-4833.43,20,0--c:1455,44.029,50.074
     .goto 1455/0,-1026.28,-4872.56,12 >>Travel toward |cRXP_FRIENDLY_Senator Barin Redstone|r--c:Ironforge,39.550,57.490
 step
     .goto 1455/0,-1026.28,-4872.56--c:Ironforge,39.550,57.490
@@ -2422,7 +2422,7 @@ step << Warrior
     .goto 1455/0,-1197.27,-5041.49
     .target +Buliwyf Stonehand
 step << Warrior
-    .goto 1455,62.378,88.671
+    .goto 1455/0,-1206.77,-5037.07--c:1455,62.378,88.671
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brenwyn Wintersteel|r downstairs
     >>|cRXP_BUY_Buy the|r |T135425:0|t[Keen Throwing Knives] |cRXP_BUY_from her|r
     .collect 3107,1 --Collect Keen Throwing Knife (200)
@@ -2430,7 +2430,7 @@ step << Warrior
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.3
     .xp <11,1
 step << Warrior
-    .goto 1455,62.378,88.671
+    .goto 1455/0,-1206.77,-5037.07--c:1455,62.378,88.671
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brenwyn Wintersteel|r downstairs
     >>|cRXP_BUY_Buy the|r |T135641:0|t[Balanced Throwing Daggers] |cRXP_BUY_from her|r
     .collect 2946,1 --Collect Balanced Throwing Dagger (200)
@@ -2455,7 +2455,7 @@ step << Warrior
 step << Hunter
     #optional
     #completewith next
-    .goto 1455,66.847,83.366,15,0
+    .goto 1455/0,-1242.10,-5009.08,15,0--c:1455,66.847,83.366
     .goto 1455/0,-1273.83,-5022.08,15 >>Travel toward |cRXP_FRIENDLY_Belia Thundergranite|r
 step << Hunter
     .goto 1455/0,-1273.83,-5022.08
@@ -3094,16 +3094,16 @@ step
 step
     >>Loot the |cRXP_PICK_Waterlogged Saw|r on the ground
     .complete 91733,2 -- Waterlogged Saw 1/1
-    .goto 1429,74.3,76.4
+    .goto 1429/0,-1043.41,-9707.92--c:1429,74.3,76.4
 step
     >>Loot the |cRXP_PICK_Waterlogged Axe|r on the ground
     .complete 91733,1 -- Waterlogged Axe 1/1
-    .goto 1429,76.7,82.5
+    .goto 1429/0,-1126.71,-9849.11--c:1429,76.7,82.5
 step
     #label WaterloggedToolbox
     >>Loot the |cRXP_PICK_Waterlogged Toolbox|r on the ground
     .complete 91733,3 -- Waterlogged Toolbox 1/1
-    .goto 1429,77.3,86.8
+    .goto 1429/0,-1147.54,-9948.64--c:1429,77.3,86.8
 step
     .goto 1429/0,-1119.800,-9931.300
     >>Kill |cRXP_ENEMY_Croaky|r. Loot him for |T134169:0|t[|cRXP_LOOT_Croaky's Head|r]
@@ -3114,16 +3114,16 @@ step
     .mob Croaky
 step
     #loop
-    .goto 1429,77.499,74.518,0
-    .goto 1429,80.496,78.223,0
-    .goto 1429,87.342,63.763,0
-    .goto 1429,77.499,74.518,55,0
-    .goto 1429,77.222,77.499,55,0
-    .goto 1429,78.483,79.323,55,0
-    .goto 1429,80.496,78.223,55,0
-    .goto 1429,81.434,76.695,55,0
-    .goto 1429,87.145,69.922,55,0
-    .goto 1429,87.342,63.763,55,0
+    .goto 1429/0,-1154.44,-9664.36,0--c:1429,77.499,74.518
+    .goto 1429/0,-1258.47,-9750.12,0--c:1429,80.496,78.223
+    .goto 1429/0,-1496.08,-9415.43,0--c:1429,87.342,63.763
+    .goto 1429/0,-1154.44,-9664.36,55,0--c:1429,77.499,74.518
+    .goto 1429/0,-1144.83,-9733.36,55,0--c:1429,77.222,77.499
+    .goto 1429/0,-1188.60,-9775.58,55,0--c:1429,78.483,79.323
+    .goto 1429/0,-1258.47,-9750.12,55,0--c:1429,80.496,78.223
+    .goto 1429/0,-1291.02,-9714.75,55,0--c:1429,81.434,76.695
+    .goto 1429/0,-1489.24,-9557.99,55,0--c:1429,87.145,69.922
+    .goto 1429/0,-1496.08,-9415.43,55,0--c:1429,87.342,63.763
     >>Kill |cRXP_ENEMY_Prowlers|r and |cRXP_ENEMY_Young Forest Bears|r
     .complete 52,1 --Kill Prowler (x8)
     .mob +Prowler
@@ -3468,8 +3468,8 @@ RXPGuides.RegisterGuide([[
 step << Dwarf Paladin
     #optional
     #completewith next
-    .goto 1455,35.239,32.789,20,0
-    .goto 1455,27.208,12.552,20,0
+    .goto 1455/0,-992.20,-4742.24,20,0--c:1455,35.239,32.789
+    .goto 1455/0,-928.70,-4635.47,20,0--c:1455,27.208,12.552
     .goto 1455/0,-896.47,-4601.65,12 >>Travel toward |cRXP_FRIENDLY_Brandur Ironhammer|r
 step << Dwarf Paladin
     .goto 1455/0,-896.47,-4601.65
@@ -3479,26 +3479,26 @@ step << Dwarf Paladin
 step << Dwarf Paladin
     #optional
     #completewith next
-    .goto 1455,25.400,2.676,10,0
-    .goto 1455,23.621,2.544,10,0
-    .goto 1455,22.014,4.533,10,0
-    .goto 1455,21.831,7.651,10,0
-    .goto 1455,23.766,11.636,10,0
-    .goto 1455,27.622,12.177,12 >> Travel toward |cRXP_FRIENDLY_Tiza Battleforge|r upstairs
+    .goto 1455/0,-914.41,-4583.36,10,0--c:1455,25.400,2.676
+    .goto 1455/0,-900.34,-4582.66,10,0--c:1455,23.621,2.544
+    .goto 1455/0,-887.64,-4593.16,10,0--c:1455,22.014,4.533
+    .goto 1455/0,-886.19,-4609.61,10,0--c:1455,21.831,7.651
+    .goto 1455/0,-901.49,-4630.63,10,0--c:1455,23.766,11.636
+    .goto 1455/0,-931.98,-4633.49,12 >> Travel toward |cRXP_FRIENDLY_Tiza Battleforge|r upstairs--c:1455,27.622,12.177
 step << Dwarf Paladin
-    .goto 1455,27.622,12.177
+    .goto 1455/0,-931.98,-4633.49--c:1455,27.622,12.177
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tiza Battleforge|r upstairs
     .turnin 2999 >>Turn in Tome of Divinity
     .accept 1645 >>Accept The Tome of Divinity
     .turnin 1645 >>Turn in The Tome of Divinity
     .target Tiza Battleforge
 step << Dwarf Paladin
-    .goto 1455,27.622,12.177
+    .goto 1455/0,-931.98,-4633.49--c:1455,27.622,12.177
     >>|cRXP_WARN_Use the |T133739:0|t|cRXP_LOOT_[The Tome of Divinity]|r to start the quest|r
     .accept 1646 >>Accept The Tome of Divinity
     .use 6916
 step << Dwarf Paladin
-    .goto 1455,27.622,12.177
+    .goto 1455/0,-931.98,-4633.49--c:1455,27.622,12.177
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tiza Battleforge|r upstairs
     .turnin 1646 >>Turn in The Tome of Divinity
     .accept 1647 >>Accept The Tome of Divinity
@@ -3506,20 +3506,20 @@ step << Dwarf Paladin
 step << Dwarf Paladin
     #loop
     .line Ironforge,21.750,51.733,22.015,54.945,23.328,61.865,23.723,63.824,26.021,68.382,27.495,71.320,31.352,77.807,32.405,78.563,37.256,82.159,39.204,83.202,42.944,84.113
-    .goto 1455,21.750,51.733,0
-    .goto 1455,26.021,68.382,0
-    .goto 1455,42.944,84.113,0
-    .goto 1455,21.750,51.733,20,0
-    .goto 1455,22.015,54.945,20,0
-    .goto 1455,23.328,61.865,20,0
-    .goto 1455,23.723,63.824,20,0
-    .goto 1455,26.021,68.382,20,0
-    .goto 1455,27.495,71.320,20,0
-    .goto 1455,31.352,77.807,20,0
-    .goto 1455,32.405,78.563,20,0
-    .goto 1455,37.256,82.159,20,0
-    .goto 1455,39.204,83.202,20,0
-    .goto 1455,42.944,84.113,20,0
+    .goto 1455/0,-885.55,-4842.19,0--c:1455,21.750,51.733
+    .goto 1455/0,-919.32,-4930.03,0--c:1455,26.021,68.382
+    .goto 1455/0,-1053.12,-5013.03,0--c:1455,42.944,84.113
+    .goto 1455/0,-885.55,-4842.19,20,0--c:1455,21.750,51.733
+    .goto 1455/0,-887.65,-4859.13,20,0--c:1455,22.015,54.945
+    .goto 1455/0,-898.03,-4895.64,20,0--c:1455,23.328,61.865
+    .goto 1455/0,-901.15,-4905.98,20,0--c:1455,23.723,63.824
+    .goto 1455/0,-919.32,-4930.03,20,0--c:1455,26.021,68.382
+    .goto 1455/0,-930.97,-4945.53,20,0--c:1455,27.495,71.320
+    .goto 1455/0,-961.47,-4979.75,20,0--c:1455,31.352,77.807
+    .goto 1455/0,-969.79,-4983.74,20,0--c:1455,32.405,78.563
+    .goto 1455/0,-1008.15,-5002.72,20,0--c:1455,37.256,82.159
+    .goto 1455/0,-1023.55,-5008.22,20,0--c:1455,39.204,83.202
+    .goto 1455/0,-1053.12,-5013.03,20,0--c:1455,42.944,84.113
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_John Turner|r
     >>|cRXP_FRIENDLY_John Turner|r |cRXP_WARN_patrols along the outer ring of Ironforge between just past the Stonefire Tavern and just past the Visitor's Center|r
     .turnin 1647 >>Turn in The Tome of Divinity
@@ -3531,21 +3531,21 @@ step << Dwarf Paladin
     #optional
     #label Tiza1
     #completewith Tiza2
-    .goto 1455,27.228,12.724,15,0
-    .goto 1455,25.400,2.676,12 >> Travel toward the staircase underneath |cRXP_FRIENDLY_Tiza Battleforge|r
+    .goto 1455/0,-928.86,-4636.37,15,0--c:1455,27.228,12.724
+    .goto 1455/0,-914.41,-4583.36,12 >> Travel toward the staircase underneath |cRXP_FRIENDLY_Tiza Battleforge|r--c:1455,25.400,2.676
 step << Dwarf Paladin
     #optional
     #requires Tiza1
     #completewith Tiza2
-    .goto 1455,25.400,2.676,10,0
-    .goto 1455,23.621,2.544,10,0
-    .goto 1455,22.014,4.533,10,0
-    .goto 1455,21.831,7.651,10,0
-    .goto 1455,23.766,11.636,10,0
-    .goto 1455,27.622,12.177,12 >> Travel toward |cRXP_FRIENDLY_Tiza Battleforge|r upstairs
+    .goto 1455/0,-914.41,-4583.36,10,0--c:1455,25.400,2.676
+    .goto 1455/0,-900.34,-4582.66,10,0--c:1455,23.621,2.544
+    .goto 1455/0,-887.64,-4593.16,10,0--c:1455,22.014,4.533
+    .goto 1455/0,-886.19,-4609.61,10,0--c:1455,21.831,7.651
+    .goto 1455/0,-901.49,-4630.63,10,0--c:1455,23.766,11.636
+    .goto 1455/0,-931.98,-4633.49,12 >> Travel toward |cRXP_FRIENDLY_Tiza Battleforge|r upstairs--c:1455,27.622,12.177
 step << Dwarf Paladin
     #label Tiza2
-    .goto 1455,27.622,12.177
+    .goto 1455/0,-931.98,-4633.49--c:1455,27.622,12.177
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tiza Battleforge|r upstairs
     .turnin 1778 >>Turn in The Tome of Divinity
     .accept 1779 >>Accept The Tome of Divinity
@@ -3635,12 +3635,12 @@ step
     #optional
     #label BoarMeatLoch3
     #completewith SilverMine
-    .goto 1426,70.845,51.784,0
-    .goto 1426,73.533,50.850,0
-    .goto 1426,75.353,48.533,0
-    .goto 1426,79.881,46.805,0
-    .goto 1426,81.040,43.456,0
-    .goto 1426,80.583,36.040,0
+    .goto 1426/0,-1687.03,-5577.32,0--c:1426,70.845,51.784
+    .goto 1426/0,-1819.42,-5546.66,0--c:1426,73.533,50.850
+    .goto 1426/0,-1909.05,-5470.58,0--c:1426,75.353,48.533
+    .goto 1426/0,-2132.06,-5413.85,0--c:1426,79.881,46.805
+    .goto 1426/0,-2189.14,-5303.89,0--c:1426,81.040,43.456
+    .goto 1426/0,-2166.63,-5060.40,0--c:1426,80.583,36.040
     >>Kill |cRXP_ENEMY_Mountain Boars|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
     .collect 769,10,2178,1,0x20,cooking --Chunk of Boar Meat (1-10)
     .mob Mountain Boar
@@ -3651,12 +3651,12 @@ step
     #optional
     #requires BoarMeatLoch3
     #completewith SilverMine
-    .goto 1426,70.845,51.784,0
-    .goto 1426,73.533,50.850,0
-    .goto 1426,75.353,48.533,0
-    .goto 1426,79.881,46.805,0
-    .goto 1426,81.040,43.456,0
-    .goto 1426,80.583,36.040,0
+    .goto 1426/0,-1687.03,-5577.32,0--c:1426,70.845,51.784
+    .goto 1426/0,-1819.42,-5546.66,0--c:1426,73.533,50.850
+    .goto 1426/0,-1909.05,-5470.58,0--c:1426,75.353,48.533
+    .goto 1426/0,-2132.06,-5413.85,0--c:1426,79.881,46.805
+    .goto 1426/0,-2189.14,-5303.89,0--c:1426,81.040,43.456
+    .goto 1426/0,-2166.63,-5060.40,0--c:1426,80.583,36.040
     >>Kill |cRXP_ENEMY_Mountain Boars|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
     >>|cRXP_WARN_Don't go out of your way to farm this now. Simply kill and loot all the boars you're passing by|r
     .collect 769,50,2178,1,0x20,cooking --Chunk of Boar Meat (10-50)
@@ -3806,12 +3806,12 @@ step
     #optional
     #label BoarMeatLoch4
     #completewith PawsDelivery
-    .goto 1426,70.845,51.784,0
-    .goto 1426,73.533,50.850,0
-    .goto 1426,75.353,48.533,0
-    .goto 1426,79.881,46.805,0
-    .goto 1426,81.040,43.456,0
-    .goto 1426,80.583,36.040,0
+    .goto 1426/0,-1687.03,-5577.32,0--c:1426,70.845,51.784
+    .goto 1426/0,-1819.42,-5546.66,0--c:1426,73.533,50.850
+    .goto 1426/0,-1909.05,-5470.58,0--c:1426,75.353,48.533
+    .goto 1426/0,-2132.06,-5413.85,0--c:1426,79.881,46.805
+    .goto 1426/0,-2189.14,-5303.89,0--c:1426,81.040,43.456
+    .goto 1426/0,-2166.63,-5060.40,0--c:1426,80.583,36.040
     >>Kill |cRXP_ENEMY_Mountain Boars|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
     .collect 769,10,2178,1,0x20,cooking --Chunk of Boar Meat (1-10)
     .mob Mountain Boar
@@ -3821,12 +3821,12 @@ step
     #optional
     #requires BoarMeatLoch4
     #completewith PawsDelivery
-    .goto 1426,70.845,51.784,0
-    .goto 1426,73.533,50.850,0
-    .goto 1426,75.353,48.533,0
-    .goto 1426,79.881,46.805,0
-    .goto 1426,81.040,43.456,0
-    .goto 1426,80.583,36.040,0
+    .goto 1426/0,-1687.03,-5577.32,0--c:1426,70.845,51.784
+    .goto 1426/0,-1819.42,-5546.66,0--c:1426,73.533,50.850
+    .goto 1426/0,-1909.05,-5470.58,0--c:1426,75.353,48.533
+    .goto 1426/0,-2132.06,-5413.85,0--c:1426,79.881,46.805
+    .goto 1426/0,-2189.14,-5303.89,0--c:1426,81.040,43.456
+    .goto 1426/0,-2166.63,-5060.40,0--c:1426,80.583,36.040
     >>Kill |cRXP_ENEMY_Mountain Boars|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
     >>|cRXP_WARN_Don't go out of your way to farm this now. Simply kill and loot all the boars you're passing by|r
     .collect 769,50,2178,1,0x20,cooking --Chunk of Boar Meat (10-50)
@@ -3850,8 +3850,8 @@ step
 step
     #optional
     #completewith next
-    .goto 1432,23.490,18.008,15,0
-    .goto 1432,24.279,17.959,15 >> Enter the Bunker
+    .goto 1432/0,-2641.68,-4818.77,15,0--c:1432,23.490,18.008
+    .goto 1432/0,-2663.45,-4817.87,15 >> Enter the Bunker--c:1432,24.279,17.959
 step
     #optional
     #completewith next
@@ -3870,12 +3870,12 @@ step
     #optional
     #label BoarMeatLoch5
     #completewith RatAbandon
-    .goto 1426,70.845,51.784,0
-    .goto 1426,73.533,50.850,0
-    .goto 1426,75.353,48.533,0
-    .goto 1426,79.881,46.805,0
-    .goto 1426,81.040,43.456,0
-    .goto 1426,80.583,36.040,0
+    .goto 1426/0,-1687.03,-5577.32,0--c:1426,70.845,51.784
+    .goto 1426/0,-1819.42,-5546.66,0--c:1426,73.533,50.850
+    .goto 1426/0,-1909.05,-5470.58,0--c:1426,75.353,48.533
+    .goto 1426/0,-2132.06,-5413.85,0--c:1426,79.881,46.805
+    .goto 1426/0,-2189.14,-5303.89,0--c:1426,81.040,43.456
+    .goto 1426/0,-2166.63,-5060.40,0--c:1426,80.583,36.040
     >>Kill |cRXP_ENEMY_Mountain Boars|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
     .collect 769,10,2178,1,0x20,cooking --Chunk of Boar Meat (1-10)
     .mob Mountain Boar
@@ -3886,12 +3886,12 @@ step
     #optional
     #requires BoarMeatLoch5
     #completewith RatAbandon
-    .goto 1426,70.845,51.784,0
-    .goto 1426,73.533,50.850,0
-    .goto 1426,75.353,48.533,0
-    .goto 1426,79.881,46.805,0
-    .goto 1426,81.040,43.456,0
-    .goto 1426,80.583,36.040,0
+    .goto 1426/0,-1687.03,-5577.32,0--c:1426,70.845,51.784
+    .goto 1426/0,-1819.42,-5546.66,0--c:1426,73.533,50.850
+    .goto 1426/0,-1909.05,-5470.58,0--c:1426,75.353,48.533
+    .goto 1426/0,-2132.06,-5413.85,0--c:1426,79.881,46.805
+    .goto 1426/0,-2189.14,-5303.89,0--c:1426,81.040,43.456
+    .goto 1426/0,-2166.63,-5060.40,0--c:1426,80.583,36.040
     >>Kill |cRXP_ENEMY_Mountain Boars|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
     >>|cRXP_WARN_Don't go out of your way to farm this now. Simply kill and loot all the boars you're passing by|r
     .collect 769,50,2178,1,0x20,cooking --Chunk of Boar Meat (10-50)
@@ -3954,8 +3954,8 @@ step
 step
     #optional
     #completewith FlintTinder
-    .goto 1432,35.273,47.750,10,0
-    .goto 1432,35.433,48.243,12 >> Enter the Stoutlager Inn
+    .goto 1432/0,-2966.70,-5365.90,10,0--c:1432,35.273,47.750
+    .goto 1432/0,-2971.11,-5374.97,12 >> Enter the Stoutlager Inn--c:1432,35.433,48.243
 step
     .goto 1432/0,-2954.42,-5394.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vidra Hearthstove|r
@@ -4098,13 +4098,13 @@ step << !Dwarf/!Paladin
 step << Dwarf Paladin
     #optional
     #completewith next
-    .goto 1432,21.498,67.840,20,0
-    .goto 1432,21.388,66.357,20,0
-    .goto 1432,21.106,65.007,20,0
-    .goto 1432,20.749,64.326,20,0
-    .goto 1432,19.594,62.735,20,0
-    .goto 1432,16.342,58.520,20,0
-    .goto 1426,84.262,51.367
+    .goto 1432/0,-2586.74,-5735.47,20,0--c:1432,21.498,67.840
+    .goto 1432/0,-2583.70,-5708.19,20,0--c:1432,21.388,66.357
+    .goto 1432/0,-2575.92,-5683.36,20,0--c:1432,21.106,65.007
+    .goto 1432/0,-2566.08,-5670.83,20,0--c:1432,20.749,64.326
+    .goto 1432/0,-2534.22,-5641.56,20,0--c:1432,19.594,62.735
+    .goto 1432/0,-2444.52,-5564.02,20,0--c:1432,16.342,58.520
+    .goto 1426/0,-2347.82,-5563.63--c:1426,84.262,51.367
     .zone Dun Morogh >> Travel to Dun Morogh
 step << Dwarf Paladin
     #completewith next
@@ -4195,8 +4195,8 @@ step << Priest
 step << skip --logout skip << Mage/Priest
     #optional
     #completewith Deeprun
-    .goto 1455,27.611,8.074
-    .goto 1455,76.414,51.226,20 >>|cRXP_WARN_Jump on top of the pillar above |cRXP_FRIENDLY_Bink|r, then walk slightly east of her onto the arrow position. Position your character until it looks like they're floating, then perform a Logout Skip by logging out and back in|r
+    .goto 1455/0,-931.89,-4611.84--c:1455,27.611,8.074
+    .goto 1455/0,-1317.74,-4839.51,20 >>|cRXP_WARN_Jump on top of the pillar above |cRXP_FRIENDLY_Bink|r, then walk slightly east of her onto the arrow position. Position your character until it looks like they're floating, then perform a Logout Skip by logging out and back in|r--c:1455,76.414,51.226
 step << Dwarf Rogue/Gnome Rogue
     #season 0,1
     #optional
@@ -4222,7 +4222,7 @@ step << Warlock
     #optional
     #label Jubahl
     #completewith Deeprun
-    .goto 1455,53.164,7.037,10 >> Enter |cRXP_FRIENDLY_Jubahl Corpseseeker|r's house
+    .goto 1455/0,-1133.92,-4606.37,10 >> Enter |cRXP_FRIENDLY_Jubahl Corpseseeker|r's house--c:1455,53.164,7.037
 step << Warlock
     .goto 1455/0,-1130.26,-4601.270
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jubahl Corpseseeker|r
@@ -4232,12 +4232,12 @@ step << skip --logout skip << Warlock/Rogue
     #optional
     #requires Jubahl
     #completewith Deeprun
-    .goto 1455,52.825,5.060
-    .goto 1455,76.414,51.226,20 >>|cRXP_WARN_walk onto the top of the bed, then jump onto the top of the bookshelf. Perform a Logout Skip by logging out and back in|r
+    .goto 1455/0,-1131.24,-4595.94--c:1455,52.825,5.060
+    .goto 1455/0,-1317.74,-4839.51,20 >>|cRXP_WARN_walk onto the top of the bed, then jump onto the top of the bookshelf. Perform a Logout Skip by logging out and back in|r--c:1455,76.414,51.226
 step << Warrior
     #optional
     #completewith Deeprun
-    .goto 1455,67.400,84.909,15,0
+    .goto 1455/0,-1246.47,-5017.22,15,0--c:1455,67.400,84.909
     .goto 1455/0,-1234.65,-5035.67,12 >> Travel toward |cRXP_FRIENDLY_Bilban Tosslespanner|r
 step << Warrior
     .goto 1455/0,-1234.65,-5035.67
@@ -4248,8 +4248,8 @@ step << Warrior
 step << skip --logout skip << Warrior
     #optional
     #completewith Deeprun
-    .goto 1455,68.198,89.713
-    .goto 1455,76.414,51.226,20 >>|cRXP_WARN_Jump onto the top of the weapon stand. Perform a Logout Skip by logging out and back in|r
+    .goto 1455/0,-1252.78,-5042.57--c:1455,68.198,89.713
+    .goto 1455/0,-1317.74,-4839.51,20 >>|cRXP_WARN_Jump onto the top of the weapon stand. Perform a Logout Skip by logging out and back in|r--c:1455,76.414,51.226
 -- step << skip --logout skip << Hunter
 --   #optional
 --   #completewith Deeprun
@@ -4259,7 +4259,7 @@ step << skip --logout skip << Warrior
 step
     #requires Salvation << Dwarf Rogue/Gnome Rogue
     #completewith Fly2WF
-    .goto 1455,67.842,42.456
+    .goto 1455/0,-1249.97,-4793.24--c:1455,67.842,42.456
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gearcutter Cogspinner|r
     .vendor 5175 >> |cRXP_BUY_Buy a|r |T133024:0|t[Bronze Tube] |cRXP_BUY_from him if it's available|r
 --    >>You will need 2 bronze tubes for a quest later << Rogue

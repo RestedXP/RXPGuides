@@ -174,12 +174,16 @@ for mapId in tMatrix.keys():
     if len(tMatrix[mapId]) > 4:
         mapName = tMatrix[mapId][4]
         mapIds[mapName] = mapId
+        mapIds[str(mapId)] = mapId
 
 def GetMapId(name):
+    name = name.split()[0]
     if name in mapIds:
         return mapIds[name]
+    elif name and name.isdigit():
+        return int(name)
     else:
-        print("map not found: ",map)
+        print("map not found: ",name)
         return -1
 
 """
@@ -284,8 +288,8 @@ def update_file_contents(file_path):
         lines = content.splitlines(keepends=True)
 
         for line in lines:
-            # Pattern: ^(\s*\.\w+\s+)([A-Za-z][^,]+),(\d+\.?\d*),(\d+\.?\d*)(.*)$
-            match = re.match(r'^(\s*\.[gpw][oia][tny]\w+\s+)([A-Za-z][^,]+),(\d+\.?\d*),(\d+\.?\d*)(.*)([\r\n]*)$', line)
+            # Pattern: ^(\s*\.\w+\s+)([A-Za-z0-9][^,\/]+),(\d+\.?\d*),(\d+\.?\d*)(.*)$
+            match = re.match(r'^(\s*\.[gpw][oia][tny]\w+\s+)([A-Za-z0-9][^,\/]+),(\d+\.?\d*),(\d+\.?\d*)(.*)([\r\n]*)$', line)
 
             if match:
                 cmd_part = match.group(1)
