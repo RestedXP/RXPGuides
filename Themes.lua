@@ -111,7 +111,7 @@ addon.customThemeBase = CopyTable(themes['RXP Blue'])
 addon.customThemeBase.name = "Custom"
 addon.customThemeBase.displayName = _G.CUSTOM
 addon.customThemeBase.applicable = true
-addon.customThemeBase.author = UnitName("player") or L "Unknown"
+addon.customThemeBase.author = addon.player.name or L "Unknown"
 addon.customThemeBase.bgTextures.guideName = "Interface/BUTTONS/WHITE8X8"
 
 addon.guideTextColors = {}

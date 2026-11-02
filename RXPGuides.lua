@@ -243,7 +243,6 @@ addon.player = {
     race = select(2, UnitRace("player")),
     faction = select(1,UnitFactionGroup("player")),
     guid = UnitGUID("player"),
-    name = UnitName("player"),
     level = UnitLevel("player"),
     maxlevel = maxLevel,
     season = addon.GetSeason(),
@@ -251,6 +250,12 @@ addon.player = {
     lang = GetLocale():sub(1,2),
     hardcore = C_GameRules and C_GameRules.IsHardcoreActive and C_GameRules.IsHardcoreActive(),
 }
+if addon.game == "FOREVER" then
+    local firstName, lastName = UnitName("player")
+    addon.player.name = fmt("%s %s", firstName, lastName)
+else
+    addon.player.name = UnitName("player")
+end
 addon.player.neutral = addon.player.faction == "Neutral"
 
 addon.generatedSteps = {}
