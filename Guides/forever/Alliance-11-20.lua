@@ -3876,13 +3876,12 @@ step
     #optional
     #completewith next
     .cast 5809 >> |cRXP_WARN_Use the|r |T134715:0|t[Phial of Scrying] |cRXP_WARN_and place it on the ground|r
-    .use 5251
 step
     .goto 1439/1,417.30,4575.82
     >>|cRXP_WARN_Click the |cRXP_PICK_Scrying Bowl|r on the ground|r
     .turnin 944 >> Turn in The Master's Glaive
     .accept 949 >> Accept The Twilight Camp
-    .use 5251
+    .macro Phial of Scrying,134715 >>/use [@player] item:5251
 step
     #label FunandGames
     .goto 1439,38.537,86.050
@@ -5391,7 +5390,8 @@ step << Rogue
     #completewith next
     .subzone 97 >> Travel to Alther's Mill
 step << Rogue
-    .goto 1433,51.846,45.116
+    -- .goto 1433,51.846,45.116
+    .goto 1433,47.03,45.25
     >>|cRXP_WARN_You MUST do this for your|r |T132290:0|t[Poisons] |cRXP_WARN_quest later|r
     >>|cRXP_WARN_Stand on the waypoint location. Position your camera and cursor until you can click 3 |cRXP_PICK_Practice Lockboxes|r at once without having to move anything|r
     .skill lockpicking,80 >>|cRXP_WARN_Open the |cRXP_PICK_Practice Lockboxes|r on the ground in Alther's Mill until your|r |T136058:0|t[Lockpicking] skill is 80|r
@@ -5830,7 +5830,7 @@ step << Rogue
 step << Rogue
     .goto 1436/0,619.17,-11035.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Agent Kearnen|r
-    >>|cRXP_WARN_You MUST do this quest your|r |T132290:0|t[Poisons]
+    >>|cRXP_WARN_You MUST complete this quest to unlock|r |T132290:0|t[Poisons].
     .turnin 2360 >> Turn in Mathias and the Defias
     .accept 2359 >> Accept Klaven's Tower
     .target Agent Kearnen
@@ -6857,13 +6857,12 @@ step
 step
     #completewith next
     .cast 5809 >> |cRXP_WARN_Use the|r |T134715:0|t[Phial of Scrying] |cRXP_WARN_and place it on the ground|r
-    .use 5251
 step
     .goto 1439/1,417.30,4575.82
     >>|cRXP_WARN_Click the |cRXP_PICK_Scrying Bowl|r on the ground|r
     .turnin 944 >> Turn in The Master's Glaive
     .accept 949 >> Accept The Twilight Camp
-    .use 5251
+    .macro Phial of Scrying,134715 >>/use [@player] item:5251
 step
     #label FunandGames
     .goto 1439,38.537,86.050
