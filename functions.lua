@@ -3071,13 +3071,13 @@ if objFlags is omitted or set to 0, element will complete if you have the quest 
     local name = addon.GetItemName(id)
     local step = element.step
     local numRequired = element.qty
-    local event,msg = ...
+    local event,msg,arg2,arg3,arg4,arg5 = ...
     local isComplete
 
     if UNIT_QUEST_LOG_CHANGED and event == UNIT_QUEST_LOG_CHANGED and msg ~= "player" then
         return
     end
-    if event == "CHAT_MSG_LOOT" and C_Item and C_Item.GetItemInfo then
+    if event == "CHAT_MSG_LOOT" and C_Item and C_Item.GetItemInfo and arg5 == addon.player.name then
         local lootId = tonumber(msg:match("item:(%d+):"))
         if lootId == id then
             local itemType = select(6,C_Item.GetItemInfo(lootId))
