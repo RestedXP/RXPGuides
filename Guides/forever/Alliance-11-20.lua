@@ -5390,6 +5390,7 @@ step << Rogue
     #completewith next
     .subzone 97 >> Travel to Alther's Mill
 step << Rogue
+    -- .goto 1433/0,-2702.500,-9230.300
     .goto 1433/0,-2696.32,-9228.24--c:1433,51.846,45.116
     >>|cRXP_WARN_You MUST do this for your|r |T132290:0|t[Poisons] |cRXP_WARN_quest later|r
     >>|cRXP_WARN_Stand on the waypoint location. Position your camera and cursor until you can click 3 |cRXP_PICK_Practice Lockboxes|r at once without having to move anything|r
@@ -5987,7 +5988,7 @@ step
     #label InRR
     #completewith FlyR
     .goto 1453/0,489.72,-8837.28,-1
-	.goto 1433/0,-1716.28,-9623.29,-1
+    .goto 1433/0,-1757.000,-9608.900,-1
     .zone Redridge Mountains >>Travel to Redridge
     .fly Redridge >> Fly to Redridge
     >>|cRXP_WARN_If you're in Goldshire it will be faster to Fly from Stormwind|r

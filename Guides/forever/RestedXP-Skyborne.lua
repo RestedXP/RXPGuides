@@ -4606,7 +4606,7 @@ step << Alliance
     .use 263329 << Rogue -- Flutterfly Swatter
 step << Alliance
     -- #completewith Protect the Index
-    #completewith next
+    #completewith Accept Catching Wind
     .subzoneskip 16638,1 -- Valanaar
     .aura 1258510
     >>Kill |cRXP_ENEMY_Skyhoppers::251314|r.
@@ -4614,6 +4614,12 @@ step << Alliance
     *|cRXP_WARN_While the Tornado speed buff is active, avoid killing them|r.
     .complete 93949,1 --|8/8 Enchanted Skyhopper Exterminated
     .mob Skyhopper::251314
+step << Rogue
+    .goto 2521,63.027,77.807
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Antelariaa Cloudgaze::252390|r.
+    *|cRXP_BUY_Buy|r 600 |T132382:0|t[Sharp Arrows]
+    .collect 2515,600 --Sharp Arrows (600)
+    .target Antelariaa Cloudgaze::252390
 step << Alliance
     #label Accept Catching Wind
     .goto 2521,66.627,79.942
@@ -5160,15 +5166,14 @@ step << Alliance
     #optional
     #completewith next
     #label Service of Zephras
-    *|cRXP_WARN_Equip the|r |T7810733:0|t[Bow of Hours] << Hunter
-    -- *|cRXP_WARN_Equip the|r |T7810733:0|t[Bow of Hours] << Rogue
+    *|cRXP_WARN_Equip the|r |T7810733:0|t[Bow of Hours] << Hunter/Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Valennia Stormfist::252383|r.
     .turnin 92860 >>Turn in In Service of Zephras
     .turnin 93949 >>Turn in Bugged
     .accept 93320 >>Accept Tower Defense
     .disablecheckbox
     .target Valennia Stormfist::252383
-    .use 263404 << Hunter -- Bow of Hours
+    .use 263404 << Hunter/Rogue -- Bow of Hours
 step << Alliance
     #completewith Service of Zephras
     .goto 2521,65.65,79.27,30,0
