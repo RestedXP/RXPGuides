@@ -961,7 +961,7 @@ step
     .timer 73,间谍之树剧情表演
     .use 23792
 step
-    >>|cRXP_WARN_等剧情结束|r
+    >>|cRXP_WARN_等待剧情演出完成|r
     .complete 9531,1 -- The Traitor Uncovered
 step
     +|cRXP_WARN_点掉|r |T132288:0|t[大树伪装] |cRXP_WARN_buff|r

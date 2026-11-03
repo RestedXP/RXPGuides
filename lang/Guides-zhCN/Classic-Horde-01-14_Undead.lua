@@ -20,7 +20,7 @@ step << !Undead
 step << !Undead Mage
     #season 2
     #completewith next
-    +在探索赛季中，作为法师你不应该在自己种族以外的新手区域开始游戏，因为你将无法在这里获得你的第一个符文（|T133816:0|t[刻印手套 - 冰枪术]）
+    +在探索赛季中，法师不应在种族初始区域之外开始游戏，因为你将无法在此处获得第一个符文（|T133816:0|t|T133816:0|t[铭刻手套 - 冰枪术]）
 step
     #completewith Zombies
 	.destroy 6948 >> 删除包里的 |T134414:0|t[炉石] 你已不再需要它了
@@ -28,7 +28,7 @@ step
     #completewith next
     .goto Tirisfal Glades,30.04,72.78,8,0
     .goto Tirisfal Glades,30.27,72.78,8,0
-    .goto Tirisfal Glades,30.22,71.65,10 >> 从地穴跑出来，朝 |cRXP_FRIENDLY_摩尔多|r 方向前进
+    .goto Tirisfal Glades,30.22,71.65,10 >> 跑出地穴，朝 |cRXP_FRIENDLY_摩尔多|r 的方向前进
 step
     .goto Tirisfal Glades,30.22,71.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莫多|r 对话
@@ -42,8 +42,8 @@ step << Warrior/Warlock/Priest/Mage
     .goto Tirisfal Glades,29.18,68.94,40,0 << Priest/Mage
     .goto Tirisfal Glades,29.10,67.66,40,0 << Priest/Mage
     .goto Tirisfal Glades,30.19,65.32,40,0 << Priest/Mage
-    +|cRXP_WARN_击杀 |cRXP_ENEMY_食腐狼幼崽|r 和 |cRXP_ENEMY_夜行蝙蝠|r。拾取它们的掉落，直到你拥有价值60铜币的可出售物品（包括你的护甲）|r << Mage
-    +|cRXP_WARN_击杀 |cRXP_ENEMY_食腐狼幼崽|r 和 |cRXP_ENEMY_夜行蝙蝠|r。拾取它们的掉落，直到你拥有价值50铜币的可出售物品（包括你的护甲）|r << Priest
+    +|cRXP_WARN_击杀 |cRXP_ENEMY_食腐狼幼崽|r 和 |cRXP_ENEMY_夜行蝙蝠|r，拾取它们的掉落，直到你拥有价值60铜币的可出售物品（包括你的护甲）|r << Mage
+    +|cRXP_WARN_击杀 |cRXP_ENEMY_食腐狼幼崽|r 和 |cRXP_ENEMY_夜行蝙蝠|r，拾取它们的掉落，直到你拥有价值50铜币的可出售物品（包括你的护甲）|r << Priest
     +|cRXP_WARN_击杀 |cRXP_ENEMY_食腐狼幼崽|r 和 |cRXP_ENEMY_夜行蝙蝠|r，拾取它们的掉落，直到你拥有价值10铜币的可出售物品（包括你的护甲）|r << Warrior/Warlock
     .mob 食腐狼幼崽
     .mob 夜行蝙蝠
@@ -143,7 +143,7 @@ step << Warlock
     #completewith next
     +|cRXP_WARN_击杀 |cRXP_ENEMY_无脑的僵尸|r 和 |cRXP_ENEMY_悲惨的僵尸|r，拾取它们的掉落物，直到你获得价值 25 铜币的可出售物品(包括你的护甲)|r
     .mob 无脑的僵尸
-    .mob Wretched Zombie
+    .mob 丑陋的僵尸
     .money >0.0025
 step << Warlock
     .goto Tirisfal Glades,32.23,65.59,8,0
@@ -795,7 +795,7 @@ RXPGuides.RegisterGuide([[
 
 step
     .goto Tirisfal Glades,40.91,54.17
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_西米尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_西米尔|r对话
     .accept 365 >>接受任务 悲伤之地
     .target Deathguard Simmer
 step
@@ -836,7 +836,7 @@ step
     .goto Tirisfal Glades,60.59,51.77
 step << Rogue
     .goto Tirisfal Glades,61.15,52.59
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_温特斯夫人|r |cRXP_BUY_对话，并|r|cRXP_BUY_从她那里购买一把|r |T135421:0|t[增重飞斧]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_温特斯夫人|r |cRXP_BUY_对话并|r|cRXP_BUY_从她那里购买一把|r |T135421:0|t[增重飞斧]
     .collect 3131,200,786,1 --Weighted Throwing Axe (200)
     .target 温特斯夫人
     .itemStat 18,QUALITY,<7
@@ -994,7 +994,7 @@ step
     .target 旅店老板瑞尼
  step
     .goto Tirisfal Glades,59.45,52.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔汉|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔汉|r对话
     .accept 367 >>接受任务 新的瘟疫
     .target 药剂师乔汉
 step << Priest
@@ -1523,7 +1523,7 @@ step
 step
     #label NewPlague1
     .goto Tirisfal Glades,59.45,52.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔汉|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔汉|r对话
     .turnin 367 >>交任务 新的瘟疫
     .accept 368 >>接受任务 新的瘟疫
     .target 药剂师乔汉
@@ -1712,7 +1712,7 @@ step << Mage
     .goto Tirisfal Glades,58.38,35.28,0
     .goto Tirisfal Glades,60.09,37.01,0
     >>对 |cRXP_ENEMY_古怪的甜瓜|r 施放 |T136071:0|t[变形术]
-    >>拾取地上的|T134332:0|t|cRXP_LOOT_[药剂师笔记]|r
+    >>拾取地上的|T134332:0|t|T134332:0|t|cRXP_LOOT_[药剂师笔记]|r
     .collect 208183,6 --Apothecary Notes (6)
     .mob Odd Melon
     .train 415942,1
@@ -2901,7 +2901,7 @@ step << Mage
     #season 2
     #completewith HorrorsandSpirits
     >>对 |cRXP_ENEMY_古怪的甜瓜|r 施放 |T136071:0|t[变形术]
-    >>拾取地上的|T134332:0|t|cRXP_LOOT_[药剂师笔记]|r
+    >>拾取地上的|T134332:0|t|T134332:0|t|cRXP_LOOT_[药剂师笔记]|r
     .collect 208183,6 --Apothecary Notes (6)
     .mob Odd Melon
     .train 415942,1
@@ -2943,7 +2943,7 @@ step << Mage
     .goto Tirisfal Glades,76.51,61.77,20,0
     .goto Tirisfal Glades,76.04,59.31,20,0
     >>对 |cRXP_ENEMY_古怪的甜瓜|r 施放 |T136071:0|t[变形术]
-    >>拾取地上的|T134332:0|t|cRXP_LOOT_[药剂师笔记]|r
+    >>拾取地上的|T134332:0|t|T134332:0|t|cRXP_LOOT_[药剂师笔记]|r
     .collect 208183,6 --Apothecary Notes (6)
     .mob Odd Melon
     .train 415942,1
@@ -3187,7 +3187,7 @@ step
     .deathskip >> 在|cRXP_WARN_较小的岛屿上|r死亡，然后在|cRXP_FRIENDLY_灵魂医者|r处复活
 step
     .goto Tirisfal Glades,59.45,52.39
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔汉|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔汉|r对话
     .turnin 369 >>交任务 新的瘟疫
     .accept 492 >>接受任务 新的瘟疫
     .accept 445 >>接受任务 给银松森林送信
@@ -3195,7 +3195,7 @@ step
 step << skip
     #phase 3-6
     .goto Tirisfal Glades,59.45,52.39
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔汉|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔汉|r对话
     .turnin 369 >>交任务 新的瘟疫
     .accept 492 >>接受任务 新的瘟疫
     --.accept 445 >>Accept Delivery to Silverpine Forest
@@ -3308,7 +3308,7 @@ step << Warrior
     #season 2
     .goto Tirisfal Glades,61.72,51.91
     >>击杀 |cRXP_ENEMY_蓝心|r，然后与楼上的 |cRXP_FRIENDLY_本尼|r 对话
-    .gossipoption 110751 >>从她那里获得|T134419:0|t|T134419:0|t[|cRXP_FRIENDLY_狂乱攻击符文|r]
+    .gossipoption 110751 >>从她那里获得|T134419:0|t[|cRXP_FRIENDLY_狂乱攻击符文|r]
     .collect 204716,1 --Rune of Frenzied Assault (1)
     .target Netali
     .mob Blueheart
@@ -3443,7 +3443,7 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_安德隆|r 对话
     .turnin 1898 >>交任务亡灵哨兵
     .accept 1899 >>接受任务 亡灵哨兵
-    .target Andron Gant
+    .target 安德隆·甘特
     .isQuestTurnedIn 1886
 step << Rogue
     #xprate <1.5
@@ -3694,7 +3694,7 @@ step
 step << Priest
     .goto Tirisfal Glades,61.57,52.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与二楼的 |cRXP_FRIENDLY_贝里尔|r 对话
-	.train 588 >>训练 |T135926:0|t[心灵之火]
+	.train 588 >>学习 |T135926:0|t[心灵之火]
     .target Dark Cleric Beryl
     .xp <12,1
 step << Mage
@@ -3908,7 +3908,7 @@ step << skip --Rogue/Warrior
     #optional
     #label UndercityLS3
     .goto Undercity,84.86,20.34
-    .goto Undercity,67.90,15.28,30 >>|cRXP_WARN_前往你右侧的试剂商人处，将角色站在最低楼梯的最高处直到看起来像漂浮状态，然后执行登出跳过——登出再重新登录。|r
+    .goto Undercity,67.90,15.28,30 >>|cRXP_WARN_执行一个返回角色选择跳过技巧，通过将你的角色定位在最低楼梯的最高部分，直到看起来像他们在漂浮，然后登出再登入|r
     .link https://www.youtube.com/watch?v=-Bi95bCN8dM >> |cRXP_WARN_点击此处查看示例|r
     >>|cRXP_WARN_如果你做不到，就正常跑出幽暗城|r
     .zoneskip Undercity,1
@@ -4024,7 +4024,7 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_安德隆|r 对话
     .turnin 1898 >>交任务亡灵哨兵
     .accept 1899 >>接受任务 亡灵哨兵
-    .target Andron Gant
+    .target 安德隆·甘特
     .isQuestTurnedIn 1886
 step << Rogue
     #optional
@@ -4194,7 +4194,7 @@ step
     .goto Silverpine Forest,43.98,39.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾德温|r 对话
     >>|cRXP_BUY_购买|r |T132815:0|t[冰镇牛奶]|cRXP_BUY_从他那里|r << Mage/Warlock/Priest/Shaman/Druid
-    .vendor >> |cRXP_BUY_购买|r |T134830:0|t|T134830:0|t[次级治疗药水] |cRXP_BUY_从他那里（如果有货的话）|r
+    .vendor >> |cRXP_BUY_从他那里购买|r|T134830:0|t[次级治疗药水] |cRXP_BUY_（如果有货的话）|r
     .collect 1179,20,421,1 << Mage/Warlock/Priest/Shaman/Druid --Ice Cold Milk (20)
     .target Edwin Harly
     .money <0.05 << Mage/Warlock/Priest/Shaman/Druid
@@ -4424,7 +4424,7 @@ step
     .goto Silverpine Forest,43.98,39.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾德温|r 对话
     >>|cRXP_BUY_购买|r |T132815:0|t[冰镇牛奶]|cRXP_BUY_从他那里|r << Warlock/Priest/Shaman/Druid
-    .vendor >> |cRXP_BUY_购买|r |T134830:0|t|T134830:0|t[次级治疗药水] |cRXP_BUY_从他那里（如果有货的话）|r
+    .vendor >> |cRXP_BUY_从他那里购买|r|T134830:0|t[次级治疗药水] |cRXP_BUY_（如果有货的话）|r
     .collect 1179,20,423,1 << Warlock/Priest/Shaman/Druid --Ice Cold Milk (20)
     .target Edwin Harly
 step << Warlock/Mage/Priest
@@ -4585,7 +4585,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡鲁斯|r 对话
     .turnin 6321 >>交任务 资助墓穴 << Undead
     .accept 6323 >>接受任务 飞往幽暗城 << Undead
-    .fp Sepulcher >> 获得瑟伯切尔飞行路径 << !Undead
+    .fp Sepulcher >> 获取泰雷多尔的飞行路径 << !Undead
     .fly Undercity >> 飞往幽暗城 << !Undead
     .target 卡洛斯·拉佐克
     .zoneskip Undercity
@@ -4617,7 +4617,7 @@ step << Undead
 
 step << Undead
     .goto Undercity,61.48,41.81
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_高顿|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_高顿|r对话
     .turnin 6323 >> 交任务 飞往幽暗城
     .accept 6322 >> 接受任务 迈克尔·加勒特
     .target Gordon Wendham
@@ -4659,7 +4659,7 @@ step << Undead Warrior
     #xprate <1.5
     #optional
     .goto Undercity,47.41,17.33
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_巴尔图斯·弗勒|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与|cRXP_FRIENDLY_巴尔图斯·弗勒|r 对话
     .train 285 >> 训练你的职业技能
     .target Baltus Fowler
     .dungeon RFC
@@ -4756,7 +4756,7 @@ step << Undead Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_安德隆|r 对话
     .turnin 1898 >>交任务亡灵哨兵
     .accept 1899 >>接受任务 亡灵哨兵
-    .target Andron Gant
+    .target 安德隆·甘特
     .isQuestTurnedIn 1886
 step << Undead Rogue
     .goto Undercity,55.43,76.87
@@ -4986,7 +4986,7 @@ step << Undead Priest
     #sticky
     #label TouchOW
     .goto Undercity,48.98,18.33
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_艾萨莱斯特|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_艾萨莱斯特|r对话
     .turnin 5658 >> 交任务 虚弱之触
     .target Aelthalyste
     .train 2652,1 --Touch of Weakness not trained
@@ -5188,7 +5188,7 @@ step << Undead
     .dungeon RFC
 step << Undead
     .goto Durotar,53.08,9.19,0
-    >>在骷髅石击杀|cRXP_ENEMY_火刃氏族|r的怪物，直到掉落|cRXP_LOOT_军官的徽章|r
+    >>在骷髅石击杀|cRXP_ENEMY_火刃氏族|r 小怪，直到掉落|cRXP_LOOT_军官的徽章|r
     .complete 5726,1 --Lieutenant's Insignia (1)
     .dungeon RFC
 step << Undead
@@ -5467,7 +5467,7 @@ step
     #completewith next
     .goto Tirisfal Glades,30.04,72.78,8,0
     .goto Tirisfal Glades,30.27,72.78,8,0
-    .goto Tirisfal Glades,30.22,71.65,10 >> 从地穴跑出来，朝 |cRXP_FRIENDLY_摩尔多|r 方向前进
+    .goto Tirisfal Glades,30.22,71.65,10 >> 跑出地穴，朝 |cRXP_FRIENDLY_摩尔多|r 的方向前进
 step
     .goto Tirisfal Glades,30.22,71.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莫多|r 对话
@@ -5482,8 +5482,8 @@ step << Warrior/Warlock/Priest/Mage
     .goto Tirisfal Glades,29.18,68.94,40,0 << Priest/Mage
     .goto Tirisfal Glades,29.10,67.66,40,0 << Priest/Mage
     .goto Tirisfal Glades,30.19,65.32,40,0 << Priest/Mage
-    +|cRXP_WARN_击杀 |cRXP_ENEMY_食腐狼幼崽|r 和 |cRXP_ENEMY_夜行蝙蝠|r。拾取它们的掉落，直到你拥有价值60铜币的可出售物品（包括你的护甲）|r << Mage
-    +|cRXP_WARN_击杀 |cRXP_ENEMY_食腐狼幼崽|r 和 |cRXP_ENEMY_夜行蝙蝠|r。拾取它们的掉落，直到你拥有价值50铜币的可出售物品（包括你的护甲）|r << Priest
+    +|cRXP_WARN_击杀 |cRXP_ENEMY_食腐狼幼崽|r 和 |cRXP_ENEMY_夜行蝙蝠|r，拾取它们的掉落，直到你拥有价值60铜币的可出售物品（包括你的护甲）|r << Mage
+    +|cRXP_WARN_击杀 |cRXP_ENEMY_食腐狼幼崽|r 和 |cRXP_ENEMY_夜行蝙蝠|r，拾取它们的掉落，直到你拥有价值50铜币的可出售物品（包括你的护甲）|r << Priest
     +|cRXP_WARN_击杀 |cRXP_ENEMY_食腐狼幼崽|r 和 |cRXP_ENEMY_夜行蝙蝠|r，拾取它们的掉落，直到你拥有价值10铜币的可出售物品（包括你的护甲）|r << Warrior/Warlock
     .mob 食腐狼幼崽
     .mob 夜行蝙蝠
@@ -5492,8 +5492,8 @@ step << Warrior/Warlock/Priest/Mage
     #season 0
     #xprate >2.09
     #completewith Vendor
-    +|cRXP_WARN_击杀 |cRXP_ENEMY_食腐狼幼崽|r 和 |cRXP_ENEMY_夜行蝙蝠|r。拾取它们的掉落，直到你拥有价值60铜币的可出售物品（包括你的护甲）|r << Mage
-    +|cRXP_WARN_击杀 |cRXP_ENEMY_食腐狼幼崽|r 和 |cRXP_ENEMY_夜行蝙蝠|r。拾取它们的掉落，直到你拥有价值50铜币的可出售物品（包括你的护甲）|r << Priest
+    +|cRXP_WARN_击杀 |cRXP_ENEMY_食腐狼幼崽|r 和 |cRXP_ENEMY_夜行蝙蝠|r，拾取它们的掉落，直到你拥有价值60铜币的可出售物品（包括你的护甲）|r << Mage
+    +|cRXP_WARN_击杀 |cRXP_ENEMY_食腐狼幼崽|r 和 |cRXP_ENEMY_夜行蝙蝠|r，拾取它们的掉落，直到你拥有价值50铜币的可出售物品（包括你的护甲）|r << Priest
     +|cRXP_WARN_击杀 |cRXP_ENEMY_食腐狼幼崽|r 和 |cRXP_ENEMY_夜行蝙蝠|r，拾取它们的掉落，直到你拥有价值10铜币的可出售物品（包括你的护甲）|r << Warrior/Warlock
     .mob 食腐狼幼崽
     .mob 夜行蝙蝠
@@ -5568,7 +5568,7 @@ step
     .train 401759 >> 使用 |T134939:0|t[|cRXP_FRIENDLY_法术笔记：燃尽|r] 来学习 |T236207:0|t[燃尽] << Mage
     .train 440858 >> 使用 |T134939:0|t[|cRXP_FRIENDLY_法术笔记：寒冰宝珠|r] 来学习 |T135851:0|t[寒冰宝珠] << Mage
     .train 401760 >> 使用 |T134939:0|t[|cRXP_FRIENDLY_法术笔记：冰枪术|r] 来学习 |T135844:0|t[冰枪术] << Mage
-    .train 401768 >> 使用 |T134939:0|t[|cRXP_FRIENDLY_法术笔记：活火|r] 来学习 |T135820:0|t[活火] << Mage
+    .train 401768 >> 使用 |T134939:0|t[|cRXP_FRIENDLY_法术笔记：活化烈焰|r] 来学习 |T135820:0|t[活化烈焰] << Mage
     .train 416009 >> 使用 |T134419:0|t[|cRXP_FRIENDLY_战术符文|r] 来学习 |T136150:0|t[恶魔战术] << Warlock
     .train 425476 >> 使用 |T134419:0|t[|cRXP_FRIENDLY_契约符文|r] 来训练 |T237562:0|t[恶魔契约] << Warlock
     .train 416015 >> 使用 |T134419:0|t[|cRXP_FRIENDLY_烧尽符文|r] 来训练 |T135789:0|t[烧尽] << Warlock
@@ -5639,7 +5639,7 @@ step
 step << Warlock/Mage
     #sticky
     #label Piercing
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_温雅·玛山德|r 和 |cRXP_FRIENDLY_暗影牧师萨维斯|r 对话 << Warlock
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_温雅·玛山德|r 和 |cRXP_FRIENDLY_暗影牧师萨维斯|r 对话 << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_萨维斯|r 对话 << Mage
     .accept 1470 >>接受任务 控制小鬼 << Warlock
     .goto Tirisfal Glades,30.98,66.41 << Warlock
@@ -5848,7 +5848,7 @@ step << Warlock
 step << Warlock
     .goto Tirisfal Glades,31.35,66.21,10,0
     .goto Tirisfal Glades,30.98,66.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_温雅|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_温雅|r 对话
     .turnin 1470 >>交任务 控制小鬼
     .target 温雅·玛山德
 step << Warlock
@@ -6522,7 +6522,7 @@ RXPGuides.RegisterGuide([[
 
 step
     .goto Tirisfal Glades,40.91,54.17
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_西米尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_西米尔|r对话
     .accept 365 >>接受任务 悲伤之地
     .target Deathguard Simmer
 step << skip
@@ -6563,7 +6563,7 @@ step
     .goto Tirisfal Glades,60.59,51.77
 step << Rogue
     .goto Tirisfal Glades,61.15,52.59
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_温特斯夫人|r |cRXP_BUY_对话，并|r|cRXP_BUY_从她那里购买一把|r |T135421:0|t[增重飞斧]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_温特斯夫人|r |cRXP_BUY_对话并|r|cRXP_BUY_从她那里购买一把|r |T135421:0|t[增重飞斧]
     .collect 3131,200,786,1 --Weighted Throwing Axe (200)
     .target 温特斯夫人
     .itemStat 18,QUALITY,<7
@@ -6720,7 +6720,7 @@ step
     .target 旅店老板瑞尼
  step
     .goto Tirisfal Glades,59.45,52.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔汉|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔汉|r对话
     .accept 367 >>接受任务 新的瘟疫
     .target 药剂师乔汉
 step << Priest
@@ -7257,7 +7257,7 @@ step
     #label NewPlague1
     #optional
     .goto Tirisfal Glades,59.45,52.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔汉|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔汉|r对话
     .turnin 367 >>交任务 新的瘟疫
     .accept 368 >>接受任务 新的瘟疫
     .target 药剂师乔汉
@@ -7450,7 +7450,7 @@ step << Mage
     .goto Tirisfal Glades,58.38,35.28,0
     .goto Tirisfal Glades,60.09,37.01,0
     >>对 |cRXP_ENEMY_古怪的甜瓜|r 施放 |T136071:0|t[变形术]
-    >>拾取地上的|T134332:0|t|cRXP_LOOT_[药剂师笔记]|r
+    >>拾取地上的|T134332:0|t|T134332:0|t|cRXP_LOOT_[药剂师笔记]|r
     .collect 208183,6 --Apothecary Notes (6)
     .mob Odd Melon
     .train 415942,1
@@ -7531,7 +7531,7 @@ step << Mage
     .goto Tirisfal Glades,58.38,35.28,40,0
     .goto Tirisfal Glades,60.09,37.01,40,0
     >>对 |cRXP_ENEMY_古怪的甜瓜|r 施放 |T136071:0|t[变形术]
-    >>拾取地上的|T134332:0|t|cRXP_LOOT_[药剂师笔记]|r
+    >>拾取地上的|T134332:0|t|T134332:0|t|cRXP_LOOT_[药剂师笔记]|r
     .collect 208183,6 --Apothecary Notes (6)
     .mob Odd Melon
     .train 415942,1
@@ -9132,7 +9132,7 @@ step << Mage
     #season 2
     #completewith HorrorsandSpirits
     >>对 |cRXP_ENEMY_古怪的甜瓜|r 施放 |T136071:0|t[变形术]
-    >>拾取地上的|T134332:0|t|cRXP_LOOT_[药剂师笔记]|r
+    >>拾取地上的|T134332:0|t|T134332:0|t|cRXP_LOOT_[药剂师笔记]|r
     .collect 208183,6 --Apothecary Notes (6)
     .mob Odd Melon
     .train 415942,1
@@ -9177,7 +9177,7 @@ step << Mage
     .goto Tirisfal Glades,76.51,61.77,20,0
     .goto Tirisfal Glades,76.04,59.31,20,0
     >>对 |cRXP_ENEMY_古怪的甜瓜|r 施放 |T136071:0|t[变形术]
-    >>拾取地上的|T134332:0|t|cRXP_LOOT_[药剂师笔记]|r
+    >>拾取地上的|T134332:0|t|T134332:0|t|cRXP_LOOT_[药剂师笔记]|r
     .collect 208183,6 --Apothecary Notes (6)
     .mob Odd Melon
     .train 415942,1
@@ -9394,7 +9394,7 @@ step
 step
     #xprate <2.1
     .goto Tirisfal Glades,59.45,52.39
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔汉|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔汉|r对话
     .turnin 369 >>交任务 新的瘟疫
     .accept 492 >>接受任务 新的瘟疫
     --.accept 445 >>Accept Delivery to Silverpine Forest
@@ -9402,7 +9402,7 @@ step
 step << skip
     #phase 3-6
     .goto Tirisfal Glades,59.45,52.39
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔汉|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔汉|r对话
     .turnin 369 >>交任务 新的瘟疫
     .accept 492 >>接受任务 新的瘟疫
     --.accept 445 >>Accept Delivery to Silverpine Forest
@@ -9512,7 +9512,7 @@ step << Warrior
     #season 2
     .goto Tirisfal Glades,61.72,51.91
     >>击杀 |cRXP_ENEMY_蓝心|r，然后与楼上的 |cRXP_FRIENDLY_本尼|r 对话
-    .gossipoption 110751 >>从她那里获得|T134419:0|t|T134419:0|t[|cRXP_FRIENDLY_狂乱攻击符文|r]
+    .gossipoption 110751 >>从她那里获得|T134419:0|t[|cRXP_FRIENDLY_狂乱攻击符文|r]
     .collect 204716,1 --Rune of Frenzied Assault (1)
     .target Netali
     .mob Blueheart
@@ -9526,7 +9526,7 @@ step << Warrior
 step << Priest
     .goto Tirisfal Glades,61.57,52.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与二楼的 |cRXP_FRIENDLY_贝里尔|r 对话
-	.train 588 >>训练 |T135926:0|t[心灵之火]
+	.train 588 >>学习 |T135926:0|t[心灵之火]
     .target Dark Cleric Beryl
     .xp <12,1
     .xp >14,1
@@ -9643,7 +9643,7 @@ step << Undead
     .dungeon RFC
 step << Undead
     .goto Durotar,53.08,9.19,0
-    >>在骷髅石击杀|cRXP_ENEMY_火刃氏族|r的怪物，直到掉落|cRXP_LOOT_军官的徽章|r
+    >>在骷髅石击杀|cRXP_ENEMY_火刃氏族|r 小怪，直到掉落|cRXP_LOOT_军官的徽章|r
     .complete 5726,1 --Lieutenant's Insignia (1)
     .dungeon RFC
 step << Undead

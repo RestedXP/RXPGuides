@@ -3281,7 +3281,7 @@ step
 step
     #optional
     .goto 1437,4.370,56.762
-    >>|cRXP_WARN_在等待前往黑海岸的船时|r|cRXP_WARN_提升你的|r |T135966:0|t[急救]
+    >>|cRXP_WARN_在等待前往黑海岸的船只时提升你的|r |T135966:0|t[急救] |cRXP_WARN_技能|r
     .zone Darkshore >> 乘船前往黑海岸
     .skill firstaid,75,1 -- shows if firstaid is <75
     .skill firstaid,<1,1 -- shows if firstaid is >1

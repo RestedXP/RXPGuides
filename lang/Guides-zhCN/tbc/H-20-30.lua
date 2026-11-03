@@ -3317,7 +3317,7 @@ step << Mage
     .zoneskip Undercity
 step << !Undead
     .goto Undercity,63.25,48.56
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迈克尔 |r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_麦克尔|r 对话
     .fp Undercity >> 获取幽暗城的飞行路线
     .target 迈克尔·加勒特
     .isQuestAvailable 9621 << BloodElf
@@ -5594,7 +5594,7 @@ step << Druid
 step
     .goto Thunder Bluff,61.53,80.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_梅洛|r
-    .accept 1131 >>接受任务钢齿土狼
+    .accept 1131 >>接受任务 钢齿土狼
     .target 梅洛·石蹄
     .isQuestAvailable 1131
 step << Hunter
@@ -6933,7 +6933,7 @@ step
     .isQuestAvailable 4904,1151,5088,5147
 step
     .goto Thunder Bluff,61.53,80.92
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_梅洛|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_梅洛|r
     .turnin 1131 >> 交任务钢齿土狼
     .accept 1136 >> 接受任务 霜喉雪人
     .target 梅洛·石蹄

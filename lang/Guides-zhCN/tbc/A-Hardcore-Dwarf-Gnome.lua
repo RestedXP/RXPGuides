@@ -1695,7 +1695,7 @@ step
     .mob 狗头人矿工
 step
     .goto Elwynn Forest,40.5,82.3
-    >>|cRXP_WARN_进入并探察法戈第矿洞|r
+    >>|cRXP_WARN_进入并且探察法戈第矿洞|r
     .complete 62,1 --Scout Through the Fargodeep Mine
 step
     .goto Elwynn Forest,40.5,82.3,25,0

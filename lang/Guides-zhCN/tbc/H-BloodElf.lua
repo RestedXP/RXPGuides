@@ -8930,7 +8930,7 @@ step << Priest
     .goto Silvermoon City,60.65,63.45,15,0
     .goto Silvermoon City,65.92,53.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_维娜|r 对话
-    >>|cRXP_BUY_购买1根|r |T135144:0|t[强效魔法杖] |cRXP_BUY_从拍卖行。如果它便宜|r
+    >>|cRXP_BUY_从拍卖行购买1根|r |T135144:0|t[强效魔法杖] |cRXP_BUY_如果它便宜|r
     >>|cRXP_WARN_如果价格都太贵，可以跳过此步骤|r
     .collect 11288,1,496,1 --Greater Magic Wand
     .target 维纳 <拍卖师>

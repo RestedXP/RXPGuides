@@ -395,7 +395,7 @@ step
     .mob 农夫达尔松
 step
     .goto Western Plaguelands,47.353,49.626
-    >>点击 |cRXP_PICK_锁住的柜橱|r 在房子的楼上
+    >>在房子的楼上点击 |cRXP_PICK_锁住的柜橱|r
     .turnin 5060 >> 交任务 被锁起来的农夫
 step
     .goto Western Plaguelands,46.156,52.427

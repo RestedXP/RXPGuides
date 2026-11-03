@@ -27,7 +27,7 @@ step
 step
     .goto Wetlands,8.359,58.526
     .target 卡尔·波兰
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_卡尔·波兰|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡尔·波兰|r 对话
     .accept 279 >> 接受任务 海中的鱼人
 step << Draenei/NightElf
     .goto Wetlands,9.490,59.693
@@ -205,7 +205,7 @@ step
     .zoneskip Wetlands,1
 step
     .goto Wetlands,56.37,40.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_绿色守卫者雷希耶尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_绿色守卫者雷希耶尔|r 对话
     .turnin 463 >> 交任务绿色守卫者
     .accept 276 >> 接受任务 践踏之爪
     .target 绿色守卫者雷希耶尔
@@ -226,7 +226,7 @@ step
 step
     #label FinishGnolls
     .goto Wetlands,56.37,40.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_绿色守卫者雷希耶尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_绿色守卫者雷希耶尔|r 对话
     .turnin 276 >> 交任务践踏之爪
     .accept 277 >> 接受任务火焰管制
     .target 绿色守卫者雷希耶尔
@@ -286,7 +286,7 @@ step << !NightElf !Draenei
     .xp <25,1
 step << !NightElf !Draenei
     .goto Wetlands,8.359,58.526
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_卡尔·波兰|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡尔·波兰|r 对话
     .turnin 279 >> 交任务海中的鱼人
     .target 卡尔·波兰
     .xp <25,1
@@ -560,7 +560,7 @@ RXPGuides.RegisterGuide([[
 
 step
     .goto Stormwind City,55.21,7.04
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_比利巴布·旋轮|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_比利巴布·旋轮|r 对话
     .vendor >> |cRXP_BUY_如果有售，从他那里购买一个|r |T133024:0|t[青铜管] |cRXP_BUY_|r
     >>|cRXP_WARN_这是限量供应物品。如果 |cRXP_FRIENDLY_比利巴布·旋轮|r 没有库存，请跳过此步骤|r
     .bronzetube
@@ -744,7 +744,7 @@ step << Mage
 step
 #ah
     .goto Stormwind City,53.612,59.764
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
     >>购买以下物品，以便稍后在暮色森林更快交任务
     >>这样可以节省时间，因为你不需要四处跑去找怪击杀。如果你不想购买，可以跳过这一步
     >>|cRXP_WARN_注意：你也应该将|r |T133971:0|t[烹饪] |cRXP_WARN_练到 50 级，以便在暮色森林完成一个轻松获得 2000 经验的任务。购买尽可能多的|r |T133970:0|t[大块野猪肉] |cRXP_WARN_或|r |T133970:0|t|cRXP_LOOT_[多汁狼肉]|r |cRXP_WARN_，以便将烹饪练到 50。到达暮色森林的旅店后即可将它们烹饪|r
@@ -759,7 +759,7 @@ step
 step
 #ah
     .goto Stormwind City,53.612,59.764
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
     >>购买以下物品，以便稍后在暮色森林更快交任务
     >>这样可以节省时间，因为你不需要四处跑去找怪击杀。如果你不想购买，可以跳过这一步
     >>|T133024:0|t[青铜管]
@@ -930,7 +930,7 @@ step
 step
     .goto Duskwood,75.81,45.29
     .target 伊瓦夫人
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_伊瓦夫人|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_伊瓦夫人|r 对话
     .accept 66 >> 接受任务斯塔文的传说
     .accept 101 >> 接受任务惩罚图腾
 step
@@ -956,7 +956,7 @@ step
     .target 指挥官阿尔泰娅·埃伯洛克
 step
     .goto Duskwood,72.53,46.85
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_书记员达尔塔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_书记员达尔塔|r 对话
     .turnin 66 >> 交任务斯塔文的传说
     .accept 67 >> 接受任务斯塔文的传说
     .target 书记员达尔塔
@@ -1224,7 +1224,7 @@ step << Rogue
     .goto Westfall,71.49,73.49,30,0
     .goto Westfall,71.01,75.72,30,0
     .goto Westfall,69.58,73.07,30,0
-    >>|T133644:0|t[搜索] |cRXP_ENEMY_丑陋的迪菲亚懒汉|r。拾取 |cRXP_LOOT_迪菲亚塔楼钥匙|r
+    >>|T133644:0|t[搜索] |cRXP_ENEMY_丑陋的迪菲亚懒汉|r。拾取地上的物品以获得 |cRXP_LOOT_迪菲亚塔楼钥匙|r
     >>|cRXP_WARN_你必须处于|r |T132320:0|t[潜行] |cRXP_WARN_状态下才能使用|r |T133644:0|t[偷窃]
     >>|cRXP_WARN_|cRXP_ENEMY_丑陋的迪菲亚懒汉|r 出现在塔楼入口处，随后会在塔楼外侧巡逻|r
     >>|cRXP_WARN_小心，他伤害很高。如果你的|r |T132320:0|t[潜行] |cRXP_WARN_被打破，立刻使用|r |T132307:0|t[疾跑] |cRXP_WARN_并逃离|r
@@ -1354,7 +1354,7 @@ step << !Dwarf Rogue
 step << !Dwarf Rogue
     #requires AntiVenomEnd
     .goto 1453,43.070,26.155
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_珊娜·弗勒|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_珊娜·弗勒|r 对话
     >>|cRXP_WARN_If you have a|r |T626003:0|t|cFFF48CBAPaladin|r |cRXP_WARN_or|r |T625999:0|t|cFFFF7C0ADruid|r |cRXP_WARN_friend, ask them to remove the|r |T136230:0|t[赞吉尔之触] |cRXP_WARN_for you instead|r
     .skill firstaid,80 >> |cRXP_WARN_将你的|r |T135966:0|t[急救] |cRXP_WARN_提升到 80|r
     .aura -9991
@@ -1362,7 +1362,7 @@ step << !Dwarf Rogue
 step << !Dwarf Rogue
     #label FirstAidEnd
     .goto 1453,43.070,26.155
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_珊娜·弗勒|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_珊娜·弗勒|r 对话
     >>|cRXP_WARN_If you have a|r |T626003:0|t|cFFF48CBAPaladin|r |cRXP_WARN_or|r |T625999:0|t|cFFFF7C0ADruid|r |cRXP_WARN_friend, ask them to remove the|r |T136230:0|t[赞吉尔之触] |cRXP_WARN_for you instead|r
     .train 7934 >> |cRXP_WARN_学习|r |T134437:0|t[抗毒药剂]
     .aura -9991
@@ -1476,7 +1476,7 @@ step
     .accept 57 >> 接受任务守夜人
 step
     .goto Duskwood,72.53,46.85
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_书记员达尔塔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_书记员达尔塔|r 对话
     .turnin 68 >> 交任务斯塔文的传说
     .accept 69 >> 接受任务斯塔文的传说
     .target 书记员达尔塔
@@ -1496,7 +1496,7 @@ step
     .destroy 2154 >> 删除 |T133741:0|t[摩根·拉迪莫尔的故事]
 step
     .goto Duskwood,75.81,45.29
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_伊瓦夫人|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_伊瓦夫人|r 对话
     .turnin 148 >> 交任务夜色镇的补给
     .target 伊瓦夫人
     .accept 149 >> 接受任务幽灵的发丝
@@ -1563,7 +1563,7 @@ step
     .target 维克托·安特拉斯
 step
     .goto Duskwood,75.81,45.29
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_伊瓦夫人|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_伊瓦夫人|r 对话
     .turnin 154 >> 交任务 归还梳子
     .accept 157 >> 接受任务送交发丝
     .target 伊瓦夫人
@@ -1784,7 +1784,7 @@ step
     .subzone 42 >> 前往夜色镇
 step
     .goto Duskwood,75.81,45.29
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_伊瓦夫人|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_伊瓦夫人|r 对话
     .turnin 262 >> 交任务模糊的人影
     .target 伊瓦夫人
     .accept 265 >> 接受任务继续搜寻
@@ -1803,7 +1803,7 @@ step
     .target 指挥官阿尔泰娅·埃伯洛克
 step
     .goto Duskwood,72.53,46.85
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_书记员达尔塔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_书记员达尔塔|r 对话
     .turnin 265 >> 交任务继续搜寻
     .accept 266 >> 接受任务调查旅店
     .target 书记员达尔塔
@@ -1839,7 +1839,7 @@ step
     .target 指挥官阿尔泰娅·埃伯洛克
 step
     .goto Duskwood,75.302,48.046
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_卡洛尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡洛尔|r 对话
     .accept 173 >> 接受任务林子里的狼人
     .target 卡洛尔
 step
@@ -1861,7 +1861,7 @@ step
 	.mob 夜行织影狼人
 step
     .goto Duskwood,75.302,48.046
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_卡洛尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡洛尔|r 对话
     .turnin 173 >> 交任务林子里的狼人
     .target 卡洛尔
 step
@@ -2287,7 +2287,7 @@ step
     .goto StormwindClassic,41.102,58.091
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_典狱官塞尔沃特|r 对话
     .accept 387 >> 接受任务镇压暴动
-    .turnin 389 >> 交任务 巴基尔·斯瑞德
+    .turnin 389 >> 交任务巴基尔·斯瑞德
     .accept 391 >> 接受任务监狱暴动
     .target 典狱官塞尔沃特
 step
@@ -2894,7 +2894,7 @@ RXPGuides.RegisterGuide([[
 
 step
     .goto Wetlands,8.359,58.526
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_卡尔·波兰|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡尔·波兰|r 对话
     .turnin 279 >> 交任务海中的鱼人
     .accept 281 >> 接受任务夺回雕像
     .target 卡尔·波兰
@@ -2928,7 +2928,7 @@ step
     .goto Wetlands,11.796,57.991
     .target 塞达
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_塞达|r 对话
-    .turnin 470 >> 交任务 搜寻软泥怪
+    .turnin 470 >> 交任务搜寻软泥怪
 step
     .goto Wetlands,11.796,57.991
     .target 塞达
@@ -3223,14 +3223,14 @@ step
 step
     .isQuestComplete 277
     .goto Wetlands,56.37,40.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_绿色守卫者雷希耶尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_绿色守卫者雷希耶尔|r 对话
     .turnin 277 >> 交任务火焰管制
     .target 绿色守卫者雷希耶尔
     .accept 275 >> 接受任务大地上的脓疱
 step
     .isQuestTurnedIn 277
     .goto Wetlands,56.37,40.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_绿色守卫者雷希耶尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_绿色守卫者雷希耶尔|r 对话
     .target 绿色守卫者雷希耶尔
     .accept 275 >> 接受任务大地上的脓疱
 step
@@ -3276,12 +3276,12 @@ step
     .isQuestComplete 470
     .goto Wetlands,11.796,57.991
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_塞达|r 对话
-    .turnin 470 >> 交任务 搜寻软泥怪
+    .turnin 470 >> 交任务搜寻软泥怪
     .target 塞达
 step
     .isOnQuest 286
     .goto Wetlands,8.359,58.526
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_卡尔·波兰|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡尔·波兰|r 对话
     .turnin 286 >> 交任务归还雕像
     .target 卡尔·波兰
 step
@@ -3339,7 +3339,7 @@ step
     .accept 474 >>接受任务击败纳克罗什
 step
     .goto Wetlands,56.37,40.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_绿色守卫者雷希耶尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_绿色守卫者雷希耶尔|r 对话
     .turnin 275 >>交任务大地上的脓疱
     .target 绿色守卫者雷希耶尔
     .isQuestComplete 275
@@ -4064,7 +4064,7 @@ step << !Mage
     .zone Stormwind City >> 乘坐地铁前往暴风城
 step << !Mage
     .goto Stormwind City,55.21,7.04
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_比利巴布·旋轮|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_比利巴布·旋轮|r 对话
     .vendor >> |cRXP_BUY_如果有售，从他那里购买一个|r |T133024:0|t[青铜管] |cRXP_BUY_|r
     >>|cRXP_WARN_这是限量供应物品。如果 |cRXP_FRIENDLY_比利巴布·旋轮|r 没有库存，请跳过此步骤|r
     .bronzetube
@@ -4190,7 +4190,7 @@ step
 #ah
     #optional
     .goto Stormwind City,53.612,59.764
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
     >>购买以下物品，以便稍后在暮色森林更快交任务
     >>|T133024:0|t[青铜管]
     .collect 4371,1,174,1 -- Bronze Tube (1)
@@ -4390,7 +4390,7 @@ step << Shaman
     .target 指挥官阿尔泰娅·埃伯洛克
 step << Shaman
     .goto Duskwood,72.53,46.85
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_书记员达尔塔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_书记员达尔塔|r 对话
     .turnin 80 >> 交任务斯塔文的传说
     .accept 97 >> 接受任务斯塔文的传说
     .target 书记员达尔塔
@@ -4611,7 +4611,7 @@ step
     .target 指挥官阿尔泰娅·埃伯洛克
 step << !Shaman
     .goto Duskwood,72.53,46.85
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_书记员达尔塔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_书记员达尔塔|r 对话
     .turnin 80 >> 交任务斯塔文的传说
     .accept 97 >> 接受任务斯塔文的传说
     .target 书记员达尔塔
@@ -4688,7 +4688,7 @@ step << !Shaman
     .target 伊瓦夫人
 step
     .goto Duskwood,75.302,48.046
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_卡洛尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡洛尔|r 对话
     .accept 221 >> 接受任务林子里的狼人
     .target 卡洛尔
 step
@@ -4707,7 +4707,7 @@ step
     .mob 夜行黑暗狼人
 step
     .goto Duskwood,75.302,48.046
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_卡洛尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡洛尔|r 对话
     .turnin 221 >> 交任务林子里的狼人
     .accept 222 >> 接受任务林子里的狼人
     .target 卡洛尔
@@ -4859,7 +4859,7 @@ step
     .target 艾尔罗·埃伯洛克公爵
 step
     .goto Duskwood,75.302,48.046
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_卡洛尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡洛尔|r 对话
     .turnin 222 >> 交任务林子里的狼人
     .accept 223 >> 接受任务林子里的狼人
     .target 卡洛尔
@@ -4955,7 +4955,7 @@ step
 step
 #ah
     .goto Stormwind City,53.612,59.764
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
     >>购买以下物品，以便稍后在南海镇更快交任务
     >>这样可以节省时间，因为你不需要四处跑去找怪击杀。如果你不想购买，可以跳过这一步
     >>10 |T134026:0|t[海龟肉]

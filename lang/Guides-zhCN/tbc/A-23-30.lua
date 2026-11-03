@@ -5033,7 +5033,7 @@ step
 step
     .goto Wetlands,10.599,60.769
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_米克哈尔|r 对话
-    >>|cRXP_WARN_等剧情结束|r
+    >>|cRXP_WARN_等待剧情演出完成|r
     .turnin 1249 >> 交任务失踪的使节
     .target 米克哈尔
 step
@@ -5475,7 +5475,7 @@ step << Shaman
     .target 指挥官阿尔泰娅·埃伯洛克
 step << Shaman
     .goto Duskwood,72.53,46.85
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_书记员达尔塔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_书记员达尔塔|r 对话
     .turnin 80 >> 交任务斯塔文的传说
     .accept 97 >> 接受任务斯塔文的传说
     .target 书记员达尔塔
@@ -5655,7 +5655,7 @@ step
     .target 指挥官阿尔泰娅·埃伯洛克
 step << !Shaman
     .goto Duskwood,72.53,46.85
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_书记员达尔塔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_书记员达尔塔|r 对话
     .turnin 80 >> 交任务斯塔文的传说
     .accept 97 >> 接受任务斯塔文的传说
     .target 书记员达尔塔
@@ -5738,7 +5738,7 @@ step
     .mob 夜行黑暗狼人
 step
     .goto Duskwood,75.302,48.046
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_卡洛尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡洛尔|r 对话
     .turnin 221 >> 交任务林子里的狼人
     .accept 222 >> 接受任务林子里的狼人
     .target 卡洛尔
@@ -5757,7 +5757,7 @@ step
     .mob Nightbane Vile Fang
 step
     .goto Duskwood,75.302,48.046
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_卡洛尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡洛尔|r 对话
     .turnin 222 >> 交任务林子里的狼人
     .accept 223 >> 接受任务林子里的狼人
     .target 卡洛尔
@@ -6176,7 +6176,7 @@ step
 step
     .goto Wetlands,10.599,60.769
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_米克哈尔|r 对话
-    >>|cRXP_WARN_等剧情结束|r
+    >>|cRXP_WARN_等待剧情演出完成|r
     .turnin 1249 >> 交任务失踪的使节
     .target 米克哈尔
 step
@@ -6730,7 +6730,7 @@ step
     .goto Hillsbrad Foothills,51.465,58.386
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_法尔林·奥里涅尔中尉|r 对话
     .turnin 561 >> 交任务法尔林的证据
-    .accept 562 >> 接受任务 升官之道！
+    .accept 562 >> 接受任务升官之道
     .target 法尔林·奥里涅尔中尉
 step
     #loop
@@ -6754,7 +6754,7 @@ step
     .goto Hillsbrad Foothills,51.465,58.386
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_法尔林·奥里涅尔中尉|r 对话
     .turnin 562 >> 交任务 升官之道！
-    .accept 563 >> 接受任务 人事调动
+    .accept 563 >> 接受任务人事调动
     .target 法尔林·奥里涅尔中尉
 step
     .goto Hillsbrad Foothills,50.986,58.696

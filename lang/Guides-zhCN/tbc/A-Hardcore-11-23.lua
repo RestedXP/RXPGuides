@@ -255,7 +255,7 @@ step << !NightElf !Draenei
     #optional
     .goto 1437,4.370,56.762
     .zone Darkshore >> 乘船前往黑海岸
-    >>|cRXP_WARN_在等待前往黑海岸的船时|r|cRXP_WARN_提升你的|r |T135966:0|t[急救]
+    >>|cRXP_WARN_在等待前往黑海岸的船只时提升你的|r |T135966:0|t[急救] |cRXP_WARN_技能|r
     .skill firstaid,75,1 -- shows if firstaid is <75
     .skill firstaid,<1,1 -- shows if firstaid is >1
 step << !NightElf !Draenei
@@ -1099,7 +1099,7 @@ step << Rogue
     #optional
     .goto Teldrassil,58.39,94.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_维斯派塔斯|r 对话
-    .fly Auberdine >>飞往奥伯丁，黑海岸
+    .fly Auberdine >>飞往奥伯丁
     .target 维斯派塔斯
     .zoneskip Teldrassil,1
 step << Draenei/Warlock
@@ -1146,7 +1146,7 @@ step << Warlock
 step << Warlock
     #optional
     .goto 1437,4.370,56.762
-    >>|cRXP_WARN_在等待前往黑海岸的船时|r|cRXP_WARN_提升你的|r |T135966:0|t[急救]
+    >>|cRXP_WARN_在等待前往黑海岸的船只时提升你的|r |T135966:0|t[急救] |cRXP_WARN_技能|r
     .zone Darkshore >> 乘船前往黑海岸
     .skill firstaid,75,1 -- shows if firstaid is <75
     .skill firstaid,<1,1 -- shows if firstaid is >1
@@ -3284,7 +3284,7 @@ step << !NightElf Hunter/Rogue
     #optional
     .goto Teldrassil,58.39,94.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_维斯派塔斯|r 对话
-    .fly Auberdine >>飞往奥伯丁，黑海岸
+    .fly Auberdine >>飞往奥伯丁
     .target 维斯派塔斯
     .zoneskip Teldrassil,1
 ]])
@@ -3952,7 +3952,7 @@ step << Rogue
     .goto Westfall,71.49,73.49,30,0
     .goto Westfall,71.01,75.72,30,0
     .goto Westfall,69.58,73.07,30,0
-    >>|T133644:0|t[搜索] |cRXP_ENEMY_丑陋的迪菲亚懒汉|r。拾取 |cRXP_LOOT_迪菲亚塔楼钥匙|r
+    >>|T133644:0|t[搜索] |cRXP_ENEMY_丑陋的迪菲亚懒汉|r。拾取地上的物品以获得 |cRXP_LOOT_迪菲亚塔楼钥匙|r
     >>|cRXP_WARN_你必须处于|r |T132320:0|t[潜行] |cRXP_WARN_状态下才能使用|r |T133644:0|t[偷窃]
     >>|cRXP_WARN_|cRXP_ENEMY_丑陋的迪菲亚懒汉|r 出现在塔楼入口处，随后会在塔楼外侧巡逻|r
     >>|cRXP_WARN_小心，他伤害很高。如果你的|r |T132320:0|t[潜行] |cRXP_WARN_被打破，立刻使用|r |T132307:0|t[疾跑] |cRXP_WARN_并逃离|r
@@ -4026,7 +4026,7 @@ step << !Dwarf Rogue
 .dungeon DM
     #requires AntiVenomEnd
     .goto 1453,43.070,26.155
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_珊娜·弗勒|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_珊娜·弗勒|r 对话
     >>|cRXP_WARN_If you have a|r |T626003:0|t|cFFF48CBAPaladin|r |cRXP_WARN_or|r |T625999:0|t|cFFFF7C0ADruid|r |cRXP_WARN_friend, ask them to remove the|r |T136230:0|t[赞吉尔之触] |cRXP_WARN_for you instead|r
     .skill firstaid,80 >> |cRXP_WARN_将你的|r |T135966:0|t[急救] |cRXP_WARN_提升到 80|r
     .aura -9991
@@ -4035,7 +4035,7 @@ step << !Dwarf Rogue
 .dungeon DM
     #label FirstAidEnd
     .goto 1453,43.070,26.155
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_珊娜·弗勒|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_珊娜·弗勒|r 对话
     >>|cRXP_WARN_If you have a|r |T626003:0|t|cFFF48CBAPaladin|r |cRXP_WARN_or|r |T625999:0|t|cFFFF7C0ADruid|r |cRXP_WARN_friend, ask them to remove the|r |T136230:0|t[赞吉尔之触] |cRXP_WARN_for you instead|r
     .train 7934 >> |cRXP_WARN_学习|r |T134437:0|t[抗毒药剂]
     .aura -9991
@@ -4074,7 +4074,7 @@ step << Rogue
 step << Rogue
 .dungeon DM
     .goto Stormwind City,78.2,58.8
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与建筑物底层的 |cRXP_FRIENDLY_贾斯伯·菲尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与建筑一层的 |cRXP_FRIENDLY_贾斯伯·菲尔|r 对话
     >>从他那里购买制作 |T132273:0|t[|cRXP_FRIENDLY_速效毒药|r] 和 |T132331:0|t[|cRXP_FRIENDLY_消失|r] 所需的材料
     .collect 3371,20 --Empty Vial (20)
     .collect 2928,20 -Dust of Decay (20)
@@ -4116,7 +4116,7 @@ step
     .goto StormwindClassic,42.435,59.236,10,0
     .goto StormwindClassic,41.102,58.091
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_典狱官塞尔沃特|r 对话
-    .turnin 389 >> 交任务 巴基尔·斯瑞德
+    .turnin 389 >> 交任务巴基尔·斯瑞德
     .target 典狱官塞尔沃特
 step
 .dungeon DM
@@ -4142,7 +4142,7 @@ step
 step
 .dungeon DM
     .goto StormwindClassic,55.21,7.04
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_比利巴布·旋轮|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_比利巴布·旋轮|r 对话
     .vendor 5519 >> |cRXP_BUY_从他这里|r|T133024:0|t|cRXP_BUY_买一个|r [青铜管] (如果有)
 --    >>You will need 2 bronze tubes for a quest later << Rogue
     .bronzetube
@@ -5134,7 +5134,7 @@ step
 .dungeon WC
     .goto The Barrens,48.184,32.781
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_菲拉·古风|r 对话
-    .turnin 6981 >> 交任务 发光的碎片
+    .turnin 6981 >> 交任务发光的碎片
     .target 菲拉·古风
     .isQuestComplete 6981
 step
@@ -5610,7 +5610,7 @@ step
     .complete 1134,1
     .zoneskip Stonetalon Mountains,1
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_凯拉·影矛|r 对话
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_凯拉·影矛|r 对话
 	.target 接受任务 信仰前景
     .goto Stonetalon Mountains,59.899,66.844
     .turnin 1070 >> 交任务 守卫石爪山
@@ -5721,7 +5721,7 @@ step << Warlock
 step << Warlock
     .goto The Barrens,49.307,57.095
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_先知塔卡尔|r 对话
-    .turnin 1716 >> 交任务 噬魂者
+    .turnin 1716 >> 交任务  噬魂者
     .target 先知塔卡尔
     .accept 1738 >> 接受任务 同心树
     .accept 65602 >> 接受任务 爱是什么？
@@ -5921,7 +5921,7 @@ step
     #label end
     .goto Ashenvale,34.41,47.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_黛琳希亚|r 对话
-    .fly Darkshore>> 飞往奥伯丁，黑海岸
+    .fly Darkshore>> 飞往奥伯丁
     .target 黛琳希亚
     .zoneskip Ashenvale,1
 step
