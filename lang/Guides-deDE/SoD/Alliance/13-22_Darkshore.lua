@@ -229,7 +229,7 @@ step << Warlock/Mage
     .itemcount 221499,1 << Warlock --Rune of the Felguard
     .itemcount 223147,1 << Mage --Spell Notes: Balefire Bolt
     .train 427733 >>|cRXP_WARN_Benutzt die|r |T134419:0|t[|cRXP_FRIENDLY_Rune der Teufelswache|r] |cRXP_WARN_um |r |T136216:0|t[Teufelswache beschwören] zu erlernen << Warlock
-    .train 428878 >>|cRXP_WARN_Benutzt|r |T134939:0|t[|cRXP_FRIENDLY_Zauber Notizen: Qualfeuerblitz|r] |cRXP_WARN_zum Trainieren|r |T135809:0|t[Qualfeuerblitz] << Mage
+    .train 428878 >>|cRXP_WARN_Benutzt die|r |T134939:0|t[|cRXP_FRIENDLY_Zaubernotizen: Qualfeuerblitz|r] |cRXP_WARN_zum Trainieren|r |T135809:0|t[Qualfeuerblitz] << Mage
     .use 221499 << Warlock
     .use 223147 << Mage
 step
@@ -3575,7 +3575,7 @@ step << Warlock/Mage
     .itemcount 221499,1 << Warlock --Rune of the Felguard
     .itemcount 223147,1 << Mage --Spell Notes: Balefire Bolt
     .train 427733 >>|cRXP_WARN_Benutzt die|r |T134419:0|t[|cRXP_FRIENDLY_Rune der Teufelswache|r] |cRXP_WARN_um |r |T136216:0|t[Teufelswache beschwören] zu erlernen << Warlock
-    .train 428878 >>|cRXP_WARN_Benutzt|r |T134939:0|t[|cRXP_FRIENDLY_Zauber Notizen: Qualfeuerblitz|r] |cRXP_WARN_zum Trainieren|r |T135809:0|t[Qualfeuerblitz] << Mage
+    .train 428878 >>|cRXP_WARN_Benutzt die|r |T134939:0|t[|cRXP_FRIENDLY_Zaubernotizen: Qualfeuerblitz|r] |cRXP_WARN_zum Trainieren|r |T135809:0|t[Qualfeuerblitz] << Mage
     .use 221499 << Warlock
     .use 223147 << Mage
 step
@@ -6071,7 +6071,7 @@ step << Mage
     .goto 1453,38.035,81.729,6,0
     .goto 1453,37.550,82.500,10,0
     >>Besteigt den Magierturm. Geht durch das grüne Portal
-    .goto Stormwind City,39.681,79.538,15 >>Reist in Richtung |cRXP_FRIENDLY_Larimaine Purdue|r
+    .goto Stormwind City,39.681,79.538,15 >>Reisen in Richtung |cRXP_FRIENDLY_Larimaine Purdue|r
     .dungeon DM
 step << Mage
     #xprate >1.59

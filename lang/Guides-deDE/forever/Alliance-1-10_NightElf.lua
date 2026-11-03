@@ -46,7 +46,7 @@ step << Druid
     .mob +Young Thistle Boar
 step << Druid
     #completewith next
-    +|cRXP_WARN_Stellt sicher, dass ihr mindestens 96 Kupfer an Handelskram habt|r, ihr könnt euren Stab mitzählen, der beim Verkäufer 9 Kupfer bringt
+    +|cRXP_WARN_Stellt sicher, dass ihr mindestens 1 Silber 2 Kupfer an Händlermüll habt|r, ihr könnt eure Gegenstände zählen, die 9 Kupfer wert sind
 step << !sod/Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Dirania Silvershine|r und |cRXP_FRIENDLY_Melithar Staghelm|r
     #label GoodProtector
@@ -146,6 +146,7 @@ step << Priest/Rogue
 	.goto 1438/1,826.03,10328.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Konservator Ilthalaine|r
     .turnin 456 >> Gebt die Quest Das Gleichgewicht der Natur ab
+    .accept 457 >> Akzeptiert die Quest Das Gleichgewicht der Natur
     .target Conservator Ilthalaine
 	.accept 3119 >> Akzeptiert die Quest Geheiligtes Siegelzeichen << Priest
 step << Druid
@@ -601,7 +602,7 @@ step << Rogue
 step << Druid
     .goto 1438/1,947.57,9812.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Shalomon|r
-    >>|cRXP_BUY_Kauft und rüstet einen|r |T135145:0|t[Wanderstecken] |cRXP_BUY_wenn ihr es euch leisten könnt (4s 79c), falls nicht überspringt den Schritt|r
+    >>|cRXP_BUY_kaufe und equipt ein|r |T135145:0|t[Wanderstecken] |cRXP_BUY_wenn du es dir leisten kannst (5s 4c), falls nicht skip den Schritt|r
     .collect 2495,1 --Walking Stick (1)
     .target Shalomon
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.20
@@ -1408,7 +1409,7 @@ step << Druid/Priest
     .accept 940 >> Akzeptiert die Quest Teldrassil
 step << Druid/Priest
     #label xp10
-    .xp 10-900 >> Farmt, bis ihr 900 XP vor Stufe 10 seid (5600/6500)
+    .xp 10-870 >> Farmt, bis ihr 870 XP vor Stufe 10 seid (5630/6500)
 step << Hunter
     #completewith xp10
     #label mist1
@@ -1610,7 +1611,7 @@ step << !Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Priesterin A'moora|r oben
     .accept 2518 >> Akzeptiert die Quest Tränen des Mondes
 step << Priest
-    .goto Darnassus,40.0,80.0
+    .goto 1457/1,2515.0296,9673.7323
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Priesterin Alathea|r oben
     .accept 5627 >>Akzeptiert die Quest Sterne von Elune
     .turnin 5627 >>Gebt die Quest Sterne von Elune ab
@@ -2125,22 +2126,20 @@ step
     >>Geht zum |cRXP_FRIENDLY_Orakelbaumrinde|r
     .turnin 98398 >> Gebt die Quest Der Orakelbaum ab
     .accept 940 >> Akzeptiert die Quest Teldrassil
-step
+step << !Warrior --remove warrior tag if they fix the ress sickness
     #softcore
 	#completewith darn << era
     #completewith darnSoD << sod
     .deathskip >>Sterbt absichtlich und respawnt beim Darnassus-Friedhof
     >>|cRXP_WARN_Achtet darauf, dass ihr auf der Westseite des Flusses seid, sonst könnt ihr auf dem falschen Friedhof landen|r << sod
     .target Geistheiler
-step
-    #hardcore
+step << Warrior --remove warrior tag if they fix the ress sickness
     #completewith next
     .goto 1457/1,2070.42,9979.310
     .zone Darnassus >> Reist nach Darnassus
-step
+step << !Warrior --remove warrior tag if they fix the ress sickness 
     #hardcore
     #completewith next
-    #season 2
     .goto 1457/1,2070.42,9979.310
     .zone Darnassus >> Reist nach Darnassus
 step << !Warrior

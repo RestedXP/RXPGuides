@@ -549,9 +549,9 @@ step << Warlock
 step << skip
     #hardcore
     #completewith next
-    .goto 1420,26.027,60.607,-1
-    .goto 1420,24.508,59.360,-1
-    .goto 1420,23.572,59.239,-1
+    .goto 1420/0,1857.24,2011.71,-1--c:1420,26.027,60.607
+    .goto 1420/0,1925.88,2049.28,-1--c:1420,24.508,59.360
+    .goto 1420/0,1968.17,2052.92,-1--c:1420,23.572,59.239
     .goto 1420/0,1628.91,1882.99,30 >>|cRXP_WARN_Führt einen Logout-Skip in der Höhle durch, indem ihr auf einen Shredder, einen Brunnen oder die in der Wand steckende Holzplanke springt, dann meldet euch ab und wieder an|r
     >>|cRXP_WARN_Oder lauft zurück nach Todesend|r
 step
@@ -2099,7 +2099,7 @@ step << Warlock
 step << Warlock
     #completewith next
     .goto 1420/0,726.06,1801.95
-    >>Plündert |cRXP_PICK_Perrines Truhe|r für |T133733:0|t[Egalins Zauberfoliant]
+    >>Beute |cRXP_PICK_Perrines Truhe|r für |T133733:0|t[Egalins Zauberfoliant]
     .complete 1473,1 --Egalin's Grimoire (1)
 step
     #label ScarletCrusade1
@@ -2185,7 +2185,7 @@ step << Warlock
 step << Warrior
     #ssf
     .goto 1458/0,133.71,1561.730
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Charles Seaton|r im Schurkenviertel
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Charles Seaton|r im Schurken-Viertel
     >>|cRXP_BUY_Kauft eine|r |T135350:0|t[Claymore] |cRXP_BUY_von ihm|r
     .collect 1198,1,371,1 --Collect Claymore (1)
     .money <0.2543
@@ -2195,7 +2195,7 @@ step << Warrior
 step << Warrior
     #ah
     .goto 1458/0,133.71,1561.730
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Charles Seaton|r im Schurkenviertel
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Charles Seaton|r im Schurken-Viertel
     >>|cRXP_BUY_Kauft eine|r |T135350:0|t[Claymore] |cRXP_BUY_von ihm|r
     >>|cRXP_WARN_Alternativ könnt ihr bald das Auktionshaus nach etwas Besserem oder Billigerem durchsuchen|r
     .collect 1198,1,371,1 --Collect Claymore (1)
@@ -2214,7 +2214,7 @@ step << Warrior
 step << Rogue
     #ssf
     .goto 1458/0,133.71,1561.730
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Charles Seaton|r im Schurkenviertel
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Charles Seaton|r im Schurken-Viertel
     >>|cRXP_BUY_Kauft einen|r |T135346:0|t[Entersäbel] |cRXP_BUY_von ihm|r
     .collect 851,1,371,1 --Collect Cutlass (1)
     .money <0.1922
@@ -2224,7 +2224,7 @@ step << Rogue
 step << Rogue
     #ah
     .goto 1458/0,133.71,1561.730
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Charles Seaton|r im Schurkenviertel
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Charles Seaton|r im Schurken-Viertel
     >>|cRXP_BUY_Kauft einen|r |T135346:0|t[Entersäbel] |cRXP_BUY_von ihm|r
     >>|cRXP_WARN_Alternativ könnt ihr bald das Auktionshaus nach etwas Besserem oder Billigerem durchsuchen|r
     .collect 851,1,371,1 --Collect Cutlass (1)
@@ -2921,7 +2921,7 @@ step
 step << Rogue
     #ssf
     .goto 1458/0,133.71,1561.730
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Charles Seaton|r im Schurkenviertel
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Charles Seaton|r im Schurken-Viertel
     >>|cRXP_BUY_Kauft einen|r |T135346:0|t[Entersäbel] |cRXP_BUY_von ihm|r
     .collect 851,1,372,1 --Collect Cutlass (1)
     .money <0.1922
@@ -2931,7 +2931,7 @@ step << Rogue
 step << Rogue
     #ah
     .goto 1458/0,133.71,1561.730
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Charles Seaton|r im Schurkenviertel
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Charles Seaton|r im Schurken-Viertel
     >>|cRXP_BUY_Kauft einen|r |T135346:0|t[Entersäbel] |cRXP_BUY_von ihm|r
     >>|cRXP_WARN_Alternativ könnt ihr bald das Auktionshaus nach etwas Besserem oder Billigerem durchsuchen|r
     .collect 851,1,372,1 --Collect Cutlass (1)
@@ -2950,7 +2950,7 @@ step << Rogue
 step << Warrior
     #ssf
     .goto 1458/0,133.71,1561.730
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Charles Seaton|r im Schurkenviertel
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Charles Seaton|r im Schurken-Viertel
     >>|cRXP_BUY_Kauft eine|r |T135350:0|t[Claymore] |cRXP_BUY_von ihm|r
     .collect 1198,1,372,1 --Collect Claymore (1)
     .money <0.2543
@@ -2960,7 +2960,7 @@ step << Warrior
 step << Warrior
     #ah
     .goto 1458/0,133.71,1561.730
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Charles Seaton|r im Schurkenviertel
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Charles Seaton|r im Schurken-Viertel
     >>|cRXP_BUY_Kauft eine|r |T135350:0|t[Claymore] |cRXP_BUY_von ihm|r
     >>|cRXP_WARN_Alternativ könnt ihr bald das Auktionshaus nach etwas Besserem oder Billigerem durchsuchen|r
     .collect 1198,1,372,1 --Collect Claymore (1)
@@ -3851,7 +3851,7 @@ step
 step
     .goto 1421/0,1579.600,461.700
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Tabitha Heartweaver::250686|r
-    .accept 92401 >>Akzeptiert die Quest Eine erschrockene Bitte
+    .accept 92401 >>Akzeptiert die Quest Eine erschrockene Anfrage
     .target Tabitha Heartweaver::250686
     .xp <15,1
     .dungeon ROL
@@ -3988,12 +3988,12 @@ step
 step
     #completewith next
     #optional
-    .goto 1458,54.383,73.014,50,0 << !Undead/!Rogue
-    .goto 1458,52.837,77.725,20,0
-    .goto 1458,52.275,79.254,15,0
-    .goto 1458,51.279,79.923,15,0
-    .goto 1458,49.693,78.903,15,0
-    .goto 1458,47.951,76.171,15 >>Reist zum Apothecarium
+    .goto 1458/0,351.46,1410.58,50,0 << !Undead/!Rogue--c:1458,54.383,73.014
+    .goto 1458/0,366.29,1380.42,20,0--c:1458,52.837,77.725
+    .goto 1458/0,371.68,1370.64,15,0--c:1458,52.275,79.254
+    .goto 1458/0,381.23,1366.35,15,0--c:1458,51.279,79.923
+    .goto 1458/0,396.45,1372.88,15,0--c:1458,49.693,78.903
+    .goto 1458/0,413.16,1390.37,15 >>Reist zum Apothecarium--c:1458,47.951,76.171
 step
     .goto 1458/0,426.100,1403.600
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Doctor Martin Felben|r
@@ -4010,7 +4010,7 @@ step
     .target +Apothecary Zinge
     .goto 1458/0,391.97,1442.87
 step
-    .goto Undercity,56.2,96.2
+    .goto 1458/0,334.02,1262.17--c:Undercity,56.2,96.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Varimathras|r
     .accept 5725 >>Akzeptiert die Quest Die Macht zu Zerstören...
     .target Varimathras

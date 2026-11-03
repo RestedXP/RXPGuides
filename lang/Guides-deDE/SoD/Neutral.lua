@@ -241,7 +241,7 @@ step
     .zone The Barrens >>Reist nach Ratschet in The Barrens. |cRXP_WARN_Ihr braucht 3 Gold, um die Rune zu kaufen|r
 step
     .goto The Barrens,61.8,39.4
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich im Gasthaus mit |cRXP_FRIENDLY_Grizzby|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Grizzby|r im Gasthaus
     .use 210822 << Priest
     .use 210820 << Paladin
     .use 210654 << Mage
@@ -1754,10 +1754,10 @@ step
     .zone Stonetalon Mountains >> Reist ins Steinkrallengebirge
 step
     #completewith next
-    .goto Stonetalon Mountains,50.29,52.94,25 >> Reist hinauf und entlang des Feldwegs nördlich von Sonnenfels
+    .goto Stonetalon Mountains,50.29,52.94,25 >> Reist oben entlang des Feldwegs nördlich von Sonnenfels
 step
     .goto Stonetalon Mountains,40.748,52.576
-    >>Klickt die |cRXP_PICK_Pocket Litter|r auf der Kiste an
+    >>Sammelt das |cRXP_PICK_Pocket Litter|r auf der Box
     .turnin 79192 >> Gebt die Quest Trittsteine ab
     .accept 79980 >> Akzeptiert die Quest Weg hier
 step
@@ -1765,7 +1765,7 @@ step
     .goto Stonetalon Mountains,40.19,50.80,15 >> Folgt dem Pfad durch die Berge
 step
     .goto Stonetalon Mountains,39.614,49.783
-    >>Klickt den |cRXP_PICK_Mound of Dirt|r auf dem Boden an
+    >>Sammelt das |cRXP_PICK_Mound of Dirt|r vom Boden
     .turnin 79980 >> Gebt die Quest Weg hier ab
     .accept 79974 >> Akzeptiert die Quest Feuchte Angelegenheit
 step

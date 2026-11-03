@@ -81,43 +81,43 @@ step << Priest/Mage/Warlock
 step
     #sticky
     #label WolfMeatEnd
-    .goto 1429,49.052,38.270,0
-    .goto 1429,45.708,38.720,0
-    .goto 1429,47.976,39.422,0
-    .waypoint 1429,49.052,38.270,45,0
-    .waypoint 1429,48.362,37.582,45,0
-    .waypoint 1429,47.136,37.636,45,0
-    .waypoint 1429,46.870,36.906,45,0
-    .waypoint 1429,46.476,37.034,45,0
-    .waypoint 1429,46.465,38.272,45,0
-    .waypoint 1429,45.896,38.013,45,0
-    .waypoint 1429,45.708,38.720,45,0
-    .waypoint 1429,46.302,39.994,45,0
-    .waypoint 1429,45.718,40.733,45,0
-    .waypoint 1429,46.399,41.838,45,0
-    .waypoint 1429,46.741,40.987,45,0
-    .waypoint 1429,47.703,40.299,45,0
-    .waypoint 1429,47.976,39.422,45,0
+    .goto 1429/0,-167.10,-8825.37,0--c:1429,49.052,38.270
+    .goto 1429/0,-51.03,-8835.79,0--c:1429,45.708,38.720
+    .goto 1429/0,-129.75,-8852.04,0--c:1429,47.976,39.422
+    .waypoint 1429/0,-167.10,-8825.37,45,0--c:1429,49.052,38.270
+    .waypoint 1429/0,-143.15,-8809.45,45,0--c:1429,48.362,37.582
+    .waypoint 1429/0,-100.60,-8810.70,45,0--c:1429,47.136,37.636
+    .waypoint 1429/0,-91.36,-8793.80,45,0--c:1429,46.870,36.906
+    .waypoint 1429/0,-77.69,-8796.77,45,0--c:1429,46.476,37.034
+    .waypoint 1429/0,-77.31,-8825.42,45,0--c:1429,46.465,38.272
+    .waypoint 1429/0,-57.56,-8819.43,45,0--c:1429,45.896,38.013
+    .waypoint 1429/0,-51.03,-8835.79,45,0--c:1429,45.708,38.720
+    .waypoint 1429/0,-71.65,-8865.28,45,0--c:1429,46.302,39.994
+    .waypoint 1429/0,-51.38,-8882.38,45,0--c:1429,45.718,40.733
+    .waypoint 1429/0,-75.02,-8907.96,45,0--c:1429,46.399,41.838
+    .waypoint 1429/0,-86.89,-8888.26,45,0--c:1429,46.741,40.987
+    .waypoint 1429/0,-120.27,-8872.34,45,0--c:1429,47.703,40.299
+    .waypoint 1429/0,-129.75,-8852.04,45,0--c:1429,47.976,39.422
     >>Tötet |cRXP_ENEMY_Junge Wölfe|r und |cRXP_ENEMY_Wilder Waldwolf|r. Plündert sie für |cRXP_LOOT_Zähes Wolfsfleisch|r
     .complete 33,1 --Collect Tough Wolf Meat (x8)
 	.mob Young Wolf
 	.mob Timber Wolf
 step
     #loop
-    .goto 1429,47.601,36.720,0
-    .goto 1429,49.215,37.010,0
-    .goto 1429,47.569,34.967,0
-    .goto 1429,47.601,36.720,45,0
-    .goto 1429,47.381,36.314,45,0
-    .goto 1429,47.611,35.863,45,0
-    .goto 1429,48.314,36.487,45,0
-    .goto 1429,49.070,36.438,45,0
-    .goto 1429,49.215,37.010,45,0
-    .goto 1429,49.838,36.413,45,0
-    .goto 1429,50.105,35.668,45,0
-    .goto 1429,49.823,35.161,45,0
-    .goto 1429,48.845,35.066,45,0
-    .goto 1429,47.569,34.967,45,0
+    .goto 1429/0,-116.73,-8789.50,0--c:1429,47.601,36.720
+    .goto 1429/0,-172.75,-8796.21,0--c:1429,49.215,37.010
+    .goto 1429/0,-115.62,-8748.92,0--c:1429,47.569,34.967
+    .goto 1429/0,-116.73,-8789.50,45,0--c:1429,47.601,36.720
+    .goto 1429/0,-109.10,-8780.10,45,0--c:1429,47.381,36.314
+    .goto 1429/0,-117.08,-8769.66,45,0--c:1429,47.611,35.863
+    .goto 1429/0,-141.48,-8784.10,45,0--c:1429,48.314,36.487
+    .goto 1429/0,-167.72,-8782.97,45,0--c:1429,49.070,36.438
+    .goto 1429/0,-172.75,-8796.21,45,0--c:1429,49.215,37.010
+    .goto 1429/0,-194.38,-8782.39,45,0--c:1429,49.838,36.413
+    .goto 1429/0,-203.64,-8765.15,45,0--c:1429,50.105,35.668
+    .goto 1429/0,-193.86,-8753.41,45,0--c:1429,49.823,35.161
+    .goto 1429/0,-159.91,-8751.21,45,0--c:1429,48.845,35.066
+    .goto 1429/0,-115.62,-8748.92,45,0--c:1429,47.569,34.967
     >>Tötet |cRXP_ENEMY_Koboldgezücht|r. Plündert sie für |T133736:0|t[|cRXP_LOOT_Angeknabbertes Buch|r]
     .use 247834 >> |cRXP_WARN_Benutzt das|r |T133736:0|t[|cRXP_LOOT_Angeknabbertes Buch|r] |cRXP_WARN_um die Quest zu starten|r
     >>|cRXP_WARN_Es ist wichtig, diese Quest abzugeben, sobald ihr|r |T133736:0|t[|cRXP_LOOT_Angeknabbertes Buch|r] |cRXP_WARN_erhaltet|r
@@ -126,6 +126,14 @@ step
     .complete 7,1 --Kill Kobold Vermin (x10)
     .disablecheckbox
     .mob Kobold Vermin
+step
+    #optional
+    .isQuestComplete 33
+    .goto 1429/0,-163.24,-8869.26
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Eagan Peltskinner|r
+    .turnin 33,2 >> Gebt die Quest Wölfe an der Grenze ab << Warrior/Paladin/Rogue/Hunter
+    .turnin 33,1 >> Gebt die Quest Wölfe an der Grenze ab << !Warrior !Paladin !Rogue !Hunter
+    .target Eagan Peltskinner
 step
     #completewith next
     .goto 1429/0,-136.900,-8913.800,10,0
@@ -148,20 +156,20 @@ step
     .target Brother Paxton
 step
     #loop
-    .goto 1429,47.601,36.720,0
-    .goto 1429,49.215,37.010,0
-    .goto 1429,47.569,34.967,0
-    .goto 1429,47.601,36.720,45,0
-    .goto 1429,47.381,36.314,45,0
-    .goto 1429,47.611,35.863,45,0
-    .goto 1429,48.314,36.487,45,0
-    .goto 1429,49.070,36.438,45,0
-    .goto 1429,49.215,37.010,45,0
-    .goto 1429,49.838,36.413,45,0
-    .goto 1429,50.105,35.668,45,0
-    .goto 1429,49.823,35.161,45,0
-    .goto 1429,48.845,35.066,45,0
-    .goto 1429,47.569,34.967,45,0
+    .goto 1429/0,-116.73,-8789.50,0--c:1429,47.601,36.720
+    .goto 1429/0,-172.75,-8796.21,0--c:1429,49.215,37.010
+    .goto 1429/0,-115.62,-8748.92,0--c:1429,47.569,34.967
+    .goto 1429/0,-116.73,-8789.50,45,0--c:1429,47.601,36.720
+    .goto 1429/0,-109.10,-8780.10,45,0--c:1429,47.381,36.314
+    .goto 1429/0,-117.08,-8769.66,45,0--c:1429,47.611,35.863
+    .goto 1429/0,-141.48,-8784.10,45,0--c:1429,48.314,36.487
+    .goto 1429/0,-167.72,-8782.97,45,0--c:1429,49.070,36.438
+    .goto 1429/0,-172.75,-8796.21,45,0--c:1429,49.215,37.010
+    .goto 1429/0,-194.38,-8782.39,45,0--c:1429,49.838,36.413
+    .goto 1429/0,-203.64,-8765.15,45,0--c:1429,50.105,35.668
+    .goto 1429/0,-193.86,-8753.41,45,0--c:1429,49.823,35.161
+    .goto 1429/0,-159.91,-8751.21,45,0--c:1429,48.845,35.066
+    .goto 1429/0,-115.62,-8748.92,45,0--c:1429,47.569,34.967
     >>Tötet |cRXP_ENEMY_Koboldgezücht|r. Plündert sie für ihr |cRXP_LOOT_Gestohlenes Buch|r
     >>|cRXP_WARN_Bemüht euch noch nicht, alle |cRXP_LOOT_Gestohlene Bücher|r zu plündern|r
     .complete 7,1 --Kill Kobold Vermin (x10)
@@ -172,8 +180,8 @@ step
     #requires WolfMeatEnd
     .goto 1429/0,-163.24,-8869.26
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Eagan Peltskinner|r
-    .turnin 33,2 >> Gebt die Quest Wölfe an der Grenze ab << Warrior/Paladin/Rogue
-    .turnin 33,1 >> Gebt die Quest Wölfe an der Grenze ab << !Warrior !Paladin !Rogue
+    .turnin 33,2 >> Gebt die Quest Wölfe an der Grenze ab << Warrior/Paladin/Rogue/Hunter
+    .turnin 33,1 >> Gebt die Quest Wölfe an der Grenze ab << !Warrior !Paladin !Rogue !Hunter
     .target Eagan Peltskinner
 step << Priest/Mage/Warlock
     .goto 1429/0,-112.74,-8901.66
@@ -255,7 +263,7 @@ step << Warlock
 step << Warlock
     #softcore
     #completewith next
-    .goto 1429,49.527,43.491,0
+    .goto 1429/0,-183.58,-8946.22,0--c:1429,49.527,43.491
     .deathskip >> Sterbt und respawnt beim Geistheiler
     >>|cRXP_WARN_Falls dort keine |cRXP_ENEMY_Defias|r in der nähe sind, lauft stattdessen zürück|r
     .target Geistheiler
@@ -278,24 +286,24 @@ step
 step
     #season 0,1 << Priest/Warrior
     #loop
-    .goto 1429,47.468,36.298,0
-    .goto 1429,50.224,34.125,0
-    .goto 1429,50.835,38.046,0
-    .goto 1429,47.468,36.298,45,0
-    .goto 1429,47.247,35.164,45,0
-    .goto 1429,47.012,33.828,45,0
-    .goto 1429,46.774,33.271,45,0
-    .goto 1429,46.271,32.489,45,0
-    .goto 1429,47.663,32.058,45,0
-    .goto 1429,48.038,33.075,45,0
-    .goto 1429,48.795,33.815,45,0
-    .goto 1429,49.278,34.610,45,0
-    .goto 1429,50.224,34.125,45,0
-    .goto 1429,50.245,34.884,45,0
-    .goto 1429,51.058,35.582,45,0
-    .goto 1429,52.062,35.801,45,0
-    .goto 1429,51.505,38.064,45,0
-    .goto 1429,50.835,38.046,45,0
+    .goto 1429/0,-112.12,-8779.73,0--c:1429,47.468,36.298
+    .goto 1429/0,-207.77,-8729.43,0--c:1429,50.224,34.125
+    .goto 1429/0,-228.98,-8820.19,0--c:1429,50.835,38.046
+    .goto 1429/0,-112.12,-8779.73,45,0--c:1429,47.468,36.298
+    .goto 1429/0,-104.45,-8753.48,45,0--c:1429,47.247,35.164
+    .goto 1429/0,-96.29,-8722.56,45,0--c:1429,47.012,33.828
+    .goto 1429/0,-88.03,-8709.67,45,0--c:1429,46.774,33.271
+    .goto 1429/0,-70.57,-8691.57,45,0--c:1429,46.271,32.489
+    .goto 1429/0,-118.89,-8681.59,45,0--c:1429,47.663,32.058
+    .goto 1429/0,-131.90,-8705.13,45,0--c:1429,48.038,33.075
+    .goto 1429/0,-158.18,-8722.26,45,0--c:1429,48.795,33.815
+    .goto 1429/0,-174.94,-8740.66,45,0--c:1429,49.278,34.610
+    .goto 1429/0,-207.77,-8729.43,45,0--c:1429,50.224,34.125
+    .goto 1429/0,-208.50,-8747.00,45,0--c:1429,50.245,34.884
+    .goto 1429/0,-236.72,-8763.16,45,0--c:1429,51.058,35.582
+    .goto 1429/0,-271.57,-8768.23,45,0--c:1429,52.062,35.801
+    .goto 1429/0,-252.24,-8820.61,45,0--c:1429,51.505,38.064
+    .goto 1429/0,-228.98,-8820.19,45,0--c:1429,50.835,38.046
     >>Tötet |cRXP_ENEMY_Koboldtagelöhner|r
     .complete 15,1 --Kill Kobold Worker (x10)
     .mob Kobold Worker
@@ -308,24 +316,24 @@ step
 step
     #label xp3
     #loop
-    .goto 1429,47.468,36.298,0
-    .goto 1429,50.224,34.125,0
-    .goto 1429,50.835,38.046,0
-    .goto 1429,47.468,36.298,45,0
-    .goto 1429,47.247,35.164,45,0
-    .goto 1429,47.012,33.828,45,0
-    .goto 1429,46.774,33.271,45,0
-    .goto 1429,46.271,32.489,45,0
-    .goto 1429,47.663,32.058,45,0
-    .goto 1429,48.038,33.075,45,0
-    .goto 1429,48.795,33.815,45,0
-    .goto 1429,49.278,34.610,45,0
-    .goto 1429,50.224,34.125,45,0
-    .goto 1429,50.245,34.884,45,0
-    .goto 1429,51.058,35.582,45,0
-    .goto 1429,52.062,35.801,45,0
-    .goto 1429,51.505,38.064,45,0
-    .goto 1429,50.835,38.046,45,0
+    .goto 1429/0,-112.12,-8779.73,0--c:1429,47.468,36.298
+    .goto 1429/0,-207.77,-8729.43,0--c:1429,50.224,34.125
+    .goto 1429/0,-228.98,-8820.19,0--c:1429,50.835,38.046
+    .goto 1429/0,-112.12,-8779.73,45,0--c:1429,47.468,36.298
+    .goto 1429/0,-104.45,-8753.48,45,0--c:1429,47.247,35.164
+    .goto 1429/0,-96.29,-8722.56,45,0--c:1429,47.012,33.828
+    .goto 1429/0,-88.03,-8709.67,45,0--c:1429,46.774,33.271
+    .goto 1429/0,-70.57,-8691.57,45,0--c:1429,46.271,32.489
+    .goto 1429/0,-118.89,-8681.59,45,0--c:1429,47.663,32.058
+    .goto 1429/0,-131.90,-8705.13,45,0--c:1429,48.038,33.075
+    .goto 1429/0,-158.18,-8722.26,45,0--c:1429,48.795,33.815
+    .goto 1429/0,-174.94,-8740.66,45,0--c:1429,49.278,34.610
+    .goto 1429/0,-207.77,-8729.43,45,0--c:1429,50.224,34.125
+    .goto 1429/0,-208.50,-8747.00,45,0--c:1429,50.245,34.884
+    .goto 1429/0,-236.72,-8763.16,45,0--c:1429,51.058,35.582
+    .goto 1429/0,-271.57,-8768.23,45,0--c:1429,52.062,35.801
+    .goto 1429/0,-252.24,-8820.61,45,0--c:1429,51.505,38.064
+    .goto 1429/0,-228.98,-8820.19,45,0--c:1429,50.835,38.046
     .xp 3+1110 >>|cRXP_WARN_Farmt bis 1110+/1400xp|r
     >>Tötet |cRXP_ENEMY_Koboldtagelöhner|r für |cRXP_LOOT_Gestohlenes Buch|r, falls ihr sie noch benötigt
     .complete 91743,1 -- Stolen Book (8)
@@ -369,14 +377,14 @@ step
 step << Mage
     #optional
     #completewith next
-    .goto 1429,48.79,41.58,12,0
-    .goto 1429,48.975,41.146,12,0
-    .goto 1429,49.262,40.633,12,0
-    .goto 1429,49.510,40.095,6,0
-    .goto 1429,49.691,40.230,6,0
-    .goto 1429,49.595,40.673,6,0
-    .goto 1429,49.324,40.492,6,0
-    .goto 1429,49.436,39.881,10,0
+    .goto 1429/0,-158.00,-8901.99,12,0--c:1429,48.79,41.58
+    .goto 1429/0,-164.42,-8891.94,12,0--c:1429,48.975,41.146
+    .goto 1429/0,-174.39,-8880.07,12,0--c:1429,49.262,40.633
+    .goto 1429/0,-182.99,-8867.62,6,0--c:1429,49.510,40.095
+    .goto 1429/0,-189.28,-8870.74,6,0--c:1429,49.691,40.230
+    .goto 1429/0,-185.94,-8880.99,6,0--c:1429,49.595,40.673
+    .goto 1429/0,-176.54,-8876.80,6,0--c:1429,49.324,40.492
+    .goto 1429/0,-180.42,-8862.66,10,0--c:1429,49.436,39.881
     .goto 1429/0,-188.23,-8851.58,12 >>Reist Richtung |cRXP_FRIENDLY_Khelden Bremen|r oben
 step << Mage
     #season 0,1
@@ -531,40 +539,40 @@ step
 step
     #label KoboldLaborers
     #loop
-    .goto 1429,47.784,31.540,0
-    .goto 1429,48.659,29.161,0
-    .goto 1429,50.491,26.867,0
-    .goto 1429,47.784,31.540,30,0
-    .goto 1429,47.909,30.850,30,0
-    .goto 1429,48.107,30.271,30,0
-    .goto 1429,48.428,30.248,30,0
-    .goto 1429,48.398,29.842,30,0
-    .goto 1429,48.659,29.161,30,0
-    .goto 1429,48.245,28.598,30,0
-    .goto 1429,48.637,27.354,30,0
-    .goto 1429,48.501,26.700,30,0
-    .goto 1429,49.979,25.620,30,0
-    .goto 1429,50.491,26.867,30,0
+    .goto 1429/0,-123.09,-8669.60,0--c:1429,47.784,31.540
+    .goto 1429/0,-153.46,-8614.54,0--c:1429,48.659,29.161
+    .goto 1429/0,-217.04,-8561.44,0--c:1429,50.491,26.867
+    .goto 1429/0,-123.09,-8669.60,30,0--c:1429,47.784,31.540
+    .goto 1429/0,-127.42,-8653.63,30,0--c:1429,47.909,30.850
+    .goto 1429/0,-134.30,-8640.23,30,0--c:1429,48.107,30.271
+    .goto 1429/0,-145.44,-8639.70,30,0--c:1429,48.428,30.248
+    .goto 1429/0,-144.40,-8630.30,30,0--c:1429,48.398,29.842
+    .goto 1429/0,-153.46,-8614.54,30,0--c:1429,48.659,29.161
+    .goto 1429/0,-139.09,-8601.51,30,0--c:1429,48.245,28.598
+    .goto 1429/0,-152.69,-8572.71,30,0--c:1429,48.637,27.354
+    .goto 1429/0,-147.97,-8557.58,30,0--c:1429,48.501,26.700
+    .goto 1429/0,-199.27,-8532.58,30,0--c:1429,49.979,25.620
+    .goto 1429/0,-217.04,-8561.44,30,0--c:1429,50.491,26.867
     >>Tötet |cRXP_ENEMY_Koboldhilfsarbeiter|r innerhalb der Echokammmine
     .complete 21,1 --Kill Kobold Laborer (x12)
     .mob Kobold Laborer
 step
     .isOnQuest 91743
     #loop
-    .goto 1429,47.784,31.540,0
-    .goto 1429,48.659,29.161,0
-    .goto 1429,50.491,26.867,0
-    .goto 1429,47.784,31.540,30,0
-    .goto 1429,47.909,30.850,30,0
-    .goto 1429,48.107,30.271,30,0
-    .goto 1429,48.428,30.248,30,0
-    .goto 1429,48.398,29.842,30,0
-    .goto 1429,48.659,29.161,30,0
-    .goto 1429,48.245,28.598,30,0
-    .goto 1429,48.637,27.354,30,0
-    .goto 1429,48.501,26.700,30,0
-    .goto 1429,49.979,25.620,30,0
-    .goto 1429,50.491,26.867,30,0
+    .goto 1429/0,-123.09,-8669.60,0--c:1429,47.784,31.540
+    .goto 1429/0,-153.46,-8614.54,0--c:1429,48.659,29.161
+    .goto 1429/0,-217.04,-8561.44,0--c:1429,50.491,26.867
+    .goto 1429/0,-123.09,-8669.60,30,0--c:1429,47.784,31.540
+    .goto 1429/0,-127.42,-8653.63,30,0--c:1429,47.909,30.850
+    .goto 1429/0,-134.30,-8640.23,30,0--c:1429,48.107,30.271
+    .goto 1429/0,-145.44,-8639.70,30,0--c:1429,48.428,30.248
+    .goto 1429/0,-144.40,-8630.30,30,0--c:1429,48.398,29.842
+    .goto 1429/0,-153.46,-8614.54,30,0--c:1429,48.659,29.161
+    .goto 1429/0,-139.09,-8601.51,30,0--c:1429,48.245,28.598
+    .goto 1429/0,-152.69,-8572.71,30,0--c:1429,48.637,27.354
+    .goto 1429/0,-147.97,-8557.58,30,0--c:1429,48.501,26.700
+    .goto 1429/0,-199.27,-8532.58,30,0--c:1429,49.979,25.620
+    .goto 1429/0,-217.04,-8561.44,30,0--c:1429,50.491,26.867
     >>Tötet |cRXP_ENEMY_Koboldhilfsarbeiter|r und |cRXP_ENEMY_Koboldtagelöhner|r. Plündert sie für |cRXP_LOOT_Gestohlene Bücher|r
     .complete 91743,1 -- Stolen Book (8)
     .mob Kobold Laborer
@@ -603,7 +611,7 @@ step << Priest/Mage
     >>Plündert |cRXP_PICK_Millys Ernte|r auf dem Boden
     .complete 3904,1 --Collect Milly's Harvest (x8)
 step
-    .goto 1429,57.518,48.253
+    .goto 1429/0,-460.94,-9056.44--c:1429,57.518,48.253
     >>Tötet |cRXP_ENEMY_Garrick Padfoot|r. Plündert ihn für seinen |cRXP_LOOT_Kopf|r
     .complete 6,1 --Collect Garrick's Head (x1)
     .mob Garrick Padfoot
@@ -637,8 +645,8 @@ step << Priest/Mage
 step
     .goto 1429/0,-136.48,-8933.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Deputy Willem|r
-    .turnin 6,2 >> Gebt die Quest Kopfgeld auf Garrick Padfoot ab << Warrior/Rogue/Paladin
-    .turnin 6,1 >> Gebt die Quest Kopfgeld auf Garrick Padfoot ab << !Warrior !Rogue !Paladin
+    .turnin 6,2 >> Gebt die Quest Kopfgeld auf Garrick Padfoot ab << Warrior/Rogue/Paladin/Hunter
+    .turnin 6,1 >> Gebt die Quest Kopfgeld auf Garrick Padfoot ab << !Warrior !Rogue !Paladin !Hunter
     .target Deputy Willem
 step
     #optional
@@ -659,9 +667,9 @@ step
     #label RestandR
     .goto 1429/0,-162.62,-8902.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Marshal McBride|r innerhalb
-    .turnin 21,1 >> Gebt die Quest Scharmützel in der Echokammmine ab << Rogue
+    .turnin 21,1 >> Gebt die Quest Scharmützel in der Echokammmine ab << Rogue/Hunter
     .turnin 21,2 >> Gebt die Quest Scharmützel in der Echokammmine ab << Warrior/Paladin
-    .turnin 21,3 >> Gebt die Quest Scharmützel in der Echokammmine ab << !Warrior !Paladin !Rogue
+    .turnin 21,3 >> Gebt die Quest Scharmützel in der Echokammmine ab << !Warrior !Paladin !Rogue !Hunter
     .accept 54 >> Akzeptiert die Quest Meldung in Goldhain
     .accept 96627 >> Akzeptiert die Quest Der Abenteurer
     .target Marshal McBride
@@ -1333,7 +1341,7 @@ step
     .accept 84 >> Zurück zu Billy annehmen
     .target "Auntie" Bernice Stonefield
 step
-    .goto 1429,34.945,83.855
+    .goto 1429/0,322.53,-9880.48--c:1429,34.945,83.855
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Oma Stonefield|r innerhalb
     .turnin 111 >> Gebt die Quest Gespräch mit Oma ab
     .accept 107 >> Nachricht an William annehmen
@@ -1425,7 +1433,7 @@ step
     .complete 62,1 --Scout Through the Fargodeep Mine
 step
     #season 0,1
-    .goto 1429,41.732,78.024
+    .goto 1429/0,86.97,-9745.51--c:1429,41.732,78.024
     >>Tötet |cRXP_ENEMY_Goldzahn|r. Plündert ihn für |cRXP_LOOT_Bernice's Halskette|r
     >>|cRXP_WARN_Seid vorsichtig, da er normalerweise den |cRXP_ENEMY_Koboldminenarbeiter|r neben ihm mit in den Kampf zieht|r
     .complete 87,1 --Bernice's Necklace (1)
@@ -1715,10 +1723,10 @@ step
     #optional
     #label WolfMeatCooking1
     #completewith Jasperlode
-    .goto 1429,52.242,62.919,0
-    .goto 1429,53.837,60.950,0
-    .goto 1429,56.793,60.340,0
-    .goto 1429,59.033,60.673,0
+    .goto 1429/0,-277.82,-9395.90,0--c:1429,52.242,62.919
+    .goto 1429/0,-333.18,-9350.32,0--c:1429,53.837,60.950
+    .goto 1429/0,-435.77,-9336.20,0--c:1429,56.793,60.340
+    .goto 1429/0,-513.52,-9343.91,0--c:1429,59.033,60.673
     >>Tötet |cRXP_ENEMY_Räudiger Wolf|r. Plündert sie für |T133970:0|t|cRXP_LOOT_[Sehniges Wolfsfleisch]|r
     .collect 2672,10,2178,1,0x20,cooking --Stringy Wolf Meat (1-10)
     .mob Mangy Wolf
@@ -1728,10 +1736,10 @@ step
     #optional
     #requires WolfMeatCooking1
     #completewith Jasperlode
-    .goto 1429,52.242,62.919,0
-    .goto 1429,53.837,60.950,0
-    .goto 1429,56.793,60.340,0
-    .goto 1429,59.033,60.673,0
+    .goto 1429/0,-277.82,-9395.90,0--c:1429,52.242,62.919
+    .goto 1429/0,-333.18,-9350.32,0--c:1429,53.837,60.950
+    .goto 1429/0,-435.77,-9336.20,0--c:1429,56.793,60.340
+    .goto 1429/0,-513.52,-9343.91,0--c:1429,59.033,60.673
     >>Tötet |cRXP_ENEMY_Räudiger Wolf|r. Plündert sie für |T133970:0|t|cRXP_LOOT_[Sehniges Wolfsfleisch]|r
     >>|cRXP_WARN_Macht euch jetzt nicht unnötig die Mühe, dies zu farmen. Tötet und plündert einfach alle Wölfe, an denen du vorbei kommst|r
     .collect 2672,50,2178,1,0x20,cooking --Stringy Wolf Meat (10-50)
@@ -1742,26 +1750,26 @@ step
 
 
 step
-    .goto 1429,47.5,62.2
+    .goto 1429/0,-113.23,-9379.25--c:1429,47.5,62.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Jason Mathers|r
     .accept 99127 >> Akzeptiert die Quest Schlechtes Netz
     .target Jason Mathers
 step
     #softcore
-    .goto 1429,47.6,62.3
+    .goto 1429/0,-116.70,-9381.57--c:1429,47.6,62.3
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Lee Brown|r
     .accept 99143 >> Akzeptiert die Quest Glitschiger Glitzerkram
     .target Lee Brown
 step
     #loop
-    .goto 1429,48.5,58.3,40,0
-    .goto 1429,47.7,65.9,40,0
-    .goto 1429,49.9,66.5,40,0
+    .goto 1429/0,-147.94,-9288.98,40,0--c:1429,48.5,58.3
+    .goto 1429/0,-120.17,-9464.89,40,0--c:1429,47.7,65.9
+    .goto 1429/0,-196.53,-9478.78,40,0--c:1429,49.9,66.5
     >>Plündert die |cRXP_PICK_Fischernetze|r im Wasser für den |cRXP_LOOT_Halb aufgegessener Fisch|r
     >>|cRXP_WARN_Diese können schwer zu sehen sein|r
     .complete 99127,1 -- Half-Eaten Fish (7)
 step
-    .goto 1429,47.5,62.2
+    .goto 1429/0,-113.23,-9379.25--c:1429,47.5,62.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Jason Mathers|r
     .turnin 99127 >> Gebt die Quest Schlechtes Netz ab
     .accept 99128 >> Akzeptiert die Quest Eine schleimige Bedrohung
@@ -1769,20 +1777,20 @@ step
 step
     #softcore
     #loop
-    .goto 1429,50.833,65.453,0
-    .goto 1429,57.435,63.662,0
-    .goto 1429,54.236,66.888,0
-    .goto 1429,50.833,65.453,50,0
-    .goto 1429,52.020,65.177,50,0
-    .goto 1429,54.144,62.468,50,0
-    .goto 1429,56.332,63.538,50,0
-    .goto 1429,57.162,62.157,50,0
-    .goto 1429,57.435,63.662,50,0
-    .goto 1429,58.237,64.888,50,0
-    .goto 1429,56.897,67.017,50,0
-    .goto 1429,55.523,66.707,50,0
-    .goto 1429,55.203,66.171,50,0
-    .goto 1429,54.236,66.888,50,0
+    .goto 1429/0,-228.91,-9454.55,0--c:1429,50.833,65.453
+    .goto 1429/0,-458.06,-9413.09,0--c:1429,57.435,63.662
+    .goto 1429/0,-347.02,-9487.76,0--c:1429,54.236,66.888
+    .goto 1429/0,-228.91,-9454.55,50,0--c:1429,50.833,65.453
+    .goto 1429/0,-270.11,-9448.16,50,0--c:1429,52.020,65.177
+    .goto 1429/0,-343.83,-9385.46,50,0--c:1429,54.144,62.468
+    .goto 1429/0,-419.77,-9410.22,50,0--c:1429,56.332,63.538
+    .goto 1429/0,-448.58,-9378.26,50,0--c:1429,57.162,62.157
+    .goto 1429/0,-458.06,-9413.09,50,0--c:1429,57.435,63.662
+    .goto 1429/0,-485.89,-9441.47,50,0--c:1429,58.237,64.888
+    .goto 1429/0,-439.38,-9490.75,50,0--c:1429,56.897,67.017
+    .goto 1429/0,-391.69,-9483.57,50,0--c:1429,55.523,66.707
+    .goto 1429/0,-380.59,-9471.17,50,0--c:1429,55.203,66.171
+    .goto 1429/0,-347.02,-9487.76,50,0--c:1429,54.236,66.888
     >>Tötet |cRXP_ENEMY_Murlocs|r und |cRXP_ENEMY_Murlocbachläufer|r. Plündert sie für |cRXP_LOOT_Kristalltangwedel|r
     >>Plündert die |cRXP_PICK_Schrotthaufen|r auf dem Boden für |cRXP_LOOT_Glänzender Plunder|r. |cRXP_WARN_Falls ihr diese aufgrund zu vieler|cRXP_ENEMY_Murlocs|r nicht plündern könnt, überspringt dieses Ziel|r
     .complete 99128,2 -- Murloc slain (7)
@@ -1797,20 +1805,20 @@ step
 step
     #hardcore
     #loop
-    .goto 1429,50.833,65.453,0
-    .goto 1429,57.435,63.662,0
-    .goto 1429,54.236,66.888,0
-    .goto 1429,50.833,65.453,50,0
-    .goto 1429,52.020,65.177,50,0
-    .goto 1429,54.144,62.468,50,0
-    .goto 1429,56.332,63.538,50,0
-    .goto 1429,57.162,62.157,50,0
-    .goto 1429,57.435,63.662,50,0
-    .goto 1429,58.237,64.888,50,0
-    .goto 1429,56.897,67.017,50,0
-    .goto 1429,55.523,66.707,50,0
-    .goto 1429,55.203,66.171,50,0
-    .goto 1429,54.236,66.888,50,0
+    .goto 1429/0,-228.91,-9454.55,0--c:1429,50.833,65.453
+    .goto 1429/0,-458.06,-9413.09,0--c:1429,57.435,63.662
+    .goto 1429/0,-347.02,-9487.76,0--c:1429,54.236,66.888
+    .goto 1429/0,-228.91,-9454.55,50,0--c:1429,50.833,65.453
+    .goto 1429/0,-270.11,-9448.16,50,0--c:1429,52.020,65.177
+    .goto 1429/0,-343.83,-9385.46,50,0--c:1429,54.144,62.468
+    .goto 1429/0,-419.77,-9410.22,50,0--c:1429,56.332,63.538
+    .goto 1429/0,-448.58,-9378.26,50,0--c:1429,57.162,62.157
+    .goto 1429/0,-458.06,-9413.09,50,0--c:1429,57.435,63.662
+    .goto 1429/0,-485.89,-9441.47,50,0--c:1429,58.237,64.888
+    .goto 1429/0,-439.38,-9490.75,50,0--c:1429,56.897,67.017
+    .goto 1429/0,-391.69,-9483.57,50,0--c:1429,55.523,66.707
+    .goto 1429/0,-380.59,-9471.17,50,0--c:1429,55.203,66.171
+    .goto 1429/0,-347.02,-9487.76,50,0--c:1429,54.236,66.888
     >>Tötet |cRXP_ENEMY_Murlocs|r und |cRXP_ENEMY_Murlocbachläufer|r. Plündert sie für |cRXP_LOOT_Kristalltangwedel|r
     .complete 99128,2 -- Murloc slain (7)
     .mob +Murloc
@@ -1822,32 +1830,32 @@ step
 step
     #softcore
     #loop
-    .goto 1429,50.833,65.453,0
-    .goto 1429,57.435,63.662,0
-    .goto 1429,54.236,66.888,0
-    .goto 1429,50.833,65.453,50,0
-    .goto 1429,52.020,65.177,50,0
-    .goto 1429,54.144,62.468,50,0
-    .goto 1429,56.332,63.538,50,0
-    .goto 1429,57.162,62.157,50,0
-    .goto 1429,57.435,63.662,50,0
-    .goto 1429,58.237,64.888,50,0
-    .goto 1429,56.897,67.017,50,0
-    .goto 1429,55.523,66.707,50,0
-    .goto 1429,55.203,66.171,50,0
-    .goto 1429,54.236,66.888,50,0
+    .goto 1429/0,-228.91,-9454.55,0--c:1429,50.833,65.453
+    .goto 1429/0,-458.06,-9413.09,0--c:1429,57.435,63.662
+    .goto 1429/0,-347.02,-9487.76,0--c:1429,54.236,66.888
+    .goto 1429/0,-228.91,-9454.55,50,0--c:1429,50.833,65.453
+    .goto 1429/0,-270.11,-9448.16,50,0--c:1429,52.020,65.177
+    .goto 1429/0,-343.83,-9385.46,50,0--c:1429,54.144,62.468
+    .goto 1429/0,-419.77,-9410.22,50,0--c:1429,56.332,63.538
+    .goto 1429/0,-448.58,-9378.26,50,0--c:1429,57.162,62.157
+    .goto 1429/0,-458.06,-9413.09,50,0--c:1429,57.435,63.662
+    .goto 1429/0,-485.89,-9441.47,50,0--c:1429,58.237,64.888
+    .goto 1429/0,-439.38,-9490.75,50,0--c:1429,56.897,67.017
+    .goto 1429/0,-391.69,-9483.57,50,0--c:1429,55.523,66.707
+    .goto 1429/0,-380.59,-9471.17,50,0--c:1429,55.203,66.171
+    .goto 1429/0,-347.02,-9487.76,50,0--c:1429,54.236,66.888
     >>Plündert die |cRXP_PICK_Schrotthaufen|r auf dem Boden nach |cRXP_LOOT_Glänzender Plunder|r
     >>|cRXP_WARN_Falls ihr diese nicht plündern könnt wegen zu vielen |cRXP_ENEMY_Murlocs|r, überspringt diesen Schritt|r
     .complete 99143,1 -- Shiny Junk (6)
 step
     .isQuestComplete 99143
-    .goto 1429,47.6,62.3
+    .goto 1429/0,-116.70,-9381.57--c:1429,47.6,62.3
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Lee Brown|r
     .turnin 99143 >> Gebt die Quest Glitschiger Glitzerkram ab
     .target Lee Brown
 --xx abandon if didnt complete/check routing for potential later turnin
 step
-    .goto 1429,47.5,62.2
+    .goto 1429/0,-113.23,-9379.25--c:1429,47.5,62.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Jason Mathers|r
     .turnin 99128 >> Gebt die Quest Eine schleimige Bedrohung ab
     .accept 99129 >> Akzeptiert die Quest Ein Problem, ein Mann, eine Lösung
@@ -1985,16 +1993,16 @@ step
     #optional
     #label ExitJasperlode
     #completewith Find
-    .goto 1429,61.820,53.871,15 >> Verlasst die Jaspismine
+    .goto 1429/0,-610.25,-9186.47,15 >> Verlasst die Jaspismine--c:1429,61.820,53.871
     .subzoneskip 54,1
 step
     #optional
     #requires ExitJasperlode
     #label WolfMeatCooking2
     #completewith Find
-    .goto 1429,69.348,67.452,0
-    .goto 1429,67.244,63.880,0
-    .goto 1429,63.748,64.710,0
+    .goto 1429/0,-871.54,-9500.82,0--c:1429,69.348,67.452
+    .goto 1429/0,-798.51,-9418.14,0--c:1429,67.244,63.880
+    .goto 1429/0,-677.17,-9437.35,0--c:1429,63.748,64.710
     >>Tötet |cRXP_ENEMY_Grauer Forstwolf|r. Plündert sie für |T133970:0|t|cRXP_LOOT_[Sehniges Wolfsfleisch]|r
     .collect 2672,10,2178,1,0x20,cooking --Stringy Wolf Meat (1-10)
     .mob Gray Forest Wolf
@@ -2003,9 +2011,9 @@ step
     #optional
     #requires WolfMeatCooking2
     #completewith Find
-    .goto 1429,69.348,67.452,0
-    .goto 1429,67.244,63.880,0
-    .goto 1429,63.748,64.710,0
+    .goto 1429/0,-871.54,-9500.82,0--c:1429,69.348,67.452
+    .goto 1429/0,-798.51,-9418.14,0--c:1429,67.244,63.880
+    .goto 1429/0,-677.17,-9437.35,0--c:1429,63.748,64.710
     >>Tötet |cRXP_ENEMY_Grauer Forstwolf|r. Plündert sie für |T133970:0|t|cRXP_LOOT_[Sehniges Wolfsfleisch]|r
     >>|cRXP_WARN_Macht euch jetzt nicht unnötig die Mühe, dies zu farmen. Tötet und plündert einfach alle Wölfe, an denen du vorbei kommst|r
     .collect 2672,50,2178,1,0x20,cooking --Stringy Wolf Meat (10-50)
@@ -2041,9 +2049,9 @@ step
     #optional
     #label WolfMeatCooking3
     #completewith LostGuards
-    .goto 1429,73.679,67.978,0
-    .goto 1429,72.275,65.278,0
-    .goto 1429,71.605,61.294,0
+    .goto 1429/0,-1021.86,-9512.99,0--c:1429,73.679,67.978
+    .goto 1429/0,-973.13,-9450.50,0--c:1429,72.275,65.278
+    .goto 1429/0,-949.87,-9358.28,0--c:1429,71.605,61.294
     >>Tötet |cRXP_ENEMY_Grauer Forstwolf|r und |cRXP_ENEMY_Streunder|r. Plündert sie für |T133970:0|t|cRXP_LOOT_[Sehniges Wolfsfleisch]|r
     .collect 2672,10,2178,1,0x20,cooking --Stringy Wolf Meat (1-10)
     .mob Gray Forest Wolf
@@ -2053,9 +2061,9 @@ step
     #optional
     #requires WolfMeatCooking3
     #completewith LostGuards
-    .goto 1429,73.679,67.978,0
-    .goto 1429,72.275,65.278,0
-    .goto 1429,71.605,61.294,0
+    .goto 1429/0,-1021.86,-9512.99,0--c:1429,73.679,67.978
+    .goto 1429/0,-973.13,-9450.50,0--c:1429,72.275,65.278
+    .goto 1429/0,-949.87,-9358.28,0--c:1429,71.605,61.294
     >>Tötet |cRXP_ENEMY_Grauer Forstwolf|r und |cRXP_ENEMY_Streunder|r. Plündert sie für |T133970:0|t|cRXP_LOOT_[Sehniges Wolfsfleisch]|r
     >>|cRXP_WARN_Macht euch jetzt nicht unnötig die Mühe, dies zu farmen. Tötet und plündert einfach alle Wölfe, an denen du vorbei kommst|r
     .collect 2672,50,2178,1,0x20,cooking --Stringy Wolf Meat (10-50)
@@ -2073,9 +2081,9 @@ step
     #optional
     #label WolfMeatCooking4
     #completewith AcceptBundle
-    .goto 1429,73.679,67.978,0
-    .goto 1429,72.275,65.278,0
-    .goto 1429,71.605,61.294,0
+    .goto 1429/0,-1021.86,-9512.99,0--c:1429,73.679,67.978
+    .goto 1429/0,-973.13,-9450.50,0--c:1429,72.275,65.278
+    .goto 1429/0,-949.87,-9358.28,0--c:1429,71.605,61.294
     >>Tötet |cRXP_ENEMY_Streuner|r. Plündert sie für |T133970:0|t|cRXP_LOOT_[Sehniges Wolfsfleisch]|r
     .collect 2672,10,2178,1,0x20,cooking --Stringy Wolf Meat (1-10)
     .mob Prowler
@@ -2085,9 +2093,9 @@ step
     #optional
     #requires WolfMeatCooking4
     #completewith AcceptBundle
-    .goto 1429,73.679,67.978,0
-    .goto 1429,72.275,65.278,0
-    .goto 1429,71.605,61.294,0
+    .goto 1429/0,-1021.86,-9512.99,0--c:1429,73.679,67.978
+    .goto 1429/0,-973.13,-9450.50,0--c:1429,72.275,65.278
+    .goto 1429/0,-949.87,-9358.28,0--c:1429,71.605,61.294
     >>Tötet |cRXP_ENEMY_Streuner|r. Plündert sie für |T133970:0|t|cRXP_LOOT_[Sehniges Wolfsfleisch]|r
     >>|cRXP_WARN_Macht euch jetzt nicht unnötig die Mühe, dies zu farmen. Tötet und plündert einfach alle Wölfe, an denen du vorbei kommst|r
     .collect 2672,50,2178,1,0x20,cooking --Stringy Wolf Meat (10-50)
@@ -2113,9 +2121,9 @@ step
     #optional
     #label WolfMeatCooking5
     #completewith Prowlers
-    .goto 1429,73.679,67.978,0
-    .goto 1429,72.275,65.278,0
-    .goto 1429,71.605,61.294,0
+    .goto 1429/0,-1021.86,-9512.99,0--c:1429,73.679,67.978
+    .goto 1429/0,-973.13,-9450.50,0--c:1429,72.275,65.278
+    .goto 1429/0,-949.87,-9358.28,0--c:1429,71.605,61.294
     >>Tötet |cRXP_ENEMY_Streuner|r. Plündert sie für |T133970:0|t|cRXP_LOOT_[Sehniges Wolfsfleisch]|r
     >>|cRXP_WARN_Macht euch jetzt nicht unnötig die Mühe, dies zu farmen. Tötet und plündert einfach alle Wölfe, an denen du vorbei kommst|r
     .collect 2672,10,2178,1,0x20,cooking --Stringy Wolf Meat (1-10)
@@ -2126,9 +2134,9 @@ step
     #optional
     #requires WolfMeatCooking5
     #completewith Prowlers
-    .goto 1429,73.679,67.978,0
-    .goto 1429,72.275,65.278,0
-    .goto 1429,71.605,61.294,0
+    .goto 1429/0,-1021.86,-9512.99,0--c:1429,73.679,67.978
+    .goto 1429/0,-973.13,-9450.50,0--c:1429,72.275,65.278
+    .goto 1429/0,-949.87,-9358.28,0--c:1429,71.605,61.294
     >>Tötet |cRXP_ENEMY_Streuner|r. Plündert sie für |T133970:0|t|cRXP_LOOT_[Sehniges Wolfsfleisch]|r
     >>|cRXP_WARN_Macht euch jetzt nicht unnötig die Mühe, dies zu farmen. Tötet und plündert einfach alle Wölfe, an denen du vorbei kommst|r
     .collect 2672,50,2178,1,0x20,cooking --Stringy Wolf Meat (10-50)
@@ -2186,9 +2194,9 @@ step
     #optional
     #label WolfMeatCooking6
     #completewith BundleOT
-    .goto 1429,73.679,67.978,0
-    .goto 1429,72.275,65.278,0
-    .goto 1429,71.605,61.294,0
+    .goto 1429/0,-1021.86,-9512.99,0--c:1429,73.679,67.978
+    .goto 1429/0,-973.13,-9450.50,0--c:1429,72.275,65.278
+    .goto 1429/0,-949.87,-9358.28,0--c:1429,71.605,61.294
     >>Tötet |cRXP_ENEMY_Streuner|r. Plündert sie für |T133970:0|t|cRXP_LOOT_[Sehniges Wolfsfleisch]|r
     .collect 2672,10,2178,1,0x20,cooking --Stringy Wolf Meat (1-10)
     .mob Prowler
@@ -2197,9 +2205,9 @@ step
     #optional
     #requires WolfMeatCooking6
     #completewith BundleOT
-    .goto 1429,73.679,67.978,0
-    .goto 1429,72.275,65.278,0
-    .goto 1429,71.605,61.294,0
+    .goto 1429/0,-1021.86,-9512.99,0--c:1429,73.679,67.978
+    .goto 1429/0,-973.13,-9450.50,0--c:1429,72.275,65.278
+    .goto 1429/0,-949.87,-9358.28,0--c:1429,71.605,61.294
     >>Tötet |cRXP_ENEMY_Streuner|r. Plündert sie für |T133970:0|t|cRXP_LOOT_[Sehniges Wolfsfleisch]|r
     >>|cRXP_WARN_Macht euch jetzt nicht unnötig die Mühe, dies zu farmen. Tötet und plündert einfach alle Wölfe, an denen du vorbei kommst|r
     .collect 2672,50,2178,1,0x20,cooking --Stringy Wolf Meat (10-50)
@@ -2255,9 +2263,9 @@ step
     #optional
     #label WolfMeatCooking7
     #completewith DeliverStart
-    .goto 1429,73.679,67.978,0
-    .goto 1429,72.275,65.278,0
-    .goto 1429,71.605,61.294,0
+    .goto 1429/0,-1021.86,-9512.99,0--c:1429,73.679,67.978
+    .goto 1429/0,-973.13,-9450.50,0--c:1429,72.275,65.278
+    .goto 1429/0,-949.87,-9358.28,0--c:1429,71.605,61.294
     >>Tötet |cRXP_ENEMY_Streuner|r. Plündert sie für |T133970:0|t|cRXP_LOOT_[Sehniges Wolfsfleisch]|r
     .collect 2672,10,2178,1,0x20,cooking --Stringy Wolf Meat (1-10)
     .mob Prowler
@@ -2266,9 +2274,9 @@ step
     #optional
     #requires WolfMeatCooking7
     #completewith DeliverStart
-    .goto 1429,73.679,67.978,0
-    .goto 1429,72.275,65.278,0
-    .goto 1429,71.605,61.294,0
+    .goto 1429/0,-1021.86,-9512.99,0--c:1429,73.679,67.978
+    .goto 1429/0,-973.13,-9450.50,0--c:1429,72.275,65.278
+    .goto 1429/0,-949.87,-9358.28,0--c:1429,71.605,61.294
     >>Tötet |cRXP_ENEMY_Streuner|r. Plündert sie für |T133970:0|t|cRXP_LOOT_[Sehniges Wolfsfleisch]|r
     >>|cRXP_WARN_Macht euch jetzt nicht unnötig die Mühe, dies zu farmen. Tötet und plündert einfach alle Wölfe, an denen du vorbei kommst|r
     .collect 2672,50,2178,1,0x20,cooking --Stringy Wolf Meat (10-50)
@@ -2291,16 +2299,16 @@ step
 step
     >>Plündert die |cRXP_PICK_Durchnässte Säge|r auf dem Boden
     .complete 91733,2 -- Waterlogged Saw 1/1
-    .goto 1429,74.3,76.4
+    .goto 1429/0,-1043.41,-9707.92--c:1429,74.3,76.4
 step
     >>Plündert die |cRXP_PICK_Durchnässte Axt|r auf dem Boden
     .complete 91733,1 -- Waterlogged Axe 1/1
-    .goto 1429,76.7,82.5
+    .goto 1429/0,-1126.71,-9849.11--c:1429,76.7,82.5
 step
     #label WaterloggedToolbox
     >>Plündert den |cRXP_PICK_Durchnässter Werkzeugkasten|r auf dem Boden
     .complete 91733,3 -- Waterlogged Toolbox 1/1
-    .goto 1429,77.3,86.8
+    .goto 1429/0,-1147.54,-9948.64--c:1429,77.3,86.8
 step
     .group 3
     .goto 1429/0,-1119.800,-9931.300
@@ -2312,16 +2320,16 @@ step
     .mob Croaky
 step
     #loop
-    .goto 1429,77.499,74.518,0
-    .goto 1429,80.496,78.223,0
-    .goto 1429,87.342,63.763,0
-    .goto 1429,77.499,74.518,55,0
-    .goto 1429,77.222,77.499,55,0
-    .goto 1429,78.483,79.323,55,0
-    .goto 1429,80.496,78.223,55,0
-    .goto 1429,81.434,76.695,55,0
-    .goto 1429,87.145,69.922,55,0
-    .goto 1429,87.342,63.763,55,0
+    .goto 1429/0,-1154.44,-9664.36,0--c:1429,77.499,74.518
+    .goto 1429/0,-1258.47,-9750.12,0--c:1429,80.496,78.223
+    .goto 1429/0,-1496.08,-9415.43,0--c:1429,87.342,63.763
+    .goto 1429/0,-1154.44,-9664.36,55,0--c:1429,77.499,74.518
+    .goto 1429/0,-1144.83,-9733.36,55,0--c:1429,77.222,77.499
+    .goto 1429/0,-1188.60,-9775.58,55,0--c:1429,78.483,79.323
+    .goto 1429/0,-1258.47,-9750.12,55,0--c:1429,80.496,78.223
+    .goto 1429/0,-1291.02,-9714.75,55,0--c:1429,81.434,76.695
+    .goto 1429/0,-1489.24,-9557.99,55,0--c:1429,87.145,69.922
+    .goto 1429/0,-1496.08,-9415.43,55,0--c:1429,87.342,63.763
     >>Tötet |cRXP_ENEMY_Streuner|r und |cRXP_ENEMY_Junger Waldbär|r
     .complete 52,1 --Kill Prowler (x8)
     .mob +Prowler
@@ -2441,10 +2449,10 @@ step << !Warlock
     #label WolfMeatCooking8
     #requires EVDeathskip
     #completewith RedridgeS
-    .goto 1429,84.448,72.486,0
-    .goto 1429,88.611,71.379,0
-    .goto 1429,89.657,75.373,0
-    .goto 1429,87.250,75.853,0
+    .goto 1429/0,-1395.63,-9617.33,0--c:1429,84.448,72.486
+    .goto 1429/0,-1540.12,-9591.71,0--c:1429,88.611,71.379
+    .goto 1429/0,-1576.43,-9684.15,0--c:1429,89.657,75.373
+    .goto 1429/0,-1492.89,-9695.26,0--c:1429,87.250,75.853
     >>Tötet |cRXP_ENEMY_Streuner|r. Plündert sie für |T133970:0|t|cRXP_LOOT_[Sehniges Wolfsfleisch]|r
     .collect 2672,10,2178,1,0x20,cooking --Stringy Wolf Meat (1-10)
     .mob Prowler
@@ -2453,10 +2461,10 @@ step << !Warlock
     #optional
     #requires WolfMeatCooking8
     #completewith RedridgeS
-    .goto 1429,84.448,72.486,0
-    .goto 1429,88.611,71.379,0
-    .goto 1429,89.657,75.373,0
-    .goto 1429,87.250,75.853,0
+    .goto 1429/0,-1395.63,-9617.33,0--c:1429,84.448,72.486
+    .goto 1429/0,-1540.12,-9591.71,0--c:1429,88.611,71.379
+    .goto 1429/0,-1576.43,-9684.15,0--c:1429,89.657,75.373
+    .goto 1429/0,-1492.89,-9695.26,0--c:1429,87.250,75.853
     >>Tötet |cRXP_ENEMY_Streuner|r. Plündert sie für |T133970:0|t|cRXP_LOOT_[Sehniges Wolfsfleisch]|r
     >>|cRXP_WARN_Macht euch jetzt nicht unnötig die Mühe, dies zu farmen. Tötet und plündert einfach alle Wölfe, an denen du vorbei kommst|r
     .collect 2672,50,2178,1,0x20,cooking --Stringy Wolf Meat (10-50)
@@ -2754,7 +2762,7 @@ step << skip
     .accept 99131 >> Akzeptiert die Quest Ein Köder für Erfolg
     .target Remy "Two Times"
 sstep << skip
-    .goto 1429,47.5,62.2
+    .goto 1429/0,-113.23,-9379.25--c:1429,47.5,62.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Jason Mathers|r
     .turnin 99131 >> Gebt die Quest Ein Köder für Erfolg ab
     .target Jason Mathers
@@ -2973,7 +2981,7 @@ step << !Hunter
 step << Paladin
     #xprate >1.59
     #optional
-    .goto 1436,48.249,46.729
+    .goto 1436/0,1327.95,-10490.34--c:1436,48.249,46.729
     .xp 11+5360 >> Farmt bis 5360+/8800xp
 --XX 625+210+85+800 = 1720 x2 = 3440
 step << skip
@@ -3232,11 +3240,11 @@ step << Warlock
     #optional
     #label BoarMeatCooking4
     #completewith SChoker
-    .goto 1429,49.917,72.959,0
-    .goto 1429,54.444,75.879,0
-    .goto 1429,57.620,76.213,0
-    .goto 1429,61.911,78.274,0
-    .goto 1429,65.619,78.388,0
+    .goto 1429/0,-197.12,-9628.28,0--c:1429,49.917,72.959
+    .goto 1429/0,-354.24,-9695.87,0--c:1429,54.444,75.879
+    .goto 1429/0,-464.48,-9703.60,0--c:1429,57.620,76.213
+    .goto 1429/0,-613.41,-9751.30,0--c:1429,61.911,78.274
+    .goto 1429/0,-742.11,-9753.94,0--c:1429,65.619,78.388
     >>Tötet |cRXP_ENEMY_Felsnischeneber|r. Plündert sie für |T133970:0|t|cRXP_LOOT_[Brocken Eberfleisch]|r
     .collect 769,10,2178,1,0x20,cooking --Chunk of Boar Meat (1-10)
     .mob Rockhide Boar
@@ -3246,11 +3254,11 @@ step << Warlock
     #optional
     #requires BoarMeatCooking4
     #completewith SChoker
-    .goto 1429,49.917,72.959,0
-    .goto 1429,54.444,75.879,0
-    .goto 1429,57.620,76.213,0
-    .goto 1429,61.911,78.274,0
-    .goto 1429,65.619,78.388,0
+    .goto 1429/0,-197.12,-9628.28,0--c:1429,49.917,72.959
+    .goto 1429/0,-354.24,-9695.87,0--c:1429,54.444,75.879
+    .goto 1429/0,-464.48,-9703.60,0--c:1429,57.620,76.213
+    .goto 1429/0,-613.41,-9751.30,0--c:1429,61.911,78.274
+    .goto 1429/0,-742.11,-9753.94,0--c:1429,65.619,78.388
     >>Tötet |cRXP_ENEMY_Felsnischeneber|r. Plündert sie für |T133970:0|t|cRXP_LOOT_[Brocken Eberfleisch]|r
     >>|cRXP_WARN_Macht euch jetzt nicht unnötig die Mühe, dies zu farmen. Tötet und plündert einfach alle Wildschweine, an denen du vorbei kommst|r
     .collect 769,50,2178,1,0x20,cooking --Chunk of Boar Meat (10-50)
@@ -3297,10 +3305,10 @@ step << Warlock
     #optional
     #label WolfMeatCooking9
     #completewith WlockRedridge
-    .goto 1429,84.448,72.486,0
-    .goto 1429,88.611,71.379,0
-    .goto 1429,89.657,75.373,0
-    .goto 1429,87.250,75.853,0
+    .goto 1429/0,-1395.63,-9617.33,0--c:1429,84.448,72.486
+    .goto 1429/0,-1540.12,-9591.71,0--c:1429,88.611,71.379
+    .goto 1429/0,-1576.43,-9684.15,0--c:1429,89.657,75.373
+    .goto 1429/0,-1492.89,-9695.26,0--c:1429,87.250,75.853
     >>Tötet |cRXP_ENEMY_Streuner|r. Plündert sie für |T133970:0|t|cRXP_LOOT_[Sehniges Wolfsfleisch]|r
     .collect 2672,10,2178,1,0x20,cooking --Stringy Wolf Meat (1-10)
     .mob Prowler
@@ -3309,10 +3317,10 @@ step << Warlock
     #optional
     #requires WolfMeatCooking8
     #completewith WlockRedridge
-    .goto 1429,84.448,72.486,0
-    .goto 1429,88.611,71.379,0
-    .goto 1429,89.657,75.373,0
-    .goto 1429,87.250,75.853,0
+    .goto 1429/0,-1395.63,-9617.33,0--c:1429,84.448,72.486
+    .goto 1429/0,-1540.12,-9591.71,0--c:1429,88.611,71.379
+    .goto 1429/0,-1576.43,-9684.15,0--c:1429,89.657,75.373
+    .goto 1429/0,-1492.89,-9695.26,0--c:1429,87.250,75.853
     >>Tötet |cRXP_ENEMY_Streuner|r. Plündert sie für |T133970:0|t|cRXP_LOOT_[Sehniges Wolfsfleisch]|r
     >>|cRXP_WARN_Macht euch jetzt nicht unnötig die Mühe, dies zu farmen. Tötet und plündert einfach alle Wölfe, an denen du vorbei kommst|r
     .collect 2672,50,2178,1,0x20,cooking --Stringy Wolf Meat (10-50)
@@ -3647,7 +3655,7 @@ step
 step << Warrior
     #optional
     #completewith next
-    .goto 1455,67.400,84.909,15,0
+    .goto 1455/0,-1246.47,-5017.22,15,0--c:1455,67.400,84.909
     .goto 1455/0,-1234.65,-5035.67,12 >> Reist in Richtung |cRXP_FRIENDLY_Bilban Tosslespanner|r
 step << Warrior
     .goto 1455/0,-1234.65,-5035.67
@@ -3660,8 +3668,8 @@ step << Warrior
 step << Warrior
     #optional
     #completewith next
-    .goto 1455,61.552,85.636,10,0
-    .goto 1455,61.356,88.398,6 >> Betretet das Gebäude der Timberline Waffen
+    .goto 1455/0,-1200.24,-5021.06,10,0--c:1455,61.552,85.636
+    .goto 1455/0,-1198.69,-5035.63,6 >> Betretet das Gebäude der Timberline Waffen--c:1455,61.356,88.398
 step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Bixi Wobblebonk|r und |cRXP_FRIENDLY_Buliwyf Stonehand|r
     .train 2567 >> Erlernt Wurfwaffen
@@ -3707,7 +3715,7 @@ step << Warrior
 step << Warrior
     #optional
     #completewith next
-    .goto 1455,61.356,88.398,6 >> Verlasst das Gebäude der Timberline Waffen
+    .goto 1455/0,-1198.69,-5035.63,6 >> Verlasst das Gebäude der Timberline Waffen--c:1455,61.356,88.398
 step
     .goto 1455/0,-1152.40,-4821.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gryth Thurden|r
@@ -3790,7 +3798,7 @@ step
     .isQuestAvailable 418
     .skill cooking,<50,1 --XX Shows if cooking skill is 50+
 step
-    .goto 1426,53.47,35.02
+    .goto 1426/0,-831.31,-5026.91--c:1426,53.47,35.02
     >>Verlasst Eisenschmiede
     .zone Dun Morogh >> Reist nach Dun Morogh
 --logout skip - remove if logout skips re-added
@@ -3803,7 +3811,7 @@ step
     #optional
     #label BoarMeatDunMorogh1
     #completewith Dirt
-    .goto 1426,57.936,50.787,0
+    .goto 1426/0,-1051.26,-5544.59,0--c:1426,57.936,50.787
     >>Tötet |cRXP_ENEMY_Alter Klippeneber|r. Plündert sie für |T133970:0|t|cRXP_LOOT_[Brocken Eberfleisch]|r
     >>|cRXP_WARN_Das wird verwendet, um eure|r |T133971:0|t[Kochkunst] |cRXP_WARN_später zu leveln|r
     >>|cRXP_WARN_Ihr braucht 10|r |T133971:0|t[Kochkunst] |cRXP_WARN_ später für eine Quest in Auberdine|r
@@ -3814,7 +3822,7 @@ step
     #optional
     #requires BoarMeatDunMorogh1
     #completewith Dirt
-    .goto 1426,57.936,50.787,0
+    .goto 1426/0,-1051.26,-5544.59,0--c:1426,57.936,50.787
     >>Tötet |cRXP_ENEMY_Alter Klippeneber|r. Plündert sie für |T133970:0|t|cRXP_LOOT_[Brocken Eberfleisch]|r
     >>|cRXP_WARN_Das wird verwendet, um eure|r |T133971:0|t[Kochkunst] |cRXP_WARN_später zu leveln|r
     >>|cRXP_WARN_Ihr braucht 50|r |T133971:0|t[Kochkunst]|cRXP_WARN_ für eine spätere Quest in Dunkelhain.|r
@@ -3833,8 +3841,8 @@ step
 step
     #completewith VagashEnd
     #requires Dirt
-    .goto 1426,62.778,54.591,0
-    .goto 1426,62.538,46.195,0
+    .goto 1426/0,-1289.73,-5669.49,0--c:1426,62.778,54.591
+    .goto 1426/0,-1277.91,-5393.82,0--c:1426,62.538,46.195
     +|cRXP_WARN_Lockt |cRXP_ENEMY_Vagash|r zu|r |cRXP_FRIENDLY_Rudra|r
     .link https://youtu.be/Zg4FNWw-P5k?t=3815 >>|cRXP_WARN_KLICKT HIER, wenn ihr Schwierigkeiten habt|r << Mage
     .link https://www.youtube.com/watch?v=ZJX6sCkm5JY >> |cRXP_WARN_Klickt hier für Videoreferenz|r << !Mage
@@ -3856,10 +3864,10 @@ step
     .target Rudra Amberstill
 step
     #label VagashEnd
-    .goto 1426,62.778,54.591,0
-    .goto 1426,62.094,47.154,40,0
-    .goto 1426,62.434,48.989,40,0
-    .goto 1426,62.538,46.195
+    .goto 1426/0,-1289.73,-5669.49,0--c:1426,62.778,54.591
+    .goto 1426/0,-1256.05,-5425.31,40,0--c:1426,62.094,47.154
+    .goto 1426/0,-1272.79,-5485.56,40,0--c:1426,62.434,48.989
+    .goto 1426/0,-1277.91,-5393.82--c:1426,62.538,46.195
     >>Tötet |cRXP_ENEMY_Vagash|r. Plündert ihn für seinen |cRXP_LOOT_Fangzahn von Vagash|r
     >>|cRXP_WARN_Lockt ihn zur Wache südlich der Ranch. Achtet darauf, dass ihr 51%+ Schaden an ihm verursacht|r
     >>|cRXP_WARN_Schaut das Video unten, bevor ihr versucht, |cRXP_ENEMY_Vagash|r zu töten. Es kann von jeder Klasse solo absolviert werden|r
@@ -3876,7 +3884,7 @@ step
     #optional
     #label BoarMeatDunMorogh2
     #completewith QuarryStart
-    .goto 1426,66.356,51.02,0
+    .goto 1426/0,-1465.95,-5552.24,0--c:1426,66.356,51.02
     >>Tötet |cRXP_ENEMY_Großer Klippeneber|r. Plündert sie für |T133970:0|t|cRXP_LOOT_[Brocken Eberfleisch]|r
     .collect 769,10,2178,1,0x20,cooking --Chunk of Boar Meat (1-10)
     .mob Large Crag Boar
@@ -3886,7 +3894,7 @@ step
     #optional
     #requires BoarMeatDunMorogh2
     #completewith QuarryStart
-    .goto 1426,66.356,51.02,0
+    .goto 1426/0,-1465.95,-5552.24,0--c:1426,66.356,51.02
     >>Tötet |cRXP_ENEMY_Großer Klippeneber|r. Plündert sie für |T133970:0|t|cRXP_LOOT_[Brocken Eberfleisch]|r
     >>|cRXP_WARN_Macht euch jetzt nicht unnötig die Mühe, dies zu farmen. Tötet und plündert einfach alle Wildschweine, an denen du vorbei kommst|r
     .collect 769,50,2178,1,0x20,cooking --Chunk of Boar Meat (10-50)
@@ -4111,7 +4119,7 @@ step
 step << Rogue
     #optional
     #completewith next
-    +|cRXP_WARN_Legt den|r |T135641:0|t[Handwerkerdolch] |cRXP_WARN_in eurer Nebenhand an|r
+    +|cRXP_WARN_Legt|r |T135641:0|t[Handwerkerdolch] |cRXP_WARN_in eurer Nebenhand an|r
     .use 2218
     .itemcount 2218,1
     .itemStat 17,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
@@ -4156,12 +4164,12 @@ step
     #optional
     #label BoarMeatLoch1
     #completewith ThelsamarFirst
-    .goto 1426,70.845,51.784,0
-    .goto 1426,73.533,50.850,0
-    .goto 1426,75.353,48.533,0
-    .goto 1426,79.881,46.805,0
-    .goto 1426,81.040,43.456,0
-    .goto 1426,80.583,36.040,0
+    .goto 1426/0,-1687.03,-5577.32,0--c:1426,70.845,51.784
+    .goto 1426/0,-1819.42,-5546.66,0--c:1426,73.533,50.850
+    .goto 1426/0,-1909.05,-5470.58,0--c:1426,75.353,48.533
+    .goto 1426/0,-2132.06,-5413.85,0--c:1426,79.881,46.805
+    .goto 1426/0,-2189.14,-5303.89,0--c:1426,81.040,43.456
+    .goto 1426/0,-2166.63,-5060.40,0--c:1426,80.583,36.040
     >>Tötet |cRXP_ENEMY_Bergeber|r. Plündert sie für |T133970:0|t|cRXP_LOOT_[Brocken Eberfleisch]|r
     >>|cRXP_WARN_Das wird verwendet, um eure|r |T133971:0|t[Kochkunst] |cRXP_WARN_später zu leveln|r
     >>|cRXP_WARN_Ihr braucht 10|r |T133971:0|t[Kochkunst] |cRXP_WARN_ später für eine Quest in Auberdine|r
@@ -4173,12 +4181,12 @@ step
     #optional
     #requires BoarMeatLoch1
     #completewith ThelsamarFirst
-    .goto 1426,70.845,51.784,0
-    .goto 1426,73.533,50.850,0
-    .goto 1426,75.353,48.533,0
-    .goto 1426,79.881,46.805,0
-    .goto 1426,81.040,43.456,0
-    .goto 1426,80.583,36.040,0
+    .goto 1426/0,-1687.03,-5577.32,0--c:1426,70.845,51.784
+    .goto 1426/0,-1819.42,-5546.66,0--c:1426,73.533,50.850
+    .goto 1426/0,-1909.05,-5470.58,0--c:1426,75.353,48.533
+    .goto 1426/0,-2132.06,-5413.85,0--c:1426,79.881,46.805
+    .goto 1426/0,-2189.14,-5303.89,0--c:1426,81.040,43.456
+    .goto 1426/0,-2166.63,-5060.40,0--c:1426,80.583,36.040
     >>Tötet |cRXP_ENEMY_Bergeber|r. Plündert sie für |T133970:0|t|cRXP_LOOT_[Brocken Eberfleisch]|r
     >>|cRXP_WARN_Das wird verwendet, um eure|r |T133971:0|t[Kochkunst] |cRXP_WARN_später zu leveln|r
     >>|cRXP_WARN_Ihr braucht 50|r |T133971:0|t[Kochkunst]|cRXP_WARN_ für eine spätere Quest in Dunkelhain.|r
@@ -4297,12 +4305,12 @@ step
     #optional
     #label BoarMeatLoch2
     #completewith SilverStream
-    .goto 1426,70.845,51.784,0
-    .goto 1426,73.533,50.850,0
-    .goto 1426,75.353,48.533,0
-    .goto 1426,79.881,46.805,0
-    .goto 1426,81.040,43.456,0
-    .goto 1426,80.583,36.040,0
+    .goto 1426/0,-1687.03,-5577.32,0--c:1426,70.845,51.784
+    .goto 1426/0,-1819.42,-5546.66,0--c:1426,73.533,50.850
+    .goto 1426/0,-1909.05,-5470.58,0--c:1426,75.353,48.533
+    .goto 1426/0,-2132.06,-5413.85,0--c:1426,79.881,46.805
+    .goto 1426/0,-2189.14,-5303.89,0--c:1426,81.040,43.456
+    .goto 1426/0,-2166.63,-5060.40,0--c:1426,80.583,36.040
     >>Tötet |cRXP_ENEMY_Bergeber|r. Plündert sie für |T133970:0|t|cRXP_LOOT_[Brocken Eberfleisch]|r
     .collect 769,10,2178,1,0x20,cooking --Chunk of Boar Meat (1-10)
     .mob Mountain Boar
@@ -4313,12 +4321,12 @@ step
     #optional
     #requires BoarMeatLoch2
     #completewith SilverStream
-    .goto 1426,70.845,51.784,0
-    .goto 1426,73.533,50.850,0
-    .goto 1426,75.353,48.533,0
-    .goto 1426,79.881,46.805,0
-    .goto 1426,81.040,43.456,0
-    .goto 1426,80.583,36.040,0
+    .goto 1426/0,-1687.03,-5577.32,0--c:1426,70.845,51.784
+    .goto 1426/0,-1819.42,-5546.66,0--c:1426,73.533,50.850
+    .goto 1426/0,-1909.05,-5470.58,0--c:1426,75.353,48.533
+    .goto 1426/0,-2132.06,-5413.85,0--c:1426,79.881,46.805
+    .goto 1426/0,-2189.14,-5303.89,0--c:1426,81.040,43.456
+    .goto 1426/0,-2166.63,-5060.40,0--c:1426,80.583,36.040
     >>Tötet |cRXP_ENEMY_Bergeber|r. Plündert sie für |T133970:0|t|cRXP_LOOT_[Brocken Eberfleisch]|r
     >>|cRXP_WARN_Macht euch jetzt nicht unnötig die Mühe, dies zu farmen. Tötet und plündert einfach alle Wildschweine, an denen du vorbei kommst|r
     .collect 769,50,2178,1,0x20,cooking --Chunk of Boar Meat (10-50)
@@ -4450,12 +4458,12 @@ step
     #optional
     #label BoarMeatLoch3
     #completewith FlintTinder
-    .goto 1426,70.845,51.784,0
-    .goto 1426,73.533,50.850,0
-    .goto 1426,75.353,48.533,0
-    .goto 1426,79.881,46.805,0
-    .goto 1426,81.040,43.456,0
-    .goto 1426,80.583,36.040,0
+    .goto 1426/0,-1687.03,-5577.32,0--c:1426,70.845,51.784
+    .goto 1426/0,-1819.42,-5546.66,0--c:1426,73.533,50.850
+    .goto 1426/0,-1909.05,-5470.58,0--c:1426,75.353,48.533
+    .goto 1426/0,-2132.06,-5413.85,0--c:1426,79.881,46.805
+    .goto 1426/0,-2189.14,-5303.89,0--c:1426,81.040,43.456
+    .goto 1426/0,-2166.63,-5060.40,0--c:1426,80.583,36.040
     >>Tötet |cRXP_ENEMY_Bergeber|r. Plündert sie für |T133970:0|t|cRXP_LOOT_[Brocken Eberfleisch]|r
     .collect 769,10,2178,1,0x20,cooking --Chunk of Boar Meat (1-10)
     .mob Mountain Boar
@@ -4466,12 +4474,12 @@ step
     #optional
     #requires BoarMeatLoch3
     #completewith FlintTinder
-    .goto 1426,70.845,51.784,0
-    .goto 1426,73.533,50.850,0
-    .goto 1426,75.353,48.533,0
-    .goto 1426,79.881,46.805,0
-    .goto 1426,81.040,43.456,0
-    .goto 1426,80.583,36.040,0
+    .goto 1426/0,-1687.03,-5577.32,0--c:1426,70.845,51.784
+    .goto 1426/0,-1819.42,-5546.66,0--c:1426,73.533,50.850
+    .goto 1426/0,-1909.05,-5470.58,0--c:1426,75.353,48.533
+    .goto 1426/0,-2132.06,-5413.85,0--c:1426,79.881,46.805
+    .goto 1426/0,-2189.14,-5303.89,0--c:1426,81.040,43.456
+    .goto 1426/0,-2166.63,-5060.40,0--c:1426,80.583,36.040
     >>Tötet |cRXP_ENEMY_Bergeber|r. Plündert sie für |T133970:0|t|cRXP_LOOT_[Brocken Eberfleisch]|r
     >>|cRXP_WARN_Macht euch jetzt nicht unnötig die Mühe, dies zu farmen. Tötet und plündert einfach alle Wildschweine, an denen du vorbei kommst|r
     .collect 769,50,2178,1,0x20,cooking --Chunk of Boar Meat (10-50)
@@ -4529,8 +4537,8 @@ step
 step
     #optional
     #completewith FlintTinder
-    .goto 1432,35.273,47.750,10,0
-    .goto 1432,35.433,48.243,12 >> BETRETET den Gasthof zum Starkbierlager
+    .goto 1432/0,-2966.70,-5365.90,10,0--c:1432,35.273,47.750
+    .goto 1432/0,-2971.11,-5374.97,12 >> BETRETET den Gasthof zum Starkbierlager--c:1432,35.433,48.243
 step
     .isQuestComplete 418
     #label FlintTinder

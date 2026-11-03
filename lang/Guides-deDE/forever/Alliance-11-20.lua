@@ -528,7 +528,7 @@ step << Skyborne
     .turnin 6661 >> Gebt die Quest Tiefenbahn-Ratten-Razzia ab
     .target Monty
 step << Skyborne
-    .goto Ironforge,55.491,47.751
+    .goto 1455/0,-1152.40,-4821.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gryth Thurden|r
     .fp Ironforge >> Holt euch den Flugpunkt in Eisenschmiede
     .target Gryth Thurden
@@ -542,7 +542,7 @@ step << Skyborne Warrior
     .goto 1455/0,-1197.27,-5041.49
     .target +Buliwyf Stonehand
 step << Skyborne Warrior
-    .goto 1455,62.378,88.671
+    .goto 1455/0,-1206.77,-5037.07--c:1455,62.378,88.671
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Brenwyn Winterstahl|r unten
     >>|cRXP_BUY_Kauft die|r |T135425:0|t[Beißendes Wurfmesser] |cRXP_BUY_von ihr|r
     .collect 3107,1 --Collect Keen Throwing Knife (200)
@@ -828,17 +828,17 @@ RXPGuides.RegisterGuide([[
 
 step << NightElf
     #label WashedA
-    .goto 1439,36.621,45.596
+    .goto 1439/1,542.99,6342.31--c:1439,36.621,45.596
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
     .accept 3524 >> Akzeptiert die Quest An Land gespült
     .target Gwennyth Bly'Leggonde
 step << NightElf !Druid
-    .goto 1439,36.767,44.285
+    .goto 1439/1,533.43,6399.55--c:1439,36.767,44.285
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Laird|r
     .turnin 6342 >> Gebt die Quest Der Flug nach Auberdine ab
     .target Laird
 step << Druid NightElf
-    .goto 1439,36.767,44.285
+    .goto 1439/1,533.43,6399.55--c:1439,36.767,44.285
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Laird|r
     .turnin 6342 >> Gebt die Quest Der Flug nach Auberdine ab
     .accept 6343 >> Akzeptiert die Quest Rückkehr zu Nessa
@@ -846,10 +846,10 @@ step << Druid NightElf
 step << NightElf
     #optional
     #completewith next
-    .goto 1439,36.826,44.150,5,0
-    .goto 1439,36.688,43.952,8 >> Reist die Rampe hinauf zu |cRXP_FRIENDLY_Wizbang Cranktoggle|r
+    .goto 1439/1,529.56,6405.45,5,0--c:1439,36.826,44.150
+    .goto 1439/1,538.60,6414.10,8 >> Reist die Rampe hinauf zu |cRXP_FRIENDLY_Wizbang Cranktoggle|r--c:1439,36.688,43.952
 step << !NightElf
-    .goto 1439,35.743,43.710
+    .goto 1439/1,600.50,6424.66--c:1439,35.743,43.710
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Cerellean Whiteclaw|r
     .accept 963 >> Akzeptiert die Quest In ewiger Liebe
     .target Cerellean Whiteclaw
@@ -859,7 +859,7 @@ step << !NightElf
     #completewith next
     .goto 1439/1,525.800,6414.800,8 >> Reist die Rampe hinauf zu |cRXP_FRIENDLY_Wizbang Cranktoggle|r
 step
-    .goto 1439,36.976,44.135
+    .goto 1439/1,519.74,6406.10--c:1439,36.976,44.135
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Wizbang Cranktoggle|r oben
     .accept 983 >> Akzeptiert die Quest Dröhnkiste 827
     .target Wizbang Cranktoggle
@@ -871,25 +871,25 @@ step
     .bindlocation 442
 step
     #optional << NightElf
-    .goto 1439,37.322,43.640
+    .goto 1439/1,497.08,6427.72--c:1439,37.322,43.640
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Barithras Moonshade|r
     .accept 947 >> Akzeptiert die Quest Höhlenpilze
     .target Barithras Moonshade
     .xp <12,1
 step
     #optional << NightElf
-    .goto 1439,37.703,43.393
+    .goto 1439/1,472.12,6438.51--c:1439,37.703,43.393
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Schildwache Glynda Nal'Shea|r
     .accept 4811 >> Akzeptiert die Quest Der rote Kristall
     .target Sentinel Glynda Nal'Shea
     .xp <12,1
 step
-    .goto 1439,38.843,43.416
+    .goto 1439/1,397.45,6437.50--c:1439,38.843,43.416
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Tharnariun Treetender|r
     .accept 2118 >> Akzeptiert die Quest Verseuchtes Land
     .target Tharnariun Treetender
 step
-    .goto 1439,39.373,43.483
+    .goto 1439/1,362.74,6434.58--c:1439,39.373,43.483
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Terenthis|r
     .accept 984 >> Akzeptiert die Quest Wie groß ist die Bedrohung?
     .target Terenthis
@@ -925,8 +925,8 @@ step
     .xp <15,1
 step << !NightElf
     #label WashedA
-    .goto 1439,36.701,45.122,8,0
-    .goto 1439,36.621,45.596
+    .goto 1439/1,537.75,6363.01,8,0--c:1439,36.701,45.122
+    .goto 1439/1,542.99,6342.31--c:1439,36.621,45.596
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
     .accept 3524 >> Akzeptiert die Quest An Land gespült
     .target Gwennyth Bly'Leggonde
@@ -955,7 +955,7 @@ step << Dwarf Hunter/Human Hunter/Skyborne Hunter
 step
     #optional
     #completewith FirstWashed
-    .goto 1439,43.509,33.207,0
+    .goto 1439/1,91.83,6883.29,0--c:1439,43.509,33.207
     >>Tötet |cRXP_ENEMY_Waldschreiterjunges|r. Plündert sie für |cRXP_LOOT_Schreiterfleisch|r
     >>|cRXP_WARN_Seid vorsichtig, denn sie|r |T132307:0|t[Fliehen] |cRXP_WARN_unter 30% Gesundheit|r
     .collect 5469,5,2178,1 --Strider Meat (5)
@@ -965,23 +965,23 @@ step
     #sticky
     #label BuzzBox1
     #loop
-    .goto 1439,36.051,44.757,0
-    .goto 1439,36.280,50.071,0
-    .goto 1439,35.275,53.464,0
-    .waypoint 1439,36.091,51.501,60,0
-    .waypoint 1439,37.115,52.368,60,0
-    .waypoint 1439,37.130,53.663,60,0
-    .waypoint 1439,36.740,55.221,60,0
-    .waypoint 1439,35.655,55.872,60,0
-    .waypoint 1439,35.088,55.085,60,0
-    .waypoint 1439,35.275,53.464,60,0
-    .waypoint 1439,36.091,51.501,60,0
-    .waypoint 1439,36.280,50.071,60,0
-    .waypoint 1439,36.523,48.554,60,0
-    .waypoint 1439,35.977,48.408,60,0
-    .waypoint 1439,35.902,47.145,60,0
-    .waypoint 1439,35.759,45.455,60,0
-    .waypoint 1439,36.051,44.757,60,0
+    .goto 1439/1,580.33,6378.94,0--c:1439,36.051,44.757
+    .goto 1439/1,565.33,6146.90,0--c:1439,36.280,50.071
+    .goto 1439/1,631.15,5998.74,0--c:1439,35.275,53.464
+    .waypoint 1439/1,577.71,6084.46,60,0--c:1439,36.091,51.501
+    .waypoint 1439/1,510.63,6046.60,60,0--c:1439,37.115,52.368
+    .waypoint 1439/1,509.65,5990.05,60,0--c:1439,37.130,53.663
+    .waypoint 1439/1,535.20,5922.02,60,0--c:1439,36.740,55.221
+    .waypoint 1439/1,606.26,5893.59,60,0--c:1439,35.655,55.872
+    .waypoint 1439/1,643.40,5927.95,60,0--c:1439,35.088,55.085
+    .waypoint 1439/1,631.15,5998.74,60,0--c:1439,35.275,53.464
+    .waypoint 1439/1,577.71,6084.46,60,0--c:1439,36.091,51.501
+    .waypoint 1439/1,565.33,6146.90,60,0--c:1439,36.280,50.071
+    .waypoint 1439/1,549.41,6213.14,60,0--c:1439,36.523,48.554
+    .waypoint 1439/1,585.17,6219.52,60,0--c:1439,35.977,48.408
+    .waypoint 1439/1,590.09,6274.67,60,0--c:1439,35.902,47.145
+    .waypoint 1439/1,599.45,6348.46,60,0--c:1439,35.759,45.455
+    .waypoint 1439/1,580.33,6378.94,60,0--c:1439,36.051,44.757
     >>Tötet |cRXP_ENEMY_Zwerggezeitenkriecher|r und |cRXP_ENEMY_Junger Riffkriecher|r. Plündert sie für |cRXP_LOOT_Kriecherbein|r
     >>|cRXP_WARN_Ihr müsstet möglicherweise ins Wasser gehen, um sie zu finden|r
     >>|cRXP_WARN_Auch wenn einige dieser Quests grau sind, vervollständigt sie trotzdem, da sie Teil einer Quest-Reihe sind|r << !NightElf
@@ -990,7 +990,7 @@ step
     .mob Young Reef Crawler
     .isOnQuest 983
 step
-    .goto 1439,36.371,50.920
+    .goto 1439/1,559.37,6109.83--c:1439,36.371,50.920
     >>Öffnet die |cRXP_PICK_Gestrandete Meereskreatur|r. Plündert sie für die |cRXP_LOOT_Meereskreaturknochen|r
     .complete 3524,1 --Sea Creature Bones (1)
 step << Druid
@@ -1034,14 +1034,14 @@ step
     #sticky
     #label RabidThistle
     #loop
-    .goto 1439,38.226,52.780,0
-    .goto 1439,39.129,59.176,0
-    .goto 1439,38.226,52.780,50,0
-    .goto 1439,38.527,54.661,50,0
-    .goto 1439,38.037,56.815,50,0
-    .goto 1439,38.095,58.395,50,0
-    .goto 1439,38.696,57.874,50,0
-    .goto 1439,39.129,59.176,50,0
+    .goto 1439/1,437.86,6028.61,0--c:1439,38.226,52.780
+    .goto 1439/1,378.72,5749.31,0--c:1439,39.129,59.176
+    .goto 1439/1,437.86,6028.61,50,0--c:1439,38.226,52.780
+    .goto 1439/1,418.15,5946.47,50,0--c:1439,38.527,54.661
+    .goto 1439/1,450.24,5852.41,50,0--c:1439,38.037,56.815
+    .goto 1439/1,446.44,5783.42,50,0--c:1439,38.095,58.395
+    .goto 1439/1,407.08,5806.17,50,0--c:1439,38.696,57.874
+    .goto 1439/1,378.72,5749.31,50,0--c:1439,39.129,59.176
     >>|cRXP_WARN_Benutzt|r |T134335:0|t[Tharnariuns Hoffnung] |cRXP_WARN_auf einen|r |cRXP_ENEMY_Tollwütigen Distelbären|r --|cRXP_WARN_. It can be used from any range as long as you're targeting the bear|r
     -->>|cRXP_WARN_==DO NOT USE THE QUEST ITEM IF THERES NO BEAR NEARBY==|r
     >>|cRXP_WARN_Du kannst die Falle verschwenden und die Quest damit unlösbar machen! Sollte dir das passieren, musst du zum Questgeber zurückkehren und um eine weitere Falle bitten.|r
@@ -1050,24 +1050,24 @@ step
     .use 7586
 step << NightElf
     #loop
-    .goto 1439,36.051,44.757,0
-    .goto 1439,36.280,50.071,0
-    .goto 1439,35.275,53.464,0
-    .goto 1439,36.051,44.757,60,0
-    .goto 1439,35.759,45.455,60,0
-    .goto 1439,35.902,47.145,60,0
-    .goto 1439,35.977,48.408,60,0
-    .goto 1439,36.523,48.554,60,0
-    .goto 1439,36.280,50.071,60,0
-    .goto 1439,36.091,51.501,60,0
-    .goto 1439,37.115,52.368,60,0
-    .goto 1439,37.130,53.663,60,0
-    .goto 1439,36.740,55.221,60,0
-    .goto 1439,35.655,55.872,60,0
-    .goto 1439,35.088,55.085,60,0
-    .goto 1439,35.275,53.464,60,0
-    .goto 1439,36.091,51.501,60,0
-    .xp 11+7300 >> Farmt bis 7300+/8800 XP
+    .goto 1439/1,580.33,6378.94,0--c:1439,36.051,44.757
+    .goto 1439/1,565.33,6146.90,0--c:1439,36.280,50.071
+    .goto 1439/1,631.15,5998.74,0--c:1439,35.275,53.464
+    .goto 1439/1,580.33,6378.94,60,0--c:1439,36.051,44.757
+    .goto 1439/1,599.45,6348.46,60,0--c:1439,35.759,45.455
+    .goto 1439/1,590.09,6274.67,60,0--c:1439,35.902,47.145
+    .goto 1439/1,585.17,6219.52,60,0--c:1439,35.977,48.408
+    .goto 1439/1,549.41,6213.14,60,0--c:1439,36.523,48.554
+    .goto 1439/1,565.33,6146.90,60,0--c:1439,36.280,50.071
+    .goto 1439/1,577.71,6084.46,60,0--c:1439,36.091,51.501
+    .goto 1439/1,510.63,6046.60,60,0--c:1439,37.115,52.368
+    .goto 1439/1,509.65,5990.05,60,0--c:1439,37.130,53.663
+    .goto 1439/1,535.20,5922.02,60,0--c:1439,36.740,55.221
+    .goto 1439/1,606.26,5893.59,60,0--c:1439,35.655,55.872
+    .goto 1439/1,643.40,5927.95,60,0--c:1439,35.088,55.085
+    .goto 1439/1,631.15,5998.74,60,0--c:1439,35.275,53.464
+    .goto 1439/1,577.71,6084.46,60,0--c:1439,36.091,51.501
+    .xp 12-2500 >> Farmt bis 6300+/8800 EP
 step
     #label invisThistle
     #optional
@@ -1075,23 +1075,73 @@ step
 --XXREQ Placeholder invis step until multiple requires per step
 step
     #requires BuzzBox1
-    .goto 1439,36.634,46.250
+    .goto 1439/1,542.14,6313.75--c:1439,36.634,46.250
     >>Klickt auf die |cRXP_PICK_Dröhnkiste 827|r auf dem Boden
     .turnin 983 >> Gebt die Quest Dröhnkiste 827 ab
     .accept 1001 >> Akzeptiert die Quest Dröhnkiste 411
 step
     #label FirstWashed
-    .goto 1439,36.701,45.122,8,0
-    .goto 1439,36.621,45.596
+    .goto 1439/1,537.75,6363.01,8,0--c:1439,36.701,45.122
+    .goto 1439/1,542.99,6342.31--c:1439,36.621,45.596
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
     .turnin 3524 >> Gebt die Quest An Land gespült ab
     .accept 4681 >> Akzeptiert die Quest An Land gespült
     .target Gwennyth Bly'Leggonde
-
+step
+    #optional
+    #completewith next
+    .goto 1439/1,530.87,6406.02,8,0--c:1439,36.806,44.137
+    .goto 1439/1,600.50,6424.66,12 >> Reist zu |cRXP_FRIENDLY_Cerellean Whiteclaw|r auf dem Steg--c:1439,35.743,43.710
+step
+    .goto 1439/1,600.50,6424.66--c:1439,35.743,43.710
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Cerellean Whiteclaw|r
+    .accept 963 >> Akzeptiert die Quest In ewiger Liebe
+    .target Cerellean Whiteclaw
+step
+    #optional
+    #completewith SeaT1
+    .goto 1439/1,817.37,6423.18,15 >> Reist zum Ende des Stegs, dann springt ins Wasser--c:1439,32.432,43.744
+step
+    #optional
+    #completewith washed1
+    .goto 1439/1,741.52,6570.95,0
+    .goto 1439/1,915.10,6333.84,0
+    .goto 1439/1,778.20,6231.66,0
+    >>Tötet |cRXP_ENEMY_Dunkelküstendrescher|r. Plündert sie für |cRXP_LOOT_Drescherauge|r
+    .complete 1001,1 --Thresher Eye (3)
+    .mob Darkshore Thresher
+    .isOnQuest 1001
+step
+    #label SeaT1
+    .goto 1439/1,856.08,6311.39--c:1439,31.841,46.304
+    >>Öffnet die |cRXP_PICK_Skelettartige Meeresschildkröte|r. Plündert sie für die |cRXP_LOOT_Meeresschildkrötenüberreste|r
+    .complete 4681,1 --Sea Turtle Remains (1)
+step
+    #optional
+    .goto 1439/1,577.38,6371.35
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gubber Blump|r
+    .accept 1138 >> Akzeptiert die Quest Meeresfrüchte
+    .target Gubber Blump
+    .xp <15,1
+step
+    #label washed1
+    .goto 1439/1,537.75,6363.01,8,0--c:1439,36.701,45.122
+    .goto 1439/1,542.99,6342.31--c:1439,36.621,45.596
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
+    .turnin 4681 >> Gebt die Quest An Land gespült ab
+    .target Gwennyth Bly'Leggonde
+step << Druid NightElf
+    #optional
+    .xp 12 >> Farmt bis Stufe 12
+step << Druid NightElf
+    .goto 1439/1,472.12,6438.51--c:1439,37.703,43.393
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Schildwache Glynda Nal'Shea|r
+    .accept 4811 >> Akzeptiert die Quest Der rote Kristall
+    .target Sentinel Glynda Nal'Shea   
 step << Druid NightElf
     #optional
     #completewith Lunaclaw
-    .goto 1439,43.126,45.593,15 >> Betretet die |cRXP_PICK_Mondkin Stein|r-Höhle
+    .goto 1439/1,116.91,6342.44,15 >> Betretet die |cRXP_PICK_Mondkin Stein|r-Höhle--c:1439,43.126,45.593
 step << Druid NightElf
     #optional
     #completewith Lunaclaw
@@ -1110,7 +1160,7 @@ step << Druid NightElf
 step << Druid NightElf
     #label RedCrystal
     .isOnQuest 4811
-    .goto 1439,47.314,48.676
+    .goto 1439/1,-157.40,6207.81--c:1439,47.314,48.676
     >>Reist zum geheimnisvollen roten Kristall
     >>|cRXP_WARN_Passt auf die beiden 2er-Gruppen |cRXP_ENEMY_Tobender Moonkin|r westlich des |cRXP_PICK_Geheimnisvoller Roter Kristall|r die beiden aneinander liegenden duos werden zusammen gepullt|r
     .complete 4811,1 --Locate the large, red crystal on Darkshore's eastern mountain range
@@ -1159,85 +1209,42 @@ step << Druid NightElf
     .target Vesprystus
     .zoneskip Darkshore
 step << Druid NightElf
-    .goto 1439,37.703,43.393
+    .goto 1439/1,472.12,6438.51--c:1439,37.703,43.393
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Schildwache Glynda Nal'Shea|r
     .turnin 4811 >> Gebt die Quest Der rote Kristall ab
     .accept 4812 >> Akzeptiert die Quest Wenn das Wasser fließt
     .target Sentinel Glynda Nal'Shea
     .isOnQuest 4811
 step << Druid NightElf
-    .goto 1439,37.703,43.393
+    .goto 1439/1,472.12,6438.51--c:1439,37.703,43.393
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Schildwache Glynda Nal'Shea|r
     .accept 4812 >> Akzeptiert die Quest Wenn das Wasser fließt
     .target Sentinel Glynda Nal'Shea
     .isQuestTurnedIn 4811
 step << Druid NightElf
     .isOnQuest 4812
-    .goto 1439,37.767,44.001
+    .goto 1439/1,467.93,6411.96--c:1439,37.767,44.001
     >>|cRXP_WARN_Benutzt die|r |T134865:0|t[Leere Wasserröhre] |cRXP_WARN_am Mondbrunnen von Auberdine|r
     .complete 4812,1 --Moonwell Water Tube (1)
     .use 14338
 step
-    #optional
-    #completewith next
-    .goto 1439,36.806,44.137,8,0
-    .goto 1439,35.743,43.710,12 >> Reist zu |cRXP_FRIENDLY_Cerellean Whiteclaw|r auf dem Steg
-step
-    .goto 1439,35.743,43.710
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Cerellean Whiteclaw|r
-    .accept 963 >> Akzeptiert die Quest In ewiger Liebe
-    .target Cerellean Whiteclaw
-step
-    #optional
-    #completewith SeaT1
-    .goto 1439,32.432,43.744,15 >> Reist zum Ende des Stegs, dann springt ins Wasser
-step
-    #optional
-    #completewith washed1
-    .goto 1439/1,741.52,6570.95,0
-    .goto 1439/1,915.10,6333.84,0
-    .goto 1439/1,778.20,6231.66,0
-    >>Tötet |cRXP_ENEMY_Dunkelküstendrescher|r. Plündert sie für |cRXP_LOOT_Drescherauge|r
-    .complete 1001,1 --Thresher Eye (3)
-    .mob Darkshore Thresher
-    .isOnQuest 1001
-step
-    #label SeaT1
-    .goto 1439,31.841,46.304
-    >>Öffnet die |cRXP_PICK_Skelettartige Meeresschildkröte|r. Plündert sie für die |cRXP_LOOT_Meeresschildkrötenüberreste|r
-    .complete 4681,1 --Sea Turtle Remains (1)
-step
-    #optional
-    .goto 1439/1,577.38,6371.35
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gubber Blump|r
-    .accept 1138 >> Akzeptiert die Quest Meeresfrüchte
-    .target Gubber Blump
-    .xp <15,1
-step
-    #label washed1
-    .goto 1439,36.701,45.122,8,0
-    .goto 1439,36.621,45.596
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
-    .turnin 4681 >> Gebt die Quest An Land gespült ab
-    .target Gwennyth Bly'Leggonde
-step
-    .goto 1439,37.322,43.640
+    .goto 1439/1,497.08,6427.72--c:1439,37.322,43.640
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Barithras Moonshade|r
     .accept 947 >> Akzeptiert die Quest Höhlenpilze
     .target Barithras Moonshade
 step
-    .goto 1439,37.703,43.393
+    .goto 1439/1,472.12,6438.51--c:1439,37.703,43.393
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Schildwache Glynda Nal'Shea|r
     .accept 4811 >> Akzeptiert die Quest Der rote Kristall
     .target Sentinel Glynda Nal'Shea
 step
-    .goto 1439,38.843,43.416
+    .goto 1439/1,397.45,6437.50--c:1439,38.843,43.416
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Tharnariun Treetender|r
     .turnin 2118 >> Gebt die Quest Verseuchtes Land ab
     .accept 2138 >> Akzeptiert die Quest Ausrottung der Infizierten
     .target Tharnariun Treetender
 step
-    .goto 1439,39.373,43.483
+    .goto 1439/1,362.74,6434.58--c:1439,39.373,43.483
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Terenthis|r
     .turnin 984 >> Gebt die Quest Wie groß ist die Bedrohung? ab
     .accept 985 >> Akzeptiert die Quest Wie groß ist die Bedrohung?
@@ -1246,7 +1253,7 @@ step
 step << NightElf Warrior/NightElf Rogue
     #sticky
     #label DeepOceanStart
-    .goto 1439,38.107,41.165,0,0
+    .goto 1439/1,445.66,6535.79,0,0--c:1439,38.107,41.165
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Gorbold Steelhand|r
     .accept 982 >> Akzeptiert die Quest Tiefer Ozean, weites Meer
     .target Gorbold Steelhand
@@ -1276,7 +1283,7 @@ step << NightElf Warrior/NightElf Rogue
     .usespell 2580
     .train 2575,3 --Mining Trained
 step << !NightElf/!Warrior !Rogue
-    .goto 1439,38.107,41.165
+    .goto 1439/1,445.66,6535.79--c:1439,38.107,41.165
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Gorbold Steelhand|r
     .accept 982 >> Akzeptiert die Quest Tiefer Ozean, weites Meer
     .target Gorbold Steelhand
@@ -1292,7 +1299,7 @@ step
     .itemcount 5469,5 -- Strider Meat (5)
     .skill cooking,<10,1 -- step only displays if skill is 10 or higher
 step << NightElf Rogue
-    .goto 1439,37.575,40.348
+    .goto 1439/1,480.50,6571.47--c:1439,37.575,40.348
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Naram Longclaw|r
     .vendor 4183 >>|cRXP_BUY_Kauft ein|r |T135640:0|t[Jambiya] |cRXP_BUY_von ihm, wenn ihr es euch es leisten könnt|r
     .collect 2207,1 -- Jambiya (1)
@@ -1309,7 +1316,7 @@ step
     >>|cRXP_BUY_Kauft|r |T132382:0|t[Scharfe Pfeile] |cRXP_BUY_oder|r |T132384:0|t[Schwere Geschosse] |cRXP_BUY_von ihm, bis euer Köcher/Munitionsbeutel voll ist|r << Hunter
     .target Dalmond
 step
-    .goto 1439,37.394,40.128
+    .goto 1439/1,492.36,6581.08--c:1439,37.394,40.128
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Thundris Windwirker|r
     .turnin 4761 >> Gebt die Quest Thundris Windwirker ab
     .accept 4762 >> Akzeptiert die Quest Der Cliffspring
@@ -1320,7 +1327,7 @@ step
 --XX if 16+, skip Tools
 step
     #optional
-    .goto 1439,37.394,40.128
+    .goto 1439/1,492.36,6581.08--c:1439,37.394,40.128
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Thundris Windwirker|r
     .turnin 4761 >> Gebt die Quest Thundris Windwirker ab
     .accept 4762 >> Akzeptiert die Quest Der Cliffspring
@@ -1330,7 +1337,7 @@ step
 --XX if 18+, skip Bashal
 step
     #optional
-    .goto 1439,37.394,40.128
+    .goto 1439/1,492.36,6581.08--c:1439,37.394,40.128
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Thundris Windwirker|r
     .turnin 4761 >> Gebt die Quest Thundris Windwirker ab
     .accept 4762 >> Akzeptiert die Quest Der Cliffspring
@@ -1358,7 +1365,7 @@ step
     +|cRXP_WARN_Drückt Escape, dann geht in -> Optionen -> Steuerung|r
     >>|cRXP_WARN_Überprüft "Aktiviere Interaktionstaste" und bindet die "Interagieren mit Ziel" Option auf eine Taste|r
 step
-    .goto 1439,38.213,28.754
+    .goto 1439/1,438.72,7077.74--c:1439,38.213,28.754
 --  .goto 1439,38.234,28.796
     >>|cRXP_WARN_==BEACHTET EURE ATEMLEISTE==|r
     >>|cRXP_WARN_Schwimmt unter Wasser zur Außenseite der Bootsrückseite|r
@@ -1368,7 +1375,7 @@ step
     .isOnQuest 982
 step
     #label MistVeil
-    .goto 1439,39.581,27.487
+    .goto 1439/1,349.11,7133.07--c:1439,39.581,27.487
 --  .goto 1439,39.629,27.462
     >>|cRXP_WARN_==BEACHTET EURE ATEMLEISTE==|r
     >>|cRXP_WARN_Schwimmt unter Wasser zur Außenseite der Bootsrückseite|r
@@ -1394,32 +1401,32 @@ step
     .isOnQuest 1001
 step
     #optional
-    .goto 1439,41.901,31.339
+    .goto 1439/1,197.15,6964.86--c:1439,41.901,31.339
     >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4723 >> Akzeptiert die Quest Gestrandete Meereskreatur
     .isOnQuest 1001
 step
     #optional
-    .goto 1439,41.901,31.339
+    .goto 1439/1,197.15,6964.86--c:1439,41.901,31.339
     >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4723 >> Akzeptiert die Quest Gestrandete Meereskreatur
     .isOnQuest 982
 step
-    .goto 1439,41.960,28.616
+    .goto 1439/1,193.29,7083.77--c:1439,41.960,28.616
     >>Klickt auf die |cRXP_PICK_Dröhnkiste 411|r auf dem Boden
     .turnin 1001 >> Gebt die Quest Dröhnkiste 411 ab
     .accept 1002 >> Akzeptiert die Quest Dröhnkiste 323
     .isQuestComplete 1001
 step
     #optional
-    .goto 1439,41.960,28.616
+    .goto 1439/1,193.29,7083.77--c:1439,41.960,28.616
     >>Klickt auf die |cRXP_PICK_Dröhnkiste 411|r auf dem Boden
     .accept 1002 >> Akzeptiert die Quest Dröhnkiste 323
     .isQuestTurnedIn 1001
 step
     #optional
     #completewith AsterionTravel
-    .goto 1439,44.190,33.697,0
+    .goto 1439/1,47.22,6861.90,0--c:1439,44.190,33.697
     >>Tötet |cRXP_ENEMY_Mondpirscherwicht|r. Plündert sie für ihren |cRXP_LOOT_Mondpirscher-Fangzahn|r
     .complete 1002,1 -- Moonstalker Fang (6)
     .mob Moonstalker Runt
@@ -1432,7 +1439,7 @@ step
  step
     #optional
     #completewith AsterionTravel
-    .goto 1439,43.509,33.207,0
+    .goto 1439/1,91.83,6883.29,0--c:1439,43.509,33.207
     >>Tötet |cRXP_ENEMY_Waldschreiterjunges|r. Plündert sie für |cRXP_LOOT_Schreiterfleisch|r
     >>|cRXP_WARN_Seid vorsichtig, denn sie|r |T132307:0|t[Fliehen] |cRXP_WARN_unter 30% Gesundheit|r
     .collect 5469,5,2178,1 --Strider Meat (5)
@@ -1441,10 +1448,10 @@ step
     #optional
     #label AsterionTravel
     #completewith Bashal1
-    .goto 1439,44.629,36.316,20,0
-    .goto 1439,44.168,36.289,15 >> Reist in Richtung |cRXP_FRIENDLY_Asterion|r
+    .goto 1439/1,18.47,6747.53,20,0--c:1439,44.629,36.316
+    .goto 1439/1,48.66,6748.71,15 >> Reist in Richtung |cRXP_FRIENDLY_Asterion|r--c:1439,44.168,36.289
 step
-    .goto 1439,44.168,36.289
+    .goto 1439/1,48.66,6748.71--c:1439,44.168,36.289
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Asterion|r
     >>|cRXP_WARN_Vermeidet |cRXP_ENEMY_Wilder Grell|r und |cRXP_ENEMY_Übler Grimmling|r auf dem weg zu töten|r
     .turnin 954 >> Gebt die Quest Bashal'Aran ab
@@ -1456,7 +1463,7 @@ step
 step
     #optional
     #label Bashal1
-    .goto 1439,44.168,36.289
+    .goto 1439/1,48.66,6748.71--c:1439,44.168,36.289
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Asterion|r
     >>|cRXP_WARN_Vermeidet |cRXP_ENEMY_Wilder Grell|r und |cRXP_ENEMY_Übler Grimmling|r auf dem weg zu töten|r
     .turnin 954 >> Gebt die Quest Bashal'Aran ab
@@ -1465,25 +1472,25 @@ step
 --XX Turn in Breadcrumb if you picked it up earlier before 18
 step
     #loop
-    .goto 1439,44.528,36.587,0
-    .goto 1439,45.334,39.393,0
-    .goto 1439,46.096,36.541,0
-    .goto 1439,44.528,36.587,50,0
-    .goto 1439,44.435,37.404,50,0
-    .goto 1439,44.443,38.202,50,0
-    .goto 1439,44.493,39.008,50,0
-    .goto 1439,44.821,39.711,50,0
-    .goto 1439,45.334,39.393,50,0
-    .goto 1439,45.167,38.652,50,0
-    .goto 1439,45.091,37.865,50,0
-    .goto 1439,45.495,37.019,50,0
-    .goto 1439,45.831,36.790,50,0
-    .goto 1439,46.096,36.541,50,0
-    .goto 1439,46.906,36.171,50,0
-    .goto 1439,47.431,36.151,50,0
-    .goto 1439,47.022,37.083,50,0
-    .goto 1439,47.166,37.580,50,0
-    .goto 1439,45.827,36.812,50,0
+    .goto 1439/1,25.08,6735.70,0--c:1439,44.528,36.587
+    .goto 1439/1,-27.71,6613.17,0--c:1439,45.334,39.393
+    .goto 1439/1,-77.62,6737.71,0--c:1439,46.096,36.541
+    .goto 1439/1,25.08,6735.70,50,0--c:1439,44.528,36.587
+    .goto 1439/1,31.17,6700.03,50,0--c:1439,44.435,37.404
+    .goto 1439/1,30.65,6665.18,50,0--c:1439,44.443,38.202
+    .goto 1439/1,27.38,6629.98,50,0--c:1439,44.493,39.008
+    .goto 1439/1,5.89,6599.29,50,0--c:1439,44.821,39.711
+    .goto 1439/1,-27.71,6613.17,50,0--c:1439,45.334,39.393
+    .goto 1439/1,-16.77,6645.53,50,0--c:1439,45.167,38.652
+    .goto 1439/1,-11.79,6679.89,50,0--c:1439,45.091,37.865
+    .goto 1439/1,-38.26,6716.84,50,0--c:1439,45.495,37.019
+    .goto 1439/1,-60.26,6726.84,50,0--c:1439,45.831,36.790
+    .goto 1439/1,-77.62,6737.71,50,0--c:1439,46.096,36.541
+    .goto 1439/1,-130.68,6753.87,50,0--c:1439,46.906,36.171
+    .goto 1439/1,-165.06,6754.74,50,0--c:1439,47.431,36.151
+    .goto 1439/1,-138.27,6714.04,50,0--c:1439,47.022,37.083
+    .goto 1439/1,-147.71,6692.34,50,0--c:1439,47.166,37.580
+    .goto 1439/1,-60.00,6725.88,50,0--c:1439,45.827,36.812
     >>Tötet |cRXP_ENEMY_Wilde Grells|r und |cRXP_ENEMY_Übler Grimmling|r. Plündert sie für |cRXP_LOOT_Grell-Ohrring|r
     >>|cRXP_WARN_Vermeidet es die |cRXP_ENEMY_Satyr der Deth'ryll|r vorerst zu töten|r
     .complete 955,1 --Grell Earring (8)
@@ -1491,7 +1498,7 @@ step
     .mob Vile Sprite
     .isOnQuest 955
 step
-    .goto 1439,44.168,36.289
+    .goto 1439/1,48.66,6748.71--c:1439,44.168,36.289
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Asterion|r
     .turnin 955 >> Gebt die Quest Bashal'Aran ab
     .accept 956 >> Akzeptiert die Quest Bashal'Aran
@@ -1499,7 +1506,7 @@ step
     .isQuestComplete 955
 step
     #optional
-    .goto 1439,44.168,36.289
+    .goto 1439/1,48.66,6748.71--c:1439,44.168,36.289
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Asterion|r
     .accept 956 >> Akzeptiert die Quest Bashal'Aran
     .target Asterion
@@ -1511,62 +1518,62 @@ step
     .isQuestAvailable 955
 step
     #loop
-    .goto 1439,45.393,36.472,0
-    .goto 1439,45.429,39.773,0
-    .goto 1439,47.368,36.774,0
-    .goto 1439,45.393,36.472,45,0
-    .goto 1439,45.938,37.800,45,0
-    .goto 1439,45.938,38.040,45,0
-    .goto 1439,46.531,39.134,45,0
-    .goto 1439,45.429,39.773,45,0
-    .goto 1439,47.262,37.674,45,0
-    .goto 1439,47.920,37.228,45,0
-    .goto 1439,47.368,36.774,45,0
+    .goto 1439/1,-31.57,6740.72,0--c:1439,45.393,36.472
+    .goto 1439/1,-33.93,6596.58,0--c:1439,45.429,39.773
+    .goto 1439/1,-160.94,6727.54,0--c:1439,47.368,36.774
+    .goto 1439/1,-31.57,6740.72,45,0--c:1439,45.393,36.472
+    .goto 1439/1,-67.27,6682.73,45,0--c:1439,45.938,37.800
+    .goto 1439/1,-67.27,6672.25,45,0--c:1439,45.938,38.040
+    .goto 1439/1,-106.11,6624.48,45,0--c:1439,46.531,39.134
+    .goto 1439/1,-33.93,6596.58,45,0--c:1439,45.429,39.773
+    .goto 1439/1,-153.99,6688.24,45,0--c:1439,47.262,37.674
+    .goto 1439/1,-197.09,6707.71,45,0--c:1439,47.920,37.228
+    .goto 1439/1,-160.94,6727.54,45,0--c:1439,47.368,36.774
     >>Tötet |cRXP_ENEMY_Satyr der Deth'ryll|r. Plündert sie für |cRXP_LOOT_Altes Mondstein-Siegel|r
     >>|cRXP_WARN_Beachte, das sie keinen dynamischen Respawn haben|r
     .complete 956,1 --Ancient Moonstone Seal (1)
     .mob Deth'ryll Satyr
     .isQuestTurnedIn 955
 step
-    .goto 1439,44.168,36.289
+    .goto 1439/1,48.66,6748.71--c:1439,44.168,36.289
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Asterion|r
     .turnin 956 >> Gebt die Quest Bashal'Aran ab
     .accept 957 >> Akzeptiert die Quest Bashal'Aran
     .target Asterion
     .isQuestComplete 956
 step
-    .goto 1439,44.168,36.289
+    .goto 1439/1,48.66,6748.71--c:1439,44.168,36.289
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Asterion|r
     .accept 957 >> Akzeptiert die Quest Bashal'Aran
     .target Asterion
     .isQuestTurnedIn 956
 step << NightElf/Dwarf/Human Hunter
     #optional
-    .goto 1439,44.528,36.587,0
-    .goto 1439,45.334,39.393,0
-    .goto 1439,46.096,36.541,0
-    .goto 1439,44.528,36.587,50,0
-    .goto 1439,44.435,37.404,50,0
-    .goto 1439,44.443,38.202,50,0
-    .goto 1439,44.493,39.008,50,0
-    .goto 1439,44.821,39.711,50,0
-    .goto 1439,45.334,39.393,50,0
-    .goto 1439,45.167,38.652,50,0
-    .goto 1439,45.091,37.865,50,0
-    .goto 1439,45.495,37.019,50,0
-    .goto 1439,45.831,36.790,50,0
-    .goto 1439,46.096,36.541,50,0
-    .goto 1439,46.906,36.171,50,0
-    .goto 1439,47.431,36.151,50,0
-    .goto 1439,47.022,37.083,50,0
-    .goto 1439,47.166,37.580,50,0
-    .goto 1439,45.827,36.812,50,0
+    .goto 1439/1,25.08,6735.70,0--c:1439,44.528,36.587
+    .goto 1439/1,-27.71,6613.17,0--c:1439,45.334,39.393
+    .goto 1439/1,-77.62,6737.71,0--c:1439,46.096,36.541
+    .goto 1439/1,25.08,6735.70,50,0--c:1439,44.528,36.587
+    .goto 1439/1,31.17,6700.03,50,0--c:1439,44.435,37.404
+    .goto 1439/1,30.65,6665.18,50,0--c:1439,44.443,38.202
+    .goto 1439/1,27.38,6629.98,50,0--c:1439,44.493,39.008
+    .goto 1439/1,5.89,6599.29,50,0--c:1439,44.821,39.711
+    .goto 1439/1,-27.71,6613.17,50,0--c:1439,45.334,39.393
+    .goto 1439/1,-16.77,6645.53,50,0--c:1439,45.167,38.652
+    .goto 1439/1,-11.79,6679.89,50,0--c:1439,45.091,37.865
+    .goto 1439/1,-38.26,6716.84,50,0--c:1439,45.495,37.019
+    .goto 1439/1,-60.26,6726.84,50,0--c:1439,45.831,36.790
+    .goto 1439/1,-77.62,6737.71,50,0--c:1439,46.096,36.541
+    .goto 1439/1,-130.68,6753.87,50,0--c:1439,46.906,36.171
+    .goto 1439/1,-165.06,6754.74,50,0--c:1439,47.431,36.151
+    .goto 1439/1,-138.27,6714.04,50,0--c:1439,47.022,37.083
+    .goto 1439/1,-147.71,6692.34,50,0--c:1439,47.166,37.580
+    .goto 1439/1,-60.00,6725.88,50,0--c:1439,45.827,36.812
     .xp 13 >> Farmt bis Stufe 13
 step
     #optional
     #completewith AuberdineTurnin2 << NightElf/Hunter/Druid/Warrior
     #completewith AmethStart << !NightElf !Hunter !Druid !Warrior
-    .goto 1439,43.509,33.207,0
+    .goto 1439/1,91.83,6883.29,0--c:1439,43.509,33.207
     >>Tötet |cRXP_ENEMY_Waldschreiterjunges|r. Plündert sie für |cRXP_LOOT_Schreiterfleisch|r
     >>|cRXP_WARN_Seid vorsichtig, denn sie|r |T132307:0|t[Fliehen] |cRXP_WARN_unter 30% Gesundheit|r
     .collect 5469,5,2178,1 --Strider Meat (5)
@@ -1606,7 +1613,7 @@ step
     .skill cooking,50,1
 step
     #label RedCrystal
-    .goto 1439,47.314,48.676
+    .goto 1439/1,-157.40,6207.81--c:1439,47.314,48.676
     >>Reist zum geheimnisvollen roten Kristall
     >>|cRXP_WARN_Passt auf die beiden 2er-Gruppen |cRXP_ENEMY_Tobender Moonkin|r westlich des |cRXP_PICK_Geheimnisvoller Roter Kristall|r die beiden aneinander liegenden duos werden zusammen gepullt|r
     .complete 4811,1 --Locate the large, red crystal on Darkshore's eastern mountain range
@@ -1625,12 +1632,12 @@ step << NightElf/Hunter/Druid/Warrior
     #optional
     #label AuberdineTurnin2
     #completewith Cascade
-    .goto 1439,37.703,43.393
+    .goto 1439/1,472.12,6438.51--c:1439,37.703,43.393
     .subzone 442 >> Kehrt nach Auberdine zurück
     .cooldown item,6948,<0,1 << !Druid
 step << NightElf/Hunter/Druid/Warrior
     #optional
-    .goto 1439,37.703,43.393
+    .goto 1439/1,472.12,6438.51--c:1439,37.703,43.393
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Schildwache Glynda Nal'Shea|r
     .turnin 4811 >> Gebt die Quest Der rote Kristall ab
     .accept 4812 >> Akzeptiert die Quest Wenn das Wasser fließt
@@ -1638,7 +1645,7 @@ step << NightElf/Hunter/Druid/Warrior
     .xp >14,1 << Hunter/Druid
 --XX If Night Elves, Hunters, or Druids are lower than level 14, do questline
 step << Hunter/Druid/Warrior
-    .goto 1439,37.703,43.393
+    .goto 1439/1,472.12,6438.51--c:1439,37.703,43.393
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Schildwache Glynda Nal'Shea|r
     .turnin 4811 >> Gebt die Quest Der rote Kristall ab
     .accept 4812 >> Akzeptiert die Quest Wenn das Wasser fließt
@@ -1648,14 +1655,14 @@ step << Hunter/Druid/Warrior
 step << NightElf/Hunter/Druid/Warrior !Hunter
     #optional
     #label Cascade
-    .goto 1439,37.703,43.393
+    .goto 1439/1,472.12,6438.51--c:1439,37.703,43.393
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Schildwache Glynda Nal'Shea|r
     .accept 4812 >> Akzeptiert die Quest Wenn das Wasser fließt
     .target Sentinel Glynda Nal'Shea
     .isQuestTurnedIn 4811 --show step if Red Crystal turned in
 step << NightElf/Hunter/Druid/Warrior
     #optional
-    .goto 1439,37.767,44.001
+    .goto 1439/1,467.93,6411.96--c:1439,37.767,44.001
     >>|cRXP_WARN_Benutzt die|r |T134865:0|t[Leere Wasserröhre] |cRXP_WARN_am Mondbrunnen von Auberdine|r
     .complete 4812,1 --Moonwell Water Tube (1)
     .use 14338
@@ -1704,7 +1711,7 @@ step << NightElf/Hunter/Druid/Warrior
     .isOnQuest 1002
     .isQuestTurnedIn 4811
 step << NightElf/Hunter/Druid/Warrior
-    .goto 1439,47.314,48.676
+    .goto 1439/1,-157.40,6207.81--c:1439,47.314,48.676
     #label EarlyCrystalEnd
     >>Klickt den |cRXP_PICK_Geheimnisvoller roter Kristall|r
     >>|cRXP_WARN_Passt auf die beiden 2er-Gruppen |cRXP_ENEMY_Tobender Moonkin|r westlich des |cRXP_PICK_Geheimnisvoller Roter Kristall|r die beiden aneinander liegenden duos werden zusammen gepullt|r
@@ -1714,28 +1721,28 @@ step << NightElf/Hunter/Druid/Warrior
 step << NightElf/Hunter/Druid/Warrior
     #optional
     #loop
-    .goto 1439,46.918,48.630,0
-    .goto 1439,45.338,54.337,0
-    .goto 1439,45.108,49.184,0
-    .goto 1439,45.322,44.756,0
-    .goto 1439,46.918,48.630,60,0
-    .goto 1439,46.233,49.578,60,0
-    .goto 1439,46.110,50.828,60,0
-    .goto 1439,45.766,51.560,60,0
-    .goto 1439,45.652,52.729,60,0
-    .goto 1439,45.338,54.337,60,0
-    .goto 1439,44.817,53.601,60,0
-    .goto 1439,44.398,52.137,60,0
-    .goto 1439,44.424,50.766,60,0
-    .goto 1439,45.090,50.415,60,0
-    .goto 1439,45.108,49.184,60,0
-    .goto 1439,44.578,48.547,60,0
-    .goto 1439,44.311,47.903,60,0
-    .goto 1439,43.577,46.772,60,0
-    .goto 1439,42.237,46.108,60,0
-    .goto 1439,42.715,45.372,60,0
-    .goto 1439,43.101,44.400,60,0
-    .goto 1439,45.322,44.756,60,0
+    .goto 1439/1,-131.46,6209.82,0--c:1439,46.918,48.630
+    .goto 1439/1,-27.97,5960.62,0--c:1439,45.338,54.337
+    .goto 1439/1,-12.91,6185.63,0--c:1439,45.108,49.184
+    .goto 1439/1,-26.92,6378.99,0--c:1439,45.322,44.756
+    .goto 1439/1,-131.46,6209.82,60,0--c:1439,46.918,48.630
+    .goto 1439/1,-86.59,6168.43,60,0--c:1439,46.233,49.578
+    .goto 1439/1,-78.54,6113.84,60,0--c:1439,46.110,50.828
+    .goto 1439/1,-56.01,6081.88,60,0--c:1439,45.766,51.560
+    .goto 1439/1,-48.54,6030.83,60,0--c:1439,45.652,52.729
+    .goto 1439/1,-27.97,5960.62,60,0--c:1439,45.338,54.337
+    .goto 1439/1,6.15,5992.76,60,0--c:1439,44.817,53.601
+    .goto 1439/1,33.60,6056.68,60,0--c:1439,44.398,52.137
+    .goto 1439/1,31.89,6116.55,60,0--c:1439,44.424,50.766
+    .goto 1439/1,-11.73,6131.88,60,0--c:1439,45.090,50.415
+    .goto 1439/1,-12.91,6185.63,60,0--c:1439,45.108,49.184
+    .goto 1439/1,21.81,6213.45,60,0--c:1439,44.578,48.547
+    .goto 1439/1,39.30,6241.57,60,0--c:1439,44.311,47.903
+    .goto 1439/1,87.37,6290.96,60,0--c:1439,43.577,46.772
+    .goto 1439/1,175.14,6319.95,60,0--c:1439,42.237,46.108
+    .goto 1439/1,143.83,6352.09,60,0--c:1439,42.715,45.372
+    .goto 1439/1,118.55,6394.53,60,0--c:1439,43.101,44.400
+    .goto 1439/1,-26.92,6378.99,60,0--c:1439,45.322,44.756
     >>Tötet |cRXP_ENEMY_Moonkin|r. Plündert sie für |T132832:0|t|cRXP_LOOT_[Kleines Ei]|r
     >>|cRXP_WARN_Dies wird verwendet, um eure|r |T133971:0|t[Kochkunst] |cRXP_WARN_später auf 10 zu verbessern|r
     .collect 6889,10,2178,1,0x20,cooking --Small Egg (1-9)
@@ -1757,7 +1764,7 @@ step << NightElf !Hunter/Warrior/Druid
 step << NightElf !Hunter/Druid/Warrior
     #optional
     #completewith next
-    .goto 1439,37.703,43.393
+    .goto 1439/1,472.12,6438.51--c:1439,37.703,43.393
     .subzone 442 >> Kehrt nach Auberdine zurück
     .cooldown item,6948,<0,1 << !Druid
     .isQuestTurnedIn 4811
@@ -1784,7 +1791,7 @@ step << Druid/Warrior
     --reduced DPS now on staff due to it becoming a caster weapon
 step << NightElf !Hunter/Druid/Warrior
     #optional
-    .goto 1439,38.107,41.165
+    .goto 1439/1,445.66,6535.79--c:1439,38.107,41.165
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Gorbold Steelhand|r
     .turnin 982 >> Gebt die Quest Tiefer Ozean, weites Meer ab
     .target Gorbold Steelhand
@@ -1812,17 +1819,17 @@ step << NightElf !Hunter/Druid/Warrior
     #optional
     #loop
     #label EarlyBlackwood
-    .goto 1439,39.899,54.745,0
-    .goto 1439,40.181,56.229,0
-    .goto 1439,39.267,53.092,50,0
-    .goto 1439,39.754,53.444,50,0
-    .goto 1439,40.234,54.325,50,0
-    .goto 1439,39.899,54.745,50,0
-    .goto 1439,40.181,56.229,50,0
-    .goto 1439,39.388,56.671,50,0
-    .goto 1439,39.191,56.382,50,0
-    .goto 1439,39.957,55.300,50,0
-    .goto 1439,39.332,54.079,50,0
+    .goto 1439/1,328.28,5942.80,0--c:1439,39.899,54.745
+    .goto 1439/1,309.81,5878.00,0--c:1439,40.181,56.229
+    .goto 1439/1,369.68,6014.98,50,0--c:1439,39.267,53.092
+    .goto 1439/1,337.78,5999.61,50,0--c:1439,39.754,53.444
+    .goto 1439/1,306.34,5961.14,50,0--c:1439,40.234,54.325
+    .goto 1439/1,328.28,5942.80,50,0--c:1439,39.899,54.745
+    .goto 1439/1,309.81,5878.00,50,0--c:1439,40.181,56.229
+    .goto 1439/1,361.75,5858.70,50,0--c:1439,39.388,56.671
+    .goto 1439/1,374.66,5871.32,50,0--c:1439,39.191,56.382
+    .goto 1439/1,324.48,5918.57,50,0--c:1439,39.957,55.300
+    .goto 1439/1,365.42,5971.88,50,0--c:1439,39.332,54.079
     >>Tötet |cRXP_ENEMY_Pfadfinder der Schwarzfelle|r und |cRXP_ENEMY_Windsprecher der Schwarzfelle|r
     .complete 985,1 -- Blackwood Pathfinder (8)
     .mob +Blackwood Pathfinder
@@ -1841,14 +1848,14 @@ step << NightElf !Hunter/Druid/Warrior
 step << NightElf !Hunter/Druid/Warrior
     #optional
     #label EarlyTurtleStart
-    .goto 1439,37.105,62.167
+    .goto 1439/1,511.29,5618.71--c:1439,37.105,62.167
     >>Klickt die |cRXP_PICK_Gestrandete Meeresschildkröte|r
     .accept 4722 >> Akzeptiert die Quest Gestrandete Meeresschildkröte
     .isQuestTurnedIn 4811
 step
     #optional
     #label EarlyAmethStart
-    .goto 1439,40.302,59.731
+    .goto 1439/1,301.89,5725.08--c:1439,40.302,59.731
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Schildwache Tysha Moonblade|r
     .accept 953 >> Akzeptiert die Quest Der Untergang von Ameth'Aran
     .target Sentinel Tysha Moonblade
@@ -1874,28 +1881,28 @@ step
     .isQuestAvailable 4811
 step << !NightElf !Druid !Warrior
     #loop
-    .goto 1439,46.918,48.630,0
-    .goto 1439,45.338,54.337,0
-    .goto 1439,45.108,49.184,0
-    .goto 1439,45.322,44.756,0
-    .goto 1439,46.918,48.630,60,0
-    .goto 1439,46.233,49.578,60,0
-    .goto 1439,46.110,50.828,60,0
-    .goto 1439,45.766,51.560,60,0
-    .goto 1439,45.652,52.729,60,0
-    .goto 1439,45.338,54.337,60,0
-    .goto 1439,44.817,53.601,60,0
-    .goto 1439,44.398,52.137,60,0
-    .goto 1439,44.424,50.766,60,0
-    .goto 1439,45.090,50.415,60,0
-    .goto 1439,45.108,49.184,60,0
-    .goto 1439,44.578,48.547,60,0
-    .goto 1439,44.311,47.903,60,0
-    .goto 1439,43.577,46.772,60,0
-    .goto 1439,42.237,46.108,60,0
-    .goto 1439,42.715,45.372,60,0
-    .goto 1439,43.101,44.400,60,0
-    .goto 1439,45.322,44.756,60,0
+    .goto 1439/1,-131.46,6209.82,0--c:1439,46.918,48.630
+    .goto 1439/1,-27.97,5960.62,0--c:1439,45.338,54.337
+    .goto 1439/1,-12.91,6185.63,0--c:1439,45.108,49.184
+    .goto 1439/1,-26.92,6378.99,0--c:1439,45.322,44.756
+    .goto 1439/1,-131.46,6209.82,60,0--c:1439,46.918,48.630
+    .goto 1439/1,-86.59,6168.43,60,0--c:1439,46.233,49.578
+    .goto 1439/1,-78.54,6113.84,60,0--c:1439,46.110,50.828
+    .goto 1439/1,-56.01,6081.88,60,0--c:1439,45.766,51.560
+    .goto 1439/1,-48.54,6030.83,60,0--c:1439,45.652,52.729
+    .goto 1439/1,-27.97,5960.62,60,0--c:1439,45.338,54.337
+    .goto 1439/1,6.15,5992.76,60,0--c:1439,44.817,53.601
+    .goto 1439/1,33.60,6056.68,60,0--c:1439,44.398,52.137
+    .goto 1439/1,31.89,6116.55,60,0--c:1439,44.424,50.766
+    .goto 1439/1,-11.73,6131.88,60,0--c:1439,45.090,50.415
+    .goto 1439/1,-12.91,6185.63,60,0--c:1439,45.108,49.184
+    .goto 1439/1,21.81,6213.45,60,0--c:1439,44.578,48.547
+    .goto 1439/1,39.30,6241.57,60,0--c:1439,44.311,47.903
+    .goto 1439/1,87.37,6290.96,60,0--c:1439,43.577,46.772
+    .goto 1439/1,175.14,6319.95,60,0--c:1439,42.237,46.108
+    .goto 1439/1,143.83,6352.09,60,0--c:1439,42.715,45.372
+    .goto 1439/1,118.55,6394.53,60,0--c:1439,43.101,44.400
+    .goto 1439/1,-26.92,6378.99,60,0--c:1439,45.322,44.756
     >>Tötet |cRXP_ENEMY_Moonkin|r. Plündert sie für |T132832:0|t|cRXP_LOOT_[Kleines Ei]|r
     >>|cRXP_WARN_Dies wird verwendet, um eure|r |T133971:0|t[Kochkunst] |cRXP_WARN_später auf 10 zu verbessern|r
     .collect 6889,10,2178,1,0x20,cooking --Small Egg (1-9)
@@ -1908,20 +1915,20 @@ step << !NightElf !Druid !Warrior
 step
     #sticky
     #label Anaya
-    .goto 1439,42.017,58.866,0 --NE spawn
-    .goto 1439,43.222,59.693,0 --NE spawn
-    .goto 1439,43.069,62.448,0 --SE spawn
-    .goto 1439,42.489,60.677,0 --Middle spawn
-    .waypoint 1439,42.017,58.866,50,0 --NE spawn
-    .waypoint 1439,42.311,58.645,50,0
-    .waypoint 1439,42.448,58.236,50,0
-    .waypoint 1439,43.222,59.693,50,0 --NE spawn
-    .waypoint 1439,43.447,60.131,50,0
-    .waypoint 1439,43.780,60.275,50,0
-    .waypoint 1439,43.069,62.448,50,0 --SE spawn
-    .waypoint 1439,43.104,62.563,50,0
-    .waypoint 1439,42.794,62.166,50,0
-    .waypoint 1439,42.489,60.677,50,0 --Middle spawn
+    .goto 1439/1,189.55,5762.85,0 --NE spawn--c:1439,42.017,58.866
+    .goto 1439/1,110.63,5726.74,0 --NE spawn--c:1439,43.222,59.693
+    .goto 1439/1,120.65,5606.44,0 --SE spawn--c:1439,43.069,62.448
+    .goto 1439/1,158.64,5683.77,0 --Middle spawn--c:1439,42.489,60.677
+    .waypoint 1439/1,189.55,5762.85,50,0 --NE spawn--c:1439,42.017,58.866
+    .waypoint 1439/1,170.30,5772.50,50,0--c:1439,42.311,58.645
+    .waypoint 1439/1,161.32,5790.36,50,0--c:1439,42.448,58.236
+    .waypoint 1439/1,110.63,5726.74,50,0 --NE spawn--c:1439,43.222,59.693
+    .waypoint 1439/1,95.89,5707.61,50,0--c:1439,43.447,60.131
+    .waypoint 1439/1,74.08,5701.32,50,0--c:1439,43.780,60.275
+    .waypoint 1439/1,120.65,5606.44,50,0 --SE spawn--c:1439,43.069,62.448
+    .waypoint 1439/1,118.35,5601.42,50,0--c:1439,43.104,62.563
+    .waypoint 1439/1,138.66,5618.75,50,0--c:1439,42.794,62.166
+    .waypoint 1439/1,158.64,5683.77,50,0 --Middle spawn--c:1439,42.489,60.677
     >>Tötet |cRXP_ENEMY_Anaya Dawnrunner|r. Plündert sie für ihren |cRXP_LOOT_Anhänger|r
     -->>|cRXP_WARN_Be aware that she has a 7-8 minute spawn time and 4 different spawnpoints across Ameth'Aran|r
     -->>|cRXP_WARN_You may want to group with others nearby if you can't find her. Ask in General Chat (/1) to group with anyone else that is also looking for her|r
@@ -1932,20 +1939,20 @@ step
 step
     #sticky
     #label Relics
-    .goto 1439,42.670,57.390,0
-    .goto 1439,41.986,62.462,0
-    .goto 1439,44.072,60.507,0
-    .waypoint 1439,42.670,57.390,55,0
-    .waypoint 1439,41.708,57.888,55,0
-    .waypoint 1439,41.597,59.765,55,0
-    .waypoint 1439,42.058,61.199,55,0
-    .waypoint 1439,41.986,62.462,55,0
-    .waypoint 1439,42.773,63.420,55,0
-    .waypoint 1439,43.253,63.287,55,0
-    .waypoint 1439,43.945,62.188,55,0
-    .waypoint 1439,44.072,60.507,55,0
-    .waypoint 1439,43.410,59.784,55,0
-    .waypoint 1439,43.787,58.959,55,0
+    .goto 1439/1,146.78,5827.30,0--c:1439,42.670,57.390
+    .goto 1439/1,191.58,5605.83,0--c:1439,41.986,62.462
+    .goto 1439/1,54.95,5691.19,0--c:1439,44.072,60.507
+    .waypoint 1439/1,146.78,5827.30,55,0--c:1439,42.670,57.390
+    .waypoint 1439/1,209.79,5805.56,55,0--c:1439,41.708,57.888
+    .waypoint 1439/1,217.06,5723.59,55,0--c:1439,41.597,59.765
+    .waypoint 1439/1,186.87,5660.98,55,0--c:1439,42.058,61.199
+    .waypoint 1439/1,191.58,5605.83,55,0--c:1439,41.986,62.462
+    .waypoint 1439/1,140.04,5563.99,55,0--c:1439,42.773,63.420
+    .waypoint 1439/1,108.60,5569.80,55,0--c:1439,43.253,63.287
+    .waypoint 1439/1,63.27,5617.79,55,0--c:1439,43.945,62.188
+    .waypoint 1439/1,54.95,5691.19,55,0--c:1439,44.072,60.507
+    .waypoint 1439/1,98.31,5722.77,55,0--c:1439,43.410,59.784
+    .waypoint 1439/1,73.62,5758.79,55,0--c:1439,43.787,58.959
     >>Tötet |cRXP_ENEMY_Verfluchte Hochgeborene|r, |cRXP_ENEMY_Zuckender Hochgeborener|r und |cRXP_ENEMY_Klagende Hochgeborene|r. Plündert sie für ihre |cRXP_LOOT_Relikte|r
     .complete 958,1 --Highborne Relic (7)
     .mob Cursed Highborne
@@ -1954,19 +1961,19 @@ step
     .isOnQuest 958
 step
     #label AmethStart
-    .goto 1439,40.302,59.731
+    .goto 1439/1,301.89,5725.08--c:1439,40.302,59.731
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Schildwache Tysha Moonblade|r
     .accept 953 >> Akzeptiert die Quest Der Untergang von Ameth'Aran
     .target Sentinel Tysha Moonblade
     .isQuestAvailable 4811
     .xp >17,1
 step
-    .goto 1439,42.652,63.145
+    .goto 1439/1,147.96,5576.00--c:1439,42.652,63.145
     >>Klickt |cRXP_PICK_Der Untergang von Ameth'Aran|r
     .complete 953,2 --Read The Fall of Ameth'Aran (1)
     .isOnQuest 953
 step << !sod/Warrior/Rogue/Priest
-    .goto 1439,42.373,61.815
+    .goto 1439/1,166.24,5634.08--c:1439,42.373,61.815
     >>Klickt die |cRXP_PICK_Uralte Flamme|r
     .complete 957,1 --Destroy the seal at the ancient flame (1)
     .isOnQuest 957
@@ -1992,7 +1999,7 @@ step
 --XXREQ Placeholder invis step until multiple requires per step
 step
     .isQuestComplete 953
-    .goto 1439,40.302,59.731
+    .goto 1439/1,301.89,5725.08--c:1439,40.302,59.731
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Schildwache Tysha Moonblade|r
     .turnin 953 >> Gebt die Quest Der Untergang von Ameth'Aran ab
     .target Sentinel Tysha Moonblade
@@ -2020,23 +2027,23 @@ step
     .mob Rabid Thistle Bear
 step
     #label LateTurtleStart
-    .goto 1439,37.105,62.167
+    .goto 1439/1,511.29,5618.71--c:1439,37.105,62.167
     >>Klickt die |cRXP_PICK_Gestrandete Meeresschildkröte|r
     .accept 4722 >> Akzeptiert die Quest Gestrandete Meeresschildkröte
 step
     #loop
     #label FurbolgGrind
-    .goto 1439,39.899,54.745,0
-    .goto 1439,40.181,56.229,0
-    .goto 1439,39.267,53.092,50,0
-    .goto 1439,39.754,53.444,50,0
-    .goto 1439,40.234,54.325,50,0
-    .goto 1439,39.899,54.745,50,0
-    .goto 1439,40.181,56.229,50,0
-    .goto 1439,39.388,56.671,50,0
-    .goto 1439,39.191,56.382,50,0
-    .goto 1439,39.957,55.300,50,0
-    .goto 1439,39.332,54.079,50,0
+    .goto 1439/1,328.28,5942.80,0--c:1439,39.899,54.745
+    .goto 1439/1,309.81,5878.00,0--c:1439,40.181,56.229
+    .goto 1439/1,369.68,6014.98,50,0--c:1439,39.267,53.092
+    .goto 1439/1,337.78,5999.61,50,0--c:1439,39.754,53.444
+    .goto 1439/1,306.34,5961.14,50,0--c:1439,40.234,54.325
+    .goto 1439/1,328.28,5942.80,50,0--c:1439,39.899,54.745
+    .goto 1439/1,309.81,5878.00,50,0--c:1439,40.181,56.229
+    .goto 1439/1,361.75,5858.70,50,0--c:1439,39.388,56.671
+    .goto 1439/1,374.66,5871.32,50,0--c:1439,39.191,56.382
+    .goto 1439/1,324.48,5918.57,50,0--c:1439,39.957,55.300
+    .goto 1439/1,365.42,5971.88,50,0--c:1439,39.332,54.079
     >>Tötet |cRXP_ENEMY_Pfadfinder der Schwarzfelle|r und |cRXP_ENEMY_Windsprecher der Schwarzfelle|r
     .complete 985,1 -- Blackwood Pathfinder (8)
     .mob +Blackwood Pathfinder
@@ -2061,12 +2068,12 @@ step
     #label FurbolgGrindEnd
     #completewith TOTH
     #optional
-    .goto 1439,36.701,45.122
+    .goto 1439/1,537.75,6363.01--c:1439,36.701,45.122
     .subzone 442 >> Kehrt nach Auberdine zurück
     .isOnQuest 4722
 step
-    .goto 1439,36.701,45.122,8,0
-    .goto 1439,36.621,45.596
+    .goto 1439/1,537.75,6363.01,8,0--c:1439,36.701,45.122
+    .goto 1439/1,542.99,6342.31--c:1439,36.621,45.596
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
     .turnin 4722 >> Gebt die Quest Gestrandete Meeresschildkröte ab
     .turnin 4723 >> Gebt die Quest Gestrandete Meereskreatur ab
@@ -2074,8 +2081,8 @@ step
     .isOnQuest 4723
 step
     #optional
-    .goto 1439,36.701,45.122,8,0
-    .goto 1439,36.621,45.596
+    .goto 1439/1,537.75,6363.01,8,0--c:1439,36.701,45.122
+    .goto 1439/1,542.99,6342.31--c:1439,36.621,45.596
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
     .turnin 4722 >> Gebt die Quest Gestrandete Meeresschildkröte ab
     .target Gwennyth Bly'Leggonde
@@ -2088,11 +2095,11 @@ step
 step << !NightElf
     #optional
     #completewith next
-    .goto 1439,36.806,44.137,8,0
-    .goto 1439,35.743,43.710,12 >> Kehrt zu |cRXP_FRIENDLY_Cerellean Whiteclaw|r auf dem Dock zurück
+    .goto 1439/1,530.87,6406.02,8,0--c:1439,36.806,44.137
+    .goto 1439/1,600.50,6424.66,12 >> Kehrt zu |cRXP_FRIENDLY_Cerellean Whiteclaw|r auf dem Dock zurück--c:1439,35.743,43.710
 step << !NightElf
     #optional
-    .goto 1439,35.743,43.710
+    .goto 1439/1,600.50,6424.66--c:1439,35.743,43.710
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Cerellean Whiteclaw|r
     .turnin 963 >> Gebt die Quest In ewiger Liebe ab
     .target Cerellean Whiteclaw
@@ -2120,26 +2127,26 @@ step << NightElf Hunter
     .isQuestTurnedIn 4811
     --reduced DPS now on staff due to it becoming a caster weapon
 step
-    .goto 1439,37.703,43.393
+    .goto 1439/1,472.12,6438.51--c:1439,37.703,43.393
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Schildwache Glynda Nal'Shea|r
     .turnin 4811 >> Gebt die Quest Der rote Kristall ab
     .accept 4812 >> Akzeptiert die Quest Wenn das Wasser fließt
     .target Sentinel Glynda Nal'Shea
     .isOnQuest 4811
 step
-    .goto 1439,37.703,43.393
+    .goto 1439/1,472.12,6438.51--c:1439,37.703,43.393
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Schildwache Glynda Nal'Shea|r
     .turnin 4812 >> Gebt die Quest Wenn das Wasser fließt ab
     .target Sentinel Glynda Nal'Shea
     .isQuestComplete 4812
 step
-    .goto 1439,37.767,44.001
+    .goto 1439/1,467.93,6411.96--c:1439,37.767,44.001
     >>|cRXP_WARN_Benutzt die|r |T134865:0|t[Leere Wasserröhre] |cRXP_WARN_am Mondbrunnen von Auberdine|r
     .complete 4812,1 --Moonwell Water Tube (1)
     .use 14338
 step
     #optional
-    .goto 1439,38.843,43.416
+    .goto 1439/1,397.45,6437.50--c:1439,38.843,43.416
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Tharnariun Treetender|r
     .turnin 2138 >> Gebt die Quest Ausrottung der Infizierten ab
     .accept 2139 >> Akzeptiert die Quest Tharnariuns Hoffnung
@@ -2147,13 +2154,13 @@ step
     .isQuestComplete 2138
 step
     #optional
-    .goto 1439,38.843,43.416
+    .goto 1439/1,397.45,6437.50--c:1439,38.843,43.416
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Tharnariun Treetender|r
     .accept 2139 >> Akzeptiert die Quest Tharnariuns Hoffnung
     .target Tharnariun Treetender
     .isQuestTurnedIn 2138
 step
-    .goto 1439,39.373,43.483
+    .goto 1439/1,362.74,6434.58--c:1439,39.373,43.483
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Terenthis|r
     .turnin 985 >> Gebt die Quest Wie groß ist die Bedrohung? ab
     .accept 986 >> Akzeptiert die Quest Ein verirrter Meister << !sod
@@ -2161,17 +2168,17 @@ step
 step
     #optional
     #completewith next
-    .goto 1439,39.280,43.121,6,0
-    .goto 1439,39.162,43.194,6 >> Geh nach oben
+    .goto 1439/1,368.83,6450.38,6,0--c:1439,39.280,43.121
+    .goto 1439/1,376.56,6447.20,6 >> Geh nach oben--c:1439,39.162,43.194
 step
-    .goto 1439,39.043,43.555
+    .goto 1439/1,384.35,6431.43--c:1439,39.043,43.555
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Schildwache Elissa Starbreeze|r oben
     .accept 965 >> Der Turm von Althalaxx annehmen
     .target Sentinel Elissa Starbreeze
 step
     #optional
     #completewith Level10CookEnd
-    .goto 1439,38.107,41.165
+    .goto 1439/1,445.66,6535.79--c:1439,38.107,41.165
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Gorbold Steelhand|r
     .vendor 6301 >>|cRXP_BUY_Kauft|r |T134059:0|t[Milde Gewürze] |cRXP_BUY_von ihm, bis ihr genauso viele|r |T134059:0|t[Milde Gewürze] |cRXP_BUY_ oder mehr wie|r |T132832:0|t[Kleine Eier] |cRXP_BUY_die ihr derzeit habt|r
     .collect 2678,50,90,1,0x20,cooking --Mild Spices (1-50)
@@ -2182,27 +2189,27 @@ step
     .skill cooking,50,1 --XX Shows if cooking skill is <50
     .itemcount 6889,1 -- Small Egg (1+)
 step << NightElf
-    .goto 1439,38.107,41.165
+    .goto 1439/1,445.66,6535.79--c:1439,38.107,41.165
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Gorbold Steelhand|r
     .vendor >>|cRXP_BUY_Kauft ein|r [Glänzendes Schmuckstück] |cRXP_BUY_und drei|r |T134324:0|t[Nachtkriecher] |cRXP_BUY_von ihm. Ihr werdet sie bald für eine Quest in Sturmwind benötigen|r
     .collect 6529,1 --Shiny Bauble (1)
     .collect 6530,3 --Nightcrawlers (3)
     .target Gorbold Steelhand
 step
-    .goto 1439,38.107,41.165
+    .goto 1439/1,445.66,6535.79--c:1439,38.107,41.165
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Gorbold Steelhand|r
     .accept 982 >> Akzeptiert die Quest Tiefer Ozean, weites Meer
     .target Gorbold Steelhand
 step
     #optional
-    .goto 1439,38.107,41.165
+    .goto 1439/1,445.66,6535.79--c:1439,38.107,41.165
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Gorbold Steelhand|r
     .turnin 982 >> Gebt die Quest Tiefer Ozean, weites Meer ab
     .target Gorbold Steelhand
     .isQuestComplete 982
 step
     #label Level10CookEnd
-    .goto 1439,37.511,41.670
+    .goto 1439/1,484.70,6513.74--c:1439,37.511,41.670
     >>|cRXP_WARN_Lauft zum |cRXP_PICK_Lagerfeuer|r auf dem Boden|r
     +|cRXP_WARN_Fangt an|r |T133971:0|t[Kochkunst] |T132834:0|t[Kräutergebackenes Ei] |cRXP_WARN_. zu kochen. Macht dies, bis eure|r |T133971:0|t[Kochkunst] |cRXP_WARN_mindestens 10 erreicht hat|r
     >>Macht weiter, um eure |T133971:0|t[Kochkunst] |cRXP_WARN_zu leveln, bis euch die |r |T132832:0|t[kleinen Eier] |cRXP_WARN_ausgehen|r << !sod
@@ -2221,7 +2228,7 @@ step
     .skill cooking,<10,1 -- step only displays if skill is 10 or higher
 step
     #label TOTH
-    .goto 1439,37.394,40.128
+    .goto 1439/1,492.36,6581.08--c:1439,37.394,40.128
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Thundris Windwirker|r
     .turnin 958 >> Gebt die Quest Werkzeuge der Hochgeborenen ab
     .accept 97914 >>Akzeptiert die Quest Neue Horizonte << NightElf
@@ -2234,11 +2241,11 @@ step
 step << NightElf
     #optional
     #completewith next
-    .goto 1439,36.806,44.137,8,0
-    .goto 1439,35.743,43.710,12 >> Kehrt zu |cRXP_FRIENDLY_Cerellean Whiteclaw|r auf dem Dock zurück
+    .goto 1439/1,530.87,6406.02,8,0--c:1439,36.806,44.137
+    .goto 1439/1,600.50,6424.66,12 >> Kehrt zu |cRXP_FRIENDLY_Cerellean Whiteclaw|r auf dem Dock zurück--c:1439,35.743,43.710
 step << NightElf
     #optional
-    .goto 1439,35.743,43.710
+    .goto 1439/1,600.50,6424.66--c:1439,35.743,43.710
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Cerellean Whiteclaw|r
     .turnin 963 >> Gebt die Quest In ewiger Liebe ab
     .target Cerellean Whiteclaw
@@ -2258,7 +2265,7 @@ step
     +|cRXP_WARN_Drückt Escape, dann geht in -> Optionen -> Steuerung|r
     >>|cRXP_WARN_Überprüft "Aktiviere Interaktionstaste" und bindet die "Interagieren mit Ziel" Option auf eine Taste|r
 step
-    .goto 1439,38.213,28.754
+    .goto 1439/1,438.72,7077.74--c:1439,38.213,28.754
 --  .goto 1439,38.234,28.796
     >>|cRXP_WARN_==BEACHTET EURE ATEMLEISTE==|r
     >>|cRXP_WARN_Schwimmt unter Wasser zur Außenseite der Bootsrückseite|r
@@ -2268,7 +2275,7 @@ step
     .isOnQuest 982
 step
     #label MistVeil
-    .goto 1439,39.581,27.487
+    .goto 1439/1,349.11,7133.07--c:1439,39.581,27.487
 --  .goto 1439,39.629,27.462
     >>|cRXP_WARN_==BEACHTET EURE ATEMLEISTE==|r
     >>|cRXP_WARN_Schwimmt unter Wasser zur Außenseite der Bootsrückseite|r
@@ -2278,7 +2285,7 @@ step
     .isOnQuest 982
 step
     #optional
-    .goto 1439,41.901,31.339
+    .goto 1439/1,197.15,6964.86--c:1439,41.901,31.339
     >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4723 >> Akzeptiert die Quest Gestrandete Meereskreatur
     .isOnQuest 982
@@ -2290,7 +2297,7 @@ step
 step
     #optional
     #completewith BoatSeaCreature
-    .goto 1439,44.190,33.697,0
+    .goto 1439/1,47.22,6861.90,0--c:1439,44.190,33.697
     >>Tötet |cRXP_ENEMY_Mondpirscherwicht|r und |cRXP_ENEMY_Mondpircher|r. Plündert sie für |cRXP_LOOT_Mondpirscher-Fangzahn|r
     .complete 1002,1 -- Moonstalker Fang (6)
     .mob Moonstalker Runt
@@ -2299,7 +2306,7 @@ step
 step
     #optional
     #completewith BoatSeaCreature
-    .goto 1439,43.509,33.207,0
+    .goto 1439/1,91.83,6883.29,0--c:1439,43.509,33.207
     >>Tötet |cRXP_ENEMY_Waldschreiterjunges|r. Plündert sie für |cRXP_LOOT_Schreiterfleisch|r
     >>|cRXP_WARN_Seid vorsichtig, denn sie|r |T132307:0|t[Fliehen] |cRXP_WARN_unter 30% Gesundheit|r
     .collect 5469,5,2178,1 --Strider Meat (5)
@@ -2320,14 +2327,14 @@ step
 --   .skill cooking,<10,1
     .skill cooking,50,1 --XX Shows if cooking skill is between 10-50
 step
-    .goto 1439,47.314,48.676
+    .goto 1439/1,-157.40,6207.81--c:1439,47.314,48.676
     >>Klickt den |cRXP_PICK_Geheimnisvoller roter Kristall|r
     >>|cRXP_WARN_Passt auf die beiden 2er-Gruppen |cRXP_ENEMY_Tobender Moonkin|r westlich des |cRXP_PICK_Geheimnisvoller Roter Kristall|r die beiden aneinander liegenden duos werden zusammen gepullt|r
     .turnin 4812 >> Gebt die Quest Wenn das Wasser fließt ab
     .accept 4813 >> Akzeptiert die Quest Die Fragmente im Inneren
 step
     #label BashalEnd
-    .goto 1439,44.168,36.289
+    .goto 1439/1,48.66,6748.71--c:1439,44.168,36.289
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Asterion|r
     .turnin 957 >> Gebt die Quest Bashal'Aran ab
     .isOnQuest 957
@@ -2341,7 +2348,7 @@ step
     .mob Rabid Thistle Bear
 step
     #label BoatSeaCreature
-    .goto 1439,41.901,31.339
+    .goto 1439/1,197.15,6964.86--c:1439,41.901,31.339
     >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4723 >> Akzeptiert die Quest Gestrandete Meereskreatur
 step
@@ -2368,16 +2375,16 @@ step
 step
     #optional
     #completewith next
-    .goto 1439,45.004,21.344,0
-    .goto 1439,48.013,21.409,0
-    .goto 1439,49.680,22.468,0
-    .goto 1439,45.004,21.344,70,0
-    .goto 1439,45.468,20.336,70,0
-    .goto 1439,47.356,20.559,70,0
-    .goto 1439,48.013,21.409,70,0
-    .goto 1439,48.612,20.745,70,0
-    .goto 1439,49.680,22.468,70,0
-    .goto 1439,49.313,24.271,70,0
+    .goto 1439/1,-6.10,7401.31,0--c:1439,45.004,21.344
+    .goto 1439/1,-203.18,7398.47,0--c:1439,48.013,21.409
+    .goto 1439/1,-312.37,7352.23,0--c:1439,49.680,22.468
+    .goto 1439/1,-6.10,7401.31,70,0--c:1439,45.004,21.344
+    .goto 1439/1,-36.49,7445.33,70,0--c:1439,45.468,20.336
+    .goto 1439/1,-160.15,7435.59,70,0--c:1439,47.356,20.559
+    .goto 1439/1,-203.18,7398.47,70,0--c:1439,48.013,21.409
+    .goto 1439/1,-242.42,7427.47,70,0--c:1439,48.612,20.745
+    .goto 1439/1,-312.37,7352.23,70,0--c:1439,49.680,22.468
+    .goto 1439/1,-288.33,7273.50,70,0--c:1439,49.313,24.271
     >>Tötet |cRXP_ENEMY_Riffkriecher|r. Plündert sie für |cRXP_LOOT_Feine Krebsbrocken|r
     >>|cRXP_WARN_Denkt daran, einige der Stufe 17|r |cRXP_ENEMY_Riffkriecher|r |cRXP_WARN_zu überspringen, wenn ihr gute drops bekommt.|r |cRXP_WARN_Ihr müsst diese Quest nicht jetzt abschließen|r
     >>|cRXP_WARN_Seid vorsichtig, denn sie wirken|r |T132155:0|t[Muskelriss] |cRXP_WARN_ein Direktangriff, verursacht 30-55 Schaden|r
@@ -2391,18 +2398,18 @@ step
 step
     #optional
     #completewith next
-    .goto 1439,51.118,23.670,20,0
-    .goto 1439,51.288,24.554,12 >>Lauft die Rampe hinauf zur |cRXP_PICK_Dröhnkiste 323|r
+    .goto 1439/1,-406.56,7299.74,20,0--c:1439,51.118,23.670
+    .goto 1439/1,-417.70,7261.14,12 >>Lauft die Rampe hinauf zur |cRXP_PICK_Dröhnkiste 323|r--c:1439,51.288,24.554
     .isQuestComplete 1002
 step
     #optional
-    .goto 1439,51.288,24.554
+    .goto 1439/1,-417.70,7261.14--c:1439,51.288,24.554
     >>Klickt auf die|cRXP_PICK_Dröhnkiste 323|r auf dem Boden
     .turnin 1002 >> Gebt die Quest Dröhnkiste 323 ab
     .accept 1003 >> Akzeptiert die Quest Dröhnkiste 525
     .isQuestComplete 1002
 step
-    .goto 1439,51.288,24.554
+    .goto 1439/1,-417.70,7261.14--c:1439,51.288,24.554
     >>Klickt auf die|cRXP_PICK_Dröhnkiste 323|r auf dem Boden
     .accept 1003 >> Akzeptiert die Quest Dröhnkiste 525
     .isQuestTurnedIn 1002
@@ -2434,62 +2441,62 @@ step << Hunter/Druid
 step << Hunter/Druid
     #optional
     #completewith Tower1
-    .goto 1439,51.118,23.670,20,0
-    .goto 1439,51.490,24.368,30,0
-    .goto 1439,54.973,24.885,15 >>Reist in Richtung |cRXP_FRIENDLY_Balthule Schattenschlag|r
+    .goto 1439/1,-406.56,7299.74,20,0--c:1439,51.118,23.670
+    .goto 1439/1,-430.93,7269.26,30,0--c:1439,51.490,24.368
+    .goto 1439/1,-659.06,7246.69,15 >>Reist in Richtung |cRXP_FRIENDLY_Balthule Schattenschlag|r--c:1439,54.973,24.885
     .isQuestAvailable 1002 << !NightElf/Hunter
 step << Hunter/Druid
     #label Tower1
-    .goto 1439,54.973,24.885
+    .goto 1439/1,-659.06,7246.69--c:1439,54.973,24.885
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Balthule Schattenhieb|r
     .turnin 965 >> Gebt die Quest Der Turm von Althalaxx ab
     .accept 966 >> Der Turm von Althalaxx annehmen
     .target Balthule Shadowstrike
 step << Hunter/Druid
     #loop
-    .goto 1439,55.231,26.508,0
-    .goto 1439,56.194,27.071,0
-    .goto 1439,56.047,26.586,0
-    .goto 1439,55.231,26.508,50,0
-    .goto 1439,55.369,27.025,50,0
-    .goto 1439,55.763,26.695,50,0
-    .goto 1439,55.815,26.972,50,0
-    .goto 1439,56.194,27.071,50,0
-    .goto 1439,56.790,27.621,50,0
-    .goto 1439,57.278,26.311,50,0
-    .goto 1439,57.046,26.234,50,0
-    .goto 1439,56.544,26.598,50,0
-    .goto 1439,56.047,26.586,50,0
-    .goto 1439,55.743,25.915,50,0
+    .goto 1439/1,-675.96,7175.82,0--c:1439,55.231,26.508
+    .goto 1439/1,-739.04,7151.23,0--c:1439,56.194,27.071
+    .goto 1439/1,-729.41,7172.41,0--c:1439,56.047,26.586
+    .goto 1439/1,-675.96,7175.82,50,0--c:1439,55.231,26.508
+    .goto 1439/1,-685.00,7153.24,50,0--c:1439,55.369,27.025
+    .goto 1439/1,-710.81,7167.65,50,0--c:1439,55.763,26.695
+    .goto 1439/1,-714.22,7155.56,50,0--c:1439,55.815,26.972
+    .goto 1439/1,-739.04,7151.23,50,0--c:1439,56.194,27.071
+    .goto 1439/1,-778.08,7127.22,50,0--c:1439,56.790,27.621
+    .goto 1439/1,-810.04,7184.42,50,0--c:1439,57.278,26.311
+    .goto 1439/1,-794.85,7187.78,50,0--c:1439,57.046,26.234
+    .goto 1439/1,-761.97,7171.89,50,0--c:1439,56.544,26.598
+    .goto 1439/1,-729.41,7172.41,50,0--c:1439,56.047,26.586
+    .goto 1439/1,-709.50,7201.71,50,0--c:1439,55.743,25.915
     >>Tötet |cRXP_ENEMY_Fanatikerin des dunklen Strangs|r. Plündert sie für ihr |cRXP_LOOT_Abgenutztes Pergament|r
     .complete 966,1 --Worn Parchment (4)
     .mob Dark Strand Fanatic
 step << Hunter/Druid
-    .goto 1439,54.973,24.885
+    .goto 1439/1,-659.06,7246.69--c:1439,54.973,24.885
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Balthule Schattenhieb|r
     .turnin 966 >> Gebt die Quest Der Turm von Althalaxx ab
     .accept 967 >> Der Turm von Althalaxx annehmen
     .target Balthule Shadowstrike
 step << Hunter/Druid
     #loop
-    .goto 1439,53.629,26.054,0
-    .goto 1439,54.204,30.475,0
-    .goto 1439,49.775,30.351,0
-    .goto 1439,48.894,26.514,0
-    .goto 1439,53.629,26.054,60,0
-    .goto 1439,52.764,26.312,60,0
-    .goto 1439,53.049,27.983,60,0
-    .goto 1439,53.899,28.638,60,0
-    .goto 1439,54.204,30.475,60,0
-    .goto 1439,51.267,32.319,60,0
-    .goto 1439,50.689,32.001,60,0
-    .goto 1439,50.818,30.486,60,0
-    .goto 1439,49.775,30.351,60,0
-    .goto 1439,49.776,28.393,60,0
-    .goto 1439,49.902,27.511,60,0
-    .goto 1439,49.558,26.087,60,0
-    .goto 1439,48.894,26.514,60,0
-    .goto 1439,48.022,27.199,60,0
+    .goto 1439/1,-571.03,7195.64,0--c:1439,53.629,26.054
+    .goto 1439/1,-608.70,7002.59,0--c:1439,54.204,30.475
+    .goto 1439/1,-318.60,7008.01,0--c:1439,49.775,30.351
+    .goto 1439/1,-260.89,7175.56,0--c:1439,48.894,26.514
+    .goto 1439/1,-571.03,7195.64,60,0--c:1439,53.629,26.054
+    .goto 1439/1,-514.38,7184.38,60,0--c:1439,52.764,26.312
+    .goto 1439/1,-533.04,7111.41,60,0--c:1439,53.049,27.983
+    .goto 1439/1,-588.72,7082.81,60,0--c:1439,53.899,28.638
+    .goto 1439/1,-608.70,7002.59,60,0--c:1439,54.204,30.475
+    .goto 1439/1,-416.32,6922.07,60,0--c:1439,51.267,32.319
+    .goto 1439/1,-378.46,6935.96,60,0--c:1439,50.689,32.001
+    .goto 1439/1,-386.91,7002.11,60,0--c:1439,50.818,30.486
+    .goto 1439/1,-318.60,7008.01,60,0--c:1439,49.775,30.351
+    .goto 1439/1,-318.66,7093.51,60,0--c:1439,49.776,28.393
+    .goto 1439/1,-326.91,7132.02,60,0--c:1439,49.902,27.511
+    .goto 1439/1,-304.38,7194.20,60,0--c:1439,49.558,26.087
+    .goto 1439/1,-260.89,7175.56,60,0--c:1439,48.894,26.514
+    .goto 1439/1,-203.77,7145.64,60,0--c:1439,48.022,27.199
     >>Tötet |cRXP_ENEMY_Waldschreiterjunges|r. Plündert sie für |cRXP_LOOT_Schreiterfleisch|r
     .collect 5469,5,2178,1 -- Strider Meat (5)
     .mob Foreststrider
@@ -2513,24 +2520,24 @@ step
 step
     #optional
     #loop
-    .goto 1439,53.629,26.054,0
-    .goto 1439,54.204,30.475,0
-    .goto 1439,49.775,30.351,0
-    .goto 1439,48.894,26.514,0
-    .goto 1439,53.629,26.054,60,0
-    .goto 1439,52.764,26.312,60,0
-    .goto 1439,53.049,27.983,60,0
-    .goto 1439,53.899,28.638,60,0
-    .goto 1439,54.204,30.475,60,0
-    .goto 1439,51.267,32.319,60,0
-    .goto 1439,50.689,32.001,60,0
-    .goto 1439,50.818,30.486,60,0
-    .goto 1439,49.775,30.351,60,0
-    .goto 1439,49.776,28.393,60,0
-    .goto 1439,49.902,27.511,60,0
-    .goto 1439,49.558,26.087,60,0
-    .goto 1439,48.894,26.514,60,0
-    .goto 1439,48.022,27.199,60,0
+    .goto 1439/1,-571.03,7195.64,0--c:1439,53.629,26.054
+    .goto 1439/1,-608.70,7002.59,0--c:1439,54.204,30.475
+    .goto 1439/1,-318.60,7008.01,0--c:1439,49.775,30.351
+    .goto 1439/1,-260.89,7175.56,0--c:1439,48.894,26.514
+    .goto 1439/1,-571.03,7195.64,60,0--c:1439,53.629,26.054
+    .goto 1439/1,-514.38,7184.38,60,0--c:1439,52.764,26.312
+    .goto 1439/1,-533.04,7111.41,60,0--c:1439,53.049,27.983
+    .goto 1439/1,-588.72,7082.81,60,0--c:1439,53.899,28.638
+    .goto 1439/1,-608.70,7002.59,60,0--c:1439,54.204,30.475
+    .goto 1439/1,-416.32,6922.07,60,0--c:1439,51.267,32.319
+    .goto 1439/1,-378.46,6935.96,60,0--c:1439,50.689,32.001
+    .goto 1439/1,-386.91,7002.11,60,0--c:1439,50.818,30.486
+    .goto 1439/1,-318.60,7008.01,60,0--c:1439,49.775,30.351
+    .goto 1439/1,-318.66,7093.51,60,0--c:1439,49.776,28.393
+    .goto 1439/1,-326.91,7132.02,60,0--c:1439,49.902,27.511
+    .goto 1439/1,-304.38,7194.20,60,0--c:1439,49.558,26.087
+    .goto 1439/1,-260.89,7175.56,60,0--c:1439,48.894,26.514
+    .goto 1439/1,-203.77,7145.64,60,0--c:1439,48.022,27.199
     >>Tötet |cRXP_ENEMY_Waldschreiterjunges|r. Plündert sie für |cRXP_LOOT_Schreiterfleisch|r
     .collect 5469,5,2178,1 -- Strider Meat (5)
     .mob Foreststrider
@@ -2538,30 +2545,30 @@ step
 ----XX Start from West Side if 3+
 step
     #loop
-    .goto 1439,53.629,26.054,0
-    .goto 1439,54.204,30.475,0
-    .goto 1439,49.775,30.351,0
-    .goto 1439,48.894,26.514,0
-    .goto 1439,48.022,27.199,60,0
-    .goto 1439,48.894,26.514,60,0
-    .goto 1439,49.558,26.087,60,0
-    .goto 1439,49.902,27.511,60,0
-    .goto 1439,49.776,28.393,60,0
-    .goto 1439,49.775,30.351,60,0
-    .goto 1439,50.818,30.486,60,0
-    .goto 1439,50.689,32.001,60,0
-    .goto 1439,51.267,32.319,60,0
-    .goto 1439,54.204,30.475,60,0
-    .goto 1439,53.899,28.638,60,0
-    .goto 1439,53.049,27.983,60,0
-    .goto 1439,52.764,26.312,60,0
-    .goto 1439,53.629,26.054,60,0
+    .goto 1439/1,-571.03,7195.64,0--c:1439,53.629,26.054
+    .goto 1439/1,-608.70,7002.59,0--c:1439,54.204,30.475
+    .goto 1439/1,-318.60,7008.01,0--c:1439,49.775,30.351
+    .goto 1439/1,-260.89,7175.56,0--c:1439,48.894,26.514
+    .goto 1439/1,-203.77,7145.64,60,0--c:1439,48.022,27.199
+    .goto 1439/1,-260.89,7175.56,60,0--c:1439,48.894,26.514
+    .goto 1439/1,-304.38,7194.20,60,0--c:1439,49.558,26.087
+    .goto 1439/1,-326.91,7132.02,60,0--c:1439,49.902,27.511
+    .goto 1439/1,-318.66,7093.51,60,0--c:1439,49.776,28.393
+    .goto 1439/1,-318.60,7008.01,60,0--c:1439,49.775,30.351
+    .goto 1439/1,-386.91,7002.11,60,0--c:1439,50.818,30.486
+    .goto 1439/1,-378.46,6935.96,60,0--c:1439,50.689,32.001
+    .goto 1439/1,-416.32,6922.07,60,0--c:1439,51.267,32.319
+    .goto 1439/1,-608.70,7002.59,60,0--c:1439,54.204,30.475
+    .goto 1439/1,-588.72,7082.81,60,0--c:1439,53.899,28.638
+    .goto 1439/1,-533.04,7111.41,60,0--c:1439,53.049,27.983
+    .goto 1439/1,-514.38,7184.38,60,0--c:1439,52.764,26.312
+    .goto 1439/1,-571.03,7195.64,60,0--c:1439,53.629,26.054
     >>Tötet |cRXP_ENEMY_Waldschreiterjunges|r. Plündert sie für |cRXP_LOOT_Schreiterfleisch|r
     .collect 5469,5,2178,1 -- Strider Meat (5)
     .mob Foreststrider
 step
     #optional
-    .goto 1439,51.288,24.554
+    .goto 1439/1,-417.70,7261.14--c:1439,51.288,24.554
     >>Klickt auf die|cRXP_PICK_Dröhnkiste 323|r auf dem Boden
     .turnin 1002 >> Gebt die Quest Dröhnkiste 323 ab
     .accept 1003 >> Akzeptiert die Quest Dröhnkiste 525
@@ -2571,8 +2578,8 @@ step
     #optional
     #completewith next
     #label CliffCave
-    .goto 1439,54.934,32.721,20,0
-    .goto 1439,55.108,33.600,40 >> Reist zur Klippenquell-Höhle
+    .goto 1439/1,-656.51,6904.52,20,0--c:1439,54.934,32.721
+    .goto 1439/1,-667.91,6866.13,40 >> Reist zur Klippenquell-Höhle--c:1439,55.108,33.600
 step << Druid
     .goto 1439/1,-660.18,6874.43
     >>|cRXP_WARN_Benutzt die|r |T134776:0|t[Leere Cliffspring Falls-Probe] |cRXP_WARN_im Wasser am Eingang der Klippenquell-Höhle|r
@@ -2608,8 +2615,8 @@ step << skip --logout skip
     #optional
     #label MushroomLS
     #completewith CavetoAuber
-    .goto 1439,54.964,34.536
-    .goto 1439,41.705,36.507,20 >>|cRXP_WARN_Springt auf die Spitze des Felsens auf der oberen Ebene in der Höhle. Positioniert euren Charakter, bis er so aussieht, als würde er schweben, und führt dann einen Logout-Skip durch, indem ihr euch aus- und wieder einloggt|r
+    .goto 1439/1,-658.48,6825.26--c:1439,54.964,34.536
+    .goto 1439/1,209.99,6739.19,20 >>|cRXP_WARN_Springt auf die Spitze des Felsens auf der oberen Ebene in der Höhle. Positioniert euren Charakter, bis er so aussieht, als würde er schweben, und führt dann einen Logout-Skip durch, indem ihr euch aus- und wieder einloggt|r--c:1439,41.705,36.507
 step
     #completewith CavetoAuber
     >>Tötet |cRXP_ENEMY_Waldschreiterjunges|r. Plündert sie für |cRXP_LOOT_Schreiterfleisch|r
@@ -2632,7 +2639,7 @@ step
     .subzone 442 >> Reist nach Auberdine
 step
     #label CliffspringEnd
-    .goto 1439,37.394,40.128
+    .goto 1439/1,492.36,6581.08--c:1439,37.394,40.128
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Thundris Windwirker|r
     .turnin 4762 >> Gebt die Quest Der Cliffspring ab
     .accept 4763 >> Akzeptiert die Quest Die verderbten Schwarzfelle
@@ -2662,30 +2669,30 @@ step << Druid
     .target Alanndarian Nightsong
 step << !NightElf
     #optional
-    .goto 1439,37.439,41.839
+    .goto 1439/1,489.41,6506.36--c:1439,37.439,41.839
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Archäologin Hollee|r
     .accept 729 >> Der geistesabwesende Ausgrabungsleiter annehmen
     .target Archaeologist Hollee
     .isQuestComplete 2138
 step
-    .goto 1439,38.107,41.165
+    .goto 1439/1,445.66,6535.79--c:1439,38.107,41.165
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Gorbold Steelhand|r
     .turnin 982 >> Gebt die Quest Tiefer Ozean, weites Meer ab
     .target Gorbold Steelhand
 step << !NightElf
-    .goto 1439,37.439,41.839
+    .goto 1439/1,489.41,6506.36--c:1439,37.439,41.839
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Archäologin Hollee|r
     .accept 729 >> Der geistesabwesende Ausgrabungsleiter annehmen
     .target Archaeologist Hollee
 step
-    .goto 1439,38.843,43.416
+    .goto 1439/1,397.45,6437.50--c:1439,38.843,43.416
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Tharnariun Treetender|r
     .turnin 2138 >> Gebt die Quest Ausrottung der Infizierten ab
     .accept 2139 >> Akzeptiert die Quest Tharnariuns Hoffnung
     .target Tharnariun Treetender
     .isQuestComplete 2138
 step
-    .goto 1439,38.843,43.416
+    .goto 1439/1,397.45,6437.50--c:1439,38.843,43.416
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Tharnariun Treetender|r
     .accept 2139 >> Akzeptiert die Quest Tharnariuns Hoffnung
     .target Tharnariun Treetender
@@ -2703,7 +2710,7 @@ step
     .use 12346
     .isOnQuest 4763
 step
-    .goto 1439,37.322,43.640
+    .goto 1439/1,497.08,6427.72--c:1439,37.322,43.640
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Barithras Moonshade|r
     .turnin 947 >> Gebt die Quest Höhlenpilze ab
     .accept 948 >> Akzeptiert die Quest Onu
@@ -2728,8 +2735,8 @@ step
     .isQuestComplete 1138
 step
     #optional
-    .goto 1439,36.701,45.122,8,0
-    .goto 1439,36.621,45.596
+    .goto 1439/1,537.75,6363.01,8,0--c:1439,36.701,45.122
+    .goto 1439/1,542.99,6342.31--c:1439,36.621,45.596
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
     .turnin 4723 >> Gebt die Quest Gestrandete Meereskreatur ab
     .turnin 4725 >> Gebt die Quest Gestrandete Meeresschildkröte ab
@@ -2738,8 +2745,8 @@ step
 step
     #optional
     #label End
-    .goto 1439,36.701,45.122,8,0
-    .goto 1439,36.621,45.596
+    .goto 1439/1,537.75,6363.01,8,0--c:1439,36.701,45.122
+    .goto 1439/1,542.99,6342.31--c:1439,36.621,45.596
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
     .turnin 4725 >> Gebt die Quest Gestrandete Meeresschildkröte ab
     .target Gwennyth Bly'Leggonde
@@ -2750,17 +2757,17 @@ step
 
 step << Druid
     #optional
-    .goto 1439,39.899,54.745,0
-    .goto 1439,40.181,56.229,0
-    .goto 1439,39.267,53.092,50,0
-    .goto 1439,39.754,53.444,50,0
-    .goto 1439,40.234,54.325,50,0
-    .goto 1439,39.899,54.745,50,0
-    .goto 1439,40.181,56.229,50,0
-    .goto 1439,39.388,56.671,50,0
-    .goto 1439,39.191,56.382,50,0
-    .goto 1439,39.957,55.300,50,0
-    .goto 1439,39.332,54.079,50,0
+    .goto 1439/1,328.28,5942.80,0--c:1439,39.899,54.745
+    .goto 1439/1,309.81,5878.00,0--c:1439,40.181,56.229
+    .goto 1439/1,369.68,6014.98,50,0--c:1439,39.267,53.092
+    .goto 1439/1,337.78,5999.61,50,0--c:1439,39.754,53.444
+    .goto 1439/1,306.34,5961.14,50,0--c:1439,40.234,54.325
+    .goto 1439/1,328.28,5942.80,50,0--c:1439,39.899,54.745
+    .goto 1439/1,309.81,5878.00,50,0--c:1439,40.181,56.229
+    .goto 1439/1,361.75,5858.70,50,0--c:1439,39.388,56.671
+    .goto 1439/1,374.66,5871.32,50,0--c:1439,39.191,56.382
+    .goto 1439/1,324.48,5918.57,50,0--c:1439,39.957,55.300
+    .goto 1439/1,365.42,5971.88,50,0--c:1439,39.332,54.079
     .xp 16 >> Farmt bis Stufe 16
     .mob Blackwood Pathfinder
     .mob Blackwood Windtalker
@@ -2976,15 +2983,15 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Gnoarn|r
     .accept 2039 >> Akzeptiert die Quest Find Bingles
     .target Gnoarn
-    .goto Ironforge,69.182,50.556
+    .goto 1455/0,-1260.5616,-4835.9769
 step
-    .goto Ironforge,55.491,47.751
+    .goto 1455/0,-1152.40,-4821.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gryth Thurden|r
     .fp Ironforge >> Holt euch den Flugpunkt in Eisenschmiede
     .target Gryth Thurden
 step Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Bilban Tosslespanner|r
-    .goto Ironforge,65.905,88.405
+    .goto 1455/0,-1234.65,-5035.67
     .trainer >> Trainiere deine Klassenfähigkeiten
     .target Bilban Tosslespanner
 step << Warrior
@@ -2997,7 +3004,7 @@ step << Warrior
     .goto 1455/0,-1197.27,-5041.49
     .target +Buliwyf Stonehand
 step << Warrior
-    .goto 1455,62.378,88.671
+    .goto 1455/0,-1206.77,-5037.07--c:1455,62.378,88.671
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Brenwyn Winterstahl|r unten
     >>|cRXP_BUY_Kauft die|r |T135425:0|t[Beißendes Wurfmesser] |cRXP_BUY_von ihr|r
     .collect 3107,1 --Collect Keen Throwing Knife (200)
@@ -3016,9 +3023,9 @@ step
     #completewith next
     .zone Dun Morogh >> Reist nach Dun Morogh
 step
-    .goto Dun Morogh,59.9,49.5,30,0
-    .goto Dun Morogh,61.2,47.2,15,0
-    .goto Dun Morogh,62.1,47.3,20 >>Lauft die Rampe hinauf zu |cRXP_ENEMY_Vagash|r
+    .goto 1426/0,-1147.9916,-5502.3333,30,0
+    .goto 1426/0,-1212.0166,-5426.8167,15,0
+    .goto 1426/0,-1256.3416,-5430.1000,20 >>Lauft die Rampe hinauf zu |cRXP_ENEMY_Vagash|r
 step
     #completewith next
     +Lockt |cRXP_ENEMY_Vagash|r zu |cRXP_FRIENDLY_Rudra Amberstill|r
@@ -3026,29 +3033,29 @@ step
     .mob Vagash
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:16|tSprecht mit |cRXP_FRIENDLY_Rudra Amberstill|r
-    .goto Dun Morogh,63.1,49.8
+    .goto 1426/0,-1304.71,-5513.86
     .target Rudra Amberstill
     .accept 314 >>Akzeptiert die Quest Die Herde beschützen
 step
     >>Lockt |cRXP_ENEMY_Vagash|r zu den |cRXP_FRIENDLY_Gebirgsjäger von Dun Morogh|r
     >>|cRXP_WARN_Stellt sicher, dass ihr mindestens 50% Schaden anrichtet|r
-    .goto Dun Morogh,62.8,54.6,10,0
+    .goto 1426/0,-1290.8166,-5669.7833,10,0
     .mob Vagash
     .target Dun Morogh Mountaineer
     .complete 314, 1
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:16|tSprecht mit |cRXP_FRIENDLY_Rudra Amberstill|r
-    .goto Dun Morogh, 63.1, 49.8
+    .goto 1426/0,-1304.71,-5513.86
     .target Rudra Amberstill
     .turnin 314 >>Gebt die Quest Die Herde beschützen ab
 step
     #label LochEnter
-    .goto 1432,16.494,58.424,20,0
-    .goto 1432,19.594,62.735,20,0
-    .goto 1432,20.749,64.326,20,0
-    .goto 1432,21.106,65.007,20,0
-    .goto 1432,21.388,66.357,20,0
-    .goto 1432,21.498,67.840
+    .goto 1432/0,-2448.71,-5562.26,20,0--c:1432,16.494,58.424
+    .goto 1432/0,-2534.22,-5641.56,20,0--c:1432,19.594,62.735
+    .goto 1432/0,-2566.08,-5670.83,20,0--c:1432,20.749,64.326
+    .goto 1432/0,-2575.92,-5683.36,20,0--c:1432,21.106,65.007
+    .goto 1432/0,-2583.70,-5708.19,20,0--c:1432,21.388,66.357
+    .goto 1432/0,-2586.74,-5735.47--c:1432,21.498,67.840
     .subzone 924 >> Reist durch den Südtorpass nach Loch Modan
     .zoneskip Loch Modan
 step
@@ -3171,17 +3178,17 @@ step
     #optional
     #label Algaz
     #completewith Stormpike1
-    .goto 1432,23.490,18.008
+    .goto 1432/0,-2641.68,-4818.77--c:1432,23.490,18.008
     .subzone 925 >>Reist nach Station Algaz
 step
     #optional
     #requires Algaz
     #completewith Stormpike1
-    .goto 1432,23.490,18.008,15,0
-    .goto 1432,24.279,17.959,12 >> BETRITT den Bunker. Geht zum obersten Geschoss
+    .goto 1432/0,-2641.68,-4818.77,15,0--c:1432,23.490,18.008
+    .goto 1432/0,-2663.45,-4817.87,12 >> BETRITT den Bunker. Geht zum obersten Geschoss--c:1432,24.279,17.959
 step
     #label Stormpike1
-    .goto Loch Modan,24.77,18.40
+    .goto 1432/0,-2676.82,-4825.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Gebirgsjäger Stormpike|r im Bunker
     .turnin 1339 >> Gebt die Quest Gebirgsjäger Stormpikes Aufgabe ab
     .accept 307 >> Akzeptiert die Quest Schmutzige Pfoten
@@ -3296,8 +3303,8 @@ step
 step
     #optional
     #completewith next
-    .goto 1432,23.490,18.008,15,0
-    .goto 1432,24.279,17.959,15 >> BETRETET den Bunker
+    .goto 1432/0,-2641.68,-4818.77,15,0--c:1432,23.490,18.008
+    .goto 1432/0,-2663.45,-4817.87,15 >> BETRETET den Bunker--c:1432,24.279,17.959
 step
     #optional
     #completewith next
@@ -3366,8 +3373,8 @@ step
 step
     #optional
     #completewith FlintTinder
-    .goto 1432,35.273,47.750,10,0
-    .goto 1432,35.433,48.243,12 >> BETRETET den Gasthof zum Starkbierlager
+    .goto 1432/0,-2966.70,-5365.90,10,0--c:1432,35.273,47.750
+    .goto 1432/0,-2971.11,-5374.97,12 >> BETRETET den Gasthof zum Starkbierlager--c:1432,35.433,48.243
 step
     .goto 1432/0,-2954.42,-5394.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Vidra Hearthstove|r
@@ -3376,8 +3383,8 @@ step
     .target Vidra Hearthstove
 step
     #label FlintTinder
-    .goto Loch Modan,37.17,47.94,8,0
-    .goto Loch Modan,37.24,47.38
+    .goto 1432/0,-3019.0224,-5369.3961,8,0
+    .goto 1432/0,-3020.9532,-5359.0944
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Jern Hornhelm|r
     .accept 436 >> Akzeptiert die Quest Eisenbands Ausgrabungsstätte
     .target Jern Hornhelm
@@ -3409,55 +3416,50 @@ step
     >>|cRXP_WARN_Vorsicht vor hochstufigen|r |cRXP_ENEMY_Junger Dreschadons|r
     .accept 86614 >>Akzeptiert die Quest Silberschatz der Wellen
 step
-    .goto Loch Modan,64.89,66.66
+    .goto 1432/0,-3783.6323,-5713.7660
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Magmar Fellhew|r
     .turnin 436 >> Gebt die Quest Eisenbands Ausgrabungsstätte ab
     .target Magmar Fellhew
 step
-    .goto Loch Modan,65.934,65.622
+    .goto 1432/0,-3812.4293,-5694.6712
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Ausgrabungsleiter Eisenband|r
     .accept 298 >> Akzeptiert die Quest Bericht über den Fortschritt der Ausgrabungen
     .target Prospector Ironband
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Daryl der Jüngling|r
     .accept 257 >> Akzeptiert die Quest Das Prahlen eines Jägers
-    .goto Loch Modan,83.49,65.40
+    .goto 1432/0,-4296.6822,-5690.5873
     .target Daryl the Youngling
-step Rogue/NightElf Hunter/NightElf Warrior/NightElf Druid
-    .goto Loch Modan,82.6,64.0
+step << Rogue/Hunter/Warrior/Druid
+    .goto 1432/0,-4272.1331,-5664.8331
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Kat|r
     .vendor >> |cRXP_BUY_Kauft|r |T132539:0|t[Bewegliche Stiefel] |cRXP_BUY_bei ihr, wenn sie verfügbar sind|r
     .target Kat Sampson
 step
-    .goto Loch Modan,80.09,64.16,60,0
-    .goto Loch Modan,77.16,75.57,60,0
-    .goto Loch Modan,70.78,72.91,60,0
-    .goto Loch Modan,76.65,62.27,60,0
-    .goto Loch Modan,76.36,56.05,60,0
-    .goto Loch Modan,80.09,64.16,60,0
-    .goto Loch Modan,77.16,75.57,60,0
-    .goto Loch Modan,70.78,72.91,60,0
-    .goto Loch Modan,76.65,62.27,60,0
-    .goto Loch Modan,76.36,56.05,60,0
-    .goto Loch Modan,80.09,64.16
+    #loop
+    .goto 1432/0,-4202.8989,-5667.7765,60,0
+    .goto 1432/0,-4122.0797,-5877.6729,60,0
+    .goto 1432/0,-3946.0981,-5828.7400,60,0
+    .goto 1432/0,-4108.0123,-5633.0083,60,0
+    .goto 1432/0,-4100.0131,-5518.5863,60,0
     >>Tötet |cRXP_ENEMY_Bergbussards|r
     >>|cRXP_WARN_Ihr müsst diese Quest abschließen und zu |cRXP_FRIENDLY_Daryl der Jüngling|r innerhalb von 15 Minuten zurückkehren. Falls die Quest fehlschlägt, brecht sie ab und nehmt sie erneut an|r
     .complete 257,1 -- Mountain Buzzard slain (6)
     .mob Mountain Buzzard
 step
     #completewith next
-    .goto Loch Modan,82.92,59.37,80,0
-    .goto Loch Modan,83.28,62.97,25 >> Reist zu |cRXP_FRIENDLY_Daryl der Jüngling|r
+    .goto 1432/0,-4280.9597,-5579.6604,80,0
+    .goto 1432/0,-4290.8897,-5645.8854,25 >> Reist zu |cRXP_FRIENDLY_Daryl der Jüngling|r
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Daryl der Jüngling|r
-    .goto Loch Modan,83.49,65.40
+    .goto 1432/0,-4296.6822,-5690.5873
     .turnin 257 >> Gebt die Quest Das Prahlen eines Jägers ab
     .target Daryl the Youngling
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Marek Ironheart|r
     .accept 385 >> Akzeptiert die Quest Krokiliskenjagd
     .accept 86758 >>Akzeptiert die Quest Ist dies ein Dolch
-    .goto Loch Modan,81.76,61.66
+    .goto 1432/0,-4248.9631,-5621.7869
     .target Marek Ironheart
 step
     #completewith next
@@ -3466,23 +3468,23 @@ step
     .complete 385,2 -- Crocolisk Skin (6)
     .mob Loch Crocolisk
 step
-    .goto Loch Modan,62,44
-    >>Tötet |cRXP_ENEMY_Dolchzahn|r, er |cRXP_WARN_könnte die Küste entlang patrouillieren|r. Plündert ihr für|T3736888:0|t[|cRXP_LOOT_Mareks Krokojagdmesser|r]
+    .goto 1432/0,-3703.9165,-5296.9165
+    >>Tötet |cRXP_ENEMY_Daggerfang|r, |cRXP_WARN_er könnte entlang des Ufers patrouillieren|r. Plündert ihn für |T3736888:0|t[|cRXP_LOOT_Marek's Krokodil-Jagdmesser|r]
     .complete 86758,1 --Marek's Croc Hunting Knife (1)
     .mob Daggerfang
 step
-    .goto 48,81.647,64.750
+    .goto 1432/0,-3747.000,-5369.000
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Bingles Blastenheimer|r
     .target Bingles Blastenheimer
     .turnin 2039 >>Gebt die Quest Find Bingles ab
 step
     #completewith next
-    .goto Loch Modan,54.7,38.3,200 >> Reist zu der Insel, die mitten im Loch liegt
+    .goto 1432/0,-3502.5582,-5192.0603,200 >> Reist zu der Insel, die mitten im Loch liegt
 step
-    .goto Loch Modan,58.86,38.32,80,0
-    .goto Loch Modan,54.80,40.02,60,0
-    .goto Loch Modan,54.16,35.79,60,0
-    .goto Loch Modan,54.72,38.15
+    .goto 1432/0,-3617.3048,-5192.4282,80,0
+    .goto 1432/0,-3505.3165,-5223.7011,60,0
+    .goto 1432/0,-3487.6632,-5145.8868,60,0
+    .goto 1432/0,-3503.1098,-5189.3009
     >>Tötet |cRXP_ENEMY_Lochkrokilisk|r. Plündert sie für ihr |cRXP_LOOT_Fleisch|r und |cRXP_LOOT_Haut|r
     .complete 385,1 -- Crocolisk Meat (5)
     .complete 385,2 -- Crocolisk Skin (6)
@@ -3491,25 +3493,25 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Marek Ironheart|r
     .turnin 385 >>Gebt die Quest Krokiliskenjagd ab
     .turnin 86758 >>Gebt die Quest Ist dies ein Dolch ab
-    .goto Loch Modan,81.76,61.66
+    .goto 1432/0,-4248.9631,-5621.7869
     .target Marek Ironheart
 step
     #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Daryl der Jüngling|r
-    .goto Loch Modan,83.49,65.40
+    .goto 1432/0,-4296.6822,-5690.5873
     .accept 258 >> Akzeptiert die Quest Die Herausforderung eines Jägers
     .target Daryl the Youngling
     .xp >16,1
 step
     #optional
-    .goto Loch Modan,74.65,49.60,70,0
-    .goto Loch Modan,75.80,43.43,70,0
-    .goto Loch Modan,71.10,38.98,70,0
-    .goto Loch Modan,65.59,41.89,70,0
-    .goto Loch Modan,61.66,32.02,70,0
-    .goto Loch Modan,72.79,39.86,70,0
-    .goto Loch Modan,73.87,51.85,70,0
-    .goto Loch Modan,69.45,39.18
+    .goto 1432/0,-4052.8456,-5399.9332,70,0
+    .goto 1432/0,-4084.5664,-5286.4309,70,0
+    .goto 1432/0,-3954.9248,-5204.5695,70,0
+    .goto 1432/0,-3802.9406,-5258.1013,70,0
+    .goto 1432/0,-3694.5381,-5076.5345,70,0
+    .goto 1432/0,-4001.5406,-5220.7578,70,0
+    .goto 1432/0,-4031.3306,-5441.3238,70,0
+    .goto 1432/0,-3909.4123,-5208.2486
     >>Tötet |cRXP_ENEMY_Alter Bergeber|r
     >>|cRXP_WARN_Ihr müsst diese Quest abschließen und innerhalb von 12 Minuten zu |cRXP_FRIENDLY_Daryl der Jüngling|r zurückkehren. Falls ihr scheitert, brecht die Quest ab und nehmt sie erneut auf|r
     .complete 258,1 -- Elder Mountain Boar slain (5)
@@ -3518,12 +3520,12 @@ step
 step
     #completewith next
     #optional
-    .goto Loch Modan,82.92,59.37,80,0
-    .goto Loch Modan,83.28,62.97,25 >> Reist zu |cRXP_FRIENDLY_Daryl der Jüngling|r
+    .goto 1432/0,-4280.9597,-5579.6604,80,0
+    .goto 1432/0,-4290.8897,-5645.8854,25 >> Reist zu |cRXP_FRIENDLY_Daryl der Jüngling|r
 step
     #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Daryl der Jüngling|r
-    .goto Loch Modan,83.49,65.40
+    .goto 1432/0,-4296.6822,-5690.5873
     .turnin 258 >> Gebt die Quest Die Herausforderung eines Jägers ab
     .target Daryl the Youngling
     .isOnQuest 258
@@ -3534,8 +3536,8 @@ step
     >>Springt aus der Hütte und sterbt durch die Mobs darunten
     .deathskip >> Sterbt und respawnt am Friedhof von Thelsamar
 step
-    .goto Loch Modan,37.17,47.94,8,0
-    .goto Loch Modan,37.24,47.38
+    .goto 1432/0,-3019.0224,-5369.3961,8,0
+    .goto 1432/0,-3020.9532,-5359.0944
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Jern Hornhelm|r
     .turnin 298 >> Gebt die Quest Bericht über den Fortschritt der Ausgrabungen ab
     .accept 301 >> Akzeptiert die Quest Meldung in Eisenschmiede
@@ -3556,7 +3558,7 @@ step
     .target Thorgrum Borrelson
     .zoneskip Ironforge
 step
-    .goto Ironforge,74.645,11.742
+    .goto 1455/0,-1303.75,-4631.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Ausgrabungsleiter Sturmlanze|r
     .turnin 301 >> Gebt die Quest Meldung in Eisenschmiede ab
     .target Prospector Stormpike
@@ -3587,12 +3589,12 @@ step << Priest/Druid
     .target Auctioneer Redmuse
     .target Auctioneer Buckler
 step << Rogue
-    .goto Ironforge,51.495,15.330
+    .goto 1455/0,-1120.72,-4650.120
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Fenthwick|r
     .trainer >> Trainiere deine Klassenfähigkeiten
     .target Fenthwick
 step << Warrior
-    .goto Ironforge,65.905,88.405
+    .goto 1455/0,-1234.65,-5035.67
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Bilban Tosslespanner|r
     .trainer >> Trainiere deine Klassenfähigkeiten
     .target Bilban Tosslespanner
@@ -3601,7 +3603,7 @@ step << Druid
 	.cast 18960 >> Caste Teleportieren: Moonglade
 	.zoneskip Moonglade
 step << Druid
-    .goto Moonglade,52.53,40.57
+    .goto 1450/1,-2593.82,7867.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Loganaar|r
     .trainer >> Trainiere deine Klassenfähigkeiten
     .target Loganaar
@@ -3713,7 +3715,7 @@ step
     >>Klickt das |cRXP_PICK_Gesucht-Plakat|r
     .accept 4740 >> Akzeptiert die Quest GESUCHT: Gurgelbacke!
 step << NightElf
-    .goto 1439,37.439,41.839
+    .goto 1439/1,489.41,6506.36--c:1439,37.439,41.839
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Archäologin Hollee|r
     .turnin 730 >> Gebt die Quest Ärger in Dunkelküste? ab
     .accept 729 >> Der geistesabwesende Ausgrabungsleiter annehmen
@@ -3721,12 +3723,12 @@ step << NightElf
     .isOnQuest 730
 step << NightElf
     #optional
-    .goto 1439,37.439,41.839
+    .goto 1439/1,489.41,6506.36--c:1439,37.439,41.839
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Archäologin Hollee|r
     .accept 729 >> Der geistesabwesende Ausgrabungsleiter annehmen
     .target Archaeologist Hollee
 step
-    .goto 1439,37.394,40.128
+    .goto 1439/1,492.36,6581.08--c:1439,37.394,40.128
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Thundris Windwirker|r
     .turnin 4762 >> Gebt die Quest Der Cliffspring ab
     .accept 4763 >> Akzeptiert die Quest Die verderbten Schwarzfelle
@@ -3737,20 +3739,20 @@ step
     .collect 12347,1,4763,1
     .isOnQuest 4763
 step
-    .goto 1439,42.017,58.866,0 --NE spawn
-    .goto 1439,43.222,59.693,0 --NE spawn
-    .goto 1439,43.069,62.448,0 --SE spawn
-    .goto 1439,42.489,60.677,0 --Middle spawn
-    .waypoint 1439,42.017,58.866,50,0 --NE spawn
-    .waypoint 1439,42.311,58.645,50,0
-    .waypoint 1439,42.448,58.236,50,0
-    .waypoint 1439,43.222,59.693,50,0 --NE spawn
-    .waypoint 1439,43.447,60.131,50,0
-    .waypoint 1439,43.780,60.275,50,0
-    .waypoint 1439,43.069,62.448,50,0 --SE spawn
-    .waypoint 1439,43.104,62.563,50,0
-    .waypoint 1439,42.794,62.166,50,0
-    .waypoint 1439,42.489,60.677,50,0 --Middle spawn
+    .goto 1439/1,189.55,5762.85,0 --NE spawn--c:1439,42.017,58.866
+    .goto 1439/1,110.63,5726.74,0 --NE spawn--c:1439,43.222,59.693
+    .goto 1439/1,120.65,5606.44,0 --SE spawn--c:1439,43.069,62.448
+    .goto 1439/1,158.64,5683.77,0 --Middle spawn--c:1439,42.489,60.677
+    .waypoint 1439/1,189.55,5762.85,50,0 --NE spawn--c:1439,42.017,58.866
+    .waypoint 1439/1,170.30,5772.50,50,0--c:1439,42.311,58.645
+    .waypoint 1439/1,161.32,5790.36,50,0--c:1439,42.448,58.236
+    .waypoint 1439/1,110.63,5726.74,50,0 --NE spawn--c:1439,43.222,59.693
+    .waypoint 1439/1,95.89,5707.61,50,0--c:1439,43.447,60.131
+    .waypoint 1439/1,74.08,5701.32,50,0--c:1439,43.780,60.275
+    .waypoint 1439/1,120.65,5606.44,50,0 --SE spawn--c:1439,43.069,62.448
+    .waypoint 1439/1,118.35,5601.42,50,0--c:1439,43.104,62.563
+    .waypoint 1439/1,138.66,5618.75,50,0--c:1439,42.794,62.166
+    .waypoint 1439/1,158.64,5683.77,50,0 --Middle spawn--c:1439,42.489,60.677
     >>Tötet |cRXP_ENEMY_Anaya Dawnrunner|r. Plündert sie für ihren |cRXP_LOOT_Anhänger|r
     -->>|cRXP_WARN_Be aware that she has a 7-8 minute spawn time and 4 different spawnpoints across Ameth'Aran|r
     --much faster spawn time now on forever
@@ -3758,20 +3760,20 @@ step
     .unitscan Anaya Dawnrunner
     .solo
 step
-    .goto 1439,42.017,58.866,0 --NE spawn
-    .goto 1439,43.222,59.693,0 --NE spawn
-    .goto 1439,43.069,62.448,0 --SE spawn
-    .goto 1439,42.489,60.677,0 --Middle spawn
-    .waypoint 1439,42.017,58.866,50,0 --NE spawn
-    .waypoint 1439,42.311,58.645,50,0
-    .waypoint 1439,42.448,58.236,50,0
-    .waypoint 1439,43.222,59.693,50,0 --NE spawn
-    .waypoint 1439,43.447,60.131,50,0
-    .waypoint 1439,43.780,60.275,50,0
-    .waypoint 1439,43.069,62.448,50,0 --SE spawn
-    .waypoint 1439,43.104,62.563,50,0
-    .waypoint 1439,42.794,62.166,50,0
-    .waypoint 1439,42.489,60.677,50,0 --Middle spawn
+    .goto 1439/1,189.55,5762.85,0 --NE spawn--c:1439,42.017,58.866
+    .goto 1439/1,110.63,5726.74,0 --NE spawn--c:1439,43.222,59.693
+    .goto 1439/1,120.65,5606.44,0 --SE spawn--c:1439,43.069,62.448
+    .goto 1439/1,158.64,5683.77,0 --Middle spawn--c:1439,42.489,60.677
+    .waypoint 1439/1,189.55,5762.85,50,0 --NE spawn--c:1439,42.017,58.866
+    .waypoint 1439/1,170.30,5772.50,50,0--c:1439,42.311,58.645
+    .waypoint 1439/1,161.32,5790.36,50,0--c:1439,42.448,58.236
+    .waypoint 1439/1,110.63,5726.74,50,0 --NE spawn--c:1439,43.222,59.693
+    .waypoint 1439/1,95.89,5707.61,50,0--c:1439,43.447,60.131
+    .waypoint 1439/1,74.08,5701.32,50,0--c:1439,43.780,60.275
+    .waypoint 1439/1,120.65,5606.44,50,0 --SE spawn--c:1439,43.069,62.448
+    .waypoint 1439/1,118.35,5601.42,50,0--c:1439,43.104,62.563
+    .waypoint 1439/1,138.66,5618.75,50,0--c:1439,42.794,62.166
+    .waypoint 1439/1,158.64,5683.77,50,0 --Middle spawn--c:1439,42.489,60.677
     >>Tötet |cRXP_ENEMY_Anaya Dawnrunner|r. Plündert sie für ihren |cRXP_LOOT_Anhänger|r
     -->>|cRXP_WARN_Be aware that she has a 7-8 minute spawn time and 4 different spawnpoints across Ameth'Aran|r
     -->>|cRXP_WARN_You may want to group with others nearby if you can't find her. Ask in General Chat (/1) to group with anyone else that is also looking for her|r
@@ -3820,10 +3822,10 @@ step << Druid
     .isOnQuest 6123
 step
     #completewith OnuGrove
-    .goto 1439,43.555,76.293,80 >> Reist zum Hain der Uralten
+    .goto 1439/1,88.81,5001.87,80 >> Reist zum Hain der Uralten--c:1439,43.555,76.293
 step
     #label OnuGrove
-    .goto 1439,43.555,76.293
+    .goto 1439/1,88.81,5001.87--c:1439,43.555,76.293
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Onu|r
     .turnin 952 >> Gebt die Quest Der Hain der Uralten ab << NightElf
     .turnin 948 >> Gebt die Quest Onu ab
@@ -3847,7 +3849,7 @@ step
     .mob Grizzled Thistle Bear
 step
     #optional
-    .goto 1439,41.390,80.563
+    .goto 1439/1,230.62,4815.42--c:1439,41.390,80.563
     >>Klickt auf die|cRXP_PICK_Dröhnkiste 525|r auf dem Boden
     .turnin 1003 >> Gebt die Quest Dröhnkiste 525 ab
     .isQuestComplete 1003
@@ -3874,16 +3876,15 @@ step
     #optional
     #completewith next
     .cast 5809 >> |cRXP_WARN_Benutzt die|r |T134715:0|t[Wahrsagephiole] |cRXP_WARN_und platziert sie auf dem Boden|r
-    .use 5251
 step
     .goto 1439/1,417.30,4575.82
     >>|cRXP_WARN_Klickt die |cRXP_PICK_Wahrsageschale|r auf dem Boden|r
     .turnin 944 >> Gebt die Quest Die Meistergleve ab
     .accept 949 >> Akzeptiert die Quest Das Twilight-Lager
-    .use 5251
+    .macro Phial of Scrying,134715 >>Wahrsagephiole
 step
     #label FunandGames
-    .goto 1439,38.537,86.050
+    .goto 1439/1,417.49,4575.82--c:1439,38.537,86.050
     >>Klickt den |cRXP_PICK_Twilight-Foliant|r auf dem nördlichen Sockel
     .turnin 949 >> Gebt die Quest Das Twilight-Lager ab
     .accept 950 >> Akzeptiert die Quest Rückkehr zu Onu
@@ -3899,7 +3900,7 @@ step
     .collect 5352,1,968,1 --Book: The Powers Below (1)
     .disablecheckbox
 step
-    .goto 1439,38.660,87.305
+    .goto 1439/1,409.44,4521.01--c:1439,38.660,87.305
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Therylune|r. Es wird eine Escort quest starten
     >>|cRXP_WARN_Überspringt diesen Schritt, falls sie nicht da ist|r
     .accept 945 >> Akzeptiert die Quest Therylunes Flucht
@@ -3952,12 +3953,12 @@ step
     .mob Grizzled Thistle Bear
 step
     #label LastBuzz
-    .goto 1439,41.390,80.563
+    .goto 1439/1,230.62,4815.42--c:1439,41.390,80.563
     >>Klickt auf die|cRXP_PICK_Dröhnkiste 525|r auf dem Boden
     .turnin 1003 >> Gebt die Quest Dröhnkiste 525 ab
     .isQuestComplete 1003
 step
-    .goto 1439,43.555,76.293
+    .goto 1439/1,88.81,5001.87--c:1439,43.555,76.293
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Onu|r
     .turnin 950 >> Gebt die Quest Rückkehr zu Onu ab
     .timer 11.5,Return to Onu RP
@@ -3977,7 +3978,7 @@ step << Hunter
 step << Hunter
     #sticky
     #label prospector
-    .goto 1439,35.724,83.696
+    .goto 1439/1,601.74,4678.61--c:1439,35.724,83.696
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Ausgrabungsleiter Remtravel|r
     >>|cRXP_WARN_Ihr müsst möglicherweise warten, bis er respawnt oder bis andere die Eskorte beenden|r
     .turnin 729 >> Gebt die Quest Der geistesabwesende Ausgrabungsleiter ab
@@ -3997,7 +3998,7 @@ step << Hunter
     .complete 731,1
     .isOnQuest 731
 step << Hunter
-    .goto 1439,31.251,87.419
+    .goto 1439/1,894.73,4516.04--c:1439,31.251,87.419
     >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4733 >> Akzeptiert die Quest Gestrandete Meereskreatur
     >>|cRXP_WARN_Diese Quest kann SEHR schwierig sein. Bekämpft die |cRXP_ENEMY_Murlocs|r einzeln, Andernfalls könntest du die Aggro von mehreren gleichzeitig auf dich ziehen.|r
@@ -4011,24 +4012,24 @@ step
     .mob Reef Crawler
     .mob Encrusted Tide Crawler
 step << Hunter
-    .goto 1439,31.229,85.564
+    .goto 1439/1,896.17,4597.04--c:1439,31.229,85.564
     >>|cRXP_WARN_Achtet auf |cRXP_ENEMY_Orakel der Grauflossen|r'|r |T136048:0|t[Blitzschlag] |cRXP_WARN_Schaden, sie können auch mit|r |T136052:0|t[Welle der Heilung]|r heilen
     >>Passt auf, denn |cRXP_ENEMY_Gezeitenjäger der Grauflossen|r können |T136016:0|t[|cRXP_FRIENDLY_Gift|r] wirken im Nahkampf und hinterlassen einen DoT, der 13 Schaden alle 3 Sek. für 30 Sek. verursacht
     >>Klickt die |cRXP_PICK_Gestrandete Meeresschildkröte|r
     .accept 4732 >> Akzeptiert die Quest Gestrandete Meeresschildkröte
 step
     #label TurtleSouth
-    .goto 1439,31.690,83.700
+    .goto 1439/1,865.97,4678.43--c:1439,31.690,83.700
     >>|cRXP_WARN_Achtet auf |cRXP_ENEMY_Orakel der Grauflossen|r'|r |T136048:0|t[Blitzschlag] |cRXP_WARN_Schaden, sie können auch mit|r |T136052:0|t[Welle der Heilung]|r heilen
     >>Passt auf, denn |cRXP_ENEMY_Gezeitenjäger der Grauflossen|r können |T136016:0|t[|cRXP_FRIENDLY_Gift|r] wirken im Nahkampf und hinterlassen einen DoT, der 13 Schaden alle 3 Sek. für 30 Sek. verursacht
     >>Klickt die |cRXP_PICK_Gestrandete Meeresschildkröte|r
     .accept 4731 >> Akzeptiert die Quest Gestrandete Meeresschildkröte
 step << !Hunter
-    .goto 1439,32.644,80.711
+    .goto 1439/1,803.48,4808.95--c:1439,32.644,80.711
     >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4730 >> Akzeptiert die Quest Gestrandete Meereskreatur
 step << Hunter
-    .goto 1439,32.644,80.711
+    .goto 1439/1,803.48,4808.95--c:1439,32.644,80.711
     >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4730 >> Akzeptiert die Quest Gestrandete Meereskreatur
 step << Druid
@@ -4041,8 +4042,8 @@ step << Druid
 --XX Add waypoints later
 step
     #label Murk
-    .goto 1439,35.429,76.566,0
-    .goto 1439,35.429,76.566,60,0
+    .goto 1439/1,621.07,4989.95,0--c:1439,35.429,76.566
+    .goto 1439/1,621.07,4989.95,60,0--c:1439,35.429,76.566
     .goto 1439/1,541.75,4991.52
     >>|cRXP_WARN_Stellt sicher, dass ihr überprüft, ob |cRXP_ENEMY_Gurgelbacke|r bereits im Wasser ist (wenn der Kampf zuvor fehlgeschlagen ist oder ihr den |cRXP_ENEMY_Jäger der Grauflossen|r in der Welle, in der er spawnt, am Leben gelassen habt)|r
     >>Tötet die |cRXP_ENEMY_Krieger der Grauflossen|r und |cRXP_ENEMY_Jäger der Grauflossen|r im Lager
@@ -4055,7 +4056,7 @@ step
     .mob Greymist Coastrunner
 step
     #label CompleteThistleBears
-    .goto 1439,35.968,70.807
+    .goto 1439/1,585.76,5241.43--c:1439,35.968,70.807
     >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4728 >> Akzeptiert die Quest Gestrandete Meereskreatur
 step << Druid
@@ -4086,11 +4087,11 @@ step << NightElf !Druid/Dwarf Hunter/Human Hunter/Skyborne Hunter
 step
     #optional
     #completewith next
-    .goto 1439,36.806,44.137,8,0
-    .goto 1439,35.743,43.710,12 >> Kehrt zu |cRXP_FRIENDLY_Cerellean Whiteclaw|r auf dem Dock zurück
+    .goto 1439/1,530.87,6406.02,8,0--c:1439,36.806,44.137
+    .goto 1439/1,600.50,6424.66,12 >> Kehrt zu |cRXP_FRIENDLY_Cerellean Whiteclaw|r auf dem Dock zurück--c:1439,35.743,43.710
 step
     #optional
-    .goto 1439,35.743,43.710
+    .goto 1439/1,600.50,6424.66--c:1439,35.743,43.710
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Cerellean Whiteclaw|r
     .turnin 963 >> Gebt die Quest In ewiger Liebe ab
     .target Cerellean Whiteclaw
@@ -4101,8 +4102,8 @@ step
     .abandon 963 >> Brecht die Quest In ewiger Liebe ab
 step
     #label BeachedTurnins
-    .goto 1439,36.701,45.122,8,0
-    .goto 1439,36.621,45.596
+    .goto 1439/1,537.75,6363.01,8,0--c:1439,36.701,45.122
+    .goto 1439/1,542.99,6342.31--c:1439,36.621,45.596
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
     .turnin 4728 >> Gebt die Quest Gestrandete Meereskreatur ab
     .turnin 4730 >> Gebt die Quest Gestrandete Meereskreatur ab
@@ -4124,7 +4125,7 @@ step
     .target Laird
     .target Allyndia
 step
-    .goto 1439,37.703,43.393
+    .goto 1439/1,472.12,6438.51--c:1439,37.703,43.393
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Schildwache Glynda Nal'Shea|r
     .turnin 4740 >> Gebt die Quest GESUCHT: Gurgelbacke! ab
     .target Sentinel Glynda Nal'Shea
@@ -4135,13 +4136,13 @@ step
     .turnin 98042 >>Gebt die Quest Ein Blick in den Abgrund ab
 step
     #label CleansingTharnariun
-    .goto 1439,38.843,43.416
+    .goto 1439/1,397.45,6437.50--c:1439,38.843,43.416
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Tharnariun Treetender|r
     .turnin 2138 >> Gebt die Quest Ausrottung der Infizierten ab
     .accept 2139 >> Akzeptiert die Quest Tharnariuns Hoffnung
     .target Tharnariun Treetender
 step << Hunter
-    .goto 1439,37.439,41.839
+    .goto 1439/1,489.41,6506.36--c:1439,37.439,41.839
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Archäologin Hollee|r
     .turnin 731 >> Gebt die Quest Der geistesabwesende Ausgrabungsleiter ab
     .accept 741 >> Der geistesabwesende Ausgrabungsleiter annehmen
@@ -4149,7 +4150,7 @@ step << Hunter
     .isQuestComplete 731
 step << Hunter
     #optional
-    .goto 1439,37.439,41.839
+    .goto 1439/1,489.41,6506.36--c:1439,37.439,41.839
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Archäologin Hollee|r
     .accept 741 >> Der geistesabwesende Ausgrabungsleiter annehmen
     .target Archaeologist Hollee
@@ -4280,24 +4281,24 @@ step
     #label LateStalkerFangs
     #optional
     #loop
-    .goto 1439,53.629,26.054,0
-    .goto 1439,54.204,30.475,0
-    .goto 1439,49.775,30.351,0
-    .goto 1439,48.894,26.514,0
-    .goto 1439,48.022,27.199,60,0
-    .goto 1439,48.894,26.514,60,0
-    .goto 1439,49.558,26.087,60,0
-    .goto 1439,49.902,27.511,60,0
-    .goto 1439,49.776,28.393,60,0
-    .goto 1439,49.775,30.351,60,0
-    .goto 1439,50.818,30.486,60,0
-    .goto 1439,50.689,32.001,60,0
-    .goto 1439,51.267,32.319,60,0
-    .goto 1439,54.204,30.475,60,0
-    .goto 1439,53.899,28.638,60,0
-    .goto 1439,53.049,27.983,60,0
-    .goto 1439,52.764,26.312,60,0
-    .goto 1439,53.629,26.054,60,0
+    .goto 1439/1,-571.03,7195.64,0--c:1439,53.629,26.054
+    .goto 1439/1,-608.70,7002.59,0--c:1439,54.204,30.475
+    .goto 1439/1,-318.60,7008.01,0--c:1439,49.775,30.351
+    .goto 1439/1,-260.89,7175.56,0--c:1439,48.894,26.514
+    .goto 1439/1,-203.77,7145.64,60,0--c:1439,48.022,27.199
+    .goto 1439/1,-260.89,7175.56,60,0--c:1439,48.894,26.514
+    .goto 1439/1,-304.38,7194.20,60,0--c:1439,49.558,26.087
+    .goto 1439/1,-326.91,7132.02,60,0--c:1439,49.902,27.511
+    .goto 1439/1,-318.66,7093.51,60,0--c:1439,49.776,28.393
+    .goto 1439/1,-318.60,7008.01,60,0--c:1439,49.775,30.351
+    .goto 1439/1,-386.91,7002.11,60,0--c:1439,50.818,30.486
+    .goto 1439/1,-378.46,6935.96,60,0--c:1439,50.689,32.001
+    .goto 1439/1,-416.32,6922.07,60,0--c:1439,51.267,32.319
+    .goto 1439/1,-608.70,7002.59,60,0--c:1439,54.204,30.475
+    .goto 1439/1,-588.72,7082.81,60,0--c:1439,53.899,28.638
+    .goto 1439/1,-533.04,7111.41,60,0--c:1439,53.049,27.983
+    .goto 1439/1,-514.38,7184.38,60,0--c:1439,52.764,26.312
+    .goto 1439/1,-571.03,7195.64,60,0--c:1439,53.629,26.054
     >>Tötet |cRXP_ENEMY_Mondpirscherwicht|r und |cRXP_ENEMY_Mondpircher|r. Plündert sie für |cRXP_LOOT_Mondpirscher-Fangzahn|r
     .complete 1002,1 -- Moonstalker Fang (6)
     .mob Moonstalker Runt
@@ -4308,43 +4309,43 @@ step
     .isQuestComplete 1002
     #label Buzzbox323End
     #requires SicklyDeers << Druid
-    .goto 1439,51.288,24.554
+    .goto 1439/1,-417.70,7261.14--c:1439,51.288,24.554
     >>Klickt auf die|cRXP_PICK_Dröhnkiste 323|r auf dem Boden
     .turnin 1002 >> Gebt die Quest Dröhnkiste 323 ab
     .accept 1003 >> Akzeptiert die Quest Dröhnkiste 525
 step
     #optional
     .isQuestTurnedIn 1002
-    .goto 1439,51.288,24.554
+    .goto 1439/1,-417.70,7261.14--c:1439,51.288,24.554
     >>Klickt auf die|cRXP_PICK_Dröhnkiste 323|r auf dem Boden
     .accept 1003 >> Akzeptiert die Quest Dröhnkiste 525
 step << !Hunter !Druid
-    .goto 1439,54.973,24.885
+    .goto 1439/1,-659.06,7246.69--c:1439,54.973,24.885
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Balthule Schattenhieb|r
     .turnin 965 >> Gebt die Quest Der Turm von Althalaxx ab
     .accept 966 >> Der Turm von Althalaxx annehmen
     .target Balthule Shadowstrike
 step << !Hunter !Druid
     #loop
-    .goto 1439,55.231,26.508,0
-    .goto 1439,56.194,27.071,0
-    .goto 1439,56.047,26.586,0
-    .goto 1439,55.231,26.508,50,0
-    .goto 1439,55.369,27.025,50,0
-    .goto 1439,55.763,26.695,50,0
-    .goto 1439,55.815,26.972,50,0
-    .goto 1439,56.194,27.071,50,0
-    .goto 1439,56.790,27.621,50,0
-    .goto 1439,57.278,26.311,50,0
-    .goto 1439,57.046,26.234,50,0
-    .goto 1439,56.544,26.598,50,0
-    .goto 1439,56.047,26.586,50,0
-    .goto 1439,55.743,25.915,50,0
+    .goto 1439/1,-675.96,7175.82,0--c:1439,55.231,26.508
+    .goto 1439/1,-739.04,7151.23,0--c:1439,56.194,27.071
+    .goto 1439/1,-729.41,7172.41,0--c:1439,56.047,26.586
+    .goto 1439/1,-675.96,7175.82,50,0--c:1439,55.231,26.508
+    .goto 1439/1,-685.00,7153.24,50,0--c:1439,55.369,27.025
+    .goto 1439/1,-710.81,7167.65,50,0--c:1439,55.763,26.695
+    .goto 1439/1,-714.22,7155.56,50,0--c:1439,55.815,26.972
+    .goto 1439/1,-739.04,7151.23,50,0--c:1439,56.194,27.071
+    .goto 1439/1,-778.08,7127.22,50,0--c:1439,56.790,27.621
+    .goto 1439/1,-810.04,7184.42,50,0--c:1439,57.278,26.311
+    .goto 1439/1,-794.85,7187.78,50,0--c:1439,57.046,26.234
+    .goto 1439/1,-761.97,7171.89,50,0--c:1439,56.544,26.598
+    .goto 1439/1,-729.41,7172.41,50,0--c:1439,56.047,26.586
+    .goto 1439/1,-709.50,7201.71,50,0--c:1439,55.743,25.915
     >>Tötet |cRXP_ENEMY_Fanatikerin des dunklen Strangs|r. Plündert sie für ihr |cRXP_LOOT_Abgenutztes Pergament|r
     .complete 966,1 --Worn Parchment (4)
     .mob Dark Strand Fanatic
 step << !Hunter !Druid
-    .goto 1439,54.973,24.885
+    .goto 1439/1,-659.06,7246.69--c:1439,54.973,24.885
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Balthule Schattenhieb|r
     .turnin 966 >> Gebt die Quest Der Turm von Althalaxx ab
     .accept 967 >> Der Turm von Althalaxx annehmen
@@ -4358,7 +4359,7 @@ step
     >>Plündert |cRXP_LOOT_Mathystra-Relikte|r vom Boden
     .complete 951,1 -- Mathystra Relics (6)
 step
-    .goto 1439,56.654,13.484
+    .goto 1439/1,-769.17,7744.53--c:1439,56.654,13.484
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gelkak Gyromast|r
     .accept 2098 >> Akzeptiert die Quest Gyromasts Rettung
     .target Gelkak Gyromast
@@ -4415,7 +4416,7 @@ step
     .isOnQuest 986
 step << Warrior/Paladin/Rogue/Shaman
     #requires foreststriders
-    .goto 1439,56.654,13.484
+    .goto 1439/1,-769.17,7744.53--c:1439,56.654,13.484
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gelkak Gyromast|r
     >>|cRXP_WARN_Beginnt, eine Gruppe für Gyromasts Rache/|r|cRXP_ENEMY_Der Dreschonator 4100|r zu suchen << Warrior/Paladin/Rogue/Shaman
     .turnin 2098 >> Gebt die Quest Gyromasts Rettung ab
@@ -4425,7 +4426,7 @@ step << Warrior/Paladin/Rogue/Shaman
 step
     #requires foreststriders
     .group 2 << Warrior/Paladin/Rogue/Shaman
-    .goto 1439,56.654,13.484
+    .goto 1439/1,-769.17,7744.53--c:1439,56.654,13.484
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gelkak Gyromast|r
     >>|cRXP_WARN_Beginnt, eine Gruppe für Gyromasts Rache/|r|cRXP_ENEMY_Der Dreschonator 4100|r zu suchen << Warrior/Paladin/Rogue/Shaman
     .turnin 2098 >> Gebt die Quest Gyromasts Rettung ab
@@ -4434,7 +4435,7 @@ step
 step
     #optional
     #completewith next
-    .goto 1439,55.802,18.290
+    .goto 1439/1,-713.36,7534.67--c:1439,55.802,18.290
     .gossipoption 95406 >> Sprecht mit |cRXP_FRIENDLY_Der Dreschonator 4100|r um die Eskorte zu beginnen
 --  .gossipoption 87696 >> Talk to |cRXP_FRIENDLY_The Threshwackonator 4100|r to start the escort
     >>|cRXP_WARN_Diese Quest ist SEHR schwierig|r
@@ -4442,17 +4443,17 @@ step
     .isOnQuest 2078 << Warrior/Paladin/Rogue/Shaman
 step
     #label Turtle4727
-    .goto 1439,53.113,18.099
+    .goto 1439/1,-537.23,7543.01--c:1439,53.113,18.099
     >>Klickt die |cRXP_PICK_Gestrandete Meeresschildkröte|r
     .accept 4727 >> Akzeptiert die Quest Gestrandete Meeresschildkröte
 step
-    .goto 1439,56.654,13.484
+    .goto 1439/1,-769.17,7744.53--c:1439,56.654,13.484
     #optional
     >>Escortier |cRXP_FRIENDLY_Der Dreschonator 4100|r bis zu |cRXP_FRIENDLY_Gelkak Gyromast|r
     >>Tötet |cRXP_ENEMY_The Threshwackonator 4100|r sobald er feindselig ist
     >>|cRXP_WARN_Diese Quest ist SEHR schwierig|r
     *Nutzt nur Fernkampfangriffe, während ihr vor ihm wegrennt, vermeidet Nahkampfreichweite << Druid
-    >>|cRXP_WARN_Versucht, diese Quest zu machen, wenn ihr könnt, da sie euch später Zeit spart und|r |T134797:0|t[Elixiere der Wasseratmung]|cRXP_WARN_für spätere Unterwasserquests gibt|r << !Druid !Warlock !Shaman
+    >>|cRXP_WARN_Versucht diese Quest zu machen, wenn ihr könnt, da sie später Zeit spart|r |T134797:0|t[Trank der Wasseratmung] |cRXP_WARN_für spätere Unterwasser-Quests|r << !Druid !Warlock !Shaman
     >>|cRXP_WARN_Benutzt|r |T136100:0|t[Wucherwurzeln] |cRXP_WARN_|r auf ihn und baue Distanz zu ihm auf. Kite ihn mit Schnellzaubern << Druid
     >>|cRXP_WARN_Falls ihr |cRXP_ENEMY_Der Dreschonator 4100|r nicht töten könnt, überspringt diesen Schritt|r
     .complete 2078,1 --Gyromast's Revenge (1)
@@ -4462,7 +4463,7 @@ step
 --XX DRUID: Test if you can root
 step
     #optional << Warrior/Paladin/Rogue/Shaman
-    .goto 1439,56.654,13.484
+    .goto 1439/1,-769.17,7744.53--c:1439,56.654,13.484
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gelkak Gyromast|r
     .turnin 2078 >> Gebt die Quest Gyromasts Rache ab
     .target Gelkak Gyromast
@@ -4494,7 +4495,7 @@ step << !NightElf/!Dwarf Hunter/!Human Hunter/!Druid
     .bindlocation 442,1
 step << Druid
     #label Turtle4727
-    .goto 1439,53.113,18.099
+    .goto 1439/1,-537.23,7543.01--c:1439,53.113,18.099
     >>Klickt die |cRXP_PICK_Gestrandete Meeresschildkröte|r
     .accept 4727 >> Akzeptiert die Quest Gestrandete Meeresschildkröte
 -- step << Druid
@@ -4533,7 +4534,7 @@ step << !NightElf !Hunter
     .deathskip >> Stirb und beleb dich am |cRXP_FRIENDLY_Geistheiler|r wieder
     .target Geistheiler
 step << !NightElf
-    .goto 1439,37.394,40.128
+    .goto 1439/1,492.36,6581.08--c:1439,37.394,40.128
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Thundris Windwirker|r
     .turnin 4763 >> Gebt die Quest Die verderbten Schwarzfelle ab
     .target Thundris Windweaver
@@ -4550,13 +4551,13 @@ step << !NightElf
     #completewith BeachedCloak
     .destroy 12341 >> Zerstört die |T134013:0|t|cRXP_LOOT_[Obstprobe der Schwarzfelle]|r aus eurer Tasche, da sie nicht mehr benötigt
 step << !NightElf
-    .goto 1439,38.843,43.416
+    .goto 1439/1,397.45,6437.50--c:1439,38.843,43.416
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Tharnariun Treetender|r
     .turnin 2139 >> Gebt die Quest Tharnariuns Hoffnung ab
     .target Tharnariun Treetender
 step << !NightElf
     .isQuestComplete 986
-    .goto 1439,39.373,43.483
+    .goto 1439/1,362.74,6434.58--c:1439,39.373,43.483
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Terenthis|r
     .turnin 986 >> Gebt die Quest Ein verirrter Meister ab
     .accept 993 >> Akzeptiert die Quest Ein verirrter Meister
@@ -4564,7 +4565,7 @@ step << !NightElf
 step << !NightElf
     #optional
     .isQuestTurnedIn 986
-    .goto 1439,39.373,43.483
+    .goto 1439/1,362.74,6434.58--c:1439,39.373,43.483
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Terenthis|r
     .accept 993 >> Akzeptiert die Quest Ein verirrter Meister
     .target Terenthis
@@ -4578,7 +4579,7 @@ step << !NightElf
 step << Dwarf Hunter/Human Hunter/Skyborne Hunter
     #label TravelDarnDwarfHBoat
     #completewith DarnDwarfHBoat
-    .goto 1439,33.169,40.179,15 >> Reist zum Dock des Bootes nach Darnassus
+    .goto 1439/1,769.10,6578.85,15 >> Reist zum Dock des Bootes nach Darnassus--c:1439,33.169,40.179
     .zoneskip Teldrassil
     .zoneskip Darnassus
 step << Dwarf Hunter/Human Hunter/Skyborne Hunter
@@ -4609,7 +4610,7 @@ step << Dwarf Hunter/Human Hunter/Skyborne Hunter
     .skill cooking,50,1
 step << Dwarf Hunter/Human Hunter/Skyborne Hunter
     #label DarnDwarfHBoat
-    .goto 1439,33.213,39.883
+    .goto 1439/1,766.22,6591.78--c:1439,33.213,39.883
     .zone Teldrassil >> Nehmt das Boot nach Darnassus
     .zoneskip Darnassus
 step << Dwarf Hunter/Human Hunter/Skyborne Hunter
@@ -4694,8 +4695,8 @@ step << NightElf/Dwarf Hunter/Human Hunter/Skyborne Hunter
     .cooldown item,6948,>0,1
 step
     #label BeachedCloak
-    .goto 1439,36.701,45.122,8,0
-    .goto 1439,36.621,45.596
+    .goto 1439/1,537.75,6363.01,8,0--c:1439,36.701,45.122
+    .goto 1439/1,542.99,6342.31--c:1439,36.621,45.596
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
     .turnin 4727 >> Gebt die Quest Gestrandete Meeresschildkröte ab
     .target Gwennyth Bly'Leggonde
@@ -4707,7 +4708,7 @@ step
     .target Gubber Blump
     .isQuestComplete 1138
 step << NightElf
-    .goto 1439,37.394,40.128
+    .goto 1439/1,492.36,6581.08--c:1439,37.394,40.128
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Thundris Windwirker|r
     .turnin 4763 >> Gebt die Quest Die verderbten Schwarzfelle ab
     .target Thundris Windweaver
@@ -4729,13 +4730,13 @@ step << NightElf Hunter
     .vendor >> Deckt euch mit |T132382:0|t[Scharfe Pfeile] ein
     .target Dalmond
 step << NightElf
-    .goto 1439,38.843,43.416
+    .goto 1439/1,397.45,6437.50--c:1439,38.843,43.416
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Tharnariun Treetender|r
     .turnin 2139 >> Gebt die Quest Tharnariuns Hoffnung ab
     .target Tharnariun Treetender
 step << NightElf
     .isQuestComplete 986
-    .goto 1439,39.373,43.483
+    .goto 1439/1,362.74,6434.58--c:1439,39.373,43.483
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Terenthis|r
     .turnin 986 >> Gebt die Quest Ein verirrter Meister ab
     .accept 993 >> Akzeptiert die Quest Ein verirrter Meister
@@ -4743,7 +4744,7 @@ step << NightElf
 step << NightElf
     #label LostMasters
     .isQuestTurnedIn 986
-    .goto 1439,39.373,43.483
+    .goto 1439/1,362.74,6434.58--c:1439,39.373,43.483
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Terenthis|r
     .accept 993 >> Akzeptiert die Quest Ein verirrter Meister
     .target Terenthis
@@ -4772,7 +4773,7 @@ step << !Hunter
     .target Dalmond
 step << !Hunter
     #completewith next
-    .goto 1439,38.107,41.165
+    .goto 1439/1,445.66,6535.79--c:1439,38.107,41.165
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Gorbold Steelhand|r
     .vendor 6301 >>|cRXP_BUY_Kauft|r |T134059:0|t[Milde Gewürze] |cRXP_BUY_von ihm, bis ihr genauso viele|r |T134059:0|t[Milde Gewürze] |cRXP_BUY_ oder mehr wie|r |T132832:0|t[Kleine Eier] |cRXP_BUY_die ihr derzeit habt|r
     .collect 2678,50,90,1,0x20,cooking --Mild Spices (1-50)
@@ -4786,7 +4787,7 @@ step << !Hunter
     #label TravelMenethilRRBoat
     #completewith MenethilRRBoat
     .goto 1439/1,926.400,6542.900,15 >> Reist zum Anleger des Sturmwind-Bootes << !Shaman
-    .goto 1439,32.432,43.744,15 >> Reist zum Anlegestelle des Hafens von Menethil << Shaman
+    .goto 1439/1,817.37,6423.18,15 >> Reist zum Anlegestelle des Hafens von Menethil << Shaman--c:1439,32.432,43.744
     .zoneskip Loch Modan
     .zoneskip Dun Morogh
     .zoneskip Ironforge
@@ -4845,7 +4846,7 @@ step << Shaman
     .goto 1437/0,-819.67,-3691.42,25,0
     .goto 1437/0,-807.26,-3716.22,25,0
     .goto 1437/0,-827.94,-3724.49,25,0
-    .goto 1437,10.760,56.721
+    .goto 1437/0,-834.55,-3711.29--c:1437,10.760,56.721
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Neal Allen|r
     .vendor >> |cRXP_WARN_Kaufe eine|r |T133024:0|t[Bronzeröhre]
     >>|cRXP_WARN_Dieses Item hat limitierte Verfügbarkeit. Überspringe den Schritt, wenn |cRXP_FRIENDLY_Neal Allen|r keine hat|r
@@ -5389,7 +5390,8 @@ step << Rogue
     #completewith next
     .subzone 97 >> Reist zu Althers Mühle
 step << Rogue
-    .goto 1433,51.846,45.116
+    -- .goto 1433/0,-2702.500,-9230.300
+    .goto 1433/0,-2696.32,-9228.24--c:1433,51.846,45.116
     >>|cRXP_WARN_Ihr MÜSST dies für eure|r |T132290:0|t[Gifte]|cRXP_WARN_ Quest später machen|r
     >>|cRXP_WARN_Steht auf dem Wegpunkt. Positioniert eure Kamera und euren Cursor, bis ihr 3 |cRXP_PICK_Übungsschließkisten|r gleichzeitig anklicken könnt, ohne das ihr euch bewegen müsst|r
     .skill lockpicking,80 >>|cRXP_WARN_Öffnet die |cRXP_PICK_Übungsschließkassette|r am Boden in Althers Mühle, bis euer|r |T136058:0|t[Schlossknacken] 80 erreicht|r
@@ -5811,7 +5813,7 @@ step << !Dwarf Rogue
     >>Tötet |cRXP_ENEMY_Zwerggiftweberspinne|r und |cRXP_ENEMY_Giftweberspinne|r. Plündert sie für |cRXP_LOOT_kleiner Giftbeutel|r und ihre |cRXP_LOOT_Klebriges Spinnenbein|r
     >>|cRXP_WARN_You need a |cRXP_LOOT_kleiner Giftbeutel|r um das|r |T134437:0|t[Gegengift] herzustellen |cRXP_WARN_um später den|r |T136230:0|t[Die Berührung von Zanzil] |cRXP_WARN_debuff zu heilen|r
     >>|cRXP_WARN_Behaltet die |cRXP_LOOT_Klebriges Spinnenbeine|r für später|r
-    >>|cRXP_WARN_Falls ihr einen|r |T626003:0|t|cFFF48CBADie Bruderschaft der Defias|r|cRXP_WARN_,|r |T625999:0|t|cFFFF7C0ADruide|r |cRXP_WARN_oder|r |T626006:0|t|cFF0070DDSchamane|r |cRXP_WARN_-Freund habt, könnt ihr diesen Schritt überspringen und ihn bitten, es für euch zu entfernen|r
+    >>|cRXP_WARN_Falls ihr einen|r |T626003:0|t|cFFF48CBADie Bruderschaft der Defias|r|cRXP_WARN_,|r |T625999:0|t|cFFFF7C0ADruide|r |cRXP_WARN_oder|r |T626006:0|t|cFF0070DDSchamane|r |cRXP_WARN_Freund habt, könnt ihr diesen Schritt überspringen und bittet ihn, es für euch zu entfernen|r
     .collect 1475,1,2359,1 -- Small Venom Sac (1)
     .collect 2251,6,93,1,1 -- Gooey Spider Legs (6)
     .disablecheckbox
@@ -5828,7 +5830,7 @@ step << Rogue
 step << Rogue
     .goto 1436/0,619.17,-11035.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Agentin Kearnen|r
-    >>|cRXP_WARN_Ihr MÜSST diese Quest für die|r |T132290:0|t[Gifte] annehmen
+    >>|cRXP_WARN_Ihr müsst diese Quest abschließen, um|r |T132290:0|t[Gifte].
     .turnin 2360 >> Gebt die Quest Mathias und die Defias ab
     .accept 2359 >> Klavens Turm annehmen
     .target Agent Kearnen
@@ -5856,7 +5858,7 @@ step << Rogue
     .itemcount 15396,1
 step << Rogue
     #label Mortwake
-    .goto 1436,70.421,74.031
+    .goto 1436/0,551.93,-11127.39--c:1436,70.421,74.031
     >>|cRXP_WARN_Reist bis zum 2. Stockwerk des Turms hinauf. Während ihr in|r |T132320:0|t[Verstohlenheit] |cRXP_WARN_seid und die |cRXP_ENEMY_Turmwachposten der Defias|r nicht neben euch sind, springt auf den Stuhl, dann auf die Lampe, dann auf das Bücherregal oben auf dem Wegpunkt|r
     >>|cRXP_WARN_Stoppt manuell|r |T132320:0|t[Verstohlenheit]|cRXP_WARN_, dann drückt von Euch "Interagieren mit Ziel" Taste, um das |cRXP_PICK_Dämmerwaldtruhe|r zu öffnen. Plündert sie für|r |cRXP_LOOT_Klaven Mortwakes Tagebuch|r
     >>|cRXP_WARN_NOTIZ: Eure|r |T132320:0|t[Verstohlenheit] |cRXP_WARN_wird kurz nachdem ihr gelootet habt nicht funktionieren|r |cRXP_LOOT_Klaven Mortwakes Tagebuch|r
@@ -5899,24 +5901,24 @@ step << !Dwarf Rogue
     #optional
     #requires AntiVenomEnd
     #completewith FirstAidEnd
-    .goto 1453,42.938,33.878,20,0
-    .goto 1453,41.544,31.330,20,0
-    .goto 1453,41.688,28.049,20,0
-    .goto 1453,43.070,26.155,15 >> Lauf in Richtung |cRXP_FRIENDLY_Shaina Fuller|r
+    .goto 1453/0,803.77,-8582.52,20,0--c:1453,42.938,33.878
+    .goto 1453/0,822.51,-8559.68,20,0--c:1453,41.544,31.330
+    .goto 1453/0,820.57,-8530.27,20,0--c:1453,41.688,28.049
+    .goto 1453/0,801.99,-8513.29,15 >> Lauf in Richtung |cRXP_FRIENDLY_Shaina Fuller|r--c:1453,43.070,26.155
     .aura -9991
 step << !Dwarf Rogue
     #requires AntiVenomEnd
-    .goto 1453,43.070,26.155
+    .goto 1453/0,801.99,-8513.29--c:1453,43.070,26.155
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Shaina Fuller|r
-    >>|cRXP_WARN_Falls ihr einen|r |T626003:0|t|cFFF48CBADie Bruderschaft der Defias|r|cRXP_WARN_,|r |T625999:0|t|cFFFF7C0ADruide|r |cRXP_WARN_oder|r |T626006:0|t|cFF0070DDSchamane|r |cRXP_WARN_-Freund habt, bittet sie, die|r |T136230:0|t[Berührung von Zanzil] |cRXP_WARN_für euch zu entfernen|r
+    >>|cRXP_WARN_Falls ihr einen|r |T626003:0|t|cFFF48CBADie Bruderschaft der Defias|r|cRXP_WARN_,|r |T625999:0|t|cFFFF7C0ADruide|r |cRXP_WARN_oder|r |T626006:0|t|cFF0070DDSchamane|r |cRXP_WARN_Freund habt, bittet ihn, den|r |T136230:0|t[Berührung von Zanzil] |cRXP_WARN_für euch statt dessen zu entfernen|r
     .skill firstaid,80 >> |cRXP_WARN_Steigert eure|r |T135966:0|t[Erste Hilfe] |cRXP_WARN_auf 80|r
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
 step << !Dwarf Rogue
     #label FirstAidEnd
-    .goto 1453,43.070,26.155
+    .goto 1453/0,801.99,-8513.29--c:1453,43.070,26.155
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Shaina Fuller|r
-    >>|cRXP_WARN_Falls ihr einen|r |T626003:0|t|cFFF48CBADie Bruderschaft der Defias|r|cRXP_WARN_,|r |T625999:0|t|cFFFF7C0ADruide|r |cRXP_WARN_oder|r |T626006:0|t|cFF0070DDSchamane|r |cRXP_WARN_-Freund habt, bittet sie, die|r |T136230:0|t[Berührung von Zanzil] |cRXP_WARN_für euch zu entfernen|r
+    >>|cRXP_WARN_Falls ihr einen|r |T626003:0|t|cFFF48CBADie Bruderschaft der Defias|r|cRXP_WARN_,|r |T625999:0|t|cFFFF7C0ADruide|r |cRXP_WARN_oder|r |T626006:0|t|cFF0070DDSchamane|r |cRXP_WARN_Freund habt, bittet ihn, den|r |T136230:0|t[Berührung von Zanzil] |cRXP_WARN_für euch statt dessen zu entfernen|r
     .train 7934 >> |cRXP_WARN_Trainiert|r |T134437:0|t[Gegengift]
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
@@ -5986,7 +5988,7 @@ step
     #label InRR
     #completewith FlyR
     .goto 1453/0,489.72,-8837.28,-1
-	.goto 1433/0,-1716.28,-9623.29,-1
+    .goto 1433/0,-1757.000,-9608.900,-1
     .zone Redridge Mountains >>Reist ins Rotkammgebirge
     .fly Redridge >> Fliegt ins Rotkammgebirge
     >>|cRXP_WARN_Falls ihr in Goldhain seid, ist es schneller, von Sturmwind zu fliegen|r
@@ -6126,14 +6128,14 @@ RXPGuides.RegisterGuide([[
 
 step
     #optional
-    .goto 1439,43.555,76.293
+    .goto 1439/1,88.81,5001.87--c:1439,43.555,76.293
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Onu|r
     .turnin 951 >> Gebt die Quest Mathystra-Relikte ab
     .target Onu
     .isQuestTurnedIn 731 --Only shows if Prospector was already escorted
 step
     #optional
-    .goto 1439,44.401,76.425
+    .goto 1439/1,33.40,4996.11--c:1439,44.401,76.425
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Kerlonian Evershade|r, um die Eskorte zu beginnen
     >>|cRXP_WARN_Überspringt diesen Schritt, wenn er nicht dort ist. Es kann bis zu 25 Minuten dauern, bis er respawnt|r
     >>|cRXP_WARN_Dies ist eine Zeitquest, ihr müsst ihn in 20 Minuten zu seinem Beutel bringen|r
@@ -6150,7 +6152,7 @@ step
 step
     #sticky
     #label prospector
-    .goto 1439,35.724,83.696
+    .goto 1439/1,601.74,4678.61--c:1439,35.724,83.696
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Ausgrabungsleiter Remtravel|r
     >>|cRXP_WARN_Ihr müsst möglicherweise warten, bis er respawnt oder bis andere die Eskorte beenden|r
     .turnin 729 >> Gebt die Quest Der geistesabwesende Ausgrabungsleiter ab
@@ -6183,7 +6185,7 @@ step
     .mob Twilight Thug
     --  .use 13536
 step
-    .goto 1439,38.660,87.305
+    .goto 1439/1,409.44,4521.01--c:1439,38.660,87.305
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Therylune|r. Es wird eine Escort quest starten
     >>|cRXP_WARN_Überspringt diesen Schritt, falls sie nicht da ist|r
     .accept 945 >> Akzeptiert die Quest Therylunes Flucht
@@ -6196,24 +6198,24 @@ step
     .isOnQuest 945
 step
     #optional
-    .goto 1439,31.251,87.419
+    .goto 1439/1,894.73,4516.04--c:1439,31.251,87.419
     >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4733 >> Akzeptiert die Quest Gestrandete Meereskreatur
     >>|cRXP_WARN_Diese Quest kann SEHR schwierig sein. Bekämpft die |cRXP_ENEMY_Murlocs|r einzeln, Andernfalls könntest du die Aggro von mehreren gleichzeitig auf dich ziehen.|r
     .link https://youtu.be/lfQM3Q-Ag5A >> |cRXP_WARN_Klickt hier für einen Videoleitfaden|r
 step
     #optional
-    .goto 1439,31.229,85.564
+    .goto 1439/1,896.17,4597.04--c:1439,31.229,85.564
     >>Klickt die |cRXP_PICK_Gestrandete Meeresschildkröte|r
     .accept 4732 >> Akzeptiert die Quest Gestrandete Meeresschildkröte
 step
     #optional
-    .goto 1439,31.690,83.700
+    .goto 1439/1,865.97,4678.43--c:1439,31.690,83.700
     >>Klickt die |cRXP_PICK_Gestrandete Meeresschildkröte|r
     .accept 4731 >> Akzeptiert die Quest Gestrandete Meeresschildkröte
 step
     #optional
-    .goto 1439,32.644,80.711
+    .goto 1439/1,803.48,4808.95--c:1439,32.644,80.711
     >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4730 >> Akzeptiert die Quest Gestrandete Meereskreatur
 step
@@ -6251,24 +6253,24 @@ step
     .target Volcor
     .isQuestTurnedIn 993
 step
-    .goto 1439,43.594,84.489,0
-    .goto 1439,42.576,82.897,0
-    .goto 1439,43.594,84.489,15,0
-    .goto 1439,42.576,82.897,15,0
-    .goto 1439,42.004,81.688
+    .goto 1439/1,86.26,4643.98,0--c:1439,43.594,84.489
+    .goto 1439/1,152.94,4713.50,0--c:1439,42.576,82.897
+    .goto 1439/1,86.26,4643.98,15,0--c:1439,43.594,84.489
+    .goto 1439/1,152.94,4713.50,15,0--c:1439,42.576,82.897
+    .goto 1439/1,190.40,4766.29--c:1439,42.004,81.688
     >>Eskortiert |cRXP_FRIENDLY_Volcor|r
     >>Nachdem ihr die 3. Fackel überquert und die Höhle verlassen habt, spawnet ein |cRXP_ENEMY_Furbog|r von beiden Seiten und greift |cRXP_FRIENDLY_Volcor|r an
     >>Auf halbem Weg zur Straße spawnen |cRXP_ENEMY_Furbolgs|r von beiden Seiten und greifen |cRXP_FRIENDLY_Volcor|r an
     .complete 994,1 --Help Volcor to the road (1)
     .isQuestTurnedIn 993
 step
-    .goto 1439,43.555,76.293
+    .goto 1439/1,88.81,5001.87--c:1439,43.555,76.293
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Onu|r
     .turnin 951 >> Gebt die Quest Mathystra-Relikte ab
     .target Onu
     .isOnQuest 951
 step
-    .goto 1439,44.401,76.425
+    .goto 1439/1,33.40,4996.11--c:1439,44.401,76.425
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Kerlonian Evershade|r, um die Eskorte zu beginnen
     >>|cRXP_WARN_Überspringt diesen Schritt, wenn er nicht dort ist. Es kann bis zu 25 Minuten dauern, bis er respawnt|r
     >>|cRXP_WARN_Dies ist eine Zeitquest, ihr müsst ihn in 20 Minuten zu seinem Beutel bringen|r
@@ -6656,19 +6658,19 @@ step
     #completewith end
     .vendor >> Restock/Nachschub
 step
-    .goto 1439,39.373,43.483
+    .goto 1439/1,362.74,6434.58--c:1439,39.373,43.483
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Terenthis|r
     .turnin 995 >> Gebt die Quest Flucht durch Verstohlenheit ab
     .target Terenthis
     .isOnQuest 995
 step
-    .goto 1439,39.373,43.483
+    .goto 1439/1,362.74,6434.58--c:1439,39.373,43.483
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Terenthis|r
     .turnin 994 >> Gebt die Quest Flucht durch Gewalt ab
     .target Terenthis
     .isOnQuest 994
 step
-    .goto 1439,36.621,45.596
+    .goto 1439/1,542.99,6342.31--c:1439,36.621,45.596
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
     .turnin 4730 >> Gebt die Quest Gestrandete Meereskreatur ab
     .turnin 4731 >> Gebt die Quest Gestrandete Meeresschildkröte ab
@@ -6696,7 +6698,7 @@ step
     .goto 1457/1,2515.03,9940.50
     .bankdeposit 5996,1468,2251,1015 >> Deponiert die folgenden Gegenstände in eurer Bank
     .target Garryeth
-    >>|T134797:0|t[Elixir der Wasseratmung] --5996
+    >>|T134797:0|t[Draught of Wasseratmung] --5996
     >>|T134304:0|t[Murlocflossen] --1468
     >>|T134321:0|t[Klebriges Spinnenbein] --2251
     >>|T133970:0|t[Magere Wolfflanke] --1015
@@ -6783,7 +6785,7 @@ step
     >>Klickt das |cRXP_PICK_Gesucht-Plakat|r
     .accept 4740 >> Akzeptiert die Quest GESUCHT: Gurgelbacke!
 step
-    .goto 1439,37.322,43.640
+    .goto 1439/1,497.08,6427.72--c:1439,37.322,43.640
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Barithras Moonshade|r
     .accept 948 >> Akzeptiert die Quest Onu
     .target Barithras Moonshade
@@ -6793,13 +6795,13 @@ step
     .accept 729 >> Der geistesabwesende Ausgrabungsleiter annehmen
     .target Archaeologist Hollee
 step
-    .goto 1439,38.325,43.039
+    .goto 1439/1,431.300,6454.000
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gershala Nachtraunen|r
     .turnin 3765 >> Gebt die Quest Verderbnis in der Fremde ab
     .target Gershala Nightwhisper
     .isOnQuest 3765
 step
-    .goto 1439,39.373,43.483
+    .goto 1439/1,362.74,6434.58--c:1439,39.373,43.483
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Terenthis|r
     .accept 993 >> Akzeptiert die Quest Ein verirrter Meister
 	.target Terenthis
@@ -6824,10 +6826,10 @@ step
 step
     #optional
     #completewith OnuGrove
-    .goto 1439,43.555,76.293,80 >> Reist zum Hain der Uralten
+    .goto 1439/1,88.81,5001.87,80 >> Reist zum Hain der Uralten--c:1439,43.555,76.293
 step
     #label OnuGrove
-    .goto 1439,43.555,76.293
+    .goto 1439/1,88.81,5001.87--c:1439,43.555,76.293
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Onu|r
     .turnin 952 >> Gebt die Quest Der Hain der Uralten ab << NightElf
     .turnin 948 >> Gebt die Quest Onu ab
@@ -6855,16 +6857,15 @@ step
 step
     #completewith next
     .cast 5809 >> |cRXP_WARN_Benutzt die|r |T134715:0|t[Wahrsagephiole] |cRXP_WARN_und platziert sie auf dem Boden|r
-    .use 5251
 step
     .goto 1439/1,417.30,4575.82
     >>|cRXP_WARN_Klickt die |cRXP_PICK_Wahrsageschale|r auf dem Boden|r
     .turnin 944 >> Gebt die Quest Die Meistergleve ab
     .accept 949 >> Akzeptiert die Quest Das Twilight-Lager
-    .use 5251
+    .macro Phial of Scrying,134715 >>Wahrsagephiole
 step
     #label FunandGames
-    .goto 1439,38.537,86.050
+    .goto 1439/1,417.49,4575.82--c:1439,38.537,86.050
     >>Klickt den |cRXP_PICK_Twilight-Foliant|r auf dem nördlichen Sockel
     .turnin 949 >> Gebt die Quest Das Twilight-Lager ab
     .accept 950 >> Akzeptiert die Quest Rückkehr zu Onu
@@ -6880,7 +6881,7 @@ step
     .collect 5352,1,968,1 --Book: The Powers Below (1)
     .disablecheckbox
 step
-    .goto 1439,38.660,87.305
+    .goto 1439/1,409.44,4521.01--c:1439,38.660,87.305
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Therylune|r. Es wird eine Escort quest starten
     >>|cRXP_WARN_Überspringt diesen Schritt, falls sie nicht da ist|r
     .accept 945 >> Akzeptiert die Quest Therylunes Flucht
@@ -6922,7 +6923,7 @@ step
 step
     #sticky
     #label prospector
-    .goto 1439,35.724,83.696
+    .goto 1439/1,601.74,4678.61--c:1439,35.724,83.696
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Ausgrabungsleiter Remtravel|r
     >>|cRXP_WARN_Ihr müsst möglicherweise warten, bis er respawnt oder bis andere die Eskorte beenden|r
     .turnin 729 >> Gebt die Quest Der geistesabwesende Ausgrabungsleiter ab
@@ -6952,30 +6953,30 @@ step
     .mob Encrusted Tide Crawler
     .mob Reef Crawler
 step
-    .goto 1439,31.251,87.419
+    .goto 1439/1,894.73,4516.04--c:1439,31.251,87.419
     >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4733 >> Akzeptiert die Quest Gestrandete Meereskreatur
     >>|cRXP_WARN_Diese Quest kann SEHR schwierig sein. Bekämpft die |cRXP_ENEMY_Murlocs|r einzeln, Andernfalls könntest du die Aggro von mehreren gleichzeitig auf dich ziehen.|r
     .link https://youtu.be/lfQM3Q-Ag5A >> |cRXP_WARN_Klickt hier für einen Videoleitfaden|r
 step
-    .goto 1439,31.229,85.564
+    .goto 1439/1,896.17,4597.04--c:1439,31.229,85.564
     >>Klickt die |cRXP_PICK_Gestrandete Meeresschildkröte|r
     .accept 4732 >> Akzeptiert die Quest Gestrandete Meeresschildkröte
 step
     #optional
-    .goto 1439,31.690,83.700
+    .goto 1439/1,865.97,4678.43--c:1439,31.690,83.700
     >>Klickt die |cRXP_PICK_Gestrandete Meeresschildkröte|r
     .accept 4731 >> Akzeptiert die Quest Gestrandete Meeresschildkröte
 step
     #optional
-    .goto 1439,32.644,80.711
+    .goto 1439/1,803.48,4808.95--c:1439,32.644,80.711
     >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4730 >> Akzeptiert die Quest Gestrandete Meereskreatur
 step
     #optional
     #label Murkdeep
-    .goto 1439,35.429,76.566,0
-    .goto 1439,35.429,76.566,60,0
+    .goto 1439/1,621.07,4989.95,0--c:1439,35.429,76.566
+    .goto 1439/1,621.07,4989.95,60,0--c:1439,35.429,76.566
     .goto 1439/1,541.75,4991.52
     >>|cRXP_WARN_Stellt sicher, dass ihr überprüft, ob |cRXP_ENEMY_Gurgelbacke|r bereits im Wasser ist (wenn der Kampf zuvor fehlgeschlagen ist oder ihr den |cRXP_ENEMY_Jäger der Grauflossen|r in der Welle, in der er spawnt, am Leben gelassen habt)|r
     >>Tötet die |cRXP_ENEMY_Krieger der Grauflossen|r und |cRXP_ENEMY_Jäger der Grauflossen|r im Lager
@@ -6988,17 +6989,17 @@ step
     .mob Greymist Coastrunner
 step
     #loop
-    .goto 1439,32.674,81.752,0
-    .goto 1439,36.327,73.408,0
-    .goto 1439,35.195,71.864,0
-    .goto 1439,32.674,81.752,60,0
-    .goto 1439,33.284,80.330,60,0
-    .goto 1439,34.174,80.488,60,0
-    .goto 1439,35.432,79.052,60,0
-    .goto 1439,36.327,73.408,60,0
-    .goto 1439,35.412,73.176,60,0
-    .goto 1439,35.033,72.432,60,0
-    .goto 1439,35.195,71.864,60,0
+    .goto 1439/1,801.52,4763.50,0--c:1439,32.674,81.752
+    .goto 1439/1,562.25,5127.85,0--c:1439,36.327,73.408
+    .goto 1439/1,636.39,5195.27,0--c:1439,35.195,71.864
+    .goto 1439/1,801.52,4763.50,60,0--c:1439,32.674,81.752
+    .goto 1439/1,761.56,4825.59,60,0--c:1439,33.284,80.330
+    .goto 1439/1,703.27,4818.69,60,0--c:1439,34.174,80.488
+    .goto 1439/1,620.87,4881.40,60,0--c:1439,35.432,79.052
+    .goto 1439/1,562.25,5127.85,60,0--c:1439,36.327,73.408
+    .goto 1439/1,622.18,5137.98,60,0--c:1439,35.412,73.176
+    .goto 1439/1,647.01,5170.47,60,0--c:1439,35.033,72.432
+    .goto 1439/1,636.39,5195.27,60,0--c:1439,35.195,71.864
     >>Tötet |cRXP_ENEMY_Verkrusteter Gezeitenkriecher|r und |cRXP_ENEMY_Riffkriecher|r. Plündert sie für |cRXP_LOOT_Feine Krebsbrocken|r
     .complete 1138,1 -- Fine Crab Chunks (6)
     .mob Encrusted Tide Crawler
@@ -7022,18 +7023,18 @@ step
     .turnin 1003 >> Gebt die Quest Dröhnkiste 525 ab
     .isOnQuest 1003
 step
-    .goto 1439,43.555,76.293
+    .goto 1439/1,88.81,5001.87--c:1439,43.555,76.293
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Onu|r
     .turnin 951 >> Gebt die Quest Mathystra-Relikte ab
     .target Onu
     .isQuestComplete 951
 step
-    .goto 1439,43.555,76.293
+    .goto 1439/1,88.81,5001.87--c:1439,43.555,76.293
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Onu|r
     .turnin 950 >> Gebt die Quest Rückkehr zu Onu ab
     .target Onu
 step
-    .goto 1439,44.401,76.425
+    .goto 1439/1,33.40,4996.11--c:1439,44.401,76.425
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Kerlonian Evershade|r, um die Eskorte zu beginnen
     >>|cRXP_WARN_Überspringt diesen Schritt, wenn er nicht dort ist. Es kann bis zu 25 Minuten dauern, bis er respawnt|r
     >>|cRXP_WARN_Dies ist eine Zeitquest, ihr müsst ihn in 20 Minuten zu seinem Beutel bringen|r

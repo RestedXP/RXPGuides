@@ -1966,6 +1966,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Gar'Thok|r
     .turnin 784 >>Gebt die Quest Vernichtet die Verräter ab
     .turnin 830 >>Gebt die Quest Die Befehle des Admirals ab
+    .turnin 96821 >>Gebt die Quest Legging It ab
     .accept 825 >>Akzeptiert die Quest Aus den Wrackteilen geborgen....
     .accept 831 >>Akzeptiert die Quest Die Befehle des Admirals
     .target +Gar'Thok
@@ -4124,7 +4125,7 @@ step << Warlock
     #optional
     #completewith next
     .goto 1420/0,726.06,1801.95
-    >>Plündert |cRXP_PICK_Perrines Truhe|r für |T133733:0|t[Egalins Zauberfoliant]
+    >>Beute |cRXP_PICK_Perrines Truhe|r für |T133733:0|t[Egalins Zauberfoliant]
     .complete 1473,1 --Egalin's Grimoire (1)
     .isQuestAvailable 1504
 step << Warlock

@@ -96,14 +96,14 @@ step << Warrior/Rogue/Paladin
 step << Warrior/Rogue/Paladin
     .goto Darkshore,38.191,40.934
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Delfrum Flintbeard|r
-    .train 2020 >> Erlernt Schmiedekunst. Dies ermöglicht es euch, Schärfsteine mit +2 Schaden für die Waffe von Euch herzustellen, die sehr stark sind. << Warrior/Rogue
+    .train 2020 >> Erlernt Schmiedekunst. So könnt ihr Schleifsteine mit +2 Schaden für die Waffe von Euch herstellen, die sehr stark sind. << Warrior/Rogue
     .train 2020 >> Dies ermöglicht es euch, Gewichtssteine mit +2 Schaden für die Waffe von Euch herzustellen, die sehr stark sind. << Paladin
     .skill blacksmithing,1,1
     .target Delfrum Flintbeard
 step << Warrior/Rogue/Paladin
     .goto Darkshore,38.225,41.199
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Thelgrum Stonehammer|r
-    >>|cRXP_BUY_Kauft eine|r |T134708:0|t[Spitzhacke] |cRXP_BUY_bei|r |cRXP_FRIENDLY_Thelgrum Steinhammer|r
+    >>|cRXP_BUY_Kauft|r |T134708:0|t[Spitzhacke] |cRXP_BUY_vom|r |cRXP_FRIENDLY_Thelgrum Steinhammer|r
     .collect 2901,1,9144,1 --Mining Pick (1)
     .target Thelgrum Stonehammer
 step
@@ -139,16 +139,16 @@ step
 step
 #map Darkshore
     .goto Felwood,18.81,26.69
-    >>Beute |cRXP_PICK_Gestrandete Meereskreatur|r für die |cRXP_LOOT_Meereskreatur-Knochen|r
+    >>Plündert |cRXP_PICK_Gestrandete Seekreatur|r für |cRXP_LOOT_Seekreatur-Knochen|r
     .complete 3524,1
 step << Druid
     #completewith end
-    >>|cRXP_WARN_St. |T136065:0|t[Kräuterkunde] auf 15. Sammelt 5 |T134187:0|t[Earthroot] für eine zukünftige Quest|r
+    >>|T136065:0|t|T134187:0|t|cRXP_WARN_Erlernt Kräuterkunde auf St. 15. Sammelt 5 [Earthroot] für eine zukünftige Quest|r
     .collect 2449,5,6123,1
 step
 #map Darkshore
     .goto Felwood,22.39,29.45
-    >>Entdeckt das Furbolg Camp (Lauft zum Totem und dann weg)
+    >>Entdeckt das Furbolg-Lager (Lauft zum Totem, dann lauft weg)
     .complete 984,1 -- Find a corrupt furbolg camp
 step
     #label RabidThistle
@@ -171,7 +171,7 @@ step
     .mob Pygmy Tide Crawler
     .mob Young Reef Crawler
 step
-    .xp 12-3550 >> Farmt, bis ihr 3550 XP von Stufe 12 entfernt seid (5250+/8800 XP)
+    .xp 12-3550 >> Farmt bis 3550 EP vor Stufe 12 (5250+/8800 EP)
 step
 #map Darkshore
     .goto Felwood,19.13,21.39
@@ -210,7 +210,7 @@ step << !Warrior !Rogue
     #completewith next
     .goto Darkshore,37.45,40.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Dalmond|r
-    .vendor >> |cRXP_WARN_Kauft so viele|r |T133634:0|t[Kleiner brauner Beutel] |cRXP_WARN_, wie ihr braucht|r
+    .vendor >> |cRXP_WARN_Kauft soviele|r |T133634:0|t[Kleiner brauner Beutel] |cRXP_WARN_wie nötig|r
     >>|cRXP_WARN_Buy|r |T132382:0|t[Scharfer Pfeils] |cRXP_WARN_or|r |T132384:0|t[Schweres Geschosss] << Hunter
     .target Dalmond
 step
@@ -225,13 +225,13 @@ step << Druid
     #completewith next
     .goto Darkshore,42.97,45.47,15,0
     .goto Darkshore,43.50,45.97
-    >>|cRXP_WARN_ENTER die Mondkin-Höhle|r
-    .cast 18974 >> |cRXP_WARN_Benutzt|r |T132857:0|t[Cenarion Mondstaub] |cRXP_WARN_am |cRXP_PICK_Mondkin Stein|r im Inneren der Höhle, um|r |cRXP_ENEMY_Mondklaue|r herbeizurufen
+    >>|cRXP_WARN_Betretet die Mondkin-Höhle|r
+    .cast 18974 >> Benutzt |T132857:0|t[Cenarion Mondstaub] bei |cRXP_PICK_Mondkin-Stein|r in der Höhle, um |cRXP_ENEMY_Mondklaue|r zu beschwören
     .use 15208
 step << Druid
     .goto Darkshore,42.97,45.47,15,0
     .goto Darkshore,43.50,45.97
-    .use 15208 >> Tötet |cRXP_ENEMY_Mondklaue|r. Sprecht mit |cRXP_FRIENDLY_Mondklaue Willenskraft|r
+    .use 15208 >> Tötet |cRXP_ENEMY_Mondklaue|r. Sprecht mit |cRXP_FRIENDLY_Geist von Mondklaue|r
     .skipgossip
     .complete 6001,1 --Defeat Lunaclaw (x1)
     .mob Lunaclaw
@@ -280,7 +280,7 @@ step << NightElf Warrior
     #completewith next
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Ariyell Himmelsschatten|r
     .goto Darnassus,58.765,44.494
-    >>|cRXP_WARN_Kauft einen Stapel von|r |T135425:0|t[Keen Werfen Knives]
+    >>|cRXP_WARN_Kauft einen Stapel|r |T135425:0|t[Scharfe Wurfmesser]
     .collect 3107,200
     .target Ariyell Skyshadow
 step << NightElf Priest
@@ -315,11 +315,11 @@ step
     .target Cerellean Whiteclaw
 step
     #completewith next
-    .goto 1439,32.432,43.744,15 >> Reist bis zum Ende des Docks und springt dann ins Wasser
+    .goto 1439,32.432,43.744,15 >> Reist zum Ende des Docks, dann springt ins Wasser
 step
 #map Darkshore
     .goto Felwood,13.63,21.44
-    >>Beute |cRXP_PICK_Skelettartig Meeresschildkröte|r für die |cRXP_LOOT_Sea Schildkröte Remains|r
+    >>Plündert die |cRXP_PICK_Skelettartige Meeresschildkröte|r für die |cRXP_LOOT_Meeresschildkrötenüberreste|r
     .complete 4681,1 -- Turtle Remains
 step
 #map Darkshore
@@ -345,7 +345,7 @@ step
     #label Bashal1
     .goto Felwood,27.70,10.03
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Asterion|r
-    >>|cRXP_WARN_Folgen der Straße nach Bashal'Aran|r
+    >>|cRXP_WARN_Folgt den Weg nach Bashal'Aran|r
     >>|cRXP_WARN_Vermeidet |cRXP_ENEMY_Wilder Grell|r und |cRXP_ENEMY_Übler Grimmling|r auf dem weg zu töten|r
     .turnin 954 >> Gebt die Quest Bashal'Aran ab
     .accept 955 >> Akzeptiert die Quest Bashal'Aran
@@ -385,7 +385,7 @@ step
     .target Asterion
 step
     #completewith Tysha
-    >>|cRXP_WARN_Folgen der Straße nach Süden und haltet nach|r Waldschreiter Fledglings|cRXP_ENEMY_ Ausschau|r
+    >>|cRXP_WARN_Folgt den Weg nach Süden und sucht in der Nähe nach|r |cRXP_ENEMY_Foreststrider Fledglings|r
     >>Tötet |cRXP_ENEMY_Foreststrider Fledgling|r. Plündert sie für |cRXP_LOOT_Strider Fleisch|r
     .collect 5469,5
     .mob Foreststrider Fledgling
@@ -441,7 +441,7 @@ step
     .turnin 953 >> Gebt die Quest Der Untergang von Ameth'Aran ab
 step
     #completewith BashalFinal
-    >>|cRXP_WARN_Folgen der Straße nach Norden und haltet nach|r Waldschreiter Fledglings|cRXP_ENEMY_ Ausschau|r
+    >>|cRXP_WARN_Folgt den Weg nach Norden und sucht in der Nähe nach|r |cRXP_ENEMY_Foreststrider Fledglings|r
     >>Tötet |cRXP_ENEMY_Foreststrider Fledgling|r. Plündert sie für |cRXP_LOOT_Strider Fleisch|r
     .collect 5469,5
     .mob Foreststrider Fledgling
@@ -464,7 +464,7 @@ step
     .goto Darkshore,45.48,45.24,60,0
     .goto Darkshore,42.73,45.67
     >>Tötet |cRXP_ENEMY_Moonkins|r. Plündert sie für |T132832:0|t[|cRXP_LOOT_Small Eggs|r]
-    >>Ihr werdet später mit |T133971:0|t[Kochkunst] |cRXP_WARN_Stufe 10 erreichen, indem ihr|r |T132832:0|t[|cRXP_WARN_Klein Eggs|r] |cRXP_LOOT_benutzt|r
+    >>|cRXP_WARN_Ihr werdet aufleveln|r |T133971:0|t[Kochkunst] |cRXP_WARN_auf Stufe 10 später mit|r |T132832:0|t[|cRXP_LOOT_Klein Eier|r]
     .collect 6889,10,2178 -- Small Egg
     .skill cooking,10,1 -- step displays if cooking skill is less than 10
     .mob Young Moonkin
@@ -478,7 +478,7 @@ step
     .goto Darkshore,41.216,50.191,100,0
     .goto Darkshore,37.662,49.162,100,0
     .goto Darkshore,46.254,42.955
-    >>|cRXP_WARN_Passt auf |cRXP_ENEMY_Thistle Bären|r auf, sie betäuben|r
+    >>|cRXP_WARN_Passt auf vor |cRXP_ENEMY_Thistle-Bären|r; sie betäuben|r
     >>Tötet |cRXP_ENEMY_Waldschreiterjunges|r. Plündert sie für |cRXP_LOOT_Schreiterfleisch|r
     .collect 5469,5
     .mob Foreststrider Fledgling
@@ -487,7 +487,7 @@ step
     .goto Darkshore,37.512,41.674
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Gorbold Steelhand|r
     +Kauft |T134059:0|t[Milde Gewürze]
-    >>Benutzt die |T134059:0|t[Milde Gewürze] |cRXP_WARN_und|r |T132832:0|t[Klein Eggs] |cRXP_WARN_von Euch, um Herb Baked Eggs herzustellen. Macht das, bis|r |T133971:0|t[Kochkunst] |cRXP_WARN_von Euch Stufe 10 erreicht hat|r
+    >>|cRXP_WARN_Benutzt die|r |T134059:0|t[Milde Gewürze] |cRXP_WARN_und Eure|r |T132832:0|t[Kleine Eier] |cRXP_WARN_um Kräuterbackeier herzustellen. Macht dies, bis Eure Kochkunst Stufe 10 erreicht hat|r
     .skill cooking,10,1 -- step only displays if cooking skill is less than 10
     .target Gorbold Steelhand
 step
@@ -509,7 +509,7 @@ step
     .goto Darkshore,32.417,43.809,15,0
     .goto Darkshore,32.417,43.809,0
     .zone Wetlands >> Nimm das Boot zum Hafen von Menethil
-    >>|cRXP_WARN_St. von Euch|r |T135966:0|t[Erste Hilfe]|cRXP_WARN_, während ihr auf das Boot nach Hafen von Menethil wartet|r
+    >>|cRXP_WARN_Levelt|r |T135966:0|t[Erste Hilfe]|cRXP_WARN_, während Ihr auf das Boot nach Menethil wartet|r
 step
     .goto Wetlands,9.490,59.694
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Shellei Brondir|r
@@ -521,7 +521,7 @@ step
 step
     .goto Wetlands,2.433,78.689,-1
     .goto Ironforge,17.089,83.373,-1
-    .zone Ironforge >>Benutzt die Selbstbedienungsfunktion zum Befreien feststeckender Charaktere, um nach Eisenschmiede zu gelangen. Ihr müsst euch an dieser Stelle ausloggen und dann auf einem anderen Charakter zum Hilfemenü gehen und anschließend nach unten zu Selbstbedienung scrollen. Klickt auf den Charakter von Euch und bewegt ihn. Falls ihr euch nicht befreien könnt, hakt diesen Schritt ab und schwimmt an den Bergen entlang nach Westfall
+    .zone Ironforge >>Nutzt die Charakterhilfe-Funktion um nach Eisenschmiede zu springen. Ihr werdet euch abmelden müssen und zu dem Hilfemenü auf einem anderen Charakter navigieren, dann nach unten zu Selbstbedienung scrollen. Klickt auf von Euch Charakter und bewegt euch. Falls ihr euch nicht unstucken könnt, markiert diesen Schritt und schwimmt entlang der Berge nach Westfall
     .link https://www.youtube.com/watch?v=oVoxsr4zcg4 >> Klickt hier für eine Videoanleitung
     --*Please note that the unstuck feature doesn't work on the PTR
     .subzoneskip 809--IF Gates
@@ -580,7 +580,7 @@ step
     .goto Westfall,55.12,14.64,40,0
     .goto Westfall,56.36,17.81,65,0
     .goto Elwynn Forest,23.24,77.80
-    .zone Elwynn Forest >> Lauft die Küste hinauf und macht den Weg von Euch zum Wald von Elwynn. Vermeidet viele |cRXP_ENEMY_Murlocs|r an der Küste, da einige patrouillieren.
+    .zone Elwynn Forest >> Lauft die Küste hinauf und macht euch auf den Weg zum Elwynnwald. Seid vorsichtig, dass ihr nicht viele |cRXP_ENEMY_Murlocs|r an der Küste aggro zieht, da ein paar davon patrouillieren.
     .zoneskip Ironforge
     .subzoneskip 809
     .subzoneskip 2257
@@ -595,7 +595,7 @@ step
 step
     .goto StormwindClassic,55.724,65.401
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Keldric Boucher|r
-    .vendor >> |cRXP_BUY_Kauft|r |T134830:0|t[Geringer Heiltrank] |cRXP_BUY_falls vorrätig|r
+    .vendor >> |cRXP_BUY_Kauft|r |T134830:0|t[Geringer Heiltrank] |cRXP_BUY_falls vorhanden|r
     .target Keldric Boucher
     .zoneskip Ironforge
     .subzoneskip 809
@@ -619,7 +619,7 @@ step
     .subzoneskip 809
     .subzoneskip 2257
 step
-    >>|cRXP_WARN_Steigt in die Bahn ein, sobald sie ankommt. Steigt auf der anderen Seite aus und sucht auf der mittleren Plattform nach |cRXP_FRIENDLY_Monty|r|r
+    >>|cRXP_WARN_Steigt in die Straßenbahn ein, sobald sie ankommt. Steigt auf der anderen Seite aus und sucht nach |cRXP_FRIENDLY_Monty|r auf dem mittleren Bahnsteig|r
     >>|cRXP_WARN_Wirkt|r |T136221:0|t[Leerwandler beschwören] |cRXP_WARN_und|r |T135230:0|t[Gesundheitsstein herstellen] |cRXP_WARN_während ihr wartet|r << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Monty|r
     .accept 6661 >> Akzeptiert die Quest Tiefenbahn-Ratten-Razzia
@@ -668,7 +668,7 @@ step
     .goto Ironforge,24.200,74.600,-1
     .goto Ironforge,23.800,71.800,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit einem |cRXP_FRIENDLY_Ironforge Auktionator|r
-    >>Kauft die folgenden Gegenstände für eine schnellere Questabgabe in Loch Modan in Kürze
+    >>Kauft die folgenden Gegenstände, um schneller bei Loch Modan abzugeben
     >>Das spart dir Zeit, weil du dann später nicht rumläufst und die Mobs dafür töten musst. Überspring diesen Schritt, wenn du nichts kaufen willst
     >>|T134342:0|t[Ebergedärme]
     >>|T134027:0|t[Bärenfleisch]
@@ -763,14 +763,14 @@ step
 step
     #som
     .goto Dun Morogh,83.892,39.188
-    >>Wählt den Dolch und benutzt ihn als Off-Hand von Euch, bis ihr ein Schwert beim Händler bekommt << Rogue
+    >>Wählt den Dolch, benutzt ihn als euer Nebenhand-Slot, bis ihr ein Vendorschwert bekommt << Rogue
     .target Pilot Hammerfoot
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Pilot Hammerfuß|r
     .turnin 417 >> Gebt die Quest Pilotenrache ab
 step
     #era
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Pilot Hammerfuß|r
-    >>|cRXP_WARN_Wählen die|r |T135641:0|t[|cRXP_FRIENDLY_Handwerkerdolch|r] |cRXP_WARN_als Belohnung von Euch. Legt ihn in die Aus-Hand von Euch|r << Rogue
+    >>|cRXP_WARN_Wählt|r |T135641:0|t[|cRXP_FRIENDLY_Handwerkerdolch|r] |cRXP_WARN_als eure Belohnung. Legt ihn in eure Nebenhand an|r << Rogue
     .target Pilot Hammerfoot
     .goto Dun Morogh,83.892,39.188
     .turnin 417 >> Gebt die Quest Pilotenrache ab
@@ -824,8 +824,8 @@ step
     #label StormpikeO
     .goto Loch Modan,35.534,48.404
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gastwirt Ofenglut|r
-    .vendor >> |cRXP_BUY_Kauft|r |T133968:0|t[Frisch gebackenes Brot]|cRXP_BUY_. Zielt auf etwa 40 ab|r << Warrior/Rogue
-    .vendor >> |cRXP_BUY_Kauft|r |T133968:0|t[Frisch gebackenes Brot] |cRXP_BUY_und|r |T132815:0|t[Eiskalte Milch]|cRXP_BUY_. Zielt auf etwa 20|r |T133968:0|t[Frisch gebackenes Brot] |cRXP_BUY_und 40|r |T132815:0|t[Eiskalte Milch] << !Warrior !Rogue
+    .vendor >> |cRXP_BUY_Kauft|r |T133968:0|t[Frisch gebackenes Brot]|cRXP_BUY_. Habt etwa 40|r << Warrior/Rogue
+    .vendor >> |cRXP_BUY_Kauft|r |T133968:0|t[Frisch gebackenes Brot] |cRXP_BUY_und|r |T132815:0|t[Eiskalte Milch]|cRXP_BUY_. Habt etwa 20|r |T133968:0|t[Frisch gebackenes Brot] |cRXP_BUY_und 40|r |T132815:0|t[Eiskalte Milch] << !Warrior !Rogue
     .target Innkeeper Hearthstove
 step
     .line Loch Modan,36.72,41.97,37.24,43.19,37.33,45.63,36.77,46.20,35.19,46.88,32.67,49.71,35.19,46.88,36.77,46.20,37.33,45.63,37.24,43.19,36.72,41.97
@@ -904,8 +904,8 @@ step
 step << Paladin/Warrior
     .goto Loch Modan,42.867,9.885
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Nillen Andemar|r
-    .vendor >>|cRXP_FRIENDLY_Nillen Andemar|r |cRXP_WARN_verkauft|r |T133476:0|t[|cRXP_FRIENDLY_Heavy Aufgespießt Streitkolben|r] |cRXP_WARN_das ein Gegenstand mit begrenztem Vorrat ist|r
-    >>|cRXP_WARN_Überprüfen, ob es verfügbar ist, und kauft es, wenn ihr könnt. Falls ihr es euch nicht leisten könnt, farmt Geld von den |cRXP_ENEMY_Tunnel Ratten|r in der Nähe, bis ihr genug habt|r
+    .vendor >>|cRXP_FRIENDLY_Nillen Andemar|r |cRXP_WARN_verkauft|r |T133476:0|t[|cRXP_FRIENDLY_Schwerer Stachelkolben|r] |cRXP_WARN_welcher ein Gegenstand mit limitiertem Angebot ist|r
+    >>|cRXP_WARN_Überprüft, ob es verfügbar ist, und kauft es, wenn ihr könnt. Wenn ihr es euch nicht leisten könnt, farmt dann Geld von den |cRXP_ENEMY_Tunnel Ratten|r in der Nähe, bis ihr genug habt|r
     >>|cRXP_WARN_Tut dies schnell, da ein anderer Spieler es vor euch kaufen könnte|r
     .target Nillen Andemar
 step
@@ -1015,7 +1015,7 @@ step
 step
     .goto Loch Modan,34.757,48.618
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Yanni Stoutheart|r
-    >>|cRXP_WARN_Kauft einen|r |T135237:0|t[Feuerstein und Zunder] |cRXP_WARN_zusammen mit 1|r |T135435:0|t[Simple Holz]|cRXP_WARN_. Kauft beliebige|r|T133634:0|t[Kleiner brauner Beutel] |cRXP_WARN_falls nötig|r
+    >>|cRXP_WARN_Kauft|r |T135237:0|t[Feuerstein und Zunder] |cRXP_WARN_zusammen mit 1|r |T135435:0|t[Einfaches Holz]|cRXP_WARN_. Kauft|r|T133634:0|t[Kleiner brauner Beutel] |cRXP_WARN_falls nötig|r
     .collect 4470,1 --Simple Wood (1)
     .collect 4471,1 --Flint and Tinder (1)
     .target Yanni Stoutheart
@@ -1081,7 +1081,7 @@ step
     .target Thorgrum Borrelson
 step << Priest
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Harick Boulderdrum|r
-    >>|cRXP_BUY_Kauft einen|r |T135468:0|t[Glimmender Zauberstab]|cRXP_BUY_. Rüstet ihn aus, wenn ihr Stufe 15 seid, falls ihr das nicht bereits getan habt|r
+    >>|cRXP_BUY_Kauft|r |T135468:0|t[Glimmender Zauberstab]|cRXP_BUY_. Rüstet es aus, wenn ihr 15 seid|r
     .goto Ironforge,23.141,15.922
     .collect 5208,1 --Smoldering Wand (1)
     .target Ardwyn Cailen
@@ -1168,8 +1168,8 @@ step << Druid
     #ah
     .goto Stormwind City,53.612,59.764
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Auktionatorin Jaxon|r
-    >>Falls ihr nicht vorhabt, |T136065:0|t[Kräuterkunde] als Hauptberuf zu wählen, kauft 5 |T134187:0|t[Earthroot] für eine zukünftige Quest
-    >>Kauft die folgenden Gegenstände für schnellere Questabgaben in Westfall in Kürze
+    >>Falls ihr nicht plant, |T136065:0|t[Kräuterkunde] als Hauptberuf zu nehmen, kauft 5 |T134187:0|t[Earthroot] für eine zukünftige Quest
+    >>Kauft die folgenden Gegenstände für schnellere Abgaben später in Westfall
     >>Das spart dir Zeit, weil du dann später nicht rumläufst und die Mobs dafür töten musst. Überspring diesen Schritt, wenn du nichts kaufen willst
     >>|T133972:0|t[Sehniges Geierfleisch]
     >>|T133884:0|t[Murlocauge]
@@ -1189,7 +1189,7 @@ step << !Druid
     #ah
     .goto Stormwind City,53.612,59.764
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Auktionatorin Jaxon|r
-    >>Kauft die folgenden Gegenstände für schnellere Questabgaben in Westfall in Kürze
+    >>Kauft die folgenden Gegenstände für schnellere Abgaben später in Westfall
     >>Das spart dir Zeit, weil du dann später nicht rumläufst und die Mobs dafür töten musst. Überspring diesen Schritt, wenn du nichts kaufen willst
     >>|T133972:0|t[Sehniges Geierfleisch]
     >>|T133884:0|t[Murlocauge]
@@ -1207,7 +1207,7 @@ step << !Druid
 step
     .goto StormwindClassic,55.724,65.401
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Keldric Boucher|r
-    .vendor >> |cRXP_BUY_Kauft|r |T134830:0|t[Geringer Heiltrank] |cRXP_BUY_falls vorrätig|r
+    .vendor >> |cRXP_BUY_Kauft|r |T134830:0|t[Geringer Heiltrank] |cRXP_BUY_falls verfügbar|r
     .target Keldric Boucher
 step
     .goto StormwindClassic,66.277,62.137

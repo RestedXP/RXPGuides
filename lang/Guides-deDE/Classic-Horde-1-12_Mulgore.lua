@@ -1278,7 +1278,7 @@ step << Shaman
     #label MoltenBlast
     #completewith Burial
     .aura 408828 >>|cRXP_WARN_Tötet Feinde mit|r |T136026:0|t[Erdschock] |cRXP_WARN_auf ihnen mindestens einmal. Macht dies 10 Mal, um den|r |T136116:0|t[Inspiriert] |cRXP_WARN_Effekt zu erhalten|r
-    >>|cRXP_WARN_HINWEIS: Ihr müsst dies an Feinden tun, die Erfahrung gewähren können, um Stapel zu erhalten|r
+    >>|cRXP_WARN_HINWEIS: Ihr müsst dies auf Feinde wirken, die Erfahrung geben, um Stapel zu erhalten|r
     .mob Bael'dun Digger
     .mob Bael'dun Appraiser
     .train 425344,1
@@ -4486,7 +4486,7 @@ step << Shaman
     #label MoltenBlast
     #completewith Burial
     .aura 408828 >>|cRXP_WARN_Tötet Feinde mit|r |T136026:0|t[Erdschock] |cRXP_WARN_auf ihnen mindestens einmal. Macht dies 10 Mal, um den|r |T136116:0|t[Inspiriert] |cRXP_WARN_Effekt zu erhalten|r
-    >>|cRXP_WARN_HINWEIS: Ihr müsst dies an Feinden tun, die Erfahrung gewähren können, um Stapel zu erhalten|r
+    >>|cRXP_WARN_HINWEIS: Ihr müsst dies auf Feinde wirken, die Erfahrung geben, um Stapel zu erhalten|r
     .mob Bael'dun Digger
     .mob Bael'dun Appraiser
     .train 425344,1
