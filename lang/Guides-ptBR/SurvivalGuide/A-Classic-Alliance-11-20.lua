@@ -438,7 +438,7 @@ step << Druid
     .goto Moonglade,44.1444,45.227
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Silva Fil'naveth|r
     .skipgossip 1
-    .fly Teldrassil >> Voe para Vila de Rut’theran
+    .fly Teldrassil >> Voe para a Vila de Rut'theran
     .target Silva Fil'naveth
 step << Druid
     #completewith next
@@ -1612,7 +1612,7 @@ step << Druid
     .goto Moonglade,44.1444,45.227
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Silva Fil'naveth|r
     .skipgossip 1
-    .fly Teldrassil >> Voe para Vila de Rut’theran
+    .fly Teldrassil >> Voe para a Vila de Rut'theran
     .target Silva Fil'naveth
     .zoneskip Teldrassil
     .zoneskip Darnassus
@@ -2194,7 +2194,7 @@ step
 .dungeon WC
     #label EnterWC
     .goto 1414,52.37,55.20
-    +Entre na Caverna Ululante
+    +Entre nas Cavernas do Lamento
     .zoneskip 1414,1 -- similar to stockades, no subzone for WC
 step
 .dungeon WC

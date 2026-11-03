@@ -663,7 +663,7 @@ step << Druid
     .goto Moonglade,44.1444,45.227
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Silva Fil'naveth|r
     .skipgossip
-    .fly Teldrassil >> Voe para Vila de Rut’theran
+    .fly Teldrassil >> Voe para a Vila de Rut'theran
     .target Silva Fil'naveth
     .zoneskip Darnassus
 step << Druid
@@ -1895,7 +1895,7 @@ step << Warrior/Paladin/Shaman
     .xp <16,1
 step
 	.isOnQuest 9699,9584,9643,9580,10063
-    .hs >> Use a Pedra de Regresso para O Entreposto Rubro
+    .hs >> Usar Pedra de Regresso para Vigília Rubra
     >>|cRXP_BUY_Compre comida/água se necessário|r << !Warrior !Rogue
 	>>|cRXP_BUY_Compre comida se necessário|r << Warrior/Rogue
     .cooldown item,6948,>2,1
@@ -2548,7 +2548,7 @@ step << Druid
     .goto Moonglade,44.1444,45.227
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Silva Fil'naveth|r
     .skipgossip
-    .fly Teldrassil >> Voe para Vila de Rut’theran
+    .fly Teldrassil >> Voe para a Vila de Rut'theran
     .target Silva Fil'naveth
     .zoneskip Darnassus
 step << Druid
@@ -2598,7 +2598,7 @@ step << Druid
     .target Tajarri
 step
     .isOnQuest 9748,9669,9741,9711
-    .hs >> Use a Pedra de Regresso para O Entreposto Rubro
+    .hs >> Usar Pedra de Regresso para Vigília Rubra
     >>|cRXP_BUY_Compre comida/água se necessário|r << !Warrior !Rogue
 	>>|cRXP_BUY_Compre comida se necessário|r << Warrior/Rogue
     .cooldown item,6948,>2,1
@@ -3124,7 +3124,7 @@ step << Shaman
     .target Aqueous
 step << Shaman
     .isOnQuest 9504
-    .hs >> Use a Pedra de Regresso para O Entreposto Rubro
+    .hs >> Usar Pedra de Regresso para Vigília Rubra
     >>|cRXP_BUY_Compre comida/água se necessário|r << !Warrior !Rogue
 	>>|cRXP_BUY_Compre comida se necessário|r << Warrior/Rogue
     .cooldown item,6948,>2,1
@@ -3955,7 +3955,7 @@ step << Rogue
     >>|T133644:0|t[Bater de Carteira] o |cRXP_ENEMY_Drone Défias Malformado|r. Saqueie-o para obter a |cRXP_LOOT_Chave da Torre Défias|r
     >>Você deve estar em [Furtividade] para usar [Bater Carteira]
     >>|cRXP_WARN_O |cRXP_ENEMY_Drone Défias Malformado|r surge na entrada da torre, depois patrulha ao redor da parte externa|r
-    >>|cRXP_WARN_Tenha cuidado, pois ele causa MUITO dano. Se o seu|r |T132320:0|t[Furtividade] |cRXP_WARN_interrompa, use rapidamente|r |T132307:0|t[Disparada] |cRXP_WARN_e fuja|r
+    >>Tome cuidado, pois ele causa MUITO dano. Se sua [Furtividade] quebrar, use rapidamente [Disparada] e fuja
     .complete 2359,2 --Collect Defias Tower Key (x1)
     .link https://www.youtube.com/watch?v=5sIew15IcG0 >> Clique AQUI para o guia em vídeo
     .mob Malformed Defias Drone
@@ -5056,7 +5056,7 @@ step
 .dungeon WC
     #label EnterWC
     .goto 1414/1,-2205.4612,-742.4261
-    +Entre na Caverna Ululante
+    +Entre nas Cavernas do Lamento
     .zoneskip 1414,1 -- similar to stockades, no subzone for WC
 step
 .dungeon WC
@@ -5280,7 +5280,7 @@ step
 step
 .dungeon BFD
     #completewith RuuzelTurnin
-    +Comece a procurar um grupo para Profundezas Negras enquanto conclui os próximos passos. Muito em breve você estará fazendo Profundezas de Blackfathom
+    +Comece a procurar um grupo para Profundezas Negras enquanto conclui os próximos passos. Muito em breve você estará fazendo Profundezas Negras
 step
     .goto Ashenvale,7.00,15.20,0
     .goto Ashenvale,14.46,17.15,0

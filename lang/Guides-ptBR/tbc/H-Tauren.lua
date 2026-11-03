@@ -917,7 +917,7 @@ step << Hunter
     .xp <8,1
 step << Druid
     .goto Mulgore,48.48,59.64
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gennia|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gennia Runa Totem|r
     .train 5186 >>Treine suas magias de classe
     .target Gennia Runetotem
     .xp <8,1
@@ -1226,7 +1226,7 @@ step << Shaman
 step << Druid
     #xprate <1.5
     .goto Mulgore,48.48,59.64
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gennia|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gennia Runa Totem|r
     .train 5186 >>Treine suas magias de classe
     .target Gennia Runetotem
     .xp <8,1
@@ -1703,7 +1703,7 @@ step << Hunter
     .target Yaw Sharpmane
 step << Druid
     .goto Mulgore,48.48,59.64
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gennia|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gennia Runa Totem|r
     .trainer >> Treine suas magias de classe
     .accept 5928 >>Aceite Atendendo o chamado
     .target Gennia Runetotem
@@ -1711,7 +1711,7 @@ step << Druid
 step << Druid
     #optional
     .goto Mulgore,48.48,59.64
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gennia|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gennia Runa Totem|r
     .train 8924 >>Treine suas magias de classe
     .target Gennia Runetotem
 step << Hunter
@@ -2484,7 +2484,7 @@ step << Shaman
 step << Druid
     #xprate <1.5
     .goto Mulgore,48.48,59.64
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gennia|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gennia Runa Totem|r
     .train 8936 >>Treine suas magias de classe
     .target Gennia Runetotem
     .xp <12,1

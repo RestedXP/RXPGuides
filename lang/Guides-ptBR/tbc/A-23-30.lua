@@ -1448,7 +1448,7 @@ step << Rogue
     >>|T133644:0|t[Bater de Carteira] o |cRXP_ENEMY_Drone Défias Malformado|r. Saqueie-o para obter a |cRXP_LOOT_Chave da Torre Défias|r
     >>Você deve estar em [Furtividade] para usar [Bater Carteira]
     >>|cRXP_WARN_O |cRXP_ENEMY_Drone Défias Malformado|r surge na entrada da torre, depois patrulha ao redor da parte externa|r
-    >>|cRXP_WARN_Tenha cuidado, pois ele causa MUITO dano. Se o seu|r |T132320:0|t[Furtividade] |cRXP_WARN_interrompa, use rapidamente|r |T132307:0|t[Disparada] |cRXP_WARN_e fuja|r
+    >>Tome cuidado, pois ele causa MUITO dano. Se sua [Furtividade] quebrar, use rapidamente [Disparada] e fuja
     .complete 2359,2 --Collect Defias Tower Key (x1)
     .link https://www.youtube.com/watch?v=5sIew15IcG0 >> Clique AQUI para o guia em vídeo
     .mob Malformed Defias Drone
@@ -1477,7 +1477,7 @@ step
 step
     #label MoonbrookSt
     .goto Westfall,41.51,66.72
-    >>Clique no |cRXP_PICK_Old Footlocker|r no chão
+    >>Clique em |cRXP_PICK_Baú Velho|r no chão
     .turnin 67 >> Entregue A Lenda de Galvão
     .accept 68 >> Aceite A Lenda de Galvão
 step << Paladin
@@ -4384,7 +4384,7 @@ step
     .goto Duskwood,28.6,49.4,50,0
     .goto Duskwood,32.8,35.2,50,0
     .goto Duskwood,23.6,36.6
-    >>Mate os |cRXP_ENEMY_Black Widow Hatchlings|r e os |cRXP_ENEMY_Carrion Recluses|r. Saqueie a |cRXP_LOOT_Peçonha de Aranha|r deles
+    >>Mate |cRXP_ENEMY_Filhotes de Viúva Negra|r e |cRXP_ENEMY_Reclusas Carniceira|r. Saqueie-os para obter seus |cRXP_LOOT_Veneno de Aranha|r
     .complete 101,2 --5/5 Vial of Spider Venom
     .mob Black Widow Hatchling
     .mob Carrion Recluse
@@ -5600,7 +5600,7 @@ step
     .goto Duskwood,28.6,49.4,50,0
     .goto Duskwood,32.8,35.2,50,0
     .goto Duskwood,23.6,36.6
-    >>Mate os |cRXP_ENEMY_Black Widow Hatchlings|r e os |cRXP_ENEMY_Carrion Recluses|r. Saqueie a |cRXP_LOOT_Peçonha de Aranha|r deles
+    >>Mate |cRXP_ENEMY_Filhotes de Viúva Negra|r e |cRXP_ENEMY_Reclusas Carniceira|r. Saqueie-os para obter seus |cRXP_LOOT_Veneno de Aranha|r
     .complete 101,2 --5/5 Vial of Spider Venom
     .mob Black Widow Hatchling
     .mob Carrion Recluse

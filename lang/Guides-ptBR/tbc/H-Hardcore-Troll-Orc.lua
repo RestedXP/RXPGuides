@@ -2290,7 +2290,7 @@ step
 step
     .goto Durotar,51.95,43.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com|r |cRXP_FRIENDLY_Gar'Thok|r
-    .turnin 837 >>Entregue Encroachment
+    .turnin 837 >>Entregue Invasão
     .target Gar'Thok
 step
     #optional
@@ -2596,7 +2596,7 @@ step << Orc/Troll
 step << skip --Orc Rogue/Troll Rogue
     .goto Orgrimmar,42.75,53.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Therzok|r
-	.accept 1963 >> Aceite The Estilhaçada Hand - Missão
+	.accept 1963 >> Aceite A Mão Despedaçada
     .target Therzok
     --can't do this if ghostlands rogue q is done instead
 step << Orc Warlock

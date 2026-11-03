@@ -272,7 +272,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Comandante Ashlam Punhobom|r
     .turnin 5092 >> Entregue Abrindo Caminho
     .accept 5215 >> Aceite Os Caldeirões do Flagelo
-    .accept 5097 >> Aceite Em Todas as Torres de Vigia
+    .accept 5097 >> Aceite Você não vê as torres?
     .target Commander Ashlam Valorfist
 step
     .goto Western Plaguelands,42.972,84.501

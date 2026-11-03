@@ -2181,7 +2181,7 @@ step << Shaman/Hunter
     .target +Cook Torka
     .goto Durotar,51.12,42.46
     .turnin 825 >>Entregue Dos destroços...
-    .turnin 837 >>Entregue Encroachment
+    .turnin 837 >>Entregue Invasão
     .target +Gar'Thok
     .goto Durotar,51.95,43.50
 step << !Shaman !Hunter
@@ -2750,13 +2750,13 @@ step
 step << !Shaman
     .goto Durotar,51.95,43.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gar'Thok|r
-    .turnin 837 >>Entregue Encroachment
+    .turnin 837 >>Entregue Invasão
     .target Gar'Thok
     .group
 step << Shaman
     .goto Durotar,51.95,43.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gar'Thok|r
-    .turnin 837 >>Entregue Encroachment
+    .turnin 837 >>Entregue Invasão
     .target Gar'Thok
 step << Warrior
     .goto Durotar,54.18,42.46
@@ -3027,7 +3027,7 @@ step
 step << Rogue
     .goto Orgrimmar,42.75,53.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Therzok|r
-	.accept 1963 >> Aceite The Estilhaçada Hand - Missão << Orc Rogue/Troll Rogue
+	.accept 1963 >> Aceite A Mão Despedaçada << Orc Rogue/Troll Rogue
     .trainer >> Treine suas magias de classe
     .target Therzok
 step << Shaman
@@ -3870,14 +3870,14 @@ step
     .goto Tirisfal Glades,58.20,51.43
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Necroguarda Dinis|r
     .turnin 404 >>Entregue Uma tarefa podre
-    .accept 426 >>Aceite Os Moinhos Invadidos
+    .accept 426 >>Aceite Os moinhos invadidos
     .target Deathguard Dillinger
     .isQuestComplete 404
 step
     #optional
     .goto Tirisfal Glades,58.20,51.43
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Necroguarda Dinis|r
-    .accept 426 >>Aceite Os Moinhos Invadidos
+    .accept 426 >>Aceite Os moinhos invadidos
     .target Deathguard Dillinger
     .isQuestTurnedIn 404
 step

@@ -3005,7 +3005,7 @@ step << Rogue
     .train 8676 >> Aprenda |T132282:0|t[Emboscar]
     .train 1943 >> Aprenda |T132302:0|t[Ruptura]
     .train 1856 >> Aprenda |T132331:0|t[Sumir]
-    .train 1725 >> Treine |T132289:0|t[Distração]
+    .train 1725 >> Aprenda |T132289:0|t[Distração]
     .train 1785 >> Aprenda |T132320:0|t[Furtividade Grau 2]
     .accept 2460 >>Aceite A saudação dos Mão Despedaçada
     .target Shenthul
@@ -6307,7 +6307,7 @@ step
 step
     .goto Thousand Needles,31.87,21.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Grish Pisa Léguas|r
-    .turnin 5881 >> Entregue Chamando as Reservas
+    .turnin 5881 >> Entregue Chamando as reservas
     .target Grish Longrunner
     .isOnQuest 5881
 step

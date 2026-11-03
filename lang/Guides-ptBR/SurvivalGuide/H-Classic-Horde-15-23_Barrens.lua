@@ -16,7 +16,7 @@ RXPGuides.RegisterGuide([[
 
 step << !Tauren !Hunter !Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gar'Thok|r
-    .turnin 837 >>Entregue Encroachment
+    .turnin 837 >>Entregue Invasão
     .goto Durotar,51.95,43.50
     .target Gar'Thok
     .isQuestComplete 837
@@ -1377,7 +1377,7 @@ step << Orc Rogue/Troll Rogue
     .goto Orgrimmar,42.74,53.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Therzok|r
     .turnin 1963 >> Entregue A Mão Despedaçada
-    .accept 1858 >> Aceite The Estilhaçada Hand - Missão
+    .accept 1858 >> Aceite A Mão Despedaçada
     .target Therzok
 step << Rogue
     .goto Orgrimmar,42.72,52.95
@@ -1679,7 +1679,7 @@ step
     .mob Ornery Plainstrider
 step
     .goto The Barrens,55.80,17.03
-    >>Usar o |T134227:0|t[Berrante de Echeyaki] para invocar |cRXP_ENEMY_Echeyaki|r
+    >>Use o |T134227:0|t[Berrante de Echeyaki] para invocar |cRXP_ENEMY_Echeyaki|r
     >>Mate |cRXP_ENEMY_Echeyaki|r. Pegue o |cRXP_LOOT_Pelego de Echeyaki|r
     >>|cRXP_WARN_Se |cRXP_ENEMY_Echeyaki|r não aparecer após usar o|r |T134227:0|t[Berrante de Echeyaki]|cRXP_WARN_ ou você não garantir o primeiro ataque quando ele aparecer, pule esta etapa|r
     .complete 881,1 --Echeyakee's Hide (1)
@@ -1698,7 +1698,7 @@ step
     .itemcount 5100,<1 --Echeyakee's Hide (0)
 step
     .goto The Barrens,55.80,17.03
-    >>Usar o |T134227:0|t[Berrante de Echeyaki] para invocar |cRXP_ENEMY_Echeyaki|r
+    >>Use o |T134227:0|t[Berrante de Echeyaki] para invocar |cRXP_ENEMY_Echeyaki|r
     >>Mate |cRXP_ENEMY_Echeyaki|r. Pegue o |cRXP_LOOT_Pelego de Echeyaki|r
     .complete 881,1 --Echeyakee's Hide (1)
     .mob Echeyakee
@@ -2981,7 +2981,7 @@ step
     .dungeon DM
 step
     #optional
-    .abandon 103 >> Abandone Guardião da Chama
+    .abandon 103 >> Abandone A chama não pode apagar
     .dungeon DM
 step
     #label EnterDM
@@ -4769,7 +4769,7 @@ step << Rogue
     .train 8676 >> Aprenda |T132282:0|t[Emboscar]
     .train 1943 >> Aprenda |T132302:0|t[Ruptura]
     .train 1856 >> Aprenda |T132331:0|t[Sumir]
-    .train 1725 >> Treine |T132289:0|t[Distração]
+    .train 1725 >> Aprenda |T132289:0|t[Distração]
     .train 1785 >> Aprenda |T132320:0|t[Furtividade Grau 2]
     .accept 2460 >>Aceite A saudação dos Mão Despedaçada
     .target Shenthul

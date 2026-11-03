@@ -1081,7 +1081,7 @@ step
 step
     .goto Western Plaguelands,42.702,84.031
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Comandante Ashlam Punhobom|r
-    .accept 5098 >> Aceite All Along the Watchtowers
+    .accept 5098 >> Aceite Você não vê as torres?
     .target Commander Ashlam Valorfist
 step
     .goto Western Plaguelands,46.681,71.135,-1
@@ -1338,7 +1338,7 @@ step
     .goto Tirisfal Glades,83.15,68.92
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com Derrington|r
     .turnin 5096 >>Entregue Diversões Escarlates
-    .accept 5098 >>Aceite Em Todas as Torres de Vigia
+    .accept 5098 >>Aceite Você não vê as torres?
 	.target High Executor Derrington
 step
     .goto Western Plaguelands,46.681,71.135,-1

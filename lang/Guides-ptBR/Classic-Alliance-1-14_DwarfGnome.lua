@@ -8613,7 +8613,7 @@ step
     #xprate <1.5
     .goto Loch Modan,82.496,63.369
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Xandar Boabarba|r
-    >>|cRXP_BUY_Compre um|r [Simple Wood] |cRXP_BUY_and a|r [Flint and Tinder] |cRXP_BUY_from him|r
+    >>|cRXP_BUY_Compre uma|r [Madeira Simples] |cRXP_BUY_e uma|r [Pederneira e Lenha] |cRXP_BUY_dele|r
     >>|cRXP_WARN_Isto é utilizado para preparar|r |T135805:0|t[Basic Campfires] |cRXP_WARN_em barcos ou bondes para aumentar sua|r |T133971:0|t[Culinária] |cRXP_WARN_habilidade sem perder tempo|r
     >>Você precisa de 50 em [Culinária] para uma missão mais tarde na Floresta do Crepúsculo
     .collect 4470,1 --Simple Wood (1)

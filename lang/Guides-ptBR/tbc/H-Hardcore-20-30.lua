@@ -2596,7 +2596,7 @@ step << Rogue
     .train 8676 >> Aprenda |T132282:0|t[Emboscar]
     .train 1943 >> Aprenda |T132302:0|t[Ruptura]
     .train 1856 >> Aprenda |T132331:0|t[Sumir]
-    .train 1725 >> Treine |T132289:0|t[Distração]
+    .train 1725 >> Aprenda |T132289:0|t[Distração]
     .train 1785 >> Aprenda |T132320:0|t[Furtividade Grau 2]
     .accept 2460 >>Aceite A saudação dos Mão Despedaçada
     .target Shenthul
@@ -6092,7 +6092,7 @@ step
 step
     .goto Thousand Needles,31.87,21.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Grish Pisa Léguas|r
-    .turnin 5881 >> Entregue Chamando as Reservas
+    .turnin 5881 >> Entregue Chamando as reservas
     .target Grish Longrunner
     .isOnQuest 5881
 step
@@ -7334,7 +7334,7 @@ step
     .maxlevel 31
 step
     .goto Thousand Needles,33.80,39.90
-    >>Open the |cRXP_PICK_Document Chest|r inside the big tent. Loot it for |cRXP_LOOT_Secret Note #2|r (NOT TRANSLATED IN :ptBR YET)
+    >>Abra o |cRXP_PICK_Baú de Documentos|r dentro da tenda grande. Pegue nele o |cRXP_LOOT_Bilhete Secreto Nº 2|r
     .complete 5064,2 --Secret Note #2 (1)
     .isQuestTurnedIn 4841
     .maxlevel 31

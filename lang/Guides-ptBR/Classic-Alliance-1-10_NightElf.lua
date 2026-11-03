@@ -22,7 +22,7 @@ step
     .goto Teldrassil,58.695,44.266
     .target Conservator Ilthalaine
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ilthalaine|r
-    .accept 456 >> Aceite O Equilíbrio da Natureza
+    .accept 456 >> Aceite O equilíbrio da natureza
 step
     #sticky
     #label balance1
@@ -59,7 +59,7 @@ step << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ilthalaine|r
     .turnin 456,1 >> Entregue O equilíbrio da natureza << Hunter
     .target Conservator Ilthalaine
-    .accept 457 >> Aceite O Equilíbrio da Natureza
+    .accept 457 >> Aceite O equilíbrio da natureza
 step << Hunter
 #xprate >1.99
     .goto Teldrassil,59.8,34.1
@@ -77,7 +77,7 @@ step << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Iverron|r
     .turnin 4495 >> Entregue Um bom amigo
     .target Iverron
-    .accept 3519 >> Aceite A Amigo in Need
+    .accept 3519 >> Aceite Um amigo em apuros
 step << Hunter
     #completewith next
     .hs >> Use sua Pedra de Retorno para ir a Umbravale
@@ -110,7 +110,7 @@ step
     .turnin 456,1 >> Entregue O equilíbrio da natureza << Hunter
     .turnin 456 >> Entregue O equilíbrio da natureza << !Hunter
     .target Conservator Ilthalaine
-    .accept 457 >> Aceite O Equilíbrio da Natureza
+    .accept 457 >> Aceite O equilíbrio da natureza
 	.accept 3116 >> Aceite O Selo Simples << Warrior
 	.accept 3117 >> Aceite O Selo Cinzelado << Hunter
 --	.accept 3118 >> Accept Encrypted Sigil << Rogue
@@ -143,7 +143,7 @@ step << !Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Iverron|r
     .turnin 4495 >> Entregue Um bom amigo
     .target Iverron
-    .accept 3519 >> Aceite A Amigo in Need
+    .accept 3519 >> Aceite Um amigo em apuros
 step << !Hunter !Warrior
     #season 2
     #completewith next
@@ -168,7 +168,7 @@ step << !Hunter
 step
     .goto Teldrassil,60.899,41.961
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dirânia Pratafulge|r
-    .turnin 3519 >> Entregue A Amigo in Need
+    .turnin 3519 >> Entregue Um amigo em apuros
     .target Dirania Silvershine
     .accept 3521 >> Aceite O Antídoto de Iverron
 step << Hunter

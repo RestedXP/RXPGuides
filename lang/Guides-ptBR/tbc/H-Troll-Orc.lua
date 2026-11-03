@@ -3215,7 +3215,7 @@ step
     #xprate <1.5
     .goto Durotar,51.95,43.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com|r |cRXP_FRIENDLY_Gar'Thok|r
-    .turnin 837 >>Entregue Encroachment
+    .turnin 837 >>Entregue Invasão
     .target Gar'Thok
 step
     #xprate <1.5
@@ -4093,7 +4093,7 @@ step
     #xprate >1.49
     .goto Durotar,51.95,43.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com|r |cRXP_FRIENDLY_Gar'Thok|r
-    .turnin 837 >>Entregue Encroachment
+    .turnin 837 >>Entregue Invasão
     .target Gar'Thok
     .isQuestComplete 837
 step

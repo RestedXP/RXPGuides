@@ -327,7 +327,7 @@ step << Mage/Warlock/Priest
     .itemcount 159,<20
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sarvis|r e |cRXP_FRIENDLY_Elreth|r
-    .turnin 3901 >> Entregue Entrechocar as Caveiras de Chocalho
+    .turnin 3901 >> Entregue Desossando alguns Range-ossos
     .target +Shadow Priest Sarvis
     .goto Tirisfal Glades,31.35,66.21,10,0
     .goto Tirisfal Glades,30.84,66.20
@@ -936,7 +936,7 @@ step
     .target +Apothecary Johaan
     .goto Tirisfal Glades,59.45,52.40
     .turnin 404 >>Entregue Uma tarefa podre
-    .accept 426 >>Aceite Os Moinhos Invadidos
+    .accept 426 >>Aceite Os moinhos invadidos
     .target +Deathguard Dillinger
     .goto Tirisfal Glades,58.20,51.43
 step
@@ -2148,7 +2148,7 @@ step
 step
     .goto Durotar,51.95,43.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gar'Thok|r
-    .turnin 837 >>Entregue Encroachment
+    .turnin 837 >>Entregue Invasão
     .target Gar'Thok
     .group
 step << Warrior
@@ -2323,7 +2323,7 @@ step
 step << Rogue
     .goto Orgrimmar,42.75,53.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Therzok|r
-	.accept 1963 >> Aceite The Estilhaçada Hand - Missão << Orc Rogue/Troll Rogue
+	.accept 1963 >> Aceite A Mão Despedaçada << Orc Rogue/Troll Rogue
     .target Therzok
 step
     #label NeeruFireblade

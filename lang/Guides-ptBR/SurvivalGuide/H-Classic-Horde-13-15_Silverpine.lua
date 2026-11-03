@@ -164,7 +164,7 @@ step
     .complete 422,1 --Remedy of Arugal (1)
 step
     #completewith next
-    .goto Silverpine Forest,53.39,13.32,80 >> Vá para The Ivar Mathiaz
+    .goto Silverpine Forest,53.39,13.32,80 >> Siga para a Plantação do Ivar
 step
     #label QuinnYorick
     .goto Silverpine Forest,53.39,13.32,8,0

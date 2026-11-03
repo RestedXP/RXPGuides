@@ -1838,7 +1838,7 @@ step << Paladin
 	.trainer >> Treine suas magias de classe
 step
     .isOnQuest 9581,9663
-	.hs >> Use a Pedra de Regresso para O Entreposto Rubro
+	.hs >> Usar Pedra de Regresso para Vigília Rubra
     .cooldown item,6948,>2,1
 step
 	.isOnQuest 9581,9663
@@ -2046,7 +2046,7 @@ step
 step
     #optional
     .isOnQuest 9648,9594,9567,9629
-	.hs >> Use a Pedra de Regresso para O Entreposto Rubro
+	.hs >> Usar Pedra de Regresso para Vigília Rubra
     .cooldown item,6948,>2,1
 step
     #completewith next
@@ -2530,7 +2530,7 @@ step
     .accept 9606 >> Aceite Retornar para Topher Loaal
 step
     .isOnQuest 9606,9699
-	.hs >> Use a Pedra de Regresso para O Entreposto Rubro
+	.hs >> Usar Pedra de Regresso para Vigília Rubra
     >>|cRXP_BUY_Compre comida/água se necessário|r << !Warrior !Rogue
 	>>|cRXP_BUY_Compre comida se necessário|r << Warrior/Rogue
     .cooldown item,6948,>2,1
@@ -2564,8 +2564,8 @@ step
     #optional
     .goto Bloodmyst Isle,55.429,55.266
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Vindicante Boros|r
-    +Lembre-se de entregar seus [Estilhaços de Cristal Irradiado] para obter o buff consumível [Cristal da Perspicácia] (Aumenta o Intelecto em 5. Dura 30 min.) << !Warrior !Paladin !Shaman !Rogue
-    +Lembre-se de entregar seus [Estilhaços de Cristal Irradiado] para o buff consumível [Cristal da Ferocidade] (Aumenta o poder de ataque em 10. Dura 30 min.) << Warrior/Paladin/Shaman/Rogue
+    +Lembre-se de entregar seus [Estilhaços de Cristal Irradiado] para o buff consumível [Cristal da Percepção] (Aumenta o Intelecto em 5. Dura 30 min.) << !Warrior !Paladin !Shaman !Rogue
+    +Lembre-se de entregar seus [Estilhaços de Cristal Irradiado] para obter o buff consumível [Cristal da Ferocidade] (Aumenta o poder de ataque em 10. Dura 30 min.) << Warrior/Paladin/Shaman/Rogue
     .target Vindicator Boros
     .itemcount 23984,>9
 step
@@ -2798,8 +2798,8 @@ step
     #optional
     .goto Bloodmyst Isle,55.429,55.266
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Vindicante Boros|r
-    +Lembre-se de entregar seus [Estilhaços de Cristal Irradiado] para obter o buff consumível [Cristal da Perspicácia] (Aumenta o Intelecto em 5. Dura 30 min.) << !Warrior !Paladin !Shaman !Rogue
-    +Lembre-se de entregar seus [Estilhaços de Cristal Irradiado] para o buff consumível [Cristal da Ferocidade] (Aumenta o poder de ataque em 10. Dura 30 min.) << Warrior/Paladin/Shaman/Rogue
+    +Lembre-se de entregar seus [Estilhaços de Cristal Irradiado] para o buff consumível [Cristal da Percepção] (Aumenta o Intelecto em 5. Dura 30 min.) << !Warrior !Paladin !Shaman !Rogue
+    +Lembre-se de entregar seus [Estilhaços de Cristal Irradiado] para obter o buff consumível [Cristal da Ferocidade] (Aumenta o poder de ataque em 10. Dura 30 min.) << Warrior/Paladin/Shaman/Rogue
     .target Vindicator Boros
     .itemcount 23984,>9
 step
@@ -3173,7 +3173,7 @@ step
     .complete 9748,1 --Collect Bloodmyst Water Sample (x1)
 step
     .isOnQuest 9748,9669,9741,9711
-    .hs >> Use a Pedra de Regresso para O Entreposto Rubro
+    .hs >> Usar Pedra de Regresso para Vigília Rubra
     >>|cRXP_BUY_Compre comida/água se necessário|r << !Warrior !Rogue
 	>>|cRXP_BUY_Compre comida se necessário|r << Warrior/Rogue
     .cooldown item,6948,>2,1
@@ -4653,7 +4653,7 @@ step
 .dungeon WC
     #label EnterWC
     .goto 1414/1,-2205.4612,-742.4261
-    +Entre na Caverna Ululante
+    +Entre nas Cavernas do Lamento
     .zoneskip 1414,1 -- similar to stockades, no subzone for WC
 step
 .dungeon WC

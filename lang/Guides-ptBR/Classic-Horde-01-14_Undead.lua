@@ -370,7 +370,7 @@ step << Mage/Warlock/Priest
     .itemcount 159,<20
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sarvis|r e |cRXP_FRIENDLY_Elreth|r
-    .turnin 3901 >> Entregue Entrechocar as Caveiras de Chocalho
+    .turnin 3901 >> Entregue Desossando alguns Range-ossos
     .target +Shadow Priest Sarvis
     .goto Tirisfal Glades,31.35,66.21,10,0
     .goto Tirisfal Glades,30.84,66.20
@@ -1249,7 +1249,7 @@ step
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dillinger|r, |cRXP_FRIENDLY_Johaan|r e |cRXP_FRIENDLY_Zygand|r
     .turnin 404 >>Entregue Uma tarefa podre
-    .accept 426 >>Aceite Os Moinhos Invadidos
+    .accept 426 >>Aceite Os moinhos invadidos
     .target +Deathguard Dillinger
     .goto Tirisfal Glades,58.20,51.43
     .turnin 367 >>Entregue Uma nova peste
@@ -1267,7 +1267,7 @@ step
     #label BrillTurnin1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dillinger|r, |cRXP_FRIENDLY_Johaan|r e |cRXP_FRIENDLY_Zygand|r
     .turnin 404 >>Entregue Uma tarefa podre
-    .accept 426 >>Aceite Os Moinhos Invadidos
+    .accept 426 >>Aceite Os moinhos invadidos
     .target +Deathguard Dillinger
     .goto Tirisfal Glades,58.20,51.43
     .turnin 365 >>Entregue Campos de mágoa
@@ -4270,7 +4270,7 @@ step
 step
     #completewith next
     .goto Silverpine Forest,53.39,13.32,80,0
-    .subzone 239 >>Vá para The Ivar Mathiaz
+    .subzone 239 >>Siga para a Plantação do Ivar
 step
     #label QuinnYorick
     .goto Silverpine Forest,53.39,13.32,8,0
@@ -5401,7 +5401,7 @@ step << !Undead
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Orgnil|r e |cRXP_FRIENDLY_Gar'Thok|r
     .turnin 806 >>Entregue Tempestades sombrias
     .goto Durotar,52.24,43.15
-    .turnin 837 >>Entregue Encroachment
+    .turnin 837 >>Entregue Invasão
     .goto Durotar,51.95,43.50
     .target Orgnil Soulscar
     .target Gar'Thok
@@ -6041,7 +6041,7 @@ step << Mage/Warlock/Priest
 step
     #xprate <2.1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sarvis|r e |cRXP_FRIENDLY_Elreth|r
-    .turnin 3901 >> Entregue Entrechocar as Caveiras de Chocalho
+    .turnin 3901 >> Entregue Desossando alguns Range-ossos
     .target +Shadow Priest Sarvis
     .goto Tirisfal Glades,31.35,66.21,10,0
     .goto Tirisfal Glades,30.84,66.20
@@ -6968,7 +6968,7 @@ step << skip
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dillinger|r, |cRXP_FRIENDLY_Johaan|r e |cRXP_FRIENDLY_Zygand|r
     .turnin 404 >>Entregue Uma tarefa podre
-    .accept 426 >>Aceite Os Moinhos Invadidos
+    .accept 426 >>Aceite Os moinhos invadidos
     .target +Deathguard Dillinger
     .goto Tirisfal Glades,58.20,51.43
     .turnin 367 >>Entregue Uma nova peste
@@ -6986,7 +6986,7 @@ step
     #label BrillTurnin1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dillinger|r, |cRXP_FRIENDLY_Johaan|r e |cRXP_FRIENDLY_Zygand|r
     .turnin 404 >>Entregue Uma tarefa podre
-    .accept 426 >>Aceite Os Moinhos Invadidos
+    .accept 426 >>Aceite Os moinhos invadidos
     .target +Deathguard Dillinger
     .goto Tirisfal Glades,58.20,51.43
     .turnin 365 >>Entregue Campos de mágoa

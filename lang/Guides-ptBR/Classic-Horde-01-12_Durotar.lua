@@ -3046,7 +3046,7 @@ step << Hunter
     .target +Cook Torka
     .goto Durotar,51.12,42.46
     .turnin 825 >>Entregue Dos destroços...
-    .turnin 837 >>Entregue Encroachment
+    .turnin 837 >>Entregue Invasão
     .target +Gar'Thok
     .goto Durotar,51.95,43.50
 step
@@ -3690,7 +3690,7 @@ step << !Hunter
     .target +Orgnil Soulscar
     .goto Durotar,52.24,43.15
     .turnin 825 >>Entregue Dos destroços...
-    .turnin 837 >>Entregue Encroachment
+    .turnin 837 >>Entregue Invasão
     .target +Gar'Thok
     .goto Durotar,51.95,43.50
 step << Hunter/Shaman/Warrior
@@ -3700,7 +3700,7 @@ step << Hunter/Shaman/Warrior
     .turnin 806 >>Entregue Tempestades sombrias
     .target +Orgnil Soulscar
     .goto Durotar,52.24,43.15
-    .turnin 837 >>Entregue Encroachment
+    .turnin 837 >>Entregue Invasão
     .target +Gar'Thok
     .goto Durotar,51.95,43.50
 step << Warrior
@@ -4993,7 +4993,7 @@ step << Warrior/Shaman/Hunter
 step << Rogue
     .goto Orgrimmar,42.75,53.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Therzok|r
-	.accept 1963 >> Aceite The Estilhaçada Hand - Missão << Orc Rogue/Troll Rogue
+	.accept 1963 >> Aceite A Mão Despedaçada << Orc Rogue/Troll Rogue
     .target Therzok
 step << Warrior/Shaman/Hunter
     #xprate <1.5 << !Hunter
@@ -5557,14 +5557,14 @@ step
     .goto Tirisfal Glades,58.20,51.43
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Necroguarda Dinis|r
     .turnin 404 >>Entregue Uma tarefa podre
-    .accept 426 >>Aceite Os Moinhos Invadidos
+    .accept 426 >>Aceite Os moinhos invadidos
     .isQuestComplete 404
     .target Deathguard Dillinger
 step
     #optional
     .goto Tirisfal Glades,58.20,51.43
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Necroguarda Dinis|r
-    .accept 426 >>Aceite Os Moinhos Invadidos
+    .accept 426 >>Aceite Os moinhos invadidos
     .isQuestTurnedIn 404
     .target Deathguard Dillinger
 step
@@ -9954,7 +9954,7 @@ step << Troll Priest
 step << Rogue
     .goto Orgrimmar,42.75,53.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Therzok|r
-	.accept 1963 >> Aceite The Estilhaçada Hand - Missão << Orc Rogue/Troll Rogue
+	.accept 1963 >> Aceite A Mão Despedaçada << Orc Rogue/Troll Rogue
     .target Therzok
 step << Rogue
     .goto Orgrimmar,45.64,55.95
@@ -10343,7 +10343,7 @@ step
     .turnin 806 >>Entregue Tempestades sombrias
     .target +Orgnil Soulscar
     .goto Durotar,52.24,43.15
-    .turnin 837 >>Entregue Encroachment
+    .turnin 837 >>Entregue Invasão
     .target +Gar'Thok
     .goto Durotar,51.95,43.50
 step << Warrior

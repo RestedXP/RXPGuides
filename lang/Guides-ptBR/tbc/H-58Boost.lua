@@ -118,7 +118,7 @@ step
     .goto Tirisfal Glades,83.15,68.92
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com Derrington|r
     .turnin 5096 >>Entregue Diversões Escarlates
-    .accept 5098 >>Aceite Em Todas as Torres de Vigia
+    .accept 5098 >>Aceite Você não vê as torres?
     .accept 5228 >>Aceite Os Caldeirões do Flagelo
 	.target High Executor Derrington
 step
