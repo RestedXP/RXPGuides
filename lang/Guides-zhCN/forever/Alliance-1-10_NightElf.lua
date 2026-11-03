@@ -46,7 +46,7 @@ step << Druid
     .mob 草刺野猪幼崽
 step << Druid
     #completewith next
-    +|cRXP_WARN_确保你至少有96铜币价值的垃圾装备|r，你可以把你那把能卖9铜币的法杖也算在内
+    +|cRXP_WARN_确保你至少拥有价值1银币2铜币的供应商垃圾|r，你也可以算上你的staff（商人价9铜币）
 step << !sod/Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迪兰妮亚·银辉|r 和 |cRXP_FRIENDLY_麦利萨尔·鹿盔|r 对话
     #label GoodProtector
@@ -59,7 +59,7 @@ step << !sod/Warrior
 step << Priest
     .goto 1438/1,779.8482,10450.1295
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德林拉尔|r 对话
-    .vendor >> 出售垃圾物品
+    .vendor >> |cRXP_WARN_出售垃圾物品|r
     >>|cRXP_BUY_购买15瓶|r |T132794:0|t[清凉的泉水]
     .collect 159,15 --Collect Refreshing Spring Water (x15)
     .target 德林拉尔
@@ -73,7 +73,7 @@ step << !Druid
 step << Warrior
     .goto 1438/1,794.92,10436.72
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奇娜|r 对话
-	.vendor >> 出售垃圾物品
+	.vendor >> |cRXP_WARN_出售垃圾物品|r
     .target 奇娜
 step << Warrior
 	.goto 1438/1,778.07,10526.62
@@ -146,6 +146,7 @@ step << Priest/Rogue
 	.goto 1438/1,826.03,10328.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_管理员伊尔萨莱恩|r 对话
     .turnin 456 >> 交任务 自然的平衡
+    .accept 457 >> 接受任务 自然的平衡
     .target 管理员伊尔萨莱恩
 	.accept 3119 >> 接受任务 神圣符记 << Priest
 step << Druid
@@ -206,7 +207,7 @@ step << Warrior
 step << Priest
     .goto 1438/1,779.8482,10450.1295
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德林拉尔|r 对话
-    .vendor >> 出售垃圾物品
+    .vendor >> |cRXP_WARN_出售垃圾物品|r
     >>|cRXP_BUY_购买最多25个|r |T132794:0|t[清凉的泉水]
     .collect 159,25 --Collect Refreshing Spring Water (x25)
     .target 德林拉尔
@@ -296,14 +297,14 @@ step
 step << Priest
     .goto 1438/1,779.8482,10450.1295
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德林拉尔|r 对话
-    .vendor >> 出售垃圾物品
+    .vendor >> |cRXP_WARN_出售垃圾物品|r
     >>|cRXP_BUY_购买最多25个|r |T132794:0|t[清凉的泉水]
     .collect 159,25 --Collect Refreshing Spring Water (x25)
     .target 德林拉尔
 step << !Priest
     .goto 1438/1,794.92,10436.72
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奇娜|r 对话
-	.vendor >> 出售垃圾物品 << !Hunter
+	.vendor >> |cRXP_WARN_出售垃圾物品|r << !Hunter
 	.vendor >> |cRXP_BUY_购买3或4组|r |T132382:0|t[劣质箭] << Hunter
     .target 奇娜
 step
@@ -409,7 +410,7 @@ step << Priest
     #completewith next
     .goto 1438/1,787.28,10438.120
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与楼上的 |cRXP_FRIENDLY_简娜·明月|r 对话
-	.vendor >> 出售垃圾物品
+	.vendor >> |cRXP_WARN_出售垃圾物品|r
     .target Janna Brightmoon
 step << Priest
 	.goto 1438/1,801.64,10458.75
@@ -601,7 +602,7 @@ step << Rogue
 step << Druid
     .goto 1438/1,947.57,9812.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_沙洛蒙|r 对话
-    >>|cRXP_BUY_如果你能负担得起（4银79铜），就购买并装备一根|r |T135145:0|t[学徒短杖] |cRXP_BUY_，不能的话就跳过这一步|r
+    >>|cRXP_BUY_购买并装备1把|r |T135145:0|t[学徒短杖]|cRXP_BUY_如果钱够(5银 4铜),如果钱不够跳过此步|r
     .collect 2495,1 --Walking Stick (1)
     .target 沙洛蒙
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.20
@@ -1408,7 +1409,7 @@ step << Druid/Priest
     .accept 940 >> 接受任务 泰达希尔
 step << Druid/Priest
     #label xp10
-    .xp 10-900 >> 打怪直到还差900点经验达到10级（5600/6500）
+    .xp 10-870 >> 刷怪至离升10级还差870经验（5630/6500）
 step << Hunter
     #completewith xp10
     #label mist1
@@ -1610,7 +1611,7 @@ step << !Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与楼上的 |cRXP_FRIENDLY_女祭司艾茉拉|r 对话
     .accept 2518 >> 接受任务 月神的泪水
 step << Priest
-    .goto Darnassus,40.0,80.0
+    .goto 1457/1,2515.0296,9673.7323
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与楼上的 |cRXP_FRIENDLY_女祭司阿兰希雅|r 对话
     .accept 5627 >>接受任务 艾露恩之星
     .turnin 5627 >>交任务 艾露恩之星
@@ -2125,22 +2126,20 @@ step
     >>前去找 |cRXP_FRIENDLY_神谕之树的树皮|r
     .turnin 98398 >> 交任务 神谕之树
     .accept 940 >> 接受任务 泰达希尔
-step
+step << !Warrior --remove warrior tag if they fix the ress sickness
     #softcore
 	#completewith darn << era
     #completewith darnSoD << sod
     .deathskip >>死亡并在达纳苏斯墓地复活
     >>|cRXP_WARN_确保你在河流的西侧，否则可能会走错方向|r << sod
     .target 灵魂医者
-step
-    #hardcore
+step << Warrior --remove warrior tag if they fix the ress sickness
     #completewith next
     .goto 1457/1,2070.42,9979.310
     .zone Darnassus >> 前往达纳苏斯
-step
+step << !Warrior --remove warrior tag if they fix the ress sickness 
     #hardcore
     #completewith next
-    #season 2
     .goto 1457/1,2070.42,9979.310
     .zone Darnassus >> 前往达纳苏斯
 step << !Warrior

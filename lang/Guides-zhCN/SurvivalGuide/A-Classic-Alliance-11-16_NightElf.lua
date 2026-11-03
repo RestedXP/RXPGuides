@@ -571,7 +571,7 @@ step
     .goto StormwindClassic,5.560,50.125,10,0
     .goto StormwindClassic,13.669,74.499,20,0
     .goto Westfall,42.024,70.980
-    .zone Westfall >> 如果网站的角色卡死服务不可用，就游到西部荒野
+    .zone Westfall >> 如果网站卡死不可用，请游泳前往西部荒野
     .zoneskip Ironforge
     .subzoneskip 809--IF Gates
     .subzoneskip 2257--Deeprun Tram
@@ -1167,7 +1167,7 @@ step << Druid
 step << Druid
     #ah
     .goto Stormwind City,53.612,59.764
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
     >>如果你不打算选择|T136065:0|t[草药学]作为主要专业，就购买5个|T134187:0|t[地根草]用于后续任务
     >>购买以下物品，以便稍后在西部荒野更快地交任务
     >>这样可以节省时间，因为你不需要四处跑去找怪击杀。如果你不想购买，可以跳过这一步
@@ -1188,7 +1188,7 @@ step << Druid
 step << !Druid
     #ah
     .goto Stormwind City,53.612,59.764
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
     >>购买以下物品，以便稍后在西部荒野更快地交任务
     >>这样可以节省时间，因为你不需要四处跑去找怪击杀。如果你不想购买，可以跳过这一步
     >>|T133972:0|t[秃鹫肉条]

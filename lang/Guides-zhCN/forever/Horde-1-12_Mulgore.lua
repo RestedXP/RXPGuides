@@ -9,7 +9,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 1-6级 莫高雷
 #version 11
-#group RestedXP无限服指南（部落）
+#group RestedXP 无限指南 (部落)
 #subgroup 速通指南 1-22级
 --#groupid RXP-SRGCE-H1
 #defaultfor Tauren
@@ -49,7 +49,7 @@ step << Warrior
 step << Shaman
     .goto 1412/1,-264.47,-2874.20--c:Mulgore,45.01,75.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_米拉·晨行者|r 对话
-    .train 8017 >>学习 |T136086:0|t[石化武器]
+    .train 8017 >>影袭 |T136086:0|t[石化武器]
     .target 米拉·晨行者
 step
     #completewith next
@@ -479,7 +479,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 6-12级 莫高雷
 #version 11
-#group RestedXP无限服指南（部落）
+#group RestedXP 无限指南 (部落)
 #subgroup 速通指南 1-22级
 --#groupid RXP-SRGCE-H1
 #defaultfor Tauren
@@ -549,7 +549,7 @@ step << Shaman/Druid
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.2
 step << Shaman/Druid
     .goto 1412/1,-297.87,-2279.97--c:Mulgore,45.66,58.60
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_尤加尔|r|cRXP_BUY_对话并|r|cRXP_BUY_从他那里购买一根|r |T135145:0|t[学徒短杖]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_玛诺特|r |cRXP_BUY_对话，并向他购买|r |T135145:0|t[学徒短杖]|cRXP_BUY_|r
     .collect 2495,1,761,1 --Collect Walking Stick (1)
     .money <0.0504
     .itemStat 16,QUALITY,<7
@@ -868,7 +868,7 @@ step << Shaman/Druid
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.2
 step << Shaman/Druid
     .goto 1412/1,-297.87,-2279.97--c:Mulgore,45.66,58.60
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_尤加尔|r|cRXP_BUY_对话并|r|cRXP_BUY_从他那里购买一根|r |T135145:0|t[学徒短杖]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_玛诺特|r |cRXP_BUY_对话，并向他购买|r |T135145:0|t[学徒短杖]|cRXP_BUY_|r
     .collect 2495,1,749,1 --Collect Walking Stick (1)
     .money <0.0504
     .itemStat 16,QUALITY,<7
@@ -1154,7 +1154,7 @@ step << Shaman/Druid
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.2
 step << Shaman/Druid
     .goto 1412/1,-297.87,-2279.97--c:Mulgore,45.66,58.60
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_尤加尔|r|cRXP_BUY_对话并|r|cRXP_BUY_从他那里购买一根|r |T135145:0|t[学徒短杖]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_玛诺特|r |cRXP_BUY_对话，并向他购买|r |T135145:0|t[学徒短杖]|cRXP_BUY_|r
     .collect 2495,1,743,1 --Collect Walking Stick (1)
     .money <0.0504
     .itemStat 16,QUALITY,<7
@@ -1917,16 +1917,16 @@ step
     .mob 风险投资公司主管
 step
     #loop
-    .goto Mulgore,63.77,43.97,0
-    .goto Mulgore,63.77,43.97,15,0
-    .goto Mulgore,62.81,42.81,15,0
-    .goto Mulgore,60.38,42.78,15,0
-    .goto Mulgore,61.64,41.33,15,0
-    .goto Mulgore,63.51,39.29,15,0
-    .goto Mulgore,63.39,40.80,15,0
-    .goto Mulgore,60.99,37.00,15,0
-    .goto Mulgore,59.64,36.05,15,0 --Outside
-    .goto Mulgore,61.72,35.15,15,0 --Outside
+    .goto 1412/1,-1228.27,-1778.89,0--c:Mulgore,63.77,43.97
+    .goto 1412/1,-1228.27,-1778.89,15,0--c:Mulgore,63.77,43.97
+    .goto 1412/1,-1178.95,-1739.16,15,0--c:Mulgore,62.81,42.81
+    .goto 1412/1,-1054.11,-1738.13,15,0--c:Mulgore,60.38,42.78
+    .goto 1412/1,-1118.84,-1688.47,15,0--c:Mulgore,61.64,41.33
+    .goto 1412/1,-1214.91,-1618.60,15,0--c:Mulgore,63.51,39.29
+    .goto 1412/1,-1208.74,-1670.32,15,0--c:Mulgore,63.39,40.80
+    .goto 1412/1,-1085.44,-1540.17,15,0--c:Mulgore,60.99,37.00
+    .goto 1412/1,-1016.09,-1507.63,15,0 --Outside--c:Mulgore,59.64,36.05
+    .goto 1412/1,-1122.95,-1476.80,15,0 --Outside--c:Mulgore,61.72,35.15
     >>在矿洞内部及外侧打开 |cRXP_PICK_冲击补给品|r。拾取它们的|cRXP_LOOT_爆盐采矿炸弹|r
     >>|cRXP_WARN_如果可能的话，尽量待在洞穴的上层|r
     .complete 76156,1 --Seaforium Mining Charge (5)
@@ -1985,14 +1985,14 @@ step
     .target Boarton Shadetotem
 step << Hunter
     .goto 1456/1,-123.15,-1412.93--c:Thunder Bluff,61.3,80.9
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_梅洛|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_梅洛|r
     .turnin 861 >>交任务 猎人之道
     .accept 860 >>接受任务 瑟格拉·黑棘
     .target 梅洛·石蹄
     .isQuestComplete 861
 step << Hunter
     .goto 1456/1,-123.15,-1412.93--c:Thunder Bluff,61.3,80.9
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_梅洛|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_梅洛|r
     .accept 860 >>接受任务 瑟格拉·黑棘
     .target 梅洛·石蹄
     .isQuestTurnedIn 861
@@ -2246,7 +2246,7 @@ step
     .turnin 744 >>交任务 准备典礼
     .target 伊恩·鹰爪
 step
-    .goto Thunder Bluff,39.45,65.86
+    .goto 1456/1,104.91,-1308.28--c:Thunder Bluff,39.45,65.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_巴通·阴影图腾|r 对话
     >>|cRXP_WARN_他处于|r |T132320:0|t[潜行] 状态
     .turnin 76160 >>交任务 大地母亲与匿同在
@@ -2254,8 +2254,8 @@ step
     .target Boarton Shadetotem
 step
     #ah
-    .goto Thunder Bluff,45.23,59.40,0
-    .goto Thunder Bluff,40.41,51.78
+    .goto 1456/1,44.58,-1263.32,0--c:Thunder Bluff,45.23,59.40
+    .goto 1456/1,94.89,-1210.30--c:Thunder Bluff,40.41,51.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拍卖师斯塔比|r 对话
     >>|cRXP_BUY_从拍卖行购买1条|r |T133894:0|t[新鲜的美味小鱼] |cRXP_BUY_|r
     .collect 6291,1,76240,1 --Raw Brilliant Smallfish (1)
@@ -2263,24 +2263,24 @@ step
 step
     #ssf
     #completewith Sewa
-    .goto Thunder Bluff,46.13,51.59,12,0
-    .goto Thunder Bluff,47.09,50.07,4,0
-    .goto Thunder Bluff,46.49,49.16,4,0
-    .goto Thunder Bluff,46.05,49.74,4,0
-    .goto Thunder Bluff,46.34,50.50,4,0
-    .goto Thunder Bluff,55.78,47.02,15 >>前往 |cRXP_FRIENDLY_苏瓦·迷雾行者|r
+    .goto 1456/1,35.18,-1208.98,12,0--c:Thunder Bluff,46.13,51.59
+    .goto 1456/1,25.16,-1198.40,4,0--c:Thunder Bluff,47.09,50.07
+    .goto 1456/1,31.43,-1192.07,4,0--c:Thunder Bluff,46.49,49.16
+    .goto 1456/1,36.02,-1196.11,4,0--c:Thunder Bluff,46.05,49.74
+    .goto 1456/1,32.99,-1201.40,4,0--c:Thunder Bluff,46.34,50.50
+    .goto 1456/1,-65.54,-1177.18,15 >>前往 |cRXP_FRIENDLY_苏瓦·迷雾行者|r--c:Thunder Bluff,55.78,47.02
 step
     #ssf
     #sticky
     #label Kah
-    .goto Thunder Bluff,56.13,46.39,-1
+    .goto 1456/1,-69.19,-1172.80,-1--c:Thunder Bluff,56.13,46.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_卡尔·迷雾行者|r 对话
     .train 7734 >>训练 |T136245:0|t[钓鱼]
     .target Kah Mistrunner
 step
     #ssf
     #label Sewa
-    .goto Thunder Bluff,55.78,47.02,-1
+    .goto 1456/1,-65.54,-1177.18,-1--c:Thunder Bluff,55.78,47.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_苏瓦·迷雾行者|r 对话
     >>|cRXP_BUY_从她那里购买|r |T132932:0|t[鱼竿] |cRXP_BUY_和|r |T134335:0|t[闪光的小珠] |cRXP_BUY_|r
     .collect 6256,1 --Fishing Pole (1)
@@ -2303,7 +2303,7 @@ step
     #ssf
     #label Fish
     #requires Kah
-    .goto Thunder Bluff,40.42,58.55
+    .goto 1456/1,94.78,-1257.41--c:Thunder Bluff,40.42,58.55
     >>在池塘里钓鱼，直到获得一条|T133894:0|t[|cRXP_LOOT_新鲜的美味小鱼|r]
     .collect 6291,1,76240,1 --Raw Brilliant Smallfish (1)
 step
@@ -2311,14 +2311,14 @@ step
     .complete 76240,1 --Fish Chunks (1)
     .use 206344
 step
-    .goto Thunder Bluff,39.45,65.86
+    .goto 1456/1,104.91,-1308.28--c:Thunder Bluff,39.45,65.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_巴通·阴影图腾|r 对话
     >>|cRXP_WARN_他处于|r |T132320:0|t[潜行] 状态
     .turnin 76240 >>交任务 大地母亲与匿同在
     .target Boarton Shadetotem
 step
     .goto 1456/1,-123.15,-1412.93--c:Thunder Bluff,61.3,80.9
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_梅洛|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_梅洛|r
     .turnin 861 >>交任务 猎人之道
     .accept 860 >>接受任务 瑟格拉·黑棘
     .target 梅洛·石蹄
@@ -2405,7 +2405,7 @@ step << Tauren Druid
     .turnin 6002 >>交任务 身心之力
     .target 图拉克·符文图腾
 step << Tauren Druid
-    .goto Thunder Bluff,47.00,49.82
+    .goto 1456/1,26.10,-1196.66--c:Thunder Bluff,47.00,49.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塔尔|r 对话
     .fly Camp Taurajo >>飞往陶拉祖营地
     .target 塔尔
@@ -2449,7 +2449,7 @@ step
 step
     .goto 1413/1,-2589.67,-424.51--c:The Barrens,51.44,30.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_赫布瑞姆|r 对话
-    .accept 848 >>接受任务菌类孢子
+    .accept 848 >>接受任务 菌类孢子
     .accept 1492 >>接受任务 码头主管迪兹维格
     .target 药剂师赫布瑞姆
 step

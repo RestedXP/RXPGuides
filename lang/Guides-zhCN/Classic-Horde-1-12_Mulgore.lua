@@ -51,7 +51,7 @@ step << Warrior
 step << Shaman
     .goto Mulgore,45.01,75.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_米拉|r 对话
-    .train 8017 >>学习 |T136086:0|t[石化武器]
+    .train 8017 >>影袭 |T136086:0|t[石化武器]
     .target 米拉·晨行者
 step
     #completewith next
@@ -648,7 +648,7 @@ step << Shaman/Druid
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.2
 step << Shaman/Druid
     .goto Mulgore,45.66,58.60
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_尤加尔|r|cRXP_BUY_对话并|r|cRXP_BUY_从他那里购买一根|r |T135145:0|t[学徒短杖]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_玛诺特|r |cRXP_BUY_对话，并向他购买|r |T135145:0|t[学徒短杖]|cRXP_BUY_|r
     .collect 2495,1,761,1 --Collect Walking Stick (1)
     .money <0.0504
     .itemStat 16,QUALITY,<7
@@ -714,11 +714,11 @@ step << Hunter
 step << Tauren
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_玛尔|r，|cRXP_FRIENDLY_扎尔曼|r，|cRXP_FRIENDLY_哈肯|r 和 |cRXP_FRIENDLY_穆尔|r 对话
     .accept 766 >>接受任务 马兹拉纳其
-    .target 装备你的普通 |T133127:0|t[经典怀旧服 道具]
+    .target +Maur Raincaller
     .goto Mulgore,46.97,57.07
     .turnin 767 >>交任务 幻象仪祭
     .accept 771 >>接受任务 幻象仪祭
-    .target 仲裁者索鲁斯
+    .target +Zarlman Two-Moons
     .goto Mulgore,47.76,57.53
     .accept 761 >>接受任务 猎捕猛鹫
     .target 哈肯·风之图腾
@@ -729,11 +729,11 @@ step << Tauren
 step << !Tauren
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_玛尔|r，|cRXP_FRIENDLY_扎尔曼|r 和 |cRXP_FRIENDLY_哈肯|r 对话
     .accept 766 >>接受任务 马兹拉纳其
-    .target +愤怒的火灵
+    .target +Maur Raincaller
     .goto Mulgore,46.97,57.07
     .turnin 767 >>交任务 幻象仪祭
     .accept 771 >>接受任务 幻象仪祭
-    .target 大地治愈者托洛克
+    .target +Zarlman Two-Moons
     .goto Mulgore,47.76,57.53
     .accept 761 >>接受任务 猎捕猛鹫
     .target 哈肯·风之图腾
@@ -911,7 +911,7 @@ step << Shaman/Druid
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.2
 step << Shaman/Druid
     .goto Mulgore,45.66,58.60
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_尤加尔|r|cRXP_BUY_对话并|r|cRXP_BUY_从他那里购买一根|r |T135145:0|t[学徒短杖]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_玛诺特|r |cRXP_BUY_对话，并向他购买|r |T135145:0|t[学徒短杖]|cRXP_BUY_|r
     .collect 2495,1,749,1 --Collect Walking Stick (1)
     .money <0.0504
     .itemStat 16,QUALITY,<7
@@ -1085,7 +1085,7 @@ step << Shaman/Druid
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.2
 step << Shaman/Druid
     .goto Mulgore,45.66,58.60
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_尤加尔|r|cRXP_BUY_对话并|r|cRXP_BUY_从他那里购买一根|r |T135145:0|t[学徒短杖]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_玛诺特|r |cRXP_BUY_对话，并向他购买|r |T135145:0|t[学徒短杖]|cRXP_BUY_|r
     .collect 2495,1,743,1 --Collect Walking Stick (1)
     .money <0.0504
     .itemStat 16,QUALITY,<7
@@ -2072,7 +2072,7 @@ step << Tauren
 step
     .goto The Barrens,51.44,30.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_赫布瑞姆|r 对话
-    .accept 848 >>接受任务菌类孢子
+    .accept 848 >>接受任务 菌类孢子
     .target 药剂师赫布瑞姆
 step
     .goto The Barrens,51.50,30.34
@@ -2181,14 +2181,14 @@ step
     .target 安哈努
 step << Hunter
     .goto Thunder Bluff,61.3,80.9
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_梅洛|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_梅洛|r
     .turnin 861 >>交任务 猎人之道
     .accept 860 >>接受任务 瑟格拉·黑棘
     .target 梅洛·石蹄
     .isQuestComplete 861
 step << Hunter
     .goto Thunder Bluff,61.3,80.9
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_梅洛|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_梅洛|r
     .accept 860 >>接受任务 瑟格拉·黑棘
     .target 梅洛·石蹄
     .isQuestTurnedIn 861
@@ -2314,7 +2314,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拍卖师斯塔比|r 对话
     >>|cRXP_BUY_从拍卖行购买12个|r |T134252:0|t[轻皮] |cRXP_BUY_|r
     .collect 2318,12,768,1 --Light Leather (12)
-    .target 拍卖师斯塔比
+    .target Auctioneer Stampi
     .skill skinning,<1,1
 step
     #ah
@@ -2600,7 +2600,7 @@ step << Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拍卖师斯塔比|r 对话
     >>|cRXP_BUY_从拍卖行购买1条|r |T133894:0|t[新鲜的美味小鱼] |cRXP_BUY_|r
     .collect 6291,1,76240,1 --Raw Brilliant Smallfish (1)
-    .target 拍卖师斯塔比
+    .target Auctioneer Stampi
     .train 410104,1
     .xp <4,1
 step << Shaman
@@ -2686,7 +2686,7 @@ step << Shaman
     .xp <4,1
 step
     .goto Thunder Bluff,61.3,80.9
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_梅洛|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_梅洛|r
     .turnin 861 >>交任务 猎人之道
     .accept 860 >>接受任务 瑟格拉·黑棘
     .target 梅洛·石蹄
@@ -3104,20 +3104,20 @@ step << Warrior
     .goto Mulgore,44.02,76.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哈鲁特|r 对话
     .train 6673 >>学习 |T132333:0|t[战斗怒吼]
-    .accept 77651 >>Accept 深入荆棘
+    .accept 77651 >>接受任务 深入荆棘
     .turnin 77651 >>交任务 深入荆棘
     .target 哈鲁特·雷角
 step << Shaman
     #season 0
     .goto Mulgore,45.01,75.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_米拉|r 对话
-    .train 8017 >>学习 |T136086:0|t[石化武器]
+    .train 8017 >>影袭 |T136086:0|t[石化武器]
     .target 米拉·晨行者
 step << Shaman
     #season 2
     .goto Mulgore,45.01,75.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_米拉|r 对话
-    .train 8017 >>学习 |T136086:0|t[石化武器]
+    .train 8017 >>影袭 |T136086:0|t[石化武器]
     .accept 77652 >>接受任务 力量神像
     .turnin 77652 >>交任务 力量神像
     .target 米拉·晨行者
@@ -3722,7 +3722,7 @@ step << Shaman/Druid
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.2
 step << Shaman/Druid
     .goto Mulgore,45.66,58.60
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_尤加尔|r|cRXP_BUY_对话并|r|cRXP_BUY_从他那里购买一根|r |T135145:0|t[学徒短杖]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_玛诺特|r |cRXP_BUY_对话，并向他购买|r |T135145:0|t[学徒短杖]|cRXP_BUY_|r
     .collect 2495,1,761,1 --Collect Walking Stick (1)
     .money <0.0504
     .itemStat 16,QUALITY,<7
@@ -3786,13 +3786,13 @@ step << Hunter
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.0
 step << Tauren
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_茂尔|r, |cRXP_FRIENDLY_扎尔曼|r, |cRXP_FRIENDLY_哈肯|r 和 |cRXP_FRIENDLY_穆尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_玛尔|r，|cRXP_FRIENDLY_扎尔曼|r，|cRXP_FRIENDLY_哈肯|r 和 |cRXP_FRIENDLY_穆尔|r 对话
     .accept 766 >>接受任务 马兹拉纳其
-    .target 茂尔·祈雨
+    .target +Maur Raincaller
     .goto Mulgore,46.97,57.07
     .turnin 767 >>交任务 幻象仪祭
     .accept 771 >>接受任务 幻象仪祭
-    .target 扎尔曼·双月
+    .target +Zarlman Two-Moons
     .goto Mulgore,47.76,57.53
     .accept 761 >>接受任务 猎捕猛鹫
     .target 哈肯·风之图腾
@@ -3801,13 +3801,13 @@ step << Tauren
     .target 穆尔·雷角
     .goto Mulgore,48.53,60.40
 step << !Tauren
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_茂尔|r, |cRXP_FRIENDLY_扎尔曼|r 和 |cRXP_FRIENDLY_哈肯|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_玛尔|r，|cRXP_FRIENDLY_扎尔曼|r 和 |cRXP_FRIENDLY_哈肯|r 对话
     .accept 766 >>接受任务 马兹拉纳其
-    .target 茂尔·祈雨
+    .target +Maur Raincaller
     .goto Mulgore,46.97,57.07
     .turnin 767 >>交任务 幻象仪祭
     .accept 771 >>接受任务 幻象仪祭
-    .target 扎尔曼·双月
+    .target +Zarlman Two-Moons
     .goto Mulgore,47.76,57.53
     .accept 761 >>接受任务 猎捕猛鹫
     .target 哈肯·风之图腾
@@ -3996,7 +3996,7 @@ step << Shaman/Druid
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.2
 step << Shaman/Druid
     .goto Mulgore,45.66,58.60
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_尤加尔|r|cRXP_BUY_对话并|r|cRXP_BUY_从他那里购买一根|r |T135145:0|t[学徒短杖]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_玛诺特|r |cRXP_BUY_对话，并向他购买|r |T135145:0|t[学徒短杖]|cRXP_BUY_|r
     .collect 2495,1,749,1 --Collect Walking Stick (1)
     .money <0.0504
     .itemStat 16,QUALITY,<7
@@ -4183,7 +4183,7 @@ step << Shaman/Druid
 step << Shaman/Druid
     #xprate <2.1
     .goto Mulgore,45.66,58.60
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_尤加尔|r|cRXP_BUY_对话并|r|cRXP_BUY_从他那里购买一根|r |T135145:0|t[学徒短杖]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_玛诺特|r |cRXP_BUY_对话，并向他购买|r |T135145:0|t[学徒短杖]|cRXP_BUY_|r
     .collect 2495,1,743,1 --Collect Walking Stick (1)
     .money <0.0504
     .itemStat 16,QUALITY,<7
@@ -4940,7 +4940,7 @@ step << !Tauren
 step << Tauren
     #xprate <2.1
     #label Bloodhoofturnins1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Baine|r 和 |cRXP_FRIENDLY_卢尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_贝恩|r 和 |cRXP_FRIENDLY_卢尔|r对话
     .turnin 746 >>交任务 矮人的挖掘场
     .target 贝恩·血蹄
     .goto Mulgore,47.51,60.16
@@ -5436,7 +5436,7 @@ step
     #xprate <2.1
     .goto The Barrens,51.44,30.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_赫布瑞姆|r 对话
-    .accept 848 >>接受任务菌类孢子
+    .accept 848 >>接受任务 菌类孢子
     .accept 1492 >>接受任务 码头主管迪兹维格
     .target 药剂师赫布瑞姆
 step
@@ -5538,14 +5538,14 @@ step
     .target 安哈努
 step
     .goto Thunder Bluff,61.3,80.9
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_梅洛|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_梅洛|r
     .turnin 861 >>交任务 猎人之道
     .accept 860 >>接受任务 瑟格拉·黑棘
     .target 梅洛·石蹄
     .isQuestComplete 861
 step
     .goto Thunder Bluff,61.3,80.9
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_梅洛|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_梅洛|r
     .accept 860 >>接受任务 瑟格拉·黑棘
     .target 梅洛·石蹄
     .isQuestTurnedIn 861
@@ -5708,7 +5708,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拍卖师斯塔比|r 对话
     >>|cRXP_BUY_从拍卖行购买12个|r |T134252:0|t[轻皮] |cRXP_BUY_|r
     .collect 2318,12,768,1 --Light Leather (12)
-    .target 拍卖师斯塔比
+    .target Auctioneer Stampi
     .skill skinning,<1,1
 step
     #optional
@@ -5794,7 +5794,7 @@ step << Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拍卖师斯塔比|r 对话
     >>|cRXP_BUY_从拍卖行购买1条|r |T133894:0|t[新鲜的美味小鱼] |cRXP_BUY_|r
     .collect 6291,1,76240,1 --Raw Brilliant Smallfish (1)
-    .target 拍卖师斯塔比
+    .target Auctioneer Stampi
     .train 410104,1
 step << Shaman
     #season 2

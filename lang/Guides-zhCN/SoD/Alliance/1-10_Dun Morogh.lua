@@ -192,7 +192,7 @@ step << !Priest !Mage !Warlock !Warrior !Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾德林·怒流|r 对话
     >>把垃圾物品卖给商人 << Hunter
     >>|cRXP_BUY_从他那里|r|cRXP_BUY_购买 600发|r |T132384:0|t[轻弹丸] << Hunter
-    .vendor >> 出售垃圾物品 << !Hunter
+    .vendor >> |cRXP_WARN_出售垃圾物品|r << !Hunter
     .collect 2516,600 << Hunter --Light Shot (600)
     .target 艾德林·怒流
     .xp >6,1
@@ -1950,7 +1950,7 @@ step << Warrior
     .target 布里维夫·石拳
 step << Warrior
     .goto 1455,62.378,88.671
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在楼下与 |cRXP_FRIENDLY_布雷文·寒钢|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布雷文·寒钢|r 在楼下对话
     >>|cRXP_BUY_从她那里|r|cRXP_BUY_购买一把|r |T135425:0|t[锐利的飞刀]
     .collect 3107,200 --Collect Keen Throwing Knife (200)
     .target 布雷文·寒钢
@@ -1958,7 +1958,7 @@ step << Warrior
     .xp <11,1
 step << Warrior
     .goto 1455,62.378,88.671
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在楼下与 |cRXP_FRIENDLY_布雷文·寒钢|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布雷文·寒钢|r 在楼下对话
     >>|cRXP_BUY_从她那里|r|cRXP_BUY_购买|r |T135641:0|t[平衡飞刀]
     .collect 2946,200 --Collect Balanced Throwing Dagger (200)
     .target 布雷文·寒钢

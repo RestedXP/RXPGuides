@@ -7,7 +7,7 @@ RXPGuides.RegisterGuide([[
 #disabledungeons
 << Horde
 #version 11
-#group RestedXP无限服指南（部落）
+#group RestedXP 无限指南 (部落)
 #subgroup 速通指南 1-22级
 --#groupid RXP-SRGCE-H1
 #defaultfor Undead
@@ -24,7 +24,7 @@ step
     #completewith next
     .goto 1420/0,1675.90,1645.00,8,0
     .goto 1420/0,1665.51,1645.00,8,0
-    .goto 1420/0,1667.77,1679.04,10 >> 跑出地穴，朝 |cRXP_FRIENDLY_摩尔多|r 的方向前进
+    .goto 1420/0,1667.77,1679.04,10 >> 从地穴跑出来，朝 |cRXP_FRIENDLY_摩尔多|r 方向前进
 step
     .goto 1420/0,1667.77,1679.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莫多|r 对话
@@ -132,7 +132,7 @@ step << Warlock
     .goto 1420/0,1499.67,1975.47,30,0
     .goto 1420/0,1487.47,1938.12,30,0
     .goto 1420/0,1541.69,1939.32,30,0
-    >>击杀 |cRXP_ENEMY_断骨骷髅|r。拾取他们的 |cRXP_LOOT_断骨骷髅的颅骨|r
+    >>击杀 |cRXP_ENEMY_断骨骷髅|r，拾取他们的 |cRXP_LOOT_断骨骷髅的颅骨|r
     .complete 1470,1 --Rattlecage Skull (3)
     .mob 断骨骷髅
 step << Warlock
@@ -549,9 +549,9 @@ step << Warlock
 step << skip
     #hardcore
     #completewith next
-    .goto 1420,26.027,60.607,-1
-    .goto 1420,24.508,59.360,-1
-    .goto 1420,23.572,59.239,-1
+    .goto 1420/0,1857.24,2011.71,-1--c:1420,26.027,60.607
+    .goto 1420/0,1925.88,2049.28,-1--c:1420,24.508,59.360
+    .goto 1420/0,1968.17,2052.92,-1--c:1420,23.572,59.239
     .goto 1420/0,1628.91,1882.99,30 >>|cRXP_WARN_在洞穴内执行跳过操作：跳上切割机、水井或卡在墙上的木板，然后退出并重新登录|r
     >>|cRXP_WARN_或者，返回丧钟镇|r
 step
@@ -711,7 +711,7 @@ RXPGuides.RegisterGuide([[
 #name 6-12级 提瑞斯法林地
 #displayname 6-13级 提瑞斯法林地 << Paladin
 #version 11
-#group RestedXP无限服指南（部落）
+#group RestedXP 无限指南 (部落)
 #subgroup 速通指南 1-22级
 --#groupid RXP-SRGCE-H1
 #defaultfor Undead
@@ -2981,7 +2981,7 @@ step
     .goto 1458/0,224.300,1648.200
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拍卖师凯恩|r 对话
     >>|cRXP_BUY_从拍卖行|r |cRXP_BUY_购买三个|r |T133884:0|t[鱼人的眼球]
-    >>|cRXP_WARN_如果你愿意，可以跳过这一步，这只能节省一点点时间|r
+    >>|cRXP_WARN_如果你愿意的话可以跳过，这只是个小捷径|r
     .collect 730,3,91920,1 --Collect Murloc Eyes (x3)
     .target Auctioneer Cain
 step << Mage
@@ -3144,7 +3144,7 @@ step << Paladin
     .goto 1458/0,365.30,1304.41,10 >>进入皇室区--c:Undercity,52.94,89.60
 step << Paladin
     .goto 1458/0,316.200,1290.600
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_希尔瓦娜斯·风行者|r对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_希尔瓦娜斯·风行者|r 对话
     .turnin 95803 >>交任务 善意的信物
     .target Lady Sylvanas Windrunner
 
@@ -3279,7 +3279,7 @@ step
 
 
 RXPGuides.RegisterGuide([[
-#group RestedXP无限服指南（部落）
+#group RestedXP 无限指南 (部落)
 #subgroup 速通指南 1-22级
 --#groupid RXP-SRGCE-H1
 << Horde
@@ -3410,7 +3410,7 @@ step
     .goto 1421/0,1602.84,549.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾德温|r 对话
     >>|cRXP_BUY_购买|r |T132815:0|t[冰镇牛奶]|cRXP_BUY_从他那里|r << Mage/Warlock/Priest/Shaman/Druid
-    .vendor >> |cRXP_BUY_购买|r |T134830:0|t|T134830:0|t[次级治疗药水] |cRXP_BUY_从他那里（如果有货的话）|r
+    .vendor >> |cRXP_BUY_从他那里购买|r|T134830:0|t[次级治疗药水] |cRXP_BUY_（如果有货的话）|r
     >>|cRXP_WARN_不要卖掉你的|r |T133884:0|t[|cRXP_LOOT_鱼人的眼球|r]
     .collect 1179,20,421,1 << Mage/Warlock/Priest/Shaman/Druid --Ice Cold Milk (20)
     .target Edwin Harly
@@ -3659,7 +3659,7 @@ step
     .goto 1421/0,1602.84,549.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾德温|r 对话
     >>|cRXP_BUY_购买|r |T132815:0|t[冰镇牛奶]|cRXP_BUY_从他那里|r << Warlock/Priest/Shaman/Druid
-    .vendor >> |cRXP_BUY_购买|r |T134830:0|t|T134830:0|t[次级治疗药水] |cRXP_BUY_从他那里（如果有货的话）|r
+    .vendor >> |cRXP_BUY_从他那里购买|r|T134830:0|t[次级治疗药水] |cRXP_BUY_（如果有货的话）|r
     .collect 1179,20,423,1 << Warlock/Priest/Shaman/Druid --Ice Cold Milk (20)
     .target Edwin Harly
 step << Warlock/Mage/Priest
@@ -3906,7 +3906,7 @@ step << Rogue
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.6
 step << Undead
     .goto 1458/0,266.20,1567.17
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迈克尔 |r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_麦克尔|r 对话
     .turnin 6322 >>交任务 迈克尔·加勒特
     .target 迈克尔·加勒特
 step << Rogue/Warrior
@@ -3988,12 +3988,12 @@ step
 step
     #completewith next
     #optional
-    .goto 1458,54.383,73.014,50,0 << !Undead/!Rogue
-    .goto 1458,52.837,77.725,20,0
-    .goto 1458,52.275,79.254,15,0
-    .goto 1458,51.279,79.923,15,0
-    .goto 1458,49.693,78.903,15,0
-    .goto 1458,47.951,76.171,15 >>前往炼金房
+    .goto 1458/0,351.46,1410.58,50,0 << !Undead/!Rogue--c:1458,54.383,73.014
+    .goto 1458/0,366.29,1380.42,20,0--c:1458,52.837,77.725
+    .goto 1458/0,371.68,1370.64,15,0--c:1458,52.275,79.254
+    .goto 1458/0,381.23,1366.35,15,0--c:1458,51.279,79.923
+    .goto 1458/0,396.45,1372.88,15,0--c:1458,49.693,78.903
+    .goto 1458/0,413.16,1390.37,15 >>前往炼金房--c:1458,47.951,76.171
 step
     .goto 1458/0,426.100,1403.600
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_马丁·费尔本|r 对话
@@ -4010,7 +4010,7 @@ step
     .target +Apothecary Zinge
     .goto 1458/0,391.97,1442.87
 step
-    .goto Undercity,56.2,96.2
+    .goto 1458/0,334.02,1262.17--c:Undercity,56.2,96.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_瓦里玛萨斯|r 对话
     .accept 5725 >>接受任务《物归己用》 毁灭之力
     .target 瓦里玛萨斯

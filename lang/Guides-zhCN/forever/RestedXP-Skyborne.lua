@@ -206,7 +206,7 @@ step << Horde Shaman
     .xp <1,1
     .goto 2521,42.79,23.57
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塑风者波罗::251374|r 对话。
-    .train 8017 >>学习 |T136086:0|t[石化武器]
+    .train 8017 >>影袭 |T136086:0|t[石化武器]
     .target Windshaper Boro::251374
     .skipgossipid 136811
 step << Hunter
@@ -224,7 +224,7 @@ step << Alliance Rogue/Alliance Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德斯汀·三铸::251364|r 对话。
     .collect 2131,1 >>购买并装备 |T135274:0|t[农夫之剑] << Rogue
     .collect 1194,1 >>购买并装备 |T135276:0|t[损坏的双刃刀] << Warrior
-    .vendor 251364 >>出售垃圾物品
+    .vendor 251364 >>|cRXP_WARN_出售垃圾物品|r
     *不要出售 |T133970:0|t[多汁肉] 或 |T132889:0|t[亚麻布]。
     .target Destin Thriceforged::251364
 step << Horde
@@ -240,7 +240,7 @@ step << Horde !Warrior !Rogue/Alliance !Warrior !Rogue !Hunter
     .goto 2521,42.749,24.496
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乌阿莉亚·日冠::251537|r 对话
     >>|cRXP_BUY_从她那里|r|cRXP_BUY_购买|r |T132794:0|t[清凉的泉水] << !Hunter !Shaman
-    .vendor 251537 >>出售垃圾物品
+    .vendor 251537 >>|cRXP_WARN_出售垃圾物品|r
     *不要出售 |T133970:0|t[多汁肉] 或 |T132889:0|t[亚麻布]。 << Alliance
     .collect 159,20 << !Hunter !Shaman --Refreshing Spring Water (20)
     .target Uualia Suncrest::251537
@@ -264,7 +264,7 @@ step << Alliance Hunter/Horde Rogue/Horde Warrior
     .goto 2521,43.41,23.51
     .collect 1194,1 >>购买并装备 |T135276:0|t[损坏的双刃刀] << Hunter/Horde Warrior
     .collect 2131,1 >>购买并装备 |T135274:0|t[农夫之剑] << Horde Rogue
-    .vendor 251364 >>出售垃圾物品
+    .vendor 251364 >>|cRXP_WARN_出售垃圾物品|r
     *不要出售 |T133970:0|t[多汁肉] 或 |T132889:0|t[亚麻布]。
     .target Destin Thriceforged::251364
 step << Alliance
@@ -733,7 +733,7 @@ step
     #label AggressiveVendor
     #completewith Aggressive Encroachment
     .goto 2521,42.76,24.5
-    .vendor 251537 >>出售垃圾物品
+    .vendor 251537 >>|cRXP_WARN_出售垃圾物品|r
     *不要出售 |T133970:0|t[多汁肉] 或 |T132889:0|t[亚麻布]。 << Alliance
     .collect 2512,1200 << Hunter --Rough Arrow (1200)
     .collect 159,20 >>购买 |T132794:0|t[清凉的泉水] << Druid/Mage/Priest/Warlock/Paladin
@@ -830,7 +830,7 @@ step
     .turnin 92470,2 >>交任务 邪恶的族母 << Druid/Shaman/Priest/Warlock
     .turnin 92470,3 >>交任务 邪恶的族母 << Mage
     .turnin 92470,4 >>交任务 邪恶的族母 << Rogue
-    .turnin 92470,5 >>交任务 邪恶的族母 << Hunter
+    .turnin 92470,1 >>交任务 邪恶的族母 << Hunter
 step
     #completewith Turn in Foul Matriarch
     #ignorecorpse
@@ -850,7 +850,7 @@ step
     .turnin 92470,2 >>交任务 邪恶的族母 << Druid/Shaman/Priest/Warlock
     .turnin 92470,3 >>交任务 邪恶的族母 << Mage
     .turnin 92470,4 >>交任务 邪恶的族母 << Rogue
-    .turnin 92470,5 >>交任务 邪恶的族母 << Hunter
+    .turnin 92470,1 >>交任务 邪恶的族母 << Hunter
     .accept 92472 >>接受任务 下一步
     .accept 96638 >>接受任务 冒险者
     .target Aetheen of the Gales::251366
@@ -864,7 +864,7 @@ step
 step
     #completewith Aggressive Encroachment2
     .goto 2521,42.76,24.52
-    .vendor 251537 >>出售垃圾物品
+    .vendor 251537 >>|cRXP_WARN_出售垃圾物品|r
     *不要出售 |T133970:0|t[多汁肉]、|T132832:0|t[小蛋] 或 |T132889:0|t[亚麻布]。 << Alliance
     *不要出售 |T132832:0|t[小蛋] 或 |T132889:0|t[亚麻布]。 << Horde
     *|cRXP_WARN_之后烹饪会用到它们|r。
@@ -878,11 +878,10 @@ step
     #optional
     #completewith next
     #label Al'Aketh Thugs
-    *|cRXP_WARN_装备|r |T135335:0|t[破损的巨剑] << Warrior/Paladin
+    *|cRXP_WARN_装备|r |T135335:0|t[破损的巨剑] << Warrior/Paladin/Hunter
     *|cRXP_WARN_装备|r |T135145:0|t[见习牧师的短杖] << Druid/Shaman/Priest/Warlock
     *|cRXP_WARN_装备|r |T135650:0|t[斥候游侠的匕首] << Mage
     *|cRXP_WARN_装备|r |T133057:0|t[维和者的采矿锤] << Rogue
-    *|cRXP_WARN_装备|r |T135503:0|t[精良的短弓] << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哈娜·夜风::252095|r 对话。
     .accept 92544 >>接受任务 奥拉凯斯暴徒
     .target Hanaa Nightwind::252095
@@ -890,7 +889,7 @@ step
     .use 257282 << Druid/Shaman/Priest/Warlock -- Novice's Quarterstaff
     .use 257283 << Mage -- Scout Ranger's Dagger
     .use 257276 << Rogue -- Peacekeeper's Pickhammer
-    .use 273879 << Hunter -- Refined Shortbow
+    .use 258882 << Hunter -- Worn Greatsword
 step
     #completewith Al'Aketh Thugs
     .goto 2521,38.31,30.17,100 >>在不浪费时间的前提下，沿途击杀小怪。
@@ -979,6 +978,12 @@ step
     #hidewindow
     +龙卷风可能刷新位置
     #icon |TInterface/Icons/Spell_Nature_Cyclone:0|t
+    .pin 2521,50.27,76.45,Tornado
+    .pin 2521,57.91,75.86,Tornado
+    .pin 2521,42.13,39.24,Tornado
+    .pin 2521,64,75.79,Tornado
+    .pin 2521,52.67,41.92,Tornado
+    .pin 2521,68.63,65.95,Tornado
     .pin 2521,48.14,56.56,Tornado
     .pin 2521,54.92,44.76,Tornado
     .pin 2521,39.6,45.11,Tornado
@@ -2214,6 +2219,7 @@ step
     >>击杀 |cRXP_ENEMY_幼年角鹰兽::251291|r、|cRXP_ENEMY_角鹰兽保卫者::251284|r 和 |cRXP_ENEMY_角鹰兽雌兽::251261|r。
     *|cRXP_WARN_拾取它们的有价值的杂物并进行出售，来支付武器升级和职业训练的费用|r。
     *|cRXP_WARN_优先击杀 |cRXP_ENEMY_主母::251261|r|r
+    *|cRXP_WARN_Hippogryphs 速度极快。如果情况危险，不要试图逃脱它们|r。
     .complete 92516,1 --|8/8 Hippogryph Youth slain
     .mob +Hippogryph Youth::251291
     .complete 92516,2 --|6/6 Hippogryph Protector slain
@@ -2228,6 +2234,7 @@ step
     >>击杀 |cRXP_ENEMY_幼年角鹰兽::251291|r、|cRXP_ENEMY_角鹰兽保卫者::251284|r 和 |cRXP_ENEMY_角鹰兽雌兽::251261|r。
     *|cRXP_WARN_拾取它们的有价值的杂物并进行出售，来支付武器升级和职业训练的费用|r。
     *|cRXP_WARN_优先击杀 |cRXP_ENEMY_主母::251261|r|r
+    *|cRXP_WARN_Hippogryphs 速度极快。如果情况危险，不要试图逃脱它们|r。
     .complete 92516,1 --|8/8 Hippogryph Youth slain
     .mob +Hippogryph Youth::251291
     .complete 92516,2 --|6/6 Hippogryph Protector slain
@@ -2810,6 +2817,7 @@ step  << Alliance
     #optional
     #completewith NearCommander
     >>击杀 |cRXP_ENEMY_奥拉凯斯唤暴者::252068|r。拾取它们的 |T133647:0|t[|cRXP_LOOT_失窃的申达尔补给品|r]。
+    *|cRXP_WARN_|cRXP_ENEMY_Al'Aketh Stormcallers|r 施放|r |T136014:0|t[Lightning 云朵]。|cRXP_WARN_远离云雾，不要拉到附近的敌人|r。
     >>|TInterface/cursor/crosshair/interact.blp:16|t点击 |cRXP_PICK_补给箱|r （小包）。
     .complete 92550,1 --6/6 Al'Aketh Stormcaller slain
     .complete 92551,1 --10/10 Stolen Shen'dar Supplies
@@ -2854,12 +2862,14 @@ step
     #optional
     #completewith CommanderCyclasHeadA
     >>击杀 |cRXP_ENEMY_活体闪电::251662|r。
+    *|cRXP_WARN_小心：|cRXP_ENEMY_Living Lightning|r 使用类似 雷霆一击 的能力，在单次打击中造成其近战伤害的三倍伤害|r。
     .complete 92550,2 --4/4 Living Lightning slain
     .mob Living Lightning::251662
 step
     #optional
     #completewith CommanderCyclasHeadA
     >>击杀 |cRXP_ENEMY_奥拉凯斯唤暴者::252068|r。拾取它们的 |T133647:0|t[|cRXP_LOOT_失窃的申达尔补给品|r]。
+    *|cRXP_WARN_|cRXP_ENEMY_Al'Aketh Stormcallers|r 施放|r |T136014:0|t[Lightning 云朵]。|cRXP_WARN_远离云雾，不要拉到附近的敌人|r。
     >>|TInterface/cursor/crosshair/interact.blp:16|t点击|cRXP_PICK_补给箱|r。
     .complete 92550,1 --6/6 Al'Aketh Stormcaller slain
     .complete 92551,1 --10/10 Stolen Shen'dar Supplies
@@ -2890,10 +2900,12 @@ step
     #optional
     #completewith next
     >>击杀 |cRXP_ENEMY_活体闪电::251662|r。
+    *|cRXP_WARN_小心：|cRXP_ENEMY_Living Lightning|r 使用类似 雷霆一击 的能力，在单次打击中造成其近战伤害的三倍伤害|r。
     .complete 92550,2 --4/4 Living Lightning slain
     .mob Living Lightning::251662
 step
     >>击杀 |cRXP_ENEMY_奥拉凯斯唤暴者::252068|r。拾取它们的 |T133647:0|t[|cRXP_LOOT_失窃的申达尔补给品|r]。
+    *|cRXP_WARN_|cRXP_ENEMY_Al'Aketh Stormcallers|r 施放|r |T136014:0|t[Lightning 云朵]。|cRXP_WARN_远离云雾，不要拉到附近的敌人|r。
     >>|TInterface/cursor/crosshair/interact.blp:16|t点击|cRXP_PICK_补给箱|r。
     .complete 92550,1 --6/6 Al'Aketh Stormcaller slain
     .complete 92551,1 --10/10 Stolen Shen'dar Supplies
@@ -2901,6 +2913,7 @@ step
 step
     #label LivingLightningA
     >>击杀 |cRXP_ENEMY_活体闪电::251662|r。
+    *|cRXP_WARN_小心：|cRXP_ENEMY_Living Lightning|r 使用类似 雷霆一击 的能力，在单次打击中造成其近战伤害的三倍伤害|r。
     .complete 92550,2 --4/4 Living Lightning slain
     .mob Living Lightning::251662
 step << Horde
@@ -3231,6 +3244,12 @@ step
     #hidewindow
     +龙卷风可能刷新位置
     #icon |TInterface/Icons/Spell_Nature_Cyclone:0|t
+    .pin 2521,50.27,76.45,Tornado
+    .pin 2521,57.91,75.86,Tornado
+    .pin 2521,42.13,39.24,Tornado
+    .pin 2521,64,75.79,Tornado
+    .pin 2521,52.67,41.92,Tornado
+    .pin 2521,68.63,65.95,Tornado
     .pin 2521,48.14,56.56,Tornado
     .pin 2521,39.6,45.11,Tornado
     .pin 2521,54.92,44.76,Tornado
@@ -3953,6 +3972,7 @@ step
     #optional
     #completewith WhatIsMyPurposeA
     >>击杀 |cRXP_ENEMY_暴躁的疾风陆行鸟::251707|r。拾取 |T2066012:0|t[|cRXP_LOOT_低地疾风陆行鸟里脊肉|r]。
+    *|cRXP_WARN_小心：|cRXP_ENEMY_Ornery Galestriders|r 使用 |T132156:0|t[Dust 云朵] 来降低你的命中率。
     .complete 92684,1 --7/7 Lowlands Galestrider Tenderloin
     .mob Ornery Galestrider::251707
 step
@@ -3994,6 +4014,7 @@ step
     #optional
     #completewith next
     >>击杀 |cRXP_ENEMY_暴躁的疾风陆行鸟::251707|r。拾取它们的 |T2066012:0|t[|cRXP_LOOT_低地疾风陆行鸟里脊肉|r]。
+        *|cRXP_WARN_小心：|cRXP_ENEMY_Ornery Galestriders|r 使用 |T132156:0|t[Dust 云朵] 来降低你的命中率。
     .complete 92684,1 --7/7 Lowlands Galestrider Tenderloin
     .mob Ornery Galestrider::251707
 step
@@ -4008,6 +4029,7 @@ step
 step
     #label GalestriderTenderloinA
     >>击杀 |cRXP_ENEMY_暴躁的疾风陆行鸟::251707|r。拾取它们的 |T2066012:0|t[|cRXP_LOOT_低地疾风陆行鸟里脊肉|r]。
+    *|cRXP_WARN_小心：|cRXP_ENEMY_Ornery Galestriders|r 使用 |T132156:0|t[Dust 云朵] 来降低你的命中率。
     .complete 92684,1 --7/7 Lowlands Galestrider Tenderloin
     .mob Ornery Galestrider::251707
 step
@@ -4074,12 +4096,18 @@ step << Horde Shaman
     .turnin 97243 >>交任务 火焰的召唤
     .accept 97244 >>接受任务 火焰的召唤
     .target Olariaan Swiftburn::268592
--- step << Shaman
+-- step << Horde Shaman
 --     .isOnQuest 97244
 --     .isQuestNotComplete 97244
 --     .goto 2521,50.8,89.6
--- -- #ignorecorpse
---     .deathskip >>|cRXP_WARN_(BETA: Resurrection Sickness is bugged. Skip this step for now.)|r Jump down to die and respawn at the |cRXP_FRIENDLY_Spirit Healer::6491|r.
+--     .subzone 16593 >>Jump off the cliff
+-- step << Horde Shaman
+--     #ignorecorpse
+--     .isOnQuest 97244
+--     .isQuestNotComplete 97244
+--     .showwhiledead
+--     .goto 2521,54.99,68.14
+--     .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Spirit Healer::6491|r.
 --     .skipgossipid 96031
 --     .skipgossipid 98031
 --     .target Spirit Healer::6491
@@ -4088,11 +4116,20 @@ step << Horde Shaman
     >>击杀 |cRXP_ENEMY_天空牧师法拉迪尔::268602|r。拾取他的战利品 |T839910:0|t[|cRXP_LOOT_法拉迪尔的心脏|r]。
     .complete 97244,1 --|1/1 Faladiel's Heart
     .mob Skypriest Faladiel::268602
--- step << Shaman
+-- step << Horde Shaman
+--     #completewith next
 --     .isOnQuest 97244
---     .goto 2521,62.384,64.393
--- -- #ignorecorpse
---     .deathskip >>|cRXP_WARN_(BETA: Resurrection Sickness is bugged. Skip this step for now.)|r Jump down to die and respawn at the |cRXP_FRIENDLY_Spirit Healer::6491|r.
+--     .isQuestComplete 97244
+--     .goto 2521,62.384,64.393,-1
+--     .goto 2521,54.99,68.14,-1
+--     +Die and ressurect at the |cRXP_FRIENDLY_Spirit Healer::6491|r.
+-- step << Horde Shaman
+--     .isOnQuest 97244
+--     .isQuestComplete 97244
+--     #ignorecorpse
+--     .showwhiledead
+--     .goto 2521,54.99,68.14
+--     .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Spirit Healer::6491|r.
 --     .skipgossipid 96031
 --     .skipgossipid 98031
 --     .target Spirit Healer::6491
@@ -4569,7 +4606,7 @@ step << Alliance
     .use 263329 << Rogue -- Flutterfly Swatter
 step << Alliance
     -- #completewith Protect the Index
-    #completewith next
+    #completewith Accept Catching Wind
     .subzoneskip 16638,1 -- Valanaar
     .aura 1258510
     >>击杀 |cRXP_ENEMY_天空跳跃者::251314|r。
@@ -4577,6 +4614,12 @@ step << Alliance
     *|cRXP_WARN_龙卷风速度buff激活时，避免击杀它们|r。
     .complete 93949,1 --|8/8 Enchanted Skyhopper Exterminated
     .mob Skyhopper::251314
+-- step << Rogue
+--     .goto 2521,63.027,77.807
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Antelariaa Cloudgaze::252390|r.
+--     *|cRXP_BUY_Buy|r 600 |T132382:0|t[Sharp Arrows]
+--     .collect 2515,600 --Sharp Arrows (600)
+--     .target Antelariaa Cloudgaze::252390
 step << Alliance
     #label Accept Catching Wind
     .goto 2521,66.627,79.942
@@ -5008,22 +5051,13 @@ step << Horde Druid
     .cooldown spell,1259686,>0,1 -- Skysight
     .goto 2521,46.597,38.121
     .cast 1259686 >>使用 |T1029587:0|t[天穹视界] 以获得 10% 移动速度加成。
--- step << Horde !Druid
---      -- Not sure yet if I want to do this. This saves "only" ~15 seconds
---     .isQuestAvailable 98512
---     .goto 2521,61.221,78.472
---     .deathskip >>|cRXP_WARN_(BETA: Resurrection Sickness is bugged. Skip this step for now.)|r Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r.
--- step << Horde Druid
---     .isOnQuest 94638
---     .goto 2521,62.384,64.393
---     .deathskip >>|cRXP_WARN_(BETA: Resurrection Sickness is bugged. Skip this step for now.)|r Die and respawn at the |cRXP_FRIENDLY_Spirit Healer::6491|r.
 step << Horde Druid
     #completewith next
     .goto 2521,59.59,66.7,30,0
     >>击杀 |cRXP_ENEMY_风歌爬行者::254588|r。拾取 |T133972:0|t[|cRXP_LOOT_风歌爬行者肉|r]。
     .complete 93317,1 --6/6 Windsong Crawler Meat
 step << Horde
-    .goto 2521,59.528,66.902,30,0
+    .goto 2521,59.528,66.902,30,0 << Druid
     .goto 2521,56.81,61.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_芬达尔·风石::273017|r交谈。
     *|cRXP_WARN_如果附近有龙卷风，接触它可获得40%移动速度加成，持续5分钟。造成伤害会移除该效果|r。
@@ -5036,13 +5070,20 @@ step << Horde
     .goto 2521,55.93,60.3,35,0
     .goto 2521,56.04,59.08,35,0
     >>击杀 |cRXP_ENEMY_奥拉凯斯刺客::254626|r。
+    *|cRXP_WARN_小心：|cRXP_ENEMY_Al'Aketh Assassins|r 使用|r |T132357:0|t[Slam] |cRXP_WARN_来击倒你，并|r |T136189:0|t[影袭] |cRXP_WARN_配合他们的近战攻击|r。
     .complete 98512,1 --10/10 Al'Aketh Assassin slain
     .mob Al'Aketh Assassin::254626
 step << Horde !Druid
     .goto 2521,56.80,61.10
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_芬达尔·风石::273017|r交谈。
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_芬达尔·风石::273017|r 对话。
     .turnin 98512 >>交任务 奥拉凯斯刺客
     .target Fendaal Windstone::273017
+step << Horde Druid
+    .goto 2521,56.80,61.10,25,0
+    .goto 2521,54.284,65.803
+    >>在洞穴中击杀 |cRXP_ENEMY_乌尔恩德拉::258443|r。
+    .complete 94638,1 --|1/1 Ur'endra slain
+    .mob Ur'endra::258443
 step << Horde
     #loop
     .goto 2521,53.56,59.17,35,0
@@ -5076,14 +5117,8 @@ step << Horde
     .complete 93737,3 --|1/1 Obtain Enchanted Gyrozephyr from Windsong Lake
     .mob Windsong Crawler::254588
 step << Horde Druid
-    .goto 2521,56.80,61.10,25,0
-    .goto 2521,54.284,65.803
-    >>在洞穴中击杀 |cRXP_ENEMY_乌尔恩德拉::258443|r。
-    .complete 94638,1 --|1/1 Ur'endra slain
-    .mob Ur'endra::258443
-step << Horde Druid
     .goto 2521,56.80,61.10
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_芬达尔·风石::273017|r 对话。
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_芬达尔·风石::273017|r交谈。
     .turnin 98512 >>交任务 奥拉凯斯刺客
     .target Fendaal Windstone::273017
 step << Horde Druid
@@ -5132,7 +5167,6 @@ step << Alliance
     #completewith next
     #label Service of Zephras
     *|cRXP_WARN_装备|r |T7810733:0|t[时光之弓] << Hunter
-    -- *|cRXP_WARN_Equip the|r |T7810733:0|t[Bow of Hours] << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_瓦伦妮亚·风暴之拳::252383|r 对话。
     .turnin 92860 >>交任务 塞弗拉斯之约
     .turnin 93949 >>交任务 窃听虫
@@ -5189,6 +5223,8 @@ step << Alliance
     >>击杀 |cRXP_ENEMY_奥拉凯斯斗士::270201|r。
     *拾取 |T1379232:0|t[|cRXP_LOOT_奥拉凯斯风石护符|r]。
    *|cRXP_WARN_你会在这里取得一些任务进度，但很可能要在另一个地方完成该任务|r。
+    *|cRXP_WARN_|cRXP_ENEMY_Al'Aketh Healers|r 可以治疗自己或其他人。如果可以，昏迷 他们的治疗|r。 << !Rogue
+    *|cRXP_WARN_|cRXP_ENEMY_Al'Aketh Healers|r 可以治疗自己或他人。如果无法在他们施放前将其击杀，就积攒能量来打断他们的治疗|r。 << Rogue
     .complete 92834,1 --10/10 Al'Aketh Windstone Charm
     .mob Al'Aketh Healer::254596
     .mob Al'Aketh Brawler::270201
@@ -5221,6 +5257,8 @@ step << Alliance !Druid
     #optional
     #completewith Commander Belguilos2
     >>击杀 |cRXP_ENEMY_奥拉凯斯治疗者::254596|r 和 |cRXP_ENEMY_奥拉凯斯斗士::270201|r。
+    *|cRXP_WARN_|cRXP_ENEMY_Al'Aketh Healers|r 可以治疗自己或其他人。如果可以，昏迷 他们的治疗|r。 << !Rogue
+    *|cRXP_WARN_|cRXP_ENEMY_Al'Aketh Healers|r 可以治疗自己或他人。如果无法在他们施放前将其击杀，就积攒能量来打断他们的治疗|r。 << Rogue
     .complete 92642,1 --4/4 Al'Aketh Healer slain
     .mob +Al'Aketh Healer::254596
     .complete 92642,2 --8/8 Al'Aketh Brawler slain
@@ -5250,6 +5288,8 @@ step << Alliance !Druid
     .goto 2521,64.71,67.65,40,0
     .goto 2521,66.59,67.5,40,0
     >>击杀 |cRXP_ENEMY_奥拉凯斯斗士::270201|r 和 |cRXP_ENEMY_奥拉凯斯治疗者::254596|r。
+    *|cRXP_WARN_|cRXP_ENEMY_Al'Aketh Healers|r 可以治疗自己或其他人。如果可以，昏迷 他们的治疗|r。 << !Rogue
+    *|cRXP_WARN_|cRXP_ENEMY_Al'Aketh Healers|r 可以治疗自己或他人。如果无法在他们施放前将其击杀，就积攒能量来打断他们的治疗|r。 << Rogue
     .complete 92642,1 --4/4 Al'Aketh Healer slain
     .mob +Al'Aketh Healer::254596
     .complete 92642,2 --8/8 Al'Aketh Brawler slain
@@ -5290,6 +5330,8 @@ step << Alliance Druid
     #optional
     #completewith Commander Belguilos Druid2
     >>击杀 |cRXP_ENEMY_奥拉凯斯治疗者::254596|r 和 |cRXP_ENEMY_奥拉凯斯斗士::270201|r。
+    *|cRXP_WARN_|cRXP_ENEMY_Al'Aketh Healers|r 可以治疗自己或其他人。如果可以，昏迷 他们的治疗|r。 << !Rogue
+    *|cRXP_WARN_|cRXP_ENEMY_Al'Aketh Healers|r 可以治疗自己或他人。如果无法在他们施放前将其击杀，就积攒能量来打断他们的治疗|r。 << Rogue
     .complete 92642,1 --4/4 Al'Aketh Healer slain
     .mob +Al'Aketh Healer::254596
     .complete 92642,2 --8/8 Al'Aketh Brawler slain
@@ -5331,6 +5373,8 @@ step << Alliance Druid
     .goto 2521,64.71,67.65,40,0
     .goto 2521,66.59,67.5,40,0
     >>击杀 |cRXP_ENEMY_奥拉凯斯斗士::270201|r 和 |cRXP_ENEMY_奥拉凯斯治疗者::254596|r。
+    *|cRXP_WARN_|cRXP_ENEMY_Al'Aketh Healers|r 可以治疗自己或其他人。如果可以，昏迷 他们的治疗|r。 << !Rogue
+    *|cRXP_WARN_|cRXP_ENEMY_Al'Aketh Healers|r 可以治疗自己或他人。如果无法在他们施放前将其击杀，就积攒能量来打断他们的治疗|r。 << Rogue
     .complete 92642,1 --4/4 Al'Aketh Healer slain
     .mob +Al'Aketh Healer::254596
     .complete 92642,2 --8/8 Al'Aketh Brawler slain
@@ -5620,6 +5664,7 @@ step << Alliance
     #optional
     #completewith Fendaal Windstone
     >>击杀 |cRXP_ENEMY_奥拉凯斯刺客::254626|r。
+    *|cRXP_WARN_小心：|cRXP_ENEMY_Al'Aketh Assassins|r 使用|r |T132357:0|t[Slam] |cRXP_WARN_来击倒你，并|r |T136189:0|t[影袭] |cRXP_WARN_配合他们的近战攻击|r。
     .complete 98512,1 --10/10 Al'Aketh Assassin slain
     .mob Al'Aketh Assassin::254626
 step << Alliance
@@ -5647,6 +5692,7 @@ step << Alliance
     .goto 2521,55.93,60.3,35,0
     .goto 2521,56.04,59.08,35,0
     >>击杀 |cRXP_ENEMY_奥拉凯斯刺客::254626|r。
+    *|cRXP_WARN_小心：|cRXP_ENEMY_Al'Aketh Assassins|r 使用|r |T132357:0|t[Slam] |cRXP_WARN_来击倒你，并|r |T136189:0|t[影袭] |cRXP_WARN_配合他们的近战攻击|r。
     .complete 98512,1 --10/10 Al'Aketh Assassin slain
     .mob Al'Aketh Assassin::254626
 step << Alliance
@@ -5776,7 +5822,7 @@ step << Warrior
 step << Alliance
     #completewith Learn
     >>击杀 |cRXP_ENEMY_影风尖啸幼兽::256092|r。
-    *拾取它们的 |T1508517:0|t[|cRXP_LOOT_尖啸幼兽的利爪|r]。
+    *拾取 |T1508517:0|t[|cRXP_LOOT_尖啸幼兽的利爪|r]。
     .complete 92741,1 --8/8 Shriekling Talons
     .mob Shadowgale Shriekling::256092
 step << Alliance
@@ -5924,7 +5970,7 @@ step
 step << Alliance
     #completewith Unnerving Silence
     >>击杀 |cRXP_ENEMY_影风尖啸幼兽::256092|r。
-    *拾取 |T1508517:0|t[|cRXP_LOOT_尖啸幼兽的利爪|r]。
+    *拾取它们的 |T1508517:0|t[|cRXP_LOOT_尖啸幼兽的利爪|r]。
     .complete 92741,1 --8/8 Shriekling Talons
     .mob Shadowgale Shriekling::256092
 step
@@ -7265,7 +7311,7 @@ step << Horde
     .fly Orgrimmar >>飞往奥格瑞玛
     .target Tal::2995
 step << Horde
-    .goto Orgrimmar,54.10,68.42
+    .goto 1454/1,-4439.41,1633.87--c:Orgrimmar,54.10,68.42
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_旅店老板格雷什卡::6929|r 对话
     .home >> 将你的炉石绑在铁炉堡
 	.target Innkeeper Gryshka::6929
@@ -7538,7 +7584,7 @@ step << Horde !Hunter
     .goto 1458/0,224.300,1648.200
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拍卖师凯恩::15682|r 对话
     >>|cRXP_BUY_从拍卖行|r |cRXP_BUY_购买三个|r |T133884:0|t[鱼人的眼球]
-    >>|cRXP_WARN_如果你愿意，可以跳过这一步，这只能节省一点点时间|r
+    >>|cRXP_WARN_如果你愿意的话可以跳过，这只是个小捷径|r
     .collect 730,3,91920,1 --Collect Murloc Eyes (x3)
     .target Auctioneer Cain::15682
 step << Horde !Hunter

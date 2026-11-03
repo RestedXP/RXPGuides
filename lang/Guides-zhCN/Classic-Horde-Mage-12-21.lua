@@ -67,7 +67,7 @@ step
     .goto The Barrens,51.5,30.1
 .target 药剂师赫布瑞姆
 >>与 |cRXP_FRIENDLY_药剂师赫布瑞姆|r 对话
-    .accept 848 >>接受任务菌类孢子
+    .accept 848 >>接受任务 菌类孢子
     .accept 1492 >>接受任务 码头主管迪兹维格
 step
     #sticky
@@ -697,9 +697,9 @@ step
 step
     .goto The Barrens,35.3,27.9
 >>与 |cRXP_FRIENDLY_希雷斯·碎石|r 对话
-    .turnin 1061 >> 交任务  石爪之灵
+    .turnin 1061 >> 交任务石爪之灵
 .target 希雷斯·碎石
-    .accept 1062 >> 接受任务地精侵略者
+    .accept 1062 >> 接受任务 地精侵略者
 .target 玛卡巴·扁蹄
 >>与 |cRXP_FRIENDLY_玛卡巴·扁蹄|r 对话
     .accept 6548 >> 接受任务 为我的村庄复仇
@@ -939,7 +939,7 @@ step
 step
     .goto The Barrens,44.6,59.2
 >>与 |cRXP_FRIENDLY_碎牙|r 对话
-    .turnin 878 >>交任务  野猪人的内战
+    .turnin 878 >>交任务野猪人的内战
 .target 碎牙
     .accept 5052 >>接受任务 阿迦玛甘的血岩碎片
     .turnin 5052 >>交任务  阿迦玛甘的血岩碎片
@@ -1030,7 +1030,7 @@ step
 >>与 |cRXP_FRIENDLY_梅洛·石蹄|r 对话
     .turnin 1130 >>交任务 梅洛的关注
 .target 梅洛·石蹄
-    .accept 1131 >>接受任务钢齿土狼
+    .accept 1131 >>接受任务 钢齿土狼
 step
  	>>进入幻象之池
 	.goto Thunder Bluff,30.1,30.0,30,0
@@ -1060,7 +1060,7 @@ step
 >>与 |cRXP_FRIENDLY_希雷斯·碎石|r 对话
     .turnin 1062 >>交任务地精侵略者
 >>与 |cRXP_FRIENDLY_玛卡巴·扁蹄|r 对话
-    .turnin 6629 >>交任务  杀死格鲁迪格·黑云
+    .turnin 6629 >>交任务杀死格鲁迪格·黑云
     .turnin 6523 >>交任务保护卡雅
 .target 玛卡巴·扁蹄
     .accept 6401 >>接受任务卡雅还活着
@@ -1071,7 +1071,7 @@ step
     .goto Stonetalon Mountains,71.3,95.1
 .target 辛吉拉
 >>与 |cRXP_FRIENDLY_辛吉拉|r 对话
-    .turnin 6461 >>交任务盗窃的蜘蛛
+    .turnin 6461 >>交任务  盗窃的蜘蛛
 step
     .goto Stonetalon Mountains,58.989,62.599
 .target 菲兹克斯

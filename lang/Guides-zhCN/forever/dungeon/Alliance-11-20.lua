@@ -17,17 +17,16 @@ step
     #include RestedXP无限服指南（联盟）\15-16级 洛克莫丹@SWBoat-IFExit
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_旅店老板洛雷·火酒|r 对话
-    >>|cRXP_WARN_如果你的队伍里有法师，那就把炉石绑定在湖畔镇|r
-    .goto Ironforge,18.10,51.60
+    .goto 1455/0,-856.69,-4841.490
     .home >> 将你的炉石设置为铁炉堡
     .target 旅店老板洛雷·火酒
 step
     #completewith next
     .zone Dun Morogh >> 前往 丹莫罗
 step
-    .goto Dun Morogh,59.9,49.5,30,0
-    .goto Dun Morogh,61.2,47.2,15,0
-    .goto Dun Morogh,62.1,47.3,20 >>冲上斜坡去找 |cRXP_ENEMY_瓦加什|r
+    .goto 1426/0,-1147.9916,-5502.3333,30,0
+    .goto 1426/0,-1212.0166,-5426.8167,15,0
+    .goto 1426/0,-1256.3416,-5430.1000,20 >>冲上斜坡去找 |cRXP_ENEMY_瓦加什|r
 step
     #completewith next
     +把 |cRXP_ENEMY_瓦加什|r 风筝到 |cRXP_FRIENDLY_鲁德拉·冻石|r 那里
@@ -35,19 +34,19 @@ step
     .mob 瓦加什
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:16|t与 |cRXP_FRIENDLY_鲁德拉·冻石|r 对话
-    .goto Dun Morogh,63.1,49.8
+    .goto 1426/0,-1304.71,-5513.86
     .target 鲁德拉·冻石
     .accept 314 >>接受任务 保护牲畜
 step
     >>把 |cRXP_ENEMY_瓦加什|r 风筝 |cRXP_FRIENDLY_丹莫罗巡山人|r 那里
     >>|cRXP_WARN_确保你至少对他造成50%的伤害|r
-    .goto Dun Morogh,62.8,54.6,10,0
+    .goto 1426/0,-1290.8166,-5669.7833,10,0
     .mob 瓦加什
     .target Dun Morogh Mountaineer
     .complete 314, 1
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:16|t与 |cRXP_FRIENDLY_鲁德拉·冻石|r 对话
-    .goto Dun Morogh, 63.1, 49.8
+    .goto 1426/0,-1304.71,-5513.86
     .target 鲁德拉·冻石
     .turnin 314 >>交任务 保护牲畜
 step
@@ -110,16 +109,16 @@ step << NightElf Druid
 	.cast 18960 >> 施放传送：月光林地
 	.zoneskip Moonglade
 step << Druid
-	.goto Moonglade,44.2,45.2
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_希尔瓦|r 对话
+	.goto 1450/1,-2400.33,7795.33--c:Moonglade,44.148,45.229
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_希尔瓦·菲纳雯斯|r 对话
 	.fly Teldrassil >>飞往鲁瑟兰村
-	.target Silva
+	.target 希尔瓦·菲纳雯斯
 step << Druid
     #completewith next
-    .goto Teldrassil,55.95,89.88
+    .goto 1438/1,965.7958,8780.9475
     .zone Darnassus >> 进入通往达纳苏斯的紫色传送门
 step << Druid
-	.goto Darnassus,35.375,8.405
+	.goto 1457/1,2563.92,10179.040
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_玛斯雷·驭熊者|r 对话
 	.accept 26 >>接受任务必修的课程
 	.trainer >> 训练你的职业技能
@@ -129,13 +128,13 @@ step << Druid
 	.cast 18960 >> 施放传送：月光林地
 	.zoneskip Moonglade
 step << Druid
-    .goto Moonglade,56.1,30.7
+    .goto 1450/1,-2676.22,8019.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德迪利特·星焰|r 对话
     .turnin 26 >> 交任务必修的课程
     .accept 29 >> 接受任务湖中试炼
     .target 德迪利特·星焰
 step << Druid
-    .goto Moonglade,52.6,51.6
+    .goto 1450/1,-2595.43,7697.24
     >>游入月神湖
     >>打开一个 |cRXP_PICK_神殿灵珠容器|r。拾取 |T134125:0|t[神殿灵珠]
     >>|cRXP_WARN_它可能会在水下的不同位置刷新|r
@@ -146,13 +145,13 @@ step << Druid
     .cast 18960 >> 施放传送：月光林地
     .itemcount 15877,1 -- Shrine Bauble (1)
 step << Druid
-    .goto Moonglade,36.026,41.374
+    .goto 1450/1,-2212.85,7854.68
     >>|cRXP_WARN_在雷姆洛斯神殿使用|r |T134125:0|t[神殿灵珠] |cRXP_WARN_|r
     .complete 29,1 --Complete the Trial of the Lake.
     .use 15877
 step << Druid
     #label TotL
-    .goto Moonglade,36.517,40.104
+    .goto 1450/1,-2224.18,7874.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塔加里|r 对话
     .turnin 29 >> 交任务 湖中试炼
     .accept 272 >> 接受任务 海狮试炼
@@ -187,17 +186,17 @@ step << NightElf Priest
     .trainer >> 训练你的职业技能
     .target High Priest Rohan
 step << NightElf Rogue
-    .goto Ironforge,51.495,15.330
+    .goto 1455/0,-1120.72,-4650.120
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_芬斯维克|r 对话
     .trainer >> 训练你的职业技能
     .target 芬斯维克
 step << NightElf Warrior
-    .goto Ironforge,65.905,88.405
+    .goto 1455/0,-1234.65,-5035.67
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_比尔班·飞钳|r 对话
     .trainer >> 训练你的职业技能
     .target 比尔班·飞钳
 step << NightElf
-    .goto Ironforge,74.645,11.742
+    .goto 1455/0,-1303.75,-4631.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_勘察员塔伯斯·雷矛|r 对话
     .turnin 301 >> 交任务 向铁炉堡报告
     .target 勘察员塔伯斯·雷矛
@@ -681,7 +680,7 @@ step
 step
     #ah
     .goto 1453/0,660.28,-8814.55
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
     >>|cRXP_BUY_购买以下物品以便在西部荒野快速交任务：|r
     >>|cRXP_WARN_如果你不想这样做，或者无法完成，可以跳过此步骤|r
     >>|T133972:0|t[秃鹫肉条]
@@ -1289,7 +1288,7 @@ step
 step
     #ah
     .goto 1453/0,660.28,-8814.55
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
     >>|cRXP_BUY_购买|r |T133970:0|t|cRXP_LOOT_[野猪肉块]|r|cRXP_BUY_ 或|r |T133970:0|t|cRXP_LOOT_[多汁狼肉]|r|cRXP_BUY_，以便稍后提升你的 |r|T133971:0|t[烹饪] |cRXP_BUY_技能|r
     >>|cRXP_WARN_你的|r |T133971:0|t[烹饪] |cRXP_WARN_技能必须达到10级才能在黑海岸交付|r |T133972:0|t[陆行鸟肉]
     >>|cRXP_WARN_如果你不想这样做，或者无法完成，可以跳过此步骤|r
@@ -1310,7 +1309,7 @@ step
     #ah
     #optional
     .goto 1453/0,660.28,-8814.55
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
     >>|cRXP_WARN_如果你不想这样做，或者无法完成，可以跳过此步骤|r
     >>|cRXP_BUY_购买以下物品，以便稍后在黑海岸更快交任务|r
     >>|T133912:0|t[黑海岸石斑鱼]
@@ -1433,7 +1432,7 @@ RXPGuides.RegisterGuide([[
 #next 17-18级 领主大厅
 
 step
-    .goto 1439,35.743,43.710
+    .goto 1439/1,600.50,6424.66--c:1439,35.743,43.710
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塞瑞利恩·白爪|r 对话
     .accept 963 >> 接受任务 永志不渝
     .target 塞瑞利恩·白爪
@@ -1442,27 +1441,27 @@ step
     #completewith next
     .goto 1439/1,525.800,6414.800,8 >> 沿斜坡向上前去找 |cRXP_FRIENDLY_维兹班恩·曲针|r
 step
-    .goto 1439,36.976,44.135
+    .goto 1439/1,519.74,6406.10--c:1439,36.976,44.135
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_维兹班恩·曲针|r 对话
     .accept 983 >> 接受任务 传声盒827号
     .target 维兹班恩·曲针
 step
-    .goto 1439,37.322,43.640
+    .goto 1439/1,497.08,6427.72--c:1439,37.322,43.640
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_巴瑞萨斯·月影|r 对话
     .accept 947 >> 接受任务 洞中的蘑菇
     .target 巴瑞萨斯·月影
 step
-    .goto 1439,37.703,43.393
+    .goto 1439/1,472.12,6438.51--c:1439,37.703,43.393
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哨兵戈琳达·纳希恩|r 对话
     .accept 4811 >> 接受任务 红色水晶
     .target 哨兵戈琳达·纳希恩
 step
-    .goto 1439,38.843,43.416
+    .goto 1439/1,397.45,6437.50--c:1439,38.843,43.416
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_萨纳瑞恩·绿树|r 对话
     .accept 2118 >> 接受任务 瘟疫蔓延
     .target 萨纳瑞恩·绿树
 step
-    .goto 1439,39.373,43.483
+    .goto 1439/1,362.74,6434.58--c:1439,39.373,43.483
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_特伦希斯|r 对话
     .accept 984 >> 接受任务 熊怪的威胁
     .target 特伦希斯
@@ -1480,8 +1479,8 @@ step
     .target 古博·布拉普
 step
     #label WashedA
-    .goto 1439,36.701,45.122,8,0
-    .goto 1439,36.621,45.596
+    .goto 1439/1,537.75,6363.01,8,0--c:1439,36.701,45.122
+    .goto 1439/1,542.99,6342.31--c:1439,36.621,45.596
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_温尼斯·布莱葛|r 对话
     .accept 3524 >> 接受任务 搁浅的巨兽
     .target 温尼斯·布莱葛
@@ -1508,23 +1507,23 @@ step
     #sticky
     #label BuzzBox1
     #loop
-    .goto 1439,36.051,44.757,0
-    .goto 1439,36.280,50.071,0
-    .goto 1439,35.275,53.464,0
-    .waypoint 1439,36.091,51.501,60,0
-    .waypoint 1439,37.115,52.368,60,0
-    .waypoint 1439,37.130,53.663,60,0
-    .waypoint 1439,36.740,55.221,60,0
-    .waypoint 1439,35.655,55.872,60,0
-    .waypoint 1439,35.088,55.085,60,0
-    .waypoint 1439,35.275,53.464,60,0
-    .waypoint 1439,36.091,51.501,60,0
-    .waypoint 1439,36.280,50.071,60,0
-    .waypoint 1439,36.523,48.554,60,0
-    .waypoint 1439,35.977,48.408,60,0
-    .waypoint 1439,35.902,47.145,60,0
-    .waypoint 1439,35.759,45.455,60,0
-    .waypoint 1439,36.051,44.757,60,0
+    .goto 1439/1,580.33,6378.94,0--c:1439,36.051,44.757
+    .goto 1439/1,565.33,6146.90,0--c:1439,36.280,50.071
+    .goto 1439/1,631.15,5998.74,0--c:1439,35.275,53.464
+    .waypoint 1439/1,577.71,6084.46,60,0--c:1439,36.091,51.501
+    .waypoint 1439/1,510.63,6046.60,60,0--c:1439,37.115,52.368
+    .waypoint 1439/1,509.65,5990.05,60,0--c:1439,37.130,53.663
+    .waypoint 1439/1,535.20,5922.02,60,0--c:1439,36.740,55.221
+    .waypoint 1439/1,606.26,5893.59,60,0--c:1439,35.655,55.872
+    .waypoint 1439/1,643.40,5927.95,60,0--c:1439,35.088,55.085
+    .waypoint 1439/1,631.15,5998.74,60,0--c:1439,35.275,53.464
+    .waypoint 1439/1,577.71,6084.46,60,0--c:1439,36.091,51.501
+    .waypoint 1439/1,565.33,6146.90,60,0--c:1439,36.280,50.071
+    .waypoint 1439/1,549.41,6213.14,60,0--c:1439,36.523,48.554
+    .waypoint 1439/1,585.17,6219.52,60,0--c:1439,35.977,48.408
+    .waypoint 1439/1,590.09,6274.67,60,0--c:1439,35.902,47.145
+    .waypoint 1439/1,599.45,6348.46,60,0--c:1439,35.759,45.455
+    .waypoint 1439/1,580.33,6378.94,60,0--c:1439,36.051,44.757
     >>击杀 |cRXP_ENEMY_小潮行蟹|r 和 |cRXP_ENEMY_暗礁蟹幼崽|r，拾取它们的 |cRXP_LOOT_蟹腿|r
     >>你可能需要下水才能获得它们
     >>|cRXP_WARN_即使其中某些是灰色任务，还是要完成它，因为这是任务链的一部分|r
@@ -1533,7 +1532,7 @@ step
     .mob 暗礁蟹幼崽
     .isOnQuest 983
 step
-    .goto 1439,36.371,50.920
+    .goto 1439/1,559.37,6109.83--c:1439,36.371,50.920
     >>打开 |cRXP_PICK_搁浅的海洋生物|r，拾取地上的物品以获得 |cRXP_LOOT_海洋生物骨骼|r
     .complete 3524,1 --Sea Creature Bones (1)
 
@@ -1582,14 +1581,14 @@ step
     #sticky
     #label RabidThistle
     #loop
-    .goto 1439,38.226,52.780,0
-    .goto 1439,39.129,59.176,0
-    .goto 1439,38.226,52.780,50,0
-    .goto 1439,38.527,54.661,50,0
-    .goto 1439,38.037,56.815,50,0
-    .goto 1439,38.095,58.395,50,0
-    .goto 1439,38.696,57.874,50,0
-    .goto 1439,39.129,59.176,50,0
+    .goto 1439/1,437.86,6028.61,0--c:1439,38.226,52.780
+    .goto 1439/1,378.72,5749.31,0--c:1439,39.129,59.176
+    .goto 1439/1,437.86,6028.61,50,0--c:1439,38.226,52.780
+    .goto 1439/1,418.15,5946.47,50,0--c:1439,38.527,54.661
+    .goto 1439/1,450.24,5852.41,50,0--c:1439,38.037,56.815
+    .goto 1439/1,446.44,5783.42,50,0--c:1439,38.095,58.395
+    .goto 1439/1,407.08,5806.17,50,0--c:1439,38.696,57.874
+    .goto 1439/1,378.72,5749.31,50,0--c:1439,39.129,59.176
     >>|cRXP_WARN_对|r |cRXP_WARN_狂暴蓟熊|r |cRXP_ENEMY_使用|r |T134335:0|t[萨纳瑞恩的希望] --|cRXP_WARN_. It can be used from any range as long as you're targeting the bear|r
     -->>|cRXP_WARN_==DO NOT USE THE QUEST ITEM IF THERES NO BEAR NEARBY==|r
     >>你可能会浪费陷阱，导致该任务无法完成！如果发生这种情况，你需要返回任务给予者那里再领取一个新的陷阱
@@ -1603,13 +1602,13 @@ step
 --XXREQ Placeholder invis step until multiple requires per step
 step
     #requires BuzzBox1
-    .goto 1439,36.634,46.250
+    .goto 1439/1,542.14,6313.75--c:1439,36.634,46.250
     >>点击地上的 |cRXP_PICK_传声盒827号|r
     .turnin 983 >> 交任务 传声盒827号
     .accept 1001 >> 接受任务 传声盒411号
 step
-    .goto 1439,36.701,45.122,8,0
-    .goto 1439,36.621,45.596
+    .goto 1439/1,537.75,6363.01,8,0--c:1439,36.701,45.122
+    .goto 1439/1,542.99,6342.31--c:1439,36.621,45.596
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_温尼斯·布莱葛|r 对话
     .turnin 3524 >> 交任务 搁浅的巨兽
     .accept 4681 >> 接受任务 搁浅的巨兽
@@ -1617,17 +1616,17 @@ step
 step
     #optional
     #completewith next
-    .goto 1439,36.806,44.137,8,0
-    .goto 1439,35.743,43.710,12 >> 前往码头上的 |cRXP_FRIENDLY_塞瑞利恩·白爪|r
+    .goto 1439/1,530.87,6406.02,8,0--c:1439,36.806,44.137
+    .goto 1439/1,600.50,6424.66,12 >> 前往码头上的 |cRXP_FRIENDLY_塞瑞利恩·白爪|r--c:1439,35.743,43.710
 step
-    .goto 1439,35.743,43.710
+    .goto 1439/1,600.50,6424.66--c:1439,35.743,43.710
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塞瑞利恩·白爪|r 对话
     .accept 963 >> 接受任务 永志不渝
     .target 塞瑞利恩·白爪
 step
     #optional
     #completewith SeaT1
-    .goto 1439,32.432,43.744,15 >> 前往码头尽头，然后跳入水中
+    .goto 1439/1,817.37,6423.18,15 >> 前往码头尽头，然后跳入水中--c:1439,32.432,43.744
 step
     #optional
     #completewith washed1
@@ -1640,41 +1639,41 @@ step
     .isOnQuest 1001
 step
     #label SeaT1
-    .goto 1439,31.841,46.304
+    .goto 1439/1,856.08,6311.39--c:1439,31.841,46.304
     >>打开 |cRXP_PICK_海龟骨头|r，拾取其中的 |cRXP_LOOT_海龟的残骸|r
     .complete 4681,1 --Sea Turtle Remains (1)
 step
     #label washed1
-    .goto 1439,36.701,45.122,8,0
-    .goto 1439,36.621,45.596
+    .goto 1439/1,537.75,6363.01,8,0--c:1439,36.701,45.122
+    .goto 1439/1,542.99,6342.31--c:1439,36.621,45.596
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_温尼斯·布莱葛|r 对话
     .turnin 4681 >> 交任务 搁浅的巨兽
     .target 温尼斯·布莱葛
 step
-    .goto 1439,37.322,43.640
+    .goto 1439/1,497.08,6427.72--c:1439,37.322,43.640
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_巴瑞萨斯·月影|r 对话
     .accept 947 >> 接受任务 洞中的蘑菇
     .target 巴瑞萨斯·月影
 step
-    .goto 1439,37.703,43.393
+    .goto 1439/1,472.12,6438.51--c:1439,37.703,43.393
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哨兵戈琳达·纳希恩|r 对话
     .accept 4811 >> 接受任务 红色水晶
     .target 哨兵戈琳达·纳希恩
 step
-    .goto 1439,38.843,43.416
+    .goto 1439/1,397.45,6437.50--c:1439,38.843,43.416
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_萨纳瑞恩·绿树|r 对话
     .turnin 2118 >> 交任务 瘟疫蔓延
     .accept 2138 >> 接受任务 清除疫病
     .target 萨纳瑞恩·绿树
 step
-    .goto 1439,39.373,43.483
+    .goto 1439/1,362.74,6434.58--c:1439,39.373,43.483
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_特伦希斯|r 对话
     .turnin 984 >> 交任务 熊怪的威胁
     .accept 985 >> 接受任务 熊怪的威胁
     .accept 4761 >> 接受任务 桑迪斯·织风
     .target 特伦希斯
 step
-    .goto 1439,38.107,41.165
+    .goto 1439/1,445.66,6535.79--c:1439,38.107,41.165
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_高尔博德·钢手|r 对话
     .accept 982 >> 接受任务 深不可测的海洋
     .target 高尔博德·钢手
@@ -1696,7 +1695,7 @@ step
     >>|cRXP_BUY_从他那里购买|r |T132382:0|t[锋利的箭] |cRXP_BUY_或|r |T132384:0|t[重弹丸] |cRXP_BUY_直到你的箭袋/弹药满为止|r << Hunter
     .target Dalmond
 step
-    .goto 1439,37.394,40.128
+    .goto 1439/1,492.36,6581.08--c:1439,37.394,40.128
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_桑迪斯·织风|r 对话
     .turnin 4761 >> 交任务 桑迪斯·织风
     .accept 4762 >> 接受任务 壁泉河
@@ -1707,7 +1706,7 @@ step
 --XX if 16+, skip Tools
 step
     #optional
-    .goto 1439,37.394,40.128
+    .goto 1439/1,492.36,6581.08--c:1439,37.394,40.128
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_桑迪斯·织风|r 对话
     .turnin 4761 >> 交任务 桑迪斯·织风
     .accept 4762 >> 接受任务 壁泉河
@@ -1717,7 +1716,7 @@ step
 --XX if 18+, skip Bashal
 step
     #optional
-    .goto 1439,37.394,40.128
+    .goto 1439/1,492.36,6581.08--c:1439,37.394,40.128
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_桑迪斯·织风|r 对话
     .turnin 4761 >> 交任务 桑迪斯·织风
     .accept 4762 >> 接受任务 壁泉河
@@ -1741,7 +1740,7 @@ step
     +|cRXP_WARN_按下 Esc，然后进入 → 选项 → 控制|r
     >>|cRXP_WARN_勾选 "启用交互键" 并将 "与目标互动" 绑定到一个按键|r
 step
-    .goto 1439,38.213,28.754
+    .goto 1439/1,438.72,7077.74--c:1439,38.213,28.754
 --  .goto 1439,38.234,28.796
     >>|cRXP_WARN_==注意你的呼吸条==|r
     >>|cRXP_WARN_潜入水下，游到船只后方的外侧|r
@@ -1751,7 +1750,7 @@ step
     .isOnQuest 982
 step
     #label MistVeil
-    .goto 1439,39.581,27.487
+    .goto 1439/1,349.11,7133.07--c:1439,39.581,27.487
 --  .goto 1439,39.629,27.462
     >>|cRXP_WARN_==注意你的呼吸条==|r
     >>|cRXP_WARN_潜入水下，游到船只后方的外侧|r
@@ -1776,21 +1775,21 @@ step
     .mob Darkshore Thresher
     .isOnQuest 1001
 step
-    .goto 1439,41.901,31.339
+    .goto 1439/1,197.15,6964.86--c:1439,41.901,31.339
     >>点击 |cRXP_PICK_搁浅的海洋生物|r
     .accept 4723 >> 接受任务 搁浅的海洋生物
 step
-    .goto 1439,41.960,28.616
+    .goto 1439/1,193.29,7083.77--c:1439,41.960,28.616
     >>点击地上的 |cRXP_PICK_传声盒411号|r
     .turnin 1001 >> 交任务 传声盒411号
     .isQuestComplete 1001
 step
     #optional
     #completewith Bashal1
-    .goto 1439,44.629,36.316,20,0
-    .goto 1439,44.168,36.289,15 >> 前往 |cRXP_FRIENDLY_阿斯特利安|r
+    .goto 1439/1,18.47,6747.53,20,0--c:1439,44.629,36.316
+    .goto 1439/1,48.66,6748.71,15 >> 前往 |cRXP_FRIENDLY_阿斯特利安|r--c:1439,44.168,36.289
 step
-    .goto 1439,44.168,36.289
+    .goto 1439/1,48.66,6748.71--c:1439,44.168,36.289
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿斯特利安|r 对话
     >>|cRXP_WARN_途中尽量避免击杀 |cRXP_ENEMY_野生劣魔|r 和 |cRXP_ENEMY_恶灵劣魔|r|r
     .turnin 954 >> 交任务 巴莎兰
@@ -1802,7 +1801,7 @@ step
 step
     #optional
     #label Bashal1
-    .goto 1439,44.168,36.289
+    .goto 1439/1,48.66,6748.71--c:1439,44.168,36.289
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿斯特利安|r 对话
     >>|cRXP_WARN_途中尽量避免击杀 |cRXP_ENEMY_野生劣魔|r 和 |cRXP_ENEMY_恶灵劣魔|r|r
     .turnin 954 >> 交任务 巴莎兰
@@ -1811,25 +1810,25 @@ step
 --XX Turn in Breadcrumb if you picked it up earlier before 18
 step
     #loop
-    .goto 1439,44.528,36.587,0
-    .goto 1439,45.334,39.393,0
-    .goto 1439,46.096,36.541,0
-    .goto 1439,44.528,36.587,50,0
-    .goto 1439,44.435,37.404,50,0
-    .goto 1439,44.443,38.202,50,0
-    .goto 1439,44.493,39.008,50,0
-    .goto 1439,44.821,39.711,50,0
-    .goto 1439,45.334,39.393,50,0
-    .goto 1439,45.167,38.652,50,0
-    .goto 1439,45.091,37.865,50,0
-    .goto 1439,45.495,37.019,50,0
-    .goto 1439,45.831,36.790,50,0
-    .goto 1439,46.096,36.541,50,0
-    .goto 1439,46.906,36.171,50,0
-    .goto 1439,47.431,36.151,50,0
-    .goto 1439,47.022,37.083,50,0
-    .goto 1439,47.166,37.580,50,0
-    .goto 1439,45.827,36.812,50,0
+    .goto 1439/1,25.08,6735.70,0--c:1439,44.528,36.587
+    .goto 1439/1,-27.71,6613.17,0--c:1439,45.334,39.393
+    .goto 1439/1,-77.62,6737.71,0--c:1439,46.096,36.541
+    .goto 1439/1,25.08,6735.70,50,0--c:1439,44.528,36.587
+    .goto 1439/1,31.17,6700.03,50,0--c:1439,44.435,37.404
+    .goto 1439/1,30.65,6665.18,50,0--c:1439,44.443,38.202
+    .goto 1439/1,27.38,6629.98,50,0--c:1439,44.493,39.008
+    .goto 1439/1,5.89,6599.29,50,0--c:1439,44.821,39.711
+    .goto 1439/1,-27.71,6613.17,50,0--c:1439,45.334,39.393
+    .goto 1439/1,-16.77,6645.53,50,0--c:1439,45.167,38.652
+    .goto 1439/1,-11.79,6679.89,50,0--c:1439,45.091,37.865
+    .goto 1439/1,-38.26,6716.84,50,0--c:1439,45.495,37.019
+    .goto 1439/1,-60.26,6726.84,50,0--c:1439,45.831,36.790
+    .goto 1439/1,-77.62,6737.71,50,0--c:1439,46.096,36.541
+    .goto 1439/1,-130.68,6753.87,50,0--c:1439,46.906,36.171
+    .goto 1439/1,-165.06,6754.74,50,0--c:1439,47.431,36.151
+    .goto 1439/1,-138.27,6714.04,50,0--c:1439,47.022,37.083
+    .goto 1439/1,-147.71,6692.34,50,0--c:1439,47.166,37.580
+    .goto 1439/1,-60.00,6725.88,50,0--c:1439,45.827,36.812
     >>击杀 |cRXP_ENEMY_野生劣魔|r 和 |cRXP_ENEMY_恶灵劣魔|r。拾取他们的 |cRXP_LOOT_劣魔耳环|r
     >>|cRXP_WARN_暂时避免击杀 |cRXP_ENEMY_戴瑟雷萨特|r |r
     .complete 955,1 --Grell Earring (8)
@@ -1837,7 +1836,7 @@ step
     .mob 恶灵劣魔
     .isOnQuest 955
 step
-    .goto 1439,44.168,36.289
+    .goto 1439/1,48.66,6748.71--c:1439,44.168,36.289
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿斯特利安|r 对话
     .turnin 955 >> 交任务 巴莎兰
     .accept 956 >> 接受任务 巴莎兰
@@ -1845,7 +1844,7 @@ step
     .isQuestComplete 955
 step
     #optional
-    .goto 1439,44.168,36.289
+    .goto 1439/1,48.66,6748.71--c:1439,44.168,36.289
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿斯特利安|r 对话
     .accept 956 >> 接受任务 巴莎兰
     .target 阿斯特利安
@@ -1855,57 +1854,57 @@ step
     .abandon 955 >> 放弃任务 巴莎兰
 step
     #loop
-    .goto 1439,45.393,36.472,0
-    .goto 1439,45.429,39.773,0
-    .goto 1439,47.368,36.774,0
-    .goto 1439,45.393,36.472,45,0
-    .goto 1439,45.938,37.800,45,0
-    .goto 1439,45.938,38.040,45,0
-    .goto 1439,46.531,39.134,45,0
-    .goto 1439,45.429,39.773,45,0
-    .goto 1439,47.262,37.674,45,0
-    .goto 1439,47.920,37.228,45,0
-    .goto 1439,47.368,36.774,45,0
+    .goto 1439/1,-31.57,6740.72,0--c:1439,45.393,36.472
+    .goto 1439/1,-33.93,6596.58,0--c:1439,45.429,39.773
+    .goto 1439/1,-160.94,6727.54,0--c:1439,47.368,36.774
+    .goto 1439/1,-31.57,6740.72,45,0--c:1439,45.393,36.472
+    .goto 1439/1,-67.27,6682.73,45,0--c:1439,45.938,37.800
+    .goto 1439/1,-67.27,6672.25,45,0--c:1439,45.938,38.040
+    .goto 1439/1,-106.11,6624.48,45,0--c:1439,46.531,39.134
+    .goto 1439/1,-33.93,6596.58,45,0--c:1439,45.429,39.773
+    .goto 1439/1,-153.99,6688.24,45,0--c:1439,47.262,37.674
+    .goto 1439/1,-197.09,6707.71,45,0--c:1439,47.920,37.228
+    .goto 1439/1,-160.94,6727.54,45,0--c:1439,47.368,36.774
     >>击杀 |cRXP_ENEMY_戴瑟雷萨特|r。拾取他们的 |cRXP_LOOT_远古月亮石封印|r
     >>|cRXP_WARN_请注意它们没有动态刷新|r
     .complete 956,1 --Ancient Moonstone Seal (1)
     .mob 戴瑟雷萨特
     .isQuestTurnedIn 955
 step
-    .goto 1439,44.168,36.289
+    .goto 1439/1,48.66,6748.71--c:1439,44.168,36.289
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿斯特利安|r 对话
     .turnin 956 >> 交任务 巴莎兰
     .accept 957 >> 接受任务 巴莎兰
     .target 阿斯特利安
     .isQuestComplete 956
 step
-    .goto 1439,44.168,36.289
+    .goto 1439/1,48.66,6748.71--c:1439,44.168,36.289
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿斯特利安|r 对话
     .accept 957 >> 接受任务 巴莎兰
     .target 阿斯特利安
     .isQuestTurnedIn 956
 step
-    .goto 1439,47.314,48.676
+    .goto 1439/1,-157.40,6207.81--c:1439,47.314,48.676
     >>前往 |cRXP_PICK_神秘的红色水晶|r 处
     >>|cRXP_WARN_注意 |cRXP_ENEMY_神秘的红色水晶|r 西侧的两组各 2 只 |cRXP_PICK_狂暴的月夜枭兽|r，彼此距离最近的那两组是联动仇恨的|r
     .complete 4811,1 --Locate the large, red crystal on Darkshore's eastern mountain range
 step
     #sticky
     #label Anaya
-    .goto 1439,42.017,58.866,0 --NE spawn
-    .goto 1439,43.222,59.693,0 --NE spawn
-    .goto 1439,43.069,62.448,0 --SE spawn
-    .goto 1439,42.489,60.677,0 --Middle spawn
-    .waypoint 1439,42.017,58.866,50,0 --NE spawn
-    .waypoint 1439,42.311,58.645,50,0
-    .waypoint 1439,42.448,58.236,50,0
-    .waypoint 1439,43.222,59.693,50,0 --NE spawn
-    .waypoint 1439,43.447,60.131,50,0
-    .waypoint 1439,43.780,60.275,50,0
-    .waypoint 1439,43.069,62.448,50,0 --SE spawn
-    .waypoint 1439,43.104,62.563,50,0
-    .waypoint 1439,42.794,62.166,50,0
-    .waypoint 1439,42.489,60.677,50,0 --Middle spawn
+    .goto 1439/1,189.55,5762.85,0 --NE spawn--c:1439,42.017,58.866
+    .goto 1439/1,110.63,5726.74,0 --NE spawn--c:1439,43.222,59.693
+    .goto 1439/1,120.65,5606.44,0 --SE spawn--c:1439,43.069,62.448
+    .goto 1439/1,158.64,5683.77,0 --Middle spawn--c:1439,42.489,60.677
+    .waypoint 1439/1,189.55,5762.85,50,0 --NE spawn--c:1439,42.017,58.866
+    .waypoint 1439/1,170.30,5772.50,50,0--c:1439,42.311,58.645
+    .waypoint 1439/1,161.32,5790.36,50,0--c:1439,42.448,58.236
+    .waypoint 1439/1,110.63,5726.74,50,0 --NE spawn--c:1439,43.222,59.693
+    .waypoint 1439/1,95.89,5707.61,50,0--c:1439,43.447,60.131
+    .waypoint 1439/1,74.08,5701.32,50,0--c:1439,43.780,60.275
+    .waypoint 1439/1,120.65,5606.44,50,0 --SE spawn--c:1439,43.069,62.448
+    .waypoint 1439/1,118.35,5601.42,50,0--c:1439,43.104,62.563
+    .waypoint 1439/1,138.66,5618.75,50,0--c:1439,42.794,62.166
+    .waypoint 1439/1,158.64,5683.77,50,0 --Middle spawn--c:1439,42.489,60.677
     >>击杀 |cRXP_ENEMY_安娜雅·晨路|r，从她身上拾取 |cRXP_LOOT_吊坠|r
     -->>|cRXP_WARN_Be aware that she has a 7-8 minute spawn time and 4 different spawnpoints across Ameth'Aran|r
     -->>|cRXP_WARN_You may want to group with others nearby if you can't find her. Ask in General Chat (/1) to group with anyone else that is also looking for her|r
@@ -1916,20 +1915,20 @@ step
 step
     #sticky
     #label Relics
-    .goto 1439,42.670,57.390,0
-    .goto 1439,41.986,62.462,0
-    .goto 1439,44.072,60.507,0
-    .waypoint 1439,42.670,57.390,55,0
-    .waypoint 1439,41.708,57.888,55,0
-    .waypoint 1439,41.597,59.765,55,0
-    .waypoint 1439,42.058,61.199,55,0
-    .waypoint 1439,41.986,62.462,55,0
-    .waypoint 1439,42.773,63.420,55,0
-    .waypoint 1439,43.253,63.287,55,0
-    .waypoint 1439,43.945,62.188,55,0
-    .waypoint 1439,44.072,60.507,55,0
-    .waypoint 1439,43.410,59.784,55,0
-    .waypoint 1439,43.787,58.959,55,0
+    .goto 1439/1,146.78,5827.30,0--c:1439,42.670,57.390
+    .goto 1439/1,191.58,5605.83,0--c:1439,41.986,62.462
+    .goto 1439/1,54.95,5691.19,0--c:1439,44.072,60.507
+    .waypoint 1439/1,146.78,5827.30,55,0--c:1439,42.670,57.390
+    .waypoint 1439/1,209.79,5805.56,55,0--c:1439,41.708,57.888
+    .waypoint 1439/1,217.06,5723.59,55,0--c:1439,41.597,59.765
+    .waypoint 1439/1,186.87,5660.98,55,0--c:1439,42.058,61.199
+    .waypoint 1439/1,191.58,5605.83,55,0--c:1439,41.986,62.462
+    .waypoint 1439/1,140.04,5563.99,55,0--c:1439,42.773,63.420
+    .waypoint 1439/1,108.60,5569.80,55,0--c:1439,43.253,63.287
+    .waypoint 1439/1,63.27,5617.79,55,0--c:1439,43.945,62.188
+    .waypoint 1439/1,54.95,5691.19,55,0--c:1439,44.072,60.507
+    .waypoint 1439/1,98.31,5722.77,55,0--c:1439,43.410,59.784
+    .waypoint 1439/1,73.62,5758.79,55,0--c:1439,43.787,58.959
     >>击杀 |cRXP_ENEMY_被诅咒的上层精灵|r, |cRXP_ENEMY_痛苦的上层精灵|r 和 |cRXP_ENEMY_哀嚎的上层精灵鬼魂|r。拾取他们的 |cRXP_LOOT_圣物|r
     .complete 958,1 --Highborne Relic (7)
     .mob 被诅咒的上层精灵
@@ -1937,18 +1936,18 @@ step
     .mob 哀嚎的上层精灵鬼魂
     .isOnQuest 958
 step
-    .goto 1439,40.302,59.731
+    .goto 1439/1,301.89,5725.08--c:1439,40.302,59.731
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哨兵坦莎·月刃|r 对话
     .accept 953 >> 接受任务 亚米萨兰的毁灭
     .target 哨兵坦莎·月刃
     .xp >17,1
 step
-    .goto 1439,42.652,63.145
+    .goto 1439/1,147.96,5576.00--c:1439,42.652,63.145
     >>点击地上的 |cRXP_PICK_亚米萨兰的毁灭|r
     .complete 953,2 --Read The Fall of Ameth'Aran (1)
     .isOnQuest 953
 step << !sod/Warrior/Rogue/Priest
-    .goto 1439,42.373,61.815
+    .goto 1439/1,166.24,5634.08--c:1439,42.373,61.815
     >>点击 |cRXP_PICK_远古之焰|r
     .complete 957,1 --Destroy the seal at the ancient flame (1)
     .isOnQuest 957
@@ -1974,7 +1973,7 @@ step
 --XXREQ Placeholder invis step until multiple requires per step
 step
     .isQuestComplete 953
-    .goto 1439,40.302,59.731
+    .goto 1439/1,301.89,5725.08--c:1439,40.302,59.731
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哨兵坦莎·月刃|r 对话
     .turnin 953 >> 交任务 亚米萨兰的毁灭
     .target 哨兵坦莎·月刃
@@ -1986,23 +1985,23 @@ step
     .complete 2138,1 -- Rabid Thistle Bear slain (20)
     .mob 狂暴蓟熊
 step
-    .goto 1439,37.105,62.167
+    .goto 1439/1,511.29,5618.71--c:1439,37.105,62.167
     >>点击地上的 |cRXP_PICK_搁浅的海龟|r
     .accept 4722 >> 接受任务 搁浅的海龟
 step
     #loop
     #label FurbolgGrind
-    .goto 1439,39.899,54.745,0
-    .goto 1439,40.181,56.229,0
-    .goto 1439,39.267,53.092,50,0
-    .goto 1439,39.754,53.444,50,0
-    .goto 1439,40.234,54.325,50,0
-    .goto 1439,39.899,54.745,50,0
-    .goto 1439,40.181,56.229,50,0
-    .goto 1439,39.388,56.671,50,0
-    .goto 1439,39.191,56.382,50,0
-    .goto 1439,39.957,55.300,50,0
-    .goto 1439,39.332,54.079,50,0
+    .goto 1439/1,328.28,5942.80,0--c:1439,39.899,54.745
+    .goto 1439/1,309.81,5878.00,0--c:1439,40.181,56.229
+    .goto 1439/1,369.68,6014.98,50,0--c:1439,39.267,53.092
+    .goto 1439/1,337.78,5999.61,50,0--c:1439,39.754,53.444
+    .goto 1439/1,306.34,5961.14,50,0--c:1439,40.234,54.325
+    .goto 1439/1,328.28,5942.80,50,0--c:1439,39.899,54.745
+    .goto 1439/1,309.81,5878.00,50,0--c:1439,40.181,56.229
+    .goto 1439/1,361.75,5858.70,50,0--c:1439,39.388,56.671
+    .goto 1439/1,374.66,5871.32,50,0--c:1439,39.191,56.382
+    .goto 1439/1,324.48,5918.57,50,0--c:1439,39.957,55.300
+    .goto 1439/1,365.42,5971.88,50,0--c:1439,39.332,54.079
     >>击杀 |cRXP_ENEMY_黑木探路者|r 和 |cRXP_ENEMY_黑木风语者|r
     .complete 985,1 -- Blackwood Pathfinder (8)
     .mob 黑木探路者
@@ -2010,11 +2009,11 @@ step
     .mob 黑木风语者
 step
     #completewith TOTH
-    .goto 1439,36.701,45.122
+    .goto 1439/1,537.75,6363.01--c:1439,36.701,45.122
     .subzone 442 >> Return to 奥伯丁，黑海岸
 step
-    .goto 1439,36.701,45.122,8,0
-    .goto 1439,36.621,45.596
+    .goto 1439/1,537.75,6363.01,8,0--c:1439,36.701,45.122
+    .goto 1439/1,542.99,6342.31--c:1439,36.621,45.596
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_温尼斯·布莱葛|r 对话
     .turnin 4722 >> 交任务 搁浅的海龟
     .turnin 4723 >> 交任务 搁浅的海洋生物
@@ -2022,11 +2021,11 @@ step
 step
     #optional
     #completewith next
-    .goto 1439,36.806,44.137,8,0
-    .goto 1439,35.743,43.710,12 >> 回去找码头上的 |cRXP_FRIENDLY_塞瑞利恩·白爪|r
+    .goto 1439/1,530.87,6406.02,8,0--c:1439,36.806,44.137
+    .goto 1439/1,600.50,6424.66,12 >> 回去找码头上的 |cRXP_FRIENDLY_塞瑞利恩·白爪|r--c:1439,35.743,43.710
 step
     #optional
-    .goto 1439,35.743,43.710
+    .goto 1439/1,600.50,6424.66--c:1439,35.743,43.710
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塞瑞利恩·白爪|r 对话
     .turnin 963 >> 交任务 永志不渝
     .target 塞瑞利恩·白爪
@@ -2038,19 +2037,19 @@ step
     .target Sentinel Glynda Nal'Shea::2930
     .turnin 98025 >>交任务 通缉：贾伊瓦内尔
 step
-    .goto 1439,37.703,43.393
+    .goto 1439/1,472.12,6438.51--c:1439,37.703,43.393
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哨兵戈琳达·纳希恩|r 对话
     .turnin 4811 >> 交任务 红色水晶
     .accept 4812 >> 接受任务 清洗水晶
     .target 哨兵戈琳达·纳希恩
 step
-    .goto 1439,37.767,44.001
+    .goto 1439/1,467.93,6411.96--c:1439,37.767,44.001
     >>|cRXP_WARN_使用|r |T134865:0|t[空水瓶] |cRXP_WARN_在奥伯丁的月亮井处使用|r
     .complete 4812,1 --Moonwell Water Tube (1)
     .use 14338
 step
     #optional
-    .goto 1439,38.843,43.416
+    .goto 1439/1,397.45,6437.50--c:1439,38.843,43.416
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_萨纳瑞恩·绿树|r 对话
     .turnin 2138 >> 交任务 清除疫病
     .accept 2139 >> 接受任务 萨纳瑞恩的希望
@@ -2058,29 +2057,29 @@ step
     .isQuestComplete 2138
 step
     #optional
-    .goto 1439,38.843,43.416
+    .goto 1439/1,397.45,6437.50--c:1439,38.843,43.416
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_萨纳瑞恩·绿树|r 对话
     .accept 2139 >> 接受任务 萨纳瑞恩的希望
     .target 萨纳瑞恩·绿树
     .isQuestTurnedIn 2138
 step
-    .goto 1439,39.373,43.483
+    .goto 1439/1,362.74,6434.58--c:1439,39.373,43.483
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_特伦希斯|r 对话
     .turnin 985 >> 交任务 熊怪的威胁
     .target 特伦希斯
 step
     #optional
     #completewith next
-    .goto 1439,39.280,43.121,6,0
-    .goto 1439,39.162,43.194,6 >> 上楼
+    .goto 1439/1,368.83,6450.38,6,0--c:1439,39.280,43.121
+    .goto 1439/1,376.56,6447.20,6 >> 上楼--c:1439,39.162,43.194
 step
-    .goto 1439,39.043,43.555
+    .goto 1439/1,384.35,6431.43--c:1439,39.043,43.555
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与楼上的 |cRXP_FRIENDLY_哨兵艾莉萨·星风|r 对话
     .accept 965 >> 接受任务 奥萨拉克斯之塔
     .target 哨兵艾莉萨·星风
 step
     #optional
-    .goto 1439,38.107,41.165
+    .goto 1439/1,445.66,6535.79--c:1439,38.107,41.165
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_高尔博德·钢手|r 对话
     .turnin 982 >> 交任务 深不可测的海洋
     .target 高尔博德·钢手
@@ -2096,19 +2095,19 @@ step
     .skill cooking,<10,1 -- step only displays if skill is 10 or higher
 step
     #label TOTH
-    .goto 1439,37.394,40.128
+    .goto 1439/1,492.36,6581.08--c:1439,37.394,40.128
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_桑迪斯·织风|r 对话
     .turnin 958 >> 交任务 上层精灵的工具
     .target 桑迪斯·织风
     .isQuestComplete 958
 step
-    .goto 1439,47.314,48.676
+    .goto 1439/1,-157.40,6207.81--c:1439,47.314,48.676
     >>点击 |cRXP_PICK_神秘的红色水晶|r
     >>|cRXP_WARN_注意 |cRXP_ENEMY_神秘的红色水晶|r 西侧的2组各2只 |cRXP_PICK_狂暴的月夜枭兽|r，彼此距离最近的那两组是联动仇恨的|r
     .turnin 4812 >> 交任务 清洗水晶
     .accept 4813 >> 接受任务 水晶中的碎骨
 step
-    .goto 1439,44.168,36.289
+    .goto 1439/1,48.66,6748.71--c:1439,44.168,36.289
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿斯特利安|r 对话
     .turnin 957 >> 交任务 巴莎兰
     .isOnQuest 957
@@ -2132,24 +2131,24 @@ step
     .use 12350
 step
     #loop
-    .goto 1439,53.629,26.054,0
-    .goto 1439,54.204,30.475,0
-    .goto 1439,49.775,30.351,0
-    .goto 1439,48.894,26.514,0
-    .goto 1439,48.022,27.199,60,0
-    .goto 1439,48.894,26.514,60,0
-    .goto 1439,49.558,26.087,60,0
-    .goto 1439,49.902,27.511,60,0
-    .goto 1439,49.776,28.393,60,0
-    .goto 1439,49.775,30.351,60,0
-    .goto 1439,50.818,30.486,60,0
-    .goto 1439,50.689,32.001,60,0
-    .goto 1439,51.267,32.319,60,0
-    .goto 1439,54.204,30.475,60,0
-    .goto 1439,53.899,28.638,60,0
-    .goto 1439,53.049,27.983,60,0
-    .goto 1439,52.764,26.312,60,0
-    .goto 1439,53.629,26.054,60,0
+    .goto 1439/1,-571.03,7195.64,0--c:1439,53.629,26.054
+    .goto 1439/1,-608.70,7002.59,0--c:1439,54.204,30.475
+    .goto 1439/1,-318.60,7008.01,0--c:1439,49.775,30.351
+    .goto 1439/1,-260.89,7175.56,0--c:1439,48.894,26.514
+    .goto 1439/1,-203.77,7145.64,60,0--c:1439,48.022,27.199
+    .goto 1439/1,-260.89,7175.56,60,0--c:1439,48.894,26.514
+    .goto 1439/1,-304.38,7194.20,60,0--c:1439,49.558,26.087
+    .goto 1439/1,-326.91,7132.02,60,0--c:1439,49.902,27.511
+    .goto 1439/1,-318.66,7093.51,60,0--c:1439,49.776,28.393
+    .goto 1439/1,-318.60,7008.01,60,0--c:1439,49.775,30.351
+    .goto 1439/1,-386.91,7002.11,60,0--c:1439,50.818,30.486
+    .goto 1439/1,-378.46,6935.96,60,0--c:1439,50.689,32.001
+    .goto 1439/1,-416.32,6922.07,60,0--c:1439,51.267,32.319
+    .goto 1439/1,-608.70,7002.59,60,0--c:1439,54.204,30.475
+    .goto 1439/1,-588.72,7082.81,60,0--c:1439,53.899,28.638
+    .goto 1439/1,-533.04,7111.41,60,0--c:1439,53.049,27.983
+    .goto 1439/1,-514.38,7184.38,60,0--c:1439,52.764,26.312
+    .goto 1439/1,-571.03,7195.64,60,0--c:1439,53.629,26.054
     >>击杀 |cRXP_ENEMY_狂暴蓟熊|r
     >>|cRXP_WARN_小心，它们会施放|r |T135914:0|t[狂犬病] |cRXP_WARN_如果你没有足够快击杀它们（瞬发近战：在 10 分钟内减少所有生命恢复 50%）|r
     .complete 2138,1 -- Rabid Thistle Bear slain (20)
@@ -2157,8 +2156,8 @@ step
 step
     #optional
     #completewith next
-    .goto 1439,54.934,32.721,20,0
-    .goto 1439,55.108,33.600,40 >> 前往壁泉河洞穴
+    .goto 1439/1,-656.51,6904.52,20,0--c:1439,54.934,32.721
+    .goto 1439/1,-667.91,6866.13,40 >> 前往壁泉河洞穴--c:1439,55.108,33.600
 step << Druid
     .goto 1439/1,-660.18,6874.43
     >>|cRXP_WARN_使用|r |T134776:0|t[空的峭壁之泉取样器] |cRXP_WARN_在峭壁之泉河洞入口处的水中使用|r
@@ -2193,7 +2192,7 @@ step
     .subzone 442 >> 前往奥伯丁
 step
     #label CliffspringEnd
-    .goto 1439,37.394,40.128
+    .goto 1439/1,492.36,6581.08--c:1439,37.394,40.128
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_桑迪斯·织风|r 对话
     .turnin 4762 >> 交任务 壁泉河
     .target 桑迪斯·织风
@@ -2222,12 +2221,12 @@ step << Druid
     .accept 6123 >> 接受任务 收集解药
     .target 奥兰达利亚·夜歌
 step << !Druid
-    .goto 1439,37.439,41.839
+    .goto 1439/1,489.41,6506.36--c:1439,37.439,41.839
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_考古学家霍莉|r 对话
     .accept 729 >> 接受任务 健忘的勘察员
     .target 考古学家霍莉
 step
-    .goto 1439,38.843,43.416
+    .goto 1439/1,397.45,6437.50--c:1439,38.843,43.416
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_萨纳瑞恩·绿树|r 对话
     .turnin 2138 >> 交任务 清除疫病
     .accept 2139 >> 接受任务 萨纳瑞恩的希望
@@ -2239,7 +2238,7 @@ step
     .turnin 4813 >> 交任务 水晶中的碎骨
     .target 哨兵戈琳达·纳希恩
 step
-    .goto 1439,37.322,43.640
+    .goto 1439/1,497.08,6427.72--c:1439,37.322,43.640
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_巴瑞萨斯·月影|r 对话
     .turnin 947 >> 交任务 洞中的蘑菇
     .accept 948 >> 接受任务 安努
@@ -2249,8 +2248,8 @@ step
     >>点击 |cRXP_PICK_通缉布告|r
     .accept 4740 >> 接受任务 通缉：莫克迪普！
 step
-    .goto 1439,36.701,45.122,8,0
-    .goto 1439,36.621,45.596
+    .goto 1439/1,537.75,6363.01,8,0--c:1439,36.701,45.122
+    .goto 1439/1,542.99,6342.31--c:1439,36.621,45.596
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_温尼斯·布莱葛|r 对话
     .turnin 4723 >> 交任务 搁浅的海洋生物
     .turnin 4725 >> 交任务 搁浅的海龟
@@ -2260,7 +2259,7 @@ step
 ----Start of Druid Quest section----
 step << Druid
     #completewith TotL
-    .goto 1439,33.213,39.883
+    .goto 1439/1,766.22,6591.78--c:1439,33.213,39.883
     .zone Teldrassil >> 乘船前往达纳苏斯
     .zoneskip Darnassus
 step << Druid
@@ -2444,7 +2443,7 @@ RXPGuides.RegisterGuide([[
 #displayname 16-17级 领主大厅 << NightElf
 
 step << Skyborne
-    .goto Ironforge,55.491,47.751
+    .goto 1455/0,-1152.40,-4821.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
     .fp Ironforge >> 获取铁炉堡的飞行路径
     .target 格莱斯·瑟登
@@ -2715,15 +2714,15 @@ step
     .subzoneskip 150 -- menethil
     .subzoneskip 16611 -- ruins of lordaeron
 step
-    .goto 1426,30.741,34.269,15,0
-    .goto 1426,30.812,33.548,15,0
-    .goto 1426,31.060,32.543,15,0
-    .goto 1426,31.439,32.356,15,0
-    .goto 1426,31.675,29.636,15,0
-    .goto 1426,32.209,28.777,15,0
-    .goto 1426,32.645,27.740,15,0
-    .goto 1415,44.910,52.022,15,0
-    .goto 1415,44.910,52.030
+    .goto 1426/0,288.09,-5002.25,15,0--c:1426,30.741,34.269
+    .goto 1426/0,284.59,-4978.58,15,0--c:1426,30.812,33.548
+    .goto 1426/0,272.38,-4945.58,15,0--c:1426,31.060,32.543
+    .goto 1426/0,253.71,-4939.44,15,0--c:1426,31.439,32.356
+    .goto 1426/0,242.09,-4850.13,15,0--c:1426,31.675,29.636
+    .goto 1426/0,215.79,-4821.93,15,0--c:1426,32.209,28.777
+    .goto 1426/0,194.32,-4787.88,15,0--c:1426,32.645,27.740
+    .goto 1415/0,191.72,-4741.19,15,0--c:1415,44.910,52.022
+    .goto 1415/0,191.72,-4743.07--c:1415,44.910,52.030
     .subzone 207 >>|cRXP_WARN_爬上山，然后沿着锯齿形状地形往下走，直到你的所在区域变成湿地|r
     .zoneskip Hillsbrad Foothills
     .subzoneskip 150 -- menethil
@@ -2841,8 +2840,20 @@ step
     .zoneskip Stormwind City
 step 
     #optional
-    .goto Ironforge,76.61,51.28,10,0
+    .goto 1455/0,-1319.2893,-4839.7968,10,0
     .zone Stormwind City >> 乘坐地铁前往暴风城
+step << NightElf
+    .goto 1453/0,634.700,-8390.800
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_沉默的舒尼|r 对话
+    .accept 2040 >> 接受任务 地底突袭
+    .target 沉默的舒尼
+step << NightElf
+    #optional
+    .goto 1453/0,600.22,-8426.93
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_弗伦·长须|r 对话
+    .turnin 1338 >> 交任务 卡尔·雷矛的订单
+    .target 弗伦·长须
+    .isOnQuest 1338
 step << NightElf
     .goto 1453/0,501.200,-8468.601
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_维尔德·蓟草|r 对话
@@ -2861,18 +2872,6 @@ step << NightElf
     >>|cRXP_WARN_她在皇家画廊里走来走去|r
     .turnin 95189 >> 交任务 洛丹伦纹章
     .target 德娜·肯尼迪
-step << NightElf
-    .goto 1453/0,634.700,-8390.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_沉默的舒尼|r 对话
-    .accept 2040 >> 接受任务 地底突袭
-    .target 沉默的舒尼
-step << NightElf
-    #optional
-    .goto 1453/0,600.22,-8426.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_弗伦·长须|r 对话
-    .turnin 1338 >> 交任务 卡尔·雷矛的订单
-    .target 弗伦·长须
-    .isOnQuest 1338
 step << NightElf
     .isOnQuest 92415
     .goto 1453/0,744.400,-8621.101
@@ -3111,7 +3110,7 @@ step
     .zone Redridge Mountains >> 前往赤脊山
 step << NightElf/Skyborne/Dwarf Hunter
     .goto 1433/0,-1906.400,-9606.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卫兵帕克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_守卫帕克|r 对话
     .accept 244 >> 接受任务 豺狼人的入侵
     .target 卫兵帕克
 step << NightElf/Skyborne/Dwarf Hunter
@@ -3165,7 +3164,7 @@ step << Rogue
     #completewith next
     .subzone 97 >> 前往奥瑟尔伐木场
 step << Rogue
-    .goto 1433,51.846,45.116
+    .goto 1433/0,-2696.32,-9228.24--c:1433,51.846,45.116
     >>|cRXP_WARN_你必须完成这一步，才能进行之后的|r |T132290:0|t[毒药] |cRXP_WARN_任务|r
     >>|cRXP_WARN_站在路径点位置。调整你的镜头和鼠标位置，使你无需移动即可一次性点击 3 个|cRXP_PICK_ |r练习用保险箱|r
     .skill lockpicking,80 >>|cRXP_WARN_在奥瑟尔磨坊打开地上的 |cRXP_PICK_练习用保险箱|r，直到你的|r |T136058:0|t[开锁] 技能达到 80|r
@@ -3233,7 +3232,7 @@ step << Rogue
 step
     #ah
     .goto 1453/0,660.28,-8814.55
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
     >>|cRXP_BUY_购买以下物品以便在西部荒野快速交任务：|r
     >>|cRXP_WARN_如果你不想这样做，或者无法完成，可以跳过此步骤|r
     >>|T132794:0|t|T132794:0|t[灯油]
@@ -3252,7 +3251,7 @@ step
     .accept 142 >> 接受任务 迪菲亚兄弟会
     .target 格里安·斯托曼
 step << Druid
-    .goto Westfall,52.8,53.6
+    .goto 1436/0,1166.500,-10653.200
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_与旅店老板对话|r
     .target 旅店老板希瑟尔
     .home >> 将你的炉石设置在西部荒野
@@ -3295,16 +3294,16 @@ step
     .accept 214 >> 接受任务 红色丝质面罩
     .target 哨兵瑞尔
 step
-    .goto 1436,56.454,69.982,0
-    .goto 1436,56.434,74.339,0
-    .goto 1436,59.384,74.184,0
-    .goto 1436,60.871,74.362,0
-    .goto 1436,60.902,77.640,0
-    .goto 1436,63.442,77.339,0
-    .goto 1436,65.203,75.286,0
-    .goto 1436,63.594,72.862,0
-    .goto 1436,63.825,70.125,0
-    .goto 1436,42.649,71.376
+    .goto 1436/0,1040.78,-11032.91,0--c:1436,56.454,69.982
+    .goto 1436/0,1041.48,-11134.58,0--c:1436,56.434,74.339
+    .goto 1436/0,938.23,-11130.96,0--c:1436,59.384,74.184
+    .goto 1436/0,886.18,-11135.11,0--c:1436,60.871,74.362
+    .goto 1436/0,885.10,-11211.60,0--c:1436,60.902,77.640
+    .goto 1436/0,796.20,-11204.58,0--c:1436,63.442,77.339
+    .goto 1436/0,734.56,-11156.67,0--c:1436,65.203,75.286
+    .goto 1436/0,790.88,-11100.11,0--c:1436,63.594,72.862
+    .goto 1436/0,782.79,-11036.25,0--c:1436,63.825,70.125
+    .goto 1436/0,1523.95,-11065.44--c:1436,42.649,71.376
     >>|cRXP_WARN_在哨兵岭南侧刷 |cRXP_ENEMY_豺狼人|r，同时组建一个死亡矿井队伍|r
     .subzone 20 >>当你的小队集结完毕后，前往月溪镇
 step
@@ -3326,19 +3325,19 @@ step
     .mob 亡灵爆破者
     .mob 亡灵挖掘者
 step
-    .goto 1415,41.18,79.80,25,0
-    .goto 1415,41.03,79.96,25,0
-    .goto 1415,40.92,80.05,25,0
-    .goto 1415,41.08,80.11
+    .goto 1415/0,1504.68,-11259.75,25,0--c:1415,41.18,79.80
+    .goto 1415/0,1557.48,-11297.29,25,0--c:1415,41.03,79.96
+    .goto 1415/0,1596.20,-11318.41,25,0--c:1415,40.92,80.05
+    .goto 1415/0,1539.88,-11332.49--c:1415,41.08,80.11
     >>击杀 |cRXP_ENEMY_工头希斯耐特|r，拾取他的 |cRXP_LOOT_徽章|r
     >>|cRXP_WARN_该任务需要在副本外完成|r
     .complete 167,1 -- Thistlenettle's Badge (1)
     .unitscan 工头希斯耐特
 step
-    .goto 1415,41.18,79.80,25,0
-    .goto 1415,41.03,79.96,25,0
-    .goto 1415,40.92,80.05,25,0
-    .goto 1415,41.08,80.11
+    .goto 1415/0,1504.68,-11259.75,25,0--c:1415,41.18,79.80
+    .goto 1415/0,1557.48,-11297.29,25,0--c:1415,41.03,79.96
+    .goto 1415/0,1596.20,-11318.41,25,0--c:1415,40.92,80.05
+    .goto 1415/0,1539.88,-11332.49--c:1415,41.08,80.11
     >>击杀 |cRXP_ENEMY_骷髅矿工|r、|cRXP_ENEMY_亡灵爆破者|r 和 |cRXP_ENEMY_亡灵挖掘者|r，拾取他们的 |cRXP_LOOT_卡片|r
     >>|cRXP_WARN_注释：这个任务没有给予类似其他地下城任务的额外经验，而且需要花费更长的时间来完成。如果你的队伍同意，考虑跳过这个任务|r
     >>|cRXP_WARN_该任务需要在副本外完成|r
@@ -3349,9 +3348,9 @@ step
 step
     #label EnterDM
     .enabledungeon DM
-    .goto 1415,40.94,79.76,25,0
-    .goto 1415,40.86,79.62,20,0
-    .goto 1415,40.678,79.578
+    .goto 1415/0,1589.16,-11250.36,25,0--c:1415,40.94,79.76
+    .goto 1415/0,1617.32,-11217.51,20,0--c:1415,40.86,79.62
+    .goto 1415/0,1681.38,-11207.65--c:1415,40.678,79.578
     .subzone 1581,2 >> 进入死亡矿井副本
 step
     #completewith DMend
@@ -3402,16 +3401,16 @@ step << Druid
     .accept 79008 >> 接受任务 ……以及你找到的那张字条
 step << Druid
     #completewith next
-    .goto Westfall,17.928,33.099,50 >> 游向海中
+    .goto 1436/0,2389.19,-10172.31,50 >> 游向海中
 step << Druid
-    .goto Westfall,17.928,33.099
+    .goto 1436/0,2389.19,-10172.31
     >>打开 |cRXP_PICK_奇怪的保险箱|r。拾取 |cRXP_LOOT_水兽耐力坠饰|r
     .collect 15882,1,272,1 --Collect Half Pendant of Aquatic Endurance (x1)
 step << Druid
     #completewith next
 	.cast 18960 >> 施放传送：月光林地
 step << Druid
-    .goto Moonglade,52.53,40.57
+    .goto 1450/1,-2593.82,7867.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_洛甘纳尔|r 对话
     .trainer >> 训练你的职业技能
     .target 洛甘纳尔
@@ -3448,7 +3447,7 @@ step
     .target 索尔
 step
     .goto 1433/0,-1906.400,-9606.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卫兵帕克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_守卫帕克|r 对话
     .accept 244 >> 接受任务 豺狼人的入侵
     .target 卫兵帕克
 step
@@ -3599,7 +3598,7 @@ step << !Dwarf Rogue
     .goto 1431/0,432.11,-10878.75,50,0
     .goto 1431/0,551.72,-10688.13
     >>击杀|cRXP_ENEMY_小型结网毒蜘蛛|r和|cRXP_ENEMY_结网毒蜘蛛|r，拾取|cRXP_LOOT_小毒囊|r和|cRXP_LOOT_粘糊的蜘蛛腿|r
-    >>|cRXP_WARN_你需要一个|cRXP_LOOT_小毒囊|r来做成|r |T134437:0|t|T136230:0|t[抗毒药剂] |cRXP_WARN_，后面用来解除|r |T136230:0|t|T136230:0|t[赞吉尔之触] |cRXP_WARN_的debuff|r
+    >>|cRXP_WARN_你需要一个|cRXP_LOOT_小毒囊|r来做成|r |T134437:0|t[抗毒药剂] |cRXP_WARN_，后面用来解除|r |T136230:0|t[赞吉尔之触] |cRXP_WARN_的debuff|r
     >>|cRXP_WARN_把|cRXP_LOOT_粘糊的蜘蛛腿|r留着后面用|r
     >>|cRXP_WARN_如果你有一个|r |T626003:0|t|cFFF48CBA圣骑士|r|cRXP_WARN_、|r |T625999:0|t|cFFFF7C0A德鲁伊|r |cRXP_WARN_或者|r |T626006:0|t|cFF0070DD萨满|r |cRXP_WARN_朋友，你可以跳过这一步并请他们为你移除它|r
     .collect 1475,1,2359,1 -- Small Venom Sac (1)
@@ -3618,8 +3617,8 @@ step << Rogue
 step << Rogue
     .goto 1436/0,619.17,-11035.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_密探吉尔妮|r 对话
-    >>这个任务是必须完成的，关系到你的|cRXP_WARN_ |T132290:0|t[毒药]|r
-    .turnin 2360 >> 交任务马迪亚斯和迪菲亚盗贼
+    >>|cRXP_WARN_你必须完成此任务才能解锁|r |T132290:0|t[毒药]。
+    .turnin 2360 >> 交任务 马迪亚斯和迪菲亚盗贼
     .accept 2359 >> 接受任务 克拉文之塔
     .target Agent Kearnen
 step << Rogue
@@ -3646,7 +3645,7 @@ step << Rogue
     .itemcount 15396,1
 step << Rogue
     #label Mortwake
-    .goto 1436,70.421,74.031
+    .goto 1436/0,551.93,-11127.39--c:1436,70.421,74.031
     >>|cRXP_WARN_前往塔楼的第2层顶楼。在|r |T132320:0|t[潜行] |cRXP_WARN_状态下，并且 |cRXP_ENEMY_迪菲亚哨兵|r 不在你身旁时，跳到椅子上，再跳到灯上，最后跳到路径点位置顶部的书架上|r
     >>|cRXP_WARN_手动|r |T132320:0|t[取消潜行]|cRXP_WARN_，然后按下你的 "与目标互动" 快捷键来打开 |cRXP_PICK_暮色森林宝箱|r。拾取其中的|r |cRXP_LOOT_克拉文·摩特维克的日志|r
     >>|cRXP_WARN_注意：你的|r |T132320:0|t[潜行] |cRXP_WARN_在拾取|r |cRXP_LOOT_克拉文·摩特维克的日志|r 后会暂时失效
@@ -3676,7 +3675,7 @@ step << Dwarf Rogue
     #optional
     #sticky
     #label AntiVenomEnd2
-    .cast 20594 >>|cRXP_WARN_施放 |T136225:0|t[石像形态] 来移除 |T136230:0|t[赞吉尔之触] 的减益效果|r
+    .cast 20594 >>|cRXP_WARN_施放 |T136225:0|t[石像形态] ，来移除 |T136230:0|t[赞吉尔之触] 的减益效果|r
     .aura -9991
 step << Rogue
     .hs >> 将炉石使用回暴风城
@@ -3695,23 +3694,23 @@ step << !Dwarf Rogue
     #optional
     #requires AntiVenomEnd
     #completewith FirstAidEnd
-    .goto 1453,42.938,33.878,20,0
-    .goto 1453,41.544,31.330,20,0
-    .goto 1453,41.688,28.049,20,0
-    .goto 1453,43.070,26.155,15 >> 前去找 |cRXP_FRIENDLY_珊娜·弗勒|r
+    .goto 1453/0,803.77,-8582.52,20,0--c:1453,42.938,33.878
+    .goto 1453/0,822.51,-8559.68,20,0--c:1453,41.544,31.330
+    .goto 1453/0,820.57,-8530.27,20,0--c:1453,41.688,28.049
+    .goto 1453/0,801.99,-8513.29,15 >> 前去找 |cRXP_FRIENDLY_珊娜·弗勒|r--c:1453,43.070,26.155
     .aura -9991
 step << !Dwarf Rogue
     #requires AntiVenomEnd
-    .goto 1453,43.070,26.155
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_珊娜·弗勒|r 对话
+    .goto 1453/0,801.99,-8513.29--c:1453,43.070,26.155
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_珊娜·弗勒|r 对话
     >>|cRXP_WARN_如果你有一个|r |T626003:0|t|cFFF48CBA圣骑士|r|cRXP_WARN_、|r |T625999:0|t|cFFFF7C0A德鲁伊|r |cRXP_WARN_或者|r |T626006:0|t|cFF0070DD萨满|r |cRXP_WARN_朋友，|r |cRXP_WARN_请他们为你移除|r |T136230:0|t[赞吉尔之触]
     .skill firstaid,80 >> |cRXP_WARN_将你的|r |T135966:0|t[急救] |cRXP_WARN_提升到 80|r
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
 step << !Dwarf Rogue
     #label FirstAidEnd
-    .goto 1453,43.070,26.155
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_珊娜·弗勒|r 对话
+    .goto 1453/0,801.99,-8513.29--c:1453,43.070,26.155
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_珊娜·弗勒|r 对话
     >>|cRXP_WARN_如果你有一个|r |T626003:0|t|cFFF48CBA圣骑士|r|cRXP_WARN_、|r |T625999:0|t|cFFFF7C0A德鲁伊|r |cRXP_WARN_或者|r |T626006:0|t|cFF0070DD萨满|r |cRXP_WARN_朋友，|r |cRXP_WARN_请他们为你移除|r |T136230:0|t[赞吉尔之触]
     .train 7934 >> |cRXP_WARN_学习|r |T134437:0|t[抗毒药剂]
     .aura -9991
@@ -4027,7 +4026,7 @@ step << Druid
     .target 维斯派塔斯
     .zoneskip Darkshore
 step
-    .goto 1439,37.322,43.640
+    .goto 1439/1,497.08,6427.72--c:1439,37.322,43.640
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_巴瑞萨斯·月影|r 对话
     .accept 947 >> 接受任务 洞中的蘑菇
     .target 巴瑞萨斯·月影
@@ -4039,36 +4038,36 @@ step
     .collect 12347,1,4763,1 --Filled Cleansing Bowl (1)
     .use 12346
 step
-    .goto 1439,37.439,41.839
+    .goto 1439/1,489.41,6506.36--c:1439,37.439,41.839
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_考古学家霍莉|r 对话
     .accept 729 >> 接受任务 健忘的勘察员
     .target 考古学家霍莉
 step
     .isQuestTurnedIn 4762
-    .goto 1439,37.394,40.128
+    .goto 1439/1,492.36,6581.08--c:1439,37.394,40.128
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_桑迪斯·织风|r 对话
     .accept 4763 >> 接受任务 黑木熊怪的堕落
     .target 桑迪斯·织风
 step
     .isOnQuest 3765
-    .goto 1439,38.325,43.039
+    .goto 1439/1,431.300,6454.000
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_戈沙拉·夜语|r 对话
     .turnin 3765 >> 交任务 遥远的旅途
     .target 戈沙拉·夜语
 step
 .dungeon BFD
-    .goto 1439,38.325,43.039
+    .goto 1439/1,431.300,6454.000
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_戈沙拉·夜语|r 对话
     .accept 1275 >> 接受任务 研究堕落
     .target 戈沙拉·夜语
 step
     .isQuestTurnedIn 2138
-    .goto 1439,38.843,43.416
+    .goto 1439/1,397.45,6437.50--c:1439,38.843,43.416
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_萨纳瑞恩·绿树|r 对话
     .accept 2139 >> 接受任务 萨纳瑞恩的希望
     .target 萨纳瑞恩·绿树
 step
-    .goto 1439,39.043,43.555
+    .goto 1439/1,384.35,6431.43--c:1439,39.043,43.555
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与楼上的 |cRXP_FRIENDLY_哨兵艾莉萨·星风|r 对话
     .accept 965 >> 接受任务 奥萨拉克斯之塔
     .target 哨兵艾莉萨·星风
@@ -4080,7 +4079,7 @@ step
     .use 12346
 step
     #optional
-    .goto 1439,44.168,36.289
+    .goto 1439/1,48.66,6748.71--c:1439,44.168,36.289
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿斯特利安|r 对话
     .turnin 957 >> 交任务 巴莎兰
     .isOnQuest 957
@@ -4175,38 +4174,38 @@ step
     .complete 947,2 --Death Cap (1)
     .goto 1439/1,-685.72,6746.49
 step
-    .goto 1439,54.973,24.885
+    .goto 1439/1,-659.06,7246.69--c:1439,54.973,24.885
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_巴苏尔·影击|r 对话
     .turnin 965 >> 交任务 奥萨拉克斯之塔
     .accept 966 >> 接受任务 奥萨拉克斯之塔
     .target 巴苏尔·影击
 step
     #loop
-    .goto 1439,55.231,26.508,0
-    .goto 1439,56.194,27.071,0
-    .goto 1439,56.047,26.586,0
-    .goto 1439,55.231,26.508,50,0
-    .goto 1439,55.369,27.025,50,0
-    .goto 1439,55.763,26.695,50,0
-    .goto 1439,55.815,26.972,50,0
-    .goto 1439,56.194,27.071,50,0
-    .goto 1439,56.790,27.621,50,0
-    .goto 1439,57.278,26.311,50,0
-    .goto 1439,57.046,26.234,50,0
-    .goto 1439,56.544,26.598,50,0
-    .goto 1439,56.047,26.586,50,0
-    .goto 1439,55.743,25.915,50,0
+    .goto 1439/1,-675.96,7175.82,0--c:1439,55.231,26.508
+    .goto 1439/1,-739.04,7151.23,0--c:1439,56.194,27.071
+    .goto 1439/1,-729.41,7172.41,0--c:1439,56.047,26.586
+    .goto 1439/1,-675.96,7175.82,50,0--c:1439,55.231,26.508
+    .goto 1439/1,-685.00,7153.24,50,0--c:1439,55.369,27.025
+    .goto 1439/1,-710.81,7167.65,50,0--c:1439,55.763,26.695
+    .goto 1439/1,-714.22,7155.56,50,0--c:1439,55.815,26.972
+    .goto 1439/1,-739.04,7151.23,50,0--c:1439,56.194,27.071
+    .goto 1439/1,-778.08,7127.22,50,0--c:1439,56.790,27.621
+    .goto 1439/1,-810.04,7184.42,50,0--c:1439,57.278,26.311
+    .goto 1439/1,-794.85,7187.78,50,0--c:1439,57.046,26.234
+    .goto 1439/1,-761.97,7171.89,50,0--c:1439,56.544,26.598
+    .goto 1439/1,-729.41,7172.41,50,0--c:1439,56.047,26.586
+    .goto 1439/1,-709.50,7201.71,50,0--c:1439,55.743,25.915
     >>击杀 |cRXP_ENEMY_暗滩狂热者|r，拾取他们的 |cRXP_LOOT_破旧的羊皮纸|r
     .complete 966,1 --Worn Parchment (4)
     .mob 暗滩狂热者
 step
-    .goto 1439,54.973,24.885
+    .goto 1439/1,-659.06,7246.69--c:1439,54.973,24.885
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_巴苏尔·影击|r 对话
     .turnin 966 >> 交任务 奥萨拉克斯之塔
     .accept 967 >> 接受任务 奥萨拉克斯之塔
     .target 巴苏尔·影击
 step
-    .goto 1439,56.654,13.484
+    .goto 1439/1,-769.17,7744.53--c:1439,56.654,13.484
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_基尔卡克·旋杆|r 对话
     .accept 2098 >> 接受任务 基尔卡克的钥匙
     .target 基尔卡克·旋杆
@@ -4251,7 +4250,7 @@ step
     .mob 凶猛的森林陆行鸟
 step << Warrior/Paladin/Rogue/Shaman
     #requires foreststriders
-    .goto 1439,56.654,13.484
+    .goto 1439/1,-769.17,7744.53--c:1439,56.654,13.484
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_基尔卡克·旋杆|r 对话
     >>|cRXP_WARN_开始为“基尔卡克的报复”寻找队伍/|r|cRXP_ENEMY_机械打手4100型|r << Warrior/Paladin/Rogue/Shaman
     .turnin 2098 >> 交任务 基尔卡克的钥匙
@@ -4261,7 +4260,7 @@ step << Warrior/Paladin/Rogue/Shaman
 step
     #requires foreststriders
     .group 2 << Warrior/Paladin/Rogue/Shaman
-    .goto 1439,56.654,13.484
+    .goto 1439/1,-769.17,7744.53--c:1439,56.654,13.484
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_基尔卡克·旋杆|r 对话
     >>|cRXP_WARN_开始为“基尔卡克的报复”寻找队伍/|r|cRXP_ENEMY_机械打手4100型|r << Warrior/Paladin/Rogue/Shaman
     .turnin 2098 >> 交任务 基尔卡克的钥匙
@@ -4270,14 +4269,14 @@ step
 step
     #optional
     #completewith next
-    .goto 1439,55.802,18.290
+    .goto 1439/1,-713.36,7534.67--c:1439,55.802,18.290
     .gossipoption 95406 >> 与 |cRXP_FRIENDLY_机械打手4100型|r 对话以开始护送任务
 --  .gossipoption 87696 >> Talk to |cRXP_FRIENDLY_The Threshwackonator 4100|r to start the escort
     >>|cRXP_WARN_这个任务非常困难|r
     .target 机械打手4100型
     .isOnQuest 2078 << Warrior/Paladin/Rogue/Shaman
 step
-    .goto 1439,56.654,13.484
+    .goto 1439/1,-769.17,7744.53--c:1439,56.654,13.484
     #optional
     >>护送 |cRXP_FRIENDLY_机械打手4100型|r 前往 |cRXP_FRIENDLY_基尔卡克·旋杆|r
     >>在其变为敌对后击杀 |cRXP_ENEMY_机械打手4100型|r
@@ -4293,18 +4292,18 @@ step
 --XX DRUID: Test if you can root
 step
     #optional << Warrior/Paladin/Rogue/Shaman
-    .goto 1439,56.654,13.484
+    .goto 1439/1,-769.17,7744.53--c:1439,56.654,13.484
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_基尔卡克·旋杆|r 对话
     .turnin 2078 >> 交任务 基尔卡克的报复
     .target 基尔卡克·旋杆
     .isQuestComplete 2078
 step
     .isQuestTurnedIn 4681
-    .goto 1439,53.113,18.099
+    .goto 1439/1,-537.23,7543.01--c:1439,53.113,18.099
     >>点击地上的 |cRXP_PICK_搁浅的海龟|r
     .accept 4727 >> 接受任务 搁浅的海龟
 step << Druid
-    .goto Darkshore,48.87,11.32
+    .goto 1439/1,-259.32,7839.03
     >>|cRXP_WARN_游到水中|r
     >>打开 |cRXP_PICK_奇怪的保险箱|r，并从中拾取 |cRXP_LOOT_水兽敏捷坠饰|r
     .collect 15883,1,272,1 --Collect Half Pendant of Aquatic Agility (x1)
@@ -4312,7 +4311,7 @@ step << Druid
     #completewith next
 	.cast 18960 >> 施放传送：月光林地
 step << Druid
-    .goto Moonglade,52.53,40.57
+    .goto 1450/1,-2593.82,7867.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_洛甘纳尔|r 对话
     .trainer >> 训练你的职业技能
     .target 洛甘纳尔
@@ -4346,18 +4345,18 @@ step
     .subzone 442 >> Return to 奥伯丁，黑海岸
 step
     .isQuestComplete 2139
-    .goto 1439,38.843,43.416
+    .goto 1439/1,397.45,6437.50--c:1439,38.843,43.416
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_萨纳瑞恩·绿树|r 对话
     .turnin 2139 >> 交任务 萨纳瑞恩的希望
     .target 萨纳瑞恩·绿树
 step
     .isQuestComplete 4763
-    .goto 1439,37.394,40.128
+    .goto 1439/1,492.36,6581.08--c:1439,37.394,40.128
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_桑迪斯·织风|r 对话
     .turnin 4763 >> 交任务 黑木熊怪的堕落
     .target 桑迪斯·织风
 step
-    .goto 1439,37.322,43.640
+    .goto 1439/1,497.08,6427.72--c:1439,37.322,43.640
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_巴瑞萨斯·月影|r 对话
     .turnin 947 >> 交任务 洞中的蘑菇
     .accept 948 >> 接受任务 安努
@@ -4369,19 +4368,19 @@ step
 step
     #label ReturnAuberdine
     .isOnQuest 4727
-    .goto 1439,36.701,45.122,8,0
-    .goto 1439,36.621,45.596
+    .goto 1439/1,537.75,6363.01,8,0--c:1439,36.701,45.122
+    .goto 1439/1,542.99,6342.31--c:1439,36.621,45.596
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_温尼斯·布莱葛|r 对话
     .turnin 4727 >> 交任务 搁浅的海龟
     .target 温尼斯·布莱葛
 step
-    .goto 1439,35.968,70.807
+    .goto 1439/1,585.76,5241.43--c:1439,35.968,70.807
     >>点击 |cRXP_PICK_搁浅的海洋生物|r
     .accept 4728 >> 接受任务 搁浅的海洋生物
     .isQuestTurnedIn 4681
 step
-    .goto 1439,35.429,76.566,0
-    .goto 1439,35.429,76.566,60,0
+    .goto 1439/1,621.07,4989.95,0--c:1439,35.429,76.566
+    .goto 1439/1,621.07,4989.95,60,0--c:1439,35.429,76.566
     .goto 1439/1,541.75,4991.52
     >>|cRXP_WARN_请务必检查 |cRXP_ENEMY_莫克迪普|r 是否已经在水中刷新(可能是之前有人战斗失败，或在他刷新时那一波里的 |cRXP_ENEMY_灰雾猎人|r 没有被击杀)|r
     >>击杀营地内的 |cRXP_ENEMY_灰雾战士|r 和 |cRXP_ENEMY_灰雾猎人|r
@@ -4394,7 +4393,7 @@ step
     .mob 灰雾滩行者
 step
     #label Onu
-    .goto 1439,43.555,76.293
+    .goto 1439/1,88.81,5001.87--c:1439,43.555,76.293
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_安努|r 对话
     .turnin 948 >> 交任务 安努
     .accept 944 >> 接受任务 主宰之剑
@@ -4431,7 +4430,7 @@ step
     .use 5251
 step
     #label FunandGames
-    .goto 1439,38.537,86.050
+    .goto 1439/1,417.49,4575.82--c:1439,38.537,86.050
     >>点击北侧基座上的 |cRXP_PICK_暮光典籍|r
     .turnin 949 >> 交任务 暮光之锤的营地
     .accept 950 >> 接受任务 向安努回复
@@ -4447,7 +4446,7 @@ step
     .collect 5352,1,968,1 --Book: The Powers Below (1)
     .disablecheckbox
 step
-    .goto 1439,38.660,87.305
+    .goto 1439/1,409.44,4521.01--c:1439,38.660,87.305
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_瑟瑞露尼|r 对话，这将开始一次护送任务
     >>|cRXP_WARN_如果他不在，就跳过这一步|r
     .accept 945 >> 接受任务 护送瑟瑞露尼
@@ -4479,7 +4478,7 @@ step
 step
     #sticky
     #label prospector
-    .goto 1439,35.724,83.696
+    .goto 1439/1,601.74,4678.61--c:1439,35.724,83.696
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_勘察员雷塔维|r 对话
     >>|cRXP_WARN_你可能需要等待他重新刷新，或等其他玩家完成护送|r
     .turnin 729 >> 交任务 健忘的勘察员
@@ -4496,29 +4495,29 @@ step
     .isOnQuest 731
 step
     .isQuestTurnedIn 4681
-    .goto 1439,32.644,80.711
+    .goto 1439/1,803.48,4808.95--c:1439,32.644,80.711
     >>点击 |cRXP_PICK_搁浅的海洋生物|r
     .accept 4730 >> 接受任务 搁浅的海洋生物
 step
     .isQuestTurnedIn 4681
-    .goto 1439,31.690,83.700
+    .goto 1439/1,865.97,4678.43--c:1439,31.690,83.700
     >>|cRXP_WARN_注意 |cRXP_ENEMY_灰雾智者|r 的|r |T136048:0|t[闪电箭] |cRXP_WARN_伤害，他们还会使用|r |T136052:0|t[治疗波]|r
     >>点击地上的 |cRXP_PICK_搁浅的海龟|r
     .accept 4731 >> 接受任务 搁浅的海龟
 step
     .isQuestTurnedIn 4681
-    .goto 1439,31.229,85.564
+    .goto 1439/1,896.17,4597.04--c:1439,31.229,85.564
     >>|cRXP_WARN_注意 |cRXP_ENEMY_灰雾智者|r 的|r |T136048:0|t[闪电箭] |cRXP_WARN_伤害，他们还会使用|r |T136052:0|t[治疗波]|r
     >>点击地上的 |cRXP_PICK_搁浅的海龟|r
     .accept 4732 >> 接受任务 搁浅的海龟
 step
     .isQuestTurnedIn 4681
-    .goto 1439,31.251,87.419
+    .goto 1439/1,894.73,4516.04--c:1439,31.251,87.419
     >>点击 |cRXP_PICK_搁浅的海洋生物|r
     .accept 4733 >> 接受任务 搁浅的海洋生物
     >>|cRXP_WARN_注意 |cRXP_ENEMY_灰雾智者|r 的|r |T136048:0|t[闪电箭] |cRXP_WARN_伤害，他们还会使用|r |T136052:0|t[治疗波]|r
 step
-    .goto 1439,43.555,76.293
+    .goto 1439/1,88.81,5001.87--c:1439,43.555,76.293
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_安努|r 对话
     .turnin 950 >> 交任务 向安努回复
     .timer 11,向安努回复剧情演出
@@ -4531,7 +4530,7 @@ step
     .itemcount 5352,1
 step
     #optional
-    .goto 1439,44.401,76.425
+    .goto 1439/1,33.40,4996.11--c:1439,44.401,76.425
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_克罗尼亚·恒影|r 对话来开启护送任务
     >>|cRXP_WARN_如果他不在那里就跳过这一步。他最多需要25分钟才会重新刷新|r
     >>|cRXP_WARN_这是一个限时任务，你必须在20分钟内护送他安全抵达他的背包处|r
@@ -4546,7 +4545,7 @@ step
     .complete 5321,1 -- Horn of Awakening (1)
     .isQuestTurnedIn 731 --Only shows if Prospector was already escorted
 step
-    .goto 1439,44.401,76.425
+    .goto 1439/1,33.40,4996.11--c:1439,44.401,76.425
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_克罗尼亚·恒影|r 对话来开启护送任务
     >>|cRXP_WARN_如果他不在那里就跳过这一步。他最多需要25分钟才会重新刷新|r
     >>|cRXP_WARN_这是一个限时任务，你必须在20分钟内护送他安全抵达他的背包处|r

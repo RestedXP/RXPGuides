@@ -416,14 +416,14 @@ step << Human
     #season 2
     #optional
     #completewith next
-    .goto 1429,48.79,41.58,12,0
-    .goto 1429,48.975,41.146,12,0
-    .goto 1429,49.262,40.633,12,0
-    .goto 1429,49.510,40.095,6,0
-    .goto 1429,49.691,40.230,6,0
-    .goto 1429,49.595,40.673,6,0
-    .goto 1429,49.324,40.492,6,0
-    .goto 1429,49.436,39.881,10,0
+    .goto 1429/0,-158.00,-8901.99,12,0--c:1429,48.79,41.58
+    .goto 1429/0,-164.42,-8891.94,12,0--c:1429,48.975,41.146
+    .goto 1429/0,-174.39,-8880.07,12,0--c:1429,49.262,40.633
+    .goto 1429/0,-182.99,-8867.62,6,0--c:1429,49.510,40.095
+    .goto 1429/0,-189.28,-8870.74,6,0--c:1429,49.691,40.230
+    .goto 1429/0,-185.94,-8880.99,6,0--c:1429,49.595,40.673
+    .goto 1429/0,-176.54,-8876.80,6,0--c:1429,49.324,40.492
+    .goto 1429/0,-180.42,-8862.66,10,0--c:1429,49.436,39.881
     .goto 1429/0,-188.23,-8851.58,12 >>下楼，然后去找 |cRXP_FRIENDLY_凯尔登·布雷门|r
     .isQuestComplete 77620
 step << Human
@@ -1036,7 +1036,7 @@ step
     .goto 1453/0,514.05,-8608.26,15,0
     .goto 1453/0,507.6,-8541.66,15,0
     .goto 1453/0,683.43,-8397.08,12,0
-    .goto 1453/0,685.18,-8387.13,12 >>前往 |cRXP_FRIENDLY_格瑞曼德|r
+    .goto 1453/0,685.18,-8387.13,12 >>前往|cRXP_FRIENDLY_格瑞曼德|r
 step
     .goto 1453/0,685.18,-8387.13
     >>与 |cRXP_FRIENDLY_格瑞曼德|r 对话
@@ -1462,16 +1462,16 @@ step
     .accept 179 >> 接受任务 矮人的交易
     .target 斯登·粗臂
 step
-    .goto 1426,29.529,73.286,0
-    .goto 1426,28.117,75.088,0
-    .goto 1426,28.557,72.487,0
-    .goto 1426,29.529,73.286,60,0
-    .goto 1426,29.054,74.608,60,0
-    .goto 1426,28.558,75.781,60,0
-    .goto 1426,28.117,75.088,60,0
-    .goto 1426,27.562,74.331,60,0
-    .goto 1426,27.793,73.123,60,0
-    .goto 1426,28.557,72.487,60,0
+    .goto 1426/0,347.78,-6283.31,0--c:1426,29.529,73.286
+    .goto 1426/0,417.32,-6342.47,0--c:1426,28.117,75.088
+    .goto 1426/0,395.65,-6257.07,0--c:1426,28.557,72.487
+    .goto 1426/0,347.78,-6283.31,60,0--c:1426,29.529,73.286
+    .goto 1426/0,371.17,-6326.71,60,0--c:1426,29.054,74.608
+    .goto 1426/0,395.60,-6365.23,60,0--c:1426,28.558,75.781
+    .goto 1426/0,417.32,-6342.47,60,0--c:1426,28.117,75.088
+    .goto 1426/0,444.65,-6317.62,60,0--c:1426,27.562,74.331
+    .goto 1426/0,433.28,-6277.96,60,0--c:1426,27.793,73.123
+    .goto 1426/0,395.65,-6257.07,60,0--c:1426,28.557,72.487
     >>击杀|cRXP_ENEMY_瘦骨嶙峋的幼狼|r，从它们身上拾取|cRXP_LOOT_硬狼肉|r
     .complete 179,1 --Collect Tough Wolf Meat (x8)
     .mob 蓬毛幼狼
@@ -1521,15 +1521,15 @@ step
     #season 2
     #xprate <1.1
     #completewith EnterAnvilmar
-    .goto 1426,27.096,72.545,0
-    .goto 1426,26.620,73.548,0
-    .goto 1426,25.722,72.261,0
-    .goto 1426,24.878,72.329,0
-    .goto 1426,24.100,73.749,0
-    .goto 1426,24.920,74.697,0
-    .goto 1426,21.813,72.584,0
-    .goto 1426,19.578,72.086,0
-    .goto 1426,20.627,70.415,0
+    .goto 1426/0,467.61,-6258.98,0--c:1426,27.096,72.545
+    .goto 1426/0,491.05,-6291.91,0--c:1426,26.620,73.548
+    .goto 1426/0,535.27,-6249.65,0--c:1426,25.722,72.261
+    .goto 1426/0,576.84,-6251.89,0--c:1426,24.878,72.329
+    .goto 1426/0,615.16,-6298.51,0--c:1426,24.100,73.749
+    .goto 1426/0,574.77,-6329.63,0--c:1426,24.920,74.697
+    .goto 1426/0,727.79,-6260.26,0--c:1426,21.813,72.584
+    .goto 1426/0,837.87,-6243.91,0--c:1426,19.578,72.086
+    .goto 1426/0,786.20,-6189.04,0--c:1426,20.627,70.415
     >>击杀 |cRXP_ENEMY_石腭穴居人|r 和 |cRXP_ENEMY_壮实的石腭穴居人|r
     .complete 170,1 --Kill Rockjaw Trogg (x6)
     .mob 石腭穴居人
@@ -1553,8 +1553,8 @@ step
     #label EnterAnvilmar
     #optional
     #completewith next
-    .goto 1426,28.792,68.804,12,0
-    .goto 1426,28.642,68.375,12 >> 进入安威玛尔
+    .goto 1426/0,384.08,-6136.15,12,0--c:1426,28.792,68.804
+    .goto 1426/0,391.46,-6122.06,12 >> 进入安威玛尔--c:1426,28.642,68.375
 step
     #season 2
     .goto 1426/0,388.17,-6056.10
@@ -1581,20 +1581,20 @@ step
     #season 2
     #optional
     #completewith Talin
-    .goto 1426,28.792,68.804,12 >> 离开安威玛尔
+    .goto 1426/0,384.08,-6136.15,12 >> 离开安威玛尔--c:1426,28.792,68.804
     .subzoneskip 77,1
 step
     #xprate <1.1
     #completewith Rockjaw
-    .goto 1426,27.096,72.545,0
-    .goto 1426,26.620,73.548,0
-    .goto 1426,25.722,72.261,0
-    .goto 1426,24.878,72.329,0
-    .goto 1426,24.100,73.749,0
-    .goto 1426,24.920,74.697,0
-    .goto 1426,21.813,72.584,0
-    .goto 1426,19.578,72.086,0
-    .goto 1426,20.627,70.415,0
+    .goto 1426/0,467.61,-6258.98,0--c:1426,27.096,72.545
+    .goto 1426/0,491.05,-6291.91,0--c:1426,26.620,73.548
+    .goto 1426/0,535.27,-6249.65,0--c:1426,25.722,72.261
+    .goto 1426/0,576.84,-6251.89,0--c:1426,24.878,72.329
+    .goto 1426/0,615.16,-6298.51,0--c:1426,24.100,73.749
+    .goto 1426/0,574.77,-6329.63,0--c:1426,24.920,74.697
+    .goto 1426/0,727.79,-6260.26,0--c:1426,21.813,72.584
+    .goto 1426/0,837.87,-6243.91,0--c:1426,19.578,72.086
+    .goto 1426/0,786.20,-6189.04,0--c:1426,20.627,70.415
     >>击杀 |cRXP_ENEMY_石腭穴居人|r 和 |cRXP_ENEMY_壮实的石腭穴居人|r
     .complete 170,1 --Kill Rockjaw Trogg (x6)
     .mob 石腭穴居人
@@ -1611,21 +1611,21 @@ step
     .target 塔林·锐眼
 step
     #loop
-    .goto 1426,22.276,72.549,0
-    .goto 1426,20.924,70.393,0
-    .goto 1426,22.662,69.331,0
-    .goto 1426,24.358,72.591,0
-    .goto 1426,22.276,72.549,45,0
-    .goto 1426,21.209,72.266,45,0
-    .goto 1426,20.880,71.470,45,0
-    .goto 1426,20.924,70.393,45,0
-    .goto 1426,21.330,69.261,45,0
-    .goto 1426,22.035,69.231,45,0
-    .goto 1426,22.662,69.331,45,0
-    .goto 1426,24.317,68.026,45,0
-    .goto 1426,24.754,69.257,45,0
-    .goto 1426,24.878,71.191,45,0
-    .goto 1426,24.358,72.591,45,0
+    .goto 1426/0,704.99,-6259.11,0--c:1426,22.276,72.549
+    .goto 1426/0,771.58,-6188.32,0--c:1426,20.924,70.393
+    .goto 1426/0,685.98,-6153.45,0--c:1426,22.662,69.331
+    .goto 1426/0,602.45,-6260.49,0--c:1426,24.358,72.591
+    .goto 1426/0,704.99,-6259.11,45,0--c:1426,22.276,72.549
+    .goto 1426/0,757.54,-6249.82,45,0--c:1426,21.209,72.266
+    .goto 1426/0,773.74,-6223.68,45,0--c:1426,20.880,71.470
+    .goto 1426/0,771.58,-6188.32,45,0--c:1426,20.924,70.393
+    .goto 1426/0,751.58,-6151.15,45,0--c:1426,21.330,69.261
+    .goto 1426/0,716.86,-6150.17,45,0--c:1426,22.035,69.231
+    .goto 1426/0,685.98,-6153.45,45,0--c:1426,22.662,69.331
+    .goto 1426/0,604.47,-6110.60,45,0--c:1426,24.317,68.026
+    .goto 1426/0,582.95,-6151.02,45,0--c:1426,24.754,69.257
+    .goto 1426/0,576.84,-6214.52,45,0--c:1426,24.878,71.191
+    .goto 1426/0,602.45,-6260.49,45,0--c:1426,24.358,72.591
     >>击杀 |cRXP_ENEMY_小型峭壁野猪|r
     .complete 183,1 --Kill Small Crag Boar (x12)
     .mob 小型峭壁野猪
@@ -1636,7 +1636,7 @@ step
     .target 塔林·锐眼
 step
     #label Rockjaw
-    .goto 1426,25.077,75.711
+    .goto 1426/0,567.04,-6362.93--c:1426,25.077,75.711
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格瑞林·白须|r 对话
     .turnin 234 >> 交任务 寒脊山谷的送信任务
     .accept 182 >> 接受任务 巨魔洞穴
@@ -1762,17 +1762,17 @@ step
     #xprate <1.1
     #sticky
     #label TroggEnd
-    .goto 1426,27.858,76.482,0
-    .goto 1426,30.727,76.831,0
-    .goto 1426,29.280,75.500,0
-    .waypoint 1426,27.858,76.482,50,0
-    .waypoint 1426,28.946,77.153,50,0
-    .waypoint 1426,29.716,77.605,50,0
-    .waypoint 1426,30.727,76.831,50,0
-    .waypoint 1426,32.814,75.221,50,0
-    .waypoint 1426,31.138,74.048,50,0
-    .waypoint 1426,30.077,74.479,50,0
-    .waypoint 1426,29.280,75.500,50,0
+    .goto 1426/0,430.08,-6388.24,0--c:1426,27.858,76.482
+    .goto 1426/0,288.78,-6399.70,0--c:1426,30.727,76.831
+    .goto 1426/0,360.04,-6356.00,0--c:1426,29.280,75.500
+    .waypoint 1426/0,430.08,-6388.24,50,0--c:1426,27.858,76.482
+    .waypoint 1426/0,376.49,-6410.27,50,0--c:1426,28.946,77.153
+    .waypoint 1426/0,338.57,-6425.11,50,0--c:1426,29.716,77.605
+    .waypoint 1426/0,288.78,-6399.70,50,0--c:1426,30.727,76.831
+    .waypoint 1426/0,185.99,-6346.84,50,0--c:1426,32.814,75.221
+    .waypoint 1426/0,268.54,-6308.33,50,0--c:1426,31.138,74.048
+    .waypoint 1426/0,320.79,-6322.48,50,0--c:1426,30.077,74.479
+    .waypoint 1426/0,360.04,-6356.00,50,0--c:1426,29.280,75.500
     >>|cRXP_WARN_击杀所有你看到的|cRXP_ENEMY_石颚穴居怪|r，以及|r|cRXP_ENEMY_布尔利·石颚穴居怪|r
     .complete 170,1 --Kill Rockjaw Trogg (x6)
     .mob 石腭穴居人
@@ -1960,7 +1960,7 @@ step
 	.goto 1426/0,-615.60,-5674.38,40,0
 	.goto 1426/0,-641.21,-5660.59,40,0
 	.goto 1426/0,-730.84,-5624.15,40,0
-    .xp 5+2690 >> 刷怪达到 2690+/2800 经验
+    .xp 5+2690 >> 刷怪达到2690+/2800经验
     .mob 黑熊幼崽
     .mob 峭壁野猪
 step
@@ -3071,10 +3071,10 @@ step
 step
     .goto 1437/0,-823.8,-3807.180
     >>起跳到楼下的吊灯上
-    >>透过墙壁与 |cRXP_FRIENDLY_萨莫尔|r对话
+    >>透过墙壁与|cRXP_FRIENDLY_萨莫尔|r对话
     >>|cRXP_WARN_注意：要实现此操作，请在选项菜单的“游戏功能 -> 控制”中绑定“与目标互动”按键|r
     >>|cRXP_WARN_如果船只刚刚抵达，跳过此步骤|r
-    .vendor 1457 >> |cRXP_BUY_从他那里购买|r |T134831:0|t[治疗药水] |cRXP_BUY_(如果有)|r
+    .vendor 1457 >> |cRXP_BUY_购买|r |T134831:0|t[治疗药水] |cRXP_BUY_从他那里(如果有)|r
     .target 萨莫尔·菲斯蒂沃斯
     .money <0.03
 step
@@ -3092,7 +3092,7 @@ step
     .goto 1437/0,-715.87,-3697.48
     >>隔墙与 |cRXP_FRIENDLY_德温|r 对话
     >>|cRXP_WARN_如果船只刚刚抵达，跳过此步骤|r
-    .vendor 1453 >> |cRXP_BUY_从他那里购买|r |T134831:0|t[治疗药水] |cRXP_BUY_(如果有)|r
+    .vendor 1453 >> |cRXP_BUY_购买|r |T134831:0|t[治疗药水] |cRXP_BUY_从他那里(如果有)|r
     .target 德温·晨光
     .money <0.03
 step
@@ -3627,10 +3627,10 @@ step
 step
     .goto 1437/0,-823.8,-3807.180
     >>起跳到楼下的吊灯上
-    >>透过墙壁与 |cRXP_FRIENDLY_萨莫尔|r对话
+    >>透过墙壁与|cRXP_FRIENDLY_萨莫尔|r对话
     >>|cRXP_WARN_注意：要实现此操作，请在选项菜单的“游戏功能 -> 控制”中绑定“与目标互动”按键|r
     >>|cRXP_WARN_如果船只刚刚抵达，跳过此步骤|r
-    .vendor 1457 >> |cRXP_BUY_从他那里购买|r |T134831:0|t[治疗药水] |cRXP_BUY_(如果有)|r
+    .vendor 1457 >> |cRXP_BUY_购买|r |T134831:0|t[治疗药水] |cRXP_BUY_从他那里(如果有)|r
     .target 萨莫尔·菲斯蒂沃斯
     .money <0.03
 step
@@ -3648,7 +3648,7 @@ step
     .goto 1437/0,-715.87,-3697.48
     >>隔墙与 |cRXP_FRIENDLY_德温|r 对话
     >>|cRXP_WARN_如果船只刚刚抵达，跳过此步骤|r
-    .vendor 1453 >> |cRXP_BUY_从他那里购买|r |T134831:0|t[治疗药水] |cRXP_BUY_(如果有)|r
+    .vendor 1453 >> |cRXP_BUY_购买|r |T134831:0|t[治疗药水] |cRXP_BUY_从他那里(如果有)|r
     .target 德温·晨光
     .money <0.03
 step
@@ -4672,7 +4672,7 @@ step << Gnome
     .use 17117
 step
     >>与|cRXP_FRIENDLY_蒙提|r 对话
-    >>|cRXP_WARN_等剧情结束|r << Gnome
+    >>|cRXP_WARN_等待剧情演出完成|r << Gnome
     .turnin 6661 >> 交任务 捕捉矿道老鼠 << Gnome
     .timer 13,捕捉矿道老鼠剧情表演 << Gnome
     .accept 6662 >> 接受任务 我的兄弟，尼普希
@@ -4775,7 +4775,7 @@ step
 step
     .goto 1453/0,822.16,-8865.60
     >>进入建筑
-    >>与 |cRXP_FRIENDLY_艾代尔|r 对话
+    >>与|cRXP_FRIENDLY_艾代尔|r 对话
     .vendor 1316 >> |cRXP_BUY_从他那里购买非智力|r |T134943:0|t|T134943:0|t[卷轴] |cRXP_BUY_（如果有货）|r
     .money <0.0090
     .target 艾代尔·吉尔罗
@@ -4809,7 +4809,7 @@ step
     .goto 1453/0,637.59,-8889.81,10 >>进入 暴风城银行
 step
     .goto 1453/0,614.33,-8932.92
-    >>与|cRXP_FRIENDLY_牛顿|r 交谈
+    >>与|cRXP_FRIENDLY_牛顿|r交谈
     .bankdeposit 769,4371,730,7207,1941,1711,1478,1712,3012,1180,1181,3013,6889 >> 将以下物品存入银行：
     >>|T133970:0|t[大块野猪肉]
     >>|T133024:0|t[青铜管]
@@ -4998,7 +4998,7 @@ step
     .mob Foreststrider Fledgeling
 step
     #completewith SeaTurtle1
-    >>击杀 |cRXP_ENEMY_月夜猛虎幼崽|r 和 |cRXP_ENEMY_月夜猛虎|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
+    >>杀死 |cRXP_ENEMY_月夜猛虎幼崽|r 和 |cRXP_ENEMY_月夜猛虎|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
     .complete 1002,1 --Moonstalker Fang (6)
     .mob 月夜猛虎幼崽
     .mob Moonstalker
@@ -5027,7 +5027,7 @@ step
     .mob Foreststrider Fledgeling
 step
     #completewith River
-    >>击杀 |cRXP_ENEMY_月夜猛虎幼崽|r 和 |cRXP_ENEMY_月夜猛虎|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
+    >>杀死 |cRXP_ENEMY_月夜猛虎幼崽|r 和 |cRXP_ENEMY_月夜猛虎|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
     .complete 1002,1 --Moonstalker Fang (6)
     .mob 月夜猛虎幼崽
     .mob Moonstalker
@@ -5050,7 +5050,7 @@ step
     .mob 森林陆行鸟
 step
     #completewith RedC
-    >>击杀 |cRXP_ENEMY_月夜猛虎幼崽|r 和 |cRXP_ENEMY_月夜猛虎|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
+    >>杀死 |cRXP_ENEMY_月夜猛虎幼崽|r 和 |cRXP_ENEMY_月夜猛虎|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
     .complete 1002,1 --Moonstalker Fang (6)
     .mob 月夜猛虎幼崽
     .mob Moonstalker
@@ -5107,7 +5107,7 @@ step
     .mob 森林陆行鸟雏鸟
 step
     #completewith RBears
-    >>击杀 |cRXP_ENEMY_月夜猛虎幼崽|r 和 |cRXP_ENEMY_月夜猛虎|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
+    >>杀死 |cRXP_ENEMY_月夜猛虎幼崽|r 和 |cRXP_ENEMY_月夜猛虎|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
     .complete 1002,1 --Moonstalker Fang (6)
     .mob 月夜猛虎幼崽
     .mob Moonstalker
@@ -5316,7 +5316,7 @@ step
     .accept 4813 >> 接受任务 水晶中的碎骨
 step
     #completewith GrainSample
-    >>击杀 |cRXP_ENEMY_月夜猛虎幼崽|r 和 |cRXP_ENEMY_月夜猛虎|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
+    >>杀死 |cRXP_ENEMY_月夜猛虎幼崽|r 和 |cRXP_ENEMY_月夜猛虎|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
     .complete 1002,1 --Moonstalker Fang (6)
     .mob 月夜猛虎幼崽
     .mob Moonstalker
@@ -5385,7 +5385,7 @@ step
 step
     #label Talisman
     .goto 1439/1,-480.05,6888.84
-    >>|cRXP_WARN_等剧情结束|r
+    >>|cRXP_WARN_等待剧情演出完成|r
     >>击杀|cRXP_ENEMY_萨巴克希斯|r
     >>拾取掉落地上的|cRXP_PICK_萨布拉克斯的恶魔之袋|r，从中获得|cRXP_LOOT_堕落护符|r
     >>|cRXP_WARN_该操作有 5 秒施法时间|r
@@ -5562,7 +5562,7 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith JenneaT
-    +|cRXP_WARN_注意：每种布料需要准备12组（|r|T132911:0|t|T132905:0|t[毛料]|cRXP_WARN_、|r |T132892:0|t|T132903:0|t[丝绸]|cRXP_WARN_、|r |T132892:0|t|T132892:0|t[魔纹布]|cRXP_WARN_、|r 和 |T132903:0|t|T132903:0|t[符文布]|cRXP_WARN_），用于后续的布料捐献任务.这些布料在升级过程中会自然获得|r
+    +|cRXP_WARN_注意：每种布料需要准备12组（|r|T132911:0|t|T132905:0|t[毛料]|cRXP_WARN_、|r |T132892:0|t|T132903:0|t[丝绸]|cRXP_WARN_、|r |T132892:0|t|T132892:0|t[魔纹布]|cRXP_WARN_、|r 和 |T132903:0|t|T132903:0|t[符文布]|cRXP_WARN_），用于后续的布料捐献任务。这些布料在升级过程中会自然获得|r
 step << skip
     #completewith next
     .goto 1453/0,661.38,-8858.16,12,0
@@ -5580,16 +5580,16 @@ step << skip
 step
     #sticky
     #label Bank2
-    >>与|cRXP_FRIENDLY_牛顿|r 交谈
+    >>与|cRXP_FRIENDLY_牛顿|r交谈
     .bankdeposit 17056,5354,2592,6889 >> 将以下物品存入银行：
-    >>|T132917:0|t[轻羽毛]
+    >>|T132917:0|t|T132917:0|t[轻羽毛]
     >>|T133469:0|t|T133469:0|t[写给德尔格伦的信]
     >>|T132911:0|t|T132911:0|t[毛料]
     >>|T132832:0|t[小蛋]
     .target 牛顿·伯恩赛德
 step
     .goto 1453/0,614.33,-8932.92
-    >>与|cRXP_FRIENDLY_牛顿|r 交谈
+    >>与|cRXP_FRIENDLY_牛顿|r交谈
     .bankwithdraw 730,7207 >> 从你的银行中取出以下物品： << Gnome
     .bankwithdraw 730,16115 >> 从你的银行中取出以下物品： << Human
     >>|T133884:0|t[鱼人眼睛]
@@ -5636,7 +5636,7 @@ step
     .goto 1453/0,612.45,-8806.18,12,0
     .goto 1453/0,528.43,-8850.28,20,0
     .goto 1453/0,532.20,-8863.72,15,0
-    .goto 1453/0,490.12,-8835.67,10 >>朝|cRXP_FRIENDLY_杜加尔|r 走去
+    .goto 1453/0,490.12,-8835.67,10 >>朝|cRXP_FRIENDLY_杜加尔|r走去
 step << Human
     .goto 1453/0,490.12,-8835.67
     >>与|cRXP_FRIENDLY_杜加尔|r交谈
@@ -6208,7 +6208,7 @@ step
 step
     .goto 1453/0,822.16,-8865.60
     >>进入建筑
-    >>与 |cRXP_FRIENDLY_艾代尔|r 对话
+    >>与|cRXP_FRIENDLY_艾代尔|r 对话
     .vendor 1316 >> |cRXP_BUY_从他那里购买非智力|r |T134943:0|t|T134943:0|t[卷轴] |cRXP_BUY_（如果有货）|r
     .target 艾代尔·吉尔罗
 step
@@ -6241,7 +6241,7 @@ step
     #sticky
     #label Bank4
     .goto 1453/0,614.33,-8932.92
-    >>与|cRXP_FRIENDLY_牛顿|r 交谈
+    >>与|cRXP_FRIENDLY_牛顿|r交谈
     .bankwithdraw 769,5354,6889 >> 从你的银行中取出以下物品：
     >>|T133970:0|t[大块野猪肉]
     >>|T133469:0|t|T133469:0|t[写给德尔格伦的信]
@@ -6249,12 +6249,12 @@ step
 step
     #label Bank3
     .goto 1453/0,614.33,-8932.92
-    >>与|cRXP_FRIENDLY_牛顿|r 交谈
-    >>|cRXP_WARN_注意：每种布料需要准备12组（|r|T132911:0|t|T132905:0|t[毛料]|cRXP_WARN_、|r |T132892:0|t|T132903:0|t[丝绸]|cRXP_WARN_、|r |T132892:0|t|T132892:0|t[魔纹布]|cRXP_WARN_、|r 和 |T132903:0|t|T132903:0|t[符文布]|cRXP_WARN_），用于后续的布料捐献任务.这些布料在升级过程中会自然获得|r
+    >>与|cRXP_FRIENDLY_牛顿|r交谈
+    >>|cRXP_WARN_注意：每种布料需要准备12组（|r|T132911:0|t|T132905:0|t[毛料]|cRXP_WARN_、|r |T132892:0|t|T132903:0|t[丝绸]|cRXP_WARN_、|r |T132892:0|t|T132892:0|t[魔纹布]|cRXP_WARN_、|r 和 |T132903:0|t|T132903:0|t[符文布]|cRXP_WARN_），用于后续的布料捐献任务。这些布料在升级过程中会自然获得|r
     .bankdeposit 2998,4371,1711,1478,1712,3012,1180,1181,3013,17056,2592,2998,1941 >> 将以下物品存入银行：
     >>|T133024:0|t[青铜管]
     >>|T134943:0|t|T134943:0|t[卷轴]
-    >>|T132917:0|t[轻羽毛]
+    >>|T132917:0|t|T132917:0|t[轻羽毛]
     >>|T132911:0|t|T132911:0|t[毛料]
     >>|T134377:0|t|T134377:0|t[简易罗盘]
     >>|T132620:0|t[一桶葡萄酒]
@@ -6398,7 +6398,7 @@ step
    .isOnQuest 5321
 step
     #completewith next
-    >>AOE |cRXP_ENEMY_灰鬃蓟熊|r。拾取它们的|cRXP_LOOT_灰鬃头皮|r
+    >>AOE击杀 |cRXP_ENEMY_灰鬃蓟熊|r。拾取它们的|cRXP_LOOT_灰鬃头皮|r
     >>|cRXP_ENEMY_灰鬃蓟熊|r与|cRXP_ENEMY_月夜猛虎领主|r和|cRXP_ENEMY_巨型森林行者|r共享刷新点
    .complete 1003,1 --Grizzled Scalp (4)
    .mob Grizzled Thistle Bear
@@ -6483,7 +6483,7 @@ step
     .isOnQuest 950
 step
     #completewith next
-    >>AOE |cRXP_ENEMY_灰鬃蓟熊|r。拾取它们的|cRXP_LOOT_灰鬃头皮|r
+    >>AOE击杀 |cRXP_ENEMY_灰鬃蓟熊|r。拾取它们的|cRXP_LOOT_灰鬃头皮|r
     >>|cRXP_ENEMY_灰鬃蓟熊|r与|cRXP_ENEMY_月夜猛虎领主|r和|cRXP_ENEMY_巨型森林行者|r共享刷新点
     .complete 1003,1 --Grizzled Scalp (4)
     .mob Grizzled Thistle Bear
@@ -6522,7 +6522,7 @@ step
     .isOnQuest 950
 step
     #completewith SeaC
-    >>AOE |cRXP_ENEMY_灰鬃蓟熊|r。拾取它们的|cRXP_LOOT_灰鬃头皮|r
+    >>AOE击杀 |cRXP_ENEMY_灰鬃蓟熊|r。拾取它们的|cRXP_LOOT_灰鬃头皮|r
     >>|cRXP_ENEMY_灰鬃蓟熊|r与|cRXP_ENEMY_月夜猛虎领主|r和|cRXP_ENEMY_巨型森林行者|r共享刷新点
     .complete 1003,1 --Grizzled Scalp (4)
     .mob Grizzled Thistle Bear
@@ -6624,7 +6624,7 @@ step
     .use 13536
 step
     #completewith SeaCreatureGiga
-    >>AOE |cRXP_ENEMY_灰鬃蓟熊|r。拾取它们的|cRXP_LOOT_灰鬃头皮|r
+    >>AOE击杀 |cRXP_ENEMY_灰鬃蓟熊|r。拾取它们的|cRXP_LOOT_灰鬃头皮|r
     >>|cRXP_ENEMY_灰鬃蓟熊|r与|cRXP_ENEMY_月夜猛虎领主|r和|cRXP_ENEMY_巨型森林行者|r共享刷新点
     .complete 1003,1 --Grizzled Scalp (4)
     .mob Grizzled Thistle Bear
@@ -6704,7 +6704,7 @@ step
     .use 13536
 step
     #completewith Remtravel3
-    >>AOE |cRXP_ENEMY_灰鬃蓟熊|r。拾取它们的|cRXP_LOOT_灰鬃头皮|r
+    >>AOE击杀 |cRXP_ENEMY_灰鬃蓟熊|r。拾取它们的|cRXP_LOOT_灰鬃头皮|r
     >>|cRXP_ENEMY_灰鬃蓟熊|r与|cRXP_ENEMY_月夜猛虎领主|r和|cRXP_ENEMY_巨型森林行者|r共享刷新点
     .complete 1003,1 --Grizzled Scalp (4)
     .mob Grizzled Thistle Bear
@@ -6741,7 +6741,7 @@ step
     .mob 月夜雄虎
 step
     #completewith next
-    >>AOE |cRXP_ENEMY_灰鬃蓟熊|r。拾取它们的|cRXP_LOOT_灰鬃头皮|r
+    >>AOE击杀 |cRXP_ENEMY_灰鬃蓟熊|r。拾取它们的|cRXP_LOOT_灰鬃头皮|r
     >>|cRXP_ENEMY_灰鬃蓟熊|r与|cRXP_ENEMY_月夜猛虎领主|r和|cRXP_ENEMY_巨型森林行者|r共享刷新点
     .complete 1003,1 --Grizzled Scalp (4)
     .mob Grizzled Thistle Bear
@@ -6809,7 +6809,7 @@ step
 step
     #completewith Onu3
     #label Scalps2
-    >>AOE |cRXP_ENEMY_灰鬃蓟熊|r。拾取它们的|cRXP_LOOT_灰鬃头皮|r
+    >>AOE击杀 |cRXP_ENEMY_灰鬃蓟熊|r。拾取它们的|cRXP_LOOT_灰鬃头皮|r
     >>|cRXP_ENEMY_灰鬃蓟熊|r与|cRXP_ENEMY_月夜猛虎领主|r和|cRXP_ENEMY_巨型森林行者|r共享刷新点
     .complete 1003,1 --Grizzled Scalp (4)
     .mob Grizzled Thistle Bear
@@ -6858,7 +6858,7 @@ step
     .goto 1439/1,406.82,4733.45,60,0
     .goto 1439/1,444.15,4850.92,60,0
     .goto 1439/1,287.61,4815.11
-    >>AOE |cRXP_ENEMY_灰鬃蓟熊|r。拾取它们的|cRXP_LOOT_灰鬃头皮|r
+    >>AOE击杀 |cRXP_ENEMY_灰鬃蓟熊|r。拾取它们的|cRXP_LOOT_灰鬃头皮|r
     >>|cRXP_ENEMY_灰鬃蓟熊|r与|cRXP_ENEMY_月夜猛虎领主|r和|cRXP_ENEMY_巨型森林行者|r共享刷新点
     .complete 1003,1 --Grizzled Scalp (4)
     .mob Grizzled Thistle Bear
@@ -6928,7 +6928,7 @@ step
     #completewith next
     .goto 1440/1,-284.31,2828.30
     >>与 |cRXP_FRIENDLY_黛琳希亚|r 对话
-    .fly Auberdine >> 飞往奥伯丁，黑海岸
+    .fly Auberdine >> 飞往奥伯丁
     .target 黛琳希亚
 step
     >>与 |cRXP_FRIENDLY_温尼斯|r 和 |cRXP_FRIENDLY_古博|r 对话
@@ -7043,7 +7043,7 @@ step
     .target 维斯派塔斯
 step
     #completewith next
-    .goto 1438,55.885,89.350
+    .goto 1438/1,969.11,8798.93--c:1438,55.885,89.350
     .zone Darnassus >> 通过紫色传送门进入达纳苏斯
 step
     #completewith next
@@ -7086,7 +7086,7 @@ step
     #sticky
     #label Bank1
     .goto 1453/0,614.33,-8932.92
-    >>与|cRXP_FRIENDLY_牛顿|r 交谈
+    >>与|cRXP_FRIENDLY_牛顿|r交谈
     .bankwithdraw 4371,1941,1711,1478,1712,3012,1180,1181,3013,2998 >> 从你的银行中取出以下物品：
     >>|T133024:0|t[青铜管]
     >>|T134943:0|t|T134943:0|t[卷轴]
@@ -7096,10 +7096,10 @@ step
 step
     #label Bank
     .goto 1453/0,614.33,-8932.92
-    >>与|cRXP_FRIENDLY_牛顿|r 交谈
-    >>|cRXP_WARN_注意：每种布料需要准备12组（|r|T132911:0|t|T132905:0|t[毛料]|cRXP_WARN_、|r |T132892:0|t|T132903:0|t[丝绸]|cRXP_WARN_、|r |T132892:0|t|T132892:0|t[魔纹布]|cRXP_WARN_、|r 和 |T132903:0|t|T132903:0|t[符文布]|cRXP_WARN_），用于后续的布料捐献任务.这些布料在升级过程中会自然获得|r
+    >>与|cRXP_FRIENDLY_牛顿|r交谈
+    >>|cRXP_WARN_注意：每种布料需要准备12组（|r|T132911:0|t|T132905:0|t[毛料]|cRXP_WARN_、|r |T132892:0|t|T132903:0|t[丝绸]|cRXP_WARN_、|r |T132892:0|t|T132892:0|t[魔纹布]|cRXP_WARN_、|r 和 |T132903:0|t|T132903:0|t[符文布]|cRXP_WARN_），用于后续的布料捐献任务。这些布料在升级过程中会自然获得|r
     .bankdeposit 17056,2592,1015,4654 >> 将以下物品存入银行：
-    >>|T132917:0|t[轻羽毛]
+    >>|T132917:0|t|T132917:0|t[轻羽毛]
     >>|T132911:0|t|T132911:0|t[毛料]
     >>|T133970:0|t[狼肋排]
     >>|T134431:0|t|T134431:0|t[神秘的化石]
@@ -7188,7 +7188,7 @@ step
 step
     .goto 1453/0,822.16,-8865.60
     >>进入建筑
-    >>与 |cRXP_FRIENDLY_艾代尔|r 对话
+    >>与|cRXP_FRIENDLY_艾代尔|r 对话
     .vendor 1316 >> |cRXP_BUY_从他那里购买非智力|r |T134943:0|t|T134943:0|t[卷轴] |cRXP_BUY_（如果有货）|r
     >>|cRXP_WARN_不要让你的钱低于18银31铜|r
     .money <0.1831
@@ -7197,7 +7197,7 @@ step
     #label Adair
     .goto 1453/0,822.16,-8865.60
     >>进入建筑
-    >>与 |cRXP_FRIENDLY_艾代尔|r 对话
+    >>与|cRXP_FRIENDLY_艾代尔|r 对话
     .vendor 1316 >> |cRXP_BUY_从他那里购买非智力|r |T134943:0|t|T134943:0|t[卷轴] |cRXP_BUY_（如果有货）|r
     >>|cRXP_WARN_不要让你的钱低于 26银31铜|r
     .money <0.2631
@@ -7390,7 +7390,7 @@ step
     .isQuestTurnedIn 174
 step
     .goto 1431/0,-1366.09,-10779.03
-    >>与|cRXP_FRIENDLY_玛丽|r交谈
+    >>与|cRXP_FRIENDLY_玛丽|r 对话
     .turnin 175 >> 交任务眺望群星
     .accept 177 >> 接受任务眺望群星
     .target 盲眼玛丽
@@ -8017,7 +8017,7 @@ step
     #label AdairX
     .goto 1453/0,822.16,-8865.60
     >>进入建筑
-    >>与 |cRXP_FRIENDLY_艾代尔|r 对话
+    >>与|cRXP_FRIENDLY_艾代尔|r 对话
     .vendor 1316 >> |cRXP_BUY_从他那里购买非智力|r |T134943:0|t|T134943:0|t[卷轴] |cRXP_BUY_（如果有货）|r
     .target 艾代尔·吉尔罗
 step
@@ -8057,15 +8057,15 @@ step
 step
     .goto 1455/0,-997.66,-4886.49
     >>与 |cRXP_FRIENDLY_拜雷|r 对话
-    >>|cRXP_WARN_注意：每种布料需要准备12组（|r|T132911:0|t|T132905:0|t[毛料]|cRXP_WARN_、|r |T132892:0|t|T132903:0|t[丝绸]|cRXP_WARN_、|r |T132892:0|t|T132892:0|t[魔纹布]|cRXP_WARN_、|r 和 |T132903:0|t|T132903:0|t[符文布]|cRXP_WARN_），用于后续的布料捐献任务.这些布料在升级过程中会自然获得|r
+    >>|cRXP_WARN_注意：每种布料需要准备12组（|r|T132911:0|t|T132905:0|t[毛料]|cRXP_WARN_、|r |T132892:0|t|T132903:0|t[丝绸]|cRXP_WARN_、|r |T132892:0|t|T132892:0|t[魔纹布]|cRXP_WARN_、|r 和 |T132903:0|t|T132903:0|t[符文布]|cRXP_WARN_），用于后续的布料捐献任务。这些布料在升级过程中会自然获得|r
     .bankdeposit 17056,2592,1015,1083,2665,1922,1284 >> 将以下物品存入银行：
-    >>|T132917:0|t[轻羽毛]
+    >>|T132917:0|t|T132917:0|t[轻羽毛]
     >>|T132911:0|t|T132911:0|t[毛料]
     >>|T133970:0|t[狼肋排]
     >>|T133277:0|t|T133277:0|t[阿祖拉的铭文饰品]
     >>|T133849:0|t|T133849:0|t[暴风城特产调料]
-    >>|T133629:0|t[斯温的货物]
-    >>|T132761:0|t[一箱马掌]
+    >>|T133629:0|t|T133629:0|t[斯温的货物]
+    >>|T132761:0|t|T132761:0|t[一箱马掌]
     .target 拜雷·石衣
 step
     #label BankDeposit

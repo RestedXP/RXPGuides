@@ -50,7 +50,7 @@ step << Warrior
 step << Shaman
     .goto Mulgore,45.01,75.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_米拉|r 对话
-    .train 8017 >>学习 |T136086:0|t[石化武器]
+    .train 8017 >>影袭 |T136086:0|t[石化武器]
     .target 米拉·晨行者
 step
     #completewith next
@@ -471,7 +471,7 @@ step << Shaman/Druid
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.2
 step << Shaman/Druid
     .goto Mulgore,45.66,58.60
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_尤加尔|r|cRXP_BUY_对话并|r|cRXP_BUY_从他那里购买一根|r |T135145:0|t[学徒短杖]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_玛诺特|r |cRXP_BUY_对话，并向他购买|r |T135145:0|t[学徒短杖]|cRXP_BUY_|r
     .collect 2495,1,761,1 --Collect Walking Stick (1)
     .money <0.0504
     .itemStat 16,QUALITY,<7
@@ -658,7 +658,7 @@ step
     .unitscan 断矛
 step
     .goto Mulgore,47.63,61.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_加纳|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jhawna|r
     >>|cRXP_BUY_购买|r |T132815:0|t[冰镇牛奶]|cRXP_BUY_从她那里|r << Shaman/Druid
     >>|cRXP_BUY_购买|r |T133968:0|t[刚出炉的面包]|cRXP_BUY_从她那里r|r << Warrior
     .vendor >> 把垃圾物品卖给商人
@@ -695,7 +695,7 @@ step << Shaman/Druid
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.2
 step << Shaman/Druid
     .goto Mulgore,45.66,58.60
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_尤加尔|r|cRXP_BUY_对话并|r|cRXP_BUY_从他那里购买一根|r |T135145:0|t[学徒短杖]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_玛诺特|r |cRXP_BUY_对话，并向他购买|r |T135145:0|t[学徒短杖]|cRXP_BUY_|r
     .collect 2495,1,749,1 --Collect Walking Stick (1)
     .money <0.0504
     .itemStat 16,QUALITY,<7
@@ -864,7 +864,7 @@ step << Shaman/Druid
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.2
 step << Shaman/Druid
     .goto Mulgore,45.66,58.60
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_尤加尔|r|cRXP_BUY_对话并|r|cRXP_BUY_从他那里购买一根|r |T135145:0|t[学徒短杖]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_玛诺特|r |cRXP_BUY_对话，并向他购买|r |T135145:0|t[学徒短杖]|cRXP_BUY_|r
     .collect 2495,1,743,1 --Collect Walking Stick (1)
     .money <0.0504
     .itemStat 16,QUALITY,<7
@@ -899,7 +899,7 @@ step << Hunter
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.0
 step << Hunter
     .goto Mulgore,45.86,57.67
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r 洛拉特|cRXP_FRIENDLY_ 对话|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Moorat|r
     .collect 2516,1000,743,1 << Hunter --Light Shot (1000)
     .target 姆拉特·远行
     .itemcount 2512,<800 << Hunter
@@ -1003,7 +1003,7 @@ step << Tauren
     .complete 758,1 --Cleanse the Thunderhorn Water Well (1)
 step
     .goto Mulgore,31.27,49.87
-    >>击杀 |cRXP_ENEMY_巴尔丹掘地工|r 和 |cRXP_ENEMY_巴尔丹鉴定官|r。拾取它们的|cRXP_LOOT_探矿者的镐|r
+    >>击杀 |cRXP_ENEMY_巴尔丹掘地工|r和|cRXP_ENEMY_巴尔丹鉴定官|r。拾取它们的|cRXP_LOOT_探矿者的镐|r
     .use 4702 >> |cRXP_WARN_砸碎|r |T134707:0|t[矿工锄] |cRXP_WARN_在熔炉处|r
     >>|cRXP_WARN_小心|cRXP_ENEMY_ 巴尔丹鉴定官|r 会施放|r |T135929:0|t[次级治疗术] |cRXP_WARN_(远程施法:当自身或附近生命值低于 50% 的单位时，为其恢复约 75 点生命值)|r
     .complete 746,1 --Broken Tools (5)
@@ -1394,7 +1394,7 @@ step << Hunter
     .target 雅文·刺鬃
 step
     .goto Mulgore,47.63,61.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_加纳|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jhawna|r
     >>|cRXP_BUY_购买|r |T132815:0|t[冰镇牛奶]|cRXP_BUY_从她那里|r << Shaman/Druid
     >>|cRXP_BUY_购买|r |T133968:0|t[刚出炉的面包]|cRXP_BUY_从她那里r|r << Warrior
     .collect 1179,20,818,1 << Shaman/Druid --Ice Cold Milk (20)
@@ -1667,7 +1667,7 @@ step << Druid/Hunter
     .goto Thunder Bluff,40.39,51.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拍卖师斯塔比|r 对话
     .collect 2318,12,768,1 >>|cRXP_BUY_从拍卖行购买12个|r |T134252:0|t[轻皮] |cRXP_BUY_|r
-    .target 拍卖师斯塔比
+    .target Auctioneer Stampi
     .skill skinning,1,1
 step << Druid/Hunter
     #ah
@@ -2028,7 +2028,7 @@ step
 step
     #completewith MinshinasSkull
     >>击杀 |cRXP_ENEMY_妖术巨魔|r 和 |cRXP_ENEMY_巫毒巨魔|r。
-    >>|cRXP_WARN_小心！|r |cRXP_ENEMY_巫毒巨魔|r |cRXP_WARN_能够施放|r |T136052:0|t|T136052:0|t[治疗波]
+    >>|cRXP_WARN_小心！|r |cRXP_ENEMY_巫毒巨魔|r |cRXP_WARN_能够施放|r |T136052:0|t[治疗波]
     .complete 826,1 --Hexed Troll (8)
     .mob 妖术巨魔
     .complete 826,2 --Voodoo Troll (8)
@@ -3217,7 +3217,7 @@ step
 step
     #label UCflightpath2
     .goto Undercity,63.25,48.56
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迈克尔 |r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_麦克尔|r 对话
     >>|cRXP_WARN_若已解锁飞行点，请跳过此步骤！|r
     .fp Undercity >> 获得幽暗城的飞行路径
     .target 迈克尔·加勒特

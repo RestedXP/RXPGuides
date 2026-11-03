@@ -80,7 +80,7 @@ step
 step << Warrior
     .goto Teldrassil,59.306,41.091
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奇娜|r 对话
-	.vendor >> 出售垃圾物品
+	.vendor >> |cRXP_WARN_出售垃圾物品|r
     .target 奇娜
 step << Warrior
 	.goto Teldrassil,59.637,38.442
@@ -182,7 +182,7 @@ step << !Priest
     #completewith next
     .goto Teldrassil,59.306,41.091
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奇娜|r 对话
-	.vendor >> 出售垃圾物品 << !Hunter
+	.vendor >> |cRXP_WARN_出售垃圾物品|r << !Hunter
 	.vendor >> |cRXP_BUY_购买3或4组|r |T132382:0|t[劣质箭] << Hunter
     .target 奇娜
 step << Warrior
@@ -194,7 +194,7 @@ step << Priest
     #completewith next
     .goto Teldrassil,59.456,41.050
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与楼上的 |cRXP_FRIENDLY_简娜·明月|r 对话
-	.vendor >> 出售垃圾物品
+	.vendor >> |cRXP_WARN_出售垃圾物品|r
     .target Janna Brightmoon
 step << Priest
 	.goto Teldrassil,59.174,40.442

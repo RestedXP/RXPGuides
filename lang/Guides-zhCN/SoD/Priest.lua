@@ -532,7 +532,7 @@ step << Priest
     .train 425215,1
 step << Priest
     .train 425215 >> |cRXP_WARN_使用|r |T136222:0|t|T237566:0|t[|cRXP_FRIENDLY_虔诚勇士的回忆|r] |cRXP_WARN_来训练|r |T237566:0|t|T237566:0|t[扭曲信仰]
-    >>|cRXP_WARN_你必须在圣洁区域（如北郡修道院、暴风城大教堂、安威玛尔的光线祭坛、洛克莫丹或铁炉堡的神秘结界）输入/kneel以获得|r |T135934:0|t|T136057:0|t|T136057:0|t|T136057:0|t[冥想] |cRXP_WARN_增益效果|r
+    >>|cRXP_WARN_你必须在圣洁区域（如北郡修道院、暴风城大教堂、安威玛尔的光线祭坛、洛克莫丹或铁炉堡的神秘结界）输入/kneel以获得|r |T135934:0|t|T136057:0|t|T136057:0|t|T136057:0|t[冥想] |cRXP_WARN_buff|r
     .use 205905
     .itemcount 205905,1
 ]])
@@ -1686,7 +1686,7 @@ step << Alliance
     .zone Stormwind City >> 前往暴风城
 step << Alliance
     .goto Stormwind City,53.612,59.764
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
     >>从拍卖行购买6 |T133682:0|t|T134834:0|t[|cRXP_LOOT_厚符文布绷带|r]、4 |T132834:0|t|T134855:0|t[|cRXP_LOOT_特效治疗药水|r]和8 |T132834:0|t|T132834:0|t[|cRXP_LOOT_巨蛋|r]。这些物品将与你已收集的|T134855:0|t|T134855:0|t[|cRXP_LOOT_斯坦索姆圣水|r]一起，用于该任务链的第一个任务
     .collect 14530,6 --Heavy runecloth bandage (6)
     .collect 13446,4 --Major Healing Potion (4)
@@ -1735,7 +1735,7 @@ step << Alliance
     .zone Stormwind City >> 返回暴风城
 step << Alliance
     .goto Stormwind City,53.612,59.764
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
     >>从拍卖行购买2个|T134459:0|t|T134086:0|t[|cRXP_LOOT_奥金锭|r]、2个|T134132:0|t|T134086:0|t[|cRXP_LOOT_山脉之血|r]和3个|T134132:0|t|T134132:0|t[|cRXP_LOOT_蓝宝石|r]。你很快需要这些物品来交任务，它们可能价格不菲
     .collect 12360,2 --Arcanite Bar(2)
     .collect 11382,2 --Blood of the Mountain(2)

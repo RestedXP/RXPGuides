@@ -15,7 +15,7 @@ RXPGuides.RegisterGuide([[
 
 step
 .enabledungeon RFC
-#include RestedXP无限服指南（部落）\1-6级 提瑞斯法林地
+#include RestedXP 无限指南 (部落)\1-6级 提瑞斯法林地
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -32,7 +32,7 @@ RXPGuides.RegisterGuide([[
 
 step
 .enabledungeon RFC
-#include RestedXP无限服指南（部落）\6-12级 提瑞斯法林地
+#include RestedXP 无限指南 (部落)\6-12级 提瑞斯法林地
 ]])
 
 
@@ -53,5 +53,5 @@ RXPGuides.RegisterGuide([[
 step
 .enabledungeon RFC
 .enabledungeon ROL
-#include RestedXP无限服指南（部落）\12-14级 银松森林
+#include RestedXP 无限指南 (部落)\12-14级 银松森林
 ]])

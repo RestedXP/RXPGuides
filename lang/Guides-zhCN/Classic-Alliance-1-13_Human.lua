@@ -9,7 +9,7 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #name 1-6级 北郡
 #version 1
-#group RestedXP 联盟 1-20 级
+#group RestedXP 联盟 1-20级
 #groupid RXP-SRGCE-A1
 #defaultfor Human
 #next 6-11级 艾尔文森林
@@ -35,7 +35,7 @@ step << Warlock
     #sticky
     #label WarlockVendor << Human
     .goto Elwynn Forest,50.051,42.689
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_丹恩·温斯洛|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_丹恩·温斯洛|r 对话
     .vendor >> |cRXP_WARN_出售你的胸甲、衬衣、裤子和靴子，还有你背包里的食物与水。你一共需要10枚铜币|r
     .target Dane Winslow
 step << Human Warlock
@@ -64,7 +64,7 @@ step << Warlock
     #season 0,1
     #completewith next
     .goto Elwynn Forest,50.051,42.689
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_丹恩·温斯洛|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_丹恩·温斯洛|r 对话
     .vendor >> |cRXP_WARN_出售你的胸甲、衬衣、裤子和靴子，还有你背包里的食物与水。你一共需要10枚铜币|r
     .target Dane Winslow
 step << Warlock
@@ -102,7 +102,7 @@ step << Warlock
 --   .goto Elwynn Forest,52.9,44.3,60,0
     .goto Elwynn Forest,56.7,44.0
     >>|cRXP_WARN_闯入迪菲亚营地里的帐篷|r
-    >>打开 |cRXP_PICK_被偷走的书|r。并从中拾取 |cRXP_LOOT_虚空灵能|r
+    >>打开 |cRXP_PICK_被偷走的书|r。从中拾取 |cRXP_LOOT_虚空灵能|r
     >>|cRXP_WARN_你可以在帐篷内安全地拾取 |cRXP_LOOT_虚空灵能|r！请观看提供的小视频，了解具体操作方法|r
     .link https://youtu.be/3qQwsJhAZIk >> |cRXP_WARN_点击这里查看视频|r
     .complete 1598,1 --Collect Powers of the Void (x1)
@@ -117,9 +117,9 @@ step << Warlock
 --  .goto Elwynn Forest,52.9,44.3,60,0
     .goto Elwynn Forest,56.7,44.0
     >>|cRXP_WARN_闯入迪菲亚营地里的帐篷|r
-    >>打开 |cRXP_PICK_被偷走的书|r。并从中拾取 |cRXP_LOOT_虚空灵能|r
+    >>打开 |cRXP_PICK_被偷走的书|r。从中拾取 |cRXP_LOOT_虚空灵能|r
     >>|cRXP_WARN_你可以在帐篷内安全地拾取 |cRXP_LOOT_虚空灵能|r！请观看提供的小视频，了解具体操作方法|r
-    .link https://www.youtube.com/watch?v=_-KEke9Yeik >> |cRXP_WARN_点击此处查看视频参考|r
+    .link https://www.youtube.com/watch?v=_-KEke9Yeik >> |cRXP_WARN_点击此处查看视频参考 |r
     .complete 1598,1 --Collect Powers of the Void (x1)
 step << Warlock
     #softcore
@@ -171,7 +171,7 @@ step << Warrior
     >>一直击杀 |cRXP_ENEMY_幼狼|r 直到你拥有价值10铜币以上的垃圾物品
     >>|cRXP_WARN_你会学习|r |T132333:0|t[战斗怒吼] |cRXP_WARN_从而加快前期升级速度|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_丹尼尔修士|r 对话
-    .vendor >> 出售垃圾物品
+    .vendor >> |cRXP_WARN_出售垃圾物品|r
     .target 丹尼尔修士
     .goto Elwynn Forest,47.486,41.566
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在屋内的楼下与 |cRXP_FRIENDLY_莱尼·拜舍尔|r 对话
@@ -516,7 +516,7 @@ step
     #completewith next
     .goto Elwynn Forest,47.691,41.417
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_高德瑞克·洛斯迦|r 对话
-    .vendor >> 出售垃圾物品
+    .vendor >> |cRXP_WARN_出售垃圾物品|r
     .target 高德瑞克·洛斯迦
 --N need SoM xp note
 step
@@ -662,7 +662,7 @@ step << Mage
     .waypoint Elwynn Forest,55.09,49.00,30,0
     .waypoint Elwynn Forest,55.43,45.87,30,0
     .waypoint Elwynn Forest,53.86,47.05,30,0
-    >>击杀|cRXP_ENEMY_迪菲亚暴徒|r。拾取他们的|T134939:0|t|cRXP_LOOT_[法术笔记：NNGABIIHGQSU]|r
+    >>击杀|cRXP_ENEMY_迪菲亚暴徒|r，并从他们身上拾取|T134939:0|t|T134939:0|t|cRXP_LOOT_[法术笔记：NNGABIIHGQSU]|r
     >>|cRXP_WARN_注意：你无法在此处训练|r |T135844:0|t|T133736:0|t[冰枪术] |cRXP_WARN_，因为你只能在种族出生区域获得|r |T133736:0|t|T133736:0|t[理解入门] |cRXP_WARN_|r << !Human
     .collect 203751,1,77620,1 -- Spell Notes: CALE ENCI (1)
     .mob 迪菲亚暴徒
@@ -697,7 +697,7 @@ step << Paladin
     #sticky
     #label Libram2
     #requires Libram1
-    .equip 18,205420 >> |cRXP_WARN_装备|r|T134916:0|t|cRXP_LOOT_[审判圣契]|r
+    .equip 18,205420 >> |cRXP_WARN_装备|r|T134916:0|t|T134916:0|t|cRXP_LOOT_[审判圣契]|r
     .use 205420
     .itemcount 205420,1 --Libram of Judgement (1)
     .train 410002,1
@@ -715,7 +715,7 @@ step << Paladin
     .waypoint Elwynn Forest,55.09,49.00,30,0
     .waypoint Elwynn Forest,53.89,50.52,30,0
     .waypoint Elwynn Forest,52.55,48.79,30,0
-    .aura 408828 >>|cRXP_WARN_施放|r |T135959:0|t[审判] |cRXP_WARN_10次以获得|r |T136116:0|t[灵感勃发] |cRXP_WARN_增益效果|r
+    .aura 408828 >>|cRXP_WARN_施放|r |T135959:0|t|T136116:0|t[审判] |cRXP_WARN_10次以获得|r |T136116:0|t|T136116:0|t[灵感勃发] |cRXP_WARN_增益效果|r
     .itemStat 18,QUALITY,2
     .train 410002,1
 step << Paladin
@@ -1175,7 +1175,7 @@ RXPGuides.RegisterGuide([[
 #season 0,1
 #version 1
 << Alliance
-#group RestedXP 联盟 1-20 级
+#group RestedXP 联盟 1-20级
 #groupid RXP-SRGCE-A1
 #name 6-11级 艾尔文森林
 #displayname 6-13级 艾尔文森林 << SoD
@@ -1513,7 +1513,7 @@ step
     .goto Elwynn Forest,42.357,89.373
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔舒·马科伦|r 对话
     .vendor >>|cRXP_BUY_能买多少|r |T132815:0|t[冰镇牛奶] |cRXP_WARN_就买多少|r << Priest/Warlock/Mage
-    .vendor >>出售垃圾物品 << !Priest !Warlock !Mage
+    .vendor >>|cRXP_WARN_出售垃圾物品|r << !Priest !Warlock !Mage
     .target 乔舒·马科伦
     .subzoneskip 64,1 --The Maclure Vineyards
 step << Warrior/Paladin/Rogue
@@ -1916,7 +1916,7 @@ step << Paladin
     .goto Elwynn Forest,41.096,66.041
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_威尔海姆修士|r 对话
     >>|cRXP_WARN_训练|r |T135949:0|t|T133815:0|t[纯净术] |cRXP_WARN_以尽快获得|r |T133815:0|t|T133815:0|t[铭刻胸甲 - 神盾] |cRXP_WARN_尽快|r
-    .train 1152 >>训练 |T135949:0|t[纯净术]
+    .train 1152 >>训练 |T135949:0|t|T135949:0|t[纯净术]
     .trainer >> 训练你的职业技能
     .target 威尔海姆修士
 step << Paladin
@@ -1958,7 +1958,7 @@ step << Paladin
     .goto Elwynn Forest,41.096,66.041
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_威尔海姆修士|r 对话
     >>|cRXP_WARN_训练|r |T135949:0|t|T133815:0|t[纯净术] |cRXP_WARN_以尽快获得|r |T133815:0|t|T133815:0|t[铭刻胸甲 - 神盾] |cRXP_WARN_尽快|r
-    .train 1152 >>训练 |T135949:0|t[纯净术]
+    .train 1152 >>训练 |T135949:0|t|T135949:0|t[纯净术]
     .trainer >> 训练你的职业技能
     .target 威尔海姆修士
 step << Paladin
@@ -2070,7 +2070,7 @@ step << Rogue
     .waypoint 1429,55.523,66.707,50,0
     .waypoint 1429,55.203,66.171,50,0
     .waypoint 1429,54.236,66.888,50,0
-    >>|T133644:0|t|T134269:0|t搜索|cRXP_ENEMY_鱼人蒸汽行者|r和|cRXP_ENEMY_鱼人进军|r。从它们身上拾取|T134269:0|t|T134269:0|t|cRXP_LOOT_[右下角地图碎片]|r
+    >>|T133644:0|t搜索|cRXP_ENEMY_鱼人蒸汽行者|r和|cRXP_ENEMY_鱼人进军|r。从它们身上拾取|T134269:0|t|cRXP_LOOT_[右下角地图碎片]|r
     >>|cRXP_WARN_你必须处于|r |T132320:0|t|T133644:0|t[潜行] |cRXP_WARN_状态才能使用|r |T133644:0|t|T133644:0|t[搜索]
 --   >>|cRXP_WARN_Note: This can also come from any other |cRXP_ENEMY_Murloc|r in Elwynn Forest|r
     .collect 203786,1 -- Bottom-Right Map Piece (1)
@@ -2288,7 +2288,7 @@ step
     #optional
     #label ExitJasperlode
     #completewith Find
-    .goto 1429,61.820,53.871,15 >> 退出玉石矿洞
+    .goto 1429,61.820,53.871,15 >> 离开玉石矿洞
     .subzoneskip 54,1
 step
     #optional
@@ -2823,7 +2823,7 @@ step << !Warlock
 step << !Warlock
     #optional
     .goto Redridge Mountains,17.4,69.6
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卫兵帕克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_守卫帕克|r 对话
     .accept 244 >> 接受任务 豺狼人的入侵
     .target 卫兵帕克
     .xp <11,1
@@ -2930,7 +2930,7 @@ step << Paladin
     #season 2
     #label Romulus
     .goto StormwindClassic,38.10,28.10
-    .gossipoption 109653 >>与|cRXP_FRIENDLY_罗姆鲁斯修士|r 对话
+    .gossipoption 109653 >>与 |cRXP_FRIENDLY_罗姆鲁斯修士|r对话
     .target Brother Romulus
     .skipgossip
     .train 410015,1
@@ -3335,7 +3335,7 @@ step
     #sticky
     #label Fields
     .goto Westfall,56.04,31.23
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_农夫萨丁|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_农夫萨丁|r 对话
     .accept 9 >> 接受任务 清理荒野
     .target Farmer Saldean
 step
@@ -3891,7 +3891,7 @@ step << Warlock
     #label Gnolls
     #requires SoulShards
     .goto Redridge Mountains,17.4,69.6
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卫兵帕克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_守卫帕克|r 对话
     .accept 244 >> 接受任务 豺狼人的入侵
     .target 卫兵帕克
 step << Warlock
@@ -4003,7 +4003,7 @@ step << Human
     #xprate <1.5
     #label Continue
     .goto StormwindClassic,74.312,47.240
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_奥斯瑞克·斯图恩|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_奥斯瑞克·斯图恩|r 对话
     .turnin 6281 >> 交任务 前往暴风城
     .accept 6261 >> 接受任务 杜加尔·朗德瑞克
     .target 奥斯瑞克·斯图恩
@@ -4011,7 +4011,7 @@ step << Human
     #xprate >1.49
     #label Continue
     .goto StormwindClassic,74.312,47.240
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_奥斯瑞克·斯图恩|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_奥斯瑞克·斯图恩|r 对话
     .turnin 6281 >> 交任务 前往暴风城
     .target 奥斯瑞克·斯图恩
 step << Warrior
@@ -4280,9 +4280,9 @@ step << Paladin/Warrior
     .goto Ironforge,72.40,73.63
     .gossipoption 109084 >>与|cRXP_FRIENDLY_布鲁亚特|r对话以开始战斗
     >>击败|cRXP_ENEMY_布鲁阿特|r
-    >>|cRXP_WARN_小心，他会施放|r |T132939:0|t[反手一击] |cRXP_WARN_（击晕你2秒）|r
-    >>|cRXP_WARN_记得 |r对他|cRXP_WARN_ 预读|r |T135924:0|t[十字军圣印] << Paladin
-    >>|cRXP_WARN_千万不要对他施放|r |T135906:0|t[力量祝福] |cRXP_WARN_|r << Paladin
+    >>|cRXP_WARN_小心他施放|r |T132939:0|t|T132939:0|t[反手一击] |cRXP_WARN_（击晕你2秒）|r
+    >>|cRXP_WARN_记得预读|r |T135924:0|t|T135924:0|t[十字军圣印] |cRXP_WARN_对他|r << Paladin
+    >>|cRXP_WARN_不要意外对他施放|r |T135906:0|t|T135906:0|t[力量祝福] |cRXP_WARN_ |r << Paladin
     >>|cRXP_WARN_将他风筝到楼上的阳台，然后从旅店外跳下，必要时施放|r |T135920:0|t|T135920:0|t[圣光术] |cRXP_WARN_如果必要的话|r << Paladin
     >>|cRXP_WARN_将他风筝到楼上的阳台，然后从旅店外跳下，如果有/需要的话使用|r |T133688:0|t|T133688:0|t[绷带]|cRXP_WARN_ |r << Warrior
     .mob Bruart
@@ -4297,14 +4297,14 @@ step << Paladin/Warrior
     .goto Ironforge,72.40,73.63,-1
     .goto Ironforge,72.53,76.94,-1
     >>击败|cRXP_ENEMY_布鲁阿特|r
-    >>|cRXP_WARN_小心，他会施放|r |T132939:0|t[反手一击] |cRXP_WARN_（击晕你2秒）|r
-    >>|cRXP_WARN_记得 |r对他|cRXP_WARN_ 预读|r |T135924:0|t[十字军圣印] << Paladin
-    >>|cRXP_WARN_千万不要对他施放|r |T135906:0|t[力量祝福] |cRXP_WARN_|r << Paladin
+    >>|cRXP_WARN_小心他施放|r |T132939:0|t|T132939:0|t[反手一击] |cRXP_WARN_（击晕你2秒）|r
+    >>|cRXP_WARN_记得预读|r |T135924:0|t|T135924:0|t[十字军圣印] |cRXP_WARN_对他|r << Paladin
+    >>|cRXP_WARN_不要意外对他施放|r |T135906:0|t|T135906:0|t[力量祝福] |cRXP_WARN_ |r << Paladin
     >>|cRXP_WARN_将他风筝到楼上的阳台，然后从旅店外跳下，必要时施放|r |T135920:0|t|T135920:0|t[圣光术] |cRXP_WARN_如果必要的话|r << Paladin
     >>|cRXP_WARN_将他风筝到楼上的阳台，然后从旅店外跳下，如果有/需要的话使用|r |T133688:0|t|T133688:0|t[绷带]|cRXP_WARN_ |r << Warrior
     >>|cRXP_WARN_击败|cRXP_ENEMY_布鲁阿尔特|r后：|r
     >>再次与|cRXP_FRIENDLY_布鲁克·麦须|r对话，领取|T134419:0|t|T134419:0|t[责难符文] << Paladin
-    >>|cRXP_WARN_如果他不给你|r |T134419:0|t[责难符文]|cRXP_WARN_，你可能需要再次与|cRXP_ENEMY_布鲁阿特|r 战斗|r << Paladin
+    >>|cRXP_WARN_如果他不给你|r |T134419:0|t|T134419:0|t[责难符文]|cRXP_WARN_，你可能需要再次与|cRXP_ENEMY_布鲁亚特|r战斗|r << Paladin
     >>再次与|cRXP_FRIENDLY_布鲁克·麦须|r对话，领取|T134419:0|t|T134419:0|t[狂乱攻击符文] << Warrior
     >>|cRXP_WARN_如果他没有给你|r |T134419:0|t|T134419:0|t狂乱攻击符文|cRXP_WARN_，你可能需要再次与|cRXP_ENEMY_布鲁阿尔特|r战斗|r << Warrior
     >>|cRXP_WARN_注意：此任务可能难以独自完成。请寻求帮助，否则后续指南中会要求你重新完成|r << Warrior
@@ -4318,7 +4318,7 @@ step << Paladin/Warrior
 --XX 109539 "I've taken care of Stuart. He shouldn't be a problem anymore."
 step << Paladin
     #season 2
-    .cast 402265 >>|cRXP_WARN_使用|r |T134419:0|t[责难符文] |cRXP_WARN_学习|r |T134596:0|t[铭刻裤子 - 责难]
+    .cast 402265 >>|cRXP_WARN_使用|r |T134419:0|t|T134596:0|t责难符文 |cRXP_WARN_学习|r |T134596:0|t|T134596:0|t[铭刻护腿 - 责难]
     .use 205683
     .itemcount 205683,1 --Rune of Rebuke (1)
     .train 425621,1
@@ -4514,7 +4514,7 @@ step
     #label IFHS
     .goto 1455,20.419,53.269,10,0 << Mage/Paladin
     .goto Ironforge,18.14,51.45
-    >>与里面的|cRXP_FRIENDLY_旅店老板洛雷·火酒|r 对话
+    >>与里面的|cRXP_FRIENDLY_旅店老板洛雷·火酒|r对话
     .home >> 将你的炉石设置为铁炉堡
     .target 旅店老板洛雷·火酒
 step << skip --logout skip
@@ -4940,7 +4940,7 @@ RXPGuides.RegisterGuide([[
 #season 0,1
 #version 1
 << Alliance
-#group RestedXP 联盟 1-20 级
+#group RestedXP 联盟 1-20级
 #groupid RXP-SRGCE-A1
 #name 11-13级 洛克莫丹
 #displayname 13-15级 洛克莫丹 << SoD
@@ -5534,7 +5534,7 @@ step << Warrior
     .train 425443,1
 step << Warrior
     #season 2
-    .train 425443 >> |cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_迅捷打击符文|r] |cRXP_WARN_训练|r |T132394:0|t[迅捷打击]
+    .train 425443 >> |cRXP_WARN_使用|r |T134419:0|t|T132394:0|t[|cRXP_FRIENDLY_迅捷打击符文|r] |cRXP_WARN_训练|r |T132394:0|t|T132394:0|t[迅捷打击]
     .use 208778
     .itemcount 208778,1
 step
@@ -5777,7 +5777,7 @@ step << Rogue
     #xprate <1.5
     #ah
     .goto StormwindClassic,57.38,56.77
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_玛尔达·维勒|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_玛尔达·维勒|r 对话
     >>|cRXP_BUY_如果买得起，就从她那里买最多2把|r |T135343:0|t|T135343:0|t[弯刀] |cRXP_BUY_，或者你也可以从拍卖行买更好/更便宜的|r
     >>|cRXP_WARN_当你达到14级时装备它们|r
     .collect 2027,2 --Scimitar
@@ -5788,7 +5788,7 @@ step << Rogue
     #xprate <1.5
     #ssf
     .goto StormwindClassic,57.38,56.77
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_玛尔达·维勒|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_玛尔达·维勒|r 对话
     >>|cRXP_BUY_如果买得起，从她那里买最多2把|r |T135343:0|t|T135343:0|t[弯刀] |cRXP_BUY_即可|r
     >>|cRXP_WARN_当你达到14级时装备它们|r
     .collect 2027,2 --Scimitar
@@ -5808,7 +5808,7 @@ step
     #xprate <1.5
     #ah
     .goto Stormwind City,53.612,59.764
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
     >>|cRXP_BUY_购买|r |T133970:0|t|cRXP_LOOT_[野猪肉块]|r|cRXP_BUY_ 或|r |T133970:0|t|cRXP_LOOT_[多汁狼肉]|r|cRXP_BUY_，以便稍后提升你的 |r|T133971:0|t[烹饪] |cRXP_BUY_技能|r
     >>|cRXP_WARN_你需要50点|r |T133971:0|t[烹饪]|cRXP_WARN_后续在夜色镇完成一个任务|r
     >>|cRXP_WARN_如果你不想这样做，或者无法完成，可以跳过此步骤|r
@@ -5840,7 +5840,7 @@ step
     #ah
     #optional
     .goto Stormwind City,53.612,59.764
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
     >>|cRXP_WARN_如果你不想这样做，或者无法完成，可以跳过此步骤|r
     >>|cRXP_BUY_购买以下物品，以便在西部荒野和黑海岸更快交任务：|r
     >>|T133972:0|t[秃鹫肉条]

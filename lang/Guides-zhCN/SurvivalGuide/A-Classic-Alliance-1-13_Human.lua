@@ -21,7 +21,7 @@ step << !Human
 step << Warlock
     #completewith next
     .goto Elwynn Forest,50.051,42.689
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_丹恩·温斯洛|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_丹恩·温斯洛|r 对话
     .vendor >> |cRXP_WARN_出售你的胸甲、衬衣、裤子和靴子，还有你背包里的食物与水。你一共需要10枚铜币|r
     .target Dane Winslow
 step << Warlock
@@ -62,10 +62,10 @@ step << Warrior
     >>一直击杀 |cRXP_ENEMY_幼狼|r 直到你拥有价值10铜币以上的垃圾物品
     >>|cRXP_WARN_你会学习|r |T132333:0|t[战斗怒吼] |cRXP_WARN_从而加快前期升级速度|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_丹尼尔修士|r 对话
-    .vendor >> 出售垃圾物品
+    .vendor >> |cRXP_WARN_出售垃圾物品|r
     .target 丹尼尔修士
     .goto Elwynn Forest,47.486,41.566
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莱尼·拜舍尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_莱尼·拜舍尔|r 对话
     .train 6673 >>学习 |T132333:0|t[战斗怒吼]
     .target 莱尼·拜舍尔
     .goto Elwynn Forest,50.242,42.287
@@ -128,7 +128,7 @@ step
 step << Priest/Mage/Warlock
     .goto Elwynn Forest,47.486,41.566
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_丹尼尔修士|r 对话
-    .vendor >>出售垃圾物品
+    .vendor >>|cRXP_WARN_出售垃圾物品|r
     >>|cRXP_WARN_购买10瓶|r |T132794:0|t[清凉的泉水]
     .target 丹尼尔修士
     .collect 159,10 --Collect Refreshing Spring Water (x10)
@@ -136,7 +136,7 @@ step << !Priest !Mage !Warlock !Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_高德瑞克·洛斯迦|r 对话
     .target 高德瑞克·洛斯迦
     .goto Elwynn Forest,47.691,41.417
-    .vendor >>出售垃圾物品
+    .vendor >>|cRXP_WARN_出售垃圾物品|r
 step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_加诺斯|r 对话
     .goto Elwynn Forest,47.240,41.900
@@ -179,7 +179,7 @@ step
     .goto Elwynn Forest,47.691,41.417
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_高德瑞克·洛斯迦|r 对话
     .target 高德瑞克·洛斯迦
-    .vendor >> 出售垃圾物品
+    .vendor >> |cRXP_WARN_出售垃圾物品|r
 --N need SoM xp note
 step
     #requires xp3
@@ -202,7 +202,7 @@ step << Priest
     #completewith next
     .goto Elwynn Forest,49.8,40.2,10 >> 穿过门口
 step << Priest
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_女牧师安妮塔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_女牧师安妮塔|r 对话
     .target 女牧师安妮塔
     .goto Elwynn Forest,49.808,39.489
     .turnin 3103 >> 交任务 神圣信件
@@ -212,7 +212,7 @@ step << Warrior/Paladin
     .goto Elwynn Forest,49.6,41.8,15 >> 前去找 |cRXP_FRIENDLY_莱尼·拜舍尔|r << Warrior
     .goto Elwynn Forest,49.6,41.8,15 >> 前去找 |cRXP_FRIENDLY_萨缪尔修士|r << Paladin
 step << Warrior
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莱尼·拜舍尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_莱尼·拜舍尔|r 对话
     .target 莱尼·拜舍尔
     .goto Elwynn Forest,50.242,42.287
     .turnin 3100 >> 交任务 简要的信件
@@ -421,7 +421,7 @@ step << Mage/Priest/Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_安德温·克里顿|r 对话
     .target 安德温·克里顿
     .goto Elwynn Forest,41.706,65.786
-    .vendor >> 出售垃圾物品
+    .vendor >> |cRXP_WARN_出售垃圾物品|r
 step
     #label Goldshire
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_治安官杜汉|r 对话
@@ -554,7 +554,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔舒·马科伦|r 对话
     .target 乔舒·马科伦
     .vendor >>|cRXP_BUY_能买多少|r |T132815:0|t[冰镇牛奶] |cRXP_WARN_就买多少|r << Priest/Warlock/Mage
-    .vendor >>出售垃圾物品 << !Priest !Warlock !Mage
+    .vendor >>|cRXP_WARN_出售垃圾物品|r << !Priest !Warlock !Mage
 step
     #completewith next
     >>击杀 |cRXP_ENEMY_狗头人隧道工|r 和 |cRXP_ENEMY_狗头人矿工|r。拾取他们的 |cRXP_LOOT_蜡烛|r 和 |cRXP_LOOT_金砂|r
@@ -695,7 +695,7 @@ step
     #completewith next
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_科瑞娜·斯蒂利|r 对话
     .goto Elwynn Forest,41.529,65.900
-    .vendor >>出售垃圾物品
+    .vendor >>|cRXP_WARN_出售垃圾物品|r
     .target 科瑞娜·斯蒂利
 step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_科瑞娜·斯蒂利|r 对话
@@ -839,7 +839,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拉里克·费恩|r 对话
     .target 拉里克·费恩
     .goto Elwynn Forest,83.283,66.089
-    .vendor >> 出售垃圾物品
+    .vendor >> |cRXP_WARN_出售垃圾物品|r
     .zoneskip Elwynn Forest,1
 step
     #completewith Prowlers
@@ -864,7 +864,7 @@ step
     >>|cRXP_WARN_将小屋前的 2 个|r|cRXP_ENEMY_鱼人|r|cRXP_WARN_引到你面前，拉开距离，集中击杀其中一个。当两者同时攻击你时，使用|r |T136205:0|t[闪避]|cRXP_WARN_。这是使用|r |T133581:0|t[弹珠袋]|cRXP_WARN_的好时机。击杀一个后，拉开距离并重置另一个|r << Rogue
     >>|cRXP_WARN_拉开小屋前的 2 个|r |cRXP_ENEMY_鱼人|r|cRXP_WARN_，远离后持续对其中一个施放 |r|T136183:0|t[恐惧]|cRXP_WARN_，并尽量在两者身上保持 DoT 效果|r << Warlock
     >>|cRXP_WARN_拉小屋前的2只|r|cRXP_ENEMY_鱼人|r|cRXP_WARN_，拉开距离后快速集火秒掉一只。必要时使用|r|T135954:0|t|T133581:0|t[圣佑术]|cRXP_WARN_和治疗技能。这里很适合用|r|T133581:0|t|T133581:0|t[弹子球]|cRXP_WARN_。击杀一只后跑开脱战重置|r << Paladin
-    >>|cRXP_WARN_记住，在|r |T135954:0|t|T135954:0|t[圣佑术] |cRXP_WARN_期间你无法攻击|r << Paladin
+    >>|cRXP_WARN_记住，在|r |T135954:0|t[圣佑术] |cRXP_WARN_期间你无法攻击|r << Paladin
     .turnin 45 >> 交任务 罗尔夫的下落
     .accept 71 >> 接受任务 回复托马斯
 step
@@ -1308,7 +1308,7 @@ step << Human
     .target 军需官刘易斯
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_军需官刘易斯|r 对话
     .accept 6181 >> 接受任务 快捷的消息
-    .vendor >>出售垃圾物品
+    .vendor >>|cRXP_WARN_出售垃圾物品|r
 step << Rogue
     #era
     .money >0.3152
@@ -1442,7 +1442,7 @@ step << Warlock
     >>|cRXP_WARN_沿途刷怪。通过施放|r |T134075:0|t[吸取灵魂]，确保你至少拥有 2 个 |T136163:0|t[灵魂碎片]|cRXP_WARN_|r
     .collect 6265,2 --Soul Shard (2)
 step << Warlock
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卫兵帕克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_守卫帕克|r 对话
     .target 卫兵帕克
     .goto Redridge Mountains,17.4,69.6
     .accept 244 >> 接受任务 豺狼人的入侵
@@ -1769,7 +1769,7 @@ step
 step
     .goto Dun Morogh,68.614,54.643
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡杉·莫格什|r 对话
-    .vendor >> |cRXP_BUY_购买|r |T133968:0|t[刚出炉的面包]|cRXP_BUY_如果需要的话|r << Warrior/Rogue
+    .vendor >> |cRXP_BUY_如有需要，|r|cRXP_BUY_购买|r |T133968:0|t[刚出炉的面包] << Warrior/Rogue
     .vendor >> |cRXP_BUY_购买|r |T133968:0|t [刚出炉的面包]|cRXP_BUY_和|r |T132815:0|t[冰镇牛奶]|cRXP_BUY_如果需要的话|r << !Warrior !Rogue
     .target 卡杉·莫格什
 step
@@ -1810,7 +1810,7 @@ step
 step
     .goto Dun Morogh,68.614,54.643
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡杉·莫格什|r 对话
-    .vendor >> 出售垃圾物品 << !Priest !Warlock !Mage
+    .vendor >> |cRXP_WARN_出售垃圾物品|r << !Priest !Warlock !Mage
     .vendor >> |cRXP_BUY_购买最多20瓶|r |T132815:0|t[冰镇牛奶] << Priest/Warlock/Mage
     .target 卡杉·莫格什
 step << !Warlock
@@ -2278,7 +2278,7 @@ step
 step
     #ah
     .goto Stormwind City,53.612,59.764
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
     >>购买以下物品，以便稍后在西部荒野更快地交任务
     >>这样可以节省时间，因为你不需要四处跑去找怪击杀。如果你不想购买，可以跳过这一步
     >>|T133972:0|t[秃鹫肉条]

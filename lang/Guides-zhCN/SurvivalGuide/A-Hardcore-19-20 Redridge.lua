@@ -24,7 +24,7 @@ step << Hunter
 step
     #completewith BMenace
     .goto StormwindClassic,55.21,7.04
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_比利巴布·旋轮|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_比利巴布·旋轮|r 对话
     .vendor >> |cRXP_BUY_买一个|r |T133024:0|t[青铜管]
     >>|cRXP_WARN_这是限量供应物品。如果 |cRXP_FRIENDLY_比利巴布·旋轮|r 没有库存，请跳过此步骤|r
 --    >>You will need 2 bronze tubes for a quest later << Rogue
@@ -145,7 +145,7 @@ step << !Hunter !Priest
     .target 吴平
 step << Rogue
     .goto StormwindClassic,57.38,56.77
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_玛尔达·维勒|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_玛尔达·维勒|r 对话
     >>|cRXP_BUY_购买一把|r |T135324:0|t|T135342:0|t[长剑] |cRXP_BUY_和|r |T135342:0|t|T135342:0|t[波刃短剑]
     >>|cRXP_WARN_21级时，在主手装备|r |T135324:0|t|T135342:0|t[长剑] |cRXP_WARN_，并在副手装备|r |T135342:0|t|T135342:0|t[波刃短剑] |cRXP_WARN_|r
     .collect 923,1 --Longsword
@@ -154,7 +154,7 @@ step << Rogue
 step
     #ah
     .goto Stormwind City,53.612,59.764
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
     >>购买以下物品，以便稍后在赤脊山更快地完成任务
     >>这样可以节省时间，因为你不需要四处跑去找怪击杀。如果你不想购买，可以跳过这一步
     >>|T134172:0|t[巨型血牙野猪头]
@@ -184,7 +184,7 @@ step << NightElf
 step << NightElf
     #label GParker
     .goto Redridge Mountains,15.27,71.45
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卫兵帕克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_守卫帕克|r 对话
     .accept 244 >> 接受任务 豺狼人的入侵
     .target 卫兵帕克
 step << NightElf
@@ -230,7 +230,7 @@ step
 	.target Chef Breanna
     .accept 92 >> 接受任务 赤脊山炖肉
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_肖恩|r对话
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_肖恩|r 对话
 	.target 肖恩
     .goto Redridge Mountains,29.31,53.63
     .accept 3741 >> 接受任务 希拉里的项链
@@ -559,7 +559,7 @@ step
     .goto StormwindClassic,42.435,59.236,10,0
     .goto StormwindClassic,41.102,58.091
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_典狱官塞尔沃特|r 对话
-    .turnin 389 >> 交任务 巴基尔·斯瑞德
+    .turnin 389 >> 交任务巴基尔·斯瑞德
 --  .accept 391 >> Accept The Stockade Riots -- Accept later when going to do Stockades
     .target 典狱官塞尔沃特
 step
@@ -639,12 +639,12 @@ step
     .target 杜加尔·朗德瑞克
     .zoneskip Stormwind City,1
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卫兵帕克|r 对话
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_守卫帕克|r 对话
 	.target 卫兵帕克
     .goto Redridge Mountains,15.30,71.50
     .accept 244 >> 接受任务 豺狼人的入侵
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卫兵帕克|r 对话
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_守卫帕克|r 对话
 	.target 卫兵帕克
     .goto Redridge Mountains,15.27,71.45
     .turnin 129 >> 交任务 免费的午餐
@@ -726,7 +726,7 @@ step
     .mob Tarantula
 step
     #era/som
-    >>杀死 |cRXP_ENEMY_巨型血牙野猪|r。拾取它们的 |cRXP_LOOT_巨型血牙野猪头|r
+    >>击杀 |cRXP_ENEMY_巨型血牙野猪|r。拾取它们的 |cRXP_LOOT_巨型血牙野猪头|r
     >>杀死 |cRXP_ENEMY_恐鹫|r。拾取它们的 |cRXP_LOOT_硬秃鹫肉|r
     >>|cRXP_WARN_在交赤脊山炖肉任务之前不要卖掉这些物品|r
     >>|cRXP_WARN_保留你拾取到的所有|r|T133970:0|t|cRXP_LOOT_[大块野猪肉]|r，|cRXP_WARN_因为你可以用它们将|r|T133971:0|t[烹饪]|cRXP_WARN_提升到50级，这是稍后去暮色森林所必需的|r
@@ -856,7 +856,7 @@ step << Rogue
 step << !Dwarf Rogue
     #ah
     .goto Stormwind City,53.612,59.764
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
     >>购买 |T134437:0|t[抗毒药剂]，后续 |T132290:0|t[毒药] 任务会用上
     >>这样可以节省时间，因为你不需要四处跑去找怪击杀。如果你不想购买，可以跳过这一步
     .collect 6452,1,2359,1 --Anti-Venom (1)
@@ -1213,9 +1213,9 @@ step << Rogue
     .goto Westfall,71.49,73.49,30,0
     .goto Westfall,71.01,75.72,30,0
     .goto Westfall,69.58,73.07,30,0
-    >>|T133644:0|t[搜索] |cRXP_ENEMY_丑陋的迪菲亚懒汉|r。拾取 |cRXP_LOOT_迪菲亚塔楼钥匙|r
+    >>|T133644:0|t[搜索] |cRXP_ENEMY_丑陋的迪菲亚懒汉|r。拾取地上的物品以获得 |cRXP_LOOT_迪菲亚塔楼钥匙|r
     >>|cRXP_WARN_你必须处于|r |T132320:0|t[潜行] |cRXP_WARN_状态下才能使用|r |T133644:0|t[偷窃]
-    >>|cRXP_WARN_|cRXP_ENEMY_丑陋的迪菲亚懒汉|r 出现在塔楼入口处，随后会在塔楼外侧巡逻|r
+    >>|cRXP_WARN_丑陋的迪菲亚懒汉|cRXP_ENEMY_ |r出现在塔楼入口处，随后会在塔楼外侧巡逻|r
     >>|cRXP_WARN_小心，他伤害很高。如果你的|r |T132320:0|t[潜行] |cRXP_WARN_被打破，立刻使用|r |T132307:0|t[疾跑] |cRXP_WARN_并逃离|r
     .complete 2359,2 --Collect Defias Tower Key (x1)
     .link https://www.youtube.com/watch?v=5sIew15IcG0 >> 点这里看视频教学
@@ -1226,7 +1226,7 @@ step << Rogue
     #hardcore
     #optional
     #completewith Mortwake
-    +|cRXP_WARN_Equip the|r |T135641:0|t[曲木匕首] |cRXP_WARN_for this quest if you don't already have a|r |T135641:0|t[Dagger] |cRXP_WARN_equipped|r
+    +|cRXP_WARN_如果你还没有装备|r |T135641:0|t[弯曲木匕首] |cRXP_WARN_，并且当前没有装备|r |T135641:0|t[匕首] |cRXP_WARN_，请在此任务中装备它|r
     .use 15396
     .itemcount 15396,1
     .isOnQuest 2359

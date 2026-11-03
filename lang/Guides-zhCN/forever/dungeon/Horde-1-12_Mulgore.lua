@@ -15,7 +15,7 @@ RXPGuides.RegisterGuide([[
 
 step
 .enabledungeon RFC
-#include RestedXP无限服指南（部落）\1-6级 莫高雷
+#include RestedXP 无限指南 (部落)\1-6级 莫高雷
 ]])
 
 
@@ -33,5 +33,5 @@ RXPGuides.RegisterGuide([[
 
 step
 .enabledungeon RFC
-#include RestedXP无限服指南（部落）\6-12级 莫高雷
+#include RestedXP 无限指南 (部落)\6-12级 莫高雷
 ]])

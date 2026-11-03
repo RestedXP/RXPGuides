@@ -8,7 +8,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 1-6级 杜隆塔尔
 #version 11
-#group RestedXP无限服指南（部落）
+#group RestedXP 无限指南 (部落)
 #subgroup 速通指南 1-22级
 --#groupid RXP-SRGCE-H1
 #defaultfor Troll/Orc
@@ -34,7 +34,7 @@ step << Warrior/Shaman/Warlock/Mage/Priest
     .money >0.01
 step << Warlock
     .goto 1411/1,-4214.45,-623.92.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_鲁赞|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_鲁赞|r 对话
     .accept 1485 >>接受任务 邪灵劣魔
     .target Ruzan
 step << Warrior/Shaman
@@ -60,7 +60,7 @@ step << Warrior/Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_弗朗恩|r 对话 << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_史克里克|r 对话 << Shaman
     .train 6673 >>学习 |T132333:0|t[战斗怒吼] << Warrior
-    .train 8017 >>学习 |T136086:0|t[石化武器] << Shaman
+    .train 8017 >>影袭 |T136086:0|t[石化武器] << Shaman
     .target 弗朗恩 << Warrior
     .target 史克里克 << Shaman
 step << Warlock
@@ -154,7 +154,7 @@ step << Warlock
     .goto 1411/1,-4319.67,-169.190,40,0
     .goto 1411/1,-4303.28,-186.46,40,0
     .goto 1411/1,-4281.07,-148.75,40,0
-    >>击杀 |cRXP_ENEMY_邪灵劣魔|r。拾取他们的 |cRXP_LOOT_邪灵劣魔的头颅|r
+    >>击杀 |cRXP_ENEMY_邪灵劣魔|r，拾取 |cRXP_LOOT_邪灵劣魔的徽记|r
     .complete 1485,1 --Vile Familiar Head (6)
     .mob 邪灵劣魔
 step
@@ -257,7 +257,7 @@ step << Rogue
 step << Warlock
     #label Ruzan2
     .goto 1411/1,-4214.400,-624.000
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_鲁赞|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_鲁赞|r 对话
     .turnin 1485 >>交任务 邪灵劣魔
     .accept 1499 >>接受任务 邪灵劣魔
     .target Ruzan
@@ -1102,7 +1102,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 6-10级 杜隆塔尔
 #version 11
-#group RestedXP无限服指南（部落）
+#group RestedXP 无限指南 (部落)
 #subgroup 速通指南 1-22级
 --#groupid RXP-SRGCE-H1
 #defaultfor Troll/Orc
@@ -1966,6 +1966,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|r |cRXP_FRIENDLY_加索克|r 对话
     .turnin 784 >>交任务 背信弃义的人类
     .turnin 830 >>交任务 将军的命令
+    .turnin 96821 >>交任务 赶路
     .accept 825 >>接受任务 海底沉船
     .accept 831 >>接受任务 将军的命令
     .target 加索克
@@ -3186,7 +3187,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 10-12级 杜隆塔尔
 #version 11
-#group RestedXP无限服指南（部落）
+#group RestedXP 无限指南 (部落)
 #subgroup 速通指南 1-22级
 --#groupid RXP-SRGCE-H1
 #defaultfor Troll/Orc
@@ -3694,7 +3695,7 @@ step << skip --!Shaman !Hunter
     #softcore
     #completewith ZeptoUC1
     .goto 1411/1,-4450.27,1188.64
-    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
 step << !Shaman !Hunter
     --#hardcore
     #completewith ZeptoUC1
@@ -3709,7 +3710,7 @@ step << skip --Shaman/Hunter
     #softcore
     #completewith FoundtheCure
     .goto 1411/1,-4450.27,1188.64
-    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
 step << Shaman/Hunter
     --#hardcore
     #completewith FoundtheCure
@@ -3820,7 +3821,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 10-12级 提瑞斯法 （兽人/巨魔）
 #version 11
-#group RestedXP无限服指南（部落）
+#group RestedXP 无限指南 (部落)
 #subgroup 速通指南 1-22级
 --#groupid RXP-SRGCE-H1
 #defaultfor !Hunter !Shaman !Tauren !Skyborne !Undead
@@ -4024,7 +4025,7 @@ step
 step << !Undead
     #label UCflightpath1
     .goto 1458/0,266.39,1567.11
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迈克尔 |r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_麦克尔|r 对话
     .fp Undercity >> 获得幽暗城的飞行路径
     .target 迈克尔·加勒特
 step << Orc Rogue/Troll Rogue
@@ -4098,7 +4099,7 @@ step
     .goto 1458/0,224.300,1648.200
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拍卖师凯恩|r 对话
     >>|cRXP_BUY_从拍卖行|r |cRXP_BUY_购买三个|r |T133884:0|t[鱼人的眼球]
-    >>|cRXP_WARN_如果你愿意，可以跳过这一步，这只能节省一点点时间|r
+    >>|cRXP_WARN_如果你愿意的话可以跳过，这只是个小捷径|r
     .collect 730,3,91920,1 --Collect Murloc Eyes (x3)
     .target Auctioneer Cain
     .zoneskip Undercity,1

@@ -16,7 +16,7 @@ RXPGuides.RegisterGuide([[
 
 step
 .enabledungeon RFC
-#include RestedXP无限服指南（部落）\1-6级 杜隆塔尔
+#include RestedXP 无限指南 (部落)\1-6级 杜隆塔尔
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -32,7 +32,7 @@ RXPGuides.RegisterGuide([[
 
 step
 .enabledungeon RFC
-#include RestedXP无限服指南（部落）\6-10级 杜隆塔尔
+#include RestedXP 无限指南 (部落)\6-10级 杜隆塔尔
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -50,7 +50,7 @@ RXPGuides.RegisterGuide([[
 
 step
 .enabledungeon RFC
-#include RestedXP无限服指南（部落）\10-12级 杜隆塔尔
+#include RestedXP 无限指南 (部落)\10-12级 杜隆塔尔
 ]])
 
 
@@ -67,5 +67,5 @@ RXPGuides.RegisterGuide([[
 
 step
 .enabledungeon RFC
-#include RestedXP无限服指南（部落）\10-12级 提瑞斯法 （兽人/巨魔）
+#include RestedXP 无限指南 (部落)\10-12级 提瑞斯法 （兽人/巨魔）
 ]])

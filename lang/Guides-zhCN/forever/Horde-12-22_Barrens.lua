@@ -10,7 +10,7 @@ RXPGuides.RegisterGuide([[
 #displayname 14-18级 贫瘠之地 << !Shaman !Hunter !Tauren
 #displayname 15-18级 贫瘠之地 << Paladin
 #version 11
-#group RestedXP无限服指南（部落）
+#group RestedXP 无限指南 (部落)
 #subgroup 速通指南 1-22级
 --#groupid RXP-SRGCE-H1
 #next 17-22级 石爪山脉/贫瘠之地/灰谷
@@ -147,7 +147,7 @@ step << !Tauren
     .goto 1413/1,-2589.67,-424.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_赫布瑞姆|r 对话
     .accept 1492 >>接受任务 码头主管迪兹维格
-    .accept 848 >>接受任务菌类孢子
+    .accept 848 >>接受任务 菌类孢子
     .turnin 1358 >>交任务 给赫布瑞姆的样本
     .target 药剂师赫布瑞姆
     .isOnQuest 1358
@@ -155,7 +155,7 @@ step << !Tauren
     .goto 1413/1,-2589.67,-424.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_赫布瑞姆|r 对话
     .accept 1492 >>接受任务 码头主管迪兹维格
-    .accept 848 >>接受任务菌类孢子
+    .accept 848 >>接受任务 菌类孢子
     .target 药剂师赫布瑞姆
 step << Orc Hunter/Troll Hunter/Skyborne Hunter
     .goto 1413/1,-2556.23,-351.54
@@ -1052,7 +1052,7 @@ step << Tauren
     .cooldown item,6948,>0
     .use 6948
 step << Tauren
-    .goto Thunder Bluff,45.6,55.9
+    .goto 1456/1,40.72,-1238.97--c:Thunder Bluff,45.6,55.9
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_安哈努|r 对话
     .turnin 6362 >>交任务 飞往雷霆崖
     .accept 6363 >>接受任务 双足飞龙驭手塔尔
@@ -1102,7 +1102,7 @@ step << Tauren Warrior
     .target 托姆·暴怒图腾
     .xp <16,1
 step << Tauren
-    .goto Thunder Bluff,47.00,49.82
+    .goto 1456/1,26.10,-1196.66--c:Thunder Bluff,47.00,49.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塔尔|r 对话
     .turnin 6363 >>交任务 双足飞龙驭手塔尔
     .accept 6364 >>接受任务 向瓦尔格复命
@@ -1675,6 +1675,7 @@ step << Orc/Troll
     .target 多拉斯
     .isOnQuest 6385
 step << Orc/Troll
+    #optional
     .goto 1454/1,-4313.46,1676.25--c:Orgrimmar,45.120,63.889
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|r |cRXP_FRIENDLY_多拉斯|r 对话
     .accept 6386 >> 接受任务 返回十字路口
@@ -1880,7 +1881,7 @@ step << Warlock
     .xp >18,1
 step << Warlock
     .goto 1454/1,-4347.4,1836.57
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 库古尔|cRXP_FRIENDLY_ 对话，并购买 |T133738:0|t[火焰箭典籍(等级 3)]|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 库古尔|cRXP_FRIENDLY_ 对话，购买 |T133738:0|t[火焰箭典籍(等级 3)]|r
     .collect 16316,1,896,1 --Grimoire of Firebolt (Rank 3) (1)
     .target 库古尔
     .xp <18,1
@@ -2484,6 +2485,7 @@ step
     >>当|cRXP_ENEMY_督军克罗姆扎|r（20级精英怪） 出现时，击杀他。拾取他掉落在地上的 |cRXP_PICK_克罗姆扎军旗|r
     >>|cRXP_WARN_小心！他是一个强力精英，并且至少有两个|r |cRXP_ENEMY_科卡尔|r |cRXP_WARN_怪物守卫|r
     >>|cRXP_WARN_他可能需要最长 3 分钟才会刷新|r
+    .link https://www.youtube.com/watch?v=xrm0PWe5wf4 >>|cRXP_WARN_点击此处查看风筝战术指南视频|r |cRXP_ENEMY_督军 督军克罗姆扎|r
     .complete 4021,1 --Piece of Krom'zar's Banner (1)
     .unitscan 督军克罗姆扎
     .isOnQuest 4021
@@ -2556,8 +2558,8 @@ step
     #map Stonetalon Mountains
     #label StonetalonPickups
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_希雷斯|r 和 |cRXP_FRIENDLY_玛卡巴|r 对话
-    .turnin 1061 >> 交任务  石爪之灵
-    .accept 1062 >> 接受任务地精侵略者
+    .turnin 1061 >> 交任务石爪之灵
+    .accept 1062 >> 接受任务 地精侵略者
     .target 希雷斯·碎石
     .goto 1413/1,-950.10,-271.14
     .accept 6548 >> 接受任务 为我的村庄复仇
@@ -2570,8 +2572,8 @@ step
     #label StonetalonPickups
     .goto 1413/1,-950.10,-271.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_希雷斯|r 对话
-    .turnin 1061 >> 交任务  石爪之灵
-    .accept 1062 >> 接受任务地精侵略者
+    .turnin 1061 >> 交任务石爪之灵
+    .accept 1062 >> 接受任务 地精侵略者
     .target 希雷斯·碎石
 ]])
 
@@ -2582,7 +2584,7 @@ RXPGuides.RegisterGuide([[
 #name 17-22级 石爪山脉/贫瘠之地/灰谷
 #displayname 18-22级 石爪山脉/贫瘠之地/灰谷 << !Shaman !Hunter !Tauren
 #version 11
-#group RestedXP无限服指南（部落）
+#group RestedXP 无限指南 (部落)
 #subgroup 速通指南 1-22级
 --#groupid RXP-SRGCE-H1
 #next 22-24级 希尔斯布莱德
@@ -2738,7 +2740,7 @@ step
 step
     .goto 1442/1,940.9,925.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_马格兰|r 对话
-	.turnin 6284 >> 交任务  贝瑟莱斯
+	.turnin 6284 >> 交任务贝瑟莱斯
     .target 马格兰
 	.isQuestComplete 6284
 step
@@ -3376,13 +3378,13 @@ step << Warlock
     .target 甘鲁尔·血眼
 step << Warlock
     .goto 1454/1,-4347.4,1836.57
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 库古尔|cRXP_FRIENDLY_ 对话，并购买 |T133738:0|t[折磨典籍(等级 2)]|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 库古尔|cRXP_FRIENDLY_ 对话，购买 |T133738:0|t[折磨典籍(等级 2)]|r
     .collect 16346,1,1507,1 --Grimoire of Torment (Rank 2)
     .target 库古尔
 step << Warlock
     .goto 1454/1,-4340.53,1839.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡祖尔|r 对话
-    .turnin 1507 >>交任务 噬魂者
+    .turnin 1507 >>交任务  噬魂者
     .accept 1508 >>接受任务 盲眼卡祖尔
     .target 卡祖尔
 step << Warlock
@@ -3396,8 +3398,8 @@ step << Warlock
 step << Warlock
     .goto 1454/1,-4199.99,1717.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_赞卡沙|r 对话
-    .turnin 1508 >>交任务盲眼卡祖尔
-    .accept 1509 >>接受任务多格兰的消息
+    .turnin 1508 >>交任务  盲眼卡祖尔
+    .accept 1509 >>接受任务 多格兰的消息
     .target 赞卡沙
 step << Warlock
     #completewith TurninDogran
@@ -3411,7 +3413,7 @@ step << Warlock
     .goto 1413/1,-2639.32,-436.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_加兹罗格|r 对话
     .turnin 1509 >>交任务  多格兰的消息
-    .accept 1510 >>接受任务多格兰的消息
+    .accept 1510 >>接受任务 多格兰的消息
     .target 加兹罗格
 step << Shaman
     #completewith CallofWater01
@@ -3472,7 +3474,7 @@ step
     #label TribesTurnin
     .goto 1413/1,-1891.48,-2391.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_碎牙|r 对话
-    .turnin 878 >>交任务  野猪人的内战
+    .turnin 878 >>交任务野猪人的内战
     .accept 5052 >>接受任务 阿迦玛甘的血岩碎片
     .turnin 5052 >>交任务  阿迦玛甘的血岩碎片
     .target 碎牙
@@ -3520,7 +3522,7 @@ step
     .unitscan 奥瓦坦卡
 step
     #label SleepingBag1
-    .goto The Barrens,46.361,73.904
+    .goto 1413/1,-2075.00,-3380.64--c:The Barrens,46.361,73.904
     >>点击地面上的|cRXP_PICK_烧焦的残骸|r
     .accept 79007 >> 接受任务 ……你所找到的纸条
 step
@@ -4106,6 +4108,7 @@ step
     >>击杀 |cRXP_ENEMY_督军克罗姆扎|r当他出现后。拾取他掉落在地上的 |cRXP_PICK_旗帜|r
     >>|cRXP_WARN_小心！他是一个强力精英，并且至少有两个|r |cRXP_ENEMY_科卡尔|r |cRXP_WARN_怪物守卫|r
     >>|cRXP_WARN_他可能需要最长 3 分钟才会刷新|r
+    .link https://www.youtube.com/watch?v=xrm0PWe5wf4 >>|cRXP_WARN_点击此处查看风筝战术指南视频|r |cRXP_ENEMY_督军 督军克罗姆扎|r
     .complete 4021,1 --Piece of Krom'zar's Banner (1)
     .unitscan 督军克罗姆扎
     .isQuestTurnedIn 852
@@ -4313,7 +4316,7 @@ step
     .accept 1068 >>接受任务伐木机
     .target 希雷斯·碎石
     .goto 1413/1,-950.10,-271.14
-    .turnin 6629 >>交任务  杀死格鲁迪格·黑云
+    .turnin 6629 >>交任务杀死格鲁迪格·黑云
     .turnin 6523 >>交任务保护卡雅
     .accept 6401 >>接受任务卡雅还活着
     .target 玛卡巴·扁蹄
@@ -4330,7 +4333,7 @@ step
     .accept 1068 >>接受任务伐木机
     .target 希雷斯·碎石
     .goto 1413/1,-950.10,-271.14
-    .turnin 6629 >>交任务  杀死格鲁迪格·黑云
+    .turnin 6629 >>交任务杀死格鲁迪格·黑云
     .target 玛卡巴·扁蹄
     .goto 1413/1,-943.00,-265.06
     .isQuestComplete 6629
@@ -4381,13 +4384,13 @@ step << Warlock
     .goto 1442/1,-331.21,-181.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_肯兹格拉|r 对话
     .turnin 1510 >>交任务  多格兰的消息
-    .accept 1511 >>接受任务 肯兹格拉的伤药
+    .accept 1511 >>接受任务肯兹格拉的伤药
     .target 肯兹格拉
 step
     #label BloodFeedersTI
     .goto 1442/1,-233.54,-177.42
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_辛吉拉|r 对话
-    .turnin 6461 >>交任务盗窃的蜘蛛
+    .turnin 6461 >>交任务  盗窃的蜘蛛
     .target 辛吉拉
 step << skip
     .goto 1442/1,-401.53,-277.710
@@ -4431,7 +4434,7 @@ step
 step
     .goto 1442/1,940.9,925.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_马格兰|r 对话
-	.turnin 6284 >> 交任务  贝瑟莱斯
+	.turnin 6284 >> 交任务贝瑟莱斯
     .target 马格兰
     .isQuestComplete 6284
 step
@@ -4758,7 +4761,7 @@ step
     .xp 21+21450 >> 刷怪达到 21450+/25200 经验
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_战歌信使|r 和 |cRXP_FRIENDLY_玛鲁凯|r 对话
-    .turnin 6641 >> 交任务鞭笞者沃尔沙
+    .turnin 6641 >> 交任务  鞭笞者沃尔沙
     .target 战歌信使
     .goto 1440/1,995.31,3357.97
     .turnin 6442 >> 交任务佐拉姆海岸的纳迦
@@ -4919,7 +4922,7 @@ step << Rogue
     .train 1856 >>学习 |T132331:0|t[消失]
     .train 1725 >>学习 |T132289:0|t[扰乱]
     .train 1785 >>学习 |T132320:0|t[潜行 等级2]
-    .accept 2460 >>接受任务 碎手军礼
+    .accept 2460 >>接受任务碎手军礼
     .target 申苏尔
 step << Rogue
     .goto 1454/1,-4284.42,1771.28
@@ -4930,7 +4933,7 @@ step << Rogue
     .goto 1454/1,-4284.42,1771.28
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_申苏尔|r 对话
     .turnin 2460 >>交任务  碎手军礼
-    .accept 2458 >>接受任务卧底密探
+    .accept 2458 >>接受任务 卧底密探
     .target 申苏尔
 step << Rogue
     .goto 1454/1,-4271.1,1810.94
@@ -5010,7 +5013,7 @@ step << Rogue
     .goto 1413/1,-2995.0,1236.85
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |r|cRXP_FRIENDLY_工头费苏勒|r 对话
     .turnin 2458 >>交任务  卧底密探
-    .accept 2478 >>接受任务 基本不可能的任务
+    .accept 2478 >>接受任务基本不可能的任务
     .target 工头费苏勒
 step << Rogue/Druid
     #optional
@@ -5078,7 +5081,7 @@ step << Rogue
     .goto 1454/1,-4284.42,1771.28
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_申苏尔|r 对话
     .turnin 2478 >>交任务基本不可能的任务
-    .accept 2479 >>接受任务希诺特的帮助
+    .accept 2479 >>接受任务 希诺特的帮助
     .target 申苏尔
 step << Rogue
     .goto 1454/1,-4271.1,1810.94
@@ -5196,4 +5199,13 @@ step
 step
     #optional
     .abandon 6563 >>放弃任务 阿库麦尔水晶
+step
+    #optional
+    .abandon 97003 >>放弃任务 Chol'aruk the Ravener
+step
+    .zone Durotar >> 离开 奥格瑞玛
+    .zoneskip Tirisfal Glades
+    .zoneskip Undercity
+    .zoneskip Silverpine Forest
+    .zoneskip Hillsbrad Foothills
 ]])

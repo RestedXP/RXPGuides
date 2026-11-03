@@ -32,7 +32,7 @@ step << Warrior
     >>击杀 |cRXP_ENEMY_蓬毛幼狼|r 直到你拥有价值10铜币以上的垃圾物品
     >>|cRXP_WARN_你会学习|r |T132333:0|t[战斗怒吼] |cRXP_WARN_从而加快前期升级速度|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格伦德尔·哈金|r对话
-    .vendor >> 出售垃圾物品
+    .vendor >> |cRXP_WARN_出售垃圾物品|r
     .target +Grundel Harkin
     .goto Dun Morogh,28.793,67.838
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_斯兰·库尔曼|r 对话
@@ -82,7 +82,7 @@ step << Warlock
 step << Warlock
     .goto Dun Morogh,30.087,71.563
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾德林·怒流|r 对话
-    .vendor >> 出售垃圾物品
+    .vendor >> |cRXP_WARN_出售垃圾物品|r
     >>|cRXP_BUY_购买15个|r |T132794:0|t[清凉的泉水]|cRXP_BUY_，如果钱不够，额外击杀|cRXP_ENEMY_劣魔幼狼|r来凑钱|r
     .collect 159,15 --Collect Refreshing Spring Water (x15)
     .target 艾德林·怒流
@@ -110,7 +110,7 @@ step << Warlock
 step << Priest/Mage
     .goto Dun Morogh,30.087,71.563
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾德林·怒流|r 对话
-    .vendor >> 出售垃圾物品
+    .vendor >> |cRXP_WARN_出售垃圾物品|r
     >>|cRXP_BUY_购买15个|r |T132794:0|t[清凉的泉水]|cRXP_BUY_，如果钱不够，额外击杀|cRXP_ENEMY_劣魔幼狼|r来凑钱|r
     .collect 159,15 --Collect Refreshing Spring Water (x15)
     .target 艾德林·怒流
@@ -118,7 +118,7 @@ step << Paladin/Warrior
     #completewith next
     .goto Dun Morogh,30.087,71.563
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾德林·怒流|r 对话
-    .vendor >> 出售垃圾物品
+    .vendor >> |cRXP_WARN_出售垃圾物品|r
     .target 艾德林·怒流
 step << !Warlock
     .goto Dun Morogh,29.927,71.201
@@ -243,14 +243,14 @@ step << Hunter
     #completewith next
     .goto Dun Morogh,30.087,71.563
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾德林·怒流|r 对话
-    .vendor >> 出售垃圾物品
+    .vendor >> |cRXP_WARN_出售垃圾物品|r
     >>|cRXP_WARN_购买2组|r |T132384:0|t[轻弹丸]
     .collect 2516,400 -- Light Shot (400)
     .target 艾德林·怒流
 step << Mage/Warlock
     .goto Dun Morogh,30.087,71.563
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾德林·怒流|r 对话
-    .vendor >> 出售垃圾物品
+    .vendor >> |cRXP_WARN_出售垃圾物品|r
     >>|cRXP_BUY_购买10个|r |T132794:0|t[清凉的泉水]|cRXP_BUY_。如果钱不够，额外击杀|cRXP_ENEMY_劣魔幼狼|r来凑钱|r
     .collect 159,10 --Collect Refreshing Spring Water (x15)
     .target 艾德林·怒流
@@ -377,7 +377,7 @@ step << Priest
     .money <0.0025
     .goto Dun Morogh,30.087,71.563
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾德林·怒流|r 对话
-    .vendor >> 出售垃圾物品
+    .vendor >> |cRXP_WARN_出售垃圾物品|r
     >>|cRXP_BUY_购买10瓶|r |T132794:0|t[清凉的泉水]
     .collect 159,10 --Collect Refreshing Spring Water (x15)
     .target 艾德林·怒流
@@ -806,7 +806,7 @@ step << Warrior/Rogue/Paladin
     #completewith next
     .goto Dun Morogh,47.377,52.523
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_旅店老板贝尔姆|r 对话，NPC在里面
-    .vendor >> |cRXP_BUY_购买最多20个 |r |T133968:0|t[刚出炉的面包] << Warrior/Rogue
+    .vendor >> |cRXP_BUY_购买最多20个|r |T133968:0|t[刚出炉的面包] << Warrior/Rogue
     .vendor >> |cRXP_BUY_购买最多10个|r |T133968:0|t[刚出炉的面包] << Paladin
     .target 旅店老板贝尔姆
 step << Paladin/Warrior/Rogue
@@ -843,7 +843,7 @@ step << !Mage !Priest
     #completewith next
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_基格·吉布恩|r 对话
     .goto Dun Morogh,30.453,46.005
-    .vendor >> 出售垃圾物品
+    .vendor >> |cRXP_WARN_出售垃圾物品|r
     .target 基格·吉布恩
 step << Priest/Mage/Warlock
     #completewith next
@@ -1150,7 +1150,7 @@ step << Warrior/Paladin/Rogue
     #completewith next
     .goto Dun Morogh,30.453,46.005
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_基格·吉布恩|r 对话
-    .vendor >> 出售垃圾物品
+    .vendor >> |cRXP_WARN_出售垃圾物品|r
     .target 基格·吉布恩
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雷杰德·麦酒|r 对话
@@ -1346,7 +1346,7 @@ step
 step
     .goto Dun Morogh,68.6,54.7
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡杉·莫格什|r 对话
-    .vendor >> |cRXP_BUY_购买|r |T133968:0|t[刚出炉的面包]|cRXP_BUY_如果需要的话|r << Warrior/Rogue
+    .vendor >> |cRXP_BUY_如有需要，|r|cRXP_BUY_购买|r |T133968:0|t[刚出炉的面包] << Warrior/Rogue
     .vendor >> |cRXP_BUY_购买|r |T133968:0|t [刚出炉的面包]|cRXP_BUY_和|r |T132815:0|t[冰镇牛奶]|cRXP_BUY_如果需要的话|r << !Warrior !Rogue
     .target 卡杉·莫格什
 step
@@ -2008,7 +2008,7 @@ step
     .goto Redridge Mountains,17.4,69.6
     .zone Redridge Mountains >> 前往赤脊山
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卫兵帕克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_守卫帕克|r 对话
     .target 卫兵帕克
     .goto Redridge Mountains,17.4,69.6
     .accept 244 >> 接受任务 豺狼人的入侵
@@ -2030,7 +2030,7 @@ step
 step
     #ah
     .goto Stormwind City,53.612,59.764
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
     >>购买以下物品，以便在洛克莫丹稍后更快地交任务
     >>这样可以节省时间，因为你不需要四处跑去找怪击杀。如果你不想购买，可以跳过这一步
     >>额外买点 |T134437:0|t[野猪肉块] 对后续升级 |T133971:0|t[烹饪] 到50级很有用
@@ -2799,7 +2799,7 @@ step << !Paladin
 step
     #completewith Fly2WF
     .goto StormwindClassic,55.21,7.04
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_比利巴布·旋轮|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_比利巴布·旋轮|r 对话
     .vendor 5519 >> |cRXP_BUY_从他这里|r|T133024:0|t|cRXP_BUY_买一个|r [青铜管] (如果有)
     >>|cRXP_WARN_这是限量供应物品。如果 |cRXP_FRIENDLY_比利巴布·旋轮|r 没有库存，请跳过此步骤|r
 --    >>You will need 2 bronze tubes for a quest later << Rogue
@@ -2834,7 +2834,7 @@ step << Rogue
 step
     #ah
     .goto Stormwind City,53.612,59.764
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
     >>购买以下物品，以便稍后在西部荒野更快地交任务
     >>这样可以节省时间，因为你不需要四处跑去找怪击杀。如果你不想购买，可以跳过这一步
     >>|T133972:0|t[秃鹫肉条]
