@@ -147,7 +147,7 @@ step
     .countdown 2 >>1
 step
     .zoneskip 1409,1
-    .isQuestAvailable 55122
+    .isQuestAvailable 55122 --Murloc Mania
     +Atteignez immédiatement Niveau 10 et passez Confins de l'Exil en sélectionnant |cRXP_WARN_le guide ci-dessous|r
     *|cRXP_WARN_Ne le faites pas si vous voulez continuer Confins de l'Exil|r.
     .clicknext RestedXP Speed Leveling\a) No House Skip >>CLIQUEZ ICI POUR LE GUIDE
@@ -1996,9 +1996,9 @@ step
 step
     #arrowtext Cliquez\n|cRXP_PICK_Portail|r
     .goto 2352,57.44,26.64
-    -- .zoneskip 2352,1
+    .zoneskip 2352,1
     .zone 84 >>Cliquez sur le |cRXP_PICK_Portail|r
-    -- .zoneskip 85
+    .zoneskip 85
 step
     #arrowtext Cliquez\n|cRXP_PICK_Portail|r
     .goto 2351,53.93,49.4
@@ -2392,7 +2392,7 @@ step
 step
     #arrowtext |cFFFCDC00Utilisez la macro|r
     #requires Dark Rider of Acherus
-    .isOnQuest 12687
+    .isOnQuest 12687 --Into the Realm of Shadows
     .goto 124,51.28,42.46,60,0
     .goto 124,51.44,39.07,30,0
     .goto 124,52.94,37.23
@@ -2553,11 +2553,11 @@ step
 step
     #arrowtext Marchez sur le Téléporteur
     #requires Victory At Death's Breach!
-    .isOnQuest 12701
+    .isOnQuest 12701 --Massacre At Light's Point
     .goto 124,50.53,33.42,5 >>Marchez sur le téléporteur
 step
     #arrowtext Cliquez sur |cRXP_PICK_Griffon|r
-    .isOnQuest 12701
+    .isOnQuest 12701 --Massacre At Light's Point
     .goto 124,52.08,35.04,-1
     .goto 124,50.97,36.17,-1
     .cast 54567 >>Cliquez sur le|cRXP_PICK_Griffon|r
@@ -4629,7 +4629,7 @@ step
     .target Kayn Solfurie
 step
     #arrowtext Parlez à\n|cRXP_FRIENDLY_PNJ|r
-    .isOnQuest 39516
+    .isOnQuest 39516 --Cry Havoc and Let Slip the Illidari!
     .goto 672,60.52,44.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez aux |cRXP_FRIENDLY_PNJs|r.
     .complete 39516,4 --1/1 Kor'vas Bloodthorn taught
@@ -4646,7 +4646,7 @@ step
     .target Cyana Nocteglaive
 step
     #arrowtext Parlez à\n|cRXP_FRIENDLY_Mannethrel Sombrétoile|r
-    .isOnQuest 39516
+    .isOnQuest 39516 --Cry Havoc and Let Slip the Illidari!
     .goto 672,60.25,44.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Mannethrel Sombrétoile|r.
     .complete 39516,5 --1/1 Mannethrel taught
@@ -4654,7 +4654,7 @@ step
     .target Mannethrel Sombrétoile
 step
     #arrowtext Parlez à\n|cRXP_FRIENDLY_PNJ|r
-    .isOnQuest 39515
+    .isOnQuest 39515 --Vengeance Will Be Mine!
     .goto 672,60.52,44.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez aux |cRXP_FRIENDLY_PNJs|r.
     .complete 39515,4 --1/1 Kor'vas Bloodthorn taught
@@ -4671,7 +4671,7 @@ step
     .target Cyana Nocteglaive
 step
     #arrowtext Parlez à\n|cRXP_FRIENDLY_Mannethrel Sombrétoile|r
-    .isOnQuest 39515
+    .isOnQuest 39515 --Vengeance Will Be Mine!
     .goto 672,60.25,44.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Mannethrel Sombrétoile|r.
     .complete 39515,5 --1/1 Mannethrel taught
@@ -4924,7 +4924,7 @@ step
     .target Maiev Chantelombre
 step
     #arrowtext |cFFFCDC00Utilisez la macro|r
-    .isOnQuest 38723
+    .isOnQuest 38723 --Stop Gul'dan!
     .goto 677,49.92,76.65
     >>Tuez |cRXP_ENEMY_Marteau et Pilon|r
     *|cRXP_WARN_Leur vies sont partagés|r.
@@ -4935,7 +4935,7 @@ step
     .mob Marteau
 step
     #arrowtext |cFFFCDC00Utilisez la macro|r
-    .isOnQuest 40253
+    .isOnQuest 40253 --Stop Gul'dan!
     .goto 677,49.92,76.65
     >>Tuez |cRXP_ENEMY_Marteau et Pilon|r
     *|cRXP_WARN_Leur vies sont partagés|r.
@@ -4946,14 +4946,14 @@ step
     .mob Marteau
 step
     #arrowtext Parler à\n|cRXP_FRIENDLY_Kayn Solfurie|r
-    .isQuestComplete 38723
+    .isQuestComplete 38723 --Stop Gul'dan!
     .goto 677,50.75,72.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Kayn Solfurie|r.
     .turnin 38723 >>Rendez la quête Arrêtez Gul’dan !
     .target Kayn Solfurie
 step
     #arrowtext Parler à\n|cRXP_FRIENDLY_Kayn Solfurie|r
-    .isQuestComplete 40253
+    .isQuestComplete 40253 --Stop Gul'dan!
     .goto 677,50.75,72.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Kayn Solfurie|r.
     .turnin 40253 >>Rendez la quête Arrêtez Gul’dan !
@@ -4973,7 +4973,7 @@ step
     .mob Kethrazor
 step
     #arrowtext Suivez la flèche
-    .isOnQuest 39742
+    .isOnQuest 39742 --Vault of the Wardens
     .goto 677,49.76,37.36,20,0
     .goto 677,43.61,29.01,15,0
     .goto 677,54.39,28.65,15,0
@@ -5027,7 +5027,7 @@ step
     #arrowtext |cFFFCDC00Utilisez la macro|r
     #completewith next
     #label Immolanth1
-    .isOnQuest 39683
+    .isOnQuest 39683 --Forged in Fire
     .goto 678,46.75,36.35,25,0
     >>Tuez |cRXP_ENEMY_Immolanth|r.
     *|cRXP_WARN_Utilisez la macro dans la fenêtre "Objets actifs" juste après sa mort|r.
@@ -5037,12 +5037,12 @@ step
 step
     #arrowtext Suivez la flèche
     #completewith Immolanth1
-    .isOnQuest 39683
+    .isOnQuest 39683 --Forged in Fire
     .goto 678,46.7,17.8,130 >>Suivez la flèche
 step
     #arrowtext |cFFFCDC00Utilisez la macro|r
     #requires Immolanth
-    .isOnQuest 39683
+    .isOnQuest 39683 --Forged in Fire
     .goto 678,46.7,17.8
     >>Tuez |cRXP_ENEMY_Immolanth|r.
     *|cRXP_WARN_Utilisez la macro dans la fenêtre "Objets actifs" juste après sa mort|r.
@@ -5053,7 +5053,7 @@ step
     #completewith next
     #label Immolanth2
     #title |cFFFCDC00Utilisez la Macro|r
-    .isOnQuest 40254
+    .isOnQuest 40254 --Forged in Fire
     .goto 678,46.75,36.35,25,0
     >>Tuez |cRXP_ENEMY_Immolanth|r.
     *|cRXP_WARN_Utilisez la macro dans la fenêtre "Objets actifs" juste après sa mort|r.
@@ -5063,12 +5063,12 @@ step
 step
     #arrowtext Suivez la flèche
     #completewith Immolanth2
-    .isOnQuest 40254
+    .isOnQuest 40254 --Forged in Fire
     .goto 678,46.7,17.8,130 >>Suivez la flèche
 step
     #arrowtext |cFFFCDC00Utilisez la macro|r
     #requires Immolanth2
-    .isOnQuest 40254
+    .isOnQuest 40254 --Forged in Fire
     .goto 678,46.7,17.8
     >>Tuez |cRXP_ENEMY_Immolanth|r.
     *|cRXP_WARN_Utilisez la macro dans la fenêtre "Objets actifs" juste après sa mort|r.
@@ -5127,7 +5127,7 @@ step
 step
     #completewith next
     #label Forged in Fire1
-    .isQuestComplete 39683
+    .isQuestComplete 39683 --Forged in Fire
     .goto 678,46.24,71.18,15,0
     .goto 678,44.29,69.46,15,0
     .goto 678,46.75,66.79,15,0
@@ -5141,13 +5141,13 @@ step
     .target Allari la Dévoreuse d'âmes
 step
     #arrowtext Suivez la flèche
-    .isQuestComplete 39683
+    .isQuestComplete 39683 --Forged in Fire
     #completewith Forged in Fire1
     .goto 678,41.1,47.2,85 >>Suivez la flèche
 step
     #arrowtext Parlez à\n|cRXP_FRIENDLY_Allari la Dévoreuse d'âmes|r
     #requires Forged in Fire1
-    .isQuestComplete 39683
+    .isQuestComplete 39683 --Forged in Fire
     .goto 678,41.1,47.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Allari la Dévoreuse d’âmes|r.
     .turnin 39685 >>Rendez la quête Figé dans le temps
@@ -5158,7 +5158,7 @@ step
 step
     #completewith next
     #label Forged in Fire2
-    .isQuestComplete 40254
+    .isQuestComplete 40254 --Forged in Fire
     .goto 678,46.24,71.18,15,0
     .goto 678,44.29,69.46,15,0
     .goto 678,46.75,66.79,15,0
@@ -5172,13 +5172,13 @@ step
     .target Allari la Dévoreuse d'âmes
 step
     #arrowtext Suivez la flèche
-    .isQuestComplete 40254
+    .isQuestComplete 40254 --Forged in Fire
     #completewith Forged in Fire2
     .goto 678,41.1,47.2,85 >>Suivez la flèche
 step
     #arrowtext Parlez à\n|cRXP_FRIENDLY_Allari la Dévoreuse d'âmes|r
     #requires Forged in Fire2
-    .isQuestComplete 40254
+    .isQuestComplete 40254 --Forged in Fire
     .goto 678,41.1,47.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Allari la Dévoreuse d’âmes|r.
     .turnin 39685 >>Rendez la quête Figé dans le temps
@@ -5240,7 +5240,7 @@ step << Horde
     .acceptmultiple 39694,40256 >>Acceptez la quête La liberté à portée d’ailes
     .turnin 40373 >>Rendez la quête Une nouvelle direction
 step << Horde
-    .isOnQuest 40256
+    .isOnQuest 40256 --Between Us and Freedom
     #title |cFFFCDC00Utilisez la Macro|r
     #completewith next
     #label Bastillax1
@@ -5255,13 +5255,13 @@ step << Horde
     .mob Bastillax
 step << Horde
     #arrowtext Suivez la flèche
-    .isOnQuest 40256
+    .isOnQuest 40256 --Between Us and Freedom
     #completewith Bastillax1
     .goto 679,50.34,77.76,35 >>Suivez la flèche
 step << Horde
     #arrowtext |cFFFCDC00Utilisez la macro|r
     #requires Bastillax1
-    .isOnQuest 40256
+    .isOnQuest 40256 --Between Us and Freedom
     .goto 679,50.34,77.76
     >>Tuez |cRXP_ENEMY_Bastillax|r.
     *|cRXP_WARN_Utilisez la macro dans la fenêtre "Objets actifs" juste après sa mort|r.
@@ -5273,7 +5273,7 @@ step << Horde
     #completewith next
     #label Bastillax2
     #title |cFFFCDC00Utilisez la Macro|r
-    .isOnQuest 39694
+    .isOnQuest 39694 --Between Us and Freedom
     .goto 679,26.05,76.91,15,0
     .goto 679,33.56,76.33,15,0
     .goto 679,39.53,74.62,15,0
@@ -5285,13 +5285,13 @@ step << Horde
     .mob Bastillax
 step << Horde
     #arrowtext Suivez la flèche
-    .isOnQuest 39694
+    .isOnQuest 39694 --Between Us and Freedom
     #completewith Bastillax2
     .goto 679,50.34,77.76,35 >>Suivez la flèche
 step << Horde
     #arrowtext |cFFFCDC00Utilisez la macro|r
     #requires Bastillax2
-    .isOnQuest 39694
+    .isOnQuest 39694 --Between Us and Freedom
     .goto 679,50.34,77.76
     >>Tuez |cRXP_ENEMY_Bastillax|r.
     *|cRXP_WARN_Utilisez la macro dans la fenêtre "Objets actifs" juste après sa mort|r.
@@ -5301,7 +5301,7 @@ step << Horde
 step << Alliance
     #completewith next
     #label Bastillax3
-    .isOnQuest 40255
+    .isOnQuest 40255 --Between Us and Freedom
     .goto 679,26.05,76.91,15,0
     .goto 679,33.56,76.33,15,0
     .goto 679,39.53,74.62,15,0
@@ -5319,7 +5319,7 @@ step << Alliance
 step << Alliance
     #arrowtext |cFFFCDC00Utilisez la macro|r
     #requires Bastillax3
-    .isOnQuest 40255
+    .isOnQuest 40255 --Between Us and Freedom
     .goto 679,50.34,77.76
     >>Tuez |cRXP_ENEMY_Bastillax|r.
     *|cRXP_WARN_Utilisez la macro dans la fenêtre "Objets actifs" juste après sa mort|r.
@@ -5331,7 +5331,7 @@ step << Alliance
     #completewith next
     #label Bastillax4
     #title |cFFFCDC00Utilisez la Macro|r
-    .isOnQuest 39688
+    .isOnQuest 39688 --Between Us and Freedom
     .goto 679,26.05,76.91,15,0
     .goto 679,33.56,76.33,15,0
     .goto 679,39.53,74.62,15,0
@@ -5348,7 +5348,7 @@ step << Alliance
 step << Alliance
     #arrowtext |cFFFCDC00Utilisez la macro|r
     #requires Bastillax4
-    .isOnQuest 39688
+    .isOnQuest 39688 --Between Us and Freedom
     .goto 679,50.34,77.76
     >>Tuez |cRXP_ENEMY_Bastillax|r.
     *|cRXP_WARN_Utilisez la macro dans la fenêtre "Objets actifs" juste après sa mort|r.
@@ -8480,7 +8480,7 @@ step
 	.target Jojo Front de Fer
 step
     #arrowtext Parlez à |cRXP_FRIENDLY_Ji Patte-de-Feu|r
-    .isOnQuest 29779,29780,29781
+    .isOnQuest 29779,29780,29781 --The Direct Solution; Do No Evil; Monkey Advisory Warning
     .goto 378,30.97,36.74
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Ji Patte de Feu|r.
     .turnin 29779 >>Rendez la quête La solution directe
@@ -8697,7 +8697,7 @@ step
     .goto 378,17.28,50.76
 	.cast 108034 >>Mangez les |T571818:0|t[Petite tige de canne à sucre] (buff de 10sec)
     .timer 10,Buff de la nourriture
-	.itemcount 77272,1
+	.itemcount 77272,1 --Small Sugarcane Stalk
     .use 77272
 step
     #arrowtext Attendez à la position de la flèche
@@ -9875,7 +9875,7 @@ step << Alliance
     .target Ambassadeur Mauregarde
     .accept 81887 >>Acceptez la quête Terra incognita
 step << Alliance
-    #include RestedXP Montée en niveau rapide\a) GC Temps de Chromie Normal@ChromieTime-ChromieTime
+    #include RestedXP Montée en niveau rapide\a) GC Temps de Chromie Normal@ChromieTime1-ChromieTime2
 -- step << Alliance
 --     .goto 84,56.257,17.311
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
@@ -11100,13 +11100,13 @@ step
     .target Anachorète Fateema
 step
     #arrowtext Parlez à |cRXP_FRIENDLY_Technicien Dyvuun|r
-    .isQuestComplete 9603
+    .isQuestComplete 9603 --Beds, Bandages, and Beyond
     .goto 97,48.72,50.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Technicien Dyvuun|r.
     .turnin 9313 >>Rendez la quête En route pour le Guet d'azur
     .target Technicien Dyvuun
 step
-    .isQuestComplete 9603
+    .isQuestComplete 9603 --Beds, Bandages, and Beyond
     #completewith next
     #hidewindow
     #label Word from Azure Watch2
@@ -11118,11 +11118,11 @@ step
     .target Hôtesse Chellan
 step
     #arrowtext Entrez dans la maison
-    .isQuestComplete 9603
+    .isQuestComplete 9603 --Beds, Bandages, and Beyond
     #completewith Word from Azure Watch2
     .goto 97,48.65,49.69,5 >>Entrez dans la maison
 step
-    .isQuestComplete 9603
+    .isQuestComplete 9603 --Beds, Bandages, and Beyond
     #requires Word from Azure Watch2
     #completewith next
     #label Beds, Bandages, and Beyond
@@ -11133,7 +11133,7 @@ step
     .target Hôtesse Chellan
 step
     #arrowtext Parlez à |cRXP_FRIENDLY_Hôtesse Chellan|r
-    .isQuestComplete 9603
+    .isQuestComplete 9603 --Beds, Bandages, and Beyond
     #requires Word from Azure Watch2
     #completewith Beds, Bandages, and Beyond
     .goto 97,48.42,49.27
@@ -11143,7 +11143,7 @@ step
     .target Hôtesse Chellan
 step
     #arrowtext Parlez à |cRXP_FRIENDLY_Hôtesse Chellan|r
-    .isQuestComplete 9603
+    .isQuestComplete 9603 --Beds, Bandages, and Beyond
     #requires Beds, Bandages, and Beyond
     .goto 97,48.42,49.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à l' |cRXP_FRIENDLY_Hôtesse Chellan|r.
@@ -11151,7 +11151,7 @@ step
     .accept 9603 >>Acceptez la quête Des lits, des bandages, etc.
     .target Hôtesse Chellan
 step
-    .isQuestComplete 9603
+    .isQuestComplete 9603 --Beds, Bandages, and Beyond
     #completewith next
     #label Wings of a Hippogryph
     .goto 97,48.83,50,5,0
@@ -11162,13 +11162,13 @@ step
     .target Zaldaan
 step
     #arrowtext Sortez de la maison
-    .isQuestComplete 9603
+    .isQuestComplete 9603 --Beds, Bandages, and Beyond
     #completewith Wings of a Hippogryph
     .goto 97,49.62,49.03,35 >>Quittez la maison
 step
     #arrowtext Parlez à |cRXP_FRIENDLY_Zaldaan|r
     #requires Wings of a Hippogryph
-    .isQuestComplete 9603
+    .isQuestComplete 9603 --Beds, Bandages, and Beyond
     .goto 97,49.62,49.03
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Zaldaan|r.
     .turnin 9603 >>Rendez la quête Des lits, des bandages, etc.
@@ -11324,7 +11324,7 @@ step
     #arrowtext Parlez à |cRXP_FRIENDLY_Diktynna|r
     .goto 97,61.11,54.07
     #xprate 1-1.10
-    .isQuestComplete 9452
+    .isQuestComplete 9452 --Red Snapper - Very Tasty!
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Diktynna|r
     .turnin 9452 >>Rendez la quête Le lutjan rouge, c'est bon !
     .target Diktynna
@@ -11355,7 +11355,7 @@ step
     .mob Chevreuil frôle-lune
 step
     #arrowtext |cFFFCDC00[RARE MONSTER]|r
-    .isOnQuest 9454
+    .isOnQuest 9454 --The Great Moongraze Hunt
     #xprate 1-1.10
     .xp >10,1
     #label BloodElfBandit
@@ -11407,7 +11407,7 @@ step
 -- ******************** ROUTES INTERSECT HERE ********************--
 
 step
-    .isQuestComplete 9454
+    .isQuestComplete 9454 --The Great Moongraze Hunt
     #completewith next
     #label The Great Moongraze Hunt
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Actéon|r.
@@ -11416,13 +11416,13 @@ step
     .disablecheckbox
     .target Actéon
 step
-    .isQuestComplete 9454
+    .isQuestComplete 9454 --The Great Moongraze Hunt
     #completewith The Great Moongraze Hunt
     .goto 97,49.78,51.94,60 >>Si vous |cRXP_WARN_ne pouvez pas|r prendre votre monture, tuez les |cRXP_ENEMY_monstres|r en traversant (|cRXP_WARN_si possible (dépend de la classe)|r.
 step
     #arrowtext Parlez à |cRXP_FRIENDLY_Actéon|r
     #xprate 1-1.10
-    .isQuestComplete 9454
+    .isQuestComplete 9454 --The Great Moongraze Hunt
     #requires The Great Moongraze Hunt
     .goto 97,49.78,51.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Actéon|r.
@@ -11431,7 +11431,7 @@ step
 step
     #arrowtext Parlez à |cRXP_FRIENDLY_Actéon|r
     #xprate 1-1.10
-    .isQuestComplete 9453
+    .isQuestComplete 9453 --Find Acteon!
     .goto 97,49.78,51.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Actéon|r.
     .turnin 9453 >>Rendez la quête Trouvez Actéon !
@@ -11446,7 +11446,7 @@ step
     .target Actéon
 step
     #arrowtext Parlez à |cRXP_FRIENDLY_Anachorète Fateema|r
-    .isQuestComplete 9463
+    .isQuestComplete 9463 --Medicinal Purpose
     .goto 97,48.39,51.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à l' |cRXP_FRIENDLY_Anachorète Fateema|r.
     .turnin 9463 >>Rendez la quête Usage médical
@@ -11462,14 +11462,14 @@ step
     .target Daedal
 step
     #arrowtext Parlez à |cRXP_FRIENDLY_Exarque Menelaous|r
-    .isQuestComplete 9616
+    .isQuestComplete 9616 --Bandits!
     .goto 97,47.24,50.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à l' |cRXP_FRIENDLY_Exarque Menelaous|r
     .turnin 9616 >>Rendez la quête Bandits !
     .target Exarque Menelaous
 step
     #arrowtext Parlez à |cRXP_FRIENDLY_Exarque Menelaous|r
-    .isQuestComplete 9455
+    .isQuestComplete 9455 --Strange Findings
     .goto 97,47.24,50.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à l' |cRXP_FRIENDLY_Exarque Menelaous|r.
     .turnin 9455 >>Rendez la quête Une étrange trouvaille
@@ -11545,7 +11545,7 @@ step
     .target « Cuistot » McFadesauce
 step
     #arrowtext Parlez à |cRXP_FRIENDLY_Amiral Odesyus|r
-    .isQuestComplete 9505
+    .isQuestComplete 9505 --The Prophecy of Velen
     .goto 97,46.94,70.32
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Admiral Odesyus|r
     .turnin 9505 >>Rendez la quête La prophétie de Velen
@@ -11553,7 +11553,7 @@ step
 step
     .xp >10,1
     .xp <9.8,1
-    .isNotOnQuest 9506
+    .isNotOnQuest 9506 --A Small Start
     >>Tuez les |cRXP_ENEMY_Clampants grouillants|r.
     *Dépouillez-les pour les |T134007:0|t[|cRXP_LOOT_Chairs de clampant grouillant|r].
     .complete 9512,1 --6/6 Skittering Crawler Meat
@@ -11562,8 +11562,8 @@ step
     #arrowtext Parlez à |cRXP_FRIENDLY_« Cuistot » McFadesauce|r
     .xp <9.8,1
     .goto 97,46.69,70.53
-    .isNotOnQuest 9506
-    .isQuestComplete 9512
+    .isNotOnQuest 9506 --A Small Start
+    .isQuestComplete 9512 --Cookie's Jumbo Gumbo
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_"Cuistot" McFadesauce|r
     .turnin 9512 >>Rendez la quête Jumbo gumbo du cuistot
     .target « Cuistot » McFadesauce
@@ -11619,13 +11619,13 @@ step
     .mob Clampant grouillant
 step
     #arrowtext Parlez à |cRXP_FRIENDLY_Amiral Odesyus|r
-    .isQuestComplete 9506
+    .isQuestComplete 9506 --A Small Start
     .goto 97,47.03,70.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Admiral Odesyus|r
     .turnin 9506 >>Rendez la quête Il faut bien commencer quelque part
 step
     #arrowtext Parlez à |cRXP_FRIENDLY_« Cuistot » McFadesauce|r
-    .isQuestComplete 9512
+    .isQuestComplete 9512 --Cookie's Jumbo Gumbo
     .goto 97,46.69,70.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_"Cuistot" McFadesauce|r
     .turnin 9512 >>Rendez la quête Jumbo gumbo du cuistot
@@ -11663,7 +11663,7 @@ step
     .complete 9530,1 --1/1 Hollowed Out Tree
 step
     #arrowtext Parlez à |cRXP_FRIENDLY_Amiral Odesyus|r
-    .isQuestComplete 9530
+    .isQuestComplete 9530 --I've Got a Plant
     .goto 97,47.04,70.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à l' |cRXP_FRIENDLY_Amiral Odesyus|r
     .turnin 9530 >>Rendez la quête Un plan bourgeonne
@@ -11736,7 +11736,7 @@ step
     .use 23759
 step
     #arrowtext Parlez à |cRXP_FRIENDLY_Prêtresse Kyleen Il'dinare|r et |cRXP_FRIENDLY_Archéologue Adamant Cœur-de-Fer|r
-    .isQuestComplete 9513
+    .isQuestComplete 9513 --Reclaiming the Ruins
     .xp <9.8,1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à la |cRXP_FRIENDLY_Prêtresse Kyleen Il'dinare|r et à l' |cRXP_FRIENDLY_Archéologue Adamant Cœur-de-Fer|r.
     .turnin 9513 >>Rendez la quête Reconquérir les ruines
@@ -11800,13 +11800,13 @@ step
     .mob Chouettard aberrant
 step
     #arrowtext Parlez à |cRXP_FRIENDLY_Cowlen|r
-    .isQuestComplete 9527
+    .isQuestComplete 9527 --All That Remains
     .goto 97,16.59,94.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Cowlen|r.
     .turnin 9527 >>Rendez la quête Tout ce qui reste
     .target Cowlen
 step
-    .isQuestComplete 9527
+    .isQuestComplete 9527 --All That Remains
     #completewith next
     #label Turn in Tree's Company1
     #loop
@@ -11819,13 +11819,13 @@ step
     #hidewindow
     .target Amiral Odesyus
 step
-    .isQuestComplete 9527
+    .isQuestComplete 9527 --All That Remains
     #completewith Turn in Tree's Company1
     .goto 97,47.87,56.19,15 >>Mourez des |cRXP_ENEMY_Chouettards|r.
     *|cRXP_WARN_Utilisez la macro pour s’asseoir afin de mourir plus vite|r.
     .macro Sit, >>Asseyez-vous 
 step
-    .isQuestComplete 9527
+    .isQuestComplete 9527 --All That Remains
     #requires Turn in Tree's Company1
     #completewith next
     #label Turn in Tree's Company2
@@ -11833,7 +11833,7 @@ step
     .turnin 9531 >>Rendez la quête L'art du camouflage ne se perd pas
     .target Amiral Odesyus
 step
-    .isQuestComplete 9527
+    .isQuestComplete 9527 --All That Remains
     #requires Turn in Tree's Company1
     #completewith Turn in Tree's Company2
     #title |cFFFCDC00Ressuscitez au Gardien des Âmes|r
@@ -11843,7 +11843,7 @@ step
     .target Gardien des âmes
 step
     #arrowtext Parlez à |cRXP_FRIENDLY_Amiral Odesyus|r
-    .isQuestComplete 9527
+    .isQuestComplete 9527 --All That Remains
     #requires Turn in Tree's Company2
     .goto 97,47.04,70.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à l' |cRXP_FRIENDLY_Amiral Odesyus|r
@@ -11851,7 +11851,7 @@ step
     .target Amiral Odesyus
 step
     #arrowtext Parlez à |cRXP_FRIENDLY_Prêtresse Kyleen Il'dinare|r et à |cRXP_FRIENDLY_Archéologue Adamant Cœur-de-Fer|r
-    .isQuestComplete 9513
+    .isQuestComplete 9513 --Reclaiming the Ruins
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à la |cRXP_FRIENDLY_Prêtresse Kyleen Il'dinare|r et à l' |cRXP_FRIENDLY_Archéologue Adamant Cœur-de-Fer|r.
     .turnin 9513 >>Rendez la quête Reconquérir les ruines
     .turnin 9514 >>Rendez la quête Tablette couverte de runes
@@ -12117,7 +12117,7 @@ step
     #xprate >1.30
     #completewith next
     #label Above130Backup x5
-    .isQuestComplete 9456
+    .isQuestComplete 9456 --Nightstalker Clean Up, Isle 2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à l' |cRXP_FRIENDLY_Exarque Menelaous|r
     .turnin 9456 >>Rendez la quête Nettoyage des traquenuits, île n°2
     .target Exarque Menelaous
@@ -12133,7 +12133,7 @@ step
     #arrowtext Parlez à |cRXP_FRIENDLY_Exarque Menelaous|r
     #requires Above130Backup x5
     #xprate >1.30
-    .isQuestComplete 9456
+    .isQuestComplete 9456 --Nightstalker Clean Up, Isle 2
     .goto 97,47.17,50.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à l' |cRXP_FRIENDLY_Exarque Menelaous|r
     .turnin 9456 >>Rendez la quête Nettoyage des traquenuits, île n°2
@@ -12141,7 +12141,7 @@ step
 step
     #arrowtext Parlez à |cRXP_FRIENDLY_Daedal|r
     #xprate >1.30
-    .isQuestComplete 9473
+    .isQuestComplete 9473 --An Alternative Alternative
     .goto 97,48.43,51.4
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Daedal|r.
     .turnin 9473 >>Rendez la quête Une tentative alternative
@@ -12150,7 +12150,7 @@ step
 step
     #arrowtext Parlez à |cRXP_FRIENDLY_Actéon|r
     #xprate >1.30
-    .isQuestComplete 10324
+    .isQuestComplete 10324 --The Great Moongraze Hunt
     .goto 97,49.67,51.9
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Actéon|r.
     .turnin 10324 >>Rendez la quête La grande chasse aux frôle-lune
@@ -12287,14 +12287,14 @@ step
     #hidewindow
     #completewith next
     #label Between2530 x1
-    .isQuestComplete 9456
+    .isQuestComplete 9456 --Nightstalker Clean Up, Isle 2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à l' |cRXP_FRIENDLY_Exarque Menelaous|r
     .turnin 9456 >>Rendez la quête Nettoyage des traquenuits, île n°2
     .target Exarque Menelaous
 step
     #xprate 1.25-1.30
     #completewith Between2530 x1
-    .isQuestComplete 9456
+    .isQuestComplete 9456 --Nightstalker Clean Up, Isle 2
     .subzoneskip 97
     .hs >>Utilisez votre |T134414:0|t[Pierre de foyer] pour revenir au Guet d'azur
     .cooldown item,6948,>0,1
@@ -12304,14 +12304,14 @@ step
     #requires Between2530 x1
     #completewith next
     #label Between2530 x2
-    .isQuestComplete 9456
+    .isQuestComplete 9456 --Nightstalker Clean Up, Isle 2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à l' |cRXP_FRIENDLY_Exarque Menelaous|r
     .turnin 9456 >>Rendez la quête Nettoyage des traquenuits, île n°2
     .target Exarque Menelaous
 step
     #arrowtext Sortez de la maison
     #xprate 1.25-1.30
-    .isQuestComplete 9456
+    .isQuestComplete 9456 --Nightstalker Clean Up, Isle 2
     #requires Between2530 x1
     #completewith Between2530 x2
     .goto 97,48.83,50,5,0
@@ -12322,7 +12322,7 @@ step
     #requires Between2530 x2
     #xprate 1.25-1.30
     .goto 97,47.14,50.61
-    .isQuestComplete 9456
+    .isQuestComplete 9456 --Nightstalker Clean Up, Isle 2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à l' |cRXP_FRIENDLY_Exarque Menelaous|r
     .turnin 9456 >>Rendez la quête Nettoyage des traquenuits, île n°2
     .target Exarque Menelaous
@@ -12330,7 +12330,7 @@ step
     #arrowtext Parlez à |cRXP_FRIENDLY_Daedal|r
     #xprate 1.25-1.30
     .goto 97,48.43,51.4
-    .isQuestComplete 9473
+    .isQuestComplete 9473 --An Alternative Alternative
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Daedal|r.
     .turnin 9473 >>Rendez la quête Une tentative alternative
     .timer 36,RP
@@ -12338,7 +12338,7 @@ step
 step
     #arrowtext Parlez à |cRXP_FRIENDLY_Actéon|r
     #xprate 1.25-1.30
-    .isQuestComplete 10324
+    .isQuestComplete 10324 --The Great Moongraze Hunt
     .goto 97,49.80,51.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Actéon|r.
     .turnin 10324 >>Rendez la quête La grande chasse aux frôle-lune
@@ -12539,7 +12539,7 @@ step
     #xprate <1.25
     #completewith next
     #label Under125 x4
-    .isQuestComplete 9606
+    .isQuestComplete 9606 --Return to Caregiver Chellan
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à l' |cRXP_FRIENDLY_Hôtesse Chellan|r.
     .turnin 9606 >>Rendez la quête Retourner voir l'hôtesse Chellan
     .target Hôtesse Chellan
@@ -12548,7 +12548,7 @@ step
     #completewith Under125 x4
     .xp >10,1
     .subzoneskip 97
-    .isQuestComplete 9606
+    .isQuestComplete 9606 --Return to Caregiver Chellan
     .hs >>Utilisez votre |T134414:0|t[Pierre de foyer] pour revenir au Guet d'azur
     .cooldown item,6948,>0,1
     .use 6948
@@ -12556,7 +12556,7 @@ step
     #arrowtext Parlez à |cRXP_FRIENDLY_Hôtesse Chellan|r
     #xprate <1.25
     #requires Under125 x4
-    .isQuestComplete 9606
+    .isQuestComplete 9606 --Return to Caregiver Chellan
     .goto 97,48.42,49.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à l' |cRXP_FRIENDLY_Hôtesse Chellan|r.
     .turnin 9606 >>Rendez la quête Retourner voir l'hôtesse Chellan
@@ -12564,7 +12564,7 @@ step
 step
     #xprate <1.25
     .xp >10,1
-    .isQuestComplete 9456
+    .isQuestComplete 9456 --Nightstalker Clean Up, Isle 2
     #completewith next
     #label Under125 x5
     .goto 97,48.8,49.99,5,0
@@ -12576,14 +12576,14 @@ step
     #arrowtext Sortez de la maison
     #xprate <1.25
     .xp >10,1
-    .isQuestComplete 9456
+    .isQuestComplete 9456 --Nightstalker Clean Up, Isle 2
     #completewith Under125 x5
     .goto 97,47.24,50.63,45 >>Quittez la maison
 step
     #arrowtext Parlez à |cRXP_FRIENDLY_Exarque Menelaous|r
     #xprate <1.25
     #requires Under125 x5
-    .isQuestComplete 9456
+    .isQuestComplete 9456 --Nightstalker Clean Up, Isle 2
     .goto 97,47.24,50.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à l' |cRXP_FRIENDLY_Exarque Menelaous|r
     .turnin 9456 >>Rendez la quête Nettoyage des traquenuits, île n°2
@@ -12591,7 +12591,7 @@ step
 step
     #arrowtext Parlez à |cRXP_FRIENDLY_Daedal|r
     #xprate <1.25
-    .isQuestComplete 9473
+    .isQuestComplete 9473 --An Alternative Alternative
     .goto 97,48.45,51.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Daedal|r.
     .turnin 9473 >>Rendez la quête Une tentative alternative
@@ -12599,7 +12599,7 @@ step
 step
     #arrowtext Parlez à |cRXP_FRIENDLY_Actéon|r
     #xprate <1.25
-    .isQuestComplete 10324
+    .isQuestComplete 10324 --The Great Moongraze Hunt
     .goto 97,49.66,51.9
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Actéon|r.
     .turnin 10324 >>Rendez la quête La grande chasse aux frôle-lune
@@ -13152,7 +13152,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Felix Chouineboulon|r.
     .turnin 3361 >>Rendez la quête Les malheurs d'un réfugié
     .target Felix Chouineboulon
-    .isQuestComplete 182
+    .isQuestComplete 182 --The Troll Menace
 step
     .xp >10,1
     #completewith A Refugee's Quandary
@@ -13164,7 +13164,7 @@ step
     .goto 427,41.83,63.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Felix Chouineboulon|r.
     .turnin 3361 >>Rendez la quête Les malheurs d'un réfugié
-    .isQuestComplete 182
+    .isQuestComplete 182 --The Troll Menace
     .target Felix Chouineboulon
 step
     #arrowtext Tuez\n|cRXP_ENEMY_Trolls crins-de-givre adolescents|r
@@ -13185,7 +13185,7 @@ step
     .goto 427,41.83,63.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Felix Chouineboulon|r.
     .turnin 3361 >>Rendez la quête Les malheurs d'un réfugié
-    .isQuestComplete 182
+    .isQuestComplete 182 --The Troll Menace
     .target +Felix Chouineboulon
 step
     .xp >10,1
@@ -13453,11 +13453,11 @@ step
 step
     #arrowtext Attendez la fin du jeu de rôle
     .xp >10,1
-    .isOnQuest 24493
+    .isOnQuest 24493 --Don't Forget About Us
     .goto 427,81.79,12.48,20 >>|cRXP_WARN_Attendez la fin du RP|r.
 step
     .xp >10,1
-    .isOnQuest 24493
+    .isOnQuest 24493 --Don't Forget About Us
     .subzone 131 >>Reconnectez-vous pour vous téléporter à Kharanos
 -- step
 --     #completewith next
@@ -15024,7 +15024,7 @@ step
 step
     .xp >10,1
     #label Mountaineer Valgrum2
-    .isOnQuest 313
+    .isOnQuest 313 --Forced to Watch from Afar
     .subzoneskip 136,1
     #title|cFFFCDC00RARE & |cFFFCDC00COFFRE|r|r
     *Tuez |cRXP_ENEMY_Edan le Hurleur|r et cliquez sur le |cRXP_PICK_Coffre|r s'ils sont présents pour de l'expérience bonus.
@@ -15348,7 +15348,7 @@ step
 	.mob Guerrier crins-de-givre
 step
     #arrowtext Parlez à |cRXP_FRIENDLY_Snevik la Lame|r et |cRXP_FRIENDLY_Slamp Culbutorouage|r
-    .isQuestComplete 25932
+    .isQuestComplete 25932 --It's Raid Night Every Night
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Snevik la Lame|r et à |cRXP_FRIENDLY_Slamp Culbutorouage|r
     .turnin 28868 >>Rendez la quête La vue du ras des pâquerettes
     .goto 27,62.546,53.807
@@ -15414,7 +15414,7 @@ step
     .mob Ecumeur crins-de-givre
 step
     #arrowtext Parlez à |cRXP_FRIENDLY_Sergent Martel-silex|r
-    .isQuestComplete 25932
+    .isQuestComplete 25932 --It's Raid Night Every Night
     .goto 27,70.41,48.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Sergent Martel-silex|r
     .turnin 25932 >>Rendez la quête La nuit, tous les Trolls sont gris
@@ -15462,7 +15462,7 @@ step
     .complete 314,1 --1/1 Fang of Vagash
 step
     #arrowtext Parlez à |cRXP_FRIENDLY_Rudra Distillambre|r
-    .isQuestComplete 314
+    .isQuestComplete 314 --Protecting the Herd
     .goto 27,70.28,48.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Rudra Amberstill|r
     .turnin 314 >>Rendez la quête Protection du troupeau
@@ -15487,7 +15487,7 @@ step
     .use 10549 --Rancher's Trousers
 step
     #arrowtext Parlez à |cRXP_FRIENDLY_Veron Distillambre|r
-    .isQuestComplete 25905
+    .isQuestComplete 25905 --Rams on the Lam
     .goto 27,70.67,48.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Veron Distillambre|r
     .turnin 25905 >>Rendez la quête Béliers en vadrouille
@@ -15607,14 +15607,14 @@ step
     .mob Brise-crâne mâcheroc
 step
     #arrowtext Parlez à |cRXP_FRIENDLY_Contremaître Front-de-pierre|r
-    .isQuestComplete 432
+    .isQuestComplete 432 --Those Blasted Troggs!
     .goto 27,76.31,54.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Contremaître Front-de-Pierre|r
     .turnin 432 >>Rendez la quête Ces satanés Troggs !
     .target Contremaître Front-de-pierre
 step
     #arrowtext Parlez à |cRXP_FRIENDLY_Prospecteur Drugan|r
-    .isQuestComplete 25937
+    .isQuestComplete 25937 --Priceless Treasures
     .goto 27,76.18,53.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Prospecteur Drugan|r
     .turnin 25937 >>Rendez la quête Trésors inestimables
@@ -15668,7 +15668,7 @@ step
     .mob Tombe glaciale
 step
     #arrowtext Parlez à |cRXP_FRIENDLY_Sergent Bahrum|r et |cRXP_FRIENDLY_Khurgorn Plume-rousse|r
-    .isQuestComplete 25978
+    .isQuestComplete 25978 --Entombed in Ice
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Sergent Bahrum|r et à |cRXP_FRIENDLY_Khurgorn Plume-rousse|r.
     .turnin 25978 >>Rendez la quête Congelés vivants
     .goto 27,82.86,48.40
@@ -15758,12 +15758,10 @@ step
     #hidewindow
     +test
     .usespell 1231411
-
 step
     .xp >10,1
     #completewith Beating Them Back!
     +Si vous souhaitez monter de niveau aussi vite que possible, choisissez les Confins de l’Exil comme zone de départ. Cela nécessite de recréer votre personnage.
-
 step
     #arrowtext Parlez à |cRXP_FRIENDLY_Maréchal McBride|r
     .xp >10,1
@@ -16307,12 +16305,12 @@ step
     .accept 26378 >>Acceptez la quête L'appel du héros : la marche de l'Ouest !
     .disablecheckbox
 	.target Maréchal Dughan
-    .isOnQuest 54
+    .isOnQuest 54 --Report to Goldshire
 step
     .xp >10,1
     #completewith Marshal Dughan
     .goto 37,41.715,64.636,100 >>Si vous |cRXP_WARN_ne pouvez pas|r prendre votre monture, tuez les |cRXP_ENEMY_monstres|r en traversant (|cRXP_WARN_si possible (dépend de la classe)|r.
-    .isOnQuest 54
+    .isOnQuest 54 --Report to Goldshire
     .mob Loup galeux
     .mob Vide-gousset
     .mob Araignée forestière
@@ -16326,12 +16324,12 @@ step
     .turnin 54 >>Rendez la quête Rapport pour Comté-de-l’Or
     .accept 62 >>Acceptez la quête La mine de Fondugouffre
     .accept 26378 >>Acceptez la quête L'appel du héros : la marche de l'Ouest !
-    .isOnQuest 54
+    .isOnQuest 54 --Report to Goldshire
 	.target Maréchal Dughan
 step
     #arrowtext Parlez à |cRXP_FRIENDLY_Maréchal Dughan|r
     .xp >10,1
-    .isQuestAvailable 54
+    .isQuestAvailable 54 --Report to Goldshire
     .goto 37,42.12,65.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Maréchal Dughan|r.
     .accept 62 >>Acceptez la quête La mine de Fondugouffre
@@ -16393,7 +16391,7 @@ step
     .goto 37,43.63,65.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à l' |cRXP_FRIENDLY_Aubergiste Farley |r.
     .turnin 37112 >>Rendez la quête Repos et détente
-    .isOnQuest 37112
+    .isOnQuest 37112 --Rest and Relaxation
 step
     #arrowtext Parlez à |cRXP_FRIENDLY_Aubergiste Farley|r
     .xp >10,1
@@ -16402,7 +16400,7 @@ step
     .home >>Liez votre Pierre de foyer à l'auberge de la Fierté du lion
     .skipgossipid 28605
     .subzoneskip 5637,1
-    .isOnQuest 60
+    .isOnQuest 60 --Kobold Candles
 	.target Aubergiste Farley
 -- step
 --     .xp >10,1
@@ -16427,7 +16425,7 @@ step
     .buy 4496,3
     .target Brog Lacouenne
     .subzoneskip 5637,1
-    .isOnQuest 60
+    .isOnQuest 60 --Kobold Candles
 -- step
 --     .xp >10,1
 --     .goto 37,43.96,65.92
@@ -16446,7 +16444,7 @@ step
     .target Brog Lacouenne
     .subzoneskip 5637,1
     .nodmf
-    .isOnQuest 60
+    .isOnQuest 60 --Kobold Candles
 step
     .xp >10,1
     #completewith next
@@ -16546,8 +16544,8 @@ step
     .daily 31693 >>Acceptez la quête Julia Stevens
     .train 125610,3
 	.target Julia Stevens
-    .isQuestTurnedIn 31889,31891,31902,31903
-    .isOnQuest 60,47
+    .isQuestTurnedIn 31889,31891,31902,31903 --Battle Pet Tamers: Kalimdor Alliance; Battle Pet Tamers: Kalimdor; Battle Pet Tamers: Eastern Kingdoms; Battle Pet Tamers: Eastern Kingdoms
+    .isOnQuest 60,47 --Kobold Candles; Gold Dust Exchange
 step
     .xp >10,1
     #completewith Julia Stevens
@@ -16563,8 +16561,8 @@ step
     .daily 31693 >>Acceptez la quête Julia Stevens
     .train 125610,3
 	.target Julia Stevens
-    .isQuestTurnedIn 31889,31891,31902,31903
-    .isOnQuest 60,47
+    .isQuestTurnedIn 31889,31891,31902,31903 --Battle Pet Tamers: Kalimdor Alliance; Battle Pet Tamers: Kalimdor; Battle Pet Tamers: Eastern Kingdoms; Battle Pet Tamers: Eastern Kingdoms
+    .isOnQuest 60,47 --Kobold Candles; Gold Dust Exchange
 step
     .xp >10,1
     #completewith next
@@ -16572,7 +16570,7 @@ step
     >>Battez-la dans un Combat de mascottes.
     .complete 31693,1 --Defeat Julia Stevens
 	.target Julia Stevens
-    .isOnQuest 31693
+    .isOnQuest 31693 --Julia Stevens
 step
     #arrowtext Parlez à |cRXP_FRIENDLY_Julia Stevens|r
     .xp >10,1
@@ -16587,7 +16585,7 @@ step
     >>Battez-la dans un Combat de mascottes.
     .complete 31693,1 --Defeat Julia Stevens
 	.target Julia Stevens
-    .isOnQuest 31693
+    .isOnQuest 31693 --Julia Stevens
 step
     #arrowtext Parlez à |cRXP_FRIENDLY_Julia Stevens|r
     .xp >10,1
@@ -16595,7 +16593,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Julia Stevens|r.
     .turnin 31693 >>Rendez la quête Julia Stevens
 	.target Julia Stevens
-    .isQuestComplete 31693
+    .isQuestComplete 31693 --Julia Stevens
 step
     .xp >10,1
     #completewith next
@@ -16846,8 +16844,8 @@ step
     .daily 31780 >>Acceptez la quête Le vieux MacDonald
     .train 125610,3
 	.target Le vieux MacDonald
-    .isQuestTurnedIn 31889,31891,31902,31903
-    .isOnQuest 184
+    .isQuestTurnedIn 31889,31891,31902,31903 --Battle Pet Tamers: Kalimdor Alliance; Battle Pet Tamers: Kalimdor; Battle Pet Tamers: Eastern Kingdoms; Battle Pet Tamers: Eastern Kingdoms
+    .isOnQuest 184 --Furlbrow's Deed
     .use 2238 --Urchins Pants
     .use 57527 --Stone Cairne Boots
     .use 131192 --Riverpaw Gnoll Boots
@@ -16858,7 +16856,7 @@ step
     #label Defeat Old MacDonald
     >>Battez le Vieux MacDonald dans un combat de mascottes.
     .complete 31780,1 --Defeat Old MacDonald
-    .isOnQuest 31780
+    .isOnQuest 31780 --Old MacDonald
 step
     #arrowtext Parlez à |cRXP_FRIENDLY_Le vieux MacDonald|r
     .xp >10,1
@@ -16875,7 +16873,7 @@ step
     .complete 31780,1 --Defeat Old MacDonald
 	.target Le vieux MacDonald
     .skipgossipid 65648
-    .isOnQuest 31780
+    .isOnQuest 31780 --Old MacDonald
 step
     #arrowtext Parlez à |cRXP_FRIENDLY_Le vieux MacDonald|r
     .xp >10,1
@@ -16883,7 +16881,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Vieux MacDonald|r.
     .turnin 31780 >>Rendez la quête Le vieux MacDonald
 	.target Le vieux MacDonald
-    .isQuestComplete 31780
+    .isQuestComplete 31780 --Old MacDonald
 step
     #arrowtext Parlez à |cRXP_FRIENDLY_Lieutenant Horatio Laine|r
     .xp >10,1
@@ -17000,7 +16998,7 @@ step
     .turnin 60 >>Rendez la quête Les bougies de Kobolds
     .target William Pilon
 step
-    .isQuestComplete 47,62,40
+    .isQuestComplete 47,62,40 --Gold Dust Exchange; The Fargodeep Mine; A Fishy Peril
     #completewith next
     #label Turn in The Fargodeep Mine
     .goto 37,43.18,66.03,5,0
@@ -17019,7 +17017,7 @@ step
     .goto 37,42.15,67.25,30 >>Sortez de l'auberge
 step
     #arrowtext Parlez à\n|cRXP_FRIENDLY_Rémi « Deux fois »|r
-    .isQuestComplete 47,62,40
+    .isQuestComplete 47,62,40 --Gold Dust Exchange; The Fargodeep Mine; A Fishy Peril
     #requires Turn in The Fargodeep Mine
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Remy « Deux fois »|r.
     .turnin 47 >>Rendez la quête L'échange de poussière d'or
@@ -17040,7 +17038,7 @@ step
     .use 57401 --Jasperlode Chestguard
 step
     #arrowtext Parlez à\n|cRXP_FRIENDLY_Maréchal Dughan|r
-    .isQuestComplete 176
+    .isQuestComplete 176 --WANTED: "Hogger"
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Maréchal Dughan|r.
     .turnin 176 >>Rendez la quête ON RECHERCHE : « Lardeur »
     .goto 37,42.12,65.94
@@ -17200,7 +17198,7 @@ step
     .target Superviseur Raelen
 step
     #arrowtext Parlez à\n|cRXP_FRIENDLY_Maréchal Patterson|r
-    .isQuestComplete 26152,123
+    .isQuestComplete 26152,123 --WANTED: James Clark; The Collector
     .goto 37,81.860,66.040
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Maréchal Patterson|r.
     .turnin 26152 >>Rendez la quête ON RECHERCHE : James Clark
@@ -17310,7 +17308,7 @@ step
 step
     #arrowtext Parlez à\n|cRXP_FRIENDLY_Garde Thomas|r
     #requires Bounty on Murlocs
-    .isQuestComplete 46,52,71
+    .isQuestComplete 46,52,71 --Bounty on Murlocs; Protect the Frontier; Report to Thomas
     .goto 37,73.973,72.177
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Garde Thomas|r.
     .turnin 46 >>Rendez la quête Des primes pour les Murlocs
@@ -17431,14 +17429,14 @@ step
     .deathskip >>Ressuscitez au Gardien des âmes.
 step
     #arrowtext Parlez à\n|cRXP_FRIENDLY_Maréchal Patterson|r
-    .isQuestComplete 147
+    .isQuestComplete 147 --Manhunt
     .goto 37,81.860,66.040
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Maréchal Patterson|r.
     .turnin 147 >>Rendez la quête Chasse à l'homme
     .target Maréchal Patterson
 step
     #arrowtext Parlez à\n|cRXP_FRIENDLY_Superviseur Raelen|r
-    .isQuestComplete 5545
+    .isQuestComplete 5545 --A Bundle of Trouble
     #label Turn in A Bundle of Trouble
     .goto 37,81.39,66.12
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à la |cRXP_FRIENDLY_Superviseur Raelen|r.
@@ -17450,7 +17448,7 @@ step
     .use 1360 --Stormwind Plate Gloves
 step
     #arrowtext Parlez à\n|cRXP_FRIENDLY_Sara Timberlain|r
-    .isQuestComplete 83,59
+    .isQuestComplete 83,59 --Fine Linen Goods; Cloth and Leather Armor
     .goto 37,79.462,68.715
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sara Timberlain|r
     .turnin 83 >>Rendez la quête Articles en lin de qualité
@@ -17477,7 +17475,7 @@ step
     .accept 40519 >>Acceptez la quête Legion : Le retour de la Légion
     .choose 1851120
 step
-    #include RestedXP Montée en niveau rapide\a) GC Temps de Chromie Normal@ChromieTime-ChromieTime
+    #include RestedXP Montée en niveau rapide\a) GC Temps de Chromie Normal@ChromieTime1-ChromieTime2
 -- step
 --     .goto 84,56.257,17.311
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
@@ -17488,7 +17486,7 @@ step
 --     .target Chromie
 step
     .subzoneskip 6292
-    .isOnQuest 65436
+    .isOnQuest 65436 --The Dragon Isles Await
     >>Utilisez l' |T134309:0|t[Écaille de Dragon perdue] pour vous téléporter à Hurlevent.
     .complete 65436,1 --1/1 Lost Dragonscale used to teleport to near Wrathion's location (Optional)
     .nodmf
@@ -18708,7 +18706,7 @@ step
     .goto 57,55.76,50.44,40 >>Suivez la flèche
 step
     #arrowtext Parlez à\n|cRXP_FRIENDLY_Syral Feuillelame|r
-    .isQuestComplete 13946
+    .isQuestComplete 13946 --Nature's Reprisal
     #requires Nature's Reprisal3
     .goto 57,55.76,50.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Syral Feuillelame|r.
@@ -18716,7 +18714,7 @@ step
     .target Syral Feuillelame
 step
     #arrowtext Parlez à\n|cRXP_FRIENDLY_Tallonkai Viveracine|r
-    .isQuestComplete 932
+    .isQuestComplete 932 --Twisted Hatred
     .goto 57,55.61,50.09
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tallonkai Viveracine|r.
     .turnin 932 >>Rendez la quête Haine folle
@@ -18837,7 +18835,7 @@ step
     .goto 57,55.55,49.99,30 >>Suivez la flèche
 step
     #arrowtext Parlez à\n|cRXP_FRIENDLY_Tallonkai Viveracine|r
-    .isQuestComplete 2459
+    .isQuestComplete 2459 --Ferocitas the Dream Eater
     #requires Ferocitas the Dream Eater3
     .goto 57,55.55,49.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tallonkai Viveracine|r.
@@ -18925,7 +18923,7 @@ step
     .mob Matriarche Plumesang
 step
     #arrowtext Parlez à\n|cRXP_FRIENDLY_Sentinelle Arynia Eclairciel|r
-    .isQuestComplete 937
+    .isQuestComplete 937 --The Enchanted Glade
     .goto 57,39.50,29.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à la |cRXP_FRIENDLY_Sentinelle Arynia Eclairciel|r
     .turnin 937 >>Rendez la quête La clairière enchantée
@@ -18933,7 +18931,7 @@ step
     .target Sentinelle Arynia Eclairciel
 step
     #arrowtext Parlez à\n|cRXP_FRIENDLY_Prêtresse A'moora|r
-    .isQuestComplete 2518
+    .isQuestComplete 2518 --Tears of the Moon
     .goto 57,39.24,29.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à la |cRXP_FRIENDLY_Prêtresse A'moora|r
     .turnin 2518 >>Rendez la quête Les larmes de la Lune
@@ -19128,7 +19126,7 @@ step
     .mob Grifferage
 step
     #arrowtext Parlez à\n|cRXP_FRIENDLY_Oben Grifferage|r
-    .isQuestComplete 2561
+    .isQuestComplete 2561 --Druid of the Claw
     #label Gnarlpines2
     .goto 60,41.40,83.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Oben Grifferage|r
@@ -19158,7 +19156,7 @@ step
     .use 18957 --Brushwood Blade
 step
     #arrowtext Parlez à\n|cRXP_FRIENDLY_Athridas Mantelours|r et |cRXP_FRIENDLY_Sentinelle Kyra Chantétoile|r
-    .isQuestComplete 483
+    .isQuestComplete 483 --The Relics of Wakening
     .goto 57,55.70,52.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Athridas Mantelours|r et à la |cRXP_FRIENDLY_Sentinelle Kyra Chantétoile|r.
     .turnin 483 >>Rendez la quête Les reliques d'éveil
@@ -19166,7 +19164,7 @@ step
     .target Athridas Mantelours
 step
     #arrowtext Parlez à\n|cRXP_FRIENDLY_Sentinelle Kyra Chantétoile|r
-    .isQuestComplete 13945
+    .isQuestComplete 13945 --Resident Danger
     .goto 57,55.70,52.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à la |cRXP_FRIENDLY_Sentinelle Kyra Chantétoile|r
     .turnin 13945 >>Rendez la quête Danger à domicile
@@ -19206,14 +19204,14 @@ step
     .mob Embusqué pin-tordu
 step
     #arrowtext Parlez à\n|cRXP_FRIENDLY_Prêtresse de la lune Amara|r
-    .isQuestComplete 487
+    .isQuestComplete 487 --The Road to Darnassus
     .goto 57,49.37,44.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à la |cRXP_FRIENDLY_Prêtresse de la lune Amara|r
     .turnin 487 >>Rendez la quête La route de Darnassus
     .target Prêtresse de la lune Amara
 step
     #arrowtext Parlez à\n|cRXP_FRIENDLY_Athridas Mantelours|r
-    .isQuestComplete 486
+    .isQuestComplete 486 --Ursal the Mauler
     .goto 57,55.69,52.01
     #label Ursal the Mauler
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Athridas Mantelours|r.
@@ -20791,24 +20789,24 @@ step
     .unitscan Koroth le Brise-collines
     .target Cheval des montagnes
 step
-    .isOnQuest 14416
+    .isOnQuest 14416 --The Hungry Ettin
     .vehicle >>|TInterface/cursor/crosshair/interact.blp:20|tCliquez sur un |cRXP_PICK_Cheval|r
     .target Cheval des montagnes
 step
-    .isOnQuest 14416
+    .isOnQuest 14416 --The Hungry Ettin
     *|cRXP_WARN_Cheval [1]|r;
     .cast 68903 >>Utilisez |T134326:0|t[Faire suivre le cheval](1) sur les |cRXP_FRIENDLY_Chevaux des montagnes|r pour qu'ils vous suivent
 step
-    .isOnQuest 14416
+    .isOnQuest 14416 --The Hungry Ettin
     *|cRXP_WARN_Cheval [2]|r;
     .cast 68903 >>Utilisez |T134326:0|t[Faire suivre le cheval](1) sur les |cRXP_FRIENDLY_Chevaux des montagnes|r pour qu'ils vous suivent
 step
-    .isOnQuest 14416
+    .isOnQuest 14416 --The Hungry Ettin
     *|cRXP_WARN_Cheval [3]|r;
     .cast 68903 >>Utilisez |T134326:0|t[Faire suivre le cheval](1) sur les |cRXP_FRIENDLY_Chevaux des montagnes|r pour qu'ils vous suivent
 step
     #label Koroth the Hillbreaker
-    .isOnQuest 14416
+    .isOnQuest 14416 --The Hungry Ettin
     *|cRXP_WARN_Cheval [4]|r;
     .cast 68903 >>Utilisez |T134326:0|t[Faire suivre le cheval](1) sur les |cRXP_FRIENDLY_Chevaux des montagnes|r pour qu'ils vous suivent
 step
@@ -21144,7 +21142,7 @@ step
     #completewith next
     #label Carriage boarded1
     #hidewindow
-    .isOnQuest 24438
+    .isOnQuest 24438 --Exodus
     .goto 182,45.01,15,5,0
     .goto 182,39.24,19.37,5,0
     .goto 182,40.89,26.87,5,0
@@ -21164,7 +21162,7 @@ step
     #completewith next
     #hidewindow
     #label Carriage boarded2
-    .isOnQuest 24438
+    .isOnQuest 24438 --Exodus
     .goto 182,59.82,69.41,5,0
     .goto 182,65.7,72.53,2,0
     .goto 182,67.39,77.11,5,0
@@ -21178,7 +21176,7 @@ step
     #requires Carriage boarded2
     #completewith next
     #label Carriage boarded3
-    .isOnQuest 24438
+    .isOnQuest 24438 --Exodus
     >>|cRXP_WARN_Attendez la fin du RP|r.
     .complete 24438,1 --Carriage boarded (1)
     .target Voiture de la diligence
@@ -21191,7 +21189,7 @@ step
     .timer 80.5,RP
 step
     #requires Carriage boarded3
-    .isOnQuest 24438
+    .isOnQuest 24438 --Exodus
     >>|cRXP_WARN_Attendez la fin du RP|r.
     .complete 24438,1 --Carriage boarded (1)
     .target Voiture de la diligence
@@ -21229,7 +21227,7 @@ step
 step
     #arrowtext Parlez à\n|cRXP_FRIENDLY_Prince Liam Grisetête|r
     -- #requires Turn in Exodus3
-    .isOnQuest 24438
+    .isOnQuest 24438 --Exodus
     .goto 179,51.81,80.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Prince Liam Grisetête|r.
     .turnin 24438 >>Rendez la quête L'exode
@@ -22490,7 +22488,7 @@ step
     .accept 53500 >>Acceptez la quête Terra incognita
     .target Ambassadeur Mauregarde
 step
-    #include RestedXP Montée en niveau rapide\a) GC Temps de Chromie Normal@ChromieTime-ChromieTime
+    #include RestedXP Montée en niveau rapide\a) GC Temps de Chromie Normal@ChromieTime1-ChromieTime2
 -- step
 --     .goto 84,56.257,17.311
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
@@ -22552,7 +22550,7 @@ step
     .accept 55146 >>Acceptez la quête Terra incognita
     .target Ambassadeur Mauregarde
 step
-    #include RestedXP Montée en niveau rapide\a) GC Temps de Chromie Normal@ChromieTime-ChromieTime
+    #include RestedXP Montée en niveau rapide\a) GC Temps de Chromie Normal@ChromieTime1-ChromieTime2
 -- step
 --     .goto 84,56.257,17.311
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
@@ -22611,7 +22609,7 @@ step
     .accept 50313 >>Acceptez la quête Terra incognita
     .target Ambassadeur Mauregarde
 step
-    #include RestedXP Montée en niveau rapide\a) GC Temps de Chromie Normal@ChromieTime-ChromieTime
+    #include RestedXP Montée en niveau rapide\a) GC Temps de Chromie Normal@ChromieTime1-ChromieTime2
 -- step
 --     .goto 84,56.257,17.311
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
@@ -22660,7 +22658,7 @@ step
     .accept 58147 >>Acceptez la quête Terra incognita
     .target Ambassadeur Mauregarde
 step
-    #include RestedXP Montée en niveau rapide\a) GC Temps de Chromie Normal@ChromieTime-ChromieTime
+    #include RestedXP Montée en niveau rapide\a) GC Temps de Chromie Normal@ChromieTime1-ChromieTime2
 -- step
 --     .goto 84,56.257,17.311
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
@@ -22718,7 +22716,7 @@ step
     .accept 50305 >>Acceptez la quête Terra incognita
     .target Ambassadeur Mauregarde
 step
-    #include RestedXP Montée en niveau rapide\a) GC Temps de Chromie Normal@ChromieTime-ChromieTime
+    #include RestedXP Montée en niveau rapide\a) GC Temps de Chromie Normal@ChromieTime1-ChromieTime2
 step
     #arrowtext Parlez à\n|cRXP_FRIENDLY_Keira Noirfreux|r
     .goto 84,56.199,17.671
@@ -22848,7 +22846,7 @@ step << DemonHunter VoidElf
 --     #include RestedXP Speed Leveling\a) DMF
 step
     .subzoneskip 6292
-    .isOnQuest 65436
+    .isOnQuest 65436 --The Dragon Isles Await
     >>Utilisez l' |T134309:0|t[Écaille de Dragon perdue] pour vous téléporter à Hurlevent.
     .complete 65436,1 --1/1 Lost Dragonscale used to teleport to near Wrathion's location (Optional)
     .nodmf
@@ -23911,7 +23909,7 @@ step
     .accept 87555 >>Acceptez la quête Une auberge pour tout foyer
 step
     #arrowtext Utilisez [Coursier du vent fauve]
-    .itemcount 25474,1
+    .itemcount 25474,1 --Tawny Wind Rider
     .goto 2022,81.97,31.47
     .collectmount 133 >>Utilisez le |T298596:0|t[Coursier du vent fauve]
     .use 25474
@@ -24566,7 +24564,7 @@ step
     .complete 65998,1 --1/1 Infused dragon eggs found
 	.noskyriding
 step
-    .itemcount 132516,1
+    .itemcount 132516,1 --Gunshoes
     #completewith next
     .cooldown item,132516,>0,1
     .cast 202844 >>Utilisez les |T1405809:0|t[Pisto-bottes] |cRXP_WARN_juste avant de cliquer sur l'œuf|r.
@@ -24852,13 +24850,13 @@ step
     .mob Ame en peine arcanique contaminée
 step
     #arrowtext Descendez en courant
-    .isQuestComplete 8335
+    .isQuestComplete 8335 --Felendren the Banished
     #completewith next
     .goto 467,39.87,59.96
     .deathskip >>Courez et laissez-vous tomber (NE SAUTEZ PAS) pour mourir
 step
     #arrowtext Parlez à |cRXP_FRIENDLY_Arcaniste Helion|r
-    .isQuestComplete 8335
+    .isQuestComplete 8335 --Felendren the Banished
     .goto 467,58.5,38.8
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à l' |cRXP_FRIENDLY_Arcaniste Helion|r.
     .turnin 8338 >>Rendez la quête L'esquille arcanique contaminée
@@ -24866,7 +24864,7 @@ step
     .target Arcaniste Helion
 step
     #arrowtext Tuez |cRXP_ENEMY_Arcane Wraiths|r et |cRXP_ENEMY_Ame en peine arcanique contaminée|r
-    .isOnQuest 8338
+    .isOnQuest 8338 --Tainted Arcane Sliver
     #loop
     .goto 467,36.49,62.42,10,0
     .goto 467,35.95,62.37,15,0
@@ -24889,14 +24887,14 @@ step
     .mob Ame en peine arcanique
     .mob Ame en peine arcanique contaminée
 step
-    .isOnQuest 8338
+    .isOnQuest 8338 --Tainted Arcane Sliver
     #requires EversongWoodsArcaneWraith
     #completewith next
     .goto 467,41.44,51.44
     .deathskip >>Engagez des ennemis, mourez, ressuscitez au gardien des âmes
 step
     #arrowtext Parlez à |cRXP_FRIENDLY_Arcaniste Helion|r
-    .isOnQuest 8338
+    .isOnQuest 8338 --Tainted Arcane Sliver
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à l' |cRXP_FRIENDLY_Arcaniste Helion|r.
     .goto 467,58.5,38.8
     .turnin 8338 >>Rendez la quête L'esquille arcanique contaminée
@@ -24950,7 +24948,7 @@ step << Hunter
     .train 1515,1
 step
     #arrowtext Parlez à |cRXP_FRIENDLY_Estafette Alarion|r
-    .isOnQuest 8347
+    .isOnQuest 8347 --Aiding the Outrunners
     .goto 94,40.42,32.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à l' |cRXP_FRIENDLY_Estafette Alarion|r.
     .turnin 8347 >>Rendez la quête Aider les estafettes
@@ -25079,7 +25077,7 @@ step
     .accept 9119 >>Acceptez la quête Panne au sanctum occidental
     .target Telluriste Caidanis
 step
-    .itemcount 132516,1
+    .itemcount 132516,1 --Gunshoes
     #completewith next
     .cast 202844 >>Utilisez les |T1405809:0|t[Pisto-bottes]
 step
@@ -25576,8 +25574,8 @@ step
     .goto 461,45.81,63.42
     .turnin 37446 >>Rendez la quête Les péons paresseux
     .goto 461,46.15,63.28
-	.isQuestComplete 25136
-	.isQuestComplete 37446
+	.isQuestComplete 25136 --Galgar's Cactus Apple Surprise
+	.isQuestComplete 37446 --Lazy Peons
     .target Galgar
     .target Gornek
     .target Zureetha Mireloin
@@ -25591,7 +25589,7 @@ step
     .goto 461,44.93,66.42
     .accept 25131 >>Acceptez la quête Les vils quasits
     .goto 461,45.81,63.42
-	.isQuestComplete 25136
+	.isQuestComplete 25136 --Galgar's Cactus Apple Surprise
     .target Galgar
     .target Gornek
     .target Zureetha Mireloin
@@ -25604,7 +25602,7 @@ step
     .goto 461,45.81,63.42
     .turnin 37446 >>Rendez la quête Les péons paresseux
     .goto 461,46.15,63.28
-	.isQuestComplete 37446
+	.isQuestComplete 37446 --Lazy Peons
     .target Gornek
     .target Zureetha Mireloin
     .target Contremaître Thazz'ril
@@ -25679,7 +25677,7 @@ step
     .goto 461,46.15,63.28
     .accept 25132 >>Acceptez la quête Le médaillon de la Lame-Ardente
     .goto 461,45.81,63.42
-	.isOnQuest 37446
+	.isOnQuest 37446 --Lazy Peons
     .target Zureetha Mireloin
     .target Contremaître Thazz'ril
 step
@@ -25703,7 +25701,7 @@ step << Hunter
 step << Hunter Orc
     .goto 461,47.61,47.66
     .cast 1515 >>Ciblez un |cRXP_ENEMY_Sanglier tacheté|r, puis lancez et canalisez |T132164:0|t[Apprivoiser une bête] pour le dompter
-    .isOnQuest 25135
+    .isOnQuest 25135 --Thazz'rils Pick
     .mob Sanglier tacheté
 step
     #arrowtext Cliquez sur\n|cRXP_PICK_Cactus Apples|r
@@ -25771,7 +25769,7 @@ step
     .goto 461,45.82,63.42
     .turnin 25135 >>Rendez la quête La pioche de Thazz'ril
     .goto 461,46.19,63.29
-	.isOnQuest 25136
+	.isOnQuest 25136 --Galgar's Cactus Apple Surprise
     .target Galgar
     .target Gornek
     .target Zureetha Mireloin
@@ -25816,7 +25814,7 @@ step << Orc
     #completewith next
     .cast 202844 >>Utilisez vos|T1405809:0|t[Pisto-bottes] pour vous déplacer rapidement
     .use 132516
-    .itemcount 132516,1
+    .itemcount 132516,1 --Gunshoes
 step << Troll
     .zoneskip 1727
     #completewith EchoIslesFirstQuestCheck
@@ -26359,7 +26357,7 @@ step
     .target Tora'jin
     .target Moraya
 step
-    .itemcount 132516,1
+    .itemcount 132516,1 --Gunshoes
     #completewith next
     .cast 202844 >>Utilisez les |T1405809:0|t[Pisto-bottes]
 step
@@ -26471,10 +26469,10 @@ step
     .goto 463,43.46,91.82,30,0
     .goto 463,43.81,88.49,30,0
     .goto 463,46.15,88.00,30,0
-    >>Utilisez le|T134326:0|t[Lasso griffesang] sur |cRXP_FRIENDLY_Vivegriffe|r. Il apparaît à côté de vous puis va dans le sens antihoraire autour de l'île.
+    >>Click on the |cRXP_PICK_Bloodtalon Lasso|r macro in the "Active Items Frame" to use it on |cRXP_FRIENDLY_Swiftclaw|r. He runs counter-clockwise around the island. (NOT TRANSLATED IN :frFR YET)
     .complete 24626,1 --1/1 Capture Swiftclaw
 	.unitscan Vivegriffe
-    .use 50053
+    .macro Bloodtalon Lasso,134326 >>/targetexact Swiftclaw\n/use item:50053 (NOT TRANSLATED IN :frFR YET)
 step
     #arrowtext Conduisez |cRXP_FRIENDLY_Vivegriffe|r de retour au |cRXP_PICK_Raptor Pen|r
     .goto 463,50.42,66.82,40,0
@@ -26529,7 +26527,7 @@ step
     .turnin 25035 >>Rendez la quête Rompre la ligne
     .accept 24812 >>Acceptez la quête Plus de pitié
     .accept 24813 >>Acceptez la quête Les fétiches territoriaux
-	.isOnQuest 25035
+	.isOnQuest 25035 --Breaking the Line
     .xp 10,1
     .target Morakki
 step
@@ -26538,7 +26536,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Morakki|r.
     .accept 24812 >>Acceptez la quête Plus de pitié
     .accept 24813 >>Acceptez la quête Les fétiches territoriaux
-	.isQuestTurnedIn 25035
+	.isQuestTurnedIn 25035 --Breaking the Line
     .target Morakki
 step
     #arrowtext Tue |cRXP_ENEMY_Spitescale Nagas|r
@@ -26547,7 +26545,7 @@ step
     >>Tuez les |cRXP_ENEMY_Nagas Vexécailles|r pendant que vous placez les [|cRXP_LOOT_Fétiches territoriaux|r].
     .goto 464,58.0,46.3,0,0
     .complete 24812,1 --12/12 Spitescale Naga
-	.isQuestTurnedIn 25035
+	.isQuestTurnedIn 25035 --Breaking the Line
 step
     #arrowtext Utilisez [Les fétiches territoriaux] sur |cRXP_PICK_Spitescale Drapeaux|r
     >>Utilisez les |T132482:0|t[Fétiches territoriaux] à côté de |cRXP_PICK_Drapeaux Vexécailles|r. Les fétiches disparaitront après un petit moment et vous pourrez les placer de nouveau.
@@ -26570,7 +26568,7 @@ step
     .goto 464,69.36,30.91,15,0
     .use 52065
     .complete 24813,1 --8/8 Territorial Fetish placed
-	.isQuestTurnedIn 25035
+	.isQuestTurnedIn 25035 --Breaking the Line
 step
     #arrowtext Parlez à |cRXP_FRIENDLY_Morakki|r
     #requires EchoingIslesSpitescaleNagas
@@ -26578,7 +26576,7 @@ step
     .goto 463,58.90,23.08
     .turnin 24812 >>Rendez la quête Plus de pitié
     .turnin 24813 >>Rendez la quête Les fétiches territoriaux
-	.isQuestTurnedIn 25035
+	.isQuestTurnedIn 25035 --Breaking the Line
     .target Morakki
 step << Orc
     #arrowtext Parlez à |cRXP_FRIENDLY_Dresseur Marnlek|r
@@ -26890,7 +26888,7 @@ step
 step
     #arrowtext Parlez à |cRXP_FRIENDLY_Ahmo Corne-Tonnerre|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Ahmo Corne-Tonnerre|r.
-    .isQuestComplete 24215
+    .isQuestComplete 24215 --Rite of the Winds
     .goto 7,47.65,59.58
     .turnin 24215 >>Rendez la quête Le rite des vents
     .accept 14438 >>Acceptez la quête Partager la terre
@@ -27044,7 +27042,7 @@ step
     .target Mull Corne-Tonnerre
 step
     #arrowtext Parlez à |cRXP_FRIENDLY_Harken Totem-de-vent|r
-    .isQuestComplete 761
+    .isQuestComplete 761 --Swoop Hunting
     .goto 7,48.78,58.79
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Harken Totem-de-vent|r.
     .turnin 761 >>Rendez la quête Chasse aux rapaces
@@ -27064,14 +27062,14 @@ step
     .target Kauth l'aubergiste
 step
     #arrowtext Parlez à |cRXP_FRIENDLY_Maur Mande-Pluie|r
-    .isQuestComplete 26188
+    .isQuestComplete 26188 --Mazzranache
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Maur Mande-Pluie|r.
     .goto 7,47.16,56.66
     .turnin 26188 >>Rendez la quête Mazzranache
     .mob Maur Mande-Pluie
 step
     #arrowtext Parlez à |cRXP_FRIENDLY_Tak|r
-    .isOnQuest 6362
+    .isOnQuest 6362 --Ride to Thunder Bluff
     .zoneskip 7,1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tak|r.
     .goto 7,47.45,58.64
@@ -27315,10 +27313,10 @@ step
     #loop
     .goto 7,48.25,60.43,20,0
     .goto 7,48.13,57.28,20,0
-    >>Kyle (un loup) tourne en rond autour/à travers la ville. |cRXP_WARN_Si vous le voyez courir vers vous, attendez qu'il soit près de vous, ciblez-le et utilisez la [|cRXP_LOOT_Viande de trotteur tendre|r|r].
+    >>Click on the |cRXP_PICK_Tender Stride Meat|r macro in the "Active Items Frame" to use it on |cRXP_FRIENDLY_Kyle|r. Wait until Kyle is nearby. (NOT TRANSLATED IN :frFR YET)
     .complete 11129,1 --1/1 Kyle fed
     .target Kyle
-    .use 33009
+    .macro Tender Stride Meat,134400 >>/targetexact Kyle\n/use item:33009 (NOT TRANSLATED IN :frFR YET)
 step
     #arrowtext Parlez à |cRXP_FRIENDLY_Ahab Sabot-de-Blé|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Ahab Sabot-de-Blé|r.
@@ -27678,7 +27676,7 @@ RXPGuides.RegisterGuide([[
 
 step
     #optional
-    .itemcount 132516,1
+    .itemcount 132516,1 --Gunshoes
     #completewith next
     .cast 202844 >>Utilisez les |T1405809:0|t[Pisto-bottes]
 step
@@ -28992,7 +28990,7 @@ step
     #completewith next
     .cast 202844 >>Utilisez vos|T1405809:0|t[Pisto-bottes] pour vous déplacer rapidement
     .use 132516
-    .itemcount 132516,1
+    .itemcount 132516,1 --Gunshoes
 step
     #arrowtext Suivez le chemin vers le haut de la montagne
     #completewith next
@@ -29172,7 +29170,7 @@ step
     #completewith next
     .cast 202844 >>Utilisez vos|T1405809:0|t[Pisto-bottes] pour vous déplacer rapidement
     .use 132516
-    .itemcount 132516,1
+    .itemcount 132516,1 --Gunshoes
 step
     #arrowtext Utilisez [Œufs de poule sauvage] sur |cRXP_ENEMY_raptor|r
     >>Utilisez les |T236997:0|t[Œufs de poule sauvage] pour placer un œuf dans un piège. Puis attendez jusqu'à ce qu'un |cRXP_ENEMY_raptor|r marche dans l'un des pièges et ramassez l' |cRXP_PICK_Œuf de raptor épineux|r.
@@ -29242,7 +29240,7 @@ step
     #completewith next
     .cast 202844 >>Utilisez vos|T1405809:0|t[Pisto-bottes] pour vous déplacer rapidement
     .use 132516
-    .itemcount 132516,1
+    .itemcount 132516,1 --Gunshoes
 step
     #arrowtext Parlez à |cRXP_FRIENDLY_Megs Déchiqueffroi|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Megs Déchiqueffroi|r.
@@ -29327,7 +29325,7 @@ step
     #completewith next
     .cast 202844 >>Utilisez vos|T1405809:0|t[Pisto-bottes] pour vous déplacer rapidement
     .use 132516
-    .itemcount 132516,1
+    .itemcount 132516,1 --Gunshoes
 step
     #arrowtext Parlez à |cRXP_FRIENDLY_Chipie Serrelavis|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Chipie Serrelavis|r.
@@ -29402,7 +29400,7 @@ step
     #completewith next
     .cast 202844 >>Utilisez vos|T1405809:0|t[Pisto-bottes] pour vous déplacer rapidement
     .use 132516
-    .itemcount 132516,1
+    .itemcount 132516,1 --Gunshoes
 step
     #completewith next
     +|cRXP_WARN_Évitez les |cRXP_ENEMY_Zombies gobelins|r en montant la montagne|r.
@@ -29652,37 +29650,37 @@ step
 step
     #sticky
     >>Vous devez récolter un total de 9 Kaja'Colas Zero-Un
-    >>Ciblez un |cRXP_FRIENDLY_Citoyen de Kezan|r et utilisez ensuite le cola
-    .use 52484
+    >>Click on the |cRXP_PICK_Kaja'Cola Zero-One|r macro in the "Active Items Frame" to use it on |cRXP_FRIENDLY_Kezan Citizen|r. (NOT TRANSLATED IN :frFR YET)
+    .macro Kaja'Cola Zero-One,134400 >>/targetexact Kezan Citizen\n/use item:52484 (NOT TRANSLATED IN :frFR YET)
     .collect 52484,9,25122,0xF
     .complete 25122,4 --6/6 Other goblin's minds freed
     .target Citoyen de Kezan
 step
     #title Libérez Crack
-    >>Ciblez |cRXP_FRIENDLY_Ace|r et utilisez un Kaja'Cola Zero-Un
+    >>Click on the |cRXP_PICK_Kaja'Cola Zero-One|r macro in the "Active Items Frame" to use it on |cRXP_FRIENDLY_Ace|r. (NOT TRANSLATED IN :frFR YET)
     .goto 174,57.1,36.9
-    .use 52484
+    .macro Kaja'Cola Zero-One,134400 >>/targetexact Ace\n/use item:52484 (NOT TRANSLATED IN :frFR YET)
     .complete 25122,1 --1/1 Ace's mind freed
     .target Crack
 step
     #title Libérez Izzy
-    >>Ciblez |cRXP_FRIENDLY_Izzy|r et utilisez un Kaja'Cola Zero-Un
+    >>Click on the |cRXP_PICK_Kaja'Cola Zero-One|r macro in the "Active Items Frame" to use it on |cRXP_FRIENDLY_Izzy|r. (NOT TRANSLATED IN :frFR YET)
     .goto 174,57.01,35.02
-    .use 52484
+    .macro Kaja'Cola Zero-One,134400 >>/targetexact Izzy\n/use item:52484 (NOT TRANSLATED IN :frFR YET)
     .complete 25122,2 --1/1 Izzy's mind freed
     .target Izzy
 step
     #arrowtext Tuer\n|cRXP_ENEMY_Splozombre le Meneur de brutes|r
-    >>Tuez |cRXP_ENEMY_Splozombre le Meneur de brutes|r et ramassez la |cRXP_PICK_Pierre d'âme|r violette volante. Ciblez le cadavre de |cRXP_ENEMY_Splozombre le Meneur de brutes|r et utilisez la |T134336:0|t[Pierre d'âme de Splozombre]
-    .use 52481
+    >>Kill |cRXP_ENEMY_Blastshadow the Brutemaster|r and click on the flying purple |cRXP_PICK_Soulstone|r. Click on the |cRXP_PICK_Blastshadow's Soulstone|r macro in the "Active Items Frame" to use it on his corpse. (NOT TRANSLATED IN :frFR YET)
+    .macro Blastshadow's Soulstone,134336 >>/targetexact Blastshadow the Brutemaster\n/use [@target,dead] item:52481 (NOT TRANSLATED IN :frFR YET)
     .goto 174,56.18,32.29
     .complete 25123,1 --1/1 Blastshadow's Soulstone destroyed
     .mob Splozombre le Meneur de brutes
 step
     #title Libérez Gobeur
-    >>Ciblez |cRXP_FRIENDLY_Gobeur|r et utilisez un Kaja'Cola Zero-Un
+    >>Click on the |cRXP_PICK_Kaja'Cola Zero-One|r macro in the "Active Items Frame" to use it on |cRXP_FRIENDLY_Gobber|r. (NOT TRANSLATED IN :frFR YET)
     .goto 174,57.04,32.17
-    .use 52484
+    .macro Kaja'Cola Zero-One,134400 >>/targetexact Gobber\n/use item:52484 (NOT TRANSLATED IN :frFR YET)
     .complete 25122,3 --1/1 Gobber's mind freed
     .target Gobeur
 step
@@ -30190,7 +30188,7 @@ RXPGuides.RegisterGuide([[
 
 step
     #arrowtext Parlez à |cRXP_FRIENDLY_Holgar Hache-foudre|r
-    .isOnQuest 43926
+    .isOnQuest 43926 --Legion: The Legion Returns
     .goto 1,46.01,13.81
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Holgar Hache-foudre|r.
     .turnin 43926 >>Rendez la quête Legion : Le retour de la Légion
@@ -30198,7 +30196,7 @@ step
     .target Recruteur Lee
 step
     #arrowtext Parlez à |cRXP_FRIENDLY_Holgar Hache-foudre|r
-    .isQuestTurnedIn 43926
+    .isQuestTurnedIn 43926 --Legion: The Legion Returns
     .goto 1,46.01,13.81
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Holgar Hache-foudre|r pour passer le scénario.
     *|cRXP_WARN_NOTE:|r Si vous ne pouvez pas le passer, passez cette étape.
@@ -30207,29 +30205,29 @@ step
     .skipgossip
 step
     #arrowtext Clic\n|cRXP_PICK_Nourriture|r
-    .isOnQuest 44281
-    .isNotOnQuest 44184
+    .isOnQuest 44281 --To Be Prepared
+    .isNotOnQuest 44184 --In the Blink of an Eye
     .goto 1,47.66,13.57
     >>|TInterface/cursor/crosshair/interact.blp:20|tCliquez sur la |cRXP_PICK_Nourriture|r.
     .complete 44281,3 --1/1 Last meal eaten
 step
     #arrowtext Cliquez sur |cRXP_PICK_Tonneau|r
-    .isOnQuest 44281
-    .isNotOnQuest 44184
+    .isOnQuest 44281 --To Be Prepared
+    .isNotOnQuest 44184 --In the Blink of an Eye
     .goto 1,49.63,14.17
     >>|TInterface/cursor/crosshair/interact.blp:20|tCliquez sur le |cRXP_PICK_Tonneau|r
     .complete 44281,1 --1/1 Armor polished
 step
     #arrowtext Clic\n|cRXP_PICK_Sphere|r
-    .isOnQuest 44281
-    .isNotOnQuest 44184
+    .isOnQuest 44281 --To Be Prepared
+    .isNotOnQuest 44184 --In the Blink of an Eye
     .goto 1,51.38,12.29
     >>|TInterface/cursor/crosshair/interact.blp:20|tCliquez sur la |cRXP_PICK_Sphère|r.
     .complete 44281,2 --1/1 Weapon empowered
 step
     #arrowtext Parlez à |cRXP_FRIENDLY_Arienne Noir|r
-    .isOnQuest 44281
-    .isNotOnQuest 44184
+    .isOnQuest 44281 --To Be Prepared
+    .isNotOnQuest 44184 --In the Blink of an Eye
     .goto 1,52.82,11.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Arienne Black|r et combattez-la.
     .complete 44281,4 --1/1 Warmed up with a duel
@@ -30238,49 +30236,49 @@ step
     .target Arienne Noir
 step
     #arrowtext Parlez à |cRXP_FRIENDLY_Garde de pierre Mukar|r
-    .isOnQuest 44281
-    .isNotOnQuest 44184
+    .isOnQuest 44281 --To Be Prepared
+    .isNotOnQuest 44184 --In the Blink of an Eye
     .goto 1,55.63,11.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Garde de pierre Mukar|r.
     .turnin 44281 >>Rendez la quête Fin prêts
     .target Garde de pierre Mukar
 step
     #arrowtext Parlez à |cRXP_FRIENDLY_Garde de pierre Mukar|r
-    .isQuestTurnedIn 44281
-    .isNotOnQuest 44184
+    .isQuestTurnedIn 44281 --To Be Prepared
+    .isNotOnQuest 44184 --In the Blink of an Eye
     .goto 1,55.63,11.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Garde de pierre Mukar|r.
     .accept 40518 >>Acceptez la quête La bataille du rivage Brisé
     .target Garde de pierre Mukar
 step
     #arrowtext Parlez à\n|cRXP_FRIENDLY_Capitaine Russo|r
-    .isNotOnQuest 44184
-    .isOnQuest 40518
+    .isNotOnQuest 44184 --In the Blink of an Eye
+    .isOnQuest 40518 --The Battle for Broken Shore
     .goto 1,57.77,10.49
     .gossipoption 46562 >>Parlez au |cRXP_FRIENDLY_Capitaine Russo|r.
     .target Capitaine Russo
 step
-    .isNotOnQuest 44184
-    .isOnQuest 40518
+    .isNotOnQuest 44184 --In the Blink of an Eye
+    .isOnQuest 40518 --The Battle for Broken Shore
     .zone 619 >>Attendez un moment pour le transfert vers le rivage Brisé.
     .timer 89,RP
 step
-    .isNotOnQuest 44184
+    .isNotOnQuest 44184 --In the Blink of an Eye
     .isInScenario 1189
     .goto 619,54.43,72.28,10 >>Attendez que le navire s'amarre
 step
     #arrowtext Suivez la flèche
-    .isNotOnQuest 44184
+    .isNotOnQuest 44184 --In the Blink of an Eye
     .isInScenario 1189
     .goto 619,54.48,71.82,20 >>|cRXP_WARN_Suivez la flèche|r.
     .timer 1140,scenario auto-completes
 step
-    .isNotOnQuest 44184
+    .isNotOnQuest 44184 --In the Blink of an Eye
     .isInScenario 1189
     #completewith guldanscenarioend
     +Vous pouvez laisser les PNJ compléter |cRXP_WARN_le Scénario|r, bien que cela prendra environ 5 minutes de plus.
 step
-    .isNotOnQuest 44184
+    .isNotOnQuest 44184 --In the Blink of an Eye
     .isInScenario 1189
     #completewith Demons
     >>Tuez |cRXP_ENEMY_Demons|r et |cRXP_ENEMY_Felguards|r |cRXP_WARN_devant chaque pilier|r.
@@ -30293,7 +30291,7 @@ step
     .mob Molosse de l'effroi gangrené
 step
     #arrowtext Détruisez |cRXP_ENEMY_Cristal d'ancrage|r
-    .isNotOnQuest 44184
+    .isNotOnQuest 44184 --In the Blink of an Eye
     .goto 619,54.62,71.33,15,0
     .goto 619,54.34,71.22,15,0
     .goto 619,54.06,71.2,15,0
@@ -30302,7 +30300,7 @@ step
     .scenario 2896,3
     .mob Cristal d'ancrage
 step
-    .isNotOnQuest 44184
+    .isNotOnQuest 44184 --In the Blink of an Eye
     .isInScenario 1189
     #label Demons
     >>Tuez |cRXP_ENEMY_Demons|r et |cRXP_ENEMY_Felguards|r |cRXP_WARN_devant chaque pilier|r.
@@ -30315,7 +30313,7 @@ step
     .mob Molosse de l'effroi gangrené
 step
     #arrowtext Tuez |cRXP_ENEMY_Commandant gangrené Azgalor|r
-    .isNotOnQuest 44184
+    .isNotOnQuest 44184 --In the Blink of an Eye
     .isInScenario 1189
     .goto 619,54.21,71.11
     >>Tuez le |cRXP_ENEMY_Commandant gangrené Azgalor|r.
@@ -30323,24 +30321,24 @@ step
     .mob Commandant gangrené Azgalor
 step
     #arrowtext |cFFFCDC00Suivez la flèche|r
-    .isNotOnQuest 44184
+    .isNotOnQuest 44184 --In the Blink of an Eye
     .isInScenario 1189
     .goto 619,54.54,69.52,20,0
     .goto 619,54.46,69.32,10 >>Suivez la flèche et attendez à son emplacement pour la prochaine cinématique.
 step
-    .isNotOnQuest 44184
+    .isNotOnQuest 44184 --In the Blink of an Eye
     #title |cFFFCDC00Attendez la cinématique et ensuite suivez la flèche|r
     .isInScenario 1189
     .goto 619,53.97,68.7,20,0
     .goto 619,54.71,67.83,10 >>Attendez une cinématique puis suivez la flèche.
 step
-    .isNotOnQuest 44184
+    .isNotOnQuest 44184 --In the Blink of an Eye
     .isInScenario 1189
     >>Attendez la suite.
     .scenario 2898,1
 step
     #arrowtext Tuez |cRXP_ENEMY_Garde du chaos érédar|r et |cRXP_ENEMY_Shielded Anchors|r
-    .isNotOnQuest 44184
+    .isNotOnQuest 44184 --In the Blink of an Eye
     .isInScenario 1189
     #loop
     .goto 619,54.54,67.84,12,0
@@ -30351,7 +30349,7 @@ step
     .mob Garde du chaos érédar
 step
     #arrowtext Tuez\n|cRXP_ENEMY_Démon Elites,|r et |cRXP_ENEMY_Demons|r
-    .isNotOnQuest 44184
+    .isNotOnQuest 44184 --In the Blink of an Eye
     .isInScenario 1189
     #loop
     .goto 619,55.33,68.57,30,0
@@ -30366,41 +30364,41 @@ step
     .mob Envahisseur gangregarde
     .mob Sombre adorateur
 step
-    .isNotOnQuest 44184
+    .isNotOnQuest 44184 --In the Blink of an Eye
     #title|cFFFCDC00Attendez|r
     .isInScenario 1189
     .goto 619,55.24,66.11,10  >>Attendez que |cRXP_FRIENDLY_Thrall|r invoque un pont.
 step
     #arrowtext Traversez le pont et suivez la flèche
-    .isNotOnQuest 44184
+    .isNotOnQuest 44184 --In the Blink of an Eye
     .isInScenario 1189
     .goto 619,55.12,65.03,10 >>Traversez le pont et suivez la flèche.
 step
-    .isNotOnQuest 44184
+    .isNotOnQuest 44184 --In the Blink of an Eye
     .isInScenario 1189
     .scenario 2901,1 >>|cRXP_WARN_Attendez que la Horde arrive|r.
     .target Dame Sylvanas Coursevent
 step
     #arrowtext Tuez\n|cRXP_ENEMY_Krosus|r
-    .isNotOnQuest 44184
+    .isNotOnQuest 44184 --In the Blink of an Eye
     .isInScenario 1189
     .goto 619,55.13,65.01
     .scenario 2902,1 >>Tuez |cRXP_ENEMY_Krosus|r.
     .mob Krosus
 step
-    .isNotOnQuest 44184
+    .isNotOnQuest 44184 --In the Blink of an Eye
     #title|cFFFCDC00Attendez|r
     .isInScenario 1189
     .goto 619,55.28,65.01,10 >>Attendez que |cRXP_FRIENDLY_Thrall|r invoque un pont.
 step
     #arrowtext Traversez le pont et suivez la flèche
-    .isNotOnQuest 44184
+    .isNotOnQuest 44184 --In the Blink of an Eye
     .isInScenario 1189
     .goto 619,55.62,64.73,20,0
     .goto 619,56.52,64.65,20,0
     .goto 619,56.58,64.33,20 >>Traversez le pont et suivez la flèche.
 step
-    .isNotOnQuest 44184
+    .isNotOnQuest 44184 --In the Blink of an Eye
     .isInScenario 1189
     .goto 619,56.58,64.33
     >>Attendez que les |cRXP_ENEMY_Démons|r arrivent, puis tuez-les.
@@ -30411,8 +30409,8 @@ step
     .mob Traqueur des ombres hargneux
 step
     #arrowtext Parlez à\n|cRXP_FRIENDLY_Eitrigg|r
-    .isOnQuest 40518
-    .isNotOnQuest 44184
+    .isOnQuest 40518 --The Battle for Broken Shore
+    .isNotOnQuest 44184 --In the Blink of an Eye
     #label guldanscenarioend
     .goto 1,57.16,10.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Eitrigg|r
@@ -30420,47 +30418,47 @@ step
     .target Eitrigg
 step
     #arrowtext Parlez à\n|cRXP_FRIENDLY_Eitrigg|r
-    .isQuestTurnedIn 40518
-    .isNotOnQuest 44184
+    .isQuestTurnedIn 40518 --The Battle for Broken Shore
+    .isNotOnQuest 44184 --In the Blink of an Eye
     .goto 1,57.16,10.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Eitrigg|r
     .accept 40522 >>Acceptez la quête Le destin de la Horde
     .target Eitrigg
 step
     #arrowtext Parler à\n|cRXP_FRIENDLY_Saurfang|r
-    .isOnQuest 40522
-    .isNotOnQuest 44184
+    .isOnQuest 40522 --Fate of the Horde
+    .isNotOnQuest 44184 --In the Blink of an Eye
     .goto 85,50.04,75.96
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Saurcroc|r.
     .complete 40522,1 --1/1 Report to Saurfang
     .skipgossipid 45114
 step
-    .isOnQuest 40522
-    .isNotOnQuest 44184
+    .isOnQuest 40522 --Fate of the Horde
+    .isNotOnQuest 44184 --In the Blink of an Eye
     #completewith next
     #label Fate of the Horde
     #hidewindow
-    .isOnQuest 40522
+    .isOnQuest 40522 --Fate of the Horde
     .complete 40522,3 --1/1 Learn the Fate of the Horde
 step
     #arrowtext Suivez la flèche
-    .isOnQuest 40522
-    .isNotOnQuest 44184
+    .isOnQuest 40522 --Fate of the Horde
+    .isNotOnQuest 44184 --In the Blink of an Eye
     #completewith Fate of the Horde
     .goto 85,48.38,71.23,10 >>Suivez la flèche
     .timer 63,RP
 step
-    .isOnQuest 40522
-    .isNotOnQuest 44184
+    .isOnQuest 40522 --Fate of the Horde
+    .isNotOnQuest 44184 --In the Blink of an Eye
     #requires Fate of the Horde
-    .isOnQuest 40522
+    .isOnQuest 40522 --Fate of the Horde
     .goto 85,48.38,71.22
     >>Attendez que l'objectif se complète.
     .complete 40522,3 --1/1 Learn the Fate of the Horde
 step
     #arrowtext Parler à\n|cRXP_FRIENDLY_Dame Sylvanas Coursevent|r
-    .isOnQuest 40522
-    .isNotOnQuest 44184
+    .isOnQuest 40522 --Fate of the Horde
+    .isNotOnQuest 44184 --In the Blink of an Eye
     .goto 1,45.71,15.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à la |cRXP_FRIENDLY_Dame Sylvanas Coursevent|r.
     .complete 40522,4 --1/1 Pledge to Warchief Sylvanas
@@ -30468,24 +30466,24 @@ step
     .skipgossipid 44961
 step
     #arrowtext Parler à\n|cRXP_FRIENDLY_Dame Sylvanas Coursevent|r
-    .isOnQuest 40522
-    .isNotOnQuest 44184
+    .isOnQuest 40522 --Fate of the Horde
+    .isNotOnQuest 44184 --In the Blink of an Eye
     .goto 1,45.71,15.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à la |cRXP_FRIENDLY_Dame Sylvanas Coursevent|r.
     .turnin 40522 >>Rendez la quête Le destin de la Horde
     .target Dame Sylvanas Coursevent
 step
     #arrowtext Parler à\n|cRXP_FRIENDLY_Dame Sylvanas Coursevent|r
-    .isQuestTurnedIn 40522
-    .isNotOnQuest 44184
+    .isQuestTurnedIn 40522 --Fate of the Horde
+    .isNotOnQuest 44184 --In the Blink of an Eye
     .goto 1,45.71,15.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à la |cRXP_FRIENDLY_Dame Sylvanas Coursevent|r.
     .accept 40760 >>Acceptez la quête Émissaire
     .target Dame Sylvanas Coursevent
 step
     #arrowtext Parlez à\n|cRXP_FRIENDLY_Allari la Dévoreuse d'âmes|r
-    .isQuestTurnedIn 40522
-    .isNotOnQuest 44184
+    .isQuestTurnedIn 40522 --Fate of the Horde
+    .isNotOnQuest 44184 --In the Blink of an Eye
     .goto 1,45.81,15.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Allari la Dévoreuse d’âmes|r.
     .turnin 40760 >>Rendez la quête Émissaire
@@ -30493,8 +30491,8 @@ step
     .target Allari la Dévoreuse d'âmes
 step
     #arrowtext Parlez à\n|cRXP_FRIENDLY_Allari la Dévoreuse d'âmes|r
-    .isOnQuest 40607
-    .isNotOnQuest 44184
+    .isOnQuest 40607 --Demons Among Us
+    .isNotOnQuest 44184 --In the Blink of an Eye
     .goto 1,45.81,15.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Allari la Dévoreuse d’âmes|r.
     .complete 40607,1 --1/1 Learn what Allari the Souleater knows
@@ -30502,8 +30500,8 @@ step
     .skipgossipid 44895
 step
     #arrowtext Tuez |cRXP_ENEMY_Felblade Assassins|r et |cRXP_ENEMY_Shards of Hate|r
-    .isOnQuest 40607
-    .isNotOnQuest 44184
+    .isOnQuest 40607 --Demons Among Us
+    .isNotOnQuest 44184 --In the Blink of an Eye
     #loop
     .goto 1,45.62,14.05,30,0
     .goto 1,46.71,14.08,30,0
@@ -30515,45 +30513,45 @@ step
     .mob Assassin gangrelame
 step
     #arrowtext Parler à\n|cRXP_FRIENDLY_Dame Sylvanas Coursevent|r
-    .isOnQuest 40607
-    .isNotOnQuest 44184
+    .isOnQuest 40607 --Demons Among Us
+    .isNotOnQuest 44184 --In the Blink of an Eye
     .goto 1,45.68,15.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à la |cRXP_FRIENDLY_Dame Sylvanas Coursevent|r.
     .turnin 40607 >>Rendez la quête Des démons parmi nous
     .target Dame Sylvanas Coursevent
 step
     #arrowtext Parler à\n|cRXP_FRIENDLY_Dame Sylvanas Coursevent|r
-    .isQuestTurnedIn 40605
-    .isNotOnQuest 44184
+    .isQuestTurnedIn 40605 --Keep Your Friends Close
+    .isNotOnQuest 44184 --In the Blink of an Eye
     .goto 1,45.68,15.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à la |cRXP_FRIENDLY_Dame Sylvanas Coursevent|r.
     .accept 40605 >>Acceptez la quête Surveillance rapprochée
     .target Dame Sylvanas Coursevent
 step
     #arrowtext Parlez à\n|cRXP_FRIENDLY_Elthyn Da'rai|r
-    .isOnQuest 40605
-    .isNotOnQuest 44184
+    .isOnQuest 40605 --Keep Your Friends Close
+    .isNotOnQuest 44184 --In the Blink of an Eye
     .goto 85,52.34,57.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Elthyn Da’rai|r
     .turnin 40605 >>Rendez la quête Surveillance rapprochée
     .target Elthyn Da’rai
 step
-    .isOnQuest 44663
-    .isNotOnQuest 44184
+    .isOnQuest 44663 --In the Blink of an Eye
+    .isNotOnQuest 44184 --In the Blink of an Eye
     #completewith next
     #label Kirin Tor Emissary
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Elthyn Da’rai|r
     .complete 44663,1 --1/1 Talk to the Kirin Tor Emissary to teleport you to Dalaran (Optional)
 step
     #arrowtext Entrez dans la Salle des portails
-    .isOnQuest 44663
-    .isNotOnQuest 44184
+    .isOnQuest 44663 --In the Blink of an Eye
+    .isNotOnQuest 44184 --In the Blink of an Eye
     #completewith Kirin Tor Emissary
     .goto 85,52.85,90.57,10 >>Entrez dans la Salle des Portails
 step
     #arrowtext Parlez à\n|cRXP_FRIENDLY_Elthyn Da'rai|r
-    .isOnQuest 44663
-    .isNotOnQuest 44184
+    .isOnQuest 44663 --In the Blink of an Eye
+    .isNotOnQuest 44184 --In the Blink of an Eye
     #requires Kirin Tor Emissary
     .goto 85,54.82,89.78,8,0
     .goto 85,54.75,86.91,8,0
@@ -30563,8 +30561,8 @@ step
     .complete 44663,1 --1/1 Talk to the Kirin Tor Emissary to teleport you to Dalaran (Optional)
     .skipgossipid 51032
 step
-    .isOnQuest 44663
-    .isNotOnQuest 44184
+    .isOnQuest 44663 --In the Blink of an Eye
+    .isNotOnQuest 44184 --In the Blink of an Eye
     #completewith next
     #label Witnessed
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à l' |cRXP_FRIENDLY_Archimage Khadgar|r.
@@ -30572,15 +30570,15 @@ step
     .target Archimage Khadgar
 step
     #arrowtext Entrez dans le centre de Dalaran
-    .isOnQuest 44663
-    .isNotOnQuest 44184
+    .isOnQuest 44663 --In the Blink of an Eye
+    .isNotOnQuest 44184 --In the Blink of an Eye
     #completewith Witnessed
     .goto 41,52.92,51.9,10,0
     .goto 41,49.58,47.83,30 >>Allez dans le centre de Dalaran
 step
     #arrowtext Parlez à |cRXP_FRIENDLY_Archimage Khadgar|r
-    .isOnQuest 44663
-    .isNotOnQuest 44184
+    .isOnQuest 44663 --In the Blink of an Eye
+    .isNotOnQuest 44184 --In the Blink of an Eye
     #requires Witnessed
     .goto 41,49.81,48.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à l' |cRXP_FRIENDLY_Archimage Khadgar|r au centre de Dalaran.
@@ -30589,8 +30587,8 @@ step
     .skipgossipid 45530
 step
     #arrowtext Parler à\n|cRXP_FRIENDLY_Emissaire Pont-Vétuste|r
-    .isOnQuest 44663
-    .isNotOnQuest 44184
+    .isOnQuest 44663 --In the Blink of an Eye
+    .isNotOnQuest 44184 --In the Blink of an Eye
     #label Launch Event 1
     .goto 627,57.59,45.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à l' |cRXP_FRIENDLY_Emissaire Pont-Vétuste|r
@@ -30598,7 +30596,7 @@ step
     .target Emissaire Pont-Vétuste
 step
     #arrowtext Parler à\n|cRXP_FRIENDLY_Emissaire Pont-Vétuste|r
-    .isOnQuest 44184
+    .isOnQuest 44184 --In the Blink of an Eye
     .goto 627,57.60,45.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à l' |cRXP_FRIENDLY_Emissaire Pont-Vétuste|r
     .turnin 44184 >>Rendez la quête D’un battement de cil
