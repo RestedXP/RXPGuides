@@ -147,7 +147,7 @@ step
     .countdown 2 >>1
 step
     .zoneskip 1409,1
-    .isQuestAvailable 55122
+    .isQuestAvailable 55122 --Murloc Mania
     +立即达到等级 10 并跳过流放者离岛，通过选择 |cRXP_WARN_下面的指南|r
     *|cRXP_WARN_如果你想继续流放者离岛，请不要使用此指南|r。
     .clicknext RestedXP Speed Leveling\a) No House Skip >>点击此处查看指南
@@ -1996,9 +1996,9 @@ step
 step
     #arrowtext 点击\n|cRXP_PICK_传送门|r
     .goto 2352,57.44,26.64
-    -- .zoneskip 2352,1
+    .zoneskip 2352,1
     .zone 84 >>点击|cRXP_PICK_传送门|r
-    -- .zoneskip 85
+    .zoneskip 85
 step
     #arrowtext 点击\n|cRXP_PICK_传送门|r
     .goto 2351,53.93,49.4
@@ -2392,7 +2392,7 @@ step
 step
     #arrowtext |cFFFCDC00使用宏|r
     #requires Dark Rider of Acherus
-    .isOnQuest 12687
+    .isOnQuest 12687 --Into the Realm of Shadows
     .goto 124,51.28,42.46,60,0
     .goto 124,51.44,39.07,30,0
     .goto 124,52.94,37.23
@@ -2553,11 +2553,11 @@ step
 step
     #arrowtext 踏上传送器
     #requires Victory At Death's Breach!
-    .isOnQuest 12701
+    .isOnQuest 12701 --Massacre At Light's Point
     .goto 124,50.53,33.42,5 >>站在传送装置上
 step
     #arrowtext 点击\n|cRXP_PICK_狮鹫|r
-    .isOnQuest 12701
+    .isOnQuest 12701 --Massacre At Light's Point
     .goto 124,52.08,35.04,-1
     .goto 124,50.97,36.17,-1
     .cast 54567 >>点击 |cRXP_PICK_狮鹫|r
@@ -3290,7 +3290,7 @@ step << Horde BloodElf
     #completewith BloodElfS2
     .goto 124,54.46,83.03,5 >>离开房屋
 step << Horde BloodElf
-    #arrowtext 与\n|cRXP_FRIENDLY_骑士团指挥官普雷菲斯特|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_骑士团指挥官普雷菲斯特|r 对话
     #requires BloodElfS2
     .goto 124,52.94,81.54
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_骑士团指挥官普雷菲斯特|r对话
@@ -3326,7 +3326,7 @@ step << Horde Orc
     #completewith OrcS2
     .goto 124,53.47,84.18,5 >>离开房屋
 step << Horde Orc
-    #arrowtext 与\n|cRXP_FRIENDLY_骑士团指挥官普雷菲斯特|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_骑士团指挥官普雷菲斯特|r 对话
     #requires OrcS2
     .goto 124,52.94,81.54
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_骑士团指挥官普雷菲斯特|r对话
@@ -3362,7 +3362,7 @@ step << Horde Undead
     #completewith UndeadS2
     .goto 124,53.47,84.18,5 >>离开房屋
 step << Horde Undead
-    #arrowtext 与\n|cRXP_FRIENDLY_骑士团指挥官普雷菲斯特|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_骑士团指挥官普雷菲斯特|r 对话
     #requires UndeadS2
     .goto 124,52.94,81.54
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_骑士团指挥官普雷菲斯特|r对话
@@ -3398,7 +3398,7 @@ step << Horde Human
     #completewith TrollS2
     .goto 124,53.47,84.18,5 >>离开房屋
 step << Horde Troll
-    #arrowtext 与\n|cRXP_FRIENDLY_骑士团指挥官普雷菲斯特|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_骑士团指挥官普雷菲斯特|r 对话
     #requires TrollS2
     .goto 124,52.94,81.54
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_骑士团指挥官普雷菲斯特|r对话
@@ -3817,7 +3817,7 @@ step << Alliance
     .turnin 13188 >>交任务 王者之城
     .target  安度因·乌瑞恩
 step << Alliance
-    #arrowtext 点击\n|cRXP_PICK_传送门前往暴风城|r
+    #arrowtext 点击\n|cRXP_PICK_传送门 至暴风城|r
     #completewith Where Kings Walk
     .goto 23,83.65,51.28
     .zone 37 >>|TInterface/cursor/crosshair/interact.blp:20|t点击在 |cRXP_PICK_到暴风城的传送门|r。
@@ -3829,7 +3829,7 @@ step << Alliance
     .turnin 13188 >>交任务 王者之城
     .target 安度因·乌瑞恩
 step << Alliance
-    #include RestedXP 快速升级\a) GC 克罗米时间 普通
+    #include RestedXP 快速升级\a) GC Chromie Time Normal
 step << Horde
     #completewith next
     #label Saurfang's Blessing
@@ -3838,7 +3838,7 @@ step << Horde
     .goto 85,48.53,70.71
     .target 萨鲁法尔大王
 step << Horde
-    #arrowtext 点击\n|cRXP_PICK_传送门 前往 奥格瑞玛|r
+    #arrowtext 点击\n|cRXP_PICK_传送门 至奥格瑞玛|r
     #completewith Saurfang's Blessing
     .goto 23,84.56,50.45
     .zone 1 >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_通往奥格瑞玛的传送门|r。
@@ -3945,7 +3945,7 @@ step << Alliance
     .accept 40519 >>接受任务 军团再临：军团回归
     .choose 1851120
 step << Alliance
-    #include RestedXP 快速升级\a) GC 克罗米时间 普通
+    #include RestedXP 快速升级\a) GC Chromie Time Normal
 step << Horde
     #arrowtext 与 |cRXP_FRIENDLY_克罗米|r 对话
     .goto 85,40.82,80.13
@@ -4039,7 +4039,7 @@ step
     .cast 188501 >>在路径点位置使用|T1247266:0|t[幽灵视觉] |cRXP_WARN_跳过剧情表演|r。
     .usespell 188501
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_凯恩·日怒|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_凯恩·日怒|r 对话
     #requires The Invasion Begins
     .goto 672,22.07,55.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_凯恩·日怒|r对话。
@@ -4118,7 +4118,7 @@ step
     #title |cFFFCDC00跟随箭头|r
     .goto 672,33.94,70.05,90 >>|cRXP_WARN_如果你拿到了水晶|r，|cRXP_WARN_狂按|r |T1247261:0|t[邪能冲撞] |cRXP_WARN_来移动|r。
 step
-    #arrowtext 点击\n|cRXP_PICK_Legion 传送门|r
+    #arrowtext 点击 |cRXP_PICK_Legion 传送门|r
     #requires Find Allari to the southeast
     .goto 672,33.94,70.05
     >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_军团传送门|r。
@@ -4201,7 +4201,7 @@ step
     .skipgossipid 45047
     .target 灰舌秘术师
 step
-    #arrowtext 点击\n|cRXP_PICK_Legion 传送门|r
+    #arrowtext 点击 |cRXP_PICK_Legion 传送门|r
     .goto 672,43.75,72.07
     >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_军团传送门|r。
     .complete 40379,2 --1/1 Coilskar forces
@@ -4323,7 +4323,7 @@ step
     .skipgossipid 45048
     .skipgossipid 45101
 step
-    #arrowtext 点击\n|cRXP_PICK_Legion 传送门|r
+    #arrowtext 点击 |cRXP_PICK_Legion 传送门|r
     #label Shivarra forces
     .goto 672,40.33,38.41
     >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_军团传送门|r。
@@ -4472,7 +4472,7 @@ step
     .accept 38819 >>接受任务 大军压境
     .target 赛娅娜·夜刃
 step
-    #arrowtext 与 |cRXP_FRIENDLY_食魂者阿莱利|r 对话
+    #arrowtext 与\n|cRXP_FRIENDLY_食魂者阿莱利|r 对话
     .goto 672,60.52,44.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_食魂者阿莱利|r对话。
     .accept 38725 >>接受任务 深入邪污产床
@@ -4495,7 +4495,7 @@ step
     >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_旗帜|r。
     .complete 38727,1 --1/1 Doom Fortress Devastator
 step
-    #arrowtext 点击\n|cRXP_PICK_旗帜|r
+    #arrowtext 点击 |cRXP_PICK_旗帜|r
     #completewith Doom Fortress Devastator
     .goto 672,69.28,48.78
     .cast 6477 >>点击 |cRXP_PICK_旗帜|r
@@ -4514,7 +4514,7 @@ step
     >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_旗帜|r。
     .complete 38727,2 --1/1 Forge of Corruption Devastator
 step
-    #arrowtext 点击\n|cRXP_PICK_旗帜|r
+    #arrowtext 点击 |cRXP_PICK_旗帜|r
     #requires Doom Fortress Devastator
     #completewith Corruption Devastator
     .goto 672,75.01,41.07
@@ -4573,7 +4573,7 @@ step
     >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_旗帜|r。
     .complete 38727,3 --1/1 Soul Engine Devastator
 step
-    #arrowtext 点击\n|cRXP_PICK_旗帜|r
+    #arrowtext 点击 |cRXP_PICK_旗帜|r
     #requires Soul Engine Devastator1
     #completewith Soul Engine Devastator2
     .goto 672,66.42,30.41
@@ -4629,7 +4629,7 @@ step
     .target 凯恩·日怒
 step
     #arrowtext 与 |cRXP_FRIENDLY_NPCs|r 对话
-    .isOnQuest 39516
+    .isOnQuest 39516 --Cry Havoc and Let Slip the Illidari!
     .goto 672,60.52,44.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_NPC|r们对话。
     .complete 39516,4 --1/1 Kor'vas Bloodthorn taught
@@ -4646,7 +4646,7 @@ step
     .target 赛娅娜·夜刃
 step
     #arrowtext 与 |cRXP_FRIENDLY_曼瑟瑞尔·暗星|r 对话
-    .isOnQuest 39516
+    .isOnQuest 39516 --Cry Havoc and Let Slip the Illidari!
     .goto 672,60.25,44.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_曼瑟瑞尔·暗星|r 对话
     .complete 39516,5 --1/1 Mannethrel taught
@@ -4654,7 +4654,7 @@ step
     .target 曼瑟瑞尔·暗星
 step
     #arrowtext 与 |cRXP_FRIENDLY_NPCs|r 对话
-    .isOnQuest 39515
+    .isOnQuest 39515 --Vengeance Will Be Mine!
     .goto 672,60.52,44.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_NPC|r们对话。
     .complete 39515,4 --1/1 Kor'vas Bloodthorn taught
@@ -4671,7 +4671,7 @@ step
     .target 赛娅娜·夜刃
 step
     #arrowtext 与 |cRXP_FRIENDLY_曼瑟瑞尔·暗星|r 对话
-    .isOnQuest 39515
+    .isOnQuest 39515 --Vengeance Will Be Mine!
     .goto 672,60.25,44.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_曼瑟瑞尔·暗星|r 对话
     .complete 39515,5 --1/1 Mannethrel taught
@@ -4739,7 +4739,7 @@ step
     #title |cFFFCDC00跟随箭头|r
     .complete 38728,2 --1/1 Find the way downstairs
 step
-    #arrowtext 与 |cRXP_FRIENDLY_凯恩·日怒|r 对话
+    #arrowtext 与\n|cRXP_FRIENDLY_凯恩·日怒|r 对话
     .goto 672,69.86,37.9
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与楼下的|cRXP_FRIENDLY_凯恩·日怒|r对话。
     .turnin 38728 >>交任务 钥石
@@ -4780,7 +4780,7 @@ step
     .turnin 38672 >>交任务 生死逃亡
     .timer 8,RP
 step
-    #arrowtext 与 |cRXP_FRIENDLY_凯恩·日怒|r 对话
+    #arrowtext 与\n|cRXP_FRIENDLY_凯恩·日怒|r 对话
     .goto 677,74.47,35.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_凯恩·日怒|r对话。
     .accept 38690 >>接受任务 伊利达雷的崛起
@@ -4802,7 +4802,7 @@ step
     .complete 38689,1 --100/100 Fel Energy regained
     .mob Savage 追猎者
 step
-    #arrowtext 点击\n|cRXP_PICK_看守者牢笼|r
+    #arrowtext 点击\n|cRXP_PICK_Warden Cell|r
     .goto 677,75.04,39.27
     >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_守望者牢笼|r。
     .complete 38690,1,1 --8/8 Imprisoned Illidari freed
@@ -4835,7 +4835,7 @@ step
     >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_守望者牢笼|r， |cRXP_WARN_它在下方|r。
     .complete 38690,1,4 --8/8 Imprisoned Illidari freed
 step
-    #arrowtext 点击 |cRXP_PICK_Warden Cell|r
+    #arrowtext 点击\n|cRXP_PICK_Warden Cell|r
     .goto 677,63.97,35.99,10,0
     .goto 677,63.14,33.76
     >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_守望者牢笼|r。
@@ -4849,18 +4849,18 @@ step
     #completewith IllidariCage2
     .goto 677,64.32,32.26,5 >>使用二段跳跳上平台边缘。
 step
-    #arrowtext 点击 |cRXP_PICK_Warden Cell|r
+    #arrowtext 点击\n|cRXP_PICK_Warden Cell|r
     #requires IllidariCage2
     .goto 677,66.05,31.96
     >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_守望者牢笼|r。
     .complete 38690,1,6 --8/8 Imprisoned Illidari freed
 step
-    #arrowtext 点击 |cRXP_PICK_Warden Cell|r
+    #arrowtext 点击\n|cRXP_PICK_Warden Cell|r
     .goto 677,70.75,27.57
     >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_守望者牢笼|r。
     .complete 38690,1,7 --8/8 Imprisoned Illidari freed
 step
-    #arrowtext 点击 |cRXP_PICK_Warden Cell|r
+    #arrowtext 点击\n|cRXP_PICK_Warden Cell|r
     #label IllidariLastCage
     .goto 677,72.08,31.92
     >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_守望者牢笼|r。
@@ -4917,14 +4917,14 @@ step
     .target 受难者奥图里斯
     .target 凯恩·日怒
 step
-    #arrowtext 与 |cRXP_FRIENDLY_玛维·影歌|r 对话
+    #arrowtext 与\n|cRXP_FRIENDLY_玛维·影歌|r 对话
     .goto 677,49.46,49.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_玛维·影歌|r对话。
     .acceptmultiple 38723,40253 >>接受任务 阻止古尔丹！
     .target 玛维·影歌
 step
     #arrowtext |cFFFCDC00使用宏|r
-    .isOnQuest 38723
+    .isOnQuest 38723 --Stop Gul'dan!
     .goto 677,49.92,76.65
     >>击杀 |cRXP_ENEMY_库拉什和斯勒基|r
     *|cRXP_WARN_他们共享生命值|r。
@@ -4935,7 +4935,7 @@ step
     .mob 斯勒基
 step
     #arrowtext |cFFFCDC00使用宏|r
-    .isOnQuest 40253
+    .isOnQuest 40253 --Stop Gul'dan!
     .goto 677,49.92,76.65
     >>击杀 |cRXP_ENEMY_库拉什和斯勒基|r
     *|cRXP_WARN_他们共享生命值|r。
@@ -4945,21 +4945,21 @@ step
     .mob 粉碎者
     .mob 重锤
 step
-    #arrowtext 与 |cRXP_FRIENDLY_凯恩·日怒|r 对话
-    .isQuestComplete 38723
+    #arrowtext 与\n|cRXP_FRIENDLY_凯恩·日怒|r 对话
+    .isQuestComplete 38723 --Stop Gul'dan!
     .goto 677,50.75,72.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_凯恩·日怒|r对话。
     .turnin 38723 >>交任务 阻止古尔丹！
     .target 凯恩·日怒
 step
-    #arrowtext 与 |cRXP_FRIENDLY_凯恩·日怒|r 对话
-    .isQuestComplete 40253
+    #arrowtext 与\n|cRXP_FRIENDLY_凯恩·日怒|r 对话
+    .isQuestComplete 40253 --Stop Gul'dan!
     .goto 677,50.75,72.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_凯恩·日怒|r对话。
     .turnin 40253 >>交任务 阻止古尔丹！
     .target 凯恩·日怒
 step
-    #arrowtext 与 |cRXP_FRIENDLY_凯恩·日怒|r 对话
+    #arrowtext 与\n|cRXP_FRIENDLY_凯恩·日怒|r 对话
     .goto 677,50.75,72.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_凯恩·日怒|r对话。
     .accept 39682 >>接受任务 侠盗蝙蝠手
@@ -4973,7 +4973,7 @@ step
     .mob Kethrazor
 step
     #arrowtext 跟随箭头
-    .isOnQuest 39742
+    .isOnQuest 39742 --Vault of the Wardens
     .goto 677,49.76,37.36,20,0
     .goto 677,43.61,29.01,15,0
     .goto 677,54.39,28.65,15,0
@@ -5018,7 +5018,7 @@ step
     .goto 678,41.12,47.17
     .target 考瓦斯·血棘
 step
-    #arrowtext 与 |cRXP_FRIENDLY_食魂者阿莱利|r 对话
+    #arrowtext 与\n|cRXP_FRIENDLY_食魂者阿莱利|r 对话
     .goto 678,41.12,47.24
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_食魂者阿莱利|r对话。
     .acceptmultiple 39683,40254 >>接受任务 战火锤炼
@@ -5027,7 +5027,7 @@ step
     #arrowtext |cFFFCDC00使用宏|r
     #completewith next
     #label Immolanth1
-    .isOnQuest 39683
+    .isOnQuest 39683 --Forged in Fire
     .goto 678,46.75,36.35,25,0
     >>击杀|cRXP_ENEMY_伊莫拉斯|r。
     *|cRXP_WARN_在他死后请立即使用“主动物品框”里的宏|r。
@@ -5037,12 +5037,12 @@ step
 step
     #arrowtext 跟随箭头
     #completewith Immolanth1
-    .isOnQuest 39683
+    .isOnQuest 39683 --Forged in Fire
     .goto 678,46.7,17.8,130 >>跟随箭头
 step
     #arrowtext |cFFFCDC00使用宏|r
     #requires Immolanth
-    .isOnQuest 39683
+    .isOnQuest 39683 --Forged in Fire
     .goto 678,46.7,17.8
     >>击杀|cRXP_ENEMY_伊莫拉斯|r。
     *|cRXP_WARN_在他死后请立即使用“主动物品框”里的宏|r。
@@ -5053,7 +5053,7 @@ step
     #completewith next
     #label Immolanth2
     #title |cFFFCDC00使用宏|r
-    .isOnQuest 40254
+    .isOnQuest 40254 --Forged in Fire
     .goto 678,46.75,36.35,25,0
     >>击杀|cRXP_ENEMY_伊莫拉斯|r。
     *|cRXP_WARN_在他死后请立即使用“主动物品框”里的宏|r。
@@ -5063,12 +5063,12 @@ step
 step
     #arrowtext 跟随箭头
     #completewith Immolanth2
-    .isOnQuest 40254
+    .isOnQuest 40254 --Forged in Fire
     .goto 678,46.7,17.8,130 >>跟随箭头
 step
     #arrowtext |cFFFCDC00使用宏|r
     #requires Immolanth2
-    .isOnQuest 40254
+    .isOnQuest 40254 --Forged in Fire
     .goto 678,46.7,17.8
     >>击杀|cRXP_ENEMY_伊莫拉斯|r。
     *|cRXP_WARN_在他死后请立即使用“主动物品框”里的宏|r。
@@ -5127,7 +5127,7 @@ step
 step
     #completewith next
     #label Forged in Fire1
-    .isQuestComplete 39683
+    .isQuestComplete 39683 --Forged in Fire
     .goto 678,46.24,71.18,15,0
     .goto 678,44.29,69.46,15,0
     .goto 678,46.75,66.79,15,0
@@ -5141,13 +5141,13 @@ step
     .target 食魂者阿莱利
 step
     #arrowtext 跟随箭头
-    .isQuestComplete 39683
+    .isQuestComplete 39683 --Forged in Fire
     #completewith Forged in Fire1
     .goto 678,41.1,47.2,85 >>跟随箭头
 step
-    #arrowtext 与 |cRXP_FRIENDLY_食魂者阿莱利|r 对话
+    #arrowtext 与\n|cRXP_FRIENDLY_食魂者阿莱利|r 对话
     #requires Forged in Fire1
-    .isQuestComplete 39683
+    .isQuestComplete 39683 --Forged in Fire
     .goto 678,41.1,47.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_食魂者阿莱利|r对话。
     .turnin 39685 >>交任务 冻结时光
@@ -5158,7 +5158,7 @@ step
 step
     #completewith next
     #label Forged in Fire2
-    .isQuestComplete 40254
+    .isQuestComplete 40254 --Forged in Fire
     .goto 678,46.24,71.18,15,0
     .goto 678,44.29,69.46,15,0
     .goto 678,46.75,66.79,15,0
@@ -5172,13 +5172,13 @@ step
     .target 食魂者阿莱利
 step
     #arrowtext 跟随箭头
-    .isQuestComplete 40254
+    .isQuestComplete 40254 --Forged in Fire
     #completewith Forged in Fire2
     .goto 678,41.1,47.2,85 >>跟随箭头
 step
-    #arrowtext 与 |cRXP_FRIENDLY_食魂者阿莱利|r 对话
+    #arrowtext 与\n|cRXP_FRIENDLY_食魂者阿莱利|r 对话
     #requires Forged in Fire2
-    .isQuestComplete 40254
+    .isQuestComplete 40254 --Forged in Fire
     .goto 678,41.1,47.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_食魂者阿莱利|r对话。
     .turnin 39685 >>交任务 冻结时光
@@ -5240,7 +5240,7 @@ step << Horde
     .acceptmultiple 39694,40256 >>接受任务 自由的绊脚石
     .turnin 40373 >>交任务 新的方向
 step << Horde
-    .isOnQuest 40256
+    .isOnQuest 40256 --Between Us and Freedom
     #title |cFFFCDC00使用宏|r
     #completewith next
     #label Bastillax1
@@ -5255,13 +5255,13 @@ step << Horde
     .mob Bastillax
 step << Horde
     #arrowtext 跟随箭头
-    .isOnQuest 40256
+    .isOnQuest 40256 --Between Us and Freedom
     #completewith Bastillax1
     .goto 679,50.34,77.76,35 >>跟随箭头
 step << Horde
     #arrowtext |cFFFCDC00使用宏|r
     #requires Bastillax1
-    .isOnQuest 40256
+    .isOnQuest 40256 --Between Us and Freedom
     .goto 679,50.34,77.76
     >>击杀|cRXP_ENEMY_巴斯提拉克斯|r。
     *|cRXP_WARN_在他死后请立即使用“主动物品框”里的宏|r。
@@ -5273,7 +5273,7 @@ step << Horde
     #completewith next
     #label Bastillax2
     #title |cFFFCDC00使用宏|r
-    .isOnQuest 39694
+    .isOnQuest 39694 --Between Us and Freedom
     .goto 679,26.05,76.91,15,0
     .goto 679,33.56,76.33,15,0
     .goto 679,39.53,74.62,15,0
@@ -5285,13 +5285,13 @@ step << Horde
     .mob Bastillax
 step << Horde
     #arrowtext 跟随箭头
-    .isOnQuest 39694
+    .isOnQuest 39694 --Between Us and Freedom
     #completewith Bastillax2
     .goto 679,50.34,77.76,35 >>跟随箭头
 step << Horde
     #arrowtext |cFFFCDC00使用宏|r
     #requires Bastillax2
-    .isOnQuest 39694
+    .isOnQuest 39694 --Between Us and Freedom
     .goto 679,50.34,77.76
     >>击杀|cRXP_ENEMY_巴斯提拉克斯|r。
     *|cRXP_WARN_在他死后请立即使用“主动物品框”里的宏|r。
@@ -5301,7 +5301,7 @@ step << Horde
 step << Alliance
     #completewith next
     #label Bastillax3
-    .isOnQuest 40255
+    .isOnQuest 40255 --Between Us and Freedom
     .goto 679,26.05,76.91,15,0
     .goto 679,33.56,76.33,15,0
     .goto 679,39.53,74.62,15,0
@@ -5319,7 +5319,7 @@ step << Alliance
 step << Alliance
     #arrowtext |cFFFCDC00使用宏|r
     #requires Bastillax3
-    .isOnQuest 40255
+    .isOnQuest 40255 --Between Us and Freedom
     .goto 679,50.34,77.76
     >>击杀|cRXP_ENEMY_巴斯提拉克斯|r。
     *|cRXP_WARN_在他死后请立即使用“主动物品框”里的宏|r。
@@ -5331,7 +5331,7 @@ step << Alliance
     #completewith next
     #label Bastillax4
     #title |cFFFCDC00使用宏|r
-    .isOnQuest 39688
+    .isOnQuest 39688 --Between Us and Freedom
     .goto 679,26.05,76.91,15,0
     .goto 679,33.56,76.33,15,0
     .goto 679,39.53,74.62,15,0
@@ -5348,7 +5348,7 @@ step << Alliance
 step << Alliance
     #arrowtext |cFFFCDC00使用宏|r
     #requires Bastillax4
-    .isOnQuest 39688
+    .isOnQuest 39688 --Between Us and Freedom
     .goto 679,50.34,77.76
     >>击杀|cRXP_ENEMY_巴斯提拉克斯|r。
     *|cRXP_WARN_在他死后请立即使用“主动物品框”里的宏|r。
@@ -5370,7 +5370,7 @@ step << Alliance
     .goto 679,78.89,80.04,10,0
     .goto 679,78.22,87.79,5 >>二段跳+邪能冲撞，冲上山。这样就能强行让卡德加提前刷新。
 step << Alliance
-    #arrowtext 与 |cRXP_FRIENDLY_受难者奥图里斯|r 对话
+    #arrowtext 与\n|cRXP_FRIENDLY_受难者奥图里斯|r 对话
     #requires Between Us and Freedom1
     .goto 679,83.98,82.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_受难者奥图里斯|r 对话。
@@ -5391,7 +5391,7 @@ step << Horde
     .goto 679,78.89,80.04,10,0
     .goto 679,78.22,87.79,5 >>二段跳+邪能冲撞，冲上山。这样就能强行让卡德加提前刷新。
 step << Horde
-    #arrowtext 与 |cRXP_FRIENDLY_受难者奥图里斯|r 对话
+    #arrowtext 与\n|cRXP_FRIENDLY_受难者奥图里斯|r 对话
     #requires Between Us and Freedom2
     .goto 679,83.98,82.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_受难者奥图里斯|r 对话。
@@ -5469,7 +5469,7 @@ step << Alliance
     .accept 44473 >>接受任务 联盟的武器
     .target 安度因·乌瑞恩
 step << Alliance
-    #include RestedXP 快速升级\a) GC 克罗米时间 普通@CallBoardStart3-CallBoardEnd
+    #include RestedXP 快速升级\a) GC Chromie Time Normal@CallBoardStart3-CallBoardEnd
 -- step << Alliance
 --     #completewith next
 --     #label Weapon of the Alliance
@@ -5491,7 +5491,7 @@ step << Alliance
     .target 艾勒里奥·刃舞
     .accept 44663 >>接受任务 眨眼之间
 step << Alliance
-    #arrowtext 与 |cRXP_FRIENDLY_肯瑞托使者|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_肯瑞托大使|r 对话
     .goto 84,49.47,86.79,10,0
     .goto 84,49.01,87.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_肯瑞托大使|r 对话
@@ -5520,7 +5520,7 @@ step << Horde
     .skipgossipid 45115
     .target Saurfang
 step << Horde
-    #arrowtext 与 |cRXP_FRIENDLY_食魂者阿莱利|r 对话
+    #arrowtext 与\n|cRXP_FRIENDLY_食魂者阿莱利|r 对话
     .goto 1,45.8,15.1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_食魂者阿莱利|r对话。
     .turnin 40976 >>交任务 大酋长的接见
@@ -5532,14 +5532,14 @@ step << Horde
     .complete 40982,1 --1/1 Spectral Sight used
     .usespell 188501
 step << Horde
-    #arrowtext 与 |cRXP_FRIENDLY_食魂者阿莱利|r 对话
+    #arrowtext 与\n|cRXP_FRIENDLY_食魂者阿莱利|r 对话
     .goto 1,45.8,15.1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_食魂者阿莱利|r对话。
     .turnin 40982 >>交任务 洞察视觉
     .accept 40983 >>接受任务 恶魔四伏
     .target 食魂者阿莱利
 step << Horde
-    #arrowtext 与 |cRXP_FRIENDLY_希尔瓦娜斯·风行者|r 对话
+    #arrowtext 与\n|cRXP_FRIENDLY_希尔瓦娜斯·风行者|r 对话
     .goto 1,45.7,15.9
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_希尔瓦娜斯·风行者|r 对话。
     .complete 40983,1 --1/1 Warn Warchief Sylvanas
@@ -5557,14 +5557,14 @@ step << Horde
     .mob 魔刃刺客
     .mob 憎恨碎片
 step << Horde
-    #arrowtext 与 |cRXP_FRIENDLY_希尔瓦娜斯·风行者|r 对话
+    #arrowtext 与\n|cRXP_FRIENDLY_希尔瓦娜斯·风行者|r 对话
     .goto 1,45.68,15.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_希尔瓦娜斯·风行者|r 对话。
     .turnin 40983 >>交任务 恶魔四伏
     .accept 41002 >>接受任务 部落的武器
     .target 希尔瓦娜斯·风行者
 step << Horde
-    #arrowtext 与 |cRXP_FRIENDLY_艾尔西·达莱|r 对话
+    #arrowtext 与艾尔西·达莱对话\n|cRXP_FRIENDLY_Elthyn Da'rai|r
     .goto 85,52.62,56.09
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾尔西·达莱|r 对话
     .turnin 41002 >>交任务 部落的武器
@@ -5604,7 +5604,7 @@ step << !Evoker Alliance
     .accept 85026 >>接受任务 传奇诞生之处
     .target 克罗米
 step << !Evoker Horde
-    #arrowtext |cFFFCDC00下跳；空格滑翔|r
+    #arrowtext |cFFFCDC00向下跳跃；按空格滑翔|r
     .goto 2373,43.81,81.09
     >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_通往奥格瑞玛的传送门|r
     .complete 84424,3 --1/1 Use the Portal to Orgrimmar
@@ -5631,7 +5631,7 @@ step << !Evoker
     .skipgossipid 51901
     .target 克罗米
 step << !Evoker Alliance
-    #include RestedXP 快速升级\a) GC 克罗米时间 普通
+    #include RestedXP 快速升级\a) GC Chromie Time Normal
 step << !Evoker Horde
     #arrowtext 与 |cRXP_FRIENDLY_克罗米|r 对话
     .goto 85,40.834,80.155
@@ -5798,7 +5798,7 @@ step << Evoker
     .timer 8.5,RP
     .target Azurathel
 step << Evoker
-    #arrowtext 与\n|cRXP_FRIENDLY_Scalecommander 阿苏拉泰|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_Scalecommander 阿苏拉泰|r 对话
     #label TheForbiddenReachAwakenDracthyr
     .goto 2109,32.92,81.57
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_鳞长阿苏拉泰|r 对话。
@@ -5885,7 +5885,7 @@ step << Evoker
     >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_箱子|r。
     .complete 64865,2 --1/1 Crate of Warscales
 step << Evoker
-    #arrowtext 点击\n|cRXP_PICK_Weapon Rack|r
+    #arrowtext 点击 |cRXP_PICK_武器架|r
     .goto 2109,44.98,66.15
     >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_武器架|r。
     .complete 64865,1 --1/1 Stack of Weapons
@@ -5911,7 +5911,7 @@ step << Evoker
     .turnin 64863 >>交任务 奥术护卫
     .target 德薇希安
 step << Evoker
-    #arrowtext 与\n|cRXP_FRIENDLY_Scalecommander 阿苏拉泰|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_鳞长阿苏拉泰|r 对话
     .goto 2109,46.45,57.07
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_鳞长阿苏拉泰|r 对话。
     .turnin 64865 >>交任务 作战武装
@@ -6005,7 +6005,7 @@ step << Evoker
     >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_信标|r。
     .complete 65615,1 --1/1 Beacon investigated
 step << Evoker
-    #arrowtext 与 |cRXP_FRIENDLY_Scalecommander 鳞长欣戴赛什|r 和 |cRXP_FRIENDLY_Scalecommander 阿苏拉泰|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_鳞长欣戴赛什|r 和 |cRXP_FRIENDLY_鳞长阿苏拉泰|r 对话
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_鳞长欣戴赛什|r 和 |cRXP_FRIENDLY_鳞长阿苏拉泰|r 对话。
     .turnin 64872 >>交任务 内心之火
     .goto 2118,44.40,61.50
@@ -6141,7 +6141,7 @@ step << Evoker
     .skipgossipid 54978
 	.target 鳞长欣戴赛什
 step << Evoker
-    #arrowtext 与\n|cRXP_FRIENDLY_Scalecommander Cindrethresh|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_Scalecommander 鳞长欣戴赛什|r 对话
     .goto 2118,18.81,15.84
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_鳞长欣戴赛什|r 对话。
     .turnin 65060 >>交任务 疗愈者喷口
@@ -6234,7 +6234,7 @@ step << Evoker
     .usespell 361469
     .use 191810 << (Evoker) --Crimson Dracthyr Battlegear Belt
 step << Evoker
-    #arrowtext 在 |cRXP_FRIENDLY_受伤的龙人|r 使用 [Emerald 盛放]
+    #arrowtext 对 |cRXP_FRIENDLY_受伤的龙人|r 使用 [Emerald 盛放]
     .goto 2118,24.94,12.72
     >>对任意|cRXP_FRIENDLY_受伤的龙人|r使用|T4622457:0:0|t[翡翠之花]。
     *|TInterface/cursor/crosshair/interact.blp:17|t点击 |cRXP_PICK_石头|r 以重置其冷却时间。
@@ -6288,7 +6288,7 @@ step << Evoker
     #title |cFFFCDC00使用额外动作按钮|r
     .goto 2110,39.43,28.74,50 >>跟随箭头
 step << Evoker
-    #arrowtext |cFFFCDC00Use ExtraActionButton|r
+    #arrowtext |cFFFCDC00使用 额外动作按钮|r
     #requires Horn signets1
     .goto 2110,39.43,28.74
     >>|TInterface/cursor/crosshair/interact.blp:20|t点击 |cRXP_PICK_卡崔纳沙|r。
@@ -6296,7 +6296,7 @@ step << Evoker
     .use 191729
     .target Katrinasa
 step << Evoker
-    #arrowtext |cFFFCDC00Use ExtraActionButton|r
+    #arrowtext |cFFFCDC00使用 额外动作按钮|r
     .goto 2110,34.49,38.6
     >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_雷瑟纳什|r
     .complete 66324,1,2 --3/3 Horn signets collected
@@ -6343,7 +6343,7 @@ step << Evoker
     .goto 2110,32.46,40.74
     .subzone 13809 >>踏入毒气云，等待进度条读满100%即可传送。
 step << Evoker
-    #arrowtext 与 |cRXP_FRIENDLY_Scalecommander 薇莉迪亚|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_鳞长薇莉迪亚|r 对话
     #requires Gascloud
     .goto 2118,20.07,19.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_鳞长薇莉迪亚|r 对话。
@@ -6430,13 +6430,13 @@ step << Evoker
     .target 德薇希安
     .target 鳞长阿苏拉泰
 step << Evoker
-    #arrowtext 使用 [ExtraActionButton]
+    #arrowtext 使用[ExtraActionButton]
     .goto 2118,81.32,56.81
     >>在路径点位置使用[额外动作按钮]。
     .complete 65052,1 --1/1 Attack on Ekrazathal signaled
     .use 191811 << (Evoker) --Crimson Dracthyr Battlegear Bracers
 step << Evoker
-    #arrowtext 与\n|cRXP_FRIENDLY_Scalecommander 萨卡雷斯|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_Scalecommander 萨卡雷斯|r（鳞长萨卡雷斯）对话
     .goto 2118,81.22,53.96
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_鳞长萨卡雷斯|r 对话。
 	.target 鳞长萨卡雷斯
@@ -6456,7 +6456,7 @@ step << Evoker
     .cooldown item,6948,>0,1
     .use 6948
 step << Evoker
-    #arrowtext 与 |cRXP_FRIENDLY_鳞长安波莎|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_Scalecommander 安波莎|r（鳞长安波莎）对话
     #requires Rally to Emberthal
     .goto 2118,44.22,61.17
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_鳞长安波莎|r对话。
@@ -6464,7 +6464,7 @@ step << Evoker
 	.target 鳞长安波莎
     .use 194333 << (Evoker) --Ekrazathal Colored Fang
 step << Evoker
-    #arrowtext 与 |cRXP_FRIENDLY_鳞长安波莎|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_Scalecommander 安波莎|r（鳞长安波莎）对话
     .goto 2118,44.83,57.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_鳞长安波莎|r对话。
     .accept 65701 >>接受任务 恩护，增辉或湮灭
@@ -6475,14 +6475,14 @@ step << Evoker
     .complete 65701,1 --1/1 Activate a Talent Spec
     .skipgossipid 55597
 step << Evoker
-    #arrowtext 与 |cRXP_FRIENDLY_鳞长安波莎|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_Scalecommander 安波莎|r（鳞长安波莎）对话
     .goto 2118,44.83,57.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_鳞长安波莎|r对话。
     .turnin 65701 >>交任务 恩护，增辉或湮灭
     .accept 65084 >>接受任务 霜石宝库
 	.target 鳞长安波莎
 step << Evoker
-    #arrowtext 与\n|cRXP_FRIENDLY_Scalecommander 萨卡雷斯|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_Scalecommander 萨卡雷斯|r（鳞长萨卡雷斯）对话
     .goto 2118,56.72,28.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_鳞长萨卡雷斯|r 对话。
     .turnin 65084 >>交任务 霜石宝库
@@ -6511,7 +6511,7 @@ step << Evoker
     #completewith Final Orders
     +在接下来的新手村区域都无法上马。
 step << Evoker
-    #arrowtext 与 |cRXP_FRIENDLY_鳞长安波莎|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_Scalecommander 安波莎|r（鳞长安波莎）对话
     .goto 2118,54.10,32.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_鳞长安波莎|r对话。
 	.target 鳞长安波莎
@@ -6567,7 +6567,7 @@ step << Evoker
     .usespell 361469
     .target 艾比西安
 step << Evoker
-    #arrowtext 与 |cRXP_FRIENDLY_鳞长安波莎|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_Scalecommander 安波莎|r（鳞长安波莎）对话
     .goto 2118,41.68,44.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_鳞长安波莎|r对话。
 	.target 鳞长安波莎
@@ -6611,14 +6611,14 @@ step << Evoker
     .skipgossipid 51850
 	.target Sarkareth
 step << Evoker
-    #arrowtext 与\n|cRXP_FRIENDLY_Scalecommander Cindrethresh|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_Scalecommander Cindrethresh|r（鳞长欣戴赛什）对话
     #label Final Orders
     .goto 2118,44.64,55.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_鳞长欣戴赛什|r 对话。
     .turnin 65100 >>交任务 终末军令
     .target 鳞长欣戴赛什
 step << Evoker
-    #arrowtext 与\n|cRXP_FRIENDLY_Scalecommander 阿苏拉泰|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_Scalecommander 阿苏拉泰|r（鳞长阿苏拉泰）对话
     #label Final Orders
     .goto 2118,46.95,55.79
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_鳞长阿苏拉泰|r 对话。
@@ -6636,7 +6636,7 @@ step << Alliance Evoker
 	.target 拉希奥
     .use 193916 << (Evoker) (Alliance Evoker) --Dragonkin Signet Ring
 step << Alliance Evoker
-    #arrowtext 与\n|cRXP_FRIENDLY_Scalecommander 阿苏拉泰|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_Scalecommander 阿苏拉泰|r（鳞长阿苏拉泰）对话
     #label Draconic Connections
     .goto 37,32.26,49.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_鳞长阿苏拉泰|r 对话。
@@ -6700,13 +6700,13 @@ step << Alliance Evoker
     >>进入大使馆
     .complete 66513,3 --Visit the Embassy
 step << Alliance Evoker
-    #arrowtext 与\n|cRXP_FRIENDLY_Scalecommander 阿苏拉泰|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_Scalecommander 阿苏拉泰|r（鳞长阿苏拉泰）对话
     .goto 84,79.93,26.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_鳞长阿苏拉泰|r 对话。
     .turnin 66513 >>交任务 探路假期
 	.target 鳞长阿苏拉泰
 step << Alliance Evoker
-    #include RestedXP 快速升级\a) GC 克罗米时间 普通
+    #include RestedXP 快速升级\a) GC Chromie Time Normal
 -- step << Alliance Evoker
 --     .goto 84,79.84,27.05
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wrathion|r.
@@ -6810,7 +6810,7 @@ step << Horde Evoker
     .skipgossipid 51902
     .target 克罗米
 step << Horde Evoker
-    #arrowtext 与\n|cRXP_FRIENDLY_Scalecommander Cindrethresh|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_Scalecommander Cindrethresh|r（鳞长欣戴赛什）对话
     .goto 85,44.02,38.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_鳞长欣戴赛什|r 对话。
     .turnin 66534 >>交任务 探路假期
@@ -6824,20 +6824,20 @@ step << Horde Evoker
     .target 艾比西安
     .skipgossipid 55582
 step << Horde Evoker
-    #arrowtext 与\n|cRXP_FRIENDLY_Ebyssian|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_Ebyssian|r（艾比西安）对话
     .goto 85,44.08,37.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_艾比西安|r 对话。
     .turnin 65437 >>交任务 守护巨龙之邀
     .target 艾比西安
 step << Horde Evoker
-    #arrowtext 与\n|cRXP_FRIENDLY_Ebyssian|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_Ebyssian|r（艾比西安）对话
     .goto 85,44.06,37.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_艾比西安|r 对话。
     .accept 65613 >>接受任务 龙裔标志造型
     .target 艾比西安
     .skipgossipid 55863
 step << Horde Evoker
-    #arrowtext 与\n|cRXP_FRIENDLY_Ebyssian|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_Ebyssian|r（艾比西安）对话
     .goto 85,44.06,37.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_艾比西安|r 对话。
     .complete 65613,1 --1/1 Ask Ebyssian about Visage Form
@@ -6856,7 +6856,7 @@ step << Horde Evoker
     .complete 65613,3 --1/1 Adopt a Visage Form
     .target 艾比西安
 step << Horde Evoker
-    #arrowtext 与\n|cRXP_FRIENDLY_Ebyssian|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_Ebyssian|r（艾比西安）对话
     .goto 85,44.06,37.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_艾比西安|r 对话。
     .turnin 65613 >>交任务 龙裔标志造型
@@ -6886,7 +6886,7 @@ step
     +如果你想以最快速度升级，请选择流放者离岛作为起始区域。这需要重新创建角色。
     *这对熊猫人来说特别快，因为他们的起始区域持续到17级，不允许骑乘或驭龙术。
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_Master Shang Xi|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_Master Shang Xi|r 对话
     .goto 378,56.67,18.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_尚喜师父|r 对话。
     .accept 30034 >>接受任务 武装训练 << Hunter
@@ -6904,7 +6904,7 @@ step << Hunter
     .complete 30034,1 --1/1 Loot and Equip a Trainee's Crossbow
     .use 73211 --Trainee's Crossbow
 step << Hunter
-    #arrowtext 点击\n|cRXP_PICK_Weapon Rack|r
+    #arrowtext 点击 |cRXP_PICK_Weapon Rack|r（武器架）
     #completewith HunterWeapon
     .goto 378,57.22,19.22
     >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_武器架|r。
@@ -6924,7 +6924,7 @@ step << Mage
     .use 76390 --Trainee's Spellblade
     .use 76392 --Trainee's Hand Fan
 step << Mage
-    #arrowtext 点击\n|cRXP_PICK_Weapon Rack|r
+    #arrowtext 点击 |cRXP_PICK_Weapon Rack|r（武器架）
     #completewith MageWeapon
     .goto 378,57.22,19.22
     >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_武器架|r。
@@ -6945,7 +6945,7 @@ step << Monk
     .complete 30027,1 --Loot and Equip a Trainee's Staff
     .use 73209
 step << Monk
-    #arrowtext 点击\n|cRXP_PICK_Weapon Rack|r
+    #arrowtext 点击 |cRXP_PICK_Weapon Rack|r（武器架）
     #completewith MonkWeapon
     .goto 378,57.22,19.22
     >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_武器架|r。
@@ -6964,7 +6964,7 @@ step << Priest
     .use 76393
     .use 73207
 step << Priest
-    #arrowtext 点击\n|cRXP_PICK_Weapon Rack|r
+    #arrowtext 点击 |cRXP_PICK_Weapon Rack|r（武器架）
     #completewith PriestWeapon
     .goto 378,57.22,19.22
     >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_武器架|r。
@@ -6987,7 +6987,7 @@ step << Shaman
     .use 76391 --Trainee's Axe
     .use 73213 --Trainee's Shield
 step << Shaman
-    #arrowtext 点击\n|cRXP_PICK_Weapon Rack|r
+    #arrowtext 点击 |cRXP_PICK_Weapon Rack|r（武器架）
     #completewith ShamanWeapon
     .goto 378,57.22,19.22
     >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_武器架|r。
@@ -7010,7 +7010,7 @@ step << Warrior
     .use 76391 --Trainee's Axe
     .use 73213 --Trainee's Shield
 step << Warrior
-    #arrowtext 点击\n|cRXP_PICK_Weapon Rack|r
+    #arrowtext 点击 |cRXP_PICK_Weapon Rack|r（武器架）
     #completewith WarriorWeapon
     .goto 378,57.22,19.22
     >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_武器架|r。
@@ -7033,7 +7033,7 @@ step << Rogue
     .use 73208 --Trainee's Dagger (ID 1)
     .use 73212 --Trainee's Dagger (ID 2)
 step << Rogue
-    #arrowtext 点击\n|cRXP_PICK_Weapon Rack|r
+    #arrowtext 点击 |cRXP_PICK_Weapon Rack|r（武器架）
     #completewith RogueWeapon
     .goto 378,57.22,19.22
     >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_武器架|r。
@@ -7048,7 +7048,7 @@ step << Rogue
     .use 73208 --Trainee's Dagger (ID 1)
     .use 73212 --Trainee's Dagger (ID 2)
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_Master Shang Xi|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_Master Shang Xi|r 对话
     .goto 378,56.67,18.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_尚喜师父|r 对话。
     .turnin 30034 >>交任务 武装训练 << Hunter
@@ -7083,7 +7083,7 @@ step
     #completewith Lesson of the Sandy Fist
     .goto 378,56.79,18.77,15 >>跟随箭头
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_Master Shang Xi|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_Master Shang Xi|r 对话
     #requires Lesson of the Sandy Fist
     .goto 378,56.67,18.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_尚喜师父|r对话。
@@ -7117,7 +7117,7 @@ step
     .use 131901 --Initiate's Cuffs
     .use 73215 --Initiate's Bracers
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_Master Shang Xi|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_Master Shang Xi|r 对话
     .goto 378,59.67,19.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_尚喜师父|r 对话。
     .turnin 29524 >>交任务 戒骄
@@ -7137,7 +7137,7 @@ step
     #completewith Edict of Temperance
 	.goto 378,59.95,20.39,10 >>|cRXP_WARN_从第二段楼梯下方的缝隙跳过去，可更快到达顶层|r。
 step
-    #arrowtext 点击\n|cRXP_PICK_旗帜|r
+    #arrowtext 点击 |cRXP_PICK_旗帜|r
     #requires Edict of Temperance
     .goto 378,59.95,20.39
     >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_旗帜|r。
@@ -7159,7 +7159,7 @@ step
 	#completewith Lesson of the Burning Scroll
     .goto 378,59.97,19.3,5 >>|cRXP_WARN_Drop down|r。
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_尚喜师父|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_Master Shang Xi|r 对话
     #requires Lesson of the Burning Scroll
     .goto 378,59.67,19.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_尚喜师父|r 对话。
@@ -7175,7 +7175,7 @@ step
     .complete 29409,1 --1/1 Defeat Jaomin Ro
 	.mob 洛蛟明
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_尚喜师父|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_Master Shang Xi|r 对话
     .goto 378,65.97,22.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_尚喜师父|r 对话。
     .turnin 29409 >>交任务 门徒的挑战
@@ -7194,7 +7194,7 @@ step << Hunter
     .disablecheckbox
 	.target 商人 Lorvo
 step << Hunter
-    #arrowtext 使用[逃脱]
+    #arrowtext 使用 [逃脱]
     #completewith Aysa of the Tushui2
     .goto 378,67.49,14.83
     .cast 781 >>使用|T132294:0|t[逃脱]跳下山峰。
@@ -7398,7 +7398,7 @@ step << !Hunter
     #completewith Ji of the Huojin1
     .goto 378,50.24,21.26,80 >>在旅行中杀死 |cRXP_ENEMY_monsters|r（|cRXP_WARN_if able(class-dependent)|r。
 step << !Hunter
-    #arrowtext 与\n|cRXP_FRIENDLY_季·火掌|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_季·火掌|r 对话
     #requires Ji of the Huojin1
     .goto 378,50.24,21.26
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_季·火掌|r 对话。
@@ -7427,7 +7427,7 @@ step << Hunter
     .usespell 1515
 	.target Corsac Fox
 step << Hunter
-    #arrowtext 与\n|cRXP_FRIENDLY_季·火掌|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_季·火掌|r 对话
     #requires Ji of the Huojin2
     .goto 378,50.24,21.26
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_季·火掌|r 对话。
@@ -7452,7 +7452,7 @@ step
     .mob Fe-Feng Brewthief
     .mob Fe-Feng Leaper
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_季·火掌|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_季·火掌|r 对话
     .goto 378,50.24,21.26
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_季·火掌|r 对话。
     .turnin 29417 >>交任务 火金之道
@@ -7466,7 +7466,7 @@ step
 	>>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_根基|r。
     .complete 29418,1,1 --5/5 Dry Dogwood Root
 step
-    #arrowtext 杀死\n|cRXP_ENEMY_怪物|r
+    #arrowtext 杀死\n|cRXP_ENEMY_monsters|r
     #completewith Dry Dogwood Root
     .goto 378,48.4,29.47,50 >>在旅行中杀死 |cRXP_ENEMY_monsters|r（|cRXP_WARN_if able(class-dependent)|r。
 step
@@ -7531,7 +7531,7 @@ step
 	.target 季·火掌
 	.target 尚义
 step
-    #arrowtext 杀死\n|cRXP_ENEMY_怪物|r
+    #arrowtext 杀死\n|cRXP_ENEMY_monsters|r
     #completewith Fanning the Flames
     .goto 378,50.24,21.26,80 >>在旅行中杀死 |cRXP_ENEMY_monsters|r（|cRXP_WARN_if able(class-dependent)|r。
 step
@@ -7666,7 +7666,7 @@ step
     >>前往火灵燧焰
     .complete 29423,1 --1/1 Bring the Spirit of Fire to the Temple of Five Dawns
 step
-    #arrowtext 杀死\n|cRXP_ENEMY_怪物|r
+    #arrowtext 杀死\n|cRXP_ENEMY_monsters|r
     #completewith Travel to Spirit of Fire
     .goto 378,40.25,25.79,15,0
     .goto 378,41,24.88,15,0
@@ -7894,7 +7894,7 @@ step
     #completewith Finding an Old Friend
     .goto 378,71.93,38.09,30 >>跟随箭头
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_梁老先生|r对话
+    #arrowtext 与\n|cRXP_FRIENDLY_梁老先生|r 对话
     #requires Finding an Old Friend
     .goto 378,70.62,38.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_梁老先生|r 对话。
@@ -7961,7 +7961,7 @@ step << Hunter
     #title |cFFFCDC00跟随箭头|r
     .goto 378,78.9,37.81,65 >>跟随箭头
 step << Hunter
-    #arrowtext 使用[逃脱]
+    #arrowtext 使用 [逃脱]
     #requires Pool of Reflection
     .goto 378,77.54,36.66,10,0
     .goto 378,78.9,37.81
@@ -8009,7 +8009,7 @@ step
     >>|TInterface/cursor/crosshair/interact.blp:20|t点击你的任务日志中的任务完成弹窗。
     .turnin 29678 >>交任务 上古水灵涓流
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_艾莎·云歌|r对话
+    #arrowtext 与\n|cRXP_FRIENDLY_艾莎·云歌|r 对话
     .goto 378,79.82,39.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾莎·云歌|r 对话。
     .accept 29679 >>接受任务 新朋友
@@ -8048,7 +8048,7 @@ step
     #completewith Source of Our Livelihood
     .goto 378,68.89,64.98,90 >>在旅行中杀死 |cRXP_ENEMY_monsters|r（|cRXP_WARN_if able(class-dependent)|r。
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_季·火掌|r对话
+    #arrowtext 与 |cRXP_FRIENDLY_季·火掌|r 对话
     #requires Source of Our Livelihood
     .goto 378,68.89,64.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_季·火掌|r 对话。
@@ -8125,7 +8125,7 @@ step
     .complete 29770,2 --3/3 Stolen Carrot
 	.mob Plump Carrotcruncher
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_高·夏酒|r对话
+    #arrowtext 与\n|cRXP_FRIENDLY_高·夏酒|r 对话
     .goto 378,68.13,66.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_高·夏酒|r 对话。
     .turnin 29770 >>交任务 还能吃！
@@ -8183,7 +8183,7 @@ step
     .use 131912 --Ringing Boots
     .use 74584 --Summer Shoes
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_季·火掌|r对话
+    #arrowtext 与 |cRXP_FRIENDLY_季·火掌|r 对话
     .goto 378,68.89,64.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_季·火掌|r 对话。
     .turnin 29772 >>交任务 锣声震天
@@ -8245,12 +8245,12 @@ step
 	.disablecheckbox
 	.target 尚义
 step
-    #arrowtext |cFFFCDC00屏蔽该货车|r
+    #arrowtext |cFFFCDC00屏蔽货车|r
     #completewith Shen-zin Su
     .goto 378,51.59,48.32,150 >>前往五晨寺。
     .cooldown item,6948,<0,1
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_Master Shang Xi|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_Master Shang Xi|r 对话
     #requires Shen-zin Su
     .goto 378,51.59,48.32
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_尚喜师父|r 对话。
@@ -8273,7 +8273,7 @@ step
     .cooldown item,6948,>0,1
     .use 6948
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_Master Shang Xi|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_Master Shang Xi|r 对话
     #requires Shen-zin Su2
     .goto 378,51.59,48.32
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_尚喜师父|r 对话。
@@ -8306,7 +8306,7 @@ step
     #completewith Breeze Village
     .goto 378,30.97,36.74,80 >>跟随箭头
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_季·火掌|r对话
+    #arrowtext 与 |cRXP_FRIENDLY_季·火掌|r 对话
     #requires Breeze Village
     .goto 378,30.97,36.74
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_季·火掌|r 对话。
@@ -8318,7 +8318,7 @@ step
     .use 131910 --Bracers of the Earth Spirit
     .use 74578 --Bindings of the Earth Spirit
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_乔乔·铁眉|r对话
+    #arrowtext 与\n|cRXP_FRIENDLY_乔乔·铁眉|r 对话
     .goto 378,29.90,39.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔乔·铁眉|r 对话。
     .accept 29783 >>接受任务 比石头更硬
@@ -8479,8 +8479,8 @@ step
     .turnin 29782 >>交任务 比骨头更硬
 	.target 乔乔·铁眉
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_季·火掌|r对话
-    .isOnQuest 29779,29780,29781
+    #arrowtext 与 |cRXP_FRIENDLY_季·火掌|r 对话
+    .isOnQuest 29779,29780,29781 --The Direct Solution; Do No Evil; Monkey Advisory Warning
     .goto 378,30.97,36.74
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_季·火掌|r 对话。
     .turnin 29779 >>交任务 以直报怨
@@ -8510,7 +8510,7 @@ step
     .goto 378,32.9,37.18,5,0
     .goto 378,32.94,35.61,15 >>沿绳索移动。
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_艾莎·云歌|r对话
+    #arrowtext 与\n|cRXP_FRIENDLY_艾莎·云歌|r 对话
     #requires Balanced Perspective
     .goto 378,32.94,35.61
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾莎·云歌|r 对话。
@@ -8591,7 +8591,7 @@ step
     .timer 6.5,RP
 	.mob Zhao-Ren
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_Master Shang Xi|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_Master Shang Xi|r 对话
     .goto 378,29.98,60.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_尚喜师父|r 对话
     .turnin 29786 >>交任务 天空之战
@@ -8636,7 +8636,7 @@ step
     #completewith Passing
     .goto 378,19.46,51.22,80 >>跟随箭头
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_尚喜师父|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_Master Shang Xi|r 对话
     #requires Passing
     .goto 378,19.46,51.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_FRIENDLY_在剧情演出后|r 与 |cRXP_WARN_尚喜师父|r 对话。
@@ -8678,7 +8678,7 @@ step
     .complete 29788,1 --8/8 Thornbranch Scamp slain
 	.mob Thornbranch Scamp
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_尚喜师父|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_Master Shang Xi|r 对话
     .goto 378,19.46,51.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_尚喜师父|r 对话。
     .turnin 29788 >>交任务 不受欢迎的生灵
@@ -8697,7 +8697,7 @@ step
     .goto 378,17.28,50.76
 	.cast 108034 >>食用|T571818:0|t[小甘蔗杆]（10秒增益）
     .timer 10,食物 Buff
-	.itemcount 77272,1
+	.itemcount 77272,1 --Small Sugarcane Stalk
     .use 77272
 step
     #arrowtext 在所在地区等待
@@ -8773,7 +8773,7 @@ step << !Hunter
     .disablecheckbox
 	.target 长老 Shaopai
 step << !Hunter
-    #arrowtext 前往五晨寺
+    #arrowtext 回到五晨寺
     #completewith Bidden to Greatness3
     .goto 378,51.31,48.28,120 >>进入五晨寺
 step << !Hunter
@@ -9004,7 +9004,7 @@ step
     .complete 29794,1,2 --3/3 Injured Sailors rescued
     .target Delora Lionheart
 step
-    #arrowtext 点击\n|cRXP_PICK_受伤的船员|r
+    #arrowtext 点击 |cRXP_PICK_受伤的船员|r
     #requires Sailor1
     #completewith Sailor2
     .goto 378,40.17,87.67,15,0
@@ -9088,7 +9088,7 @@ step
     .complete 29794,1,3 --3/3 Injured Sailors rescued
     .target Delora Lionheart
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_德罗娜·莱因哈特|r 和 |cRXP_FRIENDLY_乔乔·铁眉|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_德罗娜·莱因哈特|r和|cRXP_FRIENDLY_乔乔·铁眉|r对话
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_德罗娜·莱因哈特|r和|cRXP_FRIENDLY_乔乔·铁眉|r对话。
     .turnin 29794 >>交任务 一个都不能少
     .turnin 29797 >>交任务 医疗物资
@@ -9128,7 +9128,7 @@ step
     >>|cRXP_WARN_等待剧情演出|r。
     .complete 30767,1 --1/1 Shen-zin Su's Thorn Removed
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_季·火掌|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_季·火掌|r 对话
     .goto 378,39.30,86.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_季·火掌|r 对话。
     .turnin 30767 >>交任务 孤注一掷
@@ -9154,14 +9154,14 @@ step
     .mob Deepscale 碎尸鸟
     .mob Deepscale 虚空矿洞掠食者
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_季·火掌|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_季·火掌|r 对话
     .goto 378,39.30,86.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_季·火掌|r 对话。
     .turnin 29799 >>交任务 治疗神真子
 	.timer 18,治疗神真子 RP
 	.target 季·火掌
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_季·火掌|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_季·火掌|r 对话
     .goto 378,38.77,86.32
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_季·火掌|r 对话 |cRXP_WARN_after the roleplay|r。
     .accept 29800 >>接受任务 新的盟友
@@ -9180,7 +9180,7 @@ step
     .cooldown item,6948,>0,1
     .use 6948
 step
-    #arrowtext 与 |cRXP_FRIENDLY_Spirit of Shang Xi|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_Shang Xi的精神|r对话
     #requires Turn in New Allies
     .goto 378,51.45,48.28
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_尚喜师父的灵魂|r 对话。
@@ -9237,9 +9237,9 @@ step << Alliance
     .turnin 30987 >>交任务 加入联盟
     .target 安度因·乌瑞恩
 step << Alliance
-    #include RestedXP 快速升级\a) GC 克罗米时间 普通
+    #include RestedXP 快速升级\a) GC Chromie Time Normal
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_季·火掌|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_季·火掌|r 对话
     .zoneskip 1,1
     .goto 1,45.58,12.61
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_季·火掌|r 对话。
@@ -9272,7 +9272,7 @@ step << Horde
     >>|cRXP_WARN_等待剧情演出|r。
     .complete 31013,1 --1/1 Walk with Garrosh Hellscream
 step << Horde
-    #arrowtext 与 |cRXP_FRIENDLY_Garrosh Hellscream|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_加尔鲁什·地狱咆哮|r对话
     .goto 85,48.77,70.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_加尔鲁什·地狱咆哮|r对话
     .turnin 31013 >>交任务 部落之道
@@ -9343,7 +9343,7 @@ step
     #completewith Initiation Day
     .goto 2413,35.26,23.35,85 >>沿坡道向上走
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_经典怀旧服 NPC|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_经典怀旧服 NPC|r对话
     #requires Initiation Day
     .goto 2413,35.26,23.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_戴尼尔|r对话。
@@ -9399,7 +9399,7 @@ step
     .turnin 90958 >>交任务 根系至上
     .target Dalnir
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_奥威娜|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_奥威娜|r对话
     .goto 2413,35.29,23.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_奥威娜|r 对话。
     .accept 90959 >>接受任务 传统职责
@@ -9420,7 +9420,7 @@ step
     .complete 90959,3 --1/1 Outsider rescued
     .mob Vicious Saptor
 step << Alliance
-    #arrowtext 与\n|cRXP_FRIENDLY_奥威娜|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_奥威娜|r对话
     .goto 2413,35.61,27.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_奥威娜|r 对话。
     .complete 90959,4 --1/1 Outsider directed to safety
@@ -9441,7 +9441,7 @@ step
     .turnin 90959 >>交任务 传统职责
     .target 奥威娜
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_哈加尔|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_哈加尔|r对话
     .goto 2413,34.02,26.9
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哈加尔|r 对话。
     .accept 90960 >>接受任务 我的故事，我的传承
@@ -9501,7 +9501,7 @@ step
     >>移动到任务NPC处。
     .complete 90960,5 --1/1 Legacy Stone of the Goddess Guidance inspected
 step
-    #arrowtext 与 |cRXP_FRIENDLY_哈加尔|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_哈加尔|r对话
     .goto 2413,31.92,27.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哈加尔|r 对话
     .complete 90960,6 --1/1 Talk to Hagar
@@ -9513,14 +9513,14 @@ step
     >>|TInterface/cursor/crosshair/interact.blp:20|t|cRXP_PICK_从远处|r点击 |cRXP_WARN_Stone|r。
     .complete 90960,7 --1/1 Legacy Stone painted
 step
-    #arrowtext 与 |cRXP_FRIENDLY_哈加尔|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_哈加尔|r对话
     .goto 2413,31.90,27.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哈加尔|r 对话。
     .turnin 90960 >>交任务 我的故事，我的传承
     .accept 90961 >>接受任务 异域来客
     .target 哈加尔
 step
-    #arrowtext 与 |cRXP_FRIENDLY_哈加尔|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_哈加尔|r对话
     .goto 2413,31.90,27.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哈加尔|r 对话。
     .complete 90961,1 --1/1 Talk to Hagar about the Ceremony
@@ -9533,21 +9533,21 @@ step
     >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_传送门|r
     .complete 90961,2 --1/1 Enter the rootway
 step << Alliance
-    #arrowtext 与 |cRXP_FRIENDLY_穆加德大使|r 对话
+    #arrowtext 与\n|cRXP_FRIENDLY_穆加德大使|r 对话
     .goto 84,53.08,15.26
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_穆加德大使|r 对话。
     .turnin 90961 >>交任务 异域来客
     -- .accept 94445 >>Accept Choose a Path
     .target Ambassador Moorgard
 step << Horde
-    #arrowtext 与 |cRXP_FRIENDLY_黑卫大使|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_黑卫大使|r对话
     .goto 85,39.39,79.61
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_黑卫大使|r 对话。
     .turnin 90961 >>交任务 异域来客
     -- .accept 94444 >>Accept Choose a Path
     .target 黑卫士大使
 step << Alliance
-    #include RestedXP 快速升级\a) GC 克罗米时间 普通
+    #include RestedXP 快速升级\a) GC Chromie Time Normal
 ]])
     --Harandar: Skip
 RXPGuides.RegisterGuide([[
@@ -9572,14 +9572,14 @@ step
     .collecttoy 253629,3
     .cooldown item,253629,>0,1
 step << Alliance
-    #arrowtext 点击\n|cRXP_PICK_传送门前往暴风城|r
+    #arrowtext 点击\n|cRXP_PICK_传送门 至暴风城|r
     .goto 2393,55.25,70.31,15,0
     .goto 2393,53.34,66.3,15,0
     .goto 2393,52.63,64.52
     .zone 84 >>|TInterface/cursor/crosshair/interact.blp:20|t点击 |cRXP_PICK_通往暴风城的传送门|r
     .collecttoy 253629,3
 step << Horde
-    #arrowtext 点击\n|cRXP_PICK_传送门 前往 奥格瑞玛|r
+    #arrowtext 点击\n|cRXP_PICK_传送门 至奥格瑞玛|r
     .goto 2393,55.25,70.31,15,0
     .goto 2393,53.34,66.3,15,0
     .goto 2393,52.18,65.21
@@ -9600,7 +9600,7 @@ step
     .collecttoy 253629,1
     .achievementComplete 61506,1
 step << Alliance
-    #arrowtext 点击\n|cRXP_PICK_传送门前往暴风城|r
+    #arrowtext 点击\n|cRXP_PICK_传送门 至暴风城|r
     .goto 2393,52.54,67.08,15,0
     .goto 2393,53.34,66.3,15,0
     .goto 2393,52.63,64.52
@@ -9608,7 +9608,7 @@ step << Alliance
     .collecttoy 253629,1
     .achievementComplete 61506,1
 step << Horde
-    #arrowtext 点击\n|cRXP_PICK_传送门 前往 奥格瑞玛|r
+    #arrowtext 点击\n|cRXP_PICK_传送门 至奥格瑞玛|r
     .goto 2393,52.54,67.08,15,0
     .goto 2393,53.34,66.3,15,0
     .goto 2393,52.18,65.21
@@ -9616,7 +9616,7 @@ step << Horde
     .collecttoy 253629,1
     .achievementComplete 61506,1
 step << Alliance
-    #include RestedXP 快速升级\a) GC 克罗米时间塔楼
+    #include RestedXP 快速升级\a) GC Chromie Time Tower
 ]])
 --Earthen: Hall of Awakening
 RXPGuides.RegisterGuide([[
@@ -9634,7 +9634,7 @@ RXPGuides.RegisterGuide([[
 step
     #completewith Invasive Drifter
     .collecttoy 253629,3
-    +|cRXP_WARN_你现在可以切换指南来跳过起始区域（更快），或继续正常进行|r。
+    +|cRXP_WARN_你现在可以切换指南来跳过起始区域(更快)，或继续照常进行|r。
     .clicknext RestedXP Speed Leveling\a) Hall of Awakening: Skip >>点击此处查看指南 << Alliance
 step
     #arrowtext 与 |cRXP_FRIENDLY_拂晓|r 对话
@@ -9649,7 +9649,7 @@ step
     >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_圆盘|r。
     .complete 79200,1 --1/1 Diagnostics Scan completed
 step
-    #arrowtext 踩上扫描器
+    #arrowtext 踩上扫描仪
     #completewith Diagnostics Scan1
     .goto 2322,86.91,48.95,15 >>站到扫描器上
 step
@@ -9665,11 +9665,11 @@ step
     >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_圆盘|r。
     .complete 79200,2 --1/1 Cognitive Scan completed
 step
-    #arrowtext 踩上扫描器
+    #arrowtext 踩踏扫描仪
     #completewith Anomaly Scan
     .goto 2322,83.72,60.39,30 >>站到扫描器上
 step
-    #arrowtext 点击 |cRXP_PICK_Disc|r
+    #arrowtext 点击\n|cRXP_PICK_Disc|r
     #requires Anomaly Scan
     .goto 2322,83.72,60.39,5,0
     .goto 2322,83.71,60.94
@@ -9685,7 +9685,7 @@ step
     #completewith Cognitive Scan2
     .goto 2322,83.89,38.39,30 >>站到扫描器上
 step
-    #arrowtext 点击 |cRXP_PICK_Disc|r
+    #arrowtext 点击\n|cRXP_PICK_Disc|r
     #requires Cognitive Scan2
     .goto 2322,83.89,38.39,5,0
     .goto 2322,83.78,37.91
@@ -9693,7 +9693,7 @@ step
     .complete 79200,3 --1/1 Anomaly Scan completed
     .timer 6.5,RP
 step
-    #arrowtext 使用 [ExtraActionButton]
+    #arrowtext 使用[ExtraActionButton]
     .goto 2322,83.77,37.91
     >>|cRXP_WARN_在剧情结束后|r使用[额外动作按钮]。
     .complete 79200,4 --1/1 Containment Protocol disrupted
@@ -9714,7 +9714,7 @@ step
     #completewith Who am I?
     .goto 2322,62.75,48.75,30 >>穿过走廊，点击前面的门。
 step
-    #arrowtext 与 |cRXP_FRIENDLY_拂晓|r 对话
+    #arrowtext 与\n|cRXP_FRIENDLY_拂晓|r 对话
     #requires Who am I?
     .goto 2322,62.75,48.75,10,0
     .goto 2322,62.64,49.66
@@ -9767,7 +9767,7 @@ step
     #completewith The Analysis Interface
     .goto 2322,49.05,50.41,15 >>跟随箭头
 step
-    #arrowtext 与 |cRXP_FRIENDLY_拂晓|r 对话
+    #arrowtext 与\n|cRXP_FRIENDLY_拂晓|r 对话
     #requires The Analysis Interface
     .goto 2322,47.77,54.79
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拂晓|r 对话。
@@ -9810,7 +9810,7 @@ step
     #completewith Rock Beats Rock
     .goto 2322,30.85,48.85,35 >>上楼并点击前方的门。
 step
-    #arrowtext 与 |cRXP_FRIENDLY_拂晓|r 对话
+    #arrowtext 与\n|cRXP_FRIENDLY_拂晓|r 对话
     #requires Rock Beats Rock
     .goto 2322,30.85,48.85,5,0
     .goto 2322,30.75,48.19
@@ -9832,7 +9832,7 @@ step
     .timer 22,剧情演出
     .mob Phalanx of Authorization
 step
-    #arrowtext 与 |cRXP_FRIENDLY_代言人库尔达斯|r 对话
+    #arrowtext 与\n|cRXP_FRIENDLY_代言人库尔达斯|r 对话
     .goto 2322,16.33,48.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_FRIENDLY_剧情结束后|r与|cRXP_WARN_代言人库尔达斯|r 对话。
     .turnin 79203 >>交任务 授权被拒绝
@@ -9843,7 +9843,7 @@ step
     #title |cFFFCDC00跟随箭头|r。
     .complete 79204,1 --1/1 Meet Dawn in the Awakening Vestibule
 step
-    #arrowtext 与 |cRXP_FRIENDLY_拂晓|r 对话
+    #arrowtext 与\n|cRXP_FRIENDLY_拂晓|r 对话
     .goto 2322,8.69,48.89,5,0 << Alliance
     .goto 2322,8.65,50.31,5,0 << Horde
     .goto 2322,8.63,49.71
@@ -9867,7 +9867,7 @@ step << Alliance
     .goto 2322,7.3,46.27
     .zone 84 >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_传送门|r。
 step << Alliance
-    #arrowtext 与 |cRXP_FRIENDLY_穆加德大使|r 对话
+    #arrowtext 与\n|cRXP_FRIENDLY_穆加德大使|r 对话
     #requires For the Alliance
     .goto 84,53.03,15.25
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_穆加德大使|r 对话。
@@ -9875,7 +9875,7 @@ step << Alliance
     .target Ambassador Moorgard
     .accept 81887 >>接受任务 异乡异客
 step << Alliance
-    #include RestedXP 快速升级\a) GC 克罗米时间 普通@ChromieTime-ChromieTime
+    #include RestedXP 快速升级\a) GC Chromie Time Normal@ChromieTime1-ChromieTime2
 -- step << Alliance
 --     .goto 84,56.257,17.311
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
@@ -9891,7 +9891,7 @@ step << Alliance
     .turnin 81887 >>交任务 异乡异客
     .target Adhelda
 step << Alliance
-    #include RestedXP 快速升级\a) GC 克罗米时间 普通@CallBoardStart-CallBoardEnd
+    #include RestedXP 快速升级\a) GC Chromie Time Normal@CallBoardStart-CallBoardEnd
 step << Horde
     #completewith next
     #label For the Horde
@@ -9907,7 +9907,7 @@ step << Horde
     .goto 2322,7.16,52.62
     .zone 85 >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_传送门|r。
 step << Horde
-    #arrowtext 与 |cRXP_FRIENDLY_黑卫大使|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_黑卫大使|r对话
     #requires For the Horde
     .goto 85,39.40,79.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_黑卫大使|r 对话。
@@ -9930,28 +9930,28 @@ RXPGuides.RegisterGuide([[
 << EarthenDwarf
 
 step
-    #arrowtext 使用 [Personal 钥匙 to 奥术秘社]
+    #arrowtext 使用[Personal 钥匙 to 奥术秘社]
     .goto 2541,50.67,90.10
     .zone 2393 >>使用 |T7322718:0|t[Personal 钥匙 to 奥术秘社] 并离开副本传送门。
     .use 253629
     .cooldown item,253629,>0,1
     .collecttoy 253629,3
 step << Alliance
-    #arrowtext 点击\n|cRXP_PICK_传送门前往暴风城|r
+    #arrowtext 点击\n|cRXP_PICK_传送门 至暴风城|r
     .goto 2393,55.25,70.31,15,0
     .goto 2393,53.34,66.3,15,0
     .goto 2393,52.63,64.52
     .zone 84 >>|TInterface/cursor/crosshair/interact.blp:20|t点击 |cRXP_PICK_通往暴风城的传送门|r
     .collecttoy 253629,3
 step << Horde
-    #arrowtext 点击\n|cRXP_PICK_传送门 前往 奥格瑞玛|r
+    #arrowtext 点击\n|cRXP_PICK_传送门 至奥格瑞玛|r
     .goto 2393,55.25,70.31,15,0
     .goto 2393,53.34,66.3,15,0
     .goto 2393,52.18,65.21
     .zone 85 >>|TInterface/cursor/crosshair/interact.blp:20|t点击 |cRXP_PICK_Portal to 奥格瑞玛|r
     .collecttoy 253629,3
 step << Alliance
-    #include RestedXP 快速升级\a) GC 克罗米时间塔楼
+    #include RestedXP 快速升级\a) GC Chromie Time Tower
 
 ]])
 --Arathi Highlands Returning Player
@@ -10057,29 +10057,29 @@ step
     .complete 90887,1 --1/1 Runk slain
     .mob Runk
 step
-    #arrowtext 点击 |cRXP_PICK_Pumpkin|r
+    #arrowtext 点击\n|cRXP_PICK_Pumpkin|r
     .goto 2451,53.06,59.22
     >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_南瓜|r
     *|cRXP_WARN_你可以从远处与它们互动|r
     .complete 90885,1,1 --4/4 Prized Pumpkin recovered
 step
-    #arrowtext 点击 |cRXP_PICK_Pumpkin|r
+    #arrowtext 点击\n|cRXP_PICK_Pumpkin|r
     .goto 2451,51.44,58.8
     >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_南瓜|r
-    *|cRXP_WARN_你可以从远处与它们互动|r
+    *|cRXP_WARN_你可以从远处与它们交互|r
     .complete 90885,1,2 --4/4 Prized Pumpkin recovered
 step
     #arrowtext 点击 |cRXP_PICK_Pumpkin|r
     .goto 2451,52.73,60.93
     >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_南瓜|r
-    *|cRXP_WARN_你可以从远处与它们互动|r
+    *|cRXP_WARN_你可以从远处与它们交互|r
     .complete 90885,1,3 --4/4 Prized Pumpkin recovered
 step
-    #arrowtext 点击 |cRXP_PICK_Pumpkin|r
+    #arrowtext 点击\n|cRXP_PICK_Pumpkin|r
     #label Prized Pumpkin
     .goto 2451,53.96,60.07
     >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_南瓜|r
-    *|cRXP_WARN_你可以从远处与它们互动|r
+    *|cRXP_WARN_你可以从远处与它们交互|r
     .complete 90885,1,4 --4/4 Prized Pumpkin recovered
 step
     #arrowtext 杀死 |cRXP_ENEMY_Kobolds|r 和 |cRXP_ENEMY_莫加尔大王 <食人魔之王>|r
@@ -10095,7 +10095,7 @@ step
     .mob 狗头人 Firetender
     .mob 食人魔重击者
 step
-    #arrowtext 与 |cRXP_FRIENDLY_萨尔|r 和 |cRXP_FRIENDLY_吉安娜·普罗德摩尔|r 对话
+    #arrowtext 与\n|cRXP_FRIENDLY_萨尔|r 和 |cRXP_FRIENDLY_女士 吉安娜·普罗德摩尔|r 对话
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_萨尔|r 和|cRXP_FRIENDLY_吉安娜·普罗德摩尔|r 对话
     .turnin 90885 >>交任务 我的漂亮南瓜
     .turnin 90886 >>交任务 狗头人和食人魔的拙劣计划
@@ -10129,7 +10129,7 @@ step << Horde
     >>对可打断施法使用你的打断技能。
     .complete 92028,2 --3/3 Fightbot Version 11.2.7 abilities interrupted
 step << Horde
-    #arrowtext 与 |cRXP_FRIENDLY_辛迪·簧库|r 对话
+    #arrowtext 与\n|cRXP_FRIENDLY_辛迪·簧库|r 对话
     .goto 2451,20.84,59.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_辛迪·簧库|r 对话
     .turnin 92028 >>交任务 打断攻击
@@ -10179,7 +10179,7 @@ step
     .mob 豺狼人潜行者
     .mob 双头巨人粉碎者
 step
-    #arrowtext 与 |cRXP_FRIENDLY_吉安娜·普罗德摩尔女士|r 和 |cRXP_FRIENDLY_萨尔|r 对话
+    #arrowtext 与\n|cRXP_FRIENDLY_女士 吉安娜·普罗德摩尔|r 和 |cRXP_FRIENDLY_萨尔|r 对话
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_吉安娜·普罗德摩尔|r 和 |cRXP_FRIENDLY_萨尔|r 对话
     .turnin 90895 >>交任务 投石车轰炸
     .goto 2451,24.67,37.11
@@ -10223,7 +10223,7 @@ step << Alliance
     .goto 2451,24.67,37.12
     .target 吉安娜·普罗德摩尔
 step << Alliance
-    #arrowtext 点击 |cRXP_PICK_机器人|r
+    #arrowtext 点击\n|cRXP_PICK_机器人|r
     .goto 2451,20.94,59.65
     >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_机器人|r
     .complete 92028,1 --1/1 Fightbot Version 11.2.7 activated
@@ -10310,7 +10310,7 @@ step
     .accept 9279 >>接受任务 你活下来了！
 	.target 麦格伦
 step
-    #arrowtext 与 |cRXP_FRIENDLY_普罗尼图斯|r 对话
+    #arrowtext 与\n|cRXP_FRIENDLY_普罗尼图斯|r 对话
     .xp >10,1
     .goto 468,52.86,35.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_普罗尼图斯|r 对话。
@@ -10338,7 +10338,7 @@ step
     .complete 9369,1 --6/6 Vial of Moth Blood << !Draenei
 	.mob 峡谷蛾
 step
-    #arrowtext 与 |cRXP_FRIENDLY_普罗尼图斯|r 对话
+    #arrowtext 与\n|cRXP_FRIENDLY_普罗尼图斯|r 对话
     .xp >10,1
     .goto 468,52.52,35.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_普罗尼图斯|r 对话。
@@ -10361,7 +10361,7 @@ step
     #completewith Urgent Delivery!
     .goto 468,52.1,41.05,40 >>进入房屋
 step
-    #arrowtext 与 |cRXP_FRIENDLY_扎尔杜|r 对话
+    #arrowtext 与\n|cRXP_FRIENDLY_扎尔杜|r 对话
     .xp >10,1
     #requires Urgent Delivery!
     #loop
@@ -10396,7 +10396,7 @@ step
     .accept 9371 >>接受任务 植物学家塔蕾克丝
 	.target 普罗尼图斯
 step
-    #arrowtext 与 |cRXP_FRIENDLY_植物学家塔蕾克丝|r 对话
+    #arrowtext 与\n|cRXP_FRIENDLY_植物学家塔蕾克丝|r 对话
     .xp >10,1
     .goto 468,50.11,37.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_植物学家塔蕾克丝|r 对话。
@@ -10830,7 +10830,7 @@ step
     .complete 10303,1 --10/10 Blood Elf Scout slain
 	.mob 血精灵斥候
 step
-    #arrowtext 与 |cRXP_FRIENDLY_图兰|r 对话
+    #arrowtext 与\n|cRXP_FRIENDLY_图兰|r 对话
     .xp >10,1
     .goto 468,33.67,69.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_图兰|r 对话。
@@ -11100,13 +11100,13 @@ step
     .target 学者法蒂玛
 step
     #arrowtext 与\n|cRXP_FRIENDLY_技师戴维恩|r 对话
-    .isQuestComplete 9603
+    .isQuestComplete 9603 --Beds, Bandages, and Beyond
     .goto 97,48.72,50.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_技师戴维恩|r 对话。
     .turnin 9313 >>交任务 前往碧蓝岗哨
     .target 技师戴维恩
 step
-    .isQuestComplete 9603
+    .isQuestComplete 9603 --Beds, Bandages, and Beyond
     #completewith next
     #hidewindow
     #label Word from Azure Watch2
@@ -11118,11 +11118,11 @@ step
     .target 看护员谢尔兰
 step
     #arrowtext 进入房屋
-    .isQuestComplete 9603
+    .isQuestComplete 9603 --Beds, Bandages, and Beyond
     #completewith Word from Azure Watch2
     .goto 97,48.65,49.69,5 >>进入房屋
 step
-    .isQuestComplete 9603
+    .isQuestComplete 9603 --Beds, Bandages, and Beyond
     #requires Word from Azure Watch2
     #completewith next
     #label Beds, Bandages, and Beyond
@@ -11133,7 +11133,7 @@ step
     .target 看护员谢尔兰
 step
     #arrowtext 与\n|cRXP_FRIENDLY_看护员谢尔兰|r 对话
-    .isQuestComplete 9603
+    .isQuestComplete 9603 --Beds, Bandages, and Beyond
     #requires Word from Azure Watch2
     #completewith Beds, Bandages, and Beyond
     .goto 97,48.42,49.27
@@ -11143,7 +11143,7 @@ step
     .target 看护员谢尔兰
 step
     #arrowtext 与\n|cRXP_FRIENDLY_看护员谢尔兰|r 对话
-    .isQuestComplete 9603
+    .isQuestComplete 9603 --Beds, Bandages, and Beyond
     #requires Beds, Bandages, and Beyond
     .goto 97,48.42,49.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_看护员谢尔兰|r 对话。
@@ -11151,7 +11151,7 @@ step
     .accept 9603 >>接受任务 床铺，绷带，以及更多
     .target 看护员谢尔兰
 step
-    .isQuestComplete 9603
+    .isQuestComplete 9603 --Beds, Bandages, and Beyond
     #completewith next
     #label Wings of a Hippogryph
     .goto 97,48.83,50,5,0
@@ -11162,13 +11162,13 @@ step
     .target 萨尔达恩
 step
     #arrowtext 离开房屋
-    .isQuestComplete 9603
+    .isQuestComplete 9603 --Beds, Bandages, and Beyond
     #completewith Wings of a Hippogryph
     .goto 97,49.62,49.03,35 >>离开房屋
 step
     #arrowtext 与\n|cRXP_FRIENDLY_萨尔达恩|r 对话
     #requires Wings of a Hippogryph
-    .isQuestComplete 9603
+    .isQuestComplete 9603 --Beds, Bandages, and Beyond
     .goto 97,49.62,49.03
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_萨尔达恩|r 对话。
     .turnin 9603 >>交任务 床铺，绷带，以及更多
@@ -11324,7 +11324,7 @@ step
     #arrowtext 与\n|cRXP_FRIENDLY_迪泰娜|r 对话
     .goto 97,61.11,54.07
     #xprate 1-1.10
-    .isQuestComplete 9452
+    .isQuestComplete 9452 --Red Snapper - Very Tasty!
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迪泰娜|r 对话
     .turnin 9452 >>交任务 美味的红钳鱼
     .target 迪泰娜
@@ -11355,7 +11355,7 @@ step
     .mob 月痕巨鹿
 step
     #arrowtext |cFFFCDC00[圣战士重盔 MONSTER]|r
-    .isOnQuest 9454
+    .isOnQuest 9454 --The Great Moongraze Hunt
     #xprate 1-1.10
     .xp >10,1
     #label BloodElfBandit
@@ -11407,7 +11407,7 @@ step
 -- ******************** ROUTES INTERSECT HERE ********************--
 
 step
-    .isQuestComplete 9454
+    .isQuestComplete 9454 --The Great Moongraze Hunt
     #completewith next
     #label The Great Moongraze Hunt
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾克提恩|r 对话。
@@ -11416,13 +11416,13 @@ step
     .disablecheckbox
     .target 艾克提恩
 step
-    .isQuestComplete 9454
+    .isQuestComplete 9454 --The Great Moongraze Hunt
     #completewith The Great Moongraze Hunt
     .goto 97,49.78,51.94,60 >>如果你 |cRXP_WARN_无法|r骑乘，在旅行中击杀 |cRXP_ENEMY_怪物|r（|cRXP_WARN_如果可以（取决于职业）|r。
 step
     #arrowtext 与\n|cRXP_FRIENDLY_艾克提恩|r 对话
     #xprate 1-1.10
-    .isQuestComplete 9454
+    .isQuestComplete 9454 --The Great Moongraze Hunt
     #requires The Great Moongraze Hunt
     .goto 97,49.78,51.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾克提恩|r 对话。
@@ -11431,13 +11431,13 @@ step
 step
     #arrowtext 与\n|cRXP_FRIENDLY_艾克提恩|r 对话
     #xprate 1-1.10
-    .isQuestComplete 9453
+    .isQuestComplete 9453 --Find Acteon!
     .goto 97,49.78,51.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾克提恩|r 对话。
     .turnin 9453 >>交任务 找到艾克提恩！
     .target 艾克提恩
 step
-    #arrowtext 与 |cRXP_FRIENDLY_艾克提恩|r 对话
+    #arrowtext 与\n|cRXP_FRIENDLY_艾克提恩|r 对话
     .xp >10,1
     #xprate >1.10
     .goto 97,49.78,51.94
@@ -11445,8 +11445,8 @@ step
     .accept 10324 >>接受任务 狩猎月痕鹿
     .target 艾克提恩
 step
-    #arrowtext 与 |cRXP_FRIENDLY_学者法蒂玛|r 对话
-    .isQuestComplete 9463
+    #arrowtext 与\n|cRXP_FRIENDLY_学者法蒂玛|r 对话
+    .isQuestComplete 9463 --Medicinal Purpose
     .goto 97,48.39,51.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_学者法蒂玛|r 对话。
     .turnin 9463 >>交任务 医疗材料
@@ -11461,15 +11461,15 @@ step
     .accept 9473 >>接受任务 备选方案的备选方案
     .target 丹达尔
 step
-    #arrowtext 与 |cRXP_FRIENDLY_大主教梅内莱厄斯|r 对话
-    .isQuestComplete 9616
+    #arrowtext 与\n|cRXP_FRIENDLY_大主教梅内莱厄斯|r 对话
+    .isQuestComplete 9616 --Bandits!
     .goto 97,47.24,50.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_大主教梅内莱厄斯|r 对话
     .turnin 9616 >>交任务 强盗！
     .target 大主教梅内莱厄斯
 step
     #arrowtext 与 |cRXP_FRIENDLY_大主教梅内莱厄斯|r 对话
-    .isQuestComplete 9455
+    .isQuestComplete 9455 --Strange Findings
     .goto 97,47.24,50.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_大主教梅内莱厄斯|r 对话。
     .turnin 9455 >>交任务 奇怪的发现
@@ -11497,7 +11497,7 @@ step
 -- =========================
 
 step
-    #arrowtext 与 |cRXP_FRIENDLY_丹达尔|r 对话
+    #arrowtext 与\n|cRXP_FRIENDLY_丹达尔|r 对话
     .xp >10,1
     .goto 97,48.45,51.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_丹达尔|r 对话
@@ -11528,7 +11528,7 @@ step
     .vendor >>出售物品以腾出背包空间。
     .target 其兹
 step
-    #arrowtext 与 |cRXP_FRIENDLY_"曲奇"米维克索斯|r 对话
+    #arrowtext 与\n|cRXP_FRIENDLY_"曲奇"米维克索斯|r 对话
     #requires Cookie's Jumbo Gumbo
     .xp >10,1
     .goto 97,46.66,70.37
@@ -11545,7 +11545,7 @@ step
     .target “曲奇”米维克索斯 <厨师>
 step
     #arrowtext 与 |cRXP_FRIENDLY_海军上将奥德修斯|r 对话
-    .isQuestComplete 9505
+    .isQuestComplete 9505 --The Prophecy of Velen
     .goto 97,46.94,70.32
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_海军上将奥德修斯|r 对话
     .turnin 9505 >>交任务 维伦的预言
@@ -11553,22 +11553,22 @@ step
 step
     .xp >10,1
     .xp <9.8,1
-    .isNotOnQuest 9506
+    .isNotOnQuest 9506 --A Small Start
     >>击杀 |cRXP_ENEMY_迅捷的螃蟹|r。
     *拾取 |T134007:0|t[|cRXP_LOOT_迅捷螃蟹的肉|r]。
     .complete 9512,1 --6/6 Skittering Crawler Meat
     .mob 迅捷的螃蟹
 step
-    #arrowtext 与 |cRXP_FRIENDLY_"曲奇"米维克索斯|r 对话
+    #arrowtext 与\n|cRXP_FRIENDLY_"曲奇"米维克索斯|r 对话
     .xp <9.8,1
     .goto 97,46.69,70.53
-    .isNotOnQuest 9506
-    .isQuestComplete 9512
+    .isNotOnQuest 9506 --A Small Start
+    .isQuestComplete 9512 --Cookie's Jumbo Gumbo
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_“曲奇”米维克索斯|r 对话。
     .turnin 9512 >>交任务 曲奇的大餐
     .target “曲奇”米维克索斯 <厨师>
 step
-    #arrowtext 与 |cRXP_FRIENDLY_海军上将奥德修斯|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_Admiral Odesyus|r（海军上将奥德修斯）对话
     .xp >10,1
     .goto 97,47.03,70.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_海军上将奥德修斯|r 对话。
@@ -11618,20 +11618,20 @@ step
     .complete 9512,1 --6/6 Skittering Crawler Meat
     .mob 迅捷的螃蟹
 step
-    #arrowtext 与 |cRXP_FRIENDLY_海军上将奥德修斯|r 对话
-    .isQuestComplete 9506
+    #arrowtext 与 |cRXP_FRIENDLY_Admiral Odesyus|r（海军上将奥德修斯）对话
+    .isQuestComplete 9506 --A Small Start
     .goto 97,47.03,70.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_海军上将奥德修斯|r 对话。
     .turnin 9506 >>交任务 第三类接触
 step
-    #arrowtext 与 |cRXP_FRIENDLY_"曲奇"米维克索斯|r 对话
-    .isQuestComplete 9512
+    #arrowtext 与\n|cRXP_FRIENDLY_"曲奇"米维克索斯|r 对话
+    .isQuestComplete 9512 --Cookie's Jumbo Gumbo
     .goto 97,46.69,70.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_"曲奇"米维克索斯|r 对话。
     .turnin 9512 >>交任务 曲奇的大餐
     .target +"曲奇"米维克索斯
 step
-    #arrowtext 与 |cRXP_FRIENDLY_海军上将奥德修斯|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_Admiral Odesyus|r（海军上将奥德修斯）对话
     .xp >10,1
     .goto 97,47.03,70.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_海军上将奥德修斯|r 对话。
@@ -11662,14 +11662,14 @@ step
     .complete 9530,2 --5/5 Pile of Leaves
     .complete 9530,1 --1/1 Hollowed Out Tree
 step
-    #arrowtext 与 |cRXP_FRIENDLY_海军上将奥德修斯|r 对话
-    .isQuestComplete 9530
+    #arrowtext 与 |cRXP_FRIENDLY_Admiral Odesyus|r（海军上将奥德修斯）对话
+    .isQuestComplete 9530 --I've Got a Plant
     .goto 97,47.04,70.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_海军上将奥德修斯|r 对话。
     .turnin 9530 >>交任务 天才的方案！
     .target 海军上将奥德修斯
 step
-    #arrowtext 与 |cRXP_FRIENDLY_海军上将奥德修斯|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_Admiral Odesyus|r（海军上将奥德修斯）对话
     .xp >10,1
     .goto 97,47.04,70.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_海军上将奥德修斯|r 对话。
@@ -11736,7 +11736,7 @@ step
     .use 23759
 step
     #arrowtext 与 |cRXP_FRIENDLY_女祭司基琳·伊尔蒂娜|r 和 |cRXP_FRIENDLY_考古学家阿达曼特·铁心|r 对话
-    .isQuestComplete 9513
+    .isQuestComplete 9513 --Reclaiming the Ruins
     .xp <9.8,1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_女祭司基琳·伊尔蒂娜|r和|cRXP_FRIENDLY_考古学家阿达曼特·铁心|r 对话。
     .turnin 9513 >>交任务 夺回废墟
@@ -11774,7 +11774,7 @@ step
     .aura -30298 >>使用“已激活物品栏”中的宏
     .macro Cancel Tree,132288 >>取消变形
 step
-    #arrowtext 与 |cRXP_FRIENDLY_库雷|r 对话
+    #arrowtext 与\n|cRXP_FRIENDLY_库雷|r 对话
     .xp >10,1
     #requires Traitor Uncovered2
     .goto 97,18.52,87.93,15,0
@@ -11800,13 +11800,13 @@ step
     .mob 变异的枭兽
 step
     #arrowtext 与 |cRXP_FRIENDLY_库雷|r 对话
-    .isQuestComplete 9527
+    .isQuestComplete 9527 --All That Remains
     .goto 97,16.59,94.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_库雷|r 对话。
     .turnin 9527 >>交任务 遗体
     .target 库雷
 step
-    .isQuestComplete 9527
+    .isQuestComplete 9527 --All That Remains
     #completewith next
     #label Turn in Tree's Company1
     #loop
@@ -11819,13 +11819,13 @@ step
     #hidewindow
     .target 海军上将奥德修斯
 step
-    .isQuestComplete 9527
+    .isQuestComplete 9527 --All That Remains
     #completewith Turn in Tree's Company1
     .goto 97,47.87,56.19,15 >>死在|cRXP_ENEMY_枭兽|r手下。
     *|cRXP_WARN_在战斗中使用坐下宏，可加快死亡速度|r。
     .macro Sit, >>坐下
 step
-    .isQuestComplete 9527
+    .isQuestComplete 9527 --All That Remains
     #requires Turn in Tree's Company1
     #completewith next
     #label Turn in Tree's Company2
@@ -11833,7 +11833,7 @@ step
     .turnin 9531 >>交任务 间谍之树
     .target 海军上将奥德修斯
 step
-    .isQuestComplete 9527
+    .isQuestComplete 9527 --All That Remains
     #requires Turn in Tree's Company1
     #completewith Turn in Tree's Company2
     #title |cFFFCDC00在灵魂医者处复活|r
@@ -11842,16 +11842,16 @@ step
     .deathskip >>在墓地复活。
     .target 灵魂医者
 step
-    #arrowtext 与 |cRXP_FRIENDLY_海军上将奥德修斯|r 对话
-    .isQuestComplete 9527
+    #arrowtext 与 |cRXP_FRIENDLY_Admiral Odesyus|r（海军上将奥德修斯）对话
+    .isQuestComplete 9527 --All That Remains
     #requires Turn in Tree's Company2
     .goto 97,47.04,70.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_海军上将奥德修斯|r 对话。
     .turnin 9531 >>交任务 间谍之树
     .target 海军上将奥德修斯
 step
-    #arrowtext 与 |cRXP_FRIENDLY_女祭司基琳·伊尔蒂娜|r 和 |cRXP_FRIENDLY_考古学家阿达曼特·铁心|r 对话
-    .isQuestComplete 9513
+    #arrowtext 与\n|cRXP_FRIENDLY_女祭司基琳·伊尔蒂娜|r 和 |cRXP_FRIENDLY_考古学家阿达曼特·铁心|r 对话
+    .isQuestComplete 9513 --Reclaiming the Ruins
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_女祭司基琳·伊尔蒂娜|r 和 |cRXP_FRIENDLY_考古学家阿达曼特·铁心|r 对话。
     .turnin 9513 >>交任务 夺回废墟
     .turnin 9514 >>交任务 写满符文的石板
@@ -11863,7 +11863,7 @@ step
 step
     #label HousingDraenei
     .zoneskip 97,1
-    .zone 2352 >>使用地块查找器传送到一个居住区，而不是|T7252953:0|t[传送到地块]，然后使用|cRXP_PICK_Stormwind 传送门|r。
+    .zone 2352 >>通过房屋查找器传送到邻里，不要用|T7252953:0|t[传送到地块]，然后走|cRXP_PICK_Stormwind 传送门|r。
     .link https://www.youtube.com/watch?v=uVkUB7z0njo >>点击观看视频
     .macro House Teleport, 975747 >>房屋传送
 step << Alliance
@@ -11872,7 +11872,7 @@ step << Alliance
     .zone 84 >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_传送门|r
     .zoneskip 2352,1
 step << Alliance
-    #include RestedXP 快速升级\a) GC 克罗米时间塔楼
+    #include RestedXP 快速升级\a) GC Chromie Time Tower
 
 
 ]])
@@ -11902,7 +11902,7 @@ step
     .disablecheckbox
     .target 努古尼
 step
-    #arrowtext 与 |cRXP_FRIENDLY_萨尔达恩|r 对话
+    #arrowtext 与\n|cRXP_FRIENDLY_萨尔达恩|r 对话
     #completewith Above130 x1
     .zoneskip 103
     #xprate >1.30
@@ -12007,7 +12007,7 @@ step
     #completewith Above130Backup x1
     .goto 97,49.72,51.8,70 >>离开房屋
 step
-    #arrowtext 与 |cRXP_FRIENDLY_艾克提恩|r 对话
+    #arrowtext 与\n|cRXP_FRIENDLY_艾克提恩|r 对话
     .xp >10,1
     #xprate >1.30
     #requires Above130Backup x1
@@ -12016,7 +12016,7 @@ step
     .accept 10324 >>接受任务 狩猎月痕鹿
     .target 艾克提恩
 step
-    #arrowtext 与 |cRXP_FRIENDLY_丹达尔|r 对话
+    #arrowtext 与\n|cRXP_FRIENDLY_丹达尔|r 对话
     #xprate >1.30
     .xp >10,1
     .goto 97,48.43,51.33
@@ -12024,7 +12024,7 @@ step
     .accept 9473 >>接受任务 备选方案的备选方案
     .target 丹达尔
 step
-    #arrowtext 与 |cRXP_FRIENDLY_大主教梅内莱厄斯|r 对话
+    #arrowtext 与\n|cRXP_FRIENDLY_大主教梅内莱厄斯|r 对话
     #xprate >1.30
     .xp >10,1
     .goto 97,47.22,50.54
@@ -12040,7 +12040,7 @@ step
     *如果你已经学会草药学，这些会在你的小地图上显示。
     .complete 9473,1 --5/5 Azure Snapdragon Bulb
 step
-    #arrowtext 点击树干
+    #arrowtext 穿过树干
     #xprate >1.30
     .xp >10,1
     #completewith Above130Backup x2
@@ -12117,7 +12117,7 @@ step
     #xprate >1.30
     #completewith next
     #label Above130Backup x5
-    .isQuestComplete 9456
+    .isQuestComplete 9456 --Nightstalker Clean Up, Isle 2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_大主教梅内莱厄斯|r 对话
     .turnin 9456 >>交任务 清理夜行豹……
     .target 大主教梅内莱厄斯
@@ -12130,27 +12130,27 @@ step
     .goto 97,47.17,50.46,60 >>绕过山前往任务发布者处。
     *如果你 |cRXP_WARN_无法|r骑乘，在旅行中击杀 |cRXP_ENEMY_怪物|r（|cRXP_WARN_如果可以（取决于职业）|r。
 step
-    #arrowtext 与 |cRXP_FRIENDLY_大主教梅内莱厄斯|r 对话
+    #arrowtext 与\n|cRXP_FRIENDLY_大主教梅内莱厄斯|r 对话
     #requires Above130Backup x5
     #xprate >1.30
-    .isQuestComplete 9456
+    .isQuestComplete 9456 --Nightstalker Clean Up, Isle 2
     .goto 97,47.17,50.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_大主教梅内莱厄斯|r 对话
     .turnin 9456 >>交任务 清理夜行豹……
     .target 大主教梅内莱厄斯
 step
-    #arrowtext 与 |cRXP_FRIENDLY_丹达尔|r 对话
+    #arrowtext 与\n|cRXP_FRIENDLY_丹达尔|r 对话
     #xprate >1.30
-    .isQuestComplete 9473
+    .isQuestComplete 9473 --An Alternative Alternative
     .goto 97,48.43,51.4
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_丹达尔|r 对话
     .turnin 9473 >>交任务 备选方案的备选方案
     -- .timer 36,RP
     .target 丹达尔
 step
-    #arrowtext 与 |cRXP_FRIENDLY_艾克提恩|r 对话
+    #arrowtext 与\n|cRXP_FRIENDLY_艾克提恩|r 对话
     #xprate >1.30
-    .isQuestComplete 10324
+    .isQuestComplete 10324 --The Great Moongraze Hunt
     .goto 97,49.67,51.9
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾克提恩|r 对话
     .turnin 10324 >>交任务 狩猎月痕鹿
@@ -12172,7 +12172,7 @@ RXPGuides.RegisterGuide([[
 -- =====================================
 
 step
-    #arrowtext 与 |cRXP_FRIENDLY_大主教梅内莱厄斯|r 对话
+    #arrowtext 与\n|cRXP_FRIENDLY_大主教梅内莱厄斯|r 对话
     #xprate <1.30
     .xp >10,1
     .goto 97,47.12,50.61
@@ -12287,14 +12287,14 @@ step
     #hidewindow
     #completewith next
     #label Between2530 x1
-    .isQuestComplete 9456
+    .isQuestComplete 9456 --Nightstalker Clean Up, Isle 2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_大主教梅内莱厄斯|r 对话
     .turnin 9456 >>交任务 清理夜行豹……
     .target 大主教梅内莱厄斯
 step
     #xprate 1.25-1.30
     #completewith Between2530 x1
-    .isQuestComplete 9456
+    .isQuestComplete 9456 --Nightstalker Clean Up, Isle 2
     .subzoneskip 97
     .hs >>使用 |T134414:0|t[炉石] 回到碧蓝岗哨。
     .cooldown item,6948,>0,1
@@ -12304,41 +12304,41 @@ step
     #requires Between2530 x1
     #completewith next
     #label Between2530 x2
-    .isQuestComplete 9456
+    .isQuestComplete 9456 --Nightstalker Clean Up, Isle 2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_大主教梅内莱厄斯|r 对话
     .turnin 9456 >>交任务 清理夜行豹……
     .target 大主教梅内莱厄斯
 step
     #arrowtext 离开房屋
     #xprate 1.25-1.30
-    .isQuestComplete 9456
+    .isQuestComplete 9456 --Nightstalker Clean Up, Isle 2
     #requires Between2530 x1
     #completewith Between2530 x2
     .goto 97,48.83,50,5,0
     .goto 97,47.85,50.66,20,0
     .goto 97,47.14,50.61,40 >>离开房屋
 step
-    #arrowtext 与 |cRXP_FRIENDLY_大主教梅内莱厄斯|r 对话
+    #arrowtext 与\n|cRXP_FRIENDLY_大主教梅内莱厄斯|r 对话
     #requires Between2530 x2
     #xprate 1.25-1.30
     .goto 97,47.14,50.61
-    .isQuestComplete 9456
+    .isQuestComplete 9456 --Nightstalker Clean Up, Isle 2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_大主教梅内莱厄斯|r 对话
     .turnin 9456 >>交任务 清理夜行豹……
     .target 大主教梅内莱厄斯
 step
-    #arrowtext 与 |cRXP_FRIENDLY_丹达尔|r 对话
+    #arrowtext 与\n|cRXP_FRIENDLY_丹达尔|r 对话
     #xprate 1.25-1.30
     .goto 97,48.43,51.4
-    .isQuestComplete 9473
+    .isQuestComplete 9473 --An Alternative Alternative
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_丹达尔|r 对话
     .turnin 9473 >>交任务 备选方案的备选方案
     .timer 36,剧情演出
     .target 丹达尔
 step
-    #arrowtext 与 |cRXP_FRIENDLY_艾克提恩|r 对话
+    #arrowtext 与\n|cRXP_FRIENDLY_艾克提恩|r 对话
     #xprate 1.25-1.30
-    .isQuestComplete 10324
+    .isQuestComplete 10324 --The Great Moongraze Hunt
     .goto 97,49.80,51.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾克提恩|r 对话
     .turnin 10324 >>交任务 狩猎月痕鹿
@@ -12370,7 +12370,7 @@ step
     .fly The Exodar >>飞往埃索达
     .target 萨尔达恩
 step
-    #arrowtext 与 |cRXP_FRIENDLY_努古尼|r 对话
+    #arrowtext 与\n|cRXP_FRIENDLY_努古尼|r 对话
     #xprate 1.25-1.30
     #requires Between2530Backup x1
     .goto 103,54.8,44.03,20,0
@@ -12397,7 +12397,7 @@ step
     #hidewindow
     .goto 103,54.51,36.93,60 >>跟随箭头
 step
-    #arrowtext 与 |cRXP_FRIENDLY_斯泰法努斯|r 对话
+    #arrowtext 与\n|cRXP_FRIENDLY_斯泰法努斯|r 对话
     #requires Between2530Backup x2
     #xprate 1.25-1.30
     .goto 103,54.51,36.93
@@ -12440,7 +12440,7 @@ step
     #completewith Between2530Backup x4
     .goto 97,48.42,49.27,15 >>进入房屋
 step
-    #arrowtext 与 |cRXP_FRIENDLY_看护员谢尔兰|r 对话
+    #arrowtext 与\n|cRXP_FRIENDLY_看护员谢尔兰|r 对话
     #xprate 1.25-1.30
     #requires Between2530Backup x4
     .goto 97,48.42,49.27
@@ -12492,7 +12492,7 @@ step
     .disablecheckbox
     .target 努古尼
 step
-    #arrowtext 与 |cRXP_FRIENDLY_萨尔达恩|r 对话
+    #arrowtext 与\n|cRXP_FRIENDLY_萨尔达恩|r 对话
     #requires Under125 x1
     #completewith Under125 x2
     #xprate <1.25
@@ -12539,7 +12539,7 @@ step
     #xprate <1.25
     #completewith next
     #label Under125 x4
-    .isQuestComplete 9606
+    .isQuestComplete 9606 --Return to Caregiver Chellan
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_看护员谢尔兰|r 对话
     .turnin 9606 >>交任务 返回看护员谢尔兰身边
     .target 看护员谢尔兰
@@ -12548,15 +12548,15 @@ step
     #completewith Under125 x4
     .xp >10,1
     .subzoneskip 97
-    .isQuestComplete 9606
+    .isQuestComplete 9606 --Return to Caregiver Chellan
     .hs >>使用 |T134414:0|t[炉石] 回到碧蓝岗哨。
     .cooldown item,6948,>0,1
     .use 6948
 step
-    #arrowtext 与 |cRXP_FRIENDLY_看护员谢尔兰|r 对话
+    #arrowtext 与\n|cRXP_FRIENDLY_看护员谢尔兰|r 对话
     #xprate <1.25
     #requires Under125 x4
-    .isQuestComplete 9606
+    .isQuestComplete 9606 --Return to Caregiver Chellan
     .goto 97,48.42,49.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_看护员谢尔兰|r 对话
     .turnin 9606 >>交任务 返回看护员谢尔兰身边
@@ -12564,7 +12564,7 @@ step
 step
     #xprate <1.25
     .xp >10,1
-    .isQuestComplete 9456
+    .isQuestComplete 9456 --Nightstalker Clean Up, Isle 2
     #completewith next
     #label Under125 x5
     .goto 97,48.8,49.99,5,0
@@ -12576,14 +12576,14 @@ step
     #arrowtext 离开房屋
     #xprate <1.25
     .xp >10,1
-    .isQuestComplete 9456
+    .isQuestComplete 9456 --Nightstalker Clean Up, Isle 2
     #completewith Under125 x5
     .goto 97,47.24,50.63,45 >>离开房屋
 step
     #arrowtext 与 |cRXP_FRIENDLY_大主教梅内莱厄斯|r 对话
     #xprate <1.25
     #requires Under125 x5
-    .isQuestComplete 9456
+    .isQuestComplete 9456 --Nightstalker Clean Up, Isle 2
     .goto 97,47.24,50.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_大主教梅内莱厄斯|r 对话
     .turnin 9456 >>交任务 清理夜行豹……
@@ -12591,15 +12591,15 @@ step
 step
     #arrowtext 与 |cRXP_FRIENDLY_丹达尔|r 对话
     #xprate <1.25
-    .isQuestComplete 9473
+    .isQuestComplete 9473 --An Alternative Alternative
     .goto 97,48.45,51.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_丹达尔|r 对话
     .turnin 9473 >>交任务 备选方案的备选方案
     .target 丹达尔
 step
-    #arrowtext 与 |cRXP_FRIENDLY_艾克提恩|r 对话
+    #arrowtext 与\n|cRXP_FRIENDLY_艾克提恩|r 对话
     #xprate <1.25
-    .isQuestComplete 10324
+    .isQuestComplete 10324 --The Great Moongraze Hunt
     .goto 97,49.66,51.9
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾克提恩|r 对话
     .turnin 10324 >>交任务 狩猎月痕鹿
@@ -12741,7 +12741,7 @@ step
     .disablecheckbox
     .target 乔娜·铁枷
 step
-    #arrowtext 进入安威玛尔
+    #arrowtext 前往 安威玛尔
     .xp >10,1
     #completewith Lockdown in Anvilmar
     .goto 427,61.7,22.06,20 >>进入安威玛尔
@@ -12775,7 +12775,7 @@ step
     >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_酒桶|r。
     .complete 24474,3,1 --Cask of Gnomenbrau (1)
 step
-    #arrowtext 离开安威玛尔
+    #arrowtext 离开 安威玛尔
     .xp >10,1
     #completewith Cask of Gnomenbrau
     .goto 427,65.76,32.02,37 >>离开安威玛尔
@@ -12978,7 +12978,7 @@ step
     .target 乔娜·铁枷
     .target 格伦德尔·哈金
 step
-    #arrowtext 进入 安威玛尔
+    #arrowtext 前往 安威玛尔
     .xp >10,1
     #completewith Make Hay While the Sun Shines
     .goto 427,61.46,22.63,20 >>进入安威玛尔
@@ -13004,7 +13004,7 @@ step
     .turnin 24487 >>交任务 白须需要你
     .target 菲利克斯
 step
-    #arrowtext 退出 安威玛尔
+    #arrowtext 离开 安威玛尔
     .xp >10,1
     #completewith Whitebeard Needs Ye
     .goto 427,43.03,62.66,261 >>离开安威玛尔
@@ -13152,7 +13152,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_菲利克斯|r 对话。
     .turnin 3361 >>交任务 逃难者的困境
     .target 菲利克斯·温德尔博尔特
-    .isQuestComplete 182
+    .isQuestComplete 182 --The Troll Menace
 step
     .xp >10,1
     #completewith A Refugee's Quandary
@@ -13164,7 +13164,7 @@ step
     .goto 427,41.83,63.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_菲利克斯|r 对话。
     .turnin 3361 >>交任务 逃难者的困境
-    .isQuestComplete 182
+    .isQuestComplete 182 --The Troll Menace
     .target 菲利克斯·温德尔博尔特
 step
     #arrowtext 杀死\n|cRXP_ENEMY_Frostmane 巨魔 幼崽|r
@@ -13185,7 +13185,7 @@ step
     .goto 427,41.83,63.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_菲利克斯|r 对话。
     .turnin 3361 >>交任务 逃难者的困境
-    .isQuestComplete 182
+    .isQuestComplete 182 --The Troll Menace
     .target +菲利克斯·温德尔博尔特
 step
     .xp >10,1
@@ -13199,7 +13199,7 @@ step
     .target 学徒索林
     .target 格瑞林·白须
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_菲利克斯|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_菲利克斯|r 对话
     .xp >10,1
     --insert if bags are needed
     #completewith Troll Menace
@@ -13438,12 +13438,12 @@ step
     .turnin 24492 >>交任务 收拾行囊
     .target 米罗·齿针
 step
-    #arrowtext 退出 安威玛尔
+    #arrowtext 离开 安威玛尔
     .xp >10,1
     #completewith Pack Your Bags
     .goto 427,69.43,43.45,105 >>离开安威玛尔
 step
-    #arrowtext 与\ |cRXP_FRIENDLY_米洛 米罗·齿针|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_米罗·齿针|r 对话
     .xp >10,1
     #requires Pack Your Bags
     .goto 427,69.43,43.45
@@ -13453,11 +13453,11 @@ step
 step
     #arrowtext 等待剧情演出
     .xp >10,1
-    .isOnQuest 24493
+    .isOnQuest 24493 --Don't Forget About Us
     .goto 427,81.79,12.48,20 >>|cRXP_WARN_等待剧情演出|r。
 step
     .xp >10,1
-    .isOnQuest 24493
+    .isOnQuest 24493 --Don't Forget About Us
     .subzone 131 >>重新登录以传送至卡拉诺斯
 -- step
 --     #completewith next
@@ -13526,7 +13526,7 @@ step
     +如果你想以最快速度升级，请选择流放者离岛作为起始区域。这需要重新创建角色。
 
 step
-    #arrowtext 与\ |cRXP_FRIENDLY_内温·扭钳|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_内温·扭钳|r 对话
     .xp >10,1
     .goto 30,34.101,32.243
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_内温·扭钳|r 对话。
@@ -13557,7 +13557,7 @@ step
     .complete 27670,1 --Crazed Leper Gnome (6)
     .mob 癫狂的麻风侏儒
 step
-    #arrowtext 与\ |cRXP_FRIENDLY_内温·扭钳|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_内温·扭钳|r 对话
     .xp >10,1
     .goto 30,35.04,32.17
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_内温·扭钳|r 对话。
@@ -13578,7 +13578,7 @@ step
     #completewith Carvo Blastbolt
     .goto 30,50.14,31.93,20 >>如果你 |cRXP_WARN_无法|r骑乘，在旅行中击杀 |cRXP_ENEMY_怪物|r（|cRXP_WARN_如果可以（取决于职业）|r。
 step
-    #arrowtext 与\ |cRXP_FRIENDLY_卡沃·爆弹|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_卡沃·爆弹|r 对话
     .xp >10,1
     #requires Carvo Blastbolt
     .goto 30,50.14,31.93
@@ -13820,7 +13820,7 @@ step
     >>站在|cRXP_WARN_大工匠梅卡托克|r旁|cRXP_FRIENDLY_等待角色扮演结束|r。
     .complete 26208,1 --Learn about Operation: Gnomeregan (1)
 step
-    #arrowtext 与\ |cRXP_FRIENDLY_大工匠梅卡托克|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_大工匠梅卡托克|r对话
     .xp >10,1
     .goto 469,38.95,32.3,5,0
     .goto 469,38.64,32.9
@@ -13829,7 +13829,7 @@ step
     .accept 26566 >>接受任务 侏儒才智的胜利
     .target 大工匠梅卡托克
 step
-    #arrowtext 与\ |cRXP_FRIENDLY_工程师格林德斯巴克|r 对话
+    #arrowtext 与\n|cRXP_FRIENDLY_工程师格林德斯巴克|r 对话
     .xp >10,1
     .goto 469,40.578,28.021
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_工程师格林德斯巴克|r 对话。
@@ -14156,7 +14156,7 @@ step
     #completewith Detonate trogg tunnel
     .goto 470,27.47,52.08,30 >>击杀 |cRXP_ENEMY_怪物|r 途中（|cRXP_WARN_如果可以(职业相关)|r。
 step
-    #arrowtext 击杀\n|cRXP_ENEMY_穴居人头目布鲁戈|r
+    #arrowtext 杀死\n|cRXP_ENEMY_穴居人头目布鲁戈|r
     .xp >10,1
     #requires Detonate trogg tunnel
     #completewith next
@@ -14384,7 +14384,7 @@ step
     .mob Crushcog Sentry Bot
     .use 58203
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_加尔维·影踪|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_加尔维·影踪|r对话
     .xp >10,1
     #label Paint it Black
     .goto 469,49,52.76
@@ -14472,7 +14472,7 @@ step << Gnome
     #completewith Frostmane Aggression
     .goto 27,53.73,52.04,40 >>跟随箭头
 step << Gnome
-    #arrowtext 与 |cRXP_FRIENDLY_萨兰恩队长|r 对话
+    #arrowtext 与\n|cRXP_FRIENDLY_萨兰恩队长|r 对话
     .xp >10,1
     #requires Frostmane Aggression
     .goto 27,53.73,52.04
@@ -14480,7 +14480,7 @@ step << Gnome
     .accept 25724 >>接受任务 霜鬃的挑衅
     .target 萨兰恩队长
 step << Dwarf
-    #arrowtext 与 |cRXP_FRIENDLY_萨兰恩队长|r 对话
+    #arrowtext 与\n|cRXP_FRIENDLY_萨兰恩队长|r 对话
     .xp >10,1
     .goto 27,53.81,52.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_萨兰恩队长|r 对话。
@@ -14556,7 +14556,7 @@ step
     .nodmf
     .target 雷杰德·麦酒
 step
-    #arrowtext 与 |cRXP_FRIENDLY_拉格纳·雷酒|r 对话
+    #arrowtext 与\n|cRXP_FRIENDLY_拉格纳·雷酒|r 对话
     .xp >10,1
     .goto 27,54.04,50.74
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拉格纳·雷酒|r 对话。
@@ -14598,7 +14598,7 @@ step << Gnome
     .complete 384,2 --1/1 Rhapsody Malt
     .target 旅店老板贝尔姆
 step << Gnome
-    #arrowtext 与 |cRXP_FRIENDLY_旅店老板贝尔姆|r 对话
+    #arrowtext 与\n|cRXP_FRIENDLY_旅店老板贝尔姆|r 对话
     .xp >10,1
     #completewith Rhapsody Malt
     .goto 27,54.5,50.75
@@ -14607,7 +14607,7 @@ step << Gnome
     .skipgossipid 30010
     .target 旅店老板贝尔姆
 step << Gnome
-    #arrowtext 与 |cRXP_FRIENDLY_旅店老板贝尔姆|r 对话
+    #arrowtext 与\n|cRXP_FRIENDLY_旅店老板贝尔姆|r 对话
     .xp >10,1
     #requires Rhapsody Malt
     .goto 27,54.5,50.75
@@ -14626,7 +14626,7 @@ step << Dwarf
     .complete 384,2 --1/1 Rhapsody Malt
     .target 旅店老板贝尔姆
 step << Dwarf
-    #arrowtext 与 |cRXP_FRIENDLY_旅店老板贝尔姆|r 对话
+    #arrowtext 与\n|cRXP_FRIENDLY_旅店老板贝尔姆|r 对话
     .xp >10,1
     #completewith Rhapsody Malt2
     .goto 27,54.5,50.75
@@ -14647,7 +14647,7 @@ step << Dwarf
     .buy 2894,1
     .target 旅店老板贝尔姆
 step << Gnome
-    #arrowtext 与 |cRXP_FRIENDLY_旅店老板贝尔姆|r 对话
+    #arrowtext 与\n|cRXP_FRIENDLY_旅店老板贝尔姆|r 对话
     .xp >10,1
     .goto 27,54.5,50.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_旅店老板贝尔姆|r对话|cRXP_WARN_[3]|r。
@@ -14699,7 +14699,7 @@ step << Dwarf
     #completewith Bound for KharanosDwarf
     .goto 27,50,44.88,40 >>跟随箭头
 step << Dwarf
-    #arrowtext 与 |cRXP_FRIENDLY_席亚拉·深石|r 对话
+    #arrowtext 与\n|cRXP_FRIENDLY_席亚拉·深石|r 对话
     .xp >10,1
     #requires Bound for KharanosDwarf
     .goto 27,50,44.88
@@ -14716,7 +14716,7 @@ step << Gnome
     .goto 27,54.06,50.5,5,0
     .complete 315,1 --Shimmerweed (7)
 step << Gnome
-    #arrowtext 离开酒馆
+    #arrowtext 离开旅馆
     .xp >10,1
     #completewith Shimmerweed1
     .goto 27,53.18,49.88,42 >>离开旅店。
@@ -14787,7 +14787,7 @@ step << Dwarf
     .cooldown item,6948,>0,1
     .use 6948
 step << Dwarf
-    #arrowtext 与 |cRXP_FRIENDLY_旅店老板贝尔姆|r 对话
+    #arrowtext 与\n|cRXP_FRIENDLY_旅店老板贝尔姆|r 对话
     .xp >10,1
     #requires Bound for Kharanos
     .goto 27,54.48,50.84
@@ -14804,7 +14804,7 @@ step << Dwarf
     .turnin 315 >>交任务 完美烈酒
 	.target 雷杰德·麦酒
 step << Dwarf
-    #arrowtext 离开酒馆
+    #arrowtext 离开旅馆
     .xp >10,1
     #completewith The Perfect Stout
     .goto 27,54.06,50.49,5 >>离开旅馆
@@ -14839,7 +14839,7 @@ step << Gnome
     .turnin 315 >>交任务 完美烈酒
 	.target 雷杰德·麦酒
 step << Gnome
-    #arrowtext 离开酒馆
+    #arrowtext 离开旅馆
     .xp >10,1
     #requires Bound for KharanosGnome
     #completewith The Perfect Stout2
@@ -15024,7 +15024,7 @@ step
 step
     .xp >10,1
     #label Mountaineer Valgrum2
-    .isOnQuest 313
+    .isOnQuest 313 --Forced to Watch from Afar
     .subzoneskip 136,1
     #title |cFFFCDC00稀有& |cFFFCDC00宝箱|r|r
     *击杀|cRXP_ENEMY_饥饿的雪怪|r并点击|cRXP_PICK_箱子|r（若存在）以获取额外XP。
@@ -15265,7 +15265,7 @@ step
     #hidewindow
     .complete 25841,1 --Attack on Northern Frostmane Retreat (1)
 step
-    #arrowtext 使用 [发射信号弹]
+    #arrowtext 使用[发射信号弹]
     .xp >10,1
     #completewith Northern Frostmane Retreat
     .goto 27,64.49,54.38
@@ -15301,7 +15301,7 @@ step
     #hidewindow
     .complete 25841,2 --Attack on Southern Frostmane Retreat (1)
 step
-    #arrowtext 使用 [发射信号弹]
+    #arrowtext 使用[发射信号弹]
     .xp >10,1
     #completewith Southern Camp0
     .goto 27,63.24,57.05
@@ -15348,7 +15348,7 @@ step
 	.mob 霜鬃战士
 step
     #arrowtext 与 |cRXP_FRIENDLY_尖刀斯尼威克|r 和 |cRXP_FRIENDLY_斯拉姆·摇轮|r 对话
-    .isQuestComplete 25932
+    .isQuestComplete 25932 --It's Raid Night Every Night
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_尖刀斯尼威克|r和|cRXP_FRIENDLY_斯拉姆·摇轮|r对话
     .turnin 28868 >>交任务 仰视
     .goto 27,62.546,53.807
@@ -15414,7 +15414,7 @@ step
     .mob 霜鬃袭击者
 step
     #arrowtext 与 |cRXP_FRIENDLY_火锤中士|r 对话
-    .isQuestComplete 25932
+    .isQuestComplete 25932 --It's Raid Night Every Night
     .goto 27,70.41,48.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_火锤中士|r 对话
     .turnin 25932 >>交任务 每天晚上都来袭
@@ -15462,7 +15462,7 @@ step
     .complete 314,1 --1/1 Fang of Vagash
 step
     #arrowtext 与 |cRXP_FRIENDLY_鲁德拉·冻石|r 对话
-    .isQuestComplete 314
+    .isQuestComplete 314 --Protecting the Herd
     .goto 27,70.28,48.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_鲁德拉·冻石|r 对话
     .turnin 314 >>交任务 保护牲畜
@@ -15487,7 +15487,7 @@ step
     .use 10549 --Rancher's Trousers
 step
     #arrowtext 与 |cRXP_FRIENDLY_维隆·冻石|r 对话
-    .isQuestComplete 25905
+    .isQuestComplete 25905 --Rams on the Lam
     .goto 27,70.67,48.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_维隆·冻石|r 对话
     .turnin 25905 >>交任务 山羊大潜逃
@@ -15607,14 +15607,14 @@ step
     .mob 石腭击颅者
 step
     #arrowtext 与 |cRXP_FRIENDLY_工头乔尼·石眉|r 对话
-    .isQuestComplete 432
+    .isQuestComplete 432 --Those Blasted Troggs!
     .goto 27,76.31,54.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_工头乔尼·石眉|r 对话
     .turnin 432 >>交任务 该死的穴居人！
     .target 工头乔尼·石眉
 step
     #arrowtext 与 |cRXP_FRIENDLY_勘查员德鲁甘|r 对话
-    .isQuestComplete 25937
+    .isQuestComplete 25937 --Priceless Treasures
     .goto 27,76.18,53.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_勘查员德鲁甘|r 对话
     .turnin 25937 >>交任务 无价之宝
@@ -15668,7 +15668,7 @@ step
     .mob 冰墓
 step
     #arrowtext 与 |cRXP_FRIENDLY_巴鲁姆中士|r 和 |cRXP_FRIENDLY_库格恩·焦羽|r 对话
-    .isQuestComplete 25978
+    .isQuestComplete 25978 --Entombed in Ice
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_巴鲁姆中士|r 和 |cRXP_FRIENDLY_库格恩·焦羽|r 对话。
     .turnin 25978 >>交任务 冰中之棺
     .goto 27,82.86,48.40
@@ -15678,7 +15678,7 @@ step
     .target +库格恩·焦羽
 step
     .zoneskip 27,1
-    .zone 2352 >>使用地块查找器传送到一个居住区，而不是|T7252953:0|t[传送到地块]，然后使用|cRXP_PICK_Stormwind 传送门|r。
+    .zone 2352 >>通过房屋查找器传送到邻里，不要用|T7252953:0|t[传送到地块]，然后走|cRXP_PICK_Stormwind 传送门|r。
     .link https://www.youtube.com/watch?v=uVkUB7z0njo >>点击观看视频
     .macro House Teleport, 975747 >>房屋传送
 step << Alliance
@@ -15687,7 +15687,7 @@ step << Alliance
     .zone 84 >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_传送门|r
     .zoneskip 2352,1
 step << Alliance
-    #include RestedXP 快速升级\a) GC 克罗米时间塔楼
+    #include RestedXP 快速升级\a) GC Chromie Time Tower
 -- step
 --     .goto 27,82.85,48.41
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergeant Bahrum|r
@@ -15758,12 +15758,10 @@ step
     #hidewindow
     +测试
     .usespell 1231411
-
 step
     .xp >10,1
     #completewith Beating Them Back!
     +如果你想以最快速度升级，请选择流放者离岛作为起始区域。这需要重新创建角色。
-
 step
     #arrowtext 与 |cRXP_FRIENDLY_治安官玛克布莱德|r 对话
     .xp >10,1
@@ -16307,12 +16305,12 @@ step
     .accept 26378 >>接受任务 英雄的召唤：西部荒野！
     .disablecheckbox
 	.target 治安官杜汉
-    .isOnQuest 54
+    .isOnQuest 54 --Report to Goldshire
 step
     .xp >10,1
     #completewith Marshal Dughan
     .goto 37,41.715,64.636,100 >>如果你 |cRXP_WARN_无法|r骑乘，在旅行中击杀 |cRXP_ENEMY_怪物|r（|cRXP_WARN_如果可以（取决于职业）|r。
-    .isOnQuest 54
+    .isOnQuest 54 --Report to Goldshire
     .mob 癞皮狼
     .mob Cutpurse
     .mob 森林蜘蛛
@@ -16326,12 +16324,12 @@ step
     .turnin 54 >>交任务 去闪金镇报到
     .accept 62 >>接受任务 法戈第矿洞
     .accept 26378 >>接受任务 英雄的召唤：西部荒野！
-    .isOnQuest 54
+    .isOnQuest 54 --Report to Goldshire
 	.target 治安官杜汉
 step
     #arrowtext 与 |cRXP_FRIENDLY_治安官杜汉|r 对话
     .xp >10,1
-    .isQuestAvailable 54
+    .isQuestAvailable 54 --Report to Goldshire
     .goto 37,42.12,65.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_治安官杜汉|r 对话。
     .accept 62 >>接受任务 法戈第矿洞
@@ -16373,7 +16371,7 @@ step
     .accept 60 >>接受任务 狗头人的蜡烛
 	.target 威廉·匹斯特
 step
-    #arrowtext 进入酒馆
+    #arrowtext 进入旅馆
     .xp >10,1
     #completewith Kobold Candles
     .goto 37,43.2,65.76,5,0
@@ -16393,7 +16391,7 @@ step
     .goto 37,43.63,65.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_旅店老板法雷|r 对话。
     .turnin 37112 >>交任务 休息和放松
-    .isOnQuest 37112
+    .isOnQuest 37112 --Rest and Relaxation
 step
     #arrowtext 与 |cRXP_FRIENDLY_旅店老板法雷|r 对话
     .xp >10,1
@@ -16402,7 +16400,7 @@ step
     .home >>将炉石设置在狮王之傲旅店
     .skipgossipid 28605
     .subzoneskip 5637,1
-    .isOnQuest 60
+    .isOnQuest 60 --Kobold Candles
 	.target 旅店老板法雷
 -- step
 --     .xp >10,1
@@ -16427,7 +16425,7 @@ step
     .buy 4496,3
     .target 布洛葛·哈姆菲斯特
     .subzoneskip 5637,1
-    .isOnQuest 60
+    .isOnQuest 60 --Kobold Candles
 -- step
 --     .xp >10,1
 --     .goto 37,43.96,65.92
@@ -16446,7 +16444,7 @@ step
     .target 布洛葛·哈姆菲斯特
     .subzoneskip 5637,1
     .nodmf
-    .isOnQuest 60
+    .isOnQuest 60 --Kobold Candles
 step
     .xp >10,1
     #completewith next
@@ -16482,12 +16480,12 @@ step
     .accept 47 >>接受任务 金砂交易
 	.target 雷米
 step
-    #arrowtext 离开酒馆
+    #arrowtext 退出旅馆
     .xp >10,1
     #completewith Remy "Two Times"
     .goto 37,42.24,67.1,35 >>离开旅店。
 step
-    #arrowtext 与 |cRXP_FRIENDLY_雷米|r 对话
+    #arrowtext 与\n|cRXP_FRIENDLY_雷米|r 对话
     .xp >10,1
     #requires Remy "Two Times"
     .goto 37,42.24,67.1
@@ -16496,7 +16494,7 @@ step
     .accept 47 >>接受任务 金砂交易
 	.target 雷米
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_温比尔·任务栏|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_温比尔·任务栏|r 对话
     .xp >10,1
     .goto 37,41.96,67.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_温比尔·任务栏|r 对话。
@@ -16507,7 +16505,7 @@ step
     .skipgossipid 38919
     .nodmf
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_温比尔·任务栏|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_温比尔·任务栏|r 对话
     .xp >10,1
     .goto 37,41.96,67.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_温比尔·任务栏|r 对话。
@@ -16546,8 +16544,8 @@ step
     .daily 31693 >>接受任务 茱莉亚·史蒂文斯
     .train 125610,3
 	.target 茱莉亚·史蒂文斯
-    .isQuestTurnedIn 31889,31891,31902,31903
-    .isOnQuest 60,47
+    .isQuestTurnedIn 31889,31891,31902,31903 --Battle Pet Tamers: Kalimdor Alliance; Battle Pet Tamers: Kalimdor; Battle Pet Tamers: Eastern Kingdoms; Battle Pet Tamers: Eastern Kingdoms
+    .isOnQuest 60,47 --Kobold Candles; Gold Dust Exchange
 step
     .xp >10,1
     #completewith Julia Stevens
@@ -16563,8 +16561,8 @@ step
     .daily 31693 >>接受任务 茱莉亚·史蒂文斯
     .train 125610,3
 	.target 茱莉亚·史蒂文斯
-    .isQuestTurnedIn 31889,31891,31902,31903
-    .isOnQuest 60,47
+    .isQuestTurnedIn 31889,31891,31902,31903 --Battle Pet Tamers: Kalimdor Alliance; Battle Pet Tamers: Kalimdor; Battle Pet Tamers: Eastern Kingdoms; Battle Pet Tamers: Eastern Kingdoms
+    .isOnQuest 60,47 --Kobold Candles; Gold Dust Exchange
 step
     .xp >10,1
     #completewith next
@@ -16572,7 +16570,7 @@ step
     >>在宠物对战中击败她。
     .complete 31693,1 --Defeat Julia Stevens
 	.target 茱莉亚·史蒂文斯
-    .isOnQuest 31693
+    .isOnQuest 31693 --Julia Stevens
 step
     #arrowtext 与 |cRXP_FRIENDLY_茱莉亚·史蒂文斯|r 对话
     .xp >10,1
@@ -16587,7 +16585,7 @@ step
     >>在宠物对战中击败她。
     .complete 31693,1 --Defeat Julia Stevens
 	.target 茱莉亚·史蒂文斯
-    .isOnQuest 31693
+    .isOnQuest 31693 --Julia Stevens
 step
     #arrowtext 与 |cRXP_FRIENDLY_茱莉亚·史蒂文斯|r 对话
     .xp >10,1
@@ -16595,7 +16593,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_茱莉亚·史蒂文斯|r 对话。
     .turnin 31693 >>交任务 茱莉亚·史蒂文斯
 	.target 茱莉亚·史蒂文斯
-    .isQuestComplete 31693
+    .isQuestComplete 31693 --Julia Stevens
 step
     .xp >10,1
     #completewith next
@@ -16722,7 +16720,7 @@ step
     .complete 88,1 --1/1 Brass Collar
 	.mob 公主
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_斯通菲尔德妈妈|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_斯通菲尔德妈妈|r 对话
     .xp >10,1
     .goto 37,34.53,84.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_斯通菲尔德妈妈|r 对话。
@@ -16752,7 +16750,7 @@ step
     .use 131197 --Rusty Chain Galoshes
     .use 1182 --Brass Studded Bracers
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_瑞尼尔副队长|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_瑞尼尔副队长|r 对话
     .xp >10,1
     .goto 37,24.33,74.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_瑞尼尔副队长|r 对话。
@@ -16839,15 +16837,15 @@ step
     .turnin 11 >>交任务 悬赏河爪豺狼人
 	.target 瑞尼尔副队长
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_老马当劳|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_老马当劳|r 对话
     .xp >10,1
     .goto 52,60.86,18.32
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_老马当劳|r 对话。
     .daily 31780 >>接受任务 老马当劳
     .train 125610,3
 	.target 老马当劳
-    .isQuestTurnedIn 31889,31891,31902,31903
-    .isOnQuest 184
+    .isQuestTurnedIn 31889,31891,31902,31903 --Battle Pet Tamers: Kalimdor Alliance; Battle Pet Tamers: Kalimdor; Battle Pet Tamers: Eastern Kingdoms; Battle Pet Tamers: Eastern Kingdoms
+    .isOnQuest 184 --Furlbrow's Deed
     .use 2238 --Urchins Pants
     .use 57527 --Stone Cairne Boots
     .use 131192 --Riverpaw Gnoll Boots
@@ -16858,9 +16856,9 @@ step
     #label Defeat Old MacDonald
     >>在宠物对战中击败老马当劳。
     .complete 31780,1 --Defeat Old MacDonald
-    .isOnQuest 31780
+    .isOnQuest 31780 --Old MacDonald
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_老马当劳|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_老马当劳|r 对话
     .xp >10,1
     #completewith Defeat Old MacDonald
     .goto 52,60.86,18.32
@@ -16875,7 +16873,7 @@ step
     .complete 31780,1 --Defeat Old MacDonald
 	.target 老马当劳
     .skipgossipid 65648
-    .isOnQuest 31780
+    .isOnQuest 31780 --Old MacDonald
 step
     #arrowtext 与\n|cRXP_FRIENDLY_老马当劳|r 对话
     .xp >10,1
@@ -16883,7 +16881,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_老马当劳|r 对话。
     .turnin 31780 >>交任务 老马当劳
 	.target 老马当劳
-    .isQuestComplete 31780
+    .isQuestComplete 31780 --Old MacDonald
 step
     #arrowtext 与\n|cRXP_FRIENDLY_霍拉提奥·莱茵中尉|r 对话
     .xp >10,1
@@ -17000,7 +16998,7 @@ step
     .turnin 60 >>交任务 狗头人的蜡烛
     .target 威廉·匹斯特
 step
-    .isQuestComplete 47,62,40
+    .isQuestComplete 47,62,40 --Gold Dust Exchange; The Fargodeep Mine; A Fishy Peril
     #completewith next
     #label Turn in The Fargodeep Mine
     .goto 37,43.18,66.03,5,0
@@ -17014,12 +17012,12 @@ step
     .disablecheckbox
 	.target +治安官杜汉
 step
-    #arrowtext 离开酒馆
+    #arrowtext 离开旅馆
     #completewith Turn in The Fargodeep Mine
     .goto 37,42.15,67.25,30 >>离开旅店
 step
     #arrowtext 与 |cRXP_FRIENDLY_雷米|r 对话
-    .isQuestComplete 47,62,40
+    .isQuestComplete 47,62,40 --Gold Dust Exchange; The Fargodeep Mine; A Fishy Peril
     #requires Turn in The Fargodeep Mine
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雷米|r 对话。
     .turnin 47 >>交任务 金砂交易
@@ -17030,7 +17028,7 @@ step
     .use 57398 --Candlewax Streaked Robe
     .use 57399 --Kobold Hunters Trophy Belt
 step
-    #arrowtext 与 |cRXP_FRIENDLY_雷米|r 对话
+    #arrowtext 与\n|cRXP_FRIENDLY_雷米|r 对话
     .xp >10,1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雷米|r 对话。
     .accept 35 >>接受任务 卫兵托马斯
@@ -17040,7 +17038,7 @@ step
     .use 57401 --Jasperlode Chestguard
 step
     #arrowtext 与 |cRXP_FRIENDLY_治安官杜汉|r 对话
-    .isQuestComplete 176
+    .isQuestComplete 176 --WANTED: "Hogger"
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_治安官杜汉|r 对话。
     .turnin 176 >>交任务 通缉：霍格
     .goto 37,42.12,65.94
@@ -17073,7 +17071,7 @@ step
     .goto 37,65.78,64.13,30 >>击杀|cRXP_ENEMY_塔兰蒂斯|r；如果不在则继续前行。
     .mob 塔兰蒂斯
 step
-    #arrowtext 与 |cRXP_FRIENDLY_卫兵托马斯|r 对话
+    #arrowtext 与\n|cRXP_FRIENDLY_卫兵托马斯|r 对话
     .xp >10,1
     #requires Further Concerns2
     .goto 37,73.98,72.18
@@ -17200,14 +17198,14 @@ step
     .target 管理员莱琳
 step
     #arrowtext 与 |cRXP_FRIENDLY_治安官帕特尔森|r 对话
-    .isQuestComplete 26152,123
+    .isQuestComplete 26152,123 --WANTED: James Clark; The Collector
     .goto 37,81.860,66.040
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_治安官帕特尔森|r 对话。
     .turnin 26152 >>交任务 通缉：詹姆斯·克拉克
     .turnin 123 >>交任务 收货人
     .target 治安官帕特尔森
 step
-    #arrowtext 与 |cRXP_FRIENDLY_治安官帕特尔森|r 对话
+    #arrowtext 与\n|cRXP_FRIENDLY_治安官帕特尔森|r 对话
     .goto 37,81.860,66.040
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_治安官帕特尔森|r 对话。
     .accept 147>>接受任务 猎杀收货人
@@ -17308,9 +17306,9 @@ step
     .vendor >>修理并出售物品以腾出背包空间。
     .target 拉里克·费恩
 step
-    #arrowtext 与 |cRXP_FRIENDLY_卫兵托马斯|r 对话
+    #arrowtext 与\n|cRXP_FRIENDLY_卫兵托马斯|r 对话
     #requires Bounty on Murlocs
-    .isQuestComplete 46,52,71
+    .isQuestComplete 46,52,71 --Bounty on Murlocs; Protect the Frontier; Report to Thomas
     .goto 37,73.973,72.177
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_卫兵托马斯|r 对话。
     .turnin 46 >>交任务 悬赏鱼人
@@ -17365,7 +17363,7 @@ step
     .goto 37,71.02,80.67
     >>击杀 |cRXP_ENEMY_收货人莫根|r
     *|TInterface/cursor/crosshair/interact.blp:17|t点击房子后方的|cRXP_PICK_宝箱|r；若不在则继续前行。
-    *|cRXP_WARN_注意你可能会引仇整个房间的敌人|r。
+    *|cRXP_WARN_小心你可能会激怒整栋房屋的敌人|r。
     .complete 147,1 --The Collector's Ring (1)
     .mob 收货人莫根
 step
@@ -17431,14 +17429,14 @@ step
     .deathskip >>在灵魂医者处复活。
 step
     #arrowtext 与\n|cRXP_FRIENDLY_治安官帕特尔森|r 对话
-    .isQuestComplete 147
+    .isQuestComplete 147 --Manhunt
     .goto 37,81.860,66.040
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_治安官帕特尔森|r 对话。
     .turnin 147 >>交任务 猎杀收货人
     .target 治安官帕特尔森
 step
     #arrowtext 与\n|cRXP_FRIENDLY_管理员莱琳|r 对话
-    .isQuestComplete 5545
+    .isQuestComplete 5545 --A Bundle of Trouble
     #label Turn in A Bundle of Trouble
     .goto 37,81.39,66.12
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_管理员莱琳|r 对话
@@ -17450,7 +17448,7 @@ step
     .use 1360 --Stormwind Plate Gloves
 step
     #arrowtext 与\n|cRXP_FRIENDLY_萨拉·迪博雷恩|r 对话
-    .isQuestComplete 83,59
+    .isQuestComplete 83,59 --Fine Linen Goods; Cloth and Leather Armor
     .goto 37,79.462,68.715
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_萨拉·迪博雷恩|r 对话。
     .turnin 83 >>交任务 优质亚麻产品
@@ -17477,7 +17475,7 @@ step
     .accept 40519 >>接受任务 军团再临：军团回归
     .choose 1851120
 step
-    #include RestedXP 快速升级\a) GC 克罗米时间 普通@ChromieTime-ChromieTime
+    #include RestedXP 快速升级\a) GC Chromie Time Normal@ChromieTime1-ChromieTime2
 -- step
 --     .goto 84,56.257,17.311
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
@@ -17488,7 +17486,7 @@ step
 --     .target Chromie
 step
     .subzoneskip 6292
-    .isOnQuest 65436
+    .isOnQuest 65436 --The Dragon Isles Await
     >>使用 |T134309:0|t[失落的龙鳞] 传送至暴风城。
     .complete 65436,1 --1/1 Lost Dragonscale used to teleport to near Wrathion's location (Optional)
     .nodmf
@@ -17742,7 +17740,7 @@ step
     .mob 树林蜘蛛
 step
     #arrowtext 从悬崖跳下 << !Hunter
-    #arrowtext 使用[逃脱] << Hunter
+    #arrowtext 使用 [逃脱] << Hunter
     .xp >10,1
     #completewith Webwood Spider
     .goto 58,39.52,62.81,30,0
@@ -17806,7 +17804,7 @@ step
     .accept 28728 >>接受任务 未来的征兆
     .target 塔琳德拉
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_德塔莉亚·银林|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_德塔莉亚·银林|r 对话
     .xp >10,1
     .goto 460,42.50,50.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德塔莉亚·银林|r 对话。
@@ -18014,7 +18012,7 @@ step
     .use 6061 --graystone-bracers
     .use 5605 --pruning-knife
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_伯萨努斯|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_伯萨努斯|r 对话
     .xp >10,1
     .goto 460,54.57,84.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_伯萨努斯|r 对话。
@@ -18035,7 +18033,7 @@ step
     .goto 57,59.56,49.09,60 >>前往目标。
     *如果你 |cRXP_WARN_无法|r骑乘，在旅行中击杀 |cRXP_ENEMY_怪物|r（|cRXP_WARN_如果可以（取决于职业）|r。
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_赛恩·腐蹄|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_赛恩·腐蹄|r 对话
     .xp >10,1
     #requires Zenn's Bidding
     .goto 57,59.56,49.09
@@ -18059,7 +18057,7 @@ step
 	.mob 巨翼枭的羽毛
 	.mob 树林蜘蛛
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_赛恩·腐蹄|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_赛恩·腐蹄|r 对话
     .xp >10,1
     .goto 57,59.49,49.25
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_赛恩·腐蹄|r 对话
@@ -18084,7 +18082,7 @@ step
 	.mob 巨翼枭的羽毛
 	.mob 树林蜘蛛
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_塞拉尔·刃叶|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_塞拉尔·刃叶|r 对话
     .xp >10,1
     #requires Seek Redemption!
     .goto 57,55.84,50.39
@@ -18142,7 +18140,7 @@ step
     .accept 475 >>接受任务 烦恼之风
 	.target 阿斯瑞达斯·熊皮
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_伊兰尼斯·影花|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_伊兰尼斯·影花|r 对话
     .xp >10,1
     .goto 57,55.93,52.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_伊兰尼斯·影花|r|r对话。
@@ -18169,7 +18167,7 @@ step
     .turnin 2159,1 >>交任务 多兰纳尔的货物
 	.target 旅店老板凯达米尔
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_旅店老板凯达米尔|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_旅店老板凯达米尔|r 对话
     .xp >10,1
     #completewith Hearthstone to Dolanaar
     .goto 57,55.46,52.27
@@ -18191,7 +18189,7 @@ step
     #completewith next
     +在路线正前方遇到矿石和草药时顺手采集，以获取经验值。
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_科瑞萨斯·月怒|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_科瑞萨斯·月怒|r 对话
     .xp >10,1
     .goto 57,55.82,53.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_科瑞萨斯·月怒|r 对话。
@@ -18228,7 +18226,7 @@ step
     .train 2550 >>学习 |T4620671:0|t[烹饪]
     .target 扎瑞恩
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_奈欧玛|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_奈欧玛|r 对话
     .xp >10,1
     #completewith Zarrin
     .goto 57,56.74,53.52
@@ -18532,7 +18530,7 @@ step
     .accept 13946 >>接受任务 自然的报复
     .target 塞拉尔·刃叶
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_塔隆凯·捷根|r 对话
+    #arrowtext 与 |cRXP_FRIENDLY_塔隆凯·捷根|r 对话
     .xp >10,1
     .goto 57,55.62,50.09
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塔隆凯·捷根|r 对话。
@@ -18707,16 +18705,16 @@ step
     .goto 57,55.82,51.03,10,0
     .goto 57,55.76,50.44,40 >>跟随箭头
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_塞拉尔·刃叶|r 对话
-    .isQuestComplete 13946
+    #arrowtext 与 |cRXP_FRIENDLY_塞拉尔·刃叶|r 对话
+    .isQuestComplete 13946 --Nature's Reprisal
     #requires Nature's Reprisal3
     .goto 57,55.76,50.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塞拉尔·刃叶|r 对话
     .turnin 13946 >>交任务 自然的报复
     .target 塞拉尔·刃叶
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_塔隆凯·捷根|r 对话
-    .isQuestComplete 932
+    #arrowtext 与 |cRXP_FRIENDLY_塔隆凯·捷根|r 对话
+    .isQuestComplete 932 --Twisted Hatred
     .goto 57,55.61,50.09
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塔隆凯·捷根|r 对话
     .turnin 932 >>交任务 扭曲的仇恨
@@ -18836,8 +18834,8 @@ step
     .goto 57,55.83,50.35,10,0
     .goto 57,55.55,49.99,30 >>跟随箭头
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_塔隆凯·捷根|r 对话
-    .isQuestComplete 2459
+    #arrowtext 与 |cRXP_FRIENDLY_塔隆凯·捷根|r 对话
+    .isQuestComplete 2459 --Ferocitas the Dream Eater
     #requires Ferocitas the Dream Eater3
     .goto 57,55.55,49.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塔隆凯·捷根|r 对话。
@@ -18925,7 +18923,7 @@ step
     .mob 血羽女族长
 step
     #arrowtext 与 |cRXP_FRIENDLY_哨兵阿瑞尼亚·碎云|r 对话
-    .isQuestComplete 937
+    .isQuestComplete 937 --The Enchanted Glade
     .goto 57,39.50,29.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哨兵阿瑞尼亚·碎云|r 对话
     .turnin 937 >>交任务 神谕林地
@@ -18933,7 +18931,7 @@ step
     .target 哨兵阿瑞尼亚·碎云
 step
     #arrowtext 与 |cRXP_FRIENDLY_女祭司艾茉拉|r 对话
-    .isQuestComplete 2518
+    .isQuestComplete 2518 --Tears of the Moon
     .goto 57,39.24,29.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_女祭司艾茉拉|r 对话
     .turnin 2518 >>交任务 月神的泪水
@@ -19077,13 +19075,13 @@ step
     #arrowtext 点击\n|cRXP_PICK_Chest|r
     .xp >10,1
     .goto 61,50.84,37.45
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_宝箱|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Chest|r
     .complete 483,3 --1/1 Sapphire of Sky
 step
-    #arrowtext 点击\n|cRXP_PICK_Chest|r
+    #arrowtext Click\n|cRXP_PICK_Chest|r
     .xp >10,1
     .goto 61,54.91,74.04
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_宝箱|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Chest|r
     .complete 483,4 --1/1 Rune of Nesting
 step
     .xp >10,1
@@ -19097,45 +19095,45 @@ step
     .goto 61,30.71,77.58,10,0
     .goto 60,25.09,80.11,10,0
     .goto 60,48.94,49.35,10,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥本·怒爪|r 对话
-    .turnin 2541 >>交任务 沉睡的德鲁伊
-    .target 奥本·怒爪
-    .accept 2561 >>接受任务 利爪德鲁伊
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Oben Rageclaw|r
+    .turnin 2541 >>Turn in The Sleeping Druid
+    .target Oben Rageclaw
+    .accept 2561 >>Accept Druid of the Claw
     .disablecheckbox
 step
-    #arrowtext 跟随箭头
+    #arrowtext Follow the arrow
     .xp >10,1
     #completewith Druid of the Claw
-    .goto 60,40.15,58.87,10 >>跟随箭头
+    .goto 60,40.15,58.87,10 >>Follow the Arrow
 step
-    #arrowtext 与 |cRXP_FRIENDLY_奥本·怒爪|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Oben Rageclaw|r
     .xp >10,1
     #requires Druid of the Claw
     .goto 60,42.35,83.02
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥本·怒爪|r 对话
-    .turnin 2541 >>交任务 沉睡的德鲁伊
-    .target 奥本·怒爪
-    .accept 2561 >>接受任务 利爪德鲁伊
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Oben Rageclaw|r
+    .turnin 2541 >>Turn in The Sleeping Druid
+    .target Oben Rageclaw
+    .accept 2561 >>Accept Druid of the Claw
 step
-    #arrowtext 杀死 |cRXP_ENEMY_怒爪|r
+    #arrowtext Kill\n|cRXP_ENEMY_Rageclaw|r
     .xp >10,1
     .goto 60,38.92,57.27,10,0
     .goto 60,58.05,66.73
-    >>击杀 |cRXP_ENEMY_怒爪|r
-    *|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_怒爪的尸体|r。
+    >>Kill |cRXP_ENEMY_Rageclaw|r
+    *|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Rageclaw's corpse|r.
     .complete 2561,1
     .use 8149
-    .mob 怒爪
+    .mob Rageclaw
 step
-    #arrowtext 与 |cRXP_FRIENDLY_奥本·怒爪|r 对话
-    .isQuestComplete 2561
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Oben Rageclaw|r
+    .isQuestComplete 2561 --Druid of the Claw
     #label Gnarlpines2
     .goto 60,41.40,83.52
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥本·怒爪|r 对话
-    .turnin 2561 >>交任务 利爪德鲁伊
-    .target 奥本·怒爪
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Oben Rageclaw|r
+    .turnin 2561 >>Turn in Druid of the Claw
+    .target Oben Rageclaw
 step
-    #arrowtext 杀死 |cRXP_ENEMY_Gnarlpines|r
+    #arrowtext Kill\n|cRXP_ENEMY_Gnarlpines|r
     .xp >10,1
     #loop
     .goto 60,43.85,74.74,10,0
@@ -19148,92 +19146,92 @@ step
     .goto 57,45.92,47.93,10,0
     .goto 57,48.36,46.6,10,0
     .goto 57,48.77,48.4,10,0
-    >>击杀|cRXP_ENEMY_瘤背|r。
-    *拾取|T132502:0|t[|cRXP_LOOT_萨满巫毒符咒|r]。
+    >>Kill |cRXP_ENEMY_Gnarlpines|r.
+    *Loot them for |T132502:0|t[|cRXP_LOOT_Shaman Voodoo Charm|r].
     .complete 2541,1 --1/1 Shaman Voodoo Charm
     .complete 13945,1 --20/20 Ban'ethil Gnarlpine slain
-    .mob 瘤背防御者
-    .mob 瘤背萨满祭司
+    .mob Gnarlpine Defender
+    .mob Gnarlpine Shaman
     .use 9598 --Sleeping Robes
     .use 18957 --Brushwood Blade
 step
-    #arrowtext 与 |cRXP_FRIENDLY_阿斯瑞达斯·熊皮|r 和 |cRXP_FRIENDLY_哨兵凯拉·星歌|r 对话
-    .isQuestComplete 483
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Athridas Bearmantle|r and |cRXP_FRIENDLY_Sentinel Kyra Starsong|r
+    .isQuestComplete 483 --The Relics of Wakening
     .goto 57,55.70,52.01
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿斯瑞达斯·熊皮|r 和 |cRXP_FRIENDLY_哨兵凯拉·星歌|r 对话。
-    .turnin 483 >>交任务 唤醒圣物
-    .accept 486 >>接受任务 大槌乌萨尔
-    .target 阿斯瑞达斯·熊皮
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Athridas Bearmantle|r and |cRXP_FRIENDLY_Sentinel Kyra Starsong|r.
+    .turnin 483 >>Turn in The Relics of Wakening
+    .accept 486 >>Accept Ursal the Mauler
+    .target Athridas Bearmantle
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_哨兵 基拉·星歌|r 对话
-    .isQuestComplete 13945
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Sentinel Kyra Starsong|r
+    .isQuestComplete 13945 --Resident Danger
     .goto 57,55.70,52.01
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哨兵凯拉·星歌|r 对话。
-    .turnin 13945 >>交任务 常驻的危险
-    .target 哨兵凯拉·星歌
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Kyra Starsong|r.
+    .turnin 13945 >>Turn in Resident Danger
+    .target Sentinel Kyra Starsong
     .use 60240 --Dream Carrier
     .use 131210 --Gritroot Cinch
     .use 9599 --Barkplate Leggings
     .use 54868 --Gritroot Belt
 step
-    #arrowtext 与 |cRXP_FRIENDLY_哨兵阿玛拉·夜行者|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Moon Priestess Amara|r
     .xp >10,1
     .goto 57,49.36,44.64
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哨兵阿玛拉·夜行者|r 对话
-    .accept 487 >>接受任务 达纳苏斯之路
-    .target 哨兵阿玛拉·夜行者
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moon Priestess Amara|r
+    .accept 487 >>Accept The Road to Darnassus
+    .target Moon Priestess Amara
 step
     .xp >10,1
     #completewith next
-    >>击杀 |cRXP_ENEMY_瘤背伏击者|r
+    >>Kill |cRXP_ENEMY_Gnarlpine Ambusher|r
     .complete 487,1 --8/8 Gnarlpine Ambusher slain
-    .mob 瘤背伏击者
+    .mob Gnarlpine Ambusher
 step
-    #arrowtext 杀死 |cRXP_ENEMY_大槌乌萨尔|r
+    #arrowtext Kill\n|cRXP_ENEMY_Ursal the Mauler|r
     .xp >10,1
     .goto 57,51.69,39.86
-    >>击杀洞穴里面的|cRXP_ENEMY_大槌乌萨尔|r。
+    >>Kill |cRXP_ENEMY_Ursal the Mauler|r inside the cave.
     .complete 486,1 --1/1 Ursal the Mauler slain
-    .mob 大槌乌萨尔
+    .mob Ursal the Mauler
 step
-    #arrowtext 杀死 |cRXP_ENEMY_瘤背伏击者|r
+    #arrowtext Kill\n|cRXP_ENEMY_Gnarlpine Ambusher|r
     .xp >10,1
     #loop
     .goto 57,50.27,35.55,30,0
     .goto 57,49.67,42.23,30,0
-    >>击杀 |cRXP_ENEMY_瘤背伏击者|r
+    >>Kill |cRXP_ENEMY_Gnarlpine Ambusher|r
     .complete 487,1 --8/8 Gnarlpine Ambusher slain
-    .mob 瘤背伏击者
+    .mob Gnarlpine Ambusher
 step
-    #arrowtext 与 |cRXP_FRIENDLY_哨兵阿玛拉·夜行者|r 对话
-    .isQuestComplete 487
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Moon Priestess Amara|r
+    .isQuestComplete 487 --The Road to Darnassus
     .goto 57,49.37,44.53
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哨兵阿玛拉·夜行者|r 对话
-    .turnin 487 >>交任务 达纳苏斯之路
-    .target 哨兵阿玛拉·夜行者
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moon Priestess Amara|r
+    .turnin 487 >>Turn in The Road to Darnassus
+    .target Moon Priestess Amara
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_阿斯瑞达斯·熊皮|r 对话
-    .isQuestComplete 486
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Athridas Bearmantle|r
+    .isQuestComplete 486 --Ursal the Mauler
     .goto 57,55.69,52.01
     #label Ursal the Mauler
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿斯瑞达斯·熊皮|r 对话
-    .turnin 486 >>交任务 大槌乌萨尔
-    .target 阿斯瑞达斯·熊皮
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Athridas Bearmantle|r
+    .turnin 486 >>Turn in Ursal the Mauler
+    .target Athridas Bearmantle
 step
     .zoneskip 57,1
-    .zone 2352 >>使用地块查找器传送到一个居住区，而不是|T7252953:0|t[传送到地块]，然后使用|cRXP_PICK_Stormwind 传送门|r。
-    .link https://www.youtube.com/watch?v=uVkUB7z0njo >>点击观看视频
-    .macro House Teleport, 975747 >>房屋传送
+    .zone 2352 >>Teleport to a Neighbourhood with the House finder, not |T7252953:0|t[Teleport to Plot], then take the |cRXP_PICK_Stormwind Portal|r.
+    .link https://www.youtube.com/watch?v=uVkUB7z0njo >>CLICK HERE FOR VIDEO
+    .macro House Teleport, 975747 >>/run C_Housing.StartTutorial()
     .use 54869 --Thornroot Vest
     .use 131211 --Thornroot Hauberk
     .use 54870 --Thornroot Cord
 step << Alliance
-    #arrowtext 点击\n|cRXP_PICK_传送门|r
+    #arrowtext Click\n|cRXP_PICK_Portal|r
     .goto 2352,57.43,26.65
-    .zone 84 >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_传送门|r
+    .zone 84 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
     .zoneskip 2352,1
 step << Alliance
-    #include RestedXP 快速升级\a) GC 克罗米时间塔楼
+    #include RestedXP 快速升级\a) GC Chromie Time Tower
 ]])
 --Worgen: Gilneas
 RXPGuides.RegisterGuide([[
@@ -19241,8 +19239,8 @@ RXPGuides.RegisterGuide([[
 #version 2
 #group RestedXP 快速升级
 #subgroup |cFFFCDC00(1-90)|r 默认
-#name ab) 狼人 开场
-#displayname 吉尔尼斯|cRXP_ENEMY_（备选版）|r
+#name ab) Worgen Intro
+#displayname Gilneas |cRXP_ENEMY_(Alternative)|r
 #next RestedXP 快速升级\ba)巨龙时代联盟开场至暗之夜(联盟)
 
 << Alliance Worgen !DK
@@ -19250,77 +19248,77 @@ RXPGuides.RegisterGuide([[
 step
     #completewith Rut'theran Village
     #hidewindow
-    +测试
+    +test
     .usespell 1231411
     .use 118 --Minor Healing Potion
 step
     #completewith Market Homes1
-    +如果你想以最快速度升级，请选择流放者离岛作为起始区域。这需要重新创建角色。
+    +If you want to level as fast as possible, choose Exile’s Reach as your starting zone. This requires recreating your character.
 
-    *这对狼人来说尤其快速，因为他们的起始区域会让你停留到17级，且不允许使用天行骑乘。
+    *This is especially faster for Worgen, since their starting zone keeps you until level 17 and does not allow skyriding.
 step
-    #arrowtext 与 |cRXP_FRIENDLY_利亚姆·格雷迈恩王子|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Prince Liam Greymane|r
     .goto 202,59.130,23.865
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_利亚姆·格雷迈恩王子|r 对话
-    .accept 14078 >>接受任务 戒严！
-    .target 利亚姆·格雷迈恩王子
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prince Liam Greymane|r.
+    .accept 14078 >>Accept Lockdown!
+    .target Prince Liam Greymane
 step
     #completewith next
     #label Lockdown!
     .goto 202,56.55,16.86,15,0
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_沃登中尉|r
-    .turnin 14078 >>交任务 戒严！
-    .accept 14091 >>接受任务 事有蹊跷
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Lieutenant Walden|r
+    .turnin 14078 >>Turn in Lockdown!
+    .accept 14091 >>Accept Something's Amiss
     .disablecheckbox
-    .target 沃登中尉
+    .target Lieutenant Walden
 step
     #hidewindow
     #completewith Lockdown!
-    .goto 202,54.626,16.717,25 >>跟随箭头
+    .goto 202,54.626,16.717,25 >>Follow the Arrow
 step
-    #arrowtext 点击 |cRXP_PICK_沃登中尉|r
+    #arrowtext Click\n|cRXP_PICK_Lieutenant Walden|r
     #requires Lockdown!
     .goto 202,54.626,16.717
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_沃登中尉|r
-    .turnin 14078 >>交任务 戒严！
-    .accept 14091 >>接受任务 事有蹊跷
-    .target 沃登中尉
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Lieutenant Walden|r
+    .turnin 14078 >>Turn in Lockdown!
+    .accept 14091 >>Accept Something's Amiss
+    .target Lieutenant Walden
 step
     #completewith next
     #label Something's Amiss
     .goto 202,57.2,18.15,10,0
     .goto 202,58.56,21.05,10,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_利亚姆·格雷迈恩王子|r 对话
-    .turnin 14091 >>交任务 事有蹊跷
-    .accept 14093 >>接受任务 天下大乱
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prince Liam Greymane|r.
+    .turnin 14091 >>Turn in Something's Amiss
+    .accept 14093 >>Accept All Hell Breaks Loose
     .disablecheckbox
-    .accept 14098 >>接受任务 疏散商人广场
+    .accept 14098 >>Accept Evacuate the Merchant Square
     .disablecheckbox
-    .target 利亚姆·格雷迈恩王子
+    .target Prince Liam Greymane
 step
     #completewith Something's Amiss
     #hidewindow
-    .goto 202,59.84,22.19,20 >>跟随箭头
+    .goto 202,59.84,22.19,20 >>Follow the Arrow
 step
-    #arrowtext 与 |cRXP_FRIENDLY_利亚姆·格雷迈恩王子|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Prince Liam Greymane|r
     #requires Something's Amiss
     .goto 202,59.84,22.19
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_利亚姆·格雷迈恩王子|r 对话
-    .turnin 14091 >>交任务 事有蹊跷
-    .accept 14093 >>接受任务 天下大乱
-    .accept 14098 >>接受任务 疏散商人广场
-    .target 利亚姆·格雷迈恩王子
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prince Liam Greymane|r.
+    .turnin 14091 >>Turn in Something's Amiss
+    .accept 14093 >>Accept All Hell Breaks Loose
+    .accept 14098 >>Accept Evacuate the Merchant Square
+    .target Prince Liam Greymane
 step
     #completewith next
-    >>击杀 |cRXP_ENEMY_暴怒的狼人|r。
+    >>Kill |cRXP_ENEMY_Rampaging Worgen|r.
     .complete 14093,1 --Rampaging Worgen slain (6)
-    .mob 暴怒的狼人
+    .mob Rampaging Worgen
 step
-    #arrowtext 与 |cRXP_FRIENDLY_格温·阿姆斯特|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Gwen Armstead|r
     .goto 202,59.561,26.776
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格温·阿姆斯特|r 对话
-    .accept 14094 >>接受任务 抢救补给品
-    .target 格温·阿姆斯特
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwen Armstead|r.
+    .accept 14094 >>Accept Salvage the Supplies
+    .target Gwen Armstead
 step
     #hidewindow
     #completewith Rampaging Worgen
@@ -19336,104 +19334,104 @@ step
     +1
 step
     #completewith Market Homes6
-    >>击杀 |cRXP_ENEMY_暴怒的狼人|r。
+    >>Kill |cRXP_ENEMY_Rampaging Worgen|r.
     .complete 14093,1 --Rampaging Worgen slain (6)
-    .mob 暴怒的狼人
+    .mob Rampaging Worgen
 step
     #completewith Market Homes6
-    >>|TInterface/cursor/crosshair/interact.blp:20|t 点击 |cRXP_PICK_箱子|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crates|r
     .complete 14094,1 --Salvaged Supplies (4)
 step
     #completewith next
     #hidewindow
     #label Market Homes1
-    >>|cRXP_WARN_等待剧情演出|r。
+    >>|cRXP_WARN_Wait for the Roleplay|r.
     .complete 14098,1,1 --Market Homes Evacuated (3)
 step
     #completewith Market Homes1
-    .cast 67869 >>|TInterface/cursor/crosshair/interact.blp:17|t点击|cRXP_PICK_门|r
-    *|cRXP_WARN_可能有狼人跟随你|r
+    .cast 67869 >>|TInterface/cursor/crosshair/interact.blp:17|tClick on the |cRXP_PICK_Door|r
+    *|cRXP_WARN_A worgen might follow you|r
     .timer 4,RP
 step
     #requires Market Homes1
     #completewith next
     #label Market Homes2
-    >>|cRXP_WARN_等待剧情演出|r。
+    >>|cRXP_WARN_Wait for the Roleplay|r.
     .complete 14098,1,1 --Market Homes Evacuated (3)
 step
     #requires Market Homes1
     #completewith Market Homes2
-    .cast 67869 >>|TInterface/cursor/crosshair/interact.blp:17|t点击|cRXP_PICK_门|r
-    *|cRXP_WARN_可能有狼人跟随你|r
-    .timer 4,剧情演出
+    .cast 67869 >>|TInterface/cursor/crosshair/interact.blp:17|tClick on the |cRXP_PICK_Door|r
+    *|cRXP_WARN_A worgen might follow you|r
+    .timer 4,RP
 step
     #requires Market Homes2
     #completewith next
     #label Market Homes3
-    >>|cRXP_WARN_等待剧情演出|r。
+    >>|cRXP_WARN_Wait for the Roleplay|r.
     .complete 14098,1,2 --Market Homes Evacuated (3)
 step
     #requires Market Homes2
     #completewith Market Homes3
-    .cast 67869 >>|TInterface/cursor/crosshair/interact.blp:17|t点击|cRXP_PICK_门|r
-    *|cRXP_WARN_可能有狼人跟随你|r
+    .cast 67869 >>|TInterface/cursor/crosshair/interact.blp:17|tClick on the |cRXP_PICK_Door|r
+    *|cRXP_WARN_A worgen might follow you|r
     .timer 4,RP
 step
     #requires Market Homes3
     #completewith next
     #label Market Homes4
-    >>|cRXP_WARN_等待剧情演出|r。
+    >>|cRXP_WARN_Wait for the Roleplay|r.
     .complete 14098,1,2 --Market Homes Evacuated (3)
 step
     #requires Market Homes3
     #completewith Market Homes4
-    .cast 67869 >>|TInterface/cursor/crosshair/interact.blp:17|t点击|cRXP_PICK_门|r
-    *|cRXP_WARN_可能有狼人跟随你|r
+    .cast 67869 >>|TInterface/cursor/crosshair/interact.blp:17|tClick on the |cRXP_PICK_Door|r
+    *|cRXP_WARN_A worgen might follow you|r
     .timer 4,RP
 step
     #requires Market Homes4
     #completewith next
     #label Market Homes5
-    >>|cRXP_WARN_等待剧情演出|r。
+    >>|cRXP_WARN_Wait for the Roleplay|r.
     .complete 14098,1,3 --Market Homes Evacuated (3)
 step
     #requires Market Homes4
     #completewith Market Homes5
-    .cast 67869 >>|TInterface/cursor/crosshair/interact.blp:17|t点击|cRXP_PICK_门|r
-    *|cRXP_WARN_可能有狼人跟随你|r
+    .cast 67869 >>|TInterface/cursor/crosshair/interact.blp:17|tClick on the |cRXP_PICK_Door|r
+    *|cRXP_WARN_A worgen might follow you|r
     .timer 4,RP
 step
     #requires Market Homes5
     #label Market Homes6
-    >>|cRXP_WARN_等待剧情演出|r。
+    >>|cRXP_WARN_Wait for the Roleplay|r.
     .complete 14098,1,3 --Market Homes Evacuated (3)
 step
     #completewith next
-    >>击杀 |cRXP_ENEMY_暴怒的狼人|r。
+    >>Kill |cRXP_ENEMY_Rampaging Worgen|r.
     .complete 14093,1 --Rampaging Worgen slain (6)
-    .mob 暴怒的狼人
+    .mob Rampaging Worgen
 step
-    >>|TInterface/cursor/crosshair/interact.blp:20|t 点击 |cRXP_PICK_箱子|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crates|r
     .complete 14094,1 --Salvaged Supplies (4)
 step
     #label Rampaging Worgen
-    >>击杀 |cRXP_ENEMY_暴怒的狼人|r。
+    >>Kill |cRXP_ENEMY_Rampaging Worgen|r.
     .complete 14093,1 --Rampaging Worgen slain (6)
-    .mob 暴怒的狼人
+    .mob Rampaging Worgen
 step
-    #arrowtext 与 |cRXP_FRIENDLY_格温·阿姆斯特|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Gwen Armstead|r
     .goto 202,59.561,26.776
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格温·阿姆斯特|r 对话
-    .turnin 14094 >>交任务 抢救补给品
-    .target 格温·阿姆斯特
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwen Armstead|r.
+    .turnin 14094 >>Turn in Salvage the Supplies
+    .target Gwen Armstead
 step
-    #arrowtext 与 |cRXP_FRIENDLY_利亚姆·格雷迈恩王子|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Prince Liam Greymane|r
     .goto 202,59.830,22.192
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_利亚姆·格雷迈恩王子|r 对话
-    .turnin 14093 >>交任务 天下大乱
-    .turnin 14098 >>交任务 疏散商人广场
-    .accept 14099 >>接受任务 皇家命令
-    .target 利亚姆·格雷迈恩王子
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prince Liam Greymane|r.
+    .turnin 14093 >>Turn in All Hell Breaks Loose
+    .turnin 14098 >>Turn in Evacuate the Merchant Square
+    .accept 14099 >>Accept Royal Orders
+    .target Prince Liam Greymane
     .use 52040 --Salvager's Bag
 step
     #completewith next
@@ -19441,180 +19439,180 @@ step
     .goto 202,62.16,31.9,10,0
     .goto 202,64.66,35.21,10,0
     .goto 202,68.81,45.4,10,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格温·阿姆斯特|r 对话
-    .turnin 14099 >>交任务 皇家命令
-    .target 格温·阿姆斯特
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwen Armstead|r.
+    .turnin 14099 >>Turn in Royal Orders
+    .target Gwen Armstead
 step
     #completewith Royal Orders
-    .goto 202,70.77,55.02,65 >>如果你 |cRXP_WARN_无法|r骑乘，在旅行中击杀 |cRXP_ENEMY_怪物|r（|cRXP_WARN_如果可以（取决于职业）|r。
+    .goto 202,70.77,55.02,65 >>If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_monsters|r while traveling (|cRXP_WARN_if able(class-dependent)|r.
 step
-    #arrowtext 与 |cRXP_FRIENDLY_格温·阿姆斯特|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Gwen Armstead|r
     #requires Royal Orders
     .goto 202,70.77,55.02
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格温·阿姆斯特|r 对话。
-    .turnin 14099 >>交任务 皇家命令
-    .accept 14265 >>接受任务 你的导师 << Warrior
-    .accept 14269 >>接受任务 有人在找你 << Rogue
-    .accept 14273 >>接受任务 神秘的联系人 << Warlock
-    .accept 14275 >>接受任务 有人想联系你 << Hunter
-    .accept 14277 >>接受任务 探究奥术 << Mage
-    .accept 14278 >>接受任务 寻找修女 << Priest
-    .accept 14280 >>接受任务 风中的名字 << Druid
-    .accept 75190 >>接受任务 整装备战 << Monk --Added in DF
-    .target 格温·阿姆斯特
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwen Armstead|r.
+    .turnin 14099 >>Turn in Royal Orders
+    .accept 14265 >>Accept Your Instructor << Warrior
+    .accept 14269 >>Accept Someone's Looking for You << Rogue
+    .accept 14273 >>Accept Shady Associates << Warlock
+    .accept 14275 >>Accept Someone's Keeping Track of You << Hunter
+    .accept 14277 >>Accept Arcane Inquiries << Mage
+    .accept 14278 >>Accept Seek the Sister << Priest
+    .accept 14280 >>Accept The Winds Know Your Name... Apparently << Druid
+    .accept 75190 >>Accept Ready and Abel << Monk --Added in DF
+    .target Gwen Armstead
     .use 55004 --Wolf Fur Coat
 step << Warrior
     #completewith next
     #label Your Instructor
     .goto 202,69.21,64.27,10,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_中士 克利希中士|r 对话。
-    .turnin 14265 >>交任务 你的导师
-    .accept 14286 >>接受任务 人多安全
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergeant Cleese|r.
+    .turnin 14265 >>Turn in Your Instructor
+    .accept 14286 >>Accept Safety in Numbers
     .disablecheckbox
-    .target 克利希中士
+    .target Sergeant Cleese
 step << Warrior
     #hidewindow
     #completewith Your Instructor
-    .goto 202,67.6,64.29,20 >>跟随箭头
+    .goto 202,67.6,64.29,20 >>Follow the Arrow
 step << Warrior
-    #arrowtext 与 |cRXP_FRIENDLY_克利希中士|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Sergeant Cleese|r
     #requires Your Instructor
     .goto 202,67.6,64.29
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_中士 克利希中士|r 对话。
-    .turnin 14265 >>交任务 你的导师
-    .accept 14286 >>接受任务 人多安全
-    .target 克利希中士
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergeant Cleese|r.
+    .turnin 14265 >>Turn in Your Instructor
+    .accept 14286 >>Accept Safety in Numbers
+    .target Sergeant Cleese
 step << Rogue
-    #arrowtext 与 |cRXP_FRIENDLY_侠盗萝伦|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Loren the Fence|r
     .goto 202,71.406,65.752
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_侠盗萝伦|r 对话。
-    >>|cRXP_WARN_她处于|r |T132320:0|t[潜行] 状态。
-    .turnin 14269 >>交任务 有人在找你
-    .accept 14285 >>接受任务 人多安全
-    .target 侠盗萝伦
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loren the Fence|r.
+    >>|cRXP_WARN_She is|r |T132320:0|t[Stealthed].
+    .turnin 14269 >>Turn in Someone's Looking for You
+    .accept 14285 >>Accept Safety in Numbers
+    .target Loren the Fence
 step << Warlock
-    #arrowtext 与 |cRXP_FRIENDLY_维图斯·暗行者|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Vitus Darkwalker|r
     .goto 202,71.420,64.435
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_维图斯·暗行者|r 对话。
-    .turnin 14273 >>神秘的联系人
-    .accept 14287 >>接受任务 人多安全
-    .target 维图斯·暗行者
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vitus Darkwalker|r.
+    .turnin 14273 >>Shady Associates
+    .accept 14287 >>Accept Safety in Numbers
+    .target Vitus Darkwalker
 step << Hunter
-    #arrowtext 与 |cRXP_FRIENDLY_猎手布雷克|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Huntsman Blake|r
     .goto 202,71.503,61.307
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_猎手布雷克|r 对话。
-    .turnin 14275 >>交任务 有人想联系你
-    .accept 14290 >>接受任务 人多安全
-    .target 猎手布雷克
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Huntsman Blake|r.
+    .turnin 14275 >>Turn in Someone's Keeping Track of You
+    .accept 14290 >>Accept Safety in Numbers
+    .target Huntsman Blake
 step << Mage
     #completewith next
     #label Arcane Inquiries
     .goto 202,69.5,63.99,10,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_米莉安·唤法者|r对话。
-    .turnin 14277 >>交任务 探究奥术
-    .accept 14288 >>接受任务 人多安全
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Myriam Spellwaker|r.
+    .turnin 14277 >>Turn in Arcane Inquiries
+    .accept 14288 >>Accept Safety in Numbers
     .target Myriam Spellwaker
 step << Mage
     #completewith Arcane Inquiries
     #hidewindow
-    .goto 202,68.02,64.67,20 >>跟随箭头
+    .goto 202,68.02,64.67,20 >>Follow the Arrow
 step << Mage
-    #arrowtext 与 |cRXP_FRIENDLY_米莉安·唤法者|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Myriam Spellwaker|r
     #requires Arcane Inquiries
     .goto 202,68.02,64.67
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_米莉安·唤法者|r对话。
-    .turnin 14277 >>交任务 探究奥术
-    .accept 14288 >>接受任务 人多安全
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Myriam Spellwaker|r.
+    .turnin 14277 >>Turn in Arcane Inquiries
+    .accept 14288 >>Accept Safety in Numbers
     .target Myriam Spellwaker
 step << Priest
-    #arrowtext 与 |cRXP_FRIENDLY_艾尔米拉修女|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Sister Almyra|r
     .goto 202,70.421,65.541
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾尔米拉修女|r 对话。
-    .turnin 14278 >>交任务 寻找修女
-    .accept 14289 >>接受任务 人多安全
-    .target 艾尔米拉修女
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sister Almyra|r.
+    .turnin 14278 >>Turn in Seek the Sister
+    .accept 14289 >>Accept Safety in Numbers
+    .target Sister Almyra
 step << Druid
-    #arrowtext 与\n|cRXP_FRIENDLY_丰收女巫塞莱斯廷|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Celestine of the Harvest|r
     .goto 202,70.190,65.887
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_丰收女巫塞莱斯廷|r 对话。
-    .turnin 14280 >>交任务 风中的名字
-    .accept 14291 >>接受任务 人多安全
-    .target 丰收女巫塞莱斯廷
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Celestine of the Harvest|r.
+    .turnin 14280 >>Turn in The Winds Know Your Name... Apparently
+    .accept 14291 >>Accept Safety in Numbers
+    .target Celestine of the Harvest
 step << Monk
-    #arrowtext 与\n|cRXP_FRIENDLY_托德·亚伯|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Todd Abel|r
     .goto 202,69.977,65.559
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_托德·亚伯|r对话。
-    .turnin 75190 >>交任务 整装备战
-    .accept 75189 >>接受任务 人多安全
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Todd Abel|r.
+    .turnin 75190 >>Turn in Ready and Abel
+    .accept 75189 >>Accept Safety in Numbers
     .target Todd Abel
 step << Warrior/Mage
     #completewith next
     #label WorgenWarriorMage
     .goto 202,69.43,66.37,10,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_吉恩·格雷迈恩国王|r 和 |cRXP_FRIENDLY_高弗雷勋爵|r 对话。
-    .turnin 14286 >>交任务 人多安全 << Warrior
-    .turnin 14288 >>交任务 人多安全 << Mage
-    .accept 14157 >>接受任务 旧日的分歧
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_King Genn Greymane|r and |cRXP_FRIENDLY_Lord Godfrey|r.
+    .turnin 14286 >>Turn in Safety in Numbers << Warrior
+    .turnin 14288 >>Turn in Safety in Numbers << Mage
+    .accept 14157 >>Accept Old Divisions
     .disablecheckbox
-    .target +吉恩·格雷迈恩国王
-    .accept 24930 >>接受任务 顺路除害
+    .target +King Genn Greymane
+    .accept 24930 >>Accept While You're At It
     .disablecheckbox
-    .target +高弗雷勋爵
+    .target +Lord Godfrey
 step << Warrior/Mage
     #hidewindow
     #completewith WorgenWarriorMage
-    .goto 202,65.810,77.714,75 >>跟随箭头
+    .goto 202,65.810,77.714,75 >>Follow the Arrow
 step << Warrior/Mage
-    #arrowtext 与\n|cRXP_FRIENDLY_国王吉恩·格雷迈恩|r 和 |cRXP_FRIENDLY_高弗雷勋爵|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_King Genn Greymane|r and |cRXP_FRIENDLY_Lord Godfrey|r
     #requires WorgenWarriorMage
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_吉恩·格雷迈恩国王|r 和 |cRXP_FRIENDLY_高弗雷勋爵|r 对话。
-    .turnin 14286 >>交任务 人多安全 << Warrior
-    .turnin 14288 >>交任务 人多安全 << Mage
-    .accept 14157 >>接受任务 旧日的分歧
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_King Genn Greymane|r and |cRXP_FRIENDLY_Lord Godfrey|r.
+    .turnin 14286 >>Turn in Safety in Numbers << Warrior
+    .turnin 14288 >>Turn in Safety in Numbers << Mage
+    .accept 14157 >>Accept Old Divisions
     .goto 202,65.810,77.714
-    .target +吉恩·格雷迈恩国王
-    .accept 24930 >>接受任务 顺路除害
+    .target +King Genn Greymane
+    .accept 24930 >>Accept While You're At It
     .goto 202,65.279,77.607
-    .target +高弗雷勋爵
+    .target +Lord Godfrey
 step << !Warrior/!Mage
-    #arrowtext 与\n|cRXP_FRIENDLY_国王吉恩·格雷迈恩|r 和 |cRXP_FRIENDLY_高弗雷勋爵|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_吉恩·格雷迈恩国王|r 和 |cRXP_FRIENDLY_高弗雷勋爵|r 对话。
-    .turnin 14285 >>交任务 人多安全 << Rogue
-    .turnin 14287 >>交任务 人多安全 << Warlock
-    .turnin 14289 >>交任务 人多安全 << Priest
-    .turnin 14290 >>交任务 人多安全 << Hunter
-    .turnin 14291 >>交任务 人多安全 << Druid
-    .turnin 75189 >>交任务 人多安全 << Monk
-    .accept 14157 >>接受任务 旧日的分歧
+    #arrowtext Talk to\n|cRXP_FRIENDLY_King Genn Greymane|r and |cRXP_FRIENDLY_Lord Godfrey|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_King Genn Greymane|r and |cRXP_FRIENDLY_Lord Godfrey|r.
+    .turnin 14285 >>Turn in Safety in Numbers << Rogue
+    .turnin 14287 >>Turn in Safety in Numbers << Warlock
+    .turnin 14289 >>Turn in Safety in Numbers << Priest
+    .turnin 14290 >>Turn in Safety in Numbers << Hunter
+    .turnin 14291 >>Turn in Safety in Numbers << Druid
+    .turnin 75189 >>Turn in Safety in Numbers << Monk
+    .accept 14157 >>Accept Old Divisions
     .goto 202,65.810,77.714
-    .target +吉恩·格雷迈恩国王
-    .accept 24930 >>接受任务 顺路除害
+    .target +King Genn Greymane
+    .accept 24930 >>Accept While You're At It
     .goto 202,65.279,77.607
-    .target +高弗雷勋爵
+    .target +Lord Godfrey
 step
     #completewith The Prison Rooftop2
-    +|cRXP_WARN_除非无法脱离战斗，否则不要击杀狼人|r。
+    +|cRXP_WARN_Avoid killing Worgen right now unless you can't leave combat|r.
 step
     #completewith next
     #label Old Divisions
     .goto 202,59.79,71.67,10,0
     .goto 202,57.73,73.29,10,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布罗德里克队长|r 对话
-    .turnin 14157 >>交任务 旧日的分歧
-    .accept 28850 >>接受任务 监狱的屋顶
-    .target Broderick队长
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Broderick|r
+    .turnin 14157 >>Turn in Old Divisions
+    .accept 28850 >>Accept The Prison Rooftop
+    .target Captain Broderick
 step
-    #arrowtext 跟随箭头
+    #arrowtext Follow the arrow
     #completewith Old Divisions
-    .goto 202,57.925,75.584,10 >>跟随箭头
+    .goto 202,57.925,75.584,10 >>Follow the Arrow
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_布罗德里克队长|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Captain Broderick|r
     #requires Old Divisions
     .goto 202,57.925,75.584
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布罗德里克队长|r 对话
-    .turnin 14157 >>交任务 旧日的分歧
-    .accept 28850 >>接受任务 监狱的屋顶
-    .target Broderick队长
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Broderick|r
+    .turnin 14157 >>Turn in Old Divisions
+    .accept 28850 >>Accept The Prison Rooftop
+    .target Captain Broderick
 step
     #completewith next
     #label The Prison Rooftop
@@ -19626,26 +19624,26 @@ step
     .goto 202,57.03,75.45,5,0
     .goto 202,53.62,68.37,5,0
     .goto 202,53.74,66.61,5,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达利乌斯·克罗雷领主|r 对话。
-    .turnin 28850 >>交任务 监狱的屋顶
-    .accept 14154 >>接受任务 命悬一线
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Darius Crowley|r.
+    .turnin 28850 >>Turn in The Prison Rooftop
+    .accept 14154 >>Accept By the Skin of His Teeth
     .disablecheckbox
-    .timer 118,命悬一线 剧情RP
-    .target Darius Crowley领主
+    .timer 118,By the Skin of His Teeth RP
+    .target Lord Darius Crowley
 step
     #completewith The Prison Rooftop
     #hidewindow
-    .goto 202,55.224,62.906,30 >>跟随箭头
+    .goto 202,55.224,62.906,30 >>Follow the Arrow
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_达利乌斯·克罗雷领主|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Lord Darius Crowley|r
     #requires The Prison Rooftop
     #label The Prison Rooftop2
     .goto 202,55.224,62.906
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达利乌斯·克罗雷领主|r 对话。
-    .turnin 28850 >>交任务 监狱的屋顶
-    .accept 14154 >>接受任务 命悬一线
-    .timer 119,命悬一线 剧情RP
-    .target Darius Crowley领主
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Darius Crowley|r.
+    .turnin 28850 >>Turn in The Prison Rooftop
+    .accept 14154 >>Accept By the Skin of His Teeth
+    .timer 119,By the Skin of His Teeth RP
+    .target Lord Darius Crowley
 step
     #completewith next
     #label WorgenAttack
@@ -19653,22 +19651,22 @@ step
     -- .goto 202,53.94,68.37,5,0 << !Hunter
     -- .goto 202,55.61,64.06,5,0 << Hunter
     .goto 202,60.19,59.6,10,0
-    >>|cRXP_WARN_等待剧情演出|r。
+    >>|cRXP_WARN_Wait for the Roleplay|r.
     .complete 14154,1 --Survive while holding back the worgen for 2 minutes. (1)
 step
     #completewith next
-    >>击杀 |cRXP_ENEMY_血牙狼人|r。
+    >>Kill |cRXP_ENEMY_Bloodfang Worgen|r.
     .complete 24930,1 --Bloodfang Worgen slain (5)
-    .mob 血牙狼人
+    .mob Bloodfang Worgen
 step
-    #arrowtext 从建筑上跳下
+    #arrowtext Drop down from the building
     #completewith WorgenAttack
-    *|cRXP_WARN_忽略|cRXP_ENEMY_狼人幼崽/狼人前锋|r，无经验值，无威胁|r。
-    .goto 202,64.43,59.71,25 >>从建筑上跳下。
+    *|cRXP_WARN_Ignore |cRXP_ENEMY_Worgen Runts/Alphas|r no XP, no threat|r.
+    .goto 202,64.43,59.71,25 >>Drop down from the building.
     -- .goto 202,59.1,68.7,40 >>Jump between the fence and the pillar, then drop off the building. << !Hunter
     -- .goto 202,59.1,68.7,40 >>Use |T132294:0|t[Disengage] to get on the roof << Hunter
 step
-    #arrowtext 杀死 |cRXP_ENEMY_血牙狼人|r
+    #arrowtext Kill\n|cRXP_ENEMY_Bloodfang Worgen|r
     #requires WorgenAttack
     #loop
     .goto 202,67.06,64.44,20,0
@@ -19679,19 +19677,19 @@ step
     .goto 202,58.59,64.28,20,0
     .goto 202,55.85,68.65,20,0
     .goto 202,58.19,72.42,20,0
-    >>击杀 |cRXP_ENEMY_血牙狼人|r。
+    >>Kill |cRXP_ENEMY_Bloodfang Worgen|r.
     .complete 24930,1 --Bloodfang Worgen slain (5)
-    .mob 血牙狼人
+    .mob Bloodfang Worgen
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_高弗雷勋爵|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Lord Godfrey|r
     .goto 202,65.279,77.607
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_高弗雷勋爵|r 对话
-    .turnin 24930 >>交任务 顺路除害
-    .target +高弗雷勋爵
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Godfrey|r.
+    .turnin 24930 >>Turn in While You're At It
+    .target +Lord Godfrey
 step
     #completewith next
     #label WorgenAttack2
-    #title |cFFFCDC00跟随箭头|r
+    #title |cFFFCDC00Follow the Arrow|r
     .goto 202,61.14,69.71,10,0
     .goto 202,62.23,66.55,10,0
     .goto 202,63.8,66.38,5,0
@@ -19702,31 +19700,31 @@ step
     .goto 202,63.89,65.97,5,0
     .goto 202,59.53,60.89,5,0
     .goto 202,57.96,60.86,5,0
-    >>|cRXP_WARN_等待剧情演出|r。
+    >>|cRXP_WARN_Wait for the Roleplay|r.
     .complete 14154,1 --Survive while holding back the worgen for 2 minutes. (1)
 step
     #completewith WorgenAttack2
-    #title |cFFFCDC00跟随箭头|r
-    .goto 202,55.224,62.906,30 >>你可以在返回途中击杀|cRXP_ENEMY_狼人|r以获得额外经验值。
-    *|cRXP_WARN_当计时剩余30秒时上楼；否则你需要在楼上等待|r。
-    .mob 血牙狼人
+    #title |cFFFCDC00Follow the Arrow|r
+    .goto 202,55.224,62.906,30 >>You can kill |cRXP_ENEMY_Worgen|r on your way back for extra XP.
+    *|cRXP_WARN_Go upstairs when 30 seconds remain on the timer; otherwise, you’ll need to wait upstairs|r.
+    .mob Bloodfang Worgen
 step
-    #arrowtext 等待剧情演出
+    #arrowtext Wait for the roleplay
     #requires WorgenAttack2
     .goto 202,55.224,62.906
-    >>|cRXP_WARN_等待剧情演出|r。
-    *|cRXP_WARN_忽略|cRXP_ENEMY_狼人幼崽/狼人前锋|r，无经验值，无威胁|r。
+    >>|cRXP_WARN_Wait for the Roleplay|r.
+    *|cRXP_WARN_Ignore |cRXP_ENEMY_Worgen Runts/Alphas|r no XP, no threat|r.
     .complete 14154,1 --Survive while holding back the worgen for 2 minutes. (1)
     .use 54975 --Armstead Bracers
     .use 54978 --Merchant's Chestguard
     .use 131864 --Armstead Bindings
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_达利乌斯·克罗雷领主|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Lord Darius Crowley|r
     .goto 202,55.224,62.906
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达利乌斯·克罗雷领主|r 对话。
-    .turnin 14154 >>交任务 命悬一线
-    .accept 26129 >>接受任务 兄弟情深
-    .target Darius Crowley领主
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Darius Crowley|r.
+    .turnin 14154 >>Turn in By the Skin of His Teeth
+    .accept 26129 >>Accept Brothers In Arms
+    .target Lord Darius Crowley
 step
     #completewith next
     #label While You're At It
@@ -19735,31 +19733,31 @@ step
     .goto 202,53.69,67.63,10,0
     .goto 202,54.03,69.56,10,0
     .goto 202,55.06,70.26,5,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_高弗雷勋爵|r 和 |cRXP_FRIENDLY_吉恩·格雷迈恩国王|r 对话。
-    .turnin 24930 >>交任务 顺路除害
-    .target +高弗雷勋爵
-    .turnin 26129 >>交任务 兄弟情深
-    .accept 14159 >>接受任务 叛军领主的军械库
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Godfrey|r and |cRXP_FRIENDLY_King Genn Greymane|r.
+    .turnin 24930 >>Turn in While You're At It
+    .target +Lord Godfrey
+    .turnin 26129 >>Turn in Brothers In Arms
+    .accept 14159 >>Accept The Rebel Lord's Arsenal
     .disablecheckbox
-    .target +吉恩·格雷迈恩国王
+    .target +King Genn Greymane
 step
-    #arrowtext 穿过篱笆间隙，从建筑上跳下
+    #arrowtext Go through the gap in the fence, then drop down from the building
     #completewith While You're At It
-    *|cRXP_WARN_忽略|cRXP_ENEMY_狼人幼崽/狼人前锋|r，无经验值，无威胁|r。
-    .goto 202,58.44,70.65,30 >>穿过围栏的缺口，然后从建筑上跳下。
+    *|cRXP_WARN_Ignore |cRXP_ENEMY_Worgen Runts/Alphas|r no XP, no threat|r.
+    .goto 202,58.44,70.65,30 >>Go through the gap in the fence, then drop down from the building.
     -- .goto 202,59.1,68.7,40 >>Jump between the fence and the pillar, then drop off the building. << !Hunter
     -- .goto 202,59.1,68.7,40 >>Use |T132294:0|t[Disengage] to get on the roof << Hunter
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_高弗雷勋爵|r 和 |cRXP_FRIENDLY_国王吉恩·格雷迈恩|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Lord Godfrey|r and |cRXP_FRIENDLY_King Genn Greymane|r
     #requires While You're At It
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_高弗雷勋爵|r 和 |cRXP_FRIENDLY_吉恩·格雷迈恩国王|r 对话。
-    .turnin 24930 >>交任务 顺路除害
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Godfrey|r and |cRXP_FRIENDLY_King Genn Greymane|r.
+    .turnin 24930 >>Turn in While You're At It
     .goto 202,65.279,77.607
-    .target +高弗雷勋爵
-    .turnin 26129 >>交任务 兄弟情深
-    .accept 14159 >>接受任务 叛军领主的军械库
+    .target +Lord Godfrey
+    .turnin 26129 >>Turn in Brothers In Arms
+    .accept 14159 >>Accept The Rebel Lord's Arsenal
     .goto 202,65.810,77.714
-    .target +吉恩·格雷迈恩国王
+    .target +King Genn Greymane
     .use 54976 --Bracers of the Queen's Gate
     .use 55005 --Darius' Sash
     .use 55006 --Dempsey's Gloves
@@ -19771,43 +19769,43 @@ step
     .goto 202,55.9,83.31,10,0
     .goto 202,55.94,81.51,5,0
     .goto 202,56.84,81.36,5,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_约书亚·阿维利|r 和 |cRXP_FRIENDLY_罗娜·克罗雷|r 对话。
-    .turnin 14159 >>交任务 叛军领主的军械库
-    .accept 14204 >>接受任务 来自阴影
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Josiah Avery|r and |cRXP_FRIENDLY_Lorna Crowley|r.
+    .turnin 14159 >>Turn in The Rebel Lord's Arsenal
+    .accept 14204 >>Accept From the Shadows
     .disablecheckbox
-    .target 约书亚·阿维利
-    .target 罗娜·克罗雷
+    .target Josiah Avery
+    .target Lorna Crowley
 step
-    #arrowtext 通过 |cRXP_PICK_地下室大门|r 进入地下室
+    #arrowtext Enter the cellar through the |cRXP_PICK_Cellar Door|r
     #completewith Rebel Lord's Arsenal
-    .goto 202,56.768,85.448,5 >>|TInterface/cursor/crosshair/interact.blp:20|t通过|cRXP_PICK_地窖门|r进入地窖。
+    .goto 202,56.768,85.448,5 >>|TInterface/cursor/crosshair/interact.blp:20|tEnter the cellar through the |cRXP_PICK_Cellar Door|r.
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_约书亚·阿维利|r 和 |cRXP_FRIENDLY_罗娜·克罗雷|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Josiah Avery|r and |cRXP_FRIENDLY_Lorna Crowley|r
     #requires Rebel Lord's Arsenal
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_约书亚·阿维利|r 和 |cRXP_FRIENDLY_罗娜·克罗雷|r 对话。
-    .turnin 14159 >>交任务 叛军领主的军械库
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Josiah Avery|r and |cRXP_FRIENDLY_Lorna Crowley|r.
+    .turnin 14159 >>Turn in The Rebel Lord's Arsenal
     .goto 202,56.768,85.448
-    .target +约书亚·阿维利
-    .accept 14204 >>接受任务 来自阴影
+    .target +Josiah Avery
+    .accept 14204 >>Accept From the Shadows
     .goto 202,56.873,81.421
-    .target +罗娜·克罗雷
+    .target +Lorna Crowley
     .use 54975 --Armstead Bracers
     .use 54978 --Merchant's Chestguard
     .use 131864 --Armstead Bindings
 step
     #completewith next
     #label Gilnean Mastiff Collar
-    *|cRXP_WARN_使用|r|T236186:0|t[攻击潜伏者] |cRXP_WARN_定位|cRXP_ENEMY_血牙潜伏者|r并造成额外伤害|r。
-    *使用|T236926:0|t[吉尔尼斯巨犬项圈]重新召唤你的|cRXP_FRIENDLY_狗|r， |cRXP_WARN_如果它不见了|r。
+    *|cRXP_WARN_Use |r|T236186:0|t[Attack Lurker] |cRXP_WARN_to locate |cRXP_ENEMY_Bloodfang Lurkers|r and deal extra damage|r.
+    *Use |T236926:0|t[Gilnean Mastiff Collar] to resummon your |cRXP_FRIENDLY_Dog|r |cRXP_WARN_if it’s gone|r.
     .complete 14204,1 --Bloodfang Lurker slain (6)
-    .mob 血牙潜伏者
+    .mob Bloodfang Lurker
     .use 48707
     .usespell 67805
-    .target Gilnean 斗牛犬
+    .target Gilnean Mastiff
 step
-    #arrowtext 通过 |cRXP_PICK_地下室大门|r 离开地下室
+    #arrowtext Leave the cellar through the |cRXP_PICK_Cellar Door|r
     #completewith Gilnean Mastiff Collar
-    .goto 202,55.53,81.56,5 >>|TInterface/cursor/crosshair/interact.blp:20|t通过|cRXP_PICK_地窖门|r离开地窖。
+    .goto 202,55.53,81.56,5 >>|TInterface/cursor/crosshair/interact.blp:20|tLeave the cellar through the |cRXP_PICK_Cellar Door|r.
 step
     #requires Gilnean Mastiff Collar
     #loop
@@ -19817,101 +19815,101 @@ step
     .goto 202,54.87,84.64,15,0
     .goto 202,47.99,83.37,15,0
     .goto 202,47.8,76.58,15,0
-    *|cRXP_WARN_使用|r|T236186:0|t[攻击潜伏者] |cRXP_WARN_定位|cRXP_ENEMY_血牙潜伏者|r并造成额外伤害|r。
-    *使用|T236926:0|t[吉尔尼斯巨犬项圈]重新召唤你的|cRXP_FRIENDLY_狗|r， |cRXP_WARN_如果它不见了|r。
+    *|cRXP_WARN_Use |r|T236186:0|t[Attack Lurker] |cRXP_WARN_to locate |cRXP_ENEMY_Bloodfang Lurkers|r and to deal extra damage|r.
+    *Use |T236926:0|t[Gilnean Mastiff Collar] to resummon your |cRXP_FRIENDLY_Dog|r |cRXP_WARN_if it’s gone|r.
     .complete 14204,1 --Bloodfang Lurker slain (6)
-    .mob 血牙潜伏者
+    .mob Bloodfang Lurker
     .use 48707
     .usespell 67805
-    .target Gilnean 斗牛犬
+    .target Gilnean Mastiff
 step
     #completewith next
     #label Message to Greymane
     .goto 202,55.83,81.51,5,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_罗娜·克罗雷|r 对话
-    .turnin 14204 >>交任务 来自阴影
-    .accept 14214 >>接受任务 给格雷迈恩的消息
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorna Crowley|r.
+    .turnin 14204 >>Turn in From the Shadows
+    .accept 14214 >>Accept Message to Greymane
     .disablecheckbox
-    .target 罗娜·克罗雷
+    .target Lorna Crowley
 step
-    #arrowtext 通过 |cRXP_PICK_地下室大门|r 进入地下室
+    #arrowtext Enter the cellar through the |cRXP_PICK_Cellar Door|r
     #completewith Message to Greymane
-    .goto 202,56.873,81.421,5 >>|TInterface/cursor/crosshair/interact.blp:20|t通过|cRXP_PICK_地窖门|r进入地窖。
+    .goto 202,56.873,81.421,5 >>|TInterface/cursor/crosshair/interact.blp:20|tEnter the cellar through the |cRXP_PICK_Cellar Door|r.
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_罗娜·克罗雷|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Lorna Crowley|r
     #requires Message to Greymane
     .goto 202,56.873,81.421
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_罗娜·克罗雷|r 对话
-    .turnin 14204 >>交任务 来自阴影
-    .accept 14214 >>接受任务 给格雷迈恩的消息
-    .target 罗娜·克罗雷
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorna Crowley|r.
+    .turnin 14204 >>Turn in From the Shadows
+    .accept 14214 >>Accept Message to Greymane
+    .target Lorna Crowley
 step
     #completewith next
     #label Save Krennan Aranas
-    #title |cFFFCDC00跟随箭头|r
+    #title |cFFFCDC00Follow the Arrow|r
     .goto 202,55.78,81.53,5,0
     .goto 202,56.13,83.14,5,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_吉恩·格雷迈恩国王|r 对话。
-    .turnin 14214 >>交任务 给格雷迈恩的消息
-    .accept 14293 >>接受任务 救援克雷南·阿朗纳斯
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_King Genn Greymane|r.
+    .turnin 14214 >>Turn in Message to Greymane
+    .accept 14293 >>Accept Save Krennan Aranas
     .disablecheckbox
-    .target 吉恩·格雷迈恩国王
+    .target King Genn Greymane
 step
-    #title |cFFFCDC00跟随箭头|r
+    #title |cFFFCDC00Follow the Arrow|r
     #hidewindow
     #completewith Save Krennan Aranas
-    .goto 202,59.22,83.76,18 >>跟随箭头。
+    .goto 202,59.22,83.76,18 >>Follow the Arrow.
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_国王吉恩·格雷迈恩|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_King Genn Greymane|r
     #requires Save Krennan Aranas
     .goto 202,59.207,83.777
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_吉恩·格雷迈恩国王|r 对话。
-    .turnin 14214 >>交任务 给格雷迈恩的消息
-    .accept 14293 >>接受任务 救援克雷南·阿朗纳斯
-    .timer 16,救援克雷南·阿朗纳斯 RP
-    .target 吉恩·格雷迈恩国王
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_King Genn Greymane|r.
+    .turnin 14214 >>Turn in Message to Greymane
+    .accept 14293 >>Accept Save Krennan Aranas
+    .timer 16,Save Krennan Aranas RP
+    .target King Genn Greymane
     .use 54985 --Alarmbringer's Mace
     .use 54986 --Houndmaster's Crossbow
     .use 58217 --Mastiff Trainer's Wand
     .use 66247 --Timeworn Staff
 step
     #completewith next
-    #title |cFFFCDC00注意事项|r
-    +|cRXP_WARN_救出后 |cRXP_FRIENDLY_Krennan|r|r；
-    *使用“当前物品框架”宏下坐骑，然后跑向任务NPC。
-    *|cRXP_WARN_在救援前不要使用宏|r。
+    #title |cFFFCDC00Heads Up|r
+    +|cRXP_WARN_After saving |cRXP_FRIENDLY_Krennan|r|r;
+    *Use the macro in the "Active Items Frame" to dismount and run to the questgiver.
+    *|cRXP_WARN_Do NOT use the macro before the rescue|r.
 step
     .goto 202,66.01,62.25
-    >>持续使用|T134149:0|t[援救克雷南](1)
+    >>Spam |T134149:0|t[Rescue Krennan](1)
     .complete 14293,1 --Krennan Aranas rescued (1)
     .skipgossipid 37801
-    .macro Leave Vehicle,6656430 >>离开载具
-    .target 克雷南·阿朗纳斯
-    .target 吉恩·格雷迈恩国王
+    .macro Leave Vehicle,6656430 >>/leavevehicle
+    .target Krennan Aranas
+    .target King Genn Greymane
 step
     #completewith next
     #hidewindow
     #label Krennan Aranas
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_高弗雷勋爵|r 对话
-    .turnin 14293 >>交任务 救援克雷南·阿朗纳斯
-    .accept 14294 >>接受任务 重整旗鼓
-    .macro Leave Vehicle,6656430 >>离开载具
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Godfrey|r.
+    .turnin 14293 >>Turn in Save Krennan Aranas
+    .accept 14294 >>Accept Time to Regroup
+    .macro Leave Vehicle,6656430 >>/leavevehicle
     .disablecheckbox
-    .target 高弗雷勋爵
+    .target Lord Godfrey
 step
     #completewith Krennan Aranas
-    #title |cFFFCDC00快速移动|r
-    .goto 202,55.79,80.07,40 >>使用“当前物品框架”宏下坐骑，然后跑向任务NPC。
-    *|cRXP_WARN_你可能会死亡；释放灵魂并复活仍然更快|r。
-    .macro Leave Vehicle,6656430 >>离开载具
+    #title |cFFFCDC00Run Fast|r
+    .goto 202,55.79,80.07,40 >>Use the macro in the "Active Items Frame" to dismount and run to the questgiver.
+    *|cRXP_WARN_You may die; release and resurrect it still faster|r.
+    .macro Leave Vehicle,6656430 >>/leavevehicle
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_高弗雷勋爵|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Lord Godfrey|r
     #requires Krennan Aranas
     .goto 202,55.715,80.753
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_高弗雷勋爵|r 对话。
-    .turnin 14293 >>交任务 救援克雷南·阿朗纳斯
-    .accept 14294 >>接受任务 重整旗鼓
-    .target 高弗雷勋爵
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Godfrey|r.
+    .turnin 14293 >>Turn in Save Krennan Aranas
+    .accept 14294 >>Accept Time to Regroup
+    .target Lord Godfrey
 step
     #completewith next
     #label Time to Regroup
@@ -19919,98 +19917,98 @@ step
     .goto 202,44.57,82.91,10,0
     .goto 202,40.6,81.8,10,0
     .goto 202,40.65,82.06,10,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_吉恩·格雷迈恩国王|r 和 |cRXP_FRIENDLY_达利乌斯·克罗雷领主|r 对话。
-    .turnin 14294 >>交任务 重整旗鼓
-    .accept 14212 >>接受任务 牺牲
-    .target 吉恩·格雷迈恩国王
-    .target Darius Crowley领主
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_King Genn Greymane|r and |cRXP_FRIENDLY_Lord Darius Crowley|r.
+    .turnin 14294 >>Turn in Time to Regroup
+    .accept 14212 >>Accept Sacrifices
+    .target King Genn Greymane
+    .target Lord Darius Crowley
 step
-    #arrowtext 跟随箭头
+    #arrowtext Follow the arrow
     #completewith Time to Regroup
-    .goto 202,30.37,73.14,80 >>跟随箭头
+    .goto 202,30.37,73.14,80 >>Follow the Arrow
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_国王吉恩·格雷迈恩|r 和 |cRXP_FRIENDLY_达利乌斯·克罗雷领主|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_King Genn Greymane|r and |cRXP_FRIENDLY_Lord Darius Crowley|r
     #requires Time to Regroup
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_吉恩·格雷迈恩国王|r 和 |cRXP_FRIENDLY_达利乌斯·克罗雷领主|r 对话。
-    .turnin 14294 >>交任务 重整旗鼓
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_King Genn Greymane|r and |cRXP_FRIENDLY_Lord Darius Crowley|r.
+    .turnin 14294 >>Turn in Time to Regroup
     .goto 202,30.37,73.14
-    .target +吉恩·格雷迈恩国王
-    .accept 14212 >>接受任务 牺牲
+    .target +King Genn Greymane
+    .accept 14212 >>Accept Sacrifices
     .goto 202,31.103,72.365
-    .target +达利乌斯·克罗雷领主
+    .target +Lord Darius Crowley
 step
     #completewith next
     #label Bloodfang Stalker
-    >>使用|T135433:0|t[投掷火炬]并瞄准|cRXP_ENEMY_血牙猎手|r。
+    >>Use |T135433:0|t[Throw Torch] and aim at |cRXP_ENEMY_Bloodfang Stalker|r.
     .complete 14212,1 --Bloodfang Stalker rounded up (30)
-    .mob 血牙猎手
+    .mob Bloodfang Stalker
 step
-    #arrowtext 点击\n|cRXP_PICK_马|r
+    #arrowtext Click\n|cRXP_PICK_Horse|r
     #completewith Bloodfang Stalker
     .goto 202,31.28,72.7
-    .vehicle >>点击|cRXP_PICK_马|r
-    .target 克罗雷的马
+    .vehicle >>Click on the |cRXP_PICK_Horse|r
+    .target Crowley's Horse
 step
     #requires Bloodfang Stalker
     #completewith next
-    #title |cFFFCDC00注意事项|r
-    +|cRXP_WARN_在烧掉狼人之后|r；
-    *持续对附近的 |cRXP_ENEMY_狼人|r 使用 |T135433:0|t[投掷火炬]，|cRXP_WARN_控制你的马何时死亡，最好死在大教堂前大炮附近|r。
+    #title |cFFFCDC00Heads Up|r
+    +|cRXP_WARN_After burning the Worgen|r;
+    *Continue using |T135433:0|t[Throw Torch] on nearby |cRXP_ENEMY_Worgen|r |cRXP_WARN_to control when your horse dies, ideally near the Cannons in front of the Cathedral|r.
 step
     #requires Bloodfang Stalker
-    >>使用|T135433:0|t[投掷火炬]瞄准|cRXP_ENEMY_狼人|r。
+    >>Use |T135433:0|t[Throw Torch] and aim at the |cRXP_ENEMY_Worgen|r.
     .complete 14212,1 --Bloodfang Stalker rounded up (30)
-    .mob 血牙猎手
+    .mob Bloodfang Stalker
 step
     #completewith next
     #label Sacrifices1
-    >>持续对附近的 |cRXP_ENEMY_狼人|r 使用 |T135433:0|t[投掷火炬]，|cRXP_WARN_控制你的马何时死亡，最好死在大教堂前大炮附近|r。
-    .turnin 14212 >>交任务 牺牲
-    .accept 14218 >>接受任务 以鲜血与灰烬之名
+    >>Continue using |T135433:0|t[Throw Torch] on nearby |cRXP_ENEMY_Worgen|r |cRXP_WARN_to control when your horse dies, ideally near the Cannons in front of the Cathedral|r.
+    .turnin 14212 >>Turn in Sacrifices
+    .accept 14218 >>Accept By Blood and Ash
     .disablecheckbox
 step
     #completewith Sacrifices1
-    .goto 202,40.51,39.42,60 >>如果在任务NPC附近死亡，就保持存活；否则被狼人击杀并在墓地复活。
-    .target 叛军大炮
+    .goto 202,40.51,39.42,60 >>If it dies near the questgiver, stay alive; otherwise, die to worgen and respawn at the graveyard.
+    .target Rebel Cannon
 step
     #requires Sacrifices1
     #completewith ClearWorgen
-    +|cRXP_WARN_交任务并进入大炮，以此清除剩余的|cRXP_ENEMY_|r座狼人|r。
+    +|cRXP_WARN_Clear remaining |cRXP_ENEMY_Worgen|r by turning in the quest and entering a cannon|r.
 step
-    #arrowtext |cFFFCDC00交任务或重生|r
+    #arrowtext |cFFFCDC00Turn in or Respawn|r
     #requires Sacrifices1
     .goto 202,40.51,39.42
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_托比亚斯·密斯特曼托|r 对话。
-    .turnin 14212 >>交任务 牺牲
-    .accept 14218 >>接受任务 以鲜血与灰烬之名
-    .target 托比亚斯·密斯特曼托
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tobias Mistmantle|r.
+    .turnin 14212 >>Turn in Sacrifices
+    .accept 14218 >>Accept By Blood and Ash
+    .target Tobias Mistmantle
 step
     #completewith next
     #label Rebel Cannon
-    >>使用 |T252185:0|t[叛军大炮](1)
-    *(远程瞬发：造成大量伤害)
+    >>Use |T252185:0|t[Rebel Cannon](1)
+    *(Ranged instant: Deals a LOT of damage)
     .complete 14218,1 --Bloodfang Stalker slain (80)
-    .mob 血牙猎手
+    .mob Bloodfang Stalker
 step
-    #arrowtext 点击\n|cRXP_PICK_火炮|r
+    #arrowtext Click\n|cRXP_PICK_Cannon|r
     #completewith Rebel Cannon
     #label ClearWorgen
     .goto 202,40.92,36.46
-    .vehicle >>点击 |cRXP_PICK_火炮|r。
-    .target 叛军大炮
+    .vehicle >>Click on |cRXP_PICK_Cannon|r.
+    .target Rebel Cannon
 step
     #requires Rebel Cannon
-    >>使用 |T252185:0|t[叛军大炮](1)
-    *(远程瞬发：造成大量伤害)
+    >>Use |T252185:0|t[Rebel Cannon](1)
+    *(Ranged instant: Deals a LOT of damage)
     .complete 14218,1 --Bloodfang Stalker slain (80)
-    .mob 血牙猎手
+    .mob Bloodfang Stalker
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_托比亚斯·密斯特曼托|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Tobias Mistmantle|r
     .goto 202,40.51,39.42
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_托比亚斯·密斯特曼托|r 对话。
-    .turnin 14218 >>交任务 以鲜血与灰烬之名
-    .accept 14221 >>接受任务 绝不投降，偶尔撤退
-    .target 托比亚斯·密斯特曼托
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tobias Mistmantle|r.
+    .turnin 14218 >>Turn in By Blood and Ash
+    .accept 14221 >>Accept Never Surrender, Sometimes Retreat
+    .target Tobias Mistmantle
 step
     #completewith next
     #label Last Stand
@@ -20019,175 +20017,175 @@ step
     .goto 202,42.99,42.44,5,0
     .goto 202,43.12,43.79,5,0
     .goto 202,43.7,44.75,5,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达利乌斯·克罗雷领主|r 对话。
-    .turnin 14221 >>交任务 绝不投降，偶尔撤退
-    .accept 14222 >>接受任务 破釜沉舟
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Darius Crowley|r.
+    .turnin 14221 >>Turn in Never Surrender, Sometimes Retreat
+    .accept 14222 >>Accept Last Stand
     .disablecheckbox
-    .target Darius Crowley领主
+    .target Lord Darius Crowley
 step
-    #arrowtext 进入大教堂
+    #arrowtext Enter the Cathedral
     #completewith Last Stand
-    .goto 202,48.93,52.76,70 >>进入大教堂
+    .goto 202,48.93,52.76,70 >>Enter the Cathedral
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_达利乌斯·克罗雷领主|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Lord Darius Crowley|r
     #requires Last Stand
     .goto 202,48.936,52.794
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达利乌斯·克罗雷领主|r 对话。
-    .turnin 14221 >>交任务 绝不投降，偶尔撤退
-    .accept 14222 >>接受任务 破釜沉舟
-    .target Darius Crowley领主
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Darius Crowley|r.
+    .turnin 14221 >>Turn in Never Surrender, Sometimes Retreat
+    .accept 14222 >>Accept Last Stand
+    .target Lord Darius Crowley
     .use 55009 --Steadfast Boots
     .use 55010 --Cannoneer's Leggings
     .use 131866 --Steadfast Greaves
 step
-    #arrowtext 杀死\n|cRXP_ENEMY_Frenzied Stalkers|r
+    #arrowtext Kill\n|cRXP_ENEMY_Frenzied Stalkers|r
     #loop
     .goto 202,47.98,46.43,15,0
     .goto 202,43.43,45.95,15,0
     .goto 202,44.84,51.33,1,0
-    >>击杀 |cRXP_ENEMY_狂暴猎手|r。
+    >>Kill |cRXP_ENEMY_Frenzied Stalkers|r.
     .complete 14222,1 --Frenzied Stalker slain (8)
-    .mob 狂暴猎手
+    .mob Frenzied Stalker
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_达利乌斯·克罗雷领主|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Lord Darius Crowley|r
     .goto 202,48.936,52.794
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达利乌斯·克罗雷领主|r 对话。
-    .turnin 14222 >>交任务 破釜沉舟
-    .timer 48,破釜沉舟 RP
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Darius Crowley|r.
+    .turnin 14222 >>Turn in Last Stand
+    .timer 48,Last Stand RP
     .target Lord Daruius Crowley
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_国王吉恩·格雷迈恩|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_King Genn Greymane|r
     .goto 179,36.47,61.39
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_FRIENDLY_剧情结束后|r与|cRXP_WARN_吉恩·格雷迈恩国王|r对话。
-    *|cRXP_WARN_当屏幕变黑时，继续移动并跟随箭头前往任务NPC。|r
-    .accept 14375 >>接受任务 人性的最后希望
-    .turnin 14375 >>交任务 人性的最后希望
-    .timer 7,人性的最后希望 剧情RP
-    .target 吉恩·格雷迈恩国王
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_King Genn Greymane|r |cRXP_WARN_after the roleplay|r.
+    *|cRXP_WARN_When the screen fades to black, keep moving and follow the arrow to the questgiver.|r
+    .accept 14375 >>Accept Last Chance at Humanity
+    .turnin 14375 >>Turn in Last Chance at Humanity
+    .timer 7,Last Chance at Humanity RP
+    .target King Genn Greymane
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_高弗雷勋爵|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Lord Godfrey|r
     .goto 179,36.51,62.27
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_FRIENDLY_剧情结束后|r与|cRXP_WARN_高弗雷勋爵|r对话。
-    .accept 14313 >>接受任务 恢复人性
-    .target 高弗雷勋爵
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Godfrey|r |cRXP_WARN_after the roleplay|r.
+    .accept 14313 >>Accept Among Humans Again
+    .target Lord Godfrey
 step
     #completewith next
     #label Among Humans Again
     .goto 179,37.16,63.62,5,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_克雷南·阿朗纳斯|r 对话。
-    .turnin 14313 >>交任务 恢复人性
-    .accept 14320 >>接受任务 急需药材
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krennan Aranas|r.
+    .turnin 14313 >>Turn in Among Humans Again
+    .accept 14320 >>Accept In Need of Ingredients
     .disablecheckbox
-    .target 克雷南·阿朗纳斯
-step
-    #arrowtext 进入房屋
-    #completewith Among Humans Again
-    .goto 179,37.42,63.24,10 >>进入房屋
-step
-    #arrowtext 与\n|cRXP_FRIENDLY_克雷南·阿朗纳斯|r 对话
-    #requires Among Humans Again
-    .goto 179,37.42,63.24
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_克雷南·阿朗纳斯|r 对话。
-    .turnin 14313 >>交任务 恢复人性
-    .accept 14320 >>接受任务 急需药材
     .target Krennan Aranas
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_杰克 "全部 Trades" Derrington|r 对话
+    #arrowtext Enter the House
+    #completewith Among Humans Again
+    .goto 179,37.42,63.24,10 >>Enter the House
+step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Krennan Aranas|r
+    #requires Among Humans Again
+    .goto 179,37.42,63.24
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krennan Aranas|r.
+    .turnin 14313 >>Turn in Among Humans Again
+    .accept 14320 >>Accept In Need of Ingredients
+    .target Krennan Aranas
+step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Jack "All Trades" Derrington|r
     .goto 179,37.34,63.16
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_杰克·“万金油”·德林顿|r对话。
-    .train 2366 >>学习 |T4620675:0|t[草药学]
-    .target 杰克 "全部 Trades" Derrington
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jack "All Trades" Derrington|r.
+    .train 2366 >>Train |T4620675:0|t[Herbalism]
+    .target Jack "All Trades" Derrington
     .skipgossipid 38858
     .skipgossipid 38871
     .skipgossipid 38919
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_杰克 "全部 Trades" Derrington|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Jack "All Trades" Derrington|r
     .goto 179,37.34,63.16
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_杰克·“万金油”·德林顿|r对话。
-    .train 2575 >>学习 |T4620679:0|t[采矿]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jack "All Trades" Derrington|r.
+    .train 2575 >>Train |T4620679:0|t[Mining]
     .skipgossipid 38858
     .skipgossipid 38872
     .skipgossipid 38987
-    .target 杰克 "全部 Trades" Derrington
+    .target Jack "All Trades" Derrington
 step
     #completewith next
-    +在路线正前方遇到矿石和草药时顺手采集，以获取经验值。
+    +Gather ore and herbs whenever they’re directly in your path for XP.
 step
     #completewith next
     #label Need of Ingredients
     .goto 179,37.1,63.63,5,0
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_箱子|r。
-    *|cRXP_WARN_会有|cRXP_ENEMY_亡灵刺客|r出现；可以无视他|r。
-    .turnin 14320 >>交任务 急需药材
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crate|r.
+    *|cRXP_WARN_A |cRXP_ENEMY_Forsaken Assassin|r will spawn; You can ignore him|r.
+    .turnin 14320 >>Turn in In Need of Ingredients
     .mob Forsaken Assassin
 step
-    #arrowtext 离开房屋
+    #arrowtext Leave the House
     #completewith Need of Ingredients
-    .goto 179,32.77,66.39,148 >>离开房屋
+    .goto 179,32.77,66.39,148 >>Leave the House
 step
-    #arrowtext 点击 |cRXP_PICK_板条箱|r
+    #arrowtext Click\n|cRXP_PICK_Crate|r
     #requires Need of Ingredients
     .goto 179,32.77,66.39
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_箱子|r。
-    *|cRXP_WARN_会有|cRXP_ENEMY_亡灵刺客|r出现；可以无视他|r。
-    .turnin 14320 >>交任务 急需药材
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crate|r.
+    *|cRXP_WARN_A |cRXP_ENEMY_Forsaken Assassin|r will spawn; You can ignore him|r.
+    .turnin 14320 >>Turn in In Need of Ingredients
     .mob Forsaken Assassin
 step
-    #arrowtext 点击\n|cRXP_PICK_被杀死的巡逻兵|r
+    #arrowtext Click\n|cRXP_PICK_Slain Watchman|r
     .goto 179,32.77,66.15
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_被杀死的巡逻兵|r
-    *|cRXP_WARN_如果无法点击他，请使用“当前物品框架”中的宏|r。
-    .accept 14321 >>接受任务 入侵
-    .macro Reload Ui, >>重新加载界面
-    .target 被杀死的巡逻兵
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Slain Watchman|r
+    *|cRXP_WARN_If you cannot click on him, use the macro in the "Active Items Frame"|r.
+    .accept 14321 >>Accept Invasion
+    .macro Reload Ui, >>/reload
+    .target Slain Watchman
 step
     #completewith next
     #label Invasion
     .goto 179,36.23,65.74,10,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格温·阿姆斯特|r 对话。
-    .turnin 14321 >>交任务 入侵
-    .accept 14336 >>接受任务 猎物还是猎人
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwen Armstead|r.
+    .turnin 14321 >>Turn in Invasion
+    .accept 14336 >>Accept Kill or Be Killed
     .disablecheckbox
-    .target 格温·阿姆斯特
+    .target Gwen Armstead
 step
-    #arrowtext 进入房屋
+    #arrowtext Enter the House
     #completewith Invasion
-    .goto 179,37.41,63.35,15 >>进入房屋
+    .goto 179,37.41,63.35,15 >>Enter the House
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_格温·阿姆斯特|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Gwen Armstead|r
     #requires Invasion
     .goto 179,37.41,63.35
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格温·阿姆斯特|r 对话。
-    .turnin 14321 >>交任务 入侵
-    .accept 14336 >>接受任务 猎物还是猎人
-    .target 格温·阿姆斯特
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwen Armstead|r.
+    .turnin 14321 >>Turn in Invasion
+    .accept 14336 >>Accept Kill or Be Killed
+    .target Gwen Armstead
 step
     #completewith next
     #label Kill or Be Killed
-    #title |cFFFCDC00NPC 巡逻|r
+    #title |cFFFCDC00NPC Patrols|r
     .goto 179,37.13,63.73,5,0
     .goto 179,36.52,65.23,5,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_利亚姆·格雷迈恩王子|r 对话。
-    .turnin 14336 >>交任务 猎物还是猎人
-    .accept 14347 >>接受任务 坚守阵地
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prince Liam Greymane|r.
+    .turnin 14336 >>Turn in Kill or Be Killed
+    .accept 14347 >>Accept Hold the Line
     .disablecheckbox
-    .accept 14348 >>接受任务 合作
+    .accept 14348 >>Accept You Can't Take 'Em Alone
     .disablecheckbox
-    .target 利亚姆·格雷迈恩王子
+    .target Prince Liam Greymane
 step
-    #title |cFFFCDC00NPC 巡逻|r
+    #title |cFFFCDC00NPC Patrols|r
     #hidewindow
     #completewith Kill or Be Killed
-    .goto 179,35.68,66.34,20 >>跟随箭头
+    .goto 179,35.68,66.34,20 >>Follow the Arrow
 step
-    #arrowtext |cFFFCDC00寻找巡逻的NPC|r
+    #arrowtext |cFFFCDC00Find the patrolling NPC|r
     #requires Kill or Be Killed
     .goto 179,35.68,66.34
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_利亚姆·格雷迈恩王子|r 对话
-    .turnin 14336 >>交任务 猎物还是猎人
-    .accept 14347 >>接受任务 坚守阵地
-    .accept 14348 >>接受任务 合作
-    .target 利亚姆·格雷迈恩王子
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prince Liam Greymane|r.
+    .turnin 14336 >>Turn in Kill or Be Killed
+    .accept 14347 >>Accept Hold the Line
+    .accept 14348 >>Accept You Can't Take 'Em Alone
+    .target Prince Liam Greymane
 step
     #hidewindow
     #completewith Black Gunpowder Keg (4)
@@ -20202,70 +20200,70 @@ step
     +1
 step
     #completewith next
-    >>击杀|cRXP_ENEMY_被遗忘者|r。
+    >>Kill |cRXP_ENEMY_Forsakens|r.
     .complete 14347,1 --Forsaken Invader slain (10)
-    .mob 入侵的被遗忘者
+    .mob Forsaken Invader
 step
-    >>|TInterface/cursor/crosshair/interact.blp:20|t拾取|cRXP_PICK_木桶|r，然后点击|cRXP_PICK_憎恶|r。
-    *|cRXP_WARN_它们很快就会爆炸，你可以立即继续前进|r。
+    >>|TInterface/cursor/crosshair/interact.blp:20|tPick up |cRXP_PICK_Barrels|r, then click on |cRXP_PICK_Abominations|r.
+    *|cRXP_WARN_They will explode shortly after, you can move on immediately|r.
     .collect 49202,4,14348,1,-1 --Black Gunpowder Keg (4)
     .complete 14348,1 --Gunpowder thrown at Abominations (4)
     .use 49202
-    .mob 恐怖憎恶
+    .mob Horrid Abomination
 step
     #label Black Gunpowder Keg (4)
-    >>击杀 |cRXP_ENEMY_入侵的被遗忘者|r。
+    >>Kill |cRXP_ENEMY_Forsaken Invaders|r.
     .complete 14347,1 --Forsaken Invader slain (10)
-    .mob 入侵的被遗忘者
+    .mob Forsaken Invader
 step
-    #arrowtext |cFFFCDC00寻找巡逻的NPC|r
+    #arrowtext |cFFFCDC00Find the patrolling NPC|r
     .goto 179,35.68,66.34
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_利亚姆·格雷迈恩王子|r 对话。
-    .turnin 14347 >>交任务 坚守阵地
-    .turnin 14348,2 >>交任务 合作
-    .accept 14366 >>接受任务 沉着迎敌
-    .target 利亚姆·格雷迈恩王子
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prince Liam Greymane|r.
+    .turnin 14347 >>Turn in Hold the Line
+    .turnin 14348,2 >>Turn in You Can't Take 'Em Alone
+    .accept 14366 >>Accept Holding Steady
+    .target Prince Liam Greymane
 step
     #completewith next
     #label The Allens' Storm Cellar
     #hidewindow
     .goto 179,36.53,65.26,10,0
     .goto 179,37.66,63.95,10,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格温·阿姆斯特|r 对话。
-    .turnin 14366 >>交任务 沉着迎敌
-    .accept 14367 >>接受任务 艾伦农场的防风地窖
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwen Armstead|r.
+    .turnin 14366 >>Turn in Holding Steady
+    .accept 14367 >>Accept The Allens' Storm Cellar
     .disablecheckbox
-    .target 格温·阿姆斯特
+    .target Gwen Armstead
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_杰勒德·沃松|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Gerard Walthorn|r
     #completewith The Allens' Storm Cellar
     .goto 179,38.38,63.58
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_杰勒德·沃松|r对话。
-    .vendor >>修理并出售物品以腾出背包空间。
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gerard Walthorn|r.
+    .vendor >>Repair and sell items to free up bag space.
     .target Gerard Walthorn
 step
     #requires The Allens' Storm Cellar
     #completewith next
     #label The Allens' Storm Cellar2
     .goto 179,36.98,63.94,10,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格温·阿姆斯特|r 对话。
-    .turnin 14366 >>交任务 沉着迎敌
-    .accept 14367 >>接受任务 艾伦农场的防风地窖
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwen Armstead|r.
+    .turnin 14366 >>Turn in Holding Steady
+    .accept 14367 >>Accept The Allens' Storm Cellar
     .disablecheckbox
-    .target 格温·阿姆斯特
+    .target Gwen Armstead
 step
-    #arrowtext 进入房屋
+    #arrowtext Enter the House
     #requires The Allens' Storm Cellar
     #completewith The Allens' Storm Cellar2
-    .goto 179,37.41,63.35,5 >>进入房屋
+    .goto 179,37.41,63.35,5 >>Enter the House
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_格温·阿姆斯特|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Gwen Armstead|r
     #requires The Allens' Storm Cellar2
     .goto 179,37.41,63.35
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格温·阿姆斯特|r 对话。
-    .turnin 14366 >>交任务 沉着迎敌
-    .accept 14367 >>接受任务 艾伦农场的防风地窖
-    .target 格温·阿姆斯特
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwen Armstead|r.
+    .turnin 14366 >>Turn in Holding Steady
+    .accept 14367 >>Accept The Allens' Storm Cellar
+    .target Gwen Armstead
     .use 54983 --Repeller's Bracers
     .use 54984 --Gilnean Soldier's Waistband
 step
@@ -20274,51 +20272,51 @@ step
     .goto 179,37.1,63.65,5,0
     .goto 179,28.42,64.24,5,0
     .goto 179,28.24,63.89,5,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_高弗雷勋爵|r 和 |cRXP_FRIENDLY_梅琳达·哈蒙德|r 对话。
-    .turnin 14367 >>交任务 艾伦农场的防风地窖
-    .accept 14369 >>接受任务 释放兽性
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Godfrey|r and |cRXP_FRIENDLY_Melinda Hammond|r.
+    .turnin 14367 >>Turn in The Allens' Storm Cellar
+    .accept 14369 >>Accept Unleash the Beast
     .disablecheckbox
-    .accept 14382 >>接受任务 海边的船长
+    .accept 14382 >>Accept Two By Sea
     .disablecheckbox
-    .accept 14368 >>接受任务 救救我的孩子！
+    .accept 14368 >>Accept Save the Children!
     .disablecheckbox
-    .target 高弗雷勋爵
-    .target 梅琳达·哈蒙德
+    .target Lord Godfrey
+    .target Melinda Hammond
 step
-    #arrowtext 进入地下室
+    #arrowtext Enter the Cellar
     #completewith Unleash the Beast
-    .goto 179,28.24,63.89,5 >>进入地窖
+    .goto 179,28.24,63.89,5 >>Enter the Cellar
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_高弗雷勋爵|r 和 |cRXP_FRIENDLY_梅琳达·哈蒙德|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Lord Godfrey|r and |cRXP_FRIENDLY_Melinda Hammond|r
     #requires Unleash the Beast
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_高弗雷勋爵|r 和 |cRXP_FRIENDLY_梅琳达·哈蒙德|r 对话。
-    .turnin 14367 >>交任务 艾伦农场的防风地窖
-    .accept 14369 >>接受任务 释放兽性
-    .accept 14382 >>接受任务 海边的船长
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Godfrey|r and |cRXP_FRIENDLY_Melinda Hammond|r.
+    .turnin 14367 >>Turn in The Allens' Storm Cellar
+    .accept 14369 >>Accept Unleash the Beast
+    .accept 14382 >>Accept Two By Sea
     .goto 179,28.97,63.93
-    .target +高弗雷勋爵
-    .accept 14368 >>接受任务 救救我的孩子！
+    .target +Lord Godfrey
+    .accept 14368 >>Accept Save the Children!
     .goto 179,28.93,64.04
-    .target +梅琳达·哈蒙德
+    .target +Melinda Hammond
 step
     #completewith next
     #hidewindow
     #label Ashley1
     .goto 179,28.27,63.86,5,0
     .goto 179,28.45,64.38,5,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿什莉|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ashley|r
     .complete 14368,2 --Ashley rescued (1)
 step
-    #arrowtext 离开地下室
+    #arrowtext Exit the Cellar
     #completewith Ashley1
-    .goto 179,27.88,66.67,54 >>离开地窖
+    .goto 179,27.88,66.67,54 >>Exit the Cellar
 step
     #requires Ashley1
     #completewith Captain Anson3
-    >>击杀|cRXP_ENEMY_被遗忘者|r。
+    >>Kill |cRXP_ENEMY_Forsakens|r.
     .complete 14369,1 --Forsaken Combatant slain (8)
-    .mob 被遗忘者步兵
-    .mob 被遗忘者水手
+    .mob Forsaken Footsoldier
+    .mob Forsaken Sailor
 step
     #requires Ashley1
     #completewith next
@@ -20326,13 +20324,13 @@ step
     .goto 179,27.5,66.59,5,0
     .goto 179,27.85,66.84,5,0
     .goto 179,27.96,66.08,5,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿什莉|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ashley|r
     .complete 14368,2 --Ashley rescued (1)
 step
-    #arrowtext 进入房屋，上楼
+    #arrowtext Enter the House and go upstairs
     #requires Ashley1
     #completewith Ashley2
-    .goto 179,28.2,66.39,5 >>进入房屋并上楼
+    .goto 179,28.2,66.39,5 >>Enter the House and go upstairs
 step
     #requires Ashley2
     #hidewindow
@@ -20340,26 +20338,26 @@ step
     #label Ashley3
     .complete 14368,2 --Ashley rescued (1)
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_阿什莉|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Ashley|r
     #requires Ashley2
     #completewith Ashley3
     .goto 179,27.88,66.66
-    .cast 68598 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿什莉|r 对话。
+    .cast 68598 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ashley|r.
     .timer 3.5,RP
-    .target 阿什莉
+    .target Ashley
 step
     #requires Ashley3
     #completewith next
     #label James1
     .goto 179,27.84,65.95,10,0
     .goto 179,27.81,66.99,5,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_詹姆斯|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_James|r
     .complete 14368,3 --James rescued (1)
 step
-    #arrowtext 离开房屋
+    #arrowtext Exit the House
     #requires Ashley3
     #completewith James1
-    .goto 179,28.55,66.73,15 >>离开房屋
+    .goto 179,28.55,66.73,15 >>Exit the House
 step
     #requires James1
     #hidewindow
@@ -20367,12 +20365,12 @@ step
     #label James2
     .complete 14368,3 --James rescued (1)
 step
-    #arrowtext |cFFFCDC00寻找巡逻的NPC|r
+    #arrowtext |cFFFCDC00Find the patrolling NPC|r
     #requires James1
     #completewith James2
     .goto 179,28.55,66.73
-    .cast 68596 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_詹姆斯|r 对话
-    .target 詹姆斯
+    .cast 68596 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_James|r
+    .target James
 step
     #requires James2
     #completewith next
@@ -20380,41 +20378,41 @@ step
     #label Cynthia
     .complete 14368,1 --Cynthia rescued (1)
 step
-    #arrowtext 与 |cRXP_FRIENDLY_辛西娅|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Cynthia|r
     #requires James2
     #completewith Cynthia
     .goto 179,29.59,69.31
-    .cast 68597 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_辛西娅|r 对话。
+    .cast 68597 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cynthia|r.
     .timer 2.7,RP
-    .target 辛西娅
+    .target Cynthia
 step
     #requires Cynthia
     #completewith next
     #label Captain Morris
-    >>击杀 |cRXP_ENEMY_莫里斯船长|r
+    >>Kill |cRXP_ENEMY_Captain Morris|r
     .complete 14382,2 --Captain Morris slain (1)
-    .mob 莫里斯船长
+    .mob Captain Morris
 step
-    #arrowtext 点击 |cRXP_PICK_被遗忘者投石车|r
+    #arrowtext Click\n|cRXP_PICK_Forsaken Catapult|r
     #requires Cynthia
     #completewith Captain Morris
     #loop
     .goto 179,28.38,72.13,20,0
     .goto 179,29.62,74.1,20,0
-    .vehicle >>点击|cRXP_PICK_被遗忘者投石车|r。
-    *|cRXP_WARN_击杀|cRXP_ENEMY_机械师|r |cRXP_WARN_如果他在|r。
-    .mob 被遗忘者技师
-    .target 被遗忘者投石车
+    .vehicle >>Click on the |cRXP_PICK_Forsaken Catapult|r.
+    *|cRXP_WARN_Kill the |cRXP_ENEMY_Machinist|r |cRXP_WARN_if present|r.
+    .mob Forsaken Machinist
+    .target Forsaken Catapult
 step
-    #arrowtext 杀死 |cRXP_ENEMY_莫里斯船长|r
+    #arrowtext Kill\n|cRXP_ENEMY_Captain Morris|r
     #requires Captain Morris
     .goto 179,27.87,81.14,5,0
     .goto 179,28.05,81.07,5,0
     .goto 179,26.86,79.33
-    *|cRXP_WARN_瞄准船中央并使用|r |T252175:0|t[发射]。
-    >>击杀 |cRXP_ENEMY_莫里斯船长|r
+    *|cRXP_WARN_Aim at the center of the boat and use|r |T252175:0|t[Launch].
+    >>Kill |cRXP_ENEMY_Captain Morris|r
     .complete 14382,2 --Captain Morris slain (1)
-    .mob 莫里斯船长
+    .mob Captain Morris
 step
     #completewith next
     #label Captain Anson
@@ -20422,21 +20420,21 @@ step
     .goto 179,28.17,81.34,5,0
     .goto 179,27.86,81.13,5,0
     .goto 179,28.03,79.62,10,0
-    >>击杀 |cRXP_ENEMY_安森船长|r
+    >>Kill |cRXP_ENEMY_Captain Anson|r
     .complete 14382,1 --Captain Anson slain (1)
-    .mob 安森船长
+    .mob Captain Anson
 step
     #completewith Captain Anson
-    .goto 179,26.7,73.49,110 >>下船
+    .goto 179,26.7,73.49,110 >>Get off the Boat
 step
     #requires Captain Anson
     #completewith next
     #label Captain Anson2
-    >>击杀 |cRXP_ENEMY_安森船长|r
+    >>Kill |cRXP_ENEMY_Captain Anson|r
     .complete 14382,1 --Captain Anson slain (1)
-    .mob 安森船长
+    .mob Captain Anson
 step
-    #arrowtext 点击 |cRXP_PICK_被遗忘者投石车|r
+    #arrowtext Click\n|cRXP_PICK_Forsaken Catapult|r
     #requires Captain Anson
     #completewith Captain Anson2
     #loop
@@ -20444,21 +20442,21 @@ step
     .goto 179,25.13,72.11,20,0
     .goto 179,26.27,70.76,20,0
     .goto 179,26.93,71.63,20,0
-    .vehicle >>点击|cRXP_PICK_被遗忘者投石车|r。
-    *|cRXP_WARN_击杀|cRXP_ENEMY_机械师|r |cRXP_WARN_如果他在|r。
-    .mob 被遗忘者技师
-    .target 被遗忘者投石车
+    .vehicle >>Click on the |cRXP_PICK_Forsaken Catapult|r.
+    *|cRXP_WARN_Kill the |cRXP_ENEMY_Machinist|r |cRXP_WARN_if present|r.
+    .mob Forsaken Machinist
+    .target Forsaken Catapult
 step
-    #arrowtext 杀死 |cRXP_ENEMY_安森船长|r
+    #arrowtext Kill\n|cRXP_ENEMY_Captain Anson|r
     #requires Captain Anson2
     #label Captain Anson3
     .goto 179,24.73,76.31,5,0
     .goto 179,24.91,76.22,5,0
     .goto 179,23.76,74.69
-    *|cRXP_WARN_瞄准船中央并使用|r |T252175:0|t[发射]。
-    >>击杀 |cRXP_ENEMY_安森船长|r
+    *|cRXP_WARN_Aim at the center of the boat and use|r |T252175:0|t[Launch].
+    >>Kill |cRXP_ENEMY_Captain Anson|r
     .complete 14382,1 --Captain Anson slain (1)
-    .mob 安森船长
+    .mob Captain Anson
 step
     #hidewindow
     #completewith Two By Sea
@@ -20474,29 +20472,29 @@ step
     .goto 179,27.8,75.29
     +1
 step
-    >>击杀|cRXP_ENEMY_被遗忘者|r。
+    >>Kill |cRXP_ENEMY_Forsakens|r.
     .complete 14369,1 --Forsaken Combatant slain (8)
-    .mob 被遗忘者步兵
-    .mob 被遗忘者水手
+    .mob Forsaken Footsoldier
+    .mob Forsaken Sailor
 step
     #completewith next
     #label Save the Children!
     #hidewindow
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_梅琳达·哈蒙德|r 和 |cRXP_FRIENDLY_高弗雷勋爵|r 对话
-    .turnin 14368 >>交任务 救救我的孩子！
-    .target +梅琳达·哈蒙德
-    .turnin 14369 >>交任务 释放兽性
-    .turnin 14382 >>交任务 海边的船长
-    .accept 14386 >>接受任务 敌军的首领
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Melinda Hammond|r and |cRXP_FRIENDLY_Lord Godfrey|r
+    .turnin 14368 >>Turn in Save the Children!
+    .target +Melinda Hammond
+    .turnin 14369 >>Turn in Unleash the Beast
+    .turnin 14382 >>Turn in Two By Sea
+    .accept 14386 >>Accept Leader of the Pack
     .disablecheckbox
-    .target +高弗雷勋爵
+    .target +Lord Godfrey
 step
     #label Two By Sea
     #completewith Save the Children!
     .subzoneskip 4792
-    *|cRXP_WARN_在战斗中使用坐下宏，可加快死亡速度|r。
-    .subzone 4793 >>死掉后在墓地复活。
-    .macro Sit, >>坐下
+    *|cRXP_WARN_Use the sit macro in combat to die faster|r.
+    .subzone 4793 >>Die and respawn at the Graveyard.
+    .macro Sit, >>/sit
     .emote SIT,16537
     .emote SIT,16518
 step
@@ -20504,54 +20502,54 @@ step
     #requires Save the Children!
     #completewith next
     #hidewindow
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_梅琳达·哈蒙德|r 和 |cRXP_FRIENDLY_高弗雷勋爵|r 对话。
-    .turnin 14368 >>交任务 救救我的孩子！
-    .target +梅琳达·哈蒙德
-    .turnin 14369 >>交任务 释放兽性
-    .turnin 14382 >>交任务 海边的船长
-    .accept 14386 >>接受任务 敌军的首领
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Melinda Hammond|r and |cRXP_FRIENDLY_Lord Godfrey|r.
+    .turnin 14368 >>Turn in Save the Children!
+    .target +Melinda Hammond
+    .turnin 14369 >>Turn in Unleash the Beast
+    .turnin 14382 >>Turn in Two By Sea
+    .accept 14386 >>Accept Leader of the Pack
     .disablecheckbox
-    .target +高弗雷勋爵
+    .target +Lord Godfrey
 step
     #requires Save the Children!
     #completewith Save the Children!2
     #ignorecorpse
-    #title |cFFFCDC00在灵魂医者处复活|r
+    #title |cFFFCDC00Rez at Spirit Healer|r
     .subzoneskip 4792
     .goto 179,27.6,66
-    .deathskip >>在灵魂医者处复活。
-    .target 灵魂医者
+    .deathskip >>Respawn at the Spirit Healer.
+    .target Spirit Healer
 step
     #requires Save the Children!2
     #completewith next
     #label Save the Children!3
     .goto 179,28.41,64.23,5,0
     .goto 179,28.26,63.89,5,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_梅琳达·哈蒙德|r 和 |cRXP_FRIENDLY_高弗雷勋爵|r 对话。
-    .turnin 14368 >>交任务 救救我的孩子！
-    .target +梅琳达·哈蒙德
-    .turnin 14369 >>交任务 释放兽性
-    .turnin 14382 >>交任务 海边的船长
-    .accept 14386 >>接受任务 敌军的首领
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Melinda Hammond|r and |cRXP_FRIENDLY_Lord Godfrey|r.
+    .turnin 14368 >>Turn in Save the Children!
+    .target +Melinda Hammond
+    .turnin 14369 >>Turn in Unleash the Beast
+    .turnin 14382 >>Turn in Two By Sea
+    .accept 14386 >>Accept Leader of the Pack
     .disablecheckbox
-    .target +高弗雷勋爵
+    .target +Lord Godfrey
 step
-    #arrowtext 进入地窖
+    #arrowtext Enter the Cellar
     #requires Save the Children!2
     #completewith Save the Children!3
-    .goto 179,28.93,64.04,15 >>进入地窖
+    .goto 179,28.93,64.04,15 >>Enter the Cellar
 step
-    #arrowtext 与 |cRXP_FRIENDLY_梅琳达·哈蒙德|r 和 |cRXP_FRIENDLY_高弗雷勋爵|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Melinda Hammond|r and |cRXP_FRIENDLY_Lord Godfrey|r
     #requires Save the Children!3
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_梅琳达·哈蒙德|r 和 |cRXP_FRIENDLY_高弗雷勋爵|r 对话
-    .turnin 14368 >>交任务 救救我的孩子！
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Melinda Hammond|r and |cRXP_FRIENDLY_Lord Godfrey|r.
+    .turnin 14368 >>Turn in Save the Children!
     .goto 179,28.93,64.04
-    .target +梅琳达·哈蒙德
-    .turnin 14369 >>交任务 释放兽性
-    .turnin 14382 >>交任务 海边的船长
-    .accept 14386 >>接受任务 敌军的首领
+    .target +Melinda Hammond
+    .turnin 14369 >>Turn in Unleash the Beast
+    .turnin 14382 >>Turn in Two By Sea
+    .accept 14386 >>Accept Leader of the Pack
     .goto 179,28.97,63.93
-    .target +高弗雷勋爵
+    .target +Lord Godfrey
 step
     #completewith next
     #label Dark Ranger Thyala
@@ -20560,30 +20558,30 @@ step
     .goto 179,28.43,64.35,5,0
     .complete 14386,1 --Dark Ranger Thyala slain (1)
 step
-    #arrowtext 离开地窖
+    #arrowtext Exit the Cellar
     #completewith Dark Ranger Thyala
-    .goto 179,23.48,67.53,165 >>离开地窖
+    .goto 179,23.48,67.53,165 >>Exit the Cellar
 step
     #requires Dark Ranger Thyala
     #completewith next
     #label Dark Ranger Thyala2
-    >>击杀 |cRXP_ENEMY_黑暗游侠西亚拉|r。
+    >>Kill |cRXP_ENEMY_Dark Ranger Thyala|r.
     .complete 14386,1 --Dark Ranger Thyala slain (1)
-    .mob 黑暗游侠西亚拉
+    .mob Dark Ranger Thyala
 step
-    #arrowtext 使用 [训犬口哨] 对 |cRXP_ENEMY_黑暗游侠西亚拉|r
+    #arrowtext Use [Mastiff Whistle]\non |cRXP_ENEMY_Dark Ranger Thyala|r
     #requires Dark Ranger Thyala
     #completewith Dark Ranger Thyala2
     .goto 179,23.5,67.54
-    .cast 68682 >>在|cRXP_ENEMY_黑暗游侠西亚拉|r附近使用|T132161:0|t[训犬口哨]。
+    .cast 68682 >>Use the |T132161:0|t[Mastiff Whistle] near |cRXP_ENEMY_Dark Ranger Thyala|r.
     .use 49240
 step
     #requires Dark Ranger Thyala2
     .goto 179,25.99,66.36
-    >>将 |cRXP_ENEMY_黑暗游侠西亚拉|r 的血量打到 |cRXP_WARN_50%|r，然后前往路径点位置（|cRXP_WARN_猎犬会解决她|r）。
+    >>Damage |cRXP_ENEMY_Dark Ranger Thyala|r |cRXP_WARN_to 50%|r, then move to the waypoint location (|cRXP_WARN_Dogs will take care of her|r).
     .complete 14386,1 --Dark Ranger Thyala slain (1)
     .use 49240
-    .mob 黑暗游侠西亚拉
+    .mob Dark Ranger Thyala
     .use 54981 --Caregiver's Leggings
     .use 54982 --Gloves of Protection
     .use 131351 --Protector's Legguards
@@ -20597,55 +20595,55 @@ step
     #label As the Land Shatters
     .goto 179,28.42,64.23,5,0
     .goto 179,28.27,63.92,5,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_高弗雷勋爵|r 对话。
-    .turnin 14386 >>交任务 敌军的首领
-    .accept 14396 >>接受任务 天崩地裂
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Godfrey|r.
+    .turnin 14386 >>Turn in Leader of the Pack
+    .accept 14396 >>Accept As the Land Shatters
     .disablecheckbox
-    .target 高弗雷勋爵
+    .target Lord Godfrey
 step
-    #arrowtext 跟随箭头
+    #arrowtext Follow the arrow
     #completewith As the Land Shatters
-    .goto 179,28.98,63.93,15 >>跟随箭头
+    .goto 179,28.98,63.93,15 >>Follow the Arrow
 step
-    #arrowtext 与 |cRXP_FRIENDLY_高弗雷勋爵|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Lord Godfrey|r
     #requires As the Land Shatters
     .goto 179,28.98,63.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_高弗雷勋爵|r 对话。
-    .turnin 14386 >>交任务 敌军的首领
-    .accept 14396 >>接受任务 天崩地裂
-    .target 高弗雷勋爵
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Godfrey|r.
+    .turnin 14386 >>Turn in Leader of the Pack
+    .accept 14396 >>Accept As the Land Shatters
+    .target Lord Godfrey
 step
     #completewith next
     #label Gasping for Breath
     .goto 179,28.27,63.92,5,0
     .goto 179,28.47,64.29,5,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_利亚姆·格雷迈恩王子|r 对话。
-    .turnin 14396 >>交任务 天崩地裂
-    .accept 14395 >>接受任务 屏住呼吸
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prince Liam Greymane|r.
+    .turnin 14396 >>Turn in As the Land Shatters
+    .accept 14395 >>Accept Gasping for Breath
     .disablecheckbox
-    .target 利亚姆·格雷迈恩王子
+    .target Prince Liam Greymane
 step
-    #arrowtext 离开地窖
+    #arrowtext Exit the Cellar
     #completewith Gasping for Breath
-    .goto 179,29.03,65.05,20 >>离开地窖
+    .goto 179,29.03,65.05,20 >>Exit the Cellar
 step
-    #arrowtext 与 |cRXP_FRIENDLY_利亚姆·格雷迈恩王子|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Prince Liam Greymane|r
     #requires Gasping for Breath
     .goto 179,29.03,65.05
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_利亚姆·格雷迈恩王子|r 对话。
-    .turnin 14396 >>交任务 天崩地裂
-    .accept 14395 >>接受任务 屏住呼吸
-    .target 利亚姆·格雷迈恩王子
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prince Liam Greymane|r.
+    .turnin 14396 >>Turn in As the Land Shatters
+    .accept 14395 >>Accept Gasping for Breath
+    .target Prince Liam Greymane
     .use 55007 --Dark Ranger's Vest
     .use 131355 --Dark Ranger's Hauberk
 step
     #completewith next
     #label Drowning Watchman1
-    >>将 |cRXP_FRIENDLY_溺水的哨兵|r 带到 |cRXP_FRIENDLY_利亚姆·格雷迈恩王子|r 处。
+    >>Take the |cRXP_FRIENDLY_Drowning Watchman|r to |cRXP_FRIENDLY_Prince Liam Greymane|r.
     .complete 14395,1,1 --Drowning Watchman rescued (4)
-    .target 利亚姆·格雷迈恩王子
+    .target Prince Liam Greymane
 step
-    #arrowtext 点击 |cRXP_PICK_溺水的哨兵|r
+    #arrowtext Click\n|cRXP_PICK_Drowning Watchman|r
     #completewith Drowning Watchman1
     #loop
     .goto 179,28.54,66.63,10,0
@@ -20653,23 +20651,23 @@ step
     .goto 179,28.01,67.3,10,0
     .goto 179,27.93,66,10,0
     .goto 179,27.44,66.03,10,0
-    .cast 68735 >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_溺水的哨兵|r
-    .target 溺水的哨兵
+    .cast 68735 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Drowning Watchman|r
+    .target Drowning Watchman
 step
-    #arrowtext 护送 |cRXP_FRIENDLY_溺水的哨兵|r 到 |cRXP_FRIENDLY_利亚姆·格雷迈恩王子|r
+    #arrowtext Take the |cRXP_FRIENDLY_Drowning Watchman|r to |cRXP_FRIENDLY_Prince Liam Greymane|r
     #requires Drowning Watchman1
     .goto 179,29.03,65.05
-    >>将 |cRXP_FRIENDLY_溺水的守望者|r 带到 |cRXP_FRIENDLY_利亚姆·格雷迈恩王子|r 处。
+    >>Take the |cRXP_FRIENDLY_Drowning Watchman|r to |cRXP_FRIENDLY_Prince Liam Greymane|r.
     .complete 14395,1,1 --Drowning Watchman rescued (4)
-    .target 利亚姆·格雷迈恩王子
+    .target Prince Liam Greymane
 step
     #completewith next
     #label Drowning Watchman2
-    >>将 |cRXP_FRIENDLY_溺水的守望者|r 带到 |cRXP_FRIENDLY_利亚姆·格雷迈恩王子|r 处。
+    >>Take the |cRXP_FRIENDLY_Drowning Watchman|r to |cRXP_FRIENDLY_Prince Liam Greymane|r.
     .complete 14395,1,2 --Drowning Watchman rescued (4)
-    .target 利亚姆·格雷迈恩王子
+    .target Prince Liam Greymane
 step
-    #arrowtext 点击 |cRXP_PICK_溺水的哨兵|r
+    #arrowtext Click\n|cRXP_PICK_Drowning Watchman|r
     #completewith Drowning Watchman2
     #loop
     .goto 179,27.94,66.03,10,0
@@ -20678,46 +20676,46 @@ step
     .goto 179,27.99,67.31,10,0
     .goto 179,28.55,66.65,10,0
     .goto 179,28.78,67.38,10,0
-    .cast 68735 >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_溺水的哨兵|r
-    .target 溺水的哨兵
+    .cast 68735 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Drowning Watchman|r
+    .target Drowning Watchman
 step
-    #arrowtext 护送 |cRXP_FRIENDLY_溺水的哨兵|r 到 |cRXP_FRIENDLY_利亚姆·格雷迈恩王子|r
+    #arrowtext Take the |cRXP_FRIENDLY_Drowning Watchman|r to |cRXP_FRIENDLY_Prince Liam Greymane|r
     #requires Drowning Watchman2
     .goto 179,29.03,65.05
-    >>将 |cRXP_FRIENDLY_溺水的守望者|r 带到 |cRXP_FRIENDLY_利亚姆·格雷迈恩王子|r 处。
+    >>Take the |cRXP_FRIENDLY_Drowning Watchman|r to |cRXP_FRIENDLY_Prince Liam Greymane|r.
     .complete 14395,1,2 --Drowning Watchman rescued (4)
-    .target 利亚姆·格雷迈恩王子
+    .target Prince Liam Greymane
 step
     #completewith next
     #label Drowning Watchman3
-    >>将 |cRXP_FRIENDLY_溺水的守望者|r 带到 |cRXP_FRIENDLY_利亚姆·格雷迈恩王子|r 处。
+    >>Take the |cRXP_FRIENDLY_Drowning Watchman|r to |cRXP_FRIENDLY_Prince Liam Greymane|r.
     .complete 14395,1,3 --Drowning Watchman rescued (4)
-    .target 利亚姆·格雷迈恩王子
+    .target Prince Liam Greymane
 step
-    #arrowtext 点击 |cRXP_PICK_溺水的哨兵|r
+    #arrowtext Click\n|cRXP_PICK_Drowning Watchman|r
     #completewith Drowning Watchman3
     #loop
     .goto 179,28.77,67.4,10,0
     .goto 179,28.01,67.3,10,0
     .goto 179,27.93,66,10,0
     .goto 179,27.44,66.03,10,0
-    .cast 68735 >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_溺水的哨兵|r
-    .target 溺水的哨兵
+    .cast 68735 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Drowning Watchman|r
+    .target Drowning Watchman
 step
-    #arrowtext 护送 |cRXP_FRIENDLY_溺水的哨兵|r 到 |cRXP_FRIENDLY_利亚姆·格雷迈恩王子|r
+    #arrowtext Take the |cRXP_FRIENDLY_Drowning Watchman|r to |cRXP_FRIENDLY_Prince Liam Greymane|r
     #requires Drowning Watchman3
     .goto 179,29.03,65.05
-    >>将 |cRXP_FRIENDLY_溺水的守望者|r 带到 |cRXP_FRIENDLY_利亚姆·格雷迈恩王子|r 处。
+    >>Take the |cRXP_FRIENDLY_Drowning Watchman|r to |cRXP_FRIENDLY_Prince Liam Greymane|r.
     .complete 14395,1,3 --Drowning Watchman rescued (4)
-    .target 利亚姆·格雷迈恩王子
+    .target Prince Liam Greymane
 step
     #completewith next
     #label Drowning Watchman4
-    >>将 |cRXP_FRIENDLY_溺水的守望者|r 带到 |cRXP_FRIENDLY_利亚姆·格雷迈恩王子|r 处。
+    >>Take the |cRXP_FRIENDLY_Drowning Watchman|r to |cRXP_FRIENDLY_Prince Liam Greymane|r.
     .complete 14395,1,4 --Drowning Watchman rescued (4)
-    .target 利亚姆·格雷迈恩王子
+    .target Prince Liam Greymane
 step
-    #arrowtext 点击 |cRXP_PICK_溺水的哨兵|r
+    #arrowtext Click\n|cRXP_PICK_Drowning Watchman|r
     #completewith Drowning Watchman4
     #loop
     .goto 179,28.54,66.63,10,0
@@ -20725,57 +20723,57 @@ step
     .goto 179,28.01,67.3,10,0
     .goto 179,27.93,66,10,0
     .goto 179,27.44,66.03,10,0
-    .cast 68735 >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_溺水的哨兵|r
-    .target 溺水的哨兵
+    .cast 68735 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Drowning Watchman|r
+    .target Drowning Watchman
 step
-    #arrowtext 护送 |cRXP_FRIENDLY_溺水的哨兵|r 到 |cRXP_FRIENDLY_利亚姆·格雷迈恩王子|r
+    #arrowtext Take the |cRXP_FRIENDLY_Drowning Watchman|r to |cRXP_FRIENDLY_Prince Liam Greymane|r
     #requires Drowning Watchman4
     .goto 179,29.03,65.05
-    >>将 |cRXP_FRIENDLY_溺水的哨兵|r 带到 |cRXP_FRIENDLY_利亚姆·格雷迈恩王子|r 处。
+    >>Take the |cRXP_FRIENDLY_Drowning Watchman|r to |cRXP_FRIENDLY_Prince Liam Greymane|r.
     .complete 14395,1,4 --Drowning Watchman rescued (4)
-    .target 利亚姆·格雷迈恩王子
+    .target Prince Liam Greymane
 step
-    #arrowtext 与 |cRXP_FRIENDLY_利亚姆·格雷迈恩王子|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Prince Liam Greymane|r
     .goto 179,29.03,65.05
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_利亚姆·格雷迈恩王子|r 对话。
-    .turnin 14395,1 >>交任务 屏住呼吸
-    .accept 14397 >>接受任务 撤退行动
-    .target 利亚姆·格雷迈恩王子
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prince Liam Greymane|r.
+    .turnin 14395,1 >>Turn in Gasping for Breath
+    .accept 14397 >>Accept Evacuation
+    .target Prince Liam Greymane
 step
     #completewith next
     #label Evacuation
     .goto 179,30.84,64.09,10,0
     .goto 179,36.12,63.54,10,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格温·阿姆斯特|r 对话
-    .turnin 14397 >>交任务 撤退行动
-    .accept 14398 >>接受任务 薇儿外婆
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwen Armstead|r.
+    .turnin 14397 >>Turn in Evacuation
+    .accept 14398 >>Accept Grandma Wahl
     .disablecheckbox
-    .accept 14403 >>接受任务 海瓦尔德兄弟
+    .accept 14403 >>Accept The Hayward Brothers
     .disablecheckbox
-    .accept 14406 >>接受任务 克罗雷果园
+    .accept 14406 >>Accept The Crowley Orchard
     .disablecheckbox
-    .target 格温·阿姆斯特
+    .target Gwen Armstead
 step
     #hidewindow
     #completewith Evacuation
-    .goto 179,37.63,65.23,60 >>跟随箭头
+    .goto 179,37.63,65.23,60 >>Follow the Arrow
 step
-    #arrowtext 与 |cRXP_FRIENDLY_格温·阿姆斯特|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Gwen Armstead|r
     #requires Evacuation
     .goto 179,37.63,65.23
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格温·阿姆斯特|r 对话
-    .turnin 14397 >>交任务 撤退行动
-    .accept 14398 >>接受任务 薇儿外婆
-    .accept 14403 >>接受任务 海瓦尔德兄弟
-    .accept 14406 >>接受任务 克罗雷果园
-    .target 格温·阿姆斯特
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwen Armstead|r.
+    .turnin 14397 >>Turn in Evacuation
+    .accept 14398 >>Accept Grandma Wahl
+    .accept 14403 >>Accept The Hayward Brothers
+    .accept 14406 >>Accept The Crowley Orchard
+    .target Gwen Armstead
 step
-    #arrowtext 与 |cRXP_FRIENDLY_罗娜·克罗雷|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Lorna Crowley|r
     .goto 179,37.68,72.76
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_罗娜·克罗雷|r 对话。
-    .turnin 14406 >>交任务 克罗雷果园
-    .accept 14416 >>接受任务 饥饿的双头怪
-    .target 罗娜·克罗雷
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorna Crowley|r.
+    .turnin 14406 >>Turn in The Crowley Orchard
+    .accept 14416 >>Accept The Hungry Ettin
+    .target Lorna Crowley
 step
     #hidewindow
     #completewith Koroth the Hillbreaker
@@ -20786,262 +20784,262 @@ step
     +1
 step
     #completewith Koroth the Hillbreaker
-    #title |cFFFCDC00避开崩山者克洛斯|r
-    +|cRXP_WARN_避开崩山者克洛斯|r
-    .unitscan 崩山者克洛斯
-    .target 高山马
+    #title |cFFFCDC00Avoid Koroth the Hillbreaker|r
+    +|cRXP_WARN_Avoid Koroth the Hillbreaker|r
+    .unitscan Koroth the Hillbreaker
+    .target Mountain Horse
 step
-    .isOnQuest 14416
-    .vehicle >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_马|r
-    .target 高山马
+    .isOnQuest 14416 --The Hungry Ettin
+    .vehicle >>|TInterface/cursor/crosshair/interact.blp:20|tClick on a |cRXP_PICK_Horse|r
+    .target Mountain Horse
 step
-    .isOnQuest 14416
-    *|cRXP_WARN_马[1]|r；
-    .cast 68903 >>对|cRXP_FRIENDLY_高山马|r使用|T134326:0|t[套捕高山马](1)使其跟随你。
+    .isOnQuest 14416 --The Hungry Ettin
+    *|cRXP_WARN_Horse [1]|r;
+    .cast 68903 >>Use |T134326:0|t[Round Up Horse] (1) on |cRXP_FRIENDLY_Mountain Horses|r to make them follow you.
 step
-    .isOnQuest 14416
-    *|cRXP_WARN_马[2]|r；
-    .cast 68903 >>对|cRXP_FRIENDLY_高山马|r使用|T134326:0|t[套捕高山马](1)使其跟随你。
+    .isOnQuest 14416 --The Hungry Ettin
+    *|cRXP_WARN_Horse [2]|r;
+    .cast 68903 >>Use |T134326:0|t[Round Up Horse] (1) on |cRXP_FRIENDLY_Mountain Horses|r to make them follow you.
 step
-    .isOnQuest 14416
-    *|cRXP_WARN_马[3]|r；
-    .cast 68903 >>对|cRXP_FRIENDLY_高山马|r使用|T134326:0|t[套捕高山马](1)使其跟随你。
+    .isOnQuest 14416 --The Hungry Ettin
+    *|cRXP_WARN_Horse [3]|r;
+    .cast 68903 >>Use |T134326:0|t[Round Up Horse] (1) on |cRXP_FRIENDLY_Mountain Horses|r to make them follow you.
 step
     #label Koroth the Hillbreaker
-    .isOnQuest 14416
-    *|cRXP_WARN_马[4]|r；
-    .cast 68903 >>对|cRXP_FRIENDLY_高山马|r使用|T134326:0|t[套捕高山马](1)使其跟随你。
+    .isOnQuest 14416 --The Hungry Ettin
+    *|cRXP_WARN_Horse [4]|r;
+    .cast 68903 >>Use |T134326:0|t[Round Up Horse] (1) on |cRXP_FRIENDLY_Mountain Horses|r to make them follow you.
 step
     .goto 179,37.69,72.76
-    >>将它们（|cRXP_FRIENDLY_包括你自己的|r）带回给|cRXP_WARN_罗娜·克罗雷|r。
+    >>Return them to |cRXP_FRIENDLY_Lorna Crowley|r |cRXP_WARN_including your own|r.
     .complete 14416,1 --Mountain Horse rescued (5)
-    .target 罗娜·克罗雷
+    .target Lorna Crowley
 step
-    #arrowtext 与 |cRXP_FRIENDLY_罗娜·克罗雷|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Lorna Crowley|r
     .goto 179,37.68,72.76
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_罗娜·克罗雷|r 对话。
-    .turnin 14416 >>交任务 饥饿的双头怪
-    .target 罗娜·克罗雷
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorna Crowley|r.
+    .turnin 14416 >>Turn in The Hungry Ettin
+    .target Lorna Crowley
 step
     #completewith next
     #label Grandma Wahl
     .goto 179,33.1,75.69,5,0
     .goto 179,32.92,76.3,5,0
     .goto 179,32.61,75.99,5,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_薇儿外婆|r 对话
-    .turnin 14398 >>交任务 薇儿外婆
-    .accept 14399 >>接受任务 失踪的宝贝
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grandma Wahl|r.
+    .turnin 14398 >>Turn in Grandma Wahl
+    .accept 14399 >>Accept Grandma's Lost It Alright
     .disablecheckbox
-    .target 薇儿外婆
+    .target Grandma Wahl
 step
-    #arrowtext 进入房屋
+    #arrowtext Enter the House
     #completewith Grandma Wahl
-    .goto 179,32.52,75.49,8 >>进入房屋
+    .goto 179,32.52,75.49,8 >>Enter the House
 step
-    #arrowtext 与 |cRXP_FRIENDLY_薇儿外婆|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Grandma Wahl|r
     #requires Grandma Wahl
     .goto 179,32.52,75.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_薇儿外婆|r 对话
-    .turnin 14398 >>交任务 薇儿外婆
-    .accept 14399 >>接受任务 失踪的宝贝
-    .target 薇儿外婆
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grandma Wahl|r.
+    .turnin 14398 >>Turn in Grandma Wahl
+    .accept 14399 >>Accept Grandma's Lost It Alright
+    .target Grandma Wahl
     .use 55020 --Lorna's Gloves
     .use 55021 --Crowley's Belt
 step
-    #arrowtext 点击\n|cRXP_PICK_书籍|r
+    #arrowtext Click\n|cRXP_PICK_Book|r
     .goto 179,33.96,77.38
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击 |cRXP_PICK_书籍|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Book|r
     .complete 14399,1 --Linen-Wrapped Book (1)
 step
     #completewith next
     #label I Can't Wear This
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_薇儿外婆|r 对话
-    .turnin 14399 >>交任务 失踪的宝贝
-    .accept 14400 >>接受任务 我不要穿成这样
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grandma Wahl|r
+    .turnin 14399 >>Turn in Grandma's Lost It Alright
+    .accept 14400 >>Accept I Can't Wear This
     .disablecheckbox
-    .target 薇儿外婆
+    .target Grandma Wahl
 step
-    #arrowtext 进入房屋
+    #arrowtext Enter the House
     #completewith I Can't Wear This
-    .goto 179,32.52,75.49,8 >>进入房屋
+    .goto 179,32.52,75.49,8 >>Enter the House
 step
-    #arrowtext 与 |cRXP_FRIENDLY_薇儿外婆|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Grandma Wahl|r
     #requires I Can't Wear This
     .goto 179,32.52,75.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_薇儿外婆|r 对话
-    .turnin 14399 >>交任务 失踪的宝贝
-    .accept 14400 >>接受任务 我不要穿成这样
-    .target 薇儿外婆
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grandma Wahl|r
+    .turnin 14399 >>Turn in Grandma's Lost It Alright
+    .accept 14400 >>Accept I Can't Wear This
+    .target Grandma Wahl
 step
     #completewith next
     #label Good Clothes
     .goto 179,32.55,76.14,5,0
     .goto 179,32.29,76.12,3,0
-    >>|TInterface/cursor/crosshair/interact.blp:20|t 点击 |cRXP_PICK_晾衣绳|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Washing Line|r
     .complete 14400,1 --Grandma's Good Clothes (1)
 step
-    #arrowtext 离开房屋
+    #arrowtext Leave the House
     #completewith Good Clothes
-    .goto 179,32.04,75.45,15 >>离开房屋
+    .goto 179,32.04,75.45,15 >>Leave the House
 step
-    #arrowtext 点击 |cRXP_PICK_Washing Line|r
+    #arrowtext Click\n|cRXP_PICK_Washing Line|r
     #requires Good Clothes
     .goto 179,32.04,75.45
-    >>|TInterface/cursor/crosshair/interact.blp:20|t 点击 |cRXP_PICK_晾衣绳|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Washing Line|r
     .complete 14400,1 --Grandma's Good Clothes (1)
 step
     #completewith next
     #label Good Clothes2
     .goto 179,32.29,76.2,5,0
     .goto 179,32.58,75.9,5,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_薇儿外婆|r 对话
-    .turnin 14400 >>交任务 我不要穿成这样
-    .accept 14401 >>接受任务 外婆的猫咪
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grandma Wahl|r.
+    .turnin 14400 >>Turn in I Can't Wear This
+    .accept 14401 >>Accept Grandma's Cat
     .disablecheckbox
-    .target 薇儿外婆
+    .target Grandma Wahl
 step
-    #arrowtext 进入房屋
+    #arrowtext Enter the House
     #completewith Good Clothes2
-    .goto 179,32.52,75.49,8 >>进入房屋
+    .goto 179,32.52,75.49,8 >>Enter the House
 step
-    #arrowtext 与 |cRXP_FRIENDLY_薇儿外婆|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Grandma Wahl|r
     #requires Good Clothes2
     .goto 179,32.52,75.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_薇儿外婆|r 对话
-    .turnin 14400 >>交任务 我不要穿成这样
-    .accept 14401 >>接受任务 外婆的猫咪
-    .target 薇儿外婆
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grandma Wahl|r.
+    .turnin 14400 >>Turn in I Can't Wear This
+    .accept 14401 >>Accept Grandma's Cat
+    .target Grandma Wahl
 step
     #completewith next
     #label Chance the Cat
     .goto 179,32.64,75.99,8,0
     .goto 179,33.06,76.06,8,0
     .goto 179,33.3,75.67,8,0
-    >>击杀 |cRXP_ENEMY_残忍的卢修斯|r。
-    *拾取|T236547:0|t[|cRXP_LOOT_黄猫小运|r]。
+    >>Kill |cRXP_ENEMY_Lucius the Cruel|r.
+    *Loot him for |T236547:0|t[|cRXP_LOOT_Chance the Cat|r].
     .complete 14401,1 --Chance the Cat (1)
 step
-    #arrowtext 点击\n|cRXP_PICK_Chance the 猫|r
+    #arrowtext Click\n|cRXP_PICK_Chance the Cat|r
     #completewith Chance the Cat
     .goto 179,35.16,74.82
-    .cast 68743 >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_黄猫小运|r
+    .cast 68743 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Chance the Cat|r
     .timer 5,RP
-    .target 几率
+    .target Chance
 step
-    #arrowtext 杀死 |cRXP_ENEMY_残忍的卢修斯|r
+    #arrowtext Kill\n|cRXP_ENEMY_Lucius the Cruel|r
     #requires Chance the Cat
     .goto 179,35.24,74.98
-    >>击杀 |cRXP_ENEMY_残忍的卢修斯|r。
-    *拾取|T134304:0|t[|cRXP_LOOT_黄猫小运|r]。
+    >>Kill |cRXP_ENEMY_Lucius the Cruel|r.
+    *Loot them for |T134304:0|t[|cRXP_LOOT_Chance the Cat|r].
     .complete 14401,1 --Chance the Cat (1)
-    .mob 残忍的卢修斯
+    .mob Lucius the Cruel
 step
     #completewith next
     #label Grandma's Cat
     .goto 179,33.1,75.69,8,0
     .goto 179,32.92,76.3,8,0
     .goto 179,32.61,75.99,8,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_薇儿外婆|r 对话
-    .turnin 14401 >>交任务 外婆的猫咪
-    .target 薇儿外婆
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grandma Wahl|r.
+    .turnin 14401 >>Turn in Grandma's Cat
+    .target Grandma Wahl
 step
-    #arrowtext 进入房屋
+    #arrowtext Enter the House
     #completewith Grandma's Cat
-    .goto 179,32.52,75.49,8 >>进入房屋
+    .goto 179,32.52,75.49,8 >>Enter the House
 step
-    #arrowtext 与 |cRXP_FRIENDLY_薇儿外婆|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Grandma Wahl|r
     #requires Grandma's Cat
     .goto 179,32.52,75.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_薇儿外婆|r 对话
-    .turnin 14401 >>交任务 外婆的猫咪
-    .target 薇儿外婆
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grandma Wahl|r.
+    .turnin 14401 >>Turn in Grandma's Cat
+    .target Grandma Wahl
 step
     #completewith next
     #label Hayward Brothers
     .goto 179,32.61,75.96,5,0
     .goto 179,33.29,77.6,10,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塞巴斯蒂安·海瓦尔德|r 对话
-    .turnin 14403 >>交任务 海瓦尔德兄弟
-    .accept 14404 >>接受任务 丢三落四
-    .accept 14412 >>接受任务 清理渔场
-    .target 塞巴斯蒂安·海瓦尔德
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sebastian Hayward|r.
+    .turnin 14403 >>Turn in The Hayward Brothers
+    .accept 14404 >>Accept Not Quite Shipshape
+    .accept 14412 >>Accept Washed Up
+    .target Sebastian Hayward
 step
     #completewith Hayward Brothers
     #hidewindow
-    .goto 179,36.89,84.19,180 >>跟随箭头
+    .goto 179,36.89,84.19,180 >>Follow the Arrow
 step
-    #arrowtext 与 |cRXP_FRIENDLY_塞巴斯蒂安·海瓦尔德|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Sebastian Hayward|r
     #requires Hayward Brothers
     .goto 179,36.89,84.19
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塞巴斯蒂安·海瓦尔德|r 对话
-    .turnin 14403 >>交任务 海瓦尔德兄弟
-    .accept 14404 >>接受任务 丢三落四
-    .accept 14412 >>接受任务 清理渔场
-    .target 塞巴斯蒂安·海瓦尔德
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sebastian Hayward|r.
+    .turnin 14403 >>Turn in The Hayward Brothers
+    .accept 14404 >>Accept Not Quite Shipshape
+    .accept 14412 >>Accept Washed Up
+    .target Sebastian Hayward
     .use 55016 --Granny's Mallet
     .use 55017 --Orange Blanket
 step
     #completewith Planks of Wood
-    >>击杀|cRXP_ENEMY_被遗忘者|r。
+    >>Kill |cRXP_ENEMY_Forsakens|r.
     .complete 14412,1 --Forsaken Castaway slain (6)
-    .mob 流窜的被遗忘者
+    .mob Forsaken Castaway
 step
-    #arrowtext 点击 |cRXP_PICK_木桶|r
+    #arrowtext Click\n|cRXP_PICK_Barrel|r
     .goto 179,37.58,85.98
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_桶|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Barrel|r
     .complete 14404,3 --Coal Tar (1)
 step
     #completewith next
     #label Shipwright's Tools
     .goto 179,37.02,86.79,5,0
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_工具箱|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Toolbox|r
     .complete 14404,1 --Shipwright's Tools (1)
 step
-    #arrowtext 进入房屋
+    #arrowtext Enter the house
     #completewith Shipwright's Tools
-    .goto 179,37.46,87.15,15 >>进入房子
+    .goto 179,37.46,87.15,15 >>Enter the house
 step
-    #arrowtext 点击 |cRXP_PICK_Toolbox|r
+    #arrowtext Click\n|cRXP_PICK_Toolbox|r
     #requires Shipwright's Tools
     .goto 179,37.46,87.15
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_工具箱|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Toolbox|r
     .complete 14404,1 --Shipwright's Tools (1)
 step
-    #arrowtext 点击 |cRXP_PICK_木材|r
+    #arrowtext Click\n|cRXP_PICK_Wood|r
     #label Planks of Wood
     .goto 179,36.09,86.44
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击 |cRXP_PICK_木头|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Wood|r
     .complete 14404,2 --Planks of Wood (1)
 step
-    #arrowtext 杀死 |cRXP_ENEMY_Forsakens|r
+    #arrowtext Kill\n|cRXP_ENEMY_Forsakens|r
     #loop
     .goto 179,37.14,84.54,20,0
     .goto 179,35.59,85.09,20,0
     .goto 179,36.57,87.33,20,0
     .goto 179,37.37,85.78,20,0
-    >>击杀|cRXP_ENEMY_被遗忘者|r。
+    >>Kill |cRXP_ENEMY_Forsakens|r.
     .complete 14412,1 --Forsaken Castaway slain (6)
-    .mob 流窜的被遗忘者
+    .mob Forsaken Castaway
 step
-    #arrowtext 与 |cRXP_FRIENDLY_塞巴斯蒂安·海瓦尔德|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Sebastian Hayward|r
     .goto 179,36.89,84.19
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塞巴斯蒂安·海瓦尔德|r 对话
-    .turnin 14404 >>交任务 丢三落四
-    .turnin 14412 >>交任务 清理渔场
-    .accept 14405 >>接受任务 海路出逃
-    .target 塞巴斯蒂安·海瓦尔德
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sebastian Hayward|r.
+    .turnin 14404 >>Turn in Not Quite Shipshape
+    .turnin 14412 >>Turn in Washed Up
+    .accept 14405 >>Accept Escape By Sea
+    .target Sebastian Hayward
 step
     #completewith next
     #label Escape By Sea
     #hidewindow
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格温·阿姆斯特|r 对话。
-    .turnin 14405 >>交任务 海路出逃
-    .accept 14465 >>接受任务 前往格雷迈恩庄园
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwen Armstead|r.
+    .turnin 14405 >>Turn in Escape By Sea
+    .accept 14465 >>Accept To Greymane Manor
     .disablecheckbox
-    .target 格温·阿姆斯特
+    .target Gwen Armstead
 step
     #completewith Escape By Sea
-    .hs >>使用 |T134414:0|t[炉石] 到暮湾镇。
+    .hs >>Use |T134414:0|t[Hearthstone] to Duskhaven.
     .cooldown item,6948,>0,1
     .subzoneskip 4786
     .use 6948
@@ -21051,77 +21049,77 @@ step
     #label Escape By Sea1
     .goto 179,36.73,62.95,10,0
     .goto 179,37.4,64.2,10,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格温·阿姆斯特|r 对话。
-    .turnin 14405 >>交任务 海路出逃
-    .accept 14465 >>接受任务 前往格雷迈恩庄园
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwen Armstead|r.
+    .turnin 14405 >>Turn in Escape By Sea
+    .accept 14465 >>Accept To Greymane Manor
     .disablecheckbox
-    .target 格温·阿姆斯特
+    .target Gwen Armstead
 step
-    #arrowtext 与 |cRXP_FRIENDLY_杰勒德·沃松|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Gerard Walthorn|r
     #requires Escape By Sea
     #completewith Escape By Sea1
     .goto 179,38.38,63.58
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_杰勒德·沃松|r对话。
-    .vendor >>修理并出售物品以腾出背包空间。
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gerard Walthorn|r.
+    .vendor >>Repair and sell items to free up bag space.
     .target Gerard Walthorn
 step
-    #arrowtext 与 |cRXP_FRIENDLY_格温·阿姆斯特|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Gwen Armstead|r
     #requires Escape By Sea1
     .goto 179,37.63,65.23
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格温·阿姆斯特|r 对话。
-    .turnin 14405 >>交任务 海路出逃
-    .accept 14465 >>接受任务 前往格雷迈恩庄园
-    .timer 32,格雷迈恩庄园 剧情RP
-    .target 格温·阿姆斯特
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwen Armstead|r.
+    .turnin 14405 >>Turn in Escape By Sea
+    .accept 14465 >>Accept To Greymane Manor
+    .timer 32,Greymane Manor RP
+    .target Gwen Armstead
     .use 52039 --Shipwright's Bag
     .use 55018 --Boatwork Boots
     .use 131356 --Repairman's Cinch
     .use 55019 --Repair Belt
 step
     #completewith Greymane Manor2
-    +你可以在庄园内保持骑乘；|cRXP_WARN_如果你骑乘进入且不下坐骑|r
+    +You can stay mounted inside the Manor; |cRXP_WARN_if you enter mounted and don’t dismount|r
 step
     #completewith next
     #label Greymane Manor
     .goto 179,30.29,51.96,10,0
     .goto 181,70.28,61.69,5,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_米亚·格雷迈恩王后|r 对话
-    .turnin 14465 >>交任务 前往格雷迈恩庄园
-    .accept 14466 >>接受任务 国王的瞭望台
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Queen Mia Greymane|r
+    .turnin 14465 >>Turn in To Greymane Manor
+    .accept 14466 >>Accept The King's Observatory
     .disablecheckbox
-    .target 米亚·格雷迈恩王后
+    .target Queen Mia Greymane
 step
-    #arrowtext 进入格雷迈恩庄园
+    #arrowtext Enter the Greymane Manor
     #completewith Greymane Manor
-    .goto 181,62.10,49.64,30 >>进入格雷迈恩庄园
+    .goto 181,62.10,49.64,30 >>Enter the Greymane Manor
 step
-    #arrowtext 与 |cRXP_FRIENDLY_Queen 米亚·格雷迈恩|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Queen Mia Greymane|r
     #requires Greymane Manor
     #label Greymane Manor2
     .goto 181,62.10,49.64
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_米亚·格雷迈恩王后|r 对话
-    .turnin 14465 >>交任务 前往格雷迈恩庄园
-    .accept 14466 >>接受任务 国王的瞭望台
-    .target 米亚·格雷迈恩王后
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Queen Mia Greymane|r
+    .turnin 14465 >>Turn in To Greymane Manor
+    .accept 14466 >>Accept The King's Observatory
+    .target Queen Mia Greymane
 step
     #completewith next
     #label The King's Observatory1
     .goto 182,57.64,46.4,5,0
     .goto 182,60.3,35.83,5,0
     .goto 182,50.37,33.71,5,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_吉恩·格雷迈恩国王|r 对话
-    .turnin 14466 >>交任务 国王的瞭望台
-    .turnin 14467 >>交任务 天哪，吉尔尼斯！
-    .accept 24438 >>接受任务 逃亡
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_King Genn Greymane|r
+    .turnin 14466 >>Turn in The King's Observatory
+    .turnin 14467 >>Turn in Alas, Gilneas!
+    .accept 24438 >>Accept Exodus
     .subzoneskip 4817,1
     .disablecheckbox
-    .target 吉恩·格雷迈恩国王
+    .target King Genn Greymane
 step
-    #arrowtext 离开庄园
+    #arrowtext Leave the Manor
     #completewith The King's Observatory1
-    .goto 182,41.91,20.10,50 >>离开庄园
+    .goto 182,41.91,20.10,50 >>Leave the Manor
 step
-    #arrowtext 与 |cRXP_FRIENDLY_King 吉恩·格雷迈恩|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_King Genn Greymane|r
     #requires The King's Observatory1
     .subzoneskip 4817,1
     .goto 182,39.86,14.52,5,0
@@ -21135,16 +21133,16 @@ step
     .goto 182,45.69,20.82,5,0
     .goto 182,44.28,23.89,5,0
     .goto 182,41.91,20.10
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_吉恩·格雷迈恩国王|r 对话
-    .turnin 14466 >>交任务 国王的瞭望台
-    .turnin 14467 >>交任务 天哪，吉尔尼斯！
-    .accept 24438 >>接受任务 逃亡
-    .target 吉恩·格雷迈恩国王
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_King Genn Greymane|r
+    .turnin 14466 >>Turn in The King's Observatory
+    .turnin 14467 >>Turn in Alas, Gilneas!
+    .accept 24438 >>Accept Exodus
+    .target King Genn Greymane
 step
     #completewith next
     #label Carriage boarded1
     #hidewindow
-    .isOnQuest 24438
+    .isOnQuest 24438 --Exodus
     .goto 182,45.01,15,5,0
     .goto 182,39.24,19.37,5,0
     .goto 182,40.89,26.87,5,0
@@ -21154,47 +21152,47 @@ step
     .goto 182,49.35,35.83,5,0
     .goto 182,48.66,50.72,5,0
     .complete 24438,1 --Carriage boarded (1)
-    .target 驿站马车
+    .target Stagecoach Carriage
 step
-    #arrowtext 走下塔楼
+    #arrowtext Descend the Tower
     #completewith Carriage boarded1
-    .goto 182,65.56,72.43,63 >>下塔
+    .goto 182,65.56,72.43,63 >>Descend the Tower
 step
     #requires Carriage boarded1
     #completewith next
     #hidewindow
     #label Carriage boarded2
-    .isOnQuest 24438
+    .isOnQuest 24438 --Exodus
     .goto 182,59.82,69.41,5,0
     .goto 182,65.7,72.53,2,0
     .goto 182,67.39,77.11,5,0
     .complete 24438,1 --Carriage boarded (1)
-    .target 驿站马车
+    .target Stagecoach Carriage
 step
     #requires Carriage boarded1
     #completewith Carriage boarded2
-    .goto 179,28.90,54.22,40 >>前往阳台，从椅子跳到围栏上，然后从围栏跳到下方外侧。
+    .goto 179,28.90,54.22,40 >>Go to the balcony and jump from the chair onto the fence then jump off over the fence below.
 step
     #requires Carriage boarded2
     #completewith next
     #label Carriage boarded3
-    .isOnQuest 24438
-    >>|cRXP_WARN_等待剧情演出|r。
+    .isOnQuest 24438 --Exodus
+    >>|cRXP_WARN_Wait for the Roleplay|r.
     .complete 24438,1 --Carriage boarded (1)
-    .target 驿站马车
+    .target Stagecoach Carriage
 step
-    #arrowtext 点击\n|cRXP_PICK_Carriage|r
+    #arrowtext Click\n|cRXP_PICK_Carriage|r
     #requires Carriage boarded2
     #completewith Carriage boarded3
     .goto 179,28.90,54.22
-    .vehicle >>|TInterface/cursor/crosshair/interact.blp:20|t点击 |cRXP_PICK_马车|r
+    .vehicle >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Carriage|r
     .timer 80.5,RP
 step
     #requires Carriage boarded3
-    .isOnQuest 24438
-    >>|cRXP_WARN_等待剧情演出|r。
+    .isOnQuest 24438 --Exodus
+    >>|cRXP_WARN_Wait for the Roleplay|r.
     .complete 24438,1 --Carriage boarded (1)
-    .target 驿站马车
+    .target Stagecoach Carriage
 -- step
 --     #completewith next
 --     #label Turn in Exodus2
@@ -21227,21 +21225,21 @@ step
 --     #title |cFFFCDC00Rez at Spirit Healer|r
 --     .deathskip >>Respawn at the Spirit Healer
 step
-    #arrowtext 与 |cRXP_FRIENDLY_利亚姆·格雷迈恩王子|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Prince Liam Greymane|r
     -- #requires Turn in Exodus3
-    .isOnQuest 24438
+    .isOnQuest 24438 --Exodus
     .goto 179,51.81,80.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_利亚姆·格雷迈恩王子|r 对话。
-    .turnin 24438 >>交任务 逃亡
-    .target 利亚姆·格雷迈恩王子
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prince Liam Greymane|r.
+    .turnin 24438 >>Turn in Exodus
+    .target Prince Liam Greymane
 step
-    #arrowtext 与 |cRXP_FRIENDLY_利亚姆·格雷迈恩王子|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Prince Liam Greymane|r
     .goto 179,51.81,80.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_利亚姆·格雷迈恩王子|r 对话。
-    .accept 24468 >>接受任务 沼泽困境
-    .target 利亚姆·格雷迈恩王子
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prince Liam Greymane|r.
+    .accept 24468 >>Accept Stranded at the Marsh
+    .target Prince Liam Greymane
 step
-    #arrowtext 杀死\n|cRXP_ENEMY_Crocolisks|r
+    #arrowtext Kill\n|cRXP_ENEMY_Crocolisks|r
     #loop
     .goto 179,53.09,74.21,25,0
     .goto 179,52.03,73.64,25,0
@@ -21251,45 +21249,45 @@ step
     .goto 179,53.55,68.68,25,0
     .goto 179,52.18,68.64,25,0
     .goto 179,51.43,69.77,25,0
-    >>击杀正在攻击|cRXP_ENEMY_撞击幸存者|r的|cRXP_FRIENDLY_鳄鱼|r。
+    >>Kill |cRXP_ENEMY_Crocolisks|r fighting |cRXP_FRIENDLY_Crash Survivors|r.
     .complete 24468,1 --Crash Survivor rescued (5)
-    .mob 沼泽鳄鱼
-    .target 坠毁幸存者
+    .mob Swamp Crocolisk
+    .target Crash Survivor
 step
-    #arrowtext 与 |cRXP_FRIENDLY_利亚姆·格雷迈恩王子|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Prince Liam Greymane|r
     .goto 179,51.81,80.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_利亚姆·格雷迈恩王子|r 对话。
-    .turnin 24468 >>交任务 沼泽困境
-    .accept 24472 >>接受任务 恰当的欢迎
-    .target 利亚姆·格雷迈恩王子
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prince Liam Greymane|r.
+    .turnin 24468 >>Turn in Stranded at the Marsh
+    .accept 24472 >>Accept Introductions Are in Order
+    .target Prince Liam Greymane
 step
     #completewith Koroth's Banner2
-    >>击杀|cRXP_ENEMY_食人魔爪牙|r。
+    >>Kill |cRXP_ENEMY_Ogre Minions|r.
     .complete 24472,1 --Ogre Minion slain (4)
-    .mob 食人魔 Minion
+    .mob Ogre Minion
 step
     #completewith next
     #label Koroth's Banner
     .goto 179,50.23,84.49,10,0
     .goto 179,48.68,84.84,10,0
     .goto 179,47.81,85.5,10,0
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_旗帜|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Banner|r
     .complete 24472,2 --Koroth's Banner (1)
 step
     #completewith Koroth's Banner
-    .goto 179,46.74,83.20,50 >>向山上走
+    .goto 179,46.74,83.20,50 >>Make your way up the mountain
 step
-    #arrowtext 点击\n|cRXP_PICK_旗帜|r
+    #arrowtext Click\n|cRXP_PICK_Banner|r
     #requires Koroth's Banner
     #label Koroth's Banner2
     .goto 179,46.74,83.20
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_旗帜|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Banner|r
     .complete 24472,2 --Koroth's Banner (1)
     .use 54994 --Paramedic Bracers
     .use 54995 --Hailwood Chestpiece
     .use 131368 --First Responder's Bindings
 step
-    #arrowtext 杀死 |cRXP_ENEMY_Ogre Minions|r
+    #arrowtext Kill\n|cRXP_ENEMY_Ogre Minions|r
     #loop
     .goto 179,45.76,88.93,25,0
     .goto 179,48.79,85.51,25,0
@@ -21297,16 +21295,16 @@ step
     .goto 179,51.64,86.37,25,0
     .goto 179,52.23,88.89,25,0
     .goto 179,50.92,82.88,25,0
-    >>击杀|cRXP_ENEMY_食人魔爪牙|r。
+    >>Kill |cRXP_ENEMY_Ogre Minions|r.
     .complete 24472,1 --Ogre Minion slain (4)
-    .mob 食人魔 Minion
+    .mob Ogre Minion
 step
-    #arrowtext 与 |cRXP_FRIENDLY_利亚姆·格雷迈恩王子|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Prince Liam Greymane|r
     .goto 179,51.81,80.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_利亚姆·格雷迈恩王子|r 对话。
-    .turnin 24472 >>交任务 恰当的欢迎
-    .accept 24483 >>接受任务 风谷村
-    .target 利亚姆·格雷迈恩王子
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prince Liam Greymane|r.
+    .turnin 24472 >>Turn in Introductions Are in Order
+    .accept 24483 >>Accept Stormglen
+    .target Prince Liam Greymane
 step
     #completewith next
     #label Stormglen
@@ -21314,54 +21312,54 @@ step
     .goto 179,54.85,86.85,10,0
     .goto 179,58.43,91.38,10,0
     .goto 179,59.84,92.03,10,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格温·阿姆斯特|r 对话
-    .turnin 24483 >>交任务 风谷村
-    .accept 24484 >>接受任务 防控病虫害
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwen Armstead|r
+    .turnin 24483 >>Turn in Stormglen
+    .accept 24484 >>Accept Pest Control
     .disablecheckbox
-    .target 格温·阿姆斯特
+    .target Gwen Armstead
 step
-    #arrowtext 进入房屋
+    #arrowtext Enter the House
     #completewith Stormglen
-    .goto 179,59.86,91.71,5 >>进入房屋
+    .goto 179,59.86,91.71,5 >>Enter the House
 step
-    #arrowtext 与 |cRXP_FRIENDLY_格温·阿姆斯特|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Gwen Armstead|r
     #requires Stormglen
     .goto 179,59.86,91.71
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格温·阿姆斯特|r 对话
-    .turnin 24483 >>交任务 风谷村
-    .accept 24484 >>接受任务 防控病虫害
-    .target 格温·阿姆斯特
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwen Armstead|r
+    .turnin 24483 >>Turn in Stormglen
+    .accept 24484 >>Accept Pest Control
+    .target Gwen Armstead
 step
     #completewith next
     #label Pieces of the Past
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_罗娜·克罗雷|r 对话
-    .accept 24495 >>接受任务 破碎的往昔
-    .target 罗娜·克罗雷
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorna Crowley|r
+    .accept 24495 >>Accept Pieces of the Past
+    .target Lorna Crowley
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_薇拉·阿尔尼斯|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Willa Arnes|r
     #completewith Pieces of the Past
     .goto 179,60.07,91.66
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_薇拉|r 对话
-    .home >>将炉石设置在风谷村
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Willa Arnes|r
+    .home >>Set your Hearthstone to Stormglen Village
     .target Willa Arnes
 step
-    #arrowtext 与 |cRXP_FRIENDLY_罗娜·克罗雷|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Lorna Crowley|r
     #requires Pieces of the Past
     .goto 179,60.26,91.85
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_罗娜·克罗雷|r 对话
-    .accept 24495 >>接受任务 破碎的往昔
-    .target 罗娜·克罗雷
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorna Crowley|r
+    .accept 24495 >>Accept Pieces of the Past
+    .target Lorna Crowley
 step
     #completewith next
     #label Vilebrood Skitterers
     #hidewindow
-    >>击杀 |cRXP_ENEMY_邪巢诱捕蛛|r。
+    >>Kill |cRXP_ENEMY_Vilebrood Skitterers|r.
     .complete 24484,1 --Vilebrood Skitterer slain (6)
-    .mob 邪巢诱捕蛛
+    .mob Vilebrood Skitterer
 step
-    #arrowtext 离开房屋
+    #arrowtext Exit the House
     #completewith Vilebrood Skitterers
-    .goto 179,60.44,91.30,5 >>离开房屋
+    .goto 179,60.44,91.30,5 >>Exit the House
 step
     #requires Vilebrood Skitterers
     #hidewindow
@@ -21381,63 +21379,63 @@ step
 step
     #requires Vilebrood Skitterers
     #completewith next
-    >>击杀 |cRXP_ENEMY_邪巢诱捕蛛|r。
+    >>Kill |cRXP_ENEMY_Vilebrood Skitterers|r.
     .complete 24484,1 --Vilebrood Skitterer slain (6)
-    .mob 邪巢诱捕蛛
+    .mob Vilebrood Skitterer
 step
     #requires Vilebrood Skitterers
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_书页|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Pages|r
     .complete 24495,1 --Old Journal Page (6)
 step
     #label Vilebrood Skitterers 2
-    >>击杀 |cRXP_ENEMY_邪巢诱捕蛛|r。
+    >>Kill |cRXP_ENEMY_Vilebrood Skitterers|r.
     .complete 24484,1 --Vilebrood Skitterer slain (6)
-    .mob 邪巢诱捕蛛
+    .mob Vilebrood Skitterer
 step
     #completewith next
     #label Pieces of the Past2
     .goto 179,60.37,91.46,5,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_罗娜·克罗雷|r 和 |cRXP_FRIENDLY_格温·阿姆斯特|r 对话
-    .turnin 24495 >>交任务 破碎的往昔
-    .turnin 24484 >>交任务 防控病虫害
-    .accept 24501 >>接受任务 蛛后的麻烦
-    .target 罗娜·克罗雷
-    .target 格温·阿姆斯特
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorna Crowley|r and |cRXP_FRIENDLY_Gwen Armstead|r
+    .turnin 24495 >>Turn in Pieces of the Past
+    .turnin 24484 >>Turn in Pest Control
+    .accept 24501 >>Accept Queen-Sized Troubles
+    .target Lorna Crowley
+    .target Gwen Armstead
 step
-    #arrowtext 进入房屋
+    #arrowtext Enter the House
     #completewith Pieces of the Past2
-    .goto 179,60.26,91.85,10 >>进入房屋
+    .goto 179,60.26,91.85,10 >>Enter the House
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_罗娜·克罗雷|r 和 |cRXP_FRIENDLY_格温·阿姆斯特|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Lorna Crowley|r and |cRXP_FRIENDLY_Gwen Armstead|r
     #requires Pieces of the Past2
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_罗娜·克罗雷|r 和 |cRXP_FRIENDLY_格温·阿姆斯特|r 对话
-    .turnin 24495 >>交任务 破碎的往昔
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorna Crowley|r and |cRXP_FRIENDLY_Gwen Armstead|r
+    .turnin 24495 >>Turn in Pieces of the Past
     .goto 179,60.26,91.85
-    .target +罗娜·克罗雷
-    .turnin 24484 >>交任务 防控病虫害
-    .accept 24501 >>接受任务 蛛后的麻烦
+    .target +Lorna Crowley
+    .turnin 24484 >>Turn in Pest Control
+    .accept 24501 >>Accept Queen-Sized Troubles
     .goto 179,59.86,91.71
-    .target +格温·阿姆斯特
+    .target +Gwen Armstead
 step
     #completewith next
     #label Rygna
     .goto 179,60.42,91.33,5,0
     .goto 179,62.42,88.95,10,0
     .goto 179,66.59,84.35,10,0
-    >>击杀 |cRXP_ENEMY_雷格纳|r。
+    >>Kill |cRXP_ENEMY_Rygna|r.
     .complete 24501,1 --Rygna slain (1)
-    .mob 雷格纳
+    .mob Rygna
 step
-    #arrowtext 跟随箭头
+    #arrowtext Follow the arrow
     #completewith Rygna
-    .goto 179,68.35,81.65,80 >>跟随箭头
+    .goto 179,68.35,81.65,80 >>Follow the Arrow
 step
-    #arrowtext 杀死\n|cRXP_ENEMY_雷格纳|r
+    #arrowtext Kill\n|cRXP_ENEMY_Rygna|r
     #requires Rygna
     .goto 179,68.35,81.65
-    >>击杀 |cRXP_ENEMY_雷格纳|r。
+    >>Kill |cRXP_ENEMY_Rygna|r.
     .complete 24501,1 --Rygna slain (1)
-    .mob 雷格纳
+    .mob Rygna
 step
     #completewith next
     #label Queen-Sized Troubles
@@ -21445,47 +21443,47 @@ step
     .goto 179,64.7,86.74,10,0
     .goto 179,60.96,90.57,10,0
     .goto 179,60.38,91.48,5,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格温·阿姆斯特|r 和 |cRXP_FRIENDLY_罗娜·克罗雷|r 对话。
-    .turnin 24501 >>交任务 蛛后的麻烦
-    .accept 24578 >>接受任务 黑瘴林
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwen Armstead|r and |cRXP_FRIENDLY_Lorna Crowley|r.
+    .turnin 24501 >>Turn in Queen-Sized Troubles
+    .accept 24578 >>Accept The Blackwald
     .disablecheckbox
-    .target 格温·阿姆斯特
-    .target 罗娜·克罗雷
+    .target Gwen Armstead
+    .target Lorna Crowley
 step
-    #arrowtext 进入房屋
+    #arrowtext Enter the House
     #completewith Queen-Sized Troubles
-    .goto 179,59.86,91.71,15 >>进入房屋
+    .goto 179,59.86,91.71,15 >>Enter the House
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_格温·阿姆斯特|r 和 |cRXP_FRIENDLY_罗娜·克罗雷|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Gwen Armstead|r and |cRXP_FRIENDLY_Lorna Crowley|r
     #requires Queen-Sized Troubles
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格温·阿姆斯特|r 和 |cRXP_FRIENDLY_罗娜·克罗雷|r 对话。
-    .turnin 24501 >>交任务 蛛后的麻烦
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwen Armstead|r and |cRXP_FRIENDLY_Lorna Crowley|r.
+    .turnin 24501 >>Turn in Queen-Sized Troubles
     .goto 179,59.86,91.71
-    .target +格温·阿姆斯特
-    .accept 24578 >>接受任务 黑瘴林
+    .target +Gwen Armstead
+    .accept 24578 >>Accept The Blackwald
     .goto 179,60.26,91.85
-    .target +罗娜·克罗雷
+    .target +Lorna Crowley
 step
     #completewith next
     #label The Blackwald
     .goto 179,60.44,91.18,5,0
     .goto 179,61.05,90.43,10,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_贝瑞莎·星风|r |cRXP_WARN_在房屋内|r 对话。
-    .turnin 24578 >>交任务 黑瘴林
-    .accept 24616 >>接受任务 反跟踪
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Belysra Starbreeze|r |cRXP_WARN_in the house|r.
+    .turnin 24578 >>Turn in The Blackwald
+    .accept 24616 >>Accept Losing Your Tail
     .disablecheckbox
     .target Belysra Starbreeze
 step
-    #arrowtext 跟随箭头
+    #arrowtext Follow the arrow
     #completewith The Blackwald
-    .goto 179,63.35,82.91,100 >>跟随箭头
+    .goto 179,63.35,82.91,100 >>Follow the Arrow
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_贝瑞莎·星风|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Belysra Starbreeze|r
     #requires The Blackwald
     .goto 179,63.35,82.91
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_贝瑞莎·星风|r |cRXP_WARN_在房屋内|r 对话。
-    .turnin 24578 >>交任务 黑瘴林
-    .accept 24616 >>接受任务 反跟踪
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Belysra Starbreeze|r |cRXP_WARN_in the house|r.
+    .turnin 24578 >>Turn in The Blackwald
+    .accept 24616 >>Accept Losing Your Tail
     .target Belysra Starbreeze
     .use 54996 --Rygna-Silk Leggings
     .use 54997 --Arachnophobe's Breastplate
@@ -21495,35 +21493,35 @@ step
     #completewith next
     #label Dark Scout1
     #hidewindow
-    >>击杀 |cRXP_ENEMY_黑暗斥候|r。
+    >>Kill the |cRXP_ENEMY_Dark Scout|r.
     .complete 24616,1 --Dark Scout slain (1)
-    .mob 黑暗斥候
+    .mob Dark Scout
     .use 49944
 step
-    #arrowtext 前往路点所在地区
+    #arrowtext Go to the waypoint location
     #completewith Dark Scout1
-    .goto 179,63.91,81.08,5 >>前往路径点位置
+    .goto 179,63.91,81.08,5 >>Go to the waypoint location
 step
     #requires Dark Scout1
     #completewith next
     #label Dark Scout2
-    >>击杀 |cRXP_ENEMY_黑暗斥候|r。
+    >>Kill the |cRXP_ENEMY_Dark Scout|r.
     .complete 24616,1 --Dark Scout slain (1)
-    .mob 黑暗斥候
+    .mob Dark Scout
     .use 49944
 step
-    #arrowtext 使用 [Belysra's Talisman]
+    #arrowtext Use [Belysra's Talisman]
     #requires Dark Scout1
     #completewith Dark Scout2
     .goto 179,63.83,81.26
-    .cast 70797 >>使用|T133443:0|t[贝瑞莎的护身符]，解放自己
+    .cast 70797 >>Use |T133443:0|t[Belysra's Talisman] to free yourself
 step
-    #arrowtext 杀死 |cRXP_ENEMY_黑暗斥候|r
+    #arrowtext Kill\n|cRXP_ENEMY_Dark Scout|r
     #requires Dark Scout2
     .goto 179,63.83,81.26
-    >>击杀 |cRXP_ENEMY_黑暗斥候|r。
+    >>Kill the |cRXP_ENEMY_Dark Scout|r.
     .complete 24616,1 --Dark Scout slain (1)
-    .mob 黑暗斥候
+    .mob Dark Scout
     .use 49944
 step
     #completewith next
@@ -21532,22 +21530,22 @@ step
     .goto 179,62.45,82.62,5,0
     .goto 179,62.57,82.35,5,0
     .goto 179,63,82.41,5,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_贝瑞莎·星风|r 对话。
-    .turnin 24616 >>交任务 反跟踪
-    .accept 24617 >>接受任务 塔多伦，野性的家园
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Belysra Starbreeze|r.
+    .turnin 24616 >>Turn in Losing Your Tail
+    .accept 24617 >>Accept Tal'doren, the Wild Home
     .disablecheckbox
     .target Belysra Starbreeze
 step
-    #arrowtext 登上山峰
+    #arrowtext Ascend the mountain
     #completewith Losing Your Tail
-    .goto 179,63.35,82.9,15 >>向山上前进。
+    .goto 179,63.35,82.9,15 >>Ascend the mountain.
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_贝瑞莎·星风|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Belysra Starbreeze|r
     #requires Losing Your Tail
     .goto 179,63.35,82.9
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_贝瑞莎·星风|r 对话。
-    .turnin 24616 >>交任务 反跟踪
-    .accept 24617 >>接受任务 塔多伦，野性的家园
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Belysra Starbreeze|r.
+    .turnin 24616 >>Turn in Losing Your Tail
+    .accept 24617 >>Accept Tal'doren, the Wild Home
     .target Belysra Starbreeze
 step
     #completewith next
@@ -21555,28 +21553,28 @@ step
     .goto 179,63.53,82.08,5,0
     .goto 179,66.69,78.6,10,0
     .goto 179,68.65,74.29,10,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达利乌斯·克罗雷领主|r 对话。
-    .turnin 24617 >>交任务 塔多伦，野性的家园
-    .accept 24627 >>接受任务 兵临城下
-    .target Darius Crowley领主
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Darius Crowley|r.
+    .turnin 24617 >>Turn in Tal'doren, the Wild Home
+    .accept 24627 >>Accept At Our Doorstep
+    .target Lord Darius Crowley
 step
-    #arrowtext 进入巢穴
+    #arrowtext Enter the Den
     #completewith Tal'doren, the Wild Home
-    .goto 179,68.72,73.24,23 >>进入巢穴
+    .goto 179,68.72,73.24,23 >>Enter the Den
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_达利乌斯·克罗雷领主|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Lord Darius Crowley|r
     #requires Tal'doren, the Wild Home
     .goto 179,68.72,73.24
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达利乌斯·克罗雷领主|r 对话。
-    .turnin 24617 >>交任务 塔多伦，野性的家园
-    .accept 24627 >>接受任务 兵临城下
-    .target Darius Crowley领主
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Darius Crowley|r.
+    .turnin 24617 >>Turn in Tal'doren, the Wild Home
+    .accept 24627 >>Accept At Our Doorstep
+    .target Lord Darius Crowley
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_法珊德拉·暴风爪|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Vassandra Stormclaw|r
     .goto 179,69.30,72.98
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_法珊德拉·暴风爪|r 对话。
-    .accept 24628 >>接受任务 仪式前的准备
-    .target 法珊德拉·暴风爪
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vassandra Stormclaw|r.
+    .accept 24628 >>Accept Preparations
+    .target Vassandra Stormclaw
 step
     #hidewindow
     #completewith Banshees
@@ -21591,88 +21589,88 @@ step
     +1
 step
     #completewith next
-    >>击杀 |cRXP_ENEMY_女妖|r。
+    >>Kill |cRXP_ENEMY_Banshees|r.
     .complete 24627,1 --Howling Banshee slain (6)
-    .mob 尖啸女妖
+    .mob Howling Banshee
 step
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_树叶|r
-    *|cRXP_WARN_如果你已经学会草药学，这些会在你的小地图上显示|r。
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Leaves|r
+    *|cRXP_WARN_These should appear on your minimap if you’ve learned Herbalism|r.
     .complete 24628,1 --Moonleaf (6)
     .usespell 2366
 step
     #label Banshees
-    >>击杀 |cRXP_ENEMY_女妖|r。
+    >>Kill |cRXP_ENEMY_Banshees|r.
     .complete 24627,1 --Howling Banshee slain (6)
-    .mob 尖啸女妖
+    .mob Howling Banshee
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_达利乌斯·克罗雷领主|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Lord Darius Crowley|r
     .goto 179,68.72,73.24
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达利乌斯·克罗雷领主|r 对话。
-    .turnin 24627 >>交任务 兵临城下
-    .accept 24646 >>接受任务 夺回镰刀
-    .target Darius Crowley领主
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Darius Crowley|r.
+    .turnin 24627 >>Turn in At Our Doorstep
+    .accept 24646 >>Accept Take Back What's Ours
+    .target Lord Darius Crowley
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_法珊德拉·暴风爪|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Vassandra Stormclaw|r
     .goto 179,69.30,72.98
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_法珊德拉·暴风爪|r 对话。
-    .turnin 24628 >>交任务 仪式前的准备
-    .target 法珊德拉·暴风爪
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vassandra Stormclaw|r.
+    .turnin 24628 >>Turn in Preparations
+    .target Vassandra Stormclaw
 step
     #completewith next
     #label Mysterious Artifact
     #hidewindow
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击 |cRXP_PICK_宝匣|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Coffer|r
     .complete 24646,1 --Mysterious Artifact (1)
     .use 50134
 step
-    #arrowtext 使用 [角力 of 塔多伦]
+    #arrowtext Use [Horn of Tal'doren]
     #completewith Mysterious Artifact
     .goto 179,62.06,75.03
-    .cast 71061 >>使用|T134229:0|t[塔尔多伦号角] ，|cRXP_WARN_在路径点位置|r
+    .cast 71061 >>Use |T134229:0|t[Horn of Tal'doren] |cRXP_WARN_on the waypoint location|r
 step
     #requires Mysterious Artifact
     #completewith next
     #label Mysterious Artifact2
     .goto 179,57.88,76,5,0
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击 |cRXP_PICK_宝匣|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Coffer|r
     .complete 24646,1 --Mysterious Artifact (1)
     .use 50134
 step
-    #arrowtext 进入房屋
+    #arrowtext Enter the House
     #requires Mysterious Artifact
     #completewith Mysterious Artifact2
-    .goto 179,57.51,75.59,15 >>进入房屋
+    .goto 179,57.51,75.59,15 >>Enter the House
 step
-    #arrowtext 点击\n|cRXP_PICK_Coffer|r
+    #arrowtext Click\n|cRXP_PICK_Coffer|r
     #requires Mysterious Artifact2
     .goto 179,57.51,75.59
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击 |cRXP_PICK_宝匣|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Coffer|r
     .complete 24646,1 --Mysterious Artifact (1)
     .use 50134
 step
     #completewith next
     #label Take Back What's Ours
     .goto 179,58,76.13,5,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达利乌斯·克罗雷领主|r 对话。
-    .turnin 24646 >>交任务 夺回镰刀
-    .accept 24593 >>接受任务 非人非兽
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Darius Crowley|r.
+    .turnin 24646 >>Turn in Take Back What's Ours
+    .accept 24593 >>Accept Neither Human Nor Beast
     .disablecheckbox
-    .target Darius Crowley领主
+    .target Lord Darius Crowley
 step
-    #arrowtext 离开房屋
+    #arrowtext Leave the House
     #completewith Take Back What's Ours
-    .goto 179,68.72,73.24,340 >>离开房屋
+    .goto 179,68.72,73.24,340 >>Leave the House
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_达利乌斯·克罗雷领主|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Lord Darius Crowley|r
     #requires Take Back What's Ours
     .goto 179,68.72,73.24
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达利乌斯·克罗雷领主|r 对话。
-    .turnin 24646 >>交任务 夺回镰刀
-    .accept 24593 >>接受任务 非人非兽
-    .target Darius Crowley领主
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Darius Crowley|r.
+    .turnin 24646 >>Turn in Take Back What's Ours
+    .accept 24593 >>Accept Neither Human Nor Beast
+    .target Lord Darius Crowley
 step
-    #arrowtext 点击\n|cRXP_PICK_Wells|r
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_水井|r
+    #arrowtext Click\n|cRXP_PICK_Wells|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Wells|r
     .complete 24593,1 --Well of Fury (1)
     .goto 179,68.98,72.80,-1
     .complete 24593,2 --Well of Tranquility (1)
@@ -21680,32 +21678,32 @@ step
     .complete 24593,3 --Well of Balance (1)
     .goto 179,69.14,73.52,-1
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_达利乌斯·克罗雷领主|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Lord Darius Crowley|r
     .goto 179,68.72,73.24
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达利乌斯·克罗雷领主|r 对话。
-    .turnin 24593 >>交任务 非人非兽
-    .accept 24673 >>接受任务 返回风谷村
-    .target Darius Crowley领主
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Darius Crowley|r.
+    .turnin 24593 >>Turn in Neither Human Nor Beast
+    .accept 24673 >>Accept Return to Stormglen
+    .target Lord Darius Crowley
 step
     #completewith next
     #label Return to Stormglen1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格温·阿姆斯特|r 对话。
-    .turnin 24673 >>交任务 返回风谷村
-    .accept 24672 >>接受任务 勇敢向前
-    .target 格温·阿姆斯特
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwen Armstead|r.
+    .turnin 24673 >>Turn in Return to Stormglen
+    .accept 24672 >>Accept Onwards and Upwards
+    .target Gwen Armstead
 step
     #completewith Return to Stormglen1
-    .hs >>使用 |T134414:0|t[炉石] 到风谷村。
+    .hs >>Use |T134414:0|t[Hearthstone] to Stormglen.
     .cooldown item,6948,>0,1
     .use 6948
 step
-    #arrowtext 与 |cRXP_FRIENDLY_格温·阿姆斯特|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Gwen Armstead|r
     #requires Return to Stormglen1
     .goto 179,59.86,91.71
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格温·阿姆斯特|r 对话。
-    .turnin 24673 >>交任务 返回风谷村
-    .accept 24672 >>接受任务 勇敢向前
-    .target 格温·阿姆斯特
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwen Armstead|r.
+    .turnin 24673 >>Turn in Return to Stormglen
+    .accept 24672 >>Accept Onwards and Upwards
+    .target Gwen Armstead
     .use 52942 --Staff of Earned Tranquility
     .use 66660 --Hammer of Controlled Fury
     .use 133697 --Sharpened Wolf's Tooth
@@ -21719,24 +21717,24 @@ step
     .goto 179,64.78,84.92,15,0
     .goto 179,60.98,90.63,15,0
     .goto 179,60.4,91.44,5,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格温·阿姆斯特|r 对话。
-    .turnin 24673 >>交任务 返回风谷村
-    .accept 24672 >>接受任务 勇敢向前
-    .target 格温·阿姆斯特
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwen Armstead|r.
+    .turnin 24673 >>Turn in Return to Stormglen
+    .accept 24672 >>Accept Onwards and Upwards
+    .target Gwen Armstead
 step
-    #arrowtext 进入房屋
+    #arrowtext Enter the House
     #completewith Return to Stormglen2
-    .goto 179,59.86,91.71,15 >>进入房屋
+    .goto 179,59.86,91.71,15 >>Enter the House
     .cooldown item,6948,<0
     .use 6948
 step
-    #arrowtext 与 |cRXP_FRIENDLY_格温·阿姆斯特|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Gwen Armstead|r
     #requires Return to Stormglen2
     .goto 179,59.86,91.71
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格温·阿姆斯特|r 对话。
-    .turnin 24673 >>交任务 返回风谷村
-    .accept 24672 >>接受任务 勇敢向前
-    .target 格温·阿姆斯特
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwen Armstead|r.
+    .turnin 24673 >>Turn in Return to Stormglen
+    .accept 24672 >>Accept Onwards and Upwards
+    .target Gwen Armstead
 step
     #completewith next
     #label Onwards and Upwards
@@ -21744,41 +21742,41 @@ step
     .goto 179,60.51,92.42,10,0
     .goto 179,67.66,91.66,15,0
     .goto 179,69.78,88.34,15,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_克雷南·阿朗纳斯|r 对话。
-    .turnin 24672 >>交任务 勇敢向前
-    .accept 24592 >>接受任务 风暴海崖的背叛
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krennan Aranas|r.
+    .turnin 24672 >>Turn in Onwards and Upwards
+    .accept 24592 >>Accept Betrayal at Tempest's Reach
     .disablecheckbox
-	.target 克雷南·阿朗纳斯
+	.target Krennan Aranas
 step
-    #arrowtext 跟随箭头
+    #arrowtext Follow the arrow
     #completewith Onwards and Upwards
-    .goto 179,72.73,80.05,160 >>跟随箭头
+    .goto 179,72.73,80.05,160 >>Follow the Arrow
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_克雷南·阿朗纳斯|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Krennan Aranas|r
     #requires Onwards and Upwards
     .goto 179,72.73,80.05
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_克雷南·阿朗纳斯|r 对话。
-    .turnin 24672 >>交任务 勇敢向前
-    .accept 24592 >>接受任务 风暴海崖的背叛
-	.target 克雷南·阿朗纳斯
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krennan Aranas|r.
+    .turnin 24672 >>Turn in Onwards and Upwards
+    .accept 24592 >>Accept Betrayal at Tempest's Reach
+	.target Krennan Aranas
 step
     #completewith next
     #label Lord Walden
     .goto 179,74.88,76.95,10,0
-    >>击杀 |cRXP_ENEMY_沃登勋爵|r。
+    >>Kill |cRXP_ENEMY_Lord Walden|r.
     .complete 24592,2 --Lord Walden slain (1)
-    .mob 沃登勋爵
+    .mob Lord Walden
 step
-    #arrowtext 使用 [潜行药水]
+    #arrowtext Use [Stealth Potion]
     #completewith Lord Walden
     .goto 179,75.59,75.34
-    .cast 70456 >>在风暴海崖使用|T135446:0|t[潜行药水]。
+    .cast 70456 >>Use |T135446:0|t[Stealth Potion] in Tempest Reach.
     .use 50218
 step
     #requires Lord Walden
     #completewith Turn in Betrayal at Tempest's Reach
-    +如果潜行被破，你可以重新使用潜行，|cRXP_WARN_即使在战斗中也可以|r。
-    *你可以在骑乘时保持潜行，但在战斗中或离开风暴海崖区域时会被打破。
+    +If stealth breaks, you can reapply it |cRXP_WARN_even in combat|r.
+    *You can be stealthed while mounted it breaks in combat or out of Tempest Reach.
     .use 50218
 step
     #requires Lord Walden
@@ -21789,96 +21787,96 @@ step
     .goto 179,76.82,70.8,10,0
     .goto 179,78.61,70.18,10,0
     .goto 179,79.19,68.08,10,0
-    >>击杀 |cRXP_ENEMY_沃登勋爵|r。
+    >>Kill |cRXP_ENEMY_Lord Walden|r.
     .complete 24592,2 --Lord Walden slain (1)
-    .mob 沃登勋爵
+    .mob Lord Walden
 step
     #requires Lord Walden
     #completewith Lord Walden2
-    .goto 179,78.4,65.64,50 >>穿越山脉
+    .goto 179,78.4,65.64,50 >>Traverse the mountains
 step
-    #arrowtext |cFFFCDC00寻找巡逻的NPC|r
+    #arrowtext |cFFFCDC00Find the patrolling NPC|r
     #requires Lord Walden2
     #loop
     .goto 179,78.4,65.64,25,0
     .goto 179,79.69,64.45,25,0
-    >>击杀 |cRXP_ENEMY_沃登勋爵|r。
+    >>Kill |cRXP_ENEMY_Lord Walden|r.
     .complete 24592,2 --Lord Walden slain (1)
-    .mob 沃登勋爵
+    .mob Lord Walden
 step
     #completewith next
     #label Baron Ashbury2
     .goto 179,84.36,72.65,5,0
     .goto 179,85.58,73.41,5,0
-    >>击杀 |cRXP_ENEMY_灰葬男爵|r。
+    >>Kill |cRXP_ENEMY_Baron Ashbury|r.
     .complete 24592,1 --Baron Ashbury slain (1)
-    .mob 灰葬男爵
+    .mob Baron Ashbury
 step
-    #arrowtext 跟随箭头
+    #arrowtext Follow the arrow
     #requires Baron Ashbury
     #completewith Baron Ashbury2
-    .goto 179,85.12,74.18,30 >>跟随箭头
+    .goto 179,85.12,74.18,30 >>Follow the Arrow
 step
-    #arrowtext |cFFFCDC00寻找巡逻的NPC|r
+    #arrowtext |cFFFCDC00Find the patrolling NPC|r
     #requires Baron Ashbury2
     #loop
     .goto 179,85.12,74.18,25,0
     .goto 179,84.14,74.81,25,0
-    >>击杀 |cRXP_ENEMY_灰葬男爵|r。
+    >>Kill |cRXP_ENEMY_Baron Ashbury|r.
     .complete 24592,1 --Baron Ashbury slain (1)
-    .mob 灰葬男爵
+    .mob Baron Ashbury
 step
     #completewith next
     #label Flank the Forsaken
     #hidewindow
-    .turnin 24592 >>交任务 风暴海崖的背叛
+    .turnin 24592 >>Turn in Betrayal at Tempest's Reach
 step
-    #arrowtext |cFFFCDC00无坐骑|r
+    #arrowtext |cFFFCDC00No mount|r
     #completewith Flank the Forsaken
-    .goto 179,86.66,73.82,20 >>从山上跳下 |cRXP_WARN_不要骑坐骑|r，让自己摔死。
+    .goto 179,86.66,73.82,20 >>Drop off the mountain |cRXP_WARN_without a mount|r to die.
 step
     #requires Flank the Forsaken
     #completewith next
     #label Flank the Forsaken2
     #hidewindow
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_吉恩·格雷迈恩国王|r 对话。
-    .turnin 24592 >>交任务 风暴海崖的背叛
-    .accept 24677 >>接受任务 包抄被遗忘者
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_King Genn Greymane|r.
+    .turnin 24592 >>Turn in Betrayal at Tempest's Reach
+    .accept 24677 >>Accept Flank the Forsaken
     .disablecheckbox
-    .target 吉恩·格雷迈恩国王
+    .target King Genn Greymane
 step
     #requires Flank the Forsaken
     #completewith Flank the Forsaken2
     #ignorecorpse
     .goto 179,78.6,67.67
-    #title |cFFFCDC00在灵魂医者处复活|r
-    .deathskip >>在灵魂医者处复活
-    .target 灵魂医者
+    #title |cFFFCDC00Rez at Spirit Healer|r
+    .deathskip >>Respawn at the Spirit Healer
+    .target Spirit Healer
 step
     #requires Flank the Forsaken2
     #completewith next
     #label Flank the Forsaken3
     .goto 179,78.7,69.75,10,0
     .goto 179,78.33,70.69,10,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_吉恩·格雷迈恩国王|r 对话。
-    .turnin 24592 >>交任务 风暴海崖的背叛
-    .accept 24677 >>接受任务 包抄被遗忘者
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_King Genn Greymane|r.
+    .turnin 24592 >>Turn in Betrayal at Tempest's Reach
+    .accept 24677 >>Accept Flank the Forsaken
     .disablecheckbox
-    .target 吉恩·格雷迈恩国王
+    .target King Genn Greymane
 step
     #requires Flank the Forsaken2
     #completewith Flank the Forsaken3
     #hidewindow
-    .goto 179,78.28,72.07,30 >>跟随箭头
+    .goto 179,78.28,72.07,30 >>Follow the Arrow
 step
-    #arrowtext 与 |cRXP_FRIENDLY_King 吉恩·格雷迈恩|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_King Genn Greymane|r
     #requires Flank the Forsaken3
     #label Turn in Betrayal at Tempest's Reach
     .goto 179,78.28,72.07
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_吉恩·格雷迈恩国王|r 对话。
-    .turnin 24592 >>交任务 风暴海崖的背叛
-    .accept 24677 >>接受任务 包抄被遗忘者
-    .target 吉恩·格雷迈恩国王
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_King Genn Greymane|r.
+    .turnin 24592 >>Turn in Betrayal at Tempest's Reach
+    .accept 24677 >>Accept Flank the Forsaken
+    .target King Genn Greymane
 step
     #completewith next
     #label Liberation Day
@@ -21886,39 +21884,39 @@ step
     .goto 179,79.26,68.9,15,0
     .goto 179,79.22,65.39,15,0
     .goto 179,72.1,39.58,15,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_罗娜·克罗雷|r, |cRXP_FRIENDLY_麦格达·白墙|r, 和 |cRXP_FRIENDLY_马库斯|r 对话。
-    .turnin 24677 >>交任务 包抄被遗忘者
-    .accept 24575 >>接受任务 解放村民
-    .target +罗娜·克罗雷
-    .accept 24675 >>接受任务 最后的美餐
-    .accept 24674 >>接受任务 揭竿而起
-    .target +麦格达·白墙
-    .target +玛库斯
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorna Crowley|r, |cRXP_FRIENDLY_Magda Whitewall|r, and |cRXP_FRIENDLY_Marcus|r.
+    .turnin 24677 >>Turn in Flank the Forsaken
+    .accept 24575 >>Accept Liberation Day
+    .target +Lorna Crowley
+    .accept 24675 >>Accept Last Meal
+    .accept 24674 >>Accept Slaves to No One
+    .target +Magda Whitewall
+    .target +Marcus
 step
     #hidewindow
     #completewith Liberation Day
-    .goto 179,70.88,39.84,30 >>跟随箭头
+    .goto 179,70.88,39.84,30 >>Follow the Arrow
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_罗娜·克罗雷|r 和 |cRXP_FRIENDLY_麦格达·白墙|r 和 |cRXP_FRIENDLY_玛库斯|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Lorna Crowley|r and |cRXP_FRIENDLY_Magda Whitewall|r and |cRXP_FRIENDLY_Marcus|r
     #requires Liberation Day
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_罗娜·克罗雷|r, |cRXP_FRIENDLY_麦格达·白墙|r, 和 |cRXP_FRIENDLY_马库斯|r 对话。
-    .turnin 24677 >>交任务 包抄被遗忘者
-    .accept 24575 >>接受任务 解放村民
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorna Crowley|r, |cRXP_FRIENDLY_Magda Whitewall|r, and |cRXP_FRIENDLY_Marcus|r.
+    .turnin 24677 >>Turn in Flank the Forsaken
+    .accept 24575 >>Accept Liberation Day
     .goto 179,70.88,39.84
-    .target +罗娜·克罗雷
-    .accept 24675 >>接受任务 最后的美餐
+    .target +Lorna Crowley
+    .accept 24675 >>Accept Last Meal
     .goto 179,70.65,39.70
-    .target +麦格达·白墙
-    .accept 24674 >>接受任务 揭竿而起
+    .target +Magda Whitewall
+    .accept 24674 >>Accept Slaves to No One
     .goto 179,70.29,40.05,8,0
     .goto 179,70.63,40.12,8,0
     .goto 179,71.25,39.78
-    .target +玛库斯
+    .target +Marcus
     .use 55002 --Blue-Bloodied Boots
     .use 131378 --Blue-Bloodied Treads
     .use 55003 --Greymane Cloak
 step
-    #arrowtext 杀死\n|cRXP_ENEMY_Stags|r
+    #arrowtext Kill\n|cRXP_ENEMY_Stags|r
     #loop
     .goto 179,72.18,44.54,30,0
     .goto 179,73.57,42.71,30,0
@@ -21928,21 +21926,21 @@ step
     .goto 179,77.93,35.81,30,0
     .goto 179,78.38,48.36,30,0
     .goto 179,73.25,47.61,30,0
-    >>击杀|cRXP_ENEMY_雄鹿|r。
-    *从它们身上拾取|T133970:0|t[|cRXP_LOOT_鹿肉块|r]。
+    >>Kill |cRXP_ENEMY_Stags|r.
+    *Loot them for |T133970:0|t[|cRXP_LOOT_Side of Stag Meat|r].
     .complete 24675,1 --Side of Stag Meat (10)
-    .mob 棕色雄鹿
+    .mob Brown Stag
 step
     #completewith next
-    >>击杀|cRXP_ENEMY_被遗忘者|r。
-    *拾取战利品 |T134247:0|t[|cRXP_LOOT_奴隶贩子的钥匙|r] |cRXP_WARN_(使用链条需要)|r
-    *|TInterface/cursor/crosshair/interact.blp:20|t点击 |cRXP_PICK_锁链|r
+    >>Kill |cRXP_ENEMY_Forsakens|r.
+    *Loot them for |T134247:0|t[|cRXP_LOOT_Slaver's Key|r] |cRXP_WARN_(required to use the chains)|r.
+    *|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Chains|r
     .collect 49881,5,24575,1,-1 --Slaver's Key (5)
     .complete 24575,1 --Enslaved Gilnean freed (5)
-    .mob 被遗忘者奴隶主
-    .target 被奴役的村民
+    .mob Forsaken Slavedriver
+    .target Enslaved Villagers
 step
-    #arrowtext 杀死\n|cRXP_ENEMY_奴隶主博罗索格|r
+    #arrowtext Kill\n|cRXP_ENEMY_Brothogg the Slavemaster|r
     .goto 179,75.46,32.15,15,0
     .goto 180,28.89,67.72,15,0
     .goto 180,29.42,59.4,15,0
@@ -21951,50 +21949,50 @@ step
     .goto 180,42.77,30.23,15,0
     .goto 180,46.88,34.62,15,0
     .goto 180,54.23,81.14
-    >>击杀 |cRXP_ENEMY_奴隶主博罗索格|r
+    >>Kill |cRXP_ENEMY_Brothogg the Slavemaster|r
     .complete 24674,1 --Brothogg the Slavemaster slain (1)
-    .mob 奴隶主博罗索格
+    .mob Brothogg the Slavemaster
 step
-    #arrowtext 杀死 |cRXP_ENEMY_Forsakens|r
+    #arrowtext Kill\n|cRXP_ENEMY_Forsakens|r
     #loop
     .goto 180,63.42,69.44,25,0
     .goto 180,60.43,45.59,25,0
     .goto 180,72.84,40.23,25,0
     .goto 180,66.89,30.62,25,0
     .goto 180,46.03,30.71,25,0
-    >>击杀|cRXP_ENEMY_被遗忘者|r。
-    *拾取战利品 |T134247:0|t[|cRXP_LOOT_奴隶贩子的钥匙|r] |cRXP_WARN_(使用链条需要)|r
-    *|TInterface/cursor/crosshair/interact.blp:20|t点击 |cRXP_PICK_锁链|r
+    >>Kill |cRXP_ENEMY_Forsakens|r.
+    *Loot them for |T134247:0|t[|cRXP_LOOT_Slaver's Key|r] |cRXP_WARN_(required to use the chains)|r.
+    *|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Chains|r
     .collect 49881,5,24575,1,-1 --Slaver's Key (5)
     .complete 24575,1 --Enslaved Gilnean freed (5)
-    .mob 被遗忘者奴隶主
-    .target 被奴役的村民
+    .mob Forsaken Slavedriver
+    .target Enslaved Villagers
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_麦格达·白墙|r、|cRXP_FRIENDLY_玛库斯|r 和 |cRXP_FRIENDLY_罗娜·克罗雷|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_麦格达·白墙|r, |cRXP_FRIENDLY_马库斯|r, 和 |cRXP_FRIENDLY_罗娜·克罗雷|r 对话。
-    .turnin 24675 >>交任务 最后的美餐
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Magda Whitewall|r and |cRXP_FRIENDLY_Marcus|r and |cRXP_FRIENDLY_Lorna Crowley|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magda Whitewall|r, |cRXP_FRIENDLY_Marcus|r, and |cRXP_FRIENDLY_Lorna Crowley|r.
+    .turnin 24675 >>Turn in Last Meal
     .goto 179,70.65,39.70
-    .target +麦格达·白墙
-    .turnin 24674 >>交任务 揭竿而起
+    .target +Magda Whitewall
+    .turnin 24674 >>Turn in Slaves to No One
     .goto 179,70.29,40.05,8,0
     .goto 179,70.63,40.12,8,0
     .goto 179,71.25,39.78
-    .target +玛库斯
-    .turnin 24575 >>交任务 解放村民
-    .accept 24676 >>接受任务 手刃仇人
+    .target +Marcus
+    .turnin 24575 >>Turn in Liberation Day
+    .accept 24676 >>Accept Push Them Out
     .goto 179,70.88,39.84
-    .target +罗娜·克罗雷
+    .target +Lorna Crowley
 step
     #completewith Valov the Mad2
-    >>击杀|cRXP_ENEMY_被遗忘者|r。
+    >>Kill |cRXP_ENEMY_Forsakens|r.
     .complete 24676,1 --Forsaken Infantry slain (4)
-    .mob 被遗忘者士兵
+    .mob Forsaken Infantry
 step
-    #arrowtext 杀死\n|cRXP_ENEMY_执行官柯奈尔|r
+    #arrowtext Kill\n|cRXP_ENEMY_Executor Cornell|r
     .goto 179,72.91,28.58
-    >>击杀 |cRXP_ENEMY_执行官柯奈尔|r。
+    >>Kill |cRXP_ENEMY_Executor Cornell|r.
     .complete 24676,2 --Executor Cornell (1)
-    .mob 执行官柯奈尔
+    .mob Executor Cornell
     .use 54991 --Marcus' Pickaxe
     .use 54992 --Laborer's Belt
     .use 54993 --Emberstone Plate
@@ -22002,54 +22000,54 @@ step
     #completewith next
     #label Valov the Mad1
     .goto 179,73.53,28.75,10,0
-    >>杀死 |cRXP_ENEMY_疯狂的瓦尔诺瓦|r。
+    >>Kill |cRXP_ENEMY_Valnov the Mad|r.
     .complete 24676,3 --Valnov the Mad slain (1)
-    .mob 疯狂的瓦尔诺夫
+    .mob Valnov the Mad
 step
     #completewith Valov the Mad1
     #hidewindow
-    .goto 179,74.16,27.43,30 >>跟随箭头
+    .goto 179,74.16,27.43,30 >>Follow the Arrow
 step
-    #arrowtext 杀死\n|cRXP_ENEMY_疯狂的瓦尔诺瓦|r
+    #arrowtext Kill\n|cRXP_ENEMY_Valnov the Mad|r
     #requires Valov the Mad1
     #label Valov the Mad2
     .goto 179,74.16,27.43
-    >>杀死 |cRXP_ENEMY_疯狂的瓦尔诺瓦|r。
+    >>Kill |cRXP_ENEMY_Valnov the Mad|r.
     .complete 24676,3 --Valnov the Mad slain (1)
-    .mob 疯狂的瓦尔诺夫
+    .mob Valnov the Mad
 step
-    #arrowtext 杀死 |cRXP_ENEMY_Forsakens|r
+    #arrowtext Kill\n|cRXP_ENEMY_Forsakens|r
     #loop
     .goto 179,74.85,27.99,25,0
     .goto 179,73.29,30.7,25,0
     .goto 179,72.06,29.73,25,0
     .goto 179,73.3,28.79,25,0
-    >>击杀|cRXP_ENEMY_被遗忘者|r。
+    >>Kill |cRXP_ENEMY_Forsakens|r.
     .complete 24676,1 --Forsaken Infantry slain (4)
-    .mob 被遗忘者士兵
+    .mob Forsaken Infantry
 step
     #completewith next
     #label Push Them Out
     .goto 179,73.29,31.18,15,0
     .goto 179,72.07,35.96,15,0
     .goto 179,71.08,37.93,15,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_罗娜·克罗雷|r 对话。
-    .turnin 24676 >>交任务 手刃仇人
-    .accept 24904 >>接受任务 吉尔尼斯城保卫战
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorna Crowley|r.
+    .turnin 24676 >>Turn in Push Them Out
+    .accept 24904 >>Accept The Battle for Gilneas City
     .disablecheckbox
-    .target 罗娜·克罗雷
+    .target Lorna Crowley
 step
     #completewith Push Them Out
     #hidewindow
-    .goto 179,70.88,39.84,40 >>跟随箭头
+    .goto 179,70.88,39.84,40 >>Follow the Arrow
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_罗娜·克罗雷|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Lorna Crowley|r
     #requires Push Them Out
     .goto 179,70.88,39.84
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_罗娜·克罗雷|r 对话。
-    .turnin 24676 >>交任务 手刃仇人
-    .accept 24904 >>接受任务 吉尔尼斯城保卫战
-    .target 罗娜·克罗雷
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorna Crowley|r.
+    .turnin 24676 >>Turn in Push Them Out
+    .accept 24904 >>Accept The Battle for Gilneas City
+    .target Lorna Crowley
 step
     #completewith next
     #label Gorerot
@@ -22057,29 +22055,29 @@ step
     .goto 179,68.07,48.8,15,0
     .goto 202,68.22,72.09,15,0
     .goto 202,60.66,70.84,15,0
-    >>击杀|cRXP_ENEMY_腐血怪|r |cRXP_WARN_（战斗时间较长）|r；
-    *对队友使用|T135340:0|t[轻剑]，来强化他们的能力。
-    *|cRXP_WARN_无视 |cRXP_PICK_大炮|r；除非你需要脱离战斗|r。
+    >>Kill |cRXP_ENEMY_Gorerot|r |cRXP_WARN_(long fight)|r;
+    *Use the |T135340:0|t[Rapier] on teammates to boost their power.
+    *|cRXP_WARN_Ignore |cRXP_PICK_Cannons|r; unless you need to drop combat|r.
     .complete 24904,1 --Gorerot slain (1)
     .use 50334
-    .mob 血魔
-    .target 吉尔尼斯民兵
+    .mob Gorerot
+    .target Gilnean Militia
 step
-    #arrowtext 跟随箭头
+    #arrowtext Follow the arrow
     #completewith Gorerot
-    .goto 202,57.21,65.77,40 >>跟随箭头
+    .goto 202,57.21,65.77,40 >>Follow the Arrow
 step
-    #arrowtext 杀死\n|cRXP_ENEMY_腐血怪|r
+    #arrowtext Kill\n|cRXP_ENEMY_Gorerot|r
     #requires Gorerot
     .goto 202,57.21,65.77
-    >>击杀|cRXP_ENEMY_腐血怪|r |cRXP_WARN_（战斗时间较长）|r；
-    *对队友使用|T135340:0|t[轻剑]，来强化他们的能力。
-    *|cRXP_WARN_无视 |cRXP_PICK_大炮|r；除非你需要脱离战斗|r。
+    >>Kill |cRXP_ENEMY_Gorerot|r |cRXP_WARN_(long fight)|r;
+    *Use the |T135340:0|t[Rapier] on teammates to boost their power.
+    *|cRXP_WARN_Ignore |cRXP_PICK_Cannons|r; unless you need to drop combat|r.
     .complete 24904,1 --Gorerot slain (1)
     .use 50334
-    .mob 血魔
-    .target 吉尔尼斯民兵
-    .target 余烬石大炮
+    .mob Gorerot
+    .target Gilnean Militia
+    .target Emberstone Cannon
 step
     #completewith next
     #label Battle for Gilneas City Complete
@@ -22093,66 +22091,66 @@ step
     .goto 202,57.32,75.81,5,0
     .goto 202,52.23,68.74,10,0
     .goto 202,41.37,63.08,10,0
-    >>击杀|cRXP_ENEMY_女妖|r，然后打|cRXP_ENEMY_希尔瓦娜斯·风行者|r，直到她的血量降至30%以下。
-    *对队友使用|T135340:0|t[轻剑]，来强化他们的能力。
+    >>Kill the |cRXP_ENEMY_Banshees|r, then damage |cRXP_ENEMY_Lady Sylvanas Windrunner|r to below 30%.
+    *Use the |T135340:0|t[Rapier] on teammates to boost their power.
     .complete 24904,2 --Battle for Gilneas City Complete (1)
-    .timer 15,吉尔尼斯城保卫战 剧情RP
+    .timer 15,The Battle for Gilneas City RP
     .use 50334
     .mob Soultethered Banshees
-    .mob 希尔瓦娜斯·风行者
+    .mob Lady Sylvanas Windrunner
 step
-    #arrowtext 跟随箭头
+    #arrowtext Follow the arrow
     #completewith Battle for Gilneas City Complete
-    .goto 202,36.23,62.52,40 >>跟随箭头
+    .goto 202,36.23,62.52,40 >>Follow the Arrow
 step
-    #arrowtext 击杀\n|cRXP_ENEMY_Banshees|r 和 |cRXP_ENEMY_Lady 希尔瓦娜斯·风行者|r
+    #arrowtext Kill\n|cRXP_ENEMY_Banshees|r and |cRXP_ENEMY_Lady Sylvanas Windrunner|r
     #requires Battle for Gilneas City Complete
     .goto 202,36.23,62.52
-    >>击杀|cRXP_ENEMY_女妖|r，然后打|cRXP_ENEMY_希尔瓦娜斯·风行者|r，直到她的血量降至30%以下。
-    *对队友使用|T135340:0|t[轻剑]，来强化他们的能力。
+    >>Kill the |cRXP_ENEMY_Banshees|r, then damage |cRXP_ENEMY_Lady Sylvanas Windrunner|r to below 30%.
+    *Use the |T135340:0|t[Rapier] on teammates to boost their power.
     .complete 24904,2 --Battle for Gilneas City Complete (1)
-    .timer 15,吉尔尼斯城保卫战 剧情RP
+    .timer 15,The Battle for Gilneas City RP
     .use 50334
     .mob Soultethered Banshees
-    .mob 希尔瓦娜斯·风行者
+    .mob Lady Sylvanas Windrunner
 step
     #completewith next
     #label The Hunt For Sylvanas
     .goto 202,36.75,59.18,5,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_罗娜·克罗雷|r 对话
-    .turnin 24904 >>交任务 吉尔尼斯城保卫战
-    .accept 24902 >>接受任务 追踪希尔瓦娜斯
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t Talk to |cRXP_FRIENDLY_Lorna Crowley|r
+    .turnin 24904 >>Turn in The Battle for Gilneas City
+    .accept 24902 >>Accept The Hunt For Sylvanas
     .disablecheckbox
-    .target 罗娜·克罗雷
+    .target Lorna Crowley
 step
-    #arrowtext 进入房屋
+    #arrowtext Enter the House
     #completewith The Hunt For Sylvanas
-    .goto 202,38.62,60.25,15 >>进入房屋
+    .goto 202,38.62,60.25,15 >>Enter the House
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_罗娜·克罗雷|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Lorna Crowley|r
     #requires The Hunt For Sylvanas
     .goto 202,38.62,60.25
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_罗娜·克罗雷|r 对话
-    .turnin 24904 >>交任务 吉尔尼斯城保卫战
-    .accept 24902 >>接受任务 追踪希尔瓦娜斯
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t Talk to |cRXP_FRIENDLY_Lorna Crowley|r
+    .turnin 24904 >>Turn in The Battle for Gilneas City
+    .accept 24902 >>Accept The Hunt For Sylvanas
     .timer 193.5,The Hunt For Sylvanas RP
-    .target 罗娜·克罗雷
+    .target Lorna Crowley
 step
     #completewith next
     #label Hunt for Sylvanas
-    #title |cRXP_WARN_无视箭头|r
-    >>|cFFFCDC00跟随 |cFF00FF00托比亚斯·密斯特曼托|r
+    #title |cRXP_WARN_IGNORE THE ARROW|r
+    >>|cFFFCDC00Follow |cFF00FF00Tobias Mistmantle|r
     .complete 24902,1 --Hunt for Sylvanas (1)
-    .target 托比亚斯·密斯特曼托
-    .target 罗娜·克罗雷
+    .target Tobias Mistmantle
+    .target Lorna Crowley
 step
     #completewith Hunt for Sylvanas
     #hidewindow
-    #title |cRXP_WARN_无视箭头|r
-    .goto 202,45.14,52.5,5 >>无视箭头
+    #title |cRXP_WARN_IGNORE THE ARROW|r
+    .goto 202,45.14,52.5,5 >>Ignore the Arrow
 step
     #requires Hunt for Sylvanas
-    #title |cFFFCDC00跟随箭头|r
+    #title |cFFFCDC00Follow the Arrow|r
     .goto 202,44.65,48,10,0
     .goto 202,42.64,43.44,5,0
     .goto 202,41.79,43.58,5,0
@@ -22161,88 +22159,88 @@ step
     .goto 202,37.88,42.25,10,0
     .goto 202,36.85,45.7,10,0
     .goto 202,39.36,59.11
-    >>在大门前等待 (|cRXP_WARN_不要进入房屋|r)。
+    >>Wait in front of the Door (|cRXP_WARN_don't enter the house|r).
     .complete 24902,1 --Hunt for Sylvanas (1)
-    .target 托比亚斯·密斯特曼托
-    .target 罗娜·克罗雷
+    .target Tobias Mistmantle
+    .target Lorna Crowley
     .use 54987 --Marshalling Point
     .use 54989 --Rallying Charge
     .use 55011 --Mace of the Blood Price
     .use 54990 --Gilnean Shield
     .use 54988 --Cloak of the Clarion Call
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_罗娜·克罗雷|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Lorna Crowley|r
     .goto 202,38.62,60.25
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_罗娜·克罗雷|r 对话
-    .turnin 24902 >>交任务 追踪希尔瓦娜斯
-    .accept 24903 >>接受任务 复仇或是生存
-    .target 罗娜·克罗雷
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorna Crowley|r
+    .turnin 24902 >>Turn in The Hunt For Sylvanas
+    .accept 24903 >>Accept Vengeance or Survival
+    .target Lorna Crowley
 step
     #completewith next
     #label Vengeance or Survival
     .goto 202,36.63,59.2,10,0
     .goto 202,32,58.13,10,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_吉恩·格雷迈恩国王|r 对话。
-    .turnin 24903 >>交任务 复仇或是生存
-    .accept 24920 >>接受任务 拖延不可避免的局势
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_King Genn Greymane|r.
+    .turnin 24903 >>Turn in Vengeance or Survival
+    .accept 24920 >>Accept Slowing the Inevitable
     .disablecheckbox
-    .target 吉恩·格雷迈恩国王
+    .target King Genn Greymane
 step
     #completewith Vengeance or Survival
     #hidewindow
-    .goto 202,32.36,57.04,8 >>跟随箭头
+    .goto 202,32.36,57.04,8 >>Follow the Arrow
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_国王吉恩·格雷迈恩|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_King Genn Greymane|r
     #requires Vengeance or Survival
     .goto 202,32.36,57.04
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_吉恩·格雷迈恩国王|r 对话。
-    .turnin 24903 >>交任务 复仇或是生存
-    .accept 24920 >>接受任务 拖延不可避免的局势
-    .target 吉恩·格雷迈恩国王
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_King Genn Greymane|r.
+    .turnin 24903 >>Turn in Vengeance or Survival
+    .accept 24920 >>Accept Slowing the Inevitable
+    .target King Genn Greymane
 step
     #completewith next
     #label Invading Forsaken
-    >>对|cRXP_ENEMY_被遗忘者|r和|cRXP_ENEMY_投石车|r使用|T133709:0|t[钢铁炸弹]。
+    >>Use |T133709:0|t[Iron Bomb] on the |cRXP_ENEMY_Forsakens|r and |cRXP_ENEMY_Catapults|r.
     .complete 24920,2 --Invading Forsaken (40)
     .complete 24920,1 --Forsaken Catapult slain (6)
-    .mob 被遗忘者投石车
+    .mob Forsaken Catapult
     .mob Invading Forsaken
 step
-    #arrowtext 点击\n|cRXP_PICK_Bat|r
+    #arrowtext Click\n|cRXP_PICK_Bat|r
     #completewith Invading Forsaken
     .goto 202,30.24,60.96
-    .vehicle >>点击|cRXP_PICK_蝙蝠|r。
-    .timer 21,拖延不可避免的局势 RP
-    .target 被俘的骑乘蝙蝠
+    .vehicle >>Click on the |cRXP_PICK_Bat|r.
+    .timer 21,Slowing the Inevitable RP
+    .target Captured Riding Bat
 step
     #requires Invading Forsaken
-    >>对|cRXP_ENEMY_被遗忘者|r和|cRXP_ENEMY_投石车|r使用|T133709:0|t[钢铁炸弹]。
+    >>Use |T133709:0|t[Iron Bomb] on the |cRXP_ENEMY_Forsakens|r and |cRXP_ENEMY_Catapults|r.
     .complete 24920,2 --Invading Forsaken (40)
     .complete 24920,1 --Forsaken Catapult slain (6)
-    .mob 被遗忘者投石车
+    .mob Forsaken Catapult
     .mob Invading Forsaken
 step
     #completewith next
     #label Slowing the Inevitable
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_吉恩·格雷迈恩国王|r 对话。
-    .turnin 24920 >>交任务 拖延不可避免的局势
-    .target 吉恩·格雷迈恩国王
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_King Genn Greymane|r.
+    .turnin 24920 >>Turn in Slowing the Inevitable
+    .target King Genn Greymane
 step
     #completewith Slowing the Inevitable
-    .cast vehicle, 72849 >>使用 |T132182:0|t[飞回]
+    .cast vehicle, 72849 >>Use |T132182:0|t[Fly Back]
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_国王吉恩·格雷迈恩|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_King Genn Greymane|r
     #requires Slowing the Inevitable
     .goto 202,32.36,57.04
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_吉恩·格雷迈恩国王|r 对话。
-    .turnin 24920 >>交任务 拖延不可避免的局势
-    .target 吉恩·格雷迈恩国王
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_King Genn Greymane|r.
+    .turnin 24920 >>Turn in Slowing the Inevitable
+    .target King Genn Greymane
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_国王吉恩·格雷迈恩|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_King Genn Greymane|r
     .goto 202,32.36,57.04
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_吉恩·格雷迈恩国王|r 对话。
-    .accept 24678 >>接受任务 齐膝的危险
-    .target 吉恩·格雷迈恩国王
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_King Genn Greymane|r.
+    .accept 24678 >>Accept Knee-Deep
+    .target King Genn Greymane
 step
     #completewith next
     #label Knee-Deep
@@ -22250,29 +22248,29 @@ step
     .goto 202,29.11,61.46,10,0
     .goto 179,50.84,55.79,10,0
     .goto 179,50.5,56.45,10,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_克雷南·阿朗纳斯|r 对话
-    .turnin 24678 >>交任务 齐膝的危险
-    .accept 24602 >>接受任务 入土为安
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krennan Aranas|r
+    .turnin 24678 >>Turn in Knee-Deep
+    .accept 24602 >>Accept Laid to Rest
     .disablecheckbox
     .target Krennan Aranas
 step
-    #arrowtext 跟随箭头
+    #arrowtext Follow the arrow
     #completewith Knee-Deep
-    .goto 179,49.85,56.93,30 >>跟随箭头
-    .mob 腐烂蛆虫
-    .mob 地下蜘蛛
-    .mob 墓地老鼠
+    .goto 179,49.85,56.93,30 >>Follow the Arrow
+    .mob Putrescent Maggot
+    .mob Underground Spider
+    .mob Graveyard Rat
     .use 50220
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_克雷南·阿朗纳斯|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Krennan Aranas|r
     #requires Knee-Deep
     .goto 179,49.85,56.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_克雷南·阿朗纳斯|r 对话
-    .turnin 24678 >>交任务 齐膝的危险
-    .accept 24602 >>接受任务 入土为安
-    .target 克雷南·阿朗纳斯
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krennan Aranas|r
+    .turnin 24678 >>Turn in Knee-Deep
+    .accept 24602 >>Accept Laid to Rest
+    .target Krennan Aranas
 step
-    #arrowtext 点击\n|cRXP_PICK_Soil|r
+    #arrowtext Click\n|cRXP_PICK_Soil|r
     #loop
     .goto 179,48,56.3,15,0
     .goto 179,46.67,56.03,15,0
@@ -22281,28 +22279,28 @@ step
     .goto 179,48.72,54.33,15,0
     .goto 179,50.99,53.23,15,0
     .goto 179,51.15,54.24,15,0
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_土壤|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Soil|r
     .complete 24602,1 --Unearthed Memento (5)
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_克雷南·阿朗纳斯|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Krennan Aranas|r
     .goto 179,49.84,56.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_克雷南·阿朗纳斯|r 对话。
-    .turnin 24602 >>交任务 入土为安
-    .accept 24679 >>接受任务 先祖的祝福
-    .target 克雷南·阿朗纳斯
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krennan Aranas|r.
+    .turnin 24602 >>Turn in Laid to Rest
+    .accept 24679 >>Accept Patriarch's Blessing
+    .target Krennan Aranas
 step
-    #arrowtext 使用 [Blessed Offerings]
+    #arrowtext Use [Blessed Offerings]
     .goto 179,48.89,53.14
-    >>在神龛处使用|T134344:0|t[祝福供品]。
+    >>Use the |T134344:0|t[Blessed Offerings] at the Shrine.
     .complete 24679,1 --Offering placed (1)
     .use 51956
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_克雷南·阿朗纳斯|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Krennan Aranas|r
     .goto 179,49.84,56.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_克雷南·阿朗纳斯|r 对话。
-    .turnin 24679 >>交任务 先祖的祝福
-    .accept 24680 >>接受任务 覆舟海湾
-    .target 克雷南·阿朗纳斯
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krennan Aranas|r.
+    .turnin 24679 >>Turn in Patriarch's Blessing
+    .accept 24680 >>Accept Keel Harbor
+    .target Krennan Aranas
 step
     #completewith next
     #label Keel Harbor
@@ -22310,40 +22308,40 @@ step
     .goto 179,46.57,48.75,15,0
     .goto 179,43.02,41,15,0
     .goto 179,42.86,40.1,15,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达利乌斯·克罗雷领主|r 对话。
-    .turnin 24680 >>交任务 覆舟海湾
-    .accept 24681 >>接受任务 他们有盟友，我们也有
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Darius Crowley|r.
+    .turnin 24680 >>Turn in Keel Harbor
+    .accept 24681 >>Accept They Have Allies, But So Do We
     .disablecheckbox
-    .target Darius Crowley领主
+    .target Lord Darius Crowley
 step
     #hidewindow
     #completewith Keel Harbor
-    .goto 179,41.93,37.60,60 >>跟随箭头
+    .goto 179,41.93,37.60,60 >>Follow the Arrow
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_达利乌斯·克罗雷领主|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Lord Darius Crowley|r
     #requires Keel Harbor
     .goto 179,41.93,37.60
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达利乌斯·克罗雷领主|r 对话。
-    .turnin 24680 >>交任务 覆舟海湾
-    .accept 24681 >>接受任务 他们有盟友，我们也有
-    .target Darius Crowley领主
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Darius Crowley|r.
+    .turnin 24680 >>Turn in Keel Harbor
+    .accept 24681 >>Accept They Have Allies, But So Do We
+    .target Lord Darius Crowley
 step
     #completewith next
     #label Glaive Thrower
-    >>冷却好时使用|T236303:0|t[利刃之幕]（2）；否则使用|T132330:0|t[发射利刃]（1）。
-    *使用|T136106:0|t[双倍速度]进行冲刺。
-    *远离 |cRXP_ENEMY_怪物|r。|cRXP_FRIENDLY_投刃车|r 很脆弱；|cRXP_WARN_如果它被摧毁，返回取一辆新的|r。
+    >>Use |T236303:0|t[Glaive Barrage] (2) on cooldown; otherwise, use |T132330:0|t[Launch Glaive] (1).
+    *Use |T136106:0|t[Double Speed] to sprint.
+    *Stay clear of the |cRXP_ENEMY_monsters|r. The |cRXP_FRIENDLY_Glaive Thrower|r is fragile; |cRXP_WARN_if it is destroyed, return to pick up a new one|r.
     .complete 24681,1 --Orc Raider slain (40)
     .complete 24681,2 --Wolfmaw Outrider slain (8)
     .complete 24681,3 --Orcish War Machine slain (4)
 step
-    #arrowtext 点击\n|cRXP_PICK_投刃车|r
+    #arrowtext Click\n|cRXP_PICK_Glaive Thrower|r
     #completewith Glaive Thrower
     .goto 179,42.39,37.86
-    .vehicle >>点击|cRXP_PICK_投刃车|r。
-    .target 投刃车
+    .vehicle >>Click on the |cRXP_PICK_Glaive Thrower|r.
+    .target Glaive Thrower
 step
-    #arrowtext 使用 [Glaive Barrage]
+    #arrowtext Use [Glaive Barrage]
     #requires Glaive Thrower
     #loop
     .goto 179,39.7,38.69,30,0
@@ -22355,85 +22353,85 @@ step
     .goto 179,29.12,21.85,30,0
     .goto 179,27.65,31.69,30,0
     .goto 179,28.83,39.97,30,0
-    >>冷却好时使用|T236303:0|t[利刃之幕]（2）；否则使用|T132330:0|t[发射利刃]（1）。
-    *使用|T136106:0|t[双倍速度]进行冲刺。
-    *远离 |cRXP_ENEMY_怪物|r。|cRXP_FRIENDLY_投刃车|r 很脆弱；|cRXP_WARN_如果它被摧毁，返回取一辆新的|r。
+    >>Use |T236303:0|t[Glaive Barrage] (2) on cooldown; otherwise, use |T132330:0|t[Launch Glaive] (1).
+    *Use |T136106:0|t[Double Speed] to sprint.
+    *Stay clear of the |cRXP_ENEMY_monsters|r. The |cRXP_FRIENDLY_Glaive Thrower|r is fragile; |cRXP_WARN_if it is destroyed, return to pick up a new one|r.
     .complete 24681,1 --Orc Raider slain (40)
     .complete 24681,2 --Wolfmaw Outrider slain (8)
     .complete 24681,3 --Orcish War Machine slain (4)
-    .macro Leave Vehicle,6656430 >>离开载具
+    .macro Leave Vehicle,6656430 >>/leavevehicle
 step
     #completewith next
     #label But So Do We
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达利乌斯·克罗雷领主|r 对话。
-    .turnin 24681 >>交任务 他们有盟友，我们也有
-    .target Darius Crowley领主
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Darius Crowley|r.
+    .turnin 24681 >>Turn in They Have Allies, But So Do We
+    .target Lord Darius Crowley
 step
     #completewith But So Do We
-    .exitvehicle >>|cRXP_WARN_离开载具|r
-    *|cRXP_WARN_击杀当前正在战斗的所有怪物|r。
-    .macro Leave Vehicle,6656430 >>离开载具
+    .exitvehicle >>|cRXP_WARN_Leave the vehicle|r
+    *|cRXP_WARN_Finish off any monsters you’re currently fighting|r.
+    .macro Leave Vehicle,6656430 >>/leavevehicle
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_达利乌斯·克罗雷领主|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Lord Darius Crowley|r
     #requires But So Do We
     .goto 179,41.93,37.60
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达利乌斯·克罗雷领主|r 对话。
-    .turnin 24681 >>交任务 他们有盟友，我们也有
-    .target Darius Crowley领主
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Darius Crowley|r.
+    .turnin 24681 >>Turn in They Have Allies, But So Do We
+    .target Lord Darius Crowley
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_罗娜·克罗雷|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Lorna Crowley|r
     .goto 179,41.65,36.52
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_罗娜·克罗雷|r 对话。
-    .accept 26706 >>接受任务 最后的较量
-    .target 罗娜·克罗雷
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorna Crowley|r.
+    .accept 26706 >>Accept Endgame
+    .target Lorna Crowley
     .use 55012 --Night Elven Bow
     .use 55013 --Seryl's Promise
 step
     #completewith next
     #label Gunship destroyed
-    >>该任务使用全局计时器；|cRXP_WARN_等待狮鹫变为可交互状态|r。
-    *|cRXP_FRIENDLY_托比亚斯·密斯特曼托|r将在聊天中通知你。
+    >>This quest uses a global timer; |cRXP_WARN_wait for the gryphon to become interactable|r.
+    *|cRXP_FRIENDLY_Tobias Mistmantle|r will notify you in chat.
     .complete 26706,1 --Gunship destroyed (1)
 step
-    #arrowtext 点击\n|cRXP_PICK_角鹰兽|r
+    #arrowtext Click\n|cRXP_PICK_Hippogryph|r
     #completewith Gunship destroyed
     .goto 179,41.67,36.15
-    .vehicle >>|TInterface/cursor/crosshair/interact.blp:20|t点击 |cRXP_PICK_角鹰兽|r
-    .timer 58,最后的较量 RP
+    .vehicle >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Hippogryph|r
+    .timer 58,Endgame RP
     .target Hippogryph
 step
     #requires Gunship destroyed
     #completewith next
-    +箭头无法在船上显示。
+    +The arrow can't be displayed on the ship.
 step
     #requires Gunship destroyed
-    >>降落后，击杀|cRXP_ENEMY_步兵|r并遵从队伍指令。
-    *击杀|cRXP_ENEMY_科尔姆·碾骨|r
+    >>Upon landing, kill |cRXP_ENEMY_Grunts|r and follow your team’s instructions.
+    *Kill |cRXP_ENEMY_Korm Bonegrind|r
     .complete 26706,1 --Gunship destroyed (1)
-    .timer 43,最后的较量 RP
-    .mob 炮艇兽人步兵
-    .target 罗娜·克罗雷
+    .timer 43,Endgame RP
+    .mob Gunship Grunt
+    .target Lorna Crowley
     .mob Korm Bonegrind
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_罗娜·克罗雷|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Lorna Crowley|r
     .goto 179,41.65,36.52
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_罗娜·克罗雷|r 对话。
-    .turnin 26706 >>交任务 最后的较量
-    .target 罗娜·克罗雷
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorna Crowley|r.
+    .turnin 26706 >>Turn in Endgame
+    .target Lorna Crowley
 step
-    #arrowtext 与 |cRXP_FRIENDLY_夜风将军|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Admiral Nightwind|r
     #label Rut'theran Village
     .goto 179,42.59,35.95
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_夜风将军|r对话
-    .accept 14434 >>接受任务 鲁瑟兰村
-    .turnin 14434 >>交任务 鲁瑟兰村
-    .target 夜风将军
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Admiral Nightwind|r
+    .accept 14434 >>Accept Rut'theran Village
+    .turnin 14434 >>Turn in Rut'theran Village
+    .target Admiral Nightwind
 step
-    #arrowtext 点击\n|cRXP_PICK_传送门前往暴风城|r
+    #arrowtext Click\n|cRXP_PICK_Portal to Stormwind|r
     .goto 57,55.03,93.72
-    .zone 84 >>|TInterface/cursor/crosshair/interact.blp:20|t点击在 |cRXP_PICK_到暴风城的传送门|r。
+    .zone 84 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal to Stormwind|r.
 step << Alliance
-    #include RestedXP 快速升级\a) GC 克罗米时间塔楼
+    #include RestedXP 快速升级\a) GC Chromie Time Tower
 
 ]])
     --Gilneas: Skip
@@ -22441,7 +22439,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP 快速升级
-#name a) 吉尔尼斯：跳过
+#name a) Gilneas: Skip
 #next ba)巨龙时代联盟开场至暗之夜(联盟) << Alliance
 #next b1) 争霸艾泽拉斯介绍 << Horde
 #chapter
@@ -22457,40 +22455,40 @@ RXPGuides.RegisterGuide([[
 #version 2
 #group RestedXP 快速升级
 #subgroup |cFFFCDC00(1-90)|r 默认
-#name a) 黑铁矮人 开场
-#displayname |cFF1EFF001|r - 暗炉城
+#name a) DarkIronDwarf Intro
+#displayname |cFF1EFF001|r - Shadowforge City
 #next RestedXP 快速升级\ba)巨龙时代联盟开场至暗之夜(联盟)
 
 << Alliance DarkIronDwarf !DK
 
 step
-    #arrowtext 与 |cRXP_FRIENDLY_茉艾拉·索瑞森|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Moira Thaurissan|r
     .goto 1186,56.43,31.86
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_茉艾拉·索瑞森|r 对话。
-    .accept 51486 >>接受任务 为了联盟
-    .target 茉艾拉·索瑞森
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moira Thaurissan|r.
+    .accept 51486 >>Accept For the Alliance
+    .target Moira Thaurissan
 step
     #completewith next
     #label For the Alliance
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_穆加德大使|r 对话。
-    .turnin 51486 >>交任务 为了联盟
-    .accept 53500 >>接受任务 异乡异客
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ambassador Moorgard|r.
+    .turnin 51486 >>Turn in For the Alliance
+    .accept 53500 >>Accept Stranger in a Strange Land
     .target Ambassador Moorgard
 step
-    #arrowtext 点击 |cRXP_PICK_钻探机|r
+    #arrowtext Click\n|cRXP_PICK_Mole Machine|r
     #completewith For the Alliance
     .goto 1186,59.27,26.52
-    .zone 84 >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_钻探机|r。
+    .zone 84 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Mole Machine|r.
 step
-    #arrowtext 与 |cRXP_FRIENDLY_穆加德大使|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Ambassador Moorgard|r
     #requires For the Alliance
     .goto 84,53.059,15.259
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_穆加德大使|r 对话。
-    .turnin 51486 >>交任务 为了联盟
-    .accept 53500 >>接受任务 异乡异客
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ambassador Moorgard|r.
+    .turnin 51486 >>Turn in For the Alliance
+    .accept 53500 >>Accept Stranger in a Strange Land
     .target Ambassador Moorgard
 step
-    #include RestedXP 快速升级\a) GC 克罗米时间 普通@ChromieTime-ChromieTime
+    #include RestedXP 快速升级\a) GC Chromie Time Normal@ChromieTime1-ChromieTime2
 -- step
 --     .goto 84,56.257,17.311
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
@@ -22500,13 +22498,13 @@ step
 --     .skipgossipid 51902
 --     .target Chromie
 step
-    #arrowtext 与 |cRXP_FRIENDLY_马德里克·驻铁|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Mudrik Leger|r
     .goto 84,56.199,17.671
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_马德里克·驻铁|r对话。
-    .turnin 53500 >>交任务 异乡异客
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mudrik Leger|r.
+    .turnin 53500 >>Turn in Stranger in a Strange Land
     .target Mudrik Leger
 step
-    #include RestedXP 快速升级\a) GC 克罗米时间 普通@CallBoardStart-CallBoardEnd
+    #include RestedXP 快速升级\a) GC Chromie Time Normal@CallBoardStart-CallBoardEnd
 ]])
 --KulTiran: Boralus
 RXPGuides.RegisterGuide([[
@@ -22514,45 +22512,45 @@ RXPGuides.RegisterGuide([[
 #version 2
 #group RestedXP 快速升级
 #subgroup |cFFFCDC00(1-90)|r 默认
-#name a) 库尔提拉斯人 开场
-#displayname |cFF1EFF001|r - 伯拉勒斯
+#name a) KulTiran Intro
+#displayname |cFF1EFF001|r - Boralus
 #next RestedXP 快速升级\ba)巨龙时代联盟开场至暗之夜(联盟)
 
 << Alliance KulTiran !DK
 
 step
-    #arrowtext 与 |cRXP_FRIENDLY_凯瑟琳·普罗德摩尔|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Katherine Proudmoore|r
     .goto 1161,67.71,21.77
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_凯瑟琳·普罗德摩尔|r 对话。
-    .accept 55142 >>接受任务 为了联盟
-    .target 凯瑟琳·普罗德摩尔
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Katherine Proudmoore|r.
+    .accept 55142 >>Accept For the Alliance
+    .target Katherine Proudmoore
 step
     #completewith next
     #label KultiranAllied1
     .goto 1161,67.06,23.59,10,0
     .goto 1161,69.75,24.76,20,0
     .goto 1161,70.43,17.67,10,0
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_暴风城传送门|r。
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Stormwind Portal|r.
     .complete 55142,1 --1/1 Portal to Stormwind Taken
 step
-    #arrowtext 跟随箭头
+    #arrowtext Follow the arrow
     #completewith KultiranAllied1
-    .goto 1161,70.1,16.8,15 >>跟随箭头
+    .goto 1161,70.1,16.8,15 >>Follow the Arrow
 step
-    #arrowtext 点击 |cRXP_PICK_暴风城传送门|r
+    #arrowtext Click\n|cRXP_PICK_Stormwind Portal|r
     #requires KultiranAllied1
     .goto 1161,70.1,16.8
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_暴风城传送门|r。
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Stormwind Portal|r.
     .complete 55142,1 --1/1 Portal to Stormwind Taken
 step
-    #arrowtext 与 |cRXP_FRIENDLY_穆加德大使|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Ambassador Moorgard|r
     .goto 84,53.059,15.259
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_穆加德大使|r 对话。
-    .turnin 55142 >>交任务 为了联盟
-    .accept 55146 >>接受任务 异乡异客
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ambassador Moorgard|r.
+    .turnin 55142 >>Turn in For the Alliance
+    .accept 55146 >>Accept Stranger in a Strange Land
     .target Ambassador Moorgard
 step
-    #include RestedXP 快速升级\a) GC 克罗米时间 普通@ChromieTime-ChromieTime
+    #include RestedXP 快速升级\a) GC Chromie Time Normal@ChromieTime1-ChromieTime2
 -- step
 --     .goto 84,56.257,17.311
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
@@ -22562,13 +22560,13 @@ step
 --     .skipgossipid 51902
 --     .target Chromie
 step
-    #arrowtext 与 |cRXP_FRIENDLY_供给官芙蕾|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Provisioner Fray|r
     .goto 84,56.199,17.671
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_供给官芙蕾|r对话。
-    .turnin 55146 >>交任务 异乡异客
-    .target 补给官 Frey
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Provisioner Fray|r.
+    .turnin 55146 >>Turn in Stranger in a Strange Land
+    .target Provisioner Fray
 step
-    #include RestedXP 快速升级\a) GC 克罗米时间 普通@CallBoardStart-CallBoardEnd
+    #include RestedXP 快速升级\a) GC Chromie Time Normal@CallBoardStart-CallBoardEnd
 ]])
 --LightforgedDraenei: The Vindicaar
 RXPGuides.RegisterGuide([[
@@ -22576,42 +22574,42 @@ RXPGuides.RegisterGuide([[
 #version 2
 #group RestedXP 快速升级
 #subgroup |cFFFCDC00(1-90)|r 默认
-#name a) 光铸德莱尼 开场
-#displayname |cFF1EFF001|r - 维迪卡尔
+#name a) LightforgedDraenei Intro
+#displayname |cFF1EFF001|r - The Vindicaar
 #next RestedXP 快速升级\ba)巨龙时代联盟开场至暗之夜(联盟)
 
 << Alliance LightforgedDraenei !DK
 
 step
-    #arrowtext 与 |cRXP_FRIENDLY_法瑞娅队长|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Captain Fareeya|r
     .goto 940,49.2,43.8
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_法瑞娅队长|r 对话。
-    .accept 49772 >>接受任务 为了联盟
-    .target 法瑞娅队长
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Fareeya|r.
+    .accept 49772 >>Accept For the Alliance
+    .target Captain Fareeya
 step
     #completewith next
     #label For the Alliance
     .goto 941,48.06,59.93,10,0
     .goto 941,54.21,59.45,10,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_穆加德大使|r 对话。
-    .turnin 49772 >>交任务 为了联盟
-    .accept 50313 >>接受任务 异乡异客
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ambassador Moorgard|r.
+    .turnin 49772 >>Turn in For the Alliance
+    .accept 50313 >>Accept Stranger in a Strange Land
     .target Ambassador Moorgard
 step
-    #arrowtext 点击\n|cRXP_PICK_传送门前往暴风城|r
+    #arrowtext Click\n|cRXP_PICK_Portal to Stormwind|r
     #completewith For the Alliance
     .goto 941,43.180,24.938
-    .zone 84 >>|TInterface/cursor/crosshair/interact.blp:20|t点击 |cRXP_PICK_通往暴风城的传送门|r。
+    .zone 84 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal to Stormwind|r.
 step
-    #arrowtext 与 |cRXP_FRIENDLY_穆加德大使|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Ambassador Moorgard|r
     #requires For the Alliance
     .goto 84,53.059,15.259
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_穆加德大使|r 对话。
-    .turnin 49772 >>交任务 为了联盟
-    .accept 50313 >>接受任务 异乡异客
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ambassador Moorgard|r.
+    .turnin 49772 >>Turn in For the Alliance
+    .accept 50313 >>Accept Stranger in a Strange Land
     .target Ambassador Moorgard
 step
-    #include RestedXP 快速升级\a) GC 克罗米时间 普通@ChromieTime-ChromieTime
+    #include RestedXP 快速升级\a) GC Chromie Time Normal@ChromieTime1-ChromieTime2
 -- step
 --     .goto 84,56.257,17.311
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
@@ -22621,13 +22619,13 @@ step
 --     .skipgossipid 51902
 --     .target Chromie
 step
-    #arrowtext 与 |cRXP_FRIENDLY_守备官敏奇|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Vindicator Minkey|r
     .goto 84,56.199,17.671
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_守备官敏奇|r 对话。
-    .turnin 50313 >>交任务 异乡异客
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vindicator Minkey|r.
+    .turnin 50313 >>Turn in Stranger in a Strange Land
     .target Vindicator Minkey
 step
-    #include RestedXP 快速升级\a) GC 克罗米时间 普通@CallBoardStart-CallBoardEnd
+    #include RestedXP 快速升级\a) GC Chromie Time Normal@CallBoardStart-CallBoardEnd
 ]])
 --Mechagnome: Mechagon City
 RXPGuides.RegisterGuide([[
@@ -22635,32 +22633,32 @@ RXPGuides.RegisterGuide([[
 #version 2
 #group RestedXP 快速升级
 #subgroup |cFFFCDC00(1-90)|r 默认
-#name a) 机械侏儒 开场
-#displayname |cFF1EFF001|r - 麦卡贡市
+#name a) Mechagnome Intro
+#displayname |cFF1EFF001|r - Mechagon City
 #next RestedXP 快速升级\ba)巨龙时代联盟开场至暗之夜(联盟)
 
 << Alliance Mechagnome !DK
 
 step
-    #arrowtext 与 |cRXP_FRIENDLY_High Tinker Mekkartonque|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_High Tinker Mekkartonque|r
     .goto 1573,18.67,67.5
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_大工匠梅卡托克|r 对话。
-    .accept 58146 >>接受任务 为了联盟
-    .target 高 Tinker Mekkartonque
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Tinker Mekkartonque|r.
+    .accept 58146 >>Accept For the Alliance
+    .target High Tinker Mekkartonque
 step
-    #arrowtext 踩上平台
+    #arrowtext Step on the platform
     .goto 1573,20.5,60.0
-    >>踩上平台。
+    >>Step on the platform.
     .complete 58146,1 --1/1 Teleport to Stormwind
 step
-    #arrowtext 与 |cRXP_FRIENDLY_穆加德大使|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Ambassador Moorgard|r
     .goto 84,53.059,15.259
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_穆加德大使|r 对话。
-    .turnin 58146 >>交任务 为了联盟
-    .accept 58147 >>接受任务 异乡异客
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ambassador Moorgard|r.
+    .turnin 58146 >>Turn in For the Alliance
+    .accept 58147 >>Accept Stranger in a Strange Land
     .target Ambassador Moorgard
 step
-    #include RestedXP 快速升级\a) GC 克罗米时间 普通@ChromieTime-ChromieTime
+    #include RestedXP 快速升级\a) GC Chromie Time Normal@ChromieTime1-ChromieTime2
 -- step
 --     .goto 84,56.257,17.311
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
@@ -22670,13 +22668,13 @@ step
 --     .skipgossipid 51902
 --     .target Chromie
 step
-    #arrowtext 与 |cRXP_FRIENDLY_鲁拉娜|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Lulana|r
     .goto 84,56.199,17.671
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_鲁拉娜|r对话。
-    .turnin 58147 >>交任务 异乡异客
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lulana|r.
+    .turnin 58147 >>Turn in Stranger in a Strange Land
     .target Lulana
 step
-    #include RestedXP 快速升级\a) GC 克罗米时间 普通@CallBoardStart-CallBoardEnd
+    #include RestedXP 快速升级\a) GC Chromie Time Normal@CallBoardStart-CallBoardEnd
 ]])
 --VoidElf: Telogrus Rift
 RXPGuides.RegisterGuide([[
@@ -22684,151 +22682,151 @@ RXPGuides.RegisterGuide([[
 #version 2
 #group RestedXP 快速升级
 #subgroup |cFFFCDC00(1-90)|r 默认
-#name a) 虚空精灵 开场
-#displayname |cFF1EFF001|r - 泰洛古斯裂隙
+#name a) VoidElf Intro
+#displayname |cFF1EFF001|r - Telogrus Rift
 #next RestedXP 快速升级\ba)巨龙时代联盟开场至暗之夜(联盟)
 
 << Alliance VoidElf !DK
 
 step
-    #arrowtext 与 |cRXP_FRIENDLY_奥蕾莉亚|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Alleria|r
     .goto 971,28.5,22.3
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_奥蕾莉亚|r 对话。
-    .accept 49788 >>接受任务 为了联盟
-    .target 奥蕾莉亚
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alleria|r.
+    .accept 49788 >>Accept For the Alliance
+    .target Alleria
 step
     #completewith next
     #label For the Alliance
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_穆加德大使|r 对话。
-    .turnin 49788 >>交任务 为了联盟
-    .accept 50305 >>接受任务 异乡异客
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ambassador Moorgard|r.
+    .turnin 49788 >>Turn in For the Alliance
+    .accept 50305 >>Accept Stranger in a Strange Land
     .disablecheckbox
     .target Ambassador Moorgard
 step
-    #arrowtext 点击\n|cRXP_PICK_传送门前往暴风城|r
+    #arrowtext Click\n|cRXP_PICK_Portal to Stormwind|r
     #completewith For the Alliance
     .goto 971,27.99,21.50
-    .zone 84 >>|TInterface/cursor/crosshair/interact.blp:20|t点击 |cRXP_PICK_通往暴风城的传送门|r。
+    .zone 84 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal to Stormwind|r.
 step
-    #arrowtext 与 |cRXP_FRIENDLY_穆加德大使|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Ambassador Moorgard|r
     #requires For the Alliance
     .goto 84,53.059,15.259
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_穆加德大使|r 对话。
-    .turnin 49788 >>交任务 为了联盟
-    .accept 50305 >>接受任务 异乡异客
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ambassador Moorgard|r.
+    .turnin 49788 >>Turn in For the Alliance
+    .accept 50305 >>Accept Stranger in a Strange Land
     .target Ambassador Moorgard
 step
-    #include RestedXP 快速升级\a) GC 克罗米时间 普通@ChromieTime-ChromieTime
+    #include RestedXP 快速升级\a) GC Chromie Time Normal@ChromieTime1-ChromieTime2
 step
-    #arrowtext 与 |cRXP_FRIENDLY_凯拉·暗鸦|r对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Keira Onyxraven|r
     .goto 84,56.199,17.671
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_凯拉·暗鸦|r对话。
-    .turnin 50305 >>交任务 异乡异客
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Keira Onyxraven|r.
+    .turnin 50305 >>Turn in Stranger in a Strange Land
     .target Keira Onyxraven
 step << DemonHunter !VoidElf
-    #arrowtext 点击 |cRXP_PICK_Hero's Call 游戏盘|r
+    #arrowtext Click\n|cRXP_PICK_Hero's Call Board|r
     .goto 84,62.21,29.84
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击 |cRXP_PICK_英雄的召唤公告牌|r
-    .accept 40519 >>接受任务 军团再临：军团回归
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Hero's Call Board|r
+    .accept 40519 >>Accept Legion: The Legion Returns
     .choose 1851120
 step << DemonHunter !VoidElf
-    #arrowtext 与 |cRXP_FRIENDLY_拉希奥|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Wrathion|r
     .goto 84,79.81,27.03
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拉希奥|r 对话。
-    .accept 65436 >>接受任务 巨龙群岛在等待
-    .target 拉希奥
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wrathion|r.
+    .accept 65436 >>Accept The Dragon Isles Await
+    .target Wrathion
 step << DemonHunter VoidElf
-    >>使用|T237449:0|t[沉思卷轴]并选择一名随从。
+    >>Use |T237449:0|t[Scroll of Reflection] and choose a follower.
     .complete 95215,1 --1/1 Use the Scroll of Reflection to choose between Kayn and Altruis
     .use 268551
 step << DemonHunter VoidElf
-    #arrowtext 与 |cRXP_FRIENDLY_大法师卡德加|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Archmage Khadgar|r
     .goto 84,72.55,47.03
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_大法师卡德加|r对话
-    .turnin 95215 >>交任务 新的方向
-    .target 大法师卡德加
-    .accept 39691 >>接受任务 战斗的召唤
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Khadgar|r
+    .turnin 95215 >>Turn in A New Direction
+    .target Archmage Khadgar
+    .accept 39691 >>Accept The Call of War
 step << DemonHunter VoidElf
     .goto 84,84.39,33.74
-    #title |cFFFCDC00跟随箭头|r
+    #title |cFFFCDC00Follow the Arrow|r
     .complete 39691,1 --1/1 Enter |cRXP_WARN_the Throne Room|r.
 step << DemonHunter VoidElf
-    #arrowtext 与 |cRXP_FRIENDLY_杰斯·织暗|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Jace Darkweaver|r
     .goto 84,84.39,33.74
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_杰斯·织暗|r 对话。
-    .turnin 39691 >>交任务 战斗的召唤
-    .accept 44471 >>接受任务 洞察视觉
-    .target 杰斯·织暗
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jace Darkweaver|r.
+    .turnin 39691 >>Turn in The Call of War
+    .accept 44471 >>Accept Second Sight
+    .target Jace Darkweaver
 step << DemonHunter VoidElf
-    >>|cRXP_WARN_使用幽灵视觉|r。
+    >>|cRXP_WARN_Use Spectral Sight|r.
     .complete 44471,1 --1/1 Spectral Sight used
     .usespell 188501
 step << DemonHunter VoidElf
-    #arrowtext 与 |cRXP_FRIENDLY_杰斯·织暗|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Jace Darkweaver|r
     .goto 84,84.39,33.74
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_杰斯·织暗|r 对话。
-    .turnin 44471 >>交任务 洞察视觉
-    .accept 44463 >>接受任务 恶魔四伏
-    .target 杰斯·织暗
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jace Darkweaver|r.
+    .turnin 44471 >>Turn in Second Sight
+    .accept 44463 >>Accept Demons Among Them
+    .target Jace Darkweaver
 step << DemonHunter VoidElf
-    #arrowtext 与\n|cRXP_FRIENDLY_安度因·乌瑞恩|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Anduin Wrynn|r
     .goto 84,85.90,31.60
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_安度因·乌瑞恩|r 对话。
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Anduin Wrynn|r.
     .complete 44463,1 --1/1 Warn Anduin Wrynn
     .skipgossipid 45043
-    .target 安度因·乌瑞恩
+    .target Anduin Wrynn
 step << DemonHunter VoidElf
-    #arrowtext 击杀 |cRXP_ENEMY_Demons|r
+    #arrowtext Kill\n|cRXP_ENEMY_Demons|r
     #loop
     .goto 84,86.03,34.8,25,0
     .goto 84,83.69,34.19,25,0
     .goto 84,84.07,30.96,25,0
-    >>击杀|cRXP_ENEMY_恶魔|r。
+    >>Kill |cRXP_ENEMY_Demons|r.
     .complete 44463,2 --5/5 Demons slain
-    .mob 魔刃刺客
+    .mob Felblade Assassin
 step << DemonHunter VoidElf
-    #arrowtext 与\n|cRXP_FRIENDLY_安度因·乌瑞恩|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Anduin Wrynn|r
     .goto 84,85.75,31.78
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_安度因·乌瑞恩|r 对话。
-    .turnin 44463 >>交任务 恶魔四伏
-    .accept 44473 >>接受任务 联盟的武器
-    .target 安度因·乌瑞恩
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Anduin Wrynn|r.
+    .turnin 44463 >>Turn in Demons Among Them
+    .accept 44473 >>Accept A Weapon of the Alliance
+    .target Anduin Wrynn
 step << DemonHunter VoidElf
-    #arrowtext 与 |cRXP_FRIENDLY_拉希奥|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Wrathion|r
     .goto 84,83.9,30.47,10,0
     .goto 84,79.81,27.03
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拉希奥|r 对话。
-    .accept 65436 >>接受任务 巨龙群岛在等待
-    .target 拉希奥
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wrathion|r.
+    .accept 65436 >>Accept The Dragon Isles Await
+    .target Wrathion
 step << DemonHunter VoidElf
-    #arrowtext 与 |cRXP_FRIENDLY_艾勒里奥·刃舞|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Elerion Bladedancer|r
     .goto 84,40.28,77.68
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾勒里奥·刃舞|r 对话
-    .turnin 44473 >>交任务 联盟的武器
-    .target 艾勒里奥·刃舞
-    .accept 44663 >>接受任务 眨眼之间
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elerion Bladedancer|r
+    .turnin 44473 >>Turn in A Weapon of the Alliance
+    .target Elerion Bladedancer
+    .accept 44663 >>Accept In the Blink of an Eye
 step << DemonHunter VoidElf
-    #arrowtext 与 |cRXP_FRIENDLY_肯瑞托使者|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Kirin Tor Emissary|r
     .goto 84,49.47,86.79,10,0
     .goto 84,49.01,87.58
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_肯瑞托大使|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kirin Tor Emissary|r
     .complete 44663,1 --1/1 Talk to the Kirin Tor Emissary to teleport you to Dalaran (Optional)
     .skipgossipid 51032
-    .target 肯瑞托大使
+    .target Kirin Tor Emissary
 step << DemonHunter VoidElf
-    #arrowtext 与 |cRXP_FRIENDLY_大法师卡德加|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Archmage Khadgar|r
     .goto 41,53.15,52.29,5,0
     .goto 41,49.84,48.28
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_大法师卡德加|r对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Khadgar|r
     .complete 44663,2 --1/1 Dalaran's Teleportation Witnessed
     .skipgossipid 45530
-    .target 大法师卡德加
+    .target Archmage Khadgar
 step << DemonHunter VoidElf
-    #arrowtext 与 |cRXP_FRIENDLY_奥布里吉大使|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Emissary Auldbridge|r
     .goto 627,57.60,45.75
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_奥布里吉大使|r 对话
-    .turnin 44663 >>交任务 眨眼之间
-    .target 奥布里吉大使
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emissary Auldbridge|r
+    .turnin 44663 >>Turn in In the Blink of an Eye
+    .target Emissary Auldbridge
 -- step
 --     #include RestedXP Speed Leveling\a) GC Chromie Time Normal@CallBoardStart2-CallBoardEnd
 -- step
@@ -22848,8 +22846,8 @@ step << DemonHunter VoidElf
 --     #include RestedXP Speed Leveling\a) DMF
 step
     .subzoneskip 6292
-    .isOnQuest 65436
-    >>使用 |T134309:0|t[失落的龙鳞] 传送至暴风城。
+    .isOnQuest 65436 --The Dragon Isles Await
+    >>Use |T134309:0|t[Lost Dragonscale] to teleport to Stormwind.
     .complete 65436,1 --1/1 Lost Dragonscale used to teleport to near Wrathion's location (Optional)
     .nodmf
     .use 205456
@@ -22865,8 +22863,8 @@ RXPGuides.RegisterGuide([[
 #version 2
 #group RestedXP 快速升级
 #subgroup |cFFFCDC00(1-90)|r 默认
-#name a) 流放者离岛部落
-#displayname |cFF1EFF001|r - 流放者离岛
+#name a) Exile's Reach Horde
+#displayname |cFF1EFF001|r - Exile's Reach
 #next b1) 争霸艾泽拉斯介绍
 
 
@@ -22932,70 +22930,70 @@ step
     .convertquest 87562,90843 << Horde
 step
     #completewith Brace for ImpactHorde
-    +|cRXP_WARN_在船上时无法显示箭头|r。
+    +|cRXP_WARN_The arrow cannot be displayed while you are on the ship|r.
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_萨尔|r 对话。
-    .accept 56775 >>接受任务 热身
-    .target 萨尔
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r.
+    .accept 56775 >>Accept Warming Up
+    .target Thrall
 step
     #include RestedXP 快速升级\a) 流放者离岛@CombatDummy-CombatDummy
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_萨尔|r 对话。
-    .turnin 56775 >>交任务 热身
-    .target 萨尔
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r.
+    .turnin 56775 >>Turn in Warming Up
+    .target Thrall
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_步兵索格|r 对话。
-    .accept 58209 >>接受任务 坚守阵地
-    .target 步兵索格
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grunt Throg|r.
+    .accept 58209 >>Accept Stand Your Ground
+    .target Grunt Throg
 step
-    >>击杀 |cRXP_ENEMY_步兵索格|r。
+    >>Kill |cRXP_ENEMY_Grunt Throg|r.
     .complete 58209,1 --1/1 Spar with Private Cole
-    .mob 步兵索格
+    .mob Grunt Throg
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_步兵索格|r 对话。
-    .turnin 58209 >>交任务 坚守阵地
-    .accept 58208 >>接受任务 抵御冲击
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grunt Throg|r.
+    .turnin 58209 >>Turn in Stand Your Ground
+    .accept 58208 >>Accept Brace for Impact
     .timer 12.5,Brace for Impact RP
-    .target 步兵索格
+    .target Grunt Throg
 step
     #completewith next
     #label Brace for Impact
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_萨尔|r 对话。
-    .turnin 58208 >>交任务 抵御冲击
-    .target 萨尔
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r.
+    .turnin 58208 >>Turn in Brace for Impact
+    .target Thrall
 step
     #completewith Brace for Impact
-    .countdown 12.3 >>|cRXP_WARN_在|cRXP_FRIENDLY_萨尔|r身旁等剧情结束|r。
+    .countdown 12.3 >>|cRXP_WARN_Wait for the Roleplay near |cRXP_FRIENDLY_Thrall|r|r.
 step
     #requires Brace for Impact
     #label Brace for ImpactHorde
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_萨尔|r 对话。
-    .turnin 58208 >>交任务 抵御冲击
-    .target 萨尔
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r.
+    .turnin 58208 >>Turn in Brace for Impact
+    .target Thrall
 step
     #include RestedXP 快速升级\a) 流放者离岛@HousingSelect1-HousingSelect2
 step
-    #arrowtext 与 |cRXP_FRIENDLY_萨尔|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Thrall|r
     .zoneskip 1409,1
     .goto 1409,61.88,82.89
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_萨尔|r 对话。
-    .accept 55122 >>接受任务 鱼人狂欢
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r.
+    .accept 55122 >>Accept Murloc Mania
     .choose 7338834
-    .target 萨尔
+    .target Thrall
 step
     #include RestedXP 快速升级\a) 流放者离岛@Murlocs-Murlocs
 step
-    #arrowtext 与 |cRXP_FRIENDLY_萨尔|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Thrall|r
     .zoneskip 1409,1
     .goto 1409,61.88,82.89
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_萨尔|r 对话。
-    .turnin 55122 >>交任务 鱼人狂欢
-    .accept 54951 >>接受任务 紧急治疗
-    .target 萨尔
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r.
+    .turnin 55122 >>Turn in Murloc Mania
+    .accept 54951 >>Accept Emergency First Aid
+    .target Thrall
 step
-    #arrowtext 点击 |cRXP_PICK_老波|r、|cRXP_PICK_米斯德兰·寻曦者|r和|cRXP_PICK_拉娜·乔丹|r
+    #arrowtext Click\n|cRXP_PICK_Bo|r and |cRXP_PICK_Mithdran Dawntracker|r and |cRXP_PICK_Lana Jordan|r
     .zoneskip 1409,1
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_老波|r，|cRXP_PICK_米斯德兰·寻曦者|r，和 |cRXP_PICK_拉娜·乔丹|r。
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Bo|r , |cRXP_PICK_Mithdran Dawntracker|r, and |cRXP_PICK_Lana Jordan|r.
     .complete 54951,2 --1/1 First Aid Kit used on Kee-La
     .goto 1409,61.73,83.48,-1
     .complete 54951,3 --1/1 First Aid Kit used on Austin Huxworth
@@ -23004,107 +23002,107 @@ step
     .goto 1409,61.56,82.24,-1
     .use 168410
     .target Bo
-    .target 米斯德兰·寻曦者
-    .target 拉娜·乔丹
+    .target Mithdran Dawntracker
+    .target Lana Jordan
 step
-    #arrowtext 与 |cRXP_FRIENDLY_萨尔|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Thrall|r
     .zoneskip 1409,1
     .goto 1409,61.88,82.89
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_萨尔|r 对话。
-    .turnin 54951 >>交任务 紧急治疗
-    .accept 54952 >>接受任务 寻找失踪的考察队
-    .target 萨尔
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r.
+    .turnin 54951 >>Turn in Emergency First Aid
+    .accept 54952 >>Accept Finding the Lost Expedition
+    .target Thrall
 step
     #include RestedXP 快速升级\a) 流放者离岛@expedition survivors-expedition survivors
 step
-    #arrowtext 与 |cRXP_FRIENDLY_督军布雷卡·恐斧|r对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Warlord Breka Grimaxe|r
     .zoneskip 1409,1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_督军布雷卡·恐斧|r 对话。
-    .turnin 54952 >>交任务 寻找失踪的考察队
-    .accept 55174 >>接受任务 烹调肉食
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Warlord Breka Grimaxe|r.
+    .turnin 54952 >>Turn in Finding the Lost Expedition
+    .accept 55174 >>Accept Cooking Meat
     .goto 1409,58.39,74.57
-    .target +督军布雷卡·恐斧
+    .target +Warlord Breka Grimaxe
 step
     #include RestedXP 快速升级\a) 流放者离岛@Raw Meat-campfire
 step << Hunter
-    #arrowtext 与 |cRXP_FRIENDLY_雯莎|r对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Won'sa|r
     .zoneskip 1409,1
     .goto 1409,58.36,74.47
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雯莎|r 对话。
-    .turnin 55174 >>交任务 烹调肉食
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Won'sa|r.
+    .turnin 55174 >>Turn in Cooking Meat
     .timer 3,RP
-    .target 雯莎
+    .target Won'sa
 step << Hunter
-    #arrowtext 与 |cRXP_FRIENDLY_雯莎|r对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Won'sa|r
     .zoneskip 1409,1
     .goto 1409,58.36,74.47
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_FRIENDLY_剧情结束后|r再次与|cRXP_WARN_雯莎|r对话。
-    .accept 55173 >>接受任务 向北而行
-    .target 雯莎
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Won'sa|r again |cRXP_WARN_after the roleplay|r.
+    .accept 55173 >>Accept Northbound
+    .target Won'sa
 step << !Hunter
-    #arrowtext 与 |cRXP_FRIENDLY_雯莎|r和|cRXP_FRIENDLY_督军布雷卡·恐斧|r对话 << !Hunter
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Won'sa|r and |cRXP_FRIENDLY_Warlord Breka Grimaxe|r << !Hunter
     .zoneskip 1409,1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雯莎|r 和 |cRXP_FRIENDLY_督军布雷卡·恐斧|r 对话。 << !Hunter
-    .turnin 55174 >>交任务 烹调肉食
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Won'sa|r and |cRXP_FRIENDLY_Warlord Breka Grimaxe|r. << !Hunter
+    .turnin 55174 >>Turn in Cooking Meat
     .goto 1409,58.36,74.47
-    .target +艾蕾利亚
-    .accept 59339 >>接受任务 强化战斗技巧 << Monk
-    .accept 59254 >>接受任务 强化战斗技巧 << !Monk
+    .target +Alaria
+    .accept 59339 >>Accept Enhanced Combat Tactics << Monk
+    .accept 59254 >>Accept Enhanced Combat Tactics << !Monk
     .goto 1409,58.38,74.63
-    .target +嘉里克船长
+    .target +Captain Garrick
 step
     #include RestedXP 快速升级\a) 流放者离岛@ClassQuests-ClassQuests
 step << !Hunter
-    #arrowtext 与 |cRXP_FRIENDLY_督军布雷卡·恐斧|r和|cRXP_FRIENDLY_雯莎|r对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Warlord Breka Grimaxe|r and |cRXP_FRIENDLY_Won'sa|r
     .zoneskip 1409,1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_FRIENDLY_剧情结束后|r与|cRXP_FRIENDLY_督军布雷卡·恐斧|r和|cRXP_WARN_雯莎|r 对话。
-    .turnin 59339 >>交任务 强化战斗技巧 <<Monk
-    .turnin 59254 >>交任务 强化战斗技巧 <<!Hunter !Monk
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Warlord Breka Grimaxe|r and |cRXP_FRIENDLY_Won'sa|r |cRXP_WARN_after the roleplay|r.
+    .turnin 59339 >>Turn in Enhanced Combat Tactics <<Monk
+    .turnin 59254 >>Turn in Enhanced Combat Tactics <<!Hunter !Monk
     .goto 1409,58.36,74.63
-    .target +督军布雷卡·恐斧
-    .accept 55173 >>接受任务 向北而行
+    .target +Warlord Breka Grimaxe
+    .accept 55173 >>Accept Northbound
     .goto 1409,58.36,74.48
-    .target +雯莎
+    .target +Won'sa
 step
-    #arrowtext 与 |cRXP_FRIENDLY_米斯德兰·寻曦者|r对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Mithdran Dawntracker|r
     .zoneskip 1409,1
     .goto 1409,62.72,69.85
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_米斯德兰·寻曦者|r 对话。
-    .turnin 55173 >>交任务 向北而行
-    .accept 59342 >>接受任务 野性可驯 << Hunter
-    .accept 55184 >>接受任务 Forbidden Quilboar 暗影魔法 <<!Hunter
-    .accept 55186 >>接受任务 打倒野猪人 <<!Hunter
-    .target 米斯德兰·寻曦者
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mithdran Dawntracker|r.
+    .turnin 55173 >>Turn in Northbound
+    .accept 59342 >>Accept Taming the Wilds << Hunter
+    .accept 55184 >>Accept Forbidden Quilboar Shadow Magic <<!Hunter
+    .accept 55186 >>Accept Down with the Quilboar <<!Hunter
+    .target Mithdran Dawntracker
 step
     #include RestedXP 快速升级\a) 流放者离岛@HunterTameStart-HunterTameEnd
 step << Hunter
-    #arrowtext 与 |cRXP_FRIENDLY_米斯德兰·寻曦者|r对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Mithdran Dawntracker|r
     .zoneskip 1409,1
     .goto 1409,62.72,69.85
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_米斯德兰·寻曦者|r 对话。
-    .turnin 59342 >>交任务 野性可驯
-    .accept 55184 >>接受任务 Forbidden Quilboar 暗影魔法
-    .accept 55186 >>接受任务 打倒野猪人
-    .target 米斯德兰·寻曦者
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mithdran Dawntracker|r.
+    .turnin 59342 >>Turn in Taming the Wilds
+    .accept 55184 >>Accept Forbidden Quilboar Shadow Magic
+    .accept 55186 >>Accept Down with the Quilboar
+    .target Mithdran Dawntracker
 step
     #include RestedXP 快速升级\a) 流放者离岛@Quilboar Shadow Magic-QuilboarEnd
 step
-    #arrowtext 与 |cRXP_FRIENDLY_米斯德兰·寻曦者|r和|cRXP_FRIENDLY_考克·菲兹波普|r对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Mithdran Dawntracker|r and |cRXP_FRIENDLY_Cork Fizzlepop|r
     .zoneskip 1409,1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_米斯德兰·寻曦者|r 和 |cRXP_FRIENDLY_考克·菲兹波普|r 对话。
-    .turnin 55184 >>交任务 Forbidden Quilboar 暗影魔法
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mithdran Dawntracker|r and |cRXP_FRIENDLY_Cork Fizzlepop|r.
+    .turnin 55184 >>Turn in Forbidden Quilboar Shadow Magic
     .goto 1409,56.26,59.17
-    .target +米斯德兰·寻曦者
-    .turnin 55186 >>交任务 打倒野猪人
-    .accept 55193 >>接受任务 强力直升爪Mk5型
+    .target +Mithdran Dawntracker
+    .turnin 55186 >>Turn in Down with the Quilboar
+    .accept 55193 >>Accept The Choppy Booster Mk. 5
     .timer 16.2,RP
     .goto 1409,56.17,59.12
-    .target +考克·菲兹波普
+    .target +Cork Fizzlepop
 step
-    #arrowtext 点击\n|cRXP_PICK_Chest|r
+    #arrowtext Click\n|cRXP_PICK_Chest|r
     .zoneskip 1409,1
     .goto 1409,58.51,59.30
-    .turnin 56579 >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_宝箱|r
+    .turnin 56579 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Chest|r
     .use 175212 << Warrior/Paladin --Expeditionary Plate Warboots
     .use 175214 << Hunter/Shaman --Expeditionary Mail Sabatons
     .use 175213 << Mage/Priest/Warlock --Expeditionary Cloth Boots
@@ -23113,34 +23111,34 @@ step
     .zoneskip 1409,1
     #completewith next
     #label The Choppy Booster Mk. 5
-    >>|cRXP_WARN_等待剧情演出|r。
+    >>|cRXP_WARN_Wait for the Roleplay|r.
     .complete 55193,1 --1/1 Use the The Choppy Booster Mk. 5 to scout the Area
 step
-    #arrowtext 点击 |cRXP_PICK_强力直升爪Mk5型|r
+    #arrowtext Click\n|cRXP_PICK_The Choppy Booster Mk. 5|r
     .zoneskip 1409,1
     #completewith The Choppy Booster Mk. 5
     .goto 1409,56.08,58.81
-    .vehicle >>点击|cRXP_PICK_强力直升爪Mk5型|r
+    .vehicle >>Click on |cRXP_PICK_The Choppy Booster Mk. 5|r
     .timer 32.5,RP
-    .target 强力直升爪Mk5型
+    .target The Choppy Booster Mk. 5
 step
-    #arrowtext 等待剧情演出
+    #arrowtext Wait for the roleplay
     .zoneskip 1409,1
     #requires The Choppy Booster Mk. 5
-    >>|cRXP_WARN_等待剧情演出|r。
+    >>|cRXP_WARN_Wait for the Roleplay|r.
     .goto 1409,56.08,58.81
     .complete 55193,1 --1/1 Use the The The Choppy Booster Mk. 5 to scout the Area
-    .timer 28,强力直升爪Mk5型 飞行RP
+    .timer 28,The Choppy Booster Mk. 5 Flight RP
 step
-    #arrowtext 与 |cRXP_FRIENDLY_考克·菲兹波普|r对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Cork Fizzlepop|r
     .zoneskip 1409,1
     .goto 1409,56.16,59.11
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_考克·菲兹波普|r 对话。
-    .turnin 55193 >>交任务 强力直升爪Mk5型
-    .accept 56034 >>接受任务 调整局面
-    .target 考克·菲兹波普
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cork Fizzlepop|r.
+    .turnin 55193 >>Turn in The Choppy Booster Mk. 5
+    .accept 56034 >>Accept Re-sizing the Situation
+    .target Cork Fizzlepop
 step
-    #arrowtext 点击 |cRXP_PICK_游荡的野猪|r
+    #arrowtext Click\n|cRXP_PICK_Wandering Boar|r
     .zoneskip 1409,1
     #loop
     .goto 1409,55.9,59.79,10,0
@@ -23151,54 +23149,54 @@ step
     .goto 1409,57.99,56.93,30,0
     .goto 1409,58.11,59.68,30,0
     .goto 1409,56.13,60.71,30,0
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击一个 |cRXP_PICK_流浪的野猪|r。
-    *|cRXP_WARN_在任务物品冷却期间，将最后一头野猪引到营地|r。
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on a |cRXP_PICK_Wandering Boar|r.
+    *|cRXP_WARN_While the quest item is on cooldown, kite the last Boar back to the camp|r.
     .complete 56034,1 --3/3 Re-Sizer v9.0.1 tested on Wandering Boars
-    .mob 游荡的野猪
+    .mob Wandering Boar
     .use 170557
 step
-    #arrowtext 与 |cRXP_FRIENDLY_萨尔|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Thrall|r
     .zoneskip 1409,1
     .goto 1409,56.24,59.04
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_萨尔|r 对话。
-    .turnin 56034 >>交任务 调整局面
-    .target 萨尔
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r.
+    .turnin 56034 >>Turn in Re-sizing the Situation
+    .target Thrall
 step
-    #arrowtext 与 |cRXP_FRIENDLY_考克·菲兹波普|r对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Cork Fizzlepop|r
     .zoneskip 1409,1
     .goto 1409,56.17,59.13
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_考克·菲兹波普|r 对话。
-    .accept 55879 >>接受任务 死亡调整器
-    .target 考克·菲兹波普
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cork Fizzlepop|r.
+    .accept 55879 >>Accept The Re-Deather
+    .target Cork Fizzlepop
 step
-    #arrowtext 点击 |cRXP_PICK_强力直升爪Mk5型|r
+    #arrowtext Click\n|cRXP_PICK_Choppy Booster Mk. 5|r
     .zoneskip 1409,1
     .goto 1409,56.06,58.79
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_强力直升爪Mk5型|r。
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Choppy Booster Mk. 5|r.
     .complete 55879,1 --1/1 Ride the Giant Boar
-    .target 强力直升爪Mk5型
+    .target Choppy Booster Mk. 5
 step
     .zoneskip 1409,1
-    >>对|cRXP_ENEMY_巨尸|r使用|T2735166:0|t[改进过的调整器](1)。
+    >>Use |T2735166:0|t[Re-sizer Blast] (1) on |cRXP_ENEMY_Monstrous Cadavers|r.
     .complete 55879,2 --8/8 Monstrous Cadaver slain
     .timer 12.5,RP
-    .mob 巨尸
+    .mob Monstrous Cadaver
 step
     #include RestedXP 快速升级\a) 流放者离岛@GiantBoarEnd-GiantBoarEnd
 step
-    #arrowtext 与 |cRXP_FRIENDLY_拉希奥|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Wrathion|r
     .zoneskip 1409,1
     .goto 1409,52.59,53.34
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拉希奥|r 对话。
-    .turnin 55879,1 >>交任务 死亡调整器
-    .target 拉希奥
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wrathion|r.
+    .turnin 55879,1 >>Turn in The Re-Deather
+    .target Wrathion
 step
-    #arrowtext 与 |cRXP_FRIENDLY_督军布雷卡·恐斧|r对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Warlord Breka Grimaxe|r
     .zoneskip 1409,1
     .goto 1409,52.17,55.35
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_督军布雷卡·恐斧|r 对话。
-    .accept 59950 >>接受任务 囤积补给
-    .target 督军布雷卡·恐斧
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Warlord Breka Grimaxe|r.
+    .accept 59950 >>Accept Stocking Up on Supplies
+    .target Warlord Breka Grimaxe
     .use 175164 << Mage/Priest/Warlock/Druid/Monk/Shaman --Expeditionary Staff
     .use 175163 << Druid/Monk/Hunter --Expeditionary Quarterstaff
     .use 175165 << Warrior/Paladin --Expeditionary Greataxe
@@ -23207,48 +23205,48 @@ step
     .use 175169 << Hunter --Expeditionary Longbow
     .use 175174 << Priest/Druid/Monk/Shaman/Paladin/Rogue --Expeditionary Cudgel
 step
-    #arrowtext 与 |cRXP_FRIENDLY_供给商金哈柯|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Provisioner Jin'hake|r
     .zoneskip 1409,1
     .goto 1409,52.46,55.67
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_供给商金哈柯|r 对话并出售任何物品。
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Provisioner Jin'hake|r and sell any item.
     .complete 55194,2 --Any Item sold to Provisioner Jin'hake
     .complete 55194,1 --Any Item purchased from Provisioner Jin'hake
-    .target 供给商金哈柯
+    .target Provisioner Jin'hake
 step
-    #arrowtext 与 |cRXP_FRIENDLY_萨尔|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Thrall|r
     .zoneskip 1409,1
     .goto 1409,52.17,55.35
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_萨尔|r 对话。
-    .turnin 59950 >>交任务 囤积补给
-    .target 萨尔
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r.
+    .turnin 59950 >>Turn in Stocking Up on Supplies
+    .target Thrall
 step << Warrior/Warlock/Paladin/Priest/Rogue
-    #arrowtext 与 |cRXP_FRIENDLY_步兵索格|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Grunt Throg|r
     .zoneskip 1409,1
     .goto 1409,52.03,55.47
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_步兵索格|r 对话。
-    .accept 58917 >>接受任务 潜行者的末路 << Rogue
-    .accept 58914 >>接受任务 战士的终点 << Warrior
-    .accept 58953 >>接受任务 牧师的终途 << Priest
-    .accept 58923 >>接受任务 圣骑士的效劳 << Paladin
-    .accept 58962 >>接受任务 术士的交易 << Warlock
-    .target 步兵索格
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grunt Throg|r.
+    .accept 58917 >>Accept A Rogue's End << Rogue
+    .accept 58914 >>Accept A Warrior's End << Warrior
+    .accept 58953 >>Accept A Priest's End << Priest
+    .accept 58923 >>Accept A Paladin's Service << Paladin
+    .accept 58962 >>Accept A Warlock's Bargain << Warlock
+    .target Grunt Throg
 step << Shaman
     #include RestedXP 快速升级\a) 流放者离岛@GhostWolf-GhostWolf
 step
-    #arrowtext 与 |cRXP_FRIENDLY_拉娜·乔丹|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Lana Jordan|r
     .zoneskip 1409,1
     .goto 1409,52.89,56.47
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拉娜·乔丹|r 对话。
-    .accept 59948 >>接受任务 西部边界
-    .target 拉娜·乔丹
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lana Jordan|r.
+    .accept 59948 >>Accept Westward Bound
+    .target Lana Jordan
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_修加·恐斧|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Shuja Grimaxe|r
     .zoneskip 1409,1
     .goto 1409,53.79,52.17
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_修加·恐斧|r 对话。
-    .accept 55196 >>接受任务 鹰身人的问题
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shuja Grimaxe|r.
+    .accept 55196 >>Accept The Harpy Problem
     .timer 33,RP
-    .target 修加·恐斧
+    .target Shuja Grimaxe
 step << Shaman
     #include RestedXP 快速升级\a) 流放者离岛@VeilBlossomStart-VeilBlossomEnd
 step << Warlock
@@ -23256,59 +23254,59 @@ step << Warlock
 step << Warrior
     #include RestedXP 快速升级\a) 流放者离岛@Hjalmar's Final Execution-Execute
 step << !Shaman\!Warlock\!Warrior
-    #arrowtext 与\n|cRXP_FRIENDLY_光耀之子|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Lightspawn|r
     .zoneskip 1409,1
     .goto 1409,55.71,48.32,15,0
     .goto 1409,58.20,50.22
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_光耀之子|r 对话。
-    .accept 54933 >>接受任务 圣光解救
-    .target 光耀之子
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Lightspawn|r.
+    .accept 54933 >>Accept Freeing the Light
+    .target Lightspawn
 step << !Shaman\!Warlock\!Warrior
-    #arrowtext 点击\n|cRXP_PICK_Orb|r
+    #arrowtext Click\n|cRXP_PICK_Orb|r
     .zoneskip 1409,1
     .goto 1409,57.42,49.68
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_宝珠|r。
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Orb|r.
     .complete 54933,1 --1/1 First necrotic energy dispersed
 step
-    #arrowtext 与 |cRXP_FRIENDLY_老波|r和|cRXP_FRIENDLY_修加·恐斧|r对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Bo|r and |cRXP_FRIENDLY_Shuja Grimaxe|r
     .zoneskip 1409,1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布尔|r 和 |cRXP_FRIENDLY_修加·恐斧|r 对话。
-    .turnin 55196 >>交任务 鹰身人的问题
-    .accept 55764 >>接受任务 消灭鹰身人
-    .accept 55881 >>接受任务 净化图腾
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bo|r and |cRXP_FRIENDLY_Shuja Grimaxe|r.
+    .turnin 55196 >>Turn in The Harpy Problem
+    .accept 55764 >>Accept Harpy Culling
+    .accept 55881 >>Accept Purge the Totems
     .goto 1409,56.94,46.25
-    .target +老波
-    .accept 55763 >>接受任务 拯救赫伯特·暗爆
+    .target +Bo
+    .accept 55763 >>Accept The Rescue of Herbert Gloomburst
     .goto 1409,56.83,46.18
-    .target +修加·恐斧
+    .target +Shuja Grimaxe
 step
     #include RestedXP 快速升级\a) 流放者离岛@HarpiesAreaStart-HarpiesAreaEnd
 step
-    #arrowtext 与 |cRXP_FRIENDLY_赫伯特·暗爆|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Herbert Gloomburst|r
     .zoneskip 1409,1
     .goto 1409,54.29,41.61
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_赫伯特·暗爆|r 对话。
-    *清理几波小怪，等|cRXP_ENEMY_血喙|r出现后将其击杀。
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Herbert Gloomburst|r.
+    *Kill the enemy waves, then kill |cRXP_ENEMY_Bloodbeak|r when he appears.
     .complete 55763,1 --1/1 Herbert Gloomburst rescued
     .skipgossipid 52949
-    .target 赫伯特·暗爆
-    .mob 血喙
+    .target Herbert Gloomburst
+    .mob Bloodbeak
 step
     #include RestedXP 快速升级\a) 流放者离岛@HarpiesAreaEnd2-HarpiesAreaEnd2
 step
-    #arrowtext 与 |cRXP_FRIENDLY_赫伯特·暗爆|r、|cRXP_FRIENDLY_老波|r和|cRXP_FRIENDLY_修加·恐斧|r对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Herbert Gloomburst|r and |cRXP_FRIENDLY_Bo|r and |cRXP_FRIENDLY_Shuja Grimaxe|r
     .zoneskip 1409,1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_赫伯特·暗爆|r, |cRXP_FRIENDLY_布尔|r, 和 |cRXP_FRIENDLY_修加·恐斧|r 对话。
-    .turnin 55763 >>交任务 拯救梅瑞迪·寻涌
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Herbert Gloomburst|r, |cRXP_FRIENDLY_Bo|r, and |cRXP_FRIENDLY_Shuja Grimaxe|r.
+    .turnin 55763 >>Turn in The Rescue of Meredy Huntswell
     .goto 1409,56.90,46.14
-    .target +赫伯特·暗爆
-    .turnin 55764 >>交任务 消灭鹰身人
+    .target +Herbert Gloomburst
+    .turnin 55764 >>Turn in Harpy Culling
     .goto 1409,56.93,46.25
-    .target +老波
-    .turnin 55881 >>交任务 净化图腾
-    .accept 55882 >>接受任务 带给基地的消息
+    .target +Bo
+    .turnin 55881 >>Turn in Purge the Totems
+    .accept 55882 >>Accept Message to Base
     .goto 1409,56.83,46.18
-    .target +修加·恐斧
+    .target +Shuja Grimaxe
 step
     #include RestedXP 快速升级\a) 流放者离岛@LightspawnStart1-LightspawnEnd2
 step << Priest
@@ -23320,51 +23318,51 @@ step
 step << Shaman
     #include RestedXP 快速升级\a) 流放者离岛@Capturedghostwolves1-Capturedghostwolves2
 step << Priest
-    #arrowtext 与 |cRXP_FRIENDLY_夏祖尔|r对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Sha'zul|r
     .zoneskip 1409,1
     .goto 1409,56.12,53.7
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_夏祖尔|r 对话。
-    .turnin 58953 >>交任务 牧师的终途
-    .accept 58960 >>接受任务 复活新兵
-    .target 夏祖尔
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sha'zul|r.
+    .turnin 58953 >>Turn in A Priest's End
+    .accept 58960 >>Accept Resurrecting the Recruits
+    .target Sha'zul
 step << Priest
     #include RestedXP 快速升级\a) 流放者离岛@PriestsEnd1-PriestsEnd1
 step << Priest
-    #arrowtext 与 |cRXP_FRIENDLY_夏祖尔|r对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Sha'zul|r
     .zoneskip 1409,1
     .goto 1409,56.12,53.7
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_夏祖尔|r 对话。
-    .turnin 58960 >>交任务 复活新兵
-    .target 夏祖尔
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sha'zul|r.
+    .turnin 58960 >>Turn in Resurrecting the Recruits
+    .target Sha'zul
 step << Warrior
-    #arrowtext 与 |cRXP_FRIENDLY_步兵索格|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Grunt Throg|r
     .zoneskip 1409,1
     .goto 1409,52.08,55.28
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_步兵索格|r 对话。
-    .turnin 58915 >>交任务 哈尔玛的最后处决
-    .target 步兵索格
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grunt Throg|r.
+    .turnin 58915 >>Turn In Hjalmar's Final Execution
+    .target Grunt Throg
 step << !Shaman
-    #arrowtext 与 |cRXP_FRIENDLY_萨尔|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Thrall|r
     .zoneskip 1409,1
     .goto 1409,52.18,55.35
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_萨尔|r 对话。
-    .turnin 55882 >>交任务 带给基地的消息
-    .target 萨尔
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r.
+    .turnin 55882 >>Turn in Message to Base
+    .target Thrall
 step << Rogue
     .zoneskip 1409,1
     #completewith RogueExilesEnd
-    +注意 |cRXP_ENEMY_可怕的灭爪|r；不要拉怪它。
+    +Be aware of |cRXP_ENEMY_Killclaw the Terrible|r; don't pull him.
     .mob Killclaw the Terrible
 step << Rogue
-    #arrowtext 与 |cRXP_FRIENDLY_德莉扎·侧袭者|r对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Drizza Sidestabber|r
     .zoneskip 1409,1
     .goto 1409,47.95,54.8,15,0
     .goto 1409,45.64,56.14
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德莉扎·侧袭者|r 对话。
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Drizza Sidestabber|r.
     .complete 58917,1 --1/1 First expedition's rogue found
     .skipgossipid 52644
     .skipgossipid 52645
-    .target 德莉扎·侧袭者
+    .target Drizza Sidestabber
     .use 175225 << Hunter/Shaman --Expeditionary Mail Leggings
     .use 175226 << Druid/Monk/Rogue --Expeditionary Leather Legguards
     .use 175223 << Warrior/Paladin --Expeditionary Plate Legguards
@@ -23372,54 +23370,54 @@ step << Rogue
 step << Rogue
     #include RestedXP 快速升级\a) 流放者离岛@RogueExilesStart1-RogueExilesEnd1
 step << Rogue
-    #arrowtext 与 |cRXP_FRIENDLY_德莉扎·侧袭者|r对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Drizza Sidestabber|r
     .zoneskip 1409,1
     .goto 1409,45.66,56.14
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德莉扎·侧袭者|r 对话。
-    .turnin 58917 >>交任务 潜行者的末路
-    .accept 58933 >>接受任务 最致命的药膏
-    .target 德莉扎·侧袭者
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Drizza Sidestabber|r.
+    .turnin 58917 >>Turn in A Rogue's End
+    .accept 58933 >>Accept The Deadliest of Poisons
+    .target Drizza Sidestabber
 step << Rogue
     #include RestedXP 快速升级\a) 流放者离岛@RogueExilesStart2-RogueExilesEnd2
 step << Hunter
-    #arrowtext 与 |cRXP_FRIENDLY_米斯德兰·寻曦者|r对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Mithdran Dawntracker|r
     .zoneskip 1409,1
     .goto 1409,52.56,55.44
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_米斯德兰·寻曦者|r 对话。
-    .accept 59355 >>接受任务 猎人的陷阱
-    .target 米斯德兰·寻曦者
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mithdran Dawntracker|r.
+    .accept 59355 >>Accept A Hunter's Trap
+    .target Mithdran Dawntracker
     .use 175225 << Hunter/Shaman --Expeditionary Mail Leggings
     .use 175226 << Druid/Monk/Rogue --Expeditionary Leather Legguards
     .use 175223 << Warrior/Paladin --Expeditionary Plate Legguards
     .use 175224 << Mage/Priest/Warlock --Expeditionary Cloth Leggings
 step << Hunter
-    #arrowtext 与 |cRXP_FRIENDLY_赫伯特·暗爆|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Herbert Gloomburst|r
     .zoneskip 1409,1
     .goto 1409,52.16,55.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_赫伯特·暗爆|r 对话。
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Herbert Gloomburst|r.
     .complete 59355,1 --1/1 Ice mote received from Herbert Gloomburst
     .skipgossipid 52664
-    .target 赫伯特·暗爆
+    .target Herbert Gloomburst
 step << Hunter
     #include RestedXP 快速升级\a) 流放者离岛@Rusted Chain-Old Spring
 step << Hunter
-    #arrowtext 与 |cRXP_FRIENDLY_米斯德兰·寻曦者|r对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Mithdran Dawntracker|r
     .zoneskip 1409,1
     .goto 1409,52.56,55.44
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_米斯德兰·寻曦者|r 对话。
-    .turnin 59355 >>交任务 猎人的陷阱
-    .accept 59356 >>接受任务 狩猎潜伏者
-    .target 米斯德兰·寻曦者
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mithdran Dawntracker|r.
+    .turnin 59355 >>Turn in A Hunter's Trap
+    .accept 59356 >>Accept Hunting the Stalker
+    .target Mithdran Dawntracker
 step << Hunter
     #include RestedXP 快速升级\a) 流放者离岛@Freezing trap-Freezing trap
 step << Hunter
-    #arrowtext 与 |cRXP_FRIENDLY_米斯德兰·寻曦者|r对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Mithdran Dawntracker|r
     .zoneskip 1409,1
    .goto 1409,52.56,55.44
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_FRIENDLY_在短剧结束后|r与|cRXP_WARN_米斯德兰·寻曦者|r对话。
-    .turnin 59356 >>交任务 狩猎潜伏者
-    .accept 60168 >>接受任务 驯服的艺术
-    .target 米斯德兰·寻曦者
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mithdran Dawntracker|r |cRXP_WARN_after a short roleplay|r.
+    .turnin 59356 >>Turn in Hunting the Stalker
+    .accept 60168 >>Accept The Art of Taming
+    .target Mithdran Dawntracker
 step << Hunter
     #include RestedXP 快速升级\a) 流放者离岛@DismissPet-DismissPet
 step << Hunter
@@ -23429,60 +23427,60 @@ step << Hunter
     #hidewindow
     .complete 60168,2 -- Speak with Mithdran Dawntracker to summon and tame your new pet
 step << Hunter
-    #arrowtext 与 |cRXP_FRIENDLY_米斯德兰·寻曦者|r对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Mithdran Dawntracker|r
     .zoneskip 1409,1
     #completewith Art of Taming
     .goto 1409,52.56,55.45
-    .gossipoption 52668 >>与 |cRXP_FRIENDLY_米斯德兰·寻曦者|r. 对话。
-    .timer 7,驯服的艺术 RP
-    .target 米斯德兰·寻曦者
+    .gossipoption 52668 >>Talk to |cRXP_FRIENDLY_Mithdran Dawntracker|r.
+    .timer 7,The Art of Taming RP
+    .target Mithdran Dawntracker
 step << Hunter
     .zoneskip 1409,1
     #requires Art of Taming
     .goto 1409,52.56,55.45
-    >>|cRXP_WARN_如果宠物在场，请解散宠物|r。
-    *对|cRXP_ENEMY_蝠蝠|r使用|T132164:0|t[驯服野兽] |cRXP_WARN_保持远距离|r。 << Undead
+    >>|cRXP_WARN_Dismiss your Pet if it's active|r.
+    *Use |T132164:0|t[Tame Beast] on the |cRXP_ENEMY_Bat|r |cRXP_WARN_from far away|r. << Undead
     << Troll
-    *对|cRXP_ENEMY_海龟|r使用|T132164:0|t[驯服野兽] |cRXP_WARN_从远处|r。 << Pandaren
-    *对|cRXP_ENEMY_平原陆行鸟|r使用|T132164:0|t[驯服野兽] |cRXP_WARN_保持远距离|r。 << Tauren
-    *对|cRXP_ENEMY_蝎子|r使用|T132164:0|t[驯服野兽] |cRXP_WARN_从远处|r。 << Goblin
-    *从|cRXP_ENEMY_远处|r对|cRXP_WARN_野猪|r使用|T132164:0|t[驯兽术]。 << BloodElf
-    *在|cRXP_ENEMY_狼|r上从远处使用|T132164:0|t[驯服野兽] |cRXP_WARN_从远处|r。 << !Pandaren !Goblin !BloodElf !Tauren !Undead
+    *Use |T132164:0|t[Tame Beast] on the |cRXP_ENEMY_Turtle|r |cRXP_WARN_from far away|r. << Pandaren
+    *Use |T132164:0|t[Tame Beast] on the |cRXP_ENEMY_Plainstrider|r |cRXP_WARN_from far away|r. << Tauren
+    *Use |T132164:0|t[Tame Beast] on the |cRXP_ENEMY_Scorpion|r |cRXP_WARN_from far away|r. << Goblin
+    *Use |T132164:0|t[Tame Beast] on the |cRXP_ENEMY_Boar|r |cRXP_WARN_from far away|r. << BloodElf
+    *Use |T132164:0|t[Tame Beast] on the |cRXP_ENEMY_Wolf|r |cRXP_WARN_from far away|r. << !Pandaren !Goblin !BloodElf !Tauren !Undead
     .complete 60168,2 -- Speak with Austin to summon and tame your new pet
     .usespell 1515
     .usespell 2641
-    .mob 经典怀旧服 NPC << Orc/Human
-    .mob 狗 << Worgen
-    .mob 狗 << Dwarf
+    .mob Wolf << Orc/Human
+    .mob Dog << Worgen
+    .mob Dog << Dwarf
     .mob Moth << Draenei
-    .mob 海龟 << Pandaren
-    .mob 机械 假人 << Gnome
-    .mob 平原陆行鸟 << Tauren
+    .mob Turtle << Pandaren
+    .mob Mechanical Bunny << Gnome
+    .mob Plainstrider << Tauren
     .mob Scorpion << Goblin
     .mob Tiger << NightElf
-    .mob 野猪 << BloodElf
+    .mob Boar << BloodElf
 step << Hunter
-    #arrowtext 与 |cRXP_FRIENDLY_米斯德兰·寻曦者|r对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Mithdran Dawntracker|r
     .zoneskip 1409,1
     .goto 1409,52.56,55.45
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_米斯德兰·寻曦者|r 对话。
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mithdran Dawntracker|r.
     .complete 60168,3 --Speak with Austin to learn about pet stables
     .skipgossipid 52666
-    .target 米斯德兰·寻曦者
+    .target Mithdran Dawntracker
 step << Hunter
-    #arrowtext 与 |cRXP_FRIENDLY_米斯德兰·寻曦者|r对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Mithdran Dawntracker|r
     .zoneskip 1409,1
     .goto 1409,52.56,55.45
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_米斯德兰·寻曦者|r 对话。
-    .turnin 60168 >>交任务 米斯德兰·寻曦者
-    .target 米斯德兰·寻曦者
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mithdran Dawntracker|r.
+    .turnin 60168 >>Turn in Mithdran Dawntracker
+    .target Mithdran Dawntracker
 step << Monk
-    #arrowtext 与 |cRXP_FRIENDLY_老波|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Bo|r
     .zoneskip 1409,1
     .goto 1409,52.04,55.21
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布尔|r 对话。
-    .accept 59347 >>接受任务 武僧的专注
-    .timer 34,武僧的专注 RP
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bo|r.
+    .accept 59347 >>Accept A Monk's Focus
+    .timer 34,A Monk's Focus RP
     .target Bo
     .use 175225 << Hunter/Shaman --Expeditionary Mail Leggings
     .use 175226 << Druid/Monk/Rogue --Expeditionary Leather Legguards
@@ -23492,53 +23490,53 @@ step << Monk
     .zoneskip 1409,1
     #completewith next
     #label Meditate with Bo
-    >>|cRXP_WARN_等待剧情演出|r。
+    >>|cRXP_WARN_Wait for the Roleplay|r.
     .complete 59347,1 --1/1 Meditate with Bo
 step << Monk
-    #arrowtext 与 |cRXP_FRIENDLY_老波|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Bo|r
     .zoneskip 1409,1
     #completewith Meditate with Bo
     .goto 1409,52.62,49.49
-    .gossipoption 52640 >>|cRXP_FRIENDLY_剧情结束后|r与|cRXP_WARN_布尔|r对话。
-    .timer 42,武僧的专注 RP
+    .gossipoption 52640 >>Talk to |cRXP_FRIENDLY_Bo|r |cRXP_WARN_after the roleplay|r.
+    .timer 42,A Monk's Focus RP
 step << Monk
-    #arrowtext 等待剧情演出
+    #arrowtext Wait for the roleplay
     .zoneskip 1409,1
     #requires Meditate with Bo
     .goto 1409,52.62,49.49
-    >>|cRXP_WARN_等待剧情演出|r。
+    >>|cRXP_WARN_Wait for the Roleplay|r.
     .complete 59347,1 --1/1 Meditate with Bo
     .target Bo
 step << Monk
-    #arrowtext 与 |cRXP_FRIENDLY_老波|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Bo|r
     .zoneskip 1409,1
     .goto 1409,52.63,49.48
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布尔|r 对话。
-    .turnin 59347 >>交任务 武僧的专注
-    .accept 59349 >>接受任务 最后的比试
-    .timer 5,最后的比试 RP
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bo|r.
+    .turnin 59347 >>Turn in A Monk's Focus
+    .accept 59349 >>Accept One Last Spar
+    .timer 5,One Last Spar RP
     .target Bo
 step << Monk
-    #arrowtext 击杀 |cRXP_ENEMY_老波|r
+    #arrowtext Defeat\n|cRXP_ENEMY_Bo|r
     .zoneskip 1409,1
     .goto 1409,53.72,50.24
-    >>击败|cRXP_ENEMY_布尔|r，可以时使用|T606552:0|t[死亡之触] |cRXP_WARN_能用的时候|r。
+    >>Defeat |cRXP_ENEMY_Bo|r use |T606552:0|t[Touch of Death] |cRXP_WARN_when you can|r.
     .complete 59349,1 --1/1 Touch of Death used on Bo
     .mob Bo
 step << Monk
-    #arrowtext 与 |cRXP_FRIENDLY_萨尔|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Thrall|r
     .zoneskip 1409,1
     .goto 1409,52.17,55.36
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_萨尔|r 对话。
-    .turnin 59349 >>交任务 最后的比试
-    .target 萨尔
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r.
+    .turnin 59349 >>Turn in One Last Spar
+    .target Thrall
 step << Mage
-    #arrowtext 与 |cRXP_FRIENDLY_赫伯特·暗爆|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Herbert Gloomburst|r
     .zoneskip 1409,1
     .goto 1409,52.16,55.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_赫伯特·暗爆|r 对话。
-    .accept 59352 >>接受任务 法师的知识
-    .target 赫伯特·暗爆
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Herbert Gloomburst|r.
+    .accept 59352 >>Accept A Mage's Knowledge
+    .target Herbert Gloomburst
     .use 175225 << Hunter/Shaman --Expeditionary Mail Leggings
     .use 175226 << Druid/Monk/Rogue --Expeditionary Leather Legguards
     .use 175223 << Warrior/Paladin --Expeditionary Plate Legguards
@@ -23546,73 +23544,73 @@ step << Mage
 step << Mage
     #include RestedXP 快速升级\a) 流放者离岛@Spell Book-Spell Book
 step << Mage
-    #arrowtext 与 |cRXP_FRIENDLY_赫伯特·暗爆|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Herbert Gloomburst|r
     .zoneskip 1409,1
     .goto 1409,52.16,55.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_赫伯特·暗爆|r 对话。
-    .turnin 59352 >>交任务 法师的知识
-    .timer 12,剧情表演
-    .target 赫伯特·暗爆
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Herbert Gloomburst|r.
+    .turnin 59352 >>Turn in A Mage's Knowledge
+    .timer 12,RP
+    .target Herbert Gloomburst
 step << Mage
-    #arrowtext 与 |cRXP_FRIENDLY_赫伯特·暗爆|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Herbert Gloomburst|r
     .zoneskip 1409,1
     .goto 1409,52.16,55.48
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_赫伯特·暗爆|r 对话。
-    .accept 59354 >>接受任务 绵羊的最佳用途
-    .target 赫伯特·暗爆
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Herbert Gloomburst|r.
+    .accept 59354 >>Accept The Best Way to Use Sheep
+    .target Herbert Gloomburst
 step << Mage
-    #arrowtext 与 |cRXP_FRIENDLY_赫伯特·暗爆|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Herbert Gloomburst|r
     .zoneskip 1409,1
     .goto 1409,52.16,55.48
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_赫伯特·暗爆|r 对话。
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Herbert Gloomburst|r.
     .complete 59354,1 --Speak with Meredy to being sparring (1)
-    .timer 18,绵羊的最佳用途 RP
+    .timer 18,The Best Way to Use Sheep RP
     .skipgossipid 52665
-    .target 赫伯特·暗爆
+    .target Herbert Gloomburst
 step << Mage
     .zoneskip 1409,1
-    >>跟随 |cRXP_FRIENDLY_赫伯特·暗爆|r 和 |cRXP_FRIENDLY_步兵索格|r。
-    *对其中一个使用|T136071:0|t[变形术]，稍等片刻，然后攻击被变羊那个。
+    >>Follow |cRXP_FRIENDLY_Herbert Gloomburst|r and |cRXP_FRIENDLY_Grunt Throg|r.
+    *Use |T136071:0|t[Polymorph] on one of them, wait a moment, then attack the polymorphed one.
     .complete 59354,2 --Practice Polymorph with Meredy or Cole
     .usespell 118
-    .timer 10,绵羊的最佳用途 RP
-    .target 赫伯特·暗爆
-    .target 步兵索格
+    .timer 10,The Best Way to Use Sheep RP
+    .target Herbert Gloomburst
+    .target Grunt Throg
 step << Mage
-    #arrowtext 与 |cRXP_FRIENDLY_赫伯特·暗爆|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Herbert Gloomburst|r
     .zoneskip 1409,1
     .goto 1409,52.16,55.48
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_赫伯特·暗爆|r 对话。
-    .turnin 59354 >>交任务 绵羊的最佳用途
-    .target 赫伯特·暗爆
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Herbert Gloomburst|r.
+    .turnin 59354 >>Turn in The Best Way to Use Sheep
+    .target Herbert Gloomburst
 step
     .zoneskip 1409,1
     #completewith next
     #label Who Lurks in the Pit1
     .goto 1409,52.36,56.6,10,0 <<!Shaman/!Rogue
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拉娜·乔丹|r 对话。
-    .turnin 55965 >>交任务 西部边界
-    .accept 55639 >>接受任务 谁藏在坑中
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lana Jordan|r.
+    .turnin 55965 >>Turn in Westward Bound
+    .accept 55639 >>Accept Who Lurks in the Pit
     .disablecheckbox
-    .target 拉娜·乔丹
-    .target 雯莎
+    .target Lana Jordan
+    .target Won'sa
 step
     .zoneskip 1409,1
     #hidewindow
     #completewith Who Lurks in the Pit1
-    .goto 1409,51.18,59.61,80 >>跟随箭头
+    .goto 1409,51.18,59.61,80 >>Follow the Arrow
     .use 175226 << Druid --Expeditionary Leather Legguards
     .use 175223 << Warrior/Paladin --Expeditionary Plate Legguards
     .use 175224 << Priest/Warlock --Expeditionary Cloth Leggings
 step
-    #arrowtext 与 |cRXP_FRIENDLY_拉娜·乔丹|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Lana Jordan|r
     .zoneskip 1409,1
     #requires Who Lurks in the Pit1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拉娜·乔丹|r 对话。
-    .turnin 55965 >>交任务 西部边界
-    .accept 55639 >>接受任务 谁藏在坑中
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lana Jordan|r.
+    .turnin 55965 >>Turn in Westward Bound
+    .accept 55639 >>Accept Who Lurks in the Pit
     .goto 1409,51.11,59.52
-    .target +拉娜·乔丹
+    .target +Lana Jordan
 step
     #include RestedXP 快速升级\a) 流放者离岛@Trapped Expedition-Expedition Member4
 step
@@ -23621,195 +23619,195 @@ step
     #label Hrun
     .goto 1409,50.53,59.72,10,0
     .goto 1409,49.09,59.85,10,0
-    >>击杀|cRXP_ENEMY_流放者胡伦|r。
+    >>Kill |cRXP_ENEMY_Hrun the Exiled|r.
     .complete 55639,2 --Defeat Hrun to rescue Crenna Earth-Daughter(1)
-    .mob Hrun the 流亡者
+    .mob Hrun the Exiled
 step
     .zoneskip 1409,1
     #completewith Hrun
     #hidewindow
-    .goto 1409,47.79,60.27,60 >>跟随箭头
+    .goto 1409,47.79,60.27,60 >>Follow the Arrow
 step
-    #arrowtext 击杀\n|cRXP_ENEMY_流放者胡伦|r
+    #arrowtext Kill\n|cRXP_ENEMY_Hrun the Exiled|r
     .zoneskip 1409,1
     #requires Hrun
     .goto 1409,47.79,60.27
-    >>击杀|cRXP_ENEMY_流放者胡伦|r。
+    >>Kill |cRXP_ENEMY_Hrun the Exiled|r.
     .complete 55639,2 --Defeat Hrun to rescue Crenna Earth-Daughter(1)
     .timer 5.5,RP
-    .mob Hrun the 流亡者
+    .mob Hrun the Exiled
 step
     .zoneskip 1409,1
     #completewith next
     #label Crenna Earth-Daughter
-    >>|cRXP_WARN_等待剧情演出|r。
+    >>|cRXP_WARN_Wait for the Roleplay|r.
     .complete 55639,3 --Ride Crenna Earth-Daughter to escape (1)
-    .target 科蕾娜·大地之女
+    .target Crenna Earth-Daughter
 step
-    #arrowtext 点击 |cRXP_PICK_科蕾娜·大地之女|r
+    #arrowtext Click\n|cRXP_PICK_Crenna Earth-Daughter|r
     .zoneskip 1409,1
     #completewith Crenna Earth-Daughter
     .goto 1409,47.79,60.27
-    .cast 325531 >>点击|cRXP_PICK_科蕾娜·大地之女|r
+    .cast 325531 >>Click on the |cRXP_PICK_Crenna Earth-Daughter|r
     .timer 52.5,RP
 step
     .zoneskip 1409,1
     #requires Crenna Earth-Daughter
-    >>|cRXP_WARN_等待剧情演出|r。
+    >>|cRXP_WARN_Wait for the Roleplay|r.
     .complete 55639,3 --Ride Crenna Earth-Daughter to escape (1)
-    .timer 28,剧情表演 << Druid
-    .target 科蕾娜·大地之女
+    .timer 28,RP << Druid
+    .target Crenna Earth-Daughter
 step << Rogue
-    #arrowtext 与 |cRXP_FRIENDLY_步兵索格|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Grunt Throg|r
     .zoneskip 1409,1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_步兵索格|r 对话
-    .turnin 58933 >>交任务 最致命的药膏
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grunt Throg|r
+    .turnin 58933 >>Turn in The Deadliest of Poisons
     .goto 1409,52.03,55.45
-    .target 步兵索格
+    .target Grunt Throg
 step << Shaman
-    #arrowtext 与 |cRXP_FRIENDLY_Ghost 经典怀旧服 NPC|r 和 |cRXP_FRIENDLY_Thrall|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Ghost Wolf|r and |cRXP_FRIENDLY_Thrall|r
     .zoneskip 1409,1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_幽魂之狼|r和|cRXP_FRIENDLY_萨尔|r对话。
-    .turnin 59002 >>交任务 萨满祭司的责任，并可学习幽魂之狼
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Ghost Wolf|r and |cRXP_FRIENDLY_Thrall|r.
+    .turnin 59002 >>Turn in A Shaman's Duty to learn Ghost Wolf
     .goto 1409,52.30,55.66
-    .target +Ghost 经典怀旧服 NPC
-    .turnin 55882 >>交任务 带给基地的消息
-    .turnin 55639 >>交任务 谁藏在坑中
-    .accept 85678 >>接受任务 修整一新
+    .target +Ghost Wolf
+    .turnin 55882 >>Turn in Message to Base
+    .turnin 55639 >>Turn in Who Lurks in the Pit
+    .accept 85678 >>Accept Repair Yourself
     .goto 1409,52.18,55.35
-    .target +萨尔
+    .target +Thrall
 step << !Shaman
-    #arrowtext 与 |cRXP_FRIENDLY_萨尔|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Thrall|r
     .zoneskip 1409,1
     .goto 1409,52.18,55.35
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_萨尔|r 对话。
-    .turnin 55639 >>交任务 谁藏在坑中
-    .accept 85678 >>接受任务 修整一新
-    .target 萨尔
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r.
+    .turnin 55639 >>Turn in Who Lurks in the Pit
+    .accept 85678 >>Accept Repair Yourself
+    .target Thrall
 step
-    #arrowtext 与 |cRXP_FRIENDLY_供给商金哈柯|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Provisioner Jin'hake|r
     .zoneskip 1409,1
     .goto 1409,52.47,55.68
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_供给商金哈柯|r对话，并|cRXP_WARN_修理所有装备|r。
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Provisioner Jin'hake|r and |cRXP_WARN_repair all items|r.
     .complete 85678,1 --1/1 Speak With Quartmaster Richter to Repair All Items
-    .target 供给商金哈柯
+    .target Provisioner Jin'hake
     .use 175235 << Warrior/Paladin --Expeditionary Plate Armguards
     .use 175237 << Druid/Monk/Rogue --Expeditionary Leather Bracers
     .use 175234 << Mage/Priest/Warlock --Expeditionary Cloth Cuffs
     .use 175236 << Hunter/Shaman --Expeditionary Mail Armbands
     .use 175225 << Shaman --Expeditionary Mail Leggings
 step
-    #arrowtext 与 |cRXP_FRIENDLY_萨尔|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Thrall|r
     .zoneskip 1409,1
     .goto 1409,52.18,55.35
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_萨尔|r 对话。
-    .turnin 85678 >>交任务 修整一新
-    .target 萨尔
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r.
+    .turnin 85678 >>Turn in Repair Yourself
+    .target Thrall
 step << Druid
-    #arrowtext 与 |cRXP_FRIENDLY_科蕾娜·大地之女|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Crenna Earth-Daughter|r
     .zoneskip 1409,1
     .goto 1409,52.33,55.44
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_科蕾娜·大地之女|r 对话。
-    *|cRXP_WARN_必须等到剧情结束后才能与她对话|r。
-    .accept 59350 >>接受任务 德鲁伊的形态
-    .target 科蕾娜·大地之女
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Crenna Earth-Daughter|r.
+    *|cRXP_WARN_You must wait for the roleplay before able to speak to her|r.
+    .accept 59350 >>Accept A Druid's Form
+    .target Crenna Earth-Daughter
 step
     #include RestedXP 快速升级\a) 流放者离岛@DruidStone-DruidStone
 step << Druid
-    #arrowtext 与 |cRXP_FRIENDLY_科蕾娜·大地之女|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Crenna Earth-Daughter|r
     .zoneskip 1409,1
     .goto 1409,45.51,49.28
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_科蕾娜·大地之女|r 对话。
-    .turnin 59350 >>交任务 德鲁伊的形态
-    .target 科蕾娜·大地之女
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Crenna Earth-Daughter|r.
+    .turnin 59350 >>Turn in A Druid's Form
+    .target Crenna Earth-Daughter
 step
-    #arrowtext 与 |cRXP_FRIENDLY_萨尔|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Thrall|r
     .zoneskip 1409,1
     .goto 1409,52.18,55.35
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_萨尔|r 对话。
-    .accept 56344 >>接受任务 前往暗槌堡垒
-    .target 萨尔
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r.
+    .accept 56344 >>Accept To Darkmaul Citadel
+    .target Thrall
 step
     .zoneskip 1409,1
     #completewith next
     #label DarkMaul Citadal Horde
     .goto 1409,49.55,52.49,20,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_萨尔|r 对话。
-    .turnin 56344 >>交任务 前往暗槌堡垒
-    .accept 55981 >>接受任务 就在眼皮底下
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r.
+    .turnin 56344 >>Turn in To Darkmaul Citadel
+    .accept 55981 >>Accept Right Beneath Their Eyes
     .disablecheckbox
-    .target 萨尔
+    .target Thrall
 step
     .zoneskip 1409,1
     #hidewindow
     #completewith DarkMaul Citadal Horde
-    .goto 1409,48.9,49.51,90 >>跟随箭头
+    .goto 1409,48.9,49.51,90 >>Follow the Arrow
 step
-    #arrowtext 与 |cRXP_FRIENDLY_萨尔|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Thrall|r
     .zoneskip 1409,1
     #requires DarkMaul Citadal Horde
     .goto 1409,48.9,49.51
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_萨尔|r 对话。
-    .turnin 56344 >>交任务 前往暗槌堡垒
-    .accept 55981 >>接受任务 就在眼皮底下
-    .target 萨尔
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r.
+    .turnin 56344 >>Turn in To Darkmaul Citadel
+    .accept 55981 >>Accept Right Beneath Their Eyes
+    .target Thrall
 step
     .zoneskip 1409,1
     #completewith next
     #label transformation spell
-    >>与他对话后|cRXP_WARN_迅速跑开|r。
+    >>After talking to him |cRXP_WARN_run away quickly|r.
     .complete 55981,1 --1/1 Ask Meredy to perform ogre transformation spell
 step
-    #arrowtext 与 |cRXP_FRIENDLY_赫伯特·暗爆|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Herbert Gloomburst|r
     .zoneskip 1409,1
     #completewith transformation spell
     .goto 1409,48.94,49.46
-    .gossipoption 54297 >>与|cRXP_FRIENDLY_赫伯特·暗爆|r对话。
-    .target 赫伯特·暗爆
+    .gossipoption 54297 >>Talk to |cRXP_FRIENDLY_Herbert Gloomburst|r.
+    .target Herbert Gloomburst
 step
     .zoneskip 1409,1
     #requires transformation spell
     .goto 1409,45.72,44.35
-    >>与他对话后|cRXP_WARN_迅速跑开|r。
+    >>After talking to him |cRXP_WARN_run away quickly|r.
     .complete 55981,1 --1/1 Ask Meredy to perform ogre transformation spell
     .skipgossipid 54297
-    .target 赫伯特·暗爆
+    .target Herbert Gloomburst
 step
     #include RestedXP 快速升级\a) 流放者离岛@DarkmaulCitadelStart-DarkmaulCitadelEnd
 step
     .zoneskip 1409,1
     #completewith next
     #label Right Beneath Their Eyes3
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_萨尔|r 对话。
-    .turnin 55981 >>交任务 就在眼皮底下
-    .accept 55990 >>接受任务 控制他们的石头
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r.
+    .turnin 55981 >>Turn in Right Beneath Their Eyes
+    .accept 55990 >>Accept Controlling their Stones
     .disablecheckbox
-    .target 萨尔
+    .target Thrall
 step
     .zoneskip 1409,1
     #completewith Right Beneath Their Eyes3
     .goto 1409,45.95,36.07,15,0
     .goto 1409,40.16,32.35
-    #title |cFFFCDC00跟随箭头|r
+    #title |cFFFCDC00Follow the Arrow|r
     .complete 55981,6 --Reach the Citadel entrance
     .timer 7.5, RP
 step
-    #arrowtext 与 |cRXP_FRIENDLY_萨尔|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Thrall|r
     .zoneskip 1409,1
     #requires Right Beneath Their Eyes3
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_萨尔|r 对话。
-    .turnin 55981 >>交任务 就在眼皮底下
-    .accept 55990 >>接受任务 控制他们的石头
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r.
+    .turnin 55981 >>Turn in Right Beneath Their Eyes
+    .accept 55990 >>Accept Controlling their Stones
     .goto 1409,40.3,32.46
-    .target 萨尔
+    .target Thrall
 step
-    #arrowtext 与 |cRXP_FRIENDLY_步兵索格|r 和 |cRXP_FRIENDLY_修加·恐斧|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Breka Grimaxe|r and |cRXP_FRIENDLY_Shuja Grimaxe|r
     .zoneskip 1409,1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_步兵索格|r 和 |cRXP_FRIENDLY_修加·恐斧|r 对话。
-    .accept 55988 >>接受任务 食人魔任人宰割
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Breka Grimaxe|r and |cRXP_FRIENDLY_Shuja Grimaxe|r.
+    .accept 55988 >>Accept Like Ogres to the Slaughter
     .goto 1409,40.24,32.59
     .target +Breka Grimaxe
-    .accept 55989 >>接受任务 毁灭投石车
+    .accept 55989 >>Accept Catapult Destruction
     .goto 1409,40.3,32.7
     .target +Shuja Grimaxe
 step
@@ -23819,185 +23817,185 @@ step
     #completewith next
     #label Catapult Destruction
     .goto 1409,43.78,34.67,20,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_修加·恐斧|r 对话。
-    .turnin 55989 >>交任务 毁灭投石车
-    .target 修加·恐斧
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shuja Grimaxe|r.
+    .turnin 55989 >>Turn in Catapult Destruction
+    .target Shuja Grimaxe
 step
-    #arrowtext 跟随箭头
+    #arrowtext Follow the arrow
     .zoneskip 1409,1
     #completewith Catapult Destruction
-    .goto 1409,40.3,32.71,130 >>跟随箭头
+    .goto 1409,40.3,32.71,130 >>Follow the Arrow
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_修加·恐斧|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Shuja Grimaxe|r
     .zoneskip 1409,1
     #requires Catapult Destruction
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_修加·恐斧|r 对话。
-    .turnin 55989 >>交任务 毁灭投石车
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shuja Grimaxe|r.
+    .turnin 55989 >>Turn in Catapult Destruction
     .goto 1409,40.3,32.71
-    .target 修加·恐斧
+    .target Shuja Grimaxe
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_步兵索格|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Breka Grimaxe|r
     .zoneskip 1409,1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_步兵索格|r 对话。
-    .turnin 55988 >>交任务 食人魔任人宰割
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Breka Grimaxe|r.
+    .turnin 55988 >>Turn in Like Ogres to the Slaughter
     .goto 1409,40.19,32.64
     .target Breka Grimaxe
     .use 175245 --Runetusk Necklace
 step
-    #arrowtext 点击\n|cRXP_PICK_食人魔符文石|r
+    #arrowtext Click\n|cRXP_PICK_Ogre Runestone|r
     .zoneskip 1409,1
     .goto 1409,39.96,32.45
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击 |cRXP_PICK_食人魔符文石|r。
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Ogre Runestone|r.
     .complete 55990,4,1 --3/3 Disable runes holding Warlord Thunderwalker
     .use 175216 << Druid/Monk/Rogue --Expeditionary Leather Gloves
     .use 175217 << Warrior/Paladin --Expeditionary Plate Gauntlets
     .use 175218 << Mage/Priest/Warlock --Expeditionary Cloth Gloves
     .use 175219 << Hunter/Shaman --Expeditionary Mail Gauntlets
 step
-    #arrowtext 点击\n|cRXP_PICK_食人魔符文石|r
+    #arrowtext Click\n|cRXP_PICK_Ogre Runestone|r
     .zoneskip 1409,1
     .goto 1409,39.76,32.07
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击 |cRXP_PICK_食人魔符文石|r。
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Ogre Runestone|r.
     .complete 55990,4,2 --1/3 Disable runes holding Warlord Thunderwalker
 step
-    #arrowtext 点击\n|cRXP_PICK_食人魔符文石|r
+    #arrowtext Click\n|cRXP_PICK_Ogre Runestone|r
     .zoneskip 1409,1
     .goto 1409,40.08,32
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击 |cRXP_PICK_食人魔符文石|r。
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Ogre Runestone|r.
     .complete 55990,4,3 --2/3 Disable runes holding Warlord Thunderwalker
     .timer 5.5,RP
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_督军穆尔格林·雷行者|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Warlord Mulgrin Thunderwalker|r
     .zoneskip 1409,1
     .goto 1409,39.93,32.16
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_督军穆尔格林·雷行者|r 对话。
-    .turnin 55990 >>交任务 控制他们的石头
-    .accept 55992 >>接受任务 地下城：暗槌堡垒
-    .target 督军穆尔格林·雷行者
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Warlord Mulgrin Thunderwalker|r.
+    .turnin 55990 >>Turn in Controlling their Stones
+    .accept 55992 >>Accept Dungeon: Darkmaul Citadel
+    .target Warlord Mulgrin Thunderwalker
 step
     #include RestedXP 快速升级\a) 流放者离岛@Controlling their Stones-Darkmaul Citadel
 step
-    #arrowtext 与 |cRXP_FRIENDLY_萨尔|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Thrall|r
     .zoneskip 1409,1
     .goto 1409,39.65,31.99
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_萨尔|r 对话。
-    .turnin 55992 >>交任务 地下城：暗槌堡垒
-    .accept 55991 >>接受任务 终结与开始
-    .target 萨尔
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r.
+    .turnin 55992 >>Turn in Dungeon: Darkmaul Citadel
+    .accept 55991 >>Accept An End to Beginnings
+    .target Thrall
 step
     #include RestedXP 快速升级\a) 流放者离岛@Kalecgos1-Kalecgos1
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_卡雷苟斯|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Kalecgos|r
     .goto 2022,81.23,28.06
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_卡雷苟斯|r 对话。
-    .turnin 55991 >>交任务 终结与开始
-    .target 卡雷苟斯
-    .accept 87547 >>接受任务 你的专精是什么？
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kalecgos|r.
+    .turnin 55991 >>Turn in An End to Beginnings
+    .target Kalecgos
+    .accept 87547 >>Accept What's Your Specialty?
 step
     .goto 2022,81.23,28.06
-    >>打开天赋界面（默认键：N）并选择任意专精。
-    *|cRXP_WARN_如果你已经选择了想要的专精，就先切换到另一个再切换回来|r。
+    >>Open your Talents(Default: N) and Select any specialization.
+    *|cRXP_WARN_If you already have your desired one, switch to another and back|r.
     .complete 87547,1 --1/1 Activate a combat specialization
     .use 175211 << Druid/Monk/Rogue --Expeditionary Leather Tunic
     .use 175210 << Hunter/Shaman --Expeditionary Mail Armor
     .use 175208 << Mage/Priest/Warlock --Expeditionary Cloth Robe
     .use 175209 << Warrior/Paladin --Expeditionary Plate Chestpiece
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_卡雷苟斯|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Kalecgos|r
     .goto 2022,81.23,28.06
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_卡雷苟斯|r 对话。
-    .turnin 87547 >>交任务 你的专精是什么？
-    .target 卡雷苟斯
-    .accept 87555 >>接受任务 炉石所在便是家
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kalecgos|r.
+    .turnin 87547 >>Turn in What's Your Specialty?
+    .target Kalecgos
+    .accept 87555 >>Accept Home Is Where the Hearth Is
 step
-    #arrowtext 使用[茶色驭风者]
-    .itemcount 25474,1
+    #arrowtext Use [Tawny Wind Rider]
+    .itemcount 25474,1 --Tawny Wind Rider
     .goto 2022,81.97,31.47
-    .collectmount 133 >>使用 |T298596:0|t[茶色驭风者]
+    .collectmount 133 >>Use the |T298596:0|t[Tawny Wind Rider]
     .use 25474
 step
-    #arrowtext 上坐骑
+    #arrowtext Mount up
     .goto 2022,80.41,27.83
-    >>骑上任意坐骑。|cRXP_WARN_不要使用旅行形态|r。
+    >>Mount up on any mount. |cRXP_WARN_Not Travelform|r.
     .complete 87555,1 --1/1 Ride any mount from your mount collection
-    .macro Summon Random Favorite Mount,413588 >>召唤随机最爱坐骑
+    .macro Summon Random Favorite Mount,413588 >>/run C_MountJournal.SummonByID(0)
     .target Sil'nori Crestshade
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_席尔诺里·徽影|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Sil'nori Crestshade|r
     .goto 2022,80.41,27.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_席尔诺里·徽影|r对话。
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sil'nori Crestshade|r.
     .complete 87555,2 --1/1 Speak with Sil'nori Crestshade to get and bind your Hearthstone
     .skipgossipid 55383
     .target Sil'nori Crestshade
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_卡雷苟斯|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Kalecgos|r
     #label ExilesEnd
     .goto 2022,81.23,28.06
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_卡雷苟斯|r 对话。
-    .turnin 87555 >>交任务 炉石所在便是家
-    .target 卡雷苟斯
-    .accept 87562 >>接受任务 援助巨龙群岛
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kalecgos|r.
+    .turnin 87555 >>Turn in Home Is Where the Hearth Is
+    .target Kalecgos
+    .accept 87562 >>Accept Aiding the Dragon Isles
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_娜蕾迪亚·流光|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Naleidea Rivergleam|r
     .goto 2022,80.63,27.62
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_娜蕾迪亚·流光|r 对话。
-    .turnin 90843 >>交任务 援助巨龙群岛
-    .target 娜蕾迪亚·流光
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Naleidea Rivergleam|r.
+    .turnin 90843 >>Turn in Aiding the Dragon Isles
+    .target Naleidea Rivergleam
 step
     .zoneskip 2022,1
-    .zone 2351 >>使用房屋查找器传送到某个社区，而不是 |T7252953:0|t[传送到地块]，然后使用 |cRXP_PICK_奥格瑞玛|r 传送门。
-    .link https://www.youtube.com/watch?v=uVkUB7z0njo >>点击观看视频
-    .macro House Teleport, 975747 >>房屋传送
+    .zone 2351 >>Teleport to a Neighbourhood with the House finder, not |T7252953:0|t[Teleport to Plot], then take the |cRXP_PICK_Orgrimmar Portal|r.
+    .link https://www.youtube.com/watch?v=uVkUB7z0njo >>CLICK HERE FOR VIDEO
+    .macro House Teleport, 975747 >>/run C_Housing.StartTutorial()
     .skyriding
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_娜蕾迪亚·流光|r 和 |cRXP_FRIENDLY_鳞长欣戴赛什|r 和 |cRXP_FRIENDLY_马格尔老板|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_娜蕾迪亚·流光|r、|cRXP_FRIENDLY_鳞长欣戴赛什|r 和 |cRXP_FRIENDLY_马格尔老板|r 对话。
-    .accept 65452 >>接受任务探险者遇险
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Naleidea Rivergleam|r and |cRXP_FRIENDLY_Scalecommander Cindrethresh|r and |cRXP_FRIENDLY_Boss Magor|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Naleidea Rivergleam|r, |cRXP_FRIENDLY_Scalecommander Cindrethresh|r and |cRXP_FRIENDLY_Boss Magor|r.
+    .accept 65452 >>Accept Explorers in Peril
     .goto 2022,80.62,27.60
-    .target +娜蕾迪亚·流光
-    .accept 65453 >>接受任务原始龙害
+    .target +Naleidea Rivergleam
+    .accept 65453 >>Accept Primal Pests
     .goto 2022,80.65,27.60
-    .target +鳞长欣戴赛什
-    .accept 65451 >>接受任务练手材料
+    .target +Scalecommander Cindrethresh
+    .accept 65451 >>Accept Practice Materials
     .goto 2022,80.60,27.65
-    .target +马格尔老板
+    .target +Boss Magor
     .noskyriding
 step
-    #arrowtext 杀死\n|cRXP_ENEMY_Primal Proto-魔枢雏龙|r
+    #arrowtext Kill\n|cRXP_ENEMY_Primal Proto-Drakes|r
     #completewith WakingShoresExplorersInPeril
     .goto 2022,79.24,25.84,0,0
-    >>击杀 |cRXP_ENEMY_Primal Proto-魔枢雏龙|r。
+    >>Kill |cRXP_ENEMY_Primal Proto-Drakes|r.
     .complete 65453,1 --10/10 Primal Proto-drakes slain
-    .mob 原始始祖幼龙
+    .mob Primal Proto-Drake
     .noskyriding
 step
     #completewith WakingShoresExplorersInPeril
-    >>杀死 |cRXP_ENEMY_Primal Proto-Whelps|r。
-    *从它们身上拾取 |T134309:0|t[|cRXP_LOOT_Proto-Whelp Scale|r]。
+    >>Kill |cRXP_ENEMY_Primal Proto-Whelps|r.
+    *Loot them for |T134309:0|t[|cRXP_LOOT_Proto-Whelp Scale|r].
     .complete 65451,1 --20/20 Primal Proto-Whelp Scales collected
-    .mob 原始始祖雏龙
+    .mob Primal Proto-Whelp
     .noskyriding
 step
-    #arrowtext 点击\n|cRXP_PICK_肋骨架|r
+    #arrowtext Click\n|cRXP_PICK_Rib Cage|r
     .goto 2022,80.05,28.48,25,0
     .goto 2022,80.37,26.34
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击 |cRXP_PICK_Rib 灼丝衬衫|r。
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Rib Cage|r.
     .complete 65452,1 --1/1 Pathfinder Poppy rescued
     .noskyriding
 step
-    #arrowtext 点击\n|cRXP_PICK_档案员矛花|r
+    #arrowtext Click\n|cRXP_PICK_Archivist Spearblossom|r
     .goto 2022,78.71,24.52
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击 |cRXP_PICK_档案员矛花|r。
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Archivist Spearblossom|r.
     .complete 65452,2 --1/1 Archivist Spearblossom rescued
-    .target 档案员矛花
+    .target Archivist Spearblossom
     .noskyriding
 step
-    #arrowtext 点击\n|cRXP_PICK_探洞者拉基伊|r
+    #arrowtext Click\n|cRXP_PICK_Spelunker Lazee|r
     #label WakingShoresExplorersInPeril
     .goto 2022,77.37,29.77
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击吊在链子上的 |cRXP_PICK_探洞者拉基伊|r。
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Spelunker Lazee|r hanging on the chain.
     .complete 65452,3 --1/1 Spelunker Lazee rescued
-    .target 探洞者拉基伊
+    .target Spelunker Lazee
     .noskyriding
 step
     #hidewindow
@@ -24014,29 +24012,29 @@ step
     .noskyriding
 step
     #completewith next
-    >>击杀 |cRXP_ENEMY_Primal Proto-魔枢雏龙|r。
+    >>Kill |cRXP_ENEMY_Primal Proto-Drakes|r.
     .complete 65453,1 --10/10 Primal Proto-drakes slain
-    .mob 原始始祖幼龙
+    .mob Primal Proto-Drake
     .noskyriding
 step
-    >>杀死 |cRXP_ENEMY_Primal Proto-Whelps|r。
-    *从它们身上拾取 |T134309:0|t[|cRXP_LOOT_Proto-Whelp Scale|r]。
+    >>Kill |cRXP_ENEMY_Primal Proto-Whelps|r.
+    *Loot them for |T134309:0|t[|cRXP_LOOT_Proto-Whelp Scale|r].
     .complete 65451,1 --20/20 Primal Proto-Whelp Scales collected
-    .mob 原始始祖雏龙
+    .mob Primal Proto-Whelp
     .noskyriding
 step
     #label Primal Proto-drakesH
-    >>击杀 |cRXP_ENEMY_Primal Proto-魔枢雏龙|r。
+    >>Kill |cRXP_ENEMY_Primal Proto-Drakes|r.
     .complete 65453,1 --10/10 Primal Proto-drakes slain
-    .mob 原始始祖幼龙
+    .mob Primal Proto-Drake
     .noskyriding
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_娜蕾迪亚·流光|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Naleidea Rivergleam|r
     .goto 2022,76.61,33.60
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_娜蕾迪亚·流光|r 对话。
-    .turnin 65452 >>交任务探险者遇险
-    .accept 69910 >>接受任务拉希奥呢？
-    .target 娜蕾迪亚·流光
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Naleidea Rivergleam|r.
+    .turnin 65452 >>Turn in Explorers in Peril
+    .accept 69910 >>Accept Where is Wrathion?
+    .target Naleidea Rivergleam
     .noskyriding
 step
     #completewith next
@@ -24046,61 +24044,61 @@ step
     .complete 69910,1 --1/1 Inquire after the missing dragons
     .noskyriding
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_森德拉克斯|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Sendrax|r
     #completewith TalkToSendraxInquire
     .goto 2022,76.58,33.66
-    .gossipoption 55636 >>与 |cRXP_FRIENDLY_森德拉克斯|r 对话。 --(Quest) Why aren't the dragons here to meet us?
-    .timer 22,剧情事件时长
-    .target 森德拉克斯
+    .gossipoption 55636 >>Talk to |cRXP_FRIENDLY_Sendrax|r. --(Quest) Why aren't the dragons here to meet us?
+    .timer 22,Roleplay Duration
+    .target Sendrax
     .noskyriding
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_鳞长欣戴赛什|r 和 |cRXP_FRIENDLY_督军布雷卡·恐斧|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Scalecommander Cindrethresh|r and |cRXP_FRIENDLY_Warlord Breka Grimaxe|r
     #requires TalkToSendraxInquire
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_鳞长欣戴赛什|r 和 |cRXP_FRIENDLY_督军布雷卡·恐斧|r 对话。
-    .turnin 65453 >>交任务原始龙害
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Cindrethresh|r and |cRXP_FRIENDLY_Warlord Breka Grimaxe|r.
+    .turnin 65453 >>Turn in Primal Pests
     .goto 2022,76.28,33.02
-    .target +鳞长欣戴赛什
+    .target +Scalecommander Cindrethresh
     .noskyriding
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_马格尔老板|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Boss Magor|r
     .goto 2022,75.94,33.25
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_首领 马格尔老板|r 对话。
-    .turnin 65451 >>交任务练手材料
-    .target 马格尔老板
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Boss Magor|r.
+    .turnin 65451 >>Turn in Practice Materials
+    .target Boss Magor
     .noskyriding
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_海菲斯塔|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Haephesta|r
     .goto 2022,76.41,34.46
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_海菲斯塔|r 对话
-    .accept 70148 >>接受任务迷途浪人 << Evoker
-    .target 海菲斯塔
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Haephesta|r
+    .accept 70148 >>Accept Without Purpose << Evoker
+    .target Haephesta
     .noskyriding
 step
-    #arrowtext |cFFFCDC00跟随箭头|r
+    #arrowtext |cFFFCDC00Follow the arrow|r
     .goto 2022,76.58,33.66
-    >>|cRXP_WARN_等待剧情演出|r。
+    >>|cRXP_WARN_Wait for the Roleplay|r.
     .complete 69910,1  --1/1 Inquire after the missing dragons
     .noskyriding
 step
-    #arrowtext 与 |cRXP_FRIENDLY_森德拉克斯|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Sendrax|r
     .goto 2022,76.58,33.66
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_森德拉克斯|r 对话。
-    .turnin 69910 >>交任务拉希奥呢？
-    .accept 69911 >>接受任务杂乱不堪，请别见怪
-    .target 森德拉克斯
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sendrax|r.
+    .turnin 69910 >>Turn in Where is Wrathion?
+    .accept 69911 >>Accept Excuse the Mess
+    .target Sendrax
     .noskyriding
 step
-    #arrowtext 与 |cRXP_FRIENDLY_法斯塔兹大使|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Ambassador Fastrasz|r
     .goto 2022,76.33,35.62
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_法斯塔兹大使|r 对话。
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ambassador Fastrasz|r.
     .complete 69911,1 --1/1 Speak with Ambassador Fastrasz
-	.target 法斯塔兹大使
+	.target Ambassador Fastrasz
     .skipgossipid 55674
     .noskyriding
 step
-    #arrowtext 点击\n|cRXP_PICK_书籍|r
+    #arrowtext Click\n|cRXP_PICK_Book|r
     .goto 2022,76.28,35.62
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击 |cRXP_PICK_书籍|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Book|r
     .complete 69911,2 --1/1 Embassy Visitor Log signed
     .skipgossipid 55746
     .skipgossipid 55747
@@ -24108,395 +24106,395 @@ step
     .skipgossipid 55768
     .noskyriding
 step
-    #arrowtext 点击 |cRXP_PICK_阿莱克丝塔萨的Welcome stone|r
+    #arrowtext Click\n|cRXP_PICK_Alexstrasza's Welcome stone|r
     .goto 2022,75.61,34.17
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击 |cRXP_PICK_阿莱克丝塔萨的迎宾石|r。
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Alexstrasza's Welcome stone|r.
     .complete 69911,3 --1/1 Welcome Message read
     .noskyriding
 step
-    #arrowtext 点击 |cRXP_PICK_Brazier of Kinship|r
+    #arrowtext Click\n|cRXP_PICK_Brazier of Kinship|r
     .goto 2022,78.43,31.80
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击 |cRXP_PICK_Brazier of Kinship|r。
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Brazier of Kinship|r.
     .complete 69911,4 --1/1 Brazier of Kinship relit
     .noskyriding
 step
-    #arrowtext 与 |cRXP_FRIENDLY_森德拉克斯|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Sendrax|r
     .goto 2022,76.58,33.66
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_森德拉克斯|r 对话。
-    .turnin 69911 >>交任务杂乱不堪，请别见怪
-    .accept 69912 >>接受任务首次紧急情况！
-	.target 森德拉克斯
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sendrax|r.
+    .turnin 69911 >>Turn in Excuse the Mess
+    .accept 69912 >>Accept My First Real Emergency!
+	.target Sendrax
     .noskyriding
 step
     #completewith next
     #hidewindow
     .goto 2022,76.58,33.66
-    .gossipoption 55637 >>与 |cRXP_FRIENDLY_森德拉克斯|r 对话。
-    .timer 33,剧情事件时长
+    .gossipoption 55637 >>Talk to |cRXP_FRIENDLY_Sendrax|r.
+    .timer 33,Roleplay Duration
     .noskyriding
 step
-    #arrowtext 与 |cRXP_FRIENDLY_森德拉克斯|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Sendrax|r
     .goto 2022,76.22,34.53
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_森德拉克斯|r 对话。
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sendrax|r.
     .complete 69912,1 --1/1 Signal flare sent
     .skipgossipid 55637
     .noskyriding
 step
-    #arrowtext 与 |cRXP_FRIENDLY_拉希奥|r 和 |cRXP_FRIENDLY_管理者瑟利斯特拉|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拉希奥|r 和 |cRXP_FRIENDLY_管理者瑟利斯特拉|r 对话。
-    .turnin 69912 >>交任务首次紧急情况！
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Wrathion|r and |cRXP_FRIENDLY_Majordomo Selistra|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wrathion|r and |cRXP_FRIENDLY_Majordomo Selistra|r.
+    .turnin 69912 >>Turn in My First Real Emergency!
     .goto 2022,76.18,34.50
-	.target +拉希奥
-    .accept 69914 >>接受任务贾拉丁苏醒
+	.target +Wrathion
+    .accept 69914 >>Accept The Djaradin Have Awoken
     .goto 2022,76.22,34.53
-	.target +管理者瑟利斯特拉
+	.target +Majordomo Selistra
     .noskyriding
 step
-    #arrowtext 等待剧情演出
+    #arrowtext Wait for the roleplay
     .goto 2022,76.22,34.53
-    >>等待剧情播放
+    >>Wait for the roleplay
     .complete 69914,1 --1/1 Orders received from Majordomo Selistra
     .skipgossipid 55872
     .noskyriding
 step
-    #arrowtext 与 |cRXP_FRIENDLY_森德拉克斯|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Sendrax|r
     .goto 2022,76.26,34.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_森德拉克斯|r 对话。
-    .turnin 69914 >>交任务贾拉丁苏醒
-	.target 森德拉克斯
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sendrax|r.
+    .turnin 69914 >>Turn in The Djaradin Have Awoken
+	.target Sendrax
     .noskyriding
 step
-    #arrowtext 与 |cRXP_FRIENDLY_森德拉克斯|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Sendrax|r
     .goto 2022,76.26,34.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_森德拉克斯|r 对话，然后立即交任务。
-    .accept 65760 >>接受任务报到
-	.target 森德拉克斯
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sendrax|r then immediately turn in the next quests.
+    .accept 65760 >>Accept Reporting for Duty
+	.target Sendrax
     .noskyriding
 step
-    #arrowtext 跟随箭头
-    >>跟随箭头
+    #arrowtext Follow the arrow
+    >>Follow the arrow
     .goto 2022,75.28,36.20,20,0
     .goto 2022,73.20,35.96,20,0
     .goto 2022,72.29,36.65,20,0
     .goto 2022,71.25,40.67
     .complete 65760,1 --1/1 Follow Sendrax to the outpost
-    .target 森德拉克斯
+    .target Sendrax
 	.noskyriding
 step
-    #arrowtext 与 |cRXP_FRIENDLY_指挥官里萨纳克|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_指挥官里萨纳克|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Commander Lethanak|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Lethanak|r.
     .goto 2022,71.20,40.77
-    .turnin 65760 >>交任务报到
-    .accept 65990 >>接受任务挽龙崽于毒手
-    .accept 65989 >>接受任务贾拉丁进犯
-	.target 指挥官里萨纳克
+    .turnin 65760 >>Turn in Reporting for Duty
+    .accept 65990 >>Accept Deliver Whelps From Evil
+    .accept 65989 >>Accept Invader Djaradin
+	.target Commander Lethanak
 	.noskyriding
 step
     #completewith WhimperingWhelplingsSaved
     .goto 2022,70.38,44.91,0,0
-    >>集中在击杀 |cRXP_ENEMY_Qalashi Scavengers|r。
+    >>Focus on killing |cRXP_ENEMY_Qalashi Scavengers|r.
     .complete 65989,1 --6/6 Djaradin slain
-    .mob 卡拉希清道夫
-    .mob 卡拉希贾拉丁
+    .mob Qalashi Scavenger
+    .mob Qalashi Djaradin
 	.noskyriding
 step
     .goto 2022,71.36,44.65
-    >>拯救 |cRXP_FRIENDLY_幽咽的雏龙|r。
+    >>Save the |cRXP_FRIENDLY_Whimpering Whelpling|r.
     .complete 65990,1,1 --1/4 Whimpering Whelplings saved
 	.target Whimpering Whelping
 	.noskyriding
 step
-    >>救助 |cRXP_FRIENDLY_幽咽的雏龙|r。
+    >>Save the |cRXP_FRIENDLY_Whimpering Whelpling|r.
     .goto 2022,70.97,46.21,10,0
     .goto 2022,70.87,46.77,10,0
     .goto 2022,71.12,46.98,10,0
     .goto 2022,70.97,46.63
     .complete 65990,1,2 --2/4 Whimpering Whelplings saved
-	.target 幽咽的雏龙
+	.target Whimpering Whelpling
 	.noskyriding
 step
-    >>拯救 |cRXP_FRIENDLY_幽咽的雏龙|r。
+    >>Save the |cRXP_FRIENDLY_Whimpering Whelpling|r.
     .goto 2022,69.86,45.3
     .complete 65990,1,3 --3/4 Whimpering Whelplings saved
-	.target 幽咽的雏龙
+	.target Whimpering Whelpling
 	.noskyriding
 step
     #label WhimperingWhelplingsSaved
-    >>拯救 |cRXP_FRIENDLY_幽咽的雏龙|r。
+    >>Save the |cRXP_FRIENDLY_Whimpering Whelpling|r.
     .goto 2022,69.38,43.26
     .complete 65990,1 --4/4 Whimpering Whelplings saved
-	.target 幽咽的雏龙
+	.target Whimpering Whelpling
 	.noskyriding
 step
     .goto 2022,70.38,44.91
-    >>集中击杀 |cRXP_ENEMY_Qalashi Scavengers|r。
+    >>Focus on killing |cRXP_ENEMY_Qalashi Scavengers|r.
     .complete 65989,1 --6/6 Djaradin slain
-    .mob 卡拉希清道夫
-    .mob 卡拉希贾拉丁
+    .mob Qalashi Scavenger
+    .mob Qalashi Djaradin
 	.noskyriding
 step
-    #arrowtext 与 |cRXP_FRIENDLY_指挥官里萨纳克|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Commander Lethanak|r
     #requires WakingShoreInvaderDjaradin
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_指挥官里萨纳克|r 对话。
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Lethanak|r.
     .goto 2022,71.20,40.77
-    .turnin 65989 >>交任务贾拉丁进犯
-    .turnin 65990 >>交任务挽龙崽于毒手
-    .accept 65991 >>接受任务清算已至
-	.target 指挥官里萨纳克
+    .turnin 65989 >>Turn in Invader Djaradin
+    .turnin 65990 >>Turn in Deliver Whelps From Evil
+    .accept 65991 >>Accept Time for a Reckoning
+	.target Commander Lethanak
 	.noskyriding
 step
-    #arrowtext 杀死 |cRXP_ENEMY_Djaradin|r
+    #arrowtext Kill\n|cRXP_ENEMY_Djaradin|r
     #completewith WakingShoresKilljoyBlacktalinObsidian
-    >>在营地周围击杀 |cRXP_ENEMY_Djaradin|r。
-    *|cRXP_WARN_You can also kill 猎龙者伊戈尔丹 multiple times|r。
+    >>Kill |cRXP_ENEMY_Djaradin|r around the camp.
+    *|cRXP_WARN_You can also kill Dragonhunter Igordan multiple times|r.
     .goto 2022,62.76,34.50,0,0
-    .accept 65994 >>接受 制裁贾拉丁 (奖励任务)
+    .accept 65994 >>Accept Djaradin Djustice (Bonus Objective)
     .complete 65994,1 --Djaradin camp invaded (100%)
-    .mob 卡拉希无赖
-    .mob 卡拉希驯怒者
-    .mob 卡拉希散兵
-    .mob 卡拉希碎焰者
-    .mob 卡拉希噤焰者
+    .mob Qalashi Scoundrel
+    .mob Qalashi Ragetamer
+    .mob Qalashi Skirmisher
+    .mob Qalashi Flameshatter
+    .mob Qalashi Flamemuzzler
 	.noskyriding
 step
-    #arrowtext 登上塔楼
+    #arrowtext Climb the tower
     #label WakingShoreTimeForReckoning
-    >>登上塔楼并等待 |cRXP_FRIENDLY_拉希奥|r。
+    >>Climb the tower and wait for |cRXP_FRIENDLY_Wrathion|r.
     .goto 2022,68.84,40.29,35,0
     .goto 2022,68.12,36.87,20,0
     .goto 2022,66.59,34.58
     .complete 65991,1 --1/1 Wrathion met at Scalecracker Keep
 	.noskyriding
 step
-    #arrowtext 与 |cRXP_FRIENDLY_拉希奥|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Wrathion|r
     .goto 2022,66.36,35.01
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拉希奥|r 对话。
-    .turnin 65991 >>交任务清算已至
-    .accept 65993 >>接受任务败兴而归
-    .accept 65992 >>接受任务黑爪谍报
-	.target 拉希奥
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wrathion|r.
+    .turnin 65991 >>Turn in Time for a Reckoning
+    .accept 65993 >>Accept Killjoy
+    .accept 65992 >>Accept Blacktalon Intel
+	.target Wrathion
 	.noskyriding
 step
-    #arrowtext 跳下去
+    #arrowtext Jump down
     #completewith WakingShoreDragonHunderIgordan
-    .goto 2022,65.65,35.16,20 >>跳下
+    .goto 2022,65.65,35.16,20 >>Jump down
 	.noskyriding
 step
-    #arrowtext 杀死 |cRXP_ENEMY_猎龙者伊戈尔丹|r
+    #arrowtext Kill\n|cRXP_ENEMY_Dragonhunter Igordan|r
     #label WakingShoreDragonHunderIgordan
     .goto 2022,64.26,33.05
-    >>击杀 |cRXP_ENEMY_猎龙者伊戈尔丹|r。
-    .accept 66956 >>接受任务猎龙者伊戈尔丹(精英目标)
+    >>Kill |cRXP_ENEMY_Dragonhunter Igordan|r.
+    .accept 66956 >>Accept Dragonhunter Igordan (Elite Objective)
     .complete 66956,1 --1/1 Dragonhunter Igordan slain
-    .mob 猎龙者伊戈尔丹
+    .mob Dragonhunter Igordan
 	.noskyriding
 step
-    #arrowtext 与 |cRXP_FRIENDLY_右|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_右|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Right|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Right|r.
     .goto 2022,65.09,29.35
     .complete 65992,3 --1/1 Right consulted
-	.target 右
+	.target Right
     .skipgossipid 55298
 	.noskyriding
 step
-    #arrowtext 与 左 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与左对话。
+    #arrowtext Talk to Left
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Left
     .goto 2022,64.11,30.33,30,0
     .goto 2022,63.43,28.87
     .complete 65992,2 --1/1 Left consulted
-	.target 左
+	.target Left
     .skipgossipid 55297
 	.noskyriding
 step
-    #arrowtext 杀死 |cRXP_ENEMY_绞肉者索托克|r
-    >>杀死 |cRXP_ENEMY_绞肉者索托克|r。拾取他的战利品 |T237451:0|t[|cRXP_LOOT_卡拉希计划|r]。
+    #arrowtext Kill\n|cRXP_ENEMY_Meatgrinder Sotok|r
+    >>Kill |cRXP_ENEMY_Meatgrinder Sotok|r. Loot him for the |T237451:0|t[|cRXP_LOOT_Qalashi Plans|r].
     .goto 2022,62.96,29.43
     .complete 65993,1 --1/1 Meatgrinder Sotok slain
     .collect 193874,1,65995,1
-    .accept 65995 >>接受任务黑曜堡垒
-	.mob 绞肉者索托克
+    .accept 65995 >>Accept The Obsidian Citadel
+	.mob Meatgrinder Sotok
 	.noskyriding
 step
-    #arrowtext 与 |cRXP_FRIENDLY_利爪猎手卡薇亚|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_利爪猎手卡薇亚|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Talonstalker Kavia|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Talonstalker Kavia|r.
     .goto 2022,64.58,30.57,30,0
     .goto 2022,64.41,33.29,30,0
     .goto 2022,63.03,33.34
     .skipgossipid 55335
     .complete 65992,1 --1/1 Talonstalker Kavia consulted
-	.target 利爪猎手卡薇亚
+	.target Talonstalker Kavia
 	.noskyriding
 step
-    #arrowtext 登上楼梯。与 |cRXP_FRIENDLY_拉希奥|r 对话
+    #arrowtext Climb the stairs .Talk to |cRXP_FRIENDLY_Wrathion|r
     #label WakingShoresKilljoyBlacktalinObsidian
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t登上楼梯。与 |cRXP_FRIENDLY_拉希奥|r 对话。
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tClimb the stairs .Talk to |cRXP_FRIENDLY_Wrathion|r.
     .goto 2022,62.62,32.67,24,0
     .goto 2022,62.65,33.17
-    .turnin 65993 >>交任务败兴而归
-    .turnin 65992 >>交任务黑爪谍报
-    .turnin 65995 >>交任务黑曜堡垒
-	.target 拉希奥
+    .turnin 65993 >>Turn in Killjoy
+    .turnin 65992 >>Turn in Blacktalon Intel
+    .turnin 65995 >>Turn in The Obsidian Citadel
+	.target Wrathion
 	.noskyriding
 step
-    #arrowtext 与 管理者瑟利斯特拉 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与管理者瑟利斯特拉对话。
+    #arrowtext Talk to Majordomo Selistra
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Majordomo Selistra
     .goto 2022,62.76,33.11
-    .accept 65996 >>接受任务老兵援军
+    .accept 65996 >>Accept Veteran Reinforcements
 	.noskyriding
 step
-    #arrowtext 杀死 |cRXP_ENEMY_Djaradin|r
+    #arrowtext Kill\n|cRXP_ENEMY_Djaradin|r
     #loop
     .goto 2022,62.17,34.69,40,0
     .goto 2022,64.25,33.15,40,0
     .goto 2022,66.00,36.88,40,0
     .goto 2022,64.25,33.15,40,0
-    >>在营地周围击杀 |cRXP_ENEMY_Djaradin|r。
-    *|cRXP_WARN_你还可以多次击杀猎龙者伊戈尔丹|r。
-    .accept 65994 >>接受 制裁贾拉丁 (奖励任务)
+    >>Kill |cRXP_ENEMY_Djaradin|r around the camp.
+    *|cRXP_WARN_You can also kill Dragonhunter Igordan multiple times|r.
+    .accept 65994 >>Accept Djaradin Djustice (Bonus Objective)
     .complete 65994,1 --Djaradin camp invaded (100%)
-    .mob 猎龙者伊戈尔丹
-    .mob 卡拉希无赖
-    .mob 卡拉希驯怒者
-    .mob 卡拉希散兵
-    .mob 卡拉希碎焰者
-    .mob 卡拉希噤焰者
+    .mob Dragonhunter Igordan
+    .mob Qalashi Scoundrel
+    .mob Qalashi Ragetamer
+    .mob Qalashi Skirmisher
+    .mob Qalashi Flameshatter
+    .mob Qalashi Flamemuzzler
     .mob Qalashi Metalshaper
 	.noskyriding
 step
     #requires WakingShoreDjaradinDjustice
     #completewith next
-    +|cRXP_WARN_提示：你可以为"使用中物品"绑定快捷键|r。
-    +|cRXP_WARN_快捷键绑定方法：|r Escape → 设置 → Keybindings → RestedXP Guides → 选择并绑定使用中按钮1、2、3和4
+    +|cRXP_WARN_Reminder: You can keybind the 'Active Items'|r.
+    +|cRXP_WARN_How to Keybind:|r Escape -> Options -> Keybindings -> RestedXP Guides -> Select and Bind Active Button 1,2,3 and 4
 	.noskyriding
 step
-    #arrowtext 使用 [Rejuvenating Draught] 对 |cRXP_FRIENDLY_Injured Drakonids|r
+    #arrowtext Use [Rejuvenating Draught]\non |cRXP_FRIENDLY_Injured Drakonids|r
     #requires WakingShoreDjaradinDjustice
-    >>对 |cRXP_FRIENDLY_Injured Drakonids|r 使用 |T967530:0:0|t[Rejuvenating Draught]。
-    *如果可能，改用治疗法术。
+    >>Use the |T967530:0:0|t[Rejuvenating Draught] on |cRXP_FRIENDLY_Injured Drakonids|r.
+    *Use a heal spell instead if possible
     .use 193917
     .goto 2022,60.99,35.63
     .complete 65996,1,1 --1/4 Injured drakonids healed
-    .target 受伤的龙人
+    .target Injured Drakonid
 	.noskyriding
 step
-    #arrowtext 使用 [Rejuvenating Draught] 对 |cRXP_FRIENDLY_Injured Drakonids|r
-    >>对 |cRXP_FRIENDLY_Injured Drakonids|r 使用 |T967530:0:0|t[Rejuvenating Draught]。
-    *如果可能的话改用治疗法术。
+    #arrowtext Use [Rejuvenating Draught]\non |cRXP_FRIENDLY_Injured Drakonids|r
+    >>Use the |T967530:0:0|t[Rejuvenating Draught] on |cRXP_FRIENDLY_Injured Drakonids|r.
+    *Use a heal spell instead if possible
     .use 193917
     .goto 2022,61.11,36.77
     .complete 65996,1,2 --2/4 Injured drakonids healed
-    .target 受伤的龙人
+    .target Injured Drakonid
 	.noskyriding
 step
-    #arrowtext 使用 [Rejuvenating Draught] 对 |cRXP_FRIENDLY_Injured Drakonids|r
-    >>对 |cRXP_FRIENDLY_Injured Drakonids|r 使用 |T967530:0:0|t[Rejuvenating Draught]。
-    *如果可能的话改用治疗法术。
+    #arrowtext Use [Rejuvenating Draught]\non |cRXP_FRIENDLY_Injured Drakonids|r
+    >>Use the |T967530:0:0|t[Rejuvenating Draught] on |cRXP_FRIENDLY_Injured Drakonids|r.
+    *Use a heal spell instead if possible
     .use 193917
     .goto 2022,59.04,34.84
     .complete 65996,1,3 --3/4 Injured drakonids healed
-    .target 受伤的龙人
+    .target Injured Drakonid
 	.noskyriding
 step
-    #arrowtext 使用 [Rejuvenating Draught] 对 |cRXP_FRIENDLY_Injured Drakonids|r
-    >>对 |cRXP_FRIENDLY_Injured Drakonids|r 使用 |T967530:0:0|t[Rejuvenating Draught]。
-    *如果可能的话改用治疗法术。
+    #arrowtext Use [Rejuvenating Draught]\non |cRXP_FRIENDLY_Injured Drakonids|r
+    >>Use the |T967530:0:0|t[Rejuvenating Draught] on |cRXP_FRIENDLY_Injured Drakonids|r.
+    *Use a heal spell instead if possible
     .use 193917
     .goto 2022,56.64,34.77
     .complete 65996,1 --4/4 Injured drakonids healed
-    .target 受伤的龙人
+    .target Injured Drakonid
 	.noskyriding
 step
-    #arrowtext 与 |cRXP_FRIENDLY_看护者阿兹克拉|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_看护者阿兹克拉|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Caretaker Azkra|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Caretaker Azkra|r.
     .goto 2022,54.99,30.76
-    .turnin 65996 >>交任务老兵援军
-    .accept 65997 >>接受任务追逐森德拉克斯
-	.target 看护者阿兹克拉
+    .turnin 65996 >>Turn in Veteran Reinforcements
+    .accept 65997 >>Accept Chasing Sendrax
+	.target Caretaker Azkra
 	.noskyriding
 step
-    #arrowtext 跟随箭头
+    #arrowtext Follow the arrow
     .goto 2022,54.99,30.77
-    >>|cRXP_WARN_跟随箭头|r。
+    >>|cRXP_WARN_Follow the arrow|r.
     .complete 65996,2 --1/1 Meet Sendrax at the Conservatory Outpost
-	.target 森德拉克斯
+	.target Sendrax
 	.noskyriding
 step
-    #arrowtext 与 |cRXP_FRIENDLY_森德拉克斯|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_森德拉克斯|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Sendrax|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sendrax|r.
     .goto 2022,55.18,24.95
     .complete 65997,1 --1/1 Sendrax found
-	.target 森德拉克斯
+	.target Sendrax
     .skipgossipid 55225
 	.noskyriding
 step
-    #arrowtext 与 |cRXP_FRIENDLY_森德拉克斯|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_森德拉克斯|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Sendrax|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sendrax|r.
     .goto 2022,55.18,24.95
-    .turnin 65997 >>交任务追逐森德拉克斯
-    .accept 65998 >>接受任务军团的未来
-    .accept 65999 >>接受任务齿爪尽红
-	.target 森德拉克斯
+    .turnin 65997 >>Turn in Chasing Sendrax
+    .accept 65998 >>Accept Future of the Flights
+    .accept 65999 >>Accept Red in Tooth and Claw
+	.target Sendrax
 	.noskyriding
 step
-    #arrowtext 点击 |cRXP_PICK_book|r
+    #arrowtext Click\n|cRXP_PICK_book|r
     .goto 2022,55.26,24.69
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击 |cRXP_PICK_书籍|r。
-    .accept 66000 >>接受任务阿莱克丝塔萨的藏书馆
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_book|r.
+    .accept 66000 >>Accept Library of Alexstrasza
 	.noskyriding
 step
-    #arrowtext 杀死 |cRXP_ENEMY_Primalists/Revenants/Taraseks|r
+    #arrowtext Kill\n|cRXP_ENEMY_Primalists/Revenants/Taraseks|r
     #completewith FiravaRekindler
-    >>在完成其他目标的同时击杀 |cRXP_ENEMY_Primalists/Revenants/Taraseks|r。
+    >>Kill |cRXP_ENEMY_Primalists/Revenants/Taraseks|r while doing the other objectives.
     .goto 2022,56.37,22.32,0,0
     .complete 65999,1 --15/15 Primalist forces slain
-    .mob 原始亡魂
-    .mob 塔拉赛元素师
-    .mob 熔火元素师
-    .mob 狂放的爆裂熔岩
-    .mob 膨胀的火元素
+    .mob Primal Revenant
+    .mob Tarasek Elementalist
+    .mob Molten Elementalist
+    .mob Unleashed Lavaburst
+    .mob Swelling Fire Elemental
 	.noskyriding
 step
-    #arrowtext 杀死 |cRXP_ENEMY_重燃者菲拉瓦|r
+    #arrowtext Kill\n|cRXP_ENEMY_Firava the Rekindler|r
     #completewith WakingShoreFutureoftheFlight
-    >>当你看到 |cRXP_ENEMY_重燃者菲拉瓦|r 时（在该区域巡逻）击杀她。
+    >>Kill |cRXP_ENEMY_Firava the Rekindler|r when you see her (patrolling in the area)
     .goto 2022,56.97,25.28,0,0
     .complete 70648,1 --1/1 Firava the Rekindler slain
-    .mob 重燃者菲拉瓦
+    .mob Firava the Rekindler
 	.noskyriding
 step
-    #arrowtext 点击 |cRXP_PICK_book|r
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击 |cRXP_PICK_书籍|r。
+    #arrowtext Click\n|cRXP_PICK_book|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_book|r.
     .goto 2022,53.47,21.99
     .complete 66000,1,1 --1/4 Books saved
 	.noskyriding
 step
     .goto 2022,54.12,22.01
-    >>破坏蛋并击杀 |cRXP_ENEMY_Infused 露比 Whelplings|r。
+    >>Break the eggs and kill the |cRXP_ENEMY_Infused Ruby Whelplings|r.
     .complete 65998,1 --1/1 Infused dragon eggs found
     .complete 65998,2,3 --3/9 Infused Ruby Whelpling slain
-    .mob 注能红龙宝宝
+    .mob Infused Ruby Whelpling
 	.noskyriding
 step
     .goto 2022,55.16,22.71
-    >>击碎卵并击杀 |cRXP_ENEMY_Infused 露比 Whelplings|r。
+    >>Break the eggs and kill the |cRXP_ENEMY_Infused Ruby Whelplings|r.
     .complete 65998,2,6 --6/9 Infused Ruby Whelpling slain
-    .mob 注能红龙宝宝
+    .mob Infused Ruby Whelpling
 	.noskyriding
 step
     .goto 2022,54.89,21.36
-    >>击碎卵并击杀 |cRXP_ENEMY_Infused 露比 Whelplings|r。
+    >>Break the eggs and kill the |cRXP_ENEMY_Infused Ruby Whelplings|r.
     .complete 65998,2 --9/9 Infused Ruby Whelpling slain
-    .mob 注能红龙宝宝
+    .mob Infused Ruby Whelpling
 	.noskyriding
 step
-    #arrowtext 点击 |cRXP_PICK_book|r
+    #arrowtext Click\n|cRXP_PICK_book|r
     .goto 2022,54.62,20.36
-    >>|TInterface/cursor/crosshair/interact.blp:20|t|cRXP_PICK_在塔内|r点击 |cRXP_WARN_book|r。
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_book|r |cRXP_WARN_inside the tower|r.
     .complete 66000,1,2 --2/4 Books saved
 	.noskyriding
 step
-    #arrowtext 点击 |cRXP_PICK_book|r
-    >>|TInterface/cursor/crosshair/interact.blp:20|t|cRXP_PICK_在塔内二楼|r点击 |cRXP_WARN_book|r。
+    #arrowtext Click\n|cRXP_PICK_book|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_book|r |cRXP_WARN_inside the tower on the second floor|r.
     .goto 2022,55.08,20.77,10,0
     .goto 2022,55.04,20.3,5,0
     .goto 2022,54.6,20.62
@@ -24505,133 +24503,133 @@ step
 step
     #label WakingShoreFutureoftheFlight
     .goto 2022,55.16,22.73
-    >>击碎卵并击杀 |cRXP_ENEMY_Infused 露比 Whelplings|r。
+    >>Break the eggs and kill the |cRXP_ENEMY_Infused Ruby Whelplings|r.
     .complete 65998,2 --9/9 Infused Ruby Whelpling slain
-    .mob 注能红龙宝宝
+    .mob Infused Ruby Whelpling
 	.noskyriding
 step
-    #arrowtext 点击 |cRXP_PICK_book|r
+    #arrowtext Click\n|cRXP_PICK_book|r
     #label FiravaRekindler
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击 |cRXP_PICK_book|r。
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_book|r.
     .goto 2022,57.00,23.64
     .complete 66000,1,4 --1/4 Books saved
 	.noskyriding
 step
-    #arrowtext 杀死 |cRXP_ENEMY_Primalists/Revenants/Taraseks|r
+    #arrowtext Kill\n|cRXP_ENEMY_Primalists/Revenants/Taraseks|r
     #loop
     .goto 2022,57.41,23.37,40,0
     .goto 2022,53.58,22.58,40,0
     .goto 2022,55.42,20.71,40,0
-    >>在完成其他目标的同时，击杀 |cRXP_ENEMY_Primalists/Revenants/Taraseks|r。
+    >>Kill |cRXP_ENEMY_Primalists/Revenants/Taraseks|r while doing the other objectives.
     .complete 65999,1 --15/15 Primalist forces slain
-    .mob 原始亡魂
-    .mob 塔拉赛元素师
-    .mob 熔火元素师
-    .mob 狂放的爆裂熔岩
-    .mob 膨胀的火元素
+    .mob Primal Revenant
+    .mob Tarasek Elementalist
+    .mob Molten Elementalist
+    .mob Unleashed Lavaburst
+    .mob Swelling Fire Elemental
 	.noskyriding
 step
     #label WakingShoreDontTurnIn1
     #completewith WakingShoreRedInToothAndClawLibraryofAlexstrasza
-    .goto 2022,56.24,22.14,10 >>|cRXP_WARN_在到达路点所在地区之前，不要交任务|r。
+    .goto 2022,56.24,22.14,10 >>|cRXP_WARN_DON'T TURN IN THE QUESTS|r until you're at the waypoint location.
 	.noskyriding
 step
-    #arrowtext 接下来与 森德拉克斯 对话
+    #arrowtext Talk to Sendrax next
     #requires WakingShoreRedInToothAndClaw
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与你旁边的森德拉克斯对话。
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Sendrax next to you.
     .goto 2022,56.24,22.14
-    .turnin 65998 >>交任务 阿莱克丝塔萨的藏书馆
+    .turnin 65998 >>Turn in Library of Alexstrasza
 	.noskyriding
 step
-    #arrowtext 与 |cRXP_FRIENDLY_森德拉克斯|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Sendrax|r
     #label WakingShoreRedInToothAndClawLibraryofAlexstrasza
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与你旁边的 |cRXP_FRIENDLY_森德拉克斯|r 对话。
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sendrax|r next to you.
     .goto 2022,56.24,22.14
-    .turnin 65999 >>交任务 齿爪尽红
-    .turnin 66000 >>交任务 阿莱克丝塔萨's Library
-    .accept 66001 >>接受任务 最后的希望
+    .turnin 65999 >>Turn in Red in Tooth and Claw
+    .turnin 66000 >>Turn in Library of Alexstrasza
+    .accept 66001 >>Accept A Last Hope
 	.noskyriding
 step
-    #arrowtext 与 |cRXP_FRIENDLY_森德拉克斯|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_森德拉克斯|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Sendrax|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sendrax|r.
     .goto 2022,56.24,22.06
     .skipgossip
-    .timer 16,剧情事件时长
+    .timer 16,Roleplay Duration
     .complete 66001,1 --1/1 Meet Sendrax by the ritual site
 	.noskyriding
 step
-    #arrowtext 等待剧情演出
-    >>等待剧情播放
+    #arrowtext Wait for the roleplay
+    >>Wait for the roleplay
     .goto 2022,56.92,21.62
     .complete 65998,1 --1/1 Infused dragon eggs found
 	.noskyriding
 step
-    .itemcount 132516,1
+    .itemcount 132516,1 --Gunshoes
     #completewith next
     .cooldown item,132516,>0,1
-    .cast 202844 >>使用 |T1405809:0|t[火枪鞋] |cRXP_WARN_就在点击蛋前|r。
+    .cast 202844 >>Use |T1405809:0|t[Gunshoes] |cRXP_WARN_right before clicking on the egg|r.
 	.noskyriding
 step
-    >>与蛋互动。
+    >>Interact with the egg
     .goto 2022,56.92,21.61
     .complete 66001,2 --1/1 Pick up the Infused Dragon Egg
 	.noskyriding
 step
-    >>|cRXP_WARN_使用任何技能都会掉落蛋|r。
+    >>|cRXP_WARN_Using any ability will drop the egg|r.
     .goto 2022,55.21,26.27,30,0
     .goto 2022,54.99,30.77
     .complete 66001,3 --1/1 Carry the egg to safety
-    .timer 18,剧情事件时长
+    .timer 18,Roleplay Duration
 	.noskyriding
 step
-    #arrowtext 与 |cRXP_FRIENDLY_管理者瑟利斯特拉|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_管理者瑟利斯特拉|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Majordomo Selistra|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Majordomo Selistra|r.
     .goto 2022,55.10,31.04
     .skipgossip 1
-    .turnin 66001 >>交任务 最后的希望
-    .accept 66114 >>接受任务 为了女王的福祉
-	.target 管理者瑟利斯特拉
+    .turnin 66001 >>Turn in A Last Hope
+    .accept 66114 >>Accept For the Benefit of the Queen
+	.target Majordomo Selistra
 	.noskyriding
 step
-    #arrowtext 与 |cRXP_FRIENDLY_管理者瑟利斯特拉|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Majordomo Selistra|r
     .goto 2022,55.10,31.03
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_管理者瑟利斯特拉|r 对话。
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Majordomo Selistra|r.
     .skipgossipid 54941
-    .timer 67,前往红玉新生圣地
+    .timer 67,Ride to the Ruby Lifeshrine
     .complete 66114,1 --1/1 Ride with Majordomo Selistra to the Ruby Lifeshrine
 	.noskyriding
 step
-    #arrowtext 与 |cRXP_FRIENDLY_Alexstraza the 生命-Binder|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Alexstraza the 生命-Binder|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Alexstraza the Life-Binder|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alexstraza the Life-Binder|r.
     .goto 2022,62.34,73.02
     .skipgossip 187290,1
     .complete 66114,2 --1/1 Show Queen Alexstrasza the infused egg
-	.target 阿莱克丝塔萨
+	.target Alexstraza the Life-Binder
 	.noskyriding
 step
-    #arrowtext 与 |cRXP_FRIENDLY_阿莱克丝塔萨，生命的缚誓者|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Alexstrasza the Life-Binder|r
     .goto 2022,62.34,73.02
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿莱克丝塔萨 生命守护者|r 对话。
-    .turnin 66114 >>交任务 为了女王的福祉
-    .accept 68795 >>接受任务 驭龙术
-	.target 阿莱克丝塔萨
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alexstrasza the Life-Binder|r.
+    .turnin 66114 >>Turn in For the Benefit of the Queen
+    .accept 68795 >>Accept Dragonriding
+	.target Alexstraza the Life-Binder
 	.noskyriding
 step
-    #arrowtext 与 |cRXP_FRIENDLY_安德斯塔兹领主|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_安德斯塔兹领主|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Lord Andestrasz|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Andestrasz|r.
     .goto 2022,59.92,69.98,40,0
     .goto 2022,58.37,67.12
     .skipgossipid 55643
-    .timer 26,剧情事件时长
+    .timer 26,Roleplay Duration
     .complete 68795,1 --1/1 Speak to Lord Andestrasz about Dragonriding
-	.target 安德斯塔兹领主
+	.target Lord Andestrasz
 	.noskyriding
 step
-    #arrowtext 与 |cRXP_FRIENDLY_安德斯塔兹领主|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Lord Andestrasz|r
     .goto 2022,57.66,66.89
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_安德斯塔兹领主|r 对话
-    .turnin 68795 >>交任务 驭龙术
-	.target 安德斯塔兹领主
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Andestrasz|r.
+    .turnin 68795 >>Turn in Dragonriding
+	.target Lord Andestrasz
 	.noskyriding
 ]])
 --Blood Elf: Sunstrider Isle
@@ -24640,9 +24638,9 @@ RXPGuides.RegisterGuide([[
 #version 2
 #group RestedXP 快速升级
 #subgroup |cFFFCDC00(1-90)|r 默认
-#name ab) 逐日岛
-#displayname 逐日岛|cRXP_ENEMY_（备选版）|r
-#next ac) 血精灵 永歌森林
+#name ab) Sunstrider Isle
+#displayname Sunstrider Isle |cRXP_ENEMY_(Alternative)|r
+#next ac) Blood Elf Eversong Woods
 #defaultfor BloodElf !DK
 
 << Horde
@@ -24650,173 +24648,173 @@ RXPGuides.RegisterGuide([[
 step
     .zoneskip 1727
     #completewith SunstriderIsleFirstQuestCheck
-    +如果你想以最快速度升级，请选择流放者离岛作为起始区域。这需要重新创建角色。
+    +If you want to level as fast as possible, choose Exile’s Reach as your starting zone. This requires recreating your character.
 
 step
     #optional
     .zoneskip 1727,1
-    +你正在流亡者营地，但当前指南适用于|cfff78300血精灵起始区域|r。
-    +请选择流放者离岛指南。
+    +You are in Exiles Reach but the current Guide is for the |cfff78300Blood Elf Starting Zone|r.
+    +Please choose the Exiles Reach Guide.
 step
     #optional
     #completewith next
-    +|cRXP_WARN_若要充分利用RXP，按下Escape -> 选项 -> 快捷键 -> RestedXP指南 -> 选择并绑定活跃按钮1、2、3和4。你也可以为目标进行绑定。|r。
-    *这样你就能按快捷键来使用任务物品或选中相关的小怪
+    +|cRXP_WARN_If you want to make the most of RXP; Press Escape -> Options -> Keybindings -> RestedXP Guides -> Select and Bind Active Button 1,2,3 and 4. You can also do this with Targets|r.
+    *This will allow you to press a keybind to use a quest item or target a relevant mob
 step
-    #arrowtext 与 |cRXP_FRIENDLY_魔导师艾洛娜|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Magistrix Erona|r
     #label SunstriderIsleFirstQuestCheck
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_魔导师艾洛娜|r 对话。
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magistrix Erona|r.
     .goto 467,61.04,45.13
-    .accept 8325 >>接受任务 夺回逐日岛
-    .target 魔导师艾洛娜
+    .accept 8325 >>Accept Reclaiming Sunstrider Isle
+    .target Magistrix Erona
 step
-    #arrowtext 击杀 |cRXP_ENEMY_Mana Wyrms|r
-    >>击杀 |cRXP_ENEMY_法力浮龙|r。
+    #arrowtext Kill\n|cRXP_ENEMY_Mana Wyrms|r
+    >>Kill |cRXP_ENEMY_Mana Wyrms|r.
     .goto 467,60.6,52.5
     .complete 8325,1 --6/6 Mana Wyrm slain
-    .mob 法力浮龙
+    .mob Mana Wyrm
 step
-    #arrowtext 与 |cRXP_FRIENDLY_魔导师艾洛娜|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_魔导师艾洛娜|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Magistrix Erona|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magistrix Erona|r.
     .goto 467,61.0,45.1
-    .turnin 8325 >>交任务 夺回逐日岛
-    .accept 8326 >>接受任务 令人遗憾的措施
-    .target 魔导师艾洛娜
+    .turnin 8325 >>Turn in Reclaiming Sunstrider Isle
+    .accept 8326 >>Accept Unfortunate Measures
+    .target Magistrix Erona
 step
-    #arrowtext 杀死 |cRXP_ENEMY_Springpaw Cubs|r 和 |cRXP_ENEMY_魔泉山猫|r
+    #arrowtext Kill\n|cRXP_ENEMY_Springpaw Cubs|r and |cRXP_ENEMY_Springpaw Lynx|r
     #loop
     .goto 467,65.77,39.97,20,0
     .goto 467,68.40,37.61,20,0
     .goto 467,63.49,33.62,30,0
     .goto 467,68.13,34.18,30,0
-    >>击杀|cRXP_ENEMY_魔泉山猫幼崽|r和|cRXP_ENEMY_魔泉山猫|r。拾取它们的|T132494:0|t[|cRXP_LOOT_山猫的项圈|r]。
+    >>Kill |cRXP_ENEMY_Springpaw Cubs|r and |cRXP_ENEMY_Springpaw Lynx|r. Loot them for the |T132494:0|t[|cRXP_LOOT_Lynx Collars|r].
     .complete 8326,1 --8/8 Lynx Collar
-    .mob 魔泉山猫幼崽
-    .mob 魔泉山猫
+    .mob Springpaw Cub
+    .mob Springpaw Lynx
 step
-    #arrowtext 与 |cRXP_FRIENDLY_魔导师艾洛娜|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Magistrix Erona|r
     .goto 467,61.0,45.1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_魔导师艾洛娜|r 对话。
-    .turnin 8326 >>交任务 令人遗憾的措施
-    .accept 8327 >>接受任务 向兰萨恩·派雷隆报到
-    .target 魔导师艾洛娜
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magistrix Erona|r.
+    .turnin 8326 >>Turn in Unfortunate Measures
+    .accept 8327 >>Accept Report to Lanthan Perilon
+    .target Magistrix Erona
 step << Warlock
     #completewith next
-    +|cfff78300提示：使用|T136218:0|t召唤小鬼来召唤你的宠物|r。
+    +|cfff78300Reminder: Use |T136218:0|tSummon Imp to summon your pet|r.
 step
-    #arrowtext 走上斜坡
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t走上坡道与|cRXP_FRIENDLY_护井者索兰尼亚|r对话。
+    #arrowtext Walk up the ramp
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tWalk up the ramp and talk to |cRXP_FRIENDLY_Well Watcher Solanian|r.
     .goto 467,65.18,45.72,5,0
     .goto 467,65.81,44.45,5,0
     .goto 467,65.43,42.94,5,0
     .goto 467,64.49,42.17,5,0
     .goto 467,63.9,42.8
-    .accept 37442 >>接受任务 达斯雷玛的神龛
-    .accept 37443 >>接受任务 索兰尼亚的物品
-    .target 护井者索兰尼亚
+    .accept 37442 >>Accept The Shrine of Dath'Remar
+    .accept 37443 >>Accept Solanian's Belongings
+    .target Well Watcher Solanian
 step
-    #arrowtext 与 |cRXP_FRIENDLY_奥术师伊塔纳斯|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Arcanist Ithanas|r
     .goto 467,61.8,39.3
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥术师伊塔纳斯|r 对话。
-    .accept 37440 >>接受任务 奥术薄片
-    .target 奥术师伊塔纳斯
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arcanist Ithanas|r.
+    .accept 37440 >>Accept A Fistful of Slivers
+    .target Arcanist Ithanas
 step
-    #arrowtext 与 |cRXP_FRIENDLY_奥术师赫里恩|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Arcanist Helion|r
     .goto 467,58.45,38.79
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥术师赫里恩|r 对话。
-    .accept 37439 >>接受任务 无尽的渴求
-    .target 奥术师赫里恩
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arcanist Helion|r.
+    .accept 37439 >>Accept Thirst Unending
+    .target Arcanist Helion
 step
     #completewith next
-    >>击杀|cRXP_ENEMY_法力浮龙|r。拾取|T132877:0|t[|cRXP_LOOT_奥术薄片|r]。
+    >>Kill |cRXP_ENEMY_Mana Wyrms|r. Loot them for the |T132877:0|t[|cRXP_LOOT_Arcane Silvers|r].
     .complete 37440,1 --6/6 Arcane Sliver
-    .mob 法力浮龙
+    .mob Mana Wyrm
 step
-    #arrowtext 与 |cRXP_FRIENDLY_兰萨恩·派雷隆|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Lanthan Perilon|r
     .goto 467,52.9,49.8
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_兰萨恩·派雷隆|r 对话。
-    .turnin 8327 >>交任务 向兰萨恩·派雷隆报到
-    .accept 8334 >>接受任务 攻势
-    .target 兰萨恩·派雷隆
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lanthan Perilon|r.
+    .turnin 8327 >>Turn in Report to Lanthan Perilon
+    .accept 8334 >>Accept Aggression
+    .target Lanthan Perilon
 step
     #completewith next
-    >>击杀|cRXP_ENEMY_法力浮龙|r。拾取|T132877:0|t[|cRXP_LOOT_奥术薄片|r]。
+    >>Kill |cRXP_ENEMY_Mana Wyrms|r. Loot them for the |T132877:0|t[|cRXP_LOOT_Arcane Silver|r].
     .complete 37440,1 --6/6 Arcane Sliver
-    .mob 法力浮龙
+    .mob Mana Wyrm
 step
-    #arrowtext 在 |cRXP_ENEMY_Mana Wyrms|r 上使用 [奥术 Torrent]
+    #arrowtext Use [Arcane Torrent]\non |cRXP_ENEMY_Mana Wyrms|r
     .goto 467,50.14,40.74
-    >>在|cRXP_ENEMY_法力浮龙|r旁使用|T136222:0|t[奥术洪流]。
+    >>Use |T136222:0|t[Arcane Torrent] next to a |cRXP_ENEMY_Mana Wyrms|r.
     .complete 37439,1 --1/1 Arcane Torrent unleashed
     .usespell 69179
 step
-    #arrowtext 杀死 |cRXP_ENEMY_Mana Wyrms|r
+    #arrowtext Kill\n|cRXP_ENEMY_Mana Wyrms|r
     .goto 467,50.14,40.74
-    >>击杀|cRXP_ENEMY_法力浮龙|r。拾取|T132877:0|t[|cRXP_LOOT_奥术薄片|r]。
+    >>Kill |cRXP_ENEMY_Mana Wyrms|r. Loot them for the |T132877:0|t[|cRXP_LOOT_Arcane Silver|r].
     .complete 37440,1 --6/6 Arcane Sliver
-    .mob 法力浮龙
+    .mob Mana Wyrm
 step
     #completewith EversongWoodsSecondBelonging
-    >>击杀 |cRXP_ENEMY_树人嫩苗|r 和 |cRXP_ENEMY_凶猛的树人嫩苗|r。
+    >>Kill |cRXP_ENEMY_Tenders|r and |cRXP_ENEMY_Feral Tenders|r.
     .complete 8334,2 --7/7 Feral Tender slain
     .complete 8334,1 --7/7 Tender slain
-    .mob 树人嫩苗
-    .mob 凶猛的树人嫩苗
+    .mob Tender
+    .mob Feral Tender
 step
-    #arrowtext 点击 |cRXP_PICK_达斯雷玛的神龛|r
+    #arrowtext Click\n|cRXP_PICK_Shrine of Dath'Remar|r
     .goto 467,35.3,40.2
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击[|cRXP_PICK_达斯雷玛的神龛|r]。
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the [|cRXP_PICK_Shrine of Dath'Remar|r].
     .complete 37442,1 --1/1 Shrine of Dath'Remar Read
 step
-    #arrowtext 点击 |cRXP_PICK_天灾魔法卷轴|r
+    #arrowtext Click\n|cRXP_PICK_Scroll of Scourge Magic|r
     .goto 467,40.4,50.5
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击[|cRXP_PICK_天灾魔法卷轴|r]。
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the [|cRXP_PICK_Scroll of Scourge Magic|r].
     .complete 37443,2 --1/1 Scroll of Scourge Magic
 step
-    #arrowtext 点击 |cRXP_PICK_Solanian's Scrying 法球|r
+    #arrowtext Click\n|cRXP_PICK_Solanian's Scrying Orb|r
     #label EversongWoodsSecondBelonging
     .goto 467,52.2,69.4
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击 [|cRXP_PICK_Solanian's Scrying 法球|r]。
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the [|cRXP_PICK_Solanian's Scrying Orb|r].
     .complete 37443,1 --1/1 Solanian's Scrying Orb
 step
-    #arrowtext 杀死 |cRXP_ENEMY_Tenders|r 和 |cRXP_ENEMY_野性 Tenders|r
+    #arrowtext Kill\n|cRXP_ENEMY_Tenders|r and |cRXP_ENEMY_Feral Tenders|r
     .goto 467,40.4,50.5,30,0
     .goto 467,54.76,70.68,30,0
-    >>击杀 |cRXP_ENEMY_树人嫩苗|r 和 |cRXP_ENEMY_凶猛的树人嫩苗|r。
+    >>Kill |cRXP_ENEMY_Tenders|r and |cRXP_ENEMY_Feral Tenders|r.
     .complete 8334,2 --7/7 Feral Tender slain
     .complete 8334,1 --7/7 Tender slain
-    .mob 树人嫩苗
-    .mob 凶猛的树人嫩苗
+    .mob Tender
+    .mob Feral Tender
 step
-    #arrowtext 点击 |cRXP_PICK_索拉尼安的日志|r
+    #arrowtext Click\n|cRXP_PICK_Solanian's Journal|r
     .goto 467,60.1,57.1
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击[|cRXP_PICK_索兰尼亚的日记|r]。
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the [|cRXP_PICK_Solanian's Journal|r].
     .complete 37443,3 --1/1 Solanian's Journal
 step
-    #arrowtext 与 |cRXP_FRIENDLY_兰萨恩·派雷隆|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Lanthan Perilon|r
     .goto 467,52.9,49.8
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_兰萨恩·派雷隆|r 对话。
-    .turnin 8334 >>交任务 攻势
-    .accept 8335 >>接受任务 放逐者菲伦德雷
-    .target 兰萨恩·派雷隆
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lanthan Perilon|r.
+    .turnin 8334 >>Turn in Aggression
+    .accept 8335 >>Accept Felendren the Banished
+    .target Lanthan Perilon
 step
     #completewith EversongWoodsFelendrenHead
-    >>击杀 |cRXP_ENEMY_奥术怨灵|r 和 |cRXP_ENEMY_被污染的奥术怨灵|r。
+    >>Kill |cRXP_ENEMY_Arcane Wraiths|r and |cRXP_ENEMY_Tainted Arcane Wraith|r.
     .complete 8335,1 --8/8 Arcane Wraith slain
     .complete 8335,2 --2/2 Tainted Arcane Wraith slain
-    .mob 奥术怨灵
-    .mob 被污染的奥术怨灵
+    .mob Arcane Wraith
+    .mob Tainted Arcane Wraith
 step
     #completewith next
     #label FelendrenTheBanishedA
-    >>击杀|cRXP_ENEMY_放逐者菲伦德雷|r，拾取|T134151:0|t[|cRXP_LOOT_菲伦德雷的头颅|r]。
+    >>Kill |cRXP_ENEMY_Felendren the Banished|r. Loot him for |T134151:0|t[|cRXP_LOOT_Felendren's Head|r].
     .complete 8335,3 --1/1 Felendren's Head
-    >>击杀1只|cRXP_ENEMY_被污染的奥术怨灵|r，拾取 [|cRXP_LOOT_被污染的奥术薄片|r]。
+    >>Kill a |cRXP_ENEMY_Tainted Arcane Wraith|r. Loot it for the [|cRXP_LOOT_Tainted Arcane Sliver|r].
     .collect 20483,1,8338,0
-    .accept 8338 >>接受任务 被污染的奥术薄片
-    .mob 放逐者菲伦德雷
+    .accept 8338 >>Accept Tainted Arcane Sliver
+    .mob Felendren the Banished
 step
-    #arrowtext 沿路向上
+    #arrowtext Follow the way up
     #completewith FelendrenTheBanishedA
     .goto 467,41.59,61.88,15,0
     .goto 467,42.40,66.28,15,0
@@ -24834,39 +24832,39 @@ step
     .goto 467,37.86,60.95,8,0
     .goto 467,36.69,61.87,8,0
     .goto 467,36.34,63.76,8,0
-    .goto 467,37.98,66.43,8 >>沿路向上走
+    .goto 467,37.98,66.43,8 >>Follow the way up
 step
-    #arrowtext 杀死 |cRXP_ENEMY_放逐者菲伦德雷|r
+    #arrowtext Kill\n|cRXP_ENEMY_Felendren the Banished|r
     #requires FelendrenTheBanishedA
     #label EversongWoodsFelendrenHead
     .goto 467,38.92,63.98
-    >>击杀|cRXP_ENEMY_放逐者菲伦德雷|r，拾取|T134151:0|t[|cRXP_LOOT_菲伦德雷的头颅|r]。
+    >>Kill |cRXP_ENEMY_Felendren the Banished|r. Loot him for |T134151:0|t[|cRXP_LOOT_Felendren's Head|r].
     .complete 8335,3 --1/1 Felendren's Head
-    .mob 放逐者菲伦德雷
+    .mob Felendren the Banished
 step
-    #arrowtext 杀死 |cRXP_ENEMY_被污染的奥术怨灵|r
+    #arrowtext Kill\n|cRXP_ENEMY_Tainted Arcane Wraith|r
     .goto 467,38.92,63.98
-    >>击杀1只|cRXP_ENEMY_被污染的奥术怨灵|r，拾取 [|cRXP_LOOT_被污染的奥术薄片|r]。
+    >>Kill a |cRXP_ENEMY_Tainted Arcane Wraith|r. Loot it for the [|cRXP_LOOT_Tainted Arcane Sliver|r].
     .collect 20483,1,8338,0
-    .accept 8338 >>接受任务 被污染的奥术薄片
-    .mob 被污染的奥术怨灵
+    .accept 8338 >>Accept Tainted Arcane Sliver
+    .mob Tainted Arcane Wraith
 step
-    #arrowtext 向下跑，送死以脱身
-    .isQuestComplete 8335
+    #arrowtext Run down to die
+    .isQuestComplete 8335 --Felendren the Banished
     #completewith next
     .goto 467,39.87,59.96
-    .deathskip >>往下跑（不要跳），摔死
+    .deathskip >>Run down (DON'T JUMP) to die
 step
-    #arrowtext 与 |cRXP_FRIENDLY_奥术师赫里恩|r 对话
-    .isQuestComplete 8335
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Arcanist Helion|r
+    .isQuestComplete 8335 --Felendren the Banished
     .goto 467,58.5,38.8
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥术师赫里恩|r 对话。
-    .turnin 8338 >>交任务 被污染的奥术薄片
-    .turnin 37439 >>交任务 无尽的渴求
-    .target 奥术师赫里恩
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arcanist Helion|r.
+    .turnin 8338 >>Turn in Tainted Arcane Sliver
+    .turnin 37439 >>Turn in Thirst Unending
+    .target Arcanist Helion
 step
-    #arrowtext 杀死 |cRXP_ENEMY_Arcane Wraiths|r 和 |cRXP_ENEMY_被污染的奥术怨灵|r
-    .isOnQuest 8338
+    #arrowtext Kill\n|cRXP_ENEMY_Arcane Wraiths|r and |cRXP_ENEMY_Tainted Arcane Wraith|r
+    .isOnQuest 8338 --Tainted Arcane Sliver
     #loop
     .goto 467,36.49,62.42,10,0
     .goto 467,35.95,62.37,15,0
@@ -24883,52 +24881,52 @@ step
     .goto 467,74.29,38.05,15,0
     .goto 467,73.09,37.83,15,0
     .goto 467,70.00,38.26,15,0
-    >>击杀 |cRXP_ENEMY_奥术怨灵|r 和 |cRXP_ENEMY_被污染的奥术怨灵|r。
+    >>Kill |cRXP_ENEMY_Arcane Wraiths|r and |cRXP_ENEMY_Tainted Arcane Wraith|r.
     .complete 8335,1 --8/8 Arcane Wraith slain
     .complete 8335,2 --2/2 Tainted Arcane Wraith slain
-    .mob 奥术怨灵
-    .mob 被污染的奥术怨灵
+    .mob Arcane Wraith
+    .mob Tainted Arcane Wraith
 step
-    .isOnQuest 8338
+    .isOnQuest 8338 --Tainted Arcane Sliver
     #requires EversongWoodsArcaneWraith
     #completewith next
     .goto 467,41.44,51.44
-    .deathskip >>拉怪后送死，并在灵魂医者处复活
+    .deathskip >>Pull mobs, die, ress at the spirit healer
 step
-    #arrowtext 与 |cRXP_FRIENDLY_奥术师赫里恩|r 对话
-    .isOnQuest 8338
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥术师赫里恩|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Arcanist Helion|r
+    .isOnQuest 8338 --Tainted Arcane Sliver
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arcanist Helion|r.
     .goto 467,58.5,38.8
-    .turnin 8338 >>交任务 被污染的奥术薄片
-    .turnin 37439 >>交任务 无尽的渴求
-    .target 奥术师赫里恩
+    .turnin 8338 >>Turn in Tainted Arcane Sliver
+    .turnin 37439 >>Turn in Thirst Unending
+    .target Arcanist Helion
 step
-    #arrowtext 与 |cRXP_FRIENDLY_奥术师伊塔纳斯|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥术师伊塔纳斯|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Arcanist Ithanas|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arcanist Ithanas|r.
     .goto 467,61.8,39.3
-    .turnin 37440 >>交任务 奥术薄片
-    .target 奥术师伊塔纳斯
+    .turnin 37440 >>Turn in A Fistful of Slivers
+    .target Arcanist Ithanas
 step
-    #arrowtext 走上斜坡
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_WARN_走上坡道|r与|cRXP_FRIENDLY_护井者索兰尼亚|r对话。
+    #arrowtext Walk up the ramp
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_WARN_Walk up the ramp|r and talk to |cRXP_FRIENDLY_Well Watcher Solanian|r.
     .goto 467,62.74,45.12,5,0
     .goto 467,65.29,45.79,10,0
     .goto 467,65.50,42.88,5,0
     .goto 467,63.97,42.83
-    .turnin 37442 >>交任务 达斯雷玛的神龛
-    .turnin 37443 >>交任务 索兰尼亚的物品
-    .target 护井者索兰尼亚
+    .turnin 37442 >>Turn in The Shrine of Dath'Remar
+    .turnin 37443 >>Turn in Solanian's Belongings
+    .target Well Watcher Solanian
 step
     #completewith next
     .goto 467,63.04,43.06
     .vendor
 step
-    #arrowtext 与 |cRXP_FRIENDLY_兰萨恩·派雷隆|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_兰萨恩·派雷隆|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Lanthan Perilon|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lanthan Perilon|r.
     .goto 467,52.9,49.78
-    .turnin 8335 >>交任务 放逐者菲伦德雷
-    .accept 8347 >>接受任务 帮助信使
-    .target 兰萨恩·派雷隆
+    .turnin 8335 >>Turn in Felendren the Banished
+    .accept 8347 >>Accept Aiding the Outrunners
+    .target Lanthan Perilon
 ]])
 --Blood Elf: Eversong Woods(xp tag)
 RXPGuides.RegisterGuide([[
@@ -24936,8 +24934,8 @@ RXPGuides.RegisterGuide([[
 #version 2
 #group RestedXP 快速升级
 #subgroup |cFFFCDC00(1-90)|r 默认
-#name ac) 血精灵 永歌森林
-#displayname |cFF1EFF002|r - 永歌森林
+#name ac) Blood Elf Eversong Woods
+#displayname |cFF1EFF002|r - Eversong Woods
 #next b1) 争霸艾泽拉斯介绍
 #defaultfor BloodElf !DK
 
@@ -24946,149 +24944,149 @@ RXPGuides.RegisterGuide([[
 step << Hunter
     #completewith next
     .goto 94,58.74,57.51
-    .cast 1515 >>用你的技能|T132164:0|t[驯服野兽]，驯服一只|cRXP_ENEMY_法力浮龙|r。
+    .cast 1515 >>Tame a |cRXP_ENEMY_Mana Wyrm|r with your ability |T132164:0|t[Tame Beast].
     .train 1515,1
 step
-    #arrowtext 与 |cRXP_FRIENDLY_信使奥拉莉恩|r 对话
-    .isOnQuest 8347
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Outrunner Alarion|r
+    .isOnQuest 8347 --Aiding the Outrunners
     .goto 94,40.42,32.21
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_信使奥拉莉恩|r 对话。
-    .turnin 8347 >>交任务 帮助信使
-    .accept 9704 >>接受任务 失心者的牺牲品
-    .target 信使奥拉莉恩
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Outrunner Alarion|r.
+    .turnin 8347 >>Turn in Aiding the Outrunners
+    .accept 9704 >>Accept Slain by the Wretched
+    .target Outrunner Alarion
 step
     .goto 94,42.02,35.65
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与地上被杀的信使互动
-    .turnin 9704 >>交任务 失心者的牺牲品
-    .accept 9705 >>接受任务 找回包裹
-    .target 被杀死的信使
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tInteract with the slain Outrunner on the ground
+    .turnin 9704 >>Turn in Slain by the Wretched
+    .accept 9705 >>Accept Package Recovery
+    .target Slain Outrunner
 step
-    #arrowtext 与 |cRXP_FRIENDLY_信使奥拉莉恩|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Outrunner Alarion|r
     .goto 94,40.42,32.22
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_信使奥拉莉恩|r 对话。
-    .turnin 9705 >>交任务 找回包裹
-    .accept 8350 >>接受任务 送信
-    .target 信使奥拉莉恩
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Outrunner Alarion|r.
+    .turnin 9705 >>Turn in Package Recovery
+    .accept 8350 >>Accept Completing the Delivery
+    .target Outrunner Alarion
 step
-    #arrowtext 与 |cRXP_FRIENDLY_魔导师亚隆尼斯|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Magister Jaronis|r
     .goto 94,47.25,46.30
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_魔导师亚隆尼斯|r 对话。
-    .accept 8472 >>接受任务 失效的傀儡
-    .target 魔导师亚隆尼斯
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magister Jaronis|r.
+    .accept 8472 >>Accept Major Malfunction
+    .target Magister Jaronis
 step
-    #arrowtext 点击\n|cRXP_PICK_面板|r
+    #arrowtext Click\n|cRXP_PICK_Board|r
     .goto 94,48.16,46.31
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_木板|r。
-    .accept 8468 >>接受任务 通缉：饥饿者泰里斯
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Board|r.
+    .accept 8468 >>Accept WANTED: Thaelis the Hungerer
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_艾尔杜·炙痕|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Aeldon Sunbrand|r
     .goto 94,48.17,46.0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾尔杜·炙痕|r 对话。
-    .accept 8463 >>接受任务 不稳定的法力水晶
-    .target 艾尔杜·炙痕
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aeldon Sunbrand|r.
+    .accept 8463 >>Accept Unstable Mana Crystals
+    .target Aeldon Sunbrand
 step
     #completewith WantedThaelisTheHungererA
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击[|cRXP_LOOT_不稳定的法力水晶箱|r]。
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on [|cRXP_LOOT_Unstable Mana Crystal Crates|r].
     .complete 8463,1 --6/6 Unstable Mana Crystal
 step
     #completewith WantedThaelisTheHungererA
-    >>击杀 |cRXP_ENEMY_Arcane Patrollers|r。拾取它们的 |T134123:0|t[|cRXP_LOOT_Arcane Cores|r]。
+    >>Kill |cRXP_ENEMY_Arcane Patrollers|r. Loot them for the |T134123:0|t[|cRXP_LOOT_Arcane Cores|r].
     .complete 8472,1 --6/6 Arcane Core
-    .mob 奥术巡逻者
+    .mob Arcane Patroller
 step
-    #arrowtext 杀死\n|cRXP_ENEMY_Thaelis|r
+    #arrowtext Kill\n|cRXP_ENEMY_Thaelis|r
     #label WantedThaelisTheHungererA
     .goto 94,45.36,38.12,15,0
     .goto 94,45.01,37.68
-    >>击杀|cRXP_ENEMY_饥饿者泰里斯|r，拾取|T134161:0|t[|cRXP_LOOT_泰里斯的徽记|r]。
+    >>Kill |cRXP_ENEMY_Thaelis|r. Loot him for |T134161:0|t[|cRXP_LOOT_Thaelis's Head|r].
     .complete 8468,1 --1/1 Thaelis' Head
     .mob Thaelis
 step
     #completewith next
-    >>杀死 |cRXP_ENEMY_奧术 Patrollers|r。拾取它们的 |T134123:0|t[|cRXP_LOOT_奧术 Cores|r]。
+    >>Kill |cRXP_ENEMY_Arcane Patrollers|r. Loot them for the |T134123:0|t[|cRXP_LOOT_Arcane Cores|r].
     .complete 8472,1 --6/6 Arcane Core
-    .mob 奥术巡逻者
+    .mob Arcane Patroller
 step
-    #arrowtext 点击\n|cRXP_PICK_不稳定的法力水晶箱|r
+    #arrowtext Click\n|cRXP_PICK_Unstable Mana Crystal Crates|r
     #loop
     .goto 94,45.13,40.71,18,0
     .goto 94,46.01,43.29,25,0
     .goto 94,46.92,44.57,10,0
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击[|cRXP_PICK_不稳定魔法水晶箱|r]。
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on [|cRXP_PICK_Unstable Mana Crystal Crates|r].
     .complete 8463,1 --6/6 Unstable Mana Crystal
 step
-    #arrowtext 杀死\n|cRXP_ENEMY_Arcane Patrollers|r
+    #arrowtext Kill\n|cRXP_ENEMY_Arcane Patrollers|r
     #loop
     .goto 94,47.69,39.02,15,0
     .goto 94,47.11,37.44,15,0
     .goto 94,46.53,35.16,30,0
     .goto 94,46.94,44.59,15,0
-    >>击杀 |cRXP_ENEMY_Arcane Patrollers|r。拾取它们的 |T134123:0|t[|cRXP_LOOT_Arcane Cores|r]。
+    >>Kill |cRXP_ENEMY_Arcane Patrollers|r. Loot them for the |T134123:0|t[|cRXP_LOOT_Arcane Cores|r].
     .complete 8472,1 --6/6 Arcane Core
-    .mob 奥术巡逻者
+    .mob Arcane Patroller
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_魔导师亚隆尼斯|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Magister Jaronis|r
     .goto 94,47.26,46.30
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_魔导师亚隆尼斯|r 对话。
-    .turnin 8472 >>交任务 失效的傀儡
-    .accept 8895 >>接受任务 送往北部圣殿的信
-    .target 魔导师亚隆尼斯
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magister Jaronis|r.
+    .turnin 8472 >>Turn in Major Malfunction
+    .accept 8895 >>Accept Delivery to the North Sanctum
+    .target Magister Jaronis
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_艾尔杜·炙痕|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Aeldon Sunbrand|r
     .goto 94,48.17,46.0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾尔杜·炙痕|r 对话。
-    .turnin 8463 >>交任务 不稳定的法力水晶
-    .accept 9352 >>接受任务 达纳苏斯的侵扰
-    .target 艾尔杜·炙痕
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aeldon Sunbrand|r.
+    .turnin 8463 >>Turn in Unstable Mana Crystals
+    .accept 9352 >>Accept Darnassian Intrusions
+    .target Aeldon Sunbrand
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_坎雷中士|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Sergeant Kan'ren|r
     .goto 94,47.77,46.58
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_坎雷中士|r 对话。
-    .turnin 8468 >>交任务 通缉：饥饿者泰里斯
-    .target 坎雷中士
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergeant Kan'ren|r.
+    .turnin 8468 >>Turn in WANTED: Thaelis the Hungerer
+    .target Sergeant Kan'ren
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_斯雷因|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Sleyin|r
     #completewith next
     .goto 94,47.07,47.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_斯雷因|r对话。
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sleyin|r.
     .vendor
     .target Sleyin
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_游侠杰拉|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Ranger Jaela|r
     .goto 94,50.33,50.77
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_游侠杰拉|r 对话。
-    .accept 8475 >>接受任务 死亡之痕
-    .target 游侠杰拉
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ranger Jaela|r.
+    .accept 8475 >>Accept The Dead Scar
+    .target Ranger Jaela
 step
-    #arrowtext 杀死\n|cRXP_ENEMY_Plaguebone Pillagers|r
+    #arrowtext Kill\n|cRXP_ENEMY_Plaguebone Pillagers|r
     .goto 94,50.17,55.05
-    >>击杀 |cRXP_ENEMY_天灾骨骸|r。
+    >>Kill |cRXP_ENEMY_Plaguebone Pillagers|r.
     .complete 8475,1 --8/8 Plaguebone Pillager slain
-    .mob 天灾骨骸
+    .mob Plaguebone Pillager
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_游侠杰拉|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Ranger Jaela|r
     .goto 94,50.33,50.77
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_游侠杰拉|r 对话。
-    .turnin 8475 >>交任务 死亡之痕
-    .target 游侠杰拉
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ranger Jaela|r.
+    .turnin 8475 >>Turn in The Dead Scar
+    .target Ranger Jaela
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_魔网监护者凯丹尼斯|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Ley-Keeper Caidanis|r
     .goto 94,44.6,53.1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_魔网监护者凯丹尼斯|r 对话。
-    .turnin 8895 >>交任务 送往北部圣殿的信
-    .accept 9119 >>接受任务 西部圣殿的麻烦
-    .target 魔网监护者凯丹尼斯
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ley-Keeper Caidanis|r.
+    .turnin 8895 >>Turn in Delivery to the North Sanctum
+    .accept 9119 >>Accept Malfunction at the West Sanctum
+    .target Ley-Keeper Caidanis
 step
-    .itemcount 132516,1
+    .itemcount 132516,1 --Gunshoes
     #completewith next
-    .cast 202844 >>使用|T1405809:0|t[火枪鞋]
+    .cast 202844 >>Use |T1405809:0|t[Gunshoes]
 step
-    #arrowtext 与 |cRXP_FRIENDLY_魔网监护者薇兰妮亚|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Ley-Keeper Velania|r
     .goto 94,36.7,57.44
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_魔网监护者薇兰妮亚|r 对话。
-    .turnin 9119 >>交任务 西部圣殿的麻烦
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ley-Keeper Velania|r.
+    .turnin 9119 >>Turn in Malfunction at the West Sanctum
 --     .accept 8486 >>Accept Arcane Instability
-    .target 魔网监护者薇兰妮亚
+    .target Ley-Keeper Velania
 -- step
 --     #completewith ArcaneInstabilityA
 --     #hidewindow
@@ -25105,16 +25103,16 @@ step
 --     .mob Mana Stalker
 --     .mob Manawraith
 step
-    #arrowtext 杀死达纳苏斯斥候\n|cRXP_ENEMY_Darnassian 斥候|r
+    #arrowtext Kill\n|cRXP_ENEMY_Darnassian Scout|r
     #loop
     .goto 94,36.80,61.07,20,0
     .goto 94,33.15,59.25,30,0
     .goto 94,35.55,56.60,35,0
-    >>击杀一名 |cRXP_ENEMY_达纳苏斯斥候|r。拾取他身上的 |T133464:0|t[|cRXP_LOOT_秘密文件|r]。
+    >>Kill a |cRXP_ENEMY_Darnassian Scout|r. Loot him for the |T133464:0|t[|cRXP_LOOT_Incriminating Documents|r].
     .collect 20765,1,8482,0
-    .accept 8482 >>接受任务 秘密文件
+    .accept 8482 >>Accept Incriminating Documents
     .complete 9352,1 --1/1 Intruder Defeated
-    .mob 达纳苏斯斥候
+    .mob Darnassian Scout
 -- step
 --     #label ArcaneInstabilityA
 --     >>Kill |cRXP_ENEMY_Mana Stalker|r and |cRXP_ENEMY_Manawraiths|r.
@@ -25123,93 +25121,93 @@ step
 --     .mob Mana Stalker
 --     .mob Manawraith
 step
-    #arrowtext 与 |cRXP_FRIENDLY_魔网监护者薇兰妮亚|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Ley-Keeper Velania|r
     .goto 94,36.7,57.44
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_魔网监护者薇兰妮亚|r 对话。
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ley-Keeper Velania|r.
     --.turnin 8486 >>Turn in Arcane Instability
-    .turnin 9352 >>交任务 达纳苏斯的侵扰
-    .target 魔网监护者薇兰妮亚
+    .turnin 9352 >>Turn in Darnassian Intrusions
+    .target Ley-Keeper Velania
 step
-    #arrowtext 与 |cRXP_FRIENDLY_哈斯温里奥|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Hathvelion Sungaze|r
     .goto 94,30.26,58.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哈斯温里奥|r 对话。
-    .accept 8884 >>接受任务 鱼人……
-    .target 哈斯温里奥
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hathvelion Sungaze|r.
+    .accept 8884 >>Accept Fish Heads, Fish Heads...
+    .target Hathvelion Sungaze
 step
-    #arrowtext 杀死 |cRXP_ENEMY_鱼人|r
+    #arrowtext Kill\n|cRXP_ENEMY_Murloc|r
     #loop
     .goto 94,27.24,56.88,35,0
     .goto 94,25.84,64.11,35,0
-    >>杀死 |cRXP_ENEMY_鱼人|r。拾取它的 |T134939:0|t[|cRXP_LOOT_凯莉森德拉船长的航海图|r]。
+    >>Kill the |cRXP_ENEMY_Murloc|r. Loot it for the |T134939:0|t[|cRXP_LOOT_Captain Kelisendra's Lost Rutters|r].
     .collect 21776,1,8887,0
-    .accept 8887 >>接受任务 凯莉森德拉船长的航海图
-    .mob 暗鳞抢劫者
-    .mob 暗鳞先知
+    .accept 8887 >>Accept Captain Kelisendra's Lost Rutters
+    .mob Grimscale Forager
+    .mob Grimscale Seer
 step << Warlock/Hunter
     #completewith next
-    +|cRXP_WARN_将你的宠物设为“被动”|r。
+    +|cRXP_WARN_Set your pet to 'Passive'|r.
 step
     #completewith next
     #label TheWaywardApprenticeA
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_魔导师兰德拉·晨行者|r 对话。
-    .accept 9254 >>接受任务 外出的学徒
-    .target 魔导师兰德拉·晨行者
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magistrix Landra Dawnstrider|r.
+    .accept 9254 >>Accept The Wayward Apprentice
+    .target Magistrix Landra Dawnstrider
 step
     #completewith TheWaywardApprenticeA
     .goto 94,35.46,57.41
-    .deathskip >>拉怪后送死，并在灵魂医者处复活
+    .deathskip >>Pull some mobs, die and ress at the spirit healer
 step
-    #arrowtext 与 |cRXP_FRIENDLY_魔导师兰德拉·晨行者|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Magistrix Landra Dawnstrider|r
     #requires TheWaywardApprenticeA
     .goto 94,44.03,70.76
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_魔导师兰德拉·晨行者|r 对话。
-    .accept 9254 >>接受任务 外出的学徒
-    .accept 9144 >>接受任务 迷失在幽魂之地
-    .target 魔导师兰德拉·晨行者
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magistrix Landra Dawnstrider|r.
+    .accept 9254 >>Accept The Wayward Apprentice
+    .accept 9144 >>Accept Missing in the Ghostlands
+    .target Magistrix Landra Dawnstrider
 step << Hunter/Warlock
     #completewith next
-    +|cRXP_WARN_提醒：召唤你的宠物并将其设为“助攻”|r。
+    +|cRXP_WARN_Reminder: Resummon your pet and set it to 'Assist'|r.
 step
-    #arrowtext 与 |cRXP_FRIENDLY_阿尔德恩·河风|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Ardeyn Riverwind|r
     .goto 94,43.58,71.20
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿尔德恩·河风|r 对话。
-    .accept 9258 >>接受任务 焦痕谷
-    .target 阿尔德恩·河风
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ardeyn Riverwind|r.
+    .accept 9258 >>Accept The Scorched Grove
+    .target Ardeyn Riverwind
 step
-    #arrowtext 与 |cRXP_FRIENDLY_玛尼尔·琥珀之光|r 和 |cRXP_FRIENDLY_萨希尔|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_玛尼尔·琥珀之光|r 和 |cRXP_FRIENDLY_萨希尔|r 对话。
-    .accept 9358 >>接受任务 游侠萨蕾恩
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Marniel Amberlight|r and |cRXP_FRIENDLY_Sathiel|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marniel Amberlight|r and |cRXP_FRIENDLY_Sathiel|r.
+    .accept 9358 >>Accept Ranger Sareyn
     .goto 94,43.67,71.31
-    .accept 9130 >>接受任务 银月城的货物
+    .accept 9130 >>Accept Goods from Silvermoon City
     .goto 94,43.70,71.55
-    .target 玛尼尔·琥珀之光
-    .target 萨希尔
+    .target Marniel Amberlight
+    .target Sathiel
 step
-    #arrowtext 与 |cRXP_FRIENDLY_游侠萨蕾恩|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_游侠萨蕾恩|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Ranger Sareyn|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ranger Sareyn|r.
     .goto 94,46.93,71.79
-    .turnin 9358 >>交任务 游侠萨蕾恩
-    .accept 9252 >>接受任务 保卫晴风村
-    .target 游侠萨蕾恩
+    .turnin 9358 >>Turn in Ranger Sareyn
+    .accept 9252 >>Accept Defending Fairbreeze Village
+    .target Ranger Sareyn
 step
-    #arrowtext 杀死 |cRXP_ENEMY_Rotlimb Marauders|r 和 |cRXP_ENEMY_Darkwraiths|r
+    #arrowtext Kill\n|cRXP_ENEMY_Rotlimb Marauders|r and |cRXP_ENEMY_Darkwraiths|r
     #loop
     .goto 94,50.75,81.06,30,0
     .goto 94,51.00,76.81,30,0
     .goto 94,51.98,72.04,30,0
-    >>杀死 |cRXP_ENEMY_Rotlimb Marauders|r 和 |cRXP_ENEMY_Darkwraiths|r。
+    >>Kill |cRXP_ENEMY_Rotlimb Marauders|r and |cRXP_ENEMY_Darkwraiths|r.
     .complete 9252,1 --4/4 Rotlimb Marauder slain
     .complete 9252,2 --4/4 Darkwraith slain
-    .mob 腐肢劫掠者
-    .mob 黑暗怨灵
+    .mob Rotlimb Marauder
+    .mob Darkwraith
 step
-    #arrowtext 与 |cRXP_FRIENDLY_学徒米尔维达|r 对话
-    >>|cRXP_WARN_如果你拉太多 |cRXP_ENEMY_Rotlimb Marauders|r|r。
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_学徒米尔维达|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Apprentice Mirveda|r
+    >>|cRXP_WARN_You can die if you pull too many |cRXP_ENEMY_Rotlimb Marauders|r|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apprentice Mirveda|r.
     .goto 94,54.28,70.98
-    .turnin 9254 >>交任务 外出的学徒
-    .accept 8487 >>接受任务 被腐蚀的土地
-    .target 学徒米尔维达
+    .turnin 9254 >>Turn in The Wayward Apprentice
+    .accept 8487 >>Accept Corrupted Soil
+    .target Apprentice Mirveda
 step
     #loop
     .goto 94,52.34,71.77,20,0
@@ -25217,177 +25215,177 @@ step
     .goto 94,52.59,69.60,10,0
     .goto 94,53.75,69.89,10,0
     .goto 94,52.36,69.80,20,0
-    >>|TInterface/cursor/crosshair/interact.blp:20|t拾取[|cRXP_PICK_被污染的土壤样本|r]。
+    >>|TInterface/cursor/crosshair/interact.blp:20|tPick up the [|cRXP_PICK_Tainted Soil Samples|r].
     .complete 8487,1 --8/8 Tainted Soil Sample
 step
-    #arrowtext 与 |cRXP_FRIENDLY_学徒米尔维达|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Apprentice Mirveda|r
     .goto 94,54.28,70.98
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_学徒米尔维达|r 对话。
-    .turnin 8487 >>交任务 被腐蚀的土地
-    .target 学徒米尔维达
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apprentice Mirveda|r.
+    .turnin 8487 >>Turn in Corrupted Soil
+    .target Apprentice Mirveda
 step
     .goto 94,54.28,70.98
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t等待约5秒后再次与|cRXP_FRIENDLY_学徒米尔维达|r对话。
-    .accept 8488 >>接受任务 出人意料的结果
-    .target 学徒米尔维达
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tWait for around 5 seconds and talk to |cRXP_FRIENDLY_Apprentice Mirveda|r again.
+    .accept 8488 >>Accept Unexpected Results
+    .target Apprentice Mirveda
 step
-    #arrowtext 杀死\n|cRXP_ENEMY_冷酷的加苏尔|r
+    #arrowtext Kill\n|cRXP_ENEMY_Gharsul the Remorseless|r
     .goto 94,53.69,69.71,10,0
     .goto 94,54.28,70.98
-    >>击杀 |cRXP_ENEMY_冷酷的加苏尔|r。
-    *|cRXP_WARN_注意：|r若你较弱，可等待他攻击|cRXP_FRIENDLY_学徒米尔维达|r后再出手。
+    >>Kill |cRXP_ENEMY_Gharsul the Remorseless|r.
+    *|cRXP_WARN_NOTE:|r Wait until he attacks |cRXP_FRIENDLY_Apprentice Mirveda|r until attacking if you're weak.
     .complete 8488,2 --1/1 Gharsul the Remorseless slain
-    .mob 冷酷的加苏尔
+    .mob Gharsul the Remorseless
 step
-    #arrowtext 与 |cRXP_FRIENDLY_学徒米尔维达|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Apprentice Mirveda|r
     .goto 94,54.28,70.98
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_学徒米尔维达|r 对话。
-    .turnin 8488 >>交任务 出人意料的结果
-    .accept 9255 >>接受任务 研究笔记
-    .target 学徒米尔维达
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apprentice Mirveda|r.
+    .turnin 8488 >>Turn in Unexpected Results
+    .accept 9255 >>Accept Research Notes
+    .target Apprentice Mirveda
 step << Warlock/Hunter
     #completewith next
-    +|cRXP_WARN_将你的宠物设为“被动”|r。
+    +|cRXP_WARN_Set your pet to 'Passive'|r.
 step
     #completewith next
     .goto 94,51.47,70.39
-    .deathskip >>在所在地区拉一些小怪并死亡。Rotlimb Marauders很容易击杀你。
+    .deathskip >>Pull some mobs around you and die at the waypoint location. Rotlimb Marauders are really good at killing you
 step
-    #arrowtext 与 |cRXP_FRIENDLY_游侠萨蕾恩|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Ranger Sareyn|r
     .goto 94,46.93,71.79
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_游侠萨蕾恩|r 对话。
-    .turnin 9252 >>交任务 保卫晴风村
-    .accept 9253 >>接受任务 符文看守者德尔雅
-    .target 游侠萨蕾恩
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ranger Sareyn|r.
+    .turnin 9252 >>Turn in Defending Fairbreeze Village
+    .accept 9253 >>Accept Runewarden Deryan
+    .target Ranger Sareyn
 step
-    #arrowtext 与 |cRXP_FRIENDLY_魔导师兰德拉·晨行者|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Magistrix Landra Dawnstrider|r
     .goto 94,44.03,70.76
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_魔导师兰德拉·晨行者|r 对话。
-    .turnin 9255 >>交任务 研究笔记
-    .target 魔导师兰德拉·晨行者
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magistrix Landra Dawnstrider|r.
+    .turnin 9255 >>Turn in Research Notes
+    .target Magistrix Landra Dawnstrider
 step << Hunter/Warlock
     #completewith next
-    +|cRXP_WARN_提醒：召唤你的宠物并将其设为“助攻”|r。
+    +|cRXP_WARN_Reminder: Resummon your pet and set it to 'Assist'|r.
 step
-    #arrowtext 与 |cRXP_FRIENDLY_飞行管理员晨光|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Skymaster Brightdawn|r
     .goto 94,43.94,69.99
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_飞行管理员晨光|r对话。
-    .turnin 9130 >>交任务 银月城的货物
-    .accept 9133 >>接受任务 飞往银月城
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Skymaster Brightdawn|r.
+    .turnin 9130 >>Turn in Goods from Silvermoon City
+    .accept 9133 >>Accept Fly to Silvermoon City
     .target Skymaster Brightdawn
 step
-    #arrowtext 与 |cRXP_FRIENDLY_凯莉森德拉船长|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Captain Kelisendra|r
     .goto 94,36.36,66.64
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_凯莉森德拉船长|r 对话。
-    .turnin 8887 >>交任务 凯莉森德拉船长的航海图
-    .target 凯莉森德拉船长
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Kelisendra|r.
+    .turnin 8887 >>Turn in Captain Kelisendra's Lost Rutters
+    .target Captain Kelisendra
 step
-    #arrowtext 与 |cRXP_FRIENDLY_拉莉亚娜·河风|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Larianna Riverwind|r
     .goto 94,34.05,80.02
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拉莉亚娜·河风|r 对话。
-    .turnin 9258 >>交任务 焦痕谷
-    .accept 8473 >>接受任务 痛苦的抉择
-    .target 拉莉亚娜·河风
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Larianna Riverwind|r.
+    .turnin 9258 >>Turn in The Scorched Grove
+    .accept 8473 >>Accept A Somber Task
+    .target Larianna Riverwind
 step
     #completewith next
-    >>击杀 |cRXP_ENEMY_枯萎的护卫者|r。
+    >>Kill |cRXP_ENEMY_Withered Green Keeper|r.
     .complete 8473,1 --10/10 Withered Green Keeper slain
-    .mob 枯萎的护卫者
+    .mob Withered Green Keeper
 step
-    #arrowtext 杀死\n|cRXP_ENEMY_怀特巴克|r
+    #arrowtext Kill\n|cRXP_ENEMY_Old Whitebark|r
     .goto 94,34.79,84.21
-    >>击杀 |cRXP_ENEMY_怀特巴克|r. 拾取|T133280:0|t[|cRXP_LOOT_怀特巴克的坠饰|r]。
+    >>Kill |cRXP_ENEMY_Old Whitebark|r. Loot it for |T133280:0|t[|cRXP_LOOT_Old Whitebark's Pendant|r].
     .collect 23228,1,8474,0
-    .accept 8474 >>接受任务 怀特巴克的坠饰
-    .mob 怀特巴克
+    .accept 8474 >>Accept Old Whitebark's Pendant
+    .mob Old Whitebark
 step
-    #arrowtext 杀死\n|cRXP_ENEMY_枯萎的护卫者|r
+    #arrowtext Kill\n|cRXP_ENEMY_Withered Green Keeper|r
     #loop
     .goto 94,35.88,82.65,35,0
     .goto 94,32.27,85.00,35,0
     .goto 94,39.63,86.23,35,0
-    >>击杀 |cRXP_ENEMY_枯萎的护卫者|r。
+    >>Kill |cRXP_ENEMY_Withered Green Keeper|r.
     .complete 8473,1 --10/10 Withered Green Keeper slain
-    .mob 枯萎的护卫者
+    .mob Withered Green Keeper
 step
-    #arrowtext 与 |cRXP_FRIENDLY_拉莉亚娜·河风|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Larianna Riverwind|r
     .goto 94,34.06,80.02
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拉莉亚娜·河风|r 对话。
-    .turnin 8473 >>交任务 痛苦的抉择
-    .turnin 8474 >>交任务 怀特巴克的坠饰
-    .accept 10166 >>接受任务 怀特巴克的记忆
-    .target 拉莉亚娜·河风
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Larianna Riverwind|r.
+    .turnin 8473 >>Turn in A Somber Task
+    .turnin 8474 >>Turn in Old Whitebark's Pendant
+    .accept 10166 >>Accept Whitebark's Memory
+    .target Larianna Riverwind
 step
-    #arrowtext 使用[怀特巴克的坠饰]
+    #arrowtext Use [Old Whitebark's Pendant]
     .goto 94,37.69,86.26
-    >>使用|T133280:0|t[怀特巴克的坠饰]并击败他。
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_怀特巴克的灵魂|r 对话。
-    .turnin 10166 >>交任务 怀特巴克的记忆
-    .target 怀特巴克的灵魂
+    >>Use |T133280:0|t[Old Whitebark's Pendant] and defeat him.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Whitebark's Spirit|r.
+    .turnin 10166 >>Turn in Whitebark's Memory
+    .target Whitebark's Spirit
     .use 28209
 step
-    #arrowtext 与 |cRXP_FRIENDLY_符文看守者德尔雅|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Runewarden Deryan|r
     .goto 94,44.19,85.47
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_符文看守者德尔雅|r 对话。
-    .turnin 9253 >>交任务 符文看守者德尔雅
-    .target 符文看守者德尔雅
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Runewarden Deryan|r.
+    .turnin 9253 >>Turn in Runewarden Deryan
+    .target Runewarden Deryan
 step
-    #arrowtext 与 |cRXP_FRIENDLY_信使迪卡·晨行者|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Courier Dawnstrider|r
     .goto 94,48.98,88.98
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_信使迪卡·晨行者|r 对话。
-    .turnin 9144 >>交任务 迷失在幽魂之地
-    .target 信使迪卡·晨行者
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Courier Dawnstrider|r.
+    .turnin 9144 >>Turn in Missing in the Ghostlands
+    .target Courier Dawnstrider
 step
     #completewith IncriminatingDocumentsC
     #label IncriminatingDocumentsA
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾尔杜·炙痕|r 对话。
-    .turnin 8482 >>交任务 秘密文件
-    .target 艾尔杜·炙痕
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aeldon Sunbrand|r.
+    .turnin 8482 >>Turn in Incriminating Documents
+    .target Aeldon Sunbrand
 step
     #completewith IncriminatingDocumentsA
     #label IncriminatingDocumentsB
     .goto 94,51.47,70.39
-    .deathskip >>在你周围拉几个小怪，在路点所在地区死亡。Rotlimb Marauders 非常善于击杀你。
+    .deathskip >>Pull some mobs around you and die at the waypoint location. Rotlimb Marauders are really good at killing you
 step
-    #arrowtext 与 |cRXP_FRIENDLY_飞行管理员晨光|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Skymaster Brightdawn|r
     #requires IncriminatingDocumentsB
     #completewith IncriminatingDocumentsA
     #label IncriminatingDocumentsC
     .goto 94,43.95,69.98
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_飞行管理员晨光|r对话。
-    .fly Falconwing Square >>飞往鹰翼广场
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Skymaster Brightdawn|r.
+    .fly Falconwing Square >>Fly to Falconwing Square
     .target Skymaster Brightdawn
 step
-    #arrowtext 与 |cRXP_FRIENDLY_艾尔杜·炙痕|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Aeldon Sunbrand|r
     #requires IncriminatingDocumentsA
     .goto 94,48.16,46.0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾尔杜·炙痕|r 对话。
-    .turnin 8482 >>交任务 秘密文件
-    .target 艾尔杜·炙痕
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aeldon Sunbrand|r.
+    .turnin 8482 >>Turn in Incriminating Documents
+    .target Aeldon Sunbrand
 step
-    #arrowtext 与 |cRXP_FRIENDLY_旅店老板德兰妮尔|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Innkeeper Delaniel|r
     .goto 94,47.81,47.38,8,0
     .goto 94,47.87,47.79,8,0
     .goto 94,48.15,47.65
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_旅店老板德兰妮尔|r 对话。
-    .turnin 8350 >>交任务 送信
-    .target 旅店老板德兰妮尔
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Delaniel|r.
+    .turnin 8350 >>Turn in Completing the Delivery
+    .target Innkeeper Delaniel
 step
-    #arrowtext 与 |cRXP_FRIENDLY_飞行管理员斯凯勒斯|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Skymaster Skyles|r
     #completewith next
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_飞行管理员斯凯勒斯|r对话。
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Skymaster Skyles|r.
     .goto 94,46.25,46.80
-    .fly Silvermoon City >>飞往银月城
+    .fly Silvermoon City >>Fly to Silvermoon City
     .target Skymaster Skyles
 step
-    #arrowtext 与 |cRXP_FRIENDLY_萨斯雷·蓝空|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Sathren Azuredawn|r
     .goto 94,56.39,50.57,15,0
     .goto 110,70.59,77.02,15,0
     .goto 110,65.37,72.49,15,0
     .goto 110,53.94,71.03
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_萨斯雷·蓝空|r 对话。
-    .turnin 9133 >>交任务 飞往银月城
-    .target 萨斯雷·蓝空
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sathren Azuredawn|r.
+    .turnin 9133 >>Turn in Fly to Silvermoon City
+    .target Sathren Azuredawn
 -- step
 --     .goto 110,72.71,59.22,20,0
 --     .goto 110,76.28,59.20,20,0
@@ -25397,9 +25395,9 @@ step
 --     .zone 85 >>|cRXP_WARN_Mount up|r Take the portal to Orgrimmar.
 step
     .zoneskip 110,1
-    .zone 2351 >>使用地块查找器传送到一个居住区，而不是|T7252953:0|t[传送到地块]，然后使用|cRXP_PICK_Stormwind 传送门|r。
-    .link https://www.youtube.com/watch?v=uVkUB7z0njo >>点击观看视频
-    .macro House Teleport, 975747 >>房屋传送
+    .zone 2351 >>Teleport to a Neighbourhood with the House finder, not |T7252953:0|t[Teleport to Plot], then take the |cRXP_PICK_Stormwind Portal|r.
+    .link https://www.youtube.com/watch?v=uVkUB7z0njo >>CLICK HERE FOR VIDEO
+    .macro House Teleport, 975747 >>/run C_Housing.StartTutorial()
 
 ]])
 --Orc: Valley of Trials
@@ -25408,12 +25406,12 @@ RXPGuides.RegisterGuide([[
 #version 2
 #group RestedXP 快速升级
 #subgroup |cFFFCDC00(1-90)|r 默认
-#name ab) 试炼谷1  << !Troll --Orc
-#name ab) 试炼谷2  << Troll
-#displayname |cFF1EFF002|r - 试炼谷 << Troll
-#displayname 试炼谷|cRXP_ENEMY_（备选版）|r << !Troll --Orc
-#next ac) 回音群岛2 << !Troll --Orc
-#next a) 争霸艾泽拉斯开场 << Troll
+#name ab) Valley of Trials1  << !Troll --Orc
+#name ab) Valley of Trials2  << Troll
+#displayname |cFF1EFF002|r - Valley of Trials << Troll
+#displayname Valley of Trials |cRXP_ENEMY_(Alternative)|r << !Troll --Orc
+#next ac) Echo Isles2 << !Troll --Orc
+#next a) BfA Intro << Troll
 #defaultfor Orc !DK/Troll !DK
 
 << Horde
@@ -25421,105 +25419,105 @@ RXPGuides.RegisterGuide([[
 step << Orc
     .zoneskip 1727
     #completewith DurotarFirstQuestCheck
-    +如果你想以最快速度升级，请选择流放者离岛作为起始区域。这需要重新创建角色。
+    +If you want to level as fast as possible, choose Exile’s Reach as your starting zone. This requires recreating your character.
 
 step << Orc
     #optional
     .zoneskip 1727,1
-    +你当前在流放者离岛，但当前指南为兽人起始区域。
-    +请选择流放者离岛指南。
+    +You are in Exiles Reach but the current Guide is for the Orc Starting Zone.
+    +Please choose the Exiles Reach Guide.
 step << Troll
 	#completewith ValleyofTrialsShortcut
-	+走捷径前往试炼谷
+	+Take the shortcut to the Valley of Trials
 step << Troll
-    #arrowtext 跳跃
+    #arrowtext Jump
 	#completewith next
     .goto 1,49.42,70.56,4,0
-    .goto 461,68.14,75.44,6 >>遇到墙时跳过去
+    .goto 461,68.14,75.44,6 >>Jump when you reach a wall
 step << Troll
-    #arrowtext 沿着左墙向上爬
+    #arrowtext Hug the left wall and climb the mountain
 	#label ValleyofTrialsShortcut
 	#completewith DurotarFirstQuestCheck
     .goto 461,67.83,74.52,6,0
     .goto 461,67.01,74.53,6,0
-    .goto 461,64.89,71.70,12 >>贴着左侧墙壁前进并上山
+    .goto 461,64.89,71.70,12 >>Hug the left wall and climb the mountain
 step << Orc
     #optional
     #completewith next
-    +|cRXP_WARN_若要充分利用RXP，按下Escape -> 选项 -> 快捷键 -> RestedXP指南 -> 选择并绑定活跃按钮1、2、3和4。你也可以为目标进行绑定。|r。
-    *这样你就能按快捷键来使用任务物品或选中相关的小怪
+    +|cRXP_WARN_If you want to make the most of RXP; Press Escape -> Options -> Keybindings -> RestedXP Guides -> Select and Bind Active Button 1,2,3 and 4. You can also do this with Targets|r.
+    *This will allow you to press a keybind to use a quest item or target a relevant mob
 step
-    #arrowtext 与 |cRXP_FRIENDLY_卡尔图克|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Kaltunk|r
     #label DurotarFirstQuestCheck
     .goto 461,45.20,68.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡尔图克|r 对话。
-    .accept 25152 >>接受任务 你的位置
-    .target 卡尔图克
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaltunk|r.
+    .accept 25152 >>Accept Your Place In The World
+    .target Kaltunk
 step
-    #arrowtext 与 |cRXP_FRIENDLY_高内克|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Gornek|r
     .goto 461,44.93,66.42
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_高内克|r 对话。
-    .turnin 25152 >>交任务 你的位置
-    .accept 25126 >>接受任务 小试身手
-    .target 高内克
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gornek|r.
+    .turnin 25152 >>Turn in Your Place In The World
+    .accept 25126 >>Accept Cutting Teeth
+    .target Gornek
 step
-    #arrowtext 杀死 |cRXP_ENEMY_Mottled Boars|r
+    #arrowtext Kill\n|cRXP_ENEMY_Mottled Boars|r
     .goto 461,48.08,54.03,40,0
     .goto 461,46.68,52.16
-	>>击杀 |cRXP_ENEMY_杂斑野猪|r。
+	>>Kill |cRXP_ENEMY_Mottled Boars|r.
     .complete 25126,1 --6/6 Mottled Boar slain
-    .mob Mottled Boars
+    .mob Mottles Boar
 step
-    #arrowtext 与 |cRXP_FRIENDLY_高内克|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Gornek|r
     .goto 461,44.93,66.42
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_高内克|r 对话。
-    .turnin 25126 >>交任务 小试身手
-    .accept 25172 >>接受任务 家园里的入侵者
-    .target 高内克
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gornek|r.
+    .turnin 25126 >>Turn in Cutting Teeth
+    .accept 25172 >>Accept Invaders in Our Home
+    .target Gornek
 step
-    #arrowtext 杀死 |cRXP_ENEMY_Northwatch Scouts|r
+    #arrowtext Kill\n|cRXP_ENEMY_Northwatch Scouts|r
     #loop
     .goto 461,51.95,75.86,40,0
     .goto 461,46.75,87.23,55,0
     .goto 461,36.46,78.09,45,0
-	>>击杀潜行中的|cRXP_ENEMY_北卫军斥候|r。
+	>>Kill the stealthed |cRXP_ENEMY_Northwatch Scouts|r.
     .complete 25172,1 --7/7 Northwatch Scout slain
-    .mob 北卫军斥候
+    .mob Northwatch Scout
 step
-    #arrowtext 与 |cRXP_FRIENDLY_高内克|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Gornek|r
     .goto 461,46.95,72.89,40,0
     .goto 461,44.93,66.42
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_高内克|r 对话。
-    .turnin 25172 >>交任务 家园里的入侵者
-    .accept 25127 >>接受任务 家园里的入侵者
-    .target 高内克
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gornek|r.
+    .turnin 25172 >>Turn in Invaders in Our Home
+    .accept 25127 >>Accept Invaders in Our Home
+    .target Gornek
 step << Warlock
 	#completewith ValleyOfTrialsSarkoth
-	.cast 688 >>施放|T136218:0|r.[召唤小鬼]来召唤你的小鬼
+	.cast 688 >>Cast |T136218:0|r.[Summon Imp] to summon your Imp
 	.xp <3,1
 step
-    #arrowtext 与 |cRXP_FRIENDLY_戈加尔|r 和 |cRXP_FRIENDLY_工头塔兹利尔|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_戈加尔|r 和 |cRXP_FRIENDLY_工头塔兹利尔|r 对话。
-    .accept 25136 >>接受任务 戈加尔的清凉果
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Galgar|r and |cRXP_FRIENDLY_Foreman Thazz'ril|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Galgar|r and |cRXP_FRIENDLY_Foreman Thazz'ril|r.
+    .accept 25136 >>Accept Galgar's Cactus Apple Surprise
     .goto 461,42.98,62.41
-    .accept 37446 >>接受任务 懒惰的苦工
+    .accept 37446 >>Accept Lazy Peons
     .goto 461,46.16,63.27
-    .target 戈加尔
-    .target 工头塔兹利尔
+    .target Galgar
+    .target Foreman Thazz'ril
 step
     #completewith ValleyOfTrialsSarkoth
-    >>击杀|cRXP_ENEMY_蝎子|r，拾取|T132274:0|t[工蝎的尾巴]。
+    >>Kill |cRXP_ENEMY_Scorpid Workers|r. Loot them for their |T132274:0|t[Scorpid Worker Tails].
     .complete 25127,1 --8/8 Scorpid Worker Tail
-    .mob 蝎子
+    .mob Scorpid Worker
 step
     #completewith ValleyOfTrialsBackDen
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击熟睡中的|cRXP_FRIENDLY_懒惰的苦工|r。
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the sleeping |cRXP_FRIENDLY_Lazy Peons|r.
     .complete 37446,1 --4/4 Sleeping Lazy Peons awakened
     .use 16114
-    .target 懒惰的苦工
+    .target Lazy Peon
 step
     #completewith ValleyTurnins
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_仙人掌果|r。
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Cactus Apples|r.
     .complete 25136,1 --6/6 Cactus Apple
 step
     #optional
@@ -25527,33 +25525,33 @@ step
     #label SarkothRoute
     .goto 461,46.52,58.50,10,0
     .goto 461,34.62,44.23
-    >>离开城镇向北前进
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哈纳祖|r 对话。
-    .accept 25129 >>接受任务 萨科斯
-    .target 哈纳祖
+    >>Leave the town heading north
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hana'zua|r.
+    .accept 25129 >>Accept Sarkoth
+    .target Hana'zua
 step
     #hidewindow
     #completewith SarkothRoute
-    .goto 461,34.62,44.23,15 >>跟随箭头
+    .goto 461,34.62,44.23,15 >>Follow the Arrow
 step
-    #arrowtext 离开城镇向北行进
+    #arrowtext Leave the town heading north
     #requires SarkothRoute
 	#label Sarkoth
     .goto 461,34.62,44.23
-    >>离开城镇向北前进
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哈纳祖|r 对话。
-    .accept 25129 >>接受任务 萨科斯
-    .target 哈纳祖
+    >>Leave the town heading north
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hana'zua|r.
+    .accept 25129 >>Accept Sarkoth
+    .target Hana'zua
 step
-    #arrowtext 杀死 |cRXP_ENEMY_萨科斯|r
+    #arrowtext Kill\n|cRXP_ENEMY_Sarkoth|r
     #label ValleyOfTrialsSarkoth
     .goto 461,32.7,61.9
-	>>击杀 |cRXP_ENEMY_萨科斯|r。拾取|T134294:0|t|cRXP_LOOT_萨科斯的爪子|r。
+	>>Kill |cRXP_ENEMY_Sarkoth|r. Loot him for |T134294:0|t[|cRXP_LOOT_Sarkoth's Mangled Claw|r].
     .complete 25129,1 --1/1 Sarkoth's Mangled Claw
-    .mob 萨科斯
+    .mob Sarkoth
 step
-    #arrowtext 完成 |T132274:0|t[蝎子背面]
-    >>击杀|cRXP_ENEMY_蝎子|r，拾取|T132274:0|t[工蝎的尾巴]。
+    #arrowtext Finish |T132274:0|t[Scorpid Worker Tails]
+    >>Kill |cRXP_ENEMY_Scorpid Workers|r. Loot them for their |T132274:0|t[Scorpid Worker Tails].
     #loop
 	.goto 461,37.38,65.09,40,0
 	.goto 461,34.90,67.58,40,0
@@ -25564,237 +25562,237 @@ step
 	.goto 461,39.82,56.48,40,0
 	.goto 461,37.38,65.09,40,0
     .complete 25127,1 --8/8 Scorpid Worker Tail
-    .mob 蝎子
+    .mob Scorpid Worker
 step
-    #arrowtext 跳回镇子
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_WARN_跳回城镇|r。与|cRXP_FRIENDLY_戈加尔|r、|cRXP_FRIENDLY_高内克|r、|cRXP_FRIENDLY_祖雷萨|r和|cRXP_FRIENDLY_工头塔兹利尔|r对话。
-    .turnin 25136 >>交任务 戈加尔的清凉果
+    #arrowtext Jump down back to town
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_WARN_Jump down back to town|r. Talk to |cRXP_FRIENDLY_Galgar|r, |cRXP_FRIENDLY_Gornek|r, |cRXP_FRIENDLY_Zureetha|r, and |cRXP_FRIENDLY_Foreman Thazz'ril|r.
+    .turnin 25136 >>Turn in Galgar's Cactus Apple Surprise
     .goto 461,42.95,62.42
-    .turnin 25127 >>交任务 工蝎的尾巴
+    .turnin 25127 >>Turn in Sting of the Scorpid
     .goto 461,44.93,66.42
-    .accept 25131 >>接受任务 邪灵劣魔
+    .accept 25131 >>Accept Vile Familiars
     .goto 461,45.81,63.42
-    .turnin 37446 >>交任务 懒惰的苦工
+    .turnin 37446 >>Turn in Lazy Peons
     .goto 461,46.15,63.28
-	.isQuestComplete 25136
-	.isQuestComplete 37446
-    .target 戈加尔
-    .target 高内克
-    .target 祖雷萨
-    .target 工头塔兹利尔
+	.isQuestComplete 25136 --Galgar's Cactus Apple Surprise
+	.isQuestComplete 37446 --Lazy Peons
+    .target Galgar
+    .target Gornek
+    .target Zureetha Fargaze
+    .target Foreman Thazz'ril
 step
-    #arrowtext 跳回镇子
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t跳回城镇。与|cRXP_FRIENDLY_戈加尔|r、|cRXP_FRIENDLY_高内克|r和|cRXP_FRIENDLY_祖雷萨|r对话。
-    .turnin 25136 >>交任务 戈加尔的清凉果
+    #arrowtext Jump down back to town
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tJump down back to town. Talk to |cRXP_FRIENDLY_Galgar|r, |cRXP_FRIENDLY_Gornek|r, and |cRXP_FRIENDLY_Zureetha|r.
+    .turnin 25136 >>Turn in Galgar's Cactus Apple Surprise
     .goto 461,42.95,62.42
-    .turnin 25127 >>交任务 工蝎的尾巴
+    .turnin 25127 >>Turn in Sting of the Scorpid
     .goto 461,44.93,66.42
-    .accept 25131 >>接受任务 邪灵劣魔
+    .accept 25131 >>Accept Vile Familiars
     .goto 461,45.81,63.42
-	.isQuestComplete 25136
-    .target 戈加尔
-    .target 高内克
-    .target 祖雷萨
+	.isQuestComplete 25136 --Galgar's Cactus Apple Surprise
+    .target Galgar
+    .target Gornek
+    .target Zureetha Fargaze
 step
-    #arrowtext 与 |cRXP_FRIENDLY_高内克|r 和 |cRXP_FRIENDLY_Zureetha|r 和 |cRXP_FRIENDLY_工头塔兹利尔|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_高内克|r, |cRXP_FRIENDLY_祖雷萨|r, 和 |cRXP_FRIENDLY_工头塔兹利尔|r 对话。
-    .turnin 25127 >>交任务 工蝎的尾巴
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Gornek|r and |cRXP_FRIENDLY_Zureetha|r and |cRXP_FRIENDLY_Foreman Thazz'ril|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gornek|r, |cRXP_FRIENDLY_Zureetha|r, and |cRXP_FRIENDLY_Foreman Thazz'ril|r.
+    .turnin 25127 >>Turn in Sting of the Scorpid
     .goto 461,44.93,66.42
-    .accept 25131 >>接受任务 邪灵劣魔
+    .accept 25131 >>Accept Vile Familiars
     .goto 461,45.81,63.42
-    .turnin 37446 >>交任务 懒惰的苦工
+    .turnin 37446 >>Turn in Lazy Peons
     .goto 461,46.15,63.28
-	.isQuestComplete 37446
-    .target 高内克
-    .target 祖雷萨
-    .target 工头塔兹利尔
+	.isQuestComplete 37446 --Lazy Peons
+    .target Gornek
+    .target Zureetha Fargaze
+    .target Foreman Thazz'ril
 step
-    #arrowtext 与 |cRXP_FRIENDLY_高内克|r 和 |cRXP_FRIENDLY_Zureetha|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_高内克|r 和 |cRXP_FRIENDLY_祖雷萨|r 对话。
-    .turnin 25127 >>交任务 工蝎的尾巴
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Gornek|r and |cRXP_FRIENDLY_Zureetha|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gornek|r and |cRXP_FRIENDLY_Zureetha|r.
+    .turnin 25127 >>Turn in Sting of the Scorpid
     .goto 461,44.91,66.41
-    .accept 25131 >>接受任务 邪灵劣魔
+    .accept 25131 >>Accept Vile Familiars
     .goto 461,45.81,63.42
-    .target 高内克
-    .target 祖雷萨
+    .target Gornek
+    .target Zureetha Fargaze
 step
     #completewith next
     #label ValleyOfTrialsBackDenRoute
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哈纳祖|r 对话。
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hana'zua|r.
     .goto 461,46.45,57.83,15,0
     .goto 461,34.62,44.23
-    .turnin 25129 >>交任务 萨科斯
-    .accept 25130 >>接受任务 返回大兽穴
-    .target 哈纳祖
+    .turnin 25129 >>Turn in Sarkoth
+    .accept 25130 >>Accept Back to the Den
+    .target Hana'zua
 step
     #hidewindow
     #completewith ValleyOfTrialsBackDenRoute
-    .goto 461,34.62,44.23,20 >>跟随箭头
+    .goto 461,34.62,44.23,20 >>Follow the Arrow
 step
-    #arrowtext 与 |cRXP_FRIENDLY_哈纳祖|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Hana'zua|r
     #requires ValleyOfTrialsBackDenRoute
     #label ValleyOfTrialsBackDen
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哈纳祖|r 对话。
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hana'zua|r.
     .goto 461,34.62,44.23
-    .turnin 25129 >>交任务 萨科斯
-    .accept 25130 >>接受任务 返回大兽穴
-    .target 哈纳祖
+    .turnin 25129 >>Turn in Sarkoth
+    .accept 25130 >>Accept Back to the Den
+    .target Hana'zua
 step
-    #arrowtext 点击 |cRXP_FRIENDLY_懒惰的苦工|r
+    #arrowtext Click\n|cRXP_FRIENDLY_Lazy Peons|r
     #completewith next
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击熟睡中的|cRXP_FRIENDLY_懒惰的苦工|r。
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the sleeping |cRXP_FRIENDLY_Lazy Peons|r.
     .goto 461,36.22,35.30,20,0
     .goto 461,37.20,29.67,20,0
     .complete 37446,1 --4/4 Sleeping Lazy Peons awakened
     .use 16114
-    .target 懒惰的苦工
+    .target Lazy Peon
 step
-    #arrowtext 杀死 |cRXP_ENEMY_邪灵劣魔|r
+    #arrowtext Kill\n|cRXP_ENEMY_Vile Familiars|r
     #loop
     .goto 461,49.86,25.11,50,0
     .goto 461,56.34,31.92,50,0
     .goto 461,48.90,37.40,50,0
-	>>击杀 |cRXP_ENEMY_邪灵劣魔|r。
+	>>Kill |cRXP_ENEMY_Vile Familiars|r.
     .complete 25131,1 --8/8 Vile Familiar slain
-    .mob 邪灵劣魔
+    .mob Vile Familiar
 step
-    #arrowtext 点击 |cRXP_FRIENDLY_懒惰的苦工|r
+    #arrowtext Click\n|cRXP_FRIENDLY_Lazy Peons|r
     #loop
     .goto 461,58.79,36.66,25,0
     .goto 461,61.15,56.34,30,0
     .goto 461,54.42,57.33,20,0
     .goto 461,52.01,69.59,20,0
     .goto 461,48.28,71.90,20,0
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击熟睡中的|cRXP_FRIENDLY_懒惰的苦工|r。
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the sleeping |cRXP_FRIENDLY_Lazy Peons|r.
     .complete 37446,1 --4/4 Sleeping Lazy Peons awakened
     .use 16114
-    .target 懒惰的苦工
+    .target Lazy Peon
 step
-    #arrowtext 与 |cRXP_FRIENDLY_祖雷萨|r 和 |cRXP_FRIENDLY_工头塔兹利尔|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_祖雷萨|r 和 |cRXP_FRIENDLY_工头塔兹利尔|r 对话。
-    .turnin 25131 >>交任务 邪灵劣魔
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Zureetha Fargaze|r and |cRXP_FRIENDLY_Foreman Thazz'ril|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zureetha Fargaze|r and |cRXP_FRIENDLY_Foreman Thazz'ril|r.
+    .turnin 25131 >>Turn in Vile Familiars
     .goto 461,45.81,63.42
-    .turnin 37446 >>交任务 懒惰的苦工
-    .accept 25135 >>接受任务 塔兹利尔的镐
+    .turnin 37446 >>Turn in Lazy Peons
+    .accept 25135 >>Accept Thazz'ril's Pick
     .goto 461,46.15,63.28
-    .accept 25132 >>接受任务 火刃奖章
+    .accept 25132 >>Accept Burning Blade Medallion
     .goto 461,45.81,63.42
-	.isOnQuest 37446
-    .target 祖雷萨
-    .target 工头塔兹利尔
+	.isOnQuest 37446 --Lazy Peons
+    .target Zureetha Fargaze
+    .target Foreman Thazz'ril
 step
-    #arrowtext 与 |cRXP_FRIENDLY_祖雷萨|r 和 |cRXP_FRIENDLY_工头塔兹利尔|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Zureetha Fargaze|r and |cRXP_FRIENDLY_Foreman Thazz'ril|r
 	#label ValleyTurnins
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_祖雷萨|r 和 |cRXP_FRIENDLY_工头塔兹利尔|r 对话。
-    .turnin 25131 >>交任务 邪灵劣魔
-    .accept 25132 >>接受任务 火刃奖章
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zureetha Fargaze|r and |cRXP_FRIENDLY_Foreman Thazz'ril|r.
+    .turnin 25131 >>Turn in Vile Familiars
+    .accept 25132 >>Accept Burning Blade Medallion
     .goto 461,45.81,63.42
-    .accept 25135 >>接受任务 塔兹利尔的镐
+    .accept 25135 >>Accept Thazz'ril's Pick
     .goto 461,46.15,63.28
-    .target 祖雷萨
-    .target 工头塔兹利尔
+    .target Zureetha Fargaze
+    .target Foreman Thazz'ril
 step << Hunter
-    #arrowtext 点击 |cRXP_PICK_Cactus Apples|r
+    #arrowtext Click\n|cRXP_PICK_Cactus Apples|r
     #completewith next
     .goto 461,52.42,52.84,20,0
     .goto 461,50.50,53.00,20,0
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_仙人掌果|r。
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Cactus Apples|r.
     .complete 25136,1 --6/6 Cactus Apple
 step << Hunter Orc
     .goto 461,47.61,47.66
-    .cast 1515 >>锁定1只|cRXP_ENEMY_杂斑野猪|r，施放并引导|T132164:0|t[驯服野兽]将其驯服
-    .isOnQuest 25135
-    .mob 杂斑野猪
+    .cast 1515 >>Target a |cRXP_ENEMY_Mottled Boar|r,cast and then channel |T132164:0|t[Tame Beast] to tame it
+    .isOnQuest 25135 --Thazz'rils Pick
+    .mob Mottled Boar
 step
-    #arrowtext 点击 |cRXP_PICK_Cactus Apples|r
+    #arrowtext Click\n|cRXP_PICK_Cactus Apples|r
     #loop
     .goto 461,50.50,53.00,18,0 << !Hunter
     .goto 461,51.34,32.89,18,0
     .goto 461,50.28,27.29,18,0
     .goto 461,53.63,28.29,18,0
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_仙人掌果|r。
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Cactus Apples|r.
     .complete 25136,1 --6/6 Cactus Apple
 step
     #completewith Yarrog
-	>>击杀洞穴里的|cRXP_ENEMY_魔犬|r。
+	>>Kill |cRXP_ENEMY_Felstalkers|r within the cave.
     .complete 25132,1 --5/5 Felstalker slain
-    .mob 魔犬
+    .mob Felstalker
 step
     #label ThazzrilsPickA
     #completewith next
-    >>拾取在地上的[|cRXP_LOOT_塔兹利尔的镐|r]
+    >>Loot [|cRXP_LOOT_Thazz'ril's Pick|r]. on the ground
     .complete 25135,1 --1/1 Thazz'ril's Pick
 step
-    #arrowtext |cFFFCDC00进入洞穴|r
+    #arrowtext |cFFFCDC00Enter the cave|r
     #completewith ThazzrilsPickA
-    .goto 1,45.37,56.22,15 >>进入洞穴
+    .goto 1,45.37,56.22,15 >>Enter the cave
 step
-    #arrowtext 点击 |cRXP_LOOT_塔兹利尔的镐|r
+    #arrowtext Click\n|cRXP_LOOT_Thazz'ril's Pick|r
     #requires ThazzrilsPickA
     .goto 2,75.04,80.08,15,0
     .goto 2,40.75,52.56
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_LOOT_塔兹利尔的镐|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_LOOT_Thazz'ril's Pick|r
     .complete 25135,1 --1/1 Thazz'ril's Pick
 step
-    #arrowtext 杀死 |cRXP_ENEMY_亚罗格·刺影|r
+    #arrowtext Kill\n|cRXP_ENEMY_Yarrog Baneshadow|r
 	#label Yarrog
-    >>击杀 |cRXP_ENEMY_亚罗格·刺影|r。拾取|T133434:0|t|cRXP_LOOT_火刃奖章|r。
+    >>Kill |cRXP_ENEMY_Yarrog Baneshadow|r. Loot him for the |T133434:0|t[|cRXP_LOOT_Burning Blade Medallion|r].
     .goto 2,39.21,88.42,15,0
     .goto 2,26.73,83.52,15,0
     .goto 2,14.96,46.80
     .complete 25132,2 --1/1 Burning Blade Medallion
-    .mob 亚罗格·刺影
+    .mob Yarrog Baneshadow
 step
-    #arrowtext 杀死 |cRXP_ENEMY_Felstalkers|r
+    #arrowtext Kill\n|cRXP_ENEMY_Felstalkers|r
     .goto 2,39.21,88.42,15,0
     .goto 2,75.04,80.08,15,0
     .goto 1,45.37,56.22
-	>>击杀洞穴里的|cRXP_ENEMY_魔犬|r。
+	>>Kill |cRXP_ENEMY_Felstalkers|r within the cave.
     .complete 25132,1 --5/5 Felstalker slain
-    .mob 魔犬
+    .mob Felstalker
 step
     #completewith next
     #ignorecorpse
     .goto 2,14.96,46.80,-1
     .goto 461,48.47,70.89,-1
     .goto 461,48.49,70.88,-1
-    .deathskip >>尽可能多地拉怪，然后死亡并在灵魂医者处复活。在路径点附近或洞穴口附近死亡 << !Hunter !Warlock
-    .deathskip >>|cfff78300将宠物设为被动|r。尽可能多地拉怪，然后死亡并在灵魂医者处复活。在路径点附近或洞穴口附近死亡 << Hunter/Warlock
+    .deathskip >>Pull as many mobs as you can, then die and respawn at the Spirit Healer. Die near the waypoint or around the mouth of the cave << !Hunter !Warlock
+    .deathskip >>|cfff78300Set your pet to passive|r. Pull as many mobs as you can, then die and respawn at the Spirit Healer. Die near the waypoint or around the mouth of the cave << Hunter/Warlock
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_高内克|r, |cRXP_FRIENDLY_戈加尔|r, |cRXP_FRIENDLY_祖雷萨|r, 和 |cRXP_FRIENDLY_工头塔兹利尔|r 对话。
-    .turnin 25130 >>交任务 返回大兽穴
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gornek|r, |cRXP_FRIENDLY_Galgar|r, |cRXP_FRIENDLY_Zureetha Fargaze|r, and |cRXP_FRIENDLY_Foreman Thazz'ril|r.
+    .turnin 25130 >>Turn in Back to the Den
     .goto 461,44.93,66.42
-    .turnin 25136 >>交任务 戈加尔的清凉果
+    .turnin 25136 >>Turn in Galgar's Cactus Apple Surprise
     .goto 461,42.95,62.42
-    .turnin 25132 >>交任务 火刃奖章
-    .accept 25133 >>接受任务 去森金村报到 << Orc
+    .turnin 25132 >>Turn in Burning Blade Medallion
+    .accept 25133 >>Accept Report to Sen'jin Village << Orc
     .goto 461,45.82,63.42
-    .turnin 25135 >>交任务 塔兹利尔的镐
+    .turnin 25135 >>Turn in Thazz'rils Pick
     .goto 461,46.19,63.29
-	.isOnQuest 25136
-    .target 戈加尔
-    .target 高内克
-    .target 祖雷萨
-    .target 工头塔兹利尔
+	.isOnQuest 25136 --Galgar's Cactus Apple Surprise
+    .target Galgar
+    .target Gornek
+    .target Zureetha Fargaze
+    .target Foreman Thazz'ril
 step
-    #arrowtext 与 |cRXP_FRIENDLY_高内克|r 和 |cRXP_FRIENDLY_祖雷萨|r 和 |cRXP_FRIENDLY_工头塔兹利尔|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_高内克|r, |cRXP_FRIENDLY_祖雷萨|r, 和 |cRXP_FRIENDLY_工头塔兹利尔|r 对话。
-    .turnin 25130 >>交任务 返回大兽穴
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Gornek|r and |cRXP_FRIENDLY_Zureetha Fargaze|r and |cRXP_FRIENDLY_Foreman Thazz'ril|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gornek|r, |cRXP_FRIENDLY_Zureetha Fargaze|r, and |cRXP_FRIENDLY_Foreman Thazz'ril|r.
+    .turnin 25130 >>Turn in Back to the Den
     .goto 461,44.93,66.42
-    .turnin 25132 >>交任务 火刃奖章
-    .accept 25133 >>接受任务 去森金村报到 << Orc
+    .turnin 25132 >>Turn in Burning Blade Medallion
+    .accept 25133 >>Accept Report to Sen'jin Village << Orc
     .goto 461,45.82,63.42
-    .turnin 25135 >>交任务 塔兹利尔的镐
+    .turnin 25135 >>Turn in Thazz'rils Pick
     .goto 461,46.19,63.29
-    .target 高内克
-    .target 祖雷萨
-    .target 工头塔兹利尔
+    .target Gornek
+    .target Zureetha Fargaze
+    .target Foreman Thazz'ril
 step << Troll
-    #arrowtext 与 |cRXP_FRIENDLY_管理员曼雷克|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Handler Marnlek|r
     .goto 1,55.38,73.31
-    .fly Orgrimmar >>飞往奥格瑞玛
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_管理员曼雷克|r 对话。
-    .target 马恩雷克管理员
+    .fly Orgrimmar >>Fly to Orgrimmar
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Handler Marnlek|r.
+    .target Handler Marnlek
 ]])
 --Orc: Echo Isles
 RXPGuides.RegisterGuide([[
@@ -25802,11 +25800,11 @@ RXPGuides.RegisterGuide([[
 #version 2
 #group RestedXP 快速升级
 #subgroup |cFFFCDC00(1-90)|r 默认
-#name ac) 回音群岛1 << Troll
-#name ac) 回音群岛2 << !Troll --Orc
-#displayname 回音群岛|cRXP_ENEMY_（备选版）|r << Troll
-#displayname |cFF1EFF002|r - 回音群岛 << !Troll
-#next ab) 试炼谷2 << Troll
+#name ac) Echo Isles1 << Troll
+#name ac) Echo Isles2 << !Troll --Orc
+#displayname Echo Isles |cRXP_ENEMY_(Alternative)|r << Troll
+#displayname |cFF1EFF002|r - Echo Isles << !Troll
+#next ab) Valley of Trials2 << Troll
 #next b1) 争霸艾泽拉斯介绍 << !Troll
 #defaultfor Orc !DK/Troll !DK
 
@@ -25814,124 +25812,124 @@ RXPGuides.RegisterGuide([[
 
 step << Orc
     #completewith next
-    .cast 202844 >>使用你的|T1405809:0|t[枪靴]来加速移动
+    .cast 202844 >>Use your |T1405809:0|t[Gunshoes] to move faster
     .use 132516
-    .itemcount 132516,1
+    .itemcount 132516,1 --Gunshoes
 step << Troll
     .zoneskip 1727
     #completewith EchoIslesFirstQuestCheck
-    +如果你想以最快速度升级，请选择流放者离岛作为起始区域。这需要重新创建角色。
+    +If you want to level as fast as possible, choose Exile’s Reach as your starting zone. This requires recreating your character.
 
 step << Troll
     #optional
     .zoneskip 1727,1
-    +你当前在流放者离岛，但当前攻略是针对巨魔初始区域的。
-    +请选择流放者离岛指南。
+    +You are in Exiles Reach but the current Guide is for the Troll Starting Zone.
+    +Please choose the Exiles Reach Guide.
 step << Troll
     #optional
     #completewith next
-    +|cRXP_WARN_若要充分利用RXP，按下Escape -> 选项 -> 快捷键 -> RestedXP指南 -> 选择并绑定活跃按钮1、2、3和4。你也可以为目标进行绑定。|r。
-    *这样你就能按快捷键来使用任务物品或选中相关的小怪
+    +|cRXP_WARN_If you want to make the most of RXP; Press Escape -> Options -> Keybindings -> RestedXP Guides -> Select and Bind Active Button 1,2,3 and 4. You can also do this with Targets|r.
+    *This will allow you to press a keybind to use a quest item or target a relevant mob
 step << Orc
     #completewith next
     #label ReportToSenjinVillage
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_加德林大师|r 对话。
-    .turnin 25133 >>交任务 去森金村报到
-    .target 加德林大师
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Gadrin|r.
+    .turnin 25133 >>Turn in Report to Sen'jin Village
+    .target Master Gadrin
 step << Orc
-    #arrowtext 离开试炼谷
+    #arrowtext Leave the Valley of Trials
     #completwith ReportToSenjinVillage
     .goto 461,68.14,69.72,20,0
-    .goto 461,71.74,67.17,20 >>离开试炼谷
+    .goto 461,71.74,67.17,20 >>Leave the Valley of Trials
 step << Orc
-    #arrowtext 与 |cRXP_FRIENDLY_加德林大师|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Master Gadrin|r
     #requires ReportToSenjinVillage
     .goto 1,55.95,74.72
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_加德林大师|r 对话。
-    .turnin 25133 >>交任务 去森金村报到
-    .target 加德林大师
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Gadrin|r.
+    .turnin 25133 >>Turn in Report to Sen'jin Village
+    .target Master Gadrin
 step
-    #arrowtext 与 |cRXP_FRIENDLY_金萨拉|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Jin'thala|r
     #requires EchoIslesFirstQuestCheckA
     #label EchoIslesFirstQuestCheckB
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_金萨拉|r 对话。
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jin'thala|r.
     .goto 463,42.82,53.43
-    .accept 24607 >>接受任务 暗矛的崛起 << Warrior
-    .accept 24750 >>接受任务 暗矛的崛起 << Mage
-    .accept 24758 >>接受任务 暗矛的崛起 << Shaman
-    .accept 24764 >>接受任务 暗矛的崛起 << Druid
-    .accept 24770 >>接受任务 暗矛的崛起 << Rogue
-    .accept 24776 >>接受任务 暗矛的崛起 << Hunter
-    .accept 24782 >>接受任务 暗矛的崛起 << Priest
-    .accept 26272 >>接受任务 暗矛的崛起 << Warlock
-    .accept 31159 >>接受任务 暗矛的崛起 << Monk
-    .target 金萨拉
+    .accept 24607 >>Accept The Rise of the Darkspear << Warrior
+    .accept 24750 >>Accept The Rise of the Darkspear << Mage
+    .accept 24758 >>Accept The Rise of the Darkspear << Shaman
+    .accept 24764 >>Accept The Rise of the Darkspear << Druid
+    .accept 24770 >>Accept The Rise of the Darkspear << Rogue
+    .accept 24776 >>Accept The Rise of the Darkspear << Hunter
+    .accept 24782 >>Accept The Rise of the Darkspear << Priest
+    .accept 26272 >>Accept The Rise of the Darkspear << Warlock
+    .accept 31159 >>Accept The Rise of the Darkspear << Monk
+    .target Jin'thala
 step << Warrior
-    #arrowtext 与 |cRXP_FRIENDLY_诺泰特|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Nortet|r
     .goto 463,52.55,53.66
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_诺泰特|r 对话。
-    .turnin 24607 >>交任务 暗矛的崛起
-    .accept 24639 >>接受任务 基础教程：攻击目标
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nortet|r.
+    .turnin 24607 >>Turn in The Rise of the Darkspear
+    .accept 24639 >>Accept The Basics: Hitting Things
     .target Nortet
 step << Mage
-    #arrowtext 与 |cRXP_FRIENDLY_索拉萨|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Soratha|r
     .goto 463,59.71,52.08
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_索拉萨|r 对话。
-    .turnin 24750 >>交任务 暗矛的崛起
-    .accept 24751 >>接受任务 基础教程：攻击目标
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Soratha|r.
+    .turnin 24750 >>Turn in The Rise of the Darkspear
+    .accept 24751 >>Accept The Basics: Hitting Things
     .target Soratha
 step << Shaman
-    #arrowtext 与 |cRXP_FRIENDLY_奈卡利|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奈卡利|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Nekali|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nekali|r.
     .goto 463,50.06,52.75
-    .turnin 24758 >>交任务 暗矛的崛起
-    .accept 24759 >>接受任务 基础教程：攻击目标
+    .turnin 24758 >>Turn in The Rise of the Darkspear
+    .accept 24759 >>Accept The Basics: Hitting Things
     .target Nekali
 step << Druid
-    #arrowtext 与 |cRXP_FRIENDLY_岑塔布拉|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Zen'tabra|r
     .goto 463,58.06,54.05
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_岑塔布拉|r 对话。
-    .turnin 24764 >>交任务 暗矛的崛起
-    .accept 24765 >>接受任务 基础教程：攻击目标
-    .target 岑塔布拉
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zen'tabra|r.
+    .turnin 24764 >>Turn in The Rise of the Darkspear
+    .accept 24765 >>Accept The Basics: Hitting Things
+    .target Zen'tabra
 step << Rogue
-    #arrowtext 与 |cRXP_FRIENDLY_雷加提|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Legati|r
     .goto 463,52.90,49.92
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雷加提|r 对话。
-    .turnin 24770 >>交任务 暗矛的崛起
-    .accept 24771 >>接受任务 基础教程：攻击目标
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Legati|r.
+    .turnin 24770 >>Turn in The Rise of the Darkspear
+    .accept 24771 >>Accept The Basics: Hitting Things
     .target Legati
 step << Hunter
-    #arrowtext 与 |cRXP_FRIENDLY_欧塔扎|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Ortezza|r
     .goto 463,56.4,50.1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_欧塔扎|r 对话。
-    .turnin 24776 >>交任务 暗矛的崛起
-    .accept 24777 >>接受任务 基础教程：攻击目标
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ortezza|r.
+    .turnin 24776 >>Turn in The Rise of the Darkspear
+    .accept 24777 >>Accept The Basics: Hitting Things
     .target Ortezza
 step << Priest
-    #arrowtext 与 |cRXP_FRIENDLY_图娜尼|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Tunari|r
     .goto 463,58.04,49.26
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_图娜尼|r 对话。
-    .turnin 24782 >>交任务 暗矛的崛起
-    .accept 24783 >>接受任务 基础教程：攻击目标
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tunari|r.
+    .turnin 24782 >>Turn in The Rise of the Darkspear
+    .accept 24783 >>Accept The Basics: Hitting Things
     .target Tunari
 step << Warlock
-    #arrowtext 与 |cRXP_FRIENDLY_沃德雷卡|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Voldreka|r
     .goto 463,50.04,49.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_沃德雷卡|r 对话。
-    .turnin 26272 >>交任务 暗矛的崛起
-    .accept 26273 >>接受任务 基础教程：攻击目标
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Voldreka|r.
+    .turnin 26272 >>Turn in The Rise of the Darkspear
+    .accept 26273 >>Accept The Basics: Hitting Things
     .target Voldreka
 --X Currently has phasing issues, need to relog to make him show
 step << Monk
-    #arrowtext 与 |cRXP_FRIENDLY_扎布拉克斯|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Zabrax|r
     .goto 463,52.55,53.66
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_扎布拉克斯|r对话。
-    .turnin 31159 >>交任务 暗矛的崛起
-    .accept 31158 >>接受任务 基础教程：攻击目标
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zabrax|r.
+    .turnin 31159 >>Turn in The Rise of the Darkspear
+    .accept 31158 >>Accept The Basics: Hitting Things
     .target Zabrax
 step
-    #arrowtext 击杀 |cRXP_ENEMY_Tiki Targets|r
+    #arrowtext Kill\n|cRXP_ENEMY_Tiki Targets|r
     #loop
     .goto 463,52.20,54.49,15,0 << Warrior
     .goto 463,51.67,53.56,15,0 << Warrior
@@ -25949,7 +25947,7 @@ step
     .goto 463,49.44,52.23 << Warlock/Shaman
     .goto 463,52.89,50.69,15,0 << Monk
     .goto 463,52.96,53.08,15,0 << Monk
-    >>击杀 |cRXP_ENEMY_蒂基面具假人|r。
+    >>Kill the |cRXP_ENEMY_Tiki Targets|r.
     .complete 24639,1 << Warrior --6/6 Tiki Target slain
     .complete 24751,1 << Mage --6/6 Tiki Target slain
     .complete 24759,1 << Shaman --6/6 Tiki Target slain
@@ -25959,444 +25957,444 @@ step
     .complete 24783,1 << Priest --6/6 Tiki Target slain
     .complete 26273,1 << Warlock --6/6 Tiki Target slain
     .complete 31158,1 << Monk --6/6 Tiki Target slain
-    .mob 蒂基面具假人
+    .mob Tiki Target
 step << Warrior
-    #arrowtext 与 |cRXP_FRIENDLY_诺泰特|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Nortet|r
     .goto 463,52.55,53.66
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_诺泰特|r 对话。
-    .turnin 24639 >>交任务 基础教程：攻击目标
-    .accept 24641 >>接受任务 粗暴的开始
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nortet|r.
+    .turnin 24639 >>Turn in The Basics: Hitting Things
+    .accept 24641 >>Accept A Rough Start
     .target Nortet
 step << Mage
-    #arrowtext 与 |cRXP_FRIENDLY_索拉萨|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Soratha|r
     .goto 463,59.71,52.08
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_索拉萨|r 对话。
-    .turnin 24751 >>交任务 基础教程：攻击目标
-    .accept 24753 >>接受任务 粗暴的开始
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Soratha|r.
+    .turnin 24751 >>Turn in The Basics: Hitting Things
+    .accept 24753 >>Accept A Rough Start
     .target Soratha
 step << Shaman
-    #arrowtext 与 |cRXP_FRIENDLY_奈卡利|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Nekali|r
     .goto 463,50.06,52.75
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奈卡利|r 对话。
-    .turnin 24759 >>交任务 基础教程：攻击目标
-    .accept 24761 >>接受任务 粗暴的开始
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nekali|r.
+    .turnin 24759 >>Turn in The Basics: Hitting Things
+    .accept 24761 >>Accept A Rough Start
 step << Druid
-    #arrowtext 与 |cRXP_FRIENDLY_岑塔布拉|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Zen'tabra|r
     .goto 463,58.06,54.05
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_岑塔布拉|r 对话。
-    .turnin 24765 >>交任务 基础教程：攻击目标
-    .accept 24767 >>接受任务 粗暴的开始
-    .target 岑塔布拉
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zen'tabra|r.
+    .turnin 24765 >>Turn in The Basics: Hitting Things
+    .accept 24767 >>Accept A Rough Start
+    .target Zen'tabra
 step << Rogue
-    #arrowtext 与 |cRXP_FRIENDLY_雷加提|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Legati|r
     .goto 463,52.90,49.92
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雷加提|r 对话。
-    .turnin 24771 >>交任务 基础教程：攻击目标
-    .accept 24773 >>接受任务 粗暴的开始
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Legati|r.
+    .turnin 24771 >>Turn in The Basics: Hitting Things
+    .accept 24773 >>Accept A Rough Start
     .target Legati
 step << Hunter
-    #arrowtext 与 |cRXP_FRIENDLY_欧塔扎|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Ortezza|r
     .goto 463,56.4,50.1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_欧塔扎|r 对话。
-    .turnin 24777 >>交任务 基础教程：攻击目标
-    .accept 24779 >>接受任务 粗暴的开始
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ortezza|r.
+    .turnin 24777 >>Turn in The Basics: Hitting Things
+    .accept 24779 >>Accept A Rough Start
     .target Ortezza
 step << Priest
-    #arrowtext 与 |cRXP_FRIENDLY_图娜尼|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Tunari|r
     .goto 463,58.04,49.26
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_图娜尼|r 对话。
-    .turnin 24783 >>交任务 基础教程：攻击目标
-    .accept 24785 >>接受任务 粗暴的开始
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tunari|r.
+    .turnin 24783 >>Turn in The Basics: Hitting Things
+    .accept 24785 >>Accept A Rough Start
     .target Tunari
 step << Warlock
-    #arrowtext 与 |cRXP_FRIENDLY_沃德雷卡|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_沃德雷卡|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Voldreka|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Voldreka|r.
     .goto 463,50.04,49.93
-    .turnin 26273 >>交任务 基础教程：攻击目标
-    .accept 26275 >>接受任务 粗暴的开始
+    .turnin 26273 >>Turn in The Basics: Hitting Things
+    .accept 26275 >>Accept A Rough Start
     .target Voldreka
 step << Monk
-    #arrowtext 与 |cRXP_FRIENDLY_扎布拉克斯|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Zabrax|r
     .goto 463,52.55,53.66
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_扎布拉克斯|r对话。
-    .turnin 31158 >>交任务 基础教程：攻击目标
-    .accept 31160 >>接受任务 粗暴的开始
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zabrax|r.
+    .turnin 31158 >>Turn in The Basics: Hitting Things
+    .accept 31160 >>Accept A Rough Start
     .target Zabrax
 step << Warrior
-    #arrowtext 击杀 |cRXP_ENEMY_Wildmane Cats|r
+    #arrowtext Kill\n|cRXP_ENEMY_Wildmane Cats|r
     .goto 463,49.55,59.41,20,0
     .goto 463,52.07,61.40,20,0
     .goto 463,55.33,59.93
-    >>击杀|cRXP_ENEMY_蛮鬃野豹|r，拾取[|cRXP_LOOT_豹皮|r]。
+    >>Kill |cRXP_ENEMY_Wildmane Cats|r. Loot them for their [|cRXP_LOOT_Pelts|r].
     .complete 24641,1 --6/6 Wildmane Cat Pelt
-    .mob 蛮鬃野豹
+    .mob Wildmane Cat
 step << Mage
-    #arrowtext 击杀 |cRXP_ENEMY_Wildmane Cats|r
+    #arrowtext Kill\n|cRXP_ENEMY_Wildmane Cats|r
     .goto 463,62.91,48.23,10,0
     .goto 463,62.71,56.70
-    >>击杀|cRXP_ENEMY_蛮鬃野豹|r。拾取[|cRXP_LOOT_豹皮|r]。
+    >>Kill |cRXP_ENEMY_Wildmane Cats|r. Loot them for their [|cRXP_LOOT_Pelts|r].
     .complete 24753,1 --6/6 Wildmane Cat Pelt
-    .mob 蛮鬃野豹
+    .mob Wildmane Cat
 step << Shaman
-    #arrowtext 击杀 |cRXP_ENEMY_Wildmane Cats|r
+    #arrowtext Kill\n|cRXP_ENEMY_Wildmane Cats|r
     .goto 463,47.46,51.74,10,0
     .goto 463,48.06,46.84,10,0
     .goto 463,49.87,41.43,10,0
-    >>击杀|cRXP_ENEMY_蛮鬃野豹|r。拾取[|cRXP_LOOT_豹皮|r]。
+    >>Kill |cRXP_ENEMY_Wildmane Cats|r. Loot them for their [|cRXP_LOOT_Pelts|r].
     .complete 24761,1 --6/6 Wildmane Cat Pelt
-    .mob 蛮鬃野豹
+    .mob Wildmane Cat
 step << Druid
-    #arrowtext 击杀 |cRXP_ENEMY_Wildmane Cats|r
+    #arrowtext Kill\n|cRXP_ENEMY_Wildmane Cats|r
     .goto 463,63.12,57.25,10,0
     .goto 463,62.68,50.67,10,0
     .goto 463,62.87,47.90
-    >>击杀|cRXP_ENEMY_蛮鬃野豹|r。拾取[|cRXP_LOOT_豹皮|r]。
+    >>Kill |cRXP_ENEMY_Wildmane Cats|r. Loot them for their [|cRXP_LOOT_Pelts|r].
     .complete 24767,1 --6/6 Wildmane Cat Pelt
-    .mob 蛮鬃野豹
+    .mob Wildmane Cat
 step << Rogue
-    #arrowtext 击杀 |cRXP_ENEMY_Wildmane Cats|r
+    #arrowtext Kill\n|cRXP_ENEMY_Wildmane Cats|r
     .goto 463,48.82,43.95,10,0
     .goto 463,50.89,40.74
-    >>击杀|cRXP_ENEMY_蛮鬃野豹|r。拾取[|cRXP_LOOT_豹皮|r]。
+    >>Kill |cRXP_ENEMY_Wildmane Cats|r. Loot them for their [|cRXP_LOOT_Pelts|r].
     .complete 24773,1 --6/6 Wildmane Cat Pelt
-    .mob 蛮鬃野豹
+    .mob Wildmane Cat
 step << Hunter
-    #arrowtext 击杀 |cRXP_ENEMY_Wildmane Cats|r
+    #arrowtext Kill\n|cRXP_ENEMY_Wildmane Cats|r
     .goto 463,55.41,41.56
-    >>击杀|cRXP_ENEMY_蛮鬃野豹|r。拾取[|cRXP_LOOT_豹皮|r]。
+    >>Kill |cRXP_ENEMY_Wildmane Cats|r. Loot them for their [|cRXP_LOOT_Pelts|r].
     .complete 24779,1 --6/6 Wildmane Cat Pelt
-    .mob 蛮鬃野豹
+    .mob Wildmane Cat
 step << Priest
-    #arrowtext 击杀 |cRXP_ENEMY_Wildmane Cats|r
+    #arrowtext Kill\n|cRXP_ENEMY_Wildmane Cats|r
     .goto 463,55.42,41.49
-    >>击杀|cRXP_ENEMY_蛮鬃野豹|r。拾取[|cRXP_LOOT_豹皮|r]。
+    >>Kill |cRXP_ENEMY_Wildmane Cats|r. Loot them for their [|cRXP_LOOT_Pelts|r].
     .complete 24785,1 --6/6 Wildmane Cat Pelt
-    .mob 蛮鬃野豹
+    .mob Wildmane Cat
 step << Warlock
-    #arrowtext 击杀 |cRXP_ENEMY_Wildmane Cats|r
+    #arrowtext Kill\n|cRXP_ENEMY_Wildmane Cats|r
     .goto 463,49.05,44.40,10,0
     .goto 463,50.84,41.86
-    >>击杀|cRXP_ENEMY_蛮鬃野豹|r。拾取[|cRXP_LOOT_豹皮|r]。
+    >>Kill |cRXP_ENEMY_Wildmane Cats|r. Loot them for their [|cRXP_LOOT_Pelts|r].
     .complete 26275,1 --6/6 Wildmane Cat Pelt
-    .mob 蛮鬃野豹
+    .mob Wildmane Cat
 step << Monk
-    #arrowtext 击杀 |cRXP_ENEMY_Wildmane Cats|r
+    #arrowtext Kill\n|cRXP_ENEMY_Wildmane Cats|r
     .goto 463,48.82,43.95,10,0
     .goto 463,50.89,40.74
-    >>击杀|cRXP_ENEMY_蛮鬃野豹|r，拾取[|cRXP_LOOT_豹皮|r]。
+    >>Kill |cRXP_ENEMY_Wildmane Cats|r. Loot them for their [|cRXP_LOOT_Pelts|r].
     .complete 31160,1 --6/6 Wildmane Cat Pelt
-    .mob 蛮鬃野豹
+    .mob Wildmane Cat
 step << Warrior
-    #arrowtext 与 |cRXP_FRIENDLY_诺泰特|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Nortet|r
     .goto 463,52.55,53.66
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_诺泰特|r 对话。
-    .turnin 24641 >>交任务 粗暴的开始
-    .accept 24642 >>接受任务 试炼场
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nortet|r.
+    .turnin 24641 >>Turn in A Rough Start
+    .accept 24642 >>Accept Proving Pit
     .target Nortet
 step << Mage
-    #arrowtext 与 |cRXP_FRIENDLY_索拉萨|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Soratha|r
     .goto 463,59.71,52.08
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_索拉萨|r 对话。
-    .turnin 24753 >>交任务 粗暴的开始
-    .accept 24754 >>接受任务 试炼场
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Soratha|r.
+    .turnin 24753 >>Turn in A Rough Start
+    .accept 24754 >>Accept Proving Pit
     .target Soratha
 step << Shaman
-    #arrowtext 与 |cRXP_FRIENDLY_奈卡利|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Nekali|r
     .goto 463,50.06,52.75
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奈卡利|r 对话。
-    .turnin 24761 >>交任务 粗暴的开始
-    .accept 24762 >>接受任务 试炼场
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nekali|r.
+    .turnin 24761 >>Turn in A Rough Start
+    .accept 24762 >>Accept Proving Pit
     .target Nekali
 step << Druid
-    #arrowtext 与 |cRXP_FRIENDLY_岑塔布拉|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Zen'tabra|r
     .goto 463,58.06,54.05
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_岑塔布拉|r 对话。
-    .turnin 24767 >>交任务 粗暴的开始法师
-    .accept 24768 >>接受任务 试炼场
-    .target 岑塔布拉
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zen'tabra|r.
+    .turnin 24767 >>Turn in A Rough StartMage
+    .accept 24768 >>Accept Proving Pit
+    .target Zen'tabra
 step << Rogue
-    #arrowtext 与 |cRXP_FRIENDLY_雷加提|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Legati|r
     .goto 463,52.90,49.92
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雷加提|r 对话。
-    .turnin 24773 >>交任务 粗暴的开始
-    .accept 24774 >>接受任务 试炼场
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Legati|r.
+    .turnin 24773 >>Turn in A Rough Start
+    .accept 24774 >>Accept Proving Pit
     .target Legati
 step << Hunter
-    #arrowtext 与 |cRXP_FRIENDLY_欧塔扎|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Ortezza|r
     .goto 463,56.4,50.1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_欧塔扎|r 对话。
-    .turnin 24779 >>交任务 粗暴的开始
-    .accept 24780 >>接受任务 试炼场
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ortezza|r.
+    .turnin 24779 >>Turn in A Rough Start
+    .accept 24780 >>Accept Proving Pit
     .target Ortezza
 step << Priest
-    #arrowtext 与 |cRXP_FRIENDLY_图娜尼|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Tunari|r
     .goto 463,58.04,49.26
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_图娜尼|r 对话。
-    .turnin 24785 >>交任务 粗暴的开始
-    .accept 24786 >>接受任务 试炼场
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tunari|r.
+    .turnin 24785 >>Turn in A Rough Start
+    .accept 24786 >>Accept Proving Pit
     .target Tunari
 step << Warlock
-    #arrowtext 与 |cRXP_FRIENDLY_沃德雷卡|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Voldreka|r
     .goto 463,50.04,49.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_沃德雷卡|r 对话。
-    .turnin 26275 >>交任务 粗暴的开始
-    .accept 26276 >>接受任务 试炼场
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Voldreka|r.
+    .turnin 26275 >>Turn in A Rough Start
+    .accept 26276 >>Accept Proving Pit
     .target Voldreka
 step << Monk
-    #arrowtext 与 |cRXP_FRIENDLY_扎布拉克斯|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Zabrax|r
     .goto 463,52.55,53.66
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_扎布拉克斯|r对话。
-    .turnin 31160 >>交任务 粗暴的开始
-    .accept 31161 >>接受任务 试炼场
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zabrax|r.
+    .turnin 31160 >>Turn in A Rough Start
+    .accept 31161 >>Accept Proving Pit
     .target Zabrax
 step << Warrior
-    #arrowtext 与\n|cRXP_FRIENDLY_暗矛狱卒|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Darkspear Jailor|r
     .goto 463,51.94,51.34
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_暗矛狱卒|r 对话。
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Darkspear Jailor|r.
     .complete 24642,1 --1/1 Speak to a Darkspear Jailor
-    .target 暗矛狱卒
+    .target Darkspear Jailor
     .skipgossip
 step << Mage
-    #arrowtext 与\n|cRXP_FRIENDLY_暗矛狱卒|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Darkspear Jailor|r
     .goto 463,57.50,52.68
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_暗矛狱卒|r 对话。
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Darkspear Jailor|r.
     .complete 24754,1 --1/1 Speak to a Darkspear Jailor
-    .target 暗矛狱卒
+    .target Darkspear Jailor
     .skipgossip
 step << Shaman
-    #arrowtext 与\n|cRXP_FRIENDLY_暗矛狱卒|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Darkspear Jailor|r
     .goto 463,51.94,51.34
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_暗矛狱卒|r 对话。
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Darkspear Jailor|r.
     .complete 24762,1 --1/1 Speak to a Darkspear Jailor
-    .target 暗矛狱卒
+    .target Darkspear Jailor
     .skipgossip
 step << Druid
-    #arrowtext 与\n|cRXP_FRIENDLY_暗矛狱卒|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Darkspear Jailor|r
     .goto 463,57.49,52.68
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_暗矛狱卒|r 对话。
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Darkspear Jailor|r.
     .complete 24768,1 --1/1 Speak to a Darkspear Jailor
-    .target 暗矛狱卒
+    .target Darkspear Jailor
     .skipgossip
 step << Rogue
-    #arrowtext 与\n|cRXP_FRIENDLY_暗矛狱卒|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Darkspear Jailor|r
     .goto 463,51.94,51.34
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_暗矛狱卒|r 对话。
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Darkspear Jailor|r.
     .complete 24774,1 --1/1 Speak to a Darkspear Jailor
-    .target 暗矛狱卒
+    .target Darkspear Jailor
     .skipgossip
 step << Hunter
-    #arrowtext 与\n|cRXP_FRIENDLY_暗矛狱卒|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Darkspear Jailor|r
     .goto 463,57.49,52.68
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_暗矛狱卒|r 对话。
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Darkspear Jailor|r.
     .complete 24780,1 --1/1 Speak to a Darkspear Jailor
-    .target 暗矛狱卒
+    .target Darkspear Jailor
     .skipgossip
 step << Priest
-    #arrowtext 与\n|cRXP_FRIENDLY_暗矛狱卒|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Darkspear Jailor|r
     .goto 463,57.47,52.68
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_暗矛狱卒|r 对话。
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Darkspear Jailor|r.
     .complete 24786,1 --1/1 Speak to a Darkspear Jailor
     .skipgossip
-    .target 暗矛狱卒
+    .target Darkspear Jailor
 step << Troll Warlock
     #completewith next
-    .cast 688 >>施放"召唤小鬼"以召唤你的小鬼
+    .cast 688 >>Cast "Summon Imp" to summon your Imp
 step << Warlock
-    #arrowtext 与\n|cRXP_FRIENDLY_暗矛狱卒|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Darkspear Jailor|r
     .goto 463,51.94,51.34
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_暗矛狱卒|r 对话。
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Darkspear Jailor|r.
     .complete 26276,1 --1/1 Speak to a Darkspear Jailor
     .skipgossip
-    .target 暗矛狱卒
+    .target Darkspear Jailor
 step << Monk
-    #arrowtext 与\n|cRXP_FRIENDLY_暗矛狱卒|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Darkspear Jailor|r
     .goto 463,51.94,51.34
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_暗矛狱卒|r 对话。
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Darkspear Jailor|r.
     .complete 31161,1 --1/1 Speak to a Darkspear Jailor
     .skipgossip
-    .target 暗矛狱卒
+    .target Darkspear Jailor
 step << Warrior
-    #arrowtext 杀死\n|cRXP_ENEMY_恶鳞斥候俘虏|r
-    >>击杀 |cRXP_ENEMY_恶鳞斥候俘虏|r。
+    #arrowtext Kill\n|cRXP_ENEMY_Captive Spitescale Scout|r
+    >>Kill the |cRXP_ENEMY_Captive Spitescale Scout|r.
     .goto 463,51.15,51.29
     .complete 24642,2 --1/1 Captive Spitescale Scout slain
-    .mob 恶鳞斥候俘虏
+    .mob Captive Spitescale Scout
 step << Mage
-    #arrowtext 杀死\n|cRXP_ENEMY_恶鳞斥候俘虏|r
-    >>击杀 |cRXP_ENEMY_恶鳞斥候俘虏|r。
+    #arrowtext Kill\n|cRXP_ENEMY_Captive Spitescale Scout|r
+    >>Kill the |cRXP_ENEMY_Captive Spitescale Scout|r.
     .goto 463,57.28,51.84,10,0
     .goto 463,58.06,51.54
     .complete 24754,2 --1/1 Captive Spitescale Scout slain
-    .mob 恶鳞斥候俘虏
+    .mob Captive Spitescale Scout
 step << Shaman
-    #arrowtext 杀死\n|cRXP_ENEMY_恶鳞斥候俘虏|r
-    >>击杀 |cRXP_ENEMY_恶鳞斥候俘虏|r。
+    #arrowtext Kill\n|cRXP_ENEMY_Captive Spitescale Scout|r
+    >>Kill the |cRXP_ENEMY_Captive Spitescale Scout|r.
     .goto 463,50.68,51.91
     .complete 24762,2 --1/1 Captive Spitescale Scout slain
-    .mob 恶鳞斥候俘虏
+    .mob Captive Spitescale Scout
 step << Druid
-    #arrowtext 杀死\n|cRXP_ENEMY_恶鳞斥候俘虏|r
-    >>击杀 |cRXP_ENEMY_恶鳞斥候俘虏|r。
+    #arrowtext Kill\n|cRXP_ENEMY_Captive Spitescale Scout|r
+    >>Kill the |cRXP_ENEMY_Captive Spitescale Scout|r.
     .goto 463,57,28,51.82
     .complete 24768,2 --1/1 Captive Spitescale Scout slain
-    .mob 恶鳞斥候俘虏
+    .mob Captive Spitescale Scout
 step << Rogue
-    #arrowtext 杀死\n|cRXP_ENEMY_恶鳞斥候俘虏|r
-    >>击杀 |cRXP_ENEMY_恶鳞斥候俘虏|r。
+    #arrowtext Kill\n|cRXP_ENEMY_Captive Spitescale Scout|r
+    >>Kill the |cRXP_ENEMY_Captive Spitescale Scout|r.
     .goto 463,51.15,51.28
     .complete 24774,2 --1/1 Captive Spitescale Scout slain
-    .mob 恶鳞斥候俘虏
+    .mob Captive Spitescale Scout
 step << Hunter
-    #arrowtext 杀死\n|cRXP_ENEMY_恶鳞斥候俘虏|r
-    >>击杀 |cRXP_ENEMY_恶鳞斥候俘虏|r。
+    #arrowtext Kill\n|cRXP_ENEMY_Captive Spitescale Scout|r
+    >>Kill the |cRXP_ENEMY_Captive Spitescale Scout|r.
     .goto 463,57.29,51.80
     .complete 24780,2 --1/1 Captive Spitescale Scout slain
-    .mob 恶鳞斥候俘虏
+    .mob Captive Spitescale Scout
 step << Priest
-    #arrowtext 杀死\n|cRXP_ENEMY_恶鳞斥候俘虏|r
-    >>击杀 |cRXP_ENEMY_恶鳞斥候俘虏|r。
+    #arrowtext Kill\n|cRXP_ENEMY_Captive Spitescale Scout|r
+    >>Kill the |cRXP_ENEMY_Captive Spitescale Scout|r.
     .goto 463,57.29,51.82
     .complete 24786,2 --1/1 Captive Spitescale Scout slain
-    .mob 恶鳞斥候俘虏
+    .mob Captive Spitescale Scout
 step << Warlock
-    #arrowtext 杀死\n|cRXP_ENEMY_恶鳞斥候俘虏|r
-    >>击杀 |cRXP_ENEMY_恶鳞斥候俘虏|r。
+    #arrowtext Kill\n|cRXP_ENEMY_Captive Spitescale Scout|r
+    >>Kill the |cRXP_ENEMY_Captive Spitescale Scout|r.
     .goto 463,50.69,51.88
     .complete 26276,2 --1/1 Captive Spitescale Scout slain
-    .mob 恶鳞斥候俘虏
+    .mob Captive Spitescale Scout
 step << Monk
-    #arrowtext 杀死\n|cRXP_ENEMY_恶鳞斥候俘虏|r
-    >>击杀 |cRXP_ENEMY_恶鳞斥候俘虏|r。
+    #arrowtext Kill\n|cRXP_ENEMY_Captive Spitescale Scout|r
+    >>Kill the |cRXP_ENEMY_Captive Spitescale Scout|r.
     .goto 463,50.69,51.88
     .complete 26276,2 --1/1 Captive Spitescale Scout slain
-    .mob 恶鳞斥候俘虏
+    .mob Captive Spitescale Scout
 step << Warrior
-    #arrowtext 与 |cRXP_FRIENDLY_诺泰特|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Nortet|r
     .goto 463,51.45,52.63
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_诺泰特|r 对话。
-    .turnin 24642 >>交任务 试炼场
-    .accept 24643 >>接受任务 喜出望外
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nortet|r.
+    .turnin 24642 >>Turn in Proving Pit
+    .accept 24643 >>Accept More Than Expected
     .target Nortet
 step << Mage
-    #arrowtext 与 |cRXP_FRIENDLY_索拉萨|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Soratha|r
     .goto 463,58.20,51.57
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_索拉萨|r 对话。
-    .turnin 24754 >>交任务 试炼场
-    .accept 24755 >>接受任务 喜出望外
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Soratha|r.
+    .turnin 24754 >>Turn in Proving Pit
+    .accept 24755 >>Accept More Than Expected
     .target Soratha
 step << Shaman
-    #arrowtext 与 |cRXP_FRIENDLY_奈卡利|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Nekali|r
     .goto 463,50.71,52.08
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奈卡利|r 对话。
-    .turnin 24762 >>交任务 试炼场
-    .accept 24763 >>接受任务 喜出望外
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nekali|r.
+    .turnin 24762 >>Turn in Proving Pit
+    .accept 24763 >>Accept More Than Expected
     .target Nekali
 step << Druid
-    #arrowtext 与 |cRXP_FRIENDLY_岑塔布拉|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Zen'tabra|r
     .goto 463,57.66,52.62
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_岑塔布拉|r 对话。
-    .turnin 24768 >>交任务 试炼场
-    .accept 24769 >>接受任务 喜出望外
-    .target 岑塔布拉
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zen'tabra|r.
+    .turnin 24768 >>Turn in Proving Pit
+    .accept 24769 >>Accept More Than Expected
+    .target Zen'tabra
 step << Rogue
-    #arrowtext 与 |cRXP_FRIENDLY_雷加提|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Legati|r
     .goto 463,51.95,51.63
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雷加提|r 对话。
-    .turnin 24774 >>交任务 试炼场
-    .accept 24775 >>接受任务 喜出望外
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Legati|r.
+    .turnin 24774 >>Turn in Proving Pit
+    .accept 24775 >>Accept More Than Expected
     .target Legati
 step << Hunter
-    #arrowtext 与 |cRXP_FRIENDLY_欧塔扎|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Ortezza|r
     .goto 463,57.22,50.77
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_欧塔扎|r 对话。
-    .turnin 24780 >>交任务 试炼场
-    .accept 24781 >>接受任务 喜出望外
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ortezza|r.
+    .turnin 24780 >>Turn in Proving Pit
+    .accept 24781 >>Accept More Than Expected
     .target Ortezza
 step << Priest
-    #arrowtext 与 |cRXP_FRIENDLY_图娜尼|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Tunari|r
     .goto 463,57.38,50.82
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_图娜尼|r 对话。
-    .turnin 24786 >>交任务 试炼场
-    .accept 24787 >>接受任务 喜出望外
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tunari|r.
+    .turnin 24786 >>Turn in Proving Pit
+    .accept 24787 >>Accept More Than Expected
     .target Tunari
 step << Warlock
-    #arrowtext 与 |cRXP_FRIENDLY_沃德雷卡|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Voldreka|r
     .goto 463,50.69,51.88
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_沃德雷卡|r 对话。
-    .turnin 26276 >>交任务 试炼场
-    .accept 26277 >>接受任务 喜出望外
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Voldreka|r.
+    .turnin 26276 >>Turn in Proving Pit
+    .accept 26277 >>Accept More Than Expected
     .target Voldreka
 step << Monk
-    #arrowtext 与 |cRXP_FRIENDLY_扎布拉克斯|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Zabrax|r
     .goto 463,52.55,53.66
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_扎布拉克斯|r对话。
-    .turnin 31161 >>交任务 试炼场
-    .accept 31163 >>接受任务 喜出望外
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zabrax|r.
+    .turnin 31161 >>Turn in Proving Pit
+    .accept 31163 >>Accept More Than Expected
     .target Zabrax
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_沃金|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Vol'jin|r
     .goto 463,61.57,65.85
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_沃金|r 对话。
-    .turnin 24643 >>交任务 喜出望外 << Warrior
-    .turnin 24755 >>交任务 喜出望外 << Mage
-    .turnin 24763 >>交任务 喜出望外 << Shaman
-    .turnin 24769 >>交任务 喜出望外 << Druid
-    .turnin 24775 >>交任务 喜出望外 << Rogue
-    .turnin 24781 >>交任务 喜出望外 << Hunter
-    .turnin 24787 >>交任务 喜出望外 << Priest
-    .turnin 26277 >>交任务 喜出望外 << Warlock
-    .turnin 31163 >>交任务 喜出望外 << Monk
-    .accept 25064 >>接受任务 莫拉亚
-    .target 沃金
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vol'jin|r.
+    .turnin 24643 >>Turn in More Than Expected << Warrior
+    .turnin 24755 >>Turn in More Than Expected << Mage
+    .turnin 24763 >>Turn in More Than Expected << Shaman
+    .turnin 24769 >>Turn in More Than Expected << Druid
+    .turnin 24775 >>Turn in More Than Expected << Rogue
+    .turnin 24781 >>Turn in More Than Expected << Hunter
+    .turnin 24787 >>Turn in More Than Expected << Priest
+    .turnin 26277 >>Turn in More Than Expected << Warlock
+    .turnin 31163 >>Turn in More Than Expected << Monk
+    .accept 25064 >>Accept Moraya
+    .target Vol'jin
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_托拉金|r 和 |cRXP_FRIENDLY_莫拉亚|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_托拉金|r 和 |cRXP_FRIENDLY_莫拉亚|r 对话。
-    .accept 25037 >>接受任务 捉螃蟹
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Tora'jin|r and |cRXP_FRIENDLY_Moraya|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tora'jin|r and |cRXP_FRIENDLY_Moraya|r.
+    .accept 25037 >>Accept Crab Fishin'
     .goto 463,60.52,62.87
-    .turnin 25064 >>交任务 莫拉亚
-    .accept 24622 >>接受任务 巨魔的铁杆伙伴
+    .turnin 25064 >>Turn in Moraya
+    .accept 24622 >>Accept A Troll's Truest Companion
     .goto 463,56.82,63.69
-    .target 托拉金
-    .target 莫拉亚
+    .target Tora'jin
+    .target Moraya
 step
-    .itemcount 132516,1
+    .itemcount 132516,1 --Gunshoes
     #completewith next
-    .cast 202844 >>使用|T1405809:0|t[火枪鞋]
+    .cast 202844 >>Use |T1405809:0|t[Gunshoes]
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_基加拉|r 和 |cRXP_FRIENDLY_缇卡什|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_基加拉|r对话（她在附近巡逻），然后与|cRXP_FRIENDLY_缇卡什|r对话。
-    .turnin 24622 >>交任务 巨魔的铁杆伙伴
-    .accept 24623 >>接受任务 拯救幼崽
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Kijara|r and |cRXP_FRIENDLY_Tegashi|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kijara|r. (she patrols around), then talk to |cRXP_FRIENDLY_Tegashi|r.
+    .turnin 24622 >>Turn in A Troll's Truest Companion
+    .accept 24623 >>Accept Saving the Young
     .goto 463,50.42,66.82,30,0
     .goto 463,45.27,85.38
-    .accept 24624 >>接受任务 给迷失者的怜悯
-    .accept 24625 >>接受任务 海巫的配偶
+    .accept 24624 >>Accept Mercy for the Lost
+    .accept 24625 >>Accept Consort of the Sea Witch
     .goto 463,45.73,85.00
-    .target 基加拉
-    .target 缇卡什
+    .target Kijara
+    .target Tegashi
 step
-    #arrowtext 使用 [Bloodtalon Whistle]
+    #arrowtext Use [Bloodtalon Whistle]
     #completewith Bloodtalons
     #label EchoIslesBloodtalonsRescued
     .goto 463,38.01,67.58,25,0
-    >>在血爪幼龙附近使用|T132161:0|t[血爪之哨]以救援它们
+    >>Use the |T132161:0|t[Bloodtalon Whistle] near Bloodtalon Hatchlings to rescue them
     .complete 24623,1 --12/12 Bloodtalon Hatchlings rescued
     .use 52283
 step
-    #arrowtext 杀死\n|cRXP_ENEMY_Corrupted Bloodtalons|r
+    #arrowtext Kill\n|cRXP_ENEMY_Corrupted Bloodtalons|r
 	#completewith next
     .goto 463,38.82,72.57,0
-    >>击杀 |cRXP_ENEMY_被腐蚀的血爪迅猛龙|r。
+    >>Kill |cRXP_ENEMY_Corrupted Bloodtalons|r.
     .complete 24624,1 --8/8 Corrupted Bloodtalon slain
-    .mob 被腐蚀的血爪迅猛龙
+    .mob Corrupted Bloodtalon
 step
-    #arrowtext 杀死\n|cRXP_ENEMY_纳杰特丝|r
+    #arrowtext Kill\n|cRXP_ENEMY_Naj'tess|r
     .goto 463,36.72,69.04
-    >>击杀|cRXP_ENEMY_纳杰特丝|r，拾取|T332402:0|t[|cRXP_LOOT_纳杰特丝的腐化宝珠|r]。
+    >>Kill |cRXP_ENEMY_Naj'tess|r. Loot him for the |T332402:0|t[|cRXP_LOOT_Naj'tess' Orb of Corruption|r].
     .complete 24625,1 --1/1 Naj'tess' Orb of Corruption
-    .mob 纳杰特丝
+    .mob Naj'tess
 step
-    #arrowtext 杀死\n|cRXP_ENEMY_Corrupted Bloodtalons|r
+    #arrowtext Kill\n|cRXP_ENEMY_Corrupted Bloodtalons|r
 	#label Bloodtalons
     #loop
 	.line 463,34.04,70.60,36.60,69.56,38.51,66.20,40.18,69.15,40.05,71.23,39.37,74.83,38.41,73.07,36.67,73.48,35.14,73.49,36.60,69.56
@@ -26410,11 +26408,11 @@ step
 	.goto 463,36.67,73.48,30,0
 	.goto 463,35.14,73.49,30,0
 	.goto 463,36.60,69.56,30,0
-    >>击杀 |cRXP_ENEMY_被腐蚀的血爪迅猛龙|r。
+    >>Kill |cRXP_ENEMY_Corrupted Bloodtalons|r.
     .complete 24624,1 --8/8 Corrupted Bloodtalon slain
-    .mob 被腐蚀的血爪迅猛龙
+    .mob Corrupted Bloodtalon
 step
-    #arrowtext 使用 [Bloodtalon Whistle]
+    #arrowtext Use [Bloodtalon Whistle]
 #loop
 	.line 463,36.60,69.56,38.51,66.20,40.18,69.15,40.05,71.23,39.37,74.83,38.41,73.07,36.67,73.48,35.14,73.49,36.60,69.56
 	.goto 463,36.60,69.56,30,0
@@ -26426,27 +26424,27 @@ step
 	.goto 463,36.67,73.48,30,0
 	.goto 463,35.14,73.49,30,0
 	.goto 463,36.60,69.56,30,0
-    >>在血爪幼龙附近使用|T132161:0|t[血爪之哨]以救援它们
+    >>Use the |T132161:0|t[Bloodtalon Whistle] near Bloodtalon Hatchlings to rescue them
     .complete 24623,1 --12/12 Bloodtalon Hatchlings rescued
     .use 52283
 step
 	#completewith next
-    >>在返回途中击杀|cRXP_ENEMY_小海浪蟹|r，从其身上拾取|T134007:0|t[|cRXP_LOOT_新鲜的蟹肉|r]。
+    >>Kill |cRXP_ENEMY_Pygmy Surf Crawlers|r on your way back. Loot them for the |T134007:0|t[|cRXP_LOOT_Fresh Crawler Meat|r].
     .complete 25037,1 --5/5 Fresh Crawler Meat
-    .mob 侏儒冲浪蟹
+    .mob Pygmy Surf Crawler
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_缇卡什|r 和 |cRXP_FRIENDLY_基加拉|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_缇卡什|r 和 |cRXP_FRIENDLY_基加拉|r 对话。
-    .turnin 24625 >>交任务 海巫的配偶
-    .turnin 24624 >>交任务 给迷失者的怜悯
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Tegashi|r and |cRXP_FRIENDLY_Kijara|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tegashi|r and |cRXP_FRIENDLY_Kijara|r.
+    .turnin 24625 >>Turn in Consort of the Sea Witch
+    .turnin 24624 >>Turn in Mercy for the Lost
     .goto 463,45.73,85.00
-    .turnin 24623 >>交任务 拯救幼崽
-    .accept 24626 >>接受任务 年轻气盛
+    .turnin 24623 >>Turn in Saving the Young
+    .accept 24626 >>Accept Young and Vicious
     .goto 463,45.27,85.38
-    .target 缇卡什
-    .target 基加拉
+    .target Tegashi
+    .target Kijara
 step
-    #arrowtext 对 |cRXP_FRIENDLY_迅爪|r\n使用 [Bloodtalon Lasso]
+    #arrowtext Use [Bloodtalon Lasso]\non |cRXP_FRIENDLY_Swiftclaw|r
     #loop
 	.line 463,45.93,86.53,46.15,88.00,43.81,88.49,43.46,91.82,44.25,91.93,45.27,89.85,45.95,89.71,46.91,93.18,47.68,92.85,47.84,88.58,48.45,90.12,47.51,88.96,47.42,86.91,46.21,85.10,46.03,83.83,44.17,82.86,42.43,83.12,41.15,85.98,40.87,88.56,42.30,88.10,43.60,85.27,44.56,85.10,45.93,86.53
     .goto 463,45.93,86.53,30,0
@@ -26471,86 +26469,86 @@ step
     .goto 463,43.46,91.82,30,0
     .goto 463,43.81,88.49,30,0
     .goto 463,46.15,88.00,30,0
-    >>对 |cRXP_FRIENDLY_迅爪|r 使用 |T134326:0|t[血爪套索]。他会在你身边出现，然后沿岛屿逆时针奔跑。
+    >>Click on the |cRXP_PICK_Bloodtalon Lasso|r macro in the "Active Items Frame" to use it on |cRXP_FRIENDLY_Swiftclaw|r. He runs counter-clockwise around the island.
     .complete 24626,1 --1/1 Capture Swiftclaw
-	.unitscan 迅爪
-    .use 50053
+	.unitscan Swiftclaw
+    .macro Bloodtalon Lasso,134326 >>/targetexact Swiftclaw\n/use item:50053
 step
-    #arrowtext 骑乘 |cRXP_FRIENDLY_迅爪|r 回到 |cRXP_PICK_迅猛龙栏舍|r
+    #arrowtext Ride |cRXP_FRIENDLY_Swiftclaw|r back to the |cRXP_PICK_Raptor Pen|r
     .goto 463,50.42,66.82,40,0
     .goto 463,53.21,65.40
-    >>骑乘|cRXP_FRIENDLY_迅爪|r返回|cRXP_PICK_迅猛龙围栏|r。
+    >>Ride |cRXP_FRIENDLY_Swiftclaw|r back to the |cRXP_PICK_Raptor Pen|r.
     .complete 24626,2 --1/1 Return Swiftclaw to the Raptor Pens
 step << Hunter Troll
     #completewith TrollBreakingtheLine
     .goto 463,53.03,65.42
-    .cast 1515 >>|cRXP_WARN_用你的|T132164:0|t[驯服野兽]技能驯服一头|cRXP_ENEMY_血爪迅猛龙|r|r。
-    .mob Bloodtalon 迅猛龙
+    .cast 1515 >>|cRXP_WARN_Tame a |cRXP_ENEMY_Bloodtalon Raptor|r with your |T132164:0|t[Tame Beast] ability|r.
+    .mob Bloodtalon Raptor
 step
-    #arrowtext 杀死\n|cRXP_ENEMY_Pygmy Surf Crawlers|r
+    #arrowtext Kill\n|cRXP_ENEMY_Pygmy Surf Crawlers|r
     #loop
     .goto 463,52.87,71.28,40,0
     .goto 463,58.36,70.75,30,0
-    >>击杀|cRXP_ENEMY_小海浪蟹|r，拾取它们的[|cRXP_LOOT_肉|r]。
+    >>Kill |cRXP_ENEMY_Pygmy Surf Crawlers|r. Loot them for their [|cRXP_LOOT_Meat|r].
     .complete 25037,1 --5/5 Fresh Crawler Meat
-    .mob 海浪蟹
+    .mob Pygmy Surf Crawler
 step << Troll
-    #arrowtext 与\n|cRXP_FRIENDLY_莫拉亚|r 和 |cRXP_FRIENDLY_托尔图盖|r 和 |cRXP_FRIENDLY_托拉金|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Moraya|r and |cRXP_FRIENDLY_Tortunga|r and |cRXP_FRIENDLY_Tora'jin|r
     #label TrollBreakingtheLine
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莫拉亚|r, |cRXP_FRIENDLY_托尔图盖|r, 和 |cRXP_FRIENDLY_托拉金|r 对话。
-    .turnin 24626 >>交任务 年轻气盛
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moraya|r, |cRXP_FRIENDLY_Tortunga|r, and |cRXP_FRIENDLY_Tora'jin|r.
+    .turnin 24626 >>Turn in Young and Vicious
     .goto 463,56.82,63.69
-    .accept 25035 >>接受任务 突破防线
+    .accept 25035 >>Accept Breaking the Line
     .goto 463,58.97,66.85
-    .turnin 25037 >>交任务 捉螃蟹
+    .turnin 25037 >>Turn in Crab Fishin'
     .goto 463,60.52,62.87
     .xp >10-1400,1
-    .target 莫拉亚
-    .target 托尔图盖
-    .target 托拉金
+    .target Moraya
+    .target Tortunga
+    .target Tora'jin
 --XX was 1600
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_莫拉亚|r 和 |cRXP_FRIENDLY_托尔图盖|r 和 |cRXP_FRIENDLY_托拉金|r 对话 << Orc
-    #arrowtext 与\n|cRXP_FRIENDLY_莫拉亚|r 和 |cRXP_FRIENDLY_托拉金|r 对话 << Troll
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莫拉亚|r, |cRXP_FRIENDLY_托尔图盖|r, 和 |cRXP_FRIENDLY_托拉金|r 对话。 << Orc
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莫拉亚|r 和 |cRXP_FRIENDLY_托拉金|r 对话。 << Troll
-    .turnin 24626 >>交任务 年轻气盛
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Moraya|r and |cRXP_FRIENDLY_Tortunga|r and |cRXP_FRIENDLY_Tora'jin|r << Orc
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Moraya|r and |cRXP_FRIENDLY_Tora'jin|r << Troll
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moraya|r, |cRXP_FRIENDLY_Tortunga|r, and |cRXP_FRIENDLY_Tora'jin|r. << Orc
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moraya|r and |cRXP_FRIENDLY_Tora'jin|r. << Troll
+    .turnin 24626 >>Turn in Young and Vicious
     .goto 463,56.82,63.69
-    .accept 25035 >>接受任务 突破防线 << Orc
+    .accept 25035 >>Accept Breaking the Line << Orc
     .goto 463,58.97,66.85 << Orc
-    .turnin 25037 >>交任务 捉螃蟹
+    .turnin 25037 >>Turn in Crab Fishin'
     .goto 463,60.52,62.87
-    .target 莫拉亚
-    .target 托拉金
+    .target Moraya
+    .target Tora'jin
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_莫拉基|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Morakki|r
     .goto 463,58.90,23.08
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莫拉基|r 对话。
-    .turnin 25035 >>交任务 突破防线
-    .accept 24812 >>接受任务 不再怜悯
-    .accept 24813 >>接受任务 领土神像
-	.isOnQuest 25035
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Morakki|r.
+    .turnin 25035 >>Turn in Breaking the Line
+    .accept 24812 >>Accept No More Mercy
+    .accept 24813 >>Accept Territorial Fetish
+	.isOnQuest 25035 --Breaking the Line
     .xp 10,1
     .target Morakki
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_莫拉基|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Morakki|r
     .goto 463,58.90,23.08
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莫拉基|r 对话。
-    .accept 24812 >>接受任务 不再怜悯
-    .accept 24813 >>接受任务 领土神像
-	.isQuestTurnedIn 25035
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Morakki|r.
+    .accept 24812 >>Accept No More Mercy
+    .accept 24813 >>Accept Territorial Fetish
+	.isQuestTurnedIn 25035 --Breaking the Line
     .target Morakki
 step
-    #arrowtext 杀死\n|cRXP_ENEMY_Spitescale Nagas|r
+    #arrowtext Kill\n|cRXP_ENEMY_Spitescale Nagas|r
     #sticky
     #label EchoingIslesSpitescaleNagas
-    >>击杀|cRXP_ENEMY_恶鳞纳迦|r，同时放置[|cRXP_LOOT_领土神像|r]。
+    >>Kill |cRXP_ENEMY_Spitescale Nagas|r while placing the [|cRXP_LOOT_Territorial Fetishes|r].
     .goto 464,58.0,46.3,0,0
     .complete 24812,1 --12/12 Spitescale Naga
-	.isQuestTurnedIn 25035
+	.isQuestTurnedIn 25035 --Breaking the Line
 step
-    #arrowtext 在 |cRXP_PICK_Spitescale Flags|r\n上使用 [领土神像]
-    >>在|cRXP_PICK_恶鳞旗帜|r旁边使用|T132482:0|t[领土神像]。神像过一会儿会消失，可以重新放。
+    #arrowtext Use [Territorial Fetish]\non |cRXP_PICK_Spitescale Flags|r
+    >>Use the |T132482:0|t[Territorial Fetish] next to |cRXP_PICK_Spitescale Flags|r. The fetishes despawn after a while and you can place them again.
     .goto 464,61.97,71.50,10,0
     .goto 464,66.21,58.45,10,0
     .goto 464,68.96,40.94,10,0
@@ -26570,22 +26568,22 @@ step
     .goto 464,69.36,30.91,15,0
     .use 52065
     .complete 24813,1 --8/8 Territorial Fetish placed
-	.isQuestTurnedIn 25035
+	.isQuestTurnedIn 25035 --Breaking the Line
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_莫拉基|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Morakki|r
     #requires EchoingIslesSpitescaleNagas
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莫拉基|r 对话。
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Morakki|r.
     .goto 463,58.90,23.08
-    .turnin 24812 >>交任务 不再怜悯
-    .turnin 24813 >>交任务 领土神像
-	.isQuestTurnedIn 25035
+    .turnin 24812 >>Turn in No More Mercy
+    .turnin 24813 >>Turn in Territorial Fetish
+	.isQuestTurnedIn 25035 --Breaking the Line
     .target Morakki
 step << Orc
-    #arrowtext 与 |cRXP_FRIENDLY_管理员曼雷克|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Handler Marnlek|r
     .goto 1,55.38,73.31
-    .fly Orgrimmar >>飞往奥格瑞玛
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_管理员曼雷克|r 对话。
-    .target 马恩雷克管理员
+    .fly Orgrimmar >>Fly to Orgrimmar
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Handler Marnlek|r.
+    .target Handler Marnlek
 ]])
 --Tauren: Camp Narache
 RXPGuides.RegisterGuide([[
@@ -26593,9 +26591,9 @@ RXPGuides.RegisterGuide([[
 #version 2
 #group RestedXP 快速升级
 #subgroup |cFFFCDC00(1-90)|r 默认
-#name ab) 纳拉其营地
-#displayname 纳拉其营地|cRXP_ENEMY_（备选版）|r
-#next ac) 牛头人营地莫高雷
+#name ab) Camp Narache
+#displayname Camp Narache |cRXP_ENEMY_(Alternative)|r
+#next ac) Tauren Camp Mulgore
 #defaultfor Tauren !DK
 
 << Horde
@@ -26603,85 +26601,85 @@ RXPGuides.RegisterGuide([[
 step << Tauren
     .zoneskip 1727
     #completewith MulgoreFirstQuestCheck
-    +如果你想以最快速度升级，请选择流放者离岛作为起始区域。这需要重新创建角色。
+    +If you want to level as fast as possible, choose Exile’s Reach as your starting zone. This requires recreating your character.
 
 step << Tauren
     #optional
     .zoneskip 1727,1
-    +你在流放者离岛，但当前指南适用于|cfff78300亡灵起始区域|r。
-    +请选择|cfff78300流放者离岛指南|r。
+    +You are in Exiles Reach but the current Guide is for the |cfff78300Undead Starting Zone|r.
+    +Please choose the |cfff78300Exiles Reach Guide|r.
 step
     #optional
     #completewith next
-    +|cRXP_WARN_若要充分利用RXP，按下Escape -> 选项 -> 快捷键 -> RestedXP指南 -> 选择并绑定活跃按钮1、2、3和4。你也可以为目标进行绑定。|r。
-    *这将让你能够按下快捷键来使用任务物品或指定相关小怪
+    +|cRXP_WARN_If you want to make the most of RXP; Press Escape -> Options -> Keybindings -> RestedXP Guides -> Select and Bind Active Button 1,2,3 and 4. You can also do this with Targets|r.
+    *This will allow you to press a keybind to use a quest item or target a relevant mob
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_鹰风酋长|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Chief Hawkwind|r
     #label MulgoreFirstQuestCheck
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_鹰风酋长|r 对话。
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chief Hawkwind|r.
     .goto 462,27.7,28.2
-    .accept 14449 >>接受任务 第一步
-    .target 鹰风酋长
+    .accept 14449 >>Accept The First Step
+    .target Chief Hawkwind
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_格鲁尔·鹰风|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格鲁尔·鹰风|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Grull Hawkwind|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grull Hawkwind|r.
     .goto 462,39.45,37.25
-    .turnin 14449 >>交任务 第一步
-    .accept 14452 >>接受任务 力量仪祭
-    .target 格鲁尔·鹰风
+    .turnin 14449 >>Turn in The First Step
+    .accept 14452 >>Accept Rite of Strength
+    .target Grull Hawkwind
 step
-    #arrowtext 杀死\n|cRXP_ENEMY_Bristleback Invaders|r
+    #arrowtext Kill\n|cRXP_ENEMY_Bristleback Invaders|r
     #loop
     .goto 462,40.93,35.68,15,0
     .goto 462,42.01,32.95,15,0
     .goto 462,44.65,34.68,15,0
     .goto 462,44.40,37.15,15,0
     .goto 462,40.81,38.19,15,0
-    >>击杀 |cRXP_ENEMY_刺背入侵者|r。
+    >>Kill the |cRXP_ENEMY_Bristleback Invaders|r.
     .complete 14452,1 --6/6 Bristleback Invaders slain
-    .mob 刺背入侵者
+    .mob Bristleback Invader
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_格鲁尔·鹰风|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格鲁尔·鹰风|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Grull Hawkwind|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grull Hawkwind|r.
     .goto 462,39.45,37.25
-    .turnin 14452 >>交任务 力量仪祭
-    .accept 24852 >>接受任务 被囚禁的部族
-    .target 格鲁尔·鹰风
+    .turnin 14452 >>Turn in Rite of Strength
+    .accept 24852 >>Accept Our Tribe, Imprisoned
+    .target Grull Hawkwind
 step
-    #arrowtext 勇士获救 (1/4)
+    #arrowtext Brave Freed (1/4)
     .goto 462,49.39,35.39
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_野猪人牢笼|r。
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Quilboar Cage|r.
     .complete 24852,1,1 --4/4 Braves Freed
 step
-    #arrowtext 勇士获救 (2/4)
+    #arrowtext Brave Freed (2/4)
     .goto 462,49.07,36.97
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_野猪人牢笼|r。
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Quilboar Cage|r.
     .complete 24852,1,2 --4/4 Braves Freed
 step
-    #arrowtext 勇士获救 (3/4)
+    #arrowtext Brave Freed (3/4)
     .goto 462,49.32,42.12
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_野猪人牢笼|r。
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Quilboar Cage|r.
     .complete 24852,1,3 --4/4 Braves Freed
 step
-    #arrowtext 勇士获救 (4/4)
+    #arrowtext Brave Freed (4/4)
     .goto 462,49.07,43.80
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_野猪人牢笼|r。
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Quilboar Cage|r.
     .complete 24852,1 --4/4 Braves Freed
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_格鲁尔·鹰风|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Grull Hawkwind|r
     .goto 462,39.45,37.25
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格鲁尔·鹰风|r 对话。
-    .turnin 24852 >>交任务 被囚禁的部族
-    .accept 14458 >>接受任务 去找阿达娜
-    .target 格鲁尔·鹰风
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grull Hawkwind|r.
+    .turnin 24852 >>Turn in Our Tribe, Imprisoned
+    .accept 14458 >>Accept Go to Adana
+    .target Grull Hawkwind
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_阿达娜·雷角|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿达娜·雷角|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Adana Thunderhorn|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Adana Thunderhorn|r.
     .goto 462,30.9,50.6
-    .turnin 14458 >>交任务 去找阿达娜
-    .accept 14456 >>接受任务 勇气仪祭
-    .accept 14455 >>接受任务 阻止号角手
-    .target 阿达娜·雷角
+    .turnin 14458 >>Turn in Go to Adana
+    .accept 14456 >>Accept Rite of Courage
+    .accept 14455 >>Accept Stop the Thorncallers
+    .target Adana Thunderhorn
 step
     #completewith StolenRifles
     #hidewindow
@@ -26693,27 +26691,27 @@ step
     +1
 step
     #completewith next
-    >>击杀 |cRXP_ENEMY_刺背号角手|r。
+    >>Kill |cRXP_ENEMY_Bristleback Thorncallers|r.
     .complete 14455,1 --7/7 Bristleback Thorncaller slain
-    .mob 刺背号角手
+    .mob Bristleback Thorncaller
 step
-    >>击杀|cRXP_ENEMY_刺背枪匪|r，拾取|T135610:0|t[|cRXP_LOOT_被偷走的步枪|r]。
+    >>Kill |cRXP_ENEMY_Bristleback Gun Thiefs|r. Loot them for the |T135610:0|t[|cRXP_LOOT_Stolen Rifles|r].
     .complete 14456,1 --7/7 Stolen Rifle
     .mob Bristleback Gun Thief
 step
     #label StolenRifles
-    >>击杀 |cRXP_ENEMY_刺背号角手|r。
+    >>Kill |cRXP_ENEMY_Bristleback Thorncallers|r.
     .complete 14455,1 --7/7 Bristleback Thorncaller slain
-    .mob 刺背号角手
+    .mob Bristleback Thorncaller
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_阿达娜·雷角|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿达娜·雷角|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Adana Thunderhorn|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Adana Thunderhorn|r.
     .goto 462,30.9,50.6
-    .turnin 14456 >>交任务 勇气仪祭
-    .turnin 14455 >>交任务 阻止号角手
-    .accept 14459 >>接受任务 斗猪
-    .accept 14461 >>接受任务 邪恶的食粮
-    .target 阿达娜·雷角
+    .turnin 14456 >>Turn in Rite of Courage
+    .turnin 14455 >>Turn in Stop the Thorncallers
+    .accept 14459 >>Accept The Battleboars
+    .accept 14461 >>Accept Feed of Evil
+    .target Adana Thunderhorn
 step
     #completewith ArmoredBattleboar
     #hidewindow
@@ -26723,109 +26721,109 @@ step
     .goto 462,28.2,70.4,12,0
     +1
 step
-    #arrowtext 杀死\n|cRXP_ENEMY_Armored Battleboars|r
+    #arrowtext Kill\n|cRXP_ENEMY_Armored Battleboars|r
     #completewith ThirdTrough
-    >>击杀 |cRXP_ENEMY_重甲斗猪|r。
+    >>Kill |cRXP_ENEMY_Armored Battleboars|r.
     .goto 462,26.78,68.79,0,0
     .complete 14459,1 --10/10 Armored Battleboar slain
-    .mob 重甲斗猪
+    .mob Armored Battleboar
 step
-    >>使用 |T135432:0|t[阿达娜的火炬]焚烧 |cRXP_PICK_槽|r。
+    >>Use |T135432:0|t[Adana's Torch] to burn the |cRXP_PICK_Trough|r.
     .complete 14461,1 --1/1 First Trough
     .use 49539
 step
-    >>在[|cRXP_LOOT_槽|r]旁使用|T135432:0|t[阿达娜的火炬]。
+    >>Use |T135432:0|t[Adana's Torch] next to the [|cRXP_LOOT_trough|r].
     .complete 14461,2 --1/1 Second Trough
     .use 49539
 step
     #label ThirdTrough
-    >>在[|cRXP_LOOT_槽|r]旁使用|T135432:0|t[阿达娜的火炬]。
+    >>Use |T135432:0|t[Adana's Torch] next to the [|cRXP_LOOT_trough|r].
     .complete 14461,3 --1/1 Third Trough
     .use 49539
 step
     #label ArmoredBattleboar
-    >>击杀 |cRXP_ENEMY_重甲斗猪|r。
+    >>Kill |cRXP_ENEMY_Armored Battleboars|r.
     .complete 14459,1 --10/10 Armored Battleboar slain
-    .mob 重甲斗猪
+    .mob Armored Battleboar
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_阿达娜·雷角|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Adana Thunderhorn|r
     #requires mulgoreAmoredBattleboar
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿达娜·雷角|r 对话。
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Adana Thunderhorn|r.
     .goto 462,30.9,50.6
-    .turnin 14459 >>交任务 斗猪
-    .turnin 14461 >>交任务 邪恶的食粮
-    .accept 14460 >>接受任务 荣誉仪祭
-    .target 阿达娜·雷角
+    .turnin 14459 >>Turn in The Battleboars
+    .turnin 14461 >>Turn in Feed of Evil
+    .accept 14460 >>Accept Rite of Honor
+    .target Adana Thunderhorn
 step
-    #arrowtext 杀死\n|cRXP_ENEMY_尖啸·刺鬃酋长|r
-    >>击杀|cRXP_ENEMY_尖啸·刺鬃酋长|r，拾取[|cRXP_LOOT_衬肩|r]。
+    #arrowtext Kill\n|cRXP_ENEMY_Chief Squealer Thornmantle|r
+    >>Kill |cRXP_ENEMY_Chief Squealer Thornmantle|r. Loot him for his [|cRXP_LOOT_mantle|r].
     .goto 462,15.20,46.73
     .complete 14460,1 --1/1 Mane of Thornmantle
-    .mob 尖啸·刺鬃酋长
+    .mob Chief Squealer Thornmantle
 step << Hunter
     #completewith next
     .goto 462,23.69,38.27,25,0
-    .cast 1515 >>驯服1只|cRXP_ENEMY_平原陆行鸟|r。
-    .mob 平原陆行鸟
+    .cast 1515 >>Tame a |cRXP_ENEMY_Plainstrider|r.
+    .mob Plainstrider
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_鹰风酋长|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_鹰风酋长|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Chief Hawkwind|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chief Hawkwind|r.
     .goto 462,27.7,28.3
-    .turnin 14460 >>交任务 荣誉仪祭
-    .accept 24861 >>接受任务 最后的仪式，最初的仪式
-    .target 鹰风酋长
+    .turnin 14460 >>Turn in Rite of Honor
+    .accept 24861 >>Accept Last Rites, First Rites
+    .target Chief Hawkwind
 step
-    #arrowtext 使用 [Water Pitcher]
-    >>使用|T132813:0|t[水罐]
+    #arrowtext Use [Water Pitcher]
+    >>Use the |T132813:0|t[Water Pitcher]
     .goto 462,27.7,28.3
     .use 50465
     .complete 24861,1 --1/1 Offering Placed
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_鹰风酋长|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_鹰风酋长|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Chief Hawkwind|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chief Hawkwind|r.
     .goto 462,27.7,28.3
-    .turnin 24861 >>交任务 最后的仪式，最初的仪式
-    .accept 23733 >>接受任务 大地母亲的仪式
-    .target 鹰风酋长
+    .turnin 24861 >>Turn in Last Rites, First Rites
+    .accept 23733 >>Accept Rites of the Earthmother
+    .target Chief Hawkwind
 step
     #completewith next
     #label RitesoftheEarthmother
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与山顶的|cRXP_FRIENDLY_德亚米·翱风|r对话。
-    .turnin 23733 >>交任务 大地母亲的仪式
-    .accept 24215 >>接受任务 风之仪式
-    .target 德亚米·翱风
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dyami Windsoar|r on top of the mountain.
+    .turnin 23733 >>Turn in Rites of the Earthmother
+    .accept 24215 >>Accept Rite of the Winds
+    .target Dyami Windsoar
 step
-    #arrowtext |cFFFCDC00跟随箭头|r
+    #arrowtext |cFFFCDC00Follow the arrow|r
     #completewith RitesoftheEarthmother
     .goto 462,19.24,33.81,10,0
     .goto 462,11.91,27.64,10,0
-    .goto 462,12.50,29.17,8 >>沿路上山
+    .goto 462,12.50,29.17,8 >>Follow the way up the mountain
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_德亚米·翱风|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Dyami Windsoar|r
     #requires RitesoftheEarthmother
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与山顶的|cRXP_FRIENDLY_德亚米·翱风|r对话。
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dyami Windsoar|r on top of the mountain.
     .goto 462,15.63,30.26
-    .turnin 23733 >>交任务 大地母亲的仪式
-    .accept 24215 >>接受任务 风之仪式
-    .target 德亚米·翱风
+    .turnin 23733 >>Turn in Rites of the Earthmother
+    .accept 24215 >>Accept Rite of the Winds
+    .target Dyami Windsoar
 step
     #completewith next
     #label Mazzranache
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_茂尔·祈雨|r 对话。
-    .accept 26188 >>接受任务 马兹拉纳其
-    .target 茂尔·祈雨
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maur Raincaller|r.
+    .accept 26188 >>Accept Mazzranache
+    .target Maur Raincaller
 step
     #completewith Mazzranache
     .goto 462,15.40,27.68,10,0
     .goto 462,15.44,25.29,20,0
-    .deathskip >>沿箭头指引从山上跳下，死亡后释放灵魂
+    .deathskip >>Follow the arrow by jumping off the mountain, die and release your spirit
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_茂尔·祈雨|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Maur Raincaller|r
     #requires Mazzranache
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_茂尔·祈雨|r 对话。
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maur Raincaller|r.
     .goto 7,47.16,56.66
-    .accept 26188 >>接受任务 马兹拉纳其
-    .target 茂尔·祈雨
+    .accept 26188 >>Accept Mazzranache
+    .target Maur Raincaller
 ]])
 --Tauren: Camp Mulgore
 RXPGuides.RegisterGuide([[
@@ -26833,365 +26831,365 @@ RXPGuides.RegisterGuide([[
 #version 2
 #group RestedXP 快速升级
 #subgroup |cFFFCDC00(1-90)|r 默认
-#name ac) 牛头人营地莫高雷
-#displayname |cFF1EFF002|r - 莫高雷
+#name ac) Tauren Camp Mulgore
+#displayname |cFF1EFF002|r - Mulgore
 #next b1) 争霸艾泽拉斯介绍
 #defaultfor Tauren !DK
 
 << Horde
 
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_茂尔·祈雨|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_茂尔·祈雨|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Maur Raincaller|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maur Raincaller|r.
     .goto 7,47.16,56.66
-    .accept 26188 >>接受任务 马兹拉纳其
-    .target 茂尔·祈雨
+    .accept 26188 >>Accept Mazzranache
+    .target Maur Raincaller
 step
-    #arrowtext 与 |cRXP_FRIENDLY_瓦尔格·风语|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Varg Windwhisper|r
     #completewith next
     #label MulgoreABundleofHidesAcceptA
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与帐篷内的|cRXP_FRIENDLY_瓦尔格·风语|r对话。
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Varg Windwhisper|r inside the tent.
     .goto 7,46.06,58.19
-    .accept 6361 >>接受任务 一捆兽皮
-    .target 瓦尔戈·风语者
+    .accept 6361 >>Accept A Bundle of Hides
+    .target Varg Windwhisper
 step
-    #arrowtext |cFFFCDC00进入帐篷|r
+    #arrowtext |cFFFCDC00Enter the tent|r
     #completewith MulgoreABundleofHidesAcceptA
-    *|cRXP_WARN_提醒：跳死后请重新召唤你的宠物|r。 << Hunter/Warlock
-    .goto 7,46.53,58.17,5 >>进入帐篷
+    *|cRXP_WARN_Reminder: Resummon your pet after a deathskip|r. << Hunter/Warlock
+    .goto 7,46.53,58.17,5 >>Enter the tent
 step
-    #arrowtext 与 |cRXP_FRIENDLY_瓦尔格·风语|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Varg Windwhisper|r
     #label MulgoreABundleofHidesAcceptB
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与帐篷内的|cRXP_FRIENDLY_瓦尔格·风语|r对话。
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Varg Windwhisper|r inside the tent.
     .goto 7,46.06,58.19
-    .accept 6361 >>接受任务 一捆兽皮
-    .target 瓦尔戈·风语者
+    .accept 6361 >>Accept A Bundle of Hides
+    .target Varg Windwhisper
 step
     #completewith next
     .goto 7,47.44,58.64
-    .fp >>获取血蹄村飞行点
+    .fp >>Get the Bloodhoof Village Flight Path
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塔克|r 对话。
-    .turnin 6361 >>交任务 一捆兽皮
-    .accept 6362 >>接受任务 飞往雷霆崖
-    .target 塔克
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tak|r.
+    .turnin 6361 >>Turn in A Bundle of Hides
+    .accept 6362 >>Accept Ride to Thunder Bluff
+    .target Tak
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_哈肯·风之图腾|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哈肯·风之图腾|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Harken Windtotem|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Harken Windtotem|r.
     .goto 7,48.78,58.79
-    .accept 761 >>接受任务 猎捕猛鹫
-    .target 哈肯·风之图腾
+    .accept 761 >>Accept Swoop Hunting
+    .target Harken Windtotem
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_穆尔·雷角|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_穆尔·雷角|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Mull Thunderhorn|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mull Thunderhorn|r.
     .goto 7,48.61,59.8
-    .accept 20440 >>接受任务 有毒的水
-    .target 穆尔·雷角
+    .accept 20440 >>Accept Poison Water
+    .target Mull Thunderhorn
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_艾莫·雷角|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾莫·雷角|r 对话。
-    .isQuestComplete 24215
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Ahmo Thunderhorn|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ahmo Thunderhorn|r.
+    .isQuestComplete 24215 --Rite of the Winds
     .goto 7,47.65,59.58
-    .turnin 24215 >>交任务 风之仪式
-    .accept 14438 >>接受任务 土地之争
-    .accept 24459 >>接受任务 摩林·云行者
-    .target 艾莫·雷角
+    .turnin 24215 >>Turn in Rite of the Winds
+    .accept 14438 >>Accept Sharing the Land
+    .accept 24459 >>Accept Morin Cloudstalker
+    .target Ahmo Thunderhorn
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_艾莫·雷角|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾莫·雷角|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Ahmo Thunderhorn|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ahmo Thunderhorn|r.
     .goto 7,47.65,59.58
-    .accept 14438 >>接受任务 土地之争
-    .accept 24459 >>接受任务 摩林·云行者
-    .target 艾莫·雷角
+    .accept 14438 >>Accept Sharing the Land
+    .accept 24459 >>Accept Morin Cloudstalker
+    .target Ahmo Thunderhorn
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_卢尔·鹰爪|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卢尔·鹰爪|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Ruul Eagletalon|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ruul Eagletalon|r.
     .goto 7,47.50,61.33
-    .accept 743 >>接受任务 风怒鹰身人
-    .target 卢尔·鹰爪
+    .accept 743 >>Accept Dangers of the Windfury
+    .target Ruul Eagletalon
 step
     #completewith next
-    >>击杀|cRXP_ENEMY_平原陆行鸟|r和|cRXP_ENEMY_草原狼|r，拾取|T136063:0|t[|cRXP_LOOT_平原陆行鸟的爪子|r]和|T134297:0|t[|cRXP_LOOT_草原狼的爪子|r]。
+    >>Kill |cRXP_ENEMY_Plainstriders|r and |cRXP_ENEMY_Prairie Wolfs|r. Loot them for the |T136063:0|t[|cRXP_LOOT_Plainstrider Talons|r] and |T134297:0|t[|cRXP_LOOT_Prairie Wolf Paw|r].
     .complete 20440,2 --4/4 Plainstrider Talon
     .complete 20440,1 --6/6 Prairie Wolf Paw
-    .mob 成年平原陆行鸟
-    .mob 草原狼
+    .mob Adult Plainstrider
+    .mob Prairie Wolf
 step
-    #arrowtext 杀死\n|cRXP_ENEMY_Palemane Gnolls|r
+    #arrowtext Kill\n|cRXP_ENEMY_Palemane Gnolls|r
     #loop
     .goto 7,48.44,70.79,30,0
     .goto 7,53.35,71.71,30,0
-    >>击杀|cRXP_ENEMY_白鬃豺狼人|r。
-    >>|cRXP_WARN_留意稀有怪物 |cRXP_ENEMY_断矛|r 和 |cRXP_ENEMY_阿兰其亚|r （它们给予任务级别的经验）|r。
+    >>Kill |cRXP_ENEMY_Palemane Gnolls|r.
+    >>|cRXP_WARN_Keep an eye out for the rares |cRXP_ENEMY_Snagglespear|r and |cRXP_ENEMY_Arra'chea|r (they give a quest's worth of experience)|r.
     .complete 14438,1 --15/15 Palemane Gnolls
-    .mob 白鬃剥皮工
-    .mob 白鬃制革工
-    .mob 白鬃偷猎者
-    .mob 断矛
-    .mob 阿兰其亚
+    .mob Palemane Skinner
+    .mob Palemane Tanner
+    .mob Palemane Poacher
+    .mob Snagglespear
+    .mob Arra'chea
 step
     #completewith MulgorePoisonedWater
-    >>击杀|cRXP_ENEMY_猛鹫|r，从其身上拾取|T135992:0|r[|cRXP_LOOT_猛鹫的羽毛|r]。
-    >>你现在不需要完成这个任务
+    >>Kill |cRXP_ENEMY_Swoops|r. Loot them for the |T135992:0|r[|cRXP_LOOT_Trophy Swoop Quills|r].
+    >>You don't need to complete this quest at this point
     .complete 761,1 --8/8 Trophy Swoop Quill
-    .mob 猛鹫
+    .mob Swoop
 step
-    #arrowtext 杀死\n|cRXP_ENEMY_平原陆行鸟|r 和 |cff00ecffWolfs|r
+    #arrowtext Kill\n|cRXP_ENEMY_Plainstrider|r and |cff00ecffWolfs|r
     #loop
     .goto 7,53.65,68.34,30,0
     .goto 7,50.30,65.51,30,0
     .goto 7,51.92,62.67,30,0
-    >>击杀|cRXP_ENEMY_平原陆行鸟|r和|cff00ecff狼|r，从其身上拾取|T136063:0|t[|cRXP_LOOT_平原陆行鸟的爪子|r]和|T134297:0|t[|cRXP_LOOT_草原狼的爪子|r]。
+    >>Kill |cRXP_ENEMY_Plainstrider|r and |cff00ecffWolfs|r. Loot them for the |T136063:0|t[|cRXP_LOOT_Plainstrider Talons|r] and |T134297:0|t[|cRXP_LOOT_Prairie Wolf Paw|r].
     .complete 20440,2 --4/4 Plainstrider Talon
     .complete 20440,1 --6/6 Prairie Wolf Paw
-    .mob 成年平原陆行鸟
-    .mob 草原狼
+    .mob Adult Plainstrider
+    .mob Prairie Wolf
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_穆尔·雷角|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Mull Thunderhorn|r
     #label MulgorePoisonedWater
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_穆尔·雷角|r 对话。
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mull Thunderhorn|r.
     .goto 7,48.62,59.81
-    .turnin 20440 >>交任务 有毒的水
-    .accept 24440 >>接受任务 净化冰蹄之井
-    .target 穆尔·雷角
+    .turnin 20440 >>Turn in Poison Water
+    .accept 24440 >>Accept Winterhoof Cleansing
+    .target Mull Thunderhorn
 step
-    #arrowtext 使用 [净化冰蹄之井 图腾]
-    >>在水井旁使用|T135139:0|t[冰蹄之井净化图腾]
+    #arrowtext Use [Winterhoof Cleansing Totem]
+    >>Use the |T135139:0|t[Winterhoof Cleansing Totem] next to the well
     .goto 7,53.47,65.36
     .use 5411
     .complete 24440,1 --Well Cleansed
 step
-    #arrowtext 杀死\n|cRXP_ENEMY_Swoops|r
+    #arrowtext Kill\n|cRXP_ENEMY_Swoops|r
     #completewith next
-    >>击杀|cRXP_ENEMY_猛鹫|r，从其身上拾取|T135992:0|r[|cRXP_LOOT_猛鹫的羽毛|r]。
-    >>|cRXP_WARN_你现在不需要完成这个任务|r。
+    >>Kill |cRXP_ENEMY_Swoops|r. Loot them for the |T135992:0|r[|cRXP_LOOT_Trophy Swoop Quills|r].
+    >>|cRXP_WARN_You don't have to complete this quest now|r.
     .goto 7,56.22,63.43,30,0
     .complete 761,1 --8/8 Trophy Swoop Quill
-    .mob 猛鹫
+    .mob Swoop
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_摩林·云行者|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_摩林·云行者|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Morin Cloudstalker|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Morin Cloudstalker|r.
     .goto 7,57.06,60.43
-    .turnin 24459 >>交任务 摩林·云行者
-    .accept 749 >>接受任务 被破坏的货车
-    .target 摩林·云行者
+    .turnin 24459 >>Turn in Morin Cloudstalker
+    .accept 749 >>Accept The Ravaged Caravan
+    .target Morin Cloudstalker
 step
     #completewith next
-    >>击杀|cRXP_ENEMY_猛鹫|r，从其身上拾取|T135992:0|r[|cRXP_LOOT_猛鹫的羽毛|r]。
-    >>|cRXP_WARN_你现在不需要完成这个任务|r。
+    >>Kill |cRXP_ENEMY_Swoops|r. Loot them for the |T135992:0|r[|cRXP_LOOT_Trophy Swoop Quills|r].
+    >>|cRXP_WARN_You don't have to complete this quest at now|r.
     .complete 761,1 --8/8 Trophy Swoop Quill
-    .mob 猛鹫
+    .mob Swoop
 step
     #completewith next
-    >>击杀|cRXP_ENEMY_平原狮|r。拾取|T133718:0|t[|cRXP_LOOT_平原狮的腿骨|r]。
-    >>|cRXP_WARN_你现在不需要完成这个任务|r。
+    >>Kill |cRXP_ENEMY_Flatland Cougars|r. Loot them for the |T133718:0|t[|cRXP_LOOT_Flatland Cougar Femur|r].
+    >>|cRXP_WARN_You don't have to complete this quest at now|r.
     .complete 26188,1 --1/1 Flatland Cougar Femur
-    .mob 平原狮
+    .mob Flatland Cougar
 step
-    #arrowtext 点击\n|cRXP_PICK_Sealed Supply 恐惧哨兵的王庭重靴|r
+    #arrowtext Click\n|cRXP_PICK_Sealed Supply Crate|r
     .goto 7,53.52,48.28
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_密封的补给箱|r
-    .turnin 749 >>交任务 被破坏的货车
-    .accept 751 >>接受任务 被破坏的货车
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Sealed Supply Crate|r
+    .turnin 749 >>Turn in The Ravaged Caravan
+    .accept 751 >>Accept The Ravaged Caravan
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_摩林·云行者|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Morin Cloudstalker|r
     .goto 7,57.06,60.43
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_摩林·云行者|r 对话。
-    .turnin 751 >>交任务 被破坏的货车
-    .accept 26179 >>接受任务 风险投资公司
-    .accept 26180 >>接受任务 菲兹普罗克主管
-    .target 摩林·云行者
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Morin Cloudstalker|r.
+    .turnin 751 >>Turn in The Ravaged Caravan
+    .accept 26179 >>Accept The Venture Co.
+    .accept 26180 >>Accept Supervisor Fizsprocket
+    .target Morin Cloudstalker
 step
     #completewith next
-    >>击杀 |cRXP_ENEMY_风险投资公司工人|r。
-    >>|cRXP_WARN_如果你看到稀有怪|cRXP_ENEMY_执行者埃米尔冈德|r，击杀它|r。
+    >>Kill |cRXP_ENEMY_Venture Co. Workers|r.
+    >>|cRXP_WARN_Kill the rare |cRXP_ENEMY_Enforcer Emilgund|r if you see him|r.
     .complete 26179,1 --7/7 Venture Co. Worker slain
-    .mob 风险投资公司工人
+    .mob Venture Co. Worker
 step
-    #arrowtext 杀死\n|cRXP_ENEMY_菲兹普罗克主管|r
-    >>击杀|cRXP_ENEMY_菲兹普罗克主管|r。拾取以获得|T134944:0|t[|cRXP_LOOT_菲兹普罗克的笔记板|r]。
+    #arrowtext Kill\n|cRXP_ENEMY_Supervisor Fizsprocket|r
+    >>Kill |cRXP_ENEMY_Supervisor Fizsprocket|r. Loot him for |T134944:0|t[|cRXP_LOOT_Fizsprocket's Clipboard|r].
     .goto 9,41.79,84.78
     .complete 26180,1 --1/1 Fizsprocket's Clipboard
-    .mob 菲兹普罗克主管
+    .mob Supervisor Fizsprocket
 step
-    #arrowtext 杀死\n|cRXP_ENEMY_Venture Co. Workers|r
+    #arrowtext Kill\n|cRXP_ENEMY_Venture Co. Workers|r
     #loop
     .goto 9,45.64,82.31,30,0
     .goto 7,59.09,48.71,20,0
-    >>击杀 |cRXP_ENEMY_风险投资公司工人|r。
-    >>|cRXP_WARN_如果你看到稀有怪|cRXP_ENEMY_执行者埃米尔冈德|r，击杀它|r。
+    >>Kill |cRXP_ENEMY_Venture Co. Workers|r.
+    >>|cRXP_WARN_Kill the rare |cRXP_ENEMY_Enforcer Emilgund|r if you see him|r.
     .complete 26179,1 --7/7 Venture Co. Worker slain
-    .mob 风险投资公司工人
+    .mob Venture Co. Worker
 step
     #completewith MulgorePoisonedWater
-    >>击杀|cRXP_ENEMY_猛鹫|r，拾取[|cRXP_LOOT_羽毛|r]。
-    >>|cRXP_WARN_你现在不需要完成这个任务|r。
+    >>Kill |cRXP_ENEMY_Swoops|r. Loot them for their [|cRXP_LOOT_quills|r].
+    >>|cRXP_WARN_You don't need to complete this quest at this point|r.
     .complete 761,1 --8/8 Trophy Swoop Quill
-    .mob 猛鹫
+    .mob Swoop
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_摩林·云行者|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_摩林·云行者|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Morin Cloudstalker|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Morin Cloudstalker|r.
     .goto 7,57.06,60.43
-    .turnin 26179 >>交任务 风险投资公司
-    .turnin 26180 >>交任务 菲兹普罗克主管
-    .target 摩林·云行者
+    .turnin 26179 >>Turn in The Venture Co.
+    .turnin 26180 >>Turn in Supervisor Fizsprocket
+    .target Morin Cloudstalker
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_穆尔·雷角|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_穆尔·雷角|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Mull Thunderhorn|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mull Thunderhorn|r.
     .goto 7,48.62,59.81
-    .turnin 24440 >>交任务 净化冰蹄之井
-    .accept 24441 >>接受任务 雷角图腾
-    .target 穆尔·雷角
+    .turnin 24440 >>Turn in Winterhoof Cleansing
+    .accept 24441 >>Accept Thunderhorn Totem
+    .target Mull Thunderhorn
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_哈肯·风之图腾|r 对话
-    .isQuestComplete 761
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Harken Windtotem|r
+    .isQuestComplete 761 --Swoop Hunting
     .goto 7,48.78,58.79
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哈肯·风之图腾|r 对话。
-    .turnin 761 >>交任务 猎捕猛鹫
-    .target 哈肯·风之图腾
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Harken Windtotem|r.
+    .turnin 761 >>Turn in Swoop Hunting
+    .target Harken Windtotem
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_艾莫·雷角|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾莫·雷角|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Ahmo Thunderhorn|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ahmo Thunderhorn|r.
     .goto 7,47.65,59.58
-    .turnin 14438 >>交任务 土地之争
-    .accept 14491 >>接受任务 不休的大地
-    .target 艾莫·雷角
+    .turnin 14438 >>Turn in Sharing the Land
+    .accept 14491 >>Accept The Restless Earth
+    .target Ahmo Thunderhorn
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_旅店老板考乌斯|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_旅店老板考乌斯|r对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Innkeeper Kauth|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Kauth|r.
     .goto 7,46.82,60.45
-    .home >>将你的炉石绑定到血蹄村
-    .target 旅店老板考乌斯
+    .home >>Set your Hearthstone to Bloodhoof Village
+    .target Innkeeper Kauth
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_茂尔·祈雨|r 对话
-    .isQuestComplete 26188
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_茂尔·祈雨|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Maur Raincaller|r
+    .isQuestComplete 26188 --Mazzranache
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maur Raincaller|r.
     .goto 7,47.16,56.66
-    .turnin 26188 >>交任务 马兹拉纳其
-    .mob 茂尔·祈雨
+    .turnin 26188 >>Turn in Mazzranache
+    .mob Maur Raincaller
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_塔克|r 对话
-    .isOnQuest 6362
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Tak|r
+    .isOnQuest 6362 --Ride to Thunder Bluff
     .zoneskip 7,1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塔克|r 对话。
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tak|r.
     .goto 7,47.45,58.64
-    .fly Thunder Bluff >>飞往雷霆崖
-    .target 塔克
+    .fly Thunder Bluff >>Fly to Thunder Bluff
+    .target Tak
 step
-    #arrowtext 跳下去
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t跳下并与|cRXP_FRIENDLY_安哈努|r对话。
+    #arrowtext Jump down
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tJump down and talk to |cRXP_FRIENDLY_Ahanu|r.
     .goto 88,45.75,55.83
-    .turnin 6362 >>交任务 飞往雷霆崖
-    .accept 6363 >>接受任务 双足飞龙驭手塔尔
-    .target 安哈努
+    .turnin 6362 >>Turn in Ride to Thunder Bluff
+    .accept 6363 >>Accept Tal the Wind Rider Master
+    .target Ahanu
 step
     #completewith next
     #label TalTheWindRiderMaster
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t上塔并与|cRXP_FRIENDLY_塔尔|r 对话。
-    .turnin 6363 >>交任务 双足飞龙驭手塔尔
-    .accept 6364 >>接受任务 向瓦尔格复命
-    .target 塔尔
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tClimb the tower and talk to |cRXP_FRIENDLY_Tal|r.
+    .turnin 6363 >>Turn in Tal the Wind Rider Master
+    .accept 6364 >>Accept Return to Varg
+    .target Tal
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_安哈努|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Ahanu|r
     #completewith TalTheWindRiderMaster
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_安哈努|r 对话。
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ahanu|r.
     .goto 88,45.75,55.83
     .vendor
-    .target 安哈努
+    .target Ahanu
 step
-    #arrowtext 登上塔楼
+    #arrowtext Climb the tower
     #requires TalTheWindRiderMaster
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_WARN_上塔并|r与|cRXP_FRIENDLY_塔尔|r 对话。
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_WARN_Climb the tower|r. Talk to |cRXP_FRIENDLY_Tal|r.
     .goto 88,47.03,49.60
-    .turnin 6363 >>交任务 双足飞龙驭手塔尔
-    .accept 6364 >>接受任务 向瓦尔格复命
-    .target 塔尔
+    .turnin 6363 >>Turn in Tal the Wind Rider Master
+    .accept 6364 >>Accept Return to Varg
+    .target Tal
 step
     #completewith next
     #label WindfuryTalons
-    >>击杀 |cRXP_ENEMY_风怒唤风者|r 和 |cRXP_ENEMY_风怒鹰身人|r。拾取他们的[|cRXP_LOOT_爪子|r]。
-    >>|cRXP_WARN_如果能看见|cRXP_ENEMY_末日预言者智蹄|r就击杀它|r
+    >>Kill |cRXP_ENEMY_Windfury Wind Witches|r and |cRXP_ENEMY_Windfury Harpies|r. Loot them for their [|cRXP_LOOT_talons|r].
+    >>|cRXP_WARN_Kill the |cRXP_ENEMY_Doomsayer Wiserunner|r if you see him|r
     .complete 743,1 --8/8 Windfury Talon
-    .mob 风怒唤风者
-    .mob 风怒鹰身人
+    .mob Windfury Wind Witch
+    .mob Windfury Harpy
 step
-    #arrowtext 搭乘其中一个电梯下楼
+    #arrowtext Take one of the two elevators downwards
     #completewith WindfuryTalons
     .goto 88,35.79,63.03,10,0
-    .goto 88,32.51,70.74,35 >>乘坐任意一部电梯下去。这里死亡至少会浪费1分钟
+    .goto 88,32.51,70.74,35 >>Take one of the two elevators downwards. Dying here costs you at least one minute
 step
     #requires WindfuryTalons
     #completewith next
-    >>击杀 |cRXP_ENEMY_Prairie Stalkers|r 和 |cRXP_ENEMY_Flatland Cougars|r。拾取它们的 |T134297:0|t[|cRXP_LOOT_Cougar Claws|r] 和 |T134296:0|t[|cRXP_LOOT_Stalker Claws|r]。
-    *|cRXP_WARN_你现在不需要完成这个任务。|r
+    >>Kill |cRXP_ENEMY_Prairie Stalkers|r and |cRXP_ENEMY_Flatland Cougars|r. Loot them for the |T134297:0|t[|cRXP_LOOT_Cougar Claws|r] and |T134296:0|t[|cRXP_LOOT_Stalker Claws|r].
+    *|cRXP_WARN_You don't have to complete this quest now.|r
     .complete 24441,2 --6/6 Cougar Claws
     .complete 24441,1 --6/6 Stalker Claws
-    .mob 草原捕食者
-    .mob 平原狮
+    .mob Prairie Stalker
+    .mob Flatland Cougar
 -- TODO: Maybe split the waypoint for the rare from the quest step
 step
-    #arrowtext 杀死\n|cRXP_ENEMY_Windfury Wind Witches|r 和 |cRXP_ENEMY_Windfury Harpies|r
+    #arrowtext Kill\n|cRXP_ENEMY_Windfury Wind Witches|r and |cRXP_ENEMY_Windfury Harpies|r
     #requires WindfuryTalons
-    >>击杀 |cRXP_ENEMY_风怒唤风者|r 和 |cRXP_ENEMY_风怒鹰身人|r。拾取他们的[|cRXP_LOOT_爪子|r]。
-    >>|cRXP_WARN_如果能看见|cRXP_ENEMY_末日预言者智蹄|r就击杀它|r
+    >>Kill |cRXP_ENEMY_Windfury Wind Witches|r and |cRXP_ENEMY_Windfury Harpies|r. Loot them for their [|cRXP_LOOT_talons|r].
+    >>|cRXP_WARN_Kill the |cRXP_ENEMY_Doomsayer Wiserunner|r if you see him|r
     .goto 7,34.57,37.78,20,0
     .goto 7,35.62,39,85,20,0
     .goto 7,34.16,42.45,20,0
     .goto 7,35.34,43.13
     .complete 743,1 --8/8 Windfury Talon
-    .mob 风怒唤风者
-    .mob 风怒鹰身人
+    .mob Windfury Wind Witch
+    .mob Windfury Harpy
 step
-    #arrowtext 使用[桶子 of the Soothed Earth]\n在|cRXP_ENEMY_Agitated Earth 调酒师桑塔基德 <酒类商人>|r身上
-    >>使用|T133841:0|t[宁静大地之鼓]对准|cRXP_ENEMY_躁动的大地之魂|r。
-    >>|cRXP_WARN_尽量在冷却结束后立刻使用战鼓，有时元素生物可能会攻击你|r
+    #arrowtext Use [Drum of the Soothed Earth]\non |cRXP_ENEMY_Agitated Earth Spirits|r
+    >>Use the |T133841:0|t[Drum of the Soothed Earth] on |cRXP_ENEMY_Agitated Earth Spirits|r.
+    >>|cRXP_WARN_Try to use the drum on cooldown. Sometimes the elementals may attack you|r
     .use 49647
     .goto 7,35.37,46.63,35,0
     .goto 7,32.8,48.5
     .complete 14491,1 --6/6 Spirits Calmed
-    .mob 躁动的大地之魂
+    .mob Agitated Earth Spirit
 step << Hunter/Warlock
     #completewith next
-    +|cRXP_WARN_通过点击宠物栏中的“被动”或在法术书“宠物”标签页中设置，将宠物设为被动|r。
+    +|cRXP_WARN_Set your pet to passive by clicking on 'Passive' in your pet bar or in your spell book in the Pet tab|r.
 step
     #completewtih next
     #label KylesGoneMissing
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_阿哈布·麦蹄|r对话。
-    .accept 11129 >>接受任务 凯雷失踪了！
-    .target 阿哈布·麦蹄
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ahab Wheathoof|r.
+    .accept 11129 >>Accept Kyle's Gone Missing!
+    .target Ahab Wheathoof
 step
     #completewith KylesGoneMissing
     .goto 7,32.53,49.01
-    .deathskip >>引几只怪，然后送死
+    .deathskip >>Pull some mobs and die
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_阿哈布·麦蹄|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Ahab Wheathoof|r
     #requires KylesGoneMissing
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_阿哈布·麦蹄|r对话。
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ahab Wheathoof|r.
     .goto 7,48.34,53.09
-    .accept 11129 >>接受任务 凯雷失踪了！
-    .target 阿哈布·麦蹄
+    .accept 11129 >>Accept Kyle's Gone Missing!
+    .target Ahab Wheathoof
 step << Warlock/Hunter
     #completewith next
-    +|cRXP_WARN_提示：重新召唤你的宠物并将其设置为'协助'|r。
+    +|cRXP_WARN_Reminder: Resummon your pet and set it back to 'Assist'|r.
 step
     #completewith MulgoreCougarStalkerClaws
-    >>击杀|cRXP_ENEMY_平原狮|r。拾取|T133718:0|t[|cRXP_LOOT_平原狮的腿骨|r]。
+    >>Kill |cRXP_ENEMY_Flatland Cougars|r. Loot them for the |T133718:0|t[|cRXP_LOOT_Flatland Cougar Femur|r].
     .complete 26188,1 --1/1 Flatland Cougar Femur
-    .mob 平原狮
+    .mob Flatland Cougar
 step
-    #arrowtext 杀死\n|cRXP_ENEMY_平原陆行鸟|r
+    #arrowtext Kill\n|cRXP_ENEMY_Plainstrider|r
     #completewith MulgoreCougarStalkerClaws
-    >>击杀一只 |cRXP_ENEMY_陆行鸟|r。拾取它掉落的 |T134343:0|t[|cRXP_LOOT_鲜嫩的陆行鸟肉|r]。
+    >>Kill a |cRXP_ENEMY_Plainstrider|r. Loot it for a |T134343:0|t[|cRXP_LOOT_Tender Stride Meat|r].
     .goto 7,44.71,52.05,0,0
     .collect 33009,1,11129,1
-    .mob 成年平原陆行鸟
+    .mob Adult Plainstrider
 step
     #completewith MulgoreCougarStalkerClaws
-    >>击杀|cRXP_ENEMY_消瘦的猛鹫|r。拾取[|cRXP_LOOT_羽毛|r]。
+    >>Kill |cRXP_ENEMY_Wiry Swoops|r. Loot them for their [|cRXP_LOOT_quills|r].
     .complete 761,1 --8/8 Trophy Swoop Quill
-    .mob 消瘦的猛鹫
+    .mob Wiry Swoop
 step
-    #arrowtext 杀死\n|cRXP_ENEMY_Prairie Stalkers|r 和 |cRXP_ENEMY_Flatland Cougars|r
+    #arrowtext Kill\n|cRXP_ENEMY_Prairie Stalkers|r and |cRXP_ENEMY_Flatland Cougars|r
     #label MulgoreCougarStalkerClaws
     .goto 7,47.18,50.35,20,0
     .goto 7,44.72,48.58,20,0
@@ -27199,28 +27197,28 @@ step
     .goto 7,41.65,42.07,20,0
     .goto 7,46.13,39.72,20,0
     .goto 7,47.18,50.35,20,0
-    >>杀死你周围的 |cRXP_ENEMY_Prairie Stalkers|r 和 |cRXP_ENEMY_Flatland Cougars|r。拾取它们的 |T134297:0|t[|cRXP_LOOT_Cougar Claws|r] 和 |T134296:0|t[|cRXP_LOOT_追猎者 Claws|r]。
-    >>留意|cRXP_ENEMY_马兹拉纳其|r。
+    >>Kill |cRXP_ENEMY_Prairie Stalkers|r and |cRXP_ENEMY_Flatland Cougars|r. Loot them for the |T134297:0|t[|cRXP_LOOT_Cougar Claws|r] and |T134296:0|t[|cRXP_LOOT_Stalker Claws|r].
+    >>Keep an eye out for |cRXP_ENEMY_Mazzranache|r.
     .complete 24441,2 --6/6 Cougar Claws
-    .mob 平原狮
+    .mob +Flatland Cougar
     .complete 24441,1 --6/6 Stalker Claws
-    .mob +草原捕食者
+    .mob +Prairie Stalker
 step
     #completewith TrophySwoopQuill
-    >>击杀|cRXP_ENEMY_平原狮|r。拾取|T133718:0|t[|cRXP_LOOT_平原狮的腿骨|r]。
+    >>Kill |cRXP_ENEMY_Flatland Cougars|r. Loot them for the |T133718:0|t[|cRXP_LOOT_Flatland Cougar Femur|r].
     .complete 26188,1 --1/1 Flatland Cougar Femur
-    .mob 平原狮
+    .mob Flatland Cougar
 step
-    #arrowtext 杀死\n|cRXP_ENEMY_平原陆行鸟|r
+    #arrowtext Kill\n|cRXP_ENEMY_Plainstrider|r
     #completewith TrophySwoopQuill
-    >>击杀一只 |cRXP_ENEMY_陆行鸟|r。拾取它掉落的 |T134343:0|t[|cRXP_LOOT_鲜嫩的陆行鸟肉|r]。
+    >>Kill a |cRXP_ENEMY_Plainstrider|r. Loot it for a |T134343:0|t[|cRXP_LOOT_Tender Stride Meat|r].
     .goto 7,44.71,52.05,0,0
     .collect 33009,1,11129,1
-    .mob 成年平原陆行鸟
+    .mob Adult Plainstrider
 step
-    #arrowtext 杀死\n|cRXP_ENEMY_Wiry Swoops|r
+    #arrowtext Kill\n|cRXP_ENEMY_Wiry Swoops|r
     #label TrophySwoopQuill
-    >>击杀|cRXP_ENEMY_消瘦的猛鹫|r。拾取[|cRXP_LOOT_羽毛|r]。
+    >>Kill |cRXP_ENEMY_Wiry Swoops|r. Loot them for their [|cRXP_LOOT_quills|r].
     .goto 7,47.18,50.35,15,0
     .goto 7,44.72,48.58,15,0
     .goto 7,42.48,44.81,15,0
@@ -27228,20 +27226,20 @@ step
     .goto 7,46.13,39.72,20,0
     .goto 7,47.18,50.35
     .complete 761,1 --8/8 Trophy Swoop Quill
-    .mob 消瘦的猛鹫
+    .mob Wiry Swoop
 step
     #completewith next
-    >>击杀|cRXP_ENEMY_平原狮|r，拾取[|cRXP_LOOT_腿骨|r]。
+    >>Kill |cRXP_ENEMY_Flatland Cougars|r. Loot them for their [|cRXP_LOOT_femur|r].
     .complete 26188,1 --1/1 Flatland Cougar Femur
-    .mob 平原狮
+    .mob Flatland Cougar
 step
-    #arrowtext 杀死\n|cRXP_ENEMY_平原陆行鸟|r
-    >>击杀一只 |cRXP_ENEMY_陆行鸟|r。拾取它掉落的[|cRXP_LOOT_鲜嫩的陆行鸟肉|r]。
+    #arrowtext Kill\n|cRXP_ENEMY_Plainstrider|r
+    >>Kill a |cRXP_ENEMY_Plainstrider|r. Loot it for a [|cRXP_LOOT_Tender Stride Meat|r].
     .goto 7,44.71,52.05
     .collect 33009,1,11129,1
-    .mob 成年平原陆行鸟
+    .mob Adult Plainstrider
 step
-    #arrowtext 杀死\n|cRXP_ENEMY_Flatland Cougars|r
+    #arrowtext Kill\n|cRXP_ENEMY_Flatland Cougars|r
     #loop
     .goto 7,47.18,50.35,15,0
     .goto 7,44.72,48.58,15,0
@@ -27249,105 +27247,105 @@ step
     .goto 7,41.65,42.07,15,0
     .goto 7,46.13,39.72,20,0
     .goto 7,47.18,50.35,20,0
-    >>击杀|cRXP_ENEMY_平原狮|r，拾取[|cRXP_LOOT_腿骨|r]。
+    >>Kill |cRXP_ENEMY_Flatland Cougars|r. Loot them for their [|cRXP_LOOT_femur|r].
     .complete 26188,1 --1/1 Flatland Cougar Femur
-    .mob 平原狮
+    .mob Flatland Cougar
 step
     #completewith MulgoreMazzranacheTurnin
     #label DieMazzranache
     .goto 7,44.58,45.22
-    >>|cRXP_WARN_通过点击宠物栏中的“被动”或在法术书“宠物”标签页中设置，将宠物设为被动|r。 << Hunter/Warlock
-    .deathskip >>引几只怪，然后送死
+    >>|cRXP_WARN_Set your pet to passive by clicking on 'Passive' in your pet bar or in your spell book in the Pet tab|r. << Hunter/Warlock
+    .deathskip >>Pull some mobs and die
 step << Warlock/Hunter
     #requires DieMazzranache
     #completewith next
-    +|cRXP_WARN_提醒：重新召唤你的宠物并将其设置回'协助'|r。
+    +|cRXP_WARN_Reminder: Resummon your pet and set it back to 'Assist'|r.
 step
-    #arrowtext 与 |cRXP_FRIENDLY_茂尔·祈雨|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Maur Raincaller|r
     #label MulgoreMazzranacheTurnin
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_茂尔·祈雨|r 对话。
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maur Raincaller|r.
     .goto 7,47.16,56.66
-    .turnin 26188 >>交任务 马兹拉纳其
-    .mob 茂尔·祈雨
+    .turnin 26188 >>Turn in Mazzranache
+    .mob Maur Raincaller
 step
     #completewith next
     #label ReturnToVarg
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_瓦尔格·风语|r对话。
-    .turnin 6364 >>交任务 向瓦尔格复命
-    .target 瓦尔戈·风语者
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Varg Windwhisper|r.
+    .turnin 6364 >>Turn in Return to Varg
+    .target Varg Windwhisper
 step
-    #arrowtext |cFFFCDC00进入帐篷|r
+    #arrowtext |cFFFCDC00Enter the tent|r
     #completewith ReturnToVarg
-    .goto 7,46.58,58.20,8 >>进入帐篷
+    .goto 7,46.58,58.20,8 >>Enter the tent
 step
-    #arrowtext 与 |cRXP_FRIENDLY_瓦尔格·风语|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Varg Windwhisper|r
     #requires ReturnToVarg
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_瓦尔格·风语|r对话。
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Varg Windwhisper|r.
     .goto 7,46.06,58.19
-    .turnin 6364 >>交任务 向瓦尔格复命
-    .target 瓦尔戈·风语者
+    .turnin 6364 >>Turn in Return to Varg
+    .target Varg Windwhisper
 step
-    #arrowtext 与 |cRXP_FRIENDLY_卢尔·鹰爪|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卢尔·鹰爪|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Ruul Eagletalon|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ruul Eagletalon|r.
     .goto 7,47.51,61.33
-    .turnin 743 >>交任务 风怒鹰身人
-    .target 卢尔·鹰爪
+    .turnin 743 >>Turn in Dangers of the Windfury
+    .target Ruul Eagletalon
 step
-    #arrowtext 与 |cRXP_FRIENDLY_艾莫·雷角|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾莫·雷角|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Ahmo Thunderhorn|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ahmo Thunderhorn|r.
     .goto 7,47.65,59.59
-    .turnin 14491 >>交任务 不休的大地
-    .target 艾莫·雷角
+    .turnin 14491 >>Turn in The Restless Earth
+    .target Ahmo Thunderhorn
 step
-    #arrowtext 与 |cRXP_FRIENDLY_穆尔·雷角|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Mull Thunderhorn|r
     #label MulgoreTurnInThunderhorn
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_穆尔·雷角|r 对话。
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mull Thunderhorn|r.
     .goto 7,48.62,59.8
-    .turnin 24441 >>交任务 雷角图腾
-    .target 穆尔·雷角
+    .turnin 24441 >>Turn in Thunderhorn Totem
+    .target Mull Thunderhorn
 step
-    #arrowtext 与 |cRXP_FRIENDLY_哈肯·风之图腾|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哈肯·风之图腾|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Harken Windtotem|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Harken Windtotem|r.
     .goto 7,48.78,58.79
-    .turnin 761 >>交任务 猎捕猛鹫
-    .target 哈肯·风之图腾
+    .turnin 761 >>Turn in Swoop Hunting
+    .target Harken Windtotem
 step
     #loop
     .goto 7,48.25,60.43,20,0
     .goto 7,48.13,57.28,20,0
-    >>凯雷(一只狼)会在城内绕圈奔跑。|cRXP_WARN_如果看到他朝你跑来，就等他靠近后再选中他，并使用[|cRXP_LOOT_鲜嫩的陆行鸟肉|r|r]。
+    >>Click on the |cRXP_PICK_Tender Stride Meat|r macro in the "Active Items Frame" to use it on |cRXP_FRIENDLY_Kyle|r. Wait until Kyle is nearby.
     .complete 11129,1 --1/1 Kyle fed
-    .target 凯雷
-    .use 33009
+    .target Kyle
+    .macro Tender Stride Meat,134400 >>/targetexact Kyle\n/use item:33009
 step
-    #arrowtext 与 |cRXP_FRIENDLY_阿哈布·麦蹄|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_阿哈布·麦蹄|r对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Ahab Wheathoof|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ahab Wheathoof|r.
     .goto 7,48.34,53.09
-    .turnin 11129 >>交任务 凯雷失踪了！
-    .target 阿哈布·麦蹄
+    .turnin 11129 >>Turn in Kyle's Gone Missing!
+    .target Ahab Wheathoof
 step
-    #arrowtext 与 |cRXP_FRIENDLY_塔克|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塔克|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Tak|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tak|r.
     .goto 7,47.44,58.64
-    .fly Thunder Bluff >>飞往雷霆崖
+    .fly Thunder Bluff >>Fly to Thunder Bluff
     .target Tak
 step
     #completewith next
-    +|cRXP_WARN_有三种方法前往奧格瑞玛。|r
-    *1) 使用角色卡死功能
-    *2) 使用 |T237388:0|t[侦察地图: Walking Kalimdor with the Earthmother] 道具并飞往奧格瑞玛
-    *3) 跟随箭头并乘坐飞艇前往奧格瑞玛（非常慢）
-    *4) 使用 Neighbourhood 传送
-    .link https://www.youtube.com/watch?v=pW3S9iDpn4Q >>角色卡死说明视频
-    .link https://www.youtube.com/watch?v=uVkUB7z0njo >>Neighbourhood说明视频
-    .macro House Teleport, 975747 >>房屋传送
+    +|cRXP_WARN_There are three ways to Orgrimmar.|r
+    *1) Use the Character Stuck Feature
+    *2) Use the |T237388:0|t[Scouting Map: Walking Kalimdor with the Earthmother] toy and fly to Orgrimmar
+    *3) Follow the arrow and take the Zeppelin to Orgrimmar (very slow)
+    *4) Use the Neighbourhood teleport
+    .link https://www.youtube.com/watch?v=pW3S9iDpn4Q >>Character Stuck Explanation Video
+    .link https://www.youtube.com/watch?v=uVkUB7z0njo >>Neighbourhood Explanation Video
+    .macro House Teleport, 975747 >>/run C_Housing.StartTutorial()
 step
-    #arrowtext 乘坐飞艇
+    #arrowtext Take the zeppelin
     .goto 88,42.81,39.13,10,0
     .goto 88,39.41,38.33,8,0
     .goto 88,28.19,23.46,50,0
     .goto 88,15.27,25.72
-    .zone 85 >>乘坐飞艇。
+    .zone 85 >>Take the zeppelin
 ]])
 --Undead: Deathknell
 RXPGuides.RegisterGuide([[
@@ -27355,10 +27353,10 @@ RXPGuides.RegisterGuide([[
 #version 2
 #group RestedXP 快速升级
 #subgroup |cFFFCDC00(1-90)|r 默认
-#name ab) 丧钟镇
-#displayname 丧钟镇|cRXP_ENEMY_（备选版）|r
-#title 丧钟镇
-#next c) 亡灵 提瑞斯法林地
+#name ab) Deathknell
+#displayname Deathknell |cRXP_ENEMY_(Alternative)|r
+#title Deathknell
+#next ac) Undead Tirisfal Glades
 #defaultfor Undead !DK
 
 << Horde
@@ -27366,36 +27364,36 @@ RXPGuides.RegisterGuide([[
 step << Undead
     .zoneskip 1727
     #completewith TirisfalFistQuestCheck
-    +如果你想以最快速度升级，请选择流放者离岛作为起始区域。这需要重新创建角色。
+    +If you want to level as fast as possible, choose Exile’s Reach as your starting zone. This requires recreating your character.
 
 step << Undead
     #optional
     .zoneskip 1727,1
-    +你在流放者离岛，但当前指南是针对亡灵起始地带的。
-    +请选择流亡者营地指南。
+    +You are in Exiles Reach but the current Guide is for the Undead Starting Zone.
+    +Please choose the Exiles Reach Guide.
 step
     #optional
     #completewith next
-    +|cRXP_WARN_若要充分利用RXP，按下Escape -> 选项 -> 快捷键 -> RestedXP指南 -> 选择并绑定活跃按钮1、2、3和4。你也可以为目标进行绑定。|r。
-    *这样你就能按快捷键来使用任务物品或选中相关的小怪
+    +|cRXP_WARN_If you want to make the most of RXP; Press Escape -> Options -> Keybindings -> RestedXP Guides -> Select and Bind Active Button 1,2,3 and 4. You can also do this with Targets|r.
+    *This will allow you to press a keybind to use a quest item or target a relevant mob
 step
-    #arrowtext 与 |cRXP_FRIENDLY_阿加莎|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Agatha|r
     #label TirisfalFistQuestCheck
     .goto 465,40.8,78.5
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿加莎|r 对话。
-    .accept 24959 >>接受任务 从墓穴中醒来
-    .target 阿加莎
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Agatha|r.
+    .accept 24959 >>Accept Fresh out of the Grave
+    .target Agatha
 step
-    #arrowtext 与 |cRXP_FRIENDLY_送葬者摩尔多|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Undertaker Mordo|r
     .goto 465,43.4,79.9
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_送葬者摩尔多|r 对话。
-    .turnin 24959 >>交任务 从墓穴中醒来
-    .accept 28608 >>接受任务 灰影墓穴
-    .target 送葬者摩尔多
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Undertaker Mordo|r.
+    .turnin 24959 >>Turn in Fresh out of the Grave
+    .accept 28608 >>Accept The Shadow Grave
+    .target Undertaker Mordo
 step
-    #arrowtext 跟随箭头进入下面的坟墓
-    >>|cRXP_WARN_沿箭头下行进入墓地|r
-    >>|TInterface/cursor/crosshair/interact.blp:15|t点击[|cRXP_PICK_麻线|r和|cRXP_PICK_液体|r。
+    #arrowtext Follow the arrow down into the grave
+    >>|cRXP_WARN_Follow the arrow down into the grave|r
+    >>|TInterface/cursor/crosshair/interact.blp:15|tClick on the [|cRXP_PICK_Twine|r and the |cRXP_PICK_Fluid|r.
     .goto 18,30.33,72.24,5,0
     .goto 18,30.32,72.84,5,0
     .goto 18,30.00,72.84,5,0
@@ -27405,263 +27403,263 @@ step
 step
     #completewith next
     #label TheShadowGraveA
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_送葬者摩尔多|r 对话。
-    .turnin 28608 >>交任务 灰影墓穴
-    .accept 26799 >>接受任务 不可拯救的死者
-    .target 送葬者摩尔多
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Undertaker Mordo|r.
+    .turnin 28608 >>Turn in The Shadow Grave
+    .accept 26799 >>Accept Those That Couldn't Be Saved
+    .target Undertaker Mordo
 step
-    #arrowtext 离开坟墓
+    #arrowtext Leave the grave
     #completewith TheShadowGraveA
     .goto 18,30.00,72.84,4,0
-    .goto 18,30.32,72.84,4 >>离开墓地
+    .goto 18,30.32,72.84,4 >>Leave the grave
 step
-    #arrowtext 与 |cRXP_FRIENDLY_送葬者摩尔多|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Undertaker Mordo|r
     #requires TheShadowGraveA
     .goto 465,43.4,79.9
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_送葬者摩尔多|r 对话。
-    .turnin 28608 >>交任务 灰影墓穴
-    .accept 26799 >>接受任务 不可拯救的死者
-    .target 送葬者摩尔多
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Undertaker Mordo|r.
+    .turnin 28608 >>Turn in The Shadow Grave
+    .accept 26799 >>Accept Those That Couldn't Be Saved
+    .target Undertaker Mordo
 step
-    #arrowtext 与 |cRXP_FRIENDLY_管理员凯斯|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Caretaker Caice|r
     .goto 465,45.91,80.46
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_管理员凯斯|r 对话。
-    .accept 24960 >>接受任务 苏醒
-    .target 管理员凯斯
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Caretaker Caice|r.
+    .accept 24960 >>Accept The Wakening
+    .target Caretaker Caice
 step
     #completewith TheWakeningA
-    >>击杀 |cRXP_ENEMY_无脑的僵尸|r。
+    >>Kill |cRXP_ENEMY_Mindless Zombies|r.
     .complete 26799,1 --6/6 Mindless Zombie slain
-    .mob 无脑的僵尸
+    .mob Mindless Zombie
 step
-    #arrowtext 与 |cRXP_FRIENDLY_治安官雷德帕斯|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Marshal Redpath|r
     .goto 465,46.6,71.1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_治安官雷德帕斯|r 对话。
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Redpath|r.
     .complete 24960,2 --1/1 Speak with Marshal Redpath
-    .target 治安官雷德帕斯
+    .target Marshal Redpath
     .skipgossipid 39165
     .skipgossipid 39166
 step
-    #arrowtext 与 |cRXP_FRIENDLY_莉莉安·沃斯|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Lilian Voss|r
     .goto 465,44.2,70.6
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莉莉安·沃斯|r 对话。
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lilian Voss|r.
     .complete 24960,1 --1/1 Speak with Lilian Voss
-    .target 莉莉安·沃斯
+    .target Lilian Voss
     .skipgossipid 39163
     .skipgossipid 39164
 step
-    #arrowtext 与 |cRXP_FRIENDLY_瓦德雷·莫莱|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Valdred Moray|r
     #label TheWakeningA
     .goto 465,40.7,73.0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_瓦德雷·莫莱|r 对话。
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Valdred Moray|r.
     .complete 24960,3 --1/1 Speak with Valdred Moray
-    .target 瓦德雷·莫莱
+    .target Valdred Moray
     .skipgossipid 39542
     .skipgossipid 39543
     .skipgossipid 39803
 step
-    #arrowtext 杀死 |cRXP_ENEMY_Mindless Zombies|r
+    #arrowtext Kill\n|cRXP_ENEMY_Mindless Zombies|r
     .goto 465,43.25,73.81
-    >>击杀 |cRXP_ENEMY_无脑的僵尸|r。
+    >>Kill |cRXP_ENEMY_Mindless Zombies|r.
     .complete 26799,1 --6/6 Mindless Zombie slain
-    .mob 无脑的僵尸
+    .mob Mindless Zombie
 step
-    #arrowtext 与 |cRXP_FRIENDLY_送葬者摩尔多|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Undertaker Mordo|r
     .goto 465,43.43,79.91
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_送葬者摩尔多|r 对话。
-    .turnin 26799 >>交任务 不可拯救的死者
-    .target 送葬者摩尔多
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Undertaker Mordo|r.
+    .turnin 26799 >>Turn in Those That Couldn't Be Saved
+    .target Undertaker Mordo
 step
-    #arrowtext 与 |cRXP_FRIENDLY_管理员凯斯|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Caretaker Caice|r
     .goto 465,45.9,80.5
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_管理员凯斯|r 对话。
-    .turnin 24960 >>交任务 苏醒
-    .accept 25089 >>接受任务 走出墓穴
-    .target 管理员凯斯
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Caretaker Caice|r.
+    .turnin 24960 >>Turn in The Wakening
+    .accept 25089 >>Accept Beyond the Graves
+    .target Caretaker Caice
 step
-    #arrowtext 与 |cRXP_FRIENDLY_暗影牧师萨维斯|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Shadow Priest Sarvis|r
     .goto 465,49.08,58.83,8,0
     .goto 465,46.6,58.8
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_暗影牧师萨维斯|r 对话。
-    .accept 26801 >>接受任务 境内的天灾
-    .target 暗影牧师萨维斯
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shadow Priest Sarvis|r.
+    .accept 26801 >>Accept Scourge on our Perimeter
+    .target Shadow Priest Sarvis
 step
-    #arrowtext 与 |cRXP_FRIENDLY_亡灵卫兵萨尔坦|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Deathguard Saltain|r
     .goto 465,49.08,58.83,8,0
     .goto 465,49.90,56.38
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_亡灵卫兵萨尔坦|r 对话。
-    .turnin 25089 >>交任务 走出墓穴
-    .accept 26800 >>接受任务 清扫战场
-    .target 亡灵卫兵萨尔坦
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathguard Saltain|r.
+    .turnin 25089 >>Turn in Beyond the Graves
+    .accept 26800 >>Accept Recruitment
+    .target Deathguard Saltain
 step << Warlock
     #completewith next
-    +|cRXP_WARN_提示：使用|T136218:0|t[召唤小鬼]来召唤你的宠物|r。
+    +|cRXP_WARN_Reminder: Use |T136218:0|t[Summon Imp] to summon your pet|r.
 step
     #completewith next
-    >>击杀 |cRXP_ENEMY_无脑的食尸鬼|r 和 |cRXP_ENEMY_断骨骷髅|r。
+    >>Kill |cRXP_ENEMY_Wretched Ghouls|r and |cRXP_ENEMY_Rattlecage Skeletons|r.
     .complete 26801,1 --8/8 Deathknell Scourge slain
-    .mob 无脑的食尸鬼
-    .mob 断骨骷髅
+    .mob Wretched Ghoul
+    .mob Rattlecage Skeleton
 step
-    #arrowtext 点击 |cRXP_FRIENDLY_Scarlet 尸体|r
+    #arrowtext Click\n|cRXP_FRIENDLY_Scarlet Corpses|r
     #loop
     .goto 465,47.58,48.29,15,0
     .goto 465,54.14,43.99,15,0
     .goto 465,53.74,51.00,10,0
     .goto 465,47.58,48.29,15,0
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击 |cRXP_FRIENDLY_Scarlet 尸体|r。|cRXP_WARN_等待达内尔拾取尸体后再点击下一个|r。
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_FRIENDLY_Scarlet Corpses|r. |cRXP_WARN_Wait for Darnell to pick up the corpse before clicking on the next one|r.
     .complete 26800,1 --6/6 Scarlet Corpses gathered
-    .target 血色十字军尸体
+    .target Scarlet Corpse
 step
-    #arrowtext 杀死 |cRXP_ENEMY_Wretched 食尸鬼|r 和 |cRXP_ENEMY_Rattlecage Skeletons|r
+    #arrowtext Kill\n|cRXP_ENEMY_Wretched Ghouls|r and |cRXP_ENEMY_Rattlecage Skeletons|r
     .goto 465,52.47,46.45
-    >>击杀 |cRXP_ENEMY_无脑的食尸鬼|r 和 |cRXP_ENEMY_断骨骷髅|r。
+    >>Kill |cRXP_ENEMY_Wretched Ghouls|r and |cRXP_ENEMY_Rattlecage Skeletons|r.
     .complete 26801,1 --8/8 Deathknell Scourge slain
-    .mob 无脑的食尸鬼
-    .mob 断骨骷髅
+    .mob Wretched Ghoul
+    .mob Rattlecage Skeleton
 step
-    #arrowtext 与 |cRXP_FRIENDLY_亡灵卫兵萨尔坦|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Deathguard Saltain|r
     .goto 465,49.9,56.7
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_亡灵卫兵萨尔坦|r 对话。
-    .turnin 26800 >>交任务 清扫战场
-    .target 亡灵卫兵萨尔坦
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathguard Saltain|r.
+    .turnin 26800 >>Turn in Recruitment
+    .target Deathguard Saltain
 step
-    #arrowtext 与 |cRXP_FRIENDLY_暗影牧师萨维斯|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Shadow Priest Sarvis|r
     .goto 465,46.6,58.8
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_暗影牧师萨维斯|r 对话。
-    .turnin 26801 >>交任务 境内的天灾
-    .accept 28651 >>接受任务 新兵艾尔雷斯
-    .target 暗影牧师萨维斯
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shadow Priest Sarvis|r.
+    .turnin 26801 >>Turn in Scourge on our Perimeter
+    .accept 28651 >>Accept Novice Elreth
+    .target Shadow Priest Sarvis
 step
-    #arrowtext 与 |cRXP_FRIENDLY_新兵艾尔雷斯|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Novice Elreth|r
     .goto 465,46.8,58.2
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_新兵艾尔雷斯|r 对话。
-    .turnin 28651 >>交任务 新兵艾尔雷斯
-    .accept 24961 >>接受任务 墓中的真相
-    .target 新兵艾尔雷斯
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Novice Elreth|r.
+    .turnin 28651 >>Turn in Novice Elreth
+    .accept 24961 >>Accept The Truth of the Grave
+    .target Novice Elreth
 step
-    #arrowtext 进入房屋
+    #arrowtext Enter the house
     .goto 465,52.38,56.41,5,0
     .goto 465,54.36,56.96
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t进入房屋与|cRXP_FRIENDLY_莉莉安·沃斯|r对话。
-    >>|cRXP_WARN_她可能在楼下或楼上。与她对话（在剧情演出期间）后，你可以离开房屋并返回 |cRXP_FRIENDLY_新兵艾尔雷斯|r|r。
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tEnter the house and talk to |cRXP_FRIENDLY_Lilian Voss|r.
+    >>|cRXP_WARN_She can be downstairs or upstairs. After talking to her (during the roleplay) you can already leave the house and return to |cRXP_FRIENDLY_Novice Elreth|r|r.
     .complete 24961,1 --1/1 Show Lilian her reflection
-    .target 莉莉安·沃斯
+    .target Lilian Voss
     .skipgossipid 38950
 step
-    #arrowtext 与 |cRXP_FRIENDLY_新兵艾尔雷斯|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Novice Elreth|r
     .goto 465,46.7,58.2
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_新兵艾尔雷斯|r 对话。
-    .turnin 24961 >>交任务 墓中的真相
-    .accept 28672 >>接受任务 战场上的执行官
-    .target 新兵艾尔雷斯
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Novice Elreth|r.
+    .turnin 24961 >>Turn in The Truth of the Grave
+    .accept 28672 >>Accept The Executor In the Field
+    .target Novice Elreth
 step
-    #arrowtext 与 |cRXP_FRIENDLY_执行官阿伦|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Executor Arren|r
     .goto 465,55.5,37.8
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_执行官阿伦|r 对话。
-    .turnin 28672 >>交任务 战场上的执行官
-    .accept 26802 >>接受任务 被诅咒者
-    .target 执行官阿伦
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Executor Arren|r.
+    .turnin 28672 >>Turn in The Executor In the Field
+    .accept 26802 >>Accept The Damned
+    .target Executor Arren
 step << Hunter
     #completewith next
-    .cast 1515 >>驯服1只|cRXP_ENEMY_蓬毛食腐狼|r。
-    .mob 蓬毛食腐狼
+    .cast 1515 >>Tame a |cRXP_ENEMY_Ragged Scavenger|r.
+    .mob Ragged Scavenger
 step
-    #arrowtext 杀死 |cRXP_ENEMY_Mangy Duskbats|r 和 |cRXP_ENEMY_Ragged Scavengers|r
+    #arrowtext Kill\n|cRXP_ENEMY_Mangy Duskbats|r and |cRXP_ENEMY_Ragged Scavengers|r
     #loop
     .goto 465,63.26,27.68,15,0
     .goto 465,64.45,22.78,15,0
     .goto 465,59.24,21.36,25,0
     .goto 465,49.41,21.94,25,0
-    >>杀死你周围的 |cRXP_ENEMY_Mangy Duskbats|r 和 |cRXP_ENEMY_Ragged Scavengers|r。拾取它们的 |T134297:0|t[|cRXP_LOOT_Scavenger Paws|r] 和 |T134360:0|t[|cRXP_LOOT_夜行蝙蝠 Wings|r]。
+    >>Kill |cRXP_ENEMY_Mangy Duskbats|r and |cRXP_ENEMY_Ragged Scavengers|r around you. Loot them for the |T134297:0|t[|cRXP_LOOT_Scavenger Paws|r] and |T134360:0|t[|cRXP_LOOT_Duskbat Wings|r].
     .complete 26802,1 --4/4 Scavenger Paw
     .complete 26802,2 --4/4 Duskbat Wing
-    .mob 癞皮夜行蝙蝠
-    .mob 蓬毛食腐狼
+    .mob Mangy Duskbat
+    .mob Ragged Scavenger
 step
-    #arrowtext 与 |cRXP_FRIENDLY_执行官阿伦|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Executor Arren|r
     .goto 465,55.5,37.7
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_执行官阿伦|r 对话。
-    .turnin 26802 >>交任务 被诅咒者
-    .accept 24973 >>接受任务 夜行蜘蛛洞穴
-    .target 执行官阿伦
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Executor Arren|r.
+    .turnin 26802 >>Turn in The Damned
+    .accept 24973 >>Accept Night Web's Hollow
+    .target Executor Arren
 step
     #completewith next
-    >>击杀 |cRXP_ENEMY_小夜行蜘蛛|r。
+    >>Kill the |cRXP_ENEMY_Young Night Web Spiders|r.
     .complete 24973,1 --8/8 Young Night Web Spider slain
-    .mob 小夜行蜘蛛
+    .mob Young Night Web Spider
 step
-    #arrowtext 杀死 |cRXP_ENEMY_Night Web Spiders|r
+    #arrowtext Kill\n|cRXP_ENEMY_Night Web Spiders|r
     #loop
     .goto 465,30.18,30.58,10,0
     .goto 466,62.9,58.0,10,0
     .goto 466,45.27,69.84,10,0
     .goto 466,48.41,51.43,10,0
     .goto 466,62.09,58.59,10,0
-    >>击杀矿洞里的 |cRXP_ENEMY_夜行蜘蛛|r。
+    >>Kill |cRXP_ENEMY_Night Web Spiders|r inside the mine.
     .complete 24973,2 --5/5 Night Web Spider slain
-    .mob 夜行蜘蛛
+    .mob Night Web Spider
 step
-    #arrowtext 杀死 |cRXP_ENEMY_Young Night Web Spiders|r
+    #arrowtext Kill\n|cRXP_ENEMY_Young Night Web Spiders|r
     .goto 465,37.36,26.16
-    >>击杀 |cRXP_ENEMY_小夜行蜘蛛|r。
+    >>Kill the |cRXP_ENEMY_Young Night Web Spiders|r.
     .complete 24973,1 --8/8 Young Night Web Spider slain
-    .mob 小夜行蜘蛛
+    .mob Young Night Web Spider
 step
-    #arrowtext 与 |cRXP_FRIENDLY_执行官阿伦|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Executor Arren|r
     .goto 465,55.5,37.8
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_执行官阿伦|r 对话。
-    .turnin 24973 >>交任务 夜行蜘蛛洞穴
-    .accept 24970 >>接受任务 跟僵尸一样烂
-    .target 执行官阿伦
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Executor Arren|r.
+    .turnin 24973 >>Turn in Night Web's Hollow
+    .accept 24970 >>Accept No Better Than the Zombies
+    .target Executor Arren
 step
-    #arrowtext 与 |cRXP_FRIENDLY_达内尔|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Darnell|r
     .goto 465,67.1,42.4
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达内尔|r 对话。
-    .turnin 24970 >>交任务 跟僵尸一样烂
-    .accept 24971 >>接受任务 袭击腐脑营地
-    .target 达内尔
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darnell|r.
+    .turnin 24970 >>Turn in No Better Than the Zombies
+    .accept 24971 >>Accept Assault on the Rotbrain Encampment
+    .target Darnell
 step
     #completewith next
-    >>杀死 |cRXP_ENEMY_腐脑狂战士|r 和 |cRXP_ENEMY_腐脑魔导师|r。
+    >>Kill |cRXP_ENEMY_Rotbrain Berserker|r and |cRXP_ENEMY_Rotbrain Magus|r.
     .complete 24971,2 --8/8 Rotbrain undead slain
-    .mob 腐脑狂战士
+    .mob Rotbrain Berserker
     .mob Robrain Magus
 step
-    #arrowtext 杀死 |cRXP_ENEMY_治安官雷德帕斯|r
+    #arrowtext Kill\n|cRXP_ENEMY_Marshal Redpath|r
     .goto 465,70.08,69.65
-    >>击杀 |cRXP_ENEMY_治安官雷德帕斯|r。
+    >>Kill |cRXP_ENEMY_Marshal Redpath|r.
     .complete 24971,1 --1/1 Marshal Redpath slain
-    .mob 治安官雷德帕斯
+    .mob Marshal Redpath
 step
-    #arrowtext 杀死 |cRXP_ENEMY_腐脑狂战士|r 和 |cRXP_ENEMY_腐脑魔导师|r
+    #arrowtext Kill\n|cRXP_ENEMY_Rotbrain Berserker|r and |cRXP_ENEMY_Rotbrain Magus|r
     .goto 465,74.1,66.0
-    >>杀死 |cRXP_ENEMY_腐脑狂战士|r 和 |cRXP_ENEMY_腐脑魔导师|r。
-    *|cRXP_WARN_注意：优先击杀正在战斗中的亡灵|r。
+    >>Kill |cRXP_ENEMY_Rotbrain Berserker|r and |cRXP_ENEMY_Rotbrain Magus|r.
+    *|cRXP_WARN_NOTE:|r Focus undeads that are already fighting.
     .complete 24971,2 --8/8 Rotbrain undead slain
-    .mob 腐脑狂战士
+    .mob Rotbrain Berserker
     .mob Robrain Magus
 step
     #completewith next
     #label AssaultOnTheRotbrainEncampmentA
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_暗影牧师萨维斯|r 对话。
-    .turnin 24971 >>交任务 袭击腐脑营地
-    .accept 24972 >>接受任务 重要情报
-    .target 暗影牧师萨维斯
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shadow Priest Sarvis|r.
+    .turnin 24971 >>Turn in Assault on the Rotbrain Encampment
+    .accept 24972 >>Accept Vital Intelligence
+    .target Shadow Priest Sarvis
 step
-    #arrowtext 你将被相位转换
+    #arrowtext You will get phased
     #completewith AssaultOnTheRotbrainEncampmentA
-    .goto 465,61.88,82.00,5 >>跟随箭头，留意稀有|cRXP_ENEMY_法格诺|r。从他身上拾取[|cRXP_LOOT_包裹|r]。
-    .mob 方戈
+    .goto 465,61.88,82.00,5 >>Follow the arrow, look out for the rare |cRXP_ENEMY_Fangor|r. Loot him for a [|cRXP_LOOT_bag|r].
+    .mob Fangor
 step
-    #arrowtext 与 |cRXP_FRIENDLY_暗影牧师萨维斯|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Shadow Priest Sarvis|r
     #requires AssaultOnTheRotbrainEncampmentA
     .goto 465,62.58,78.73,5,0
     .goto 465,46.6,58.8
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_暗影牧师萨维斯|r 对话。
-    .turnin 24971 >>交任务 袭击腐脑营地
-    .accept 24972 >>接受任务 重要情报
-    .target 暗影牧师萨维斯
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shadow Priest Sarvis|r.
+    .turnin 24971 >>Turn in Assault on the Rotbrain Encampment
+    .accept 24972 >>Accept Vital Intelligence
+    .target Shadow Priest Sarvis
 ]])
 --Undead: Tirisfal Glades
 RXPGuides.RegisterGuide([[
@@ -27669,8 +27667,8 @@ RXPGuides.RegisterGuide([[
 #version 2
 #group RestedXP 快速升级
 #subgroup |cFFFCDC00(1-90)|r 默认
-#name c) 亡灵 提瑞斯法林地
-#displayname |cFF1EFF002|r - 提瑞斯法林地
+#name ac) Undead Tirisfal Glades
+#displayname |cFF1EFF002|r - Tirisfal Glades
 #next b1) 争霸艾泽拉斯介绍
 #defaultfor Undead !DK
 
@@ -27678,82 +27676,82 @@ RXPGuides.RegisterGuide([[
 
 step
     #optional
-    .itemcount 132516,1
+    .itemcount 132516,1 --Gunshoes
     #completewith next
-    .cast 202844 >>使用|T1405809:0|t[火枪鞋]
+    .cast 202844 >>Use |T1405809:0|t[Gunshoes]
 step
-    #arrowtext 与 |cRXP_FRIENDLY_亡灵卫兵西米尔|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Deathguard Simmer|r
     .goto 465,77.35,17.75,20,0
     .goto 18,44.75,53.67
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_亡灵卫兵希米尔|r 对话。
-    .turnin 24972 >>交任务 重要情报
-    .target 亡灵卫兵希米尔
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathguard Simmer|r.
+    .turnin 24972 >>Turn in Vital Intelligence
+    .target Deathguard Simmer
 step
-    #arrowtext 与 |cRXP_FRIENDLY_亡灵卫兵西米尔|r 和 |cRXP_FRIENDLY_药剂师乔汉|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_亡灵卫兵希米尔|r 和 |cRXP_FRIENDLY_药剂师乔汉|r 对话。
-    .accept 24978 >>接受任务 收割收割者
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Deathguard Simmer|r and |cRXP_FRIENDLY_Apothecary Johaan|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathguard Simmer|r and |cRXP_FRIENDLY_Apothecary Johaan|r.
+    .accept 24978 >>Accept Reaping the Reapers
     .goto 18,44.75,53.67
-    .target +亡灵卫兵希米尔
-    .accept 24975 >>接受任务 悲伤之地
+    .target +Deathguard Simmer
+    .accept 24975 >>Accept Fields of Grief
     .goto 18,44.61,53.79
-    .target +药剂师乔汉
+    .target +Apothecary Johaan
 step
-    #arrowtext 上楼
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t上楼与|cRXP_FRIENDLY_塞德里克·卡尔斯通|r对话。
+    #arrowtext Go upstairs
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tGo upstairs and talk to |cRXP_FRIENDLY_Sedrick Calston|r.
     .goto 18,44.48,53.86,4,0
     .goto 18,44.74,53.65
-    .accept 24974 >>接受任务 从未如此孤单
-    .target 塞德里克·卡尔斯通
+    .accept 24974 >>Accept Ever So Lonely
+    .target Sedrick Calston
 step
     #completewith next
     .goto 18,40.33,51.42,0
-    .goto 18,40.33,51.42,10 >>检查是否有宝箱
+    .goto 18,40.33,51.42,10 >>Check for a possible chest
 step
-    #arrowtext 杀死 |cRXP_ENEMY_Tirisfal Farmers|r
+    #arrowtext Kill\n|cRXP_ENEMY_Tirisfal Farmers|r
     #completewith next
-    >>击杀 |cRXP_ENEMY_提瑞斯法农夫|r。
-    >>留意稀有|cRXP_ENEMY_暗影猎手|r和|cRXP_ENEMY_农夫索利丹|r。
-    .link https://i.imgur.com/lc7y3b4.jpeg >>可以从截图所示位置攻击|cRXP_ENEMY_暗影猎手|r。
+    >>Kill |cRXP_ENEMY_Tirisfal Farmers|r.
+    >>Look out for the rares |cRXP_ENEMY_Shadowstalker|r and |cRXP_ENEMY_Farmer Solliden|r.
+    .link https://i.imgur.com/lc7y3b4.jpeg >>You can attack |cRXP_ENEMY_Shadowstalker|r from the position shown in the screenshot.
     .goto 18,40.33,51.42,0
     .goto 18,37.91,51.27,0,0
     .complete 24978,1 --10/10 Tirisfal Farmer slain
-    .mob 提瑞斯法农夫
+    .mob Tirisfal Farmer
 step
-    #arrowtext 点击 |cRXP_PICK_Tirisfal Pumpkins|r
+    #arrowtext Click\n|cRXP_PICK_Tirisfal Pumpkins|r
     #loop
     .goto 18,36.82,51.45,20,0
     .goto 18,35.57,51.12,20,0
     .goto 18,36.68,49.50,20,0
     .goto 18,36.48,50.85,20,0
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击 |cRXP_PICK_Tirisfal Pumpkins|r。
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Tirisfal Pumpkins|r.
     .complete 24975,1 --10/10 Tirisfal Pumpkin
 step
-    #arrowtext 杀死 |cRXP_ENEMY_Tirisfal Farmers|r
+    #arrowtext Kill\n|cRXP_ENEMY_Tirisfal Farmers|r
     .goto 18,37.91,51.27
     .goto 18,40.33,51.42,0
-    >>击杀 |cRXP_ENEMY_提瑞斯法农夫|r。
-    *留意稀有|cRXP_ENEMY_暗影猎手|r和|cRXP_ENEMY_农夫索利丹|r。
+    >>Kill |cRXP_ENEMY_Tirisfal Farmers|r.
+    *Look out for the rares |cRXP_ENEMY_Shadowstalker|r and |cRXP_ENEMY_Farmer Solliden|r.
     .complete 24978,1 --10/10 Tirisfal Farmer slain
-    .mob 提瑞斯法农夫
-    .mob 暗影猎手
-    .mob 农夫索利丹
+    .mob Tirisfal Farmer
+    .mob Shadowstalker
+    .mob Farmer Solliden
 step
-    #arrowtext 与 |cRXP_FRIENDLY_Deathguard 西米尔|r 和 |cRXP_FRIENDLY_Apothecary Johaan|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_亡灵卫兵希米尔|r 和 |cRXP_FRIENDLY_药剂师乔汉|r 对话。
-    .turnin 24978 >>交任务 收割收割者
-    .accept 24980 >>接受任务 血色关哨
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Deathguard Simmer|r and |cRXP_FRIENDLY_Apothecary Johaan|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathguard Simmer|r and |cRXP_FRIENDLY_Apothecary Johaan|r.
+    .turnin 24978 >>Turn in Reaping the Reapers
+    .accept 24980 >>Accept The Scarlet Palisade
     .goto 18,44.75,53.68
-    .target +亡灵卫兵希米尔
-    .turnin 24975 >>交任务 悲伤之地
-    .accept 24976 >>接受任务 药剂也要多姿多彩
+    .target +Deathguard Simmer
+    .turnin 24975 >>Turn in Fields of Grief
+    .accept 24976 >>Accept Variety is the Spice of Death
     .goto 18,44.61,53.78
-    .target +药剂师乔汉
+    .target +Apothecary Johaan
 step
-    #arrowtext 点击 |cRXP_PICK_Xavren's 荆棘术|r
+    #arrowtext Click\n|cRXP_PICK_Xavren's Thorns|r
     #loop
     .goto 18,37.74,39.50,25,0
     .goto 18,36.83,43.38,25,0
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_萨维伦之棘|r。
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Xavren's Thorns|r.
     .complete 24976,2 --4/4 Xavren's Thorn
 step
     #loop
@@ -27761,111 +27759,111 @@ step
     .goto 18,33.57,42.92,30,0
 step << Warlock/Hunter
     #completewith next
-    +|cfff78300通过点击宠物栏中的“被动”或在法术书“宠物”标签页中设置，将宠物设为被动|r。
+    +|cfff78300Set your pet to passive by clicking on 'Passive' in your pet bar or in your spell book in the Pet tab|r.
 step
     .goto 18,35.8,43.4
-    >>攻击一只|cRXP_ENEMY_邪鳍鱼人|r直到它逃跑，然后使用|T133802:0|t[鱼人拴绳]。
-    *|cRXP_WARN_注意：|r不要将其杀死。
-    *留意稀有怪|cRXP_ENEMY_穆亚德|r。
+    >>Attack a |cRXP_ENEMY_Vile Fin Murloc|r until it runs away then use the |T133802:0|t[Murloc Leash].
+    *|cRXP_WARN_NOTE:|r You mustn't kill it.
+    *Look out for the rare |cRXP_ENEMY_Muad|r.
     .complete 24974,1 --1/1 Vile Fin captured
-    .mob 邪鳍先知
-    .mob 邪鳍污水鱼人
-    .mob 穆亚德
+    .mob Vile Fin Minor Oracle
+    .mob Vile Fin Puddlejumper
+    .mob Muad
     .use 52059
 step << Warlock/Hunter
     #completewith next
-    +|cRXP_WARN_提醒：将你的宠物设置回'协助'|r。
+    +|cRXP_WARN_Reminder: Set your pet back to 'Assist'|r.
 step
     #completewith AScarletLetterA
-    >>击杀 |cRXP_ENEMY_血色战士|r。
+    >>Kill |cRXP_ENEMY_Scarlet Warrior|r.
     .complete 24980,1 --10/10 Scarlet Warrior slain
-    .mob 血色战士
+    .mob Scarlet Warrior
 step
-    #arrowtext 杀死血色战士
+    #arrowtext Kill the Scarlet Warriors
     .goto 18,35.37,48.26,30,0
     .goto 18,32.45,47.92
-    >>击杀|cRXP_WARN_血色战士|r，拾取|T237451:0|t[一封血色十字军信件]。
-    .accept 24979 >>接受任务 血色信件
-    .mob 血色战士
+    >>Kill the |cRXP_WARN_Scarlet Warriors|r. Loot them for |T237451:0|t[A Scarlet Letter].
+    .accept 24979 >>Accept A Scarlet Letter
+    .mob Scarlet Warrior
 step
     #completewith next
     #hidewindow
     .gossipoption 38512 >>1
-    .timer 50,剧情事件时长
+    .timer 50,Roleplay Duration
 step
-    #arrowtext 与 |cRXP_FRIENDLY_莉莉安·沃斯|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Lilian Voss|r
     #label AScarletLetterA
     .goto 18,31.74,46.23
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莉莉安·沃斯|r 对话。
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lilian Voss|r.
     .complete 24979,1 --1/1 Find the Scarlet Prisoner
-    .target 莉莉安·沃斯
+    .target Lilian Voss
     .skipgossipid 38511
     .skipgossipid 38021
 step
-    >>击杀 |cRXP_ENEMY_血色战士|r。
+    >>Kill |cRXP_ENEMY_Scarlet Warrior|r.
     .complete 24980,1 --10/10 Scarlet Warrior slain
-    .mob 血色战士
+    .mob Scarlet Warrior
 step
     #completewith next
     #label VarietyIsTheSpiceOfDeathA
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_骨髓花茎|r。
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Marrowpetal Stalks|r.
     .complete 24976,1 --4/4 Marrowpetal
 step
     #completewith VarietyIsTheSpiceOfDeathA
-    #title 查看稀有怪位置
-    .goto 18,45.30,49.37,35 >>返回途中留意|cRXP_ENEMY_贝恩|r。
+    #title Check rare position
+    .goto 18,45.30,49.37,35 >>Look out for |cRXP_ENEMY_Bayne|r on your way back.
     .mob Bayne
 step
-    #arrowtext 点击 |cRXP_PICK_Marrowpetal Stalks|r
+    #arrowtext Click\n|cRXP_PICK_Marrowpetal Stalks|r
     #requires VarietyIsTheSpiceOfDeathA
     .goto 18,49.58,54.21
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_骨髓花茎|r。
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Marrowpetal Stalks|r.
     .complete 24976,1 --4/4 Marrowpetal
 step
-    #arrowtext 与 |cRXP_FRIENDLY_Deathguard 西米尔|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Deathguard Simmer|r
     .goto 18,44.75,53.68
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_亡灵卫兵希米尔|r 对话。
-    .turnin 24979 >>交任务 血色信件
-    .turnin 24980 >>交任务 血色关哨
-    .target 亡灵卫兵希米尔
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathguard Simmer|r.
+    .turnin 24979 >>Turn in A Scarlet Letter
+    .turnin 24980 >>Turn in The Scarlet Palisade
+    .target Deathguard Simmer
 step
-    #arrowtext 与 |cRXP_FRIENDLY_药剂师乔汉|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Apothecary Johaan|r
     .goto 18,44.61,53.78
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_药剂师乔汉|r 对话。
-    .turnin 24976 >>交任务 药剂也要多姿多彩
-    .accept 24977 >>接受任务 乔汉的实验
-    .target 药剂师乔汉
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apothecary Johaan|r.
+    .turnin 24976 >>Turn in Variety is the Spice of Death
+    .accept 24977 >>Accept Johaan's Experiment
+    .target Apothecary Johaan
 step
-    #arrowtext 上楼送回鱼人
+    #arrowtext Go upstairs to return the murloc
     .goto 18,44.48,53.86,4,0
     .goto 18,44.76,53.56
-    >>上楼归还鱼人
+    >>Go upstairs to return the murloc
     .complete 24974,2 --1/1 Vile Fin returned
 step
-    #arrowtext 与 |cRXP_FRIENDLY_塞德里克·卡尔斯通|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Sedrick Calston|r
     .goto 18,44.75,53.65
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塞德里克·卡尔斯通|r 对话。
-    .turnin 24974 >>交任务 从未如此孤单
-    .target 塞德里克·卡尔斯通
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sedrick Calston|r.
+    .turnin 24974 >>Turn in Ever So Lonely
+    .target Sedrick Calston
 step
-    #arrowtext 与 |cRXP_FRIENDLY_Captured 血色狂热者|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Captured Scarlet Zealot|r
     .goto 18,44.70,52.62
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_被俘虏的血色狂热者|r 对话。
-    .turnin 24977 >>交任务 乔汉的实验
-    .target 被俘虏的血色狂热者
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captured Scarlet Zealot|r.
+    .turnin 24977 >>Turn in Johaan's Experiment
+    .target Captured Scarlet Zealot
 step
-    #arrowtext 巡逻
+    #arrowtext Patrolling
     .goto 18,44.28,53.30
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_葛尔多|r 对话。
-    .accept 25038 >>接受任务 葛尔多的任务
-    .target 葛尔多
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gordo|r.
+    .accept 25038 >>Accept Gordo's Task
+    .target Gordo
 step
-    #arrowtext 与 |cRXP_FRIENDLY_Deathguard Dillinger|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Deathguard Dillinger|r
     .goto 18,52.55,54.81
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_亡灵卫兵迪林格尔|r 对话。
-    .accept 25090 >>接受任务 腐烂的爪子
-    .accept 24982 >>接受任务 被遗忘者的新生
-    .target 亡灵卫兵迪林格尔
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathguard Dillinger|r.
+    .accept 25090 >>Accept A Putrid Task
+    .accept 24982 >>Accept The New Forsaken
+    .target Deathguard Dillinger
 step
     #completewith GordosTaskA
     #hidewindow
@@ -27876,202 +27874,202 @@ step
     +1
 step
     #completewith next
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击 |cRXP_PICK_阴暗草|r。
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Gloom Weed|r.
     .complete 25038,1 --3/3 Gloom Weed
 step
-    >>击杀 |cRXP_ENEMY_Ravaged 尸体|r 和 |cRXP_ENEMY_腐烂的死者|r。拾取它们的 |T1:0|t[|cRXP_LOOT_Putric Claw|r]。
+    >>Kill the |cRXP_ENEMY_Ravaged Corpses|r and |cRXP_ENEMY_Rotting Dead|r. Loot them for the |T1:0|t[|cRXP_LOOT_Putric Claw|r].
     .complete 25090,1 --7/7 Putrid Claw
-    .mob 破碎的尸体
+    .mob Ravaged Corpse
     .mob Rotting Dead
 step
     #label GordosTaskA
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击 |cRXP_PICK_阴暗草|r。
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Gloom Weed|r.
     .complete 25038,1 --3/3 Gloom Weed
 step
-    #arrowtext 与 |cRXP_FRIENDLY_Deathguard Dillinger|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Deathguard Dillinger|r
     .goto 18,52.54,54.81
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_亡灵卫兵迪林格尔|r 对话。
-    .turnin 25090 >>交任务 腐烂的爪子
-    .target 亡灵卫兵迪林格尔
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathguard Dillinger|r.
+    .turnin 25090 >>Turn in A Putrid Task
+    .target Deathguard Dillinger
 step
-    #arrowtext 与 |cRXP_FRIENDLY_Deathguard Morris|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Deathguard Morris|r
     .goto 18,60.13,52.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_亡灵卫兵莫里斯|r 对话。
-    .accept 6321 >>接受任务 布瑞尔的补给
-    .target 亡灵卫兵莫里斯
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathguard Morris|r.
+    .accept 6321 >>Accept Supplying Brill
+    .target Deathguard Morris
 step
-    #arrowtext 与 |cRXP_FRIENDLY_初级药剂师霍兰德|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Junior Apothecary Holland|r
     .goto 18,60.13,52.69
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_初级药剂师霍兰德|r对话。
-    .turnin 25038 >>交任务 葛尔多的任务
-    .accept 24990 >>接受任务 采血
-    .target 初级药剂师霍兰德
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Junior Apothecary Holland|r.
+    .turnin 25038 >>Turn in Gordo's Task
+    .accept 24990 >>Accept Darkhound Pounding
+    .target Junior Apothecary Holland
 step
-    #arrowtext 与 |cRXP_FRIENDLY_执行官塞加德|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Executor Zygand|r
     .goto 18,60.54,51.88
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_执行官塞加德|r 对话。
-    .accept 24981 >>接受任务 如芒在背
-    .target 执行官塞加德
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Executor Zygand|r.
+    .accept 24981 >>Accept A Thorn in our Side
+    .target Executor Zygand
 step
-    #arrowtext 与 |cRXP_FRIENDLY_Innkeeper Renee|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Innkeeper Renee|r
     .goto 18,60.87,51.50
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_旅店老板瑞尼|r对话。
-    .home >>将炉石设置在布瑞尔
-    .target 旅店老板瑞尼
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Renee|r.
+    .home >>Set your Hearthstone to Brill
+    .target Innkeeper Renee
 step
     #loop
     .goto 18,59.58,56.85,25,0
     .goto 18,53.61,64.63,35,0
-    #title 不要击杀黑暗犬！
-    >>攻击一只|cRXP_ENEMY_黑暗猎犬|r，等待狼人刷新。
-    .accept 24992 >>接受任务 逃离吉尔尼斯
+    #title DON'T KILL THE DARKHOUND
+    >>Attack a |cRXP_ENEMY_Darkhound|r. Wait for the Worgen to spawn.
+    .accept 24992 >>Accept Escaped From Gilneas
 step
     #completewith UrgentScarletMemorandumA
-    >>击杀|cRXP_ENEMY_黑暗犬|r，从它们身上拾取|T134719:0|t[|cRXP_LOOT_黑暗犬的血液|r]。
+    >>Kill the |cRXP_ENEMY_Darkhounds|r. Loot them for the |T134719:0|t[|cRXP_LOOT_Darkhound Blood|r.].
     .complete 24990,1 --5/5 Darkhound Blood
 step
     #completewith next
-    >>击杀|cRXP_ENEMY_血色狂热者|r和|cRXP_ENEMY_血色传教士|r。
+    >>Kill |cRXP_ENEMY_Scarlet Zealots|r and the |cRXP_ENEMY_Scarlet Missionaries|r.
     .complete 24981,1 --3/3 Scarlet Zealot slain
     .complete 24981,2 --3/3 Scarlet Missionary slain
     .mob Scarlet Zealotstep
-    .mob 血色传教士
+    .mob Scarlet Missionary
 step
-    #arrowtext 击杀 |cRXP_ENEMY_Captain Perrine|r
+    #arrowtext Kill\n|cRXP_ENEMY_Captain Perrine|r
     #label UrgentScarletMemorandumA
     .goto 18,51.19,67.71
-    >>击杀|cRXP_ENEMY_派瑞恩队长|r，从他身上拾取|T1:0|t[|cRXP_LOOT_紧急血色备忘录|r]。
+    >>Kill |cRXP_ENEMY_Captain Perrine|r. Loot him for the |T1:0|t[|cRXP_LOOT_Urgent Scarlet Memorandum|r].
     .complete 24981,3 --1/1 Urgent Scarlet Memorandum
 step
-    #arrowtext 杀死 |cRXP_ENEMY_Scarlet Zealots|r 和 |cRXP_ENEMY_Scarlet Missionaries|r
+    #arrowtext Kill\n|cRXP_ENEMY_Scarlet Zealots|r and |cRXP_ENEMY_Scarlet Missionaries|r
     #loop
     .goto 18,53.60,68.23,35,0
     .goto 18,51.56,66.00,35,0
     .goto 18,49.79,67.94,35,0
-    >>击杀|cRXP_ENEMY_血色狂热者|r和|cRXP_ENEMY_血色传教士|r。
+    >>Kill |cRXP_ENEMY_Scarlet Zealots|r and the |cRXP_ENEMY_Scarlet Missionaries|r.
     .complete 24981,1 --3/3 Scarlet Zealot slain
     .complete 24981,2 --3/3 Scarlet Missionary slain
     .mob Scarlet Zealotstep
-    .mob 血色传教士
+    .mob Scarlet Missionary
 step
-    #arrowtext 杀死 |cRXP_ENEMY_Darkhounds|r
+    #arrowtext Kill\n|cRXP_ENEMY_Darkhounds|r
     #loop
     .goto 18,59.58,56.85,25,0
     .goto 18,53.61,64.63,35,0
-    >>击杀|cRXP_ENEMY_黑暗犬|r，从它们身上拾取|T134719:0|t[|cRXP_LOOT_黑暗犬的血液|r]。
+    >>Kill the |cRXP_ENEMY_Darkhounds|r. Loot them for the |T134719:0|t[|cRXP_LOOT_Darkhound Blood|r.].
     .complete 24990,1 --5/5 Darkhound Blood
 step
     #completewith next
-    .hs >>炉石返回布瑞尔，提瑞斯法林地
+    .hs >>Hearth to Brill
     .cooldown item,6948,>0,1
     .use 6948
 step
-    #arrowtext 与 |cRXP_FRIENDLY_执行官塞加德|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Executor Zygand|r
     .goto 18,60.54,51.87
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_执行官塞加德|r 对话。
-    .turnin 24992 >>交任务 逃离吉尔尼斯
-    .turnin 24981 >>交任务 如芒在背
-    .accept 24993 >>接受任务 消灭狼人
-    .target 执行官塞加德
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Executor Zygand|r.
+    .turnin 24992 >>Turn in Escaped From Gilneas
+    .turnin 24981 >>Turn in A Thorn in our Side
+    .accept 24993 >>Accept Annihilate the Worgen
+    .target Executor Zygand
 step
-    #arrowtext 击杀 |cRXP_ENEMY_Worgen Infiltrator|r
+    #arrowtext Kill\n|cRXP_ENEMY_Worgen Infiltrator|r
     #loop
     .goto 18,61.25,53.30,30,0
     .goto 18,60.02,51.73,30,0
     .goto 18,58.07,49.02,35,0
-    >>击杀|cRXP_ENEMY_狼人渗透者|r。
-    *|cRXP_WARN_注意：留意地面出现的尘土粒子|r。
+    >>Kill |cRXP_ENEMY_Worgen Infiltrator|r.
+    *|cRXP_WARN_NOTE:|r Look for dust particles appearing on the ground.
     .complete 24993,1 --5/5 Worgen Infiltrator slain
-    .mob 狼人渗透者
+    .mob Worgen Infiltrator
 step
-    #arrowtext 与 |cRXP_FRIENDLY_执行官塞加德|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Executor Zygand|r
     .goto 18,60.54,51.87
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_执行官塞加德|r 对话。
-    .turnin 24993 >>交任务 消灭狼人
-    .target 执行官塞加德
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Executor Zygand|r.
+    .turnin 24993 >>Turn in Annihilate the Worgen
+    .target Executor Zygand
 step
-    #arrowtext 与 |cRXP_FRIENDLY_初级药剂师霍兰德|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Junior Apothecary Holland|r
     .goto 18,60.13,52.69
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_初级药剂师霍兰德|r对话。
-    .turnin 24990 >>交任务 采血
-    .accept 24996 >>接受任务 霍兰德的实验
-    .target 初级药剂师霍兰德
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Junior Apothecary Holland|r.
+    .turnin 24990 >>Turn in Darkhound Pounding
+    .accept 24996 >>Accept Holland's Experiment
+    .target Junior Apothecary Holland
 step
-    #arrowtext 与 |cRXP_FRIENDLY_被俘虏的巡山人|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Captured Mountaineer|r
     .goto 18,59.74,53.69,6,0
     .goto 18,59.94,53.75,6,0
     .goto 18,60.04,52.87
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_被俘虏的巡山人|r 对话。
-    .turnin 24996 >>交任务 霍兰德的实验
-    .target 被俘虏的巡山人
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captured Mountaineer|r.
+    .turnin 24996 >>Turn in Holland's Experiment
+    .target Captured Mountaineer
 step
-    #arrowtext 与 |cRXP_FRIENDLY_药剂师杰罗德|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Apothecary Jerrod|r
     .goto 18,61.65,34.56
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_药剂师杰罗德|r 对话。
-    .accept 24994 >>接受任务 末日草
-    .target 药剂师杰罗德
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apothecary Jerrod|r.
+    .accept 24994 >>Accept Doom Weed
+    .target Apothecary Jerrod
 step
-    #arrowtext 与 |cRXP_FRIENDLY_学徒克里斯宾|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Apprentice Crispin|r
     .goto 18,61.61,34.38
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_学徒克里斯宾|r对话。
-    .accept 24997 >>接受任务 盗墓贼
-    .target 学徒克里斯宾
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apprentice Crispin|r.
+    .accept 24997 >>Accept Graverobbers
+    .target Apprentice Crispin
 step
     #completewith RotHideGraverobbersA
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击 |cRXP_PICK_末日草|r。
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Doom Weed|r.
     .complete 24994,1 --10/10 Doom Weed
 step
     #completewith RotHideGraverobbersA
-    >>击杀|cRXP_ENEMY_腐皮豺狼人|r，从它们身上拾取|T134717:0|t[|cRXP_LOOT_防腐剂|r]。
+    >>Kill the |cRXP_ENEMY_Rot Hides|r. Loot them for the |T134717:0|t[|cRXP_LOOT_Embalming Ichors|r].
     .complete 24997,2 --5/5 Rot Hide Mongrel slain
     .complete 24997,3 --6/6 Embalming Ichor
-    .mob 混血腐皮豺狼人
+    .mob Rot Hide Mongrel
 step
-    #arrowtext 击杀 |cRXP_ENEMY_腐皮盗墓贼|r
+    #arrowtext Kill\n|cRXP_ENEMY_Rot Hide Graverobber|r
     #label RotHideGraverobbersA
     .goto 18,55.25,42.59
-    >>击杀 |cRXP_ENEMY_腐皮盗墓贼|r。
+    >>Kill |cRXP_ENEMY_Rot Hide Graverobber|r.
     .complete 24997,1 --8/8 Rot Hide Graverobber slain
-    .mob 腐皮盗墓贼
+    .mob Rot Hide Graverobber
 step
     #completewith next
-    >>击杀|cRXP_ENEMY_腐皮豺狼人|r，从它们身上拾取|T134717:0|t[|cRXP_LOOT_防腐剂|r]。
+    >>Kill the |cRXP_ENEMY_Rot Hides|r. Loot them for the |T134717:0|t[|cRXP_LOOT_Embalming Ichors|r].
     .complete 24997,2 --5/5 Rot Hide Mongrel slain
     .complete 24997,3 --6/6 Embalming Ichor
-    .mob 混血腐皮豺狼人
+    .mob Rot Hide Mongrel
 step
-    #arrowtext 点击 |cRXP_PICK_厄运末日草|r
+    #arrowtext Click\n|cRXP_PICK_Doom Weed|r
     #loop
     .goto 18,56.28,43.99,35,0
     .goto 18,54.85,38.74,35,0
     .goto 18,58.39,38.14,35,0
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击 |cRXP_PICK_末日草|r。
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Doom Weed|r.
     .complete 24994,1 --10/10 Doom Weed
 step
-    #arrowtext 击杀 |cRXP_ENEMY_Rot 隐藏 Mongrels|r
+    #arrowtext Kill\n|cRXP_ENEMY_Rot Hide Mongrels|r
     #loop
     .goto 18,58.62,36.52,30,0
     .goto 18,60.07,31.69,35,0
     .goto 18,57.86,31.28,40,0
-    >>击杀|cRXP_ENEMY_混血腐皮豺狼人|r，从它们身上拾取|T134717:0|t[|cRXP_LOOT_防腐剂|r]。
+    >>Kill the |cRXP_ENEMY_Rot Hide Mongrels|r. Loot them for the |T134717:0|t[|cRXP_LOOT_Embalming Ichors|r].
     .complete 24997,2 --5/5 Rot Hide Mongrel slain
     .complete 24997,3 --6/6 Embalming Ichor
-    .mob 混血腐皮豺狼人
+    .mob Rot Hide Mongrel
 step
-    #arrowtext 与 |cRXP_FRIENDLY_药剂师杰罗德|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Apothecary Jerrod|r
     .goto 18,61.65,34.56
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_药剂师杰罗德|r 对话。
-    .turnin 24994 >>交任务 末日草
-    .accept 24995 >>接受任务 刮鳞
-    .target 药剂师杰罗德
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apothecary Jerrod|r.
+    .turnin 24994 >>Turn in Doom Weed
+    .accept 24995 >>Accept Off the Scales
+    .target Apothecary Jerrod
 step
-    #arrowtext 与 |cRXP_FRIENDLY_学徒克里斯宾|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Apprentice Crispin|r
     .goto 18,61.60,34.38
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_学徒克里斯宾|r 对话。
-    .turnin 24997 >>交任务 盗墓贼
-    .accept 24998 >>接受任务 悬赏：蛆眼
-    .accept 24999 >>接受任务 播下恐惧的种子
-    .target 学徒克里斯宾
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apprentice Crispin|r.
+    .turnin 24997 >>Turn in Graverobbers
+    .accept 24998 >>Accept Wanted: Maggot Eye
+    .accept 24999 >>Accept Planting the Seed of Fear
+    .target Apprentice Crispin
 step
     #completewith OffTheScalesA
     #hidewindow
@@ -28081,178 +28079,178 @@ step
     +1
 step
     #completewith next
-    >>击杀 |cRXP_ENEMY_邪鳍鱼人|r。拾取 |T134304:0|t[|cRXP_LOOT_邪鳍鱼人的鳞片|r]。
+    >>Kill the |cRXP_ENEMY_Vile Fin Murlocs|r. Loot them for the |T134304:0|t[|cRXP_LOOT_Vile Fin Scales|r].
     .complete 24995,1 --5/5 Vile Fin Scale
-    .mob 邪鳍鱼人
-    .mob 邪鳍智者
-    .mob 邪鳍泥浆鱼人
+    .mob Vile Fin Murloc
+    .mob Vile Fin Oracle
+    .mob Vile Fin Muckdweller
 step
-    >>追逐恐吓 |cRXP_FRIENDLY_邪鳍蝌蚪|r
-    *|cRXP_WARN_注释：|r 跟随它们直到它们计入任务。
+    >>Run on top of the |cRXP_FRIENDLY_Vile Fin Tadpoles.|r
+    *|cRXP_WARN_NOTE:|r Follow them until they count for the quest.
     .complete 24999,1 --12/12 Vile Fin Tadpoles frightened
-    .target 邪鳍蝌蚪
+    .target Vile Fin Tadpole
 step
     #label OffTheScalesA
-    >>击杀 |cRXP_ENEMY_邪鳍鱼人|r。拾取 |T134304:0|t[|cRXP_LOOT_邪鳍鱼人的鳞片|r]。
+    >>Kill the |cRXP_ENEMY_Vile Fin Murlocs|r. Loot them for the |T134304:0|t[|cRXP_LOOT_Vile Fin Scales|r].
     .complete 24995,1 --5/5 Vile Fin Scale
-    .mob 邪鳍鱼人
-    .mob 邪鳍智者
-    .mob 邪鳍泥浆鱼人
+    .mob Vile Fin Murloc
+    .mob Vile Fin Oracle
+    .mob Vile Fin Muckdweller
 step
-    #arrowtext 击杀 |cRXP_ENEMY_蛆眼|r
+    #arrowtext Kill\n|cRXP_ENEMY_Maggot Eye|r
     .goto 18,58.68,30.85
-    >>击杀|cRXP_ENEMY_蛆眼|r，拾取|T134296:0|t[|cRXP_LOOT_蛆眼的爪子|r]。
+    >>Kill |cRXP_ENEMY_Maggot Eye|r. Loot him for |T134296:0|t[|cRXP_LOOT_Maggot Eye's Paw|r].
     .complete 24998,1 --1/1 Maggot Eye's Paw
-    .mob 蛆眼
+    .mob Maggot Eye
 step
-    #arrowtext 与 |cRXP_FRIENDLY_学徒克里斯宾|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Apprentice Crispin|r
     .goto 18,61.60,34.38
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_学徒克里斯宾|r 对话。
-    .turnin 24999 >>交任务 播下恐惧的种子
-    .turnin 24998 >>交任务 蛆眼
-    .target 学徒克里斯宾
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apprentice Crispin|r.
+    .turnin 24999 >>Turn in Planting the Seed of Fear
+    .turnin 24998 >>Turn in Maggot Eye
+    .target Apprentice Crispin
 step
-    #arrowtext 与 |cRXP_FRIENDLY_药剂师杰罗德|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Apothecary Jerrod|r
     .goto 18,61.65,34.56
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_药剂师杰罗德|r 对话。
-    .turnin 24995 >>交任务 刮鳞
-    .accept 25031 >>接受任务 前往磨坊
-    .target 药剂师杰罗德
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apothecary Jerrod|r.
+    .turnin 24995 >>Turn in Off the Scales
+    .accept 25031 >>Accept Head for the Mills
+    .target Apothecary Jerrod
 step
-    #arrowtext 与 |cRXP_FRIENDLY_库勒曼·法席恩|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Coleman Farthing|r
     .goto 18,56.24,27.50,30,0
     .goto 18,54.60,29.91
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_库勒曼·法席恩|r 对话。
-    .turnin 25031 >>交任务 前往磨坊
-    .accept 25003 >>接受任务 家族墓穴
-    .target 库勒曼·法席恩
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Coleman Farthing|r.
+    .turnin 25031 >>Turn in Head for the Mills
+    .accept 25003 >>Accept The Family Crypt
+    .target Coleman Farthing
 step
     #completewith next
     #label TheHauntedMillsA
-    >>击杀 |cRXP_ENEMY_达高尔队长|r。拾取 |T133730:0|t[|cRXP_LOOT_达高尔的颅骨|r]。
-    .accept 25030 >>接受任务 闹鬼的磨坊
-    .mob 达高尔队长
+    >>Kill |cRXP_ENEMY_Captain Dargol|r. Loot him for the |T133730:0|t[|cRXP_LOOT_Dargol's Skull|r].
+    .accept 25030 >>Accept The Haunted Mills
+    .mob Captain Dargol
 step
-    #arrowtext 进入 地穴
+    #arrowtext Enter the crypt
     #completewith TheHauntedMillsA
     .goto 18,52.26,26.89,10,0
-    .goto 18,52.25,26.32,8 >>|cRXP_WARN_跟随箭头进入墓穴|r。
+    .goto 18,52.25,26.32,8 >>|cRXP_WARN_Follow the arrow into the crypt|r.
 step
-    #arrowtext 击杀 |cRXP_ENEMY_达高尔队长|r
+    #arrowtext Kill\n|cRXP_ENEMY_Captain Dargol|r
     #requires TheHauntedMillsA
     .goto 18,52.75,26.36
-    >>击杀 |cRXP_ENEMY_达高尔队长|r。拾取 |T133730:0|t[|cRXP_LOOT_达高尔的颅骨|r]。
-    .accept 25030 >>接受任务 闹鬼的磨坊
-    .mob 达高尔队长
+    >>Kill |cRXP_ENEMY_Captain Dargol|r. Loot him for the |T133730:0|t[|cRXP_LOOT_Dargol's Skull|r].
+    .accept 25030 >>Accept The Haunted Mills
+    .mob Captain Dargol
 step
     #completewith next
     #label TheFamilyCryptA
-    >>击杀 |cRXP_ENEMY_哀嚎的鬼魂|r 和 |cRXP_ENEMY_腐烂的古尸|r。
+    >>Kill |cRXP_ENEMY_Wailing Ancestor|r and |cRXP_ENEMY_Rotting Ancestor|r.
     .complete 25003,1 --5/5 Wailing Ancestor slain
     .complete 25003,2 --5/5 Rotting Ancestor slain
-    .mob 哀嚎的鬼魂
-    .mob 腐烂的古尸
+    .mob Wailing Ancestor
+    .mob Rotting Ancestor
 step
-    #arrowtext 离开 地穴
+    #arrowtext Leave the crypt
     #completewith TheFamilyCryptA
-    .goto 18,52.26,26.89,10 >>|cRXP_WARN_离开墓穴。|r
+    .goto 18,52.26,26.89,10 >>|cRXP_WARN_Leave the crypt.|r
 step
-    #arrowtext 击杀 |cRXP_ENEMY_哀嚎的鬼魂|r 和 |cRXP_ENEMY_腐烂的古尸|r
+    #arrowtext Kill\n|cRXP_ENEMY_Wailing Ancestor|r and |cRXP_ENEMY_Rotting Ancestor|r
     #requires TheFamilyCryptA
     #loop
     .goto 18,49.76,29.28,35,0
     .goto 18,51.06,31.86,35,0
     .goto 18,54.60,29.91,50,0
     .goto 18,52.26,26.89,20,0
-    >>击杀 |cRXP_ENEMY_哀嚎的鬼魂|r 和 |cRXP_ENEMY_腐烂的古尸|r。
+    >>Kill |cRXP_ENEMY_Wailing Ancestor|r and |cRXP_ENEMY_Rotting Ancestor|r.
     .complete 25003,1 --5/5 Wailing Ancestor slain
     .complete 25003,2 --5/5 Rotting Ancestor slain
-    .mob 哀嚎的鬼魂
-    .mob 腐烂的古尸
+    .mob Wailing Ancestor
+    .mob Rotting Ancestor
 step
-    #arrowtext 与 |cRXP_FRIENDLY_库勒曼·法席恩|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Coleman Farthing|r
     .goto 18,54.59,29.89
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_库勒曼·法席恩|r 对话。
-    .turnin 25003 >>交任务 家族墓穴
-    .turnin 25030 >>交任务 闹鬼的磨坊
-    .accept 25029 >>接受任务 阿加曼德家族
-    .accept 25004 >>接受任务 磨坊告急
-    .target 库勒曼·法席恩
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Coleman Farthing|r.
+    .turnin 25003 >>Turn in The Family Crypt
+    .turnin 25030 >>Turn in The Haunted Mills
+    .accept 25029 >>Accept Deaths in the Family
+    .accept 25004 >>Accept The Mills Overrun
+    .target Coleman Farthing
 step
     #completewith DeathsInTheFamilyA
-    >>击杀|cRXP_ENEMY_暗眼骷髅法师|r，从其身上拾取|T133730:0|t[|cRXP_LOOT_焦黑的颅骨|r]。
-    >>击杀|cRXP_ENEMY_碎颅士兵|r，从其身上拾取|T133730:0|t[|cRXP_LOOT_锯齿肋骨|r]。
+    >>Kill the |cRXP_ENEMY_Darkeye Bonecaster|r. Loot them for the |T133730:0|t[|cRXP_LOOT_Blackened Skulls|r].
+    >>Kill the |cRXP_ENEMY_Cracked Skull Soldier|r. Loot them for the |T133730:0|t[|cRXP_LOOT_Notched Ribs|r].
     .complete 25004,2 --3/3 Blackened Skull
     .complete 25004,1 --5/5 Notched Rib
-    .mob 暗眼骷髅法师
-    .mob 碎颅士兵
+    .mob Darkeye Bonecaster
+    .mob Cracked Skull Soldier
 step
-    #arrowtext 击杀 |cRXP_ENEMY_萨尔曼·阿加曼德|r
+    #arrowtext Kill\n|cRXP_ENEMY_Thurman Agamand|r
     .goto 18,45.97,30.21
-    >>杀死 |cRXP_ENEMY_萨尔曼·阿加曼德|r。战利品他的 |T237274:0|t[|cRXP_LOOT_Thurman's Remains|r]。
+    >>Kill |cRXP_ENEMY_Thurman Agamand|r. Loot him for |T237274:0|t[|cRXP_LOOT_Thurman's Remains|r].
     .complete 25029,3 --1/1 Thurman's Remains
-    .mob 萨尔曼·阿加曼德
+    .mob Thurman Agamand
 step
-    #arrowtext 击杀 |cRXP_ENEMY_格里高·阿加曼德|r
+    #arrowtext Kill\n|cRXP_ENEMY_Gregor Agamand|r
     .goto 18,45.58,29.54
-    >>击杀 |cRXP_ENEMY_格里高·阿加曼德|r。拾取他的 |T133729:0|t[|cRXP_LOOT_Gregor's Remains|r]。
+    >>Kill |cRXP_ENEMY_Gregor Agamand|r. Loot him for |T133729:0|t[|cRXP_LOOT_Gregor's Remains|r].
     .complete 25029,2 --1/1 Gregor's Remains
-    .mob 格里高·阿加曼德
+    .mob Gregor Agamand
 step
-    #arrowtext 击杀 |cRXP_ENEMY_代弗林·阿加曼德|r
+    #arrowtext Kill\n|cRXP_ENEMY_Devlin Agamand|r
     .goto 18,48.95,33.91
-    >>杀死 |cRXP_ENEMY_代弗林·阿加曼德|r。获得战利品|T133730:0|t[|cRXP_LOOT_Devlin's Remains|r]。
+    >>Kill |cRXP_ENEMY_Devlin Agamand|r. Loot him for |T133730:0|t[|cRXP_LOOT_Devlin's Remains|r].
     .complete 25029,4 --1/1 Devlin's Remains
-    .mob 代弗林·阿加曼德
+    .mob Devlin Agamand
 step
-    #arrowtext 击杀 |cRXP_ENEMY_妮萨·阿加曼德|r
+    #arrowtext Kill\n|cRXP_ENEMY_Nissa Agamand|r
     #label DeathsInTheFamilyA
     .goto 18,49.34,36.03
-    >>击杀 |cRXP_ENEMY_妮萨·阿加曼德|r。拾取她的战利品 |T134437:0|t[|cRXP_LOOT_Nissa's Remains|r]。
+    >>Kill |cRXP_ENEMY_Nissa Agamand|r. Loot her for |T134437:0|t[|cRXP_LOOT_Nissa's Remains|r].
     .complete 25029,1 --1/1 Nissa's Remains
-    .mob 妮萨·阿加曼德
+    .mob Nissa Agamand
 step
-    #arrowtext 击杀 |cRXP_ENEMY_暗眼骷髅法师|r
+    #arrowtext Kill\n|cRXP_ENEMY_Darkeye Bonecaster|r
     .goto 18,48.39,34.29
-    >>击杀|cRXP_ENEMY_暗眼骷髅法师|r，从其身上拾取|T133730:0|t[|cRXP_LOOT_焦黑的颅骨|r]。
-    >>击杀|cRXP_ENEMY_碎颅士兵|r，从其身上拾取|T133730:0|t[|cRXP_LOOT_锯齿肋骨|r]。
+    >>Kill the |cRXP_ENEMY_Darkeye Bonecaster|r. Loot them for the |T133730:0|t[|cRXP_LOOT_Blackened Skulls|r].
+    >>Kill the |cRXP_ENEMY_Cracked Skull Soldier|r. Loot them for the |T133730:0|t[|cRXP_LOOT_Notched Ribs|r].
     .complete 25004,2 --3/3 Blackened Skull
     .complete 25004,1 --5/5 Notched Rib
-    .mob 暗眼骷髅法师
-    .mob 碎颅士兵
+    .mob Darkeye Bonecaster
+    .mob Cracked Skull Soldier
 step
-    #arrowtext 与 |cRXP_FRIENDLY_库勒曼·法席恩|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Coleman Farthing|r
     .goto 18,54.59,29.90
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_库勒曼·法席恩|r 对话。
-    .turnin 25004 >>交任务 磨坊告急
-    .turnin 25029 >>交任务 阿加曼德家族
-    .accept 25005 >>接受任务 与塞弗伦交谈
-    .target 库勒曼·法席恩
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Coleman Farthing|r.
+    .turnin 25004 >>Turn in The Mills Overrun
+    .turnin 25029 >>Turn in Deaths in the Family
+    .accept 25005 >>Accept Speak with Sevren
+    .target Coleman Farthing
 step
     #completewith next
     #label SpeakWithSevrenA
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_执政官塞弗伦|r 对话。
-    .turnin 25005 >>交任务 与塞弗伦交谈
-    .turnin 24982 >>交任务 被遗忘者的新生
-    .target 执政官塞弗伦
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magistrate Sevren|r.
+    .turnin 25005 >>Turn in Speak with Sevren
+    .turnin 24982 >>Turn in The New Forsaken
+    .target Magistrate Sevren
 step
-    #arrowtext 进入 旅馆
+    #arrowtext Enter the inn
     #completewith SpeakWithSevrenA
-    .goto 18,60.82,51.87,10 >>|cRXP_WARN_跟随箭头进入旅店|r
+    .goto 18,60.82,51.87,10 >>|cRXP_WARN_Follow the arrow into the inn.|r
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_执政官塞弗伦|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Magistrate Sevren|r
     #requires SpeakWithSevrenA
     .goto 18,60.91,51.10,8,0
     .goto 18,61.36,51.27,8,0
     .goto 18,61.00,50.54
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_执政官塞弗伦|r 对话。
-    .turnin 25005 >>交任务 与塞弗伦交谈
-    .turnin 24982 >>交任务 被遗忘者的新生
-    .target 执政官塞弗伦
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magistrate Sevren|r.
+    .turnin 25005 >>Turn in Speak with Sevren
+    .turnin 24982 >>Turn in The New Forsaken
+    .target Magistrate Sevren
 step
-    #arrowtext 点击\n|cRXP_PICK_传送门 前往 奥格瑞玛|r
+    #arrowtext Click\n|cRXP_PICK_Portal to Orgrimmar|r
     .goto 18,60.74,58.67
-    .zone 85 >>点击 |cRXP_PICK_Portal to 奥格瑞玛|r。
+    .zone 85 >>Click on the |cRXP_PICK_Portal to Orgrimmar|r.
 ]])
 --Goblin: Kezan & The Lost Isles
 RXPGuides.RegisterGuide([[
@@ -28260,8 +28258,8 @@ RXPGuides.RegisterGuide([[
 #version 2
 #group RestedXP 快速升级
 #subgroup |cFFFCDC00(1-90)|r 默认
-#name ab) 地精 开场
-#displayname 科赞与失落群岛|cRXP_ENEMY_（备选版）|r
+#name ab) Goblin Intro
+#displayname Kezan & The Lost Isles |cRXP_ENEMY_(Alternative)|r
 #next b1) 争霸艾泽拉斯介绍
 
 << Horde Goblin !DK
@@ -28269,270 +28267,270 @@ RXPGuides.RegisterGuide([[
 step << Goblin
     .zoneskip 1727
     #completewith KezanFirstQuestCheck
-    +如果你想以最快速度升级，请选择流放者离岛作为起始区域。这需要重新创建角色。
+    +If you want to level as fast as possible, choose Exile’s Reach as your starting zone. This requires recreating your character.
 
 step << Goblin
     #optional
     .zoneskip 1727,1
-    +你当前在流放者离岛，但当前指南适用于|cRXP_WARN_地精起始区域|r。
-    +请选择|cRXP_WARN_流放者离岛|r指南。
+    +You are in Exiles Reach but the current Guide is for the |cRXP_WARN_Goblin Starting Zone|r.
+    +Please choose the |cRXP_WARN_Exiles Reach|r Guide.
 step
     #optional
     #completewith next
-    +|cRXP_WARN_若要充分利用RXP，按下Escape -> 选项 -> 快捷键 -> RestedXP指南 -> 选择并绑定活跃按钮1、2、3和4。你也可以为目标进行绑定。|r。
-    *这样你就能按快捷键来使用任务物品或选中相关的小怪
+    +|cRXP_WARN_If you want to make the most of RXP; Press Escape -> Options -> Keybindings -> RestedXP Guides -> Select and Bind Active Button 1,2,3 and 4. You can also do this with Targets|r.
+    *This will allow you to press a keybind to use a quest item or target a relevant mob
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_莎希·硬钳|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Sassy Hardwrench|r
     #label KezanFirstQuestCheck
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莎希·硬钳|r 对话。
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sassy Hardwrench|r.
     .goto 194,56.4,76.9
-    .accept 14138 >>接受任务 照看生意
-    .target 莎希·硬钳
+    .accept 14138 >>Accept Taking Care of Business
+    .target Sassy Hardwrench
 step
-    #arrowtext 与 |cRXP_FRIENDLY_工头戴姆维克|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_工头戴姆维克|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Foreman Dampwick|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Dampwick|r.
     .goto 194,60.3,74.6
-    .turnin 14138 >>交任务 照看生意
-    .accept 14069 >>接受任务 好帮手很难找
-    .accept 14075 >>接受任务 矿井的麻烦事
-    .target 工头戴姆维克
+    .turnin 14138 >>Turn in Taking Care of Business
+    .accept 14069 >>Accept Good Help is Hard to Find
+    .accept 14075 >>Accept Trouble in the Mines
+    .target Foreman Dampwick
 step
-    #arrowtext 进入矿井
+    #arrowtext Enter the mines
     #completewith next
-    .goto 194,65.52,87.82,10 >>进入矿井
+    .goto 194,65.52,87.82,10 >>Enter the mines
 step
-    #arrowtext 点击\n|cRXP_FRIENDLY_Defiant Trolls|r
+    #arrowtext Click\n|cRXP_FRIENDLY_Defiant Trolls|r
     #completewith KezanTroubleintheMines
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_FRIENDLY_抗命的巨魔|r。这些也可以在矿洞外找到。
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_FRIENDLY_Defiant Trolls|r. These can be found outside of the mines as well.
     .goto 194,66.02,82.39,0,0
     .complete 14069,1 --8/8 Attitudes Adjusted
-    .target 抗命的巨魔
+    .target Defiant Troll
 step
-    #arrowtext 杀死\n|cRXP_ENEMY_Tunneling Worms|r
+    #arrowtext Kill\n|cRXP_ENEMY_Tunneling Worms|r
     #label KezanTroubleintheMines
-    >>击杀 |cRXP_ENEMY_矿道虫|r。
+    >>Kill |cRXP_ENEMY_Tunneling Worms|r.
     .goto 197,50.73,59.55
     .complete 14075,1 --6/6 Tunneling Worm slain
-    .mob 矿道虫
+    .mob Tunneling Worm
 step
-    #arrowtext 离开矿井
+    #arrowtext Leave the mines
     #completewith next
-    .goto 194,65.52,87.82,8 >>离开矿井
+    .goto 194,65.52,87.82,8 >>Leave the mines
 step
-    #arrowtext 点击\n|cRXP_FRIENDLY_Defiant Trolls|r
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_FRIENDLY_抗命的巨魔|r。
+    #arrowtext Click\n|cRXP_FRIENDLY_Defiant Trolls|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_FRIENDLY_Defiant Trolls|r.
     .goto 194,72.45,83.45,50,0
     .goto 194,70.39,77.73,30,0
     .goto 194,68.74,82.87
     .complete 14069,1 --8/8 Attitudes Adjusted
-    .target 抗命的巨魔
+    .target Defiant Troll
 step
     #completewith next
-    .hs >>炉石回到卡亚罗贸易公司总部
+    .hs >>Hearth back to the KTC Headquarters
     .cooldown item,6948,>0,1
     .use 6948
 step
-    #arrowtext 与 |cRXP_FRIENDLY_工头戴姆维克|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_工头戴姆维克|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Foreman Dampwick|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Dampwick|r.
     .goto 194,60.1,74.6
-    .turnin 14075 >>交任务 矿井的麻烦事
-    .turnin 14069 >>交任务 好帮手很难找
-    .accept 25473 >>接受任务 卡亚可乐
-    .target 工头戴姆维克
+    .turnin 14075 >>Turn in Trouble in the Mines
+    .turnin 14069 >>Turn in Good Help is Hard to Find
+    .accept 25473 >>Accept Kaja'Cola
+    .target Foreman Dampwick
 step << Warlock
     #completewith next
-    +|cRXP_WARN_提示：使用|T136218:0|t[召唤小鬼]来召唤你的宠物|r。
+    +|cRXP_WARN_Reminder: Use |T136218:0|t[Summon Imp] to summon your pet|r.
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_莎希·硬钳|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莎希·硬钳|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Sassy Hardwrench|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sassy Hardwrench|r.
     .goto 194,56.4,76.9
-    .turnin 25473 >>交任务 卡亚可乐
-    .accept 28349 >>接受任务 市场部的梅格斯
-    .target 莎希·硬钳
+    .turnin 25473 >>Turn in Kaja'Cola
+    .accept 28349 >>Accept Megs in Marketing
+    .target Sassy Hardwrench
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_梅格斯·碎纸机|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_梅格斯·碎纸机|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Megs Dreadshredder|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Megs Dreadshredder|r.
     .goto 194,58.3,76.4
-    .turnin 28349 >>交任务 市场部的梅格斯
-    .accept 14071 >>接受任务 呼朋唤友
-    .target 梅格斯·碎纸机
+    .turnin 28349 >>Turn in Megs in Marketing
+    .accept 14071 >>Accept Rolling with my Homies
+    .target Megs Dreadshredder
 step
-    #arrowtext 使用 [跑车的钥匙]
-    >>使用|T134246:0|t[改装跑车的钥匙]骑上改装跑车
+    #arrowtext Use [Keys to the Hot Rod]
+    >>Use the |T134246:0|t[Keys to the Hot Rod] to mount the Hot Rod
     .goto 194,58.9,76.3
     .complete 14071,1 --1/1 Keys to the Hot Rod used
     .use 46856
 step
-    #arrowtext 跟随箭头
-    >>跟随箭头，找到 |cRXP_FRIENDLY_小静|r。
-    >>冷却好时使用|T135788:0|t[击打]（1）
+    #arrowtext Follow the arrow
+    >>Follow the arrow to pick up |cRXP_FRIENDLY_Izzy|r.
+    >>Use |T135788:0|t[Punch] (1) it on cooldown
     .goto 194,59.93,85.52,15,0
     .goto 194,58.9,85.5
     .complete 14071,2 --1/1 Izzy picked up
-    .target 小静
+    .target Izzy
 step
-    #arrowtext 跟随箭头
-    >>跟随箭头，找到 |cRXP_FRIENDLY_大胖|r。
-    >>冷却好时使用|T135788:0|t[击打]（1）
+    #arrowtext Follow the arrow
+    >>Follow the arrow to pick up |cRXP_FRIENDLY_Gobber|r.
+    >>Use |T135788:0|t[Punch] (1) it on cooldown
     .goto 194,59.93,85.52,15,0
     .goto 194,57.95,70.46,20,0
     .goto 194,60.6,49.9
     .complete 14071,4 --1/1 Gobber picked up
-    .target 大胖
+    .target Gobber
 step
-    #arrowtext 跟随箭头
-    >>跟随箭头，找到 |cRXP_FRIENDLY_王牌|r。
-    >>冷却好时使用|T135788:0|t[击打]（1）
+    #arrowtext Follow the arrow
+    >>Follow the arrow to pick up |cRXP_FRIENDLY_Ace|r.
+    >>Use |T135788:0|t[Punch] (1) it on cooldown
     .goto 194,48.5,38.3
     .complete 14071,3 --1/1 Ace picked up
-    .target 王牌
+    .target Ace
 step
-    #arrowtext 跟随街道往回走
+    #arrowtext Follow the street back up
     #completewith next
     .goto 194,61.98,54.83,30,0
     .goto 194,60.13,64.59,30,0
-    .goto 194,57.90,71.12,20 >>顺着街道返回上方
+    .goto 194,57.90,71.12,20 >>Follow the street back up
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_梅格斯·碎纸机|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_梅格斯·碎纸机|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Megs Dreadshredder|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Megs Dreadshredder|r.
     .goto 194,58.3,76.5
-    .turnin 14071 >>交任务 呼朋唤友
-    .accept 24567 >>接受任务 参加预选赛
-    .target 梅格斯·碎纸机
+    .turnin 14071 >>Turn in Rolling with my Homies
+    .accept 24567 >>Accept Report for Tryouts
+    .target Megs Dreadshredder
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_莎希·硬钳|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莎希·硬钳|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Sassy Hardwrench|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sassy Hardwrench|r.
     .goto 194,56.4,77.0
-    .accept 14070 >>接受任务 亲自动手
-    .target 莎希·硬钳
+    .accept 14070 >>Accept Do it Yourself
+    .target Sassy Hardwrench
 step << Female
-    #arrowtext 与\n|cRXP_FRIENDLY_奇普·英代尔|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奇普·英代尔|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Chip Endale|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chip Endale|r.
     .goto 194,56.3,76.8
-    .accept 26711 >>接受任务 前往银行
-    .target 奇普·英代尔
+    .accept 26711 >>Accept Off to the Bank
+    .target Chip Endale
 --female quest
 step << Male
-    #arrowtext 与\n|cRXP_FRIENDLY_小甜甜|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_小甜甜|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Candy Cane|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Candy Cane|r.
     .goto 194,56.3,76.8
-    .accept 26712 >>接受任务 前往银行
-    .target 小甜甜
+    .accept 26712 >>Accept Off to the Bank
+    .target Candy Cane
 --male quest
 step
-    #arrowtext 跟随箭头绕过房子
-    >>沿箭头绕房屋行进并攻击|cRXP_ENEMY_布鲁诺·防火棉|r。
-    *|cRXP_WARN_别忘了使用改装跑车的钥匙|r。
+    #arrowtext Follow the arrow around the house
+    >>Follow the arrow around the house and attack |cRXP_ENEMY_Bruno Flameretardant|r.
+    *|cRXP_WARN_Don't forget to use your Keys to the Hot Rod|r.
     .use 46856
     .goto 194,57.52,76.93,5,0
     .goto 194,57.46,78.35,5,0
     .goto 194,55.34,78.25,5,0
     .goto 194,45.25,74.75
     .complete 14070,1 --1/1 Bruno Flameretardant beaten down
-    .mob 布鲁诺·防火棉
+    .mob Bruno Flameretardant
 step
-    >>攻击 |cRXP_ENEMY_萨德希·玛格|r。
+    >>Attack |cRXP_ENEMY_Sudsy Magee|r.
     .goto 194,41.6,81.9
     .complete 14070,4 --1/1 Sudsy Magee beaten down
-    .mob 萨德希·玛格
+    .mob Sudsy Magee
 step
-    >>攻击 |cRXP_ENEMY_“锤子”杰克|r。
+    >>Attack |cRXP_ENEMY_Jack the Hammer|r.
     .goto 194,37.47,75.97,15,0
     .goto 194,35.0,77.8
     .complete 14070,3 --1/1 Jack the Hammer beaten down
-    .mob "锤子"杰克
+    .mob Jack the Hammer
 step
-    >>攻击 |cRXP_ENEMY_弗兰基·吉尔斯利普|r。
+    >>Attack |cRXP_ENEMY_Frankie Gearslipper|r.
     .goto 194,36.84,69.95
     .complete 14070,2 --1/1 Frankie Gearslipper beaten down
     .mob Frankey Gearslipper
 step
     #completewith next
-    .vehicle 34840 >>|cRXP_WARN_记得使用改装跑车的钥匙|r。
+    .vehicle 34840 >>|cRXP_WARN_Make sure to use your Keys to the Hot Rod|r.
 step << Female
-    #arrowtext 进入银行
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t进入银行与|cRXP_FRIENDLY_第一银行柜台员|r对话。
+    #arrowtext Enter the bank
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tEnter the bank and talk to a |cRXP_FRIENDLY_FBoK Bank Teller|r.
     .goto 194,34.16,69.32,10,0
     .goto 194,32.27,63.79,12,0
     .goto 194,29.72,64.52,16,0
     .goto 194,30.1,71.9
-    .turnin 26711 >>交任务 前往银行
-    .accept 14110 >>接受任务 崭新的你
-    .target 第一银行柜台员
+    .turnin 26711 >>Turn in Off to the Bank
+    .accept 14110 >>Accept The New You
+    .target FBoK Bank Teller
 --female quest
 step << Male
-    #arrowtext 进入银行
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t进入银行与|cRXP_FRIENDLY_第一银行柜台员|r对话。
+    #arrowtext Enter the bank
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tEnter the bank and talk to a |cRXP_FRIENDLY_FBoK Bank Teller|r.
     .goto 194,34.16,69.32,10,0
     .goto 194,32.27,63.79,12,0
     .goto 194,29.72,64.52,16,0
     .goto 194,30.1,71.9
-    .turnin 26712 >>交任务 前往银行
-    .accept 14109 >>接受任务 崭新的你
-    .target 第一银行柜台员
+    .turnin 26712 >>Turn in Off to the Bank
+    .accept 14109 >>Accept the New You
+    .target FBoK Bank Teller
 --male quest
 step
     #completewith next
-    .vehicle 34840 >>|cRXP_WARN_确保使用你的 |T134246:0|t[跑车的钥匙]（当你需要快速移动时应该始终使用它们）|r。
+    .vehicle 34840 >>|cRXP_WARN_Make sure to use your |T134246:0|t[Keys to the Hot Rod] (You should always use them when you have to run somewhere)|r.
 step << Female
-    #arrowtext 与\n|cRXP_FRIENDLY_苏扎博|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_苏扎博|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Szabo|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Szabo|r.
     .goto 194,29.80,63.62,16,0
     .goto 194,34.66,54.73,10,0
     .goto 194,37.63,55.38
     .use 46856
     .skipgossip
     .complete 14110,2 --1/1 Hip New Outfit
-    .target 苏扎博
+    .target Szabo
 step << Male
-    #arrowtext 与\n|cRXP_FRIENDLY_苏扎博|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_苏扎博|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Szabo|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Szabo|r.
     .goto 194,29.80,63.62,16,0
     .goto 194,34.66,54.73,10,0
     .goto 194,37.63,55.38
     .use 46856
     .skipgossip
     .complete 14109,2 --1/1 Hip New Outfit
-    .target 苏扎博
+    .target Szabo
 step << Female
-    #arrowtext 与\n|cRXP_FRIENDLY_"大金牙"盖比|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_“大金牙”盖比|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Gappy Silvertooth|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gappy Silvertooth|r.
     .goto 194,34.9,45.7
     .skipgossip
     .complete 14110,1 --1/1 Shiny Bling
-    .target "大金牙"盖比
+    .target Gappy Silvertooth
 step << Male
-    #arrowtext 与\n|cRXP_FRIENDLY_"大金牙"盖比|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_“大金牙”盖比|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Gappy Silvertooth|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gappy Silvertooth|r.
     .goto 194,34.9,45.7
     .skipgossip
     .complete 14109,1 --1/1 Shiny Bling
-    .target "大金牙"盖比
+    .target Gappy Silvertooth
 step << Female
-    #arrowtext 与\n|cRXP_FRIENDLY_"软糖"米萨|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_“软糖”米萨|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Missa Spekkies|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Missa Spekkies|r.
     .goto 194,40.5,45.8
     .skipgossip
     .complete 14110,3 --1/1 Cool Shades
-    .target "软糖"米萨
+    .target Missa Spekkies
 step << Male
-    #arrowtext 与\n|cRXP_FRIENDLY_"软糖"米萨|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_“软糖”米萨|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Missa Spekkies|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Missa Spekkies|r.
     .goto 194,40.5,45.8
     .skipgossip
     .complete 14109,3 --1/1 Cool Shades
-    .target "软糖"米萨
+    .target Missa Spekkies
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_克罗斯彻克教练|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_克罗斯彻克教练|r对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Coach Crosscheck|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Coach Crosscheck|r.
     .goto 194,42.57,55.34,20,0
     .goto 194,48.8,57.8
-    .turnin 24567 >>交任务 参加预选赛
-    .accept 24488 >>接受任务 替代品
-    .target 教练 Crosscheck
+    .turnin 24567 >>Turn in Report for Tryouts
+    .accept 24488 >>Accept The Replacements
+    .target Coach Crosscheck
 step
-    #arrowtext 点击\n|cRXP_PICK_Replacements Parts|r
-    >>|TInterface/cursor/crosshair/interact.blp:20|t骑上改装跑车时点击地面上的|cRXP_PICK_替换部件|r。
+    #arrowtext Click\n|cRXP_PICK_Replacements Parts|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Replacements Parts|r from the ground while on the Hot Rod.
 #loop
     .line 194,50.99,57.96,51.22,61.01,49.78,66.39,48.17,66.87,46.08,68.18,44.49,65.76,44.23,63.11,43.75,59.25
     .goto 194,50.99,57.96,20,0
@@ -28545,84 +28543,84 @@ step
     .goto 194,43.75,59.25,20,0
     .complete 24488,1 --6/6 Replacement Parts
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_克罗斯彻克教练|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_克罗斯彻克教练|r对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Coach Crosscheck|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Coach Crosscheck|r.
     .goto 194,48.8,57.8
-    .turnin 24488 >>交任务 替代品
-    .accept 24502 >>接受任务 必要的粗暴
-    .target 教练 Crosscheck
+    .turnin 24488 >>Turn in The Replacements
+    .accept 24502 >>Accept Necessary Roughness
+    .target Coach Crosscheck
 step
-    #arrowtext 点击\n|cRXP_FRIENDLY_锈水海盗队|r
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_FRIENDLY_锈水海盗队|r机器人。
-    >>使用|T134480:0|t[投掷足球炸弹]（1）击杀你面前的|cRXP_ENEMY_热砂港大鲨鱼队队员|r。
+    #arrowtext Click\n|cRXP_FRIENDLY_Bilgewater Buccaneer|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_FRIENDLY_Bilgewater Buccaneer|r roboter.
+    >>Use |T134480:0|t[Throw Footbomb] (1) to kill the |cRXP_ENEMY_Steamwheedle Sharks|r in front of you.
     .goto 194,47.7,57.7
     .complete 24502,1 --1/1 Bilgewater Buccaneer
     .complete 24502,2 --8/8 Steamwheedle Shark Footbombed
 step
-    #arrowtext 点击\n|cRXP_FRIENDLY_克罗斯彻克教练|r
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击任务日志里的任务，|cRXP_WARN_你可能需要下马才能从|cRXP_FRIENDLY_克罗斯彻克教练|r那里接受下一个任务|r。
+    #arrowtext Click\n|cRXP_FRIENDLY_Coach Crosscheck|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the quest in your quest log, |cRXP_WARN_you may have to dismount to accept the next quest from |cRXP_FRIENDLY_Coach Crosscheck|r|r.
     .goto 194,47.7,57.7
-    .turnin 24502 >>点击小地图下方的任务以交还「必要的粗暴」
-    .accept 24503 >>接受任务 四攻得分 << Male
-    .accept 28414 >>接受任务 四攻得分 << Female
-    .target 教练 Crosscheck
+    .turnin 24502 >>Turn in Necessary Roughness by clicking onto the quest under your minimap
+    .accept 24503 >>Accept Fourth and Goal << Male
+    .accept 28414 >>Accept Fourth and Goal << Female
+    .target Coach Crosscheck
 step
-    >>使用|T134480:0|t[投掷足球炸弹]（1）
+    >>Use |T134480:0|t[Kick Footbomb] (1)
     .complete 24503,1 << Male --1/1 Footbomb Kicked Through Smokestacks
     .complete 28414,1 << Female --1/1 Footbomb Kicked Through Smokestacks
 step
     #completewith next
-    +|cRXP_WARN_离开载具|r。
+    +|cRXP_WARN_Leave the vehicle|r.
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_克罗斯彻克教练|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_克罗斯彻克教练|r对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Coach Crosscheck|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Coach Crosscheck|r.
     .goto 194,48.7,57.8
-    .turnin 24503 >>交任务 四攻得分 << Male
-    .turnin 28414 >>交任务 四攻得分 << Female
-    .accept 24520 >>接受任务 告诉莎希好消息
-    .target 教练 Crosscheck
+    .turnin 24503 >>Turn in Fourth and Goal << Male
+    .turnin 28414 >>Turn in Fourth and Goal << Female
+    .accept 24520 >>Accept Give Sassy the News
+    .target Coach Crosscheck
 step
     #completewith next
     .use 46856
-    .vehicle 34840 >>|cRXP_WARN_一定要使用你的 |T134246:0|t[跑车的钥匙] (跑步时应该始终使用它)|r.
+    .vehicle 34840 >>|cRXP_WARN_Make sure to use your |T134246:0|t[Keys to the Hot Rod] (You should always use them when you have to run somewhere)|r.
 step
-    #arrowtext 跟随箭头回到总部
+    #arrowtext Follow the arrow back to the Headquarters
     #completewith next
     .goto 194,52.91,51.59,30,0
     .goto 194,61.86,55.57,20,0
     .goto 194,61.01,62.01,8,0
-    .goto 194,57.76,71.07,15 >>跟随箭头返回总部
+    .goto 194,57.76,71.07,15 >>Follow the arrow back to the Headquarters
 step << Female
-    #arrowtext 与\n|cRXP_FRIENDLY_莎希·硬钳|r 和 |cRXP_FRIENDLY_奇普·英代尔|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莎希·硬钳|r 和 |cRXP_FRIENDLY_奇普·英代尔|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Sassy Hardwrench|r and |cRXP_FRIENDLY_Chip Endale|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sassy Hardwrench|r and |cRXP_FRIENDLY_Chip Endale|r.
     .goto 194,57.58,76.99,10,0
-    .turnin 24520 >>交任务 告诉莎希好消息
-    .turnin 14070 >>交任务 亲自动手
+    .turnin 24520 >>Turn in Give Sassy the News
+    .turnin 14070 >>Turn in Do it Yourself
     .goto 194,56.4,76.9
-    .turnin 14110 >>交任务 崭新的你
-    .accept 14153 >>接受任务 聚会生活
+    .turnin 14110 >>Turn in The New You
+    .accept 14153 >>Accept Life of the Party
     .goto 194,56.3,76.8
-    .target 莎希·硬钳
-    .target 奇普·英代尔
+    .target Sassy Hardwrench
+    .target Chip Endale
 step << Male
-    #arrowtext 与\n|cRXP_FRIENDLY_莎希·硬钳|r 和 |cRXP_FRIENDLY_小甜甜|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莎希·硬钳|r 和 |cRXP_FRIENDLY_小甜甜|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Sassy Hardwrench|r and |cRXP_FRIENDLY_Candy Cane|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sassy Hardwrench|r and |cRXP_FRIENDLY_Candy Cane|r.
     .goto 194,57.58,76.99,10,0
-    .turnin 24520 >>交任务 告诉莎希好消息
-    .turnin 14070 >>交任务 亲自动手
+    .turnin 24520 >>Turn in Give Sassy the News
+    .turnin 14070 >>Turn in Do it Yourself
     .goto 194,56.4,76.9
-    .turnin 14109 >>交任务 崭新的你
-    .accept 14113 >>接受任务 聚会生活
+    .turnin 14109 >>Turn in The New You
+    .accept 14113 >>Accept Life of the Party
     .goto 194,56.3,76.8
-    .target 莎希·硬钳
-    .target 小甜甜
+    .target Sassy Hardwrench
+    .target Candy Cane
 step
-    #arrowtext 使用 [Bubbly]\n在 |cRXP_FRIENDLY_Goblins|r
-    >>对正在饮酒的 |cRXP_FRIENDLY_地精|r 使用|T132809:0|t[香槟酒]（1）。
-    >>使用|T132806:0|t[水桶]（2）对看起来醉醺醺或迷糊的|cRXP_FRIENDLY_地精|r使用。
-    >>|T133836:0|t[跳舞]（3）与正在跳舞的|cRXP_FRIENDLY_地精|r一起跳。
-    >>使用|T134285:0|t[烟花]（4）对有火花的|cRXP_FRIENDLY_地精|r使用。
-    >>使用|T237329:0|t[开胃小吃]（5）对正在吃东西的|cRXP_FRIENDLY_地精|r使用。
+    #arrowtext Use [Bubbly]\non |cRXP_FRIENDLY_Goblins|r
+    >>Use |T132809:0|t[Bubbly] (1) on |cRXP_FRIENDLY_Goblins|r who drink.
+    >>Use the |T132806:0|t[Bucket] (2) on drunk/confused looking |cRXP_FRIENDLY_Goblins|r.
+    >>|T133836:0|t[Dance] (3) with |cRXP_FRIENDLY_Goblins|r who dance.
+    >>Use |T134285:0|t[Fireworks] (4) on |cRXP_FRIENDLY_Goblins|r with sparks.
+    >>Use |T237329:0|t[Hors D'oeuvres] (5) on |cRXP_FRIENDLY_Goblins|r who eat.
     .goto 194,59.56,78.75,15,0
     .goto 194,59.09,80.31,10,0
     .goto 194,60.59,82.98,15,0
@@ -28630,60 +28628,60 @@ step
     .goto 194,60.6,83.4
     .complete 14153,1 << Female --10/10 Partygoer entertained
     .complete 14113,1 << Male --10/10 Partygoer entertained
-    .target 科赞聚会者
+    .target Kezan Partygoer
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_莎希·硬钳|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莎希·硬钳|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Sassy Hardwrench|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sassy Hardwrench|r.
     .goto 194,57.41,77.03,8,0
     .goto 194,56.4,77.0
-    .turnin 14153 >>交任务 聚会生活 << Female
-    .turnin 14113 >>交任务 聚会生活 << Male
-    .accept 14115 >>接受任务 捣乱的海盗
-    .target 莎希·硬钳
+    .turnin 14153 >>Turn in Life of the Party << Female
+    .turnin 14113 >>Turn in Life of the Party << Male
+    .accept 14115 >>Accept Pirate Party Crashers
+    .target Sassy Hardwrench
 step
-    #arrowtext 杀死\n|cRXP_ENEMY_捣乱的海盗|r
-    >>击杀|cRXP_ENEMY_捣乱的海盗|r，优先击杀血量较少的。
+    #arrowtext Kill\n|cRXP_ENEMY_Pirate Party Crashers|r
+    >>Kill |cRXP_ENEMY_Pirate Party Crashers|r. Focus the ones with lower HP.
     .goto 194,57.51,76.97,8,0
     .goto 194,60.05,80.79
     .complete 14115,1 --12/12 Pirate Party Crasher slain
-    .target 捣乱的海盗
+    .target Pirate Party Crasher
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_莎希·硬钳|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莎希·硬钳|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Sassy Hardwrench|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sassy Hardwrench|r.
     .goto 194,56.4,77.0
-    .turnin 14115 >>交任务 捣乱的海盗
-    .accept 14116 >>接受任务 不速之客
-    .target 莎希·硬钳
+    .turnin 14115 >>Turn in Pirate Party Crashers
+    .accept 14116 >>Accept The Uninvited Guest
+    .target Sassy Hardwrench
 step
-    #arrowtext 上楼
+    #arrowtext Go up the stairs
     #completewith next
     .goto 194,56.41,75.33,5,0
     .goto 194,55.99,75.65,4,0
-    .goto 194,55.96,77.07,5 >>上楼梯
+    .goto 194,55.96,77.07,5 >>Go up the stairs
 step
-    #arrowtext 与 |cRXP_FRIENDLY_贸易大王加里维克斯|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_贸易大王加里维克斯|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Trade Prince Gallywix|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Trade Prince Gallywix|r.
     .goto 194,56.7,76.9
-    .turnin 14116 >>交任务 不速之客
-    .accept 14120 >>接受任务 万亿杏仁币
-    .target 贸易大王加里维克斯
+    .turnin 14116 >>Turn in The Uninvited Guest
+    .accept 14120 >>Accept A Bazillion Macaroons?!
+    .target Trade Prince Gallywix
 step
-    #arrowtext 跳出窗外
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t从窗户跳出并与 |cRXP_FRIENDLY_莎希·硬钳|r、|cRXP_FRIENDLY_梅格斯·碎纸机|r 和 |cRXP_FRIENDLY_工头戴姆维克|r 对话。
-    .turnin 14120 >>交任务 万亿杏仁币
-    .accept 14122 >>接受任务 紧急措施
+    #arrowtext Jump out of the window
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tJump out of the window and talk to |cRXP_FRIENDLY_Sassy Hardwrench|r, |cRXP_FRIENDLY_Megs Dreadshredder|r, and |cRXP_FRIENDLY_Foreman Dampwick|r.
+    .turnin 14120 >>Turn in A Bazillion Macaroons?!
+    .accept 14122 >>Accept The Great Bank Heist
     .goto 194,59.6,77.1
-    .accept 14121 >>接受任务 热力追踪
+    .accept 14121 >>Accept Robbing Hoods
     .goto 194,60.0,78.1
-    .accept 14124 >>接受任务 搜刮卡亚矿石
+    .accept 14124 >>Accept Liberate the Kaja'mite
     .goto 194,63.0,77.8
-    .target 莎希·硬钳
-    .target 梅格斯·碎纸机
-    .target 工头戴姆维克
+    .target Sassy Hardwrench
+    .target Megs Dreadshredder
+    .target Foreman Dampwick
 step
     #completewith next
     .use 46856
-    .vehicle 34840 >>|cRXP_WARN_确保使用你的|T134246:0|t[改装跑车的钥匙]，乘车时免疫摔落伤害|r。
+    .vehicle 34840 >>|cRXP_WARN_Make sure to use your |T134246:0|t[Keys to the Hot Rod]. While in the vehicle you are immune to fall damage|r.
 step
     >>Aim the |T133712:0|t[Kablooey Bombs] on Kaja'mite Deposits and loot the [|cRXP_LOOT_Kaja'mite Chunks|r]. on the ground near the mines.
     .goto 194,67.27,77.69,8,0
@@ -28696,209 +28694,209 @@ step
     .use 48768
     .complete 14124,1 --12/12 Kaja'mite Chunk
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_史莉琪·剃刀|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_史莉琪·剃刀|r对话，她在该区域内移动。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Slinky Sharpshiv|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Slinky Sharpshiv|r. She moves around in the area.
     .goto 194,58.82,75.06
-    .accept 14123 >>接受任务 别墅漫步
-    .target 史莉琪·剃刀
+    .accept 14123 >>Accept Waltz Right In
+    .target Slinky Sharpshiv
 step
     #completewith next
-    .vehicle 34840 >>|cRXP_WARN_确保使用你的|T134246:0|t[改装跑车的钥匙]，乘车时免疫摔落伤害|r。
+    .vehicle 34840 >>|cRXP_WARN_Make sure to use your |T134246:0|t[Keys to the Hot Rod]. While in the vehicle you are immune to fall damage|r.
 step
     #completewith next
-    >>看到|cRXP_ENEMY_受雇的抢掠者|r时开车碾过他们。
+    >>Drive over |cRXP_ENEMY_Hired Looters|r when you see them.
     .goto 194,57.94,69.61,15,0
     .goto 194,47.67,60.09,25,0
     .goto 194,38.63,78.42,25,0
     .goto 194,32.71,63.68,10,0
     .goto 194,29.79,63.75,10,0
     .complete 14121,1 --12/12 Stolen Loot
-    .mob 受雇的抢掠者
+    .mob Hired Looter
 step
-    #arrowtext 点击\n|cRXP_PICK_科赞的第一银行金库|r
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_科赞避难所第一银行|r，并按照屏幕中央显示的提示操作
+    #arrowtext Click\n|cRXP_PICK_First Bank of Kezan Vault|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_First Bank of Kezan Vault|r and follow the instructions shown in the center of your screen
     .goto 194,29.3,69.5
     .complete 14122,1 --1/1 First Bank of Kezan Vault
     .complete 14122,2 --1/1 Personal Riches
 step
-    >>开车碾过|cRXP_ENEMY_受雇的抢掠者|r。
+    >>Drive over |cRXP_ENEMY_Hired Looters|r.
     .goto 194,35.91,53.68,20,0
     .goto 194,41.33,53.03,20,0
     .goto 194,41.16,42.01,20,0
     .goto 194,35.96,44.39
     .complete 14121,1 --12/12 Stolen Loot
-    .mob 受雇的抢掠者
+    .mob Hired Looter
 step
     #completewith next
-    .vehicle 34840 >>|cRXP_WARN_确保使用你的|T134246:0|t[改装跑车的钥匙]|r。
+    .vehicle 34840 >>|cRXP_WARN_Make sure to use your |T134246:0|t[Keys to the Hot Rod]|r.
 step
     #completewith KezanWaltzRightIn
-    +|cRXP_WARN_躲避 |cRXP_ENEMY_Villa Mooks|r 和 |cRXP_ENEMY_Keensnout Potbellys|r，因为它们能检测到并击杀你|r。
+    +|cRXP_WARN_Avoid |cRXP_ENEMY_Villa Mooks|r and |cRXP_ENEMY_Keensnout Potbellys|r because they can detect and kill you|r.
 step
-    #arrowtext 点击\n|cRXP_LOOT_bomb|r
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击[|cRXP_LOOT_炸弹|r]。
+    #arrowtext Click\n|cRXP_LOOT_bomb|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the [|cRXP_LOOT_bomb|r].
     .goto 194,24.20,40.67,30,0
     .goto 194,19.9,30.7
     .complete 14123,3 --1/1 The Ultimate Bomb
 step
-    #arrowtext 点击\n|cRXP_LOOT_画板|r
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击[|cRXP_LOOT_画板|r]。
+    #arrowtext Click\n|cRXP_LOOT_painting|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the [|cRXP_LOOT_painting|r].
     .goto 194,13.1,35.2
     .complete 14123,2 --1/1 The Goblin Lisa
 step
-    #arrowtext 上楼
+    #arrowtext Go up the stairs
     #completewith next
     .goto 194,17.66,44.49,8,0
     .goto 194,17.66,45.92,8,0
     .goto 194,16.79,46.89,5,0
     .goto 194,17.84,46.82,5,0
-    .goto 194,17.34,45.91,3 >>上楼梯
+    .goto 194,17.34,45.91,3 >>Go up the stairs
 step
     #label KezanWaltzRightIn
-    >>拾取[|cRXP_LOOT_玛尔迪的猎鹰|r]。
+    >>Pick up [|cRXP_LOOT_Maldy's Falcon|r].
     .goto 194,16.7,46.2
     .complete 14123,1 --1/1 Maldy's Falcon
 step
     #completewith next
     .goto 194,17.65,45.94,5,0
     .goto 194,17.00,33.96
-    .deathskip >>跳出窗户并冲向 |cRXP_ENEMY_Villa Mooks|r 或 |cRXP_ENEMY_Keensnout Potbellys|r 以送死。
+    .deathskip >>Jump out of the window and run into hostile |cRXP_ENEMY_Villa Mooks|r or |cRXP_ENEMY_Keensnout Potbellys|r to die.
 step
-    #arrowtext 跟随前往总部的路
+    #arrowtext Follow the way to the Headquarters
     #completewith next
     .goto 194,61.89,54.13,25,0
-    .goto 194,57.90,71.17,15 >>跟随路线前往总部
+    .goto 194,57.90,71.17,15 >>Follow the way to the Headquarters
 step
-    #arrowtext 与 |cRXP_FRIENDLY_史莉琪·剃刀|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_史莉琪·剃刀|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Slinky Sharpshiv|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Slinky Sharpshiv|r.
     .goto 194,58.97,76.03
-    .turnin 14123 >>交任务 别墅漫步
-    .target 史莉琪·剃刀
+    .turnin 14123 >>Turn in Waltz Right In
+    .target Slinky Sharpshiv
 step
-    #arrowtext 与 |cRXP_FRIENDLY_莎希·硬钳|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莎希·硬钳|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Sassy Hardwrench|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sassy Hardwrench|r.
     .goto 194,59.7,76.9
-    .turnin 14122 >>交任务 紧急措施
+    .turnin 14122 >>Turn in The Great Bank Heist
     .target Sassy Hardwrench
 step
-    #arrowtext 与 |cRXP_FRIENDLY_梅格斯·碎纸机|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_梅格斯·碎纸机|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Megs Dreadshredder|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Megs Dreadshredder|r.
     .goto 194,60.0,78.2
-    .turnin 14121 >>交任务 热力追踪
-    .target 梅格斯·碎纸机
+    .turnin 14121 >>Turn in Robbing Hoods
+    .target Megs Dreadshredder
 step
-    #arrowtext 与 |cRXP_FRIENDLY_工头戴姆维克|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_工头戴姆维克|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Foreman Dampwick|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Dampwick|r.
     .goto 194,62.9,77.8
-    .turnin 14124 >>交任务 搜刮卡亚矿石
-    .target 工头戴姆维克
+    .turnin 14124 >>Turn in Liberate the Kaja'mite
+    .target Foreman Dampwick
 step
-    #arrowtext 与 |cRXP_FRIENDLY_莎希·硬钳|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莎希·硬钳|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Sassy Hardwrench|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sassy Hardwrench|r.
     .goto 194,59.8,76.9
-    .accept 14125 >>接受任务 447
+    .accept 14125 >>Accept 447
     .target Sassy Hardwrench
 step
-    #arrowtext 进入房屋
-    >>|TInterface/cursor/crosshair/interact.blp:20|t进入房屋并|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_故障的发电机|r。
+    #arrowtext Enter the house
+    >>|TInterface/cursor/crosshair/interact.blp:20|tEnter the house and |TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Defective Generator|r.
     .goto 194,56.07,76.63
     .complete 14125,1 --1/1 Overload the Defective Generator
 step
-    #arrowtext 点击 |cRXP_PICK_Leaky Stove|r
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_渗漏的炉子|r。
+    #arrowtext Click\n|cRXP_PICK_Leaky Stove|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Leaky Stove|r.
     .goto 194,56.05,74.67
     .complete 14125,2 --1/1 Activate the Leaky Stove
 step
-    #arrowtext 上楼
-    >>|TInterface/cursor/crosshair/interact.blp:20|t上楼并|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_易燃的床垫|r。
+    #arrowtext Go up the stairs
+    >>|TInterface/cursor/crosshair/interact.blp:20|tGo up the stairs and |TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Flammable Bed|r.
     .goto 194,55.98,77.11,5,0
     .goto 194,56.64,76.33,5,0
     .goto 194,56.61,74.85
     .complete 14125,3 --1/1 Drop a Cigar on the Flammable Bed
 step
-    #arrowtext 跳出窗外
-    >>|TInterface/cursor/crosshair/interact.blp:20|t从窗户跳出并|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_气机器人控制台|r。
-    >>等待短暂的剧情播放
+    #arrowtext Jump out of the window
+    >>|TInterface/cursor/crosshair/interact.blp:20|tJump out of the window and |TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Gasbot Control Panel|r.
+    >>Wait for the short roleplay
     .goto 194,56.60,76.93,8,0
     .goto 194,59.49,76.81
     .complete 14125,4 --1/1 KTC Headquarters Set Ablaze with Gasbot!
 step
-    #arrowtext 与 |cRXP_FRIENDLY_事故勘察员|r 和 |cRXP_FRIENDLY_莎希·硬钳|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_事故勘察员|r 和 |cRXP_FRIENDLY_莎希·硬钳|r 对话。
-    .turnin 14125 >>交任务 447
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Claims Adjuster|r and |cRXP_FRIENDLY_Sassy Hardwrench|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Claims Adjuster|r and |cRXP_FRIENDLY_Sassy Hardwrench|r.
+    .turnin 14125 >>Turn in 447
     .goto 194,59.6,76.6
-    .accept 14126 >>接受任务 毕生积蓄
+    .accept 14126 >>Accept Life Savings
     .goto 194,59.6,77.1
     .target Claims Adjuster
     .target Sassy Hardwrench
 step
     #completewith next
-    .vehicle 34840 >>|cRXP_WARN_确保使用你的|T134246:0|t[改装跑车的钥匙]|r。
+    .vehicle 34840 >>|cRXP_WARN_Make sure to use your |T134246:0|t[Keys to the Hot Rod]|r.
 step
-    #arrowtext 沿着山边行走
+    #arrowtext Hug the side of the mountain
     #completewith next
     .goto 194,25.69,32.13,10,0
-    .goto 194,22.22,24.92,10 >>贴着山边前进
+    .goto 194,22.22,24.92,10 >>Hug the side of the mountain
 step
-    #arrowtext 点击大炮
+    #arrowtext Click the cannon
     #completewith next
     .goto 194,22.31,16.78
-    .cast 92633 >>|TInterface/cursor/crosshair/interact.blp:20|t点击火炮
+    .cast 92633 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the cannon
 step
-    #arrowtext 与 |cRXP_FRIENDLY_贸易大王加里维克斯|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_贸易大王加里维克斯|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Trade Prince Gallywix|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Trade Prince Gallywix|r.
     .use 46856
     .goto 194,20.8,13.7
-    .turnin 14126 >>交任务 毕生积蓄
-    .target 贸易大王加里维克斯
+    .turnin 14126 >>Turn in Life Savings
+    .target Trade Prince Gallywix
 step
-    #arrowtext 与 |cRXP_FRIENDLY_扎普诺兹医生|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_扎普诺兹医生|r 对话。
-    >>有时可能会卡住，需要重新登录或使用 /reload
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Doc Zapnozzle|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Doc Zapnozzle|r.
+    >>Sometimes you can get stuck and have to relog or /reload
     .goto 174,24.6,77.9
-    .turnin 14239 >>交任务 莫入鬼门关
-    .target 扎普诺兹医生
+    .turnin 14239 >>Turn in Don't Go Into the Light
+    .target Doc Zapnozzle
 step
-    #arrowtext 与 |cRXP_FRIENDLY_"发明家"盖格林登|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Geargrinder Gizmo|r
     .goto 174,24.65,77.94
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_“发明家”盖格林登|r 对话。
-    .accept 14001 >>接受任务 地精逃生舱
-    .target “发明家”盖格林登
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Geargrinder Gizmo|r.
+    .accept 14001 >>Accept Goblin Escape Pods
+    .target Geargrinder Gizmo
 step
-    #arrowtext 点击 |cRXP_PICK_地精逃生魔囊|r
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_地精逃生舱|r。
+    #arrowtext Click\n|cRXP_PICK_Goblin Escape Pods|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Goblin Escape Pods|r.
     .goto 174,22.99,75.62,30,0
     .goto 174,25.50,77.65,30,0
     .goto 174,25.37,75.44
     .complete 14001,1 --6/6 Goblin Survivors Rescued
 step
-    #arrowtext 与 |cRXP_FRIENDLY_莎希·硬钳|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莎希·硬钳|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Sassy Hardwrench|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sassy Hardwrench|r.
     .goto 174,27.9,75.5
-    .turnin 14001 >>交任务 地精逃生舱
-    .accept 14014 >>接受任务 夺回工具箱！
+    .turnin 14001 >>Turn in Goblin Escape Pods
+    .accept 14014 >>Accept Get Our Stuff Back!
     .target Sassy Hardwrench
 step
-    #arrowtext 与 |cRXP_FRIENDLY_麦克斯·雪崩|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_麦克斯·雪崩|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Maxx Avalanche|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maxx Avalanche|r.
     .goto 174,27.85,74.29
-    .accept 14473 >>接受任务 收拾烂摊子
-    .target 麦克斯·雪崩
+    .accept 14473 >>Accept It's Our Problem Now
+    .target Maxx Avalanche
 step
-    #arrowtext 与 |cRXP_FRIENDLY_巴姆·重磅炸弹|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_巴姆·重磅炸弹|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Bamm Megabomb|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bamm Megabomb|r.
     .goto 174,27.95,74.43
-    .accept 14019 >>接受任务 闯祸的猴子
-    .target 巴姆·重磅炸弹
+    .accept 14019 >>Accept Monkey Business
+    .target Bamm Megabomb
 step << Hunter
     #completewith next
-    .cast 1515 >>驯服1只|cRXP_ENEMY_刺角雏龙|r。
-    .mob 刺角雏龙
+    .cast 1515 >>Tame a |cRXP_ENEMY_Teraptor Hatchling|r.
+    .mob Teraptor Hatchling
 step
-    #arrowtext 使用 [Nitro-Potassium 蕉蕉]\ 对 |cRXP_ENEMY_Bomb Throwing Monkeys|r
+    #arrowtext Use [Nitro-Potassium Bananas]\non |cRXP_ENEMY_Bomb Throwing Monkeys|r
     #sticky
     #label TheLostIslesTeraMonkeys
-    >>在|cRXP_ENEMY_掷弹猴子|r旁使用|T133979:0|t[硝化钾香蕉]，并击杀|cRXP_ENEMY_刺角雏龙|r。
+    >>Use |T133979:0|t[Nitro-Potassium Bananas] on |cRXP_ENEMY_Bomb Throwing Monkeys|r and kill |cRXP_ENEMY_Teraptor Hatchlings|r.
     .use 49028
     .goto 174,27.32,70.14,0,0
     .complete 14473,1 --6/6 Teraptor Hatchling slain
@@ -28906,8 +28904,8 @@ step
     .mob Bomb Throwing Monkeys
     .mob Teraptor Hatchlings
 step
-    #arrowtext 收集\ |cRXP_LOOT_Crates of 工具|r
-    >>收集[|cRXP_LOOT_工具箱|r]。
+    #arrowtext Collect\n|cRXP_LOOT_Crates of Tools|r
+    >>Collect [|cRXP_LOOT_Crates of Tools|r].
     .goto 174,29.73,75.42,15,0
     .goto 174,30.35,74.49,15,0
     .goto 174,30.10,72.55,20,0
@@ -28915,239 +28913,239 @@ step
     .goto 174,27.32,70.14,20,0
     .complete 14014,1 --8/8 Crate of Tools
 step
-    #arrowtext 与 |cRXP_FRIENDLY_麦克斯·雪崩|r 和 |cRXP_FRIENDLY_巴姆·重磅炸弹|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Maxx Avalanche|r and |cRXP_FRIENDLY_Bamm Megabomb|r
     #requires TheLostIslesTeraMonkeys
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_麦克斯·雪崩|r 和 |cRXP_FRIENDLY_巴姆·重磅炸弹|r 对话。
-    .turnin 14473 >>交任务 收拾烂摊子
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maxx Avalanche|r and |cRXP_FRIENDLY_Bamm Megabomb|r.
+    .turnin 14473 >>Turn in It's Our Problem Now
     .goto 174,27.85,74.29
-    .turnin 14019 >>交任务 闯祸的猴子
+    .turnin 14019 >>Turn in Monkey Business
     .goto 174,27.95,74.43
-    .target 麦克斯·雪崩
-    .target 巴姆·重磅炸弹
+    .target Maxx Avalanche
+    .target Bamm Megabomb
 step
-    #arrowtext 与 |cRXP_FRIENDLY_莎希·硬钳|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莎希·硬钳|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Sassy Hardwrench|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sassy Hardwrench|r.
     .goto 174,27.9,75.5
-    .turnin 14014 >>交任务 夺回工具箱！
-    .accept 14248 >>接受任务 急需帮助
+    .turnin 14014 >>Turn in Get Our Stuff Back!
+    .accept 14248 >>Accept Help Wanted
     .target Sassy Hardwrench
 step
-    #arrowtext 与 |cRXP_FRIENDLY_工头戴姆维克|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_工头戴姆维克|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Foreman Dampwick|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Dampwick|r.
     .goto 174,31.27,79.26
-    .turnin 14248 >>交任务 急需帮助
-    .accept 14021 >>接受任务 矿工的麻烦
-    .accept 14031 >>接受任务 捕获未知的信息
-    .target 工头戴姆维克
+    .turnin 14248 >>Turn in Help Wanted
+    .accept 14021 >>Accept Miner Troubles
+    .accept 14031 >>Accept Capturing the Unknown
+    .target Foreman Dampwick
 step
-    #arrowtext 使用 [KTC Snapflash]
-    >>使用 |T134442:0|t[卡亚罗牌自动成像机] 拍摄墙上带有漂浮相机标记的画
+    #arrowtext Use [KTC Snapflash]
+    >>Use the |T134442:0|t[KTC Snapflash] to take a picture of the painting on the wall marked with a floating camera
     .goto 175,55.29,68.39
     .use 49887
     .complete 14031,1 --1/1 Cave Painting 1 Captured
 step
-    #arrowtext 使用 [KTC Snapflash]
-    >>使用 |T134442:0|t[卡亚罗牌自动成像机] 拍摄墙上带有漂浮相机标记的画
+    #arrowtext Use [KTC Snapflash]
+    >>Use the |T134442:0|t[KTC Snapflash] to take a picture of the painting on the wall marked with a floating camera
     .use 49887
     .goto 175,46.82,53.78,10,0
     .goto 175,60.44,63.52
     .complete 14031,2 --1/1 Cave Painting 2 Captured
 step
-    #arrowtext 使用 [KTC Snapflash]
-    >>使用 |T134442:0|t[卡亚罗牌自动成像机] 拍摄墙上带有漂浮相机标记的画
+    #arrowtext Use [KTC Snapflash]
+    >>Use the |T134442:0|t[KTC Snapflash] to take a picture of the painting on the wall marked with a floating camera
     .goto 175,83.43,46.55
     .complete 14031,3 --1/1 Cave Painting 3 Captured
 step
-    #arrowtext 使用 [KTC Snapflash]
+    #arrowtext Use [KTC Snapflash]
     .goto 175,51.28,19.23,10,0
     .goto 175,42.41,23.23,0,0
-    >>使用 |T134442:0|t[卡亚罗牌自动成像机] 拍摄墙上带有漂浮相机标记的画
+    >>Use the |T134442:0|t[KTC Snapflash] to take a picture of the painting on the wall marked with a floating camera
     .use 49887
     .complete 14031,4 --1/1 Pygmy Altar Captured
 step
-    >>跟随并保护 |cRXP_FRIENDLY_惊恐的矿工|r。
+    >>Follow and protect the |cRXP_FRIENDLY_Frightened Miner|r.
     .complete 14021,1 --1/1 Kaja'mite Ore mining a success!
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t尝试与|cRXP_FRIENDLY_死亡的兽人斥候|r对话。
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTry to talk to the |cRXP_FRIENDLY_Dead Orc Scout|r.
     .goto 175,42.3,24.4
-    .accept 14233 >>接受任务 兽人会写字？
-    .target 死亡的兽人斥候
+    .accept 14233 >>Accept Orcs Can Write?
+    .target Dead Orc Scout
 step
-    #arrowtext 离开洞穴
+    #arrowtext Leave the cave
     #requires TheLostIslesSnapflash4
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t离开洞穴并与|cRXP_FRIENDLY_工头戴姆维克|r对话。
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tLeave the cave and talk to |cRXP_FRIENDLY_Foreman Dampwick|r.
     .goto 175,55.05,79.29,10,0
     .goto 174,31.27,79.27
-    .turnin 14021 >>交任务 矿工的麻烦
-    .target 工头戴姆维克
+    .turnin 14021 >>Turn in Miner Troubles
+    .target Foreman Dampwick
 step
-    #arrowtext 与 |cRXP_FRIENDLY_莎希·硬钳|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莎希·硬钳|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Sassy Hardwrench|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sassy Hardwrench|r.
     .goto 174,27.88,75.55
-    .turnin 14031 >>交任务 捕获未知的信息
-    .turnin 14233 >>交任务 兽人会写字？
-    .accept 14234 >>接受任务 敌人的敌人就是……
+    .turnin 14031 >>Turn in Capturing the Unknown
+    .turnin 14233 >>Turn in Orcs Can Write?
+    .accept 14234 >>Accept The Enemy of My Enemy
     .target Sassy Hardwrench
 step
     #completewith next
-    .cast 202844 >>使用你的|T1405809:0|t[枪靴]来加速移动
+    .cast 202844 >>Use your |T1405809:0|t[Gunshoes] to move faster
     .use 132516
-    .itemcount 132516,1
+    .itemcount 132516,1 --Gunshoes
 step
-    #arrowtext 跟随山路向上
+    #arrowtext Follow the path up the mountain
     #completewith next
     .goto 174,32.73,80.53,30,0
     .goto 174,34.36,80.78,30,0
-    .goto 174,36.96,77.02,20 >>沿着小路往山上走
+    .goto 174,36.96,77.02,20 >>Follow the path up the mountain
 step
-    #arrowtext 与 |cRXP_FRIENDLY_阿格娜|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿格娜|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Aggra|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aggra|r.
     .goto 174,37.63,78.02
-    .turnin 14234 >>交任务 敌人的敌人就是……
-    .accept 14235 >>接受任务 恶花谷
-    .target 阿格娜
+    .turnin 14234 >>Turn in The Enemy of My Enemy
+    .accept 14235 >>Accept The Vicious Vale
+    .target Aggra
 step
-    #arrowtext 与 |cRXP_FRIENDLY_基拉格·血牙|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_基拉格·血牙|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Kilag Gorefang|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kilag Gorefang|r.
     .goto 174,35.43,75.71
-    .turnin 14235 >>交任务 恶花谷
-    .accept 14236 >>接受任务 除草无双
-    .target 基拉格·血牙
+    .turnin 14235 >>Turn in The Vicious Vale
+    .accept 14236 >>Accept Weed Whacker
+    .target Kilag Gorefang
 step
-    >>使用 |cRXP_FRIENDLY_除草机|r，并穿过 |cRXP_ENEMY_植物|r 将它们消灭。
+    >>Use the |cRXP_FRIENDLY_Weed Whacker|r and run through the |cRXP_ENEMY_plants|r to kill them.
     .use 49108
     .goto 174,33.90,72.85,30,0
     .goto 174,32.81,76.42,20,0
     .complete 14236,1 --100/100 Deadly Jungle Plants mowed down
-    .mob 致命丛林植物
+    .mob Deadly Jungle Plant
 step
-    #arrowtext 与 |cRXP_FRIENDLY_基拉格·血牙|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_基拉格·血牙|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Kilag Gorefang|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kilag Gorefang|r.
     .goto 174,35.43,75.71
-    .turnin 14236 >>交任务 除草无双
-    .accept 14303 >>接受任务 向阿格娜复命
-    .target 基拉格·血牙
+    .turnin 14236 >>Turn in Weed Whacker
+    .accept 14303 >>Accept Back to Aggra
+    .target Kilag Gorefang
 step
-    #arrowtext 与 |cRXP_FRIENDLY_阿格娜|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿格娜|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Aggra|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aggra|r.
     .goto 174,37.63,78.02
-    .turnin 14303 >>交任务 向阿格娜复命
-    .accept 14237 >>接受任务 继续前进
-    .target 阿格娜
+    .turnin 14303 >>Turn in Back to Aggra
+    .accept 14237 >>Accept Forward Movement
+    .target Aggra
 step
-    #arrowtext 与 |cRXP_FRIENDLY_基拉格·血牙|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_基拉格·血牙|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Kilag Gorefang|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kilag Gorefang|r.
     .goto 174,34.62,66.85
-    .turnin 14237 >>交任务 继续前进
-    .accept 14238 >>接受任务 死亡的红外光
-    .target 基拉格·血牙
+    .turnin 14237 >>Turn in Forward Movement
+    .accept 14238 >>Accept Infrared = Infradead
+    .target Kilag Gorefang
 step
-    #arrowtext 使用 [红外感温眼镜]\ 对 |cRXP_ENEMY_SI:7 Assassins|r
-    >>使用 |T133149:0|t[红外感温眼镜] 并击杀 |cRXP_ENEMY_SI:7 Assassins|r。
+    #arrowtext Use [Infrared Heat Focals]\non |cRXP_ENEMY_SI:7 Assassins|r
+    >>Use |T133149:0|t[Infrared Heat Focals] and kill |cRXP_ENEMY_SI:7 Assassins|r.
     .use 49611
     .goto 174,31.67,65.81
     .complete 14238,1 --10/10 SI:7 Assassin slain
-    .mob 军情七处刺客
+    .mob SI:7 Assassin
 step
-    #arrowtext 与 |cRXP_FRIENDLY_基拉格·血牙|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_基拉格·血牙|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Kilag Gorefang|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kilag Gorefang|r.
     .goto 174,34.61,66.85
-    .turnin 14238 >>交任务 死亡的红外光
-    .accept 14240 >>接受任务 前往峭壁
-    .target 基拉格·血牙
+    .turnin 14238 >>Turn in Infrared = Infradead
+    .accept 14240 >>Accept To the Cliffs
+    .target Kilag Gorefang
 step
-    #arrowtext 与 |cRXP_FRIENDLY_斥候布拉克斯|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_斥候布拉克斯|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Scout Brax|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scout Brax|r.
     .goto 174,25.28,59.84
-    .turnin 14240 >>交任务 前往峭壁
-    .accept 14241 >>接受任务 旋翼机！
-    .target 斥候布拉克斯
+    .turnin 14240 >>Turn in To the Cliffs
+    .accept 14241 >>Accept Get to the Gyrochoppa!
+    .target Scout Brax
 step
-    #arrowtext 击杀\ |cRXP_ENEMY_SI:7 Operatives|r 和 |cRXP_ENEMY_Gyrochoppa 飞行员|r
-    >>杀死 |cRXP_ENEMY_SI:7 Operatives|r 和 |cRXP_ENEMY_Gyrochoppa 飞行员|r。拾取它们的 [|cRXP_LOOT_Gyrochoppa Keys|r]。
+    #arrowtext Kill\n|cRXP_ENEMY_SI:7 Operatives|r and |cRXP_ENEMY_Gyrochoppa Pilot|r
+    >>Kill |cRXP_ENEMY_SI:7 Operatives|r and |cRXP_ENEMY_Gyrochoppa Pilot|r. Loot them for the [|cRXP_LOOT_Gyrochoppa Keys|r].
     .goto 174,23.23,67.50
     .complete 14241,1 --1/1 Gyrochoppa Keys
-    .mob 军情七处特工
-    .mob Gyrochopper 飞行员
+    .mob SI:7 Operative
+    .mob Gyrochopper Pilot
 step
-    >>与|cRXP_FRIENDLY_旋翼机|r互动，你可以无视飞行员。
+    >>Interact with the |cRXP_FRIENDLY_Gyrochoppa|r. You can ignore the pilot.
     .goto 174,23.2,67.5
-    .turnin 14241 >>交任务 旋翼机！
-    .accept 14242 >>接受任务 珍贵的货物
-    .target 旋翼机
+    .turnin 14241 >>Turn in Get to the Gyrochoppa!
+    .accept 14242 >>Accept Precious Cargo
+    .target Gyrochoppa
 step
-    #arrowtext 进入船的下层
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t进入船舱与|cRXP_FRIENDLY_萨尔|r对话。
+    #arrowtext Go down into the ship
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tGo down into the ship and talk to |cRXP_FRIENDLY_Thrall|r.
     .goto 174,11.8,62.7
     .complete 14242,1 --1/1 Precious Cargo located
-    .target 萨尔
+    .target Thrall
 step
-    #arrowtext 与 |cRXP_FRIENDLY_萨尔|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_萨尔|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Thrall|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r.
     .goto 174,11.8,62.8
-    .turnin 14242 >>交任务 珍贵的货物
-    .accept 14326 >>接受任务 甲板上见
-    .target 萨尔
+    .turnin 14242 >>Turn in Precious Cargo
+    .accept 14326 >>Accept Meet Me Up Top
+    .target Thrall
 step
-    #arrowtext 走出去
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t到外面去，在甲板上与 |cRXP_FRIENDLY_萨尔|r 会合。
+    #arrowtext Go outside
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tGo outside and meet |cRXP_FRIENDLY_Thrall|r on the deck.
     .goto 174,12.68,63.33,10,0
     .goto 174,12.4,63.1
-    .turnin 14326 >>交任务 甲板上见
-    .accept 14243 >>接受任务 酋长的复仇
-    .target 萨尔
+    .turnin 14326 >>Turn in Meet Me Up Top
+    .accept 14243 >>Accept Warchief's Revenge
+    .target Thrall
 step
-    >>优先用 |T237589:0|t[闪电打击]（1）攻击小船，否则就击杀 |cRXP_FRIENDLY_游泳的水手|r。
+    >>Focus the small boats with your |T237589:0|t[Lightning Strike] (1). Otherwise just kill the |cRXP_FRIENDLY_swimming sailors|r.
     .complete 14243,1 --50/50 Alliance Sailor slain
 step
-    #arrowtext 与 |cRXP_FRIENDLY_萨尔|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_萨尔|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Thrall|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r.
     .goto 174,35.92,66.72
-    .turnin 14243 >>交任务 酋长的复仇
-    .accept 14445 >>接受任务 暂时的离别
-    .target 萨尔
+    .turnin 14243 >>Turn in Warchief's Revenge
+    .accept 14445 >>Accept Farewell, For Now
+    .target Thrall
 step
-    #arrowtext 与 |cRXP_FRIENDLY_莎希·硬钳|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莎希·硬钳|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Sassy Hardwrench|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sassy Hardwrench|r.
     .goto 174,36.02,67.53
-    .turnin 14445 >>交任务 暂时的离别
-    .accept 14244 >>接受任务 爬升，爬升，火箭分离！
-    .target 莎希·硬钳
+    .turnin 14445 >>Turn in Farewell, For Now
+    .accept 14244 >>Accept Up, Up & Away!
+    .target Sassy Hardwrench
 step
-    #arrowtext 点击 |cRXP_PICK_火箭弹射器|r
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_火箭弹射器|r。
+    #arrowtext Click\n|cRXP_PICK_Rocket Sling|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Rocket Sling|r.
     .goto 174,36.34,66.55
     .skipgossip
     .complete 14244,1 --1/1 Rocket Sling Trip Survived
 step
-    #arrowtext 与 |cRXP_FRIENDLY_工头戴姆维克|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_工头戴姆维克|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Foreman Dampwick|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Dampwick|r.
     .goto 174,44.54,64.36
-    .turnin 14244 >>交任务 爬升，爬升，火箭分离！
-    .accept 14245 >>接受任务 胶囊镇
-    .target 工头戴姆维克
+    .turnin 14244 >>Turn in Up, Up & Away!
+    .accept 14245 >>Accept It's a Town-In-A-Box
+    .target Foreman Dampwick
 step
-    #arrowtext 点击 |cRXP_PICK_胶囊镇引爆器|r
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击 |cRXP_PICK_胶囊镇起爆器|r。
+    #arrowtext Click\n|cRXP_PICK_Town-In-A-Box Plunger|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Town-In-A-Box Plunger|r.
     .goto 174,45.40,65.36
     .complete 14245,1 --1/1 Town-In-A-Box Set Off!
 step
-    #arrowtext 与 |cRXP_FRIENDLY_工头戴姆维克|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_工头戴姆维克|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Foreman Dampwick|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Dampwick|r.
     .goto 174,45.36,64.74
-    .turnin 14245 >>交任务 胶囊镇
-    .accept 27139 >>接受任务 霍巴特需要你
-    .target 工头戴姆维克
+    .turnin 14245 >>Turn in It's a Town-In-A-Box
+    .accept 27139 >>Accept Hobart Needs You
+    .target Foreman Dampwick
 step
-    #arrowtext 与 |cRXP_FRIENDLY_霍巴特·钩锤|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_霍巴特·钩锤|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Hobart Grapplehammer|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hobart Grapplehammer|r.
     .goto 174,45.34,65.22
-    .turnin 27139 >>交任务 霍巴特需要你
-    .accept 24671 >>接受任务 飞翔的肉鸡
-    .target 霍巴特·钩锤
+    .turnin 27139 >>Turn in Hobart Needs You
+    .accept 24671 >>Accept Cluster Cluck
+    .target Hobart Grapplehammer
 step
-    #arrowtext 点击\ |cRXP_PICK_cluckers|r
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击镇上的10个|cRXP_PICK_咯咯鸡|r。
+    #arrowtext Click\n|cRXP_PICK_cluckers|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on 10 |cRXP_PICK_cluckers|r around the town.
 #loop
     .line 174,45.64,64.12,46.45,64.90,47.03,65.75,46.28,66.40,45.39,66.82,44.55,66.91,44.52,65.61,44.67,63.90
     .goto 174,45.64,64.12,20,0
@@ -29160,22 +29158,22 @@ step
     .goto 174,44.67,63.90,20,0
     .complete 24671,1 --10/10 Wild Cluckers captured
 step
-    #arrowtext 与\ |cRXP_FRIENDLY_霍巴特·钩锤|r 和 |cRXP_FRIENDLY_巴姆·重磅炸弹|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_霍巴特·钩锤|r 和 |cRXP_FRIENDLY_巴姆·重磅炸弹|r 对话。
-    .turnin 24671 >>交任务 飞翔的肉鸡
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Hobart Grapplehammer|r and |cRXP_FRIENDLY_Bamm Megabomb|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hobart Grapplehammer|r and |cRXP_FRIENDLY_Bamm Megabomb|r.
+    .turnin 24671 >>Turn in Cluster Cluck
     .goto 174,45.34,65.22
-    .accept 24741 >>接受任务 以小换大
+    .accept 24741 >>Accept Trading Up
     .goto 174,45.25,64.85
-    .target 霍巴特·钩锤
-    .target 巴姆·重磅炸弹
+    .target Hobart Grapplehammer
+    .target Bamm Megabomb
 step
     #completewith next
-    .cast 202844 >>使用你的|T1405809:0|t[枪靴]来加速移动
+    .cast 202844 >>Use your |T1405809:0|t[Gunshoes] to move faster
     .use 132516
-    .itemcount 132516,1
+    .itemcount 132516,1 --Gunshoes
 step
-    #arrowtext 对\ |cRXP_ENEMY_迅猛龙|r 使用 [野生肉鸡蛋]
-    >>使用 |T236997:0|t[野生肉鸡蛋] 将蛋放入陷阱。然后等待直到 |cRXP_ENEMY_raptor|r 踩入陷阱，然后拾取 |cRXP_PICK_棘刺迅猛龙蛋|r。
+    #arrowtext Use [Wild Clucker Eggs]\non |cRXP_ENEMY_raptor|r
+    >>Use the |T236997:0|t[Wild Clucker Eggs] to place an egg into a trap. Then wait until a |cRXP_ENEMY_raptor|r steps into the trap and loot the |cRXP_PICK_Spiny Raptor Egg|r.
     .use 50232
     .goto 174,49.64,63.45,30,0
     .goto 174,50.25,65.80,20,0
@@ -29184,82 +29182,82 @@ step
     .goto 174,45.93,69.88
     .complete 24741,1 --5/5 Spiny Raptor Egg
 step
-    #arrowtext 与\ |cRXP_FRIENDLY_巴姆·重磅炸弹|r 和 |cRXP_FRIENDLY_霍巴特·钩锤|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_巴姆·重磅炸弹|r 和 |cRXP_FRIENDLY_霍巴特·钩锤|r 对话。
-    .turnin 24741 >>交任务 以小换大
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Bamm Megabomb|r and |cRXP_FRIENDLY_Hobart Grapplehammer|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bamm Megabomb|r and |cRXP_FRIENDLY_Hobart Grapplehammer|r.
+    .turnin 24741 >>Turn in Trading Up
     .goto 174,45.25,64.85
-    .accept 24744 >>接受任务 史上第一巨蛋
+    .accept 24744 >>Accept The Biggest Egg Ever
     .goto 174,45.34,65.21
-    .target 巴姆·重磅炸弹
-    .target 霍巴特·钩锤
+    .target Bamm Megabomb
+    .target Hobart Grapplehammer
 step
-    #arrowtext 杀死\ |cRXP_ENEMY_机动战鸡|r
-    >>击杀|cRXP_ENEMY_机动战鸡|r。拾取它的[|cRXP_LOOT_蛋|r]。
+    #arrowtext Kill\n|cRXP_ENEMY_Mechachicken|r
+    >>Kill the |cRXP_ENEMY_Mechachicken|r. Loot its [|cRXP_LOOT_egg|r].
     .goto 174,44.46,54.24
     .complete 24744,1 --1/1 The Biggest Egg Ever
-    .mob 机动战鸡
+    .mob Mechachicken
 step
-    #arrowtext 与\ |cRXP_FRIENDLY_霍巴特·钩锤|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_霍巴特·钩锤|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Hobart Grapplehammer|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hobart Grapplehammer|r.
     .goto 174,45.34,65.21
-    .turnin 24744 >>交任务 史上第一巨蛋
-    .accept 24816 >>接受任务 到底谁站在食物链顶层？
-    .target 霍巴特·钩锤
+    .turnin 24744 >>Turn in The Biggest Egg Ever
+    .accept 24816 >>Accept Who's Top of the Food Chain Now?
+    .target Hobart Grapplehammer
 step
-    #arrowtext 杀死\ |cRXP_ENEMY_Ravenous Lurkers|r
-    >>击杀|cRXP_ENEMY_饥饿潜伏者|r，拾取[|cRXP_LOOT_肉块|r]。
+    #arrowtext Kill\n|cRXP_ENEMY_Ravenous Lurkers|r
+    >>Kill |cRXP_ENEMY_Ravenous Lurkers|r. Loot them for their [|cRXP_LOOT_parts|r].
     .goto 174,43.41,70.15,20,0
     .goto 174,42.49,63.12,20,0
     .goto 174,41.53,63.36,10,0
     .goto 174,42.6,62.7
     .complete 24816,1 --5/5 Shark Parts
-    .mob 贪婪的潜伏者
+    .mob Ravenous Lurker
 step
-    #arrowtext 与\ |cRXP_FRIENDLY_助手格瑞里|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_助手格瑞里|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Assistant Greely|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Assistant Greely|r.
     .goto 174,45.27,65.57
-    .turnin 24816 >>交任务 到底谁站在食物链顶层？
-    .accept 24817 >>接受任务 披着鲨鱼皮的地精
-    .target 助手格瑞里
+    .turnin 24816 >>Turn in Who's Top of the Food Chain Now?
+    .accept 24817 >>Accept A Goblin in Shark's Clothing
+    .target Assistant Greely
 step
-    #arrowtext 点击\n|cRXP_PICK_Mechshark X-蒸汽 控制器|r
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_X型蒸汽机械鲨鱼控制器|r。
+    #arrowtext Click\n|cRXP_PICK_Mechshark X-Steam Controller|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Mechshark X-Steam Controller|r.
     .goto 174,43.68,65.50
     .complete 24817,1 --1/1 Use the Mechashark X-Steam Controller
 step
-    >>使用1技能和2技能击杀|cRXP_ENEMY_巨锤|r。
+    >>Use your 1 & 2 abilities to kill |cRXP_ENEMY_The Hammer|r.
     .goto 174,41.7,66.7
     .complete 24817,2 --1/1 The Hammer slain
-    .mob 巨锤
+    .mob The Hammer
 step
-    #arrowtext 与\ |cRXP_FRIENDLY_霍巴特·钩锤|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_霍巴特·钩锤|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Hobart Grapplehammer|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hobart Grapplehammer|r.
     .goto 174,45.34,65.21
-    .turnin 24817 >>交任务 披着鲨鱼皮的地精
-    .accept 24856 >>接受任务 迫在眉睫的威胁
-    .target 霍巴特·钩锤
+    .turnin 24817 >>Turn in A Goblin in Shark's Clothing
+    .accept 24856 >>Accept Invasion Imminent!
+    .target Hobart Grapplehammer
 step
     #completewith next
-    .cast 202844 >>使用你的|T1405809:0|t[枪靴]来加速移动
+    .cast 202844 >>Use your |T1405809:0|t[Gunshoes] to move faster
     .use 132516
-    .itemcount 132516,1
+    .itemcount 132516,1 --Gunshoes
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_梅格斯·碎纸机|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_梅格斯·碎纸机|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Megs Dreadshredder|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Megs Dreadshredder|r.
     .goto 174,52.2,73.2
-    .turnin 24856 >>交任务 迫在眉睫的威胁
-    .accept 24858 >>接受任务 锈水财阀的地权主张
-    .target 梅格斯·碎纸机
+    .turnin 24856 >>Turn in Invasion Imminent!
+    .accept 24858 >>Accept Bilgewater Cartel Represent
+    .target Megs Dreadshredder
 step
-    #arrowtext 与\ |cRXP_FRIENDLY_"硬币"布雷特|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_“硬币”布雷特|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Brett "Coins" McQuid|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brett "Coins" McQuid|r.
     .goto 174,52.20,73.22
-    .accept 24859 >>接受任务 纳迦皮
-    .target “硬币”布雷特
+    .accept 24859 >>Accept Naga Hide
+    .target Brett "Coins" McQuid
 step
-    #arrowtext 杀死\ |cRXP_ENEMY_Nagas|r
+    #arrowtext Kill\n|cRXP_ENEMY_Nagas|r
     #completewith next
-    >>在更换旗帜时击杀 |cRXP_ENEMY_纳迦|r，并从其身上拾取[|cRXP_LOOT_皮|r]。
+    >>Kill |cRXP_ENEMY_Nagas|r while replacing the banners. Loot them for their [|cRXP_LOOT_hides|r].
     .goto 174,54.12,78.39,0,0
     .complete 24859,1 --5/5 Intact Naga Hide
 step
@@ -29275,457 +29273,457 @@ step
     .goto 174,53.53,76.90,10,0
     .complete 24858,1 --10/10 Naga Banners replaced
 step
-    #arrowtext 杀死\ |cRXP_ENEMY_Nagas|r
-    >>在更换旗帜时击杀 |cRXP_ENEMY_纳迦|r，并从其身上拾取[|cRXP_LOOT_皮|r]。
+    #arrowtext Kill\n|cRXP_ENEMY_Nagas|r
+    >>Kill |cRXP_ENEMY_Nagas|r while replacing the banners. Loot them for their [|cRXP_LOOT_hides|r].
     .goto 174,54.27,83.49,30,0
     .goto 174,54.12,78.39,0,0
     .complete 24859,1 --5/5 Intact Naga Hide
-    .mob 瓦丝耶兰战士
-    .mob 瓦丝耶兰海妖
+    .mob Vashj'elan Warrior
+    .mob Vashj'elan Siren
 step
-    #arrowtext 与\ |cRXP_FRIENDLY_"硬币"布雷特|r 和 |cRXP_FRIENDLY_梅格斯·碎纸机|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_“硬币”布雷特|r 和 |cRXP_FRIENDLY_梅格斯·碎纸机|r 对话。
-    .turnin 24859 >>交任务 纳迦皮
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Brett "Coins" McQuid|r and |cRXP_FRIENDLY_Megs Dreadshredder|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brett "Coins" McQuid|r and |cRXP_FRIENDLY_Megs Dreadshredder|r.
+    .turnin 24859 >>Turn in Naga Hide
     .goto 174,52.2,73.22
-    .turnin 24858 >>交任务 锈水财阀的地权主张
-    .accept 24864 >>接受任务 无法抗拒的池塘小马
+    .turnin 24858 >>Turn in Bilgewater Cartel Represent
+    .accept 24864 >>Accept Irresistible Pool Pony
     .goto 174,52.20,73.14
-    .target “硬币”布雷特
-    .target 梅格斯·碎纸机
+    .target Brett "Coins" McQuid
+    .target Megs Dreadshredder
 step
     #completewith next
     .use 50602
-    .cast 71914 >>到达水边后使用|T132261:0|t[无法抗拒的池塘小马]。
+    .cast 71914 >>Use the |T132261:0|t[Irresistible Pool Pony] once you reach the water.
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_Naga Hatchlings|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_纳迦幼崽|r对话。|cRXP_WARN_小心不要用范围技能误杀幼崽|r。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Naga Hatchlings|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Naga Hatchlings|r. |cRXP_WARN_Be careful to not kill the hatchlings with AoE abilities|r.
     .use 50602
     .goto 174,59.23,83.03
     .complete 24864,1 --12/12 Naga Hatchlings lured
-    .target 纳迦幼崽
+    .target Naga Hatchling
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_梅格斯·碎纸机|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_梅格斯·碎纸机|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Megs Dreadshredder|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Megs Dreadshredder|r.
     .goto 174,52.2,73.15
-    .turnin 24864 >>交任务 无法抗拒的池塘小马
-    .accept 24868 >>接受任务 和谈的希望
-    .target 梅格斯·碎纸机
+    .turnin 24864 >>Turn in Irresistible Pool Pony
+    .accept 24868 >>Accept Surrender or Else!
+    .target Megs Dreadshredder
 step
-    >>|cRXP_WARN_看到生成动画（紫色圆圈）时即可返回，但仍需注意身后并击杀 |cRXP_ENEMY_首领|r|r。
+    >>|cRXP_WARN_When you see the spawn animation (purple circle) then you can already go back. Keep looking behind you because you still have to kill the |cRXP_ENEMY_leader|r|r.
     .goto 174,54.07,90.06,1,0
     .goto 174,53.90,84.17
     .complete 24868,1 --1/1 Leader of the naga dealt with
-    .mob 深渊无面者
+    .mob Faceless of the Deep
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_梅格斯·碎纸机|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_梅格斯·碎纸机|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Megs Dreadshredder|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Megs Dreadshredder|r.
     .goto 174,52.20,73.15
-    .turnin 24868 >>交任务 和谈的希望
-    .accept 24897 >>接受任务 返回胶囊镇
-    .target 梅格斯·碎纸机
+    .turnin 24868 >>Turn in Surrender or Else!
+    .accept 24897 >>Accept Get Back to Town
+    .target Megs Dreadshredder
 step
     #completewith next
-    .cast 202844 >>使用你的|T1405809:0|t[枪靴]来加速移动
+    .cast 202844 >>Use your |T1405809:0|t[Gunshoes] to move faster
     .use 132516
-    .itemcount 132516,1
+    .itemcount 132516,1 --Gunshoes
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_莎希·硬钳|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莎希·硬钳|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Sassy Hardwrench|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sassy Hardwrench|r.
     .goto 174,45.18,64.91
-    .turnin 24897 >>交任务 返回胶囊镇
-    .accept 24901 >>接受任务 胶囊镇：遭到攻击
-    .target 莎希·硬钳
+    .turnin 24897 >>Turn in Get Back to Town
+    .accept 24901 >>Accept Town-In-A-Box: Under Attack
+    .target Sassy Hardwrench
 step
-    #arrowtext 点击\ |cRXP_PICK_B.C. Eliminator|r 和 |cRXP_ENEMY_Oomlot Warriors|r
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_B.C.消除者|r进入并向|cRXP_ENEMY_乌姆洛特战士|r射击。
+    #arrowtext Click\n|cRXP_PICK_B.C. Eliminator|r and |cRXP_ENEMY_Oomlot Warriors|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick a |cRXP_PICK_B.C. Eliminator|r to enter it and shoot at |cRXP_ENEMY_Oomlot Warriors|r.
     .goto 174,45.7,65.0
     .complete 24901,1 --30/30 Oomlot Warriors defeated
 step
     #completewith next
-    +|cRXP_WARN_离开载具|r。
+    +|cRXP_WARN_Leave the vehicle|r.
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_莎希·硬钳|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莎希·硬钳|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Sassy Hardwrench|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sassy Hardwrench|r.
     .goto 174,45.2,64.9
-    .turnin 24901 >>交任务 胶囊镇：遭到攻击
-    .accept 24924 >>接受任务 乌姆洛特村
-    .target 莎希·硬钳
+    .turnin 24901 >>Turn in Town-In-A-Box: Under Attack
+    .accept 24924 >>Accept Oomlot Village
+    .target Sassy Hardwrench
 step
-    #arrowtext 与\ |cRXP_FRIENDLY_小静|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_小静|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Izzy|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Izzy|r.
     .goto 174,56.56,71.96
-    .turnin 24924 >>交任务 乌姆洛特村
-    .accept 24925 >>接受任务 营救俘虏
-    .accept 24929 >>接受任务 传递信息
-    .target 小静
+    .turnin 24924 >>Turn in Oomlot Village
+    .accept 24925 >>Accept Free the Captives
+    .accept 24929 >>Accept Send a Message
+    .target Izzy
 step
-    #arrowtext 杀死\ |cRXP_ENEMY_Oomlot Shamans|r
+    #arrowtext Kill\n|cRXP_ENEMY_Oomlot Shamans|r
     #completewith next
-    >>击杀|cRXP_ENEMY_乌姆洛特萨满祭司|r以解救地精。
+    >>Kill |cRXP_ENEMY_Oomlot Shamans|r to free the goblins.
     .goto 174,59.16,70.39,0,0
     .complete 24925,1 --5/5 Goblin Captives freed
-    .mob 乌姆洛特萨满祭司
+    .mob Oomlot Shaman
 step
-    #arrowtext 杀死\ |cRXP_ENEMY_英格维|r
-    >>击杀 |cRXP_ENEMY_英格维|r。
+    #arrowtext Kill\n|cRXP_ENEMY_Yngwie|r
+    >>Kill |cRXP_ENEMY_Yngwie|r.
     .goto 174,59.20,67.32,15,0
     .goto 174,62.91,68.54
     .complete 24929,1 --1/1 Yngwie slain
-    .mob 英格维
+    .mob Yngwie
 step
-    #arrowtext 杀死\ |cRXP_ENEMY_Oomlot Shamans|r
-    >>击杀|cRXP_ENEMY_乌姆洛特萨满祭司|r以解救地精。
+    #arrowtext Kill\n|cRXP_ENEMY_Oomlot Shamans|r
+    >>Kill |cRXP_ENEMY_Oomlot Shamans|r to free the goblins.
     .goto 174,59.16,70.39
     .complete 24925,1 --5/5 Goblin Captives freed
-    .mob 乌姆洛特萨满祭司
+    .mob Oomlot Shaman
 step
-    #arrowtext 与\ |cRXP_FRIENDLY_小静|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_小静|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Izzy|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Izzy|r.
     .goto 174,56.56,71.96
-    .turnin 24925 >>交任务 营救俘虏
-    .turnin 24929 >>交任务 传递信息
-    .accept 24937 >>接受任务 危机解除
-    .target 小静
+    .turnin 24925 >>Turn in Free the Captives
+    .turnin 24929 >>Turn in Send a Message
+    .accept 24937 >>Accept Oomlot Dealt With
+    .target Izzy
 step
     #completewith next
-    .hs >>炉石回到胶囊镇
+    .hs >>Hearth to Town-In-A-Box
     .cooldown item,6948,>0,1
     .use 6948
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_莎希·硬钳|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莎希·硬钳|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Sassy Hardwrench|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sassy Hardwrench|r.
     .goto 174,45.2,64.9
-    .turnin 24937 >>交任务 危机解除
-    .accept 24940 >>接受任务 前往火山口
-    .target 莎希·硬钳
+    .turnin 24937 >>Turn in Oomlot Dealt With
+    .accept 24940 >>Accept Up the Volcano
+    .target Sassy Hardwrench
 step
     #completewith next
-    .cast 202844 >>使用你的|T1405809:0|t[枪靴]来加速移动
+    .cast 202844 >>Use your |T1405809:0|t[Gunshoes] to move faster
     .use 132516
-    .itemcount 132516,1
+    .itemcount 132516,1 --Gunshoes
 step
     #completewith next
-    +|cRXP_WARN_爬山时避开|cRXP_ENEMY_地精僵尸|r|r。
+    +|cRXP_WARN_Avoid the |cRXP_ENEMY_Goblin Zombies|r while running up the mountain|r.
 step
-    #arrowtext 与 |cRXP_FRIENDLY_Coach Crosscheck|r（克罗斯彻克教练）、|cRXP_FRIENDLY_Foreman Dampwick|r（工头戴姆维克）和 |cRXP_FRIENDLY_Assistant Greely|r（助手格瑞里）对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_克罗斯彻克教练|r、|cRXP_FRIENDLY_工头戴姆维克|r和|cRXP_FRIENDLY_助手格瑞里|r对话。
-    .turnin 24940 >>交任务 前往火山口
-    .accept 24942 >>接受任务 僵尸大战超级火箭靴
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Coach Crosscheck|r and |cRXP_FRIENDLY_Foreman Dampwick|r and |cRXP_FRIENDLY_Assistant Greely|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Coach Crosscheck|r, |cRXP_FRIENDLY_Foreman Dampwick|r and |cRXP_FRIENDLY_Assistant Greely|r.
+    .turnin 24940 >>Turn in Up the Volcano
+    .accept 24942 >>Accept Zombies vs. Super Booster Rocket Boots
     .goto 174,51.8,47.1
-    .accept 24945 >>接受任务 三个小俾格米人
+    .accept 24945 >>Accept Three Little Pygmies
     .goto 174,51.85,47.19
-    .accept 24946 >>接受任务 摇滚粉末
+    .accept 24946 >>Accept Rockin' Powder
     .goto 174,51.73,47.38
-    .target 教练 Crosscheck
-    .target 工头戴姆维克
-    .target 助手格瑞里
+    .target Coach Crosscheck
+    .target Foreman Dampwick
+    .target Assistant Greely
 step
     #completewith next
-    >>|cRXP_WARN_如果你是暗牧，需要先取消暗影形态才能用这双鞋子|r。 <<Priest
+    >>|cRXP_WARN_You have to cancel Shadowform if you are a shadow priest before you can use the boots|r. <<Priest
     .use 52013
     .goto 174,51.77,46.97
-    .cast 72891 >>|cRXP_WARN_使用|T133029:0|t[超级助推火箭靴]|r。
+    .cast 72891 >>|cRXP_WARN_Use the |T133029:0|t[Super Booster Rocket Boots]|r.
 step
     #completewith next
-    >>使用火箭靴踩过 |cRXP_ENEMY_地精僵尸|r 将其击杀。
-    >>|cRXP_WARN_避开|cRXP_ENEMY_乌斯坦猎头者|r|r，他们很容易将你击杀。
+    >>Kill |cRXP_ENEMY_Goblin Zombies|r by walking over them with the Rocket Boots.
+    >>|cRXP_WARN_Avoid |cRXP_ENEMY_Oostan Headhunters|r|r. They can kill you very easily.
     .use 52013
     .complete 24942,1 --50/50 Goblin Zombies slain
 step
     #completewith TheLostIslesGaahl
-    >>拾取地面上的|cRXP_PICK_摇滚粉末|r。
+    >>Pick up |cRXP_PICK_Rockin' Powder|r from the ground.
     .complete 24946,1 --5/5 Rockin' Powder
 step
-    #arrowtext 击杀\n|cRXP_ENEMY_马奥默|r
-    >>击杀 |cRXP_ENEMY_马奥默|r。
+    #arrowtext Kill\n|cRXP_ENEMY_Malmo|r
+    >>Kill |cRXP_ENEMY_Malmo|r.
     .goto 174,58.74,47.16
     .complete 24945,2 --1/1 Malmo slain
-    .mob 马奥默
+    .mob Malmo
 step
-    #arrowtext 击杀\n|cRXP_ENEMY_塔卢可|r
-    >>击杀 |cRXP_ENEMY_塔卢可|r。
+    #arrowtext Kill\n|cRXP_ENEMY_Teloch|r
+    >>Kill |cRXP_ENEMY_Teloch|r.
     .goto 174,63.7,52.76
     .complete 24945,3 --1/1 Teloch slain
-    .mob 塔卢可
+    .mob Teloch
 step
-    #arrowtext 击杀\n|cRXP_ENEMY_加奥|r
+    #arrowtext Kill\n|cRXP_ENEMY_Gaahl|r
     #label TheLostIslesGaahl
-    >>杀死 |cRXP_ENEMY_加奥|r.
+    >>Kill |cRXP_ENEMY_Gaahl|r.
     .goto 174,59.59,40.20
     .complete 24945,1 --1/1 Gaahl slain
-    .mob 加奥
+    .mob Gaahl
 step
-    >>四处查看并拾取剩余的|cRXP_PICK_摇滚粉末|r。
+    >>Look around and pick up the remaining |cRXP_PICK_Rockin' Powders|r.
     .goto 174,58.8,40.5
     .complete 24946,1 --5/5 Rockin' Powder
 step
-    #arrowtext 击杀\n|cRXP_ENEMY_地精僵尸|r
-    >>使用火箭靴踩过 |cRXP_ENEMY_地精僵尸|r 将其击杀。
+    #arrowtext Kill\n|cRXP_ENEMY_Goblin Zombies|r
+    >>Kill |cRXP_ENEMY_Goblin Zombies|r by walking over them with the Rocket Boots.
     .use 52013
     .goto 174,56.67,44.26,15,0
     .complete 24942,1 --50/50 Goblin Zombies slain
 step
-    #arrowtext 与 |cRXP_FRIENDLY_Foreman Dampwick|r（工头戴姆维克）、|cRXP_FRIENDLY_Assistant Greely|r（助手格瑞里）和 |cRXP_FRIENDLY_Coach Crosscheck|r（克罗斯彻克教练）对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_工头戴姆维克|r、|cRXP_FRIENDLY_助手格瑞里|r 和 |cRXP_FRIENDLY_克罗斯彻克教练|r 对话。
-    .turnin 24945 >>交任务 三个小俾格米人
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Foreman Dampwick|r and |cRXP_FRIENDLY_Assistant Greely|r and |cRXP_FRIENDLY_Coach Crosscheck|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Dampwick|r, |cRXP_FRIENDLY_Assistant Greely|r, and |cRXP_FRIENDLY_Coach Crosscheck|r.
+    .turnin 24945 >>Turn in Three Little Pygmies
     .goto 174,51.85,47.20
-    .turnin 24946 >>交任务 摇滚粉末
+    .turnin 24946 >>Turn in Rockin' Powder
     .goto 174,51.73,47.38
-    .turnin 24942 >>交任务 僵尸大战超级火箭靴
-    .accept 24952 >>接受任务 火箭靴的威力
+    .turnin 24942 >>Turn in Zombies vs. Super Booster Rocket Boots
+    .accept 24952 >>Accept Rocket Boot Boost
     .goto 174,51.8,47.1
-    .target 工头戴姆维克
-    .target 助手格瑞里
-    .target 教练 Crosscheck
+    .target Foreman Dampwick
+    .target Assistant Greely
+    .target Coach Crosscheck
 step
-    >>使用|T133029:0|t[沾满摇滚粉末的火箭靴]
+    >>Use the |T133029:0|t[Rockin' Powder Infused Rocket Boots]
     .use 52032
     .complete 24952,1 --1/1 Rockin' Powder Infused Rocket Boots used
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_霍巴特·钩锤|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_霍巴特·钩锤|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Hobart Grapplehammer|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hobart Grapplehammer|r.
     .goto 174,68.93,46.44
-    .turnin 24952 >>交任务 火箭靴的威力
-    .accept 24954 >>接受任务 龟神的子嗣
-    .target 霍巴特·钩锤
+    .turnin 24952 >>Turn in Rocket Boot Boost
+    .accept 24954 >>Accept Children of a Turtle God
+    .target Hobart Grapplehammer
 step
-    #arrowtext 击杀\n|cRXP_ENEMY_沃卡洛斯之子|r
-    >>击杀|cRXP_ENEMY_沃卡洛斯之子|r，从它们身上拾取[|cRXP_LOOT_火囊|r]。
+    #arrowtext Kill\n|cRXP_ENEMY_Childs of Volcanoth|r
+    >>Kill |cRXP_ENEMY_Childs of Volcanoth|r. Loot them for the [|cRXP_LOOT_glands|r].
     .goto 174,66.92,44.29,20,0
     .goto 174,68.64,43.40
     .complete 24954,1 --5/5 Fire Gland
-    .mob 沃卡洛斯的子嗣
+    .mob Childs of Volcanoth
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_霍巴特·钩锤|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_霍巴特·钩锤|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Hobart Grapplehammer|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hobart Grapplehammer|r.
     .goto 174,68.93,46.44
-    .turnin 24954 >>交任务 龟神的子嗣
-    .accept 24958 >>接受任务 沃卡洛斯！
-    .target 霍巴特·钩锤
+    .turnin 24954 >>Turn in Children of a Turtle God
+    .accept 24958 >>Accept Volcanoth!
+    .target Hobart Grapplehammer
 step
-    >>在路径点处对|cRXP_ENEMY_沃卡洛斯|r连续使用|T135624:0|t[地精火箭筒]。
+    >>Spam Use |T135624:0|t[Bootzooka] at the waypoint location on |cRXP_ENEMY_Volcanoth|r.
     .use 52043
     .goto 176,55.55,33.93
     .complete 24958,1 --1/1 Volcanoth slain
-    .mob 沃卡洛斯
+    .mob Volcanoth
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_莎希·硬钳|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莎希·硬钳|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Sassy Hardwrench|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sassy Hardwrench|r.
     .goto 176,62.99,49.87
-    .turnin 24958 >>交任务 沃卡洛斯！
-    .accept 25023 >>接受任务 老朋友
-    .target 莎希·硬钳
+    .turnin 24958 >>Turn in Volcanoth!
+    .accept 25023 >>Accept Old Friends
+    .target Sassy Hardwrench
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_萨尔|r 和 |cRXP_FRIENDLY_莎希·硬钳|r 和 |cRXP_FRIENDLY_阿格娜|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_萨尔|r, |cRXP_FRIENDLY_莎希·硬钳|r, 和 |cRXP_FRIENDLY_阿格娜|r 对话。
-    .turnin 25023 >>交任务 老朋友
-    .accept 25024 >>接受任务 击退伞兵
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Thrall|r and |cRXP_FRIENDLY_Sassy Hardwrench|r and |cRXP_FRIENDLY_Aggra|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r, |cRXP_FRIENDLY_Sassy Hardwrench|r, and |cRXP_FRIENDLY_Aggra|r.
+    .turnin 25023 >>Turn in Old Friends
+    .accept 25024 >>Accept Repel the Paratroopers
     .goto 174,36.79,43.14
-    .accept 25058 >>接受任务 以地精的方式拆除地雷
+    .accept 25058 >>Accept Mine Disposal, the Goblin Way
     .goto 174,37.35,41.91
-    .accept 25093 >>接受任务 军情七处的头目们
+    .accept 25093 >>Accept The Heads of the SI:7
     .goto 174,36.26,43.36
-    .target 萨尔
-    .target 莎希·硬钳
-    .target 阿格娜
+    .target Thrall
+    .target Sassy Hardwrench
+    .target Aggra
 step
-    #arrowtext 使用 [Satchel of Grenades]
+    #arrowtext Use [Satchel of Grenades]
     #sticky
     #label TheLostIslesLandMines
-    >>使用|T133716:0|t[一袋手榴弹]摧毁地雷
+    >>Use the |T133716:0|t[Satchel of Grenades] to destroy the mines
     .goto 174,32.38,36.34,0,0
     .use 52280
     .complete 25058,1 --10/10 Land Mines detonated
 step
     #completewith TheLostIslesCyn
-    >>击杀|cRXP_ENEMY_联盟伞兵|r。
+    >>Kill |cRXP_ENEMY_Alliance Paratrooper|r.
     .complete 25024,1 --10/10 Alliance Paratrooper slain
-    .mob 联盟 Paratrooper
+    .mob Alliance Paratrooper
 step
-    #arrowtext 击杀\n|cRXP_ENEMY_指挥官亚林登|r
-    >>击杀|cRXP_ENEMY_指挥官亚林登|r，从他身上拾取[|cRXP_LOOT_指挥官亚林登的徽记|r]。
+    #arrowtext Kill\n|cRXP_ENEMY_Commander Arrington|r
+    >>Kill |cRXP_ENEMY_Commander Arrington|r. Loot him for his [|cRXP_LOOT_head|r].
     .goto 174,32.29,42.89
     .complete 25093,1 --1/1 Commander Arrington's Head
-    .target 指挥官亚林登
+    .target Commander Arrington
 step
-    #arrowtext 击杀\n|cRXP_ENEMY_阿莱克西·默嚎|r
-    >>击杀|cRXP_ENEMY_阿莱克西·默嚎|r，从他身上拾取[|cRXP_LOOT_阿莱克西·默嚎的徽记|r]。
+    #arrowtext Kill\n|cRXP_ENEMY_Alexi Silenthowl|r
+    >>Kill |cRXP_ENEMY_Alexi Silenthowl|r. Loot him for his [|cRXP_LOOT_head|r].
     .goto 174,30.80,33.92
     .complete 25093,3 --1/1 Alexi Silenthowl's Head
-    .mob 阿莱克西·默嚎
+    .mob Alexi Silenthowl
 step
-    #arrowtext 击杀\n|cRXP_ENEMY_黑刃希恩|r
+    #arrowtext Kill\n|cRXP_ENEMY_Darkblade Cyn|r
     #label TheLostIslesCyn
-    >>击杀|cRXP_ENEMY_黑刃希恩|r，从他身上拾取[|cRXP_LOOT_黑刃希恩的徽记|r]。
+    >>Kill |cRXP_ENEMY_Darkblade Cyn|r. Loot him for his [|cRXP_LOOT_head|r].
     .goto 174,33.44,27.88
     .complete 25093,2 --1/1 Darkblade Cyn's Head
-    .mob 黑刃希恩
+    .mob Darkblade Cyn
 step
-    #arrowtext 击杀\n|cRXP_ENEMY_联盟伞兵|r
-    >>击杀|cRXP_ENEMY_联盟伞兵|r。
+    #arrowtext Kill\n|cRXP_ENEMY_Alliance Paratrooper|r
+    >>Kill |cRXP_ENEMY_Alliance Paratrooper|r.
     .goto 174,32.38,36.34
     .complete 25024,1 --10/10 Alliance Paratrooper slain
-    .mob 联盟 Paratrooper
+    .mob Alliance Paratrooper
 step
     #requires TheLostIslesLandMines
     #completewith next
     .cooldown item,6948,<1,1
-    .hs >>炉石回到失落群岛酋长瞭望台
+    .hs >>Hearth to Warchief's Lookout
     .use 6948
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_萨尔|r 和 |cRXP_FRIENDLY_阿格娜|r 和 |cRXP_FRIENDLY_莎希·硬钳|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Thrall|r and |cRXP_FRIENDLY_Aggra|r and |cRXP_FRIENDLY_Sassy Hardwrench|r
     #requires TheLostIslesLandMines
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_萨尔|r, |cRXP_FRIENDLY_阿格娜|r, 和 |cRXP_FRIENDLY_莎希·硬钳|r 对话。
-    .turnin 25024 >>交任务 击退伞兵
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r, |cRXP_FRIENDLY_Aggra|r, and |cRXP_FRIENDLY_Sassy Hardwrench|r.
+    .turnin 25024 >>Turn in Repel the Paratroopers
     .goto 174,36.8,43.1
-    .turnin 25093 >>交任务 军情七处的头目们
+    .turnin 25093 >>Turn in The Heads of the SI:7
     .goto 174,36.26,43.37
-    .turnin 25058 >>交任务 以地精的方式拆除地雷
-    .accept 25066 >>接受任务 科赞的骄傲
+    .turnin 25058 >>Turn in Mine Disposal, the Goblin Way
+    .accept 25066 >>Accept The Pride of Kezan
     .goto 174,37.35,41.91
-    .target 萨尔
-    .target 阿格娜
-    .target 莎希·硬钳
+    .target Thrall
+    .target Aggra
+    .target Sassy Hardwrench
 step
     #completewith next
     .skipgossip 38387,1
-    .vehicle 39074 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_莎希·硬钳|r对话以进入载具。
-    .target 莎希·硬钳
+    .vehicle 39074 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sassy Hardwrench|r to enter the vehicle.
+    .target Sassy Hardwrench
 step
-    #arrowtext 使用 [Wild Weasel Rockets]
-    >>冷却好就使用|T134273:0|t[狂野狡诈火箭](2)
-    >>否则连续使用|T135627:0|t[机枪扫射](1)
+    #arrowtext Use [Wild Weasel Rockets]
+    >>Use |T134273:0|t[Wild Weasel Rockets] (2) on cooldown
+    >>Otherwise spam |T135627:0|t[Machine Gun] (1)
     .goto 174,30.37,39.89
     .complete 25066,1 --10/10 Gnomeregan Stealth Fighters shot down
 step
-    #arrowtext 飞回
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t飞回来与 |cRXP_FRIENDLY_莎希·硬钳|r 对话。
+    #arrowtext Fly back
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFly back and talk to |cRXP_FRIENDLY_Sassy Hardwrench|r.
     .goto 174,37.36,41.92
-    .turnin 25066 >>交任务 科赞的骄傲
-    .accept 25098 >>接受任务 觐见酋长
-    .target 莎希·硬钳
+    .turnin 25066 >>Turn in The Pride of Kezan
+    .accept 25098 >>Accept The Warchief Wants You
+    .target Sassy Hardwrench
 step
-    #arrowtext 与 |cRXP_FRIENDLY_萨尔|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_萨尔|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Thrall|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r.
     .goto 174,36.79,43.13
-    .turnin 25098 >>交任务 觐见酋长
-    .accept 25099 >>接受任务 借巴斯蒂亚一用
-    .target 萨尔
+    .turnin 25098 >>Turn in The Warchief Wants You
+    .accept 25099 >>Accept Borrow Bastia
+    .target Thrall
 step
-    #arrowtext 与 |cRXP_FRIENDLY_Kilag 血牙狼人|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_基拉格·血牙|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Kilag Gorefang|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kilag Gorefang|r.
     .goto 174,33.8,38.8
-    .turnin 25099 >>交任务 借巴斯蒂亚一用
-    .accept 25100 >>接受任务 奔跑吧
-    .timer 87,黑豹骑行
-    .target 基拉格·血牙
+    .turnin 25099 >>Turn in Borrow Bastia
+    .accept 25100 >>Accept Let's Ride
+    .timer 87,Panther Ride
+    .target Kilag Gorefang
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_史莉琪·剃刀|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t骑上黑豹后，与|cRXP_FRIENDLY_史莉琪·剃刀|r交谈。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Slinky Sharpshiv|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Slinky Sharpshiv|r after riding with the panther.
     .goto 174,53.71,34.94
-    .turnin 25100 >>交任务 奔跑吧
-    .accept 25109 >>接受任务 加里维克斯劳工矿井
-    .target 史莉琪·剃刀
+    .turnin 25100 >>Turn in Let's Ride
+    .accept 25109 >>Accept The Gallywix Labor Mine
+    .target Slinky Sharpshiv
 step
-    #arrowtext 返回洞穴并跳下去
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t进入洞穴，跳下后与|cRXP_FRIENDLY_助手格瑞里|r对话。
+    #arrowtext Enter the cave, jump down
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tEnter the cave, jump down and talk to |cRXP_FRIENDLY_Assistant Greely|r.
     .goto 174,54.09,36.01,10,0
     .goto 174,54.94,33.72,10,0
     .goto 174,53.17,36.55
-    .turnin 25109 >>交任务 加里维克斯劳工矿井
-    .accept 25110 >>接受任务 卡亚可乐，给你灵感！(注册商标)
-    .target 助手格瑞里
+    .turnin 25109 >>Turn in The Gallywix Labor Mine
+    .accept 25110 >>Accept Kaja'Cola Gives You IDEAS! (TM)
+    .target Assistant Greely
 step
-    >>从地上捡起一瓶|cRXP_PICK_卡亚零一度可乐|r。
+    >>Pick up a |cRXP_PICK_Kaja'Cola Zero-One|r from the ground.
     .goto 174,53.59,37.41,10,0
     .goto 174,53.94,37.46,10,0
     .goto 174,53.70,36.67
     .complete 25110,1 --1/1 Kaja'Cola Zero-One
 step
-    #arrowtext 与\ |cRXP_FRIENDLY_助手格瑞里|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_助手格瑞里|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Assistant Greely|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Assistant Greely|r.
     .goto 174,53.17,36.55
-    .turnin 25110 >>交任务 卡亚可乐，给你灵感！(注册商标)
-    .accept 25122 >>接受任务 重振士气
-    .accept 25123 >>接受任务 摧毁灵魂石！
-    .target 助手格瑞里
+    .turnin 25110 >>Turn in Kaja'Cola Gives You IDEAS! (TM)
+    .accept 25122 >>Accept Morale Boost
+    .accept 25123 >>Accept Throw It On the Ground!
+    .target Assistant Greely
 step
     #sticky
-    >>你需要总共收集9瓶卡亚零一度可乐
-    >>对|cRXP_FRIENDLY_科赞公民|r使用可乐
-    .use 52484
+    >>You need to collect a total of 9 Kaja'Colas Zero-One
+    >>Click on the |cRXP_PICK_Kaja'Cola Zero-One|r macro in the "Active Items Frame" to use it on |cRXP_FRIENDLY_Kezan Citizen|r.
+    .macro Kaja'Cola Zero-One,134400 >>/targetexact Kezan Citizen\n/use item:52484
     .collect 52484,9,25122,0xF
     .complete 25122,4 --6/6 Other goblin's minds freed
-    .target 科赞公民
+    .target Kezan Citizen
 step
-    #title 解救王牌
-    >>对|cRXP_FRIENDLY_王牌|r使用卡亚零一度可乐
+    #title Free Ace
+    >>Click on the |cRXP_PICK_Kaja'Cola Zero-One|r macro in the "Active Items Frame" to use it on |cRXP_FRIENDLY_Ace|r.
     .goto 174,57.1,36.9
-    .use 52484
+    .macro Kaja'Cola Zero-One,134400 >>/targetexact Ace\n/use item:52484
     .complete 25122,1 --1/1 Ace's mind freed
-    .target 王牌
+    .target Ace
 step
-    #title 解救小静
-    >>对|cRXP_FRIENDLY_小静|r使用卡亚零一度可乐
+    #title Free Izzy
+    >>Click on the |cRXP_PICK_Kaja'Cola Zero-One|r macro in the "Active Items Frame" to use it on |cRXP_FRIENDLY_Izzy|r.
     .goto 174,57.01,35.02
-    .use 52484
+    .macro Kaja'Cola Zero-One,134400 >>/targetexact Izzy\n/use item:52484
     .complete 25122,2 --1/1 Izzy's mind freed
-    .target 小静
+    .target Izzy
 step
-    #arrowtext 杀死\ |cRXP_ENEMY_残酷主人"裂影"|r
-    >>击杀|cRXP_ENEMY_残酷主人“裂影”|r，拾取飞行的紫色|cRXP_PICK_灵魂石|r。对|cRXP_ENEMY_残酷主人“裂影”|r的尸体使用|T134336:0|t[裂影的灵魂石]
-    .use 52481
+    #arrowtext Kill\n|cRXP_ENEMY_Blastshadow the Brutemaster|r
+    >>Kill |cRXP_ENEMY_Blastshadow the Brutemaster|r and click on the flying purple |cRXP_PICK_Soulstone|r. Click on the |cRXP_PICK_Blastshadow's Soulstone|r macro in the "Active Items Frame" to use it on his corpse.
+    .macro Blastshadow's Soulstone,134336 >>/targetexact Blastshadow the Brutemaster\n/use [@target,dead] item:52481
     .goto 174,56.18,32.29
     .complete 25123,1 --1/1 Blastshadow's Soulstone destroyed
-    .mob 残酷主人"裂影"
+    .mob Blastshadow the Brutemaster
 step
-    #title 解救大胖
-    >>对|cRXP_FRIENDLY_大胖|r使用卡亚零一度可乐
+    #title Free Gobber
+    >>Click on the |cRXP_PICK_Kaja'Cola Zero-One|r macro in the "Active Items Frame" to use it on |cRXP_FRIENDLY_Gobber|r.
     .goto 174,57.04,32.17
-    .use 52484
+    .macro Kaja'Cola Zero-One,134400 >>/targetexact Gobber\n/use item:52484
     .complete 25122,3 --1/1 Gobber's mind freed
-    .target 大胖
+    .target Gobber
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_助手格瑞里|r 对话。
-    .turnin 25123 >>交任务 摧毁灵魂石！
-    .turnin 25122 >>交任务 重振士气
-    .accept 25125 >>接受任务 矿道尽头的亮光
-    .target 助手格瑞里
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Assistant Greely|r.
+    .turnin 25123 >>Turn in Throw It On the Ground!
+    .turnin 25122 >>Turn in Morale Boost
+    .accept 25125 >>Accept Light at the End of the Tunnel
+    .target Assistant Greely
 step
-    #arrowtext 点击\ |cRXP_PICK_地雷货车|r
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_|r|cRXP_PICK_矿车|r。
+    #arrowtext Click\n|cRXP_PICK_Mine Cart|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_|r|cRXP_PICK_Mine Cart|r.
     .goto 174,56.29,27.33
-    .turnin 25125 >>交任务 矿道尽头的亮光
-    .accept 25184 >>接受任务 乘坐采矿车
+    .turnin 25125 >>Turn in Light at the End of the Tunnel
+    .accept 25184 >>Accept Wild Mine Cart Ride
 step
-    #arrowtext 乘坐地雷货车
-    >>乘坐矿车
+    #arrowtext Ride with the Mine Cart
+    >>Ride with the Mine Cart
     .goto 174,54.2,17.0
     .complete 25184,1 --1/1 Mine Cart ridden
 step
-    #arrowtext 与\ |cRXP_FRIENDLY_助手格瑞里|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_助手格瑞里|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Assistant Greely|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Assistant Greely|r.
     .goto 174,54.4,16.9
-    .turnin 25184 >>交任务 乘坐采矿车
-    .accept 25200 >>接受任务 清理伐木机
+    .turnin 25184 >>Turn in Wild Mine Cart Ride
+    .accept 25200 >>Accept Shredder Shutdown
     .target Assistant Greely
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_克罗斯彻克教练|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_克罗斯彻克教练|r对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Coach Crosscheck|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Coach Crosscheck|r.
     .goto 174,54.44,16.93
-    .accept 25201 >>接受任务 终极足球炸弹制服
-    .target 教练 Crosscheck
+    .accept 25201 >>Accept The Ultimate Footbomb Uniform
+    .target Coach Crosscheck
 step
-    #arrowtext 杀死\ |cRXP_ENEMY_Steamwheedle Sharks|r
+    #arrowtext Kill\n|cRXP_ENEMY_Steamwheedle Sharks|r
     #sticky
     #label TheLostIslesShredderShutdown
-    >>击杀 |cRXP_ENEMY_热砂港大鲨鱼队队员|r。
+    >>Kill |cRXP_ENEMY_Steamwheedle Sharks|r.
     .goto 174,53.5,18.9,0,0
     .complete 25200,1 --8/8 Steamwheedle Shark slain
-    .mob 热砂港大鲨鱼队队员
+    .mob Steamwheedle Shark
 step
-    #arrowtext 点击\n|cRXP_LOOT_Spare 切割机 Parts|r
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击[|cRXP_LOOT_备用伐木机零件|r]。
+    #arrowtext Click\n|cRXP_LOOT_Spare Shredder Parts|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the [|cRXP_LOOT_Spare Shredder Parts|r].
     .goto 174,53.24,19.55,20,0
     .goto 174,52.16,20.68,20,0
     .goto 174,51.85,19.17,20,0
@@ -29738,189 +29736,189 @@ step
     .goto 174,54.47,17.16
     .vendor
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_克罗斯彻克教练|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Coach Crosscheck|r
     #requires TheLostIslesShredderShutdown
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_克罗斯彻克教练|r对话。
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Coach Crosscheck|r.
     .goto 174,54.44,16.93
-    .turnin 25201 >>交任务 终极足球炸弹制服
-    .target 教练 Crosscheck
+    .turnin 25201 >>Turn in The Ultimate Footbomb Uniform
+    .target Coach Crosscheck
 step
-    #arrowtext 与\ |cRXP_FRIENDLY_助手格瑞里|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_助手格瑞里|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Assistant Greely|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Assistant Greely|r.
     .goto 174,54.4,16.93
-    .turnin 25200 >>交任务 清理伐木机
-    .accept 25204 >>接受任务 打开阀门
-    .target 助手格瑞里
+    .turnin 25200 >>Turn in Shredder Shutdown
+    .accept 25204 >>Accept Release the Valves
+    .target Assistant Greely
 step << Male
-    #arrowtext 与\ |cRXP_FRIENDLY_王牌|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_王牌|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Ace|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ace|r.
     .goto 174,54.16,17.21
-    .accept 25203 >>接受任务 奇普是什么鬼名字？
-    .target 王牌
+    .accept 25203 >>Accept What Kind of Name is Chip, Anyway?
+    .target Ace
 step << Female
-    #arrowtext 与\ |cRXP_FRIENDLY_小静|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_小静|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Izzy|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Izzy|r.
     .goto 174,54.01,16.98
-    .accept 25202 >>接受任务 通往他的内心的捷径
-    .target 小静
+    .accept 25202 >>Accept The Fastest way to His Heart
+    .target Izzy
 step
-    #arrowtext 点击\ |cRXP_PICK_valve|r
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_阀门|r。
+    #arrowtext Click\n|cRXP_PICK_valve|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_valve|r.
     .goto 174,50.85,15.86,10,0
     .goto 174,50.72,13.81
     .complete 25204,1 --1/1 Valve #1 released
 step
-    #arrowtext 点击\ |cRXP_PICK_valve|r
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_阀门|r。
+    #arrowtext Click\n|cRXP_PICK_valve|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_valve|r.
     .goto 174,50.5,13.2
     .complete 25204,3 --1/1 Valve #3 released
 step << Female
-    #arrowtext 杀死\n|cRXP_ENEMY_奇普·英代尔|r
-    >>击杀|cRXP_ENEMY_奇普·英代尔|r，从他身上拾取[|cRXP_LOOT_项链|r]。
+    #arrowtext Kill\n|cRXP_ENEMY_Chip Endale|r
+    >>Kill |cRXP_ENEMY_Chip Endale|r. Loot him for his [|cRXP_LOOT_heart|r].
     .goto 174,50.1,13.8
     .complete 25202,1 --1/1 Still-Beating Heart
-    .mob 奇普·英代尔
+    .mob Chip Endale
 step << Male
-    #arrowtext 杀死\n|cRXP_ENEMY_奇普·英代尔|r
-    >>击杀|cRXP_ENEMY_奇普·英代尔|r，从他身上拾取[|cRXP_LOOT_项链|r]。
+    #arrowtext Kill\n|cRXP_ENEMY_Chip Endale|r
+    >>Kill |cRXP_ENEMY_Chip Endale|r. Loot him for his [|cRXP_LOOT_heart|r].
     .goto 174,50.1,13.8
     .complete 25203,1 --1/1 Still-Beating Heart
-    .mob 奇普·英代尔
+    .mob Chip Endale
 step
-    #arrowtext 点击\ |cRXP_PICK_valve|r
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_阀门|r。
+    #arrowtext Click\n|cRXP_PICK_valve|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_valve|r.
     .goto 174,49.9,12.8
     .complete 25204,4 --1/1 Valve #4 released
 step
-    #arrowtext 点击\ |cRXP_PICK_valve|r
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_阀门|r。
+    #arrowtext Click\n|cRXP_PICK_valve|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_valve|r.
     .goto 174,50.2,11.8
     .complete 25204,2 --1/1 Valve #2 released
 step
-    #arrowtext 点击\ |cRXP_PICK_平台控制面板|r
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_|r|cRXP_PICK_平台控制面板|r。
+    #arrowtext Click\n|cRXP_PICK_Platform Control Panel|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_|r|cRXP_PICK_Platform Control Panel|r.
     .goto 174,51.4,13.1
-    .turnin 25204 >>交任务 打开阀门
-    .accept 25207 >>接受任务 再见，甜蜜的油井
+    .turnin 25204 >>Turn in Release the Valves
+    .accept 25207 >>Accept Good-bye, Sweet Oil
 step
-    #arrowtext 点击\n|cRXP_PICK_红色按钮|r
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_红色按钮|r。
+    #arrowtext Click\n|cRXP_PICK_Red Button|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Red Button|r.
     .goto 174,51.4,13.1
     .complete 25207,1 --1/1 KTC Oil Platform destroyed
 step << Male
-    #arrowtext 与\ |cRXP_FRIENDLY_王牌|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_王牌|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Ace|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ace|r.
     .goto 174,54.16,17.19
-    .turnin 25203 >>交任务 奇普是什么鬼名字？
-    .target 王牌
+    .turnin 25203 >>Turn in What Kind of Name is Chip, Anyway?
+    .target Ace
 step << Female
-    #arrowtext 与\n|cRXP_FRIENDLY_小静|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_小静|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Izzy|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Izzy|r.
     .goto 174,54.01,16.97
-    .turnin 25202 >>交任务 通往他的内心的捷径
-    .target 小静
+    .turnin 25202 >>Turn in The Fastest way to His Heart
+    .target Izzy
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_助手格瑞里|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_助手格瑞里|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Assistant Greely|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Assistant Greely|r.
     .goto 174,54.4,16.9
-    .turnin 25207 >>交任务 再见，甜蜜的油井
-    .accept 25213 >>接受任务 奴隶营
-    .timer 24,乘坐伐木机
-    .target 助手格瑞里
+    .turnin 25207 >>Turn in Good-bye, Sweet Oil
+    .accept 25213 >>Accept The Slave Pits
+    .timer 24,Shredder Ride
+    .target Assistant Greely
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_莎希·硬钳|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t乘坐伐木机后与|cRXP_FRIENDLY_莎希·硬钳|r对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Sassy Hardwrench|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sassy Hardwrench|r after riding with the shredder.
     .goto 174,43.63,25.32
-    .turnin 25213 >>交任务 奴隶营
-    .accept 25244 >>接受任务 小甜甜是什么鬼名字？ << Female
-    .accept 25243 >>接受任务 她爱我。她不爱我！ << Male
-    .target 莎希·硬钳
+    .turnin 25213 >>Turn in The Slave Pits
+    .accept 25244 >>Accept What Kind of Name is Candy, Anyway? << Female
+    .accept 25243 >>Accept She Loves Me. She Loves Me NOT! << Male
+    .target Sassy Hardwrench
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_Hobart|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_霍巴特·钩锤|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Hobart|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hobart|r.
     .goto 174,43.85,25.30
-    .accept 25214 >>接受任务 极速逃逸
+    .accept 25214 >>Accept Escape Velocity
     .target Hobart
 step
     #completewith next
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_FRIENDLY_被俘的地精|r。
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_FRIENDLY_Captured Goblins|r.
     .complete 25214,1 --8/8 Cages launched
-    .target 被俘的地精
+    .target Captured Goblin
 step
-    #arrowtext 击杀\n|cRXP_ENEMY_小甜甜|r
-    >>击杀 |cRXP_ENEMY_小甜甜|r。
+    #arrowtext Kill\n|cRXP_ENEMY_Candy Cane|r
+    >>Kill |cRXP_ENEMY_Candy Cane|r.
     .goto 174,39.68,27.18
     .complete 25244,1 << Female --1/1 Candy Cane slain
     .complete 25243,1 << Male --1/1 Candy Cane slain
-    .mob 小甜甜
+    .mob Candy Cane
 step
-    #arrowtext 点击\n|cRXP_FRIENDLY_被俘的地精|r
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_FRIENDLY_被俘的地精|r。
+    #arrowtext Click\n|cRXP_FRIENDLY_Captured Goblins|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_FRIENDLY_Captured Goblins|r.
     .goto 174,40.03,26.08,10,0
     .goto 174,41.03,25.24,15,0
     .goto 174,41.24,26.35
     .complete 25214,1 --8/8 Cages launched
-    .target 被俘的地精
+    .target Captured Goblin
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_霍巴特·钩锤|r 和 |cRXP_FRIENDLY_莎希·硬钳|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_霍巴特·钩锤|r 和 |cRXP_FRIENDLY_莎希·硬钳|r 对话。
-    .turnin 25214 >>交任务 极速逃逸
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Hobart Grapplehammer|r and |cRXP_FRIENDLY_Sassy Hardwrench|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hobart Grapplehammer|r and |cRXP_FRIENDLY_Sassy Hardwrench|r.
+    .turnin 25214 >>Turn in Escape Velocity
     .goto 174,43.85,25.29
-    .turnin 25244 >>交任务 小甜甜是什么鬼名字？ << Female
-    .turnin 25243 >>交任务 她爱我。她不爱我！ << Male
-    .accept 25251 >>接受任务 最后的对峙
+    .turnin 25244 >>Turn in What Kind of Name is Candy, Anyway? << Female
+    .turnin 25243 >>Turn in She Loves Me. She Loves Me NOT! << Male
+    .accept 25251 >>Accept Final Confrontation
     .goto 174,43.63,25.32
-    .target 霍巴特·钩锤
-    .target 莎希·硬钳
+    .target Hobart Grapplehammer
+    .target Sassy Hardwrench
 step
-    #arrowtext 进入 |cRXP_PICK_终极足球炸弹制服|r
-    >>进入|cRXP_PICK_终极足球炸弹制服|r。
+    #arrowtext Enter the |cRXP_PICK_Ultimate Footbomb Uniform|r
+    >>Enter the |cRXP_PICK_Ultimate Footbomb Uniform|r.
     .goto 174,43.86,25.16
     .complete 25251,1 --1/1 Ultimate Footbomb Uniform
 step
-    >>锁定 |cRXP_ENEMY_贸易大王加里维克斯|r，技能全部卡冷却使用
+    >>Target |cRXP_ENEMY_Trade Prince Gallywix|r and use all your abilities on cooldown
     .goto 174,41.87,17.61,10,0
     .goto 174,43.4,19.9
     .complete 25251,2 --1/1 Trade Prince Gallywix dealt with
-    .mob 贸易大王加里维克斯
+    .mob Trade Prince Gallywix
 step
-    #arrowtext 跳下去
+    #arrowtext Jump down
     #completewith next
     .goto 174,42.76,18.61,10,0
-    .goto 174,42.24,19.45,20 >>跳下
+    .goto 174,42.24,19.45,20 >>Jump down
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_莎希·硬钳|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莎希·硬钳|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Sassy Hardwrench|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sassy Hardwrench|r.
     .goto 174,43.6,25.3
-    .turnin 25251 >>交任务 最后的对峙
-    .accept 25265 >>接受任务 胜利！
-    .target 莎希·硬钳
+    .turnin 25251 >>Turn in Final Confrontation
+    .accept 25265 >>Accept Victory!
+    .target Sassy Hardwrench
 step
-    #arrowtext 与 |cRXP_FRIENDLY_萨尔|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_萨尔|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Thrall|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r.
     .goto 174,42.16,17.37
-    .turnin 25265 >>交任务 胜利！
-    .accept 25266 >>接受任务 酋长的大使
-    .target 萨尔
+    .turnin 25265 >>Turn in Victory!
+    .accept 25266 >>Accept Warchief's Emissary
+    .target Thrall
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_莎希·硬钳|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Sassy Hardwrench|r
     #completewith next
     .goto 174,42.57,16.37
     .skipgossip
-    .zone 1 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莎希·硬钳|r 对话。
-    .target 莎希·硬钳
+    .zone 1 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sassy Hardwrench|r.
+    .target Sassy Hardwrench
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_暗矛拥护者|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_暗矛拥护者|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Darkspear Loyalist|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darkspear Loyalist|r.
     .goto 1,57.65,9.78
-    .turnin 25266 >>交任务 酋长的大使
-    .accept 25267 >>接受任务 给萨鲁法尔的消息
-    .target 暗矛拥护者
+    .turnin 25266 >>Turn in Warchief's Emissary
+    .accept 25267 >>Accept Message for Saurfang
+    .target Darkspear Loyalist
 step
-    #arrowtext 与 |cRXP_FRIENDLY_Saurfang|r 对话
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_小萨鲁法尔|r 对话。
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Saurfang|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Saurfang|r.
     .goto 85,48.5,70.8
-    .turnin 25267 >>交任务 给萨鲁法尔的消息
+    .turnin 25267 >>Turn in Message for Saurfang
     .target Saurfang
 ]])
     --Kezan & The Lost Isles: Skip
@@ -29928,7 +29926,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP 快速升级
-#name a) 科赞 & 失落群岛: 跳过
+#name a) Kezan & The Lost Isles: Skip
 #next ba)巨龙时代联盟开场至暗之夜(联盟) << Alliance
 #next b1) 争霸艾泽拉斯介绍 << Horde
 #chapter
@@ -29943,37 +29941,37 @@ RXPGuides.RegisterGuide([[
 #version 2
 #group RestedXP 快速升级
 #subgroup |cFFFCDC00(1-90)|r 默认
-#name a) 至高岭牛头人
-#displayname |cFF1EFF001|r - 至高岭牛头人
+#name a) HighmountainTauren
+#displayname |cFF1EFF001|r - Highmountain Tauren
 #next b1) 争霸艾泽拉斯介绍
 
 << Horde HighmountainTauren !DK
 
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_梅拉·高岭|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Mayla Highmountain|r
     .goto 652,54.85,63.18
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_梅拉·高岭|r 对话。
-    .accept 49773 >>接受任务 为了部落！
-    .target 梅拉·高岭
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mayla Highmountain|r.
+    .accept 49773 >>Accept For the Horde
+    .target Mayla Highmountain
 step
     #completewith next
     #label For the Horde
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_黑卫大使|r对话。
-    .turnin 49773 >>交任务 为了部落！
-    .target 黑卫士大使
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ambassador Blackguard|r.
+    .turnin 49773 >>Turn in For the Horde
+    .target Ambassador Blackguard
 step
-    #arrowtext 使用传送门前往奥格瑞玛
+    #arrowtext Take the portal to Orgrimmar
     #completewith For the Horde
     .goto 652,46.02,63.78
-    .zone 85 >>通过传送门前往奥格瑞玛
+    .zone 85 >>Take the portal to Orgrimmar
 step
-    #arrowtext 与 |cRXP_FRIENDLY_黑卫大使|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Ambassador Blackguard|r
     #requires For the Horde
     .goto 85,39.40,79.54
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_黑卫大使|r对话。
-    .turnin 49773 >>交任务 为了部落！
-    .accept 50319 >>接受任务 异乡异客
-    .target 黑卫士大使
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ambassador Blackguard|r.
+    .turnin 49773 >>Turn in For the Horde
+    .accept 50319 >>Accept Stranger in a Strange Land
+    .target Ambassador Blackguard
 -- step
 --     .goto 85,48.23,62.19
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r
@@ -29996,37 +29994,37 @@ RXPGuides.RegisterGuide([[
 #version 2
 #group RestedXP 快速升级
 #subgroup |cFFFCDC00(1-90)|r 默认
-#name a) 夜之子 开场
-#displayname |cFF1EFF001|r - 暗夜要塞
+#name a) Nightborne Intro
+#displayname |cFF1EFF001|r - The Nighthold
 #next b1) 争霸艾泽拉斯介绍
 
 << Horde Nightborne !DK
 
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_首席奥术师塔莉萨|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_First Arcanist Thalyssra|r
     .goto 680,59.34,85.53
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_首席奥术师塔莉萨|r 对话。
-    .accept 49933 >>接受任务 为了部落！
-    .target 首席奥术师塔莉萨
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_First Arcanist Thalyssra|r.
+    .accept 49933 >>Accept For the Horde
+    .target First Arcanist Thalyssra
 step
     #completewith next
     #label For the Horde
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_黑卫大使|r对话。
-    .turnin 49933 >>交任务 为了部落！
-    .target 黑卫士大使
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ambassador Blackguard|r.
+    .turnin 49933 >>Turn in For the Horde
+    .target Ambassador Blackguard
 step
-    #arrowtext 使用传送门前往奥格瑞玛
+    #arrowtext Take the portal to Orgrimmar
     #completewith For the Horde
     .goto 680,58.18,87.32
-    .zone 85 >>乘传送门前往奥格瑞玛
+    .zone 85 >>Take the portal to Orgrimmar
 step
-    #arrowtext 与 |cRXP_FRIENDLY_黑卫大使|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Ambassador Blackguard|r
     #requires For the Horde
     .goto 85,39.40,79.54
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_黑卫大使|r对话。
-    .turnin 49933 >>交任务 为了部落！
-    .accept 50303 >>接受任务 异乡异客
-    .target 黑卫士大使
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ambassador Blackguard|r.
+    .turnin 49933 >>Turn in For the Horde
+    .accept 50303 >>Accept Stranger in a Strange Land
+    .target Ambassador Blackguard
 -- step
 --     .goto 85,48.23,62.19
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r
@@ -30049,37 +30047,37 @@ RXPGuides.RegisterGuide([[
 #version 2
 #group RestedXP 快速升级
 #subgroup |cFFFCDC00(1-90)|r 默认
-#name a) 赞达拉巨魔 开场
-#displayname |cFF1EFF001|r - 达萨罗
+#name a) ZandalariTroll Intro
+#displayname |cFF1EFF001|r - Dazar'alor
 #next b1) 争霸艾泽拉斯介绍
 
 << Horde ZandalariTroll !DK
 
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_塔兰吉女王|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Queen Talanji|r
     .goto 1165,49.93,46.64
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_塔兰吉女王|r 对话。
-    .accept 55137 >>接受任务 为了部落！
-    .target 塔兰吉女王
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Queen Talanji|r.
+    .accept 55137 >>Accept For the Horde
+    .target Queen Talanji
 step
     #completewith next
     #label For the Horde
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_黑卫大使|r对话。
-    .turnin 55137 >>交任务 为了部落！
-    .target 黑卫士大使
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ambassador Blackguard|r.
+    .turnin 55137 >>Turn in For the Horde
+    .target Ambassador Blackguard
 step
-    #arrowtext 使用传送门前往奥格瑞玛
+    #arrowtext Take the portal to Orgrimmar
     #completewith For the Horde
     .goto 1165,49.94,43.85
-    .zone 85 >>乘传送门前往奥格瑞玛
+    .zone 85 >>Take the portal to Orgrimmar
 step
-    #arrowtext 与 |cRXP_FRIENDLY_黑卫大使|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Ambassador Blackguard|r
     #requires For the Horde
     .goto 85,39.40,79.54
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_黑卫大使|r对话。
-    .turnin 55137 >>交任务 为了部落！
-    .accept 55138 >>接受任务 异乡异客
-    .target 黑卫士大使
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ambassador Blackguard|r.
+    .turnin 55137 >>Turn in For the Horde
+    .accept 55138 >>Accept Stranger in a Strange Land
+    .target Ambassador Blackguard
 -- step
 --     .goto 85,48.23,62.19
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r
@@ -30102,25 +30100,25 @@ RXPGuides.RegisterGuide([[
 #version 2
 #group RestedXP 快速升级
 #subgroup |cFFFCDC00(1-90)|r 默认
-#name a) 玛格汉兽人 开场
-#displayname |cFF1EFF001|r - 奥格瑞玛
+#name a) MagharOrc Intro
+#displayname |cFF1EFF001|r - Orgrimmar
 #next b1) 争霸艾泽拉斯介绍
 
 << Horde MagharOrc !DK
 
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_盖亚拉大王|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Overlord Geya'rah|r
     .goto 85,70.6,44.6
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_盖亚拉大王|r 对话。
-    .accept 51485 >>接受任务 为了部落！
-    .target 盖亚拉大王
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Overlord Geya'rah|r.
+    .accept 51485 >>Accept For the Horde
+    .target Overlord Geya'rah
 step
-    #arrowtext 与 |cRXP_FRIENDLY_黑卫大使|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Ambassador Blackguard|r
     .goto 85,39.40,79.54
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_黑卫大使|r对话。
-    .turnin 51485 >>交任务 为了部落！
-    .accept 53502 >>接受任务 异乡异客
-    .target 黑卫士大使
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ambassador Blackguard|r.
+    .turnin 51485 >>Turn in For the Horde
+    .accept 53502 >>Accept Stranger in a Strange Land
+    .target Ambassador Blackguard
 
 -- step
 --     .goto 85,48.23,62.19
@@ -30144,26 +30142,26 @@ RXPGuides.RegisterGuide([[
 #version 2
 #group RestedXP 快速升级
 #subgroup |cFFFCDC00(1-90)|r 默认
-#name a) 狐人 开场
-#displayname |cFF1EFF001|r - 奥格瑞玛
+#name a) Vulpera Intro
+#displayname |cFF1EFF001|r - Orgrimmar
 #next b1) 争霸艾泽拉斯介绍
 
 << Horde Vulpera !DK
 
 
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_尼尔莎|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Nilsa|r
     .goto 85,64.647,46.514
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_尼尔莎|r 对话。
-    .accept 58122 >>接受任务 为了部落！
-    .target 尼尔莎
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nilsa|r.
+    .accept 58122 >>Accept For the Horde
+    .target Nilsa
 step
-    #arrowtext 与 |cRXP_FRIENDLY_黑卫大使|r 对话
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Ambassador Blackguard|r
     .goto 85,39.40,79.54
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_黑卫大使|r对话。
-    .turnin 58122 >>交任务 为了部落！
-    .accept 58124 >>接受任务 异乡异客
-    .target 黑卫士大使
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ambassador Blackguard|r.
+    .turnin 58122 >>Turn in For the Horde
+    .accept 58124 >>Accept Stranger in a Strange Land
+    .target Ambassador Blackguard
 -- step
 --     .goto 85,48.23,62.19
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r
@@ -30185,173 +30183,173 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP 快速升级
-#name a) 部落军团开场
+#name a) Horde Legion Intro
 #internal
 
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_霍加尔·雷斧|r 对话
-    .isOnQuest 43926
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Holgar Stormaxe|r
+    .isOnQuest 43926 --Legion: The Legion Returns
     .goto 1,46.01,13.81
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_霍加尔·雷斧|r 对话。
-    .turnin 43926 >>交任务 军团再临：军团回归
-    .accept 44281 >>接受任务 整装待发
-    .target 征募官李
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Holgar Stormaxe|r.
+    .turnin 43926 >>Turn in Legion: The Legion Returns
+    .accept 44281 >>Accept To Be Prepared
+    .target Recruiter Lee
 step
-    #arrowtext 与\n|cRXP_FRIENDLY_霍加尔·雷斧|r 对话
-    .isQuestTurnedIn 43926
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Holgar Stormaxe|r
+    .isQuestTurnedIn 43926 --Legion: The Legion Returns
     .goto 1,46.01,13.81
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_霍加尔·雷斧|r 对话以跳过场景战役。
-    *|cRXP_WARN_注意：如果不能跳过，就直接跳过此步骤|r。
-    *|cRXP_WARN_值得完成一遍此场景，这样后续角色可以跳过它。|r
-    .accept 44184 >>接受任务 眨眼之间
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Holgar Stormaxe|r to skip the Scenario.
+    *|cRXP_WARN_NOTE:|r If you can't skip it then skip this step.
+    *|cRXP_WARN_It is worth doing this scenario once so you can skip it with the following characters.|r
+    .accept 44184 >>Accept In the Blink of an Eye
     .skipgossip
 step
-    #arrowtext 点击\n|cRXP_PICK_食物|r
-    .isOnQuest 44281
-    .isNotOnQuest 44184
+    #arrowtext Click\n|cRXP_PICK_Food|r
+    .isOnQuest 44281 --To Be Prepared
+    .isNotOnQuest 44184 --In the Blink of an Eye
     .goto 1,47.66,13.57
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_食物|r。
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Food|r.
     .complete 44281,3 --1/1 Last meal eaten
 step
-    #arrowtext 点击 |cRXP_PICK_木桶|r
-    .isOnQuest 44281
-    .isNotOnQuest 44184
+    #arrowtext Click\n|cRXP_PICK_Barrel|r
+    .isOnQuest 44281 --To Be Prepared
+    .isNotOnQuest 44184 --In the Blink of an Eye
     .goto 1,49.63,14.17
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_桶|r。
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Barrel|r.
     .complete 44281,1 --1/1 Armor polished
 step
-    #arrowtext 点击 |cRXP_PICK_Sphere|r
-    .isOnQuest 44281
-    .isNotOnQuest 44184
+    #arrowtext Click\n|cRXP_PICK_Sphere|r
+    .isOnQuest 44281 --To Be Prepared
+    .isNotOnQuest 44184 --In the Blink of an Eye
     .goto 1,51.38,12.29
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_球|r。
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Sphere|r.
     .complete 44281,2 --1/1 Weapon empowered
 step
-    #arrowtext 与 |cRXP_FRIENDLY_艾丽安·布莱克|r 对话
-    .isOnQuest 44281
-    .isNotOnQuest 44184
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Arienne Black|r
+    .isOnQuest 44281 --To Be Prepared
+    .isNotOnQuest 44184 --In the Blink of an Eye
     .goto 1,52.82,11.34
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_艾丽安·布莱克|r对话并击败她。
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arienne Black|r and defeat her.
     .complete 44281,4 --1/1 Warmed up with a duel
     .skipgossip
-    .mob 艾丽安·布莱克
-    .target 艾丽安·布莱克
+    .mob Arienne Black
+    .target Arienne Black
 step
-    #arrowtext 与 |cRXP_FRIENDLY_石头守卫穆卡尔|r 对话
-    .isOnQuest 44281
-    .isNotOnQuest 44184
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Stone Guard Mukar|r
+    .isOnQuest 44281 --To Be Prepared
+    .isNotOnQuest 44184 --In the Blink of an Eye
     .goto 1,55.63,11.02
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_石头守卫穆卡尔|r对话。
-    .turnin 44281 >>交任务 整装待发
-    .target 石头守卫穆卡尔
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Stone Guard Mukar|r.
+    .turnin 44281 >>Turn in To Be Prepared
+    .target Stone Guard Mukar
 step
-    #arrowtext 与 |cRXP_FRIENDLY_石头守卫穆卡尔|r 对话
-    .isQuestTurnedIn 44281
-    .isNotOnQuest 44184
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Stone Guard Mukar|r
+    .isQuestTurnedIn 44281 --To Be Prepared
+    .isNotOnQuest 44184 --In the Blink of an Eye
     .goto 1,55.63,11.02
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_石头守卫穆卡尔|r对话。
-    .accept 40518 >>接受任务 破碎海滩之战
-    .target 石头守卫穆卡尔
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Stone Guard Mukar|r.
+    .accept 40518 >>Accept The Battle for Broken Shore
+    .target Stone Guard Mukar
 step
-    #arrowtext 与 |cRXP_FRIENDLY_鲁索船长|r 对话
-    .isNotOnQuest 44184
-    .isOnQuest 40518
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Captain Russo|r
+    .isNotOnQuest 44184 --In the Blink of an Eye
+    .isOnQuest 40518 --The Battle for Broken Shore
     .goto 1,57.77,10.49
-    .gossipoption 46562 >>与|cRXP_FRIENDLY_鲁索船长|r 对话。
-    .target 鲁索船长
+    .gossipoption 46562 >>Talk to |cRXP_FRIENDLY_Captain Russo|r.
+    .target Captain Russo
 step
-    .isNotOnQuest 44184
-    .isOnQuest 40518
-    .zone 619 >>稍等，等待传送到破碎海滩。
+    .isNotOnQuest 44184 --In the Blink of an Eye
+    .isOnQuest 40518 --The Battle for Broken Shore
+    .zone 619 >>Wait for a moment until the transfer to the Broken Shore.
     .timer 89,RP
 step
-    .isNotOnQuest 44184
+    .isNotOnQuest 44184 --In the Blink of an Eye
     .isInScenario 1189
-    .goto 619,54.43,72.28,10 >>等待我们的船靠岸。
+    .goto 619,54.43,72.28,10 >>Wait for our ship to dock.
 step
-    #arrowtext 跟随箭头
-    .isNotOnQuest 44184
+    #arrowtext Follow the arrow
+    .isNotOnQuest 44184 --In the Blink of an Eye
     .isInScenario 1189
-    .goto 619,54.48,71.82,20 >>|cRXP_WARN_跟随箭头|r。
-    .timer 1140,场景战役自动完成。
+    .goto 619,54.48,71.82,20 >>|cRXP_WARN_Follow the Arrow|r.
+    .timer 1140,scenario auto-completes.
 step
-    .isNotOnQuest 44184
+    .isNotOnQuest 44184 --In the Blink of an Eye
     .isInScenario 1189
     #completewith guldanscenarioend
-    +你可以让NPC自行完成|cRXP_WARN_该场景战役|r，但会多花约5分钟。
+    +You can let the NPCs complete |cRXP_WARN_the scenario|r, though it takes ~5 minutes longer.
 step
-    .isNotOnQuest 44184
+    .isNotOnQuest 44184 --In the Blink of an Eye
     .isInScenario 1189
     #completewith Demons
-    >>击杀 |cRXP_ENEMY_Demons|r 和 |cRXP_ENEMY_Felguards|r |cRXP_WARN_在每根柱子前面|r。
+    >>Kill |cRXP_ENEMY_Demons|r and |cRXP_ENEMY_Felguards|r |cRXP_WARN_in front of each pillar|r.
     .scenario 2896,1
     .scenario 2896,2
-    .mob 邪能领主拉扎尔
-    .mob 邪能领主达拉克
-    .mob 邪能领主库尔兹
-    .mob 恶魔卫士军团士兵
-    .mob 恐怖魔犬
+    .mob Fel Lord Razzar
+    .mob Fel Lord Darakk
+    .mob Fel Lord Kurrz
+    .mob Felguard Legionnaire
+    .mob Felstalker Dreadhound
 step
-    #arrowtext 摧毁 |cRXP_ENEMY_定位水晶|r
-    .isNotOnQuest 44184
+    #arrowtext Destroy\n|cRXP_ENEMY_Anchoring Crystal|r
+    .isNotOnQuest 44184 --In the Blink of an Eye
     .goto 619,54.62,71.33,15,0
     .goto 619,54.34,71.22,15,0
     .goto 619,54.06,71.2,15,0
     .isInScenario 1189
-    >>击杀|cRXP_WARN_定位水晶|r来摧毁|cRXP_ENEMY_苦难尖塔|r。
+    >>Destroy |cRXP_WARN_Spires of Woe|r by killing |cRXP_ENEMY_Anchoring Crystal|r.
     .scenario 2896,3
-    .mob 定位水晶
+    .mob Anchoring Crystal
 step
-    .isNotOnQuest 44184
+    .isNotOnQuest 44184 --In the Blink of an Eye
     .isInScenario 1189
     #label Demons
-    >>击杀 |cRXP_ENEMY_Demons|r 和 |cRXP_ENEMY_Felguards|r |cRXP_WARN_在每根柱子前面|r。
+    >>Kill |cRXP_ENEMY_Demons|r and |cRXP_ENEMY_Felguards|r |cRXP_WARN_in front of each pillar|r.
     .scenario 2896,1
     .scenario 2896,2
-    .mob 邪能领主拉坎
-    .mob 邪能领主克杜兹
-    .mob 邪能领主扎达克
-    .mob 恶魔卫士军团士兵
-    .mob 恐怖魔犬
+    .mob Fel Lord Rakkan
+    .mob Fel Lord Kurduz
+    .mob Fel Lord Zardak
+    .mob Felguard Legionnaire
+    .mob Felstalker Dreadhound
 step
-    #arrowtext 击杀 |cRXP_ENEMY_邪能指挥官阿兹加洛|r
-    .isNotOnQuest 44184
+    #arrowtext Kill\n|cRXP_ENEMY_Fel Commander Azgalor|r
+    .isNotOnQuest 44184 --In the Blink of an Eye
     .isInScenario 1189
     .goto 619,54.21,71.11
-    >>击杀|cRXP_ENEMY_邪能指挥官阿兹加洛|r。
+    >>Kill |cRXP_ENEMY_Fel Commander Azgalor|r.
     .scenario 2897,1
-    .mob 邪能指挥官阿兹加洛
+    .mob Fel Commander Azgalor
 step
-    #arrowtext |cFFFCDC00跟随箭头|r
-    .isNotOnQuest 44184
+    #arrowtext |cFFFCDC00Follow the arrow|r
+    .isNotOnQuest 44184 --In the Blink of an Eye
     .isInScenario 1189
     .goto 619,54.54,69.52,20,0
-    .goto 619,54.46,69.32,10 >>跟着箭头走，到地方等着看下一段过场动画。
+    .goto 619,54.46,69.32,10 >>Follow the Arrow and wait at the location until the next cutscene.
 step
-    .isNotOnQuest 44184
-    #title |cFFFCDC00等待过场剧情后跟随箭头|r
+    .isNotOnQuest 44184 --In the Blink of an Eye
+    #title |cFFFCDC00Wait for cutscene then follow arrow|r
     .isInScenario 1189
     .goto 619,53.97,68.7,20,0
-    .goto 619,54.71,67.83,10 >>等待过场剧情出现，然后跟随箭头前进。
+    .goto 619,54.71,67.83,10 >>Wait for a cutscene to appear then follow the arrow.
 step
-    .isNotOnQuest 44184
+    .isNotOnQuest 44184 --In the Blink of an Eye
     .isInScenario 1189
-    >>等它继续。
+    >>Wait until it continues.
     .scenario 2898,1
 step
-    #arrowtext 击杀 |cRXP_ENEMY_艾瑞达混沌守卫|r 和 |cRXP_ENEMY_Shielded Anchors|r
-    .isNotOnQuest 44184
+    #arrowtext Kill\n|cRXP_ENEMY_Eredar Chaos Guard|r and |cRXP_ENEMY_Shielded Anchors|r
+    .isNotOnQuest 44184 --In the Blink of an Eye
     .isInScenario 1189
     #loop
     .goto 619,54.54,67.84,12,0
     .goto 619,54.53,68.04,12,0
     .goto 619,54.68,68.04,12,0
-    .scenario 1532,1 >>击杀|cRXP_ENEMY_艾瑞达混沌守卫|r以解除|cRXP_ENEMY_保护严密的锚点|r的护盾，然后摧毁它们。
-    .mob 保护严密的锚点
-    .mob 艾瑞达混沌守卫
+    .scenario 1532,1 >>Kill |cRXP_ENEMY_Eredar Chaos Guard|r to remove the shield from the |cRXP_ENEMY_Shielded Anchors|r then destroy them.
+    .mob Shielded Anchor
+    .mob Eredar Chaos Guard
 step
-    #arrowtext 击杀 |cRXP_ENEMY_恶魔精英,|r 和 |cRXP_ENEMY_Demons|r
-    .isNotOnQuest 44184
+    #arrowtext Kill\n|cRXP_ENEMY_Demon Elites,|r and |cRXP_ENEMY_Demons|r
+    .isNotOnQuest 44184 --In the Blink of an Eye
     .isInScenario 1189
     #loop
     .goto 619,55.33,68.57,30,0
@@ -30360,254 +30358,254 @@ step
     .goto 619,55.69,66.95,30,0
     .goto 619,55.72,66.27,30,0
     .goto 619,55.07,66.97,30,0
-    .scenario 2900,1,100 >>击杀|cRXP_ENEMY_恶魔精英,|r |cRXP_ENEMY_恶魔|r并打开|cRXP_PICK_军团囚笼|r。
-    .mob 攻城地狱火
-    .mob 愤怒卫士恐刃者
-    .mob 恶魔卫士入侵者
-    .mob 黑暗崇拜者
+    .scenario 2900,1,100 >>Kill |cRXP_ENEMY_Demon Elites,|r |cRXP_ENEMY_Demons|r and open |cRXP_PICK_Legion Cages|r.
+    .mob Infernal Siegebreaker
+    .mob Wrathguard Dreadblade
+    .mob Felguard Invader
+    .mob Dark Worshipper
 step
-    .isNotOnQuest 44184
-    #title |cFFFCDC00等待|r
+    .isNotOnQuest 44184 --In the Blink of an Eye
+    #title |cFFFCDC00Wait|r
     .isInScenario 1189
-    .goto 619,55.24,66.11,10  >>等待|cRXP_FRIENDLY_萨尔|r召唤出一座桥。
+    .goto 619,55.24,66.11,10  >>Wait for |cRXP_FRIENDLY_Thrall|r to conjure a bridge.
 step
-    #arrowtext 穿过桥梁并跟随箭头
-    .isNotOnQuest 44184
+    #arrowtext Cross the bridge and follow the arrow
+    .isNotOnQuest 44184 --In the Blink of an Eye
     .isInScenario 1189
-    .goto 619,55.12,65.03,10 >>穿过桥，跟随箭头。
+    .goto 619,55.12,65.03,10 >>Cross the bridge and follow the arrow.
 step
-    .isNotOnQuest 44184
+    .isNotOnQuest 44184 --In the Blink of an Eye
     .isInScenario 1189
-    .scenario 2901,1 >>|cRXP_WARN_等待部落到达|r。
-    .target 希尔瓦娜斯·风行者
+    .scenario 2901,1 >>|cRXP_WARN_Wait for the Horde to arrive|r.
+    .target Lady Sylvanas Windrunner
 step
-    #arrowtext 击杀 |cRXP_ENEMY_克洛苏斯|r
-    .isNotOnQuest 44184
+    #arrowtext Kill\n|cRXP_ENEMY_Krosus|r
+    .isNotOnQuest 44184 --In the Blink of an Eye
     .isInScenario 1189
     .goto 619,55.13,65.01
-    .scenario 2902,1 >>击杀|cRXP_ENEMY_克洛苏斯|r。
-    .mob 克洛苏斯
+    .scenario 2902,1 >>Kill |cRXP_ENEMY_Krosus|r.
+    .mob Krosus
 step
-    .isNotOnQuest 44184
-    #title |cFFFCDC00等待|r
+    .isNotOnQuest 44184 --In the Blink of an Eye
+    #title |cFFFCDC00Wait|r
     .isInScenario 1189
-    .goto 619,55.28,65.01,10 >>等待|cRXP_FRIENDLY_萨尔|r召唤出一座桥。
+    .goto 619,55.28,65.01,10 >>Wait for |cRXP_FRIENDLY_Thrall|r to conjure a bridge.
 step
-    #arrowtext 穿过桥梁并跟随箭头
-    .isNotOnQuest 44184
+    #arrowtext Cross the bridge and follow the arrow
+    .isNotOnQuest 44184 --In the Blink of an Eye
     .isInScenario 1189
     .goto 619,55.62,64.73,20,0
     .goto 619,56.52,64.65,20,0
-    .goto 619,56.58,64.33,20 >>穿过桥，跟随箭头。
+    .goto 619,56.58,64.33,20 >>Cross the bridge and follow the arrow.
 step
-    .isNotOnQuest 44184
+    .isNotOnQuest 44184 --In the Blink of an Eye
     .isInScenario 1189
     .goto 619,56.58,64.33
-    >>等待|cRXP_ENEMY_恶魔|r到来，然后击杀它们。
+    >>Wait for the |cRXP_ENEMY_Demons|r to arrive, then kill them.
     .complete 40518,2 --1/1 Broken Shore assaulted
-    .mob 莫尔葛碎脊者
-    .mob 愤怒卫士恐刃者
-    .mob 恶魔卫士入侵者
-    .mob 狰狞的暗影猎犬
+    .mob Mo'arg Spinebreaker
+    .mob Wrathguard Dreadblade
+    .mob Felguard Invader
+    .mob Grinning Shadowstalker
 step
-    #arrowtext 与 |cRXP_FRIENDLY_伊崔格|r 对话
-    .isOnQuest 40518
-    .isNotOnQuest 44184
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Eitrigg|r
+    .isOnQuest 40518 --The Battle for Broken Shore
+    .isNotOnQuest 44184 --In the Blink of an Eye
     #label guldanscenarioend
     .goto 1,57.16,10.51
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_伊崔格|r 对话。
-    .turnin 40518 >>交任务 破碎海滩之战
-    .target 伊崔格
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eitrigg|r.
+    .turnin 40518 >>Turn in The Battle for Broken Shore
+    .target Eitrigg
 step
-    #arrowtext 与 |cRXP_FRIENDLY_伊崔格|r 对话
-    .isQuestTurnedIn 40518
-    .isNotOnQuest 44184
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Eitrigg|r
+    .isQuestTurnedIn 40518 --The Battle for Broken Shore
+    .isNotOnQuest 44184 --In the Blink of an Eye
     .goto 1,57.16,10.51
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_伊崔格|r 对话。
-    .accept 40522 >>接受任务 部落的命运
-    .target 伊崔格
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eitrigg|r.
+    .accept 40522 >>Accept Fate of the Horde
+    .target Eitrigg
 step
-    #arrowtext 与 |cRXP_FRIENDLY_Saurfang|r 对话
-    .isOnQuest 40522
-    .isNotOnQuest 44184
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Saurfang|r
+    .isOnQuest 40522 --Fate of the Horde
+    .isNotOnQuest 44184 --In the Blink of an Eye
     .goto 85,50.04,75.96
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_小萨鲁法尔|r 对话。
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Saurfang|r.
     .complete 40522,1 --1/1 Report to Saurfang
     .skipgossipid 45114
 step
-    .isOnQuest 40522
-    .isNotOnQuest 44184
+    .isOnQuest 40522 --Fate of the Horde
+    .isNotOnQuest 44184 --In the Blink of an Eye
     #completewith next
     #label Fate of the Horde
     #hidewindow
-    .isOnQuest 40522
+    .isOnQuest 40522 --Fate of the Horde
     .complete 40522,3 --1/1 Learn the Fate of the Horde
 step
-    #arrowtext 跟随箭头
-    .isOnQuest 40522
-    .isNotOnQuest 44184
+    #arrowtext Follow the arrow
+    .isOnQuest 40522 --Fate of the Horde
+    .isNotOnQuest 44184 --In the Blink of an Eye
     #completewith Fate of the Horde
-    .goto 85,48.38,71.23,10 >>跟随箭头
+    .goto 85,48.38,71.23,10 >>Follow the Arrow
     .timer 63,RP
 step
-    .isOnQuest 40522
-    .isNotOnQuest 44184
+    .isOnQuest 40522 --Fate of the Horde
+    .isNotOnQuest 44184 --In the Blink of an Eye
     #requires Fate of the Horde
-    .isOnQuest 40522
+    .isOnQuest 40522 --Fate of the Horde
     .goto 85,48.38,71.22
-    >>等目标完成。
+    >>Wait for the objective to complete.
     .complete 40522,3 --1/1 Learn the Fate of the Horde
 step
-    #arrowtext 与 |cRXP_FRIENDLY_希尔瓦娜斯·风行者|r 对话
-    .isOnQuest 40522
-    .isNotOnQuest 44184
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Lady Sylvanas Windrunner|r
+    .isOnQuest 40522 --Fate of the Horde
+    .isNotOnQuest 44184 --In the Blink of an Eye
     .goto 1,45.71,15.88
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_希尔瓦娜斯·风行者|r 对话。
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Sylvanas Windrunner|r.
     .complete 40522,4 --1/1 Pledge to Warchief Sylvanas
-    .target 希尔瓦娜斯·风行者
+    .target Lady Sylvanas Windrunner
     .skipgossipid 44961
 step
-    #arrowtext 与 |cRXP_FRIENDLY_希尔瓦娜斯·风行者|r 对话
-    .isOnQuest 40522
-    .isNotOnQuest 44184
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Lady Sylvanas Windrunner|r
+    .isOnQuest 40522 --Fate of the Horde
+    .isNotOnQuest 44184 --In the Blink of an Eye
     .goto 1,45.71,15.88
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_希尔瓦娜斯·风行者|r 对话。
-    .turnin 40522 >>交任务 部落的命运
-    .target 希尔瓦娜斯·风行者
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Sylvanas Windrunner|r.
+    .turnin 40522 >>Turn in Fate of the Horde
+    .target Lady Sylvanas Windrunner
 step
-    #arrowtext 与 |cRXP_FRIENDLY_希尔瓦娜斯·风行者|r 对话
-    .isQuestTurnedIn 40522
-    .isNotOnQuest 44184
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Lady Sylvanas Windrunner|r
+    .isQuestTurnedIn 40522 --Fate of the Horde
+    .isNotOnQuest 44184 --In the Blink of an Eye
     .goto 1,45.71,15.88
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_希尔瓦娜斯·风行者|r 对话。
-    .accept 40760 >>接受任务 使者
-    .target 希尔瓦娜斯·风行者
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Sylvanas Windrunner|r.
+    .accept 40760 >>Accept Emissary
+    .target Lady Sylvanas Windrunner
 step
-    #arrowtext 与 |cRXP_FRIENDLY_食魂者阿莱利|r 对话
-    .isQuestTurnedIn 40522
-    .isNotOnQuest 44184
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Allari the Souleater|r
+    .isQuestTurnedIn 40522 --Fate of the Horde
+    .isNotOnQuest 44184 --In the Blink of an Eye
     .goto 1,45.81,15.13
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_食魂者阿莱利|r 对话。
-    .turnin 40760 >>交任务 使者
-    .accept 40607 >>接受任务 恶魔四伏
-    .target 食魂者阿莱利
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Allari the Souleater|r.
+    .turnin 40760 >>Turn in Emissary
+    .accept 40607 >>Accept Demons Among Us
+    .target Allari the Souleater
 step
-    #arrowtext 与 |cRXP_FRIENDLY_食魂者阿莱利|r 对话
-    .isOnQuest 40607
-    .isNotOnQuest 44184
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Allari the Souleater|r
+    .isOnQuest 40607 --Demons Among Us
+    .isNotOnQuest 44184 --In the Blink of an Eye
     .goto 1,45.81,15.13
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_食魂者阿莱利|r 对话。
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Allari the Souleater|r.
     .complete 40607,1 --1/1 Learn what Allari the Souleater knows
-    .target 食魂者阿莱利
+    .target Allari the Souleater
     .skipgossipid 44895
 step
-    #arrowtext 击杀 |cRXP_ENEMY_邪能刃刺客|r 和 |cRXP_ENEMY_憎恨碎片|r
-    .isOnQuest 40607
-    .isNotOnQuest 44184
+    #arrowtext Kill\n|cRXP_ENEMY_Felblade Assassins|r and |cRXP_ENEMY_Shards of Hate|r
+    .isOnQuest 40607 --Demons Among Us
+    .isNotOnQuest 44184 --In the Blink of an Eye
     #loop
     .goto 1,45.62,14.05,30,0
     .goto 1,46.71,14.08,30,0
     .goto 1,46.97,17.41,30,0
     .goto 1,45.49,16.88,30,0
-    >>击杀|cRXP_ENEMY_魔刃刺客|r和|cRXP_ENEMY_憎恨碎片|r。
+    >>Kill |cRXP_ENEMY_Felblade Assassins|r and |cRXP_ENEMY_Shards of Hate|r.
     .complete 40607,2 --12/12 Demons slain
-    .mob 憎恨碎片
-    .mob 魔刃刺客
+    .mob Shard of Hate
+    .mob Felblade Assassin
 step
-    #arrowtext 与 |cRXP_FRIENDLY_希尔瓦娜斯·风行者|r 对话
-    .isOnQuest 40607
-    .isNotOnQuest 44184
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Lady Sylvanas Windrunner|r
+    .isOnQuest 40607 --Demons Among Us
+    .isNotOnQuest 44184 --In the Blink of an Eye
     .goto 1,45.68,15.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_希尔瓦娜斯·风行者|r 对话。
-    .turnin 40607 >>交任务 恶魔四伏
-    .target 希尔瓦娜斯·风行者
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Sylvanas Windrunner|r.
+    .turnin 40607 >>Turn in Demons Among Us
+    .target Lady Sylvanas Windrunner
 step
-    #arrowtext 与 |cRXP_FRIENDLY_希尔瓦娜斯·风行者|r 对话
-    .isQuestTurnedIn 40605
-    .isNotOnQuest 44184
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Lady Sylvanas Windrunner|r
+    .isQuestTurnedIn 40605 --Keep Your Friends Close
+    .isNotOnQuest 44184 --In the Blink of an Eye
     .goto 1,45.68,15.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_希尔瓦娜斯·风行者|r 对话。
-    .accept 40605 >>接受任务 亲近你的朋友
-    .target 希尔瓦娜斯·风行者
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Sylvanas Windrunner|r.
+    .accept 40605 >>Accept Keep Your Friends Close
+    .target Lady Sylvanas Windrunner
 step
-    #arrowtext 与 |cRXP_FRIENDLY_艾尔西·达莱|r 对话
-    .isOnQuest 40605
-    .isNotOnQuest 44184
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Elthyn Da'rai|r
+    .isOnQuest 40605 --Keep Your Friends Close
+    .isNotOnQuest 44184 --In the Blink of an Eye
     .goto 85,52.34,57.18
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾尔西·达莱|r 对话。
-    .turnin 40605 >>交任务 亲近你的朋友
-    .target 艾尔西·达莱
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elthyn Da'rai|r.
+    .turnin 40605 >>Turn in Keep Your Friends Close
+    .target Elthyn Da'rai
 step
-    .isOnQuest 44663
-    .isNotOnQuest 44184
+    .isOnQuest 44663 --In the Blink of an Eye
+    .isNotOnQuest 44184 --In the Blink of an Eye
     #completewith next
     #label Kirin Tor Emissary
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾尔西·达莱|r 对话。
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elthyn Da'rai|r.
     .complete 44663,1 --1/1 Talk to the Kirin Tor Emissary to teleport you to Dalaran (Optional)
 step
-    #arrowtext 进入传送门房间
-    .isOnQuest 44663
-    .isNotOnQuest 44184
+    #arrowtext Enter the Portal Room
+    .isOnQuest 44663 --In the Blink of an Eye
+    .isNotOnQuest 44184 --In the Blink of an Eye
     #completewith Kirin Tor Emissary
-    .goto 85,52.85,90.57,10 >>进入传送门大厅
+    .goto 85,52.85,90.57,10 >>Enter the Portal Room
 step
-    #arrowtext 与 |cRXP_FRIENDLY_艾尔西·达莱|r 对话
-    .isOnQuest 44663
-    .isNotOnQuest 44184
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Elthyn Da'rai|r
+    .isOnQuest 44663 --In the Blink of an Eye
+    .isNotOnQuest 44184 --In the Blink of an Eye
     #requires Kirin Tor Emissary
     .goto 85,54.82,89.78,8,0
     .goto 85,54.75,86.91,8,0
     .goto 85,56.10,87.18,8,0
     .goto 85,57.01,89.11
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾尔西·达莱|r 对话。
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elthyn Da'rai|r.
     .complete 44663,1 --1/1 Talk to the Kirin Tor Emissary to teleport you to Dalaran (Optional)
     .skipgossipid 51032
 step
-    .isOnQuest 44663
-    .isNotOnQuest 44184
+    .isOnQuest 44663 --In the Blink of an Eye
+    .isNotOnQuest 44184 --In the Blink of an Eye
     #completewith next
     #label Witnessed
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_大法师卡德加|r 对话。
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Khadgar|r.
     .complete 44663,2 --1/1 Dalaran's Teleportation Witnessed
-    .target 大法师卡德加
+    .target Archmage Khadgar
 step
-    #arrowtext 进入达拉然中央
-    .isOnQuest 44663
-    .isNotOnQuest 44184
+    #arrowtext Enter the center of Dalaran
+    .isOnQuest 44663 --In the Blink of an Eye
+    .isNotOnQuest 44184 --In the Blink of an Eye
     #completewith Witnessed
     .goto 41,52.92,51.9,10,0
-    .goto 41,49.58,47.83,30 >>进入达拉然中心区域
+    .goto 41,49.58,47.83,30 >>Enter the center of Dalaran
 step
-    #arrowtext 与 |cRXP_FRIENDLY_大法师卡德加|r 对话
-    .isOnQuest 44663
-    .isNotOnQuest 44184
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Archmage Khadgar|r
+    .isOnQuest 44663 --In the Blink of an Eye
+    .isNotOnQuest 44184 --In the Blink of an Eye
     #requires Witnessed
     .goto 41,49.81,48.30
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与达拉然中心的|cRXP_FRIENDLY_大法师卡德加|r对话。
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Khadgar|r at the center of dalaran.
     .complete 44663,2 --1/1 Dalaran's Teleportation Witnessed
-    .target 大法师卡德加
+    .target Archmage Khadgar
     .skipgossipid 45530
 step
-    #arrowtext 与 |cRXP_FRIENDLY_奥布里吉大使|r 对话
-    .isOnQuest 44663
-    .isNotOnQuest 44184
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Emissary Auldbridge|r
+    .isOnQuest 44663 --In the Blink of an Eye
+    .isNotOnQuest 44184 --In the Blink of an Eye
     #label Launch Event 1
     .goto 627,57.59,45.77
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_奥布里吉大使|r 对话
-    .turnin 44663 >>交任务 眨眼之间
-    .target 奥布里吉大使
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emissary Auldbridge|r
+    .turnin 44663 >>Turn in In the Blink of an Eye
+    .target Emissary Auldbridge
 step
-    #arrowtext 与 |cRXP_FRIENDLY_奥布里吉大使|r 对话
-    .isOnQuest 44184
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Emissary Auldbridge|r
+    .isOnQuest 44184 --In the Blink of an Eye
     .goto 627,57.60,45.78
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_奥布里吉大使|r 对话。
-    .turnin 44184 >>交任务 眨眼之间
-    .target 奥布里吉大使
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emissary Auldbridge|r.
+    .turnin 44184 >>Turn in In the Blink of an Eye
+    .target Emissary Auldbridge
 step
-    #arrowtext 使用传送门前往奥格瑞玛
+    #arrowtext Take the portal to Orgrimmar
     .zoneskip 627,1
     .goto 627,55.24,24.01
-    .zone 85 >>乘传送门前往奥格瑞玛
+    .zone 85 >>Take the portal to Orgrimmar
 ]])
 
 -- =================================
@@ -30620,8 +30618,8 @@ RXPGuides.RegisterGuide([[
 #retail
 #group RestedXP 至暗之夜
 #subgroup |cFF1EFF00(1-90)|r 默认
-#name 1a2
-#displayname |cFFFCDC001-10级|r
+#name 1a 2
+#displayname |cFFFCDC00LEVEL 1-10|r
 #disabled
 
 << !Harronir !Nightborne !HighmountainTauren !MagharOrc !EarthenDwarf !ZandalariTroll !Vulpera !Dracthyr !VoidElf !KulTiran !LightforgedDraenei !Mechagnome !Pandaren DK
@@ -30641,8 +30639,8 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP 至暗之夜
 #subgroup |cFF1EFF00(1-90)|r 默认
-#name a) DK初始任务2
-#displayname |cFF1EFF001|r - 瘟疫之地
+#name a) DK Intro 2
+#displayname |cFF1EFF001|r - Plaguelands
 #next RestedXP 至暗之夜\ba) 巨龙时代联盟开场至暗之夜(联盟)2 << Alliance
 #next b1) 争霸艾泽拉斯介绍 2 << Horde
 
@@ -30658,8 +30656,8 @@ RXPGuides.RegisterGuide([[
 #version 2
 #group RestedXP 至暗之夜
 #subgroup |cFF1EFF00(1-90)|r 默认
-#name a) 新建DK初始任务2
-#displayname |cFF1EFF001|r - 冰封王座
+#name a) New DK Intro 2
+#displayname |cFF1EFF001|r - The Frozen Throne
 #next RestedXP 至暗之夜\ba) 巨龙时代联盟开场至暗之夜(联盟)2 << Alliance
 #next b1) 争霸艾泽拉斯介绍 2 << Horde
 
@@ -30674,8 +30672,8 @@ RXPGuides.RegisterGuide([[
 #version 2
 #group RestedXP 至暗之夜
 #subgroup |cFF1EFF00(1-90)|r 默认
-#name a) 恶魔猎手新手任务2
-#displayname |cFF1EFF001|r - 马顿
+#name a) DH Intro 2
+#displayname |cFF1EFF001|r - Mardum
 #next RestedXP 至暗之夜\ba) 巨龙时代联盟开场至暗之夜(联盟)2 << Alliance
 #next b1) 争霸艾泽拉斯介绍 2 << Horde
 
@@ -30690,8 +30688,8 @@ RXPGuides.RegisterGuide([[
 #version 2
 #group RestedXP 至暗之夜
 #subgroup |cFF1EFF00(1-90)|r 默认
-#name a) 龙希尔 初始任务2
-#displayname |cFF1EFF001|r - 禁忌离岛
+#name a) Dracthyr Intro 2
+#displayname |cFF1EFF001|r - The Forbidden Reach
 #next RestedXP 至暗之夜\ba) 巨龙时代联盟开场至暗之夜(联盟)2 << Alliance
 #next b1) 争霸艾泽拉斯介绍 2 << Horde
 
@@ -30706,8 +30704,8 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP 至暗之夜
 #subgroup |cFF1EFF00(1-90)|r 默认
-#name a) 熊猫人初始剧情2
-#displayname 迷踪岛|cRXP_ENEMY_（备选版）|r
+#name a) Pandaren Intro 2
+#displayname The Wandering Isle |cRXP_ENEMY_(Alternative)|r
 #next RestedXP 至暗之夜\ba) 巨龙时代联盟开场至暗之夜(联盟)2 << Alliance
 #next b1) 争霸艾泽拉斯介绍 2 << Horde
 
@@ -30722,8 +30720,8 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP 至暗之夜
 #subgroup |cFF1EFF00(1-90)|r 默认
-#name a) 哈籁尼尔 开场2
-#displayname |cFF1EFF001|r - 哈籁恩达尔
+#name a) Haranir Intro 2
+#displayname |cFF1EFF001|r - Harandar
 #next RestedXP 至暗之夜\ba) 巨龙时代联盟开场至暗之夜(联盟)2 << Alliance
 #next b1) 争霸艾泽拉斯介绍 2 << Horde
 
@@ -30738,8 +30736,8 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP 至暗之夜
 #subgroup |cFF1EFF00(1-90)|r 默认
-#name a) 土灵矮人 开场 2
-#displayname |cFF1EFF001|r - 觉醒大厅
+#name a) EarthenDwarf Intro 2
+#displayname |cFF1EFF001|r - Hall of Awakening
 #next RestedXP 至暗之夜\ba) 巨龙时代联盟开场至暗之夜(联盟)2 << Alliance
 #next b1) 争霸艾泽拉斯介绍 << Horde
 
@@ -30753,8 +30751,8 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP 至暗之夜
-#name a) 阿拉希高地 回归玩家 2
-#displayname 阿拉希高地 升级追赶攻略|cRXP_ENEMY_（备选版）|r
+#name a) Arathi Highlands Returning Player 2
+#displayname Arathi Highlands Catch-Up |cRXP_ENEMY_(Alternative)|r
 #next RestedXP 至暗之夜\ba) 巨龙时代联盟开场至暗之夜(联盟)2 << Alliance
 #next b1) 争霸艾泽拉斯介绍 << Horde
 #internal
@@ -30773,8 +30771,8 @@ RXPGuides.RegisterGuide([[
 #version 2
 #group RestedXP 至暗之夜
 #subgroup |cFF1EFF00(1-90)|r 默认
-#name a) 流放者离岛联盟 2
-#displayname |cFF1EFF001|r - 流放者离岛
+#name a) Exile's Reach Alliance 2
+#displayname |cFF1EFF001|r - Exile's Reach
 #next RestedXP 至暗之夜\ba) 巨龙时代联盟开场至暗之夜(联盟)2
 
 << Alliance !Harronir !Dracthyr !DemonHunter !DK !KulTiran !EarthenDwarf !DarkIronDwarf !LightforgedDraenei !Mechagnome !VoidElf !NightBorne !HighmountainTauren !Vulpera !MagharOrc !ZandalariTroll
@@ -30788,10 +30786,10 @@ RXPGuides.RegisterGuide([[
 #version 2
 #group RestedXP 至暗之夜
 #subgroup |cFF1EFF00(1-90)|r 默认
-#name ab) 埃门谷 2
-#displayname 埃门谷|cRXP_ENEMY_（备选版）|r
+#name ab) Ammen Vale 2
+#displayname Ammen Vale |cRXP_ENEMY_(Alternative)|r
 #defaultfor Draenei !DK
-#next ac) 德莱尼 秘蓝岛 2
+#next ac) Draenei Azuremyst Isle 2
 
 << Alliance
 
@@ -30804,8 +30802,8 @@ RXPGuides.RegisterGuide([[
 #version 2
 #group RestedXP 至暗之夜
 #subgroup |cFF1EFF00(1-90)|r 默认
-#name ac) 德莱尼 秘蓝岛 2
-#displayname |cFF1EFF002|r - 秘蓝岛
+#name ac) Draenei Azuremyst Isle 2
+#displayname |cFF1EFF002|r - Azuremyst Isle
 #defaultfor Draenei !DK
 #next RestedXP 至暗之夜\ba) 巨龙时代联盟开场至暗之夜(联盟)2
 
@@ -30820,10 +30818,10 @@ RXPGuides.RegisterGuide([[
 #version 2
 #group RestedXP 至暗之夜
 #subgroup |cFF1EFF00(1-90)|r 默认
-#name ab) Dwarf 寒脊山谷 2
-#displayname 寒脊山谷 |cRXP_ENEMY_(Alternative)|r
+#name ab) Dwarf Coldridge Valley 2
+#displayname Coldridge Valley |cRXP_ENEMY_(Alternative)|r
 #defaultfor Dwarf !DK
-#next ac) 矮人和地精 丹莫罗2
+#next ac) Dwarf & Gnome Dun Morogh 2
 
 << Alliance
 
@@ -30836,10 +30834,10 @@ RXPGuides.RegisterGuide([[
 #version 2
 #group RestedXP 至暗之夜
 #subgroup |cFF1EFF00(1-90)|r 默认
-#name ab) 新工匠镇 2
-#displayname  新工匠镇|cRXP_ENEMY_（备选版）|r
+#name ab) New Tinkertown 2
+#displayname  New Tinkertown |cRXP_ENEMY_(Alternative)|r
 #defaultfor Gnome !DK
-#next ac) 矮人和地精 丹莫罗2
+#next ac) Dwarf & Gnome Dun Morogh 2
 
 << Alliance
 
@@ -30852,8 +30850,8 @@ RXPGuides.RegisterGuide([[
 #version 2
 #group RestedXP 至暗之夜
 #subgroup |cFF1EFF00(1-90)|r 默认
-#name ac) 矮人和地精 丹莫罗2
-#displayname |cFF1EFF002|r - 丹莫罗
+#name ac) Dwarf & Gnome Dun Morogh 2
+#displayname |cFF1EFF002|r - Dun Morogh
 #defaultfor Dwarf Gnome !DK
 #next RestedXP 至暗之夜\ba) 巨龙时代联盟开场至暗之夜(联盟)2
 
@@ -30868,10 +30866,10 @@ RXPGuides.RegisterGuide([[
 #version 2
 #group RestedXP 至暗之夜
 #subgroup |cFF1EFF00(1-90)|r 默认
-#name ab) 北郡山谷 2
-#displayname 北郡山谷|cRXP_ENEMY_（备选版）|r
+#name ab) Northshire Valley 2
+#displayname Northshire Valley |cRXP_ENEMY_(Alternative)|r
 #defaultfor Human !DK
-#next ac) 艾尔文森林 1 2
+#next ac) Elwynn Forest 1 2
 
 << Alliance
 
@@ -30884,8 +30882,8 @@ RXPGuides.RegisterGuide([[
 #version 2
 #group RestedXP 至暗之夜
 #subgroup |cFF1EFF00(1-90)|r 默认
-#name ac) 艾尔文森林 1 2
-#displayname |cFF1EFF002|r - 艾尔文森林
+#name ac) Elwynn Forest 1 2
+#displayname |cFF1EFF002|r - Elwynn Forest
 #defaultfor Human !DK
 #next RestedXP 至暗之夜\ba) 巨龙时代联盟开场至暗之夜(联盟)2
 
@@ -30900,10 +30898,10 @@ RXPGuides.RegisterGuide([[
 #version 2
 #group RestedXP 至暗之夜
 #subgroup |cFF1EFF00(1-90)|r 默认
-#name ab) 幽影谷 2
-#displayname 幽影谷|cRXP_ENEMY_（备选版）|r
+#name ab) Shadowglen 2
+#displayname Shadowglen |cRXP_ENEMY_(Alternative)|r
 #defaultfor NightElf !DemonHunter !DK
-#next ac) 暗夜精灵 泰达希尔2
+#next ac) Night Elf Teldrassil 2
 
 << Alliance
 
@@ -30916,8 +30914,8 @@ RXPGuides.RegisterGuide([[
 #version 2
 #group RestedXP 至暗之夜
 #subgroup |cFF1EFF00(1-90)|r 默认
-#name ac) 暗夜精灵 泰达希尔2
-#displayname |cFF1EFF002|r - 泰达希尔
+#name ac) Night Elf Teldrassil 2
+#displayname |cFF1EFF002|r - Teldrassil
 #defaultfor NightElf !DemonHunter !DK
 #next RestedXP 至暗之夜\ba) 巨龙时代联盟开场至暗之夜(联盟)2
 
@@ -30932,14 +30930,14 @@ RXPGuides.RegisterGuide([[
 #version 2
 #group RestedXP 至暗之夜
 #subgroup |cFF1EFF00(1-90)|r 默认
-#name ab) 狼人 开场2
-#displayname 吉尔尼斯|cRXP_ENEMY_（备选版）|r
+#name ab) Worgen Intro 2
+#displayname Gilneas |cRXP_ENEMY_(Alternative)|r
 #next RestedXP 至暗之夜\ba) 巨龙时代联盟开场至暗之夜(联盟)2
 
 << Alliance Worgen !DK
 
 step
-    #include RestedXP 快速升级\ab) 狼人 开场
+    #include RestedXP 快速升级\ab) Worgen Intro
 ]])
 --DarkIronDwarf: Shadowforge City
 RXPGuides.RegisterGuide([[
@@ -30947,14 +30945,14 @@ RXPGuides.RegisterGuide([[
 #version 2
 #group RestedXP 至暗之夜
 #subgroup |cFF1EFF00(1-90)|r 默认
-#name a) 黑铁矮人 开场2
-#displayname |cFF1EFF001|r - 暗炉城
+#name a) DarkIronDwarf Intro 2
+#displayname |cFF1EFF001|r - Shadowforge City
 #next RestedXP 至暗之夜\ba) 巨龙时代联盟开场至暗之夜(联盟)2
 
 << Alliance DarkIronDwarf !DK
 
 step
-    #include RestedXP 快速升级\a) 黑铁矮人 开场
+    #include RestedXP 快速升级\a) DarkIronDwarf Intro
 ]])
 --KulTiran: Boralus
 RXPGuides.RegisterGuide([[
@@ -30962,14 +30960,14 @@ RXPGuides.RegisterGuide([[
 #version 2
 #group RestedXP 至暗之夜
 #subgroup |cFF1EFF00(1-90)|r 默认
-#name a) 库尔提拉斯人 开场2
-#displayname |cFF1EFF001|r - 伯拉勒斯
+#name a) KulTiran Intro 2
+#displayname |cFF1EFF001|r - Boralus
 #next RestedXP 至暗之夜\ba) 巨龙时代联盟开场至暗之夜(联盟)2
 
 << Alliance KulTiran !DK
 
 step
-    #include RestedXP 快速升级\a) 库尔提拉斯人 开场
+    #include RestedXP 快速升级\a) KulTiran Intro
 ]])
 --LightforgedDraenei: The Vindicaar
 RXPGuides.RegisterGuide([[
@@ -30977,14 +30975,14 @@ RXPGuides.RegisterGuide([[
 #version 2
 #group RestedXP 至暗之夜
 #subgroup |cFF1EFF00(1-90)|r 默认
-#name a) 光铸德莱尼 开场2
-#displayname |cFF1EFF001|r - 维迪卡尔
+#name a) LightforgedDraenei Intro 2
+#displayname |cFF1EFF001|r - The Vindicaar
 #next RestedXP 至暗之夜\ba) 巨龙时代联盟开场至暗之夜(联盟)2
 
 << Alliance LightforgedDraenei !DK
 
 step
-    #include RestedXP 快速升级\a) 光铸德莱尼 开场
+    #include RestedXP 快速升级\a) LightforgedDraenei Intro
 ]])
 --Mechagnome: Mechagon City
 RXPGuides.RegisterGuide([[
@@ -30992,14 +30990,14 @@ RXPGuides.RegisterGuide([[
 #version 2
 #group RestedXP 至暗之夜
 #subgroup |cFF1EFF00(1-90)|r 默认
-#name a) 机械侏儒 开场2
-#displayname |cFF1EFF001|r - 麦卡贡市
+#name a) Mechagnome Intro 2
+#displayname |cFF1EFF001|r - Mechagon City
 #next RestedXP 至暗之夜\ba) 巨龙时代联盟开场至暗之夜(联盟)2
 
 << Alliance Mechagnome !DK
 
 step
-    #include RestedXP 快速升级\a) 机械侏儒 开场
+    #include RestedXP 快速升级\a) Mechagnome Intro
 ]])
 --VoidElf: Telogrus Rift
 RXPGuides.RegisterGuide([[
@@ -31007,14 +31005,14 @@ RXPGuides.RegisterGuide([[
 #version 2
 #group RestedXP 至暗之夜
 #subgroup |cFF1EFF00(1-90)|r 默认
-#name a) 虚空精灵 开场2
-#displayname |cFF1EFF001|r - 泰洛古斯裂隙
+#name a) VoidElf Intro 2
+#displayname |cFF1EFF001|r - Telogrus Rift
 #next RestedXP 至暗之夜\ba) 巨龙时代联盟开场至暗之夜(联盟)2
 
 << Alliance VoidElf !DK
 
 step
-    #include RestedXP 快速升级\a) 虚空精灵 开场
+    #include RestedXP 快速升级\a) VoidElf Intro
 ]])
 
 -- ====================================
@@ -31027,15 +31025,15 @@ RXPGuides.RegisterGuide([[
 #version 2
 #group RestedXP 至暗之夜
 #subgroup |cFF1EFF00(1-90)|r 默认
-#name a) 流放者离岛部落 2
-#displayname |cFF1EFF001|r - 流放者离岛
+#name a) Exile's Reach Horde 2
+#displayname |cFF1EFF001|r - Exile's Reach
 #next b1) 争霸艾泽拉斯介绍 2
 
 
 << Horde !Harronir !Dracthyr !DemonHunter !DK !Nightborne !HighmountainTauren !Vulpera !MagharOrc !ZandalariTroll
 
 step
-    #include RestedXP 快速升级\a) 流放者离岛部落
+    #include RestedXP 快速升级\a) Exile's Reach Horde
 ]])
 --Blood Elf: Sunstrider Isle
 RXPGuides.RegisterGuide([[
@@ -31043,15 +31041,15 @@ RXPGuides.RegisterGuide([[
 #version 2
 #group RestedXP 至暗之夜
 #subgroup |cFF1EFF00(1-90)|r 默认
-#name ab) 逐日岛 2
-#displayname 逐日岛|cRXP_ENEMY_（备选版）|r
-#next ac) 血精灵 永歌森林 2
+#name ab) Sunstrider Isle 2
+#displayname Sunstrider Isle |cRXP_ENEMY_(Alternative)|r
+#next ac) Blood Elf Eversong Woods 2
 #defaultfor BloodElf !DK
 
 << Horde
 
 step
-    #include RestedXP 快速升级\ab) 逐日岛
+    #include RestedXP 快速升级\ab) Sunstrider Isle
 ]])
 --Blood Elf: Eversong Woods(xp tag)
 RXPGuides.RegisterGuide([[
@@ -31059,15 +31057,15 @@ RXPGuides.RegisterGuide([[
 #version 2
 #group RestedXP 至暗之夜
 #subgroup |cFF1EFF00(1-90)|r 默认
-#name ac) 血精灵 永歌森林 2
-#displayname |cFF1EFF002|r - 永歌森林
+#name ac) Blood Elf Eversong Woods 2
+#displayname |cFF1EFF002|r - Eversong Woods
 #next b1) 争霸艾泽拉斯介绍 2
 #defaultfor BloodElf !DK
 
 << Horde
 
 step
-    #include RestedXP 快速升级\ac) 血精灵 永歌森林
+    #include RestedXP 快速升级\ac) Blood Elf Eversong Woods
 ]])
 --Orc: Valley of Trials
 RXPGuides.RegisterGuide([[
@@ -31075,20 +31073,20 @@ RXPGuides.RegisterGuide([[
 #version 2
 #group RestedXP 至暗之夜
 #subgroup |cFF1EFF00(1-90)|r 默认
-#name ab) 试炼谷1 2 << !Troll --Orc
-#name ab) 试炼谷2 2 << Troll
-#displayname |cFF1EFF002|r - 试炼谷 << Troll
-#displayname 试炼谷|cRXP_ENEMY_（备选版）|r << !Troll --Orc
-#next ac) 回音群岛2 2 << !Troll --Orc
-#next a) 争霸艾泽拉斯开场2 << Troll
+#name ab) Valley of Trials1 2 << !Troll --Orc
+#name ab) Valley of Trials2 2 << Troll
+#displayname |cFF1EFF002|r - Valley of Trials << Troll
+#displayname Valley of Trials |cRXP_ENEMY_(Alternative)|r << !Troll --Orc
+#next ac) Echo Isles2 2 << !Troll --Orc
+#next a) BfA Intro 2 << Troll
 #defaultfor Orc !DK/Troll !DK
 
 << Horde
 
 step << !Troll
-    #include RestedXP 快速升级\ab) 试炼谷1
+    #include RestedXP Speed Leveling\ab) Valley of Trials1
 step << Troll
-    #include RestedXP 快速升级\ab) 试炼谷2
+    #include RestedXP Speed Leveling\ab) Valley of Trials2
 ]])
 --Orc: Echo Isles
 RXPGuides.RegisterGuide([[
@@ -31096,20 +31094,20 @@ RXPGuides.RegisterGuide([[
 #version 2
 #group RestedXP 至暗之夜
 #subgroup |cFF1EFF00(1-90)|r 默认
-#name ac) 回音群岛1 2 << Troll
-#name ac) 回音群岛2 2 << !Troll --Orc
-#displayname 回音群岛|cRXP_ENEMY_（备选版）|r << Troll
-#displayname |cFF1EFF002|r - 回音群岛 << !Troll
-#next ab) 试炼谷2 2 << Troll
+#name ac) Echo Isles1 2 << Troll
+#name ac) Echo Isles2 2 << !Troll --Orc
+#displayname Echo Isles |cRXP_ENEMY_(Alternative)|r << Troll
+#displayname |cFF1EFF002|r - Echo Isles << !Troll
+#next ab) Valley of Trials2 2 << Troll
 #next b1) 争霸艾泽拉斯介绍 2 << !Troll
 #defaultfor Orc !DK/Troll !DK
 
 << Horde
 
 step << !Troll
-    #include RestedXP 快速升级\ac) 回音群岛1
+    #include RestedXP Speed Leveling\ac) Echo Isles1
 step << Troll
-    #include RestedXP 快速升级\ac) 回音群岛2
+    #include RestedXP Speed Leveling\ac) Echo Isles2
 ]])
 --Tauren: Camp Narache
 RXPGuides.RegisterGuide([[
@@ -31117,15 +31115,15 @@ RXPGuides.RegisterGuide([[
 #version 2
 #group RestedXP 至暗之夜
 #subgroup |cFF1EFF00(1-90)|r 默认
-#name ab) 纳拉其营地 2
-#displayname 纳拉其营地|cRXP_ENEMY_（备选版）|r
-#next ac) 牛头人营地莫高雷 2
+#name ab) Camp Narache 2
+#displayname Camp Narache |cRXP_ENEMY_(Alternative)|r
+#next ac) Tauren Camp Mulgore 2
 #defaultfor Tauren !DK
 
 << Horde
 
 step
-    #include RestedXP 快速升级\ab) 纳拉其营地
+    #include RestedXP 快速升级\ab) Camp Narache
 ]])
 --Tauren: Camp Mulgore
 RXPGuides.RegisterGuide([[
@@ -31133,15 +31131,15 @@ RXPGuides.RegisterGuide([[
 #version 2
 #group RestedXP 至暗之夜
 #subgroup |cFF1EFF00(1-90)|r 默认
-#name ac) 牛头人营地莫高雷 2
-#displayname |cFF1EFF002|r - 莫高雷
+#name ac) Tauren Camp Mulgore 2
+#displayname |cFF1EFF002|r - Mulgore
 #next b1) 争霸艾泽拉斯介绍 2
 #defaultfor Tauren !DK
 
 << Horde
 
 step
-    #include RestedXP 快速升级\ac) 牛头人营地莫高雷
+    #include RestedXP 快速升级\ac) Tauren Camp Mulgore
 ]])
 --Undead: Deathknell
 RXPGuides.RegisterGuide([[
@@ -31149,16 +31147,16 @@ RXPGuides.RegisterGuide([[
 #version 2
 #group RestedXP 至暗之夜
 #subgroup |cFF1EFF00(1-90)|r 默认
-#name ab) 丧钟镇 2
-#displayname 丧钟镇|cRXP_ENEMY_（备选版）|r
-#title 丧钟镇
-#next ac) 亡灵 提瑞斯法林地 2
+#name ab) Deathknell 2
+#displayname Deathknell |cRXP_ENEMY_(Alternative)|r
+#title Deathknell
+#next ac) Undead Tirisfal Glades 2
 #defaultfor Undead !DK
 
 << Horde
 
 step
-    #include RestedXP 快速升级\ab) 丧钟镇
+    #include RestedXP 快速升级\ab) Deathknell
 ]])
 --Undead: Tirisfal Glades
 RXPGuides.RegisterGuide([[
@@ -31166,15 +31164,15 @@ RXPGuides.RegisterGuide([[
 #version 2
 #group RestedXP 至暗之夜
 #subgroup |cFF1EFF00(1-90)|r 默认
-#name ac) 亡灵 提瑞斯法林地 2
-#displayname |cFF1EFF002|r - 提瑞斯法林地
+#name ac) Undead Tirisfal Glades 2
+#displayname |cFF1EFF002|r - Tirisfal Glades
 #next b1) 争霸艾泽拉斯介绍 2
 #defaultfor Undead !DK
 
 << Horde
 
 step
-    #include RestedXP 快速升级\c) 亡灵 提瑞斯法林地
+    #include RestedXP 快速升级\ac) Undead Tirisfal Glades
 ]])
 --Goblin: Kezan & The Lost Isles
 RXPGuides.RegisterGuide([[
@@ -31182,14 +31180,14 @@ RXPGuides.RegisterGuide([[
 #version 2
 #group RestedXP 至暗之夜
 #subgroup |cFF1EFF00(1-90)|r 默认
-#name ab) 地精 开场2
-#displayname 科赞与失落群岛|cRXP_ENEMY_（备选版）|r
+#name ab) Goblin Intro 2
+#displayname Kezan & The Lost Isles |cRXP_ENEMY_(Alternative)|r
 #next b1) 争霸艾泽拉斯介绍 2
 
 << Horde Goblin !DK
 
 step
-    #include RestedXP 快速升级\ab) 地精 开场
+    #include RestedXP 快速升级\ab) Goblin Intro
 ]])
 --HighmountainTauren: Highmountain
 RXPGuides.RegisterGuide([[
@@ -31197,14 +31195,14 @@ RXPGuides.RegisterGuide([[
 #version 2
 #group RestedXP 至暗之夜
 #subgroup |cFF1EFF00(1-90)|r 默认
-#name a) 至高岭牛头人 2
-#displayname |cFF1EFF001|r - 至高岭牛头人
+#name a) HighmountainTauren 2
+#displayname |cFF1EFF001|r - Highmountain Tauren
 #next b1) 争霸艾泽拉斯介绍 2
 
 << Horde HighmountainTauren !DK
 
 step
-    #include RestedXP 快速升级\a) 至高岭牛头人
+    #include RestedXP 快速升级\a) HighmountainTauren
 ]])
 --Nightborne: The Nighthold
 RXPGuides.RegisterGuide([[
@@ -31212,14 +31210,14 @@ RXPGuides.RegisterGuide([[
 #version 2
 #group RestedXP 至暗之夜
 #subgroup |cFF1EFF00(1-90)|r 默认
-#name a) 夜之子 开场2
-#displayname |cFF1EFF001|r - 暗夜要塞
+#name a) Nightborne Intro 2
+#displayname |cFF1EFF001|r - The Nighthold
 #next b1) 争霸艾泽拉斯介绍 2
 
 << Horde Nightborne !DK
 
 step
-    #include RestedXP 快速升级\a) 夜之子 开场
+    #include RestedXP 快速升级\a) Nightborne Intro
 ]])
 --ZandalariTroll: Dazar'alor
 RXPGuides.RegisterGuide([[
@@ -31227,14 +31225,14 @@ RXPGuides.RegisterGuide([[
 #version 2
 #group RestedXP 至暗之夜
 #subgroup |cFF1EFF00(1-90)|r 默认
-#name a) 赞达拉巨魔 开场2
-#displayname |cFF1EFF001|r - 达萨罗
+#name a) ZandalariTroll Intro 2
+#displayname |cFF1EFF001|r - Dazar'alor
 #next b1) 争霸艾泽拉斯介绍 2
 
 << Horde ZandalariTroll !DK
 
 step
-    #include RestedXP 快速升级\a) 赞达拉巨魔 开场
+    #include RestedXP 快速升级\a) ZandalariTroll Intro
 ]])
 --MagharOrc: Orgrimmar
 RXPGuides.RegisterGuide([[
@@ -31242,14 +31240,14 @@ RXPGuides.RegisterGuide([[
 #version 2
 #group RestedXP 至暗之夜
 #subgroup |cFF1EFF00(1-90)|r 默认
-#name a) 玛格汉兽人 开场2
-#displayname |cFF1EFF001|r - 奥格瑞玛
+#name a) MagharOrc Intro 2
+#displayname |cFF1EFF001|r - Orgrimmar
 #next b1) 争霸艾泽拉斯介绍 2
 
 << Horde MagharOrc !DK
 
 step
-    #include RestedXP 快速升级\a) 玛格汉兽人 开场
+    #include RestedXP 快速升级\a) MagharOrc Intro
 ]])
 --Vulpera: Orgrimmar
 RXPGuides.RegisterGuide([[
@@ -31257,23 +31255,23 @@ RXPGuides.RegisterGuide([[
 #version 2
 #group RestedXP 至暗之夜
 #subgroup |cFF1EFF00(1-90)|r 默认
-#name a) 狐人 开场 2
-#displayname |cFF1EFF001|r - 奥格瑞玛
+#name a) Vulpera Intro 2
+#displayname |cFF1EFF001|r - Orgrimmar
 #next b1) 争霸艾泽拉斯介绍 2
 
 << Horde Vulpera !DK
 
 step
-    #include RestedXP 快速升级\a) 狐人 开场
+    #include RestedXP 快速升级\a) Vulpera Intro
 ]])
 --Legion Intro
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP 至暗之夜
-#name a) 部落军团开场 2
+#name a) Horde Legion Intro 2
 #internal
 
 step
-    #include RestedXP 快速升级\a) 部落军团开场
+    #include RestedXP 快速升级\a) Horde Legion Intro
 ]])
