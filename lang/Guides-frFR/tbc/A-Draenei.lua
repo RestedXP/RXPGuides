@@ -2564,8 +2564,8 @@ step
     #optional
     .goto Bloodmyst Isle,55.429,55.266
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Redresseur de torts Boros|r
-    +Rappelez-vous de rendre vos [Éclat de cristal irradié] pour le consommable [Cristal de clairvoyance] (Augmente l'Intelligence de 5. Dure 30 mins.) << !Warrior !Paladin !Shaman !Rogue
-    +N'oubliez pas de rendre vos [Éclat de cristal irradié] pour le consommable [Cristal de férocité] (Augmente la puissance d'attaque de 10. Dure 30 mins.) << Warrior/Paladin/Shaman/Rogue
+    +N'oubliez pas de rendre vos [Éclat de cristal irradié] pour le consommable [Cristal de clairvoyance] (Augmente l'Intelligence de 5. Dure 30 mins.) << !Warrior !Paladin !Shaman !Rogue
+    +Rappelez-vous de rendre vos [Éclat de cristal irradié] pour le consommable [Cristal de férocité] (Augmente la puissance d'attaque de 10. Dure 30 mins.) << Warrior/Paladin/Shaman/Rogue
     .target Vindicator Boros
     .itemcount 23984,>9
 step
@@ -2798,8 +2798,8 @@ step
     #optional
     .goto Bloodmyst Isle,55.429,55.266
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Redresseur de torts Boros|r
-    +Rappelez-vous de rendre vos [Éclat de cristal irradié] pour le consommable [Cristal de clairvoyance] (Augmente l'Intelligence de 5. Dure 30 mins.) << !Warrior !Paladin !Shaman !Rogue
-    +N'oubliez pas de rendre vos [Éclat de cristal irradié] pour le consommable [Cristal de férocité] (Augmente la puissance d'attaque de 10. Dure 30 mins.) << Warrior/Paladin/Shaman/Rogue
+    +N'oubliez pas de rendre vos [Éclat de cristal irradié] pour le consommable [Cristal de clairvoyance] (Augmente l'Intelligence de 5. Dure 30 mins.) << !Warrior !Paladin !Shaman !Rogue
+    +Rappelez-vous de rendre vos [Éclat de cristal irradié] pour le consommable [Cristal de férocité] (Augmente la puissance d'attaque de 10. Dure 30 mins.) << Warrior/Paladin/Shaman/Rogue
     .target Vindicator Boros
     .itemcount 23984,>9
 step

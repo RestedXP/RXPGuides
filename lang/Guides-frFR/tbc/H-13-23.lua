@@ -3886,6 +3886,7 @@ step
     >>Tuez |cRXP_ENEMY_Warlord Krom'zar|r lorsqu'il apparaît. Ramassez la |cRXP_PICK_Banner|r qu'il laissera sur le sol
     >>Faites attention ! C'est un Elite fort et protégé par au moins deux |cRXP_ENEMY_Kolkar|r
     >>Il a un temps de réapparition qui peut durer jusqu'à 3 minutes
+    .link https://www.youtube.com/watch?v=xrm0PWe5wf4 >>|cRXP_WARN_Clic ici pour une vidéo de guide sur comment faire du kiting|r |cRXP_ENEMY_Seigneur de guerre Krom'zar|r
     .complete 4021,1 --Piece of Krom'zar's Banner (1)
     .unitscan Warlord Krom'zar
     .isOnQuest 4021
@@ -4465,7 +4466,7 @@ step
 step
     #completewith JourneytoTM
     .goto Ashenvale,12.24,33.80
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Andruk|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Andruk, Zoram'gar|r
     .fly Thunder Bluff >>Volez à Thunder Bluff
     .target Andruk
     .zoneskip Thunder Bluff
@@ -4532,7 +4533,7 @@ step
 step
     #label JourneytoTM
     .goto Thunder Bluff,22.82,20.88
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Zamah|r dans les bassins de vision
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Zamah|r dans les bassins des Visions
     .turnin 1064 >>Rendez la quête L'aide des Réprouvés
     .accept 1065 >>Acceptez la quête Un voyage vers Moulin-de-Tarren
     .target Apothecary Zamah

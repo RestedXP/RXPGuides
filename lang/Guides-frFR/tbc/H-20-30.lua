@@ -1248,7 +1248,7 @@ step
     #label Zamah
     .goto Thunder Bluff,28.55,25.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Clarice|r
-    >>Elle patrouille dans les alentours
+    >>Elle patrouille aux alentours
     .accept 264 >> Acceptez la quête Jusqu'à ce que la mort nous sépare
     .target Clarice Foster
 step << Shaman

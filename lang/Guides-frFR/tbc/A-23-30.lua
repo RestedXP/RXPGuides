@@ -5802,7 +5802,7 @@ step
     .zone Stormwind City >> Retour à Hurlevent
 step << Shaman
 	.goto Stormwind City,61.822,83.991
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à la |cRXP_FRIENDLY_Long-voyante Umbrua|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Farseer Umbrua|r
     .accept 10491 >> Acceptez la quête L'appel de l'air
 	.trainer >> Apprenez vos sorts de classe
     .target Farseer Umbrua
@@ -5964,7 +5964,7 @@ step << skip
 	.goto Ironforge,61.34,89.25
 	.train 197 >> Acheter la compétence pour porter des haches à deux mains << !Rogue
 	.train 266 >> Apprenez la compétence pour porter des Fusils << Hunter/Warrior/Rogue
-    .train 199 >> Achetez la compétence pour porter des masses à deux mains << Warrior/Shaman
+    .train 199 >> Acheter la compétence pour porter des masses à deux mains << Warrior/Shaman
     .train 198 >> Acheter la compétence pour porter des masses à une main << Rogue/Shaman
     .train 44 >> Acheter la compétence pour porter des haches à une main << Warrior wotlk/Shaman/Rogue wotlk
     .zoneskip Wetlands
@@ -6247,7 +6247,7 @@ step << NightElf !Druid
     .zone Darnassus >> Prenez le portail violet pour Darnassus
 step << NightElf !Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Lelanai|r et |cRXP_FRIENDLY_Jartsam|r
-    .vendor >>|cRXP_BUY_Achetez un|r [|cFF0070FFFrostsaber|r] |cRXP_BUY_ou un|r [|cFF0070FFNightsaber|r]
+    .vendor >>|cRXP_BUY_Achetez un|r [|cFF0070FFFrostsaber|r] |cRXP_BUY_ou  un|r [|cFF0070FFNightsaber|r]
     .goto Darnassus,38.283,15.365
     .train 33388 >>Apprenez [Apprenti cavalier]
     .goto Darnassus,38.694,15.857
@@ -6645,7 +6645,7 @@ step
 step
     .goto Hillsbrad Foothills,50.71,58.76,15,0
     .goto Hillsbrad Foothills,52.09,58.70
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Brewmeister Bilger|r dans le sous-sol
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Brewmeister Bilger|r dans la cave
     >>Si vous ratez cette quête chronométrée, abandonnez-la et passez cette étape
     .turnin 647 >>Rendez la quête Le tord-boyaux de MacKreel
     .target Brewmeister Bilger
@@ -6674,7 +6674,7 @@ step << Hunter
     .goto Hillsbrad Foothills,56.6,53.8
     >>|cRXP_WARN_Lancez|r |T132164:0|t[Apprivoiser la bête] |cRXP_WARN_sur une |cRXP_ENEMY_Ancienne Rampemousse|r pour le dompter|r -- .tame 2348
     .train 17264 >>Attaquez des créatures pour apprendre [Morsure (Rang 4)]
-    .link https://www.wow-petopia.com/classic/training.php >> Cliquez ici pour plus d'information sur le dressage des familiers
+    .link https://www.wow-petopia.com/classic/training.php >> |cRXP_WARN_Cliquez ici pour plus d'information sur le dressage des familiers|r
 	.unitscan Elder Moss Creeper
 step
     #loop

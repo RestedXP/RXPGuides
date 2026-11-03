@@ -3909,7 +3909,7 @@ step << Hunter
     .goto Ghostlands,76.07,25.13,40,0
     .goto Ghostlands,74.82,29.77,40,0
     .train 16830 >>|cRXP_WARN_Lancez|r |T132164:0|t[Apprivoise une bête] |cRXP_WARN_sur un |cRXP_ENEMY_Lynx griffe-fantôme|r. Attaquez les mobs avec celui-ci pour apprendre|r |T132140:0|t[Griffe (Rang 2)]
-    .link https://www.wow-petopia.com/classic/training.php >> Cliquez ici pour plus d'information sur le dressage des familiers
+    .link https://www.wow-petopia.com/classic/training.php >> |cRXP_WARN_Cliquez ici pour plus d'information sur le dressage des familiers|r
     .mob Ghostclaw Lynx
 step
     #loop
@@ -8245,7 +8245,7 @@ step << Rogue/Hunter/Druid/Shaman
 step << Mage/Warlock/Priest
     #optional
     #completewith StoneOL
-    +Équipez la [Robe de l'apothicaire]
+    +Équipez la [Robe d'apothicaire]
     .use 22986
     .itemcount 22986,1
     .itemStat 5,QUALITY,<7
@@ -8430,7 +8430,7 @@ step
 step
     #completewith Deatholme1
     >>Tuez |cRXP_ENEMY_Luzran|r. Dépouillez-le pour sa |cRXP_LOOT_Tête|r
-    >>|cRXP_WARN_Trouvez un groupe pour le tuer si nécessaire. Passez cette étape si vous n'arrivez pas à trouver un groupe ou le tuer seul|r
+    >>Trouvez un groupe pour le tuer si nécessaire. Passez cette étape si vous n'arrivez pas à trouver un groupe ou le tuer seul
     >>|cRXP_WARN_Faites attention,|r Luzran|cRXP_ENEMY_ |rlance|r |T132338:0|t[Enchaînement] |cRXP_WARN_et|r |T132939:0|t[Frappe] |cRXP_WARN_(vous projette dans les airs)|r
     >>|cRXP_ENEMY_Luzran|r |cRXP_WARN_est immunisé contre|r |T136183:0|t[Peur] << Warlock/Priest
     >>|cRXP_ENEMY_Luzran|r |cRXP_WARN_peut être ralenti et enraciné par|r |T135846:0|t[Eclair de givre] |cRXP_WARN_et|r |T135848:0|t[Veilleur du puits Solanian] << Mage
@@ -8476,7 +8476,7 @@ step
     .goto Ghostlands,25.31,15.03,50,0
     .goto Ghostlands,40.58,48.42,50,0
     >>Tuez |cRXP_ENEMY_Knucklerot|r. Dépouillez-le pour sa |cRXP_LOOT_Tête|r
-    >>|cRXP_WARN_Trouvez un groupe pour le tuer si nécessaire. Passez cette étape si vous n'arrivez pas à trouver un groupe ou le tuer seul|r
+    >>Trouvez un groupe pour le tuer si nécessaire. Passez cette étape si vous n'arrivez pas à trouver un groupe ou le tuer seul
     >>Évitez le [Poison corrosif] de |cRXP_ENEMY_Knucklerot|r en l'interrompant avec [Marteau de la justice] << Paladin
     >>Évitez le [Poison corrosif] de |cRXP_ENEMY_Knucklerot|r en l'interrompant avec [Coup de pied] << Rogue
     >>|cRXP_ENEMY_Putrepoing|r |cRXP_WARN_est immunisé contre|r |T136183:0|t[Peur] << Warlock/Priest
@@ -8516,7 +8516,7 @@ step
     .goto Ghostlands,34.35,49.33,50,0
     >>Tuez |cRXP_ENEMY_Luzran|r. Dépouillez-le pour sa |cRXP_LOOT_Tête|r
     >>|cRXP_ENEMY_Luzran|r apparaît à la Ziggourat sanguinolente (à l'ouest), et patrouille en descendant la Malebrêche, puis la remonte jusqu'à ce qu'il atteigne la rivière
-    >>|cRXP_WARN_Trouvez un groupe pour le tuer si nécessaire. Passez cette étape si vous n'arrivez pas à trouver un groupe ou le tuer seul|r
+    >>Trouvez un groupe pour le tuer si nécessaire. Passez cette étape si vous n'arrivez pas à trouver un groupe ou le tuer seul
     >>|cRXP_WARN_Faites attention,|r Luzran|cRXP_ENEMY_ |rlance|r |T132338:0|t[Enchaînement] |cRXP_WARN_et|r |T132939:0|t[Frappe] |cRXP_WARN_(vous projette dans les airs)|r
     >>|cRXP_ENEMY_Luzran|r |cRXP_WARN_est immunisé contre|r |T136183:0|t[Peur] << Warlock/Priest
     >>|cRXP_ENEMY_Luzran|r |cRXP_WARN_peut être ralenti et enraciné par|r |T135846:0|t[Eclair de givre] |cRXP_WARN_et|r |T135848:0|t[Veilleur du puits Solanian] << Mage

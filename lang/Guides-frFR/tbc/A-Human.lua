@@ -3281,7 +3281,7 @@ step
 step
     #optional
     .goto 1437,4.370,56.762
-    >>Montez votre niveau de compétence en [Premiers soins] pendant que vous attendez le bateau pour Sombrivage
+    >>Montez en niveau vos [Premiers soins] en attendant le bateau pour Sombrivage
     .zone Darkshore >> Prenez le bateau pour Sombrivage
     .skill firstaid,75,1 -- shows if firstaid is <75
     .skill firstaid,<1,1 -- shows if firstaid is >1

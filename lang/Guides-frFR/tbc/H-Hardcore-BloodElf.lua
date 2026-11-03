@@ -4700,7 +4700,7 @@ step << Hunter
     .goto Ghostlands,76.07,25.13,40,0
     .goto Ghostlands,74.82,29.77,40,0
     .train 16830 >>|cRXP_WARN_Lancez|r |T132164:0|t[Apprivoise une bête] |cRXP_WARN_sur un |cRXP_ENEMY_Lynx griffe-fantôme|r. Attaquez les mobs avec celui-ci pour apprendre|r |T132140:0|t[Griffe (Rang 2)]
-    .link https://www.wow-petopia.com/classic/training.php >> Cliquez ici pour plus d'information sur le dressage des familiers
+    .link https://www.wow-petopia.com/classic/training.php >> |cRXP_WARN_Cliquez ici pour plus d'information sur le dressage des familiers|r
     .mob Ghostclaw Lynx
 step
     #optional

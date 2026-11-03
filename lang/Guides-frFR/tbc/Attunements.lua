@@ -892,7 +892,7 @@ step
 	.target Akama
 step
     #completewith next
-    .zone Shattrath City >> Voyagez à Shattrath
+    .zone Shattrath City >> Allez à Shattrath
 step
     .goto Shattrath City,53.98,44.73
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_A'dal|r
@@ -948,7 +948,7 @@ step
 	.target Akama
 step
     #completewith next
-    .zone Shattrath City >> Voyagez à Shattrath
+    .zone Shattrath City >> Allez à Shattrath
 step
     .goto Shattrath City,53.98,44.73
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_A'dal|r

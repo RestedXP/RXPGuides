@@ -1165,7 +1165,7 @@ step << Rogue
 step << Rogue
     #optional
     #completewith BaronLongshore
-    +Équipez la [Cimeterre]
+    +Équipez la [CImeterre]
     .use 2027
     .itemcount 2027,1
     .itemStat 16,QUALITY,<7
@@ -1195,7 +1195,7 @@ step
 step
     .goto The Barrens,62.05,39.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Wiley l'aubergiste|r
-    >>|cRXP_BUY_Buy|r Achetez des [Lutjan à longue mâchoire]|cRXP_BUY_à Drohn|r
+    >>|cRXP_BUY_Buy|r Achetez des [Lutjan à longue mâchoire]|cRXP_BUY_au marchand|r
     >>|cRXP_BUY_Achetez du|r [Jus de melon] |cRXP_BUY_au marchand|r << Mage/Warlock/Priest/Shaman/Druid
     >>|T133918:0|tLes [Lutjan à longue mâchoire] sont très abordables, achetez-en autant que vous le voulez
     .vendor >> Vendez tout ce dont nous n'avez pas besoin
@@ -1468,7 +1468,7 @@ step
 step << Troll Hunter/Orc Hunter
     .goto The Barrens,51.67,29.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Parlez à|r |cRXP_FRIENDLY_Barg|r
-    >>|cRXP_BUY_Achetez des|r [Flèche grossières] |cRXP_BUY_à Barg|r
+    >>|cRXP_BUY_Achetez des|r [Flèche pointues] |cRXP_BUY_à Barg|r
     .collect 2515,1200,850,1 << Hunter --Sharp Arrow (1200)
     .target Barg
 step << Tauren Hunter
@@ -1481,7 +1481,7 @@ step << Troll Hunter/Orc Hunter
     .goto The Barrens,51.11,29.07
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Parlez à|r |cRXP_FRIENDLY_Uthrok|r
     .vendor >> |cRXP_BUY_Achetez un|r [|cRXP_FRIENDLY_Bon arc long|r] |cRXP_BUY_à Uthrok si il en a en stock et faites un stock de flèches|r
-    >>Si il n'est pas disponible, achetez un [Arc renforcé] à la place
+    >>Si il n'est pas disponible, achetez à la place un [Arc renforcé]
     .collect 2515,1200,870,1 << Hunter --Sharp Arrow (1200)
     .target Uthrok
     .isOnQuest 903
@@ -1776,7 +1776,7 @@ step << skip --!Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
     .dungeon RFC
 step << skip --!Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
     #completewith Samophlange
-    +Faites attention aux |cRXP_ENEMY_Sunscale Scytheclaws|r dans la zone. Ils sont niveau 18 et peuvent utiliser [Rosser]
+    +Faites attention aux |cRXP_ENEMY_Sunscale Scytheclaws|r dans la zone. Ils vont jusqu'au niveau 18 et peuvent utiliser [Rosser]
     .dungeon RFC
     .xp >17,1
 step << skip --!Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
@@ -1987,7 +1987,7 @@ step
     .zone Orgrimmar >>Entrez dans Orgrimmar par l'entrée à l'ouest
 step
     #completewith next
-    .skill firstaid,40 >> Créez des [Bandages en lin] jusqu'à ce que votre compétence en [Premiers soins] soit de 40 ou plus
+    .skill firstaid,40 >> Fabriquez des [Bandages en lin] jusqu'à ce que votre compétence de [Premiers soins] soit de 40 ou plus
     .skill firstaid,<1,1
 step
     .goto Orgrimmar,34.18,84.53
@@ -1998,12 +1998,12 @@ step
     .skill firstaid,<1,1
 step
     #completewith next
-    .skill firstaid,50 >> Créez des [Bandages épais en lin] jusqu'à ce que votre compétence en [Premiers soins] soit de 50 ou plus
+    .skill firstaid,50 >> Fabriquez des [Bandages épais en lin] jusqu'à ce que votre compétence de [Premiers soins] soit de 50 ou plus
     .skill firstaid,<1,1
 step
     .goto Orgrimmar,34.18,84.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|r |cRXP_FRIENDLY_Arnok|r
-    >>Passez cette étape si vous n'avez pas assez d'[Etoffe de lin] pour monter votre compétence à 50
+    >>Passez cette étape si vous n'avez pas assez d'[Etoffe de lin] pour atteindre une compétence de 50
     .train 3274 >> Apprenez Premiers soins compagnon
     .target Arnok
     .skill firstaid,<40,1
@@ -2181,14 +2181,14 @@ step << Warlock
     .xp <18,1
 step << Warlock
     .goto Orgrimmar,47.54,46.75
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Kurgul|r et achetez le [Grimoire de Sacrifice]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Kurgul|r et achetez un [Grimoire de Sacrifice]
     .collect 16351,1,896,1 --Grimoire of Sacrifice (Rank 1) (1)
     .target Kurgul
     .xp <16,1
     .xp >18,1
 step << Warlock
     .goto Orgrimmar,47.54,46.75
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Kurgul|r et achetez le [Grimoire d’Éclair de feu (Rang 3)]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Kurgul|r et achetez un [Grimoire d’Éclair de feu(Rang 3)]
     .collect 16316,1,896,1 --Grimoire of Firebolt (Rank 3) (1)
     .target Kurgul
     .xp <18,1
@@ -2419,7 +2419,7 @@ step
 step << Hunter
     .goto The Barrens,51.67,29.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Parlez à|r |cRXP_FRIENDLY_Barg|r
-    >>|cRXP_BUY_Achetez des|r [Flèche grossières] |cRXP_BUY_à Barg|r
+    >>|cRXP_BUY_Achetez des|r [Flèche pointues] |cRXP_BUY_à Barg|r
     .collect 2515,1800,888,1 << Hunter --Sharp Arrow (1800)
     .target Barg
 step
@@ -2511,7 +2511,7 @@ step << Warrior
 step
     .goto The Barrens,62.05,39.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|cRXP_FRIENDLY_Innkeeper Wiley|r
-    >>|cRXP_BUY_Buy|r Achetez des [Lutjan à longue mâchoire]|cRXP_BUY_à Drohn|r
+    >>|cRXP_BUY_Buy|r Achetez des [Lutjan à longue mâchoire]|cRXP_BUY_au marchand|r
     >>|cRXP_BUY_Achetez du|r [Jus de melon] |cRXP_BUY_au marchand|r << Mage/Warlock/Priest/Shaman/Druid
     >>|T133918:0|tLes [Lutjan à longue mâchoire] sont très abordables, achetez-en autant que vous le voulez
     .vendor >> Vendez tout ce dont nous n'avez pas besoin
@@ -3112,7 +3112,7 @@ step
     >>Tuez |cRXP_ENEMY_Warlord Krom'zar|r lorsqu'il apparaît. Ramassez la |cRXP_PICK_Banner|r qu'il laissera sur le sol
     >>Faites attention ! C'est un Elite fort et protégé par au moins deux |cRXP_ENEMY_Kolkar|r
     >>Il a un temps de réapparition qui peut durer jusqu'à 3 minutes
-    .link https://www.youtube.com/watch?v=xrm0PWe5wf4 >>|cRXP_WARN_Cliquez ici pour un guide vidéo sur comment kiter|r |cRXP_ENEMY_Seigneur de guerre Krom'zar|r
+    .link https://www.youtube.com/watch?v=xrm0PWe5wf4 >>|cRXP_WARN_Clic ici pour une vidéo de guide sur comment faire du kiting|r |cRXP_ENEMY_Seigneur de guerre Krom'zar|r
     .complete 4021,1 --Piece of Krom'zar's Banner (1)
     .unitscan Warlord Krom'zar
     .isOnQuest 4021
@@ -3219,7 +3219,7 @@ RXPGuides.RegisterGuide([[
 #version 11
 #group RestedXP Horde 1-22
 #groupid RXP-SRGCE-H1
-#next RestedXP Horde 22-30\22-24 Hillsbrad
+#next RestedXP Horde 22-30\22-24 Hautebrande
 
 
 step << Druid
@@ -3407,7 +3407,7 @@ step
     .isQuestAvailable 1093
 step
     .goto Stonetalon Mountains,47.61,61.58
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Jeeda|r au second étage de l'auberge
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Jeeda|r au deuxième étage de l'auberge
     .vendor >> |cRXP_BUY_Achetez-lui des|r [Potions de soins] |cRXP_BUY_si elle en a en stock|r << !Warrior
     .vendor >> |cRXP_BUY_Achetez-lui des|r [Potions de soins] |cRXP_BUY_et des|r [Viétérule] |cRXP_BUY_si elle en a en stock|r << Warrior
     .target Jeeda
@@ -3694,7 +3694,7 @@ step
     .mob Stormsnout
 step
     #completewith next
-    >>Tuez les |cRXP_ENEMY_Hurans Dos-hirsutse|r. Dépouillez-les pour leurs |cRXP_LOOT_Défenses|r. Gardez les |T134128:0|t[|cRXP_LOOT_Joyaux de sang|r] que vous récupérez
+    >>Tuez les |cRXP_ENEMY_Hurans Dos-hirsutes|r. Dépouillez-les pour leurs |cRXP_LOOT_Défenses|r. Gardez les |T134128:0|t[|cRXP_LOOT_Joyaux de sang|r] que vous récupérez
 	.complete 878,1 --Kill Bristleback Water Seeker (x6)
     .mob +Bristleback Water Seeker
     .complete 878,2 --Kill Bristleback Thornweaver (x12)
@@ -3751,7 +3751,7 @@ step
     .goto The Barrens,52.41,53.07,60,0
     .goto The Barrens,52.32,53.71,60,0
     .goto The Barrens,51.39,54.22,60,0
-    >>Tuez les |cRXP_ENEMY_Hurans Dos-hirsutse|r. Dépouillez-les pour leurs |cRXP_LOOT_Défenses|r. Gardez les |T134128:0|t[|cRXP_LOOT_Joyaux de sang|r] que vous récupérez
+    >>Tuez les |cRXP_ENEMY_Hurans Dos-hirsutes|r. Dépouillez-les pour leurs |cRXP_LOOT_Défenses|r. Gardez les |T134128:0|t[|cRXP_LOOT_Joyaux de sang|r] que vous récupérez
 	.complete 878,1 --Kill Bristleback Water Seeker (x6)
     .mob +Bristleback Water Seeker
     .complete 878,2 --Kill Bristleback Thornweaver (x12)
@@ -4627,7 +4627,7 @@ step << !Tauren !Shaman !Warrior/Undead
     .goto The Barrens,44.55,59.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Mangletooth|r
     .aura 16618 >>|cRXP_WARN_S'il vous reste 10|r |T134128:0|t[|cRXP_LOOT_Joyaux de sang|r] |cRXP_WARN_, utilisez-les pour obtenir|r |T136022:0|t[L'esprit du vent] |cRXP_WARN_auprès de|r |cRXP_FRIENDLY_Mutiledent|r
-    >>Passez cette étape si vous pouvez voler jusqu'à Pitons-du-Tonnerre
+    >>Passez cette étape si vous pouvez voler jusqu'à Thunder Bluff
     .itemcount 5075,10
     .target Mangletooth
 step << !Tauren !Shaman !Warrior/Undead
@@ -4763,13 +4763,13 @@ step << Shaman
     .xp <22,1
 step
     #completewith next
-    .skill firstaid,80 >> Fabriquez des  [Bandages épais en lin] jusqu'à ce que votre compétence en [Premiers soins] soit de 80 ou plus
+    .skill firstaid,80 >> Fabriquez des [Bandages épais en lin] jusqu'à ce que votre compétence de [Premiers soins] soit de 80 ou plus
     .skill firstaid,<1,1
 step
     .goto Thunder Bluff,29.68,21.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|r |cRXP_FRIENDLY_Pand|r
     >>Passez cette étape si vous n'avez pas assez d'[Etoffe de lin] pour atteindre une compétence de 80
-    .train 3277 >> Apprenez [Bandage en laine]
+    .train 3277 >> Apprenez  [Bandage en laine]
     .train 7934 >> Apprenez [Anti-Venin] << Rogue
     .target Pand Stonebinder
     .skill firstaid,<1,1
@@ -4984,7 +4984,7 @@ step << Hunter
 step << Hunter
     .goto Thunder Bluff,46.98,45.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Parlez à|r |cRXP_FRIENDLY_Kuna|r
-    >>|cRXP_BUY_Achetez des|r [Flèche grossières] |cRXP_BUY_à Narina|r
+    >>|cRXP_BUY_Achetez des|r [Flèche pointues] |cRXP_BUY_à Kuna|r
     .collect 2515,1600,493,1 << Hunter --Sharp Arrow (1600)
     .target Kuna Corne-Tonnerre
 
@@ -5034,7 +5034,7 @@ step
     #completewith EnterWC
     >>Cueillez les |cRXP_PICK_Serpentbloom|r sur le sol
     >>|cRXP_WARN_Il est recommandé qu'au maximum 3 joueurs fassent cette quête si vous ne faites le donjon qu'une seule fois. Il n'y a pas assez de|r |cRXP_PICK_Fleur de serpent|r |cRXP_WARN_pour tout le monde|r
-    >>Lancez [Découverte d'herbes] pour les voir sur votre minicarte
+    >>Utilisez [Découverte d'herbes] pour les voir sur votre minicarte
     .complete 962,1 --Serpentbloom (10)
     .skill herbalism,<1,1
     .isOnQuest 962
@@ -5053,7 +5053,7 @@ step
     #softcore
     #completewith EnterWC
     >>Cueillez les |cRXP_PICK_Serpentbloom|r sur le sol
-    >>Lancez [Découverte d'herbes] pour les voir sur votre minicarte
+    >>Utilisez [Découverte d'herbes] pour les voir sur votre minicarte
     .complete 962,1 --Serpentbloom (10)
     .skill herbalism,<1,1
     .isOnQuest 962
@@ -5119,7 +5119,7 @@ step
     #completewith GlowingShard
     >>Cueillez les |cRXP_PICK_Serpentbloom|r sur le sol
     >>|cRXP_WARN_Il est recommandé qu'au maximum 3 joueurs fassent cette quête si vous ne faites le donjon qu'une seule fois. Il n'y a pas assez de|r |cRXP_PICK_Fleur de serpent|r |cRXP_WARN_pour tout le monde|r
-    >>Lancez [Découverte d'herbes] pour les voir sur votre minicarte
+    >>Utilisez [Découverte d'herbes] pour les voir sur votre minicarte
     .complete 962,1 --Serpentbloom (10)
     .skill herbalism,<1,1
     .isOnQuest 962
@@ -5139,7 +5139,7 @@ step
     #softcore
     #completewith GlowingShard
     >>Cueillez les |cRXP_PICK_Serpentbloom|r sur le sol
-    >>Lancez [Découverte d'herbes] pour les voir sur votre minicarte
+    >>Utilisez [Découverte d'herbes] pour les voir sur votre minicarte
     .complete 962,1 --Serpentbloom (10)
     .skill herbalism,<1,1
     .isOnQuest 962
@@ -5200,7 +5200,7 @@ step
 step
     #requires Gems
     #completewith next
-    +|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Disciple of Naralex|r à l'entrée des Cavernes des lamentations. Escortez-le jusqu'à |cRXP_FRIENDLY_Naralex|r
+    +|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Disciple of Naralex|r à l'entrée des Cavernes des Lamentations. Escortez-le jusqu'à |cRXP_FRIENDLY_Naralex|r
     .target Disciple of Naralex
     .skipgossip
     .dungeon WC
@@ -5552,7 +5552,7 @@ step
     >>Tuez |cRXP_ENEMY_Warlord Krom'zar|r lorsqu'il apparaît. Ramassez la |cRXP_PICK_Banner|r qu'il laissera sur le sol
     >>Faites attention ! C'est un Elite fort et protégé par au moins deux |cRXP_ENEMY_Kolkar|r
     >>Il a un temps de réapparition qui peut durer jusqu'à 3 minutes
-    .link https://www.youtube.com/watch?v=xrm0PWe5wf4 >>|cRXP_WARN_Cliquez ici pour un guide vidéo sur comment kiter|r |cRXP_ENEMY_Seigneur de guerre Krom'zar|r
+    .link https://www.youtube.com/watch?v=xrm0PWe5wf4 >>|cRXP_WARN_Clic ici pour une vidéo de guide sur comment faire du kiting|r |cRXP_ENEMY_Seigneur de guerre Krom'zar|r
     .complete 4021,1 --Piece of Krom'zar's Banner (1)
     .unitscan Warlord Krom'zar
     .isQuestTurnedIn 852
@@ -6395,7 +6395,7 @@ step
     #xprate <1.5
     #completewith JourneytoTM
     .goto Ashenvale,12.24,33.80
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Andruk, Zoram'gar|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Andruk|r
     .fly Thunder Bluff >> Volez à Thunder Bluff
     .zoneskip Thunder Bluff
     .target Andruk
@@ -6481,7 +6481,7 @@ step << Warlock
     .use 6626
 step << Warlock
     .goto Orgrimmar,49.66,50.15
-    >>Tuez la |cRXP_ENEMY_Summoned Succubus|r
+    >>Tuez les |cRXP_ENEMY_Summoned Succubus|r
     .complete 1513,1 --Kill Summoned Succubus (1)
     .mob Summoned Succubus
     .use 6626
@@ -6517,7 +6517,7 @@ step << Rogue
     .train 8676 >>Apprenez [Embuscade]
     .train 1943 >>Apprenez [Rupture]
     .train 1856 >>Apprenez [Disparition]
-    .train 1725 >>Apprenez [Distraction]
+    .train 1725 >>Apprenez [Distration]
     .train 1785 >>Apprenez [Camouflage Rang 2]
     .accept 2460 >>Acceptez la quête Le Salut brisé
     .target Shenthul
@@ -6563,7 +6563,7 @@ step << Mage
     .xp <24,1
 step << Mage
     .goto Orgrimmar,38.66,85.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|r |cRXP_FRIENDLY_Thuul|r en haut de la hutte
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|r |cRXP_FRIENDLY_Thuul|r au sommet de la hutte
     .train 3567 >> Apprenez [Téléportation : Orgrimmar]
     .target Thuul
 step << Troll Priest
@@ -6639,8 +6639,8 @@ step << Rogue
 step << Rogue
     .goto The Barrens,54.77,5.57
     >>Au sommet de la tour vous trouverez |cRXP_ENEMY_Gallywix|r. Dépouillez-le pour sa |cRXP_LOOT_Tête|r
-    >>Utilisez [Embuscade] pour réduire ses PV de moitié. Utilisez [Suriner] pour récupérer votre énergie et utiliser [Évasion]
-	>>N'oubliez pas d'utiliser une Potion et un [Thé aux chardons] si nécessaire
+    >>Utilisez [Embuscade] pour réduire ses PV de moitié. Utilisez [Suriner] pour récupérer votre énergie et utilisez [Évasion]
+	>>Rappelez-vous d'utiliser une Potion et un [Thé aux chardons] si nécessaire
     .complete 2478,4 --Gallywix's Head (1)
     .mob Grand Foreman Puzik Gallywix
     --VV Video?
@@ -6745,12 +6745,12 @@ step << Rogue
     .collect 3137,200,6544,1 --Deadly Throwing Axe (200)
     .target Trak'gen
 step << Rogue
-    >>Si vous avez un [Anti-Venin], utilisez-le pour vous guérir du [Toucher de Zanzil]
+    >>Si vous avez des [Anti-Venin], utilisez-en un pour vous guérir du [Toucher de Zanzil]
     .itemcount 6452,1
     .use 6452
     .aura -9991
 step << Rogue
-    .destroy 8051 >> Détruisez le [Lance-fusée] dans votre sac, il n'est plus nécessaire
+    .destroy 8051 >> Détruisez le [Lance-fusée] de vos sacs, il n'est plus nécessaire
     .destroy 8066 >> Détruisez le [Sifflet de Fizzule] de vos sacs, il n'est plus nécessaire
 step
     #optional
@@ -7104,7 +7104,7 @@ step
 step
     .goto The Barrens,55.70,27.30
     .use 4926 >> Ramassez le |cRXP_PICK_Chen's Empty Keg|r sur le sol et commencez la quête
-    >>Si il n'est pas présent, vous pourrez le trouver plus tard
+    >>Si il n'est pas présent, vous pourrez l'avoir plus tard
     .collect 4926,1,819 --Collect Chen's Empty Keg
     .accept 819 >> Acceptez la quête Tonneau vide de Chen
     .maxlevel 15
@@ -9019,7 +9019,7 @@ step
 step
     #label Ignition
     .goto The Barrens,56.52,7.45
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |r |cRXP_FRIENDLY_Déchiqueteur de Wizzlecrank|r dans la Videfange
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|r |cRXP_FRIENDLY_Wizzlecrank's Shredder|r dans La Videfange
     >>|cRXP_FRIENDLY_Wizzlecrank's Shredder|r a un long temps de réapparition. Pensez à passer cette quête si il y a beaucoup de compétition
     .accept 858 >>Acceptez la quête Contact
     .target Wizzlecrank's Shredder
@@ -9469,7 +9469,7 @@ step << Warrior
 step << Warrior
     #optional
     #completewith FoodandWater2
-    +Équipez la [Hache de bataile] lorsque vous passez au niveau 20
+    +Équipez la [Hache de bataille] lorsque vous passez niveau 20
     .use 926
     .itemcount 926,1
     .itemStat 16,QUALITY,<7
@@ -10290,7 +10290,7 @@ step
     >>Tuez |cRXP_ENEMY_Warlord Krom'zar|r lorsqu'il apparaît. Ramassez la |cRXP_PICK_Banner|r qu'il laissera sur le sol
     >>Faites attention ! C'est un Elite fort et protégé par au moins deux |cRXP_ENEMY_Kolkar|r
     >>Il a un temps de réapparition qui peut durer jusqu'à 3 minutes
-    .link https://www.youtube.com/watch?v=xrm0PWe5wf4 >>|cRXP_WARN_Cliquez ici pour un guide vidéo sur comment kiter|r |cRXP_ENEMY_Seigneur de guerre Krom'zar|r
+    .link https://www.youtube.com/watch?v=xrm0PWe5wf4 >>|cRXP_WARN_Clic ici pour une vidéo de guide sur comment faire du kiting|r |cRXP_ENEMY_Seigneur de guerre Krom'zar|r
     .complete 4021,1 --Piece of Krom'zar's Banner (1)
     .unitscan Warlord Krom'zar
     .isOnQuest 4021
@@ -10715,7 +10715,7 @@ step
     .goto Stonetalon Mountains,60.96,63.99,50,0
     .goto Stonetalon Mountains,60.25,63.21,50,0
     >>Tuez les |cRXP_ENEMY_Deepmoss Venomspitters|r
-    >>Gardez toutes les [Petites glandes à venin] que vous récupérez << Rogue
+    >>|cRXP_WARN_Save any|r Utilisez le[Small Venom Sacs]|cRXP_WARN_you loot|r << Rogue
     .complete 6461,2 --Kill Deepmoss Venomspitter (x7)
     .mob Deepmoss Venomspitter
 step << Troll Warrior/Orc Warrior/Tauren Warrior
@@ -11045,7 +11045,7 @@ step
     .mob Stormsnout
 step
     #completewith next
-    >>Tuez les |cRXP_ENEMY_Hurans Dos-hirsutse|r. Dépouillez-les pour leurs |cRXP_LOOT_Défenses|r. Gardez les |T134128:0|t[|cRXP_LOOT_Joyaux de sang|r] que vous récupérez
+    >>Tuez les |cRXP_ENEMY_Hurans Dos-hirsutes|r. Dépouillez-les pour leurs |cRXP_LOOT_Défenses|r. Gardez les |T134128:0|t[|cRXP_LOOT_Joyaux de sang|r] que vous récupérez
 	.complete 878,1 --Kill Bristleback Water Seeker (x6)
     .mob +Bristleback Water Seeker
     .complete 878,2 --Kill Bristleback Thornweaver (x12)
@@ -11099,7 +11099,7 @@ step
     .goto The Barrens,52.41,53.07,60,0
     .goto The Barrens,52.32,53.71,60,0
     .goto The Barrens,51.39,54.22,60,0
-    >>Tuez les |cRXP_ENEMY_Hurans Dos-hirsutse|r. Dépouillez-les pour leurs |cRXP_LOOT_Défenses|r. Gardez les |T134128:0|t[|cRXP_LOOT_Joyaux de sang|r] que vous récupérez
+    >>Tuez les |cRXP_ENEMY_Hurans Dos-hirsutes|r. Dépouillez-les pour leurs |cRXP_LOOT_Défenses|r. Gardez les |T134128:0|t[|cRXP_LOOT_Joyaux de sang|r] que vous récupérez
 	.complete 878,1 --Kill Bristleback Water Seeker (x6)
     .mob +Bristleback Water Seeker
     .complete 878,2 --Kill Bristleback Thornweaver (x12)
@@ -12929,7 +12929,7 @@ step
     >>Tuez |cRXP_ENEMY_Warlord Krom'zar|r lorsqu'il apparaît. Ramassez la |cRXP_PICK_Banner|r qu'il laissera sur le sol
     >>Faites attention ! C'est un Elite fort et protégé par au moins deux |cRXP_ENEMY_Kolkar|r
     >>Il a un temps de réapparition qui peut durer jusqu'à 3 minutes
-    .link https://www.youtube.com/watch?v=xrm0PWe5wf4 >>|cRXP_WARN_Cliquez ici pour un guide vidéo sur comment kiter|r |cRXP_ENEMY_Seigneur de guerre Krom'zar|r
+    .link https://www.youtube.com/watch?v=xrm0PWe5wf4 >>|cRXP_WARN_Clic ici pour une vidéo de guide sur comment faire du kiting|r |cRXP_ENEMY_Seigneur de guerre Krom'zar|r
     .complete 4021,1 --Piece of Krom'zar's Banner (1)
     .unitscan Warlord Krom'zar
     .isQuestTurnedIn 852
@@ -13072,7 +13072,7 @@ step
     >>Tuez |cRXP_ENEMY_Warlord Krom'zar|r lorsqu'il apparaît. Ramassez la |cRXP_PICK_Banner|r qu'il laissera sur le sol
     >>Faites attention ! C'est un Elite fort et protégé par au moins deux |cRXP_ENEMY_Kolkar|r
     >>Il a un temps de réapparition qui peut durer jusqu'à 3 minutes
-    .link https://www.youtube.com/watch?v=xrm0PWe5wf4 >>|cRXP_WARN_Cliquez ici pour un guide vidéo sur comment kiter|r |cRXP_ENEMY_Seigneur de guerre Krom'zar|r
+    .link https://www.youtube.com/watch?v=xrm0PWe5wf4 >>|cRXP_WARN_Clic ici pour une vidéo de guide sur comment faire du kiting|r |cRXP_ENEMY_Seigneur de guerre Krom'zar|r
     .complete 4021,1 --Piece of Krom'zar's Banner (1)
     .unitscan Warlord Krom'zar
     .isQuestTurnedIn 852

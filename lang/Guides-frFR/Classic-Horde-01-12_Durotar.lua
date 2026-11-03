@@ -78,7 +78,7 @@ step << Warlock
     .goto Durotar,41.52,68.36,12,0
     .goto Durotar,41.24,68.16,12,0
     .goto Durotar,40.82,68.03,12,0
-    .goto Durotar,40.56,68.44,12 >>Parlez à |cRXP_FRIENDLY_Hraug|r
+    .goto Durotar,40.56,68.44,12 >>Voyagez vers |cRXP_FRIENDLY_Hraug|r
     .money >0.01
 step << Warlock
     #hardcore
@@ -3644,7 +3644,7 @@ step
     #xprate <1.5 << Mage/Warlock/Priest/Rogue
     #requires NeedACure
     .goto Durotar,51.51,41.64
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Innkeeper Grosk|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Grosk l'aubergiste|r
     .vendor >> Vendez tout ce dont nous n'avez pas besoin
     >>|cRXP_BUY_Achetez du|r [Lait frais] |cRXP_BUY_à Kauth|r << Mage/Warlock/Priest/Shaman
     >>|cRXP_BUY_Achetez des|r [Cuissot] |cRXP_BUY_à Hai'zan|r << Rogue/Warrior
@@ -5410,7 +5410,7 @@ step << Warrior
     .isQuestAvailable 1498
 step << Warrior
     .goto Tirisfal Glades,59.16,48.51
-    >>Cliquez sur le Déclencheur du mausolée sur le sol. Cela va invoquer |cRXP_ENEMY_Ulag.|r. Tuez-le
+    >>|cRXP_WARN_Cliquez sur le|r |cRXP_WARN_Déclencheur du mausolée|r |cRXP_WARN_au sol. Cela va invoquer|r |cRXP_ENEMY_Ulag.|r |cRXP_WARN_Tuez-le|r
     .complete 1819,1 --Ulag the Cleaver (1)
     .mob Ulag the Cleaver
     .isQuestAvailable 1498
@@ -5802,7 +5802,7 @@ step << Warlock/Mage/Rogue
     .goto Undercity,27.39,30.23,35,0
     .goto Undercity,21.89,43.35,35,0
     .goto Tirisfal Glades,51.10,71.53,50,0
-    .zone Tirisfal Glades >> Quittez Undercity par les Égouts
+    .zone Tirisfal Glades >> Sortez de Fossoyeuse par les Égouts
     .zoneskip Tirisfal Glades
 step << Undead Priest
     #optional
@@ -5815,7 +5815,7 @@ step << Undead Priest
     .goto Undercity,27.39,30.23,35,0
     .goto Undercity,21.89,43.35,35,0
     .goto Tirisfal Glades,51.10,71.53,50,0
-    .zone Tirisfal Glades >> Quittez Undercity par les Égouts
+    .zone Tirisfal Glades >> Sortez de Fossoyeuse par les Égouts
     .zoneskip Tirisfal Glades
 step
     #optional

@@ -2413,7 +2413,7 @@ step << Shaman
 step
     #sticky
     #completewith ThunderBluff
-    >>Gardez un œil sur |cRXP_ENEMY_Ghost Howl|r. Dépouillez-les le pour sa [|cRXP_LOOT_Demon Scarred Cloak|r]. Utilisez la pour commencer la quête
+    >>Gardez un œil ouvert sur le |cRXP_ENEMY_Hurleur fantomatique|r. Dépouillez-le pour sa |T134358:0|t[|cRXP_LOOT_Cape griffée par les démons|r]. Utilisez la pour commencer la quête
     >>|cRXP_WARN_Passez cette étape si vous n'arrivez pas à le trouver|r
     .collect 4854,1,770 --Collect Demon Scarred Cloak
     .accept 770 >>Acceptez la quête La cape griffée par les démons
@@ -5643,7 +5643,7 @@ step << Warrior
     #season 2
     .goto Thunder Bluff,28.73,18.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Nétali|r
-    >>Recevez auprès d'elle la |T134419:0|t[|cRXP_FRIENDLY_Rune d’assaut frénétique|r] 
+    >>Recevez auprès d'elle la |T134419:0|t[|cRXP_FRIENDLY_Rune d’assaut frénétique|r]
     .collect 204716,1 --Rune of Frenzied Assault (1)
     .target Netali
     .train 425447,1
