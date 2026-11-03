@@ -8,7 +8,7 @@ RXPGuides.RegisterGuide([[
 #xprate <1.5
 #name 23-24 Los Humedales
 #subgroup Alianza 20-32
-#next 24-27 Redridge/Bosque del Ocaso
+#next 24-27 Montañas Crestagrana/Bosque del Ocaso
 
 step
 .dungeon SFK
@@ -766,7 +766,7 @@ RXPGuides.RegisterGuide([[
 #version 7
 #group RestedXP Guía TBC (A)
 << Alliance
-#name 24-27 Redridge/Bosque del Ocaso
+#name 24-27 Montañas Crestagrana/Bosque del Ocaso
 #subgroup Alianza 20-32
 #next 27-30 Los Humedales/Hillsbrad;28-30 Duskwood
 
@@ -855,7 +855,7 @@ step << Human Paladin
     .accept 1781 >>Acepta la misión Escrito sobre divinidad
 step << Human Paladin
     .goto StormwindClassic,38.7,26.6
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gazin Tenorm|r (NOT TRANSLATED IN :esMX YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Gazin Tenorm|r
     .turnin 1781 >>Entrega la misión Escrito sobre divinidad
     .target Gazin Tenorm
     .accept 1786 >>Acepta la misión Escrito sobre divinidad
@@ -4857,7 +4857,7 @@ step << Priest/Paladin
     .goto StormwindClassic,42.51,33.51,20 >> Viaja a la Catedral de Ventormenta
 step << Human Paladin
     .goto StormwindClassic,38.7,26.6
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gazin Tenorm|r (NOT TRANSLATED IN :esMX YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Gazin Tenorm|r
     .turnin 1787 >>Entrega la misión Escrito sobre divinidad
     .target Gazin Tenorm
     .accept 1788 >>Acepta la misión Escrito sobre divinidad
@@ -5904,7 +5904,7 @@ step << Priest/Paladin
     .goto StormwindClassic,42.51,33.51,20 >> Viaja a la Catedral de Ventormenta
 step << Human Paladin
     .goto StormwindClassic,38.7,26.6
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gazin Tenorm|r (NOT TRANSLATED IN :esMX YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Gazin Tenorm|r
     .turnin 1787 >>Entrega la misión Escrito sobre divinidad
     .target Gazin Tenorm
     .accept 1788 >>Acepta la misión Escrito sobre divinidad

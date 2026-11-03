@@ -565,7 +565,7 @@ step
     .dungeon RFC
 step
     .goto Durotar,50.8,13.8,40 >>Sube a la Torre del Zepelín
-    .zone Tirisfal Glades >>Toma el zepelín hacia Claros de Tirisfal
+    .zone Tirisfal Glades >>Toma el zepelín hacia los Claros de Tirisfal
     .zoneskip Tirisfal Glades
     .isQuestComplete 5725
     .dungeon RFC
@@ -5078,7 +5078,7 @@ step
     .zoneskip Durotar
 step
     .goto Durotar,50.8,13.8,40 >>Sube a la Torre del Zepelín
-    .zone Tirisfal Glades >>Toma el zepelín hacia Claros de Tirisfal
+    .zone Tirisfal Glades >>Toma el zepelín hacia los Claros de Tirisfal
     .zoneskip Tirisfal Glades
     .zoneskip Undercity
 

@@ -854,7 +854,7 @@ step
 step
     #xprate <1.5
     #completewith next
-    .subzone 380 >>Regresa al Cruce
+    .subzone 380 >>Regresa a El Cruce
     .dungeon WC
 step
     #xprate <1.5
@@ -882,7 +882,7 @@ step
 step
     #xprate <1.5
     #completewith next
-    .subzone 380 >>Regresa al Cruce
+    .subzone 380 >>Regresa a El Cruce
     .dungeon WC
 step
     #xprate <1.5

@@ -2474,7 +2474,7 @@ step << Shaman
     .target Kranal Fiss
 step << Shaman
     #completewith CallofFire2
-    .zone Durotar >> Regresa a Durotar
+    .zone Durotar >> Viaja de regreso a Durotar
     .zoneskip Durotar
 step << Shaman
     #completewith next

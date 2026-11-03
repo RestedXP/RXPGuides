@@ -2389,7 +2389,7 @@ step << Shaman
     >>|cRXP_WARN_Ten cuidado de no caer de la montaña, el camino es muy estrecho. Podrías morir si caes|r
 step << Shaman
     #completewith next
-    .zone The Barrens >> Viaja de regreso a Los Baldíos
+    .zone The Barrens >> Regresa a Los Baldíos
     .zoneskip The Barrens
 step << Shaman
     #loop

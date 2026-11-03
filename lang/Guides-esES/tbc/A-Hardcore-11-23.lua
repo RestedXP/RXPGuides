@@ -2495,7 +2495,7 @@ step
     .mob Fouled Water Spirit
 step
     .goto Bloodmyst Isle,30.750,46.844
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vindicadora Corin|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con la |cRXP_FRIENDLY_Vindicadora Corin|r
     .turnin 10067 >> Entrega la misión Espíritus del agua contaminados
     .target Vindicator Corin
 step

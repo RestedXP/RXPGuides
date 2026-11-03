@@ -1587,7 +1587,7 @@ step
     .goto Ironforge,24.200,74.600,-1
     .goto Ironforge,23.800,71.800,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con un |cRXP_FRIENDLY_Subastador de Forjaz|r
-    >>Compra los siguientes objetos para entregar misiones más rápido en Loch Modan pronto
+    >>Compra los siguientes objetos para entregas de misiones más rápidas en Loch Modan pronto
     >>Esto te ahorrará tiempo ya que no necesitarás correr buscando enemigos para matar. Omite este paso si prefieres no comprar nada
 -->>|cRXP_WARN_NOTE: You must be able to buy ALL otherwise don't buy any at all|r
     >>|T134342:0|t[Intestinos de jabalí]
@@ -1673,7 +1673,7 @@ step
     .complete 287,1 --Kill Frostmane Headhunter (x5)
     .mob Frostmane Headhunter
 step
-    >>|cRXP_WARN_Baja hasta esta ubicación para explorar el Poblado Peloescarcha. Si hay enemigos abajo, limpia los alrededores con normalidad y NO bajes|r
+    >>|cRXP_WARN_Baja hasta esta ubicación para explorar el Poblado Peloescarcha. Si hay enemigos abajo, limpia los alrededores normalmente y NO bajes|r
     .goto Dun Morogh,22.86,52.16
     .complete 287,2 --Fully explore Frostmane Hold
 step
@@ -1799,7 +1799,7 @@ step
 step
     #som
     .goto Dun Morogh,83.892,39.188
-    >>Elige la daga, úsala en la mano izquierda hasta que obtengas una espada de vendedor << Rogue
+    >>Elige la daga, úsala en la mano izquierda hasta que obtengas una espada de un vendedor << Rogue
     .target Pilot Hammerfoot
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Piloto Podomartillo|r
     .turnin 417 >> Entrega la misión Vengar al piloto

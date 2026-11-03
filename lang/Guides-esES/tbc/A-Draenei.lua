@@ -3108,7 +3108,7 @@ step
     .mob Royal Blue Flutterer
 step
     .goto Bloodmyst Isle,30.750,46.844
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vindicadora Corin|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con la |cRXP_FRIENDLY_Vindicadora Corin|r
     .turnin 10066 >> Entrega la misión ¡Vaya una maraña de telarañas!
     .target Vindicator Corin
 step
@@ -3129,7 +3129,7 @@ step
     .mob Fouled Water Spirit
 step
     .goto Bloodmyst Isle,30.750,46.844
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vindicadora Corin|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con la |cRXP_FRIENDLY_Vindicadora Corin|r
     .turnin 10067 >> Entrega la misión Espíritus del agua contaminados
     .target Vindicator Corin
 step
@@ -4425,7 +4425,7 @@ RXPGuides.RegisterGuide([[
 #name 21-23 Vallefresno (Draenei)
 #subgroup Alianza 20-32
 #defaultfor Draenei
-#next 23-24 Los Humedales;24-27 Redridge/Bosque del Ocaso
+#next 23-24 Los Humedales;24-27 Montañas Crestagrana/Bosque del Ocaso
 
 step
 #xprate >1.49

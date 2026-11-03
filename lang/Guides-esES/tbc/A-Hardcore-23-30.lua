@@ -6,7 +6,7 @@ RXPGuides.RegisterGuide([[
 #group RXP TBC Guía de Supervivencia (A)
 #subgroup Guía de Supervivencia RXP 20-32
 #name 23-24 Los Humedales
-#next 24-27 Redridge/Bosque del Ocaso
+#next 24-27 Montañas Crestagrana/Bosque del Ocaso
 
 step
 .dungeon SFK
@@ -555,7 +555,7 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #group RXP TBC Guía de Supervivencia (A)
 #subgroup Guía de Supervivencia RXP 20-32
-#name 24-27 Redridge/Bosque del Ocaso
+#name 24-27 Montañas Crestagrana/Bosque del Ocaso
 #next 27-29 Los Humedales
 
 step
@@ -1620,7 +1620,7 @@ step
     .group
     .dungeon Stockades
     #completewith next
-    .abandon 386 >> Abandon What Comes Around... (NOT TRANSLATED IN :esMX YET)
+    .abandon 386 >> Abandona la misión Lo que sucede alrededor...
     >>|cRXP_WARN_Abandon this quest if your quest log is full. You'll accept it again shortly|r (NOT TRANSLATED IN :esMX YET)
     .zoneskip Redridge Mountains,1
 step

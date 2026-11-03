@@ -4348,7 +4348,7 @@ step
     >>Mata a |cRXP_ENEMY_Gazz'uz|r. Despójalo para obtener su |T134085:0|t[|cRXP_LOOT_Ojo de la Sombra ardiente|r]
     >>|cRXP_WARN_Usa el |T134085:0|t[|cRXP_LOOT_Ojo de la Sombra ardiente|r] para empezar la misión|r
     >>|cRXP_WARN_Puedes correr hacia las zonas de agua que hay dentro de la cueva para evadir al|r |cRXP_ENEMY_Abisario|r |cRXP_WARN_después de matar a|r |cRXP_ENEMY_Gazz'uz|r
-    >>|cRXP_WARN_Be careful as he is difficult. You can skip this quest if you need|r (NOT TRANSLATED IN :esMX YET)
+    >>|cRXP_WARN_Ten cuidado, ya que es difícil. Puedes saltarte esta misión si lo necesitas|r
     .collect 4903,1,832,1 --Collect Eye of Burning Shadow
     .accept 832 >>Acepta la misión Sombras Ardientes
     .use 4903
