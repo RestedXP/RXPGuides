@@ -10,7 +10,7 @@ RXPGuides.RegisterGuide([[
 #displayname 14-18 Les Tarides << !Shaman !Hunter !Tauren
 #displayname 15-18 Tarides << Paladin
 #version 11
-#group Guide RestedXP Éternel (H)
+#group RestedXP Guide Forever (H)
 #subgroup Guide Speedrun 1-22
 --#groupid RXP-SRGCE-H1
 #next 17-22 Serres-Rocheuses/Tarides/Orneval
@@ -398,7 +398,7 @@ step
     .goto 1413/1,-3021.35,-231.96,20,0
     .goto 1413/1,-3029.46,261.25
     .use 4926 >> Ramassez le |cRXP_PICK_Chen's Empty Keg|r sur le sol et commencez la quête
-    >>Attendez qu'il revienne si il n'est pas présent
+    >>Attendez qu'il revienne si il n'est pas là
     .collect 4926,1,819 --Collect Chen's Empty Keg
     .accept 819 >> Acceptez la quête Tonneau vide de Chen
     .isOnQuest 872
@@ -561,7 +561,7 @@ step << Orc Shaman/Troll Shaman/Tauren Shaman
 step << Orc Shaman/Troll Shaman/Tauren Shaman
     .goto 1413/1,-3029.46,261.25
     .use 4926 >> Ramassez le |cRXP_PICK_Chen's Empty Keg|r sur le sol et commencez la quête
-    >>Attendez qu'il revienne si il n'est pas présent
+    >>Attendez qu'il revienne si il n'est pas là
     .collect 4926,1,819 --Collect Chen's Empty Keg
     .accept 819 >> Acceptez la quête Tonneau vide de Chen
 step
@@ -680,7 +680,7 @@ step << Tauren Warrior
 step << Tauren Warrior
     #optional
     #completewith BaronLongshore
-    +Équipez le [Marteau en pierre] lorsque vous passez au niveau 16
+    +Équipez le [Marteau en pierre] lorsque vous passez niveau 16
     .use 2026
     .itemcount 2026,1
     .itemStat 16,QUALITY,<7
@@ -931,7 +931,7 @@ step << Tauren Warrior
 step << Tauren Warrior
     #optional
     #completewith FlyToXroads1
-    +Équipez le [Marteau en pierre] lorsque vous passez au niveau 16
+    +Équipez le [Marteau en pierre] lorsque vous passez niveau 16
     .use 2026
     .itemcount 2026,1
     .itemStat 16,QUALITY,<7
@@ -1159,7 +1159,7 @@ step << Troll Hunter/Orc Hunter/Skyborne Hunter
     .goto 1413/1,-2556.23,-351.54
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Parlez à|r |cRXP_FRIENDLY_Uthrok|r
     .vendor >> |cRXP_BUY_Achetez un|r [|cRXP_FRIENDLY_Bon arc long|r] |cRXP_BUY_à Uthrok si il en a en stock et faites un stock de flèches|r
-    >>Si il n'est pas disponible, achetez un [Arc renforcé] à la place
+    >>Si il n'est pas disponible, achetez à la place un [Arc renforcé]
     .collect 2515,1200,870,1 << Hunter --Sharp Arrow (1200)
     .target Uthrok
     .isOnQuest 903
@@ -1296,7 +1296,7 @@ step
     .mob Witchwing Roguefeather
 step
     #completewith Samophlange
-    +Faites attention aux |cRXP_ENEMY_Sunscale Scytheclaws|r dans la zone. Ils sont niveau 18 et peuvent utiliser [Rosser]
+    +Faites attention aux |cRXP_ENEMY_Sunscale Scytheclaws|r dans la zone. Ils vont jusqu'au niveau 18 et peuvent utiliser [Rosser]
     .xp >17,1
 step
     #optional
@@ -1611,7 +1611,7 @@ step
     .zone Orgrimmar >>Entrez dans Orgrimmar par l'entrée à l'ouest
 step
     #completewith next
-    .skill firstaid,40 >> Créez des [Bandages en lin] jusqu'à ce que votre compétence en [Premiers soins] soit de 40 ou plus
+    .skill firstaid,40 >> Fabriquez des [Bandages de lin] jusqu'à ce que votre compétence soit de 40 ou plus
     .skill firstaid,<1,1
 step
     .goto 1454/1,-4160.01,1483.17
@@ -1622,12 +1622,12 @@ step
     .skill firstaid,<1,1
 step
     #completewith next
-    .skill firstaid,50 >> Créez des [Bandages épais en lin] jusqu'à ce que votre compétence en [Premiers soins] soit de 50 ou plus
+    .skill firstaid,50 >> Fabriquez des [Bandages épais en lin] jusqu'à ce que votre compétence en [Premiers soins] soit de 50 ou plus
     .skill firstaid,<1,1
 step
     .goto 1454/1,-4160.01,1483.17
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|r |cRXP_FRIENDLY_Arnok|r
-    >>Passez cette étape si vous n'avez pas assez d'[Etoffe de lin] pour monter votre compétence à 50
+    >>Passez cette étape si vous avez pas assez d'[Étoffe de lin] pour monter votre compétence à 50
     .train 3274 >> Apprenez Premiers soins compagnon
     .target Arnok
     .skill firstaid,<40,1
@@ -1648,7 +1648,7 @@ step << Priest
     .xp <18,1
 step << Mage
     .goto 1454/1,-4218.64,1473.72
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|r |cRXP_FRIENDLY_Pephredo|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |r |cRXP_FRIENDLY_Pephredo|r
     .train 2120 >> Apprenez vos sorts de classe
     .target Pephredo
     .xp <16,1
@@ -1656,7 +1656,7 @@ step << Mage
 step << Mage
     #optional
     .goto 1454/1,-4218.64,1473.72
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|r |cRXP_FRIENDLY_Pephredo|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |r |cRXP_FRIENDLY_Pephredo|r
     .train 3140 >> Apprenez vos sorts de classe
     .target Pephredo
     .xp <18,1
@@ -1812,7 +1812,7 @@ step
 step << Rogue
     .goto 1454/1,-4284.42,1771.28
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Shenthul|r
-    .train 1804 >> Montez le niveau de votre [Crochetage]
+    .train 1804 >> Apprenez [Crochetage]
     .train 921 >> Apprenez [Vol à la tire]
     .accept 2379 >> Acceptez la quête Zando'zan
     .target Shenthul
@@ -2241,7 +2241,7 @@ step
     .goto 1413/1,-2031.32,-1703.47,0
     .goto 1413/1,-2183.32,-1858.19,0
     .goto 1413/1,-2453.88,-1991.28,0
-	>>Tuez |cRXP_ENEMY_Lakota'mani|r. Dépouillez-le pour la [|cRXP_LOOT_Hoof of Lakota'mani|r]
+	>>Tuez |cRXP_ENEMY_Lakota'mani|r. Dépouillez-le pour sa [|cRXP_LOOT_Hoof of Lakota'mani|r]
     >>|cRXP_WARN_Utilisez le [|cRXP_LOOT_Hoof of Lakota'mani|r] pour commencer la quête|r
     >>Il a 4 possibles points d'apparition (marqués sur la carte)
     >>|cRXP_WARN_Passez cette étape si vous n'arrivez pas à le trouver ou le tuer. Vous pourrez revenir ultérieurement|r
@@ -2582,7 +2582,7 @@ RXPGuides.RegisterGuide([[
 #name 17-22 Serres-Rocheuses/Tarides/Orneval
 #displayname 18-22 Serres-Rocheuses/Tarides/Orneval << !Shaman !Hunter !Tauren
 #version 11
-#group Guide RestedXP Éternel (H)
+#group RestedXP Guide Forever (H)
 #subgroup Guide Speedrun 1-22
 --#groupid RXP-SRGCE-H1
 #next 22-24 Hillsbrad
@@ -3020,7 +3020,7 @@ step
     .goto 1413/1,-2031.32,-1703.47,80,0
     .goto 1413/1,-2183.32,-1858.19,80,0
     .goto 1413/1,-2453.88,-1991.28,80,0
-	>>Tuez |cRXP_ENEMY_Lakota'mani|r. Dépouillez-le pour la [|cRXP_LOOT_Hoof of Lakota'mani|r]
+	>>Tuez |cRXP_ENEMY_Lakota'mani|r. Dépouillez-le pour sa [|cRXP_LOOT_Hoof of Lakota'mani|r]
     >>|cRXP_WARN_Utilisez le [|cRXP_LOOT_Hoof of Lakota'mani|r] pour commencer la quête|r
     >>Il a 4 possibles points d'apparition (marqués sur la carte)
     >>Passez cette étape si vous n'arrivez pas à le trouver
@@ -3266,7 +3266,7 @@ step << Warrior
 step << Rogue/Hunter/Warrior/Shaman/Druid
     #optional
     #completewith FlytoXroads
-    +Équipez le [|cRXP_FRIENDLY_Wolf Bracers|r]
+    +Équipez les [|cRXP_FRIENDLY_Wolf Bracers|r]
     .use 4794
     .itemcount 4794,1
     .itemStat 9,ITEM_MOD_ARMOR_SHORT,<37
@@ -3511,7 +3511,7 @@ step
     .goto 1413/1,-2016.12,-2650.02,0
     .goto 1413/1,-2400.18,-2398.01,0
     .goto 1413/1,-2363.70,-2537.19,0
-    >>Tuez |cRXP_ENEMY_Owatanka|r. Dépouillez-le pour sa r [|cRXP_LOOT_Owatanka's Tailspike|r]
+    >>Tuez |cRXP_ENEMY_Owatanka|r. Dépouillez-le pour sa [|cRXP_LOOT_Owatanka's Tailspike|r]
     >>|cRXP_WARN_Utilisez le [|cRXP_LOOT_Owatanka's Tailspike|r] pour commencer la quête|r
     >>Il a 4 possibles points d'apparition (marqués sur la carte)
     .collect 5102,1,884,1 --Collect Owatanka's Tailspike
@@ -3570,7 +3570,7 @@ step << Shaman
     .goto 1413/1,-2016.12,-2650.02,80,0
     .goto 1413/1,-2363.70,-2537.19,80,0
     .goto 1413/1,-2400.18,-2398.01,80,0
-    >>Tuez |cRXP_ENEMY_Owatanka|r. Dépouillez-le pour sa r [|cRXP_LOOT_Owatanka's Tailspike|r]
+    >>Tuez |cRXP_ENEMY_Owatanka|r. Dépouillez-le pour sa [|cRXP_LOOT_Owatanka's Tailspike|r]
     >>|cRXP_WARN_Utilisez le [|cRXP_LOOT_Owatanka's Tailspike|r] pour commencer la quête|r
     >>Il a 4 possibles points d'apparition (marqués sur la carte)
     .collect 5102,1,884,1 --Collect Owatanka's Tailspike
@@ -3617,7 +3617,7 @@ step
     .goto 1413/1,-2016.12,-2650.02,80,0
     .goto 1413/1,-2363.70,-2537.19,80,0
     .goto 1413/1,-2400.18,-2398.01,80,0
-    >>Tuez |cRXP_ENEMY_Owatanka|r. Dépouillez-le pour sa r [|cRXP_LOOT_Owatanka's Tailspike|r]
+    >>Tuez |cRXP_ENEMY_Owatanka|r. Dépouillez-le pour sa [|cRXP_LOOT_Owatanka's Tailspike|r]
     >>|cRXP_WARN_Utilisez le [|cRXP_LOOT_Owatanka's Tailspike|r] pour commencer la quête|r
     >>Il a 4 possibles points d'apparition (marqués sur la carte)
     .collect 5102,1,884,1 --Collect Owatanka's Tailspike
@@ -3659,7 +3659,7 @@ step
 step << !Tauren !Skyborne
     .goto 1413/1,-1891.48,-2391.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Mangletooth|r
-    .aura 16618 >>|cRXP_WARN_Si vous avez 10|r |T134128:0|t[|cRXP_LOOT_Cristaux de sang|r] |cRXP_WARN_restants, utilisez-les pour obtenir|r |T136022:0|t[L'esprit du vent] |cRXP_WARN_de|r |cRXP_FRIENDLY_Mutiledent|r
+    .aura 16618 >>|cRXP_WARN_S'il vous reste 10|r |T134128:0|t[|cRXP_LOOT_Joyaux de sang|r] |cRXP_WARN_, utilisez-les pour obtenir|r |T136022:0|t[L'esprit du vent] |cRXP_WARN_auprès de|r |cRXP_FRIENDLY_Mutiledent|r
     >>Passez cette étape si vous pouvez voler jusqu'à Pitons-du-Tonnerre
     .itemcount 5075,10
     .target Mangletooth
@@ -3850,7 +3850,7 @@ step
     .goto 1456/1,206.88,-997.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|r |cRXP_FRIENDLY_Pand|r
     >>Passez cette étape si vous n'avez pas assez d'[Etoffe de lin] pour atteindre une compétence de 80
-    .train 3277 >> Apprenez [Bandage en laine]
+    .train 3277 >> Apprenez  [Bandage en laine]
     .train 7934 >> Apprenez [Anti-venin] << Rogue
     .target Pand Stonebinder
     .skill firstaid,<1,1
@@ -4063,7 +4063,7 @@ step << Hunter
 step << Hunter
     .goto 1456/1,26.31,-1167.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Parlez à|r |cRXP_FRIENDLY_Kuna|r
-    >>|cRXP_BUY_Achetez des|r [Flèche grossières] |cRXP_BUY_à Kuna|r
+    >>|cRXP_BUY_Achetez des|r [Flèche grossières] |cRXP_BUY_à Narina|r
     .collect 2515,1600,493,1 << Hunter --Sharp Arrow (1600)
     .target Kuna Corne-Tonnerre
 step
@@ -4642,7 +4642,7 @@ step
 step
     #label ZoramFP
    .goto 1440/1,994.16,3373.730
-   >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Andruk, Zoram'gar|r
+   >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Andruk|r
    .fp Zoram'gar Outpost >> Prenez le chemin de vol de l'Avant-poste de Zoram'gar
    .target Andruk
    .isQuestAvailable 6442
@@ -4772,7 +4772,7 @@ step
 step
     #completewith JourneytoTM
     .goto 1440/1,994.16,3373.730
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Andruk, Zoram'gar|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Andruk|r
     .fly Thunder Bluff >> Volez à Thunder Bluff
     .zoneskip Thunder Bluff
     .target Andruk
@@ -4840,14 +4840,14 @@ step << !Warlock
 step << Warlock
     #optional
     .goto 1440/1,994.16,3373.730
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Andruk, Zoram'gar|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Andruk|r
     .fly Camp Taurajo >>Volez au Camp Taurajo
     .target Andruk
     .zoneskip Ashenvale,1
 step << !Warlock
     #optional
     .goto 1440/1,994.16,3373.730
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Andruk, Zoram'gar|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Andruk|r
     .fly Orgrimmar >>Volez à Orgrimmar
     .target Andruk
     .zoneskip Ashenvale,1
@@ -4881,7 +4881,7 @@ step << Warlock
     .use 6626
 step << Warlock
     .goto 1454/1,-4377.13,1804.77
-    >>Tuez la |cRXP_ENEMY_Summoned Succubus|r
+    >>Tuez les |cRXP_ENEMY_Summoned Succubus|r
     .complete 1513,1 --Kill Summoned Succubus (1)
     .mob Summoned Succubus
     .use 6626
@@ -4949,7 +4949,7 @@ step << Priest/Warlock
     .target Katis
 step << Mage
     .goto 1454/1,-4218.64,1473.72
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|r |cRXP_FRIENDLY_Pephredo|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |r |cRXP_FRIENDLY_Pephredo|r
     .train 2138 >> Apprenez vos sorts de classe
     .target Pephredo
     .xp <22,1
@@ -4957,7 +4957,7 @@ step << Mage
 step << Mage
     #optional
     .goto 1454/1,-4218.64,1473.72
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|r |cRXP_FRIENDLY_Pephredo|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |r |cRXP_FRIENDLY_Pephredo|r
     .train 2121 >> Apprenez vos sorts de classe
     .target Pephredo
     .xp <24,1
@@ -5040,7 +5040,7 @@ step << Rogue
     .goto 1413/1,-2927.11,1236.18
     >>Au sommet de la tour vous trouverez |cRXP_ENEMY_Gallywix|r. Dépouillez-le pour sa |cRXP_LOOT_Tête|r
     >>Utilisez [Embuscade] pour réduire ses PV de moitié. Utilisez [Suriner] pour récupérer votre énergie et utiliser [Évasion]
-	>>N'oubliez pas d'utiliser une Potion et un [Thé aux chardons] si nécessaire
+	>>Rappelez-vous d'utiliser une potion et un [Thé aux chardons] si nécessaire
     .complete 2478,4 --Gallywix's Head (1)
     .mob Grand Foreman Puzik Gallywix
     --VV Video?
@@ -5173,7 +5173,7 @@ step << Rogue
     .aura -9991
 step << Rogue
     #optional
-    .destroy 8051 >> Détruisez le [Lance-fusée] dans votre sac, il n'est plus nécessaire
+    .destroy 8051 >> Détruisez le [Lance-fusée] de vos sacs, il n'est plus nécessaire
     .destroy 8066 >> Détruisez le [Sifflet de Fizzule] de vos sacs, il n'est plus nécessaire
 step
     #optional

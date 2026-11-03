@@ -1960,7 +1960,7 @@ step
 	.goto 1426/0,-615.60,-5674.38,40,0
 	.goto 1426/0,-641.21,-5660.59,40,0
 	.goto 1426/0,-730.84,-5624.15,40,0
-    .xp 5+2690 >> Montez votre expérience jusqu'à 2690+/2800xp
+    .xp 5+2690 >> Monter votre expérience jusqu'à 2690+/2800xp
     .mob Young Black Bear
     .mob Crag Boar
 step

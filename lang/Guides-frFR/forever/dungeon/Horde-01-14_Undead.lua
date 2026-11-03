@@ -15,7 +15,7 @@ RXPGuides.RegisterGuide([[
 
 step
 .enabledungeon RFC
-#include Guide RestedXP Éternel (H)\1-6 Clairières de Tirisfal
+#include RestedXP Guide Forever (H)\1-6 Clairières de Tirisfal
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -32,7 +32,7 @@ RXPGuides.RegisterGuide([[
 
 step
 .enabledungeon RFC
-#include Guide RestedXP Éternel (H)\6-12 Clairières de Tirisfal
+#include RestedXP Guide Forever (H)\6-12 Clairières de Tirisfal
 ]])
 
 
@@ -53,5 +53,5 @@ RXPGuides.RegisterGuide([[
 step
 .enabledungeon RFC
 .enabledungeon ROL
-#include Guide RestedXP Éternel (H)\12-14 Forêt des Pins argentés
+#include RestedXP Guide Forever (H)\12-14 Forêt des Pins argentés
 ]])

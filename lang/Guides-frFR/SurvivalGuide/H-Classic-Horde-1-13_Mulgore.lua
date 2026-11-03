@@ -658,7 +658,7 @@ step
     .unitscan Snagglespear
 step
     .goto Mulgore,47.63,61.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Jhwana|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jhawna|r
     >>|cRXP_BUY_Achetez du|r [Lait frais] |cRXP_BUY_à Delaniel|r << Shaman/Druid
     >>|cRXP_BUY_Achetez des|r [Pain sorti du four] |cRXP_BUY_à Delaniel|r << Warrior
     .vendor >> Vendez tout ce dont nous n'avez pas besoin
@@ -899,7 +899,7 @@ step << Hunter
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.0
 step << Hunter
     .goto Mulgore,45.86,57.67
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Parlez à|r |cRXP_FRIENDLY_Loorat|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Moorat|r
     .collect 2516,1000,743,1 << Hunter --Light Shot (1000)
     .target Moorat Longstride
     .itemcount 2512,<800 << Hunter
@@ -1394,7 +1394,7 @@ step << Hunter
     .target Yaw Sharpmane
 step
     .goto Mulgore,47.63,61.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Jhwana|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jhawna|r
     >>|cRXP_BUY_Achetez du|r [Lait frais] |cRXP_BUY_à Delaniel|r << Shaman/Druid
     >>|cRXP_BUY_Achetez des|r [Pain sorti du four] |cRXP_BUY_à Delaniel|r << Warrior
     .collect 1179,20,818,1 << Shaman/Druid --Ice Cold Milk (20)
@@ -1520,7 +1520,7 @@ step
     .subzone 380 >>Voyagez au nord vers la Croisée
     >>|cRXP_WARN_Faites en sorte de rester sur la route. Sinon, vous risquez d'engager des créatures de haut niveau|r
  step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tonga|r, à |cRXP_FRIENDLY_Sergra|r, à |cRXP_FRIENDLY_Gazrog|r à |cRXP_FRIENDLY_Thork|r et à |cRXP_FRIENDLY_Jahan|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tonga|r, |cRXP_FRIENDLY_Sergra|r, |cRXP_FRIENDLY_Gazrog|r |cRXP_FRIENDLY_Thork|r et |cRXP_FRIENDLY_Jahan|r
     .accept 870 >>Acceptez la quête Les Bassins oubliés
     .target +Tonga Runetotem
     .goto The Barrens,52.26,31.93
@@ -2082,7 +2082,7 @@ step
     #completewith next
     >>Tuez |cRXP_ENEMY_Pygmy Surf Crawlers|r et les |cRXP_ENEMY_Surf Crawlers|r. Dépouillez-les pour leur |cRXP_LOOT_Mucus|r
     >>Tuez les |cRXP_ENEMY_Coquillards makrura|r et les |cRXP_ENEMY_Claqueur makrura|r. Dépouillez-les pour leurs |cRXP_LOOT_Yeux|r
-    >>|cRXP_WARN_Allez aux îles du sud si vous n'avez pas encore bientôt terminé cette quête à ce moment. De nombreux|r |cRXP_ENEMY_Clampants|r |cRXP_WARN_et de|r |cRXP_ENEMY_Makruras|r |cRXP_WARN_peuvent être trouvé ici|r
+    >>Allez aux îles du sud si vous n'avez pas encore bientôt terminé cette quête à ce moment. De nombreux |cRXP_ENEMY_Crawlers|r et de |cRXP_ENEMY_Makruras|r peuvent être trouvé ici
     .complete 818,2 --Crawler Mucus (8)
     .mob +Pygmy Surf Crawler
     .mob +Surf Crawler
@@ -2190,7 +2190,7 @@ step
     .complete 837,4 --Razormane Battleguard (4)
     .mob +Razormane Battleguard
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|r |cRXP_FRIENDLY_Torka|r, à |cRXP_FRIENDLY_Orgnil|r et à |cRXP_FRIENDLY_Gar'Thok|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|r |cRXP_FRIENDLY_Torka|r, |cRXP_FRIENDLY_Orgnil|r et |cRXP_FRIENDLY_Gar'Thok|r
     .turnin 815 >>Rendez la quête Des œufs pour l'omelette
     .target +Cook Torka
     .goto Durotar,51.12,42.46
@@ -2206,7 +2206,7 @@ step
     .goto Durotar,51.95,43.50
     .group
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|r |cRXP_FRIENDLY_Torka|r, à |cRXP_FRIENDLY_Orgnil|r et à |cRXP_FRIENDLY_Gar'Thok|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|r |cRXP_FRIENDLY_Torka|r, |cRXP_FRIENDLY_Orgnil|r et |cRXP_FRIENDLY_Gar'Thok|r
     .turnin 815 >>Rendez la quête Des œufs pour l'omelette
     .target +Cook Torka
     .goto Durotar,51.12,42.46
@@ -2691,7 +2691,7 @@ step << !Shaman
     .goto Durotar,34.27,47.02,50,0
     .goto Durotar,34.71,42.30
     >>Voyagez au sud le long de la rivière vers le poste de Guet-Lointain
-    >>Tuez les |cRXP_ENEMY_Crocilisques Gueule-d'effrois|r sur la route. Dépouillez-les pour l' |cRXP_LOOT_Amulette de Kron|r
+    >>Tuez les |cRXP_ENEMY_Dreadmaw Crocolisks|r sur le chemin. Dépouillez-les pour la |cRXP_LOOT_Kron's Amulet|r
     >>|cRXP_WARN_Passez et abandonnez cette quête si elle ne tombe pas|r
     .complete 816,1 --Kron's Amulet (1)
     .mob Dreadmaw Crocolisk

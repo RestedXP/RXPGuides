@@ -782,7 +782,7 @@ step << !Human
     .accept 153 >> Acceptez la quête Les masques en cuir rouge
 step
     .goto 1436/0,1166.57,-10653.23
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Innkeeper Heather|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Aubergiste Heather|r
     .vendor >>|cRXP_BUY_Achetez de la nourriture/eau si besoin|r
 	.target Innkeeper Heather
 step
@@ -1576,7 +1576,7 @@ step
     .use 7586
 step
     .goto 1439/1,393.72,5993.24
-    >>Courrez vers le bord du Camp Furbolg
+    >>Courez vers le bord du Camp Furbolg
     .complete 984,1 -- Find a corrupt furbolg camp
 step
     #sticky
@@ -2492,21 +2492,21 @@ step << !NightElf
     --.complete 96390,1 -- Dark Iron Spy slain 10/10
     --.disablecheckbox
     .collect 274268,1,96391,1 -- Dark Iron Map (1)
-    .accept 96391 >> Acceptez la quête Souterrain Carte
+    .accept 96391 >> Acceptez la quête La carte souterraine
     .mob Dark Iron Spy
 step << !NightElf
     #label OII
     .goto 1426/0,-1394.24,-5797.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Earthseer Farsen|r
-    .turnin 96391 >> Rendez la quête Souterrain Carte
-    .accept 96393 >> Acceptez la quête Old Forgefer Incursion
+    .turnin 96391 >> Rendez la quête La carte souterraine
+    .accept 96393 >> Acceptez la quête Incursion dans le Vieux Forgefer
     .target Earthseer Farsen
 step << !NightElf
     #optional
     .isQuestComplete 96390
     .goto 1426/0,-1394.24,-5797.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Earthseer Farsen|r
-    .turnin 96390 >> Rendez la quête Nip 'Em in the Vombi
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Terre-voyant Farsen|r
+    .turnin 96390 >> Rendez la quête Étouffer le mal dans l’œuf
     .target Earthseer Farsen
 
 step
@@ -2674,7 +2674,7 @@ step << Warrior/Hunter
     .target Regnus Thundergranite << Hunter
     .target Bilban Tosslespanner << Warrior
 step << Hunter/Druid
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Buliwyf Main-de-pierre|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Buliwyf Stonehand|r
     .train 266 >> Apprenez la compétence pour porter des Fusils << Hunter
     .train 199 >> Acheter la compétence pour porter des masses à deux mains << Druid
     .goto 1455/0,-1197.27,-5041.49
@@ -2891,7 +2891,7 @@ step << NightElf Rogue
     .goto 1453/0,377.61,-8752.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Osborne l'homme de la nuit|r
     >>|cRXP_WARN_Assurez-vous d'entraîner|r |T136058:0|t[Crochetage] |cRXP_WARN_car vous en aurez besoin pour votre quête de classe Voleur bientôt|r
-    .train 1804 >> Montez le niveau de votre [Crochetage]
+    .train 1804 >> Apprenez [Crochetage]
     .target Osborne the Night Man
     .xp >20,1
     .xp <18,1
@@ -2899,7 +2899,7 @@ step << NightElf Rogue
     .goto 1453/0,377.61,-8752.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Osborne l'homme de la nuit|r
     >>|cRXP_WARN_Assurez-vous d'entraîner|r |T136058:0|t[Crochetage] |cRXP_WARN_car vous en aurez besoin pour votre quête de classe Voleur bientôt|r
-    .train 1804 >> Montez le niveau de votre [Crochetage]
+    .train 1804 >> Apprenez [Crochetage]
     .trainer >> Apprenez vos sorts de classe
     .target Osborne the Night Man
     .xp <20,1
@@ -2977,7 +2977,7 @@ step << !NightElf Rogue
     .goto 1453/0,377.61,-8752.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Osborne l'homme de la nuit|r
     >>|cRXP_WARN_Assurez-vous d'entraîner|r |T136058:0|t[Crochetage] |cRXP_WARN_car vous en aurez besoin pour votre quête de classe Voleur bientôt|r
-    .train 1804 >> Montez le niveau de votre [Crochetage]
+    .train 1804 >> Apprenez [Crochetage]
     .target Osborne the Night Man
     .xp >20,1
     .xp <18,1
@@ -2985,7 +2985,7 @@ step << !NightElf Rogue
     .goto 1453/0,377.61,-8752.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Osborne l'homme de la nuit|r
     >>|cRXP_WARN_Assurez-vous d'entraîner|r |T136058:0|t[Crochetage] |cRXP_WARN_car vous en aurez besoin pour votre quête de classe Voleur bientôt|r
-    .train 1804 >> Montez le niveau de votre [Crochetage]
+    .train 1804 >> Apprenez [Crochetage]
     .trainer >> Apprenez vos sorts de classe
     .target Osborne the Night Man
     .xp <20,1
@@ -3618,7 +3618,7 @@ step << Rogue
 step << Rogue
     .goto 1436/0,619.17,-11035.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Agent Kearnen|r
-    >>Vous DEVEZ le faire pour votre de quête de [Poisons]
+    >>Vous DEVEZ faire cette quête pour vos [Poisons]
     .turnin 2360 >> Rendez la quête Mathias et les Défias
     .accept 2359 >> Acceptez la quête La Tour de Klaven
     .target Agent Kearnen
@@ -3705,7 +3705,7 @@ step << !Dwarf Rogue
     .goto 1453,43.070,26.155
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Shaina Fuller|r
     >>|cRXP_WARN_Si vous avez un|r |T626003:0|t|cFFF48CBAPaladin|r|cRXP_WARN_,|r |T625999:0|t|cFFFF7C0ADruide|r |cRXP_WARN_ou bien créez un|r |T626006:0|t|cFF0070DDChaman|r |cRXP_WARN_ami, demandez-lui de supprimer le|r |T136230:0|t[Toucher de Zanzil] |cRXP_WARN_à la place|r
-    .skill firstaid,80 >> Montez votre niveau de compétence en [Premiers soins] jusqu'à 80
+    .skill firstaid,80 >> Montez vos [Premier soins] à un niveau de compétence de 80
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
 step << !Dwarf Rogue
@@ -3713,7 +3713,7 @@ step << !Dwarf Rogue
     .goto 1453,43.070,26.155
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Shaina Fuller|r
     >>|cRXP_WARN_Si vous avez un|r |T626003:0|t|cFFF48CBAPaladin|r|cRXP_WARN_,|r |T625999:0|t|cFFFF7C0ADruide|r |cRXP_WARN_ou bien créez un|r |T626006:0|t|cFF0070DDChaman|r |cRXP_WARN_ami, demandez-lui de supprimer le|r |T136230:0|t[Toucher de Zanzil] |cRXP_WARN_à la place|r
-    .train 7934 >> Apprenez [Anti-Venom]
+    .train 7934 >> Apprenez [Anti-Venin]
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
 step << !Dwarf Rogue
@@ -4563,7 +4563,7 @@ step
     #label Kerlonian
     .goto 1439/1,206.400,4402.500
     >>|cRXP_WARN_Escortez |cRXP_FRIENDLY_Kerlonian|r à son sac |cRXP_WARN_à Sombrivage|r|r
-    .use 13536 >> Utilisez la [|cRXP_LOOT_Horn of Awakening|r] |cRXP_WARN_dès que |cRXP_FRIENDLY_Kerlonian|r s'endort|r
+    .use 13536 >> |cRXP_WARN_Utilisez la|r |T134229:0|t[|cRXP_LOOT_Corne de l'éveil|r] |cRXP_WARN_dès que |cRXP_FRIENDLY_Kerlonian|r s'endort|r
     >>|cRXP_WARN_Évitez de rester sur la route principale autant que possible. Les ennemis n'apparaîtront que si vous restez sur la route|r
     .complete 5321,2
     .isOnQuest 5321
@@ -4690,7 +4690,7 @@ step
 step
     #label AshenvaleEnd
     .goto 1440/1,-283.73,2827.920
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|cRXP_FRIENDLY_Daelyshia|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Daelyshia|r
     .fp Astranaar >> Prenez le chemin de vol d'Astranaar
 	.target Daelyshia
 step

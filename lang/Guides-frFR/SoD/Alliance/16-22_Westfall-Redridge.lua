@@ -142,7 +142,7 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Osborne l'homme de la nuit|r
     >>|cRXP_WARN_Assurez-vous d'apprendre|r |T136058:0|t[Crochetage] |cRXP_WARN_comme vous en aurez besoin pour votre quête de classe Voleur bientôt|r
     .trainer >> Apprenez vos sorts de classe
-    .train 1804 >> Montez le niveau de votre [Crochetage]
+    .train 1804 >> Apprenez [Crochetage]
     .target Osborne the Night Man
 step << Rogue
     #completewith next
@@ -359,7 +359,7 @@ step
     .accept 153 >> Acceptez la quête Les masques en cuir rouge
 step << Rogue
     .goto Westfall,52.8,53.6
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Innkeeper Heather|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Aubergiste Heather|r
     .target Innkeeper Heather
     .home >> Liez votre Pierre de foyer à la Marche de l'Ouest
 step
@@ -1001,7 +1001,7 @@ step << Rogue
 step << Rogue
     .goto Westfall,68.50,70.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Agent Kearnen|r
-    >>Vous DEVEZ le faire pour votre de quête de [Poisons]
+    >>Vous DEVEZ faire cette quête pour vos [Poisons]
     .turnin 2360 >> Rendez la quête Mathias et les Défias
     .accept 2359 >> Acceptez la quête La Tour de Klaven
     .target Agent Kearnen
@@ -1082,7 +1082,7 @@ step << !Dwarf Rogue
     .goto 1453,43.070,26.155
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Shaina Fuller|r
     >>Si vous avez un ami |cFFF48CBAPaladin|r ou |cFFFF7C0ADruid|r demandez-leur de vous enlever le debuff [Toucher de Zanzil]
-    .skill firstaid,80 >> Montez votre niveau de compétence en [Premiers soins] jusqu'à 80
+    .skill firstaid,80 >> Montez vos [Premier soins] à un niveau de compétence de 80
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
 step << !Dwarf Rogue
@@ -1090,7 +1090,7 @@ step << !Dwarf Rogue
     .goto 1453,43.070,26.155
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Shaina Fuller|r
     >>Si vous avez un ami |cFFF48CBAPaladin|r ou |cFFFF7C0ADruid|r demandez-leur de vous enlever le debuff [Toucher de Zanzil]
-    .train 7934 >> Apprenez [Anti-Venom]
+    .train 7934 >> Apprenez [Anti-Venin]
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
 step << !Dwarf Rogue

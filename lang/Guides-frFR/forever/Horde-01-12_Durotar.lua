@@ -8,7 +8,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 1-6 Durotar
 #version 11
-#group Guide RestedXP Éternel (H)
+#group RestedXP Guide Forever (H)
 #subgroup Guide Speedrun 1-22
 --#groupid RXP-SRGCE-H1
 #defaultfor Troll/Orc
@@ -1102,7 +1102,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 6-10 Durotar
 #version 11
-#group Guide RestedXP Éternel (H)
+#group RestedXP Guide Forever (H)
 #subgroup Guide Speedrun 1-22
 --#groupid RXP-SRGCE-H1
 #defaultfor Troll/Orc
@@ -2155,7 +2155,7 @@ step
 step
     .goto 1411/1,-4686.09,340.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Innkeeper Grosk|r
-    >>|cRXP_BUY_Achetez du|r [Lait frais] |cRXP_BUY_à Heron|r << Mage/Warlock/Priest/Shaman/Druid
+    >>|cRXP_BUY_Achetez du|r [Lait frais] |cRXP_BUY_à Kauth|r << Mage/Warlock/Priest/Shaman/Druid
     >>|cRXP_BUY_Achetez des|r [Cuissot] |cRXP_BUY_à Hai'zan|r << Rogue/Warrior
     >>Gardez 4 pièces d'argent pour vos sorts de classe ! << Rogue/Warrior/Shaman/Warlock
     >>Gardez 2 pièces d'argent pour vos sorts de classe ! << Priest
@@ -2171,7 +2171,7 @@ step << !Mage !Hunter !Druid
     #optional
     .goto 1411/1,-4686.09,340.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Innkeeper Grosk|r
-    >>|cRXP_BUY_Achetez du|r [Lait frais] |cRXP_BUY_à Heron|r << Mage/Warlock/Priest/Shaman/Druid
+    >>|cRXP_BUY_Achetez du|r [Lait frais] |cRXP_BUY_à Kauth|r << Mage/Warlock/Priest/Shaman/Druid
     >>|cRXP_BUY_Achetez des|r [Cuissot] |cRXP_BUY_à Hai'zan|r << Rogue/Warrior
     .vendor >> Vendez tout ce dont nous n'avez pas besoin
     .turnin 2161 >>Rendez la quête Un Fardeau de Péon
@@ -2224,7 +2224,7 @@ step << Priest
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tai'jin|r
     .turnin 5649 >> Rendez la quête Au service de la spiritualité
     .accept 5648 >> Acceptez la quête Vêtements de la spiritualité
-    .train 2052 >> Apprenez [Soins inférieurs Rank 2]
+    .train 2052 >> Apprenez [Soins inférieurs Rang 2]
     .target Tai'jin
 step << Priest
     .goto 1411/1,-4770.16,170.62
@@ -2364,7 +2364,7 @@ step
     #completewith next
     >>Tuez |cRXP_ENEMY_Zalazane|r. Dépouillez-le pour sa |cRXP_LOOT_Tête|r
     >>Gardez votre [Horion de terre] pour quand il lance [Vague de soins] << Shaman
-    >>Gardez votre [Suriner] pour lorsqu'il lance [Vague de soins] << Rogue
+    >>Gardez votre [Suriner] pour quand il lance [Vague de soins] << Rogue
     .complete 826,3 --Zalazane's Head (1)
     .mob Zalazane
 step
@@ -2377,7 +2377,7 @@ step
     .goto 1411/1,-5526.27,-1286.62
     >>Tuez |cRXP_ENEMY_Zalazane|r. Dépouillez-le pour sa |cRXP_LOOT_Tête|r
     >>Gardez votre [Horion de terre] pour quand il lance [Vague de soins] << Shaman
-    >>Gardez votre [Suriner] pour lorsqu'il lance [Vague de soins] << Rogue
+    >>Gardez votre [Suriner] pour quand il lance [Vague de soins] << Rogue
     .complete 826,3 --Zalazane's Head (1)
     .mob Zalazane
 step
@@ -3115,7 +3115,7 @@ step
     .goto 1411/1,-4686.09,340.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Innkeeper Grosk|r
     .vendor >> Vendez tout ce dont nous n'avez pas besoin
-    >>|cRXP_BUY_Achetez du|r [Lait frais] |cRXP_BUY_à Heron|r << Mage/Warlock/Priest/Shaman
+    >>|cRXP_BUY_Achetez du|r [Lait frais] |cRXP_BUY_à Kauth|r << Mage/Warlock/Priest/Shaman
     >>|cRXP_BUY_Achetez des|r [Cuissot] |cRXP_BUY_à Hai'zan|r << Rogue/Warrior
     .collect 1179,15,828,1 << Mage/Warlock/Priest/Shaman --Ice Cold Milk (15)
     .collect 2287,15,828,1 << Rogue/Warrior --Haunch of Meat (15)
@@ -3186,7 +3186,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 10-12 Durotar
 #version 11
-#group Guide RestedXP Éternel (H)
+#group RestedXP Guide Forever (H)
 #subgroup Guide Speedrun 1-22
 --#groupid RXP-SRGCE-H1
 #defaultfor Troll/Orc
@@ -3820,7 +3820,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 10-12 Tirisfal (Orc/Troll)
 #version 11
-#group Guide RestedXP Éternel (H)
+#group RestedXP Guide Forever (H)
 #subgroup Guide Speedrun 1-22
 --#groupid RXP-SRGCE-H1
 #defaultfor !Hunter !Shaman !Tauren !Skyborne !Undead

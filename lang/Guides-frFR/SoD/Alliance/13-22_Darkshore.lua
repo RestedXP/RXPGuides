@@ -229,7 +229,7 @@ step << Warlock/Mage
     .itemcount 221499,1 << Warlock --Rune of the Felguard
     .itemcount 223147,1 << Mage --Spell Notes: Balefire Bolt
     .train 427733 >>|cRXP_WARN_Utilisez la|r |T134419:0|t[|cRXP_FRIENDLY_Rune du gangregarde|r] |cRXP_WARN_pour apprendre|r |T136216:0|t[Invocation d'un gangregarde] << Warlock
-    .train 428878 >>|cRXP_WARN_Utilisez|r les |T134939:0|t[|cRXP_FRIENDLY_Sorts Notes: Trait de bûcher|r] |cRXP_WARN_pour entraîner|r le |T135809:0|t[Trait de bûcher] << Mage
+    .train 428878 >>|cRXP_WARN_Utilisez les|r |T134939:0|t[|cRXP_FRIENDLY_Notes de sort : Trait de bûcher|r] |cRXP_WARN_pour apprendre|r |T135809:0|t[Trait de bûcher] << Mage
     .use 221499 << Warlock
     .use 223147 << Mage
 step
@@ -364,7 +364,7 @@ step << !sod/Warrior/Rogue
     .subzoneskip 442
 step
     .goto Darkshore,38.90,53.59
-    >>Courrez vers le bord du Camp Furbolg
+    >>Courez vers le bord du Camp Furbolg
     .complete 984,1 -- Find a corrupt furbolg camp
 step << NightElf
     #xprate <1.5
@@ -2265,7 +2265,7 @@ step
     #season 0 << !Warrior !Rogue
     #completewith CrabTurtle
     >>Tuez des |cRXP_ENEMY_Jeunes trotteur des forêts|r et des |cRXP_ENEMY_Trotteur des forêts|r. Dépouillez-les pour leur |cRXP_LOOT_Viande de trotteur|r
-    >>Faites attention les |cRXP_ENEMY_Jeune trotteur des forêts|r s'enfuient à <30% de vie
+    >>Attention car les |cRXP_ENEMY_Foreststrider Fledglings|r peuvent s'enfuir à <30% de vie
     .collect 5469,5,2178,1 -- Strider Meat (5)
     .mob Foreststrider Fledgling
     .mob Foreststrider
@@ -2973,7 +2973,7 @@ step << Priest
     #season 2
     .goto Ashenvale,27.26,35.58
     >>|cRXP_WARN_Escortez |cRXP_FRIENDLY_Kerlonian|r jusqu'au poste de Maestra à Orneval|r
-    .use 13536 >> Utilisez la [|cRXP_LOOT_Horn of Awakening|r] |cRXP_WARN_dès que |cRXP_FRIENDLY_Kerlonian|r s'endort|r
+    .use 13536 >> |cRXP_WARN_Utilisez la|r |T134229:0|t[|cRXP_LOOT_Corne de l'éveil|r] |cRXP_WARN_dès que |cRXP_FRIENDLY_Kerlonian|r s'endort|r
     >>|cRXP_WARN_Évitez de rester sur la route principale autant que possible. Les ennemis n'apparaîtront que si vous restez sur la route|r
     .complete 5321,2
     .isOnQuest 5321
@@ -3036,7 +3036,7 @@ step << Priest
 step << Priest
     #season 2
     .goto Ashenvale,34.40,48.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|cRXP_FRIENDLY_Daelyshia|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Daelyshia|r
     .fp Astranaar>> Prenez le chemin de vol d'Astranaar
 	.target Daelyshia
 step << Priest
@@ -3056,7 +3056,7 @@ step << Priest
 step << Priest
     #season 2
     .goto Ashenvale,34.40,48.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|cRXP_FRIENDLY_Daelyshia|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Daelyshia|r
     .fly Auberdine >> Volez pour revenir à Auberdine
 	.target Daelyshia
 
@@ -3575,7 +3575,7 @@ step << Warlock/Mage
     .itemcount 221499,1 << Warlock --Rune of the Felguard
     .itemcount 223147,1 << Mage --Spell Notes: Balefire Bolt
     .train 427733 >>|cRXP_WARN_Utilisez la|r |T134419:0|t[|cRXP_FRIENDLY_Rune du gangregarde|r] |cRXP_WARN_pour apprendre|r |T136216:0|t[Invocation d'un gangregarde] << Warlock
-    .train 428878 >>|cRXP_WARN_Utilisez|r les |T134939:0|t[|cRXP_FRIENDLY_Sorts Notes: Trait de bûcher|r] |cRXP_WARN_pour entraîner|r le |T135809:0|t[Trait de bûcher] << Mage
+    .train 428878 >>|cRXP_WARN_Utilisez les|r |T134939:0|t[|cRXP_FRIENDLY_Notes de sort : Trait de bûcher|r] |cRXP_WARN_pour apprendre|r |T135809:0|t[Trait de bûcher] << Mage
     .use 221499 << Warlock
     .use 223147 << Mage
 step
@@ -4124,7 +4124,7 @@ step << Warrior
     #season 2
     #sticky
     >>|cRXP_WARN_Escortez |cRXP_FRIENDLY_Kerlonian|r jusqu'au poste de Maestra à Orneval|r
-    .use 13536 >> Utilisez la [|cRXP_LOOT_Horn of Awakening|r] |cRXP_WARN_dès que |cRXP_FRIENDLY_Kerlonian|r s'endort|r
+    .use 13536 >> |cRXP_WARN_Utilisez la|r |T134229:0|t[|cRXP_LOOT_Corne de l'éveil|r] |cRXP_WARN_dès que |cRXP_FRIENDLY_Kerlonian|r s'endort|r
     >>|cRXP_WARN_Évitez de rester sur la route principale autant que possible. Les ennemis n'apparaîtront que si vous restez sur la route|r
     .complete 5321,2
     .isOnQuest 5321
@@ -4196,13 +4196,13 @@ step << Warrior
 step << Warrior
     #season 2
     .goto Ashenvale,34.40,48.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|cRXP_FRIENDLY_Daelyshia|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Daelyshia|r
     .fp Astranaar>> Prenez le chemin de vol d'Astranaar
 	.target Daelyshia
 step << Warrior
     #season 2
     .goto Ashenvale,34.40,48.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|cRXP_FRIENDLY_Daelyshia|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Daelyshia|r
     .fly Auberdine >> Volez pour revenir à Auberdine
 	.target Daelyshia
 
@@ -4245,7 +4245,7 @@ step << Druid
 #season 2
     .goto Ashenvale,27.26,35.58
     >>|cRXP_WARN_Escortez |cRXP_FRIENDLY_Kerlonian|r jusqu'au poste de Maestra à Orneval|r
-    .use 13536 >> Utilisez la [|cRXP_LOOT_Horn of Awakening|r] |cRXP_WARN_dès que |cRXP_FRIENDLY_Kerlonian|r s'endort|r
+    .use 13536 >> |cRXP_WARN_Utilisez la|r |T134229:0|t[|cRXP_LOOT_Corne de l'éveil|r] |cRXP_WARN_dès que |cRXP_FRIENDLY_Kerlonian|r s'endort|r
     >>|cRXP_WARN_Évitez de rester sur la route principale autant que possible. Les ennemis n'apparaîtront que si vous restez sur la route|r
     .complete 5321,2
     .isOnQuest 5321
@@ -4266,7 +4266,7 @@ step << Druid
 step << Druid
     #season 2
     .goto Ashenvale,34.40,48.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|cRXP_FRIENDLY_Daelyshia|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Daelyshia|r
     .fp Astranaar>> Prenez le chemin de vol d'Astranaar
 	.target Daelyshia
 step << Druid
@@ -4659,7 +4659,7 @@ step << Rogue
     >>|cRXP_WARN_Assurez-vous d'apprendre|r |T132320:0|t[Camouflage]|cRXP_WARN_,|r |T133644:0|t[Vol à la tire]|cRXP_WARN_, et|r |T136058:0|t[Crochetage] |cRXP_WARN_comme vous en aurez besoin plus tard|r
     .train 1784 >>Apprenez [Camouflage]
     .train 921 >>Apprenez [Vol à la tire]
-    .train 1804 >> Montez le niveau de votre [Crochetage]
+    .train 1804 >> Apprenez [Crochetage]
     .trainer >> Apprenez vos sorts de classe
     .target Osborne the Night Man
     .dungeon !DM
@@ -4673,7 +4673,7 @@ step << Rogue
     >>|cRXP_WARN_Assurez-vous d'apprendre|r |T133644:0|t[Vol à la tire]|cRXP_WARN_et|r |T136058:0|t[Crochetage] |cRXP_WARN_comme vous en aurez besoin plus tard|r
     >>|cRXP_WARN_SOYEZ TRÈS PRUDENT avec la gestion de votre argent dans les prochaines étapes. N'achetez que les sorts essentiels. Vous devrez avoir de l'argent pour Disparition bientôt et 75 pièces d'argent pour obtenir une rune après votre retour des Paluns|r
     .train 921 >>Apprenez [Vol à la tire]
-    .train 1804 >> Montez le niveau de votre [Crochetage]
+    .train 1804 >> Apprenez [Crochetage]
     .trainer >> Apprenez vos sorts de classe
     .target Osborne the Night Man
     .dungeon !DM
@@ -4685,7 +4685,7 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Osborne the Night Man|r
     >>Faites bien attention à apprendre la capacité [Crochetage], vous en aurez besoin plus tard
     >>|cRXP_WARN_SOYEZ TRÈS PRUDENT avec la gestion de votre argent dans les prochaines étapes. N'achetez que les sorts essentiels. Vous devrez avoir de l'argent pour Disparition bientôt et 75 pièces d'argent pour obtenir une rune après votre retour des Paluns|r
-    .train 1804 >> Montez le niveau de votre [Crochetage]
+    .train 1804 >> Apprenez [Crochetage]
     .trainer >> Apprenez vos sorts de classe
     .target Osborne the Night Man
     .dungeon !DM
@@ -4996,7 +4996,7 @@ step << Rogue
     #xprate >1.59
     .goto Westfall,68.50,70.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Agent Kearnen|r
-    >>Vous DEVEZ le faire pour votre de quête de [Poisons]
+    >>Vous DEVEZ faire cette quête pour vos [Poisons]
     .turnin 2360 >> Rendez la quête Mathias et les Défias
     .accept 2359 >> Acceptez la quête La Tour de Klaven
     .target Agent Kearnen
@@ -5098,7 +5098,7 @@ step << !Dwarf Rogue
     .goto 1453,43.070,26.155
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Shaina Fuller|r
     >>Si vous avez un ami |cFFF48CBAPaladin|r ou |cFFFF7C0ADruid|r demandez-leur de vous enlever le debuff [Toucher de Zanzil]
-    .skill firstaid,80 >> Montez votre niveau de compétence en [Premiers soins] jusqu'à 80
+    .skill firstaid,80 >> Montez vos [Premier soins] à un niveau de compétence de 80
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
     .dungeon !DM
@@ -5108,7 +5108,7 @@ step << !Dwarf Rogue
     .goto 1453,43.070,26.155
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Shaina Fuller|r
     >>Si vous avez un ami |cFFF48CBAPaladin|r ou |cFFFF7C0ADruid|r demandez-leur de vous enlever le debuff [Toucher de Zanzil]
-    .train 7934 >> Apprenez [Anti-Venom]
+    .train 7934 >> Apprenez [Anti-Venin]
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
     .dungeon !DM
@@ -5801,7 +5801,7 @@ step << Rogue
     >>|cRXP_WARN_Assurez-vous d'apprendre|r |T132320:0|t[Camouflage]|cRXP_WARN_,|r |T133644:0|t[Vol à la tire]|cRXP_WARN_, et|r |T136058:0|t[Crochetage] |cRXP_WARN_comme vous en aurez besoin plus tard|r
     .train 1784 >>Apprenez [Camouflage]
     .train 921 >>Apprenez [Vol à la tire]
-    .train 1804 >> Montez le niveau de votre [Crochetage]
+    .train 1804 >> Apprenez [Crochetage]
     .trainer >> Apprenez vos sorts de classe
     .target Osborne the Night Man
     .dungeon DM
@@ -5814,7 +5814,7 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Osborne the Night Man|r
     >>|cRXP_WARN_Assurez-vous d'apprendre|r |T133644:0|t[Vol à la tire]|cRXP_WARN_et|r |T136058:0|t[Crochetage] |cRXP_WARN_comme vous en aurez besoin plus tard|r
     .train 921 >>Apprenez [Vol à la tire]
-    .train 1804 >> Montez le niveau de votre [Crochetage]
+    .train 1804 >> Apprenez [Crochetage]
     .trainer >> Apprenez vos sorts de classe
     .target Osborne the Night Man
     .dungeon DM
@@ -5825,7 +5825,7 @@ step << Rogue
     .goto StormwindClassic,74.65,52.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Osborne the Night Man|r
     >>Faites bien attention à apprendre la capacité [Crochetage], vous en aurez besoin plus tard
-    .train 1804 >> Montez le niveau de votre [Crochetage]
+    .train 1804 >> Apprenez [Crochetage]
     .trainer >> Apprenez vos sorts de classe
     .target Osborne the Night Man
     .dungeon DM
@@ -5860,7 +5860,7 @@ step << Warrior
 step << Warrior
     #xprate >1.59
     .goto 1453,78.673,45.791
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Wu Shen|r à l'étage
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Wu Shen|r dans le bâtiment à l'étage
     .trainer >> Apprenez vos sorts de classe
     .target Wu Shen
     .dungeon DM
@@ -6349,7 +6349,7 @@ step << Rogue
     #xprate >1.59
     .goto Westfall,68.50,70.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Agent Kearnen|r
-    >>Vous DEVEZ le faire pour votre de quête de [Poisons]
+    >>Vous DEVEZ faire cette quête pour vos [Poisons]
     .turnin 2360 >> Rendez la quête Mathias et les Défias
     .accept 2359 >> Acceptez la quête La Tour de Klaven
     .target Agent Kearnen
@@ -6448,7 +6448,7 @@ step << !Dwarf Rogue
     .goto 1453,43.070,26.155
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Shaina Fuller|r
     >>Si vous avez un ami |cFFF48CBAPaladin|r ou |cFFFF7C0ADruid|r demandez-leur de vous enlever le debuff [Toucher de Zanzil]
-    .skill firstaid,80 >> Montez votre niveau de compétence en [Premiers soins] jusqu'à 80
+    .skill firstaid,80 >> Montez vos [Premier soins] à un niveau de compétence de 80
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
     .dungeon DM
@@ -6458,7 +6458,7 @@ step << !Dwarf Rogue
     .goto 1453,43.070,26.155
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Shaina Fuller|r
     >>Si vous avez un ami |cFFF48CBAPaladin|r ou |cFFFF7C0ADruid|r demandez-leur de vous enlever le debuff [Toucher de Zanzil]
-    .train 7934 >> Apprenez [Anti-Venom]
+    .train 7934 >> Apprenez [Anti-Venin]
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
     .dungeon DM
@@ -7034,7 +7034,7 @@ step << Warrior
     #xprate >1.59
     #optional
     .goto 1453,78.673,45.791
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Wu Shen|r à l'étage
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Wu Shen|r dans le bâtiment à l'étage
     .train 6192 >> Apprenez vos sorts de classe
     .target Wu Shen
     .xp <22,1
@@ -7134,7 +7134,7 @@ step << Warrior
 step << Warrior
     #xprate >1.59
     .goto 1453,78.673,45.791
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Wu Shen|r à l'étage
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Wu Shen|r dans le bâtiment à l'étage
     .train 6192 >> Apprenez vos sorts de classe
     .target Wu Shen
     .xp <22,1

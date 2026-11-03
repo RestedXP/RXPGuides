@@ -1267,7 +1267,7 @@ step
     .mob +Forest Lurker
 step
     .goto Loch Modan,24.77,18.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Mountaineer Stormpike|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Mountaineer Stormpike|r
     .turnin 307 >> Rendez la quête Bas les pattes !
     .target Mountaineer Stormpike
 step << Mage

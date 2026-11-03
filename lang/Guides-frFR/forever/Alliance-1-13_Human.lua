@@ -44,7 +44,7 @@ step << Warrior
     .vendor >> Vendez tout ce dont nous n'avez pas besoin
     .target +Brother Danil
     .goto 1429/0,-112.74,-8901.66
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Llane Beshere|r en bas des escaliers
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Llane Beshere|r en bas des escaliers à l'intérieur
     .train 6673 >>Apprenez [Cri de guerre]
     .target +Llane Beshere
     .goto 1429/0,-208.40,-8918.35
@@ -404,7 +404,7 @@ step << Warrior/Paladin
 step << Warrior
     #season 0,1
     .goto 1429/0,-208.40,-8918.35
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Llane Beshere|r en bas des escaliers
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Llane Beshere|r en bas des escaliers à l'intérieur
     .turnin 3100 >> Rendez la quête Lettre simple
     .trainer >> Apprenez vos sorts de classe
     .target Llane Beshere
@@ -1181,7 +1181,7 @@ step << Warrior/Paladin/Rogue
     #optional
     #label RoughStone1
     #completewith NecklaceStart
-    >>Tuez les |cRXP_ENEMY_Kobold Tunnelers|r et les |cRXP_ENEMY_Kobold Miners|r. Ouvrez les |cRXP_PICK_Battered Chests|r. Ramassez les |cRXP_LOOT_[Rough Stones]|r
+    >>Tuez les |cRXP_ENEMY_Kobold Tunnelers|r et les |cRXP_ENEMY_Kobold Miners|r. Ouvrez les |cRXP_PICK_Battered Chests|r. Dépouillez-les pour leur |cRXP_LOOT_[Rough Stones]|r
     .collect 2835,1 --Rough Stone (1+)
     .itemcount 2862,<1 << Rogue/Warrior --Rough Sharpening Stone (<1)
     .itemcount 3239,<1 << Paladin --Rough Weightstone (<1)
@@ -1262,7 +1262,7 @@ step << Warrior/Paladin/Rogue
     #optional
     #label RoughStone2
     #completewith Lovers
-    >>Tuez les |cRXP_ENEMY_Kobold Tunnelers|r et les |cRXP_ENEMY_Kobold Miners|r. Ouvrez les |cRXP_PICK_Battered Chests|r. Ramassez les |cRXP_LOOT_[Rough Stones]|r
+    >>Tuez les |cRXP_ENEMY_Kobold Tunnelers|r et les |cRXP_ENEMY_Kobold Miners|r. Ouvrez les |cRXP_PICK_Battered Chests|r. Dépouillez-les pour leur |cRXP_LOOT_[Rough Stones]|r
     .collect 2835,1 --Rough Stone (1+)
     .itemcount 2862,<1 << Rogue/Warrior --Rough Sharpening Stone (<1)
     .itemcount 3239,<1 << Paladin --Rough Weightstone (<1)
@@ -1342,7 +1342,7 @@ step << Warrior/Paladin/Rogue
     #optional
     #label RoughStone3
     #completewith Exchange
-    >>Tuez les |cRXP_ENEMY_Kobold Tunnelers|r et les |cRXP_ENEMY_Kobold Miners|r. Ouvrez les |cRXP_PICK_Battered Chests|r. Ramassez les |cRXP_LOOT_[Rough Stones]|r
+    >>Tuez les |cRXP_ENEMY_Kobold Tunnelers|r et les |cRXP_ENEMY_Kobold Miners|r. Ouvrez les |cRXP_PICK_Battered Chests|r. Dépouillez-les pour leur |cRXP_LOOT_[Rough Stones]|r
     .collect 2835,1 --Rough Stone (1+)
     .itemcount 2862,<1 << Rogue/Warrior --Rough Sharpening Stone (<1)
     .itemcount 3239,<1 << Paladin --Rough Weightstone (<1)
@@ -3627,7 +3627,7 @@ step
     >>Montez vos [Premiers soins] en attendant le Tram pour Ironforge si nécessaire << Rogue/Warrior/Paladin
     >>Vous aurez besoin d'un niveau de compétence en [Premiers soins] de 80 pour une quête au niveau 24 << Rogue !Dwarf
     >>Lancez [Invocation : marcheur du vide] et [Création d'une pierre de soin] en attendant le Tram pour Ironforge si nécessaire << Warlock
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Monty|r sur la plateforme du milieu du Tram des Profondeurs du côté d'Ironforge
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Monty|r sur la plateforme du milieu du côté Ironforge dans le Tram des Profondeurs
     .accept 6661 >> Acceptez la quête Chasse au rat dans les profondeurs
     .target Monty
 step
@@ -4016,7 +4016,7 @@ step
     .use 268548 >> |cRXP_WARN_Utilisez le|r |T132621:0|t[|cRXP_LOOT_Empty Baril de poudre|r] |cRXP_WARN_pour commencer la quête|r
     >>|cRXP_WARN_NOTE: Cet objet a très peu de chance de tomber. Passez cette étape si vous ne le trouvez pas après en avoir fini avec les|r |cRXP_ENEMY_Espions Sombrefers|r
     .collect 268548,1,95213,1 -- Empty Powder Keg (1)
-    .accept 95213 >> Acceptez la quête Stolen Explosion Powder
+    .accept 95213 >> Acceptez la quête Poudre explosive volée
     .mob Rockjaw Ambusher
 step
     #label SpyMap
@@ -4037,7 +4037,7 @@ step
     .goto 1426/0,-1881.82,-5735.45,0
     .goto 1426/0,-1832.57,-5571.28,0
     .goto 1426/0,-1724.22,-5636.95,0
-    >>Tuez |cRXP_ENEMY_Rockjaw Ambushers|r. Dépouillez-les pour leur |cRXP_LOOT_Stolen Explosion Powder|r
+    >>Tuez les |cRXP_ENEMY_Embusqués Mâcherocs|r. Dépouillez-les pour leur |cRXP_LOOT_Poudre explosive volée|r
     .complete 95214,1 -- Stolen Blasting Powder (16)
     .mob Rockjaw Ambusher
 step
@@ -4057,14 +4057,14 @@ step
 step
     .isOnQuest 95213
     .goto 1426/0,-1606.02,-5676.35
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Responsable Thesten|r
-    .turnin 95213 >> Rendez la quête Stolen Explosion Powder
-    .accept 95214 >> Acceptez la quête Stolen Explosion Powder
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Responsable Thesten|r
+    .turnin 95213 >> Rendez la quête Poudre explosive volée
+    .accept 95214 >> Acceptez la quête Poudre explosive volée
     .target Quarrymaster Thesten
 step
     .isQuestTurnedIn 95213
     .goto 1426/0,-1606.02,-5676.35
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Responsable Thesten|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Responsable Thesten|r
     .accept 95214 >> Acceptez la quête Poudre explosive volée
     .target Quarrymaster Thesten
 step
@@ -4147,7 +4147,7 @@ step
     .target Gothor Brumn
 step
     .goto 1432/0,-2676.82,-4825.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Mountaineer Stormpike|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Mountaineer Stormpike|r
     >>|cRXP_WARN_N'acceptez pas encore la quête La mission de Foudrepique|r
     .turnin 353 >> Rendez la quête Livraison pour Foudrepique
     .accept 307 >> Acceptez la quête Bas les pattes !
@@ -4441,7 +4441,7 @@ step
 step << Human
     #label StormpikeDelivery
     .goto 1432/0,-2676.99,-4825.980
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Mountaineer Stormpike|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Mountaineer Stormpike|r
     .turnin 307 >> Rendez la quête Bas les pattes !
     .turnin 1339 >> Rendez la quête La mission du Montagnard Foudrepique
     .accept 1338 >> Acceptez la quête La mission de Foudrepique

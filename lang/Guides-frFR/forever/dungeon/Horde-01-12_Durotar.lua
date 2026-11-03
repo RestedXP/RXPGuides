@@ -16,7 +16,7 @@ RXPGuides.RegisterGuide([[
 
 step
 .enabledungeon RFC
-#include Guide RestedXP Éternel (H)\1-6 Durotar
+#include RestedXP Guide Forever (H)\1-6 Durotar
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -32,7 +32,7 @@ RXPGuides.RegisterGuide([[
 
 step
 .enabledungeon RFC
-#include Guide RestedXP Éternel (H)\6-10 Durotar
+#include RestedXP Guide Forever (H)\6-10 Durotar
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -50,7 +50,7 @@ RXPGuides.RegisterGuide([[
 
 step
 .enabledungeon RFC
-#include Guide RestedXP Éternel (H)\10-12 Durotar
+#include RestedXP Guide Forever (H)\10-12 Durotar
 ]])
 
 
@@ -67,5 +67,5 @@ RXPGuides.RegisterGuide([[
 
 step
 .enabledungeon RFC
-#include Guide RestedXP Éternel (H)\10-12 Tirisfal (Orc/Troll)
+#include RestedXP Guide Forever (H)\10-12 Tirisfal (Orc/Troll)
 ]])

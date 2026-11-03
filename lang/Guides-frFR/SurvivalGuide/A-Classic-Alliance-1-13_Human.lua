@@ -1872,7 +1872,7 @@ step
 .group
     .goto Loch Modan,24.764,18.397
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Mountaineer Stormpike|r
-    .turnin 353 >> Rendez la quête Livraison pour Foudrepique
+    .turnin 353 >> Rendez la quête Livraison pour Stormpike
     .target Mountaineer Stormpike
     .accept 307 >> Acceptez la quête Bas les pattes !
     >>|cRXP_WARN_N'acceptez pas encore la quête La mission de Foudrepique|r
@@ -1880,7 +1880,7 @@ step
 .solo
     .goto Loch Modan,24.764,18.397
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Mountaineer Stormpike|r
-    .turnin 353 >> Rendez la quête Livraison pour Foudrepique
+    .turnin 353 >> Rendez la quête Livraison pour Stormpike
     .target Mountaineer Stormpike
     >>|cRXP_WARN_N'acceptez pas encore la quête La mission de Foudrepique|r
 step

@@ -132,7 +132,7 @@ step << !Human
     .accept 153 >> Acceptez la quête Les masques en cuir rouge
 step
     .goto 1436/0,1166.57,-10653.23
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Innkeeper Heather|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Aubergiste Heather|r
     .vendor >>|cRXP_BUY_Achetez de la nourriture/eau si besoin|r
 	.target Innkeeper Heather
 step
@@ -515,7 +515,7 @@ step << Skyborne
     #optional
     #label TramEnd
     >>Prenez le Tram des profondeurs pour Ironforge
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Monty|r sur la plateforme du milieu du Tram des Profondeurs du côté d'Ironforge
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Monty|r sur la plateforme du milieu du côté Ironforge dans le Tram des Profondeurs
     .accept 6661 >> Acceptez la quête Chasse au rat dans les profondeurs
     .target Monty
 step << Skyborne
@@ -1028,7 +1028,7 @@ step
 step
     #label FurlbogCamp
     .goto 1439/1,393.72,5993.24
-    >>Courrez vers le bord du Camp Furbolg
+    >>Courez vers le bord du Camp Furbolg
     .complete 984,1 -- Find a corrupt furbolg camp
 step
     #sticky
@@ -2348,7 +2348,7 @@ step
     #optional
     #completewith CrabTurtle
     >>Tuez des |cRXP_ENEMY_Jeunes trotteur des forêts|r et des |cRXP_ENEMY_Trotteur des forêts|r. Dépouillez-les pour leur |cRXP_LOOT_Viande de trotteur|r
-    >>Faites attention les |cRXP_ENEMY_Jeune trotteur des forêts|r s'enfuient à <30% de vie
+    >>Attention car les |cRXP_ENEMY_Foreststrider Fledglings|r peuvent s'enfuir à <30% de vie
     .collect 5469,5,2178,1 -- Strider Meat (5)
     .mob Foreststrider Fledgling
     .mob Foreststrider
@@ -3308,7 +3308,7 @@ step
 step
     #label PawsDelivery
     .goto 1432/0,-2676.99,-4825.980
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Mountaineer Stormpike|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Mountaineer Stormpike|r
     .turnin 307 >> Rendez la quête Bas les pattes !
     .accept 1338 >> Acceptez la quête La mission de Foudrepique
     .target Mountaineer Stormpike
@@ -4628,7 +4628,7 @@ step << Dwarf Hunter/Human Hunter/Skyborne Hunter
     .trainer >> Apprenez vos sorts de classe
     .target Jocaste
 step << Dwarf Hunter/Human Hunter/Skyborne Hunter
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t Parlez à |cRXP_FRIENDLY_Ilyenia Moonfire|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Ilyenia Moonfire|r
     .goto 1457/1,2329.19,9908.60
     .train 264 >> Apprenez la compétence Arcs
     .train 227 >> Apprenez la compétence Bâtons
@@ -5015,7 +5015,7 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Osborne l'homme de la nuit|r
     >>|cRXP_WARN_Assurez-vous d'apprendre|r |T136058:0|t[Crochetage] |cRXP_WARN_comme vous en aurez besoin pour votre quête de classe Voleur bientôt|r
     .trainer >> Apprenez vos sorts de classe
-    .train 1804 >> Montez le niveau de votre [Crochetage]
+    .train 1804 >> Apprenez [Crochetage]
     .target Osborne the Night Man
 step << Rogue
     #completewith next
@@ -5828,7 +5828,7 @@ step << Rogue
 step << Rogue
     .goto 1436/0,619.17,-11035.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Agent Kearnen|r
-    >>Vous DEVEZ le faire pour votre de quête de [Poisons]
+    >>Vous DEVEZ faire cette quête pour vos [Poisons]
     .turnin 2360 >> Rendez la quête Mathias et les Défias
     .accept 2359 >> Acceptez la quête La Tour de Klaven
     .target Agent Kearnen
@@ -5909,7 +5909,7 @@ step << !Dwarf Rogue
     .goto 1453,43.070,26.155
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Shaina Fuller|r
     >>|cRXP_WARN_Si vous avez un|r |T626003:0|t|cFFF48CBAPaladin|r|cRXP_WARN_,|r |T625999:0|t|cFFFF7C0ADruide|r |cRXP_WARN_ou bien créez un|r |T626006:0|t|cFF0070DDChaman|r |cRXP_WARN_ami, demandez-lui de supprimer le|r |T136230:0|t[Toucher de Zanzil] |cRXP_WARN_à la place|r
-    .skill firstaid,80 >> Montez votre niveau de compétence en [Premiers soins] jusqu'à 80
+    .skill firstaid,80 >> Montez vos [Premier soins] à un niveau de compétence de 80
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
 step << !Dwarf Rogue
@@ -5917,7 +5917,7 @@ step << !Dwarf Rogue
     .goto 1453,43.070,26.155
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Shaina Fuller|r
     >>|cRXP_WARN_Si vous avez un|r |T626003:0|t|cFFF48CBAPaladin|r|cRXP_WARN_,|r |T625999:0|t|cFFFF7C0ADruide|r |cRXP_WARN_ou bien créez un|r |T626006:0|t|cFF0070DDChaman|r |cRXP_WARN_ami, demandez-lui de supprimer le|r |T136230:0|t[Toucher de Zanzil] |cRXP_WARN_à la place|r
-    .train 7934 >> Apprenez [Anti-Venom]
+    .train 7934 >> Apprenez [Anti-Venin]
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
 step << !Dwarf Rogue
@@ -6122,7 +6122,7 @@ RXPGuides.RegisterGuide([[
 #subgroup Guide Speedrun 1-20
 --#groupid RXP-SRGCE-A1
 #name 19-21 Sombrivage/Orneval
-#next RestedXP Guide Forever (A)\21-23 Orneval/Stonetalon
+#next RestedXP Guide Forever (A)\21-23 Orneval/Serres-Rocheuses
 
 step
     #optional
@@ -6285,7 +6285,7 @@ step
     #label Kerlonian
     .goto 1439/1,206.400,4402.500
     >>|cRXP_WARN_Escortez |cRXP_FRIENDLY_Kerlonian|r vers son sac |cRXP_WARN_à Sombrivage|r|r
-    .use 13536 >> Utilisez la [|cRXP_LOOT_Horn of Awakening|r] |cRXP_WARN_dès que |cRXP_FRIENDLY_Kerlonian|r s'endort|r
+    .use 13536 >> |cRXP_WARN_Utilisez la|r |T134229:0|t[|cRXP_LOOT_Corne de l'éveil|r] |cRXP_WARN_dès que |cRXP_FRIENDLY_Kerlonian|r s'endort|r
     >>|cRXP_WARN_Évitez de rester sur la route principale autant que possible. Les ennemis n'apparaîtront que si vous restez sur la route|r
     .complete 5321,2
     .isOnQuest 5321
@@ -6410,7 +6410,7 @@ step << Hunter
 step
     #label Astranaar
     .goto 1440/1,-283.73,2827.920
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|cRXP_FRIENDLY_Daelyshia|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Daelyshia|r
     .fp Astranaar>> Prenez le chemin de vol d'Astranaar
 	.target Daelyshia
 step
@@ -6601,7 +6601,7 @@ step
     .mob Ghostpaw Runner
 step
     #label SoulGemStart
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tInteragissez avec |cRXP_FRIENDLY_Teronis' Corpse|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Teronis' Corpse|r
 	.target Teronis' Corpse
     .goto 1440/1,528.79,3045.86
     .turnin 991 >> Rendez la quête Le nettoyage selon Raene
@@ -6642,7 +6642,7 @@ step << NightElf Hunter
     .accept 1134 >> Acceptez la quête Les Ailes-fières des Serres-Rocheuses
 step << NightElf Hunter
     .goto 1440/1,-284.31,2828.69
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|cRXP_FRIENDLY_Daelyshia|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Daelyshia|r
     .fly Darkshore>> Volez à Sombrivage
     .target Daelyshia
 step
@@ -6701,7 +6701,7 @@ step
     >>|T134321:0|t[Pattes d'araignée fondantes] --2251
     >>|T133970:0|t[Steaks de loup] --1015
 step << Dwarf Hunter/Human Hunter/Skyborne Hunter
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t Parlez à |cRXP_FRIENDLY_Ilyenia Moonfire|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Ilyenia Moonfire|r
     .skipgossipid 96881
     .goto 1457/1,2329.19,9908.60
     .train 264 >> Apprenez la compétence Arcs
@@ -7079,7 +7079,7 @@ step
     #label KerlonianTwo
     .goto 1439/1,206.400,4402.500
     >>|cRXP_WARN_Escortez |cRXP_FRIENDLY_Kerlonian|r vers son sac |cRXP_WARN_à Sombrivage|r|r
-    .use 13536 >> Utilisez la [|cRXP_LOOT_Horn of Awakening|r] |cRXP_WARN_dès que |cRXP_FRIENDLY_Kerlonian|r s'endort|r
+    .use 13536 >> |cRXP_WARN_Utilisez la|r |T134229:0|t[|cRXP_LOOT_Corne de l'éveil|r] |cRXP_WARN_dès que |cRXP_FRIENDLY_Kerlonian|r s'endort|r
     >>|cRXP_WARN_Évitez de rester sur la route principale autant que possible. Les ennemis n'apparaîtront que si vous restez sur la route|r
     .complete 5321,2
     .isOnQuest 5321
@@ -7201,7 +7201,7 @@ step
 step
     #label AshenvaleEnd
     .goto 1440/1,-283.73,2827.920
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|cRXP_FRIENDLY_Daelyshia|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Daelyshia|r
     .fp Astranaar >> Prenez le chemin de vol d'Astranaar
 	.target Daelyshia
 step

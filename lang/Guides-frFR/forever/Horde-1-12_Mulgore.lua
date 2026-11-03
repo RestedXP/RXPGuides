@@ -9,7 +9,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 1-6 Mulgore
 #version 11
-#group Guide RestedXP Éternel (H)
+#group RestedXP Guide Forever (H)
 #subgroup Guide Speedrun 1-22
 --#groupid RXP-SRGCE-H1
 #defaultfor Tauren
@@ -206,7 +206,7 @@ step
 step
     .goto 1412/1,-247.00,-2899.21--c:Mulgore,44.67,76.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Brave Windfeather|r
-    >>Elle patrouille aux alentours
+    >>Elle patrouille dans les alentours
     .accept 3376 >>Acceptez la quête La fin de Brochaigu !
     .target Brave Windfeather
 step << Warrior
@@ -375,7 +375,7 @@ step
     #optional
     #completewith next
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Brave Windfeather|r
-    >>Elle patrouille aux alentours
+    >>Elle patrouille dans les alentours
     .turnin 3376 >>Rendez la quête La fin de Brochaigu !
     .target Brave Windfeather
 step
@@ -386,7 +386,7 @@ step
 step
     .goto 1412/1,-247.00,-2899.21--c:Mulgore,44.67,76.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Brave Windfeather|r
-    >>Elle patrouille aux alentours
+    >>Elle patrouille dans les alentours
     .turnin 3376 >>Rendez la quête La fin de Brochaigu !
     .target Brave Windfeather
 step << Shaman
@@ -479,7 +479,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 6-12 Mulgore
 #version 11
-#group Guide RestedXP Éternel (H)
+#group RestedXP Guide Forever (H)
 #subgroup Guide Speedrun 1-22
 --#groupid RXP-SRGCE-H1
 #defaultfor Tauren
@@ -1287,7 +1287,7 @@ step
     #label KyleFed2
     .goto 1412/1,-347.70,-2364.91--c:Mulgore,46.63,61.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Innkeeper Kauth|r
-    >>|cRXP_BUY_Achetez du|r [Lait frais] |cRXP_BUY_à Heron|r << Shaman/Druid
+    >>|cRXP_BUY_Achetez du|r [Lait frais] |cRXP_BUY_à Kauth|r << Shaman/Druid
     >>|cRXP_BUY_Achetez des|r [Pain sorti du four] |cRXP_BUY_à Kauth|r << Warrior
     .vendor >> Vendez tout ce dont nous n'avez pas besoin << !Hunter
     .collect 1179,10,746,1 << Shaman/Druid --Ice Cold Milk (10)
@@ -1745,7 +1745,7 @@ step << Hunter
     .goto 1412/1,-348.73,-1890.20,50,0--c:Mulgore,46.65,47.22
     .goto 1412/1,-427.33,-1823.41,50,0--c:Mulgore,48.18,45.27
     .goto 1412/1,-494.63,-1720.66,50,0--c:Mulgore,49.49,42.27
-    .use 15915 >> Utilisez votre [Bâtonnet de domptage] sur un |cRXP_ENEMY_Prairie Stalker|r à la portée maximale
+    .use 15915 >> Utilisez votre [Taming Rod] sur un |cRXP_ENEMY_Prairie Stalker|r à distance maximale
     .complete 6087,1 --Tame a Prairie Stalker (1)
     .mob Prairie Stalker
 step << Hunter

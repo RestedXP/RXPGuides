@@ -987,7 +987,7 @@ step << Warrior/Paladin/Rogue
     .train 2575,3 --Mining
 step
     #completewith RumbleshotAmmo
-    >>Tuez |cRXP_ENEMY_Young Black Bears|r. Dépouillez-les pour leur |cRXP_LOOT_Thick Bear Fur|r
+    >>Tuez les |cRXP_ENEMY_Young Black Bears|r. Dépouillez-les pour leur |cRXP_LOOT_Thick Bear Fur|r
     >>Tuez les |cRXP_ENEMY_Crag Boars|r et les |cRXP_ENEMY_Large Crag Boars|r. Dépouillez-les pour leur |cRXP_LOOT_[Chunks of Boar Meat]|r et leur |cRXP_LOOT_Crag Boar Ribs|r
     .complete 317,2 --Collect Thick Bear Fur (x2)
     .mob +Young Black Bear
@@ -3862,7 +3862,7 @@ step
 step
     #label PawsDelivery
     .goto 1432/0,-2676.99,-4825.980
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Mountaineer Stormpike|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Mountaineer Stormpike|r
     .turnin 307 >> Rendez la quête Bas les pattes !
     .turnin 353 >> Rendez la quête Livraison pour Foudrepique
     .target Mountaineer Stormpike
@@ -4629,7 +4629,7 @@ step
     .mob +Forest Lurker
 step
     .goto 1432/0,-2676.99,-4825.980
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Mountaineer Stormpike|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Mountaineer Stormpike|r
     .turnin 307 >> Rendez la quête Bas les pattes !
     .target Mountaineer Stormpike
 step

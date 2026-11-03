@@ -389,15 +389,15 @@ step << Orc Warrior/Troll Warrior/Tauren Warrior/Skyborne Warrior
 step
     .goto 1413/1,-2645.40,-406.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Boorand Vent-des-plaines l'aubergiste|r
-    .vendor >>Faites le plein de nourriture et d'eau << !Rogue !Warrior
-    .vendor >>Faites le plein de nourriture << Rogue/Warrior
+    .vendor >>Refaites un stock de nourriture et de boisson << !Rogue !Warrior
+    .vendor >>Refaites un stock de nourriture << Rogue/Warrior
     .target Innkeeper Boorand Plainswind
     .isOnQuest 872,5041,845
 step
     .goto 1413/1,-3021.35,-231.96,20,0
     .goto 1413/1,-3029.46,261.25
     .use 4926 >> Ramassez le |cRXP_PICK_Chen's Empty Keg|r sur le sol et commencez la quête
-    >>Attendez qu'il revienne si il n'est pas présent
+    >>Attendez qu'il revienne si il n'est pas là
     .collect 4926,1,819 --Collect Chen's Empty Keg
     .accept 819 >> Acceptez la quête Tonneau vide de Chen
     .isOnQuest 872
@@ -560,7 +560,7 @@ step << Orc Shaman/Troll Shaman/Tauren Shaman
 step << Orc Shaman/Troll Shaman/Tauren Shaman
     .goto 1413/1,-3029.46,261.25
     .use 4926 >> Ramassez le |cRXP_PICK_Chen's Empty Keg|r sur le sol et commencez la quête
-    >>Attendez qu'il revienne si il n'est pas présent
+    >>Attendez qu'il revienne si il n'est pas là
     .collect 4926,1,819 --Collect Chen's Empty Keg
     .accept 819 >> Acceptez la quête Tonneau vide de Chen
 step 
@@ -591,7 +591,7 @@ step
 step
     .goto 1413/1,-3767.800,-842.900
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Wrenix|r
-    .accept 97253 >>Acceptez la quête Parts and Pieces
+    .accept 97253 >>Acceptez la quête Foire à la ferraille
     .target Wrenix the Wretched
 step
     .goto 1413/1,-3728.66,-835.29
@@ -679,7 +679,7 @@ step << Tauren Warrior
 step << Tauren Warrior
     #optional
     #completewith BaronLongshore
-    +Équipez le [Marteau en pierre] lorsque vous passez au niveau 16
+    +Équipez le [Marteau en pierre] lorsque vous passez niveau 16
     .use 2026
     .itemcount 2026,1
     .itemStat 16,QUALITY,<7
@@ -822,7 +822,7 @@ step
     .goto 1413/1,-3680.100,-1593.000,40,0
     .goto 1413/1,-3614.800,-1632.800,40,0
     .goto 1413/1,-3611.500,-1692.500,40,0
-    >>Ramassez la |cRXP_PICK_Poignée de pièces compliquées|r sur le sol
+    >>Ramassez les |cRXP_PICK_Poignées de pièces complexes|r par terre
     .complete 97253,1 --|5/5 Handful of Complicated Parts
     .isOnQuest 97253
 step << Orc Rogue/Troll Rogue
@@ -845,7 +845,7 @@ step
 step
     .goto 1413/1,-3767.800,-842.900
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Wrenix|r
-    .turnin 97253 >>Rendez la quête Parts and Pieces
+    .turnin 97253 >>Rendez la quête Foire à la ferraille
     .target Wrenix the Wretched
     .isQuestComplete 97253
 step
@@ -930,7 +930,7 @@ step << Tauren Warrior
 step << Tauren Warrior
     #optional
     #completewith FlyToXroads1
-    +Équipez le [Marteau en pierre] lorsque vous passez au niveau 16
+    +Équipez le [Marteau en pierre] lorsque vous passez niveau 16
     .use 2026
     .itemcount 2026,1
     .itemStat 16,QUALITY,<7
@@ -1158,7 +1158,7 @@ step << Troll Hunter/Orc Hunter/Skyborne Hunter
     .goto 1413/1,-2556.23,-351.54
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Parlez à|r |cRXP_FRIENDLY_Uthrok|r
     .vendor >> |cRXP_BUY_Achetez un|r [|cRXP_FRIENDLY_Bon arc long|r] |cRXP_BUY_à Uthrok si il en a en stock et faites un stock de flèches|r
-    >>Si il n'est pas disponible, achetez un [Arc renforcé] à la place
+    >>Si il n'est pas disponible, achetez à la place un [Arc renforcé]
     .collect 2515,1200,870,1 << Hunter --Sharp Arrow (1200)
     .target Uthrok
     .isOnQuest 903
@@ -1297,7 +1297,7 @@ step
     #label HarpyTalons
 step << Tauren/Hunter/Orc Shaman/Troll Shaman
     #completewith Samophlange
-    +Faites attention aux |cRXP_ENEMY_Sunscale Scytheclaws|r dans la zone. Ils sont niveau 18 et peuvent utiliser [Rosser]
+    +Faites attention aux |cRXP_ENEMY_Sunscale Scytheclaws|r dans la zone. Ils vont jusqu'au niveau 18 et peuvent utiliser [Rosser]
     .xp >17,1
 step << Tauren/Hunter/Orc Shaman/Troll Shaman
     #optional
@@ -1311,8 +1311,8 @@ step << Tauren/Hunter/Orc Shaman/Troll Shaman
 step << Tauren/Hunter/Orc Shaman/Troll Shaman
     .goto 1413/1,-1812.500,790.000
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Vrang|r
-    .accept 95494 >>Acceptez les quêtes Contusion Orgueil et Peaux de lion
-    .accept 95507 >>Acceptez la quête Le jeu de Vrang
+    .accept 95494 >>Acceptez la quête Fierté meurtrie et peaux de lion
+    .accept 95507 >>Acceptez la quête Le gibier de Vrang
     .target Vrang Fauvétripe
 step << Tauren/Hunter/Orc Shaman/Troll Shaman
     .goto 1413/1,-1815.48,786.89
@@ -1323,7 +1323,7 @@ step << Tauren/Hunter/Orc Shaman/Troll Shaman
     .isQuestAvailable 95494,95507
 step << Tauren/Hunter/Orc Shaman/Troll Shaman
     #completewith next
-    >>Ramassez les |cRXP_PICK_Pièges déclenchés|r sur le sol
+    >>Ramassez les |cRXP_PICK_Pièges déclenchés|r au sol
     .complete 95507,1 --|8/8 Trapped Game
 step << Tauren/Hunter/Orc Shaman/Troll Shaman
     #loop
@@ -1365,14 +1365,14 @@ step << Tauren/Hunter/Orc Shaman/Troll Shaman
     .goto 1413/1,-1960.600,653.700,50,0
     .goto 1413/1,-1871.600,653.700,50,0
     .goto 1413/1,-1729.700,592.400,50,0
-    >>Ramassez les |cRXP_PICK_Pièges déclenchés|r sur le sol
+    >>Ramassez les |cRXP_PICK_Pièges déclenchés|r au sol
     .complete 95507,1 --|8/8 Trapped Game
 step << Tauren/Hunter/Orc Shaman/Troll Shaman
     .goto 1413/1,-1812.600,789.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Vrang Fauvétripe|r
-    .turnin 95494 >>Rendez les quêtes Contusion Orgueil et Peaux de lion
-    .turnin 95507 >>Rendez la quête Le jeu de Vrang
-    .accept 95495 >>Acceptez la quête L'ermite Tanner
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Vrang Wildgore|r
+    .turnin 95494 >>Rendez la quête Fierté meurtrie et peaux de lion
+    .turnin 95507 >>Rendez la quête Le gibier de Vrang
+    .accept 95495 >>Acceptez la quête L’ermite tanneur
     .target Vrang Fauvétripe
     .isQuestComplete 95494
 step << Tauren/Hunter/Orc Shaman/Troll Shaman
@@ -1384,14 +1384,14 @@ step << Tauren/Hunter/Orc Shaman/Troll Shaman
 step << Tauren/Hunter/Orc Shaman/Troll Shaman
     .goto 1413/1,-1635.400,838.900
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Walton|r
-    .turnin 95495 >>Rendez la quête L'ermite Tanner
-    .accept 95621 >>Acceptez la quête Trouble in the Valley
+    .turnin 95495 >>Rendez la quête L’ermite tanneur
+    .accept 95621 >>Acceptez la quête Des problèmes dans la vallée
     .target Walton
     .isQuestTurnedIn 95494
 step << Tauren/Hunter/Orc Shaman/Troll Shaman
     .goto 1413/1,-1611.500,549.000
-    >>Tuez |cRXP_ENEMY_Corporal Adamore|r
-    >>|cRXP_WARN_Faites attention ! Vous risquez d'aggroer 2-3 mobs à la fois|r
+    >>Tuez le |cRXP_ENEMY_Caporal Adamore|r
+    >>|cRXP_WARN_Attention ! Vous pourriez aggro 2-3 ennemis à la fois|r
     .complete 95621,1 --|1/1 Learn why the Kul Tirans are here
     .mob Corporal Adamore
     .isQuestTurnedIn 95494
@@ -1404,15 +1404,15 @@ step << Tauren/Hunter/Orc Shaman/Troll Shaman
 step << Tauren/Hunter/Orc Shaman/Troll Shaman
     .goto 1413/1,-1635.500,838.900
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Walton|r
-    .turnin 95621 >>Rendez la quête Trouble in the Valley
+    .turnin 95621 >>Rendez la quête Des problèmes dans la vallée
     .accept 95508 >>Acceptez la quête Des invités indésirables
-    .timer 67,Des invités indésirables RP
+    .timer 67,RP de Des invités indésirables
     .target Walton
     .isQuestTurnedIn 95494
 step << Tauren/Hunter/Orc Shaman/Troll Shaman
     .goto 1413/1,-1629.200,835.600
-    >>Déplacez-vous derrière la maison pendant que vous attendez la fin du jeu de rôle pour éviter d'aggroer tous les mobs d'un coup
-    >>|cRXP_WARN_Vous n'avez pas réellement besoin d'assister |cRXP_FRIENDLY_Walton|r, il survivra avec l'aide de|r |cRXP_FRIENDLY_Vrang Fauvétripe|r
+    >>Allez derrière la maison en attendant la fin du RP afin d'afin d'éviter d'engager tous les mobs en même temps
+    >>|cRXP_WARN_Vous n'avez pas besoin d'aider |cRXP_FRIENDLY_Walton|r, il survivra avec l'aide de|r |cRXP_FRIENDLY_Vrang Wildgore|r
     .complete 95508,1 --|1/1 Assist Walton
     .mob Terry Longdrink
     .isQuestTurnedIn 95494
@@ -1702,7 +1702,7 @@ step
 step
     #optional
     #completewith EnterRFC
-    >>|cRXP_WARN_Si possible, faites partager la quête suivante aux membres du groupe|r
+    >>|cRXP_WARN_Si possible, faites en sorte que les membres du groupe vous partagent les quêtes suivantes|r
     >>|cRXP_WARN_Si nécessaire, demandez à quelqu'un à Fossoyeuse de partager|r
     .accept 5725 >> Acceptez la quête Le pouvoir de détruire...
 step
@@ -1725,7 +1725,7 @@ step << !Tauren !Hunter !Shaman/Skyborne
     .target Devrak
 step
     #completewith next
-    .skill firstaid,40 >> Créez des [Bandages en lin] jusqu'à ce que votre compétence en [Premiers soins] soit de 40 ou plus
+    .skill firstaid,40 >> Fabriquez des [Bandages de lin] jusqu'à ce que votre compétence soit de 40 ou plus
     .skill firstaid,<1,1
 step
     .goto 1454/1,-4160.01,1483.17
@@ -1736,12 +1736,12 @@ step
     .skill firstaid,<1,1
 step
     #completewith next
-    .skill firstaid,50 >> Créez des [Bandages épais en lin] jusqu'à ce que votre compétence en [Premiers soins] soit de 50 ou plus
+    .skill firstaid,50 >> Fabriquez des [Bandages épais en lin] jusqu'à ce que votre compétence en [Premiers soins] soit de 50 ou plus
     .skill firstaid,<1,1
 step
     .goto 1454/1,-4160.01,1483.17
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|r |cRXP_FRIENDLY_Arnok|r
-    >>Passez cette étape si vous n'avez pas assez d'[Etoffe de lin] pour monter votre compétence à 50
+    >>Passez cette étape si vous avez pas assez d'[Étoffe de lin] pour monter votre compétence à 50
     .train 3274 >> Apprenez Premiers soins compagnon
     .target Arnok
     .skill firstaid,<40,1
@@ -1767,7 +1767,7 @@ step << Priest
     .xp <18,1
 step << Mage
     .goto 1454/1,-4218.64,1473.72
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|r |cRXP_FRIENDLY_Pephredo|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |r |cRXP_FRIENDLY_Pephredo|r
     .train 2120 >> Apprenez vos sorts de classe
     .target Pephredo
     .xp <16,1
@@ -1775,7 +1775,7 @@ step << Mage
 step << Mage
     #optional
     .goto 1454/1,-4218.64,1473.72
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|r |cRXP_FRIENDLY_Pephredo|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |r |cRXP_FRIENDLY_Pephredo|r
     .train 3140 >> Apprenez vos sorts de classe
     .target Pephredo
     .xp <18,1
@@ -1946,7 +1946,7 @@ step
     >>|cRXP_WARN_Utilisez le [|cRXP_LOOT_Eye of Burning Shadow|r] pour commencer la quête|r
     >>|cRXP_WARN_Utilisez LoS (ligne de mire) pour éviter |cRXP_ENEMY_Gazz'uz|r ses Traits de l'ombre|r
     >>Vous pouvez aller dans les points d'eau dans la grotte pour vous échapper (evade) des |cRXP_ENEMY_Voidwalker|r après avoir tué |cRXP_ENEMY_Gazz'uz|r
-    >>|cRXP_WARN_Soyez prudents car c'est difficile. Vous pouvez passer cette quête si vous le souhaitez|r
+    >>|cRXP_WARN_Faites attention comme il est difficile. Vous pouvez passer cette quête si vous en avez besoin|r
     .collect 4903,1,832,1 --Collect Eye of Burning Shadow
     .accept 832 >>Acceptez la quête Ombres ardentes
     .use 4903
@@ -1983,7 +1983,7 @@ step
 step << Rogue
     .goto 1454/1,-4284.42,1771.28
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Shenthul|r
-    .train 1804 >> Montez le niveau de votre [Crochetage]
+    .train 1804 >> Apprenez [Crochetage]
     .train 921 >> Apprenez [Vol à la tire]
     .accept 2379 >> Acceptez la quête Zando'zan
     .target Shenthul
@@ -2213,7 +2213,7 @@ step
     .goto Tirisfal Glades,61.26,50.84
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Magistrat Sevren|r
     .turnin 440 >> Rendez la quête La bague ciselée
-    .accept 441 >> Acceptez la quête Raleigh et Fossoyeuse
+    .accept 441 >> Acceptez la quête Raleigh et Undercity
     .target Magistrate Sevren
     .isOnQuest 440
 step
@@ -2418,7 +2418,7 @@ step
     >>Ramassez et utilisez le |T4504543:0|t[|cRXP_LOOT_Crest of Lordaeron|r] pour commencer la quête
     >>|cRXP_WARN_Il a 5 emplacements de spawn possibles|r
     .collect 275521,1,95204 --Crest of Lordaeron (1)
-    .accept 95204 >>Acceptez la quête Crest of Lordaeron
+    .accept 95204 >>Acceptez la quête Écu de Lordaeron
     .use 275521
 step
     .goto 1458/0,188.400,1804.500
@@ -2451,7 +2451,7 @@ step
     .isOnQuest 95204
     .goto 1458/0,172.100,1667.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Oran Snakewrithe::7825|r
-    .turnin 95204 >>Rendez la quête Crest of Lordaeron
+    .turnin 95204 >>Rendez la quête Écu de Lordaeron
     .target Oran Snakewrithe::7825
 step
     .goto 1458/0,151.500,1550.200
@@ -2991,7 +2991,7 @@ step
     .goto 1413/1,-2031.32,-1703.47,0
     .goto 1413/1,-2183.32,-1858.19,0
     .goto 1413/1,-2453.88,-1991.28,0
-	>>Tuez |cRXP_ENEMY_Lakota'mani|r. Dépouillez-le pour la [|cRXP_LOOT_Hoof of Lakota'mani|r]
+	>>Tuez |cRXP_ENEMY_Lakota'mani|r. Dépouillez-le pour sa [|cRXP_LOOT_Hoof of Lakota'mani|r]
     >>|cRXP_WARN_Utilisez le [|cRXP_LOOT_Hoof of Lakota'mani|r] pour commencer la quête|r
     >>Il a 4 possibles points d'apparition (marqués sur la carte)
     >>|cRXP_WARN_Passer cette étape si vous ne pouvez pas le trouver ou ne pouvez pas le tuer. Vous pouvez revenir le chercher plus tard|r
@@ -3153,7 +3153,7 @@ step
     .goto 1413/1,-2031.32,-1703.47,80,0
     .goto 1413/1,-2183.32,-1858.19,80,0
     .goto 1413/1,-2453.88,-1991.28,80,0
-	>>Tuez |cRXP_ENEMY_Lakota'mani|r. Dépouillez-le pour la [|cRXP_LOOT_Hoof of Lakota'mani|r]
+	>>Tuez |cRXP_ENEMY_Lakota'mani|r. Dépouillez-le pour sa [|cRXP_LOOT_Hoof of Lakota'mani|r]
     >>|cRXP_WARN_Utilisez le [|cRXP_LOOT_Hoof of Lakota'mani|r] pour commencer la quête|r
     >>Il a 4 possibles points d'apparition (marqués sur la carte)
     >>Passez cette étape si vous n'arrivez pas à le trouver
@@ -3373,7 +3373,7 @@ step << Warrior
 step << Rogue/Hunter/Warrior/Shaman/Druid
     #optional
     #completewith FlytoXroads
-    +Équipez le [|cRXP_FRIENDLY_Wolf Bracers|r]
+    +Équipez les [|cRXP_FRIENDLY_Wolf Bracers|r]
     .use 4794
     .itemcount 4794,1
     .itemStat 9,ITEM_MOD_ARMOR_SHORT,<37
@@ -3386,8 +3386,8 @@ step
     .goto 1413/1,-3951.600,-1093.500
     .goto 1413/1,-4012.800,-1081.800
     .goto 1413/1,-3973.000,-1028.700
-    >>Tuez |cRXP_PICK_Bruuz|r (lvl 20 elite) dans la mer près de Cabestan
-    >>|cRXP_WARN_C'est difficile! Groupez-vous si possible|r << !Rogue !Warrior
+    >>Tuez |cRXP_PICK_Bruuz|r (élite de niveau 20) dans la mer près de Cabestan
+    >>|cRXP_WARN_Cette étape est difficile ! Trouvez un groupe si possible|r << !Rogue !Warrior
     >>|cRXP_WARN_Essayez de le kiter vers Cabestan aux gardes qui aideront, mais assurez-vous de causer au moins 50% de dégâts!|r
     .complete 92706,1 --Kill Bruuz
     .mob Bruuz
@@ -3396,7 +3396,7 @@ step
 step
     .goto 1413/1,-3728.66,-835.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Gazlowe|r
-    .turnin 92706 >>Rendez la quête WANTED: Bruuz
+    .turnin 92706 >>Rendez la quête ON RECHERCHE : Bruuz
     .target Gazlowe
     .group << Rogue/Warrior
     .isQuestComplete 92706
@@ -3422,7 +3422,7 @@ step
     #label XroadsHS2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Mankrik|r et |cRXP_FRIENDLY_Tonga|r
     .turnin 899 >>Rendez la quête Consumé par la haine
-    .turnin 95774 >>Rendez la quête Her Nom Is Olgra
+    .turnin 95774 >>Rendez la quête Son nom est Olgra
     .target +Mankrik
     .goto 1413/1,-2641.35,-521.12
     .turnin 880 >>Rendez la quête Source de vie
@@ -3577,7 +3577,7 @@ step << Warlock
     .dungeon DM
 step << Mage
     .goto 1454/1,-4218.64,1473.72
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|r |cRXP_FRIENDLY_Pephredo|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |r |cRXP_FRIENDLY_Pephredo|r
     .train 3140 >> Apprenez vos sorts de classe
     .target Pephredo
     .xp <18,1
@@ -3586,7 +3586,7 @@ step << Mage
 step << Mage
     #optional
     .goto 1454/1,-4218.64,1473.72
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|r |cRXP_FRIENDLY_Pephredo|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |r |cRXP_FRIENDLY_Pephredo|r
     .train 1953 >> Apprenez vos sorts de classe
     .target Pephredo
     .xp <20,1
@@ -3791,7 +3791,7 @@ step
     .goto 1413/1,-2016.12,-2650.02,0
     .goto 1413/1,-2400.18,-2398.01,0
     .goto 1413/1,-2363.70,-2537.19,0
-    >>Tuez |cRXP_ENEMY_Owatanka|r. Dépouillez-le pour sa r [|cRXP_LOOT_Owatanka's Tailspike|r]
+    >>Tuez |cRXP_ENEMY_Owatanka|r. Dépouillez-le pour sa [|cRXP_LOOT_Owatanka's Tailspike|r]
     >>|cRXP_WARN_Utilisez le [|cRXP_LOOT_Owatanka's Tailspike|r] pour commencer la quête|r
     >>Il a 4 possibles points d'apparition (marqués sur la carte)
     .collect 5102,1,884,1 --Collect Owatanka's Tailspike
@@ -3801,7 +3801,7 @@ step
 step
     #label SleepingBag1
     .goto The Barrens,46.361,73.904
-    >>Cliquez sur les |cRXP_PICK_Restes Brûlés|r par terre
+    >>Cliquez sur les |cRXP_PICK_Restes brûlés|r au sol
     .accept 79007 >> Acceptez la quête … et cette note que vous avez trouvée
 step
     #label LizardBlood
@@ -3850,7 +3850,7 @@ step
     .goto 1413/1,-2016.12,-2650.02,80,0
     .goto 1413/1,-2363.70,-2537.19,80,0
     .goto 1413/1,-2400.18,-2398.01,80,0
-    >>Tuez |cRXP_ENEMY_Owatanka|r. Dépouillez-le pour sa r [|cRXP_LOOT_Owatanka's Tailspike|r]
+    >>Tuez |cRXP_ENEMY_Owatanka|r. Dépouillez-le pour sa [|cRXP_LOOT_Owatanka's Tailspike|r]
     >>|cRXP_WARN_Utilisez le [|cRXP_LOOT_Owatanka's Tailspike|r] pour commencer la quête|r
     >>Il a 4 possibles points d'apparition (marqués sur la carte)
     .collect 5102,1,884,1 --Collect Owatanka's Tailspike
@@ -3892,7 +3892,7 @@ step
 step << !Tauren !Skyborne
     .goto 1413/1,-1891.48,-2391.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Mangletooth|r
-    .aura 16618 >>|cRXP_WARN_Si vous avez 10|r |T134128:0|t[|cRXP_LOOT_Cristaux de sang|r] |cRXP_WARN_restants, utilisez-les pour obtenir|r |T136022:0|t[L'esprit du vent] |cRXP_WARN_de|r |cRXP_FRIENDLY_Mutiledent|r
+    .aura 16618 >>|cRXP_WARN_S'il vous reste 10|r |T134128:0|t[|cRXP_LOOT_Joyaux de sang|r] |cRXP_WARN_, utilisez-les pour obtenir|r |T136022:0|t[L'esprit du vent] |cRXP_WARN_auprès de|r |cRXP_FRIENDLY_Mutiledent|r
     >>Passez cette étape si vous pouvez voler jusqu'à Pitons-du-Tonnerre
     .itemcount 5075,10
     .target Mangletooth
@@ -4097,7 +4097,7 @@ step
     .goto 1456/1,206.88,-997.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|r |cRXP_FRIENDLY_Pand|r
     >>Passez cette étape si vous n'avez pas assez d'[Etoffe de lin] pour atteindre une compétence de 80
-    .train 3277 >> Apprenez [Bandage en laine]
+    .train 3277 >> Apprenez  [Bandage en laine]
     .train 7934 >> Apprenez [Anti-venin] << Rogue
     .target Pand Stonebinder
     .skill firstaid,<1,1
@@ -4155,7 +4155,7 @@ step << Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Turak|r
     .trainer >>Apprenez vos sorts de classe
     .accept 27 >>Acceptez la quête Une leçon à apprendre
-    .accept 98340 >>Acceptez la quête Esprit du Grand félin
+    .accept 98340 >>Acceptez la quête L’esprit du Grand félin
     .target Turak Runetotem
 step << Druid
     #completewith next
@@ -4166,9 +4166,9 @@ step << Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Dendrite|r
     .turnin 27 >>Rendez la quête Une leçon à apprendre
     .accept 28 >>Acceptez la quête L'épreuve du lac
-    .turnin 98340 >>Rendez la quête Esprit du Grand félin
-    .accept 98341 >>Acceptez la quête The Great Windborne Chat Esprit << Skyborne
-    .accept 98405 >>Acceptez la quête Esprit du Grand félin << !Skyborne
+    .turnin 98340 >>Rendez la quête L’esprit du Grand félin
+    .accept 98341 >>Acceptez la quête L’esprit du Grand félin du vent << Skyborne
+    .accept 98405 >>Acceptez la quête L’esprit du Grand félin << !Skyborne
     .target Dendrite Starblaze
 step << Druid
     #completewith next
@@ -4188,52 +4188,52 @@ step << Druid
     .target Tajarri
 step << Druid !Skyborne
     .goto 1450/1,-2640.000,7338.900
-     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Esprit du Grand félin|r
-    .turnin 98405 >>Rendez la quête Esprit du Grand félin
-    .accept 98342 >>Acceptez la quête Esprit du Grand félin
+     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à l' |cRXP_FRIENDLY_Esprit du Grand félin|r
+    .turnin 98405 >>Rendez la quête L’esprit du Grand félin
+    .accept 98342 >>Acceptez la quête L’esprit du Grand félin
     .target Great Cat Spirit
 step << Druid Skyborne
     .goto 1450/1,-2352.700,7375.600,10,0
     .goto 1450/1,-2394.300,7361.200
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Avatar of Saeyleenan::272054|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à l' |cRXP_FRIENDLY_Avatar de Saeyleenan::272054|r
     .target Avatar of Saeyleenan::272054
-    .turnin 98341 >>Rendez la quête The Great Windborne Chat Esprit
-    .accept 98404 >>Acceptez la quête The Great Windborne Chat Esprit
+    .turnin 98341 >>Rendez la quête L’esprit du Grand félin du vent
+    .accept 98404 >>Acceptez la quête L’esprit du Grand félin du vent
 step << Druid
     #completewith next
     .goto 1450/1,-3046.700,7534.400
     --aura 1309054?
-    .subzone 2363 >> Rendez-vous au Refuge des saisons de Malfurion
+    .subzone 2363 >> Allez au Refuge des saisons de Malfurion
 step << Druid
-    >>Allez profondément dans la grotte, traversez le pont, cherchez une statue de chat dans une alcôve et cliquez sur le petit orbe à côté de la statue
-    >>Pillez |cRXP_LOOT_Relic of the Griffe|r
+    >>Engouffrez-vous profondément dans la grotte, prenez le pont, cherchez une statue de chat dans une alcôve et cliquez sur le petit orbe à côté de la statue
+    >>Ramassez la |cRXP_LOOT_Relique de la Griffe|r
     .goto 1450/1,-3117.400,7455.300
     .complete 98404,2 << Skyborne --|1/1 Relic of the Claw
     .complete 98342,2 << !Skyborne --|1/1 Relic of the Claw
 step << Druid
     >>Cliquez sur le petit orbe à côté de la statue de chat
-    >>Pillez |cRXP_LOOT_Relic of the Silent (Ombre)|r
+    >>Ramassez la |cRXP_LOOT_Relique de l'ombre furtive|r
     .goto 1450/1,-3099.200,7485.700
     .complete 98404,3  << Skyborne --|1/1 Relic of the Silent Shadow
     .complete 98342,3  << !Skyborne --|1/1 Relic of the Silent Shadow
 step << Druid
     >>Cliquez sur le petit orbe à côté de la statue de chat
-    >>Pillez |cRXP_LOOT_Relic of the Crok|r
+    >>Ramassez la |cRXP_LOOT_Relique du Croc|r
     .goto 1450/1,-3054.100,7476.800
     .complete 98404,1  << Skyborne --|1/1 Relic of the Fang
     .complete 98342,1  << !Skyborne --|1/1 Relic of the Fang
 step << Druid !Skyborne
     .goto 1450/1,-2640.000,7338.900
-     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Esprit du Grand félin|r
-    .turnin 98342 >>Rendez la quête Esprit du Grand félin
-    .accept 98739 >>Acceptez la quête Blessings of the Esprit du Grand f??lin
+     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à l' |cRXP_FRIENDLY_Esprit du Grand félin|r
+    .turnin 98342 >>Rendez la quête L’esprit du Grand félin
+    .accept 98739 >>Acceptez la quête Bénédiction de l’esprit du Grand félin
     .target Great Cat Spirit
 step << Druid Skyborne
     .goto 1450/1,-2395.400,7361.400
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Avatar of Saeyleenan::272054|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à l' |cRXP_FRIENDLY_Avatar de Saeyleenan::272054|r
     .target Avatar of Saeyleenan::272054
-    .turnin 98404 >>Rendez la quête The Great Windborne Chat Esprit
-    .accept 98738 >>Acceptez la quête Blessings of the Great Windborne Chat Esprit
+    .turnin 98404 >>Rendez la quête L’esprit du Grand félin du vent
+    .accept 98738 >>Acceptez la quête Bénédiction de l’esprit du Grand félin du vent
 step << Druid
     #completewith next
     .cast 18960 >>Lancer [Téléportation : Reflet-de-Lune]
@@ -4241,7 +4241,7 @@ step << Druid
 step << Druid
     .goto 1450/1,-2678.200,8021.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Dendrite Starblaze::11802|r
-    .turnin 98738 >>Rendez la quête Blessings of the Great Windborne Chat Esprit << Skyborne
+    .turnin 98738 >>Rendez la quête Bénédiction de l’esprit du Grand félin du vent << Skyborne
     .turnin 98739 >>Rendez la quête Blessings of the Esprit du Grand f??lin << !Skyborne
     .accept 98362 >>Acceptez la quête Les Pitons-du-Tonnerre
     .target Dendrite Starblaze::11802
@@ -4340,7 +4340,7 @@ step << Hunter
 step << Hunter
     .goto 1456/1,26.31,-1167.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Parlez à|r |cRXP_FRIENDLY_Kuna|r
-    >>|cRXP_BUY_Achetez des|r [Flèche grossières] |cRXP_BUY_à Kuna|r
+    >>|cRXP_BUY_Achetez des|r [Flèche grossières] |cRXP_BUY_à Narina|r
     .collect 2515,1600,493,1 << Hunter --Sharp Arrow (1600)
     .target Kuna Corne-Tonnerre
 step
@@ -4571,7 +4571,7 @@ step
 step
     #requires Gems
     #completewith next
-    +|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Disciple of Naralex|r à l'entrée des Cavernes des Lamentations. Escortez-le jusqu'à |cRXP_FRIENDLY_Naralex|r
+    +|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Disciple of Naralex|r à l'entrée des Cavernes des lamentations. Escortez-le jusqu'à |cRXP_FRIENDLY_Naralex|r
     .target Disciple of Naralex
     .skipgossip
 step
@@ -4607,7 +4607,7 @@ step
     .isOnQuest 962
 step
     #optional
-    >>Tuez |cRXP_ENEMY_Deviate Ravagers|r, |cRXP_ENEMY_Vipers|r, |cRXP_ENEMY_Shamblers|r et |cRXP_ENEMY_Dreadfangs|r. Récupérez le Butin d'eux pour leurs |cRXP_ENEMY_Hides|r
+    >>Tuez les |cRXP_ENEMY_Ravageurs déviants|r, les |cRXP_ENEMY_Vipères déviantes|r, les |cRXP_ENEMY_Traînards déviants|r et les |cRXP_ENEMY_Croc-d'effrois déviants|r. Dépouillez-les pour obtenir leur |cRXP_ENEMY_Peaux|r
     .complete 1487,1 --Deviate Ravager (7)
     .mob +Deviate Ravager
     .complete 1487,2 --Deviate Viper (7)
@@ -5032,7 +5032,7 @@ step << Warlock
     .use 6626
 step << Warlock
     .goto 1454/1,-4377.13,1804.77
-    >>Tuez la |cRXP_ENEMY_Summoned Succubus|r
+    >>Tuez les |cRXP_ENEMY_Summoned Succubus|r
     .complete 1513,1 --Kill Summoned Succubus (1)
     .mob Summoned Succubus
     .use 6626
@@ -5100,7 +5100,7 @@ step << Priest/Warlock
     .target Katis
 step << Mage
     .goto 1454/1,-4218.64,1473.72
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|r |cRXP_FRIENDLY_Pephredo|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |r |cRXP_FRIENDLY_Pephredo|r
     .train 2138 >> Apprenez vos sorts de classe
     .target Pephredo
     .xp <22,1
@@ -5108,7 +5108,7 @@ step << Mage
 step << Mage
     #optional
     .goto 1454/1,-4218.64,1473.72
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|r |cRXP_FRIENDLY_Pephredo|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |r |cRXP_FRIENDLY_Pephredo|r
     .train 2121 >> Apprenez vos sorts de classe
     .target Pephredo
     .xp <24,1
@@ -5191,7 +5191,7 @@ step << Rogue
     .goto 1413/1,-2927.11,1236.18
     >>Au sommet de la tour vous trouverez |cRXP_ENEMY_Gallywix|r. Dépouillez-le pour sa |cRXP_LOOT_Tête|r
     >>Utilisez [Embuscade] pour réduire ses PV de moitié. Utilisez [Suriner] pour récupérer votre énergie et utiliser [Évasion]
-	>>N'oubliez pas d'utiliser une Potion et un [Thé aux chardons] si nécessaire
+	>>Rappelez-vous d'utiliser une potion et un [Thé aux chardons] si nécessaire
     .complete 2478,4 --Gallywix's Head (1)
     .mob Grand Foreman Puzik Gallywix
     --VV Video?
@@ -5308,7 +5308,7 @@ step << Rogue
     .aura -9991
 step << Rogue
     #optional
-    .destroy 8051 >> Détruisez le [Lance-fusée] dans votre sac, il n'est plus nécessaire
+    .destroy 8051 >> Détruisez le [Lance-fusée] de vos sacs, il n'est plus nécessaire
     .destroy 8066 >> Détruisez le [Sifflet de Fizzule] de vos sacs, il n'est plus nécessaire
 step
     #optional

@@ -911,7 +911,7 @@ step
     .subzoneskip 2557
 step
     #completewith AnthionsFriend
-    .goto Kalimdor,43.39,66.52,20 >>Entrez à Hache-Tripes par l'entrée nord
+    .goto Kalimdor,43.39,66.52,20 >>Entrez dans Hache-Tripes par l'entrée nord
     >>|cRXP_WARN_Vous devez avoir la|r |T134244:0|t[Clé en croissant] |cRXP_WARN_pour pouvoir ouvrir la porte vers Hache-Tripes Nord et vers la bibliothèque|r << !Rogue
     >>|cRXP_WARN_Vous devez avoir la|r |T134244:0|t[Clé en croissant]|cRXP_WARN_ ou avoir une compétence de 300 en crochetage pour pouvoir ouvrir la porte pour accéder à Hache-Tripes Nord et à la bibliothèque|r << Rogue
     >>|cRXP_WARN_Sinon, vous pouvez demander à un autre joueur d'ouvrir les portes pour vous|r

@@ -7,7 +7,7 @@ RXPGuides.RegisterGuide([[
 #disabledungeons
 << Horde
 #version 11
-#group Guide RestedXP Éternel (H)
+#group RestedXP Guide Forever (H)
 #subgroup Guide Speedrun 1-22
 --#groupid RXP-SRGCE-H1
 #defaultfor Undead
@@ -24,7 +24,7 @@ step
     #completewith next
     .goto 1420/0,1675.90,1645.00,8,0
     .goto 1420/0,1665.51,1645.00,8,0
-    .goto 1420/0,1667.77,1679.04,10 >> Sortez de la crypte vers  |cRXP_FRIENDLY_Mordo|r
+    .goto 1420/0,1667.77,1679.04,10 >> Sortez de la crypte vers |cRXP_FRIENDLY_Mordo|r
 step
     .goto 1420/0,1667.77,1679.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Mordo|r
@@ -381,7 +381,7 @@ step << Priest
 step << Priest
     .goto 1420/0,1627.55,1848.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Duesten|r
-    .train 2052 >> Apprenez [Soins inférieurs Rank 2]
+    .train 2052 >> Apprenez [Soins inférieurs Rang 2]
     .train 589 >> Apprenez [Mot de l'ombre : Douleur]
     .target Dark Cleric Duesten
     .money <0.021
@@ -711,7 +711,7 @@ RXPGuides.RegisterGuide([[
 #name 6-12 Clairières de Tirisfal
 #displayname 6-13 Clairières de Tirisfal << Paladin
 #version 11
-#group Guide RestedXP Éternel (H)
+#group RestedXP Guide Forever (H)
 #subgroup Guide Speedrun 1-22
 --#groupid RXP-SRGCE-H1
 #defaultfor Undead
@@ -942,7 +942,7 @@ step << Priest
     .accept 5650 >> Acceptez la quête Vêtements des ténèbres
 	.train 591 >>Apprenez [Châtiment]
     .train 17 >>Apprenez [Mot de pouvoir : Bouclier]
-    .train 2052 >>Apprenez [Soins inférieurs Rank 2]
+    .train 2052 >>Apprenez [Soins inférieurs Rang 2]
     .target Dark Cleric Beryl
 step << Mage
     .goto 1420/0,233.06,2256.84
@@ -3279,7 +3279,7 @@ step
 
 
 RXPGuides.RegisterGuide([[
-#group Guide RestedXP Éternel (H)
+#group RestedXP Guide Forever (H)
 #subgroup Guide Speedrun 1-22
 --#groupid RXP-SRGCE-H1
 << Horde
@@ -3409,7 +3409,7 @@ step << !Mage !Priest
 step
     .goto 1421/0,1602.84,549.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Edwin|r
-    >>|cRXP_BUY_Achetez du|r [Lait frais] |cRXP_BUY_à Heron|r << Mage/Warlock/Priest/Shaman/Druid
+    >>|cRXP_BUY_Achetez du|r [Lait frais] |cRXP_BUY_à Kauth|r << Mage/Warlock/Priest/Shaman/Druid
     .vendor >> |cRXP_BUY_Achetez-lui des|r |T134830:0|t[Potions de soins inférieure] |cRXP_BUY_si elles sont disponibles|r
     >>|cRXP_WARN_Ne vendez PAS vos|r |T133884:0|t[|cRXP_LOOT_Yeux de murloc|r]
     .collect 1179,20,421,1 << Mage/Warlock/Priest/Shaman/Druid --Ice Cold Milk (20)
@@ -3658,7 +3658,7 @@ step << !Mage !Priest
 step
     .goto 1421/0,1602.84,549.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Edwin|r
-    >>|cRXP_BUY_Achetez du|r [Lait frais] |cRXP_BUY_à Heron|r << Warlock/Priest/Shaman/Druid
+    >>|cRXP_BUY_Achetez du|r [Lait frais] |cRXP_BUY_à Kauth|r << Warlock/Priest/Shaman/Druid
     .vendor >> |cRXP_BUY_Achetez-lui des|r |T134830:0|t[Potions de soins inférieure] |cRXP_BUY_si elles sont disponibles|r
     .collect 1179,20,423,1 << Warlock/Priest/Shaman/Druid --Ice Cold Milk (20)
     .target Edwin Harly

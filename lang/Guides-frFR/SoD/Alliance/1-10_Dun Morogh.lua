@@ -1389,7 +1389,7 @@ step
     .goto Dun Morogh,48.0,49.5,75,0
     .goto Dun Morogh,48.2,46.9,75,0
     .goto Dun Morogh,43.5,52.5,75,0
-    >>Tuez |cRXP_ENEMY_Young Black Bears|r. Dépouillez-les pour leur |cRXP_LOOT_Thick Bear Fur|r
+    >>Tuez les |cRXP_ENEMY_Young Black Bears|r. Dépouillez-les pour leur |cRXP_LOOT_Thick Bear Fur|r
     >>Tuez les |cRXP_ENEMY_Crag Boars|r et les |cRXP_ENEMY_Large Crag Boars|r. Dépouillez-les pour leur |cRXP_LOOT_[Chunks of Boar Meat]|r et leur |cRXP_LOOT_Crag Boar Ribs|r
     .complete 317,2 --Collect Thick Bear Fur (x2)
     .mob +Young Black Bear
@@ -1489,7 +1489,7 @@ step << Warrior/Paladin/Rogue
     #optional
     .goto Dun Morogh,50.084,49.420
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Loslor Rudge|r
-    >>|cRXP_BUY_Achetez une|r [Pioche de mineur]|cRXP_BUY_au marchand|r
+    >>|cRXP_BUY_Achetez une|r [Pioche de mineur]|cRXP_BUY_à Loslor|r
     .collect 2901,1 --Mining Pick (1)
     .target Loslor Rudge
     .train 2018,3 --Blacksmithing

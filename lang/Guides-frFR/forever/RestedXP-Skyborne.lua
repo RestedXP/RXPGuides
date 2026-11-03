@@ -5,8 +5,8 @@ RXPGuides.RegisterGuide([[
 #disabledungeons
 #version 1
 #name 1-9 Île de Zéphras
-#displayname 1-9 Skyborne << Alliance
-#displayname 1-9 Skyborne << Horde
+#displayname 1-9 Éolide << Alliance
+#displayname 1-9 Éolide << Horde
 #group RestedXP Guide Forever (A) << Alliance
 #group RestedXP Guide Forever (H) << Horde
 #subgroup Guide Speedrun 1-20 << Alliance
@@ -57,17 +57,17 @@ step << Horde Shaman
 step
     #optional
     #completewith next
-    >>Tuez |cRXP_ENEMY_Juvenile Vuldrens::250873|r.
+    >>Tuez les |cRXP_ENEMY_Jeunes vuldrènes::250873|r.
     .complete 92461,1 --8/8 Juvenile Vuldren slain
     .mob Juvenile Vuldren::250873
 step
-    >>Tuez |cRXP_ENEMY_Pesky Cirrusflies::251169|r.
+    >>Tuez les |cRXP_ENEMY_Mouches-cirrus agaçantes::251169|r.
     *|cRXP_WARN_Tuez-les en priorité|r
     .complete 92462,1 --8/8 Pesky Cirrusfly slain
     .mob Pesky Cirrusfly::251169
 step
     #label Juvenile Vuldren
-    >>Tuez |cRXP_ENEMY_Juvenile Vuldrens::250873|r.
+    >>Tuez les |cRXP_ENEMY_Jeunes vuldrènes::250873|r.
     .complete 92461,1 --8/8 Juvenile Vuldren slain
     .mob Juvenile Vuldren::250873
 step << Horde Shaman
@@ -672,7 +672,7 @@ step << Alliance Skyborne
     .goto 2521,42.06,23.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Rorian the Dayseeker::251361|r.
     .target Rorian the Dayseeker::251361
-    .turnin 92474 >>Rendez la quête Chute With Style
+    .turnin 92474 >>Rendez la quête Tomber avec panache
 step << Alliance Druid
     .money <0.02
     .xp <4,1
@@ -782,7 +782,7 @@ step
 step
     #optional
     #completewith next
-    >>Tuez |cRXP_ENEMY_Ursera Scavengers::250937|r.
+    >>Tuez les |cRXP_ENEMY_Charognards urseras::250937|r.
     .complete 92470,1 --8/8 Ursera Scavenger slain
     .mob Ursera Scavenger::250937
 step
@@ -804,7 +804,7 @@ step
     .goto 2521,38.12,27.71,30,0
     .goto 2521,37.7,29.46,30,0
     .goto 2521,40.79,26.64,30,0
-    >>Tuez |cRXP_ENEMY_Ursera Scavengers::250937|r.
+    >>Tuez les |cRXP_ENEMY_Charognards urseras::250937|r.
     .complete 92470,1 --8/8 Ursera Scavenger slain
     .macro Sit to Die Faster,134400 >>Asseyez-vous pour mourir plus vite
     .mob Ursera Scavenger::250937
@@ -2559,7 +2559,7 @@ step << Horde Shaman
     .goto 2521,44.71,45.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Veena Vérinuage::254358|r
     .vendor 254358 >>|cRXP_BUY_Achetez jusqu'à trois|r |T133634:0|t[Petites sacoches marrons] |cRXP_BUY_si nécessaire|r.
-    >>|cRXP_BUY_Achetez du|r [Lait frais] |cRXP_BUY_à Heron|r
+    >>|cRXP_BUY_Achetez du|r [Lait frais] |cRXP_BUY_à Kauth|r
     *|cRXP_WARN_Lorsque vous équipez des sacs, assurez-vous que votre Sac de composants est dans l'emplacement dédié au Sac de composants|r.
     *Ne vendez pas les |T132832:0|t[Petits œufs] et la |T133972:0|t[Viande de trotteur].
     .target Veena Vericloud::254358
@@ -3174,7 +3174,7 @@ step
     .goto 2521,44.71,45.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Veena Vérinuage::254358|r
     .vendor 254358 >>Vendez votre camelote. |cRXP_BUY_Achetez jusqu'à trois|r |T133634:0|t[Petites sacoches marrons] |cRXP_BUY_si nécessaire|r.
-    *|cRXP_BUY_Achetez du|r [Lait frais] |cRXP_BUY_à Heron|r << Druid/Mage/Priest/Warlock/Paladin
+    *|cRXP_BUY_Achetez du|r [Lait frais] |cRXP_BUY_à Kauth|r << Druid/Mage/Priest/Warlock/Paladin
     -- *|cRXP_BUY_Buy|r |T132382:0|t[Rough Arrows] and |T132382:0|t[Sharp Arrows] << Hunter
     *|cRXP_BUY_Achetez des|r [Flèche pointue] << Hunter
     -- *|cRXP_BUY_Buy|r |T132382:0|t[Sharp Arrows] << Alliance Rogue
@@ -4665,8 +4665,8 @@ step << Horde Hunter
     -- .goto 2521,53.799,72.161,35,0
     >>|cRXP_WARN_Lancez|r |T132164:0|t[Apprivoise une bête] |cRXP_WARN_sur un|cRXP_ENEMY_ Windsong Clampant::254588|r pour l'apprivoiser|r -- .tame 1997
     *|cRXP_WARN_NOTE :|r Si tous les crabes sont morts, alors vous pouvez aussi apprivoiser un |cRXP_ENEMY_Ornery Galestrider::251707|r jusqu'à ce que vous trouviez un crabe.
-    .train 2981 >> Attaquez des créatures avec pour qu'il apprenne [Griffe (Rang 2)]
-    .link https://www.wow-petopia.com/classic/training.php >> |cRXP_WARN_Cliquez ici pour plus d'information sur le dressage des familiers|r
+    .train 2981 >> Attaquez des mobs avec celui-ci pour qu'il apprenne [Claw (Rank 2)]
+    .link https://www.wow-petopia.com/classic/training.php >> Cliquez ici pour plus d'information sur le dressage des familiers
 	.mob Windsong Crawler::254588
 
 -- ============================================================================
@@ -4872,8 +4872,8 @@ step << Alliance Hunter
     .goto 2521,53.799,72.161,35,0
     >>|cRXP_WARN_Lancez|r |T132164:0|t[Apprivoise une bête] |cRXP_WARN_sur un |cRXP_ENEMY_Clampant chantevent::254588|r pour le dompter|r -- .tame 1997
     *|cRXP_WARN_NOTE:|r Si tous les crabes sont morts, vous pouvez aussi dompter un |cRXP_ENEMY_Trotteur des trombes hargneux::251707|r jusqu'à ce que vous trouviez un crabe.
-    .train 2981 >> Attaquez des créatures avec pour qu'il apprenne [Griffe (Rang 2)]
-    .link https://www.wow-petopia.com/classic/training.php >> |cRXP_WARN_Cliquez ici pour plus d'information sur le dressage des familiers|r
+    .train 2981 >> Attaquez des mobs avec celui-ci pour qu'il apprenne [Claw (Rank 2)]
+    .link https://www.wow-petopia.com/classic/training.php >> Cliquez ici pour plus d'information sur le dressage des familiers
 	.mob Windsong Crawler::254588
 step << Mage
     #label SkyhopperMultiClass
@@ -6860,7 +6860,7 @@ step << Alliance Druid
     .target Archmage Ansirem Runeweaver::2543
 step << Alliance
     .goto 1416/0,445.93,450.00
-    >>|TInterface/cursor/crosshair/interact.blp:20|tCliquez sur le |cRXP_PICK_Portail|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tCliquez sur le |cRXP_PICK_Portail|r.
     .complete 94947,1 --Take the Skyborne Portal to Stormwind
 step << Alliance Druid
     .goto 1453/0,1100.200,-8776.400
@@ -7267,7 +7267,7 @@ step << Horde
 step << Horde
     .goto Orgrimmar,54.10,68.42
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Gryshka l'aubergiste::6929|r
-    .home >> Liez votre Pierre de foyer à Orgrimmar
+    .home >> Liez votre Pierre de Foyer à Orgrimmar
 	.target Innkeeper Gryshka::6929
     .bindlocation 1637
 step << Horde
