@@ -2633,7 +2633,7 @@ step << Warlock/Mage/Rogue/Priest
 step << Warlock
     #completewith next
     .goto Tirisfal Glades,51.06,67.57
-    >>Beute |cRXP_PICK_Perrines Truhe|r für |T133733:0|t[Egalins Zauberfoliant]
+    >>Plündert |cRXP_PICK_Perrines Truhe|r für |T133733:0|t[Egalins Zauberfoliant]
     .complete 1473,1 --Egalin's Grimoire (1)
 step
     #label ScarletCrusade1

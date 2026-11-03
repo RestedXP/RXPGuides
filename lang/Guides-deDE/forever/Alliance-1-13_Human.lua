@@ -3723,7 +3723,7 @@ step << Mage/Paladin
     .goto 1455/0,-928.40,-4635.61,20,0 << Paladin
     .goto 1455/0,-931.8,-4627.59,20,0 << Mage
     .goto 1455/0,-928.40,-4614.51,12 >>Reist in Richtung |cRXP_FRIENDLY_Dink|r << Mage
-    .goto 1455/0,-896.47,-4601.65,12 >>Reist zu |cRXP_FRIENDLY_Brandur Ironhammer|r << Paladin
+    .goto 1455/0,-896.47,-4601.65,12 >>Reisen zu |cRXP_FRIENDLY_Brandur Ironhammer|r << Paladin
 step << Mage
     .goto 1455/0,-928.40,-4614.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Dink|r innerhalb

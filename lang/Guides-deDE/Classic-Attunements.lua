@@ -1616,7 +1616,7 @@ step
     .isQuestAvailable 9122 --The Dread Citadel - Naxxramas
 step
     #completewith AttuneComplete
-    .zone Eastern Plaguelands >>Reist in die |cFFfa9602 Östlichen Pestländer|r
+    .zone Eastern Plaguelands >>Reist in die |cFFfa9602Östlichen Pestländer|r
 step
     #optional
     .reputation 529,honored >>Erlangt einen Wohlwollenden Ruf bei der Argentumdämmerung

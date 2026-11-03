@@ -4095,7 +4095,7 @@ step
     .skill firstaid,<1,1
 step
     .goto 1456/1,206.88,-997.45
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit|r |cRXP_FRIENDLY_Pand|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |r |cRXP_FRIENDLY_Pand|r
     >>|cRXP_WARN_Überspringt diesen Schritt, wenn ihr nicht genug|r |T132889:0|t[Leinenstoff] |cRXP_WARN_hattet, um Skill 80 zu erreichen|r
     .train 3277 >> Erlernt |T133684:0|t[Wollverband]
     .train 7934 >> Erlernt |T134437:0|t[Gegengift] << Rogue
@@ -4734,7 +4734,7 @@ step << Shaman
     .accept 1530 >>Akzeptiert die Quest Ruf des Wassers
     .target +Islen Waterseer
     .goto The Barrens,65.83,43.78
-    .turnin 874 >>Gebt Mahren Himmelsdeuter ab
+    .turnin 874 >>Gebt Mahren Skyseer ab
     .accept 873 >>Akzeptiert die Quest Isha Awak
     .target +Mahren Skyseer
     .goto The Barrens,65.83,43.86
@@ -4746,7 +4746,7 @@ step << Shaman
     .accept 1530 >>Akzeptiert die Quest Ruf des Wassers
     .target +Islen Waterseer
     .goto The Barrens,65.83,43.78
-    .turnin 874 >>Gebt Mahren Himmelsdeuter ab
+    .turnin 874 >>Gebt Mahren Skyseer ab
     .accept 873 >>Akzeptiert die Quest Isha Awak
     .target +Mahren Skyseer
     .goto The Barrens,65.83,43.86
@@ -4757,7 +4757,7 @@ step << Shaman
     .accept 1530 >>Akzeptiert die Quest Ruf des Wassers
     .target +Islen Waterseer
     .goto The Barrens,65.83,43.78
-    .turnin 874 >>Gebt Mahren Himmelsdeuter ab
+    .turnin 874 >>Gebt Mahren Skyseer ab
     .accept 873 >>Akzeptiert die Quest Isha Awak
     .target +Mahren Skyseer
     .goto The Barrens,65.83,43.86
@@ -4768,7 +4768,7 @@ step << Shaman
     .accept 1530 >>Akzeptiert die Quest Ruf des Wassers
     .target +Islen Waterseer
     .goto The Barrens,65.83,43.78
-    .turnin 874 >>Gebt Mahren Himmelsdeuter ab
+    .turnin 874 >>Gebt Mahren Skyseer ab
     .accept 873 >>Akzeptiert die Quest Isha Awak
     .target +Mahren Skyseer
     .goto The Barrens,65.83,43.86
@@ -4777,7 +4777,7 @@ step
     #optional << Shaman
     .goto 1413/1,-4048.87,-1350.79
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Mahren|r
-    .turnin 874 >>Gebt Mahren Himmelsdeuter ab
+    .turnin 874 >>Gebt Mahren Skyseer ab
     .accept 873 >>Akzeptiert die Quest Isha Awak
     .target Mahren Skyseer
     .isOnQuest 874
@@ -4797,7 +4797,7 @@ step
     .goto 1413/1,-4031.64,-1537.94,50,0
     .goto 1413/1,-3937.4,-1789.27,50,0
     .goto 1413/1,-3821.88,-2004.8,50,0
-    >>Tötet |cRXP_ENEMY_Isha Awak|r. Plündert ihn, um das |cRXP_LOOT_Herz von Isha Awak|r zu erhalten
+    >>Tötet |cRXP_ENEMY_Isha Awak|r. Plündert ihn, für das |cRXP_LOOT_Herz von Isha Awak|r
     >>|cRXP_WARN_Es gibt vier verschiedene Spawnpunkte entlang der Küste|r
     .complete 873,1 --Heart of Isha Awak
     .unitscan Isha Awak

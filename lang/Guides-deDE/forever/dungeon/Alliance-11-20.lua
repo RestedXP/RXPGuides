@@ -1777,7 +1777,7 @@ step
     .isOnQuest 1001
 step
     .goto 1439,41.901,31.339
-    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4723 >> Akzeptiert die Quest Gestrandete Meereskreatur
 step
     .goto 1439,41.960,28.616
@@ -4376,7 +4376,7 @@ step
     .target Gwennyth Bly'Leggonde
 step
     .goto 1439,35.968,70.807
-    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4728 >> Akzeptiert die Quest Gestrandete Meereskreatur
     .isQuestTurnedIn 4681
 step
@@ -4497,7 +4497,7 @@ step
 step
     .isQuestTurnedIn 4681
     .goto 1439,32.644,80.711
-    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4730 >> Akzeptiert die Quest Gestrandete Meereskreatur
 step
     .isQuestTurnedIn 4681
@@ -4514,7 +4514,7 @@ step
 step
     .isQuestTurnedIn 4681
     .goto 1439,31.251,87.419
-    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4733 >> Akzeptiert die Quest Gestrandete Meereskreatur
     >>|cRXP_WARN_Achtet auf |cRXP_ENEMY_Orakel der Grauflossen|r'|r |T136048:0|t[Blitzschlag] |cRXP_WARN_Schaden, sie können auch mit|r |T136052:0|t[Welle der Heilung]|r heilen
 step

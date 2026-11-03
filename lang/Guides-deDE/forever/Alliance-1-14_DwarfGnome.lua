@@ -3470,7 +3470,7 @@ step << Dwarf Paladin
     #completewith next
     .goto 1455,35.239,32.789,20,0
     .goto 1455,27.208,12.552,20,0
-    .goto 1455/0,-896.47,-4601.65,12 >>Reist zu |cRXP_FRIENDLY_Brandur Ironhammer|r
+    .goto 1455/0,-896.47,-4601.65,12 >>Reisen zu |cRXP_FRIENDLY_Brandur Ironhammer|r
 step << Dwarf Paladin
     .goto 1455/0,-896.47,-4601.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Brandur Ironhammer|r

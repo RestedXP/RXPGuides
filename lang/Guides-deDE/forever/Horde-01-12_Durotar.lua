@@ -4124,7 +4124,7 @@ step << Warlock
     #optional
     #completewith next
     .goto 1420/0,726.06,1801.95
-    >>Beute |cRXP_PICK_Perrines Truhe|r für |T133733:0|t[Egalins Zauberfoliant]
+    >>Plündert |cRXP_PICK_Perrines Truhe|r für |T133733:0|t[Egalins Zauberfoliant]
     .complete 1473,1 --Egalin's Grimoire (1)
     .isQuestAvailable 1504
 step << Warlock

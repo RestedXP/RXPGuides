@@ -788,7 +788,7 @@ step << !Druid sod
 step << Warrior/Rogue
     #season 2
     .goto 1439,41.901,31.339
-    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4723 >> Akzeptiert die Quest Gestrandete Meereskreatur
 step << !Warrior !Rogue
     #season 2
@@ -2878,7 +2878,7 @@ step << Druid/Hunter/Warrior
 step << !Warrior
     #season 2
     .goto 1439,31.251,87.419
-    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4733 >> Akzeptiert die Quest Gestrandete Meereskreatur
     >>|cRXP_WARN_Diese Quest kann SEHR schwierig sein. Bekämpft die |cRXP_ENEMY_Murlocs|r einzeln, Andernfalls könntest du die Aggro von mehreren gleichzeitig auf dich ziehen.|r
     .link https://youtu.be/lfQM3Q-Ag5A >> |cRXP_WARN_Klickt hier für einen Videoleitfaden|r << Hunter
@@ -2895,7 +2895,7 @@ step << !Warrior
 step
 	#season 2
     .goto 1439,32.644,80.711
-    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4730 >> Akzeptiert die Quest Gestrandete Meereskreatur
 step
     #season 2
@@ -2924,7 +2924,7 @@ step << !Priest
     #season 2
     #label CompleteThistleBears
     .goto 1439,35.968,70.807
-    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4728 >> Akzeptiert die Quest Gestrandete Meereskreatur
 step << !Priest
     #season 2
@@ -3891,7 +3891,7 @@ step << !sod/Hunter/Druid
     #optional
     #completewith next
     .goto 1439,55.802,18.290
-    .gossipoption 95406 >> Sprecht mit dem |cRXP_FRIENDLY_Dreschonator 4100|r um die Eskorte zu starten
+    .gossipoption 95406 >> Sprecht mit |cRXP_FRIENDLY_Der Dreschonator 4100|r um die Eskorte zu beginnen
 --  .gossipoption 87696 >> Talk to |cRXP_FRIENDLY_The Threshwackonator 4100|r to start the escort
     >>|cRXP_WARN_Diese Quest ist SEHR schwierig|r
     .target The Threshwackonator 4100

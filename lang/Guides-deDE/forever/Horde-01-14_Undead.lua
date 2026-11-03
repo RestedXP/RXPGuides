@@ -2099,7 +2099,7 @@ step << Warlock
 step << Warlock
     #completewith next
     .goto 1420/0,726.06,1801.95
-    >>Beute |cRXP_PICK_Perrines Truhe|r für |T133733:0|t[Egalins Zauberfoliant]
+    >>Plündert |cRXP_PICK_Perrines Truhe|r für |T133733:0|t[Egalins Zauberfoliant]
     .complete 1473,1 --Egalin's Grimoire (1)
 step
     #label ScarletCrusade1
@@ -2185,7 +2185,7 @@ step << Warlock
 step << Warrior
     #ssf
     .goto 1458/0,133.71,1561.730
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Charles Seaton|r im Schurken-Viertel
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Charles Seaton|r im Schurkenviertel
     >>|cRXP_BUY_Kauft eine|r |T135350:0|t[Claymore] |cRXP_BUY_von ihm|r
     .collect 1198,1,371,1 --Collect Claymore (1)
     .money <0.2543
@@ -2195,7 +2195,7 @@ step << Warrior
 step << Warrior
     #ah
     .goto 1458/0,133.71,1561.730
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Charles Seaton|r im Schurken-Viertel
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Charles Seaton|r im Schurkenviertel
     >>|cRXP_BUY_Kauft eine|r |T135350:0|t[Claymore] |cRXP_BUY_von ihm|r
     >>|cRXP_WARN_Alternativ könnt ihr bald das Auktionshaus nach etwas Besserem oder Billigerem durchsuchen|r
     .collect 1198,1,371,1 --Collect Claymore (1)
@@ -2214,7 +2214,7 @@ step << Warrior
 step << Rogue
     #ssf
     .goto 1458/0,133.71,1561.730
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Charles Seaton|r im Schurken-Viertel
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Charles Seaton|r im Schurkenviertel
     >>|cRXP_BUY_Kauft einen|r |T135346:0|t[Entersäbel] |cRXP_BUY_von ihm|r
     .collect 851,1,371,1 --Collect Cutlass (1)
     .money <0.1922
@@ -2224,7 +2224,7 @@ step << Rogue
 step << Rogue
     #ah
     .goto 1458/0,133.71,1561.730
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Charles Seaton|r im Schurken-Viertel
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Charles Seaton|r im Schurkenviertel
     >>|cRXP_BUY_Kauft einen|r |T135346:0|t[Entersäbel] |cRXP_BUY_von ihm|r
     >>|cRXP_WARN_Alternativ könnt ihr bald das Auktionshaus nach etwas Besserem oder Billigerem durchsuchen|r
     .collect 851,1,371,1 --Collect Cutlass (1)
@@ -2921,7 +2921,7 @@ step
 step << Rogue
     #ssf
     .goto 1458/0,133.71,1561.730
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Charles Seaton|r im Schurken-Viertel
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Charles Seaton|r im Schurkenviertel
     >>|cRXP_BUY_Kauft einen|r |T135346:0|t[Entersäbel] |cRXP_BUY_von ihm|r
     .collect 851,1,372,1 --Collect Cutlass (1)
     .money <0.1922
@@ -2931,7 +2931,7 @@ step << Rogue
 step << Rogue
     #ah
     .goto 1458/0,133.71,1561.730
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Charles Seaton|r im Schurken-Viertel
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Charles Seaton|r im Schurkenviertel
     >>|cRXP_BUY_Kauft einen|r |T135346:0|t[Entersäbel] |cRXP_BUY_von ihm|r
     >>|cRXP_WARN_Alternativ könnt ihr bald das Auktionshaus nach etwas Besserem oder Billigerem durchsuchen|r
     .collect 851,1,372,1 --Collect Cutlass (1)
@@ -2950,7 +2950,7 @@ step << Rogue
 step << Warrior
     #ssf
     .goto 1458/0,133.71,1561.730
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Charles Seaton|r im Schurken-Viertel
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Charles Seaton|r im Schurkenviertel
     >>|cRXP_BUY_Kauft eine|r |T135350:0|t[Claymore] |cRXP_BUY_von ihm|r
     .collect 1198,1,372,1 --Collect Claymore (1)
     .money <0.2543
@@ -2960,7 +2960,7 @@ step << Warrior
 step << Warrior
     #ah
     .goto 1458/0,133.71,1561.730
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Charles Seaton|r im Schurken-Viertel
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Charles Seaton|r im Schurkenviertel
     >>|cRXP_BUY_Kauft eine|r |T135350:0|t[Claymore] |cRXP_BUY_von ihm|r
     >>|cRXP_WARN_Alternativ könnt ihr bald das Auktionshaus nach etwas Besserem oder Billigerem durchsuchen|r
     .collect 1198,1,372,1 --Collect Claymore (1)

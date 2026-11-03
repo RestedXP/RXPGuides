@@ -1641,7 +1641,7 @@ step << skip
     #som
     #completewith next
     .goto Dun Morogh,53.5,34.9,100 >>Lauft aus Eisenschmiede
-    >>Rüstet von Euch level 11 thrown aus << Warrior
+    >>Rüstet eure level 11 Wurfwaffe aus << Warrior
 step << skip
     #sticky
     #era

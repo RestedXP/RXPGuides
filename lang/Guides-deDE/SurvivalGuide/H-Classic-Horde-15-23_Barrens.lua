@@ -3364,7 +3364,7 @@ step
     .skill firstaid,<1,1
 step
     .goto Thunder Bluff,29.68,21.19
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit|r |cRXP_FRIENDLY_Pand|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |r |cRXP_FRIENDLY_Pand|r
     >>|cRXP_WARN_Überspringt diesen Schritt, wenn ihr nicht genug|r |T132889:0|t[Leinenstoff] |cRXP_WARN_hattet, um Skill 80 zu erreichen|r
     .train 3277 >> Erlernt |T133684:0|t[Wollverband]
     .train 7934 >> Erlernt |T134437:0|t[Gegengift] << Rogue
@@ -4243,7 +4243,7 @@ step
     .goto Stonetalon Mountains,52.46,71.67,50,0
     .goto Stonetalon Mountains,54.80,71.95,50,0
     >>Tötet |cRXP_ENEMY_Besseleth|r. Plündert sie für ihren |cRXP_LOOT_Fangzahn|r
-    >>|cRXP_WARN_Räumt das Gebiet auf, bevor ihr sie pullt. Seid vorsichtig, sie kann euch für 10 Sek. in Netze einwickeln!|r
+    >>|cRXP_WARN_Räumt das Gebiet , bevor ihr sie pullt. Seid vorsichtig, sie kann euch für 10 Sek. in Netze einwickeln!|r
     .complete 6284,1 --Collect Besseleth's Fang (x1)
 	.unitscan Besseleth
     .group 3

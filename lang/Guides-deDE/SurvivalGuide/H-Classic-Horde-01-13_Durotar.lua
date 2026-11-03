@@ -3772,7 +3772,7 @@ step << Warrior
     .isQuestTurnedIn 1818
 step
     #completewith Pumpkins
-    >>Tötet alle |cRXP_ENEMY_Schattenhunde|r, die ihr seht. Plündert sie für ihre |cRXP_LOOT_Schattenhundblut|r
+    >>Tötet alle |cRXP_ENEMY_Schattenhunde|r, die ihr seht. Plündert sie für ihre |cRXP_LOOT_Schattenhundblut|r.
     >>|cRXP_WARN_Ihr erhaltet|r |T133849:0|t[Schlummersand] |cRXP_WARN_von der Folgequest dieser Quest|r
     .complete 367,1 --Darkhound Blood (5)
     .mob Decrepit Darkhound
@@ -3858,7 +3858,7 @@ step
     .goto Tirisfal Glades,45.11,48.06,50,0
     .goto Tirisfal Glades,47.07,45.37,50,0
     .goto Tirisfal Glades,50.36,49.51,50,0
-    >>Tötet alle |cRXP_ENEMY_Schattenhunde|r, die ihr seht. Plündert sie für ihre |cRXP_LOOT_Schattenhundblut|r
+    >>Tötet alle |cRXP_ENEMY_Schattenhunde|r, die ihr seht. Plündert sie für ihre |cRXP_LOOT_Schattenhundblut|r.
     >>|cRXP_WARN_Ihr erhaltet|r |T133849:0|t[Schlummersand] |cRXP_WARN_von der Folgequest dieser Quest|r
     .complete 367,1 --Darkhound Blood (5)
     .mob Decrepit Darkhound
@@ -4187,7 +4187,7 @@ step << Warlock
     #optional
     #completewith next
     .goto Tirisfal Glades,51.06,67.57
-    >>Beute |cRXP_PICK_Perrines Truhe|r für |T133733:0|t[Egalins Zauberfoliant]
+    >>Plündert |cRXP_PICK_Perrines Truhe|r für |T133733:0|t[Egalins Zauberfoliant]
     .complete 1473,1 --Egalin's Grimoire (1)
     .isQuestAvailable 1504
 step
