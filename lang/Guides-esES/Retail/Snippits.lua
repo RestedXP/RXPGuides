@@ -245,7 +245,7 @@ step << Alliance
     .macro Unlearn Mining,4620679 >>Olvida Minería
     .train 2575,3
     .subzoneskip 37,1
-    .isOnQuest 7905
+    .isOnQuest 7905 --The Darkmoon Faire
 step << Alliance
     #arrowtext Habla con\n|cRXP_FRIENDLY_Lien Farner|r
     #requires ProfessionsDmf1
@@ -257,7 +257,7 @@ step << Alliance
     .skipgossipid 38886
     .skipgossipid 39726
     .subzoneskip 37,1
-    .isOnQuest 7905
+    .isOnQuest 7905 --The Darkmoon Faire
     .dmf
 step << Alliance
     #completewith next
@@ -272,7 +272,7 @@ step << Alliance
     >>Usa la macro en el "Marco de objetos Utilizables" para olvidar |T4620675:0|t[Herboristería].
     .macro Unlearn Herbalism,4620675 >>Desaprende Herboristería
     .subzoneskip 37,1
-    .isOnQuest 7905
+    .isOnQuest 7905 --The Darkmoon Faire
     .train 2366,3
 step << Alliance
     #arrowtext Habla con\n|cRXP_FRIENDLY_Lien Farner|r
@@ -285,7 +285,7 @@ step << Alliance
     .skipgossipid 39321
     .target Lien Farmer
     .subzoneskip 37,1
-    .isOnQuest 7905
+    .isOnQuest 7905 --The Darkmoon Faire
     .dmf
 step << Alliance
     #arrowtext Habla con\n|cRXP_FRIENDLY_Tharynn Bouden|r
@@ -303,14 +303,14 @@ step << Alliance
     .buy 39354,5
     .target Tharynn Bouden
     .subzoneskip 37,1
-    .isOnQuest 7905
+    .isOnQuest 7905 --The Darkmoon Faire
     .dmf
 step << Alliance
     #arrowtext Haz clic en el\n|cRXP_PICK_Portal|r
     .goto 37,41.78,69.55
     .zone 407 >>|TInterface/cursor/crosshair/interact.blp:20|tHaz clic en el |cRXP_PICK_Portal|r
     .subzoneskip 37,1
-    .isOnQuest 7905
+    .isOnQuest 7905 --The Darkmoon Faire
     .dmf
 -- step << Human
 --     .goto 407,51.62,24.66
@@ -331,7 +331,7 @@ step
     .collect 81055,1 --
     .buy 92794
     .target Kae Ti
-    .isOnQuest 7905
+    .isOnQuest 7905 --The Darkmoon Faire
     .zoneskip 407,1
     .dmf
 -- step
@@ -417,49 +417,49 @@ step
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Profesor Paleo|r.
     .turnin 29451 >>Entrega la misión El maestro estratega
-    .isOnQuest 29451
+    .isOnQuest 29451 --The Master Strategist
     .zoneskip 407,1
     .dmf
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Profesor Paleo|r.
     .turnin 29456 >>Entrega la misión Un estandarte capturado
-    .isOnQuest 29456
+    .isOnQuest 29456 --A Captured Banner
     .zoneskip 407,1
     .dmf
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Profesor Paleo|r.
     .turnin 29457 >>Entrega la misión La insignia del enemigo
-    .isOnQuest 29457
+    .isOnQuest 29457 --The Enemy's Insignia
     .zoneskip 407,1
     .dmf
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Profesor Paleo|r.
     .turnin 29458 >>Entrega la misión El diario encontrado
-    .isOnQuest 29458
+    .isOnQuest 29458 --The Captured Journal
     .zoneskip 407,1
     .dmf
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Profesor Paleo|r.
     .turnin 29443 >>Entrega la misión Un cristal curioso
-    .isOnQuest 29443
+    .isOnQuest 29443 --A Curious Crystal
     .zoneskip 407,1
     .dmf
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Profesor Paleo|r.
     .turnin 29444 >>Entrega la misión Un huevo exótico
-    .isOnQuest 29444
+    .isOnQuest 29444 --An Exotic Egg
     .zoneskip 407,1
     .dmf
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Profesor Paleo|r.
     .turnin 29445 >>Entrega la misión Un grimorio intrigante
-    .isOnQuest 29445
+    .isOnQuest 29445 --An Intriguing Grimoire
     .zoneskip 407,1
     .dmf
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Profesor Paleo|r.
     .turnin 29446 >>Entrega la misión Un arma asombrosa
-    .isOnQuest 29446
+    .isOnQuest 29446 --A Wondrous Weapon
     .zoneskip 407,1
     .dmf
 -- step
@@ -493,7 +493,7 @@ step
     .accept 29509 >>Acepta la misión Rana en harina, cosa fina
     .target Sello Tronacuerno
     .train 2550,3
-    .itemcount 30817,5
+    .itemcount 30817,5 --Simple Flour
     .zoneskip 407,1
     .dmf
 step
@@ -545,10 +545,10 @@ step
     .collect 19299,5,29506,1,-1 --Fizzy Faire Drinks (5)
     .complete 29506,1 --5/5 Moonberry Fizz
     .use 72043 --Cocktail Shaker
-    .itemcount 1645,5
+    .itemcount 1645,5 --Moonberry Juice
     .zoneskip 407,1
     .dmf
-    .isOnQuest 29506
+    .isOnQuest 29506 --A Fizzy Fusion
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Sylannia|r
     .goto 407,50.53,69.56
@@ -557,7 +557,7 @@ step
     .target Sylannia
     .zoneskip 407,1
     .dmf
-    .isOnQuest 29506
+    .isOnQuest 29506 --A Fizzy Fusion
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Sayge|r
     .goto 407,53.23,75.82
@@ -565,7 +565,7 @@ step
     .turnin 29445 >>Entrega la misión Un grimorio intrigante
     .target Sayge
     .zoneskip 407,1
-    .isOnQuest 29445
+    .isOnQuest 29445 --An Intriguing Grimoire
     .dmf
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Sayge|r
@@ -593,7 +593,7 @@ step
     .use 71971
     .zoneskip 407,1
     .dmf
-    .isOnQuest 29515
+    .isOnQuest 29515 --Writing the Future
 step
     #arrowtext Usa [Tinta profética]
     .goto 407,53.23,75.82
@@ -603,7 +603,7 @@ step
     .use 71972
     .zoneskip 407,1
     .dmf
-    .isOnQuest 29515
+    .isOnQuest 29515 --Writing the Future
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Sayge|r
     .goto 407,53.23,75.82
@@ -620,14 +620,15 @@ step
     .target Yebb Tesorillos
     .zoneskip 407,1
     .dmf
-    .isOnQuest 29444
+    .isOnQuest 29444 --An Exotic Egg
 step << Alliance
-    .isOnQuest 65436
+    .isOnQuest 65436 --The Dragon Isles Await
     >>Usa la |T134309:0|t[Escama de dragón perdida] para teletransportarte a Ventormenta.
     .complete 65436,1 --1/1 Lost Dragonscale used to teleport to near Wrathion's location (Optional)
     .dmf
+    .use 205456
 step << Horde
-    .isOnQuest 65435
+    .isOnQuest 65435 --The Dragon Isles Await
     >>Usa la |T134309:0|t[Escama de dragón perdida] para teletransportarte a Orgrimmar.
     .complete 65435,1 --1/1 Lost Dragonscale used to teleport to near Wrathion's location (Optional)
     .nodmf
@@ -709,7 +710,7 @@ step << Alliance
     .target Cromi
 step << Alliance
     #arrowtext Habla con\n|cRXP_FRIENDLY_Cromi|r
-    .isQuestAvailable 70122
+    .isQuestAvailable 70122 --Explorers in Peril
     .goto 84,56.257,17.311
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Cromi|r.
     -- .complete 53500,1 --Talk to Chromie (1)
@@ -742,10 +743,11 @@ step << Alliance
 --     #include RestedXP Speed Leveling\a) DMF
 step  << Alliance
     .subzoneskip 6292
-    .isOnQuest 65436
+    .isOnQuest 65436 --The Dragon Isles Await
     >>Usa la |T134309:0|t[Escama de dragón perdida] para teletransportarte a Ventormenta.
     .complete 65436,1 --1/1 Lost Dragonscale used to teleport to near Wrathion's location (Optional)
     .nodmf
+    .use 205456
 ]])
 --GC Alliance: Chromie Time Normal
 RXPGuides.RegisterGuide([[
@@ -757,8 +759,8 @@ RXPGuides.RegisterGuide([[
 
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Cromi|r
-    #label ChromieTime
-    .isQuestAvailable 70122
+    #label ChromieTime1
+    .isQuestAvailable 70122 --Explorers in Peril
     .goto 84,56.257,17.311
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Cromi|r.
     -- .complete 53500,1 --Talk to Chromie (1)
@@ -768,20 +770,21 @@ step
     .skipgossipid 51901
     .skipgossipid 51902
     .target Cromi
--- step
---     .goto 84,56.257,17.311
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
---     .accept 40519 >>Accept Legion: The Legion Returns
---     .chromietime 10
---     .skipgossipid 51901
---     .skipgossipid 51902
---     .target Chromie
+step
+    #label ChromieTime2
+    .goto 84,56.257,17.311
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r. (NOT TRANSLATED IN :esMX YET)
+    .accept 40519 >>Acepta la misión Legion: La Legión ha vuelto
+    .chromietime 10
+    .skipgossipid 51901
+    .skipgossipid 51902
+    .target Chromie
 step
     #arrowtext Haz clic en el\n|cRXP_PICK_Tablero de ¡Se busca héroe!|r
     #label CallBoardStart
     .goto 84,62.21,29.84
     >>|TInterface/cursor/crosshair/interact.blp:20|tHaz clic en el |cRXP_PICK_Tablero de ¡Se busca héroe!|r
-    .accept 40519 >>Acepta la misión Legion: La Legión ha vuelto
+    .accept 40519 >>Accept Legion: The Legion Returns (NOT TRANSLATED IN :esMX YET)
     .choose 1851120
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Wrathion|r
@@ -809,7 +812,7 @@ step
 step
     #label CallBoardEnd
     .subzoneskip 6292
-    .isOnQuest 65436
+    .isOnQuest 65436 --The Dragon Isles Await
     >>Usa la |T134309:0|t[Escama de dragón perdida] para teletransportarte a Ventormenta.
     .complete 65436,1 --1/1 Lost Dragonscale used to teleport to near Wrathion's location (Optional)
     .nodmf
@@ -851,9 +854,9 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Hashim|r
     .turnin 90938 >>Entrega la misión Un paseo por el Vacío
     .target Hashim
-    .isOnQuest 90938
+    .isOnQuest 90938 --A Skip Through the Void
 step
-    .isQuestTurnedIn account,89561
+    .isQuestTurnedIn account,89561 --Wrapped Up
     #completewith next
     #label Reshii Wraps
     .equip 15,235499 >>Equipa las |T7110834:0|t[Vendas reshii]
@@ -879,7 +882,7 @@ step
     .target Shad'anis
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Shad'anis|r
-    .isOnQuest 89380
+    .isOnQuest 89380 --Another World
     .goto 2371,50.36,36.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Shad'anis|r
     .turnin 89380 >>Entrega la misión Otro mundo
@@ -1363,31 +1366,31 @@ RXPGuides.RegisterGuide([[
 << DeathKnight
 
 step
-    .isQuestTurnedIn 40715
-    .isQuestAvailable 44401,43962
+    .isQuestTurnedIn 40715 --A Pact of Necessity
+    .isQuestAvailable 44401,43962 --A Weapon For Every Occasion; Blades of Destiny
     .zoneskip 647
     .zone 648 >>Usa |T135766:0|t[Portamorta]
     .usespell 50977
 step
-    .isQuestTurnedIn 40715
-    .isQuestAvailable 44401,43962
+    .isQuestTurnedIn 40715 --A Pact of Necessity
+    .isQuestAvailable 44401,43962 --A Weapon For Every Occasion; Blades of Destiny
     .goto 648,35.01,37.23
     .zone 647 >>Usa el teletransportador
 step
     #arrowtext Habla con el\n|cRXP_FRIENDLY_Duque Lankral|r
-    .isQuestTurnedIn 43962
-    .isQuestAvailable 44401
-    .isQuestAvailable 40740
-    .isNotOnQuest 40740
+    .isQuestTurnedIn 43962 --Blades of Destiny
+    .isQuestAvailable 44401 --A Weapon For Every Occasion
+    .isQuestAvailable 40740 --The Dead and the Damned
+    .isNotOnQuest 40740 --The Dead and the Damned
     .goto 647,57.76,60.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Duque Lankral|r.
     .accept 44401 >>Acepta la misión Un arma para cada ocasión
     .target Duque Lankral
 step
     #arrowtext Habla con el\n|cRXP_FRIENDLY_Duque Lankral|r
-    .isQuestTurnedIn 43962
-    .isQuestAvailable 44401
-    .isOnQuest 44401
+    .isQuestTurnedIn 43962 --Blades of Destiny
+    .isQuestAvailable 44401 --A Weapon For Every Occasion
+    .isOnQuest 44401 --A Weapon For Every Occasion
     .goto 647,57.76,60.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Duque Lankral|r.
     *|cRXP_WARN_Esto elegirá automáticamente el artefacto de Sangre|r
@@ -1397,28 +1400,28 @@ step
     .skipgossipid 45117
 step
     #arrowtext Habla con el\n|cRXP_FRIENDLY_Duque Lankral|r
-    .isQuestTurnedIn 43962
-    .isQuestAvailable 44401
-    .isOnQuest 44401
+    .isQuestTurnedIn 43962 --Blades of Destiny
+    .isQuestAvailable 44401 --A Weapon For Every Occasion
+    .isOnQuest 44401 --A Weapon For Every Occasion
     .goto 647,57.76,60.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Duque Lankral|r.
     .turnin 44401 >>Entrega la misión Un arma para cada ocasión
     .target Duque Lankral
 step
     #arrowtext Habla con el\n|cRXP_FRIENDLY_Duque Lankral|r
-    .isQuestTurnedIn 40715
-    .isQuestAvailable 43962
-    .isQuestAvailable 40740
-    .isNotOnQuest 40740
+    .isQuestTurnedIn 40715 --A Pact of Necessity
+    .isQuestAvailable 43962 --Blades of Destiny
+    .isQuestAvailable 40740 --The Dead and the Damned
+    .isNotOnQuest 40740 --The Dead and the Damned
     .goto 647,57.76,60.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Duque Lankral|r.
     .accept 43962 >>Acepta la misión Espadas del destino
     .target Duque Lankral
 step
     #arrowtext Habla con el\n|cRXP_FRIENDLY_Duque Lankral|r
-    .isQuestTurnedIn 40715
-    .isQuestAvailable 43962
-    .isOnQuest 43962
+    .isQuestTurnedIn 40715 --A Pact of Necessity
+    .isQuestAvailable 43962 --Blades of Destiny
+    .isOnQuest 43962 --Blades of Destiny
     .goto 647,57.76,60.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Duque Lankral|r.
     *|cRXP_WARN_Esto elegirá automáticamente el artefacto de Sangre|r
@@ -1428,24 +1431,24 @@ step
     .skipgossipid 45119
 step
     #arrowtext Habla con el\n|cRXP_FRIENDLY_Duque Lankral|r
-    .isQuestTurnedIn 40715
-    .isQuestAvailable 43962
-    .isOnQuest 43962
+    .isQuestTurnedIn 40715 --A Pact of Necessity
+    .isQuestAvailable 43962 --Blades of Destiny
+    .isOnQuest 43962 --Blades of Destiny
     .goto 647,57.76,60.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Duque Lankral|r.
     .turnin 43962 >>Entrega la misión Espadas del destino
     .target Duque Lankral
 step
     #arrowtext Habla con el\n|cRXP_FRIENDLY_Duque Lankral|r
-    .isQuestAvailable 40715
+    .isQuestAvailable 40715 --A Pact of Necessity
     .goto 627,73.10,46.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Duque Lankral|r.
     .accept 40715 >>Acepta la misión Un pacto necesario
     .target Rensar Granzuña
 step
     #arrowtext Habla con el\n|cRXP_FRIENDLY_Duque Lankral|r
-    .isQuestAvailable 40715
-    .isOnQuest 40715
+    .isQuestAvailable 40715 --A Pact of Necessity
+    .isOnQuest 40715 --A Pact of Necessity
     .goto 627,73.10,46.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Duque Lankral|r.
     *|cRXP_WARN_Esto elegirá automáticamente el artefacto de Sangre|r
@@ -1455,8 +1458,8 @@ step
     .skipgossipid 45000
 step
     #arrowtext Habla con el\n|cRXP_FRIENDLY_Duque Lankral|r
-    .isQuestAvailable 40715
-    .isOnQuest 40715
+    .isQuestAvailable 40715 --A Pact of Necessity
+    .isOnQuest 40715 --A Pact of Necessity
     .goto 627,73.10,46.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Duque Lankral|r.
     .turnin 40715 >>Entrega la misión Un pacto necesario
@@ -1466,7 +1469,7 @@ step
     +|cRXP_WARN_Asegúrate de tener un arma usable equipada. Si no es así, equipa una hasta que consigas tu artefacto, o cambia a una especialización que ya tenga su artefacto|r
 step
     #arrowtext Habla con el\n|cRXP_FRIENDLY_Alto señor Darion Mograine|r
-    .isQuestAvailable 43962
+    .isQuestAvailable 43962 --Blades of Destiny
     .goto 627,73.10,46.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Alto señor Darion Mograine|r.
     .accept 40740 >>Acepta la misión Los muertos y los condenados
@@ -1485,8 +1488,8 @@ step
     .complete 40740,2 --1/1 Enter into the Legion Portal
 step
     #arrowtext Entra en la gesta |cRXP_PICK_La Cosecha del Desgarrador|r
-    .isOnQuest 40740
-    .isQuestNotComplete 40740
+    .isOnQuest 40740 --The Dead and the Damned
+    .isQuestNotComplete 40740 --The Dead and the Damned
     .goto 646,31.97,31.91
     .enterScenario 940 >>Entra en la gesta |cRXP_PICK_La Cosecha del Desgarrador|r
 step
@@ -1586,12 +1589,12 @@ step
     .scenario 2180,1 --Use Baron Sliver's Death Gate
 step
     #arrowtext Haz clic en el\n|cRXP_PICK_Portal de Acherus|r
-    .isOnQuest 40740
+    .isOnQuest 40740 --The Dead and the Damned
     .goto 701,47.57,90.74
     .zone 648 >>Haz clic en la |cRXP_PICK_Puerta de Acherus|r después del "roleplay".
 step
     #arrowtext Habla con el\n|cRXP_FRIENDLY_Alto señor Darion Mograine|r
-    .isQuestAvailable 39832
+    .isQuestAvailable 39832 --Plans and Preparations
     .goto 648,50.90,50.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Alto señor Darion Mograine|r.
     .turnin 40740 >>Entrega la misión Los muertos y los condenados
@@ -1619,31 +1622,31 @@ RXPGuides.RegisterGuide([[
 << DeathKnight
 
 step
-    .isQuestTurnedIn 40715
-    .isQuestAvailable 44401,43962
+    .isQuestTurnedIn 40715 --A Pact of Necessity
+    .isQuestAvailable 44401,43962 --A Weapon For Every Occasion; Blades of Destiny
     .zoneskip 647
     .zone 648 >>Usa |T135766:0|t[Portamorta]
     .usespell 50977
 step
-    .isQuestTurnedIn 40715
-    .isQuestAvailable 44401,43962
+    .isQuestTurnedIn 40715 --A Pact of Necessity
+    .isQuestAvailable 44401,43962 --A Weapon For Every Occasion; Blades of Destiny
     .goto 648,35.01,37.23
     .zone 647 >>Usa el teletransportador
 step
     #arrowtext Habla con el\n|cRXP_FRIENDLY_Duque Lankral|r
-    .isQuestTurnedIn 43962
-    .isQuestAvailable 44401
-    .isQuestAvailable 38990
-    .isNotOnQuest 38990
+    .isQuestTurnedIn 43962 --Blades of Destiny
+    .isQuestAvailable 44401 --A Weapon For Every Occasion
+    .isQuestAvailable 38990 --The Call of Icecrown
+    .isNotOnQuest 38990 --The Call of Icecrown
     .goto 647,57.76,60.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Duque Lankral|r.
     .accept 44401 >>Acepta la misión Un arma para cada ocasión
     .target Duque Lankral
 step
     #arrowtext Habla con el\n|cRXP_FRIENDLY_Duque Lankral|r
-    .isQuestTurnedIn 43962
-    .isQuestAvailable 44401
-    .isOnQuest 44401
+    .isQuestTurnedIn 43962 --Blades of Destiny
+    .isQuestAvailable 44401 --A Weapon For Every Occasion
+    .isOnQuest 44401 --A Weapon For Every Occasion
     .goto 647,57.76,60.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Duque Lankral|r.
     *|cRXP_WARN_Esto elegirá automáticamente el artefacto de Escarcha|r
@@ -1653,28 +1656,28 @@ step
     .skipgossipid 45117
 step
     #arrowtext Habla con el\n|cRXP_FRIENDLY_Duque Lankral|r
-    .isQuestTurnedIn 43962
-    .isQuestAvailable 44401
-    .isOnQuest 44401
+    .isQuestTurnedIn 43962 --Blades of Destiny
+    .isQuestAvailable 44401 --A Weapon For Every Occasion
+    .isOnQuest 44401 --A Weapon For Every Occasion
     .goto 647,57.76,60.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Duque Lankral|r.
     .turnin 44401 >>Entrega la misión Un arma para cada ocasión
     .target Duque Lankral
 step
     #arrowtext Habla con el\n|cRXP_FRIENDLY_Duque Lankral|r
-    .isQuestTurnedIn 40715
-    .isQuestAvailable 43962
-    .isQuestAvailable 38990
-    .isNotOnQuest 38990
+    .isQuestTurnedIn 40715 --A Pact of Necessity
+    .isQuestAvailable 43962 --Blades of Destiny
+    .isQuestAvailable 38990 --The Call of Icecrown
+    .isNotOnQuest 38990 --The Call of Icecrown
     .goto 647,57.76,60.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Duque Lankral|r.
     .accept 43962 >>Acepta la misión Espadas del destino
     .target Duque Lankral
 step
     #arrowtext Habla con el\n|cRXP_FRIENDLY_Duque Lankral|r
-    .isQuestTurnedIn 40715
-    .isQuestAvailable 43962
-    .isOnQuest 43962
+    .isQuestTurnedIn 40715 --A Pact of Necessity
+    .isQuestAvailable 43962 --Blades of Destiny
+    .isOnQuest 43962 --Blades of Destiny
     .goto 647,57.76,60.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Duque Lankral|r.
     *|cRXP_WARN_Esto elegirá automáticamente el artefacto de Escarcha|r
@@ -1684,24 +1687,24 @@ step
     .skipgossipid 45119
 step
     #arrowtext Habla con el\n|cRXP_FRIENDLY_Duque Lankral|r
-    .isQuestTurnedIn 40715
-    .isQuestAvailable 43962
-    .isOnQuest 43962
+    .isQuestTurnedIn 40715 --A Pact of Necessity
+    .isQuestAvailable 43962 --Blades of Destiny
+    .isOnQuest 43962 --Blades of Destiny
     .goto 647,57.76,60.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Duque Lankral|r.
     .turnin 43962 >>Entrega la misión Espadas del destino
     .target Duque Lankral
 step
     #arrowtext Habla con el\n|cRXP_FRIENDLY_Duque Lankral|r
-    .isQuestAvailable 40715
+    .isQuestAvailable 40715 --A Pact of Necessity
     .goto 627,73.10,46.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Duque Lankral|r.
     .accept 40715 >>Acepta la misión Un pacto necesario
     .target Rensar Granzuña
 step
     #arrowtext Habla con el\n|cRXP_FRIENDLY_Duque Lankral|r
-    .isQuestAvailable 40715
-    .isOnQuest 40715
+    .isQuestAvailable 40715 --A Pact of Necessity
+    .isOnQuest 40715 --A Pact of Necessity
     .goto 627,73.10,46.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Duque Lankral|r.
     *|cRXP_WARN_Esto elegirá automáticamente el artefacto de Escarcha|r
@@ -1711,8 +1714,8 @@ step
     .skipgossipid 45000
 step
     #arrowtext Habla con el\n|cRXP_FRIENDLY_Duque Lankral|r
-    .isQuestAvailable 40715
-    .isOnQuest 40715
+    .isQuestAvailable 40715 --A Pact of Necessity
+    .isOnQuest 40715 --A Pact of Necessity
     .goto 627,73.10,46.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Duque Lankral|r.
     .turnin 40715 >>Entrega la misión Un pacto necesario
@@ -1844,30 +1847,30 @@ RXPGuides.RegisterGuide([[
 << DeathKnight
 
 step
-    .isQuestTurnedIn 40715
-    .isQuestAvailable 44401,43962
+    .isQuestTurnedIn 40715 --A Pact of Necessity
+    .isQuestAvailable 44401,43962 --A Weapon For Every Occasion; Blades of Destiny
     .zoneskip 647
     .zone 648 >>Usa |T135766:0|t[Portamorta]
     .usespell 50977
 step
-    .isQuestTurnedIn 40715
-    .isQuestAvailable 44401,43962
+    .isQuestTurnedIn 40715 --A Pact of Necessity
+    .isQuestAvailable 44401,43962 --A Weapon For Every Occasion; Blades of Destiny
     .goto 648,35.01,37.23
     .zone 647 >>Usa el teletransportador
 step
     #arrowtext Habla con el\n|cRXP_FRIENDLY_Duque Lankral|r
-    .isQuestTurnedIn 43962
-    .isQuestAvailable 44401
-    .isQuestAvailable 40930
+    .isQuestTurnedIn 43962 --Blades of Destiny
+    .isQuestAvailable 44401 --A Weapon For Every Occasion
+    .isQuestAvailable 40930 --Apocalypse
     .goto 647,57.76,60.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Duque Lankral|r.
     .accept 44401 >>Acepta la misión Un arma para cada ocasión
     .target Duque Lankral
 step
     #arrowtext Habla con el\n|cRXP_FRIENDLY_Duque Lankral|r
-    .isQuestTurnedIn 43962
-    .isQuestAvailable 44401
-    .isOnQuest 44401
+    .isQuestTurnedIn 43962 --Blades of Destiny
+    .isQuestAvailable 44401 --A Weapon For Every Occasion
+    .isOnQuest 44401 --A Weapon For Every Occasion
     .goto 647,57.76,60.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Duque Lankral|r.
     *|cRXP_WARN_Esto elegirá automáticamente el artefacto de Profano|r
@@ -1877,32 +1880,32 @@ step
     .skipgossipid 45117
 step
     #arrowtext Habla con el\n|cRXP_FRIENDLY_Duque Lankral|r
-    .isQuestTurnedIn 43962
-    .isQuestAvailable 44401
-    .isOnQuest 44401
+    .isQuestTurnedIn 43962 --Blades of Destiny
+    .isQuestAvailable 44401 --A Weapon For Every Occasion
+    .isOnQuest 44401 --A Weapon For Every Occasion
     .goto 647,57.76,60.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Duque Lankral|r.
     .turnin 44401 >>Entrega la misión Un arma para cada ocasión
     .target Duque Lankral
 step
-    .isQuestTurnedIn 40715
-    .isQuestAvailable 43962
+    .isQuestTurnedIn 40715 --A Pact of Necessity
+    .isQuestAvailable 43962 --Blades of Destiny
     .goto 648,35.01,37.23
     .zone 647 >>Usa el teletransportador
 step
     #arrowtext Habla con el\n|cRXP_FRIENDLY_Duque Lankral|r
-    .isQuestTurnedIn 40715
-    .isQuestAvailable 43962
-    .isQuestAvailable 40930
+    .isQuestTurnedIn 40715 --A Pact of Necessity
+    .isQuestAvailable 43962 --Blades of Destiny
+    .isQuestAvailable 40930 --Apocalypse
     .goto 647,57.76,60.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Duque Lankral|r.
     .accept 43962 >>Acepta la misión Espadas del destino
     .target Duque Lankral
 step
     #arrowtext Habla con el\n|cRXP_FRIENDLY_Duque Lankral|r
-    .isQuestTurnedIn 40715
-    .isQuestAvailable 43962
-    .isOnQuest 43962
+    .isQuestTurnedIn 40715 --A Pact of Necessity
+    .isQuestAvailable 43962 --Blades of Destiny
+    .isOnQuest 43962 --Blades of Destiny
     .goto 647,57.76,60.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Duque Lankral|r.
     *|cRXP_WARN_Esto elegirá automáticamente el artefacto de Profano|r
@@ -1912,24 +1915,24 @@ step
     .skipgossipid 46633
 step
     #arrowtext Habla con el\n|cRXP_FRIENDLY_Duque Lankral|r
-    .isQuestTurnedIn 40715
-    .isQuestAvailable 43962
-    .isOnQuest 43962
+    .isQuestTurnedIn 40715 --A Pact of Necessity
+    .isQuestAvailable 43962 --Blades of Destiny
+    .isOnQuest 43962 --Blades of Destiny
     .goto 647,57.76,60.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Duque Lankral|r.
     .turnin 43962 >>Entrega la misión Espadas del destino
     .target Duque Lankral
 step
     #arrowtext Habla con el\n|cRXP_FRIENDLY_Duque Lankral|r
-    .isQuestAvailable 40715
+    .isQuestAvailable 40715 --A Pact of Necessity
     .goto 627,73.10,46.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Duque Lankral|r.
     .accept 40715 >>Acepta la misión Un pacto necesario
     .target Rensar Granzuña
 step
     #arrowtext Habla con el\n|cRXP_FRIENDLY_Duque Lankral|r
-    .isQuestAvailable 40715
-    .isOnQuest 40715
+    .isQuestAvailable 40715 --A Pact of Necessity
+    .isOnQuest 40715 --A Pact of Necessity
     .goto 627,73.10,46.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Duque Lankral|r.
     *|cRXP_WARN_Esto elegirá automáticamente el artefacto de Profano|r
@@ -1939,8 +1942,8 @@ step
     .skipgossipid 45000
 step
     #arrowtext Habla con el\n|cRXP_FRIENDLY_Duque Lankral|r
-    .isQuestAvailable 40715
-    .isOnQuest 40715
+    .isQuestAvailable 40715 --A Pact of Necessity
+    .isOnQuest 40715 --A Pact of Necessity
     .goto 627,73.10,46.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Duque Lankral|r.
     .turnin 40715 >>Entrega la misión Un pacto necesario
@@ -1975,30 +1978,30 @@ step
     .target Revil Kost
 step
     #arrowtext |cFFFCDC00Quédate cerca de Ariden|r
-    .isOnQuest 40931
+    .isOnQuest 40931 --Following the Curse
     .goto 47,77.37,35.12
     .countdown 25 >>Mata a los |cRXP_ENEMY_Jinetes oscuros|r
 step
     #title |cFFFCDC00Quédate cerca de Ariden|r
-    .isOnQuest 40931
+    .isOnQuest 40931 --Following the Curse
     .goto 47,80.86,33.00,25,0
     .goto 47,84.33,36.29,20,0
     .goto 47,83.83,40.27,15,0
     .goto 47,85.55,40.69,15 >>Escolta al |cRXP_FRIENDLY_Revil Kost|r
 step
     #arrowtext Mata a los\n|cRXP_ENEMY_Jinetes oscuros|r
-    .isOnQuest 40931
+    .isOnQuest 40931 --Following the Curse
     .goto 47,85.55,40.69
     .countdown 20 >>Mata a los |cRXP_ENEMY_Jinetes oscuros|r
 step
     #title |cFFFCDC00Quédate cerca de Ariden|r
-    .isOnQuest 40931
+    .isOnQuest 40931 --Following the Curse
     .goto 42,36.64,35.55,25,0
     .goto 42,39.13,33.72,25,0
     .goto 42,44.37,34.56,15 >>Escolta al |cRXP_FRIENDLY_Revil Kost|r
 step
     #arrowtext Mata a los\n|cRXP_ENEMY_Jinetes oscuros|r
-    .isOnQuest 40931
+    .isOnQuest 40931 --Following the Curse
     .goto 42,44.33,34.54
     .countdown 20 >>Mata a los |cRXP_ENEMY_Jinetes oscuros|r
 step
@@ -2047,7 +2050,7 @@ step
     .target Revil Kost
 step
     #arrowtext Entra en la gesta de |cRXP_PICK_Los Jinetes Oscuros|r
-    .isOnQuest 40986
+    .isOnQuest 40986 --The Dark Riders
     .goto 42,46.28,69.07
     .enterScenario 1026 >>|cRXP_WARN_Entra en la gesta |cRXP_PICK_Los jinetes oscuros|r|r
 step
@@ -2132,7 +2135,7 @@ step
     .complete 40987,1 --1/1 Take the Death Gate to the Frozen Throne
 step
     #arrowtext Haz clic en el\n|cRXP_PICK_Portal de Acherus|r
-    .isOnQuest 40987
+    .isOnQuest 40987 --The Call of Vengeance
     .goto 701,47.57,90.74
     .zone 648 >>Haz clic en la |cRXP_PICK_Puerta de Acherus|r después del "roleplay".
 step
@@ -2256,7 +2259,7 @@ step
     .accept 40715 >>Acepta la misión Un pacto necesario
     .target Duque Lankral
 step
-    .isQuestAvailable account,91955
+    .isQuestAvailable account,91955 --Just Between Us
     +Selecciona una de las siguientes guías por ahora:
     *|cRXP_WARN_IMPORTANTE: Selecciona el que ya tienes para obtener un 10% adicional de xp (solo una vez)|r
     *|cRXP_WARN_Podrás hacer las otras cadenas de misiones más adelante|r
@@ -2335,9 +2338,9 @@ step
     #arrowtext Habla con el\n|cRXP_FRIENDLY_Seguidor|r
     #label ArtifactWeaponHavocA
     .zoneskip 720,1
-    .isQuestTurnedIn 40814
-    .isQuestAvailable 44383
-    .isQuestAvailable 40819
+    .isQuestTurnedIn 40814 --The Power to Survive
+    .isQuestAvailable 44383 --Pursuit of Power
+    .isQuestAvailable 40819 --Making Arrangements
     .goto 720,58.62,57.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Seguidor|r.
     .accept 44383 >>Acepta la misión En busca de poder
@@ -2346,9 +2349,9 @@ step
 step
     #arrowtext Habla con el\n|cRXP_FRIENDLY_Seguidor|r
     .zoneskip 720,1
-    .isQuestTurnedIn 40814
-    .isQuestAvailable 44383
-    .isOnQuest 44383,44379
+    .isQuestTurnedIn 40814 --The Power to Survive
+    .isQuestAvailable 44383 --Pursuit of Power
+    .isOnQuest 44383,44379 --Pursuit of Power; In Pursuit of Power
     .goto 720,58.62,57.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Seguidor|r.
     .complete 44383,1 --1/1 Choose a second artifact to pursue
@@ -2357,9 +2360,9 @@ step
 step
     #arrowtext Habla con el\n|cRXP_FRIENDLY_Seguidor|r
     .zoneskip 720,1
-    .isQuestTurnedIn 40814
-    .isQuestAvailable 44383
-    .isQuestComplete 44383
+    .isQuestTurnedIn 40814 --The Power to Survive
+    .isQuestAvailable 44383 --Pursuit of Power
+    .isQuestComplete 44383 --Pursuit of Power
     .goto 720,58.62,57.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Seguidor|r.
     .turnin 44383 >>Entrega la misión En busca de poder
@@ -2368,7 +2371,7 @@ step
 step
     #arrowtext Habla con el\n|cRXP_FRIENDLY_Seguidor|r
     .zoneskip 627,1
-    .isQuestAvailable 40814
+    .isQuestAvailable 40814 --The Power to Survive
     .goto 627,74.97,48.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Seguidor|r.
     .target Kayn Furia del Sol
@@ -2377,8 +2380,8 @@ step
 step
     #arrowtext Habla con el\n|cRXP_FRIENDLY_Seguidor|r
     .zoneskip 627,1
-    .isQuestAvailable 40814
-    .isOnQuest 40814,40816
+    .isQuestAvailable 40814 --The Power to Survive
+    .isOnQuest 40814,40816 --The Power to Survive; The Power to Survive
     .goto 627,74.97,48.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Seguidor|r.
     .complete 40814,1 --1/1 Artifact weapon chosen
@@ -2387,8 +2390,8 @@ step
 step
     #arrowtext Habla con el\n|cRXP_FRIENDLY_Seguidor|r
     .zoneskip 627,1
-    .isQuestAvailable 40814
-    .isQuestComplete 40814
+    .isQuestAvailable 40814 --The Power to Survive
+    .isQuestComplete 40814 --The Power to Survive
     .goto 627,74.97,48.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Seguidor|r.
     .turnin 40814 >>Entrega la misión El poder para sobrevivir
@@ -2399,7 +2402,7 @@ step
     +|cRXP_WARN_Asegúrate de tener un arma usable equipada. Si no es así, equipa una hasta que consigas tu artefacto, o cambia a una especialización que ya tenga su artefacto|r.
 step
     #arrowtext Habla con el\n|cRXP_FRIENDLY_Seguidor|r
-    .isQuestAvailable 40249
+    .isQuestAvailable 40249 --Vengeance Will Be Ours
     .goto 627,74.97,48.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Seguidor|r.
     .target Kayn Furia del Sol
@@ -2407,14 +2410,14 @@ step
     .accept 40819 >>Acepta la misión Haciendo los preparativos
 step
     #arrowtext Habla con el\n|cRXP_FRIENDLY_Seguidor|r
-    .isQuestTurnedIn 40249
+    .isQuestTurnedIn 40249 --Vengeance Will Be Ours
     .goto 720,58.61,57.9
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Seguidor|r.
     .target Kayn Furia del Sol
     .target Altruis el Sufridor
     .accept 40819 >>Acepta la misión Haciendo los preparativos
 step
-    .isQuestTurnedIn 40249
+    .isQuestTurnedIn 40249 --Vengeance Will Be Ours
     #completewith next
     #label Making Arrangements
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Seguidor|r.
@@ -2422,13 +2425,13 @@ step
     .accept 39051 >>Acepta la misión Cueste lo que cueste
 step
     #arrowtext Haz clic en el\n|cRXP_PICK_Portal|r
-    .isQuestTurnedIn 40249
+    .isQuestTurnedIn 40249 --Vengeance Will Be Ours
     #completewith Making Arrangements
     .goto 720,59.31,91.85
     .zone 627 >>|TInterface/cursor/crosshair/interact.blp:20|tHaz clic en el |cRXP_PICK_Portal|r
 step
     #arrowtext Habla con el\n|cRXP_FRIENDLY_Seguidor|r
-    .isQuestTurnedIn 40249
+    .isQuestTurnedIn 40249 --Vengeance Will Be Ours
     #requires Making Arrangements
     .goto 627,65.63,67.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Seguidor|r.
@@ -2487,7 +2490,7 @@ step
     .timer 53,RP
     .target Illidari Fel Bat
 step
-    .isOnQuest 39247
+    .isOnQuest 39247 --The Hunt
     .enterScenario 900 >>|cRXP_WARN_Espera al Roleplay|r.
     .timer 8
 step
@@ -2562,7 +2565,7 @@ step
     .macro Leave Instance,236367 >> Sal de la Instancia
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Kor'vas Espinosangriento|r
-    .isQuestAvailable 40249
+    .isQuestAvailable 40249 --Vengeance Will Be Ours
     .goto 627,73.86,46.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Kor'vas Espinosangriento|r
     .turnin 39247 >>Entrega la misión La cacería
@@ -2570,7 +2573,7 @@ step
 step
     #completewith next
     #label Turn in The Hunt
-    .isQuestTurnedIn 40249
+    .isQuestTurnedIn 40249 --Vengeance Will Be Ours
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Kor'vas Espinosangriento|r
     .turnin 39247 >>Entrega la misión La cacería
     .target Kor'vas Espinosangriento
@@ -2578,13 +2581,13 @@ step
     #arrowtext Haz clic en el\n|cRXP_PICK_Portal|r
     #completewith Turn in The Hunt
     #label ArtifactWeaponHavocY
-    .isQuestTurnedIn 40249
+    .isQuestTurnedIn 40249 --Vengeance Will Be Ours
     .goto 627,98.13,69.47
     .zone 720 >>|TInterface/cursor/crosshair/interact.blp:20|tHaz clic en el |cRXP_PICK_Portal|r
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Kor'vas Espinosangriento|r
     #requires Turn in The Hunt
-    .isQuestTurnedIn 40249
+    .isQuestTurnedIn 40249 --Vengeance Will Be Ours
     #label ArtifactWeaponHavocZ
     .goto 720,59.31,57.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Kor'vas Espinosangriento|r
@@ -2650,9 +2653,9 @@ step
     #arrowtext Habla con el\n|cRXP_FRIENDLY_Seguidor|r
     #label ArtifactWeaponVengeanceA
     .zoneskip 720,1
-    .isQuestTurnedIn 40814
-    .isQuestAvailable 44383
-    .isQuestAvailable 40247
+    .isQuestTurnedIn 40814 --The Power to Survive
+    .isQuestAvailable 44383 --Pursuit of Power
+    .isQuestAvailable 40247 --Asking a Favor
     .goto 720,58.62,57.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Seguidor|r.
     .accept 44383>>Acepta la misión En busca de poder
@@ -2661,9 +2664,9 @@ step
 step
     #arrowtext Habla con el\n|cRXP_FRIENDLY_Seguidor|r
     .zoneskip 720,1
-    .isQuestTurnedIn 40814
-    .isQuestAvailable 44383
-    .isOnQuest 44383,44379
+    .isQuestTurnedIn 40814 --The Power to Survive
+    .isQuestAvailable 44383 --Pursuit of Power
+    .isOnQuest 44383,44379 --Pursuit of Power; In Pursuit of Power
     .goto 720,58.62,57.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Seguidor|r.
     .complete 44383,1 --1/1 Choose a second artifact to pursue
@@ -2672,9 +2675,9 @@ step
 step
     #arrowtext Habla con el\n|cRXP_FRIENDLY_Seguidor|r
     .zoneskip 720,1
-    .isQuestTurnedIn 40814
-    .isQuestAvailable 44383
-    .isQuestComplete 44383
+    .isQuestTurnedIn 40814 --The Power to Survive
+    .isQuestAvailable 44383 --Pursuit of Power
+    .isQuestComplete 44383 --Pursuit of Power
     .goto 720,58.62,57.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Seguidor|r.
     .turnin 44383 >>Entrega la misión En busca de poder
@@ -2683,7 +2686,7 @@ step
 step
     #arrowtext Habla con el\n|cRXP_FRIENDLY_Seguidor|r
     .zoneskip 627,1
-    .isQuestAvailable 40814
+    .isQuestAvailable 40814 --The Power to Survive
     .goto 627,74.97,48.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Seguidor|r.
     .target Kayn Furia del Sol
@@ -2692,8 +2695,8 @@ step
 step
     #arrowtext Habla con el\n|cRXP_FRIENDLY_Seguidor|r
     .zoneskip 627,1
-    .isQuestAvailable 40814
-    .isOnQuest 40814,40816
+    .isQuestAvailable 40814 --The Power to Survive
+    .isOnQuest 40814,40816 --The Power to Survive; The Power to Survive
     .goto 627,74.97,48.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Seguidor|r.
     .complete 40814,1 --1/1 Artifact weapon chosen
@@ -2702,8 +2705,8 @@ step
 step
     #arrowtext Habla con el\n|cRXP_FRIENDLY_Seguidor|r
     .zoneskip 627,1
-    .isQuestAvailable 40814
-    .isQuestComplete 40814
+    .isQuestAvailable 40814 --The Power to Survive
+    .isQuestComplete 40814 --The Power to Survive
     .goto 627,74.97,48.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Seguidor|r.
     .turnin 40814 >>Entrega la misión El poder para sobrevivir
@@ -2721,7 +2724,7 @@ step
     .target Altruis el Sufridor
 step
     #arrowtext Habla con el\n|cRXP_FRIENDLY_Archimago Khadgar|r
-    .isQuestAvailable 39247
+    .isQuestAvailable 39247 --The Hunt
     .goto 627,28.53,48.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Archimago Khadgar|r
     .turnin 40247 >>Entrega la misión Pedir un favor
@@ -2729,7 +2732,7 @@ step
     .timer 57.5,RP
     .target Archimago Khadgar
 step
-    .isQuestTurnedIn 39247
+    .isQuestTurnedIn 39247 --The Hunt
     #completewith next
     #label Turn in Asking a Favor
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Archimago Khadgar|r
@@ -2739,13 +2742,13 @@ step
     .target Archimago Khadgar
 step
     #arrowtext Haz clic en el\n|cRXP_PICK_Portal|r
-    .isQuestTurnedIn 39247
+    .isQuestTurnedIn 39247 --The Hunt
     #completewith Turn in Asking a Favor
     .goto 720,59.25,91.82
     .zone 627 >>|TInterface/cursor/crosshair/interact.blp:20|tHaz clic en el |cRXP_PICK_Portal|r
 step
     #arrowtext Habla con el\n|cRXP_FRIENDLY_Archimago Khadgar|r
-    .isQuestTurnedIn 39247
+    .isQuestTurnedIn 39247 --The Hunt
     #requires Turn in Asking a Favor
     .goto 627,28.53,48.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Archimago Khadgar|r
@@ -2821,12 +2824,12 @@ step
     >>|cRXP_WARN_Espera al Roleplay|r.
     .complete 40249,1 --1/1 Fly to the Broken Shore
 step
-    .isOnQuest 40249
+    .isOnQuest 40249 --Vengeance Will Be Ours
     .enterScenario 961 >>|cRXP_WARN_Espera al Roleplay|r.
 step
     #arrowtext Haz clic en\n|cRXP_PICK_Allari la Comealmas|r
     .goto 676,15.09,51.77
-    .isOnQuest 40249
+    .isOnQuest 40249 --Vengeance Will Be Ours
     >>|TInterface/cursor/crosshair/interact.blp:20|tHaz clic en |cRXP_PICK_Allari la Comealmas|r
     .scenario 1939,1 --Free Allari the Souleater.
     .target Allari la Comealmas
@@ -2901,7 +2904,7 @@ step
     .macro Leave Instance,236367 >> Sal de la Instancia
     .complete 40249,3 --1/1 Return to Dalaran
 step
-    .isQuestAvailable 39247
+    .isQuestAvailable 39247 --The Hunt
     #completewith next
     #label Vengeance Will Be Ours
     .goto 627,73.83,46.05
@@ -2910,7 +2913,7 @@ step
     .target Kor'vas Espinosangriento
 step
     #arrowtext Haz clic en el Portal
-    .isQuestAvailable 39247
+    .isQuestAvailable 39247 --The Hunt
     #completewith Vengeance Will Be Ours
     #label ArtifactWeaponVengeanceY
     .goto 720,59.25,91.82
@@ -2918,7 +2921,7 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Kor'vas Espinosangriento|r
     #label ArtifactWeaponVengeanceZ
-    .isQuestAvailable 39247
+    .isQuestAvailable 39247 --The Hunt
     #requires Vengeance Will Be Ours
     .goto 627,73.83,46.05
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Kor'vas Espinosangriento|r
@@ -3023,14 +3026,14 @@ step
     #include ab) Order Hall Demon Hunter Part 1@Future of The Fel Hammer-Call of the Illidari
 step
     #arrowtext Habla con el\n|cRXP_FRIENDLY_Seguidor|r
-    .isQuestAvailable 40814
+    .isQuestAvailable 40814 --The Power to Survive
     .goto 627,74.97,48.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Seguidor|r.
     .target Kayn Furia del Sol
     .target Altruis el Sufridor
     .accept 40814 >>Acepta la misión El poder para sobrevivir
 step
-    .isQuestAvailable 40814
+    .isQuestAvailable 40814 --The Power to Survive
     +Selecciona una de las siguientes guías por ahora:
     *|cRXP_WARN_Podrás hacer las otras cadenas de misiones más adelante|r
     *|cFFFF0000No puedes progresar si no seleccionas uno|r.
@@ -3059,33 +3062,33 @@ step
     #completewith next
     #label UseDreamwalkA
     .zoneskip 715
-    .isQuestAvailable 40646
+    .isQuestAvailable 40646 --Weapons of Legend
     .cast 193753 >>Usa el |T135763:0|t[Caminasueños]
     .usespell 193753
 step
     #hidewindow
     #completewith UseDreamwalkA
-    .isQuestAvailable 40646
+    .isQuestAvailable 40646 --Weapons of Legend
     .zone 747 >>Sigue la Flecha
 step
     #arrowtext Atraviesa el portal
     .zoneskip 715,1
-    .isQuestAvailable 40646
+    .isQuestAvailable 40646 --Weapons of Legend
     .goto 715,45.60,23.46
     .zone 747 >>Atraviesa el portal
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Rensar Granzuña|r
-    .isQuestTurnedIn 44431
-    .isQuestAvailable 44443
-    .isQuestAvailable 40783
+    .isQuestTurnedIn 44431 --More Weapons of Old
+    .isQuestAvailable 44443 --Weapons of the Ancients
+    .isQuestAvailable 40783 --The Scythe of Elune
     .goto 747,44.66,51.96
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Rensar Granzuña|r.
     .accept 44443 >>Acepta la misión Armas de los ancestros
     .target Rensar Granzuña
 step
-    .isQuestTurnedIn 44431
-    .isQuestAvailable 44443
-    .isOnQuest 44443
+    .isQuestTurnedIn 44431 --More Weapons of Old
+    .isQuestAvailable 44443 --Weapons of the Ancients
+    .isOnQuest 44443 --Weapons of the Ancients
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Rensar Granzuña|r.
     *|cRXP_WARN_Esto elegirá automáticamente el artefacto de Equilibrio|r
     .complete 44443,1 --1/1 Choose a fourth artifact to pursue
@@ -3094,26 +3097,26 @@ step
     .skipgossipid 45117
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Rensar Granzuña|r
-    .isQuestTurnedIn 44431
-    .isQuestAvailable 44443
-    .isOnQuest 44443
+    .isQuestTurnedIn 44431 --More Weapons of Old
+    .isQuestAvailable 44443 --Weapons of the Ancients
+    .isOnQuest 44443 --Weapons of the Ancients
     .goto 747,44.66,51.96
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Rensar Granzuña|r.
     .turnin 44443 >>Entrega la misión Armas de los ancestros
     .target Rensar Granzuña
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Rensar Granzuña|r
-    .isQuestTurnedIn 43980
-    .isQuestAvailable 44431
+    .isQuestTurnedIn 43980 --Another Weapon of Old
+    .isQuestAvailable 44431 --More Weapons of Old
     .goto 747,44.67,51.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Rensar Granzuña|r.
     .accept 44431 >>Acepta la misión Más armas antiguas
     .target Rensar Granzuña
 step
-    .isQuestTurnedIn 43980
-    .isQuestAvailable 44431
-    .isQuestAvailable 40783
-    .isOnQuest 44431
+    .isQuestTurnedIn 43980 --Another Weapon of Old
+    .isQuestAvailable 44431 --More Weapons of Old
+    .isQuestAvailable 40783 --The Scythe of Elune
+    .isOnQuest 44431 --More Weapons of Old
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Rensar Granzuña|r.
     *|cRXP_WARN_Esto elegirá automáticamente el artefacto de Equilibrio|r
     .complete 44431,1 --1/1 Choose a third artifact to pursue
@@ -3122,26 +3125,26 @@ step
     .skipgossipid 45117
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Rensar Granzuña|r
-    .isQuestTurnedIn 43980
-    .isQuestAvailable 44431
-    .isOnQuest 44431
+    .isQuestTurnedIn 43980 --Another Weapon of Old
+    .isQuestAvailable 44431 --More Weapons of Old
+    .isOnQuest 44431 --More Weapons of Old
     .goto 747,44.67,51.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Rensar Granzuña|r.
     .turnin 44431 >>Entrega la misión Más armas antiguas
     .target Rensar Granzuña
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Rensar Granzuña|r
-    .isQuestTurnedIn 40646
-    .isQuestAvailable 43980
+    .isQuestTurnedIn 40646 --Weapons of Legend
+    .isQuestAvailable 43980 --Another Weapon of Old
     .goto 747,44.67,51.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Rensar Granzuña|r.
     .accept 43980 >>Acepta la misión Otra arma de tiempos pasados
     .target Rensar Granzuña
 step
-    .isQuestTurnedIn 40646
-    .isQuestAvailable 43980
-    .isQuestAvailable 40783
-    .isOnQuest 43980
+    .isQuestTurnedIn 40646 --Weapons of Legend
+    .isQuestAvailable 43980 --Another Weapon of Old
+    .isQuestAvailable 40783 --The Scythe of Elune
+    .isOnQuest 43980 --Another Weapon of Old
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Rensar Granzuña|r.
     *|cRXP_WARN_Esto elegirá automáticamente el artefacto de Equilibrio|r
     .complete 43980,1 --1/1 Choose a second artifact to pursue
@@ -3150,23 +3153,23 @@ step
     .skipgossipid 45119
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Rensar Granzuña|r
-    .isQuestTurnedIn 40646
-    .isQuestAvailable 43980
-    .isOnQuest 43980
+    .isQuestTurnedIn 40646 --Weapons of Legend
+    .isQuestAvailable 43980 --Another Weapon of Old
+    .isOnQuest 43980 --Another Weapon of Old
     .goto 747,44.67,51.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Rensar Granzuña|r
     .turnin 43980 >>Entrega la misión Otra arma de tiempos pasados
     .target Rensar Granzuña
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Rensar Granzuña|r
-    .isQuestAvailable 40646
+    .isQuestAvailable 40646 --Weapons of Legend
     .goto 747,44.50,51.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Rensar Granzuña|r
     .accept 40646 >>Acepta la misión Armas legendarias
     .target Rensar Granzuña
 step
-    .isQuestAvailable 40646
-    .isOnQuest 40646
+    .isQuestAvailable 40646 --Weapons of Legend
+    .isOnQuest 40646 --Weapons of Legend
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Rensar Granzuña|r.
     *|cRXP_WARN_Esto elegirá automáticamente el artefacto de Equilibrio|r
     .complete 40646,1 --1/1 Artifact weapon chosen
@@ -3175,8 +3178,8 @@ step
     .skipgossipid 45120
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Rensar Granzuña|r
-    .isQuestAvailable 40646
-    .isOnQuest 40646
+    .isQuestAvailable 40646 --Weapons of Legend
+    .isOnQuest 40646 --Weapons of Legend
     .goto 747,44.50,51.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Rensar Granzuña|r.
     .turnin 40646 >>Entrega la misión Armas legendarias
@@ -3197,14 +3200,14 @@ step
     .complete 40783,1 --1/1 Travel through the Dreamway to Duskwood (Optional)
 step
     .zoneskip 747,1
-    .isOnQuest 41782
+    .isOnQuest 41782 --To The Hills
     #completewith ToDuskwoodA
     #label ToDuskwoodB
     .goto 747,55.76,21.99
     .zone 715 >>Atraviesa el portal hacia la Senda del Sueño Esmeralda
 step
     .zoneskip 715,1
-    .isOnQuest 41782
+    .isOnQuest 41782 --To The Hills
     #requires ToDuskwoodB
     #completewith ToDuskwoodA
     #label ToDuskwoodC
@@ -3212,7 +3215,7 @@ step
     .usespell 193753
 step
     #arrowtext Entra en el portal a Bosque del Ocaso
-    .isOnQuest 41782
+    .isOnQuest 41782 --To The Hills
     #requires ToDuskwoodC
     #completewith ToDuskwoodA
     #label ToDuskwoodD
@@ -3269,30 +3272,30 @@ step
     .target Revil Kost
 step
     #arrowtext |cFFFCDC00Quédate cerca de Ariden|r
-    .isOnQuest 40834
+    .isOnQuest 40834 --Following the Curse
     .goto 47,77.37,35.12
     .countdown 25 >>Mata a los |cRXP_ENEMY_Jinetes oscuros|r
 step
     #title |cFFFCDC00Quédate cerca de Ariden|r
-    .isOnQuest 40834
+    .isOnQuest 40834 --Following the Curse
     .goto 47,80.86,33.00,25,0
     .goto 47,84.33,36.29,20,0
     .goto 47,83.83,40.27,15,0
     .goto 47,85.55,40.69,15 >>Escolta al |cRXP_FRIENDLY_Revil Kost|r
 step
     #arrowtext Mata a los\n|cRXP_ENEMY_Jinetes oscuros|r
-    .isOnQuest 40834
+    .isOnQuest 40834 --Following the Curse
     .goto 47,85.55,40.69
     .countdown 20 >>Mata a los |cRXP_ENEMY_Jinetes oscuros|r
 step
     #title |cFFFCDC00Quédate cerca de Ariden|r
-    .isOnQuest 40834
+    .isOnQuest 40834 --Following the Curse
     .goto 42,36.64,35.55,25,0
     .goto 42,39.13,33.72,25,0
     .goto 42,44.37,34.56,15 >>Escolta al |cRXP_FRIENDLY_Revil Kost|r
 step
     #arrowtext Mata a los\n|cRXP_ENEMY_Jinetes oscuros|r
-    .isOnQuest 40834
+    .isOnQuest 40834 --Following the Curse
     .goto 42,44.33,34.54
     .countdown 20 >>Mata a los |cRXP_ENEMY_Jinetes oscuros|r
 step
@@ -3355,7 +3358,7 @@ step
     .target Revil Kost
 step
     #arrowtext Sigue la flecha
-    .isOnQuest 40838
+    .isOnQuest 40838 --The Dark Riders
     .goto 42,46.28,69.07
     .enterScenario 1014 >>|cRXP_WARN_Sigue la Flecha|r
 step
@@ -3476,33 +3479,33 @@ step
     #completewith next
     #label UseDreamwalkA
     .zoneskip 715
-    .isQuestAvailable 40646
+    .isQuestAvailable 40646 --Weapons of Legend
     .cast 193753 >>Usa el |T135763:0|t[Caminasueños]
     .usespell 193753
 step
     #hidewindow
     #completewith UseDreamwalkA
-    .isQuestAvailable 40646
+    .isQuestAvailable 40646 --Weapons of Legend
     .zone 747 >>Sigue la Flecha
 step
     #arrowtext Atraviesa el portal
     .zoneskip 715,1
-    .isQuestAvailable 40646
+    .isQuestAvailable 40646 --Weapons of Legend
     .goto 715,45.60,23.46
     .zone 747 >>Atraviesa el portal
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Rensar Granzuña|r
-    .isQuestTurnedIn 44431
-    .isQuestAvailable 44443
-    .isQuestAvailable 42428
+    .isQuestTurnedIn 44431 --More Weapons of Old
+    .isQuestAvailable 44443 --Weapons of the Ancients
+    .isQuestAvailable 42428 --The Shrine of Ashamane
     .goto 747,44.66,51.96
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Rensar Granzuña|r.
     .accept 44443 >>Acepta la misión Armas de los ancestros
     .target Rensar Granzuña
 step
-    .isQuestTurnedIn 44431
-    .isQuestAvailable 44443
-    .isOnQuest 44443
+    .isQuestTurnedIn 44431 --More Weapons of Old
+    .isQuestAvailable 44443 --Weapons of the Ancients
+    .isOnQuest 44443 --Weapons of the Ancients
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Rensar Granzuña|r.
     *|cRXP_WARN_Esto elegirá automáticamente el artefacto de Feral|r
     .complete 44443,1 --1/1 Choose a fourth artifact to pursue
@@ -3511,26 +3514,26 @@ step
     .skipgossipid 45117
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Rensar Granzuña|r
-    .isQuestTurnedIn 44431
-    .isQuestAvailable 44443
-    .isOnQuest 44443
+    .isQuestTurnedIn 44431 --More Weapons of Old
+    .isQuestAvailable 44443 --Weapons of the Ancients
+    .isOnQuest 44443 --Weapons of the Ancients
     .goto 747,44.66,51.96
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Rensar Granzuña|r.
     .turnin 44443 >>Entrega la misión Armas de los ancestros
     .target Rensar Granzuña
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Rensar Granzuña|r
-    .isQuestTurnedIn 43980
-    .isQuestAvailable 44431
-    .isQuestAvailable 42428
+    .isQuestTurnedIn 43980 --Another Weapon of Old
+    .isQuestAvailable 44431 --More Weapons of Old
+    .isQuestAvailable 42428 --The Shrine of Ashamane
     .goto 747,44.67,51.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Rensar Granzuña|r.
     .accept 44431 >>Acepta la misión Más armas antiguas
     .target Rensar Granzuña
 step
-    .isQuestTurnedIn 43980
-    .isQuestAvailable 44431
-    .isOnQuest 44431
+    .isQuestTurnedIn 43980 --Another Weapon of Old
+    .isQuestAvailable 44431 --More Weapons of Old
+    .isOnQuest 44431 --More Weapons of Old
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Rensar Granzuña|r.
     *|cRXP_WARN_Esto elegirá automáticamente el artefacto de Feral|r
     .complete 44431,1 --1/1 Choose a third artifact to pursue
@@ -3539,26 +3542,26 @@ step
     .skipgossipid 45117
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Rensar Granzuña|r
-    .isQuestTurnedIn 43980
-    .isQuestAvailable 44431
-    .isOnQuest 44431
+    .isQuestTurnedIn 43980 --Another Weapon of Old
+    .isQuestAvailable 44431 --More Weapons of Old
+    .isOnQuest 44431 --More Weapons of Old
     .goto 747,44.67,51.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Rensar Granzuña|r.
     .turnin 44431 >>Entrega la misión Más armas antiguas
     .target Rensar Granzuña
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Rensar Granzuña|r
-    .isQuestTurnedIn 40646
-    .isQuestAvailable 43980
-    .isQuestAvailable 42428
+    .isQuestTurnedIn 40646 --Weapons of Legend
+    .isQuestAvailable 43980 --Another Weapon of Old
+    .isQuestAvailable 42428 --The Shrine of Ashamane
     .goto 747,44.67,51.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Rensar Granzuña|r.
     .accept 43980 >>Acepta la misión Otra arma de tiempos pasados
     .target Rensar Granzuña
 step
-    .isQuestTurnedIn 40646
-    .isQuestAvailable 43980
-    .isOnQuest 43980
+    .isQuestTurnedIn 40646 --Weapons of Legend
+    .isQuestAvailable 43980 --Another Weapon of Old
+    .isOnQuest 43980 --Another Weapon of Old
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Rensar Granzuña|r.
     *|cRXP_WARN_Esto elegirá automáticamente el artefacto de Feral|r
     .complete 43980,1 --1/1 Choose a second artifact to pursue
@@ -3567,9 +3570,9 @@ step
     .skipgossipid 45119
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Rensar Granzuña|r
-    .isQuestTurnedIn 40646
-    .isQuestAvailable 43980
-    .isOnQuest 43980
+    .isQuestTurnedIn 40646 --Weapons of Legend
+    .isQuestAvailable 43980 --Another Weapon of Old
+    .isOnQuest 43980 --Another Weapon of Old
     .goto 747,44.67,51.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Rensar Granzuña|r
     .turnin 43980 >>Entrega la misión Otra arma de tiempos pasados
@@ -3577,14 +3580,14 @@ step
     .target Rensar Granzuña
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Rensar Granzuña|r
-    .isQuestAvailable 40646
+    .isQuestAvailable 40646 --Weapons of Legend
     .goto 747,44.50,51.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Rensar Granzuña|r
     .accept 40646 >>Acepta la misión Armas legendarias
     .target Rensar Granzuña
 step
-    .isQuestAvailable 40646
-    .isOnQuest 40646
+    .isQuestAvailable 40646 --Weapons of Legend
+    .isOnQuest 40646 --Weapons of Legend
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Rensar Granzuña|r.
     *|cRXP_WARN_Esto elegirá automáticamente el artefacto de Feral|r
     .complete 40646,1 --1/1 Artifact weapon chosen
@@ -3593,8 +3596,8 @@ step
     .skipgossipid 45120
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Rensar Granzuña|r
-    .isQuestAvailable 40646
-    .isOnQuest 40646
+    .isQuestAvailable 40646 --Weapons of Legend
+    .isOnQuest 40646 --Weapons of Legend
     .goto 747,44.50,51.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Rensar Granzuña|r.
     .turnin 40646 >>Entrega la misión Armas legendarias
@@ -3692,7 +3695,7 @@ step
     .target Ebonfang
 step
     #arrowtext Entra en la gesta |cRXP_PICK_Los Colmillos de Ashamane|r
-    .isOnQuest 42430
+    .isOnQuest 42430 --The Fangs of Ashamane
     .goto 641,73.75,38.40
     .enterScenario 1108 >>Entra en la gesta |cRXP_PICK_Los Colmillos de Ashamane|r.
 step
@@ -3708,7 +3711,7 @@ step
     .scenario 2525,1 --Doorway Opened
 step
     .isInScenario 1108
-    .isOnQuest 42430
+    .isOnQuest 42430 --The Fangs of Ashamane
     #completewith DoorwayOpenedA
     #label DoorSwitchA
     .goto 680,21.88,37.24
@@ -3779,8 +3782,8 @@ step
     .scenario 2547,1 --Retrieve the Fangs of Ashamane
 step
     #arrowtext Haz clic en el\n|cRXP_FRIENDLY_Colmillo de Ébano|r
-    .isOnQuest 42430
-    .isQuestNotComplete 42430
+    .isOnQuest 42430 --The Fangs of Ashamane
+    .isQuestNotComplete 42430 --The Fangs of Ashamane
     .isInScenario 1108
     .goto 693,54.76,19.69
     >>|TInterface/cursor/crosshair/interact.blp:20|tHaz clic en el |cRXP_FRIENDLY_Colmillo de Ébano|r.
@@ -3810,33 +3813,33 @@ step
     #completewith next
     #label UseDreamwalkA
     .zoneskip 715
-    .isQuestAvailable 40646
+    .isQuestAvailable 40646 --Weapons of Legend
     .cast 193753 >>Usa el |T135763:0|t[Caminasueños]
     .usespell 193753
 step
     #hidewindow
     #completewith UseDreamwalkA
-    .isQuestAvailable 40646
+    .isQuestAvailable 40646 --Weapons of Legend
     .zone 747 >>Sigue la Flecha
 step
     #arrowtext Atraviesa el portal
     .zoneskip 715,1
-    .isQuestAvailable 40646
+    .isQuestAvailable 40646 --Weapons of Legend
     .goto 715,45.60,23.46
     .zone 747 >>Atraviesa el portal
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Rensar Granzuña|r
-    .isQuestTurnedIn 44431
-    .isQuestAvailable 44443
-    .isQuestAvailable 41468
+    .isQuestTurnedIn 44431 --More Weapons of Old
+    .isQuestAvailable 44443 --Weapons of the Ancients
+    .isQuestAvailable 41468 --Mistress of the Claw
     .goto 747,44.66,51.96
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Rensar Granzuña|r.
     .accept 44443 >>Acepta la misión Armas de los ancestros
     .target Rensar Granzuña
 step
-    .isQuestTurnedIn 44431
-    .isQuestAvailable 44443
-    .isOnQuest 44443
+    .isQuestTurnedIn 44431 --More Weapons of Old
+    .isQuestAvailable 44443 --Weapons of the Ancients
+    .isOnQuest 44443 --Weapons of the Ancients
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Rensar Granzuña|r.
     *|cRXP_WARN_Esto elegirá automáticamente el artefacto de Guardián|r
     .complete 44443,1 --1/1 Choose a fourth artifact to pursue
@@ -3845,26 +3848,26 @@ step
     .skipgossipid 45117
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Rensar Granzuña|r
-    .isQuestTurnedIn 44431
-    .isQuestAvailable 44443
-    .isOnQuest 44443
+    .isQuestTurnedIn 44431 --More Weapons of Old
+    .isQuestAvailable 44443 --Weapons of the Ancients
+    .isOnQuest 44443 --Weapons of the Ancients
     .goto 747,44.66,51.96
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Rensar Granzuña|r.
     .turnin 44443 >>Entrega la misión Armas de los ancestros
     .target Rensar Granzuña
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Rensar Granzuña|r
-    .isQuestTurnedIn 43980
-    .isQuestAvailable 44431
-    .isQuestAvailable 41468
+    .isQuestTurnedIn 43980 --Another Weapon of Old
+    .isQuestAvailable 44431 --More Weapons of Old
+    .isQuestAvailable 41468 --Mistress of the Claw
     .goto 747,44.67,51.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Rensar Granzuña|r.
     .accept 44431 >>Acepta la misión Más armas antiguas
     .target Rensar Granzuña
 step
-    .isQuestTurnedIn 43980
-    .isQuestAvailable 44431
-    .isOnQuest 44431
+    .isQuestTurnedIn 43980 --Another Weapon of Old
+    .isQuestAvailable 44431 --More Weapons of Old
+    .isOnQuest 44431 --More Weapons of Old
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Rensar Granzuña|r.
     *|cRXP_WARN_Esto elegirá automáticamente el artefacto de Guardián|r
     .complete 44431,1 --1/1 Choose a third artifact to pursue
@@ -3873,26 +3876,26 @@ step
     .skipgossipid 45117
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Rensar Granzuña|r
-    .isQuestTurnedIn 43980
-    .isQuestAvailable 44431
-    .isOnQuest 44431
+    .isQuestTurnedIn 43980 --Another Weapon of Old
+    .isQuestAvailable 44431 --More Weapons of Old
+    .isOnQuest 44431 --More Weapons of Old
     .goto 747,44.67,51.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Rensar Granzuña|r.
     .turnin 44431 >>Entrega la misión Más armas antiguas
     .target Rensar Granzuña
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Rensar Granzuña|r
-    .isQuestTurnedIn 40646
-    .isQuestAvailable 43980
-    .isQuestAvailable 41468
+    .isQuestTurnedIn 40646 --Weapons of Legend
+    .isQuestAvailable 43980 --Another Weapon of Old
+    .isQuestAvailable 41468 --Mistress of the Claw
     .goto 747,44.67,51.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Rensar Granzuña|r.
     .accept 43980 >>Acepta la misión Otra arma de tiempos pasados
     .target Rensar Granzuña
 step
-    .isQuestTurnedIn 40646
-    .isQuestAvailable 43980
-    .isOnQuest 43980
+    .isQuestTurnedIn 40646 --Weapons of Legend
+    .isQuestAvailable 43980 --Another Weapon of Old
+    .isOnQuest 43980 --Another Weapon of Old
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Rensar Granzuña|r.
     *|cRXP_WARN_Esto elegirá automáticamente el artefacto de Guardián|r
     .complete 43980,1 --1/1 Choose a second artifact to pursue
@@ -3901,23 +3904,23 @@ step
     .skipgossipid 45119
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Rensar Granzuña|r
-    .isQuestTurnedIn 40646
-    .isQuestAvailable 43980
-    .isOnQuest 43980
+    .isQuestTurnedIn 40646 --Weapons of Legend
+    .isQuestAvailable 43980 --Another Weapon of Old
+    .isOnQuest 43980 --Another Weapon of Old
     .goto 747,44.67,51.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Rensar Granzuña|r
     .turnin 43980 >>Entrega la misión Otra arma de tiempos pasados
     .target Rensar Granzuña
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Rensar Granzuña|r
-    .isQuestAvailable 40646
+    .isQuestAvailable 40646 --Weapons of Legend
     .goto 747,44.50,51.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Rensar Granzuña|r
     .accept 40646 >>Acepta la misión Armas legendarias
     .target Rensar Granzuña
 step
-    .isQuestAvailable 40646
-    .isOnQuest 40646
+    .isQuestAvailable 40646 --Weapons of Legend
+    .isOnQuest 40646 --Weapons of Legend
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Rensar Granzuña|r.
     *|cRXP_WARN_Esto elegirá automáticamente el artefacto de Guardián|r
     .complete 40646,1 --1/1 Artifact weapon chosen
@@ -3926,8 +3929,8 @@ step
     .skipgossipid 45120
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Rensar Granzuña|r
-    .isQuestAvailable 40646
-    .isOnQuest 40646
+    .isQuestAvailable 40646 --Weapons of Legend
+    .isOnQuest 40646 --Weapons of Legend
     .goto 747,44.50,51.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Rensar Granzuña|r.
     .turnin 40646 >>Entrega la misión Armas legendarias
@@ -3991,14 +3994,14 @@ step
     .complete 41782,2 --1/1 Travel through the Dreamway to Grizzly Hills (Optional)
 step
     .zoneskip 747,1
-    .isOnQuest 41782
+    .isOnQuest 41782 --To The Hills
     #completewith ToTheHillsB
     #label ToTheHillsC
     .goto 747,55.76,21.99
     .zone 715 >>Atraviesa el portal hacia la Senda del Sueño Esmeralda
 step
     .zoneskip 715,1
-    .isOnQuest 41782
+    .isOnQuest 41782 --To The Hills
     #requires ToTheHillsC
     #completewith ToTheHillsB
     #label ToTheHillsD
@@ -4006,7 +4009,7 @@ step
     .usespell 193753
 step
     #arrowtext Atraviesa el portal hacia Colinas Pardas
-    .isOnQuest 41782
+    .isOnQuest 41782 --To The Hills
     #requires ToTheHillsD
     #completewith ToTheHillsB
     #label ToTheHillsE
@@ -4104,7 +4107,7 @@ step
     .use 136414
 step
     #arrowtext Entra a la gesta de la |cRXP_PICK_Guarida de Ursoc|r
-    .isOnQuest 40647
+    .isOnQuest 40647 --When Dreams Become Nightmares
     .goto 116,51.25,36.85
     .enterScenario 990 >>Entra a la gesta de la |cRXP_PICK_Guarida de Ursoc|r.
 step
@@ -4169,7 +4172,7 @@ step
     .scenario 2041,1 --Obtain the Claws of Ursoc
     .complete 40647,3 --1/1 Obtain the Claws of Ursoc
 step
-    .isOnQuest 40647
+    .isOnQuest 40647 --When Dreams Become Nightmares
     .zoneskip 757,1
     .zone 116 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Lea Zarpapetra|r
     .skipgossipid 45251
@@ -4183,13 +4186,13 @@ step
     .target Lea Stonepaw
 step
     .zoneskip 715
-    .isOnQuest 41918
+    .isOnQuest 41918 --The Dreamer Returns
     .zone 715 >>Usa el |T135763:0|t[Caminasueños]
     .usespell 193753
 step
     #arrowtext Sigue la flecha a través del portal
     .zoneskip 715,1
-    .isOnQuest 41918
+    .isOnQuest 41918 --The Dreamer Returns
     .goto 715,45.60,23.46
     .zone 747 >>|cRXP_WARN_Sigue la flecha a través del portal|r
 step
@@ -4216,33 +4219,33 @@ step
     #completewith next
     #label UseDreamwalkA
     .zoneskip 715
-    .isQuestAvailable 40646
+    .isQuestAvailable 40646 --Weapons of Legend
     .cast 193753 >>Usa el |T135763:0|t[Caminasueños]
     .usespell 193753
 step
     #hidewindow
     #completewith UseDreamwalkA
-    .isQuestAvailable 40646
+    .isQuestAvailable 40646 --Weapons of Legend
     .zone 747 >>Sigue la Flecha
 step
     #arrowtext Atraviesa el portal
     .zoneskip 715,1
-    .isQuestAvailable 40646
+    .isQuestAvailable 40646 --Weapons of Legend
     .goto 715,45.60,23.46
     .zone 747 >>Atraviesa el portal
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Rensar Granzuña|r
-    .isQuestTurnedIn 44431
-    .isQuestAvailable 44443
-    .isQuestAvailable 40649
+    .isQuestTurnedIn 44431 --More Weapons of Old
+    .isQuestAvailable 44443 --Weapons of the Ancients
+    .isQuestAvailable 40649 --Meet with Mylune
     .goto 747,44.66,51.96
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Rensar Granzuña|r.
     .accept 44443 >>Acepta la misión Armas de los ancestros
     .target Rensar Granzuña
 step
-    .isQuestTurnedIn 44431
-    .isQuestAvailable 44443
-    .isOnQuest 44443
+    .isQuestTurnedIn 44431 --More Weapons of Old
+    .isQuestAvailable 44443 --Weapons of the Ancients
+    .isOnQuest 44443 --Weapons of the Ancients
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Rensar Granzuña|r.
     *|cRXP_WARN_Esto elegirá automáticamente el artefacto de Restauración|r
     .complete 44443,1 --1/1 Choose a fourth artifact to pursue
@@ -4251,26 +4254,26 @@ step
     .skipgossipid 45117
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Rensar Granzuña|r
-    .isQuestTurnedIn 44431
-    .isQuestAvailable 44443
-    .isOnQuest 44443
+    .isQuestTurnedIn 44431 --More Weapons of Old
+    .isQuestAvailable 44443 --Weapons of the Ancients
+    .isOnQuest 44443 --Weapons of the Ancients
     .goto 747,44.66,51.96
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Rensar Granzuña|r.
     .turnin 44443 >>Entrega la misión Armas de los ancestros
     .target Rensar Granzuña
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Rensar Granzuña|r
-    .isQuestTurnedIn 43980
-    .isQuestAvailable 44431
-    .isQuestAvailable 40649
+    .isQuestTurnedIn 43980 --Another Weapon of Old
+    .isQuestAvailable 44431 --More Weapons of Old
+    .isQuestAvailable 40649 --Meet with Mylune
     .goto 747,44.67,51.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Rensar Granzuña|r.
     .accept 44431 >>Acepta la misión Más armas antiguas
     .target Rensar Granzuña
 step
-    .isQuestTurnedIn 43980
-    .isQuestAvailable 44431
-    .isOnQuest 44431
+    .isQuestTurnedIn 43980 --Another Weapon of Old
+    .isQuestAvailable 44431 --More Weapons of Old
+    .isOnQuest 44431 --More Weapons of Old
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Rensar Granzuña|r.
     *|cRXP_WARN_Esto elegirá automáticamente el artefacto de Restauración|r
     .complete 44431,1 --1/1 Choose a third artifact to pursue
@@ -4279,26 +4282,26 @@ step
     .skipgossipid 45117
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Rensar Granzuña|r
-    .isQuestTurnedIn 43980
-    .isQuestAvailable 44431
-    .isOnQuest 44431
+    .isQuestTurnedIn 43980 --Another Weapon of Old
+    .isQuestAvailable 44431 --More Weapons of Old
+    .isOnQuest 44431 --More Weapons of Old
     .goto 747,44.67,51.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Rensar Granzuña|r.
     .turnin 44431 >>Entrega la misión Más armas antiguas
     .target Rensar Granzuña
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Rensar Granzuña|r
-    .isQuestTurnedIn 40646
-    .isQuestAvailable 43980
-    .isQuestAvailable 40649
+    .isQuestTurnedIn 40646 --Weapons of Legend
+    .isQuestAvailable 43980 --Another Weapon of Old
+    .isQuestAvailable 40649 --Meet with Mylune
     .goto 747,44.67,51.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Rensar Granzuña|r.
     .accept 43980 >>Acepta la misión Otra arma de tiempos pasados
     .target Rensar Granzuña
 step
-    .isQuestTurnedIn 40646
-    .isQuestAvailable 43980
-    .isOnQuest 43980
+    .isQuestTurnedIn 40646 --Weapons of Legend
+    .isQuestAvailable 43980 --Another Weapon of Old
+    .isOnQuest 43980 --Another Weapon of Old
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Rensar Granzuña|r.
     *|cRXP_WARN_Esto elegirá automáticamente el artefacto de Restauración|r
     .complete 43980,1 --1/1 Choose a second artifact to pursue
@@ -4307,23 +4310,23 @@ step
     .skipgossipid 45119
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Rensar Granzuña|r
-    .isQuestTurnedIn 40646
-    .isQuestAvailable 43980
-    .isOnQuest 43980
+    .isQuestTurnedIn 40646 --Weapons of Legend
+    .isQuestAvailable 43980 --Another Weapon of Old
+    .isOnQuest 43980 --Another Weapon of Old
     .goto 747,44.67,51.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Rensar Granzuña|r
     .turnin 43980 >>Entrega la misión Otra arma de tiempos pasados
     .target Rensar Granzuña
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Rensar Granzuña|r
-    .isQuestAvailable 40646
+    .isQuestAvailable 40646 --Weapons of Legend
     .goto 747,44.50,51.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Rensar Granzuña|r
     .accept 40646 >>Acepta la misión Armas legendarias
     .target Rensar Granzuña
 step
-    .isQuestAvailable 40646
-    .isOnQuest 40646
+    .isQuestAvailable 40646 --Weapons of Legend
+    .isOnQuest 40646 --Weapons of Legend
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Rensar Granzuña|r.
     *|cRXP_WARN_Esto elegirá automáticamente el artefacto de Restauración|r
     .complete 40646,1 --1/1 Artifact weapon chosen
@@ -4332,8 +4335,8 @@ step
     .skipgossipid 45120
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Rensar Granzuña|r
-    .isQuestAvailable 40646
-    .isOnQuest 40646
+    .isQuestAvailable 40646 --Weapons of Legend
+    .isOnQuest 40646 --Weapons of Legend
     .goto 747,44.50,51.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Rensar Granzuña|r.
     .turnin 40646 >>Entrega la misión Armas legendarias
@@ -4490,8 +4493,8 @@ step
     #label CleansingTheMotherTreeB
     .enterScenario 1061 >>Entra en la gesta |cRXP_PICK_Purificando al Árbol Madre|r
 step
-    .isQuestNotComplete 41689
-    .isOnQuest 41689
+    .isQuestNotComplete 41689 --Cleansing the Mother Tree
+    .isOnQuest 41689 --Cleansing the Mother Tree
     #requires CleansingTheMotherTreeB
     #completewith next
     #hidewindow
@@ -4500,8 +4503,8 @@ step
 step
     #arrowtext Habla con el\n|cRXP_FRIENDLY_Señor del Cielo Omnuron|r
     #requires CleansingTheMotherTreeB
-    .isQuestNotComplete 41689
-    .isOnQuest 41689
+    .isQuestNotComplete 41689 --Cleansing the Mother Tree
+    .isOnQuest 41689 --Cleansing the Mother Tree
     .isInScenario 1061
     .goto 198,59.51,43.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Señor del Cielo Omnuron|r.
@@ -4509,8 +4512,8 @@ step
     .target Señor del Cielo Omnuron
     .skipgossipid 45306
 step
-    .isQuestNotComplete 41689
-    .isOnQuest 41689
+    .isQuestNotComplete 41689 --Cleansing the Mother Tree
+    .isOnQuest 41689 --Cleansing the Mother Tree
     .isInScenario 1061
     --.goto 198/1,-349880.01465,493840.00000
     .goto 198,60.52,44.54
@@ -4518,8 +4521,8 @@ step
     .scenario 2269,2 --Heal Celestine to full health.
     .target Celestina de la Cosecha
 step
-    .isQuestNotComplete 41689
-    .isOnQuest 41689
+    .isQuestNotComplete 41689 --Cleansing the Mother Tree
+    .isOnQuest 41689 --Cleansing the Mother Tree
     .isInScenario 1061
     .goto 198,61.68,43.60
     >>Sana al |cRXP_FRIENDLY_Archidruida Hamuul Tótem de Runah|r.
@@ -4527,8 +4530,8 @@ step
     .target Archidruida Hamuul Tótem de Runa
 step
     #arrowtext Usa [Cura de la Naturaleza]\n en |cRXP_FRIENDLY_Zen'tabra|r
-    .isQuestNotComplete 41689
-    .isOnQuest 41689
+    .isQuestNotComplete 41689 --Cleansing the Mother Tree
+    .isOnQuest 41689 --Cleansing the Mother Tree
     .isInScenario 1061
     .goto 198,60.70,41.85
     >>Usa |T236288:0|t[Cura de la Naturaleza] en |cRXP_FRIENDLY_Zen'tabra|r.
@@ -4536,16 +4539,16 @@ step
     .target Zen'tabra
     .macro Nature's Cure,236288 >>Cura de la Naturaleza
 step
-    .isQuestNotComplete 41689
-    .isOnQuest 41689
+    .isQuestNotComplete 41689 --Cleansing the Mother Tree
+    .isOnQuest 41689 --Cleansing the Mother Tree
     #hidewindow
     #completewith next
     .gossipoption 45261 >>Sigue la Flecha
     .timer 6,Roleplay breve
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Lyessa Florvigía|r
-    .isQuestNotComplete 41689
-    .isOnQuest 41689
+    .isQuestNotComplete 41689 --Cleansing the Mother Tree
+    .isOnQuest 41689 --Cleansing the Mother Tree
     .goto 198,60.24,42.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Lyessa Florvigía|r.
     .scenario 2270,1 --Speak to Lyessa.
@@ -4553,8 +4556,8 @@ step
     .target Lyessa Bloomwatcher
     .skipgossipid 45261
 step
-    .isQuestNotComplete 41689
-    .isOnQuest 41689
+    .isQuestNotComplete 41689 --Cleansing the Mother Tree
+    .isOnQuest 41689 --Cleansing the Mother Tree
     .isInScenario 1061
     .goto 198,60.31,42.76
     >>|cRXP_WARN_Sana a tus aliados durante ~3 minutos|r.
@@ -4563,8 +4566,8 @@ step
     .skipgossipid 45138
 step
     #arrowtext Haz clic en\n|cRXP_FRIENDLY_Lyessa Florvigía|r
-    .isQuestNotComplete 41689
-    .isOnQuest 41689
+    .isQuestNotComplete 41689 --Cleansing the Mother Tree
+    .isOnQuest 41689 --Cleansing the Mother Tree
     .isInScenario 1061
     .goto 198,60.56,25.49
     >>|TInterface/cursor/crosshair/interact.blp:20|tHaz clic en |cRXP_FRIENDLY_Lyessa Florvigía|r.
@@ -4572,8 +4575,8 @@ step
     .target Lyessa Bloomwatcher
 step
     #arrowtext Espera al "roleplay"
-    .isQuestNotComplete 41689
-    .isOnQuest 41689
+    .isQuestNotComplete 41689 --Cleansing the Mother Tree
+    .isOnQuest 41689 --Cleansing the Mother Tree
     .isInScenario 1061
     .goto 198,60.56,42.81
     >>|cRXP_WARN_Espera al roleplay|r.
@@ -4581,14 +4584,14 @@ step
     .complete 41689,3 --1/1 G'Hanir cleansed
 step
     #arrowtext Haz clic en\n|cRXP_PICK_G'Hanir|r
-    .isOnQuest 41689
+    .isOnQuest 41689 --Cleansing the Mother Tree
     .isInScenario 1061
     .goto 198,60.56,42.81
     >>|TInterface/cursor/crosshair/interact.blp:20|tHaz clic en |cRXP_PICK_G'Hanir|r.
     .scenario 2372,1 --Wield G'Hanir, the Mother Tree.
 step
     #arrowtext Usa [Llamada del Árbol Madre]
-    .isOnQuest 41689
+    .isOnQuest 41689 --Cleansing the Mother Tree
     .isInScenario 1061
     .goto 198,60.56,42.81
     >>Usa |T1115592:0|t[Llamada del Árbol Madre] |cRXP_WARN_en el registro de misiones debajo de tu minimapa|r.
@@ -4596,7 +4599,7 @@ step
     .timer 15,Destromath "Roleplay"
 step
     #arrowtext Espera al "roleplay"
-    .isOnQuest 41689
+    .isOnQuest 41689 --Cleansing the Mother Tree
     .isInScenario 1061
     .goto 198,60.56,42.81
     >>|cRXP_WARN_Espera al "roleplay"|r.
@@ -4758,8 +4761,8 @@ step
     .accept 40646 >>Acepta la misión Armas legendarias
     .target Rensar Granzuña
 step
-    .isQuestAvailable 40646
-    .isQuestAvailable account,91955
+    .isQuestAvailable 40646 --Weapons of Legend
+    .isQuestAvailable account,91955 --Just Between Us
     +Selecciona una de las siguientes guías por ahora:
     *|cRXP_WARN_IMPORTANTE: Selecciona el que ya tienes para obtener un 10% adicional de xp (solo una vez)|r
     *|cRXP_WARN_Podrás hacer las otras cadenas de misiones más adelante|r
@@ -4794,17 +4797,17 @@ RXPGuides.RegisterGuide([[
 
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Emmarel Velasombra|r
-    .isQuestTurnedIn 44043
-    .isQuestAvailable 44366
-    .isQuestAvailable 41541
+    .isQuestTurnedIn 44043 --Continuing the Legend
+    .isQuestAvailable 44366 --One Last Adventure
+    .isQuestAvailable 41541 --A Beastly Expedition
     .goto 739,43.38,26.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Emmarel Velasombra|r.
     .accept 44366 >>Acepta la misión Una última aventura
     .target Emmarel Velasombra
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Emmarel Velasombra|r
-    .isQuestAvailable 44366
-    .isOnQuest 44366
+    .isQuestAvailable 44366 --One Last Adventure
+    .isOnQuest 44366 --One Last Adventure
     .goto 739,43.38,26.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Emmarel Velasombra|r.
     *|cRXP_WARN_Esto elegirá automáticamente el artefacto de Bestias|r
@@ -4814,25 +4817,25 @@ step
     .skipgossipid 45112
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Emmarel Velasombra|r
-    .isQuestAvailable 44366
-    .isOnQuest 44366
+    .isQuestAvailable 44366 --One Last Adventure
+    .isOnQuest 44366 --One Last Adventure
     .goto 739,43.38,26.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Emmarel Velasombra|r.
     .turnin 44366 >>Entrega la misión Una última aventura
     .target Emmarel Velasombra
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Emmarel Velasombra|r
-    .isQuestTurnedIn 40618
-    .isQuestAvailable 44043
-    .isQuestAvailable 41541
+    .isQuestTurnedIn 40618 --Weapons of Legend
+    .isQuestAvailable 44043 --Continuing the Legend
+    .isQuestAvailable 41541 --A Beastly Expedition
     .goto 739,43.38,26.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Emmarel Velasombra|r.
     .accept 44043 >>Acepta la misión Continuando la leyenda
     .target Emmarel Velasombra
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Emmarel Velasombra|r
-    .isQuestAvailable 44043
-    .isOnQuest 44043
+    .isQuestAvailable 44043 --Continuing the Legend
+    .isOnQuest 44043 --Continuing the Legend
     .goto 739,43.38,26.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Emmarel Velasombra|r.
     *|cRXP_WARN_Esto elegirá automáticamente el artefacto de Bestias|r
@@ -4842,23 +4845,23 @@ step
     .skipgossipid 46492
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Emmarel Velasombra|r
-    .isQuestAvailable 44043
-    .isOnQuest 44043
+    .isQuestAvailable 44043 --Continuing the Legend
+    .isOnQuest 44043 --Continuing the Legend
     .goto 739,43.38,26.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Emmarel Velasombra|r.
     .turnin 44043 >>Entrega la misión Continuando la leyenda
     .target Emmarel Velasombra
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Emmarel Velasombra|r
-    .isQuestAvailable 40618
+    .isQuestAvailable 40618 --Weapons of Legend
     .goto 627,60.05,53.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Emmarel Velasombra|r.
     .accept 40618 >>Acepta la misión Armas legendarias
     .target Emmarel Velasombra
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Emmarel Velasombra|r
-    .isQuestAvailable 40618
-    .isOnQuest 40618
+    .isQuestAvailable 40618 --Weapons of Legend
+    .isOnQuest 40618 --Weapons of Legend
     .goto 627,60.05,53.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Emmarel Velasombra|r.
     *|cRXP_WARN_Esto elegirá automáticamente el artefacto de Bestias|r
@@ -4868,8 +4871,8 @@ step
     .skipgossipid 44968
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Emmarel Velasombra|r
-    .isQuestAvailable 40618
-    .isOnQuest 40618
+    .isQuestAvailable 40618 --Weapons of Legend
+    .isOnQuest 40618 --Weapons of Legend
     .goto 627,60.05,53.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Emmarel Velasombra|r.
     .turnin 40618 >>Entrega la misión Armas legendarias
@@ -4880,7 +4883,7 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Emmarel Velasombra|r
     #optional
-    .isQuestTurnedIn 40959
+    .isQuestTurnedIn 40959 --The Campaign Begins
     .goto 739,43.38,26.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Emmarel Velasombra|r.
     .accept 41541 >>Acepta la misión Una expedición horrorosa
@@ -4893,8 +4896,8 @@ step
     .target Emmarel Velasombra
 step
     #arrowtext Haz clic en el\n|cRXP_PICK_Portal a Dalaran|r
-    .isQuestTurnedIn 40959
-    .isOnQuest 41541
+    .isQuestTurnedIn 40959 --The Campaign Begins
+    .isOnQuest 41541 --A Beastly Expedition
     .goto 739,48.66,43.46
     .zone 627 >>Haz clic en el |cRXP_PICK_Portal a Dalaran|r.
 step
@@ -4984,16 +4987,16 @@ step
     .complete 42158,1 --1/1 Mimiron assisted
     .target Mimiron
 step
-    .isOnQuest 42158
-    .isQuestNotComplete 42158
+    .isOnQuest 42158 --The Creator's Workshop
+    .isQuestNotComplete 42158 --The Creator's Workshop
     #completewith TheCreatorsWorkshopA
     #label TheCreatorsWorkshopB
     .goto 745,44.93,37.33
     .gossipoption 45357 >>Habla con |cRXP_FRIENDLY_Mimiron|r.
     .timer 50,Primera Emergencia
 step
-    .isOnQuest 42158
-    .isQuestNotComplete 42158
+    .isOnQuest 42158 --The Creator's Workshop
+    .isQuestNotComplete 42158 --The Creator's Workshop
     #title Panel de control (1/2)
     #requires TheCreatorsWorkshopB
     #completewith TheCreatorsWorkshopA
@@ -5002,8 +5005,8 @@ step
     .goto 745,40.46,41.42
     .cast 6477 >>Haz clic en el |cRXP_PICK_Panel de control|r.
 step
-    .isOnQuest 42158
-    .isQuestNotComplete 42158
+    .isOnQuest 42158 --The Creator's Workshop
+    .isQuestNotComplete 42158 --The Creator's Workshop
     #title Panel de control (2/2)
     #requires TheCreatorsWorkshopC
     #completewith TheCreatorsWorkshopA
@@ -5015,8 +5018,8 @@ step
     .cast 6477 >>Haz clic en el |cRXP_PICK_Panel de control|r.
     .timer 14,Segunda Emergencia
 step
-    .isOnQuest 42158
-    .isQuestNotComplete 42158
+    .isOnQuest 42158 --The Creator's Workshop
+    .isQuestNotComplete 42158 --The Creator's Workshop
     #title Nodo de estabilización (1/4)
     #requires TheCreatorsWorkshopD
     #completewith TheCreatorsWorkshopA
@@ -5034,24 +5037,24 @@ step
     .goto 745,45.50,43.96,8,0
     +1
 step
-    .isOnQuest 42158
-    .isQuestNotComplete 42158
+    .isOnQuest 42158 --The Creator's Workshop
+    .isQuestNotComplete 42158 --The Creator's Workshop
     #title Nodo de estabilización (2/4)
     #requires TheCreatorsWorkshopE
     #completewith TheCreatorsWorkshopA
     #label TheCreatorsWorkshopF
     .cast 6477 >>Haz clic en el |cRXP_PICK_Nodo de matriz de estabilización|r.
 step
-    .isOnQuest 42158
-    .isQuestNotComplete 42158
+    .isOnQuest 42158 --The Creator's Workshop
+    .isQuestNotComplete 42158 --The Creator's Workshop
     #title Nodo de estabilización (3/4)
     #requires TheCreatorsWorkshopF
     #completewith TheCreatorsWorkshopA
     #label TheCreatorsWorkshopG
     .cast 6477 >>Haz clic en el |cRXP_PICK_Nodo de matriz de estabilización|r.
 step
-    .isOnQuest 42158
-    .isQuestNotComplete 42158
+    .isOnQuest 42158 --The Creator's Workshop
+    .isQuestNotComplete 42158 --The Creator's Workshop
     #title Nodo de estabilización (4/4)
     #requires TheCreatorsWorkshopG
     #completewith TheCreatorsWorkshopA
@@ -5060,8 +5063,8 @@ step
     .timer 25,Última Emergencia
 step
     #arrowtext Haz clic en\n|cRXP_PICK_¡NO APRETAR ESTE BOTÓN!|r
-    .isOnQuest 42158
-    .isQuestNotComplete 42158
+    .isOnQuest 42158 --The Creator's Workshop
+    .isQuestNotComplete 42158 --The Creator's Workshop
     #requires TheCreatorsWorkshopH
     #completewith TheCreatorsWorkshopA
     #label TheCreatorsWorkshopI
@@ -5085,15 +5088,15 @@ step
     .target Mimiron
 step
     #arrowtext Haz clic en la\n|cRXP_PICK_Plataforma de teletransporte|r
-    .isOnQuest 42185
-    .isQuestNotComplete 42185
+    .isOnQuest 42185 --Never Hunt Alone
+    .isQuestNotComplete 42185 --Never Hunt Alone
     .zoneskip 745,1
     .goto 745,43.73,37.94
     .zone 120 >>|TInterface/cursor/crosshair/interact.blp:20|tHaz clic en la |cRXP_PICK_Plataforma de teletransporte|r.
 step
     #arrowtext Vuela a la gesta |cRXP_PICK_Nunca vayas de cacería a solas|r
-    .isOnQuest 42185
-    .isQuestNotComplete 42185
+    .isOnQuest 42185 --Never Hunt Alone
+    .isQuestNotComplete 42185 --Never Hunt Alone
     .goto 120,25.73,47.51
     .enterScenario 1099 >>Vuela a la gesta |cRXP_PICK_Nunca vayas de cacería a solas|r.
     .timer 33,Roleplay
@@ -5143,21 +5146,21 @@ step
     .timer 36,Duración del Vuelo
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Grif Corazón Salvaje|r
-    .isQuestTurnedIn 40959
+    .isQuestTurnedIn 40959 --The Campaign Begins
     .goto 627,69.68,43.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Grif Corazón Salvaje|r.
     .turnin 42185 >>Entrega la misión Nunca vayas de cacería a solas
     .target Grif Corazón Salvaje
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Grif Corazón Salvaje|r
-    .isQuestAvailable 40959
+    .isQuestAvailable 40959 --The Campaign Begins
     .goto 627,69.68,43.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Grif Corazón Salvaje|r.
     .turnin 42185 >>Entrega la misión Nunca vayas de cacería a solas
     .accept 41009 >>Acepta la misión De cazador a cazador
     .target Grif Corazón Salvaje
 step
-    .isQuestAvailable 40959
+    .isQuestAvailable 40959 --The Campaign Begins
     #completewith next
     #label HunterToHunterBMA
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Emmarel Velasombra|r.
@@ -5165,12 +5168,12 @@ step
     .target Emmarel Velasombra
 step
     #arrowtext |cRXP_WARN_Entra en la casa|r
-    .isQuestAvailable 40959
+    .isQuestAvailable 40959 --The Campaign Begins
     #completewith HunterToHunterBMA
     .goto 627,58.99,51.87,6 >>|cRXP_WARN_Sigue la flecha hacia el interior de la casa.|r
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Emmarel Velasombra|r
-    .isQuestAvailable 40959
+    .isQuestAvailable 40959 --The Campaign Begins
     #requires HunterToHunterBMA
     .goto 627,60.06,53.43
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Emmarel Velasombra|r.
@@ -5192,17 +5195,17 @@ RXPGuides.RegisterGuide([[
 
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Emmarel Velasombra|r
-    .isQuestTurnedIn 44043
-    .isQuestAvailable 44366
-    .isQuestAvailable 41540
+    .isQuestTurnedIn 44043 --Continuing the Legend
+    .isQuestAvailable 44366 --One Last Adventure
+    .isQuestAvailable 41540 --Rendezvous with the Courier
     .goto 739,43.38,26.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Emmarel Velasombra|r.
     .accept 44366 >>Acepta la misión Una última aventura
     .target Emmarel Velasombra
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Emmarel Velasombra|r
-    .isQuestAvailable 44366
-    .isOnQuest 44366
+    .isQuestAvailable 44366 --One Last Adventure
+    .isOnQuest 44366 --One Last Adventure
     .goto 739,43.38,26.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Emmarel Velasombra|r.
     *|cRXP_WARN_Esto elegirá automáticamente el artefacto de Puntería|r
@@ -5212,25 +5215,25 @@ step
     .skipgossipid 45112
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Emmarel Velasombra|r
-    .isQuestAvailable 44366
-    .isOnQuest 44366
+    .isQuestAvailable 44366 --One Last Adventure
+    .isOnQuest 44366 --One Last Adventure
     .goto 739,43.38,26.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Emmarel Velasombra|r.
     .turnin 44366 >>Entrega la misión Una última aventura
     .target Emmarel Velasombra
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Emmarel Velasombra|r
-    .isQuestTurnedIn 40618
-    .isQuestAvailable 44043
-    .isQuestAvailable 41540
+    .isQuestTurnedIn 40618 --Weapons of Legend
+    .isQuestAvailable 44043 --Continuing the Legend
+    .isQuestAvailable 41540 --Rendezvous with the Courier
     .goto 739,43.38,26.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Emmarel Velasombra|r.
     .accept 44043 >>Acepta la misión Continuando la leyenda
     .target Emmarel Velasombra
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Emmarel Velasombra|r
-    .isQuestAvailable 44043
-    .isOnQuest 44043
+    .isQuestAvailable 44043 --Continuing the Legend
+    .isOnQuest 44043 --Continuing the Legend
     .goto 739,43.38,26.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Emmarel Velasombra|r.
     *|cRXP_WARN_Esto elegirá automáticamente el artefacto de Puntería|r
@@ -5240,23 +5243,23 @@ step
     .skipgossipid 46492
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Emmarel Velasombra|r
-    .isQuestAvailable 44043
-    .isOnQuest 44043
+    .isQuestAvailable 44043 --Continuing the Legend
+    .isOnQuest 44043 --Continuing the Legend
     .goto 739,43.38,26.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Emmarel Velasombra|r.
     .turnin 44043 >>Entrega la misión Continuando la leyenda
     .target Emmarel Velasombra
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Emmarel Velasombra|r
-    .isQuestAvailable 40618
+    .isQuestAvailable 40618 --Weapons of Legend
     .goto 627,60.05,53.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Emmarel Velasombra|r.
     .accept 40618 >>Acepta la misión Armas legendarias
     .target Emmarel Velasombra
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Emmarel Velasombra|r
-    .isQuestAvailable 40618
-    .isOnQuest 40618
+    .isQuestAvailable 40618 --Weapons of Legend
+    .isOnQuest 40618 --Weapons of Legend
     .goto 627,60.05,53.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Emmarel Velasombra|r.
     *|cRXP_WARN_Esto elegirá automáticamente el artefacto de Puntería|r
@@ -5266,8 +5269,8 @@ step
     .skipgossipid 44968
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Emmarel Velasombra|r
-    .isQuestAvailable 40618
-    .isOnQuest 40618
+    .isQuestAvailable 40618 --Weapons of Legend
+    .isOnQuest 40618 --Weapons of Legend
     .goto 627,60.05,53.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Emmarel Velasombra|r.
     .turnin 40618 >>Entrega la misión Armas legendarias
@@ -5278,7 +5281,7 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Emmarel Velasombra|r
     #optional
-    .isQuestTurnedIn 40959
+    .isQuestTurnedIn 40959 --The Campaign Begins
     .goto 739,43.38,26.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Emmarel Velasombra|r.
     .accept 41540 >>Acepta la misión Encuentro con el mensajero
@@ -5291,8 +5294,8 @@ step
     .target Emmarel Velasombra
 step
     #arrowtext Haz clic en el\n|cRXP_PICK_Portal a Dalaran|r
-    .isQuestTurnedIn 40959
-    .isOnQuest 41540
+    .isQuestTurnedIn 40959 --The Campaign Begins
+    .isOnQuest 41540 --Rendezvous with the Courier
     .goto 739,48.66,43.46
     .zone 627 >>Haz clic en el |cRXP_PICK_Portal a Dalaran|r.
 step
@@ -5304,7 +5307,7 @@ step
     .target Mensajero Consuelda
 step
     #arrowtext |cFFFCDC00Abandona la casa|r
-    .isQuestAvailable 40959
+    .isQuestAvailable 40959 --The Campaign Begins
     .zoneskip 627,1
     #completewith RendezvousWithTheCourierA
     .goto 627,58.58,51.30,8 >>|cRXP_WARN_Sigue la flecha para salir de la casa.|r
@@ -5362,7 +5365,7 @@ step
     .target Vereesa Brisaveloz
     .skipgossipid 47260
 step
-    .isOnQuest 40419
+    .isOnQuest 40419 --Rescue Mission
     .goto 646,32.06,31.98
     .enterScenario 972 >>Cruza el portal para entrar en la gesta |cRXP_PICK_El legado de los Brisaveloz|r.
 step
@@ -5480,17 +5483,17 @@ RXPGuides.RegisterGuide([[
 
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Emmarel Velasombra|r
-    .isQuestTurnedIn 44043
-    .isQuestAvailable 44366
-    .isQuestAvailable 41542
+    .isQuestTurnedIn 44043 --Continuing the Legend
+    .isQuestAvailable 44366 --One Last Adventure
+    .isQuestAvailable 41542 --Preparation for the Hunt
     .goto 739,43.38,26.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Emmarel Velasombra|r.
     .accept 44366 >>Acepta la misión Una última aventura
     .target Emmarel Velasombra
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Emmarel Velasombra|r
-    .isQuestAvailable 44366
-    .isOnQuest 44366
+    .isQuestAvailable 44366 --One Last Adventure
+    .isOnQuest 44366 --One Last Adventure
     .goto 739,43.38,26.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Emmarel Velasombra|r.
     *|cRXP_WARN_Esto elegirá automáticamente el artefacto de Supervivencia|r
@@ -5500,25 +5503,25 @@ step
     .skipgossipid 45112
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Emmarel Velasombra|r
-    .isQuestAvailable 44366
-    .isOnQuest 44366
+    .isQuestAvailable 44366 --One Last Adventure
+    .isOnQuest 44366 --One Last Adventure
     .goto 739,43.38,26.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Emmarel Velasombra|r.
     .turnin 44366 >>Entrega la misión Una última aventura
     .target Emmarel Velasombra
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Emmarel Velasombra|r
-    .isQuestTurnedIn 40618
-    .isQuestAvailable 44043
-    .isQuestAvailable 41542
+    .isQuestTurnedIn 40618 --Weapons of Legend
+    .isQuestAvailable 44043 --Continuing the Legend
+    .isQuestAvailable 41542 --Preparation for the Hunt
     .goto 739,43.38,26.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Emmarel Velasombra|r.
     .accept 44043 >>Acepta la misión Continuando la leyenda
     .target Emmarel Velasombra
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Emmarel Velasombra|r
-    .isQuestAvailable 44043
-    .isOnQuest 44043
+    .isQuestAvailable 44043 --Continuing the Legend
+    .isOnQuest 44043 --Continuing the Legend
     .goto 739,43.38,26.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Emmarel Velasombra|r.
     *|cRXP_WARN_Esto elegirá automáticamente el artefacto de Supervivencia|r
@@ -5528,23 +5531,23 @@ step
     .skipgossipid 46492
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Emmarel Velasombra|r
-    .isQuestAvailable 44043
-    .isOnQuest 44043
+    .isQuestAvailable 44043 --Continuing the Legend
+    .isOnQuest 44043 --Continuing the Legend
     .goto 739,43.38,26.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Emmarel Velasombra|r.
     .turnin 44043 >>Entrega la misión Continuando la leyenda
     .target Emmarel Velasombra
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Emmarel Velasombra|r
-    .isQuestAvailable 40618
+    .isQuestAvailable 40618 --Weapons of Legend
     .goto 627,60.05,53.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Emmarel Velasombra|r.
     .accept 40618 >>Acepta la misión Armas legendarias
     .target Emmarel Velasombra
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Emmarel Velasombra|r
-    .isQuestAvailable 40618
-    .isOnQuest 40618
+    .isQuestAvailable 40618 --Weapons of Legend
+    .isOnQuest 40618 --Weapons of Legend
     .goto 627,60.05,53.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Emmarel Velasombra|r.
     *|cRXP_WARN_Esto elegirá automáticamente el artefacto de Supervivencia|r
@@ -5554,8 +5557,8 @@ step
     .skipgossipid 44968
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Emmarel Velasombra|r
-    .isQuestAvailable 40618
-    .isOnQuest 40618
+    .isQuestAvailable 40618 --Weapons of Legend
+    .isOnQuest 40618 --Weapons of Legend
     .goto 627,60.05,53.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Emmarel Velasombra|r.
     .turnin 40618 >>Entrega la misión Armas legendarias
@@ -5566,7 +5569,7 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Emmarel Velasombra|r
     #optional
-    .isQuestTurnedIn 40959
+    .isQuestTurnedIn 40959 --The Campaign Begins
     .goto 739,43.38,26.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Emmarel Velasombra|r.
     .accept 41542 >>Acepta la misión Preparativos para la cacería
@@ -5579,8 +5582,8 @@ step
     .target Emmarel Velasombra
 step
     #arrowtext Haz clic en el\n|cRXP_PICK_Portal a Dalaran|r
-    .isQuestTurnedIn 40959
-    .isOnQuest 41542
+    .isQuestTurnedIn 40959 --The Campaign Begins
+    .isOnQuest 41542 --Preparation for the Hunt
     .goto 739,48.66,43.46
     .zone 627 >>Haz clic en el |cRXP_PICK_Portal a Dalaran|r.
 step
@@ -5629,7 +5632,7 @@ step
     .target Ohn'ahra
 step
     #arrowtext Entra en |cRXP_PICK_La lanza en las sombras|r
-    .isOnQuest 40385
+    .isOnQuest 40385 --The Spear in the Shadow
     .goto 650,60.82,80.83
     .enterScenario 973 >>Entra en |cRXP_PICK_La lanza en las sombras|r.
 step
@@ -5893,8 +5896,8 @@ step
     .accept 40618 >>Acepta la misión Armas legendarias
     .target Emmarel Velasombra
 step
-    .isQuestAvailable 40618
-    .isQuestAvailable account,91955
+    .isQuestAvailable 40618 --Weapons of Legend
+    .isQuestAvailable account,91955 --Just Between Us
     .goto 627,60.03,53.41
     +Selecciona una de las siguientes guías por ahora:
     *|cRXP_WARN_IMPORTANTE: Selecciona el que ya tienes para obtener un 10% adicional de xp (solo una vez)|r
@@ -5964,7 +5967,7 @@ step
     -- .use 251821
     -- .use 256763
 step
-    .isQuestTurnedIn 41113
+    .isQuestTurnedIn 41113 --The Only Way to Travel
     .zoneskip 734
     .zoneskip 735
     .zone 734 >>Usa |T1536440:0|t[Teletransporte: Salón del Guardián].
@@ -5972,8 +5975,8 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Meryl Tormenta Vil|r
     .subzoneskip 7879,1
-    .isQuestTurnedIn 43441
-    .isQuestAvailable 44310
+    .isQuestTurnedIn 43441 --A Second Weapon
+    .isQuestAvailable 44310 --Thrice the Power
     .goto 735,55.21,38.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Meryl Tormenta Vil|r
     .target Meryl Tormenta Vil
@@ -5981,9 +5984,9 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Meryl Tormenta Vil|r
     .subzoneskip 7879,1
-    .isQuestTurnedIn 43441
-    .isQuestAvailable 44310
-    .isOnQuest 44310
+    .isQuestTurnedIn 43441 --A Second Weapon
+    .isQuestAvailable 44310 --Thrice the Power
+    .isOnQuest 44310 --Thrice the Power
     .goto 735,55.21,38.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Meryl Tormenta Vil|r
     .complete 44310,1 --1/1 Choose a third artifact to pursue
@@ -5992,9 +5995,9 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Meryl Tormenta Vil|r
     .subzoneskip 7879,1
-    .isQuestTurnedIn 43441
-    .isQuestAvailable 44310
-    .isQuestComplete 44310
+    .isQuestTurnedIn 43441 --A Second Weapon
+    .isQuestAvailable 44310 --Thrice the Power
+    .isQuestComplete 44310 --Thrice the Power
     .goto 735,55.21,38.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Meryl Tormenta Vil|r
     .target Meryl Tormenta Vil
@@ -6002,8 +6005,8 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Meryl Tormenta Vil|r
     .subzoneskip 7879,1
-    .isQuestTurnedIn 41085
-    .isQuestAvailable 43441
+    .isQuestTurnedIn 41085 --A Mage's Weapon
+    .isQuestAvailable 43441 --A Second Weapon
     .goto 735,55.21,38.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Meryl Tormenta Vil|r
     .accept 43441 >>Acepta la misión Una segunda arma
@@ -6011,9 +6014,9 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Meryl Tormenta Vil|r
     .subzoneskip 7879,1
-    .isQuestTurnedIn 41085
-    .isQuestAvailable 43441
-    .isOnQuest 43441
+    .isQuestTurnedIn 41085 --A Mage's Weapon
+    .isQuestAvailable 43441 --A Second Weapon
+    .isOnQuest 43441 --A Second Weapon
     .goto 735,55.21,38.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Meryl Tormenta Vil|r
     .complete 43441,1 --1/1 Choose a second artifact to pursue
@@ -6022,9 +6025,9 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Meryl Tormenta Vil|r
     .subzoneskip 7879,1
-    .isQuestTurnedIn 41085
-    .isQuestAvailable 43441
-    .isQuestComplete 43441
+    .isQuestTurnedIn 41085 --A Mage's Weapon
+    .isQuestAvailable 43441 --A Second Weapon
+    .isQuestComplete 43441 --A Second Weapon
     .goto 735,55.21,38.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Meryl Tormenta Vil|r
     .turnin 43441 >>Entrega la misión Una segunda arma
@@ -6032,7 +6035,7 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Meryl Tormenta Vil|r
     .subzoneskip 7879,1
-    .isQuestAvailable 41085
+    .isQuestAvailable 41085 --A Mage's Weapon
     .goto 735,59.15,43.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Meryl Tormenta Vil|r
     .target Meryl Tormenta Vil
@@ -6040,8 +6043,8 @@ step
 step
     #arrowtext Haz clic en el\n|cRXP_PICK_Libro|r
     .subzoneskip 7879,1
-    .isQuestAvailable 41085
-    .isOnQuest 41085
+    .isQuestAvailable 41085 --A Mage's Weapon
+    .isOnQuest 41085 --A Mage's Weapon
     .goto 735,61.22,25.88
     >>|TInterface/cursor/crosshair/interact.blp:20|tHaz clic en el |cRXP_PICK_Libro|r
     .complete 41085,1 --1/1 Artifact chosen
@@ -6050,8 +6053,8 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Meryl Tormenta Vil|r
     .subzoneskip 7879,1
-    .isQuestComplete 41085
-    .isQuestAvailable 41085
+    .isQuestComplete 41085 --A Mage's Weapon
+    .isQuestAvailable 41085 --A Mage's Weapon
     .goto 735,59.15,43.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Meryl Tormenta Vil|r
     .target Meryl Tormenta Vil
@@ -6061,27 +6064,27 @@ step
     +|cRXP_WARN_Asegúrate de tener un arma usable equipada. Si no es así, equipa una hasta que consigas tu artefacto, o cambia a una especialización que ya tenga su artefacto|r.
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Meryl Tormenta Vil|r
-    .isQuestAvailable 41113
+    .isQuestAvailable 41113 --The Only Way to Travel
     .goto 735,59.15,42.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Meryl Tormenta Vil|r
     .target Meryl Tormenta Vil
     .accept 42001 >>Acepta la misión Aluneth, Gran Bastón de Magna
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Meryl Tormenta Vil|r
-    .isQuestTurnedIn 41113
+    .isQuestTurnedIn 41113 --The Only Way to Travel
     .goto 735,55.32,38.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Meryl Tormenta Vil|r
     .target Meryl Tormenta Vil
     .accept 42001 >>Acepta la misión Aluneth, Gran Bastón de Magna
 step
     #arrowtext Haz clic en el\n|cRXP_PICK_Portal|r
-    .isQuestAvailable 41113
+    .isQuestAvailable 41113 --The Only Way to Travel
     .goto 735,62.48,51.16
     .zone 627 >>|TInterface/cursor/crosshair/interact.blp:20|tHaz clic en el |cRXP_PICK_Portal|r
     .usespell 224869
 step
     #arrowtext Usa [Teletransporte: Dalaran - Islas Quebradas]\nen el |cRXP_PICK_Portal|r
-    .isQuestTurnedIn 41113
+    .isQuestTurnedIn 41113 --The Only Way to Travel
     .goto 734,57.36,90.36
     .zone 627 >>Usa |T1535374:0|t[Teletransporte: Dalaran - Islas Quebradas] o |TInterface/cursor/crosshair/interact.blp:20|tHaz clic en el |cRXP_PICK_Portal|r
     .usespell 224869
@@ -6219,7 +6222,7 @@ step
     .accept 42011 >>Acepta la misión La bóveda del Nexo
 step
     #arrowtext Entra en El Nexo
-    .isOnQuest 42011
+    .isOnQuest 42011 --The Nexus Vault
     .goto 114,27.52,26.16
     .enterScenario 1101 >>Entra en El Nexo
 step
@@ -6395,7 +6398,7 @@ step
     -- .use 251821
     -- .use 256763
 step
-    .isQuestTurnedIn 41113
+    .isQuestTurnedIn 41113 --The Only Way to Travel
     .zoneskip 734
     .zoneskip 735
     .zone 734 >>Usa |T1536440:0|t[Teletransporte: Salón del Guardián].
@@ -6403,8 +6406,8 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Meryl Tormenta Vil|r
     .zoneskip 735,1
-    .isQuestTurnedIn 43441
-    .isQuestAvailable 44310
+    .isQuestTurnedIn 43441 --A Second Weapon
+    .isQuestAvailable 44310 --Thrice the Power
     .goto 735,55.3,38.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Meryl Tormenta Vil|r
     .target Meryl Tormenta Vil
@@ -6412,9 +6415,9 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Meryl Tormenta Vil|r
     .zoneskip 735,1
-    .isQuestTurnedIn 43441
-    .isQuestAvailable 44310
-    .isOnQuest 44310
+    .isQuestTurnedIn 43441 --A Second Weapon
+    .isQuestAvailable 44310 --Thrice the Power
+    .isOnQuest 44310 --Thrice the Power
     .goto 735,55.3,38.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Meryl Tormenta Vil|r
     .complete 44310,1 --1/1 Choose a third artifact to pursue
@@ -6423,9 +6426,9 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Meryl Tormenta Vil|r
     .zoneskip 735,1
-    .isQuestTurnedIn 43441
-    .isQuestAvailable 44310
-    .isQuestComplete 44310
+    .isQuestTurnedIn 43441 --A Second Weapon
+    .isQuestAvailable 44310 --Thrice the Power
+    .isQuestComplete 44310 --Thrice the Power
     .goto 735,55.3,38.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Meryl Tormenta Vil|r
     .target Meryl Tormenta Vil
@@ -6433,8 +6436,8 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Meryl Tormenta Vil|r
     .zoneskip 735,1
-    .isQuestTurnedIn 41085
-    .isQuestAvailable 43441
+    .isQuestTurnedIn 41085 --A Mage's Weapon
+    .isQuestAvailable 43441 --A Second Weapon
     .goto 735,55.3,38.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Meryl Tormenta Vil|r
     .accept 43441 >>Acepta la misión Una segunda arma
@@ -6442,9 +6445,9 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Meryl Tormenta Vil|r
     .zoneskip 735,1
-    .isQuestTurnedIn 41085
-    .isQuestAvailable 43441
-    .isOnQuest 43441
+    .isQuestTurnedIn 41085 --A Mage's Weapon
+    .isQuestAvailable 43441 --A Second Weapon
+    .isOnQuest 43441 --A Second Weapon
     .goto 735,55.3,38.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Meryl Tormenta Vil|r
     .complete 43441,1 --1/1 Choose a second artifact to pursue
@@ -6453,9 +6456,9 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Meryl Tormenta Vil|r
     .zoneskip 735,1
-    .isQuestTurnedIn 41085
-    .isQuestAvailable 43441
-    .isQuestComplete 43441
+    .isQuestTurnedIn 41085 --A Mage's Weapon
+    .isQuestAvailable 43441 --A Second Weapon
+    .isQuestComplete 43441 --A Second Weapon
     .goto 735,55.3,38.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Meryl Tormenta Vil|r
     .turnin 43441 >>Entrega la misión Una segunda arma
@@ -6463,7 +6466,7 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Meryl Tormenta Vil|r
     .zoneskip 735,1
-    .isQuestAvailable 41085
+    .isQuestAvailable 41085 --A Mage's Weapon
     .goto 735,59.15,43.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Meryl Tormenta Vil|r
     .target Meryl Tormenta Vil
@@ -6471,8 +6474,8 @@ step
 step
     #arrowtext Haz clic en el\n|cRXP_PICK_Libro|r
     .zoneskip 735,1
-    .isQuestAvailable 41085
-    .isOnQuest 41085
+    .isQuestAvailable 41085 --A Mage's Weapon
+    .isOnQuest 41085 --A Mage's Weapon
     .goto 735,61.22,25.88
     >>|TInterface/cursor/crosshair/interact.blp:20|tHaz clic en el |cRXP_PICK_Libro|r
     .complete 41085,1 --1/1 Artifact chosen
@@ -6481,8 +6484,8 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Meryl Tormenta Vil|r
     .zoneskip 735,1
-    .isQuestComplete 41085
-    .isQuestAvailable 41085
+    .isQuestComplete 41085 --A Mage's Weapon
+    .isQuestAvailable 41085 --A Mage's Weapon
     .goto 735,59.15,43.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Meryl Tormenta Vil|r
     .target Meryl Tormenta Vil
@@ -6492,14 +6495,14 @@ step
     +|cRXP_WARN_Asegúrate de tener un arma usable equipada. Si no es así, equipa una hasta que consigas tu artefacto, o cambia a una especialización que ya tenga su artefacto|r.
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Meryl Tormenta Vil|r
-    .isQuestAvailable 41113
+    .isQuestAvailable 41113 --The Only Way to Travel
     .goto 735,59.15,42.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Meryl Tormenta Vil|r
     .target Meryl Tormenta Vil
     .accept 40267 >>Acepta la misión Un mensaje inesperado
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Meryl Tormenta Vil|r
-    .isQuestTurnedIn 41113
+    .isQuestTurnedIn 41113 --The Only Way to Travel
     .goto 735,55.32,38.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Meryl Tormenta Vil|r
     .target Meryl Tormenta Vil
@@ -6518,7 +6521,7 @@ step
     #requires Crystal's Message
     #completewith next
     #label Orange is the New Purple
-    .isQuestTurnedIn 41113
+    .isQuestTurnedIn 41113 --The Only Way to Travel
     .goto 735,54.59,55.34,10,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Jackson Watkins|r
     .accept 44240 >>Acepta la misión El naranja es el nuevo violeta
@@ -6528,12 +6531,12 @@ step
     #arrowtext Sigue la flecha
     #requires Crystal's Message
     #completewith Orange is the New Purple
-    .isQuestTurnedIn 41113
+    .isQuestTurnedIn 41113 --The Only Way to Travel
     .goto 735,44.66,57.89,40 >>Sigue la Flecha
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Jackson Watkins|r
     #requires Orange is the New Purple
-    .isQuestTurnedIn 41113
+    .isQuestTurnedIn 41113 --The Only Way to Travel
     .goto 735,44.54,57.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Jackson Watkins|r
     .accept 44240 >>Acepta la misión El naranja es el nuevo violeta
@@ -6542,7 +6545,7 @@ step
 step
     #arrowtext |cFFFCDC00Sigue la flecha|r
     #requires Crystal's Message
-    .isQuestTurnedIn 41113
+    .isQuestTurnedIn 41113 --The Only Way to Travel
     .goto 735,55.6,56.06,15,0
     .goto 734,59.95,56.3
     >>|cRXP_WARN_Espera al Roleplay|r.
@@ -6550,18 +6553,18 @@ step
 step
     #arrowtext |cFFFCDC00Sigue la flecha|r
     #requires Crystal's Message
-    .isQuestAvailable 41113
+    .isQuestAvailable 41113 --The Only Way to Travel
     .goto 735,62.63,51.41
     >>|cRXP_WARN_Espera al Roleplay|r.
     .complete 40267,1 --1/1 Discover the Crystal's Message
 step
     #arrowtext Haz clic en el\n|cRXP_PICK_Portal|r
-    .isQuestAvailable 41113
+    .isQuestAvailable 41113 --The Only Way to Travel
     .goto 735,62.63,51.41
     .zone 627 >>|TInterface/cursor/crosshair/interact.blp:20|tHaz clic en el |cRXP_PICK_Portal|r
 step
     #arrowtext Haz clic en el\n|cRXP_PICK_Portal|r
-    .isQuestTurnedIn 41113
+    .isQuestTurnedIn 41113 --The Only Way to Travel
     .goto 734,57.31,90.48
     .zone 627 >>|TInterface/cursor/crosshair/interact.blp:20|tHaz clic en el |cRXP_PICK_Portal|r
 -- step
@@ -6628,7 +6631,7 @@ step
 step
     #arrowtext Mata al\n|cRXP_ENEMY_Conjurador hielonato|r
     .goto 700,76.67,63.89
-    .isOnQuest 11997
+    .isOnQuest 11997 --The Frozen Flame
     >>Mata al |cRXP_ENEMY_Conjurador hielonato|r esquiva las corrientes de viento
     .scenario 1926,1 --Defeat the Iceborn Conjurer and enter into Icecrown Citadel
     .mob Iceborn Conjurer
@@ -6757,7 +6760,7 @@ step
     -- .use 251821
     -- .use 256763
 step
-    .isQuestTurnedIn 41113
+    .isQuestTurnedIn 41113 --The Only Way to Travel
     .zoneskip 734
     .zoneskip 735
     .zone 734 >>Usa |T1536440:0|t[Teletransporte: Salón del Guardián].
@@ -6765,8 +6768,8 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Meryl Tormenta Vil|r
     .zoneskip 735,1
-    .isQuestTurnedIn 43441
-    .isQuestAvailable 44310
+    .isQuestTurnedIn 43441 --A Second Weapon
+    .isQuestAvailable 44310 --Thrice the Power
     .goto 735,55.3,38.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Meryl Tormenta Vil|r
     .target Meryl Tormenta Vil
@@ -6774,9 +6777,9 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Meryl Tormenta Vil|r
     .zoneskip 735,1
-    .isQuestTurnedIn 43441
-    .isQuestAvailable 44310
-    .isOnQuest 44310
+    .isQuestTurnedIn 43441 --A Second Weapon
+    .isQuestAvailable 44310 --Thrice the Power
+    .isOnQuest 44310 --Thrice the Power
     .goto 735,55.3,38.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Meryl Tormenta Vil|r
     .complete 44310,1 --1/1 Choose a third artifact to pursue
@@ -6785,9 +6788,9 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Meryl Tormenta Vil|r
     .zoneskip 735,1
-    .isQuestTurnedIn 43441
-    .isQuestAvailable 44310
-    .isQuestComplete 44310
+    .isQuestTurnedIn 43441 --A Second Weapon
+    .isQuestAvailable 44310 --Thrice the Power
+    .isQuestComplete 44310 --Thrice the Power
     .goto 735,55.3,38.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Meryl Tormenta Vil|r
     .target Meryl Tormenta Vil
@@ -6795,8 +6798,8 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Meryl Tormenta Vil|r
     .zoneskip 735,1
-    .isQuestTurnedIn 41085
-    .isQuestAvailable 43441
+    .isQuestTurnedIn 41085 --A Mage's Weapon
+    .isQuestAvailable 43441 --A Second Weapon
     .goto 735,55.3,38.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Meryl Tormenta Vil|r
     .accept 43441 >>Acepta la misión Una segunda arma
@@ -6804,9 +6807,9 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Meryl Tormenta Vil|r
     .zoneskip 735,1
-    .isQuestTurnedIn 41085
-    .isQuestAvailable 43441
-    .isOnQuest 43441
+    .isQuestTurnedIn 41085 --A Mage's Weapon
+    .isQuestAvailable 43441 --A Second Weapon
+    .isOnQuest 43441 --A Second Weapon
     .goto 735,55.3,38.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Meryl Tormenta Vil|r
     .complete 43441,1 --1/1 Choose a second artifact to pursue
@@ -6815,9 +6818,9 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Meryl Tormenta Vil|r
     .zoneskip 735,1
-    .isQuestTurnedIn 41085
-    .isQuestAvailable 43441
-    .isQuestComplete 43441
+    .isQuestTurnedIn 41085 --A Mage's Weapon
+    .isQuestAvailable 43441 --A Second Weapon
+    .isQuestComplete 43441 --A Second Weapon
     .goto 735,55.3,38.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Meryl Tormenta Vil|r
     .turnin 43441 >>Entrega la misión Una segunda arma
@@ -6825,7 +6828,7 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Meryl Tormenta Vil|r
     .zoneskip 735,1
-    .isQuestAvailable 41085
+    .isQuestAvailable 41085 --A Mage's Weapon
     .goto 735,59.15,43.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Meryl Tormenta Vil|r
     .target Meryl Tormenta Vil
@@ -6833,8 +6836,8 @@ step
 step
     #arrowtext Haz clic en el\n|cRXP_PICK_Libro|r
     .zoneskip 735,1
-    .isQuestAvailable 41085
-    .isOnQuest 41085
+    .isQuestAvailable 41085 --A Mage's Weapon
+    .isOnQuest 41085 --A Mage's Weapon
     .goto 735,61.22,25.88
     >>|TInterface/cursor/crosshair/interact.blp:20|tHaz clic en el |cRXP_PICK_Libro|r
     .complete 41085,1 --1/1 Artifact chosen
@@ -6843,8 +6846,8 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Meryl Tormenta Vil|r
     .zoneskip 735,1
-    .isQuestComplete 41085
-    .isQuestAvailable 41085
+    .isQuestComplete 41085 --A Mage's Weapon
+    .isQuestAvailable 41085 --A Mage's Weapon
     .goto 735,59.15,43.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Meryl Tormenta Vil|r
     .target Meryl Tormenta Vil
@@ -6854,14 +6857,14 @@ step
     +|cRXP_WARN_Asegúrate de tener un arma usable equipada. Si no es así, equipa una hasta que consigas tu artefacto, o cambia a una especialización que ya tenga su artefacto|r.
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Meryl Tormenta Vil|r
-    .isQuestAvailable 41113
+    .isQuestAvailable 41113 --The Only Way to Travel
     .goto 735,59.15,42.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Meryl Tormenta Vil|r
     .target Meryl Tormenta Vil
     .accept 42452 >>Acepta la misión En busca de Frío del ébano
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Meryl Tormenta Vil|r
-    .isQuestTurnedIn 41113
+    .isQuestTurnedIn 41113 --The Only Way to Travel
     .goto 735,55.32,38.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Meryl Tormenta Vil|r
     .target Meryl Tormenta Vil
@@ -6886,7 +6889,7 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Meryl|r
     #completewith Speak with Meryl
-    .isQuestAvailable 41113
+    .isQuestAvailable 41113 --The Only Way to Travel
     .goto 735,59.12,43.03
     .gossipoption 45566 >>Habla con |cRXP_FRIENDLY_Meryl|r
     .timer 54,RP
@@ -6894,7 +6897,7 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Meryl|r
     #completewith Speak with Meryl
-    .isQuestTurnedIn 41113
+    .isQuestTurnedIn 41113 --The Only Way to Travel
     .goto 735,55.36,38.2
     .gossipoption 46445 >>Habla con |cRXP_FRIENDLY_Meryl|r
     -- .timer 55,RP
@@ -6907,7 +6910,7 @@ step
     .complete 42452,2 --1/1 Speak with Meryl
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Meryl Tormenta Vil|r
-    .isQuestAvailable 41113
+    .isQuestAvailable 41113 --The Only Way to Travel
     .goto 735,59.15,42.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Meryl Tormenta Vil|r
     .turnin 42452 >>Entrega la misión En busca de Frío del ébano
@@ -6916,7 +6919,7 @@ step
     .accept 42476 >>Acepta la misión Excavación Paso de la Muerte
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Meryl Tormenta Vil|r
-    .isQuestTurnedIn 41113
+    .isQuestTurnedIn 41113 --The Only Way to Travel
     .goto 735,55.32,38.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Meryl Tormenta Vil|r
     .turnin 42452 >>Entrega la misión En busca de Frío del ébano
@@ -6930,42 +6933,42 @@ step
     .accept 42455 >>Acepta la misión Las gemas de Alodi
     .target Alodi
 step
-    .isQuestAvailable 41113
+    .isQuestAvailable 41113 --The Only Way to Travel
     #completewith next
     #hidewindow
     #label Bank of Dalaran
     .complete 42455,1 --1/1 Go to the Bank of Dalaran
 step
     #arrowtext Haz clic en el\n|cRXP_PICK_Portal|r
-    .isQuestAvailable 41113
+    .isQuestAvailable 41113 --The Only Way to Travel
     #completewith Bank of Dalaran
     .goto 735,63.77,49.66
     .zone 627 >>Haz clic en el |cRXP_PICK_Portal|r o Usa |T1535374:0|t[Teletransporte: Dalaran - Islas Quebradas]
     -- .cast 224869 >>Use |T1535374:0|t[Teleport: Dalaran - Broken Isles].
     -- .usespell 224869
 step
-    .isQuestAvailable 41113
+    .isQuestAvailable 41113 --The Only Way to Travel
     #requires Bank of Dalaran
     #title |cFFFCDC00Sigue la Flecha|r
     .goto 627,51.66,22.26,20,0
     .goto 627,52.88,19.12
     .complete 42455,1 --1/1 Go to the Bank of Dalaran
 step
-    .isQuestTurnedIn 41113
+    .isQuestTurnedIn 41113 --The Only Way to Travel
     #completewith next
     #hidewindow
     #label Bank of Dalaran2
     .complete 42455,1 --1/1 Go to the Bank of Dalaran
 step
     #arrowtext Haz clic en el\n|cRXP_PICK_Portal|r
-    .isQuestTurnedIn 41113
+    .isQuestTurnedIn 41113 --The Only Way to Travel
     #completewith Bank of Dalaran2
     .goto 734,57.34,90.63
     .zone 627 >>Haz clic en el |cRXP_PICK_Portal|r o Usa |T1535374:0|t[Teletransporte: Dalaran - Islas Quebradas]
     -- .cast 224869 >>Use |T1535374:0|t[Teleport: Dalaran - Broken Isles].
     -- .usespell 224869
 step
-    .isQuestTurnedIn 41113
+    .isQuestTurnedIn 41113 --The Only Way to Travel
     #requires Bank of Dalaran2
     #title |cFFFCDC00Sigue la Flecha|r
     .goto 627,51.66,22.26,20,0
@@ -7098,7 +7101,7 @@ step
     .target Alodi
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Meryl Tormenta Vil|r
-    .isQuestAvailable 41113
+    .isQuestAvailable 41113 --The Only Way to Travel
     .goto 735,59.15,42.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Meryl Tormenta Vil|r
     .turnin 42476 >>Entrega la misión Excavación Paso de la Muerte
@@ -7108,7 +7111,7 @@ step
     .target Meryl Tormenta Vil
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Meryl Tormenta Vil|r
-    .isQuestTurnedIn 41113
+    .isQuestTurnedIn 41113 --The Only Way to Travel
     .goto 735,55.32,38.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Meryl Tormenta Vil|r
     .turnin 42476 >>Entrega la misión Excavación Paso de la Muerte
@@ -7127,13 +7130,13 @@ step
 --     .usespell 224869
 step
     #arrowtext Haz clic en el\n|cRXP_PICK_Portal|r
-    .isQuestAvailable 41113
+    .isQuestAvailable 41113 --The Only Way to Travel
     #completewith Dalaran to Faronaar
     .goto 735,62.44,51.32
     .zone 627 >>Haz clic en el |cRXP_PICK_Portal|r
 step
     #arrowtext Haz clic en el\n|cRXP_PICK_Portal|r
-    .isQuestTurnedIn 41113
+    .isQuestTurnedIn 41113 --The Only Way to Travel
     #completewith Dalaran to Faronaar
     .goto 734,57.39,90.1
     .zone 627 >>Haz clic en el |cRXP_PICK_Portal|r
@@ -7148,14 +7151,14 @@ step
     .target Aludane Nubeblanca
 step
     #arrowtext |cFFFCDC00Sigue la flecha|r
-    .isOnQuest 42479
+    .isOnQuest 42479 --The Mage Hunter
     .goto 630,26.79,49.02
     >>|cRXP_WARN_Espera al Roleplay|r.
     .scenario 2526,1 --Speak with Meryl and Alodi
     .target Meryl and Alodi
 step
     #arrowtext Haz clic en el\n|cRXP_PICK_Resguardo de disminución de vileza|r
-    .isOnQuest 42479
+    .isOnQuest 42479 --The Mage Hunter
     .goto 630,26.8,49.03
     >>|TInterface/cursor/crosshair/interact.blp:20|tHaz clic en el |cRXP_PICK_Resguardo de disminución de vileza|r
     *|cRXP_WARN_Intenta volar, algunas partes de esta gesta lo permiten|r.
@@ -7411,13 +7414,13 @@ step
     #include ab) Order Hall Mage Part 1@OrderHallMage1-Dreadlord's Prize
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Meryl Tormenta Vil|r
-    .isQuestAvailable 41085
+    .isQuestAvailable 41085 --A Mage's Weapon
     .goto 735,59.15,43.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Meryl Tormenta Vil|r
     .target Meryl Tormenta Vil
     .accept 41085 >>Acepta la misión El arma de un mago
 step
-    .isQuestAvailable 41085
+    .isQuestAvailable 41085 --A Mage's Weapon
     +Selecciona una de las siguientes guías por ahora:
     *|cRXP_WARN_Podrás hacer las otras cadenas de misiones más adelante|r
     *|cFFFF0000No puedes progresar si no seleccionas uno|r.
@@ -7489,14 +7492,14 @@ step
     -- .use 256763
 step
     .zoneskip 709
-    .isQuestAvailable 40569
+    .isQuestAvailable 40569 --The Legend of the Sands
     .cast 126892 >>Usa |T775462:0|t[Peregrinaje zen]
     .usespell 126892
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Ponshu Cuerpo Férreo|r
     .subzoneskip 7902,1
-    .isQuestTurnedIn 43973
-    .isQuestAvailable 44424
+    .isQuestTurnedIn 43973 --Two Paths, Two Weapons
+    .isQuestAvailable 44424 --Three Paths, Three Weapons
     .goto 709,51.42,48.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ponshu Cuerpo Férreo|r
     .target Ponshu Cuerpo Férreo
@@ -7504,9 +7507,9 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Ponshu Cuerpo Férreo|r
     .subzoneskip 7902,1
-    .isQuestTurnedIn 43973
-    .isQuestAvailable 44424
-    .isOnQuest 44424
+    .isQuestTurnedIn 43973 --Two Paths, Two Weapons
+    .isQuestAvailable 44424 --Three Paths, Three Weapons
+    .isOnQuest 44424 --Three Paths, Three Weapons
     .goto 709,51.42,48.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ponshu Cuerpo Férreo|r
     .target Ponshu Cuerpo Férreo
@@ -7517,9 +7520,9 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Ponshu Cuerpo Férreo|r
     .subzoneskip 7902,1
-    .isQuestTurnedIn 43973
-    .isQuestAvailable 44424
-    .isQuestComplete 44424
+    .isQuestTurnedIn 43973 --Two Paths, Two Weapons
+    .isQuestAvailable 44424 --Three Paths, Three Weapons
+    .isQuestComplete 44424 --Three Paths, Three Weapons
     .goto 709,51.42,48.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ponshu Cuerpo Férreo|r
     .target Ponshu Cuerpo Férreo
@@ -7528,8 +7531,8 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Ponshu Cuerpo Férreo|r
     .subzoneskip 7902,1
-    .isQuestTurnedIn 40636
-    .isQuestAvailable 43973
+    .isQuestTurnedIn 40636 --Prepare To Strike
+    .isQuestAvailable 43973 --Two Paths, Two Weapons
     .goto 709,51.42,48.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ponshu Cuerpo Férreo|r
     .target Ponshu Cuerpo Férreo
@@ -7537,9 +7540,9 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Ponshu Cuerpo Férreo|r
     .subzoneskip 7902,1
-    .isQuestTurnedIn 40636
-    .isQuestAvailable 43973
-    .isOnQuest 43973
+    .isQuestTurnedIn 40636 --Prepare To Strike
+    .isQuestAvailable 43973 --Two Paths, Two Weapons
+    .isOnQuest 43973 --Two Paths, Two Weapons
     .goto 709,51.42,48.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ponshu Cuerpo Férreo|r
     .target Ponshu Cuerpo Férreo
@@ -7550,9 +7553,9 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Ponshu Cuerpo Férreo|r
     .subzoneskip 7902,1
-    .isQuestTurnedIn 40636
-    .isQuestAvailable 43973
-    .isQuestComplete 43973
+    .isQuestTurnedIn 40636 --Prepare To Strike
+    .isQuestAvailable 43973 --Two Paths, Two Weapons
+    .isQuestComplete 43973 --Two Paths, Two Weapons
     .goto 709,51.42,48.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ponshu Cuerpo Férreo|r
     .target Ponshu Cuerpo Férreo
@@ -7560,7 +7563,7 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Ponshu Cuerpo Férreo|r
     .subzoneskip 7902,1
-    .isQuestAvailable 40636
+    .isQuestAvailable 40636 --Prepare To Strike
     .goto 709,51.41,48.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ponshu Cuerpo Férreo|r
     .accept 40636 >>Acepta la misión Prepárate para golpear
@@ -7568,8 +7571,8 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Ponshu Cuerpo Férreo|r
     .subzoneskip 7902,1
-    .isQuestAvailable 40636
-    .isOnQuest 40636
+    .isQuestAvailable 40636 --Prepare To Strike
+    .isOnQuest 40636 --Prepare To Strike
     .goto 709,51.42,48.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ponshu Cuerpo Férreo|r
     .complete 40636,1 --1/1 Choose a artifact to pursue
@@ -7579,8 +7582,8 @@ step
     .target Ponshu Cuerpo Férreo
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Ponshu Cuerpo Férreo|r
-    .isQuestComplete 40636
-    .isQuestAvailable 40636
+    .isQuestComplete 40636 --Prepare To Strike
+    .isQuestAvailable 40636 --Prepare To Strike
     .goto 709,51.42,48.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ponshu Cuerpo Férreo|r
     .target Ponshu Cuerpo Férreo
@@ -7727,25 +7730,25 @@ step
 step
     #arrowtext Haz clic en el\n|cRXP_PICK_Orbe azul|r
     .goto 371,55.37,58.54
-    .isOnQuest 42868
+    .isOnQuest 42868 --The Monkey King's Challenge
     .cast 217213 >>Haz clic en el |cRXP_PICK_Orbe azul|r
     .timer 12,RP
 step
     #arrowtext Haz clic en la\n|cRXP_PICK_Harina|r
     .goto 371,55.24,58.52
-    .isOnQuest 42868
+    .isOnQuest 42868 --The Monkey King's Challenge
     .cast 217216 >>Haz clic en la |cRXP_PICK_Harina|r
     .timer 10.5,RP
 step
     #arrowtext Haz clic la\n|cRXP_PICK_Barrica|r
     .goto 371,55.21,58.43
-    .isOnQuest 42868
+    .isOnQuest 42868 --The Monkey King's Challenge
     .cast 217219 >>Haz clic en la |cRXP_PICK_Barrica|r
     .timer 11,RP
 step
     #arrowtext Haz clic en el\n|cRXP_PICK_Plátano|r
     .goto 371,55.39,58.46
-    .isOnQuest 42868
+    .isOnQuest 42868 --The Monkey King's Challenge
     .cast 217224 >>Haz clic en el |cRXP_PICK_Plátano|r
     .timer 10,RP
 step
@@ -7778,7 +7781,7 @@ step
 step
     #arrowtext Espera al "roleplay"
     .goto 791,32.38,54.04
-    .isOnQuest 42765
+    .isOnQuest 42765 --The Trial at the Temple
     >>|cRXP_WARN_Espera al Roleplay|r.
     *|cRXP_WARN_No puedes montar en este escenario|r.
     .scenario 2613,1
@@ -7977,14 +7980,14 @@ step
     -- .use 256763
 step
     .zoneskip 709
-    .isQuestAvailable 40569
+    .isQuestAvailable 40569 --The Legend of the Sands
     .cast 126892 >>Usa |T775462:0|t[Peregrinaje zen]
     .usespell 126892
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Ponshu Cuerpo Férreo|r
     .subzoneskip 7902,1
-    .isQuestTurnedIn 43973
-    .isQuestAvailable 44424
+    .isQuestTurnedIn 43973 --Two Paths, Two Weapons
+    .isQuestAvailable 44424 --Three Paths, Three Weapons
     .goto 709,51.42,48.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ponshu Cuerpo Férreo|r
     .target Ponshu Cuerpo Férreo
@@ -7992,9 +7995,9 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Ponshu Cuerpo Férreo|r
     .subzoneskip 7902,1
-    .isQuestTurnedIn 43973
-    .isQuestAvailable 44424
-    .isOnQuest 44424
+    .isQuestTurnedIn 43973 --Two Paths, Two Weapons
+    .isQuestAvailable 44424 --Three Paths, Three Weapons
+    .isOnQuest 44424 --Three Paths, Three Weapons
     .goto 709,51.42,48.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ponshu Cuerpo Férreo|r
     .target Ponshu Cuerpo Férreo
@@ -8005,9 +8008,9 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Ponshu Cuerpo Férreo|r
     .subzoneskip 7902,1
-    .isQuestTurnedIn 43973
-    .isQuestAvailable 44424
-    .isQuestComplete 44424
+    .isQuestTurnedIn 43973 --Two Paths, Two Weapons
+    .isQuestAvailable 44424 --Three Paths, Three Weapons
+    .isQuestComplete 44424 --Three Paths, Three Weapons
     .goto 709,51.42,48.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ponshu Cuerpo Férreo|r
     .target Ponshu Cuerpo Férreo
@@ -8016,8 +8019,8 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Ponshu Cuerpo Férreo|r
     .subzoneskip 7902,1
-    .isQuestTurnedIn 40636
-    .isQuestAvailable 43973
+    .isQuestTurnedIn 40636 --Prepare To Strike
+    .isQuestAvailable 43973 --Two Paths, Two Weapons
     .goto 709,51.42,48.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ponshu Cuerpo Férreo|r
     .target Ponshu Cuerpo Férreo
@@ -8025,9 +8028,9 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Ponshu Cuerpo Férreo|r
     .subzoneskip 7902,1
-    .isQuestTurnedIn 40636
-    .isQuestAvailable 43973
-    .isOnQuest 43973
+    .isQuestTurnedIn 40636 --Prepare To Strike
+    .isQuestAvailable 43973 --Two Paths, Two Weapons
+    .isOnQuest 43973 --Two Paths, Two Weapons
     .goto 709,51.42,48.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ponshu Cuerpo Férreo|r
     .target Ponshu Cuerpo Férreo
@@ -8038,9 +8041,9 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Ponshu Cuerpo Férreo|r
     .subzoneskip 7902,1
-    .isQuestTurnedIn 40636
-    .isQuestAvailable 43973
-    .isQuestComplete 43973
+    .isQuestTurnedIn 40636 --Prepare To Strike
+    .isQuestAvailable 43973 --Two Paths, Two Weapons
+    .isQuestComplete 43973 --Two Paths, Two Weapons
     .goto 709,51.42,48.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ponshu Cuerpo Férreo|r
     .target Ponshu Cuerpo Férreo
@@ -8048,7 +8051,7 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Ponshu Cuerpo Férreo|r
     .subzoneskip 7902,1
-    .isQuestAvailable 40636
+    .isQuestAvailable 40636 --Prepare To Strike
     .goto 709,51.41,48.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ponshu Cuerpo Férreo|r
     .accept 40636 >>Acepta la misión Prepárate para golpear
@@ -8056,8 +8059,8 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Ponshu Cuerpo Férreo|r
     .subzoneskip 7902,1
-    .isQuestAvailable 40636
-    .isOnQuest 40636
+    .isQuestAvailable 40636 --Prepare To Strike
+    .isOnQuest 40636 --Prepare To Strike
     .goto 709,51.42,48.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ponshu Cuerpo Férreo|r
     .complete 40636,1 --1/1 Choose a artifact to pursue
@@ -8068,8 +8071,8 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Ponshu Cuerpo Férreo|r
     .subzoneskip 7902,1
-    .isQuestComplete 40636
-    .isQuestAvailable 40636
+    .isQuestComplete 40636 --Prepare To Strike
+    .isQuestAvailable 40636 --Prepare To Strike
     .goto 709,51.42,48.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ponshu Cuerpo Férreo|r
     .target Ponshu Cuerpo Férreo
@@ -8104,12 +8107,12 @@ step
     .skipgossipid 45491
     .target Tak-Tak
 step
-    .isOnQuest 41003
+    .isOnQuest 41003 --The Emperor's Gift
     .countdown 29 >>|cRXP_WARN_Espera al Roleplay|r.
 step
     #arrowtext Usa [Vivificar]\nen |cRXP_FRIENDLY_Taran Zhu|r
     #label Taran Zhu
-    .isOnQuest 41003
+    .isOnQuest 41003 --The Emperor's Gift
     .goto 728,92.14,55.2
     >>Usa |T1360980:0|t[Vivificar] en |cRXP_FRIENDLY_Taran Zhu|r.
     .scenario 2091,1
@@ -8117,7 +8120,7 @@ step
     .target Taran Zhu
     .usespell 116670
 step
-    .isOnQuest 41003
+    .isOnQuest 41003 --The Emperor's Gift
     #completewith Aspersius
     +Usa |T1360980:0|t[Vivificar] en |cRXP_FRIENDLY_Taran Zhu|r y en tu grupo para mantenerlos vivos o resucitarlos.
     *|cRXP_WARN_Es importante, ya que no podrás avanzar si está muerto|r.
@@ -8255,14 +8258,14 @@ step
     -- .use 256763
 step
     .zoneskip 709
-    .isQuestAvailable 40569
+    .isQuestAvailable 40569 --The Legend of the Sands
     .cast 126892 >>Usa |T775462:0|t[Peregrinaje zen]
     .usespell 126892
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Ponshu Cuerpo Férreo|r
     .subzoneskip 7902,1
-    .isQuestTurnedIn 43973
-    .isQuestAvailable 44424
+    .isQuestTurnedIn 43973 --Two Paths, Two Weapons
+    .isQuestAvailable 44424 --Three Paths, Three Weapons
     .goto 709,51.42,48.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ponshu Cuerpo Férreo|r
     .target Ponshu Cuerpo Férreo
@@ -8270,9 +8273,9 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Ponshu Cuerpo Férreo|r
     .subzoneskip 7902,1
-    .isQuestTurnedIn 43973
-    .isQuestAvailable 44424
-    .isOnQuest 44424
+    .isQuestTurnedIn 43973 --Two Paths, Two Weapons
+    .isQuestAvailable 44424 --Three Paths, Three Weapons
+    .isOnQuest 44424 --Three Paths, Three Weapons
     .goto 709,51.42,48.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ponshu Cuerpo Férreo|r
     .target Ponshu Cuerpo Férreo
@@ -8283,9 +8286,9 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Ponshu Cuerpo Férreo|r
     .subzoneskip 7902,1
-    .isQuestTurnedIn 43973
-    .isQuestAvailable 44424
-    .isQuestComplete 44424
+    .isQuestTurnedIn 43973 --Two Paths, Two Weapons
+    .isQuestAvailable 44424 --Three Paths, Three Weapons
+    .isQuestComplete 44424 --Three Paths, Three Weapons
     .goto 709,51.42,48.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ponshu Cuerpo Férreo|r
     .target Ponshu Cuerpo Férreo
@@ -8294,8 +8297,8 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Ponshu Cuerpo Férreo|r
     .subzoneskip 7902,1
-    .isQuestTurnedIn 40636
-    .isQuestAvailable 43973
+    .isQuestTurnedIn 40636 --Prepare To Strike
+    .isQuestAvailable 43973 --Two Paths, Two Weapons
     .goto 709,51.42,48.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ponshu Cuerpo Férreo|r
     .target Ponshu Cuerpo Férreo
@@ -8303,9 +8306,9 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Ponshu Cuerpo Férreo|r
     .subzoneskip 7902,1
-    .isQuestTurnedIn 40636
-    .isQuestAvailable 43973
-    .isOnQuest 43973
+    .isQuestTurnedIn 40636 --Prepare To Strike
+    .isQuestAvailable 43973 --Two Paths, Two Weapons
+    .isOnQuest 43973 --Two Paths, Two Weapons
     .goto 709,51.42,48.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ponshu Cuerpo Férreo|r
     .target Ponshu Cuerpo Férreo
@@ -8316,9 +8319,9 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Ponshu Cuerpo Férreo|r
     .subzoneskip 7902,1
-    .isQuestTurnedIn 40636
-    .isQuestAvailable 43973
-    .isQuestComplete 43973
+    .isQuestTurnedIn 40636 --Prepare To Strike
+    .isQuestAvailable 43973 --Two Paths, Two Weapons
+    .isQuestComplete 43973 --Two Paths, Two Weapons
     .goto 709,51.42,48.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ponshu Cuerpo Férreo|r
     .target Ponshu Cuerpo Férreo
@@ -8326,15 +8329,15 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Ponshu Cuerpo Férreo|r
     .subzoneskip 7902,1
-    .isQuestAvailable 40636
+    .isQuestAvailable 40636 --Prepare To Strike
     .goto 709,51.41,48.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ponshu Cuerpo Férreo|r
     .accept 40636 >>Acepta la misión Prepárate para golpear
     .target Ponshu Cuerpo Férreo
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Ponshu Cuerpo Férreo|r
-    .isQuestAvailable 40636
-    .isOnQuest 40636
+    .isQuestAvailable 40636 --Prepare To Strike
+    .isOnQuest 40636 --Prepare To Strike
     .goto 709,51.42,48.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ponshu Cuerpo Férreo|r
     .complete 40636,1 --1/1 Choose a artifact to pursue
@@ -8344,8 +8347,8 @@ step
     .target Ponshu Cuerpo Férreo
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Ponshu Cuerpo Férreo|r
-    .isQuestComplete 40636
-    .isQuestAvailable 40636
+    .isQuestComplete 40636 --Prepare To Strike
+    .isQuestAvailable 40636 --Prepare To Strike
     .goto 709,51.42,48.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ponshu Cuerpo Férreo|r
     .target Ponshu Cuerpo Férreo
@@ -8468,7 +8471,7 @@ step
     .use 132745
 step
     #arrowtext Entra en la gesta de |cRXP_PICK_Viajero del viento|r
-    .isOnQuest 40570
+    .isOnQuest 40570 --Into The Heavens
     .goto 716,30.9,45.18
     .enterScenario 983 >>Entra en la gesta de |cRXP_PICK_Viajero del viento|r.
 step
@@ -8763,13 +8766,13 @@ step
     #include ab) Order Hall Monk Part 1@MonkStart1-The Dawning Light
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Ponshu Cuerpo Férreo|r
-    .isQuestAvailable 40636
+    .isQuestAvailable 40636 --Prepare To Strike
     .goto 709,51.41,48.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ponshu Cuerpo Férreo|r
     .accept 40636 >>Acepta la misión Prepárate para golpear
     .target Ponshu Cuerpo Férreo
 step
-    .isQuestAvailable 40636
+    .isQuestAvailable 40636 --Prepare To Strike
     +Selecciona una de las siguientes guías por ahora:
     *|cRXP_WARN_Podrás hacer las otras cadenas de misiones más adelante|r
     *|cFFFF0000No puedes progresar si no seleccionas uno|r.
@@ -8849,8 +8852,8 @@ step
     -- .use 256763
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Lord Maxwell Neófitus|r
-    .isQuestTurnedIn 44063
-    .isQuestAvailable 44370
+    .isQuestTurnedIn 44063 --Bolstering Your Arsenal
+    .isQuestAvailable 44370 --Completing Your Arsenal
     .goto 24,49.88,72.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Lord Maxwell Neófitus|r
     .accept 44370 >>Acepta la misión Completando tu arsenal
@@ -8859,9 +8862,9 @@ step
     .target Señor Maxwell Tyrosus
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Lord Maxwell Neófitus|r
-    .isQuestTurnedIn 44063
-    .isQuestAvailable 44370
-    .isOnQuest 44370
+    .isQuestTurnedIn 44063 --Bolstering Your Arsenal
+    .isQuestAvailable 44370 --Completing Your Arsenal
+    .isOnQuest 44370 --Completing Your Arsenal
     .goto 24,49.88,72.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Lord Maxwell Neófitus|r
     .target Señor Maxwell Tyrosus
@@ -8870,17 +8873,17 @@ step
     .choose 1271766
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Lord Maxwell Neófitus|r
-    .isQuestTurnedIn 44063
-    .isQuestAvailable 44370
-    .isQuestComplete 44370
+    .isQuestTurnedIn 44063 --Bolstering Your Arsenal
+    .isQuestAvailable 44370 --Completing Your Arsenal
+    .isQuestComplete 44370 --Completing Your Arsenal
     .goto 24,49.88,72.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Lord Maxwell Neófitus|r
     .turnin 44370 >>Entrega la misión Completando tu arsenal
     .target Señor Maxwell Tyrosus
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Lord Maxwell Neófitus|r
-    .isQuestTurnedIn 40408
-    .isQuestAvailable 44063
+    .isQuestTurnedIn 40408 --Weapons of Legend
+    .isQuestAvailable 44063 --Bolstering Your Arsenal
     .goto 24,49.88,72.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Lord Maxwell Neófitus|r
     .accept 44063 >>Acepta la misión Mejorando tu arsenal
@@ -8889,9 +8892,9 @@ step
     .target Señor Maxwell Tyrosus
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Lord Maxwell Neófitus|r
-    .isQuestTurnedIn 40408
-    .isQuestAvailable 44063
-    .isOnQuest 44063
+    .isQuestTurnedIn 40408 --Weapons of Legend
+    .isQuestAvailable 44063 --Bolstering Your Arsenal
+    .isOnQuest 44063 --Bolstering Your Arsenal
     .goto 24,49.88,72.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Lord Maxwell Neófitus|r
     .target Señor Maxwell Tyrosus
@@ -8900,9 +8903,9 @@ step
     .choose 1271766
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Lord Maxwell Neófitus|r
-    .isQuestTurnedIn 40408
-    .isQuestAvailable 44063
-    .isQuestComplete 44063
+    .isQuestTurnedIn 40408 --Weapons of Legend
+    .isQuestAvailable 44063 --Bolstering Your Arsenal
+    .isQuestComplete 44063 --Bolstering Your Arsenal
     .goto 24,49.88,72.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Lord Maxwell Neófitus|r
     .turnin 44063 >>Entrega la misión Mejorando tu arsenal
@@ -8910,7 +8913,7 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Lord Maxwell Neófitus|r
     .subzoneskip 4564,1
-    .isQuestAvailable 40408
+    .isQuestAvailable 40408 --Weapons of Legend
     .goto 627,74.88,48.26
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Lord Maxwell Neófitus|r
     .accept 40408,1 >>Acepta la misión Armas legendarias
@@ -8920,8 +8923,8 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Lord Maxwell Neófitus|r
     .subzoneskip 4564,1
-    .isQuestAvailable 40408
-    .isOnQuest 40408
+    .isQuestAvailable 40408 --Weapons of Legend
+    .isOnQuest 40408 --Weapons of Legend
     .goto 627,74.88,48.26
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Lord Maxwell Neófitus|r
     .complete 40408,1 --1/1 Artifact weapon chosen
@@ -8930,8 +8933,8 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Lord Maxwell Neófitus|r
     .subzoneskip 4564,1
-    .isQuestComplete 40408
-    .isQuestAvailable 40408
+    .isQuestComplete 40408 --Weapons of Legend
+    .isQuestAvailable 40408 --Weapons of Legend
     .goto 627,74.88,48.26
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Lord Maxwell Neófitus|r
     .turnin 40408,1 >>Entrega la misión Armas legendarias
@@ -8947,7 +8950,7 @@ step
     .accept 42231 >>Acepta la misión El paladín misterioso
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Lady Liadrin|r
-    .isOnQuest 42881
+    .isOnQuest 42881 --Champion: Lady Liadrin
     .goto 24,38.22,64.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Lady Liadrin|r
     .accept 42881 >>Acepta la misión Campeona: Lady Liadrin
@@ -9101,14 +9104,14 @@ step
     .use 173523
 step
     #requires in Tirisfal Glades
-    .isOnQuest 42120
+    .isOnQuest 42120 --The Silver Hand
     .goto 18,13.45,56.68
     #title |cFFFCDC00Sigue la Flecha|r
     .complete 42120,2 --1/1 Go to the marked location in Tirisfal Glades
     .target Travard
 step
     #arrowtext Sigue la flecha
-    .isOnQuest 42120
+    .isOnQuest 42120 --The Silver Hand
     .goto 18,13.45,56.68,10 >>|cRXP_WARN_Sigue la Flecha|r.
     .timer 30,RP
 step
@@ -9218,7 +9221,7 @@ step
     .macro Leave Instance,236367 >> Sal de la Instancia
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Lord Maxwell Neófitus|r
-    .isQuestAvailable 44370,44063
+    .isQuestAvailable 44370,44063 --Completing Your Arsenal; Bolstering Your Arsenal
     #label Artifact Weapon: Holy Paladin
     .goto 627,71.83,45.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Lord Maxwell Neófitus|r
@@ -9227,19 +9230,19 @@ step
     .accept 38576 >>Acepta la misión Nos veremos en Esperanza de la Luz
 step << Horde
     #arrowtext Haz clic en el\n|cRXP_PICK_Portal|r
-    .isQuestTurnedIn 40408
+    .isQuestTurnedIn 40408 --Weapons of Legend
     .goto 627,58.5,20.55,10,0
     .goto 627,61.89,13.63
     .zone 24 >>|TInterface/cursor/crosshair/interact.blp:20|tHaz clic en el |cRXP_PICK_Portal|r
 step << Alliance
     #arrowtext Haz clic en el\n|cRXP_PICK_Portal|r
-    .isQuestTurnedIn 40408
+    .isQuestTurnedIn 40408 --Weapons of Legend
     .goto 627,36.64,65.28,15,0
     .goto 627,32.64,69.87
     .zone 24 >>|TInterface/cursor/crosshair/interact.blp:20|tHaz clic en el |cRXP_PICK_Portal|r
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Lord Maxwell Neófitus|r
-    .isQuestTurnedIn 44370,44063
+    .isQuestTurnedIn 44370,44063 --Completing Your Arsenal; Bolstering Your Arsenal
     .goto 24,49.86,72.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Lord Maxwell Neófitus|r
     .turnin 42120 >>Entrega la misión La Mano de plata
@@ -9330,8 +9333,8 @@ step
     -- .use 256763
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Lord Maxwell Neófitus|r
-    .isQuestTurnedIn 44063
-    .isQuestAvailable 44370
+    .isQuestTurnedIn 44063 --Bolstering Your Arsenal
+    .isQuestAvailable 44370 --Completing Your Arsenal
     .goto 24,49.88,72.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Lord Maxwell Neófitus|r
     .accept 44370 >>Acepta la misión Completando tu arsenal
@@ -9341,9 +9344,9 @@ step
     .target Señor Maxwell Tyrosus
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Lord Maxwell Neófitus|r
-    .isQuestTurnedIn 44063
-    .isQuestAvailable 44370
-    .isOnQuest 44370
+    .isQuestTurnedIn 44063 --Bolstering Your Arsenal
+    .isQuestAvailable 44370 --Completing Your Arsenal
+    .isOnQuest 44370 --Completing Your Arsenal
     .goto 24,49.88,72.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Lord Maxwell Neófitus|r
     .target Señor Maxwell Tyrosus
@@ -9353,17 +9356,17 @@ step
     .choose 1271767
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Lord Maxwell Neófitus|r
-    .isQuestTurnedIn 44063
-    .isQuestAvailable 44370
-    .isQuestComplete 44370
+    .isQuestTurnedIn 44063 --Bolstering Your Arsenal
+    .isQuestAvailable 44370 --Completing Your Arsenal
+    .isQuestComplete 44370 --Completing Your Arsenal
     .goto 24,49.88,72.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Lord Maxwell Neófitus|r
     .turnin 44370 >>Entrega la misión Completando tu arsenal
     .target Señor Maxwell Tyrosus
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Lord Maxwell Neófitus|r
-    .isQuestTurnedIn 40408
-    .isQuestAvailable 44063
+    .isQuestTurnedIn 40408 --Weapons of Legend
+    .isQuestAvailable 44063 --Bolstering Your Arsenal
     .goto 24,49.88,72.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Lord Maxwell Neófitus|r
     .accept 44063 >>Acepta la misión Mejorando tu arsenal
@@ -9371,9 +9374,9 @@ step
     .target Señor Maxwell Tyrosus
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Lord Maxwell Neófitus|r
-    .isQuestTurnedIn 40408
-    .isQuestAvailable 44063
-    .isOnQuest 44063
+    .isQuestTurnedIn 40408 --Weapons of Legend
+    .isQuestAvailable 44063 --Bolstering Your Arsenal
+    .isOnQuest 44063 --Bolstering Your Arsenal
     .goto 24,49.88,72.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Lord Maxwell Neófitus|r
     .target Señor Maxwell Tyrosus
@@ -9383,9 +9386,9 @@ step
     .choose 1271767
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Lord Maxwell Neófitus|r
-    .isQuestTurnedIn 40408
-    .isQuestAvailable 44063
-    .isQuestComplete 44063
+    .isQuestTurnedIn 40408 --Weapons of Legend
+    .isQuestAvailable 44063 --Bolstering Your Arsenal
+    .isQuestComplete 44063 --Bolstering Your Arsenal
     .goto 24,49.88,72.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Lord Maxwell Neófitus|r
     .turnin 44063 >>Entrega la misión Mejorando tu arsenal
@@ -9393,7 +9396,7 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Lord Maxwell Neófitus|r
     .subzoneskip 4564,1
-    .isQuestAvailable 40408
+    .isQuestAvailable 40408 --Weapons of Legend
     .goto 627,74.88,48.26
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Lord Maxwell Neófitus|r
     .accept 40408,1 >>Acepta la misión Armas legendarias
@@ -9402,8 +9405,8 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Lord Maxwell Neófitus|r
     .subzoneskip 4564,1
-    .isQuestAvailable 40408
-    .isOnQuest 40408
+    .isQuestAvailable 40408 --Weapons of Legend
+    .isOnQuest 40408 --Weapons of Legend
     .goto 627,74.88,48.26
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Lord Maxwell Neófitus|r
     .complete 40408,1 --1/1 Artifact weapon chosen
@@ -9413,8 +9416,8 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Lord Maxwell Neófitus|r
     .subzoneskip 4564,1
-    .isQuestComplete 40408
-    .isQuestAvailable 40408
+    .isQuestComplete 40408 --Weapons of Legend
+    .isQuestAvailable 40408 --Weapons of Legend
     .goto 627,74.88,48.26
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Lord Maxwell Neófitus|r
     .turnin 40408,1 >>Entrega la misión Armas legendarias
@@ -9424,7 +9427,7 @@ step
     +|cRXP_WARN_Asegúrate de tener un arma usable equipada. Si no es así, equipa una hasta que consigas tu artefacto, o cambia a una especialización que ya tenga su artefacto|r.
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Lady Liadrin|r
-    .isOnQuest 42881
+    .isOnQuest 42881 --Champion: Lady Liadrin
     .goto 24,38.22,64.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Lady Liadrin|r
     .accept 42881 >>Acepta la misión Campeona: Lady Liadrin
@@ -9521,7 +9524,7 @@ step
     .complete 42005,3 --1/1 Complete the ritual
 step
     .cast 441154 >>Usa el |T134491:0|t[Vale de Nostwin]
-    .itemcount 238727,1
+    .itemcount 238727,1 --Nostwin's Voucher
     .use 238727
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Orik Corazón Veraz|r
@@ -9532,19 +9535,19 @@ step
     .accept 42017 >>Acepta la misión Santuario de la Veraguardia
 step
     #arrowtext Haz clic en el\n|cRXP_PICK_Hipogrifo Argenta|r
-    .isOnQuest 42017
+    .isOnQuest 42017 --Shrine of the Truthguard
     .goto 627,72.18,50.45
     .vehicle >>Haz clic en el |cRXP_PICK_Hipogrifo Argenta|r
     .timer 29,RP
 step
     #arrowtext Espera al "roleplay"
-    .isOnQuest 42017
+    .isOnQuest 42017 --Shrine of the Truthguard
     .goto 634,85.5,10.65,40 >>|cRXP_WARN_Espera al Roleplay|r.
     .timer 16,RP
 step
     #arrowtext |cFFFCDC00Sigue la flecha|r
     .goto 634,83.93,9.52
-    .isOnQuest 42017
+    .isOnQuest 42017 --Shrine of the Truthguard
     >>|cRXP_WARN_Espera al Roleplay|r.
     .scenario 2390,1 --Speak with Orik.
     .target Orik
@@ -9666,7 +9669,7 @@ step
     .complete 42017,2 --1/1 Claim the Truthguard
 step
     #arrowtext Haz clic en el\n|cRXP_PICK_Hipogrifo Argenta|r
-    .isOnQuest 42017
+    .isOnQuest 42017 --Shrine of the Truthguard
     .goto 634,83.95,9.55,10,0
     .goto 634,85.47,10.83
     .vehicle >>Haz clic en el |cRXP_PICK_Hipogrifo Argenta|r
@@ -9674,8 +9677,8 @@ step
     .timer 20,RP
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Lord Maxwell Neófitus|r
-    .isQuestAvailable 38576
-    .isOnQuest 42017
+    .isQuestAvailable 38576 --We Meet at Light's Hope
+    .isOnQuest 42017 --Shrine of the Truthguard
     #label Artifact Weapon: Paladin Protection
     .goto 627,71.74,45.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Lord Maxwell Neófitus|r |cRXP_WARN_en Dalaran|r.
@@ -9683,8 +9686,8 @@ step
     .target Señor Maxwell Tyrosus
     .accept 38576 >>Acepta la misión Nos veremos en Esperanza de la Luz
 step
-    .isQuestTurnedIn 38576
-    .isOnQuest 42017
+    .isQuestTurnedIn 38576 --We Meet at Light's Hope
+    .isOnQuest 42017 --Shrine of the Truthguard
     #completewith next
     #label Shrine of the Truthguard3
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Lord Maxwell Neófitus|r
@@ -9693,69 +9696,69 @@ step
 step << Alliance
     #arrowtext Haz clic en el\n|cRXP_PICK_Portal|r
     #completewith Shrine of the Truthguard3
-    .isOnQuest 42017
-    .isQuestTurnedIn 38576
+    .isOnQuest 42017 --Shrine of the Truthguard
+    .isQuestTurnedIn 38576 --We Meet at Light's Hope
     .goto 627,34.98,66.58,20,0
     .goto 627,32.65,69.91
     .zone 24 >>|TInterface/cursor/crosshair/interact.blp:20|tHaz clic en el |cRXP_PICK_Portal|r
 step << Horde
     #arrowtext Haz clic en el\n|cRXP_PICK_Portal|r
     #completewith Shrine of the Truthguard3
-    .isOnQuest 42017
-    .isQuestTurnedIn 38576
+    .isOnQuest 42017 --Shrine of the Truthguard
+    .isQuestTurnedIn 38576 --We Meet at Light's Hope
     .goto 627,58.71,20.66,20,0
     .goto 627,61.93,13.5
     .zone 24 >>|TInterface/cursor/crosshair/interact.blp:20|tHaz clic en el |cRXP_PICK_Portal|r
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Lord Maxwell Neófitus|r
     #requires Shrine of the Truthguard3
-    .isQuestTurnedIn 38576
+    .isQuestTurnedIn 38576 --We Meet at Light's Hope
     .goto 24,49.88,72.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Lord Maxwell Neófitus|r
     .turnin 42017 >>Entrega la misión Santuario de la Veraguardia
     .target Señor Maxwell Tyrosus
 step << Alliance
-    .isQuestAvailable 38576
+    .isQuestAvailable 38576 --We Meet at Light's Hope
     #completewith next
     #label Light's Hope Sanctum
     .goto 627,34.98,66.58,20,0
     >>|TInterface/cursor/crosshair/interact.blp:20|tHaz clic en el |cRXP_PICK_Portal|r
     .complete 38576,2 --1/1 Enter Light's Hope Sanctum
 step << Alliance
-    .isQuestAvailable 38576
+    .isQuestAvailable 38576 --We Meet at Light's Hope
     #completewith Light's Hope Sanctum
     #hidewindow
     .goto 627,32.65,69.91,30 >>Sigue la Flecha
 step << Alliance
     #arrowtext Haz clic en el\n|cRXP_PICK_Portal|r
     #requires Light's Hope Sanctum
-    .isQuestAvailable 38576
+    .isQuestAvailable 38576 --We Meet at Light's Hope
     .goto 627,32.65,69.91
     >>|TInterface/cursor/crosshair/interact.blp:20|tHaz clic en el |cRXP_PICK_Portal|r
     .complete 38576,2 --1/1 Enter Light's Hope Sanctum
 step << Horde
     #completewith next
     #label Light's Hope Sanctum
-    .isQuestAvailable 38576
+    .isQuestAvailable 38576 --We Meet at Light's Hope
     .goto 627,58.71,20.66,20,0
     >>|TInterface/cursor/crosshair/interact.blp:20|tHaz clic en el |cRXP_PICK_Portal|r
     .complete 38576,2 --1/1 Enter Light's Hope Sanctum
 step << Horde
     #completewith Light's Hope Sanctum
-    .isQuestAvailable 38576
+    .isQuestAvailable 38576 --We Meet at Light's Hope
     #hidewindow
     .goto 627,61.93,13.5,30 >>Sigue la Flecha
 step << Horde
     #arrowtext Haz clic en el\n|cRXP_PICK_Portal|r
     #requires Light's Hope Sanctum
-    .isQuestAvailable 38576
+    .isQuestAvailable 38576 --We Meet at Light's Hope
     .goto 627,61.93,13.5
     >>|TInterface/cursor/crosshair/interact.blp:20|tHaz clic en el |cRXP_PICK_Portal|r
     .complete 38576,2 --1/1 Enter Light's Hope Sanctum
 step
     #completewith next
     #label A United Force
-    .isQuestAvailable 38576
+    .isQuestAvailable 38576 --We Meet at Light's Hope
     .goto 24,47.59,62.28,15,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Lord Maxwell Neófitus|r
     .turnin 38576 >>Entrega la misión Nos veremos en Esperanza de la Luz
@@ -9763,12 +9766,12 @@ step
 step
     #completewith A United Force
     #hidewindow
-    .isQuestAvailable 38576
+    .isQuestAvailable 38576 --We Meet at Light's Hope
     .goto 24,63.15,37.22,40 >>Sigue la Flecha
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Lord Maxwell Neófitus|r
     #requires A United Force
-    .isQuestAvailable 38576
+    .isQuestAvailable 38576 --We Meet at Light's Hope
     .goto 24,63.15,37.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Lord Maxwell Neófitus|r
     .turnin 38576 >>Entrega la misión Nos veremos en Esperanza de la Luz
@@ -9817,8 +9820,8 @@ step
     .usespell 1241425 -- Temporal Retreat
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Lord Maxwell Neófitus|r
-    .isQuestTurnedIn 44063
-    .isQuestAvailable 44370
+    .isQuestTurnedIn 44063 --Bolstering Your Arsenal
+    .isQuestAvailable 44370 --Completing Your Arsenal
     .goto 24,49.88,72.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Lord Maxwell Neófitus|r
     .accept 44370 >>Acepta la misión Completando tu arsenal
@@ -9827,9 +9830,9 @@ step
     .target Señor Maxwell Tyrosus
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Lord Maxwell Neófitus|r
-    .isQuestTurnedIn 44063
-    .isQuestAvailable 44370
-    .isOnQuest 44370
+    .isQuestTurnedIn 44063 --Bolstering Your Arsenal
+    .isQuestAvailable 44370 --Completing Your Arsenal
+    .isOnQuest 44370 --Completing Your Arsenal
     .goto 24,49.88,72.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Lord Maxwell Neófitus|r
     .target Señor Maxwell Tyrosus
@@ -9838,17 +9841,17 @@ step
     .choose 1271768
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Lord Maxwell Neófitus|r
-    .isQuestTurnedIn 44063
-    .isQuestAvailable 44370
-    .isQuestComplete 44370
+    .isQuestTurnedIn 44063 --Bolstering Your Arsenal
+    .isQuestAvailable 44370 --Completing Your Arsenal
+    .isQuestComplete 44370 --Completing Your Arsenal
     .goto 24,49.88,72.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Lord Maxwell Neófitus|r
     .turnin 44370 >>Entrega la misión Completando tu arsenal
     .target Señor Maxwell Tyrosus
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Lord Maxwell Neófitus|r
-    .isQuestTurnedIn 40408
-    .isQuestAvailable 44063
+    .isQuestTurnedIn 40408 --Weapons of Legend
+    .isQuestAvailable 44063 --Bolstering Your Arsenal
     .goto 24,49.88,72.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Lord Maxwell Neófitus|r
     .accept 44063 >>Acepta la misión Mejorando tu arsenal
@@ -9857,9 +9860,9 @@ step
     .target Señor Maxwell Tyrosus
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Lord Maxwell Neófitus|r
-    .isQuestTurnedIn 40408
-    .isQuestAvailable 44063
-    .isOnQuest 44063
+    .isQuestTurnedIn 40408 --Weapons of Legend
+    .isQuestAvailable 44063 --Bolstering Your Arsenal
+    .isOnQuest 44063 --Bolstering Your Arsenal
     .goto 24,49.88,72.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Lord Maxwell Neófitus|r
     .target Señor Maxwell Tyrosus
@@ -9868,9 +9871,9 @@ step
     .choose 1271768
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Lord Maxwell Neófitus|r
-    .isQuestTurnedIn 40408
-    .isQuestAvailable 44063
-    .isQuestComplete 44063
+    .isQuestTurnedIn 40408 --Weapons of Legend
+    .isQuestAvailable 44063 --Bolstering Your Arsenal
+    .isQuestComplete 44063 --Bolstering Your Arsenal
     .goto 24,49.88,72.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Lord Maxwell Neófitus|r
     .turnin 44063 >>Entrega la misión Mejorando tu arsenal
@@ -9878,7 +9881,7 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Lord Maxwell Neófitus|r
     .subzoneskip 4564,1
-    .isQuestAvailable 40408
+    .isQuestAvailable 40408 --Weapons of Legend
     .goto 627,74.88,48.26
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Lord Maxwell Neófitus|r
     .accept 40408,1 >>Acepta la misión Armas legendarias
@@ -9888,8 +9891,8 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Lord Maxwell Neófitus|r
     .subzoneskip 4564,1
-    .isQuestAvailable 40408
-    .isOnQuest 40408
+    .isQuestAvailable 40408 --Weapons of Legend
+    .isOnQuest 40408 --Weapons of Legend
     .goto 627,74.88,48.26
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Lord Maxwell Neófitus|r
     .complete 40408,1 --1/1 Artifact weapon chosen
@@ -9898,8 +9901,8 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Lord Maxwell Neófitus|r
     .subzoneskip 4564,1
-    .isQuestComplete 40408
-    .isQuestAvailable 40408
+    .isQuestComplete 40408 --Weapons of Legend
+    .isQuestAvailable 40408 --Weapons of Legend
     .goto 627,74.88,48.26
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Lord Maxwell Neófitus|r
     .turnin 40408,1 >>Entrega la misión Armas legendarias
@@ -10015,13 +10018,13 @@ step
     .accept 42774 >>Acepta la misión La esperanza prevalece
 step
     #arrowtext Usa [Silbato de hipogrifo]
-    .isOnQuest 42774
+    .isOnQuest 42774 --Hope Prevails
     .goto 22,52.1,83.03
     .cast 311750 >>Usa |T132161:0|t[Silbato de hipogrifo] afuera.
     .timer 20,Cuenta atrás para desconectar
     .use 311750
 step
-    .isOnQuest 42774
+    .isOnQuest 42774 --Hope Prevails
     .logout >>Desconecta y vuelve a entrar para teletransportarte.
     .timer 20,RP
     .macro Logout,638661 >>Desconecta
@@ -10056,7 +10059,7 @@ step
     .complete 38376,1 --1/1 Fly to the Broken Shore
 step
     .goto 676,15.69,51.36
-    .isOnQuest 38376
+    .isOnQuest 38376 --The Search for the Highlord
     #title |cFFFCDC00Sigue la Flecha|r
     .scenario 1488,1 --Lead the paladins of the Argent Crusade into battle
 step
@@ -10291,12 +10294,12 @@ step
     #include ab) Order Hall Paladin Part 1@An Urgent Gathering-Order Hall Paladin Part 1
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Lord Maxwell Neófitus|r
-    .isQuestAvailable 40408
+    .isQuestAvailable 40408 --Weapons of Legend
     .goto 627,74.92,48.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Lord Maxwell Neófitus|r
     .target Señor Maxwell Tyrosus
     .accept 40408 >>Acepta la misión Armas legendarias
-    .isQuestAvailable 40408
+    .isQuestAvailable 40408 --Weapons of Legend
 step
     +Selecciona una de las siguientes guías por ahora:
     *|cRXP_WARN_Podrás hacer las otras cadenas de misiones más adelante|r
@@ -10325,18 +10328,18 @@ RXPGuides.RegisterGuide([[
 
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Alonsus Faol|r
-    .isQuestTurnedIn 43935
-    .isQuestAvailable 44407
-    .isQuestAvailable 41625
+    .isQuestTurnedIn 43935 --A Second Legend
+    .isQuestAvailable 44407 --The Third Legend
+    .isQuestAvailable 41625 --The Light's Wrath
     .goto 702,51.61,47.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Alonsus Faol|r.
     .accept 44407 >>Acepta la misión La tercera leyenda
     .target Alonsus Faol
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Alonsus Faol|r
-    .isQuestTurnedIn 43935
-    .isQuestAvailable 44407
-    .isOnQuest 44407
+    .isQuestTurnedIn 43935 --A Second Legend
+    .isQuestAvailable 44407 --The Third Legend
+    .isOnQuest 44407 --The Third Legend
     .goto 702,51.61,47.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Alonsus Faol|r.
     *|cRXP_WARN_Esto elegirá automáticamente el artefacto de Disciplina|r
@@ -10346,27 +10349,27 @@ step
     .skipgossipid 45112
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Alonsus Faol|r
-    .isQuestTurnedIn 43935
-    .isQuestAvailable 44407
-    .isOnQuest 44407
+    .isQuestTurnedIn 43935 --A Second Legend
+    .isQuestAvailable 44407 --The Third Legend
+    .isOnQuest 44407 --The Third Legend
     .goto 702,51.61,47.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Alonsus Faol|r.
     .turnin 44407 >>Entrega la misión La tercera leyenda
     .target Alonsus Faol
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Alonsus Faol|r
-    .isQuestTurnedIn 40706
-    .isQuestAvailable 43935
-    .isQuestAvailable 41625
+    .isQuestTurnedIn 40706 --A Legend You Can Hold
+    .isQuestAvailable 43935 --A Second Legend
+    .isQuestAvailable 41625 --The Light's Wrath
     .goto 702,51.61,47.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Alonsus Faol|r.
     .accept 43935 >>Acepta la misión Una segunda leyenda
     .target Alonsus Faol
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Alonsus Faol|r
-    .isQuestTurnedIn 40706
-    .isQuestAvailable 43935
-    .isOnQuest 43935
+    .isQuestTurnedIn 40706 --A Legend You Can Hold
+    .isQuestAvailable 43935 --A Second Legend
+    .isOnQuest 43935 --A Second Legend
     .goto 702,51.61,47.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Alonsus Faol|r.
     *|cRXP_WARN_Esto elegirá automáticamente el artefacto de Disciplina|r
@@ -10376,24 +10379,24 @@ step
     .skipgossipid 45111
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Alonsus Faol|r
-    .isQuestTurnedIn 40706
-    .isQuestAvailable 43935
-    .isOnQuest 43935
+    .isQuestTurnedIn 40706 --A Legend You Can Hold
+    .isQuestAvailable 43935 --A Second Legend
+    .isOnQuest 43935 --A Second Legend
     .goto 702,51.61,47.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Alonsus Faol|r.
     .turnin 43935 >>Entrega la misión Una segunda leyenda
     .target Alonsus Faol
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Alonsus Faol|r
-    .isQuestAvailable 40706
+    .isQuestAvailable 40706 --A Legend You Can Hold
     .goto 18,78.96,40.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Alonsus Faol|r.
     .accept 40706 >>Acepta la misión Una leyenda en las manos
     .target Alonsus Faol
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Alonsus Faol|r
-    .isQuestAvailable 40706
-    .isOnQuest 40706
+    .isQuestAvailable 40706 --A Legend You Can Hold
+    .isOnQuest 40706 --A Legend You Can Hold
     .goto 18,78.96,40.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Alonsus Faol|r.
     *|cRXP_WARN_Esto elegirá automáticamente el artefacto de Disciplina|r
@@ -10403,8 +10406,8 @@ step
     .skipgossipid 45110
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Alonsus Faol|r
-    .isQuestAvailable 40706
-    .isOnQuest 40706
+    .isQuestAvailable 40706 --A Legend You Can Hold
+    .isOnQuest 40706 --A Legend You Can Hold
     .goto 18,78.96,40.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Alonsus Faol|r.
     .turnin 40706 >>Entrega la misión Una leyenda en las manos
@@ -10415,7 +10418,7 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Alonsus Faol|r
     #optional
-    .isQuestTurnedIn 40938
+    .isQuestTurnedIn 40938 --The Light and the Void
     .goto 702,51.61,47.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Alonsus Faol|r.
     .accept 41625 >>Acepta la misión La Cólera de Luz
@@ -10428,7 +10431,7 @@ step
     .target Alonsus Faol
 step
     #arrowtext Habla con el\n|cRXP_FRIENDLY_Hermano Larry|r
-    .isOnQuest 41625
+    .isOnQuest 41625 --The Light's Wrath
     .zoneskip 18,1
     .goto 18,78.49,41.08
     .zone 627 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Hermano Larry|r.
@@ -10436,7 +10439,7 @@ step
     .skipgossipid 45625
 step
     #arrowtext Haz clic en el\n|cRXP_PICK_Portal a Dalaran|r
-    .isOnQuest 41625
+    .isOnQuest 41625 --The Light's Wrath
     .zoneskip 702,1
     .goto 702,49.79,80.78
     .zone 627 >>Haz clic en el |cRXP_PICK_Portal a Dalaran|r.
@@ -10449,7 +10452,7 @@ step
     .target Archimago Kalec
 step
     .zoneskip 627,1
-    .isOnQuest 41626
+    .isOnQuest 41626 --A New Threat
     .goto 627,49.25,47.64
     .zone 629 >>Usa el teletransportador en el centro de Dalaran
 step
@@ -10558,7 +10561,7 @@ step
     .target Image of Kalec
 step
     #arrowtext Entra en la gesta |cRXP_PICK_X|r
-    .isOnQuest 41631
+    .isOnQuest 41631 --The Nexus Vault
     .goto 114,27.84,28.37,30,0
     .goto 114,27.51,26.05
     .enterScenario 1065 >>Entra en la gesta |cRXP_PICK_X|r.
@@ -10696,7 +10699,7 @@ step
     .accept 41632 >>Acepta la misión Un regalo del tiempo
     .target Archimago Kalec
 step
-    .isQuestTurnedIn 40938
+    .isQuestTurnedIn 40938 --The Light and the Void
     #completewith next
     #label AGiftOfTimeA
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Alonsus Faol|r.
@@ -10704,14 +10707,14 @@ step
     .target Alonsus Faol
 step
     #arrowtext Haz clic en el\n|cRXP_PICK_Portal al Templo Luz Abisal|r
-    .isQuestTurnedIn 40938
+    .isQuestTurnedIn 40938 --The Light and the Void
     #completewith AGiftOfTimeA
     .goto 627,62.99,17.68 << Horde
     .goto 627,39.57,57.30 << Alliance
     .zone 702 >>Haz clic en el |cRXP_PICK_Portal al Templo Luz Abisal|r
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Alonsus Faol|r
-    .isQuestTurnedIn 40938
+    .isQuestTurnedIn 40938 --The Light and the Void
     #requires AGiftOfTimeA
     .goto 702,51.61,47.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Alonsus Faol|r.
@@ -10740,18 +10743,18 @@ RXPGuides.RegisterGuide([[
 
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Alonsus Faol|r
-    .isQuestTurnedIn 43935
-    .isQuestAvailable 44407
-    .isQuestAvailable 41957
+    .isQuestTurnedIn 43935 --A Second Legend
+    .isQuestAvailable 44407 --The Third Legend
+    .isQuestAvailable 41957 --The Vindicator's Plea
     .goto 702,51.61,47.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Alonsus Faol|r.
     .accept 44407 >>Acepta la misión La tercera leyenda
     .target Alonsus Faol
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Alonsus Faol|r
-    .isQuestTurnedIn 43935
-    .isQuestAvailable 44407
-    .isOnQuest 44407
+    .isQuestTurnedIn 43935 --A Second Legend
+    .isQuestAvailable 44407 --The Third Legend
+    .isOnQuest 44407 --The Third Legend
     .goto 702,51.61,47.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Alonsus Faol|r.
     *|cRXP_WARN_Esto elegirá automáticamente el artefacto de Sagrado|r
@@ -10761,27 +10764,27 @@ step
     .skipgossipid 45117
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Alonsus Faol|r
-    .isQuestTurnedIn 43935
-    .isQuestAvailable 44407
-    .isOnQuest 44407
+    .isQuestTurnedIn 43935 --A Second Legend
+    .isQuestAvailable 44407 --The Third Legend
+    .isOnQuest 44407 --The Third Legend
     .goto 702,51.61,47.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Alonsus Faol|r.
     .turnin 44407 >>Entrega la misión La tercera leyenda
     .target Alonsus Faol
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Alonsus Faol|r
-    .isQuestTurnedIn 40706
-    .isQuestAvailable 43935
-    .isQuestAvailable 41957
+    .isQuestTurnedIn 40706 --A Legend You Can Hold
+    .isQuestAvailable 43935 --A Second Legend
+    .isQuestAvailable 41957 --The Vindicator's Plea
     .goto 702,51.61,47.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Alonsus Faol|r.
     .accept 43935 >>Acepta la misión Una segunda leyenda
     .target Alonsus Faol
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Alonsus Faol|r
-    .isQuestTurnedIn 40706
-    .isQuestAvailable 43935
-    .isOnQuest 43935
+    .isQuestTurnedIn 40706 --A Legend You Can Hold
+    .isQuestAvailable 43935 --A Second Legend
+    .isOnQuest 43935 --A Second Legend
     .goto 702,51.61,47.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Alonsus Faol|r.
     *|cRXP_WARN_Esto elegirá automáticamente el artefacto de Sagrado|r
@@ -10791,24 +10794,24 @@ step
     .skipgossipid 45111
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Alonsus Faol|r
-    .isQuestTurnedIn 40706
-    .isQuestAvailable 43935
-    .isOnQuest 43935
+    .isQuestTurnedIn 40706 --A Legend You Can Hold
+    .isQuestAvailable 43935 --A Second Legend
+    .isOnQuest 43935 --A Second Legend
     .goto 702,51.61,47.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Alonsus Faol|r.
     .turnin 43935 >>Entrega la misión Una segunda leyenda
     .target Alonsus Faol
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Alonsus Faol|r
-    .isQuestAvailable 40706
+    .isQuestAvailable 40706 --A Legend You Can Hold
     .goto 18,78.96,40.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Alonsus Faol|r.
     .accept 40706 >>Acepta la misión Una leyenda en las manos
     .target Alonsus Faol
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Alonsus Faol|r
-    .isQuestAvailable 40706
-    .isOnQuest 40706
+    .isQuestAvailable 40706 --A Legend You Can Hold
+    .isOnQuest 40706 --A Legend You Can Hold
     .goto 18,78.96,40.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Alonsus Faol|r.
     *|cRXP_WARN_Esto elegirá automáticamente el artefacto de Sagrado|r
@@ -10818,8 +10821,8 @@ step
     .skipgossipid 45110
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Alonsus Faol|r
-    .isQuestAvailable 40706
-    .isOnQuest 40706
+    .isQuestAvailable 40706 --A Legend You Can Hold
+    .isOnQuest 40706 --A Legend You Can Hold
     .goto 18,78.96,40.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Alonsus Faol|r.
     .turnin 40706 >>Entrega la misión Una leyenda en las manos
@@ -10830,7 +10833,7 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Alonsus Faol|r
     #optional
-    .isQuestTurnedIn 40938
+    .isQuestTurnedIn 40938 --The Light and the Void
     .goto 702,51.61,47.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Alonsus Faol|r.
     .accept 41957 >>Acepta la misión La súplica del vindicador
@@ -10843,7 +10846,7 @@ step
     .target Alonsus Faol
 step
     #arrowtext Habla con el\n|cRXP_FRIENDLY_Hermano Larry|r
-    .isOnQuest 41957
+    .isOnQuest 41957 --The Vindicator's Plea
     .zoneskip 18,1
     .goto 18,78.49,41.08
     .zone 627 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Hermano Larry|r.
@@ -10922,7 +10925,7 @@ step
     .complete 42074,1 --1/1 Travel through the Portal on Darkstone Isle
 step
     #arrowtext Entra en la gesta |cRXP_PICK_El regreso de la Luz|r
-    .isOnQuest 42074
+    .isOnQuest 42074 --Return of the Light
     .goto 646,32.04,31.92
     .enterScenario 1085 >>Entra en la gesta |cRXP_PICK_El regreso de la Luz|r.
 step
@@ -10991,7 +10994,7 @@ step
     .scenario 2426,2 --Leave Niskara
 step
     #arrowtext Habla con el\n|cRXP_FRIENDLY_Profeta Velen|r
-    .isQuestTurnedIn 40938
+    .isQuestTurnedIn 40938 --The Light and the Void
     .goto 702,47.75,47.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Profeta Velen|r.
     .turnin 42074 >>Entrega la misión El regreso de la Luz
@@ -11019,19 +11022,19 @@ RXPGuides.RegisterGuide([[
 
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Alonsus Faol|r
-    .isQuestTurnedIn 43935
-    .isQuestAvailable 44407
-    .isQuestAvailable 40710
-    .isNotOnQuest 40710
+    .isQuestTurnedIn 43935 --A Second Legend
+    .isQuestAvailable 44407 --The Third Legend
+    .isQuestAvailable 40710 --Blade in Twilight
+    .isNotOnQuest 40710 --Blade in Twilight
     .goto 702,51.61,47.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Alonsus Faol|r.
     .accept 44407 >>Acepta la misión La tercera leyenda
     .target Alonsus Faol
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Alonsus Faol|r
-    .isQuestTurnedIn 43935
-    .isQuestAvailable 44407
-    .isOnQuest 44407
+    .isQuestTurnedIn 43935 --A Second Legend
+    .isQuestAvailable 44407 --The Third Legend
+    .isOnQuest 44407 --The Third Legend
     .goto 702,51.61,47.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Alonsus Faol|r.
     *|cRXP_WARN_Esto elegirá automáticamente el artefacto de Sombra|r
@@ -11041,28 +11044,28 @@ step
     .skipgossipid 45112
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Alonsus Faol|r
-    .isQuestTurnedIn 43935
-    .isQuestAvailable 44407
-    .isOnQuest 44407
+    .isQuestTurnedIn 43935 --A Second Legend
+    .isQuestAvailable 44407 --The Third Legend
+    .isOnQuest 44407 --The Third Legend
     .goto 702,51.61,47.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Alonsus Faol|r.
     .turnin 44407 >>Entrega la misión La tercera leyenda
     .target Alonsus Faol
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Alonsus Faol|r
-    .isQuestTurnedIn 40706
-    .isQuestAvailable 43935
-    .isQuestAvailable 40710
-    .isNotOnQuest 40710
+    .isQuestTurnedIn 40706 --A Legend You Can Hold
+    .isQuestAvailable 43935 --A Second Legend
+    .isQuestAvailable 40710 --Blade in Twilight
+    .isNotOnQuest 40710 --Blade in Twilight
     .goto 702,51.61,47.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Alonsus Faol|r.
     .accept 43935 >>Acepta la misión Una segunda leyenda
     .target Alonsus Faol
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Alonsus Faol|r
-    .isQuestTurnedIn 40706
-    .isQuestAvailable 43935
-    .isOnQuest 43935
+    .isQuestTurnedIn 40706 --A Legend You Can Hold
+    .isQuestAvailable 43935 --A Second Legend
+    .isOnQuest 43935 --A Second Legend
     .goto 702,51.61,47.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Alonsus Faol|r.
     *|cRXP_WARN_Esto elegirá automáticamente el artefacto de Sombra|r
@@ -11072,24 +11075,24 @@ step
     .skipgossipid 45111
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Alonsus Faol|r
-    .isQuestTurnedIn 40706
-    .isQuestAvailable 43935
-    .isOnQuest 43935
+    .isQuestTurnedIn 40706 --A Legend You Can Hold
+    .isQuestAvailable 43935 --A Second Legend
+    .isOnQuest 43935 --A Second Legend
     .goto 702,51.61,47.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Alonsus Faol|r.
     .turnin 43935 >>Entrega la misión Una segunda leyenda
     .target Alonsus Faol
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Alonsus Faol|r
-    .isQuestAvailable 40706
+    .isQuestAvailable 40706 --A Legend You Can Hold
     .goto 18,78.96,40.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Alonsus Faol|r.
     .accept 40706 >>Acepta la misión Una leyenda en las manos
     .target Alonsus Faol
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Alonsus Faol|r
-    .isQuestAvailable 40706
-    .isOnQuest 40706
+    .isQuestAvailable 40706 --A Legend You Can Hold
+    .isOnQuest 40706 --A Legend You Can Hold
     .goto 18,78.96,40.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Alonsus Faol|r.
     *|cRXP_WARN_Esto elegirá automáticamente el artefacto de Sombra|r
@@ -11099,8 +11102,8 @@ step
     .skipgossipid 45110
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Alonsus Faol|r
-    .isQuestAvailable 40706
-    .isOnQuest 40706
+    .isQuestAvailable 40706 --A Legend You Can Hold
+    .isOnQuest 40706 --A Legend You Can Hold
     .goto 18,78.96,40.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Alonsus Faol|r.
     .turnin 40706 >>Entrega la misión Una leyenda en las manos
@@ -11111,7 +11114,7 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Alonsus Faol|r
     #optional
-    .isQuestTurnedIn 40938
+    .isQuestTurnedIn 40938 --The Light and the Void
     .goto 702,51.61,47.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Alonsus Faol|r.
     .accept 40710 >>Acepta la misión La espada en el Crepúsculo
@@ -11131,7 +11134,7 @@ step
     .use 173523
 step
     #arrowtext Entra en la gesta |cRXP_PICK_La espada en el Crepúsculo|r
-    .isOnQuest 40710
+    .isOnQuest 40710 --Blade in Twilight
     .goto 18,13.03,62.46
     .enterScenario 991 >>Entra en la gesta |cRXP_PICK_La espada en el Crepúsculo|r
 step
@@ -11239,7 +11242,7 @@ step
     >>|cRXP_WARN_Sigue la flecha.|r
     .complete 40710,3 --1/1 Return to Alonsus and Moira
 step
-    .isQuestTurnedIn 40938
+    .isQuestTurnedIn 40938 --The Light and the Void
     #completewith next
     #label BladeInTwilightB
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Moira Thaurissan|r.
@@ -11247,14 +11250,14 @@ step
     .target Moira Thaurissan
 step
     #arrowtext Haz clic en el\n|cRXP_PICK_Portal al Templo Luz Abisal|r
-    .isQuestTurnedIn 40938
+    .isQuestTurnedIn 40938 --The Light and the Void
     #completewith BladeInTwilightB
     .goto 627,62.99,17.68 << Horde
     .goto 627,39.57,57.30 << Alliance
     .zone 702 >>Haz clic en el |cRXP_PICK_Portal al Templo Luz Abisal|r
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Moira Thaurissan|r
-    .isQuestTurnedIn 40938
+    .isQuestTurnedIn 40938 --The Light and the Void
     #requires BladeInTwilightB
     .goto 702,51.61,47.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Moira Thaurissan|r.
@@ -11376,8 +11379,8 @@ step
     .accept 40706 >>Acepta la misión Una leyenda en las manos
     .target Alonsus Faol
 step
-    .isQuestAvailable 40706
-    .isQuestAvailable account,91955
+    .isQuestAvailable 40706 --A Legend You Can Hold
+    .isQuestAvailable account,91955 --Just Between Us
     .goto 18,78.96,40.99
     +Selecciona una de las siguientes guías por ahora:
     *|cRXP_WARN_IMPORTANTE: Selecciona el que ya tienes para obtener un 10% adicional de xp (solo una vez)|r
@@ -11449,8 +11452,8 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
     .subzoneskip 8012,1
-    .isQuestTurnedIn 44034
-    .isQuestAvailable 44375
+    .isQuestTurnedIn 44034 --Another Worthy Blade
+    .isQuestAvailable 44375 --The Final Blade
     .goto 626,41.45,77.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
     .accept 44375 >>Acepta la misión La última espada
@@ -11460,8 +11463,8 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
     .subzoneskip 8012,1
-    .isQuestTurnedIn 44034
-    .isQuestAvailable 44375
+    .isQuestTurnedIn 44034 --Another Worthy Blade
+    .isQuestAvailable 44375 --The Final Blade
     .goto 626,41.48,78.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
     .target Lord Jorach Ravenholdt
@@ -11470,8 +11473,8 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
     .subzoneskip 8012,1
-    .isQuestTurnedIn 44034
-    .isQuestAvailable 44375
+    .isQuestTurnedIn 44034 --Another Worthy Blade
+    .isQuestAvailable 44375 --The Final Blade
     .goto 626,41.45,77.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
     .turnin 44375 >>Entrega la misión La última espada
@@ -11479,8 +11482,8 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
     .subzoneskip 8012,1
-    .isQuestTurnedIn 40840
-    .isQuestAvailable 44034
+    .isQuestTurnedIn 40840 --A Worthy Blade
+    .isQuestAvailable 44034 --Another Worthy Blade
     .goto 626,41.45,77.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
     .accept 44034 >>Acepta la misión Otra espada digna
@@ -11488,8 +11491,8 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
     .subzoneskip 8012,1
-    .isQuestTurnedIn 40840
-    .isQuestAvailable 44034
+    .isQuestTurnedIn 40840 --A Worthy Blade
+    .isQuestAvailable 44034 --Another Worthy Blade
     .goto 626,41.48,78.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
     .target Lord Jorach Ravenholdt
@@ -11498,8 +11501,8 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
     .subzoneskip 8012,1
-    .isQuestTurnedIn 40840
-    .isQuestAvailable 44034
+    .isQuestTurnedIn 40840 --A Worthy Blade
+    .isQuestAvailable 44034 --Another Worthy Blade
     .goto 626,41.45,77.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
     .turnin 44034 >>Entrega la misión Otra espada digna
@@ -11507,7 +11510,7 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
     .subzoneskip 8012,1
-    .isQuestAvailable 40840
+    .isQuestAvailable 40840 --A Worthy Blade
     .goto 626,41.45,77.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
     .accept 40840 >>Acepta la misión Una espada digna
@@ -11515,7 +11518,7 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
     .subzoneskip 8012,1
-    .isQuestAvailable 40840
+    .isQuestAvailable 40840 --A Worthy Blade
     .goto 626,41.37,77.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
     .complete 40840,4 --1/1 Artifact weapon chosen
@@ -11524,8 +11527,8 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
     .subzoneskip 8012,1
-    .isQuestComplete 40840
-    .isQuestAvailable 40840
+    .isQuestComplete 40840 --A Worthy Blade
+    .isQuestAvailable 40840 --A Worthy Blade
     .goto 626,41.57,77.96
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
     .turnin 40840 >>Entrega la misión Una espada digna
@@ -11542,7 +11545,7 @@ step
     .accept 42502 >>Acepta la misión Sin santuario
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Garona Semiorco|r
-    .isOnQuest 42139
+    .isOnQuest 42139 --Rise, Champions
     .goto 626,42.30,74.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Garona Semiorco|r
     *|cRXP_WARN_"Reloguea" si el NPC no está aquí|r
@@ -11552,7 +11555,7 @@ step
     .complete 42139,1 --1/1 Garona Halforcen recruited
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Vanessa VanCleef|r
-    .isOnQuest 42139
+    .isOnQuest 42139 --Rise, Champions
     .goto 626,42.43,68.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Vanessa VanCleef|r
     .accept 43261 >>Acepta la misión Campeona: Vanessa VanCleef
@@ -11560,7 +11563,7 @@ step
     .target Vanessa VanCleef
     .complete 42139,2 --1/1 Vanessa VanCleef recruited
 step
-    .isOnQuest 42502
+    .isOnQuest 42502 --No Sanctuary
     .cast 311709 >>Usa el |T254294:0|t[Pergamino de Bosque del Ocaso]
     .use 173530
 step
@@ -11755,8 +11758,8 @@ step
     .accept 42504 >>Acepta la misión La espada oculta
 step
     #arrowtext Entra en la Gesta
-    .isOnQuest 42504
-    .isQuestNotComplete 42504
+    .isOnQuest 42504 --The Unseen Blade
+    .isQuestNotComplete 42504 --The Unseen Blade
     .goto 37,32.05,49.23
     .enterScenario 1123 >>Entra en la Gesta
     *|cRXP_WARN_Solo puedes usar monturas terrestres en esta gesta|r.
@@ -11780,7 +11783,7 @@ step
     #arrowtext Espera al "roleplay"
     #requires Confront Mathias Shaw.
     .goto 37,31.92,48.99
-    .isOnQuest 42504
+    .isOnQuest 42504 --The Unseen Blade
     .isInScenario 1123
     >>|cRXP_WARN_Espera al Roleplay|r.
     .scenario 2548,1 --Confront Mathias Shaw.
@@ -12041,8 +12044,8 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
     .subzoneskip 8012,1
-    .isQuestTurnedIn 44034
-    .isQuestAvailable 44375
+    .isQuestTurnedIn 44034 --Another Worthy Blade
+    .isQuestAvailable 44375 --The Final Blade
     .goto 626,41.45,77.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
     .accept 44375 >>Acepta la misión La última espada
@@ -12050,8 +12053,8 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
     .subzoneskip 8012,1
-    .isQuestTurnedIn 44034
-    .isQuestAvailable 44375
+    .isQuestTurnedIn 44034 --Another Worthy Blade
+    .isQuestAvailable 44375 --The Final Blade
     .goto 626,41.48,78.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
     .target Lord Jorach Ravenholdt
@@ -12063,8 +12066,8 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
     .subzoneskip 8012,1
-    .isQuestTurnedIn 44034
-    .isQuestAvailable 44375
+    .isQuestTurnedIn 44034 --Another Worthy Blade
+    .isQuestAvailable 44375 --The Final Blade
     .goto 626,41.45,77.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
     .turnin 44375 >>Entrega la misión La última espada
@@ -12072,8 +12075,8 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
     .subzoneskip 8012,1
-    .isQuestTurnedIn 40840
-    .isQuestAvailable 44034
+    .isQuestTurnedIn 40840 --A Worthy Blade
+    .isQuestAvailable 44034 --Another Worthy Blade
     .goto 626,41.45,77.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
     .accept 44034 >>Acepta la misión Otra espada digna
@@ -12081,8 +12084,8 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
     .subzoneskip 8012,1
-    .isQuestTurnedIn 40840
-    .isQuestAvailable 44034
+    .isQuestTurnedIn 40840 --A Worthy Blade
+    .isQuestAvailable 44034 --Another Worthy Blade
     .goto 626,41.48,78.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
     .target Lord Jorach Ravenholdt
@@ -12092,8 +12095,8 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
     .subzoneskip 8012,1
-    .isQuestTurnedIn 40840
-    .isQuestAvailable 44034
+    .isQuestTurnedIn 40840 --A Worthy Blade
+    .isQuestAvailable 44034 --Another Worthy Blade
     .goto 626,41.45,77.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
     .turnin 44034 >>Entrega la misión Otra espada digna
@@ -12101,7 +12104,7 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
     .subzoneskip 8012,1
-    .isQuestAvailable 40840
+    .isQuestAvailable 40840 --A Worthy Blade
     .goto 626,41.45,77.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
     .accept 40840 >>Acepta la misión Una espada digna
@@ -12109,7 +12112,7 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
     .subzoneskip 8012,1
-    .isQuestAvailable 40840
+    .isQuestAvailable 40840 --A Worthy Blade
     .goto 626,41.37,77.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
     .complete 40840,4 --1/1 Artifact weapon chosen
@@ -12118,8 +12121,8 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
     .subzoneskip 8012,1
-    .isQuestComplete 40840
-    .isQuestAvailable 40840
+    .isQuestComplete 40840 --A Worthy Blade
+    .isQuestAvailable 40840 --A Worthy Blade
     .goto 626,41.57,77.96
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
     .turnin 40840 >>Entrega la misión Una espada digna
@@ -12135,7 +12138,7 @@ step
     .target Almirante de la flota Tethys
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Garona Semiorco|r
-    .isOnQuest 42139
+    .isOnQuest 42139 --Rise, Champions
     .goto 626,42.30,74.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Garona Semiorco|r
     *|cRXP_WARN_"Reloguea" si el PNJ no está ahí|r
@@ -12145,7 +12148,7 @@ step
     .complete 42139,1 --1/1 Garona Halforcen recruited
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Vanessa VanCleef|r
-    .isOnQuest 42139
+    .isOnQuest 42139 --Rise, Champions
     .goto 626,42.43,68.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Vanessa VanCleef|r
     .accept 43261 >>Acepta la misión Campeona: Vanessa VanCleef
@@ -12153,7 +12156,7 @@ step
     .target Vanessa VanCleef
     .complete 42139,2 --1/1 Vanessa VanCleef recruited
 step
-    .isOnQuest 40847
+    .isOnQuest 40847 --A Friendly Accord
     .cast 311705 >>Usa |T413582:0|t[Piedra de hogar dorada]
     .use 173528
 step
@@ -12190,13 +12193,13 @@ step
 step
     #completewith next
     #label the Horizon's Edge
-    .isOnQuest 40849
+    .isOnQuest 40849 --The Dreadblades
     >>Mata al |cRXP_ENEMY_Contramaestre DeGauza|r
     .scenario 2101,1 --Commandeer the Horizon's Edge
     .mob First Mate DeGauza
 step
     #arrowtext Sube al barco
-    .isOnQuest 40849
+    .isOnQuest 40849 --The Dreadblades
     #completewith the Horizon's Edge
     .goto 630,60.73,68.3,20 >>Sube al barco
 step
@@ -12204,7 +12207,7 @@ step
     #requires the Horizon's Edge
     .goto 630,61.13,68.67,10,0
     .goto 630,58.56,67.81
-    .isOnQuest 40849
+    .isOnQuest 40849 --The Dreadblades
     >>Mata al |cRXP_ENEMY_Contramaestre DeGauza|r y luego sigue la flecha.
     .scenario 2101,1 --Commandeer the Horizon's Edge
     .mob First Mate DeGauza
@@ -12381,8 +12384,8 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
     .subzoneskip 8012,1
-    .isQuestTurnedIn 44034
-    .isQuestAvailable 44375
+    .isQuestTurnedIn 44034 --Another Worthy Blade
+    .isQuestAvailable 44375 --The Final Blade
     .goto 626,41.45,77.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
     .accept 44375 >>Acepta la misión La última espada
@@ -12391,8 +12394,8 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
     .subzoneskip 8012,1
-    .isQuestTurnedIn 44034
-    .isQuestAvailable 44375
+    .isQuestTurnedIn 44034 --Another Worthy Blade
+    .isQuestAvailable 44375 --The Final Blade
     .goto 626,41.48,78.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
     .target Lord Jorach Ravenholdt
@@ -12404,8 +12407,8 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
     .subzoneskip 8012,1
-    .isQuestTurnedIn 44034
-    .isQuestAvailable 44375
+    .isQuestTurnedIn 44034 --Another Worthy Blade
+    .isQuestAvailable 44375 --The Final Blade
     .goto 626,41.45,77.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
     .turnin 44375 >>Entrega la misión La última espada
@@ -12413,8 +12416,8 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
     .subzoneskip 8012,1
-    .isQuestTurnedIn 40840
-    .isQuestAvailable 44034
+    .isQuestTurnedIn 40840 --A Worthy Blade
+    .isQuestAvailable 44034 --Another Worthy Blade
     .goto 626,41.45,77.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
     .accept 44034 >>Acepta la misión Otra espada digna
@@ -12422,8 +12425,8 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
     .subzoneskip 8012,1
-    .isQuestTurnedIn 40840
-    .isQuestAvailable 44034
+    .isQuestTurnedIn 40840 --A Worthy Blade
+    .isQuestAvailable 44034 --Another Worthy Blade
     .goto 626,41.48,78.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
     .target Lord Jorach Ravenholdt
@@ -12435,8 +12438,8 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
     .subzoneskip 8012,1
-    .isQuestTurnedIn 40840
-    .isQuestAvailable 44034
+    .isQuestTurnedIn 40840 --A Worthy Blade
+    .isQuestAvailable 44034 --Another Worthy Blade
     .goto 626,41.45,77.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
     .turnin 44034 >>Entrega la misión Otra espada digna
@@ -12444,7 +12447,7 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
     .subzoneskip 8012,1
-    .isQuestAvailable 40840
+    .isQuestAvailable 40840 --A Worthy Blade
     .goto 626,41.45,77.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
     .accept 40840 >>Acepta la misión Una espada digna
@@ -12452,7 +12455,7 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
     .subzoneskip 8012,1
-    .isQuestAvailable 40840
+    .isQuestAvailable 40840 --A Worthy Blade
     .goto 626,41.37,77.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
     .complete 40840,4 --1/1 Artifact weapon chosen
@@ -12464,8 +12467,8 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
     .subzoneskip 8012,1
-    .isQuestComplete 40840
-    .isQuestAvailable 40840
+    .isQuestComplete 40840 --A Worthy Blade
+    .isQuestAvailable 40840 --A Worthy Blade
     .goto 626,41.57,77.96
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
     .turnin 40840 >>Entrega la misión Una espada digna
@@ -12481,7 +12484,7 @@ step
     .target Valeera Sanguinar
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Garona Semiorco|r
-    .isOnQuest 42139
+    .isOnQuest 42139 --Rise, Champions
     .goto 626,42.30,74.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Garona Semiorco|r
     *|cRXP_WARN_"Reloguea" si el NPC no está aquí|r
@@ -12491,7 +12494,7 @@ step
     .complete 42139,1 --1/1 Garona Halforcen recruited
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Vanessa VanCleef|r
-    .isOnQuest 42139
+    .isOnQuest 42139 --Rise, Champions
     .goto 626,42.43,68.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Vanessa VanCleef|r
     .accept 43261 >>Acepta la misión Campeona: Vanessa VanCleef
@@ -12550,7 +12553,7 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Val'zuun|r
     #requires Val'zuun's intel
-    .isOnQuest 41919
+    .isOnQuest 41919 --The Shadows Reveal
     .goto 628,67.4,63.13
     .gossipoption 45397 >>Habla con |cRXP_FRIENDLY_Val'zuun|r
     .timer 26,RP
@@ -12710,7 +12713,7 @@ step
 step
     #completewith next
     #label Akaari Shadowgore
-    .isOnQuest 41924
+    .isOnQuest 41924 --Fangs of the Devourer
     >>Desplázate hasta |cRXP_ENEMY_Akaari Sangreoscura|r; esquiva los ojos, ya que te sacarán de sigilo.
     *Derrota a |cRXP_ENEMY_Akaari Sombrarboleda|r
     .scenario 2363,1 --Engage Akaari Shadowgore.
@@ -12718,13 +12721,13 @@ step
 step
     #arrowtext Usa [Sigilo]\nen |cRXP_ENEMY_Akaari Sombrarboleda|r
     #completewith Akaari Shadowgore
-    .isOnQuest 41924
+    .isOnQuest 41924 --Fangs of the Devourer
     .goto 740,63.59,52.98
     .cast 1784 >>Usa |T132320:0|t[Sigilo] para acercarte sigilosamente a |cRXP_ENEMY_Akaari Sombrarboleda|r
     .usespell 1784
 step
     #requires Akaari Shadowgore
-    .isOnQuest 41924
+    .isOnQuest 41924 --Fangs of the Devourer
     .goto 740,63.59,52.98
     >>Desplázate hasta |cRXP_ENEMY_Akaari Sangreoscura|r; esquiva los ojos, ya que te sacarán de sigilo.
     *Derrota a |cRXP_ENEMY_Akaari Sombrarboleda|r
@@ -12958,14 +12961,14 @@ step
     #include ab) Order Hall Rogue Part 1@Call of The Uncrowned-Final Shadow
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
-    .isQuestAvailable 40840
+    .isQuestAvailable 40840 --A Worthy Blade
     .goto 626,41.37,77.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
     .target Lord Jorach Ravenholdt
     .accept 40840 >>Acepta la misión Una espada digna
 step
     #arrowtext Habla con el\n|cRXP_FRIENDLY_Almirante de la flota Tethys|r y |cRXP_FRIENDLY_Valeera Sanguinar|r y la |cRXP_FRIENDLY_Princesa Tess Cringris|r
-    .isOnQuest 40840
+    .isOnQuest 40840 --A Worthy Blade
     .goto 626,41.7,75.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Almirante de la flota Tethys|r, |cRXP_FRIENDLY_Valeera Sanguinar|r,  y la  |cRXP_FRIENDLY_Princesa Tess Cringrís|r.
     .complete 40840,2 --1/1 Valeera's plan considered
@@ -12978,7 +12981,7 @@ step
     .target Valeera Sanguinar
     .target Princesa Tess Cringris
 step
-    .isQuestAvailable 40840
+    .isQuestAvailable 40840 --A Worthy Blade
     +Selecciona una de las siguientes guías por ahora:
     *|cRXP_WARN_Podrás hacer las otras cadenas de misiones más adelante|r
     *|cFFFF0000No puedes progresar si no seleccionas uno|r.
@@ -13006,17 +13009,17 @@ RXPGuides.RegisterGuide([[
 
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Aggramar|r
-    .isQuestTurnedIn 43945
-    .isQuestAvailable 44006
-    .isQuestAvailable 43334
+    .isQuestTurnedIn 43945 --Expanding Your Horizon
+    .isQuestAvailable 44006 --Your Fullest Potential
+    .isQuestAvailable 43334 --The Coming Storm
     .goto 726,36.16,80.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Aggramar|r.
     .accept 44006 >>Acepta la misión Tu máximo potencial
     .target Aggramar
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Aggramar|r
-    .isQuestAvailable 44006
-    .isOnQuest 44006
+    .isQuestAvailable 44006 --Your Fullest Potential
+    .isOnQuest 44006 --Your Fullest Potential
     .goto 726,36.16,80.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Aggramar|r.
     *|cRXP_WARN_Esto elegirá automáticamente el artefacto de Elemental|r
@@ -13026,25 +13029,25 @@ step
     .skipgossipid 45112
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Aggramar|r
-    .isQuestAvailable 44006
-    .isOnQuest 44006
+    .isQuestAvailable 44006 --Your Fullest Potential
+    .isOnQuest 44006 --Your Fullest Potential
     .goto 726,36.16,80.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Aggramar|r.
     .turnin 44006 >>Entrega la misión Tu máximo potencial
     .target Aggramar
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Aggramar|r
-    .isQuestTurnedIn 41335
-    .isQuestAvailable 43945
-    .isQuestAvailable 43334
+    .isQuestTurnedIn 41335 --The Elements Call
+    .isQuestAvailable 43945 --Expanding Your Horizon
+    .isQuestAvailable 43334 --The Coming Storm
     .goto 726,36.16,80.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Aggramar|r.
     .accept 43945 >>Acepta la misión Expandiendo tus horizontes
     .target Aggramar
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Aggramar|r
-    .isQuestAvailable 43945
-    .isOnQuest 43945
+    .isQuestAvailable 43945 --Expanding Your Horizon
+    .isOnQuest 43945 --Expanding Your Horizon
     .goto 726,36.16,80.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Aggramar|r.
     *|cRXP_WARN_Esto elegirá automáticamente el artefacto de Elemental|r
@@ -13054,23 +13057,23 @@ step
     .skipgossipid 45111
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Aggramar|r
-    .isQuestAvailable 43945
-    .isOnQuest 43945
+    .isQuestAvailable 43945 --Expanding Your Horizon
+    .isOnQuest 43945 --Expanding Your Horizon
     .goto 726,36.16,80.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Aggramar|r.
     .turnin 43945 >>Entrega la misión Expandiendo tus horizontes
     .target Aggramar
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Thrall|r
-    .isQuestAvailable 41335
+    .isQuestAvailable 41335 --The Elements Call
     .goto 725,36.23,74.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Thrall|r.
     .accept 41335 >>Acepta la misión Los elementos nos llaman...
     .target Thrall
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Thrall|r
-    .isQuestAvailable 41335
-    .isOnQuest 41335
+    .isQuestAvailable 41335 --The Elements Call
+    .isOnQuest 41335 --The Elements Call
     .goto 725,36.23,74.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Thrall|r.
     *|cRXP_WARN_Esto elegirá automáticamente el artefacto de Elemental|r
@@ -13080,8 +13083,8 @@ step
     .skipgossipid 45219
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Thrall|r
-    .isQuestAvailable 41335
-    .isOnQuest 41335
+    .isQuestAvailable 41335 --The Elements Call
+    .isOnQuest 41335 --The Elements Call
     .goto 725,36.23,74.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Thrall|r.
     .turnin 41335 >>Entrega la misión Los elementos nos llaman...
@@ -13105,7 +13108,7 @@ step
     .target Rehgar Furiatierra
 step
     #arrowtext Haz clic en\n|cRXP_FRIENDLY_Graddoc|r
-    .isOnQuest 43334
+    .isOnQuest 43334 --The Coming Storm
     .goto 726,34.18,77.80,-1
     .goto 725,34.07,74.37,-1
     .zone 379 >>Haz clic en |cRXP_FRIENDLY_Graddoc|r
@@ -13126,8 +13129,8 @@ step
 step
     #arrowtext Entra en las Salas de Guo-Lai
     .zoneskip 395
-    .isOnQuest 43338
-    .isQuestNotComplete 43338
+    .isOnQuest 43338 --The Codex of Ra
+    .isQuestNotComplete 43338 --The Codex of Ra
     .goto 395,55.19,91.12,12 >>Entra en Las Salas de Guo-Lai
 step
     #completewith TheEdictsOfXA
@@ -13145,8 +13148,8 @@ step
 step
     #arrowtext Entra en la Cámara ritual de Guo-Lai
     #completewith next
-    .isOnQuest 43338
-    .isQuestNotComplete 43338
+    .isOnQuest 43338 --The Codex of Ra
+    .isQuestNotComplete 43338 --The Codex of Ra
     .goto 395,47.43,81.40,15,0
     .goto 395,52.13,63.98,25,0
     .goto 395,67.44,68.62,25 >>Entra en la Cámara ritual de Guo-Lai
@@ -13171,8 +13174,8 @@ step
 step
     #arrowtext Entra en la Cámara de Guo-Lai
     #completewith next
-    .isOnQuest 43338
-    .isQuestNotComplete 43338
+    .isOnQuest 43338 --The Codex of Ra
+    .isQuestNotComplete 43338 --The Codex of Ra
     .goto 395,64.19,66.71,15,0
     .goto 395,27.75,46.45,15,0
     .goto 395,33.16,20.93,15,0
@@ -13198,8 +13201,8 @@ step
 step
     #arrowtext |cFFFCDC00Comprueba la Nota|r
     #completewith next
-    .isOnQuest 43338
-    .isQuestNotComplete 43338
+    .isOnQuest 43338 --The Codex of Ra
+    .isQuestNotComplete 43338 --The Codex of Ra
     .goto 395,32.94,21.14,15,0
     .goto 395,27.75,46.45,15,0
     .goto 395,51.81,57.95,33,0
@@ -13265,7 +13268,7 @@ step
     .complete 39771,1 --1/1 Travel to the Temple of the White Tiger
 step
     #arrowtext Entra en la gesta |cRXP_PICK_Maestro de las tormentas|r
-    .isOnQuest 39771
+    .isOnQuest 39771 --The Voice of Thunder
     .goto 379,68.6,57.0
     .enterScenario 976 >>Entra en la gesta |cRXP_PICK_Maestro de las tormentas|r.
 step
@@ -13350,7 +13353,7 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Rehgar Furiatierra|r
     #optional
-    .isQuestTurnedIn 41510
+    .isQuestTurnedIn 41510 --Azeroth Needs You
     .goto 726,34.15,77.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Rehgar Furiatierra|r
     .turnin 39771 >>Entrega la misión La voz del trueno
@@ -13377,17 +13380,17 @@ RXPGuides.RegisterGuide([[
 
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Aggramar|r
-    .isQuestTurnedIn 43945
-    .isQuestAvailable 44006
-    .isQuestAvailable 42931
+    .isQuestTurnedIn 43945 --Expanding Your Horizon
+    .isQuestAvailable 44006 --Your Fullest Potential
+    .isQuestAvailable 42931 --Where the Hammer Falls
     .goto 726,36.16,80.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Aggramar|r.
     .accept 44006 >>Acepta la misión Tu máximo potencial
     .target Aggramar
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Aggramar|r
-    .isQuestAvailable 44006
-    .isOnQuest 44006
+    .isQuestAvailable 44006 --Your Fullest Potential
+    .isOnQuest 44006 --Your Fullest Potential
     .goto 726,36.16,80.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Aggramar|r.
     *|cRXP_WARN_Esto elegirá automáticamente el artefacto de Mejora|r
@@ -13397,25 +13400,25 @@ step
     .skipgossipid 45112
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Aggramar|r
-    .isQuestAvailable 44006
-    .isOnQuest 44006
+    .isQuestAvailable 44006 --Your Fullest Potential
+    .isOnQuest 44006 --Your Fullest Potential
     .goto 726,36.16,80.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Aggramar|r.
     .turnin 44006 >>Entrega la misión Tu máximo potencial
     .target Aggramar
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Aggramar|r
-    .isQuestTurnedIn 41335
-    .isQuestAvailable 43945
-    .isQuestAvailable 42931
+    .isQuestTurnedIn 41335 --The Elements Call
+    .isQuestAvailable 43945 --Expanding Your Horizon
+    .isQuestAvailable 42931 --Where the Hammer Falls
     .goto 726,36.16,80.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Aggramar|r.
     .accept 43945 >>Acepta la misión Expandiendo tus horizontes
     .target Aggramar
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Aggramar|r
-    .isQuestAvailable 43945
-    .isOnQuest 43945
+    .isQuestAvailable 43945 --Expanding Your Horizon
+    .isOnQuest 43945 --Expanding Your Horizon
     .goto 726,36.16,80.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Aggramar|r.
     *|cRXP_WARN_Esto elegirá automáticamente el artefacto de Mejora|r
@@ -13425,23 +13428,23 @@ step
     .skipgossipid 45111
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Aggramar|r
-    .isQuestAvailable 43945
-    .isOnQuest 43945
+    .isQuestAvailable 43945 --Expanding Your Horizon
+    .isOnQuest 43945 --Expanding Your Horizon
     .goto 726,36.16,80.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Aggramar|r.
     .turnin 43945 >>Entrega la misión Expandiendo tus horizontes
     .target Aggramar
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Thrall|r
-    .isQuestAvailable 41335
+    .isQuestAvailable 41335 --The Elements Call
     .goto 725,36.23,74.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Thrall|r.
     .accept 41335 >>Acepta la misión Los elementos nos llaman...
     .target Thrall
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Thrall|r
-    .isQuestAvailable 41335
-    .isOnQuest 41335
+    .isQuestAvailable 41335 --The Elements Call
+    .isOnQuest 41335 --The Elements Call
     .goto 725,36.23,74.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Thrall|r.
     *|cRXP_WARN_Esto elegirá automáticamente el artefacto de Mejora|r
@@ -13451,8 +13454,8 @@ step
     .skipgossipid 45219
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Thrall|r
-    .isQuestAvailable 41335
-    .isOnQuest 41335
+    .isQuestAvailable 41335 --The Elements Call
+    .isOnQuest 41335 --The Elements Call
     .goto 725,36.23,74.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Thrall|r.
     .turnin 41335 >>Entrega la misión Los elementos nos llaman...
@@ -13603,7 +13606,7 @@ step
     .complete 40224,1 --1/1 Enter the Crumbling Depths
 step
     #arrowtext Entra en la gesta |cRXP_PICK_Limpieza de las profundidades|r
-    .isOnQuest 40224
+    .isOnQuest 40224 --The Hammer in the Deep
     .goto 207,56.39,12.78
     .enterScenario 950 >>Entra en la gesta |cRXP_PICK_Limpieza de las profundidades|r.
 step
@@ -13704,17 +13707,17 @@ RXPGuides.RegisterGuide([[
 
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Aggramar|r
-    .isQuestTurnedIn 43945
-    .isQuestAvailable 44006
-    .isQuestAvailable 43644
+    .isQuestTurnedIn 43945 --Expanding Your Horizon
+    .isQuestAvailable 44006 --Your Fullest Potential
+    .isQuestAvailable 43644 --To the Deeps
     .goto 726,36.16,80.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Aggramar|r.
     .accept 44006 >>Acepta la misión Tu máximo potencial
     .target Aggramar
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Aggramar|r
-    .isQuestAvailable 44006
-    .isOnQuest 44006
+    .isQuestAvailable 44006 --Your Fullest Potential
+    .isOnQuest 44006 --Your Fullest Potential
     .goto 726,36.16,80.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Aggramar|r.
     *|cRXP_WARN_Esto elegirá automáticamente el artefacto de Restauración|r
@@ -13724,25 +13727,25 @@ step
     .skipgossipid 45112
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Aggramar|r
-    .isQuestAvailable 44006
-    .isOnQuest 44006
+    .isQuestAvailable 44006 --Your Fullest Potential
+    .isOnQuest 44006 --Your Fullest Potential
     .goto 726,36.16,80.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Aggramar|r.
     .turnin 44006 >>Entrega la misión Tu máximo potencial
     .target Aggramar
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Aggramar|r
-    .isQuestTurnedIn 41335
-    .isQuestAvailable 43945
-    .isQuestAvailable 43644
+    .isQuestTurnedIn 41335 --The Elements Call
+    .isQuestAvailable 43945 --Expanding Your Horizon
+    .isQuestAvailable 43644 --To the Deeps
     .goto 726,36.16,80.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Aggramar|r.
     .accept 43945 >>Acepta la misión Expandiendo tus horizontes
     .target Aggramar
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Aggramar|r
-    .isQuestAvailable 43945
-    .isOnQuest 43945
+    .isQuestAvailable 43945 --Expanding Your Horizon
+    .isOnQuest 43945 --Expanding Your Horizon
     .goto 726,36.16,80.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Aggramar|r.
     *|cRXP_WARN_Esto elegirá automáticamente el artefacto de Restauración|r
@@ -13752,23 +13755,23 @@ step
     .skipgossipid 45111
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Aggramar|r
-    .isQuestAvailable 43945
-    .isOnQuest 43945
+    .isQuestAvailable 43945 --Expanding Your Horizon
+    .isOnQuest 43945 --Expanding Your Horizon
     .goto 726,36.16,80.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Aggramar|r.
     .turnin 43945 >>Entrega la misión Expandiendo tus horizontes
     .target Aggramar
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Thrall|r
-    .isQuestAvailable 41335
+    .isQuestAvailable 41335 --The Elements Call
     .goto 725,36.23,74.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Thrall|r.
     .accept 41335 >>Acepta la misión Los elementos nos llaman...
     .target Thrall
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Thrall|r
-    .isQuestAvailable 41335
-    .isOnQuest 41335
+    .isQuestAvailable 41335 --The Elements Call
+    .isOnQuest 41335 --The Elements Call
     .goto 725,36.23,74.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Thrall|r.
     *|cRXP_WARN_Esto elegirá automáticamente el artefacto de Restauración|r
@@ -13778,8 +13781,8 @@ step
     .skipgossipid 45219
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Thrall|r
-    .isQuestAvailable 41335
-    .isOnQuest 41335
+    .isQuestAvailable 41335 --The Elements Call
+    .isOnQuest 41335 --The Elements Call
     .goto 725,36.23,74.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Thrall|r.
     .turnin 41335 >>Entrega la misión Los elementos nos llaman...
@@ -13863,7 +13866,7 @@ step
     .complete 40341,2 --1/1 Enter the Throne of Tides
 step
     #arrowtext Entra en la gesta |cRXP_PICK_La Reina Oscura y el mar|r
-    .isOnQuest 40341
+    .isOnQuest 40341 --Throne of the Tides: Azshara's Power
     .goto 204,69.18,25.52
     .enterScenario 1066 >>Entra en la gesta |cRXP_PICK_La Reina Oscura y el mar|r.
 step
@@ -14072,8 +14075,8 @@ step
     .accept 41335 >>Acepta la misión Los elementos nos llaman...
     .target Thrall
 step
-    .isQuestAvailable 41335
-    .isQuestAvailable account,91955
+    .isQuestAvailable 41335 --The Elements Call
+    .isQuestAvailable account,91955 --Just Between Us
     +Selecciona una de las siguientes guías por ahora:
     *|cRXP_WARN_IMPORTANTE: Selecciona el que ya tienes para obtener un 10% adicional de xp (solo una vez)|r
     *|cRXP_WARN_Podrás hacer las otras cadenas de misiones más adelante|r
@@ -14107,17 +14110,17 @@ RXPGuides.RegisterGuide([[
 
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Calydus|r
-    .isQuestTurnedIn 43984
-    .isQuestAvailable 44089
-    .isQuestAvailable 40495
+    .isQuestTurnedIn 43984 --The Tome Opens Again
+    .isQuestAvailable 44089 --Your Fullest Potential
+    .isQuestAvailable 40495 --Ulthalesh, the Deadwind Harvester
     .goto 717,37.63,31.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Calydus|r |cRXP_WARN_en la sede de tu clase|r.
     .accept 44089 >>Acepta la misión Un arsenal más grande
     .target Calydus
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Calydus|r
-    .isQuestAvailable 44089
-    .isOnQuest 44089
+    .isQuestAvailable 44089 --Your Fullest Potential
+    .isOnQuest 44089 --Your Fullest Potential
     .goto 717,37.63,31.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Calydus|r.
     *|cRXP_WARN_Esto elegirá automáticamente el artefacto de Aflicción|r
@@ -14127,25 +14130,25 @@ step
     .skipgossipid 45164
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Calydus|r
-    .isQuestAvailable 44089
-    .isOnQuest 44089
+    .isQuestAvailable 44089 --Your Fullest Potential
+    .isOnQuest 44089 --Your Fullest Potential
     .goto 717,37.63,31.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Calydus|r.
     .turnin 44089 >>Entrega la misión Tu máximo potencial
     .target Calydus
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Calydus|r
-    .isQuestTurnedIn 40684
-    .isQuestAvailable 43984
-    .isQuestAvailable 40495
+    .isQuestTurnedIn 40684 --The Tome of Blighted Implements
+    .isQuestAvailable 43984 --The Tome Opens Again
+    .isQuestAvailable 40495 --Ulthalesh, the Deadwind Harvester
     .goto 717,37.63,31.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Calydus|r |cRXP_WARN_en la sede de tu clase|r.
     .accept 43984 >>Acepta la misión El escrito vuelve a abrirse
     .target Calydus
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Calydus|r
-    .isQuestAvailable 43984
-    .isOnQuest 43984
+    .isQuestAvailable 43984 --The Tome Opens Again
+    .isOnQuest 43984 --The Tome Opens Again
     .goto 717,37.63,31.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Calydus|r.
     *|cRXP_WARN_Esto elegirá automáticamente el artefacto de Aflicción|r
@@ -14155,23 +14158,23 @@ step
     .skipgossipid 45163
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Calydus|r
-    .isQuestAvailable 43984
-    .isOnQuest 43984
+    .isQuestAvailable 43984 --The Tome Opens Again
+    .isOnQuest 43984 --The Tome Opens Again
     .goto 717,37.63,31.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Calydus|r.
     .turnin 43984 >>Entrega la misión El escrito vuelve a abrirse
     .target Calydus
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Calydus|r
-    .isQuestAvailable 40684
+    .isQuestAvailable 40684 --The Tome of Blighted Implements
     .goto 628,55.75,65.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Calydus|r.
     .accept 40684 >>Acepta la misión El tomo de implementos infestados
     .target Calydus
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Calydus|r
-    .isQuestAvailable 40684
-    .isOnQuest 40684
+    .isQuestAvailable 40684 --The Tome of Blighted Implements
+    .isOnQuest 40684 --The Tome of Blighted Implements
     .goto 628,55.75,65.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Calydus|r.
     --*|cRXP_WARN_This will automatically pick the Affliction artifact|r
@@ -14181,8 +14184,8 @@ step
     .skipgossipid 45162
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Calydus|r
-    .isQuestAvailable 40684
-    .isOnQuest 40684
+    .isQuestAvailable 40684 --The Tome of Blighted Implements
+    .isOnQuest 40684 --The Tome of Blighted Implements
     .goto 628,55.75,65.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Calydus|r.
     .turnin 40684 >>Entrega la misión El tomo de implementos infestados
@@ -14193,7 +14196,7 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Calydus|r
     #optional
-    .isQuestTurnedIn 40823
+    .isQuestTurnedIn 40823 --Rebuilding the Council
     .goto 717,37.66,31.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Calydus|r.
     .accept 40495 >>Acepta la misión Ulthalesh, la Cosechadora Vientomuerto
@@ -14205,7 +14208,7 @@ step
     .accept 40495 >>Acepta la misión Ulthalesh, la Cosechadora Vientomuerto
     .target Calydus
 step
-    .isOnQuest 40495
+    .isOnQuest 40495 --Ulthalesh, the Deadwind Harvester
     .zone 47 >>Usa el |T254294:0|t[Pergamino de Bosque del Ocaso]
     .use 173527
 step
@@ -14231,30 +14234,30 @@ step
     .target Revil Kost
 step
     #arrowtext |cFFFCDC00Quédate cerca de Ariden|r
-    .isOnQuest 40588
+    .isOnQuest 40588 --Following the Curse
     .goto 47,77.37,35.12
     .countdown 25 >>Mata a los |cRXP_ENEMY_Jinetes oscuros|r
 step
     #title |cFFFCDC00Quédate cerca de Ariden|r
-    .isOnQuest 40588
+    .isOnQuest 40588 --Following the Curse
     .goto 47,80.86,33.00,25,0
     .goto 47,84.33,36.29,20,0
     .goto 47,83.83,40.27,15,0
     .goto 47,85.55,40.69,15 >>Escolta al |cRXP_FRIENDLY_Revil Kost|r
 step
     #arrowtext Mata a los\n|cRXP_ENEMY_Jinetes oscuros|r
-    .isOnQuest 40588
+    .isOnQuest 40588 --Following the Curse
     .goto 47,85.55,40.69
     .countdown 20 >>Mata a los |cRXP_ENEMY_Jinetes oscuros|r
 step
     #title |cFFFCDC00Quédate cerca de Ariden|r
-    .isOnQuest 40588
+    .isOnQuest 40588 --Following the Curse
     .goto 42,36.64,35.55,25,0
     .goto 42,39.13,33.72,25,0
     .goto 42,44.37,34.56,15 >>Escolta al |cRXP_FRIENDLY_Revil Kost|r
 step
     #arrowtext Mata a los\n|cRXP_ENEMY_Jinetes oscuros|r
-    .isOnQuest 40588
+    .isOnQuest 40588 --Following the Curse
     .goto 42,44.33,34.54
     .countdown 20 >>Mata a los |cRXP_ENEMY_Jinetes oscuros|r
 step
@@ -14345,7 +14348,7 @@ step
     .target Revil Kost
 step
     #arrowtext Entra en la gesta de |cRXP_PICK_Los Jinetes Oscuros|r
-    .isOnQuest 41155
+    .isOnQuest 41155 --The Dark Riders
     .goto 42,46.28,69.07
     .enterScenario 988 >>|cRXP_WARN_Entra en la gesta |cRXP_PICK_Los jinetes oscuros|r|r
 step
@@ -14424,7 +14427,7 @@ step
     .target Revil Kost
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Revil Kost|r
-    .isQuestAvailable 40823
+    .isQuestAvailable 40823 --Rebuilding the Council
     .goto 46,68.22,27.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Revil Kost|r.
     .accept 41156 >>Acepta la misión El poder poseído
@@ -14436,7 +14439,7 @@ step
     .use 250411
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Calydus|r
-    .isOnQuest 41156
+    .isOnQuest 41156 --The Power Possessed
     .goto 627,60.17,48.28,8,0
     .goto 628,74.22,66.56,8,0
     .goto 628,64.44,58.55,8,0
@@ -14460,17 +14463,17 @@ RXPGuides.RegisterGuide([[
 
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Calydus|r
-    .isQuestTurnedIn 43984
-    .isQuestAvailable 44089
-    .isQuestAvailable 42128
+    .isQuestTurnedIn 43984 --The Tome Opens Again
+    .isQuestAvailable 44089 --Your Fullest Potential
+    .isQuestAvailable 42128 --Ritual Reagents
     .goto 717,37.63,31.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Calydus|r |cRXP_WARN_en la sede de tu clase|r.
     .accept 44089 >>Acepta la misión Un arsenal más grande
     .target Calydus
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Calydus|r
-    .isQuestAvailable 44089
-    .isOnQuest 44089
+    .isQuestAvailable 44089 --Your Fullest Potential
+    .isOnQuest 44089 --Your Fullest Potential
     .goto 717,37.63,31.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Calydus|r.
     *|cRXP_WARN_Esto elegirá automáticamente el artefacto de Demonología|r
@@ -14480,25 +14483,25 @@ step
     .skipgossipid 45164
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Calydus|r
-    .isQuestAvailable 44089
-    .isOnQuest 44089
+    .isQuestAvailable 44089 --Your Fullest Potential
+    .isOnQuest 44089 --Your Fullest Potential
     .goto 717,37.63,31.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Calydus|r.
     .turnin 44089 >>Entrega la misión Tu máximo potencial
     .target Calydus
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Calydus|r
-    .isQuestTurnedIn 40684
-    .isQuestAvailable 43984
-    .isQuestAvailable 42128
+    .isQuestTurnedIn 40684 --The Tome of Blighted Implements
+    .isQuestAvailable 43984 --The Tome Opens Again
+    .isQuestAvailable 42128 --Ritual Reagents
     .goto 717,37.63,31.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Calydus|r |cRXP_WARN_en la sede de tu clase|r.
     .accept 43984 >>Acepta la misión El escrito vuelve a abrirse
     .target Calydus
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Calydus|r
-    .isQuestAvailable 43984
-    .isOnQuest 43984
+    .isQuestAvailable 43984 --The Tome Opens Again
+    .isOnQuest 43984 --The Tome Opens Again
     .goto 717,37.63,31.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Calydus|r.
     *|cRXP_WARN_Esto elegirá automáticamente el artefacto de Demonología|r
@@ -14508,23 +14511,23 @@ step
     .skipgossipid 45163
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Calydus|r
-    .isQuestAvailable 43984
-    .isOnQuest 43984
+    .isQuestAvailable 43984 --The Tome Opens Again
+    .isOnQuest 43984 --The Tome Opens Again
     .goto 717,37.63,31.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Calydus|r.
     .turnin 43984 >>Entrega la misión El escrito vuelve a abrirse
     .target Calydus
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Calydus|r
-    .isQuestAvailable 40684
+    .isQuestAvailable 40684 --The Tome of Blighted Implements
     .goto 628,55.75,65.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Calydus|r.
     .accept 40684 >>Acepta la misión El tomo de implementos infestados
     .target Calydus
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Calydus|r
-    .isQuestAvailable 40684
-    .isOnQuest 40684
+    .isQuestAvailable 40684 --The Tome of Blighted Implements
+    .isOnQuest 40684 --The Tome of Blighted Implements
     .goto 628,55.75,65.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Calydus|r.
     --*|cRXP_WARN_This will automatically pick the Demonology artifact|r
@@ -14534,8 +14537,8 @@ step
     .skipgossipid 45162
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Calydus|r
-    .isQuestAvailable 40684
-    .isOnQuest 40684
+    .isQuestAvailable 40684 --The Tome of Blighted Implements
+    .isOnQuest 40684 --The Tome of Blighted Implements
     .goto 628,55.75,65.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Calydus|r.
     .turnin 40684 >>Entrega la misión El tomo de implementos infestados
@@ -14545,7 +14548,7 @@ step
     +|cRXP_WARN_Asegúrate de tener un arma usable equipada. Si no es así, equipa una hasta que consigas tu artefacto, o cambia a una especialización que ya tenga su artefacto|r.
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Calydus|r
-    .isQuestTurnedIn 40823
+    .isQuestTurnedIn 40823 --Rebuilding the Council
     #optional
     .goto 717,37.63,31.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Calydus|r.
@@ -14559,8 +14562,8 @@ step
     .target Calydus
 step
     #arrowtext Cruza el portal a Dalaran
-    .isOnQuest 42128
-    .isQuestTurnedIn 40823
+    .isOnQuest 42128 --Ritual Reagents
+    .isQuestTurnedIn 40823 --Rebuilding the Council
     #optional
     .zoneskip 717,1
     .goto 717,74.71,38.14
@@ -14568,8 +14571,8 @@ step
 step
     #arrowtext Sigue el camino para salir del canal
     #optional
-    .isOnQuest 42128
-    .isQuestTurnedIn 40823
+    .isOnQuest 42128 --Ritual Reagents
+    .isQuestTurnedIn 40823 --Rebuilding the Council
     .zoneskip 628,1
     .goto 628,28.84,53.19,12,0
     .goto 628,19.50,57.61,10,0
@@ -14577,7 +14580,7 @@ step
     .zone 627 >>|cRXP_WARN_Sigue la salida del canal.|r
 step
     #arrowtext Sigue el camino para salir del canal
-    .isOnQuest 42128
+    .isOnQuest 42128 --Ritual Reagents
     .zoneskip 628,1
     .goto 628,65.60,56.81,12,0
     .goto 628,77.31,68.50,10,0
@@ -14653,7 +14656,7 @@ step
     .complete 42125,1 --1/1 Enter Calydus's Demonic Portal
 step
     #arrowtext Entra en la gesta |cRXP_PICK_Susurros oscuros|r
-    .isOnQuest 42125
+    .isOnQuest 42125 --Dark Whispers
     .goto 627,53.74,47.26
     .enterScenario 1097 >>Entra en la gesta |cRXP_PICK_Susurros oscuros|r.
 step
@@ -14719,8 +14722,8 @@ step
 step
     #arrowtext Entra en los Bajos Fondos de Dalaran
     #optional
-    .isQuestTurnedIn 40823
-    .isOnQuest 42125
+    .isQuestTurnedIn 40823 --Rebuilding the Council
+    .isOnQuest 42125 --Dark Whispers
     .goto 627,34.87,45.45,10,0
     .goto 628,21.20,55.73,10,0
     .goto 628,29.53,51.96,10,0
@@ -14729,7 +14732,7 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Calydus|r
     #optional
-    .isQuestTurnedIn 40823
+    .isQuestTurnedIn 40823 --Rebuilding the Council
     .goto 717,55.83,49.89,20,0
     .goto 717,37.66,31.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Calydus|r.
@@ -14760,17 +14763,17 @@ RXPGuides.RegisterGuide([[
 
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Calydus|r
-    .isQuestTurnedIn 43984
-    .isQuestAvailable 44089
-    .isQuestAvailable 43100
+    .isQuestTurnedIn 43984 --The Tome Opens Again
+    .isQuestAvailable 44089 --Your Fullest Potential
+    .isQuestAvailable 43100 --Finding the Scepter
     .goto 717,37.63,31.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Calydus|r |cRXP_WARN_en la sede de tu clase|r.
     .accept 44089 >>Acepta la misión Un arsenal más grande
     .target Calydus
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Calydus|r
-    .isQuestAvailable 44089
-    .isOnQuest 44089
+    .isQuestAvailable 44089 --Your Fullest Potential
+    .isOnQuest 44089 --Your Fullest Potential
     .goto 717,37.63,31.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Calydus|r.
     *|cRXP_WARN_Esto elegirá automáticamente el artefacto de Destrucción|r
@@ -14780,25 +14783,25 @@ step
     .skipgossipid 45164
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Calydus|r
-    .isQuestAvailable 44089
-    .isOnQuest 44089
+    .isQuestAvailable 44089 --Your Fullest Potential
+    .isOnQuest 44089 --Your Fullest Potential
     .goto 717,37.63,31.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Calydus|r.
     .turnin 44089 >>Entrega la misión Tu máximo potencial
     .target Calydus
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Calydus|r
-    .isQuestTurnedIn 40684
-    .isQuestAvailable 43984
-    .isQuestAvailable 43100
+    .isQuestTurnedIn 40684 --The Tome of Blighted Implements
+    .isQuestAvailable 43984 --The Tome Opens Again
+    .isQuestAvailable 43100 --Finding the Scepter
     .goto 717,37.63,31.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Calydus|r.
     .accept 43984 >>Acepta la misión El escrito vuelve a abrirse
     .target Calydus
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Calydus|r
-    .isQuestAvailable 43984
-    .isOnQuest 43984
+    .isQuestAvailable 43984 --The Tome Opens Again
+    .isOnQuest 43984 --The Tome Opens Again
     .goto 717,37.63,31.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Calydus|r.
     *|cRXP_WARN_Esto elegirá automáticamente el artefacto de Destrucción|r
@@ -14808,23 +14811,23 @@ step
     .skipgossipid 45163
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Calydus|r
-    .isQuestAvailable 43984
-    .isOnQuest 43984
+    .isQuestAvailable 43984 --The Tome Opens Again
+    .isOnQuest 43984 --The Tome Opens Again
     .goto 717,37.63,31.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Calydus|r.
     .turnin 43984 >>Entrega la misión El escrito vuelve a abrirse
     .target Calydus
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Calydus|r
-    .isQuestAvailable 40684
+    .isQuestAvailable 40684 --The Tome of Blighted Implements
     .goto 628,55.75,65.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Calydus|r.
     .accept 40684 >>Acepta la misión El tomo de implementos infestados
     .target Calydus
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Calydus|r
-    .isQuestAvailable 40684
-    .isOnQuest 40684
+    .isQuestAvailable 40684 --The Tome of Blighted Implements
+    .isOnQuest 40684 --The Tome of Blighted Implements
     .goto 628,55.75,65.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Calydus|r.
     --*|cRXP_WARN_This will automatically pick the Destruction artifact|r
@@ -14834,8 +14837,8 @@ step
     .skipgossipid 45162
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Calydus|r
-    .isQuestAvailable 40684
-    .isOnQuest 40684
+    .isQuestAvailable 40684 --The Tome of Blighted Implements
+    .isOnQuest 40684 --The Tome of Blighted Implements
     .goto 628,55.75,65.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Calydus|r.
     .turnin 40684 >>Entrega la misión El tomo de implementos infestados
@@ -14845,7 +14848,7 @@ step
     +|cRXP_WARN_Asegúrate de tener un arma usable equipada. Si no es así, equipa una hasta que consigas tu artefacto, o cambia a una especialización que ya tenga su artefacto|r.
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Calydus|r
-    .isQuestTurnedIn 40823
+    .isQuestTurnedIn 40823 --Rebuilding the Council
     #optional
     .goto 717,37.63,31.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Calydus|r.
@@ -14914,7 +14917,7 @@ step
     .complete 43153,1 --1/1 Take the Portal to Tol Barad
 step
     #arrowtext Entra en la gesta |cRXP_PICK_Un ojo por un cetro|r
-    .isOnQuest 43153
+    .isOnQuest 43153 --An Eye for a Scepter
     .goto 22,69.26,79.21
     .enterScenario 1155 >>Entra en la gesta |cRXP_PICK_Un ojo por un cetro|r.
 step
@@ -15085,7 +15088,7 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Calydus|r
     #optional
-    .isQuestTurnedIn 40823
+    .isQuestTurnedIn 40823 --Rebuilding the Council
     .goto 717,37.66,31.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Calydus|r.
     .turnin 43254 >>Entrega la misión Ruina del ritual
@@ -15205,8 +15208,8 @@ step
     .accept 40684 >>Acepta la misión El tomo de implementos infestados
     .target Calydus
 step
-    .isQuestAvailable 40684
-    .isQuestAvailable account,91955
+    .isQuestAvailable 40684 --The Tome of Blighted Implements
+    .isQuestAvailable account,91955 --Just Between Us
     +Selecciona una de las siguientes guías por ahora:
     *|cRXP_WARN_IMPORTANTE: Selecciona el que ya tienes para obtener un 10% adicional de xp (solo una vez)|r
     *|cRXP_WARN_Podrás hacer las otras cadenas de misiones más adelante|r
@@ -15284,8 +15287,8 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Odyn|r
     .subzoneskip 13637,1
-    .isQuestTurnedIn 43949
-    .isQuestAvailable 44417
+    .isQuestTurnedIn 43949 --More Weapons of Legend
+    .isQuestAvailable 44417 --One More Legend
     .goto 695,58.36,85.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Odyn|r
     .accept 44417 >>Acepta la misión Una leyenda más
@@ -15293,9 +15296,9 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Odyn|r
     .subzoneskip 13637,1
-    .isQuestTurnedIn 43949
-    .isQuestAvailable 44417
-    .isOnQuest 44417
+    .isQuestTurnedIn 43949 --More Weapons of Legend
+    .isQuestAvailable 44417 --One More Legend
+    .isOnQuest 44417 --One More Legend
     .goto 695,58.36,85.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Odyn|r
     .target Odyn
@@ -15306,9 +15309,9 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Odyn|r
     .subzoneskip 13637,1
-    .isQuestTurnedIn 43949
-    .isQuestAvailable 44417
-    .isQuestComplete 44417
+    .isQuestTurnedIn 43949 --More Weapons of Legend
+    .isQuestAvailable 44417 --One More Legend
+    .isQuestComplete 44417 --One More Legend
     .goto 695,58.36,85.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Odyn|r
     .turnin 44417 >>Entrega la misión Una leyenda más
@@ -15316,8 +15319,8 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Odyn|r
     .subzoneskip 13637,1
-    .isQuestTurnedIn 40579
-    .isQuestAvailable 43949
+    .isQuestTurnedIn 40579 --Weapons of Legend
+    .isQuestAvailable 43949 --More Weapons of Legend
     .goto 695,58.36,85.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Odyn|r
     .accept 43949 >>Acepta la misión Más armas de leyenda
@@ -15325,9 +15328,9 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Odyn|r
     .subzoneskip 13637,1
-    .isQuestTurnedIn 40579
-    .isQuestAvailable 43949
-    .isOnQuest 43949
+    .isQuestTurnedIn 40579 --Weapons of Legend
+    .isQuestAvailable 43949 --More Weapons of Legend
+    .isOnQuest 43949 --More Weapons of Legend
     .goto 695,58.36,85.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Odyn|r
     .target Odyn
@@ -15338,9 +15341,9 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Odyn|r
     .subzoneskip 13637,1
-    .isQuestTurnedIn 40579
-    .isQuestAvailable 43949
-    .isQuestComplete 43949
+    .isQuestTurnedIn 40579 --Weapons of Legend
+    .isQuestAvailable 43949 --More Weapons of Legend
+    .isQuestComplete 43949 --More Weapons of Legend
     .goto 695,58.36,85.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Odyn|r
     .turnin 43949 >>Entrega la misión Más armas de leyenda
@@ -15348,7 +15351,7 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Odyn|r
     .subzoneskip 13637,1
-    .isQuestAvailable 40579
+    .isQuestAvailable 40579 --Weapons of Legend
     .goto 695,58.36,85.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Odyn|r
     .accept 40579,1 >>Acepta la misión Armas legendarias
@@ -15356,8 +15359,8 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Odyn|r
     .subzoneskip 13637,1
-    .isQuestAvailable 40579
-    .isOnQuest 40579
+    .isQuestAvailable 40579 --Weapons of Legend
+    .isOnQuest 40579 --Weapons of Legend
     .goto 695,58.36,85.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Odyn|r
     .complete 40579,1 --1/1 Artifact weapon chosen
@@ -15367,8 +15370,8 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Odyn|r
     .subzoneskip 13637,1
-    .isQuestComplete 40579
-    .isQuestAvailable 40579
+    .isQuestComplete 40579 --Weapons of Legend
+    .isQuestAvailable 40579 --Weapons of Legend
     .goto 695,58.36,85.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Odyn|r
     .turnin 40579,1 >>Entrega la misión Armas legendarias
@@ -15400,11 +15403,11 @@ step
     .complete 41105,1 --1/1 Speak with Aerylia to go to Tirisfal Glades (Optional)
 step
     #arrowtext |cFFFCDC00Sigue la flecha|r
-    .isOnQuest 41105
+    .isOnQuest 41105 --The Sword of Kings
     .goto 18,13.5,56.65,100 >>Sigue la Flecha
     *|cRXP_WARN_si te quedas atascado, "reloguea"|r
 step
-    .isOnQuest 41105
+    .isOnQuest 41105 --The Sword of Kings
     #title |cFFFCDC00Sigue la Flecha|r
     .goto 18,13.5,56.65
     .scenario 2237,1 --Investigate the camp.
@@ -15412,7 +15415,7 @@ step
     #arrowtext Mata al\n|cRXP_ENEMY_Ritualista crepuscular|r
     .isInScenario 1037
     .goto 18,13.5,56.65
-    .isOnQuest 41105
+    .isOnQuest 41105 --The Sword of Kings
     >>Mata al |cRXP_ENEMY_Ritualista crepuscular|r
     .scenario 2203,1 --Slay the ritualists torturing Thoradin.
     .mob Ritualista crepuscular
@@ -15558,8 +15561,8 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Odyn|r
     .subzoneskip 13637,1
-    .isQuestTurnedIn 43949
-    .isQuestAvailable 44417
+    .isQuestTurnedIn 43949 --More Weapons of Legend
+    .isQuestAvailable 44417 --One More Legend
     .goto 695,58.36,85.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Odyn|r
     .accept 44417 >>Acepta la misión Una leyenda más
@@ -15567,9 +15570,9 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Odyn|r
     .subzoneskip 13637,1
-    .isQuestTurnedIn 43949
-    .isQuestAvailable 44417
-    .isOnQuest 44417
+    .isQuestTurnedIn 43949 --More Weapons of Legend
+    .isQuestAvailable 44417 --One More Legend
+    .isOnQuest 44417 --One More Legend
     .goto 695,58.36,85.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Odyn|r
     .target Odyn
@@ -15580,9 +15583,9 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Odyn|r
     .subzoneskip 13637,1
-    .isQuestTurnedIn 43949
-    .isQuestAvailable 44417
-    .isQuestComplete 44417
+    .isQuestTurnedIn 43949 --More Weapons of Legend
+    .isQuestAvailable 44417 --One More Legend
+    .isQuestComplete 44417 --One More Legend
     .goto 695,58.36,85.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Odyn|r
     .turnin 44417 >>Entrega la misión Una leyenda más
@@ -15590,8 +15593,8 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Odyn|r
     .subzoneskip 13637,1
-    .isQuestTurnedIn 40579
-    .isQuestAvailable 43949
+    .isQuestTurnedIn 40579 --Weapons of Legend
+    .isQuestAvailable 43949 --More Weapons of Legend
     .goto 695,58.36,85.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Odyn|r
     .accept 43949 >>Acepta la misión Más armas de leyenda
@@ -15599,9 +15602,9 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Odyn|r
     .subzoneskip 13637,1
-    .isQuestTurnedIn 40579
-    .isQuestAvailable 43949
-    .isOnQuest 43949
+    .isQuestTurnedIn 40579 --Weapons of Legend
+    .isQuestAvailable 43949 --More Weapons of Legend
+    .isOnQuest 43949 --More Weapons of Legend
     .goto 695,58.36,85.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Odyn|r
     .target Odyn
@@ -15612,9 +15615,9 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Odyn|r
     .subzoneskip 13637,1
-    .isQuestTurnedIn 40579
-    .isQuestAvailable 43949
-    .isQuestComplete 43949
+    .isQuestTurnedIn 40579 --Weapons of Legend
+    .isQuestAvailable 43949 --More Weapons of Legend
+    .isQuestComplete 43949 --More Weapons of Legend
     .goto 695,58.36,85.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Odyn|r
     .turnin 43949 >>Entrega la misión Más armas de leyenda
@@ -15622,7 +15625,7 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Odyn|r
     .subzoneskip 13637,1
-    .isQuestAvailable 40579
+    .isQuestAvailable 40579 --Weapons of Legend
     .goto 695,58.36,85.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Odyn|r
     .accept 40579,1 >>Acepta la misión Armas legendarias
@@ -15630,8 +15633,8 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Odyn|r
     .subzoneskip 13637,1
-    .isQuestAvailable 40579
-    .isOnQuest 40579
+    .isQuestAvailable 40579 --Weapons of Legend
+    .isOnQuest 40579 --Weapons of Legend
     .goto 695,58.36,85.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Odyn|r
     .complete 40579,1 --1/1 Artifact weapon chosen
@@ -15641,8 +15644,8 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Odyn|r
     .subzoneskip 13637,1
-    .isQuestComplete 40579
-    .isQuestAvailable 40579
+    .isQuestComplete 40579 --Weapons of Legend
+    .isQuestAvailable 40579 --Weapons of Legend
     .goto 695,58.36,85.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Odyn|r
     .turnin 40579,1 >>Entrega la misión Armas legendarias
@@ -15675,12 +15678,12 @@ step
     .complete 40043,1 --1/1 Speak with Aerylia to go to Tideskorn Harbor
     .timer 10,RP
 step
-    .isOnQuest 40043
+    .isOnQuest 40043 --The Hunter of Heroes
     .countdown 10 >>|cRXP_WARN_Espera al Roleplay|r.
 step
     #arrowtext Haz clic en la\n|cRXP_PICK_Fogata|r
     .goto 634,61.34,45.87
-    .isOnQuest 40043
+    .isOnQuest 40043 --The Hunter of Heroes
     >>|TInterface/cursor/crosshair/interact.blp:20|tHaz clic en la |cRXP_PICK_Fogata|r
     .scenario 1888,1 --Light the bonfire.
 step
@@ -15857,8 +15860,8 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Odyn|r
     .subzoneskip 13637,1
-    .isQuestTurnedIn 43949
-    .isQuestAvailable 44417
+    .isQuestTurnedIn 43949 --More Weapons of Legend
+    .isQuestAvailable 44417 --One More Legend
     .goto 695,58.36,85.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Odyn|r
     .accept 44417 >>Acepta la misión Una leyenda más
@@ -15866,9 +15869,9 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Odyn|r
     .subzoneskip 13637,1
-    .isQuestTurnedIn 43949
-    .isQuestAvailable 44417
-    .isOnQuest 44417
+    .isQuestTurnedIn 43949 --More Weapons of Legend
+    .isQuestAvailable 44417 --One More Legend
+    .isOnQuest 44417 --One More Legend
     .goto 695,58.36,85.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Odyn|r
     .target Odyn
@@ -15879,9 +15882,9 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Odyn|r
     .subzoneskip 13637,1
-    .isQuestTurnedIn 43949
-    .isQuestAvailable 44417
-    .isQuestComplete 44417
+    .isQuestTurnedIn 43949 --More Weapons of Legend
+    .isQuestAvailable 44417 --One More Legend
+    .isQuestComplete 44417 --One More Legend
     .goto 695,58.36,85.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Odyn|r
     .turnin 44417 >>Entrega la misión Una leyenda más
@@ -15889,8 +15892,8 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Odyn|r
     .subzoneskip 13637,1
-    .isQuestTurnedIn 40579
-    .isQuestAvailable 43949
+    .isQuestTurnedIn 40579 --Weapons of Legend
+    .isQuestAvailable 43949 --More Weapons of Legend
     .goto 695,58.36,85.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Odyn|r
     .accept 43949 >>Acepta la misión Más armas de leyenda
@@ -15898,9 +15901,9 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Odyn|r
     .subzoneskip 13637,1
-    .isQuestTurnedIn 40579
-    .isQuestAvailable 43949
-    .isOnQuest 43949
+    .isQuestTurnedIn 40579 --Weapons of Legend
+    .isQuestAvailable 43949 --More Weapons of Legend
+    .isOnQuest 43949 --More Weapons of Legend
     .goto 695,58.36,85.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Odyn|r
     .target Odyn
@@ -15911,9 +15914,9 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Odyn|r
     .subzoneskip 13637,1
-    .isQuestTurnedIn 40579
-    .isQuestAvailable 43949
-    .isQuestComplete 43949
+    .isQuestTurnedIn 40579 --Weapons of Legend
+    .isQuestAvailable 43949 --More Weapons of Legend
+    .isQuestComplete 43949 --More Weapons of Legend
     .goto 695,58.36,85.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Odyn|r
     .turnin 43949 >>Entrega la misión Más armas de leyenda
@@ -15921,7 +15924,7 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Odyn|r
     .subzoneskip 13637,1
-    .isQuestAvailable 40579
+    .isQuestAvailable 40579 --Weapons of Legend
     .goto 695,58.36,85.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Odyn|r
     .accept 40579,1 >>Acepta la misión Armas legendarias
@@ -15929,8 +15932,8 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Odyn|r
     .subzoneskip 13637,1
-    .isQuestAvailable 40579
-    .isOnQuest 40579
+    .isQuestAvailable 40579 --Weapons of Legend
+    .isOnQuest 40579 --Weapons of Legend
     .goto 695,58.36,85.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Odyn|r
     .complete 40579,1 --1/1 Artifact weapon chosen
@@ -15940,8 +15943,8 @@ step
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Odyn|r
     .subzoneskip 13637,1
-    .isQuestComplete 40579
-    .isQuestAvailable 40579
+    .isQuestComplete 40579 --Weapons of Legend
+    .isQuestAvailable 40579 --Weapons of Legend
     .goto 695,58.36,85.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Odyn|r
     .turnin 40579,1 >>Entrega la misión Armas legendarias
@@ -15957,7 +15960,7 @@ step
     .target Odyn
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Hruthnir|r
-    .isOnQuest 39191
+    .isOnQuest 39191 --Legacy of the Icebreaker
     .goto 695,59.35,26.3
     .gossipoption 44315 >>Habla con |cRXP_FRIENDLY_Hruthnir|r
     .timer 20,RP
@@ -15983,12 +15986,12 @@ step
     .target Hruthnir
 step
     #completewith Pillik
-    .isOnQuest 39191
+    .isOnQuest 39191 --Legacy of the Icebreaker
     +|cRXP_WARN_Puedes usar el vuelo dinámico aquí|r.
 step
     #arrowtext Mata a\n|cRXP_ENEMY_Pillik|r
     .goto 634,84.34,9.52
-    .isOnQuest 39191
+    .isOnQuest 39191 --Legacy of the Icebreaker
     >>Mata a |cRXP_ENEMY_Pillik|r
     .scenario 1856,1 --Defeat Pillik
     .timer 50,RP
@@ -16183,14 +16186,14 @@ step
     #include ab) Order Hall Warrior Part 1@OrderHallWarrior1-Order Hall Warrior Part 1
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Odyn|r
-    .isQuestAvailable 40579
+    .isQuestAvailable 40579 --Weapons of Legend
     #label Order Hall Warrior
     .goto 695,58.33,84.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Odyn|r
     .accept 40579 >>Acepta la misión Armas legendarias
     .target Odyn
 step
-    .isQuestAvailable 40579
+    .isQuestAvailable 40579 --Weapons of Legend
     +Selecciona una de las siguientes guías por ahora:
     *|cRXP_WARN_Podrás hacer las otras cadenas de misiones más adelante|r
     *|cFFFF0000No puedes progresar si no seleccionas uno|r.
