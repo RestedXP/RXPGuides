@@ -26469,10 +26469,10 @@ step
     .goto 463,43.46,91.82,30,0
     .goto 463,43.81,88.49,30,0
     .goto 463,46.15,88.00,30,0
-    >>Click on the |cRXP_PICK_Bloodtalon Lasso|r macro in the "Active Items Frame" to use it on |cRXP_FRIENDLY_Swiftclaw|r. He runs counter-clockwise around the island. (NOT TRANSLATED IN :zhCN YET)
+    >>点击"可用物品"框中的 |cRXP_PICK_Bloodtalon Lasso|r 宏来对 |cRXP_FRIENDLY_迅爪|r 使用。它在岛屿周围逆时针奔跑。
     .complete 24626,1 --1/1 Capture Swiftclaw
 	.unitscan 迅爪
-    .macro Bloodtalon Lasso,134326 >>/targetexact Swiftclaw\n/use item:50053 (NOT TRANSLATED IN :zhCN YET)
+    .macro Bloodtalon Lasso,134326 >>血爪套索
 step
     #arrowtext 骑乘 |cRXP_FRIENDLY_迅爪|r 回到 |cRXP_PICK_迅猛龙栏舍|r
     .goto 463,50.42,66.82,40,0
@@ -27313,10 +27313,10 @@ step
     #loop
     .goto 7,48.25,60.43,20,0
     .goto 7,48.13,57.28,20,0
-    >>Click on the |cRXP_PICK_Tender Stride Meat|r macro in the "Active Items Frame" to use it on |cRXP_FRIENDLY_Kyle|r. Wait until Kyle is nearby. (NOT TRANSLATED IN :zhCN YET)
+    >>点击"可用物品"框中的 |cRXP_PICK_柔步嫩肉|r 宏来对 |cRXP_FRIENDLY_凯雷|r 使用。等待凯雷靠近。
     .complete 11129,1 --1/1 Kyle fed
     .target 凯雷
-    .macro Tender Stride Meat,134400 >>/targetexact Kyle\n/use item:33009 (NOT TRANSLATED IN :zhCN YET)
+    .macro Tender Stride Meat,134400 >>柔步嫩肉
 step
     #arrowtext 与 |cRXP_FRIENDLY_阿哈布·麦蹄|r 对话
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_阿哈布·麦蹄|r对话。
@@ -29650,37 +29650,37 @@ step
 step
     #sticky
     >>你需要总共收集9瓶卡亚零一度可乐
-    >>Click on the |cRXP_PICK_Kaja'Cola Zero-One|r macro in the "Active Items Frame" to use it on |cRXP_FRIENDLY_Kezan Citizen|r. (NOT TRANSLATED IN :zhCN YET)
-    .macro Kaja'Cola Zero-One,134400 >>/targetexact Kezan Citizen\n/use item:52484 (NOT TRANSLATED IN :zhCN YET)
+    >>点击"可用物品"框中的 |cRXP_PICK_卡加可乐 Zero-One|r 宏来对 |cRXP_FRIENDLY_科赞公民|r 使用。
+    .macro Kaja'Cola Zero-One,134400 >>卡加可乐 Zero-One
     .collect 52484,9,25122,0xF
     .complete 25122,4 --6/6 Other goblin's minds freed
     .target 科赞公民
 step
     #title 解救王牌
-    >>Click on the |cRXP_PICK_Kaja'Cola Zero-One|r macro in the "Active Items Frame" to use it on |cRXP_FRIENDLY_Ace|r. (NOT TRANSLATED IN :zhCN YET)
+    >>点击"可用物品"框中的 |cRXP_PICK_卡加'卡亚可乐 Zero-One|r 宏来对 |cRXP_FRIENDLY_王牌|r 使用。
     .goto 174,57.1,36.9
-    .macro Kaja'Cola Zero-One,134400 >>/targetexact Ace\n/use item:52484 (NOT TRANSLATED IN :zhCN YET)
+    .macro Kaja'Cola Zero-One,134400 >>卡加可乐 Zero-One
     .complete 25122,1 --1/1 Ace's mind freed
     .target 王牌
 step
     #title 解救小静
-    >>Click on the |cRXP_PICK_Kaja'Cola Zero-One|r macro in the "Active Items Frame" to use it on |cRXP_FRIENDLY_Izzy|r. (NOT TRANSLATED IN :zhCN YET)
+    >>点击"可用物品"框中的 |cRXP_PICK_卡加'卡亚可乐 Zero-One|r 宏来对 |cRXP_FRIENDLY_小静|r 使用。
     .goto 174,57.01,35.02
-    .macro Kaja'Cola Zero-One,134400 >>/targetexact Izzy\n/use item:52484 (NOT TRANSLATED IN :zhCN YET)
+    .macro Kaja'Cola Zero-One,134400 >>卡加可乐 Zero-One
     .complete 25122,2 --1/1 Izzy's mind freed
     .target 小静
 step
     #arrowtext 杀死\ |cRXP_ENEMY_残酷主人"裂影"|r
-    >>Kill |cRXP_ENEMY_Blastshadow the Brutemaster|r and click on the flying purple |cRXP_PICK_Soulstone|r. Click on the |cRXP_PICK_Blastshadow's Soulstone|r macro in the "Active Items Frame" to use it on his corpse. (NOT TRANSLATED IN :zhCN YET)
-    .macro Blastshadow's Soulstone,134336 >>/targetexact Blastshadow the Brutemaster\n/use [@target,dead] item:52481 (NOT TRANSLATED IN :zhCN YET)
+    >>击杀 |cRXP_ENEMY_残酷主人"裂影"|r 并点击飞行的紫色 |cRXP_PICK_Soulstone|r。点击"可用物品"框中的 |cRXP_PICK_Blastshadow's Soulstone|r 宏来对他的尸体使用。
+    .macro Blastshadow's Soulstone,134336 >>裂影的灵魂石
     .goto 174,56.18,32.29
     .complete 25123,1 --1/1 Blastshadow's Soulstone destroyed
     .mob 残酷主人"裂影"
 step
     #title 解救大胖
-    >>Click on the |cRXP_PICK_Kaja'Cola Zero-One|r macro in the "Active Items Frame" to use it on |cRXP_FRIENDLY_Gobber|r. (NOT TRANSLATED IN :zhCN YET)
+    >>点击"可用物品"框中的 |cRXP_PICK_卡加'卡亚可乐 Zero-One|r 宏来对 |cRXP_FRIENDLY_大胖|r 使用。
     .goto 174,57.04,32.17
-    .macro Kaja'Cola Zero-One,134400 >>/targetexact Gobber\n/use item:52484 (NOT TRANSLATED IN :zhCN YET)
+    .macro Kaja'Cola Zero-One,134400 >>卡加可乐 Zero-One
     .complete 25122,3 --1/1 Gobber's mind freed
     .target 大胖
 step

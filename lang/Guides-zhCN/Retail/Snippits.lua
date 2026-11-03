@@ -773,7 +773,7 @@ step
 step
     #label ChromieTime2
     .goto 84,56.257,17.311
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r. (NOT TRANSLATED IN :zhCN YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_克罗米|r |cRXP_WARN_[2]|r 对话。
     .accept 40519 >>接受任务 军团再临：军团回归
     .chromietime 10
     .skipgossipid 51901
@@ -784,7 +784,7 @@ step
     #label CallBoardStart
     .goto 84,62.21,29.84
     >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_英雄的召唤公告牌|r
-    .accept 40519 >>Accept Legion: The Legion Returns (NOT TRANSLATED IN :zhCN YET)
+    .accept 40519 >>接受 Legion：军团回归
     .choose 1851120
 step
     #arrowtext 与 |cRXP_FRIENDLY_拉希奥|r 对话
