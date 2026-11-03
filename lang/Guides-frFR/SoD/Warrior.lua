@@ -1379,7 +1379,7 @@ step
 step
     .train 416004,1
     #completewith next
-    .zone Hillsbrad Foothills >>Voyagez aux Contreforts de Hautebrande
+    .zone Hillsbrad Foothills >>Voyagez aux Contreforts d'Hillsbrad
 step
     .train 416004,1
     #loop

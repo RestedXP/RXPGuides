@@ -46,7 +46,7 @@ step << Druid
     .mob +Young Thistle Boar
 step << Druid
     #completewith next
-    +|cRXP_WARN_Gardez bien 96 cuivre à vendre au marchand avec votre camelote|r, vous pouvez y ajouter votre bâton qui se vend pour 9 cuivre
+    +|cRXP_WARN_Assurez-vous d'avoir au moins 1 argent 2 cuivre de rebut de vendeur|r, vous pouvez compter vos objets qui se vendent 9 cuivres
 step << !sod/Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Dirania Silvershine|r et à |cRXP_FRIENDLY_Melithar Staghelm|r
     #label GoodProtector
@@ -146,6 +146,7 @@ step << Priest/Rogue
 	.goto 1438/1,826.03,10328.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Conservator Ilthalaine|r
     .turnin 456 >> Rendez la quête L'Equilibre de la nature
+    .accept 457 >> Acceptez la quête L'Equilibre de la nature
     .target Conservator Ilthalaine
 	.accept 3119 >> Acceptez la quête Sceau béni << Priest
 step << Druid
@@ -601,7 +602,7 @@ step << Rogue
 step << Druid
     .goto 1438/1,947.57,9812.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Shalomon|r
-    >>|cRXP_BUY_Achetez et équipez le|r |T135145:0|t[Bâton de marche] |cRXP_BUY_si vous pouvez vous le permettre (4 argent 79 cuivre), sinon passez cette étape|r
+    >>|cRXP_BUY_Achetez et équipez le|r [Bâton de marche] |cRXP_BUY_si vous pouvez vous le permettre (5s 4c), sinon passez cette étape|r
     .collect 2495,1 --Walking Stick (1)
     .target Shalomon
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.20
@@ -1408,7 +1409,7 @@ step << Druid/Priest
     .accept 940 >> Acceptez la quête Teldrassil
 step << Druid/Priest
     #label xp10
-    .xp 10-900 >> Gagnez en expérience jusqu'à ce qu'il ne vous manque que 900xp pour le niveau 10 (5600/6500)
+    .xp 10-870 >> Farmez jusqu'à être à 870 xp du niveau 10 (5630/6500)
 step << Hunter
     #completewith xp10
     #label mist1
@@ -1466,7 +1467,7 @@ step << Hunter
     .target Ariyell Skyshadow
 step << Hunter
     .goto 1457/1,2329.19,9908.53
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Ilyenia Moonfire|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t Parlez à |cRXP_FRIENDLY_Ilyenia Moonfire|r
     .skipgossipid 96881
     .train 227 >>Apprenez la compétence Bâtons
     >>Si vous avez un Bâton dans votre sac, équipez-le.
@@ -1580,7 +1581,7 @@ step << Druid NightElf
 step << Druid NightElf
     .isOnQuest 5923
     .goto 1457/1,2563.92,10179.040
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Mathrengyl Bearwalker|r sur la plateforme du milieu
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Mathrengyl Bearwalker|r à la plateforme du milieu
     .turnin 5923 >> Rendez la quête Écouter l’appel
     .accept 5921 >> Acceptez la quête Reflet-de-Lune
 	.trainer >> Apprenez vos sorts de classe
@@ -1588,14 +1589,14 @@ step << Druid NightElf
 step << Druid NightElf
     .isOnQuest 5925
     .goto 1457/1,2563.92,10179.040
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Mathrengyl Bearwalker|r sur la plateforme du milieu
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Mathrengyl Bearwalker|r à la plateforme du milieu
     .turnin 5925 >> Rendez la quête Écouter l’appel
     .accept 5921 >> Acceptez la quête Reflet-de-Lune
 	.trainer >> Apprenez vos sorts de classe
     .target Mathrengyl Bearwalker
 step << Druid NightElf
     .goto 1457/1,2563.92,10179.040
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Mathrengyl Bearwalker|r sur la plateforme du milieu
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Mathrengyl Bearwalker|r à la plateforme du milieu
     .accept 5921 >> Acceptez la quête Reflet-de-Lune
     .target Mathrengyl Bearwalker
 step << !Rogue
@@ -1610,7 +1611,7 @@ step << !Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à la |cRXP_FRIENDLY_Prêtresse A'moora|r en haut des escaliers
     .accept 2518 >> Acceptez la quête Les larmes de la Lune
 step << Priest
-    .goto Darnassus,40.0,80.0
+    .goto 1457/1,2515.0296,9673.7323
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à la |cRXP_FRIENDLY_Prêtresse Alathea|r en haut des escaliers
     .accept 5627 >>Acceptez la quête Etoiles d'Elune
     .turnin 5627 >>Rendez la quête Etoiles d'Elune
@@ -2027,8 +2028,8 @@ step << Hunter
 	.goto 1438/1,1492.78,10765.61,0
 	.goto 1438/1,1900.12,10853.85,0
     >>Lancez [Apprivoiser une bête] |cRXP_WARN_sur un |cRXP_ENEMY_Strigid Hunter|r pour le dompter|r -- .tame 1997
-    .train 2981 >> Attaquez des mobs avec celui-ci pour qu'il apprenne [Claw (Rank 2)]
-    .link https://www.wow-petopia.com/classic/training.php >> Cliquez ici pour plus d'information sur le dressage des familiers
+    .train 2981 >> Attaquez des créatures avec pour qu'il apprenne [Griffe (Rang 2)]
+    .link https://www.wow-petopia.com/classic/training.php >> |cRXP_WARN_Cliquez ici pour plus d'information sur le dressage des familiers|r
 	.unitscan Strigid Hunter
 step
     .goto 1438/1,1691.36,10412.66
@@ -2125,22 +2126,20 @@ step
     >>Dirigez-vous vers l' |cRXP_FRIENDLY_Écorce de l'arbre de l'Oracle|r
     .turnin 98398 >> Rendez la quête L’arbre de l’Oracle
     .accept 940 >> Acceptez la quête Teldrassil
-step
+step << !Warrior --remove warrior tag if they fix the ress sickness
     #softcore
 	#completewith darn << era
     #completewith darnSoD << sod
     .deathskip >>Mourez et ressuscitez au cimetière de Darnassus
     >>Faites bien attention à être du côté ouest de la rivière ou vous risquez de prendre la mauvaise route << sod
     .target Gardien des âmes
-step
-    #hardcore
+step << Warrior --remove warrior tag if they fix the ress sickness
     #completewith next
     .goto 1457/1,2070.42,9979.310
     .zone Darnassus >> Voyagez jusqu'à Darnassus
-step
+step << !Warrior --remove warrior tag if they fix the ress sickness 
     #hardcore
     #completewith next
-    #season 2
     .goto 1457/1,2070.42,9979.310
     .zone Darnassus >> Voyagez jusqu'à Darnassus
 step << !Warrior
@@ -2210,7 +2209,7 @@ step
     .use 279378
 step << Druid NightElf
     .goto 1457/1,2563.92,10179.040
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Mathrengyl Bearwalker|r sur la plateforme du milieu
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Mathrengyl Bearwalker|r à la plateforme du milieu
     .turnin 5931 >> Rendez la quête Retour à Darnassus
     .target Mathrengyl Bearwalker
     .accept 6001 >> Acceptez la quête Corps et cœur
@@ -2319,7 +2318,7 @@ step << Hunter
     .target Jaeana
 step << Hunter/Warrior/Priest
     .goto 1457/1,2329.19,9908.53
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Ilyenia Moonfire|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t Parlez à |cRXP_FRIENDLY_Ilyenia Moonfire|r
     .skipgossipid 96881
     .train 227 >>Apprenez la compétence Bâtons << Hunter/Warrior/Priest
     >>Si vous avez un Bâton dans votre sac, équipez-le. << Hunter

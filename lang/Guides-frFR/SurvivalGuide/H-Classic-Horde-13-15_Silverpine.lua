@@ -542,7 +542,7 @@ step << Tauren Warrior
 step << Tauren Warrior
     #optional
     #completewith PyrewoodAmbush
-    +Équipez le [Marteau en pierre] lorsque vous passez niveau 16
+    +Équipez le [Marteau en pierre] lorsque vous passez au niveau 16
     .use 2026
     .itemcount 2026,1
     .itemStat 16,QUALITY,<7

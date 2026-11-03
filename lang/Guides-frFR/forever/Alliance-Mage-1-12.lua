@@ -310,7 +310,7 @@ step
 .target "Auntie" Bernice Stonefield
     .accept 84 >> Acceptez la quête Revenir voir Billy
 step
-    .goto 1429,34.945,83.855
+    .goto 1429/0,322.53,-9880.48--c:1429,34.945,83.855
 >>Parlez à la |cRXP_FRIENDLY_Mamie Champierreux|r
     .turnin 111 >> Rendez la quête Discuter avec Mamie
 .target Gramma Stonefield
@@ -1872,7 +1872,7 @@ step
     .goto 1437/0,-819.67,-3691.42,15,0
     .goto 1437/0,-807.26,-3716.22,15,0
     .goto 1437/0,-827.94,-3724.49,15,0
-    .goto 1437,10.760,56.721
+    .goto 1437/0,-834.55,-3711.29--c:1437,10.760,56.721
     .vendor >> Si vous avez 8 pièces d'argent, achetez le Tube en bronze à Neal Allen s'il est disponible
 step
     .money <0.04

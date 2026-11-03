@@ -1966,6 +1966,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|r |cRXP_FRIENDLY_Gar'Thok|r
     .turnin 784 >>Rendez la quête Vaincre les traîtres
     .turnin 830 >>Rendez la quête Les ordres de l'amiral
+    .turnin 96821 >>Rendez la quête Legging It
     .accept 825 >>Acceptez la quête Des épaves
     .accept 831 >>Acceptez la quête Les ordres de l'amiral
     .target +Gar'Thok

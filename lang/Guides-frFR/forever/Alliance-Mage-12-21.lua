@@ -752,7 +752,7 @@ step
     .goto 1437/0,-819.67,-3691.42,15,0
     .goto 1437/0,-807.26,-3716.22,15,0
     .goto 1437/0,-827.94,-3724.49,15,0
-    .goto 1437,10.760,56.721
+    .goto 1437/0,-834.55,-3711.29--c:1437,10.760,56.721
     >> Si vous avez 8 pièces d'argent, achetez le Tube en bronze à Neal Allen s'il est disponible. Sinon, passez cette étape.
     .collect 4371,1,175,1
 step
