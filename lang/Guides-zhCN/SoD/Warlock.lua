@@ -762,7 +762,7 @@ step
     #completewith next
     .train 426445,1
     .isOnQuest 78994
-    .hs >> 炉石返回棘齿城 << Alliance
+    .hs >> 使用炉石返回棘齿城 << Alliance
     .hs >> 使用炉石返回陶拉祖营地 << Horde
     .zoneskip The Barrens
 step

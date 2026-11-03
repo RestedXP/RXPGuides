@@ -130,7 +130,7 @@ step
 step
     .isQuestTurnedIn 4182
     .goto Burning Steppes,65.012,23.757
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_狼狈不堪的约翰|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_狼狈不堪的约翰|r 对话
     .complete 4224,1 -- Ragged John's Story (1)
     .skipgossip
     .target Ragged John
@@ -200,7 +200,7 @@ step
     .complete 4282,2 -- Marshal Windsor's Lost Information (1)
 step
     .isQuestTurnedIn 4264
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_温德索尔元帅|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_温德索尔元帅|r 对话
     >>|cRXP_WARN_确保所有队友在这一步都关闭了自动接取任务！RestedXP已在这一步默认关闭自动接取|r
     >>|cRXP_WARN_接受任务之后会开启冲破牢笼的护送任务。请确保你已清理干净监狱区域的所有怪物，以便更轻松地完成护送|r |cRXP_FRIENDLY_温德索尔元帅|r
     .turnin 4282 >> 交任务 一线希望

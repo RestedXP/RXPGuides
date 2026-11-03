@@ -33,7 +33,7 @@ step
 step
     #ah
     .goto 1453/0,660.28,-8814.55
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
     >>|cRXP_BUY_购买以下物品以便在西部荒野快速交任务：|r
     >>|cRXP_WARN_如果你不想这样做，或者无法完成，可以跳过此步骤|r
     >>|T133972:0|t[秃鹫肉条]
@@ -133,7 +133,7 @@ step << !Human
 step
     .goto 1436/0,1166.57,-10653.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_与旅店老板对话|r
-    .vendor >>|cRXP_BUY_如有需要，购买食物/水|r
+    .vendor >>|cRXP_BUY_按需购买食物/水|r
 	.target 旅店老板希瑟尔
 step
     .goto 1436/0,1179.800,-10635.601
@@ -543,7 +543,7 @@ step << Skyborne Warrior
     .target 布里维夫·石拳
 step << Skyborne Warrior
     .goto 1455,62.378,88.671
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布雷文·寒钢|r 在楼下对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在楼下与 |cRXP_FRIENDLY_布雷文·寒钢|r 对话
     >>|cRXP_BUY_从她那里|r|cRXP_BUY_购买一把|r |T135425:0|t[锐利的飞刀]
     .collect 3107,1 --Collect Keen Throwing Knife (200)
     .target 布雷文·寒钢
@@ -573,7 +573,7 @@ step << !NightElf
 step << !NightElf
     #ah
     .goto 1453/0,660.28,-8814.55
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
     >>|cRXP_BUY_购买|r |T133970:0|t|cRXP_LOOT_[野猪肉块]|r|cRXP_BUY_ 或|r |T133970:0|t|cRXP_LOOT_[多汁狼肉]|r|cRXP_BUY_，以便稍后提升你的 |r|T133971:0|t[烹饪] |cRXP_BUY_技能|r
     >>|cRXP_WARN_你需要50点|r |T133971:0|t[烹饪]|cRXP_WARN_后续在夜色镇完成一个任务|r
     >>|cRXP_WARN_如果你不想这样做，或者无法完成，可以跳过此步骤|r
@@ -594,7 +594,7 @@ step << !NightElf
     #ah
     #optional
     .goto 1453/0,660.28,-8814.55
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
     >>|cRXP_WARN_如果你不想这样做，或者无法完成，可以跳过此步骤|r
     >>|cRXP_BUY_购买以下物品，以便在西部荒野和黑海岸更快交任务：|r
     >>|T133972:0|t[陆行鸟肉]
@@ -653,7 +653,7 @@ step << Warlock
     .goto 1453/0,1015.33,-8978.9,15 >> 前往屠宰场，进入地下室
 step << Warlock
     .goto 1453/0,1029.89,-8971.06
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
     .trainer >> 训练你的职业技能
     .train 6222,1
     .target 厄苏拉·德林
@@ -675,7 +675,7 @@ step << Priest/Paladin
 step << Human Paladin
     .isOnQuest 1780
     .goto 1453/0,845.800,-8545.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达索瑞恩·拉尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_达索瑞恩·拉尔|r 对话
     .turnin 1780 >>交任务圣洁之书
     .target 达索瑞恩·拉尔
 step << Paladin
@@ -2998,7 +2998,7 @@ step << Warrior
     .target 布里维夫·石拳
 step << Warrior
     .goto 1455,62.378,88.671
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布雷文·寒钢|r 在楼下对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在楼下与 |cRXP_FRIENDLY_布雷文·寒钢|r 对话
     >>|cRXP_BUY_从她那里|r|cRXP_BUY_购买一把|r |T135425:0|t[锐利的飞刀]
     .collect 3107,1 --Collect Keen Throwing Knife (200)
     .target 布雷文·寒钢
@@ -3980,7 +3980,7 @@ step << Hunter
     .goto 1439,35.724,83.696
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_勘察员雷塔维|r 对话
     >>|cRXP_WARN_你可能需要等待他重新刷新，或等其他玩家完成护送|r
-    .turnin 729 >> 交任务健忘的勘察员
+    .turnin 729 >> 交任务 健忘的勘察员
     .target 勘察员雷塔维
 step << Hunter
     .goto 1439/1,602.01,4678.87
@@ -4143,7 +4143,7 @@ step
 step << Hunter
     .goto 1439,37.439,41.839
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_考古学家霍莉|r 对话
-    .turnin 731 >> 交任务健忘的勘察员
+    .turnin 731 >> 交任务 健忘的勘察员
     .accept 741 >> 接受任务 健忘的勘察员
     .target 考古学家霍莉
     .isQuestComplete 731
@@ -4652,7 +4652,7 @@ step << Hunter
 step << Dwarf Hunter/Human Hunter/Skyborne Hunter
     .goto 1438/1,2607.86,9641.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_首席考古学家杜瑟·灰胡|r 对话
-    .turnin 741 >> 交任务健忘的勘察员
+    .turnin 741 >> 交任务 健忘的勘察员
     .accept 942 >> 接受任务 健忘的勘察员
     .target 首席考古学家杜瑟·灰胡
     .isOnQuest 741
@@ -4853,7 +4853,7 @@ step << Shaman
     .bronzetube
 step << Shaman
     .goto 1437/0,-782.03,-3793.12
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_谢尔雷|r 交谈
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_谢尔雷|r 对话
     .fly Ironforge >> 飞往铁炉堡
     .target 谢尔雷·布隆迪尔
 step << Shaman
@@ -4897,7 +4897,7 @@ RXPGuides.RegisterGuide([[
 
 step << Shaman
     .goto 1453/0,638.8,-8341.95
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_比利巴布·旋轮|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_比利巴布·旋轮|r 对话
     .vendor >> |cRXP_WARN_购买一个|r |T133024:0|t[青铜管]
     >>|cRXP_WARN_这是限量供应物品。如果 |cRXP_FRIENDLY_比利巴布·旋轮|r 没有库存，请跳过此步骤|r
 --    >>You will need 2 bronze tubes for a quest later << Rogue
@@ -4940,7 +4940,7 @@ step << Warlock
     .goto 1453/0,1015.33,-8978.9,15 >> 前往屠宰场，进入地下室
 step << Warlock
     .goto 1453/0,1029.98,-8971.01
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
     .trainer >> 训练你的职业技能
     .target 厄苏拉·德林
 step << Warlock/Priest
@@ -4962,7 +4962,7 @@ step << Paladin
     .target 虔诚的亚瑟
 step << Human Paladin
     .goto 1453/0,845.800,-8545.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达索瑞恩·拉尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_达索瑞恩·拉尔|r 对话
     .turnin 1780 >>交任务圣洁之书
     .accept 1781 >>接受任务圣洁之书
     .target 达索瑞恩·拉尔
@@ -4997,7 +4997,7 @@ step << !Shaman
     .target 沉默的舒尼
 step << !Shaman
     .goto 1453/0,638.8,-8341.95
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_比利巴布·旋轮|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_比利巴布·旋轮|r 对话
     .vendor >> |cRXP_WARN_购买一个|r |T133024:0|t[青铜管]
     >>|cRXP_WARN_这是限量供应物品。如果 |cRXP_FRIENDLY_比利巴布·旋轮|r 没有库存，请跳过此步骤|r
 --    >>You will need 2 bronze tubes for a quest later << Rogue
@@ -5073,7 +5073,7 @@ step << Rogue
 step -- must be on quest now to loot Great Goretusk Snout
     #ah
     .goto 1453/0,660.28,-8814.55
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
     >>购买|T134437:0|t[抗毒药剂] 用于你稍后的 |T132290:0|t[毒药] 职业任务，其余的留着稍后在赤脊山快速交任务 << !Dwarf Rogue
     >>购买以下物品，以便稍后在赤脊山更快地完成任务 << !Rogue/Dwarf Rogue
     >>这样可以节省时间，因为你不需要四处跑去找怪击杀。如果你不想购买，可以跳过这一步
@@ -5120,7 +5120,7 @@ step << NightElf/Skyborne/Dwarf Hunter
     .zone Redridge Mountains >> 前往赤脊山
 step
     .goto 1433/0,-1906.400,-9606.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_守卫帕克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卫兵帕克|r 对话
     .accept 244 >> 接受任务 豺狼人的入侵
     .target 卫兵帕克
 step
@@ -5149,7 +5149,7 @@ step
     .accept 125 >> 接受任务 丢失的工具
     .target Foreman Oslow
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_弗纳·奥斯古|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_弗纳·奥斯古|r 对话
 	.target Verner Osgood
     .goto 1433/0,-2243.14,-9259.43
     .accept 118 >> 接受任务 马掌
@@ -5264,12 +5264,12 @@ step
     .mob Tarantula
     .mob Dire Condor
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_守卫帕克|r 对话
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卫兵帕克|r 对话
 	.target 卫兵帕克
     .goto 1433/0,-1906.400,-9606.800
     .accept 244 >> 接受任务 豺狼人的入侵
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_守卫帕克|r 对话
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卫兵帕克|r 对话
 	.target 卫兵帕克
     .goto 1433/0,-1906.400,-9606.800
     .turnin 129 >> 交任务 免费的午餐
@@ -5464,7 +5464,7 @@ step << Rogue
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_卢修斯|r 对话
 	.target Lucius
     .goto 1433/0,-2180.19,-9328.21
-    .turnin 2282 >> 交任务 奥瑟尔伐木场
+    .turnin 2282 >> 交任务奥瑟尔伐木场
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_希拉里|r 对话
 	.target Hilary
@@ -5698,7 +5698,7 @@ step << Warlock
     .goto 1453/0,1015.33,-8978.9,15 >> 前往屠宰场，进入地下室
 step << Warlock
     .goto 1453/0,1029.98,-8971.01
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
     .trainer >> 训练你的职业技能
     .target 厄苏拉·德林
 step << Warlock
@@ -5743,7 +5743,7 @@ step << Paladin
     .target 达索瑞恩·拉尔
 step << Paladin
     .goto 1453/0,845.95,-8545.70
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达索瑞恩·拉尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_达索瑞恩·拉尔|r 对话
     .turnin 1649 >>交任务勇气之书
     .accept 1650 >>接受任务勇气之书
     .target 达索瑞恩·拉尔
@@ -5770,7 +5770,7 @@ step << Rogue
     .goto 1453/0,323.43,-8817.83,5 >> 进入 SI:7 总部。前往楼上，前去找 |cRXP_FRIENDLY_马迪亚斯·肖尔大师|r
 step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_马迪亚斯·肖尔大师|r 对话
-    .accept 2360 >> 接受任务 马迪亚斯和迪菲亚盗贼
+    .accept 2360 >> 接受任务马迪亚斯和迪菲亚盗贼
     .goto 1453/0,362.28,-8815.23
     .target 马迪亚斯·肖尔大师
 step << Warrior
@@ -5796,7 +5796,7 @@ step << NightElf Rogue/Skyborne Rogue
 step << NightElf Rogue/Skyborne Rogue
     .goto 1436/0,1037.42,-10628.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_索尔|r 对话
-    .fp Westfall >> 开启西部荒野的飞行路径
+    .fp Westfall >> 解锁西部荒野飞行路线
     .target 索尔
     .isOnQuest 2360
 step << Human Rogue/Dwarf Rogue
@@ -5808,8 +5808,8 @@ step << !Dwarf Rogue
     .goto 1431/0,404.03,-11014.47,60,0
     .goto 1431/0,432.11,-10878.75,50,0
     .goto 1431/0,551.72,-10688.13
-    >>击杀|cRXP_ENEMY_小型结网毒蜘蛛|r 和 |cRXP_ENEMY_结网毒蜘蛛|r。拾取|cRXP_LOOT_小毒囊|r 和 |cRXP_LOOT_粘糊的蜘蛛腿|r
-    >>|cRXP_WARN_你需要一个|cRXP_LOOT_小毒囊|r来做成|r |T134437:0|t[抗毒药剂] |cRXP_WARN_，后面用来解除|r |T136230:0|t[赞吉尔之触] |cRXP_WARN_的debuff|r
+    >>击杀|cRXP_ENEMY_小型结网毒蜘蛛|r和|cRXP_ENEMY_结网毒蜘蛛|r，拾取|cRXP_LOOT_小毒囊|r和|cRXP_LOOT_粘糊的蜘蛛腿|r
+    >>|cRXP_WARN_你需要一个|cRXP_LOOT_小毒囊|r来做成|r |T134437:0|t|T136230:0|t[抗毒药剂] |cRXP_WARN_，后面用来解除|r |T136230:0|t|T136230:0|t[赞吉尔之触] |cRXP_WARN_的debuff|r
     >>|cRXP_WARN_把|cRXP_LOOT_粘糊的蜘蛛腿|r留着后面用|r
     >>|cRXP_WARN_如果你有一个|r |T626003:0|t|cFFF48CBA圣骑士|r|cRXP_WARN_、|r |T625999:0|t|cFFFF7C0A德鲁伊|r |cRXP_WARN_或者|r |T626006:0|t|cFF0070DD萨满|r |cRXP_WARN_朋友，你可以跳过这一步并请他们为你移除它|r
     .collect 1475,1,2359,1 -- Small Venom Sac (1)
@@ -5828,9 +5828,9 @@ step << Rogue
 step << Rogue
     .goto 1436/0,619.17,-11035.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_密探吉尔妮|r 对话
-    >>|cRXP_WARN_你必须完成这个任务来获取你的|r|T132290:0|t[毒药]
+    >>这个任务是必须完成的，关系到你的|cRXP_WARN_ |T132290:0|t[毒药]|r
     .turnin 2360 >> 交任务马迪亚斯和迪菲亚盗贼
-    .accept 2359 >> 接受任务克拉文之塔
+    .accept 2359 >> 接受任务 克拉文之塔
     .target Agent Kearnen
 step << Rogue
     #label TowerKey
@@ -5947,7 +5947,7 @@ step << Rogue
     #requires AntiVenomEnd2 << Rogue
     .goto 1453/0,362.28,-8815.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_马迪亚斯·肖尔大师|r 对话
-    >>|cRXP_WARN_如果你之前切换成了|r |T135641:0|t[匕首] |cRXP_WARN_，记得重新装备上你的主武器|r << Rogue
+    >>|cRXP_WARN_如果你之前切换成了|r |T135641:0|t[匕首] |cRXP_WARN_，记得重新装备你的主武器|r << Rogue
     .turnin 2359 >> 交任务 克拉文之塔
     .target 马迪亚斯·肖尔大师
 
@@ -5992,13 +5992,13 @@ step
     >>|cRXP_WARN_如果你在闪金镇，从暴风城飞过去会更快|r
 	>>|cRXP_WARN_如果你在阿祖拉之塔，直接跑去赤脊山|r
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_弗纳·奥斯古|r 对话
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_弗纳·奥斯古|r 对话
 	.target Verner Osgood
     .goto 1433/0,-2243.14,-9259.43
     .turnin 119 >> 交任务 回复弗纳
     .accept 124 >> 接受任务 豺狼人的乱吠
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_弗纳·奥斯古|r 对话
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_弗纳·奥斯古|r 对话
 	.target Verner Osgood
     .goto 1433/0,-2243.14,-9259.43
     .accept 122 >> 接受任务 雏龙的鳞片
@@ -6101,7 +6101,7 @@ step
     .skill cooking,50,1
     .mob Great Goretusk
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_弗纳·奥斯古|r 对话
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_弗纳·奥斯古|r 对话
 	.target Verner Osgood
     .goto 1433/0,-2243.79,-9259.860
     .turnin 124 >> 交任务 豺狼人的乱吠
@@ -6153,7 +6153,7 @@ step
     .goto 1439,35.724,83.696
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_勘察员雷塔维|r 对话
     >>|cRXP_WARN_你可能需要等待他重新刷新，或等其他玩家完成护送|r
-    .turnin 729 >> 交任务健忘的勘察员
+    .turnin 729 >> 交任务 健忘的勘察员
     .isOnQuest 729
     .target 勘察员雷塔维
 step
@@ -6297,7 +6297,7 @@ step
 step
     #sticky
     #completewith next
-    >>在任务过程中击杀并拾取|cRXP_WARN_幽爪奔跑者|r。保留获得的任何|T133970:0|t[|cRXP_LOOT_狼肋排|r]。后续烹饪任务需要10个
+    >>在任务过程中击杀并拾取|cRXP_WARN_幽爪奔跑者|r。保留获得的任何|T133970:0|t|T133970:0|t[|cRXP_LOOT_狼肋排|r]。后续烹饪任务需要10个
     .collect 1015,10
     .mob Ghostpaw Runner
 step
@@ -6379,7 +6379,7 @@ step
 step
     #sticky
     #completewith Astranaar
-    >>在任务过程中击杀并拾取|cRXP_WARN_幽爪奔跑者|r。保留获得的任何|T133970:0|t[|cRXP_LOOT_狼肋排|r]。后续烹饪任务需要10个
+    >>在任务过程中击杀并拾取|cRXP_WARN_幽爪奔跑者|r。保留获得的任何|T133970:0|t|T133970:0|t[|cRXP_LOOT_狼肋排|r]。后续烹饪任务需要10个
     .collect 1015,10
     .mob Ghostpaw Runner
 step
@@ -6514,7 +6514,7 @@ step
 step
     #sticky
     #completewith StatuetteStart
-    >>在任务过程中击杀并拾取|cRXP_WARN_幽爪奔跑者|r。保留获得的任何|T133970:0|t[|cRXP_LOOT_狼肋排|r]。后续烹饪任务需要10个
+    >>在任务过程中击杀并拾取|cRXP_WARN_幽爪奔跑者|r。保留获得的任何|T133970:0|t|T133970:0|t[|cRXP_LOOT_狼肋排|r]。后续烹饪任务需要10个
     .collect 1015,10
     .mob Ghostpaw Runner
 step
@@ -6596,7 +6596,7 @@ step
 step
     #sticky
     #completewith SoulGemStart
-    >>在任务过程中击杀并拾取|cRXP_WARN_幽爪奔跑者|r。保留获得的任何|T133970:0|t[|cRXP_LOOT_狼肋排|r]。后续烹饪任务需要10个
+    >>在任务过程中击杀并拾取|cRXP_WARN_幽爪奔跑者|r。保留获得的任何|T133970:0|t|T133970:0|t[|cRXP_LOOT_狼肋排|r]。后续烹饪任务需要10个
     .collect 1015,10
     .mob Ghostpaw Runner
 step
@@ -6649,7 +6649,7 @@ step
     #optional
     .goto 1439/1,489.35,6506.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_考古学家霍莉|r 对话
-    .turnin 731 >> 交任务健忘的勘察员
+    .turnin 731 >> 交任务 健忘的勘察员
     .accept 741 >> 接受任务 健忘的勘察员
     .target 考古学家霍莉
 step
@@ -6698,7 +6698,7 @@ step
     .target Garryeth
     >>|T134797:0|t[水下呼吸药剂] --5996
     >>|T134304:0|t[鱼人的鳍] --1468
-    >>|T134321:0|t[黏糊的蜘蛛腿] --2251
+    >>|T134321:0|t[粘糊的蜘蛛腿] --2251
     >>|T133970:0|t[狼肋排] --1015
 step << Dwarf Hunter/Human Hunter/Skyborne Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_伊琳尼雅·月火|r 对话
@@ -6712,7 +6712,7 @@ step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_首席考古学家杜瑟·灰胡|r 对话
 	.target 首席考古学家杜瑟·灰胡
     .goto 1438/1,2607.86,9641.94
-    .turnin 741 >> 交任务健忘的勘察员
+    .turnin 741 >> 交任务 健忘的勘察员
     .accept 942 >> 接受任务 健忘的勘察员
     .isOnQuest 741
 step
@@ -6925,7 +6925,7 @@ step
     .goto 1439,35.724,83.696
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_勘察员雷塔维|r 对话
     >>|cRXP_WARN_你可能需要等待他重新刷新，或等其他玩家完成护送|r
-    .turnin 729 >> 交任务健忘的勘察员
+    .turnin 729 >> 交任务 健忘的勘察员
     .target 勘察员雷塔维
     .isOnQuest 729
 step
@@ -7072,7 +7072,7 @@ step
 step
     #label volcorEnd
     .goto 1439/1,30.85,4635.20
-    >>|cRXP_WARN_等待剧情演出完成|r
+    >>|cRXP_WARN_等剧情结束|r
     .complete 995,1
     .isOnQuest 995
 step

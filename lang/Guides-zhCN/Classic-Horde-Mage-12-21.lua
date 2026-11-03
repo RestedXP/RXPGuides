@@ -68,7 +68,7 @@ step
 .target 药剂师赫布瑞姆
 >>与 |cRXP_FRIENDLY_药剂师赫布瑞姆|r 对话
     .accept 848 >>接受任务菌类孢子
-    .accept 1492 >>接受任务码头管理员迪兹维格
+    .accept 1492 >>接受任务 码头主管迪兹维格
 step
     #sticky
     #completewith next
@@ -197,7 +197,7 @@ step
 step
     .goto The Barrens,62.3,38.4
 >>与 |cRXP_FRIENDLY_酿酒师德罗恩|r 对话
-    .turnin 819 >>交任务 老陈的空酒桶
+    .turnin 819 >>交任务  老陈的空酒桶
 .target 酿酒师德罗恩
     .accept 821 >>接受任务 老陈的空酒桶
 step
@@ -697,9 +697,9 @@ step
 step
     .goto The Barrens,35.3,27.9
 >>与 |cRXP_FRIENDLY_希雷斯·碎石|r 对话
-    .turnin 1061 >> 交任务石爪之灵
+    .turnin 1061 >> 交任务  石爪之灵
 .target 希雷斯·碎石
-    .accept 1062 >> 接受任务 地精侵略者
+    .accept 1062 >> 接受任务地精侵略者
 .target 玛卡巴·扁蹄
 >>与 |cRXP_FRIENDLY_玛卡巴·扁蹄|r 对话
     .accept 6548 >> 接受任务 为我的村庄复仇
@@ -732,7 +732,7 @@ step
 >>与 |cRXP_FRIENDLY_玛卡巴·扁蹄|r 对话
     .turnin 6548 >> 交任务  为我的村庄复仇
 .target 玛卡巴·扁蹄
-    .accept 6629 >> 接受任务杀死格鲁迪格·黑云
+    .accept 6629 >> 接受任务 杀死格鲁迪格·黑云
 step
     >>从西侧的小路进入村庄。在开始里面的任务之前，确保先击杀全部6个蛮兵。击杀主帐篷前的格鲁迪格
     .goto Stonetalon Mountains,71.7,86.7,60,0
@@ -753,7 +753,7 @@ step
     .goto Stonetalon Mountains,71.4,95.1
 .target 辛吉拉
 >>与 |cRXP_FRIENDLY_辛吉拉|r 对话
-    .accept 6461 >> 接受任务盗窃的蜘蛛
+    .accept 6461 >> 接受任务 盗窃的蜘蛛
 step
     #sticky
     #label deepmossegg
@@ -899,7 +899,7 @@ step
     .goto The Barrens,62.3,38.4
 .target 酿酒师德罗恩
 >>与 |cRXP_FRIENDLY_酿酒师德罗恩|r 对话
-    .turnin 821 >>交任务 老陈的空酒桶
+    .turnin 821 >>交任务  老陈的空酒桶
 step
     .goto The Barrens,63.1,37.1
     .fly Crossroads >>飞往十字路口
@@ -908,8 +908,8 @@ step
 >>与 |cRXP_FRIENDLY_图加·符文图腾|r 对话
     .turnin 880 >>交任务  变异的生物
 .target 图加·符文图腾
-    .accept 1489 >>接受任务哈缪尔·符文图腾
-    .accept 3301 >>接受任务茉拉·符文图腾
+    .accept 1489 >>接受任务 哈缪尔·符文图腾
+    .accept 3301 >>接受任务 茉拉·符文图腾
 step
     .goto The Barrens,52.0,31.6
 .target 曼科里克
@@ -939,10 +939,10 @@ step
 step
     .goto The Barrens,44.6,59.2
 >>与 |cRXP_FRIENDLY_碎牙|r 对话
-    .turnin 878 >>交任务野猪人的内战
+    .turnin 878 >>交任务  野猪人的内战
 .target 碎牙
-    .accept 5052 >>接受任务阿迦玛甘的血岩碎片
-    .turnin 5052 >>交任务阿迦玛甘的血岩碎片
+    .accept 5052 >>接受任务 阿迦玛甘的血岩碎片
+    .turnin 5052 >>交任务  阿迦玛甘的血岩碎片
 --N Different classes needing different buffs, e.g. need speed buff later for Mulgore run for classes that didnt get FP earlier
 step
     .goto The Barrens,44.8,59.1
@@ -1030,14 +1030,14 @@ step
 >>与 |cRXP_FRIENDLY_梅洛·石蹄|r 对话
     .turnin 1130 >>交任务 梅洛的关注
 .target 梅洛·石蹄
-    .accept 1131 >>接受任务 钢齿土狼
+    .accept 1131 >>接受任务钢齿土狼
 step
  	>>进入幻象之池
 	.goto Thunder Bluff,30.1,30.0,30,0
 	.goto Thunder Bluff,23.00,21.00
 .target 药剂师扎玛
 >>与 |cRXP_FRIENDLY_药剂师扎玛|r 对话
-    .turnin 853 >> 交任务药剂师扎玛
+    .turnin 853 >> 交任务  药剂师扎玛
 step
     .goto Thunder Bluff,25.16,20.95
     .trainer >> 训练你的职业技能
@@ -1058,10 +1058,10 @@ step
 step
     .goto The Barrens,35.3,27.9
 >>与 |cRXP_FRIENDLY_希雷斯·碎石|r 对话
-    .turnin 1062 >>交任务  地精侵略者
+    .turnin 1062 >>交任务地精侵略者
 >>与 |cRXP_FRIENDLY_玛卡巴·扁蹄|r 对话
-    .turnin 6629 >>交任务杀死格鲁迪格·黑云
-    .turnin 6523 >>交任务  保护卡雅
+    .turnin 6629 >>交任务  杀死格鲁迪格·黑云
+    .turnin 6523 >>交任务保护卡雅
 .target 玛卡巴·扁蹄
     .accept 6401 >>接受任务卡雅还活着
 .target 希雷斯·碎石
@@ -1071,7 +1071,7 @@ step
     .goto Stonetalon Mountains,71.3,95.1
 .target 辛吉拉
 >>与 |cRXP_FRIENDLY_辛吉拉|r 对话
-    .turnin 6461 >>交任务  盗窃的蜘蛛
+    .turnin 6461 >>交任务盗窃的蜘蛛
 step
     .goto Stonetalon Mountains,58.989,62.599
 .target 菲兹克斯
@@ -1091,7 +1091,7 @@ step
 step
     .goto Thunder Bluff,70.00,30.90
 >>与 |cRXP_FRIENDLY_玛加萨·恐怖图腾|r 对话
-    .turnin 1063 >> 交任务巫婆长老
+    .turnin 1063 >> 交任务  巫婆长老
 .target 玛加萨·恐怖图腾
     .accept 1064 >> 接受任务 被遗忘者的援助
 step

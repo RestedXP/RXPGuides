@@ -1309,7 +1309,7 @@ step
     #requires Shortcut2
     #completewith next
     .goto Dun Morogh,81.23,42.66,50,0
-    .goto Dun Morogh,83.01,40.31,30 >>风筝一只 |cRXP_ENEMY_有伤疤的峭壁野猪|r 穿过隧道
+    .goto Dun Morogh,83.01,40.31,30 >>风筝 |cRXP_ENEMY_有伤疤的峭壁野猪|r 穿过隧道
     >>|cRXP_WARN_小心，它们会施放|r|T132337:0|t[冲锋]|cRXP_WARN_（自身瞬发：提高移动速度，持续3秒，并在击中时造成40-100点近战伤害。仅可在远程施放）|r
     .mob 有伤疤的峭壁野猪
 step
@@ -1960,7 +1960,7 @@ step
 	.goto Dun Morogh,49.09,54.74,40,0
 	.goto Dun Morogh,49.61,54.32,40,0
 	.goto Dun Morogh,51.43,53.21,40,0
-    .xp 5+2690 >> 刷怪达到2690+/2800经验
+    .xp 5+2690 >> 刷怪达到 2690+/2800 经验
     .mob 黑熊幼崽
     .mob 峭壁野猪
 step
@@ -2829,7 +2829,7 @@ step
     #label CragB1
     #completewith Cobbleflint
     .goto Loch Modan,16.45,58.54,20,0
-    .goto Loch Modan,19.59,62.76,30 >>风筝一只 |cRXP_ENEMY_有伤疤的峭壁野猪|r 穿过隧道
+    .goto Loch Modan,19.59,62.76,30 >>风筝 |cRXP_ENEMY_有伤疤的峭壁野猪|r 穿过隧道
     >>|cRXP_WARN_小心，它们会施放|r|T132337:0|t[冲锋]|cRXP_WARN_（自身瞬发：提高移动速度，持续3秒，并在击中时造成40-100点近战伤害。仅可在远程施放）|r
     .mob 有伤疤的峭壁野猪
 step
@@ -3648,7 +3648,7 @@ step
     .goto Wetlands,7.89,56.22
     >>隔墙与 |cRXP_FRIENDLY_德温|r 对话
     >>|cRXP_WARN_如果船只刚刚抵达，跳过此步骤|r
-    .vendor 1453 >> |cRXP_BUY_购买|r |T134831:0|t[治疗药水] |cRXP_BUY_从他那里(如果有)|r
+    .vendor 1453 >> |cRXP_BUY_从他那里购买|r |T134831:0|t[治疗药水] |cRXP_BUY_(如果有)|r
     .target 德温·晨光
     .money <0.03
 step
@@ -4672,7 +4672,7 @@ step << Gnome
     .use 17117
 step
     >>与|cRXP_FRIENDLY_蒙提|r 对话
-    >>|cRXP_WARN_等待剧情演出完成|r << Gnome
+    >>|cRXP_WARN_等剧情结束|r << Gnome
     .turnin 6661 >> 交任务 捕捉矿道老鼠 << Gnome
     .timer 13,捕捉矿道老鼠剧情表演 << Gnome
     .accept 6662 >> 接受任务 我的兄弟，尼普希
@@ -5385,7 +5385,7 @@ step
 step
     #label Talisman
     .goto Darkshore,52.24,33.08
-    >>|cRXP_WARN_等待剧情演出完成|r
+    >>|cRXP_WARN_等剧情结束|r
     >>击杀|cRXP_ENEMY_萨巴克希斯|r
     >>拾取掉落地上的|cRXP_PICK_萨布拉克斯的恶魔之袋|r，从中获得|cRXP_LOOT_堕落护符|r
     >>|cRXP_WARN_该操作有 5 秒施法时间|r
@@ -6493,7 +6493,7 @@ step
     #label Remtravel1
     .goto Darkshore,35.72,83.69
     >>与 |cRXP_FRIENDLY_勘察员雷姆塔维尔|r 对话来开始护送
-    .turnin 729 >> 交任务健忘的勘察员
+    .turnin 729 >> 交任务 健忘的勘察员
     .accept 731 >> 接受任务 健忘的勘察员
     .target 勘察员雷塔维
     .use 13536
@@ -6718,7 +6718,7 @@ step
     #label Remtravel3
     .goto Darkshore,35.72,83.69
     >>与 |cRXP_FRIENDLY_勘察员雷姆塔维尔|r 对话来开始护送
-    .turnin 729 >> 交任务健忘的勘察员
+    .turnin 729 >> 交任务 健忘的勘察员
     .accept 731 >> 接受任务 健忘的勘察员
     .target 勘察员雷塔维
 step
@@ -6928,7 +6928,7 @@ step
     #completewith next
     .goto Ashenvale,34.41,47.99
     >>与 |cRXP_FRIENDLY_黛琳希亚|r 对话
-    .fly Auberdine >> 飞往奥伯丁
+    .fly Auberdine >> 飞往奥伯丁，黑海岸
     .target 黛琳希亚
 step
     >>与 |cRXP_FRIENDLY_温尼斯|r 和 |cRXP_FRIENDLY_古博|r 对话
@@ -6999,7 +6999,7 @@ step
 step
     .goto Darkshore,37.44,41.84
     >>与|cRXP_FRIENDLY_霍莉|r 对话
-    .turnin 731 >> 交任务健忘的勘察员
+    .turnin 731 >> 交任务 健忘的勘察员
     .accept 741 >> 接受任务 健忘的勘察员
     .target 考古学家霍莉
 step
@@ -7054,7 +7054,7 @@ step
 step
     .goto Darnassus,31.24,84.49
     >>与 |cRXP_FRIENDLY_杜瑟·灰须|r 对话
-    .turnin 741,3 >>交任务健忘的勘察员
+    .turnin 741,3 >>交任务 健忘的勘察员
     .accept 942 >>接受任务 健忘的勘察员
     .target 首席考古学家杜瑟·灰胡
 

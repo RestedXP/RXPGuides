@@ -62,7 +62,7 @@ step << Warrior
     >>一直击杀 |cRXP_ENEMY_幼狼|r 直到你拥有价值10铜币以上的垃圾物品
     >>|cRXP_WARN_你会学习|r |T132333:0|t[战斗怒吼] |cRXP_WARN_从而加快前期升级速度|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_丹尼尔修士|r 对话
-    .vendor >> |cRXP_WARN_出售垃圾物品|r
+    .vendor >> 出售垃圾物品
     .target 丹尼尔修士
     .goto Elwynn Forest,47.486,41.566
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_莱尼·拜舍尔|r 对话
@@ -128,7 +128,7 @@ step
 step << Priest/Mage/Warlock
     .goto Elwynn Forest,47.486,41.566
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_丹尼尔修士|r 对话
-    .vendor >>|cRXP_WARN_出售垃圾物品|r
+    .vendor >>出售垃圾物品
     >>|cRXP_WARN_购买10瓶|r |T132794:0|t[清凉的泉水]
     .target 丹尼尔修士
     .collect 159,10 --Collect Refreshing Spring Water (x10)
@@ -136,7 +136,7 @@ step << !Priest !Mage !Warlock !Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_高德瑞克·洛斯迦|r 对话
     .target 高德瑞克·洛斯迦
     .goto Elwynn Forest,47.691,41.417
-    .vendor >>|cRXP_WARN_出售垃圾物品|r
+    .vendor >>出售垃圾物品
 step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_加诺斯|r 对话
     .goto Elwynn Forest,47.240,41.900
@@ -179,7 +179,7 @@ step
     .goto Elwynn Forest,47.691,41.417
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_高德瑞克·洛斯迦|r 对话
     .target 高德瑞克·洛斯迦
-    .vendor >> |cRXP_WARN_出售垃圾物品|r
+    .vendor >> 出售垃圾物品
 --N need SoM xp note
 step
     #requires xp3
@@ -421,7 +421,7 @@ step << Mage/Priest/Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_安德温·克里顿|r 对话
     .target 安德温·克里顿
     .goto Elwynn Forest,41.706,65.786
-    .vendor >> |cRXP_WARN_出售垃圾物品|r
+    .vendor >> 出售垃圾物品
 step
     #label Goldshire
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_治安官杜汉|r 对话
@@ -530,7 +530,7 @@ step
 	.goto Elwynn Forest,34.660,84.482
 step
     #completewith next
-    >>击杀 |cRXP_ENEMY_狗头人隧道工|r 和 |cRXP_ENEMY_狗头人矿工|r，拾取他们的 |cRXP_LOOT_蜡烛|r 和 |cRXP_LOOT_金砂|r
+    >>击杀 |cRXP_ENEMY_狗头人隧道工|r 和 |cRXP_ENEMY_狗头人矿工|r。拾取他们的 |cRXP_LOOT_蜡烛|r 和 |cRXP_LOOT_金砂|r
     >>|cRXP_WARN_将任何拾取到的|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_制作成|r |T135248:0|t[劣质磨刀石] << Warrior/Rogue
     >>|cRXP_WARN_将任何拾取到的|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_制作成|r |T135255:0|t[劣质平衡石] << Paladin
     .complete 60,1 --Kobold Candle (8)
@@ -554,10 +554,10 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔舒·马科伦|r 对话
     .target 乔舒·马科伦
     .vendor >>|cRXP_BUY_能买多少|r |T132815:0|t[冰镇牛奶] |cRXP_WARN_就买多少|r << Priest/Warlock/Mage
-    .vendor >>|cRXP_WARN_出售垃圾物品|r << !Priest !Warlock !Mage
+    .vendor >>出售垃圾物品 << !Priest !Warlock !Mage
 step
     #completewith next
-    >>击杀 |cRXP_ENEMY_狗头人隧道工|r 和 |cRXP_ENEMY_狗头人矿工|r，拾取他们的 |cRXP_LOOT_蜡烛|r 和 |cRXP_LOOT_金砂|r
+    >>击杀 |cRXP_ENEMY_狗头人隧道工|r 和 |cRXP_ENEMY_狗头人矿工|r。拾取他们的 |cRXP_LOOT_蜡烛|r 和 |cRXP_LOOT_金砂|r
     >>|cRXP_WARN_将任何拾取到的|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_制作成|r |T135248:0|t[劣质磨刀石] << Warrior/Rogue
     >>|cRXP_WARN_将任何拾取到的|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_制作成|r |T135255:0|t[劣质平衡石] << Paladin
     .complete 60,1 --Kobold Candle (8)
@@ -590,7 +590,7 @@ step
     .accept 107 >> 接受任务 给威廉·匹斯特的信
 step
     #completewith next
-    >>击杀 |cRXP_ENEMY_狗头人隧道工|r 和 |cRXP_ENEMY_狗头人矿工|r，拾取他们的 |cRXP_LOOT_蜡烛|r 和 |cRXP_LOOT_金砂|r
+    >>击杀 |cRXP_ENEMY_狗头人隧道工|r 和 |cRXP_ENEMY_狗头人矿工|r。拾取他们的 |cRXP_LOOT_蜡烛|r 和 |cRXP_LOOT_金砂|r
     >>|cRXP_WARN_将任何拾取到的|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_制作成|r |T135248:0|t[劣质磨刀石] << Warrior/Rogue
     >>|cRXP_WARN_将任何拾取到的|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_制作成|r |T135255:0|t[劣质平衡石] << Paladin
     .complete 60,1 --Kobold Candle (8)
@@ -605,7 +605,7 @@ step
     .accept 87 >> 接受任务 金牙
 step
     #completewith KillGoldtooth
-    >>击杀 |cRXP_ENEMY_狗头人隧道工|r 和 |cRXP_ENEMY_狗头人矿工|r，拾取他们的 |cRXP_LOOT_蜡烛|r 和 |cRXP_LOOT_金砂|r
+    >>击杀 |cRXP_ENEMY_狗头人隧道工|r 和 |cRXP_ENEMY_狗头人矿工|r。拾取他们的 |cRXP_LOOT_蜡烛|r 和 |cRXP_LOOT_金砂|r
     >>|cRXP_WARN_将任何拾取到的|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_制作成|r |T135248:0|t[劣质磨刀石] << Warrior/Rogue
     >>|cRXP_WARN_将任何拾取到的|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_制作成|r |T135255:0|t[劣质平衡石] << Paladin
     .complete 60,1 --Kobold Candle (8)
@@ -626,7 +626,7 @@ step
     .unitscan 金牙
 step
     #completewith next
-    >>击杀 |cRXP_ENEMY_狗头人隧道工|r 和 |cRXP_ENEMY_狗头人矿工|r，拾取他们的 |cRXP_LOOT_蜡烛|r 和 |cRXP_LOOT_金砂|r
+    >>击杀 |cRXP_ENEMY_狗头人隧道工|r 和 |cRXP_ENEMY_狗头人矿工|r。拾取他们的 |cRXP_LOOT_蜡烛|r 和 |cRXP_LOOT_金砂|r
     >>|cRXP_WARN_将任何拾取到的|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_制作成|r |T135248:0|t[劣质磨刀石] << Warrior/Rogue
     >>|cRXP_WARN_将任何拾取到的|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_制作成|r |T135255:0|t[劣质平衡石] << Paladin
     .complete 60,1 --Kobold Candle (8)
@@ -643,7 +643,7 @@ step
     .goto Elwynn Forest,40.5,82.3,25,0
     .goto Elwynn Forest,37.71,83.76,25,0
     .goto Elwynn Forest,40.5,82.3
-    >>击杀 |cRXP_ENEMY_狗头人隧道工|r 和 |cRXP_ENEMY_狗头人矿工|r，拾取他们的 |cRXP_LOOT_蜡烛|r 和 |cRXP_LOOT_金砂|r
+    >>击杀 |cRXP_ENEMY_狗头人隧道工|r 和 |cRXP_ENEMY_狗头人矿工|r。拾取他们的 |cRXP_LOOT_蜡烛|r 和 |cRXP_LOOT_金砂|r
     >>|cRXP_WARN_将任何拾取到的|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_制作成|r |T135248:0|t[劣质磨刀石] << Warrior/Rogue
     >>|cRXP_WARN_将任何拾取到的|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_制作成|r |T135255:0|t[劣质平衡石] << Paladin
     .complete 60,1 --Kobold Candle (8)
@@ -695,7 +695,7 @@ step
     #completewith next
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_科瑞娜·斯蒂利|r 对话
     .goto Elwynn Forest,41.529,65.900
-    .vendor >>|cRXP_WARN_出售垃圾物品|r
+    .vendor >>出售垃圾物品
     .target 科瑞娜·斯蒂利
 step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_科瑞娜·斯蒂利|r 对话
@@ -839,7 +839,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拉里克·费恩|r 对话
     .target 拉里克·费恩
     .goto Elwynn Forest,83.283,66.089
-    .vendor >> |cRXP_WARN_出售垃圾物品|r
+    .vendor >> 出售垃圾物品
     .zoneskip Elwynn Forest,1
 step
     #completewith Prowlers
@@ -1308,7 +1308,7 @@ step << Human
     .target 军需官刘易斯
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_军需官刘易斯|r 对话
     .accept 6181 >> 接受任务 快捷的消息
-    .vendor >>|cRXP_WARN_出售垃圾物品|r
+    .vendor >>出售垃圾物品
 step << Rogue
     #era
     .money >0.3152
@@ -1442,7 +1442,7 @@ step << Warlock
     >>|cRXP_WARN_沿途刷怪。通过施放|r |T134075:0|t[吸取灵魂]，确保你至少拥有 2 个 |T136163:0|t[灵魂碎片]|cRXP_WARN_|r
     .collect 6265,2 --Soul Shard (2)
 step << Warlock
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_守卫帕克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卫兵帕克|r 对话
     .target 卫兵帕克
     .goto Redridge Mountains,17.4,69.6
     .accept 244 >> 接受任务 豺狼人的入侵
@@ -1483,7 +1483,7 @@ step << Warlock
     .goto StormwindClassic,27.2,78.1,15 >> 前往屠宰场，进入地下室
 step << Warlock
     .goto StormwindClassic,26.117,77.225
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
     .trainer >> 训练你的职业技能
     .target 厄苏拉·德林
 step << Warlock
@@ -1810,7 +1810,7 @@ step
 step
     .goto Dun Morogh,68.614,54.643
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡杉·莫格什|r 对话
-    .vendor >> |cRXP_WARN_出售垃圾物品|r << !Priest !Warlock !Mage
+    .vendor >> 出售垃圾物品 << !Priest !Warlock !Mage
     .vendor >> |cRXP_BUY_购买最多20瓶|r |T132815:0|t[冰镇牛奶] << Priest/Warlock/Mage
     .target 卡杉·莫格什
 step << !Warlock
@@ -2197,7 +2197,7 @@ step << Warlock
     .goto StormwindClassic,27.2,78.1,15 >> 前往屠宰场，进入地下室
 step << Warlock
     .goto StormwindClassic,26.117,77.225
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
     .trainer >> 训练你的职业技能
     .target 厄苏拉·德林
 step << Warlock
@@ -2218,7 +2218,7 @@ step << Priest/Paladin
     .goto StormwindClassic,42.51,33.51,20 >> 前往暴风城大教堂
 step << Human Paladin
     .goto StormwindClassic,39.80,29.77
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达索瑞恩·拉尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_达索瑞恩·拉尔|r 对话
     .accept 1641 >> 接受任务圣洁之书
     .turnin 1641 >> 交任务圣洁之书
     .target 达索瑞恩·拉尔
@@ -2228,7 +2228,7 @@ step << Human Paladin
     .accept 1642 >>接受任务圣洁之书
 step << Human Paladin
     .goto StormwindClassic,39.80,29.77
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达索瑞恩·拉尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_达索瑞恩·拉尔|r 对话
     .turnin 1642 >>交任务圣洁之书
     .accept 1643 >>接受任务圣洁之书
     .target 达索瑞恩·拉尔
@@ -2278,7 +2278,7 @@ step
 step
     #ah
     .goto Stormwind City,53.612,59.764
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
     >>购买以下物品，以便稍后在西部荒野更快地交任务
     >>这样可以节省时间，因为你不需要四处跑去找怪击杀。如果你不想购买，可以跳过这一步
     >>|T133972:0|t[秃鹫肉条]
