@@ -589,7 +589,7 @@ step
     .complete 4921,1 --Find Mankrik's Wife (1)
 step
     .goto The Barrens,45.6,59.0
-    .home >>Defina sua Pedra de Retorno em Camp Taurajo
+    .home >>Defina sua Pedra de Regresso ao Acampamento Taurajo
 step
     .goto The Barrens,44.5,59.2
 .target Mangletooth
@@ -1019,7 +1019,7 @@ step
     >>Entregue seus Estilhaços de Sangue a Denterroto para receber o bônus Espírito do Vento. Se vendeu algum por engano, pule esta etapa
 .target Mangletooth
 >>Fale com |cRXP_FRIENDLY_Denterroto|r
-    .turnin 889 >> Entregue Espírito do Vento
+    .turnin 889 >> Entregue Espírito do vento
 step
     .goto Thunder Bluff,32.0,66.9,60 >>Vá até o elevador e suba para o Penhasco do Trovão
 step

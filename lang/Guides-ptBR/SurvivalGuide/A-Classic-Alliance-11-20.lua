@@ -438,7 +438,7 @@ step << Druid
     .goto Moonglade,44.1444,45.227
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Silva Fil'naveth|r
     .skipgossip 1
-    .fly Teldrassil >> Voe para a Vila de Rut'theran
+    .fly Teldrassil >> Voe para Vila de Rut’theran
     .target Silva Fil'naveth
 step << Druid
     #completewith next
@@ -819,7 +819,7 @@ step
     .accept 4725 >> Aceite Tartaruga Marinha Encalhada
 step
     .goto Darkshore,50.81,25.50
-    .use 12350 >>Use o [Tubo de Amostragem Vazio] na base do Rio Fontescarpa
+    .use 12350 >>Use o [Tubo de Amostragem Vazio] na base do **Rio Fontescarpa**
     .complete 4762,1
 step
 #map Darkshore
@@ -1612,7 +1612,7 @@ step << Druid
     .goto Moonglade,44.1444,45.227
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Silva Fil'naveth|r
     .skipgossip 1
-    .fly Teldrassil >> Voe para a Vila de Rut'theran
+    .fly Teldrassil >> Voe para Vila de Rut’theran
     .target Silva Fil'naveth
     .zoneskip Teldrassil
     .zoneskip Darnassus
@@ -2107,7 +2107,7 @@ step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_a Raene Correlobos|r
 	.target Raene Wolfrunner
     .goto Ashenvale,36.61,49.58
-    .accept 991 >> Aceite A Purificação de Raene
+    .accept 991 >> Aceite a Purificação de Raene
 step
     .goto Ashenvale,36.99,49.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Estalajadeira Kimlya|r
@@ -2194,7 +2194,7 @@ step
 .dungeon WC
     #label EnterWC
     .goto 1414,52.37,55.20
-    +Entre nas Cavernas do Lamento
+    +Entre na Caverna Ululante
     .zoneskip 1414,1 -- similar to stockades, no subzone for WC
 step
 .dungeon WC

@@ -1334,7 +1334,7 @@ step << Mage
     .goto Elwynn Forest,43.25,66.19
     .trainer >> Treine suas magias de classe
 step << Priest
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Sacerdotisa Joselita|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Sacerdotisa Joselita|r
 	.target Priestess Josetta
     .goto Elwynn Forest,43.283,65.721
     .turnin 5623 >> Entregue Em Favor da Luz
@@ -1996,7 +1996,7 @@ step << Mage
     .trainer >> Treine suas magias de classe
 step << Priest
     .goto Elwynn Forest,43.283,65.721
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Sacerdotisa Joselita|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Sacerdotisa Joselita|r
 	.target Priestess Josetta
     .turnin 5624 >> Entregue Vestes da Luz
     .trainer >> Treine suas magias de classe
@@ -3083,7 +3083,7 @@ step << Priest
     #optional
     #requires GoldshireVendor
     .goto Elwynn Forest,43.283,65.721
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Sacerdotisa Joselita|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Sacerdotisa Joselita|r
     .accept 5635 >> Aceite Prece Desesperada
     .trainer >> Treine suas magias de classe
     .target Priestess Josetta

@@ -3316,7 +3316,7 @@ step << Mage
     .xp <12,1
 step << Priest
     .goto 1429/0,33.14,-9460.75
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Sacerdotisa Joselita|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Sacerdotisa Joselita|r
 	.target Priestess Josetta
     .trainer >> Treine suas magias de classe
     .xp <12,1

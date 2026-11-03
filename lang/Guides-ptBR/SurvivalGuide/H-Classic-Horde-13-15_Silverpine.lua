@@ -95,7 +95,7 @@ step
     .money <0.05 << Mage/Warlock/Priest/Shaman/Druid
 step << Undead
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sacerdote Sombrio Allister|r e |cRXP_FRIENDLY_Necroguarda Rodrigo|r
-    .accept 477 >>Aceite Border Crossings
+    .accept 477 >>Aceite Cruzando fronteiras
     .target +Shadow Priest Allister
     .goto Silverpine Forest,43.98,40.93
     .accept 6321 >>Aceite Supplying the Sepulcher
@@ -105,7 +105,7 @@ step
     #label BorderCrossings
     .goto Silverpine Forest,43.98,40.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Allister|r
-    .accept 477 >>Aceite Border Crossings
+    .accept 477 >>Aceite Cruzando fronteiras
     .target Shadow Priest Allister
 step
     #completewith next
@@ -611,7 +611,7 @@ step
     #label ZingeAndFaranell
 step << Mage
     .goto Undercity,85.14,10.02
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Anastasia|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Anastácia Cordato|r
     .train 2137 >> Treine suas magias de classe
     .target Anastasia Hartwell
     .xp <14,1
@@ -619,7 +619,7 @@ step << Mage
 step << Mage
     #optional
     .goto Undercity,85.14,10.02
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Anastasia|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Anastácia Cordato|r
     .train 2120 >> Treine suas magias de classe
     .target Anastasia Hartwell
     .xp <16,1

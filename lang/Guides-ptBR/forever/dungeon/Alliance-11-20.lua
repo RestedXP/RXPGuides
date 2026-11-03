@@ -2127,7 +2127,7 @@ step
     .accept 4725 >> Aceite Tartaruga Marinha Encalhada
 step
     .goto 1439/1,-386.39,7219.830
-    >>Use o [Tubo de Amostragem Vazio] na base do Rio Fontescarpa
+    >>Use o [Tubo de Amostragem Vazio] na base do **Rio Fontescarpa**
     .complete 4762,1 --Cliffspring River Sample (1)
     .use 12350
 step
@@ -4712,7 +4712,7 @@ step
 step
     .goto 1440/1,-411.18,2767.19
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_a Raene Correlobos|r
-    .accept 991 >> Aceite A Purificação de Raene
+    .accept 991 >> Aceite a Purificação de Raene
     .accept 1054 >> Aceite Expurgo a Ameaça
     .target Raene Wolfrunner
 step

@@ -851,7 +851,7 @@ step
     .goto Redridge Mountains,29.72,44.26
 .target Bailiff Conacher
 >>Fale com o |cRXP_FRIENDLY_Meirinho Conacher|r
-    .accept 91 >>Aceite Solomon's Law
+    .accept 91 >>Aceite A lei de Salomão
 step
     .goto Redridge Mountains,29.99,44.45
     >>Entre no prédio
@@ -967,7 +967,7 @@ step
     .accept 143 >>Aceite Messenger to Cerro Oeste
 .target Bailiff Conacher
 >>Fale com o |cRXP_FRIENDLY_Meirinho Conacher|r
-    .accept 91 >>Aceite Solomon's Law
+    .accept 91 >>Aceite A lei de Salomão
 step
     >>Entre no andar superior da Estalagem
     .goto Redridge Mountains,26.47,45.35

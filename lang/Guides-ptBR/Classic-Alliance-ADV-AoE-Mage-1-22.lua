@@ -7320,7 +7320,7 @@ step
     .vendor 958 >> |cRXP_BUY_Compre sem inteligência|r |T134943:0|t[Pergaminhos]|cRXP_BUY_,|r |T134850:0|t[Mana Menor Potions]|cRXP_BUY_, e|r |T134830:0|t[Lesser Cura Potions] |cRXP_BUY_dela (se estiverem disponíveis)|r
     >>|cRXP_WARN_NÃO vá abaixo de 11s 38c|r
     .money <0.1138
-    .target Dawn Brightstar
+    .target Estela Dalva
     .itemcount 4371,1
 step
     #sticky
@@ -7330,7 +7330,7 @@ step
     .vendor 958 >> |cRXP_BUY_Compre sem inteligência|r |T134943:0|t[Pergaminhos]|cRXP_BUY_,|r |T134850:0|t[Mana Menor Potions]|cRXP_BUY_, e|r |T134830:0|t[Lesser Cura Potions] |cRXP_BUY_dela (se estiverem disponíveis)|r
     >>|cRXP_WARN_NÃO vá abaixo de 19s 38c|r
     .money <0.1938
-    .target Dawn Brightstar
+    .target Estela Dalva
     .itemcount 4371,<1
 step
     #label Theo
@@ -7364,7 +7364,7 @@ step
     .goto Duskwood,75.34,48.74
     >>Fale com |cRXP_FRIENDLY_Elaine|r
     .accept 163 >>Aceite Monte Corvo
-    .accept 164 >>Aceite Deliveries to Sven
+    .accept 164 >>Aceite A vingança de Noel
     .accept 165 >>Aceite O Eremita
     .target Elaine Carevin
 step
@@ -7507,7 +7507,7 @@ step
     >>Fale com |cRXP_FRIENDLY_Conacher|r
 --  .accept 120 >>Accept Messenger to Stormwind
 --  .goto Redridge Mountains,29.99,44.45
-    .accept 91 >>Aceite Solomon's Law
+    .accept 91 >>Aceite A lei de Salomão
     .goto Redridge Mountains,29.72,44.26
 --  .target Magistrate Solomon
     .target Bailiff Conacher

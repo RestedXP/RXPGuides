@@ -623,7 +623,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estela Dalva|r
     .vendor >> |cRXP_FRIENDLY_Estela Dalva|r |cRXP_BUY_tem itens de estoque limitado, como|r |T134938:0|t|T134937:0|t|T134943:0|t[Pergaminhos] |cRXP_BUY_e|r |T134850:0|t|T134830:0|t[Potions] |cRXP_BUY_, que você deve comprar se disponíveis|r << !Warrior !Rogue
     .vendor >> |cRXP_FRIENDLY_Estela Dalva|r |cRXP_BUY_tem itens de estoque limitado, como|r |T134938:0|t|T134937:0|t|T134943:0|t[Pergaminhos] |cRXP_BUY_e|r |T134830:0|t[Potions] |cRXP_BUY_, que você deve comprar se disponíveis|r << Warrior/Rogue
-    .target Dawn Brightstar
+    .target Estela Dalva
     .subzoneskip 91,1
 step
 .dungeon DM
@@ -999,7 +999,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estela Dalva|r
     .vendor >> |cRXP_FRIENDLY_Estela Dalva|r |cRXP_BUY_tem itens de estoque limitado, como|r |T134938:0|t|T134937:0|t|T134943:0|t[Pergaminhos] |cRXP_BUY_e|r |T134850:0|t|T134830:0|t[Potions] |cRXP_BUY_, que você deve comprar se disponíveis|r << !Warrior !Rogue
     .vendor >> |cRXP_FRIENDLY_Estela Dalva|r |cRXP_BUY_tem itens de estoque limitado, como|r |T134938:0|t|T134937:0|t|T134943:0|t[Pergaminhos] |cRXP_BUY_e|r |T134830:0|t[Potions] |cRXP_BUY_, que você deve comprar se disponíveis|r << Warrior/Rogue
-    .target Dawn Brightstar
+    .target Estela Dalva
     .subzoneskip 91,1
 step
     #completewith TravelRM

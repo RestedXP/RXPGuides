@@ -1325,7 +1325,7 @@ RXPGuides.RegisterGuide([[
 step
     .train 416004,1
     #completewith SpiceBlend
-    .zone Arathi Highlands >>Vá para Planalto Arathi
+    .zone Arathi Highlands >>Vá ao Planalto Arathi
 step
     #completewith IllegibleReciple
     +|cRXP_WARN_Você pode querer encontrar um grupo pois você deve matar élites de nível 37+ para obter a|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Rebentação de Sangue|r]
@@ -1430,7 +1430,7 @@ step
 step
     .train 416004,1
     #completewith GroceryRun
-    .zone Arathi Highlands >>Vá para Planalto Arathi
+    .zone Arathi Highlands >>Vá ao Planalto Arathi
 step
     #completewith next
     .goto Arathi Highlands,57.587,72.499,10 >> Suba a montanha para chegar a |cRXP_FRIENDLY_Skonk|r

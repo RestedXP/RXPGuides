@@ -1226,7 +1226,7 @@ step
 step
     .goto 1412/1,-285.000,-2263.400
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Pyall|r
-    .train 2550 >>Treinar Culinária
+    .train 2550 >>Treine Culinária
     .turnin 96661 >>Entregue Acampamento 101: Culinária
     .target Pyall Silentstride
 step

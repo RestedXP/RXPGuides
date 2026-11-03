@@ -5712,7 +5712,7 @@ step << Rogue
     .trainer >> Treine suas magias de classe
 step << Priest
     .goto Elwynn Forest,43.283,65.719
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Sacerdotisa Joselita|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Sacerdotisa Joselita|r
     .target Priestess Josetta
     .trainer >> Treine suas magias de classe
 step

@@ -1082,7 +1082,7 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith next
-    .zone Arathi Highlands >>Vá para Planalto Arathi
+    .zone Arathi Highlands >>Vá ao Planalto Arathi
 step
     .train 410109,1
     #loop

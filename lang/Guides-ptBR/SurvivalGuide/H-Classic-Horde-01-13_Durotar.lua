@@ -121,7 +121,7 @@ step << Warlock
     .goto Durotar,44.58,56.10,40,0
     .goto Durotar,44.27,56.59,40,0
     .goto Durotar,43.85,55.52,40,0
-    >>Mate os |cRXP_ENEMY_Familiares Torpes|r. Saqueie-os para |cRXP_LOOT_Vile Familiar Cabeças|r
+    >>Mate |cRXP_ENEMY_Familiares Torpes|r. Saqueie-os para pegar |cRXP_LOOT_Cabeças de Demônio Familiar Vil|r
     .complete 1485,1 --Vile Familiar Head (6)
     .mob Vile Familiar
 step
@@ -278,11 +278,11 @@ step
     .turnin 788 >>Entregue Dentes cortantes << !Shaman
     .accept 789 >>Aceite A ferroada do escorpídeo
     .accept 2383 >>Aceite Pergaminho simples << Orc Warrior
-    .accept 3065 >>Aceite Tabuleta Simples - Missão << Troll Warrior
+    .accept 3065 >>Aceite Tabuleta Simples << Troll Warrior
     .accept 3082 >>Aceite Tabuleta cinzelada << Troll Hunter
     .accept 3083 >>Aceite Tabuleta cifrada << Troll Rogue
     .accept 3084 >>Aceite Tabuleta Inscrita em Runas - Missão << Troll Shaman
-    .accept 3085 >>Aceite Tabuleta Sagrada << Troll Priest
+    .accept 3085 >>Aceite Tabuleta consagrada << Troll Priest
     .accept 3086 >>Aceite Tabuleta glífica << Troll Mage
     .accept 3087 >>Aceite Pergaminho Cinzelado << Orc Hunter
     .accept 3088 >>Aceite Pergaminho cifrado << Orc Rogue
@@ -871,7 +871,7 @@ step << skip
     .goto Durotar,49.60,40.04,8 >>Viaje para cima da torre em direção a Férrano Escarnecenho
 step << skip
     .goto Durotar,49.89,40.39
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConversar com |cRXP_FRIENDLY_Furl|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Férrano Escarnecenho|r
     .accept 791 >>Aceite Carregar Seu Peso
     .target Furl Scornbrow
 step << skip --Warrior/Rogue
@@ -1489,7 +1489,7 @@ step
     .goto Durotar,49.60,40.04,8 >>Viaje para cima da torre em direção a Férrano Escarnecenho
 step
     .goto Durotar,49.89,40.39
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConversar com |cRXP_FRIENDLY_Furl|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Férrano Escarnecenho|r
     .accept 791 >>Aceite Carregar Seu Peso
     .target Furl Scornbrow
 step << Warrior/Rogue
@@ -1638,7 +1638,7 @@ step
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com|r |cRXP_FRIENDLY_Orgnil|r, |cRXP_FRIENDLY_Gar'Thok|r e |cRXP_FRIENDLY_Torka|r
     .turnin 823 >>Entregue Apresente-se a Orgnil
-    .accept 806 >>Aceite Tempestades Sombrias
+    .accept 806 >>Aceite Tempestades sombrias
     .target +Orgnil Soulscar
     .goto Durotar,52.24,43.15
     .turnin 784 >>Entregue Subjuguem os Traidores
@@ -1685,7 +1685,7 @@ step
     .goto Durotar,49.60,40.04,8 >>Viaje para cima da torre em direção a Férrano Escarnecenho
 step
     .goto Durotar,49.89,40.39
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConversar com |cRXP_FRIENDLY_Furl|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Férrano Escarnecenho|r
     .turnin 791 >>Entregue Carregue suas tralhas
     .target Furl Scornbrow
 step << Warrior/Rogue
@@ -1697,7 +1697,7 @@ step << Warrior/Rogue
 step << Warrior/Rogue
     .goto Durotar,51.90,41.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Wuark|r
-    >>|cRXP_BUY_Compre|r |T134708:0|t[Picareta de Mineração] |cRXP_BUY_de|r |cRXP_FRIENDLY_Wuark|r
+    >>|cRXP_BUY_Compre uma|r |T134708:0|t[Picareta de Mineração] |cRXP_BUY_de|r |cRXP_FRIENDLY_Wuark|r
     .collect 2901,1,9144,1 --Mining Pick (1)
     .target Wuark
 step << Warrior/Rogue
@@ -1894,7 +1894,7 @@ step << Troll Priest
     .goto Durotar,54.26,42.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tai'jin|r
     .turnin 5649 >> Entregue Em Simpatia da Espiritualidade
-    .accept 5648 >> Aceite Garments of Spirituality
+    .accept 5648 >> Aceite Vestes da espiritualidade
     .train 2052 >> Aprenda |T135929:0|t[Cura Inferior Grau 2]
     .target Tai'jin
 step << Troll Priest
@@ -1953,7 +1953,7 @@ step
     .mob Durotar Tiger
 step
     #completewith next
-    >>Mate os |cRXP_ENEMY_Pygmy Surf Crawlers|r e os |cRXP_ENEMY_Surf Crawlers|r. Saqueie-os por seu |cRXP_LOOT_Mucus|r
+    >>Mate |cRXP_ENEMY_Surfatiscos Pigmeus|r e |cRXP_ENEMY_Surfatiscos|r. Saqueie-os para pegar |cRXP_LOOT_Muco|r
     >>Mate |cRXP_ENEMY_Conchacouros Makrura|r e |cRXP_ENEMY_Estaladores Makrura|r. Saqueie-os para pegar |cRXP_LOOT_Olhos|r
     .complete 818,2 --Crawler Mucus (8)
     .mob +Pygmy Surf Crawler
@@ -1981,7 +1981,7 @@ step
     .mob Bloodtalon Taillasher
 step
     #completewith next
-    >>Mate os |cRXP_ENEMY_Pygmy Surf Crawlers|r e os |cRXP_ENEMY_Surf Crawlers|r. Saqueie-os por seu |cRXP_LOOT_Mucus|r
+    >>Mate |cRXP_ENEMY_Surfatiscos Pigmeus|r e |cRXP_ENEMY_Surfatiscos|r. Saqueie-os para pegar |cRXP_LOOT_Muco|r
     >>Mate |cRXP_ENEMY_Conchacouros Makrura|r e |cRXP_ENEMY_Estaladores Makrura|r. Saqueie-os para pegar |cRXP_LOOT_Olhos|r
     .complete 818,2 --Crawler Mucus (8)
     .mob +Pygmy Surf Crawler
@@ -2048,7 +2048,7 @@ step
     .mob +Voodoo Troll
 step
     #completewith next
-    >>Mate os |cRXP_ENEMY_Pygmy Surf Crawlers|r e os |cRXP_ENEMY_Surf Crawlers|r. Saqueie-os por seu |cRXP_LOOT_Mucus|r
+    >>Mate |cRXP_ENEMY_Surfatiscos Pigmeus|r e |cRXP_ENEMY_Surfatiscos|r. Saqueie-os para pegar |cRXP_LOOT_Muco|r
     >>Mate |cRXP_ENEMY_Conchacouros Makrura|r e |cRXP_ENEMY_Estaladores Makrura|r. Saqueie-os para pegar |cRXP_LOOT_Olhos|r
     .complete 818,2 --Crawler Mucus (8)
     .mob +Pygmy Surf Crawler
@@ -2086,7 +2086,7 @@ step
     .goto Durotar,57.27,79.38,60,0
     .goto Durotar,55.66,80.47,60,0
     .goto Durotar,53.8,83.14,60,0
-    >>Mate os |cRXP_ENEMY_Pygmy Surf Crawlers|r e os |cRXP_ENEMY_Surf Crawlers|r. Saqueie-os por seu |cRXP_LOOT_Mucus|r
+    >>Mate |cRXP_ENEMY_Surfatiscos Pigmeus|r e |cRXP_ENEMY_Surfatiscos|r. Saqueie-os para pegar |cRXP_LOOT_Muco|r
     >>Mate |cRXP_ENEMY_Conchacouros Makrura|r e |cRXP_ENEMY_Estaladores Makrura|r. Saqueie-os para pegar |cRXP_LOOT_Olhos|r
     .complete 818,2 --Crawler Mucus (8)
     .mob +Pygmy Surf Crawler
@@ -3109,7 +3109,7 @@ step << Orc Warrior
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.2
 step << Shaman
     .goto Orgrimmar,47.54,68.39
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Converse com|r Urtharo|cRXP_FRIENDLY_|r. Compre um|cRXP_BUY_ |T135154:0|t[Cajado de Combate]|r |cRXP_BUY_dele|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Fale com|r |cRXP_FRIENDLY_Urtharo|r|cRXP_BUY_. Compre um|r |T135154:0|t[Cajado de Combate] |cRXP_BUY_dele|r
     .collect 854,1,398,1 --Collect Quarter Staff (1)
     .money <0.3022
     .target Urtharo
@@ -3501,7 +3501,7 @@ step << Shaman
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.4
 step << Shaman
     .goto Orgrimmar,47.54,68.39
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Converse com|r Urtharo|cRXP_FRIENDLY_|r. Compre um|cRXP_BUY_ |T135154:0|t[Cajado de Combate]|r |cRXP_BUY_dele|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Fale com|r |cRXP_FRIENDLY_Urtharo|r|cRXP_BUY_. Compre um|r |T135154:0|t[Cajado de Combate] |cRXP_BUY_dele|r
     .collect 854,1,398,1 --Collect Quarter Staff (1)
     .money <0.3022
     .target Urtharo
@@ -5231,7 +5231,7 @@ step << Orc Rogue/Troll Rogue
 step << Rogue
     #label Swordtraining3
     .goto Undercity,57.29,32.72
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Fale com|r |cRXP_FRIENDLY_Arquibaldo|r no Bairro da Guerra
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Fale com|r |cRXP_FRIENDLY_Arquibaldo|r no Distrito Bélico
     .train 201 >>Treine Espadas de Uma Mão
     .target Archibald
     .money <0.1

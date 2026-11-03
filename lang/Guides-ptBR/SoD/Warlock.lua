@@ -720,7 +720,7 @@ step << Horde
     .isOnQuest 78994
     .goto The Barrens,45.58,59.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estalajadeira Byula|r
-    .home >> Defina sua Pedra de Retorno em Camp Taurajo
+    .home >> Defina sua Pedra de Regresso ao Acampamento Taurajo
     .target Innkeeper Byula
 step << Alliance
     .train 426445,1
@@ -1239,11 +1239,11 @@ step
     +|cRXP_WARN_Recomenda-se que você encontre membros adicionais do grupo para adquirir o|r |T134419:0|t[|cRXP_LOOT_Runa de Invocação|r] |cRXP_WARN_conforme exige matar élites em Stromgarde Keep|r
 step
     .train 426443,1
-    .zone Arathi Highlands >> Vá para Planalto Arathi
+    .zone Arathi Highlands >> Vá ao Planalto Arathi
 step
     .train 426443,1
     #completewith next
-    .subzone 324 >> Vá para Stromgarde Keep
+    .subzone 324 >> Vá à Bastilha de Stromgarde
 step
     #label SyndicateConjuror
     .train 426443,1

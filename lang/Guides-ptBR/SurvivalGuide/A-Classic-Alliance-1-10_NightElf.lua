@@ -7,7 +7,7 @@ RXPGuides.RegisterGuide([[
 #classic
 #tbc
 << Alliance
-#name 1-6 Shadowglen
+#name 1-6 Umbravale
 #version 1
 #group Guia de Sobrevivência RestedXP (A)
 #subgroup RXP Guia de Sobrevivência 1-20
@@ -25,7 +25,7 @@ step
 step
     #sticky
     #label balance1
-    >>Abate os |cRXP_ENEMY_Jovens Nightsabers|r e os |cRXP_ENEMY_Jovens Thistle Boars|r
+    >>Mate |cRXP_ENEMY_Sabres-da-noite Jovem|r e |cRXP_ENEMY_Javalis-espinho Jovem|r
     .goto Teldrassil,62.0,42.6
     .complete 456,1 --Kill Young Nightsaber (x7)
     .mob +Young Nightsaber
@@ -709,7 +709,7 @@ step
 	#era/som
     .goto Teldrassil,57.121,61.296
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zarrin|r
-    .train 2550 >>Treinar Culinária
+    .train 2550 >>Treine Culinária
     .accept 4161 >> Aceite Recipe of the Kaldorei
     .turnin 4161 >> Entregue Recipe of the Kaldorei
     .target Zarrin
@@ -939,7 +939,7 @@ step
 	#som
 	#phase 3-6
     .goto Teldrassil,57.121,61.296
-    .train 2550 >>Treinar Culinária
+    .train 2550 >>Treine Culinária
     .target Zarrin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zarrin|r
     .accept 4161 >> Aceite Recipe of the Kaldorei

@@ -1312,13 +1312,13 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Vrang Sanguebravo|r
     .accept 95494 >>Aceite Perna e orgulho feridos
     .accept 95507 >>Aceite A caça de Vrang
-    .target Vrang Wildgore
+    .target Vrang Sanguebravo
 step
     .goto 1413/1,-1815.48,786.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Vrang Sanguebravo|r
     >>|cRXP_FRIENDLY_Vrang Sanguebravo|r |cRXP_WARN_vende|r |T133476:0|t[|cRXP_FRIENDLY_Maça Pesada com Pontas|r] |cRXP_WARN_com estoque limitado|r << Tauren Warrior/Tauren Shaman/Druid
 	.vendor	>> Venda os lixos e repare seu equipamento
-    .target Vrang Wildgore
+    .target Vrang Sanguebravo
     .isQuestAvailable 95494,95507
 step
     #completewith next
@@ -1372,7 +1372,7 @@ step
     .turnin 95494 >>Entregue Perna e orgulho feridos
     .turnin 95507 >>Entregue A caça de Vrang
     .accept 95495 >>Aceite O curtumeiro ermitão
-    .target Vrang Wildgore
+    .target Vrang Sanguebravo
     .isQuestComplete 95494
 step
     #completewith next
@@ -4162,7 +4162,7 @@ step
     .turnin 95494 >>Entregue Perna e orgulho feridos
     .turnin 95507 >>Entregue A caça de Vrang
     .accept 95495 >>Aceite O curtumeiro ermitão
-    .target Vrang Wildgore
+    .target Vrang Sanguebravo
     .isQuestComplete 95494
 step
     #completewith next

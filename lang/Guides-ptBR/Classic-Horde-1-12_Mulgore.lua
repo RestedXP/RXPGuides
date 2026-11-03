@@ -514,7 +514,7 @@ step << Druid
     #season 2
     .goto Mulgore,45.09,75.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gart|r
-    .train 467 >>Treine |T136104:0|t[Espinhos]
+    .train 467 >>Aprenda |T136104:0|t[Espinhos]
     .train 5177 >>Aprenda |T136006:0|t[Ira]
     .turnin 77648 >>Entregue Relíquias dos Taurens
     .target Gart Mistrunner
@@ -530,7 +530,7 @@ step << Druid
     #season 0
     .goto Mulgore,45.09,75.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gart|r
-    .train 467 >>Treine |T136104:0|t[Espinhos]
+    .train 467 >>Aprenda |T136104:0|t[Espinhos]
     .train 5177 >>Aprenda |T136006:0|t[Ira]
     .target Gart Mistrunner
     .money <0.02
@@ -3578,7 +3578,7 @@ step << Druid
     #season 2
     .goto Mulgore,45.09,75.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gart|r
-    .train 467 >>Treine |T136104:0|t[Espinhos]
+    .train 467 >>Aprenda |T136104:0|t[Espinhos]
     .train 5177 >>Aprenda |T136006:0|t[Ira]
     .target Gart Mistrunner
     .money <0.02
@@ -3586,7 +3586,7 @@ step << Druid
     #season 0
     .goto Mulgore,45.09,75.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gart|r
-    .train 467 >>Treine |T136104:0|t[Espinhos]
+    .train 467 >>Aprenda |T136104:0|t[Espinhos]
     .train 5177 >>Aprenda |T136006:0|t[Ira]
     .target Gart Mistrunner
     .money <0.02

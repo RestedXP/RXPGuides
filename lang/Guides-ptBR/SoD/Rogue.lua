@@ -1783,7 +1783,7 @@ step
     .train 432291,1
 step
     #completewith next
-    .zone The Hinterlands >>Vá para |cFFfa9602Terras Agrestes|r
+    .zone The Hinterlands >>Vá às |cFFfa9602Terras Agrestes|r
 step
     .goto The Hinterlands,72.76,52.91
     >>Use |T136175:0|t[Cegar] na |cRXP_ENEMY_Máscara Ramatorpe|r, depois pegue o baú |cRXP_PICK_Tesouro do Morcego|r para |T134419:0|t[|cRXP_FRIENDLY_Runa da Concentração|r]

@@ -1051,7 +1051,7 @@ step << Mage
     .goto 1429/0,34.28,-9471.61
     .trainer >> Treine suas magias de classe
 step << Priest
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Sacerdotisa Joselita|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Sacerdotisa Joselita|r
 	.target Priestess Josetta
     .goto 1429/0,33.14,-9460.75
     .turnin 5623 >> Entregue Em Favor da Luz
@@ -1681,7 +1681,7 @@ step << Mage
     .trainer >> Treine suas magias de classe
 step << Priest
     .goto 1429/0,33.14,-9460.75
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Sacerdotisa Joselita|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Sacerdotisa Joselita|r
 	.target Priestess Josetta
     .turnin 5624 >> Entregue Vestes da Luz
     .trainer >> Treine suas magias de classe
@@ -2705,7 +2705,7 @@ step << Priest
     #optional
     #requires GoldshireVendor
     .goto 1429/0,33.14,-9460.75
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Sacerdotisa Joselita|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Sacerdotisa Joselita|r
     .accept 94774 >> Aceite Divino Graça
     .trainer >> Treine suas magias de classe
     .target Priestess Josetta

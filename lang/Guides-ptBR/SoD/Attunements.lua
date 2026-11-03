@@ -3,7 +3,7 @@ RXPGuides.RegisterGuide([[
 #classic
 #season 2
 #group Guias de Fim de Jogo
-#subgroup Sintonias
+#subgroup Sintonizações
 #name Atunamento das Catacumbas de Karazhan
 #guideKind attunement
 
@@ -216,7 +216,7 @@ RXPGuides.RegisterGuide([[
 #classic
 #season 2
 #group Guias de Fim de Jogo
-#subgroup Sintonias
+#subgroup Sintonizações
 #name Introdução ao Enclave Escarlate
 #guideKind attunement
 

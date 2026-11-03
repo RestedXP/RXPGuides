@@ -1021,7 +1021,7 @@ step
     .mob Dark Rider
 step
     #completewith next
-    .zone Arathi Highlands >>Vá para Planalto Arathi
+    .zone Arathi Highlands >>Vá ao Planalto Arathi
 step
     .train 425312,1 << Priest
     .train 426180,1 << Paladin
@@ -1647,7 +1647,7 @@ step
     .train 416089,1 << Hunter
     .train 410027,1 << Druid
     #completewith next
-    .zone Arathi Highlands >>Vá para Planalto Arathi
+    .zone Arathi Highlands >>Vá ao Planalto Arathi
 step
     .train 416089,1 << Hunter
     .train 410027,1 << Druid
@@ -2420,7 +2420,7 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith next
-    .zone Deadwind Pass >> Vá para Trilha do Vento Morto
+    .zone Deadwind Pass >> Vá à Trilha do Vento Morto
 step
     .goto Deadwind Pass,47.40,75.50 >> Vá para Karazhan
 step
@@ -2470,7 +2470,7 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith next
-    .zone Arathi Highlands >> Vá para Planalto Arathi
+    .zone Arathi Highlands >> Vá ao Planalto Arathi
 step
     .goto Arathi Highlands,21.98,79.75,40 >> Vá para Faldir's Cove, siga o caminho entre as montanhas e a parede sudeste de Stromgarde
 step

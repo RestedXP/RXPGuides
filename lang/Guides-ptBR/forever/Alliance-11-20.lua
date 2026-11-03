@@ -2385,7 +2385,7 @@ step
     .mob Reef Crawler
 step
     .goto 1439/1,-386.39,7219.830
-    >>Use o [Tubo de Amostragem Vazio] na base do Rio Fontescarpa
+    >>Use o [Tubo de Amostragem Vazio] na base do **Rio Fontescarpa**
     .complete 4762,1 --Cliffspring River Sample (1)
     .use 12350
 step
@@ -6432,7 +6432,7 @@ step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_a Raene Correlobos|r
 	.target Raene Wolfrunner
     .goto 1440/1,-411.18,2767.19
-    .accept 991 >> Aceite A Purificação de Raene
+    .accept 991 >> Aceite a Purificação de Raene
     .accept 1054 >> Aceite Expurgo a Ameaça
 step
     #label HCHunterNoHS --hidden step for #include
@@ -6605,7 +6605,7 @@ step
 	.target Teronis' Corpse
     .goto 1440/1,528.79,3045.86
     .turnin 991 >> Entregue Purificação de Raene
-    .accept 1023 >> Aceite A Purificação de Raene
+    .accept 1023 >> Aceite a Purificação de Raene
 step
     #sticky
     #completewith GlowingGem
@@ -7223,7 +7223,7 @@ step
 step
     .goto 1440/1,-411.18,2767.19
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_a Raene Correlobos|r
-    .accept 991 >> Aceite A Purificação de Raene
+    .accept 991 >> Aceite a Purificação de Raene
     .accept 1054 >> Aceite Expurgo a Ameaça
     .target Raene Wolfrunner
 step << !Warlock

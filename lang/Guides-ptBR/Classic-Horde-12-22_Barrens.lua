@@ -1451,7 +1451,7 @@ step
     .goto The Barrens,52.63,38.07,80,0
     .goto The Barrens,49.49,37.20,80,0
     .goto The Barrens,48.33,36.75,80,0
-    >>Complete Matando os |cRXP_ENEMY_Zhevras|r. Saque-os pelos |cRXP_LOOT_Hooves|r
+    >>Acabe de matar |cRXP_ENEMY_Zevras|r. Pegue seus |cRXP_LOOT_Cascos|r
     .complete 845,1 --Zhevra Hooves (4)
     .mob Zhevra Runner
 step
@@ -1806,7 +1806,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Vrang Sanguebravo|r
     >>|cRXP_FRIENDLY_Vrang Sanguebravo|r |cRXP_WARN_vende|r |T133476:0|t[|cRXP_FRIENDLY_Maça Pesada com Pontas|r] |cRXP_WARN_com estoque limitado|r << Orc Warrior/Troll Warrior/Tauren Warrior
 	.vendor	>> Venda os lixos e repare seu equipamento
-    .target Vrang Wildgore
+    .target Vrang Sanguebravo
     --.dungeon !RFC
 step
 	#label Samophlange
@@ -2704,7 +2704,7 @@ step
     .mob Ornery Plainstrider
 step
     .goto The Barrens,52.60,46.10
-    >>Clique no |cRXP_PICK_Ninho de Raptor Azul|r. Abata mais |cRXP_ENEMY_Sunscale Scytheclaws|r se você não tiver uma |T132914:0|t[Sunscale Feather]
+    >>Clique no |cRXP_PICK_Ninho de Raptor Azul|r. Mate mais |cRXP_ENEMY_Garrafoices Helióscamo|r se você não tiver uma |T132914:0|t[Pena de Helióscamo]
     >>|cRXP_WARN_Cuidado, eles lançam|r |T132152:0|t[Surra] |cRXP_WARN_(Causa 2 ataques extras a cada 10 segundos)|r
     .complete 905,1 --Visit Blue Raptor Nest (1)
     .collect 5165,3,905,7,3
@@ -2797,7 +2797,7 @@ step
     #label SetCampTaurajoHS
     .goto The Barrens,45.58,59.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estalajadeira Byula|r
-    .home >>Defina sua Pedra de Retorno em Camp Taurajo
+    .home >>Defina sua Pedra de Regresso ao Acampamento Taurajo
     .target Innkeeper Byula
     .bindlocation 378
     .isQuestAvailable 1093
@@ -4050,7 +4050,7 @@ step
     .target +Tonga Runetotem
     .goto The Barrens,52.26,31.93
 step
-    .destroy 5085 >>|cRXP_WARN_Apague qualquer coisa restante|r |T133721:0|t[Presa de Javatusco Costagulha] |cRXP_WARN_que você ainda tenha|r
+    .destroy 5085 >>|cRXP_WARN_Descarte as|r |T133721:0|t[Presas de Javatusco Costagulha] |cRXP_WARN_restantes|r
     .itemcount 5085,1
 step
     .goto The Barrens,51.99,29.89
@@ -4105,7 +4105,7 @@ step << Warlock
     .goto Orgrimmar,47.05,46.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Cazul|r
     .turnin 1507 >>Entregue Devorador de Almas
-    .accept 1508 >>Aceite Cegar Cazul
+    .accept 1508 >>Aceite Cazul cego
     .target Cazul
 step << Warlock
     .goto Orgrimmar,44.16,48.45
@@ -4327,10 +4327,10 @@ step
     .goto Eastern Kingdoms,40.74,82.61,15,0
     .goto Eastern Kingdoms,40.63,82.49,15,0
     .goto Eastern Kingdoms,40.50,82.45
-    .zone 291 >> Entre no portal das Minas da Morte. Entre na zona
+    .zone 291 >> Atravesse o portal para entrar na instância das Minas Mortas
     .dungeon DM
 step
-    .hs >> Retorne para as Savanas após completar Minas Mortas
+    .hs >> Use a Pedra de Regresso para voltar aos Sertões após concluir as Minas Mortas
     .zone The Barrens >> Chegue aos Sertões
     .use 6948
     .dungeon DM
@@ -6377,7 +6377,7 @@ step << Priest
 step
     #xprate <1.5
     .goto Ashenvale,11.90,34.53
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Karang|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Karang Amakkar|r
     .accept 216 >> Aceitar No meio do caminho tinha uma pedra... e um pelocardo...
     .target Karang Amakkar
 step
@@ -8461,7 +8461,7 @@ step
     .goto The Barrens,52.63,38.07,80,0
     .goto The Barrens,49.49,37.20,80,0
     .goto The Barrens,48.33,36.75,80,0
-    >>Complete Matando os |cRXP_ENEMY_Zhevras|r. Saque-os pelos |cRXP_LOOT_Hooves|r
+    >>Acabe de matar |cRXP_ENEMY_Zevras|r. Pegue seus |cRXP_LOOT_Cascos|r
     .complete 845,1 --Zhevra Hooves (4)
     .mob Zhevra Runner
 step
@@ -8936,7 +8936,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Vrang Sanguebravo|r
     >>|cRXP_FRIENDLY_Vrang Sanguebravo|r |cRXP_WARN_vende|r |T133476:0|t[|cRXP_FRIENDLY_Maça Pesada com Pontas|r] |cRXP_WARN_com estoque limitado|r << Orc Warrior/Troll Warrior/Tauren Warrior
 	.vendor	>> Venda os lixos e repare seu equipamento
-    .target Vrang Wildgore
+    .target Vrang Sanguebravo
     --.dungeon !RFC
 step
     #xprate >2.09
@@ -9945,7 +9945,7 @@ step
     .mob Ornery Plainstrider
 step
     .goto The Barrens,52.60,46.10
-    >>Clique no |cRXP_PICK_Ninho de Raptor Azul|r. Abata mais |cRXP_ENEMY_Sunscale Scytheclaws|r se você não tiver uma |T132914:0|t[Sunscale Feather]
+    >>Clique no |cRXP_PICK_Ninho de Raptor Azul|r. Mate mais |cRXP_ENEMY_Garrafoices Helióscamo|r se você não tiver uma |T132914:0|t[Pena de Helióscamo]
     >>|cRXP_WARN_Cuidado, eles lançam|r |T132152:0|t[Surra] |cRXP_WARN_(Causa 2 ataques extras a cada 10 segundos)|r
     .complete 905,1 --Visit Blue Raptor Nest (1)
     .collect 5165,3,905,7,3
@@ -10035,7 +10035,7 @@ step
     #label SetCampTaurajoHS
     .goto The Barrens,45.58,59.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estalajadeira Byula|r
-    .home >>Defina sua Pedra de Retorno em Camp Taurajo
+    .home >>Defina sua Pedra de Regresso ao Acampamento Taurajo
     .target Innkeeper Byula
     .bindlocation 378
     .isQuestAvailable 1093
@@ -11423,7 +11423,7 @@ step
     .accept 868 >> Aceite Ovo tipo extra
     .target Korran
 step
-    .destroy 5085 >>|cRXP_WARN_Apague qualquer coisa restante|r |T133721:0|t[Presa de Javatusco Costagulha] |cRXP_WARN_que você ainda tenha|r
+    .destroy 5085 >>|cRXP_WARN_Descarte as|r |T133721:0|t[Presas de Javatusco Costagulha] |cRXP_WARN_restantes|r
     .itemcount 5085,1
 step << Shaman
     #completewith next
@@ -11464,7 +11464,7 @@ step << Warlock
     .goto Orgrimmar,47.05,46.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Cazul|r
     .turnin 1507 >>Entregue Devorador de Almas
-    .accept 1508 >>Aceite Cegar Cazul
+    .accept 1508 >>Aceite Cazul cego
     .target Cazul
 step << Warlock
     .goto Orgrimmar,44.16,48.45
@@ -11681,10 +11681,10 @@ step
     .goto Eastern Kingdoms,40.74,82.61,15,0
     .goto Eastern Kingdoms,40.63,82.49,15,0
     .goto Eastern Kingdoms,40.50,82.45
-    .zone 291 >> Entre no portal das Minas da Morte. Entre na zona
+    .zone 291 >> Atravesse o portal para entrar na instância das Minas Mortas
     .dungeon DM
 step
-    .hs >> Retorne para as Savanas após completar Minas Mortas
+    .hs >> Use a Pedra de Regresso para voltar aos Sertões após concluir as Minas Mortas
     .zone The Barrens >> Chegue aos Sertões
     .use 6948
     .dungeon DM

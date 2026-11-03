@@ -7,7 +7,7 @@ RXPGuides.RegisterGuide([[
 #tbc
 #season 0,1
 << Alliance
-#name 1-6 Shadowglen
+#name 1-6 Umbravale
 #displayname 1-7 Shadowglen << sod
 #version 1
 #group RestedXP Aliança 1-20
@@ -27,14 +27,14 @@ step
     #sticky
     #label balance1
     #completewith GoodProtector
-    >>Abate os |cRXP_ENEMY_Jovens Nightsabers|r e os |cRXP_ENEMY_Jovens Thistle Boars|r
+    >>Mate |cRXP_ENEMY_Sabres-da-noite Jovem|r e |cRXP_ENEMY_Javalis-espinho Jovem|r
     .goto Teldrassil,62.0,42.6,0,0
     .complete 456,1 --Kill Young Nightsaber (x7)
     .mob +Young Nightsaber
     .complete 456,2 --Kill Young Thistle Boar (x4)
     .mob +Young Thistle Boar
 step
-    >>Saqueie os inimigos que você mata, certifique-se de ter pelo menos 10 cobre em sucata de vendedor, você precisará disso para treinar |T132333:0|t[Brado de Batalha]<< Warrior
+    >>Saqueie os inimigos que você matar e junte pelo menos 10 de cobre em itens para vender. Você vai precisar desse dinheiro para treinar |T132333:0|t[Brado de Batalha]<< Warrior
     .xp 2 >> Farme até o nível 2
 step << !sod/Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dirânia Pratafulge|r e |cRXP_FRIENDLY_Melithar Guenelmo|r
@@ -46,7 +46,7 @@ step << !sod/Warrior
 	.goto Teldrassil,59.924,42.474
     .target +Melithar Staghelm
 step
-    >>Abate os |cRXP_ENEMY_Jovens Nightsabers|r e os |cRXP_ENEMY_Jovens Thistle Boars|r
+    >>Mate |cRXP_ENEMY_Sabres-da-noite Jovem|r e |cRXP_ENEMY_Javalis-espinho Jovem|r
     .goto Teldrassil,62.0,42.6,0,0
     .complete 456,1 --Kill Young Nightsaber (x7)
     .mob +Young Nightsaber
@@ -1057,7 +1057,7 @@ step
     #label SpiderLegsEnd
     .goto Teldrassil,57.121,61.296
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zarrin|r
-    .train 2550 >>Treinar Culinária
+    .train 2550 >>Treine Culinária
     .accept 4161 >> Aceite Recipe of the Kaldorei
     .turnin 4161 >> Entregue Recipe of the Kaldorei
     .target Zarrin
@@ -1405,7 +1405,7 @@ step << Hunter
 step
 	#xprate 1.49-1.99
     .goto Teldrassil,57.121,61.296
-    .train 2550 >>Treinar Culinária
+    .train 2550 >>Treine Culinária
     .target Zarrin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zarrin|r
     .accept 4161 >> Aceite Recipe of the Kaldorei

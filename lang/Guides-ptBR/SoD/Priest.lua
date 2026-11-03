@@ -1169,7 +1169,7 @@ step
 step
     #optional
     .train 402855,1
-    .zone Arathi Highlands >>Vá para Planalto Arathi
+    .zone Arathi Highlands >>Vá ao Planalto Arathi
 step
     .train 402855,1
     .goto Arathi Highlands,62.1,54.5

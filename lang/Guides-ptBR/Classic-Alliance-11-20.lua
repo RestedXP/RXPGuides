@@ -2593,7 +2593,7 @@ step
 step
     .goto Darkshore,50.81,25.50
     #season 0 << !Warrior !Rogue
-    >>Use o [Tubo de Amostragem Vazio] na base do Rio Fontescarpa
+    >>Use o [Tubo de Amostragem Vazio] na base do **Rio Fontescarpa**
     .complete 4762,1 --Cliffspring River Sample (1)
     .use 12350
 step
@@ -9104,7 +9104,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estela Dalva|r
     .vendor >> |cRXP_FRIENDLY_Estela Dalva|r |cRXP_BUY_tem itens de estoque limitado, como|r |T134938:0|t|T134937:0|t|T134943:0|t[Pergaminhos] |cRXP_BUY_e|r |T134850:0|t|T134830:0|t[Potions] |cRXP_BUY_, que você deve comprar se disponíveis|r << !Warrior !Rogue
     .vendor >> |cRXP_FRIENDLY_Estela Dalva|r |cRXP_BUY_tem itens de estoque limitado, como|r |T134938:0|t|T134937:0|t|T134943:0|t[Pergaminhos] |cRXP_BUY_e|r |T134830:0|t[Potions] |cRXP_BUY_, que você deve comprar se disponíveis|r << Warrior/Rogue
-    .target Dawn Brightstar
+    .target Estela Dalva
     .subzoneskip 91,1
 step
 .dungeon DM
@@ -10445,7 +10445,7 @@ step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_a Raene Correlobos|r
 	.target Raene Wolfrunner
     .goto Ashenvale,36.61,49.58
-    .accept 991 >> Aceite A Purificação de Raene
+    .accept 991 >> Aceite a Purificação de Raene
     .accept 1054 >> Aceite Expurgo a Ameaça
 step
     #label HCHunterNoHS --hidden step for #include
@@ -10641,7 +10641,7 @@ step
 	.target Teronis' Corpse
     .goto Ashenvale,20.31,42.33
     .turnin 991 >> Entregue Purificação de Raene
-    .accept 1023 >> Aceite A Purificação de Raene
+    .accept 1023 >> Aceite a Purificação de Raene
 step
     #sticky
     #completewith GlowingGem
@@ -11416,7 +11416,7 @@ step
     #xprate <1.59
     .goto Ashenvale,36.61,49.58
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_a Raene Correlobos|r
-    .accept 991 >> Aceite A Purificação de Raene
+    .accept 991 >> Aceite a Purificação de Raene
     .accept 1054 >> Aceite Expurgo a Ameaça
     .target Raene Wolfrunner
 step << !Warlock

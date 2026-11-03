@@ -1152,7 +1152,7 @@ step << !Warrior !Rogue
 step << !Warrior !Rogue
     #season 2
     .goto Darkshore,50.81,25.50
-    >>Use o [Tubo de Amostragem Vazio] na base do Rio Fontescarpa
+    >>Use o [Tubo de Amostragem Vazio] na base do **Rio Fontescarpa**
     .complete 4762,1 --Cliffspring River Sample (1)
     .use 12350
 step << !Warrior !Rogue
@@ -2296,7 +2296,7 @@ step
 step
     .goto Darkshore,50.81,25.50
     #season 0 << !Warrior !Rogue
-    >>Use o [Tubo de Amostragem Vazio] na base do Rio Fontescarpa
+    >>Use o [Tubo de Amostragem Vazio] na base do **Rio Fontescarpa**
     .complete 4762,1 --Cliffspring River Sample (1)
     .use 12350
 ----Start of Hunter/Druid 1x and SoD Warrior/Rogue early Althalaxx section (for money+xp)----

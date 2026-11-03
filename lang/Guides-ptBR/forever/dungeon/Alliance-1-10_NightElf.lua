@@ -6,7 +6,7 @@ RXPGuides.RegisterGuide([[
 #forever
 #season 0,1
 << Alliance
-#name 1-6 Shadowglen
+#name 1-6 Umbravale
 #version 1
 #group RestedXP Guia de Masmorra Eterna (A)
 #subgroup Guia da Masmorra 1-20
@@ -14,7 +14,7 @@ RXPGuides.RegisterGuide([[
 #defaultfor NightElf
 #next 6-11 Teldrassil
 step
-#include RestedXP Forever Guia (A)\1-6 Shadowglen
+#include RestedXP Forever Guia (A)\1-6 Umbravale
 ]])
 
 RXPGuides.RegisterGuide([[

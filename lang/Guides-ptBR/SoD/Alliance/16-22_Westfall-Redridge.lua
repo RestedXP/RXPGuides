@@ -786,7 +786,7 @@ step
     .goto Redridge Mountains,29.71,44.26
     .target Bailiff Conacher
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Meirinho Conacher|r
-    .accept 91 >> Aceite Solomon's Law
+    .accept 91 >> Aceite A lei de Salomão
 step
     .goto Redridge Mountains,26.75,46.43
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tClique em |cRXP_FRIENDLY_O Cartaz de Procurado|r

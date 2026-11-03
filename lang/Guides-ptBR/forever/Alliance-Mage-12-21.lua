@@ -853,7 +853,7 @@ step
     .goto 1433/0,-2216.00,-9215.85
 .target Bailiff Conacher
 >>Fale com o |cRXP_FRIENDLY_Meirinho Conacher|r
-    .accept 91 >>Aceite Solomon's Law
+    .accept 91 >>Aceite A lei de Salomão
 step
     .goto 1433/0,-2221.87,-9218.60
     >>Entre no prédio
@@ -969,7 +969,7 @@ step
     .accept 143 >>Aceite Messenger to Cerro Oeste
 .target Bailiff Conacher
 >>Fale com o |cRXP_FRIENDLY_Meirinho Conacher|r
-    .accept 91 >>Aceite Solomon's Law
+    .accept 91 >>Aceite A lei de Salomão
 step
     >>Entre no andar superior da Estalagem
     .goto 1433/0,-2145.45,-9231.63

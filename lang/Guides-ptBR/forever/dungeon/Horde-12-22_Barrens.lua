@@ -1313,13 +1313,13 @@ step << Tauren/Hunter/Orc Shaman/Troll Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Vrang Sanguebravo|r
     .accept 95494 >>Aceite Orgulho Contuso e Peles de Leão
     .accept 95507 >>Aceite Vrang's Game
-    .target Vrang Wildgore
+    .target Vrang Sanguebravo
 step << Tauren/Hunter/Orc Shaman/Troll Shaman
     .goto 1413/1,-1815.48,786.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Vrang Sanguebravo|r
     >>|cRXP_FRIENDLY_Vrang Sanguebravo|r |cRXP_WARN_vende|r |T133476:0|t[|cRXP_FRIENDLY_Maça Pesada com Pontas|r] |cRXP_WARN_com estoque limitado|r << Tauren Warrior/Tauren Shaman/Druid
 	.vendor	>> Venda os lixos e repare seu equipamento
-    .target Vrang Wildgore
+    .target Vrang Sanguebravo
     .isQuestAvailable 95494,95507
 step << Tauren/Hunter/Orc Shaman/Troll Shaman
     #completewith next
@@ -1373,7 +1373,7 @@ step << Tauren/Hunter/Orc Shaman/Troll Shaman
     .turnin 95494 >>Entregue Orgulho Contuso e Peles de Leão
     .turnin 95507 >>Entregue Vrang's Game
     .accept 95495 >>Aceite O Eremita Curtumeiro
-    .target Vrang Wildgore
+    .target Vrang Sanguebravo
     .isQuestComplete 95494
 step << Tauren/Hunter/Orc Shaman/Troll Shaman
     #completewith next

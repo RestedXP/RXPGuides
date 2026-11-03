@@ -1526,7 +1526,7 @@ step
     .isQuestAvailable 79949
 step
     #completewith next
-    .zone The Hinterlands >>Vá para |cFFfa9602Terras Agrestes|r
+    .zone The Hinterlands >>Vá às |cFFfa9602Terras Agrestes|r
     .fly The Hinterlands >>Aprenda a rota de voo para |cFFfa9602Terras Agrestes|r |cRXP_WARN_se você a tem desbloqueada.|r
     .disablecheckbox
     .isQuestAvailable 81954
@@ -1836,7 +1836,7 @@ step
     .isQuestAvailable 79948
 step
     #completewith next
-    .zone The Hinterlands >>Vá para |cFFfa9602Terras Agrestes|r
+    .zone The Hinterlands >>Vá às |cFFfa9602Terras Agrestes|r
     .fly Hinterlands >>Pegue a rota de voo para |cFFfa9602Terras Agrestes|r |cRXP_WARN_se você a tem desbloqueada.|r
     .disablecheckbox
     .isQuestAvailable 81954
@@ -2690,7 +2690,7 @@ RXPGuides.RegisterGuide([[
 step
     .train 401749,1
     #completewith next
-    .zone Arathi Highlands >> Vá para Planalto Arathi
+    .zone Arathi Highlands >> Vá ao Planalto Arathi
 step
     .train 401749,1
     .goto Arathi Highlands,67.46,28.79,40,0

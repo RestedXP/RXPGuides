@@ -5,7 +5,7 @@ RXPGuides.RegisterGuide([[
 
 << Alliance
 #group Guias de Fim de Jogo
-#subgroup Sintonias
+#subgroup Sintonizações
 #name Sintonia de Onyxia (A)
 #guideKind attunement
 #guideIcon rxp-icon-ony
@@ -344,7 +344,7 @@ RXPGuides.RegisterGuide([[
 
 << Horde
 #group Guias de Fim de Jogo
-#subgroup Sintonias
+#subgroup Sintonizações
 #name Sintonização de Onyxia (H)
 #guideKind attunement
 #guideIcon rxp-icon-ony
@@ -793,7 +793,7 @@ RXPGuides.RegisterGuide([[
 #classic
 #tbc
 
-#subgroup Sintonias
+#subgroup Sintonizações
 #group Guias de Fim de Jogo
 #name Sintonização com o Núcleo Derretido
 #guideKind attunement
@@ -840,7 +840,7 @@ RXPGuides.RegisterGuide([[
 #tbc
 
 #group Guias de Fim de Jogo
-#subgroup Sintonias
+#subgroup Sintonizações
 #name Harmonização com o Blackwing Lair
 #guideKind attunement
 #guideIcon rxp-icon-bwl
@@ -1318,7 +1318,7 @@ step
     .isOnQuest 5095
 step
 	.goto Western Plaguelands,26.55,56.18
-	>>Clique em |cRXP_PICK_Box of Incendiaries|r perto do fogo
+	>>Clique na |cRXP_PICK_Caixa de Explosivos|r perto da fogueira
 	.collect 12814,1,5095,1 --Flame in a Bottle (1)
     .isOnQuest 5095
 step
@@ -1589,7 +1589,7 @@ RXPGuides.RegisterGuide([[
 #group Guias de Fim de Jogo
 #name Sintonia de Naxxramas
 #guideKind attunement
-#subgroup Sintonias
+#subgroup Sintonizações
 
 step
     >>|cRXP_BUY_Coletar os seguintes itens|r:
@@ -1662,7 +1662,7 @@ RXPGuides.RegisterGuide([[
 #group Guias de Fim de Jogo
 #name Sintonia do Cânion do Demônio Caído
 #guideKind attunement
-#subgroup Sintonias
+#subgroup Sintonizações
 <<sod
 
 step
