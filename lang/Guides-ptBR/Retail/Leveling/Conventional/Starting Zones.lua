@@ -6,8 +6,8 @@ if GetLocale() ~= "ptBR" then return end
 --LEVEL 1-10
 RXPGuides.RegisterGuide([[
 #retail
-#group RestedXP Leveling de Velocidade
-#subgroup |cFFFCDC00(1-90)|r Padrão
+#group RestedXP Progressão Rápida
+#subgroup |cFFFCDC00(1-90)|r Default
 #name 1a
 #displayname |cFFFCDC00NÍVEL 1-10|r
 #disabled
@@ -27,9 +27,9 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
-#group RestedXP Leveling de Velocidade
-#subgroup |cFFFCDC00(1-90)|r Padrão
-#name a) Exílio's Reach
+#group RestedXP Progressão Rápida
+#subgroup |cFFFCDC00(1-90)|r Default
+#name a) Rincão do Exílio
 #internal
 
 << !Dracthyr !DemonHunter !DK !KulTiran !EarthenDwarf !DarkIronDwarf !LightforgedDraenei !Mechagnome !VoidElf !NightBorne !HighmountainTauren !Vulpera !MagharOrc !ZandalariTroll
@@ -1973,11 +1973,11 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 4
-#group RestedXP Leveling de Velocidade
+#group RestedXP Progressão Rápida
 #name a) Sem Pular a Casa
 #displayname Sem Pular a Casa
-#next RestedXP Leveling de Velocidade\ba) Introdução da Aliança em Dragonflight em Midnight (A) << Alliance
-#next RestedXP Leveling de Velocidade\b1) Introdução de BfA << Horde
+#next RestedXP Leveling Acelerado\ba) Introdução Aliança DF Meia-noite (A) << Alliance
+#next RestedXP Leveling Acelerado\b1) Introdução de BfA << Horde
 #chapter
 
 step
@@ -2010,11 +2010,11 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP Leveling de Velocidade
-#subgroup |cFFFCDC00(1-90)|r Padrão
-#name a) DK Intro
+#group RestedXP Progressão Rápida
+#subgroup |cFFFCDC00(1-90)|r Default
+#name a) Introdução de Cavaleiro da Morte
 #displayname |cFF1EFF001|r - Plaguelands
-#next RestedXP Leveling de Velocidade\ba) Introdução da Aliança em Dragonflight em Midnight (A) << Alliance
+#next RestedXP Leveling Acelerado\ba) Introdução Aliança DF Meia-noite (A) << Alliance
 #next b1) Introdução de BfA << Horde
 
 
@@ -3829,7 +3829,7 @@ step << Alliance
     .turnin 13188 >>Entregue Onde Reis Caminham
     .target Anduin Wrynn
 step << Alliance
-    #include RestedXP Leveling de Velocidade\a) GC Tempo de Crona Normal
+    #include RestedXP Speed Leveling\a) GC Chromie Time Normal
 step << Horde
     #completewith next
     #label Saurfang's Blessing
@@ -3894,11 +3894,11 @@ step << Horde
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
-#group RestedXP Leveling de Velocidade
-#subgroup |cFFFCDC00(1-90)|r Padrão
+#group RestedXP Progressão Rápida
+#subgroup |cFFFCDC00(1-90)|r Default
 #name a) Nova Introdução de Cavaleiro da Morte
 #displayname |cFF1EFF001|r - O Trono Congelado
-#next RestedXP Leveling de Velocidade\ba) Introdução da Aliança em Dragonflight em Midnight (A) << Alliance
+#next RestedXP Leveling Acelerado\ba) Introdução Aliança DF Meia-noite (A) << Alliance
 #next b1) Introdução de BfA << Horde
 
 << DK Pandaren/DarkIronDwarf DK/KulTiran DK/LightforgedDraenei DK/Mechagnome DK/VoidElf DK/HighmountainTauren DK/Nightborne DK/ZandalariTroll DK/MagharOrc DK/Vulpera DK
@@ -3945,7 +3945,7 @@ step << Alliance
     .accept 40519 >>Aceite Legion: a volta da Legião
     .choose 1851120
 step << Alliance
-    #include RestedXP Leveling de Velocidade\a) GC Tempo de Crona Normal
+    #include RestedXP Speed Leveling\a) GC Chromie Time Normal
 step << Horde
     #arrowtext Conversar com |cRXP_FRIENDLY_Crona|r
     .goto 85,40.82,80.13
@@ -4000,11 +4000,11 @@ step << Horde
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
-#group RestedXP Leveling de Velocidade
-#subgroup |cFFFCDC00(1-90)|r Padrão
-#name a) Nova Introdução de Caçador de Demônios
+#group RestedXP Progressão Rápida
+#subgroup |cFFFCDC00(1-90)|r Default
+#name a) Introdução de Caçador de Demônios
 #displayname |cFF1EFF001|r - Mardum
-#next RestedXP Leveling de Velocidade\ba) Introdução da Aliança em Dragonflight em Midnight (A) << Alliance
+#next RestedXP Leveling Acelerado\ba) Introdução Aliança DF Meia-noite (A) << Alliance
 #next b1) Introdução de BfA << Horde
 
 << DemonHunter !VoidElf
@@ -5469,7 +5469,7 @@ step << Alliance
     .accept 44473 >>Aceite Uma Arma da Aliança
     .target Anduin Wrynn
 step << Alliance
-    #include RestedXP Leveling de Velocidade\a) GC Tempo de Crona Normal@CallBoardStart3-CallBoardEnd
+    #include RestedXP Speed Leveling\a) GC Chromie Time Normal@CallBoardStart3-CallBoardEnd
 -- step << Alliance
 --     #completewith next
 --     #label Weapon of the Alliance
@@ -5575,11 +5575,11 @@ step << Horde
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
-#group RestedXP Leveling de Velocidade
-#subgroup |cFFFCDC00(1-90)|r Padrão
-#name a) Dracthyr Intro
+#group RestedXP Progressão Rápida
+#subgroup |cFFFCDC00(1-90)|r Default
+#name a) Introdução de Dracthyr
 #displayname |cFF1EFF001|r - O Ara Proibido
-#next RestedXP Leveling de Velocidade\ba) Introdução da Aliança em Dragonflight em Midnight (A) << Alliance
+#next RestedXP Leveling Acelerado\ba) Introdução Aliança DF Meia-noite (A) << Alliance
 #next b1) Introdução de BfA << Horde
 
 << Dracthyr
@@ -5631,7 +5631,7 @@ step << !Evoker
     .skipgossipid 51901
     .target Crona
 step << !Evoker Alliance
-    #include RestedXP Leveling de Velocidade\a) GC Tempo de Crona Normal
+    #include RestedXP Speed Leveling\a) GC Chromie Time Normal
 step << !Evoker Horde
     #arrowtext Conversar com |cRXP_FRIENDLY_Crona|r
     .goto 85,40.834,80.155
@@ -6706,7 +6706,7 @@ step << Alliance Evoker
     .turnin 66513 >>Entregue Licença de Solo
 	.target Comandante-de-escama Lazulathel
 step << Alliance Evoker
-    #include RestedXP Leveling de Velocidade\a) GC Tempo de Crona Normal
+    #include RestedXP Speed Leveling\a) GC Chromie Time Normal
 -- step << Alliance Evoker
 --     .goto 84,79.84,27.05
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wrathion|r.
@@ -6866,11 +6866,11 @@ step << Horde Evoker
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP Leveling de Velocidade
-#subgroup |cFFFCDC00(1-90)|r Padrão
-#name a) Introdução Pandaren
+#group RestedXP Progressão Rápida
+#subgroup |cFFFCDC00(1-90)|r Default
+#name a) Introdução de Pandaren
 #displayname The Wandering Isle |cRXP_ENEMY_(Alternative)|r
-#next RestedXP Leveling de Velocidade\ba) Introdução da Aliança em Dragonflight em Midnight (A) << Alliance
+#next RestedXP Leveling Acelerado\ba) Introdução Aliança DF Meia-noite (A) << Alliance
 #next b1) Introdução de BfA << Horde
 
 << Pandaren !DK
@@ -9237,7 +9237,7 @@ step << Alliance
     .turnin 30987 >>Entregue Entrando para a Aliança
     .target Anduin Wrynn
 step << Alliance
-    #include RestedXP Leveling de Velocidade\a) GC Tempo de Crona Normal
+    #include RestedXP Speed Leveling\a) GC Chromie Time Normal
 step
     #arrowtext Fale com |cRXP_FRIENDLY_Ji Pata de Fogo|r
     .zoneskip 1,1
@@ -9282,11 +9282,11 @@ step << Horde
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP Leveling de Velocidade
-#subgroup |cFFFCDC00(1-90)|r Padrão
-#name a) Haranir Intro
+#group RestedXP Progressão Rápida
+#subgroup |cFFFCDC00(1-90)|r Default
+#name a) Introdução de Haranir
 #displayname |cFF1EFF001|r - Harandar
-#next RestedXP Leveling de Velocidade\ba) Introdução da Aliança em Dragonflight em Midnight (A) << Alliance
+#next RestedXP Leveling Acelerado\ba) Introdução Aliança DF Meia-noite (A) << Alliance
 #next b1) Introdução de BfA << Horde
 
 << Harronir
@@ -9503,7 +9503,7 @@ step
 step
     #arrowtext Fale com |cRXP_FRIENDLY_Hagar|r
     .goto 2413,31.92,27.38
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Hagar|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Hagar Casco de Raio|r
     .complete 90960,6 --1/1 Talk to Hagar
     .skipgossipid 134388
     .target Hagar
@@ -9547,16 +9547,16 @@ step << Horde
     -- .accept 94444 >>Accept Choose a Path
     .target Embaixador Guardanegra
 step << Alliance
-    #include RestedXP Leveling de Velocidade\a) GC Tempo de Crona Normal
+    #include RestedXP Speed Leveling\a) GC Chromie Time Normal
 ]])
     --Harandar: Skip
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP Leveling de Velocidade
+#group RestedXP Progressão Rápida
 #name a) Harandar: Pular
 #displayname |cFF1EFF001|r - Harandar Pular
-#next ba) Introdução da Aliança em Dragonflight em Midnight (A) << Alliance
+#next ba) DF Aliança Introdução Meia-noite (A) << Alliance
 #next b1) Introdução de BfA << Horde
 #chapter
 
@@ -9616,17 +9616,17 @@ step << Horde
     .collecttoy 253629,1
     .achievementComplete 61506,1
 step << Alliance
-    #include RestedXP Leveling de Velocidade\a) GC Tempo de Crona Torre
+    #include RestedXP Speed Leveling\a) GC Chromie Time Tower
 ]])
 --Earthen: Hall of Awakening
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP Leveling de Velocidade
-#subgroup |cFFFCDC00(1-90)|r Padrão
-#name a) Anão Terráqueo Introdução
+#group RestedXP Progressão Rápida
+#subgroup |cFFFCDC00(1-90)|r Default
+#name a) Introdução de Anão Terrano
 #displayname |cFF1EFF001|r - Salão do Despertar
-#next RestedXP Leveling de Velocidade\ba) Introdução da Aliança em Dragonflight em Midnight (A) << Alliance
+#next RestedXP Leveling Acelerado\ba) Introdução Aliança DF Meia-noite (A) << Alliance
 #next b1) Introdução de BfA << Horde
 
 << EarthenDwarf
@@ -9875,7 +9875,7 @@ step << Alliance
     .target Embaixador Moorgard
     .accept 81887 >>Aceite Estranho numa Terra Estranha
 step << Alliance
-    #include RestedXP Leveling de Velocidade\a) GC Tempo de Crona Normal@ChromieTime-ChromieTime
+    #include RestedXP Speed Leveling\a) GC Chromie Time Normal@ChromieTime-ChromieTime
 -- step << Alliance
 --     .goto 84,56.257,17.311
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
@@ -9891,7 +9891,7 @@ step << Alliance
     .turnin 81887 >>Entregue Estranho in a Strange Pousar
     .target Adelda
 step << Alliance
-    #include RestedXP Leveling de Velocidade\a) GC Tempo de Crona Normal@CallBoardStart-CallBoardEnd
+    #include RestedXP Speed Leveling\a) GC Chromie Time Normal@CallBoardStart-CallBoardEnd
 step << Horde
     #completewith next
     #label For the Horde
@@ -9919,11 +9919,11 @@ step << Horde
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP Leveling de Velocidade
-#subgroup |cFFFCDC00(1-90)|r Padrão
+#group RestedXP Progressão Rápida
+#subgroup |cFFFCDC00(1-90)|r Default
 #name a) Salão do Despertar: Pular
 #displayname |cFF1EFF001|r - Salão do Despertar Pular
-#next ba) Introdução da Aliança em Dragonflight em Midnight (A) << Alliance
+#next ba) DF Aliança Introdução Meia-noite (A) << Alliance
 #next b1) Introdução de BfA << Horde
 #chapter
 
@@ -9951,17 +9951,17 @@ step << Horde
     .zone 85 >>|TInterface/cursor/crosshair/interact.blp:20|tClique no |cRXP_PICK_Portal para Orgrimmar|r
     .collecttoy 253629,3
 step << Alliance
-    #include RestedXP Leveling de Velocidade\a) GC Tempo de Crona Torre
+    #include RestedXP Speed Leveling\a) GC Chromie Time Tower
 
 ]])
 --Arathi Highlands Returning Player
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP Leveling de Velocidade
-#name a) Planalto Arathi Jogador em Retorno
+#group RestedXP Progressão Rápida
+#name a) Planalto Arathi para veteranos de volta
 #displayname Recuperação dos Montes Arathi |cRXP_ENEMY_(Alternative)|r
-#next RestedXP Leveling de Velocidade\ba) Introdução da Aliança em Dragonflight em Midnight (A) << Alliance
+#next RestedXP Leveling Acelerado\ba) Introdução Aliança DF Meia-noite (A) << Alliance
 #next b1) Introdução de BfA << Horde
 #internal
 
@@ -10267,25 +10267,25 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
-#group RestedXP Leveling de Velocidade
-#subgroup |cFFFCDC00(1-90)|r Padrão
+#group RestedXP Progressão Rápida
+#subgroup |cFFFCDC00(1-90)|r Default
 #name a) Exílio's Reach Aliança
 #displayname |cFF1EFF001|r - Exílio's Reach
-#next ba) Introdução da Aliança em Dragonflight em Midnight (A)
+#next ba) DF Aliança Introdução Meia-noite (A)
 
 << Alliance !Harronir !Dracthyr !DemonHunter !DK !KulTiran !EarthenDwarf !DarkIronDwarf !LightforgedDraenei !Mechagnome !VoidElf !NightBorne !HighmountainTauren !Vulpera !MagharOrc !ZandalariTroll
 
 step
-    #include RestedXP Leveling de Velocidade\a) Exílio's Reach
+    #include RestedXP Speed Leveling\a) Exile's Reach
 ]])
 
 --Draenei: Ammen Vale
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
-#group RestedXP Leveling de Velocidade
-#subgroup |cFFFCDC00(1-90)|r Padrão
-#name ab) Ammen Vale
+#group RestedXP Progressão Rápida
+#subgroup |cFFFCDC00(1-90)|r Default
+#name ab) Vale Ammen
 #displayname Ammen Vale |cRXP_ENEMY_(Alternative)|r
 #defaultfor Draenei !DK
 #next ac) Draenei Azuremyst Isle
@@ -10961,9 +10961,9 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP Leveling de Velocidade
+#group RestedXP Progressão Rápida
 #name a) Ammen Vale: Pular
-#next ba) Introdução da Aliança em Dragonflight em Midnight (A) << Alliance
+#next ba) DF Aliança Introdução Meia-noite (A) << Alliance
 #next b1) Introdução de BfA << Horde
 #chapter
 #internal
@@ -10976,12 +10976,12 @@ RXPGuides.RegisterGuide([[
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
-#group RestedXP Leveling de Velocidade
-#subgroup |cFFFCDC00(1-90)|r Padrão
+#group RestedXP Progressão Rápida
+#subgroup |cFFFCDC00(1-90)|r Default
 #name ac) Draenei Azuremyst Isle
 #displayname |cFF1EFF002|r - Azuremyst Isle
 #defaultfor Draenei !DK
-#next RestedXP Leveling de Velocidade\ba) Introdução da Aliança em Dragonflight em Midnight (A)
+#next RestedXP Leveling Acelerado\ba) Introdução Aliança DF Meia-noite (A)
 
 << Alliance
 
@@ -11479,16 +11479,16 @@ step
 
 step
     #xprate >1.3
-    #include RestedXP Leveling de Velocidade\a) Azuremyst Isle >1,3 Taxa de XP
+    #include RestedXP Speed Leveling\a) Azuremyst Isle >1.3 XP Rate
 step
     #xprate <1.3
-    #include RestedXP Leveling de Velocidade\a) Azuremyst Isle <1,3 Taxa de XP
+    #include RestedXP Speed Leveling\a) Azuremyst Isle <1.3 XP Rate
 step
     #xprate 1.25-1.3
-    #include RestedXP Leveling de Velocidade\a) Azuremyst Isle 1,25-1,3 Taxa de XP
+    #include RestedXP Speed Leveling\a) Azuremyst Isle 1.25-1.3 XP XP Rate
 step
     #xprate <1.25
-    #include RestedXP Leveling de Velocidade\a) Azuremyst Isle <1,25 Taxa de XP
+    #include RestedXP Speed Leveling\a) Azuremyst Isle <1.25 XP Rate
 
 -- ******************** ROUTES INTERSECT HERE ********************--
 
@@ -11872,7 +11872,7 @@ step << Alliance
     .zone 84 >>|TInterface/cursor/crosshair/interact.blp:20|tClique no |cRXP_PICK_Portal|r
     .zoneskip 2352,1
 step << Alliance
-    #include RestedXP Leveling de Velocidade\a) GC Tempo de Crona Torre
+    #include RestedXP Speed Leveling\a) GC Chromie Time Tower
 
 
 ]])
@@ -11880,7 +11880,7 @@ step << Alliance
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
-#group RestedXP Leveling de Velocidade
+#group RestedXP Progressão Rápida
 #name a) Azuremyst Isle >1,3 Taxa de XP
 #internal
 
@@ -12160,7 +12160,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
-#group RestedXP Leveling de Velocidade
+#group RestedXP Progressão Rápida
 #name a) Azuremyst Isle <1,3 Taxa de XP
 #internal
 
@@ -12271,7 +12271,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
-#group RestedXP Leveling de Velocidade
+#group RestedXP Progressão Rápida
 #name a) Azuremyst Isle 1,25-1,3 Taxa de XP
 #internal
 
@@ -12452,7 +12452,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
-#group RestedXP Leveling de Velocidade
+#group RestedXP Progressão Rápida
 #name a) Azuremyst Isle <1,25 Taxa de XP
 #internal
 
@@ -12609,8 +12609,8 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
-#group RestedXP Leveling de Velocidade
-#subgroup |cFFFCDC00(1-90)|r Padrão
+#group RestedXP Progressão Rápida
+#subgroup |cFFFCDC00(1-90)|r Default
 #name ab) Dwarf Coldridge Valley
 #displayname Coldridge Valley |cRXP_ENEMY_(Alternative)|r
 #defaultfor Dwarf !DK
@@ -13490,9 +13490,9 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP Leveling de Velocidade
+#group RestedXP Progressão Rápida
 #name a) Coldridge Valley: Pular
-#next ba) Introdução da Aliança em Dragonflight em Midnight (A) << Alliance
+#next ba) DF Aliança Introdução Meia-noite (A) << Alliance
 #next b1) Introdução de BfA << Horde
 #chapter
 #internal
@@ -13505,9 +13505,9 @@ RXPGuides.RegisterGuide([[
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
-#group RestedXP Leveling de Velocidade
-#subgroup |cFFFCDC00(1-90)|r Padrão
-#name ab) New Tinkertown
+#group RestedXP Progressão Rápida
+#subgroup |cFFFCDC00(1-90)|r Default
+#name ab) Vila da Gambiarra
 #displayname  New Tinkertown |cRXP_ENEMY_(Alternative)|r
 #defaultfor Gnome !DK
 #next ac) Anão & Gnomo Dun Morogh
@@ -14420,9 +14420,9 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP Leveling de Velocidade
+#group RestedXP Progressão Rápida
 #name a) New Tinkertown: Pular
-#next ba) Introdução da Aliança em Dragonflight em Midnight (A) << Alliance
+#next ba) DF Aliança Introdução Meia-noite (A) << Alliance
 #next b1) Introdução de BfA << Horde
 #chapter
 #internal
@@ -14435,12 +14435,12 @@ RXPGuides.RegisterGuide([[
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
-#group RestedXP Leveling de Velocidade
-#subgroup |cFFFCDC00(1-90)|r Padrão
+#group RestedXP Progressão Rápida
+#subgroup |cFFFCDC00(1-90)|r Default
 #name ac) Anão & Gnomo Dun Morogh
 #displayname |cFF1EFF002|r - Dun Morogh
 #defaultfor Dwarf Gnome !DK
-#next RestedXP Leveling de Velocidade\ba) Introdução da Aliança em Dragonflight em Midnight (A)
+#next RestedXP Leveling Acelerado\ba) Introdução Aliança DF Meia-noite (A)
 
 << Alliance
 
@@ -15687,7 +15687,7 @@ step << Alliance
     .zone 84 >>|TInterface/cursor/crosshair/interact.blp:20|tClique no |cRXP_PICK_Portal|r
     .zoneskip 2352,1
 step << Alliance
-    #include RestedXP Leveling de Velocidade\a) GC Tempo de Crona Torre
+    #include RestedXP Speed Leveling\a) GC Chromie Time Tower
 -- step
 --     .goto 27,82.85,48.41
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergeant Bahrum|r
@@ -15743,9 +15743,9 @@ step << Alliance
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
-#group RestedXP Leveling de Velocidade
-#subgroup |cFFFCDC00(1-90)|r Padrão
-#name ab) Northshire Valley
+#group RestedXP Progressão Rápida
+#subgroup |cFFFCDC00(1-90)|r Default
+#name ab) Vale de Vila Norte
 #displayname Northshire Valley |cRXP_ENEMY_(Alternativa)|r
 #defaultfor Human !DK
 #next ac) Elwynn Forest 1
@@ -16267,9 +16267,9 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP Leveling de Velocidade
+#group RestedXP Progressão Rápida
 #name a) Northshire Valley: Pular
-#next ba) Introdução da Aliança em Dragonflight em Midnight (A) << Alliance
+#next ba) DF Aliança Introdução Meia-noite (A) << Alliance
 #next b1) Introdução de BfA << Horde
 #chapter
 #internal
@@ -16282,12 +16282,12 @@ RXPGuides.RegisterGuide([[
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
-#group RestedXP Leveling de Velocidade
-#subgroup |cFFFCDC00(1-90)|r Padrão
+#group RestedXP Progressão Rápida
+#subgroup |cFFFCDC00(1-90)|r Default
 #name ac) Elwynn Forest 1
 #displayname |cFF1EFF002|r - Elwynn Forest
 #defaultfor Human !DK
-#next RestedXP Leveling de Velocidade\ba) Introdução da Aliança em Dragonflight em Midnight (A)
+#next RestedXP Leveling Acelerado\ba) Introdução Aliança DF Meia-noite (A)
 
 << Alliance
 
@@ -17477,7 +17477,7 @@ step
     .accept 40519 >>Aceite Legion: a volta da Legião
     .choose 1851120
 step
-    #include RestedXP Leveling de Velocidade\a) GC Tempo de Crona Normal@ChromieTime-ChromieTime
+    #include RestedXP Speed Leveling\a) GC Chromie Time Normal@ChromieTime-ChromieTime
 -- step
 --     .goto 84,56.257,17.311
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
@@ -17498,12 +17498,12 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
-#group RestedXP Leveling de Velocidade
-#subgroup |cFFFCDC00(1-90)|r Padrão
-#name ab) Shadowglen
+#group RestedXP Progressão Rápida
+#subgroup |cFFFCDC00(1-90)|r Default
+#name ab) Umbravale
 #displayname Shadowglen |cRXP_ENEMY_(Alternativa)|r
 #defaultfor NightElf !DemonHunter !DK
-#next ac) Elfo Noturno Teldrassil
+#next ac) Elfo da Noite Teldrassil
 
 << Alliance
 
@@ -17541,7 +17541,7 @@ step
     .xp >10,1
     .goto 460,45.62,74.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ilthalaine|r.
-    .turnin 28713 >>Entregue Nature's Dues
+    .turnin 28713 >>Entregue O equilíbrio da natureza
     .accept 28714 >>Aceite A Corrupção do Limo Vil
     .target Ilthalaine
 step
@@ -17695,7 +17695,7 @@ step
     .goto 460,42.25,50.1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dantaria Clarargêntea|r.
     .turnin 28724 >>Entregue O Antídoto de Iverron
-    .accept 28725 >>Aceite Demonic Thieves
+    .accept 28725 >>Aceite O Protetor da Floresta
     .target Dantaria Clarargêntea
 step
     .xp >10,1
@@ -17980,9 +17980,9 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP Leveling de Velocidade
+#group RestedXP Progressão Rápida
 #name a) Shadowglen: Pular
-#next ba) Introdução da Aliança em Dragonflight em Midnight (A) << Alliance
+#next ba) DF Aliança Introdução Meia-noite (A) << Alliance
 #next b1) Introdução de BfA << Horde
 #chapter
 #internal
@@ -17995,12 +17995,12 @@ RXPGuides.RegisterGuide([[
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
-#group RestedXP Leveling de Velocidade
-#subgroup |cFFFCDC00(1-90)|r Padrão
+#group RestedXP Progressão Rápida
+#subgroup |cFFFCDC00(1-90)|r Default
 #name ac) Elfo Noturno Teldrassil
 #displayname |cFF1EFF002|r - Teldrassil
 #defaultfor NightElf !DemonHunter !DK
-#next RestedXP Leveling de Velocidade\ba) Introdução da Aliança em Dragonflight em Midnight (A)
+#next RestedXP Leveling Acelerado\ba) Introdução Aliança DF Meia-noite (A)
 
 << Alliance
 
@@ -19233,17 +19233,17 @@ step << Alliance
     .zone 84 >>|TInterface/cursor/crosshair/interact.blp:20|tClique no |cRXP_PICK_Portal|r
     .zoneskip 2352,1
 step << Alliance
-    #include RestedXP Leveling de Velocidade\a) GC Tempo de Crona Torre
+    #include RestedXP Speed Leveling\a) GC Chromie Time Tower
 ]])
 --Worgen: Gilneas
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
-#group RestedXP Leveling de Velocidade
-#subgroup |cFFFCDC00(1-90)|r Padrão
-#name ab) Introdução do Worgen
+#group RestedXP Progressão Rápida
+#subgroup |cFFFCDC00(1-90)|r Default
+#name ab) Introdução de Worgen
 #displayname Gilneas |cRXP_ENEMY_(Alternativa)|r
-#next RestedXP Leveling de Velocidade\ba) Introdução da Aliança em Dragonflight em Midnight (A)
+#next RestedXP Leveling Acelerado\ba) Introdução Aliança DF Meia-noite (A)
 
 << Alliance Worgen !DK
 
@@ -22433,16 +22433,16 @@ step
     .goto 57,55.03,93.72
     .zone 84 >>|TInterface/cursor/crosshair/interact.blp:20|tClique no |cRXP_PICK_Portal para Ventobravo|r.
 step << Alliance
-    #include RestedXP Leveling de Velocidade\a) GC Tempo de Crona Torre
+    #include RestedXP Speed Leveling\a) GC Chromie Time Tower
 
 ]])
     --Gilneas: Skip
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP Leveling de Velocidade
+#group RestedXP Progressão Rápida
 #name a) Gilneas: Pular
-#next ba) Introdução da Aliança em Dragonflight em Midnight (A) << Alliance
+#next ba) DF Aliança Introdução Meia-noite (A) << Alliance
 #next b1) Introdução de BfA << Horde
 #chapter
 #internal
@@ -22455,11 +22455,11 @@ RXPGuides.RegisterGuide([[
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
-#group RestedXP Leveling de Velocidade
-#subgroup |cFFFCDC00(1-90)|r Padrão
-#name a) Introdução do Escuridão Ferro Dwarf
+#group RestedXP Progressão Rápida
+#subgroup |cFFFCDC00(1-90)|r Default
+#name a) Introdução de Anão Ferro Negro
 #displayname |cFF1EFF001|r - Cidade de Umbraforja
-#next RestedXP Leveling de Velocidade\ba) Introdução da Aliança em Dragonflight em Midnight (A)
+#next RestedXP Leveling Acelerado\ba) Introdução Aliança DF Meia-noite (A)
 
 << Alliance DarkIronDwarf !DK
 
@@ -22490,7 +22490,7 @@ step
     .accept 53500 >>Aceite Estranho numa Terra Estranha
     .target Embaixador Moorgard
 step
-    #include RestedXP Leveling de Velocidade\a) GC Tempo de Crona Normal@ChromieTime-ChromieTime
+    #include RestedXP Speed Leveling\a) GC Chromie Time Normal@ChromieTime-ChromieTime
 -- step
 --     .goto 84,56.257,17.311
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
@@ -22506,17 +22506,17 @@ step
     .turnin 53500 >>Virando um Estranho numa Terra Estranha
     .target Mudrik Leger
 step
-    #include RestedXP Leveling de Velocidade\a) GC Tempo de Crona Normal@CallBoardStart-CallBoardEnd
+    #include RestedXP Speed Leveling\a) GC Chromie Time Normal@CallBoardStart-CallBoardEnd
 ]])
 --KulTiran: Boralus
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
-#group RestedXP Leveling de Velocidade
-#subgroup |cFFFCDC00(1-90)|r Padrão
-#name a) a Introdução KulTiran
+#group RestedXP Progressão Rápida
+#subgroup |cFFFCDC00(1-90)|r Default
+#name a) Introdução de Kultireno
 #displayname |cFF1EFF001|r - Boralus
-#next RestedXP Leveling de Velocidade\ba) Introdução da Aliança em Dragonflight em Midnight (A)
+#next RestedXP Leveling Acelerado\ba) Introdução Aliança DF Meia-noite (A)
 
 << Alliance KulTiran !DK
 
@@ -22552,7 +22552,7 @@ step
     .accept 55146 >>Aceite Estranho numa Terra Estranha
     .target Embaixador Moorgard
 step
-    #include RestedXP Leveling de Velocidade\a) GC Tempo de Crona Normal@ChromieTime-ChromieTime
+    #include RestedXP Speed Leveling\a) GC Chromie Time Normal@ChromieTime-ChromieTime
 -- step
 --     .goto 84,56.257,17.311
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
@@ -22568,17 +22568,17 @@ step
     .turnin 55146 >>Virando um Estranho numa Terra Estranha
     .target Fornecedora Peleja
 step
-    #include RestedXP Leveling de Velocidade\a) GC Tempo de Crona Normal@CallBoardStart-CallBoardEnd
+    #include RestedXP Speed Leveling\a) GC Chromie Time Normal@CallBoardStart-CallBoardEnd
 ]])
 --LightforgedDraenei: The Vindicaar
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
-#group RestedXP Leveling de Velocidade
-#subgroup |cFFFCDC00(1-90)|r Padrão
-#name a) LightforgedDraenei Introdução
+#group RestedXP Progressão Rápida
+#subgroup |cFFFCDC00(1-90)|r Default
+#name a) Introdução de Draenei Forjado a Luz
 #displayname |cFF1EFF001|r - A Vindicaar
-#next RestedXP Leveling de Velocidade\ba) Introdução da Aliança em Dragonflight em Midnight (A)
+#next RestedXP Leveling Acelerado\ba) Introdução Aliança DF Meia-noite (A)
 
 << Alliance LightforgedDraenei !DK
 
@@ -22611,7 +22611,7 @@ step
     .accept 50313 >>Aceite Estranho numa Terra Estranha
     .target Embaixador Moorgard
 step
-    #include RestedXP Leveling de Velocidade\a) GC Tempo de Crona Normal@ChromieTime-ChromieTime
+    #include RestedXP Speed Leveling\a) GC Chromie Time Normal@ChromieTime-ChromieTime
 -- step
 --     .goto 84,56.257,17.311
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
@@ -22627,17 +22627,17 @@ step
     .turnin 50313 >>Virando um Estranho numa Terra Estranha
     .target Vindicante Minkey
 step
-    #include RestedXP Leveling de Velocidade\a) GC Tempo de Crona Normal@CallBoardStart-CallBoardEnd
+    #include RestedXP Speed Leveling\a) GC Chromie Time Normal@CallBoardStart-CallBoardEnd
 ]])
 --Mechagnome: Mechagon City
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
-#group RestedXP Leveling de Velocidade
-#subgroup |cFFFCDC00(1-90)|r Padrão
-#name a) Gnomecânico Introdução
+#group RestedXP Progressão Rápida
+#subgroup |cFFFCDC00(1-90)|r Default
+#name a) Introdução de Gnomecânico
 #displayname |cFF1EFF001|r - Mechagon City
-#next RestedXP Leveling de Velocidade\ba) Introdução da Aliança em Dragonflight em Midnight (A)
+#next RestedXP Leveling Acelerado\ba) Introdução Aliança DF Meia-noite (A)
 
 << Alliance Mechagnome !DK
 
@@ -22660,7 +22660,7 @@ step
     .accept 58147 >>Aceite Estranho numa Terra Estranha
     .target Embaixador Moorgard
 step
-    #include RestedXP Leveling de Velocidade\a) GC Tempo de Crona Normal@ChromieTime-ChromieTime
+    #include RestedXP Speed Leveling\a) GC Chromie Time Normal@ChromieTime-ChromieTime
 -- step
 --     .goto 84,56.257,17.311
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
@@ -22676,17 +22676,17 @@ step
     .turnin 58147 >>Virando um Estranho numa Terra Estranha
     .target Lulana
 step
-    #include RestedXP Leveling de Velocidade\a) GC Tempo de Crona Normal@CallBoardStart-CallBoardEnd
+    #include RestedXP Speed Leveling\a) GC Chromie Time Normal@CallBoardStart-CallBoardEnd
 ]])
 --VoidElf: Telogrus Rift
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
-#group RestedXP Leveling de Velocidade
-#subgroup |cFFFCDC00(1-90)|r Padrão
-#name a) VoidElf Introdução
+#group RestedXP Progressão Rápida
+#subgroup |cFFFCDC00(1-90)|r Default
+#name a) Introdução de Elfo Caótico
 #displayname |cFF1EFF001|r - Fissura de Telogrus
-#next RestedXP Leveling de Velocidade\ba) Introdução da Aliança em Dragonflight em Midnight (A)
+#next RestedXP Leveling Acelerado\ba) Introdução Aliança DF Meia-noite (A)
 
 << Alliance VoidElf !DK
 
@@ -22718,7 +22718,7 @@ step
     .accept 50305 >>Aceite Estranho numa Terra Estranha
     .target Embaixador Moorgard
 step
-    #include RestedXP Leveling de Velocidade\a) GC Tempo de Crona Normal@ChromieTime-ChromieTime
+    #include RestedXP Speed Leveling\a) GC Chromie Time Normal@ChromieTime-ChromieTime
 step
     #arrowtext Conversar com |cRXP_FRIENDLY_Keira Corvônix|r
     .goto 84,56.199,17.671
@@ -22863,8 +22863,8 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
-#group RestedXP Leveling de Velocidade
-#subgroup |cFFFCDC00(1-90)|r Padrão
+#group RestedXP Progressão Rápida
+#subgroup |cFFFCDC00(1-90)|r Default
 #name a) Exílio's Reach Horda
 #displayname |cFF1EFF001|r - Exílio's Reach
 #next b1) Introdução de BfA
@@ -22938,7 +22938,7 @@ step
     .accept 56775 >>Aceite Aquecendo
     .target Thrall
 step
-    #include RestedXP Leveling de Velocidade\a) Exílio's Reach@CombatDummy-CombatDummy
+    #include RestedXP Speed Leveling\a) Exile's Reach@CombatDummy-CombatDummy
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thrall|r.
     .turnin 56775 >>Entregue Aquecendo
@@ -22973,7 +22973,7 @@ step
     .turnin 58208 >>Entregue Preparar para o Impacto
     .target Thrall
 step
-    #include RestedXP Leveling de Velocidade\a) Exílio's Reach@HousingSelect1-HousingSelect2
+    #include RestedXP Speed Leveling\a) Exile's Reach@HousingSelect1-HousingSelect2
 step
     #arrowtext Fale com\n|cRXP_FRIENDLY_Thrall|r
     .zoneskip 1409,1
@@ -22983,7 +22983,7 @@ step
     .choose 7338834
     .target Thrall
 step
-    #include RestedXP Leveling de Velocidade\a) Exílio's Reach@Murlocs-Murlocs
+    #include RestedXP Speed Leveling\a) Exile's Reach@Murlocs-Murlocs
 step
     #arrowtext Fale com\n|cRXP_FRIENDLY_Thrall|r
     .zoneskip 1409,1
@@ -23015,7 +23015,7 @@ step
     .accept 54952 >>Aceite Os Caçadores da Expedição Perdida
     .target Thrall
 step
-    #include RestedXP Leveling de Velocidade\a) Exílio's Reach@expedition survivors-expedition survivors
+    #include RestedXP Speed Leveling\a) Exile's Reach@expedition survivors-expedition survivors
 step
     #arrowtext Conversar com o |cRXP_FRIENDLY_Senhor da Guerra Breka Sinistracha|r
     .zoneskip 1409,1
@@ -23025,7 +23025,7 @@ step
     .goto 1409,58.39,74.57
     .target +Senhora da Guerra Breka Sinistracha
 step
-    #include RestedXP Leveling de Velocidade\a) Exílio's Reach@Raw Meat-campfire
+    #include RestedXP Speed Leveling\a) Exile's Reach@Raw Meat-campfire
 step << Hunter
     #arrowtext Conversar com |cRXP_FRIENDLY_Won'sa|r
     .zoneskip 1409,1
@@ -23053,7 +23053,7 @@ step << !Hunter
     .goto 1409,58.38,74.63
     .target +Capitã Garrick
 step
-    #include RestedXP Leveling de Velocidade\a) Exílio's Reach@ClassQuests-ClassQuests
+    #include RestedXP Speed Leveling\a) Exile's Reach@ClassQuests-ClassQuests
 step << !Hunter
     #arrowtext Conversar com o |cRXP_FRIENDLY_Senhor da Guerra Breka Sinistracha|r e |cRXP_FRIENDLY_Won'sa|r
     .zoneskip 1409,1
@@ -23076,7 +23076,7 @@ step
     .accept 55186 >>Aceite Abaixo os Javatuscos <<!Hunter
     .target Mitridão Seguessol
 step
-    #include RestedXP Leveling de Velocidade\a) Exílio's Reach@HunterTameStart-HunterTameEnd
+    #include RestedXP Speed Leveling\a) Exile's Reach@HunterTameStart-HunterTameEnd
 step << Hunter
     #arrowtext Conversar com |cRXP_FRIENDLY_Mitridão Seguessol|r
     .zoneskip 1409,1
@@ -23087,7 +23087,7 @@ step << Hunter
     .accept 55186 >>Aceite Abaixo os Javatuscos
     .target Mitridão Seguessol
 step
-    #include RestedXP Leveling de Velocidade\a) Exílio's Reach@Quilboar Shadow Magic-QuilboarEnd
+    #include RestedXP Speed Leveling\a) Exile's Reach@Quilboar Shadow Magic-QuilboarEnd
 step
     #arrowtext Conversar com |cRXP_FRIENDLY_Mitridão Seguessol|r e |cRXP_FRIENDLY_Rolho Espouqueiro|r
     .zoneskip 1409,1
@@ -23184,7 +23184,7 @@ step
     .timer 12.5,RP
     .mob Cadáver Monstruoso
 step
-    #include RestedXP Leveling de Velocidade\a) Exílio's Reach@GiantBoarEnd-GiantBoarEnd
+    #include RestedXP Speed Leveling\a) Exile's Reach@GiantBoarEnd-GiantBoarEnd
 step
     #arrowtext Conversar com |cRXP_FRIENDLY_Wrathion|r
     .zoneskip 1409,1
@@ -23233,7 +23233,7 @@ step << Warrior/Warlock/Paladin/Priest/Rogue
     .accept 58962 >>Aceite A Barganha de um Bruxo << Warlock
     .target Bruto Throg
 step << Shaman
-    #include RestedXP Leveling de Velocidade\a) Exílio's Reach@GhostWolf-GhostWolf
+    #include RestedXP Speed Leveling\a) Exile's Reach@GhostWolf-GhostWolf
 step
     #arrowtext Fale com\n|cRXP_FRIENDLY_Lana Jordão|r
     .zoneskip 1409,1
@@ -23250,11 +23250,11 @@ step
     .timer 33,Aguarde o RP
     .target Shuya Sinistracha
 step << Shaman
-    #include RestedXP Leveling de Velocidade\a) Exílio's Reach@VeilBlossomStart-VeilBlossomEnd
+    #include RestedXP Speed Leveling\a) Exile's Reach@VeilBlossomStart-VeilBlossomEnd
 step << Warlock
-    #include RestedXP Leveling de Velocidade\a) Exílio's Reach@WarlockClassStart-WarlockClassEnd
+    #include RestedXP Speed Leveling\a) Exile's Reach@WarlockClassStart-WarlockClassEnd
 step << Warrior
-    #include RestedXP Leveling de Velocidade\a) Exílio's Reach@Hjalmar's Final Execution-Execute
+    #include RestedXP Speed Leveling\a) Exile's Reach@Hjalmar's Final Execution-Execute
 step << !Shaman\!Warlock\!Warrior
     #arrowtext Fale com\n|cRXP_FRIENDLY_Cria da Luz|r
     .zoneskip 1409,1
@@ -23282,7 +23282,7 @@ step
     .goto 1409,56.83,46.18
     .target +Shuya Sinistracha
 step
-    #include RestedXP Leveling de Velocidade\a) Exílio's Reach@HarpiesAreaStart-HarpiesAreaEnd
+    #include RestedXP Speed Leveling\a) Exile's Reach@HarpiesAreaStart-HarpiesAreaEnd
 step
     #arrowtext Fale com\n|cRXP_FRIENDLY_Herberto Tristarroubo|r
     .zoneskip 1409,1
@@ -23294,7 +23294,7 @@ step
     .target Herberto Tristarroubo
     .mob Bico Sangrento
 step
-    #include RestedXP Leveling de Velocidade\a) Exílio's Reach@HarpiesAreaEnd2-HarpiesAreaEnd2
+    #include RestedXP Speed Leveling\a) Exile's Reach@HarpiesAreaEnd2-HarpiesAreaEnd2
 step
     #arrowtext Conversar com |cRXP_FRIENDLY_Herberto Tristarroubo|r e |cRXP_FRIENDLY_Bô|r e |cRXP_FRIENDLY_Shuya Sinistracha|r
     .zoneskip 1409,1
@@ -23310,15 +23310,15 @@ step
     .goto 1409,56.83,46.18
     .target +Shuya Sinistracha
 step
-    #include RestedXP Leveling de Velocidade\a) Exílio's Reach@LightspawnStart1-LightspawnEnd2
+    #include RestedXP Speed Leveling\a) Exile's Reach@LightspawnStart1-LightspawnEnd2
 step << Priest
-    #include RestedXP Leveling de Velocidade\a) Exílio's Reach@PriestClass1-PriestClass1
+    #include RestedXP Speed Leveling\a) Exile's Reach@PriestClass1-PriestClass1
 step << Paladin
-    #include RestedXP Leveling de Velocidade\a) Exílio's Reach@PaladinClass1Start-PaladinClass1End
+    #include RestedXP Speed Leveling\a) Exile's Reach@PaladinClass1Start-PaladinClass1End
 step
-    #include RestedXP Leveling de Velocidade\a) Exílio's Reach@Freeing the Light-Freeing the Light
+    #include RestedXP Speed Leveling\a) Exile's Reach@Freeing the Light-Freeing the Light
 step << Shaman
-    #include RestedXP Leveling de Velocidade\a) Exílio's Reach@Capturedghostwolves1-Capturedghostwolves2
+    #include RestedXP Speed Leveling\a) Exile's Reach@Capturedghostwolves1-Capturedghostwolves2
 step << Priest
     #arrowtext Conversar com |cRXP_FRIENDLY_Sha'zul|r
     .zoneskip 1409,1
@@ -23328,7 +23328,7 @@ step << Priest
     .accept 58960 >>Aceite Ressuscitando os Recrutas
     .target Sha'zul
 step << Priest
-    #include RestedXP Leveling de Velocidade\a) Exílio's Reach@PriestsEnd1-PriestsEnd1
+    #include RestedXP Speed Leveling\a) Exile's Reach@PriestsEnd1-PriestsEnd1
 step << Priest
     #arrowtext Conversar com |cRXP_FRIENDLY_Sha'zul|r
     .zoneskip 1409,1
@@ -23370,7 +23370,7 @@ step << Rogue
     .use 175223 << Warrior/Paladin --Expeditionary Plate Legguards
     .use 175224 << Mage/Priest/Warlock --Expeditionary Cloth Leggings
 step << Rogue
-    #include RestedXP Leveling de Velocidade\a) Exílio's Reach@RogueExilesStart1-RogueExilesEnd1
+    #include RestedXP Speed Leveling\a) Exile's Reach@RogueExilesStart1-RogueExilesEnd1
 step << Rogue
     #arrowtext Conversar com |cRXP_FRIENDLY_Drizza Fura-costela|r
     .zoneskip 1409,1
@@ -23380,7 +23380,7 @@ step << Rogue
     .accept 58933 >>Aceite O Mais Mortífero dos Venenos
     .target Drizza Fura-costela
 step << Rogue
-    #include RestedXP Leveling de Velocidade\a) Exílio's Reach@RogueExilesStart2-RogueExilesEnd2
+    #include RestedXP Speed Leveling\a) Exile's Reach@RogueExilesStart2-RogueExilesEnd2
 step << Hunter
     #arrowtext Conversar com |cRXP_FRIENDLY_Mitridão Seguessol|r
     .zoneskip 1409,1
@@ -23401,7 +23401,7 @@ step << Hunter
     .skipgossipid 52664
     .target Herberto Tristarroubo
 step << Hunter
-    #include RestedXP Leveling de Velocidade\a) Exílio's Reach@Rusted Chain-Old Spring
+    #include RestedXP Speed Leveling\a) Exile's Reach@Rusted Chain-Old Spring
 step << Hunter
     #arrowtext Conversar com |cRXP_FRIENDLY_Mitridão Seguessol|r
     .zoneskip 1409,1
@@ -23411,7 +23411,7 @@ step << Hunter
     .accept 59356 >>Aceite Caça à Espreita
     .target Mitridão Seguessol
 step << Hunter
-    #include RestedXP Leveling de Velocidade\a) Exílio's Reach@Freezing trap-Freezing trap
+    #include RestedXP Speed Leveling\a) Exile's Reach@Freezing trap-Freezing trap
 step << Hunter
     #arrowtext Conversar com |cRXP_FRIENDLY_Mitridão Seguessol|r
     .zoneskip 1409,1
@@ -23421,7 +23421,7 @@ step << Hunter
     .accept 60168 >>Aceite Domar é uma Arte
     .target Mitridão Seguessol
 step << Hunter
-    #include RestedXP Leveling de Velocidade\a) Exílio's Reach@DismissPet-DismissPet
+    #include RestedXP Speed Leveling\a) Exile's Reach@DismissPet-DismissPet
 step << Hunter
     .zoneskip 1409,1
     #completewith next
@@ -23544,7 +23544,7 @@ step << Mage
     .use 175223 << Warrior/Paladin --Expeditionary Plate Legguards
     .use 175224 << Mage/Priest/Warlock --Expeditionary Cloth Leggings
 step << Mage
-    #include RestedXP Leveling de Velocidade\a) Exílio's Reach@Spell Book-Spell Book
+    #include RestedXP Speed Leveling\a) Exile's Reach@Spell Book-Spell Book
 step << Mage
     #arrowtext Fale com\n|cRXP_FRIENDLY_Herberto Tristarroubo|r
     .zoneskip 1409,1
@@ -23614,7 +23614,7 @@ step
     .goto 1409,51.11,59.52
     .target +Lana Jordão
 step
-    #include RestedXP Leveling de Velocidade\a) Exílio's Reach@Trapped Expedition-Expedition Member4
+    #include RestedXP Speed Leveling\a) Exile's Reach@Trapped Expedition-Expedition Member4
 step
     .zoneskip 1409,1
     #completewith next
@@ -23714,7 +23714,7 @@ step << Druid
     .accept 59350 >>Aceite A Forma Druídica
     .target Crenna Filha da Terra
 step
-    #include RestedXP Leveling de Velocidade\a) Exílio's Reach@DruidStone-DruidStone
+    #include RestedXP Speed Leveling\a) Exile's Reach@DruidStone-DruidStone
 step << Druid
     #arrowtext Fale com\n|cRXP_FRIENDLY_Crenna Filha da Terra|r
     .zoneskip 1409,1
@@ -23775,7 +23775,7 @@ step
     .skipgossipid 54297
     .target Herberto Tristarroubo
 step
-    #include RestedXP Leveling de Velocidade\a) Exílio's Reach@DarkmaulCitadelStart-DarkmaulCitadelEnd
+    #include RestedXP Speed Leveling\a) Exile's Reach@DarkmaulCitadelStart-DarkmaulCitadelEnd
 step
     .zoneskip 1409,1
     #completewith next
@@ -23813,7 +23813,7 @@ step
     .goto 1409,40.3,32.7
     .target +Shuya Sinistracha
 step
-    #include RestedXP Leveling de Velocidade\a) Exílio's Reach@Wug's ward-Ogres
+    #include RestedXP Speed Leveling\a) Exile's Reach@Wug's ward-Ogres
 step
     .zoneskip 1409,1
     #completewith next
@@ -23875,7 +23875,7 @@ step
     .accept 55992 >>Aceite Masmorra: Cidadela de Malhonegro
     .target Senhor da Guerra Mulgrin Passo de Trovão
 step
-    #include RestedXP Leveling de Velocidade\a) Exílio's Reach@Controlling their Stones-Darkmaul Citadel
+    #include RestedXP Speed Leveling\a) Exile's Reach@Controlling their Stones-Darkmaul Citadel
 step
     #arrowtext Fale com\n|cRXP_FRIENDLY_Thrall|r
     .zoneskip 1409,1
@@ -23885,7 +23885,7 @@ step
     .accept 55991 >>Aceite O Fim dos Começos
     .target Thrall
 step
-    #include RestedXP Leveling de Velocidade\a) Exílio's Reach@Kalecgos1-Kalecgos1
+    #include RestedXP Speed Leveling\a) Exile's Reach@Kalecgos1-Kalecgos1
 step
     #arrowtext Conversar com |cRXP_FRIENDLY_Kalecgos|r
     .goto 2022,81.23,28.06
@@ -24638,11 +24638,11 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
-#group RestedXP Leveling de Velocidade
-#subgroup |cFFFCDC00(1-90)|r Padrão
-#name ab) Sunstrider Isle
+#group RestedXP Progressão Rápida
+#subgroup |cFFFCDC00(1-90)|r Default
+#name ab) Ilha Andassol
 #displayname Sunstrider Isle |cRXP_ENEMY_(Alternativa)|r
-#next ac) Elfo Sangrento, Florestas de Canto Eterno
+#next ac) Elfo Sanguíneo: Floresta da Canção Eterna
 #defaultfor BloodElf !DK
 
 << Horde
@@ -24934,8 +24934,8 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
-#group RestedXP Leveling de Velocidade
-#subgroup |cFFFCDC00(1-90)|r Padrão
+#group RestedXP Progressão Rápida
+#subgroup |cFFFCDC00(1-90)|r Default
 #name ac) Elfo Sangrento, Florestas de Canto Eterno
 #displayname |cFF1EFF002|r - Bosque Canto Eterno
 #next b1) Introdução de BfA
@@ -25406,8 +25406,8 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
-#group RestedXP Leveling de Velocidade
-#subgroup |cFFFCDC00(1-90)|r Padrão
+#group RestedXP Progressão Rápida
+#subgroup |cFFFCDC00(1-90)|r Default
 #name ab) Valley of Trials1  << !Troll --Orc
 #name ab) Valley of Trials2  << Troll
 #displayname |cFF1EFF002|r - Valley of Trials << Troll
@@ -25800,8 +25800,8 @@ step << Troll
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
-#group RestedXP Leveling de Velocidade
-#subgroup |cFFFCDC00(1-90)|r Padrão
+#group RestedXP Progressão Rápida
+#subgroup |cFFFCDC00(1-90)|r Default
 #name ac) Ilhas do Eco1 << Troll
 #name ac) Eco Isles2 << !Troll --Orc
 #displayname Eco Isles |cRXP_ENEMY_(Alternative)|r << Troll
@@ -26591,11 +26591,11 @@ step << Orc
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
-#group RestedXP Leveling de Velocidade
-#subgroup |cFFFCDC00(1-90)|r Padrão
-#name ab) Acampamento Narache
+#group RestedXP Progressão Rápida
+#subgroup |cFFFCDC00(1-90)|r Default
+#name ab) Aldeia Narache
 #displayname Camp Narache |cRXP_ENEMY_(Alternative)|r
-#next ac) Acampamento Tauren Mulgore
+#next ac) Tauren Camp Mulgore
 #defaultfor Tauren !DK
 
 << Horde
@@ -26831,8 +26831,8 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
-#group RestedXP Leveling de Velocidade
-#subgroup |cFFFCDC00(1-90)|r Padrão
+#group RestedXP Progressão Rápida
+#subgroup |cFFFCDC00(1-90)|r Default
 #name ac) Acampamento Tauren Mulgore
 #displayname |cFF1EFF002|r - Mulgore
 #next b1) Introdução de BfA
@@ -27353,12 +27353,12 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
-#group RestedXP Leveling de Velocidade
-#subgroup |cFFFCDC00(1-90)|r Padrão
-#name ab) Deathknell
+#group RestedXP Progressão Rápida
+#subgroup |cFFFCDC00(1-90)|r Default
+#name ab) Plangemortis
 #displayname Deathknell |cRXP_ENEMY_(Alternative)|r
 #title Deathknell
-#next ac) Morto-vivo Tirisfal Glades
+#next ac) Morto-vivo Claras de Tirisfal
 #defaultfor Undead !DK
 
 << Horde
@@ -27667,8 +27667,8 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
-#group RestedXP Leveling de Velocidade
-#subgroup |cFFFCDC00(1-90)|r Padrão
+#group RestedXP Progressão Rápida
+#subgroup |cFFFCDC00(1-90)|r Default
 #name ac) Morto-vivo Tirisfal Glades
 #displayname |cFF1EFF002|r - Tirisfal Glades
 #next b1) Introdução de BfA
@@ -28258,9 +28258,9 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
-#group RestedXP Leveling de Velocidade
-#subgroup |cFFFCDC00(1-90)|r Padrão
-#name ab) Introdução Goblin
+#group RestedXP Progressão Rápida
+#subgroup |cFFFCDC00(1-90)|r Default
+#name ab) Introdução de Goblin
 #displayname Kezan & As Ilhas Perdidas |cRXP_ENEMY_(Alternative)|r
 #next b1) Introdução de BfA
 
@@ -29927,9 +29927,9 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP Leveling de Velocidade
+#group RestedXP Progressão Rápida
 #name a) Kezan & The Perdida Isles: Pular
-#next ba) Introdução da Aliança em Dragonflight em Midnight (A) << Alliance
+#next ba) DF Aliança Introdução Meia-noite (A) << Alliance
 #next b1) Introdução de BfA << Horde
 #chapter
 
@@ -29941,8 +29941,8 @@ RXPGuides.RegisterGuide([[
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
-#group RestedXP Leveling de Velocidade
-#subgroup |cFFFCDC00(1-90)|r Padrão
+#group RestedXP Progressão Rápida
+#subgroup |cFFFCDC00(1-90)|r Default
 #name a) Tauren Altamontês
 #displayname |cFF1EFF001|r - Tauren Altamontês
 #next b1) Introdução de BfA
@@ -29994,9 +29994,9 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
-#group RestedXP Leveling de Velocidade
-#subgroup |cFFFCDC00(1-90)|r Padrão
-#name a) Filho da Noite Introdução
+#group RestedXP Progressão Rápida
+#subgroup |cFFFCDC00(1-90)|r Default
+#name a) Introdução de Filho da Noite
 #displayname |cFF1EFF001|r - O Baluarte da Noite
 #next b1) Introdução de BfA
 
@@ -30047,9 +30047,9 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
-#group RestedXP Leveling de Velocidade
-#subgroup |cFFFCDC00(1-90)|r Padrão
-#name a) Trolls Zandalari Introdução
+#group RestedXP Progressão Rápida
+#subgroup |cFFFCDC00(1-90)|r Default
+#name a) Introdução de Troll Zandalari
 #displayname |cFF1EFF001|r - Dazar'alor
 #next b1) Introdução de BfA
 
@@ -30100,9 +30100,9 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
-#group RestedXP Leveling de Velocidade
-#subgroup |cFFFCDC00(1-90)|r Padrão
-#name a) Introdução dos Orcs Maghar
+#group RestedXP Progressão Rápida
+#subgroup |cFFFCDC00(1-90)|r Default
+#name a) Introdução de Orc Mag'har
 #displayname |cFF1EFF001|r - Orgrimmar
 #next b1) Introdução de BfA
 
@@ -30142,9 +30142,9 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
-#group RestedXP Leveling de Velocidade
-#subgroup |cFFFCDC00(1-90)|r Padrão
-#name a) Introdução dos Vulpera
+#group RestedXP Progressão Rápida
+#subgroup |cFFFCDC00(1-90)|r Default
+#name a) Introdução de Vulpera
 #displayname |cFF1EFF001|r - Orgrimmar
 #next b1) Introdução de BfA
 
@@ -30184,7 +30184,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP Leveling de Velocidade
+#group RestedXP Progressão Rápida
 #name a) Introdução da Horda: Legion
 #internal
 
@@ -30619,7 +30619,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #group RestedXP Meia-noite
-#subgroup |cFF1EFF00(1-90)|r Padrão
+#subgroup |cFF1EFF00(1-90)|r Default
 #name 1a 2
 #displayname |cFFFCDC00NÍVEL 1-10|r
 #disabled
@@ -30640,113 +30640,113 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Meia-noite
-#subgroup |cFF1EFF00(1-90)|r Padrão
+#subgroup |cFF1EFF00(1-90)|r Default
 #name a) Introdução de DK 2
 #displayname |cFF1EFF001|r - Plaguelands
-#next RestedXP Meia-noite\ba) Introdução da Aliança em Dragonflight em Midnight (A) 2 << Alliance
+#next RestedXP Meia-noite\ba) DF Aliança Intro Meia-noite (A) 2 << Alliance
 #next b1) Introdução de BfA 2 << Horde
 
 
 << DK !Pandaren !KulTiran !DarkIronDwarf !LightforgedDraenei !Mechagnome !VoidElf !HighmountainTauren !ZandalariTroll !Nightborne !Vulpera !MagharOrc
 
 step
-    #include RestedXP Leveling de Velocidade\a) DK Intro
+    #include RestedXP Speed Leveling\a) DK Intro
 ]])
 --Allied Race/Pandaren: The Frozen Throne
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Meia-noite
-#subgroup |cFF1EFF00(1-90)|r Padrão
+#subgroup |cFF1EFF00(1-90)|r Default
 #name a) Introdução de Novo DK 2
 #displayname |cFF1EFF001|r - O Trono Congelado
-#next RestedXP Meia-noite\ba) Introdução da Aliança em Dragonflight em Midnight (A) 2 << Alliance
+#next RestedXP Meia-noite\ba) DF Aliança Intro Meia-noite (A) 2 << Alliance
 #next b1) Introdução de BfA 2 << Horde
 
 << DK Pandaren/DarkIronDwarf DK/KulTiran DK/LightforgedDraenei DK/Mechagnome DK/VoidElf DK/HighmountainTauren DK/Nightborne DK/ZandalariTroll DK/MagharOrc DK/Vulpera DK
 
 step
-    #include RestedXP Leveling de Velocidade\a) Nova Introdução de Cavaleiro da Morte
+    #include RestedXP Speed Leveling\a) New DK Intro
 ]])
 --Demon Hunter: Mardum
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Meia-noite
-#subgroup |cFF1EFF00(1-90)|r Padrão
+#subgroup |cFF1EFF00(1-90)|r Default
 #name a) Introdução de DH 2
 #displayname |cFF1EFF001|r - Mardum
-#next RestedXP Meia-noite\ba) Introdução da Aliança em Dragonflight em Midnight (A) 2 << Alliance
+#next RestedXP Meia-noite\ba) DF Aliança Intro Meia-noite (A) 2 << Alliance
 #next b1) Introdução de BfA 2 << Horde
 
 << DemonHunter !VoidElf
 
 step
-    #include RestedXP Leveling de Velocidade\a) Nova Introdução de Caçador de Demônios
+    #include RestedXP Speed Leveling\a) DH Intro
 ]])
 --Dracthyr: The Forbidden Reach
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Meia-noite
-#subgroup |cFF1EFF00(1-90)|r Padrão
+#subgroup |cFF1EFF00(1-90)|r Default
 #name a) Introdução de Dracthyr 2
 #displayname |cFF1EFF001|r - O Ara Proibido
-#next RestedXP Meia-noite\ba) Introdução da Aliança em Dragonflight em Midnight (A) 2 << Alliance
+#next RestedXP Meia-noite\ba) DF Aliança Intro Meia-noite (A) 2 << Alliance
 #next b1) Introdução de BfA 2 << Horde
 
 << Dracthyr
 
 step
-    #include RestedXP Leveling de Velocidade\a) Dracthyr Intro
+    #include RestedXP Speed Leveling\a) Dracthyr Intro
 ]])
 --Pandaren: The Wandering Isle
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Meia-noite
-#subgroup |cFF1EFF00(1-90)|r Padrão
+#subgroup |cFF1EFF00(1-90)|r Default
 #name a) Introdução de Pandaren 2
 #displayname The Wandering Isle |cRXP_ENEMY_(Alternative)|r
-#next RestedXP Meia-noite\ba) Introdução da Aliança em Dragonflight em Midnight (A) 2 << Alliance
+#next RestedXP Meia-noite\ba) DF Aliança Intro Meia-noite (A) 2 << Alliance
 #next b1) Introdução de BfA 2 << Horde
 
 << Pandaren !DK
 
 step
-    #include RestedXP Leveling de Velocidade\a) Introdução Pandaren
+    #include RestedXP Speed Leveling\a) Pandaren Intro
 ]])
 --Haranir: Harandar
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Meia-noite
-#subgroup |cFF1EFF00(1-90)|r Padrão
+#subgroup |cFF1EFF00(1-90)|r Default
 #name a) Introdução de Haranir 2
 #displayname |cFF1EFF001|r - Harandar
-#next RestedXP Meia-noite\ba) Introdução da Aliança em Dragonflight em Midnight (A) 2 << Alliance
+#next RestedXP Meia-noite\ba) DF Aliança Intro Meia-noite (A) 2 << Alliance
 #next b1) Introdução de BfA 2 << Horde
 
 << Harronir
 
 step
-    #include RestedXP Leveling de Velocidade\a) Haranir Intro
+    #include RestedXP Speed Leveling\a) Haranir Intro
 ]])
 --Earthen: Hall of Awakening
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Meia-noite
-#subgroup |cFF1EFF00(1-90)|r Padrão
+#subgroup |cFF1EFF00(1-90)|r Default
 #name a) Introdução de EarthenDwarf 2
 #displayname |cFF1EFF001|r - Salão do Despertar
-#next RestedXP Meia-noite\ba) Introdução da Aliança em Dragonflight em Midnight (A) 2 << Alliance
+#next RestedXP Meia-noite\ba) DF Aliança Intro Meia-noite (A) 2 << Alliance
 #next b1) Introdução de BfA << Horde
 
 << EarthenDwarf
 
 step
-    #include RestedXP Leveling de Velocidade\a) Anão Terráqueo Introdução
+    #include RestedXP Speed Leveling\a) EarthenDwarf Intro
 ]])
 --Arathi Highlands Returning Player
 RXPGuides.RegisterGuide([[
@@ -30755,12 +30755,12 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Meia-noite
 #name a) Planalto Arathi Jogador em Retorno 2
 #displayname Recuperação dos Montes Arathi |cRXP_ENEMY_(Alternative)|r
-#next RestedXP Meia-noite\ba) Introdução da Aliança em Dragonflight em Midnight (A) 2 << Alliance
+#next RestedXP Meia-noite\ba) DF Aliança Intro Meia-noite (A) 2 << Alliance
 #next b1) Introdução de BfA << Horde
 #internal
 
 step
-    #include RestedXP Leveling de Velocidade\a) Planalto Arathi Jogador em Retorno
+    #include RestedXP Speed Leveling\a) Arathi Highlands Returning Player
 ]])
 
 -- =================================
@@ -30772,22 +30772,22 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Meia-noite
-#subgroup |cFF1EFF00(1-90)|r Padrão
+#subgroup |cFF1EFF00(1-90)|r Default
 #name a) Exílio's Reach Aliança 2
 #displayname |cFF1EFF001|r - Exílio's Reach
-#next RestedXP Meia-noite\ba) Introdução da Aliança em Dragonflight em Midnight (A) 2
+#next RestedXP Meia-noite\ba) DF Aliança Intro Meia-noite (A) 2
 
 << Alliance !Harronir !Dracthyr !DemonHunter !DK !KulTiran !EarthenDwarf !DarkIronDwarf !LightforgedDraenei !Mechagnome !VoidElf !NightBorne !HighmountainTauren !Vulpera !MagharOrc !ZandalariTroll
 
 step
-    #include RestedXP Leveling de Velocidade\a) Exílio's Reach
+    #include RestedXP Speed Leveling\a) Exile's Reach
 ]])
 --Draenei: Ammen Vale
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Meia-noite
-#subgroup |cFF1EFF00(1-90)|r Padrão
+#subgroup |cFF1EFF00(1-90)|r Default
 #name ab) Ammen Vale 2
 #displayname Ammen Vale |cRXP_ENEMY_(Alternative)|r
 #defaultfor Draenei !DK
@@ -30796,30 +30796,30 @@ RXPGuides.RegisterGuide([[
 << Alliance
 
 step
-    #include RestedXP Leveling de Velocidade\ab) Ammen Vale
+    #include RestedXP Speed Leveling\ab) Ammen Vale
 ]])
 --Draenei: Azuremyst Isle
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Meia-noite
-#subgroup |cFF1EFF00(1-90)|r Padrão
+#subgroup |cFF1EFF00(1-90)|r Default
 #name ac) Draenei Azuremyst Isle 2
 #displayname |cFF1EFF002|r - Azuremyst Isle
 #defaultfor Draenei !DK
-#next RestedXP Meia-noite\ba) Introdução da Aliança em Dragonflight em Midnight (A) 2
+#next RestedXP Meia-noite\ba) DF Aliança Intro Meia-noite (A) 2
 
 << Alliance
 
 step
-    #include RestedXP Leveling de Velocidade\ac) Draenei Azuremyst Isle
+    #include RestedXP Speed Leveling\ac) Draenei Azuremyst Isle
 ]])
 --Dwarf: Coldridge Valley
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Meia-noite
-#subgroup |cFF1EFF00(1-90)|r Padrão
+#subgroup |cFF1EFF00(1-90)|r Default
 #name ab) Dwarf Coldridge Valley 2
 #displayname Coldridge Valley |cRXP_ENEMY_(Alternative)|r
 #defaultfor Dwarf !DK
@@ -30828,14 +30828,14 @@ RXPGuides.RegisterGuide([[
 << Alliance
 
 step
-    #include RestedXP Leveling de Velocidade\ab) Dwarf Coldridge Valley
+    #include RestedXP Speed Leveling\ab) Dwarf Coldridge Valley
 ]])
 --Gnome: New Tinkertown
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Meia-noite
-#subgroup |cFF1EFF00(1-90)|r Padrão
+#subgroup |cFF1EFF00(1-90)|r Default
 #name ab) New Tinkertown 2
 #displayname  New Tinkertown |cRXP_ENEMY_(Alternative)|r
 #defaultfor Gnome !DK
@@ -30844,30 +30844,30 @@ RXPGuides.RegisterGuide([[
 << Alliance
 
 step
-    #include RestedXP Leveling de Velocidade\ab) New Tinkertown
+    #include RestedXP Speed Leveling\ab) New Tinkertown
 ]])
 --Dwarf & Gnome: Dun Morogh
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Meia-noite
-#subgroup |cFF1EFF00(1-90)|r Padrão
+#subgroup |cFF1EFF00(1-90)|r Default
 #name ac) Dwarf & Gnome Dun Morogh 2
 #displayname |cFF1EFF002|r - Dun Morogh
 #defaultfor Dwarf Gnome !DK
-#next RestedXP Meia-noite\ba) Introdução da Aliança em Dragonflight em Midnight (A) 2
+#next RestedXP Meia-noite\ba) DF Aliança Intro Meia-noite (A) 2
 
 << Alliance
 
 step
-    #include RestedXP Leveling de Velocidade\ac) Anão & Gnomo Dun Morogh
+    #include RestedXP Speed Leveling\ac) Dwarf & Gnome Dun Morogh
 ]])
 --Human: Northshire Valley
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Meia-noite
-#subgroup |cFF1EFF00(1-90)|r Padrão
+#subgroup |cFF1EFF00(1-90)|r Default
 #name ab) Northshire Valley 2
 #displayname Northshire Valley |cRXP_ENEMY_(Alternativa)|r
 #defaultfor Human !DK
@@ -30876,145 +30876,145 @@ RXPGuides.RegisterGuide([[
 << Alliance
 
 step
-    #include RestedXP Leveling de Velocidade\ab) Northshire Valley
+    #include RestedXP Speed Leveling\ab) Northshire Valley
 ]])
 --Human: Elwynn Forest
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Meia-noite
-#subgroup |cFF1EFF00(1-90)|r Padrão
+#subgroup |cFF1EFF00(1-90)|r Default
 #name ac) Elwynn Forest 1 2
 #displayname |cFF1EFF002|r - Elwynn Forest
 #defaultfor Human !DK
-#next RestedXP Meia-noite\ba) Introdução da Aliança em Dragonflight em Midnight (A) 2
+#next RestedXP Meia-noite\ba) DF Aliança Intro Meia-noite (A) 2
 
 << Alliance
 
 step
-    #include RestedXP Leveling de Velocidade\ac) Elwynn Forest 1
+    #include RestedXP Speed Leveling\ac) Elwynn Forest 1
 ]])
 --Night Elf: Shadowglen
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Meia-noite
-#subgroup |cFF1EFF00(1-90)|r Padrão
+#subgroup |cFF1EFF00(1-90)|r Default
 #name ab) Shadowglen 2
 #displayname Shadowglen |cRXP_ENEMY_(Alternativa)|r
 #defaultfor NightElf !DemonHunter !DK
-#next ac) Elfo Noturno Teldrassil 2
+#next ac) Noite Elf Teldrassil 2
 
 << Alliance
 
 step
-    #include RestedXP Leveling de Velocidade\ab) Shadowglen
+    #include RestedXP Speed Leveling\ab) Shadowglen
 ]])
 --Night Elf: Teldrassil
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Meia-noite
-#subgroup |cFF1EFF00(1-90)|r Padrão
+#subgroup |cFF1EFF00(1-90)|r Default
 #name ac) Elfo Noturno Teldrassil 2
 #displayname |cFF1EFF002|r - Teldrassil
 #defaultfor NightElf !DemonHunter !DK
-#next RestedXP Meia-noite\ba) Introdução da Aliança em Dragonflight em Midnight (A) 2
+#next RestedXP Meia-noite\ba) DF Aliança Intro Meia-noite (A) 2
 
 << Alliance
 
 step
-    #include RestedXP Leveling de Velocidade\ac) Elfo Noturno Teldrassil
+    #include RestedXP Speed Leveling\ac) Night Elf Teldrassil
 ]])
 --Worgen: Gilneas
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Meia-noite
-#subgroup |cFF1EFF00(1-90)|r Padrão
+#subgroup |cFF1EFF00(1-90)|r Default
 #name ab) Worgen Introdução 2
 #displayname Gilneas |cRXP_ENEMY_(Alternativa)|r
-#next RestedXP Meia-noite\ba) Introdução da Aliança em Dragonflight em Midnight (A) 2
+#next RestedXP Meia-noite\ba) DF Aliança Intro Meia-noite (A) 2
 
 << Alliance Worgen !DK
 
 step
-    #include RestedXP Leveling de Velocidade\ab) Introdução do Worgen
+    #include RestedXP Speed Leveling\ab) Worgen Intro
 ]])
 --DarkIronDwarf: Shadowforge City
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Meia-noite
-#subgroup |cFF1EFF00(1-90)|r Padrão
+#subgroup |cFF1EFF00(1-90)|r Default
 #name a) DarkIronDwarf Introdução 2
 #displayname |cFF1EFF001|r - Cidade de Umbraforja
-#next RestedXP Meia-noite\ba) Introdução da Aliança em Dragonflight em Midnight (A) 2
+#next RestedXP Meia-noite\ba) DF Aliança Intro Meia-noite (A) 2
 
 << Alliance DarkIronDwarf !DK
 
 step
-    #include RestedXP Leveling de Velocidade\a) Introdução do Escuridão Ferro Dwarf
+    #include RestedXP Speed Leveling\a) DarkIronDwarf Intro
 ]])
 --KulTiran: Boralus
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Meia-noite
-#subgroup |cFF1EFF00(1-90)|r Padrão
+#subgroup |cFF1EFF00(1-90)|r Default
 #name a) KulTiran Introdução 2
 #displayname |cFF1EFF001|r - Boralus
-#next RestedXP Meia-noite\ba) Introdução da Aliança em Dragonflight em Midnight (A) 2
+#next RestedXP Meia-noite\ba) DF Aliança Intro Meia-noite (A) 2
 
 << Alliance KulTiran !DK
 
 step
-    #include RestedXP Leveling de Velocidade\a) a Introdução KulTiran
+    #include RestedXP Speed Leveling\a) KulTiran Intro
 ]])
 --LightforgedDraenei: The Vindicaar
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Meia-noite
-#subgroup |cFF1EFF00(1-90)|r Padrão
+#subgroup |cFF1EFF00(1-90)|r Default
 #name a) LightforgedDraenei Introdução 2
 #displayname |cFF1EFF001|r - A Vindicaar
-#next RestedXP Meia-noite\ba) Introdução da Aliança em Dragonflight em Midnight (A) 2
+#next RestedXP Meia-noite\ba) DF Aliança Intro Meia-noite (A) 2
 
 << Alliance LightforgedDraenei !DK
 
 step
-    #include RestedXP Leveling de Velocidade\a) LightforgedDraenei Introdução
+    #include RestedXP Speed Leveling\a) LightforgedDraenei Intro
 ]])
 --Mechagnome: Mechagon City
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Meia-noite
-#subgroup |cFF1EFF00(1-90)|r Padrão
+#subgroup |cFF1EFF00(1-90)|r Default
 #name a) Intro Gnomecânico 2
 #displayname |cFF1EFF001|r - Mechagon City
-#next RestedXP Meia-noite\ba) Introdução da Aliança em Dragonflight em Midnight (A) 2
+#next RestedXP Meia-noite\ba) DF Aliança Intro Meia-noite (A) 2
 
 << Alliance Mechagnome !DK
 
 step
-    #include RestedXP Leveling de Velocidade\a) Gnomecânico Introdução
+    #include RestedXP Speed Leveling\a) Mechagnome Intro
 ]])
 --VoidElf: Telogrus Rift
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Meia-noite
-#subgroup |cFF1EFF00(1-90)|r Padrão
+#subgroup |cFF1EFF00(1-90)|r Default
 #name a) Intro Elfo do Vácuo 2
 #displayname |cFF1EFF001|r - Fissura de Telogrus
-#next RestedXP Meia-noite\ba) Introdução da Aliança em Dragonflight em Midnight (A) 2
+#next RestedXP Meia-noite\ba) DF Aliança Intro Meia-noite (A) 2
 
 << Alliance VoidElf !DK
 
 step
-    #include RestedXP Leveling de Velocidade\a) VoidElf Introdução
+    #include RestedXP Speed Leveling\a) VoidElf Intro
 ]])
 
 -- ====================================
@@ -31026,7 +31026,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Meia-noite
-#subgroup |cFF1EFF00(1-90)|r Padrão
+#subgroup |cFF1EFF00(1-90)|r Default
 #name a) Ilha do Exílio Horda 2
 #displayname |cFF1EFF001|r - Exílio's Reach
 #next b1) Introdução de BfA 2
@@ -31035,30 +31035,30 @@ RXPGuides.RegisterGuide([[
 << Horde !Harronir !Dracthyr !DemonHunter !DK !Nightborne !HighmountainTauren !Vulpera !MagharOrc !ZandalariTroll
 
 step
-    #include RestedXP Leveling de Velocidade\a) Exílio's Reach Horda
+    #include RestedXP Speed Leveling\a) Exile's Reach Horde
 ]])
 --Blood Elf: Sunstrider Isle
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Meia-noite
-#subgroup |cFF1EFF00(1-90)|r Padrão
+#subgroup |cFF1EFF00(1-90)|r Default
 #name ab) Ilha dos Lançasol 2
 #displayname Sunstrider Isle |cRXP_ENEMY_(Alternativa)|r
-#next ac) Elfo Sangrento: Bosque Canto Eterno 2
+#next ac) Elfo Sangrento Matas de Canção Eterna 2
 #defaultfor BloodElf !DK
 
 << Horde
 
 step
-    #include RestedXP Leveling de Velocidade\ab) Sunstrider Isle
+    #include RestedXP Speed Leveling\ab) Sunstrider Isle
 ]])
 --Blood Elf: Eversong Woods(xp tag)
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Meia-noite
-#subgroup |cFF1EFF00(1-90)|r Padrão
+#subgroup |cFF1EFF00(1-90)|r Default
 #name ac) Elfo Sangrento: Bosque Canto Eterno 2
 #displayname |cFF1EFF002|r - Bosque Canto Eterno
 #next b1) Introdução de BfA 2
@@ -31067,14 +31067,14 @@ RXPGuides.RegisterGuide([[
 << Horde
 
 step
-    #include RestedXP Leveling de Velocidade\ac) Elfo Sangrento, Florestas de Canto Eterno
+    #include RestedXP Speed Leveling\ac) Blood Elf Eversong Woods
 ]])
 --Orc: Valley of Trials
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Meia-noite
-#subgroup |cFF1EFF00(1-90)|r Padrão
+#subgroup |cFF1EFF00(1-90)|r Default
 #name ab) Vale das Provas1 2 << !Troll --Orc
 #name ab) Valley of Trials2 2 << Troll
 #displayname |cFF1EFF002|r - Valley of Trials << Troll
@@ -31095,7 +31095,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Meia-noite
-#subgroup |cFF1EFF00(1-90)|r Padrão
+#subgroup |cFF1EFF00(1-90)|r Default
 #name ac) Ilhas do Eco1 2 << Troll
 #name ac) Ilhas do Eco2 2 << !Troll --Orc
 #displayname Eco Isles |cRXP_ENEMY_(Alternative)|r << Troll
@@ -31116,7 +31116,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Meia-noite
-#subgroup |cFF1EFF00(1-90)|r Padrão
+#subgroup |cFF1EFF00(1-90)|r Default
 #name ab) Acampamento Narache 2
 #displayname Camp Narache |cRXP_ENEMY_(Alternative)|r
 #next ac) Tauren Camp Mulgore 2
@@ -31125,14 +31125,14 @@ RXPGuides.RegisterGuide([[
 << Horde
 
 step
-    #include RestedXP Leveling de Velocidade\ab) Acampamento Narache
+    #include RestedXP Speed Leveling\ab) Camp Narache
 ]])
 --Tauren: Camp Mulgore
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Meia-noite
-#subgroup |cFF1EFF00(1-90)|r Padrão
+#subgroup |cFF1EFF00(1-90)|r Default
 #name ac) Tauren Camp Mulgore 2
 #displayname |cFF1EFF002|r - Mulgore
 #next b1) Introdução de BfA 2
@@ -31141,14 +31141,14 @@ RXPGuides.RegisterGuide([[
 << Horde
 
 step
-    #include RestedXP Leveling de Velocidade\ac) Acampamento Tauren Mulgore
+    #include RestedXP Speed Leveling\ac) Tauren Camp Mulgore
 ]])
 --Undead: Deathknell
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Meia-noite
-#subgroup |cFF1EFF00(1-90)|r Padrão
+#subgroup |cFF1EFF00(1-90)|r Default
 #name ab) Morteílo 2
 #displayname Deathknell |cRXP_ENEMY_(Alternative)|r
 #title Deathknell
@@ -31158,14 +31158,14 @@ RXPGuides.RegisterGuide([[
 << Horde
 
 step
-    #include RestedXP Leveling de Velocidade\ab) Deathknell
+    #include RestedXP Speed Leveling\ab) Deathknell
 ]])
 --Undead: Tirisfal Glades
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Meia-noite
-#subgroup |cFF1EFF00(1-90)|r Padrão
+#subgroup |cFF1EFF00(1-90)|r Default
 #name ac) Renegado Tirisfal Glades 2
 #displayname |cFF1EFF002|r - Tirisfal Glades
 #next b1) Introdução de BfA 2
@@ -31174,14 +31174,14 @@ RXPGuides.RegisterGuide([[
 << Horde
 
 step
-    #include RestedXP Leveling de Velocidade\ac) Morto-vivo Tirisfal Glades
+    #include RestedXP Speed Leveling\ac) Undead Tirisfal Glades
 ]])
 --Goblin: Kezan & The Lost Isles
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Meia-noite
-#subgroup |cFF1EFF00(1-90)|r Padrão
+#subgroup |cFF1EFF00(1-90)|r Default
 #name ab) Goblin Intro 2
 #displayname Kezan & As Ilhas Perdidas |cRXP_ENEMY_(Alternative)|r
 #next b1) Introdução de BfA 2
@@ -31189,14 +31189,14 @@ RXPGuides.RegisterGuide([[
 << Horde Goblin !DK
 
 step
-    #include RestedXP Leveling de Velocidade\ab) Introdução Goblin
+    #include RestedXP Speed Leveling\ab) Goblin Intro
 ]])
 --HighmountainTauren: Highmountain
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Meia-noite
-#subgroup |cFF1EFF00(1-90)|r Padrão
+#subgroup |cFF1EFF00(1-90)|r Default
 #name a) HighmountainTauren 2
 #displayname |cFF1EFF001|r - Tauren Altamontês
 #next b1) Introdução de BfA 2
@@ -31204,14 +31204,14 @@ RXPGuides.RegisterGuide([[
 << Horde HighmountainTauren !DK
 
 step
-    #include RestedXP Leveling de Velocidade\a) Tauren Altamontês
+    #include RestedXP Speed Leveling\a) HighmountainTauren
 ]])
 --Nightborne: The Nighthold
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Meia-noite
-#subgroup |cFF1EFF00(1-90)|r Padrão
+#subgroup |cFF1EFF00(1-90)|r Default
 #name a) Filho da Noite Intro 2
 #displayname |cFF1EFF001|r - O Baluarte da Noite
 #next b1) Introdução de BfA 2
@@ -31219,14 +31219,14 @@ RXPGuides.RegisterGuide([[
 << Horde Nightborne !DK
 
 step
-    #include RestedXP Leveling de Velocidade\a) Filho da Noite Introdução
+    #include RestedXP Speed Leveling\a) Nightborne Intro
 ]])
 --ZandalariTroll: Dazar'alor
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Meia-noite
-#subgroup |cFF1EFF00(1-90)|r Padrão
+#subgroup |cFF1EFF00(1-90)|r Default
 #name a) ZandalariTroll Intro 2
 #displayname |cFF1EFF001|r - Dazar'alor
 #next b1) Introdução de BfA 2
@@ -31234,14 +31234,14 @@ RXPGuides.RegisterGuide([[
 << Horde ZandalariTroll !DK
 
 step
-    #include RestedXP Leveling de Velocidade\a) Trolls Zandalari Introdução
+    #include RestedXP Speed Leveling\a) ZandalariTroll Intro
 ]])
 --MagharOrc: Orgrimmar
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Meia-noite
-#subgroup |cFF1EFF00(1-90)|r Padrão
+#subgroup |cFF1EFF00(1-90)|r Default
 #name a) MagharOrc Intro 2
 #displayname |cFF1EFF001|r - Orgrimmar
 #next b1) Introdução de BfA 2
@@ -31249,14 +31249,14 @@ RXPGuides.RegisterGuide([[
 << Horde MagharOrc !DK
 
 step
-    #include RestedXP Leveling de Velocidade\a) Introdução dos Orcs Maghar
+    #include RestedXP Speed Leveling\a) MagharOrc Intro
 ]])
 --Vulpera: Orgrimmar
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Meia-noite
-#subgroup |cFF1EFF00(1-90)|r Padrão
+#subgroup |cFF1EFF00(1-90)|r Default
 #name a) Vulpera Intro 2
 #displayname |cFF1EFF001|r - Orgrimmar
 #next b1) Introdução de BfA 2
@@ -31264,7 +31264,7 @@ RXPGuides.RegisterGuide([[
 << Horde Vulpera !DK
 
 step
-    #include RestedXP Leveling de Velocidade\a) Introdução dos Vulpera
+    #include RestedXP Speed Leveling\a) Vulpera Intro
 ]])
 --Legion Intro
 RXPGuides.RegisterGuide([[
@@ -31275,5 +31275,5 @@ RXPGuides.RegisterGuide([[
 #internal
 
 step
-    #include RestedXP Leveling de Velocidade\a) Introdução da Horda: Legion
+    #include RestedXP Speed Leveling\a) Horde Legion Intro
 ]])

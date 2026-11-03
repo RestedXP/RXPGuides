@@ -7,7 +7,7 @@ if GetLocale() ~= "ptBR" then return end
 RXPGuides.RegisterGuide([[
 #retail
 #version 4
-#group RestedXP Leveling de Velocidade
+#group RestedXP Progressão Rápida
 #name a) Missões de Ventobravo
 #internal
 
@@ -48,7 +48,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 4
-#group RestedXP Leveling de Velocidade
+#group RestedXP Progressão Rápida
 #name a) Tutorial de Moradia da Aliança
 #internal
 
@@ -136,7 +136,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 4
-#group RestedXP Leveling de Velocidade
+#group RestedXP Progressão Rápida
 #name a) Tutorial de Moradia da Horda
 #internal
 
@@ -227,7 +227,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 4
-#group RestedXP Leveling de Velocidade
+#group RestedXP Progressão Rápida
 #name a) DMF
 #internal
 
@@ -668,7 +668,7 @@ step << Horde
 RXPGuides.RegisterGuide([[
 #retail
 #version 4
-#group RestedXP Leveling de Velocidade
+#group RestedXP Progressão Rápida
 #name a) GC Tempo de Crona Torre
 #internal
 
@@ -751,7 +751,7 @@ step  << Alliance
 RXPGuides.RegisterGuide([[
 #retail
 #version 4
-#group RestedXP Leveling de Velocidade
+#group RestedXP Progressão Rápida
 #name a) GC Tempo de Crona Normal
 #internal
 
@@ -2157,7 +2157,7 @@ RXPGuides.RegisterGuide([[}
 << DeathKnight
 
 step
-    #include RestedXP Legion Remix\a) Artefato Arma: Sanguíneo
+    #include RestedXP Legion Remix\a) Artifact Weapon: Blood
 ]])
 --Frost 2
 RXPGuides.RegisterGuide([[}
@@ -2173,7 +2173,7 @@ RXPGuides.RegisterGuide([[}
 << DeathKnight
 
 step
-    #include RestedXP Legion Remix\a) Artefato Arma: Gélido DK
+    #include RestedXP Legion Remix\a) Artifact Weapon: Frost DK
 ]])
 --Unholy 2
 RXPGuides.RegisterGuide([[}
@@ -2190,7 +2190,7 @@ RXPGuides.RegisterGuide([[}
 << DeathKnight
 
 step
-    #include RestedXP Legion Remix\a) Artefato Arma: Profano
+    #include RestedXP Legion Remix\a) Artifact Weapon: Unholy
 ]])
 
 --Death Knight Order Hall Campaign Part 1
@@ -2939,7 +2939,7 @@ RXPGuides.RegisterGuide([[}
 << DemonHunter
 
 step
-    #include RestedXP Legion Remix\a) Artefato Arma: Devastação
+    #include RestedXP Legion Remix\a) Artifact Weapon: Havoc
 ]])
 --Vengeance 2
 RXPGuides.RegisterGuide([[
@@ -2955,7 +2955,7 @@ RXPGuides.RegisterGuide([[
 << DemonHunter
 
 step
-    #include RestedXP Legion Remix\a) Artefato Arma: Vingança
+    #include RestedXP Legion Remix\a) Artifact Weapon: Vengeance
 ]])
 
 --Demon Hunter Order Hall Campaign Part 1
@@ -4648,7 +4648,7 @@ RXPGuides.RegisterGuide([[}
 << Druid
 
 step
-    #include RestedXP Legion Remix\a) Arma de Artefato: Druida de Equilíbrio
+    #include RestedXP Legion Remix\a) Artifact Weapon: Balance Druid
 ]])
 --Feral 2
 RXPGuides.RegisterGuide([[}
@@ -4664,7 +4664,7 @@ RXPGuides.RegisterGuide([[}
 << Druid
 
 step
-    #include RestedXP Legion Remix\a) Artefato Arma: Druida Feral
+    #include RestedXP Legion Remix\a) Artifact Weapon: Feral Druid
 ]])
 --Guardian 2
 RXPGuides.RegisterGuide([[}
@@ -4680,7 +4680,7 @@ RXPGuides.RegisterGuide([[}
 << Druid
 
 step
-    #include RestedXP Legion Remix\a) Artefato Arma: Druida Guardião
+    #include RestedXP Legion Remix\a) Artifact Weapon: Guardian Druid
 ]])
 --Restoration 2
 RXPGuides.RegisterGuide([[}
@@ -4696,7 +4696,7 @@ RXPGuides.RegisterGuide([[}
 << Druid
 
 step
-    #include RestedXP Legion Remix\a) Artefato Arma: Druida de Restauração
+    #include RestedXP Legion Remix\a) Artifact Weapon: Restoration Druid
 ]])
 
 --Druid Order Hall Campaign 1
@@ -5799,7 +5799,7 @@ RXPGuides.RegisterGuide([[
 << Hunter
 
 step
-    #include RestedXP Legion Remix\a) Artefato Arma: Domínio das Feras
+    #include RestedXP Legion Remix\a) Artifact Weapon: Beast Mastery
 ]])
 --Marksmanship 2
 RXPGuides.RegisterGuide([[}
@@ -5815,7 +5815,7 @@ RXPGuides.RegisterGuide([[}
 << Hunter
 
 step
-    #include RestedXP Legion Remix\a) Artefato Arma: Precisão
+    #include RestedXP Legion Remix\a) Artifact Weapon: Marksmanship
 ]])
 --Survival 2
 RXPGuides.RegisterGuide([[}
@@ -5831,7 +5831,7 @@ RXPGuides.RegisterGuide([[}
 << Hunter
 
 step
-    #include RestedXP Legion Remix\a) Artefato Arma: Sobrevivência
+    #include RestedXP Legion Remix\a) Artifact Weapon: Survival
 ]])
 
 --Hunter Order Hall Campaign 1
@@ -7322,7 +7322,7 @@ RXPGuides.RegisterGuide([[
 << Mage
 
 step
-    #include a) Artefato Arma: Arcano
+    #include a) Artifact Weapon: Arcane
 ]])
 --Fire 2
 RXPGuides.RegisterGuide([[
@@ -7338,7 +7338,7 @@ RXPGuides.RegisterGuide([[
 << Mage
 
 step
-    #include a) Artefato Arma: Fogo
+    #include a) Artifact Weapon: Fire
 ]])
 --Frost 2
 RXPGuides.RegisterGuide([[
@@ -7354,7 +7354,7 @@ RXPGuides.RegisterGuide([[
 << Mage
 
 step
-    #include a) Arma Artefato: Mago de Gelo
+    #include a) Artifact Weapon: Frost Mage
 ]])
 
 --Mage Order Hall Campaign 1
@@ -7446,7 +7446,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(10-80+)|r Salão da Ordem
 #name a) Artefato Arma: Mestre Cervejeiro
 #displayname Artefato Arma: Mestre Cervejeiro
-#next a) Salão da Ordem Monja Parte 1
+#next a) Parte 1 do Salão da Ordem do Monge
 #internal
 
 << Monk
@@ -8212,7 +8212,7 @@ RXPGuides.RegisterGuide([[
 #name a) Artefato Arma: Andarilho do Vento
 #subgroup |cFFFCDC00(10-80+)|r Salão da Ordem
 #displayname Artefato Arma: Andarilho do Vento
-#next a) Salão da Ordem Monja Parte 1
+#next a) Salão da Ordem de Monges Parte 1
 #internal
 
 << Monk
@@ -8672,7 +8672,7 @@ RXPGuides.RegisterGuide([[
 << Monk
 
 step
-    #include RestedXP Legion Remix\a) Artefato Arma: Mestre Cervejeiro
+    #include RestedXP Legion Remix\a) Artifact Weapon: Brewmaster
 ]])
 --Mistweaver 2
 RXPGuides.RegisterGuide([[
@@ -8689,7 +8689,7 @@ RXPGuides.RegisterGuide([[
 << Monk
 
 step
-    #include RestedXP Legion Remix\a) Artefato Arma: Tecelão da Névoa
+    #include RestedXP Legion Remix\a) Artifact Weapon: Mistweaver
 ]])
 --Windwalker 2
 RXPGuides.RegisterGuide([[
@@ -8706,7 +8706,7 @@ RXPGuides.RegisterGuide([[
 << Monk
 
 step
-    #include RestedXP Legion Remix\a) Artefato Arma: Andarilho do Vento
+    #include RestedXP Legion Remix\a) Artifact Weapon: Windwalker
 ]])
 
 --Monk Order Hall Campaign Part 1
@@ -10202,7 +10202,7 @@ RXPGuides.RegisterGuide([[
 << Paladin
 
 step
-    #include RestedXP Legion Remix\a) Artefato Arma: Paladino Sagrado
+    #include RestedXP Legion Remix\a) Artifact Weapon: Holy Paladin
 ]])
 --Protection 2
 RXPGuides.RegisterGuide([[
@@ -10218,7 +10218,7 @@ RXPGuides.RegisterGuide([[
 << Paladin
 
 step
-    #include RestedXP Legion Remix\a) Arma Artefato: Paladino Proteção
+    #include RestedXP Legion Remix\a) Artifact Weapon: Paladin Protection
 ]])
 --Retribution 2
 RXPGuides.RegisterGuide([[
@@ -10234,7 +10234,7 @@ RXPGuides.RegisterGuide([[
 << Paladin
 
 step
-    #include RestedXP Legion Remix\a) Artefato Arma: Retribuição
+    #include RestedXP Legion Remix\a) Artifact Weapon: Retribution
 ]])
 
 --Paladin Order Hall Campaign Part 1
@@ -10733,7 +10733,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(10-80+)|r Salão da Ordem
 #name a) Artefato Arma: Sacerdote Sagrado
 #displayname Artefato Arma: Sagrado
-#next a) Salão da Ordem Sacerdote Parte 1
+#next a) Salão da Ordem Sacerdote Part 1
 #internal
 
 << Priest
@@ -11282,7 +11282,7 @@ RXPGuides.RegisterGuide([[}
 << Priest
 
 step
-    #include RestedXP Legion Remix\a) Artefato Arma: Disciplina
+    #include RestedXP Legion Remix\a) Artifact Weapon: Discipline
 ]])
 --Holy 2
 RXPGuides.RegisterGuide([[}
@@ -11298,7 +11298,7 @@ RXPGuides.RegisterGuide([[}
 << Priest
 
 step
-    #include RestedXP Legion Remix\a) Artefato Arma: Sacerdote Sagrado
+    #include RestedXP Legion Remix\a) Artifact Weapon: Holy Priest
 ]])
 --Shadow 2
 RXPGuides.RegisterGuide([[}
@@ -11314,7 +11314,7 @@ RXPGuides.RegisterGuide([[}
 << Priest
 
 step
-    #include RestedXP Legion Remix\a) Artefato Arma: Sombra
+    #include RestedXP Legion Remix\a) Artifact Weapon: Shadow
 ]])
 
 --Priest Order Hall Campaign Part 1
@@ -12869,7 +12869,7 @@ RXPGuides.RegisterGuide([[
 << Rogue
 
 step
-    #include a) Arma Artefato: Assassinato
+    #include a) Artifact Weapon: Assassination
 ]])
 --Outlaw 2
 RXPGuides.RegisterGuide([[
@@ -12885,7 +12885,7 @@ RXPGuides.RegisterGuide([[
 << Rogue
 
 step
-    #include a) Arma Artefato: Fora da Lei
+    #include a) Artifact Weapon: Outlaw
 ]])
 --Subtlety 2
 RXPGuides.RegisterGuide([[
@@ -12901,7 +12901,7 @@ RXPGuides.RegisterGuide([[
 << Rogue
 
 step
-    #include a) Arma Artefato: Subterfúgio
+    #include a) Artifact Weapon: Subtlety
 ]])
 
 --Rogue Order Hall Campaign Part 1
@@ -13978,7 +13978,7 @@ RXPGuides.RegisterGuide([[}
 << Shaman
 
 step
-    #include RestedXP Legion Remix\a) Artefato Arma: Elemental
+    #include RestedXP Legion Remix\a) Artifact Weapon: Elemental
 ]])
 --Enhancement 2
 RXPGuides.RegisterGuide([[}
@@ -13994,7 +13994,7 @@ RXPGuides.RegisterGuide([[}
 << Shaman
 
 step
-    #include RestedXP Legion Remix\a) Arma Artefato: Aprimoramento
+    #include RestedXP Legion Remix\a) Artifact Weapon: Enhancement
 ]])
 --Restoration 2
 RXPGuides.RegisterGuide([[}
@@ -14010,7 +14010,7 @@ RXPGuides.RegisterGuide([[}
 << Shaman
 
 step
-    #include RestedXP Legion Remix\a) Artefato Arma: Xamã de Restauração
+    #include RestedXP Legion Remix\a) Artifact Weapon: Restoration Shaman
 ]])
 
 --Shaman Order Hall Campaign Part 1
@@ -14453,7 +14453,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(10-80+)|r Salão da Ordem
 #name a) Arma Artefato: Demonologia
 #displayname Arma Artefato: Demonologia
-#next a) Salão da Ordem Bruxo Parte 1
+#next a) Salão da Ordem de Bruxaria Parte 1
 #internal
 
 << Warlock
@@ -15111,7 +15111,7 @@ RXPGuides.RegisterGuide([[}
 << Warlock
 
 step
-    #include RestedXP Legion Remix\a) Artefato Arma: Suplício
+    #include RestedXP Legion Remix\a) Artifact Weapon: Affliction
 ]])
 --Demonology 2
 RXPGuides.RegisterGuide([[}
@@ -15127,7 +15127,7 @@ RXPGuides.RegisterGuide([[}
 << Warlock
 
 step
-    #include RestedXP Legion Remix\a) Arma Artefato: Demonologia
+    #include RestedXP Legion Remix\a) Artifact Weapon: Demonology
 ]])
 --Destruction 2
 RXPGuides.RegisterGuide([[}
@@ -15143,7 +15143,7 @@ RXPGuides.RegisterGuide([[}
 << Warlock
 
 step
-    #include RestedXP Legion Remix\a) Arma de Artefato: Destruição
+    #include RestedXP Legion Remix\a) Artifact Weapon: Destruction
 ]])
 
 --Warlock Order Hall Campaign Part 1
@@ -16090,7 +16090,7 @@ RXPGuides.RegisterGuide([[
 << Warrior
 
 step
-    #include RestedXP Legion Remix\a) Artefato Arma: Armas
+    #include RestedXP Legion Remix\a) Artifact Weapon: Arms
 ]])
 --Fury 2
 RXPGuides.RegisterGuide([[
@@ -16106,7 +16106,7 @@ RXPGuides.RegisterGuide([[
 << Warrior
 
 step
-    #include RestedXP Legion Remix\a) Arma Artefato: Fúria
+    #include RestedXP Legion Remix\a) Artifact Weapon: Fury
 ]])
 --Protection 2
 RXPGuides.RegisterGuide([[
@@ -16122,7 +16122,7 @@ RXPGuides.RegisterGuide([[
 << Warrior
 
 step
-    #include RestedXP Legion Remix\a) Artefato Arma: Guerreiro Proteção
+    #include RestedXP Legion Remix\a) Artifact Weapon: Warrior Protection
 ]])
 
 --Warrior Order Hall Campaign Part 1
