@@ -46,7 +46,7 @@ step << Druid
     .mob +Young Thistle Boar
 step << Druid
     #completewith next
-    +|cRXP_WARN_Asegúrate de tener al menos 96 de cobre en basura para vender|r, puedes contar tu bastón que se vende por 9 cobres
+    +|cRXP_WARN_Asegúrate de tener al menos 1 plata y 2 cobres en basura de vendedor|r, puedes contar tu bastón que se vende por 9c
 step << !sod/Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Dirania Brillargente|r y |cRXP_FRIENDLY_Melithar Corzocelada|r
     #label GoodProtector
@@ -146,6 +146,7 @@ step << Priest/Rogue
 	.goto 1438/1,826.03,10328.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Conservador Ilthalaine|r
     .turnin 456 >> Entrega la misión El equilibrio de la naturaleza
+    .accept 457 >> Acepta la misión El equilibrio de la naturaleza
     .target Conservator Ilthalaine
 	.accept 3119 >> Acepta la misión Sigilo Sacralizado << Priest
 step << Druid
@@ -601,7 +602,7 @@ step << Rogue
 step << Druid
     .goto 1438/1,947.57,9812.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Shalomon|r
-    >>|cRXP_BUY_Compra y equipa una|r |T135145:0|t[Cachava] |cRXP_BUY_si puedes permitírtelo (4 platas 79 cobres), si no, omite este paso|r
+    >>|cRXP_BUY_Compra y equipa una|r |T135145:0|t[Cachava] |cRXP_BUY_si puedes permitírtelo (5 platas 4 cobre), si no, omite este paso|r
     .collect 2495,1 --Walking Stick (1)
     .target Shalomon
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.20
@@ -1408,7 +1409,7 @@ step << Druid/Priest
     .accept 940 >> Acepta la misión Teldrassil
 step << Druid/Priest
     #label xp10
-    .xp 10-900 >> Mata enemigos hasta que te falten 900 xp para el nivel 10 (5600/6500)
+    .xp 10-870 >> Farmea hasta que te falten 870 xp para nivel 10 (5630/6500)
 step << Hunter
     #completewith xp10
     #label mist1
@@ -1610,7 +1611,7 @@ step << !Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con la |cRXP_FRIENDLY_Sacerdotisa A'moora|r arriba
     .accept 2518 >> Acepta la misión Las lágrimas de la Luna
 step << Priest
-    .goto Darnassus,40.0,80.0
+    .goto 1457/1,2515.0296,9673.7323
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con la |cRXP_FRIENDLY_Sacerdotisa Alathea|r arriba
     .accept 5627 >>Acepta la misión Estrellas de Elune
     .turnin 5627 >>Entrega la misión Estrellas de Elune
@@ -2125,22 +2126,20 @@ step
     >>Ve hacia la |cRXP_FRIENDLY_Corteza de árbol de oráculo|r
     .turnin 98398 >> Entrega la misión Árbol del oráculo
     .accept 940 >> Acepta la misión Teldrassil
-step
+step << !Warrior --remove warrior tag if they fix the ress sickness
     #softcore
 	#completewith darn << era
     #completewith darnSoD << sod
     .deathskip >>Muere y resucita en el cementerio de Darnassus
     >>|cRXP_WARN_Asegúrate de estar en el lado oeste del río o podrías terminar yendo por el camino equivocado|r << sod
     .target Ángel de la Resurrección
-step
-    #hardcore
+step << Warrior --remove warrior tag if they fix the ress sickness
     #completewith next
     .goto 1457/1,2070.42,9979.310
     .zone Darnassus >> Viaja a Darnassus
-step
+step << !Warrior --remove warrior tag if they fix the ress sickness 
     #hardcore
     #completewith next
-    #season 2
     .goto 1457/1,2070.42,9979.310
     .zone Darnassus >> Viaja a Darnassus
 step << !Warrior

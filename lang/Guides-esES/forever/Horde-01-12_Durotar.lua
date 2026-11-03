@@ -1966,6 +1966,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con|r |cRXP_FRIENDLY_Gar'Thok|r
     .turnin 784 >>Entrega la misión Vencer a los traidores
     .turnin 830 >>Entrega la misión Las órdenes del almirante
+    .turnin 96821 >>Entrega la misión Legging It
     .accept 825 >>Acepta la misión Los restos del naufragio...
     .accept 831 >>Acepta la misión Las órdenes del almirante
     .target +Gar'Thok

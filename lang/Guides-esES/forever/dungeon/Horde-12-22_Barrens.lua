@@ -1051,7 +1051,7 @@ step << Tauren
     .cooldown item,6948,>0
     .use 6948
 step << Tauren
-    .goto Thunder Bluff,45.6,55.9
+    .goto 1456/1,40.72,-1238.97--c:Thunder Bluff,45.6,55.9
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ahanu|r
     .turnin 6362 >>Entrega la misión Un viaje a Cima del Trueno
     .accept 6363 >>Acepta la misión Tal, maestro de jinetes del viento
@@ -1101,7 +1101,7 @@ step << Tauren Warrior
     .target Torm Ragetotem
     .xp <16,1
 step << Tauren
-    .goto Thunder Bluff,47.00,49.82
+    .goto 1456/1,26.10,-1196.66--c:Thunder Bluff,47.00,49.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Tal|r
     .turnin 6363 >>Entrega la misión Tal, maestro de jinetes del viento
     .accept 6364 >>Acepta la misión Regresa con Jahan
@@ -1718,7 +1718,7 @@ step << Tauren/Hunter/Orc Shaman/Troll Shaman
     .zone Orgrimmar >>Entra en Orgrimmar por la entrada occidental
 step << !Tauren !Hunter !Shaman/Skyborne
     #completewith EnterRFC
-    .goto The Barrens,51.50,30.34
+    .goto 1413/1,-2595.75,-437.35--c:The Barrens,51.50,30.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Devrak|r
     .fly Orgrimmar >> Vuela a Orgrimmar
     .zoneskip Orgrimmar
@@ -1924,7 +1924,7 @@ step << Shaman
     .target Kardris Dreamseeker
     .xp <18,1
 step
-    .goto Orgrimmar,31.74,37.82
+    .goto 1454/1,-4125.79,1920.10--c:Orgrimmar,31.74,37.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Thrall|r
     .accept 5726 >>Acepta la misión Enemigos ocultos
     .target Thrall
@@ -1975,7 +1975,7 @@ step
     .goto 1454/1,-4367.46,1405.44,50,0
     .zone Orgrimmar >> Entra en Orgrimmar
 step
-    .goto Orgrimmar,31.74,37.82
+    .goto 1454/1,-4125.79,1920.10--c:Orgrimmar,31.74,37.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Thrall|r
     .turnin 5726 >> Entrega la misión Enemigos ocultos
     .accept 5727 >> Acepta la misión Enemigos ocultos
@@ -2056,7 +2056,7 @@ step << Warlock
     .target Kurgul
     .xp <18,1
 step
-    .goto Orgrimmar,49.6,50.4
+    .goto 1454/1,-4376.29,1802.43--c:Orgrimmar,49.6,50.4
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Neeru Hojafuego|r
     .accept 5761 >>Acepta la misión Matar a la bestia
     .target Neeru Fireblade
@@ -2067,14 +2067,14 @@ step
     .target Neeru Fireblade
     .isOnQuest 832
 step
-    .goto Orgrimmar,49.6,50.4
+    .goto 1454/1,-4376.29,1802.43--c:Orgrimmar,49.6,50.4
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Neeru Hojafuego|r
     .complete 5727,1 --Gauge Neeru Fireblade's reaction to you being a member of the Burning Blade
     .skipgossip
     .target Neeru Fireblade
 step
     #label HiddenEnemiesPickup
-    .goto Orgrimmar,31.74,37.82
+    .goto 1454/1,-4125.79,1920.10--c:Orgrimmar,31.74,37.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Thrall|r
     .turnin 5727 >> Entrega la misión Enemigos ocultos
     .accept 5728 >> Acepta la misión Enemigos ocultos
@@ -2083,8 +2083,9 @@ step
     #completewith EnterRFC
     .destroy 14544 >>|cRXP_WARN_Destruye la|r |T134417:0|t[Insignia de Teniente] |cRXP_WARN_ya que ya no la necesitas|r
 step
+.enabledungeon RFC
     #label EnterRFC
-    .goto Orgrimmar,52.77,48.97
+    .goto 1454/1,-4420.76,1815.80--c:Orgrimmar,52.77,48.97
     .subzone 2437 >> Entra por el portal de la instancia a Sima Ígnea. Entra en la mazmorra
 step
     #optional
@@ -2146,33 +2147,33 @@ step
     .mob Searing Blade Warlock
     .isOnQuest 5725
 step
-    .goto Orgrimmar,49.6,50.4
+    .goto 1454/1,-4376.29,1802.43--c:Orgrimmar,49.6,50.4
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Neeru Hojafuego|r
     .turnin 5761 >>Entrega la misión Matar a la bestia
     .target Neeru Fireblade
     .isQuestComplete 5761
 step
-    .goto Orgrimmar,31.74,37.82
+    .goto 1454/1,-4125.79,1920.10--c:Orgrimmar,31.74,37.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Thrall|r
     .turnin 5728 >> Entrega la misión Enemigos ocultos
     .accept 5729 >> Acepta la misión Enemigos ocultos
     .target Thrall
     .isQuestComplete 5728
 step
-    .goto Orgrimmar,31.74,37.82
+    .goto 1454/1,-4125.79,1920.10--c:Orgrimmar,31.74,37.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Thrall|r
     .accept 5729 >> Acepta la misión Enemigos ocultos
     .target Thrall
     .isQuestTurnedIn 5728
 step
-    .goto Orgrimmar,49.6,50.4
+    .goto 1454/1,-4376.29,1802.43--c:Orgrimmar,49.6,50.4
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Neeru Hojafuego|r
     .turnin 5729 >> Entrega la misión Enemigos ocultos
     .accept 5730 >> Acepta la misión Enemigos ocultos
     .target Neeru Fireblade
     .isQuestTurnedIn 5728
 step
-    .goto Orgrimmar,31.74,37.82
+    .goto 1454/1,-4125.79,1920.10--c:Orgrimmar,31.74,37.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Thrall|r
     .turnin 5730 >> Entrega la misión Enemigos ocultos
     .target Thrall
@@ -2210,7 +2211,7 @@ step
     #completewith next
     .subzone 159 >> Viaja a Rémol
 step
-    .goto Tirisfal Glades,61.26,50.84
+    .goto 1420/0,265.15,2305.94--c:Tirisfal Glades,61.26,50.84
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Sevren|r
     .turnin 440 >> Entrega la misión El anillo grabado
     .accept 441 >> Acepta la misión Raleigh y Entrañas
@@ -2218,7 +2219,7 @@ step
     .isOnQuest 440
 step
     #optional
-    .goto Tirisfal Glades,61.26,50.84
+    .goto 1420/0,265.15,2305.94--c:Tirisfal Glades,61.26,50.84
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Sevren|r
     .accept 441 >> Acepta la misión Raleigh y Entrañas
     .target Magistrate Sevren
@@ -2246,7 +2247,7 @@ step
     .goto 1458/0,244.51,1598.73,15,0
     .goto 1458/0,266.300,1567.200,20 >>Toma el ascensor para bajar a Entrañas
 step
-    .goto Undercity,62.02,42.76
+    .goto 1458/0,278.19,1604.24--c:Undercity,62.02,42.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Raleigh|r
     .turnin 441 >>Entrega la misión Raleigh y Entrañas
     .accept 530 >>Acepta la misión La venganza de un esposo
@@ -2338,7 +2339,9 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Karos Razok::2226|r
     .fly Undercity >>Vuela a Entrañas
     .target Karos Razok::2226
+    .zoneskip Undercity
 step
+.enabledungeon ROL
     #label EnterRoL
     .goto 1458/0,188.400,1804.500
     .subzone 16611 >>Entra en las Ruinas de Lordaeron
@@ -2371,7 +2374,7 @@ step
     .use 275521
 step
     .isOnQuest 95216
-    >>Mata a |cRXP_ENEMY_Witherfang::250483|r. Despójalo para obtener un |T132108:0|t[|cRXP_LOOT_Highly Tóxico Sufrimiento|r]
+    >>Mata a |cRXP_ENEMY_Witherfang::250483|r. Despoja su |T132108:0|t[|cRXP_LOOT_Highly Tóxico Sufrimiento|r]
     .complete 95216,1 --Highly Toxic Strain (1)
     .mob Witherfang::250483
 step
@@ -2451,12 +2454,12 @@ step
     .isOnQuest 95204
     .goto 1458/0,172.100,1667.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Oran Snakewrithe::7825|r
-    .turnin 95204 >>Entrega la misión Emblema de Lordaeron
+    .turnin 95204 >>Entrega la misión Crest of Lordaeron
     .target Oran Snakewrithe::7825
 step
     .goto 1458/0,151.500,1550.200
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ezekiel Tumbas::4585|r
-    >>|cRXP_BUY_Compra una|r |T134799:0|t[|cRXP_LOOT_Essence of Agonía|r]
+    >>Compra una |T134799:0|t[|cRXP_LOOT_Esencia de Agonía|r]
     .collect 8923,1,97291,1 --Essence of Agony (1)
     .target Ezekiel Graves::4585
 step
@@ -2471,7 +2474,7 @@ step
     .isOnQuest 97288
     .goto 1458/0,404.800,1434.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Master Apothecary Faranell::2055|r
-    .turnin 97288 >>Entrega la misión Infinite Tormento
+    .turnin 97288 >>Entrega la misión Tormento infinito
     .accept 97289 >>Acepta la misión Tormento infinito
     .target Master Apothecary Faranell::2055
 step
@@ -2576,6 +2579,7 @@ step << Rogue
     .turnin 92401 >>Entrega la misión Una pregunta con miedo
     .target Tabitha Heartweaver::250686
 
+
     ]])
 
 RXPGuides.RegisterGuide([[
@@ -2602,6 +2606,12 @@ step
     .vendor >>|cRXP_BUY_Vende tu basura, luego reabastécete de comida si es necesario|r << Rogue/Warrior
     .target Innkeeper Boorand Plainswind
     .isQuestAvailable 3281,865,905
+step << Orc/Troll
+    .goto 1413/1,-2709.24,-404.24
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Zargh|r
+    .turnin 6386 >> Entrega la misión Regreso a El Cruce
+    .target Zargh
+    .isOnQuest 6386
 step << !Tauren !Hunter !Shaman/Skyborne
     #completewith Ignition
     >>Mata a cada |cRXP_ENEMY_Raptor|r que veas. Despójalos para obtener sus |cRXP_LOOT_Cabezas|r
@@ -3098,7 +3108,7 @@ step
     .cooldown item,6948,>0
 step
     #completewith JornSkyseerTurnin
-    .goto The Barrens,51.50,30.34
+    .goto 1413/1,-2595.75,-437.35--c:The Barrens,51.50,30.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Devrak|r
     .fly Camp Taurajo >> Vuela al Campamento Taurajo
     .subzoneskip 378
@@ -3560,7 +3570,7 @@ step << Rogue
     .xp <20,1
     .dungeon DM
 step << Warlock
-    .goto Orgrimmar,47.98,45.93
+    .goto 1454/1,-4353.57,1844.24--c:Orgrimmar,47.98,45.93
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Zevrost|r
     .train 1014 >> Aprende tus hechizos de clase
 	.target Zevrost
@@ -3569,7 +3579,7 @@ step << Warlock
     .dungeon DM
 step << Warlock
     #optional
-    .goto Orgrimmar,47.98,45.93
+    .goto 1454/1,-4353.57,1844.24--c:Orgrimmar,47.98,45.93
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Zevrost|r
     .train 706 >> Aprende tus hechizos de clase
 	.target Zevrost
@@ -3800,7 +3810,7 @@ step
     .unitscan Owatanka
 step
     #label SleepingBag1
-    .goto The Barrens,46.361,73.904
+    .goto 1413/1,-2075.00,-3380.64--c:The Barrens,46.361,73.904
     >>Haz clic en los |cRXP_PICK_Restos quemados|r en el suelo
     .accept 79007 >> Acepta la misión ... Y la nota que encontraste
 step
@@ -4083,7 +4093,7 @@ step << Shaman
     .target Tigor Skychaser
     .xp <22,1
 step << Shaman
-    .goto Thunder Bluff,25.21,20.45
+    .goto 1456/1,253.54,-992.30--c:Thunder Bluff,25.21,20.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Xanis|r
     .accept 1529 >>Acepta la misión La llamada del agua
     .target Xanis Flameweaver
@@ -4110,7 +4120,7 @@ step
     #completewith NaraWild
     .goto 1456/1,-212.71,-1065.010,80 >> Viaja al Alto de los Ancestros
 step
-    .goto Thunder Bluff,70.4,29.6
+    .goto 1456/1,-218.13,-1055.97--c:Thunder Bluff,70.4,29.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Rahauro|r
     .turnin 5724 >> Entrega la misión La vuelta de la cartera perdida
     .turnin 5723 >> Entrega la misión Midiendo fuerzas con el enemigo
@@ -4119,7 +4129,7 @@ step
     .isQuestComplete 5723
 step
     #optional
-    .goto Thunder Bluff,70.4,29.6
+    .goto 1456/1,-218.13,-1055.97--c:Thunder Bluff,70.4,29.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Rahauro|r
     .turnin 5724 >> Entrega la misión La vuelta de la cartera perdida
     .target Rahauro
@@ -4127,7 +4137,7 @@ step
 step
     #optional
     #label RFCTurninsTB1
-    .goto Thunder Bluff,70.4,29.6
+    .goto 1456/1,-218.13,-1055.97--c:Thunder Bluff,70.4,29.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Rahauro|r
     .turnin 5723 >> Entrega la misión Midiendo fuerzas con el enemigo
     .target Rahauro
@@ -4389,7 +4399,7 @@ RXPGuides.RegisterGuide([[
 #forever
 << Horde
 #name 21-22 Cuevas de los Lamentos
-#next RestedXP Horda 22-30\22-24 Laderas de Trabalomas
+#next 22-24 Laderas de Trabalomas
 #version 11
 #group RestedXP Forever Guía de Mazmorras (H)
 #subgroup Guía de mazmorras 1-22
@@ -4514,6 +4524,7 @@ step
     .mob Mad Magglish
     .isOnQuest 959
 step
+.enabledungeon WC
     #label EnterWC
     .goto 1414/1,-2028.82,-636.93,20,0
     .goto 1414/1,-2050.90,-585.41,20,0
@@ -4710,7 +4721,7 @@ step
     .isQuestComplete 1491
 step
     #optional
-    .goto The Barrens,62.370,37.615
+    .goto 1413/1,-3697.24,-928.86--c:The Barrens,62.370,37.615
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Mebok|r
     .accept 1221 >> Acepta la misión Los tubérculos hojazul
     .target Mebok Mizzyrix
@@ -4733,11 +4744,11 @@ step << Shaman
     .turnin 1529 >>Entrega la misión La llamada del agua
     .accept 1530 >>Acepta la misión La llamada del agua
     .target +Islen Waterseer
-    .goto The Barrens,65.83,43.78
+    .goto 1413/1,-4047.86,-1345.39--c:The Barrens,65.83,43.78
     .turnin 874 >>Entrega la misión Mahren Vidente del Cielo
     .accept 873 >>Acepta la misión Isha Awak
     .target +Mahren Skyseer
-    .goto The Barrens,65.83,43.86
+    .goto 1413/1,-4047.86,-1350.79--c:The Barrens,65.83,43.86
     .isOnQuest 1529
 step << Shaman
     #optional
@@ -4745,33 +4756,33 @@ step << Shaman
     .turnin 1528 >>Entrega la misión La llamada del agua
     .accept 1530 >>Acepta la misión La llamada del agua
     .target +Islen Waterseer
-    .goto The Barrens,65.83,43.78
+    .goto 1413/1,-4047.86,-1345.39--c:The Barrens,65.83,43.78
     .turnin 874 >>Entrega la misión Mahren Vidente del Cielo
     .accept 873 >>Acepta la misión Isha Awak
     .target +Mahren Skyseer
-    .goto The Barrens,65.83,43.86
+    .goto 1413/1,-4047.86,-1350.79--c:The Barrens,65.83,43.86
     .isOnQuest 1528
 step << Shaman
     #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Islen|r y |cRXP_FRIENDLY_Mahren Vidente del Cielo|r
     .accept 1530 >>Acepta la misión La llamada del agua
     .target +Islen Waterseer
-    .goto The Barrens,65.83,43.78
+    .goto 1413/1,-4047.86,-1345.39--c:The Barrens,65.83,43.78
     .turnin 874 >>Entrega la misión Mahren Vidente del Cielo
     .accept 873 >>Acepta la misión Isha Awak
     .target +Mahren Skyseer
-    .goto The Barrens,65.83,43.86
+    .goto 1413/1,-4047.86,-1350.79--c:The Barrens,65.83,43.86
     .isQuestTurnedIn 1529
 step << Shaman
     #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Islen|r y |cRXP_FRIENDLY_Mahren Vidente del Cielo|r
     .accept 1530 >>Acepta la misión La llamada del agua
     .target +Islen Waterseer
-    .goto The Barrens,65.83,43.78
+    .goto 1413/1,-4047.86,-1345.39--c:The Barrens,65.83,43.78
     .turnin 874 >>Entrega la misión Mahren Vidente del Cielo
     .accept 873 >>Acepta la misión Isha Awak
     .target +Mahren Skyseer
-    .goto The Barrens,65.83,43.86
+    .goto 1413/1,-4047.86,-1350.79--c:The Barrens,65.83,43.86
     .isQuestTurnedIn 1528
 step
     #optional << Shaman
@@ -4818,7 +4829,7 @@ step
 step
     .goto 1413/1,-2711.800,-350.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Gur'ak|r
-    .accept 97003 >>Acepta la misión Chol'aruk, el Insaciable
+    .turnin 97003 >>Entrega la misión Chol'aruk the Ravener
     .target Gur'ak
     .isQuestComplete 97003
 step
@@ -4849,6 +4860,7 @@ step
     >>Mata al |cRXP_ENEMY_Señor de la guerra Krom'zar|r una vez que aparece. Despoja el |cRXP_PICK_Estandarte|r que deja en el suelo
     >>|cRXP_WARN_¡Ten cuidado! Es un élite fuerte y está custodiado por al menos dos|r |cRXP_ENEMY_Kolkar|r |cRXP_WARN_enemigos|r
     >>|cRXP_WARN_Puede tardar hasta 3 minutos en reaparecer|r
+    .link https://www.youtube.com/watch?v=xrm0PWe5wf4 >>|cRXP_WARN_Clin aquí para un video de guía sobre cómo puedes hacer kiting|r |cRXP_ENEMY_Señor de la guerra Krom'zar|r
     .complete 4021,1 --Piece of Krom'zar's Banner (1)
     .unitscan Warlord Krom'zar
     .isQuestTurnedIn 852
@@ -4869,6 +4881,14 @@ step
     #optional
     #completewith TopofWCturnins
     .abandon 855 >>Abandona la misión Los brazales centauro
+step
+    #optional
+    #completewith TopofWCturnins
+    .abandon 97003 >>Abandona la misión Chol'aruk the Ravener
+step
+    #optional
+    #completewith TopofWCturnins
+    .abandon 4021 >>Abandona la misión ¡Contraataca!
 step
     #completewith next
     .goto 1413/1,-2493.40,-708.95,20,0

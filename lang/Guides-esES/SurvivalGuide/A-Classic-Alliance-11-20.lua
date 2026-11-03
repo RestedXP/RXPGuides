@@ -301,7 +301,7 @@ step << !NightElf
 step << Human Warrior
     .goto Ironforge,62.0,89.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Bixi Tambaleapié|r
-    .train 2567 >>Aprende el uso de Arrojadizas
+    .train 2567 >>Aprende el uso de Armas arrojadizas
     .target Bixi Wobblebonk
 step << Dwarf Paladin
     .goto Ironforge,24.55,4.49
@@ -457,7 +457,7 @@ step << Druid
 	.zoneskip Moonglade
 step << Druid
     .goto Moonglade,56.21,30.63
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Dendrita Rafagaestelar|r subiendo las escaleras
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Dendrita Rafagaestelar|r arriba
     .turnin 6121 >> Entrega la misión Nuevas lecciones
     .accept 6122 >> Acepta la misión La fuente del envenenamiento
     .turnin 26 >> Entrega la misión Una lección que aprender
@@ -1417,7 +1417,7 @@ step
     .goto Winterspring,5.59,21.09,10,0
     .goto Winterspring,6.37,16.66
     >>Habla con |cRXP_FRIENDLY_El Trillomajareitor 4100|r para empezar la escolta
-    >>Escolta al |cRXP_FRIENDLY_El Trillomajareitor 4100|r hasta |cRXP_FRIENDLY_Gelkak Gyromast|r
+    >>Escolta al |cRXP_FRIENDLY_El Trillomajareitor 4100|r a |cRXP_FRIENDLY_Gelkak Gyromast|r
     >>Mata a |cRXP_ENEMY_El Trillomajareitor 4100|r cuando se vuelva hostil
     >>|cRXP_WARN_Esta misión es MUY difícil|r
     .skipgossip

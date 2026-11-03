@@ -1052,7 +1052,7 @@ step << Tauren
     .cooldown item,6948,>0
     .use 6948
 step << Tauren
-    .goto Thunder Bluff,45.6,55.9
+    .goto 1456/1,40.72,-1238.97--c:Thunder Bluff,45.6,55.9
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ahanu|r
     .turnin 6362 >>Entrega la misión Un viaje a Cima del Trueno
     .accept 6363 >>Acepta la misión Tal, maestro de jinetes del viento
@@ -1102,7 +1102,7 @@ step << Tauren Warrior
     .target Torm Ragetotem
     .xp <16,1
 step << Tauren
-    .goto Thunder Bluff,47.00,49.82
+    .goto 1456/1,26.10,-1196.66--c:Thunder Bluff,47.00,49.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Tal|r
     .turnin 6363 >>Entrega la misión Tal, maestro de jinetes del viento
     .accept 6364 >>Acepta la misión Regresa con Jahan
@@ -1675,6 +1675,7 @@ step << Orc/Troll
     .target Doras
     .isOnQuest 6385
 step << Orc/Troll
+    #optional
     .goto 1454/1,-4313.46,1676.25--c:Orgrimmar,45.120,63.889
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con|r |cRXP_FRIENDLY_Doras|r
     .accept 6386 >> Acepta la misión Regresar a El Cruce
@@ -2484,6 +2485,7 @@ step
     >>Mata al |cRXP_ENEMY_Señor de la guerra Krom'zar|r (élite lvl 20) una vez que aparece. Despoja el |cRXP_PICK_Estandarte|r que deja en el suelo
     >>|cRXP_WARN_¡Ten cuidado! Es fuerte y está protegido por al menos dos esbirros|r |cRXP_ENEMY_Kolkar|r |cRXP_WARN_|r
     >>|cRXP_WARN_Puede tardar hasta 3 minutos en reaparecer|r
+    .link https://www.youtube.com/watch?v=xrm0PWe5wf4 >>|cRXP_WARN_Clin aquí para un video de guía sobre cómo puedes hacer kiting|r |cRXP_ENEMY_Señor de la guerra Krom'zar|r
     .complete 4021,1 --Piece of Krom'zar's Banner (1)
     .unitscan Warlord Krom'zar
     .isOnQuest 4021
@@ -3520,7 +3522,7 @@ step
     .unitscan Owatanka
 step
     #label SleepingBag1
-    .goto The Barrens,46.361,73.904
+    .goto 1413/1,-2075.00,-3380.64--c:The Barrens,46.361,73.904
     >>Haz clic en los |cRXP_PICK_Restos quemados|r en el suelo
     .accept 79007 >> Acepta la misión ... Y la nota que encontraste
 step
@@ -4106,6 +4108,7 @@ step
     >>Mata al |cRXP_ENEMY_Señor de la guerra Krom'zar|r una vez que aparece. Despoja el |cRXP_PICK_Estandarte|r que deja en el suelo
     >>|cRXP_WARN_¡Ten cuidado! Es un élite fuerte y está custodiado por al menos dos|r |cRXP_ENEMY_Kolkar|r |cRXP_WARN_enemigos|r
     >>|cRXP_WARN_Puede tardar hasta 3 minutos en reaparecer|r
+    .link https://www.youtube.com/watch?v=xrm0PWe5wf4 >>|cRXP_WARN_Clin aquí para un video de guía sobre cómo puedes hacer kiting|r |cRXP_ENEMY_Señor de la guerra Krom'zar|r
     .complete 4021,1 --Piece of Krom'zar's Banner (1)
     .unitscan Warlord Krom'zar
     .isQuestTurnedIn 852
@@ -5196,4 +5199,13 @@ step
 step
     #optional
     .abandon 6563 >>Abandona la misión La esencia de Aku'Mai
+step
+    #optional
+    .abandon 97003 >>Abandona la misión Chol'aruk the Ravener
+step
+    .zone Durotar >> Sal de Orgrimmar
+    .zoneskip Tirisfal Glades
+    .zoneskip Undercity
+    .zoneskip Silverpine Forest
+    .zoneskip Hillsbrad Foothills
 ]])

@@ -1917,16 +1917,16 @@ step
     .mob +Venture Co. Supervisor
 step
     #loop
-    .goto Mulgore,63.77,43.97,0
-    .goto Mulgore,63.77,43.97,15,0
-    .goto Mulgore,62.81,42.81,15,0
-    .goto Mulgore,60.38,42.78,15,0
-    .goto Mulgore,61.64,41.33,15,0
-    .goto Mulgore,63.51,39.29,15,0
-    .goto Mulgore,63.39,40.80,15,0
-    .goto Mulgore,60.99,37.00,15,0
-    .goto Mulgore,59.64,36.05,15,0 --Outside
-    .goto Mulgore,61.72,35.15,15,0 --Outside
+    .goto 1412/1,-1228.27,-1778.89,0--c:Mulgore,63.77,43.97
+    .goto 1412/1,-1228.27,-1778.89,15,0--c:Mulgore,63.77,43.97
+    .goto 1412/1,-1178.95,-1739.16,15,0--c:Mulgore,62.81,42.81
+    .goto 1412/1,-1054.11,-1738.13,15,0--c:Mulgore,60.38,42.78
+    .goto 1412/1,-1118.84,-1688.47,15,0--c:Mulgore,61.64,41.33
+    .goto 1412/1,-1214.91,-1618.60,15,0--c:Mulgore,63.51,39.29
+    .goto 1412/1,-1208.74,-1670.32,15,0--c:Mulgore,63.39,40.80
+    .goto 1412/1,-1085.44,-1540.17,15,0--c:Mulgore,60.99,37.00
+    .goto 1412/1,-1016.09,-1507.63,15,0 --Outside--c:Mulgore,59.64,36.05
+    .goto 1412/1,-1122.95,-1476.80,15,0 --Outside--c:Mulgore,61.72,35.15
     >>Abre los |cRXP_PICK_Suministros explosivos|r dentro de la mina y fuera en el otro lado. Despójalos para obtener las |cRXP_LOOT_Cargas mineras de seforio|r
     >>|cRXP_WARN_Permanece en los niveles superiores de la cueva si es posible|r
     .complete 76156,1 --Seaforium Mining Charge (5)
@@ -2246,7 +2246,7 @@ step
     .turnin 744 >>Entrega la misión Preparación para la ceremonia
     .target Eyahn Eagletalon
 step
-    .goto Thunder Bluff,39.45,65.86
+    .goto 1456/1,104.91,-1308.28--c:Thunder Bluff,39.45,65.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Boarton Totemsombrío|r
     >>|cRXP_WARN_Está|r |T132320:0|t[En sigilo]
     .turnin 76160 >>Entrega la misión Acechanzas con la Madre Tierra
@@ -2254,8 +2254,8 @@ step
     .target Boarton Shadetotem
 step
     #ah
-    .goto Thunder Bluff,45.23,59.40,0
-    .goto Thunder Bluff,40.41,51.78
+    .goto 1456/1,44.58,-1263.32,0--c:Thunder Bluff,45.23,59.40
+    .goto 1456/1,94.89,-1210.30--c:Thunder Bluff,40.41,51.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Subastador Stampi|r
     >>|cRXP_BUY_Compra un|r |T133894:0|t[Pececito luminoso crudo] |cRXP_BUY_en la Casa de Subastas|r
     .collect 6291,1,76240,1 --Raw Brilliant Smallfish (1)
@@ -2263,24 +2263,24 @@ step
 step
     #ssf
     #completewith Sewa
-    .goto Thunder Bluff,46.13,51.59,12,0
-    .goto Thunder Bluff,47.09,50.07,4,0
-    .goto Thunder Bluff,46.49,49.16,4,0
-    .goto Thunder Bluff,46.05,49.74,4,0
-    .goto Thunder Bluff,46.34,50.50,4,0
-    .goto Thunder Bluff,55.78,47.02,15 >>Viaja hacia |cRXP_FRIENDLY_Seua Correbruma|r
+    .goto 1456/1,35.18,-1208.98,12,0--c:Thunder Bluff,46.13,51.59
+    .goto 1456/1,25.16,-1198.40,4,0--c:Thunder Bluff,47.09,50.07
+    .goto 1456/1,31.43,-1192.07,4,0--c:Thunder Bluff,46.49,49.16
+    .goto 1456/1,36.02,-1196.11,4,0--c:Thunder Bluff,46.05,49.74
+    .goto 1456/1,32.99,-1201.40,4,0--c:Thunder Bluff,46.34,50.50
+    .goto 1456/1,-65.54,-1177.18,15 >>Viaja hacia |cRXP_FRIENDLY_Seua Correbruma|r--c:Thunder Bluff,55.78,47.02
 step
     #ssf
     #sticky
     #label Kah
-    .goto Thunder Bluff,56.13,46.39,-1
+    .goto 1456/1,-69.19,-1172.80,-1--c:Thunder Bluff,56.13,46.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Kah Correbruma|r
     .train 7734 >>Aprende |T136245:0|t[Pesca]
     .target Kah Mistrunner
 step
     #ssf
     #label Sewa
-    .goto Thunder Bluff,55.78,47.02,-1
+    .goto 1456/1,-65.54,-1177.18,-1--c:Thunder Bluff,55.78,47.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Seua Correbruma|r
     >>|cRXP_BUY_Compra una|r |T132932:0|t[Caña de pescar] |cRXP_BUY_y|r |T134335:0|t[Adorno lustroso] |cRXP_BUY_a esta vendedora|r
     .collect 6256,1 --Fishing Pole (1)
@@ -2303,7 +2303,7 @@ step
     #ssf
     #label Fish
     #requires Kah
-    .goto Thunder Bluff,40.42,58.55
+    .goto 1456/1,94.78,-1257.41--c:Thunder Bluff,40.42,58.55
     >>Pesca en el estanque hasta que obtengas un |T133894:0|t[|cRXP_LOOT_Pececito luminoso crudo|r]
     .collect 6291,1,76240,1 --Raw Brilliant Smallfish (1)
 step
@@ -2311,7 +2311,7 @@ step
     .complete 76240,1 --Fish Chunks (1)
     .use 206344
 step
-    .goto Thunder Bluff,39.45,65.86
+    .goto 1456/1,104.91,-1308.28--c:Thunder Bluff,39.45,65.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Boarton Totemsombrío|r
     >>|cRXP_WARN_Está|r |T132320:0|t[En sigilo]
     .turnin 76240 >>Entrega la misión Acechanzas con la Madre Tierra
@@ -2405,7 +2405,7 @@ step << Tauren Druid
     .turnin 6002 >>Entrega la misión Cuerpo y corazón
     .target Turak Runetotem
 step << Tauren Druid
-    .goto Thunder Bluff,47.00,49.82
+    .goto 1456/1,26.10,-1196.66--c:Thunder Bluff,47.00,49.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Tal|r
     .fly Camp Taurajo >>Vuela al Campamento Taurajo
     .target Tal

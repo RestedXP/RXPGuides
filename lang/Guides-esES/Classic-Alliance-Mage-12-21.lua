@@ -949,7 +949,7 @@ step
     #label WFFP
     .goto Westfall,56.55,52.65
     .fp Westfall >> Consigue la ruta de vuelo de Páramos de Poniente << Gnome
-    .fly Redridge >> Vuela a Crestagrana
+    .fly Redridge >> Vuela a Montañas Crestagrana
 step
     #requires WFFP
     .goto Redridge Mountains,30.97,47.27

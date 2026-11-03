@@ -169,7 +169,7 @@ step
 step << !NightElf
     .goto StormwindClassic,66.27,62.12
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Dungar Tragolargo|r
-    .fly Redridge >> Vuela a Crestagrana
+    .fly Redridge >> Vuela a Montañas Crestagrana
     .target Dungar Longdrink
 step << NightElf
     #label ExitSW
@@ -635,7 +635,7 @@ step
 step
     .goto StormwindClassic,66.27,62.12,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Dungar Tragolargo|r
-    .fly Redridge >> Vuela a Crestagrana
+    .fly Redridge >> Vuela a Montañas Crestagrana
     .target Dungar Longdrink
     .zoneskip Stormwind City,1
 step
@@ -980,7 +980,7 @@ step
     .goto Elwynn Forest,48.61,41.80,15 >> Viaja a la Abadía de Villanorte
 step
     .goto Elwynn Forest,49.60,40.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Hermano Paxton|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Hermano Paxton|r
     .turnin 344 >> Entrega la misión Hermano Paxton
     .accept 345 >> Acepta la misión Suministros de tinta
     .target Brother Paxton
@@ -1010,7 +1010,7 @@ step
     .goto StormwindClassic,66.27,62.12,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Dungar Tragolargo|r
     >>Vuela a Montañas Crestagrana si estás en Ventormenta
-    .fly Redridge >> Vuela a Crestagrana
+    .fly Redridge >> Vuela a Montañas Crestagrana
     .target Dungar Longdrink
     .zoneskip Stormwind City,1
 step

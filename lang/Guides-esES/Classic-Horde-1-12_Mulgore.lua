@@ -607,7 +607,7 @@ step << Druid
 step
 	#completewith BloodhoofHome
 	#softcore
-    .deathskip >> Muere y reaparece en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
+    .deathskip >> Muere y resucita en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
 step
 	#hardcore
 	#completewith BloodhoofHome
@@ -1057,7 +1057,7 @@ step
 step
     #softcore
 	#completewith Thunderhorn
-    .deathskip >> Muere y reaparece en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
+    .deathskip >> Muere y resucita en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
 step
     #hardcore
     #completewith Thunderhorn
@@ -1681,7 +1681,7 @@ step << !Druid
 step << Druid
     #sofcore
     #completewith Bloodhoofturnins1
-    .deathskip >> Muere y reaparece en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
+    .deathskip >> Muere y resucita en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
 step << Druid
     #hardcore
     #completewith Bloodhoofturnins1
@@ -1924,7 +1924,7 @@ step << Tauren
 step << Tauren
     #softcore
 	#completewith Thunderhorn2
-    .deathskip >> Muere y reaparece en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
+    .deathskip >> Muere y resucita en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
 step << Tauren
     #hardcore
     #completewith Thunderhorn2
@@ -2109,7 +2109,7 @@ step
 step
     #softcore
 	#completewith ZamahPickup
-    .deathskip >> Muere y reaparece en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
+    .deathskip >> Muere y resucita en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
 step
     #hardcore
     #completewith ZamahPickup
@@ -2204,7 +2204,7 @@ step << Hunter
     .target Hesuwa Thunderhorn
 step << Hunter
     #completewith CauldronStirrer
-    +|cRXP_WARN_Arrastra|r |T132162:0|t[Adiestramiento de bestias] |cRXP_WARN_a tus Barras de Acción. Enseña habilidades a tu mascota|r
+    +|cRXP_WARN_Arrastra|r |T132162:0|t[Adiestramiento de bestias] |cRXP_WARN_a tus barras de acción. Enseña habilidades a tu mascota|r
 step << Druid
     .goto Thunder Bluff,40.93,62.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ansekhwa|r
@@ -2773,7 +2773,7 @@ step
 	.goto Mulgore,60.14,49.14,25,0
 	.goto Mulgore,62.01,48.74,25,0
 	.goto Mulgore,61.89,47.84,25,0
-    .xp 11+7150 >> Mata enemigos hasta alcanzar 7150+/8700 de experiencia
+    .xp 11+7150 >> Mata enemigos hasta alcanzar 7150+/8700xp
 step
     #xprate >1.49
     #loop
@@ -2784,7 +2784,7 @@ step
 	.goto Mulgore,60.14,49.14,25,0
 	.goto Mulgore,62.01,48.74,25,0
 	.goto Mulgore,61.89,47.84,25,0
-    .xp 11+6375 >> Mata enemigos hasta alcanzar 6375+/8700 de experiencia
+    .xp 11+6375 >> Mata enemigos hasta alcanzar 6375+/8700xp
 step
     #loop
     .goto Mulgore,55.14,60.65,0
@@ -3669,7 +3669,7 @@ step << Druid
 step
 	#completewith BloodhoofHome
 	#softcore
-    .deathskip >> Muere y reaparece en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
+    .deathskip >> Muere y resucita en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
 step
 	#hardcore
 	#completewith BloodhoofHome
@@ -4150,7 +4150,7 @@ step
     #xprate <2.1
     #softcore
 	#completewith Thunderhorn
-    .deathskip >> Muere y reaparece en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
+    .deathskip >> Muere y resucita en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
 step
     #xprate <2.1
     #hardcore
@@ -4864,7 +4864,7 @@ step
     #softcore
     #completewith Bloodhoofturnins1
     .goto Mulgore,48.22,38.85
-    .deathskip >> Muere y reaparece en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
+    .deathskip >> Muere y resucita en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
     >>|cRXP_WARN_Asegúrate de morir en la flecha del punto de ruta o más al sur de ella|r
     .zoneskip Thunder Bluff
 step
@@ -5284,7 +5284,7 @@ step << skip
 step << skip
     #softcore
 	#completewith Thunderhorn2
-    .deathskip >> Muere y reaparece en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
+    .deathskip >> Muere y resucita en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
 step << skip
     #hardcore
     #completewith Thunderhorn2
@@ -5467,7 +5467,7 @@ step
     #xprate <2.1
     #softcore
 	#completewith ZamahPickup
-    .deathskip >> Muere y reaparece en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
+    .deathskip >> Muere y resucita en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
 step
     #xprate <2.1
     #hardcore
@@ -5495,7 +5495,7 @@ step
     .goto The Barrens,51.44,30.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Helbrim|r
     >>|cRXP_WARN_Espera a que termine el roleplay|r
-    >>|cRXP_WARN_Esta es una misión cronometrada de 45 minutos|r
+    >>|cRXP_WARN_Esto inicia una misión con tiempo límite de 45 minutos|r
     .turnin 848 >>Entrega la misión Esporas de hongos
     .timer 7,Esporas de hongos RP
     .accept 853 >>Acepta la misión Boticaria Zamah
@@ -5507,7 +5507,7 @@ step
     #label ZamahPickup
     .goto The Barrens,51.44,30.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Helbrim|r
-    >>|cRXP_WARN_Esta es una misión cronometrada de 45 minutos|r
+    >>|cRXP_WARN_Esto inicia una misión con tiempo límite de 45 minutos|r
     .accept 853 >>Acepta la misión Boticaria Zamah
     .target Apothecary Helbrim
     .isQuestTurnedIn 848

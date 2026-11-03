@@ -310,7 +310,7 @@ step
 .target "Auntie" Bernice Stonefield
     .accept 84 >> Acepta la misión Vuelve con Billy
 step
-    .goto 1429,34.945,83.855
+    .goto 1429/0,322.53,-9880.48--c:1429,34.945,83.855
 >>Habla con la |cRXP_FRIENDLY_Abuela Pedregosa|r
     .turnin 111 >> Entrega la misión Habla con la abuelita
 .target Gramma Stonefield
@@ -1872,7 +1872,7 @@ step
     .goto 1437/0,-819.67,-3691.42,15,0
     .goto 1437/0,-807.26,-3716.22,15,0
     .goto 1437/0,-827.94,-3724.49,15,0
-    .goto 1437,10.760,56.721
+    .goto 1437/0,-834.55,-3711.29--c:1437,10.760,56.721
     .vendor >> Si tienes 8 platas, revisa con Neal Allen si tiene Tubo de bronce y cómpralo si está allí
 step
     .money <0.04
