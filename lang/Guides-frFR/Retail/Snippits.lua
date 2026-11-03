@@ -773,7 +773,7 @@ step
 step
     #label ChromieTime2
     .goto 84,56.257,17.311
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r. (NOT TRANSLATED IN :frFR YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
     .accept 40519 >>Acceptez la quête Legion: Le retour de la Légion
     .chromietime 10
     .skipgossipid 51901
@@ -784,7 +784,7 @@ step
     #label CallBoardStart
     .goto 84,62.21,29.84
     >>|TInterface/cursor/crosshair/interact.blp:20|tCliquez sur le |cRXP_PICK_Tableau de l’appel des héros|r
-    .accept 40519 >>Accept Legion: The Legion Returns (NOT TRANSLATED IN :frFR YET)
+    .accept 40519 >>Acceptez la quête Legion : The Legion Returns
     .choose 1851120
 step
     #arrowtext Parlez à\n|cRXP_FRIENDLY_Irion|r

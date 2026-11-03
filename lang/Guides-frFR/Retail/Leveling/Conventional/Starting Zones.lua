@@ -26469,10 +26469,10 @@ step
     .goto 463,43.46,91.82,30,0
     .goto 463,43.81,88.49,30,0
     .goto 463,46.15,88.00,30,0
-    >>Click on the |cRXP_PICK_Bloodtalon Lasso|r macro in the "Active Items Frame" to use it on |cRXP_FRIENDLY_Swiftclaw|r. He runs counter-clockwise around the island. (NOT TRANSLATED IN :frFR YET)
+    >>Cliquez sur la macro |cRXP_PICK_Bloodtalon Lasso|r dans le « Cadre d'objets actifs » pour l'utiliser sur |cRXP_FRIENDLY_Vivegriffe|r. Il court dans le sens inverse des aiguilles d'une montre autour de l'île.
     .complete 24626,1 --1/1 Capture Swiftclaw
 	.unitscan Vivegriffe
-    .macro Bloodtalon Lasso,134326 >>/targetexact Swiftclaw\n/use item:50053 (NOT TRANSLATED IN :frFR YET)
+    .macro Bloodtalon Lasso,134326 >>/targetexact Swiftclaw\n/use item:50053
 step
     #arrowtext Conduisez |cRXP_FRIENDLY_Vivegriffe|r de retour au |cRXP_PICK_Raptor Pen|r
     .goto 463,50.42,66.82,40,0
@@ -27313,10 +27313,10 @@ step
     #loop
     .goto 7,48.25,60.43,20,0
     .goto 7,48.13,57.28,20,0
-    >>Click on the |cRXP_PICK_Tender Stride Meat|r macro in the "Active Items Frame" to use it on |cRXP_FRIENDLY_Kyle|r. Wait until Kyle is nearby. (NOT TRANSLATED IN :frFR YET)
+    >>Cliquez sur la macro |cRXP_PICK_Tender Stride Viande|r dans le « Cadre d'objets actifs » pour l'utiliser sur |cRXP_FRIENDLY_Kyle|r. Attendez que Kyle soit à proximité.
     .complete 11129,1 --1/1 Kyle fed
     .target Kyle
-    .macro Tender Stride Meat,134400 >>/targetexact Kyle\n/use item:33009 (NOT TRANSLATED IN :frFR YET)
+    .macro Tender Stride Meat,134400 >>Sylvenier Stride Viande
 step
     #arrowtext Parlez à |cRXP_FRIENDLY_Ahab Sabot-de-Blé|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Ahab Sabot-de-Blé|r.
@@ -29650,37 +29650,37 @@ step
 step
     #sticky
     >>Vous devez récolter un total de 9 Kaja'Colas Zero-Un
-    >>Click on the |cRXP_PICK_Kaja'Cola Zero-One|r macro in the "Active Items Frame" to use it on |cRXP_FRIENDLY_Kezan Citizen|r. (NOT TRANSLATED IN :frFR YET)
-    .macro Kaja'Cola Zero-One,134400 >>/targetexact Kezan Citizen\n/use item:52484 (NOT TRANSLATED IN :frFR YET)
+    >>Cliquez sur la macro |cRXP_PICK_Kaja'Cola Zero-Un|r dans le « Cadre d'objets actifs » pour l'utiliser sur |cRXP_FRIENDLY_Citoyen de Kezan|r.
+    .macro Kaja'Cola Zero-One,134400 >>Le Kaja’Cola Zéro-Un
     .collect 52484,9,25122,0xF
     .complete 25122,4 --6/6 Other goblin's minds freed
     .target Citoyen de Kezan
 step
     #title Libérez Crack
-    >>Click on the |cRXP_PICK_Kaja'Cola Zero-One|r macro in the "Active Items Frame" to use it on |cRXP_FRIENDLY_Ace|r. (NOT TRANSLATED IN :frFR YET)
+    >>Cliquez sur la macro |cRXP_PICK_Le Kaja’Cola Zéro-Un|r dans le « Cadre d'objets actifs » pour l'utiliser sur |cRXP_FRIENDLY_Crack|r.
     .goto 174,57.1,36.9
-    .macro Kaja'Cola Zero-One,134400 >>/targetexact Ace\n/use item:52484 (NOT TRANSLATED IN :frFR YET)
+    .macro Kaja'Cola Zero-One,134400 >>Le Kaja’Cola Zéro-Un
     .complete 25122,1 --1/1 Ace's mind freed
     .target Crack
 step
     #title Libérez Izzy
-    >>Click on the |cRXP_PICK_Kaja'Cola Zero-One|r macro in the "Active Items Frame" to use it on |cRXP_FRIENDLY_Izzy|r. (NOT TRANSLATED IN :frFR YET)
+    >>Cliquez sur la macro |cRXP_PICK_Le Kaja’Cola Zéro-Un|r dans le « Cadre d'objets actifs » pour l'utiliser sur |cRXP_FRIENDLY_Izzy|r.
     .goto 174,57.01,35.02
-    .macro Kaja'Cola Zero-One,134400 >>/targetexact Izzy\n/use item:52484 (NOT TRANSLATED IN :frFR YET)
+    .macro Kaja'Cola Zero-One,134400 >>Le Kaja’Cola Zéro-Un
     .complete 25122,2 --1/1 Izzy's mind freed
     .target Izzy
 step
     #arrowtext Tuer\n|cRXP_ENEMY_Splozombre le Meneur de brutes|r
-    >>Kill |cRXP_ENEMY_Blastshadow the Brutemaster|r and click on the flying purple |cRXP_PICK_Soulstone|r. Click on the |cRXP_PICK_Blastshadow's Soulstone|r macro in the "Active Items Frame" to use it on his corpse. (NOT TRANSLATED IN :frFR YET)
-    .macro Blastshadow's Soulstone,134336 >>/targetexact Blastshadow the Brutemaster\n/use [@target,dead] item:52481 (NOT TRANSLATED IN :frFR YET)
+    >>Tuez |cRXP_ENEMY_Splozombre le Meneur de brutes|r et cliquez sur la |cRXP_PICK_Pierre d'âme|r violette volante. Cliquez sur la macro |cRXP_PICK_Pierre d'âme de Splozombre|r dans le « Cadre d'objets actifs » pour l'utiliser sur son cadavre.
+    .macro Blastshadow's Soulstone,134336 >>Pierre d'âme de Splozombre
     .goto 174,56.18,32.29
     .complete 25123,1 --1/1 Blastshadow's Soulstone destroyed
     .mob Splozombre le Meneur de brutes
 step
     #title Libérez Gobeur
-    >>Click on the |cRXP_PICK_Kaja'Cola Zero-One|r macro in the "Active Items Frame" to use it on |cRXP_FRIENDLY_Gobber|r. (NOT TRANSLATED IN :frFR YET)
+    >>Cliquez sur la macro |cRXP_PICK_Le Kaja’Cola Zéro-Un|r dans le « Cadre d'objets actifs » pour l'utiliser sur |cRXP_FRIENDLY_Gobeur|r.
     .goto 174,57.04,32.17
-    .macro Kaja'Cola Zero-One,134400 >>/targetexact Gobber\n/use item:52484 (NOT TRANSLATED IN :frFR YET)
+    .macro Kaja'Cola Zero-One,134400 >>Le Kaja’Cola Zéro-Un
     .complete 25122,3 --1/1 Gobber's mind freed
     .target Gobeur
 step
