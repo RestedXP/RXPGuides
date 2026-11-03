@@ -581,10 +581,10 @@ s["SHAMAN"] = {
 
 s["HUNTER"] = {
     [4] = {
+        3044, -- arcane shot
         1978 -- serpent sting
     },
     [6] = {
-        3044, -- arcane shot
         1130 -- hunter's mark
     },
     [8] = {
@@ -607,7 +607,6 @@ s["HUNTER"] = {
         24549 -- natural armor r2
     },
     [14] = {
-        14281, -- arcane shot 2
         6197 -- eagle eye
     },
     [16] = {
@@ -622,8 +621,8 @@ s["HUNTER"] = {
     },
     [20] = {
         781, -- disengage r1
+        19434, --aimed shot r1
         2643, -- multishot
-        14282, -- arcane shot r3
         1499, -- freezing trap r1
         4187, -- great stamina r3
         24550, -- natural armor r3
@@ -636,6 +635,7 @@ s["HUNTER"] = {
         14323, -- hunters mark r2
         24519, -- arcane res r1
         19883, -- track humanoids
+        19884, --track undead
         1002 -- eyes of the beast
     },
     [24] = {
@@ -652,6 +652,8 @@ s["HUNTER"] = {
         13809, -- frost trap
         3661, -- mend pet r3
         5384, -- feign death
+        14281, -- arcane shot 2
+        14282, -- arcane shot r3
         14283, -- arcane shot r4
         14924 -- growl r4
     },
@@ -692,6 +694,8 @@ s["HUNTER"] = {
         14304 -- immolation trap r4
     },
     [48] = {
+        1293525, --Summon Hawk r2
+        1293526, --summon hawk r3
         14321, -- aspect of the hawk r5
         13542, -- mend pet r5
         14285, -- arcaneshot r6
@@ -709,10 +713,6 @@ s["HUNTER"] = {
         24515 -- sr r3
     },
     [52] = {
-        20900, --Aimed Shot r2
-        20901, --Aimed Shot r3
-        20902, --Aimed Shot r4
-        20903, --Aimed Shot r5
         13543 -- mend pet r6
     },
     [54] = {
@@ -1402,81 +1402,86 @@ s["PRIEST"] = {
         1243 -- power word: fortitude
     },
     [4] = {
-        359 -- shadow word pain
+	589, --shadow word pain
+        2052 -- lesser heal r2
     },
     [6] = {
-        2052, -- lesser heal r2
-        17, -- power word shield
-        591 -- smite r2
+        591, -- smite r2
+        17 -- power word shield
     },
     [8] = {
         139 -- renew
     },
     [10] = {
         13908, -- desperate prayer human dwarf
-        2053, -- lesser heal r3
         8092, -- mind blast
         594, -- shadow word pain r2
+        2053, -- lesser heal r3
         2652 -- touch of weakness undead
     },
     [12] = {
+        592, -- power word shield r2
         588, -- inner fire
-        1244, -- power word fortitude r2
-        592 -- power word shield r2
+        1244 -- power word fortitude r2
     },
     [14] = {
-        528, -- cure disease
-        8122, -- psychic scream
-        6074, -- renew r2
-        598 -- smite r3
+        8122 -- psychic scream
     },
     [16] = {
+        8102, -- mind blast r2
+        8122, -- psychic scream
         2054, -- heal
-        8102 -- mind blast r2
+        6074, -- renew r2
+        598, -- smite r3
+        528 -- cure disease
     },
     [18] = {
-        527, -- dispel magic
         19236, -- desperate prayer r2 human/dwarf
-        600, -- power word shield r3
         970, -- shadow word pain r3
+        600, -- power word shield r3
+        527, -- dispel magic
         19296 -- starshards r2 night elf
     },
     [20] = {
+	453, -- mind soothe
         2944, -- devouring plague undead
         2651, -- elunes grace night elf
         6346, -- fear ward dwarf
         --      13896, -- feedback human, mana cost too high
-        2061, -- flash heal
         14914, -- holy fire
+        2061, -- flash heal
         7128, -- inner fire r2
         6075, -- renew r3
         18137, -- shadowguard troll
-        19261 -- touch of weakness r2 undead
+        19261, -- touch of weakness r2 undead
+	9484 --shackle undead
     },
     [22] = {
         453, -- mind soothe 2lvl
-        2055, -- heal r2
         8103, -- mind blast r3
-        984, -- smite r4
+        2055, -- heal r2
+        -- 984, -- smite r4 nopenope
+	2096, --mind vision
         9484 -- shackle undead 2lvl
     },
     [24] = {
         15262, -- holy fire r2
         1245, -- power word fortitude r3
-        3747 -- power word shield r4
+        3747, -- power word shield r4
+	8129 --mana burn
     },
     [26] = {
         19238, -- desperate prayer r3 human dwarf
+        992, -- shadow word pain r4
         9472, -- flash heal r2
-        6076, -- renew r4
-        992 -- shadow word pain r4
+        6076 -- renew r4
         --      19299, -- star shards r3 night elf
     },
     [28] = {
         19276, -- devouring plague r2 undead
         6063, -- heal r3
         8104, -- mind blast r4
-        824, -- psychic scream r2
+        8124, -- psychic scream r2
         19308 -- shadowguard r2 troll
     },
     [30] = {
@@ -1487,78 +1492,97 @@ s["PRIEST"] = {
         15263, -- holy fire r3
         602, -- inner fire r3
         6065, -- power word shield r5
-        1004, -- smite r5
+        --1004, -- smite r5 nopenope
         19262 -- touch of weakness r3 undead
     },
     [32] = {
         552, -- abolish disease
         9473, -- flash heal r3
-        6077 -- renew r5
+        6077, -- renew r5
+	8131 --mana burn r2
     },
     [34] = {
         19240, -- desperate prayer r4 human dwarf
-        6064, -- heal r4
         1706, -- levitate
         8105, -- mind blast r5
-        2767 -- shadow word pain
+        2767, -- shadow word pain
+        6064 -- heal r4
         --    19302, -- starshards r4 night elf
     },
     [36] = {
         19277, -- devouring plague r3 undead
+	17311, --mind flay r2
         15264, -- holy fire r4
         2791, -- power word fortitude r4
         6066, -- power word shield r6
+	17312, --mind flay r3
         19309, -- shadowguard r3 troll
-        6060, -- smite r6
+        --6060, -- smite r6 nopenope
         8192, -- mind soothe r2
         988 -- dispel magic r2
     },
     [38] = {
-        9474, -- flash heal r4
-        6078 -- renew r6
+        --9474, -- flash heal r4	moneyskip
+        --6078 -- renew r6		moneyskip
     },
     [40] = {
         8106, -- mind blast r6
         --     19273, -- feedback r3
-        2060, -- greater heal
+        --2060, -- greater heal		moneyskip
         1006, -- inner fire r4
         17311, -- mind flay r2
         17312, -- mind flay r3
-        9485, -- shackle undead r2
+        --9485, -- shackle undead r2	moneyskip
+	19264, --touch of weakness r4
+	10874, --manaburn r3
         19291 -- elune's grace r3 night elf
     },
     [42] = {
         19241, -- desperate prayer r5 dwarf human
         10898, -- power word shield r7
-        10888, -- psychic scream r3
-        10892, -- shadow word pain r6
-        10957 -- shadow protection r2
+        --10888, -- psychic scream r3		moneyskip
+        10892 -- shadow word pain r6
+        --10957 -- shadow protection r2		moneyskip
         --      19303, -- starshards r5 night elf
     },
     [44] = {
         17313, -- mind flay r4
-        19208, -- devouring plague r4 undead
-        10915, -- flash heal r5
-        10927, -- renew r7
+        19278, -- devouring plague r4 undead
+        --10915, -- flash heal r5		moneyskip
+        --10927, -- renew r7			moneyskip
         19310, -- shadowguard r4 troll
         10911 -- mind control r2
+	--10909 --mind vision r2		moneyskip
     },
     [46] = {
-        10963, -- greater heal r2
+        --10963, -- greater heal r2		moneyskip
         10945 -- mind blast r7
     },
     [48] = {
         10937, -- power word fortitude r5
+	10875, --mana burn r4
         10899, -- power word shield r8
-        21562 -- prayer of fortitude
+        --21562 -- prayer of fortitude nope
+	-- ALL THE MONEYSKIPS HERE
+        10888, -- psychic scream r3
+	10909, --mind vision r2
+        10957, -- shadow protection r2
+        9474, -- flash heal r4
+        6078, -- renew r6
+        2060, -- greater heal
+        10915, -- flash heal r5
+        10927, -- renew r7
+        10963, -- greater heal r2
+        9485 -- shackle undead r2
     },
     [50] = {
         19242, -- desperate prayer r6 human dwarf
         19274, -- feedback r4 human
+        10893, -- shadow word pain r7
         10916, -- flash heal r6
         10951, -- inner fire r5
         10928, -- renew r8
-        10893, -- shadow word pain r7
+	19265, --touch of weakness r5
         --      19304, -- starshards r6 night elf
         19292 -- elune's grace r4
     },
@@ -1578,10 +1602,12 @@ s["PRIEST"] = {
         10890, -- psychic scream r4
         10929, -- renew r9
         10958, -- shadow protection r3
-        27683 -- prayer of shadow protection
+	10876 --mana burn r5
+        --27683 -- prayer of shadow protection nope
     },
     [58] = {
         19243, -- deserpate prayer r7 dwarf human
+	10912, --mind control r3
         10965, -- greater heal r4
         10947, -- mind blast r9
         10894 -- shadow word pain r8
