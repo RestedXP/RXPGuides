@@ -3871,7 +3871,7 @@ step << Horde
     #arrowtext Conversar com |cRXP_FRIENDLY_Crona|r
     .goto 85,40.82,80.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Crona|r.
-    .accept 43926 >>Aceite Legion: a volta da Legião
+    .accept 43926 >>Aceite Legion: A Legião Retorna
     .chromietime 10
     .skipgossipid 51901
     .skipgossipid 51902
@@ -3942,7 +3942,7 @@ step << Alliance
     #arrowtext Clique\n|cRXP_PICK_Tabuleiro de Chamado dos Heróis|r
     .goto 84,62.21,29.84
     >>|TInterface/cursor/crosshair/interact.blp:20|tClique no |cRXP_PICK_Tabuleiro do Chamado dos Heróis|r
-    .accept 40519 >>Aceite Legion: a volta da Legião
+    .accept 40519 >>Aceite Legion: A Legião Retorna
     .choose 1851120
 step << Alliance
     #include RestedXP Progressão Rápida\a) GC Tempo de Crona Normal
@@ -3968,7 +3968,7 @@ step << Horde
     #arrowtext Conversar com |cRXP_FRIENDLY_Crona|r
     .goto 85,40.82,80.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Crona|r.
-    .accept 43926 >>Aceite Legion: a volta da Legião
+    .accept 43926 >>Aceite Legion: A Legião Retorna
     .chromietime 10
     .skipgossipid 51901
     .skipgossipid 51902
@@ -5655,7 +5655,7 @@ step << !Evoker Horde
     #arrowtext Conversar com |cRXP_FRIENDLY_Crona|r
     .goto 85,40.82,80.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Crona|r.
-    .accept 43926 >>Aceite Legion: a volta da Legião
+    .accept 43926 >>Aceite Legion: A Legião Retorna
     .chromietime 10
     .skipgossipid 51901
     .skipgossipid 51902
@@ -6804,7 +6804,7 @@ step << Horde Evoker
     #arrowtext Conversar com |cRXP_FRIENDLY_Crona|r
     .goto 85,40.82,80.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Crona|r.
-    .accept 43926 >>Aceite Legion: a volta da Legião
+    .accept 43926 >>Aceite Legion: A Legião Retorna
     .chromietime 10
     .skipgossipid 51901
     .skipgossipid 51902
@@ -17472,7 +17472,7 @@ step
     #arrowtext Clique\n|cRXP_PICK_Tabuleiro de Chamado dos Heróis|r
     .goto 84,62.21,29.84
     >>|TInterface/cursor/crosshair/interact.blp:20|tClique no |cRXP_PICK_Tabuleiro do Chamado dos Heróis|r
-    .accept 40519 >>Aceite Legion: a volta da Legião
+    .accept 40519 >>Aceite Legion: A Legião Retorna
     .choose 1851120
 step
     #include RestedXP Progressão Rápida\a) GC Tempo de Crona Normal@ChromieTime1-ChromieTime2
@@ -22727,7 +22727,7 @@ step << DemonHunter !VoidElf
     #arrowtext Clique\n|cRXP_PICK_Tabuleiro de Chamado dos Heróis|r
     .goto 84,62.21,29.84
     >>|TInterface/cursor/crosshair/interact.blp:20|tClique no |cRXP_PICK_Tabuleiro do Chamado dos Heróis|r
-    .accept 40519 >>Aceite Legion: a volta da Legião
+    .accept 40519 >>Aceite Legion: A Legião Retorna
     .choose 1851120
 step << DemonHunter !VoidElf
     #arrowtext Conversar com |cRXP_FRIENDLY_Wrathion|r
@@ -26469,10 +26469,10 @@ step
     .goto 463,43.46,91.82,30,0
     .goto 463,43.81,88.49,30,0
     .goto 463,46.15,88.00,30,0
-    >>Click on the |cRXP_PICK_Bloodtalon Lasso|r macro in the "Active Items Frame" to use it on |cRXP_FRIENDLY_Swiftclaw|r. He runs counter-clockwise around the island. (NOT TRANSLATED IN :ptBR YET)
+    >>Clique na |cRXP_PICK_Laço Bloodtalon|r no "Ativo Itens Frame" para usá-lo em |cRXP_FRIENDLY_Garrápida|r. Ele corre em sentido anti-horário ao redor da ilha.
     .complete 24626,1 --1/1 Capture Swiftclaw
 	.unitscan Garrápida
-    .macro Bloodtalon Lasso,134326 >>/targetexact Swiftclaw\n/use item:50053 (NOT TRANSLATED IN :ptBR YET)
+    .macro Bloodtalon Lasso,134326 >>Laço Bloodtalon
 step
     #arrowtext Montar |cRXP_FRIENDLY_Garrápida|r de volta para o |cRXP_PICK_Raptor Pen|r
     .goto 463,50.42,66.82,40,0
@@ -27313,10 +27313,10 @@ step
     #loop
     .goto 7,48.25,60.43,20,0
     .goto 7,48.13,57.28,20,0
-    >>Click on the |cRXP_PICK_Tender Stride Meat|r macro in the "Active Items Frame" to use it on |cRXP_FRIENDLY_Kyle|r. Wait until Kyle is nearby. (NOT TRANSLATED IN :ptBR YET)
+    >>Clique na |cRXP_PICK_Carne Tenra Stride|r no "Ativo Itens Frame" para usá-la em |cRXP_FRIENDLY_Quico|r. Espere até Quico estar por perto.
     .complete 11129,1 --1/1 Kyle fed
     .target Quico
-    .macro Tender Stride Meat,134400 >>/targetexact Kyle\n/use item:33009 (NOT TRANSLATED IN :ptBR YET)
+    .macro Tender Stride Meat,134400 >>Carne Tenra Stride
 step
     #arrowtext Fale com |cRXP_FRIENDLY_Ahab Casco Trigo|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ahab Casco Trigo|r.
@@ -29650,37 +29650,37 @@ step
 step
     #sticky
     >>Você precisa coletar um total de 9 Jaka'Colas Zero-Um
-    >>Click on the |cRXP_PICK_Kaja'Cola Zero-One|r macro in the "Active Items Frame" to use it on |cRXP_FRIENDLY_Kezan Citizen|r. (NOT TRANSLATED IN :ptBR YET)
-    .macro Kaja'Cola Zero-One,134400 >>/targetexact Kezan Citizen\n/use item:52484 (NOT TRANSLATED IN :ptBR YET)
+    >>Clique na |cRXP_PICK_Kaja'Cola Zero-Um|r no "Ativo Itens Frame" para usá-lo no |cRXP_FRIENDLY_Cidadão de Kezan|r.
+    .macro Kaja'Cola Zero-One,134400 >>Jaka'Cola Zero-um
     .collect 52484,9,25122,0xF
     .complete 25122,4 --6/6 Other goblin's minds freed
     .target Cidadão de Kezan
 step
     #title Liberte o Reco-reco
-    >>Click on the |cRXP_PICK_Kaja'Cola Zero-One|r macro in the "Active Items Frame" to use it on |cRXP_FRIENDLY_Ace|r. (NOT TRANSLATED IN :ptBR YET)
+    >>Clique na |cRXP_PICK_Kaja'Cola Zero-Um|r no "Ativo Itens Frame" para usá-lo em |cRXP_FRIENDLY_Reco-reco|r.
     .goto 174,57.1,36.9
-    .macro Kaja'Cola Zero-One,134400 >>/targetexact Ace\n/use item:52484 (NOT TRANSLATED IN :ptBR YET)
+    .macro Kaja'Cola Zero-One,134400 >>Jaka'Cola Zero-um
     .complete 25122,1 --1/1 Ace's mind freed
     .target Reco-reco
 step
     #title Liberte a Azeitona
-    >>Click on the |cRXP_PICK_Kaja'Cola Zero-One|r macro in the "Active Items Frame" to use it on |cRXP_FRIENDLY_Izzy|r. (NOT TRANSLATED IN :ptBR YET)
+    >>Clique na |cRXP_PICK_Kaja'Cola Zero-Um|r no "Ativo Itens Frame" para usá-lo em |cRXP_FRIENDLY_Azeitona|r.
     .goto 174,57.01,35.02
-    .macro Kaja'Cola Zero-One,134400 >>/targetexact Izzy\n/use item:52484 (NOT TRANSLATED IN :ptBR YET)
+    .macro Kaja'Cola Zero-One,134400 >>Jaka'Cola Zero-um
     .complete 25122,2 --1/1 Izzy's mind freed
     .target Azeitona
 step
     #arrowtext Mate |cRXP_ENEMY_Ruinumbra, o Brutomestre|r
-    >>Kill |cRXP_ENEMY_Blastshadow the Brutemaster|r and click on the flying purple |cRXP_PICK_Soulstone|r. Click on the |cRXP_PICK_Blastshadow's Soulstone|r macro in the "Active Items Frame" to use it on his corpse. (NOT TRANSLATED IN :ptBR YET)
-    .macro Blastshadow's Soulstone,134336 >>/targetexact Blastshadow the Brutemaster\n/use [@target,dead] item:52481 (NOT TRANSLATED IN :ptBR YET)
+    >>Mate |cRXP_ENEMY_Ruinumbra, o Brutomestre|r e clique na |cRXP_PICK_Pedra da Alma|r. Clique na |cRXP_PICK_Pedra da Alma de Ruinumbra|r em "Ativo Itens Frame" para usá-lo no seu cadáver.
+    .macro Blastshadow's Soulstone,134336 >>Pedra da Alma de Ruinumbra
     .goto 174,56.18,32.29
     .complete 25123,1 --1/1 Blastshadow's Soulstone destroyed
     .mob Ruinumbra, o Brutomestre
 step
     #title Liberte o Bolão
-    >>Click on the |cRXP_PICK_Kaja'Cola Zero-One|r macro in the "Active Items Frame" to use it on |cRXP_FRIENDLY_Gobber|r. (NOT TRANSLATED IN :ptBR YET)
+    >>Clique na |cRXP_PICK_Kaja'Cola Zero-Um|r no "Ativo Itens Frame" para usá-lo em |cRXP_FRIENDLY_Bolão|r.
     .goto 174,57.04,32.17
-    .macro Kaja'Cola Zero-One,134400 >>/targetexact Gobber\n/use item:52484 (NOT TRANSLATED IN :ptBR YET)
+    .macro Kaja'Cola Zero-One,134400 >>Jaka'Cola Zero-um
     .complete 25122,3 --1/1 Gobber's mind freed
     .target Bolão
 step

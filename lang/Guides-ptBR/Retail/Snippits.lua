@@ -683,7 +683,7 @@ step << Alliance
     .goto 84,49.11,87.64,8,0
     .goto 84,49.42,86.83,8,0
     >>|TInterface/cursor/crosshair/interact.blp:20|tClique no |cRXP_PICK_Tabuleiro do Chamado dos Heróis|r
-    .accept 40519 >>Aceite Legion: a volta da Legião
+    .accept 40519 >>Aceite Legion: A Legião Retorna
     .choose 1851120
 step << Alliance
     #arrowtext Sair da Torre dos Magos
@@ -694,7 +694,7 @@ step << Alliance
     #requires The Legion Returns
     .goto 84,62.21,29.84
     >>|TInterface/cursor/crosshair/interact.blp:20|tClique no |cRXP_PICK_Tabuleiro do Chamado dos Heróis|r
-    .accept 40519 >>Aceite Legion: a volta da Legião
+    .accept 40519 >>Aceite Legion: A Legião Retorna
     .choose 1851120
 step << Alliance
     #arrowtext Clique\n|cRXP_PICK_Tabuleiro de Chamado dos Heróis|r
@@ -773,8 +773,8 @@ step
 step
     #label ChromieTime2
     .goto 84,56.257,17.311
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r. (NOT TRANSLATED IN :ptBR YET)
-    .accept 40519 >>Aceite Legion: a volta da Legião
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Crona|r |cRXP_WARN_[2]|r.
+    .accept 40519 >>Aceite Legion: A Legião Retorna
     .chromietime 10
     .skipgossipid 51901
     .skipgossipid 51902
@@ -784,7 +784,7 @@ step
     #label CallBoardStart
     .goto 84,62.21,29.84
     >>|TInterface/cursor/crosshair/interact.blp:20|tClique no |cRXP_PICK_Tabuleiro do Chamado dos Heróis|r
-    .accept 40519 >>Accept Legion: The Legion Returns (NOT TRANSLATED IN :ptBR YET)
+    .accept 40519 >>Aceite Legion: A Legião Retorna
     .choose 1851120
 step
     #arrowtext Conversar com |cRXP_FRIENDLY_Wrathion|r
