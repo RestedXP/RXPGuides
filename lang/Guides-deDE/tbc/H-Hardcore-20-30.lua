@@ -3250,7 +3250,7 @@ step << Rogue/Hunter/Shaman/Druid
 step << Rogue/Hunter/Shaman/Druid
 	.goto Hillsbrad Foothills,80.14,38.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Kris|r
-    >>|cRXP_BUY_Buy|r |T132603:0|t[|cRXP_FRIENDLY_Wolf Bracers|r] |cRXP_BUY_from her if they're up|r (NOT TRANSLATED IN :deDE YET)
+    >>|cRXP_BUY_Kauft|r |T132603:0|t[|cRXP_FRIENDLY_Wolf-Armschienen|r] |cRXP_BUY_von ihr, falls sie verfügbar sind|r
     .vendor >> Verkaufe und Repariere
     .target Kris Legace
     .money <0.3515
@@ -6436,7 +6436,7 @@ step
     .goto Thousand Needles,26.16,55.89,15,0
     .goto Thousand Needles,26.69,55.62,15,0
     .goto Thousand Needles,25.90,55.23
-    >>Kill |cRXP_ENEMY_Grenka Bloodscreech|r. Loot her for |cRXP_LOOT_Grenka's Claw|r (NOT TRANSLATED IN :deDE YET)
+    >>Tötet |cRXP_ENEMY_Grenka Blutkreischer|r. Plündert sie für |cRXP_LOOT_Grenka's Klaue|r
     >>|cRXP_WARN_This quest was nerfed in TBC. No adds will spawn|r (NOT TRANSLATED IN :deDE YET)
     .complete 1150,1 --Collect Grenka's Claw (x1)
     .mob Grenka Bloodscreech
