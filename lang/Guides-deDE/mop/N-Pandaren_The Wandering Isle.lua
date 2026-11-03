@@ -124,7 +124,7 @@ step
 step
     #completewith next
     --#title |cFFFCDC00Enter the house|r
-    .goto 378,59.57,19.05,10 >>BETRETET das Haus
+    .goto 378,59.57,19.05,10 >>Betretet das Haus
 step
     .goto 378,60.26,19.35
     >>Niederlage |cRXP_ENEMY_Sparring Trainees|r

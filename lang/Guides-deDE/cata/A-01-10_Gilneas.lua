@@ -618,7 +618,7 @@ step
     #optional
     #completewith next
     .goto 179,37.17,63.58,8,0
-    .goto 179,37.41,63.24,10 >>BETRETET das Haus
+    .goto 179,37.41,63.24,10 >>Betretet das Haus
 step
     .goto 179,37.41,63.24
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Krennan Aranas|r innerhalb
@@ -821,7 +821,7 @@ step
     #label ChildrenHouse2
     #requires ChildrenHouse1
     #completewith Ashley
-    .goto 179,27.83,66.83,7 >>BETRETET das Haus
+    .goto 179,27.83,66.83,7 >>Betretet das Haus
 step
     #optional
     #completewith Ashley
@@ -1565,7 +1565,7 @@ step
     #optional
     #requires JournalP
     #completewith next
-    .goto 179,60.37,91.46,8 >>BETRETET das Haus
+    .goto 179,60.37,91.46,8 >>Betretet das Haus
 step
     #requires JournalP
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Lorna Crowley|r und |cRXP_FRIENDLY_Gwen Armstead|r innerhalb
@@ -1585,7 +1585,7 @@ step
     #optional
     #requires JournalP
     #completewith next
-    .goto 179,60.37,91.46,8 >>BETRETET das Haus
+    .goto 179,60.37,91.46,8 >>Betretet das Haus
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Gwen Armstead|r und |cRXP_FRIENDLY_Lorna Crowley|r innerhalb
     .turnin 24501 >>Gebt die Quest Spinne am Morgen bringt Kummer und Sorgen ab
@@ -1741,7 +1741,7 @@ step
     #optional
     #requires Taldoren
     #completewith ScytheOfElune
-    .goto 179,57.85,75.95,8 >> BETRETET das Haus
+    .goto 179,57.85,75.95,8 >> Betretet das Haus
 step
     #label ScytheOfElune
     .goto 179,57.51,75.59
@@ -2028,7 +2028,7 @@ step
     #optional
     #completewith next
     >>Warte auf das RP
-    .goto 202,36.89,59.09,8 >>BETRETET das Haus
+    .goto 202,36.89,59.09,8 >>Betretet das Haus
 step
     .goto 202,38.62,60.25
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t Sprecht mit |cRXP_FRIENDLY_Lorna Crowley|r im Inneren

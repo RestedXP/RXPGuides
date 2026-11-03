@@ -233,7 +233,7 @@ step << Warlock
 	.mob Training Dummy
 step
     #completewith next
-    .goto 18,32.40,65.56,8 >>BETRETET das Haus
+    .goto 18,32.40,65.56,8 >>Betretet das Haus
 step
     .goto 18,32.69,65.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Lilian|r

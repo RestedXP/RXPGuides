@@ -517,7 +517,7 @@ step
 step
     .goto 63,73.56,60.85
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Kuray'bin|r
-    .turnin 6503 >>Gebt die Quest Die Kundschafter des Eschentals ab
+    .turnin 6503 >>Gebt die Quest Die Kundschafter von Ashenvale ab
     .target Kuray'bin
     .isQuestTurnedIn 13712
 step
@@ -1058,7 +1058,7 @@ step
     .mob Thistlefur Avenger
 step
     #completewith next
-    .goto 63,38.37,30.59,40 >>Betretet Höhle der Distelfelle
+    .goto 63,38.37,30.59,40 >>Betretet die Höhle der Distelfelle
 step
     #loop
     .goto 1440/1,-627.70001,3394.69995,0
@@ -1115,7 +1115,7 @@ step
 step
     .goto 63,38.89,42.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Mitsuwa|r
-    .turnin 6462 >>Gebt die Quest Trollglücksbringer ab
+    .turnin 6462 >>Gebt die Quest Troll-Glücksbringer ab
     .target Mitsuwa
 step
     .goto 63,38.47,44.22
@@ -1386,7 +1386,7 @@ step
     .target Foreman Jinx
 step
     #completewith KillAssassins
-    >>Tötet |cRXP_ENEMY_Ursangus|r. Beute ihn für |T132941:0|t[|cRXP_LOOT_Ursangus' Tatze|r] und benutzen es um die Quest zu beginnen
+    >>Tötet |cRXP_ENEMY_Ursangous|r. Plündert ihn für |T132941:0|t[|cRXP_LOOT_Ursangus' Tatze|r] und benutzt sie, um die Quest zu starten
     >>|cRXP_WARN_Er patrouilliert ein wenig umher|r
     .collect 16303,1,23 --Collect Ursangous's Paw (x1)
     .accept 23 >> Akzeptiert die Quest Ursangus' Tatze
@@ -1434,7 +1434,7 @@ step
     .waypoint 1440/1,-597.40002,2149.40015,30,0
     .waypoint 1440/1,-653.40002,2121.30005,30,0
     .waypoint 1440/1,-693.90002,2149.00000,30,0
-    >>Tötet |cRXP_ENEMY_Ursangus|r. Beute ihn für |T132941:0|t[|cRXP_LOOT_Ursangus' Tatze|r] und benutzen es um die Quest zu beginnen
+    >>Tötet |cRXP_ENEMY_Ursangous|r. Plündert ihn für |T132941:0|t[|cRXP_LOOT_Ursangus' Tatze|r] und benutzt sie, um die Quest zu starten
     >>|cRXP_WARN_Er patrouilliert ein wenig umher|r
     .collect 16303,1,23 --Collect Ursangous's Paw (x1)
     .accept 23 >> Akzeptiert die Quest Ursangus' Tatze
@@ -1468,7 +1468,7 @@ step
     .target Thagg
 step
     #completewith next
-    >>Tötet |cRXP_ENEMY_Schattumbra|r. Beute sie für |T132225:0|t[|cRXP_LOOT_Schattumbra's Kopf|r] und benutzen es um die Quest zu beginnen
+    >>Tötet |cRXP_ENEMY_Schattumbra|r. Plündert sie für |T132225:0|t[|cRXP_LOOT_Schattumbras Kopf|r] und benutzt ihn um die Quest zu starten
     >>|cRXP_ENEMY_Schattumbra|r patrouilliert in der Gegend herum
     .collect 16304,1,24 --Collect Shadumbra's Head
 	.accept 24 >> Akzeptiert die Quest Schattumbras Kopf
@@ -1485,7 +1485,7 @@ step
     .waypoint 1440/1,-1867.09998,2752.19995,30,0
     .waypoint 1440/1,-1825.50000,2708.69995,30,0
     .waypoint 1440/1,-1857.90002,2660.80005,30,0
-    >>Tötet |cRXP_ENEMY_Schattumbra|r. Beute sie für |T132225:0|t[|cRXP_LOOT_Schattumbra's Kopf|r] und benutzen es um die Quest zu beginnen
+    >>Tötet |cRXP_ENEMY_Schattumbra|r. Plündert sie für |T132225:0|t[|cRXP_LOOT_Schattumbras Kopf|r] und benutzt ihn um die Quest zu starten
     >>|cRXP_ENEMY_Schattumbra|r patrouilliert um das Gebäude herum
     .collect 16304,1,24 --Collect Shadumbra's Head
 	.accept 24 >> Akzeptiert die Quest Schattumbras Kopf
@@ -1581,7 +1581,7 @@ step << Mage Cata
     .goto 1454/1,-4128.89990,1692.09998
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Zirazi die Sternenseherin|r
     .train 3567 >>Erlernt |T135759:0|t[Teleportieren: Orgrimmar]
-    .train 3563 >>Erlernen |T135766:0|t[Teleportierenieren: Unterstadt]
+    .train 3563 >>Erlernt |T135766:0|t[Teleportieren: Unterstadt]
     .train 3566 >>Erlernt |T135765:0|t[Teleportieren: Donnerfels]
     .train 32272 >>Erlernen |T135761:0|t[Teleportierenieren: Silbermond]
     .target Zirazi the Star-Gazer
