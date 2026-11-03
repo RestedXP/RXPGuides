@@ -127,7 +127,7 @@ step << Warlock
 	.goto Durotar,44.58,56.10,35,0
 	.goto Durotar,44.27,56.59,35,0
 	.goto Durotar,43.85,55.52,35,0
-    >>Mate os |cRXP_ENEMY_Familiares torpes|r. Saqueie-os para |cRXP_LOOT_Vile Familiar Cabeças|r
+    >>Mate |cRXP_ENEMY_Familiares Torpes|r. Saqueie-os para pegar |cRXP_LOOT_Cabeças de Demônio Familiar Vil|r
     .complete 1485,1 --Vile Familiar Head (6)
     .mob Vile Familiar
 step
@@ -276,7 +276,7 @@ step
     .accept 3082 >>Aceite Tabuleta cinzelada << Troll Hunter
     .accept 3083 >>Aceite Tabuleta cifrada << Troll Rogue
     .accept 3084 >>Aceite Tabuleta Inscrita em Runas << Troll Shaman
-    .accept 3085 >>Aceite Tabuleta Consagrada << Troll Priest
+    .accept 3085 >>Aceite Tabuleta consagrada << Troll Priest
     .accept 3086 >>Aceite Tabuleta glífica << Troll Mage
     .accept 3087 >>Aceite Pergaminho Cinzelado << Orc Hunter
     .accept 3088 >>Aceite Pergaminho cifrado << Orc Rogue
@@ -293,7 +293,7 @@ step << Rogue
     .goto Durotar,41.27,68.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Rwag|r
     .turnin 3083 >>Entregue Tabuleta cifrada << Troll Rogue
-    .turnin 3088 >>Entregue Pergaminho Cifrado << Orc Rogue
+    .turnin 3088 >>Entregue Pergaminho cifrado << Orc Rogue
     .train 53 >> Aprenda |T132090:0|t[Punhalada pelas Costas]
     .target Rwag
     .money <0.04
@@ -303,7 +303,7 @@ step << Rogue
     .goto Durotar,41.27,68.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Rwag|r
     .turnin 3083 >>Entregue Tabuleta cifrada << Troll Rogue
-    .turnin 3088 >>Entregue Pergaminho Cifrado << Orc Rogue
+    .turnin 3088 >>Entregue Pergaminho cifrado << Orc Rogue
     .target Rwag
 step << Warlock
     #completewith Nartok2
@@ -601,7 +601,7 @@ step << Hunter
 step << Warrior
     .goto Durotar,42.89,69.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Frang|r
-    .train 100 >> Aprenda |T132337:0|t[carga]
+    .train 100 >> Aprenda |T132337:0|t[Investida]
     .train 772 >> Aprenda |T132155:0|t[Dilacerar]
     .target Frang
     .money <0.02
@@ -614,7 +614,7 @@ step << Warrior
 step << Warrior
     .goto Durotar,42.89,69.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Frang|r
-    .train 100 >> Aprenda |T132337:0|t[carga]
+    .train 100 >> Aprenda |T132337:0|t[Investida]
     .target Frang
     .money <0.01
 step
@@ -1220,7 +1220,7 @@ step << !Shaman !Hunter !Warlock
 step << !Shaman !Hunter !Warlock
     #xprate <1.5 << !Warrior
     .goto Durotar,49.89,40.39
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Furl|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Férrano Escarnecenho|r
     .accept 791 >>Aceite Carregue o Seu Peso
     .target Furl Scornbrow
 step << Warrior/Rogue/Paladin
@@ -1255,7 +1255,7 @@ step << Priest
     .goto Durotar,54.26,42.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tai'jin|r
     .turnin 5649 >> Entregue Simpatia de Espiritualidade
-    .accept 5648 >> Aceite Garments of Spirituality
+    .accept 5648 >> Aceite Vestes da espiritualidade
     .train 2052 >> Aprenda |T135929:0|t[Cura Inferior Grau 2]
     .target Tai'jin
 step << Priest
@@ -1428,7 +1428,7 @@ step << !Shaman !Hunter !Warlock
 step << !Shaman !Hunter !Warlock
     #xprate <1.5 << !Warrior
     .goto Durotar,49.89,40.39
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Furl|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Férrano Escarnecenho|r
     .turnin 791 >>Entregue Carregue suas tralhas
     .target Furl Scornbrow
 step << Warrior/Rogue
@@ -1589,7 +1589,7 @@ step << !Shaman !Hunter !Warlock
     .zoneskip Eversong Woods
 step << Warrior
     .goto Tirisfal Glades,61.71,52.06
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Estalajadeira Geni|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estalajadeira Geni|r
     .home >> Defina sua Pedra de Regresso em Montalvo
     .target Innkeeper Renee
     .bindlocation 2119
@@ -2233,7 +2233,7 @@ step
 step << Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com|r |cRXP_FRIENDLY_Orgnil|r, |cRXP_FRIENDLY_Gar'Thok|r e |cRXP_FRIENDLY_Torka|r
     .turnin 823 >>Entregue Apresente-se a Orgnil
-    .accept 806 >>Aceite Tempestades Sombrias
+    .accept 806 >>Aceite Tempestades sombrias
     .target +Orgnil Soulscar
     .goto Durotar,52.24,43.15
     .accept 784 >>Aceite Aniquile os invasores
@@ -2274,7 +2274,7 @@ step
     .goto Durotar,49.60,40.04,8 >>Viaje para cima da torre em direção a Férrano Escarnecenho
 step
     .goto Durotar,49.89,40.39
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Furl|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Férrano Escarnecenho|r
     .accept 791 >>Aceite Carregue o Seu Peso
     .target Furl Scornbrow
 step << Warrior/Rogue/Paladin
@@ -2433,7 +2433,7 @@ step
     >>|cRXP_WARN_Economize 4 moedas de prata para seus feitiços de classe!|r << Rogue/Warrior/Shaman/Warlock
     >>|cRXP_WARN_Guarde 2 de prata para os feitiços da sua classe!|r << Priest
     .vendor >> Venda os itens de lixo
-    .home >> Defina sua Pedra de Retorno em Razor Hill
+    .home >> Defina sua Pedra de Regresso em Monte Navalha
     .turnin 2161 >>Entregue O Fardo do Peão
     .target Innkeeper Grosk
     .train 6760,1 << Rogue
@@ -2449,7 +2449,7 @@ step
     >>|cRXP_BUY_Compre|r |T132815:0|t[Leite Gelado] |cRXP_BUY_dele|r << Mage/Warlock/Priest/Shaman/Druid/Paladin
     >>|cRXP_BUY_Compre|r |T133974:0|t[Pernil de Carne] |cRXP_BUY_dele|r << Rogue/Warrior
     .vendor >> Venda os itens de lixo
-    .home >> Defina sua Pedra de Retorno em Razor Hill
+    .home >> Defina sua Pedra de Regresso em Monte Navalha
     .turnin 2161 >>Entregue O Fardo do Peão
     .target Innkeeper Grosk
     .bindlocation 362
@@ -2461,7 +2461,7 @@ step << !Mage !Hunter !Druid !Paladin
     >>|cRXP_BUY_Compre|r |T132815:0|t[Leite Gelado] |cRXP_BUY_dele|r << Mage/Warlock/Priest/Shaman/Druid
     >>|cRXP_BUY_Compre|r |T133974:0|t[Pernil de Carne] |cRXP_BUY_dele|r << Rogue/Warrior
     .vendor >> Venda os itens de lixo
-    .home >> Defina sua Pedra de Retorno em Razor Hill
+    .home >> Defina sua Pedra de Regresso em Monte Navalha
     .turnin 2161 >>Entregue O Fardo do Peão
     .target Innkeeper Grosk
     .train 6760,3 << Rogue
@@ -2513,7 +2513,7 @@ step << Priest
     .goto Durotar,54.26,42.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tai'jin|r
     .turnin 5649 >> Entregue Simpatia de Espiritualidade
-    .accept 5648 >> Aceite Garments of Spirituality
+    .accept 5648 >> Aceite Vestes da espiritualidade
     .train 2052 >> Aprenda |T135929:0|t[Cura Inferior Grau 2]
     .target Tai'jin
 step << Priest
@@ -2700,7 +2700,7 @@ step
     .goto Durotar,49.60,40.04,8 >>Viaje para cima da torre em direção a Férrano Escarnecenho
 step
     .goto Durotar,49.89,40.39
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Furl|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Férrano Escarnecenho|r
     .turnin 791 >>Entregue Carregue suas tralhas
     .target Furl Scornbrow
 step << Warrior/Rogue
@@ -2917,7 +2917,7 @@ step << Warrior/Rogue/Paladin
     .train 2575,3 --Mining Trained
 step
     #completewith next
-    >>Abate |cRXP_ENEMY_Rastejadores Pigmeus de Surf|r e |cRXP_ENEMY_Rastejadores de Surf|r. Saque-os pelos |cRXP_LOOT_Muco|r
+    >>Mate |cRXP_ENEMY_Surfatiscos Pigmeus|r e |cRXP_ENEMY_Surfatiscos|r. Saqueie-os para pegar |cRXP_LOOT_Muco|r
     >>Mate |cRXP_ENEMY_Conchacouros Makrura|r e |cRXP_ENEMY_Estaladores Makrura|r. Saqueie-os para pegar |cRXP_LOOT_Olhos|r
     -->>This does not need to be finished now
     .complete 818,2 --Crawler Mucus (8)
@@ -2948,7 +2948,7 @@ step
     .mob Durotar Tiger
 step
     #completewith next
-    >>Abate |cRXP_ENEMY_Rastejadores Pigmeus de Surf|r e |cRXP_ENEMY_Rastejadores de Surf|r. Saque-os pelos |cRXP_LOOT_Muco|r
+    >>Mate |cRXP_ENEMY_Surfatiscos Pigmeus|r e |cRXP_ENEMY_Surfatiscos|r. Saqueie-os para pegar |cRXP_LOOT_Muco|r
     >>Mate |cRXP_ENEMY_Conchacouros Makrura|r e |cRXP_ENEMY_Estaladores Makrura|r. Saqueie-os para pegar |cRXP_LOOT_Olhos|r
     .complete 818,2 --Crawler Mucus (8)
     .mob +Pygmy Surf Crawler
@@ -3039,7 +3039,7 @@ step
     .mob +Voodoo Troll
 step
     #completewith next
-    >>Abate |cRXP_ENEMY_Rastejadores Pigmeus de Surf|r e |cRXP_ENEMY_Rastejadores de Surf|r. Saque-os pelos |cRXP_LOOT_Muco|r
+    >>Mate |cRXP_ENEMY_Surfatiscos Pigmeus|r e |cRXP_ENEMY_Surfatiscos|r. Saqueie-os para pegar |cRXP_LOOT_Muco|r
     >>Mate |cRXP_ENEMY_Conchacouros Makrura|r e |cRXP_ENEMY_Estaladores Makrura|r. Saqueie-os para pegar |cRXP_LOOT_Olhos|r
     .complete 818,2 --Crawler Mucus (8)
     .mob +Pygmy Surf Crawler
@@ -3077,7 +3077,7 @@ step
     .goto Durotar,57.27,79.38,60,0
     .goto Durotar,55.66,80.47,60,0
     .goto Durotar,53.8,83.14,60,0
-    >>Abate |cRXP_ENEMY_Rastejadores Pigmeus de Surf|r e |cRXP_ENEMY_Rastejadores de Surf|r. Saque-os pelos |cRXP_LOOT_Muco|r
+    >>Mate |cRXP_ENEMY_Surfatiscos Pigmeus|r e |cRXP_ENEMY_Surfatiscos|r. Saqueie-os para pegar |cRXP_LOOT_Muco|r
     >>Mate |cRXP_ENEMY_Conchacouros Makrura|r e |cRXP_ENEMY_Estaladores Makrura|r. Saqueie-os para pegar |cRXP_LOOT_Olhos|r
     -->>This does not need to be finished now
     .complete 818,2 --Crawler Mucus (8)
@@ -3419,7 +3419,7 @@ step << Warlock
     #softcore
     #completewith next
     .goto Orgrimmar,53.03,48.78
-    .subzone 2437 >> Entre em Cavernas Ígneas
+    .subzone 2437 >> Entre nas Cavernas Ígneas
 step << Warlock
     #softcore
     #completewith SkullRockWarlock
@@ -4181,7 +4181,7 @@ step
     #softcore
     #completewith FizzleKill
     .goto Orgrimmar,53.03,48.78
-    .subzone 2437 >> Entre em Cavernas Ígneas
+    .subzone 2437 >> Entre nas Cavernas Ígneas
     .zoneskip Durotar
 step
     #softcore
@@ -4502,7 +4502,7 @@ step
     #softcore
     #completewith next
     .goto Orgrimmar,53.03,48.78
-    .subzone 2437 >> Entre em Cavernas Ígneas
+    .subzone 2437 >> Entre nas Cavernas Ígneas
     .zoneskip Durotar
 step
     #softcore

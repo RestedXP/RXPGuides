@@ -277,7 +277,7 @@ step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kore|r
     .accept 9289 >> Aceite Treinamento de Guerreiro
 	.turnin 9289 >> Entregue Treinamento de Guerreiro
-    .train 100 >> Aprenda |T132337:0|t[carga]
+    .train 100 >> Aprenda |T132337:0|t[Investida]
     .train 772 >> Aprenda |T132155:0|t[Dilacerar]
     .target Kore
 step << Hunter
@@ -4543,7 +4543,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_a Raene Correlobos|r
     .turnin 10752 >> Entregue em Rumo a Vale Gris
     .accept 1054 >> Aceite Expurgo a Ameaça
-    .accept 991 >> Aceite A Purificação de Raene
+    .accept 991 >> Aceite a Purificação de Raene
     .target Raene Wolfrunner
 step
     .goto Ashenvale,36.99,49.22
@@ -4645,7 +4645,7 @@ step
     .goto 1414/1,-2003.0622,-656.5599
     >>Mate |cRXP_ENEMY_Maluc Insano|r. Saqueie-o para obter o |cRXP_LOOT_Xerez de 99 Anos|r
     >>|cRXP_ENEMY_Maluc Insano|r pode surgir em alguns locais
-    >>Esta missão é concluída FORA das Cavernas do Lamento
+    >>Esta missão é concluída FORA da Caverna Ululante
     .complete 959,1 -- 99-Year-Old Port (1)
     .isOnQuest 959
     .mob Mad Magglish
@@ -4853,7 +4853,7 @@ step
 	.target Teronis' Corpse
     .goto Ashenvale,20.31,42.33
     .turnin 991 >> Entregue Purificação de Raene
-    .accept 1023 >> Aceite A Purificação de Raene
+    .accept 1023 >> Aceite a Purificação de Raene
 step
     .goto Ashenvale,20.41,43.82,50,0
     .goto Ashenvale,19.43,42.09,50,0

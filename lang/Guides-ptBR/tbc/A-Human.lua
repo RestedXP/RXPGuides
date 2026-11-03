@@ -1025,7 +1025,7 @@ step << Mage
     .trainer >> Treine suas magias de classe
 step << Priest
     .goto Elwynn Forest,43.283,65.721
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Sacerdotisa Joselita|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Sacerdotisa Joselita|r
 	.target Priestess Josetta
     .turnin 5624 >> Entregue Vestes da Luz
     .trainer >> Treine suas magias de classe
@@ -1546,14 +1546,14 @@ step << Mage
 step << Priest
     #optional
     .goto Elwynn Forest,43.283,65.721
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Sacerdotisa Joselita|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Sacerdotisa Joselita|r
     .accept 5635 >> Aceite Prece Desesperada << Human/Dwarf
     .trainer >> Treine suas magias de classe
     .target Priestess Josetta
     .xp <10,1
 step << Priest
     .goto Elwynn Forest,43.283,65.721
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Sacerdotisa Joselita|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Sacerdotisa Joselita|r
 	.target Priestess Josetta
     .trainer >> Treine suas magias de classe
     .xp >10,1
@@ -1848,7 +1848,7 @@ step << Rogue
     .goto 1453,53.615,59.767,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gunther Weller|r
     >>|cRXP_BUY_Compre um|r |T135346:0|t[Alfanje] |cRXP_BUY_dele|r
-    >>|cRXP_WARN_Alternativamente, procure na Casa de Leilões por algo melhor ou mais barato|r
+    >>|cRXP_WARN_Alternativamente, verifique a Casa de Leilões por algo melhor ou mais barato|r
     >>|cRXP_WARN_Certifique-se de guardar 6s para o treinamento depois|r
     .collect 851,1 -- Cutlass (1)
     .target Gunther Weller
@@ -1862,7 +1862,7 @@ step << Rogue
     .goto 1453,53.615,59.767,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gunther Weller|r
     >>|cRXP_BUY_Compre um|r |T135346:0|t[Alfanje] |cRXP_BUY_dele|r
-    >>|cRXP_WARN_Alternativamente, procure na Casa de Leilões por algo melhor ou mais barato|r
+    >>|cRXP_WARN_Alternativamente, verifique a Casa de Leilões por algo melhor ou mais barato|r
     .collect 851,1 -- Cutlass (1)
     .target Gunther Weller
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
@@ -3112,7 +3112,7 @@ step << Priest/Warlock/Mage
     .goto Ironforge,22.837,17.094,8,0
     .goto Ironforge,21.131,17.276,5,0
     .goto Ironforge,23.135,15.936
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Harick Batesseixo|r embaixo
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Harick Batesseixo|r lá embaixo
     >>|cRXP_BUY_Compre uma|r |T135468:0|t[Varinha Fumegante] |cRXP_BUY_dele|r
     .collect 5208,1 --Smoldering Wand (1)
     .target Harick Boulderdrum

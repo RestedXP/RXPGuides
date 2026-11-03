@@ -276,7 +276,7 @@ step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kore|r
     .accept 9289 >> Aceite Treinamento de Guerreiro
 	.turnin 9289 >> Entregue Treinamento de Guerreiro
-    .train 100 >> Aprenda |T132337:0|t[carga]
+    .train 100 >> Aprenda |T132337:0|t[Investida]
     .train 772 >> Aprenda |T132155:0|t[Dilacerar]
     .target Kore
 step << Hunter

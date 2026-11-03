@@ -72,7 +72,7 @@ step
 step
     .isQuestTurnedIn 4182
     .goto Redridge Mountains,29.98,44.45
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Magistrado Salomão|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Magistrado Salomão|r
     .turnin 4183 >> Entregue The True Masters
     .accept 4184 >> Aceite The True Masters
     .target Magistrate Solomon
@@ -124,7 +124,7 @@ step
 step
     .isQuestTurnedIn 4182
     .goto Redridge Mountains,29.98,44.45
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Magistrado Salomão|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Magistrado Salomão|r
     .turnin 4186 >> Entregue The True Masters
     .accept 4223 >> Aceite The True Masters
     .target Magistrate Solomon

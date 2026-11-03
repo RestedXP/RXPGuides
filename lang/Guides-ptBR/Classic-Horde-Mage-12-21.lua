@@ -437,7 +437,7 @@ step
     .accept 1061 >>Aceite Os espíritos das Torres de Pedra
 step
     #completewith next
-    .hs >>Use sua Pedra de Retorno para ir a Encruzilhada
+    .hs >>Use sua Pedra de Retorno para ir à Encruzilhada
 step << Troll Mage
     .goto The Barrens,52.6,29.9
 .target Zargh

@@ -1998,7 +1998,7 @@ step << Rogue
     .trainer >> Treine suas magias de classe
 step << Priest
     .goto Elwynn Forest,43.283,65.719
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Sacerdotisa Joselita|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Sacerdotisa Joselita|r
     .target Priestess Josetta
     .trainer >> Treine suas magias de classe
 step
@@ -2143,7 +2143,7 @@ step << Dwarf Paladin
 step << Dwarf Paladin
     .goto Ironforge,23.539,8.300
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Muiredon Beloforja|r
-    >>|cRXP_WARN_Não aceite a próxima|r
+    >>|cRXP_WARN_Não aceite o acompanhamento.|r
     .target Muiredon Battleforge
     .turnin 1779 >>Entregue Tomo de Divindade
 ]])

@@ -45,7 +45,7 @@ step << BloodElf/Undead
     .goto Durotar,57.27,79.38,60,0
     .goto Durotar,55.66,80.47,60,0
     .goto Durotar,53.8,83.14,60,0
-    >>Abate |cRXP_ENEMY_Rastejadores Pigmeus de Surf|r e |cRXP_ENEMY_Rastejadores de Surf|r. Saque-os pelos |cRXP_LOOT_Muco|r
+    >>Mate |cRXP_ENEMY_Surfatiscos Pigmeus|r e |cRXP_ENEMY_Surfatiscos|r. Saqueie-os para pegar |cRXP_LOOT_Muco|r
     >>Mate |cRXP_ENEMY_Conchacouros Makrura|r e |cRXP_ENEMY_Estaladores Makrura|r. Saqueie-os para pegar |cRXP_LOOT_Olhos|r
     .complete 818,2 --Crawler Mucus (8)
     .mob +Pygmy Surf Crawler
@@ -769,7 +769,7 @@ step
     .goto The Barrens,52.63,38.07,80,0
     .goto The Barrens,49.49,37.20,80,0
     .goto The Barrens,48.33,36.75,80,0
-    >>Mate todos os |cRXP_ENEMY_Zhevras|r. Saque-os pelos |cRXP_LOOT_Hooves|r
+    >>Acabe de matar |cRXP_ENEMY_Zevras|r. Pegue seus |cRXP_LOOT_Cascos|r
     .complete 845,1 --Zhevra Hooves (4)
     .mob Zhevra Runner
 step

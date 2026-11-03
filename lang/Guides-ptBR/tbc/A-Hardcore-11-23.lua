@@ -3955,7 +3955,7 @@ step << Rogue
     >>|T133644:0|t[Bater de Carteira] o |cRXP_ENEMY_Drone Défias Malformado|r. Saqueie-o para obter a |cRXP_LOOT_Chave da Torre Défias|r
     >>Você deve estar em [Furtividade] para usar [Bater Carteira]
     >>|cRXP_WARN_O |cRXP_ENEMY_Drone Défias Malformado|r surge na entrada da torre, depois patrulha ao redor da parte externa|r
-    >>Tome cuidado, pois ele causa MUITO dano. Se sua [Furtividade] quebrar, use rapidamente [Disparada] e fuja
+    >>|cRXP_WARN_Tenha cuidado, pois ele causa MUITO dano. Se o seu|r |T132320:0|t[Furtividade] |cRXP_WARN_interrompa, use rapidamente|r |T132307:0|t[Disparada] |cRXP_WARN_e fuja|r
     .complete 2359,2 --Collect Defias Tower Key (x1)
     .link https://www.youtube.com/watch?v=5sIew15IcG0 >> Clique AQUI para o guia em vídeo
     .mob Malformed Defias Drone
@@ -4968,7 +4968,7 @@ step
     .goto Ashenvale,36.61,49.58
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_a Raene Correlobos|r
     .turnin -10752 >> Entregue em Rumo a Vale Gris
-    .accept 991 >> Aceite A Purificação de Raene
+    .accept 991 >> Aceite a Purificação de Raene
     .accept 1054 >> Aceite Expurgo a Ameaça
     .target Raene Wolfrunner
 step
@@ -5048,7 +5048,7 @@ step
     .goto 1414/1,-2003.0622,-656.5599
     >>Mate |cRXP_ENEMY_Maluc Insano|r. Saqueie-o para obter o |cRXP_LOOT_Xerez de 99 Anos|r
     >>|cRXP_ENEMY_Maluc Insano|r pode surgir em alguns locais
-    >>Esta missão é concluída FORA das Cavernas do Lamento
+    >>Esta missão é concluída FORA da Caverna Ululante
     .complete 959,1 -- 99-Year-Old Port (1)
     .isOnQuest 959
     .mob Mad Magglish
@@ -5223,7 +5223,7 @@ step
     .goto Ashenvale,20.31,42.33
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Cadáver de Teronis|r
 	.turnin 991 >> Entregue Purificação de Raene
-    .accept 1023 >> Aceite A Purificação de Raene
+    .accept 1023 >> Aceite a Purificação de Raene
     .target Teronis' Corpse
 step
     #loop

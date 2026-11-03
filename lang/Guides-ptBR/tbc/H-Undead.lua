@@ -341,27 +341,27 @@ step
     .goto Tirisfal Glades,30.86,66.05
 step << Priest
     .goto Tirisfal Glades,31.11,66.02
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Duesten|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Clérigo das Trevas Duesten|r
     .train 589 >> Treine suas magias de classe
     .target Dark Cleric Duesten
     .money <0.021
 step << Priest
     .goto Tirisfal Glades,31.11,66.02
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Duesten|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Clérigo das Trevas Duesten|r
     .train 2052 >> Aprenda |T135929:0|t[Cura Inferior Grau 2]
     .train 589 >> Aprenda |T136207:0|t[Palavra Sombria: Dor]
     .target Dark Cleric Duesten
     .money <0.02
 step << Priest
     .goto Tirisfal Glades,31.11,66.02
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Duesten|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Clérigo das Trevas Duesten|r
     .train 1243 >> Aprenda |T135987:0|t[Palavra de Poder: Fortitude]
     .train 589 >> Aprenda |T136207:0|t[Palavra Sombria: Dor]
     .target Dark Cleric Duesten
     .money <0.011
 step << Priest
     .goto Tirisfal Glades,31.11,66.02
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Duesten|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Clérigo das Trevas Duesten|r
     .train 589 >> Aprenda |T136207:0|t[Palavra Sombria: Dor]
     .target Dark Cleric Duesten
     .money <0.01
@@ -404,7 +404,7 @@ step << Warrior
     .goto Tirisfal Glades,32.68,65.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dannal Stern|r
     .turnin 3095 >> Entregue Pergaminho simples
-    .train 100 >> Aprenda |T132337:0|t[carga]
+    .train 100 >> Aprenda |T132337:0|t[Investida]
     .train 772 >> Aprenda |T132155:0|t[Dilacerar]
     .target Dannal Stern
     .money <0.02
@@ -787,7 +787,7 @@ step << Warlock
     .target Rupert Boch
 step
     .goto Tirisfal Glades,61.71,52.06
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Estalajadeira Geni|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estalajadeira Geni|r
     .turnin 8 >>Entregue Palavra de ladino
     .home >> Defina sua Pedra de Regresso em Montalvo << Priest/Warrior
     .target Innkeeper Renee

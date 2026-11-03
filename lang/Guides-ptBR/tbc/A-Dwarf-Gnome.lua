@@ -103,7 +103,7 @@ step
     .goto 1426,27.562,74.331,60,0
     .goto 1426,27.793,73.123,60,0
     .goto 1426,28.557,72.487,60,0
-    .xp 2 >> Treine até o nível 2
+    .xp 2 >> Farme até o nível 2
     .mob Ragged Young Wolf
     .mob Ragged Timber Wolf
 step
@@ -517,7 +517,7 @@ step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thran Khorman|r
     .turnin 3106 >> Entregue Runa Simples << Dwarf
     .turnin 3112 >> Entregue Memorando Simples << Gnome
-    .train 100 >> Aprenda |T132337:0|t[carga]
+    .train 100 >> Aprenda |T132337:0|t[Investida]
     .train 772 >> Aprenda |T132155:0|t[Dilacerar]
     .target Thran Khorman
 step << !Paladin !Warlock !Hunter
@@ -2727,7 +2727,7 @@ step << Rogue
     .goto 1453,53.615,59.767,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gunther Weller|r
     >>|cRXP_BUY_Compre um|r |T135346:0|t[Alfanje] |cRXP_BUY_dele|r
-    >>|cRXP_WARN_Alternativamente, procure na Casa de Leilões por algo melhor ou mais barato|r
+    >>|cRXP_WARN_Alternativamente, verifique a Casa de Leilões por algo melhor ou mais barato|r
     .collect 851,1 -- Cutlass (1)
     .target Gunther Weller
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
@@ -2760,7 +2760,7 @@ step << Warrior
     .goto 1453,53.615,59.767,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gunther Weller|r
     >>|cRXP_BUY_Compre uma|r |T133477:0|t[Maça Gigante] |cRXP_BUY_dele|r
-    >>|cRXP_WARN_Alternativamente, procure na Casa de Leilões por algo melhor ou mais barato|r
+    >>|cRXP_WARN_Alternativamente, verifique a Casa de Leilões por algo melhor ou mais barato|r
     .collect 1197,1 -- Giant Mace
     .target Gunther Weller
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.9
@@ -3896,7 +3896,7 @@ step << Warlock
     .goto Ironforge,22.837,17.094,8,0
     .goto Ironforge,21.131,17.276,5,0
     .goto Ironforge,23.135,15.936
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Harick Batesseixo|r embaixo
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Harick Batesseixo|r lá embaixo
     >>|cRXP_BUY_Compre uma|r |T135468:0|t[Varinha Fumegante] |cRXP_BUY_dele|r
     .collect 5208,1 --Smoldering Wand (1)
     .target Harick Boulderdrum

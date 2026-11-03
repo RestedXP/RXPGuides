@@ -443,7 +443,7 @@ step << Mage
     .goto Elwynn Forest,43.25,66.19
     .trainer >> Treine suas magias de classe
 step << Priest
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Sacerdotisa Joselita|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Sacerdotisa Joselita|r
 	.target Priestess Josetta
     .goto Elwynn Forest,43.283,65.721
     .turnin 5623 >> Entregue Em Favor da Luz
@@ -747,7 +747,7 @@ step << Mage
     .trainer >> Treine suas magias de classe
 step << Priest
     .goto Elwynn Forest,43.283,65.721
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Sacerdotisa Joselita|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Sacerdotisa Joselita|r
 	.target Priestess Josetta
     .turnin 5624 >> Entregue Vestes da Luz
     .trainer >> Treine suas magias de classe
@@ -1048,7 +1048,7 @@ step << Mage/Priest/Rogue
 step << Priest
     .goto Elwynn Forest,43.283,65.721
     .target Priestess Josetta
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Sacerdotisa Joselita|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Sacerdotisa Joselita|r
     .accept 5635 >> Aceite Prece Desesperada
     .trainer >> Treine suas magias de classe
 step << Mage
@@ -1469,7 +1469,7 @@ step << Warlock
 step << Human
     .goto StormwindClassic,74.312,47.240
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Larso Norde|r
-    >>|cRXP_WARN_Não aceite a próxima|r
+    >>|cRXP_WARN_Não aceite o acompanhamento.|r
     .turnin 6281 >> Entregue Siga para Ventobravo
     .target Osric Strang
 step << Warrior
@@ -1816,7 +1816,7 @@ step
 step
     .goto Loch Modan,24.764,18.397
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Montanhista Lançatroz|r
-    >>|cRXP_WARN_Não aceite a próxima|r
+    >>|cRXP_WARN_Não aceite o acompanhamento.|r
     .turnin 353 >> Entregue Entrega para Lançatroz
     .target Mountaineer Stormpike
 

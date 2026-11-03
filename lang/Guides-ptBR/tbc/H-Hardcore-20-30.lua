@@ -163,7 +163,7 @@ step << Warlock
     .target +Gan'rul Bloodeye
     .goto Orgrimmar,48.25,45.27
     .turnin 1507 >> Entregue Devorador de Almas
-    .accept 1508 >> Aceite Cegar Cazul
+    .accept 1508 >> Aceite Cazul cego
     --.accept 65601 >> Accept Love Hurts
     .target +Cazul
     .goto Orgrimmar,47.05,46.43
@@ -346,7 +346,7 @@ step
     .complete 3281,1 --Stolen Silver (1)
 step
     .goto The Barrens,52.60,46.10
-    >>Clique no |cRXP_PICK_Blue Objetos de Clássico|r. Mate mais |cRXP_ENEMY_Sunscale Scytheclaws|r se você não tiver uma |T132914:0|t[Sunscale Feather]
+    >>Clique no |cRXP_PICK_Ninho de Raptor Azul|r. Mate mais |cRXP_ENEMY_Garrafoices Helióscamo|r se você não tiver uma |T132914:0|t[Pena de Helióscamo]
     >>|cRXP_WARN_Cuidado, eles lançam|r |T132152:0|t[Surra] |cRXP_WARN_(Causa 2 ataques extras a cada 10 segundos)|r
     .complete 905,1 --Visit Blue Raptor Nest (1)
     .collect 5165,3,905,7,3
@@ -418,7 +418,7 @@ step
     #label SetCampTaurajoHS
     .goto The Barrens,45.58,59.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estalajadeira Byula|r
-    .home >>Defina sua Pedra de Retorno em Camp Taurajo
+    .home >>Defina sua Pedra de Regresso ao Acampamento Taurajo
     .target Innkeeper Byula
     .bindlocation 378
     .isQuestAvailable 1093
@@ -1136,7 +1136,7 @@ step
     .target Melor Stonehoof
 step << Hunter
     .goto Thunder Bluff,59.13,86.91
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConversar com |cRXP_FRIENDLY_Urek|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Urek Chifre Troante|r
     .train 5118 >> Treine suas magias de classe
     .target Urek Thunderhorn
     .xp <20,1
@@ -1144,7 +1144,7 @@ step << Hunter
 step << Hunter
     #optional
     .goto Thunder Bluff,59.13,86.91
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConversar com |cRXP_FRIENDLY_Urek|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Urek Chifre Troante|r
     .train 5118 >> Treine suas magias de classe
     .target Urek Thunderhorn
     .xp <22,1
@@ -2364,7 +2364,7 @@ step
     .goto Thunder Bluff,69.88,30.90,80 >> Vá ao Platô dos Anciãos
 step
     .goto Thunder Bluff,69.88,30.90
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Magatha|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Magatha Temível Totem|r
     .turnin 1063 >>Entregue A Bruxa Anciã
     .accept 1064 >>Aceite Ajuda Renegada
     .timer 6,Cena de A Velha Anciã
@@ -2492,7 +2492,7 @@ step << Shaman
 step << skip --Shaman
     .goto The Barrens,45.58,59.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estalajadeira Byula|r
-    .home >>Defina sua Pedra de Retorno em Camp Taurajo
+    .home >>Defina sua Pedra de Regresso ao Acampamento Taurajo
     .target Innkeeper Byula
     .bindlocation 378
 step << Shaman
@@ -3885,7 +3885,7 @@ step << Hunter
     .goto Thunder Bluff,61.31,78.25,80 >> Vá ao Platô dos Caçadores
 step << Hunter
     .goto Thunder Bluff,59.13,86.91
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConversar com |cRXP_FRIENDLY_Urek|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Urek Chifre Troante|r
     .train 14262 >> Treine suas magias de classe
     .target Urek Thunderhorn
     .xp <24,1
@@ -3893,7 +3893,7 @@ step << Hunter
 step << Hunter
     #optional
     .goto Thunder Bluff,59.13,86.91
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConversar com |cRXP_FRIENDLY_Urek|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Urek Chifre Troante|r
     .train 3045 >> Treine suas magias de classe
     .target Urek Thunderhorn
     .xp <26,1
@@ -4023,7 +4023,7 @@ step
     #label CampTHS2
     .goto The Barrens,45.58,59.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estalajadeira Byula|r
-    .home >>Defina sua Pedra de Retorno em Camp Taurajo
+    .home >>Defina sua Pedra de Regresso ao Acampamento Taurajo
 	.vendor >>|cRXP_BUY_Venda seus itens desnecessários, depois reabasteça-se de comida e água se necessário|r << !Rogue !Warrior
     .vendor >>|cRXP_BUY_Venda seus itens desnecessários, depois reabasteça-se de comida se necessário|r << Rogue/Warrior
     .target Innkeeper Byula
@@ -4182,7 +4182,7 @@ step
     .goto The Barrens,44.83,79.87,45,0
     .goto The Barrens,44.83,79.87,0
     >>Mate |cRXP_ENEMY_Kâz|r. Pegue o |cRXP_LOOT_Crânio de Kaz|r
-    >>|cRXP_ENEMY_Kâz|r |cRXP_WARN_patrula levemente ao redor|r
+    >>|cRXP_ENEMY_Kâz|r |cRXP_WARN_patrulha os arredores|r
     .complete 879,1 --Kuz's Skull (1)
     .unitscan Kuz
     .isOnQuest 879
@@ -4636,7 +4636,7 @@ step << Rogue
     .goto Orgrimmar,43.90,54.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ormok|r
     .train 1833 >> Treine suas magias de classe
-    >>|T132273:0|t[Veneno Instantâneo Nível 2] |cRXP_WARN_requer 120 de perícia em Venenos!|r
+    >>|T132273:0|t[Veneno Instantâneo II] |cRXP_WARN_requer 120 de perícia em Venenos!|r
     .target Ormok
     .xp <28,1
 step << Rogue
@@ -4877,9 +4877,9 @@ step << Hunter
     .goto Ashenvale,68.59,60.53,50,0
     .goto Ashenvale,66.62,62.81,50,0
     .goto Ashenvale,65.31,64.65,50,0
-    .train 16830 >>|cRXP_WARN_lançou|r |T132164:0|t[Tame Beast] |cRXP_WARN_on a |cRXP_ENEMY_Elder Ashenvale Bear|r. Attack mobs with it to learn|r |T132140:0|t[Claw (Rank 4)]
+    .train 16830 >>|cRXP_WARN_Lance|r |T132164:0|t[Domar Fera] |cRXP_WARN_em um|cRXP_ENEMY_ Urso Ancião do Vale Gris|r. Ataque inimigos com ele para aprender|r |T132140:0|t[Garra (Grau 4)]
     .mob +Elder Ashenvale Bear
-    .train 17264 >>|cRXP_WARN_lançou|r |T132164:0|t[Tame Beast] |cRXP_WARN_on a |cRXP_ENEMY_Ghostpaw Alpha|r. Attack mobs with it to learn|r |T132278:0|t[Bite (Rank 4)]
+    .train 17264 >>|cRXP_WARN_Lance|r |T132164:0|t[Domar Fera] |cRXP_WARN_em um|cRXP_ENEMY_ Patalmas Alfa|r. Ataque inimigos com ele para aprender|r |T132278:0|t[Morder (Grau 4)]
     .mob +Ghostpaw Alpha
     .link https://www.wow-petopia.com/classic/training.php >> Clique no link para mais informações sobre treinamento de pets: https://www.wow-petopia.com/classic/training.php
     .xp <27,1 --Ghostpaw Alphas are lvl 27-28
@@ -4891,7 +4891,7 @@ step << Hunter
     .goto Ashenvale,68.59,60.53,50,0
     .goto Ashenvale,66.62,62.81,50,0
     .goto Ashenvale,65.31,64.65,50,0
-    .train 16830 >>|cRXP_WARN_lançou|r |T132164:0|t[Tame Beast] |cRXP_WARN_on a |cRXP_ENEMY_Elder Ashenvale Bear|r. Attack mobs with it to learn|r |T132140:0|t[Claw (Rank 4)]
+    .train 16830 >>|cRXP_WARN_Lance|r |T132164:0|t[Domar Fera] |cRXP_WARN_em um|cRXP_ENEMY_ Urso Ancião do Vale Gris|r. Ataque inimigos com ele para aprender|r |T132140:0|t[Garra (Grau 4)]
     .mob Elder Ashenvale Bear
     .link https://www.wow-petopia.com/classic/training.php >> Clique no link para mais informações sobre treinamento de pets: https://www.wow-petopia.com/classic/training.php
     .xp >27,1 --Ghostpaw Alphas are lvl 27-28
@@ -5129,7 +5129,7 @@ step
     .goto Ashenvale,37.30,34.49,30,0
     .goto Ashenvale,38.73,36.86
     >>Escolte |cRXP_FRIENDLY_Ruul|r para fora da Aldeia dos Pelocardo
-    >>|cRXP_WARN_Tenha cuidado! 3|r |cRXP_ENEMY_Thistlefurs|r |cRXP_WARN_aparecerão assim que você chegar no meio da caverna e outros 3 fora do portão de Thistlefur Village|r
+    >>|cRXP_WARN_Cuidado! 3|r |cRXP_ENEMY_Pelocardos|r |cRXP_WARN_aparecerão na metade do caminho pela caverna e outros 3 do lado de fora do portão da Aldeia dos Pelocardo|r
     .complete 6482,1 --Escort Ruul from the Thistlefurs
     .target Ruul Snowhoof
 step
@@ -5299,7 +5299,7 @@ step
     .turnin 2 >> Entregue Garra de Garraguda
     .turnin 24 >> Entregue Cabeça de Shadumbra
     .turnin 23 >> Entregue Pata de Ursangous
-    .turnin 247 >> Entregue Caçada do Vale Gris Terminada
+    .turnin 247 >> Entregue Caçada do Vale Gris terminada
     .target Senani Thunderheart
     .isOnQuest 2
 step
@@ -5308,7 +5308,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Senani Coração Trovejante|r
     .turnin 24 >> Entregue Cabeça de Shadumbra
     .turnin 23 >> Entregue Pata de Ursangous
-    .turnin 247 >> Entregue Caçada do Vale Gris Terminada
+    .turnin 247 >> Entregue Caçada do Vale Gris terminada
     .target Senani Thunderheart
     .isQuestTurnedIn 2
 step
@@ -5332,7 +5332,7 @@ step
     .target Mastok Wrilehiss
 step
     .goto Ashenvale,74.11,60.91
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Yama|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Yama Casco de Neve|r
     .turnin 6482 >> Entregue Liberdade para Ruul!
     .target Yama Snowhoof
 step << Hunter
@@ -5351,9 +5351,9 @@ step << Hunter
     .goto Ashenvale,68.59,60.53,50,0
     .goto Ashenvale,66.62,62.81,50,0
     .goto Ashenvale,65.31,64.65,50,0
-    .train 16830 >>|cRXP_WARN_lançou|r |T132164:0|t[Tame Beast] |cRXP_WARN_on a |cRXP_ENEMY_Elder Ashenvale Bear|r. Attack mobs with it to learn|r |T132140:0|t[Claw (Rank 4)]
+    .train 16830 >>|cRXP_WARN_Lance|r |T132164:0|t[Domar Fera] |cRXP_WARN_em um|cRXP_ENEMY_ Urso Ancião do Vale Gris|r. Ataque inimigos com ele para aprender|r |T132140:0|t[Garra (Grau 4)]
     .mob +Elder Ashenvale Bear
-    .train 17264 >>|cRXP_WARN_lançou|r |T132164:0|t[Tame Beast] |cRXP_WARN_on a |cRXP_ENEMY_Ghostpaw Alpha|r. Attack mobs with it to learn|r |T132278:0|t[Bite (Rank 4)]
+    .train 17264 >>|cRXP_WARN_Lance|r |T132164:0|t[Domar Fera] |cRXP_WARN_em um|cRXP_ENEMY_ Patalmas Alfa|r. Ataque inimigos com ele para aprender|r |T132278:0|t[Morder (Grau 4)]
     .mob +Ghostpaw Alpha
     .link https://www.wow-petopia.com/classic/training.php >> Clique no link para mais informações sobre treinamento de pets: https://www.wow-petopia.com/classic/training.php
     .xp <27,1 --Ghostpaw Alphas are lvl 27-28
@@ -5365,7 +5365,7 @@ step << Hunter
     .goto Ashenvale,68.59,60.53,50,0
     .goto Ashenvale,66.62,62.81,50,0
     .goto Ashenvale,65.31,64.65,50,0
-    .train 16830 >>|cRXP_WARN_lançou|r |T132164:0|t[Tame Beast] |cRXP_WARN_on a |cRXP_ENEMY_Elder Ashenvale Bear|r. Attack mobs with it to learn|r |T132140:0|t[Claw (Rank 4)]
+    .train 16830 >>|cRXP_WARN_Lance|r |T132164:0|t[Domar Fera] |cRXP_WARN_em um|cRXP_ENEMY_ Urso Ancião do Vale Gris|r. Ataque inimigos com ele para aprender|r |T132140:0|t[Garra (Grau 4)]
     .mob Elder Ashenvale Bear
     .link https://www.wow-petopia.com/classic/training.php >> Clique no link para mais informações sobre treinamento de pets: https://www.wow-petopia.com/classic/training.php
     .xp >26,1 --Ghostpaw Alphas are lvl 27-28
@@ -5383,7 +5383,7 @@ step
     .subzoneskip 2897
 step
     .goto Ashenvale,11.90,34.53
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Karang|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Karang Amakkar|r
     .turnin 216 >> Turn in Between a Rock e a Thistlefur
     .target Karang Amakkar
 step
@@ -5613,7 +5613,7 @@ step << Rogue
     .goto Orgrimmar,43.90,54.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ormok|r
     .train 8687 >> Treine suas magias de classe
-    >>|T132273:0|t[Veneno Instantâneo Nível 2] |cRXP_WARN_requer 120 de perícia em Venenos!|r
+    >>|T132273:0|t[Veneno Instantâneo II] |cRXP_WARN_requer 120 de perícia em Venenos!|r
     .target Ormok
     .xp <28,1
 step << Rogue
@@ -5808,7 +5808,7 @@ step
     .target Melor Stonehoof
 step << Hunter
     .goto Thunder Bluff,59.13,86.91
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConversar com |cRXP_FRIENDLY_Urek|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Urek Chifre Troante|r
     .train 3045 >> Treine suas magias de classe
     .target Urek Thunderhorn
     .xp <26,1
@@ -5816,7 +5816,7 @@ step << Hunter
 step << Hunter
     #optional
     .goto Thunder Bluff,59.13,86.91
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConversar com |cRXP_FRIENDLY_Urek|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Urek Chifre Troante|r
     .train 14319 >> Treine suas magias de classe
     .target Urek Thunderhorn
     .xp <28,1
@@ -5824,7 +5824,7 @@ step << Hunter
 step << Hunter
     #optional
     .goto Thunder Bluff,59.13,86.91
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConversar com |cRXP_FRIENDLY_Urek|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Urek Chifre Troante|r
     .train 5384 >> Treine suas magias de classe
     .target Urek Thunderhorn
     .xp <30,1
@@ -6120,7 +6120,7 @@ step
     #completewith next
     .goto Thousand Needles,46.73,48.27,30 >> Vá aos elevadores da Aldeia Vento Livre
 step
-    .goto Thousand Needles,45.91,49.91,25 >> Pegue o elevador até Freewind
+    .goto Thousand Needles,45.91,49.91,25 >> Suba pelo elevador até a Aldeia Vento Livre
     .isQuestAvailable 4821,4841,1149
 step
     .goto Thousand Needles,46.1,50.5
@@ -6194,7 +6194,7 @@ step << Mage
     .train 3566,3 --Skips step if Teleport Thunder Bluff isn't trained
 step
     .goto Thousand Needles,44.70,50.30
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Hagar|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Hagar Casco de Raio|r
     .accept 4821 >> Aceite Ovo alienígena
     .target Hagar Lightninghoof
 step
@@ -6385,7 +6385,7 @@ step
     .isQuestComplete 1197
 step
     .goto Thousand Needles,44.70,50.30
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Hagar|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Hagar Casco de Raio|r
     .turnin 4821 >> Entregue Alien Ovo
     .accept 4865 >> Aceite Selva da serpente
     .target Hagar Lightninghoof
@@ -6419,12 +6419,12 @@ step
     #label GrenkaCave
     .goto Thousand Needles,27.59,49.86,12,0
     .goto Thousand Needles,28.65,51.30,12,0
-    .goto Thousand Needles,27.29,51.30,12 >>Entre na casa de Roguefeather Den
+    .goto Thousand Needles,27.29,51.30,12 >>Entre no Covil Plumerrante
     .isOnQuest 1150
 step
     #completewith Grenka
-    +|cRXP_WARN_Cuidado pois |cRXP_ENEMY_Screeching Windcallers|r lançam|r |T136022:0|t[Rajada de Vento]|cRXP_WARN_, um atordoamento AdE de 4 segundos a 10 metros do |cRXP_ENEMY_Arauto do Vento Guinchador|r
-    +|cRXP_ENEMY_Screeching Harpies|r lançam|r |T136122:0|t[Guinchado Ensurdecedor]|cRXP_WARN_, um silêncio de 8 segundos|r << Mage/Warlock/Priest/Druid/Shaman/Paladin
+    +|cRXP_WARN_Cuidado: |cRXP_ENEMY_Arautos do Vento Guinchadores|r lançam|r |T136022:0|t[Rajada de Vento]|cRXP_WARN_, que atordoa em área por 4 segundos num raio de 10 metros do |cRXP_ENEMY_Arauto do Vento Guinchador|r
+    +|cRXP_ENEMY_Harpias Guinchadoras|r lançam|r |T136122:0|t[Guinchado Ensurdecedor]|cRXP_WARN_, que silencia por 8 segundos|r << Mage/Warlock/Priest/Druid/Shaman/Paladin
     .isOnQuest 1150
 step
     #completewith next
@@ -6436,7 +6436,7 @@ step
     .goto Thousand Needles,26.16,55.89,15,0
     .goto Thousand Needles,26.69,55.62,15,0
     .goto Thousand Needles,25.90,55.23
-    >>Mate for |cRXP_LOOT_Grenka's Claw|r
+    >>Mate |cRXP_ENEMY_Grenka Sangrunhidos|r. Pegue dela a |cRXP_LOOT_Garra da Grenka|r
     >>|cRXP_WARN_Esta missão foi enfraquecida em TBC. Nenhum inimigo adicional aparecerá|r
     .complete 1150,1 --Collect Grenka's Claw (x1)
     .mob Grenka Bloodscreech
@@ -6453,7 +6453,7 @@ step
     #completewith Paoka1
     .goto Thousand Needles,14.41,32.44,20,0
     .goto Thousand Needles,14.04,32.37,12,0
-    .goto Thousand Needles,14.04,32.37,20 >>Vá em direção à Highperch
+    .goto Thousand Needles,14.04,32.37,20 >>Vá em direção a Alcândora
     .subzoneskip 482
     .isOnQuest 4767
 step
@@ -6815,7 +6815,7 @@ step
 step << Hunter
     #optional
     .goto Thunder Bluff,59.13,86.91
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConversar com |cRXP_FRIENDLY_Urek|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Urek Chifre Troante|r
     .train 14319 >> Treine suas magias de classe
     .target Urek Thunderhorn
     .xp <28,1
@@ -6823,14 +6823,14 @@ step << Hunter
 step << Hunter
     #optional
     .goto Thunder Bluff,59.13,86.91
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConversar com |cRXP_FRIENDLY_Urek|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Urek Chifre Troante|r
     .train 5384 >> Treine suas magias de classe
     .target Urek Thunderhorn
     .xp <30,1
     .xp >32,1
 step << Hunter
     .goto Thunder Bluff,59.13,86.91
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConversar com |cRXP_FRIENDLY_Urek|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Urek Chifre Troante|r
     .train 14263 >> Treine suas magias de classe
     .target Urek Thunderhorn
     .xp <32,1
@@ -6866,13 +6866,13 @@ step << Warrior
     .xp <32,1
 step
     .goto Thunder Bluff,69.88,30.90
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Magatha|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Magatha Temível Totem|r
     .turnin 5062 >> Entregue Fogo sagrado
     .target Magatha Grimtotem
     .isQuestComplete 5062
 step
     .goto Thunder Bluff,69.88,30.90
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Magatha|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Magatha Temível Totem|r
     .accept 5088 >> Aceite Arikara
     .target Magatha Grimtotem
     .isQuestTurnedIn 5062
@@ -7137,7 +7137,7 @@ step
     #optional
 	.goto Dustwallow Marsh,29.7,47.6
     >>Clique no |cRXP_PICK_Suspicious Hoofprints|r no chão
-    .accept 1268 >> Aceite Pegadas Suspeitas de Cascos
+    .accept 1268 >> Aceite Pegadas em forma de casco
     .zoneskip Dustwallow Marsh,1
     .xp <30,1
 step
@@ -7150,7 +7150,7 @@ step
 step
     #optional
     .goto Dustwallow Marsh,29.63,48.60
-    >>Clique no fireplace
+    >>Clique no |cRXP_PICK_Escudo Negro|r acima da lareira
     .accept 1251 >> Aceite The Preto Escudo
     .zoneskip Dustwallow Marsh,1
     .xp <30,1
@@ -7281,7 +7281,7 @@ step
 step
     .goto Thousand Needles,53.95,41.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dorn Espreitaprados|r
-    .accept 1151 >> Aceite Teste de Força
+    .accept 1151 >> Aceite Teste de força
     .target Dorn Plainstalker
     .isQuestTurnedIn 1150
     .group

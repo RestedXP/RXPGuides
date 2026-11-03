@@ -5,7 +5,7 @@ RXPGuides.RegisterGuide([[
 #version 7
 #group RestedXP Guia TBC (A)
 << Alliance
-#name 1-6 Shadowglen
+#name 1-6 Umbravale
 #subgroup RestedXP Aliança 1-20
 #defaultfor NightElf
 #next 6-11 Teldrassil
@@ -22,7 +22,7 @@ step
 step
     #sticky
     #label balance1
-    >>Mate os |cRXP_ENEMY_Nightsabers Jovens|r e os |cRXP_ENEMY_Thistle Boars|r
+    >>Mate |cRXP_ENEMY_Sabres-da-noite Jovem|r e |cRXP_ENEMY_Javalis-espinho Jovem|r
     .goto Teldrassil,62.0,42.6
     .complete 456,1 --Kill Young Nightsaber (x7)
     .mob +Young Nightsaber
@@ -32,10 +32,10 @@ step
     .xp 2
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dirânia Pratafulge|r e |cRXP_FRIENDLY_Melithar Guenelmo|r
-    .accept 4495 >> Aceite A Good Amigo
+    .accept 4495 >> Aceite Um bom amigo
     .goto Teldrassil,60.899,41.961
     .target +Dirania Silvershine
-    .accept 458 >> Aceite The Protector of the Woods
+    .accept 458 >> Aceite O Protetor da Floresta
 	.goto Teldrassil,59.924,42.474
     .target +Melithar Staghelm
 step << Hunter
@@ -49,18 +49,18 @@ step << Hunter
 step << Hunter
     .goto Teldrassil,54.593,32.992
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Iverron|r
-    .turnin 4495 >> Entregue Um Bom Amigo
+    .turnin 4495 >> Entregue Um bom amigo
     .target Iverron
     .accept 3519 >> Aceite A Amigo in Need
 step << Hunter
     #completewith next
-    .hs >> Use sua Pedra de Retorno para ir a Shadowglen
+    .hs >> Use sua Pedra de Retorno para ir a Umbravale
 step << Hunter
     .goto Teldrassil,57.9,45.1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tarindrella|r
     .turnin 458 >> Entregue A Protetora dos Bosques
     .target Tarindrella
-    .accept 459 >> Aceite The Protector of the Woods
+    .accept 459 >> Aceite O Protetor da Floresta
 step << Druid/Priest
     .goto Teldrassil,59.602,40.696
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Delailah|r
@@ -72,15 +72,15 @@ step
     #requires balance1
 	.goto Teldrassil,58.695,44.266
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ilthalaine|r
-    .turnin 456,1 >> Entregue O Equilíbrio da Natureza << Hunter
-    .turnin 456 >> Entregue O Equilíbrio da Natureza << !Hunter
+    .turnin 456,1 >> Entregue O equilíbrio da natureza << Hunter
+    .turnin 456 >> Entregue O equilíbrio da natureza << !Hunter
     .target Conservator Ilthalaine
     .accept 457 >> Aceite O Equilíbrio da Natureza
-	.accept 3116 >> Aceite The Simple Seal << Warrior
-	.accept 3117 >> Aceite The Chiseled Seal << Hunter
+	.accept 3116 >> Aceite O Selo Simples << Warrior
+	.accept 3117 >> Aceite O Selo Cinzelado << Hunter
 --	.accept 3118 >> Accept Encrypted Sigil << Rogue
-	.accept 3119 >> Aceite The Sacred Seal << Priest
-	.accept 3120 >> Aceite The Verdant Seal << Druid
+	.accept 3119 >> Aceite O Selo Sagrado << Priest
+	.accept 3120 >> Aceite O Selo Verdejante << Druid
 step << Warrior
     .goto Teldrassil,59.306,41.091
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Keina|r
@@ -102,23 +102,23 @@ step << !Hunter
 step << !Hunter
     .goto Teldrassil,54.593,32.992
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Iverron|r
-    .turnin 4495 >> Entregue Um Bom Amigo
+    .turnin 4495 >> Entregue Um bom amigo
     .target Iverron
     .accept 3519 >> Aceite A Amigo in Need
 step << !Hunter
     #completewith next
-    .hs >> Use sua Pedra de Retorno para ir a Shadowglen
+    .hs >> Use sua Pedra de Retorno para ir a Umbravale
 step << !Hunter
     .goto Teldrassil,57.9,45.1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tarindrella|r
     .turnin 458 >> Entregue A Protetora dos Bosques
     .target Tarindrella
-    .accept 459 >> Aceite The Protector of the Woods
+    .accept 459 >> Aceite O Protetor da Floresta
 step << !Hunter
     .goto Teldrassil,58.6,44.3
     .target Conservator Ilthalaine
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ilthalaine|r
-    .turnin 457 >> Entregue O Equilíbrio da Natureza
+    .turnin 457 >> Entregue O equilíbrio da natureza
 step
     .goto Teldrassil,60.899,41.961
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dirânia Pratafulge|r
@@ -284,7 +284,7 @@ step << Hunter
     .goto Teldrassil,58.6,44.3
     .target Conservator Ilthalaine
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ilthalaine|r
-    .turnin 457,2 >> Entregue O Equilíbrio da Natureza
+    .turnin 457,2 >> Entregue O equilíbrio da natureza
 step << Priest
     #requires vial1
     .goto Teldrassil,59.2,40.5
@@ -1073,7 +1073,7 @@ step << !Rogue
 step << Druid
     .goto Darnassus,35.38,8.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Mathrengyl Ursivagus|r no nível intermediário
-    .accept 5921 >> Aceite Moonglade
+    .accept 5921 >> Aceite Clareira da Lua
 	.trainer >> Treine suas magias de classe
     .target Mathrengyl Bearwalker
 step << !Rogue

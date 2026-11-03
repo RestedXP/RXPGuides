@@ -227,7 +227,7 @@ step << Warrior
     .goto Mulgore,44.02,76.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Harutt|r
     .turnin 3091 >>Entregue Bilhete
-    .train 100 >>Aprenda |T132337:0|t[carga]
+    .train 100 >>Aprenda |T132337:0|t[Investida]
     .train 772 >>Aprenda |T132155:0|t[Dilacerar]
     .target Harutt Thunderhorn
     .money <0.02
@@ -1970,13 +1970,13 @@ step << Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Turak Runa Totem|r
     .goto Thunder Bluff,76.7,27.3
     .turnin 5928 >>Entregue Heeding the Call - Missão - Missão - Missão
-    .accept 5922 >>Aceite Moonglade
+    .accept 5922 >>Aceite Clareira da Lua
     .target Turak Runetotem
     .isOnQuest 5928
 step << Druid
     .goto Thunder Bluff,76.7,27.3
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Turak Runa Totem|r
-    .accept 5922 >>Aceite Moonglade
+    .accept 5922 >>Aceite Clareira da Lua
     .target Turak Runetotem
 step << Druid
     #completewith next
@@ -2287,7 +2287,7 @@ step << Warrior
     .isQuestAvailable 1498
 step << Warrior
     .goto Tirisfal Glades,61.71,52.06
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Estalajadeira Geni|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estalajadeira Geni|r
     .home >> Defina sua Pedra de Regresso em Montalvo
     .target Innkeeper Renee
     .bindlocation 2119

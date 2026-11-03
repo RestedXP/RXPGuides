@@ -203,7 +203,7 @@ step << Warrior
     .goto Mulgore,44.02,76.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Harutt|r
     .turnin 3091 >>Entregue Bilhete
-    .train 100 >>Aprenda |T132337:0|t[carga]
+    .train 100 >>Aprenda |T132337:0|t[Investida]
     .train 772 >>Aprenda |T132155:0|t[Dilacerar]
     .target Harutt Thunderhorn
     .money <0.02
@@ -1708,14 +1708,14 @@ step << Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Turak Runa Totem|r
     .goto Thunder Bluff,76.7,27.3
     .turnin 5928 >>Entregue Heeding the Call - Missão - Missão - Missão
-    .accept 5922 >>Aceite Moonglade
+    .accept 5922 >>Aceite Clareira da Lua
     .target Arch Druid Hamuul Runetotem
     .target Turak Runetotem
     .isOnQuest 5928
 step << Druid
     .goto Thunder Bluff,76.7,27.3
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Turak Runa Totem|r
-    .accept 5922 >>Aceite Moonglade
+    .accept 5922 >>Aceite Clareira da Lua
     .target Arch Druid Hamuul Runetotem
     .target Turak Runetotem
 step << Druid
@@ -1990,7 +1990,7 @@ step
 step
     #label FurlScornbrow
     .goto Durotar,49.89,40.39
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Furl|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Férrano Escarnecenho|r
     .accept 791 >>Aceite Carregue o Seu Peso
     .target Furl Scornbrow
 step
@@ -2119,7 +2119,7 @@ step
     .goto Durotar,55.94,74.72
 step
     #completewith TaillasherEggs
-    >>Abate |cRXP_ENEMY_Rastejadores Pigmeus de Surf|r e |cRXP_ENEMY_Rastejadores de Surf|r. Saque-os pelos |cRXP_LOOT_Muco|r
+    >>Mate |cRXP_ENEMY_Surfatiscos Pigmeus|r e |cRXP_ENEMY_Surfatiscos|r. Saqueie-os para pegar |cRXP_LOOT_Muco|r
     >>Mate |cRXP_ENEMY_Conchacouros Makrura|r e |cRXP_ENEMY_Estaladores Makrura|r. Saqueie-os para pegar |cRXP_LOOT_Olhos|r
     .complete 818,2 --Crawler Mucus (8)
     .mob +Pygmy Surf Crawler
@@ -2156,7 +2156,7 @@ step
     .goto Durotar,67.06,87.21,120 >>Nade para a ilha principal
 step
     #completewith MinshinasSkull
-    >>Abate |cRXP_ENEMY_Rastejadores Pigmeus de Surf|r e |cRXP_ENEMY_Rastejadores de Surf|r. Saque-os pelos |cRXP_LOOT_Muco|r
+    >>Mate |cRXP_ENEMY_Surfatiscos Pigmeus|r e |cRXP_ENEMY_Surfatiscos|r. Saqueie-os para pegar |cRXP_LOOT_Muco|r
     >>Mate |cRXP_ENEMY_Conchacouros Makrura|r e |cRXP_ENEMY_Estaladores Makrura|r. Saqueie-os para pegar |cRXP_LOOT_Olhos|r
     .complete 818,2 --Crawler Mucus (8)
     .mob +Pygmy Surf Crawler
@@ -2219,7 +2219,7 @@ step
     .mob +Voodoo Troll
 step
     #completewith next
-    >>Abate |cRXP_ENEMY_Rastejadores Pigmeus de Surf|r e |cRXP_ENEMY_Rastejadores de Surf|r. Saque-os pelos |cRXP_LOOT_Muco|r
+    >>Mate |cRXP_ENEMY_Surfatiscos Pigmeus|r e |cRXP_ENEMY_Surfatiscos|r. Saqueie-os para pegar |cRXP_LOOT_Muco|r
     >>Mate |cRXP_ENEMY_Conchacouros Makrura|r e |cRXP_ENEMY_Estaladores Makrura|r. Saqueie-os para pegar |cRXP_LOOT_Olhos|r
     >>|cRXP_WARN_Vá às ilhas do sul se você ainda não tiver progredido o suficiente nesta missão. Muitos|r |cRXP_ENEMY_Crawlers|r |cRXP_WARN_e|r |cRXP_ENEMY_Makruras|r |cRXP_WARN_podem ser encontrados lá|r
     .complete 818,2 --Crawler Mucus (8)
@@ -2258,7 +2258,7 @@ step
     .goto Durotar,57.27,79.38,60,0
     .goto Durotar,55.66,80.47,60,0
     .goto Durotar,53.8,83.14,60,0
-    >>Abate |cRXP_ENEMY_Rastejadores Pigmeus de Surf|r e |cRXP_ENEMY_Rastejadores de Surf|r. Saque-os pelos |cRXP_LOOT_Muco|r
+    >>Mate |cRXP_ENEMY_Surfatiscos Pigmeus|r e |cRXP_ENEMY_Surfatiscos|r. Saqueie-os para pegar |cRXP_LOOT_Muco|r
     >>Mate |cRXP_ENEMY_Conchacouros Makrura|r e |cRXP_ENEMY_Estaladores Makrura|r. Saqueie-os para pegar |cRXP_LOOT_Olhos|r
     .complete 818,2 --Crawler Mucus (8)
     .mob +Pygmy Surf Crawler
@@ -2333,7 +2333,7 @@ step
     .goto Durotar,49.60,40.04,8 >>Viaje para cima da torre em direção a Férrano Escarnecenho
 step
     .goto Durotar,49.89,40.39
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Furl|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Férrano Escarnecenho|r
     .turnin 791 >>Entregue Carregue suas tralhas
     .target Furl Scornbrow
 step

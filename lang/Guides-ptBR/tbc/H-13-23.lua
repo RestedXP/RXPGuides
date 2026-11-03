@@ -1004,7 +1004,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Vrang Sanguebravo|r
     >>|cRXP_FRIENDLY_Vrang Sanguebravo|r |cRXP_WARN_vende|r |T133476:0|t[|cRXP_FRIENDLY_Maça Pesada com Pontas|r] |cRXP_WARN_com estoque limitado|r << Orc Warrior/Troll Warrior/Tauren Warrior/Shaman
 	.vendor	>> Venda os lixos e repare seu equipamento
-    .target Vrang Wildgore
+    .target Vrang Sanguebravo
     .isQuestAvailable 901
 step
 	#label Samophlange
@@ -1868,7 +1868,7 @@ step
     .mob Ornery Plainstrider
 step
     .goto The Barrens,52.60,46.10
-    >>Clique no |cRXP_PICK_Blue Objetos de Clássico|r. Mate mais |cRXP_ENEMY_Sunscale Scytheclaws|r se você não tiver uma |T132914:0|t[Sunscale Feather]
+    >>Clique no |cRXP_PICK_Ninho de Raptor Azul|r. Mate mais |cRXP_ENEMY_Garrafoices Helióscamo|r se você não tiver uma |T132914:0|t[Pena de Helióscamo]
     >>|cRXP_WARN_Cuidado, eles lançam|r |T132152:0|t[Surra] |cRXP_WARN_(Causa 2 ataques extras a cada 10 segundos)|r
     .complete 905,1 --Visit Blue Raptor Nest (1)
     .collect 5165,3,905,7,3
@@ -1942,7 +1942,7 @@ step
     #label SetCampTaurajoHS
     .goto The Barrens,45.58,59.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estalajadeira Byula|r
-    .home >>Defina sua Pedra de Retorno em Camp Taurajo
+    .home >>Defina sua Pedra de Regresso ao Acampamento Taurajo
     .target Innkeeper Byula
     .isQuestAvailable 878
     .bindlocation 378
@@ -2674,7 +2674,7 @@ step
     .goto The Barrens,52.26,31.93
 step
     #completewith TribesTurnin
-    .destroy 5085 >>|cRXP_WARN_Apague qualquer|r |T133721:0|t[Presa de Javatusco Costagulha] |cRXP_WARN_que você ainda tenha|r
+    .destroy 5085 >>|cRXP_WARN_Descarte as|r |T133721:0|t[Presas de Javatusco Costagulha] |cRXP_WARN_restantes|r
     .itemcount 5085,1
 step << Warlock
     #completewith next
@@ -2698,7 +2698,7 @@ step << Warlock
     .goto Orgrimmar,47.05,46.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Cazul|r
     .turnin 1507 >>Entregue Devorador de Almas
-    .accept 1508 >>Aceite Cegar Cazul
+    .accept 1508 >>Aceite Cazul cego
     .target Cazul
 step << Warlock
     .goto Orgrimmar,44.16,48.45
@@ -3151,7 +3151,7 @@ step
     .target Melor Stonehoof
 step << Hunter
     .goto Thunder Bluff,59.13,86.91
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConversar com |cRXP_FRIENDLY_Urek|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Urek Chifre Troante|r
     .train 5118 >> Treine suas magias de classe
     .target Urek Thunderhorn
     .xp <20,1
@@ -3159,7 +3159,7 @@ step << Hunter
 step << Hunter
     #optional
     .goto Thunder Bluff,59.13,86.91
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConversar com |cRXP_FRIENDLY_Urek|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Urek Chifre Troante|r
     .train 5118 >> Treine suas magias de classe
     .target Urek Thunderhorn
     .xp <22,1
@@ -4476,7 +4476,7 @@ step
     .goto Thunder Bluff,69.88,30.90,80 >> Vá ao Platô dos Anciãos
 step
     .goto Thunder Bluff,69.88,30.90
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Magatha|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Magatha Temível Totem|r
     .turnin 1063 >>Entregue A Bruxa Anciã
     .timer 6,Cena de A Velha Anciã
     .target Magatha Grimtotem
@@ -4509,7 +4509,7 @@ step
     .dungeon WC
 step
     .goto Thunder Bluff,69.88,30.90
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Magatha|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Magatha Temível Totem|r
     .accept 1064 >>Aceite Ajuda Renegada
     .target Magatha Grimtotem
 step
@@ -4675,7 +4675,7 @@ step << Shaman
 step << Shaman
     .goto The Barrens,45.58,59.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estalajadeira Byula|r
-    .home >>Defina sua Pedra de Retorno em Camp Taurajo
+    .home >>Defina sua Pedra de Regresso ao Acampamento Taurajo
     .target Innkeeper Byula
     .bindlocation 378
 step << Shaman
