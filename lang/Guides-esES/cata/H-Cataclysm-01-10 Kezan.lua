@@ -1808,7 +1808,7 @@ step
     .complete 25251,1 --1/1 Ultimate Footbomb Uniform
     .target Ultimate Footbomb Uniform
 step
-    >>Selecciona a |cRXP_ENEMY_Príncipe mercante Gallywix|r y usa todas tus habilidades cada vez que esté disponible
+    >>Selecciona al |cRXP_ENEMY_Príncipe mercante Gallywix|r y usa todas tus habilidades cuando estén disponibles
     .goto 174,41.87,17.61,10,0
     .goto 174,43.4,19.9
     .complete 25251,2 --1/1 Trade Prince Gallywix dealt with

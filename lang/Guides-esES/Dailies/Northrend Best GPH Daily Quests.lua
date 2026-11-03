@@ -604,7 +604,7 @@ step
 step
 	#requires Gryphon
 	>>Regresa a Death's Levantar. Habla con Uzo, Setaal y Aurochs.
-    .turnin 12815 >>Entrega la misión Espacio aéreo protegido.
+    .turnin 12815 >>Entrega la misión Espacio aéreo protegido
     .goto Icecrown,19.64,47.80
     .turnin 12813 >>Entrega la misión ¡De sus cadáveres se alzan!.
     .goto Icecrown,19.67,48.39

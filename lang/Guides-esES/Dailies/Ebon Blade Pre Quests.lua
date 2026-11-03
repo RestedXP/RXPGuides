@@ -384,7 +384,7 @@ step
 step
 	.goto Icecrown,19.64,47.80
 	>>Regresa al Ascenso de la Muerte. Habla con Uzo.
-    .turnin 12815 >>Entrega la misión Espacio aéreo protegido.
+    .turnin 12815 >>Entrega la misión Espacio aéreo protegido
 step
     >>Regresa a La Cámara de las Sombras. Habla con El Saltador y Vil
     .turnin -13069 >>Gira en Dispárales

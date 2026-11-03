@@ -1005,7 +1005,7 @@ step << Warrior/Paladin
 step << Shaman
     .goto The Exodar,69.945,90.749
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ven|r
-    >>|cRXP_BUY_Compra una|r |T132402:0|t[Hachuela] |cRXP_BUY_a él|r
+    >>|cRXP_BUY_Compra una|r |T132402:0|t[Hachuela] |cRXP_BUY_a este vendedor|r
     >>|cRXP_WARN_Alternativamente, busca en la Casa de subastas algo mejor o más barato|r
     .collect 853,1 -- Hatchet (1)
     .money <0.1927

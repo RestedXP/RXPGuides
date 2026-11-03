@@ -1,7 +1,7 @@
 if GetLocale() ~= "esES" and GetLocale() ~= "esMX" then return end
 RXPGuides.RegisterGuide([[
 #wotlk
-#group Aumento de Profesión
+#group Subida de Profesión
 << Horde
 #name 1-450 Herboristería (H)
 #guideKind profession
@@ -328,7 +328,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #wotlk
-#group Aumento de Profesión
+#group Subida de Profesión
 << Alliance
 #name 1-450 Herboristería (A)
 #guideKind profession

@@ -390,7 +390,7 @@ step
     .accept 26291 >>Acepta la misión Un problema gordo en Arroyo de la Luna
 step
     #completewith next
-    .hs >> Usa tu Piedra de Hogar para ir a Centinela Hill
+    .hs >> Usa la Piedra de hogar para ir a Colina del Centinela
     .cooldown item,6948,>2,1
 step
     .goto 1436/0,1045.300,-10508.800
@@ -496,7 +496,7 @@ step
     .complete 26320,1 -- Vision of the Past uncovered 1/1
 step
     #completewith next
-    .hs >> Usa tu Piedra de Hogar para ir a Centinela Hill
+    .hs >> Usa la Piedra de hogar para ir a Colina del Centinela
     .cooldown item,6948,>2,1
 step
     .goto 1436/0,1045.100,-10508.800

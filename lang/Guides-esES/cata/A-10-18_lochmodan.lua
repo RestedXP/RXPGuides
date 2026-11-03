@@ -94,7 +94,7 @@ step << Warrior/Paladin
 step << Rogue/Shaman
     .goto 48,23.673,74.329
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Thorvald Forjahonda|r
-    >>|cRXP_BUY_Compra una|r |T132402:0|t[Hachuela] |cRXP_BUY_a él|r
+    >>|cRXP_BUY_Compra una|r |T132402:0|t[Hachuela] |cRXP_BUY_a este vendedor|r
     .collect 853,1 -- Hatchet (1)
     .money <0.1927
     .itemStat 16,QUALITY,<7
