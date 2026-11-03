@@ -916,7 +916,7 @@ step
 step
     .goto 63,12.46,35.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_战歌信使|r 对话
-    .turnin 6641 >>交任务  鞭笞者沃尔沙
+    .turnin 6641 >>交任务鞭笞者沃尔沙
     .target Warsong Runner
 step
     .goto 63,12.66,35.39
@@ -1014,7 +1014,7 @@ step
 step
     .goto 63,37.77,43.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡拉恩·阿玛卡|r 对话
-    .accept 216 >>接受任务 蓟皮熊怪的麻烦
+    .accept 216 >>接受任务蓟皮熊怪的麻烦
     .target 卡拉恩·阿玛卡
 step
     .goto 63,37.98,43.87
@@ -1632,7 +1632,7 @@ step
     #questguide
     .goto 85,53.62,78.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_旅店老板格雷什卡|r 对话
-    .home >>将你的炉石设置到奥格瑞玛
+    .home >>将你的炉石绑在铁炉堡
     .target 旅店老板格雷什卡
     .isQuestTurnedIn 13841
 step

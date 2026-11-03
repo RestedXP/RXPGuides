@@ -538,7 +538,7 @@ step
 --XX about 40s slower not to d
 step
     #completewith next
-    >>|cRXP_WARN_等待剧情演出完成|r
+    >>|cRXP_WARN_等剧情结束|r
     .goto 202,40.548,39.446,20 >>骑上 |cRXP_FRIENDLY_克罗雷的马|r 前去找|cRXP_FRIENDLY_托比亚斯·密斯特曼托|r
 step
     .goto 202,40.548,39.446
@@ -601,7 +601,7 @@ step
 	.target Lord Daruius Crowley
 step
     .goto 179,36.47,61.39
-    >>|cRXP_WARN_等待剧情演出完成|r
+    >>|cRXP_WARN_等剧情结束|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_吉恩·格雷迈恩国王|r 对话
     .accept 14375 >>接受任务 人性的最后希望
     .turnin 14375 >>交任务 人性的最后希望
@@ -610,7 +610,7 @@ step
 --XX 2dp waypoints here on out (gc bug)
 step
     .goto 179,36.51,62.27
-    >>|cRXP_WARN_等待剧情演出完成|r
+    >>|cRXP_WARN_等剧情结束|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_高弗雷勋爵|r对话
     .accept 14313 >>接受任务 恢复人性
 	.target Lord Godfrey
@@ -1339,7 +1339,7 @@ step << skip
     #optional
     #label Manor01
     #completewith next
-    >>|cRXP_WARN_等待剧情演出完成|r
+    >>|cRXP_WARN_等剧情结束|r
 --XX add waypoint to tie to timer
 step
     #optional
@@ -1388,7 +1388,7 @@ step
     .target Stagecoach Carriage
 step
     .isOnQuest 24438
-    .goto 179,51.81,80.49,10 >> |cRXP_WARN_等待剧情演出完成|r
+    .goto 179,51.81,80.49,10 >> |cRXP_WARN_等剧情结束|r
 step
     .goto 179,51.81,80.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_利亚姆·格雷迈恩王子|r对话
@@ -2027,7 +2027,7 @@ step
 step
     #optional
     #completewith next
-    >>|cRXP_WARN_等待剧情演出完成|r
+    >>|cRXP_WARN_等剧情结束|r
     .goto 202,36.89,59.09,8 >>进入房子
 step
     .goto 202,38.62,60.25
@@ -2147,7 +2147,7 @@ step
     #optional
     #requires RidingBat
     #completewith Survival
-    .goto 179,57.11,39.50,5 >>|cRXP_WARN_等待剧情演出完成|r
+    .goto 179,57.11,39.50,5 >>|cRXP_WARN_等剧情结束|r
 step
     #label Survival
     .goto 179,54.83,35.83,-1

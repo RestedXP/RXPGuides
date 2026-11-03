@@ -1829,7 +1829,7 @@ step
 step
     #questguide
     .goto 49,77.204,65.923
-    >>|cRXP_WARN_等待剧情演出完成|r
+    >>|cRXP_WARN_等剧情结束|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_托德曼上校|r对话
     .accept 26708 >>接受任务 啊啊啊啊啊啊啊啊啊啊啊！啊啊啊啊啊啊啊啊啊！！！
     .target Colonel Troteman

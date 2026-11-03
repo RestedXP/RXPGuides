@@ -76,7 +76,7 @@ step
     .accept 29198 >>接受任务 庇护所保卫战
 step
     .goto 198/1,-2080.200,4421.700
-    >>|cRXP_WARN_等待剧情演出完成|r
+    >>|cRXP_WARN_等剧情结束|r
     .complete 29198,1
 step
     .goto 198/1,-2080.200,4421.700
@@ -2535,7 +2535,7 @@ step
 step
     .isQuestTurnedIn 29215
     .goto 338,53.527,90.736
-    >>|cRXP_WARN_等待剧情演出完成|r
+    >>|cRXP_WARN_等剧情结束|r
     .complete 29249,1 -- Acorn Planted 1/1
 step
     .isQuestTurnedIn 29215
@@ -3171,7 +3171,7 @@ step
     .goto 338,47.022,91.368
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_玛法里奥·怒风|r对话
     .target Malfurion Stormrage
-    .turnin 29203 >> 交任务深入神庙
+    .turnin 29203 >> 交任务 深入神庙
 step
     .isQuestTurnedIn 29203
     >>|cRXP_WARN_你现在应已收到 |cRXP_FRIENDLY_瑟蕾莎·树皮|r 寄来的邮件，内含|r |T514925:0|t[|cRXP_LOOT_烟熏过的坠饰|r]
@@ -3199,7 +3199,7 @@ step
     .target Rabine Saturna
 step
     .isQuestTurnedIn 29203
-    >>|cRXP_WARN_等待剧情演出完成|r
+    >>|cRXP_WARN_等剧情结束|r
     .complete 29302,1 -- Look into Leyara's memories 1/1
 step
     .isQuestTurnedIn 29203
@@ -3221,7 +3221,7 @@ step
 step
     .isOnQuest 29203
     .goto Ashenvale,40.501,53.281
-    >>|cRXP_WARN_等待剧情演出完成|r
+    >>|cRXP_WARN_等剧情结束|r
     .complete 29303,1 -- Look deeper into Leyara's memories 1/1
     .skipgossip
 step
@@ -3242,7 +3242,7 @@ step
 step
     .isOnQuest 29310
     .goto 198,7.561,34.582
-    >>|cRXP_WARN_等待剧情演出完成|r
+    >>|cRXP_WARN_等剧情结束|r
     .complete 29310,1 -- Look deeper into Leyara's memories 1/1
     .skipgossip
 step
@@ -4337,7 +4337,7 @@ step -- this step will autoskip if they completed 29276 earlier
     .goto 338,65.959,66.093
     .isQuestTurnedIn 29272 -- Only offered if completed Druids questline
     +|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_安伦·觅影者|r 对话
-    >>|cRXP_WARN_如果他不在就跳过这一步|r
+    >>如果他不在就跳过这一步
     .daily 29275 >>接受任务 范达尔的研究
     .disablecheckbox
     .target Anren Shadowseeker
@@ -4670,7 +4670,7 @@ step
     .goto 338,47.022,91.368
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_玛法里奥·怒风|r对话
     .target Malfurion Stormrage
-    .turnin 29203 >> 交任务深入神庙
+    .turnin 29203 >> 交任务 深入神庙
 step
     .isQuestTurnedIn 29203
     >>|cRXP_WARN_你现在应已收到 |cRXP_FRIENDLY_瑟蕾莎·树皮|r 寄来的邮件，内含|r |T514925:0|t[|cRXP_LOOT_烟熏过的坠饰|r]
@@ -4698,7 +4698,7 @@ step
     .target Rabine Saturna
 step
     .isQuestTurnedIn 29203
-    >>|cRXP_WARN_等待剧情演出完成|r
+    >>|cRXP_WARN_等剧情结束|r
     .complete 29302,1 -- Look into Leyara's memories 1/1
 step
     .isQuestTurnedIn 29203
@@ -4720,7 +4720,7 @@ step
 step
     .isOnQuest 29203
     .goto Ashenvale,40.501,53.281
-    >>|cRXP_WARN_等待剧情演出完成|r
+    >>|cRXP_WARN_等剧情结束|r
     .complete 29303,1 -- Look deeper into Leyara's memories 1/1
     .skipgossip
 step
@@ -4741,7 +4741,7 @@ step
 step
     .isOnQuest 29310
     .goto 198,7.561,34.582
-    >>|cRXP_WARN_等待剧情演出完成|r
+    >>|cRXP_WARN_等剧情结束|r
     .complete 29310,1 -- Look deeper into Leyara's memories 1/1
     .skipgossip
 step

@@ -76,7 +76,7 @@ step
 	.target +Commander Althea Ebonlocke
 step
     .goto 47,75.33,48.02
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡洛尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_卡洛尔|r 对话
     .accept 26688 >>接受任务 林子里的狼人
 	.target 卡洛尔
 
@@ -165,7 +165,7 @@ step
 	.target +Commander Althea Ebonlocke
 step
     .goto 47,75.33,48.02
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡洛尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_卡洛尔|r 对话
     .turnin 26688 >>交任务 林子里的狼人
     .accept 26689 >>接受任务 烂果园
 	.target 卡洛尔
@@ -331,7 +331,7 @@ step
 	.goto 47,73.82,45.95,8 >>离开旅店
 step
     .goto 47,75.33,48.02
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡洛尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_卡洛尔|r 对话
     .turnin 26689,1 >>交任务 烂果园
     .accept 26690 >>接受任务 邪齿和堕落
 	.target 卡洛尔
@@ -579,7 +579,7 @@ step
 	.target Oliver Harris
 	.target Sister Elsington
 step
-    >>|cRXP_WARN_等待剧情演出完成|r
+    >>|cRXP_WARN_等剧情结束|r
     >>|cRXP_WARN_若计时结束后未获得进度，放弃「异想天开」并重新接受任务|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_奥利弗·哈里斯|r,|cRXP_FRIENDLY_斯温·约根|r, 和|cRXP_FRIENDLY_艾丽辛顿修女|r 对话
     .complete 26760,1 --1/1 Worgen cured

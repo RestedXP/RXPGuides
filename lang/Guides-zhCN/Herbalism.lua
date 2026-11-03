@@ -81,7 +81,7 @@ step
     .goto Silverpine Forest,45.6,42.6,-1
     .goto Hillsbrad Foothills,21.0,46.2,-1
     >>前往希尔斯布莱德丘陵。如果你靠近边界，就骑马去那里；否则骑马回到瑟伯切尔并飞到塔伦米尔
-    .fly Tarren Mill >> 飞往塔伦米尔
+    .fly Tarren Mill >> 飞往塔伦米尔，希尔斯布莱德
     .zoneskip Hillsbrad Foothills
     .skill herbalism,150,1
 step
@@ -189,7 +189,7 @@ step << !Mage
 step
     #completewith Ruak
     .goto Shattrath City,64.1,41.1
-    .fly Thrallmar >> 飞往萨尔玛，地狱火半岛
+    .fly Thrallmar >> 飞往萨尔玛
     .skill herbalism,325,1
     .skill riding,300,1
     .zoneskip Hellfire Peninsula

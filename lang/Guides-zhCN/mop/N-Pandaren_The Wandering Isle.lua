@@ -1046,7 +1046,7 @@ step
 	.timer 231,神真子的苦难 RP
 step
     .goto 378,30.8,92.9
-	>>|cRXP_WARN_等待剧情演出完成|r
+	>>|cRXP_WARN_等剧情结束|r
     .complete 29791,2 --1/1 Uncover the source of Shen-zin Su's pain
 step
     .goto 378,51.35,57.21,20,0
@@ -1326,7 +1326,7 @@ step
 	.target Ji Firepaw
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_季·火掌|r 对话
-    >>|cRXP_WARN_等待剧情演出完成|r
+    >>|cRXP_WARN_等剧情结束|r
     .goto 378,38.77,86.32
     .accept 29800 >>接受任务 新的盟友
 	.target Ji Firepaw

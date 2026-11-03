@@ -501,7 +501,7 @@ step
 --XX you can start the event earlier then get the box and come back but its way too hard to communicate it/trust the player enough for a 3s time gain vs 20s time loss
 step
     .goto 27,27.759,75.195
-    >>|cRXP_WARN_等待剧情演出完成|r
+    >>|cRXP_WARN_等剧情结束|r
     >>|cRXP_WARN_保持靠近 |cRXP_FRIENDLY_占卜者米里姆库亚|r，否则任务目标无法完成|r
     .complete 24489,3 --Soothsayer Mirim'koa Scouted (1)
     .target Soothsayer Mirim'koa
@@ -515,7 +515,7 @@ step
     #sticky
     #label Rikkari
     .goto 27,29.593,78.754
-    >>|cRXP_WARN_等待剧情演出完成|r
+    >>|cRXP_WARN_等剧情结束|r
     >>|cRXP_WARN_保持靠近 |cRXP_FRIENDLY_占卜者里卡卡利|r，否则任务目标无法完成|r
     .complete 24489,2 --Soothsayer Rikkari Scouted (1)
     .target Soothsayer Rikkari
@@ -536,7 +536,7 @@ step
     #requires Rikkari
     #label Shikala
     .goto 27,33.323,77.988
-    >>|cRXP_WARN_等待剧情演出完成|r
+    >>|cRXP_WARN_等剧情结束|r
     >>|cRXP_WARN_保持靠近 |cRXP_FRIENDLY_占卜者史卡拉|r，否则任务目标无法完成|r
     .complete 24489,1 --Soothsayer Shi'kala Scouted (1)
     .target Soothsayer Shi'kala
@@ -891,7 +891,7 @@ step
     .timer 30,净化处理 剧情演出
     .target Sanitron 500
 step
-    >>|cRXP_WARN_等待剧情演出完成|r
+    >>|cRXP_WARN_等剧情结束|r
     .complete 27635,1 --Decontamination Process started (1)
     .target Sanitron 500
 step
@@ -1494,7 +1494,7 @@ step
     #optional
     #completewith next
     #requires Mekkatalk
-    >>|cRXP_WARN_等待剧情演出完成|r
+    >>|cRXP_WARN_等剧情结束|r
     +|cRXP_WARN_使用|r |T308321:0|t[轨道定位装置] |cRXP_WARN_在|r |cRXP_ENEMY_拉奇诺·碎轮|r |cRXP_WARN_和|r |cRXP_ENEMY_碎齿的守护者|r身上
     .isOnQuest 26364
     .use 58253
@@ -2161,7 +2161,7 @@ step
     .target Sergeant Flinthammer
 step
     #questguide
-    >>|cRXP_WARN_等待剧情演出完成|r
+    >>|cRXP_WARN_等剧情结束|r
     >>击杀 |cRXP_ENEMY_霜鬃袭击者|r
     .complete 25932,1 --Defend Amberstill Ranch (1)
     .mob Frostmane Raider

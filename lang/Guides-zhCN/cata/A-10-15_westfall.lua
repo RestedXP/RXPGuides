@@ -506,7 +506,7 @@ step
     --.accept 26322 >>Accept Rise of the Brotherhood
     --.timer 105,Rise of the Brotherhood RP
 step << skip -- quest isn't needed for loremaster
-    >>|cRXP_WARN_等待剧情演出完成|r
+    >>|cRXP_WARN_等剧情结束|r
     .complete 26322,1 -- Rise of the Brotherhood witnessed 1/1
 step
     .goto 1436/0,2110.100,-10514.500

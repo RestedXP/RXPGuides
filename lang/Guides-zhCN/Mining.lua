@@ -210,7 +210,7 @@ step
 step
     #completewith Krugosh
     .goto Shattrath City,64.1,41.1
-    .fly Thrallmar >> 飞往萨尔玛，地狱火半岛
+    .fly Thrallmar >> 飞往萨尔玛
     .skill mining,325,1
     .skill riding,300,1
     .zoneskip Hellfire Peninsula
