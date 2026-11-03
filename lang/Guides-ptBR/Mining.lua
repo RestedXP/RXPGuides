@@ -1,7 +1,7 @@
 if GetLocale() ~= "ptBR" then return end
 RXPGuides.RegisterGuide([[
 #wotlk
-#group Nivelamento de Profissão
+#group Progressão de profissões
 << Horde
 #name 1-450 Mineração (H)
 #guideKind profession
@@ -173,7 +173,7 @@ step << Mage
 step
     #completewith next
     .goto Orgrimmar,45.1,63.9
-    .fly Gadgetzan >> Voe para Gadgetzan
+    .fly Gadgetzan >> Voe para Geringontzan
     .skill mining,245,1
     .zoneskip Tanaris
 step
@@ -317,7 +317,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #wotlk
-#group Nivelamento de Profissão
+#group Progressão de profissões
 << Alliance
 #name 1-450 Mineração (A)
 #guideKind profession
@@ -488,7 +488,7 @@ step << !Mage
 step
     #completewith next
     .goto Dustwallow Marsh,67.5,51.3
-    .fly Gadgetzan >> Voe para Gadgetzan
+    .fly Gadgetzan >> Voe para Geringontzan
     .skill mining,245,1
     .zoneskip Tanaris
 step

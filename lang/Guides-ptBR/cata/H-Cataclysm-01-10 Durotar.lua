@@ -149,7 +149,7 @@ step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Frang|r
     .turnin 2383 >>Entregue Pergaminho simples
     .accept 25147 >>Aceite Investida
-    .train 100 >> Treine |T132337:0|t[Carga] << Cata
+    .train 100 >> Aprenda |T132337:0|t[Investida] << Cata
     .target Frang
 step << Warlock cata
     .goto 1411,42.38,68.06

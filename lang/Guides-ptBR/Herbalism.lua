@@ -1,7 +1,7 @@
 if GetLocale() ~= "ptBR" then return end
 RXPGuides.RegisterGuide([[
 #wotlk
-#group Nivelamento de Profissão
+#group Progressão de profissões
 << Horde
 #name 1-450 Herborismo (H)
 #guideKind profession
@@ -98,7 +98,7 @@ step << Mage
 step << !Mage
     #completewith next
     .goto Hillsbrad Foothills,60.1,18.6
-    .fly Stonard >> Voe para Stonard
+    .fly Stonard >> Voe para Pedregal
     .skill herbalism,225,1
 step
     >>Foque em Liferoot e Kingsblood para começar, e em Fadeleaf quando atingir 160 de habilidade
@@ -158,7 +158,7 @@ step << !Mage
 step << !Mage
     #completewith next
     .goto Stranglethorn Vale,32.5,29.4
-    .fly Stonard >> Voe para Stonard
+    .fly Stonard >> Voe para Pedregal
     .skill herbalism,300,1
     .zoneskip Swamp of Sorrows
 step
@@ -328,7 +328,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #wotlk
-#group Nivelamento de Profissão
+#group Progressão de profissões
 << Alliance
 #name 1-450 Herborismo (A)
 #guideKind profession

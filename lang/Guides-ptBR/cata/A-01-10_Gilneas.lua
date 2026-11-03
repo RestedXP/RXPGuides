@@ -165,7 +165,7 @@ step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com Seargent Cleese|r
     .turnin 14265 >>Entregue Instrutor Particular
     .accept 14266 >>Aceite Investida
-    .train 100 >>Treine |T132337:0|t[Carga] << cata
+    .train 100 >>Aprenda |T132337:0|t[Investida] << cata
 	.target Sergeant Cleese
 step << Rogue
     .goto 202,71.406,65.752

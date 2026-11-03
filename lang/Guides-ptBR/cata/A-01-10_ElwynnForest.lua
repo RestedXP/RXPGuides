@@ -159,7 +159,7 @@ step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Hipólito Valentim|r
     .turnin 3100 >>Entregue Carta Simples << Human
     .accept 26913 >>Aceite Com Toda a Carga << Human
-    .train 100 >>Treine |T132337:0|t[Carga] << Cata
+    .train 100 >>Aprenda |T132337:0|t[Investida] << Cata
     .target Llane Beshere
 step << Paladin
     .goto 425,41.55,53.23
@@ -1059,7 +1059,7 @@ step << Mage cata
     .target Zaldimar Wefhellt
 step << Priest cata
     .goto 37,43.282,65.720
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Sacerdotisa Joselita|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Sacerdotisa Joselita|r
     .trainer >> Treine suas magias de classe
     .target Priestess Josetta
 step << Rogue cata

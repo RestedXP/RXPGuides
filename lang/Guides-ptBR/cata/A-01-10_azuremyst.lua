@@ -134,7 +134,7 @@ step << Warrior
     .goto Azuremyst Isle,79.587,49.446
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kore|r
     .accept 26958 >> Aceite A Primeira Lição
-	.train 100 >> Treine |T132337:0|t[Carga] << cata
+	.train 100 >> Aprenda |T132337:0|t[Investida] << cata
     .target Kore
 step << Shaman
     .goto Azuremyst Isle,79.278,49.126

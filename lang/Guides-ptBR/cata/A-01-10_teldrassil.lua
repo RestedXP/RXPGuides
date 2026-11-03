@@ -7,7 +7,7 @@ RXPGuides.RegisterGuide([[
 #group RXP MoP 1-80 (A) << mop
 #cata
 #mop
-#name 1-6 Shadowglen
+#name 1-6 Umbravale
 #next 6-10 Teldrassil
 #defaultfor NightElf
 <<Alliance
@@ -27,7 +27,7 @@ step
 step
     .goto 460,45.62,74.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ilthalaine|r
-    .turnin 28713 >>Entregue O Equilíbrio da Natureza
+    .turnin 28713 >>Entregue O equilíbrio da natureza
     .accept 28714 >>Aceite A Corrupção do Limo Vil
 	.target Ilthalaine
 step
@@ -147,7 +147,7 @@ step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Alyissia|r
     .turnin 3116 >> Entregue O Selo Simples
     .accept 26945 >> Aceite O Aprendizado de Novas Técnicas
-	.train 100 >> Treine |T132337:0|t[Carga] << cata
+	.train 100 >> Aprenda |T132337:0|t[Investida] << cata
     .target Alyissia
 step << Warrior
     .goto 1438/1,808.79999,10460.79980
@@ -250,7 +250,7 @@ step
     .goto 460,42.49,50.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dantaria Clarargêntea|r
     .turnin 28724 >>Entregue O Antídoto de Iverron
-    .accept 28725 >>Aceite A Protetora dos Bosques
+    .accept 28725 >>Aceite O Protetor da Floresta
 	.target Dentaria Silverglade
 step
 	#completewith next

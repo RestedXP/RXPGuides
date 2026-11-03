@@ -190,7 +190,7 @@ step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Harutt|r
     .turnin 3091 >>Entregue Bilhete
     .accept 27020 >>Aceite A Primeira Lição
-    .train 100 >> Treine |T132337:0|t[Carga] << Cata
+    .train 100 >> Aprenda |T132337:0|t[Investida] << Cata
     .target Harutt Thunderhorn
 step << Paladin
     .goto 7,44.96,75.34
@@ -443,7 +443,7 @@ step << Tauren
     .target Tak
 step
     .goto 1412/1,-347.39999,-2365.30005
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estalajadeiro Kauth|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Estalajadeiro Kauth|r
     .vendor >>|cRXP_BUY_Compre até 20|r |T132815:0|t[Leite Gelado] |cRXP_BUY_e|r |T133968:0|t[Pão Fresquinho] << !Warrior !Hunter
     .vendor >>|cRXP_BUY_Compre até 20|r |T133968:0|t[Pão Fresquinho] << Warrior/Hunter
     .target Innkeeper Kauth
@@ -707,7 +707,7 @@ step << Paladin Cata
     .xp <7,1
 step
     .goto 1412/1,-347.39999,-2365.30005
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estalajadeiro Kauth|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Estalajadeiro Kauth|r
     .vendor >>|cRXP_BUY_Compre até 20|r |T132815:0|t[Leite Gelado] |cRXP_BUY_e|r |T133968:0|t[Pão Fresquinho] << !Warrior !Hunter
     .vendor >>|cRXP_BUY_Compre até 20|r |T133968:0|t[Pão Fresquinho] << Warrior/Hunter
     .itemcount 1179,<20 << !Warrior !Hunter

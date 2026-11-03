@@ -1522,7 +1522,7 @@ step
     .target Thraka
 step
     .goto 63,74.12,60.92
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Yama|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Yama Casco de Neve|r
     .turnin 6482 >> Entregue Liberdade para Ruul!
     .target Yama Snowhoof
 step

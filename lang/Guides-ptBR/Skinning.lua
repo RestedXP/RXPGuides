@@ -1,7 +1,7 @@
 if GetLocale() ~= "ptBR" then return end
 RXPGuides.RegisterGuide([[
 #wotlk
-#group Nivelamento de Profissão
+#group Progressão de profissões
 << Horde
 #name 1-450 Esfolamento (H)
 #guideKind profession
@@ -278,7 +278,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #wotlk
-#group Nivelamento de Profissão
+#group Progressão de profissões
 << Alliance
 #name 1-450 Esfolamento (A)
 #guideKind profession

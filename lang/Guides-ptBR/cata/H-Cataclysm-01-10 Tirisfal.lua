@@ -260,7 +260,7 @@ step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dannal Stern|r
     .turnin 3095 >>Entregue Pergaminho simples
     .accept 24969 >>Aceite Com Toda a Carga
-    .train 100 >>Treine |T132337:0|t[Carga] << Cata
+    .train 100 >>Aprenda |T132337:0|t[Investida] << Cata
     .target Dannal Stern
 step << Monk
     .goto 18,31.64,66.91
@@ -642,7 +642,7 @@ step << Undead
     .target Deathguard Morris
 step
     .goto 18,60.87,51.50
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Estalajadeira Geni|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estalajadeira Geni|r
     .home >>Defina sua Pedra de Retorno em Brill
     .target Innkeeper Renee
     .isQuestAvailable 6323
