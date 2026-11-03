@@ -2083,6 +2083,7 @@ step
     #completewith EnterRFC
     .destroy 14544 >>|cRXP_WARN_Destroy|r |T134417:0|t[Lieutenant's Insignia] |cRXP_WARN_as you no longer need it|r
 step
+.enabledungeon RFC
     #label EnterRFC
     .goto 1454/1,-4420.76,1815.80--c:Orgrimmar,52.77,48.97
     .subzone 2437 >> Enter the RFC Instance portal. Zone in
@@ -2340,6 +2341,7 @@ step
     .target Karos Razok::2226
     .zoneskip Undercity
 step
+.enabledungeon ROL
     #label EnterRoL
     .goto 1458/0,188.400,1804.500
     .subzone 16611 >>Enter Ruins of Lordaeron
@@ -4522,6 +4524,7 @@ step
     .mob Mad Magglish
     .isOnQuest 959
 step
+.enabledungeon WC
     #label EnterWC
     .goto 1414/1,-2028.82,-636.93,20,0
     .goto 1414/1,-2050.90,-585.41,20,0
