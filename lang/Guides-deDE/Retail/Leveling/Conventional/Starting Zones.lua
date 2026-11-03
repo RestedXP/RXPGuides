@@ -3871,7 +3871,7 @@ step << Horde
     #arrowtext Sprecht mit |cRXP_FRIENDLY_Chromie|r
     .goto 85,40.82,80.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Chromie|r.
-    .accept 43926 >>Akzeptiert die Quest Legion: Die Legion kehrt zurück
+    .accept 43926 >>Akzeptiert die Quest Legion: Die Rückkehr der Legion
     .chromietime 10
     .skipgossipid 51901
     .skipgossipid 51902
@@ -3942,7 +3942,7 @@ step << Alliance
     #arrowtext Zwicken\n|cRXP_PICK_Hero's Call An Bord gehen|r
     .goto 84,62.21,29.84
     >>|TInterface/cursor/crosshair/interact.blp:20|tKlickt auf das |cRXP_PICK_Hero's Call An Bord gehen|r
-    .accept 40519 >>Akzeptiert die Quest Legion: Die Legion kehrt zurück
+    .accept 40519 >>Akzeptiert die Quest Legion: Die Rückkehr der Legion
     .choose 1851120
 step << Alliance
     #include RestedXP Geschwindigkeit Leveling\a) GC Chromiezeit (PvE)
@@ -26469,10 +26469,10 @@ step
     .goto 463,43.46,91.82,30,0
     .goto 463,43.81,88.49,30,0
     .goto 463,46.15,88.00,30,0
-    >>Click on the |cRXP_PICK_Bloodtalon Lasso|r macro in the "Active Items Frame" to use it on |cRXP_FRIENDLY_Swiftclaw|r. He runs counter-clockwise around the island. (NOT TRANSLATED IN :deDE YET)
+    >>Klickt auf das |cRXP_PICK_Bloodtalon Lasso|r-Makro im "Aktiv Gegenstände Frame", um es auf |cRXP_FRIENDLY_Flinkklaue|r zu benutzen. Er läuft gegen den Uhrzeigersinn um die Insel.
     .complete 24626,1 --1/1 Capture Swiftclaw
 	.unitscan Flinkklaue
-    .macro Bloodtalon Lasso,134326 >>/targetexact Swiftclaw\n/use item:50053 (NOT TRANSLATED IN :deDE YET)
+    .macro Bloodtalon Lasso,134326 >>/targetexact Swiftclaw\n/use item:50053
 step
     #arrowtext Reitet auf |cRXP_FRIENDLY_Flinkklaue|r zurück zum |cRXP_PICK_Raptor-Gehege|r
     .goto 463,50.42,66.82,40,0
@@ -27313,10 +27313,10 @@ step
     #loop
     .goto 7,48.25,60.43,20,0
     .goto 7,48.13,57.28,20,0
-    >>Click on the |cRXP_PICK_Tender Stride Meat|r macro in the "Active Items Frame" to use it on |cRXP_FRIENDLY_Kyle|r. Wait until Kyle is nearby. (NOT TRANSLATED IN :deDE YET)
+    >>Klickt auf das |cRXP_PICK_Tender Stride Fleisch|r-Makro im "Aktive Gegenstände"-Frame, um es auf |cRXP_FRIENDLY_Kyle|r zu benutzen. Wartet, bis Kyle in der Nähe ist.
     .complete 11129,1 --1/1 Kyle fed
     .target Kyle
-    .macro Tender Stride Meat,134400 >>/targetexact Kyle\n/use item:33009 (NOT TRANSLATED IN :deDE YET)
+    .macro Tender Stride Meat,134400 >>Borkling Stride Fleisch
 step
     #arrowtext Sprecht mit |cRXP_FRIENDLY_Ahab Weizhuf|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Ahab Wheathoof|r.
@@ -29650,37 +29650,37 @@ step
 step
     #sticky
     >>Ihr müsst insgesamt 9 Kaja'Cola Zero-Eins sammeln.
-    >>Click on the |cRXP_PICK_Kaja'Cola Zero-One|r macro in the "Active Items Frame" to use it on |cRXP_FRIENDLY_Kezan Citizen|r. (NOT TRANSLATED IN :deDE YET)
-    .macro Kaja'Cola Zero-One,134400 >>/targetexact Kezan Citizen\n/use item:52484 (NOT TRANSLATED IN :deDE YET)
+    >>Klickt auf das |cRXP_PICK_Kaja'Cola Zero-Eins|r-Makro im "Aktive Gegenstände"-Frame, um es auf |cRXP_FRIENDLY_Bürger von Kezan|r zu benutzen.
+    .macro Kaja'Cola Zero-One,134400 >>Kaja'Cola minus eins
     .collect 52484,9,25122,0xF
     .complete 25122,4 --6/6 Other goblin's minds freed
     .target Bürger von Kezan
 step
     #title Befreit Das Ass
-    >>Click on the |cRXP_PICK_Kaja'Cola Zero-One|r macro in the "Active Items Frame" to use it on |cRXP_FRIENDLY_Ace|r. (NOT TRANSLATED IN :deDE YET)
+    >>Klickt auf das |cRXP_PICK_Kaja'Cola Zero-Eins|r-Makro im "Aktive Gegenstände"-Frame, um es auf |cRXP_FRIENDLY_Ace|r zu benutzen.
     .goto 174,57.1,36.9
-    .macro Kaja'Cola Zero-One,134400 >>/targetexact Ace\n/use item:52484 (NOT TRANSLATED IN :deDE YET)
+    .macro Kaja'Cola Zero-One,134400 >>Kaja'Cola minus eins
     .complete 25122,1 --1/1 Ace's mind freed
     .target Das Ass
 step
     #title Befreit Izzy
-    >>Click on the |cRXP_PICK_Kaja'Cola Zero-One|r macro in the "Active Items Frame" to use it on |cRXP_FRIENDLY_Izzy|r. (NOT TRANSLATED IN :deDE YET)
+    >>Klickt auf das |cRXP_PICK_Kaja'Cola Zero-Eins|r-Makro im "Aktive Gegenstände"-Frame, um es auf |cRXP_FRIENDLY_Izzy|r zu benutzen.
     .goto 174,57.01,35.02
-    .macro Kaja'Cola Zero-One,134400 >>/targetexact Izzy\n/use item:52484 (NOT TRANSLATED IN :deDE YET)
+    .macro Kaja'Cola Zero-One,134400 >>Kaja'Cola minus eins
     .complete 25122,2 --1/1 Izzy's mind freed
     .target Izzy
 step
     #arrowtext Tötet |cRXP_ENEMY_Knallschatten der Tiermeister|r
-    >>Kill |cRXP_ENEMY_Blastshadow the Brutemaster|r and click on the flying purple |cRXP_PICK_Soulstone|r. Click on the |cRXP_PICK_Blastshadow's Soulstone|r macro in the "Active Items Frame" to use it on his corpse. (NOT TRANSLATED IN :deDE YET)
-    .macro Blastshadow's Soulstone,134336 >>/targetexact Blastshadow the Brutemaster\n/use [@target,dead] item:52481 (NOT TRANSLATED IN :deDE YET)
+    >>Tötet |cRXP_ENEMY_Knallschatten der Tiermeister|r und klickt auf den fliegenden lila |cRXP_PICK_Seelenstein|r. Klickt auf das |cRXP_PICK_Blastshadow's Seelenstein|r-Makro im "Aktive Gegenstände"-Frame, um es auf seiner Leiche zu benutzen.
+    .macro Blastshadow's Soulstone,134336 >>Knallschattens Seelenstein
     .goto 174,56.18,32.29
     .complete 25123,1 --1/1 Blastshadow's Soulstone destroyed
     .mob Knallschatten der Tiermeister
 step
     #title Befreit Gobber
-    >>Click on the |cRXP_PICK_Kaja'Cola Zero-One|r macro in the "Active Items Frame" to use it on |cRXP_FRIENDLY_Gobber|r. (NOT TRANSLATED IN :deDE YET)
+    >>Klickt auf das |cRXP_PICK_Kaja'Cola Zero-Eins|r-Makro im "Aktive Gegenstände"-Frame, um es auf |cRXP_FRIENDLY_Gobber|r zu benutzen.
     .goto 174,57.04,32.17
-    .macro Kaja'Cola Zero-One,134400 >>/targetexact Gobber\n/use item:52484 (NOT TRANSLATED IN :deDE YET)
+    .macro Kaja'Cola Zero-One,134400 >>Kaja'Cola minus eins
     .complete 25122,3 --1/1 Gobber's mind freed
     .target Gobber
 step

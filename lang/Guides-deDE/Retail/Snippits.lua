@@ -683,7 +683,7 @@ step << Alliance
     .goto 84,49.11,87.64,8,0
     .goto 84,49.42,86.83,8,0
     >>|TInterface/cursor/crosshair/interact.blp:20|tKlickt auf das |cRXP_PICK_Hero's Call An Bord gehen|r
-    .accept 40519 >>Akzeptiert die Quest Legion: Die Legion kehrt zurück
+    .accept 40519 >>Akzeptiert die Quest Legion: Die Rückkehr der Legion
     .choose 1851120
 step << Alliance
     #arrowtext Verlassen Magierturm
@@ -694,7 +694,7 @@ step << Alliance
     #requires The Legion Returns
     .goto 84,62.21,29.84
     >>|TInterface/cursor/crosshair/interact.blp:20|tKlickt auf das |cRXP_PICK_Hero's Call An Bord gehen|r
-    .accept 40519 >>Akzeptiert die Quest Legion: Die Legion kehrt zurück
+    .accept 40519 >>Akzeptiert die Quest Legion: Die Rückkehr der Legion
     .choose 1851120
 step << Alliance
     #arrowtext Zwicken\n|cRXP_PICK_Hero's Call An Bord gehen|r
@@ -773,8 +773,8 @@ step
 step
     #label ChromieTime2
     .goto 84,56.257,17.311
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r. (NOT TRANSLATED IN :deDE YET)
-    .accept 40519 >>Akzeptiert die Quest Legion: Die Legion kehrt zurück
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
+    .accept 40519 >>Akzeptiert die Quest Legion: Die Rückkehr der Legion
     .chromietime 10
     .skipgossipid 51901
     .skipgossipid 51902
@@ -784,7 +784,7 @@ step
     #label CallBoardStart
     .goto 84,62.21,29.84
     >>|TInterface/cursor/crosshair/interact.blp:20|tKlickt auf das |cRXP_PICK_Hero's Call An Bord gehen|r
-    .accept 40519 >>Accept Legion: The Legion Returns (NOT TRANSLATED IN :deDE YET)
+    .accept 40519 >>Akzeptiert die Quest Legion: Die Rückkehr der Legion
     .choose 1851120
 step
     #arrowtext Sprecht mit |cRXP_FRIENDLY_Furorion|r
