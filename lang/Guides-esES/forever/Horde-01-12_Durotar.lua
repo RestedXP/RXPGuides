@@ -3497,14 +3497,14 @@ step << Rogue
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.3
 step << Troll Priest
     .goto 1454/1,-4179.79,1452.580
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ur'kyo|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con|r |cRXP_FRIENDLY_Ur'kyo|r
     .turnin 5654 >> Entrega la misión Maleficio de Debilidad
     .trainer >> Aprende tus hechizos de clase
     .target Ur'kyo
     .isOnQuest 5654
 step << Troll Priest
     .goto 1454/1,-4179.79,1452.580
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ur'kyo|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con|r |cRXP_FRIENDLY_Ur'kyo|r
     .turnin 5652 >> Entrega la misión Maleficio de Debilidad
     .trainer >> Aprende tus hechizos de clase
     .target Ur'kyo

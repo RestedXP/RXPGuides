@@ -121,7 +121,7 @@ step << !Priest !Rogue
 	.accept 3120 >> Acepta la misión El Sigilo Verdeante << Druid
 step << !Hunter !Druid !Warrior
     #completewith next
-    >>Mata a |cRXP_ENEMY_Thistle Boars|r de camino hacia Iverron. No tienes que completar esto ahora.
+    >>Mata |cRXP_ENEMY_Jabalíes Cardo|r de camino hacia Iverron. No tienes que completar esto ahora
     .complete 457,2 --Kill Thistle Boar (x7)
     .mob +Thistle Boar
 step << !Hunter !Druid !Warrior
@@ -320,7 +320,7 @@ step << Hunter/Rogue
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.05
 step
     #completewith next
-    >>Mata a |cRXP_ENEMY_Thistle Boars|r de camino hacia Iverron. No tienes que completar esto ahora.
+    >>Mata |cRXP_ENEMY_Jabalíes Cardo|r de camino hacia Iverron. No tienes que completar esto ahora
     .complete 457,2 --Kill Thistle Boar (x7)
     .mob +Thistle Boar
 step

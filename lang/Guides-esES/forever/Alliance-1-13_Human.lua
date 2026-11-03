@@ -1164,7 +1164,7 @@ step
     >>Mata |cRXP_ENEMY_Jabalíes Colmipétreo|r. Despójalos para obtener sus |T133970:0|t|cRXP_LOOT_[Trozos de carne de jabalí]|r
     >>|cRXP_WARN_Esto se usará para subir tu|r |T133971:0|t[Cocina] |cRXP_WARN_más tarde|r
     >>|cRXP_WARN_Necesitas 50 de|r |T133971:0|t[Cocina] |cRXP_WARN_para una misión en Villa Oscura más tarde.|r
-    >>|cRXP_WARN_No te desvíes para farmear esto ahora. Simplemente mata y despoja todos los jabalíes que encuentres|r
+    >>|cRXP_WARN_No hagas esfuerzo extra por farmear esto ahora. Simplemente mata y despoja a todos los jabalíes que pases|r
     .collect 769,50,86,1,0x20,cooking --Chunk of Boar Meat (10-50)
     .mob Stonetusk Boar
 --  .skill cooking,<10,1
@@ -1503,7 +1503,7 @@ step
     .goto 1429/0,225.49,-9751.09,0
     .goto 1429/0,92.38,-9548.20,0
     >>Mata |cRXP_ENEMY_Jabalíes Colmipétreo|r. Despójalos para obtener sus |T133970:0|t|cRXP_LOOT_[Trozos de carne de jabalí]|r
-    >>|cRXP_WARN_No te desvíes para farmear esto ahora. Simplemente mata y despoja todos los jabalíes que encuentres|r
+    >>|cRXP_WARN_No hagas esfuerzo extra por farmear esto ahora. Simplemente mata y despoja a todos los jabalíes que pases|r
     .collect 769,50,2178,1,0x20,cooking --Chunk of Boar Meat (10-50)
     .mob Stonetusk Boar
 --  .skill cooking,<10,1
@@ -2786,7 +2786,7 @@ step
     .goto 1429/0,225.49,-9751.09,0
     .goto 1429/0,92.38,-9548.20,0
     >>Mata |cRXP_ENEMY_Jabalíes Colmipétreo|r. Despójalos para obtener sus |T133970:0|t|cRXP_LOOT_[Trozos de carne de jabalí]|r
-    >>|cRXP_WARN_No te desvíes para farmear esto ahora. Simplemente mata y despoja todos los jabalíes que encuentres|r
+    >>|cRXP_WARN_No hagas esfuerzo extra por farmear esto ahora. Simplemente mata y despoja a todos los jabalíes que pases|r
     .collect 769,50,2178,1,0x20,cooking --Chunk of Boar Meat (10-50)
     .mob Stonetusk Boar
 --  .skill cooking,<10,1
@@ -3252,7 +3252,7 @@ step << Warlock
     .goto 1429,61.911,78.274,0
     .goto 1429,65.619,78.388,0
     >>Mata |cRXP_ENEMY_Jabalíes Pielroca|r. Despójalos para obtener sus |T133970:0|t|cRXP_LOOT_[Trozos de carne de jabalí]|r
-    >>|cRXP_WARN_No te desvíes para farmear esto ahora. Simplemente mata y despoja todos los jabalíes que encuentres|r
+    >>|cRXP_WARN_No hagas esfuerzo extra por farmear esto ahora. Simplemente mata y despoja a todos los jabalíes que pases|r
     .collect 769,50,2178,1,0x20,cooking --Chunk of Boar Meat (10-50)
     .mob Rockhide Boar
 --  .skill cooking,<10,1
@@ -3818,7 +3818,7 @@ step
     >>Mata a los |cRXP_ENEMY_Jabalíes del risco anciano|r. Despójalos para obtener sus |T133970:0|t|cRXP_LOOT_[Trozos de carne de jabalí]|r
     >>|cRXP_WARN_Esto se usará para subir tu|r |T133971:0|t[Cocina] |cRXP_WARN_más tarde|r
     >>|cRXP_WARN_Necesitas 50 de|r |T133971:0|t[Cocina] |cRXP_WARN_para una misión en Villa Oscura más tarde|r
-    >>|cRXP_WARN_No te desvíes para farmear esto ahora. Simplemente mata y despoja todos los jabalíes que encuentres|r
+    >>|cRXP_WARN_No hagas esfuerzo extra por farmear esto ahora. Simplemente mata y despoja a todos los jabalíes que pases|r
     .collect 769,50,2178,1,0x20,cooking --Chunk of Boar Meat (10-50)
     .mob Elder Crag Boar
 --  .skill cooking,<10,1
@@ -3888,7 +3888,7 @@ step
     #completewith QuarryStart
     .goto 1426,66.356,51.02,0
     >>Mata |cRXP_ENEMY_Jabalíes del risco grande|r. Despójalos para obtener sus |T133970:0|t|cRXP_LOOT_[Trozos de carne de jabalí]|r
-    >>|cRXP_WARN_No te desvíes para farmear esto ahora. Simplemente mata y despoja todos los jabalíes que encuentres|r
+    >>|cRXP_WARN_No hagas esfuerzo extra por farmear esto ahora. Simplemente mata y despoja a todos los jabalíes que pases|r
     .collect 769,50,2178,1,0x20,cooking --Chunk of Boar Meat (10-50)
     .mob Large Crag Boar
 --  .skill cooking,<10,1
@@ -4182,7 +4182,7 @@ step
     >>Mata a los |cRXP_ENEMY_Jabalíes monteses|r. Despójalos para obtener sus |T133970:0|t|cRXP_LOOT_[Trozo de carne de jabalí]|r
     >>|cRXP_WARN_Esto se usará para subir tu|r |T133971:0|t[Cocina] |cRXP_WARN_más tarde|r
     >>|cRXP_WARN_Necesitas 50 de|r |T133971:0|t[Cocina] |cRXP_WARN_para una misión en Villa Oscura más tarde|r
-    >>|cRXP_WARN_No te desvíes para farmear esto ahora. Simplemente mata y despoja todos los jabalíes que encuentres|r
+    >>|cRXP_WARN_No hagas esfuerzo extra por farmear esto ahora. Simplemente mata y despoja a todos los jabalíes que pases|r
     .collect 769,50,2178,1,0x20,cooking --Chunk of Boar Meat (10-50)
     .mob Mountain Boar
 --  .skill cooking,<10,1
@@ -4320,7 +4320,7 @@ step
     .goto 1426,81.040,43.456,0
     .goto 1426,80.583,36.040,0
     >>Mata a los |cRXP_ENEMY_Jabalíes monteses|r. Despójalos para obtener sus |T133970:0|t|cRXP_LOOT_[Trozo de carne de jabalí]|r
-    >>|cRXP_WARN_No te desvíes para farmear esto ahora. Simplemente mata y despoja todos los jabalíes que encuentres|r
+    >>|cRXP_WARN_No hagas esfuerzo extra por farmear esto ahora. Simplemente mata y despoja a todos los jabalíes que pases|r
     .collect 769,50,2178,1,0x20,cooking --Chunk of Boar Meat (10-50)
     .mob Mountain Boar
 --  .skill cooking,<10,1
@@ -4473,7 +4473,7 @@ step
     .goto 1426,81.040,43.456,0
     .goto 1426,80.583,36.040,0
     >>Mata a los |cRXP_ENEMY_Jabalíes monteses|r. Despójalos para obtener sus |T133970:0|t|cRXP_LOOT_[Trozo de carne de jabalí]|r
-    >>|cRXP_WARN_No te desvíes para farmear esto ahora. Simplemente mata y despoja todos los jabalíes que encuentres|r
+    >>|cRXP_WARN_No hagas esfuerzo extra por farmear esto ahora. Simplemente mata y despoja a todos los jabalíes que pases|r
     .collect 769,50,2178,1,0x20,cooking --Chunk of Boar Meat (10-50)
     .mob Mountain Boar
     .skill cooking,<10,1
@@ -4590,7 +4590,7 @@ step << Warlock
     #optional
     #completewith next
     .goto 1432/0,-2747.60,-5530.540,0
-    +Mata |cRXP_ENEMY_Troggs|r hasta que tengas 75 platas y 79 cobres en basura para vender o dinero
+    +Grindea |cRXP_ENEMY_Troggs|r hasta que tengas 75 platas y 79 cobres en basura para vender o dinero
     .money >0.7579
 step << Warlock
     #optional

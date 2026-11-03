@@ -5804,7 +5804,7 @@ step
     .train 4036,3 -- Engineering Trained
     .goto 2521,53.95,38.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Strange Hermit::251684|r.
-    .accept 98285 >>Acepta la misión Campamento 101: Ingeniería
+    .accept 98285 >>Acepta la misión Campamento básico: Ingeniería
     .target Strange Hermit::251684
     .skipgossipid 135787
     .skipgossipid 135786
@@ -5812,12 +5812,12 @@ step
     .skipgossipid 135784 -- no
 step
     #completewith Abandoned Belongings1
-    >>|TInterface/cursor/crosshair/interact.blp:20|tHaz clic en |cRXP_PICK_Seeds|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tHaz clic en las |cRXP_PICK_Semillas|r
     .complete 93160,1 --8/8 Zephyrseed
 step << Alliance
     #completewith Abandoned Belongings1
     >>Mata |cRXP_ENEMY_Shadowgale Shrieklings::256092|r.
-    *Despójales para obtener las |T1508517:0|t[|cRXP_LOOT_Shriekling Garfas|r].
+    *Despójalos para obtener las |T1508517:0|t[|cRXP_LOOT_Garfas de chillín|r].
     .complete 92741,1 --8/8 Shriekling Talons
     .mob Shadowgale Shriekling::256092
 step
@@ -5879,7 +5879,7 @@ step << Alliance
     .goto 2521,59.06,31.69,30,0
     .goto 2521,59.15,32.25,30,0
     .goto 2521,59.1,33.38
-    .cast 1259705 >>Usa |T236219:0|t[Leer línea ley] para 100% de aumento de regeneración pasiva de Maná y Salud.
+    .cast 1259705 >>Usa |T236219:0|t[Leer Línea ley] para aumentar 100% la regeneración pasiva de Maná y Salud.
     .usespell 1259705
 step
     #completewith Wind Hollow
@@ -5953,7 +5953,7 @@ step
 step << Alliance
     #completewith next
     >>Mata a |cRXP_ENEMY_Al'Aketh Footsoldiers::252665|r y a |cRXP_ENEMY_Al'Aketh Stormchasers::252664|r.
-    *Despójalos para obtener |T4622283:0|t[|cRXP_LOOT_Bloody Heirlooms|r] y |T1379232:0|t[|cRXP_LOOT_Al'Aketh Windstone Charms|r].
+    *Despójalos para obtener |T4622283:0|t[|cRXP_LOOT_Reliquias ensangrentadas|r] y |T1379232:0|t[|cRXP_LOOT_Talismanes de piedra de viento Al'Aketh|r].
     .complete 94487,1 --10/10 Bloody Heirloom
     .complete 92834,1 --10/10 Al'Aketh Windstone Charm
     .mob Al'Aketh Footsoldier::252665
@@ -5976,8 +5976,8 @@ step
     .goto 2521,65.7,36.82,40,0
     .goto 2521,65.63,35.57,40,0
     >>Mata a |cRXP_ENEMY_Al'Aketh Footsoldiers::252665|r y a |cRXP_ENEMY_Al'Aketh Stormchasers::252664|r.
-    *Despójalos para obtener |T4622283:0|t[|cRXP_LOOT_Bloody Heirlooms|r], |T133856:0|t[|cRXP_LOOT_Al'Aketh Cultist's Orejas|r] y |T1379232:0|t[|cRXP_LOOT_Al'Aketh Windstone Charms|r]. << Alliance
-    *Despójales para obtener los |T4622283:0|t[|cRXP_LOOT_Bloody Heirlooms|r]. << Horde
+    *Despójalos para obtener |T4622283:0|t[|cRXP_LOOT_Reliquias ensangrentadas|r], |T133856:0|t[|cRXP_LOOT_Orejas de cultor de Al'Aketh|r] y |T1379232:0|t[|cRXP_LOOT_Talismanes de piedra de viento Al'Aketh|r]. << Alliance
+    *Despójales para obtener las |T4622283:0|t[|cRXP_LOOT_Reliquias ensangrentadas|r]. << Horde
     .complete 94487,1 --10/10 Bloody Heirloom
     .complete 92834,1 << Alliance --10/10 Al'Aketh Windstone Charm
     .complete 93165,1 << Alliance --10/10 Al'Aketh Cultist's Ear
@@ -6013,8 +6013,8 @@ step
     #completewith ToHermit << Alliance
     #completewith ForestHollowsB << Horde
     >>Mata |cRXP_ENEMY_Shadowgale Shrieklings::256092|r.
-    *Despoja |T1508517:0|t[|cRXP_LOOT_Shriekling Garfas|r] y |T132927:0|t[|cRXP_LOOT_Pristine Shriekling Plumas|r]. << Alliance
-    *Despoja |T132927:0|t[|cRXP_LOOT_Pristine Shriekling Plumas|r].
+    *Despójalos para obtener |T1508517:0|t[|cRXP_LOOT_Garfas de chillín|r] y |T132927:0|t[|cRXP_LOOT_Plumas de chillín prístina|r]. << Alliance
+    *Despójalos para obtener las |T132927:0|t[|cRXP_LOOT_Plumas de chillín prístina|r].
     .complete 92741,1 << Alliance --8/8 Shriekling Talons
     .complete 94486,1 --20/20 Pristine Shriekling Feathers
     .mob +Shadowgale Shriekling::256092
@@ -6025,12 +6025,12 @@ step << Alliance
 step << Alliance
     #optional
     #completewith ToHermit
-    >>|TInterface/cursor/crosshair/interact.blp:20|tHaz clic en |cRXP_PICK_Tear Moss|r |cRXP_WARN_en los árboles|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tHaz clic en el |cRXP_PICK_Moho de lágrima|r |cRXP_WARN_en los árboles|r.
     .complete 94485,1 --8/8 Lady's Tear Moss
 step << Horde
     #optional
     #completewith ForestHollowsB
-    >>|TInterface/cursor/crosshair/interact.blp:20|tHaz clic en el |cRXP_PICK_Tear Moss|r |cRXP_WARN_en los árboles|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tHaz clic en el |cRXP_PICK_Moho de lágrima|r |cRXP_WARN_en los árboles|r.
     .complete 94485,1 --8/8 Lady's Tear Moss
 step << Horde
     #label ForestHollowsA
@@ -6092,7 +6092,7 @@ step
     .complete 94486,1 --20/20 Pristine Shriekling Feathers
     .mob +Shadowgale Shriekling::256092
 step
-    >>|TInterface/cursor/crosshair/interact.blp:20|tHaz clic en |cRXP_PICK_Tear Moss|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tHaz clic en el |cRXP_PICK_Moho de lágrima|r
     .complete 94485,1 --8/8 Lady's Tear Moss
 step
     --@THIDDI: Not sure if worth it (Pristine Shriekling Feathers).
@@ -6105,11 +6105,11 @@ step
 step
     .goto 2521,61.76,39.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Elegael Thornpaw::257944|r.
-    .turnin 94485 >>Entrega la misión Lágrimas of the Lady
+    .turnin 94485 >>Entrega la misión Lágrimas de la dama
     .turnin 94487 >>Entrega la misión Unwanted and Indigno
     .turnin 94486 >>Entrega la misión Plumas for Lazo
     .accept 94488 >>Acepta la misión Los lazos de unión
-    .accept 94489 >>Acepta la misión The Wounds of Traición
+    .accept 94489 >>Acepta la misión Las heridas de traición
     .target Elegael Thornpaw::257944
 step
     .isQuestAvailable 94490 -- Ripped Missive
@@ -6133,14 +6133,14 @@ step << Horde
     .goto 2521,65.7,36.82,40,0
     .goto 2521,65.63,35.57,40,0
     >>Mata a |cRXP_ENEMY_Al'Aketh Footsoldiers::252665|r y a |cRXP_ENEMY_Al'Aketh Stormchasers::252664|r.
-    *Despoja |T133856:0|t[|cRXP_LOOT_Al'Aketh Cultist's Orejas|r].
+    *Despójalos para obtener las |T133856:0|t[|cRXP_LOOT_Orejas de cultor de Al'Aketh|r].
     .complete 93165,1 --10/10 Al'Aketh Cultist's Ear
     .mob Al'Aketh Footsoldier::252665
     .mob Al'Aketh Stormchaser::252664
 step << Alliance
     #completewith next
     .itemcount 265476,1
-    >>Usa la |T134332:0|t[Ripped Missive] en tus bolsas para comenzar la misión.
+    >>Usa la |T134332:0|t[Misiva rasgada] en tus bolsas para comenzar la misión.
     .accept 94490 >>Acepta la misión Ripped Missive
     .use 265476 -- Ripped Missive
 step
@@ -6162,7 +6162,7 @@ step
     .goto 2521,64,31.97,15,0
     .goto 2521,64.52,31.88,15,0
     .goto 2521,64.25,31.93
-    >>|TInterface/cursor/crosshair/interact.blp:20|tHaz clic en los |cRXP_PICK_Druids|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tHaz clic en los |cRXP_PICK_Druidas|r
     .complete 94489,1,2 --7/7 Injured Druids healed
     .target Neyasteel Mossmender::258275
     .target Bryaes Galechaser::258277
@@ -6183,7 +6183,7 @@ step
     #loop
     .goto 2521,64.98,34.96,10,0
     .goto 2521,64.51,34.89,10,0
-    >>|TInterface/cursor/crosshair/interact.blp:20|tHaz clic en los |cRXP_PICK_Druids|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tHaz clic en los |cRXP_PICK_Druidas|r
     .complete 94489,1,7 --7/7 Injured Druids healed
     .target Nayeela Snarlfang::258138
     .target Telenos Leafwhisper::258137
@@ -6196,7 +6196,7 @@ step
     .target Jorel Windsinger::258130
 step << Horde
     .itemcount 265476,1
-    >>Usa la |T134332:0|t[Ripped Missive] en tus bolsas para comenzar la misión.
+    >>Usa la |T134332:0|t[Misiva rasgada] en tus bolsas para comenzar la misión.
     .accept 94490 >>Acepta la misión Ripped Missive
     .use 265476 -- Ripped Missive
 step
@@ -6205,7 +6205,7 @@ step
     #label Wounds of Betrayal
     .goto 2521,63.93,34.5,15,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Elegael Thornpaw::257944|r.
-    .turnin 94489 >>Entrega la misión The Wounds of Traición
+    .turnin 94489 >>Entrega la misión Las heridas de traición
     .target Elegael Thornpaw::257944
 step
     #completewith Wounds of Betrayal
@@ -6214,7 +6214,7 @@ step
     #requires Wounds of Betrayal
     .goto 2521,61.77,39.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Elegael Thornpaw::257944|r.
-    .turnin 94489 >>Entrega la misión The Wounds of Traición
+    .turnin 94489 >>Entrega la misión Las heridas de traición
     .turnin 94490 >>Entrega la misión Ripped Missive
     .turnin 94488 >>Entrega la misión Los lazos de unión
     .accept 94491 >>Acepta la misión The Destino of the Den
@@ -6329,7 +6329,7 @@ step << Horde
     .isQuestComplete 94896
     .goto 2521,65.95,74.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ealaane Nimbuswalker::259012|r.
-    .turnin 94896 >>Entrega la misión Ayudar For The Refugees
+    .turnin 94896 >>Entrega la misión Ayuda para los refugiados
     .turnin 94897 >>Entrega la misión El destino de un ser querido
     .target Ealaane Nimbuswalker::259012
 step << Horde
@@ -6344,7 +6344,7 @@ step << Alliance
     .goto 2521,65.95,74.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ealaane Nimbuswalker::259012|r.
     .turnin 94896 >>Entrega la misión Ayuda para los refugiados
-    .turnin 94897 >>Entrega la misión The Destino of a Amado Uno
+    .turnin 94897 >>Entrega la misión El destino de un ser querido
     .target Ealaane Nimbuswalker::259012
 step << Alliance
     #optional
@@ -6415,7 +6415,7 @@ step << Alliance
     .cooldown spell,1259416,>0,1 -- Walk on Air
     .goto 2521,66.49,76.64,8,0
     .goto 2521,63.33,78.16
-    .cast 1259416 >>Salta de la montaña y usa |T132845:0|t[Caminar en el aire] para volar hacia el punto de ruta.
+    .cast 1259416 >>Salta de la montaña y usa |T132845:0|t[Caminar en el aire] para volar hacia el punto marcado de la ruta.
     .usespell 1259416
 step << Alliance
     .goto 2521,63.33,78.16,30,0
@@ -6526,7 +6526,7 @@ step << Alliance !Hunter !Rogue !Warrior
     .goto 2521,60.64,72.94,8,0
     .goto 2521,60.64,72.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Nyalah Brightfire::257006|r dentro de la casa.
-    .turnin 93317 >>Entrega la misión Cangrejo Season
+    .turnin 93317 >>Entrega la misión Temporada de cangrejos
     .target Nyalah Brightfire::257006
 
 -- ============================================================================
@@ -6758,17 +6758,17 @@ step << Alliance !Hunter !Rogue !Warrior
 --     .xp <14,1
 
 step << Horde
-    >>Abandona las misiones que falten de "Campamento 101".
-    *Haz clic en la macro en el marco de objetos activos para abandonarlas todas a la vez.
-    .abandon 97970 >>Abandona la misión Campamento 101: Minería
-    .abandon 97971 >>Abandona la misión Campamento 101: Desollejo
-    .abandon 96646 >>Abandona la misión Campamento 101: Cocina
-    .abandon 97968 >>Abandona la misión Campamento 101: Herboristería
-    .abandon 97965 >>Abandona la misión Campamento 101: Primeros auxilios
-    .abandon 97967 >>Abandona la misión Campamento 101: Pesca
-    .abandon 97963 >>Abandona la misión Campamento 101: Alquimia
-    .abandon 97964 >>Abandona la misión Campamento 101: Herrería
-    .abandon 97973 >>Abandona la misión Campamento 101: Sastrería
+    >>Abandona las misiones que falten de "Campamento básico".
+    *Haz clic en la macro del marco de Objetos Utilizables para abandonarlas todas a la vez.
+    .abandon 97970 >>Abandona la misión Campamento básico: Minería
+    .abandon 97971 >>Abandona la misión Campamento básico: Desuello
+    .abandon 96646 >>Abandona la misión Campamento básico: Cocina
+    .abandon 97968 >>Abandona la misión Campamento básico: Herboristería
+    .abandon 97965 >>Abandona la misión Campamento básico: Primeros auxilios
+    .abandon 97967 >>Abandona la misión Campamento básico: Pesca
+    .abandon 97963 >>Abandona la misión Campamento básico: Alquimia
+    .abandon 97964 >>Abandona la misión Campamento básico: Herrería
+    .abandon 97973 >>Abandona la misión Campamento básico: Sastrería
     .abandon 98286 >>Abandona la misión Campamento 101: Encantamiento
     .abandon 97969 >>Abandona la misión Campamento 101: Peletería
     .abandon 98285 >>Abandona la misión Campamento 101: Ingeniería
@@ -6825,7 +6825,7 @@ step << Alliance
     #completewith next
     +|cRXP_WARN_El zepelín puede llegar en cualquier momento durante su ciclo de 6 minutos. Mientras esperas, completa lo siguiente:|r
     *Vende la basura y repara tu equipo.
-    *Cocina comida y obtén beneficios de fogata para después.
+    *Cocina comida y obtén los "buffs" de hoguera para más adelante.
     *Equipa mejoras y selecciona talentos.
 step << Alliance
     #optional
@@ -6836,7 +6836,7 @@ step << Alliance
     -- .goto 2521,65.25,81.64,25,0
     *|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Denaaris Stargale::259084|r.
     -- .turnin -94946 >>Turn in The Magical City of Dalaran
-    .accept 94947 >>Acepta la misión Welcome to Azeroth
+    .accept 94947 >>Acepta la misión Bienvenido a Azeroth
     .skipgossipid 137530
     .target Denaaris Stargale::259084
 step << Alliance

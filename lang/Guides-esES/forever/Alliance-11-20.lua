@@ -2609,7 +2609,7 @@ step << skip --logout skip
     #label MushroomLS
     #completewith CavetoAuber
     .goto 1439,54.964,34.536
-    .goto 1439,41.705,36.507,20 >>|cRXP_WARN_Salta encima de la roca en el piso superior dentro de la cueva. Posiciona tu personaje hasta que parezca que está flotando, luego realiza un "Logout Skip" desconectando y volviendo a entrar|r
+    .goto 1439,41.705,36.507,20 >>|cRXP_WARN_Salta encima de la roca en el piso superior dentro de la cueva. Posiciona tu personaje hasta que parezca que está flotando, luego realiza un Logout Skip desconectando y volviendo a entrar|r
 step
     #completewith CavetoAuber
     >>Mata |cRXP_ENEMY_Volantones zancudo del bosque|r. Despójalos para obtener su |cRXP_LOOT_Carne de zancudo|r
@@ -5479,7 +5479,7 @@ step
 	.target Deputy Feldon
     .goto 1433/0,-2237.93,-9443.60
     .turnin 246 >> Entrega la misión Evaluar la amenaza
-    .turnin 98407 >>Entrega la misión Muestra de fuerza
+    .turnin 98407 >>Entrega la misión Demostración de fuerza
 step
     .goto 1433/0,-2634.54,-9588.54
     .xp 20 >> Sube de nivel matando enemigos hasta llegar al nivel 20
@@ -5908,7 +5908,7 @@ step << !Dwarf Rogue
     #requires AntiVenomEnd
     .goto 1453,43.070,26.155
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Shaina Fuller|r
-    >>|cRXP_WARN_Si tienes un|r |T626003:0|t|cFFF48CBAPaladín|r|cRXP_WARN_,|r |T625999:0|t|cFFFF7C0ADruida|r |cRXP_WARN_o|r |T626006:0|t|cFF0070DDChamán|r |cRXP_WARN_amigo, pídele que elimine el|r |T136230:0|t[Toque de Zanzil] |cRXP_WARN_por ti en su lugar|r
+    >>|cRXP_WARN_Si tienes un amigo|r |T626003:0|t|cFFF48CBAPaladín|r|cRXP_WARN_,|r |T625999:0|t|cFFFF7C0ADruida|r |cRXP_WARN_o|r |T626006:0|t|cFF0070DDChamán|r |cRXP_WARN_amigo, pídele en su lugar que te disipe el|r |T136230:0|t[Tacto de Zanzil] |cRXP_WARN_por ti|r
     .skill firstaid,80 >> |cRXP_WARN_Sube tus|r |T135966:0|t[Primeros auxilios] |cRXP_WARN_al 80|r
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
@@ -5916,7 +5916,7 @@ step << !Dwarf Rogue
     #label FirstAidEnd
     .goto 1453,43.070,26.155
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Shaina Fuller|r
-    >>|cRXP_WARN_Si tienes un|r |T626003:0|t|cFFF48CBAPaladín|r|cRXP_WARN_,|r |T625999:0|t|cFFFF7C0ADruida|r |cRXP_WARN_o|r |T626006:0|t|cFF0070DDChamán|r |cRXP_WARN_amigo, pídele que elimine el|r |T136230:0|t[Toque de Zanzil] |cRXP_WARN_por ti en su lugar|r
+    >>|cRXP_WARN_Si tienes un amigo|r |T626003:0|t|cFFF48CBAPaladín|r|cRXP_WARN_,|r |T625999:0|t|cFFFF7C0ADruida|r |cRXP_WARN_o|r |T626006:0|t|cFF0070DDChamán|r |cRXP_WARN_amigo, pídele en su lugar que te disipe el|r |T136230:0|t[Tacto de Zanzil] |cRXP_WARN_por ti|r
     .train 7934 >> |cRXP_WARN_Aprende|r |T134437:0|t[Contraveneno]
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
@@ -6136,7 +6136,7 @@ step
     .goto 1439,44.401,76.425
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Kerlonian Semprumbrío|r para empezar la escolta
     >>|cRXP_WARN_Omite este paso si no está allí. Puede tomar hasta 25 minutos para que reaparezca|r
-    >>|cRXP_WARN_Esta es una misión cronometrada. Tienes que escoltarlo a su bolsa en 20 minutos|r
+    >>|cRXP_WARN_Esta misión tiene tiempo límite, tienes que escoltarlo hasta su bolsa en menos de 20 minutos|r
     .accept 5321 >> Acepta la misión El despertar
     .target Kerlonian Evershade
     .isQuestTurnedIn 731 --Only shows if Prospector was already escorted
@@ -6225,7 +6225,7 @@ step
     .goto 1439/1,338.70,4821.22,50,0
     .goto 1439/1,452.67,4684.98
     >>Mata a los |cRXP_ENEMY_Osos cardo grisáceos|r. Despójalos para obtener sus |cRXP_LOOT_Cueros cabelludos|r
-    >>|cRXP_WARN_Ten cuidado cuando lanzan|r |T132152:0|t[Devastar] |cRXP_WARN_un ataque instantáneo que inflige 20-40 de daño y te tira al suelo durante 2 segundos|r
+    >>|cRXP_WARN_Ten cuidado ya que lanzan|r |T132152:0|t[Devastar] |cRXP_WARN_un ataque instantáneo que causa 20-40 de daño y derribándote durante 2 segundos|r
     .complete 1003,1 -- Grizzled Scalp (4)
     .isOnQuest 1003
     .mob Grizzled Thistle Bear
@@ -6271,7 +6271,7 @@ step
     .goto 1439,44.401,76.425
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Kerlonian Semprumbrío|r para empezar la escolta
     >>|cRXP_WARN_Omite este paso si no está allí. Puede tomar hasta 25 minutos para que reaparezca|r
-    >>|cRXP_WARN_Esta es una misión cronometrada. Tienes que escoltarlo a su bolsa en 20 minutos|r
+    >>|cRXP_WARN_Esta misión tiene tiempo límite, tienes que escoltarlo hasta su bolsa en menos de 20 minutos|r
     .accept 5321 >> Acepta la misión El despertar
     .target Kerlonian Evershade
     .itemcount 13536,<1 --Horn of Awakening

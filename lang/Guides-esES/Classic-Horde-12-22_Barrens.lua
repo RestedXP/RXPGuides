@@ -2015,7 +2015,7 @@ step
 step << Priest
     #optional
     .goto Orgrimmar,35.59,87.80
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ur'kyo|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con|r |cRXP_FRIENDLY_Ur'kyo|r
     .train 8102 >> Aprende tus hechizos de clase
     .target Ur'kyo
     .xp <16,1
@@ -2024,7 +2024,7 @@ step << Priest
     #optional
     #season 2
     .goto Orgrimmar,35.59,87.80
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ur'kyo|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con|r |cRXP_FRIENDLY_Ur'kyo|r
     .train 527 >> Aprende |T135894:0|t[Disipar magia]
     >>|cRXP_WARN_Necesitarás|r |T135894:0|t[Disipar magia] |cRXP_WARN_para obtener una runa más tarde|r
     .target Ur'kyo
@@ -2033,7 +2033,7 @@ step << Priest
     #optional
     #season 0
     .goto Orgrimmar,35.59,87.80
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ur'kyo|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con|r |cRXP_FRIENDLY_Ur'kyo|r
     .train 970 >> Aprende tus hechizos de clase
     .target Ur'kyo
     .xp <18,1
@@ -4228,7 +4228,7 @@ step << Mage
     .dungeon DM
 step << Priest
     .goto Orgrimmar,35.59,87.80
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ur'kyo|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con|r |cRXP_FRIENDLY_Ur'kyo|r
     .train 970 >> Aprende tus hechizos de clase
     .target Ur'kyo
     .xp <18,1
@@ -4237,7 +4237,7 @@ step << Priest
 step << Priest
     #optional
     .goto Orgrimmar,35.59,87.80
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ur'kyo|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con|r |cRXP_FRIENDLY_Ur'kyo|r
     .train 14914 >> Aprende tus hechizos de clase
     .target Ur'kyo
     .xp <20,1
@@ -5261,7 +5261,7 @@ step
     .dungeon WC
 step
     #optional
-    >>Mata a los |cRXP_ENEMY_Deviate Ravagers|r, a los |cRXP_ENEMY_Vipers|r, a los |cRXP_ENEMY_Shamblers|r y a los |cRXP_ENEMY_Dreadfangs|r. Despójalos para obtener sus |cRXP_ENEMY_Hides|r
+    >>Mata |cRXP_ENEMY_Devastadores descarriado|r, |cRXP_ENEMY_Víboras|r, |cRXP_ENEMY_Arrastrapiés|r y |cRXP_ENEMY_Colminfernos|r. . Despójalos para obtener sus |cRXP_ENEMY_Pellejos|r
     .complete 1487,1 --Deviate Ravager (7)
     .mob +Deviate Ravager
     .complete 1487,2 --Deviate Viper (7)
@@ -6566,13 +6566,13 @@ step << Mage
     .target Thuul
 step << Troll Priest
     .goto Orgrimmar,35.59,87.80
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ur'kyo|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con|r |cRXP_FRIENDLY_Ur'kyo|r
     .turnin 5642 >> Entrega la misión Guardia de las Sombras
     .trainer >> Aprende tus hechizos de clase
     .target Ur'kyo
 step << Undead Priest
     .goto Orgrimmar,35.59,87.80
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ur'kyo|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con|r |cRXP_FRIENDLY_Ur'kyo|r
     .train 8103 >> Aprende tus hechizos de clase
     .target Ur'kyo
     .xp <22,1
@@ -6580,7 +6580,7 @@ step << Undead Priest
 step << Undead Priest
     #optional
     .goto Orgrimmar,35.59,87.80
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ur'kyo|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con|r |cRXP_FRIENDLY_Ur'kyo|r
     .train 3747 >> Aprende tus hechizos de clase
     .target Ur'kyo
     .xp <24,1
@@ -7036,7 +7036,7 @@ step << Warlock/Mage
     .itemcount 221499,1 << Warlock --Rune of the Felguard
     .itemcount 223147,1 << Mage --Spell Notes: Balefire Bolt
     .train 431756 >>|cRXP_WARN_Usa la|r |T134419:0|t[|cRXP_FRIENDLY_Runa del Guardia vil|r] |cRXP_WARN_para aprender|r |T136216:0|t[Invocar guardia vil] << Warlock
-    .train 429311 >>|cRXP_WARN_Usa el|r |T134939:0|t[|cRXP_FRIENDLY_Notas sobre hechizos: Descarga de Fuegotorvo|r] |cRXP_WARN_para entrenar|r |T135809:0|t[Descarga de fuego fardo] << Mage
+    .train 429311 >>|cRXP_WARN_Usa las|r |T134939:0|t[|cRXP_FRIENDLY_Notas de hechizo: Descarga de fuego fardo|r] |cRXP_WARN_para aprender|r |T135809:0|t[Descarga de fuego fardo] << Mage
     .use 221499 << Warlock
     .use 223147 << Mage
 step
@@ -9166,7 +9166,7 @@ step
 step << Priest
     #optional
     .goto Orgrimmar,35.59,87.80
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ur'kyo|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con|r |cRXP_FRIENDLY_Ur'kyo|r
     .train 8102 >> Aprende tus hechizos de clase
     .target Ur'kyo
     .xp <16,1
@@ -9175,7 +9175,7 @@ step << Priest
     #optional
     #season 2
     .goto Orgrimmar,35.59,87.80
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ur'kyo|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con|r |cRXP_FRIENDLY_Ur'kyo|r
     .train 527 >> Aprende |T135894:0|t[Disipar magia]
     >>|cRXP_WARN_Necesitarás|r |T135894:0|t[Disipar magia] |cRXP_WARN_para obtener una runa más tarde|r
     .target Ur'kyo
@@ -9184,7 +9184,7 @@ step << Priest
     #optional
     #season 0
     .goto Orgrimmar,35.59,87.80
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ur'kyo|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con|r |cRXP_FRIENDLY_Ur'kyo|r
     .train 970 >> Aprende tus hechizos de clase
     .target Ur'kyo
     .xp <18,1
@@ -11032,7 +11032,7 @@ step << Warlock/Mage
     .itemcount 221499,1 << Warlock --Rune of the Felguard
     .itemcount 223147,1 << Mage --Spell Notes: Balefire Bolt
     .train 431756 >>|cRXP_WARN_Usa la|r |T134419:0|t[|cRXP_FRIENDLY_Runa del Guardia vil|r] |cRXP_WARN_para aprender|r |T136216:0|t[Invocar guardia vil] << Warlock
-    .train 429311 >>|cRXP_WARN_Usa el|r |T134939:0|t[|cRXP_FRIENDLY_Notas sobre hechizos: Descarga de Fuegotorvo|r] |cRXP_WARN_para entrenar|r |T135809:0|t[Descarga de fuego fardo] << Mage
+    .train 429311 >>|cRXP_WARN_Usa las|r |T134939:0|t[|cRXP_FRIENDLY_Notas de hechizo: Descarga de fuego fardo|r] |cRXP_WARN_para aprender|r |T135809:0|t[Descarga de fuego fardo] << Mage
     .use 221499 << Warlock
     .use 223147 << Mage
 step
@@ -11587,7 +11587,7 @@ step << Mage
     .dungeon DM
 step << Priest
     .goto Orgrimmar,35.59,87.80
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ur'kyo|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con|r |cRXP_FRIENDLY_Ur'kyo|r
     .train 970 >> Aprende tus hechizos de clase
     .target Ur'kyo
     .xp <18,1
@@ -11596,7 +11596,7 @@ step << Priest
 step << Priest
     #optional
     .goto Orgrimmar,35.59,87.80
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ur'kyo|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con|r |cRXP_FRIENDLY_Ur'kyo|r
     .train 14914 >> Aprende tus hechizos de clase
     .target Ur'kyo
     .xp <20,1
@@ -12041,7 +12041,7 @@ step
 step << !Tauren
     .goto The Barrens,44.55,59.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Quebrantadientes|r
-    .aura 16618 >>|cRXP_WARN_Si te quedan 10|r |T134128:0|t[|cRXP_LOOT_Esquirlas de sangre|r] |cRXP_WARN_, úsalas para obtener|r |T136022:0|t[Espíritu del viento] |cRXP_WARN_de|r |cRXP_FRIENDLY_Quebrantadientes|r
+    .aura 16618 >>|cRXP_WARN_Si tienes 10|r |T134128:0|t[|cRXP_LOOT_Esquirlas sangrientas|r] |cRXP_WARN_restantes, úsalos para obtener|r |T136022:0|t[El espíritu del viento] |cRXP_WARN_de|r |cRXP_FRIENDLY_Quebrantadientes|r
     >>|cRXP_WARN_Omite este paso si tienes la ruta de vuelo de Cima del Trueno|r
     .itemcount 5075,10
     .target Mangletooth
@@ -12656,7 +12656,7 @@ step
     .dungeon WC
 step
     #optional
-    >>Mata a los |cRXP_ENEMY_Deviate Ravagers|r, a los |cRXP_ENEMY_Vipers|r, a los |cRXP_ENEMY_Shamblers|r y a los |cRXP_ENEMY_Dreadfangs|r. Despójalos para obtener sus |cRXP_ENEMY_Hides|r
+    >>Mata |cRXP_ENEMY_Devastadores descarriado|r, |cRXP_ENEMY_Víboras|r, |cRXP_ENEMY_Arrastrapiés|r y |cRXP_ENEMY_Colminfernos|r. . Despójalos para obtener sus |cRXP_ENEMY_Pellejos|r
     .complete 1487,1 --Deviate Ravager (7)
     .mob +Deviate Ravager
     .complete 1487,2 --Deviate Viper (7)

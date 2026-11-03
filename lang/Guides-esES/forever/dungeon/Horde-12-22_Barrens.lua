@@ -1753,7 +1753,7 @@ step << !Tauren !Hunter !Shaman/Skyborne
 step << Priest
     #optional
     .goto 1454/1,-4179.79,1452.580
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ur'kyo|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con|r |cRXP_FRIENDLY_Ur'kyo|r
     .train 8102 >> Aprende tus hechizos de clase
     .target Ur'kyo
     .xp <16,1
@@ -1761,7 +1761,7 @@ step << Priest
 step << Priest
     #optional
     .goto 1454/1,-4179.79,1452.580
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ur'kyo|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con|r |cRXP_FRIENDLY_Ur'kyo|r
     .train 970 >> Aprende tus hechizos de clase
     .target Ur'kyo
     .xp <18,1
@@ -3593,7 +3593,7 @@ step << Mage
     .dungeon DM
 step << Priest
     .goto 1454/1,-4179.79,1452.580
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ur'kyo|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con|r |cRXP_FRIENDLY_Ur'kyo|r
     .train 970 >> Aprende tus hechizos de clase
     .target Ur'kyo
     .xp <18,1
@@ -3602,7 +3602,7 @@ step << Priest
 step << Priest
     #optional
     .goto 1454/1,-4179.79,1452.580
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ur'kyo|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con|r |cRXP_FRIENDLY_Ur'kyo|r
     .train 14914 >> Aprende tus hechizos de clase
     .target Ur'kyo
     .xp <20,1
@@ -4607,7 +4607,7 @@ step
     .isOnQuest 962
 step
     #optional
-    >>Mata a los |cRXP_ENEMY_Deviate Ravagers|r, a los |cRXP_ENEMY_Vipers|r, a los |cRXP_ENEMY_Shamblers|r y a los |cRXP_ENEMY_Dreadfangs|r. Despójalos para obtener sus |cRXP_ENEMY_Hides|r
+    >>Mata |cRXP_ENEMY_Devastadores descarriado|r, |cRXP_ENEMY_Víboras|r, |cRXP_ENEMY_Arrastrapiés|r y |cRXP_ENEMY_Colminfernos|r. . Despójalos para obtener sus |cRXP_ENEMY_Pellejos|r
     .complete 1487,1 --Deviate Ravager (7)
     .mob +Deviate Ravager
     .complete 1487,2 --Deviate Viper (7)
@@ -5119,13 +5119,13 @@ step << Mage
     .target Thuul
 step << Troll Priest
     .goto 1454/1,-4179.79,1452.580
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ur'kyo|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con|r |cRXP_FRIENDLY_Ur'kyo|r
     .turnin 5642 >> Entrega la misión Guardia de las Sombras
     .trainer >> Aprende tus hechizos de clase
     .target Ur'kyo
 step << Undead Priest
     .goto 1454/1,-4179.79,1452.580
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ur'kyo|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con|r |cRXP_FRIENDLY_Ur'kyo|r
     .train 8103 >> Aprende tus hechizos de clase
     .target Ur'kyo
     .xp <22,1
@@ -5133,7 +5133,7 @@ step << Undead Priest
 step << Undead Priest
     #optional
     .goto 1454/1,-4179.79,1452.580
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ur'kyo|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con|r |cRXP_FRIENDLY_Ur'kyo|r
     .train 3747 >> Aprende tus hechizos de clase
     .target Ur'kyo
     .xp <24,1

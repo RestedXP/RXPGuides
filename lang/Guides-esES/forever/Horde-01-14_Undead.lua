@@ -3746,7 +3746,7 @@ step
     .goto 1421/0,1270.62,1279.71,6,0
     .goto 1421/0,1285.32,1277.19
     >>Mata a |cRXP_ENEMY_Ivar el Hediondo|r. Despójalo para obtener su |cRXP_LOOT_Cabeza|r
-    >>|cRXP_WARN_Ivar está protegido por dos|r |cRXP_ENEMY_Esclavos Corvozarpa|r |cRXP_WARN_dentro del granero. Puedes atraer a uno de ellos cuando patrulle hacia adelante.|r
+    >>|cRXP_WARN_Ivar está protegido por dos|r |cRXP_ENEMY_Esclavos Corvozarpa|r |cRXP_WARN_dentro del granero. Puedes atraer a uno de ellos cuando patrulle hacia adelante|r
     >>|cRXP_WARN_¡Son inmunes al miedo!|r << Priest/Warlock
     .complete 425,1 --Ivar's Head (1)
     .target Ivar the Foul
