@@ -160,7 +160,7 @@ step
     .skipto guide,RestedXP Speed Leveling\b1) BfA Intro << Horde
     .zoneskip 85
 step
-    #arrowtext Cliquez sur le Portail
+    #arrowtext Cliquez sur le portail
     #label HousingSelect
     .zoneskip 2351,1
     .goto 2351,53.93,49.4
