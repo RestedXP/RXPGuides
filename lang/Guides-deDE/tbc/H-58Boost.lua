@@ -39,7 +39,7 @@ step << Mage
 step << Warlock
     .goto Orgrimmar,47.52,46.73
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Kurgul|r
-	.vendor >>Kauft alle Haustierverbesserungen, die ihr euch leisten könnt
+	.vendor >>Kauft irgendwelche Haustier-Verbesserungen, die ihr euch leisten könnt
 	.target Kurgul
 step
     .goto Orgrimmar,54.65,67.65
@@ -232,7 +232,7 @@ step
 step
     .goto Western Plaguelands,51.92,28.07
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Kirsta|r
-    .accept 6004 >>Offene Rechnungen annehmen
+    .accept 6004 >>Akzeptiert die Quest Offene Rechnungen
 	.target Kirsta Deepshadow
 step
 	#completewith next
@@ -270,7 +270,7 @@ step
     .goto Western Plaguelands,51.92,28.07
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Kirsta|r
     .turnin 6004 >>Gebt die Quest Offene Rechnungen ab
-    .accept 6023 >>Offene Rechnungen annehmen
+    .accept 6023 >>Akzeptiert die Quest Offene Rechnungen
 	.target Kirsta Deepshadow
 step
     .goto Western Plaguelands,57.83,36.10
@@ -296,7 +296,7 @@ step
     .goto Western Plaguelands,51.92,28.07
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Kirsta|r
     .turnin 6023 >>Gebt die Quest Offene Rechnungen ab
-    .accept 6025 >>Offene Rechnungen annehmen
+    .accept 6025 >>Akzeptiert die Quest Offene Rechnungen
 	.target Kirsta Deepshadow
 step
     #label HearthglenOverlook
@@ -669,7 +669,7 @@ step
 step
     .goto Eastern Plaguelands,81.51,59.77
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Carlin|r
-    .turnin 5211 >>Gebt die Quest Verteidiger von Darroheim ab
+    .turnin 5211 >>Gebt die Quest Verteidiger von Darrowshire ab
 	.target Carlin Redpath
 step
     #completewith UCvisit2
@@ -688,7 +688,7 @@ step
     .goto Undercity,67.61,44.14
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Jeremiah|r
     .turnin 5049 >>Gebt die Quest Der Jammer des Jeremiah ab
-    .accept 5050 >>Glücksbringer annehmen
+    .accept 5050 >>Akzeptiert die Quest Glücksbringer
 	.target Jeremiah Payson
 step
     .goto Undercity,51.88,64.49,30,0
@@ -751,7 +751,7 @@ step
     .goto Western Plaguelands,49.13,78.53
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich drinnen mit |cRXP_FRIENDLY_Marlene|r
     .turnin 5152 >>Gebt die Quest Tante Marlene ab
-    .accept 5153 >>Ein seltsamer Historiker annehmen
+    .accept 5153 >>Akzeptiert die Quest Ein seltsamer Historiker
 	.target Marlene Redpath
 step
     .goto Western Plaguelands,49.69,76.75
@@ -780,7 +780,7 @@ step
     .goto Western Plaguelands,53.73,64.66
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Mulgris|r
     .turnin 4985 >>Gebt die Quest Die Tierwelt leidet auch ab
-    .accept 4987 >>Accept Glyphed Oaken Branch (NOT TRANSLATED IN :deDE YET)
+    .accept 4987 >>Akzeptiert die Quest Glyphenverzierter Eichenast
 	.target Mulgris Deepriver
 step
     .goto Western Plaguelands,62.80,58.76

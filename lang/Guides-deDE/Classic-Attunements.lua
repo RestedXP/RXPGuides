@@ -130,7 +130,7 @@ step
 step
     .isQuestTurnedIn 4182
     .goto Burning Steppes,65.012,23.757
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Struppiger John|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Ragged John|r
     .complete 4224,1 -- Ragged John's Story (1)
     .skipgossip
     .target Ragged John
@@ -149,7 +149,7 @@ step
     .isQuestTurnedIn 4182
     #completewith next
     .goto Eastern Kingdoms,48.07,62.42
-    .subzone 1584,2 >>Betretet Schwarzfelstiefen
+    .subzone 1584,2 >>Schwarzfelstiefen betreten
     >>|cRXP_WARN_Stellt sicher, dass ihr eine Gruppe parat habt|r
 step
     .isQuestTurnedIn 4182
@@ -164,7 +164,7 @@ step
 step
     .isQuestTurnedIn 4182
     .goto Burning Steppes,84.744,69.015
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Marshal Maxwell|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Marschall Maxwell|r
     >>|cRXP_WARN_Die Questreihe macht hier Pause, bis ihr|r |T134331:0|t[Eine zusammengeknüllte Notiz] |cRXP_WARN_in der BRD findet|r
     .turnin 4242 >> Gebt die Quest Verlorene Hoffnung ab
     .target Marshal Maxwell
@@ -175,7 +175,7 @@ step
     .isQuestTurnedIn 4242
     .goto Eastern Kingdoms,48.07,62.42
     #completewith next
-    .subzone 1584,2 >>Betretet Schwarzfelstiefen
+    .subzone 1584,2 >>Schwarzfelstiefen betreten
 step
     .isQuestTurnedIn 4242
     >>Tötet |cRXP_ENEMY_Zwerge|r in BRD. Plündert sie für |T134331:0|t[Eine zusammengeknüllte Notiz]
@@ -191,7 +191,7 @@ step
     .accept 4282 >> Akzeptiert die Quest Ein Funken Hoffnung
 step
     .isQuestTurnedIn 4264
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Marshal Windsor|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Marschall Windsor|r
     .accept 4282 >> Akzeptiert die Quest Ein Funken Hoffnung
 step
     .isOnQuest 4282
@@ -810,7 +810,7 @@ step
 step
     #completewith next
     .goto Eastern Kingdoms,48.07,62.42
-    .subzone 1584,2 >>Betretet Schwarzfelstiefen
+    .subzone 1584,2 >>Schwarzfelstiefen betreten
     >>|cRXP_WARN_Stellt sicher, dass ihr eine Gruppe parat habt|r
 step
     #softcore
@@ -1536,7 +1536,7 @@ step
     #hardcoreserver
     #completewith next
     .goto Eastern Kingdoms,48.07,62.42
-    .subzone 1584,2 >>Betretet Schwarzfelstiefen
+    .subzone 1584,2 >>Schwarzfelstiefen betreten
     >>|cRXP_WARN_Stellt sicher, dass ihr eine Gruppe parat habt|r
 step
     >>Tötet |cRXP_ENEMY_Fineous Darkvire|r. Plündert ihn für |cRXP_LOOT_Ironfel|r
@@ -1546,7 +1546,7 @@ step
     .isOnQuest 3802
 step
     >>Lauf zurück zur Location über dem Ring des Gesetzes
-    >>Klickt das |cRXP_PICK_Denkmal für Franclorn Forgewright|r
+    >>Zwickt |cRXP_PICK_Denkmal für Franclorn Forgewright|r
     .turnin 3802 >> Gebt die Quest Dunkeleisenerbe ab
     .isQuestComplete 3802
 
@@ -1616,7 +1616,7 @@ step
     .isQuestAvailable 9122 --The Dread Citadel - Naxxramas
 step
     #completewith AttuneComplete
-    .zone Eastern Plaguelands >>Reist in die |cFFfa9602Östlichen Pestländer|r
+    .zone Eastern Plaguelands >>Reist in die |cFFfa9602Die Östlichen Pestländer|r
 step
     #optional
     .reputation 529,honored >>Erlangt einen Wohlwollenden Ruf bei der Argentumdämmerung

@@ -380,7 +380,7 @@ step
     .goto Western Plaguelands,46.64,49.21,25,0
     .goto Western Plaguelands,47.86,49.88
     >>Kill the |cRXP_LOOT_Wandering Skeleton|r. Loot it for the |cRXP_LOOT_Dalson Outhouse Key|r (NOT TRANSLATED IN :deDE YET)
-    >>|cRXP_WARN_The |cRXP_LOOT_Wandering Skeleton|r patrols around the Dalson's Tear Barn and House|r (NOT TRANSLATED IN :deDE YET)
+    >>|cRXP_WARN_Die |cRXP_LOOT_Wandernden Skelette|r patroullieren um Dalsons Tränenfeld und Haus herum.|r
     .collect 12738,1,5060,1 --Collect Dalson Outhouse Key (x1)
     .unitscan Wandering Skeleton
 step
@@ -411,14 +411,14 @@ step
     .accept 5220 >> Rückkehr zum Zugwindlager annehmen
 step
     .goto Western Plaguelands,48.348,31.996
-    >>Klickt auf |cRXP_PICK_Northridge Sägewerk Kiste|r, um das |cRXP_PICK_Termite Fass|r zu platzieren, und klickt danach auf |cRXP_PICK_Termite Fass|r
+    >>Klickt auf die |cRXP_PICK_Northridge-Sägewerk-Kiste|r um das |cRXP_PICK_Termitenfass|r zu platzieren und klickt danach auf das|cRXP_PICK_Termitenfass|r
     .skipgossip
     .turnin 5904 >> Gebt die Quest Eine Plage komme über Euch ab
     .accept 6389 >> Eine Plage komme über Euch annehmen
 step
     .goto Western Plaguelands,51.923,28.062
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Kirsta Grubenschatten|r
-    .accept 6004 >> Offene Rechnungen annehmen
+    .accept 6004 >> Akzeptiert die Quest Offene Rechnungen
     .target Kirsta Deepshadow
 step
     .goto Western Plaguelands,50.85,40.68,60,0
@@ -440,7 +440,7 @@ step
     .goto Western Plaguelands,51.923,28.062
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Kirsta Grubenschatten|r
     .turnin 6004 >> Gebt die Quest Offene Rechnungen ab
-    .accept 6023 >> Offene Rechnungen annehmen
+    .accept 6023 >> Akzeptiert die Quest Offene Rechnungen
     .target Kirsta Deepshadow
 step
     .goto Western Plaguelands,56.38,34.11,50,0
@@ -470,7 +470,7 @@ step
     .goto Western Plaguelands,51.923,28.062
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Kirsta Grubenschatten|r
     .turnin 6023 >> Gebt die Quest Offene Rechnungen ab
-    .accept 6025 >> Offene Rechnungen annehmen
+    .accept 6025 >> Akzeptiert die Quest Offene Rechnungen
     .target Kirsta Deepshadow
 step
     #completewith next
@@ -594,7 +594,7 @@ step
     >>|cRXP_ENEMY_Freezing Ghouls|r |cRXP_WARN_cast|r |T135848:0|t[Flash Freeze]|cRXP_WARN_. This ability stuns for 5 seconds. Avoid aggroing multiple at the same time|r (NOT TRANSLATED IN :deDE YET)
     -->>|cRXP_WARN_If you have an Interact with Target/Mouseover keybind you can talk to |cRXP_FRIENDLY_Mulgris Deepriver|r from outside the house which is a lot safer|r
     .turnin 4985 >> Gebt die Quest Die Tierwelt leidet auch ab
-    .accept 4986 >> Accept Glyphed Oaken Branch (NOT TRANSLATED IN :deDE YET) << Mage
+    .accept 4986 >> Akzeptiert die Quest Glyphenverzierter Eichenast << Mage
     .target Mulgris Deepriver
 step
     #completewith next
@@ -616,7 +616,7 @@ step
     .goto Eastern Plaguelands,27.850,86.245,15 >> Betrete die Krypta
 step
     .goto Eastern Plaguelands,27.467,84.853
-    >>Kill |cRXP_ENEMY_Zaeldarr der Ausgestoßene|r. Loote ihn für seine |cRXP_LOOT_Kopf|r
+    >>Tötet |cRXP_ENEMY_Zaeldarr der Ausgestoßene|r. Plündert ihn für seinen |cRXP_LOOT_Kopf|r
     .complete 6021,1 -- Zaeldarr's Head (1)
     .mob Zaeldarr the Outcast
 step
@@ -682,7 +682,7 @@ step
     .goto Western Plaguelands,42.702,84.031
     .target Commander Ashlam Valorfist
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Kommandant Ashlam Valorfist|r
-    .accept 5237 >> Accept Mission Accomplished! (NOT TRANSLATED IN :deDE YET)
+    .accept 5237 >> Akzeptiert die Quest Mission erfüllt!
     .turnin 5237 >> Gebt die Quest Mission erfüllt ab
 step
     .goto Western Plaguelands,42.665,83.774
@@ -694,7 +694,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Marlene Rotpfad|r
     >>|cRXP_FRIENDLY_Marlene Redpath|r könnte auch oben sein
     .turnin 5152 >> Gebt die Quest Tante Marlene ab
-    .accept 5153 >> Accept A Strange Historian (NOT TRANSLATED IN :deDE YET)
+    .accept 5153 >> Akzeptiert die Quest Ein seltsamer Historiker
     .target Marlene Redpath
 step
     .goto Western Plaguelands,49.696,76.754
@@ -781,7 +781,7 @@ step
 step
     .goto Eastern Plaguelands,81.518,59.766
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Carlin Rotpfad|r
-    .turnin 5181 >>Gebt die Quest Bösewichte von Darroheim ab
+    .turnin 5181 >>Gebt die Quest Bösewichte von Darrowshire ab
     .target Carlin Redpath
 step << Mage
     .cast 3561 >>|cRXP_WARN_Cast|r |T135763:0|t[Teleportieren: Sturmwind]

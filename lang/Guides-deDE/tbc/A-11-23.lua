@@ -767,7 +767,7 @@ step
 step << Draenei
 #xprate <1.5
     .goto 1439/1,579.500,5240.300
-    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4728 >>Akzeptiert die Quest Gestrandete Meereskreatur
 step
 #xprate <1.5
@@ -925,7 +925,7 @@ step << Warrior/Paladin/Hunter/Rogue
     .train 199 >> Erlernen 2h Streitkolben << Paladin/Warrior
     .train 198 >> Erlernen 1h Maces << Rogue
     .train 201 >> Erlernt 1h Schwerter << Rogue
-    .train 5011 >> Erlernen Armbrüste << Hunter
+    .train 5011 >> Erlernt Armbrüste << Hunter
     .target Handiir
 step << Hunter
 	.goto The Exodar,47.573,88.340
@@ -3659,7 +3659,7 @@ step
     .isOnQuest 2078
     #completewith next
     .goto 1439,55.802,18.290
-    .gossip 6669,0 >> Sprecht mit |cRXP_FRIENDLY_Der Dreschonator 4100|r, um die Eskorte zu starten
+    .gossip 6669,0 >> Sprecht mit |cRXP_FRIENDLY_Der Dreschonator 4100|r um die Eskorte zu beginnen
     .skipgossip
     .target The Threshwackonator 4100
 step

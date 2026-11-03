@@ -4135,7 +4135,7 @@ step
 step
     .goto Darkshore,55.803,18.291,10,0
     .goto Darkshore,56.655,13.485
-    >>Sprecht mit |cRXP_FRIENDLY_Der Dreschonator 4100|r, um die Eskorte zu starten
+    >>Sprecht mit |cRXP_FRIENDLY_Der Dreschonator 4100|r um die Eskorte zu beginnen
     >>Escortier |cRXP_FRIENDLY_Der Dreschonator 4100|r bis zu |cRXP_FRIENDLY_Gelkak Gyromast|r
     >>Tötet |cRXP_ENEMY_The Threshwackonator 4100|r sobald er feindselig ist
     .skipgossip

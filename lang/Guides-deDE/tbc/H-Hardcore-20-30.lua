@@ -1981,7 +1981,7 @@ step
 step
     .goto Stonetalon Mountains,47.30,61.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Maggran|r
-    .accept 5881 >> Hinzurufen der Reserve annehmen
+    .accept 5881 >> Akzeptiert die Quest Hinzurufen der Reserve
     .target Maggran Earthbinder
     .xp <23,1
 step
@@ -2099,7 +2099,7 @@ step
 step
     #sticky
     #completewith EnterBFD
-    .subzone 2797,2 >> Now you should be looking for a group to BlackFathom Deeps (NOT TRANSLATED IN :deDE YET)
+    .subzone 2797,2 >> Jetzt solltet ihr nach einer Gruppe für Tiefschwarze Grotte suchen
     .dungeon BFD
 step
     #loop
@@ -2443,8 +2443,8 @@ step << Shaman
     .accept 1530 >>Akzeptiert die Quest Ruf des Wassers
     .target +Islen Waterseer
     .goto The Barrens,65.83,43.78
-    .turnin 874 >>Turn in Mahren Skyseer (NOT TRANSLATED IN :deDE YET)
-    .accept 873 >>Accept Isha Awak (NOT TRANSLATED IN :deDE YET)
+    .turnin 874 >>Gebt Mahren Skyseer ab
+    .accept 873 >>Akzeptiert die Quest Isha Awak
     .target +Mahren Skyseer
     .goto The Barrens,65.83,43.86
     .isOnQuest 1529
@@ -2454,8 +2454,8 @@ step << Shaman
     .accept 1530 >>Akzeptiert die Quest Ruf des Wassers
     .target +Islen Waterseer
     .goto The Barrens,65.83,43.78
-    .turnin 874 >>Turn in Mahren Skyseer (NOT TRANSLATED IN :deDE YET)
-    .accept 873 >>Accept Isha Awak (NOT TRANSLATED IN :deDE YET)
+    .turnin 874 >>Gebt Mahren Skyseer ab
+    .accept 873 >>Akzeptiert die Quest Isha Awak
     .target +Mahren Skyseer
     .goto The Barrens,65.83,43.86
     .isOnQuest 1528
@@ -2465,8 +2465,8 @@ step << Shaman
     .accept 1530 >>Akzeptiert die Quest Ruf des Wassers
     .target +Islen Waterseer
     .goto The Barrens,65.83,43.78
-    .turnin 874 >>Turn in Mahren Skyseer (NOT TRANSLATED IN :deDE YET)
-    .accept 873 >>Accept Isha Awak (NOT TRANSLATED IN :deDE YET)
+    .turnin 874 >>Gebt Mahren Skyseer ab
+    .accept 873 >>Akzeptiert die Quest Isha Awak
     .target +Mahren Skyseer
     .goto The Barrens,65.83,43.86
     .isQuestTurnedIn 1529
@@ -2477,8 +2477,8 @@ step << Shaman
     .accept 1530 >>Akzeptiert die Quest Ruf des Wassers
     .target +Islen Waterseer
     .goto The Barrens,65.83,43.78
-    .turnin 874 >>Turn in Mahren Skyseer (NOT TRANSLATED IN :deDE YET)
-    .accept 873 >>Accept Isha Awak (NOT TRANSLATED IN :deDE YET)
+    .turnin 874 >>Gebt Mahren Skyseer ab
+    .accept 873 >>Akzeptiert die Quest Isha Awak
     .target +Mahren Skyseer
     .goto The Barrens,65.83,43.86
     .isQuestTurnedIn 1528
@@ -2871,7 +2871,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     #completewith EnterSFK
-    .subzone 209,2 >> Now you should be looking for a group to Shadowfang Keep (NOT TRANSLATED IN :deDE YET)
+    .subzone 209,2 >> Sucht jetzt eine Gruppe für Burg Schattenfang
     .dungeon SFK
 step << !Mage
     #optional
@@ -2978,8 +2978,8 @@ step
 step
     #label JourneytoHillsbrad
     .goto Silverpine Forest,44.18,42.68
-    >>Interact with |cRXP_PICK_Yuriv's Tombstone|r on the ground (NOT TRANSLATED IN :deDE YET)
-    .turnin 264 >> Turn in Until Death Do Us Part (NOT TRANSLATED IN :deDE YET)
+    >>Interagiert mit |cRXP_PICK_Yuriv's Grabstein|r auf dem Boden
+    .turnin 264 >> Gebt die Quest Bis dass der Tod uns scheidet ab
     .target Clarice Foster
     .isOnQuest 264
 step
@@ -3052,7 +3052,7 @@ step << Rogue
     .target Serge Hinott
 step << Rogue
     .goto Hillsbrad Foothills,61.55,19.19
-    >>Wait for |cRXP_FRIENDLY_Hinott|r to complete the cure (NOT TRANSLATED IN :deDE YET)
+    >>Wartet darauf, dass |cRXP_FRIENDLY_Hinott|r die Heilung abschließt
     .complete 2480,1 --Cure Completed (1)
 step << Rogue
     .goto Hillsbrad Foothills,61.64,19.19
@@ -3061,17 +3061,17 @@ step << Rogue
     .target Serge Hinott
 step << Rogue
     #completewith TarrenMillPickups
-    .cast 10723 >>|cRXP_WARN_Benutzen|r |T134807:0|t[Hinott's Oil] |cRXP_WARN_to cure yourself of the|r |T136230:0|t[Touch of Zanzil]
+    .cast 10723 >>Benutzt|cRXP_WARN_ |T134807:0|t[Hinotts Öl] |rum euch von|cRXP_WARN_ |T136230:0|t[Berührung von Zanzil] zu heilen|r
 step << Rogue
     #completewith TarrenMillPickups
-    >>|cRXP_WARN_Craft|r |T132273:0|t[Instant Poisons] (NOT TRANSLATED IN :deDE YET)
+    >>|cRXP_WARN_Stellt|r |T132273:0|t[Sofort wirkendes Gift] her
     .collect 6947,20,1067,1 --Collect Instant Poison (20)
 step
     .goto Hillsbrad Foothills,61.44,19.05
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Apotheker Lydon|r
-    .turnin 1065 >> Turn in Journey to Tarren Mill (NOT TRANSLATED IN :deDE YET)
+    .turnin 1065 >> Gebt die Quest Reise nach Tarrens Mühle ab
     .accept 1066 >> Das Blut Unschuldiger annehmen
-    .turnin 493 >> Turn in Journey to Hillsbrad Foothills (NOT TRANSLATED IN :deDE YET)
+    .turnin 493 >> Gebt die Quest Reise in das Vorgebirge von Hillsbrad ab
     .accept 496 >> Elixier des Leidens annehmen
     .accept 501 >> Elixier der Schmerzen annehmen
     .target Apothecary Lydon
@@ -3082,7 +3082,7 @@ step << Shaman
 step
     .goto Hillsbrad Foothills,62.37,20.32
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Hochexekutorin Darthalia|r
-    .turnin 494 >> Turn in Time To Strike (NOT TRANSLATED IN :deDE YET)
+    .turnin 494 >> Gebt die Quest Zeit zum Angriff ab
     .accept 527 >> Kampf um das Hügelland annehmen
     .target High Executor Darthalia
 step << BloodElf
@@ -3156,7 +3156,7 @@ step << Rogue
 step << Hunter
     #completewith next
     .goto Hillsbrad Foothills,62.31,19.70
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Theodore|r (NOT TRANSLATED IN :deDE YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Sprecht mit|r |cRXP_FRIENDLY_Theodore|r
     .stable >> Pack dein Pet in den Stall. Du zähmst in kürze einen |cRXP_ENEMY_Graubär|r und einen |cRXP_ENEMY_Waldmooskrabbler|r
     .target Theodore Mont Claire
 step << Hunter
@@ -3165,19 +3165,19 @@ step << Hunter
     .goto Hillsbrad Foothills,57.93,27.85,60,0
     .goto Hillsbrad Foothills,58.88,32.28,60,0
     .goto Hillsbrad Foothills,61.77,36.16,60,0
-    .train 16829 >>|cRXP_WARN_wirkt|r |T132164:0|t[Tame Beast] |cRXP_WARN_on a |cRXP_ENEMY_Gray Bear|r. Attack mobs with it to learn|r |T132140:0|t[Claw (Rank 3)]
-    .train 17263 >>|cRXP_WARN_Cast|r |T132164:0|t[Tame Beast] |cRXP_WARN_on a |cRXP_ENEMY_Forest Moss Creeper|r. Attack mobs with it to learn|r |T132278:0|t[Bite (Rank 3)] (NOT TRANSLATED IN :deDE YET)
+    .train 16829 >>|cRXP_WARN_Wirkt|r |T132164:0|t[Wildtier zähmen] |cRXP_WARN_auf einen |cRXP_ENEMY_Graubär|r. Greift damit Gegner an, um |r |T132140:0|t[Klaue (Rang 3)] zu lernen
+    .train 17263 >>|cRXP_WARN_Wirkt|r |T132164:0|t[Wildtier zähmen] |cRXP_WARN_auf einen |cRXP_ENEMY_Waldmooskrabbler|r. Greift damit Gegner an, um|r |T132278:0|t[Biss (Rang 3)] zu lernen
     .link https://www.wow-petopia.com/classic/training.php >> |cRXP_WARN_Hier Klicken für mehr Infos bezüglich Pet Training|r
     .mob Gray Bear
     .mob Forest Moss Creeper
 step << Hunter
     .goto Hillsbrad Foothills,62.31,19.70
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Theodore|r (NOT TRANSLATED IN :deDE YET)
-    .stable >> Abandon the |cRXP_ENEMY_Gray Bear|r or |cRXP_ENEMY_Forest Moss Creeper|r and retrieve your regular pet (NOT TRANSLATED IN :deDE YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Sprecht mit|r |cRXP_FRIENDLY_Theodore|r
+    .stable >> Gebt den |cRXP_ENEMY_Graubär|r oder |cRXP_ENEMY_Waldmooskrabbler|r frei und holt euer reguläres Haustier zurück
     .target Theodore Mont Claire
 step << Rogue
     #completewith Durnholde1
-    .cast 8679 >>|cRXP_WARN_Use the|r |T132273:0|t[Instant Poison] |cRXP_WARN_on your weapons|r (NOT TRANSLATED IN :deDE YET)
+    .cast 8679 >>|cRXP_WARN_Benutzt das|r |T132273:0|t[Sofort wirkende Gift] |cRXP_WARN_auf eure Waffen|r
     .itemcount 6947,2
 step
 	#completewith next
@@ -3195,8 +3195,8 @@ step
     .isOnQuest 549,1066,498
 step
     #completewith Drull
-    >>Kill |cRXP_ENEMY_Schurke des Syndikats|r, |cRXP_ENEMY_Watchmen|r, und |cRXP_ENEMY_Shadow Mages|r.
-    >>Loot the |cRXP_ENEMY_Shadow Mages|r for their |cRXP_LOOT_Vials of Innocent Blood|r (NOT TRANSLATED IN :deDE YET)
+    >>Tötet |cRXP_ENEMY_Schurke des Syndikats|r, |cRXP_ENEMY_Wachmann des Syndikats|r, und |cRXP_ENEMY_Schattenmagier des Syndikats|r.
+    >>Plündert die |cRXP_ENEMY_Schattenmagier des Syndikats|r, für ihre |cRXP_LOOT_Phiole mit unschuldigem Blut|r
     .complete 549,1 --Kill Syndicate Rogue (x10)
     .mob +Syndicate Rogue
 	.complete 549,2 --Kill Syndicate Watchman (x10)
@@ -3216,14 +3216,14 @@ step
 	.goto Hillsbrad Foothills,77.99,40.19,0
     .goto Hillsbrad Foothills,79.45,40.57,15,0
 	.goto Hillsbrad Foothills,77.99,40.19,15,0
-	>>Kill |cRXP_ENEMY_Kerkermeister Marlgen|r. Loote ihn für seine |cRXP_LOOT_Gold Key|r
+	>>Tötet |cRXP_ENEMY_Kerkermeister Marlgen|r. Plündert ihn für seinen |cRXP_LOOT_goldenen Schlüssel|r
     >>|cRXP_WARN_Er kann vor |cRXP_FRIENDLY_Tog'thar|r oder am Fuß des Turms gefunden werden|r
     .collect 3499,1,498,2 --Burnished Gold Key (1)
     .mob Jailor Marlgen
 step
     #label Togthar
 	.goto Hillsbrad Foothills,79.79,39.65
-    >>Klick auf das |cRXP_PICK_Kugel und Kette|r auf dem Boden
+    >>Klickt die |cRXP_PICK_Kugelfessel|r am Boden
     .complete 498,2 --Rescue Tog'thar (1)
 step << Rogue/Hunter/Shaman
 	.goto Hillsbrad Foothills,80.14,38.89
@@ -3240,7 +3240,7 @@ step << Rogue/Hunter/Shaman
 step << Rogue/Hunter/Shaman/Druid
 	.goto Hillsbrad Foothills,80.14,38.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Kris|r
-    >>|cRXP_BUY_Buy|r |T134590:0|t[|cRXP_FRIENDLY_Stalking Pants|r] |cRXP_BUY_from her if they're up|r (NOT TRANSLATED IN :deDE YET)
+    >>|cRXP_BUY_Kauft|r |T134590:0|t[|cRXP_FRIENDLY_Pirsch-Hose|r] |cRXP_BUY_von ihr, falls sie verfügbar sind|r
     .vendor >> Verkaufe und Repariere
     .target Kris Legace
     .money <0.7859
@@ -3273,7 +3273,7 @@ step << Rogue/Hunter/Shaman/Druid
 step << Rogue/Hunter/Shaman/Druid
     #optional
     #completewith Drull
-    +|cRXP_WARN_Equip the|r |T134590:0|t[|cRXP_FRIENDLY_Stalking Pants|r] (NOT TRANSLATED IN :deDE YET)
+    +Legt die|cRXP_WARN_ |T134590:0|t[|rPirsch-Hose|cRXP_FRIENDLY_] an|r
     .use 4831
     .itemcount 4831,1
     .itemStat 7,ITEM_MOD_ARMOR_SHORT,<76
@@ -3308,11 +3308,11 @@ step
 step
     #label Drull
     .goto Hillsbrad Foothills,75.33,41.50
-    >>Klick auf das |cRXP_PICK_Kugel und Kette|r auf dem Boden
+    >>Klickt die |cRXP_PICK_Kugelfessel|r am Boden
     .complete 498,1 --Rescue Drull (1)
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Schurke des Syndikats|r und |cRXP_ENEMY_Wachmann des Syndikats|r
+    >>Tötet |cRXP_ENEMY_Schurke des Syndikats|r und |cRXP_ENEMY_Wachmann des Syndikats|r
     .complete 549,1 --Kill Syndicate Rogue (x10)
     .mob +Syndicate Rogue
     .complete 549,2 --Kill Syndicate Watchman (x10)
@@ -3343,7 +3343,7 @@ step
 	.goto Hillsbrad Foothills,65.37,46.46,40,0
 	.goto Hillsbrad Foothills,66.13,45.63,40,0
 	.goto Hillsbrad Foothills,67.22,45.85,40,0
-    >>Kill |cRXP_ENEMY_Schurke des Syndikats|r und |cRXP_ENEMY_Wachmann des Syndikats|r
+    >>Tötet |cRXP_ENEMY_Schurke des Syndikats|r und |cRXP_ENEMY_Wachmann des Syndikats|r
     >>|cRXP_WARN_More of them can be found at the tower just southwest of the keep|r (NOT TRANSLATED IN :deDE YET)
     .complete 549,1 --Kill Syndicate Rogue (x10)
     .mob +Syndicate Rogue
@@ -3364,7 +3364,7 @@ step
     .subzone 272 >> Kehrt nach Tarrens Mühle zurück
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Krusk|r und |cRXP_FRIENDLY_Darthalia|r
-    .turnin 498 >> Turn in The Rescue (NOT TRANSLATED IN :deDE YET)
+    .turnin 498 >> Gebt die Quest Die Rettung ab
     .target +Krusk
     .goto Hillsbrad Foothills,63.24,20.65
     .turnin 549 >> Gebt die Quest GESUCHT: Syndikatspersonal ab
@@ -3425,11 +3425,11 @@ step
 step
     #optional
     #completewith FarmerRay
-    .destroy 3499 >>|cRXP_WARN_Delete the|r |T134238:0|t[Burnished Gold Key] |cRXP_WARN_from your bags, as it's no longer needed|r (NOT TRANSLATED IN :deDE YET)
+    .destroy 3499 >>|cRXP_WARN_Entfernt|r |T134238:0|t[den Polierten goldenen Schlüssel] |cRXP_WARN_aus eurer Tasche, da er nicht mehr benötigt wird|r
 step
     #optional
     #completewith FarmerRay
-    .destroy 3467 >>|cRXP_WARN_Delete the|r |T134237:0|t[Dull Iron Key] |cRXP_WARN_from your bags, as it's no longer needed|r (NOT TRANSLATED IN :deDE YET)
+    .destroy 3467 >>|cRXP_WARN_Entfernt|r |T134237:0|t[den Glanzlosen Eisenschlüssel] |cRXP_WARN_aus euren Taschen, da er nicht mehr benötigt wird|r
 step
 	#completewith Fields1
     >>Tötet |cRXP_ENEMY_Graubären|r und |cRXP_ENEMY_Verhungernder Berglöwe|r. Plündert sie für ihre |cRXP_LOOT_Graubärenzunge|r und |cRXP_LOOT_Berglöwenblut|r
@@ -3441,7 +3441,7 @@ step
     .isOnQuest 496
 step
 	#completewith Fields1
-    >>Kill |cRXP_ENEMY_Verhungernder Berglöwe|r. Loote sie für ihre |cRXP_LOOT_Berglöwenblut|r
+    >>Tötet |cRXP_ENEMY_Verhungernder Berglöwe|r. Plündert sie für ihr |cRXP_LOOT_Berglöwenblut|r
 	.complete 501,1 --Collect Mountain Lion Blood (x10)
     .mob Starving Mountain Lion
     .isQuestTurnedIn 496
@@ -3452,7 +3452,7 @@ step
     .isOnQuest 527
 step
     #completewith FarmerRay
-	>>Kill |cRXP_ENEMY_Hillsbrad Farmers|r and |cRXP_ENEMY_Hillsbrad Farmhands|r in and around the fields (NOT TRANSLATED IN :deDE YET)
+	>>Tötet die |cRXP_ENEMY_Bauer von Hillsbrad|r und die |cRXP_ENEMY_Landarbeiter von Hillsbrad|r in und um die Felder
     >>|cRXP_WARN_Seht euch vor.|r |cRXP_ENEMY_Bauer von Hillsbrad|r |cRXP_WARN_können euch|r |T132343:0|t[Entwaffnen] |cRXP_WARN_|r << Rogue/Warrior/Shaman
     .complete 527,1 --Kill Hillsbrad Farmer (x6)
     .mob +Hillsbrad Farmer
@@ -3490,7 +3490,7 @@ step
     .goto Hillsbrad Foothills,31.30,37.08,40,0
     .goto Hillsbrad Foothills,33.81,40.91,40,0
     .goto Hillsbrad Foothills,35.49,40.36,40,0
-	>>Kill |cRXP_ENEMY_Hillsbrad Farmers|r and |cRXP_ENEMY_Hillsbrad Farmhands|r in and around the fields (NOT TRANSLATED IN :deDE YET)
+	>>Tötet die |cRXP_ENEMY_Bauer von Hillsbrad|r und die |cRXP_ENEMY_Landarbeiter von Hillsbrad|r in und um die Felder
     >>|cRXP_WARN_Seht euch vor.|r |cRXP_ENEMY_Bauer von Hillsbrad|r |cRXP_WARN_können euch|r |T132343:0|t[Entwaffnen] |cRXP_WARN_|r << Rogue/Warrior/Shaman
     .complete 527,1 --Kill Hillsbrad Farmer (x6)
     .mob +Hillsbrad Farmer
@@ -3591,14 +3591,14 @@ step
     .isOnQuest 528
 step
     #completewith Kalaba
-    >>Kill |cRXP_ENEMY_Hillsbrad Humans|r. Loote sie für ihre |cRXP_LOOT_Totenschädel|r.
+    >>Tötet |cRXP_ENEMY_Hillsbrad Menschen|r. Plündert sie für ihre |cRXP_LOOT_Schädel|r.
     >>|cRXP_WARN_Diese Quest muss jetzt nicht abgeschlossen werden|r
     .complete 546,1,17 --Hillsbrad Human Skull (30)
 step
     #completewith next
 	.goto Hillsbrad Foothills,32.67,35.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Stanley|r
-    >>|cRXP_WARN_Wait out the RP, then kill|r |cRXP_ENEMY_Wütender Stanley|r
+    >>|cRXP_WARN_Wartet bis zum Ende des Rollenspiels, dann tötet|r |cRXP_ENEMY_Wütender Stanley|r
     >>|cRXP_ENEMY_Wütender Stanley|r |cRXP_WARN_gibt die volle Questerfahrung|r
     .turnin 502 >> Turn in Elixir of Pain (NOT TRANSLATED IN :deDE YET)
     .timer 9,Stanley-Rollenspiel (SEID WACHSAM)
@@ -3634,7 +3634,7 @@ step
 step
 	.goto Hillsbrad Foothills,32.67,35.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Stanley|r
-    >>|cRXP_WARN_Wait out the RP, then kill|r |cRXP_ENEMY_Wütender Stanley|r
+    >>|cRXP_WARN_Wartet bis zum Ende des Rollenspiels, dann tötet|r |cRXP_ENEMY_Wütender Stanley|r
     >>|cRXP_ENEMY_Wütender Stanley|r |cRXP_WARN_gibt die volle Questerfahrung|r
     .turnin 502 >> Turn in Elixir of Pain (NOT TRANSLATED IN :deDE YET)
     .timer 9,Stanley-Rollenspiel (SEID WACHSAM)
@@ -3851,7 +3851,7 @@ step
     .bindlocation 1638,1
 step
     #optional
-    .abandon 1014 >>Abandon Arugal Must Die (NOT TRANSLATED IN :deDE YET)
+    .abandon 1014 >>Brecht die Quest Arugal muss sterben ab
     .dungeon SFK
 step
     #optional
@@ -4017,7 +4017,7 @@ step << Warrior
     .goto The Barrens,44.67,59.42
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich drinnen mit |cRXP_FRIENDLY_Ruga Rachtotem|r
 	.turnin 1823 >>Turn in Speak with Ruga (NOT TRANSLATED IN :deDE YET)
-    .accept 1824 >>Prüfung auf dem Feld der Riesen annehmen
+    .accept 1824 >>Akzeptiert die Quest Prüfung auf dem Feld der Riesen
     .target Ruga Ragetotem
 step
     #label CampTHS2
@@ -4056,7 +4056,7 @@ step << Warrior
 	.goto The Barrens,43.86,72.06,50,0
 	.goto The Barrens,45.38,72.25,50,0
     >>Töte |cRXP_ENEMY_Silithidbeschützer|r, |cRXP_ENEMY_Silithid Swarmers|r, |cRXP_ENEMY_Silithid Creepers|r and |cRXP_ENEMY_Silithidenlarve|r. Loot them for their |T133027:0|t[Twitching Antenna]
-    >>|cRXP_WARN_NOTE: The |T133027:0|t[Twitching Antenna] only have a 15 minute duration, do not AFK or logout during this quest|r (NOT TRANSLATED IN :deDE YET)
+    >>|cRXP_WARN_HINWEIS: Die |T133027:0|t[Zuckenden Fühler] haben nur eine Dauer von 15 Minuten, geht nicht AFK und loggt euch nicht aus, während ihr diese Quest macht|r
     .complete 1824,1 --Twitching Antenna (5)
     .mob Silithid Protector
     .mob Silithid Swarmer
@@ -4066,11 +4066,11 @@ step << Warrior
     .goto The Barrens,44.67,59.42
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich drinnen mit |cRXP_FRIENDLY_Ruga Rachtotem|r
     >>|cRXP_WARN_Skip the follow-up|r (NOT TRANSLATED IN :deDE YET)
-    .turnin 1824 >>Turn in Trial at the Field of Giants (NOT TRANSLATED IN :deDE YET)
+    .turnin 1824 >>Gebt die Quest Prüfung auf dem Feld der Riesen ab
     .target Ruga Ragetotem
 step
     #completewith next
-    >>Töte the |cRXP_ENEMY_Silithidernter|r. Loot it for the |T134321:0|t[|cRXP_LOOT_Harvester's Head|r]. Use it to start the quest
+    >>Tötet |cRXP_ENEMY_Silithidernter|r. Plündert ihn für den |T134321:0|t[|cRXP_LOOT_Ernterkopf|r]. Benutzt ihn, um die Quest zu starten
     >>|cRXP_WARN_Skip this quest if you can't find him. This mob is very rare!|r (NOT TRANSLATED IN :deDE YET)
     .collect 5138,1,897 --Collect Harvester's Head
     .accept 897 >>Der Ernter annehmen
@@ -4093,7 +4093,7 @@ step
 step << Shaman
     #completewith next
     .goto The Barrens,44.76,74.79,45,0
-    >>Kill |cRXP_ENEMY_Washte Pawne|r. Loot him for |T135992:0|t[|cRXP_LOOT_Washte Pawne's Feather|r]. Use it to start the quest (NOT TRANSLATED IN :deDE YET)
+    >>Tötet |cRXP_ENEMY_Washte Pawne|r. Plündert ihn für |T135992:0|t[|cRXP_LOOT_Washte Pawnes Feder|r]. Benutzt es, um die Quest zu starten
     .collect 5103,1,885 --Collect Washte Pawne's Feather
     .accept 885 >>Accept Washte Pawne (NOT TRANSLATED IN :deDE YET)
     .use 5103
@@ -4111,7 +4111,7 @@ step << Shaman
     .target Brine
 step
     #completewith Backstabber
-    >>Kill |cRXP_ENEMY_Washte Pawne|r. Loot him for |T135992:0|t[|cRXP_LOOT_Washte Pawne's Feather|r]. Use it to start the quest (NOT TRANSLATED IN :deDE YET)
+    >>Tötet |cRXP_ENEMY_Washte Pawne|r. Plündert ihn für |T135992:0|t[|cRXP_LOOT_Washte Pawnes Feder|r]. Benutzt es, um die Quest zu starten
     .collect 5103,1,885 --Collect Washte Pawne's Feather
     .accept 885 >>Accept Washte Pawne (NOT TRANSLATED IN :deDE YET)
     .use 5103
@@ -4141,9 +4141,9 @@ step
 step
     #completewith Lok
     >>Töte |cRXP_ENEMY_Schleicher der Klingenmähnen|r and |cRXP_ENEMY_Pfadfinder der Klingenmähnen|r. Loot them for the |T135640:0|t[|cRXP_LOOT_Razormane Backstabber|r]
-    >>Kill |cRXP_ENEMY_Razormane Seers|r. Loot them for a |T135139:0|t[|cRXP_LOOT_Charred Razormane Wand|r] (NOT TRANSLATED IN :deDE YET)
+    >>Tötet |cRXP_ENEMY_Seher der Grimmhauer|r. Plündert sie für ein |T135139:0|t[|cRXP_LOOT_Verkohlter Grimmhauerzauberstab|r]
     >>Kill |cRXP_ENEMY_Razormane Warfrenzies|r. Loot them for a |T134955:0|t[|cRXP_LOOT_Razormane War Shield|r] (NOT TRANSLATED IN :deDE YET)
-    >>|cRXP_WARN_The |cRXP_ENEMY_Schleicher der Klingenmähnen|r are stealthed|r
+    >>|cRXP_WARN_Die |cRXP_ENEMY_Schleicher der Grimmhauer|r sind in verstohlenheit|r
     .collect 5093,1,893,1 --Collect Razormane Backstabber
     .mob +Razormane Stalker
     .mob +Razormane Pathfinder
@@ -4181,8 +4181,8 @@ step
     .goto The Barrens,45.05,79.75,45,0
     .goto The Barrens,44.83,79.87,45,0
     .goto The Barrens,44.83,79.87,0
-    >>Kill |cRXP_ENEMY_Kuz|r. Loot him for |cRXP_LOOT_Kuz's Skull|r (NOT TRANSLATED IN :deDE YET)
-    >>|cRXP_ENEMY_Kuz|r |cRXP_WARN_patrols around slightly|r (NOT TRANSLATED IN :deDE YET)
+    >>Tötet |cRXP_ENEMY_Kuz|r. Plündert ihn für |cRXP_LOOT_Kuz's Schädel|r
+    >>|cRXP_ENEMY_Kuz|r |cRXP_WARN_patrouilliert in der Gegend umher|r
     .complete 879,1 --Kuz's Skull (1)
     .unitscan Kuz
     .isOnQuest 879
@@ -4196,8 +4196,8 @@ step
     .isOnQuest 879
 step
     #completewith next
-    >>Töte |cRXP_ENEMY_Schleicher der Klingenmähnen|r and |cRXP_ENEMY_Pfadfinder der Klingenmähnen|r. Loot them for a |T135640:0|t[|cRXP_LOOT_Razormane Backstabber|r]
-    >>|cRXP_WARN_The |cRXP_ENEMY_Schleicher der Klingenmähnen|r are stealthed|r
+    >>Tötet |cRXP_ENEMY_Schleicher der Grimmhauer|r und |cRXP_ENEMY_Pfadfinder der Grimmhauer|r. Plündert sie für |T135640:0|t[|cRXP_LOOT_Grimmhauerrückenstecher|r]
+    >>|cRXP_WARN_Die |cRXP_ENEMY_Schleicher der Grimmhauer|r sind in verstohlenheit|r
     .collect 5093,1,893,1 --Collect Razormane Backstabber (x1)
     .mob Razormane Stalker
     .mob Razormane Pathfinder
@@ -4214,7 +4214,7 @@ step
 	.goto The Barrens,41.54,82.28,50,0
 	.goto The Barrens,42.48,82.28,50,0
 	.goto The Barrens,42.57,78.81,50,0
-    >>Kill |cRXP_ENEMY_Razormane Seers|r. Loot them for a |T135139:0|t[|cRXP_LOOT_Charred Razormane Wand|r] (NOT TRANSLATED IN :deDE YET)
+    >>Tötet |cRXP_ENEMY_Seher der Grimmhauer|r. Plündert sie für ein |T135139:0|t[|cRXP_LOOT_Verkohlter Grimmhauerzauberstab|r]
     >>Kill |cRXP_ENEMY_Razormane Warfrenzies|r. Loot them for a |T134955:0|t[|cRXP_LOOT_Razormane War Shield|r] (NOT TRANSLATED IN :deDE YET)
     .collect 5092,1,893,1 --Charred Razormane Wand
     .mob +Razormane Seer
@@ -4222,7 +4222,7 @@ step
     .mob +Razormane Warfrenzy
 step
     .goto The Barrens,43.87,83.43
-    >>Kill |cRXP_ENEMY_Nak|r. Loot him for |cRXP_LOOT_Nak's Skull|r (NOT TRANSLATED IN :deDE YET)
+    >>Tötet |cRXP_ENEMY_Nak|r. Plündert sie für |cRXP_LOOT_Nak's Schädel|r
     .complete 879,2 --Nak's Skull (1)
     .mob Nak
     .isOnQuest 879
@@ -4254,8 +4254,8 @@ step
     .goto The Barrens,44.66,81.18,40,0
     .goto The Barrens,45.08,80.34,40,0
     .goto The Barrens,45.48,79.89,40,0
-    >>Töte |cRXP_ENEMY_Schleicher der Klingenmähnen|r and |cRXP_ENEMY_Pfadfinder der Klingenmähnen|r. Loot them for a |T135640:0|t[|cRXP_LOOT_Razormane Backstabber|r]
-    >>|cRXP_WARN_The |cRXP_ENEMY_Schleicher der Klingenmähnen|r are stealthed|r
+    >>Tötet |cRXP_ENEMY_Schleicher der Grimmhauer|r und |cRXP_ENEMY_Pfadfinder der Grimmhauer|r. Plündert sie für |T135640:0|t[|cRXP_LOOT_Grimmhauerrückenstecher|r]
+    >>|cRXP_WARN_Die |cRXP_ENEMY_Schleicher der Grimmhauer|r sind in verstohlenheit|r
     .collect 5093,1,893,1 --Collect Razormane Backstabber (x1)
     .mob Razormane Stalker
     .mob Razormane Pathfinder
@@ -4274,7 +4274,7 @@ step
 	.goto The Barrens,47.44,85.71,15,0
 	.goto The Barrens,47.94,85.68,15,0
 	.goto The Barrens,48.34,86.19,15,0
-	>>Kill |cRXP_ENEMY_Prospector Khazgorm|r. Loot him for |cRXP_LOOT_Khazgorm's Journal|r (NOT TRANSLATED IN :deDE YET)
+	>>Tötet |cRXP_ENEMY_Ausgrabungsleiter Khazgorm|r. Plündert sie für |cRXP_LOOT_Khazgorm's Tagebuch|r
 	.complete 843,3 --Collect Khazgorm's Journal (x1)
     .mob Prospector Khazgorm
     .isOnQuest 843
@@ -4300,7 +4300,7 @@ step
     #completewith BaelModan
     .goto The Barrens,47.21,79.35,45,0
     .goto The Barrens,47.22,79.72,45,0
-    >>Kill |cRXP_ENEMY_Washte Pawne|r. Loot him for |T135992:0|t[|cRXP_LOOT_Washte Pawne's Feather|r]. Use it to start the quest (NOT TRANSLATED IN :deDE YET)
+    >>Tötet |cRXP_ENEMY_Washte Pawne|r. Plündert ihn für |T135992:0|t[|cRXP_LOOT_Washte Pawnes Feder|r]. Benutzt es, um die Quest zu starten
     .collect 5103,1,885 --Collect Washte Pawne's Feather
     .accept 885 >>Accept Washte Pawne (NOT TRANSLATED IN :deDE YET)
     .use 5103
@@ -4322,7 +4322,7 @@ step
     .goto The Barrens,46.12,81.25,40,0
     .goto The Barrens,46.14,75.40,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gann|r
-    >>|cRXP_FRIENDLY_Gann|r |cRXP_WARN_patrols North and South on the road|r (NOT TRANSLATED IN :deDE YET)
+    >>|cRXP_FRIENDLY_Gann|r |cRXP_WARN_patrouilliert nach Norden und Süden auf der Straße|r
     .turnin 843 >> Turn in Gann's Reclamation (NOT TRANSLATED IN :deDE YET)
     .accept 846 >> Ganns Rache annehmen
     .target Gann Stonespire
@@ -4345,13 +4345,13 @@ step
     .goto The Barrens,46.12,81.25,40,0
     .goto The Barrens,46.14,75.40,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gann|r
-    >>|cRXP_FRIENDLY_Gann|r |cRXP_WARN_patrols North and South on the road|r (NOT TRANSLATED IN :deDE YET)
+    >>|cRXP_FRIENDLY_Gann|r |cRXP_WARN_patrouilliert nach Norden und Süden auf der Straße|r
     .accept 846 >> Ganns Rache annehmen
     .target Gann Stonespire
     .isQuestTurnedIn 843
 step
     #label BaelModan
-    .goto The Barrens,48.63,84.49,110 >>Lauf zum Teufelswald
+    .goto The Barrens,48.63,84.49,110 >>Reist nach Bael Modan
     .isOnQuest 846
 step
     #loop
@@ -4388,7 +4388,7 @@ step
     .goto The Barrens,46.12,81.25,40,0
     .goto The Barrens,46.14,75.40,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gann|r
-    >>|cRXP_FRIENDLY_Gann|r |cRXP_WARN_patrols North and South on the road|r (NOT TRANSLATED IN :deDE YET)
+    >>|cRXP_FRIENDLY_Gann|r |cRXP_WARN_patrouilliert nach Norden und Süden auf der Straße|r
     .turnin 846 >> Turn in Revenge of Gann (NOT TRANSLATED IN :deDE YET)
     .accept 849 >> Ganns Rache annehmen
     .target Gann Stonespire
@@ -4416,7 +4416,7 @@ step
     .goto The Barrens,46.12,81.25,40,0
     .goto The Barrens,46.14,75.40,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gann|r
-    >>|cRXP_FRIENDLY_Gann|r |cRXP_WARN_patrols North and South on the road|r (NOT TRANSLATED IN :deDE YET)
+    >>|cRXP_FRIENDLY_Gann|r |cRXP_WARN_patrouilliert nach Norden und Süden auf der Straße|r
     .turnin 849 >> Turn in Revenge of Gann (NOT TRANSLATED IN :deDE YET)
     .target Gann Stonespire
     .isQuestTurnedIn 843
@@ -4431,7 +4431,7 @@ step
 	.goto The Barrens,47.22,79.72,60,0
 	.goto The Barrens,47.21,79.35,60,0
 	.goto The Barrens,44.76,74.79,60,0
-    >>Kill |cRXP_ENEMY_Washte Pawne|r. Loot him for |T135992:0|t[|cRXP_LOOT_Washte Pawne's Feather|r]. Use it to start the quest (NOT TRANSLATED IN :deDE YET)
+    >>Tötet |cRXP_ENEMY_Washte Pawne|r. Plündert ihn für |T135992:0|t[|cRXP_LOOT_Washte Pawnes Feder|r]. Benutzt es, um die Quest zu starten
     >>|cRXP_WARN_Er hat 4 verschiedene Spawn-Punkte, überspringt diesen Schritt, wenn ihr ihn nicht finden könnt|r
     .collect 5103,1,885 --Collect Washte Pawne's Feather
     .accept 885 >>Accept Washte Pawne (NOT TRANSLATED IN :deDE YET)
@@ -4453,8 +4453,8 @@ step
     #label WeaponsofChoiceTurnin
     .goto The Barrens,45.10,57.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Tatternack|r
-    .accept 893 >> Ausgewählte Waffen annehmen
-    .turnin 893 >> Turn in Weapons of Choice (NOT TRANSLATED IN :deDE YET)
+    .accept 893 >> Akzeptiert die Quest Ausgewählte Waffen
+    .turnin 893 >> Gebt die Quest Ausgewählte Waffen ab
     .target Tatternack Steelforge
 step
     .goto The Barrens,44.86,59.13
@@ -4520,7 +4520,7 @@ step
 step
     #completewith IshaAwak
     #optional
-    .destroy 5058 >>|cRXP_WARN_Destroy any extra|r |T132834:0|t[Silithid Eggs] |cRXP_WARN_you still have|r (NOT TRANSLATED IN :deDE YET)
+    .destroy 5058 >>|cRXP_WARN_Zerstört alle zusätzlichen|r |T132834:0|t[Silithideneier] |cRXP_WARN_die ihr noch habt|r
 step
     .goto The Barrens,51.99,29.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gastwirt Boorand|r
@@ -4545,7 +4545,7 @@ step << Hunter
     .target Devrak
 step << Hunter
     .goto Orgrimmar,48.12,80.54
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Trak'gen|r (NOT TRANSLATED IN :deDE YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Sprecht mit|r |cRXP_FRIENDLY_Trak'gen|r
     >>|cRXP_BUY_Kauft|r |T132382:0|t[Schneidenpfeile] |cRXP_BUY_von ihm|r
     .collect 3030,1800,874,1 << Hunter --Razor Arrow (1800)
     .target Trak'gend
@@ -4567,8 +4567,8 @@ step << !Hunter
 step
     .goto The Barrens,65.84,43.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Mahren|r
-    .turnin 874 >>Turn in Mahren Skyseer (NOT TRANSLATED IN :deDE YET)
-    .accept 873 >>Accept Isha Awak (NOT TRANSLATED IN :deDE YET)
+    .turnin 874 >>Gebt Mahren Skyseer ab
+    .accept 873 >>Akzeptiert die Quest Isha Awak
     .target Mahren Skyseer
     .isQuestTurnedIn 913
 step
@@ -4580,8 +4580,8 @@ step
     .goto The Barrens,65.67,46.63,50,0
     .goto The Barrens,64.74,50.35,50,0
     .goto The Barrens,63.60,53.54,50,0
-    >>Kill |cRXP_ENEMY_Isha Awak|r. Loote ihn für den |cRXP_LOOT_Herz von Isha Awak|r
-    >>|cRXP_WARN_He has four different spawn locations alongside the coast|r (NOT TRANSLATED IN :deDE YET)
+    >>Tötet |cRXP_ENEMY_Isha Awak|r. Plündert ihn, für das |cRXP_LOOT_Herz von Isha Awak|r
+    >>|cRXP_WARN_Es gibt vier verschiedene Spawnpunkte entlang der Küste|r
     .complete 873,1 --Heart of Isha Awak
     .unitscan Isha Awak
     .isQuestTurnedIn 913
@@ -4589,7 +4589,7 @@ step
     #label IshaAwak
     .goto The Barrens,65.84,43.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Mahren|r
-    .turnin 873 >> Turn in Isha Awak (NOT TRANSLATED IN :deDE YET)
+    .turnin 873 >> Gebt Isha Awak ab
     .target Mahren Skyseer
     .isQuestTurnedIn 913
 step << !Mage
@@ -4689,7 +4689,7 @@ step << Warlock
 step << Warlock
     .goto Orgrimmar,47.52,46.73
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Kurgul|r
-	.vendor >>Kauft alle Haustierverbesserungen, die ihr euch leisten könnt
+	.vendor >>Kauft irgendwelche Haustier-Verbesserungen, die ihr euch leisten könnt
 	.target Kurgul
     --VV Warlock Grimoire steps
 step << Priest/Warlock
@@ -4793,7 +4793,7 @@ step
     .goto Ashenvale,93.49,73.76,40,0
     .goto Ashenvale,92.47,71.18,40,0
     .goto Ashenvale,91.85,68.71,40,0
-    .goto Ashenvale,91.39,65.86,25 >> Travel north alongside the river into Ashenvale (NOT TRANSLATED IN :deDE YET)
+    .goto Ashenvale,91.39,65.86,25 >> Reist nordwärts am Fluss entlang nach Eschental
 step
     .goto Ashenvale,89.87,68.07,40,0
     .goto Ashenvale,86.89,68.65,40,0
@@ -4838,12 +4838,12 @@ step
 step
     .goto Ashenvale,73.67,60.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Mastok|r
-    .accept 25 >> Accept Stonetalon Standstill (NOT TRANSLATED IN :deDE YET)
+    .accept 25 >> Akzeptiert die Quest Stillstand am Steinkrallenpfad
     .target Mastok Wrilehiss
 step
     .goto Ashenvale,73.06,61.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Pixel|r
-    .accept 6441 >> Satyrhörner annehmen
+    .accept 6441 >> Akzeptiert die Quest Satyrhörner
     .target Pixel
     .maxlevel 28
 step
@@ -4879,7 +4879,7 @@ step << Hunter
     .goto Ashenvale,65.31,64.65,50,0
     .train 16830 >>|cRXP_WARN_Wirkt|r |T132164:0|t[Wildtier zähmen] |cRXP_WARN_auf einen |cRXP_ENEMY_Alter Ashenvalebär|r. Greift Mobs damit an, um |r |T132140:0|t[Klaue (Rang 4)] zu lernen
     .mob +Elder Ashenvale Bear
-    .train 17264 >>|cRXP_WARN_wirkt|r |T132164:0|t[Tame Beast] |cRXP_WARN_on a |cRXP_ENEMY_Geisterpfotenalpha|r. Attack mobs with it to learn|r |T132278:0|t[Bite (Rank 4)]
+    .train 17264 >>|cRXP_WARN_Wirkt|r |T132164:0|t[Wildtier zähmen] |cRXP_WARN_auf einen |cRXP_ENEMY_Geisterpfotenalpha|r. Greift Mobs damit an, um |r |T132278:0|t[Biss (Rang 4)] zu lernen
     .mob +Ghostpaw Alpha
     .link https://www.wow-petopia.com/classic/training.php >> |cRXP_WARN_Hier Klicken für mehr Infos bezüglich Pet Training|r
     .xp <27,1 --Ghostpaw Alphas are lvl 27-28
@@ -4913,9 +4913,9 @@ step
     #completewith Outrunners
     .goto Ashenvale,70.01,71.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gurda|r
-    >>|cRXP_WARN_Skip this step if you do not have (all the) pages|r (NOT TRANSLATED IN :deDE YET)
+    >>|cRXP_WARN_Überspringt diesen Schritt, wenn ihr nicht alle Seiten habt|r
     .accept 6504 >> Akzeptiert die Quest Die verlorenen Seiten
-    .turnin 6504 >> Turn in The Lost Pages (NOT TRANSLATED IN :deDE YET)
+    .turnin 6504 >> Gebt die Quest Die verlorenen Seiten ab
     .target Gurda Ragescar
 step
     #completewith Outrunners
@@ -5033,7 +5033,7 @@ step
     .goto Ashenvale,54.06,54.91,40,0
     .goto Ashenvale,52.68,54.42,40,0
     .goto Ashenvale,52.24,54.38,40,0
-    >>Kill |cRXP_ENEMY_Shadumbra|r. Loot her for |T132225:0|t[|cRXP_LOOT_Shadumbra's Head|r] and use it to start the quest (NOT TRANSLATED IN :deDE YET)
+    >>Tötet |cRXP_ENEMY_Schattumbra|r. Plündert sie für |T132225:0|t[|cRXP_LOOT_Schattumbras Kopf|r] und benutzt ihn um die Quest zu starten
     >>|cRXP_ENEMY_Shadumbra|r |cRXP_WARN_patrols around slightly|r (NOT TRANSLATED IN :deDE YET)
     .collect 16304,1,24 --Collect Shadumbra's Head
 	.accept 24 >> Akzeptiert die Quest Schattumbras Kopf
@@ -5049,7 +5049,7 @@ step
     .goto Ashenvale,61.03,51.96,40,0
     .goto Ashenvale,60.99,49.19,40,0
     .goto Ashenvale,62.51,50.16,40,0
-    >>Kill |cRXP_ENEMY_Laughing Sisters|r. Loot them for an |T134776:0|t[|cRXP_LOOT_Etched Phial|r] (NOT TRANSLATED IN :deDE YET)
+    >>Tötet |cRXP_ENEMY_Lachende Schwester|r. Plündert sie für an |T134776:0|t[|cRXP_LOOT_Geätzte Phiole|r]
     .collect 5867,1,1195,1 --Etched Phial (1)
     .mob Laughing Sister
     .isOnQuest 1195
@@ -5078,7 +5078,7 @@ step
     .goto Ashenvale,52.68,54.42,40,0
     .goto Ashenvale,52.24,54.38,40,0
     .goto Ashenvale,62.39,49.80,40,0
-    >>Kill |cRXP_ENEMY_Shadumbra|r. Loot her for |T132225:0|t[|cRXP_LOOT_Shadumbra's Head|r] and use it to start the quest (NOT TRANSLATED IN :deDE YET)
+    >>Tötet |cRXP_ENEMY_Schattumbra|r. Plündert sie für |T132225:0|t[|cRXP_LOOT_Schattumbras Kopf|r] und benutzt ihn um die Quest zu starten
     >>|cRXP_ENEMY_Shadumbra|r |cRXP_WARN_patrols around slightly|r (NOT TRANSLATED IN :deDE YET)
     .collect 16304,1,24 --Collect Shadumbra's Head
 	.accept 24 >> Akzeptiert die Quest Schattumbras Kopf
@@ -5098,7 +5098,7 @@ step
     .mob +Thistlefur Avenger
 step
     #label EntertheHold
-    .goto Ashenvale,38.67,30.62,40 >>Enter Thistlefur Hold (NOT TRANSLATED IN :deDE YET)
+    .goto Ashenvale,38.67,30.62,40 >>Betretet die Höhle der Distelfelle
     .isOnQuest 6462
 step
     #loop
@@ -5149,7 +5149,7 @@ step
     .mob +Thistlefur Avenger
 step << Shaman
     .goto Ashenvale,33.55,67.47
-    >>|cRXP_WARN_Use the|r |T132821:0|t[Empty Blue Waterskin] |cRXP_WARN_under the Gazebo|r (NOT TRANSLATED IN :deDE YET)
+    >>|cRXP_WARN_Benutzt den|r |T132821:0|t[Leeren blauen Wasserschlauch] |cRXP_WARN_unter dem Pavillon|r
     .complete 1534,1 --Filled Blue Waterskin (1)
     .use 7767
 step
@@ -5168,15 +5168,15 @@ step
     .goto Ashenvale,39.77,65.40,40,0
     .goto Ashenvale,39.65,63.74,40,0
     .goto Ashenvale,39.81,62.94,40,0
-    >>Kill |cRXP_ENEMY_Ursangous|r. Loot him for |T132941:0|t[|cRXP_LOOT_Ursangous's Paw|r] and use it to start the quest (NOT TRANSLATED IN :deDE YET)
+    >>Tötet |cRXP_ENEMY_Ursangous|r. Plündert ihn für |T132941:0|t[|cRXP_LOOT_Ursangus' Tatze|r] und benutzt sie, um die Quest zu starten
     >>|cRXP_WARN_Er patrouilliert ein wenig umher|r
     .collect 16303,1,23 --Collect Ursangous's Paw (x1)
-    .accept 23 >> Accept Ursangous's Paw (NOT TRANSLATED IN :deDE YET)
+    .accept 23 >> Akzeptiert die Quest Ursangus' Tatze
     .unitscan Ursangous
     .use 16303
 step
     #completewith Tideress
-    .subzone 421 >> Lauf nach Westfall Lake
+    .subzone 421 >> Reist zum Mystralsee
     .isOnQuest 25
 step
     #completewith Tideress
@@ -5260,7 +5260,7 @@ step
 step
     .goto Ashenvale,71.10,68.12
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Kuray'bin|r
-    .turnin 6503 >> Turn in Ashenvale Outrunners (NOT TRANSLATED IN :deDE YET)
+    .turnin 6503 >> Gebt die Quest Die Kundschafter von Ashenvale ab
     .target Kuray'bin
 step
     #loop
@@ -5296,7 +5296,7 @@ step
 step
     .goto Ashenvale,73.78,61.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Senani|r
-    .turnin 2 >> Turn in Sharptalon's Claw (NOT TRANSLATED IN :deDE YET)
+    .turnin 2 >> Gebt die Quest Klaue von Scharfkralle ab
     .turnin 24 >> Turn in Shadumbra's Head (NOT TRANSLATED IN :deDE YET)
     .turnin 23 >> Gebt die Quest Ursangus' Tatze ab
     .turnin 247 >> Turn in The Hunt Completed (NOT TRANSLATED IN :deDE YET)
@@ -5326,14 +5326,14 @@ step
 step
     .goto Ashenvale,73.67,60.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Mastok|r
-    .turnin 25 >> Turn in Stonetalon Standstill (NOT TRANSLATED IN :deDE YET)
-    .turnin 1918 >> Turn in The Befouled Element (NOT TRANSLATED IN :deDE YET)
-    .accept 824 >> Je'neu vom Irdenen Ring annehmen
+    .turnin 25 >> Gebt die Quest Stillstand am Steinkrallenpfad ab
+    .turnin 1918 >> Gebt die Quest Das beschmutzte Element ab
+    .accept 824 >> Akzeptiert die Quest Je'neu vom Irdenen Ring
     .target Mastok Wrilehiss
 step
     .goto Ashenvale,74.11,60.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Yama|r
-    .turnin 6482 >> Turn in Freedom to Ruul (NOT TRANSLATED IN :deDE YET)
+    .turnin 6482 >> Gebt die Quest Freiheit für Ruul ab
     .target Yama Snowhoof
 step << Hunter
     #optional
@@ -5353,7 +5353,7 @@ step << Hunter
     .goto Ashenvale,65.31,64.65,50,0
     .train 16830 >>|cRXP_WARN_Wirkt|r |T132164:0|t[Wildtier zähmen] |cRXP_WARN_auf einen |cRXP_ENEMY_Alter Ashenvalebär|r. Greift Mobs damit an, um |r |T132140:0|t[Klaue (Rang 4)] zu lernen
     .mob +Elder Ashenvale Bear
-    .train 17264 >>|cRXP_WARN_wirkt|r |T132164:0|t[Tame Beast] |cRXP_WARN_on a |cRXP_ENEMY_Geisterpfotenalpha|r. Attack mobs with it to learn|r |T132278:0|t[Bite (Rank 4)]
+    .train 17264 >>|cRXP_WARN_Wirkt|r |T132164:0|t[Wildtier zähmen] |cRXP_WARN_auf einen |cRXP_ENEMY_Geisterpfotenalpha|r. Greift Mobs damit an, um |r |T132278:0|t[Biss (Rang 4)] zu lernen
     .mob +Ghostpaw Alpha
     .link https://www.wow-petopia.com/classic/training.php >> |cRXP_WARN_Hier Klicken für mehr Infos bezüglich Pet Training|r
     .xp <27,1 --Ghostpaw Alphas are lvl 27-28
@@ -5372,7 +5372,7 @@ step << Hunter
 step
     #sticky
     #completewith EnterBFD
-    .subzone 2797,2 >> Now you should be looking for a group to BlackFathom Deeps (NOT TRANSLATED IN :deDE YET)
+    .subzone 2797,2 >> Jetzt solltet ihr nach einer Gruppe für Tiefschwarze Grotte suchen
     .dungeon BFD
 step
     #completewith ZoramVisit2
@@ -5384,12 +5384,12 @@ step
 step
     .goto Ashenvale,11.90,34.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Karang|r
-    .turnin 216 >> Turn in Between a Rock and a Thistlefur (NOT TRANSLATED IN :deDE YET)
+    .turnin 216 >> Gebt die Quest Hart auf hart ab
     .target Karang Amakkar
 step
     .goto Ashenvale,11.65,34.85
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Mitsuwa|r
-    .turnin 6462 >> Turn in Troll Charm (NOT TRANSLATED IN :deDE YET)
+    .turnin 6462 >> Gebt die Quest Troll-Glücksbringer ab
     .target Mitsuwa
 step
     .goto Ashenvale,11.56,34.29
@@ -5639,7 +5639,7 @@ step << Warlock
 step << Warlock
     .goto Orgrimmar,47.52,46.73
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Kurgul|r
-	.vendor >>Kauft alle Haustierverbesserungen, die ihr euch leisten könnt
+	.vendor >>Kauft irgendwelche Haustier-Verbesserungen, die ihr euch leisten könnt
 	.target Kurgul
     .zoneskip Orgrimmar,1
 step << Warlock
@@ -5947,7 +5947,7 @@ step
     #label SilkBandage
 step
     #completewith next
-    .skill firstaid,115 >> |cRXP_WARN_Erstellen|r |T133684:0|t[Wool Bandages] |cRXP_WARN_until your skill is 115|r
+    .skill firstaid,115 >> |cRXP_WARN_Erstellt|r |T133684:0|t[Wollverbände] |cRXP_WARN_bis eure Fertigkeit 115 ist|r
     .skill firstaid,<1,1
 step
     .goto Thunder Bluff,29.68,21.19
@@ -5957,13 +5957,13 @@ step
     .skill firstaid,<1,1
 step
     #completewith next
-    .skill firstaid,150 >> |cRXP_WARN_Erstellen|r |T133687:0|t[Heavy Wool Bandages] |cRXP_WARN_until your skill is 150|r
+    .skill firstaid,150 >> |cRXP_WARN_Erstellt|r |T133687:0|t[Schwere Wollverbände] |cRXP_WARN_bis eure Fertigkeit 150 ist|r
     .skill firstaid,<1,1
 step
     .goto Thunder Bluff,29.68,21.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |r |cRXP_FRIENDLY_Pand|r
-    .train 7928 >> Train |T133671:0|t[Silk Bandage] (NOT TRANSLATED IN :deDE YET)
-    >>|cRXP_WARN_Skip this step if you did not have enough Wool Cloth to reach 150 skill|r (NOT TRANSLATED IN :deDE YET)
+    .train 7928 >> Erlernt |T133671:0|t[Seidenverband]
+    >>|cRXP_WARN_Überspringt diesen Schritt, falls ihr nicht genug Wollstoff hattet, um Fertigkeit 150 zu erreichen|r
     .target Pand Stonebinder
     .skill firstaid,<1,1
 step << Hunter
@@ -5977,17 +5977,17 @@ step << Hunter
 step << Hunter
     .goto Thunder Bluff,46.98,45.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Sprecht mit|r |cRXP_FRIENDLY_Kuna|r
-    >>|cRXP_BUY_Buy|r |T132382:0|t[Razor Arrows] |cRXP_BUY_from her|r (NOT TRANSLATED IN :deDE YET)
+    >>|cRXP_BUY_Kauft|r |T132382:0|t[Schneidenpfeile] |cRXP_BUY_von ihr|r
     .collect 3030,1800,5881,1 << Hunter --Razor Arrow (1800)
     .target Kuna Thunderhorn
     .itemcount 3030,<1400
 step
     #optional
-    .abandon 6561 >>Abandon Blackfathom Villainy (NOT TRANSLATED IN :deDE YET)
+    .abandon 6561 >>Brecht die Quest Blackfathom-Schurkerei ab
     .dungeon BFD
 step
     #optional
-    .abandon 6565 >>Abandon Allegiance to the Old Gods (NOT TRANSLATED IN :deDE YET)
+    .abandon 6565 >>Brecht die Quest Treue zu den Alten Göttern ab
     .dungeon BFD
 step
     #optional
@@ -5995,7 +5995,7 @@ step
     .dungeon BFD
 step
     #optional
-    .abandon 6921 >>Abandon Amongst the Ruins (NOT TRANSLATED IN :deDE YET)
+    .abandon 6921 >>Brecht die Quest Inmitten der Ruinen ab
     .dungeon BFD
 step
     #completewith Elevators
@@ -6008,7 +6008,7 @@ step
 step
     .goto The Barrens,45.10,57.70
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Tatternack|r
-    .accept 1153 >> Eine neue Erzprobe annehmen
+    .accept 1153 >> Akzeptiert die Quest Eine neue Erzprobe
     .target Tatternack Steelforge
     .isQuestTurnedIn 893
 step
@@ -6043,14 +6043,14 @@ step << Shaman
     .target Brine
 step
     #completewith next
-    .goto The Barrens,48.63,84.49,110 >>Travel to Bael Modan (NOT TRANSLATED IN :deDE YET)
+    .goto The Barrens,48.63,84.49,110 >>Reist nach Bael Modan
     .subzoneskip 359
     .group
     .maxlevel 29
 step
     .goto The Barrens,48.94,86.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Feegly|r
-    .accept 857 >> Accept The Tear of the Moons (NOT TRANSLATED IN :deDE YET)
+    .accept 857 >> Akzeptiert die Quest Die Träne der Monde
     .target Feegly the Exiled
     .group 2
     .maxlevel 29
@@ -6066,7 +6066,7 @@ step
 step
     .goto The Barrens,49.13,84.25
     >>Öffnet die |cRXP_PICK_Geldkassette von General Doppelzopf|r. Plündert die |cRXP_LOOT_Die Träne der Monde|r
-    >>|cRXP_WARN_Be careful! It is very easy overpull in |cRXP_ENEMY_General Twinbraid|r's room|r (NOT TRANSLATED IN :deDE YET)
+    >>|cRXP_WARN_Passt auf! Im Zimmer des |cRXP_ENEMY_General Doppelzopf|r besteht die Gefahr, zu viel zu pullen|r
     >>|cRXP_WARN_Directly pull any mob other than |cRXP_ENEMY_General Twinbraid|r (NOT TRANSLATED IN :deDE YET) << !Hunter !Warlock
     >>|cRXP_WARN_Directly pull any mob other than |cRXP_ENEMY_General Twinbraid|r and use your pet to tank. Alternatively send your pet in and loot the strongbox|r (NOT TRANSLATED IN :deDE YET) << Hunter/Warlock
     .complete 857,1 --Tear of the Moons (1)
@@ -6079,13 +6079,13 @@ step
     .goto The Barrens,49.38,84.48,8,0
     .goto The Barrens,49.06,84.59,8,0
     .goto The Barrens,49.01,84.48,8,0
-    .goto The Barrens,48.75,84.63,20 >>Exit Bael'dun's Keep (NOT TRANSLATED IN :deDE YET)
+    .goto The Barrens,48.75,84.63,20 >>Verlassen Burg Bael'dun
     .group
 step
     #label TearMoons2
     .goto The Barrens,48.94,86.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Feegly|r
-    .turnin 857 >> Turn in The Tear of the Moons (NOT TRANSLATED IN :deDE YET)
+    .turnin 857 >> Gebt die Quest Die Träne der Monde ab
     .target Feegly the Exiled
     .isQuestComplete 857
     .group
@@ -6099,7 +6099,7 @@ step
     #label Elevators
     .goto Thousand Needles,32.24,22.17
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Moonhorn|r
-    .accept 4542 >> Nachricht zum Freiwindposten annehmen
+    .accept 4542 >> Akzeptiert die Quest Nachricht zum Freiwindposten
     .target Brave Moonhorn
 step
     .goto Thousand Needles,31.97,23.76,30 >> Take the lift down to Thousand Needles (NOT TRANSLATED IN :deDE YET)
@@ -6110,7 +6110,7 @@ step
     .goto Thousand Needles,38.46,32.60,0
     .goto Thousand Needles,38.61,31.49,50,0
     .line Thousand Needles,39.51,33.43,39.34,32.31,38.81,31.73,37.34,29.29,36.57,29.47,35.84,28.59,35.19,28.11,34.25,29.49,33.89,29.77,33.81,30.12,33.27,30.86,32.73,30.68,32.29,30.52,31.55,30.61,30.69,32.43,29.51,33.89,29.24,33.96,28.64,33.43,28.24,33.37,27.34,34.02,25.29,34.23,24.56,32.76,22.05,30.61,20.83,28.26,20.45,27.87,19.96,27.67,19.46,27.04,18.98,26.71,18.63,26.19,18.70,24.42,18.47,23.06,18.72,22.53,18.32,22.10,19.14,22.81,19.06,23.80,18.60,25.14
-    >>Töte the |cRXP_ENEMY_Bote der Galak|r. Loot him for the |T133473:0|t[|cRXP_LOOT_Assassination Note|r]. Use it to start the quest
+    >>Tötet den |cRXP_ENEMY_Bote der Galak|r. Plündert die |T133473:0|t[|cRXP_LOOT_Assassination Hinweis|r] von ihm. Benutzt sie, um die Quest zu starten
     >>|cRXP_WARN_Er spawnt bei der Spalthufklippe (des östlichen Zentaurenlagers)|r
     .collect 12564,1,4881 --Collect Assassination Note
     .accept 4881 >>Auftragsmordplan annehmen
@@ -6118,9 +6118,9 @@ step
     .unitscan Galak Messenger
 step
     #completewith next
-    .goto Thousand Needles,46.73,48.27,30 >> Lauf nach Sturmwind Post's Elevators
+    .goto Thousand Needles,46.73,48.27,30 >> Reist zu den Aufzügen des Freiwindpostens
 step
-    .goto Thousand Needles,45.91,49.91,25 >> Take the Elevator up to Freewind (NOT TRANSLATED IN :deDE YET)
+    .goto Thousand Needles,45.91,49.91,25 >> Nehmt den Aufzug zum Freiwindposten
     .isQuestAvailable 4821,4841,1149
 step
     .goto Thousand Needles,46.1,50.5
@@ -6130,7 +6130,7 @@ step
 step
     .goto Thousand Needles,46.00,50.80
     >>Klick auf das |cRXP_PICK_Wanted Poster|r
-    .accept 5147 >> Accept Wanted - Arnak Grimtotem (NOT TRANSLATED IN :deDE YET)
+    .accept 5147 >> Akzeptiert die Quest GESUCHT: Arnak Grimmtotem
 step
     .goto Thousand Needles,46.10,51.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Rau|r
@@ -6149,15 +6149,15 @@ step
 step
     .goto Thousand Needles,45.70,50.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Longhorn|r
-    .turnin 4542 >> Turn in Message to Freewind Post (NOT TRANSLATED IN :deDE YET)
-    .accept 4841 >> Befriedung der Zentauren annehmen
+    .turnin 4542 >> Gebt die Quest Nachricht zum Freiwindposten ab
+    .accept 4841 >> Akzeptiert die Quest Befriedung der Zentauren
     .target Cliffwatcher Longhorn
     .maxlevel 30
 step
     #optional
     .goto Thousand Needles,45.70,50.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Longhorn|r
-    .turnin 4542 >> Turn in Message to Freewind Post (NOT TRANSLATED IN :deDE YET)
+    .turnin 4542 >> Gebt die Quest Nachricht zum Freiwindposten ab
     .target Cliffwatcher Longhorn
 step
     .goto Thousand Needles,45.15,50.78
@@ -6187,7 +6187,7 @@ step << Mage
     #optional
     .goto Thousand Needles,46.07,51.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gastwirt Abeqwa|r
-    .home >> Setzt euren Ruhestein auf Freiwindposten
+    .home >> Setzt euren Ruhestein im Freiwindposten
     .target Innkeeper Abeqwa
     .bindlocation 484
     .isQuestAvailable 4767
@@ -6200,7 +6200,7 @@ step
 step
     .goto Thousand Needles,44.90,48.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Elu|r
-    .accept 4767 >> Windreiter annehmen
+    .accept 4767 >> Akzeptiert die Quest Windreiter
     .target Elu
     .maxlevel 31
 step
@@ -6213,7 +6213,7 @@ step
 step
     #completewith Clovenhoof
     >>Kill |cRXP_ENEMY_Späher der Galak|r, |cRXP_ENEMY_Zänker der Galak|r, und |cRXP_ENEMY_Windhetzerin der Galak|r
-    >>|cRXP_WARN_Kill every|r |cRXP_ENEMY_Späher der Galak|r |cRXP_WARN_that you see as they are more rare|r
+    >>|cRXP_WARN_Tötet alle|r |cRXP_ENEMY_Späher der Galak|r |cRXP_WARN_die ihr seht, da sie seltener sind|r
     .complete 4841,1 --Kill Galak Scout (x12)
     .mob +Galak Scout
     .complete 4841,2 --Kill Galak Wrangler (x10)
@@ -6241,7 +6241,7 @@ step
     #requires Splithoofcave
     #label Clovenhoof
     .goto Thousand Needles,42.01,31.47
-    >>Öffnet |cRXP_PICK_Ancient Kohlenpfanne|r. Plündert sie für |cRXP_LOOT_Cloven Hoof|r
+    >>Öffnet |cRXP_PICK_Die uralte Kohlenpfanne|r. Sammelt sie für den |cRXP_LOOT_Gespaltener Huf|r
     >>|cRXP_WARN_Passt auf! Das Kohlenbecken wird von zwei 30er|r Flammenwachen der Galak|cRXP_ENEMY_ verteidigt|r
     .complete 1197,1 --Collect Cloven Hoof (x1)
     .mob Galak Flame Guard
@@ -6252,7 +6252,7 @@ step
     .goto Thousand Needles,38.46,32.60,0
     .goto Thousand Needles,38.46,32.60,50,0
     .line Thousand Needles,39.51,33.43,39.34,32.31,38.81,31.73,37.34,29.29,36.57,29.47,35.84,28.59,35.19,28.11,34.25,29.49,33.89,29.77,33.81,30.12,33.27,30.86,32.73,30.68,32.29,30.52,31.55,30.61,30.69,32.43,29.51,33.89,29.24,33.96,28.64,33.43,28.24,33.37,27.34,34.02,25.29,34.23,24.56,32.76,22.05,30.61,20.83,28.26,20.45,27.87,19.96,27.67,19.46,27.04,18.98,26.71,18.63,26.19,18.70,24.42,18.47,23.06,18.72,22.53,18.32,22.10,19.14,22.81,19.06,23.80,18.60,25.14
-    >>Töte the |cRXP_ENEMY_Bote der Galak|r. Loot him for the |T133473:0|t[|cRXP_LOOT_Assassination Note|r]. Use it to start the quest
+    >>Tötet den |cRXP_ENEMY_Bote der Galak|r. Plündert die |T133473:0|t[|cRXP_LOOT_Assassination Hinweis|r] von ihm. Benutzt sie, um die Quest zu starten
     >>|cRXP_WARN_Er spawnt bei der Spalthufklippe (des östlichen Zentaurenlagers)|r
     .collect 12564,1,4881 --Collect Assassination Note
     .accept 4881 >>Auftragsmordplan annehmen
@@ -6300,7 +6300,7 @@ step
     .goto Thousand Needles,53.95,41.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Dorn|r
     .accept 1149 >> Akzeptiert die Quest Test des Glaubens
-    .timer 7,Test of Faith RP (NOT TRANSLATED IN :deDE YET)
+    .timer 7,Prüfung des Glaubens RP
     .target Dorn Plainstalker
 step
     .goto Thousand Needles,26.63,34.23
@@ -6310,13 +6310,13 @@ step
 step
     .goto Thousand Needles,53.95,41.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Dorn|r
-    .turnin 1149 >> Turn in Test of Faith (NOT TRANSLATED IN :deDE YET)
-    .accept 1150 >> Test der Belastbarkeit annehmen
+    .turnin 1149 >> Gebt die Quest Test des Glaubens ab
+    .accept 1150 >> Akzeptiert die Quest Test der Belastbarkeit
     .target Dorn Plainstalker
 step
     .goto Thousand Needles,53.95,41.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Dorn|r
-    .turnin 1149 >> Turn in Test of Faith (NOT TRANSLATED IN :deDE YET)
+    .turnin 1149 >> Gebt die Quest Test des Glaubens ab
     .target Dorn Plainstalker
 step
     #completewith AlienEgg
@@ -6333,7 +6333,7 @@ step
 step
     #completewith next
     .goto Thousand Needles,56.36,50.39,20,0
-    >>Loote die |cRXP_LOOT_Fremdartiges Ei|r auf dem Boden
+    >>Sammelt das |cRXP_LOOT_Fremdartige Ei|r auf dem Boden
     .complete 4821,1 --Collect Alien Egg (x1)
 step
     #loop
@@ -6357,24 +6357,24 @@ step
     .goto Thousand Needles,52.34,55.24,20,0
     .goto Thousand Needles,37.63,56.11,20,0
     .goto Thousand Needles,56.36,50.39,20,0
-    >>Loote die |cRXP_LOOT_Fremdartiges Ei|r auf dem Boden
-    >>|cRXP_WARN_It has 3 different spawn locations. They are marked on the map|r (NOT TRANSLATED IN :deDE YET)
+    >>Sammelt das |cRXP_LOOT_Fremdartige Ei|r auf dem Boden
+    >>|cRXP_WARN_Es gibt 3 verschiedene Spawnorte. Sie sind auf der Karte markiert|r
     .complete 4821,1 --Collect Alien Egg (x1)
 step
     #completewith Freewind2
-    .goto Thousand Needles,46.73,48.27,30 >> Lauf nach Sturmwind Post's Elevators
+    .goto Thousand Needles,46.73,48.27,30 >> Reist zu den Aufzügen des Freiwindpostens
 step
     .goto Thousand Needles,45.70,50.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Longhorn|r
-    .turnin 4841 >> Turn in Pacify the Centaur (NOT TRANSLATED IN :deDE YET)
-    .accept 5064 >> Grimmtotemspionage annehmen
+    .turnin 4841 >> Gebt die Quest Befriedung der Zentauren ab
+    .accept 5064 >> Akzeptiert die Quest Grimmtotemspionage
     .target Cliffwatcher Longhorn
     .isQuestComplete 4841
 step
     #optional
     .goto Thousand Needles,45.70,50.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Longhorn|r
-    .accept 5064 >> Accept Grimtotem Spying (NOT TRANSLATED IN :deDE YET)
+    .accept 5064 >> Akzeptiert die Quest Grimmtotemspionage
     .target Cliffwatcher Longhorn
     .isQuestTurnedIn 4841
 step
@@ -6387,7 +6387,7 @@ step
     .goto Thousand Needles,44.70,50.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Hagar|r
     .turnin 4821 >> Fremdartiges Ei abgeben
-    .accept 4865 >> Wilde Schlange annehmen
+    .accept 4865 >> Akzeptiert die Quest Wilde Schlange
     .target Hagar Lightninghoof
 step << Hunter
     .goto Thousand Needles,44.89,50.68
@@ -6453,7 +6453,7 @@ step
     #completewith Paoka1
     .goto Thousand Needles,14.41,32.44,20,0
     .goto Thousand Needles,14.04,32.37,12,0
-    .goto Thousand Needles,14.04,32.37,20 >>Lauf in Richtung Highperch
+    .goto Thousand Needles,14.04,32.37,20 >>Reist zum Steilhang
     .subzoneskip 482
     .isOnQuest 4767
 step
@@ -6487,7 +6487,7 @@ step
     #label PaokaEscort
     .goto Thousand Needles,11.06,34.95,40,0
     .goto Thousand Needles,15.17,32.66
-    >>|cRXP_WARN_Escort|r |cRXP_FRIENDLY_Pao'ka|r (NOT TRANSLATED IN :deDE YET)
+    >>|cRXP_WARN_Eskortiert|r |cRXP_FRIENDLY_Pao'ka|r
     >>|cRXP_WARN_Drei Steilhang-Flügeldrache spawnen, wenn |cRXP_FRIENDLY_Pao'ka|r die Mitte von Der Steilhang erreicht. Ihr müsst nur den östlichen angreifen und die anderen verschwinden|r
     .complete 4770,1 --Escort Pao'ka from Highperch
     .isOnQuest 4767
@@ -6537,7 +6537,7 @@ step
     #optional
     .goto Thousand Needles,21.25,32.05
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Kanati|r
-    .turnin 4966 >> Turn in Protect Kanati Greycloud (NOT TRANSLATED IN :deDE YET)
+    .turnin 4966 >> Gebt die Quest Kanati Greycloud schützen ab
     .isQuestComplete 4966
 step
     .goto Thousand Needles,21.54,32.36
@@ -6570,14 +6570,14 @@ step
     .target Wizlo Bearingshiner
 step
     .goto Thousand Needles,22.78,24.53
-    >>Open the cage and kill the |cRXP_ENEMY_Enraged Panther|r. Loot him for the |cRXP_LOOT_Hypercapacitor Gizmo|r (NOT TRANSLATED IN :deDE YET)
+    >>Öffnet den Käfig und tötet den |cRXP_ENEMY_Wütenden Panther|r. Plündert ihn für den  |cRXP_LOOT_Hyperkondensator-Dingsda|r
     .complete 5151,1 --Hypercapacitor Gizmo (1)
     .mob Enraged Panther
     .group 2
 step
     #completewith MoonWellWater
     .line Thousand Needles,39.51,33.43,39.34,32.31,38.81,31.73,37.34,29.29,36.57,29.47,35.84,28.59,35.19,28.11,34.25,29.49,33.89,29.77,33.81,30.12,33.27,30.86,32.73,30.68,32.29,30.52,31.55,30.61,30.69,32.43,29.51,33.89,29.24,33.96,28.64,33.43,28.24,33.37,27.34,34.02,25.29,34.23,24.56,32.76,22.05,30.61,20.83,28.26,20.45,27.87,19.96,27.67,19.46,27.04,18.98,26.71,18.63,26.19,18.70,24.42,18.47,23.06,18.72,22.53,18.32,22.10,19.14,22.81,19.06,23.80,18.60,25.14
-    >>Töte the |cRXP_ENEMY_Bote der Galak|r. Loot him for the |T133473:0|t[|cRXP_LOOT_Assassination Note|r]. Use it to start the quest
+    >>Tötet den |cRXP_ENEMY_Bote der Galak|r. Plündert die |T133473:0|t[|cRXP_LOOT_Assassination Hinweis|r] von ihm. Benutzt sie, um die Quest zu starten
     >>|cRXP_WARN_He patrols. He spawns at Splithoof Crag (the eastern Centaur camp)|r (NOT TRANSLATED IN :deDE YET)
     >>|cRXP_WARN_Erspäht ihn mit|r |T132172:0|t[Adlerauge] |cRXP_WARN_wenn ihr es trainiert habt|r << Hunter
     >>|cRXP_WARN_Erspäht ihn mit|r |T136034:0|t[Fernsicht] |cRXP_WARN_wenn ihr es trainiert habt|r << Shaman
@@ -6634,7 +6634,7 @@ step
     .goto Thousand Needles,37.34,29.29,40,0
     .goto Thousand Needles,38.81,31.73,40,0
     .goto Thousand Needles,39.51,33.43,40,0
-    >>Töte the |cRXP_ENEMY_Bote der Galak|r. Loot him for the |T133473:0|t[|cRXP_LOOT_Assassination Note|r]. Use it to start the quest
+    >>Tötet den |cRXP_ENEMY_Bote der Galak|r. Plündert die |T133473:0|t[|cRXP_LOOT_Assassination Hinweis|r] von ihm. Benutzt sie, um die Quest zu starten
     >>|cRXP_WARN_He patrols. He spawns at Splithoof Crag (the eastern Centaur camp)|r (NOT TRANSLATED IN :deDE YET)
     >>|cRXP_WARN_Erspäht ihn mit|r |T132172:0|t[Adlerauge] |cRXP_WARN_wenn ihr es trainiert habt|r << Hunter
     >>|cRXP_WARN_Erspäht ihn mit|r |T136034:0|t[Fernsicht] |cRXP_WARN_wenn ihr es trainiert habt|r << Shaman
@@ -6683,7 +6683,7 @@ step
 step
     .goto Thousand Needles,21.25,32.05
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Kanati|r
-    .turnin 4966 >> Turn in Protect Kanati Greycloud (NOT TRANSLATED IN :deDE YET)
+    .turnin 4966 >> Gebt die Quest Kanati Greycloud schützen ab
     .isQuestComplete 4966
 step
     .goto Thousand Needles,21.43,32.55
@@ -6718,10 +6718,10 @@ step
     .goto Thousand Needles,34.88,34.82,35,0
     .goto Thousand Needles,35.62,36.20,35,0
     .goto Thousand Needles,36.05,37.41,35,0
-    >>Loot the |cRXP_PICK_Incendia Agave Plants|r on the ground and underwater (NOT TRANSLATED IN :deDE YET)
+    >>Plündert die |cRXP_PICK_Brandpulveragave|r vom Boden und unter Wasser
     >>|cRXP_ENEMY_Scalding Elementals|r and |cRXP_ENEMY_Boiling Elementals|r are immune to frost damage, and highly resistant to fire. Try to avoid them or use Arcane spells (NOT TRANSLATED IN :deDE YET) << Mage
-    >>|cRXP_WARN_Be careful as|r |cRXP_ENEMY_Boiling Elementals|r |cRXP_WARN_wirkt|r |T132156:0|t[Steam Jet]|cRXP_WARN_, reducing your chance to hit by 30% for 10 seconds|r << Warrior/Rogue/Shaman/Druid
-    >>|cRXP_WARN_Be careful as|r |cRXP_ENEMY_Scalding Elementals|r |cRXP_WARN_wirkt|r |T135807:0|t[Scald]|cRXP_WARN_, instantly dealing 150 fire damage and stunning you for 4 seconds|r
+    >>|cRXP_WARN_Passt auf, da|r |cRXP_ENEMY_Siedender Elementar|r |cRXP_WARN_wirken|r |T132156:0|t[Dampfstrahl]|cRXP_WARN_, reduzieren eure Chance zu treffen um 30% für 10 Sek.|r << Warrior/Rogue/Shaman/Druid
+    >>|cRXP_WARN_Passt auf, da|r |cRXP_ENEMY_Brühender Elementar|r |cRXP_WARN_wirken|r |T135807:0|t[Verbrühen]|cRXP_WARN_, fügen sofort 150 Feuerschaden zu und betäuben euch für 4 Sek.|r
     .complete 5062,1 --Collect Incendia Agave (x10)
     .maxlevel 31
 step
@@ -6867,7 +6867,7 @@ step << Warrior
 step
     .goto Thunder Bluff,69.88,30.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Magatha|r
-    .turnin 5062 >> Turn in Sacred Fire (NOT TRANSLATED IN :deDE YET)
+    .turnin 5062 >> Gebt die Quest Hochheiliges Feuer ab
     .target Magatha Grimtotem
     .isQuestComplete 5062
 step
@@ -6974,13 +6974,13 @@ step << Shaman
     .xp <32,1
 step
     #completewith next
-    .skill firstaid,150 >> |cRXP_WARN_Erstellen|r |T133687:0|t[Heavy Wool Bandages] |cRXP_WARN_until your skill is 150|r
+    .skill firstaid,150 >> |cRXP_WARN_Erstellt|r |T133687:0|t[Schwere Wollverbände] |cRXP_WARN_bis eure Fertigkeit 150 ist|r
     .skill firstaid,<1,1
 step
     .goto Thunder Bluff,29.68,21.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |r |cRXP_FRIENDLY_Pand|r
-    .train 7928 >> Train |T133671:0|t[Silk Bandage] (NOT TRANSLATED IN :deDE YET)
-    >>|cRXP_WARN_Skip this step if you did not have enough Wool Cloth to reach 150 skill|r (NOT TRANSLATED IN :deDE YET)
+    .train 7928 >> Erlernt |T133671:0|t[Seidenverband]
+    >>|cRXP_WARN_Überspringt diesen Schritt, falls ihr nicht genug Wollstoff hattet, um Fertigkeit 150 zu erreichen|r
     .target Pand Stonebinder
     .skill firstaid,<1,1
 step << !Undead --Quest unavailable to Undeads
@@ -7001,7 +7001,7 @@ step << Hunter
 step << Hunter
     .goto Thunder Bluff,46.98,45.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Sprecht mit|r |cRXP_FRIENDLY_Kuna|r
-    >>|cRXP_BUY_Buy|r |T132382:0|t[Razor Arrows] |cRXP_BUY_from her|r (NOT TRANSLATED IN :deDE YET)
+    >>|cRXP_BUY_Kauft|r |T132382:0|t[Schneidenpfeile] |cRXP_BUY_von ihr|r
     .collect 3030,1800,1153,1 --Razor Arrow (1800)
     .target Kuna Thunderhorn
 step << Shaman/Warrior
@@ -7121,7 +7121,7 @@ step << Tauren
     #label KodoRiding
     .goto Mulgore,47.64,58.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Xar'Ti|r und |cRXP_FRIENDLY_Zjolnir|r
-    .train 132245 >>Erlernen |T136103:0|t[Kodoreiten]
+    .train 132245 >>Erlernt |T136103:0|t[Kodoreiten]
     .vendor >>|cRXP_BUY_Kauft einen|r |T132253:0|t[|cFF0070FFKodo|r]
     .xp <30,1
     .money <38
@@ -7214,14 +7214,14 @@ step << Warrior/Shaman
 step
     .goto Dustwallow Marsh,36.49,30.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Balai|r
-    .vendor >> |cRXP_BUY_Buy|r |T134831:0|t[Healing Potions] |cRXP_BUY_and|r |T134937:0|t[Scrolls] |cRXP_BUY_from her if they're up|r (NOT TRANSLATED IN :deDE YET)
+    .vendor >> |cRXP_BUY_Kauft|r |T134831:0|t[Heiltränke] |cRXP_BUY_und|r |T134937:0|t[Schriftrollen] |cRXP_BUY_von ihr, falls sie vorhanden sind|r
     .target Balai Lok'Wein
 step
     .goto Dustwallow Marsh,36.49,30.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Balai|r
-    >>|cRXP_BUY_Buy the|r |T133735:0|t[First Aid Manuals]|cRXP_BUY_from her|r
+    >>|cRXP_BUY_Kauft die|r |T133735:0|t[Erste-Hilfe-Handbücher] |cRXP_BUY_von ihr|r
     .collect 16112,1,873,1 >> Anleitung: Schwerer Seidenverband (1)
-    .collect 16113,1,873,1 >> Manual: Mageweave Bandage (1) (NOT TRANSLATED IN :deDE YET)
+    .collect 16113,1,873,1 >> Anleitung: Magiestoffverband (1)
     .collect 16084,1,873,1 >> Handbuch: Erste Hilfe für Experten - Verbinden, aber richtig
     .target Balai Lok'Wein
     .skill firstaid,<1,1
@@ -7237,7 +7237,7 @@ step
 step
     .goto Thousand Needles,44.90,48.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Elu|r
-    .turnin 4767 >> Turn in Wind Rider (NOT TRANSLATED IN :deDE YET)
+    .turnin 4767 >> Gebt die Quest Windreiter ab
     .target Elu
     .isQuestComplete 4767
 step << Hunter
@@ -7262,7 +7262,7 @@ step
     #label FreewindHome
     .goto Thousand Needles,46.07,51.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gastwirt Abeqwa|r
-    .home >> Setzt euren Ruhestein auf Freiwindposten
+    .home >> Setzt euren Ruhestein im Freiwindposten
     .target Innkeeper Abeqwa
     .bindlocation 484
     .subzoneskip 484,1
@@ -7311,7 +7311,7 @@ step
 	.isOnQuest 1151
     .group 2
 step
-    .goto Thousand Needles,31.47,36.71,30 >> Head to Darkcloud Pinnacle (NOT TRANSLATED IN :deDE YET)
+    .goto Thousand Needles,31.47,36.71,30 >> Geht zum Düsterwolkengipfel
     .isQuestTurnedIn 4841
     .maxlevel 31
 step
@@ -7328,7 +7328,7 @@ step
     .maxlevel 31
 step
     .goto Thousand Needles,31.79,32.58
-    >>Open the |cRXP_PICK_Document Chest|r on top of the plataeu. Loot it for |cRXP_LOOT_Secret Note #1|r (NOT TRANSLATED IN :deDE YET)
+    >>Öffnet die |cRXP_PICK_Dokumententruhe|r oben auf dem Plateau. Sammelt es für |cRXP_LOOT_Geheimnotiz Nr.1|r
     .complete 5064,1 --Secret Note #1 (1)
     .isQuestTurnedIn 4841
     .maxlevel 31
@@ -7373,7 +7373,7 @@ step
     .goto Thousand Needles,38.00,26.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Lakota|r
     >>|cRXP_WARN_Das startet eine Eskorte|r
-    .accept 4904,1 >> Endlich frei annehmen
+    .accept 4904,1 >> Akzeptiert die Quest Endlich frei
     .target Lakota Windsong
     .isQuestTurnedIn 4841
     .maxlevel 31
@@ -7422,7 +7422,7 @@ step
 step
     .goto Thousand Needles,21.25,32.05
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Kanati|r
-    .turnin 4966 >> Turn in Protect Kanati Greycloud (NOT TRANSLATED IN :deDE YET)
+    .turnin 4966 >> Gebt die Quest Kanati Greycloud schützen ab
     .isQuestComplete 4966
 step
     #loop
@@ -7451,7 +7451,7 @@ step
     #label TestofStrengthTI
     .goto Thousand Needles,53.95,41.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Dorn|r
-    .turnin 1151 >> Turn in Test of Strength (NOT TRANSLATED IN :deDE YET)
+    .turnin 1151 >> Gebt die Quest Test der Kraft ab
     .target Dorn Plainstalker
     .isQuestComplete 1151
     .group
@@ -7500,7 +7500,7 @@ step
 step
     #label ShimmeringF
     #completewith next
-    .goto Thousand Needles,70.58,62.69,200 >> Reist nach Flimmern Flats
+    .goto Thousand Needles,70.58,62.69,200 >> Reist in die Schimmernden Ebenen
     .subzoneskip 439
 step
     .goto Thousand Needles,77.79,77.26
@@ -7516,7 +7516,7 @@ step
 step
     .goto Tanaris,51.60,25.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Bulkrek|r
-	.fp Gadgetzan >> Get the Gadgetzan Flight Path (NOT TRANSLATED IN :deDE YET)
+	.fp Gadgetzan >> Holt die Flugroute nach Gadgetzan
     .fly freewind Post >> Fliege nach Freiwindposten
     .target Bulkrek Ragefist
     .cooldown item,6948,<0
@@ -7524,7 +7524,7 @@ step
 step
     .goto Tanaris,51.60,25.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Bulkrek|r
-	.fp Gadgetzan >> Get the Gadgetzan Flight Path (NOT TRANSLATED IN :deDE YET)
+	.fp Gadgetzan >> Holt die Flugroute nach Gadgetzan
     .target Bulkrek Ragefist
     .cooldown item,6948,>0,1
 step
@@ -7539,7 +7539,7 @@ step
     .goto Thousand Needles,45.70,50.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Longhorn|r
     .turnin 5064 >> Gebt die Quest Grimmtotemspionage ab
-    .turnin 5147 >> Turn in Wanted - Arnak Grimtotem (NOT TRANSLATED IN :deDE YET)
+    .turnin 5147 >> Gebt die Quest GESUCHT: Arnak Grimmtotem ab
     .target Cliffwatcher Longhorn
     .isQuestComplete 5064
     .isQuestComplete 5147
@@ -7554,13 +7554,13 @@ step
     #optional
     .goto Thousand Needles,45.70,50.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Longhorn|r
-    .turnin 5147 >> Turn in Wanted - Arnak Grimtotem (NOT TRANSLATED IN :deDE YET)
+    .turnin 5147 >> Gebt die Quest GESUCHT: Arnak Grimmtotem ab
     .target Cliffwatcher Longhorn
     .isQuestComplete 5147
 step
     .goto Thousand Needles,46.00,51.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Thalia|r
-    .turnin 4904 >> Turn in Free at Last (NOT TRANSLATED IN :deDE YET)
+    .turnin 4904 >> Gebt die Quest Endlich frei ab
     .target Thalia Amberhide
     .isQuestComplete 4904
 step
@@ -7573,7 +7573,7 @@ step
 step << Hunter
     .goto Thousand Needles,44.89,50.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Starn|r
-    .vendor >>|cRXP_BUY_Buy a|r |T135495:0|t[|cRXP_FRIENDLY_Dense Shortbow|r] |cRXP_BUY_from him if it's up and fill your quiver with arrows|r (NOT TRANSLATED IN :deDE YET)
+    .vendor >>|cRXP_BUY_Kauft einen|r |T135495:0|t[|cRXP_FRIENDLY_Handfester Kurzbogen|r] |cRXP_BUY_von ihm, falls er verfügbar ist, und füllt euren Köcher mit Pfeilen auf|r
     .collect 3030,1800,1111,1 --Razor Arrow (1800)
     .target Starn
     .money <2.7172
@@ -7598,7 +7598,7 @@ step
     .abandon 5064 >>Abandon Grimtotem Spying (NOT TRANSLATED IN :deDE YET)
 step
     #optional
-    .abandon 5088 >>Abandon Arikara (NOT TRANSLATED IN :deDE YET)
+    .abandon 5088 >>Brecht die Quest Arikara ab
 step
     #optional
     .abandon 1152 >>Abandon Test of Lore (NOT TRANSLATED IN :deDE YET)
@@ -7628,7 +7628,7 @@ step << Tauren
     #label KodoRiding
     .goto Mulgore,47.64,58.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Xar'Ti|r und |cRXP_FRIENDLY_Zjolnir|r
-    .train 132245 >>Erlernen |T136103:0|t[Kodoreiten]
+    .train 132245 >>Erlernt |T136103:0|t[Kodoreiten]
     .vendor >>|cRXP_BUY_Kauft einen|r |T132253:0|t[|cFF0070FFKodo|r]
     .xp <30,1
     .money <38
@@ -7708,7 +7708,7 @@ step << Warrior
 step
     #sticky
     #completewith EnterGNOMER
-    .zone 721,2 >> Now you should be looking for a group to Gnomeregan (NOT TRANSLATED IN :deDE YET)
+    .zone 721,2 >> Jetzt solltet ihr nach einer Gruppe für Gnomeregan suchen
     .dungeon GNOMER
 step
     #label WharfDizzy
@@ -7763,7 +7763,7 @@ step << !Mage
 step
     #completewith next
     .goto The Barrens,63.74,38.66
-    .zone Stranglethorn Vale >> Take Lauf südlich ins Schlingendorntal
+    .zone Stranglethorn Vale >> Nehmt das Boot ins Schlingendorntal
     .zoneskip Stranglethorn Vale
     .dungeon GNOMER
 step
@@ -7897,7 +7897,7 @@ step << Warlock
 step << Warlock
     .goto Orgrimmar,47.52,46.73
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Kurgul|r
-	.vendor >>Kauft alle Haustierverbesserungen, die ihr euch leisten könnt
+	.vendor >>Kauft irgendwelche Haustier-Verbesserungen, die ihr euch leisten könnt
 	.target Kurgul
     .zoneskip Orgrimmar,1
 step << Priest/Warlock
@@ -7925,7 +7925,7 @@ step
     .goto Orgrimmar,44.70,52.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |r |cRXP_FRIENDLY_Craven|r
     >>|cRXP_WARN_He patrols in the Cleft of Shadows|r (NOT TRANSLATED IN :deDE YET)
-    .accept 1431 >> Akzeptiert die Quest Allianzbeziehungen
+    .accept 1431 >> Akzeptiert die Quest Allianz-Beziehungen
     .target Craven Drok
 step
     .goto Orgrimmar,75.00,34.10
@@ -7979,7 +7979,7 @@ step << Orc !Warlock
     .goto Orgrimmar,69.40,13.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Kildar|r und |cRXP_FRIENDLY_Ogunaro|r
     .train 825 >>Erlernt |T136103:0|t[Wolfsreiten]
-    .vendor >>|cRXP_BUY_Kauft|r |T132224:0|t[|cFF0070FFWolf|r]
+    .vendor >>|cRXP_BUY_Kauft einen|r |T132224:0|t[|cFF0070FFWolf|r]
     .xp <30,1
     .money <38
     .skill riding,75,1
@@ -8028,7 +8028,7 @@ step
     .goto Orgrimmar,22.50,52.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Keldran|r near the Western exit of Orgrimmar (NOT TRANSLATED IN :deDE YET)
     .turnin 1431 >> Gebt Allianz-Beziehungen ab
-    .accept 1432 >> Akzeptiert die Quest Allianzbeziehungen
+    .accept 1432 >> Akzeptiert die Quest Allianz-Beziehungen
     .target Keldran
 step << Troll
     #optional
@@ -8042,7 +8042,7 @@ step << Troll
     .goto Durotar,55.28,75.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Xar'Ti|r und |cRXP_FRIENDLY_Zjolnir|r
     .train 10861 >>Erlernen |T136103:0|t[Raptorreiten]
-    .vendor >>|cRXP_BUY_Kauft|r |T132253:0|t[|cFF0070FFRaptor|r]
+    .vendor >>|cRXP_BUY_Kauft einen|r |T132253:0|t[|cFF0070FFRaptor|r]
     .xp <30,1
     .money <38
     .skill riding,75,1

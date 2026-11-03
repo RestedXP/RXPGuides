@@ -3687,8 +3687,8 @@ step << Shaman
     .accept 1530 >>Akzeptiert die Quest Ruf des Wassers
     .target +Islen Waterseer
     .goto The Barrens,65.83,43.78
-    .turnin 874 >>Turn in Mahren Skyseer (NOT TRANSLATED IN :deDE YET)
-    .accept 873 >>Accept Isha Awak (NOT TRANSLATED IN :deDE YET)
+    .turnin 874 >>Gebt Mahren Skyseer ab
+    .accept 873 >>Akzeptiert die Quest Isha Awak
     .target +Mahren Skyseer
     .goto The Barrens,65.83,43.86
     .isOnQuest 1529
@@ -3699,8 +3699,8 @@ step << Shaman
     .accept 1530 >>Akzeptiert die Quest Ruf des Wassers
     .target +Islen Waterseer
     .goto The Barrens,65.83,43.78
-    .turnin 874 >>Turn in Mahren Skyseer (NOT TRANSLATED IN :deDE YET)
-    .accept 873 >>Accept Isha Awak (NOT TRANSLATED IN :deDE YET)
+    .turnin 874 >>Gebt Mahren Skyseer ab
+    .accept 873 >>Akzeptiert die Quest Isha Awak
     .target +Mahren Skyseer
     .goto The Barrens,65.83,43.86
     .isOnQuest 1528
@@ -3711,8 +3711,8 @@ step << Shaman
     .accept 1530 >>Akzeptiert die Quest Ruf des Wassers
     .target +Islen Waterseer
     .goto The Barrens,65.83,43.78
-    .turnin 874 >>Turn in Mahren Skyseer (NOT TRANSLATED IN :deDE YET)
-    .accept 873 >>Accept Isha Awak (NOT TRANSLATED IN :deDE YET)
+    .turnin 874 >>Gebt Mahren Skyseer ab
+    .accept 873 >>Akzeptiert die Quest Isha Awak
     .target +Mahren Skyseer
     .goto The Barrens,65.83,43.86
     .isQuestTurnedIn 1529
@@ -3723,8 +3723,8 @@ step << Shaman
     .accept 1530 >>Akzeptiert die Quest Ruf des Wassers
     .target +Islen Waterseer
     .goto The Barrens,65.83,43.78
-    .turnin 874 >>Turn in Mahren Skyseer (NOT TRANSLATED IN :deDE YET)
-    .accept 873 >>Accept Isha Awak (NOT TRANSLATED IN :deDE YET)
+    .turnin 874 >>Gebt Mahren Skyseer ab
+    .accept 873 >>Akzeptiert die Quest Isha Awak
     .target +Mahren Skyseer
     .goto The Barrens,65.83,43.86
     .isQuestTurnedIn 1528
@@ -4122,7 +4122,7 @@ step
     #xprate <1.5
     #sticky
     #completewith EnterBFD
-    .subzone 2797,2 >> Now you should be looking for a group to BlackFathom Deeps (NOT TRANSLATED IN :deDE YET)
+    .subzone 2797,2 >> Jetzt solltet ihr nach einer Gruppe für Tiefschwarze Grotte suchen
     .dungeon BFD
 step
     #xprate <1.5
@@ -4239,7 +4239,7 @@ step
     #xprate >1.49
     #sticky
     #completewith EnterBFD
-    .subzone 2797,2 >> Now you should be looking for a group to BlackFathom Deeps (NOT TRANSLATED IN :deDE YET)
+    .subzone 2797,2 >> Jetzt solltet ihr nach einer Gruppe für Tiefschwarze Grotte suchen
     .dungeon BFD
 step
     #xprate >1.49
@@ -4613,8 +4613,8 @@ step << Shaman
     .accept 1530 >>Akzeptiert die Quest Ruf des Wassers
     .target +Islen Waterseer
     .goto The Barrens,65.83,43.78
-    .turnin 874 >>Turn in Mahren Skyseer (NOT TRANSLATED IN :deDE YET)
-    .accept 873 >>Accept Isha Awak (NOT TRANSLATED IN :deDE YET)
+    .turnin 874 >>Gebt Mahren Skyseer ab
+    .accept 873 >>Akzeptiert die Quest Isha Awak
     .target +Mahren Skyseer
     .goto The Barrens,65.83,43.86
     .isOnQuest 1529
@@ -4625,8 +4625,8 @@ step << Shaman
     .accept 1530 >>Akzeptiert die Quest Ruf des Wassers
     .target +Islen Waterseer
     .goto The Barrens,65.83,43.78
-    .turnin 874 >>Turn in Mahren Skyseer (NOT TRANSLATED IN :deDE YET)
-    .accept 873 >>Accept Isha Awak (NOT TRANSLATED IN :deDE YET)
+    .turnin 874 >>Gebt Mahren Skyseer ab
+    .accept 873 >>Akzeptiert die Quest Isha Awak
     .target +Mahren Skyseer
     .goto The Barrens,65.83,43.86
     .isOnQuest 1528
@@ -4637,8 +4637,8 @@ step << Shaman
     .accept 1530 >>Akzeptiert die Quest Ruf des Wassers
     .target +Islen Waterseer
     .goto The Barrens,65.83,43.78
-    .turnin 874 >>Turn in Mahren Skyseer (NOT TRANSLATED IN :deDE YET)
-    .accept 873 >>Accept Isha Awak (NOT TRANSLATED IN :deDE YET)
+    .turnin 874 >>Gebt Mahren Skyseer ab
+    .accept 873 >>Akzeptiert die Quest Isha Awak
     .target +Mahren Skyseer
     .goto The Barrens,65.83,43.86
     .isQuestTurnedIn 1529
@@ -4650,8 +4650,8 @@ step << Shaman
     .accept 1530 >>Akzeptiert die Quest Ruf des Wassers
     .target +Islen Waterseer
     .goto The Barrens,65.83,43.78
-    .turnin 874 >>Turn in Mahren Skyseer (NOT TRANSLATED IN :deDE YET)
-    .accept 873 >>Accept Isha Awak (NOT TRANSLATED IN :deDE YET)
+    .turnin 874 >>Gebt Mahren Skyseer ab
+    .accept 873 >>Akzeptiert die Quest Isha Awak
     .target +Mahren Skyseer
     .goto The Barrens,65.83,43.86
     .isQuestTurnedIn 1528

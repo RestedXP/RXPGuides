@@ -517,7 +517,7 @@ step
 step
 #map Darkshore
     .goto Felwood,25.15,4.61
-    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4723 >> Akzeptiert die Quest Gestrandete Meereskreatur
 step
 #map Darkshore
@@ -906,7 +906,7 @@ step
     .accept 4722 >> Akzeptiert die Quest Gestrandete Meeresschildkröte
 step
     .goto 1439/1,579.500,5240.300
-    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4728 >>Akzeptiert die Quest Gestrandete Meereskreatur
 step
     #requires bears1A
@@ -1205,7 +1205,7 @@ step << Warrior/Paladin/Hunter/Rogue/Shaman
     .train 199 >> Erlernen 2h Streitkolben << Paladin/Warrior/Shaman
     .train 198 >> Erlernen 1h Maces << Rogue
     .train 201 >> Erlernt 1h Schwerter << Rogue
-    .train 5011 >> Erlernen Armbrüste << Hunter
+    .train 5011 >> Erlernt Armbrüste << Hunter
     .target Handiir
 step << Hunter
 	.goto The Exodar,47.573,88.340
@@ -4414,7 +4414,7 @@ step
     .isOnQuest 2078
     #completewith next
     .goto 1439,55.802,18.290
-    .gossip 6669,0 >> Sprecht mit |cRXP_FRIENDLY_Der Dreschonator 4100|r, um die Eskorte zu starten
+    .gossip 6669,0 >> Sprecht mit |cRXP_FRIENDLY_Der Dreschonator 4100|r um die Eskorte zu beginnen
     .skipgossip
     .target The Threshwackonator 4100
 step
@@ -4743,7 +4743,7 @@ step
     .complete 945,1 --Escort Therylune away from the Master's Glaive (1)
 step
     .goto Ashenvale,13.97,4.10
-    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4733 >> Akzeptiert die Quest Gestrandete Meereskreatur
     >>|cRXP_WARN_Diese Quest kann SEHR schwierig sein. Bekämpft die |cRXP_ENEMY_Murlocs|r einzeln, Andernfalls könntest du die Aggro von mehreren gleichzeitig auf dich ziehen.|r
     .link https://youtu.be/lfQM3Q-Ag5A >> |cRXP_WARN_Klickt hier für einen Videoleitfaden|r
@@ -4759,7 +4759,7 @@ step
 step
 #map Darkshore
     .goto Felwood,14.62,60.72
-    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4730 >> Akzeptiert die Quest Gestrandete Meereskreatur
 step
     .goto 1439,35.724,83.696

@@ -9198,7 +9198,7 @@ step << Mage
 step << Mage
     .goto Undercity,84.19,15.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Mortaim|r eine Etage drüber
-    .train 3563 >>Train |T135766:0|t[Teleport: Undercity] (NOT TRANSLATED IN :deDE YET)
+    .train 3563 >>Erlernt |T135766:0|t[Teleportieren: Unterstadt]
     .money <0.2000 << Troll
     .money <0.1900 << !Troll
     .target Lexington Mortaim
