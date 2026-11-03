@@ -808,7 +808,7 @@ step
     .isQuestAvailable 13712
 step
     .goto 63,11.16,34.43
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Andruk, Zoram'gar|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Andruk|r
     .fp >>Apprenez le Trajet aérien d'Avant-poste de Zoram'gar
     .target Andruk
     .isQuestAvailable 26890
@@ -989,7 +989,7 @@ step
 step
     #completewith HellscreamsWatchPickups
     .goto 63,11.16,34.43
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Andruk, Zoram'gar|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Andruk|r
     .gossipoption 111691 >>Envolez-vous vers Guet de Hurlenfer
     .target Andruk
 step
@@ -1632,7 +1632,7 @@ step
     #questguide
     .goto 85,53.62,78.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Gryshka l'aubergiste|r
-    .home >>Liez votre Pierre de foyer à Orgrimmar
+    .home >>Liez votre Pierre de Foyer à Orgrimmar
     .target Innkeeper Gryshka
     .isQuestTurnedIn 13841
 step

@@ -202,7 +202,7 @@ step
     .target Botanist Taerix
 step << Mage
     .goto Azuremyst Isle,79.662,46.427
-    >>|cRXP_WARN_Lancez|r |T135812:0|t[Boule de feu] |cRXP_WARN_sur le |cRXP_ENEMY_Mannequin d'entraînement|r jusqu'à obtenir un|r |T135731:0|t[Projectiles des Arcanes !] |cRXP_WARN_proc, puis lancez|r |T136096:0|t[Projectiles des Arcanes]|cRXP_WARN_. Répétez ceci deux fois|r
+    >>|cRXP_WARN_Lancez|r |T135812:0|t[Boule de feu] |cRXP_WARN_sur le |cRXP_ENEMY_Mannequin d'entraînement|r jusqu'à ce que vous ayez un proc|r |T135731:0|t[Projectiles des Arcanes] |cRXP_WARN_, puis lancez|r |T136096:0|t[Projectiles des Arcanes]|cRXP_WARN_. Répétez cela à deux reprises|r
     >>|cRXP_WARN_Lancez|r |T135848:0|t[Nova de givre] |cRXP_WARN_sur le |cRXP_ENEMY_Mannequin d'entraînement|r. Répétez cela à deux reprises|r
     .complete 26968,1 << cata -- Practice Arcane Missiles (1)
     .complete 26968,2 << !cata -- Practice Frost Nova (1)

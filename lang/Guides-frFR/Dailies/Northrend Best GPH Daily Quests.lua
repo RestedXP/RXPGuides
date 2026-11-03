@@ -23,9 +23,9 @@ step
 	>>Parlez à l'Enclume de Fjorn, la Corne de Hodir, le Heaume de Hodir, la Mère des Worgs de givre et Arngrim l'Insatiabilité
     .daily 12981 >>Acceptez la quête Chaud et froid
     .goto TheStormPeaks,63.13,62.94
-    .daily 12977 >>Acceptez la quête Souffler dans le cor de Hodir
+    .daily 12977 >>Acceptez la quête L’appel de Hodir
     .goto TheStormPeaks,64.17,65.01
-	.daily 13006 >> Acceptez la quête Un nettoyage visqueux
+	.daily 13006 >> Acceptez la quête Nettoyage à suc
 	.goto TheStormPeaks,64.24,59.23
 	.daily 12994 >> Acceptez la quête À la chasse aux espions
 	.goto TheStormPeaks,63.49,59.73
@@ -36,9 +36,9 @@ step
 	>>Parlez à l'Enclume de Fjorn, la Corne de Hodir, le Heaume de Hodir et la Mère des Worgs de givre
     .daily 12981 >>Acceptez la quête Chaud et froid
     .goto TheStormPeaks,63.13,62.94
-    .daily 12977 >>Acceptez la quête Souffler dans le cor de Hodir
+    .daily 12977 >>Acceptez la quête L’appel de Hodir
     .goto TheStormPeaks,64.17,65.01
-	.daily 13006 >> Acceptez la quête Un nettoyage visqueux
+	.daily 13006 >> Acceptez la quête Nettoyage à suc
 	.goto TheStormPeaks,64.24,59.23
 	.daily 12994 >> Acceptez la quête À la chasse aux espions
 	.goto TheStormPeaks,63.49,59.73
@@ -47,9 +47,9 @@ step
 	>>Parler à l'Enclume de Fjorn, la Corne de Hodir et le Heaume de Hodir
     .daily 12981 >>Acceptez la quête Chaud et froid
     .goto TheStormPeaks,63.13,62.94
-    .daily 12977 >>Acceptez la quête Souffler dans le cor de Hodir
+    .daily 12977 >>Acceptez la quête L’appel de Hodir
     .goto TheStormPeaks,64.17,65.01
-	.daily 13006 >> Acceptez la quête Un nettoyage visqueux
+	.daily 13006 >> Acceptez la quête Nettoyage à suc
 	.goto TheStormPeaks,64.24,59.23
 	.reputation 1119,friendly,<0,1 -- if you're 0 into friendly it will display this step
 step
@@ -99,11 +99,11 @@ step
 step
 	>>Retournez à Dun Niffelem
 	>>Parlez à l'Enclume de Fjorn, la Corne de Hodir, le Heaume de Hodir, la Mère des Worgs de givre et Arngrim l'Insatiabilité
-    .turnin 12981 >>Rendre la quête Chaud et froid
+    .turnin 12981 >>Rendez la quête Chaud et froid
     .goto TheStormPeaks,63.13,62.94
-    .turnin 12977 >>Rendez la quête L'Appel de Hodir
+    .turnin 12977 >>Rendez la quête L’appel de Hodir
     .goto TheStormPeaks,64.17,65.01
-	.turnin 13006 >> Rendez la quête Un nettoyage visqueux
+	.turnin 13006 >> Rendez la quête Nettoyage à suc
 	.goto TheStormPeaks,64.24,59.23
 	.turnin 12994 >> Rendre la quête À la chasse aux espions
 	.goto TheStormPeaks,63.49,59.73
@@ -114,11 +114,11 @@ step
 step
 	>>Retournez à Dun Niffelem
 	>>Parler à l'Enclume de Fjorn, la Corne de Hodir, le Heaume de Hodir et Arngrim l'Insatiabilité
-    .turnin 12981 >>Rendre la quête Chaud et froid
+    .turnin 12981 >>Rendez la quête Chaud et froid
     .goto TheStormPeaks,63.13,62.94
-    .turnin 12977 >>Rendez la quête L'Appel de Hodir
+    .turnin 12977 >>Rendez la quête L’appel de Hodir
     .goto TheStormPeaks,64.17,65.01
-	.turnin 13006 >> Rendez la quête Un nettoyage visqueux
+	.turnin 13006 >> Rendez la quête Nettoyage à suc
 	.goto TheStormPeaks,64.24,59.23
 	.turnin 13046 >> Rendez la quête Nourrir Arngrim
 	.goto TheStormPeaks,67.61,59.95
@@ -126,11 +126,11 @@ step
 step
 	>>Retournez à Dun Niffelem
 	>>Parlez à l'Enclume de Fjorn, la Corne de Hodir, le Heaume de Hodir et la Mère des Worgs de givre
-    .turnin 12981 >>Rendre la quête Chaud et froid
+    .turnin 12981 >>Rendez la quête Chaud et froid
     .goto TheStormPeaks,63.13,62.94
-    .turnin 12977 >>Rendez la quête L'Appel de Hodir
+    .turnin 12977 >>Rendez la quête L’appel de Hodir
     .goto TheStormPeaks,64.17,65.01
-	.turnin 13006 >> Rendez la quête Un nettoyage visqueux
+	.turnin 13006 >> Rendez la quête Nettoyage à suc
 	.goto TheStormPeaks,64.24,59.23
 	.turnin 12994 >> Rendre la quête À la chasse aux espions
 	.goto TheStormPeaks,63.49,59.73
@@ -138,11 +138,11 @@ step
 step
 	>>Retournez à Dun Niffelem
 	>>Parlez à l'Enclume de Fjorn, la Corne de Hodir, le Heaume de Hodir, la Mère des Worgs de givre et Arngrim l'Insatiabilité
-    .turnin 12981 >>Rendre la quête Chaud et froid
+    .turnin 12981 >>Rendez la quête Chaud et froid
     .goto TheStormPeaks,63.13,62.94
-    .turnin 12977 >>Rendez la quête L'Appel de Hodir
+    .turnin 12977 >>Rendez la quête L’appel de Hodir
     .goto TheStormPeaks,64.17,65.01
-	.turnin 13006 >> Rendez la quête Un nettoyage visqueux
+	.turnin 13006 >> Rendez la quête Nettoyage à suc
 	.goto TheStormPeaks,64.24,59.23
 	.turnin 12994 >> Rendre la quête À la chasse aux espions
 	.goto TheStormPeaks,63.49,59.73
@@ -153,11 +153,11 @@ step
 step
 	>>Retournez à Dun Niffelem
 	>>Parler à l'Enclume de Fjorn, la Corne de Hodir, le Heaume de Hodir et Arngrim l'Insatiabilité
-    .turnin 12981 >>Rendre la quête Chaud et froid
+    .turnin 12981 >>Rendez la quête Chaud et froid
     .goto TheStormPeaks,63.13,62.94
-    .turnin 12977 >>Rendez la quête L'Appel de Hodir
+    .turnin 12977 >>Rendez la quête L’appel de Hodir
     .goto TheStormPeaks,64.17,65.01
-	.turnin 13006 >> Rendez la quête Un nettoyage visqueux
+	.turnin 13006 >> Rendez la quête Nettoyage à suc
 	.goto TheStormPeaks,65.00,60.95
 	.turnin 13046 >> Rendez la quête Nourrir Arngrim
 	.goto TheStormPeaks,67.61,59.95
@@ -165,11 +165,11 @@ step
 step
 	>>Retournez à Dun Niffelem
 	>>Parlez à l'Enclume de Fjorn, la Corne de Hodir, le Heaume de Hodir et la Mère des Worgs de givre
-    .turnin 12981 >>Rendre la quête Chaud et froid
+    .turnin 12981 >>Rendez la quête Chaud et froid
     .goto TheStormPeaks,63.13,62.94
-    .turnin 12977 >>Rendez la quête L'Appel de Hodir
+    .turnin 12977 >>Rendez la quête L’appel de Hodir
     .goto TheStormPeaks,64.17,65.01
-	.turnin 13006 >> Rendez la quête Un nettoyage visqueux
+	.turnin 13006 >> Rendez la quête Nettoyage à suc
 	.goto TheStormPeaks,64.24,59.23
 	.turnin 12994 >> Rendre la quête À la chasse aux espions
 	.goto TheStormPeaks,63.49,59.73
@@ -177,11 +177,11 @@ step
 step
 	>>Retournez à Dun Niffelem
 	>>Parler à l'Enclume de Fjorn, la Corne de Hodir et le Heaume de Hodir
-    .turnin -12981 >>Rendre la quête Chaud et froid
+    .turnin -12981 >>Rendez la quête Chaud et froid
     .goto TheStormPeaks,63.13,62.94
-    .turnin -12977 >>Rendez la quête L'Appel de Hodir
+    .turnin -12977 >>Rendez la quête L’appel de Hodir
     .goto TheStormPeaks,64.17,65.01
-	.turnin -13006 >> Rendez la quête Un nettoyage visqueux
+	.turnin -13006 >> Rendez la quête Nettoyage à suc
 	.goto TheStormPeaks,64.24,59.23
 step << Mage
 	#completewith next
@@ -604,7 +604,7 @@ step
 step
 	#requires Gryphon
 	>>Retournez à la Cime de la Mort. Parlez à Uzo, à Setaal et à Aurochs
-    .turnin 12815 >>Rendez la quête Région d'exclusion aérienne
+    .turnin 12815 >>Rendez la quête Zone d'exclusion aérienne
     .goto Icecrown,19.64,47.80
     .turnin 12813 >>Rendez la quête Réanimez leurs cadavres !
     .goto Icecrown,19.67,48.39

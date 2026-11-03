@@ -294,7 +294,7 @@ step
     .mob Mosshide Scout
 step
     .goto 48,25.444,17.963
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Mountaineer Stormpike|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Mountaineer Stormpike|r
     .turnin 13636 >>Rendez la quête Les ordres des Foudrepiques
     .accept 26843 >>Acceptez la quête Un commandant petit, mais malin
     .target Mountaineer Stormpike
@@ -305,7 +305,7 @@ step
     .mob "Commander" Nazrim
 step
     .goto 48,25.444,17.963
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Mountaineer Stormpike|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Mountaineer Stormpike|r
     .turnin 26843 >>Rendez la quête Un commandant petit, mais malin
     .accept 26844 >>Acceptez la quête À Kobold, Kobold et demi
     .target Mountaineer Stormpike
@@ -1037,7 +1037,7 @@ step
 step
 #questguide
     .goto 48,25.444,17.963
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Mountaineer Stormpike|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Mountaineer Stormpike|r
     .target Mountaineer Stormpike
     .turnin 27116 >>Rendre la quête Les vents du loch Modan
     .accept 26137 >>Accepter Inspection-surprise

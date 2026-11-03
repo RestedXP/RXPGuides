@@ -390,9 +390,9 @@ step << Human
     .turnin 12985 >>Rendez la quête Forger une tête
     .accept 12987 >>Acceptez la quête Installer le heaume de Hodir
     .goto TheStormPeaks,63.20,63.27
-    .turnin 12981 >>Rendre la quête Chaud et froid
+    .turnin 12981 >>Rendez la quête Chaud et froid
     .goto TheStormPeaks,63.13,62.94
-    .daily 12977 >>Acceptez la quête Souffler dans le cor de Hodir
+    .daily 12977 >>Acceptez la quête L’appel de Hodir
     .goto TheStormPeaks,64.17,65.01
 	.isOnQuest 13420
 	.isQuestAvailable 13047
@@ -405,7 +405,7 @@ step << Human
     .turnin 12985 >>Rendez la quête Forger une tête
     .accept 12987 >>Acceptez la quête Installer le heaume de Hodir
     .goto TheStormPeaks,63.20,63.27
-    .turnin 12981 >>Rendre la quête Chaud et froid
+    .turnin 12981 >>Rendez la quête Chaud et froid
     .goto TheStormPeaks,63.13,62.94
 	.isQuestAvailable 13047
 step << !Human
@@ -413,7 +413,7 @@ step << !Human
     .turnin 12975 >>Rendez la quête In Memoriam
     .accept 12976 >>Acceptez la quête Un monument à ceux qui sont tombés
     .goto TheStormPeaks,65.45,60.16
-    .turnin 12981 >>Rendre la quête Chaud et froid
+    .turnin 12981 >>Rendez la quête Chaud et froid
     .goto TheStormPeaks,63.13,62.94
     .turnin 12976 >>Rendez la quête Un monument à ceux qui sont tombés
     .goto TheStormPeaks,63.20,63.27
@@ -440,7 +440,7 @@ step << !Human
     .turnin 12985 >>Rendez la quête Forger une tête
     .accept 12987 >>Acceptez la quête Installer le heaume de Hodir
     .goto TheStormPeaks,63.20,63.27
-    .daily 12977 >>Acceptez la quête Souffler dans le cor de Hodir
+    .daily 12977 >>Acceptez la quête L’appel de Hodir
     .goto TheStormPeaks,64.17,65.01
 	.isQuestAvailable 13047
 step
@@ -454,7 +454,7 @@ step
 step
     .goto TheStormPeaks,64.22,59.39
 	>>Parlez au Heaume que vous venez de placer
-    .daily 13006 >>Acceptez la quête Un nettoyage visqueux
+    .daily 13006 >>Acceptez la quête Nettoyage à suc
 	.isQuestAvailable 13047
 step << !Human
     .goto TheStormPeaks,65.45,60.16
@@ -515,13 +515,13 @@ step
 	.isQuestAvailable 13047
 step
 	>>Parlez à la Corne de Hodir
-    .daily 12977 >>Acceptez la quête Souffler dans le cor de Hodir
+    .daily 12977 >>Acceptez la quête L’appel de Hodir
     .goto TheStormPeaks,64.17,65.01
 	.isQuestAvailable 13047
 step
 	#label DunNif2
 	>>Parlez au Casque de Hodir et à Roi Jokkum dans Dun Niffelem
-    .turnin 13006 >>Rendez la quête Un nettoyage visqueux
+    .turnin 13006 >>Rendez la quête Nettoyage à suc
     .goto TheStormPeaks,64.22,59.39
     .turnin 13011 >>Rendez la quête Le massacre de Jormuttar
 	.vehicle >> Parlez à Roi Jokkum. Conduisez-le vers Chute-tonnerre
@@ -642,7 +642,7 @@ step
     .goto TheStormPeaks,65.45,60.16
 	.turnin 13420 >> Rendez la quête Le permagivre
     .goto TheStormPeaks,67.11,60.97
-    .turnin 12977 >>Rendez la quête L'Appel de Hodir
+    .turnin 12977 >>Rendez la quête L’appel de Hodir
     .goto TheStormPeaks,64.17,65.01
 	.isOnQuest 13420
 step
@@ -651,7 +651,7 @@ step
     .turnin 13047 >>Rendez la quête La rétribution
 --  .accept 13108 >>Accept Whatever it Takes!
     .goto TheStormPeaks,65.45,60.16
-    .turnin 12977 >>Rendez la quête L'Appel de Hodir
+    .turnin 12977 >>Rendez la quête L’appel de Hodir
     .goto TheStormPeaks,64.17,65.01
 step -- checking that player has honored with hodir to get this quest. will only be humans and any other that turned in rep items
 	>>Parlez au Gardien du savoir Randvir à Dun Niffelem

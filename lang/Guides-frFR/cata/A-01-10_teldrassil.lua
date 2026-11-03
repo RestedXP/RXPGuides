@@ -301,7 +301,7 @@ step
     *[5] Sélectionnez et liez les |cRXP_WARN_Active Boutons|r.
 step
     .goto 460,50.13,34.49
-    .use 5185 >>Utilisez la [Flasque de cristal] au puits de lune
+    .use 5185 >>Utilisez la [Fiole de cristal] au puits de lune
     .complete 28729,1 --1/1 Filled Crystal Phial
 step
     .goto 460,42.49,50.49

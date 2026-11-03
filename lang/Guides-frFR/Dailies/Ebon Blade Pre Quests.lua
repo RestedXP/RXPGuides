@@ -384,7 +384,7 @@ step
 step
 	.goto Icecrown,19.64,47.80
 	>>Retournez à Cime de la Mort. Parlez à Uzo
-    .turnin 12815 >>Rendez la quête Région d'exclusion aérienne
+    .turnin 12815 >>Rendez la quête Zone d'exclusion aérienne
 step
     >>Rendez-vous au Caveau des Ombres. Parlez au Bondisseur et Vil
     .turnin -13069 >>Rendez la quête Descendez-les tous !
