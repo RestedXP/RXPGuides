@@ -51,7 +51,7 @@ step
     .goto Deadwind Pass,46.84,74.90,25,0
     .goto Deadwind Pass,45.84,78.04,15,0
     .goto Deadwind Pass,48.74,78.87,10,0
-    .subzone 2562 >> |cRXP_WARN_Revenez par le chemin d'où vous êtes venus pour sortir de la Master's Cellar. Vous entrerez bientôt à nouveau dans la Master's Cellar par une autre entrée.|r
+    .subzone 2562 >> |cRXP_WARN_Rebroussez chemin pour sortir de la Cave du Maître. Vous y retournerez bientôt en passant par une autre entrée|r
     .subzoneskip 2837,1
 step
     #completewith next
@@ -200,7 +200,7 @@ step
     .accept 10901 >> Acceptez la quête Le gourdin de Kar'desh
     .target Skar'this the Heretic
 step
-    >>|cRXP_WARN_Trouvez des raids pour Gruul le Tue-Dragon et Karazhan|r
+    >>|cRXP_WARN_Trouvez un groupe de Raid pour Gruul le Tue-dragon et Karazhan|r
     >>Tuez |cRXP_ENEMY_Gruul|r. Dépouillez-le pour son |cRXP_LOOT_Earthen Signet|r
     >>Tuez |cRXP_ENEMY_Nightbane|r. Dépouillez-le pour son |cRXP_LOOT_Blazing Signet|r
     .complete 10901,1 -- Earthen Signet (1)
@@ -892,7 +892,7 @@ step
 	.target Akama
 step
     #completewith next
-    .zone Shattrath City >> Allez à Shattrath
+    .zone Shattrath City >> Voyagez à Shattrath
 step
     .goto Shattrath City,53.98,44.73
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_A'dal|r
@@ -948,7 +948,7 @@ step
 	.target Akama
 step
     #completewith next
-    .zone Shattrath City >> Allez à Shattrath
+    .zone Shattrath City >> Voyagez à Shattrath
 step
     .goto Shattrath City,53.98,44.73
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_A'dal|r

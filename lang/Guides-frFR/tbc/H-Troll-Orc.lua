@@ -234,7 +234,7 @@ step << !Rogue !Mage
 	.goto Durotar,42.02,62.15,35,0
 	.goto Durotar,42.00,62.92,35,0
 	.goto Durotar,41.99,64.03,35,0
-    .xp 3+980 >> Broyez jusqu'à 980+/1400xp en retournant à la ville
+    .xp 3+980 >> Grind to 980+/1400xp on the way back to town
     .mob Mottled Boar
 step << Warlock
     #completewith Ruzan2
@@ -826,7 +826,7 @@ step << !Shaman
 	.goto Durotar,42.53,53.48,25,0
 	.goto Durotar,43.27,53.82,25,0
 	.goto Durotar,42.70,52.99,25,0
-    .xp 5+1120 >> Broyez jusqu'à 1120+/2800xp
+    .xp 5+1120 >> Grind to 1120+/2800xp
     .isQuestTurnedIn 4402
 step
     #xprate >1.49
@@ -857,7 +857,7 @@ step
     .isOnQuest 4402
 step << Orc/Troll
     #completewith BurningBladeTurnin
-    .hs >>Quittez la Vallée des Épreuves
+    .hs >>Hearth to Valley of Trials
 step << !Orc !Troll
     #softcore
     #completewith BurningBladeTurnin
@@ -989,7 +989,7 @@ step << Warlock
     .goto Durotar,41.52,68.36,12,0
     .goto Durotar,41.24,68.16,12,0
     .goto Durotar,40.82,68.03,12,0
-    .goto Durotar,40.56,68.44,12 >>Voyagez vers |cRXP_FRIENDLY_Nartok|r et |cRXP_FRIENDLY_Hraug|r
+    .goto Durotar,40.56,68.44,12 >>Travel toward |cRXP_FRIENDLY_Nartok|r and |cRXP_FRIENDLY_Hraug|r
     .money <0.01
 step << Warlock
     .goto Durotar,40.65,68.52
@@ -1183,7 +1183,7 @@ step << !Shaman !Hunter !Warlock
     #label RazorHill1
     #completewith next
     .goto Durotar,54.53,58.69
-    .deathskip >>Rendez-vous vers la flèche du point de passage (ou plus au nord), puis mourez et réapparaissez au |cRXP_FRIENDLY_Gardien des âmes|r
+    .deathskip >>Travel to the waypoint arrow (or further north of it), then die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
 step << !Shaman !Hunter !Warlock
     #xprate <1.5 << !Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|r |cRXP_FRIENDLY_Orgnil|r et à |cRXP_FRIENDLY_Gar'Thok|r
@@ -1256,7 +1256,7 @@ step << Priest
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tai'jin|r
     .turnin 5649 >> Rendez la quête Au service de la spiritualité
     .accept 5648 >> Acceptez la quête Vêtements de la spiritualité
-    .train 2052 >> Apprenez [Soins inférieurs Rank 2]
+    .train 2052 >> Apprenez [Soins inférieurs Rang 2]
     .target Tai'jin
 step << Priest
     .goto Durotar,53.10,46.46
@@ -1393,7 +1393,7 @@ step << !Shaman !Hunter !Warlock
     #softcore
     #completewith next
     .goto Durotar,57.90,57.57
-    .deathskip >> Mourez à la flèche du point de passage (ou plus au nord), puis mourez et réapparaissez au |cRXP_FRIENDLY_Gardien des âmes|r
+    .deathskip >> Die at the waypoint arrow (or further north of it), then die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
 step << !Shaman !Hunter !Warlock
     #xprate <1.5 << !Warrior
     #hardcore
@@ -1596,7 +1596,7 @@ step << Warrior
 step << Warrior
     .goto Tirisfal Glades,61.89,52.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Gretchen|r au deuxième étage de l'auberge
-    .accept 375 >>Acceptez la quête Le frisson de la mort
+    .accept 375 >>Accept in The Chill of Death
     .target Gretchen Dedmar
     .maxlevel 7 --filler to get level 8 spells
 step << Warrior
@@ -1608,7 +1608,7 @@ step << Warrior
 step << Warrior
     #optional
     #completewith next
-    >>Tuez les |cRXP_ENEMY_Duskbats|r. Récupérez le butin pour leurs |cRXP_LOOT_Pelts|r
+    >>Kill|cRXP_ENEMY_Duskbats|r. Loot them for their |cRXP_LOOT_Pelts|r
     .complete 375,1 --Duskbat Pelt (5)
     .mob Greater Duskbat
     .mob Vampiric Duskbat
@@ -1642,7 +1642,7 @@ step << Warrior
     .goto Tirisfal Glades,40.19,56.33,60,0
     .goto Tirisfal Glades,42.16,46.76,60,0
     .goto Tirisfal Glades,38.95,40.22,60,0
-    >>Tuez les |cRXP_ENEMY_Duskbats|r. Récupérez le butin pour leurs |cRXP_LOOT_Pelts|r
+    >>Kill|cRXP_ENEMY_Duskbats|r. Loot them for their |cRXP_LOOT_Pelts|r
     .complete 375,1 --Duskbat Pelt (5)
     .mob Greater Duskbat
     .mob Vampiric Duskbat
@@ -1661,8 +1661,8 @@ step << Warrior
     .goto Tirisfal Glades,40.19,56.33,60,0
     .goto Tirisfal Glades,42.16,46.76,60,0
     .goto Tirisfal Glades,38.95,40.22,60,0
-    >>Tuez les |cRXP_ENEMY_Duskbats|r. Récupérez le butin pour leurs |cRXP_LOOT_Pelts|r
-    >>|cRXP_WARN_Passez cette étape si vous avez eu de la malchance avec les butins jusqu'à présent|r
+    >>Kill|cRXP_ENEMY_Duskbats|r. Loot them for their |cRXP_LOOT_Pelts|r
+    >>|cRXP_WARN_Skip this step if you were unlucky with drops so far|r
     .complete 375,1 --Duskbat Pelt (5)
     .mob Greater Duskbat
     .mob Vampiric Duskbat
@@ -1674,18 +1674,18 @@ step << Warrior
     .goto Tirisfal Glades,45.11,48.06,50,0
     .goto Tirisfal Glades,47.07,45.37,50,0
     .goto Tirisfal Glades,50.36,49.51,50,0
-    .xp 7+3260 >>Broyez jusqu'à 3260/4500 xp
+    .xp 7+3260 >>Grind to 3260/4500 xp
 step << Warrior
     #xprate >1.49
     .goto Tirisfal Glades,45.90,50.95,50,0
     .goto Tirisfal Glades,45.11,48.06,50,0
     .goto Tirisfal Glades,47.07,45.37,50,0
     .goto Tirisfal Glades,50.36,49.51,50,0
-    .xp 7+2640>>Broyez jusqu'à 2640/4500 xp
+    .xp 7+2640>>Grind to 2640/4500 xp
 step << Warrior
     #softcore
     #completewith FillerTurnins
-    .deathskip >>Mourez et réapparaissez au |cRXP_FRIENDLY_Gardien des âmes|r
+    .deathskip >>Die and respawn and the |cRXP_FRIENDLY_Spirit Healer|r
 step << Warrior
     #hardcore
     #completewith FillerTurnins
@@ -1725,7 +1725,7 @@ step << skip -- Warlock
     #completewith next
     .goto Undercity,66.11,26.81,20,0
     .goto Undercity,66.07,37.02,20,0
-    .goto Undercity,67.74,37.96,20 >>Prenez l'ascenseur vers le bas dans la Fossoyeuse
+    .goto Undercity,67.74,37.96,20 >>Take the elevator down into the Undercity
 step << skip -- Warlock
     .goto Undercity,67.74,37.96
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Norman|r
@@ -1735,7 +1735,7 @@ step << skip -- Warlock
 step << skip -- Warlock
     #completewith next
     .goto Undercity,66.07,37.02,20,0
-    .goto Undercity,66.11,26.81,20 >>Prenez l'ascenseur vers le haut
+    .goto Undercity,66.11,26.81,20 >>Take the elevator back up
 step << !Shaman !Hunter !Warlock
     #completewith PorttoSilvermoon
     .goto Undercity,62.0,11.3,18 >>Montez les escaliers ici
@@ -1761,7 +1761,7 @@ step << !Shaman !Hunter !Warlock
     #label SilvermoonFP
     .goto Eversong Woods,54.37,50.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Gloaming|r
-    .fp Silvermoon >> Apprenez le trajet de Vol vers Lune-d'Argent
+    .fp Silvermoon >> Get the Silvermoon City flight path
     .target Skymistress Gloaming
     .isQuestAvailable 8463
 step << !Shaman !Hunter !Warlock
@@ -2002,8 +2002,8 @@ step
     .goto Durotar,55.72,79.62,40,0
     .goto Durotar,54.23,82.26,40,0
     .goto Durotar,52.20,83.00,40,0
-    >>Courez vers la plage. Tuez les |cRXP_ENEMY_Crawlers|r et les |cRXP_ENEMY_Makruras|r. Ramassez-les pour le Butin: |cRXP_LOOT_Mucus|r et |cRXP_LOOT_Les regards|r
-    >>|cRXP_WARN_Vous n'êtes pas obligé de terminer cette étape ici|r
+    >>Run down the beach. Kill |cRXP_ENEMY_Crawlers|r and |cRXP_ENEMY_Makruras|r. Loot them for their |cRXP_LOOT_Mucus|r and |cRXP_LOOT_Eyes|r
+    >>|cRXP_WARN_You do not have to finish this step here|r
     .complete 818,2 --Crawler Mucus (8)
     .mob +Pygmy Surf Crawler
     .mob +Surf Crawler
@@ -2229,7 +2229,7 @@ step
     #label RazorHill1
     #completewith next
     .goto Durotar,54.53,58.69
-    .deathskip >>Allez vers la flèche (ou plus au nord), puis mourez et réapparaissez au |cRXP_FRIENDLY_Esprit Gardien des âmes|r
+    .deathskip >>Travel to the waypoint arrow (or further north of it), then die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
 step << Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|r |cRXP_FRIENDLY_Orgnil|r, |cRXP_FRIENDLY_Gar'Thok|r et |cRXP_FRIENDLY_Torka|r
     .turnin 823 >>Rendez la quête Un rapport à Orgnil
@@ -2514,7 +2514,7 @@ step << Priest
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tai'jin|r
     .turnin 5649 >> Rendez la quête Au service de la spiritualité
     .accept 5648 >> Acceptez la quête Vêtements de la spiritualité
-    .train 2052 >> Apprenez [Soins inférieurs Rank 2]
+    .train 2052 >> Apprenez [Soins inférieurs Rang 2]
     .target Tai'jin
 step << Priest
     .goto Durotar,53.10,46.46
@@ -2662,12 +2662,12 @@ step << !Mage
     .goto Durotar,57.96,42.46,50,0
     .goto Durotar,56.47,43.45,50,0
     .goto Durotar,55.50,48.97,50,0
-    .xp 7+1665 >> Montez jusqu'à 1665+/4500 XP
+    .xp 7+1665 >> Grind to 1665+/4500xp
 step
     #softcore
     #completewith next
     .goto Durotar,57.93,57.67
-    .deathskip >> Mourez à la flèche (ou plus au nord), puis mourez et réapparaissez au |cRXP_FRIENDLY_Esprit Gardien des âmes|r
+    .deathskip >> Die at the waypoint arrow (or further north of it), then die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
 step
     #hardcore
     #completewith next
@@ -3144,7 +3144,7 @@ step
     #label RazorHill1
     #completewith RazorHill3
     .goto Durotar,54.53,58.69
-    .deathskip >>Allez vers la flèche (ou plus au nord), puis mourez et réapparaissez au |cRXP_FRIENDLY_Esprit Gardien des âmes|r
+    .deathskip >>Travel to the waypoint arrow (or further north of it), then die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
 step
     #label RazorHill3
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|r |cRXP_FRIENDLY_Gar'Thok|r et |cRXP_FRIENDLY_Torka|r
@@ -3861,7 +3861,7 @@ step << Warrior/Shaman
     #completewith next
     .goto The Barrens,49.75,49.54
     .subzone 378 >>Voyagez vers le sud par la route vers le Camp Taurajo
-    >>|cRXP_WARN_Une fois que vous êtes à la flèche (ou plus au nord), mourez et réapparaissez au|r |cRXP_FRIENDLY_Esprit Gardien des âmes|r
+    >>|cRXP_WARN_Once you are at the waypoint arrow (or further north of it), die and respawn at the|r |cRXP_FRIENDLY_Spirit Healer|r
 step << Warrior/Shaman
     #xprate <1.5
     #hardcore
@@ -4046,7 +4046,7 @@ step << !Tauren
     #label TBFP
     .goto Thunder Bluff,47.00,49.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tal|r
-    .fp Thunder Bluff >>Apprenez le trajet de vol vers Les Pitons-du-Tonnerre
+    .fp Thunder Bluff >>Get the Thunder Bluff Flight Path
 	.target Tal
 step << !Tauren
     #xprate <1.5
@@ -4078,7 +4078,7 @@ step << !Tauren
 step << !Tauren
     #xprate <1.5
     #completewith LostPickup
-    .hs >>Tuez des mobs à l'extérieur de Les Pitons-du-Tonnerre jusqu'à ce que votre Pierre de foyer soit disponible à nouveau, puis utilisez votre Pierre de foyer pour vous téléporter à Tranchecolline
+    .hs >>Grind outside Thunder Bluff until your hearthstone is back up, then hearthstone to Razor Hill
     .use 6948
     .subzoneskip 362
     .bindlocation 362,1
@@ -4248,13 +4248,13 @@ step << Troll Shaman/Orc Shaman
     .goto Durotar,34.44,44.53,50,0
     .goto Durotar,34.27,47.02,50,0
     .goto Durotar,34.71,42.30,50,0
-    >>|cRXP_WARN_Voyagez vers le sud le long de la rivière|r
+    >>|cRXP_WARN_Travel south alongside the river|r
     >>Tuez les |cRXP_ENEMY_Dreadmaw Crocolisks|r sur le chemin. Dépouillez-les pour la |cRXP_LOOT_Kron's Amulet|r
     >>Passez cette quête pour le moment si elle ne tombe pas
     .complete 816,1 --Kron's Amulet (1)
     .mob Dreadmaw Crocolisk
 step << Troll Shaman/Orc Shaman
-    .goto Durotar,35.53,56.89,100 >>Arrivez au point sud de la rivière
+    .goto Durotar,35.53,56.89,100 >>Arrive at the southern point of the river
     .isOnQuest 1524
 step << Troll Shaman/Orc Shaman
     #completewith next
@@ -4348,7 +4348,7 @@ step
     >>Tuez |cRXP_ENEMY_Gazz'uz|r. Dépouillez-le pour son [|cRXP_LOOT_Eye of Burning Shadow|r]
     >>|cRXP_WARN_Utilisez le [|cRXP_LOOT_Eye of Burning Shadow|r] pour commencer la quête|r
     >>Vous pouvez aller dans les points d'eau dans la grotte pour vous échapper (evade) des |cRXP_ENEMY_Voidwalker|r après avoir tué |cRXP_ENEMY_Gazz'uz|r
-    >>|cRXP_WARN_Faites attention car il est difficile. Vous pouvez sauter cette quête si besoin|r
+    >>|cRXP_WARN_Be careful as he is difficult. You can skip this quest if you need|r
     .collect 4903,1,832,1 --Collect Eye of Burning Shadow
     .accept 832 >>Acceptez la quête Ombres ardentes
     .use 4903
@@ -4521,8 +4521,8 @@ step
     #completewith FarWatchP
     .goto Durotar,34.71,42.30,0
     .goto Durotar,34.44,44.53,50,01
-    >>Tuez les |cRXP_ENEMY_Gueule-d'Effroi Crocolisks|r sur le chemin vers Poste de Guet-Lointain. Ramassez-les pour le Butin: |cRXP_LOOT_Kron's Amulet|r
-    >>|cRXP_WARN_Passez cette quête si elle ne drop rien|r
+    >>Kill |cRXP_ENEMY_Dreadmaw Crocolisks|r on the way to Far Watch Post. Loot them for |cRXP_LOOT_Kron's Amulet|r
+    >>|cRXP_WARN_Skip this quest if it won't drop|r
     .complete 816,1 --Kron's Amulet (1)
     .mob Dreadmaw Crocolisk
     .isOnQuest 816

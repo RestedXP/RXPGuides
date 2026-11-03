@@ -1166,7 +1166,7 @@ step << !Rogue
     .target Denalan
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Denalan|r
     .use 5179 >> Utilisez le [|cRXP_LOOT_Moss-twined Heart|r] pour commencer la quête
-    .accept 927 >> Accept Les Moss-twined Heart
+    .accept 927 >> Accept The Moss-twined Heart
 	.turnin 927 >> Rendez la quête Le cœur moussu
     .itemcount 5179,1
 step << Hunter
@@ -1239,7 +1239,7 @@ step << Rogue
     .target Denalan
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Denalan|r
     .use 5179 >> Utilisez le [|cRXP_LOOT_Moss-twined Heart|r] pour commencer la quête
-    .accept 927 >> Accept Les Moss-twined Heart
+    .accept 927 >> Accept The Moss-twined Heart
 	.turnin 927 >> Rendez la quête Le cœur moussu
     .itemcount 5179,1
 step << Rogue
@@ -1359,7 +1359,7 @@ step
 step
     .isOnQuest 938
     .goto Teldrassil,38.32,34.36
-    >>|cRXP_WARN_Escortez |cRXP_FRIENDLY_Brume|r vers|r |cRXP_FRIENDLY_Sentinelle Arynia Eclairciel|r
+    >>|cRXP_WARN_Escort |cRXP_FRIENDLY_Mist|r to|r |cRXP_FRIENDLY_Sentinel Arynia Cloudsbreak|r
     .complete 938,1
 step
     .isQuestComplete 938

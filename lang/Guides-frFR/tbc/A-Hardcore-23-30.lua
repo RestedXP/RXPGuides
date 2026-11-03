@@ -571,7 +571,7 @@ step << Draenei
 step << Draenei
     .goto Stormwind City,78.508,18.312
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Emissary Taluun|r
-    .accept 9429 >> Accept Voyagez vers Goldshire
+    .accept 9429 >> Accept Travel to Darkshire
     .target Emissary Taluun
 step << Rogue
     .goto StormwindClassic,74.65,52.83
@@ -963,7 +963,7 @@ step
 step << Draenei
     .goto Duskwood,71.815,46.373
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Anchorite Delan|r
-    .turnin 9429 >> Turn in Voyagez vers Goldshire
+    .turnin 9429 >> Turn in Travel to Darkshire
     .target Anchorite Delan
 step
     .goto Duskwood,75.33,48.69
@@ -1007,8 +1007,8 @@ step
     .isQuestTurnedIn 174
 step
 	#completewith HistoryBook1
-    >>|cRXP_WARN_Gardez un œil sur |T133741:0|t[|cRXP_LOOT_Un vieux livre d'histoire|r]. C'est un butin lâché dans toute la zone de Bois de la Pénombre|r
-    >>|cRXP_WARN_Ne commencez pas la quête encore|r
+    >>|cRXP_WARN_Keep an eye out for |T133741:0|t[|cRXP_LOOT_An Old History Book|r]. This is a zone-wide drop in Duskwood|r
+    >>|cRXP_WARN_Don't start the quest it begins yet|r
 	.collect 2794,1,337,1 --An Old History Book (1)
 	--.accept 337 >> Accept An Old History Book
     .use 2794 --An Old History Book
@@ -1535,8 +1535,8 @@ step
     .target Blind Mary
 step
 	#completewith next
-    >>|cRXP_WARN_Gardez un œil sur |T133741:0|t[|cRXP_LOOT_Un vieux livre d'histoire|r]. C'est un butin lâché dans toute la zone de Bois de la Pénombre|r
-    >>|cRXP_WARN_Ne commencez pas la quête encore|r
+    >>|cRXP_WARN_Keep an eye out for |T133741:0|t[|cRXP_LOOT_An Old History Book|r]. This is a zone-wide drop in Duskwood|r
+    >>|cRXP_WARN_Don't start the quest it begins yet|r
 	.collect 2794,1,337,1 --An Old History Book (1)
 	--.accept 337 >> Accept An Old History Book
     .use 2794 --An Old History Book
@@ -1621,7 +1621,7 @@ step
     .dungeon Stockades
     #completewith next
     .abandon 386 >> Abandonnez la quête Ce qui se passait ailleurs...
-    >>|cRXP_WARN_Abandonnez la quête si votre journal de quêtes est plein. Vous l'accepterez à nouveau sous peu|r
+    >>|cRXP_WARN_Abandon this quest if your quest log is full. You'll accept it again shortly|r
     .zoneskip Redridge Mountains,1
 step
     .group
@@ -1872,8 +1872,8 @@ step
     .target Felicia Maline
 step
 	#completewith HistoryB3
-    >>|cRXP_WARN_Gardez un œil sur |T133741:0|t[|cRXP_LOOT_Un vieux livre d'histoire|r]. C'est un butin lâché dans toute la zone de Bois de la Pénombre|r
-    >>|cRXP_WARN_Ne commencez pas la quête encore|r
+    >>|cRXP_WARN_Keep an eye out for |T133741:0|t[|cRXP_LOOT_An Old History Book|r]. This is a zone-wide drop in Duskwood|r
+    >>|cRXP_WARN_Don't start the quest it begins yet|r
 	.collect 2794,1,337,1 --An Old History Book (1)
 	--.accept 337 >> Accept An Old History Book
     .use 2794 --An Old History Book
@@ -2942,8 +2942,8 @@ step
 step
     .goto Wetlands,10.0,56.8
     .target Valstag Ironjaw
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Valstag Gueule-de-fer|r
-    .accept 473 >> Acceptez la quête un rapport au capitaine Rudepoing
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Valstag Ironjaw|r
+    .accept 473 >> Accept Report to Captain Stoutfist
     .isQuestAvailable 473
 step
     #completewith next
@@ -3483,7 +3483,7 @@ step
     #completewith ShamefulWaste
     .goto Ashenvale,34.41,47.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Daelyshia|r
-    .fly Forest Song >> Envolez-vous vers Chant des forêts
+    .fly Forest Song >> Fly to Forest Song
     .target Daelyshia
     .subzoneskip 2358 --Forest Song
 step
@@ -3491,24 +3491,24 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Gnarl|r
     >>|cRXP_FRIENDLY_Gnarl|r patrouille légèrement
     .target Gnarl
-    .accept 9526 >>Acceptez Reclaiming Felfire Hill
+    .accept 9526 >>Accept Reclaiming Felfire Hill
 step
     .goto 1440/1,-3215.500,2954.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Kayneth Mortebrise|r
     .target Kayneth Stillwind
     .turnin 4581 >>Rendez la quête Kayneth Stillwind
     .accept 1011 >>Acceptez la quête Les maladies des Réprouvés
-    .accept 9519 >>Accept Les Lost Chalice
+    .accept 9519 >>Accept The Lost Chalice
 step
     .goto 1440/1,-3260.400,2966.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinel Luciel Starwhisper|r
     .target Sentinel Luciel Starwhisper
-    .accept 9518 >>Acceptez Agents of Destruction
+    .accept 9518 >>Accept Agents of Destruction
 step
     .goto 1440/1,-3286.700,2996.100
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Vindicator Vedaar|r
     .target Vindicator Vedaar
-    .accept 9516 >>Acceptez Destroy the Legion
+    .accept 9516 >>Accept Destroy the Legion
 step
     .goto 1440/1,-3323.700,3001.000
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Illiyana|r
@@ -3519,7 +3519,7 @@ step
     .goto 1440/1,-3307.000,2949.200
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Architect Nemos|r
     .target Architect Nemos
-    .accept 9517 >>Acceptez A Shameful Waste
+    .accept 9517 >>Accept A Shameful Waste
 step
     .goto Azshara,11.90,77.57
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Jarrodenus|r
@@ -3530,7 +3530,7 @@ step
     #completewith next
     .goto Azshara,11.90,77.57
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Jarrodenus|r
-    .fly Forest Song>> Envolez-vous vers Chant des forêts
+    .fly Forest Song>> Fly to Forest Song
     .target Jarrodenus
     .subzoneskip 2358
     .subzoneskip 430
@@ -3586,7 +3586,7 @@ step
     .use 23777 >>Utilisez les [|cRXP_LOOT_Diabolical Plans|r] pour commencer la quête
     >>Cette objet a peu de chance de tomber, ne changez pas vos plans pour l'obtenir
     .collect 23777,1,9520
-    .accept 9520 >> Acceptez Diabolical Plans
+    .accept 9520 >> Accept Diabolical Plans
     .mob Roaming Felguard
     .mob Searing Infernal
     .mob Mannoroc Lasher
@@ -3624,7 +3624,7 @@ step
 #optional
     .use 23777 >>Utilisez les [|cRXP_LOOT_Diabolical Plans|r] pour commencer la quête
     .collect 23777,1,9520
-    .accept 9520 >> Acceptez Diabolical Plans
+    .accept 9520 >> Accept Diabolical Plans
     .itemcount 23777,1
 step
 #requires dirtmound
@@ -3674,7 +3674,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Bragok|r
     .fp Ratchet >> Apprenez le chemin de vol de Cabestan
     .disablecheckbox
-    .fly Forest Song >> Envolez-vous vers Chant des forêts
+    .fly Forest Song >> Fly to Forest Song
     .target Bragok
     .isOnQuest 1017
     .zoneskip The Barrens,1
@@ -3683,31 +3683,31 @@ step
     .goto 1440/1,-3215.400,2954.700
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Kayneth Mortebrise|r
     .target Kayneth Stillwind
-    .turnin 9519 >>Turn in Les Lost Chalice
+    .turnin 9519 >>Turn in The Lost Chalice
     .turnin 1011 >>Rendez la quête Les maladies des Réprouvés
 step
     .goto 1440/1,-3262.000,2967.100
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinel Luciel Starwhisper|r
     .target Sentinel Luciel Starwhisper
-    .turnin 9518 >>Rendez Agents of Destruction
+    .turnin 9518 >>Turn in Agents of Destruction
 step
     .goto 1440/1,-3285.700,2995.100
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Vindicator Vedaar|r
     .target Vindicator Vedaar
-    .turnin 9516 >>Rendez Destroy the Legion
+    .turnin 9516 >>Turn in Destroy the Legion
 step
     .goto 1440/1,-3285.700,2995.100
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Vindicator Vedaar|r
     .target Vindicator Vedaar
-    .turnin 9520 >>Rendez Diabolical Plans
+    .turnin 9520 >>Turn in Diabolical Plans
     .isOnQuest 9520
 step
     .goto 1440/1,-3154.100,2898.400
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Gnarl|r
     >>|cRXP_FRIENDLY_Gnarl|r patrouille légèrement
     .target Gnarl
-    .turnin 9517 >>Rendez A Shameful Waste
-    .turnin 9526 >>Rendez Reclaiming Felfire Hill
+    .turnin 9517 >>Turn in A Shameful Waste
+    .turnin 9526 >>Turn in Reclaiming Felfire Hill
 step
     .goto 1440/1,-2817.500,2949.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Anilia|r
@@ -3787,7 +3787,7 @@ step
 step
     #optional
     .goto Ashenvale,34.41,47.98
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|cRXP_FRIENDLY_Daelyshia|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Daelyshia|r
     .fly Darkshore >> Volez à Sombrivage
     .target Daelyshia
     .zoneskip Darkshore
@@ -3910,7 +3910,7 @@ step
     .goto 1417/0,-1775.100,-1275.000,70,0
     .goto 1424/0,-1548.300,-804.400,70,0
     .subzone 271 >> Voyagez jusqu'à Southshore
-    >>|cRXP_WARN_NOTE : En voyageant sur la route, méfiez-vous de |cRXP_ENEMY_Messagère des Réprouvés|r. C'est un groupe de 5 mobs qui patrouille la route. Évitez-les si vous les voyez|r
+    >>|cRXP_WARN_NOTE: As you travel there along the road, watch out for the |cRXP_ENEMY_Forsaken Courier|r. It is a 5 pack of mobs which patrols the road you will be on. Avoid them if you see them|r
     .mob Forsaken Courier
 step
     .goto Hillsbrad Foothills,50.71,58.76,15,0
@@ -3948,7 +3948,7 @@ step
 step
     #completewith next
     .zone Western Plaguelands >> Voyagez aux Maleterres de l'Ouest
-    >>|cRXP_WARN_NOTE : Vous pouvez rencontrer un |cRXP_ENEMY_Lion des montagnes|r de niveau 34 sur le chemin. Fuyez simplement si vous l'agressez|r
+    >>|cRXP_WARN_NOTE: You may encounter a level 34 |cRXP_ENEMY_Mountain Lion|r on the way there. Just run away from it if you aggro it|r
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Bibilfaz Featherwhistle|r
     .goto Western Plaguelands,42.924,85.061
@@ -4726,7 +4726,7 @@ step
 step
     .goto Stranglethorn Vale,38.237,4.034
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Nizzle|r
-    .fp Rebel >> Apprenez le trajet aérien vers Camp Rebelle
+    .fp Rebel >> Get the Rebel Camp flight path
     .target Nizzle
 step
     #completewith stvEnd2
@@ -5267,7 +5267,7 @@ step << Draenei !Paladin
 step << Shaman
     #completewith next
     .goto The Exodar,42.29,71.54
-    .zone The Exodar >> Entrez à Exodar par l'entrée arrière
+    .zone The Exodar >> Enter The Exodar through the back entrance
 step << Shaman
     #completewith next
     .goto The Exodar,27.90,29.43,10 >> Dirigez-vous vers |cRXP_FRIENDLY_Farseer Nobundo|r en haut de la rampe
@@ -5302,7 +5302,7 @@ step << Shaman
     #completewith next
     .goto The Exodar,68.351,63.490
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Stephanos|r
-    .fly Blood Watch >> Envolez-vous vers Le Guet du sang
+    .fly Blood Watch >> Fly to Blood Watch
     .target Stephanos
     .zoneskip Bloodmyst Isle
 step << Shaman

@@ -1575,7 +1575,7 @@ step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Lyria Du Lac|r
     >>N'apprenez PAS [Rage sanguinaire] pour l'instant, vous devez garder de l'argent pour apprendre d'autres sorts bientôt
     .trainer >> Apprenez vos sorts de classe
-    .accept 1638 >> L'entraînement du guerrier
+    .accept 1638 >> A Warrior's Training
     .target Lyria Du Lac
     .train 1715,1
     .train 284,1
@@ -1586,7 +1586,7 @@ step << Warrior
     .goto Elwynn Forest,41.087,65.768
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Lyria Du Lac|r
     .trainer >> Apprenez vos sorts de classe
-    .accept 1638 >> L'entraînement du guerrier
+    .accept 1638 >> A Warrior's Training
     .target Lyria Du Lac
     .xp <10,1
 step
@@ -2302,7 +2302,7 @@ step
     .train 2550 >> Apprenez [Cuisine]
 step << Warrior/Paladin/Rogue
 #xprate >1.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Geofram Rochorteil|r en bas du bâtiment
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Geofram Bouldertoe|r downstairs in the building
     .goto Ironforge,51.8,29.5,15,0
     .goto Ironforge,49.6,28.2,12,0
     .goto Ironforge,49.9,26.3

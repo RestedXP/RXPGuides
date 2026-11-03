@@ -438,7 +438,7 @@ step << !NightElf !Draenei
     .bindlocation 2104,1
 step << NightElf/Draenei
     .goto Loch Modan,25.11,8.99
-    .hs >> |cRXP_WARN_Utilisez votre Pierre de foyer pour vous téléporter à Menethil ou courez-y si vous souhaitez vous rendre à Forgefer en utilisant le service de dépannage du site|r
+    .hs >> |cRXP_WARN_Hearthstone back to Menethil or run there if you wish to travel to Ironforge via the website unstuck method|r
     >>Voyagez à travers le tunnel Dun Algaz vers le Loch Modan si vous voulez aller à Ironforge à la marche
     .zoneskip Loch Modan --Completes if you run to Loch
     .subzoneskip 150 --Completes if u hearth to Menethil
@@ -460,7 +460,7 @@ step << NightElf/Draenei
 	.goto Loch Modan,19.85,63.04,40,0
 	.goto Dun Morogh,86.2,47.0
     >>Commencez à retirer votre équipement en courant vers Dun Morogh
-    .deathskip >> Attirez l'attention du |cRXP_ENEMY_Scarred Crag Boars|r pour mourir et réapparaître au |cRXP_FRIENDLY_Esprit Gardien des âmes|r une fois que vous êtes à Dun Morogh
+    .deathskip >> aggro the |cRXP_ENEMY_Scarred Crag Boars|r to die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r once you are in Dun Morogh
     .mob Scarred Crag Boar
     .subzoneskip 150 --Completes if u hearth to Menethil
 step << skip --logout skip NightElf/Draenei
@@ -768,7 +768,7 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #name 24-27 Carmines/Bois de la Pénombre
 #subgroup RestedXP Alliance 20-32
-#next 27-30 Paluns/Contreforts d'Hillsbrad;28-30 Bois de la Pénombre
+#next 27-30 Paluns/Contreforts d'Hillsbrad;28-30 Duskwood
 
 step
     .goto Stormwind City,55.21,7.04
@@ -783,7 +783,7 @@ step << Draenei
 step << Draenei
     .goto Stormwind City,78.508,18.312
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Emissary Taluun|r
-    .accept 9429 >> Accept Voyagez vers Goldshire
+    .accept 9429 >> Accept Travel to Darkshire
     .target Emissary Taluun
 step << Rogue
     .goto StormwindClassic,74.65,52.83
@@ -882,7 +882,7 @@ step
     #optional
     .goto Stormwind City,64.201,60.575
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Felicia Gump|r
-    >>|cRXP_WARN_Si vous n'avez pas l'intention de monter votre |T133971:0|t[Cuisine] à au moins 50, sautez cette étape|r
+    >>|cRXP_WARN_If you do not plan on leveling your |T133971:0|t[Cooking] to at least 50, skip this step|r
     >>|cRXP_BUY_Achetez les|r [Herbes aromatiques de Stormwind]
     .collect 2665,1,90,1 --Stormwind Seasoning Herbs (1)
     .target Felicia Gump
@@ -1201,7 +1201,7 @@ step
 step << Draenei
     .goto Duskwood,71.815,46.373
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Anchorite Delan|r
-    .turnin 9429 >> Turn in Voyagez vers Goldshire
+    .turnin 9429 >> Turn in Travel to Darkshire
     .target Anchorite Delan
 step
     .goto Duskwood,75.302,48.046
@@ -4575,7 +4575,7 @@ step
 step
     .goto Stranglethorn Vale,38.237,4.034
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Nizzle|r
-    .fp Rebel >> Apprenez le trajet aérien vers Camp Rebelle
+    .fp Rebel >> Get the Rebel Camp flight path
     .target Nizzle
 step
     #completewith stvEnd2
@@ -5125,7 +5125,7 @@ step << Draenei !Paladin
 step << Shaman
     #completewith next
     .goto The Exodar,42.29,71.54
-    .zone The Exodar >> Entrez à Exodar par l'entrée arrière
+    .zone The Exodar >> Enter The Exodar through the back entrance
 step << Shaman
     #completewith next
     .goto The Exodar,27.90,29.43,10 >> Dirigez-vous vers |cRXP_FRIENDLY_Farseer Nobundo|r en haut de la rampe
@@ -5160,7 +5160,7 @@ step << Shaman
     #completewith next
     .goto The Exodar,68.351,63.490
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Stephanos|r
-    .fly Blood Watch >> Envolez-vous vers Le Guet du sang
+    .fly Blood Watch >> Fly to Blood Watch
     .target Stephanos
     .zoneskip Bloodmyst Isle
 step << Shaman
@@ -5284,11 +5284,11 @@ RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
 << Alliance
-#name 28-30 Bois de la Pénombre
+#name 28-30 Duskwood
 #version 7
 #group RestedXP Guide TBC (A)
 #subgroup RestedXP Alliance 20-32
-#next 30-32 Hautebrande
+#next 30-32 Hillsbrad
 #xprate >1.49
 
 step << !Mage
@@ -5614,7 +5614,7 @@ step
     #optional
     .isOnQuest 231
     .goto Duskwood,17.72,29.07
-    >>Cliquez sur le |cRXP_PICK_A Weathered Grave|r
+    >>Cliquez sur la |cRXP_PICK_A Weathered Grave|r
     .turnin 231 >> Rendez la quête L'amour d'une fille
 step
     .isOnQuest 181,101,78,58,160
@@ -5799,7 +5799,7 @@ step << !Mage
     .zoneskip Duskwood,1
 step
     #completewith next
-    .zone Stormwind City >> Retour à Hurlevent
+    .zone Stormwind City >> Return to Stormwind City
 step << Shaman
 	.goto Stormwind City,61.822,83.991
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à la |cRXP_FRIENDLY_Long-voyante Umbrua|r
@@ -5946,7 +5946,7 @@ step << skip
     .goto StormwindClassic,60.5,12.3,0
     .link https://www.youtube.com/watch?v=M_tXROi9nMQ >> Cliquez ici pour un "logout skip" à l'intérieur du tram
     .zone Ironforge >> Prenez le tram pour Ironforge
-    >>Téléportez-vous vers Forgefer à la place si vous avez ce sort entraîné << Mage
+    >>Teleport to Ironforge instead if you have that spell trained << Mage
     .zoneskip Wetlands
 step
     .goto Ironforge,69.540,50.325
@@ -6128,7 +6128,7 @@ RXPGuides.RegisterGuide([[
 #version 7
 #group RestedXP Guide TBC (A)
 #subgroup RestedXP Alliance 20-32
-#name 30-32 Hautebrande
+#name 30-32 Hillsbrad
 #next 32-33 Les Salines
 #xprate >1.49
 
@@ -6300,7 +6300,7 @@ step << Draenei !Paladin
 step << Shaman
     #completewith next
     .goto The Exodar,42.29,71.54
-    .zone The Exodar >> Entrez à Exodar par l'entrée arrière
+    .zone The Exodar >> Enter The Exodar through the back entrance
 step << Shaman
     #completewith next
     .goto The Exodar,27.90,29.43,10 >> Dirigez-vous vers |cRXP_FRIENDLY_Farseer Nobundo|r en haut de la rampe
@@ -6335,7 +6335,7 @@ step << Shaman
     #completewith next
     .goto The Exodar,68.351,63.490
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Stephanos|r
-    .fly Blood Watch >> Envolez-vous vers Le Guet du sang
+    .fly Blood Watch >> Fly to Blood Watch
     .target Stephanos
     .zoneskip Bloodmyst Isle
 step << Shaman
@@ -6426,7 +6426,7 @@ step << Draenei
     .zoneskip Wetlands
     .bindlocation 2104,1
 step << Shaman
-    .cast 556 >> |T136010:0|t[Rappel astral] vers Les Paluns
+    .cast 556 >> |T136010:0|t[Astral Recall] to Wetlands
     .cooldown spell,556,>0,1
     .zoneskip Wetlands
 step << Draenei
@@ -6674,7 +6674,7 @@ step << Hunter
     .goto Hillsbrad Foothills,56.6,53.8
     >>|cRXP_WARN_Lancez|r |T132164:0|t[Apprivoiser la bête] |cRXP_WARN_sur une |cRXP_ENEMY_Ancienne Rampemousse|r pour le dompter|r -- .tame 2348
     .train 17264 >>Attaquez des créatures pour apprendre [Morsure (Rang 4)]
-    .link https://www.wow-petopia.com/classic/training.php >> |cRXP_WARN_Cliquez ici pour plus d'information sur le dressage des familiers|r
+    .link https://www.wow-petopia.com/classic/training.php >> Cliquez ici pour plus d'information sur le dressage des familiers
 	.unitscan Elder Moss Creeper
 step
     #loop

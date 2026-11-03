@@ -8,11 +8,11 @@ RXPGuides.RegisterGuide([[
 #name Guide Sésame 58-60
 #subgroup RestedXP Horde Sésame 58-60
 #subweight -1
-#title Personnage boosté 58-60
+#title Boosted Character 58-60
 #next 60-61 Péninsule des Flammes infernales
 
 step
-+Dès que vous vous connectez pour la première fois, terminez la petite section tutorielle devant votre formateur de classe pour accéder à tout l'équipement amélioré
++As soon as you log in for the first time, finish the little tutorial section in front of your class trainer to get access to all of the boosted gear
 .use 185964
 .use 186051
 .use 186052
@@ -99,7 +99,7 @@ step
 step
     .goto Tirisfal Glades,83.2,71.4
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Mehlar Aubelame|r
-    .accept 9443 >>Acceptez la quête La pseudo-marque du Porteur de Lumière
+    .accept 9443 >>Accept in The So-Called Mark of the Lightbringer
     .target Mehlar Dawnblade
 step
     .goto Tirisfal Glades,83.29,72.34
