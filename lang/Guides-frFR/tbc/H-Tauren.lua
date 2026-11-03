@@ -1072,7 +1072,7 @@ step << !Shaman
 	.goto Mulgore,57.77,30.48,60,0
 	.goto Mulgore,58.79,28.52,60,0
 	.goto Mulgore,60.56,25.88,60,0
-    .xp 9+3485 >> Grind to 3485+/6500xp
+    .xp 9+3485 >> Montez jusqu'à 3485+ / 6500 XP
 step
     #xprate <1.5 << !Shaman
     #softcore

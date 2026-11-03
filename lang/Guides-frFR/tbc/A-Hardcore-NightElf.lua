@@ -1056,7 +1056,7 @@ step << !Rogue
     .target Denalan
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Denalan|r
     .use 5179 >> Utilisez le  [|cRXP_LOOT_Moss-twined Heart|r] pour commencer la quête
-    .accept 927 >> Accept The Moss-twined Heart
+    .accept 927 >> Accept Les Moss-twined Heart
 	.turnin 927 >> Rendez la quête Le cœur moussu
     .itemcount 5179,1
 step << Hunter
@@ -1127,7 +1127,7 @@ step << Rogue
     .target Denalan
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Denalan|r
     .use 5179 >> Utilisez le [|cRXP_LOOT_Moss-twined Heart|r] pour commencer la quête
-    .accept 927 >> Accept The Moss-twined Heart
+    .accept 927 >> Accept Les Moss-twined Heart
 	.turnin 927 >> Rendez la quête Le cœur moussu
     .itemcount 5179,1
 step << Rogue
@@ -1153,7 +1153,7 @@ step << Rogue
     .target Moon Priestess Amara
 step << Rogue
     #completewith TotM
-    .zone Darnassus >> Return to Darnassus
+    .zone Darnassus >> Retournez à Darnassus
 step << Rogue
     .goto Darnassus,38.18,21.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Rellian Greenspyre|r
@@ -1244,7 +1244,7 @@ step
     .turnin 938 >> Rendez la quête Brume
 step
     #completewith next
-    .goto 1438/1,1949.100,10033.300,100 >> Return to Darnassus
+    .goto 1438/1,1949.100,10033.300,100 >> Retournez à Darnassus
     .zoneskip Darnassus
 step
     .goto Darnassus,70.679,45.379
@@ -1272,10 +1272,10 @@ step << Warrior
     .mob Vorlus Vilehoof
 step << Warrior
     #completewith next
-    .zone Darnassus >> Return to Darnassus
+    .zone Darnassus >> Retournez à Darnassus
 step << Warrior
     #completewith next
-    .zone Darnassus >> Return to Darnassus
+    .zone Darnassus >> Retournez à Darnassus
 step << Warrior
     .goto Darnassus,57.305,34.606
     .target Elanaria

@@ -828,13 +828,13 @@ step
     #xprate <1.5
     .goto 1439,36.976,44.135
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Wizbang Cranktoggle|r à l'étage
-    .accept 983 >> Acceptez Buzzbox 827
+    .accept 983 >> Acceptez la quête Bigobox 827
     .target Wizbang Cranktoggle
 step
     #xprate >1.49
     .goto 1439,36.976,44.135
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Wizbang Cranktoggle|r à l'étage
-    .accept 983 >> Acceptez Buzzbox 827
+    .accept 983 >> Acceptez la quête Bigobox 827
     .target Wizbang Cranktoggle
     .xp >15,1 --XX Skip if 15+
 step
@@ -4944,7 +4944,7 @@ step << Rogue
     #xprate >1.59
     #ah
     .goto Stormwind City,53.612,59.764
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Auctioneer Jaxon|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Commissaire-priseur Jaxon|r
     >>Achetez l'|T134437:0|t[Anti-venin] pour votre quête de |T132290:0|t[Poisons] plus tard, et le reste pour rendre des quêtes plus rapidement aux Carmines très bientôt << !Dwarf
     >>Achetez les objets suivants pour rendre des quêtes plus rapidement aux Carmines très bientôt << Dwarf
     >>Ceux-ci vont feront gagner du temps comme vous n'aurez pas besoin de chercher des mobs à tuer. Passez cette étape si vous ne voulez pas les acheter
@@ -5580,7 +5580,7 @@ step << NightElf Warrior
     #label NEWarRogNoDMNoFP4
     #completewith NEWarRogNoDMIFPP
     .goto 1455,62.378,88.671
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Brenwyn Wintersteel|r en bas des escaliers
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Brenwyn Hiémacier|r en bas des escaliers
     >>|cRXP_BUY_Achetez-lui le|r |T135427:0|t[Couteau de lancer lourd] |cRXP_BUY_|r
     .collect 3108,200 --Collect Heavy Throwing Knife (200)
     .target Brenwyn Wintersteel
@@ -10009,7 +10009,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Alliance 1-20
 #groupid RXP-SRGCE-A1
 #name 19-21 Sombrivage/Orneval
-#next RestedXP Alliance 20-30\21-23 Ashenvale/Serres-Rocheuses
+#next RestedXP Alliance 20-30\21-23 Orneval/Serres-Rocheuses
 
 step
     #xprate >1.59
@@ -10802,7 +10802,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Alliance 1-20
 #groupid RXP-SRGCE-A1
 #name 20-21 Sombrivage/Orneval
-#next RestedXP Alliance 20-30\21-23 Serres-Rocheuses/Orneval;RestedXP Alliance 20-30\21-22 Ashenvale SoD
+#next RestedXP Alliance 20-30\21-23 Serres-Rocheuses/Orneval; RestedXP Alliance 20-30\21-22 Orneval SoD
 
 
 step << Druid

@@ -1895,7 +1895,7 @@ step << Hunter
     .target Jaeana
 step << Hunter/Warrior/Priest/Sod Rogue
     .goto Darnassus,57.56,46.73
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Ilyenia Moonfire|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Ilyenia Lunéclat|r
     .skipgossip 11866,1
     .train 227 >>Apprenez la compétence Bâtons << Hunter/Warrior/Priest
     .train 265 >>Apprenez la compétence Arcs << Sod Rogue

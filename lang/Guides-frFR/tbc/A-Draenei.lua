@@ -46,7 +46,7 @@ step
     .target Proenitus
 step << Priest/Mage
     .goto Azuremyst Isle,79.253,50.884
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ryosh|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Ryosh|r
     .vendor >> Vendez tout ce dont nous n'avez pas besoin
     >>|cRXP_BUY_Achetez 10|r [Eau de source]
     .collect 159,10 --Collect Refreshing Spring Water (x10)
@@ -222,8 +222,8 @@ step
 step << Shaman
     .goto Azuremyst Isle,79.278,49.126
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Firmanvaar|r
-    .accept 9421 >> Accept Shaman Training
-	.turnin 9421 >> Turn in Shaman Training
+    .accept 9421 >> Acceptez Shaman Training
+	.turnin 9421 >> Rendez Shaman Training
     .accept 9449 >> Acceptez la quête L'appel de la terre
 	.train 8042 >> Apprenez [Horion de terre]
     .target Firmanvaar
@@ -234,7 +234,7 @@ step << Shaman
     .unitscan Draenei Survivor
 step << Shaman
     .goto Azuremyst Isle,71.788,40.241
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Spirit of the Vale|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Spirit of the Vale|r
     .turnin 9449 >> Rendez la quête L'appel de la terre
     .accept 9450 >> Acceptez la quête L'appel de la terre
     .target Spirit of the Vale
@@ -248,7 +248,7 @@ step << Shaman
     .mob Restless Spirit of Earth
 step << Shaman
     .goto Azuremyst Isle,71.788,40.241
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Spirit of the Vale|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Spirit of the Vale|r
     .turnin 9450 >> Rendez la quête L'appel de la terre
     .accept 9451 >> Acceptez la quête L'appel de la terre
     .target Spirit of the Vale
@@ -293,7 +293,7 @@ step << Hunter
 
 step << Priest
 	.goto Azuremyst Isle,79.254,50.887
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ryosh|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Ryosh|r
     >>|cRXP_BUY_Achetez 10|r [Refreshing Spring Water] |cRXP_BUY_à Brother Danil|r
     .collect 159,10 --Collect Refreshing Spring Water (x15)
     .target Ryosh
@@ -594,7 +594,7 @@ step << Paladin
 step << Warrior
     .goto Azuremyst Isle,49.579,53.107
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Nabek|r
-    >>|cRXP_BUY_Buy a|r |T135321:0|t[Gladius] |cRXP_BUY_if you can afford it|r
+    >>|cRXP_BUY_Achetez un|r |T135321:0|t[Gladius] |cRXP_BUY_si vous pouvez vous le permettre|r
     .collect 2488,1 --Collect Gladius (1)
     .target Nabek
     .money <0.0536
@@ -1011,7 +1011,7 @@ step -- to avoid long RP incase turned in in above step
 step
     #completewith next
     .goto Azuremyst Isle,46.219,70.983
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Logan Daniel|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Logan Daniel|r
     .vendor >> Vendez ce dont vous n'avez pas besoin au marchand en attendant la fin du RP << !Hunter
     >>|cRXP_BUY_Achetez des|r [Flèches grossières] |cRXP_BUY_au marchand en attendant la fin du RP|r << Hunter
     .collect 2512,1000 << Hunter --Rough Arrow (1000)
@@ -1019,7 +1019,7 @@ step
 step
     .goto Azuremyst Isle,47.131,70.289
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à la |cRXP_FRIENDLY_Prêtresse Kyleen Il'dinare|r
-    .accept 9515 >> Accept Warlord Sriss'tiz
+    .accept 9515 >> Acceptez Warlord Sriss'tiz
     .target Priestess Kyleen Il'dinare
 step
     .goto Azuremyst Isle,50.2,70.6,40,0
@@ -1040,7 +1040,7 @@ step
 step << !Hunter
     .isOnQuest 9515
     .goto Azuremyst Isle,26.75,75.84
-    .subzone 3569 >> Enter the Tides' Hollow cave
+    .subzone 3569 >> Entrez dans la grotte du Creux de la marée
 step << !Hunter
     #completewith next
     .goto Azuremyst Isle,26.33,73.79,15 >> Descendez à l'étage inférieur
@@ -1065,7 +1065,7 @@ step
     .goto Azuremyst Isle,49.367,51.082
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Arugoo des Calmepins|r
     .turnin 9544 >> Rendez la quête La prophétie d'Akida
-    .accept 9559 >> Accept Stillpine Hold
+    .accept 9559 >> Acceptez Stillpine Hold
     .target Arugoo of the Stillpine
 step
     .goto Azuremyst Isle,48.392,51.482
@@ -1095,7 +1095,7 @@ step << Shaman
 step << Hunter
     .goto Azuremyst Isle,49.780,51.938
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Actéon|r.
-    .accept 9757 >> Accept Seek Huntress Kella Nightbow
+    .accept 9757 >> Acceptez Seek Huntress Kella Nightbow
     .trainer >> Apprenez vos sorts de classe
     .target Acteon
 step << Priest
@@ -1120,12 +1120,12 @@ step << Warrior
     .goto Azuremyst Isle,50.023,50.515
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Ruada|r
     .trainer >> Apprenez vos sorts de classe
-    .accept 9582 >> Accept Strength of One
+    .accept 9582 >> Acceptez Strength of One
     .target Ruada
 step << Hunter
     .goto Azuremyst Isle,24.183,54.341
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Huntress Kella Nightbow|r
-    .turnin 9757 >> Turn in Seek Huntress Kella Nightbow
+    .turnin 9757 >> Rendez Seek Huntress Kella Nightbow
     .accept 9591 >> Acceptez la quête Dompter la bête
     .target Huntress Kella Nightbow
 step << Hunter
@@ -1136,7 +1136,7 @@ step << Hunter
 step << Hunter
     .isOnQuest 9515
     .goto Azuremyst Isle,26.75,75.84
-    .subzone 3569 >> Enter the Tides' Hollow cave
+    .subzone 3569 >> Entrez dans la grotte du Creux de la marée
 step << Hunter
     #completewith next
     .goto Azuremyst Isle,26.33,73.79,15 >> Descendez à l'étage inférieur
@@ -1147,7 +1147,7 @@ step << Hunter
     .mob Warlord Sriss'tiz
 step << Hunter
     .isOnQuest 9515
-    .goto Azuremyst Isle,26.75,75.84,10 >> Exit the Tides' Hollow cave
+    .goto Azuremyst Isle,26.75,75.84,10 >> Quittez la grotte du Creux de la marée
     .subzoneskip 3569,1
 step << Hunter
     .goto Azuremyst Isle,24.183,54.341
@@ -1157,9 +1157,9 @@ step << Hunter
     .target Huntress Kella Nightbow
 step
     .goto The Exodar,81.488,51.449
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Torallius the Pack Handler|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Torallius the Pack Handler|r
     .turnin 9623 >> Rendez la quête Il est temps de grandir
-    .accept 9625 >> Accept Elekks Are Serious Business
+    .accept 9625 >> Acceptez Elekks Are Serious Business
     .target Torallius the Pack Handler
 step << Hunter
     .goto Azuremyst Isle,34.56,34.04,60,0
@@ -1184,7 +1184,7 @@ step << Hunter
     .goto Azuremyst Isle,24.183,54.341
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Huntress Kella Nightbow|r
     .turnin 9593 >> Rendez la quête Dompter la bête
-    .accept 9675 >> Accept Beast Training
+    .accept 9675 >> Acceptez Beast Training
     .target Huntress Kella Nightbow
 step << Hunter
     .isOnQuest 9675
@@ -1193,7 +1193,7 @@ step << Hunter
 	.goto The Exodar,53.79,86.11,30,0
     .goto The Exodar,44.240,86.612
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Ganaar|r
-    .turnin 9675 >> Turn in Beast Training
+    .turnin 9675 >> Rendez Beast Training
 	.trainer >> Apprenez les compétences de votre familier
     .target Ganaar
 step << Hunter
@@ -1225,19 +1225,19 @@ step << Hunter
 	--.link https://www.youtube.com/watch?v=WUWNGyQWJw8 >> |cRXP_WARN_Click here for video reference|r
 step
     .goto Azuremyst Isle,44.762,23.906
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moordo|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Moordo|r
     .target Moordo
-    .accept 9560 >> Accept Beasts of the Apocalypse!
+    .accept 9560 >> Acceptez Beasts of the Apocalypse!
 step
     .goto Azuremyst Isle,44.627,23.481
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gurf|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Gurf|r
     .target Gurf
-    .accept 9562 >> Accept Murlocs... Why Here? Why Now?
+    .accept 9562 >> Acceptez Murdaloc... Why Here? Why Now?
 step
     .goto Azuremyst Isle,46.685,20.617
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Chief Stillpine|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_High Chief Stillpine|r
     .target High Chief Stillpine
-    .turnin 9559 >> Turn in Stillpine Hold
+    .turnin 9559 >> Rendez Stillpine Hold
 step << Hunter
     .goto Azuremyst Isle,54.7,18.4
 	.cast 1515 >> Utilisez [Apprivoiser la bête] sur un |cRXP_ENEMY_Ravager Specimen|r pour le dompter
@@ -1249,7 +1249,7 @@ step << Shaman
     .mob Ravager Specimen
 step << Shaman
     .goto Azuremyst Isle,59.534,17.951
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Temper|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Temper|r
     .turnin 9464 >> Rendez la quête L'appel du feu
     .accept 9465 >> Acceptez la quête L'appel du feu
     .target Temper
@@ -1275,19 +1275,19 @@ step << Warrior
     .mob Death Ravager
 step
     .goto Azuremyst Isle,44.762,23.906
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moordo|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Moordo|r
     .target Moordo
-    .turnin 9560 >> Turn in Beasts of the Apocalypse!
+    .turnin 9560 >> Rendez Beasts of the Apocalypse!
 step
     .goto Azuremyst Isle,46.904,21.160
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Stillpine the Younger|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Stillpine the Younger|r
     .target Stillpine the Younger
-    .accept 9573 >> Accept Chieftain Oomooroo
+    .accept 9573 >> Acceptez Chieftain Oomooroo
 step
     .goto Azuremyst Isle,46.685,20.617
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Chief Stillpine|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_High Chief Stillpine|r
     .target High Chief Stillpine
-    .accept 9565 >> Accept Search Stillpine Hold
+    .accept 9565 >> Acceptez Search Stillpine Hold
 step
     .isOnQuest 9573,9565
     .goto Azuremyst Isle,45.391,18.194,20 >> Entrez dans la grotte du repaire des Calmepins
@@ -1323,13 +1323,13 @@ step
     .goto Azuremyst Isle,50.632,11.544
     >>Cliquez sur le |cRXP_PICK_Blood Crystal|r
     >>|cRXP_WARN_Évitez de tuer |cRXP_ENEMY_The Kurken|r si possible car vous aurez besoin de le tuer bientôt|r
-    .turnin 9565 >> Turn in Search Stillpine Hold
-    .accept 9566 >> Accept Blood Crystals
+    .turnin 9565 >> Rendez Search Stillpine Hold
+    .accept 9566 >> Acceptez Blood Crystals
 step
     #completewith next
     >>Tuez les |cRXP_ENEMY_Crazed Wildkins|r << !Shaman
     >>Tuez les |cRXP_ENEMY_Crazed Wildkins|r. Dépouillez-les pour leur |cRXP_LOOT_Ritual Torch|r << Shaman
-    >>|cRXP_WARN_You will finish this shortly if you haven't yet|r
+    >>|cRXP_WARN_Vous terminerez ceci sous peu si vous ne l'avez pas encore fait|r
     .complete 9573,2 --Kill Crazed Wildkin (x9)
     .complete 9465,1 << Shaman --Collect Ritual Torch (x1)
     .mob Crazed Wildkin
@@ -1338,24 +1338,24 @@ step
     .goto Azuremyst Isle,45.391,18.194,12 >> Quittez la grotte
 step
     .goto Azuremyst Isle,46.685,20.617
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Chief Stillpine|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_High Chief Stillpine|r
     .target High Chief Stillpine
-    .turnin 9566 >> Turn in Blood Crystals
+    .turnin 9566 >> Rendez Blood Crystals
 step
     #optional
     .isQuestComplete 9573
     .goto Azuremyst Isle,46.904,21.160
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Stillpine the Younger|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Stillpine the Younger|r
     .target Stillpine the Younger
-    .turnin 9573 >> Turn in Chieftain Oomooroo
+    .turnin 9573 >> Rendez Chieftain Oomooroo
 step
     .goto Azuremyst Isle,46.972,22.266
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kurz the Revelator|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Kurz the Revelator|r
     .target Kurz the Revelator
-    .accept 9570 >> Accept The Kurken is Lurkin'
+    .accept 9570 >> Accept Les Kurken is Lurkin'
 step
 	.goto Azuremyst Isle,46.964,22.011
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Parkat Steelfur|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Parkat Steelfur|r
     .vendor >> |cRXP_BUY_Achetez une|r [Petite sacoche marron]
     .target Parkat Steelfur
     .subzoneskip 3572,1
@@ -1385,29 +1385,29 @@ step
 step
     .isQuestComplete 9573
     .goto Azuremyst Isle,46.904,21.160
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Stillpine the Younger|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Stillpine the Younger|r
     .target Stillpine the Younger
-    .turnin 9573 >> Turn in Chieftain Oomooroo
+    .turnin 9573 >> Rendez Chieftain Oomooroo
 step
     .goto Azuremyst Isle,46.972,22.266
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kurz the Revelator|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Kurz the Revelator|r
     .target Kurz the Revelator
-    .turnin 9570 >> Turn in The Kurken is Lurkin'
-    .accept 9571 >> Accept The Kurken's Hide
+    .turnin 9570 >> Turn in Les Kurken is Lurkin'
+    .accept 9571 >> Accept Les Kurken's Hide
 step << Shaman
     .goto Azuremyst Isle,46.685,20.617
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Chief Stillpine|r
-    .accept 9622 >> Accept Warn Your People
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_High Chief Stillpine|r
+    .accept 9622 >> Acceptez Warn Your People
     .target High Chief Stillpine
 step
 	#label end
     .goto Azuremyst Isle,44.762,23.906
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moordo|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Moordo|r
     .target Moordo
-    .turnin 9571 >> Turn in The Kurken's Hide
+    .turnin 9571 >> Turn in Les Kurken's Hide
 step << Shaman
     .goto Azuremyst Isle,59.534,17.951
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Temper|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Temper|r
     .turnin 9465 >> Rendez la quête L'appel du feu
     .accept 9467 >> Acceptez la quête L'appel du feu
     .target Temper
@@ -1417,7 +1417,7 @@ step << Shaman
 step << Shaman
     .goto Azuremyst Isle,47.110,50.603
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à l' |cRXP_FRIENDLY_Exarque Menelaous|r
-    .turnin 9622 >> Turn in Warn Your People
+    .turnin 9622 >> Rendez Warn Your People
     .target Exarch Menelaous
 step << Shaman
     #completewith Wickerman
@@ -1442,7 +1442,7 @@ step << Shaman
     .use 24335
 step << Shaman
     .goto Azuremyst Isle,59.534,17.951
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Temper|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Temper|r
     .turnin 9467 >> Rendez la quête L'appel du feu
     .accept 9468 >> Acceptez la quête L'appel du feu
     .target Temper
@@ -1467,7 +1467,7 @@ step
     .use 23850 >> Utilisez [|cRXP_LOOT_Gurf's Dignity|r] pour commencer la quête
     >>|cRXP_ENEMY_Murgurgula|r patrouille le long de la côte
 	.collect 23850,1,9564,1 --Gurf's Dignity (1)
-    .accept 9564 >> Accept Gurf's Dignity
+    .accept 9564 >> Acceptez Gurf's Dignity
 	.unitscan Murgurgula
 step
     #loop
@@ -1502,21 +1502,21 @@ RXPGuides.RegisterGuide([[
 
 step
     .goto Bloodmyst Isle,63.426,88.787
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aonar|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Aonar|r
     .target Aonar
-    .accept 9624 >> Accept A Favorite Treat
+    .accept 9624 >> Acceptez A Favorite Treat
 step
     .isOnQuest 9625
     .goto Bloodmyst Isle,63.036,87.905
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vorkhan the Elekk Herder|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Vorkhan the Elekk Herder|r
     .target Vorkhan the Elekk Herder
-    .turnin 9625 >> Turn in Elekks Are Serious Business
-    .accept 9634 >> Accept Alien Predators
+    .turnin 9625 >> Rendez Elekks Are Serious Business
+    .accept 9634 >> Acceptez Alien Predators
 step
     .goto Bloodmyst Isle,63.036,87.905
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vorkhan the Elekk Herder|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Vorkhan the Elekk Herder|r
     .target Vorkhan the Elekk Herder
-    .accept 9634 >> Accept Alien Predators
+    .accept 9634 >> Acceptez Alien Predators
 step
     #loop
     .goto Bloodmyst Isle,57.5,86.5,0
@@ -1559,13 +1559,13 @@ step
     .goto Bloodmyst Isle,55.843,59.807
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à l' |cRXP_FRIENDLY_Hôte Topher Loaal|r
     .target Caregiver Topher Loaal
-    .home >> Set your Hearthstone to Blood Watch
+    .home >> Liez votre Pierre de Foyer à Baie-du-Butin
     .subzoneskip 3584,1
 step
     .goto Bloodmyst Isle,56.428,56.817
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Maatparm|r
     .target Maatparm
-    .accept 9648 >> Accept Maatparm Mushroom Menagerie
+    .accept 9648 >> Acceptez Maatparm Mushroom Menagerie
 step
     #completewith next
     .goto Bloodmyst Isle,57.680,53.876
@@ -1576,7 +1576,7 @@ step
     .goto Bloodmyst Isle,57.680,53.876
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Laando|r
     .target Laando
-    .fp Blood Watch>> Get the Blood Watch flight path
+    .fp Blood Watch>> Allez au maître des gryphons à Baie-du-Butin
     .subzoneskip 3584,1
 step
     #optional
@@ -1587,19 +1587,19 @@ step
 step
     .goto Bloodmyst Isle,52.684,53.214
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Exarch Admetius|r
-    .accept 9693 >> Accept What Argus Means to Me
+    .accept 9693 >> Acceptez What Argus Means to Me
     .target Exarch Admetius
 step
     .goto Bloodmyst Isle,52.588,53.207
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Harbinger Mikolaas|r
-    .accept 9581 >> Accept Learning from the Crystals
+    .accept 9581 >> Acceptez Learning from the Crystals
     .target Harbinger Mikolaas
 step
     .goto Bloodmyst Isle,55.429,55.266
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Redresseur de torts Boros|r
     .target Vindicator Boros
-    .turnin 9693 >> Turn in What Argus Means to Me
-    .accept 9694 >> Accept Blood Watch
+    .turnin 9693 >> Rendez What Argus Means to Me
+    .accept 9694 >> Acceptez Blood Watch
 step
     #loop
     .goto Bloodmyst Isle,47.0,51.6,0
@@ -1616,12 +1616,12 @@ step
     .goto Bloodmyst Isle,55.429,55.266
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Redresseur de torts Boros|r
     .target Vindicator Boros
-    .turnin 9694 >> Turn in Blood Watch
+    .turnin 9694 >> Rendez Blood Watch
 step
     .goto Bloodmyst Isle,53.245,57.741
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Morae|r
     .target Morae
-    .accept 9629 >> Accept Catch and Release
+    .accept 9629 >> Accept Catch et les Release
 step
 	#completewith next
 	>>Cueillez un |cRXP_LOOT_Champignon de sang|r sur le sol
@@ -1712,18 +1712,18 @@ step
     .complete 9624,1 --Collect Sand Pear (x10)
 step
     .goto Bloodmyst Isle,63.426,88.787
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aonar|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Aonar|r
     .target Aonar
-    .turnin 9624 >> Turn in A Favorite Treat
+    .turnin 9624 >> Rendez A Favorite Treat
 step
     .goto Bloodmyst Isle,63.036,87.905
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vorkhan the Elekk Herder|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Vorkhan the Elekk Herder|r
     .target Vorkhan the Elekk Herder
-    .turnin 9634 >> Turn in Alien Predators
+    .turnin 9634 >> Rendez Alien Predators
 step
     .goto Bloodmyst Isle,62.998,87.541
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Kessel|r
-    .accept 9663 >> Accept The Kessel Run
+    .accept 9663 >> Accept Les Kessel Run
     .target Kessel
 step
     #completewith next
@@ -1737,15 +1737,15 @@ step
     *|cRXP_WARN_Suivez la route au sud pour arriver au |cRXP_FRIENDLY_High Chief Stillpine|r en sécurité|r
 step
     .goto Azuremyst Isle,46.685,20.617
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Chief Stillpine|r
-    .accept 9622 >> Accept Warn Your People << !Shaman
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_High Chief Stillpine|r
+    .accept 9622 >> Acceptez Warn Your People << !Shaman
     .complete 9663,1 --High Chief Stillpine Warned
     .target High Chief Stillpine
 step
     .goto Azuremyst Isle,44.627,23.481
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gurf|r
-    .turnin 9564 >> Turn in Gurf's Dignity
-    .turnin 9562 >> Turn in Murlocs... Why Here? Why Now?
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Gurf|r
+    .turnin 9564 >> Rendez Gurf's Dignity
+    .turnin 9562 >> Rendez Murdaloc Why Here? Why Now?
     .target Gurf
 step
     .goto Azuremyst Isle,49.25,49.53
@@ -1760,8 +1760,8 @@ step << Mage
 step << Warrior
     .goto Azuremyst Isle,50.023,50.515
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Ruada|r
-    .turnin 9582 >> Turn in Strength of One
-    .accept 10350 >> Accept Behomat
+    .turnin 9582 >> Rendez Strength of One
+    .accept 10350 >> Acceptez Behomat
     .trainer >> Apprenez vos sorts de classe
     .target Ruada
     .subzoneskip 3576,1
@@ -1788,7 +1788,7 @@ step << Shaman
 step
     #optional
     .use 23910 >> Utilisez la [Communication des Elfes de sang] pour commencer la quête
-    .accept 9616 >> Accept Bandits!
+    .accept 9616 >> Acceptez Bandits!
     .itemcount 23910,1
 step
     #optional
@@ -1807,7 +1807,7 @@ step
 step
     .goto Azuremyst Isle,47.110,50.603
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à l' |cRXP_FRIENDLY_Exarque Menelaous|r
-    .turnin 9622 >> Turn in Warn Your People << !Shaman
+    .turnin 9622 >> Rendez Warn Your People << !Shaman
     .complete 9663,2 --Exarch Menelaous Warned
     .target Exarch Menelaous
 step
@@ -1822,7 +1822,7 @@ step
 step
     .goto Azuremyst Isle,47.131,70.289
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à la |cRXP_FRIENDLY_Prêtresse Kyleen Il'dinare|r
-    .turnin 9515 >> Turn in Warlord Sriss'tiz
+    .turnin 9515 >> Rendez Warlord Sriss'tiz
     .target Priestess Kyleen Il'dinare
 step << Paladin
     #completewith next
@@ -1838,36 +1838,36 @@ step << Paladin
 	.trainer >> Apprenez vos sorts de classe
 step
     .isOnQuest 9581,9663
-	.hs >> Hearth to Blood Watch
+	.hs >> Retournez au Guet du Sang
     .cooldown item,6948,>2,1
 step
 	.isOnQuest 9581,9663
     .goto The Exodar,68.351,63.490
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Stephanos|r
-    .fly Blood Watch >> Fly to Blood Watch
+    .fly Blood Watch >> Envolez-vous vers Le Guet du sang
     .target Stephanos
     .zoneskip Bloodmyst Isle
 step
     .goto Bloodmyst Isle,55.083,57.997
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Vindicator Aalesia|r
-    .accept 9567 >> Accept Know Thine Enemy
+    .accept 9567 >> Acceptez Know Thine Enemy
     .target Vindicator Aalesia
 step
     .goto Bloodmyst Isle,52.588,53.207
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Harbinger Mikolaas|r
-    .turnin 9581 >> Turn in Learning from the Crystals
-    .accept 9620 >> Accept The Missing Survey Team
+    .turnin 9581 >> Rendez Learning from the Crystals
+    .accept 9620 >> Accept Les Minage Survey Team
     .target Harbinger Mikolaas
 step
     .goto Bloodmyst Isle,62.998,87.541
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Kessel|r
-    .turnin 9663 >> Turn in The Kessel Run
-    .accept 9666 >> Accept Declaration of Power
+    .turnin 9663 >> Abandonnez La tournée de Kessel
+    .accept 9666 >> Acceptez Declaration of Power
     .target Kessel
 step
     .goto Bloodmyst Isle,68.257,80.999
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Princess Stillpine|r
-    .accept 9667 >> Accept Saving Princess Stillpine
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Princess Stillpine|r
+    .accept 9667 >> Acceptez Saving Princess Stillpine
     .target Princess Stillpine
 step
 	#completewith next
@@ -1922,8 +1922,8 @@ step
 step
     .goto Bloodmyst Isle,62.998,87.541
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Kessel|r
-    .turnin 9666 >> Turn in Declaration of Power
-    .accept 9668 >> Accept Report to Exarch Admetius
+    .turnin 9666 >> Rendez Declaration of Power
+    .accept 9668 >> Acceptez Rapport au Lieutenant Doren Admetius
     .target Kessel
 step
 	#completewith next
@@ -1943,7 +1943,7 @@ step
     .use 23870 >>Utilisez le [|cRXP_LOOT_Red Crystal Pendant|r] pour commencer la quête
     >>|cRXP_ENEMY_Aileron-cruel|r patrouille le long du rivage
 	.collect 23870,1,9576,1 --Red Crystal Pendant (1)
-    .accept 9576 >> Accept Cruelfin's Necklace
+    .accept 9576 >> Acceptez Cruelfin's Necklace
 	.unitscan Cruelfin
 step
     #loop
@@ -1971,7 +1971,7 @@ step
     >>Tuez |cRXP_ENEMY_Tzerak|r. Dépouillez-le pour sa [|cRXP_LOOT_Tzerak's Armor Plate|r]
     .use 23900 >> Utilisez la [|cRXP_LOOT_Plaque d'armure de Tzerak|r] pour commencer la quête
     .collect 23900,1,9594,1 --Tzerak's Armor Plate
-    .accept 9594 >> Accept Signs of the Legion
+    .accept 9594 >> Acceptez Signs of the Legion
     .unitscan Tzerak
 step
     .goto Bloodmyst Isle,36.498,71.338
@@ -1984,7 +1984,7 @@ step
     .use 23900 >> Utilisez la [|cRXP_LOOT_Plaque d'armure de Tzerak|r] pour commencer la quête
     >>Si vous ne le voyez pas faire sa patrouille dans les camps, attendez qu'il réapparaisse au sigil violet sur le sol au sud. Il peut prendre jusqu'à 3-6 minutes avant de réapparaître
     .collect 23900,1,9594,1 --Tzerak's Armor Plate
-    .accept 9594 >> Accept Signs of the Legion
+    .accept 9594 >> Acceptez Signs of the Legion
     .unitscan Tzerak
 step
     .isOnQuest 9594
@@ -2046,7 +2046,7 @@ step
 step
     #optional
     .isOnQuest 9648,9594,9567,9629
-	.hs >> Hearth to Blood Watch
+	.hs >> Retournez au Guet du Sang
     .cooldown item,6948,>2,1
 step
     #completewith next
@@ -2054,9 +2054,9 @@ step
 step
     .goto Bloodmyst Isle,53.245,57.741
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Morae|r
-    .turnin 9576 >> Turn in Cruelfin's Necklace
-    .turnin 9629 >> Turn in Catch and Release
-    .accept 9574 >> Accept Victims of Corruption
+    .turnin 9576 >> Rendez Cruelfin's Necklace
+    .turnin 9629 >> Turn in Catch et les Release
+    .accept 9574 >> Acceptez Victims of Corruption
     .target Morae
 step
 --Arrow should point to the small ruins, dynamic spawns therefore
@@ -2071,7 +2071,7 @@ step
 step
     .goto Bloodmyst Isle,53.245,57.741
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Morae|r
-    .turnin 9574 >> Turn in Victims of Corruption
+    .turnin 9574 >> Rendez Victims of Corruption
     .target Morae
 step
 	.goto Bloodmyst Isle,53.319,56.672
@@ -2084,39 +2084,39 @@ step
 step
     .goto Bloodmyst Isle,55.252,59.121
     >>Cliquez sur l' |cRXP_PICK_l'Affiche de recherche|r
-    .accept 9646 >> Accept WANTED: Deathclaw
+    .accept 9646 >> Acceptez WANTED: Deathclaw
 step
     .isOnQuest 9594
     .goto Bloodmyst Isle,55.083,57.997
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Vindicator Aalesia|r
-    .turnin 9594 >> Turn in Signs of the Legion
-    .turnin 9567 >> Turn in Know Thine Enemy
+    .turnin 9594 >> Rendez Signs of the Legion
+    .turnin 9567 >> Rendez Know Thine Enemy
     .target Vindicator Aalesia
 step
     .goto Bloodmyst Isle,55.083,57.997
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Vindicator Aalesia|r
-    .turnin 9567 >> Turn in Know Thine Enemy
+    .turnin 9567 >> Rendez Know Thine Enemy
     .target Vindicator Aalesia
 step
     .goto Bloodmyst Isle,55.156,55.953
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Stillpine Ambassador Olorg|r
-    .turnin 9667 >> Turn in Saving Princess Stillpine
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Stillpine Ambassador Olorg|r
+    .turnin 9667 >> Rendez Saving Princess Stillpine
     .target Stillpine Ambassador Olorg
 step
     #optional
     .goto Bloodmyst Isle,55.429,55.266
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Redresseur de torts Boros|r
     .target Vindicator Boros
-    .accept 9641 >> Accept Irradiated Crystal Shards
-	.turnin 9641 >> Turn in Irradiated Crystal Shards
-    .accept 9779 >> Accept Intercepting the Message
+    .accept 9641 >> Acceptez la quête Les éclats de cristal irradié
+	.turnin 9641 >> Rendez la quête Les éclats de cristal irradié
+    .accept 9779 >> Acceptez Intercepting the Message
 	.itemcount 23984,10 -- Irradiated Crystal Shard (10)
 step
     .goto Bloodmyst Isle,55.429,55.266
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Redresseur de torts Boros|r
     .target Vindicator Boros
-    .accept 9641 >> Accept Irradiated Crystal Shards
-    .accept 9779 >> Accept Intercepting the Message
+    .accept 9641 >> Acceptez la quête Les éclats de cristal irradié
+    .accept 9779 >> Acceptez Intercepting the Message
 step << Paladin
     .goto Bloodmyst Isle,55.551,55.397
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Redresseur de torts Aesom|r
@@ -2126,13 +2126,13 @@ step << Paladin
 step
     .goto Bloodmyst Isle,55.862,56.997
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tracker Lyceon|r
-    .accept 9580 >> Accept The Bear Necessities
-    .accept 9643 >> Accept Constrictor Vines
+    .accept 9580 >> Accept Les Bear Necessities
+    .accept 9643 >> Acceptez Constrictor Vines
     .target Tracker Lyceon
 step
     .goto Bloodmyst Isle,56.428,56.817
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Maatparm|r
-    .turnin 9648 >> Turn in Maatparm Mushroom Menagerie
+    .turnin 9648 >> Rendez Maatparm Mushroom Menagerie
     .target Maatparm
 step
     #completewith next
@@ -2140,8 +2140,8 @@ step
 step
     .goto Bloodmyst Isle,61.249,48.373
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au cadavre du |cRXP_FRIENDLY_Draenei Cartographer|r
-    .turnin 9620 >> Turn in The Missing Survey Team
-    .accept 9628 >> Accept Salvaging the Data
+    .turnin 9620 >> Turn in Les Minage Survey Team
+    .accept 9628 >> Acceptez Salvaging the Data
     .target Draenei Cartographer
 step
     #loop
@@ -2156,9 +2156,9 @@ step
 step
     .goto Bloodmyst Isle,52.588,53.207
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Harbinger Mikolaas|r
-    .turnin 9628 >> Turn in Salvaging the Data
-    .accept 9584 >> Accept The Second Sample
-    .turnin 9668 >> Turn in Report to Exarch Admetius
+    .turnin 9628 >> Rendez Salvaging the Data
+    .accept 9584 >> Accept Les Second Sample
+    .turnin 9668 >> Rendez Rapport au Lieutenant Doren Admetius
     .target Harbinger Mikolaas
 step
 	#completewith GrindCheck
@@ -2189,28 +2189,28 @@ step
 	#completewith Audience
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Messenger Hermesius|r
     >>Le |cRXP_FRIENDLY_Messenger Hermesius|r patrouille le long du Guet du Sang
-    .accept 9671 >> Accept Urgent Delivery
-    .turnin 9671 >> Turn in Urgent Delivery
+    .accept 9671 >> Acceptez Urgent Delivery
+    .turnin 9671 >> Rendez Urgent Delivery
 	.target Messenger Hermesius
 step
     .goto Bloodmyst Isle,52.588,53.207
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Harbinger Mikolaas|r
-    .turnin 9584 >> Turn in The Second Sample
-    .accept 9585 >> Accept The Final Sample
+    .turnin 9584 >> Turn in Les Second Sample
+    .accept 9585 >> Accept Les Final Sample
     .target Harbinger Mikolaas
 step
     .goto Bloodmyst Isle,55.429,55.266
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Redresseur de torts Boros|r
     .target Vindicator Boros
-    .turnin 9779 >> Turn in Intercepting the Message
-    .accept 9696 >> Accept Translations...
+    .turnin 9779 >> Rendez Intercepting the Message
+    .accept 9696 >> Acceptez Translations...
 step
     #optional
     .goto Bloodmyst Isle,55.429,55.266
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Redresseur de torts Boros|r
     .target Vindicator Boros
-    .accept 9641 >> Accept Irradiated Crystal Shards
-	.turnin 9641 >> Turn in Irradiated Crystal Shards
+    .accept 9641 >> Acceptez la quête Les éclats de cristal irradié
+	.turnin 9641 >> Rendez la quête Les éclats de cristal irradié
 	.itemcount 23984,10 -- Irradiated Crystal Shard (10)
 step
     #optional
@@ -2225,8 +2225,8 @@ step
     .goto Bloodmyst Isle,54.438,54.450
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à l'|cRXP_FRIENDLY_Interrogatrice Elysia|r
     .target Interrogator Elysia
-    .turnin 9696 >> Turn in Translations...
-    .accept 9698 >> Accept Audience with the Prophet
+    .turnin 9696 >> Rendez Translations...
+    .accept 9698 >> Accept Audience avec le Prophet
 step
     #loop
     .goto Bloodmyst Isle,54.6,59.8,0
@@ -2235,15 +2235,15 @@ step
     .goto Bloodmyst Isle,55.6,54.4,40,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Messenger Hermesius|r
     >>Le |cRXP_FRIENDLY_Messenger Hermesius|r patrouille le long du Guet du Sang
-    .accept 9671 >> Accept Urgent Delivery
-    .turnin 9671 >> Turn in Urgent Delivery
+    .accept 9671 >> Acceptez Urgent Delivery
+    .turnin 9671 >> Rendez Urgent Delivery
 	.target Messenger Hermesius
 step
     .goto Bloodmyst Isle,55.210,59.207
 	>>Ouvrez votre |cRXP_PICK_Boîte aux lettres|r. Récupérez y la [|cRXP_LOOT_A Letter from the Admiral|r]
     .use 24132 >>Utilisez la [|cRXP_LOOT_A Letter from the Admiral|r] pour commencer la quête
     .collect 24132,1,9672 --Collect A Letter from the Admiral
-    .accept 9672 >> Accept The Bloodcurse Legacy
+    .accept 9672 >> Accept Les Bloodcurse Legacy
 step
     .goto Bloodmyst Isle,55.843,59.807
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à l' |cRXP_FRIENDLY_Hôte Topher Loaal|r
@@ -2257,15 +2257,15 @@ step
 step
     .goto Bloodmyst Isle,55.083,57.997
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Vindicator Aalesia|r
-    .accept 9569 >> Accept Containing the Threat
+    .accept 9569 >> Acceptez Containing the Threat
     .target Vindicator Aalesia
 step
     #optional
     .goto Bloodmyst Isle,55.429,55.266
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Redresseur de torts Boros|r
     .target Vindicator Boros
-    .accept 9641 >> Accept Irradiated Crystal Shards
-	.turnin 9641 >> Turn in Irradiated Crystal Shards
+    .accept 9641 >> Acceptez la quête Les éclats de cristal irradié
+	.turnin 9641 >> Rendez la quête Les éclats de cristal irradié
 	.itemcount 23984,10 -- Irradiated Crystal Shard (10)
 step
     #optional
@@ -2279,7 +2279,7 @@ step
     .goto Bloodmyst Isle,56.428,56.817
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Maatparm|r
     .target Maatparm
-    .accept 9649 >> Accept Ysera's Tears
+    .accept 9649 >> Acceptez Ysera's Tears
 step
     #completewith next
     .subzone 3598 >> Voyagez vers l'Île Balafre-du-Ver
@@ -2287,7 +2287,7 @@ step
     .goto Bloodmyst Isle,74.7,33.7
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Prince Toreth|r
     >>Le |cRXP_FRIENDLY_Prince Toreth|r se déplace légèrement
-    .accept 9687 >> Accept Restoring Sanctity
+    .accept 9687 >> Acceptez Restoring Sanctity
     .target Prince Toreth
 step
 	#completewith next
@@ -2297,8 +2297,8 @@ step
 step
     .goto Bloodmyst Isle,79.150,22.656
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Prince Toreth|r
-    .turnin 9672 >> Turn in The Bloodcurse Legacy
-    .accept 9674 >> Accept The Bloodcursed Naga
+    .turnin 9672 >> Turn in Les Bloodcurse Legacy
+    .accept 9674 >> Accept Les Bloodcursed Naga
     .target Captain Edward Hanes
 step
     #loop
@@ -2314,8 +2314,8 @@ step
 step
     .goto Bloodmyst Isle,79.150,22.656
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Prince Toreth|r
-    .turnin 9674 >> Turn in The Bloodcursed Naga
-    .accept 9682 >> Accept The Hopeless Ones...
+    .turnin 9674 >> Turn in Les Bloodcursed Naga
+    .accept 9682 >> Accept Les Hopeless Ones...
     .target Captain Edward Hanes
 step
     #loop
@@ -2331,8 +2331,8 @@ step
 step
     .goto Bloodmyst Isle,79.150,22.656
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Prince Toreth|r
-    .turnin 9682 >> Turn in The Hopeless Ones...
-    .accept 9683 >> Accept Ending the Bloodcurse << !Warrior
+    .turnin 9682 >> Turn in Les Hopeless Ones...
+    .accept 9683 >> Acceptez Ending the Bloodcurse << !Warrior
     .target Captain Edward Hanes
 step << !Warrior
     .xp 16-3300 >> Gagnez en expérience jusqu'à ce qu'il ne vous manque que 3300xp pour le niveau 16 (10300/13600+)
@@ -2381,11 +2381,11 @@ step
     .goto Bloodmyst Isle,56.428,56.817
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Maatparm|r
     .target Maatparm
-    .turnin 9649 >> Turn in Ysera's Tears
+    .turnin 9649 >> Rendez Ysera's Tears
 step
     .goto Bloodmyst Isle,56.324,54.232
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Prospecteur Nachlan|r
-    .accept 10063 >> Accept Explorers' League, Is That Something for Gnomes?
+    .accept 10063 >> Acceptez Explorers' League, Is That Something for Gnomes?
     .target Prospector Nachlan
 step
     .goto Bloodmyst Isle,57.680,53.875
@@ -2457,7 +2457,7 @@ step << Warrior/Shaman/Paladin
 step << Warrior
     .goto The Exodar,55.580,82.290
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Behomat|r
-    .turnin 10350 >> Turn in Behomat
+    .turnin 10350 >> Rendez Behomat
     .trainer >> Apprenez vos sorts de classe
     .target Behomat
 step << Warrior/Shaman/Paladin
@@ -2504,8 +2504,8 @@ step
     .target Prophet Velen
     .turnin 9461 >> Rendez la quête L'appel du feu << Shaman
     .accept 9555 >> Acceptez la quête L'appel du feu << Shaman
-    .turnin 9698 >> Turn in Audience with the Prophet
-    .accept 9699 >> Accept Truth or Fiction
+    .turnin 9698 >> Turn in Audience avec le Prophet
+    .accept 9699 >> Acceptez Truth or Fiction
 step << Shaman
     #completewith next
     .goto The Exodar,27.90,29.43,10 >> Dirigez-vous vers |cRXP_FRIENDLY_Farseer Nobundo|r en haut de la rampe
@@ -2527,10 +2527,10 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Stephanos|r
     .target Stephanos
     .turnin 9605 >> Rendez la quête Le maître des hippogriffes Stephanos
-    .accept 9606 >> Accept Return to Topher Loaal
+    .accept 9606 >> Rendez Retourner voir Topher Loaal
 step
     .isOnQuest 9606,9699
-	.hs >> Hearth to Blood Watch
+	.hs >> Retournez au Guet du Sang
     >>|cRXP_BUY_Achetez de la nourriture/eau si besoin|r << !Warrior !Rogue
 	>>|cRXP_BUY_Achetez de la nourriture si besoin|r << Warrior/Rogue
     .cooldown item,6948,>2,1
@@ -2538,7 +2538,7 @@ step
 	.isOnQuest 9606,9699
     .goto The Exodar,68.351,63.490
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Stephanos|r
-    .fly Blood Watch >> Fly to Blood Watch
+    .fly Blood Watch >> Envolez-vous vers Le Guet du sang
     .target Stephanos
     .zoneskip Bloodmyst Isle
 step
@@ -2550,15 +2550,15 @@ step
     .goto Bloodmyst Isle,55.429,55.266
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Redresseur de torts Boros|r
     .target Vindicator Boros
-    .turnin 9699 >> Turn in Truth or Fiction
-    .accept 9700 >> Accept I Shoot Magic Into the Darkness
+    .turnin 9699 >> Rendez Truth or Fiction
+    .accept 9700 >> Acceptez I Shoot Magic Into the Darkness
 step
     #optional
     .goto Bloodmyst Isle,55.429,55.266
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Redresseur de torts Boros|r
     .target Vindicator Boros
-    .accept 9641 >> Accept Irradiated Crystal Shards
-	.turnin 9641 >> Turn in Irradiated Crystal Shards
+    .accept 9641 >> Acceptez la quête Les éclats de cristal irradié
+	.turnin 9641 >> Rendez la quête Les éclats de cristal irradié
 	.itemcount 23984,10 -- Irradiated Crystal Shard (10)
 step
     #optional
@@ -2660,9 +2660,9 @@ step
 step
     .goto Bloodmyst Isle,42.147,21.223
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Clopper Wizbang|r
-    .turnin 10063 >> Turn in Explorers' League, Is That Something for Gnomes?
-    .accept 9548 >> Accept Pilfered Equipment
-    .accept 9549 >> Accept Artifacts of the Blacksilt
+    .turnin 10063 >> Rendez Explorers' League, Is That Something for Gnomes?
+    .accept 9548 >> Acceptez Pilfered Equipment
+    .accept 9549 >> Acceptez Artifacts of the Blacksilt
     .target Clopper Wizbang
 step
     .goto Bloodmyst Isle,42.147,21.223
@@ -2718,12 +2718,12 @@ step
 step
     .goto Bloodmyst Isle,42.147,21.223
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Clopper Wizbang|r
-    .turnin 9548 >> Turn in Pilfered Equipment
-    .turnin 9549 >> Turn in Artifacts of the Blacksilt
+    .turnin 9548 >> Rendez Pilfered Equipment
+    .turnin 9549 >> Rendez Artifacts of the Blacksilt
     .target Clopper Wizbang
 step
     .use 23837 >>Utilisez la [Carte au trésor abîmée] pour commencer la quête
-    .accept 9550 >> Accept A Map to Where?
+    .accept 9550 >> Acceptez A Map to Where?
 step
     #label VoidAnomaly
     .goto Bloodmyst Isle,52.741,21.161
@@ -2769,31 +2769,31 @@ step
 step
     .goto Bloodmyst Isle,61.156,41.893
     >>Cliquez sur le |cRXP_PICK_Livre ancien endommagé|r sur le sol
-    .turnin 9550 >> Turn in A Map to Where?
-    .accept 9557 >> Accept Deciphering the Book
+    .turnin 9550 >> Rendez A Map to Where?
+    .accept 9557 >> Acceptez Deciphering the Book
 step
 	.goto Bloodmyst Isle,54.661,53.951
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Anchorite Paetheus|r
-    .turnin 9557 >> Turn in Deciphering the Book
+    .turnin 9557 >> Rendez Deciphering the Book
     .target Anchorite Paetheus
 step
     .goto Bloodmyst Isle,52.588,53.207
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Harbinger Mikolaas|r
-    .turnin 9585 >> Turn in The Final Sample
-    .accept 10064 >> Accept Talk to the Hand
-    .turnin 9646 >> Turn in WANTED: Deathclaw
+    .turnin 9585 >> Turn in Les Final Sample
+    .accept 10064 >> Accept Parlez à l' Hand
+    .turnin 9646 >> Rendez WANTED: Deathclaw
     .target Harbinger Mikolaas
 step
 	.goto Bloodmyst Isle,54.661,53.951
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Anchorite Paetheus|r
-    .accept 9561 >> Accept Nolkai's Words
-    .accept 9632 >> Accept Newfound Allies
+    .accept 9561 >> Acceptez Nolkai's Words
+    .accept 9632 >> Acceptez Newfound Allies
     .target Anchorite Paetheus
 step
     .goto Bloodmyst Isle,55.429,55.266
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Redresseur de torts Boros|r
     .target Vindicator Boros
-    .turnin 9700 >> Turn in I Shoot Magic Into the Darkness
+    .turnin 9700 >> Rendez I Shoot Magic Into the Darkness
 step
     #optional
     .goto Bloodmyst Isle,55.429,55.266
@@ -2805,37 +2805,37 @@ step
 step
     .goto Bloodmyst Isle,55.631,55.223
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Vindicator Kuros|r
-    .accept 9703 >> Accept The Cryo-Core
+    .accept 9703 >> Accept Les Cryo-Core
     .target Vindicator Kuros
 step
     #optional
     .goto Bloodmyst Isle,55.862,56.997
     .isQuestComplete 9580
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tracker Lyceon|r
-    .turnin 9580 >> Turn in The Bear Necessities
-    .turnin 9643 >> Turn in Constrictor Vines
-    .accept 9647 >> Accept Culling the Flutterers
+    .turnin 9580 >> Turn in Les Bear Necessities
+    .turnin 9643 >> Rendez Constrictor Vines
+    .accept 9647 >> Acceptez Culling the Flutterers
     .target Tracker Lyceon
 step
     .goto Bloodmyst Isle,55.862,56.997
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tracker Lyceon|r
-    .turnin 9643 >> Turn in Constrictor Vines
-    .accept 9647 >> Accept Culling the Flutterers
+    .turnin 9643 >> Rendez Constrictor Vines
+    .accept 9647 >> Acceptez Culling the Flutterers
     .target Tracker Lyceon
 step
     .goto Bloodmyst Isle,55.083,57.997
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Vindicator Aalesia|r
-    .turnin 9569 >> Turn in Containing the Threat
+    .turnin 9569 >> Rendez Containing the Threat
     .target Vindicator Aalesia
 step
     .goto Bloodmyst Isle,53.245,57.741
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Morae|r
-    .accept 9578 >> Accept Searching for Galaen
+    .accept 9578 >> Acceptez Searching for Galaen
     .target Morae
 step
     .goto Bloodmyst Isle,53.245,57.031
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Achelus|r
-    .accept 9669 >> Accept The Missing Expedition
+    .accept 9669 >> Accept Les Minage Expedition
     .target Achelus
 step
 	.isOnQuest 9580
@@ -2862,9 +2862,9 @@ step
     .goto Bloodmyst Isle,37.502,61.239
     >>Cliquez sur le |cRXP_FRIENDLY_Cadavre de Galaen|r
     >>|cRXP_WARN_Évitez de tuer beaucoup de |cRXP_ENEMY_Récupérateur Epervier du soleil|r si possible en vous rendant au|r |cRXP_FRIENDLY_Cadavre de Galaen|r
-    .turnin 9578 >> Turn in Searching for Galaen
-    .accept 9579 >> Accept Galaen's Fate
-    .accept 9706 >> Accept Galaen's Journal - The Fate of Vindicator Saruan
+    .turnin 9578 >> Rendez Searching for Galaen
+    .accept 9579 >> Acceptez L'évasion de Galen
+    .accept 9706 >> Accept Galaen's Journal -Les Fate of Vindicator Saruan
     .target Galaen's Corpse
 step
     .goto Bloodmyst Isle,37.50,61.23,0
@@ -2903,20 +2903,20 @@ step
     #label GFate
     .goto Bloodmyst Isle,53.245,57.741
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Morae|r
-    .turnin 9579 >> Turn in Galaen's Fate
+    .turnin 9579 >> Rendez Galaen's Fate
     .target Morae
 step
     .goto Bloodmyst Isle,55.631,55.223
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Vindicator Kuros|r
-    .turnin 9703 >> Turn in The Cryo-Core
-    .turnin 9706 >> Turn in Galaen's Journal - The Fate of Vindicator Saruan
-    .accept 9711 >> Accept Matis the Cruel
+    .turnin 9703 >> Turn in Les Cryo-Core
+    .turnin 9706 >> Turn in Galaen's Journal -Les Fate of Vindicator Saruan
+    .accept 9711 >> Acceptez Matis the Cruel
     .target Vindicator Kuros
 step
     .goto Bloodmyst Isle,55.551,55.397
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Redresseur de torts Aesom|r
-    .accept 9748 >> Accept Don't Drink the Water
-    .accept 9753 >> Accept What We Know...
+    .accept 9748 >> Acceptez Don't Drink the Water
+    .accept 9753 >> Acceptez What We Know...
     .target Vindicator Aesom
 step << Paladin
     .goto Bloodmyst Isle,55.551,55.397
@@ -2930,28 +2930,28 @@ step
     .isQuestComplete 9580
     .isQuestComplete 9647
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tracker Lyceon|r
-    .turnin 9580 >> Turn in The Bear Necessities
-    .turnin 9647 >> Turn in Culling the Flutterers
+    .turnin 9580 >> Turn in Les Bear Necessities
+    .turnin 9647 >> Rendez Culling the Flutterers
     .target Tracker Lyceon
 step
     #optional
     .goto Bloodmyst Isle,55.862,56.997
     .isQuestComplete 9580
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tracker Lyceon|r
-    .turnin 9580 >> Turn in The Bear Necessities
+    .turnin 9580 >> Turn in Les Bear Necessities
     .target Tracker Lyceon
 step
     #optional
     .goto Bloodmyst Isle,55.862,56.997
     .isQuestComplete 9647
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tracker Lyceon|r
-    .turnin 9647 >> Turn in Culling the Flutterers
+    .turnin 9647 >> Rendez Culling the Flutterers
     .target Tracker Lyceon
 step
     .goto Bloodmyst Isle,52.684,53.214
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Exarch Admetius|r
-    .turnin 9753 >> Turn in What We Know...
-    .accept 9756 >> Accept What We Don't Know...
+    .turnin 9753 >> Rendez What We Know...
+    .accept 9756 >> Acceptez la quête Ce que nous ne savons pas…
     .target Exarch Admetius
 step
     .goto Bloodmyst Isle,54.312,54.215
@@ -2962,8 +2962,8 @@ step
 step
     .goto Bloodmyst Isle,52.684,53.214
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Exarch Admetius|r
-    .turnin 9756 >> Turn in What We Don't Know...
-    .accept 9760 >> Accept Vindicator's Rest
+    .turnin 9756 >> Rendez What We Don't Know...
+    .accept 9760 >> Acceptez Vindicator's Rest
     .target Exarch Admetius
 step
     #optional
@@ -2983,19 +2983,19 @@ step
     .mob Elder Brown Bear
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Scout Jorli|r et à |cRXP_FRIENDLY_Scout Loryi|r
-    .turnin 10064 >> Turn in Talk to the Hand
-    .accept 10065 >> Accept Cutting a Path
+    .turnin 10064 >> Turn in Parlez à l' Hand
+    .accept 10065 >> Acceptez Cutting a Path
     .target +Scout Jorli
     .goto Bloodmyst Isle,30.255,45.916
-    .accept 9741 >> Accept Critters of the Void
+    .accept 9741 >> Acceptez Critters of the Void
     .target +Scout Loryi
     .goto Bloodmyst Isle,30.239,45.866
 step
     .goto Bloodmyst Isle,30.750,46.844
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Vindicator Corin|r
-    .turnin 9760 >> Turn in Vindicator's Rest
-    .accept 10066 >> Accept Oh, the Tangled Webs They Weave
-    .accept 10067 >> Accept Fouled Water Spirits
+    .turnin 9760 >> Rendez Vindicator's Rest
+    .accept 10066 >> Acceptez Oh, the Tangled Webs They Weave
+    .accept 10067 >> Acceptez Fouled Water Spirits
     .target Vindicator Corin
 step
     #label MatistheCruel
@@ -3010,7 +3010,7 @@ step
     .goto Bloodmyst Isle,42.27,44.12,80,0
 	.line Bloodmyst Isle,43.1,43.7,36.5,47.2,33.5,47.1,29.9,51.8,27.7,51.8,25.1,54.1,22.0,54.3
     .use 24278 >>Utilisez le [Lance-fusée] sur |cRXP_ENEMY_Matis le Cruel|r
-    >>|cRXP_WARN_This will summon a |cRXP_FRIENDLY_Tracker of the Hand|r which will capture him once his health reaches 50%. Try not to get aggro as |cRXP_ENEMY_Matis the Cruel|r hits very hard|r
+    >>|cRXP_WARN_Cela invoquera un |cRXP_FRIENDLY_Pisteur of the Hand|r qui le capturera dès que sa santé atteint 50%. Évitez d'être agressé car |cRXP_ENEMY_Matis le Cruel|r frappe très fort|r
     >>|cRXP_ENEMY_Matis le Cruel|r patrouille sur une grosse partie de route. Le chemin de sa patrouille est indiqué sur votre carte
     .complete 9711,1 --Capture Matis the Cruel
 	.unitscan Matis the Cruel
@@ -3109,12 +3109,12 @@ step
 step
     .goto Bloodmyst Isle,30.750,46.844
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Vindicator Corin|r
-    .turnin 10066 >> Turn in Oh, the Tangled Webs They Weave
+    .turnin 10066 >> Rendez Oh, the Tangled Webs They Weave
     .target Vindicator Corin
 step
     .goto Bloodmyst Isle,30.255,45.916
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à l' |cRXP_FRIENDLY_Eclaireur Jorli|r
-    .turnin 10065 >> Turn in Cutting a Path
+    .turnin 10065 >> Rendez Cutting a Path
     .target +Scout Loryi
 step
     #loop
@@ -3130,17 +3130,17 @@ step
 step
     .goto Bloodmyst Isle,30.750,46.844
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Vindicator Corin|r
-    .turnin 10067 >> Turn in Fouled Water Spirits
+    .turnin 10067 >> Rendez Fouled Water Spirits
     .target Vindicator Corin
 step
     .goto Bloodmyst Isle,24.862,34.375
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Chercheur Cornelius|r
-    .accept 9670 >> Accept They're Alive! Maybe...
+    .accept 9670 >> Acceptez They're Alive! Maybe...
     .target Researcher Cornelius
 step
 	#completewith next
 	>>Tuez les |cRXP_ENEMY_Créature entoilée|r
-    >>|cRXP_WARN_Attack the |cRXP_ENEMY_Webbed Creatures|r from range if possible incase a hostile mob pops out, it won't aggro you|r
+    >>|cRXP_WARN_Attaquez les |cRXP_ENEMY_Créatures enchevêtrées|r à distance si possible, au cas où une créature hostile sortirait, elle ne vous attaquera pas|r
     .complete 9670,1 --Expedition Researcher Freed (5)
     .mob Webbed Creature
 step
@@ -3159,13 +3159,13 @@ step
     .goto Bloodmyst Isle,17.2,28.4,40,0
     .goto Bloodmyst Isle,18.2,38.0
 	>>Tuez les |cRXP_ENEMY_Créature entoilée|r
-    >>|cRXP_WARN_Attack the |cRXP_ENEMY_Webbed Creatures|r from range if possible incase a hostile mob pops out, it won't aggro you|r
+    >>|cRXP_WARN_Attaquez les |cRXP_ENEMY_Créatures enchevêtrées|r à distance si possible, au cas où une créature hostile sortirait, elle ne vous attaquera pas|r
     .complete 9670,1 --Expedition Researcher Freed (5)
     .mob Webbed Creature
 step
     .goto Bloodmyst Isle,24.862,34.375
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Chercheur Cornelius|r
-    .turnin 9670 >> Turn in They're Alive! Maybe...
+    .turnin 9670 >> Rendez They're Alive! Maybe...
     .target Researcher Cornelius
 step
     .goto Bloodmyst Isle,34.373,33.742
@@ -3173,27 +3173,27 @@ step
     .complete 9748,1 --Collect Bloodmyst Water Sample (x1)
 step
     .isOnQuest 9748,9669,9741,9711
-    .hs >> Hearth to Blood Watch
+    .hs >> Retournez au Guet du Sang
     >>|cRXP_BUY_Achetez de la nourriture/eau si besoin|r << !Warrior !Rogue
 	>>|cRXP_BUY_Achetez de la nourriture si besoin|r << Warrior/Rogue
     .cooldown item,6948,>2,1
 step
     .goto Bloodmyst Isle,53.245,57.031
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Achelus|r
-    .turnin 9669 >> Turn in The Missing Expedition
+    .turnin 9669 >> Turn in Les Minage Expedition
     .target Achelus
 step
     .goto Bloodmyst Isle,55.551,55.397
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Redresseur de torts Aesom|r
-    .turnin 9741 >> Turn in Critters of the Void
-    .turnin 9748 >> Turn in Don't Drink the Water
-    .accept 9746 >> Accept Limits of Physical Exhaustion << Hunter/Shaman/Mage
+    .turnin 9741 >> Rendez Critters of the Void
+    .turnin 9748 >> Rendez Don't Drink the Water
+    .accept 9746 >> Abandonnez Les limites de l'épuisement physique << Hunter/Shaman/Mage
     .target Vindicator Aesom
 step
     .isQuestComplete 9711
     .goto Bloodmyst Isle,55.631,55.223
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Vindicator Kuros|r
-    .turnin 9711 >> Turn in Matis the Cruel
+    .turnin 9711 >> Rendez Mai'Zoth Cruel
     .target Vindicator Kuros
 step
     #optional
@@ -3201,22 +3201,22 @@ step
     .isQuestComplete 9580
     .isQuestComplete 9647
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tracker Lyceon|r
-    .turnin 9580 >> Turn in The Bear Necessities
-    .turnin 9647 >> Turn in Culling the Flutterers
+    .turnin 9580 >> Turn in Les Bear Necessities
+    .turnin 9647 >> Rendez Culling the Flutterers
     .target Tracker Lyceon
 step
     #optional
     .goto Bloodmyst Isle,55.862,56.997
     .isQuestComplete 9580
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tracker Lyceon|r
-    .turnin 9580 >> Turn in The Bear Necessities
+    .turnin 9580 >> Turn in Les Bear Necessities
     .target Tracker Lyceon
 step
     #optional
     .goto Bloodmyst Isle,55.862,56.997
     .isQuestComplete 9647
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tracker Lyceon|r
-    .turnin 9647 >> Turn in Culling the Flutterers
+    .turnin 9647 >> Rendez Culling the Flutterers
     .target Tracker Lyceon
 step << Hunter/Mage
     #loop
@@ -3236,7 +3236,7 @@ step << Hunter/Mage
 step << Hunter/Mage
     .goto Bloodmyst Isle,55.551,55.397
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Redresseur de torts Aesom|r
-    .turnin 9746 >> Turn in Limits of Physical Exhaustion
+    .turnin 9746 >> Abandonnez Les limites de l'épuisement physique
     .target Vindicator Aesom
 step
     #completewith next
@@ -3244,7 +3244,7 @@ step
 step
     .goto Bloodmyst Isle,61.173,49.639
     >>Cliquez sur le |cRXP_PICK_Monticule de poussière|r sur le sol
-    .turnin 9561 >> Turn in Nolkai's Words
+    .turnin 9561 >> Rendez Nolkai's Words
 step
     #completewith next
     .subzone 3598 >> Voyagez vers l'Île Balafre-du-Ver
@@ -3252,8 +3252,8 @@ step
     .goto Bloodmyst Isle,74.7,33.7
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Prince Toreth|r
     >>Le |cRXP_FRIENDLY_Prince Toreth|r se déplace légèrement
-    .turnin 9687 >> Turn in Restoring Sanctity
-    .accept 9688 >> Accept Into the Dream
+    .turnin 9687 >> Rendez Restoring Sanctity
+    .accept 9688 >> Acceptez Into the Dream
     .target Prince Toreth
 step
 	#completewith next
@@ -3267,7 +3267,7 @@ step
     .isQuestComplete 9683
     .goto Bloodmyst Isle,79.150,22.656
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Prince Toreth|r
-    .turnin 9683 >> Turn in Ending the Bloodcurse
+    .turnin 9683 >> Rendez Ending the Bloodcurse
     .target Captain Edward Hanes
 step
     #loop
@@ -3291,8 +3291,8 @@ step
     .goto Bloodmyst Isle,74.7,33.7
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Prince Toreth|r
     >>Le |cRXP_FRIENDLY_Prince Toreth|r se déplace légèrement
-    .turnin 9688 >> Turn in Into the Dream
-    .accept 9689 >> Accept Razormaw
+    .turnin 9688 >> Rendez Into the Dream
+    .accept 9689 >> Acceptez Razormaw
     .target Prince Toreth
 step
     #completewith next
@@ -3312,7 +3312,7 @@ step
     .goto Bloodmyst Isle,74.7,33.7
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Prince Toreth|r
     >>Le |cRXP_FRIENDLY_Prince Toreth|r se déplace légèrement
-    .turnin 9689 >> Turn in Razormaw
+    .turnin 9689 >> Rendez Razormaw
     .target Prince Toreth
 step
     #optional
@@ -3366,7 +3366,7 @@ step << Shaman
 step << Shaman
     .goto The Exodar,68.351,63.490
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Stephanos|r
-    .fly Blood Watch >> Fly to Blood Watch
+    .fly Blood Watch >> Envolez-vous vers Le Guet du sang
     .target Stephanos
     .zoneskip Bloodmyst Isle
 step << Shaman
@@ -3416,7 +3416,7 @@ step << Shaman
 step << Shaman
     .goto Bloodmyst Isle,55.551,55.397
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Redresseur de torts Aesom|r
-    .turnin 9746 >> Turn in Limits of Physical Exhaustion
+    .turnin 9746 >> Abandonnez Les limites de l'épuisement physique
     .target Vindicator Aesom
 step << Shaman
     #label ShamFlyExo
@@ -3495,9 +3495,9 @@ step
 	.goto The Exodar,33.8,73.7,15,0 << !Shaman
     .goto Azuremyst Isle,24.183,54.341
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Huntress Kella Nightbow|r
-    >>|cRXP_FRIENDLY_Huntress Kella Nightbow|r |cRXP_WARN_is located outside the back entrance of The Exodar|r
-    .turnin 9632 >> Turn in Newfound Allies
-    .accept 9633 >> Accept The Way to Auberdine
+    >>|cRXP_FRIENDLY_Chasseresse Kella Arquenuit|r |cRXP_WARN_est située à l'extérieur de l'entrée arrière de L'Exodar|r
+    .turnin 9632 >> Rendez Newfound Allies
+    .accept 9633 >> Accept Les Way to Auberdine
     .target Huntress Kella Nightbow
 step
     .goto Azuremyst Isle,20.405,54.184
@@ -3734,7 +3734,7 @@ step
     .goto StormwindClassic,66.276,62.135
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Dungar Longdrink|r
     .fp Stormwind >> Apprenez le chemin de vol de Hurlevent << !Human
-    .fly Westfall >> Fly to Westfall if you just came from Westfall, otherwise run there
+    .fly Westfall >> Envolez-vous vers Marche de l'Ouest si vous venez juste de Marche de l'Ouest, sinon courez-y
     .disablecheckbox
     .target Dungar Longdrink
     .zoneskip Westfall
@@ -4061,13 +4061,13 @@ step
     .isOnQuest 9633
     .goto Darkshore,37.394,40.128
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Thundris Windweaver|r
-	.turnin 9633 >> Turn in The Way to Auberdine
-    .accept 10752 >> Accept Onward to Ashenvale
+	.turnin 9633 >> Rendez la quête En route pour Auberdine
+    .accept 10752 >> Acceptez la quête En direction d'Orneval
     .target Thundris Windweaver
 step
     .goto Darkshore,37.394,40.128
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Thundris Windweaver|r
-    .accept 10752 >> Accept Onward to Ashenvale
+    .accept 10752 >> Acceptez la quête En direction d'Orneval
     .target Thundris Windweaver
 step
     .goto Darkshore,38.83,29.37,10,0
@@ -4324,7 +4324,7 @@ step
     .goto Darnassus,39.799,92.286,10,0
     .goto Darnassus,38.716,81.330
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Emissary Valustraa|r à l'étage
-    .accept 9432 >> Accept Travel to Astranaar
+    .accept 9432 >> Accept Voyagez jusqu'à Astranaar
     .target Emissary Valustraa
     .zoneskip Darnassus,1
 step
@@ -4432,15 +4432,15 @@ step
     .isOnQuest 9633
     .goto Darkshore,37.394,40.128
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Thundris Windweaver|r
-	.turnin 9633 >> Turn in The Way to Auberdine
-    .accept 10752 >> Accept Onward to Ashenvale
+	.turnin 9633 >> Rendez la quête En route pour Auberdine
+    .accept 10752 >> Acceptez la quête En direction d'Orneval
     .target Thundris Windweaver
     .zoneskip Darkshore,1
 step
 #xprate >1.49
     .goto Darkshore,37.394,40.128
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Thundris Windweaver|r
-    .accept 10752 >> Accept Onward to Ashenvale
+    .accept 10752 >> Acceptez la quête En direction d'Orneval
     .target Thundris Windweaver
     .zoneskip Darkshore,1
 step
@@ -4522,7 +4522,7 @@ step
     .isOnQuest 9432
     .goto Ashenvale,34.894,49.706
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Vindicator Palanaar|r
-    .turnin 9432 >> Turn in Travel to Astranaar
+    .turnin 9432 >> Turn in Voyagez jusqu'à Astranaar
     .target Vindicator Palanaar
 step << Warrior/Paladin
 	.goto Ashenvale,35.785,52.048
@@ -5306,7 +5306,7 @@ step << Draenei
 #xprate >1.49
     .goto Wetlands,53.74,70.33,30,0
     .goto Wetlands,48.17,67.49,30,0
-    .goto Loch Modan,25.11,8.99,20 >>|cRXP_WARN_Travel through the Dun Algaz tunnel to Loch Modan|r
+    .goto Loch Modan,25.11,8.99,20 >>|cRXP_WARN_Voyage à travers le tunnel Dun Algaz vers Loch Modan|r
     .zoneskip Loch Modan --Completes if you run to Loch
 step << skip --logout skip Draenei
 #xprate >1.49
@@ -5327,8 +5327,8 @@ step << Draenei
 	.goto Loch Modan,22.6,70.2,80,0
 	.goto Loch Modan,19.85,63.04,40,0
 	.goto Dun Morogh,86.2,47.0
-    >>|cRXP_WARN_Begin taking off your gear as you run to Dun Morogh|r
-    .deathskip >> aggro the |cRXP_ENEMY_Scarred Crag Boars|r to die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r once you are in Dun Morogh
+    >>|cRXP_WARN_Commencez à enlever votre équipement pendant que vous courez vers Dun Morogh|r
+    .deathskip >> Attirez l'attention du |cRXP_ENEMY_Scarred Crag Boars|r pour mourir et réapparaître au |cRXP_FRIENDLY_Esprit Gardien des âmes|r une fois que vous êtes à Dun Morogh
     .mob Scarred Crag Boar
 step << skip --logout skip Draenei
 #xprate >1.49
@@ -5342,7 +5342,7 @@ step << Draenei
     .goto Dun Morogh,50.084,49.420
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Loslor Rudge|r
     .vendor >> |cRXP_BUY_Achetez un|r [Tube en bronze]
-    >>|cRXP_WARN_This is a limited supply item. Skip this step if |cRXP_FRIENDLY_Loslor Rudge|r doesn't have one|r
+    >>|cRXP_WARN_C'est un objet à approvisionnement limité. Passer cette étape si |cRXP_FRIENDLY_Loslor Rudge|r n'en a pas|r
 	.target Loslor Rudge
     .bronzetube
 step << Draenei

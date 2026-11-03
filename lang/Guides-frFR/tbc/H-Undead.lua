@@ -314,8 +314,8 @@ step
     .goto Tirisfal Glades,34.21,63.05,30,0
     .goto Tirisfal Glades,33.01,63.01,30,0
     .goto Tirisfal Glades,31.82,61.48,30,0
-    .xp 3+710 >>Grind to 710+/1400xp << Warrior/Rogue
-    .xp 3+770 >>Grind to 770+/1400xp << !Warrior !Rogue
+    .xp 3+710 >>Faites du grind jusqu'à 710+/1400 XP << Warrior/Rogue
+    .xp 3+770 >>Faites du grind jusqu'à 770+/1400 XP << !Warrior !Rogue
     .mob Mindless Zombie
     .mob Wretched Ghoul
 step << Mage/Warlock/Priest
@@ -688,7 +688,7 @@ step
     .target Executor Zygand
 step << Rogue
     .goto Tirisfal Glades,61.15,52.59
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Mrs. Winters|r|cRXP_BUY_. Buy |r |T132414:0|t[Weighted Throwing Axe] |cRXP_BUY_from her|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Parler à|r |cRXP_FRIENDLY_Mme Winters|r|cRXP_BUY_. Achetez |r |T132414:0|t[Hache de jet lestée] |cRXP_BUY_chez elle|r
     .collect 29007,1,8475,1 --Weighted Throwing Axe (200)
     .target Mrs. Winters
     .itemStat 18,QUALITY,<7
@@ -878,7 +878,7 @@ step << Warlock
     #completewith UCHome
     .goto Undercity,66.11,26.81,20,0
     .goto Undercity,66.07,37.02,20,0
-    .goto Undercity,67.74,37.96,20 >>Take the elevator down into the Undercity
+    .goto Undercity,67.74,37.96,20 >>Prenez l'ascenseur vers le bas dans la Fossoyeuse
 step << Warlock
     #label UCHome
     .goto Undercity,67.74,37.96
@@ -889,7 +889,7 @@ step << Warlock
 step << Warlock
     #completewith PorttoSilvermoon
     .goto Undercity,66.07,37.02,20,0
-    .goto Undercity,66.11,26.81,20 >>Take the elevator back up
+    .goto Undercity,66.11,26.81,20 >>Prenez l'ascenseur vers le haut
 step
     #label PorttoSilvermoon
     .goto Undercity,65.87,1.48,15,0 << !Warlock
@@ -909,7 +909,7 @@ step
     #label SilvermoonFP
     .goto Eversong Woods,54.37,50.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Gloaming|r
-    .fp Silvermoon >> Get the Silvermoon City flight path
+    .fp Silvermoon >> Apprenez le trajet de Vol vers Lune-d'Argent
     .target Skymistress Gloaming
     .isQuestAvailable 8463
 step

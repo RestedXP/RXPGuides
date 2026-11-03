@@ -2059,7 +2059,7 @@ step
     .target +Tonga Runetotem
     .goto The Barrens,52.26,31.93
     .turnin 905 >>Rendez la quête Les Faucheurs furieux
-    .accept 3261 >>Acceptez la quête Jorn Skyseer
+    .accept 3261 >>Acceptez la quête Jorn Œil-des-cieux
     .target +Sergra Darkthorn
     .goto The Barrens,52.24,31.01
     .turnin 3281 >>Rendez la quête Argent volé
@@ -2471,7 +2471,7 @@ step
 step
     .goto The Barrens,44.85,59.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Jorn Skyseer|r
-    .turnin 3261 >>Rendez la quête Jorn Skyseer
+    .turnin 3261 >>Rendez la quête Jorn Œil-des-cieux
     .accept 882 >>Acceptez la quête Ishamuhale
     .target Jorn Skyseer
 step
@@ -3229,7 +3229,7 @@ step
     .goto The Barrens,44.85,59.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Jorn Skyseer|r
     .turnin 913 >>Rendez la quête Le cri du faucon-tonnerre
-    .accept 874 >>Acceptez la quête Mahren Skyseer
+    .accept 874 >>Acceptez la quête Mahren Œil-des-cieux
     .target Jorn Skyseer
 step << !Tauren
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Mangletooth|r
@@ -3381,7 +3381,7 @@ step
 step
     .goto Thunder Bluff,78.61,28.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Hamuul|r
-    .turnin 1489 >> Rendez la quête Hamuul Runetotem
+    .turnin 1489 >> Rendez la quête Hamuul Totem-runique
     .accept 1490 >> Acceptez la quête Nara Wildmane
     .target Arch Druid Hamuul Runetotem
 step

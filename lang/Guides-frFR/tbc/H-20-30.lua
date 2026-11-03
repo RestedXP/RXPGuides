@@ -91,16 +91,16 @@ step << !Shaman !Troll !Orc
 step << !Shaman
     .goto Orgrimmar,31.62,37.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Thrall|r
-    .turnin 9626 >> Turn in Meeting the Warchief << BloodElf
+    .turnin 9626 >> Rendez Meeting the Warchief << BloodElf
     --.accept 9627 >> Accept Allegiance to the Horde << BloodElf
-    .turnin 9813 >> Turn in Meeting the Warchief << !BloodElf
+    .turnin 9813 >> Rendez Meeting the Warchief << !BloodElf
     .target Thrall
     .isOnQuest 9626 << BloodElf
     .isOnQuest 9813 << !BloodElf
 step << BloodElf
     .goto Orgrimmar,31.62,38.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Dawnsinger|r
-    .accept 9428 >> Accept Report to Splintertree Post
+    .accept 9428 >> Accept Voyagez au poste de Bois-brisé
     .target Ambassador Dawnsinger
     .isQuestTurnedIn 9626
 step << Paladin
@@ -135,7 +135,7 @@ step << Priest
 step << Rogue
     .goto Orgrimmar,43.05,53.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Shenthul|r
-    .turnin 10794 >> Turn in Rogues of the Shattered Hand
+    .turnin 10794 >> Rendez Rogues of the Shattered Hand
     .accept 2460 >> Acceptez la quête Le Salut brisé
     .target Shenthul
 step << Rogue
@@ -193,8 +193,8 @@ step << skip --Warlock
 step << skip --Warlock
     .goto Orgrimmar,63.65,49.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Magar|r
-    .turnin 65601 >> Turn in Love Hurts
-    .accept 65610 >> Accept Wish You Were Here
+    .turnin 65601 >> Rendez Love Hurts
+    .accept 65610 >> Acceptez Wish You Were Here
     .target Magar
 step << Mage
     #completewith next
@@ -966,7 +966,7 @@ step << !Tauren
     .subzoneskip 378,1
 step << Warlock
     #completewith next
-    >>Kill |cRXP_ENEMY_Bristleback Quilboars|r. Loot them for their |cRXP_LOOT_Tusks|r
+    >>Tuez les |cRXP_ENEMY_Quilboars Dos-hirsutes|r. Ramassez-les pour leurs |cRXP_LOOT_Défenses|r
     >>Gardez tous les [|cRXP_LOOT_Joyau de sang|r] que vous récupérez
 	.complete 878,1 --Kill Bristleback Water Seeker (x6)
     .mob +Bristleback Water Seeker
@@ -999,7 +999,7 @@ step
     .goto The Barrens,43.11,48.70,60,0
     .goto The Barrens,43.40,52.22,60,0
     .goto The Barrens,43.00,55.21,60,0
-    >>Kill |cRXP_ENEMY_Bristleback Quilboars|r. Loot them for their |cRXP_LOOT_Tusks|r
+    >>Tuez les |cRXP_ENEMY_Quilboars Dos-hirsutes|r. Ramassez-les pour leurs |cRXP_LOOT_Défenses|r
     >>Gardez tous les [|cRXP_LOOT_Joyau de sang|r] que vous récupérez
 	.complete 878,1 --Kill Bristleback Water Seeker (x6)
     .mob +Bristleback Water Seeker
@@ -2372,7 +2372,7 @@ step
     #xprate <1.5
     #completewith EnterBFD
     .goto Ashenvale,11.56,34.29,0
-    >>|cRXP_WARN_Optionally talk to|r |cRXP_FRIENDLY_Je'neu Sancrea|r |cRXP_WARN_back at Zoram'gar Outpost to get another BFD follow-up quest|r
+    >>|cRXP_WARN_Optionnellement parlez à|r |cRXP_FRIENDLY_Je'neu Sancrea|r |cRXP_WARN_à Avant-poste de Zoram'gar pour obtenir une autre quête de suivi BFD|r
     .turnin 6564 >>Rendez la quête Allégeance aux Dieux très anciens
     .accept 6565 >>Acceptez la quête Allégeance aux Dieux très anciens
     .target Je'neu Sancrea
@@ -2479,7 +2479,7 @@ step
 step
     #xprate >1.49
     .goto Ashenvale,11.56,34.29
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Je'neu|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Je'neu|r
     .turnin 6562 >>Rendez la quête Problèmes dans les profondeurs
     .accept 6563 >>Acceptez la quête L'Essence d'Aku'Mai
     .accept 6921 >>Acceptez la quête Parmi les ruines
@@ -2517,7 +2517,7 @@ step
     #xprate >1.49
     #completewith EnterBFD
     .goto Ashenvale,11.56,34.29,0
-    >>|cRXP_WARN_Optionally talk to|r |cRXP_FRIENDLY_Je'neu Sancrea|r |cRXP_WARN_back at Zoram'gar Outpost to get another BFD follow-up quest|r
+    >>|cRXP_WARN_Optionnellement parlez à|r |cRXP_FRIENDLY_Je'neu Sancrea|r |cRXP_WARN_à Avant-poste de Zoram'gar pour obtenir une autre quête de suivi BFD|r
     .turnin 6564 >>Rendez la quête Allégeance aux Dieux très anciens
     .accept 6565 >>Acceptez la quête Allégeance aux Dieux très anciens
     .target Je'neu Sancrea
@@ -2581,19 +2581,19 @@ step
     .dungeon BFD
 step
     #completewith BFDTurnins
-    .zone Ashenvale >>Exit the dungeon
+    .zone Ashenvale >>Quittez le donjon
     >>Tuez |cRXP_ENEMY_Aku'mai|r en premier si vous le voulez. C'est le dernier boss du donjon
     .dungeon BFD
 step
     #xprate <1.5
     #optional
     #completewith ZoramTurnins
-    .subzone 2897 >>Travel to Zoram'gar Outpost
+    .subzone 2897 >>Rendez-vous à Avant-poste de Zoram'gar
 step
     #xprate >1.49
     #optional
     #completewith ZoramTurnins
-    .subzone 2897 >>Travel to Zoram'gar Outpost
+    .subzone 2897 >>Rendez-vous à Avant-poste de Zoram'gar
     .dungeon BFD
 step
     #xprate <1.5
@@ -2680,12 +2680,12 @@ step
     #xprate <1.5
     #optional
     #completewith JourneytoTM
-    .destroy 16784 >>|cRXP_WARN_Delete your remaining|r |T134133:0|t[|cRXP_LOOT_Sapphire of Aku'Mai|r] |cRXP_WARN_as they're no longer needed|r
+    .destroy 16784 >>|cRXP_WARN_Supprimez vos|r |T134133:0|t[|cRXP_LOOT_Saphir d'Aku'Mai|r] |cRXP_WARN_restants puisqu'ils ne sont plus nécessaires|r
 step
     #xprate >1.49
     #optional
     #completewith JourneytoTM
-    .destroy 16784 >>|cRXP_WARN_Delete your remaining|r |T134133:0|t[|cRXP_LOOT_Sapphire of Aku'Mai|r] |cRXP_WARN_as they're no longer needed|r
+    .destroy 16784 >>|cRXP_WARN_Supprimez vos|r |T134133:0|t[|cRXP_LOOT_Saphir d'Aku'Mai|r] |cRXP_WARN_restants puisqu'ils ne sont plus nécessaires|r
     .dungeon BFD
 step
     #xprate <1.5
@@ -3360,7 +3360,7 @@ step
 step
     .goto Silverpine Forest,45.62,42.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Karos|r
-    .fp Sepulcher >> Get The Sepulcher flight path
+    .fp Sepulcher >> Get Les Sepulcher flight path
     .target Karos Razok
 step
     .goto Silverpine Forest,44.22,39.81
@@ -3375,7 +3375,7 @@ step
     .target Apothecary Renferrel
 step
     .goto Silverpine Forest,43.43,40.85
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hadrec|r downstairs in the crypt
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Hadrec|r en bas dans la crypte
     .accept 1098 >>Acceptez la quête Des nécrotraqueurs à Ombrecroc
     .target High Executor Hadrec
     .dungeon SFK
@@ -3524,7 +3524,7 @@ step
 step << BloodElf
     .goto Hillsbrad Foothills,62.58,20.81
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Duskingdawn|r
-    .turnin 9425 >> Turn in Report to Tarren Mill
+    .turnin 9425 >> Turn in Retournez à Moulin-de-Tarren
     .target Advisor Duskingdawn
     .isOnQuest 9425
 step
@@ -4716,7 +4716,7 @@ RXPGuides.RegisterGuide([[
 #name 25-27 Orneval
 #version 7
 #subgroup RestedXP Horde 1-30
-#next 27-30 South Barrens/Thousand Needles
+#next 27-30 South Barrens/Mille pointes
 
 step << Rogue
     #optional
@@ -4802,7 +4802,7 @@ step
     .accept 6503 >> Acceptez la quête Les estafettes d'Ashenvale
     .target +Kuray'bin
     .goto Ashenvale,71.10,68.12
-    .turnin 9428 >> Turn in Report to Splintertree Post << BloodElf
+    .turnin 9428 >> Turn in Voyagez au poste de Bois-brisé << BloodElf
     .target +Advisor Sunsworn << BloodElf
     .goto Ashenvale,71.33,67.69 << BloodElf
     .isOnQuest 9428 << BloodElf
@@ -5257,7 +5257,7 @@ step
     .line Ashenvale,71.46,70.10,72.08,70.47,72.50,70.60,72.94,70.67,73.33,70.61,74.36,70.10,74.86,70.06,75.26,69.96,75.94,69.80,76.11,68.95,76.93,68.04,77.35,66.96,77.60,66.33,77.93,65.93,78.24,65.72
     >>Tuez |cRXP_ENEMY_Sharptalon|r. Dépouillez-le pour sa [|cRXP_LOOT_Sharptalon's Claw|r] et utilisez-la pour commence la quête
     >>|cRXP_WARN_Attention !|r |cRXP_ENEMY_Serres-tranchantes|r |cRXP_WARN_est de niveau 31 et patrouille aux alentours. Vous pouvez l'attirer jusqu'au Poste de Bois-Brisé ou jusqu'au Campement des Réprouvés si vous avez du mal à le tuer. Si vous le faites, assurez-vous d'infliger plus de 50% des dégâts pour le valider|r
-    >>|cRXP_WARN_Skip this if you are unable to kill him|r
+    >>|cRXP_WARN_Passez ceci si vous ne pouvez pas le tuer|r
     .collect 16305,1,2 --Sharptalon's Claw (1)
     .accept 2 >> Acceptez la quête La griffe de Serres-tranchantes
     .unitscan Sharptalon
@@ -5502,7 +5502,7 @@ RXPGuides.RegisterGuide([[
 #version 7
 #group RestedXP Guide TBC (H)
 << Horde
-#name 27-30 South Barrens/Thousand Needles
+#name 27-30 South Barrens/Mille pointes
 #version 7
 #subgroup RestedXP Horde 1-30
 #next 30-33 Hautebrande/Arathi partie 1
@@ -6300,7 +6300,7 @@ step
     .isQuestComplete 1144
     .dungeon RFK
 step
-    .zone The Barrens >>Exit RFK
+    .zone The Barrens >>Quittez RFK
     .zoneskip Thousand Needles
     .zoneskip Thunder Bluff
     .dungeon RFK
@@ -6338,8 +6338,8 @@ step
     .isQuestAvailable 4821,4841,1149
 step
     .goto Thousand Needles,46.1,50.5
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elosai|r
-    .accept 9431 >> Accept A Different Approach
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Elosai|r
+    .accept 9431 >> Acceptez A Different Approach
     .target Magistrix Elosai
 step
     .goto Thousand Needles,46.00,50.80
@@ -6620,7 +6620,7 @@ step
     .goto Thousand Needles,26.69,55.62,15,0
     .goto Thousand Needles,25.90,55.23
     >>Tuez |cRXP_ENEMY_Grenka Bloodscreech|r. Dépouillez-la pour sa |cRXP_LOOT_Grenka's Claw|r
-    >>|cRXP_WARN_This quest was nerfed in TBC. No adds will spawn|r
+    >>|cRXP_WARN_Cette quête a été affaiblie dans TBC. Aucun renfort ne réapparaîtra|r
     .complete 1150,1 --Collect Grenka's Claw (x1)
     .mob Grenka Bloodscreech
     .isOnQuest 1150
@@ -6741,8 +6741,8 @@ step
 step
     .goto Thousand Needles,21.43,32.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Wizlo|r
-    .turnin 9431 >> Turn in A Different Approach
-    .accept 9433 >> A Dip in the Moonwell
+    .turnin 9431 >> Rendre la quête Une nouvelle approche
+    .accept 9433 >> Puiser dans le puits de lune
     .accept 5151 >> Acceptez la quête Hypercapaciteur bidulotron
     .target Wizlo Bearingshiner
 step
@@ -6865,8 +6865,8 @@ step
 step
     .goto Thousand Needles,21.43,32.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Wizlo|r
-    .turnin 9433 >> Turn in A Dip in the Moonwell
-    .accept 9434 >> Accept Testing the Tonic
+    .turnin 9433 >> Rendez A Dip in the Moonwell
+    .accept 9434 >> Acceptez Testing the Tonic
     .turnin 5151 >> Rendez la quête Hypercapaciteur bidulotron
     .target Wizlo Bearingshiner
     .isQuestComplete 5151
@@ -6874,8 +6874,8 @@ step
     #optional
     .goto Thousand Needles,21.43,32.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Wizlo|r
-    .turnin 9433 >> Turn in A Dip in the Moonwell
-    .accept 9434 >> Accept Testing the Tonic
+    .turnin 9433 >> Rendez A Dip in the Moonwell
+    .accept 9434 >> Acceptez Testing the Tonic
     .target Wizlo Bearingshiner
 step
     #loop
@@ -7426,7 +7426,7 @@ step
 step
     .goto Thousand Needles,46.1,50.5
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Longhorn|r
-    .turnin 9434 >> Turn in Testing the Tonic
+    .turnin 9434 >> Rendez Testing the Tonic
     .target Magistrix Elosai
 step
     #softcore
@@ -7738,7 +7738,7 @@ step
     .abandon 5088 >>Abandonnez la quête Arikara
 step
     #optional
-    .abandon 1152 >>Abandon Test of Lore
+    .abandon 1152 >>Abandonnez la quête L'épreuve de la Connaissance
 step
     #optional
     .goto Thousand Needles,43.12,36.86

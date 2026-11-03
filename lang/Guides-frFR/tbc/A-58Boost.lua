@@ -8,11 +8,11 @@ RXPGuides.RegisterGuide([[
 #name Guide Sésame 58-60
 #subgroup RestedXP Alliance Sésame 58-60
 #subweight -1
-#title Boosted Character 58-60
+#title Personnage boosté 58-60
 #next 59-61 Péninsule des Flammes infernales
 
 step
-+As soon as you log in for the first time, finish the little tutorial section in front of your class trainer to get access to all of the boosted gear
++Dès que vous vous connectez pour la première fois, terminez la petite section tutorielle devant votre formateur de classe pour accéder à tout l'équipement amélioré
 .use 185964
 .use 186051
 .use 186052

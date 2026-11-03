@@ -6,7 +6,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 14-16 Les Tarides
 #version 7
-#subgroup RXP TBC Survival Guide 1-30
+#subgroup RXP Guide de survie TBC 1-30
 #next 16-18 Les Terres Fantômes
 
 step << BloodElf/Undead
@@ -1272,7 +1272,7 @@ step << Hunter
 step
     .goto Orgrimmar,31.74,37.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Thrall|r
-    >>|cRXP_WARN_This is a prerequisite quest for Ragefire Chasm. Skip this step if you do not wish to do it|r
+    >>|cRXP_WARN_Ceci est une quête préalable pour Gouffre de Ragefeu. Passez cette étape si vous ne souhaitez pas la faire|r
     .accept 5726 >>Acceptez la quête Ennemis cachés
     .target Thrall
     .dungeon RFC
@@ -1283,7 +1283,7 @@ step
 step
     .goto Durotar,53.08,9.19
     >>Tuez les membres de la |cRXP_ENEMY_Lame Ardente|r au Rocher du Crâne jusqu'à ce que l' |cRXP_LOOT_Insigne de lieutenant|r tombe
-    >>|cRXP_WARN_This is a prerequisite quest for Ragefire Chasm. Skip this step if you do not wish to do it|r
+    >>|cRXP_WARN_Ceci est une quête préalable pour Gouffre de Ragefeu. Passez cette étape si vous ne souhaitez pas la faire|r
     .complete 5726,1 --Lieutenant's Insignia (1)
     .isOnQuest 5726
     .dungeon RFC
@@ -1345,7 +1345,7 @@ step
     .dungeon RFC
 step
     >>|cRXP_WARN_Si possible, faites en sorte que les membres du groupe vous partagent les quêtes suivantes|r
-    >>|cRXP_WARN_Skip this step if nobody has these quests|r
+    >>|cRXP_WARN_Passez cette étape si personne n'a ces quêtes|r
     .accept 5722 >>Acceptez la quête À la recherche de la sacoche perdue
     .accept 5723 >>Acceptez la quête Tester la force de l'ennemi
     .dungeon RFC
@@ -1487,7 +1487,7 @@ step << Rogue
     .goto Silvermoon City,79.70,52.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Zelanis|r
     >>Vérifiez que vous ayez appris [Crochetage] pour une quête à venir
-    .accept 10372 >> Accept A Discreet Inquiry
+    .accept 10372 >> Acceptez A Discreet Inquiry
     .train 6761 >>Apprenez vos sorts de classe
     .target Zelanis
     .xp <16,1
