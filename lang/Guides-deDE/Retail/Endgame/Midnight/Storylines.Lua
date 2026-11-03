@@ -344,7 +344,7 @@ step
     .accept 96444 >>Accept Seeking Knowledge Week 5 of 5: Off-World Magic
     .target Magister Rommath
 step
-    .isQuestAvailable 96708,96051
+    .isQuestAvailable 96708,96051 --To the Voidstorm and Beyond!; Through the Cold Rift
     +You have to unlock Naigtal or Val
 step
    #arrowtext Click on the\n|cRXP_PICK_Portal to Voidstorm|r
@@ -394,7 +394,7 @@ RXPGuides.RegisterGuide([[
 #internal
 
 step
-    .isOnQuest 93929
+    .isOnQuest 93929 --The War Within Recap
     .goto 85,53.53,58.42,-1
     .goto 2112,46.40,60.23,-1
     .goto 2393,58.40,70.77,-1
@@ -403,7 +403,7 @@ step
     .complete 93929,1 --Visit the Tome of History in Valdrakken
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Tome of History|r
-    .isOnQuest 93929
+    .isOnQuest 93929 --The War Within Recap
     .goto 85,53.53,58.42,-1
     .goto 2112,46.40,60.23,-1
     .goto 2393,58.40,70.77,-1
@@ -414,7 +414,7 @@ step
     .target Tome of History
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Tome of History|r
-    .isQuestAvailable 91843
+    .isQuestAvailable 91843 --Recap: The Harbinger
     .goto 85,53.53,58.42,-1
     .goto 2112,46.40,60.23,-1
     .goto 2393,58.40,70.77,-1
@@ -636,7 +636,7 @@ step
     .complete 80022,3 --1/1 Corruption purged from Stormperch
     .skipgossipid 122130
 step
-    .isOnQuest 80022
+    .isOnQuest 80022 --Calling the Stormriders
     >>Kill |cRXP_ENEMY_Kyrioss|r.:
     *- Clear the |cRXP_ENEMY_guards|r around the |cRXP_FRIENDLY_Stormrooks|r.
     *- |TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Dark Fragment|r to free them.
@@ -645,7 +645,7 @@ step
     .target Stormrook
     .mob Kyrioss
 step
-    .isOnQuest 80022
+    .isOnQuest 80022 --Calling the Stormriders
     >>Kill |cRXP_ENEMY_Stormguard Gorren|r.:
     *- Jump down and |TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Stormrook Feather|r.
     *- Dodge the purple balls
@@ -655,7 +655,7 @@ step
 step
     #label VoidstoneMonstrosity
     #completewith TheRookeryCorruptionA
-    .isOnQuest 80022
+    .isOnQuest 80022 --Calling the Stormriders
     >>Kill |cRXP_ENEMY_Voidstone Monstrosity|r.:
     *- Kill the |cRXP_ENEMY_Void Ascendant|r and jump down.
     *- Kill the |cRXP_ENEMY_void enemies|r before and around the boss to spawn him.
@@ -676,7 +676,7 @@ step
     .turnin 80022 >>Turn in Calling the Stormriders
     .target Merrix
 step
-    .isOnQuest 80022
+    .isOnQuest 80022 --Calling the Stormriders
     #completewith CallingtheStormriders
     .zone 2339 >>Leave the instance group (Right-Click your player frame).
 step
@@ -778,7 +778,7 @@ step
 step
     #arrowtext Click\n|cRXP_PICK_Tome of History|r
     .zoneskip 2339,1
-    .isQuestAvailable 78837
+    .isQuestAvailable 78837 --Pomp and Dire Circumstance
     .goto 2339,32.11,59.47
     .zone 2214>>Click on the |cRXP_PICK_Tome of History|r.
 step
@@ -825,7 +825,7 @@ step
 step
     #arrowtext |cFFFCDC00Go up the ramp|r.
     #completewith FindTheForemanA
-    .isOnQuest 78704
+    .isOnQuest 78704 --Find the Foreman
     .goto 2214,64.01,64.16,12 >>Navigate up the ramp.
 step
     #arrowtext Kill\n|cRXP_ENEMY_Kol Bruncrag|r
@@ -864,7 +864,7 @@ step
     .goto 2214,64.39,64.33
     .target +Magni Bronzebeard
 step
-    .isOnQuest 78706
+    .isOnQuest 78706 --The High Speaker's Secret
     #completewith next
     #label TheHighSpeakersSecretA
     .goto 2214,64.43,64.22
@@ -905,7 +905,7 @@ step
     .complete 78761,2 --1/1 Confront the High Speaker in the Halls of Awakening
 step
     #arrowtext |cFFFCDC00Follow the arrow|r.
-    .isOnQuest 78761
+    .isOnQuest 78761 --Into the Machine
     .goto 2368,22.41,49.46
     >>Kill |cRXP_ENEMY_Ostiary Wystan|r and the |cRXP_ENEMY_Machinist Protectors|r.
     .scenario 6719,1 --1/1 Follow the trail of the High Speaker into the Hall of Awakening
@@ -913,79 +913,79 @@ step
     .mob Machinist Protector
 step
     #arrowtext Click\n|cRXP_PICK_Ironfuse Bomb|r
-    .isOnQuest 78761
+    .isOnQuest 78761 --Into the Machine
     .goto 2368,24.78,55.32
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Ironfuse Bomb|r.
     .scenario 6720,2 --1/1 Ironfuse Bomb collected
 step
-    .isOnQuest 78761
+    .isOnQuest 78761 --Into the Machine
     .goto 2368,24.69,53.17
     >>Use the |cRXP_WARN_ExtraActionButton|r and aim the rectangle at the |cRXP_ENEMY_Inferno Sprayer|r.
     .scenario 6720,1,1 --1/4 Inferno Sprayers destroyed
 step
-    .isOnQuest 78761
+    .isOnQuest 78761 --Into the Machine
     #completewith next
     #label InfernoSprayerB
     >>Use the |cRXP_WARN_ExtraActionButton|r and aim the rectangle at the |cRXP_ENEMY_Inferno Sprayer|r.
     .scenario 6720,1,2 --2/4 Inferno Sprayers destroyed
 step
     #arrowtext Click\n|cRXP_PICK_Ironfuse Bomb|r
-    .isOnQuest 78761
+    .isOnQuest 78761 --Into the Machine
     #completewith InfernoSprayerB
     .goto 2368,28.53,51.02
     .cast 143394 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Ironfuse Bomb|r.
 step
-    .isOnQuest 78761
+    .isOnQuest 78761 --Into the Machine
     #requires InfernoSprayerB
     .goto 2368,26.37,53.12
     >>Use the |cRXP_WARN_ExtraActionButton|r and aim the rectangle at the |cRXP_ENEMY_Inferno Sprayer|r.
     .scenario 6720,1,2 --2/4 Inferno Sprayers destroyed
 step
-    .isOnQuest 78761
+    .isOnQuest 78761 --Into the Machine
     #completewith next
     #label InfernoSprayerC
     >>Use the |cRXP_WARN_ExtraActionButton|r and aim the rectangle at the |cRXP_ENEMY_Inferno Sprayer|r.
     .scenario 6720,1,3 --3/4 Inferno Sprayers destroyed
 step
     #arrowtext Click\n|cRXP_PICK_Ironfuse Bomb|r
-    .isOnQuest 78761
+    .isOnQuest 78761 --Into the Machine
     #completewith InfernoSprayerC
     .goto 2368,28.59,48.15
     .cast 143394 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Ironfuse Bomb|r.
 step
-    .isOnQuest 78761
+    .isOnQuest 78761 --Into the Machine
     #requires InfernoSprayerC
     .goto 2368,26.40,45.97
     >>Use the |cRXP_WARN_ExtraActionButton|r and aim the rectangle at the |cRXP_ENEMY_Inferno Sprayer|r.
     .scenario 6720,1,3 --3/4 Inferno Sprayers destroyed
 step
-    .isOnQuest 78761
+    .isOnQuest 78761 --Into the Machine
     #completewith next
     #label InfernoSprayerD
     >>Use the |cRXP_WARN_ExtraActionButton|r and aim the rectangle at the |cRXP_ENEMY_Inferno Sprayer|r.
     .scenario 6720,1,4 --4/4 Inferno Sprayers destroyed
 step
     #arrowtext Click\n|cRXP_PICK_Ironfuse Bomb|r
-    .isOnQuest 78761
+    .isOnQuest 78761 --Into the Machine
     #completewith InfernoSprayerD
     .goto 2368,28.47,47.98
     .cast 143394 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Ironfuse Bomb|r.
 step
-    .isOnQuest 78761
+    .isOnQuest 78761 --Into the Machine
     #requires InfernoSprayerD
     .goto 2368,24.64,45.98
     >>Use the |cRXP_WARN_ExtraActionButton|r and aim the rectangle at the |cRXP_ENEMY_Inferno Sprayer|r.
     .scenario 6720,1 --4/4 Inferno Sprayers destroyed
     .timer 45,Roleplay Duration
 step
-    .isOnQuest 78761
+    .isOnQuest 78761 --Into the Machine
     .goto 2368,37.50,49.54
     #title |cFFFCDC00Follow the Arrow|r.
     >>You have to wait for |cRXP_FRIENDLY_Dagran Thaurissan II|r to open each of the doors.
     .scenario 6941,1 --1/1 Journey Onward
 step
     #arrowtext Click\n|cRXP_PICK_Earthen Console|r
-    .isOnQuest 78761
+    .isOnQuest 78761 --Into the Machine
     .goto 2368,39.3,43.68,10,0
     .goto 2368,41.96,41.79,5,0
     .goto 2368,42.75,45.44
@@ -993,7 +993,7 @@ step
     .scenario 6729,1 --1/1 Help Dagran activate the Runelock sequence
 step
     #arrowtext Kill\n|cRXP_ENEMY_Skardyn forces|r
-    .isOnQuest 78761
+    .isOnQuest 78761 --Into the Machine
     #loop
     .goto 2368,43.78,43.25,30,0
     .goto 2368,44.22,56.47,30,0
@@ -1008,7 +1008,7 @@ step
     .mob Void Crystal Monstrosity
 step
     #arrowtext Follow the arrow into the next chamber
-    .isOnQuest 78761
+    .isOnQuest 78761 --Into the Machine
     .goto 2368,53.33,49.49
     >>|cRXP_WARN_Follow the arrow into the next chamber|r.
     *|cRXP_WARN_If the door doesn't open, check if one of the NPCs is still fighting at the entrance of the chamber|r.
@@ -1016,7 +1016,7 @@ step
     .timer 30,Roleplay Duration
 step
     #arrowtext Kill\n|cRXP_ENEMY_Earthen-Ward Sentinel|r and |cRXP_ENEMY_Iron-Runed Protector|r
-    .isOnQuest 78761
+    .isOnQuest 78761 --Into the Machine
     .goto 2368,59.84,49.47
     >>Kill the |cRXP_ENEMY_Earthen-Ward Sentinel|r and |cRXP_ENEMY_Iron-Runed Protector|r.
     *|cRXP_WARN_You can only attack the one without the shield|r.
@@ -1027,7 +1027,7 @@ step
     .mob Iron-Runed Protector
 step
     #arrowtext Follow the arrow into the final chamber
-    .isOnQuest 78761
+    .isOnQuest 78761 --Into the Machine
     .goto 2368,70.95,45.09,15,0
     .goto 2368,74.15,45.18,15,0
     .goto 2368,76.72,48.12,15,0
@@ -1037,13 +1037,13 @@ step
     .timer 30,Roleplay Duration
 step
     #arrowtext Kill\n|cRXP_ENEMY_Master Machinist Dunstan|r
-    .isOnQuest 78761
+    .isOnQuest 78761 --Into the Machine
     .goto 2368,85.42,49.44
     >>Kill |cRXP_ENEMY_Master Machinist Dunstan|r.
     .scenario 6738,1 --1/1 Master Machinist Dunstan defeated
     .mob Master Machinist Dunstan
 step
-    .isOnQuest 78761
+    .isOnQuest 78761 --Into the Machine
     #label ConfrongHighSpeaker
     .goto 2368,91.12,49.34
     #title |cFFFCDC00Follow the Arrow|r.
@@ -1233,7 +1233,7 @@ step
     .target +General Steelstrike
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Alleria Windrunner|r
-    .isOnQuest 78624
+    .isOnQuest 78624 --A Candle in the Dark
     .goto 2215,34.07,54.74
     .gossipoption 121810 >>Talk to |cRXP_FRIENDLY_Alleria Windrunner|r.
     .timer 21,Roleplay Duration
@@ -1291,7 +1291,7 @@ step
     *|cRXP_WARN_Type /reload into the chat if this step is stuck.|r
     .complete 78630,2 --175/175 Nerubian forces slain
 step
-    .isOnQuest 78630
+    .isOnQuest 78630 --The Rise of the Reckoning
     .exitvehicle >>Use |T252175:0|t[Leave The Reckoning] (6)
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Faerin|r
@@ -1334,7 +1334,7 @@ step
     .target Orweyna
 step
     #completewith ForNaughtSoVial
-    .isOnQuest 78353
+    .isOnQuest 78353 --Fear the Old Blood
     >>Kill |cRXP_ENEMY_Horrid Effusia|r or |cRXP_ENEMY_Blackblood Coalescence|r.
     .complete 78353,1 --The Breathing Pit Cleansed (100%)
     .mob Horrid Effusia
@@ -1503,7 +1503,7 @@ step
     .skipgossipid 120665
 -- TODO: Find a way to fix waypoints
 step
-    .isOnQuest 78244
+    .isOnQuest 78244 --Kaheti Hospitality
     >>Kill the incoming |cRXP_ENEMY_Nerubian forces|r.
     *|cRXP_WARN_No Arrow possible|r.
     .scenario 6910,1 --Defeat Threadmaestro's troop (100%)
@@ -1514,7 +1514,7 @@ step
     .mob Gahn'dante
     .mob Al'haggro
 step
-    .isOnQuest 78244
+    .isOnQuest 78244 --Kaheti Hospitality
 
     >>Kill |cRXP_ENEMY_Threadmaestro Fothis|r.
     *|cRXP_WARN_No Arrow possible|r.
@@ -1522,31 +1522,31 @@ step
     .mob Threadmaestro Fothis
     .mob Kra'jhendo
 step
-    .isOnQuest 78244
+    .isOnQuest 78244 --Kaheti Hospitality
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Web Blockade|r.
     *|cRXP_WARN_No Arrow possible|r.
     .scenario 6910,3 --1/1 Destroy the Web Wall
 step
-    .isOnQuest 78244
+    .isOnQuest 78244 --Kaheti Hospitality
     >>Kill |cRXP_ENEMY_Swarm-Maven Donmiss|r.
     *|cRXP_WARN_No Arrow possible|r.
     *|cRXP_WARN_Dodge the green bomb impacts as they knock you back|r.
     .scenario 6911,1 --1/1 Swarm-Maven Donmiss slain
     .mob Swarm-Maven Donmiss
 step
-    .isOnQuest 78244
+    .isOnQuest 78244 --Kaheti Hospitality
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on any |cRXP_FRIENDLY_Vizier's Getaway Flyer|r.
     *|cRXP_WARN_No Arrow possible|r.
     .scenario 6912,1 --1/1 Vizier's Flyers reached
     .target Vizier's Getaway Flyer
 step
-    .isOnQuest 78244
+    .isOnQuest 78244 --Kaheti Hospitality
     >>Run into the wall and Kill |cRXP_ENEMY_Kx, Fang of the Queen|r.
     *|cRXP_WARN_No Arrow possible|r.
     .scenario 6917,1 --1/1 Kx, Fang of the Queen slain
     .mob Kx, Fang of the Queen
 step
-    .isOnQuest 78244
+    .isOnQuest 78244 --Kaheti Hospitality
     #label EscapeFromTheBurrows
     >>|cRXP_WARN_Jump down!|r.
     *|cRXP_WARN_No Arrow possible|r.
@@ -1624,7 +1624,7 @@ step
     .skipgossipid 122377
 step
     #arrowtext Enter the |cRXP_PICK_A Light in the Dark|r scenario
-    .isOnQuest 78948
+    .isOnQuest 78948 --A Light in the Dark
     .goto 2215,64.53,61.79
     .enterScenario 2416 >>Enter the |cRXP_PICK_A Light in the Dark|r scenario.
 step
@@ -1681,7 +1681,7 @@ step
     .target Alleria Windrunner
 step
     #arrowtext Click\n|cRXP_PICK_Tome of History|r
-    .isOnQuest 83503
+    .isOnQuest 83503 --Return to Dornogal
     .goto 2215,36.10,35.43
     .zone 2339 >>Click on the |cRXP_PICK_Tome of History|r.
 step
