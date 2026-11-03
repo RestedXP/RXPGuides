@@ -26469,10 +26469,10 @@ step
     .goto 463,43.46,91.82,30,0
     .goto 463,43.81,88.49,30,0
     .goto 463,46.15,88.00,30,0
-    >>Click on the |cRXP_PICK_Bloodtalon Lasso|r macro in the "Active Items Frame" to use it on |cRXP_FRIENDLY_Swiftclaw|r. He runs counter-clockwise around the island. (NOT TRANSLATED IN :esMX YET)
+    >>Haz clic en la |cRXP_PICK_Bloodtalon Lazo|r macro en el marco de objetos activos para usarla en |cRXP_FRIENDLY_Garrapresta|r. Corre en sentido contrario a las agujas del reloj alrededor de la isla.
     .complete 24626,1 --1/1 Capture Swiftclaw
 	.unitscan Garrapresta
-    .macro Bloodtalon Lasso,134326 >>/targetexact Swiftclaw\n/use item:50053 (NOT TRANSLATED IN :esMX YET)
+    .macro Bloodtalon Lasso,134326 >>Lazo Sangrepresa
 step
     #arrowtext Monta a |cRXP_FRIENDLY_Garrapresta|r y regresa al |cRXP_PICK_Cercado de Raptor|r
     .goto 463,50.42,66.82,40,0
@@ -27313,10 +27313,10 @@ step
     #loop
     .goto 7,48.25,60.43,20,0
     .goto 7,48.13,57.28,20,0
-    >>Click on the |cRXP_PICK_Tender Stride Meat|r macro in the "Active Items Frame" to use it on |cRXP_FRIENDLY_Kyle|r. Wait until Kyle is nearby. (NOT TRANSLATED IN :esMX YET)
+    >>Haz clic en la |cRXP_PICK_Tender Stride Carne|r macro en el marco de objetos activos para usarla en |cRXP_FRIENDLY_Kyle|r. Espera hasta que Kyle esté cerca.
     .complete 11129,1 --1/1 Kyle fed
     .target Kyle
-    .macro Tender Stride Meat,134400 >>/targetexact Kyle\n/use item:33009 (NOT TRANSLATED IN :esMX YET)
+    .macro Tender Stride Meat,134400 >>Carne de Zancada Tierna
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Ahab Pezuña de Trigo|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ahab Pezuña de Trigo|r.
@@ -29650,37 +29650,37 @@ step
 step
     #sticky
     >>Necesitas recolectar un total de 9 Kaja'Colas Zero-Uno
-    >>Click on the |cRXP_PICK_Kaja'Cola Zero-One|r macro in the "Active Items Frame" to use it on |cRXP_FRIENDLY_Kezan Citizen|r. (NOT TRANSLATED IN :esMX YET)
-    .macro Kaja'Cola Zero-One,134400 >>/targetexact Kezan Citizen\n/use item:52484 (NOT TRANSLATED IN :esMX YET)
+    >>Haz clic en la |cRXP_PICK_Kaja'Cola Zero-Uno|r macro en el marco de objetos activos para usarla en el |cRXP_FRIENDLY_Ciudadano de Kezan|r.
+    .macro Kaja'Cola Zero-One,134400 >>Kaja'Cola Zero-Uno
     .collect 52484,9,25122,0xF
     .complete 25122,4 --6/6 Other goblin's minds freed
     .target Ciudadano de Kezan
 step
     #title Libera a As
-    >>Click on the |cRXP_PICK_Kaja'Cola Zero-One|r macro in the "Active Items Frame" to use it on |cRXP_FRIENDLY_Ace|r. (NOT TRANSLATED IN :esMX YET)
+    >>Haz clic en la |cRXP_PICK_Kaja'Cola Zero-Uno|r macro en el marco de objetos activos para usarla en |cRXP_FRIENDLY_As|r.
     .goto 174,57.1,36.9
-    .macro Kaja'Cola Zero-One,134400 >>/targetexact Ace\n/use item:52484 (NOT TRANSLATED IN :esMX YET)
+    .macro Kaja'Cola Zero-One,134400 >>Kaja'Cola Zero-Uno
     .complete 25122,1 --1/1 Ace's mind freed
     .target As
 step
     #title Libera a Izzy
-    >>Click on the |cRXP_PICK_Kaja'Cola Zero-One|r macro in the "Active Items Frame" to use it on |cRXP_FRIENDLY_Izzy|r. (NOT TRANSLATED IN :esMX YET)
+    >>Haz clic en la |cRXP_PICK_Kaja'Cola Zero-Uno|r macro en el marco de objetos activos para usarla en |cRXP_FRIENDLY_Izzy|r.
     .goto 174,57.01,35.02
-    .macro Kaja'Cola Zero-One,134400 >>/targetexact Izzy\n/use item:52484 (NOT TRANSLATED IN :esMX YET)
+    .macro Kaja'Cola Zero-One,134400 >>Kaja'Cola Zero-Uno
     .complete 25122,2 --1/1 Izzy's mind freed
     .target Izzy
 step
     #arrowtext Mata a\n|cRXP_ENEMY_Bombaumbro el Señor de las Bestias|r
-    >>Kill |cRXP_ENEMY_Blastshadow the Brutemaster|r and click on the flying purple |cRXP_PICK_Soulstone|r. Click on the |cRXP_PICK_Blastshadow's Soulstone|r macro in the "Active Items Frame" to use it on his corpse. (NOT TRANSLATED IN :esMX YET)
-    .macro Blastshadow's Soulstone,134336 >>/targetexact Blastshadow the Brutemaster\n/use [@target,dead] item:52481 (NOT TRANSLATED IN :esMX YET)
+    >>Mata al |cRXP_ENEMY_Bombaumbro el Señor de las Bestias|r y haz clic en la |cRXP_PICK_Soulstone|r púrpura que vuela. Haz clic en la |cRXP_PICK_Blastshadow's Piedra de alma|r macro en el marco de objetos activos para usarla en su cadáver.
+    .macro Blastshadow's Soulstone,134336 >>Piedra de alma de Sombraestallido
     .goto 174,56.18,32.29
     .complete 25123,1 --1/1 Blastshadow's Soulstone destroyed
     .mob Bombaumbro el Señor de las Bestias
 step
     #title Libera a Gargajo
-    >>Click on the |cRXP_PICK_Kaja'Cola Zero-One|r macro in the "Active Items Frame" to use it on |cRXP_FRIENDLY_Gobber|r. (NOT TRANSLATED IN :esMX YET)
+    >>Haz clic en la |cRXP_PICK_Kaja'Cola Zero-Uno|r macro en el marco de objetos activos para usarla en |cRXP_FRIENDLY_Gargajo|r.
     .goto 174,57.04,32.17
-    .macro Kaja'Cola Zero-One,134400 >>/targetexact Gobber\n/use item:52484 (NOT TRANSLATED IN :esMX YET)
+    .macro Kaja'Cola Zero-One,134400 >>Kaja'Cola Zero-Uno
     .complete 25122,3 --1/1 Gobber's mind freed
     .target Gargajo
 step

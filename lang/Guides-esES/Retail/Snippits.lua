@@ -773,7 +773,7 @@ step
 step
     #label ChromieTime2
     .goto 84,56.257,17.311
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r. (NOT TRANSLATED IN :esMX YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Cromi|r |cRXP_WARN_[2]|r.
     .accept 40519 >>Acepta la misión Legion: La Legión ha vuelto
     .chromietime 10
     .skipgossipid 51901
@@ -784,7 +784,7 @@ step
     #label CallBoardStart
     .goto 84,62.21,29.84
     >>|TInterface/cursor/crosshair/interact.blp:20|tHaz clic en el |cRXP_PICK_Tablero de ¡Se busca héroe!|r
-    .accept 40519 >>Accept Legion: The Legion Returns (NOT TRANSLATED IN :esMX YET)
+    .accept 40519 >>Acepta la misión Legion: La Legión ha vuelto
     .choose 1851120
 step
     #arrowtext Habla con\n|cRXP_FRIENDLY_Wrathion|r
