@@ -3886,6 +3886,7 @@ step
     >>Mata al |cRXP_ENEMY_Señor de la guerra Krom'zar|r una vez que aparece. Despoja el |cRXP_PICK_Estandarte|r que deja en el suelo
     >>|cRXP_WARN_¡Ten cuidado! Es un élite fuerte y está custodiado por al menos dos|r |cRXP_ENEMY_Kolkar|r |cRXP_WARN_enemigos|r
     >>|cRXP_WARN_Puede tardar hasta 3 minutos en reaparecer|r
+    .link https://www.youtube.com/watch?v=xrm0PWe5wf4 >>|cRXP_WARN_Haz clic aquí para una guía en video sobre cómo hacer kiting|r |cRXP_ENEMY_Señor de la guerra Krom'zar|r
     .complete 4021,1 --Piece of Krom'zar's Banner (1)
     .unitscan Warlord Krom'zar
     .isOnQuest 4021

@@ -1140,7 +1140,7 @@ step
     .mob Frostmane Headhunter
 step
     --#hardcore
-    >>|cRXP_WARN_Baja hasta esta ubicación para explorar el Poblado Peloescarcha. Si hay enemigos abajo, limpia los alrededores normalmente y NO bajes|r
+    >>|cRXP_WARN_Baja hasta esta ubicación para explorar el Poblado Peloescarcha. Si hay enemigos abajo, limpia los alrededores con normalidad y NO bajes|r
     .goto Dun Morogh,22.86,52.16
     .complete 287,2 --Fully explore Frostmane Hold
 step << Hunter
