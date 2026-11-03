@@ -566,7 +566,7 @@ step << Druid
 step
     #label HSAuber
     .hs >> 炉石回到奥伯丁
-    >>|cRXP_BUY_如有需要，购买食物/水|r << !Warrior !Rogue
+    >>|cRXP_BUY_按需购买食物/水|r << !Warrior !Rogue
 	>>|cRXP_BUY_如有需要，购买食物|r << Warrior/Rogue
     .cooldown item,6948,>2,1
     .bindlocation 442,1
@@ -2728,7 +2728,7 @@ step << NightElf/Draenei
 .dungeon DM
     #optional
     .goto Ironforge,55.491,47.751
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
     .fp Ironforge >> 获取铁炉堡的飞行路径
     .target 格莱斯·瑟登
     .zoneskip Wetlands
@@ -4817,7 +4817,7 @@ step
 #xprate >1.49
     .goto Wetlands,7.95,56.38
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_德温·晨光|r对话
-    .vendor >> |cRXP_BUY_尽可能多地购买|r |T134831:0|t[治疗药水] |cRXP_BUY_（如果有售）|r
+    .vendor >> |cRXP_BUY_尽可能多购买|r |T134831:0|t[治疗药水] |cRXP_BUY_有库存的话|r
     >>|cRXP_WARN_这是限量供应物品。如果 |cRXP_FRIENDLY_德温·晨光|r 没有库存，请跳过此步骤|r
     .target 德温·晨光
     .zoneskip Wetlands,1
@@ -4987,7 +4987,7 @@ step << NightElf/Draenei
 step << NightElf/Draenei
 #xprate >1.49
     .goto Ironforge,55.491,47.751
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
     .fp Ironforge >> 获取铁炉堡的飞行路径
     .target 格莱斯·瑟登
 step << NightElf/Draenei
@@ -5718,7 +5718,7 @@ step
 step
 .dungeon WC
     .hs >> 炉石返回阿斯特兰纳，灰谷
-    >>|cRXP_BUY_如有需要，购买食物/水|r << !Warrior !Rogue
+    >>|cRXP_BUY_按需购买食物/水|r << !Warrior !Rogue
 	>>|cRXP_BUY_如有需要，购买食物|r << Warrior/Rogue
     .zoneskip Ashenvale
     .cooldown item,6948,>2,1
@@ -5892,7 +5892,7 @@ step
 #xprate >1.49
     .goto Wetlands,7.95,56.38
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_德温·晨光|r对话
-    .vendor >> |cRXP_BUY_尽可能多地购买|r |T134831:0|t[治疗药水] |cRXP_BUY_（如果有售）|r
+    .vendor >> |cRXP_BUY_尽可能多购买|r |T134831:0|t[治疗药水] |cRXP_BUY_有库存的话|r
     >>|cRXP_WARN_这是限量供应物品。如果 |cRXP_FRIENDLY_德温·晨光|r 没有库存，请跳过此步骤|r
     .target 德温·晨光
     .zoneskip Wetlands,1
@@ -5995,7 +5995,7 @@ step
 .dungeon SFK
 	.goto Wetlands,63.9,78.6
 	.hs >> 将炉石使用回米奈希尔港
-    >>|cRXP_BUY_如有需要，购买食物/水|r << !Warrior !Rogue
+    >>|cRXP_BUY_按需购买食物/水|r << !Warrior !Rogue
 	>>|cRXP_BUY_如有需要，购买食物|r << Warrior/Rogue
     .subzoneskip 150
     .subzoneskip 2103

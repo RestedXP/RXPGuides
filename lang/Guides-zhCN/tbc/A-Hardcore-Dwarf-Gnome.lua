@@ -928,7 +928,7 @@ step
     #completewith next
     .goto Dun Morogh,47.779,52.426,6,0
     .goto Dun Morogh,47.644,52.655,3,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_加文·雷酒|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在楼下与 |cRXP_FRIENDLY_加文·雷酒|r 对话
     .turnin 308 >> 交任务 加文的爱好
     .target 加文·雷酒
 step
@@ -1425,7 +1425,7 @@ step << Rogue
     .turnin -2218 >> 交任务 救赎之路
     .target 霍夫丹·黑须
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
     .target 格莱斯·瑟登
     .goto Ironforge,55.501,47.742
     .turnin 6388 >> 交任务 格莱斯·瑟登
@@ -1566,7 +1566,7 @@ step << Warlock
     .goto StormwindClassic,27.2,78.1,15 >> 前往屠宰场，进入地下室
 step << Warlock
     .goto StormwindClassic,26.117,77.225
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
     .trainer >> 训练你的职业技能
     .target 厄苏拉·德林
 step << Warlock
@@ -1695,7 +1695,7 @@ step
     .mob 狗头人矿工
 step
     .goto Elwynn Forest,40.5,82.3
-    >>|cRXP_WARN_进入并且探察法戈第矿洞|r
+    >>|cRXP_WARN_进入并探察法戈第矿洞|r
     .complete 62,1 --Scout Through the Fargodeep Mine
 step
     .goto Elwynn Forest,40.5,82.3,25,0

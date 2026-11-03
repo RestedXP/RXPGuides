@@ -22,7 +22,7 @@ step << !NightElf !Draenei
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布瑞尔索恩|r 对话 << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_芬斯维克|r 对话 << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_托德雷·铁矿|r 对话 << Priest
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_丁克|r 对话 << Mage
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_丁克|r 对话 << Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_布兰度尔·铁锤|r 对话 << Paladin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_雷格努斯·雷石|r 对话 << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_比尔班·飞钳|r 对话 << Warrior
@@ -906,7 +906,7 @@ step
     .accept 4722 >> 接受任务 搁浅的海龟
 step
     .goto 1439/1,579.500,5240.300
-    >>点击地上的 |cRXP_PICK_搁浅的海洋生物|r
+    >>点击 |cRXP_PICK_搁浅的海洋生物|r
     .accept 4728 >>接受任务 搁浅的海洋生物
 step
     #requires bears1A
@@ -1136,7 +1136,7 @@ step << Warlock
     .zoneskip Bloodmyst Isle
 step << Warlock
     .goto Ironforge,55.51,47.75
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
     .fly Wetlands>> 飞往湿地
     .target 格莱斯·瑟登
     .zoneskip Wetlands
@@ -1944,7 +1944,7 @@ step
     .target 莫莱
 step
     .goto Bloodmyst Isle,45.669,47.827
-	.use 23876 >>|cRXP_WARN_在|r |cRXP_WARN_变异的秘血水晶|r |cRXP_PICK_处使用|r |T134709:0|t[水晶矿锄]
+	.use 23876 >>|cRXP_WARN_使用|r |T134709:0|t[水晶矿锄] |cRXP_WARN_在|r |cRXP_PICK_变异的秘血水晶|r 处使用
     .complete 9584,1 --Collect Altered Crystal Sample (x1)
 step
     .goto Bloodmyst Isle,52.588,53.207
@@ -3342,7 +3342,7 @@ step << Warlock
 .dungeon !DM
     #optional
     .goto StormwindClassic,26.117,77.225
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
     .trainer >> 训练你的职业技能
     .target 厄苏拉·德林
     .zoneskip Stormwind City,1
@@ -3511,7 +3511,7 @@ step << NightElf/Draenei
     .goto StormwindClassic,5.560,50.125,10,0
     .goto StormwindClassic,13.669,74.499,20,0
     .goto Westfall,42.024,70.980
-    .zone Westfall >> 如果网站卡死不可用，请游泳前往西部荒野
+    .zone Westfall >> 如果网站的角色卡死服务不可用，就游到西部荒野
     .zoneskip Ironforge
     .subzoneskip 809--IF Gates
     .subzoneskip 2257--Deeprun Tram
@@ -3541,7 +3541,7 @@ step << NightElf/Draenei
 .dungeon DM
     #optional
     .goto Ironforge,55.491,47.751
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
     .fp Ironforge >> 获取铁炉堡的飞行路径
     .target 格莱斯·瑟登
     .zoneskip Wetlands
@@ -3790,7 +3790,7 @@ step << Warlock
 .dungeon DM
     #optional
     .goto StormwindClassic,26.117,77.225
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
     .train 6202 >> 训练你的职业技能
     .target 厄苏拉·德林
     .xp <22,1
@@ -3854,10 +3854,10 @@ step << Rogue
 step << Rogue
 .dungeon DM
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_"剃刀"雷吉克|r 和 |cRXP_FRIENDLY_马迪亚斯·肖尔|r 对话
-    .accept 2281 >> 接受任务 赤脊山的联络员
+    .accept 2281 >> 接受任务赤脊山的联络员
     .goto StormwindClassic,75.76,60.35
     .target |Tinterface/worldmap/chatbubble_64grey.blp:20|t与 迷失者塞尔杜林 对话
-    .accept 2360 >> 接受任务 马迪亚斯和迪菲亚盗贼
+    .accept 2360 >> 接受任务马迪亚斯和迪菲亚盗贼
     .goto StormwindClassic,75.78,59.84
     .target 接受任务化解灾难
 step << Human Rogue
@@ -3927,7 +3927,7 @@ step << Rogue
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_卢修斯|r 对话
 	.target 击杀 Stonevault Bonesnappers 和 Stonevault Shamans。拾取它们的 精铁碎片
     .goto Redridge Mountains,28.07,52.02
-    .turnin 2282 >> 交任务 奥瑟尔伐木场
+    .turnin 2282 >> 交任务奥瑟尔伐木场
 step << Rogue
 .dungeon DM
     .goto Redridge Mountains,30.590,59.410
@@ -3952,7 +3952,7 @@ step << Rogue
     .goto Westfall,71.49,73.49,30,0
     .goto Westfall,71.01,75.72,30,0
     .goto Westfall,69.58,73.07,30,0
-    >>|T133644:0|t[搜索] |cRXP_ENEMY_丑陋的迪菲亚懒汉|r。拾取地上的物品以获得 |cRXP_LOOT_迪菲亚塔楼钥匙|r
+    >>|T133644:0|t[搜索] |cRXP_ENEMY_丑陋的迪菲亚懒汉|r。拾取 |cRXP_LOOT_迪菲亚塔楼钥匙|r
     >>|cRXP_WARN_你必须处于|r |T132320:0|t[潜行] |cRXP_WARN_状态下才能使用|r |T133644:0|t[偷窃]
     >>|cRXP_WARN_|cRXP_ENEMY_丑陋的迪菲亚懒汉|r 出现在塔楼入口处，随后会在塔楼外侧巡逻|r
     >>|cRXP_WARN_小心，他伤害很高。如果你的|r |T132320:0|t[潜行] |cRXP_WARN_被打破，立刻使用|r |T132307:0|t[疾跑] |cRXP_WARN_并逃离|r
@@ -4026,7 +4026,7 @@ step << !Dwarf Rogue
 .dungeon DM
     #requires AntiVenomEnd
     .goto 1453,43.070,26.155
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_珊娜·弗勒|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_珊娜·弗勒|r 对话
     >>|cRXP_WARN_If you have a|r |T626003:0|t|cFFF48CBAPaladin|r |cRXP_WARN_or|r |T625999:0|t|cFFFF7C0ADruid|r |cRXP_WARN_friend, ask them to remove the|r |T136230:0|t[赞吉尔之触] |cRXP_WARN_for you instead|r
     .skill firstaid,80 >> |cRXP_WARN_将你的|r |T135966:0|t[急救] |cRXP_WARN_提升到 80|r
     .aura -9991
@@ -4035,7 +4035,7 @@ step << !Dwarf Rogue
 .dungeon DM
     #label FirstAidEnd
     .goto 1453,43.070,26.155
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_珊娜·弗勒|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_珊娜·弗勒|r 对话
     >>|cRXP_WARN_If you have a|r |T626003:0|t|cFFF48CBAPaladin|r |cRXP_WARN_or|r |T625999:0|t|cFFFF7C0ADruid|r |cRXP_WARN_friend, ask them to remove the|r |T136230:0|t[赞吉尔之触] |cRXP_WARN_for you instead|r
     .train 7934 >> |cRXP_WARN_学习|r |T134437:0|t[抗毒药剂]
     .aura -9991
@@ -4074,7 +4074,7 @@ step << Rogue
 step << Rogue
 .dungeon DM
     .goto Stormwind City,78.2,58.8
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与建筑一层的 |cRXP_FRIENDLY_贾斯伯·菲尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与建筑物底层的 |cRXP_FRIENDLY_贾斯伯·菲尔|r 对话
     >>从他那里购买制作 |T132273:0|t[|cRXP_FRIENDLY_速效毒药|r] 和 |T132331:0|t[|cRXP_FRIENDLY_消失|r] 所需的材料
     .collect 3371,20 --Empty Vial (20)
     .collect 2928,20 -Dust of Decay (20)
@@ -4142,7 +4142,7 @@ step
 step
 .dungeon DM
     .goto StormwindClassic,55.21,7.04
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_比利巴布·旋轮|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_比利巴布·旋轮|r 对话
     .vendor 5519 >> |cRXP_BUY_从他这里|r|T133024:0|t|cRXP_BUY_买一个|r [青铜管] (如果有)
 --    >>You will need 2 bronze tubes for a quest later << Rogue
     .bronzetube
@@ -4743,7 +4743,7 @@ step
     .complete 945,1 --Escort Therylune away from the Master's Glaive (1)
 step
     .goto Ashenvale,13.97,4.10
-    >>点击地上的 |cRXP_PICK_搁浅的海洋生物|r
+    >>点击 |cRXP_PICK_搁浅的海洋生物|r
     .accept 4733 >> 接受任务 搁浅的海洋生物
     >>|cRXP_WARN_这个任务可能会非常困难。请与 |cRXP_ENEMY_鱼人|r 逐个交战，否则你可能会同时引到多个|r
     .link https://youtu.be/lfQM3Q-Ag5A >> |cRXP_WARN_点击此处查看视频指南|r
@@ -4759,7 +4759,7 @@ step
 step
 #map Darkshore
     .goto Felwood,14.62,60.72
-    >>点击地上的 |cRXP_PICK_搁浅的海洋生物|r
+    >>点击 |cRXP_PICK_搁浅的海洋生物|r
     .accept 4730 >> 接受任务 搁浅的海洋生物
 step
     .goto 1439,35.724,83.696

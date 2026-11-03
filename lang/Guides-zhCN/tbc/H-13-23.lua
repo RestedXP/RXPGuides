@@ -2572,7 +2572,7 @@ step
     .goto The Barrens,62.98,37.22
     .turnin 865 >>交任务  一定是因为角
     .turnin 1069 >>交任务  深苔蜘蛛的卵
-    .accept 1491 >>接受任务 智慧饮料
+    .accept 1491 >>接受任务智慧饮料
     .target 麦伯克·米希瑞克斯
     .goto The Barrens,62.37,37.62
     .turnin 821 >>交任务  老陈的空酒桶
@@ -2590,7 +2590,7 @@ step
     .turnin 1069 >>交任务  深苔蜘蛛的卵
     .target 麦伯克·米希瑞克斯
     .goto The Barrens,62.37,37.62
-    .turnin 821 >>交任务 老陈的空酒桶
+    .turnin 821 >>交任务  老陈的空酒桶
     --.accept 822 >>Accept Chen's Empty Keg
     .target 酿酒师德罗恩
     .goto The Barrens,62.27,38.39
@@ -2668,7 +2668,7 @@ step
     .target 曼科里克
     .goto The Barrens,51.95,31.58
     .turnin 880 >>交任务  变异的生物
-    .accept 1489 >>接受任务哈缪尔·符文图腾
+    .accept 1489 >>接受任务 哈缪尔·符文图腾
     .accept 3301 >>接受任务 茉拉·符文图腾
     .target 图加·符文图腾
     .goto The Barrens,52.26,31.93
@@ -2880,7 +2880,7 @@ step
 step << !Tauren !Shaman
     .goto The Barrens,44.55,59.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_碎牙|r 对话
-    .aura 16618 >>|cRXP_WARN_如果你有10个|r |T134128:0|t[|cRXP_LOOT_血碎片|r] |cRXP_WARN_剩余，使用它们从|r |cRXP_WARN_碎牙|r |cRXP_FRIENDLY_处换取|r |T136022:0|t[风之魂]
+    .aura 16618 >>|cRXP_WARN_如果你剩余 10 个|r |T134128:0|t[|cRXP_LOOT_血岩碎片|r]|cRXP_WARN_，可用它们从|r 撕牙鱼人|cRXP_WARN_ |r处兑换|cRXP_FRIENDLY_ |T136022:0|t[风之精灵]|r
     >>|cRXP_WARN_如果你已经拥有雷霆崖的飞行点，请跳过此步骤|r
     .itemcount 5075,10
     .train 5118,1 << Hunter --skips step if aspect of the cheetah trained
@@ -3652,7 +3652,7 @@ step
     .dungeon WC
 step
     #completewith GShard
-    .hs >> 炉石返回棘齿城
+    .hs >> 使用炉石返回棘齿城
     .use 6948
     .dungeon WC
     .bindlocation 392,1
@@ -4061,7 +4061,7 @@ step
     .accept 6563 >>接受任务 阿库麦尔的精华
     .target 耶努萨克雷
     .goto Ashenvale,11.56,34.29
-    .accept 216 >>接受任务 蓟皮熊怪的麻烦
+    .accept 216 >>接受任务蓟皮熊怪的麻烦
     .target 卡拉恩·阿玛卡
     .goto Ashenvale,11.90,34.53
     .accept 6462 >>接受任务巨魔符咒
@@ -4397,7 +4397,7 @@ step
     #xprate <1.5
     .goto Ashenvale,11.56,34.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_耶努萨克雷|r 对话
-    .turnin 6563 >>交任务  阿库麦尔的精华
+    .turnin 6563 >>交任务阿库麦尔的精华
     .turnin 6564 >>交任务  上古之神的仆从
     .target 耶努萨克雷
 step
@@ -4594,7 +4594,7 @@ step
     #xprate <1.5
     .goto The Barrens,62.37,37.62
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_麦伯克|r 对话
-    .turnin 1491 >>交任务  智慧饮料
+    .turnin 1491 >>交任务智慧饮料
     .target 麦伯克·米希瑞克斯
     .dungeon !WC
 step

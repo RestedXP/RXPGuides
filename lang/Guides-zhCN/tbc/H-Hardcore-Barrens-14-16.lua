@@ -82,7 +82,7 @@ step
 step
     .goto The Barrens,51.44,30.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_赫布瑞姆|r 对话
-    .accept 1492 >>接受任务码头管理员迪兹维格
+    .accept 1492 >>接受任务 码头主管迪兹维格
     .accept 848 >>接受任务 菌类孢子
     .target 药剂师赫布瑞姆
 step
@@ -527,7 +527,7 @@ step << skip
 step
     .goto The Barrens,62.27,38.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德罗恩|r 对话
-    .turnin 819 >>交任务 老陈的空酒桶
+    .turnin 819 >>交任务  老陈的空酒桶
     .accept 821 >>接受任务 老陈的空酒桶
     .target 酿酒师德罗恩
 step
@@ -1011,7 +1011,7 @@ step << Druid
 	.xp <20,1
 step << !Undead !BloodElf
     #completewith SamuTurnin1
-    .hs >>炉石返回棘齿城
+    .hs >>使用炉石返回棘齿城
     .use 6948
     .cooldown item,6948,>0
     .bindlocation 392,1
@@ -1190,7 +1190,7 @@ step << Warlock
     .xp <18,1
 step << Warlock
     .goto Orgrimmar,47.54,46.75
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_库古尔|r 对话，购买 |T133738:0|t[牺牲魔典]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_库古尔|r 对话并购买 |T133738:0|t[牺牲魔典]
     .collect 16351,1,896,1 --Grimoire of Sacrifice (Rank 1) (1)
     .target 库古尔
     .xp <16,1

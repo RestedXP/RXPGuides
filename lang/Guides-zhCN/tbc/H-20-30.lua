@@ -264,7 +264,7 @@ step
     .goto The Barrens,62.37,37.62
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_麦伯克|r 对话
     .accept 1069 >>接受任务深苔蜘蛛的卵
-    .accept 1491 >>接受任务 智慧饮料
+    .accept 1491 >>接受任务智慧饮料
     .target 麦伯克·米希瑞克斯
     .isQuestTurnedIn 865
 step
@@ -304,7 +304,7 @@ step
     #xprate >1.49
     .goto The Barrens,62.37,37.62
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_麦伯克|r 对话
-    .accept 1491 >>接受任务 智慧饮料
+    .accept 1491 >>接受任务智慧饮料
     .target 麦伯克·米希瑞克斯
     .isQuestTurnedIn 865
     .dungeon WC
@@ -889,7 +889,7 @@ step
     .goto The Barrens,52.26,31.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_图加|r 对话
     .turnin 880 >>交任务变异的生物
-    .accept 1489 >>接受任务哈缪尔·符文图腾
+    .accept 1489 >>接受任务 哈缪尔·符文图腾
     .accept 3301 >>接受任务茉拉·符文图腾
     .target 图加·符文图腾
     .dungeon WC
@@ -1413,7 +1413,7 @@ step
     .goto The Barrens,62.98,37.22
     .turnin 865 >>交任务一定是因为角
     .turnin 1069 >>交任务深苔蜘蛛的卵
-    .accept 1491 >>接受任务 智慧饮料
+    .accept 1491 >>接受任务智慧饮料
     .target 麦伯克·米希瑞克斯
     .goto The Barrens,62.37,37.62
 step
@@ -2241,7 +2241,7 @@ step
     .accept 6563 >>接受任务阿库麦尔的精华
     .target 耶努萨克雷
     .goto Ashenvale,11.56,34.29
-    .accept 216 >>接受任务 蓟皮熊怪的麻烦
+    .accept 216 >>接受任务蓟皮熊怪的麻烦
     .target 卡拉恩·阿玛卡
     .goto Ashenvale,11.90,34.53
     .accept 6462 >>接受任务巨魔符咒
@@ -3241,7 +3241,7 @@ step << Rogue
 step << !Shaman
     .goto Orgrimmar,54.10,68.42
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_旅店老板格雷什卡|r 对话
-    .home >> 将你的炉石设置到奥格瑞玛
+    .home >> 将你的炉石绑在铁炉堡
 	.target 旅店老板格雷什卡
     .bindlocation 1637
     .train 3567,1 << Mage --Skips if Teleport Orgrimmar is trained
@@ -7235,7 +7235,7 @@ step
     .zoneskip The Barrens
 step
     .goto The Barrens,44.54,59.27
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_碎牙|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_碎牙|r 对话
     .turnin 879 >> 交任务内奸
     .accept 906 >> 接受任务内奸
     .target 碎牙

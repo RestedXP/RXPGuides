@@ -961,7 +961,7 @@ step
     .timer 73,间谍之树剧情表演
     .use 23792
 step
-    >>|cRXP_WARN_等待剧情演出完成|r
+    >>|cRXP_WARN_等剧情结束|r
     .complete 9531,1 -- The Traitor Uncovered
 step
     +|cRXP_WARN_点掉|r |T132288:0|t[大树伪装] |cRXP_WARN_buff|r
@@ -1833,7 +1833,7 @@ step << Paladin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_女祭司基琳·伊尔蒂娜|r 对话
     .target 约尔
     .accept 9598 >>接受任务 救赎
-    .turnin 9598 >>交任务 救赎
+    .turnin 9598 >>交任务救赎
     .accept 9600 >>接受任务救赎
 	.trainer >> 训练你的职业技能
 step
@@ -5184,7 +5184,7 @@ step
 #xprate >1.49
     .goto Wetlands,7.95,56.38
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_德温·晨光|r对话
-    .vendor >> |cRXP_BUY_尽可能多地购买|r |T134831:0|t[治疗药水] |cRXP_BUY_（如果有售）|r
+    .vendor >> |cRXP_BUY_尽可能多购买|r |T134831:0|t[治疗药水] |cRXP_BUY_有库存的话|r
     >>|cRXP_WARN_这是限量供应物品。如果 |cRXP_FRIENDLY_德温·晨光|r 没有库存，请跳过此步骤|r
     .target 德温·晨光
     .zoneskip Wetlands,1
@@ -5287,7 +5287,7 @@ step
 .dungeon SFK
 	.goto Wetlands,63.9,78.6
 	.hs >> 将炉石使用回米奈希尔港
-    >>|cRXP_BUY_如有需要，购买食物/水|r << !Warrior !Rogue
+    >>|cRXP_BUY_按需购买食物/水|r << !Warrior !Rogue
 	>>|cRXP_BUY_如有需要，购买食物|r << Warrior/Rogue
     .subzoneskip 150
     .subzoneskip 2103
@@ -5354,7 +5354,7 @@ step << Draenei
 step << Draenei
 #xprate >1.49
     .goto Ironforge,55.491,47.751
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
     .fp Ironforge >> 获取铁炉堡的飞行路径
     .target 格莱斯·瑟登
 step << Draenei

@@ -412,8 +412,8 @@ step
     .goto Teldrassil,55.619,59.788
     .target 旅店老板凯达米尔
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_旅店老板凯达米尔|r 对话
-    .turnin 2159,2 >> 交任务 多兰纳尔的货物 << Hunter
-    .turnin 2159 >> 交任务 多兰纳尔的货物 << !Hunter
+    .turnin 2159,2 >> 交任务  多兰纳尔的货物 << Hunter
+    .turnin 2159 >> 交任务  多兰纳尔的货物 << !Hunter
     .vendor >>|cRXP_BUY_购买10瓶|T132815:0|t|cRXP_LOOT_冰镇牛奶|r 或者能买多少买多少 << Priest
     .home >> 将你的炉石绑定在多兰纳尔
     .bindlocation 186
@@ -611,7 +611,7 @@ step
     .goto Teldrassil,55.954,57.272
     .target 阿斯瑞达斯·熊皮
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿斯瑞达斯·熊皮|r 对话
-    .turnin 476 >> 交任务 瘤背熊怪的堕落
+    .turnin 476 >> 交任务  瘤背熊怪的堕落
 step << Priest
     .goto Teldrassil,55.564,56.746
     .target 劳尔娜·晨光
@@ -1460,7 +1460,7 @@ step
     .goto Darnassus,39.72,92.68,10,0
     .goto Darnassus,36.65,85.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_女祭司艾茉拉|r 对话
-    .turnin 2518 >> 交任务 月神的泪水
+    .turnin 2518 >> 交任务  月神的泪水
     .target 女祭司艾茉拉
     .accept 2520 >> 接受任务 萨丝拉的祭品
 step

@@ -6494,7 +6494,7 @@ step
     .goto Undercity,45.32,78.32,10,0
     .goto Undercity,46.26,83.91,10,0
     .goto Undercity,49.03,87.92,10,0
-    .goto Undercity,52.94,89.60,10 >>进入皇家区
+    .goto Undercity,52.94,89.60,10 >>进入皇室区
     .dungeon RFC
 step
     #label RFCPowerPickup

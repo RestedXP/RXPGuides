@@ -715,7 +715,7 @@ step << Dwarf Paladin
     .target 蒂萨·热炉
 step << NightElf/Draenei
     .goto Ironforge,55.491,47.751
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
     .fp Ironforge >> 获取铁炉堡的飞行路径
     .target 格莱斯·瑟登
     .zoneskip Wetlands
@@ -849,7 +849,7 @@ step << Human Paladin
     .target Stephanie Turner
 step << Human Paladin
     .goto StormwindClassic,40.1,29.9
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达索瑞恩·拉尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_达索瑞恩·拉尔|r 对话
     .turnin 1780 >>交任务圣洁之书
     .target 达索瑞恩·拉尔
     .accept 1781 >>接受任务圣洁之书
@@ -868,7 +868,7 @@ step << Paladin
     .target 达索瑞恩·拉尔
 step << Paladin
     .goto StormwindClassic,39.80,29.77
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达索瑞恩·拉尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_达索瑞恩·拉尔|r 对话
     .turnin 1649 >>交任务勇气之书
     .accept 1650 >>接受任务勇气之书
     .target 达索瑞恩·拉尔
@@ -1217,7 +1217,7 @@ step
     .target 艾莱尼·卡尔文
 step
     .goto Duskwood,77.486,44.287
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_菲利希亚·玛林|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_菲利希亚·玛林|r 对话
     .fp Duskwood>> 获取暮色森林的飞行路径
     .target 菲利希亚·玛林
     .subzoneskip 42,1
@@ -2384,7 +2384,7 @@ step
     .goto StormwindClassic,42.51,33.51,20 >> 前往暴风城大教堂
 step << Paladin
     .goto Stormwind City,39.81,29.79
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达索瑞恩·拉尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_达索瑞恩·拉尔|r 对话
     .target 达索瑞恩·拉尔
     .turnin 1652 >>交任务勇气之书
 step
@@ -3072,7 +3072,7 @@ step
 #xprate <1.5
 	#label end
     .goto Ironforge,55.51,47.75
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
     .fly Wetlands>> 飞往湿地
     .target 格莱斯·瑟登
     .zoneskip Wetlands
@@ -4863,7 +4863,7 @@ step << Human Paladin
     .accept 1788 >>接受任务圣洁之书
 step << Human Paladin
     .goto StormwindClassic,39.80,29.77
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达索瑞恩·拉尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_达索瑞恩·拉尔|r 对话
     .turnin 1788 >>交任务圣洁之书 << Human
     .target 达索瑞恩·拉尔
 step << Paladin
@@ -5004,7 +5004,7 @@ step << Gnome !Warlock/Dwarf !Paladin
 step
     #label FlyWetlands
     .goto Ironforge,55.501,47.742
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
 	.fly Wetlands >> 飞往湿地
     .target 格莱斯·瑟登
     .zoneskip Darnassus
@@ -5033,7 +5033,7 @@ step
 step
     .goto Wetlands,10.599,60.769
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_米克哈尔|r 对话
-    >>|cRXP_WARN_等待剧情演出完成|r
+    >>|cRXP_WARN_等剧情结束|r
     .turnin 1249 >> 交任务失踪的使节
     .target 米克哈尔
 step
@@ -5459,7 +5459,7 @@ step << Shaman
     #completewith next
     .isOnQuest 335,98
 	.hs >> 将炉石使用回夜色镇
-    >>|cRXP_BUY_如有需要，购买食物/水|r
+    >>|cRXP_BUY_按需购买食物/水|r
 step << Shaman
     .goto Duskwood,73.77,44.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_旅店老板斯密茨|r 对话
@@ -5506,7 +5506,7 @@ step << Shaman
     .target 伊瓦夫人
 step << Shaman
     .isOnQuest 159,58,101
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_菲利希亚·玛林|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_菲利希亚·玛林|r 对话
     .goto Duskwood,77.49,44.28
     .fly Westfall>> 飞往西部荒野
     .target 菲利希亚·玛林
@@ -5562,7 +5562,7 @@ step
 step
     .goto Duskwood,28.108,31.469
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_亚伯克隆比|r 对话
-    .turnin 133 >> 交任务 食尸鬼雕像
+    .turnin 133 >> 交任务食尸鬼雕像
     .accept 134 >> 接受任务食人魔小偷
     .target 亚伯克隆比
 step
@@ -5608,7 +5608,7 @@ step
     .goto Duskwood,28.108,31.469
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_亚伯克隆比|r 对话
     .turnin 134 >> 交任务食人魔小偷
-    .accept 160 >> 接受任务 给镇长的信
+    .accept 160 >> 接受任务给镇长的信
     .target 亚伯克隆比
 step
     #optional
@@ -5619,13 +5619,13 @@ step
 step
     .isOnQuest 181,101,78,58,160
     .hs >> 将炉石使用回夜色镇
-    >>|cRXP_BUY_如有需要，购买食物/水|r << !Warrior !Rogue
+    >>|cRXP_BUY_按需购买食物/水|r << !Warrior !Rogue
 	>>|cRXP_BUY_如有需要，购买食物|r << Warrior/Rogue
     .cooldown item,6948,>2,1
 step << Shaman
     .isOnQuest 181,101,78,58,160
     .cast 556 >> 使用 |T136010:0|t[星界传送] 返回夜色镇
-    >>|cRXP_BUY_如有需要，购买食物/水|r << !Warrior !Rogue
+    >>|cRXP_BUY_按需购买食物/水|r << !Warrior !Rogue
     >>|cRXP_BUY_如有需要，购买食物|r << Warrior/Rogue
     .cooldown spell,556,>0,1
     .subzoneskip 42
@@ -5792,7 +5792,7 @@ step << Mage
     .usespell 3561
     .zoneskip Stormwind City
 step << !Mage
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_菲利希亚·玛林|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_菲利希亚·玛林|r 对话
     .goto Duskwood,77.49,44.28
     .fly Stormwind>> 飞往暴风城
     .target 菲利希亚·玛林
@@ -5826,7 +5826,7 @@ step
 step
 	.goto Stormwind City,40.633,91.867
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_科诺尔·瑞沃斯|r 对话
-    .accept 1301 >> 接受任务 詹姆斯·海厄尔
+    .accept 1301 >> 接受任务詹姆斯·海厄尔
     .target 科诺尔·瑞沃斯
 step << Mage
     .goto Stormwind City,59.90,64.17
@@ -5840,19 +5840,19 @@ step
     .goto Stormwind City,27.2,78.1,15 >> 进入屠宰场, 下楼
 step << Warlock
     .goto StormwindClassic,26.117,77.225
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
     .trainer >> 训练你的职业技能
     .target 厄苏拉·德林
 step << Warlock
     .goto Stormwind City,25.255,78.591
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_黑暗缚灵者加科因|r 对话
-    .accept 1798 >> 接受任务 寻找斯坦哈德
+    .accept 1798 >> 接受任务寻找斯坦哈德
     .target 黑暗缚灵者加科因
 step << Warlock
     .goto Stormwind City,25.283,78.223
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德米赛特·克劳斯|r 对话
     >>|cRXP_WARN_如果你之前在铁炉堡接过相同的任务，请跳过这一步|r
-    .accept 4738 >> 接受任务寻 找梅纳拉·沃伦德
+    .accept 4738 >> 接受任务寻找梅纳拉·沃伦德
     .target 德米赛特·克劳斯
     .xp <31,1
 step << Warrior
@@ -5910,7 +5910,7 @@ step << Human Paladin
     .accept 1788 >>接受任务圣洁之书
 step << Human Paladin
     .goto StormwindClassic,39.80,29.77
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达索瑞恩·拉尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_达索瑞恩·拉尔|r 对话
     .turnin 1788 >>交任务圣洁之书 << Human
     .target 达索瑞恩·拉尔
 step << Paladin
@@ -5937,7 +5937,7 @@ step
     .isQuestTurnedIn 337
     .goto Stormwind City,74.182,7.465
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_米尔顿·西弗|r 对话
-    .accept 538 >> 接受任务 南海镇
+    .accept 538 >> 接受任务南海镇
     .target 米尔顿·西弗
 step << skip
     #sticky
@@ -6012,7 +6012,7 @@ step << Dwarf Paladin
     .goto Ironforge,25.27,1.53,9,0
     .goto Ironforge,24.35,11.90,10,0
     .goto Ironforge,27.628,12.183
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 在楼上与 |cRXP_FRIENDLY_蒂萨·热炉|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 在楼上与 |cRXP_FRIENDLY_蒂萨·热炉|r 交谈
     .target 蒂萨·热炉
     .turnin 1778 >>交任务圣洁之书
     .accept 1779 >>接受任务圣洁之书
@@ -6115,7 +6115,7 @@ step << Dwarf Paladin
     .target 蒂萨·热炉
 step
     .goto Ironforge,55.51,47.75
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
     .fly Wetlands>> 飞往湿地
     .target 格莱斯·瑟登
     .zoneskip Wetlands
@@ -6176,7 +6176,7 @@ step
 step
     .goto Wetlands,10.599,60.769
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_米克哈尔|r 对话
-    >>|cRXP_WARN_等待剧情演出完成|r
+    >>|cRXP_WARN_等剧情结束|r
     .turnin 1249 >> 交任务失踪的使节
     .target 米克哈尔
 step
@@ -6194,7 +6194,7 @@ step
     .goto Wetlands,8.388,61.752
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_文森特·海厄尔|r 对话
     .turnin 1301 >> 交任务詹姆斯·海厄尔
-    .accept 1302 >> 接受任务 詹姆斯·海厄尔
+    .accept 1302 >> 接受任务詹姆斯·海厄尔
     .target 文森特·海厄尔
 step
     #optional
@@ -6819,7 +6819,7 @@ step << Mage
     .zoneskip Ironforge
 step << Mage
     .goto Ironforge,27.18,8.60
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_丁克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_丁克|r 对话
     .trainer >> 训练你的职业技能
     .target 丁克
 step
@@ -6885,7 +6885,7 @@ step << Rogue
     .target 芬斯维克
 step
     .goto Ironforge,55.51,47.75
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
     .fly Wetlands>> 飞往湿地
     .target 格莱斯·瑟登
     .zoneskip Wetlands

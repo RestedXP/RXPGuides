@@ -523,7 +523,7 @@ step
 	.subzone 2264 >> Travel to Corin's Crossing (NOT TRANSLATED IN :zhCN YET)
 step
 	#completewith next
-	>>击杀 |cRXP_ENEMY_亡灵|r 拾取它们的 |cRXP_LOOT_生命腐质|r。
+	>>击杀 |cRXP_ENEMY_亡灵|r。拾取它们的 |cRXP_LOOT_生命腐质|r。
 	>>|cRXP_WARN_Groups of elites patrol the north and east road. Invisible mobs patrol inside of Corin's Crossing, so try to pull mobs out|r (NOT TRANSLATED IN :zhCN YET)
 	.collect 15447,7 --Living Rot (7)
 	.mob 憎恨吟唱者
@@ -542,7 +542,7 @@ step
 	.goto Eastern Plaguelands,61.40,66.40,25,0
 	.goto Eastern Plaguelands,59.40,66.40,25,0
 	.goto Eastern Plaguelands,58.00,67.60,25,0
-	.use 15454 >>|cRXP_WARN_使用|r |T133748:0|t[研钵和捣杵] |cRXP_WARN_在 |cRXP_LOOT_生命腐质|r 过期之前|r
+	.use 15454 >>|cRXP_WARN_在 |r生命腐质|cRXP_WARN_ 过期之前|cRXP_LOOT_ |r使用|r |T133748:0|t[研钵和捣杵]
     .complete 6022,1 --Coagulated Rot (1)
 step
 	#completewith LHFP

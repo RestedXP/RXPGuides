@@ -594,7 +594,7 @@ step
     .goto Eversong Woods,45.97,43.35,40,0
     .goto Eversong Woods,46.57,35.10,40,0
     .goto Eversong Woods,43.62,34.88,40,0
-    .xp 5+2690 >> 刷怪达到2690+/2800经验
+    .xp 5+2690 >> 刷怪达到 2690+/2800 经验
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -1638,7 +1638,7 @@ step << Undead Warlock/Undead Warrior
     .goto Silvermoon City,62.89,31.26,30,0
     .goto Silvermoon City,51.83,17.91,30,0
     .goto Silvermoon City,49.45,15.00
-    .zone Undercity >>使用|cRXP_PICK_传送宝珠|r 前往幽暗城
+    .zone Undercity >>使用|cRXP_PICK_传送宝珠|r 回到幽暗城
     .isQuestAvailable 1473 << Warlock
     .isQuestAvailable 1819 << Warrior
 step << Undead Warlock
@@ -3397,7 +3397,7 @@ step << Rogue
     .goto Silvermoon City,62.89,31.26,30,0
     .goto Silvermoon City,51.83,17.91,30,0
     .goto Silvermoon City,49.45,15.00
-    .zone Undercity >>使用|cRXP_PICK_传送宝珠|r 前往幽暗城
+    .zone Undercity >>使用|cRXP_PICK_传送宝珠|r 回到幽暗城
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
 step << Rogue
@@ -4534,7 +4534,7 @@ step << !Orc !Troll !Tauren
     .goto Silvermoon City,62.89,31.26,30,0
     .goto Silvermoon City,51.83,17.91,30,0
     .goto Silvermoon City,49.45,15.00
-    .zone Undercity >>使用|cRXP_PICK_传送宝珠|r 前往幽暗城
+    .zone Undercity >>使用|cRXP_PICK_传送宝珠|r 回到幽暗城
     .zoneskip Tirisfal Glades
     .zoneskip Durotar
     .zoneskip Orgrimmar
@@ -4554,7 +4554,7 @@ step << !Orc !Troll !Tauren
     .goto Undercity,45.32,78.32,10,0
     .goto Undercity,46.26,83.91,10,0
     .goto Undercity,49.03,87.92,10,0
-    .goto Undercity,52.94,89.60,10 >>进入皇家区
+    .goto Undercity,52.94,89.60,10 >>进入皇室区
     .dungeon RFC
 step << !Orc !Troll !Tauren
     #label RFCPowerPickup
@@ -7582,7 +7582,7 @@ step
     #completewith UndercitySM
     .goto Silvermoon City,51.83,17.91,30,0
     .goto Silvermoon City,49.45,15.00
-    .zone Undercity >>使用|cRXP_PICK_传送宝珠|r 前往幽暗城
+    .zone Undercity >>使用|cRXP_PICK_传送宝珠|r 回到幽暗城
 step
     #completewith UndercitySM
     .goto Undercity,59.81,11.33,20,0
