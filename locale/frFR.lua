@@ -171,8 +171,8 @@ L["Evalcharr\", \"Fantôme de Varo"] = "Evalcharr\", \"Fantôme de Varo"
 
 -- DB\forever\db.lua file
 
-L["RestedXP Forever Guide (H)"] = "RestedXP Guide Éternel (H)"
-L["RestedXP Forever Guide (A)"] = "RestedXP Guide Éternel (A)"
+L["RestedXP Forever Guide (H)"] = "RestedXP Guide Forever (H)"
+L["RestedXP Forever Guide (A)"] = "RestedXP Guide Forever (A)"
 
 -- DB\mainline\db.lua file
 
@@ -884,8 +884,8 @@ L["Welcome, select a guide."] = "Bienvenue, sélectionnez un guide."
 L["Configure your guide."] = "Configurez votre guide."
 L["Next step"] = "Étape suivante"
 L["Clear All"] = "Tout effacer"
-L["RestedXP Forever Dungeon Guide (A)"] = "Guide du Donjon Éternel RestedXP (A)"
-L["RestedXP Forever Dungeon Guide (H)"] = "Guide du Donjon Éternel RestedXP (H)"
+L["RestedXP Forever Dungeon Guide (A)"] = "Guide de donjon Forever RestedXP (A)"
+L["RestedXP Forever Dungeon Guide (H)"] = "Guide de donjon Forever RestedXP (H)"
 L["Attunements"] = "Accords"
 L["Keys"] = "Clés"
 L["Set Guide"] = "Configurer le guide"
