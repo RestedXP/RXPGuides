@@ -143,6 +143,10 @@ L["Skreah"] = "Skreah"
 
 -- DB\classic\db.lua file
 
+L["RestedXP Speedrun Guide (H)"] = "RestedXP Guía de subida de nivel rápida (H)"
+L["RestedXP Survival Guide (H)"] = "RestedXP Guía de supervivencia (H)"
+L["RestedXP Speedrun Guide (A)"] = "RestedXP Guía de subida de nivel rápida (A)"
+L["RestedXP Survival Guide (A)"] = "RestedXP Guía de supervivencia (A)"
 L["Mining & Engineering"] = "Minería e Ingeniería"
 L["Mining & Blacksmithing"] = "Minería y Herrería"
 L["Herbalism & Alchemy"] = "Herboristería y Alquimia"
@@ -165,6 +169,11 @@ L["Excellent"] = "Excelente"
 -- DB\classic\rares.lua file
 
 L["Evalcharr\", \"Fantôme de Varo"] = "Evalcharr\", \"Fantasma de Varo"
+
+-- DB\forever\db.lua file
+
+L["RestedXP Forever Guide (H)"] = "RestedXP Guía Forever (H)"
+L["RestedXP Forever Guide (A)"] = "RestedXP Guía Forever (A)"
 
 -- DB\mainline\db.lua file
 
@@ -199,6 +208,12 @@ L["a) Intro"] = "a) Introducción"
 L["a) Arathi Highlands Returning Player"] = "a) Tierras Altas de Arathi Jugador que Regresa"
 L["a) Haranir Intro"] = "a) Introducción de Haranir"
 L["ab) Dwarf Coldridge Vallley"] = "ab) Enano Valle de Crestanevada"
+
+-- DB\mop\db.lua file
+
+L["RestedXP Death Knight Start"] = "RestedXP Inicio de Caballero de la Muerte"
+L["RXP MoP 1-80 (H)"] = "RXP MoP 1-80 (H)"
+L["RXP MoP 1-80 (A)"] = "RXP MoP 1-80 (A)"
 
 -- DB\mop\rares.lua file
 
@@ -248,10 +263,20 @@ L["Total XP: %s\n%s"] = "Experiencia total: %s\n%s"
 
 -- DB\shared.lua file
 
-L["RXP MoP 1-80 (A)"] = "RXP MoP 1-80 (A)"
 L["RXP MoP 1-60 (A)"] = "RXP MoP 1-60 (A)"
-L["RXP MoP 1-80 (H)"] = "RXP MoP 1-80 (H)"
 L["RXP MoP 1-60 (H)"] = "RXP MoP 1-60 (H)"
+
+-- DB\tbc\db.lua file
+
+L["RestedXP TBC Guide (H)"] = "RestedXP Guía TBC (H)"
+L["RXP TBC Survival Guide (H)"] = "RXP Guía de supervivencia TBC (H)"
+L["RestedXP TBC Guide (A)"] = "RestedXP Guía TBC (A)"
+L["RXP TBC Survival Guide (A)"] = "RXP Guía de supervivencia TBC (A)"
+
+-- DB\wotlk\db.lua file
+
+L["RestedXP Horde 1-30"] = "RestedXP Horda 1-30"
+L["RestedXP Alliance 1-20"] = "RestedXP Alianza 1-20"
 
 -- functions.lua file
 
@@ -323,8 +348,6 @@ L["Unable to decode cached guide (%s), removed"] = "No se pudo decodificar la gu
 L["Error parsing "] = "Error al analizar "
 L["Guide has no name"] = "La guía no tiene nombre"
 L["Classic"] = "Classic"
-L["RestedXP Speedrun Guide (A)"] = "RestedXP Guía de subida de nivel rápida (A)"
-L["RestedXP Speedrun Guide (H)"] = "RestedXP Guía de subida de nivel rápida (H)"
 L["Incomplete or invalid encoded string"] = "Cadena codificada incompleta o inválida"
 L["Total guides loaded: %d/%s"] = "Total de guías cargadas: %d/%s"
 L["Incompatible guide game %d version vs %d"] = "Guía del juego incompatible, versión %d vs %d"
