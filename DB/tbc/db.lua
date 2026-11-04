@@ -42,13 +42,13 @@ addon.heirlooms = {
     [12] = true,--ring1
     [13] = true,--ring2
 }
-
+local L = addon.locale.Get
 if faction == "Horde" then
-    addon.defaultGroup = "RestedXP TBC Guide (H)"
-    addon.defaultGroupHC = "RXP TBC Survival Guide (H)"
+    addon.defaultGroup = L"RestedXP TBC Guide (H)"
+    addon.defaultGroupHC = L"RXP TBC Survival Guide (H)"
 elseif faction == "Alliance" then
-    addon.defaultGroup = "RestedXP TBC Guide (A)"
-    addon.defaultGroupHC = "RXP TBC Survival Guide (A)"
+    addon.defaultGroup = L"RestedXP TBC Guide (A)"
+    addon.defaultGroupHC = L"RXP TBC Survival Guide (A)"
 end
 
 addon.mapId = {

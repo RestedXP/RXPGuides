@@ -39,14 +39,14 @@ addon.defaultGuideList = {
 ]]
 
 local minLevel = 1
-
+local L = addon.locale.Get
 if addon.player.class == "DEATHKNIGHT" then
-    addon.defaultGroup = "RestedXP Death Knight Start"
+    addon.defaultGroup = L"RestedXP Death Knight Start"
     minLevel = 55
 elseif faction == "Horde" then
-    addon.defaultGroup = "RXP MoP 1-80 (H)"
+    addon.defaultGroup = L"RXP MoP 1-80 (H)"
 elseif faction == "Alliance" then
-    addon.defaultGroup = "RXP MoP 1-80 (A)"
+    addon.defaultGroup = L"RXP MoP 1-80 (A)"
 end
 
 function addon.LoadDefaultGuide()

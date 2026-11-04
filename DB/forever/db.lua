@@ -30,12 +30,13 @@ if class == "HUNTER" then
 end
 ]]
 
+local L = addon.locale.Get
 if faction == "Horde" then
-    addon.defaultGroup = "RestedXP Forever Guide (H)"
-    addon.defaultGroupHC = "RestedXP Forever Guide (H)"
+    addon.defaultGroup = L"RestedXP Forever Guide (H)"
+    addon.defaultGroupHC = L"RestedXP Forever Guide (H)"
 elseif faction == "Alliance" then
-    addon.defaultGroup = "RestedXP Forever Guide (A)"
-    addon.defaultGroupHC = "RestedXP Forever Guide (A)"
+    addon.defaultGroup = L"RestedXP Forever Guide (A)"
+    addon.defaultGroupHC = L"RestedXP Forever Guide (A)"
 end
 
 
