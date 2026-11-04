@@ -171,8 +171,8 @@ L["Evalcharr\", \"Fantôme de Varo"] = "Evalcharr\", \"Varo的幻影"
 
 -- DB\forever\db.lua file
 
-L["RestedXP Forever Guide (H)"] = "RestedXP Forever 向导 (部落)"
-L["RestedXP Forever Guide (A)"] = "RestedXP Forever 向导 (联盟)"
+L["RestedXP Forever Guide (H)"] = "RestedXP 无限指南 (部落)"
+L["RestedXP Forever Guide (A)"] = "RestedXP无限服指南（联盟）"
 
 -- DB\mainline\db.lua file
 
@@ -884,8 +884,8 @@ L["Welcome, select a guide."] = "欢迎，选择一个指南。"
 L["Configure your guide."] = "配置你的指南。"
 L["Next step"] = "下一步"
 L["Clear All"] = "全部清除"
-L["RestedXP Forever Dungeon Guide (A)"] = "RestedXP Forever 地下城指南 A"
-L["RestedXP Forever Dungeon Guide (H)"] = "RestedXP Forever 地下城指南 (H)"
+L["RestedXP Forever Dungeon Guide (A)"] = "RestedXP 无限 地下城指南 (联盟)"
+L["RestedXP Forever Dungeon Guide (H)"] = "RestedXP 无限 地下城指南 (部落)"
 L["Attunements"] = "开门任务"
 L["Keys"] = "钥匙"
 L["Set Guide"] = "套装向导"
