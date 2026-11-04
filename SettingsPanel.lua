@@ -4524,3 +4524,24 @@ function addon.settings.dungeons:SetNone()
         addon.settings.profile.dungeons[key] = false
     end
 end
+
+function addon.settings.dungeons:GetAllEnabledDungeons(group)
+    group = group or (addon.currentGuide and addon.currentGuide.group)
+    local active = {}
+    local locked = {}
+    if group and addon.dungeonOverride[group] then
+        for dungeon,enabled in pairs(addon.dungeonOverride[group]) do
+            if enabled then
+                local name = addon.GetDungeonName(dungeon)
+                active[dungeon] = name
+                locked[dungeon] = true
+            end
+        end
+    end
+    for dungeon,name in pairs(addon.settings.dungeons:GetDungeons()) do
+        if not active[dungeon] then
+            active[dungeon] = name
+        end
+    end
+    return active,locked
+end
