@@ -494,3 +494,8 @@ L["Mining"] = "Minage"
 L["Enchanting"] = "Enchantement"
 L["Engineering"] = "Ingenierie"
 L["Leatherworking"] = "Travail du cuir"
+
+L["RestedXP Forever Guide (A)"] = "RestedXP Guide Forever (A)"
+L["RestedXP Forever Guide (H)"] = "RestedXP Guide Forever (H)"
+L["RestedXP Forever Dungeon Guide (A)"] = "Guide de donjon Forever RestedXP (A)"
+L["RestedXP Forever Dungeon Guide (H)"] = "Guide de donjon Forever RestedXP (H)"
