@@ -122,7 +122,7 @@ step
     .xp >2,1
 step
     #completewith next
-    .zone Dun Morogh >> Vá para Dun Morogh
+    .zone Dun Morogh >> Viagem para Dun Morogh
     .train 401760,1
     .xp <2,1
 step
@@ -701,7 +701,7 @@ step
     .train 401765,1
 step
     #completewith next
-    .zone Dun Morogh >>Vá para Dun Morogh
+    .zone Dun Morogh >>Viagem para Dun Morogh
     .train 401765,1
 step
     #loop
@@ -858,7 +858,7 @@ step
     .xp >6,1
 step
     #completewith next
-    .zone Dun Morogh >>Vá para Dun Morogh
+    .zone Dun Morogh >>Viagem para Dun Morogh
     .train 401759,1
 step
     .goto 1426,69.369,58.311
@@ -1211,7 +1211,7 @@ step
     .isQuestAvailable 78147
 step
     #completewith next
-    .zone Swamp of Sorrows >>Vá para |cFFfa9602Pântano das Mágoas|r
+    .zone Swamp of Sorrows >>Vá ao |cFFfa9602Pântano das Mágoas|r
     .fly Swamp of Sorrows >>Pegue a rota de voo para |cFFfa9602Pântano das Mágoas|r |cRXP_WARN_se você a tem desbloqueada e ainda não está lá.|r
     .disablecheckbox
     .isQuestAvailable 79953
@@ -1903,7 +1903,7 @@ step
     .isQuestAvailable 78147
 step
     #completewith next
-    .zone Swamp of Sorrows >>Vá para |cFFfa9602Pântano das Mágoas|r
+    .zone Swamp of Sorrows >>Vá ao |cFFfa9602Pântano das Mágoas|r
     .fly Swamp of Sorrows >>Pegue a rota de voo para |cFFfa9602Pântano das Mágoas|r |cRXP_WARN_se você a tem desbloqueada e ainda não está lá.|r
     .disablecheckbox
     .isQuestAvailable 79953
@@ -1927,7 +1927,7 @@ step
     .isQuestAvailable 79953
 step
     #completewith next
-    .zone Swamp of Sorrows >>Vá para |cFFfa9602Pântano das Mágoas|r
+    .zone Swamp of Sorrows >>Vá ao |cFFfa9602Pântano das Mágoas|r
     .fly Swamp of Sorrows >>Pegue a rota de voo para |cFFfa9602Pântano das Mágoas|r |cRXP_WARN_se você a tem desbloqueada e ainda não está lá.|r
     .disablecheckbox
     .isQuestAvailable 81947

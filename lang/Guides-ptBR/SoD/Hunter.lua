@@ -15,7 +15,7 @@ step
 step
     #completewith Rune
     #label Dun1
-    .zone Dun Morogh >> Vá para Dun Morogh
+    .zone Dun Morogh >> Viagem para Dun Morogh
     .train 410121,1
 step
     #optional
@@ -107,7 +107,7 @@ step
     .xp >5,1
 step
     #completewith Rune
-    .zone Dun Morogh >>Vá para Dun Morogh
+    .zone Dun Morogh >>Viagem para Dun Morogh
     .train 410123,1
 step
     #loop

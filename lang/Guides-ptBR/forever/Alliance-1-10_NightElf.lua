@@ -46,7 +46,7 @@ step << Druid
     .mob +Young Thistle Boar
 step << Druid
     #completewith next
-    +|cRXP_WARN_Certifique-se de ter pelo menos 96 cobres em itens para vender a comerciantes|r, Você pode contar seu cajado, que é vendido por 9 cobres
+    +|cRXP_WARN_garanta que você tem pelo menos 1 prata 2 cobre de sucata de vendedor|r, você pode contar com seu bastão que vende por 9c
 step << !sod/Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dirânia Pratafulge|r e |cRXP_FRIENDLY_Melithar Guenelmo|r
     #label GoodProtector
@@ -146,6 +146,7 @@ step << Priest/Rogue
 	.goto 1438/1,826.03,10328.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Conservador Ilthalaine|r
     .turnin 456 >> Entregue O equilíbrio da natureza
+    .accept 457 >> Aceite O equilíbrio da natureza
     .target Conservator Ilthalaine
 	.accept 3119 >> Aceite O Selo Sagrado << Priest
 step << Druid
@@ -391,7 +392,7 @@ step << Hunter/Druid
     .goto 1438/1,826.03,10328.97
     .target Conservator Ilthalaine
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ilthalaine|r
-    .turnin 457,2 >> Entregue O Equilíbrio da Natureza
+    .turnin 457,2 >> Entregue O equilíbrio da natureza
 step
     #requires vial1
     .goto 1438/1,871.6,10440.83,25,0
@@ -433,7 +434,7 @@ step
     .goto 1438/1,826.03,10328.97
     .target Conservator Ilthalaine
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Conservador Ilthalaine|r
-    .turnin 457,2 >> Entregue O Equilíbrio da Natureza
+    .turnin 457,2 >> Entregue O equilíbrio da natureza
     .isQuestComplete 457
 step
     .goto 1438/1,700.57,10214.33
@@ -601,7 +602,7 @@ step << Rogue
 step << Druid
     .goto 1438/1,947.57,9812.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Shalomon|r
-    >>|cRXP_BUY_Compre e equipe uma|r |T135145:0|t[Bengala] |cRXP_BUY_se você tiver como pagar (4s 79c), caso contrário, pule este passo|r
+    >>|cRXP_BUY_Compre e equipe uma|r |T135145:0|t[Bengala] |cRXP_BUY_se puder pagá-la (5s 4c), caso contrário, pule este passo|r
     .collect 2495,1 --Walking Stick (1)
     .target Shalomon
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.20
@@ -919,7 +920,7 @@ step << Rogue
 step << Druid
     .goto 1438/1,947.57,9812.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Shalomon|r
-    >>|cRXP_BUY_Compre e equipe uma|r |T135145:0|t[Bengala] |cRXP_BUY_se você pode pagar (5s 4c), se não, pule este passo|r
+    >>|cRXP_BUY_Compre e equipe uma|r |T135145:0|t[Bengala] |cRXP_BUY_se puder pagá-la (5s 4c), caso contrário, pule este passo|r
     .collect 2495,1 --Walking Stick (1)
     .target Shalomon
     .money <0.0504
@@ -1408,7 +1409,7 @@ step << Druid/Priest
     .accept 940 >> Aceite Teldrassil
 step << Druid/Priest
     #label xp10
-    .xp 10-900 >> Farme até estar a 900 XP do nível 10 (5600/6500)
+    .xp 10-870 >> Farme até estar a 870 xp do nível 10 (5630/6500)
 step << Hunter
     #completewith xp10
     #label mist1
@@ -1610,7 +1611,7 @@ step << !Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Sacerdotisa A'mura|r no andar de cima
     .accept 2518 >> Aceite Lágrima da Lua
 step << Priest
-    .goto Darnassus,40.0,80.0
+    .goto 1457/1,2515.0296,9673.7323
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Sacerdotisa Alathea|r no andar de cima
     .accept 5627 >>Aceite Cinturão Estelar de Elune
     .turnin 5627 >>Entregue Cinturão Estelar de Elune
@@ -1731,7 +1732,7 @@ step
 step << Hunter
     .goto 1438/1,947.57,9812.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Shalomon|r
-    >>|cRXP_BUY_Compre e equipe uma|r |T135145:0|t[Bengala] |cRXP_BUY_se você pode pagar (5s 4c), se não, pule este passo|r
+    >>|cRXP_BUY_Compre e equipe uma|r |T135145:0|t[Bengala] |cRXP_BUY_se puder pagá-la (5s 4c), caso contrário, pule este passo|r
     .collect 2495,1 --Walking Stick (1)
     .target Shalomon
     .money <0.0504
@@ -2125,22 +2126,20 @@ step
     >>Vá para o |cRXP_FRIENDLY_Oracle Árvore Latido|r
     .turnin 98398 >> Entregue O Oráculo Árvore
     .accept 940 >> Aceite Teldrassil
-step
+step << !Warrior --remove warrior tag if they fix the ress sickness
     #softcore
 	#completewith darn << era
     #completewith darnSoD << sod
     .deathskip >>Morra e renasça no cemitério de Darnassus
     >>|cRXP_WARN_Certifique-se de que você está no lado oeste do rio ou você pode acabar indo pelo caminho errado|r << sod
     .target Anjo da Cura
-step
-    #hardcore
+step << Warrior --remove warrior tag if they fix the ress sickness
     #completewith next
     .goto 1457/1,2070.42,9979.310
     .zone Darnassus >> Viagem para Darnassus
-step
+step << !Warrior --remove warrior tag if they fix the ress sickness 
     #hardcore
     #completewith next
-    #season 2
     .goto 1457/1,2070.42,9979.310
     .zone Darnassus >> Viagem para Darnassus
 step << !Warrior

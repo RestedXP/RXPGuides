@@ -6,7 +6,7 @@ RXPGuides.RegisterGuide([[
 #forever
 << Horde
 #version 11
-#group RestedXP Forever — Guia de Masmorra Eterna (H)
+#group Guia de Masmorra do RestedXP Forever (H)
 #subgroup Masmorra Guia 1-22
 --#groupid RXP-SRGCE-H1
 #defaultfor Undead
@@ -24,7 +24,7 @@ RXPGuides.RegisterGuide([[
 #name 6-12 Tirisfal Glades
 #displayname 6-13 Tirisfal Glades << Paladin
 #version 11
-#group RestedXP Forever — Guia de Masmorra Eterna (H)
+#group Guia de Masmorra do RestedXP Forever (H)
 #subgroup Masmorra Guia 1-22
 --#groupid RXP-SRGCE-H1
 #defaultfor Undead
@@ -37,7 +37,7 @@ step
 
 
 RXPGuides.RegisterGuide([[
-#group RestedXP Forever — Guia de Masmorra Eterna (H)
+#group Guia de Masmorra do RestedXP Forever (H)
 #subgroup Masmorra Guia 1-22
 --#groupid RXP-SRGCE-H1
 << Horde

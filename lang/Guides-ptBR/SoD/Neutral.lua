@@ -1724,14 +1724,14 @@ step << Alliance
     .zone Westfall >> Viaje até Cerro Oeste
 step << Alliance
     .goto Westfall,37.413,50.701
-    >>Clique em |cRXP_PICK_Burned-Saída Remains|r no chão
+    >>Clique em |cRXP_PICK_Restos Queimados|r no chão
     .accept 79008 >> Aceite ...e aquele bilhete que você encontrou
 step << Alliance
     #completewith next
     .zone The Barrens >> Viaje para os Sertões
 step << Alliance
     .goto The Barrens,46.361,73.904
-    >>Clique em |cRXP_PICK_Burned-Saída Remains|r no chão
+    >>Clique em |cRXP_PICK_Restos Queimados|r no chão
     .turnin 79008 >> Entregue ... e aquele bilhete, hein?
     .accept 79192 >> Aceite Degraus
 step << Horde
@@ -1739,14 +1739,14 @@ step << Horde
     .zone The Barrens >> Viaje para os Sertões
 step << Horde
     .goto The Barrens,46.361,73.904
-    >>Clique em |cRXP_PICK_Burned-Saída Remains|r no chão
+    >>Clique em |cRXP_PICK_Restos Queimados|r no chão
     .accept 79007 >> Aceite ...e aquele bilhete que você encontrou
 step << Horde
     #completewith next
     .zone Westfall >> Viaje até Cerro Oeste
 step << Horde
     .goto Westfall,37.413,50.701
-    >>Clique em |cRXP_PICK_Burned-Saída Remains|r no chão
+    >>Clique em |cRXP_PICK_Restos Queimados|r no chão
     .turnin 79007 >> Entregue ... e aquele bilhete, hein?
     .accept 79192 >> Aceite Degraus
 step
@@ -1754,7 +1754,7 @@ step
     .zone Stonetalon Mountains >> Viaje para as Montanhas de Pedralva
 step
     #completewith next
-    .goto Stonetalon Mountains,50.29,52.94,25 >> Suba e siga pelo caminho de terra ao norte de Sol Pedra Recuar
+    .goto Stonetalon Mountains,50.29,52.94,25 >> Suba e siga o caminho de terra ao norte de Sol Pedra Recuar
 step
     .goto Stonetalon Mountains,40.748,52.576
     >>Clique em |cRXP_PICK_Pocket Litter|r na caixa
@@ -1762,12 +1762,12 @@ step
     .accept 79980 >> Aceite Rabisco
 step
     #completewith next
-    .goto Stonetalon Mountains,40.19,50.80,15 >> Siga o caminho pelas montanhas
+    .goto Stonetalon Mountains,40.19,50.80,15 >> Siga o caminho através das montanhas
 step
     .goto Stonetalon Mountains,39.614,49.783
     >>Clique no |cRXP_PICK_Monte de Terra|r no chão
     .turnin 79980 >> Entregue Rabisco
-    .accept 79974 >> Aceite Trabalho suado
+    .accept 79974 >> Aceite Trabalho Suado
 step
     #completewith next
     .zone Loch Modan >> Voe para Loch Modan
@@ -2346,7 +2346,7 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith next
-    .zone Wetlands >> Viagem para Pantanal
+    .zone Wetlands >> Voe para Pantanal
 step
     .goto 1437/0,-3451.700,-3450.800,25 >> Vá para o leste até o início do caminho para Grim Batol
 step

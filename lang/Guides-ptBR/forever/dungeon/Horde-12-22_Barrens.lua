@@ -9,7 +9,7 @@ RXPGuides.RegisterGuide([[
 #displayname 14-16 Terras Devastadas << !Shaman !Hunter !Tauren
 #displayname 15-16 Terras Devastadas << Paladin
 #version 11
-#group RestedXP Forever — Guia de Masmorra Eterna (H)
+#group Guia de Masmorra do RestedXP Forever (H)
 #subgroup Masmorra Guia 1-22
 --#groupid RXP-SRGCE-H1
 #next 16-17 Cavernas Ígneas
@@ -1051,7 +1051,7 @@ step << Tauren
     .cooldown item,6948,>0
     .use 6948
 step << Tauren
-    .goto Thunder Bluff,45.6,55.9
+    .goto 1456/1,40.72,-1238.97--c:Thunder Bluff,45.6,55.9
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ahanu|r
     .turnin 6362 >>Entregue Voo para o Penhasco do Trovão
     .accept 6363 >>Aceite Tal, o Mestre de Mantícoras
@@ -1101,7 +1101,7 @@ step << Tauren Warrior
     .target Torm Ragetotem
     .xp <16,1
 step << Tauren
-    .goto Thunder Bluff,47.00,49.82
+    .goto 1456/1,26.10,-1196.66--c:Thunder Bluff,47.00,49.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tal|r
     .turnin 6363 >>Entregue Tal, o Mestre de Mantícoras
     .accept 6364 >>Aceite Fale novamente com Jahan
@@ -1690,7 +1690,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 16-17 Cavernas Ígneas
 #version 11
-#group RestedXP Forever — Guia de Masmorra Eterna (H)
+#group Guia de Masmorra do RestedXP Forever (H)
 #subgroup Masmorra Guia 1-22
 --#groupid RXP-SRGCE-H1
 #next 17-18 Ruins of Lordaeron
@@ -1718,7 +1718,7 @@ step << Tauren/Hunter/Orc Shaman/Troll Shaman
     .zone Orgrimmar >>Entre em Orgrimmar pela entrada oeste
 step << !Tauren !Hunter !Shaman/Skyborne
     #completewith EnterRFC
-    .goto The Barrens,51.50,30.34
+    .goto 1413/1,-2595.75,-437.35--c:The Barrens,51.50,30.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Devrak|r
     .fly Orgrimmar >> Voe para Orgrimmar
     .zoneskip Orgrimmar
@@ -1924,7 +1924,7 @@ step << Shaman
     .target Kardris Dreamseeker
     .xp <18,1
 step
-    .goto Orgrimmar,31.74,37.82
+    .goto 1454/1,-4125.79,1920.10--c:Orgrimmar,31.74,37.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thrall|r
     .accept 5726 >>Aceite Inimigos ocultos
     .target Thrall
@@ -1975,7 +1975,7 @@ step
     .goto 1454/1,-4367.46,1405.44,50,0
     .zone Orgrimmar >> Entre em Orgrimmar
 step
-    .goto Orgrimmar,31.74,37.82
+    .goto 1454/1,-4125.79,1920.10--c:Orgrimmar,31.74,37.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thrall|r
     .turnin 5726 >> Entregue Inimigos ocultos
     .accept 5727 >> Aceite Inimigos ocultos
@@ -2056,7 +2056,7 @@ step << Warlock
     .target Kurgul
     .xp <18,1
 step
-    .goto Orgrimmar,49.6,50.4
+    .goto 1454/1,-4376.29,1802.43--c:Orgrimmar,49.6,50.4
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Neeru Cortafogo|r
     .accept 5761 >>Aceite Mate a besta
     .target Neeru Fireblade
@@ -2067,14 +2067,14 @@ step
     .target Neeru Fireblade
     .isOnQuest 832
 step
-    .goto Orgrimmar,49.6,50.4
+    .goto 1454/1,-4376.29,1802.43--c:Orgrimmar,49.6,50.4
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Neeru Cortafogo|r
     .complete 5727,1 --Gauge Neeru Fireblade's reaction to you being a member of the Burning Blade
     .skipgossip
     .target Neeru Fireblade
 step
     #label HiddenEnemiesPickup
-    .goto Orgrimmar,31.74,37.82
+    .goto 1454/1,-4125.79,1920.10--c:Orgrimmar,31.74,37.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thrall|r
     .turnin 5727 >> Entregue Inimigos ocultos
     .accept 5728 >> Aceite Inimigos ocultos
@@ -2083,8 +2083,9 @@ step
     #completewith EnterRFC
     .destroy 14544 >>|cRXP_WARN_Destrua|r |T134417:0|t[Insígnia do Tenente] |cRXP_WARN_pois você não precisa mais dela|r
 step
+.enabledungeon RFC
     #label EnterRFC
-    .goto Orgrimmar,52.77,48.97
+    .goto 1454/1,-4420.76,1815.80--c:Orgrimmar,52.77,48.97
     .subzone 2437 >> Entre no portal da instância das Cavernas Ígneas e atravesse-o
 step
     #optional
@@ -2146,33 +2147,33 @@ step
     .mob Searing Blade Warlock
     .isOnQuest 5725
 step
-    .goto Orgrimmar,49.6,50.4
+    .goto 1454/1,-4376.29,1802.43--c:Orgrimmar,49.6,50.4
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Neeru Cortafogo|r
     .turnin 5761 >>Entregue Mate a besta
     .target Neeru Fireblade
     .isQuestComplete 5761
 step
-    .goto Orgrimmar,31.74,37.82
+    .goto 1454/1,-4125.79,1920.10--c:Orgrimmar,31.74,37.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thrall|r
     .turnin 5728 >> Entregue Inimigos ocultos
     .accept 5729 >> Aceite Inimigos ocultos
     .target Thrall
     .isQuestComplete 5728
 step
-    .goto Orgrimmar,31.74,37.82
+    .goto 1454/1,-4125.79,1920.10--c:Orgrimmar,31.74,37.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thrall|r
     .accept 5729 >> Aceite Inimigos ocultos
     .target Thrall
     .isQuestTurnedIn 5728
 step
-    .goto Orgrimmar,49.6,50.4
+    .goto 1454/1,-4376.29,1802.43--c:Orgrimmar,49.6,50.4
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Neeru Cortafogo|r
     .turnin 5729 >> Entregue Inimigos ocultos
     .accept 5730 >> Aceite Inimigos ocultos
     .target Neeru Fireblade
     .isQuestTurnedIn 5728
 step
-    .goto Orgrimmar,31.74,37.82
+    .goto 1454/1,-4125.79,1920.10--c:Orgrimmar,31.74,37.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thrall|r
     .turnin 5730 >> Entregue Inimigos ocultos
     .target Thrall
@@ -2185,7 +2186,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 17-18 Ruins of Lordaeron
 #version 11
-#group RestedXP Forever — Guia de Masmorra Eterna (H)
+#group Guia de Masmorra do RestedXP Forever (H)
 #subgroup Masmorra Guia 1-22
 --#groupid RXP-SRGCE-H1
 #next 18-21 Savanas
@@ -2210,7 +2211,7 @@ step
     #completewith next
     .subzone 159 >> Vá para Montalvo
 step
-    .goto Tirisfal Glades,61.26,50.84
+    .goto 1420/0,265.15,2305.94--c:Tirisfal Glades,61.26,50.84
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Magistrado Sevren|r
     .turnin 440 >> Entregue O Anel Gravado
     .accept 441 >> Aceite Raleigh and the Undercity
@@ -2218,20 +2219,20 @@ step
     .isOnQuest 440
 step
     #optional
-    .goto Tirisfal Glades,61.26,50.84
+    .goto 1420/0,265.15,2305.94--c:Tirisfal Glades,61.26,50.84
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Magistrado Sevren|r
     .accept 441 >> Aceite Raleigh and the Undercity
     .target Magistrate Sevren
     .isQuestTurnedIn 440
 step
     .goto 1420/0,84.900,2023.500
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Deathguard Kristof::251001|r
-    .accept 92422 >>Aceite A Ira de Rath'mael
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Deathguard Kristof::251001|r
+    .accept 92422 >>Aceite The Ira of Rath'mael
     .target Deathguard Kristof::251001
 step
     #completewith UCPickups
-    >>|cRXP_WARN_Se possível, peça a alguém do seu grupo para compartilhar a seguinte missão|r
-    .accept 92401 >>Aceite Um Pedido Amedrontado
+    >>|cRXP_WARN_Se possível, peça para alguém do seu grupo compartilhar a missão seguinte|r
+    .accept 92401 >>Aceite A Amedrontado Request
 step
     #completewith UCPickups
     .goto 1420/0,240.75,1877.57
@@ -2246,7 +2247,7 @@ step
     .goto 1458/0,244.51,1598.73,15,0
     .goto 1458/0,266.300,1567.200,20 >>Pegue o elevador até Cidade Baixa
 step
-    .goto Undercity,62.02,42.76
+    .goto 1458/0,278.19,1604.24--c:Undercity,62.02,42.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Raleigh|r
     .turnin 441 >>Entregue Raleigh and the Undercity
     .accept 530 >>Aceite A Vingança de um Marido
@@ -2262,7 +2263,7 @@ step
     .goto 1458/0,373.200,1362.100,50,0
     .goto 1458/0,428.400,1417.700
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Theodore Griffs::11835|r
-    .accept 95216 >>Aceite A Nova Peste
+    .accept 95216 >>Aceite A nova peste
     .target Theodore Griffs::11835
 step
     .goto 1458/0,415.400,1389.900,50,0
@@ -2329,7 +2330,7 @@ step
     #label AFrightenedRequest
     .goto 1421/0,1579.600,461.700
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tabitha Heartweaver::250686|r
-    .accept 92401 >>Aceite Um Pedido Amedrontado
+    .accept 92401 >>Aceite A Amedrontado Request
     .target Tabitha Heartweaver::250686
 step
     #completewith next
@@ -2338,15 +2339,17 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Karos Razok::2226|r
     .fly Undercity >>Voe para Undercity
     .target Karos Razok::2226
+    .zoneskip Undercity
 step
+.enabledungeon ROL
     #label EnterRoL
     .goto 1458/0,188.400,1804.500
-    .subzone 16611 >>Entre nas Ruins of Lordaeron
+    .subzone 16611 >>Entre em Ruins of Lordaeron
 step
     #completewith RuinsRathma
     .isOnQuest 92421
-    >>Mate o |cRXP_ENEMY_Morto-vivo|r. Saque seus |T458717:0|t[|cRXP_LOOT_Intact Limbs|r]
-    >>|cRXP_WARN_Certifique-se de matar todos os inimigos na masmorra, senão você pode não concluir esta missão|r
+    >>Mate os |cRXP_ENEMY_Mortos-vivos|r. Saque-os por seus |T458717:0|t[|cRXP_LOOT_Intact Limbs|r]
+    >>|cRXP_WARN_Mate todos os inimigos na masmorra, do contrário pode não completar a missão|r
     .complete 92421,1 --Intact Limbs (25)
     .mob Skeleton::250618
     --.mob Cadaver::250621
@@ -2365,19 +2368,19 @@ step
     .isQuestAvailable 95204
     .isNotOnQuest 95204
     >>Saque e use o |T4504543:0|t[|cRXP_LOOT_Crest of Lordaeron|r] para iniciar a missão
-    >>|cRXP_WARN_Tem 5 locais de aparecimento possíveis|r
+    >>|cRXP_WARN_Ele pode estar em 5 locais diferentes|r
     .collect 275521,1,95204 --Crest of Lordaeron (1)
     .accept 95204 >>Aceite Crest of Lordaeron
     .use 275521
 step
     .isOnQuest 95216
-    >>Mate o |cRXP_ENEMY_Witherfang::250483|r. Saqueie-o para um |T132108:0|t[|cRXP_LOOT_Highly Tóxico Tensão|r]
+    >>Mate o |cRXP_ENEMY_Witherfang::250483|r. Saqueie-o para obter um |T132108:0|t[|cRXP_LOOT_Highly Tóxico Tensão|r]
     .complete 95216,1 --Highly Toxic Strain (1)
     .mob Witherfang::250483
 step
     .isQuestAvailable 97288
     .isNotOnQuest 97288
-    >>Mate o |cRXP_ENEMY_The Barão::250660|r. Saqueie e use seu |T2492254:0|t[|cRXP_LOOT_Abominable Cabeça|r] para iniciar a missão
+    >>Mate o |cRXP_ENEMY_The Barão::250660|r. Saqueie e use o |T2492254:0|t[|cRXP_LOOT_Abominable Cabeça|r] dele para iniciar a missão
     .collect 280438,1,97288 --Abominable Head (1)
     .accept 97288 >>Aceite Tormento Infinito
     .use 280438
@@ -2391,14 +2394,14 @@ step
     .target Edward Heartweaver::250842
 step
     .isOnQuest 92401
-    >>Vá ao corpo de |cRXP_FRIENDLY_Edward Heartweaver::250842|r perto de |cRXP_ENEMY_Rath'mael::250657|r
+    >>Aproxime-se do corpo de |cRXP_FRIENDLY_Edward Heartweaver::250842|r perto de |cRXP_ENEMY_Rath'mael::250657|r
     .complete 92401,1
     .target Edward Heartweaver::250842
 step
     #label RuinsLimbs
     .isOnQuest 92421
-    >>Mate o |cRXP_ENEMY_Morto-vivo|r. Saque seus |T458717:0|t[|cRXP_LOOT_Intact Limbs|r]
-    >>|cRXP_WARN_Certifique-se de matar todos os inimigos na masmorra, senão você pode não concluir esta missão|r
+    >>Mate os |cRXP_ENEMY_Mortos-vivos|r. Saque-os por seus |T458717:0|t[|cRXP_LOOT_Intact Limbs|r]
+    >>|cRXP_WARN_Mate todos os inimigos na masmorra, do contrário pode não completar a missão|r
     .complete 92421,1 --Intact Limbs (25)
     .mob Skeleton::250618
     --.mob Cadaver::250621
@@ -2416,7 +2419,7 @@ step
     .isQuestAvailable 95204
     .isNotOnQuest 95204
     >>Saque e use o |T4504543:0|t[|cRXP_LOOT_Crest of Lordaeron|r] para iniciar a missão
-    >>|cRXP_WARN_Tem 5 locais de aparecimento possíveis|r
+    >>|cRXP_WARN_Ele pode estar em 5 locais diferentes|r
     .collect 275521,1,95204 --Crest of Lordaeron (1)
     .accept 95204 >>Aceite Crest of Lordaeron
     .use 275521
@@ -2426,12 +2429,12 @@ step
 step
     .isQuestComplete 92422
     .goto 1420/0,84.900,2023.500
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Deathguard Kristof::251001|r
-    .turnin 92422 >>Entregue A Ira de Rath'mael
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Deathguard Kristof::251001|r
+    .turnin 92422 >>Entregue The Ira of Rath'mael
     .target Deathguard Kristof::251001
 step
     .goto 1420/0,240.75,1877.57
-    .zone Undercity >>Volte para Undercity
+    .zone Undercity >>Retorne para Undercity
 step
     .goto 1458/0,239.14,1749.54,35,0
     .goto 1458/0,255.64,1724.70,35,0
@@ -2443,7 +2446,7 @@ step
 step
     .goto 1458/0,241.700,1633.200
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tawny Grisette::4554|r
-    >>|cRXP_WARN_Ela patrulha na Trade Quarter|r
+    >>|cRXP_WARN_Ela patrulha no Trade Quarter|r
     >>|cRXP_BUY_Compre um|r |T134522:0|t[|cRXP_LOOT_Toxic Morrião|r]
     .collect 281246,1,97291,1 --Toxic Skullcap (1)
     .target Tawny Grisette::4554
@@ -2451,12 +2454,12 @@ step
     .isOnQuest 95204
     .goto 1458/0,172.100,1667.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Oran Snakewrithe::7825|r
-    .turnin 95204 >>Entregue Brasão de Lordaeron
+    .turnin 95204 >>Entregue Crest of Lordaeron
     .target Oran Snakewrithe::7825
 step
     .goto 1458/0,151.500,1550.200
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ezekiel Tumbas::4585|r
-    >>|cRXP_BUY_Compre uma|r |T134799:0|t[|cRXP_LOOT_Essence of Agonia|r]
+    >>|cRXP_BUY_Compre uma|r |T134799:0|t[|cRXP_LOOT_Essência de Agonia|r]
     .collect 8923,1,97291,1 --Essence of Agony (1)
     .target Ezekiel Graves::4585
 step
@@ -2465,7 +2468,7 @@ step
     .goto 1458/0,373.200,1362.100,15,0
     .goto 1458/0,428.400,1417.700
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Theodore Griffs::11835|r
-    .turnin 95216 >>Entregue A Nova Peste
+    .turnin 95216 >>Entregue A nova peste
     .target Theodore Griffs::11835
 step
     .isOnQuest 97288
@@ -2478,13 +2481,13 @@ step
     #optional
     .isQuestTurnedIn 97288
     .goto 1458/0,404.800,1434.500
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Master Apothecary Faranell::2055|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Master Apothecary Faranell::2055|r
     .accept 97289 >>Aceite Tormento Infinito
     .target Master Apothecary Faranell::2055
 step
     .isOnQuest 97289
     .goto 1458/0,433.300,1482.600
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Unfinished Abominação::271613|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Unfinished Abominação::271613|r
     .turnin 97289 >>Entregue Tormento Infinito
     .accept 97290 >>Aceite Tormento Infinito
     .target Unfinished Abomination::271613
@@ -2492,7 +2495,7 @@ step
     #optional
     .isQuestTurnedIn 97289
     .goto 1458/0,433.300,1482.600
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Unfinished Abominação::271613|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Unfinished Abominação::271613|r
     .accept 97290 >>Aceite Tormento Infinito
     .target Unfinished Abomination::271613
 step
@@ -2516,7 +2519,7 @@ step
     .target Keeper Bel'dugur
 step
     .goto 1458/0,356.700,1563.500
-    >>|cRXP_WARN_Saque a|r |T134181:0|t[|cRXP_LOOT_Blisterweed|r] |cRXP_WARN_do pote atrás de|r |cRXP_FRIENDLY_Marta Bas??lico|r
+    >>|cRXP_WARN_Saque a|r |T134181:0|t[|cRXP_LOOT_Blisterweed|r] |cRXP_WARN_do pote atrás de|r |cRXP_FRIENDLY_Marta Basílico|r
     .collect 281300,1,97291,1 --Blisterweed (1)
     .target Martha Alliestar
 step
@@ -2538,7 +2541,7 @@ step
     .goto 1458/0,444.300,1421.500,10,0
     .goto 1458/0,455.400,1442.500,10,0
     .goto 1458/0,438.800,1468.700
-    .use 281327 >>|cRXP_WARN_Usar|r |T134837:0|t[|cRXP_LOOT_Soro Sibilante|r] |cRXP_WARN_perto do verme no andar de cima|r
+    .use 281327 >>|cRXP_WARN_Use|r |T134837:0|t[|cRXP_LOOT_Soro Sibilante|r] |cRXP_WARN_junto ao verme lá em cima|r
     .complete 97292,1
 step
     .isQuestComplete 97292
@@ -2573,8 +2576,9 @@ step << Rogue
     >>|cRXP_WARN_Entregue apenas agora para uma melhoria de mão-esquerda|r
     >>Entre nos esgotos e siga a estrada para Sepulcher se você não conseguir voar
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tabitha Heartweaver::250686|r
-    .turnin 92401 >>Entregue Amedrontado Request
+    .turnin 92401 >>Entregue Um Pedido Amedrontado
     .target Tabitha Heartweaver::250686
+
 
     ]])
 
@@ -2583,7 +2587,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 18-21 Savanas
 #version 11
-#group RestedXP Forever — Guia de Masmorra Eterna (H)
+#group Guia de Masmorra do RestedXP Forever (H)
 #subgroup Masmorra Guia 1-22
 --#groupid RXP-SRGCE-H1
 #next 21-22 Caverna Ululante
@@ -2602,6 +2606,12 @@ step
     .vendor >>|cRXP_BUY_Venda seus itens desnecessários, depois reabasteça-se de comida se necessário|r << Rogue/Warrior
     .target Innkeeper Boorand Plainswind
     .isQuestAvailable 3281,865,905
+step << Orc/Troll
+    .goto 1413/1,-2709.24,-404.24
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zargh|r
+    .turnin 6386 >> Entregue Retorno à Encruzilhada
+    .target Zargh
+    .isOnQuest 6386
 step << !Tauren !Hunter !Shaman/Skyborne
     #completewith Ignition
     >>Mate todos os |cRXP_ENEMY_Raptores|r que encontrar. Pegue suas |cRXP_LOOT_Cabeças|r
@@ -3098,7 +3108,7 @@ step
     .cooldown item,6948,>0
 step
     #completewith JornSkyseerTurnin
-    .goto The Barrens,51.50,30.34
+    .goto 1413/1,-2595.75,-437.35--c:The Barrens,51.50,30.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Devrak|r
     .fly Camp Taurajo >> Voe para o Acampamento Taurajo
     .subzoneskip 378
@@ -3560,7 +3570,7 @@ step << Rogue
     .xp <20,1
     .dungeon DM
 step << Warlock
-    .goto Orgrimmar,47.98,45.93
+    .goto 1454/1,-4353.57,1844.24--c:Orgrimmar,47.98,45.93
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zevrost|r
     .train 1014 >> Treine suas magias de classe
 	.target Zevrost
@@ -3569,7 +3579,7 @@ step << Warlock
     .dungeon DM
 step << Warlock
     #optional
-    .goto Orgrimmar,47.98,45.93
+    .goto 1454/1,-4353.57,1844.24--c:Orgrimmar,47.98,45.93
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zevrost|r
     .train 706 >> Treine suas magias de classe
 	.target Zevrost
@@ -3800,8 +3810,8 @@ step
     .unitscan Owatanka
 step
     #label SleepingBag1
-    .goto The Barrens,46.361,73.904
-    >>Clique em |cRXP_PICK_Burned-Saída Remains|r no chão
+    .goto 1413/1,-2075.00,-3380.64--c:The Barrens,46.361,73.904
+    >>Clique em |cRXP_PICK_Restos Queimados|r no chão
     .accept 79007 >> Aceite ...e aquele bilhete que você encontrou
 step
     #label LizardBlood
@@ -3892,7 +3902,7 @@ step
 step << !Tauren !Skyborne
     .goto 1413/1,-1891.48,-2391.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Denterroto|r
-    .aura 16618 >>|cRXP_WARN_Se você tem 10|r |T134128:0|t[|cRXP_LOOT_Estilhaços de Sangue|r] |cRXP_WARN_restantes, use-os para obter|r |T136022:0|t[Espírito of the Vento - Missão - Missão] |cRXP_WARN_de|r |cRXP_FRIENDLY_Denterroto|r
+    .aura 16618 >>|cRXP_WARN_Se você tem 10|r |T134128:0|t[|cRXP_LOOT_Fragmentos Sanguíneos|r] |cRXP_WARN_restantes, use-os para obter|r |T136022:0|t[Espírito of the Vento - Missão - Missão] |cRXP_WARN_de|r |cRXP_FRIENDLY_Denterroto|r
     >>|cRXP_WARN_Pule esta etapa se tiver a rota de voo de Penhasco do Trovão|r
     .itemcount 5075,10
     .target Mangletooth
@@ -4083,7 +4093,7 @@ step << Shaman
     .target Tigor Skychaser
     .xp <22,1
 step << Shaman
-    .goto Thunder Bluff,25.21,20.45
+    .goto 1456/1,253.54,-992.30--c:Thunder Bluff,25.21,20.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Xanis|r
     .accept 1529 >>Aceite Clamor da água
     .target Xanis Flameweaver
@@ -4110,7 +4120,7 @@ step
     #completewith NaraWild
     .goto 1456/1,-212.71,-1065.010,80 >> Vá ao Platô dos Anciãos
 step
-    .goto Thunder Bluff,70.4,29.6
+    .goto 1456/1,-218.13,-1055.97--c:Thunder Bluff,70.4,29.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Rahauro|r
     .turnin 5724 >> Entregue Devolvendo a algibeira perdida
     .turnin 5723 >> Entregue Testando a força do inimigo
@@ -4119,7 +4129,7 @@ step
     .isQuestComplete 5723
 step
     #optional
-    .goto Thunder Bluff,70.4,29.6
+    .goto 1456/1,-218.13,-1055.97--c:Thunder Bluff,70.4,29.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Rahauro|r
     .turnin 5724 >> Entregue Devolvendo a algibeira perdida
     .target Rahauro
@@ -4127,7 +4137,7 @@ step
 step
     #optional
     #label RFCTurninsTB1
-    .goto Thunder Bluff,70.4,29.6
+    .goto 1456/1,-218.13,-1055.97--c:Thunder Bluff,70.4,29.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Rahauro|r
     .turnin 5723 >> Entregue Testando a força do inimigo
     .target Rahauro
@@ -4389,9 +4399,9 @@ RXPGuides.RegisterGuide([[
 #forever
 << Horde
 #name 21-22 Caverna Ululante
-#next RestedXP Horda 22-30\22-24 Eira dos montes
+#next 22-24 Hillsbrad
 #version 11
-#group RestedXP Forever — Guia de Masmorra Eterna (H)
+#group Guia de Masmorra do RestedXP Forever (H)
 #subgroup Masmorra Guia 1-22
 --#groupid RXP-SRGCE-H1
 
@@ -4514,6 +4524,7 @@ step
     .mob Mad Magglish
     .isOnQuest 959
 step
+.enabledungeon WC
     #label EnterWC
     .goto 1414/1,-2028.82,-636.93,20,0
     .goto 1414/1,-2050.90,-585.41,20,0
@@ -4607,7 +4618,7 @@ step
     .isOnQuest 962
 step
     #optional
-    >>Mate os |cRXP_ENEMY_Deviate Ravagers|r, os |cRXP_ENEMY_Vipers|r, os |cRXP_ENEMY_Shamblers|r e os |cRXP_ENEMY_Dreadfangs|r. Saqueie-os para obter seus |cRXP_ENEMY_Hides|r.
+    >>Abate os |cRXP_ENEMY_Deviate Ravagers|r, os |cRXP_ENEMY_Vipers|r, os |cRXP_ENEMY_Shamblers|r e os |cRXP_ENEMY_Dreadfangs|r. Saque-os pelos seus |cRXP_ENEMY_Hides|r
     .complete 1487,1 --Deviate Ravager (7)
     .mob +Deviate Ravager
     .complete 1487,2 --Deviate Viper (7)
@@ -4710,7 +4721,7 @@ step
     .isQuestComplete 1491
 step
     #optional
-    .goto The Barrens,62.370,37.615
+    .goto 1413/1,-3697.24,-928.86--c:The Barrens,62.370,37.615
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Cáliper Porcatraca|r
     .accept 1221 >> Aceite Tubérculos de Folha-azul
     .target Mebok Mizzyrix
@@ -4733,11 +4744,11 @@ step << Shaman
     .turnin 1529 >>Entregue Clamor da água
     .accept 1530 >>Aceite Clamor da água
     .target +Islen Waterseer
-    .goto The Barrens,65.83,43.78
+    .goto 1413/1,-4047.86,-1345.39--c:The Barrens,65.83,43.78
     .turnin 874 >>Entregue Mahren Vidente do Céu
     .accept 873 >>Aceite Isha Awak
     .target +Mahren Skyseer
-    .goto The Barrens,65.83,43.86
+    .goto 1413/1,-4047.86,-1350.79--c:The Barrens,65.83,43.86
     .isOnQuest 1529
 step << Shaman
     #optional
@@ -4745,33 +4756,33 @@ step << Shaman
     .turnin 1528 >>Entregue Clamor da água
     .accept 1530 >>Aceite Clamor da água
     .target +Islen Waterseer
-    .goto The Barrens,65.83,43.78
+    .goto 1413/1,-4047.86,-1345.39--c:The Barrens,65.83,43.78
     .turnin 874 >>Entregue Mahren Vidente do Céu
     .accept 873 >>Aceite Isha Awak
     .target +Mahren Skyseer
-    .goto The Barrens,65.83,43.86
+    .goto 1413/1,-4047.86,-1350.79--c:The Barrens,65.83,43.86
     .isOnQuest 1528
 step << Shaman
     #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Islen|r e |cRXP_FRIENDLY_Mahren Vidente do Céu|r
     .accept 1530 >>Aceite Clamor da água
     .target +Islen Waterseer
-    .goto The Barrens,65.83,43.78
+    .goto 1413/1,-4047.86,-1345.39--c:The Barrens,65.83,43.78
     .turnin 874 >>Entregue Mahren Vidente do Céu
     .accept 873 >>Aceite Isha Awak
     .target +Mahren Skyseer
-    .goto The Barrens,65.83,43.86
+    .goto 1413/1,-4047.86,-1350.79--c:The Barrens,65.83,43.86
     .isQuestTurnedIn 1529
 step << Shaman
     #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Islen|r e |cRXP_FRIENDLY_Mahren Vidente do Céu|r
     .accept 1530 >>Aceite Clamor da água
     .target +Islen Waterseer
-    .goto The Barrens,65.83,43.78
+    .goto 1413/1,-4047.86,-1345.39--c:The Barrens,65.83,43.78
     .turnin 874 >>Entregue Mahren Vidente do Céu
     .accept 873 >>Aceite Isha Awak
     .target +Mahren Skyseer
-    .goto The Barrens,65.83,43.86
+    .goto 1413/1,-4047.86,-1350.79--c:The Barrens,65.83,43.86
     .isQuestTurnedIn 1528
 step
     #optional << Shaman
@@ -4818,7 +4829,7 @@ step
 step
     .goto 1413/1,-2711.800,-350.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gur'ak|r
-    .accept 97003 >>Aceite Chol'aruk the Ravener
+    .turnin 97003 >>Entregue Chol'aruk the Ravener
     .target Gur'ak
     .isQuestComplete 97003
 step
@@ -4849,6 +4860,7 @@ step
     >>Mate |cRXP_ENEMY_Senhor da Guerra Krom'zar|r quando aparecer. Pegue o |cRXP_PICK_Estandarte|r que ele deixa no chão
     >>|cRXP_WARN_Cuidado! Ele é um elite forte e protegido por pelo menos dois|r |cRXP_ENEMY_inimigos|r |cRXP_WARN_Kolkar|r
     >>|cRXP_WARN_Ele pode levar até 3 minutos para aparecer|r
+    .link https://www.youtube.com/watch?v=xrm0PWe5wf4 >>|cRXP_WARN_Clique aqui para um vídeo de guia sobre como você pode kitar|r |cRXP_ENEMY_Senhor da Guerra Krom'zar|r
     .complete 4021,1 --Piece of Krom'zar's Banner (1)
     .unitscan Warlord Krom'zar
     .isQuestTurnedIn 852
@@ -4869,6 +4881,14 @@ step
     #optional
     #completewith TopofWCturnins
     .abandon 855 >>Abandone Braçadeiras de centauro
+step
+    #optional
+    #completewith TopofWCturnins
+    .abandon 97003 >>Abandone Chol'aruk, o Devorador
+step
+    #optional
+    #completewith TopofWCturnins
+    .abandon 4021 >>Abandone Contra-ataque!
 step
     #completewith next
     .goto 1413/1,-2493.40,-708.95,20,0

@@ -7,7 +7,7 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #season 2
 #name 1-7 Shadowglen SoD
-#displayname 1-7 Shadowglen
+#displayname 1-7 Umbravale
 #version 1
 #group RestedXP Aliança 1-20
 #groupid RXP-SRGCE-A1
@@ -21,7 +21,7 @@ step
     .goto Teldrassil,58.695,44.266
     .target Conservator Ilthalaine
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ilthalaine|r
-    .accept 456 >> Aceite O Equilíbrio da Natureza
+    .accept 456 >> Aceite O equilíbrio da natureza
 step << Druid/Warrior/Rogue/Hunter/Priest
     .goto Teldrassil,58.88,43.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Corretor de Runas|r
@@ -93,9 +93,9 @@ step
 step << !Warrior !Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dirânia Pratafulge|r e |cRXP_FRIENDLY_Melithar Guenelmo|r
     #label GoodProtector
-    .accept 4495 >> Aceite Um Bom Amigo
+    .accept 4495 >> Aceite Um bom amigo
     .goto Teldrassil,60.899,41.961
-    .accept 458 >> Aceite A Protetora dos Bosques
+    .accept 458 >> Aceite O Protetor da Floresta
 	.goto Teldrassil,59.924,42.474
     .target Dirania Silvershine
     .target Melithar Staghelm
@@ -103,7 +103,7 @@ step << Warrior
     #season 2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Melithar Guenelmo|r
     #label GoodProtector
-    .accept 458 >> Aceite A Protetora dos Bosques
+    .accept 458 >> Aceite O Protetor da Floresta
 	.goto Teldrassil,59.924,42.474
     .target Melithar Staghelm
 step << Warrior/Rogue
@@ -137,7 +137,7 @@ step << Warrior/Rogue
     #season 2
     .goto Teldrassil,60.8,42.0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dirânia Pratafulge|r
-    .accept 4495 >> Aceite Um Bom Amigo
+    .accept 4495 >> Aceite Um bom amigo
     .target Dirania Silvershine
 step
     >>|cRXP_WARN_Certifique-se de equipar todas as peças de equipamento que puder se caírem. Você precisará delas para gravar|r |T134419:0|t|[Runas] |cRXP_WARN_em|r
@@ -153,9 +153,9 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ilthalaine|r
     >>Pegue o |T132939:0|t[Luvas] como recompensa para gravar uma runa nela << Druid/Hunter
     >>Pegue os |T132611:0|t[Braçadeiras] como recompensa para gravar uma runa nelas << Priest
-    .turnin 456 >> Entregue O Equilíbrio da Natureza
+    .turnin 456 >> Entregue O equilíbrio da natureza
     .target Conservator Ilthalaine
-    .accept 457 >> Aceite O Equilíbrio da Natureza
+    .accept 457 >> Aceite O equilíbrio da natureza
 step << Hunter/Rogue/Priest
     .goto Teldrassil,58.88,43.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Corretor de Runas|r
@@ -277,7 +277,7 @@ step
 step
     .goto Teldrassil,54.593,32.992
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Iverron|r
-    .turnin 4495 >> Entregue Um Bom Amigo
+    .turnin 4495 >> Entregue Um bom amigo
     .target Iverron
     .accept 3519 >> Aceite Um Amigo em Necessidade
 step
@@ -286,18 +286,18 @@ step
     .xp 3-400 >> Triture até você estar 400xp longe do nível 3 (500/900)
 step
     #completewith next
-    .hs >> Use sua Pedra de Retorno para ir a Shadowglen
+    .hs >> Use sua Pedra de Retorno para ir a Umbravale
 step << Hunter
     .goto Teldrassil,57.9,45.1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tarindrella|r
     .turnin 458 >> Entregue A Protetora dos Bosques
     .target Tarindrella
-    .accept 459 >> Aceite A Protetora dos Bosques
+    .accept 459 >> Aceite O Protetor da Floresta
 step
     #requires balance1
 	.goto Teldrassil,58.695,44.266
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ilthalaine|r
-    .turnin 457 >> Entregue O Equilíbrio da Natureza
+    .turnin 457 >> Entregue O equilíbrio da natureza
     .target Conservator Ilthalaine
 	.accept 3116 >> Aceite O Selo Simples << Warrior
 	.accept 3117 >> Aceite O Selo Cinzelado << Hunter
@@ -669,7 +669,7 @@ step << Rogue
 step << Druid
     .goto Teldrassil,56.308,59.488
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Shalomon|r
-    >>|cRXP_BUY_Compre e equipe uma|r |T135145:0|t[Bengala] |cRXP_BUY_se você pode pagar (5s 4c), se não, pule este passo|r
+    >>|cRXP_BUY_Compre e equipe uma|r |T135145:0|t[Bengala] |cRXP_BUY_se puder pagá-la (5s 4c), caso contrário, pule este passo|r
     .collect 2495,1 --Walking Stick (1)
     .target Shalomon
     .money <0.0504
@@ -967,7 +967,7 @@ step << Rogue
 step << Druid
     .goto Teldrassil,56.308,59.488
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Shalomon|r
-    >>|cRXP_BUY_Compre e equipe uma|r |T135145:0|t[Bengala] |cRXP_BUY_se você pode pagar (5s 4c), se não, pule este passo|r
+    >>|cRXP_BUY_Compre e equipe uma|r |T135145:0|t[Bengala] |cRXP_BUY_se puder pagá-la (5s 4c), caso contrário, pule este passo|r
     .collect 2495,1 --Walking Stick (1)
     .target Shalomon
     .money <0.0504

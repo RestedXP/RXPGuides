@@ -1966,6 +1966,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com|r |cRXP_FRIENDLY_Gar'Thok|r
     .turnin 784 >>Entregue Aniquile os invasores
     .turnin 830 >>Entregue As ordens do almirante
+    .turnin 96821 >>Entregue Legging It
     .accept 825 >>Aceite Dos destroços...
     .accept 831 >>Aceite As ordens do almirante
     .target +Gar'Thok

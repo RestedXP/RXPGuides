@@ -5281,7 +5281,7 @@ step << NightElf Rogue
     #completewith next
     .goto Ironforge,55.491,47.751
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Grif Trovino|r
-    .fly Menethil >> Voe para Pantanal
+    .fly Menethil >> Voe para Terras do Interior
     .zoneskip Ironforge,1
     .cooldown item,6948,<0
     .dungeon !DM

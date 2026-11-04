@@ -1185,7 +1185,7 @@ step
     .collect 215428,1
 step
     .train 402855,1
-    .zone Swamp of Sorrows >>Vá para |cFFfa9602Pântano das Mágoas|r
+    .zone Swamp of Sorrows >>Vá ao |cFFfa9602Pântano das Mágoas|r
 step
     .train 402855,1
     .goto Swamp of Sorrows,16.7,53.8
