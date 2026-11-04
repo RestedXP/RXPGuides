@@ -139,6 +139,10 @@ L["Skreah"] = ""
 
 -- DB\classic\db.lua file
 
+L["RestedXP Speedrun Guide (H)"] = ""
+L["RestedXP Survival Guide (H)"] = ""
+L["RestedXP Speedrun Guide (A)"] = ""
+L["RestedXP Survival Guide (A)"] = ""
 L["Mining & Engineering"] = ""
 L["Mining & Blacksmithing"] = ""
 L["Herbalism & Alchemy"] = ""
@@ -161,6 +165,11 @@ L["Excellent"] = ""
 -- DB\classic\rares.lua file
 
 L["Evalcharr\", \"Fantôme de Varo"] = ""
+
+-- DB\forever\db.lua file
+
+L["RestedXP Forever Guide (H)"] = ""
+L["RestedXP Forever Guide (A)"] = ""
 
 -- DB\mainline\db.lua file
 
@@ -195,6 +204,12 @@ L["a) Intro"] = ""
 L["a) Arathi Highlands Returning Player"] = ""
 L["a) Haranir Intro"] = ""
 L["ab) Dwarf Coldridge Vallley"] = ""
+
+-- DB\mop\db.lua file
+
+L["RestedXP Death Knight Start"] = ""
+L["RXP MoP 1-80 (H)"] = ""
+L["RXP MoP 1-80 (A)"] = ""
 
 -- DB\mop\rares.lua file
 
@@ -244,10 +259,20 @@ L["Total XP: %s\n%s"] = ""
 
 -- DB\shared.lua file
 
-L["RXP MoP 1-80 (A)"] = ""
 L["RXP MoP 1-60 (A)"] = ""
-L["RXP MoP 1-80 (H)"] = ""
 L["RXP MoP 1-60 (H)"] = ""
+
+-- DB\tbc\db.lua file
+
+L["RestedXP TBC Guide (H)"] = ""
+L["RXP TBC Survival Guide (H)"] = ""
+L["RestedXP TBC Guide (A)"] = ""
+L["RXP TBC Survival Guide (A)"] = ""
+
+-- DB\wotlk\db.lua file
+
+L["RestedXP Horde 1-30"] = ""
+L["RestedXP Alliance 1-20"] = ""
 
 -- functions.lua file
 
@@ -319,8 +344,6 @@ L["Unable to decode cached guide (%s), removed"] = ""
 L["Error parsing "] = ""
 L["Guide has no name"] = ""
 L["Classic"] = ""
-L["RestedXP Speedrun Guide (A)"] = ""
-L["RestedXP Speedrun Guide (H)"] = ""
 L["Incomplete or invalid encoded string"] = ""
 L["Total guides loaded: %d/%s"] = ""
 L["Incompatible guide game %d version vs %d"] = ""
