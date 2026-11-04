@@ -142,6 +142,10 @@ L["Skreah"] = "斯克雷亚"
 
 -- DB\classic\db.lua file
 
+L["RestedXP Speedrun Guide (H)"] = "RestedXP 速通指南 (部落)"
+L["RestedXP Survival Guide (H)"] = "RestedXP 生存向导 (部落)"
+L["RestedXP Speedrun Guide (A)"] = "RestedXP 速通指南 (联盟)"
+L["RestedXP Survival Guide (A)"] = "RestedXP 生存向导 (联盟)"
 L["Mining & Engineering"] = "采矿与工程学"
 L["Mining & Blacksmithing"] = "采矿与锻造"
 L["Herbalism & Alchemy"] = "草药学与炼金术"
@@ -164,6 +168,11 @@ L["Excellent"] = "完美"
 -- DB\classic\rares.lua file
 
 L["Evalcharr\", \"Fantôme de Varo"] = "Evalcharr\", \"Varo的幻影"
+
+-- DB\forever\db.lua file
+
+L["RestedXP Forever Guide (H)"] = "RestedXP Forever 向导 (部落)"
+L["RestedXP Forever Guide (A)"] = "RestedXP Forever 向导 (联盟)"
 
 -- DB\mainline\db.lua file
 
@@ -198,6 +207,12 @@ L["a) Intro"] = "a) 序章"
 L["a) Arathi Highlands Returning Player"] = "a) 阿拉希高地 回归玩家"
 L["a) Haranir Intro"] = "a) 哈籁尼尔 开场"
 L["ab) Dwarf Coldridge Vallley"] = "ab) 矮人 寒脊山谷"
+
+-- DB\mop\db.lua file
+
+L["RestedXP Death Knight Start"] = "RestedXP 死亡骑士开局"
+L["RXP MoP 1-80 (H)"] = "RXP 熊猫人之谜 1-80级 (部落)"
+L["RXP MoP 1-80 (A)"] = "RXP 熊猫人之谜 1-80级 (联盟)"
 
 -- DB\mop\rares.lua file
 
@@ -247,10 +262,20 @@ L["Total XP: %s\n%s"] = "总经验: %s\n%s"
 
 -- DB\shared.lua file
 
-L["RXP MoP 1-80 (A)"] = "RXP 熊猫人之谜 1-80级 (联盟)"
 L["RXP MoP 1-60 (A)"] = "RXP 熊猫人之谜 1-60级 (联盟)"
-L["RXP MoP 1-80 (H)"] = "RXP 熊猫人之谜 1-80级 (部落)"
 L["RXP MoP 1-60 (H)"] = "RXP 熊猫人之谜 1-60级 (部落)"
+
+-- DB\tbc\db.lua file
+
+L["RestedXP TBC Guide (H)"] = "RestedXP TBC 向导 (部落)"
+L["RXP TBC Survival Guide (H)"] = "RXP TBC 生存向导 (部落)"
+L["RestedXP TBC Guide (A)"] = "RestedXP TBC 向导 (联盟)"
+L["RXP TBC Survival Guide (A)"] = "RXP TBC 生存向导 (联盟)"
+
+-- DB\wotlk\db.lua file
+
+L["RestedXP Horde 1-30"] = "RestedXP 部落 1-30"
+L["RestedXP Alliance 1-20"] = "RestedXP 联盟 1-20"
 
 -- functions.lua file
 
@@ -322,8 +347,6 @@ L["Unable to decode cached guide (%s), removed"] = "无法解码缓存的指南 
 L["Error parsing "] = "解析错误 "
 L["Guide has no name"] = "指南没有名称"
 L["Classic"] = "怀旧服"
-L["RestedXP Speedrun Guide (A)"] = "RestedXP 速通指南 (联盟)"
-L["RestedXP Speedrun Guide (H)"] = "RestedXP 速通指南 (部落)"
 L["Incomplete or invalid encoded string"] = "编码字符串不完整或无效"
 L["Total guides loaded: %d/%s"] = "已加载指南总数: %d/%s"
 L["Incompatible guide game %d version vs %d"] = "指南游戏版本不兼容 (%d vs %d)"
