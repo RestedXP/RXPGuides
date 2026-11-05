@@ -4096,21 +4096,21 @@ step << Horde Shaman
     .turnin 97243 >>Turn in Call of Fire
     .accept 97244 >>Accept Call of Fire
     .target Olariaan Swiftburn::268592
--- step << Horde Shaman
---     .isOnQuest 97244
---     .isQuestNotComplete 97244
---     .goto 2521,50.8,89.6
---     .subzone 16593 >>Jump off the cliff
--- step << Horde Shaman
---     #ignorecorpse
---     .isOnQuest 97244
---     .isQuestNotComplete 97244
---     .showwhiledead
---     .goto 2521,54.99,68.14
---     .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Spirit Healer::6491|r.
---     .skipgossipid 96031
---     .skipgossipid 98031
---     .target Spirit Healer::6491
+step << Horde Shaman
+    .isOnQuest 97244
+    .isQuestNotComplete 97244
+    .goto 2521,50.8,89.6
+    .subzone 16593 >>Jump off the cliff
+step << Horde Shaman
+    #ignorecorpse
+    .isOnQuest 97244
+    .isQuestNotComplete 97244
+    .showwhiledead
+    .goto 2521,54.99,68.14
+    .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Spirit Healer::6491|r.
+    .skipgossipid 96031
+    .skipgossipid 98031
+    .target Spirit Healer::6491
 step << Horde Shaman
     .goto 2521,64.380,63.586
     >>Kill |cRXP_ENEMY_Skypriest Faladiel::268602|r. Loot him for |T839910:0|t[|cRXP_LOOT_Faladiel's Heart|r].
