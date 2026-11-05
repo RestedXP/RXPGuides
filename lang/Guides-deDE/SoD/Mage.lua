@@ -1,7 +1,7 @@
 if GetLocale() ~= "deDE" then return end
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Eislanze - 2 (Wald von Elwynn)
 #title Eislanze
@@ -107,7 +107,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Eislanze - 2 (Dun Morogh)
 #title Eislanze
@@ -179,7 +179,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Eislanze - 2 (Durotar)
 #title Eislanze
@@ -255,7 +255,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Eislanze - 2 (Tirisfal)
 #title Eislanze
@@ -333,7 +333,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Brust
 #name Regeneration - 12 (Westfall)
 #title Regeneration
@@ -407,7 +407,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Brust
 #name Regeneration - 13 (Loch Modan)
 #title Regeneration
@@ -466,7 +466,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Brust
 #name Regeneration - 12 (The Barrens)
 #title Regeneration
@@ -546,7 +546,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Brust
 #name Regeneration - 12 (Silberwald)
 #title Regeneration
@@ -609,7 +609,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Brust
 #name Eisige Finger - 10 (Wald von Elwynn)
 #title Eisige Finger
@@ -667,7 +667,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Brust
 #name Eisige Finger - 5 (Dun Morogh)
 #title Eisige Finger
@@ -739,7 +739,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Brust
 #name Eisige Finger - 8 (Tirisfal)
 #title Eisige Finger
@@ -791,7 +791,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Mage SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Brust
 #name Eisige Finger - 8 (Durotar)
 #title Eisige Finger
@@ -844,7 +844,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Brust
 #name Ausgebrannt - 6 (Dun Morogh)
 #title Ausgebrannt
@@ -875,7 +875,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Brust
 #name Ausgebrannt - 6 (Wald von Elwynn)
 #title Ausgebrannt
@@ -905,7 +905,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Brust
 #name Ausgebrannt - 6 (Durotar)
 #title Ausgebrannt
@@ -935,7 +935,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Brust
 #name Ausgebrannt - 6 (Tirisfal)
 #title Ausgebrannt
@@ -966,7 +966,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Brust
 #name Erleuchtung - 8 (Wald von Elwynn)
 #title Erleuchtung
@@ -1055,7 +1055,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Brust
 #name Erleuchtung - 8 (Tirisfal)
 #title Erleuchtung
@@ -1121,7 +1121,7 @@ step
 
 RXPGuides.RegisterGuide[[
 #classic
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 <<Alliance Mage SoD
 #subgroup Beine/Stiefel/Helm
 #name Eisige Adern/Zaubermacht/Tieffrieren - 40 (Azeroth)
@@ -1607,7 +1607,7 @@ step
 
 RXPGuides.RegisterGuide[[
 #classic
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Beine/Stiefel
 #subgroup Beine/Stiefel/Helm
 #name Eisige Adern/Zaubermacht/Tieffrieren - 40 (Azeroth)
@@ -2034,7 +2034,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Beine
 #name Lebende Flamme - 6 (Wald von Elwynn)
 #title Lebende Flamme
@@ -2083,7 +2083,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Beine
 #name Lebende Flamme - 7 (Dun Morogh)
 #title Lebende Flamme
@@ -2135,7 +2135,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Beine
 #name Lebende Flamme - 6 (Durotar)
 #title Lebende Flamme
@@ -2186,7 +2186,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Beine
 #name Lebende Flamme - 6 (Tirisfal)
 #title Lebende Flamme
@@ -2241,7 +2241,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Arkanschlag - 18 (Eschental)
 #title Arkanschlag
@@ -2306,7 +2306,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Lebende Bombee - 11 (Loch Modan)
 #title Lebende Bombe
@@ -2367,7 +2367,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Lebende Bombee - 18 (Westfall)
 #title Lebende Bombe
@@ -2440,7 +2440,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Lebende Bombee - 17 (Silberwald)
 #title Lebende Bombe
@@ -2492,7 +2492,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Lebende Bombe - 20 (Das Brachland)
 #title Lebende Bombe
@@ -2542,7 +2542,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Mage SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Gürtel
 #title Zauberfrostblitz/Frostfeuerblitz
 #name Zauberfrostblitz/Frostfeuerblitz - 37 (Schlingendorntal)
@@ -2646,7 +2646,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Mage SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Helm
 #name Kampfeshitze - 32 (Alteracgebirge)
 #title Kampfeshitze
@@ -2680,7 +2680,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Mage SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Gürtel
 #name Kampfeshitze - 37 (Arathihochland)
 #title Kampfeshitze
@@ -2710,7 +2710,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Mage SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Stiefel
 #name Chronostatische Bewahrung - 30 (Tausend Nadeln)
 #title Chronostatische Bewahrung
@@ -2777,7 +2777,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Helm
 #name Zeitanomalie - 42 (Azeroth)
 
@@ -2832,7 +2832,7 @@ step << Alliance
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Bracers(Qualfeuerblitz)
 #name Qualfeuerblitz - 15 (Westfall)
 
@@ -2898,7 +2898,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Bracers(Qualfeuerblitz)
 #name Qualfeuerblitz - 35 (Desolace)
 
@@ -2951,7 +2951,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Bracers(Qualfeuerblitz)
 #name Qualfeuerblitz - 45 (Feralas)
 
@@ -3004,7 +3004,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Bracers(Qualfeuerblitz)
 #name Qualfeuerblitz - 45 (Azshara)
 
@@ -3055,7 +3055,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Bracers(Qualfeuerblitz)
 #name Qualfeuerblitz - 35 (Verwüstete Lande)
 
@@ -3106,7 +3106,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Bracers(Qualfeuerblitz)
 #name Qualfeuerblitz - 15 (Barrens)
 
@@ -3165,7 +3165,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Bracers(Qualfeuerblitz)
 #name Qualfeuerblitz - 15 (Dunkelküste)
 
@@ -3216,7 +3216,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Bracers(Qualfeuerblitz)
 #name Qualfeuerblitz - 15 (Silberwald)
 
@@ -3267,7 +3267,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Bracers(Qualfeuerblitz)
 #name Qualfeuerblitz - 35 (Sümpfe des Elends)
 
@@ -3331,7 +3331,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Bracers(Qualfeuerblitz)
 #name Qualfeuerblitz - 28 (Rotkammgebirge)
 
@@ -3382,7 +3382,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Mage SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Verschleierung
 #name Überhitzen - 55 (Westliche Pestländer)
 #title Überhitzen
@@ -3421,7 +3421,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Mage SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Verschleierung
 #name Gefrorene Kugel - 55 (Teufelswald/Winterquell)
 #title Gefrorene Kugel
@@ -3479,7 +3479,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Verschleierung
 #name Arkanbeschuss - 60 (Azeroth)
 #title Arkanbeschuss

@@ -27,7 +27,7 @@ step
 step
     .goto Silverpine Forest,56.18,9.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Erland|r
-    >>|cRXP_WARN_Stellt sicher, dass ihr volle Gesundheit/Mana habt, bevor ihr diese Quest beginnt!|r
+    >>|cRXP_WARN_Stellt sicher, dass eure Gesundheit und Mana voll sind, bevor ihr diese Quest beginnt!|r
     .accept 435 >>Akzeptiert die Quest Eskorte für Erland
     .target Deathstalker Erland
 step
@@ -43,7 +43,7 @@ step
     .goto Silverpine Forest,56.17,12.62,30,0
     .goto Silverpine Forest,53.46,13.45
     >>Eskortiert |cRXP_FRIENDLY_Erland|r sicher zu |cRXP_FRIENDLY_Rane Yorick|r
-    >>|cRXP_WARN_Seid vorsichtig!|r |cRXP_ENEMY_Worgs|r |cRXP_WARN_können direkt übereinander erscheinen. Esst und trinkt, wann immer ihr könnt|r
+    >>|cRXP_WARN_Passt auf!|r |cRXP_ENEMY_Worgs|r |cRXP_WARN_können übereinander spawnen, esst und trinkt, wann immer ihr könnt|r
     .complete 435,1 --Erland must reach Rane Yorick (1)
     .mob Worg
 step
@@ -184,7 +184,7 @@ step
     .goto Silverpine Forest,51.89,13.82,6,0
     .goto Silverpine Forest,51.54,13.91
     >>Tötet |cRXP_ENEMY_Ivar der Verfaulte|r. Plündert ihn für seinen |cRXP_LOOT_Kopf|r
-    >>|cRXP_WARN_Seid vorsichtig! Räumt den gesamten vorderen Bereich der Scheune leer und zieht die|r |cRXP_ENEMY_Ravenclaw Slaves|r |cRXP_WARN_einzeln nach draußen.|r
+    >>|cRXP_WARN_Passt auf! Löscht den gesamten vorderen Bereich der Scheune und zieht die|r |cRXP_ENEMY_Ravenclaw-Sklaven|r |cRXP_WARN_draußen einzeln heraus.|r
     >>|cRXP_WARN_Ivar ist durch zwei|r |cRXP_ENEMY_Sklave von Rabenklaue|r |cRXP_WARN_in der Scheune geschützt. Ihr könnt eine von ihnen solo pullen, wenn sie nach vorne patrouilliert|r
     >>|cRXP_WARN_Sie sind immun gegen Furcht!|r << Priest/Warlock
     .complete 425,1 --Ivar's Head (1)
@@ -209,7 +209,7 @@ step
 step
     #label Nightlash
     .goto Silverpine Forest,45.44,21.01
-    >>Tötet |cRXP_ENEMY_Rot Verstecken Gnolls|r um das Todesfeld herum, bis |cRXP_ENEMY_Nachtseele|r erscheint. Tötet und plündert sie, um ihre |cRXP_LOOT_Essenz|r zu erhalten.
+    >>Tötet |cRXP_ENEMY_Rotpelzige Gnolle|r rund um das Todesfeld, bis |cRXP_ENEMY_Nachtseele|r erscheint. Tötet sie und plündert ihre |cRXP_LOOT_Essenz|r
     >>|cRXP_WARN_Sie sind immun gegen Furcht!|r << Priest/Warlock
     .complete 437,1 --Enter the Dead Fields (1)
     .complete 437,2 --Essence of Nightlash (1)
@@ -227,7 +227,7 @@ step
 step
     #completewith next
     >>Tötet |cRXP_ENEMY_Spinnen|r. Plündert sie für ihr |cRXP_LOOT_Blut|r
-    >>|cRXP_WARN_Seid vorsichtig, falls|r |cRXP_ENEMY_Krethis Schattennetz|r |cRXP_WARN_da ist, SIE WIRD EUCH TÖTEN! Sie hat einen 130-Schaden-Schild mit 15 Sek. Abklingzeit und eine Schockfähigkeit mit 110 Sofortschaden|r
+    >>|cRXP_WARN_Passt auf, falls|r |cRXP_ENEMY_Krethis Schattennetz|r |cRXP_WARN_aktiv ist - SIE WIRD EUCH TÖTEN! Sie hat einen Schild mit 130 Schaden mit 15 Sekunden Abklingzeit und eine 110 Schaden sofortige Schockfähigkeit|r
     .complete 447,2 --Skittering Blood (6)
     .mob Moss Stalker
     .unitscan Krethis Shadowspinner
@@ -251,7 +251,7 @@ step
 	.goto Silverpine Forest,35.85,13.83,50,0
 	.goto Silverpine Forest,36.33,14.20,50,0
     >>Tötet |cRXP_ENEMY_Spinnen|r. Plündert sie für ihr |cRXP_LOOT_Blut|r
-    >>|cRXP_WARN_Seid vorsichtig, falls|r |cRXP_ENEMY_Krethis Schattennetz|r |cRXP_WARN_da ist, SIE WIRD EUCH TÖTEN! Sie hat einen 130-Schaden-Schild mit 15 Sek. Abklingzeit und eine Schockfähigkeit mit 110 Sofortschaden|r
+    >>|cRXP_WARN_Seid vorsichtig wenn|r |cRXP_ENEMY_Krethis Schattennetz|r |cRXP_WARN_aktiv ist, WIRD SIE EUCH TÖTEN! Sie hat einen 130er Schadensschild mit 15s Abklingzeit und eine 110er Sofortschock-Fähigkeit|r
     .complete 447,2 --Skittering Blood (6)
     .mob Moss Stalker
     .unitscan Krethis Shadowspinner
@@ -310,13 +310,13 @@ step
 step << Warlock/Mage/Priest
     .goto Silverpine Forest,44.80,39.24
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Andrea|r
-    .vendor >> Kauft |T132491:0|t[|cRXP_FRIENDLY_Weisengürtel|r] bei ihr, falls er verfügbar ist
+    .vendor >> Kauft |T132491:0|t[|cRXP_FRIENDLY_Weisengürtel|r] von ihr, falls er oben ist
     .target Andrea Boynton
     .money <0.1400
 step << Hunter
     .goto Silverpine Forest,45.01,39.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Nadia|r
-    >>Kauft |T135490:0|t[|cRXP_FRIENDLY_Feiner Langbogen|r] bei ihr, falls er verfügbar ist
+    >>Kauft einen |T135490:0|t[|cRXP_FRIENDLY_Feiner Langbogen|r] von ihr, falls er oben ist
     .collect 11304,1,438,1 --Fine Longbow (1)
     .collect 2515,1200,438,1 << Hunter --Sharp Arrow (1200)
     .target Nadia Vernon
@@ -327,13 +327,13 @@ step << Hunter
 step << Hunter/Rogue
     .goto Silverpine Forest,44.61,39.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Alexandre|r
-    .vendor >> Kauft |T132539:0|t[|cRXP_FRIENDLY_Agil Stiefels|r] bei ihr, falls sie verfügbar sind
+    .vendor >> Kauft |T132539:0|t[|cRXP_FRIENDLY_Agile Stiefel|r] von ihr, falls sie verfügbar sind
     .target Alexandre Lefevre
     .money <0.2633
 step << Shaman/Warrior/Druid
     .goto Silverpine Forest,44.61,39.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Alexandre|r
-    .vendor >> Kauft |T132539:0|t[|cRXP_FRIENDLY_Agil Stiefels|r] oder |T132537:0|t[|cRXP_FRIENDLY_Stable Stiefels|r] bei ihr, falls einer davon verfügbar ist
+    .vendor >> Kauft |T132539:0|t[|cRXP_FRIENDLY_Agile Stiefel|r] oder |T132537:0|t[|cRXP_FRIENDLY_Standfeste Stiefel|r] von ihr, falls eines von ihnen verfügbar ist
     .target Alexandre Lefevre
     .money <0.2000
 step << Warlock/Mage/Priest
@@ -347,7 +347,7 @@ step << Warlock/Mage/Priest
 step << Hunter
     #optional
     #completewith Shackles
-    +|cRXP_WARN_Anlegen|r |T135490:0|t[|cRXP_FRIENDLY_Feiner Langbogen|r]
+    +|cRXP_WARN_Legt den|r |T135490:0|t[|cRXP_FRIENDLY_Feiner Langbogen|r] an
     .use 11304
     .itemcount 11304,1
     .xp <14,1
@@ -371,7 +371,7 @@ step << Shaman/Warrior/Druid
 step << Shaman/Warrior/Druid
     #optional
     #completewith Shackles
-    +|cRXP_WARN_Anlegen|r |T132537:0|t[|cRXP_FRIENDLY_Stable Stiefels|r]
+    +|cRXP_WARN_Legt die|r |T132537:0|t[|cRXP_FRIENDLY_Standfeste Stiefel|r] an
     .use 4789
     .itemcount 4789,1
     .equip 8,4789
@@ -415,7 +415,7 @@ step
     #label DecrepitFerry
     .goto Silverpine Forest,58.39,34.79
     >>Klickt das |cRXP_PICK_Boot|r am Rand der Docks
-    >>|cRXP_WARN_Seid vorsichtig!|r |cRXP_ENEMY_Griffel von Ravenclaw|r |cRXP_WARN_sind bis Stufe 16 und haben eine Betäubungsfähigkeit im Nahkampf mit 5 Sekunden Dauer|r
+    >>|cRXP_WARN_Passt auf!|r |cRXP_ENEMY_Hands of Ravenclaw|r |cRXP_WARN_sind bis Stufe 16 und haben eine 5 Sekunden Nahkampfbereichs-Betäubungsfähigkeit|r
     .turnin 438 >>Gebt die Quest Die verfallene Fähre ab
     .accept 439 >>Akzeptiert die Quest Auf den Spuren der Moderfelle
 step
@@ -504,7 +504,7 @@ step << Undead
     .target Gordon Wendham
 step << Troll Warrior/Undead Warrior
     .goto Undercity,61.15,40.89
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Sprecht mit|r |cRXP_FRIENDLY_Louis|r|cRXP_BUY_. Kauft einen|r |T135147:0|t[Knorriger Stab] |cRXP_BUY_bei ihm|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Sprecht mit|r |cRXP_FRIENDLY_Louis|r|cRXP_BUY_. Kauft einen|r |T135147:0|t[Knorriger Stab] |cRXP_BUY_von ihm|r
     .collect 2030,1,479,1 --Collect Gnarled Staff (1)
     .money <0.5544
     .target Louis Warren
@@ -519,21 +519,21 @@ step << Troll Warrior/Undead Warrior
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.9
 step << Orc Warrior
     .goto Undercity,61.15,40.89
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Sprecht mit|r |cRXP_FRIENDLY_Louis|r|cRXP_BUY_. Kauft eine|r |T132394:0|t[Hakenaxt] |cRXP_BUY_bei ihm|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Sprecht mit|r |cRXP_FRIENDLY_Louis|r|cRXP_BUY_. Kauft|r |T132394:0|t[Hakenaxt] |cRXP_BUY_von ihm|r
     .collect 2025,1,479,1 --Collect Bearded Axe (1)
     .money <0.5304
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.8
 step << Orc Warrior
     #completewith PyrewoodAmbush
-    +Rüstet die |T132394:0|t[Hakenaxt] aus
+    +Rüstet den |T132394:0|t[Hakenaxt] aus
     .use 2025
     .itemcount 2025,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.8
 step << Tauren Warrior
     .goto Undercity,61.15,40.89
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Sprecht mit|r |cRXP_FRIENDLY_Louis|r|cRXP_BUY_. Kauft einen|r |T133046:0|t[Felshammer] |cRXP_BUY_bei ihm|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Sprecht mit|r |cRXP_FRIENDLY_Louis|r|cRXP_BUY_. Kauft|r |T133046:0|t[Felshammer] |cRXP_BUY_von ihm|r
     .collect 2026,1,479,1 --Collect Rock Hammer (1)
     .money <0.6286
     .target Louis Warren
@@ -549,7 +549,7 @@ step << Tauren Warrior
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.5
 step << Shaman
     .goto Undercity,61.15,40.89
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Sprecht mit|r |cRXP_FRIENDLY_Louis|r|cRXP_BUY_. Kauft einen|r |T135147:0|t[Knorriger Stab] |cRXP_BUY_bei ihm|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Sprechen mit|r |cRXP_FRIENDLY_Louis|r|cRXP_BUY_. Kauft einen|r |T135147:0|t[Knorriger Stab] |cRXP_BUY_von ihm|r
     .collect 2030,1,479,1 --Collect Gnarled Staff (1)
     .money <0.5544
     .target Louis Warren
@@ -565,7 +565,7 @@ step << Shaman
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.9
 step << Rogue
     .goto Undercity,61.15,40.89
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Sprecht mit|r |cRXP_FRIENDLY_Louis|r|cRXP_BUY_. Kauft einen|r |T135343:0|t[Krummsäbel] |cRXP_BUY_bei ihm.|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Sprecht mit|r |cRXP_FRIENDLY_Louis|r|cRXP_BUY_. Kauft|r |T135343:0|t[Krummsäbel] |cRXP_BUY_von ihm.|r
     .collect 2027,1,479,1 --Collect Scimitar (1)
     .money <0.3815
     .itemStat 16,QUALITY,<7
@@ -655,7 +655,7 @@ step << Warlock
     .group
 step << Priest/Mage/Warlock
     .goto Undercity,69.54,26.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Sprecht mit|r |cRXP_FRIENDLY_Zane|r|cRXP_BUY_. Kauft einen|r |T133718:0|t[Glimmender Zauberstab] |cRXP_BUY_bei ihm|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Sprecht mit|r |cRXP_FRIENDLY_Zane|r|cRXP_BUY_. Kauft|r |T133718:0|t[Glimmender Zauberstab] |cRXP_BUY_von ihm|r
     .collect 5208,1 --Smoldering Wand (1)
     .money <0.3515
     .itemStat 18,QUALITY,<7
@@ -756,7 +756,7 @@ step << Undead
     .goto Undercity,63.27,48.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Michael|r
     .turnin 6322 >>Gebt die Quest Michael Garrett ab
-    .accept 6324 >>Akzeptiert die Quest Zurückkehren to Podrig
+    .accept 6324 >>Akzeptiert die Quest Zurückkehren zu Podrig
     .target Michael Garrett
 step
     #completewith GrimsonthePale
@@ -777,7 +777,7 @@ step << Undead
 step << Undead
     .goto Silverpine Forest,43.43,41.67
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Podrig|r
-    .turnin 6324 >>Gebt die Quest Zurückkehren to Podrig ab
+    .turnin 6324 >>Gebt die Quest Zurückkehren zu Podrig ab
 step
     .goto Silverpine Forest,43.98,39.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Gwyn|r
@@ -797,7 +797,7 @@ step
     .group 2
 step << skip
     .goto Silverpine Forest,58.12,45.50
-    .goto Silverpine Forest,44.29,41.09,30 >>|cRXP_WARN_Springt auf das Holzrad. Führt ein Auslogg-Überspringen durch, indem ihr euch ausloggt und wieder einloggt. Falls ihr das nicht schafft, lauft zurück nach Das Grabmal|r
+    .goto Silverpine Forest,44.29,41.09,30 >>|cRXP_WARN_Springt auf das hölzerne Rad. Überspringt, indem ihr euch abmeldet und wieder anmeldet. Falls ihr das nicht schafft, lauft zurück zum Grabmal|r
     .link https://www.youtube.com/watch?v=uD2CUb3rdQ0&ab >> |cRXP_WARN_KLICKT HIER für ein Beispiel|r
     .group
 step
@@ -850,13 +850,13 @@ step
     .group 4
 step
     #completewith BerardsJournal
-    .goto Silverpine Forest,43.97,73.23,10 >>Betretet die Taverne und geht in den zweiten Stock
+    .goto Silverpine Forest,43.97,73.23,10 >>Betretet die Taverne und geht zum zweiten Stock
     .isOnQuest 450
     .group
 step
     #label BerardsJournal
     .goto Silverpine Forest,42.98,73.22
-    >>Tötet |cRXP_ENEMY_Apotheker Berard|r. Plündert |cRXP_LOOT_Buch|r aus dem Bücherregal
+    >>Tötet |cRXP_ENEMY_Apotheker Berard|r. Beute seinen |cRXP_LOOT_Buch|r im Bücherschrank
     .complete 450,1 --Berard's Journal (1)
     .mob Apothecary Berard
     .isOnQuest 450
@@ -904,7 +904,7 @@ step
     .goto Silverpine Forest,45.41,72.42,40,0
     .goto Silverpine Forest,46.61,73.00,40,0
     .goto Silverpine Forest,45.48,73.43,40,0
-    >>Tötet |cRXP_ENEMY_Pyrewood|r-Mobs weiter. Plündert |cRXP_LOOT_Fesseln|r von ihnen
+    >>Tötet alle |cRXP_ENEMY_Pyrewood|r-Gegner. Beute sie für ihre |cRXP_LOOT_Fesseln|r
     .complete 99,1 -- Pyrewood Shackle (6)
     .mob Pyrewood Watcher
     .mob Pyrewood Tailor
@@ -929,7 +929,7 @@ step
 step
     .goto Silverpine Forest,42.79,40.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Renferrel|r
-    .turnin 450 >> Gebt die Quest A Recipe for Tod ab
+    .turnin 450 >> Gebt die Quest Rezept für den Tod ab
     .target Apothecary Renferrel
     .isQuestComplete 450
     .group
@@ -944,7 +944,7 @@ step
 step << Hunter
     .goto Silverpine Forest,45.01,39.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Nadia|r
-    >>Kauft |T135490:0|t[|cRXP_FRIENDLY_Feiner Langbogen|r] bei ihr, falls er verfügbar ist
+    >>Kauft einen |T135490:0|t[|cRXP_FRIENDLY_Feiner Langbogen|r] von ihr falls es verfügbar ist
     .collect 11304,1,438,1 --Fine Longbow (1)
     .collect 2515,1200,438,1 << Hunter --Sharp Arrow (1200)
     .target Nadia Vernon

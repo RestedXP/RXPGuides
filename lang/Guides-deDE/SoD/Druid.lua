@@ -2,7 +2,7 @@ if GetLocale() ~= "deDE" then return end
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Druid SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Brust
 #name Furor von Sturmgrimm - 4 (Laubschattental)
 #title Furor von Sturmgrimm
@@ -50,7 +50,7 @@ step << Druid
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Druid SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Brust
 #name Samenkorn des Lebens - 10 (Teldrassil)
 #title Samenkorn des Lebens
@@ -100,7 +100,7 @@ step << Druid
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Druid SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Beine
 #name Blühendes Leben - 8 (Teldrassil)
 #title Blühendes Leben
@@ -127,7 +127,7 @@ step << Druid
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Druid SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Beine
 #name Wildes Brüllen - 20 (Dunkelküste)
 #title Wildes Brüllen
@@ -163,7 +163,7 @@ step << Druid
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Druid SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Beine
 #name Wildes Brüllen - 20 (Westfall)
 #title Wildes Brüllen
@@ -203,7 +203,7 @@ step << Druid
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Druid SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Sonnenfeuer - 6 (Teldrassil)
 #title Sonnenfeuer
@@ -228,7 +228,7 @@ step << Druid
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Druid SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Beine
 #name Aufschlitzen - 10 (Loch Modan)
 #title Aufschlitzen
@@ -259,7 +259,7 @@ step << Druid
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Druid SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Brust
 #name Furor von Sturmgrimm - 4 (Mulgore)
 #title Furor von Sturmgrimm
@@ -304,7 +304,7 @@ step << Druid
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Druid SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Zerfleischen - 10 (Mulgore)
 #title Zerfleischen
@@ -344,7 +344,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Druid SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Sonnenfeuer - 5 (Mulgore)
 #title Sonnenfeuer
@@ -371,7 +371,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Druid SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Beine
 #name Blühendes Leben - 10 (Mulgore)
 #title Blühendes Leben
@@ -398,7 +398,7 @@ step << Druid
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Druid SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Brust
 #name Samenkorn des Lebens - 8 (Mulgore)
 #title Samenkorn des Lebens
@@ -450,7 +450,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Druid SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Aufschlitzen - 15 (The Barrens)
 #title Aufschlitzen
@@ -487,7 +487,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Druid SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Beine
 #name Wildes Brüllen - 15 (The Barrens)
 #title Wildes Brüllen
@@ -547,7 +547,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Druid SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Gürtel
 #name Berserker - 28 (Tausend Nadeln)
 #title Berserker
@@ -598,7 +598,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Druid SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Stiefel
 #name Traumzustand - 33 (Desolace)
 #title Traumzustand
@@ -633,7 +633,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Druid SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Gürtel
 #name Pflege - 35 (Azeroth)
 #title Pflege
@@ -822,7 +822,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Druid SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Armschienen
 #name Erblühen - 45 (Azeroth)
 
@@ -967,7 +967,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Druid SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Helm
 #name Orkanwinde - 40 (Feralas)
 
@@ -992,7 +992,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Druid SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Armschienen
 #name Das Feuer Elunes - 45 (Azshara)
 
@@ -1056,7 +1056,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Druid SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Helm
 #name Verbesserte Baumrinde - 44 (Tanaris)
 
@@ -1094,7 +1094,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Druid SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Verschleierung
 #name Verbesserter Prankenhieb - 50 (Krater von Un'Goro)
 #title Verbesserter Prankenhieb
@@ -1135,7 +1135,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Druid SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Verschleierung
 #name Baum des Lebens - 50 (Teufelswald)
 #title Baum des Lebens
@@ -1165,7 +1165,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Druid SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Verschleierung
 #name Sternenregen - 60 (Winterquell)
 #title Sternenregen

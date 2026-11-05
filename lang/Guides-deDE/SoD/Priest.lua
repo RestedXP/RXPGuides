@@ -2,7 +2,7 @@ if GetLocale() ~= "deDE" then return end
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Priest SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Sühne - 3 (Wald von Elwynn)
 #title Sühne
@@ -28,7 +28,7 @@ step << Priest
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Priest SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Sühne - 1 (Dun Morogh)
 #title Sühne
@@ -58,7 +58,7 @@ step << Priest
 RXPGuides.RegisterGuide([[
 #classic
 << NightElf Priest SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Sühne - 2 (Laubschattental)
 #title Sühne
@@ -105,7 +105,7 @@ step << NightElf Priest
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Troll Priest SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Sühne - 2 (Durotar)
 #title Sühne
@@ -138,7 +138,7 @@ step << Priest
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Undead Priest SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Sühne - 2 (Tirisfal)
 #title Sühne
@@ -170,7 +170,7 @@ step << Priest
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Priest SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Beine
 #name Homunculi - 8 (Durotar)
 #title Homunculi
@@ -220,7 +220,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Priest SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Beine
 #name Homunculi - 7 (Tirisfal)
 #title Homunkuli
@@ -272,7 +272,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Priest SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Beine
 #name Geteilter Schmerz - 13 (Durotar)
 #title Geteilter Schmerz
@@ -304,7 +304,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Priest SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Beine
 #name Geteilter Schmerz - 6 (Tirisfal)
 #title Geteilter Schmerz
@@ -343,7 +343,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Priest SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Brust
 #name Pest der Leere - 5 (Durotar)
 #title Pest der Leere
@@ -374,7 +374,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Priest SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Brust
 #name Pest der Leere - 6 (Tirisfal)
 #title Pest der Leere
@@ -410,7 +410,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Priest SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Beine
 #name Gebet der Besserung - 6 (Durotar)
 #title Gebet der Besserung
@@ -432,7 +432,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Priest SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Beine
 #name Gebet der Besserung - 10 (Mulgore)
 #title Gebet der Besserung
@@ -454,7 +454,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Priest SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Brust
 #name Okkultismus - 10 (Loch Modan)
 #title Okkultismus
@@ -485,7 +485,7 @@ step << Priest
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Priest SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Brust
 #name Okkultismus - 14 (Westfall)
 #title Okkultismus
@@ -511,7 +511,7 @@ step << Priest
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Priest SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Brust
 #name Okkultismus - 18 (Dunkelküste)
 #title Okkultismus
@@ -540,7 +540,7 @@ step << Priest
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Priest SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Beine
 #name Geteilter Schmerz - 10 (Dun Morogh)
 #title Geteilter Schmerz
@@ -561,7 +561,7 @@ step << Priest
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Priest SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Beine
 #name Geteilter Schmerz - 6 (Wald von Elwynn)
 #title Geteilter Schmerz
@@ -582,7 +582,7 @@ step << Priest
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Priest SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Beine
 #name Homunculi - 8 (Dun Morogh)
 #title Homunkuli
@@ -604,7 +604,7 @@ step << Priest
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Priest SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Beine
 #name Homunculi - 8 (Wald von Elwynn)
 #title Homunkuli
@@ -625,7 +625,7 @@ step << Priest
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Priest SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Beine
 #name Homunculi - 8 (Teldrassil)
 #title Homunkuli
@@ -653,7 +653,7 @@ step << Priest
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Priest SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Beine
 #name Gebet der Besserung - 6 (Wald von Elwynn)
 #title Gebet der Besserung
@@ -674,7 +674,7 @@ step << Priest
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Priest SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Beine
 #name Gebet der Besserung - 8 (Teldrassil)
 #title Gebet der Besserung
@@ -695,7 +695,7 @@ step << Priest
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Priest SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Beine
 #name Gebet der Besserung - 6 (Dun Morogh)
 #title Gebet der Besserung
@@ -716,7 +716,7 @@ step << Priest
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Priest SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Schattenwort: Tod - 10 (Dunkelküste)
 #title Schattenwort: Tod
@@ -738,7 +738,7 @@ step << Priest
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Priest SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Schattenwort - Tod - 12 (Loch Modan)
 #title Schattenwort: Tod
@@ -767,7 +767,7 @@ step << Priest
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Priest SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Schattenwort: Tod - 20 (The Barrens)
 #title Schattenwort: Tod
@@ -809,7 +809,7 @@ step << Undead
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Priest SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Schattenwort: Tod - 24 (Silberwald)
 #title Schattenwort: Tod
@@ -849,7 +849,7 @@ step << Undead
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Priest SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Brust
 #name Okkultismus - 10 (Silberwald)
 #title Okkultismus
@@ -877,7 +877,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Priest SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Brust
 #name Verdrehter Glaube - 10 (Das Brachland)
 #title Okkultismus
@@ -912,7 +912,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Priest SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Brust
 #name Pest der Leere - 6 (Wald von Elwynn)
 #title Pest der Leere
@@ -938,7 +938,7 @@ step << Priest
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Priest SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Brust
 #name Pest der Leere - 6 (Dun Morogh)
 #title Pest der Leere
@@ -965,7 +965,7 @@ step << Priest
 RXPGuides.RegisterGuide([[
 #classic
 << Priest SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Gürtel
 #name Machterfüllte Erneuerung - 27 (Tausend Nadeln)
 #title Machterfüllte Erneuerung
@@ -998,7 +998,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Priest SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Gürtel
 #name Machterfüllte Erneuerung - 33 (Alteracgebirge)
 #title Machterfüllte Erneuerung
@@ -1028,7 +1028,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Priest SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Gürtel
 #name Erneuerte Hoffnung - 31 (Desolace)
 #title Erneuerte Hoffnung
@@ -1089,7 +1089,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Priest SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Stiefel
 #name Dispersion 40 (Schlingendorntal)
 #title Dispersion
@@ -1146,7 +1146,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Priest SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Stiefel
 #name Schmerzunterdrückung - 32 (Azeroth)
 #title Schmerzunterdrückung
@@ -1223,7 +1223,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Priest SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Helm
 #name Auge der Leere - 50 (Azeroth)
 
@@ -1307,7 +1307,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Priest SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Armschienen
 #title Woge des Lichts
 #name Woge des Lichts - 40 (Tanaris)
@@ -1340,7 +1340,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Priest SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Armschienen
 #title Woge des Lichts
 #name Woge des Lichts - 40 (Sümpfe des Elends)
@@ -1374,7 +1374,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Priest SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Armschienen
 #title Woge des Lichts
 #name Woge des Lichts - 40 (Das Hinterland)
@@ -1407,7 +1407,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Priest SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Armschienen
 #title Woge des Lichts
 #name Woge des Lichts - 40 (Schlingendorntal) 2
@@ -1439,7 +1439,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Priest SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Armschienen
 #title Woge des Lichts
 #name Woge des Lichts - 40 (Schlingendorntal) 1
@@ -1472,7 +1472,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Priest SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Verschleierung
 #title Verbindende Heilung
 #name Verbindende Heilung - 58 (Western und Die Östlichen Pestländer)
@@ -1594,7 +1594,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Priest SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Verschleierung
 #title Vampirberührung
 #name Vampirberührung - 60 (Dämonensturz Dungeon)
@@ -1653,7 +1653,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Priest SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Extras
 #title Priester Racials
 #name Priester Racials - 60 (Azeroth)
@@ -1845,7 +1845,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Priest SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Verschleierung
 #title Seelenwehr
 #name Seelenwehr - 60 (Stratholme)

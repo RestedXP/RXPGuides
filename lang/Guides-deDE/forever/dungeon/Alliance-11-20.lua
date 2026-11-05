@@ -6,15 +6,15 @@ RXPGuides.RegisterGuide([[
 #version 1
 << Alliance NightElf
 #name 11-16 Dunkelküste/Loch Modan
-#group RestedXP Forever Dungeon Dungeonführer (A)
-#subgroup Dungeon Dungeonführer 1-20
+#group RestedXP Forever Dungeonführer (A)
+#subgroup Dungeonführer 1-20
 --#groupid RXP-SRGCE-A1
 #next 17-18 Die Halle der Thanen
 
 step
-    #include RestedXP Forever Dungeonführer (A)\14-16 Dunkelküste@WashedA-DarkshoreEndNE
+    #include RestedXP Forever Guide (A)\14-16 Dunkelküste@WashedA-DarkshoreEndNE
 step
-    #include RestedXP Forever Dungeonführer (A)\15-16 Loch Modan@SWBoat-IFExit
+    #include RestedXP Forever Guide (A)\15-16 Loch Modan@SWBoat-IFExit
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gastwirt Feuerbräu|r
     .goto 1455/0,-856.69,-4841.490
@@ -103,7 +103,7 @@ step
     .turnin 96390 >> Gebt die Quest Erstickt sie im Keim ab
     .target Earthseer Farsen
 step
-    #include RestedXP Forever Dungeonführer (A)\15-16 Loch Modan@LochEnter-LochEnd
+    #include RestedXP Forever Guide (A)\15-16 Loch Modan@LochEnter-LochEnd
 step << NightElf Druid
     #completewith next
 	.cast 18960 >> Caste Teleportieren: Moonglade
@@ -662,8 +662,8 @@ RXPGuides.RegisterGuide([[
 << Alliance !NightElf
 #name 13-15 Westfall 
 #displayname 14-15 Westfall << Gnome/Dwarf !Hunter
-#group RestedXP Forever Dungeon Dungeonführer (A)
-#subgroup Dungeon Dungeonführer 1-20
+#group RestedXP Forever Dungeonführer (A)
+#subgroup Dungeonführer 1-20
 --#groupid RXP-SRGCE-A1
 #next 15-17 Dunkelküste
 
@@ -1426,8 +1426,8 @@ RXPGuides.RegisterGuide([[
 #version 1
 << Alliance !NightElf
 #name 15-17 Dunkelküste
-#group RestedXP Forever Dungeon Dungeonführer (A)
-#subgroup Dungeon Dungeonführer 1-20
+#group RestedXP Forever Dungeonführer (A)
+#subgroup Dungeonführer 1-20
 --#groupid RXP-SRGCE-A1
 #next 17-18 Die Halle der Thanen
 
@@ -2435,8 +2435,8 @@ RXPGuides.RegisterGuide([[
 #forever
 #version 1
 << Alliance
-#group RestedXP Forever Dungeon Dungeonführer (A)
-#subgroup Dungeon Dungeonführer 1-20
+#group RestedXP Forever Dungeonführer (A)
+#subgroup Dungeonführer 1-20
 --#groupid RXP-SRGCE-A1
 #name 17-18 Die Halle der Thanen
 #next 18-19 Ruinen von Lordaeron
@@ -2684,8 +2684,8 @@ RXPGuides.RegisterGuide([[
 #forever
 #version 1
 << Alliance
-#group RestedXP Forever Dungeon Dungeonführer (A)
-#subgroup Dungeon Dungeonführer 1-20
+#group RestedXP Forever Dungeonführer (A)
+#subgroup Dungeonführer 1-20
 --#groupid RXP-SRGCE-A1
 #name 18-19 Ruinen von Lordaeron
 #next 19-20 Todesminen
@@ -3063,8 +3063,8 @@ RXPGuides.RegisterGuide([[
 #forever
 #version 1
 << Alliance
-#group RestedXP Forever Dungeon Dungeonführer (A)
-#subgroup Dungeon Dungeonführer 1-20
+#group RestedXP Forever Dungeonführer (A)
+#subgroup Dungeonführer 1-20
 --#groupid RXP-SRGCE-A1
 #name 19-20 Todesminen
 #displayname 18-20 Todesminen/Rotkammgebirge << NightElf
@@ -3891,11 +3891,11 @@ RXPGuides.RegisterGuide([[
 #forever
 #version 1
 << Alliance
-#group RestedXP Forever Dungeon Dungeonführer (A)
-#subgroup Dungeon Dungeonführer 1-20
+#group RestedXP Forever Dungeonführer (A)
+#subgroup Dungeonführer 1-20
 --#groupid RXP-SRGCE-A1
 #name 20-21 Dunkelküste/Eschental
-#next RestedXP Forever Dungeon Dungeonführer (A)\21-23 Eschental/Steinkrallengebirge
+#next RestedXP Forever Dungeonführer (A)\21-23 Eschental/Steinkrallengebirge
 
 step << Druid
     #completewith catspirit1

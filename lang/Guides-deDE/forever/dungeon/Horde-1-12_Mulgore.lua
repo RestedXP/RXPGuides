@@ -7,15 +7,15 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 1-6 Mulgore
 #version 11
-#group RestedXP Forever Dungeon Dungeonführer (H)
-#subgroup Dungeon Dungeonführer 1-22
+#group RestedXP Forever Dungeonführer (H)
+#subgroup Dungeonführer 1-22
 --#groupid RXP-SRGCE-H1
 #defaultfor Tauren
 #next 6-12 Mulgore;6-13 Mulgore
 
 step
 .enabledungeon RFC
-#include RestedXP Forever Dungeonführer (H)\1-6 Mulgore
+#include RestedXP Forever Guide (H)\1-6 Mulgore
 ]])
 
 
@@ -24,8 +24,8 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 6-12 Mulgore
 #version 11
-#group RestedXP Forever Dungeon Dungeonführer (H)
-#subgroup Dungeon Dungeonführer 1-22
+#group RestedXP Forever Dungeonführer (H)
+#subgroup Dungeonführer 1-22
 --#groupid RXP-SRGCE-H1
 #defaultfor Tauren
 #next 12-16 Das Brachland
@@ -33,5 +33,5 @@ RXPGuides.RegisterGuide([[
 
 step
 .enabledungeon RFC
-#include RestedXP Forever Dungeonführer (H)\6-12 Mulgore
+#include RestedXP Forever Guide (H)\6-12 Mulgore
 ]])

@@ -1555,7 +1555,7 @@ step
 step
     #label Barak
     .goto The Barrens,42.82,23.52
-    >>Tötet |cRXP_ENEMY_Barak Kodobann|r. Plündert ihn für seinen |cRXP_LOOT_kopf|r
+    >>Tötet |cRXP_ENEMY_Barak Kodobann|r. Plündert sie für seinen |cRXP_LOOT_kopf|r
     >>|cRXP_WARN_Seid vorsichtig, da die Nahkampfangriffe von |cRXP_ENEMY_Barak Kodobann|r großen Schaden anrichten und er durch einen |cRXP_ENEMY_Zänker der Kolkar|r beschützt wird. Sie können euch fesseln und aus der Ferne auf euch schießen|r
     .complete 850,1 --Kodobane's Head (1)
     .mob Barak Kodobane
@@ -3112,7 +3112,7 @@ step
     >>Tötet |cRXP_ENEMY_Kriegsherr Krom'zar|r, sobald er erscheint. Plündert die |cRXP_PICK_Flagge|r, welche er auf dem Boden fallen lässt
     >>|cRXP_WARN_Seid vorsichtig! Er ist ein starker Elite und wird von mindestens zwei|r |cRXP_ENEMY_Kolkar|r |cRXP_WARN_mobs|r beschützt
     >>|cRXP_WARN_Es kann bis zu 3 Minuten dauern, bis er erscheint|r
-    .link https://www.youtube.com/watch?v=xrm0PWe5wf4 >>|cRXP_WARN_Klickt hier für ein Anleitungsvideo, wie ihr kiten könnt|r |cRXP_ENEMY_Kriegsherr Krom'zar|r
+    .link https://www.youtube.com/watch?v=xrm0PWe5wf4 >>|cRXP_WARN_Klickt hier für ein Anleitungsvideo zum Kiten|r |cRXP_ENEMY_Kriegsherr Krom'zar|r
     .complete 4021,1 --Piece of Krom'zar's Banner (1)
     .unitscan Warlord Krom'zar
     .isOnQuest 4021
@@ -3219,7 +3219,7 @@ RXPGuides.RegisterGuide([[
 #version 11
 #group RestedXP Horde 1-22
 #groupid RXP-SRGCE-H1
-#next RestedXP Horde 22-30\22-24 Vorgebirge des Hügellands
+#next RestedXP Horde 22-30\22-24 Hügellandhof
 
 
 step << Druid
@@ -3910,7 +3910,7 @@ step
     .use 210824 << Warlock
     .use 210653 << Rogue
     .use 210823 << Shaman
-    .train 415995 >>|cRXP_WARN_Kauft und benutzt die|r |T135791:0|t[|cRXP_FRIENDLY_Harmonious Offenbarung|r] |cRXP_WARN_um|r |T237549:0|t[Glücksfall] << Priest
+    .train 415995 >>|cRXP_WARN_Kauft und benutzt die|r |T135791:0|t[|cRXP_FRIENDLY_Harmonische Offenbarung|r] |cRXP_WARN_um |r |T237549:0|t[Glücksfall] zu trainieren << Priest
     .train 410010 >>|cRXP_WARN_Kauft und benutzt die|r |T134419:0|t[|cRXP_FRIENDLY_Rune der Opferung|r] |cRXP_WARN_um |r |T134596:0|t[Gravieren Hosen - Heilige Opferung] zu trainieren << Paladin
     .train 401761 >>|cRXP_WARN_Kauft und benutzt die|r |T134939:0|t[|cRXP_FRIENDLY_Zaubernotizen: Zeit zurückdrehen|r] |cRXP_WARN_um |r |T237538:0|t[Zeit zurückdrehen] zu trainieren << Mage
     .train 410122 >>|cRXP_WARN_Kauft und benutzt die|r |T134419:0|t[|cRXP_FRIENDLY_Rune des einsamen Wolfs|r] |cRXP_WARN_um |r |T132266:0|t[Einsamer Wolf] zu trainieren << Hunter
@@ -4626,14 +4626,14 @@ step
 step << !Tauren !Shaman !Warrior/Undead
     .goto The Barrens,44.55,59.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Quetschzahn|r
-    .aura 16618 >>|cRXP_WARN_Falls ihr 10|r |T134128:0|t[|cRXP_LOOT_Blutsplitter|r] |cRXP_WARN_übrig habt, verwendet sie, um bei|r |cRXP_WARN_Quetschzahn|r |cRXP_FRIENDLY_|T136022:0|t[Geist des Windes] zu erhalten|r
+    .aura 16618 >>|cRXP_WARN_Falls ihr 10 habt|r |T134128:0|t[|cRXP_LOOT_Blutsplitter|r] |cRXP_WARN_übrig, benutzt sie, um|r |T136022:0|t[Geist des Windes] |cRXP_WARN_von|r |cRXP_FRIENDLY_Quetschzahn|r zu erhalten
     >>|cRXP_WARN_Überspringen diesen Schritt, falls ihr die Donnerfels-Flugroute habt|r
     .itemcount 5075,10
     .target Mangletooth
 step << !Tauren !Shaman !Warrior/Undead
     #completewith next
     .goto Mulgore,68.68,60.34,120,0
-    .zone Mulgore >>Reist nach Mulgore
+    .zone Mulgore >>Reisen nach Mulgore
 step << !Tauren !Shaman !Warrior/Undead
     #completewith DeathDUPpickup
     .goto Thunder Bluff,31.78,65.92
@@ -4660,7 +4660,7 @@ step << Troll Hunter/Orc Hunter/Undead Warrior/Warlock/Priest
 step << Rogue
     .goto Thunder Bluff,40.93,62.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Ansekhwa|r
-    .train 198 >>Erlernt Streitkolben
+    .train 198 >>Erlernt 2h Streitkolben
     .target Ansekhwa
 step << Rogue
     .goto Thunder Bluff,38.95,64.62
@@ -5552,7 +5552,7 @@ step
     >>Tötet |cRXP_ENEMY_Kriegsherr Krom'zar|r, sobald er erscheint. Plündert die |cRXP_PICK_Flagge|r, welche er auf dem Boden fallen lässt
     >>|cRXP_WARN_Seid vorsichtig! Er ist ein starker Elite und wird von mindestens zwei|r |cRXP_ENEMY_Kolkar|r |cRXP_WARN_mobs|r beschützt
     >>|cRXP_WARN_Es kann bis zu 3 Minuten dauern, bis er erscheint|r
-    .link https://www.youtube.com/watch?v=xrm0PWe5wf4 >>|cRXP_WARN_Klickt hier für ein Anleitungsvideo, wie ihr kiten könnt|r |cRXP_ENEMY_Kriegsherr Krom'zar|r
+    .link https://www.youtube.com/watch?v=xrm0PWe5wf4 >>|cRXP_WARN_Klickt hier für ein Anleitungsvideo zum Kiten|r |cRXP_ENEMY_Kriegsherr Krom'zar|r
     .complete 4021,1 --Piece of Krom'zar's Banner (1)
     .unitscan Warlord Krom'zar
     .isQuestTurnedIn 852
@@ -7038,7 +7038,7 @@ step << Warlock/Mage
     .itemcount 221499,1 << Warlock --Rune of the Felguard
     .itemcount 223147,1 << Mage --Spell Notes: Balefire Bolt
     .train 431756 >>|cRXP_WARN_Benutzt die|r |T134419:0|t[|cRXP_FRIENDLY_Rune der Teufelswache|r] |cRXP_WARN_um |r |T136216:0|t[Teufelswache beschwören] zu erlernen << Warlock
-    .train 429311 >>|cRXP_WARN_Benutzt|r |T134939:0|t[|cRXP_FRIENDLY_Zaubernotizen: Qualfeuerblitz|r] |cRXP_WARN_um zu erlernen|r |T135809:0|t[Qualfeuerblitz] << Mage
+    .train 429311 >>|cRXP_WARN_Benutzt die|r |T134939:0|t[|cRXP_FRIENDLY_Zaubernotizen: Qualfeuerblitz|r] |cRXP_WARN_zum Trainieren|r |T135809:0|t[Qualfeuerblitz] << Mage
     .use 221499 << Warlock
     .use 223147 << Mage
 step
@@ -8582,7 +8582,7 @@ step
 step
     #label Barak
     .goto The Barrens,42.82,23.52
-    >>Tötet |cRXP_ENEMY_Barak Kodobann|r. Plündert ihn für seinen |cRXP_LOOT_kopf|r
+    >>Tötet |cRXP_ENEMY_Barak Kodobann|r. Plündert sie für seinen |cRXP_LOOT_kopf|r
     >>|cRXP_WARN_Seid vorsichtig, da die Nahkampfangriffe von |cRXP_ENEMY_Barak Kodobann|r großen Schaden anrichten und er durch einen |cRXP_ENEMY_Zänker der Kolkar|r beschützt wird. Sie können euch fesseln und aus der Ferne auf euch schießen|r
     .complete 850,1 --Kodobane's Head (1)
     .mob Barak Kodobane
@@ -9179,7 +9179,7 @@ step << Priest
     .goto Orgrimmar,35.59,87.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit|r |cRXP_FRIENDLY_Ur'kyo|r
     .train 527 >> Erlernt |T135894:0|t[Magiebannung]
-    >>|cRXP_WARN_Ihr werdet|r |T135894:0|t[Magiebannung]  benötigen |cRXP_WARN_um später eine Rune zu erhalten|r
+    >>|cRXP_WARN_Ihr werdet|r |T135894:0|t[Magiebannung] benötigen |cRXP_WARN_um später eine Rune zu erhalten|r
     .target Ur'kyo
     .xp <18,1
 step << Priest
@@ -9719,7 +9719,7 @@ step
     .use 210824 << Warlock
     .use 210653 << Rogue
     .use 210823 << Shaman
-    .train 415995 >>|cRXP_WARN_Kauft und benutzt die|r |T135791:0|t[|cRXP_FRIENDLY_Harmonious Offenbarung|r] |cRXP_WARN_um|r |T237549:0|t[Glücksfall] << Priest
+    .train 415995 >>|cRXP_WARN_Kauft und benutzt die|r |T135791:0|t[|cRXP_FRIENDLY_Harmonische Offenbarung|r] |cRXP_WARN_um |r |T237549:0|t[Glücksfall] zu trainieren << Priest
     .train 410010 >>|cRXP_WARN_Kauft und benutzt die|r |T134419:0|t[|cRXP_FRIENDLY_Rune der Opferung|r] |cRXP_WARN_um |r |T134596:0|t[Gravieren Hosen - Heilige Opferung] zu trainieren << Paladin
     .train 401761 >>|cRXP_WARN_Kauft und benutzt die|r |T134939:0|t[|cRXP_FRIENDLY_Zaubernotizen: Zeit zurückdrehen|r] |cRXP_WARN_um |r |T237538:0|t[Zeit zurückdrehen] zu trainieren << Mage
     .train 410122 >>|cRXP_WARN_Kauft und benutzt die|r |T134419:0|t[|cRXP_FRIENDLY_Rune des einsamen Wolfs|r] |cRXP_WARN_um |r |T132266:0|t[Einsamer Wolf] zu trainieren << Hunter
@@ -10290,7 +10290,7 @@ step
     >>Tötet |cRXP_ENEMY_Kriegsherr Krom'zar|r, sobald er erscheint. Plündert die |cRXP_PICK_Flagge|r, welche er auf dem Boden fallen lässt
     >>|cRXP_WARN_Seid vorsichtig! Er ist ein starker Elite und wird von mindestens zwei|r |cRXP_ENEMY_Kolkar|r |cRXP_WARN_mobs|r beschützt
     >>|cRXP_WARN_Es kann bis zu 3 Minuten dauern, bis er erscheint|r
-    .link https://www.youtube.com/watch?v=xrm0PWe5wf4 >>|cRXP_WARN_Klickt hier für ein Anleitungsvideo, wie ihr kiten könnt|r |cRXP_ENEMY_Kriegsherr Krom'zar|r
+    .link https://www.youtube.com/watch?v=xrm0PWe5wf4 >>|cRXP_WARN_Klickt hier für ein Anleitungsvideo zum Kiten|r |cRXP_ENEMY_Kriegsherr Krom'zar|r
     .complete 4021,1 --Piece of Krom'zar's Banner (1)
     .unitscan Warlord Krom'zar
     .isOnQuest 4021
@@ -11035,7 +11035,7 @@ step << Warlock/Mage
     .itemcount 221499,1 << Warlock --Rune of the Felguard
     .itemcount 223147,1 << Mage --Spell Notes: Balefire Bolt
     .train 431756 >>|cRXP_WARN_Benutzt die|r |T134419:0|t[|cRXP_FRIENDLY_Rune der Teufelswache|r] |cRXP_WARN_um |r |T136216:0|t[Teufelswache beschwören] zu erlernen << Warlock
-    .train 429311 >>|cRXP_WARN_Benutzt|r |T134939:0|t[|cRXP_FRIENDLY_Zaubernotizen: Qualfeuerblitz|r] |cRXP_WARN_um zu erlernen|r |T135809:0|t[Qualfeuerblitz] << Mage
+    .train 429311 >>|cRXP_WARN_Benutzt die|r |T134939:0|t[|cRXP_FRIENDLY_Zaubernotizen: Qualfeuerblitz|r] |cRXP_WARN_zum Trainieren|r |T135809:0|t[Qualfeuerblitz] << Mage
     .use 221499 << Warlock
     .use 223147 << Mage
 step
@@ -11258,7 +11258,7 @@ step
     .use 210824 << Warlock
     .use 210653 << Rogue
     .use 210823 << Shaman
-    .train 415995 >>|cRXP_WARN_Kauft und benutzt die|r |T135791:0|t[|cRXP_FRIENDLY_Harmonious Offenbarung|r] |cRXP_WARN_um|r |T237549:0|t[Glücksfall] << Priest
+    .train 415995 >>|cRXP_WARN_Kauft und benutzt die|r |T135791:0|t[|cRXP_FRIENDLY_Harmonische Offenbarung|r] |cRXP_WARN_um |r |T237549:0|t[Glücksfall] zu trainieren << Priest
     .train 410010 >>|cRXP_WARN_Kauft und benutzt die|r |T134419:0|t[|cRXP_FRIENDLY_Rune der Opferung|r] |cRXP_WARN_um |r |T134596:0|t[Gravieren Hosen - Heilige Opferung] zu trainieren << Paladin
     .train 401761 >>|cRXP_WARN_Kauft und benutzt die|r |T134939:0|t[|cRXP_FRIENDLY_Zaubernotizen: Zeit zurückdrehen|r] |cRXP_WARN_um |r |T237538:0|t[Zeit zurückdrehen] zu trainieren << Mage
     .train 410122 >>|cRXP_WARN_Kauft und benutzt die|r |T134419:0|t[|cRXP_FRIENDLY_Rune des einsamen Wolfs|r] |cRXP_WARN_um |r |T132266:0|t[Einsamer Wolf] zu trainieren << Hunter
@@ -12044,7 +12044,7 @@ step
 step << !Tauren
     .goto The Barrens,44.55,59.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Quetschzahn|r
-    .aura 16618 >>|cRXP_WARN_Falls ihr 10|r |T134128:0|t[|cRXP_LOOT_Blutsplitter|r] |cRXP_WARN_übrig habt, verwendet sie, um bei|r |cRXP_WARN_Quetschzahn|r |cRXP_FRIENDLY_|T136022:0|t[Geist des Windes] zu erhalten|r
+    .aura 16618 >>|cRXP_WARN_Falls ihr 10 habt|r |T134128:0|t[|cRXP_LOOT_Blutsplitter|r] |cRXP_WARN_übrig, benutzt sie, um|r |T136022:0|t[Geist des Windes] |cRXP_WARN_von|r |cRXP_FRIENDLY_Quetschzahn|r zu erhalten
     >>|cRXP_WARN_Überspringen diesen Schritt, falls ihr die Donnerfels-Flugroute habt|r
     .itemcount 5075,10
     .target Mangletooth
@@ -12289,7 +12289,7 @@ step << Rogue
 step << Rogue
     #season 2
     .goto Thunder Bluff,53.00,56.63
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Sprecht mit|r |cRXP_FRIENDLY_Kard|r|cRXP_BUY_. Kauft eine oder zwei|r |T135342:0|t[Kris] |cRXP_BUY_von ihm|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Sprecht mit|r |cRXP_FRIENDLY_Kard|r|cRXP_BUY_. Kauft ein oder zwei|r |T135342:0|t[Kris] |cRXP_BUY_von ihm|r
     .collect 2209,1,493,1 --Collect Kris (1)
     .money <0.7115
     .target Kard Ragetotem
@@ -12929,7 +12929,7 @@ step
     >>Tötet |cRXP_ENEMY_Kriegsherr Krom'zar|r, sobald er erscheint. Plündert die |cRXP_PICK_Flagge|r, welche er auf dem Boden fallen lässt
     >>|cRXP_WARN_Seid vorsichtig! Er ist ein starker Elite und wird von mindestens zwei|r |cRXP_ENEMY_Kolkar|r |cRXP_WARN_mobs|r beschützt
     >>|cRXP_WARN_Es kann bis zu 3 Minuten dauern, bis er erscheint|r
-    .link https://www.youtube.com/watch?v=xrm0PWe5wf4 >>|cRXP_WARN_Klickt hier für ein Anleitungsvideo, wie ihr kiten könnt|r |cRXP_ENEMY_Kriegsherr Krom'zar|r
+    .link https://www.youtube.com/watch?v=xrm0PWe5wf4 >>|cRXP_WARN_Klickt hier für ein Anleitungsvideo zum Kiten|r |cRXP_ENEMY_Kriegsherr Krom'zar|r
     .complete 4021,1 --Piece of Krom'zar's Banner (1)
     .unitscan Warlord Krom'zar
     .isQuestTurnedIn 852
@@ -13072,7 +13072,7 @@ step
     >>Tötet |cRXP_ENEMY_Kriegsherr Krom'zar|r, sobald er erscheint. Plündert die |cRXP_PICK_Flagge|r, welche er auf dem Boden fallen lässt
     >>|cRXP_WARN_Seid vorsichtig! Er ist ein starker Elite und wird von mindestens zwei|r |cRXP_ENEMY_Kolkar|r |cRXP_WARN_mobs|r beschützt
     >>|cRXP_WARN_Es kann bis zu 3 Minuten dauern, bis er erscheint|r
-    .link https://www.youtube.com/watch?v=xrm0PWe5wf4 >>|cRXP_WARN_Klickt hier für ein Anleitungsvideo, wie ihr kiten könnt|r |cRXP_ENEMY_Kriegsherr Krom'zar|r
+    .link https://www.youtube.com/watch?v=xrm0PWe5wf4 >>|cRXP_WARN_Klickt hier für ein Anleitungsvideo zum Kiten|r |cRXP_ENEMY_Kriegsherr Krom'zar|r
     .complete 4021,1 --Piece of Krom'zar's Banner (1)
     .unitscan Warlord Krom'zar
     .isQuestTurnedIn 852

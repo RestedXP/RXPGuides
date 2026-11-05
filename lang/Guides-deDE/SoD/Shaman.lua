@@ -2,7 +2,7 @@ if GetLocale() ~= "deDE" then return end
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Shaman SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Geschmolzener Schlag - 8 (Mulgore)
 #title Geschmolzener Schlag
@@ -176,7 +176,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Shaman SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Geschmolzener Schlag - 10 (Durotar)
 #title Geschmolzener Schlag
@@ -371,7 +371,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Shaman SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Lavapeitsche - 10 (Mulgore)
 #title Lavapeitsche
@@ -604,7 +604,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Shaman SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Wasserschild - 20 (Das Brachland)
 #title Wasserschild
@@ -817,7 +817,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Shaman SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Wasserschild - 20 (Silberwald)
 #title Wasserschild
@@ -1023,7 +1023,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Shaman SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Lavaeruption - 25 (Vorgebirge des Hügellands)
 #title Lavaeruption
@@ -1083,7 +1083,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Shaman SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Brust
 #name Überladung - 3 (Durotar)
 #title Überladung
@@ -1246,7 +1246,7 @@ step << !Tauren skip
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Shaman SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Brust
 #name Überladung - 3 (Mulgore)
 #title Überladung
@@ -1322,7 +1322,7 @@ step << Tauren skip
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Shaman SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Brust
 #name Schildmeisterschaft - 6 (Durotar)
 #title Schildmeisterschaft
@@ -1495,7 +1495,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Shaman SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Brust
 #name Schildmeisterschaft - 6 (Mulgore)
 #title Schildmeisterschaft
@@ -1705,7 +1705,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Shaman SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Beine
 #name Führung der Ahnen - 6 (Durotar)
 #title Führung der Ahnen
@@ -1758,7 +1758,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Shaman SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Beine
 #name Führung der Ahnen - 10 (Mulgore)
 #title Führung der Ahnen
@@ -1833,7 +1833,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Shaman SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Beine
 #name Weg der Erde - 12 (Das Brachland)
 #title Weg der Erde
@@ -1917,7 +1917,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Shaman SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Beine
 #name Weg der Erde - 14 (Silberwald)
 #title Weg der Erde
@@ -1981,7 +1981,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Shaman SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Beine
 #name Großer Geisterwolf - 25 (Steinkrallengebirge)
 #title Großer Geisterwolf
@@ -2021,7 +2021,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Shaman SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Beine
 #name Erdschild - 25 (Azeroth)
 #title Erdschild
@@ -2338,7 +2338,7 @@ step << skip
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Shaman SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Gürtel
 #name Feuernova - 35 (Azeroth)
 #title Feuernova
@@ -2421,7 +2421,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Shaman SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Gürtel
 #name Waffe des Mahlstroms - 40 (Azeroth)
 #title Waffe des Mahlstroms
@@ -2606,7 +2606,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Shaman SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Gürtel
 #name Kraftwoge - 30 (Arathihochland)
 #title Kraftwoge
@@ -2649,7 +2649,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Shaman SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Stiefel
 #title Täuschtotem
 #name Täuschtotem - 27 (Tausend Nadeln)
@@ -2729,7 +2729,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Shaman SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Stiefel
 #title Geist des Alphas
 #name Geist des Alphas - 27 (Tausend Nadeln)
@@ -2757,7 +2757,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Shaman SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Armschienen
 #title Rollender Donner
 #name Rollender Donner - 41 (Tanaris)
@@ -2788,7 +2788,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Shaman SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Armschienen
 #title Elektroschock
 #name Elektroschock - 44 (Feralas)
@@ -2827,7 +2827,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Shaman SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Helm
 #title Flutwellen
 #name Flutwellen - 42 (Feralas)
@@ -2859,7 +2859,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Shaman SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Armschienen
 #title Flutwellen
 #name Flutwellen - 45 (Azeroth)
@@ -3098,7 +3098,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Shaman SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Verschleierung
 #title Sturm, Erde und Feuer
 #name Sturm, Erde, und Feuerschaden - 52 (Teufelswald)
@@ -3133,7 +3133,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Shaman SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Verschleierung
 #title Kohärenz
 #name Kohärenz - 55 (Brennende Steppe)
@@ -3177,7 +3177,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Shaman SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Verschleierung
 #title Wildgeist
 #name Wildgeist - 60 (Winterquell)

@@ -2,7 +2,7 @@ if GetLocale() ~= "deDE" then return end
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Warrior SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Siegesrausch - 1 (Wald von Elwynn)
 #title Siegesrausch
@@ -34,7 +34,7 @@ step << Warrior
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Warrior SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Siegesrausch - 3 (Dun Morogh)
 #title Siegesrausch
@@ -62,7 +62,7 @@ step << Warrior
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Warrior SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Siegesrausch - 3 (Laubschattental)
 #title Siegesrausch
@@ -85,7 +85,7 @@ step << Warrior
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Warrior SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Brust
 #name Blutraserei - 10 (Wald von Elwynn)
 #title Blutraserei
@@ -121,7 +121,7 @@ step << Warrior
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Warrior SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Brust
 #name Blutraserei - 10 (Dun Morogh)
 #title Blutraserei
@@ -146,7 +146,7 @@ step << Warrior
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Warrior SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Brust
 #name Blutraserei - 10 (Teldrassil)
 #title Blutraserei
@@ -176,7 +176,7 @@ step << Warrior
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Warrior SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Beine
 #name Wütender Donner - 6 (Wald von Elwynn)
 #title Wütender Donner
@@ -203,7 +203,7 @@ step << Warrior
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Warrior SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Beine
 #name Wütender Donner - 9 (Dun Morogh)
 #title Wütender Donner
@@ -248,7 +248,7 @@ step << Warrior
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Warrior SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Beine
 #name Rasender Angriff - 10 (Sturmwind)
 #title Rasender Angriff
@@ -273,7 +273,7 @@ step << Warrior
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Warrior SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Beine
 #name Rasender Angriff - 10 (Eisenschmiede)
 #title Rasender Angriff
@@ -295,7 +295,7 @@ step << Warrior
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Warrior SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Beine
 #name Rasender Angriff - 10 (Teldrassil)
 #title Rasender Angriff
@@ -317,7 +317,7 @@ step << Warrior
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Warrior SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Helm
 #name Endlose Wut - 20 (Westfall)
 #title Endlose Wut
@@ -345,7 +345,7 @@ step << Warrior
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Warrior SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Endlose Wut - 16 (Dunkelküste)
 #title Endlose Wut
@@ -373,7 +373,7 @@ step << Warrior
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Warrior SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Verwüsten - 8 (Wald von Elwynn)
 #title Verwüsten
@@ -461,7 +461,7 @@ step << Warrior
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Warrior SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Verwüsten - 6 (Teldrassil)
 #title Verwüsten
@@ -501,7 +501,7 @@ step << Warrior
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Warrior SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Verwüsten - 6 (Dun Morogh)
 #title Verwüsten
@@ -542,7 +542,7 @@ step << Warrior
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warrior SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Siegesrausch - 2 (Durotar)
 #title Siegesrausch
@@ -582,7 +582,7 @@ step << Orc/Troll
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warrior SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Siegesrausch - 2 (Mulgore)
 #title Siegesrausch
@@ -620,7 +620,7 @@ step << Tauren
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warrior SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Siegesrausch - 2 (Tirisfal)
 #title Siegesrausch
@@ -656,7 +656,7 @@ step << Undead
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warrior SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Beine
 #name Wütender Donner - 2 (Durotar)
 #title Wütender Donner
@@ -681,7 +681,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warrior SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Beine
 #name Wütender Donner - 10 (Tirisfal)
 #title Wütender Donner
@@ -708,7 +708,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warrior SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Beine
 #name Rasender Angriff - 10 (Orgrimmar)
 #title Rasender Angriff
@@ -747,7 +747,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warrior SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Beine
 #name Rasender Angriff - 10 (Donnerfels)
 #title Rasender Angriff
@@ -786,7 +786,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warrior SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Beine
 #name Rasender Angriff - 10 (Tirisfal)
 #title Rasender Angriff
@@ -825,7 +825,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warrior SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Verwüsten - 8 (Durotar)
 #title Verwüsten
@@ -903,7 +903,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warrior SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Verwüsten - 8 (Mulgore)
 #title Verwüsten
@@ -990,7 +990,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warrior SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Verwüsten - 8 (Tirisfal)
 #title Verwüsten
@@ -1072,7 +1072,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warrior SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Brust
 #name Blutraserei - 8 (Durotar)
 #title Blutraserei
@@ -1109,7 +1109,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warrior SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Brust
 #name Blutraserei - 8 (Mulgore)
 #title Blutraserei
@@ -1144,7 +1144,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warrior SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Brust
 #name Blutraserei - 8 (Tirisfal)
 #title Blutraserei
@@ -1171,7 +1171,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Warrior SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Rasanter Schlag - 12 (Loch Modan)
 #title Rasanter Schlag
@@ -1203,7 +1203,7 @@ step << Warrior
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warrior SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Endlose Wut - 15 (The Barrens)
 #title Endlose Wut
@@ -1245,7 +1245,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warrior SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Endlose Wut - 15 (Silberwald)
 #title Endlose Wut
@@ -1277,7 +1277,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Warrior SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Rasanter Schlag - 20 (Dunkelküste)
 #title Rasanter Schlag
@@ -1317,7 +1317,7 @@ step << Warrior
 RXPGuides.RegisterGuide([[
 #classic
 << Warrior SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Gürtel
 #name Blutwoge - 40 (Azeroth)
 #title Blutwoge
@@ -1463,7 +1463,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Warrior SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Gürtel
 #name Fokussierte Wut - 35 (Arathihochland)
 #title Fokussierte Wut
@@ -1517,7 +1517,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Warrior SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Stiefel
 #name Einschreiten - 24 (Tausend Nadeln)
 #title Einschreiten
@@ -1591,7 +1591,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Warrior SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Stiefel
 #name Anspornender Schrei - 40 (Ödland)
 #title Anspornender Schrei
@@ -1636,7 +1636,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Warrior SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Armschienen
 #title Toben
 #name Toben - 43 (Feralas)
@@ -1663,7 +1663,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Warrior SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Armschienen
 #title Abrisskommando
 #name Abrisskommando - 40 (Das Hinterland)
@@ -1700,7 +1700,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Warrior SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Helm
 #title Verlangen nach Blut
 #name Verlangen nach Blut - 50 (Sengende Schlucht)
@@ -1776,7 +1776,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Warrior SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Helm
 #title Wachsamkeit
 #name Wachsamkeit - 46 (Feralas)
@@ -1800,7 +1800,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Warrior SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Stiefel
 #title Gladiatorhaltung
 #name Gladiatorhaltung - 45 (Tanaris & Azshara)
@@ -1867,7 +1867,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Warrior SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Verschleierung
 #title Frischfleisch
 #name Frischfleisch - 55 (Brennende Steppe)
@@ -1900,7 +1900,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Warrior SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Verschleierung
 #title Plötzlicher Tod
 #name Plötzlicher Tod - 57 (Silithus)
@@ -1943,7 +1943,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Warrior SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Verschleierung
 #title Schockwelle
 #name Schockwelle - 60 (Azeroth)

@@ -2,7 +2,7 @@ if GetLocale() ~= "deDE" then return end
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Warlock SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Heimsuchung - 3 (Wald von Elwynn)
 #title Heimsuchung
@@ -25,7 +25,7 @@ step << Warlock
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Warlock SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Heimsuchung - 1 (Dun Morogh)
 #title Heimsuchung
@@ -46,7 +46,7 @@ step << Warlock
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warlock SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Heimsuchung - 2 (Durotar)
 #title Heimsuchung
@@ -84,7 +84,7 @@ step << Orc
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warlock SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Heimsuchung - 2 (Tirisfal)
 #title Heimsuchung
@@ -122,7 +122,7 @@ step << Undead
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warlock SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Brust
 #name Seelenentzug - 13 (Durotar)
 #title Seelenentzug
@@ -157,7 +157,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warlock SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Brust
 #name Seelenentzug - 9 (Tirisfal)
 #title Seelenentzug
@@ -191,7 +191,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warlock SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Brust
 #name Dämonische Taktiken - 4 (Tirisfal)
 #title Dämonische Taktiken
@@ -237,7 +237,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warlock SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Beine
 #name Dämonische Anmut - 8 (Durotar)
 #title Dämonische Anmut
@@ -291,7 +291,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warlock SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Beine
 #name Dämonische Anmut - 8 (Tirisfal)
 #title Dämonische Anmut
@@ -353,7 +353,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warlock SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 -- #subgroup Chest << Mage
 #subgroup Handschuhe << Warlock
 -- #name Burnout - 8 (Tirisfal Glades) << Mage
@@ -390,7 +390,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Warlock SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Brust
 #name See des Feuers - 25 (Vorgebirge des Hügellands)
 #title See des Feuers
@@ -422,7 +422,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Warlock SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Armschienen
 #name Verbrennen - 22 (Rotkammgebirge)
 #title Verbrennen
@@ -447,7 +447,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warlock SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Brust
 #name Meisterkanalisierer - 12 (Das Brachland)
 #title Meisterkanalisierer
@@ -472,7 +472,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warlock SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Brust
 #name Meisterkanalisierer - 14 (Silberwald)
 #title Meisterkanalisierer
@@ -495,7 +495,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warlock SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Schattenblitzsalve - 16 (Das Brachland)
 #title Schattenblitzsalve
@@ -525,7 +525,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warlock SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Schattenblitzsalve - 18 (Silberwald)
 #title Schattenblitzsalve
@@ -558,7 +558,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Warlock SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Metamorphose - 25 (Azeroth)
 #title Metamorphose
@@ -679,7 +679,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Warlock SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Gürtel
 #name Grimoire der Synergie - 40 (Azeroth)
 #title Grimoire der Synergie
@@ -822,7 +822,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Warlock SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Brust
 #name Meisterkanalisierer - 10 (Loch Modan)
 #title Meisterkanalisierer
@@ -866,7 +866,7 @@ step << Warlock
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Warlock SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Brust
 #name Meisterkanalisierer - 15 (Dunkelküste)
 #title Meisterkanalisierer
@@ -890,7 +890,7 @@ step << Warlock
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Warlock SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Verschleierung
 #name Seelenentzug - 10 (Dun Morogh)
 #title Seelenentzug
@@ -928,7 +928,7 @@ step << Warlock
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Warlock SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Brust
 #name Seelenentzug - 10 (Wald von Elwynn)
 #title Seelenentzug
@@ -977,7 +977,7 @@ step << Warlock
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Warlock SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Brust
 #name Dämonische Taktiken - 1 (Wald von Elwynn)
 #title Dämonische Taktiken
@@ -1032,7 +1032,7 @@ step << Warlock
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Warlock SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Beine
 #name Dämonische Anmut - 10 (Wald von Elwynn)
 #title Dämonische Anmut
@@ -1105,7 +1105,7 @@ step << Warlock
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Warlock SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Beine
 #name Dämonische Anmut - 10 (Dun Morogh)
 #title Dämonische Anmut
@@ -1161,7 +1161,7 @@ step << Warlock
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Warlock SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Schattenblitzsalve - 16 (Dunkelküste)
 #title Schattenblitzsalve
@@ -1182,7 +1182,7 @@ step << Warlock
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Warlock SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Chaosschadenblitz - 8 (Dun Morogh)
 #title Chaosblitz
@@ -1204,7 +1204,7 @@ step << Warlock
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Warlock SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Chaosschadenblitz - 8 (Wald von Elwynn)
 #title Chaosblitz
@@ -1226,7 +1226,7 @@ step << Warlock
 RXPGuides.RegisterGuide([[
 #classic
 << Warlock SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Gürtel
 #name Anrufung - 35 (Arathihochland)
 #title Anrufung
@@ -1281,7 +1281,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Warlock SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Stiefel
 #name Tanz des Tückischen - 35 (Desolace)
 #title Tanz des Tückischen
@@ -1312,7 +1312,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Warlock SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Stiefel
 #name Tanz des Tückischen - 35 (Stranglethorn)
 #title Tanz des Tückischen
@@ -1343,7 +1343,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Warlock SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Stiefel
 #name Schattenfeuerschaden - 40 (Desolace)
 #title Schattenfeuerschaden
@@ -1379,7 +1379,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Warlock SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Armschienen
 #title Feuerbrandaura
 #name Feuerbrandaura - 40 (Eschental)
@@ -1412,7 +1412,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Warlock SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Armschienen
 #title Teufelswache beschwören
 #name Teufelswache beschwören - 10 (Azeroth)
@@ -1612,7 +1612,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Warlock SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Helm
 #title Pandemie
 #name Pandemie - 40 (Feralas)
@@ -1657,7 +1657,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Warlock SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Verschleierung
 #title Dezimierung
 #name Dezimierung - 55 (Azeroth)
@@ -1724,7 +1724,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Warlock SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Verschleierung
 #title Mal des Chaosschaden
 #name Mal des Chaosschaden - 50 (Westliche Pestländer)
@@ -1756,7 +1756,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Warlock SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Verschleierung
 #title Höllische Rüstung
 #name Höllische Rüstung - 55 (Verwüstete Lande)

@@ -29,7 +29,7 @@ step
     >>Sammelt die |T132612:0|t[|cRXP_LOOT_Armschienen der Furcht|r]. Dies ist ein gebunden beim anlegen Loot in der |cFFfa9602Schwarzfelsspitze|r << Warlock
     >>Sammelt die |T132617:0|t[|cRXP_LOOT_Armschienen der Ehre|r]. Dies ist ein beim Anlegen gebunden Loot in der |cFFfa9602Schwarzfelsspitze|r << Warrior
     >>|cRXP_WARN_Alternativ kauft sie aus dem Auktionshaus << !sod
-    >>|cRXP_WARN_Alternativ kauft sie aus dem Auktionshaus oder von |cRXP_FRIENDLY_Pix Xizzix|r in Beutebucht im Tausch gegen|r |T133799:0|t[|cRXP_FRIENDLY_Angelaufener Real aus Undermine|r] << sod
+    >>|cRXP_WARN_Alternativ kauft sie aus dem Auktionshaus oder von |cRXP_FRIENDLY_Pix Xizzix|r in Beutebucht gegen|r |T133799:0|t[|cRXP_FRIENDLY_Angelaufener Real aus Undermine|r] << sod
     .collect 16714,1,8905,1 << Alliance Druid --Wildheart Bracers (x1)
     .collect 16681,1,8906,1 << Alliance Hunter --Beaststalker's Bindings (x1)
     .collect 16683,1,8907,1 << Alliance Mage --Magister's Bindings (x1)
@@ -108,7 +108,7 @@ step << Alliance
     .goto Ironforge,43.54,52.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Deliana|r
     >>|cRXP_WARN_Ihr benötigt 20 Gold und|r |T132608:0|t[|cRXP_LOOT_Armschienen des Wildherzens|r] |cRXP_WARN_um diese Quest abzugeben|r << Druid
-    >>|cRXP_WARN_Ihr werdet 20 Gold benötigen und|r |T132616:0|t[|cRXP_LOOT_Bestienjägerbindungen|r] |cRXP_WARN_um diese Quest abzugeben|r << Hunter
+    >>|cRXP_WARN_Ihr benötigt 20 Gold und|r |T132616:0|t[|cRXP_LOOT_Bestienjägerbindungen|r] |cRXP_WARN_um diese Quest abzugeben|r << Hunter
     >>|cRXP_WARN_Ihr werdet 20 Gold benötigen und|r |T133365:0|t[|cRXP_LOOT_Bindungen des Magisters|r] |cRXP_WARN_um diese Quest abzugeben|r << Mage
     >>|cRXP_WARN_Ihr benötigt 20 Gold und|r |T132613:0|t[|cRXP_LOOT_Armschienen des Lichts|r] |cRXP_WARN_um diese Quest abzugeben|r << Paladin
     >>|cRXP_WARN_Ihr benötigt 20 Gold und|r |T132520:0|t[|cRXP_LOOT_Armschienen des Gläubigen|r] |cRXP_WARN_um diese Quest abzugeben|r << Priest
@@ -303,7 +303,7 @@ step
     >>Sammelt |T132966:0|t[|cRXP_LOOT_Wickeltücher der Furcht|r]. Dies ist eine Gebunden-beim-Anlegen-Beute in |cFFfa9602Scholomance|r << Warlock
     >>Sammelt |T132960:0|t[|cRXP_LOOT_Stulpen der Ehre|r]. Dies ist eine Gebunden-beim-Anlegen-Beute in |cFFfa9602Stratholme|r << Warrior
     >>|cRXP_WARN_Alternativ kauft sie aus dem Auktionshaus << !sod
-    >>|cRXP_WARN_Alternativ kauft sie aus dem Auktionshaus oder von |cRXP_FRIENDLY_Pix Xizzix|r in Beutebucht im Tausch gegen|r |T133799:0|t[|cRXP_FRIENDLY_Angelaufener Real aus Undermine|r] << sod
+    >>|cRXP_WARN_Alternativ kauft sie aus dem Auktionshaus oder von |cRXP_FRIENDLY_Pix Xizzix|r in Beutebucht im Austausch gegen|r |T133799:0|t[|cRXP_FRIENDLY_Angelaufener Real aus Undermine|r] << sod
     .collect 16717,1,8926,1 << Alliance Druid --Wildheart Gloves (x1)
     .collect 16676,1,8931,1 << Alliance Hunter --Beaststalker's Gloves (x1)
     .collect 16684,1,8932,1 << Alliance Mage --Magister's Gloves (x1)
@@ -424,7 +424,7 @@ step
 step
     #completewith next
     .cast 27433 >>|cRXP_WARN_Platziert den|r |T133882:0|t[Ektoplasmadestillierer] |cRXP_WARN_auf dem Boden. Er hält 5 Minuten lang|r
-    .use 21946 >>Ein |T132621:0|t[Goblin-Raketentreibstoff] |cRXP_WARN_wird jedes Mal benötigt, wenn ihr den|r |T133882:0|t[Ektoplasmadestillierer] |cRXP_WARN_benutzt|r
+    .use 21946 >>|cRXP_WARN_Eins|r |T132621:0|t[Goblin-Raketentreibstoff] |cRXP_WARN_wird jedesmal benötigt, wenn ihr |r |T133882:0|t[Ektoplasmadestillierer] benutzt
 step
     #loop
 	.goto Silithus,61.60,48.60,0
@@ -711,7 +711,7 @@ step
     >>Sammelt |T132592:0|t[|cRXP_LOOT_Stiefel der Elemente|r]. Diese werden von |cRXP_ENEMY_Hochlord Omokk|r in der |cFFfa9602Unteren Schwarzfelsspitze|r fallen gelassen << Shaman
     >>Sammelt |T132539:0|t[|cRXP_LOOT_Sandalen der Furcht|r]. Diese werden von |cRXP_ENEMY_Baroness Anastari|r in |cFFfa9602Stratholme|r fallen gelassen << Warlock
     >>Sammelt |T132584:0|t[|cRXP_LOOT_Stiefel der Ehre|r]. Diese werden von |cRXP_ENEMY_Kirtonos der Herold|r in |cFFfa9602Scholomance|r fallen gelassen << Warrior
-    >>|cRXP_WARN_Kauft sie alternativ von |cRXP_FRIENDLY_Pix Xizzix|r in Beutebucht im Tausch gegen|r |T133799:0|t[|cRXP_FRIENDLY_Angelaufener Real aus Undermine|r] << sod
+    >>|cRXP_WARN_Alternativ kauft sie von |cRXP_FRIENDLY_Pix Xizzix|r in Beutebucht im Austausch für|r |T133799:0|t[|cRXP_FRIENDLY_Angelaufener Real aus Undermine|r] << sod
     .collect 16715,1,8951,1 << Alliance Druid --Wildheart Boots (x1)
     .collect 16675,1,8952,1 << Alliance Hunter --Beaststalker's Boots (x1)
     .collect 16682,1,8953,1 << Alliance Mage --Magister's Boots (x1)
@@ -747,7 +747,7 @@ step
     >>Sammelt das |T134583:0|t[|cRXP_LOOT_Kilt der Elemente|r]. Das wird von |cRXP_ENEMY_Baron Rivendare |r in |cFFfa9602Stratholme|r Fallen gelassen << Shaman
     >>Erhaltet die |T134588:0|t[|cRXP_LOOT_Gamaschen der Furcht|r]. Das wird von |cRXP_ENEMY_Baron Rivendare |r in |cFFfa9602Stratholme|r Fallen gelassen << Warlock
     >>Erhaltet die |T134584:0|t[|cRXP_LOOT_Beinplatten der Ehre|r]. Das wird von |cRXP_ENEMY_Baron Rivendare |r in |cFFfa9602Stratholme|r Fallen gelassen << Warrior
-    >>|cRXP_WARN_Kauft sie alternativ von |cRXP_FRIENDLY_Pix Xizzix|r in Beutebucht im Tausch gegen|r |T133799:0|t[|cRXP_FRIENDLY_Angelaufener Real aus Undermine|r] << sod
+    >>|cRXP_WARN_Alternativ kauft sie von |cRXP_FRIENDLY_Pix Xizzix|r in Beutebucht im Austausch für|r |T133799:0|t[|cRXP_FRIENDLY_Angelaufener Real aus Undermine|r] << sod
     .collect 16719,1,8951,1 << Alliance Druid --Wildheart Kilt (x1)
     .collect 16678,1,8952,1 << Alliance Hunter --Beaststalker's Pants (x1)
     .collect 16687,1,8953,1 << Alliance Mage --Magister's Leggings (x1)
@@ -783,7 +783,7 @@ step
     >>Erhaltet die|T135060:0|t[|cRXP_LOOT_Schulterstücke der Elemente|r]. Diese werden von |cRXP_ENEMY_Gyth|r in der |cFFfa9602Oberen Schwarzfelsspitze|r Fallen gelassen << Shaman
     >>Sammelt |T133732:0|t[|cRXP_LOOT_Mantel der Furcht|r]. Diesen Gegenstand lässt |cRXP_ENEMY_Jandice Barov|r in |cFFfa9602Scholomance|r fallen << Warlock
     >>Sammelt die|T135061:0|t[|cRXP_LOOT_Schiftung der Ehre|r]. Diese werden von |cRXP_ENEMY_Kriegshäuptling Rend Blackhand|r in der|cFFfa9602Oberen Schwarzfelsspitze|r fallen gelassen << Warrior
-    >>|cRXP_WARN_Kauft sie alternativ von |cRXP_FRIENDLY_Pix Xizzix|r in Beutebucht im Tausch gegen|r |T133799:0|t[|cRXP_FRIENDLY_Angelaufener Real aus Undermine|r] << sod
+    >>|cRXP_WARN_Alternativ kauft sie von |cRXP_FRIENDLY_Pix Xizzix|r in Beutebucht im Austausch für|r |T133799:0|t[|cRXP_FRIENDLY_Angelaufener Real aus Undermine|r] << sod
     .collect 16718,1,8951,1 << Alliance Druid --Wildheart Spaulders (x1)
     .collect 16679,1,8952,1 << Alliance Hunter --Beaststalker's Mantle (x1)
     .collect 16689,1,8953,1 << Alliance Mage --Magister's Mantle (x1)
@@ -981,7 +981,7 @@ step
 step
     >>|cRXP_BUY_Sammelt die folgenden Gegenstände|r:
     >>|T132873:0|t[Großer glänzender Splitter] |cRXP_WARN_Verzauberer können diese durch das entzaubern von Geegenständen erhalten|r
-    >>|T136192:0|t[|cRXP_FRIENDLY_Dunkelrunen|r] |cRXP_WARN_sind zufällige Beute in|r |cFFfa9602Scholomance|r
+    >>|T136192:0|t[|cRXP_FRIENDLY_Dunkelrune|r] |cRXP_WARN_sind Zufallsfunde in|r |cFFfa9602Scholomance|r
     >>|cRXP_WARN_Kauft sie wenn möglich aus dem Auktionshaus|r
     .collect 14344,8,8950,1 --Large Brilliant Shard (x8)
     .collect 20520,4,8950,1 --Dark Rune (x4)
@@ -1024,7 +1024,7 @@ step
     .mob Theldren
 step
     #completewith next
-    .zone Eastern Plaguelands >>Lauf in die Östlichen Pestländer
+    .zone Eastern Plaguelands >>Lauft in die Östlichen Pestländer
 step
     .goto Eastern Kingdoms,55.06,17.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Anthion|r
@@ -1102,7 +1102,7 @@ step << Horde
     .goto Orgrimmar,34.96,38.28
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Mokvar|r
     >>Ihr benötigt |T132542:0|t[|cRXP_LOOT_Stiefel des Wildherzens|r], |T134588:0|t[|cRXP_LOOT_Kilt des Wildherzens|r] und |T135032:0|t[|cRXP_LOOT_Schiftung des Wildherzens|r] um diese Quest abzugeben << Druid
-    >>Ihr benötigt |T132588:0|t[|cRXP_LOOT_Bestienjägerstiefel|r], |T134583:0|t[|cRXP_LOOT_Bestienjägerhose|r] und |T135041:0|t[|cRXP_LOOT_Bestienjägermantel|r] um diese Quest abzugeben << Hunter
+    >>Ihr werdet |T132588:0|t[|cRXP_LOOT_Bestienjägerstiefer|r], |T134583:0|t[|cRXP_LOOT_Bestienjägerhose|r] und |T135041:0|t[|cRXP_LOOT_Bestienjägermantel|r] benötigen, um diese Quest abzugeben << Hunter
     >>Ihr benötigt |T132536:0|t[|cRXP_LOOT_Stiefel des Magisters|r], |T134586:0|t[|cRXP_LOOT_Gamaschen des Magisters|r] und |T135054:0|t[|cRXP_LOOT_Mantel des Magisters|r] um diese Quest abzugeben << Mage
     >>Ihr werdet |T132539:0|t[|cRXP_LOOT_Sandalen des Gläubigen|r], |T134588:0|t[|cRXP_LOOT_Rock des Gläubigen|r] und |T135033:0|t[|cRXP_LOOT_Mantel des Gläubigen|r] benötigen, um diese Quest abzugeben << Priest
     >>Ihr benötigt |T132542:0|t[|cRXP_LOOT_Stiefel der Schattenkunst|r], |T134582:0|t[|cRXP_LOOT_Hose der Schattenkunst|r] und |T135038:0|t[|cRXP_LOOT_Schiftung der Schattenkunst|r] um diese Quest abzugeben << Rogue
@@ -1230,7 +1230,7 @@ step
     >>Sammelt die |T132690:0|t[|cRXP_LOOT_Robe der Furcht|r]. Diese wird von |cRXP_ENEMY_General Drakkisath|r in der |cFFfa9602Oberen Schwarzfelsspitze|r fallen gelassen << Warlock
     >>Sammelt die |T132738:0|t[|cRXP_LOOT_Brustplatte der Ehre|r]. Diees wird von |cRXP_ENEMY_General Drakkisath|r in der |cFFfa9602Oberen Schwarzfelsspitze|r fallen gelassen << Warrior
     >>Sammelt die |T132666:0|t[|cRXP_LOOT_Roben des Magisters|r]. Diese wird von |cRXP_ENEMY_General Drakkisath|r in der |cFFfa9602Oberen Schwarzfelsspitze|r fallen gelassen << Mage
-    >>|cRXP_WARN_Kauft sie alternativ von |cRXP_FRIENDLY_Pix Xizzix|r in Beutebucht im Tausch gegen|r |T133799:0|t[|cRXP_FRIENDLY_Angelaufener Real aus Undermine|r] << sod
+    >>|cRXP_WARN_Alternativ kauft sie von |cRXP_FRIENDLY_Pix Xizzix|r in Beutebucht im Austausch für|r |T133799:0|t[|cRXP_FRIENDLY_Angelaufener Real aus Undermine|r] << sod
     .collect 16726,1,9002,1 << Alliance Paladin --Lightforge Breastplate (x1)
     .collect 16706,1,8999,1 << Alliance Druid --Wildheart Vest (x1)
     .collect 16674,1,9000,1 << Alliance Hunter --Beaststalker's Tunic (x1)
@@ -1324,7 +1324,7 @@ step
 step
     #completewith next
     .goto Eastern Kingdoms,48.07,62.42
-    .subzone 1584,2 >>Schwarzfelstiefen betreten
+    .subzone 1584,2 >>Betretet Schwarzfelstiefen
     >>|cRXP_WARN_Stellt sicher, dass ihr eine Gruppe parat habt|r
 step
     >>Tötet|cRXP_ENEMY_Lord Incendius|r. Plündert ihn für das |cRXP_LOOT_Incendius' Pyrophor|r
@@ -1612,7 +1612,7 @@ step
     .isOnQuest 8967
 step
     #completewith next
-    .zone Eastern Plaguelands >>Reist in die |cFFfa9602Die Östlichen Pestländer|r
+    .zone Eastern Plaguelands >>Reist in die |cFFfa9602 Östlichen Pestländer|r
     .subzoneskip 2017
     .isOnQuest 8968
 step
@@ -1982,7 +1982,7 @@ step
     .isOnQuest 8990
 step
     #completewith next
-    .zone Eastern Plaguelands >>Reist in die |cFFfa9602Die Östlichen Pestländer|r
+    .zone Eastern Plaguelands >>Reist in die |cFFfa9602Östlichen Pestländer|r
     .subzoneskip 2017
     .isOnQuest 8991
 step
@@ -2192,8 +2192,8 @@ step << Alliance
 step << Alliance
     .goto Ironforge,43.54,52.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Deliana|r
-    >>Ihr benötigt |T133129:0|t[|cRXP_LOOT_Kutte des Wildherzens|r] und |T132741:0|t[|cRXP_LOOT_Weste des Wildherzens|r] um diese Quest abzugeben << Druid
-    >>Ihr benötigt |T133126:0|t[|cRXP_LOOT_Bestienjägerkappe|r] und |T132625:0|t[|cRXP_LOOT_Bestienjägertunika|r] um diese Quest abzugeben <<  Hunter
+    >>Ihr benötigt |T133129:0|t[|cRXP_LOOT_Kutte des Wildherzens|r] und |T132741:0|t[|cRXP_LOOT_Weste des Wildherzens|r], um diese Quest abzugeben << Druid
+    >>Ihr benötigt |T133126:0|t[|cRXP_LOOT_Bestienjägerkappe|r] und |T132625:0|t[|cRXP_LOOT_Bestienjägertunika|r], um diese Quest abzugeben <<  Hunter
     >>Ihr benötigt |T132768:0|t[|cRXP_LOOT_Krone des Magisters|r] und |T132666:0|t[|cRXP_LOOT_Roben des Magisters|r], um diese Quest abzugeben << Mage
     >>Ihr braucht |T133076:0|t[|cRXP_LOOT_Helm des Lichts|r] und |T132738:0|t[|cRXP_LOOT_Brustplatte des Lichts|r], um diese Quest abzugeben << Paladin
     >>Ihr benötigt |T132767:0|t[|cRXP_LOOT_Krone des Gläubigen|r] und |T132652:0|t[|cRXP_LOOT_Robe des Gläubigen|r] um diese Quest abzugeben << Priest

@@ -7,7 +7,7 @@ RXPGuides.RegisterGuide([[
 #disabledungeons
 << Horde
 #version 11
-#group RestedXP Forever Dungeonführer (H)
+#group RestedXP Forever Guide (H)
 #subgroup Speedrun Guide 1-22
 --#groupid RXP-SRGCE-H1
 #defaultfor Undead
@@ -711,7 +711,7 @@ RXPGuides.RegisterGuide([[
 #name 6-12 Tirisfal
 #displayname 6-13 Tirisfal << Paladin
 #version 11
-#group RestedXP Forever Dungeonführer (H)
+#group RestedXP Forever Guide (H)
 #subgroup Speedrun Guide 1-22
 --#groupid RXP-SRGCE-H1
 #defaultfor Undead
@@ -3279,7 +3279,7 @@ step
 
 
 RXPGuides.RegisterGuide([[
-#group RestedXP Forever Dungeonführer (H)
+#group RestedXP Forever Guide (H)
 #subgroup Speedrun Guide 1-22
 --#groupid RXP-SRGCE-H1
 << Horde

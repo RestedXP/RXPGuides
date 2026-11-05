@@ -2,7 +2,7 @@ if GetLocale() ~= "deDE" then return end
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Paladin SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Kreuzfahrerstoß - 4 (Wald von Elwynn)
 #title Kreuzfahrerstoß
@@ -83,7 +83,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Paladin SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Kreuzfahrerstoß - 4 (Dun Morogh)
 #title Kreuzfahrerstoß
@@ -159,7 +159,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Paladin SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Hand der Abrechnung - 14 (Loch Modan)
 #title Hand der Abrechnung
@@ -329,7 +329,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Paladin SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Hand der Abrechnung - 20 (Westfall)
 #title Hand der Abrechnung
@@ -457,7 +457,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Paladin SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Brust
 #name Geheiligter Boden - 4 (Loch Modan)
 #title Geheiligter Boden
@@ -543,7 +543,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Paladin SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Brust
 #name Horn von Lordaeron - 12 (Westfall)
 #title Horn von Lordaeron
@@ -650,7 +650,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Paladin SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Brust
 #name Aegis - 8 (Wald von Elwynn)
 #title Aegis
@@ -728,7 +728,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Paladin SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Brust
 #name Aegis - 8 (Dun Morogh)
 #title Aegis
@@ -790,7 +790,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Paladin SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Brust
 #name Göttliches Licht - 10 (Sturmwind)
 #title Göttliches Licht
@@ -881,7 +881,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Paladin SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Brust
 #name Göttlicher Sturm - 25 (Dunkelküste)
 #title Göttlicher Sturm
@@ -1107,7 +1107,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Paladin SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Beine
 #name Inspirationsvorbild - 6 (Wald von Elwynn)
 #title Inspirationsvorbild
@@ -1149,7 +1149,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Paladin SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Beine
 #name Inspirationsvorbild - 6 (Dun Morogh)
 #title Inspirationsvorbild
@@ -1202,7 +1202,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Paladin SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Beine
 #name Zurechtweisung - 10 (Eisenschmiede)
 #title Zurechtweisung
@@ -1273,7 +1273,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Paladin SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Beine
 #name Zurechtweisung - 10 (Sturmwind)
 #title Zurechtweisung
@@ -1346,7 +1346,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Paladin SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Beine
 #name Aurenmeisterschaft - 24 (Dämmerwald)
 #title Aurenmeisterschaft
@@ -1422,7 +1422,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Paladin SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Beine
 #name Schild des Rächers - 25 (Rotkammgebirge)
 #title Schild des Rächers
@@ -1466,7 +1466,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Paladin SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Gürtel
 #title Formbarer Schutz
 #name Formbarer Schutz - 34 (Arathihochland)
@@ -1631,7 +1631,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Paladin SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Gürtel
 #name Ummantelung des Lichts - 40 (Azeroth)
 #title Ummantelung des Lichts
@@ -1765,7 +1765,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Paladin SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Stiefel
 #name Vom Licht behütet - 30 (Alteracgebirge)
 #title Vom Licht behütet
@@ -1815,7 +1815,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Paladin SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Stiefel
 #name Geheiligter Schild - 30 (Desolace)
 #title Geheiligter Schild
@@ -1891,7 +1891,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Paladin SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Helm
 #name Fanatismus - 44 (Azeroth)
 
@@ -1959,7 +1959,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Paladin SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Armschienen
 #name Anmut des Lichts - 40 (Feralas)
 
@@ -2018,7 +2018,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Paladin SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Helm
 #name Zorn - 43 (Das Hinterland)
 
@@ -2053,7 +2053,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Paladin SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Armschienen
 #name Hammer der Rechtschaffenen - 50 (Azeroth)
 
@@ -2187,7 +2187,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Paladin SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Verschleierung
 #name Schild der Rechtschaffenheit - 60 (Die Östlichen Pestländer)
 
@@ -2243,7 +2243,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Paladin SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Verschleierung
 #name Rechtschaffene Vergeltung - 55 (Westliche Pestländer)
 #title Rechtschaffene Vergeltung
@@ -2315,7 +2315,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Paladin SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Verschleierung
 #name Schock und Awe - 60 (Western und Die Östlichen Pestländer)
 #title Schockierende Ehrfurcht & Zornige Vergeltung

@@ -2,7 +2,7 @@ if GetLocale() ~= "deDE" then return end
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Hunter SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Schimärenschuss - 2 (Dun Morogh)
 #title Schimärenschuss
@@ -47,7 +47,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Hunter SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Schimärenschuss - 3 (Teldrassil)
 #title Schimärenschuss
@@ -96,7 +96,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Hunter SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Explosivschuss - 5 (Dun Morogh)
 #title Explosivschuss
@@ -147,7 +147,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Hunter SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Explosivschuss - 2 (Durotar)
 #title Explosivschuss
@@ -172,7 +172,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Hunter SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Schimärenschuss - 2 (Durotar)
 #title Schimärenschuss
@@ -260,7 +260,7 @@ step << !Tauren
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Hunter SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Schimärenschuss - 2 (Mulgore)
 #title Schimärenschuss
@@ -304,7 +304,7 @@ step << Tauren
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Hunter SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Brust
 #name Meisterschütze - 6 (Durotar)
 #title Meisterschütze
@@ -331,7 +331,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Hunter SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Brust
 #name Meisterschütze - 6 (Mulgore)
 #title Meisterschütze
@@ -358,7 +358,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Hunter SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Brust
 #name Meisterschütze - 6 (Dun Morogh)
 #title Meisterschütze
@@ -385,7 +385,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Hunter SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Brust
 #name Meisterschütze - 6 (Teldrassil)
 #title Meisterschütze
@@ -412,7 +412,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Hunter SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Beine
 #name Flankieren - 6 (Mulgore)
 #title Flankieren
@@ -453,7 +453,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Hunter SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Beine
 #name Flankieren - 6 (Durotar)
 #title Flankieren
@@ -488,7 +488,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Hunter SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Zerlegen - 10 (Durotar)
 #title Zerlegen
@@ -542,7 +542,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Hunter SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Zerlegen - 10 (Mulgore)
 #title Zerlegen
@@ -595,7 +595,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Hunter SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Zerlegen - 10 (Dun Morogh)
 #title Zerlegen
@@ -651,7 +651,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Hunter SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Zerlegen - 10 (Teldrassil)
 #title Zerlegen
@@ -709,7 +709,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Hunter SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Meister der Tiere - 16 (The Barrens)
 #title Meister der Tiere
@@ -741,7 +741,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Hunter SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Meister der Tiere - 16 (Silverpine)
 #title Meister der Tiere
@@ -771,7 +771,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Hunter SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Beine
 #name Heckenschützentraining - 18 (Dunkelküste)
 #title Heckenschützentraining
@@ -822,7 +822,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Hunter SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Beine
 #name Heckenschützentraining - 16 (Westfall)
 #title Heckenschützentraining
@@ -855,7 +855,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Hunter SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Beine
 #name Heckenschützentraining - 16 (Loch Modan)
 #title Heckenschützentraining
@@ -889,7 +889,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Hunter SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Beine
 #name Flankieren - 7 (Dun Morogh)
 #title Flankieren
@@ -932,7 +932,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Hunter SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Beine
 #name Flankieren - 7 (Teldrassil)
 #title Flankieren
@@ -972,7 +972,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Hunter SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Gürtel
 #title Schwäche aufdecken
 #name Schwäche aufdecken - 40 (Azeroth)
@@ -1075,7 +1075,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Hunter SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Gürtel
 #title Zuverlässiger Schuss
 #name Zuverlässiger Schuss - 30 (Arathihochland)
@@ -1103,7 +1103,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Hunter SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Stiefel
 #title Dual-Wield Spezialisierung
 #name Dual-Wield Spezialisierung - 32 (Schlingendorntal)
@@ -1148,7 +1148,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Hunter SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Armschienen
 #title Feuer konzentrieren
 #name Feuer konzentrieren - 40 (Sengende Schlucht)
@@ -1176,7 +1176,7 @@ step
  RXPGuides.RegisterGuide([[
     #classic
     << Hunter SoD
-    #group RestedXP Rune & Books Dungeonführer
+    #group RestedXP Runen & Bücher Guide
     #subgroup Armschienen
     #title Raptorenfuror
     #name Raptorenfuror - 40 (Tanaris)
@@ -1207,7 +1207,7 @@ step
 RXPGuides.RegisterGuide([[
     #classic
     << Hunter SoD
-    #group RestedXP Rune & Books Dungeonführer
+    #group RestedXP Runen & Bücher Guide
     #subgroup Helm
     #title Katzenhafte Reflexe
     #name Katzenhafte Reflexe - 40 (Feralas)
@@ -1246,7 +1246,7 @@ step
 RXPGuides.RegisterGuide([[
     #classic
     << Hunter SoD
-    #group RestedXP Rune & Books Dungeonführer
+    #group RestedXP Runen & Bücher Guide
     #subgroup Helm
     #title Schneller Tod
     #name Schneller Tod - 45 (Sengende Schlucht & Verwüstete Lande)
@@ -1308,7 +1308,7 @@ step
 RXPGuides.RegisterGuide([[
     #classic
     << Hunter SoD
-    #group RestedXP Rune & Books Dungeonführer
+    #group RestedXP Runen & Bücher Guide
     #subgroup Verschleierung
     #title Drauf und weg
     #name Trefferwert und Rennen - 50 (Brennende Steppe)
@@ -1335,7 +1335,7 @@ step
 RXPGuides.RegisterGuide([[
     #classic
     << Hunter SoD
-    #group RestedXP Rune & Books Dungeonführer
+    #group RestedXP Runen & Bücher Guide
     #subgroup Verschleierung
     #title Improvisation
     #name Improvisation - 58 (Die Östlichen Pestländer)
@@ -1384,7 +1384,7 @@ step
 RXPGuides.RegisterGuide([[
     #classic
     << Hunter SoD
-    #group RestedXP Rune & Books Dungeonführer
+    #group RestedXP Runen & Bücher Guide
     #subgroup Verschleierung
     #title Verbesserte Salve
     #name Verbesserte Salve - 60 (Silithus)

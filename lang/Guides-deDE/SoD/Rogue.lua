@@ -2,7 +2,7 @@ if GetLocale() ~= "deDE" then return end
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Rogue SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Schattenschlagschaden - 3 (Wald von Elwynn)
 #title Schattenschlagschaden
@@ -23,7 +23,7 @@ step << Rogue
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Rogue SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Schattenschlagschaden - 3 (Dun Morogh)
 #title Schattenschlagschaden
@@ -54,7 +54,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Rogue SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Schattenschlagschaden - 3 (Laubschattental)
 #title Schattenschlagschaden
@@ -81,7 +81,7 @@ step << Rogue
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Rogue SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Brust
 #name Pistolenheld - 8 (Wald von Elwynn)
 #title Pistolenheld
@@ -170,7 +170,7 @@ step << Rogue
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Rogue SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Brust
 #name Pistolenheld - 8 (Dun Morogh)
 #title Pistolenheld
@@ -246,7 +246,7 @@ step << Rogue
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Rogue SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Brust
 #name Pistolenheld - 8 (Teldrassil)
 #title Pistolenheld
@@ -345,7 +345,7 @@ step << Rogue
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Rogue SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Brust
 #name Hinterhältiger Mord - 1 (Wald von Elwynn)
 #title Hinterhältiger Mord
@@ -368,7 +368,7 @@ step << Rogue
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Rogue SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Brust
 #name Hinterhältiger Mord - 1 (Dun Morogh)
 #title Hinterhältiger Mord
@@ -392,7 +392,7 @@ step << Rogue
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Rogue SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Beine
 #name Zwischen die Augen - 8 (Sturmwind)
 #title Zwischen die Augen
@@ -423,7 +423,7 @@ step << Rogue
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Rogue SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Beine
 #name Zwischen die Augen - 8 (Eisenschmiede)
 #title Zwischen die Augen
@@ -446,7 +446,7 @@ step << Rogue
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Rogue SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Beine
 #name Zwischen die Augen - 8 (Teldrassil)
 #title Zwischen die Augen
@@ -476,7 +476,7 @@ step << Rogue
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Rogue SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Beine
 #name Klingentanz - 10 (Westfall)
 #title Klingentanz
@@ -518,7 +518,7 @@ step << Rogue
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Rogue SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Beine
 #name Klingentanz - 16 (Dun Morogh)
 #title Klingentanz
@@ -548,7 +548,7 @@ step << Rogue
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Rogue SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Beine
 #name Klingentanz - 16 (Dunkelküste)
 #title Klingentanz
@@ -582,7 +582,7 @@ step << Rogue
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Rogue SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Verstümmeln - 5 (Wald von Elwynn)
 #title Verstümmeln
@@ -615,7 +615,7 @@ step << Rogue
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Rogue SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Verstümmeln - 8 (Dun Morogh)
 #title Verstümmeln
@@ -645,7 +645,7 @@ step << Rogue
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Rogue SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Säbelhieb - 12 (Westfall)
 #title Säbelhieb
@@ -671,7 +671,7 @@ step << Rogue
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Rogue SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Säbelhieb - 12 (Loch Modan)
 #title Säbelhieb
@@ -704,7 +704,7 @@ step << Rogue
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Rogue SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Säbelhieb - 1 (Dunkelküste)
 #title Säbelhieb
@@ -730,7 +730,7 @@ step << Rogue
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Rogue SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Schattenschlagschaden - 2 (Durotar)
 #title Schattenschlagschaden
@@ -769,7 +769,7 @@ step << Troll/Orc
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Rogue SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Schattenschlagschaden - 2 (Tirisfal)
 #title Schattenschlagschaden
@@ -825,7 +825,7 @@ step << Undead
 RXPGuides.RegisterGuide([[
 #classic
 << Rogue SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Brust
 #name Tödliche Mischung - 25 (Silberwald)
 #title Tödliche Mischung
@@ -952,7 +952,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Rogue SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Brust
 #name Pistolenheld - 10 (Durotar)
 #title Pistolenheld
@@ -1054,7 +1054,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Rogue SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Brust
 #name Pistolenheld - 10 (Tirisfal)
 #title Pistolenheld
@@ -1150,7 +1150,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Rogue SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Brust
 #name Hinterhältiger Mord - 10 (Durotar)
 #title Hinterhältiger Mord
@@ -1180,7 +1180,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Rogue SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Brust
 #name Hinterhältiger Mord - 10 (Tirisfal)
 #title Hinterhältiger Mord
@@ -1225,7 +1225,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Rogue SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Verstümmeln - 8 (Tirisfal)
 #title Verstümmeln
@@ -1270,7 +1270,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Rogue SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Verstümmeln - 10 (Durotar)
 #title Verstümmeln
@@ -1314,7 +1314,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Rogue SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Beine
 #name Zwischen die Augen - 8 (Tirisfal)
 #title Zwischen die Augen
@@ -1357,7 +1357,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Rogue SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Beine
 #name Zwischen die Augen - 8 (Orgrimmar)
 #title Zwischen die Augen
@@ -1384,7 +1384,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Rogue SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Beine
 #name Klingentanz - 15 (The Barrens)
 #title Klingentanz
@@ -1418,7 +1418,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Rogue SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Säbelhieb - 15 (The Barrens)
 #title Säbelhieb
@@ -1449,7 +1449,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Rogue SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Säbelhieb - 15 (Silverpine)
 #title Säbelhieb
@@ -1474,7 +1474,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Rogue SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Gürtel
 #title Schattenschritt
 #name Schattenschritt - 30 (Silberwald)
@@ -1606,7 +1606,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Rogue SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Gürtel
 #name Shurikenwurf - 30 (Sümpfe des Elends)
 #title Shurikenwurf
@@ -1635,7 +1635,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Rogue SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Stiefel
 #name Meister des hinterhältigen Angriffs - 34 (Schlingendorntal)
 #title Meister des hinterhältigen Angriffs
@@ -1712,7 +1712,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Rogue SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Stiefel
 #title Schläge abschwächen
 #name Schläge abschwächen - 27 (Tausend Nadeln)
@@ -1771,7 +1771,7 @@ step
  RXPGuides.RegisterGuide([[
  #classic
  << Rogue SoD
- #group RestedXP Rune & Books Dungeonführer
+ #group RestedXP Runen & Bücher Guide
  #subgroup Helm
  #title Fokussierte Angriffe
  #name Fokussierte Angriffe - 34 (Hinterland)
@@ -1799,7 +1799,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Rogue SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Armschienen
 #title Unfairer Vorteil
 #name Unfairer Vorteil - 40 (Tanaris)
@@ -1855,7 +1855,7 @@ step << Rogue
 RXPGuides.RegisterGuide([[
 #classic
 << Rogue SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Armschienen
 #title Gemetzel
 #name Gemetzel - 45 (Verwüstete Lande)
@@ -1886,7 +1886,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Rogue SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Helm
 #title Ehre unter Dieben
 #name Ehre unter Dieben - 45 (Azeroth)
@@ -2097,7 +2097,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Rogue SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Verschleierung
 #title Blutroter Sturm
 #name Blutroter Sturm - 60 (Westliche Pestländer)
@@ -2138,7 +2138,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Rogue SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Verschleierung
 #title Dolchfächer
 #name Dolchfächer - 55 (Winterquell)
@@ -2165,7 +2165,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Rogue SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Verschleierung
 #title Donnerbüchse
 #name Donnerbüchse - 60 (Die Östlichen Pestländer)

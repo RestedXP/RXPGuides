@@ -9,8 +9,8 @@ RXPGuides.RegisterGuide([[
 #displayname 14-16 The Barrens << !Shaman !Hunter !Tauren
 #displayname 15-16 The Barrens << Paladin
 #version 11
-#group RestedXP Forever Dungeon Dungeonführer (H)
-#subgroup Dungeon Dungeonführer 1-22
+#group RestedXP Forever Dungeonführer (H)
+#subgroup Dungeonführer 1-22
 --#groupid RXP-SRGCE-H1
 #next 16-17 Der Flammenschlund
 
@@ -1690,8 +1690,8 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 16-17 Der Flammenschlund
 #version 11
-#group RestedXP Forever Dungeon Dungeonführer (H)
-#subgroup Dungeon Dungeonführer 1-22
+#group RestedXP Forever Dungeonführer (H)
+#subgroup Dungeonführer 1-22
 --#groupid RXP-SRGCE-H1
 #next 17-18 Ruinen von Lordaeron
 
@@ -2186,8 +2186,8 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 17-18 Ruinen von Lordaeron
 #version 11
-#group RestedXP Forever Dungeon Dungeonführer (H)
-#subgroup Dungeon Dungeonführer 1-22
+#group RestedXP Forever Dungeonführer (H)
+#subgroup Dungeonführer 1-22
 --#groupid RXP-SRGCE-H1
 #next 18-21 Das Brachland
 
@@ -2587,8 +2587,8 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 18-21 Das Brachland
 #version 11
-#group RestedXP Forever Dungeon Dungeonführer (H)
-#subgroup Dungeon Dungeonführer 1-22
+#group RestedXP Forever Dungeonführer (H)
+#subgroup Dungeonführer 1-22
 --#groupid RXP-SRGCE-H1
 #next 21-22 Die Höhlen des Wehklagens
 
@@ -4401,8 +4401,8 @@ RXPGuides.RegisterGuide([[
 #name 21-22 Die Höhlen des Wehklagens
 #next 22-24 Hügellandhof
 #version 11
-#group RestedXP Forever Dungeon Dungeonführer (H)
-#subgroup Dungeon Dungeonführer 1-22
+#group RestedXP Forever Dungeonführer (H)
+#subgroup Dungeonführer 1-22
 --#groupid RXP-SRGCE-H1
 
 step

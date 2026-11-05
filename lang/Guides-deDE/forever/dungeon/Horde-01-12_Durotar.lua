@@ -7,8 +7,8 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 1-6 Durotar
 #version 11
-#group RestedXP Forever Dungeon Dungeonführer (H)
-#subgroup Dungeon Dungeonführer 1-22
+#group RestedXP Forever Dungeonführer (H)
+#subgroup Dungeonführer 1-22
 --#groupid RXP-SRGCE-H1
 #defaultfor Troll/Orc
 #next 6-10 Durotar
@@ -16,7 +16,7 @@ RXPGuides.RegisterGuide([[
 
 step
 .enabledungeon RFC
-#include RestedXP Forever Dungeonführer (H)\1-6 Durotar
+#include RestedXP Forever Guide (H)\1-6 Durotar
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -24,15 +24,15 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 6-10 Durotar
 #version 11
-#group RestedXP Forever Dungeon Dungeonführer (H)
-#subgroup Dungeon Dungeonführer 1-22
+#group RestedXP Forever Dungeonführer (H)
+#subgroup Dungeonführer 1-22
 --#groupid RXP-SRGCE-H1
 #defaultfor Troll/Orc
 #next 10-12 Durotar
 
 step
 .enabledungeon RFC
-#include RestedXP Forever Dungeonführer (H)\6-10 Durotar
+#include RestedXP Forever Guide (H)\6-10 Durotar
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -40,8 +40,8 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 10-12 Durotar
 #version 11
-#group RestedXP Forever Dungeon Dungeonführer (H)
-#subgroup Dungeon Dungeonführer 1-22
+#group RestedXP Forever Dungeonführer (H)
+#subgroup Dungeonführer 1-22
 --#groupid RXP-SRGCE-H1
 #defaultfor Troll/Orc
 #next 10-12 Tirisfal (Orc/Troll) << !Hunter !Shaman !Tauren !Skyborne
@@ -50,7 +50,7 @@ RXPGuides.RegisterGuide([[
 
 step
 .enabledungeon RFC
-#include RestedXP Forever Dungeonführer (H)\10-12 Durotar
+#include RestedXP Forever Guide (H)\10-12 Durotar
 ]])
 
 
@@ -59,13 +59,13 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 10-12 Tirisfal (Orc/Troll)
 #version 11
-#group RestedXP Forever Dungeon Dungeonführer (H)
-#subgroup Dungeon Dungeonführer 1-22
+#group RestedXP Forever Dungeonführer (H)
+#subgroup Dungeonführer 1-22
 --#groupid RXP-SRGCE-H1
 #defaultfor !Hunter !Shaman !Tauren !Skyborne !Undead
 #next 12-14 Silberwald << !Hunter !Shaman !Tauren !Skyborne !Undead
 
 step
 .enabledungeon RFC
-#include RestedXP Forever Dungeonführer (H)\10-12 Tirisfal (Orc/Troll)
+#include RestedXP Forever Guide (H)\10-12 Tirisfal (Orc/Troll)
 ]])

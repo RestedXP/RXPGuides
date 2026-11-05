@@ -2,7 +2,7 @@ if GetLocale() ~= "deDE" then return end
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Druid SoD/Alliance Hunter SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Aufschlitzen - 12 (Dunkelküste) << Druid
 #name Meister der Tiere - 12 (Dunkelküste) << Hunter
@@ -41,7 +41,7 @@ step << Druid/Hunter
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Druid SoD/Alliance Hunter SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Zerfleischen - 8 (Teldrassil) << Druid
 #name Explosivschuss - 8 (Teldrassil) << Hunter
@@ -150,7 +150,7 @@ step << Druid
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Rogue SoD/Alliance Warrior SoD/Alliance Priest SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Brust << Rogue/Priest
 #subgroup Beine << Warrior
 #name Hinterhältiger Mord - 8 (Teldrassil) << Rogue
@@ -193,7 +193,7 @@ step << Priest
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Rogue SoD/Alliance Priest SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe << Rogue
 #subgroup Beine << Priest
 #name Verstümmeln - 8 (Teldrassil) << Rogue

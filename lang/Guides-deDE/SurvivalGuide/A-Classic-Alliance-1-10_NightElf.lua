@@ -48,7 +48,7 @@ step << Hunter
 step << Hunter
     #som--xpgate
     .goto Teldrassil,59.8,34.1
-    .xp 4-755 >> Farmt, bis ihr 755 EP von Stufe 4 entfernt seid (645/1400)
+    .xp 4-755 >> Farmt, bis ihr etwa 755xp von Stufe 4 entfernt seid (645/1400)
 step << Hunter
     .goto Teldrassil,54.593,32.992
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Iverron|r
@@ -125,7 +125,7 @@ step << Hunter
     #completewith htraining
     .goto Teldrassil,59.306,41.091
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Keina|r
-	.vendor >> |cRXP_BUY_Kauft 3 Stapel von|r |T132382:0|t[Rough Pfeile]
+	.vendor >> |cRXP_BUY_Kauft 3 Stapel|r |T132382:0|t[Rohe Pfeile]
     .target Keina
 step
     .goto Teldrassil,57.807,41.653
@@ -235,9 +235,9 @@ step
 step << skip --logout skip
 	#hardcore
 	#completewith next
-	+|cRXP_WARN_Ausloggen-Sprung auf dem Vorsprung hinter den |cRXP_LOOT_Webwood Eggs|r. Bewegt den Charakter von Euch, bis es so aussieht, als würde er schweben, dann loggt euch aus und wieder ein|r
-	>>|cRXP_WARN_Falls ihr herunterfallt, lauft einfach Normal aus der Höhle zum Questabgeber|r
-	.link https://www.youtube.com/watch?v=TTZZT3jpv1s >>|cRXP_WARN_Zwicken hier für einen Videoguide|r
+	+|cRXP_WARN_Ausloggen-Trick auf dem Sims hinter den |cRXP_LOOT_Waldweberei-Eier|r. Bewegt euren Charakter, bis es aussieht, als würdet ihr schweben, dann meldet euch ab und wieder an|r
+	>>|cRXP_WARN_Falls ihr herunterfällt, lauft einfach Normal aus der Höhle zum Quest-Abgabepunkt|r
+	.link https://www.youtube.com/watch?v=TTZZT3jpv1s >>|cRXP_WARN_Zwicken hier für einen Video-Leitfaden|r
 step
 	.goto Teldrassil,57.807,41.653
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Gilshalan Windwalker|r
@@ -431,12 +431,12 @@ step << Druid
     .goto Teldrassil,57.721,60.641
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Malorne Bladeleaf|r
     .train 2366 >> Erlernt |T136065:0|t[Kräuterkunde]
-    >>|T136065:0|t[Kräuterkunde] |cRXP_WARN_ist erforderlich, um später für eine Quest auf Stufe 15 5|r |T134187:0|t[Earthroot] |cRXP_WARN_zu sammeln. Ihr könnt es danach wieder verlernen|r
+    >>|T136065:0|t[Kräuterkunde] |cRXP_WARN_wird benötigt, um 5|r |T134187:0|t[Earthroot] |cRXP_WARN_für eine Quest auf Stufe 15. Ihr könnt es danach verlernen|r
     .target Malorne Bladeleaf
 step << Druid
     #completewith end
-    >>|cRXP_WARN_Bringt|r |T136065:0|t[Kräuterkunde] |cRXP_WARN_auf 15|r
-    >>|cRXP_WARN_Hackt 5 Earthroot vom Boden für eine spätere Quest auf Stufe 15|r
+    >>|cRXP_WARN_St.|r |T136065:0|t[Kräuterkunde] |cRXP_WARN_auf 15|r
+    >>|cRXP_WARN_Hackt 5 Erdwurz vom Boden für eine Quest auf Stufe 15 später|r
     .collect 2449,5
 step << Priest
     .goto Teldrassil,57.242,63.511
@@ -493,7 +493,7 @@ step
     >>Tötet |cRXP_ENEMY_Nachtsäbler|r. Plündert sie für ihre |cRXP_LOOT_Fangzähne|r
     >>Tötet |cRXP_ENEMY_Strigideule|r. Plündert sie für |cRXP_LOOT_Federn|r
     >>Tötet |cRXP_ENEMY_Waldweberlauerer|r. Plündert sie für |cRXP_LOOT_Seide|r
-    >>|cRXP_WARN_Bewahrt alle|r |T132832:0|t[Klein Eggs] |cRXP_WARN_und|r |T134321:0|t[Kleine Spinne Beinchen] |cRXP_WARN_auf, um später |T133971:0|t[Kochkunst] zu steigern|r
+    >>|cRXP_WARN_Speichert einige|r |T132832:0|t[Kleine Eier] |cRXP_WARN_und|r |T134321:0|t[Kleine Spinne Beinchen] |cRXP_WARN_zum Leveln von |T133971:0|t[Kochkunst] |cRXP_WARN_später|r
     .complete 488,1 --Collect Nightsaber Fang (x3)
     .mob +Nightsaber
     .goto Teldrassil,66.10,52.43,60,0
@@ -612,7 +612,7 @@ step
     .mob Gnarlpine Mystic
 step
 	.goto Teldrassil,69.37,53.41
-	>>Tötet |cRXP_ENEMY_Ferocitas der Traumfresser|r. Beute ihn für den |T133288:0|t[|cRXP_LOOT_Gnarlpine Halskette|r]
+	>>Tötet |cRXP_ENEMY_Ferocitas der Traumfresser|r. Sammelt die Beute |T133288:0|t[|cRXP_LOOT_Gnarlpine-Halskette|r]
     .use 8049 >>|cRXP_WARN_Benutzt die |T133288:0|t[|cRXP_LOOT_Halskette der Knarzklauen|r] zum Plündern von|r |cRXP_LOOT_Tallonkais Juwel|r
     .complete 2459,2 --Collect Tallonkai's Jewel (x1)
     .mob Ferocitas the Dream Eater
@@ -804,7 +804,7 @@ step << Hunter skip
     #era/som--xpgate
     #sticky
     #label xp10
-    .xp 10-3330 >> Farmt, bis euch 3330 EP bis Stufe 10 fehlen (3170/6500)
+    .xp 10-3330 >> Farmt bis ihr 3330 XP vor Level 10 seid (3170/6500)
     >>|cRXP_WARN_Sobald ihr diese XP-Schwelle erreicht, überspringt die Harpyien-/Eskorte-Quest und geht direkt nach Darnassus. Ihr werdet eine weitere Gelegenheit haben, diese Quests später zu machen|r
 step << Hunter
 	#era/som
@@ -1225,7 +1225,7 @@ step
     .goto Darnassus,56.245,54.039,-1
     .goto Darnassus,56.374,51.820,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit einem |cRXP_FRIENDLY_Darnassus Auktionator|r
-    >>Kauft die folgenden Gegenstände für baldige sofortige Questabgaben in Dunkelküste. Überspringt diesen Schritt, wenn ihr nichts kaufen möchtet
+    >>Kauft die folgenden Gegenstände für sofortige Abgaben in Dunkelküste in Kürze. Überspringt diesen Schritt, wenn ihr nichts kaufen möchtet
     >>|T133972:0|t[Schreiterfleisch]
     >>|T133912:0|t[Dunkelküstenbarsch]
     .collect 5469,5,2178,1 -- Strider Meat (5)
@@ -1324,7 +1324,7 @@ step << Druid
     .goto Darnassus,47.95,68.03
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Firodren Mooncaller|r
     .train 2366 >> Erlernt |T136065:0|t[Kräuterkunde]
-    >>|T136065:0|t[Kräuterkunde] |cRXP_WARN_ist erforderlich, um später für eine Quest auf Stufe 15 5|r |T134187:0|t[Earthroot] |cRXP_WARN_zu sammeln. Ihr könnt es danach wieder verlernen|r
+    >>|T136065:0|t[Kräuterkunde] |cRXP_WARN_wird benötigt, um 5|r |T134187:0|t[Earthroot] |cRXP_WARN_für eine Quest auf Stufe 15. Ihr könnt es danach verlernen|r
     .target Firodren Mooncaller
 step << Hunter/Warrior/Priest
     .goto Darnassus,57.56,46.73

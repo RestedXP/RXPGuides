@@ -4,7 +4,7 @@ if addon.GetSeason() ~= 2 then return end
 RXPGuides.RegisterGuide([[
 #classic
 << Warrior SoD/Hunter SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Beine << Warrior
 #subgroup Brust << Hunter
 #name NPCs Runen
@@ -49,7 +49,7 @@ step << Hunter
 RXPGuides.RegisterGuide([[
 #classic
 << Rogue SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Beine
 #name Vergiften - 25 (Hügellandhof)
 #title Vergiften
@@ -95,7 +95,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Rogue SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Halsabschneider - 25 (Dämmerwald)
 #title Halsabschneider
@@ -135,7 +135,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Druid SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Brust
 #name Wilde Stöße - 14 (Steinkrallengebirge)
 #title Wilde Stöße
@@ -168,7 +168,7 @@ step << Druid
 RXPGuides.RegisterGuide([[
 #classic
 << Druid SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Beine
 #name Sternensog - 25 (Sumpfland)
 #title Sternensog
@@ -206,7 +206,7 @@ step << Druid
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Brust << Priest/Hunter/Druid/Warrior/Shaman
 #subgroup Beine << Warlock/Paladin
 #subgroup Handschuhe << Rogue
@@ -265,7 +265,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Brust << Shaman/Rogue
 #subgroup Beine << Mage/Warlock/Hunter
 #subgroup Handschuhe << Paladin/Warrior/Priest/Druid
@@ -336,7 +336,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Druid SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Wildwuchs - 25 (Multiple Zones)
 #title Wildwuchs
@@ -425,7 +425,7 @@ step << Druid
 RXPGuides.RegisterGuide([[
 #classic
 << Warrior SoD/Mage SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Brust << Warrior
 #subgroup Beine << Mage
 #name Dämmerwald Lich Runen
@@ -482,7 +482,7 @@ step << Mage
 RXPGuides.RegisterGuide([[
 #classic
 << Warrior SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Brust
 #name Wütender Schlag - 25 (Multiple Zones)
 #title Wütender Schlag
@@ -563,7 +563,7 @@ step << Warrior
 RXPGuides.RegisterGuide([[
 #classic
 << Priest SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Brust
 #name Kraftvolle Seele - 22 (Eschental)
 #title Kraftvolle Seele
@@ -604,7 +604,7 @@ step << Priest
 RXPGuides.RegisterGuide([[
 #classic
 << Priest SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Armschienen
 #name Machtwort: Barrieree - 22 (Rotkammgebirge)
 #title Machtwort: Barriere
@@ -639,7 +639,7 @@ step << Priest
 RXPGuides.RegisterGuide([[
 #classic
 << Priest SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Kreis der Heilung - 25 (Dämmerwald)
 #title Kreis der Heilung
@@ -676,7 +676,7 @@ step << Priest
 RXPGuides.RegisterGuide([[
 #classic
 << Hunter SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Brust
 #name Kobrastöße - 25 (Vorgebirge des Hügellands)
 #title Kobrastöße
@@ -718,7 +718,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Hunter SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Beine
 #name Tötet Schuss - 25 (Multiple Zones)
 #title Tödlicher Schuss
@@ -807,7 +807,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 << SoD
 #subgroup Brust << Shaman
 #subgroup Gürtel << Warrior/Hunter/Mage/Paladin
@@ -1223,7 +1223,7 @@ RXPGuides.RegisterGuide([[
 
 #classic
 << SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Gürtel << Druid/Priest/Rogue/Warlock
 #subgroup Stiefel << Mage/Shaman/Hunter/Paladin/Warrior
 #name Desolace Kette Runen
@@ -1482,7 +1482,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Zauber Books
 #name Zauber Buch Runen
 
@@ -1598,7 +1598,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Hunter SoD/Druid SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Stiefel
 #name Bugcatcher Runen
 #displayname Flügeldrachenstoß - 35 (Azeroth) << Hunter
@@ -1709,7 +1709,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Extras
 #subweight -1
 #name Cozy Schlafen Tasche - 14
@@ -1803,7 +1803,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Helm <<Druid/Shaman/Warrior
 #subgroup Armschienen <<Mage/Hunter/Paladin/Priest/Rogue/Warlock
 #name Smaragdschutzens Runen
@@ -1872,7 +1872,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Helm <<Mage/Hunter/Paladin/Priest/Rogue/Warlock
 #subgroup Armschienen <<Druid/Shaman/Warrior
 #name Wild Opfergabe Runen
@@ -1943,7 +1943,7 @@ RXPGuides.RegisterGuide([[
 <<Warlock/Priest/Mage/Paladin
 << SoD
 #classic
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Helm <<Warlock
 #subgroup Armschienen <<Paladin/Priest/Mage
 #name Ley Kristall Runen
@@ -1989,7 +1989,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Shaman SoD/Priest SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Helm
 #title Geistige Gewandtheit << Shaman
 #title Schmerz und Leid << Priest
@@ -2058,7 +2058,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Warrior SoD/Hunter SoD/Rogue SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Läuten
 #title Distanzwaffen-Spezialisierung
 #name Distanzwaffen-Spezialisierung - 58 (Die Östlichen Pestländer)
@@ -2087,7 +2087,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Priest SoD/Paladin SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Läuten
 #title Macht des Glaubens
 #name Macht des Glaubens - 60 (Die Östlichen Pestländer)
@@ -2116,7 +2116,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Mage SoD/Druid SoD/Hunter SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Läuten
 #title Arkan-Spezialisierungen
 #name Arkan-Spezialisierungen - 60 (Westliche Pestländer)
@@ -2143,7 +2143,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Hunter SoD/Paladin SoD/Warrior SoD/Shaman SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Läuten
 #title Axt-Spezialisierung
 #name Axt-Spezialisierung - 58 (Brennende Steppe)
@@ -2167,7 +2167,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Hunter SoD/Druid SoD/Warrior SoD/Shaman SoD/Mage SoD/Priest SoD/Rogue SoD/Warlock SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Läuten
 #title Dolch-Spezialisierung
 #name Dolch-Spezialisierung - 60 (Silithus)
@@ -2191,7 +2191,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Druid SoD/Warrior SoD/Shaman SoD/Rogue SoD/Warlock SoD/Paladin SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Läuten
 #title Verteidigungsspezialisierung
 #name Verteidigungsspezialisierung - 60 (Der Schwarzfels)
@@ -2217,7 +2217,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Druid SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Läuten
 #title Wildkampf-Spezialisierung
 #name Wildkampf-Spezialisierung - 60 (Winterquell)
@@ -2241,7 +2241,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Hunter SoD/Mage SoD/Shaman SoD/Warlock SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Läuten
 #title Feuer-Spezialisierung
 #name Feuer-Spezialisierung - 52 (Sengende Schlucht)
@@ -2269,7 +2269,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Hunter SoD/Warrior SoD/Rogue SoD/Druid SoD/Shaman SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Läuten
 #title Faustwaffen-Spezialisierung
 #name Faustwaffen-Spezialisierung - 60 (Silithus)
@@ -2291,7 +2291,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Mage SoD/Hunter SoD/Shaman SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Läuten
 #title Frostschaden-Spezialisierung
 #name Frostschaden-Spezialisierung - 60 (Winterquell)
@@ -2315,7 +2315,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Druid SoD/Rogue SoD/Shaman SoD/Hunter SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Läuten
 #title Natur-Spezialisierung
 #name Natur-Spezialisierung - 56 (Teufelswald)
@@ -2339,7 +2339,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Warrior SoD/Rogue SoD/Shaman SoD/Paladin SoD/Priest SoD/Druid SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Läuten
 #title Streitkolben-Spezialisierung
 #name Streitkolben-Spezialisierung - 60 (Sumpfland)
@@ -2365,7 +2365,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Warrior SoD/Warlock SoD/Shaman SoD/Mage SoD/Priest SoD/Druid SoD/Hunter SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Läuten
 #title Stangenwaffen-Spezialisierung
 #name Stangenwaffen-Spezialisierung - 60 (Azshara)
@@ -2389,7 +2389,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Warlock SoD/Priest SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Läuten
 #title Schatten-Spezialisierung
 #name Schatten-Spezialisierung - 60 (Verwüstete Lande)
@@ -2413,7 +2413,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Hunter SoD/Warrior SoD/Rogue SoD/Paladin SoD/Mage SoD/Warlock SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Läuten
 #title Schwert-Spezialisierung
 #name Schwert-Spezialisierung - 60 (Gebirgspass der Totenwinde)
@@ -2439,7 +2439,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Hunter SoD/Druid SoD/Shaman SoD/Paladin SoD/Mage SoD/Warlock SoD/Priest SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Läuten
 #title Meditationsspezialisierung
 #name Meditationsspezialisierung - 30 (Tausend Nadeln)
@@ -2463,7 +2463,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Druid SoD/Shaman SoD/Paladin SoD/Mage SoD/Priest SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Läuten
 #title Heilungsspezialisierung
 #name Heilungsspezialisierung - 40 (Arathihochland)

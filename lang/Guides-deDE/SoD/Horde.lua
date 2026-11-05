@@ -2,7 +2,7 @@ if GetLocale() ~= "deDE" then return end
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warrior SoD/Horde Hunter SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Beine << Warrior
 #subgroup Handschuhe << Hunter
 #name Wütender Donner - 10 (Mulgore) << Warrior
@@ -46,7 +46,7 @@ step << Hunter
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warrior SoD/Horde Hunter SoD
-#group RestedXP Rune & Books Dungeonführer
+#group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe << Warrior
 #subgroup Beine << Hunter
 #name Rasanter Schlag - 18 (The Barrens) << Warrior

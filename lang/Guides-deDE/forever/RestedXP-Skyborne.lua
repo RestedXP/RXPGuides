@@ -7,10 +7,10 @@ RXPGuides.RegisterGuide([[
 #name 1-9 Zephras Isle
 #displayname 1-9 Skyborne << Alliance
 #displayname 1-9 Skyborne << Horde
-#group RestedXP Forever Dungeonführer (A) << Alliance
-#group RestedXP Forever Dungeonführer (H) << Horde
-#subgroup Speedrun Dungeonführer 1-20 << Alliance
-#subgroup Speedrun Dungeonführer 1-22 << Horde
+#group RestedXP Forever Guide (A) << Alliance
+#group RestedXP Forever Guide (H) << Horde
+#subgroup Speedrun Guide 1-20 << Alliance
+#subgroup Speedrun Guide 1-22 << Horde
 #next 9-13 Zephras Isle
 #defaultfor Skyborne
 
@@ -3223,10 +3223,10 @@ RXPGuides.RegisterGuide([[
 #name 9-13 Zephras Isle
 #displayname 9-13 Skyborne << Alliance
 #displayname 9-12 Skyborne << Horde
-#group RestedXP Forever Dungeonführer (A) << Alliance
-#group RestedXP Forever Dungeonführer (H) << Horde
-#subgroup Speedrun Dungeonführer 1-20 << Alliance
-#subgroup Speedrun Dungeonführer 1-22 << Horde
+#group RestedXP Forever Guide (A) << Alliance
+#group RestedXP Forever Guide (H) << Horde
+#subgroup Speedrun Guide 1-20 << Alliance
+#subgroup Speedrun Guide 1-22 << Horde
 #next 13-15 Westfall << Alliance !Hunter
 #next 14-16 Dunkelküste << Alliance Hunter
 #next 12-14 Silberwald << Horde !Hunter

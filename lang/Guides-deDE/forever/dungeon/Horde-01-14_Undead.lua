@@ -6,8 +6,8 @@ RXPGuides.RegisterGuide([[
 #forever
 << Horde
 #version 11
-#group RestedXP Forever Dungeon Dungeonführer (H)
-#subgroup Dungeon Dungeonführer 1-22
+#group RestedXP Forever Dungeonführer (H)
+#subgroup Dungeonführer 1-22
 --#groupid RXP-SRGCE-H1
 #defaultfor Undead
 #name 1-6 Tirisfal
@@ -15,7 +15,7 @@ RXPGuides.RegisterGuide([[
 
 step
 .enabledungeon RFC
-#include RestedXP Forever Dungeonführer (H)\1-6 Tirisfal
+#include RestedXP Forever Guide (H)\1-6 Tirisfal
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -24,21 +24,21 @@ RXPGuides.RegisterGuide([[
 #name 6-12 Tirisfal Wälder
 #displayname 6-13 Tirisfal Wälder << Paladin
 #version 11
-#group RestedXP Forever Dungeon Dungeonführer (H)
-#subgroup Dungeon Dungeonführer 1-22
+#group RestedXP Forever Dungeonführer (H)
+#subgroup Dungeonführer 1-22
 --#groupid RXP-SRGCE-H1
 #defaultfor Undead
 #next 12-14 Silberwald; 12-17 das Brachland
 
 step
 .enabledungeon RFC
-#include RestedXP Forever Dungeonführer (H)\6-12 Tirisfal
+#include RestedXP Forever Guide (H)\6-12 Tirisfal
 ]])
 
 
 RXPGuides.RegisterGuide([[
-#group RestedXP Forever Dungeon Dungeonführer (H)
-#subgroup Dungeon Dungeonführer 1-22
+#group RestedXP Forever Dungeonführer (H)
+#subgroup Dungeonführer 1-22
 --#groupid RXP-SRGCE-H1
 << Horde
 #version 11
@@ -53,5 +53,5 @@ RXPGuides.RegisterGuide([[
 step
 .enabledungeon RFC
 .enabledungeon ROL
-#include RestedXP Forever Dungeonführer (H)\12-14 Silberwald
+#include RestedXP Forever Guide (H)\12-14 Silberwald
 ]])
