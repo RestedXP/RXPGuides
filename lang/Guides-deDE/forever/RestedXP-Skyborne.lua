@@ -7,10 +7,10 @@ RXPGuides.RegisterGuide([[
 #name 1-9 Zephras Isle
 #displayname 1-9 Skyborne << Alliance
 #displayname 1-9 Skyborne << Horde
-#group RestedXP Forever Guide (A) << Alliance
-#group RestedXP Forever Guide (H) << Horde
-#subgroup Speedrun Guide 1-20 << Alliance
-#subgroup Speedrun Guide 1-22 << Horde
+#group RestedXP Forever Route (A) << Alliance
+#group RestedXP Forever Route (H) << Horde
+#subgroup Schnellste Route 1-20 << Alliance
+#subgroup Schnellste Route 1-22 << Horde
 #next 9-13 Zephras Isle
 #defaultfor Skyborne
 
@@ -3223,10 +3223,10 @@ RXPGuides.RegisterGuide([[
 #name 9-13 Zephras Isle
 #displayname 9-13 Skyborne << Alliance
 #displayname 9-12 Skyborne << Horde
-#group RestedXP Forever Guide (A) << Alliance
-#group RestedXP Forever Guide (H) << Horde
-#subgroup Speedrun Guide 1-20 << Alliance
-#subgroup Speedrun Guide 1-22 << Horde
+#group RestedXP Forever Route (A) << Alliance
+#group RestedXP Forever Route (H) << Horde
+#subgroup Schnellste Route 1-20 << Alliance
+#subgroup Schnellste Route 1-22 << Horde
 #next 13-15 Westfall << Alliance !Hunter
 #next 14-16 Dunkelküste << Alliance Hunter
 #next 12-14 Silberwald << Horde !Hunter
@@ -3237,7 +3237,7 @@ step
     #optional
     .isQuestAvailable 92550,93927 --Havoc in the Highlands; A Last Request
     +|cRXP_WARN_Schließt den 1-9-Skyborne-Leitfaden ab, bevor ihr fortfahrt. Dieser Leitfaden erfordert die Quests aus Teil 1|r.
-    .clicknext RestedXP Forever Guide (A)\1-9 Zephras Isle >>HIER KLICKEN FÜR DEN 1-9 SKYBORNE-LEITFADEN << Alliance
+    .clicknext RestedXP Forever Guide (A)\1-9 Zephras Isle >>HIER KLICKEN FÜR DEN 1-9 SKYBORNE-ROUTE << Alliance
     .clicknext RestedXP Forever Guide (H)\1-9 Zephras Isle >>HIER KLICKEN FÜR DEN 1-9 SKYBORNE-LEITFADEN << Horde
 step
     #completewith LeaveZephrasIsle

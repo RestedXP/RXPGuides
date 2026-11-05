@@ -15,7 +15,7 @@ RXPGuides.RegisterGuide([[
 
 step
 .enabledungeon RFC
-#include RestedXP Forever Guide (H)\1-6 Mulgore
+#include RestedXP Forever Route (H)\1-6 Mulgore
 ]])
 
 
@@ -33,5 +33,5 @@ RXPGuides.RegisterGuide([[
 
 step
 .enabledungeon RFC
-#include RestedXP Forever Guide (H)\6-12 Mulgore
+#include RestedXP Forever Route (H)\6-12 Mulgore
 ]])

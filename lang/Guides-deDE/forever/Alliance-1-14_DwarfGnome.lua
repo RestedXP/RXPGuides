@@ -8,8 +8,8 @@ RXPGuides.RegisterGuide([[
 #season 0,1
 #version 1
 << Alliance
-#group RestedXP Forever Guide (A)
-#subgroup Speedrun Guide 1-20
+#group RestedXP Forever Route (A)
+#subgroup Schnellste Route 1-20
 --#groupid RXP-SRGCE-A1
 #name 1-5 Das Eisklammtal
 #next 5-11 Dun Morogh
@@ -659,8 +659,8 @@ RXPGuides.RegisterGuide([[
 #season 0,1
 #version 1
 << Alliance
-#group RestedXP Forever Guide (A)
-#subgroup Speedrun Guide 1-20
+#group RestedXP Forever Route (A)
+#subgroup Schnellste Route 1-20
 --#groupid RXP-SRGCE-A1
 #name 5-11 Dun Morogh
 #next 11-12 Elwynn (Zwerge/Gnome);11-12 Leerwandler-Quest;12-14 Loch Modan (Zwerge/Gnome);11-13 Loch Modan (Jäger)
@@ -2793,8 +2793,8 @@ RXPGuides.RegisterGuide([[
 #disabledungeons
 #season 0,1
 << Alliance !Hunter
-#group RestedXP Forever Guide (A)
-#subgroup Speedrun Guide 1-20
+#group RestedXP Forever Route (A)
+#subgroup Schnellste Route 1-20
 --#groupid RXP-SRGCE-A1
 #name 11-12 Elwynn (Zwerge/Gnome)
 #version 1
@@ -3458,8 +3458,8 @@ RXPGuides.RegisterGuide([[
 #season 0,1
 #version 1
 << Alliance !Hunter
-#group RestedXP Forever Guide (A)
-#subgroup Speedrun Guide 1-20
+#group RestedXP Forever Route (A)
+#subgroup Schnellste Route 1-20
 --#groupid RXP-SRGCE-A1
 #name 12-14 Loch Modan (Zwerge/Gnome)
 #next 13-15 Westfall;14-16 Dunkelküste
@@ -4459,8 +4459,8 @@ RXPGuides.RegisterGuide([[
 #era/som--h
 #version 1
 << Alliance Hunter
-#group RestedXP Forever Guide (A)
-#subgroup Speedrun Guide 1-20
+#group RestedXP Forever Route (A)
+#subgroup Schnellste Route 1-20
 --#groupid RXP-SRGCE-A1
 #name 11-13 Loch Modan (Jäger)
 #next 14-16 Dunkelküste

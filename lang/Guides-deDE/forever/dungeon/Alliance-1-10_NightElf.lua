@@ -14,7 +14,7 @@ RXPGuides.RegisterGuide([[
 #defaultfor NightElf
 #next 6-11 Teldrassil
 step
-#include RestedXP Forever Guide (A)\1-6 Laubschattental
+#include RestedXP Forever Route (A)\1-6 Laubschattental
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -30,5 +30,5 @@ RXPGuides.RegisterGuide([[
 #next 11-16 Dunkelküste/Loch Modan
 
 step
-#include RestedXP Forever Guide (A)\6-11 Teldrassil
+#include RestedXP Forever Route (A)\6-11 Teldrassil
 ]])

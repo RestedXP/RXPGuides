@@ -10,8 +10,8 @@ RXPGuides.RegisterGuide([[
 #displayname 14-18 Das Brachland << !Shaman !Hunter !Tauren
 #displayname 15-18 Das Brachland << Paladin
 #version 11
-#group RestedXP Forever Guide (H)
-#subgroup Speedrun Guide 1-22
+#group RestedXP Forever Route (H)
+#subgroup Schnellste Route 1-22
 --#groupid RXP-SRGCE-H1
 #next 17-22 Steinkrallengebirge/Brachland/Eschental
 
@@ -2584,8 +2584,8 @@ RXPGuides.RegisterGuide([[
 #name 17-22 Steinkrallengebirge/Brachland/Eschental
 #displayname 18-22 Steinkrallengebirge/Brachland/Eschental << !Shaman !Hunter !Tauren
 #version 11
-#group RestedXP Forever Guide (H)
-#subgroup Speedrun Guide 1-22
+#group RestedXP Forever Route (H)
+#subgroup Schnellste Route 1-22
 --#groupid RXP-SRGCE-H1
 #next 22-24 Hügellandhof
 

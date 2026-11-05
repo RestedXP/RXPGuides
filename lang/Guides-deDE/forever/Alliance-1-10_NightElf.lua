@@ -10,8 +10,8 @@ RXPGuides.RegisterGuide([[
 #name 1-6 Laubschattental
 #displayname 1-7 Laubschattental << sod
 #version 1
-#group RestedXP Forever Guide (A)
-#subgroup Speedrun Guide 1-20
+#group RestedXP Forever Route (A)
+#subgroup Schnellste Route 1-20
 --#groupid RXP-SRGCE-A1
 #defaultfor NightElf
 #next 6-11 Teldrassil
@@ -451,8 +451,8 @@ RXPGuides.RegisterGuide([[
 #name 6-11 Teldrassil
 #displayname 7-13 Teldrassil << SoD
 #version 1
-#group RestedXP Forever Guide (A)
-#subgroup Speedrun Guide 1-20
+#group RestedXP Forever Route (A)
+#subgroup Schnellste Route 1-20
 --#groupid RXP-SRGCE-A1
 #defaultfor NightElf
 #next 14-16 Dunkelküste

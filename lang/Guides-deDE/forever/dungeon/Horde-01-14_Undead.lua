@@ -15,7 +15,7 @@ RXPGuides.RegisterGuide([[
 
 step
 .enabledungeon RFC
-#include RestedXP Forever Guide (H)\1-6 Tirisfal
+#include RestedXP Forever Route (H)\1-6 Tirisfal
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -32,7 +32,7 @@ RXPGuides.RegisterGuide([[
 
 step
 .enabledungeon RFC
-#include RestedXP Forever Guide (H)\6-12 Tirisfal
+#include RestedXP Forever Route (H)\6-12 Tirisfal
 ]])
 
 
@@ -53,5 +53,5 @@ RXPGuides.RegisterGuide([[
 step
 .enabledungeon RFC
 .enabledungeon ROL
-#include RestedXP Forever Guide (H)\12-14 Silberwald
+#include RestedXP Forever Route (H)\12-14 Silberwald
 ]])

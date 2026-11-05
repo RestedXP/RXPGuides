@@ -12,9 +12,9 @@ RXPGuides.RegisterGuide([[
 #next 17-18 Die Halle der Thanen
 
 step
-    #include RestedXP Forever Guide (A)\14-16 Dunkelküste@WashedA-DarkshoreEndNE
+    #include RestedXP Forever Route (A)\14-16 Dunkelküste@WashedA-DarkshoreEndNE
 step
-    #include RestedXP Forever Guide (A)\15-16 Loch Modan@SWBoat-IFExit
+    #include RestedXP Forever Route (A)\15-16 Loch Modan@SWBoat-IFExit
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gastwirt Feuerbräu|r
     .goto 1455/0,-856.69,-4841.490
@@ -103,7 +103,7 @@ step
     .turnin 96390 >> Gebt die Quest Erstickt sie im Keim ab
     .target Earthseer Farsen
 step
-    #include RestedXP Forever Guide (A)\15-16 Loch Modan@LochEnter-LochEnd
+    #include RestedXP Forever Route (A)\15-16 Loch Modan@LochEnter-LochEnd
 step << NightElf Druid
     #completewith next
 	.cast 18960 >> Caste Teleportieren: Moonglade

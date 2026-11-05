@@ -9,8 +9,8 @@ RXPGuides.RegisterGuide([[
 << Alliance !NightElf
 #name 13-15 Westfall
 #displayname 14-15 Westfall << Dwarf/Gnome
-#group RestedXP Forever Guide (A)
-#subgroup Speedrun Guide 1-20
+#group RestedXP Forever Route (A)
+#subgroup Schnellste Route 1-20
 --#groupid RXP-SRGCE-A1
 #next 14-16 Dunkelküste
 #defaultfor !NightElf !Hunter/!Dwarf !Hunter/!Human !Hunter/!Skyborne !Hunter
@@ -812,8 +812,8 @@ RXPGuides.RegisterGuide([[
 #disabledungeons
 #version 1
 << Alliance
-#group RestedXP Forever Guide (A)
-#subgroup Speedrun Guide 1-20
+#group RestedXP Forever Route (A)
+#subgroup Schnellste Route 1-20
 --#groupid RXP-SRGCE-A1
 #name 14-16 Dunkelküste
 #displayname 11-16 Dunkelküste/Loch Modan << NightElf
@@ -2856,8 +2856,8 @@ RXPGuides.RegisterGuide([[
 #version 1
 << Alliance
 #defaultfor None
-#group RestedXP Forever Guide (A)
-#subgroup Speedrun Guide 1-20
+#group RestedXP Forever Route (A)
+#subgroup Schnellste Route 1-20
 --#groupid RXP-SRGCE-A1
 #name 15-16 Loch Modan
 step
@@ -3618,8 +3618,8 @@ RXPGuides.RegisterGuide([[
 #disabledungeons
 #version 1
 << Alliance
-#group RestedXP Forever Guide (A)
-#subgroup Speedrun Guide 1-20
+#group RestedXP Forever Route (A)
+#subgroup Schnellste Route 1-20
 --#groupid RXP-SRGCE-A1
 #name 16-19 Dunkelküste
 #next 19-20 Rotkammgebirge;20-21 Dunkelküste/Eschental << !Hunter
@@ -4890,8 +4890,8 @@ RXPGuides.RegisterGuide([[
 #disabledungeons
 #version 1
 << Alliance !Hunter
-#group RestedXP Forever Guide (A)
-#subgroup Speedrun Guide 1-20
+#group RestedXP Forever Route (A)
+#subgroup Schnellste Route 1-20
 --#groupid RXP-SRGCE-A1
 #name 19-20 Rotkammgebirge
 #next 20-21 Dunkelküste/Eschental
@@ -6120,11 +6120,11 @@ RXPGuides.RegisterGuide([[
 #disabledungeons
 #version 1
 << Alliance Hunter
-#group RestedXP Forever Guide (A)
-#subgroup Speedrun Guide 1-20
+#group RestedXP Forever Route (A)
+#subgroup Schnellste Route 1-20
 --#groupid RXP-SRGCE-A1
 #name 19-21 Dunkelküste/Eschental
-#next RestedXP Forever Guide (A)\21-23 Eschental/Steinkrallengebirge
+#next RestedXP Forever Route (A)\21-23 Eschental/Steinkrallengebirge
 
 step
     #optional
@@ -6746,11 +6746,11 @@ RXPGuides.RegisterGuide([[
 #disabledungeons
 #version 1
 << Alliance !Hunter
-#group RestedXP Forever Guide (A)
-#subgroup Speedrun Guide 1-20
+#group RestedXP Forever Route (A)
+#subgroup Schnellste Route 1-20
 --#groupid RXP-SRGCE-A1
 #name 20-21 Dunkelküste/Eschental
-#next RestedXP Forever Guide (A)\21-23 Steinkrallengebirge/Ashenvale
+#next RestedXP Forever Route (A)\21-23 Steinkrallengebirge/Ashenvale
 
 
 step << Druid

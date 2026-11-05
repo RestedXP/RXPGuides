@@ -15,7 +15,7 @@ RXPGuides.RegisterGuide([[
 
 
 step
-#include RestedXP Forever Guide (A)\1-6 Nordhain
+#include RestedXP Forever Route (A)\1-6 Nordhain
 ]])
 
 
@@ -31,7 +31,7 @@ RXPGuides.RegisterGuide([[
 #defaultfor Human
 
 step
-#include RestedXP Forever Guide (A)\6-11 Wald von Elwynn
+#include RestedXP Forever Route (A)\6-11 Wald von Elwynn
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -46,5 +46,5 @@ RXPGuides.RegisterGuide([[
 #defaultfor Human
 
 step
-    #include RestedXP Forever Guide (A)\11-13 Loch Modan@NormalRouteStart-NormalRouteEnd
+    #include RestedXP Forever Route (A)\11-13 Loch Modan@NormalRouteStart-NormalRouteEnd
 ]])

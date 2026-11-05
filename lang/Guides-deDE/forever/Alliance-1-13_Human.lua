@@ -9,8 +9,8 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #name 1-6 Nordhain
 #version 1
-#group RestedXP Forever Guide (A)
-#subgroup Speedrun Guide 1-20
+#group RestedXP Forever Route (A)
+#subgroup Schnellste Route 1-20
 --#groupid RXP-SRGCE-A1
 #defaultfor Human
 #next 6-11 Wald von Elwynn
@@ -787,8 +787,8 @@ RXPGuides.RegisterGuide([[
 #season 0,1
 #version 1
 << Alliance
-#group RestedXP Forever Guide (A)
-#subgroup Speedrun Guide 1-20
+#group RestedXP Forever Route (A)
+#subgroup Schnellste Route 1-20
 --#groupid RXP-SRGCE-A1
 #name 6-11 Wald von Elwynn
 #displayname 6-13 Wald von Elwynn << SoD
@@ -4135,8 +4135,8 @@ RXPGuides.RegisterGuide([[
 #season 0,1
 #version 1
 << Alliance
-#group RestedXP Forever Guide (A)
-#subgroup Speedrun Guide 1-20
+#group RestedXP Forever Route (A)
+#subgroup Schnellste Route 1-20
 --#groupid RXP-SRGCE-A1
 #name 11-13 Loch Modan
 #displayname 13-15 Loch Modan << SoD

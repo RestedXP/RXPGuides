@@ -9,8 +9,8 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 1-6 Mulgore
 #version 11
-#group RestedXP Forever Guide (H)
-#subgroup Speedrun Guide 1-22
+#group RestedXP Forever Route (H)
+#subgroup Schnellste Route 1-22
 --#groupid RXP-SRGCE-H1
 #defaultfor Tauren
 #next 6-12 Mulgore;6-13 Mulgore
@@ -479,8 +479,8 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 6-12 Mulgore
 #version 11
-#group RestedXP Forever Guide (H)
-#subgroup Speedrun Guide 1-22
+#group RestedXP Forever Route (H)
+#subgroup Schnellste Route 1-22
 --#groupid RXP-SRGCE-H1
 #defaultfor Tauren
 #next 12-17 das Brachland

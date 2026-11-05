@@ -14,7 +14,7 @@ RXPGuides.RegisterGuide([[
 #defaultfor Dwarf/Gnome
 
 step
-#include RestedXP Forever Guide (A)\1-5 Das Eisklammtal
+#include RestedXP Forever Route (A)\1-5 Das Eisklammtal
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -29,7 +29,7 @@ RXPGuides.RegisterGuide([[
 #defaultfor Dwarf/Gnome
 
 step
-#include RestedXP Forever Guide (A)\5-11 Dun Morogh
+#include RestedXP Forever Route (A)\5-11 Dun Morogh
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -44,7 +44,7 @@ RXPGuides.RegisterGuide([[
 #next 12-14 Loch Modan (Zwerg/Gnom)
 
 step
-#include RestedXP Forever Guide (A)\11-12 Elwynn (Zwerge/Gnome)
+#include RestedXP Forever Route (A)\11-12 Elwynn (Zwerge/Gnome)
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -59,7 +59,7 @@ RXPGuides.RegisterGuide([[
 #defaultfor Gnome/Dwarf
 
 step
-#include RestedXP Forever Guide (A)\12-14 Loch Modan (Zwerge/Gnome)
+#include RestedXP Forever Route (A)\12-14 Loch Modan (Zwerge/Gnome)
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -74,5 +74,5 @@ RXPGuides.RegisterGuide([[
 #defaultfor Dwarf
 
 step
-#include RestedXP Forever Guide (A)\11-13 Loch Modan (Jäger)@NormalRouteStart-NormalRouteEnd
+#include RestedXP Forever Route (A)\11-13 Loch Modan (Jäger)@NormalRouteStart-NormalRouteEnd
 ]])
