@@ -5825,7 +5825,8 @@ step << Alliance
     .goto 2521,58.81,43.57,40 >>Cross the bridge.
 step << Horde Druid
     #completewith next
-    .goto 2521,56.80,61.10,25 >>Go around the mountain.
+    .goto 2521,59.414,66.946,25,0
+    .goto 2521,58.920,55.010,30,0 >>Go around the mountain.
 step
     #label Learn
     .goto 2521,53.95,38.90
