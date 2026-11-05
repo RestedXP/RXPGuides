@@ -774,7 +774,7 @@ step << Rogue
 step << Warlock
     .goto Tirisfal Glades,61.56,52.61
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Gina Lang|r au second étage
-    >>|cRXP_BUY_Achetez un|r [Grimoire de Pacte de sang] |cRXP_BUY_ à Gina|r
+    >>|cRXP_BUY_Achetez un|r [Grimoire de Pacte de Sang] |cRXP_BUY_à Gina|r
     .collect 16321,1,404,1 --Grimoire of Blood Pact
     .vendor >>Vendez tout ce dont nous n'avez pas besoin
     .target Gina Lang
@@ -1784,7 +1784,7 @@ step
 step
     #completewith ZalazaneKill
     >>Tuez les |cRXP_ENEMY_Hexed Trolls|r et les |cRXP_ENEMY_Voodoo Trolls|r.
-    >>|cRXP_WARN_Faites attention !|r Les |cRXP_ENEMY_Trolls vaudou|r |cRXP_WARN_peuvent lancer|r |T136052:0|t[Vague de soins]
+    >>Faites attention ! |cRXP_ENEMY_Voodoo Trolls|r peuvent lancer [Vague de soins]
     .complete 826,1 --Hexed Troll (8)
     .mob +Hexed Troll
     .complete 826,2 --Voodoo Troll (8)
@@ -1831,7 +1831,7 @@ step
     .goto Durotar,68.47,86.77,40,0
     .goto Durotar,67.23,88.00,40,0
     >>Tuez les |cRXP_ENEMY_Hexed Trolls|r et les |cRXP_ENEMY_Voodoo Trolls|r.
-    >>|cRXP_WARN_Faites attention !|r Les |cRXP_ENEMY_Trolls vaudou|r |cRXP_WARN_peuvent lancer|r |T136052:0|t[Vague de soins]
+    >>Faites attention ! |cRXP_ENEMY_Voodoo Trolls|r peuvent lancer [Vague de soins]
     .complete 826,1 --Hexed Troll (8)
     .mob +Hexed Troll
     .complete 826,2 --Voodoo Troll (8)
@@ -2975,7 +2975,7 @@ step
     .isOnQuest 361
     .group
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Coleman|r dans l'auberge
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Coleman|r à l'intérieur de l'auberge
     .turnin 354 >>Rendez la quête Morts dans la famille
     .turnin 362 >>Rendez la quête Les moulins hantés
     .accept 355 >>Acceptez la quête Parler à Sevren
@@ -3026,7 +3026,7 @@ step
     .goto Tirisfal Glades,61.72,52.29
     .isOnQuest 361
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Coleman|r dans l'auberge
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Coleman|r à l'intérieur de l'auberge
     .turnin 354 >>Rendez la quête Morts dans la famille
     .turnin 362 >>Rendez la quête Les moulins hantés
     .accept 355 >>Acceptez la quête Parler à Sevren
@@ -3034,14 +3034,14 @@ step
     .target Coleman Farthing
 step << Warrior
     .goto Tirisfal Glades,61.72,52.29
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Coleman|r dans l'auberge
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Coleman|r à l'intérieur de l'auberge
     .turnin 1820 >>Rendez la quête Parler à Coleman
     .accept 1821 >>Acceptez la quête L'héritage des Agamand
     .group
     .isQuestTurnedIn 1819
 step << Warrior
     .goto Tirisfal Glades,61.72,52.29
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Coleman|r dans l'auberge
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Coleman|r à l'intérieur de l'auberge
     .turnin 1820 >>Rendez la quête Parler à Coleman
     .solo
     .isQuestTurnedIn 1819
@@ -3455,7 +3455,7 @@ step
     .group
 step << Warrior
     .goto Tirisfal Glades,61.72,52.29
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Coleman|r dans l'auberge
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Coleman|r à l'intérieur de l'auberge
     .turnin 1821 >>Rendez la quête L'héritage des Agamand
     .turnin 1822 >>Une arme en héritage
     .target Coleman Farthing
@@ -3463,7 +3463,7 @@ step << Warrior
     .group
 step << Warrior
     .goto Tirisfal Glades,61.72,52.29
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Coleman|r dans l'auberge
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Coleman|r à l'intérieur de l'auberge
     .turnin 1822 >>Une arme en héritage
     .target Coleman Farthing
     .isQuestTurnedIn 1821

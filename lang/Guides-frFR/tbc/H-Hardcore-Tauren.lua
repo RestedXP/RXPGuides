@@ -6,7 +6,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 1-6 Mulgore
 #version 7
-#subgroup RXP Guide de survie TBC 1-30
+#subgroup RXP TBC Survival Guide 1-30
 #defaultfor Tauren
 #next 6-12 Mulgore
 
@@ -447,7 +447,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 6-12 Mulgore
 #version 7
-#subgroup RXP Guide de survie TBC 1-30
+#subgroup RXP TBC Survival Guide 1-30
 #defaultfor Tauren
 #next 12-14 Les Terres Fantômes
 
@@ -2553,7 +2553,7 @@ step
 step
     .goto Eversong Woods,54.37,50.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Gloaming|r
-    .fp Silvermoon >> Apprenez le trajet de Vol vers Lune-d'Argent
+    .fp Silvermoon >> Get the Silvermoon City flight path
     .target Skymistress Gloaming
 step
     #completewith next
@@ -2568,7 +2568,7 @@ step
     .turnin 9144 >> Rendez la quête Disparu dans les terres Fantômes
     .target +Courier Dawnstrider
     .goto Eversong Woods,48.98,88.99
-    .accept 9147 >> Accept Les Fallen Courier
+    .accept 9147 >> Accept The Fallen Courier
     .target +Apothecary Thedra
     .goto Eversong Woods,49.02,89.05
 step
@@ -2601,10 +2601,10 @@ step
     .mob Mistbat
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Thedra|r et |cRXP_FRIENDLY_Dawnstrider|r
-    .turnin 9147 >> Turn in Les Fallen Courier
+    .turnin 9147 >> Turn in The Fallen Courier
     .target +Apothecary Thedra
     .goto Eversong Woods,49.02,89.05
-    .accept 9148 >> Accept Voyagez à Tranquillien
+    .accept 9148 >> Accept Delivery to Tranquillien
     .target +Courier Dawnstrider
     .goto Eversong Woods,48.98,88.99
 step
@@ -2614,34 +2614,34 @@ step
     .goto Ghostlands,46.55,28.38,10,0
     .goto Ghostlands,46.08,28.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Vandril|r
-    .turnin 9148 >> Turn in Voyagez à Tranquillien
-    .accept 9327 >> Accept Les Forsaken << BloodElf
-    .accept 9329 >> Accept Les Forsaken << !BloodElf
+    .turnin 9148 >> Turn in Delivery to Tranquillien
+    .accept 9327 >> Accept The Forsaken << BloodElf
+    .accept 9329 >> Accept The Forsaken << !BloodElf
     .target Arcanist Vandril
 step
     .goto Ghostlands,45.42,30.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sunwing|r
-    .fp Tranquillien >> Prenez le chemin de vol de Telaar
+    .fp Tranquillien >> Get the Tranquillien flight path
     .target Skymaster Sunwing
 step
     .goto Ghostlands,45.17,32.37,10,0
     .goto Ghostlands,44.77,32.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Mavren|r
-    .turnin 9327 >> Turn in Les Forsaken << BloodElf
-    .turnin 9329 >> Turn in Les Forsaken << !BloodElf
-    .accept 9758 >> Acceptez Retourner voir Jaina Vandril
+    .turnin 9327 >> Turn in The Forsaken << BloodElf
+    .turnin 9329 >> Turn in The Forsaken << !BloodElf
+    .accept 9758 >> Accept Return to Arcanist Vandril
     .target High Executor Mavren
 step
     .goto Ghostlands,46.55,28.38,10,0
     .goto Ghostlands,46.08,28.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Vandril|r
-    .turnin 9758 >> Rendez Retourner voir Jaina Vandril
-    .accept 9138 >> Acceptez Suncrown Village
+    .turnin 9758 >> Turn in Return to Arcanist Vandril
+    .accept 9138 >> Accept Suncrown Village
     .target Arcanist Vandril
 step
     .goto Ghostlands,47.23,28.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Rathis|r
-    .accept 9152 >> Acceptez Tomber's Supplies
+    .accept 9152 >> Accept Tomber's Supplies
     .target Rathis Tomber
 
 ]])

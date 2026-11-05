@@ -688,7 +688,7 @@ step << Paladin
 step << Priest
     .goto Dun Morogh,47.342,52.190
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Maxan Anvol|r à l'intérieur
-    .turnin -5626 >> Rendez la quête Au service de la Lumière << Dwarf
+    .turnin -5626 >> Turn In In Favor of the Light << Dwarf
     .accept 5625 >> Acceptez la quête Vêtements de la Lumière
     .target Maxan Anvol
 step << Priest
@@ -1479,7 +1479,7 @@ step
 step << Warlock
     #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Gimrizz Shadowcog|r
-    .train 980 >> Entraînez-vous avec |T136139:0|t[Malédiction d'agonie]
+    .train 980 >> Train |T136139:0|t[Curse of Agony]
     .train 5782 >> Apprenez [Peur]
     .goto Dun Morogh,47.327,53.693
     .target +Gimrizz Shadowcog
@@ -2114,7 +2114,7 @@ step << !Rogue !Warrior !Warlock
 step << Mage
 #xprate >1.49
     .goto Loch Modan,26.67,56.94
-    .xp 12-3675 >> Grindez jusqu'à être à 3675xp du niveau 12
+    .xp 12-3675 >> Grind until you are 3675xp away from level 12
     .mob Stonesplinter Trogg
     .mob Stonesplinter Scout
 step << !Rogue !Warrior !Warlock
@@ -2556,7 +2556,7 @@ step << Warrior skip
 step << Warrior skip
     .goto Ironforge,70.762,90.261
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Muren Stormpike|r
-    .accept 1678 >>Acceptez Vejrek
+    .accept 1678 >>Accept Vejrek
     .target Muren Stormpike
 step << Warrior skip
     #optional
@@ -2575,7 +2575,7 @@ step << Warrior skip
 step << Warrior skip
     .goto Ironforge,70.762,90.261
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Muren Stormpike|r
-    .turnin 1678 >>Rendez Vejrek
+    .turnin 1678 >>Turn in Vejrek
     .accept 1680 >>Acceptez la quête Tormus Forge-profonde
     .target Muren Stormpike
 step << Warrior skip
@@ -3836,7 +3836,7 @@ step
 step
 #xprate >1.49
     .goto Loch Modan,26.67,56.94
-    .xp 14-2700 >>Grindez jusqu'à être à 2700xp du niveau 14 (8300/11000)
+    .xp 14-2700 >>Grind until you are 2700xp away from level 14 (8300/11000)
     .mob Stonesplinter Trogg
     .mob Stonesplinter Scout
 step

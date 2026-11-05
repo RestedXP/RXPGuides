@@ -4535,7 +4535,7 @@ step
     .group
 step
     #optional
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Coleman|r dans l'auberge
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Coleman|r à l'intérieur de l'auberge
     .turnin 354 >>Rendez la quête Morts dans la famille
     .turnin 362 >>Rendez la quête Les moulins hantés
     .accept 355 >>Acceptez la quête Parler à Sevren
@@ -4588,7 +4588,7 @@ step
     .isOnQuest 361
 step
     #optional
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Coleman|r dans l'auberge
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Coleman|r à l'intérieur de l'auberge
     .turnin 354 >>Rendez la quête Morts dans la famille
     .turnin 362 >>Rendez la quête Les moulins hantés
     .accept 355 >>Acceptez la quête Parler à Sevren
@@ -4597,14 +4597,14 @@ step
     .isQuestComplete 354
 step << Warrior
     .goto Tirisfal Glades,61.72,52.29
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Coleman|r dans l'auberge
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Coleman|r à l'intérieur de l'auberge
     .turnin 1820 >>Rendez la quête Parler à Coleman
     .accept 1821 >>Acceptez la quête L'héritage des Agamand
     .group
     .isQuestTurnedIn 1819
 step << Warrior
     .goto Tirisfal Glades,61.72,52.29
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Coleman|r dans l'auberge
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Coleman|r à l'intérieur de l'auberge
     .turnin 1820 >>Rendez la quête Parler à Coleman
     .solo
     .isQuestTurnedIn 1819
@@ -5049,14 +5049,14 @@ step
     .group
 step << Warrior
     .goto Tirisfal Glades,61.72,52.29
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Coleman|r dans l'auberge
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Coleman|r à l'intérieur de l'auberge
     .turnin 1821 >>Rendez la quête L'héritage des Agamand
     .target Coleman Farthing
     .isQuestComplete 1821
     .group
 step << Warrior
     .goto Tirisfal Glades,61.72,52.29
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Coleman|r dans l'auberge
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Coleman|r à l'intérieur de l'auberge
     .turnin 1822 >>Une arme en héritage
     .target Coleman Farthing
     .isQuestTurnedIn 1821

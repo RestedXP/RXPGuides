@@ -6,7 +6,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 1-6 Durotar
 #version 7
-#subgroup RXP Guide de survie TBC 1-30
+#subgroup RXP TBC Survival Guide 1-30
 #defaultfor Orc/Troll
 #next 6-10 Durotar
 
@@ -768,7 +768,7 @@ step
     .isOnQuest 4402
 step << Orc/Troll
     #completewith BurningBladeTurnin
-    .hs >>Quittez la Vallée des Épreuves
+    .hs >>Hearth to Valley of Trials
 step << !Orc !Troll
     #completewith BurningBladeTurnin
     .goto Durotar,44.63,68.65,120 >>Retournez jusqu'à la Vallée des Épreuves
@@ -962,7 +962,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 6-10 Durotar
 #version 7
-#subgroup RXP Guide de survie TBC 1-30
+#subgroup RXP TBC Survival Guide 1-30
 #defaultfor Orc/Troll
 #next 10-12 Bois des Chants éternels
 

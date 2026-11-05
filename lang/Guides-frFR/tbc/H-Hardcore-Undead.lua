@@ -5,7 +5,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 1-6 Clairières de Tirisfal
 #version 7
-#subgroup RXP Guide de survie TBC 1-30
+#subgroup RXP TBC Survival Guide 1-30
 #defaultfor Scourge
 #next 6-10 Bois des Chants éternels
 
@@ -610,7 +610,7 @@ step
     .target Executor Zygand
 step << Rogue
     .goto Tirisfal Glades,61.15,52.59
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Parler à|r |cRXP_FRIENDLY_Mme Winters|r|cRXP_BUY_. Achetez |r |T132414:0|t[Hache de jet lestée] |cRXP_BUY_chez elle|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Mrs. Winters|r|cRXP_BUY_. Buy |r |T132414:0|t[Weighted Throwing Axe] |cRXP_BUY_from her|r
     .collect 29007,1,8475,1 --Weighted Throwing Axe (200)
     .target Mrs. Winters
     .itemStat 18,QUALITY,<7
@@ -812,7 +812,7 @@ step
     #label SilvermoonFP
     .goto Eversong Woods,54.37,50.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Gloaming|r
-    .fp Silvermoon >> Apprenez le trajet de Vol vers Lune-d'Argent
+    .fp Silvermoon >> Get the Silvermoon City flight path
     .target Skymistress Gloaming
     .isQuestAvailable 8463
 step

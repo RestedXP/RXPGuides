@@ -454,7 +454,7 @@ step << Undead Warrior
 step << Undead Warrior
     #optional
     #completewith BaronLongshore
-    +|cRXP_WARN_Équipez le|r |T135353:0|t[Espadon] |cRXP_WARN_quand vous atteignez le niveau 16|r
+    +|cRXP_WARN_Equip the|r |T135353:0|t[Espadon] |cRXP_WARN_when you reach level 16|r
     .use 2024
     .itemcount 2024,1
     .itemStat 16,QUALITY,<7
@@ -480,7 +480,7 @@ step << Troll Warrior
 step << Troll Warrior
     #optional
     #completewith BaronLongshore
-    +|cRXP_WARN_Équipez le|r |T135147:0|t[Bâton noueux] |cRXP_WARN_quand vous atteignez le niveau 15|r
+    +|cRXP_WARN_Equip the|r |T135147:0|t[Gnarled Staff] |cRXP_WARN_once you reach level 15|r
     .use 2030
     .itemcount 2030,1
     .itemStat 16,QUALITY,<7
@@ -505,7 +505,7 @@ step << Orc Warrior
 step << Orc Warrior
     #optional
     #completewith BaronLongshore
-    +|cRXP_WARN_Équipez la|r |T132394:0|t[Hache barbue] |cRXP_WARN_quand vous atteignez le niveau 15|r
+    +|cRXP_WARN_Equip the|r |T132394:0|t[Bearded Axe] |cRXP_WARN_once you reach level 15|r
     .use 2025
     .itemcount 2025,1
     .itemStat 16,QUALITY,<7
@@ -531,7 +531,7 @@ step << Tauren Warrior
 step << Tauren Warrior
     #optional
     #completewith BaronLongshore
-    +|cRXP_WARN_Équipez le|r |T133046:0|t[Marteau en pierre] |cRXP_WARN_quand vous atteignez le niveau 16|r
+    +|cRXP_WARN_Equip the|r |T133046:0|t[Rock Hammer] |cRXP_WARN_when you reach level 16|r
     .use 2026
     .itemcount 2026,1
     .itemStat 16,QUALITY,<7
@@ -557,7 +557,7 @@ step << Shaman
 step << Shaman
     #optional
     #completewith BaronLongshore
-    +|cRXP_WARN_Équipez le|r |T135147:0|t[Bâton noueux] |cRXP_WARN_quand vous atteignez le niveau 15|r
+    +|cRXP_WARN_Equip the|r |T135147:0|t[Gnarled Staff] |cRXP_WARN_once you reach level 15|r
     .use 2030
     .itemcount 2030,1
     .itemStat 16,QUALITY,<7
@@ -678,7 +678,7 @@ step << Undead Warrior
 step << Undead Warrior
     #optional
     #completewith FlyToXroads1
-    +|cRXP_WARN_Équipez le|r |T135353:0|t[Espadon] |cRXP_WARN_quand vous atteignez le niveau 16|r
+    +|cRXP_WARN_Equip the|r |T135353:0|t[Espadon] |cRXP_WARN_when you reach level 16|r
     .use 2024
     .itemcount 2024,1
     .itemStat 16,QUALITY,<7
@@ -704,7 +704,7 @@ step << Troll Warrior
 step << Troll Warrior
     #optional
     #completewith FlyToXroads1
-    +|cRXP_WARN_Équipez le|r |T135147:0|t[Bâton noueux] |cRXP_WARN_quand vous atteignez le niveau 15|r
+    +|cRXP_WARN_Equip the|r |T135147:0|t[Gnarled Staff] |cRXP_WARN_once you reach level 15|r
     .use 2030
     .itemcount 2030,1
     .itemStat 16,QUALITY,<7
@@ -729,7 +729,7 @@ step << Orc Warrior
 step << Orc Warrior
     #optional
     #completewith FlyToXroads1
-    +|cRXP_WARN_Équipez la|r |T132394:0|t[Hache barbue] |cRXP_WARN_quand vous atteignez le niveau 15|r
+    +|cRXP_WARN_Equip the|r |T132394:0|t[Bearded Axe] |cRXP_WARN_once you reach level 15|r
     .use 2025
     .itemcount 2025,1
     .itemStat 16,QUALITY,<7
@@ -781,7 +781,7 @@ step << Shaman
 step << Shaman
     #optional
     #completewith FlyToXroads1
-    +|cRXP_WARN_Équipez le|r |T135147:0|t[Bâton noueux] quand vous atteignez le niveau 15
+    +|cRXP_WARN_Equip the|r |T135147:0|t[Gnarled Staff] once you reach level 15
     .use 2030
     .itemcount 2030,1
     .itemStat 16,QUALITY,<7
@@ -1238,7 +1238,7 @@ step
 step
     .goto Orgrimmar,31.74,37.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Thrall|r
-    >>|cRXP_WARN_Ceci est une quête préalable pour Gouffre de Ragefeu. Passez cette étape si vous ne souhaitez pas la faire|r
+    >>|cRXP_WARN_This is a prerequisite quest for Ragefire Chasm. Skip this step if you do not wish to do it|r
     .accept 5726 >>Acceptez la quête Ennemis cachés
     .target Thrall
     .dungeon RFC
@@ -1369,7 +1369,7 @@ step << Warrior/Paladin/Shaman
 step << Warrior/Paladin/Shaman
     #optional
     #completewith EcheyakeePickup
-    +|cRXP_WARN_Équipez la|r |T135423:0|t[Hache d'armes] |cRXP_WARN_quand vous atteignez le niveau 20|r
+    +|cRXP_WARN_Equip the|r |T135423:0|t[Battle Axe] |cRXP_WARN_when you reach level 20|r
     .use 926
     .itemcount 926,1
     .itemStat 16,QUALITY,<7
@@ -1391,7 +1391,7 @@ step
 step
     .goto Durotar,53.08,9.19
     >>Tuez les membres de la |cRXP_ENEMY_Lame Ardente|r au Rocher du Crâne jusqu'à ce que l' |cRXP_LOOT_Insigne de lieutenant|r tombe
-    >>|cRXP_WARN_Ceci est une quête préalable pour Gouffre de Ragefeu. Passez cette étape si vous ne souhaitez pas la faire|r
+    >>|cRXP_WARN_This is a prerequisite quest for Ragefire Chasm. Skip this step if you do not wish to do it|r
     .complete 5726,1 --Lieutenant's Insignia (1)
     .isOnQuest 5726
     .dungeon RFC
@@ -1453,7 +1453,7 @@ step
     .dungeon RFC
 step
     >>|cRXP_WARN_Si possible, faites en sorte que les membres du groupe vous partagent les quêtes suivantes|r
-    >>|cRXP_WARN_Passez cette étape si personne n'a ces quêtes|r
+    >>|cRXP_WARN_Skip this step if nobody has these quests|r
     .accept 5722 >>Acceptez la quête À la recherche de la sacoche perdue
     .accept 5723 >>Acceptez la quête Tester la force de l'ennemi
     .dungeon RFC
@@ -1932,7 +1932,7 @@ step
 step
     #completewith SetCampTaurajoHS
     >>Tuez les |cRXP_ENEMY_Stormstouts|r. Dépouillez-les pour une |cRXP_LOOT_Horn|r
-    >>|cRXP_WARN_Cette étape n'a pas besoin d'être terminée maintenant|r
+    >>|cRXP_WARN_This does not have to be completed now|r
     .complete 821,3 --Thunder Lizard Horn (1)
     .mob Stormsnout
 step
@@ -2383,7 +2383,7 @@ step
     .mob Stormsnout
 step
     #completewith next
-    >>Tuez les |cRXP_ENEMY_Quilboars Dos-hirsutes|r. Ramassez-les pour leurs |cRXP_LOOT_Défenses|r
+    >>Kill |cRXP_ENEMY_Bristleback Quilboars|r. Loot them for their |cRXP_LOOT_Tusks|r
     >>Gardez les [|cRXP_LOOT_Joyau de sang|r] que vous obtenez
 	.complete 878,1 --Kill Bristleback Water Seeker (x6)
     .mob +Bristleback Water Seeker
@@ -2439,7 +2439,7 @@ step
     .goto The Barrens,52.41,53.07,60,0
     .goto The Barrens,52.32,53.71,60,0
     .goto The Barrens,51.39,54.22,60,0
-    >>Tuez les |cRXP_ENEMY_Quilboars Dos-hirsutes|r. Ramassez-les pour leurs |cRXP_LOOT_Défenses|r
+    >>Kill |cRXP_ENEMY_Bristleback Quilboars|r. Loot them for their |cRXP_LOOT_Tusks|r
     >>Gardez les [|cRXP_LOOT_Joyau de sang|r] que vous récupérez
 	.complete 878,1 --Kill Bristleback Water Seeker (x6)
     .mob +Bristleback Water Seeker
@@ -2499,7 +2499,7 @@ step << Warlock
 	.goto The Barrens,52.41,53.07,50,0
 	.goto The Barrens,52.32,53.71,50,0
 	.goto The Barrens,51.39,54.22,50,0
-    .xp 19+700 >> Farmez jusqu'à 700+/21300 xp
+    .xp 19+700 >> Grind to 700+/21300 xp
     --To ensure lvl 20 before ORG visit class q pickup
 step
     #loop
@@ -3886,7 +3886,7 @@ step
     >>Tuez |cRXP_ENEMY_Warlord Krom'zar|r lorsqu'il apparaît. Ramassez la |cRXP_PICK_Banner|r qu'il laissera sur le sol
     >>Faites attention ! C'est un Elite fort et protégé par au moins deux |cRXP_ENEMY_Kolkar|r
     >>Il a un temps de réapparition qui peut durer jusqu'à 3 minutes
-    .link https://www.youtube.com/watch?v=xrm0PWe5wf4 >>|cRXP_WARN_Clic ici pour une vidéo de guide sur comment faire du kiting|r |cRXP_ENEMY_Seigneur de guerre Krom'zar|r
+    .link https://www.youtube.com/watch?v=xrm0PWe5wf4 >>|cRXP_WARN_Cliquez ici pour un guide vidéo sur la manière de kite le|r |cRXP_ENEMY_Chef de guerre Krom'zar|r
     .complete 4021,1 --Piece of Krom'zar's Banner (1)
     .unitscan Warlord Krom'zar
     .isOnQuest 4021
@@ -4193,7 +4193,7 @@ step
     #xprate <1.5
     #completewith EnterBFD
     .goto Ashenvale,11.56,34.29,0
-    >>|cRXP_WARN_Optionnellement parlez à|r |cRXP_FRIENDLY_Je'neu Sancrea|r |cRXP_WARN_à Avant-poste de Zoram'gar pour obtenir une autre quête de suivi BFD|r
+    >>|cRXP_WARN_Optionally talk to|r |cRXP_FRIENDLY_Je'neu Sancrea|r |cRXP_WARN_back at Zoram'gar Outpost to get another BFD follow-up quest|r
     .turnin 6564 >>Rendez la quête Allégeance aux Dieux très anciens
     .accept 6565 >>Acceptez la quête Allégeance aux Dieux très anciens
     .target Je'neu Sancrea
@@ -4307,7 +4307,7 @@ step
     #xprate >1.49
     #completewith EnterBFD
     .goto Ashenvale,11.56,34.29,0
-    >>|cRXP_WARN_Optionnellement parlez à|r |cRXP_FRIENDLY_Je'neu Sancrea|r |cRXP_WARN_à Avant-poste de Zoram'gar pour obtenir une autre quête de suivi BFD|r
+    >>|cRXP_WARN_Optionally talk to|r |cRXP_FRIENDLY_Je'neu Sancrea|r |cRXP_WARN_back at Zoram'gar Outpost to get another BFD follow-up quest|r
     .turnin 6564 >>Rendez la quête Allégeance aux Dieux très anciens
     .accept 6565 >>Acceptez la quête Allégeance aux Dieux très anciens
     .target Je'neu Sancrea
@@ -4371,19 +4371,19 @@ step
     .dungeon BFD
 step
     #completewith BFDTurnins
-    .zone Ashenvale >>Quittez le donjon
+    .zone Ashenvale >>Exit the dungeon
     >>Tuez |cRXP_ENEMY_Aku'mai|r en premier si vous le voulez. C'est le dernier boss du donjon
     .dungeon BFD
 step
     #xprate <1.5
     #optional
     #completewith ZoramTurnins
-    .subzone 2897 >>Rendez-vous à Avant-poste de Zoram'gar
+    .subzone 2897 >>Travel to Zoram'gar Outpost
 step
     #xprate >1.49
     #optional
     #completewith ZoramTurnins
-    .subzone 2897 >>Rendez-vous à Avant-poste de Zoram'gar
+    .subzone 2897 >>Travel to Zoram'gar Outpost
     .dungeon BFD
 step
     #xprate <1.5
@@ -4450,11 +4450,11 @@ step << Druid
 step
     #xprate <1.5
     #completewith JourneytoTM
-    .destroy 16784 >>|cRXP_WARN_Détruisez vos|r |T134133:0|t[|cRXP_LOOT_Saphir d'Aku'Mai|r] |cRXP_WARN_restants car ils ne sont plus nécessaires|r
+    .destroy 16784 >>|cRXP_WARN_Destroy your remaining|r |T134133:0|t[|cRXP_LOOT_Sapphire of Aku'Mai|r] |cRXP_WARN_as they're no longer needed|r
 step
     #xprate >1.49
     #completewith JourneytoTM
-    .destroy 16784 >>|cRXP_WARN_Détruisez vos|r |T134133:0|t[|cRXP_LOOT_Saphir d'Aku'Mai|r] |cRXP_WARN_restants car ils ne sont plus nécessaires|r
+    .destroy 16784 >>|cRXP_WARN_Destroy your remaining|r |T134133:0|t[|cRXP_LOOT_Sapphire of Aku'Mai|r] |cRXP_WARN_as they're no longer needed|r
     .dungeon BFD
 step
     #completewith JourneytoTM
