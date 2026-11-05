@@ -4116,23 +4116,23 @@ step << Horde Shaman
     >>Kill |cRXP_ENEMY_Skypriest Faladiel::268602|r. Loot him for |T839910:0|t[|cRXP_LOOT_Faladiel's Heart|r].
     .complete 97244,1 --|1/1 Faladiel's Heart
     .mob Skypriest Faladiel::268602
--- step << Horde Shaman
---     #completewith next
---     .isOnQuest 97244
---     .isQuestComplete 97244
---     .goto 2521,62.384,64.393,-1
---     .goto 2521,54.99,68.14,-1
---     +Die and ressurect at the |cRXP_FRIENDLY_Spirit Healer::6491|r.
--- step << Horde Shaman
---     .isOnQuest 97244
---     .isQuestComplete 97244
---     #ignorecorpse
---     .showwhiledead
---     .goto 2521,54.99,68.14
---     .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Spirit Healer::6491|r.
---     .skipgossipid 96031
---     .skipgossipid 98031
---     .target Spirit Healer::6491
+step << Horde Shaman
+    #completewith next
+    .isOnQuest 97244
+    .isQuestComplete 97244
+    .goto 2521,62.384,64.393,-1
+    .goto 2521,54.99,68.14,-1
+    +Die and ressurect at the |cRXP_FRIENDLY_Spirit Healer::6491|r.
+step << Horde Shaman
+    .isOnQuest 97244
+    .isQuestComplete 97244
+    #ignorecorpse
+    .showwhiledead
+    .goto 2521,54.99,68.14
+    .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Spirit Healer::6491|r.
+    .skipgossipid 96031
+    .skipgossipid 98031
+    .target Spirit Healer::6491
 step << Horde Shaman
     #label CallOfFireB
     .goto 2521,51.241,86.193
@@ -4252,7 +4252,7 @@ step << Horde
     .goto 2521,48.445,80.591
     .cast 1259686 >>Use |T1029587:0|t[Skysight] for the 10% movement speed buff.
     .cooldown spell,1259686,>0,1
-step << Horde
+step << Horde !Shaman
     #ignorecorpse
     .isOnQuest 92703
     .showwhiledead
@@ -4283,7 +4283,7 @@ step << Alliance
 -- step
 --     .goto 2521,50.33,76.66
 --     .goto 2521,54.13,76.3
-step << Alliance/Horde !Shaman
+step << Alliance/Horde Hunter
     .isQuestAvailable 92703 -- Deliver the News
     -- .subzoneskip 16638,1 -- Valanaar
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Donaal Downbreeze::255940|r.
@@ -4338,16 +4338,14 @@ step << Horde Shaman
 -- City: Horde Shaman
 -- ============================================================================
 
-
-step << Horde Shaman
-    .isQuestAvailable 98512 -- Al'Aketh Assassins
-    .goto 2521,59.40,75.74
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falfaan Halfwind::271465|r.
-    .vendor 271465 >>Vendor trash
+step << Horde !Hunter
+    .isOnQuest 92703
+    .goto 2521,58.986,75.460
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Railee Thriceforged::257422|r.
+    .vendor 257422 >>|cRXP_WARN_Vendor and repair if needed|r.
     *Don't sell |T132832:0|t[Small Eggs] and |T133972:0|t[Strider Meat].
     *|cRXP_WARN_We need them for Cooking later|r.
-    .target Falfaan Halfwind::271465
-    .skipgossipid 141556
+    .target Railee Thriceforged::257422
 
 
 -- ============================================================================
@@ -4721,26 +4719,34 @@ step << Horde Hunter
     .train 2981 >> |cRXP_WARN_Attack mobs with it to learn|r |T132140:0|t[Claw (Rank 2)]
     .link https://www.wow-petopia.com/classic/training.php >> |cRXP_WARN_Click here for more info about pet training|r
 	.mob Windsong Crawler::254588
+step << Horde Hunter
+    .isOnQuest 93317
+    .goto 2521,58.986,75.460
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Railee Thriceforged::257422|r.
+    .vendor 257422 >>|cRXP_WARN_Vendor and repair if needed|r.
+    *Don't sell |T132832:0|t[Small Eggs] and |T133972:0|t[Strider Meat].
+    *|cRXP_WARN_We need them for Cooking later|r.
+    .target Railee Thriceforged::257422
 
 -- ============================================================================
 -- Level 10+ Deathskip Version
 -- ============================================================================
 
--- step << Alliance
---     .isOnQuest 92840 -- Catching Wind
---     .subzoneskip 16638,1 -- Shen'dar Village
---     .goto 2521,67.41,80.46
---     .subzone 16626 >>Jump off the cliff
--- step << Alliance
---     #ignorecorpse
---     .subzoneskip 16626,1 -- Gustberry Lowlands
---     .isOnQuest 92840 -- Catching Wind
---     .showwhiledead
---     .goto 2521,54.99,68.14
---     .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Spirit Healer::6491|r.
---     .skipgossipid 96031
---     .skipgossipid 98031
---     .target Spirit Healer::6491
+step << Alliance
+    .isOnQuest 92840 -- Catching Wind
+    .subzoneskip 16638,1 -- Shen'dar Village
+    .goto 2521,67.41,80.46
+    .subzone 16626 >>Jump off the cliff
+step << Alliance
+    #ignorecorpse
+    .subzoneskip 16626,1 -- Gustberry Lowlands
+    .isOnQuest 92840 -- Catching Wind
+    .showwhiledead
+    .goto 2521,54.99,68.14
+    .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Spirit Healer::6491|r.
+    .skipgossipid 96031
+    .skipgossipid 98031
+    .target Spirit Healer::6491
 step << Alliance !Hunter
     #completewith Protect the Index
     >>Kill |cRXP_ENEMY_Windsong Crawlers::254588|r. Loot them for |T133972:0|t[|cRXP_LOOT_Windsong Crawler Meat|r].
@@ -5627,13 +5633,7 @@ step << Rogue Alliance
 --     *|cRXP_WARN_We need them for Cooking later|r.
 --     .skipgossipid 141556
 --     .target Falfaan Halfwind::271465
--- step << Alliance
---     .isNotOnQuest 98512 --Al'Aketh Assassins
---     .isQuestAvailable 98512 --Al'Aketh Assassins
---     .goto 2521,66.49,76.65,8,0
---     .goto 2521,68.84,78.42,-1
---     .goto 2521,60.74,78.02,-1
---     .subzone 16626 >>Jump off the cliff
+
 -- step << Alliance Paladin/Alliance Priest/Alliance Warlock/Alliance Mage/Alliance Rogue
 --     #optional
 --     #completewith Al'Aketh Assassins Equip Reminder
@@ -5643,17 +5643,24 @@ step << Rogue Alliance
 --     .use 257345 << Paladin -- Honed Greathammer
 --     .use 257343 << Priest/Warlock/Mage -- Balanced Quarterstaff
 --     .use 257346 << Rogue -- Quickblade's Dagger
--- step << Alliance
---     #ignorecorpse
---     .subzoneskip 16626,1 -- Gustberry Lowlands
---     .isNotOnQuest 98512 --Al'Aketh Assassins
---     .isQuestAvailable 98512 --Al'Aketh Assassins
---     .showwhiledead
---     .goto 2521,54.99,68.14
---     .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Spirit Healer::6491|r.
---     .skipgossipid 96031
---     .skipgossipid 98031
---     .target Spirit Healer::6491
+step << Alliance
+    .isNotOnQuest 98512 --Al'Aketh Assassins
+    .isQuestAvailable 98512 --Al'Aketh Assassins
+    .goto 2521,66.49,76.65,8,0
+    .goto 2521,68.84,78.42,-1
+    .goto 2521,60.74,78.02,-1
+    .subzone 16626 >>Jump off the cliff
+step << Alliance
+    #ignorecorpse
+    .subzoneskip 16626,1 -- Gustberry Lowlands
+    .isNotOnQuest 98512 --Al'Aketh Assassins
+    .isQuestAvailable 98512 --Al'Aketh Assassins
+    .showwhiledead
+    .goto 2521,54.99,68.14
+    .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Spirit Healer::6491|r.
+    .skipgossipid 96031
+    .skipgossipid 98031
+    .target Spirit Healer::6491
 step << Alliance
     #label Al'Aketh Assassins Equip Reminder
     .goto 2521,56.81,61.11
@@ -7231,14 +7238,20 @@ step << Horde
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alaana Stormwalker::259119|r.
     .accept 95350 >>Accept Welcome to Azeroth
     .target Alaana Stormwalker::259119
--- step << Horde
---     .isOnQuest 95350
---     -- .subzoneskip 17045,1 -- Skywatcher Plateau
---     .goto 1412/1,323.300,-731.200
---     .deathskip >>Jump to die and ress at the |cRXP_PICK_Spirit Healer|r.
---     .skipgossipid 96031
---     .skipgossipid 98031
---     .target Spirit Healer::6491
+step << Horde
+    #ignorecorpse
+    .isOnQuest 95350
+    .subzoneskip 17045,1 -- Skywatcher Plateau
+    .goto 1412/1,323.300,-731.200
+    .subzone 1638 >>Jump off the cliff.
+step << Horde
+    .isOnQuest 95350
+    .subzoneskip 1638,1
+    .goto 1456/1,-74.900,-981.700
+    .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Spirit Healer::6491|r.
+    .skipgossipid 96031
+    .skipgossipid 98031
+    .target Spirit Healer::6491
 step << Horde Druid Skyborne
     #completewith ChildOfNatureC
     #label ChildOfNatureA
