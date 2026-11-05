@@ -5079,7 +5079,6 @@ step << Horde !Druid
     .turnin 98512 >>Turn in Al'Aketh Assassins
     .target Fendaal Windstone::273017
 step << Horde Druid
-    .goto 2521,56.80,61.10,25,0
     .goto 2521,54.284,65.803
     >>Kill |cRXP_ENEMY_Ur'endra::258443|r inside the cave.
     .complete 94638,1 --|1/1 Ur'endra slain
