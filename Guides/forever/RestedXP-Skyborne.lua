@@ -4252,12 +4252,22 @@ step << Horde
     .goto 2521,48.445,80.591
     .cast 1259686 >>Use |T1029587:0|t[Skysight] for the 10% movement speed buff.
     .cooldown spell,1259686,>0,1
+step << Horde
+    #ignorecorpse
+    .isOnQuest 92703
+    .showwhiledead
+    .goto 2521,48.823,83.150,-1
+    .goto 2521,54.99,68.14,-1
+    .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tDie and then talk to the |cRXP_FRIENDLY_Spirit Healer::6491|r.
+    .skipgossipid 96031
+    .skipgossipid 98031
+    .target Spirit Healer::6491
 
 -- ============================================================================
 -- City: Alliance and Non-Shaman Horde
 -- ============================================================================
 
-step << Alliance/Horde !Shaman
+step << Alliance
     .isQuestAvailable 92703 -- Deliver the News
     .subzoneskip 16638 -- Valanaar
     .hs >>Hearth to Valanaar
@@ -7175,13 +7185,13 @@ step << Horde
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Riaani Nightwind::256083|r.
     .accept 93738 >>Accept The Broken Construct
     .target Riaani Nightwind::256083
--- step << Horde
---     .goto 2521,58.986,75.460
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Railee Thriceforged::257422|r.
---     .vendor 257422 >>Vendor trash.
---     *Don't sell |T132832:0|t[Small Eggs] and |T133972:0|t[Strider Meat].
---     *|cRXP_WARN_We need them for Cooking later|r.
---     .target Railee Thriceforged::257422
+step << Horde
+    .goto 2521,58.986,75.460
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Railee Thriceforged::257422|r.
+    .vendor 257422 >>|cRXP_WARN_Vendor and repair if needed|r.
+    *Don't sell |T132832:0|t[Small Eggs] and |T133972:0|t[Strider Meat].
+    *|cRXP_WARN_We need them for Cooking later|r.
+    .target Railee Thriceforged::257422
 step << Horde
     #optional
     .isQuestComplete 93736 -- Unwelcome Spirits
