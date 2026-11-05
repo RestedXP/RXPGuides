@@ -5049,7 +5049,7 @@ step << Horde Druid
 step << Horde Druid
     .isOnQuest 94638 -- Strength and Mercy
     .cooldown spell,1259686,>0,1 -- Skysight
-    .goto 2521,46.597,38.121
+    .goto 2521,69.782,61.609
     .cast 1259686 >>Use |T1029587:0|t[Skysight] for the 10% movement speed buff.
 step << Horde Druid
     #completewith next
