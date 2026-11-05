@@ -142,9 +142,9 @@ L["Skreah"] = "Skreah"
 
 -- DB\classic\db.lua file
 
-L["RestedXP Speedrun Guide (H)"] = "RestedXP Speedrun-Leitfaden (H)"
+L["RestedXP Speedrun Guide (H)"] = "RestedXP Schnellste Route (H)"
 L["RestedXP Survival Guide (H)"] = "RestedXP Überleben Route (H)"
-L["RestedXP Speedrun Guide (A)"] = "RestedXP Speedrun-Leitfaden (A)"
+L["RestedXP Speedrun Guide (A)"] = "RestedXP Schnellste Route (A)"
 L["RestedXP Survival Guide (A)"] = "RestedXP Überleben Route (A)"
 L["Mining & Engineering"] = "Bergbau & Ingenieurskunst"
 L["Mining & Blacksmithing"] = "Bergbau & Schmiedekunst"
