@@ -5073,7 +5073,7 @@ step << Horde
     *|cRXP_WARN_Be careful: |cRXP_ENEMY_Al'Aketh Assassins|r use|r |T132357:0|t[Slam] |cRXP_WARN_to knock you down and|r |T136189:0|t[Sinister Strike] |cRXP_WARN_alongside their melee attacks|r.
     .complete 98512,1 --10/10 Al'Aketh Assassin slain
     .mob Al'Aketh Assassin::254626
-step << Horde !Druid
+step << Horde
     .goto 2521,56.80,61.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fendaal Windstone::273017|r.
     .turnin 98512 >>Turn in Al'Aketh Assassins
@@ -5115,11 +5115,6 @@ step << Horde
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Construct Parts|r.
     .complete 93737,3 --|1/1 Obtain Enchanted Gyrozephyr from Windsong Lake
     .mob Windsong Crawler::254588
-step << Horde Druid
-    .goto 2521,56.80,61.10
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fendaal Windstone::273017|r.
-    .turnin 98512 >>Turn in Al'Aketh Assassins
-    .target Fendaal Windstone::273017
 step << Horde Druid
     .isOnQuest 94638 -- Strength and Mercy
     .cooldown spell,1259416,>0,1 -- Walk on Air
