@@ -171,8 +171,8 @@ L["Evalcharr\", \"Fantôme de Varo"] = "Malifatius\", \"Fantasma de Varo"
 
 -- DB\forever\db.lua file
 
-L["RestedXP Forever Guide (H)"] = "RestedXP Guia Forever (H)"
-L["RestedXP Forever Guide (A)"] = "RestedXP Guia Forever (A)"
+L["RestedXP Forever Guide (H)"] = "Guia RestedXP Forever (H)"
+L["RestedXP Forever Guide (A)"] = "Guia RestedXP Forever (A)"
 
 -- DB\mainline\db.lua file
 
@@ -267,9 +267,9 @@ L["RXP MoP 1-60 (H)"] = "RXP MoP 1-60 (H)"
 
 -- DB\tbc\db.lua file
 
-L["RestedXP TBC Guide (H)"] = "RestedXP Guia TBC (H)"
+L["RestedXP TBC Guide (H)"] = "Guia RestedXP TBC (H)"
 L["RXP TBC Survival Guide (H)"] = "RXP Guia de Sobrevivência TBC (H)"
-L["RestedXP TBC Guide (A)"] = "RestedXP Guia TBC (A)"
+L["RestedXP TBC Guide (A)"] = "Guia RestedXP TBC (A)"
 L["RXP TBC Survival Guide (A)"] = "RXP Guia de Sobrevivência TBC (A)"
 
 -- DB\wotlk\db.lua file
