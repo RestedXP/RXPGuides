@@ -4096,43 +4096,43 @@ step << Horde Shaman
     .turnin 97243 >>Entrega la misión La llamada del fuego
     .accept 97244 >>Acepta la misión La llamada del fuego
     .target Olariaan Swiftburn::268592
--- step << Horde Shaman
---     .isOnQuest 97244
---     .isQuestNotComplete 97244
---     .goto 2521,50.8,89.6
---     .subzone 16593 >>Jump off the cliff
--- step << Horde Shaman
---     #ignorecorpse
---     .isOnQuest 97244
---     .isQuestNotComplete 97244
---     .showwhiledead
---     .goto 2521,54.99,68.14
---     .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Spirit Healer::6491|r.
---     .skipgossipid 96031
---     .skipgossipid 98031
---     .target Spirit Healer::6491
+step << Horde Shaman
+    .isOnQuest 97244
+    .isQuestNotComplete 97244
+    .goto 2521,50.8,89.6
+    .subzone 16593 >>Salta del acantilado
+step << Horde Shaman
+    #ignorecorpse
+    .isOnQuest 97244
+    .isQuestNotComplete 97244
+    .showwhiledead
+    .goto 2521,54.99,68.14
+    .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Spirit Sanador::6491|r.
+    .skipgossipid 96031
+    .skipgossipid 98031
+    .target Spirit Healer::6491
 step << Horde Shaman
     .goto 2521,64.380,63.586
     >>Mata al |cRXP_ENEMY_Skypriest Faladiel::268602|r. Despójalo para |T839910:0|t[|cRXP_LOOT_Faladiel's Corazón|r].
     .complete 97244,1 --|1/1 Faladiel's Heart
     .mob Skypriest Faladiel::268602
--- step << Horde Shaman
---     #completewith next
---     .isOnQuest 97244
---     .isQuestComplete 97244
---     .goto 2521,62.384,64.393,-1
---     .goto 2521,54.99,68.14,-1
---     +Die and ressurect at the |cRXP_FRIENDLY_Spirit Healer::6491|r.
--- step << Horde Shaman
---     .isOnQuest 97244
---     .isQuestComplete 97244
---     #ignorecorpse
---     .showwhiledead
---     .goto 2521,54.99,68.14
---     .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Spirit Healer::6491|r.
---     .skipgossipid 96031
---     .skipgossipid 98031
---     .target Spirit Healer::6491
+step << Horde Shaman
+    #completewith next
+    .isOnQuest 97244
+    .isQuestComplete 97244
+    .goto 2521,62.384,64.393,-1
+    .goto 2521,54.99,68.14,-1
+    +Muere y resucita en el |cRXP_FRIENDLY_Spirit Sanador::6491|r.
+step << Horde Shaman
+    .isOnQuest 97244
+    .isQuestComplete 97244
+    #ignorecorpse
+    .showwhiledead
+    .goto 2521,54.99,68.14
+    .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Spirit Sanador::6491|r.
+    .skipgossipid 96031
+    .skipgossipid 98031
+    .target Spirit Healer::6491
 step << Horde Shaman
     #label CallOfFireB
     .goto 2521,51.241,86.193
@@ -4252,12 +4252,22 @@ step << Horde
     .goto 2521,48.445,80.591
     .cast 1259686 >>Usa |T1029587:0|t[Vista celeste] para el aumento del 10% de velocidad de movimiento.
     .cooldown spell,1259686,>0,1
+step << Horde !Shaman
+    #ignorecorpse
+    .isOnQuest 92703
+    .showwhiledead
+    .goto 2521,48.823,83.150,-1
+    .goto 2521,54.99,68.14,-1
+    .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tMuere y luego habla con el |cRXP_FRIENDLY_Spirit Sanador::6491|r.
+    .skipgossipid 96031
+    .skipgossipid 98031
+    .target Spirit Healer::6491
 
 -- ============================================================================
 -- City: Alliance and Non-Shaman Horde
 -- ============================================================================
 
-step << Alliance/Horde !Shaman
+step << Alliance
     .isQuestAvailable 92703 -- Deliver the News
     .subzoneskip 16638 -- Valanaar
     .hs >>Usa tu Piedra de hogar para ir a Valanaar
@@ -4273,7 +4283,7 @@ step << Alliance/Horde !Shaman
 -- step
 --     .goto 2521,50.33,76.66
 --     .goto 2521,54.13,76.3
-step << Alliance/Horde !Shaman
+step << Alliance/Horde Hunter
     .isQuestAvailable 92703 -- Deliver the News
     -- .subzoneskip 16638,1 -- Valanaar
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Donaal Downbreeze::255940|r.
@@ -4328,16 +4338,14 @@ step << Horde Shaman
 -- City: Horde Shaman
 -- ============================================================================
 
-
-step << Horde Shaman
-    .isQuestAvailable 98512 -- Al'Aketh Assassins
-    .goto 2521,59.40,75.74
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Falfaan Halfwind::271465|r.
-    .vendor 271465 >>Vende la basura
+step << Horde !Hunter
+    .isOnQuest 92703
+    .goto 2521,58.986,75.460
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Railee Thriceforged::257422|r.
+    .vendor 257422 >>|cRXP_WARN_Vendor and repair if needed|r.
     *No vendas |T132832:0|t[Huevos pequeños] ni |T133972:0|t[Carne de zancudo].
     *|cRXP_WARN_Los necesitamos para Cocina después|r.
-    .target Falfaan Halfwind::271465
-    .skipgossipid 141556
+    .target Railee Thriceforged::257422
 
 
 -- ============================================================================
@@ -4711,26 +4719,34 @@ step << Horde Hunter
     .train 2981 >> |cRXP_WARN_Ataca a enemigos con ella para aprender|r |T132140:0|t[Zarpa (Rango 2)]
     .link https://www.wow-petopia.com/classic/training.php >> |cRXP_WARN_Haz clic aquí para más información sobre el entrenamiento de mascotas|r
 	.mob Windsong Crawler::254588
+step << Horde Hunter
+    .isOnQuest 93317
+    .goto 2521,58.986,75.460
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Railee Thriceforged::257422|r.
+    .vendor 257422 >>|cRXP_WARN_Vendor and repair if needed|r.
+    *No vendas |T132832:0|t[Huevos pequeños] ni |T133972:0|t[Carne de zancudo].
+    *|cRXP_WARN_Los necesitamos para Cocina después|r.
+    .target Railee Thriceforged::257422
 
 -- ============================================================================
 -- Level 10+ Deathskip Version
 -- ============================================================================
 
--- step << Alliance
---     .isOnQuest 92840 -- Catching Wind
---     .subzoneskip 16638,1 -- Shen'dar Village
---     .goto 2521,67.41,80.46
---     .subzone 16626 >>Jump off the cliff
--- step << Alliance
---     #ignorecorpse
---     .subzoneskip 16626,1 -- Gustberry Lowlands
---     .isOnQuest 92840 -- Catching Wind
---     .showwhiledead
---     .goto 2521,54.99,68.14
---     .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Spirit Healer::6491|r.
---     .skipgossipid 96031
---     .skipgossipid 98031
---     .target Spirit Healer::6491
+step << Alliance
+    .isOnQuest 92840 -- Catching Wind
+    .subzoneskip 16638,1 -- Shen'dar Village
+    .goto 2521,67.41,80.46
+    .subzone 16626 >>Salta del acantilado
+step << Alliance
+    #ignorecorpse
+    .subzoneskip 16626,1 -- Gustberry Lowlands
+    .isOnQuest 92840 -- Catching Wind
+    .showwhiledead
+    .goto 2521,54.99,68.14
+    .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Spirit Sanador::6491|r.
+    .skipgossipid 96031
+    .skipgossipid 98031
+    .target Spirit Healer::6491
 step << Alliance !Hunter
     #completewith Protect the Index
     >>Mata a |cRXP_ENEMY_Windsong Crawlers::254588|r. Despójalos para conseguir |T133972:0|t[|cRXP_LOOT_Windsong Reptador Carne|r].
@@ -5049,7 +5065,7 @@ step << Horde Druid
 step << Horde Druid
     .isOnQuest 94638 -- Strength and Mercy
     .cooldown spell,1259686,>0,1 -- Skysight
-    .goto 2521,46.597,38.121
+    .goto 2521,69.782,61.609
     .cast 1259686 >>Usa |T1029587:0|t[Vista celeste] para el aumento del 10% de velocidad de movimiento.
 step << Horde Druid
     #completewith next
@@ -5073,13 +5089,12 @@ step << Horde
     *|cRXP_WARN_Ten cuidado: |cRXP_ENEMY_Al'Aketh Assassins|r usan|r |T132357:0|t[Embate] |cRXP_WARN_para tirarte al suelo y|r |T136189:0|t[Golpe siniestro] |cRXP_WARN_junto a tus ataques de combate cercano|r.
     .complete 98512,1 --10/10 Al'Aketh Assassin slain
     .mob Al'Aketh Assassin::254626
-step << Horde !Druid
+step << Horde
     .goto 2521,56.80,61.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Fendaal Windstone::273017|r.
     .turnin 98512 >>Entrega la misión Al'Aketh Assassins.
     .target Fendaal Windstone::273017
 step << Horde Druid
-    .goto 2521,56.80,61.10,25,0
     .goto 2521,54.284,65.803
     >>Mata a |cRXP_ENEMY_Ur'endra::258443|r dentro de la cueva.
     .complete 94638,1 --|1/1 Ur'endra slain
@@ -5116,11 +5131,6 @@ step << Horde
     >>|TInterface/cursor/crosshair/interact.blp:20|tHaz clic en las |cRXP_PICK_Construct Parts|r.
     .complete 93737,3 --|1/1 Obtain Enchanted Gyrozephyr from Windsong Lake
     .mob Windsong Crawler::254588
-step << Horde Druid
-    .goto 2521,56.80,61.10
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Fendaal Windstone::273017|r.
-    .turnin 98512 >>Entrega la misión Al'Aketh Assassins.
-    .target Fendaal Windstone::273017
 step << Horde Druid
     .isOnQuest 94638 -- Strength and Mercy
     .cooldown spell,1259416,>0,1 -- Walk on Air
@@ -5465,7 +5475,7 @@ step << Hunter Alliance
     >>|cRXP_BUY_Compra y equipa|r un |T7810733:0|t[Arco zephralí].
     .collect 277110,1 --Collect Zephrali Bow
     .vendor 271465 >>Vende basura y repara si es necesario.
-    *No vendas |T133970:0|t[Stringy Carne], |T132832:0|t[Pequeño Eggs] ni |T133972:0|t[Carne de Strider]. << Alliance
+    *No vendas |T133970:0|t[Carne fibrosa], |T132832:0|t[Huevos pequeños], ni |T133972:0|t[Carne de zancudo]. << Alliance
     *No vendas |T132832:0|t[Huevos pequeños] ni |T133972:0|t[Carne de zancudo]. << Horde
     *|cRXP_WARN_Los necesitamos para Cocina después|r.
     .skipgossipid 141556
@@ -5488,7 +5498,7 @@ step << Warrior Alliance/Paladin Alliance
     >>|cRXP_BUY_Compra y equipa|r un |T7792097:0|t[Quebrantador zephralí].
     .collect 277106,1 --Zephrali Smasher
     .vendor 271465 >>Vende los items inútiles y repara si es necesario.
-    *No vendas |T133970:0|t[Carne fibrosa], |T132832:0|t[Huevos pequeños], ni |T133972:0|t[Carne de zancudo]. << Alliance
+    *No vendas |T133970:0|t[Stringy Carne], |T132832:0|t[Pequeño Eggs] ni |T133972:0|t[Carne de Strider]. << Alliance
     *No vendas |T132832:0|t[Huevos pequeños] ni |T133972:0|t[Carne de zancudo]. << Horde
     *|cRXP_WARN_Los necesitamos para Cocina después|r.
     .skipgossipid 141556
@@ -5623,13 +5633,7 @@ step << Rogue Alliance
 --     *|cRXP_WARN_We need them for Cooking later|r.
 --     .skipgossipid 141556
 --     .target Falfaan Halfwind::271465
--- step << Alliance
---     .isNotOnQuest 98512 --Al'Aketh Assassins
---     .isQuestAvailable 98512 --Al'Aketh Assassins
---     .goto 2521,66.49,76.65,8,0
---     .goto 2521,68.84,78.42,-1
---     .goto 2521,60.74,78.02,-1
---     .subzone 16626 >>Jump off the cliff
+
 -- step << Alliance Paladin/Alliance Priest/Alliance Warlock/Alliance Mage/Alliance Rogue
 --     #optional
 --     #completewith Al'Aketh Assassins Equip Reminder
@@ -5639,17 +5643,24 @@ step << Rogue Alliance
 --     .use 257345 << Paladin -- Honed Greathammer
 --     .use 257343 << Priest/Warlock/Mage -- Balanced Quarterstaff
 --     .use 257346 << Rogue -- Quickblade's Dagger
--- step << Alliance
---     #ignorecorpse
---     .subzoneskip 16626,1 -- Gustberry Lowlands
---     .isNotOnQuest 98512 --Al'Aketh Assassins
---     .isQuestAvailable 98512 --Al'Aketh Assassins
---     .showwhiledead
---     .goto 2521,54.99,68.14
---     .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Spirit Healer::6491|r.
---     .skipgossipid 96031
---     .skipgossipid 98031
---     .target Spirit Healer::6491
+step << Alliance
+    .isNotOnQuest 98512 --Al'Aketh Assassins
+    .isQuestAvailable 98512 --Al'Aketh Assassins
+    .goto 2521,66.49,76.65,8,0
+    .goto 2521,68.84,78.42,-1
+    .goto 2521,60.74,78.02,-1
+    .subzone 16626 >>Salta del acantilado
+step << Alliance
+    #ignorecorpse
+    .subzoneskip 16626,1 -- Gustberry Lowlands
+    .isNotOnQuest 98512 --Al'Aketh Assassins
+    .isQuestAvailable 98512 --Al'Aketh Assassins
+    .showwhiledead
+    .goto 2521,54.99,68.14
+    .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Spirit Sanador::6491|r.
+    .skipgossipid 96031
+    .skipgossipid 98031
+    .target Spirit Healer::6491
 step << Alliance
     #label Al'Aketh Assassins Equip Reminder
     .goto 2521,56.81,61.11
@@ -5831,7 +5842,8 @@ step << Alliance
     .goto 2521,58.81,43.57,40 >>Cruza el puente.
 step << Horde Druid
     #completewith next
-    .goto 2521,56.80,61.10,25 >>Rodea la montaña.
+    .goto 2521,59.414,66.946,25,0
+    .goto 2521,58.920,55.010,30,0 >>Rodea la montaña.
 step
     #label Learn
     .goto 2521,53.95,38.90
@@ -6066,21 +6078,21 @@ step
     .mob +Shadowgale Shriekling::256092
 step << Alliance
     #completewith ToHermit
-    >>|TInterface/cursor/crosshair/interact.blp:20|tHaz clic en las |cRXP_PICK_Semillas|r |cRXP_WARN_especialmente alrededor de los árboles|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tHaz clic en |cRXP_PICK_Seeds|r |cRXP_WARN_especialmente alrededor de los árboles|r.
     .complete 93160,1 --8/8 Zephyrseed
 step << Alliance
     #optional
     #completewith ToHermit
-    >>|TInterface/cursor/crosshair/interact.blp:20|tHaz clic en el |cRXP_PICK_Moho de lágrima|r |cRXP_WARN_en los árboles|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tHaz clic en el |cRXP_PICK_Tear Moss|r |cRXP_WARN_en los árboles|r.
     .complete 94485,1 --8/8 Lady's Tear Moss
 step << Horde
     #optional
     #completewith ForestHollowsB
-    >>|TInterface/cursor/crosshair/interact.blp:20|tHaz clic en el |cRXP_PICK_Tear Moss|r |cRXP_WARN_en los árboles|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tHaz clic en el |cRXP_PICK_Moho de lágrima|r |cRXP_WARN_en los árboles|r.
     .complete 94485,1 --8/8 Lady's Tear Moss
 step << Horde
     #label ForestHollowsA
-    >>|TInterface/cursor/crosshair/interact.blp:20|tHaz clic en |cRXP_PICK_Seeds|r |cRXP_WARN_especialmente alrededor de los árboles|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tHaz clic en las |cRXP_PICK_Semillas|r |cRXP_WARN_especialmente alrededor de los árboles|r.
     .complete 93160,1 --8/8 Zephyrseed
 step << Horde
     #label ForestHollowsB
@@ -6132,8 +6144,8 @@ step
     #optional
     --@THIDDI: Not sure if worth it (Pristine Shriekling Feathers).
     #completewith next
-    >>Mata a los |cRXP_ENEMY_Shadowgale Shrieklings::256092|r. Despoja |T1508517:0|t[|cRXP_LOOT_Shriekling Garfas|r] y |T132927:0|t[|cRXP_LOOT_Pristine Shriekling Plumas|r]. << Alliance
-    >>Mata a |cRXP_ENEMY_Shadowgale Shrieklings::256092|r. Despójalos para conseguir las |T132927:0|t[|cRXP_LOOT_Pristine Shriekling Plumas|r].
+    >>Mata a |cRXP_ENEMY_Shadowgale Shrieklings::256092|r. Despójalos para conseguir |T1508517:0|t[|cRXP_LOOT_Shriekling Garfas|r] y |T132927:0|t[|cRXP_LOOT_Pristine Shriekling Plumas|r]. << Alliance
+    >>Mata a los |cRXP_ENEMY_Shadowgale Shrieklings::256092|r. Despoja |T132927:0|t[|cRXP_LOOT_Pristine Shriekling Plumas|r].
     .complete 92741,1 << Alliance --8/8 Shriekling Talons
     .complete 94486,1 --20/20 Pristine Shriekling Feathers
     .mob +Shadowgale Shriekling::256092
@@ -6143,8 +6155,8 @@ step
 step
     --@THIDDI: Not sure if worth it (Pristine Shriekling Feathers).
     #label Pristine Shriekling Feathers
-    >>Mata a |cRXP_ENEMY_Shadowgale Shrieklings::256092|r. Despójalos para conseguir |T1508517:0|t[|cRXP_LOOT_Shriekling Garfas|r] y |T132927:0|t[|cRXP_LOOT_Pristine Shriekling Plumas|r]. << Alliance
-    >>Mata a los |cRXP_ENEMY_Shadowgale Shrieklings::256092|r. Despoja |T132927:0|t[|cRXP_LOOT_Pristine Shriekling Plumas|r].
+    >>Mata a los |cRXP_ENEMY_Shadowgale Shrieklings::256092|r. Despoja |T1508517:0|t[|cRXP_LOOT_Shriekling Garfas|r] y |T132927:0|t[|cRXP_LOOT_Pristine Shriekling Plumas|r]. << Alliance
+    >>Mata a |cRXP_ENEMY_Shadowgale Shrieklings::256092|r. Despójalos para conseguir las |T132927:0|t[|cRXP_LOOT_Pristine Shriekling Plumas|r].
     .complete 92741,1 << Alliance --8/8 Shriekling Talons
     .complete 94486,1 --20/20 Pristine Shriekling Feathers
     .mob +Shadowgale Shriekling::256092
@@ -6287,8 +6299,8 @@ step
     .vendor 255940 >>Vende la basura
     .collect 1179,20 << Mage/Druid/Shaman/Priest/Warlock/Paladin -- Ice Cold Milk
     *No vendas |T133970:0|t[Carne fibrosa], |T132832:0|t[Huevos pequeños], ni |T133972:0|t[Carne de zancudo]. << Alliance
-    *No vendas |T132832:0|t[Huevos pequeños] ni |T133972:0|t[Carne de zancudo]. << Horde
-    *|cRXP_WARN_Los necesitamos para Cocina después|r.
+    *No vendas |T132832:0|t[Pequeño Eggs] y |T133972:0|t[Strider Carne]. << Horde
+    *|cRXP_WARN_Los necesitamos para Cocina más tarde|r.
     .skipgossipid 137078
     .target Donaal Downbreeze::255940
 
@@ -6804,24 +6816,6 @@ step << Alliance !Hunter !Rogue !Warrior
 --     .xp <14,1
 
 step << Horde
-    >>Abandona las misiones que falten de "Campamento 101".
-    *Haz clic en la macro en Objetos Activos para abandonarlos todos a la vez.
-    .abandon 97970 >>Abandona la misión Campamento 101: Minería
-    .abandon 97971 >>Abandona la misión Campamento 101: Desollejo
-    .abandon 96646 >>Abandona la misión Campamento 101: Cocina
-    .abandon 97968 >>Abandona la misión Campamento 101: Herboristería
-    .abandon 97965 >>Abandona la misión Campamento 101: Primeros auxilios
-    .abandon 97967 >>Abandona la misión Campamento 101: Pesca
-    .abandon 97963 >>Abandona la misión Campamento 101: Alquimia
-    .abandon 97964 >>Abandona la misión Campamento 101: Herrería
-    .abandon 97973 >>Abandona la misión Campamento 101: Sastrería
-    .abandon 98286 >>Abandona la misión Campamento 101: Encantamiento
-    .abandon 97969 >>Abandona la misión Campamento 101: Peletería
-    .abandon 98285 >>Abandona la misión Campamento 101: Ingeniería
-    .abandon 93318 >>Abandona la misión SE BUSCA: Vulgara, la Insaciable
-    .macro Abandon 101,130722 >>Abandona la misión 101
-step << Alliance
-    #completewith Magical City of Dalaran
     >>Abandona las misiones que falten de "Campamento básico".
     *Haz clic en la macro del marco de Objetos Utilizables para abandonarlas todas a la vez.
     .abandon 97970 >>Abandona la misión Campamento básico: Minería
@@ -6837,8 +6831,26 @@ step << Alliance
     .abandon 97969 >>Abandona la misión Campamento 101: Peletería
     .abandon 98285 >>Abandona la misión Campamento 101: Ingeniería
     .abandon 93318 >>Abandona la misión WANTED: Vulgara the Insaciable
-    .abandon 92709 >>Abandona la misión A Grand Adventure
     .macro Abandon 101,130722 >>Abandona 101
+step << Alliance
+    #completewith Magical City of Dalaran
+    >>Abandona las misiones que falten de "Campamento 101".
+    *Haz clic en la macro en Objetos Activos para abandonarlos todos a la vez.
+    .abandon 97970 >>Abandona la misión Campamento 101: Minería
+    .abandon 97971 >>Abandona la misión Campamento 101: Desollejo
+    .abandon 96646 >>Abandona la misión Campamento 101: Cocina
+    .abandon 97968 >>Abandona la misión Campamento 101: Herboristería
+    .abandon 97965 >>Abandona la misión Campamento 101: Primeros auxilios
+    .abandon 97967 >>Abandona la misión Campamento 101: Pesca
+    .abandon 97963 >>Abandona la misión Campamento 101: Alquimia
+    .abandon 97964 >>Abandona la misión Campamento 101: Herrería
+    .abandon 97973 >>Abandona la misión Campamento 101: Sastrería
+    .abandon 98286 >>Abandona la misión Campamento 101: Encantamiento
+    .abandon 97969 >>Abandona la misión Campamento 101: Peletería
+    .abandon 98285 >>Abandona la misión Campamento 101: Ingeniería
+    .abandon 93318 >>Abandona la misión SE BUSCA: Vulgara, la Insaciable
+    .abandon 92709 >>Abandona la misión A Grand Adventure
+    .macro Abandon 101,130722 >>Abandona la misión 101
 
 -- ============================================================================
 -- Alliance Discovery
@@ -7039,7 +7051,7 @@ step << Alliance Hunter
     #label DarkshoreCook2
     #completewith DarkshoreBoat
     >>|cRXP_WARN_En el barco si acaba de llegar o en el muelle si acaba de partir:|r
-    .cast 818 >>|cRXP_WARN_Crear una|r |T135805:0|t[Lumbre] |cRXP_WARN_(en tu Libro de Profesión)|r
+    .cast 818 >>|cRXP_WARN_Crea una|r |T135805:0|t[Lumbre] |cRXP_WARN_(en tu libro de profesiones)|r
     .usespell 818
     .zoneskip Darkshore
     .itemcount 769,<1 --Chunk of Boar Meat (<1)
@@ -7053,7 +7065,7 @@ step << Alliance Hunter
     #label DarkshoreCook3
     #completewith DarkshoreBoat
     >>|cRXP_WARN_En el barco si acaba de llegar o en el muelle si acaba de partir:|r
-    .cast 818 >>|cRXP_WARN_Crea una|r |T135805:0|t[Lumbre] |cRXP_WARN_(en tu libro de profesiones)|r
+    .cast 818 >>|cRXP_WARN_Crear una|r |T135805:0|t[Lumbre] |cRXP_WARN_(en tu Libro de Profesión)|r
     .usespell 818
     .zoneskip Darkshore
     .itemcount 769,1 --Chunk of Boar Meat (1+)
@@ -7180,13 +7192,13 @@ step << Horde
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Riaani Nightwind::256083|r.
     .accept 93738 >>Acepta la misión El ensamblaje averiado
     .target Riaani Nightwind::256083
--- step << Horde
---     .goto 2521,58.986,75.460
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Railee Thriceforged::257422|r.
---     .vendor 257422 >>Vendor trash.
---     *Don't sell |T132832:0|t[Small Eggs] and |T133972:0|t[Strider Meat].
---     *|cRXP_WARN_We need them for Cooking later|r.
---     .target Railee Thriceforged::257422
+step << Horde
+    .goto 2521,58.986,75.460
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Railee Thriceforged::257422|r.
+    .vendor 257422 >>|cRXP_WARN_Vendor and repair if needed|r.
+    *No vendas |T132832:0|t[Pequeño Eggs] y |T133972:0|t[Strider Carne].
+    *|cRXP_WARN_Los necesitamos para Cocina más tarde|r.
+    .target Railee Thriceforged::257422
 step << Horde
     #optional
     .isQuestComplete 93736 -- Unwelcome Spirits
@@ -7226,14 +7238,20 @@ step << Horde
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Alaana Stormwalker::259119|r.
     .accept 95350 >>Acepta la misión Welcome to Azeroth
     .target Alaana Stormwalker::259119
--- step << Horde
---     .isOnQuest 95350
---     -- .subzoneskip 17045,1 -- Skywatcher Plateau
---     .goto 1412/1,323.300,-731.200
---     .deathskip >>Jump to die and ress at the |cRXP_PICK_Spirit Healer|r.
---     .skipgossipid 96031
---     .skipgossipid 98031
---     .target Spirit Healer::6491
+step << Horde
+    #ignorecorpse
+    .isOnQuest 95350
+    .subzoneskip 17045,1 -- Skywatcher Plateau
+    .goto 1412/1,323.300,-731.200
+    .subzone 1638 >>Salta del acantilado.
+step << Horde
+    .isOnQuest 95350
+    .subzoneskip 1638,1
+    .goto 1456/1,-74.900,-981.700
+    .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Spirit Sanador::6491|r.
+    .skipgossipid 96031
+    .skipgossipid 98031
+    .target Spirit Healer::6491
 step << Horde Druid Skyborne
     #completewith ChildOfNatureC
     #label ChildOfNatureA
@@ -7260,7 +7278,7 @@ step << Horde Druid Skyborne
 step << Horde Druid Skyborne
     #requires ChildOfNatureC
     .goto 1456/1,-281.500,-1039.900
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Turak Tótem de Runa::3033|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Turak Runetotem::3033|r.
     .turnin 94911 >>Entrega la misión Child of Nature.
     .accept 94913 >>Acepta la misión Claro de la Luna
     .target Turak Runetotem::3033
@@ -7277,7 +7295,7 @@ step << Horde Druid Skyborne
     #requires ChildOfNatureA
     .xp <14,1
     .goto 1456/1,-281.500,-1039.900
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Turak Runetotem::3033|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Turak Tótem de Runa::3033|r.
     .train 5178 >>Aprende tus hechizos de clase
     .target Turak Runetotem::3033
 step << Horde !Druid

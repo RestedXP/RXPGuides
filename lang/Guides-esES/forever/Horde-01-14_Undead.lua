@@ -3620,7 +3620,7 @@ step
     --#hardcore
     #completewith next
     .goto 1421/0,1538.58,511.39,100,0
-    .subzone 228 >>Viaja de regreso a El Sepulcro
+    .subzone 228 >>Viaja de vuelta a El Sepulcro
 step
     .goto 1421/0,1593.6,554.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Dalar|r
@@ -3777,7 +3777,7 @@ step
     .unitscan Son of Arugal
 step
     #completewith next
-    .goto 1421/0,1538.58,511.39,100 >> Viaja de regreso a El Sepulcro
+    .goto 1421/0,1538.58,511.39,100 >> Viaja de vuelta a El Sepulcro
     .subzoneskip 228
 step
     .goto 1421/0,1593.6,554.23
@@ -3826,7 +3826,7 @@ step
 step
     #completewith next
     #hardcore
-    .goto 1421/0,1538.58,511.39,100 >> Viaja de regreso a El Sepulcro--c:Silverpine Forest,45.51,41.26
+    .goto 1421/0,1538.58,511.39,100 >> Viaja de vuelta a El Sepulcro--c:Silverpine Forest,45.51,41.26
     .subzoneskip 228
 step
     #softcore

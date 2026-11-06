@@ -2258,7 +2258,7 @@ step
     .goto Dun Morogh,33.51,47.50,50,0
     .goto Dun Morogh,36.85,45.48,50,0
     >>Mata |cRXP_ENEMY_Osos zarpahelada|r, |cRXP_ENEMY_Jabalíes del risco ancianos|r y |cRXP_ENEMY_Leopardos de las nieves|r de camino hacia la Cueva. Despoja a los |cRXP_ENEMY_Jabalíes del risco ancianos|r para obtener |cRXP_LOOT_Costillas de jabalí del risco|r
-    >>|cRXP_WARN_Concéntrate en los|r |cRXP_ENEMY_Leopardos de las nieves|r
+    >>|cRXP_WARN_Enfócate en los|r |cRXP_ENEMY_Leopardos de las nieves|r
     >>|cRXP_WARN_Ten cuidado ya que los |cRXP_ENEMY_Osos zarpahelada|r lanzan|r |T135853:0|t[Garra de hielo] |cRXP_WARN_(Cuerpo a cuerpo Instantáneo: Causa 4 puntos de daño cuerpo a cuerpo adicionales), y los |cRXP_ENEMY_Jabalíes del risco ancianos|r lanzan|r |T132337:0|t[Cargar] |cRXP_WARN_(Instantáneo sobre sí mismo: Aumenta la velocidad de movimiento durante 3 segundos, causando 25-70 puntos de daño cuerpo a cuerpo al golpear. Solo se puede lanzar a distancia)|r
     .complete 319,1 --Kill Ice Claw Bear (x6)
     .mob +Ice Claw Bear

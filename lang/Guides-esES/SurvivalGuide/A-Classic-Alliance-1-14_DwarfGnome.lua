@@ -1921,7 +1921,7 @@ step
     .goto Elwynn Forest,83.7,59.4,40,0
     .goto Elwynn Forest,76.8,62.4,40,0
     .goto Elwynn Forest,83.7,59.4
-    >>Despoja el |cRXP_LOOT_Fardo de madera|r en el suelo. |cRXP_WARN_Se encuentran debajo de los árboles|r
+    >>Despoja el |cRXP_LOOT_Fardo de madera|r del suelo. |cRXP_WARN_Se encuentran debajo de los árboles|r
     .complete 5545,1 -- Bundle of Wood (8)
 step
     #era
@@ -2067,7 +2067,7 @@ step << Warlock
     .goto StormwindClassic,23.2,79.5,18,0
     .goto StormwindClassic,26.3,79.5,18,0
     .goto StormwindClassic,25.154,77.406
-    >>|cRXP_WARN_Viaja a la parte inferior de El Cordero Degollado|r
+    >>|cRXP_WARN_Viaja al fondo de El Cordero Degollado|r
     .cast 7728 >> |cRXP_WARN_Usa|r la |T133292:0|t[Gargantilla de sangrita] |cRXP_WARN_para invocar a un|r |cRXP_ENEMY_Abisario invocado|r
     .use 6928
 step << Warlock

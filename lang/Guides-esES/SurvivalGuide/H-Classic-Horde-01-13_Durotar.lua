@@ -2354,7 +2354,7 @@ step << Shaman
     .target Kranal Fiss
 step << Shaman
     #completewith CallofFire2
-    .zone Durotar >> Regresa a Durotar
+    .zone Durotar >> Viaja de regreso a Durotar
     .zoneskip Durotar
 step << Shaman
     #completewith next
@@ -2389,7 +2389,7 @@ step << Shaman
     >>|cRXP_WARN_Ten cuidado de no caer de la montaña, el camino es muy estrecho. Podrías morir si caes|r
 step << Shaman
     #completewith next
-    .zone The Barrens >> Regresa a Los Baldíos
+    .zone The Barrens >> Viaja de regreso a Los Baldíos
     .zoneskip The Barrens
 step << Shaman
     #loop
