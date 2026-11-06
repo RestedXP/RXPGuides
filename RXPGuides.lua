@@ -170,15 +170,15 @@ addon.gameVersion = gameVersion
 local maxLevel
 addon.enabledLocale = {
     ["enUS"] = false,
-    -- ["deDE"] = true,
-    -- ["esES"] = true,
-    -- ["esMX"] = true,
-    -- ["frFR"] = true,
+    ["deDE"] = true,
+    ["esES"] = true,
+    ["esMX"] = true,
+    ["frFR"] = true,
     -- ["itIT"] = true,
     -- ["koKR"] = true,
-    -- ["ptBR"] = true,
+    ["ptBR"] = true,
     -- ["ruRU"] = true,
-    -- ["zhCN"] = true,
+    ["zhCN"] = true,
     -- ["zhTW"] = true
 }
 
