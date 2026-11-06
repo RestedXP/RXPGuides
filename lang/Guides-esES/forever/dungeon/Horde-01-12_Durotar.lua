@@ -49,6 +49,7 @@ RXPGuides.RegisterGuide([[
 
 
 step
+.enabledungeon ROL
 .enabledungeon RFC
 #include RestedXP Guía Forever (H)\10-12 Durotar
 ]])

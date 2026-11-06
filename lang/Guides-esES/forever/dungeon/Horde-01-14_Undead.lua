@@ -31,6 +31,7 @@ RXPGuides.RegisterGuide([[
 #next 12-14 Bosque de Argénteos; 12-17 Los Baldíos
 
 step
+.enabledungeon ROL
 .enabledungeon RFC
 #include RestedXP Guía Forever (H)\6-12 Claros de Tirisfal
 ]])
