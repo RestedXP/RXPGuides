@@ -2878,6 +2878,28 @@ step << !Paladin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_林奈|r 对话
     .turnin 356 >>交任务 巡查后方
     .target Deathguard Linnea
+step
+    .goto 1420/0,73.800,2022.300
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Deathguard Linnea::1495|r 对话
+    >>|cRXP_WARN_这是"The 愤怒 of Rath'mael"的前置任务|r
+    .turnin 356 >>交任务 巡查后方
+    .target Deathguard Linnea::1495
+    .accept 99156 >>接受任务 巡查后方
+    .dungeon ROL
+step
+    .goto 1420/0,-765.200,2518.700
+    >>杀死 |cRXP_ENEMY_Riptear|r |cRXP_WARN_(level 13 elite)|r。获得战利品 |T134339:0|t[|cRXP_LOOT_Riptear's Heart|r]
+    >>|cRXP_WARN_这是"The 愤怒 of Rath'mael"的前置任务|r
+    .complete 99156,1 --|1/1 Riptear's Heart
+    .mob Riptear
+    .dungeon ROL
+step
+    .goto 1420/0,74.200,2022.400
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Deathguard Linnea::1495|r 对话
+    >>|cRXP_WARN_这是"The 愤怒 of Rath'mael"的前置任务|r
+    .turnin 99156 >>交任务 巡查后方
+    .target Deathguard Linnea::1495
+    .dungeon ROL
 step << !Paladin
     #label EnterUC2
     #completewith Glix

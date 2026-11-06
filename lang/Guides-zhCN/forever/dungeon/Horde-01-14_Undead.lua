@@ -31,6 +31,7 @@ RXPGuides.RegisterGuide([[
 #next 12-14级 银松森林; 12-17级 贫瘠之地
 
 step
+.enabledungeon ROL
 .enabledungeon RFC
 #include RestedXP 无限指南 (部落)\6-12级 提瑞斯法林地
 ]])

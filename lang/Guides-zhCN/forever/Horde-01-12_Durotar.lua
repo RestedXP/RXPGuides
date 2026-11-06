@@ -2215,11 +2215,6 @@ step << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_索塔尔|r 对话，NPC在里面
     .train 5116 >> 训练你的职业技能
     .target 索塔尔
-step << Rogue
-    .goto 1411/1,-4710.94,268.26
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡普拉克|r 对话
-    .train 6760 >> 训练你的职业技能
-    .target 卡普拉克
 step << Priest
     .goto 1411/1,-4831.5,295.05
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_泰金|r 对话
@@ -2250,7 +2245,12 @@ step
     >>|cRXP_BUY_购买一个|r |T133634:0|t[棕色小包] |cRXP_BUY_向|r |cRXP_BUY_他|r
     .collect 4496,1,825,1 --Small Brown Pouch (1)
     .target 加尔克
-    .money <0.05
+    .money <0.09
+step << Rogue
+    .goto 1411/1,-4710.94,268.26
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡普拉克|r 对话
+    .train 6760 >> 训练你的职业技能
+    .target 卡普拉克
 step
     .goto 1411/1,-4724.900,287.300
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_ 奥戈尼尔·魂痕|r对话
@@ -3473,13 +3473,13 @@ step
     #completewith NeeruFireblade << Warrior/Shaman/Hunter
     .goto 1454/1,-4367.46,1405.44,50,0
     .zone Orgrimmar >> 进入奥格瑞玛
-step << !Rogue
+step --<< !Rogue
     .goto 1454/1,-4355.53,1520.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_特拉克根|r 对话
     .vendor >> 向商人出售你的垃圾物品
     .target 特拉克根
     .isQuestAvailable 97246
-step << Rogue
+step << skip --Rogue
     .goto 1454/1,-4355.53,1520.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_特拉克根|r|cRXP_BUY_对话。从他那里购买|r |T135419:0|t[锋利飞斧] |cRXP_BUY_|r
     .collect 3135,1,354,1 --Sharp Throwing Axe (200)
@@ -3488,7 +3488,7 @@ step << Rogue
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.3
     .money <0.03
-step << Rogue
+step << skip --Rogue
     #optional
     #completewith ZeptoUC1
     +|cRXP_WARN_当你达到11级时装备|r |T135421:0|t[锋利的飞斧] |cRXP_WARN_|r
@@ -3942,6 +3942,13 @@ step
     .accept 356 >>接受任务 巡查后方
     .target Deathguard Linnea
     .maxlevel 11
+    .dungeon !ROL
+step
+    .goto 1420/0,74.00,2022.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_林奈|r 对话
+    .accept 356 >>接受任务 巡查后方
+    .target Deathguard Linnea
+    .dungeon ROL
 step
     .goto 1420/0,54.600,1996.600
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哈德里克·哈尔森|r 对话
@@ -3988,6 +3995,7 @@ step
     .target Hadric Harlson
     .isQuestComplete 96897
     .isQuestComplete 96898
+    .dungeon !ROL
 step
     #optional
     .goto 1420/0,54.500,1996.400
@@ -3995,6 +4003,7 @@ step
     .turnin 96897 >>交任务 诅咒神教
     .target Hadric Harlson
     .isQuestComplete 96897
+    .dungeon !ROL
 step
     #optional
     .goto 1420/0,54.500,1996.400
@@ -4002,6 +4011,7 @@ step
     .turnin 96898 >>交任务 战争的残迹
     .target Hadric Harlson
     .isQuestComplete 96898
+    .dungeon !ROL
 step
     #label LinneaTurnin
     .goto 1420/0,74.00,2022.47
@@ -4009,6 +4019,30 @@ step
     .turnin 356 >>交任务 巡查后方
     .target Deathguard Linnea
     .isQuestComplete 356
+    .dungeon !ROL
+step
+    #label LinneaTurnin
+    .goto 1420/0,73.800,2022.300
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Deathguard Linnea::1495|r 对话
+    >>|cRXP_WARN_这是"The 愤怒 of Rath'mael"的前置任务|r
+    .turnin 356 >>交任务 巡查后方
+    .target Deathguard Linnea::1495
+    .accept 99156 >>接受任务 巡查后方
+    .dungeon ROL
+step
+    .goto 1420/0,-765.200,2518.700
+    >>杀死 |cRXP_ENEMY_Riptear|r |cRXP_WARN_(level 13 elite)|r。获得战利品 |T134339:0|t[|cRXP_LOOT_Riptear's Heart|r]
+    >>|cRXP_WARN_这是"The 愤怒 of Rath'mael"的前置任务|r
+    .complete 99156,1 --|1/1 Riptear's Heart
+    .mob Riptear
+    .dungeon ROL
+step
+    .goto 1420/0,74.200,2022.400
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Deathguard Linnea::1495|r 对话
+    >>|cRXP_WARN_这是"The 愤怒 of Rath'mael"的前置任务|r
+    .turnin 99156 >>交任务 巡查后方
+    .target Deathguard Linnea::1495
+    .dungeon ROL
 step
     #completewith UCflightpath1
     .goto 1420/0,240.75,1877.57,20,0

@@ -967,7 +967,7 @@ step
 step
     .goto Dun Morogh,47.377,52.523
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_旅店老板贝尔姆|r 对话，NPC在里面
-    >>|cRXP_BUY_从他那里购买1杯|r |T132800:0|t[狂想麦酒] |cRXP_BUY_和1杯|r |T132800:0|t[雷霆麦酒]
+    >>|cRXP_BUY_从他那里购买一杯|r |T132800:0|t[狂想麦酒] |cRXP_BUY_和一杯|r |T132800:0|t[雷霆麦酒]
     .complete 384,2 --Collect Rhapsody Malt (x1)
     .collect 2686,1,311 --Collect Thunder Ale (x1)
     .target 旅店老板贝尔姆

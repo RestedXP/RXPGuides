@@ -570,19 +570,12 @@ step
     .mob 赤鳞尖啸龙
 step
     #optional
-    #completewith next
+    #completewith RatchetEnter
     .goto 1413/1,-3851.27,-526.53,100,0
     >>击杀 |cRXP_ENEMY_快步斑马|r。拾取他们的 |cRXP_LOOT_蹄子|r
     .complete 845,1 --Zhevra Hooves (4)
     .mob 快步斑马
     .isOnQuest 872
-step
-    #optional
-    #completewith next
-    >>击杀 |cRXP_ENEMY_快步斑马|r。拾取他们的 |cRXP_LOOT_蹄子|r
-    .complete 845,1 --Zhevra Hooves (4)
-    .mob 快步斑马
-    .isNotOnQuest 872
 step
     #label RatchetEnter
     .goto 1413/1,-3728.66,-835.29
@@ -2229,6 +2222,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_亡灵卫兵克里斯托弗::251001|r 对话
     .accept 92422 >>接受任务 拉斯玛尔之怒
     .target Deathguard Kristof::251001
+    .isQuestTurnedIn 99156
 step
     #completewith UCPickups
     >>|cRXP_WARN_如果可能，让你的小队成员分享以下任务|r
@@ -2265,6 +2259,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_萨多雷·格雷夫::11835|r 对话
     .accept 95216 >>接受任务 新的药剂
     .target Theodore Griffs::11835
+    .isQuestTurnedIn 451
 step
     .goto 1458/0,415.400,1389.900,50,0
     .goto 1458/0,373.500,1362.200,50,0
@@ -2798,33 +2793,24 @@ step << Rogue
     .collect 7970,1,888,1 --E.C.A.C. (1)
     .collect 5060,1,888,1 --Thieves' Tools (1)
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_斯布特瓦夫|r 和 |cRXP_FRIENDLY_迪兹维格|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_斯布特瓦夫|r 对话
     .turnin 902 >>交任务  什么什么平衡器
     .turnin 863 >> 交任务 梅贝尔的隐形水
     .target 斯布特瓦夫
     .goto 1413/1,-3759.06,-902.18
-    .turnin 896 >> 交任务  矿工的宝贝
-    .target 码头管理员迪兹维格
-    .goto 1413/1,-3796.55,-985.28
-    .isQuestComplete 896
     .isQuestComplete 863
-step
-    #optional
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_斯布特瓦夫|r 和 |cRXP_FRIENDLY_迪兹维格|r 对话
-    .turnin 902 >>交任务  什么什么平衡器
-    .target 斯布特瓦夫
-    .goto 1413/1,-3759.06,-902.18
-    .turnin 896 >> 交任务  矿工的宝贝
-    .target 码头管理员迪兹维格
-    .goto 1413/1,-3796.55,-985.28
-    .isQuestComplete 896
 step
     #optional
     .goto 1413/1,-3759.06,-902.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_斯布特瓦夫|r 对话
-    .turnin 863 >> 交任务 梅贝尔的隐形水
+    .turnin 902 >>交任务  什么什么平衡器
     .target 斯布特瓦夫
-    .isQuestComplete 863
+step
+    .goto 1413/1,-3796.55,-985.28
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Dizzywig|r 对话
+    .turnin 896 >> 交任务  矿工的宝贝
+    .target 码头管理员迪兹维格
+    .isQuestComplete 896
 step
     #label RapHornsPickup
     .goto 1413/1,-3697.24,-929.20
@@ -3940,7 +3926,7 @@ step << Rogue !Skyborne
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_安塞瓦|r 对话
     .train 198 >>学习锤类武器
     .target 安塞瓦
-step << Rogue
+step << skip --Rogue
     .goto 1456/1,110.13,-1299.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_库鲁克|r |cRXP_BUY_对话。购买|r |T135423:0|t[致命飞斧] |cRXP_BUY_从他那里|r
     .collect 3137,1,6562,1 --Deadly Throwing Axe (200)
@@ -5316,7 +5302,7 @@ step << Hunter
     .train 24558 >> 训练你的宠物技能
     .target 肖祖
     .xp <24,1
-step << Rogue
+step << skip --Rogue
     .goto 1454/1,-4355.53,1520.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_特拉克根|r |cRXP_BUY_对话。购买|r |T135423:0|t[致命飞斧] |cRXP_BUY_从他那里|r
     .collect 3137,1,6544,1 --Deadly Throwing Axe (200)

@@ -49,6 +49,7 @@ RXPGuides.RegisterGuide([[
 
 
 step
+.enabledungeon ROL
 .enabledungeon RFC
 #include RestedXP 无限指南 (部落)\10-12级 杜隆塔尔
 ]])
