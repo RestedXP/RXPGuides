@@ -31,6 +31,7 @@ RXPGuides.RegisterGuide([[
 #next 12-14 Forêt des Pins argentés; 12-17 Les Tarides
 
 step
+.enabledungeon ROL
 .enabledungeon RFC
 #include RestedXP Guide Forever (H)\6-12 Clairières de Tirisfal
 ]])
