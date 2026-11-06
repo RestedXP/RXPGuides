@@ -31,7 +31,7 @@ L["seconds"] = "Sek."
 
 -- CptStadicsVendorTreasures.lua file
 
-L["Cpt. Stadics' Vendor Treasures"] = "Cpt. Stadics' Händler Treasures"
+L["Cpt. Stadics' Vendor Treasures"] = "Cpt. Stadics' Vendor Treasures"
 L["Potion Vendor"] = "Trank Händler"
 L["Gear Vendor"] = "Ausrüstung Händler"
 L["Brinna Valanaar"] = "Brinna Valanaar"
