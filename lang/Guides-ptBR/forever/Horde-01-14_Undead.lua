@@ -2878,6 +2878,28 @@ step << !Paladin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Necroguarda Lina|r
     .turnin 356 >>Entregue Patrulha da retaguarda
     .target Deathguard Linnea
+step
+    .goto 1420/0,73.800,2022.300
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Deathguard Linnea::1495|r
+    >>|cRXP_WARN_Esta é uma pré-missão para "The Ira of Rath'mael"|r
+    .turnin 356 >>Entregue Patrulha da retaguarda
+    .target Deathguard Linnea::1495
+    .accept 99156 >>Aceite Patrulha da retaguarda
+    .dungeon ROL
+step
+    .goto 1420/0,-765.200,2518.700
+    >>Abate |cRXP_ENEMY_Riptear|r |cRXP_WARN_(level 13 elite)|r. Saqueie dele |T134339:0|t[|cRXP_LOOT_Riptear's Coração|r]
+    >>|cRXP_WARN_Esta é uma pré-missão para "The Ira of Rath'mael"|r
+    .complete 99156,1 --|1/1 Riptear's Heart
+    .mob Riptear
+    .dungeon ROL
+step
+    .goto 1420/0,74.200,2022.400
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Deathguard Linnea::1495|r
+    >>|cRXP_WARN_Esta é uma pré-missão para "The Ira of Rath'mael"|r
+    .turnin 99156 >>Entregue Patrulha da retaguarda
+    .target Deathguard Linnea::1495
+    .dungeon ROL
 step << !Paladin
     #label EnterUC2
     #completewith Glix

@@ -2215,11 +2215,6 @@ step << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thotar|r dentro
     .train 5116 >> Treine suas magias de classe
     .target Thotar
-step << Rogue
-    .goto 1411/1,-4710.94,268.26
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kaplak|r
-    .train 6760 >> Treine suas magias de classe
-    .target Kaplak
 step << Priest
     .goto 1411/1,-4831.5,295.05
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tai'jin|r
@@ -2250,7 +2245,12 @@ step
     >>|cRXP_BUY_Compre uma|r |T133634:0|t[Bolsa Marrom Pequena] |cRXP_BUY_de|r |cRXP_BUY_dela|r
     .collect 4496,1,825,1 --Small Brown Pouch (1)
     .target Jark
-    .money <0.05
+    .money <0.09
+step << Rogue
+    .goto 1411/1,-4710.94,268.26
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kaplak|r
+    .train 6760 >> Treine suas magias de classe
+    .target Kaplak
 step
     .goto 1411/1,-4724.900,287.300
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Orgnil Chaganalma|r
@@ -3473,13 +3473,13 @@ step
     #completewith NeeruFireblade << Warrior/Shaman/Hunter
     .goto 1454/1,-4367.46,1405.44,50,0
     .zone Orgrimmar >> Entre em Orgrimmar
-step << !Rogue
+step --<< !Rogue
     .goto 1454/1,-4355.53,1520.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Trak'gen|r
     .vendor >> Venda os lixos
     .target Trak'gen
     .isQuestAvailable 97246
-step << Rogue
+step << skip --Rogue
     .goto 1454/1,-4355.53,1520.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Fale com|r |cRXP_FRIENDLY_Trak'gen|r|cRXP_BUY_. Compre |r |T135419:0|t[Machado de Arremesso Afiado] |cRXP_BUY_dele|r
     .collect 3135,1,354,1 --Sharp Throwing Axe (200)
@@ -3488,7 +3488,7 @@ step << Rogue
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.3
     .money <0.03
-step << Rogue
+step << skip --Rogue
     #optional
     #completewith ZeptoUC1
     +|cRXP_WARN_Equipe o|r |T135421:0|t[Machado de Arremesso Afiado] |cRXP_WARN_quando estiver no nível 11|r
@@ -3942,6 +3942,13 @@ step
     .accept 356 >>Aceite Patrulha da retaguarda
     .target Deathguard Linnea
     .maxlevel 11
+    .dungeon !ROL
+step
+    .goto 1420/0,74.00,2022.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Necroguarda Lina|r
+    .accept 356 >>Aceite Patrulha da retaguarda
+    .target Deathguard Linnea
+    .dungeon ROL
 step
     .goto 1420/0,54.600,1996.600
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Hadric Harlson|r
@@ -3988,6 +3995,7 @@ step
     .target Hadric Harlson
     .isQuestComplete 96897
     .isQuestComplete 96898
+    .dungeon !ROL
 step
     #optional
     .goto 1420/0,54.500,1996.400
@@ -3995,6 +4003,7 @@ step
     .turnin 96897 >>Entregue A Seita dos malditos
     .target Hadric Harlson
     .isQuestComplete 96897
+    .dungeon !ROL
 step
     #optional
     .goto 1420/0,54.500,1996.400
@@ -4002,6 +4011,7 @@ step
     .turnin 96898 >>Entregue Vestígios da guerra
     .target Hadric Harlson
     .isQuestComplete 96898
+    .dungeon !ROL
 step
     #label LinneaTurnin
     .goto 1420/0,74.00,2022.47
@@ -4009,6 +4019,30 @@ step
     .turnin 356 >>Entregue Patrulha da retaguarda
     .target Deathguard Linnea
     .isQuestComplete 356
+    .dungeon !ROL
+step
+    #label LinneaTurnin
+    .goto 1420/0,73.800,2022.300
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Deathguard Linnea::1495|r
+    >>|cRXP_WARN_Esta é uma pré-missão para "The Ira of Rath'mael"|r
+    .turnin 356 >>Entregue Patrulha da retaguarda
+    .target Deathguard Linnea::1495
+    .accept 99156 >>Aceite Patrulha da retaguarda
+    .dungeon ROL
+step
+    .goto 1420/0,-765.200,2518.700
+    >>Abate |cRXP_ENEMY_Riptear|r |cRXP_WARN_(level 13 elite)|r. Saqueie dele |T134339:0|t[|cRXP_LOOT_Riptear's Coração|r]
+    >>|cRXP_WARN_Esta é uma pré-missão para "The Ira of Rath'mael"|r
+    .complete 99156,1 --|1/1 Riptear's Heart
+    .mob Riptear
+    .dungeon ROL
+step
+    .goto 1420/0,74.200,2022.400
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Deathguard Linnea::1495|r
+    >>|cRXP_WARN_Esta é uma pré-missão para "The Ira of Rath'mael"|r
+    .turnin 99156 >>Entregue Patrulha da retaguarda
+    .target Deathguard Linnea::1495
+    .dungeon ROL
 step
     #completewith UCflightpath1
     .goto 1420/0,240.75,1877.57,20,0

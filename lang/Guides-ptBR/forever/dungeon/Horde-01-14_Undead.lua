@@ -31,6 +31,7 @@ RXPGuides.RegisterGuide([[
 #next 12-14 Floresta de Pinhaprata; 12-17 Sertões
 
 step
+.enabledungeon ROL
 .enabledungeon RFC
 #include Guia RestedXP Forever (H)\6-12 Clareiras de Tirisfal
 ]])
