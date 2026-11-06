@@ -31,6 +31,7 @@ RXPGuides.RegisterGuide([[
 #next 12-14 Silverpine Forest; 12-17 The Barrens
 
 step
+.enabledungeon ROL
 .enabledungeon RFC
 #include RestedXP Forever Guide (H)\6-12 Tirisfal Glades
 ]])

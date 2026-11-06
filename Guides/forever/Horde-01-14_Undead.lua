@@ -2878,6 +2878,28 @@ step << !Paladin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Linnea|r
     .turnin 356 >>Turn in Rear Guard Patrol
     .target Deathguard Linnea
+step
+    .goto 1420/0,73.800,2022.300
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathguard Linnea::1495|r
+    >>|cRXP_WARN_This is a pre-quest for "The Wrath of Rath'mael"|r
+    .turnin 356 >>Turn in Rear Guard Patrol
+    .target Deathguard Linnea::1495
+    .accept 99156 >>Accept Rear Guard Patrol
+    .dungeon ROL
+step
+    .goto 1420/0,-765.200,2518.700
+    >>Kill |cRXP_ENEMY_Riptear|r |cRXP_WARN_(level 13 elite)|r. Loot him for |T134339:0|t[|cRXP_LOOT_Riptear's Heart|r]
+    >>|cRXP_WARN_This is a pre-quest for "The Wrath of Rath'mael"|r
+    .complete 99156,1 --|1/1 Riptear's Heart
+    .mob Riptear
+    .dungeon ROL
+step
+    .goto 1420/0,74.200,2022.400
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathguard Linnea::1495|r
+    >>|cRXP_WARN_This is a pre-quest for "The Wrath of Rath'mael"|r
+    .turnin 99156 >>Turn in Rear Guard Patrol
+    .target Deathguard Linnea::1495
+    .dungeon ROL
 step << !Paladin
     #label EnterUC2
     #completewith Glix

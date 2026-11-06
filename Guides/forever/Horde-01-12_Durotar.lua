@@ -2215,11 +2215,6 @@ step << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thotar|r inside
     .train 5116 >> Train your class spells
     .target Thotar
-step << Rogue
-    .goto 1411/1,-4710.94,268.26
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaplak|r
-    .train 6760 >> Train your class spells
-    .target Kaplak
 step << Priest
     .goto 1411/1,-4831.5,295.05
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tai'jin|r
@@ -2250,7 +2245,12 @@ step
     >>|cRXP_BUY_Buy a|r |T133634:0|t[Small Brown Pouch] |cRXP_BUY_from|r |cRXP_BUY_him|r
     .collect 4496,1,825,1 --Small Brown Pouch (1)
     .target Jark
-    .money <0.05
+    .money <0.09
+step << Rogue
+    .goto 1411/1,-4710.94,268.26
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaplak|r
+    .train 6760 >> Train your class spells
+    .target Kaplak
 step
     .goto 1411/1,-4724.900,287.300
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orgnil|r
@@ -3473,13 +3473,13 @@ step
     #completewith NeeruFireblade << Warrior/Shaman/Hunter
     .goto 1454/1,-4367.46,1405.44,50,0
     .zone Orgrimmar >> Enter Orgrimmar
-step << !Rogue
+step --<< !Rogue
     .goto 1454/1,-4355.53,1520.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Trak'gen|r
     .vendor >> Vendor your trash
     .target Trak'gen
     .isQuestAvailable 97246
-step << Rogue
+step << skip --Rogue
     .goto 1454/1,-4355.53,1520.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Trak'gen|r|cRXP_BUY_. Buy |r |T135419:0|t[Sharp Throwing Axe] |cRXP_BUY_from him|r
     .collect 3135,1,354,1 --Sharp Throwing Axe (200)
@@ -3488,7 +3488,7 @@ step << Rogue
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.3
     .money <0.03
-step << Rogue
+step << skip --Rogue
     #optional
     #completewith ZeptoUC1
     +|cRXP_WARN_Equip the|r |T135421:0|t[Sharp Throwing Axe] |cRXP_WARN_when you are level 11|r
@@ -3942,6 +3942,13 @@ step
     .accept 356 >>Accept Rear Guard Patrol
     .target Deathguard Linnea
     .maxlevel 11
+    .dungeon !ROL
+step
+    .goto 1420/0,74.00,2022.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Linnea|r
+    .accept 356 >>Accept Rear Guard Patrol
+    .target Deathguard Linnea
+    .dungeon ROL
 step
     .goto 1420/0,54.600,1996.600
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hadric Harlson|r
@@ -3988,6 +3995,7 @@ step
     .target Hadric Harlson
     .isQuestComplete 96897
     .isQuestComplete 96898
+    .dungeon !ROL
 step
     #optional
     .goto 1420/0,54.500,1996.400
@@ -3995,6 +4003,7 @@ step
     .turnin 96897 >>Turn in The Cult of the Damned
     .target Hadric Harlson
     .isQuestComplete 96897
+    .dungeon !ROL
 step
     #optional
     .goto 1420/0,54.500,1996.400
@@ -4002,6 +4011,7 @@ step
     .turnin 96898 >>Turn in Remnants of War
     .target Hadric Harlson
     .isQuestComplete 96898
+    .dungeon !ROL
 step
     #label LinneaTurnin
     .goto 1420/0,74.00,2022.47
@@ -4009,6 +4019,30 @@ step
     .turnin 356 >>Turn in Rear Guard Patrol
     .target Deathguard Linnea
     .isQuestComplete 356
+    .dungeon !ROL
+step
+    #label LinneaTurnin
+    .goto 1420/0,73.800,2022.300
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathguard Linnea::1495|r
+    >>|cRXP_WARN_This is a pre-quest for "The Wrath of Rath'mael"|r
+    .turnin 356 >>Turn in Rear Guard Patrol
+    .target Deathguard Linnea::1495
+    .accept 99156 >>Accept Rear Guard Patrol
+    .dungeon ROL
+step
+    .goto 1420/0,-765.200,2518.700
+    >>Kill |cRXP_ENEMY_Riptear|r |cRXP_WARN_(level 13 elite)|r. Loot him for |T134339:0|t[|cRXP_LOOT_Riptear's Heart|r]
+    >>|cRXP_WARN_This is a pre-quest for "The Wrath of Rath'mael"|r
+    .complete 99156,1 --|1/1 Riptear's Heart
+    .mob Riptear
+    .dungeon ROL
+step
+    .goto 1420/0,74.200,2022.400
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathguard Linnea::1495|r
+    >>|cRXP_WARN_This is a pre-quest for "The Wrath of Rath'mael"|r
+    .turnin 99156 >>Turn in Rear Guard Patrol
+    .target Deathguard Linnea::1495
+    .dungeon ROL
 step
     #completewith UCflightpath1
     .goto 1420/0,240.75,1877.57,20,0
