@@ -867,7 +867,7 @@ step
     .vendor 251537 >>|cRXP_WARN_verkauft Schrott|r
     *Nicht sell |T133970:0|t[Stringy Fleisch], |T132832:0|t[Kleines Eis], oder |T132889:0|t[Linen Stoff]. << Alliance
     *Nicht sell |T132832:0|t[Kleines Eis] oder |T132889:0|t[Linen Stoff]. << Horde
-    *|cRXP_WARN_Wir brauchen sie für Kochkunst später|r.
+    *|cRXP_WARN_Wir brauchen sie später für die Kochkunst|r.
 step
     #requires Aggressive Encroachment2
     .goto 2521,42.41,25.15
@@ -1055,7 +1055,7 @@ step << !Rogue !Warrior
     .vendor 254358 >>|cRXP_WARN_Vendor trash|r.
     *Nicht sell |T133970:0|t[Stringy Fleisch], |T132832:0|t[Kleines Eis], |T133972:0|t[Strider Fleisch], oder |T132889:0|t[Linen Stoff]. << Alliance
     *Nicht sell |T132832:0|t[Kleines Eis], |T133972:0|t[Strider Fleisch], oder |T132889:0|t[Linen Stoff]. << Horde
-    *|cRXP_WARN_Wir brauchen sie für Kochkunst später|r.
+    *|cRXP_WARN_Wir brauchen sie später für die Kochkunst|r.
 step << Rogue/Warrior
     #completewith The Next Step
     #label VendorStep
@@ -1064,7 +1064,7 @@ step << Rogue/Warrior
     .vendor 254360 >>|cRXP_WARN_Vendor trash|r.
     *Nicht sell |T133970:0|t[Stringy Fleisch], |T132832:0|t[Kleines Eis], |T133972:0|t[Strider Fleisch], oder |T132889:0|t[Linen Stoff]. << Alliance
     *Nicht sell |T132832:0|t[Kleines Eis], |T133972:0|t[Strider Fleisch], oder |T132889:0|t[Linen Stoff]. << Horde
-    *|cRXP_WARN_Wir brauchen sie für Kochkunst später|r.
+    *|cRXP_WARN_Wir brauchen sie später für die Kochkunst|r.
     .target Belandiel Farflight::254360
 step
     #requires The Next Step
@@ -1350,7 +1350,7 @@ step << Druid/Priest/Warlock/Mage
     .collect 1179,5 >>|cRXP_BUY_Buy 5|r |T132815:0|t[Eiskalt Milk], |cRXP_BUY_or 10 if ihr könnt afford them|r
     *Nicht sell |T133970:0|t[Stringy Fleisch], |T132832:0|t[Kleines Eis], |T133972:0|t[Strider Fleisch], oder |T132889:0|t[Linen Stoff]. << Alliance
     *Nicht sell |T132832:0|t[Kleines Eis], |T133972:0|t[Strider Fleisch], oder |T132889:0|t[Linen Stoff]. << Horde
-    *|cRXP_WARN_Wir brauchen sie für Kochkunst später|r.
+    *|cRXP_WARN_Wir brauchen sie später für die Kochkunst|r.
 step
     .goto 2521,44.47,44.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Teeri Wellwind::251906|r.
@@ -1636,7 +1636,7 @@ step
     .collect 2678,5 -- Mild Spices
     *Nicht sell |T133970:0|t[Stringy Fleisch], |T132832:0|t[Kleines Eis], |T133972:0|t[Strider Fleisch], oder |T132889:0|t[Linen Stoff]. << Alliance
     *Nicht sell |T132832:0|t[Kleines Eis], |T133972:0|t[Strider Fleisch], oder |T132889:0|t[Linen Stoff]. << Horde
-    *|cRXP_WARN_Wir brauchen sie für Kochkunst später|r.
+    *|cRXP_WARN_Wir brauchen sie später für die Kochkunst|r.
     .target Zerril Softbreeze::251905
     .skipgossipid 137550
 step
@@ -2326,7 +2326,7 @@ step
     .vendor 251905 >>Verkauft Müll
     *Nicht sell |T133970:0|t[Stringy Fleisch], |T132832:0|t[Kleines Eis], oder |T133972:0|t[Strider Fleisch]. << Alliance
     *Nicht sell |T132832:0|t[Kleines Eis] und |T133972:0|t[Strider Fleisch]. << Horde
-    *|cRXP_WARN_Wir brauchen sie für Kochkunst später|r.
+    *|cRXP_WARN_Wir brauchen sie später für die Kochkunst|r.
     .collect 2678,5 -- Mild Spices
     .skipgossipid 137550
     .target Zerril Softbreeze::251905
@@ -3080,7 +3080,7 @@ step
     .skipgossipid 137550
     *Nicht sell |T133970:0|t[Stringy Fleisch], |T132832:0|t[Kleines Eis], oder |T133972:0|t[Strider Fleisch]. << Alliance
     *Nicht sell |T132832:0|t[Kleines Eis] und |T133972:0|t[Strider Fleisch]. << Horde
-    *|cRXP_WARN_Wir brauchen sie für Kochkunst später|r.
+    *|cRXP_WARN_Wir brauchen sie später für die Kochkunst|r.
     .target Zerril Softbreeze::251905
 step
     .train 2550,3 -- Cooking Trained
@@ -3372,7 +3372,7 @@ step << Alliance Hunter
     .vendor 271465 >>Händler trash und repair if needed
     *Nicht sell |T133970:0|t[Stringy Fleisch], |T132832:0|t[Kleines Eis], oder |T133972:0|t[Strider Fleisch]. << Alliance
     *Nicht sell |T132832:0|t[Kleines Eis] und |T133972:0|t[Strider Fleisch]. << Horde
-    *|cRXP_WARN_Wir brauchen sie für Kochkunst später|r.
+    *|cRXP_WARN_Wir brauchen sie später für die Kochkunst|r.
     .skipgossipid 141556
     .target Falfaan Halfwind::271465
 step << Alliance Hunter
@@ -3395,7 +3395,7 @@ step << Alliance Warrior/Alliance Paladin
     .vendor 271465 >>Händler trash und repair if needed.
     *Nicht sell |T133970:0|t[Stringy Fleisch], |T132832:0|t[Kleines Eis], oder |T133972:0|t[Strider Fleisch]. << Alliance
     *Nicht sell |T132832:0|t[Kleines Eis] und |T133972:0|t[Strider Fleisch]. << Horde
-    *|cRXP_WARN_Wir brauchen sie für Kochkunst später|r.
+    *|cRXP_WARN_Wir brauchen sie später für die Kochkunst|r.
     .skipgossipid 141556
     .target Falfaan Halfwind::271465
 step << Alliance Warrior/Alliance Paladin
@@ -3437,7 +3437,7 @@ step << Alliance Rogue
     .vendor 271465 >>Händler trash und repair if needed.
     *Nicht sell |T133970:0|t[Stringy Fleisch], |T132832:0|t[Kleines Eis], oder |T133972:0|t[Strider Fleisch]. << Alliance
     *Nicht sell |T132832:0|t[Kleines Eis] und |T133972:0|t[Strider Fleisch]. << Horde
-    *|cRXP_WARN_Wir brauchen sie für Kochkunst später|r.
+    *|cRXP_WARN_Wir brauchen sie später für die Kochkunst|r.
     .skipgossipid 141556
     .target Falfaan Halfwind::271465
 step << Alliance Rogue
@@ -3765,7 +3765,7 @@ step << Horde Hunter
     .collect 277110,1 --Collect Zephrali Bow
     .vendor 271465 >>Händler trash und repair if needed
     *Nicht sell |T132832:0|t[Kleines Eis] und |T133972:0|t[Strider Fleisch]. << Horde
-    *|cRXP_WARN_Wir brauchen sie für Kochkunst später|r.
+    *|cRXP_WARN_Wir brauchen sie später für die Kochkunst|r.
     .skipgossipid 141556
     .target Falfaan Halfwind::271465
 step << Horde Hunter
@@ -3787,7 +3787,7 @@ step << Horde Warrior
     .collect 277106,1 --Zephrali Smasher
     .vendor 271465 >>Händler trash und repair if needed.
     *Nicht sell |T132832:0|t[Kleines Eis] und |T133972:0|t[Strider Fleisch]. << Horde
-    *|cRXP_WARN_Wir brauchen sie für Kochkunst später|r.
+    *|cRXP_WARN_Wir brauchen sie später für die Kochkunst|r.
     .skipgossipid 141556
     .target Falfaan Halfwind::271465
 step << Horde Warrior
@@ -3810,7 +3810,7 @@ step << Horde Shaman/Horde Druid
     .vendor 271465 >>Händler trash und repair if needed.
     *Nicht sell |T133970:0|t[Stringy Fleisch], |T132832:0|t[Kleines Eis], oder |T133972:0|t[Strider Fleisch]. << Alliance
     *Nicht sell |T132832:0|t[Kleines Eis] und |T133972:0|t[Strider Fleisch]. << Horde
-    *|cRXP_WARN_Wir brauchen sie für Kochkunst später|r.
+    *|cRXP_WARN_Wir brauchen sie später für die Kochkunst|r.
     .skipgossipid 141556
     .target Falfaan Halfwind::271465
 step << Horde Shaman/Horde Druid
@@ -3832,7 +3832,7 @@ step << Horde Rogue
     .collect 277107,1 --Zephrali Bludgeon
     .vendor 271465 >>Händler trash und repair if needed.
     *Nicht sell |T132832:0|t[Kleines Eis] und |T133972:0|t[Strider Fleisch]. << Horde
-    *|cRXP_WARN_Wir brauchen sie für Kochkunst später|r.
+    *|cRXP_WARN_Wir brauchen sie später für die Kochkunst|r.
     .skipgossipid 141556
     .target Falfaan Halfwind::271465
 step << Horde Rogue
@@ -3860,7 +3860,7 @@ step << Hunter Horde
     .vendor 271465 >>Händler trash und repair if needed
     *Nicht sell |T133970:0|t[Stringy Fleisch], |T132832:0|t[Kleines Eis], oder |T133972:0|t[Strider Fleisch]. << Alliance
     *Nicht sell |T132832:0|t[Kleines Eis] und |T133972:0|t[Strider Fleisch]. << Horde
-    *|cRXP_WARN_Wir brauchen sie für Kochkunst später|r.
+    *|cRXP_WARN_Wir brauchen sie später für die Kochkunst|r.
     .skipgossipid 141556
     .target Falfaan Halfwind::271465
 step << Horde
@@ -4070,7 +4070,7 @@ step << Horde Shaman
     .vendor 255940 >>Verkauft Müll
     .collect 1179,20 >>Kauft |T132815:0|t[Eiskalt Milk] << Mage/Druid/Priest/Warlock/Paladin/Hunter/Shaman
     *Nicht sell |T132832:0|t[Kleines Eis] und |T133972:0|t[Strider Fleisch]. << Horde
-    *|cRXP_WARN_Wir brauchen sie für Kochkunst später|r.
+    *|cRXP_WARN_Wir brauchen sie später für die Kochkunst|r.
     .target Donaal Downbreeze::255940
     .goto 2521,62.180,72.616
     .skipgossipid 137078
@@ -4096,43 +4096,43 @@ step << Horde Shaman
     .turnin 97243 >>Gebt die Quest Ruf des Feuers ab
     .accept 97244 >>Akzeptiert die Quest Ruf des Feuers
     .target Olariaan Swiftburn::268592
--- step << Horde Shaman
---     .isOnQuest 97244
---     .isQuestNotComplete 97244
---     .goto 2521,50.8,89.6
---     .subzone 16593 >>Jump off the cliff
--- step << Horde Shaman
---     #ignorecorpse
---     .isOnQuest 97244
---     .isQuestNotComplete 97244
---     .showwhiledead
---     .goto 2521,54.99,68.14
---     .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Spirit Healer::6491|r.
---     .skipgossipid 96031
---     .skipgossipid 98031
---     .target Spirit Healer::6491
+step << Horde Shaman
+    .isOnQuest 97244
+    .isQuestNotComplete 97244
+    .goto 2521,50.8,89.6
+    .subzone 16593 >>Springt von der Klippe
+step << Horde Shaman
+    #ignorecorpse
+    .isOnQuest 97244
+    .isQuestNotComplete 97244
+    .showwhiledead
+    .goto 2521,54.99,68.14
+    .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Spirit Heilung::6491|r.
+    .skipgossipid 96031
+    .skipgossipid 98031
+    .target Spirit Healer::6491
 step << Horde Shaman
     .goto 2521,64.380,63.586
     >>Tötet |cRXP_ENEMY_Skypriest Faladiel::268602|r. Plündert sie für |T839910:0|t[|cRXP_LOOT_Faladiel's Herz|r].
     .complete 97244,1 --|1/1 Faladiel's Heart
     .mob Skypriest Faladiel::268602
--- step << Horde Shaman
---     #completewith next
---     .isOnQuest 97244
---     .isQuestComplete 97244
---     .goto 2521,62.384,64.393,-1
---     .goto 2521,54.99,68.14,-1
---     +Die and ressurect at the |cRXP_FRIENDLY_Spirit Healer::6491|r.
--- step << Horde Shaman
---     .isOnQuest 97244
---     .isQuestComplete 97244
---     #ignorecorpse
---     .showwhiledead
---     .goto 2521,54.99,68.14
---     .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Spirit Healer::6491|r.
---     .skipgossipid 96031
---     .skipgossipid 98031
---     .target Spirit Healer::6491
+step << Horde Shaman
+    #completewith next
+    .isOnQuest 97244
+    .isQuestComplete 97244
+    .goto 2521,62.384,64.393,-1
+    .goto 2521,54.99,68.14,-1
+    +Sterbt und stellt euch beim |cRXP_FRIENDLY_Spirit Heilung::6491|r wieder her.
+step << Horde Shaman
+    .isOnQuest 97244
+    .isQuestComplete 97244
+    #ignorecorpse
+    .showwhiledead
+    .goto 2521,54.99,68.14
+    .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Spirit Heilung::6491|r.
+    .skipgossipid 96031
+    .skipgossipid 98031
+    .target Spirit Healer::6491
 step << Horde Shaman
     #label CallOfFireB
     .goto 2521,51.241,86.193
@@ -4252,12 +4252,22 @@ step << Horde
     .goto 2521,48.445,80.591
     .cast 1259686 >>Benutzt |T1029587:0|t[Himmelssicht] für den 10%-Bewegungsgeschwindigkeitsbuff.
     .cooldown spell,1259686,>0,1
+step << Horde !Shaman
+    #ignorecorpse
+    .isOnQuest 92703
+    .showwhiledead
+    .goto 2521,48.823,83.150,-1
+    .goto 2521,54.99,68.14,-1
+    .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSterbt und sprecht dann mit |cRXP_FRIENDLY_Spirit Heilung::6491|r.
+    .skipgossipid 96031
+    .skipgossipid 98031
+    .target Spirit Healer::6491
 
 -- ============================================================================
 -- City: Alliance and Non-Shaman Horde
 -- ============================================================================
 
-step << Alliance/Horde !Shaman
+step << Alliance
     .isQuestAvailable 92703 -- Deliver the News
     .subzoneskip 16638 -- Valanaar
     .hs >>Benutzt euren Ruhestein zum Valanaar
@@ -4273,7 +4283,7 @@ step << Alliance/Horde !Shaman
 -- step
 --     .goto 2521,50.33,76.66
 --     .goto 2521,54.13,76.3
-step << Alliance/Horde !Shaman
+step << Alliance/Horde Hunter
     .isQuestAvailable 92703 -- Deliver the News
     -- .subzoneskip 16638,1 -- Valanaar
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Donaal Downbreeze::255940|r.
@@ -4283,7 +4293,7 @@ step << Alliance/Horde !Shaman
     .collect 4604,5 << Hunter -- Forest Mushroom
     *Nicht sell |T133970:0|t[Stringy Fleisch], |T132832:0|t[Kleines Eis], oder |T133972:0|t[Strider Fleisch]. << Alliance
     *Nicht sell |T132832:0|t[Kleines Eis] und |T133972:0|t[Strider Fleisch]. << Horde
-    *|cRXP_WARN_Wir brauchen sie für Kochkunst später|r.
+    *|cRXP_WARN_Wir brauchen sie später für die Kochkunst|r.
     .target Donaal Downbreeze::255940
     .goto 2521,62.180,72.616
     .skipgossipid 137078
@@ -4328,16 +4338,14 @@ step << Horde Shaman
 -- City: Horde Shaman
 -- ============================================================================
 
-
-step << Horde Shaman
-    .isQuestAvailable 98512 -- Al'Aketh Assassins
-    .goto 2521,59.40,75.74
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Falfaan Halfwind::271465|r.
-    .vendor 271465 >>Verkauft Müll
+step << Horde !Hunter
+    .isOnQuest 92703
+    .goto 2521,58.986,75.460
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Railee Thriceforged::257422|r.
+    .vendor 257422 >>|cRXP_WARN_Vendor und repair if needed|r.
     *Nicht sell |T132832:0|t[Kleines Eis] und |T133972:0|t[Strider Fleisch].
-    *|cRXP_WARN_Wir brauchen sie für Kochkunst später|r.
-    .target Falfaan Halfwind::271465
-    .skipgossipid 141556
+    *|cRXP_WARN_Wir brauchen sie später für die Kochkunst|r.
+    .target Railee Thriceforged::257422
 
 
 -- ============================================================================
@@ -4351,8 +4359,8 @@ step
     .goto 2521,62.11,73.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Alvarion Windfield::252448|r |cRXP_WARN_auf dem zweiten Stock|r.
     .turnin 92703,1 >>Gebt die Quest Deliver the Neues ab << Warrior/Shaman/Paladin
-    .turnin 92703,2 >>Gebt die Quest Lieferung des Neuen ab << Druid/Priest
-    .turnin 92703,3 >>Gebt die Quest Deliver the Neues ab << Rogue
+    .turnin 92703,2 >>Gebt die Quest Deliver the Neues ab << Druid/Priest
+    .turnin 92703,3 >>Gebt die Quest Lieferung des Neuen ab << Rogue
     .turnin 92703 >>Gebt die Quest Deliver the Neues ab << Hunter/Mage/Warlock
     .target Alvarion Windfield::252448
 step
@@ -4421,7 +4429,7 @@ step << Warrior/Paladin
     .vendor 271465 >>Händler trash und repair if needed.
     *Nicht sell |T133970:0|t[Stringy Fleisch], |T132832:0|t[Kleines Eis], oder |T133972:0|t[Strider Fleisch]. << Alliance
     *Nicht sell |T132832:0|t[Kleines Eis] und |T133972:0|t[Strider Fleisch]. << Horde
-    *|cRXP_WARN_Wir brauchen sie für Kochkunst später|r.
+    *|cRXP_WARN_Wir brauchen sie später für die Kochkunst|r.
     .skipgossipid 141556
     .target Falfaan Halfwind::271465
 step << Warrior/Paladin
@@ -4444,7 +4452,7 @@ step << Shaman/Druid
     .vendor 271465 >>Händler trash und repair if needed. << Druid
     *Nicht sell |T133970:0|t[Stringy Fleisch], |T132832:0|t[Kleines Eis], oder |T133972:0|t[Strider Fleisch]. << Alliance
     *Nicht sell |T132832:0|t[Kleines Eis] und |T133972:0|t[Strider Fleisch]. << Horde Druid
-    *|cRXP_WARN_Wir brauchen sie für Kochkunst später|r. << Druid
+    *|cRXP_WARN_Wir brauchen sie später für die Kochkunst|r. << Druid
     .skipgossipid 141556
     .target Falfaan Halfwind::271465
 step << Shaman/Druid
@@ -4483,7 +4491,7 @@ step << Rogue
     .vendor 271465 >>Händler trash und repair if needed.
     *Nicht sell |T133970:0|t[Stringy Fleisch], |T132832:0|t[Kleines Eis], oder |T133972:0|t[Strider Fleisch]. << Alliance
     *Nicht sell |T132832:0|t[Kleines Eis] und |T133972:0|t[Strider Fleisch]. << Horde
-    *|cRXP_WARN_Wir brauchen sie für Kochkunst später|r.
+    *|cRXP_WARN_Wir brauchen sie später für die Kochkunst|r.
     .skipgossipid 141556
     .target Falfaan Halfwind::271465
 step << Rogue
@@ -4521,7 +4529,7 @@ step << Hunter
     .vendor 271465 >>Händler trash und repair if needed
     *Nicht sell |T133970:0|t[Stringy Fleisch], |T132832:0|t[Kleines Eis], oder |T133972:0|t[Strider Fleisch]. << Alliance
     *Nicht sell |T132832:0|t[Kleines Eis] und |T133972:0|t[Strider Fleisch]. << Horde
-    *|cRXP_WARN_Wir brauchen sie für Kochkunst später|r.
+    *|cRXP_WARN_Wir brauchen sie später für die Kochkunst|r.
     .skipgossipid 141556
     .target Falfaan Halfwind::271465
 step << Hunter
@@ -4711,26 +4719,34 @@ step << Horde Hunter
     .train 2981 >> |cRXP_WARN_Greift mobs mit ihm an um|r |T132140:0|t[Klaue (Rang 2)] zu lernen
     .link https://www.wow-petopia.com/classic/training.php >> |cRXP_WARN_Hier Klicken für mehr Infos bezüglich Pet Training|r
 	.mob Windsong Crawler::254588
+step << Horde Hunter
+    .isOnQuest 93317
+    .goto 2521,58.986,75.460
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Railee Thriceforged::257422|r.
+    .vendor 257422 >>|cRXP_WARN_Vendor und repair if needed|r.
+    *Nicht sell |T132832:0|t[Kleines Eis] und |T133972:0|t[Strider Fleisch].
+    *|cRXP_WARN_Wir brauchen sie später für die Kochkunst|r.
+    .target Railee Thriceforged::257422
 
 -- ============================================================================
 -- Level 10+ Deathskip Version
 -- ============================================================================
 
--- step << Alliance
---     .isOnQuest 92840 -- Catching Wind
---     .subzoneskip 16638,1 -- Shen'dar Village
---     .goto 2521,67.41,80.46
---     .subzone 16626 >>Jump off the cliff
--- step << Alliance
---     #ignorecorpse
---     .subzoneskip 16626,1 -- Gustberry Lowlands
---     .isOnQuest 92840 -- Catching Wind
---     .showwhiledead
---     .goto 2521,54.99,68.14
---     .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Spirit Healer::6491|r.
---     .skipgossipid 96031
---     .skipgossipid 98031
---     .target Spirit Healer::6491
+step << Alliance
+    .isOnQuest 92840 -- Catching Wind
+    .subzoneskip 16638,1 -- Shen'dar Village
+    .goto 2521,67.41,80.46
+    .subzone 16626 >>Springt von der Klippe
+step << Alliance
+    #ignorecorpse
+    .subzoneskip 16626,1 -- Gustberry Lowlands
+    .isOnQuest 92840 -- Catching Wind
+    .showwhiledead
+    .goto 2521,54.99,68.14
+    .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Spirit Heilung::6491|r.
+    .skipgossipid 96031
+    .skipgossipid 98031
+    .target Spirit Healer::6491
 step << Alliance !Hunter
     #completewith Protect the Index
     >>Tötet |cRXP_ENEMY_Windsong Crawlers::254588|r. Plündert sie für |T133972:0|t[|cRXP_LOOT_Windsong Kriecher Fleisch|r].
@@ -5049,7 +5065,7 @@ step << Horde Druid
 step << Horde Druid
     .isOnQuest 94638 -- Strength and Mercy
     .cooldown spell,1259686,>0,1 -- Skysight
-    .goto 2521,46.597,38.121
+    .goto 2521,69.782,61.609
     .cast 1259686 >>Benutzt |T1029587:0|t[Himmelssicht] für den 10%-Bewegungsgeschwindigkeitsbuff.
 step << Horde Druid
     #completewith next
@@ -5073,13 +5089,12 @@ step << Horde
     *|cRXP_WARN_Vorsicht: |cRXP_ENEMY_Al'Aketh Assassins|r benutzen|r |T132357:0|t[Zerschmettern] |cRXP_WARN_um euch zu Boden zu werfen und|r |T136189:0|t[Finsterer Stoß] |cRXP_WARN_zusammen mit ihren Nahkampfangriffen|r.
     .complete 98512,1 --10/10 Al'Aketh Assassin slain
     .mob Al'Aketh Assassin::254626
-step << Horde !Druid
+step << Horde
     .goto 2521,56.80,61.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Fendaal Windstone::273017|r.
     .turnin 98512 >>Gebt die Quest Al'Aketh Assassins ab
     .target Fendaal Windstone::273017
 step << Horde Druid
-    .goto 2521,56.80,61.10,25,0
     .goto 2521,54.284,65.803
     >>Tötet |cRXP_ENEMY_Ur'endra::258443|r in der Höhle.
     .complete 94638,1 --|1/1 Ur'endra slain
@@ -5117,11 +5132,6 @@ step << Horde
     .complete 93737,3 --|1/1 Obtain Enchanted Gyrozephyr from Windsong Lake
     .mob Windsong Crawler::254588
 step << Horde Druid
-    .goto 2521,56.80,61.10
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Fendaal Windstone::273017|r.
-    .turnin 98512 >>Gebt die Quest Al'Aketh Assassins ab
-    .target Fendaal Windstone::273017
-step << Horde Druid
     .isOnQuest 94638 -- Strength and Mercy
     .cooldown spell,1259416,>0,1 -- Walk on Air
     .goto 2521,56.830,63.121,15,0
@@ -5147,7 +5157,7 @@ step << Alliance
     .vendor 252479 >>|cRXP_WARN_Vendor trash und repair|r.
     .skipgossipid 137531
     *Nicht sell |T133970:0|t[Stringy Fleisch], |T132832:0|t[Kleines Eis], oder |T133972:0|t[Strider Fleisch].
-    *|cRXP_WARN_Wir brauchen sie für Kochkunst später|r.
+    *|cRXP_WARN_Wir brauchen sie später für die Kochkunst|r.
     .target Daeann Steelwind::252479
 step << Alliance
     .goto 2521,66.63,79.93
@@ -5451,7 +5461,7 @@ step << Alliance
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Belann Windwood::256507|r im Haus.
     .vendor 256507 >>Händler trash und repair if needed
     *Nicht sell |T133970:0|t[Stringy Fleisch], |T132832:0|t[Kleines Eis], oder |T133972:0|t[Strider Fleisch].
-    *|cRXP_WARN_Wir brauchen sie für Kochkunst später|r.
+    *|cRXP_WARN_Wir brauchen sie später für die Kochkunst|r.
     .target Belann Windwood::256507
     .skipgossipid 137530
 step << Hunter Alliance
@@ -5467,7 +5477,7 @@ step << Hunter Alliance
     .vendor 271465 >>Händler trash und repair if needed
     *Nicht sell |T133970:0|t[Stringy Fleisch], |T132832:0|t[Kleines Eis], oder |T133972:0|t[Strider Fleisch]. << Alliance
     *Nicht sell |T132832:0|t[Kleines Eis] und |T133972:0|t[Strider Fleisch]. << Horde
-    *|cRXP_WARN_Wir brauchen sie für Kochkunst später|r.
+    *|cRXP_WARN_Wir brauchen sie später für die Kochkunst|r.
     .skipgossipid 141556
     .target Falfaan Halfwind::271465
 step << Hunter Alliance
@@ -5490,7 +5500,7 @@ step << Warrior Alliance/Paladin Alliance
     .vendor 271465 >>Händler trash und repair if needed.
     *Nicht sell |T133970:0|t[Stringy Fleisch], |T132832:0|t[Kleines Eis], oder |T133972:0|t[Strider Fleisch]. << Alliance
     *Nicht sell |T132832:0|t[Kleines Eis] und |T133972:0|t[Strider Fleisch]. << Horde
-    *|cRXP_WARN_Wir brauchen sie für Kochkunst später|r.
+    *|cRXP_WARN_Wir brauchen sie später für die Kochkunst|r.
     .skipgossipid 141556
     .target Falfaan Halfwind::271465
 step << Warrior Alliance/Paladin Alliance
@@ -5513,7 +5523,7 @@ step << Rogue Alliance
     .vendor 271465 >>Händler trash und repair if needed.
     *Nicht sell |T133970:0|t[Stringy Fleisch], |T132832:0|t[Kleines Eis], oder |T133972:0|t[Strider Fleisch]. << Alliance
     *Nicht sell |T132832:0|t[Kleines Eis] und |T133972:0|t[Strider Fleisch]. << Horde
-    *|cRXP_WARN_Wir brauchen sie für Kochkunst später|r.
+    *|cRXP_WARN_Wir brauchen sie später für die Kochkunst|r.
     .skipgossipid 141556
     .target Falfaan Halfwind::271465
 step << Rogue Alliance
@@ -5623,13 +5633,7 @@ step << Rogue Alliance
 --     *|cRXP_WARN_We need them for Cooking later|r.
 --     .skipgossipid 141556
 --     .target Falfaan Halfwind::271465
--- step << Alliance
---     .isNotOnQuest 98512 --Al'Aketh Assassins
---     .isQuestAvailable 98512 --Al'Aketh Assassins
---     .goto 2521,66.49,76.65,8,0
---     .goto 2521,68.84,78.42,-1
---     .goto 2521,60.74,78.02,-1
---     .subzone 16626 >>Jump off the cliff
+
 -- step << Alliance Paladin/Alliance Priest/Alliance Warlock/Alliance Mage/Alliance Rogue
 --     #optional
 --     #completewith Al'Aketh Assassins Equip Reminder
@@ -5639,17 +5643,24 @@ step << Rogue Alliance
 --     .use 257345 << Paladin -- Honed Greathammer
 --     .use 257343 << Priest/Warlock/Mage -- Balanced Quarterstaff
 --     .use 257346 << Rogue -- Quickblade's Dagger
--- step << Alliance
---     #ignorecorpse
---     .subzoneskip 16626,1 -- Gustberry Lowlands
---     .isNotOnQuest 98512 --Al'Aketh Assassins
---     .isQuestAvailable 98512 --Al'Aketh Assassins
---     .showwhiledead
---     .goto 2521,54.99,68.14
---     .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Spirit Healer::6491|r.
---     .skipgossipid 96031
---     .skipgossipid 98031
---     .target Spirit Healer::6491
+step << Alliance
+    .isNotOnQuest 98512 --Al'Aketh Assassins
+    .isQuestAvailable 98512 --Al'Aketh Assassins
+    .goto 2521,66.49,76.65,8,0
+    .goto 2521,68.84,78.42,-1
+    .goto 2521,60.74,78.02,-1
+    .subzone 16626 >>Springt von der Klippe
+step << Alliance
+    #ignorecorpse
+    .subzoneskip 16626,1 -- Gustberry Lowlands
+    .isNotOnQuest 98512 --Al'Aketh Assassins
+    .isQuestAvailable 98512 --Al'Aketh Assassins
+    .showwhiledead
+    .goto 2521,54.99,68.14
+    .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Spirit Heilung::6491|r.
+    .skipgossipid 96031
+    .skipgossipid 98031
+    .target Spirit Healer::6491
 step << Alliance
     #label Al'Aketh Assassins Equip Reminder
     .goto 2521,56.81,61.11
@@ -5831,7 +5842,8 @@ step << Alliance
     .goto 2521,58.81,43.57,40 >>Überquert die Brücke.
 step << Horde Druid
     #completewith next
-    .goto 2521,56.80,61.10,25 >>Geht um den Berg herum.
+    .goto 2521,59.414,66.946,25,0
+    .goto 2521,58.920,55.010,30,0 >>Geht um den Berg herum.
 step
     #label Learn
     .goto 2521,53.95,38.90
@@ -6071,12 +6083,12 @@ step << Alliance
 step << Alliance
     #optional
     #completewith ToHermit
-    >>|TInterface/cursor/crosshair/interact.blp:20|tKlickt |cRXP_PICK_Tear Moss|r |cRXP_WARN_auf Bäumen|r an.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tKlickt |cRXP_PICK_Riss Moos|r |cRXP_WARN_auf Bäumen|r.
     .complete 94485,1 --8/8 Lady's Tear Moss
 step << Horde
     #optional
     #completewith ForestHollowsB
-    >>|TInterface/cursor/crosshair/interact.blp:20|tKlickt |cRXP_PICK_Riss Moos|r |cRXP_WARN_auf Bäumen|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tKlickt |cRXP_PICK_Tear Moss|r |cRXP_WARN_auf Bäumen|r an.
     .complete 94485,1 --8/8 Lady's Tear Moss
 step << Horde
     #label ForestHollowsA
@@ -6208,7 +6220,7 @@ step
     .goto 2521,64,31.97,15,0
     .goto 2521,64.52,31.88,15,0
     .goto 2521,64.25,31.93
-    >>|TInterface/cursor/crosshair/interact.blp:20|tKlickt |cRXP_PICK_Druids|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tKlickt |cRXP_PICK_Druiden|r
     .complete 94489,1,2 --7/7 Injured Druids healed
     .target Neyasteel Mossmender::258275
     .target Bryaes Galechaser::258277
@@ -6229,7 +6241,7 @@ step
     #loop
     .goto 2521,64.98,34.96,10,0
     .goto 2521,64.51,34.89,10,0
-    >>|TInterface/cursor/crosshair/interact.blp:20|tKlickt |cRXP_PICK_Druiden|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tKlickt |cRXP_PICK_Druids|r
     .complete 94489,1,7 --7/7 Injured Druids healed
     .target Nayeela Snarlfang::258138
     .target Telenos Leafwhisper::258137
@@ -6288,7 +6300,7 @@ step
     .collect 1179,20 << Mage/Druid/Shaman/Priest/Warlock/Paladin -- Ice Cold Milk
     *Nicht sell |T133970:0|t[Stringy Fleisch], |T132832:0|t[Kleines Eis], oder |T133972:0|t[Strider Fleisch]. << Alliance
     *Nicht sell |T132832:0|t[Kleines Eis] und |T133972:0|t[Strider Fleisch]. << Horde
-    *|cRXP_WARN_Wir brauchen sie für Kochkunst später|r.
+    *|cRXP_WARN_Wir brauchen sie später für die Kochkunst|r.
     .skipgossipid 137078
     .target Donaal Downbreeze::255940
 
@@ -6426,7 +6438,7 @@ step << Alliance
     #optional
     #completewith next
     #label Talaanis Shadowsong
-    >>|cRXP_WARN_Wartet auf das Rollenspiel|r.
+    >>|cRXP_WARN_Wait for the Roleplay|r.
     .complete 94568,1 --1/1 Learn what you can from the crystal
     .target Talaanis Shadowsong::252476
 step << Alliance
@@ -6437,7 +6449,7 @@ step << Alliance
 step << Alliance
     #requires Talaanis Shadowsong
     .goto 2521,66.17,76.52
-    >>|cRXP_WARN_Wait for the Roleplay|r.
+    >>|cRXP_WARN_Wartet auf das Rollenspiel|r.
     -- *Cook |T132834:0|t[Herb Baked Eggs] and |T133974:0|t[Charred Wolf Meat] if you have the required materials.
     -- *Otherwise, craft any items you can using your other professions.
     .complete 94568,1 --1/1 Learn what you can from the crystal
@@ -6805,24 +6817,6 @@ step << Alliance !Hunter !Rogue !Warrior
 
 step << Horde
     >>Brecht die verbleibenden Quests "Lager aufschlagen 101" ab.
-    *Klickt auf das Makro im Fenster der Aktiven Gegenstände, um sie alle auf einmal abzubrechen.
-    .abandon 97970 >>Brecht die Quest Lager aufschlagen 101: Bergbau ab.
-    .abandon 97971 >>Brecht die Quest Lager aufschlagen 101: Kürschnerei ab.
-    .abandon 96646 >>Brecht die Quest Lager aufschlagen 101: Kochkunst ab.
-    .abandon 97968 >>Brecht die Quest Lager aufschlagen 101: Kräuterkunde ab.
-    .abandon 97965 >>Brecht die Quest Lager aufschlagen 101: Erste Hilfe ab.
-    .abandon 97967 >>Brecht die Quest Lager aufschlagen 101: Angeln ab.
-    .abandon 97963 >>Brecht die Quest Lager aufschlagen 101: Alchemie ab.
-    .abandon 97964 >>Brecht die Quest Lager aufschlagen 101: Schmiedekunst ab.
-    .abandon 97973 >>Brecht die Quest Lager aufschlagen 101: Schneiderei ab.
-    .abandon 98286 >>Brecht die Quest Lager aufschlagen 101: Verzauberkunst ab.
-    .abandon 97969 >>Brecht die Quest Lager aufschlagen 101: Lederverarbeitung ab.
-    .abandon 98285 >>Brecht die Quest Lager aufschlagen 101: Ingenieurskunst ab.
-    .abandon 93318 >>Brecht die Quest WANTED: Vulgara the Unersättlich ab
-    .macro Abandon 101,130722 >>Abbrechen 101
-step << Alliance
-    #completewith Magical City of Dalaran
-    >>Brecht die verbleibenden Quests "Lager aufschlagen 101" ab.
     *Klickt das Makro im Fenster der Aktiv Gegenstände, um sie alle auf einmal aufzugeben.
     .abandon 97970 >>Brecht die Quest Lager aufschlagen 101: Bergbau ab.
     .abandon 97971 >>Brecht die Quest Lager aufschlagen 101: Kürschnerei ab.
@@ -6837,8 +6831,26 @@ step << Alliance
     .abandon 97969 >>Brecht die Quest Lager aufschlagen 101: Lederverarbeitung ab.
     .abandon 98285 >>Brecht die Quest Lager aufschlagen 101: Ingenieurskunst ab.
     .abandon 93318 >>Brecht die Quest WANTED: Vulgara the Unersättlich ab
-    .abandon 92709 >>Brecht die Quest A Grand Adventure ab
     .macro Abandon 101,130722 >>Brecht die Quest 101 ab
+step << Alliance
+    #completewith Magical City of Dalaran
+    >>Brecht die verbleibenden Quests "Lager aufschlagen 101" ab.
+    *Klickt auf das Makro im Fenster der Aktiven Gegenstände, um sie alle auf einmal abzubrechen.
+    .abandon 97970 >>Brecht die Quest Lager aufschlagen 101: Bergbau ab.
+    .abandon 97971 >>Brecht die Quest Lager aufschlagen 101: Kürschnerei ab.
+    .abandon 96646 >>Brecht die Quest Lager aufschlagen 101: Kochkunst ab.
+    .abandon 97968 >>Brecht die Quest Lager aufschlagen 101: Kräuterkunde ab.
+    .abandon 97965 >>Brecht die Quest Lager aufschlagen 101: Erste Hilfe ab.
+    .abandon 97967 >>Brecht die Quest Lager aufschlagen 101: Angeln ab.
+    .abandon 97963 >>Brecht die Quest Lager aufschlagen 101: Alchemie ab.
+    .abandon 97964 >>Brecht die Quest Lager aufschlagen 101: Schmiedekunst ab.
+    .abandon 97973 >>Brecht die Quest Lager aufschlagen 101: Schneiderei ab.
+    .abandon 98286 >>Brecht die Quest Lager aufschlagen 101: Verzauberkunst ab.
+    .abandon 97969 >>Brecht die Quest Lager aufschlagen 101: Lederverarbeitung ab.
+    .abandon 98285 >>Brecht die Quest Lager aufschlagen 101: Ingenieurskunst ab.
+    .abandon 93318 >>Brecht die Quest WANTED: Vulgara the Unersättlich ab
+    .abandon 92709 >>Brecht die Quest A Grand Adventure ab
+    .macro Abandon 101,130722 >>Abbrechen 101
 
 -- ============================================================================
 -- Alliance Discovery
@@ -7180,13 +7192,13 @@ step << Horde
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Riaani Nightwind::256083|r.
     .accept 93738 >>Akzeptiert die Quest The Kaputt Konstrukt
     .target Riaani Nightwind::256083
--- step << Horde
---     .goto 2521,58.986,75.460
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Railee Thriceforged::257422|r.
---     .vendor 257422 >>Vendor trash.
---     *Don't sell |T132832:0|t[Small Eggs] and |T133972:0|t[Strider Meat].
---     *|cRXP_WARN_We need them for Cooking later|r.
---     .target Railee Thriceforged::257422
+step << Horde
+    .goto 2521,58.986,75.460
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Railee Thriceforged::257422|r.
+    .vendor 257422 >>|cRXP_WARN_Vendor und repair if needed|r.
+    *Nicht sell |T132832:0|t[Kleines Eis] und |T133972:0|t[Strider Fleisch].
+    *|cRXP_WARN_Wir brauchen sie später für die Kochkunst|r.
+    .target Railee Thriceforged::257422
 step << Horde
     #optional
     .isQuestComplete 93736 -- Unwelcome Spirits
@@ -7226,14 +7238,20 @@ step << Horde
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Alaana Stormwalker::259119|r.
     .accept 95350 >>Akzeptiert die Quest Welcome to Azeroth
     .target Alaana Stormwalker::259119
--- step << Horde
---     .isOnQuest 95350
---     -- .subzoneskip 17045,1 -- Skywatcher Plateau
---     .goto 1412/1,323.300,-731.200
---     .deathskip >>Jump to die and ress at the |cRXP_PICK_Spirit Healer|r.
---     .skipgossipid 96031
---     .skipgossipid 98031
---     .target Spirit Healer::6491
+step << Horde
+    #ignorecorpse
+    .isOnQuest 95350
+    .subzoneskip 17045,1 -- Skywatcher Plateau
+    .goto 1412/1,323.300,-731.200
+    .subzone 1638 >>Springt von der Klippe.
+step << Horde
+    .isOnQuest 95350
+    .subzoneskip 1638,1
+    .goto 1456/1,-74.900,-981.700
+    .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Spirit Heilung::6491|r.
+    .skipgossipid 96031
+    .skipgossipid 98031
+    .target Spirit Healer::6491
 step << Horde Druid Skyborne
     #completewith ChildOfNatureC
     #label ChildOfNatureA

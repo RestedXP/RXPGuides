@@ -11,7 +11,7 @@ RXPGuides.RegisterGuide([[
 --#groupid RXP-SRGCE-H1
 #defaultfor Undead
 #name 1-6 Tirisfal
-#next 6-12 Tirisfal Wälder
+#next 6-12 Tirisfal
 
 step
 .enabledungeon RFC
@@ -21,8 +21,8 @@ step
 RXPGuides.RegisterGuide([[
 #forever
 << Horde
-#name 6-12 Tirisfal Wälder
-#displayname 6-13 Tirisfal Wälder << Paladin
+#name 6-12 Tirisfal
+#displayname 6-13 Tirisfal << Paladin
 #version 11
 #group RestedXP Forever Dungeonführer (H)
 #subgroup Dungeonführer 1-22

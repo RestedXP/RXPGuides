@@ -663,7 +663,7 @@ RXPGuides.RegisterGuide([[
 #subgroup Schnellste Route 1-20
 --#groupid RXP-SRGCE-A1
 #name 5-11 Dun Morogh
-#next 11-12 Elwynn (Zwerge/Gnome);11-12 Leerwandler-Quest;12-14 Loch Modan (Zwerge/Gnome);11-13 Loch Modan (Jäger)
+#next 11-12 Elwynn (Zwerge/Gnome);11-12 Leerwandler-Quest;12-14 Loch Modan (Zwerg/Gnom);11-13 Loch Modan (Jäger)
 #defaultfor Dwarf/Gnome
 
 step
@@ -2799,7 +2799,7 @@ RXPGuides.RegisterGuide([[
 #name 11-12 Elwynn (Zwerge/Gnome)
 #version 1
 #defaultfor Gnome/Dwarf
-#next 12-14 Loch Modan (Zwerge/Gnome)
+#next 12-14 Loch Modan (Zwerg/Gnom)
 --#era << !Warlock
 
 step << Warlock
@@ -3461,7 +3461,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Forever Route (A)
 #subgroup Schnellste Route 1-20
 --#groupid RXP-SRGCE-A1
-#name 12-14 Loch Modan (Zwerge/Gnome)
+#name 12-14 Loch Modan (Zwerg/Gnom)
 #next 13-15 Westfall;14-16 Dunkelküste
 #defaultfor Gnome/Dwarf
 

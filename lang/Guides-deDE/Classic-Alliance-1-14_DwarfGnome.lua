@@ -1334,7 +1334,7 @@ RXPGuides.RegisterGuide([[
 #groupid RXP-SRGCE-A1
 #name 6-11 Dun Morogh
 #displayname 6-12 Dun Morogh << sod !Warlock
-#next 11-12 Elwynn (Zwerge/Gnome);11-12 Leerwandler-Quest;12-14 Loch Modan (Zwerge/Gnome);11-13 Loch Modan (Jäger)
+#next 11-12 Elwynn (Zwerge/Gnome);11-12 Leerwandler-Quest;12-14 Loch Modan (Zwerg/Gnom);11-13 Loch Modan (Jäger)
 #defaultfor Dwarf/Gnome
 
 step
@@ -4842,7 +4842,7 @@ RXPGuides.RegisterGuide([[
 #groupid RXP-SRGCE-A1
 #name 11-12 Leerwandler-Quest
 #displayname 12-13 Leerwandler-Quest << SoD
-#next 12-14 Loch Modan (Zwerge/Gnome)
+#next 12-14 Loch Modan (Zwerg/Gnom)
 
 step
     #completewith next
@@ -5112,7 +5112,7 @@ RXPGuides.RegisterGuide([[
 #name 11-12 Elwynn (Zwerge/Gnome)
 #version 1
 #defaultfor Gnome/Dwarf
-#next 12-14 Loch Modan (Zwerge/Gnome)
+#next 12-14 Loch Modan (Zwerg/Gnom)
 --#era << !Warlock
 
 step << Warlock
@@ -5820,7 +5820,7 @@ RXPGuides.RegisterGuide([[
 << Alliance !Hunter
 #group RestedXP Allianz 1-20
 #groupid RXP-SRGCE-A1
-#name 12-14 Loch Modan (Zwerge/Gnome)
+#name 12-14 Loch Modan (Zwerg/Gnom)
 #displayname 12-15 Loch Modan << SoD !Warlock
 #displayname 13-15 Loch Modan << SoD Warlock
 #next 13-15 Westfall;14-16 Dunkelküste
