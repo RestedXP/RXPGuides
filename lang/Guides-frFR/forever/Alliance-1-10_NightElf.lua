@@ -1467,7 +1467,7 @@ step << Hunter
     .target Ariyell Skyshadow
 step << Hunter
     .goto 1457/1,2329.19,9908.53
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t Parlez à |cRXP_FRIENDLY_Ilyenia Moonfire|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Ilyenia Moonfire|r
     .skipgossipid 96881
     .train 227 >>Apprenez la compétence Bâtons
     >>Si vous avez un Bâton dans votre sac, équipez-le.
@@ -2028,8 +2028,8 @@ step << Hunter
 	.goto 1438/1,1492.78,10765.61,0
 	.goto 1438/1,1900.12,10853.85,0
     >>Lancez [Apprivoiser une bête] |cRXP_WARN_sur un |cRXP_ENEMY_Strigid Hunter|r pour le dompter|r -- .tame 1997
-    .train 2981 >> Attaquez des créatures avec pour qu'il apprenne [Griffe (Rang 2)]
-    .link https://www.wow-petopia.com/classic/training.php >> |cRXP_WARN_Cliquez ici pour plus d'information sur le dressage des familiers|r
+    .train 2981 >> Attaquez des mobs avec celui-ci pour qu'il apprenne [Claw (Rank 2)]
+    .link https://www.wow-petopia.com/classic/training.php >> Cliquez ici pour plus d'information sur le dressage des familiers
 	.unitscan Strigid Hunter
 step
     .goto 1438/1,1691.36,10412.66
@@ -2053,7 +2053,7 @@ step
 step << Rogue
     .goto 1438/1,1879.75,10976.02
     >>Lancez [Vol à la tire] sur |cRXP_ENEMY_Sethir the Ancient|r
-    >>Vous devez être en [Camouflage] pour utiliser [Vol à la tire]
+    >>Vous devez être en [Camouflage] pour utiliser votre [Vol à la tire]
     >>|cRXP_ENEMY_Sethir the Ancient|r marche le long de la grande branche d'arbre
     >>|cRXP_WARN_Évitez d'affronter |cRXP_ENEMY_Sethir the Ancient|r. Laissez le passez devant vous, puis utilisez|r [Camouflage] et ensuite [Vol à la tire] lorsque vous êtes derrière lui
     .complete 2242,1
@@ -2318,7 +2318,7 @@ step << Hunter
     .target Jaeana
 step << Hunter/Warrior/Priest
     .goto 1457/1,2329.19,9908.53
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t Parlez à |cRXP_FRIENDLY_Ilyenia Moonfire|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Ilyenia Moonfire|r
     .skipgossipid 96881
     .train 227 >>Apprenez la compétence Bâtons << Hunter/Warrior/Priest
     >>Si vous avez un Bâton dans votre sac, équipez-le. << Hunter

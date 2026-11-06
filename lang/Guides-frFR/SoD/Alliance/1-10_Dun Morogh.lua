@@ -287,7 +287,7 @@ step << Priest/Mage/Warlock
     .goto 1426,21.813,72.584,0
     .goto 1426,19.578,72.086,0
     .goto 1426,20.627,70.415,0
-    >>Tuez les |cRXP_ENEMY_Rockjaw Troggs|r et les |cRXP_ENEMY_Burly Rockjaw Troggs|r
+    >>Tuez les|cRXP_ENEMY_Rockjaw Troggs|r et les |cRXP_ENEMY_Burly Rockjaw Troggs|r
     .complete 170,1 --Kill Rockjaw Trogg (x6)
     .complete 170,2 --Kill Burly Rockjaw Trogg (x6)
     .mob Rockjaw Trogg
@@ -484,7 +484,7 @@ step
     .goto 1426,21.813,72.584,0
     .goto 1426,19.578,72.086,0
     .goto 1426,20.627,70.415,0
-    >>Tuez les |cRXP_ENEMY_Rockjaw Troggs|r et les |cRXP_ENEMY_Burly Rockjaw Troggs|r
+    >>Tuez les|cRXP_ENEMY_Rockjaw Troggs|r et les |cRXP_ENEMY_Burly Rockjaw Troggs|r
     .complete 170,1 --Kill Rockjaw Trogg (x6)
     .complete 170,2 --Kill Burly Rockjaw Trogg (x6)
     .mob Rockjaw Trogg
@@ -510,7 +510,7 @@ step << Paladin/Warlock/Hunter
     .goto 1426,31.138,74.048,50,0
     .goto 1426,30.077,74.479,50,0
     .goto 1426,29.280,75.500,50,0
-    >>Tuez les |cRXP_ENEMY_Rockjaw Troggs|r et les |cRXP_ENEMY_Burly Rockjaw Troggs|r
+    >>Tuez les|cRXP_ENEMY_Rockjaw Troggs|r et les |cRXP_ENEMY_Burly Rockjaw Troggs|r
     .complete 170,1 --Kill Rockjaw Trogg (x6)
     .complete 170,2 --Kill Burly Rockjaw Trogg (x6)
     .mob Rockjaw Trogg
@@ -677,7 +677,7 @@ step << !Paladin !Warlock !Hunter
     .waypoint 1426,25.920,74.571,55,0
     .waypoint 1426,28.812,76.397,55,0
     .waypoint 1426,29.303,77.337,55,0
-    >>Tuez les |cRXP_ENEMY_Rockjaw Troggs|r et les |cRXP_ENEMY_Burly Rockjaw Troggs|r
+    >>Tuez les|cRXP_ENEMY_Rockjaw Troggs|r et les |cRXP_ENEMY_Burly Rockjaw Troggs|r
     .complete 170,1 --Kill Rockjaw Trogg (x6)
     .complete 170,2 --Kill Burly Rockjaw Trogg (x6)
     .mob Rockjaw Trogg
@@ -1770,7 +1770,7 @@ step << Rogue
     .goto 1426,25.540,45.374,55,0
     .goto 1426,25.950,43.930,55,0
     >>Utilisez le |T133644:0|t[Vol à la tire] sur les |cRXP_ENEMY_Gnomes lépreux|r. Récupérez le |T134269:0|t[|cRXP_LOOT_Morceau inférieur droit de carte]|r
-    >>Vous devez être en [Camouflage] pour utiliser [Vol à la tire]
+    >>Vous devez être en [Camouflage] pour utiliser votre [Vol à la tire]
     .collect 208218,1 -- Bottom-Right Map Piece (1)
     .mob Leper Gnome
     .train 398196,1
@@ -1816,7 +1816,7 @@ step << Rogue
     .waypoint 1426,24.301,50.898,30,0
     #completewith ShimmerweedCollect
     >>Utilisez |T133644:0|t[Vol à la tire] sur les |cRXP_ENEMY_Trolls Crins-de-givre|r. Récupérez le |T134327:0|t[|cRXP_LOOT_Morceau supérieur droit de carte|r]
-    >>Vous devez être en [Camouflage] pour utiliser [Vol à la tire]
+    >>Vous devez être en [Camouflage] pour utiliser votre [Vol à la tire]
     .collect 208213,1 -- Top-Right Map Piece (1)
     .mob Frostmane Seer
     .mob Frostmane Headhunter

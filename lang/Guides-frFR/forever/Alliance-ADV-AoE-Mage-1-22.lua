@@ -1530,7 +1530,7 @@ step
     .goto 1426/0,727.79,-6260.26,0--c:1426,21.813,72.584
     .goto 1426/0,837.87,-6243.91,0--c:1426,19.578,72.086
     .goto 1426/0,786.20,-6189.04,0--c:1426,20.627,70.415
-    >>Tuez les |cRXP_ENEMY_Rockjaw Troggs|r et les |cRXP_ENEMY_Burly Rockjaw Troggs|r
+    >>Tuez les|cRXP_ENEMY_Rockjaw Troggs|r et les |cRXP_ENEMY_Burly Rockjaw Troggs|r
     .complete 170,1 --Kill Rockjaw Trogg (x6)
     .mob +Rockjaw Trogg
     .complete 170,2 --Kill Burly Rockjaw Trogg (x6)
@@ -1595,7 +1595,7 @@ step
     .goto 1426/0,727.79,-6260.26,0--c:1426,21.813,72.584
     .goto 1426/0,837.87,-6243.91,0--c:1426,19.578,72.086
     .goto 1426/0,786.20,-6189.04,0--c:1426,20.627,70.415
-    >>Tuez les |cRXP_ENEMY_Rockjaw Troggs|r et les |cRXP_ENEMY_Burly Rockjaw Troggs|r
+    >>Tuez les|cRXP_ENEMY_Rockjaw Troggs|r et les |cRXP_ENEMY_Burly Rockjaw Troggs|r
     .complete 170,1 --Kill Rockjaw Trogg (x6)
     .mob +Rockjaw Trogg
     .complete 170,2 --Kill Burly Rockjaw Trogg (x6)
@@ -7134,7 +7134,7 @@ step
     #requires Bank1
     .goto 1453/0,847.43,-8991.99
     >>Parlez à |cRXP_FRIENDLY_Larimaine Purdue|r
-    .train 3561 >> Apprenez [Téléportation : Hurlevent]
+    .train 3561 >> Apprenez [Téléportation : Stormwind]
     >>Coût total : 20 pièces d'argent
     .target Larimaine Purdue
 step

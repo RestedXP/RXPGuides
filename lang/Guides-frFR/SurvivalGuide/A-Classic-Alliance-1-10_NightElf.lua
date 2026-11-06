@@ -1139,8 +1139,8 @@ step << Hunter
 	.goto Teldrassil,45.6,31.4,0
 	.goto Teldrassil,37.6,28.8,0
     >>Lancez [Apprivoiser une bête] |cRXP_WARN_sur un |cRXP_ENEMY_Strigid Hunter|r pour le dompter|r -- .tame 1997
-    .train 2981 >> Attaquez des créatures avec pour qu'il apprenne [Griffe (Rang 2)]
-    .link https://www.wow-petopia.com/classic/training.php >> |cRXP_WARN_Cliquez ici pour plus d'information sur le dressage des familiers|r
+    .train 2981 >> Attaquez des mobs avec celui-ci pour qu'il apprenne [Claw (Rank 2)]
+    .link https://www.wow-petopia.com/classic/training.php >> Cliquez ici pour plus d'information sur le dressage des familiers
 	.unitscan Strigid Hunter
 step
     .goto Teldrassil,43.2,42.8,55,0
@@ -1166,7 +1166,7 @@ step
 step << Rogue
     .goto Teldrassil,38.0,25.2
     >>Lancez [Vol à la tire] sur |cRXP_ENEMY_Sethir the Ancient|r
-    >>Vous devez être en [Camouflage] pour utiliser [Vol à la tire]
+    >>Vous devez être en [Camouflage] pour utiliser votre [Vol à la tire]
     >>|cRXP_ENEMY_Sethir the Ancient|r marche le long de la grande branche d'arbre
     >>|cRXP_WARN_Évitez d'affronter |cRXP_ENEMY_Sethir the Ancient|r. Laissez le passez devant vous, puis utilisez|r [Camouflage] et ensuite [Vol à la tire] lorsque vous êtes derrière lui
     .complete 2242,1
@@ -1328,7 +1328,7 @@ step << Druid
     .target Firodren Mooncaller
 step << Hunter/Warrior/Priest
     .goto Darnassus,57.56,46.73
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t Parlez à |cRXP_FRIENDLY_Ilyenia Moonfire|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Ilyenia Moonfire|r
     .skipgossip 11866,1
     .train 227 >>Apprenez la compétence Bâtons
     >>Si vous avez un Bâton dans votre sac, équipez-le. << Hunter

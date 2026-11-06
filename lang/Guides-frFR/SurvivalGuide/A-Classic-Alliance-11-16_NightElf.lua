@@ -271,7 +271,7 @@ step << NightElf Warrior
     .trainer >> Apprenez vos sorts de classe
     .target Arias'ta Bladesinger
 step << NightElf Warrior
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t Parlez à |cRXP_FRIENDLY_Ilyenia Moonfire|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Ilyenia Moonfire|r
     .skipgossip 11866,1
     .goto Darnassus,57.56,46.72
     .train 2567 >> Apprenez la compétence Armes de jet
@@ -337,7 +337,7 @@ step << Warrior/Rogue
     .target Laird
 step
     .goto Darkshore,37.708,43.431
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinelle Glynda Nal'Shea|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
     .accept 4811 >> Accept Les Red Crystal
     .target Sentinel Glynda Nal'Shea
 step
@@ -357,7 +357,7 @@ step
     .goto Darkshore,47.36,36.86,40,0
     .goto Darkshore,44.80,36.91,40,0
     .goto Darkshore,46.30,39.01
-    >>Tuez les |cRXP_ENEMY_Grells sauvages|r et les |cRXP_ENEMY_Fées viles|r. Dépouillez-les pour leurr |cRXP_LOOT_Boucles d'oreille de Grell|r
+    >>Tuez les |cRXP_ENEMY_Grell sauvage|r et les |cRXP_ENEMY_Fée vile|r. Dépouillez-les pour leur |cRXP_LOOT_Boucle d'oreille de Grell|r
     .complete 955,1
     .mob Wild Grell
     .mob Vile Sprite
@@ -731,7 +731,7 @@ step
     .goto Dun Morogh,70.7,56.4,40,0
     .goto Dun Morogh,70.62,52.39,25,0
     .goto Dun Morogh,70.7,56.4
-    >>Tuez les |cRXP_ENEMY_Rockjaw Skullthumpers|r et les |cRXP_ENEMY_Rockjaw Bonesnappers|r
+    >>Tuez les |cRXP_ENEMY_Brise-crânes Mâcherocs|r et les |cRXP_ENEMY_Briseurs d'os Mâcherocs|r
     .complete 432,1 --Kill Rockjaw Skullthumper (x6)
     .mob +Rockjaw Skullthumper
     .complete 433,1 --Kill Rockjaw Bonesnapper (x10)

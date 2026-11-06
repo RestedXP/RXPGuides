@@ -2630,7 +2630,7 @@ step << !Hunter skip
     >>Vous avez besoin de 50 en [Cuisine] pour une quête au Bois de la Pénombre plus tard
     >>|T133971:0|t[Cuisiner] les objets suivants:
     >>|T133971:0|t[Cuisiner] les |cRXP_LOOT_[Morceau de viande de sanglier]|r en [Viande de sanglier rôtie]
-    >>|T133971:0|t[Cuisiner] les |cRXP_LOOT_[Viande de loup maigre]|r en [Viande de loup grillée]
+    >>|T133971:0|t[Cuisinez] les |cRXP_LOOT_[Stringy Wolf Meat]|r en [Viande de loup grillée]
     .usespell 2550
     .zoneskip Stormwind City
     .itemcount 769,1 --Chunk of Boar Meat (1+)
@@ -2643,7 +2643,7 @@ step << !Hunter skip
     #label TramCook5
     #completewith TramEnd
     >>Vous avez besoin de 50 en [Cuisine] pour une quête au Bois de la Pénombre plus tard
-    >>|T133971:0|t[Cuisiner] les |cRXP_LOOT_[Viande de loup maigre]|r en [Viande de loup grillée]
+    >>|T133971:0|t[Cuisinez] les |cRXP_LOOT_[Stringy Wolf Meat]|r en [Viande de loup grillée]
     .usespell 2550
     .zoneskip Stormwind City
     .itemcount 769,<1 --Chunk of Boar Meat (<1)
@@ -4323,7 +4323,7 @@ step << skip
     +Vous avez besoin de 50 en [Cuisine] pour une quête au Bois de la Pénombre plus tard
     >>|T133971:0|t[Cuisiner] les objets suivants:
     >>|T133971:0|t[Cuisiner] les |cRXP_LOOT_[Morceau de viande de sanglier]|r en [Viande de sanglier rôtie]
-    >>|T133971:0|t[Cuisiner] les |cRXP_LOOT_[Viande de loup maigre]|r en [Viande de loup grillée]
+    >>|T133971:0|t[Cuisinez] les |cRXP_LOOT_[Stringy Wolf Meat]|r en [Viande de loup grillée]
     .usespell 2550
     .zoneskip Stormwind City
     .itemcount 769,1 --Chunk of Boar Meat (1+)
@@ -4336,7 +4336,7 @@ step << skip
     #label WestfallTramCook5
     #completewith WestfallTramEnd
     +Vous avez besoin de 50 en [Cuisine] pour une quête au Bois de la Pénombre plus tard
-    >>|T133971:0|t[Cuisiner] les |cRXP_LOOT_[Viande de loup maigre]|r en [Viande de loup grillée]
+    >>|T133971:0|t[Cuisinez] les |cRXP_LOOT_[Stringy Wolf Meat]|r en [Viande de loup grillée]
     .usespell 2550
     .zoneskip Stormwind City
     .itemcount 769,<1 --Chunk of Boar Meat (<1)
@@ -5004,7 +5004,7 @@ step << Hunter skip
     +Vous avez besoin de 50 en [Cuisine] pour une quête au Bois de la Pénombre plus tard
     >>|T133971:0|t[Cuisiner] les objets suivants:
     >>|T133971:0|t[Cuisiner] les |cRXP_LOOT_[Morceau de viande de sanglier]|r en [Viande de sanglier rôtie]
-    >>|T133971:0|t[Cuisiner] les |cRXP_LOOT_[Viande de loup maigre]|r en [Viande de loup grillée]
+    >>|T133971:0|t[Cuisinez] les |cRXP_LOOT_[Stringy Wolf Meat]|r en [Viande de loup grillée]
     .usespell 2550
     .zoneskip Darkshore
     .itemcount 769,1 --Chunk of Boar Meat (1+)
@@ -5017,7 +5017,7 @@ step << Hunter skip
     #label DarkshoreCook5
     #completewith DarkshoreBoat
     +Vous avez besoin de 50 en [Cuisine] pour une quête au Bois de la Pénombre plus tard
-    >>|T133971:0|t[Cuisiner] les |cRXP_LOOT_[Viande de loup maigre]|r en [Viande de loup grillée]
+    >>|T133971:0|t[Cuisinez] les |cRXP_LOOT_[Stringy Wolf Meat]|r en [Viande de loup grillée]
     .usespell 2550
     .zoneskip Darkshore
     .itemcount 769,<1 --Chunk of Boar Meat (<1)

@@ -44,7 +44,7 @@ step << Warrior
     .vendor >> Vendez tout ce dont nous n'avez pas besoin
     .target +Brother Danil
     .goto 1429/0,-112.74,-8901.66
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Llane Beshere|r en bas des escaliers
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Llane Beshere|r en bas des escaliers à l'intérieur
     .train 6673 >>Apprenez [Cri de guerre]
     .target +Llane Beshere
     .goto 1429/0,-208.40,-8918.35
@@ -412,7 +412,7 @@ step << Warrior/Paladin
 step << Warrior
     #season 0,1
     .goto 1429/0,-208.40,-8918.35
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Llane Beshere|r en bas des escaliers
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Llane Beshere|r en bas des escaliers à l'intérieur
     .turnin 3100 >> Rendez la quête Lettre simple
     .trainer >> Apprenez vos sorts de classe
     .target Llane Beshere
@@ -612,7 +612,7 @@ step << Priest/Mage
     .complete 3904,1 --Collect Milly's Harvest (x8)
 step
     .goto 1429/0,-460.94,-9056.44--c:1429,57.518,48.253
-    >>Tuez |cRXP_ENEMY_Garrick Padfoot|r. Dépouillez-le jeu pour sa |cRXP_LOOT_Tête|r
+    >>Tuez |cRXP_ENEMY_Garrick Padfoot|r. Dépouillez-le pour sa |cRXP_LOOT_Tête|r
     .complete 6,1 --Collect Garrick's Head (x1)
     .mob Garrick Padfoot
 step
@@ -1262,7 +1262,7 @@ step
     #completewith Lovers
     .goto 1429/0,65.28,-10008.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Joshua Maclure|r
-    .vendor >>|cRXP_BUY_Achetez autant de|r [Lait frais] que vous le pouvez << Priest/Warlock/Mage
+    .vendor >>|cRXP_BUY_Achetez autant de|r [Lait glacé] que vous le pouvez << Priest/Warlock/Mage
     .vendor >>Vendez tout ce dont nous n'avez pas besoin << !Priest !Warlock !Mage
     .target Joshua Maclure
     .subzoneskip 64,1 --The Maclure Vineyards
@@ -1449,7 +1449,7 @@ step
 step << Warrior
     #optional
     #completewith Exchange
-    +Essayez de garder une [Potion de soins mineure] à partir de maintenir, vous en aurez besoin pour le Cadavre de Rolf plus tard
+    +À partir de maintenant, essayez de garder au moins une [Potion de soins mineure] car vous en aurez besoin pour le Cadavre de Rolf plus tard
     .subzoneskip 87 --Goldshire
 step
     #requires KoboldEnd1
@@ -1673,7 +1673,7 @@ step << Warlock
 step << Warlock
     .goto 1429/0,-5.53,-9466.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Cylina Darkheart|r
-    .vendor >> |cRXP_BUY_Achetez le|r [Grimoire d'Eclair de feu (Rang 2)] |cRXP_BUY_à Cylina si vous pouvez vous le permettre. Sinon vous pourrez l'acheter plus tard|r
+    .vendor >> |cRXP_BUY_Achetez le|r [Grimoire de Pacte de Sang (Rang 2)] |cRXP_BUY_à Cylina si vous pouvez vous le permettre. Sinon vous pourrez l'acheter plus tard|r
     .target Cylina Darkheart
     .money <0.100
     .itemcount 16302,<1 --Grimoire of Blood Pact (Rank 1)
@@ -3595,7 +3595,7 @@ step << skip
     >>Vous avez besoin de 50 en [Cuisine] pour une quête au Bois de la Pénombre plus tard
     >>|T133971:0|t[Cuisiner] les objets suivants:
     >>|T133971:0|t[Cuisiner] les |cRXP_LOOT_[Morceau de viande de sanglier]|r en [Viande de sanglier rôtie]
-    >>|T133971:0|t[Cuisiner] les |cRXP_LOOT_[Viande de loup maigre]|r en [Viande de loup grillée]
+    >>|T133971:0|t[Cuisinez] les |cRXP_LOOT_[Stringy Wolf Meat]|r en [Viande de loup grillée]
     .usespell 2550
     .zoneskip Ironforge
     .itemcount 769,1 --Chunk of Boar Meat (1+)
@@ -3608,7 +3608,7 @@ step << skip
     #label TramCook5
     #completewith TramEnd
     >>Vous avez besoin de 50 en [Cuisine] pour une quête au Bois de la Pénombre plus tard
-    >>|T133971:0|t[Cuisiner] les |cRXP_LOOT_[Viande de loup maigre]|r en [Viande de loup grillée]
+    >>|T133971:0|t[Cuisinez] les |cRXP_LOOT_[Stringy Wolf Meat]|r en [Viande de loup grillée]
     .usespell 2550
     .zoneskip Ironforge
     .itemcount 769,<1 --Chunk of Boar Meat (<1)
@@ -4931,7 +4931,7 @@ step << Hunter skip
     >>Vous avez besoin de 50 en [Cuisine] pour une quête au Bois de la Pénombre plus tard
     >>|T133971:0|t[Cuisiner] les objets suivants:
     >>|T133971:0|t[Cuisiner] les |cRXP_LOOT_[Morceau de viande de sanglier]|r en [Viande de sanglier rôtie]
-    >>|T133971:0|t[Cuisiner] les |cRXP_LOOT_[Viande de loup maigre]|r en [Viande de loup grillée]
+    >>|T133971:0|t[Cuisinez] les |cRXP_LOOT_[Stringy Wolf Meat]|r en [Viande de loup grillée]
     .usespell 2550
     .zoneskip Darkshore
     .itemcount 769,1 --Chunk of Boar Meat (1+)
@@ -4944,7 +4944,7 @@ step << Hunter skip
     #label DarkshoreCook5
     #completewith DarkshoreBoat
     >>Vous avez besoin de 50 en [Cuisine] pour une quête au Bois de la Pénombre plus tard
-    >>|T133971:0|t[Cuisiner] les |cRXP_LOOT_[Viande de loup maigre]|r en [Viande de loup grillée]
+    >>|T133971:0|t[Cuisinez] les |cRXP_LOOT_[Stringy Wolf Meat]|r en [Viande de loup grillée]
     .usespell 2550
     .zoneskip Darkshore
     .itemcount 769,<1 --Chunk of Boar Meat (<1)

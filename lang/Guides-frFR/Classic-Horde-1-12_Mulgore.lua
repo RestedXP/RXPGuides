@@ -133,7 +133,7 @@ step
     #label RitesoftheEarthmother
     .goto Mulgore,42.58,92.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Seer Graytongue|r
-    >>Tuez des créatures sur la route
+    >>Tuez des mobs sur la route
     .turnin 755 >>Rendez la quête Les rites de la Terre-Mère
     .accept 757 >>Acceptez la quête Le rite de force
     .target Seer Graytongue
@@ -642,7 +642,7 @@ step
 step << Shaman/Druid
     .goto Mulgore,45.66,58.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Mahnott|r
-    .vendor >> Vendez votre surplus. Vendez votre arme si elle vous donne assez d'argent pour un [Bâton de marche] (5s 04c). Vous reviendrez plus tard si vous n'avez pas encore assez d'argent
+    .vendor >> Vendez votre surplus. Vendez votre arme si elle vous donne assez d'argent pour un [Bâton de marche] (5s 04c). Vous reviendrez plus rien si vous n'avez pas encore assez d'argent
     .target Mahnott Roughwound
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.2
@@ -905,7 +905,7 @@ step << Warrior
 step << Shaman/Druid
     .goto Mulgore,45.66,58.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Mahnott|r
-    .vendor >> Vendez votre surplus. Vendez votre arme si elle vous donne assez d'argent pour un [Bâton de marche] (5s 04c). Vous reviendrez plus tard si vous n'avez pas encore assez d'argent
+    .vendor >> Vendez votre surplus. Vendez votre arme si elle vous donne assez d'argent pour un [Bâton de marche] (5s 04c). Vous reviendrez plus rien si vous n'avez pas encore assez d'argent
     .target Mahnott Roughwound
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.2
@@ -972,7 +972,7 @@ step
     #label Vision
     .goto Mulgore,47.76,57.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Zarlman|r
-    >>Ne suivez pas le loup qui va apparaître
+    >>Ne suivez pas le loup qui vient d'apparaître
     .turnin 771 >>Rendez la quête Le Rite de vision
     .accept 772 >>Acceptez la quête Le Rite de vision
     .target Zarlman Two-Moons
@@ -1079,7 +1079,7 @@ step
 step << Shaman/Druid
     .goto Mulgore,45.66,58.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Mahnott|r
-    .vendor >> Vendez votre surplus. Vendez votre arme si elle vous donne assez d'argent pour un [Bâton de marche] (5s 04c). Vous reviendrez plus tard si vous n'avez pas encore assez d'argent
+    .vendor >> Vendez votre surplus. Vendez votre arme si elle vous donne assez d'argent pour un [Bâton de marche] (5s 04c). Vous reviendrez plus rien si vous n'avez pas encore assez d'argent
     .target Mahnott Roughwound
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.2
@@ -1751,7 +1751,7 @@ step << Tauren
     .target +Mull Thunderhorn
     .goto Mulgore,48.54,60.38
 step << !Tauren
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Baine|r, |cRXP_FRIENDLY_Ruul|r et à |cRXP_FRIENDLY_Harken|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Baine|r, |cRXP_FRIENDLY_Ruul|r et |cRXP_FRIENDLY_Harken|r
     .turnin 746 >>Rendez la quête Les fouilles des nains
     .target +Baine Bloodhoof
     .goto Mulgore,47.51,60.16
@@ -1779,7 +1779,7 @@ step
 step << Hunter
     .goto Mulgore,45.50,58.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Parlez à|r |cRXP_FRIENDLY_Kennah|r
-    >>|cRXP_BUY_Achetez des|r [Balle lourde] |cRXP_BUY_à Barg|r << Hunter
+    >>|cRXP_BUY_Achetez des|r [Balle lourde] |cRXP_BUY_à Kennah|r << Hunter
     .collect 2519,1000,6061,1 << Hunter --Heavy Shot (1000)
     .target Kennah Hawkseye
 step
@@ -1824,7 +1824,7 @@ step << Hunter
     .goto Mulgore,42.87,54.88,50,0
     .goto Mulgore,40.73,55.60,50,0
     .goto Mulgore,39.38,57.43,50,0
-    .use 15914 >> Utilisez votre [Bâtonnet de domptage] sur un |cRXP_ENEMY_Adult Plainstrider|r à la portée maximale
+    .use 15914 >> Utilisez votre [Bâtonnet de domptage] sur un |cRXP_ENEMY_Adult Plainstrider|r à distance maximale
     .complete 6061,1 --Tame an Adult Plainstrider (1)
     .mob Adult Plainstrider
 step << Hunter
@@ -1840,7 +1840,7 @@ step << Hunter
     .goto Mulgore,46.65,47.22,50,0
     .goto Mulgore,48.18,45.27,50,0
     .goto Mulgore,49.49,42.27,50,0
-    .use 15915 >> Utilisez votre [Taming Rod] sur un |cRXP_ENEMY_Prairie Stalker|r à distance maximale
+    .use 15915 >> Utilisez votre [Bâtonnet de domptage] sur un |cRXP_ENEMY_Prairie Stalker|r à la portée maximale
     .complete 6087,1 --Tame a Prairie Stalker (1)
     .mob Prairie Stalker
 step << Hunter
@@ -2103,7 +2103,7 @@ step
     .goto The Barrens,44.6,22.5,40,0
     .goto The Barrens,43.9,24.4,40,0
     >>Récupérez les |cRXP_LOOT_Laden Mushrooms|r autour des Bassins oubliés
-    >>|cRXP_WARN_Restez le plus possible à distance des |cRXP_ENEMY_Kolkar|r en ramassant les champignons. Ils sont niveau 12-14
+    >>|cRXP_WARN_Restez à distance maximale des |cRXP_ENEMY_Kolkar|r en ramassant les champignons. Ils sont niveau 12-14
     >>|cRXP_WARN_La quête suivante a le très puissant |cRXP_FRIENDLY_Cauldron Stirrer|r en récompense. Vous pouvez passer cette quête pour l'instant si vous ne prévoyez pas de l'utiliser
     .complete 848,1 --Collect Fungal Spores (x4)
 step
@@ -2413,7 +2413,7 @@ step << Shaman
 step
     #sticky
     #completewith ThunderBluff
-    >>Gardez un œil ouvert sur le |cRXP_ENEMY_Hurleur fantomatique|r. Dépouillez-le pour sa |T134358:0|t[|cRXP_LOOT_Cape griffée par les démons|r]. Utilisez la pour commencer la quête
+    >>Gardez un œil sur |cRXP_ENEMY_Ghost Howl|r. Dépouillez-les le pour sa [|cRXP_LOOT_Demon Scarred Cloak|r]. Utilisez la pour commencer la quête
     >>|cRXP_WARN_Passez cette étape si vous n'arrivez pas à le trouver|r
     .collect 4854,1,770 --Collect Demon Scarred Cloak
     .accept 770 >>Acceptez la quête La cape griffée par les démons
@@ -2861,7 +2861,7 @@ step
 step
     .goto The Barrens,51.62,30.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Darsok|r
-    >>Il est en haut de la tour
+    >>Il est au sommet de la tour
     .accept 867 >>Acceptez la quête Les harpies pillardes
     .target Darsok Swiftdagger
 step
@@ -3716,7 +3716,7 @@ step
 step << Shaman/Druid
     .goto Mulgore,45.66,58.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Mahnott|r
-    .vendor >> Vendez votre surplus. Vendez votre arme si elle vous donne assez d'argent pour un [Bâton de marche] (5s 04c). Vous reviendrez plus tard si vous n'avez pas encore assez d'argent
+    .vendor >> Vendez votre surplus. Vendez votre arme si elle vous donne assez d'argent pour un [Bâton de marche] (5s 04c). Vous reviendrez plus rien si vous n'avez pas encore assez d'argent
     .target Mahnott Roughwound
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.2
@@ -3990,7 +3990,7 @@ step << Warrior
 step << Shaman/Druid
     .goto Mulgore,45.66,58.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Mahnott|r
-    .vendor >> Vendez votre surplus. Vendez votre arme si elle vous donne assez d'argent pour un [Bâton de marche] (5s 04c). Vous reviendrez plus tard si vous n'avez pas encore assez d'argent
+    .vendor >> Vendez votre surplus. Vendez votre arme si elle vous donne assez d'argent pour un [Bâton de marche] (5s 04c). Vous reviendrez plus rien si vous n'avez pas encore assez d'argent
     .target Mahnott Roughwound
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.2
@@ -4057,7 +4057,7 @@ step
     #label Vision
     .goto Mulgore,47.76,57.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Zarlman|r
-    >>Ne suivez pas le loup qui va apparaître
+    >>Ne suivez pas le loup qui vient d'apparaître
     .turnin 771 >>Rendez la quête Le Rite de vision
     .accept 772 >>Acceptez la quête Le Rite de vision
     .target Zarlman Two-Moons
@@ -4176,7 +4176,7 @@ step << Shaman/Druid
     #xprate <2.1
     .goto Mulgore,45.66,58.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Mahnott|r
-    .vendor >> Vendez votre surplus. Vendez votre arme si elle vous donne assez d'argent pour un [Bâton de marche] (5s 04c). Vous reviendrez plus tard si vous n'avez pas encore assez d'argent
+    .vendor >> Vendez votre surplus. Vendez votre arme si elle vous donne assez d'argent pour un [Bâton de marche] (5s 04c). Vous reviendrez plus rien si vous n'avez pas encore assez d'argent
     .target Mahnott Roughwound
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.2
@@ -4347,7 +4347,7 @@ step << Hunter
     .goto Mulgore,42.87,54.88,50,0
     .goto Mulgore,40.73,55.60,50,0
     .goto Mulgore,39.38,57.43,50,0
-    .use 15914 >> Utilisez votre [Bâtonnet de domptage] sur un |cRXP_ENEMY_Adult Plainstrider|r à la portée maximale
+    .use 15914 >> Utilisez votre [Bâtonnet de domptage] sur un |cRXP_ENEMY_Adult Plainstrider|r à distance maximale
     .complete 6061,1 --Tame an Adult Plainstrider (1)
     .mob Adult Plainstrider
     .isOnQuest 6061
@@ -4374,7 +4374,7 @@ step << Hunter
     .goto Mulgore,46.65,47.22,50,0
     .goto Mulgore,48.18,45.27,50,0
     .goto Mulgore,49.49,42.27,50,0
-    .use 15915 >> Utilisez votre [Taming Rod] sur un |cRXP_ENEMY_Prairie Stalker|r à distance maximale
+    .use 15915 >> Utilisez votre [Bâtonnet de domptage] sur un |cRXP_ENEMY_Prairie Stalker|r à la portée maximale
     .complete 6087,1 --Tame a Prairie Stalker (1)
     .mob Prairie Stalker
     .isQuestTurnedIn 6061
@@ -4926,7 +4926,7 @@ step << Tauren
     .isQuestComplete 761
 step << !Tauren
     #xprate <2.1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Baine|r, |cRXP_FRIENDLY_Ruul|r et à |cRXP_FRIENDLY_Harken|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Baine|r, |cRXP_FRIENDLY_Ruul|r et |cRXP_FRIENDLY_Harken|r
     .turnin 746 >>Rendez la quête Les fouilles des nains
     .target +Baine Bloodhoof
     .goto Mulgore,47.51,60.16
@@ -4963,7 +4963,7 @@ step << !Tauren
     .goto Mulgore,47.35,62.02
 step
     #xprate >2.09
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Baine|r, |cRXP_FRIENDLY_Ruul|r et à |cRXP_FRIENDLY_Harken|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Baine|r, |cRXP_FRIENDLY_Ruul|r et |cRXP_FRIENDLY_Harken|r
     .turnin 746 >>Rendez la quête Les fouilles des nains
     .target +Baine Bloodhoof
     .goto Mulgore,47.51,60.16
@@ -4990,7 +4990,7 @@ step
 step << Hunter
     .goto Mulgore,45.50,58.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Parlez à|r |cRXP_FRIENDLY_Kennah|r
-    >>|cRXP_BUY_Achetez des|r [Balle lourde] |cRXP_BUY_à Barg|r << Hunter
+    >>|cRXP_BUY_Achetez des|r [Balle lourde] |cRXP_BUY_à Kennah|r << Hunter
     .collect 2519,1000,6061,1 << Hunter --Heavy Shot (1000)
     .target Kennah Hawkseye
 step << Warrior
@@ -5053,7 +5053,7 @@ step << Hunter
     .goto Mulgore,42.87,54.88,50,0
     .goto Mulgore,40.73,55.60,50,0
     .goto Mulgore,39.38,57.43,50,0
-    .use 15914 >> Utilisez votre [Bâtonnet de domptage] sur un |cRXP_ENEMY_Adult Plainstrider|r à la portée maximale
+    .use 15914 >> Utilisez votre [Bâtonnet de domptage] sur un |cRXP_ENEMY_Adult Plainstrider|r à distance maximale
     .complete 6061,1 --Tame an Adult Plainstrider (1)
     .mob Adult Plainstrider
 step << Hunter
@@ -5069,7 +5069,7 @@ step << Hunter
     .goto Mulgore,46.65,47.22,50,0
     .goto Mulgore,48.18,45.27,50,0
     .goto Mulgore,49.49,42.27,50,0
-    .use 15915 >> Utilisez votre [Taming Rod] sur un |cRXP_ENEMY_Prairie Stalker|r à distance maximale
+    .use 15915 >> Utilisez votre [Bâtonnet de domptage] sur un |cRXP_ENEMY_Prairie Stalker|r à la portée maximale
     .complete 6087,1 --Tame a Prairie Stalker (1)
     .mob Prairie Stalker
 step << Hunter
@@ -5138,7 +5138,7 @@ step << Hunter
     .goto Mulgore,67.62,59.06,50,0
     .goto Mulgore,66.34,67.01,50,0
     .train 16828 >>|cRXP_WARN_Lancez|r |T132164:0|t[Apprivoiser une bête] |cRXP_WARN_sur un |cRXP_ENEMY_Loup Alpha des prairies|r. Attaquez des mobs avec le loup pour apprendre|r |T132140:0|t[Griffe (Rang 3)]
-    .link https://www.wow-petopia.com/classic/training.php >> |cRXP_WARN_Cliquez ici pour plus d'information sur le dressage des familiers|r
+    .link https://www.wow-petopia.com/classic/training.php >> Cliquez ici pour plus d'information sur le dressage des familiers
     .mob Prairie Wolf Alpha
 step
     #xprate >2.09
@@ -5460,7 +5460,7 @@ step
     .goto The Barrens,44.6,22.5,40,0
     .goto The Barrens,43.9,24.4,40,0
     >>Récupérez les |cRXP_LOOT_Laden Mushrooms|r autour des Bassins oubliés
-    >>|cRXP_WARN_Restez le plus possible à distance des |cRXP_ENEMY_Kolkar|r en ramassant les champignons. Ils sont niveau 12-14
+    >>|cRXP_WARN_Restez à distance maximale des |cRXP_ENEMY_Kolkar|r en ramassant les champignons. Ils sont niveau 12-14
     >>|cRXP_WARN_La quête suivante a le très puissant |cRXP_FRIENDLY_Cauldron Stirrer|r en récompense. Vous pouvez passer cette quête pour l'instant si vous ne prévoyez pas de l'utiliser
     .complete 848,1 --Collect Fungal Spores (x4)
 step
@@ -5643,7 +5643,7 @@ step << Warrior
     #season 2
     .goto Thunder Bluff,28.73,18.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Nétali|r
-    >>Recevez auprès d'elle la |T134419:0|t[|cRXP_FRIENDLY_Rune d’assaut frénétique|r]
+    >>Recevez auprès d'elle la |T134419:0|t[|cRXP_FRIENDLY_Rune d’assaut frénétique|r] 
     .collect 204716,1 --Rune of Frenzied Assault (1)
     .target Netali
     .train 425447,1
@@ -5905,7 +5905,7 @@ step
     #xprate <2.1
     .goto The Barrens,51.62,30.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Darsok|r
-    >>Il est en haut de la tour
+    >>Il est au sommet de la tour
     .accept 867 >>Acceptez la quête Les harpies pillardes
     .target Darsok Swiftdagger
 step

@@ -88,7 +88,7 @@ step << !Human
     .accept 153 >> Acceptez la quête Les masques en cuir rouge
 step
     .goto Westfall,52.86,53.71
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Aubergiste Heather|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Innkeeper Heather|r
     >>|cRXP_BUY_Achetez de la nourriture/eau si besoin|r
     .vendor >>Les |T133918:0|t[Lutjans à longue mâchoire] |cRXP_WARN_sont très peu coûteux|r
 	.target Innkeeper Heather
@@ -685,7 +685,7 @@ step
     >>Vous avez besoin de 50 en [Cuisine] pour une quête au Bois de la Pénombre plus tard
     >>|T133971:0|t[Cuisiner] les objets suivants:
     >>|T133971:0|t[Cuisiner] les |cRXP_LOOT_[Morceau de viande de sanglier]|r en [Viande de sanglier rôtie]
-    >>|T133971:0|t[Cuisiner] les |cRXP_LOOT_[Viande de loup maigre]|r en [Viande de loup grillée]
+    >>|T133971:0|t[Cuisinez] les |cRXP_LOOT_[Stringy Wolf Meat]|r en [Viande de loup grillée]
     .usespell 2550
     .zoneskip Darkshore
     .itemcount 769,1 --Chunk of Boar Meat (1+)
@@ -698,7 +698,7 @@ step
     #label DarkshoreCook5
     #completewith DarkshoreBoat
     >>Vous avez besoin de 50 en [Cuisine] pour une quête au Bois de la Pénombre plus tard
-    >>|T133971:0|t[Cuisiner] les |cRXP_LOOT_[Viande de loup maigre]|r en [Viande de loup grillée]
+    >>|T133971:0|t[Cuisinez] les |cRXP_LOOT_[Stringy Wolf Meat]|r en [Viande de loup grillée]
     .usespell 2550
     .zoneskip Darkshore
     .itemcount 769,<1 --Chunk of Boar Meat (<1)
@@ -828,13 +828,13 @@ step
     #xprate <1.5
     .goto 1439,36.976,44.135
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Wizbang Cranktoggle|r à l'étage
-    .accept 983 >> Acceptez la quête Bigobox 827
+    .accept 983 >> Acceptez Buzzbox 827
     .target Wizbang Cranktoggle
 step
     #xprate >1.49
     .goto 1439,36.976,44.135
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Wizbang Cranktoggle|r à l'étage
-    .accept 983 >> Acceptez la quête Bigobox 827
+    .accept 983 >> Acceptez Buzzbox 827
     .target Wizbang Cranktoggle
     .xp >15,1 --XX Skip if 15+
 step
@@ -849,7 +849,7 @@ step
     #xprate <1.5
     #optional << NightElf
     .goto 1439,37.703,43.393
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinelle Glynda Nal'Shea|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
     .accept 4811 >> Accept Les Red Crystal
     .target Sentinel Glynda Nal'Shea
     .xp <12,1
@@ -862,7 +862,7 @@ step
 step
     #xprate >1.49
     .goto 1439,37.703,43.393
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinelle Glynda Nal'Shea|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
     .accept 4811 >> Accept Les Red Crystal
     .target Sentinel Glynda Nal'Shea
 step
@@ -955,7 +955,7 @@ step << Druid
     #completewith CliffspringEnd
     #label GatheringQ
     .skill herbalism,15 >>|cRXP_WARN_Montez votre|r |T136065:0|t[Herboristerie] |cRXP_WARN_à un niveau de 15 pour vous permettre de récolter des|r [Terrestrines] |cRXP_WARN_pour une quête de classe importante plus tard. Vous pourrez ensuite abandonner le métier|r
-    >>Si vous préférez acheter 5 [Terrestrine] à l'Hôtel des Ventes plus tard, passez cette étape
+    >>Si vous préférez acheter 5 [Terrestrine] à l'Hôtel des Ventes plus tard, vous pouvez passer cette étape
     .collect 2449,5,6123,1 --Earthroot (5)
     .disablecheckbox
 step << Druid
@@ -1113,7 +1113,7 @@ step
 step
     #xprate <1.5
     .goto 1439,37.703,43.393
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinelle Glynda Nal'Shea|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
     .accept 4811 >> Accept Les Red Crystal
     .target Sentinel Glynda Nal'Shea
 step
@@ -1610,7 +1610,7 @@ step << NightElf/Hunter/Druid/Warrior
 step << NightElf/Hunter/Druid/Warrior
     #optional
     .goto 1439,37.703,43.393
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinelle Glynda Nal'Shea|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
     .turnin 4811 >> Rendez la quête Le cristal rouge
     .accept 4812 >> Acceptez la quête Comme l'eau tombe en cascade
     .target Sentinel Glynda Nal'Shea
@@ -1619,7 +1619,7 @@ step << NightElf/Hunter/Druid/Warrior
 step << Hunter/Druid/Warrior
     #season 0,1 << Druid
     .goto 1439,37.703,43.393
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinelle Glynda Nal'Shea|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
     .turnin 4811 >> Rendez la quête Le cristal rouge
     .accept 4812 >> Acceptez la quête Comme l'eau tombe en cascade
     .target Sentinel Glynda Nal'Shea
@@ -1629,7 +1629,7 @@ step << NightElf/Hunter/Druid/Warrior
     #optional
     #label Cascade
     .goto 1439,37.703,43.393
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinelle Glynda Nal'Shea|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
     .accept 4812 >> Acceptez la quête Comme l'eau tombe en cascade
     .target Sentinel Glynda Nal'Shea
     .isQuestTurnedIn 4811 --show step if Red Crystal turned in
@@ -1777,7 +1777,7 @@ step << NightElf/Hunter/Druid/Warrior
 step << NightElf/Hunter/Druid/Warrior
     #season 0
     .goto Darkshore,37.70,43.39
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinelle Glynda Nal'Shea|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
     .turnin 4813,3 >> Rendez la quête Les fragments à l'intérieur
     .target Sentinel Glynda Nal'Shea
     .isQuestTurnedIn 4811
@@ -2336,14 +2336,14 @@ step
 step
     #season 0
     .goto 1439,37.703,43.393
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinelle Glynda Nal'Shea|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
     .turnin 4811 >> Rendez la quête Le cristal rouge
     .accept 4812 >> Acceptez la quête Comme l'eau tombe en cascade
     .target Sentinel Glynda Nal'Shea
     .isOnQuest 4811
 step
     .goto 1439,37.703,43.393
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinelle Glynda Nal'Shea|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
     .turnin 4812 >> Rendez la quête Comme l'eau tombe en cascade
     .target Sentinel Glynda Nal'Shea
     .isQuestComplete 4812
@@ -2926,7 +2926,7 @@ step
 step
     .goto Darkshore,37.70,43.39
     #season 0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinelle Glynda Nal'Shea|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
     >>|cRXP_WARN_Choisissez la|r |T135641:0|t[Dague de Courbebois] |cRXP_WARN_comme vous devez essayer de sauvegarder une|r |T135641:0|t[Dague] |cRXP_WARN_pour votre quête de|r |T132290:0|t[Poisons] |cRXP_WARN_plus tard|r << Rogue
     .turnin 4813 >> Rendez la quête Les fragments à l'intérieur
     .target Sentinel Glynda Nal'Shea
@@ -3144,7 +3144,7 @@ step << NightElf Warrior
 step << NightElf Warrior
     .goto Darnassus,57.56,46.72
     #season 0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t Parlez à |cRXP_FRIENDLY_Ilyenia Moonfire|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Ilyenia Moonfire|r
     .skipgossip 11866,1
     .train 2567 >> Apprenez la compétence Armes de jet
     .target Ilyenia Moonfire
@@ -3482,7 +3482,7 @@ step << Hunter
     #season 0
     #label prospector
     .goto 1439,35.724,83.696
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Prospector Remtravel|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Prospector Remtravel|r
     >>|cRXP_WARN_Vous devrez peut-être attendre qu'il réapparaisse ou que les autres joueurs terminent l'escorte|r
     .turnin 729 >> Rendez la quête Les absences du Prospecteur
     .target Prospector Remtravel
@@ -3667,7 +3667,7 @@ step
 step
     .goto 1439,37.703,43.393
     #season 0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinelle Glynda Nal'Shea|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
     .turnin 4740 >> Rendez la quête On recherche : Fondeboue !
     .target Sentinel Glynda Nal'Shea
 step
@@ -4830,7 +4830,7 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Osborne the Night Man|r
     >>Faites bien attention à apprendre la capacité [Crochetage], vous en aurez besoin plus tard
     >>|cRXP_WARN_SOYEZ TRÈS PRUDENT avec la gestion de votre argent dans les prochaines étapes. N'achetez que les sorts essentiels. Vous devrez avoir de l'argent pour Disparition bientôt et 75 pièces d'argent pour obtenir une rune après votre retour des Paluns|r
-    .train 1804 >> Apprenez [Crochetage]
+    .train 1804 >> Montez le niveau de votre [Crochetage]
     .trainer >> Apprenez vos sorts de classe
     .target Osborne the Night Man
     .dungeon !DM
@@ -4944,7 +4944,7 @@ step << Rogue
     #xprate >1.59
     #ah
     .goto Stormwind City,53.612,59.764
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Commissaire-priseur Jaxon|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Auctioneer Jaxon|r
     >>Achetez l'|T134437:0|t[Anti-venin] pour votre quête de |T132290:0|t[Poisons] plus tard, et le reste pour rendre des quêtes plus rapidement aux Carmines très bientôt << !Dwarf
     >>Achetez les objets suivants pour rendre des quêtes plus rapidement aux Carmines très bientôt << Dwarf
     >>Ceux-ci vont feront gagner du temps comme vous n'aurez pas besoin de chercher des mobs à tuer. Passez cette étape si vous ne voulez pas les acheter
@@ -5211,7 +5211,7 @@ step << Rogue
     .goto Westfall,71.01,75.72,30,0
     .goto Westfall,69.58,73.07,30,0
     >>|T133644:0|tUtilisez [Vol à la tire] sur le |cRXP_ENEMY_Malformed Defias Drone|r. Volez-lui la |cRXP_LOOT_Defias Tower Key|r
-    >>Vous devez être en [Camouflage] pour utiliser [Vol à la tire]
+    >>Vous devez être en [Camouflage] pour utiliser votre [Vol à la tire]
     >>|cRXP_WARN_Le |cRXP_ENEMY_Malformed Defias Drone|r apparaissent à l'entrée de la tour, puis font le tour de celle-ci|r
     >>Faites attention car il fait BEAUCOUP de dégâts. Si vous perdez votre [Camouflage], utilisez vite votre [Sprint] pour vous enfuir
     .complete 2359,2 --Collect Defias Tower Key (x1)
@@ -5483,7 +5483,7 @@ step << Mage
     #xprate >1.59
     .goto Stormwind City,39.681,79.538
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Larimaine Purdue|r
-    .train 3561 >> Apprenez [Téléportation : Hurlevent]
+    .train 3561 >> Apprenez [Téléportation : Stormwind]
     .target Larimaine Purdue
     .dungeon !DM
 step << Mage/Warlock/Rogue
@@ -5580,7 +5580,7 @@ step << NightElf Warrior
     #label NEWarRogNoDMNoFP4
     #completewith NEWarRogNoDMIFPP
     .goto 1455,62.378,88.671
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Brenwyn Hiémacier|r en bas des escaliers
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Brenwyn Wintersteel|r en bas des escaliers
     >>|cRXP_BUY_Achetez-lui le|r |T135427:0|t[Couteau de lancer lourd] |cRXP_BUY_|r
     .collect 3108,200 --Collect Heavy Throwing Knife (200)
     .target Brenwyn Wintersteel
@@ -5850,7 +5850,7 @@ step << Dwarf Hunter
     .dungeon !DM
 step << Dwarf Hunter
     #xprate <1.59
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t Parlez à |cRXP_FRIENDLY_Ilyenia Moonfire|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Ilyenia Moonfire|r
     .skipgossip 11866,1
     .goto Darnassus,57.56,46.72
     .train 264 >> Apprenez la compétence Arcs
@@ -6874,7 +6874,7 @@ step << Mage
     #xprate >1.59
     .goto Stormwind City,39.681,79.538
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Larimaine Purdue|r
-    .train 3561 >> Apprenez [Téléportation : Hurlevent]
+    .train 3561 >> Apprenez [Téléportation : Stormwind]
     .target Larimaine Purdue
     .dungeon DM
 step << !Paladin
@@ -7163,7 +7163,7 @@ step << Rogue
     .goto Westfall,71.01,75.72,30,0
     .goto Westfall,69.58,73.07,30,0
     >>|T133644:0|tUtilisez [Vol à la tire] sur le |cRXP_ENEMY_Malformed Defias Drone|r. Volez-lui la |cRXP_LOOT_Defias Tower Key|r
-    >>Vous devez être en [Camouflage] pour utiliser [Vol à la tire]
+    >>Vous devez être en [Camouflage] pour utiliser votre [Vol à la tire]
     >>|cRXP_WARN_Le |cRXP_ENEMY_Malformed Defias Drone|r apparaissent à l'entrée de la tour, puis font le tour de celle-ci|r
     >>Faites attention car il fait BEAUCOUP de dégâts. Si vous perdez votre [Camouflage], utilisez vite votre [Sprint] pour vous enfuir
     .complete 2359,2 --Collect Defias Tower Key (x1)
@@ -7383,7 +7383,7 @@ step
     #xprate >1.59 << !Hunter
     #label BandanaStart
     .goto Westfall,56.67,47.35
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Scout Riell|r au sommet de la Tour
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez |cRXP_FRIENDLY_Scout Riell|r tout en haut de la Tour
     .accept 214 >> Acceptez la quête Les masques rouges en soie
     .target Scout Riell
     .dungeon DM
@@ -7708,7 +7708,7 @@ step
 step
     #xprate >1.59 << !Hunter
     .goto Westfall,56.67,47.35
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Scout Riell|r au sommet de la Tour
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez |cRXP_FRIENDLY_Scout Riell|r tout en haut de la Tour
     .turnin 214 >> Rendez la quête Les masques rouges en soie
     .target Scout Riell
     .dungeon DM
@@ -8743,7 +8743,7 @@ step
     .target Gryan Stoutmantle
 step
 .dungeon DM
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Scout Riell|r au sommet de la Tour
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez |cRXP_FRIENDLY_Scout Riell|r tout en haut de la Tour
     .accept 214 >> Acceptez la quête Les masques rouges en soie
     .goto Westfall,56.67,47.35
     .target Scout Riell
@@ -8862,7 +8862,7 @@ step << Mage
 .dungeon DM
     .goto StormwindClassic,39.68,79.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Larimaine|r
-    .train 3561 >> Apprenez [Téléportation : Hurlevent]
+    .train 3561 >> Apprenez [Téléportation : Stormwind]
 	.xp <20,1
     .target Larimaine Purdue
 step << Warlock
@@ -9551,7 +9551,7 @@ step << Mage
 .dungeon !DM
     .goto StormwindClassic,39.68,79.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Larimaine|r
-    .train 3561 >> Apprenez [Téléportation : Hurlevent]
+    .train 3561 >> Apprenez [Téléportation : Stormwind]
 	.xp <20,1
     .target Larimaine Purdue
 step
@@ -9692,7 +9692,7 @@ step << Rogue
     .goto Westfall,71.01,75.72,30,0
     .goto Westfall,69.58,73.07,30,0
     >>|T133644:0|tUtilisez [Vol à la tire] sur le |cRXP_ENEMY_Malformed Defias Drone|r. Volez-lui la |cRXP_LOOT_Defias Tower Key|r
-    >>Vous devez être en [Camouflage] pour utiliser [Vol à la tire]
+    >>Vous devez être en [Camouflage] pour utiliser votre [Vol à la tire]
     >>|cRXP_WARN_Le |cRXP_ENEMY_Malformed Defias Drone|r apparaissent à l'entrée de la tour, puis font le tour de celle-ci|r
     >>Faites attention car il fait BEAUCOUP de dégâts. Si vous perdez votre [Camouflage], utilisez vite votre [Sprint] pour vous enfuir
     .complete 2359,2 --Collect Defias Tower Key (x1)
@@ -10009,7 +10009,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Alliance 1-20
 #groupid RXP-SRGCE-A1
 #name 19-21 Sombrivage/Orneval
-#next RestedXP Alliance 20-30\21-23 Orneval/Serres-Rocheuses
+#next RestedXP Alliance 20-30\21-23 Ashenvale/Serres-Rocheuses
 
 step
     #xprate >1.59
@@ -10102,14 +10102,14 @@ step
     #sticky
     #label prospector
     .goto 1439,35.724,83.696
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Prospector Remtravel|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Prospector Remtravel|r
     >>|cRXP_WARN_Vous devrez peut-être attendre qu'il réapparaisse ou que les autres joueurs terminent l'escorte|r
     .turnin 729 >> Rendez la quête Les absences du Prospecteur
     .isOnQuest 729
     .target Prospector Remtravel
 step
     .goto Darkshore,35.72,83.69
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Prospector Remtravel|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Prospector Remtravel|r
     >>Ceci va démarrer une escorte
     .accept 731,1 >> Acceptez la quête Les absences du Prospecteur
     >>|cRXP_WARN_Cette quête est TRÈS difficile. Passez cette étape si vous n'arrivez pas à trouver un groupe ou à la faire seul|r
@@ -10745,7 +10745,7 @@ step
 step << Dwarf Hunter
     #xprate <1.59
 -- #xprate >1.59
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t Parlez à |cRXP_FRIENDLY_Ilyenia Moonfire|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Ilyenia Moonfire|r
     .skipgossip 11866,1
     .goto Darnassus,57.56,46.72
     .train 264 >> Apprenez la compétence Arcs
@@ -10802,7 +10802,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Alliance 1-20
 #groupid RXP-SRGCE-A1
 #name 20-21 Sombrivage/Orneval
-#next RestedXP Alliance 20-30\21-23 Serres-Rocheuses/Orneval; RestedXP Alliance 20-30\21-22 Orneval SoD
+#next RestedXP Alliance 20-30\21-23 Serres-Rocheuses/Orneval;RestedXP Alliance 20-30\21-22 Ashenvale SoD
 
 
 step << Druid
@@ -11001,7 +11001,7 @@ step
     #sticky
     #label prospector
     .goto 1439,35.724,83.696
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Prospector Remtravel|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Prospector Remtravel|r
     >>|cRXP_WARN_Vous devrez peut-être attendre qu'il réapparaisse ou que les autres joueurs terminent l'escorte|r
     .turnin 729 >> Rendez la quête Les absences du Prospecteur
     .target Prospector Remtravel

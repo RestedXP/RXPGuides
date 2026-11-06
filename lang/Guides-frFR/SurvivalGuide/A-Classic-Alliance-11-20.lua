@@ -699,7 +699,7 @@ step
     .accept 947 >> Acceptez la quête La caverne aux champignons
 step
 #map Darkshore
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinelle Glynda Nal'Shea|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
 	.target Sentinel Glynda Nal'Shea
     .goto Felwood,20.34,18.12
     .accept 4811 >> Accept Les Red Crystal
@@ -1103,7 +1103,7 @@ step << !NightElf Rogue
     .target Syurna
 step << !NightElf Hunter/!NightElf Warrior
     #sticky
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t Parlez à |cRXP_FRIENDLY_Ilyenia Moonfire|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Ilyenia Moonfire|r
     .skipgossip 11866,1
     .goto Darnassus,57.56,46.72
     .train 264 >> Apprenez la compétence Arcs
@@ -1156,7 +1156,7 @@ step
     .accept 4763 >> Acceptez la quête La corruption des Noirbois
 step
 #map Darkshore
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinelle Glynda Nal'Shea|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
 	.target Sentinel Glynda Nal'Shea
     .goto Felwood,20.34,18.12
     .turnin 4811 >> Rendez la quête Le cristal rouge
@@ -1508,7 +1508,7 @@ step
 step
 #map Darkshore
     #label NorthDarkshore
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinelle Glynda Nal'Shea|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
 	.target Sentinel Glynda Nal'Shea
     .goto Darkshore,37.70,43.39
     .turnin 4813 >> Rendez la quête Les fragments à l'intérieur
@@ -1874,12 +1874,12 @@ step
     #sticky
     #label prospector
     .goto Felwood,18.08,64.03
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Prospector Remtravel|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Prospector Remtravel|r
     .turnin 729 >> Rendez la quête Les absences du Prospecteur
     .target Prospector Remtravel
 step
     .goto Darkshore,35.72,83.69
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Prospector Remtravel|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Prospector Remtravel|r
     >>Ceci va démarrer une escorte
     .accept 731,1 >> Acceptez la quête Les absences du Prospecteur
     >>|cRXP_WARN_Cette quête est TRÈS difficile. Passez cette étape si vous n'arrivez pas à trouver un groupe ou à la faire seul|r
@@ -2169,7 +2169,7 @@ step
 step
 .dungeon WC
     #completewith EnterWC
-    >>Tuez tous types de créatures |cRXP_ENEMY_Deviate|r. Dépouillez-les pour leur |cRXP_LOOT_Deviate Hides|r
+    >>Tuez tout type de créatures |cRXP_ENEMY_Deviate|r. Dépouillez-les pour leur |cRXP_LOOT_Deviate Hides|r
     >>Cette quête peut être complétée à l'INTÉRIEUR et à l'EXTÉRIEUR des Cavernes des Lamentations
     .complete 1486,1 -- Deviate Hide (20)
     .isOnQuest 1486
@@ -2198,7 +2198,7 @@ step
     .zoneskip 1414,1 -- similar to stockades, no subzone for WC
 step
 .dungeon WC
-    >>Tuez tous types de créatures |cRXP_ENEMY_Deviate|r. Dépouillez-les pour leur |cRXP_LOOT_Deviate Hides|r
+    >>Tuez tout type de créatures |cRXP_ENEMY_Deviate|r. Dépouillez-les pour leur |cRXP_LOOT_Deviate Hides|r
     .complete 1487,1 -- Deviate Ravager slain (7)
     .complete 1487,2 -- Deviate Viper slain (7)
     .complete 1487,3 -- Deviate Shambler slain (7)
@@ -2218,14 +2218,14 @@ step
 step
 .dungeon WC
     #completewith next
-    >>Tuez tous types de créatures |cRXP_ENEMY_Deviate|r. Dépouillez-les pour leur |cRXP_LOOT_Deviate Hides|r
+    >>Tuez tout type de créatures |cRXP_ENEMY_Deviate|r. Dépouillez-les pour leur |cRXP_LOOT_Deviate Hides|r
     .complete 1486,1 -- Deviate Hide (20)
     .isOnQuest 1486
 step
 .dungeon WC
     >>Tuez |cRXP_ENEMY_Lord Cobrahn|r, |cRXP_ENEMY_Lord Pythas|r, |cRXP_ENEMY_Lord Serpentis|r et |cRXP_ENEMY_Lady Anacondra|r puis parlez au |cRXP_FRIENDLY_Disciple of Naralex|r au début du donjon pour commencer son escorte
     >>Escortez le |cRXP_FRIENDLY_Disciple of Naralex|r à travers les Cavernes des Lamentations et compléter son rituel
-    >>Tuez |cRXP_ENEMY_Mutanus the Devourer|r. Dépouillez-le pour le [|cRXP_LOOT_Glowing Shard|r]
+    >>Tuez|cRXP_ENEMY_Mutanus the Devourer|r. Dépouillez-le pour sa [|cRXP_LOOT_Glowing Shard|r]
     >>|cRXP_WARN_Utilisez le [|cRXP_LOOT_Glowing Shard|r] pour commencer la quête|r
     .collect 10441,1,6981,1 -- Glowing Shard (1)
     .accept 6981 >> Acceptez la quête L'Éclat luminescent
@@ -2235,7 +2235,7 @@ step
     .mob Mutanus the Devourer
 step
 .dungeon WC
-    >>Tuez tous types de créatures |cRXP_ENEMY_Deviate|r. Dépouillez-les pour leur |cRXP_LOOT_Deviate Hides|r
+    >>Tuez tout type de créatures |cRXP_ENEMY_Deviate|r. Dépouillez-les pour leur |cRXP_LOOT_Deviate Hides|r
     >>Cette quête peut être complétée à l'INTÉRIEUR et à l'EXTÉRIEUR des Cavernes des Lamentations
     .complete 1486,1 -- Deviate Hide (20)
     .isOnQuest 1486

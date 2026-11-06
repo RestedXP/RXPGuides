@@ -835,7 +835,7 @@ step << Mage
 step << Mage
     .goto StormwindClassic,39.68,79.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Larimaine|r
-    .train 3561 >> Apprenez [Téléportation : Hurlevent]
+    .train 3561 >> Apprenez [Téléportation : Stormwind]
 	.xp <20,1
     .target Larimaine Purdue
 step << Druid
@@ -1214,7 +1214,7 @@ step << Rogue
     .goto Westfall,71.01,75.72,30,0
     .goto Westfall,69.58,73.07,30,0
     >>|T133644:0|tUtilisez [Vol à la tire] sur le |cRXP_ENEMY_Malformed Defias Drone|r. Volez-lui la |cRXP_LOOT_Defias Tower Key|r
-    >>Vous devez être en [Camouflage] pour utiliser [Vol à la tire]
+    >>Vous devez être en [Camouflage] pour utiliser votre [Vol à la tire]
     >>|cRXP_WARN_Le |cRXP_ENEMY_Malformed Defias Drone|r apparaissent à l'entrée de la tour, puis font le tour de celle-ci|r
     >>Faites attention car il fait BEAUCOUP de dégâts. Si vous perdez votre [Camouflage], utilisez vite votre [Sprint] pour vous enfuir
     .complete 2359,2 --Collect Defias Tower Key (x1)

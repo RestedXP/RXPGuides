@@ -213,7 +213,7 @@ step << Mage/Warlock/Priest
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sarvis|r et à |cRXP_FRIENDLY_Elreth|r << !Warlock !Mage !Priest
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sarvis|r, |cRXP_FRIENDLY_Elreth|r, et à |cRXP_FRIENDLY_Maximillion|r << Warlock
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sarvis|r, |cRXP_FRIENDLY_Elreth|r, et à |cRXP_FRIENDLY_Isabella|r << Mage
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sarvis|r, |cRXP_FRIENDLY_Elreth|r, et à |cRXP_FRIENDLY_Maximillion|r << Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sarvis|r, |cRXP_FRIENDLY_Elreth|r, et à |cRXP_FRIENDLY_Duesten|r << Priest
     .turnin 364 >> Rendez la quête Lever le voile
     .accept 3095 >> Acceptez la quête Parchemin simple << Warrior
@@ -344,7 +344,7 @@ step << Priest
 step << Priest
     .goto Tirisfal Glades,31.11,66.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Duesten|r
-    .train 2052 >> Apprenez [Soins inférieurs Rang 2]
+    .train 2052 >> Apprenez [Soins inférieurs rang 2]
     .train 589 >> Apprenez [Mot de l'ombre : Douleur]
     .target Dark Cleric Duesten
     .money <0.02
@@ -408,7 +408,7 @@ step << Rogue
     .goto Tirisfal Glades,32.53,65.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_David|r
     .turnin 3096 >> Rendez la quête Parchemin codé
-    .train 53 >> Apprenez [Attaque sournoise]
+    .train 53 >> Apprenez [Attaque Sournoise]
     .money <0.04
     .target David Trias
 step << Rogue
@@ -751,7 +751,7 @@ step << Priest
     .accept 5650 >> Acceptez la quête Vêtements des ténèbres
 	.train 591 >>Apprenez [Châtiment]
     .train 17 >>Apprenez [Mot de pouvoir : Bouclier]
-    .train 2052 >>Apprenez [Soins inférieurs Rang 2]
+    .train 2052 >>Apprenez [Soins inférieurs rang 2]
     .target Dark Cleric Beryl
 step << Mage
     .goto Tirisfal Glades,61.97,52.47
@@ -768,7 +768,7 @@ step << Warrior
 step << Rogue
     .goto Tirisfal Glades,61.75,52.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Marion|r au second étage
-    .train 1757 >> Apprenez [Attaque pernicieuse]
+    .train 1757 >> Apprenez [Attaque Pernicieuse]
     .target Marion Call
     .money <0.01
 step << Warlock
@@ -1041,7 +1041,7 @@ step << Warrior/Rogue
     .goto Durotar,51.81,40.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Krunn|r
     .train 2575 >> Apprenez [Minage]
-    >>Ceci vous permettra de trouver des |cRXP_LOOT_[Rough Stones]|r sur les gisements pour fabriquer les [Pierre à aiguiser] (+2 dégâts aux armes pendant 30 minutes)
+    >>Ceci vous permettra de trouver des |cRXP_LOOT_[Rough Stones]|r dans les filons pour fabriquer des [Pierre à aiguiser] (+2 dégâts des armes pendant 30 minutes)
     .target Krunn
 step << Warrior/Rogue
     .goto Durotar,51.90,41.14
@@ -1054,7 +1054,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Innkeeper Grosk|r
     .home >> Liez votre Pierre de Foyer à Tranchecolline
     >>|cRXP_BUY_Achetez du|r [Lait frais] |cRXP_BUY_à Kauth|r << Mage/Warlock/Priest/Shaman
-    >>|cRXP_BUY_Achetez des|r [Cuissot] |cRXP_BUY_à Hai'zan|r << Rogue/Warrior
+    >>|cRXP_BUY_Achetez des|r [Cuissot] |cRXP_BUY_à Grosk|r << Rogue/Warrior
     .vendor >> Vendez tout ce dont nous n'avez pas besoin
     .target Innkeeper Grosk
     .bindlocation 362
@@ -1092,7 +1092,7 @@ step
     .target Furl Scornbrow
 step
     #completewith TravelToTiragarde
-    +Lancez [Découverte de gisement] et minez tous les Filons de cuivre que vous trouvez pour les |cRXP_LOOT_[Rough Stones]|r. Fabriquez des [Pierre à aiguiser] avec elles
+    +Lancez [Découverte de gisements] et minez tous les Filons de cuivre que vous trouvez pour les |cRXP_LOOT_[Rough Stones]|r. Fabriquez des [Pierre à aiguiser] avec elles
     .collect 2862,1,786,1
     .skill blacksmithing,<1,1
     .train 2575,3 --Mining Trained
@@ -1116,7 +1116,7 @@ step
     .target Lar Prowltusk
 step
     #label SenjinPickups
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Vel'rin|r, |cRXP_FRIENDLY_Vornal|r et |cRXP_FRIENDLY_Gadrin|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Vel'rin|r, |cRXP_FRIENDLY_Vornal|r et à |cRXP_FRIENDLY_Gadrin|r
     .accept 817 >>Acceptez la quête Proie nécessaire
     .target +Vel'rin Fang
     .goto Durotar,55.95,73.93
@@ -1281,7 +1281,7 @@ step
 step << Warrior/Rogue/Shaman
     .goto Durotar,55.62,73.61
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Hai'zan|r
-    >>|cRXP_BUY_Achetez des|r [Cuissot] |cRXP_BUY_à Hai'zan|r
+    >>|cRXP_BUY_Achetez des|r [Cuissot] |cRXP_BUY_à Grosk|r
     .vendor >> Vendez tout ce dont nous n'avez pas besoin
     .collect 2287,10,823,1 --Haunch of Meat (10)
     .money <0.025
@@ -1289,14 +1289,14 @@ step << Warrior/Rogue/Shaman
 step << skip --Warlock/Mage/Priest
     .goto Durotar,56.29,73.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Parlez à|r |cRXP_FRIENDLY_K'waii|r
-    >>|cRXP_BUY_Achetez des|r [Eau de source] |cRXP_BUY_à Shara|r --Refreshing Spring Water (20)
+    >>|cRXP_BUY_Achetez des|r [Refreshing Spring Water] |cRXP_BUY_à Duokna|r --Refreshing Spring Water (20)
     .collect 159,20,784,1
     .target K'waii
     .money <0.010
 step << skip --Warlock/Mage/Priest
     .goto Durotar,56.29,73.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Parlez à|r |cRXP_FRIENDLY_K'waii|r
-    >>|cRXP_BUY_Achetez des|r [Eau de source] |cRXP_BUY_à Shara|r --Refreshing Spring Water (10)
+    >>|cRXP_BUY_Achetez des|r [Refreshing Spring Water] |cRXP_BUY_à Duokna|r --Refreshing Spring Water (10)
     .collect 159,10,784,1
     .target K'waii
     .money <0.0050
@@ -1549,7 +1549,7 @@ step << Warrior/Rogue
     .goto Durotar,51.81,40.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Krunn|r
     .train 2575 >> Apprenez [Minage]
-    >>Ceci vous permettra de trouver des |cRXP_LOOT_[Rough Stones]|r sur les gisements pour fabriquer les [Pierre à aiguiser] (+2 dégâts aux armes pendant 30 minutes)
+    >>Ceci vous permettra de trouver des |cRXP_LOOT_[Rough Stones]|r dans les filons pour fabriquer des [Pierre à aiguiser] (+2 dégâts des armes pendant 30 minutes)
     .target Krunn
 step << Warrior/Rogue
     .goto Durotar,51.90,41.14
@@ -1641,7 +1641,7 @@ step
     .goto Durotar,51.51,41.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Innkeeper Grosk|r
     >>|cRXP_BUY_Achetez du|r [Lait frais] |cRXP_BUY_à Kauth|r << Mage/Warlock/Priest/Shaman/Druid
-    >>|cRXP_BUY_Achetez des|r [Cuissot] |cRXP_BUY_à Hai'zan|r << Rogue/Warrior
+    >>|cRXP_BUY_Achetez des|r [Cuissot] |cRXP_BUY_à Grosk|r << Rogue/Warrior
     >>Gardez 4 pièces d'argent pour vos sorts de classe ! << Rogue/Warrior/Shaman/Warlock
     >>Gardez 2 pièces d'argent pour vos sorts de classe ! << Priest
     .vendor >> Vendez tout ce dont nous n'avez pas besoin
@@ -1657,7 +1657,7 @@ step << !Mage !Hunter !Druid
     .goto Durotar,51.51,41.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Innkeeper Grosk|r
     >>|cRXP_BUY_Achetez du|r [Lait frais] |cRXP_BUY_à Kauth|r << Mage/Warlock/Priest/Shaman/Druid
-    >>|cRXP_BUY_Achetez des|r [Cuissot] |cRXP_BUY_à Hai'zan|r << Rogue/Warrior
+    >>|cRXP_BUY_Achetez des|r [Cuissot] |cRXP_BUY_à Grosk|r << Rogue/Warrior
     .vendor >> Vendez tout ce dont nous n'avez pas besoin
     .turnin 2161 >>Rendez la quête Un Fardeau de Péon
     .target Innkeeper Grosk
@@ -1784,7 +1784,7 @@ step
 step
     #completewith ZalazaneKill
     >>Tuez les |cRXP_ENEMY_Hexed Trolls|r et les |cRXP_ENEMY_Voodoo Trolls|r.
-    >>Faites attention ! |cRXP_ENEMY_Voodoo Trolls|r peuvent lancer [Vague de soins]
+    >>|cRXP_WARN_Faites attention !|r Les |cRXP_ENEMY_Trolls vaudou|r |cRXP_WARN_peuvent lancer|r |T136052:0|t[Vague de soins]
     .complete 826,1 --Hexed Troll (8)
     .mob +Hexed Troll
     .complete 826,2 --Voodoo Troll (8)
@@ -1793,7 +1793,7 @@ step
     #completewith next
     >>Tuez |cRXP_ENEMY_Zalazane|r. Dépouillez-le pour sa |cRXP_LOOT_Tête|r
     >>Gardez votre [Horion de terre] pour quand il lance [Vague de soins] << Shaman
-    >>Gardez votre [Suriner] pour quand il lance [Vague de soins] << Rogue
+    >>Gardez votre [Suriner] pour lorsqu'il lance [Vague de soins] << Rogue
     >>Faites attention. Il peut lancer [Vague de soins]. Utilisez votre [Potion] si nécessaire << !Shaman !Rogue
     .complete 826,3 --Zalazane's Head (1)
     .mob Zalazane
@@ -1807,7 +1807,7 @@ step
     .goto Durotar,67.4,87.8
     >>Tuez |cRXP_ENEMY_Zalazane|r. Dépouillez-le pour sa |cRXP_LOOT_Tête|r
     >>Gardez votre [Horion de terre] pour quand il lance [Vague de soins] << Shaman
-    >>Gardez votre [Suriner] pour quand il lance [Vague de soins] << Rogue
+    >>Gardez votre [Suriner] pour lorsqu'il lance [Vague de soins] << Rogue
     >>Faites attention. Il peut lancer [Vague de soins]. Utilisez votre [Potion] si nécessaire << !Shaman !Rogue
     .complete 826,3 --Zalazane's Head (1)
     .mob Zalazane
@@ -1831,7 +1831,7 @@ step
     .goto Durotar,68.47,86.77,40,0
     .goto Durotar,67.23,88.00,40,0
     >>Tuez les |cRXP_ENEMY_Hexed Trolls|r et les |cRXP_ENEMY_Voodoo Trolls|r.
-    >>Faites attention ! |cRXP_ENEMY_Voodoo Trolls|r peuvent lancer [Vague de soins]
+    >>|cRXP_WARN_Faites attention !|r Les |cRXP_ENEMY_Trolls vaudou|r |cRXP_WARN_peuvent lancer|r |T136052:0|t[Vague de soins]
     .complete 826,1 --Hexed Troll (8)
     .mob +Hexed Troll
     .complete 826,2 --Voodoo Troll (8)
@@ -2123,7 +2123,7 @@ step
     .goto Durotar,51.51,41.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Innkeeper Grosk|r
     >>|cRXP_BUY_Achetez du|r [Lait frais] |cRXP_BUY_à Kauth|r << Mage/Warlock/Priest/Shaman
-    >>|cRXP_BUY_Achetez des|r [Cuissot] |cRXP_BUY_à Hai'zan|r << Rogue/Warrior
+    >>|cRXP_BUY_Achetez des|r [Cuissot] |cRXP_BUY_à Grosk|r << Rogue/Warrior
     .vendor >> Vendez tout ce dont nous n'avez pas besoin
     .collect 1179,15,818,1 << Mage/Warlock/Priest/Shaman --Ice Cold Milk (15)
     .collect 2287,15,818,1 << Rogue/Warrior --Haunch of Meat (15)

@@ -1398,7 +1398,7 @@ step << Rogue
     #optional
     #label topleft
     >>Tuez ou utilisez |T133644:0|t[Vol à la tire] sur les |cRXP_ENEMY_Furbolgs Pin-tordu|r. Dépouillez-les pour obtenir le |T134327:0|t[|cRXP_LOOT_Morceau supérieur gauche de carte]|r
-    >>Vous devez être en [Camouflage] pour utiliser [Vol à la tire]
+    >>Vous devez être en [Camouflage] pour utiliser votre [Vol à la tire]
     .collect 208602,1 -- Top-Left Map Piece (1)
     .mob Gnarlpine Ambusher
     .mob Gnarlpine Shaman
@@ -1466,7 +1466,7 @@ step << Rogue
     #season 2
     .goto Teldrassil,38.92,79.93
     >>Tuez ou utilisez |T133644:0|t[Vol à la tire] sur les |cRXP_ENEMY_Furbolgs Pin-tordu|r. Dépouillez-les pour obtenir le |T134327:0|t[|cRXP_LOOT_Morceau supérieur gauche de carte]|r
-    >>Vous devez être en [Camouflage] pour utiliser [Vol à la tire]
+    >>Vous devez être en [Camouflage] pour utiliser votre [Vol à la tire]
     .collect 208602,1 -- Top-Left Map Piece (1)
     .mob Gnarlpine Ambusher
     .mob Gnarlpine Shaman
@@ -1530,7 +1530,7 @@ step << Rogue
     #season 2
     #completewith xp10
     >>Tuez ou utilisez le |T133644:0|tVol à la tire sur les |cRXP_ENEMY_Harpies Plumesang|r. Dépouillez-les pour le |T134327:0|t[|cRXP_LOOT_Morceau inférieur droit de carte]|r
-    >>Vous devez être en [Camouflage] pour utiliser [Vol à la tire]
+    >>Vous devez être en [Camouflage] pour utiliser votre [Vol à la tire]
     .collect 208603,1 -- Bottom-Right Map Piece (1)
     .mob Bloodfeather Harpy
     .mob Bloodfeather Rogue
@@ -1628,7 +1628,7 @@ step << Rogue
     .goto Teldrassil,34.6,28.8,60,0
     .goto Teldrassil,37.8,43.0
     >>Tuez ou utilisez le |T133644:0|tVol à la tire sur les |cRXP_ENEMY_Harpies Plumesang|r. Dépouillez-les pour le |T134327:0|t[|cRXP_LOOT_Morceau inférieur droit de carte]|r
-    >>Vous devez être en [Camouflage] pour utiliser [Vol à la tire]
+    >>Vous devez être en [Camouflage] pour utiliser votre [Vol à la tire]
     .collect 208603,1 -- Bottom-Right Map Piece (1)
     .mob Bloodfeather Harpy
     .mob Bloodfeather Rogue
@@ -1695,7 +1695,7 @@ step << Druid
  step << Warrior
     #season 2
     .goto Darnassus,57.56,46.73
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t Parlez à |cRXP_FRIENDLY_Ilyenia Moonfire|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Ilyenia Moonfire|r
     .skipgossip 11866,1
     .train 227 >>Apprenez la compétence Bâtons << Warrior
     .train 2567 >> Apprenez la compétence Armes de jet << Warrior
@@ -2164,8 +2164,8 @@ step << Hunter
 	.goto Teldrassil,45.6,31.4,0
 	.goto Teldrassil,37.6,28.8,0
     >>Lancez [Apprivoiser une bête] |cRXP_WARN_sur un |cRXP_ENEMY_Strigid Hunter|r pour le dompter|r -- .tame 1997
-    .train 2981 >> Attaquez des créatures avec pour qu'il apprenne [Griffe (Rang 2)]
-    .link https://www.wow-petopia.com/classic/training.php >> |cRXP_WARN_Cliquez ici pour plus d'information sur le dressage des familiers|r
+    .train 2981 >> Attaquez des mobs avec celui-ci pour qu'il apprenne [Claw (Rank 2)]
+    .link https://www.wow-petopia.com/classic/training.php >> Cliquez ici pour plus d'information sur le dressage des familiers
 	.unitscan Strigid Hunter
 step << Hunter
     #sticky
@@ -2235,7 +2235,7 @@ step << Rogue
 step << Rogue
     .goto Teldrassil,38.0,25.2
     >>Lancez [Vol à la tire] sur |cRXP_ENEMY_Sethir the Ancient|r
-    >>Vous devez être en [Camouflage] pour utiliser [Vol à la tire]
+    >>Vous devez être en [Camouflage] pour utiliser votre [Vol à la tire]
     >>|cRXP_ENEMY_Sethir the Ancient|r marche le long de la grande branche d'arbre
     >>|cRXP_WARN_Évitez d'affronter |cRXP_ENEMY_Sethir the Ancient|r. Laissez le passez devant vous, puis utilisez|r [Camouflage] et ensuite [Vol à la tire] lorsque vous êtes derrière lui
     .complete 2242,1
@@ -2246,7 +2246,7 @@ step << Rogue
     #completewith MistStart
     #label BottomRightMapPiece
     >>Tuez ou utilisez le |T133644:0|tVol à la tire sur les |cRXP_ENEMY_Harpies Plumesang|r. Dépouillez-les pour le |T134327:0|t[|cRXP_LOOT_Morceau inférieur droit de carte]|r
-    >>Vous devez être en [Camouflage] pour utiliser [Vol à la tire]
+    >>Vous devez être en [Camouflage] pour utiliser votre [Vol à la tire]
     .collect 208603,1 -- Bottom-Right Map Piece (1)
     .mob Bloodfeather Harpy
     .mob Bloodfeather Rogue
@@ -2298,7 +2298,7 @@ step << Rogue
     .goto Teldrassil,36.0,34.4,60,0
     .goto Teldrassil,34.6,28.8,60,0
     >>Tuez ou utilisez le |T133644:0|tVol à la tire sur les |cRXP_ENEMY_Harpies Plumesang|r. Dépouillez-les pour le |T134327:0|t[|cRXP_LOOT_Morceau inférieur droit de carte]|r
-    >>Vous devez être en [Camouflage] pour utiliser [Vol à la tire]
+    >>Vous devez être en [Camouflage] pour utiliser votre [Vol à la tire]
     .collect 208603,1 -- Bottom-Right Map Piece (1)
     .mob Bloodfeather Harpy
     .mob Bloodfeather Rogue
@@ -2632,7 +2632,7 @@ step << Hunter
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.19
 step << Hunter/Warrior/Priest/Sod Rogue
     .goto Darnassus,57.56,46.73
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t Parlez à |cRXP_FRIENDLY_Ilyenia Moonfire|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Ilyenia Moonfire|r
     .skipgossip 11866,1
     .train 227 >>Apprenez la compétence Bâtons << Hunter/Warrior/Priest
     .train 265 >>Apprenez la compétence Arcs << Sod Rogue

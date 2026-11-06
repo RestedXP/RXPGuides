@@ -212,7 +212,7 @@ step << Mage/Warlock/Priest
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sarvis|r et à |cRXP_FRIENDLY_Elreth|r << !Warlock !Mage !Priest
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sarvis|r, |cRXP_FRIENDLY_Elreth|r, et à |cRXP_FRIENDLY_Maximillion|r << Warlock
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sarvis|r, |cRXP_FRIENDLY_Elreth|r, et à |cRXP_FRIENDLY_Isabella|r << Mage
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sarvis|r, |cRXP_FRIENDLY_Elreth|r, et à |cRXP_FRIENDLY_Maximillion|r << Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sarvis|r, |cRXP_FRIENDLY_Elreth|r, et à |cRXP_FRIENDLY_Duesten|r << Priest
     .turnin 364 >> Rendez la quête Lever le voile
     .accept 3095 >> Acceptez la quête Parchemin simple << Warrior
@@ -381,7 +381,7 @@ step << Priest
 step << Priest
     .goto 1420/0,1627.55,1848.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Duesten|r
-    .train 2052 >> Apprenez [Soins inférieurs Rang 2]
+    .train 2052 >> Apprenez [Soins inférieurs rang 2]
     .train 589 >> Apprenez [Mot de l'ombre : Douleur]
     .target Dark Cleric Duesten
     .money <0.021
@@ -456,7 +456,7 @@ step << Rogue/Warrior/Paladin
     >>|cRXP_BUY_Achetez-lui une|r |T134708:0|t[Pioche de mineur] |cRXP_BUY_|r |cRXP_BUY_|r
     .train 2575 >> Apprenez [Minage]
     .collect 2901,1,792,1 --Mining Pick (1)
-    >>Ceci vous permettra de trouver des |cRXP_LOOT_[Rough Stones]|r sur les gisements pour fabriquer les [Pierre à aiguiser] (+2 dégâts aux armes pendant 30 minutes)
+    >>Ceci vous permettra de trouver des |cRXP_LOOT_[Rough Stones]|r dans les filons pour fabriquer des [Pierre à aiguiser] (+2 dégâts des armes pendant 30 minutes)
     .target Walter Mason
 step
     #loop
@@ -784,7 +784,7 @@ step
     .goto 1411/1,-4715.200,140.100
     >>|cRXP_WARN_Tapez /assis près du feu de camp et attendez une minute jusqu'à ce que vous obteniez le buff "Avantages du camp"|r
     .complete 96607,1 --|1/1 Use the /sit emote near the campfire
-    .macro Sit,134400 >>Asseyez-vous
+    .macro Sit,134400 >>Asseyez-vous 
     .timer 59, RP
     .complete 96607,2 --|Gain the Boosted Rest buff
 step
@@ -942,7 +942,7 @@ step << Priest
     .accept 5650 >> Acceptez la quête Vêtements des ténèbres
 	.train 591 >>Apprenez [Châtiment]
     .train 17 >>Apprenez [Mot de pouvoir : Bouclier]
-    .train 2052 >>Apprenez [Soins inférieurs Rang 2]
+    .train 2052 >>Apprenez [Soins inférieurs rang 2]
     .target Dark Cleric Beryl
 step << Mage
     .goto 1420/0,233.06,2256.84
@@ -959,13 +959,13 @@ step << Warrior
 step << Rogue
     .goto 1420/0,243.01,2271.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Marion|r au second étage
-    .train 1757 >> Apprenez [Attaque pernicieuse]
+    .train 1757 >> Apprenez [Attaque Pernicieuse]
     .target Marion Call
     .money <0.01
 step << Warlock
     .goto 1420/0,251.59,2252.62
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Gina Lang|r au second étage
-    >>|cRXP_BUY_Achetez un|r [Grimoire de Pacte de sang] |cRXP_BUY_ à Gina|r
+    >>|cRXP_BUY_Achetez un|r [Grimoire de Pacte de Sang] |cRXP_BUY_à Gina|r
     .collect 16321,1,404,1 --Grimoire of Blood Pact
     .vendor >>Vendez tout ce dont nous n'avez pas besoin
     .target Gina Lang
@@ -2146,7 +2146,7 @@ step << Warrior/Rogue
     .goto 1458/0,335.37,1638.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Brom|r
     .train 2575 >> Apprenez [Minage]
-    >>Ceci vous permettra de trouver des |cRXP_LOOT_[Rough Stones]|r sur les gisements pour fabriquer les [Pierre à aiguiser] (+2 dégâts aux armes pendant 30 minutes)
+    >>Ceci vous permettra de trouver des |cRXP_LOOT_[Rough Stones]|r dans les filons pour fabriquer des [Pierre à aiguiser] (+2 dégâts des armes pendant 30 minutes)
     .target Brom Killian
 step << Warrior/Rogue
     .goto 1458/0,329.04,1641.62

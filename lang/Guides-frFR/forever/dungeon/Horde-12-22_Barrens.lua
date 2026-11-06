@@ -348,7 +348,7 @@ step
 step << Tauren/Hunter/Orc Shaman/Troll Shaman
     .goto 1413/1,-2607.91,-475.180
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Darsok|r
-    >>Il est en haut de la tour
+    >>Il est au sommet de la tour
     .accept 867 >>Acceptez la quête Les harpies pillardes
     .target Darsok Swiftdagger
 step << Orc/Troll
@@ -622,7 +622,7 @@ step << Undead Warrior/Skyborne Warrior
 step << Undead Warrior/Skyborne Warrior
     #optional
     #completewith BaronLongshore
-    +Équipez l'[Espadon] lorsque vous passez au niveau 16
+    +Équipez l'[Espadon] lorsque vous passez niveau 16
     .use 2024
     .itemcount 2024,1
     .itemStat 16,QUALITY,<7
@@ -655,7 +655,7 @@ step << Troll Warrior
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.9
 step << Orc Warrior
     .goto 1413/1,-3684.07,-919.74
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Parlez à|r |cRXP_FRIENDLY_Ironzar|r|cRXP_BUY_. Achetez une|r [Hache ébarbée] |cRXP_BUY_à Ironzar|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Parlez à|r |cRXP_FRIENDLY_Ironzar|r|cRXP_BUY_. Achetez une|r [Hâche ébarbée] |cRXP_BUY_à Ironzar|r
     .collect 2025,1,850,1 --Collect Bearded Axe (1)
     .money <0.5304
     .itemStat 16,QUALITY,<7
@@ -679,7 +679,7 @@ step << Tauren Warrior
 step << Tauren Warrior
     #optional
     #completewith BaronLongshore
-    +Équipez le [Marteau en pierre] lorsque vous passez au niveau 16
+    +Équipez le [Marteau en pierre] lorsque vous passez niveau 16
     .use 2026
     .itemcount 2026,1
     .itemStat 16,QUALITY,<7
@@ -771,7 +771,7 @@ step << Mage/Priest/Warlock/Shaman/Druid
 step
     #optional
     #completewith BaronLongshore
-    .destroy 5088 >> Détruisez le [Manuel de la console de contrôle] de vos sacs, il n'est plus nécessaire
+    .destroy 5088 >> Détruisez le [Manuel de la console de contrôlel] de vos sacs, vous n'en aurez plus besoin
 step
     #optional
     #completewith BaronLongshore
@@ -797,7 +797,7 @@ step
     .goto 1413/1,-3818.84,-1707.52,50,0
     .goto 1413/1,-3724.60,-1746.71,50,0
     >>Tuez |cRXP_ENEMY_Baron Longshore|r. Dépouillez-le pour sa |cRXP_LOOT_Tête|r
-    >>Il se trouve dans l'un des camps
+    >>Vous pourrez le trouver dans l'un des camps
     .complete 895,1 --Baron Longshore's Head (1)
     .unitscan Baron Longshore
 step
@@ -873,7 +873,7 @@ step << Undead Warrior/Skyborne Warrior
 step << Undead Warrior/Skyborne Warrior
     #optional
     #completewith FlyToXroads1
-    +Équipez l'[Espadon] lorsque vous passez au niveau 16
+    +Équipez l'[Espadon] lorsque vous passez niveau 16
     .use 2024
     .itemcount 2024,1
     .itemStat 16,QUALITY,<7
@@ -906,7 +906,7 @@ step << Troll Warrior
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.9
 step << Orc Warrior
     .goto 1413/1,-3684.07,-919.74
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Parlez à|r |cRXP_FRIENDLY_Ironzar|r|cRXP_BUY_. Achetez une|r [Hache ébarbée] |cRXP_BUY_à Ironzar|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Parlez à|r |cRXP_FRIENDLY_Ironzar|r|cRXP_BUY_. Achetez une|r [Hâche ébarbée] |cRXP_BUY_à Ironzar|r
     .collect 2025,1,850,1 --Collect Bearded Axe (1)
     .money <0.5304
     .itemStat 16,QUALITY,<7
@@ -930,7 +930,7 @@ step << Tauren Warrior
 step << Tauren Warrior
     #optional
     #completewith FlyToXroads1
-    +Équipez le [Marteau en pierre] lorsque vous passez au niveau 16
+    +Équipez le [Marteau en pierre] lorsque vous passez niveau 16
     .use 2026
     .itemcount 2026,1
     .itemStat 16,QUALITY,<7
@@ -1145,13 +1145,13 @@ step << Tauren
 step << Troll Hunter/Orc Hunter
     .goto 1413/1,-2612.98,-411.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Parlez à|r |cRXP_FRIENDLY_Barg|r
-    >>|cRXP_BUY_Achetez des|r [Flèche grossières] |cRXP_BUY_à Barg|r
+    >>|cRXP_BUY_Achetez des|r [Flèches pointues] |cRXP_BUY_à Kayren|r
     .collect 2515,1200,850,1 << Hunter --Sharp Arrow (1200)
     .target Barg
 step << Tauren Hunter
     .goto 1413/1,-2612.98,-411.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Parlez à|r |cRXP_FRIENDLY_Barg|r
-    >>|cRXP_BUY_Achetez des|r [Balle lourde] |cRXP_BUY_à Barg|r
+    >>|cRXP_BUY_Achetez des|r [Balle lourde] |cRXP_BUY_à Kennah|r
     .collect 2519,1000,850,1 << Hunter --Heavy Shot (1000)
     .target Barg
 step << Troll Hunter/Orc Hunter/Skyborne Hunter
@@ -1767,7 +1767,7 @@ step << Priest
     .xp <18,1
 step << Mage
     .goto 1454/1,-4218.64,1473.72
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|r |cRXP_FRIENDLY_Pephredo|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |r |cRXP_FRIENDLY_Pephredo|r
     .train 2120 >> Apprenez vos sorts de classe
     .target Pephredo
     .xp <16,1
@@ -1775,7 +1775,7 @@ step << Mage
 step << Mage
     #optional
     .goto 1454/1,-4218.64,1473.72
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|r |cRXP_FRIENDLY_Pephredo|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |r |cRXP_FRIENDLY_Pephredo|r
     .train 3140 >> Apprenez vos sorts de classe
     .target Pephredo
     .xp <18,1
@@ -1894,7 +1894,7 @@ step << Warrior
 step << Warrior
     #optional
     #completewith FoodandWater2
-    +Équipez la [Hache de bataile] lorsque vous passez au niveau 20
+    +Équipez la [Hache de bataille] lorsque vous passez niveau 20
     .use 926
     .itemcount 926,1
     .itemStat 16,QUALITY,<7
@@ -2775,7 +2775,7 @@ step
 step << Hunter
     .goto 1413/1,-2612.98,-411.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Parlez à|r |cRXP_FRIENDLY_Barg|r
-    >>|cRXP_BUY_Achetez des|r [Flèche grossières] |cRXP_BUY_à Barg|r
+    >>|cRXP_BUY_Achetez des|r [Flèches pointues] |cRXP_BUY_à Kayren|r
     .collect 2515,1800,888,1 << Hunter --Sharp Arrow (1800)
     .target Barg
 step
@@ -3001,7 +3001,7 @@ step
     .goto 1413/1,-2031.32,-1703.47,0
     .goto 1413/1,-2183.32,-1858.19,0
     .goto 1413/1,-2453.88,-1991.28,0
-	>>Tuez |cRXP_ENEMY_Lakota'mani|r. Dépouillez-le pour sa [|cRXP_LOOT_Hoof of Lakota'mani|r]
+	>>Tuez |cRXP_ENEMY_Lakota'mani|r. Dépouillez-le pour la [|cRXP_LOOT_Hoof of Lakota'mani|r]
     >>|cRXP_WARN_Utilisez le [|cRXP_LOOT_Hoof of Lakota'mani|r] pour commencer la quête|r
     >>Il a 4 possibles points d'apparition (marqués sur la carte)
     >>|cRXP_WARN_Passer cette étape si vous ne pouvez pas le trouver ou ne pouvez pas le tuer. Vous pouvez revenir le chercher plus tard|r
@@ -3163,7 +3163,7 @@ step
     .goto 1413/1,-2031.32,-1703.47,80,0
     .goto 1413/1,-2183.32,-1858.19,80,0
     .goto 1413/1,-2453.88,-1991.28,80,0
-	>>Tuez |cRXP_ENEMY_Lakota'mani|r. Dépouillez-le pour sa [|cRXP_LOOT_Hoof of Lakota'mani|r]
+	>>Tuez |cRXP_ENEMY_Lakota'mani|r. Dépouillez-le pour la [|cRXP_LOOT_Hoof of Lakota'mani|r]
     >>|cRXP_WARN_Utilisez le [|cRXP_LOOT_Hoof of Lakota'mani|r] pour commencer la quête|r
     >>Il a 4 possibles points d'apparition (marqués sur la carte)
     >>Passez cette étape si vous n'arrivez pas à le trouver
@@ -3383,7 +3383,7 @@ step << Warrior
 step << Rogue/Hunter/Warrior/Shaman/Druid
     #optional
     #completewith FlytoXroads
-    +Équipez le [|cRXP_FRIENDLY_Wolf Bracers|r]
+    +Équipez les [|cRXP_FRIENDLY_Wolf Bracers|r]
     .use 4794
     .itemcount 4794,1
     .itemStat 9,ITEM_MOD_ARMOR_SHORT,<37
@@ -3443,7 +3443,7 @@ step
 step
     #optional
     #completewith IshamuhaleTurnin
-    .destroy 5085 >>Détruisez tous vos restes de [Défense de huran Dos-hirsute]
+    .destroy 5085 >>Détruisez toutes les [Défenses de huran Dos-hirsute] qu'il vous reste
     .itemcount 5085,1
 step
     .goto 1413/1,-2645.40,-406.94
@@ -3587,7 +3587,7 @@ step << Warlock
     .dungeon DM
 step << Mage
     .goto 1454/1,-4218.64,1473.72
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|r |cRXP_FRIENDLY_Pephredo|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |r |cRXP_FRIENDLY_Pephredo|r
     .train 3140 >> Apprenez vos sorts de classe
     .target Pephredo
     .xp <18,1
@@ -3596,7 +3596,7 @@ step << Mage
 step << Mage
     #optional
     .goto 1454/1,-4218.64,1473.72
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|r |cRXP_FRIENDLY_Pephredo|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |r |cRXP_FRIENDLY_Pephredo|r
     .train 1953 >> Apprenez vos sorts de classe
     .target Pephredo
     .xp <20,1
@@ -3903,7 +3903,7 @@ step << !Tauren !Skyborne
     .goto 1413/1,-1891.48,-2391.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Mangletooth|r
     .aura 16618 >>|cRXP_WARN_S'il vous reste 10|r |T134128:0|t[|cRXP_LOOT_Joyaux de sang|r] |cRXP_WARN_, utilisez-les pour obtenir|r |T136022:0|t[L'esprit du vent] |cRXP_WARN_auprès de|r |cRXP_FRIENDLY_Mutiledent|r
-    >>Passez cette étape si vous pouvez voler jusqu'à Pitons-du-Tonnerre
+    >>Passez cette étape si vous pouvez voler jusqu'à Thunder Bluff
     .itemcount 5075,10
     .target Mangletooth
     .train 2645,1 << Shaman --skip if ghost wolf trained
@@ -4101,18 +4101,18 @@ step << Shaman
     .isNotOnQuest 1528,2985,2986
 step
     #completewith next
-    .skill firstaid,80 >> Fabriquez des  [Bandages épais en lin] jusqu'à ce que votre compétence en [Premiers soins] soit de 80 ou plus
+    .skill firstaid,80 >> Fabriquez des [Bandages épais en lin] jusqu'à ce que votre compétence de [Premiers soins] soit de 80 ou plus
     .skill firstaid,<1,1
 step
     .goto 1456/1,206.88,-997.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|r |cRXP_FRIENDLY_Pand|r
-    >>Passez cette étape si vous n'avez pas assez d'[Etoffe de lin] pour atteindre une compétence de 80
-    .train 3277 >> Apprenez [Bandage en laine]
+    >>Passez cette étape si vous n'avez pas assez d'[Etoffe de lin] pour monter vos [Premiers soins] à 80
+    .train 3277 >> Apprenez  [Bandage en laine]
     .train 7934 >> Apprenez [Anti-Venin] << Rogue
     .target Pand Stonebinder
     .skill firstaid,<1,1
 step << Rogue
-    >>Fabriquez des [Anti-Venin] si vous avez trouvé des [Petites glandes à venin]
+    >>Fabriquez des [Anti-venin] si vous avez trouvé des [Petites glandes à venin]
     >>Gardez-les pour plus tard
     .collect 6452,1 --Anti Venom
     .itemcount 1475,1
@@ -4486,7 +4486,7 @@ step
     #optional
     #completewith EnterWC
     >>Cueillez les |cRXP_PICK_Serpentbloom|r sur le sol
-    >>Lancez [Découverte d'herbes] pour les voir sur votre minicarte
+    >>Utilisez [Découverte d'herbes] pour les voir sur votre minicarte
     .complete 962,1 --Serpentbloom (10)
     .skill herbalism,<1,1
     .isOnQuest 962
@@ -4535,7 +4535,7 @@ step
     #completewith GlowingShard
     >>Cueillez les |cRXP_PICK_Serpentbloom|r sur le sol
     >>|cRXP_WARN_Il est recommandé qu'au maximum 3 joueurs fassent cette quête si vous ne faites le donjon qu'une seule fois. Il n'y a pas assez de|r |cRXP_PICK_Fleur de serpent|r |cRXP_WARN_pour tout le monde|r
-    >>Lancez [Découverte d'herbes] pour les voir sur votre minicarte
+    >>Utilisez [Découverte d'herbes] pour les voir sur votre minicarte
     .complete 962,1 --Serpentbloom (10)
     .skill herbalism,<1,1
     .isOnQuest 962
@@ -4603,7 +4603,7 @@ step
     #optional
     #completewith Ectoplasms
     >>Cueillez les |cRXP_PICK_Serpentbloom|r sur le sol
-    >>Lancez [Découverte d'herbes] pour les voir sur votre minicarte
+    >>Utilisez [Découverte d'herbes] pour les voir sur votre minicarte
     >>|cRXP_WARN_La plupart des |cRXP_PICK_Fleur de serpent|r devraient avoir repoussé après avoir tué le Boss final !|r
     .complete 962,1 --Serpentbloom (10)
     .skill herbalism,<1,1
@@ -4663,7 +4663,7 @@ step
     #optional
     >>Cueillez les |cRXP_PICK_Serpentbloom|r sur le sol
     >>|cRXP_WARN_Il est recommandé qu'au maximum 3 joueurs fassent cette quête si vous ne faites le donjon qu'une seule fois. Il n'y a pas assez de|r |cRXP_PICK_Fleur de serpent|r |cRXP_WARN_pour tout le monde|r
-    >>Lancez [Découverte d'herbes] pour les voir sur votre minicarte
+    >>Utilisez [Découverte d'herbes] pour les voir sur votre minicarte
     .complete 962,1 --Serpentbloom (10)
     .skill herbalism,<1,1
     .isOnQuest 962
@@ -4860,7 +4860,7 @@ step
     >>Tuez |cRXP_ENEMY_Warlord Krom'zar|r lorsqu'il apparaît. Ramassez la |cRXP_PICK_Banner|r qu'il laissera sur le sol
     >>Faites attention ! C'est un Elite fort et protégé par au moins deux |cRXP_ENEMY_Kolkar|r
     >>Il a un temps de réapparition qui peut durer jusqu'à 3 minutes
-    .link https://www.youtube.com/watch?v=xrm0PWe5wf4 >>|cRXP_WARN_Cliquez ici pour un guide vidéo sur comment kiter|r |cRXP_ENEMY_Seigneur de guerre Krom'zar|r
+    .link https://www.youtube.com/watch?v=xrm0PWe5wf4 >>|cRXP_WARN_Cliquez ici pour un guide vidéo sur la manière de kite le|r |cRXP_ENEMY_Chef de guerre Krom'zar|r
     .complete 4021,1 --Piece of Krom'zar's Banner (1)
     .unitscan Warlord Krom'zar
     .isQuestTurnedIn 852
@@ -5120,7 +5120,7 @@ step << Priest/Warlock
     .target Katis
 step << Mage
     .goto 1454/1,-4218.64,1473.72
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|r |cRXP_FRIENDLY_Pephredo|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |r |cRXP_FRIENDLY_Pephredo|r
     .train 2138 >> Apprenez vos sorts de classe
     .target Pephredo
     .xp <22,1
@@ -5128,14 +5128,14 @@ step << Mage
 step << Mage
     #optional
     .goto 1454/1,-4218.64,1473.72
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|r |cRXP_FRIENDLY_Pephredo|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |r |cRXP_FRIENDLY_Pephredo|r
     .train 2121 >> Apprenez vos sorts de classe
     .target Pephredo
     .xp <24,1
 step << Mage
     .goto 1454/1,-4222.85,1474.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|r |cRXP_FRIENDLY_Thuul|r en haut de la hutte
-    .train 3567 >> Apprenez [Téléportation : Orgrimmar]
+    .train 3567 >> Apprenez [Téléportation: Orgrimmar]
     .target Thuul
 step << Troll Priest
     .goto 1454/1,-4179.79,1452.580
@@ -5211,7 +5211,7 @@ step << Rogue
     .goto 1413/1,-2927.11,1236.18
     >>Au sommet de la tour vous trouverez |cRXP_ENEMY_Gallywix|r. Dépouillez-le pour sa |cRXP_LOOT_Tête|r
     >>Utilisez [Embuscade] pour réduire ses PV de moitié. Utilisez [Suriner] pour récupérer votre énergie et utiliser [Évasion]
-	>>N'oubliez pas d'utiliser une Potion et un [Thé aux chardons] si nécessaire
+	>>Rappelez-vous d'utiliser une potion et un [Thé aux chardons] si nécessaire
     .complete 2478,4 --Gallywix's Head (1)
     .mob Grand Foreman Puzik Gallywix
     --VV Video?
@@ -5322,13 +5322,13 @@ step << Rogue
     .collect 3137,1,6544,1 --Deadly Throwing Axe (200)
     .target Trak'gen
 step << Rogue
-    >>Si vous avez un [Anti-Venin], utilisez-le pour vous guérir du [Toucher de Zanzil]
+    >>Si vous avez des [Anti-Venin], utilisez-en un pour pour guérir du [Toucher de Zanzil]
     .itemcount 6452,1
     .use 6452
     .aura -9991
 step << Rogue
     #optional
-    .destroy 8051 >> Détruisez le [Lance-fusée] dans votre sac, il n'est plus nécessaire
+    .destroy 8051 >> Détruisez le [Lance-fusée] de vos sacs, il n'est plus nécessaire
     .destroy 8066 >> Détruisez le [Sifflet de Fizzule] de vos sacs, il n'est plus nécessaire
 step
     #optional

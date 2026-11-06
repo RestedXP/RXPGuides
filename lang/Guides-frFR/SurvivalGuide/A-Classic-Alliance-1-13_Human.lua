@@ -34,7 +34,7 @@ step << Warlock
     #hardcore
     .goto Elwynn Forest,52.9,44.3,60,0
     .goto Elwynn Forest,56.7,44.0
-    >>Entrez dans la tente au camp Défias
+    >>Allez dans la tente au Camp Défias
     >>Ouvrez les |cRXP_PICK_Stolen Books|r. Récupérez les |cRXP_LOOT_Powers of the Void|r
     >>|cRXP_WARN_Vous pouvez ramasser les |cRXP_LOOT_Powers of the Void|r en sécurité à l'intérieur de la tente! regardez la vidéo sur la méthode à appliquée|r
     .link https://youtu.be/3qQwsJhAZIk >> Cliquez ici pour un exemple vidéo
@@ -306,7 +306,7 @@ step << Priest/Mage
     .complete 3904,1 --Collect Milly's Harvest (x8)
 step
     .goto Elwynn Forest,57.5,48.2
-    >>Tuez |cRXP_ENEMY_Garrick Padfoot|r. Dépouillez-le jeu pour sa |cRXP_LOOT_Tête|r
+    >>Tuez |cRXP_ENEMY_Garrick Padfoot|r. Dépouillez-le pour sa |cRXP_LOOT_Tête|r
 	.mob Garrick Padfoot
     .complete 6,1 --Collect Garrick's Head (x1)
 step << !Priest !Mage
@@ -553,7 +553,7 @@ step
     .goto Elwynn Forest,42.357,89.373
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Joshua Maclure|r
     .target Joshua Maclure
-    .vendor >>|cRXP_BUY_Achetez autant de|r [Lait frais] que vous le pouvez << Priest/Warlock/Mage
+    .vendor >>|cRXP_BUY_Achetez autant de|r [Lait glacé] que vous le pouvez << Priest/Warlock/Mage
     .vendor >>Vendez tout ce dont nous n'avez pas besoin << !Priest !Warlock !Mage
 step
     #completewith next
@@ -652,7 +652,7 @@ step
     .mob Kobold Miner
 step << Warrior
     #completewith Goldtooth
-    +Essayez de garder une [Potion de soins mineure] à partir de maintenir, vous en aurez besoin pour le Cadavre de Rolf plus tard
+    +À partir de maintenant, essayez de garder au moins une [Potion de soins mineure] car vous en aurez besoin pour le Cadavre de Rolf plus tard
 step << Warrior/Rogue
     >>N'oubliez de fabriquer des [Pierre à aiguiser brute] si vous ramassez des |cRXP_LOOT_[Rough Stones]|r
     .xp 7+1600 >>Montez votre expérience jusqu'à 1600+/4500xp
@@ -1872,7 +1872,7 @@ step
 .group
     .goto Loch Modan,24.764,18.397
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Mountaineer Stormpike|r
-    .turnin 353 >> Rendez la quête Livraison pour Foudrepique
+    .turnin 353 >> Rendez la quête Livraison pour Stormpike
     .target Mountaineer Stormpike
     .accept 307 >> Acceptez la quête Bas les pattes !
     >>|cRXP_WARN_N'acceptez pas encore la quête La mission de Foudrepique|r
@@ -1880,7 +1880,7 @@ step
 .solo
     .goto Loch Modan,24.764,18.397
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Mountaineer Stormpike|r
-    .turnin 353 >> Rendez la quête Livraison pour Foudrepique
+    .turnin 353 >> Rendez la quête Livraison pour Stormpike
     .target Mountaineer Stormpike
     >>|cRXP_WARN_N'acceptez pas encore la quête La mission de Foudrepique|r
 step

@@ -616,7 +616,7 @@ step << Druid
     .goto Teldrassil,57.721,60.641
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Malorne Bladeleaf|r
     >>|T136065:0|tL'[Herboristerie] est nécessaire pour récolter 5 [Terrestrine] pour une quête de classe importante plus tard. Vous pourrez oublier ce métier plus tard
-    >>Si vous préférez acheter 5 [Terrestrine] à l'Hôtel des Ventes plus tard, passez cette étape
+    >>Si vous préférez acheter 5 [Terrestrine] à l'Hôtel des Ventes plus tard, vous pouvez passer cette étape
     .train 2366 >> Apprenez [Herboristerie]
     .target Malorne Bladeleaf
     .itemcount 2449,<5 --Earthroot (<5)
@@ -1655,8 +1655,8 @@ step << Hunter
 	.goto Teldrassil,45.6,31.4,0
 	.goto Teldrassil,37.6,28.8,0
     >>Lancez [Apprivoiser une bête] |cRXP_WARN_sur un |cRXP_ENEMY_Strigid Hunter|r pour le dompter|r -- .tame 1997
-    .train 2981 >> Attaquez des créatures avec pour qu'il apprenne [Griffe (Rang 2)]
-    .link https://www.wow-petopia.com/classic/training.php >> |cRXP_WARN_Cliquez ici pour plus d'information sur le dressage des familiers|r
+    .train 2981 >> Attaquez des mobs avec celui-ci pour qu'il apprenne [Claw (Rank 2)]
+    .link https://www.wow-petopia.com/classic/training.php >> Cliquez ici pour plus d'information sur le dressage des familiers
 	.unitscan Strigid Hunter
 step
     #sticky
@@ -1697,7 +1697,7 @@ step
 step << Rogue
     .goto Teldrassil,38.0,25.2
     >>Lancez [Vol à la tire] sur |cRXP_ENEMY_Sethir the Ancient|r
-    >>Vous devez être en [Camouflage] pour utiliser [Vol à la tire]
+    >>Vous devez être en [Camouflage] pour utiliser votre [Vol à la tire]
     >>|cRXP_ENEMY_Sethir the Ancient|r marche le long de la grande branche d'arbre
     >>|cRXP_WARN_Évitez d'affronter |cRXP_ENEMY_Sethir the Ancient|r. Laissez le passez devant vous, puis utilisez|r [Camouflage] et ensuite [Vol à la tire] lorsque vous êtes derrière lui
     .complete 2242,1
@@ -1895,7 +1895,7 @@ step << Hunter
     .target Jaeana
 step << Hunter/Warrior/Priest/Sod Rogue
     .goto Darnassus,57.56,46.73
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Ilyenia Lunéclat|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Ilyenia Moonfire|r
     .skipgossip 11866,1
     .train 227 >>Apprenez la compétence Bâtons << Hunter/Warrior/Priest
     .train 265 >>Apprenez la compétence Arcs << Sod Rogue

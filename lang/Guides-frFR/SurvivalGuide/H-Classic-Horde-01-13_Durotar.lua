@@ -64,7 +64,7 @@ step << Warlock
     .goto Durotar,41.52,68.36,12,0
     .goto Durotar,41.24,68.16,12,0
     .goto Durotar,40.82,68.03,12,0
-    .goto Durotar,40.56,68.44,12 >>Parlez à |cRXP_FRIENDLY_Hraug|r
+    .goto Durotar,40.56,68.44,12 >>Voyagez vers |cRXP_FRIENDLY_Hraug|r
 step << Warlock
     .goto Durotar,40.56,68.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Hraug|r
@@ -79,7 +79,7 @@ step << Warlock
 step << !Warrior !Rogue
     .goto Durotar,42.59,67.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Duokna|r
-    >>|cRXP_BUY_Achetez des|r [Eau de source] |cRXP_BUY_à Shara|r << !Hunter
+    >>|cRXP_BUY_Achetez des|r [Refreshing Spring Water] |cRXP_BUY_à Duokna|r << !Hunter
     >>|cRXP_BUY_Achetez des|r [Flèche grossière] |cRXP_BUY_à Duokna|r << Hunter
     .collect 159,30,6394,1 << !Hunter !Shaman --Refreshing Spring Water (30)
     .collect 2512,1000,6394,1 << Hunter --Rough Arrow (1000)
@@ -89,7 +89,7 @@ step << !Warrior !Rogue
 step << Warlock
     .goto Durotar,42.59,67.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Duokna|r
-    >>|cRXP_BUY_Achetez des|r [Eau de source] |cRXP_BUY_à Shara|r
+    >>|cRXP_BUY_Achetez des|r [Refreshing Spring Water] |cRXP_BUY_à Duokna|r
     .collect 159,5,6394,1 --Refreshing Spring Water (5)
     .target Duokna
     .money <0.0025
@@ -300,7 +300,7 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Rwag|r
     .turnin 3083 >>Rendez la quête Tablette codée << Troll Rogue
     .turnin 3088 >>Rendez la quête Parchemin codé << Orc Rogue
-    .train 53 >> Apprenez [Attaque sournoise]
+    .train 53 >> Apprenez [Attaque Sournoise]
     .target Rwag
     .money <0.04
     .xp <4,1
@@ -323,7 +323,7 @@ step << Warlock
     .goto Durotar,41.52,68.36,12,0
     .goto Durotar,41.24,68.16,12,0
     .goto Durotar,40.82,68.03,12,0
-    .goto Durotar,40.56,68.44,12 >>Parlez à |cRXP_FRIENDLY_Hraug|r
+    .goto Durotar,40.56,68.44,12 >>Voyagez vers |cRXP_FRIENDLY_Hraug|r
     .money >0.01
 step << Warlock
     .goto Durotar,40.56,68.44
@@ -346,7 +346,7 @@ step
 step << !Rogue
     .goto Durotar,42.59,67.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Duokna|r
-    >>|cRXP_BUY_Achetez des|r [Eau de source] |cRXP_BUY_à Shara|r << !Warrior !Hunter
+    >>|cRXP_BUY_Achetez des|r [Refreshing Spring Water] |cRXP_BUY_à Duokna|r << !Warrior !Hunter
     >>|cRXP_BUY_Achetez des|r [Flèche grossière] |cRXP_BUY_à Duokna|r << Hunter
     .collect 159,15,6394,1 << !Rogue !Warrior !Hunter --Refreshing Spring Water (15)
     .collect 2512,1000,6394,1 << Hunter --Rough Arrow (1000)
@@ -579,7 +579,7 @@ step
 step
     .goto Durotar,42.59,67.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Duokna|r
-    >>|cRXP_BUY_Achetez des|r [Eau de source] |cRXP_BUY_à Shara|r << !Rogue !Warrior !Hunter
+    >>|cRXP_BUY_Achetez des|r [Refreshing Spring Water] |cRXP_BUY_à Duokna|r << !Rogue !Warrior !Hunter
     >>|cRXP_BUY_Achetez des|r [Flèche grossière] |cRXP_BUY_à Duokna|r << Hunter
     .collect 159,5,6394,1 << !Rogue !Warrior !Hunter --Refreshing Spring Water (5)
     .collect 2512,1000,6394,1 << Hunter --Rough Arrow (1000)
@@ -878,7 +878,7 @@ step << skip --Warrior/Rogue
     .goto Durotar,51.81,40.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Krunn|r
     .train 2575 >> Apprenez [Minage]
-    >>Ceci vous permettra de trouver des |cRXP_LOOT_[Rough Stones]|r sur les gisements pour fabriquer les [Pierre à aiguiser] (+2 dégâts aux armes pendant 30 minutes)
+    >>Ceci vous permettra de trouver des |cRXP_LOOT_[Rough Stones]|r dans les filons pour fabriquer des [Pierre à aiguiser] (+2 dégâts des armes pendant 30 minutes)
     .target Krunn
 step << skip --Warrior/Rogue
     .goto Durotar,51.90,41.14
@@ -974,14 +974,14 @@ step << Rogue
 step << Rogue
     .goto Durotar,41.27,68.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Rwag|r
-    .train 1757 >> Apprenez [Attaque pernicieuse]
+    .train 1757 >> Apprenez [Attaque Pernicieuse]
     .train 1776 >> Apprenez [Suriner]
     .target Rwag
     .money <0.02
 step << Rogue
     .goto Durotar,41.27,68.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Rwag|r
-    .train 1757 >> Apprenez [Attaque pernicieuse]
+    .train 1757 >> Apprenez [Attaque Pernicieuse]
     .target Rwag
 step << Warlock
     #completewith Hraug3
@@ -989,7 +989,7 @@ step << Warlock
     .goto Durotar,41.52,68.36,12,0
     .goto Durotar,41.24,68.16,12,0
     .goto Durotar,40.82,68.03,12,0
-    .goto Durotar,40.56,68.44,12 >>Parlez à |cRXP_FRIENDLY_Hraug|r
+    .goto Durotar,40.56,68.44,12 >>Voyagez vers |cRXP_FRIENDLY_Hraug|r
 step << Warlock
     #label Hraug3
     .goto Durotar,40.56,68.44
@@ -1087,7 +1087,7 @@ step
     .target Lar Prowltusk
 step
     #label SenjinPickups
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Vel'rin|r, |cRXP_FRIENDLY_Vornal|r et |cRXP_FRIENDLY_Gadrin|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Vel'rin|r, |cRXP_FRIENDLY_Vornal|r et à |cRXP_FRIENDLY_Gadrin|r
     .accept 817 >>Acceptez la quête Proie nécessaire
     .target +Vel'rin Fang
     .goto Durotar,55.95,73.93
@@ -1114,14 +1114,14 @@ step << Rogue
 step << Warlock/Mage/Priest
     .goto Durotar,56.29,73.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Parlez à|r |cRXP_FRIENDLY_K'waii|r
-    >>|cRXP_BUY_Achetez des|r [Eau de source] |cRXP_BUY_à Shara|r --Refreshing Spring Water (20)
+    >>|cRXP_BUY_Achetez des|r [Refreshing Spring Water] |cRXP_BUY_à Duokna|r --Refreshing Spring Water (20)
     .collect 159,20,786,1
     .target K'waii
     .money <0.010
 step << Warlock/Mage/Priest
     .goto Durotar,56.29,73.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Parlez à|r |cRXP_FRIENDLY_K'waii|r
-    >>|cRXP_BUY_Achetez des|r [Eau de source] |cRXP_BUY_à Shara|r --Refreshing Spring Water (10)
+    >>|cRXP_BUY_Achetez des|r [Refreshing Spring Water] |cRXP_BUY_à Duokna|r --Refreshing Spring Water (10)
     .collect 159,10,786,1
     .target K'waii
     .money >0.001
@@ -1129,7 +1129,7 @@ step << Warlock/Mage/Priest
 step << Shaman
     .goto Durotar,56.47,73.12
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Trayexir|r
-    .vendor >> Vendez votre surplus. Vendez votre arme si elle vous donne assez d'argent pour un [Bâton de marche] (5s 04c). Vous reviendrez plus tard si vous n'avez pas encore assez d'argent
+    .vendor >> Vendez votre surplus. Vendez votre arme si elle vous donne assez d'argent pour un [Bâton de marche] (5s 04c). Vous reviendrez plus rien si vous n'avez pas encore assez d'argent
     .target Trayexir
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.2
@@ -1318,21 +1318,21 @@ step
 step << Warlock/Mage/Priest
     .goto Durotar,56.29,73.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Parlez à|r |cRXP_FRIENDLY_K'waii|r
-    >>|cRXP_BUY_Achetez des|r [Eau de source] |cRXP_BUY_à Shara|r --Refreshing Spring Water (20)
+    >>|cRXP_BUY_Achetez des|r [Refreshing Spring Water] |cRXP_BUY_à Duokna|r --Refreshing Spring Water (20)
     .collect 159,20,784,1
     .target K'waii
     .money <0.010
 step << Warlock/Mage/Priest
     .goto Durotar,56.29,73.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Parlez à|r |cRXP_FRIENDLY_K'waii|r
-    >>|cRXP_BUY_Achetez des|r [Eau de source] |cRXP_BUY_à Shara|r --Refreshing Spring Water (10)
+    >>|cRXP_BUY_Achetez des|r [Refreshing Spring Water] |cRXP_BUY_à Duokna|r --Refreshing Spring Water (10)
     .collect 159,10,784,1
     .target K'waii
     .money <0.0050
 step << Warrior/Rogue/Shaman
     .goto Durotar,55.62,73.61
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Hai'zan|r
-    >>|cRXP_BUY_Achetez des|r [Cuissot] |cRXP_BUY_à Hai'zan|r
+    >>|cRXP_BUY_Achetez des|r [Cuissot] |cRXP_BUY_à Grosk|r
     .vendor >> Vendez tout ce dont nous n'avez pas besoin
     .collect 2287,10,823,1 --Haunch of Meat (10)
     .money <0.025
@@ -1340,7 +1340,7 @@ step << Warrior/Rogue/Shaman
 step << Shaman
     .goto Durotar,56.47,73.12
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Trayexir|r
-    .vendor >> Vendez votre surplus. Vendez votre arme si elle vous donne assez d'argent pour un [Bâton de marche] (5s 04c). Vous reviendrez plus tard si vous n'avez pas encore assez d'argent
+    .vendor >> Vendez votre surplus. Vendez votre arme si elle vous donne assez d'argent pour un [Bâton de marche] (5s 04c). Vous reviendrez plus rien si vous n'avez pas encore assez d'argent
     .target Trayexir
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.2
@@ -1495,7 +1495,7 @@ step
 step << Warrior/Rogue
     .goto Durotar,51.81,40.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Krunn|r
-    >>Ceci vous permettra de trouver des |cRXP_LOOT_[Rough Stones]|r sur les gisements pour fabriquer les [Pierre à aiguiser] (+2 dégâts aux armes pendant 30 minutes)
+    >>Ceci vous permettra de trouver des |cRXP_LOOT_[Rough Stones]|r dans les filons pour fabriquer des [Pierre à aiguiser] (+2 dégâts des armes pendant 30 minutes)
     .target Krunn
 step << Warrior/Rogue
     .goto Durotar,51.90,41.14
@@ -1511,7 +1511,7 @@ step << Warrior/Rogue
     .skill blacksmithing,1,1
 step << Warrior/Rogue
     #completewith TravelToTiragarde
-    +Lancez [Découverte de gisement] et minez tous les Filons de cuivre que vous trouvez pour les |cRXP_LOOT_[Rough Stones]|r. Fabriquez des [Pierre à aiguiser] avec elles
+    +Lancez [Découverte de gisements] et minez tous les Filons de cuivre que vous trouvez pour les |cRXP_LOOT_[Rough Stones]|r. Fabriquez des [Pierre à aiguiser] avec elles
     .collect 2862,1,786,1
     .skill blacksmithing,<1,1
     .train 2575,3 --Mining Trained
@@ -1519,7 +1519,7 @@ step
     #label TravelToTiragarde
     .goto Durotar,57.26,54.69,60,0
     .subzone 372 >> Voyagez vers le Donjon de Tiragarde
-    >>Tuez des créatures sur la route
+    >>Tuez des mobs sur la route
     .isOnQuest 784
 step
     #sticky
@@ -1692,7 +1692,7 @@ step << Warrior/Rogue
     .goto Durotar,51.81,40.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Krunn|r
     .train 2575 >> Apprenez [Minage]
-    >>Ceci vous permettra de trouver des |cRXP_LOOT_[Rough Stones]|r sur les gisements pour fabriquer les [Pierre à aiguiser] (+2 dégâts aux armes pendant 30 minutes)
+    >>Ceci vous permettra de trouver des |cRXP_LOOT_[Rough Stones]|r dans les filons pour fabriquer des [Pierre à aiguiser] (+2 dégâts des armes pendant 30 minutes)
     .target Krunn
 step << Warrior/Rogue
     .goto Durotar,51.90,41.14
@@ -1709,7 +1709,7 @@ step << Warrior/Rogue
 step << Shaman
     .goto Durotar,52.02,40.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Uhgar|r
-    .vendor >> Vendez votre surplus. Vendez votre arme si elle vous donne assez d'argent pour un [Bâton de marche] (5s 04c). Vous reviendrez plus tard si vous n'avez pas encore assez d'argent
+    .vendor >> Vendez votre surplus. Vendez votre arme si elle vous donne assez d'argent pour un [Bâton de marche] (5s 04c). Vous reviendrez plus rien si vous n'avez pas encore assez d'argent
     .target Uhgar
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.2
@@ -1834,7 +1834,7 @@ step
     .goto Durotar,51.51,41.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Innkeeper Grosk|r
     >>|cRXP_BUY_Achetez du|r [Lait frais] |cRXP_BUY_à Kauth|r << Mage/Warlock/Priest/Shaman/Druid
-    >>|cRXP_BUY_Achetez des|r [Cuissot] |cRXP_BUY_à Hai'zan|r << Rogue/Warrior
+    >>|cRXP_BUY_Achetez des|r [Cuissot] |cRXP_BUY_à Grosk|r << Rogue/Warrior
     >>Gardez 4 pièces d'argent pour vos sorts de classe ! << Rogue/Warrior/Shaman/Warlock
     >>Gardez 2 pièces d'argent pour vos sorts de classe ! << Priest
     .vendor >> Vendez tout ce dont nous n'avez pas besoin
@@ -1852,7 +1852,7 @@ step << !Mage !Hunter !Druid
     .goto Durotar,51.51,41.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Innkeeper Grosk|r
     >>|cRXP_BUY_Achetez du|r [Lait frais] |cRXP_BUY_à Kauth|r << Mage/Warlock/Priest/Shaman/Druid
-    >>|cRXP_BUY_Achetez des|r [Cuissot] |cRXP_BUY_à Hai'zan|r << Rogue/Warrior
+    >>|cRXP_BUY_Achetez des|r [Cuissot] |cRXP_BUY_à Grosk|r << Rogue/Warrior
     .vendor >> Vendez tout ce dont nous n'avez pas besoin
     .home >> Liez votre Pierre de Foyer à Tranchecolline
     .turnin 2161 >>Rendez la quête Un Fardeau de Péon
@@ -1895,7 +1895,7 @@ step << Troll Priest
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tai'jin|r
     .turnin 5649 >> Rendez la quête Au service de la spiritualité
     .accept 5648 >> Acceptez la quête Vêtements de la spiritualité
-    .train 2052 >> Apprenez [Soins inférieurs Rang 2]
+    .train 2052 >> Apprenez [Soins inférieurs rang 2]
     .target Tai'jin
 step << Troll Priest
     .goto Durotar,53.10,46.46
@@ -2003,7 +2003,7 @@ step
     #completewith next
     >>Tuez |cRXP_ENEMY_Zalazane|r. Dépouillez-le pour sa |cRXP_LOOT_Tête|r
     >>Gardez votre [Horion de terre] pour quand il lance [Vague de soins] << Shaman
-    >>Gardez votre [Suriner] pour quand il lance [Vague de soins] << Rogue
+    >>Gardez votre [Suriner] pour lorsqu'il lance [Vague de soins] << Rogue
     >>Faites attention. Il peut lancer [Vague de soins]. Utilisez votre [Potion] si nécessaire << !Shaman !Rogue
     .complete 826,3 --Zalazane's Head (1)
     .mob Zalazane
@@ -2017,7 +2017,7 @@ step
     .goto Durotar,67.4,87.8
     >>Tuez |cRXP_ENEMY_Zalazane|r. Dépouillez-le pour sa |cRXP_LOOT_Tête|r
     >>Gardez votre [Horion de terre] pour quand il lance [Vague de soins] << Shaman
-    >>Gardez votre [Suriner] pour quand il lance [Vague de soins] << Rogue
+    >>Gardez votre [Suriner] pour lorsqu'il lance [Vague de soins] << Rogue
     >>Faites attention. Il peut lancer [Vague de soins]. Utilisez votre [Potion] si nécessaire << !Shaman !Rogue
     .complete 826,3 --Zalazane's Head (1)
     .mob Zalazane
@@ -2715,7 +2715,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Innkeeper Grosk|r
     .vendor >> Vendez tout ce dont nous n'avez pas besoin
     >>|cRXP_BUY_Achetez du|r [Lait frais] |cRXP_BUY_à Kauth|r << Mage/Warlock/Priest/Shaman
-    >>|cRXP_BUY_Achetez des|r [Cuissot] |cRXP_BUY_à Hai'zan|r << Rogue/Warrior
+    >>|cRXP_BUY_Achetez des|r [Cuissot] |cRXP_BUY_à Grosk|r << Rogue/Warrior
     .collect 1179,15,818,1 << Mage/Warlock/Priest/Shaman --Ice Cold Milk (15)
     .collect 2287,15,818,1 << Rogue/Warrior --Haunch of Meat (15)
     .target Innkeeper Grosk
@@ -2726,7 +2726,7 @@ step << Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Innkeeper Grosk|r
     .vendor >> Vendez tout ce dont nous n'avez pas besoin
     >>|cRXP_BUY_Achetez du|r [Lait frais] |cRXP_BUY_à Kauth|r << Mage/Warlock/Priest/Shaman
-    >>|cRXP_BUY_Achetez des|r [Cuissot] |cRXP_BUY_à Hai'zan|r << Rogue/Warrior
+    >>|cRXP_BUY_Achetez des|r [Cuissot] |cRXP_BUY_à Grosk|r << Rogue/Warrior
     .collect 1179,15,818,1 << Mage/Warlock/Priest/Shaman --Ice Cold Milk (15)
     .collect 2287,15,818,1 << Rogue/Warrior --Haunch of Meat (15)
     .target Innkeeper Grosk
@@ -3759,7 +3759,7 @@ step << Warrior
     .isOnQuest 1818
 step << Warrior
     .goto Tirisfal Glades,59.16,48.51
-    >>|cRXP_WARN_Cliquez sur le|r |cRXP_WARN_Déclencheur du mausolée|r |cRXP_WARN_au sol. Cela va invoquer|r |cRXP_ENEMY_Ulag.|r |cRXP_WARN_Tuez-le|r
+    >>Cliquez sur le Déclencheur du mausolée sur le sol. Cela va invoquer |cRXP_ENEMY_Ulag.|r. Tuez-le
     .complete 1819,1 --Ulag the Cleaver (1)
     .mob Ulag the Cleaver
     .isQuestTurnedIn 1818
@@ -3950,7 +3950,7 @@ step << Warrior
     .isQuestAvailable 1498
 step << Warrior
     .goto Tirisfal Glades,59.16,48.51
-    >>|cRXP_WARN_Cliquez sur le|r |cRXP_WARN_Déclencheur du mausolée|r |cRXP_WARN_au sol. Cela va invoquer|r |cRXP_ENEMY_Ulag.|r |cRXP_WARN_Tuez-le|r
+    >>Cliquez sur le Déclencheur du mausolée sur le sol. Cela va invoquer |cRXP_ENEMY_Ulag.|r. Tuez-le
     .complete 1819,1 --Ulag the Cleaver (1)
     .mob Ulag the Cleaver
     .isQuestAvailable 1498

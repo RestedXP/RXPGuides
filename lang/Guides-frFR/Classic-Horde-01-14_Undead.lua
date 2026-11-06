@@ -218,7 +218,7 @@ step
     #season 2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sarvis|r et à |cRXP_FRIENDLY_Elreth|r << !Warlock !Mage !Priest
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sarvis|r, |cRXP_FRIENDLY_Elreth|r, et à |cRXP_FRIENDLY_Maximillion|r << Warlock
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sarvis|r, |cRXP_FRIENDLY_Elreth|r, et à |cRXP_FRIENDLY_Isabella|r << Mage
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sarvis|r, |cRXP_FRIENDLY_Elreth|r, et à |cRXP_FRIENDLY_Maximillion|r << Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sarvis|r, |cRXP_FRIENDLY_Elreth|r, et à |cRXP_FRIENDLY_Duesten|r << Priest
     .turnin 364 >> Rendez la quête Lever le voile
     .accept 3095 >> Acceptez la quête Parchemin simple << Warrior
@@ -248,7 +248,7 @@ step
     #season 0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sarvis|r et à |cRXP_FRIENDLY_Elreth|r << !Warlock !Mage !Priest
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sarvis|r, |cRXP_FRIENDLY_Elreth|r, et à |cRXP_FRIENDLY_Maximillion|r << Warlock
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sarvis|r, |cRXP_FRIENDLY_Elreth|r, et à |cRXP_FRIENDLY_Isabella|r << Mage
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sarvis|r, |cRXP_FRIENDLY_Elreth|r, et à |cRXP_FRIENDLY_Maximillion|r << Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sarvis|r, |cRXP_FRIENDLY_Elreth|r, et à |cRXP_FRIENDLY_Duesten|r << Priest
     .turnin 364 >> Rendez la quête Lever le voile
     .accept 3095 >> Acceptez la quête Parchemin simple << Warrior
@@ -387,7 +387,7 @@ step << Priest
 step << Priest
     .goto Tirisfal Glades,31.11,66.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Duesten|r
-    .train 2052 >> Apprenez [Soins inférieurs Rang 2]
+    .train 2052 >> Apprenez [Soins inférieurs rang 2]
     .train 589 >> Apprenez [Mot de l'ombre : Douleur]
     .target Dark Cleric Duesten
     .money <0.02
@@ -483,7 +483,7 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_David|r
     .turnin 3096 >> Rendez la quête Parchemin codé
     .accept 77669 >>Acceptez la quête La rune écarlate
-    .train 53 >> Apprenez [Attaque sournoise]
+    .train 53 >> Apprenez [Attaque Sournoise]
     .money <0.04
     .target David Trias
 step << Rogue
@@ -498,7 +498,7 @@ step << Rogue
     .goto Tirisfal Glades,32.53,65.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_David|r
     .turnin 3096 >> Rendez la quête Parchemin codé
-    .train 53 >> Apprenez [Attaque sournoise]
+    .train 53 >> Apprenez [Attaque Sournoise]
     .money <0.04
     .target David Trias
 step << Rogue
@@ -915,7 +915,7 @@ step << Priest
     .accept 5650 >> Acceptez la quête Vêtements des ténèbres
 	.train 591 >>Apprenez [Châtiment]
     .train 17 >>Apprenez [Mot de pouvoir : Bouclier]
-    .train 2052 >>Apprenez [Soins inférieurs Rang 2]
+    .train 2052 >>Apprenez [Soins inférieurs rang 2]
     .target Dark Cleric Beryl
 step << Mage
     .goto Tirisfal Glades,61.97,52.47
@@ -933,14 +933,14 @@ step << Rogue
     #season 0
     .goto Tirisfal Glades,61.75,52.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Marion|r au second étage
-    .train 1757 >> Apprenez [Attaque pernicieuse]
+    .train 1757 >> Apprenez [Attaque Pernicieuse]
     .target Marion Call
     .money <0.01
 step << Rogue
     #season 2
     .goto Tirisfal Glades,61.75,52.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Marion|r au second étage
-    .train 1757 >> Apprenez [Attaque pernicieuse]
+    .train 1757 >> Apprenez [Attaque Pernicieuse]
     .train 921 >> Apprenez [Vol à la tire]
     .target Marion Call
     .money <0.02
@@ -2595,7 +2595,7 @@ step << Warrior/Rogue
     .goto Undercity,56.06,37.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Brom|r
     .train 2575 >> Apprenez [Minage]
-    >>Ceci vous permettra de trouver des |cRXP_LOOT_[Rough Stones]|r sur les gisements pour fabriquer les [Pierre à aiguiser] (+2 dégâts aux armes pendant 30 minutes)
+    >>Ceci vous permettra de trouver des |cRXP_LOOT_[Rough Stones]|r dans les filons pour fabriquer des [Pierre à aiguiser] (+2 dégâts des armes pendant 30 minutes)
     .target Brom Killian
 step << Warrior/Rogue
     .goto Undercity,56.72,36.92
@@ -3375,8 +3375,8 @@ step << Rogue
     #xprate <1.5
     .goto Undercity,77.08,49.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Charles Seaton|r au Quartier des Voleurs
-    >>|cRXP_BUY_Achetez-lui un|r |T135346:0|t[Coutelas] |cRXP_BUY_|r
-    >>|cRXP_WARN_Sinon, vous pouvez regarder à l'Hôtel des Ventes si vous trouvez une alternative meilleure ou moins onéreuse|r
+    >>|cRXP_BUY_Achetez un|r [Coutelas] |cRXP_BUY_à Gunther|r
+    >>Sinon, vous pouvez regarder à l'Hôtel des Ventes si vous trouvez une alternative meilleure ou moins onéreuse
     .collect 851,1,372,1 --Collect Cutlass (1)
     .money <0.2023
     .itemStat 16,QUALITY,<7
@@ -4168,7 +4168,7 @@ step
 step
     #softcore
     #completewith ProveyourWorth
-    .deathskip >> Mourez et ressuscitez au |cRXP_FRIENDLY_Gardien des âmes|r.
+    .deathskip >> Mourez et ressuscitez au |cRXP_FRIENDLY_Gardien des âmes|r
 step
     #hardcore
     #completewith next
@@ -5926,7 +5926,7 @@ step
     #season 2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sarvis|r et à |cRXP_FRIENDLY_Elreth|r << !Warlock !Mage !Priest
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sarvis|r, |cRXP_FRIENDLY_Elreth|r, et à |cRXP_FRIENDLY_Maximillion|r << Warlock
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sarvis|r, |cRXP_FRIENDLY_Elreth|r, et à |cRXP_FRIENDLY_Isabella|r << Mage
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sarvis|r, |cRXP_FRIENDLY_Elreth|r, et à |cRXP_FRIENDLY_Maximillion|r << Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sarvis|r, |cRXP_FRIENDLY_Elreth|r, et à |cRXP_FRIENDLY_Duesten|r << Priest
     .turnin 364 >> Rendez la quête Lever le voile
     .accept 3095 >> Acceptez la quête Parchemin simple << Warrior
@@ -5955,7 +5955,7 @@ step
     #season 0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sarvis|r et à |cRXP_FRIENDLY_Elreth|r << !Warlock !Mage !Priest
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sarvis|r, |cRXP_FRIENDLY_Elreth|r, et à |cRXP_FRIENDLY_Maximillion|r << Warlock
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sarvis|r, |cRXP_FRIENDLY_Elreth|r, et à |cRXP_FRIENDLY_Isabella|r << Mage
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sarvis|r, |cRXP_FRIENDLY_Elreth|r, et à |cRXP_FRIENDLY_Maximillion|r << Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sarvis|r, |cRXP_FRIENDLY_Elreth|r, et à |cRXP_FRIENDLY_Duesten|r << Priest
     .turnin 364 >> Rendez la quête Lever le voile
     .accept 3095 >> Acceptez la quête Parchemin simple << Warrior
@@ -6079,7 +6079,7 @@ step
     #season 2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sarvis|r et à |cRXP_FRIENDLY_Elreth|r << !Warlock !Mage !Priest
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sarvis|r, |cRXP_FRIENDLY_Elreth|r, et à |cRXP_FRIENDLY_Maximillion|r << Warlock
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sarvis|r, |cRXP_FRIENDLY_Elreth|r, et à |cRXP_FRIENDLY_Isabella|r << Mage
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sarvis|r, |cRXP_FRIENDLY_Elreth|r, et à |cRXP_FRIENDLY_Maximillion|r << Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sarvis|r, |cRXP_FRIENDLY_Elreth|r, et à |cRXP_FRIENDLY_Duesten|r << Priest
     .turnin 364 >> Rendez la quête Lever le voile
     .accept 3095 >> Acceptez la quête Parchemin simple << Warrior
@@ -6108,7 +6108,7 @@ step
     #season 0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sarvis|r et à |cRXP_FRIENDLY_Elreth|r << !Warlock !Mage !Priest
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sarvis|r, |cRXP_FRIENDLY_Elreth|r, et à |cRXP_FRIENDLY_Maximillion|r << Warlock
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sarvis|r, |cRXP_FRIENDLY_Elreth|r, et à |cRXP_FRIENDLY_Isabella|r << Mage
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sarvis|r, |cRXP_FRIENDLY_Elreth|r, et à |cRXP_FRIENDLY_Maximillion|r << Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sarvis|r, |cRXP_FRIENDLY_Elreth|r, et à |cRXP_FRIENDLY_Duesten|r << Priest
     .turnin 364 >> Rendez la quête Lever le voile
     .accept 3095 >> Acceptez la quête Parchemin simple << Warrior
@@ -6141,7 +6141,7 @@ step << Priest
 step << Priest
     .goto Tirisfal Glades,31.11,66.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Duesten|r
-    .train 2052 >> Apprenez [Soins inférieurs Rang 2]
+    .train 2052 >> Apprenez [Soins inférieurs rang 2]
     .train 589 >> Apprenez [Mot de l'ombre : Douleur]
     .target Dark Cleric Duesten
     .money <0.02
@@ -6242,7 +6242,7 @@ step << Rogue
     .goto Tirisfal Glades,32.53,65.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_David|r
     .turnin 3096 >> Rendez la quête Parchemin codé
-    .train 53 >> Apprenez [Attaque sournoise]
+    .train 53 >> Apprenez [Attaque Sournoise]
     .money <0.04
     .target David Trias
 step << Rogue
@@ -6642,7 +6642,7 @@ step << Priest
     .accept 5650 >> Acceptez la quête Vêtements des ténèbres
 	.train 591 >>Apprenez [Châtiment]
     .train 17 >>Apprenez [Mot de pouvoir : Bouclier]
-    .train 2052 >>Apprenez [Soins inférieurs Rang 2]
+    .train 2052 >>Apprenez [Soins inférieurs rang 2]
     .target Dark Cleric Beryl
 step << Mage
     .goto Tirisfal Glades,61.97,52.47
@@ -6660,14 +6660,14 @@ step << Rogue
     #season 0
     .goto Tirisfal Glades,61.75,52.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Marion|r au second étage
-    .train 1757 >> Apprenez [Attaque pernicieuse]
+    .train 1757 >> Apprenez [Attaque Pernicieuse]
     .target Marion Call
     .money <0.01
 step << Rogue
     #season 2
     .goto Tirisfal Glades,61.75,52.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Marion|r au second étage
-    .train 1757 >> Apprenez [Attaque pernicieuse]
+    .train 1757 >> Apprenez [Attaque Pernicieuse]
     .train 921 >> Apprenez [Vol à la tire]
     .target Marion Call
     .money <0.02
@@ -8534,7 +8534,7 @@ step << Warrior/Rogue
     .goto Undercity,56.06,37.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Brom|r
     .train 2575 >> Apprenez [Minage]
-    >>Ceci vous permettra de trouver des |cRXP_LOOT_[Rough Stones]|r sur les gisements pour fabriquer les [Pierre à aiguiser] (+2 dégâts aux armes pendant 30 minutes)
+    >>Ceci vous permettra de trouver des |cRXP_LOOT_[Rough Stones]|r dans les filons pour fabriquer des [Pierre à aiguiser] (+2 dégâts des armes pendant 30 minutes)
     .target Brom Killian
 step << Warrior/Rogue
     .goto Undercity,56.72,36.92

@@ -137,7 +137,7 @@ step
     #xprate <1.5
     #optional << NightElf
     .goto 1439,37.703,43.393
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinelle Glynda Nal'Shea|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
     .accept 4811 >> Accept Les Red Crystal
     .target Sentinel Glynda Nal'Shea
     .xp <12,1
@@ -150,7 +150,7 @@ step
 step
     #xprate >1.49
     .goto 1439,37.703,43.393
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinelle Glynda Nal'Shea|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
     .accept 4811 >> Accept Les Red Crystal
     .target Sentinel Glynda Nal'Shea
 step
@@ -270,7 +270,7 @@ step << Druid
     #completewith CliffspringEnd
     #label GatheringQ
     .skill herbalism,15 >>|cRXP_WARN_Montez votre|r |T136065:0|t[Herboristerie] |cRXP_WARN_à un niveau de 15 pour vous permettre de récolter des|r [Terrestrines] |cRXP_WARN_pour une quête de classe importante plus tard. Vous pourrez ensuite abandonner le métier|r
-    >>Si vous préférez acheter 5 [Terrestrine] à l'Hôtel des Ventes plus tard, passez cette étape
+    >>Si vous préférez acheter 5 [Terrestrine] à l'Hôtel des Ventes plus tard, vous pouvez passer cette étape
     .collect 2449,5,6123,1 --Earthroot (5)
     .disablecheckbox
 step << Druid
@@ -530,7 +530,7 @@ step
 step
     #xprate <1.5
     .goto 1439,37.703,43.393
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinelle Glynda Nal'Shea|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
     .accept 4811 >> Accept Les Red Crystal
     .target Sentinel Glynda Nal'Shea
 step
@@ -839,7 +839,7 @@ step << Druid
 step << Druid
     #season 2
     .goto 1439,37.703,43.393
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinelle Glynda Nal'Shea|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
     .turnin 4811 >> Rendez la quête Le cristal rouge
     .accept 4812 >> Acceptez la quête Comme l'eau tombe en cascade
     .target Sentinel Glynda Nal'Shea
@@ -1266,7 +1266,7 @@ step << NightElf/Hunter/Druid/Rogue
     #season 2 << Warrior/Rogue
     #optional
     .goto 1439,37.703,43.393
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinelle Glynda Nal'Shea|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
     .turnin 4811 >> Rendez la quête Le cristal rouge << !Druid sod
     .accept 4812 >> Acceptez la quête Comme l'eau tombe en cascade << !Druid sod
     .turnin 4813 >> Rendez la quête Les fragments à l'intérieur << Druid sod
@@ -1276,7 +1276,7 @@ step << NightElf/Hunter/Druid/Rogue
 step << Hunter/Druid/Warrior
     #season 0,1 << Druid
     .goto 1439,37.703,43.393
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinelle Glynda Nal'Shea|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
     .turnin 4811 >> Rendez la quête Le cristal rouge
     .accept 4812 >> Acceptez la quête Comme l'eau tombe en cascade
     .target Sentinel Glynda Nal'Shea
@@ -1287,7 +1287,7 @@ step << NightElf/Hunter/Druid/Warrior
     #optional
     #label Cascade
     .goto 1439,37.703,43.393
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinelle Glynda Nal'Shea|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
     .accept 4812 >> Acceptez la quête Comme l'eau tombe en cascade
     .target Sentinel Glynda Nal'Shea
     .isQuestTurnedIn 4811 --show step if Red Crystal turned in
@@ -1378,7 +1378,7 @@ step
     #season 2 << Hunter
     #season 1 << Druid/Warrior/Rogue/Priest
     .goto Darkshore,37.70,43.39
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinelle Glynda Nal'Shea|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
     >>|cRXP_WARN_Choisissez la|r |T135641:0|t[Dague de Courbebois] |cRXP_WARN_comme vous devez essayer de sauvegarder une|r |T135641:0|t[Dague] |cRXP_WARN_pour votre quête de|r |T132290:0|t[Poisons] |cRXP_WARN_plus tard|r << Rogue
     .turnin 4813 >> Rendez la quête Les fragments à l'intérieur << !Hunter !Druid
     .turnin 4813,3 >> Rendez la quête Les fragments à l'intérieur << Hunter/Druid
@@ -1927,14 +1927,14 @@ step << !sod/Warrior/Rogue/Priest
 step
     #season 0
     .goto 1439,37.703,43.393
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinelle Glynda Nal'Shea|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
     .turnin 4811 >> Rendez la quête Le cristal rouge
     .accept 4812 >> Acceptez la quête Comme l'eau tombe en cascade
     .target Sentinel Glynda Nal'Shea
     .isOnQuest 4811
 step << !sod/Warrior/Rogue/Priest
     .goto 1439,37.703,43.393
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinelle Glynda Nal'Shea|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
     .turnin 4812 >> Rendez la quête Comme l'eau tombe en cascade
     .target Sentinel Glynda Nal'Shea
     .isQuestComplete 4812
@@ -2588,7 +2588,7 @@ step << !Druid
 step
     #season 2
     .goto Darkshore,37.70,43.39
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinelle Glynda Nal'Shea|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
     >>|cRXP_WARN_Choisissez la|r |T135641:0|t[Dague de Courbebois] |cRXP_WARN_comme vous devez essayer de sauvegarder une|r |T135641:0|t[Dague] |cRXP_WARN_pour votre quête de|r |T132290:0|t[Poisons] |cRXP_WARN_plus tard|r << Rogue
     .turnin 4813 >> Rendez la quête Les fragments à l'intérieur << !Hunter !Druid
     .turnin 4813,3 >> Rendez la quête Les fragments à l'intérieur << Hunter/Druid
@@ -2832,7 +2832,7 @@ step
     #label prospector
     #season 2
     .goto 1439,35.724,83.696
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Prospector Remtravel|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Prospector Remtravel|r
     >>|cRXP_WARN_Vous devrez peut-être attendre qu'il réapparaisse ou que les autres joueurs terminent l'escorte|r
     .turnin 729 >> Rendez la quête Les absences du Prospecteur
     .target Prospector Remtravel
@@ -3104,7 +3104,7 @@ step << !Warrior !Rogue !Priest
 step
     .goto 1439,37.703,43.393
     #season 2
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinelle Glynda Nal'Shea|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
     .turnin 4740 >> Rendez la quête On recherche : Fondeboue !
     .target Sentinel Glynda Nal'Shea
 step << !Priest
@@ -4996,7 +4996,7 @@ step << Rogue
     #xprate >1.59
     .goto Westfall,68.50,70.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Agent Kearnen|r
-    >>Vous DEVEZ faire cette quête pour vos [Poisons]
+    >>Vous DEVEZ le faire pour votre de quête de [Poisons]
     .turnin 2360 >> Rendez la quête Mathias et les Défias
     .accept 2359 >> Acceptez la quête La Tour de Klaven
     .target Agent Kearnen
@@ -5012,7 +5012,7 @@ step << Rogue
     .goto Westfall,71.01,75.72,30,0
     .goto Westfall,69.58,73.07,30,0
     >>|T133644:0|tUtilisez [Vol à la tire] sur le |cRXP_ENEMY_Malformed Defias Drone|r. Volez-lui la |cRXP_LOOT_Defias Tower Key|r
-    >>Vous devez être en [Camouflage] pour utiliser [Vol à la tire]
+    >>Vous devez être en [Camouflage] pour utiliser votre [Vol à la tire]
     >>|cRXP_WARN_Le |cRXP_ENEMY_Malformed Defias Drone|r apparaissent à l'entrée de la tour, puis font le tour de celle-ci|r
     >>Faites attention car il fait BEAUCOUP de dégâts. Si vous perdez votre [Camouflage], utilisez vite votre [Sprint] pour vous enfuir
     .complete 2359,2 --Collect Defias Tower Key (x1)
@@ -5108,7 +5108,7 @@ step << !Dwarf Rogue
     .goto 1453,43.070,26.155
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Shaina Fuller|r
     >>Si vous avez un ami |cFFF48CBAPaladin|r ou |cFFFF7C0ADruid|r demandez-leur de vous enlever le debuff [Toucher de Zanzil]
-    .train 7934 >> Apprenez [Anti-Venin]
+    .train 7934 >> Apprenez [Anti-Venom]
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
     .dungeon !DM
@@ -6077,7 +6077,7 @@ step << Mage
     #xprate >1.59
     .goto Stormwind City,39.681,79.538
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Larimaine Purdue|r
-    .train 3561 >> Apprenez [Téléportation : Hurlevent]
+    .train 3561 >> Apprenez [Téléportation : Stormwind]
     .target Larimaine Purdue
     .dungeon DM
 step << !Paladin
@@ -6349,7 +6349,7 @@ step << Rogue
     #xprate >1.59
     .goto Westfall,68.50,70.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Agent Kearnen|r
-    >>Vous DEVEZ faire cette quête pour vos [Poisons]
+    >>Vous DEVEZ le faire pour votre de quête de [Poisons]
     .turnin 2360 >> Rendez la quête Mathias et les Défias
     .accept 2359 >> Acceptez la quête La Tour de Klaven
     .target Agent Kearnen
@@ -6365,7 +6365,7 @@ step << Rogue
     .goto Westfall,71.01,75.72,30,0
     .goto Westfall,69.58,73.07,30,0
     >>|T133644:0|tUtilisez [Vol à la tire] sur le |cRXP_ENEMY_Malformed Defias Drone|r. Volez-lui la |cRXP_LOOT_Defias Tower Key|r
-    >>Vous devez être en [Camouflage] pour utiliser [Vol à la tire]
+    >>Vous devez être en [Camouflage] pour utiliser votre [Vol à la tire]
     >>|cRXP_WARN_Le |cRXP_ENEMY_Malformed Defias Drone|r apparaissent à l'entrée de la tour, puis font le tour de celle-ci|r
     >>Faites attention car il fait BEAUCOUP de dégâts. Si vous perdez votre [Camouflage], utilisez vite votre [Sprint] pour vous enfuir
     .complete 2359,2 --Collect Defias Tower Key (x1)
@@ -6458,7 +6458,7 @@ step << !Dwarf Rogue
     .goto 1453,43.070,26.155
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Shaina Fuller|r
     >>Si vous avez un ami |cFFF48CBAPaladin|r ou |cFFFF7C0ADruid|r demandez-leur de vous enlever le debuff [Toucher de Zanzil]
-    .train 7934 >> Apprenez [Anti-Venin]
+    .train 7934 >> Apprenez [Anti-Venom]
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
     .dungeon DM
@@ -6585,7 +6585,7 @@ step
     #xprate >1.59 << !Hunter
     #label BandanaStart
     .goto Westfall,56.67,47.35
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Scout Riell|r au sommet de la Tour
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez |cRXP_FRIENDLY_Scout Riell|r tout en haut de la Tour
     .accept 214 >> Acceptez la quête Les masques rouges en soie
     .target Scout Riell
     .dungeon DM
@@ -6910,7 +6910,7 @@ step
 step
     #xprate >1.59 << !Hunter
     .goto Westfall,56.67,47.35
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Scout Riell|r au sommet de la Tour
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez |cRXP_FRIENDLY_Scout Riell|r tout en haut de la Tour
     .turnin 214 >> Rendez la quête Les masques rouges en soie
     .target Scout Riell
     .dungeon DM
