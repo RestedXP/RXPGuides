@@ -1172,5 +1172,5 @@ step
     >>Se você não tem carne suficiente, farme alguns javalis a caminho de Darkshire
 step
     .goto Redridge Mountains,6.50,91.18,90,0
-    .zone Duskwood >> Vá para Floresta do Crepúsculo
+    .zone Duskwood >> Va até a Floresta do Crepúsculo
 ]])

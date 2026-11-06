@@ -279,7 +279,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Iverron|r
     .turnin 4495 >> Entregue Um bom amigo
     .target Iverron
-    .accept 3519 >> Aceite Um Amigo em Necessidade
+    .accept 3519 >> Aceite Um amigo em apuros
 step
     #season 2
     .goto Teldrassil,59.8,34.1
@@ -305,7 +305,7 @@ step
 step
     .goto Teldrassil,60.899,41.961
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dirânia Pratafulge|r
-    .turnin 3519 >> Entregue Um Amigo Necessitado
+    .turnin 3519 >> Entregue Um amigo em apuros
     .target Dirania Silvershine
     .accept 3521 >> Aceite O Antídoto de Iverron
 step << Hunter

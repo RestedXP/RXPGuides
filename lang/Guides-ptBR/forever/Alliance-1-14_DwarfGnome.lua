@@ -8,7 +8,7 @@ RXPGuides.RegisterGuide([[
 #season 0,1
 #version 1
 << Alliance
-#group RestedXP Forever Guia (A)
+#group Guia RestedXP Forever (A)
 #subgroup Speedrun Guia 1-20
 --#groupid RXP-SRGCE-A1
 #name 1-5 Coldridge Valley
@@ -659,7 +659,7 @@ RXPGuides.RegisterGuide([[
 #season 0,1
 #version 1
 << Alliance
-#group RestedXP Forever Guia (A)
+#group Guia RestedXP Forever (A)
 #subgroup Speedrun Guia 1-20
 --#groupid RXP-SRGCE-A1
 #name 5-11 Dun Morogh
@@ -2793,7 +2793,7 @@ RXPGuides.RegisterGuide([[
 #disabledungeons
 #season 0,1
 << Alliance !Hunter
-#group RestedXP Forever Guia (A)
+#group Guia RestedXP Forever (A)
 #subgroup Speedrun Guia 1-20
 --#groupid RXP-SRGCE-A1
 #name 11-12 Elwynn (Anão/Gnomo)
@@ -3458,7 +3458,7 @@ RXPGuides.RegisterGuide([[
 #season 0,1
 #version 1
 << Alliance !Hunter
-#group RestedXP Forever Guia (A)
+#group Guia RestedXP Forever (A)
 #subgroup Speedrun Guia 1-20
 --#groupid RXP-SRGCE-A1
 #name 12-14 Loch Modan (Anão/Gnomo)
@@ -4459,7 +4459,7 @@ RXPGuides.RegisterGuide([[
 #era/som--h
 #version 1
 << Alliance Hunter
-#group RestedXP Forever Guia (A)
+#group Guia RestedXP Forever (A)
 #subgroup Speedrun Guia 1-20
 --#groupid RXP-SRGCE-A1
 #name 11-13 Loch Modan (Caçador)

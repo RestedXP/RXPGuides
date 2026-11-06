@@ -6,7 +6,7 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #name 18-19 Loch Modan
 #version 1
-#group Guia de Sobrevivência RestedXP (A)
+#group RestedXP Guia de Sobrevivência (A)
 #subgroup RXP Guia de Sobrevivência 1-20
 #next 19-20 Redridge
 
@@ -419,7 +419,7 @@ step
     .target Gearcutter Cogspinner
 step
     .goto Ironforge,78.00,52.00,5,0
-    .zone Stormwind City >> Entre no Deeprun Tram. Pegue o tram para Ventobravo
+    .zone Stormwind City >> Entre no Metrô Correfundo. Pegue o metrô até Ventobravo
     >>|cRXP_WARN_Nível sua|r |T135966:0|t[Primeiros Socorros] |cRXP_WARN_e|r |T133971:0|t[Culinária] |cRXP_WARN_se necessário enquanto aguarda o bonde|r
     >>|cRXP_WARN_Você precisará de sua|r |T135966:0|t[Primeiros Socorros] |cRXP_WARN_estar em nível 80 para uma missão do nível 24|r << Rogue !Dwarf
     --.link https://www.youtube.com/watch?v=M_tXROi9nMQ >> |cRXP_WARN_Click here for a video guide for a logout skip on the tram|r

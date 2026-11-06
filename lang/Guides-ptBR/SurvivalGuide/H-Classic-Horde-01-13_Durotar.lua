@@ -9,7 +9,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 1-6 Orc/Trolls
 #version 1
-#group Guia de Sobrevivência RestedXP (H)
+#group RestedXP Guia de Sobrevivência (H)
 #subgroup RXP Guia de Sobrevivência 1-20
 #defaultfor Troll/Orc
 #next 6-13 Orc/Trolls
@@ -281,7 +281,7 @@ step
     .accept 3065 >>Aceite Tabuleta Simples << Troll Warrior
     .accept 3082 >>Aceite Tabuleta cinzelada << Troll Hunter
     .accept 3083 >>Aceite Tabuleta cifrada << Troll Rogue
-    .accept 3084 >>Aceite Tabuleta Inscrita em Runas - Missão << Troll Shaman
+    .accept 3084 >>Aceite Tabuleta Inscrita em Runas << Troll Shaman
     .accept 3085 >>Aceite Tabuleta consagrada << Troll Priest
     .accept 3086 >>Aceite Tabuleta glífica << Troll Mage
     .accept 3087 >>Aceite Pergaminho Cinzelado << Orc Hunter
@@ -356,7 +356,7 @@ step << !Rogue
     .itemcount 159,<15 << !Warrior !Hunter
 step << Shaman
     #requires Galgar
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConversar com |cRXP_FRIENDLY_Shikrik|r e |cRXP_FRIENDLY_Canaga|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Shikrik|r e |cRXP_FRIENDLY_Ranago Arauto da Terra|r
     .turnin 3084 >>Entregue Tabuleta inscrita em runas << Troll
     .turnin 3089 >>Entregue Pergaminho inscrito em runas << Orc
     .train 8042 >>Aprenda |T136026:0|t[Choque Terreno]
@@ -597,7 +597,7 @@ step
     .turnin 789 >>Entregue A ferroada do escorpídeo << !Shaman
     .target Gornek
 step << Shaman
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConversar com |cRXP_FRIENDLY_Shikrik|r e |cRXP_FRIENDLY_Canaga|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Shikrik|r e |cRXP_FRIENDLY_Ranago Arauto da Terra|r
     .train 8042 >> Aprenda |T136026:0|t[Choque Terreno]
     .goto Durotar,42.39,69.00
     .accept 1516 >>Aceite Clamor da Terra
@@ -877,7 +877,7 @@ step << skip
 step << skip --Warrior/Rogue
     .goto Durotar,51.81,40.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConversar com |cRXP_FRIENDLY_Krunn|r
-    .train 2575 >> Treine |T136248:0|t[Mineração]
+    .train 2575 >> Aprenda |T136248:0|t[Mineração]
     >>|cRXP_WARN_Isto permitirá que você encontre|r |T135232:0|t|cRXP_LOOT_[Pedra Rústica]|r |cRXP_WARN_de depósitos de minérios para fabricar|r |T135248:0|t[Pedra de Afiar Rústica] |cRXP_WARN_(+2 Dano da Arma por 30 minutos)|r
     .target Krunn
 step << skip --Warrior/Rogue
@@ -927,7 +927,7 @@ step << Mage
     .train 2136 >>Aprenda |T135807:0|t[Impacto de Fogo]
     .target Mai'ah
 step << Shaman
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConversar com |cRXP_FRIENDLY_Shikrik|r e |cRXP_FRIENDLY_Canaga|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Shikrik|r e |cRXP_FRIENDLY_Ranago Arauto da Terra|r
     .train 332 >>Aprenda |T136052:0|t[Onda Curativa]
     .target +Shikrik
     .goto Durotar,42.39,69.00
@@ -1071,7 +1071,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 6-13 Orc/Trolls
 #version 1
-#group Guia de Sobrevivência RestedXP (H)
+#group RestedXP Guia de Sobrevivência (H)
 #subgroup RXP Guia de Sobrevivência 1-20
 #defaultfor Troll/Orc
 #next 13-15 Floresta de Pinhaprata
@@ -1691,7 +1691,7 @@ step
 step << Warrior/Rogue
     .goto Durotar,51.81,40.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConversar com |cRXP_FRIENDLY_Krunn|r
-    .train 2575 >> Treine |T136248:0|t[Mineração]
+    .train 2575 >> Aprenda |T136248:0|t[Mineração]
     >>|cRXP_WARN_Isto permitirá que você encontre|r |T135232:0|t|cRXP_LOOT_[Pedra Rústica]|r |cRXP_WARN_de depósitos de minérios para fabricar|r |T135248:0|t[Pedra de Afiar Rústica] |cRXP_WARN_(+2 Dano da Arma por 30 minutos)|r
     .target Krunn
 step << Warrior/Rogue
@@ -1976,7 +1976,7 @@ step
     .goto Durotar,69.21,69.69,40,0
     .goto Durotar,67.74,69.86,40,0
     >>Pegue os |cRXP_PICK_Ovos de Açoitacauda|r que estão no chão
-    >>|cRXP_WARN_Geralmente guardado por um|r |cRXP_ENEMY_Açoitacauda Garrassangre|r
+    >>|cRXP_WARN_Eles geralmente são guardados por um|r |cRXP_ENEMY_Açoitacauda Garrassangre|r
     .complete 815,1 --Taillasher Egg (3)
     .mob Bloodtalon Taillasher
 step
@@ -2096,7 +2096,7 @@ step
     .mob +Makrura Clacker
 step
     #completewith Zalazaneturnin
-    .goto Durotar,56.06,74.72,150 >> Vá para Sen'Jin Village
+    .goto Durotar,56.06,74.72,150 >> Vá para Aldeia Sen'jin
     .subzoneskip 367
 step
     .goto Durotar,56.48,73.11
@@ -2181,7 +2181,7 @@ step << Shaman/Hunter
     .target +Cook Torka
     .goto Durotar,51.12,42.46
     .turnin 825 >>Entregue Dos destroços...
-    .turnin 837 >>Entregue Encroachment
+    .turnin 837 >>Entregue Invasão
     .target +Gar'Thok
     .goto Durotar,51.95,43.50
 step << !Shaman !Hunter
@@ -2750,13 +2750,13 @@ step
 step << !Shaman
     .goto Durotar,51.95,43.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gar'Thok|r
-    .turnin 837 >>Entregue Encroachment
+    .turnin 837 >>Entregue Invasão
     .target Gar'Thok
     .group
 step << Shaman
     .goto Durotar,51.95,43.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gar'Thok|r
-    .turnin 837 >>Entregue Encroachment
+    .turnin 837 >>Entregue Invasão
     .target Gar'Thok
 step << Warrior
     .goto Durotar,54.18,42.46
@@ -3027,7 +3027,7 @@ step
 step << Rogue
     .goto Orgrimmar,42.75,53.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Therzok|r
-	.accept 1963 >> Aceite The Estilhaçada Hand - Missão - Missão << Orc Rogue/Troll Rogue
+	.accept 1963 >> Aceite A Mão Despedaçada << Orc Rogue/Troll Rogue
     .trainer >> Treine suas magias de classe
     .target Therzok
 step << Shaman
@@ -3646,7 +3646,7 @@ step << skip --Orc Rogue/Troll Rogue
     .zoneskip Tirisfal Glades
 step << Orc Rogue/Troll Rogue
     #completewith next
-    .zone Tirisfal Glades >>Saia de Undercity
+    .zone Tirisfal Glades >>Saia de Cidade Baixa
     .zoneskip Undercity,1
 step
     #completewith next
@@ -4254,13 +4254,13 @@ step << Warlock
     .isQuestAvailable 1504
 step << skip --Warlock
     .goto Undercity,84.86,20.34
-    .goto Undercity,67.90,15.28,30 >>|cRXP_WARN_Faça um Logout Pular posicionando seu personagem na parte mais alta do degrau mais baixo até parecer que ele está flutuando, então deslogue e entre novamente|r
+    .goto Undercity,67.90,15.28,30 >>|cRXP_WARN_Posicione seu personagem no ponto mais alto da escadaria inferior até parecer que está flutuando. Depois, faça o atalho por reconexão saindo e entrando no jogo novamente|r
     .link https://www.youtube.com/watch?v=-Bi95bCN8dM >> |cRXP_WARN_CLIQUE AQUI para ver um exemplo|r
     >>|cRXP_WARN_Se você não conseguir fazer isso, apenas saia de Cidade Baixa normalmente|r
 step << Warlock
     #completewith next
     .goto Tirisfal Glades,61.92,64.85,50,0
-    .zone Tirisfal Glades >> Saia de Undercity
+    .zone Tirisfal Glades >> Saia de Cidade Baixa
     .zoneskip Tirisfal Glades
 step
     #optional

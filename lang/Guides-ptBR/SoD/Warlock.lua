@@ -605,7 +605,7 @@ step
     .target Doan Karhan
 step
     #completewith next
-    .zone Ashenvale >>Viaje para Vale Gris
+    .zone Ashenvale >>Vá até o Vale Gris
 step
     .train 403938,1
     >>Mate os |cRXP_ENEMY_Acólitos do Crepúsculo|r perto da entrada da incursão BFD. Saqueie-os para obter os |cRXP_LOOT_Fragmentos de Soran'ruk|r
@@ -632,7 +632,7 @@ step
     .target Doan Karhan
 step
     #completewith next
-    .zone Ashenvale >>Viaje para Vale Gris
+    .zone Ashenvale >>Vá até o Vale Gris
 step
     .train 403938,1
     .goto Ashenvale,83.07,70.56,40,0
@@ -1386,7 +1386,7 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith next
-    .zone Ashenvale >> Viaje para Vale Gris
+    .zone Ashenvale >> Vá até o Vale Gris
 step
     .goto Ashenvale,93.5,38.0,100 >> Dirija-se para a área de Incursão Pesadelo de Vale Gris marcada no seu mapa
     .train 431758,1

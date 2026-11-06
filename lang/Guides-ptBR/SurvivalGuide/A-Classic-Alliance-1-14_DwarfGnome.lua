@@ -10,7 +10,7 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #name 1-6 Coldridge Valley
 #version 1
-#group Guia de Sobrevivência RestedXP (A)
+#group RestedXP Guia de Sobrevivência (A)
 #subgroup RXP Guia de Sobrevivência 1-20
 #defaultfor Dwarf/Gnome
 #next 6-10 Dun Morogh
@@ -416,7 +416,7 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #name 6-10 Dun Morogh
 #version 1
-#group Guia de Sobrevivência RestedXP (A)
+#group RestedXP Guia de Sobrevivência (A)
 #subgroup RXP Guia de Sobrevivência 1-20
 #defaultfor Dwarf/Gnome
 #next 10-11 Elwynn (Dwarf/Gnome)
@@ -1703,7 +1703,7 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #name 10-11 Elwynn (Dwarf/Gnome)
 #version 1
-#group Guia de Sobrevivência RestedXP (A)
+#group RestedXP Guia de Sobrevivência (A)
 #subgroup RXP Guia de Sobrevivência 1-20
 #defaultfor Gnome/Dwarf
 #next 11-13 Loch Modan (Dwarf/Gnome)
@@ -2354,7 +2354,7 @@ step << !Paladin
 step << Dwarf Paladin
     .goto StormwindClassic,61.149,11.568,25,0
     .goto StormwindClassic,64.0,8.10
-    .zone Ironforge >> Entre no Deeprun Tram. Pegue o metrô para Ironforge
+    .zone Ironforge >> Entre no Bonde Subterrâneo. Pegue o bonde até Altaforja
     --.link https://www.youtube.com/watch?v=M_tXROi9nMQ >> |cRXP_WARN_Do a logout skip inside the Tram. Click here for video reference|r
 ]])
 
@@ -2366,7 +2366,7 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #name 11-13 Loch Modan (Dwarf/Gnome)
 #version 1
-#group Guia de Sobrevivência RestedXP (A)
+#group RestedXP Guia de Sobrevivência (A)
 #subgroup RXP Guia de Sobrevivência 1-20
 #defaultfor Gnome/Dwarf
 #next 13-15 Cerro Oeste

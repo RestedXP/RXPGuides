@@ -77,7 +77,7 @@ step << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Iverron|r
     .turnin 4495 >> Entregue Um bom amigo
     .target Iverron
-    .accept 3519 >> Aceite Um Amigo em Necessidade
+    .accept 3519 >> Aceite Um amigo em apuros
 step << Hunter
     #completewith next
     .hs >> Use sua Pedra de Retorno para ir a Umbravale
@@ -143,7 +143,7 @@ step << !Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Iverron|r
     .turnin 4495 >> Entregue Um bom amigo
     .target Iverron
-    .accept 3519 >> Aceite Um Amigo em Necessidade
+    .accept 3519 >> Aceite Um amigo em apuros
 step << !Hunter !Warrior
     #season 2
     #completewith next
@@ -168,7 +168,7 @@ step << !Hunter
 step
     .goto Teldrassil,60.899,41.961
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dirânia Pratafulge|r
-    .turnin 3519 >> Entregue Um Amigo Necessitado
+    .turnin 3519 >> Entregue Um amigo em apuros
     .target Dirania Silvershine
     .accept 3521 >> Aceite O Antídoto de Iverron
 step << Hunter
@@ -1371,7 +1371,7 @@ step << Druid
 step << Druid
     .goto Moonglade,56.21,30.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dendrite Estrelalama|r no andar superior
-    .turnin 5921 >> Vá para Moonglade
+    .turnin 5921 >> Entregue Clareira da Lua
     .target Dendrite Starblaze
     .accept 5929 >> Aceite Espírito do Grande Urso
 step << Druid

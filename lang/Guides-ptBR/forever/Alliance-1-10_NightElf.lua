@@ -10,7 +10,7 @@ RXPGuides.RegisterGuide([[
 #name 1-6 Umbravale
 #displayname 1-7 Umbravale << sod
 #version 1
-#group RestedXP Forever Guia (A)
+#group Guia RestedXP Forever (A)
 #subgroup Speedrun Guia 1-20
 --#groupid RXP-SRGCE-A1
 #defaultfor NightElf
@@ -451,7 +451,7 @@ RXPGuides.RegisterGuide([[
 #name 6-11 Teldrassil
 #displayname 7-13 Teldrassil << SoD
 #version 1
-#group RestedXP Forever Guia (A)
+#group Guia RestedXP Forever (A)
 #subgroup Speedrun Guia 1-20
 --#groupid RXP-SRGCE-A1
 #defaultfor NightElf
@@ -1624,7 +1624,7 @@ step << Druid NightElf
 step << Druid NightElf
     .goto 1450/1,-2678.76,8019.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dendrite Estrelalama|r no andar superior
-    .turnin 5921 >> Vá para Moonglade
+    .turnin 5921 >> Entregue Clareira da Lua
     .target Dendrite Starblaze
     .accept 5929 >> Aceite Espírito do Grande Urso
 step << Druid NightElf

@@ -9,7 +9,7 @@ RXPGuides.RegisterGuide([[
 << Alliance !NightElf
 #name 13-15 Cerro Oeste
 #displayname 14-15 Cerro Oeste << Dwarf/Gnome
-#group RestedXP Forever Guia (A)
+#group Guia RestedXP Forever (A)
 #subgroup Speedrun Guia 1-20
 --#groupid RXP-SRGCE-A1
 #next 14-16 Costa Negra
@@ -812,7 +812,7 @@ RXPGuides.RegisterGuide([[
 #disabledungeons
 #version 1
 << Alliance
-#group RestedXP Forever Guia (A)
+#group Guia RestedXP Forever (A)
 #subgroup Speedrun Guia 1-20
 --#groupid RXP-SRGCE-A1
 #name 14-16 Costa Negra
@@ -2392,7 +2392,7 @@ step
     .mob Reef Crawler
 step
     .goto 1439/1,-386.39,7219.830
-    >>Use o [Tubo de Amostragem Vazio] na base do **Rio Fontescarpa**
+    >>Use o [Tubo de Amostragem Vazio] na base do Rio Fontescarpa
     .complete 4762,1 --Cliffspring River Sample (1)
     .use 12350
 step
@@ -2856,7 +2856,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 << Alliance
 #defaultfor None
-#group RestedXP Forever Guia (A)
+#group Guia RestedXP Forever (A)
 #subgroup Speedrun Guia 1-20
 --#groupid RXP-SRGCE-A1
 #name 15-16 Loch Modan
@@ -3618,7 +3618,7 @@ RXPGuides.RegisterGuide([[
 #disabledungeons
 #version 1
 << Alliance
-#group RestedXP Forever Guia (A)
+#group Guia RestedXP Forever (A)
 #subgroup Speedrun Guia 1-20
 --#groupid RXP-SRGCE-A1
 #name 16-19 Costa Negra
@@ -4068,7 +4068,7 @@ step << Druid
 step << Druid
     #requires earthroot
     .goto 1450/1,-2593.82,7867.06
-	>>Vá para Moonglade
+	>>Vá para Clareira da Lua
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Loganaar|r
     .trainer >> Treine suas magias de classe
     .target Loganaar
@@ -4880,7 +4880,7 @@ step << Shaman
     .target Gearcutter Cogspinner
 step << Shaman
     .goto 1455/0,-1330.28,-4843.6,5,0
-    .zone Stormwind City >> Entre no Deeprun Tram. Pegue o tram para Ventobravo
+    .zone Stormwind City >> Entre no Metrô Correfundo. Pegue o metrô até Ventobravo
     >>|cRXP_WARN_Nível seu|r |T135966:0|t[Primeiros Socorros] |cRXP_WARN_se necessário enquanto aguarda o bonde|r
     >>você precisará de seu|cRXP_WARN_ |T135966:0|t[Primeiros Socorros] |rem nível 80 para uma missão de nível 24|cRXP_WARN_ << Rogue !Dwarf
 ]])
@@ -4890,7 +4890,7 @@ RXPGuides.RegisterGuide([[
 #disabledungeons
 #version 1
 << Alliance !Hunter
-#group RestedXP Forever Guia (A)
+#group Guia RestedXP Forever (A)
 #subgroup Speedrun Guia 1-20
 --#groupid RXP-SRGCE-A1
 #name 19-20 Redridge
@@ -6120,11 +6120,11 @@ RXPGuides.RegisterGuide([[
 #disabledungeons
 #version 1
 << Alliance Hunter
-#group RestedXP Forever Guia (A)
+#group Guia RestedXP Forever (A)
 #subgroup Speedrun Guia 1-20
 --#groupid RXP-SRGCE-A1
 #name 19-21 Costa Negra/Vale Gris
-#next RestedXP Forever Guia (A)\21-23 Vale Gris/Cordilheira das Torres de Pedra
+#next Guia RestedXP Forever (A)\21-23 Vale Gris/Cordilheira das Torres de Pedra
 
 step
     #optional
@@ -6746,11 +6746,11 @@ RXPGuides.RegisterGuide([[
 #disabledungeons
 #version 1
 << Alliance !Hunter
-#group RestedXP Forever Guia (A)
+#group Guia RestedXP Forever (A)
 #subgroup Speedrun Guia 1-20
 --#groupid RXP-SRGCE-A1
 #name 20-21 Costa Negra/Vale Gris
-#next RestedXP Forever Guia (A)\21-23 Serra do Espinhaço/Vale Gris
+#next Guia RestedXP Forever (A)\21-23 Serra do Espinhaço/Vale Gris
 
 
 step << Druid
@@ -6759,7 +6759,7 @@ step << Druid
 	.zoneskip Moonglade
 step << Druid
     .goto 1450/1,-2593.82,7867.06
-	>>Vá para Moonglade
+	>>Vá para Clareira da Lua
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Loganaar|r
     .trainer >> Treine suas magias de classe
     .target Loganaar

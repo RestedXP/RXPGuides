@@ -7,7 +7,7 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #name 1-6 Northshire
 #version 1
-#group RestedXP Guia de Masmorra Eterna (A)
+#group Guia de Masmorras do RestedXP Forever (A)
 #subgroup Guia da Masmorra 1-20
 --#groupid RXP-SRGCE-A1
 #defaultfor Human
@@ -15,7 +15,7 @@ RXPGuides.RegisterGuide([[
 
 
 step
-#include RestedXP Forever Guia (A)\1-6 Northshire
+#include Guia RestedXP Forever (A)\1-6 Northshire
 ]])
 
 
@@ -23,7 +23,7 @@ RXPGuides.RegisterGuide([[
 #forever
 #version 1
 << Alliance
-#group RestedXP Guia de Masmorra Eterna (A)
+#group Guia de Masmorras do RestedXP Forever (A)
 #subgroup Guia da Masmorra 1-20
 --#groupid RXP-SRGCE-A1
 #name 6-11 Elwynn Forest
@@ -31,14 +31,14 @@ RXPGuides.RegisterGuide([[
 #defaultfor Human
 
 step
-#include RestedXP Forever Guia (A)\6-11 Elwynn Forest
+#include Guia RestedXP Forever (A)\6-11 Elwynn Forest
 ]])
 
 RXPGuides.RegisterGuide([[
 #forever
 #version 1
 << Alliance
-#group RestedXP Guia de Masmorra Eterna (A)
+#group Guia de Masmorras do RestedXP Forever (A)
 #subgroup Guia da Masmorra 1-20
 --#groupid RXP-SRGCE-A1
 #name 11-13 Loch Modan
@@ -46,5 +46,5 @@ RXPGuides.RegisterGuide([[
 #defaultfor Human
 
 step
-    #include RestedXP Forever Guia (A)\11-13 Loch Modan@NormalRouteStart-NormalRouteEnd
+    #include Guia RestedXP Forever (A)\11-13 Loch Modan@NormalRouteStart-NormalRouteEnd
 ]])

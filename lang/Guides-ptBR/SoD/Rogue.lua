@@ -1812,7 +1812,7 @@ step
     .zone Tanaris >>|cRXP_WARN_Viagem para|r |cFFfa9602Tanaris|r
 step
     #completewith next
-    .subzone 1336 >>Viaje para a Perdida Rigger Cove
+    .subzone 1336 >>Vá até a Enseada do Armador Perdido
 step
     #label CoinPurse
 	.line Tanaris,70.94,42.85,72.22,44.35,72.58,45.30,71.07,46.03,71.25,47.98,72.39,48.23,72.59,47.10,73.27,47.99,74.25,47.27,73.68,45.89,72.58,45.30,72.22,44.35,70.94,42.85
@@ -2108,7 +2108,7 @@ step
 step
     .train 415918,1
     #completewith next
-    .subzone 190 >> Vá para Hearthglen
+    .subzone 190 >> Vá a Amparo
 step
     #label ToolboxKey
     .train 415918,1

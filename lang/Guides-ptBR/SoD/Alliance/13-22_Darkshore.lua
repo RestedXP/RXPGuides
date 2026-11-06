@@ -908,7 +908,7 @@ step << Druid
     #season 2
     .goto Moonglade,56.21,30.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dendrite Estrelalama|r no andar superior
-    .turnin 5921 >> Vá para Moonglade
+    .turnin 5921 >> Entregue Clareira da Lua
     .target Dendrite Starblaze
     .accept 5929 >> Aceite Espírito do Grande Urso
 step << Druid
@@ -1152,7 +1152,7 @@ step << !Warrior !Rogue
 step << !Warrior !Rogue
     #season 2
     .goto Darkshore,50.81,25.50
-    >>Use o [Tubo de Amostragem Vazio] na base do **Rio Fontescarpa**
+    >>Use o [Tubo de Amostragem Vazio] na base do Rio Fontescarpa
     .complete 4762,1 --Cliffspring River Sample (1)
     .use 12350
 step << !Warrior !Rogue
@@ -2296,7 +2296,7 @@ step
 step
     .goto Darkshore,50.81,25.50
     #season 0 << !Warrior !Rogue
-    >>Use o [Tubo de Amostragem Vazio] na base do **Rio Fontescarpa**
+    >>Use o [Tubo de Amostragem Vazio] na base do Rio Fontescarpa
     .complete 4762,1 --Cliffspring River Sample (1)
     .use 12350
 ----Start of Hunter/Druid 1x and SoD Warrior/Rogue early Althalaxx section (for money+xp)----
@@ -3981,7 +3981,7 @@ step << Druid
     #xprate >1.59
     #optional
     .goto Moonglade,52.53,40.57
-	>>Vá para Moonglade
+	>>Vá para Clareira da Lua
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Loganaar|r
     .trainer >> Treine suas magias de classe
     .target Loganaar
@@ -4328,7 +4328,7 @@ step << Druid
 step << Druid
     #season 2
     .goto Moonglade,52.53,40.57
-	>>Vá para Moonglade
+	>>Vá para Clareira da Lua
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Loganaar|r
     .train 6756 >> Treine suas magias de classe
     .target Loganaar
@@ -6849,7 +6849,7 @@ step
     #optional
     #hardcore << !Paladin
     #completewith DeadminesEnd
-    .abandon 103 >> Abandone Guardião da Chama
+    .abandon 103 >> Abandone A chama não pode apagar
     .dungeon DM
 step << Paladin
     #xprate >1.59
@@ -7166,7 +7166,7 @@ step << Druid
     #optional
     #completewith next
     .goto Moonglade,52.53,40.57
-	>>Vá para Moonglade
+	>>Vá para Clareira da Lua
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Loganaar|r
     .train 8926 >> Treine suas magias de classe
     .target Loganaar

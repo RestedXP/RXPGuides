@@ -6,8 +6,8 @@ RXPGuides.RegisterGuide([[
 #name 1-9 Zephras Isle
 #displayname 1-9 Skyborne << Alliance
 #displayname 1-9 Skyborne << Horde
-#group RestedXP Guia de Masmorra Eterna (A) << Alliance
-#group Guia de Masmorra do RestedXP Forever (H) << Horde
+#group Guia de Masmorras do RestedXP Forever (A) << Alliance
+#group Guia de Masmorras do RestedXP Forever (H) << Horde
 #subgroup Guia da Masmorra 1-20 << Alliance
 #subgroup Masmorra Guia 1-22 << Horde
 #defaultfor Skyborne
@@ -26,8 +26,8 @@ RXPGuides.RegisterGuide([[
 #name 9-13 Zephras Isle
 #displayname 9-13 Skyborne << Alliance
 #displayname 9-12 Skyborne << Horde
-#group RestedXP Guia de Masmorra Eterna (A) << Alliance
-#group Guia de Masmorra do RestedXP Forever (H) << Horde
+#group Guia de Masmorras do RestedXP Forever (A) << Alliance
+#group Guia de Masmorras do RestedXP Forever (H) << Horde
 #subgroup Guia da Masmorra 1-20 << Alliance
 #subgroup Masmorra Guia 1-22 << Horde
 #defaultfor Skyborne

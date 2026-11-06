@@ -6,7 +6,7 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #name 11-13 Costa Negra (Noite Elf)
 #version 1
-#group Guia de Sobrevivência RestedXP (A)
+#group RestedXP Guia de Sobrevivência (A)
 #subgroup RXP Guia de Sobrevivência 1-20
 #next 13-13 Loch Modan (Noite Elf)
 #defaultfor NightElf
@@ -539,7 +539,7 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #name 13-13 Loch Modan (Noite Elf)
 #version 1
-#group Guia de Sobrevivência RestedXP (A)
+#group RestedXP Guia de Sobrevivência (A)
 #subgroup RXP Guia de Sobrevivência 1-20
 #next 13-15 Cerro Oeste
 #defaultfor NightElf
@@ -614,7 +614,7 @@ step
 step
     .goto StormwindClassic,61.149,11.568,25,0
     .goto StormwindClassic,64.0,8.10
-    .zone Ironforge >> Entre no Deeprun Tram. Pegue o metrô para Ironforge
+    .zone Ironforge >> Entre no Bonde Subterrâneo. Pegue o bonde até Altaforja
     .zoneskip Ironforge
     .subzoneskip 809
     .subzoneskip 2257

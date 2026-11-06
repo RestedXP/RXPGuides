@@ -247,7 +247,7 @@ step << Horde
     .fly Undercity >> Voe para Cidade Baixa
     .isOnQuest 87459
 step << Horde
-    .goto Tirisfal Glades,61.85,66.59,60 >> Saia de Undercity
+    .goto Tirisfal Glades,61.85,66.59,60 >> Saia de Cidade Baixa
     .isOnQuest 87459
 step << Alliance
    #completewith next

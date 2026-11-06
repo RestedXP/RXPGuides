@@ -1661,7 +1661,7 @@ step
     #hardcore
     .goto 1411/1,-4665.400,311.900
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Cozinheiro Torka|r
-    .accept 96825 >>Aceite This Fruit Could Morder Trás
+    .accept 96825 >>Aceite A fruta que fura
     .target Cook Torka
 step
     #hardcore
@@ -1713,7 +1713,7 @@ step -- (Barracks)
     #label RazorHill1
     .goto 1411/1,-4815.200,306.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Turroc|r
-    .accept 96822 >>Aceite Para a Honra
+    .accept 96822 >>Aceite Pela honra
     .target Turroc
 step << Warrior/Rogue
     #hardcore
@@ -1753,7 +1753,7 @@ step --south/west of keep
     .goto 1411/1,-4992.700,-234.400,25,0
     .goto 1411/1,-5101.700,-178.500,25,0
     >>Pegue o |cRXP_PICK_Arco do Saqueador|r que está no chão
-    >>|cRXP_WARN_Tem duas localizações de desova diferentes|r
+    >>|cRXP_WARN_Tem dois locais diferentes de surgimento|r
     .complete 96822,1 --|1/1 Raider's Bow
 step --center in keep
     .goto 1411/1,-4994.900,-182.300
@@ -1797,8 +1797,8 @@ step --south/west of keep
     .goto 1411/1,-5101.700,-178.500,0
     .goto 1411/1,-5101.700,-178.500,25,0
     .goto 1411/1,-4992.700,-234.400,25,0
-    >>Saque o |cRXP_PICK_Arco do Saqueador|r no chão
-    >>|cRXP_WARN_Tem duas localizações de desova diferentes|r
+    >>Pegue o |cRXP_PICK_Arco do Saqueador|r que está no chão
+    >>|cRXP_WARN_Tem dois locais diferentes de surgimento|r
     .complete 96822,1 --|1/1 Raider's Bow
 step  --northern tower
     #label AgedEnvelope
@@ -1966,14 +1966,14 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com|r |cRXP_FRIENDLY_Gar'Thok|r
     .turnin 784 >>Entregue Aniquile os invasores
     .turnin 830 >>Entregue As ordens do almirante
-    .turnin 96821 >>Entregue Legging It
+    .turnin 96821 >>Entregue Dando no pé
     .accept 825 >>Aceite Dos destroços...
     .accept 831 >>Aceite As ordens do almirante
     .target +Gar'Thok
 step
     #optional
     .goto 1411/1,-4724.900,287.300
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com Orgnil|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Orgnil Chaganalma|r
     .accept 99048 >>Aceite A mão desaparecida
     .target Orgnil Soulscar
     .xp <8,1
@@ -2184,7 +2184,7 @@ step << !Mage !Hunter !Druid
     .train 284,3 << Warrior
 step
     .goto 1411/1,-4815.400,306.500
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com Turroc|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Turroc|r
     .turnin 96822 >>Entregue Pela honra
     .target Turroc
 step << Warrior
@@ -2253,7 +2253,7 @@ step
     .money <0.05
 step
     .goto 1411/1,-4724.900,287.300
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com Orgnil|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Orgnil Chaganalma|r
     .accept 99048 >>Aceite A mão desaparecida
     .target Orgnil Soulscar
 step
@@ -2326,7 +2326,7 @@ step
 step --center of first small island
     #label MartEgg
     .goto 1411/1,-5599.500,-716.700
-    >>Mate a |cRXP_ENEMY_Bloodtalon Matriarch|r. Saqueie-a para obter os |cRXP_LOOT_Bloodtalon Matriarch Eggs|r
+    >>Mate a |cRXP_ENEMY_Matriarca Garrassangre|r. Saqueie-a para pegar os |cRXP_LOOT_Ovos da Matriarca Garrassangre|r
     .complete 97223,1 --|1/1 Bloodtalon Matriarch Eggs
     .mob Bloodtalon Matriarch
 step
@@ -2631,7 +2631,7 @@ step << Hunter
 	.goto 1411/1,-4208.1,98.71,50,0
 	.goto 1411/1,-4300.1,57.11,50,0
 	.goto 1411/1,-4456.61,65.57,50,0
-    .xp 9+4960 >> Farme até 4960+/6500xp
+    .xp 9+4960 >> Mate inimigos até atingir 4960+/6500 de xp
 step
     .goto 1411/1,-4709.36,274.960
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com|r |cRXP_FRIENDLY_Gar'Thok|r
@@ -2827,7 +2827,7 @@ step << !Hunter
     .goto 1411/1,-4164.21,459.32,50,0
     .goto 1411/1,-4180.08,382.12,50,0
     .goto 1411/1,-4251.99,384.23,50,0
-    >>Mate os |cRXP_ENEMY_Razormane Dustrunners|r e os |cRXP_ENEMY_Razormane Battleguards|r
+    >>Mate |cRXP_ENEMY_Levanta-poeira Crinavalha|r e |cRXP_ENEMY_Guardas de Batalha Crinavalha|r
     .complete 837,3 --Razormane Dustrunner (4)
     .mob +Razormane Dustrunner
     .complete 837,4 --Razormane Battleguard (4)
@@ -2869,7 +2869,7 @@ step
     .goto 1411/1,-4198.05,911.22,30,0
     .goto 1411/1,-4165.27,903.11,20 >>Pule para dentro do Desfiladeiro do Trovão << !Hunter !Warlock
     .goto 1411/1,-4165.27,903.11,20 >>|cRXP_WARN_Dispense seu|r |T136218:0|t[Diabrete] |cRXP_WARN_clicando com o botão direito no quadro de unidade dele e selecionando dispensar|r << Warlock
-    .cast 2641 >>|cRXP_WARN_Lance|r |T136095:0|t[Dispensar Ajudante] |cRXP_WARN_e então pule para Trovão Serra|r << Hunter
+    .cast 2641 >>|cRXP_WARN_Use|r |T136095:0|t[Dispensar Ajudante] |cRXP_WARN_e depois pule para dentro do Desfiladeiro do Trovão|r << Hunter
 step
     #softcore
     .goto 1411/1,-4190.12,868.22
@@ -3123,7 +3123,7 @@ step
     .target Innkeeper Grosk
     .money <0.0375
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com|r |cRXP_FRIENDLY_Orgnil|r e |cRXP_FRIENDLY_Gar'Thok|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com|r |cRXP_FRIENDLY_Orgnil Chaganalma|r e |cRXP_FRIENDLY_Gar'Thok|r
     .turnin 806 >>Entregue Tempestades sombrias
     .accept 828 >>Aceite Margoz
     .target +Orgnil Soulscar
@@ -3624,7 +3624,7 @@ step << !Shaman !Hunter
 step << !Shaman !Hunter
     .goto 1454/1,-4125.79,1920.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thrall|r
-    .accept 5726 >>Aceite Inimigos Escondidos
+    .accept 5726 >>Aceite Inimigos ocultos
     .target Thrall
     .dungeon RFC
 step << Shaman/Hunter
@@ -3765,8 +3765,8 @@ step << Shaman/Hunter
     .isOnQuest 924
 step << !Shaman !Hunter
     #completewith Gazzuz
-    >>Mate os |cRXP_ENEMY_Burning Blade Orcs|r. Saqueie-os para obter a |cRXP_LOOT_Lieutenant's Insignia|r
-    >>|cRXP_WARN_Esta é uma pré-missão para RFC. Tem uma chance de drop baixa|r
+    >>Mate |cRXP_ENEMY_Orcs da Lâmina Ardente|r. Pegue uma |cRXP_LOOT_Insígnia do Tenente|r deles
+    >>|cRXP_WARN_Esta é uma pré-missão para Cavernas Ígneas. A chance de saque é baixa|r
     .complete 5726,1 --Lieutenant's Insignia (1)
     .mob Burning Blade Fanatic
     .mob Burning Blade Apprentice
@@ -3775,9 +3775,9 @@ step << !Shaman !Hunter
     #label Gazzuz
     .goto 1411/1,-4701.42,1455.83
     >>Mate o |cRXP_ENEMY_Gazz'uz|r. Saqueie-o para pegar |T134085:0|t[|cRXP_LOOT_Olho da Sombra Ardente|r]
-    >>|cRXP_WARN_Cuidado pois ele é MUITO difícil. Sinta-se à vontade para pular esta missão se você não conseguir se agrupar ou enfrentá-lo sozinho|r
+    >>|cRXP_WARN_Cuidado, pois ele é MUITO difícil. Pode pular esta missão se não conseguir formar um grupo ou derrotá-lo sozinho|r
     >>|cRXP_WARN_Use o |T134085:0|t[|cRXP_LOOT_Olho da Sombra Ardente|r] para iniciar a missão|r
-    >>|cRXP_WARN_Use LoS (linha de visão) para evitar |cRXP_ENEMY_Gazz'uz|r suas Setas das Sombras|r
+    >>|cRXP_WARN_Use LoS (linha de visão) para evitar as Setas Sombrias de |cRXP_ENEMY_Gazz'uz|r|r
     >>|cRXP_WARN_Você pode correr até as poças de água dentro da caverna para despistar o|r |cRXP_ENEMY_Emissário do Caos|r |cRXP_WARN_depois de matar|r |cRXP_ENEMY_Gazz'uz|r
     .collect 4903,1,832,1 --Collect Eye of Burning Shadow
     .accept 832 >>Aceite Sombras incandescentes
@@ -3797,8 +3797,8 @@ step << !Shaman !Hunter
     .goto 1411/1,-4679.75,1501.31,15,0
     .goto 1411/1,-4684.50,1466.06,15,0
     .goto 1411/1,-4805.59,1495.67,15,0
-    >>Mate os |cRXP_ENEMY_Burning Blade Orcs|r. Saqueie-os para obter a |cRXP_LOOT_Lieutenant's Insignia|r
-    >>|cRXP_WARN_Esta é uma pré-missão para RFC. Tem uma chance de drop baixa|r
+    >>Mate |cRXP_ENEMY_Orcs da Lâmina Ardente|r. Pegue uma |cRXP_LOOT_Insígnia do Tenente|r deles
+    >>|cRXP_WARN_Esta é uma pré-missão para Cavernas Ígneas. A chance de saque é baixa|r
     .complete 5726,1 --Lieutenant's Insignia (1)
     .mob Burning Blade Fanatic
     .mob Burning Blade Apprentice
@@ -3946,8 +3946,8 @@ step
     .goto 1420/0,54.600,1996.600
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Hadric Harlson|r
     .turnin 96895 >>Entregue O emissário Argênteo
-    .accept 96897 >>Aceite The Cult of the Maldição
-    .accept 96898 >>Aceite Remnants of Guerra
+    .accept 96897 >>Aceite A Seita dos malditos
+    .accept 96898 >>Aceite Vestígios da guerra
     .target Hadric Harlson
     .maxlevel 11
 step
@@ -3983,8 +3983,8 @@ step
 step
     .goto 1420/0,54.500,1996.400
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Hadric Harlson|r
-    .turnin 96897 >>Entregue A Seita da Maldição
-    .turnin 96898 >>Entregue Remanescentes de Guerra
+    .turnin 96897 >>Entregue A Seita dos malditos
+    .turnin 96898 >>Entregue Vestígios da guerra
     .target Hadric Harlson
     .isQuestComplete 96897
     .isQuestComplete 96898
@@ -3992,14 +3992,14 @@ step
     #optional
     .goto 1420/0,54.500,1996.400
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Hadric Harlson|r
-    .turnin 96897 >>Entregue A Seita da Maldição
+    .turnin 96897 >>Entregue A Seita dos malditos
     .target Hadric Harlson
     .isQuestComplete 96897
 step
     #optional
     .goto 1420/0,54.500,1996.400
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Hadric Harlson|r
-    .turnin 96898 >>Entregue Remanescentes de Guerra
+    .turnin 96898 >>Entregue Vestígios da guerra
     .target Hadric Harlson
     .isQuestComplete 96898
 step

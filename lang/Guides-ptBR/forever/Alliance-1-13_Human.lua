@@ -9,7 +9,7 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #name 1-6 Northshire
 #version 1
-#group RestedXP Forever Guia (A)
+#group Guia RestedXP Forever (A)
 #subgroup Speedrun Guia 1-20
 --#groupid RXP-SRGCE-A1
 #defaultfor Human
@@ -787,7 +787,7 @@ RXPGuides.RegisterGuide([[
 #season 0,1
 #version 1
 << Alliance
-#group RestedXP Forever Guia (A)
+#group Guia RestedXP Forever (A)
 #subgroup Speedrun Guia 1-20
 --#groupid RXP-SRGCE-A1
 #name 6-11 Elwynn Forest
@@ -4135,7 +4135,7 @@ RXPGuides.RegisterGuide([[
 #season 0,1
 #version 1
 << Alliance
-#group RestedXP Forever Guia (A)
+#group Guia RestedXP Forever (A)
 #subgroup Speedrun Guia 1-20
 --#groupid RXP-SRGCE-A1
 #name 11-13 Loch Modan

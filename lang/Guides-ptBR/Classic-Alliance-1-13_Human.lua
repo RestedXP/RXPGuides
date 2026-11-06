@@ -103,7 +103,7 @@ step << Warlock
     .goto Elwynn Forest,56.7,44.0
     >>|cRXP_WARN_Corra para dentro da Tenda no Acampamento Défias|r
     >>Abra os |cRXP_PICK_Livros Roubados|r. Saque-os para obter o |cRXP_LOOT_Poderes do Caos|r
-    >>|cRXP_WARN_Você pode saquear o |cRXP_LOOT_Powers of the Caos|r com segurança enquanto está dentro da Tenda! Assista ao vídeo sobre como fazer isso|r
+    >>|cRXP_WARN_Você pode saquear o|cRXP_LOOT_ Poderes do Caos|r com segurança dentro da Tenda! Assista ao vídeo sobre como fazer isso|r
     .link https://youtu.be/3qQwsJhAZIk >> |cRXP_WARN_Clique aqui para referência de vídeo|r
     .complete 1598,1 --Collect Powers of the Void (x1)
 step << Warlock
@@ -118,7 +118,7 @@ step << Warlock
     .goto Elwynn Forest,56.7,44.0
     >>|cRXP_WARN_Corra para dentro da Tenda no Acampamento Défias|r
     >>Abra os |cRXP_PICK_Livros Roubados|r. Saque-os para obter o |cRXP_LOOT_Poderes do Caos|r
-    >>|cRXP_WARN_Você pode saquear o |cRXP_LOOT_Powers of the Caos|r com segurança enquanto está dentro da Tenda! Assista ao vídeo sobre como fazer isso|r
+    >>|cRXP_WARN_Você pode saquear o|cRXP_LOOT_ Poderes do Caos|r com segurança dentro da Tenda! Assista ao vídeo sobre como fazer isso|r
     .link https://www.youtube.com/watch?v=_-KEke9Yeik >> |cRXP_WARN_Clique aqui para referência em vídeo|r
     .complete 1598,1 --Collect Powers of the Void (x1)
 step << Warlock

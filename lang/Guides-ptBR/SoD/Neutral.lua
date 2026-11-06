@@ -343,7 +343,7 @@ RXPGuides.RegisterGuide([[
 
 step << Druid
     #completewith next
-    .zone Ashenvale >> Viaje para Vale Gris
+    .zone Ashenvale >> Vá até o Vale Gris
 step << Druid
     .goto Ashenvale,86.963,43.159
     >>Clique na |cRXP_PICK_Owl Estátua|r para começar o evento
@@ -523,7 +523,7 @@ step << Warrior
     .train 425444,1
 step << Warrior
     #completewith next
-    .zone Ashenvale >> Viaje para Vale Gris
+    .zone Ashenvale >> Vá até o Vale Gris
     .train 425444,1
 step << Warrior
     .goto Ashenvale,43.513,70.463
@@ -749,7 +749,7 @@ step
 step
     #season 2
     #completewith next
-    .zone Ashenvale >>Viaje para Vale Gris
+    .zone Ashenvale >>Vá até o Vale Gris
 step
     #season 2
     .goto Ashenvale,37.91,34.49,40,0
@@ -943,7 +943,7 @@ step
     .mob Dark Rider
 step
     #completewith next
-    .zone Duskwood >>Vá para Floresta do Crepúsculo
+    .zone Duskwood >>Va até a Floresta do Crepúsculo
 step
     .train 425312,1 << Priest
     .train 426180,1 << Paladin

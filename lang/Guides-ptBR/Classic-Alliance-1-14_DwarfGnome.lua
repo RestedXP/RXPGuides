@@ -5808,7 +5808,7 @@ step << !Paladin
 step << Dwarf Paladin
     .goto StormwindClassic,61.149,11.568,25,0
     .goto StormwindClassic,64.0,8.10
-    .zone Ironforge >> Entre no Deeprun Tram. Pegue o metrô para Ironforge
+    .zone Ironforge >> Entre no Bonde Subterrâneo. Pegue o bonde até Altaforja
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -5965,7 +5965,7 @@ step
     #optional
     .goto StormwindClassic,61.149,11.568,25,0
     .goto StormwindClassic,64.0,8.10
-    .zone Ironforge >> Entre no Deeprun Tram. Pegue o metrô para Ironforge
+    .zone Ironforge >> Entre no Bonde Subterrâneo. Pegue o bonde até Altaforja
     .zoneskip Loch Modan
     .zoneskip Dun Morogh
     .zoneskip Wetlands
@@ -8761,7 +8761,7 @@ step << skip --logout skip
     #hardcore
     .goto StormwindClassic,61.149,11.568,25,0
     .goto StormwindClassic,64.0,8.10
-    .zone Ironforge >> Entre no Deeprun Tram. Pegue o metrô para Ironforge
+    .zone Ironforge >> Entre no Bonde Subterrâneo. Pegue o bonde até Altaforja
     .link https://www.youtube.com/watch?v=M_tXROi9nMQ >> |cRXP_WARN_Faça um logout skip dentro do Tram. Clique aqui para ver o vídeo de referência|r
 step
     #hardcore

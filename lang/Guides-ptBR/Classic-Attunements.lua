@@ -1521,7 +1521,7 @@ step
     #hardcoreserver
     .goto 1415,48.624,64.186
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Franclorn Forjífice|r
-    >>|cRXP_WARN_Você deve ter o|r |T136215:0|t[Visão de Brilhâmbar] |cRXP_WARN_debuff para vê-lo|r
+    >>|cRXP_WARN_Você precisa estar com o efeito negativo|r |T136215:0|t[Visão de Brilhâmbar] |cRXP_WARN_para vê-lo|r
     .accept 3801 >> Aceite Legado dos Ferros Negros
     .turnin 3801 >> Entregue Legado dos Ferros Negros
     .accept 3802 >> Aceite Legado dos Ferros Negros

@@ -9,7 +9,7 @@ RXPGuides.RegisterGuide([[
 #displayname 14-16 Terras Devastadas << !Shaman !Hunter !Tauren
 #displayname 15-16 Terras Devastadas << Paladin
 #version 11
-#group Guia de Masmorra do RestedXP Forever (H)
+#group Guia de Masmorras do RestedXP Forever (H)
 #subgroup Masmorra Guia 1-22
 --#groupid RXP-SRGCE-H1
 #next 16-17 Cavernas Ígneas
@@ -1690,7 +1690,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 16-17 Cavernas Ígneas
 #version 11
-#group Guia de Masmorra do RestedXP Forever (H)
+#group Guia de Masmorras do RestedXP Forever (H)
 #subgroup Masmorra Guia 1-22
 --#groupid RXP-SRGCE-H1
 #next 17-18 Ruins of Lordaeron
@@ -1767,7 +1767,7 @@ step << Priest
     .xp <18,1
 step << Mage
     .goto 1454/1,-4218.64,1473.72
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t Fale com|r |cRXP_FRIENDLY_Pephredo|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com|r |cRXP_FRIENDLY_Pefreda|r
     .train 2120 >> Treine suas magias de classe
     .target Pephredo
     .xp <16,1
@@ -1775,7 +1775,7 @@ step << Mage
 step << Mage
     #optional
     .goto 1454/1,-4218.64,1473.72
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t Fale com|r |cRXP_FRIENDLY_Pephredo|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com|r |cRXP_FRIENDLY_Pefreda|r
     .train 3140 >> Treine suas magias de classe
     .target Pephredo
     .xp <18,1
@@ -2186,7 +2186,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 17-18 Ruins of Lordaeron
 #version 11
-#group Guia de Masmorra do RestedXP Forever (H)
+#group Guia de Masmorras do RestedXP Forever (H)
 #subgroup Masmorra Guia 1-22
 --#groupid RXP-SRGCE-H1
 #next 18-21 Savanas
@@ -2337,7 +2337,7 @@ step
     .zoneskip Silverpine Forest,1
     .goto 1421/0,1533.96,474.43
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Karos Razok::2226|r
-    .fly Undercity >>Voe para Undercity
+    .fly Undercity >>Voe para Cidade Baixa
     .target Karos Razok::2226
     .zoneskip Undercity
 step
@@ -2587,7 +2587,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 18-21 Savanas
 #version 11
-#group Guia de Masmorra do RestedXP Forever (H)
+#group Guia de Masmorras do RestedXP Forever (H)
 #subgroup Masmorra Guia 1-22
 --#groupid RXP-SRGCE-H1
 #next 21-22 Caverna Ululante
@@ -3587,7 +3587,7 @@ step << Warlock
     .dungeon DM
 step << Mage
     .goto 1454/1,-4218.64,1473.72
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t Fale com|r |cRXP_FRIENDLY_Pephredo|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com|r |cRXP_FRIENDLY_Pefreda|r
     .train 3140 >> Treine suas magias de classe
     .target Pephredo
     .xp <18,1
@@ -3596,7 +3596,7 @@ step << Mage
 step << Mage
     #optional
     .goto 1454/1,-4218.64,1473.72
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t Fale com|r |cRXP_FRIENDLY_Pephredo|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com|r |cRXP_FRIENDLY_Pefreda|r
     .train 1953 >> Treine suas magias de classe
     .target Pephredo
     .xp <20,1
@@ -4399,9 +4399,9 @@ RXPGuides.RegisterGuide([[
 #forever
 << Horde
 #name 21-22 Caverna Ululante
-#next 22-24 Hillsbrad
+#next 22-24 Eira dos montes
 #version 11
-#group Guia de Masmorra do RestedXP Forever (H)
+#group Guia de Masmorras do RestedXP Forever (H)
 #subgroup Masmorra Guia 1-22
 --#groupid RXP-SRGCE-H1
 
@@ -5120,7 +5120,7 @@ step << Priest/Warlock
     .target Katis
 step << Mage
     .goto 1454/1,-4218.64,1473.72
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t Fale com|r |cRXP_FRIENDLY_Pephredo|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com|r |cRXP_FRIENDLY_Pefreda|r
     .train 2138 >> Treine suas magias de classe
     .target Pephredo
     .xp <22,1
@@ -5128,7 +5128,7 @@ step << Mage
 step << Mage
     #optional
     .goto 1454/1,-4218.64,1473.72
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t Fale com|r |cRXP_FRIENDLY_Pephredo|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com|r |cRXP_FRIENDLY_Pefreda|r
     .train 2121 >> Treine suas magias de classe
     .target Pephredo
     .xp <24,1

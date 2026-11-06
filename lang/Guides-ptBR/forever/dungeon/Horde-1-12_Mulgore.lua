@@ -7,7 +7,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 1-6 Mulgore
 #version 11
-#group Guia de Masmorra do RestedXP Forever (H)
+#group Guia de Masmorras do RestedXP Forever (H)
 #subgroup Masmorra Guia 1-22
 --#groupid RXP-SRGCE-H1
 #defaultfor Tauren
@@ -24,7 +24,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 6-12 Mulgore
 #version 11
-#group Guia de Masmorra do RestedXP Forever (H)
+#group Guia de Masmorras do RestedXP Forever (H)
 #subgroup Masmorra Guia 1-22
 --#groupid RXP-SRGCE-H1
 #defaultfor Tauren

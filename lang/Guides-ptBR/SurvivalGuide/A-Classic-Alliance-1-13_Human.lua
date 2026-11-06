@@ -9,7 +9,7 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #name 1-6 Northshire
 #version 1
-#group Guia de Sobrevivência RestedXP (A)
+#group RestedXP Guia de Sobrevivência (A)
 #subgroup RXP Guia de Sobrevivência 1-20
 #defaultfor Human
 #next 6-11 Elwynn Forest; 6-13 Elwynn Forest
@@ -36,7 +36,7 @@ step << Warlock
     .goto Elwynn Forest,56.7,44.0
     >>|cRXP_WARN_Corra para dentro da Tenda no Acampamento Défias|r
     >>Abra os |cRXP_PICK_Livros Roubados|r. Saque-os para obter o |cRXP_LOOT_Poderes do Caos|r
-    >>|cRXP_WARN_Você pode saquear o |cRXP_LOOT_Powers of the Caos|r com segurança enquanto está dentro da Tenda! Assista ao vídeo sobre como fazer isso|r
+    >>|cRXP_WARN_Você pode saquear o|cRXP_LOOT_ Poderes do Caos|r com segurança dentro da Tenda! Assista ao vídeo sobre como fazer isso|r
     .link https://youtu.be/3qQwsJhAZIk >> |cRXP_WARN_Clique aqui para referência de vídeo|r
     .complete 1598,1 --Collect Powers of the Void (x1)
 step << Warlock
@@ -374,7 +374,7 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #name 6-11 Elwynn Forest
 #version 1
-#group Guia de Sobrevivência RestedXP (A)
+#group RestedXP Guia de Sobrevivência (A)
 #subgroup RXP Guia de Sobrevivência 1-20
 #defaultfor Human
 #next 11-13 Loch Modan
@@ -1582,7 +1582,7 @@ step
     #completewith next
     .goto StormwindClassic,61.149,11.568,25,0
     .goto StormwindClassic,64.0,8.10
-    .zone Ironforge >> Entre no Deeprun Tram. Pegue o metrô para Ironforge
+    .zone Ironforge >> Entre no Bonde Subterrâneo. Pegue o bonde até Altaforja
     >>|cRXP_WARN_Nível seu|r |T135966:0|t[Primeiros Socorros] |cRXP_WARN_se necessário enquanto aguarda o bonde|r
 step
     >>|cRXP_WARN_Suba no Tram quando chegar. Saia no outro lado e procure |cRXP_FRIENDLY_Monty|r na plataforma do meio|r
@@ -1857,7 +1857,7 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #name 11-13 Loch Modan
 #version 1
-#group Guia de Sobrevivência RestedXP (A)
+#group RestedXP Guia de Sobrevivência (A)
 #subgroup RXP Guia de Sobrevivência 1-20
 #defaultfor Human
 #next 13-15 Cerro Oeste

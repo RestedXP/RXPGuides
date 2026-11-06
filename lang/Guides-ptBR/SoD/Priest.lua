@@ -1638,7 +1638,7 @@ step
 step
     >>|cRXP_WARN_A runa de|r |T135978:0|t[|cRXP_FRIENDLY_Toque Vampírico|r] |cRXP_WARN_cai do chefe final do Cânion do Demônio Caído, a nova masmorra adicionada em SoD. Comece a procurar por um grupo para ela enquanto você se dirige para Vale Gris|r
     >>Se você está voando, voe para Ponto Talendris em Azshara em vez de Astranaar. É mais próximo da entrada da masmorra << Alliance
-    .zone Ashenvale >> Viaje para Vale Gris
+    .zone Ashenvale >> Vá até o Vale Gris
 step
     .goto Ashenvale,84.5,75.0,50 >> Vá para a entrada da masmorra Cânion do Demônio Caído
 step

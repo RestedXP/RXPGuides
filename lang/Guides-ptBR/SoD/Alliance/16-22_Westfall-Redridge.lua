@@ -1416,7 +1416,7 @@ step << Hunter
 step
     .goto StormwindClassic,61.149,11.568,25,0
     .goto StormwindClassic,64.0,8.10
-    .zone Ironforge >> Entre no Deeprun Tram. Pegue o metrô para Ironforge
+    .zone Ironforge >> Entre no Bonde Subterrâneo. Pegue o bonde até Altaforja
 step << Warlock
     .goto Ironforge,51.1,8.7,15,0
     .goto Ironforge,50.343,5.657

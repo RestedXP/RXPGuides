@@ -1288,7 +1288,7 @@ step
     #requires Frast
     .goto 1426/0,-1612.42,-5698.02
     >>Fale com |cRXP_FRIENDLY_Umídio|r
-    .train 2575 >> Treine |T136248:0|t[Mineração]
+    .train 2575 >> Aprenda |T136248:0|t[Mineração]
     .target Dank Drizzlecut
 step
     #label Shortcut1
@@ -2730,7 +2730,7 @@ step
     #requires Frast
     .goto 1426/0,-1612.42,-5698.02
     >>Fale com |cRXP_FRIENDLY_Umídio|r
-    .train 2575 >> Treine |T136248:0|t[Mineração]
+    .train 2575 >> Aprenda |T136248:0|t[Mineração]
     .target Dank Drizzlecut
 step
     #label Shortcut1

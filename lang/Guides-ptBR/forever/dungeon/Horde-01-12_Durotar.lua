@@ -7,7 +7,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 1-6 Durotar
 #version 11
-#group Guia de Masmorra do RestedXP Forever (H)
+#group Guia de Masmorras do RestedXP Forever (H)
 #subgroup Masmorra Guia 1-22
 --#groupid RXP-SRGCE-H1
 #defaultfor Troll/Orc
@@ -24,7 +24,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 6-10 Durotar
 #version 11
-#group Guia de Masmorra do RestedXP Forever (H)
+#group Guia de Masmorras do RestedXP Forever (H)
 #subgroup Masmorra Guia 1-22
 --#groupid RXP-SRGCE-H1
 #defaultfor Troll/Orc
@@ -40,11 +40,11 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 10-12 Durotar
 #version 11
-#group Guia de Masmorra do RestedXP Forever (H)
+#group Guia de Masmorras do RestedXP Forever (H)
 #subgroup Masmorra Guia 1-22
 --#groupid RXP-SRGCE-H1
 #defaultfor Troll/Orc
-#next 10-12 Tirisfal (Orc/Trolls) << !Hunter !Shaman !Tauren !Skyborne
+#next 10-12 Clareiras de Tirisfal (Orc/Trolls) << !Hunter !Shaman !Tauren !Skyborne
 #next 12-16 Terras Devastadas << Orc Hunter/Troll Hunter/Orc Shaman/Troll Shaman
 
 
@@ -57,9 +57,9 @@ step
 RXPGuides.RegisterGuide([[
 #forever
 << Horde
-#name 10-12 Tirisfal (Orc/Trolls)
+#name 10-12 Clareiras de Tirisfal (Orc/Trolls)
 #version 11
-#group Guia de Masmorra do RestedXP Forever (H)
+#group Guia de Masmorras do RestedXP Forever (H)
 #subgroup Masmorra Guia 1-22
 --#groupid RXP-SRGCE-H1
 #defaultfor !Hunter !Shaman !Tauren !Skyborne !Undead

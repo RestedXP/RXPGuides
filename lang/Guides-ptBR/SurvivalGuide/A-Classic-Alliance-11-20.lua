@@ -10,7 +10,7 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #name 13-15 Cerro Oeste
 #version 1
-#group Guia de Sobrevivência RestedXP (A)
+#group RestedXP Guia de Sobrevivência (A)
 #subgroup RXP Guia de Sobrevivência 1-20
 #defaultfor Human/Gnome/Dwarf/NightElf
 #next 15-18 Costa Negra
@@ -438,7 +438,7 @@ step << Druid
     .goto Moonglade,44.1444,45.227
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Silva Fil'naveth|r
     .skipgossip 1
-    .fly Teldrassil >> Voe para a Vila de Rut'theran
+    .fly Teldrassil >> Voe para Vila de Rut’theran
     .target Silva Fil'naveth
 step << Druid
     #completewith next
@@ -545,7 +545,7 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #name 15-18 Costa Negra
 #version 1
-#group Guia de Sobrevivência RestedXP (A)
+#group RestedXP Guia de Sobrevivência (A)
 #subgroup RXP Guia de Sobrevivência 1-20
 --#defaultfor !NightElf
 #next 18-19 Loch Modan
@@ -819,7 +819,7 @@ step
     .accept 4725 >> Aceite Tartaruga Marinha Encalhada
 step
     .goto Darkshore,50.81,25.50
-    .use 12350 >>Use o [Tubo de Amostragem Vazio] na base do **Rio Fontescarpa**
+    .use 12350 >>Use o [Tubo de Amostragem Vazio] na base do Rio Fontescarpa
     .complete 4762,1
 step
 #map Darkshore
@@ -1598,7 +1598,7 @@ step << Druid
 	.zoneskip Moonglade
 step << Druid
     .goto Moonglade,56.2,30.4
-    >>Vá para Moonglade
+    >>Vá para Clareira da Lua
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Dendrite Stellardor|r
     .turnin 6124 >> Entregue Curando os Enfermos
     .accept 6125 >> Aceite Poder sobre o Veneno
@@ -1612,7 +1612,7 @@ step << Druid
     .goto Moonglade,44.1444,45.227
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Silva Fil'naveth|r
     .skipgossip 1
-    .fly Teldrassil >> Voe para a Vila de Rut'theran
+    .fly Teldrassil >> Voe para Vila de Rut’theran
     .target Silva Fil'naveth
     .zoneskip Teldrassil
     .zoneskip Darnassus
@@ -1654,7 +1654,7 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #name 20-21 Costa Negra/Vale Gris
 #version 1
-#group Guia de Sobrevivência RestedXP (A)
+#group RestedXP Guia de Sobrevivência (A)
 #subgroup RXP Guia de Sobrevivência 1-20
 #next 21-23 Serra do Espinhaço/Vale Gris
 
@@ -1664,7 +1664,7 @@ step << Druid
 	.zoneskip Moonglade
 step << Druid
     .goto Moonglade,52.53,40.57
-	>>Vá para Moonglade
+	>>Vá para Clareira da Lua
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Loganaar|r
     .trainer >> Treine suas magias de classe
     .target Loganaar
@@ -2194,7 +2194,7 @@ step
 .dungeon WC
     #label EnterWC
     .goto 1414,52.37,55.20
-    +Entre nas Cavernas do Lamento
+    +Entre na Caverna Ululante
     .zoneskip 1414,1 -- similar to stockades, no subzone for WC
 step
 .dungeon WC

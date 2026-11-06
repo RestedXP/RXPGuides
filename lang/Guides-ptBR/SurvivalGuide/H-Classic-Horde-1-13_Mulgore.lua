@@ -11,7 +11,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 1-6 Tauren
 #version 1
-#group Guia de Sobrevivência RestedXP (H)
+#group RestedXP Guia de Sobrevivência (H)
 #subgroup RXP Guia de Sobrevivência 1-20
 #defaultfor Tauren
 #next 6-13 Tauren
@@ -433,7 +433,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 6-13 Tauren
 #version 1
-#group Guia de Sobrevivência RestedXP (H)
+#group RestedXP Guia de Sobrevivência (H)
 #subgroup RXP Guia de Sobrevivência 1-20
 #defaultfor Tauren
 #next 13-15 Floresta de Pinhaprata
@@ -768,7 +768,7 @@ step << Hunter
     .xp <8,1
 step << Druid
     .goto Mulgore,48.48,59.64
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gennia|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gennia Runa Totem|r
     .train 5186 >>Treine suas magias de classe
     .target Gennia Runetotem
     .xp <8,1
@@ -957,7 +957,7 @@ step << Shaman
     .xp <8,1
 step << Druid
     .goto Mulgore,48.48,59.64
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gennia|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gennia Runa Totem|r
     .train 5186 >>Treine suas magias de classe
     .target Gennia Runetotem
     .xp <8,1
@@ -1335,14 +1335,14 @@ step << Hunter
     .target Yaw Sharpmane
 step << Druid
     .goto Mulgore,48.48,59.64
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gennia|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gennia Runa Totem|r
     .trainer >>Treine suas magias de classe
     .accept 5928 >>Aceite Atendendo o chamado
     .target Gennia Runetotem
     .isQuestAvailable 5928
 step << Druid
     .goto Mulgore,48.48,59.64
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gennia|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gennia Runa Totem|r
     .train 8924 >>Treine suas magias de classe
     .target Gennia Runetotem
 step << Hunter
@@ -1351,7 +1351,7 @@ step << Hunter
     .goto Mulgore,42.87,54.88,50,0
     .goto Mulgore,40.73,55.60,50,0
     .goto Mulgore,39.38,57.43,50,0
-    .use 15914 >> |cRXP_WARN_Use seu|r |T132164:0|t[Bastão de Adestramento] |cRXP_WARN_em um|r |cRXP_ENEMY_Pinote Adulto|r |cRXP_WARN_ao alcance máximo|r
+    .use 15914 >> |cRXP_WARN_Use seu|r |T132164:0|t[Bastão de Adestramento] |cRXP_WARN_em um|r |cRXP_ENEMY_Pinote Adulto|r |cRXP_WARN_na distância máxima|r
     .complete 6061,1 --Tame an Adult Plainstrider (1)
     .mob Adult Plainstrider
 step << Hunter
@@ -1548,7 +1548,7 @@ step << Hunter/Druid
     #completewith next
     .goto The Barrens,51.50,30.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Devrak|r
-    .fly Thunder Bluff >>Voe para Trovão Blefe
+    .fly Thunder Bluff >>Voe para Penhasco do Trovão
     .target Devrak
     .zoneskip Thunder Bluff
 step << Hunter/Druid
@@ -1603,7 +1603,7 @@ step << Druid
 step << Druid
     .goto Moonglade,56.21,30.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dendrite Stellardor|r
-    .turnin 5922 >>Vá para Moonglade
+    .turnin 5922 >>Entregue Clareira da Lua
     .accept 5930 >>Aceite Espírito do Grande Urso
     .target Dendrite Starblaze
 step << Druid
@@ -1631,7 +1631,7 @@ step << Druid
     #completewith next
     .goto Moonglade,44.29,45.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Bonthen Vento do Prado|r
-    .fly Thunder Bluff >> Voe para Trovão Blefe
+    .fly Thunder Bluff >> Voe para Penhasco do Trovão
     .target Bunthen Plainswind
     .zoneskip Thunder Bluff
     .cooldown item,6948,<0
@@ -1680,7 +1680,7 @@ step << Hunter
     #completewith ReturntoJahan
     .goto Thunder Bluff,47.00,49.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tal|r
-    .fly Crossroads >>Voe para a Encruzilhada
+    .fly Crossroads >>Voe para A Encruzilhada
     .target Tal
     .zoneskip The Barrens
 step << Druid
@@ -1704,7 +1704,7 @@ step << Druid
     #completewith next
     .goto The Barrens,44.45,59.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Omusa Chifre Troante|r
-    .fly Thunder Bluff >> Voe para Trovão Blefe
+    .fly Thunder Bluff >> Voe para Penhasco do Trovão
     .target Omusa Thunderhorn
     .zoneskip Thunder Bluff
 step << Druid
@@ -1716,7 +1716,7 @@ step << Druid
     #completewith next
     .goto Thunder Bluff,47.00,49.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tal|r
-    .fly Crossroads >>Voe para a Encruzilhada
+    .fly Crossroads >>Voe para A Encruzilhada
     .target Tal
     .zoneskip The Barrens
 step << Hunter/Druid
@@ -2009,7 +2009,7 @@ step
     .goto Durotar,59.85,89.56,60,0
     .goto Durotar,59.49,83.77,60,0
     >>Pegue os |cRXP_PICK_Ovos de Açoitacauda|r que estão no chão
-    >>|cRXP_WARN_Geralmente guardado por um|r |cRXP_ENEMY_Açoitacauda Garrassangre|r
+    >>|cRXP_WARN_Eles geralmente são guardados por um|r |cRXP_ENEMY_Açoitacauda Garrassangre|r
     .complete 815,1 --Taillasher Egg (3)
     .mob Bloodtalon Taillasher
 step
@@ -2129,7 +2129,7 @@ step
     .mob +Makrura Clacker
 step
     #completewith Zalazaneturnin
-    .goto Durotar,56.06,74.72,150 >> Vá para Sen'Jin Village
+    .goto Durotar,56.06,74.72,150 >> Vá para Aldeia Sen'jin
     .subzoneskip 367
 step
     #completewith next
@@ -2199,7 +2199,7 @@ step
     .target +Orgnil Soulscar
     .goto Durotar,52.25,43.18
     .turnin 784 >>Entregue Subjuguem os Traidores
-    .turnin 837 >>Entregue Encroachment
+    .turnin 837 >>Entregue Invasão
     .turnin 830 >>Entregue As ordens do almirante
     .accept 831 >>Aceite As Ordens do Almirante
     .target +Gar'Thok
@@ -2214,7 +2214,7 @@ step
     .target +Orgnil Soulscar
     .goto Durotar,52.25,43.18
     .turnin 784 >>Entregue Subjuguem os Traidores
-    .turnin 837 >>Entregue Encroachment
+    .turnin 837 >>Entregue Invasão
     .turnin 830 >>Entregue As ordens do almirante
     .accept 831 >>Aceite As Ordens do Almirante
     .target +Gar'Thok
@@ -2425,7 +2425,7 @@ step
 step
     .goto Durotar,51.95,43.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gar'Thok|r
-    .turnin 837 >>Entregue Encroachment
+    .turnin 837 >>Entregue Invasão
     .target Gar'Thok
     .group
 step << Hunter
@@ -2944,7 +2944,7 @@ step << Shaman/Warrior
     #completewith next
     .goto The Barrens,51.50,30.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Devrak|r
-    .fly Thunder Bluff >>Voe para Trovão Blefe
+    .fly Thunder Bluff >>Voe para Penhasco do Trovão
     .zoneskip Thunder Bluff
 step << Shaman/Warrior
     .goto Thunder Bluff,45.6,55.9

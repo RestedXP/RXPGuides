@@ -744,7 +744,7 @@ step << Horde
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Bonthen Vento do Prado|r
     .goto Moonglade,44.29,45.86
     .skipgossip 11798,1
-    .zone Thunder Bluff >>Voe para Trovão Blefe
+    .zone Thunder Bluff >>Voe para Penhasco do Trovão
     .target Bunthen Plainswind
 step << Horde
     .train 410059,1
@@ -779,7 +779,7 @@ step << Horde
 step << Horde
     .goto Swamp of Sorrows,46.10,54.70
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Khebra|r
-    .fly Undercity >>Voe para Undercity
+    .fly Undercity >>Voe para Cidade Baixa
 	.target Breyk
 step << Horde
     .goto Tirisfal Glades,61.6,62.2,50,0

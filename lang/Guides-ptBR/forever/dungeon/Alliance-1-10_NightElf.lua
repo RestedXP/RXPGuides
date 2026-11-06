@@ -8,13 +8,13 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #name 1-6 Umbravale
 #version 1
-#group RestedXP Guia de Masmorra Eterna (A)
+#group Guia de Masmorras do RestedXP Forever (A)
 #subgroup Guia da Masmorra 1-20
 --#groupid RXP-SRGCE-A1
 #defaultfor NightElf
 #next 6-11 Teldrassil
 step
-#include RestedXP Forever Guia (A)\1-6 Umbravale
+#include Guia RestedXP Forever (A)\1-6 Umbravale
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -23,12 +23,12 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #name 6-11 Teldrassil
 #version 1
-#group RestedXP Guia de Masmorra Eterna (A)
+#group Guia de Masmorras do RestedXP Forever (A)
 #subgroup Guia da Masmorra 1-20
 --#groupid RXP-SRGCE-A1
 #defaultfor NightElf
 #next 11-16 Costa Negra/Loch Modan
 
 step
-#include RestedXP Forever Guia (A)\6-11 Teldrassil
+#include Guia RestedXP Forever (A)\6-11 Teldrassil
 ]])

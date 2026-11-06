@@ -1288,7 +1288,7 @@ step
     #requires Frast
     .goto Dun Morogh,69.33,55.46
     >>Fale com |cRXP_FRIENDLY_Umídio|r
-    .train 2575 >> Treine |T136248:0|t[Mineração]
+    .train 2575 >> Aprenda |T136248:0|t[Mineração]
     .target Dank Drizzlecut
 step
     #label Shortcut1
@@ -2730,7 +2730,7 @@ step
     #requires Frast
     .goto Dun Morogh,69.33,55.46
     >>Fale com |cRXP_FRIENDLY_Umídio|r
-    .train 2575 >> Treine |T136248:0|t[Mineração]
+    .train 2575 >> Aprenda |T136248:0|t[Mineração]
     .target Dank Drizzlecut
 step
     #label Shortcut1

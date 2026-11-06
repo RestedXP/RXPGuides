@@ -6,7 +6,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 13-15 Floresta de Pinhaprata
 #version 1
-#group Guia de Sobrevivência RestedXP (H)
+#group RestedXP Guia de Sobrevivência (H)
 #subgroup RXP Guia de Sobrevivência 1-20
 #next 15-19 Savanas
 
@@ -164,7 +164,7 @@ step
     .complete 422,1 --Remedy of Arugal (1)
 step
     #completewith next
-    .goto Silverpine Forest,53.39,13.32,80 >> Vá para A Horta do Ivar
+    .goto Silverpine Forest,53.39,13.32,80 >> Siga para a Plantação do Ivar
 step
     #label QuinnYorick
     .goto Silverpine Forest,53.39,13.32,8,0

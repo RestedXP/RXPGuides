@@ -2593,7 +2593,7 @@ step
 step
     .goto Darkshore,50.81,25.50
     #season 0 << !Warrior !Rogue
-    >>Use o [Tubo de Amostragem Vazio] na base do **Rio Fontescarpa**
+    >>Use o [Tubo de Amostragem Vazio] na base do Rio Fontescarpa
     .complete 4762,1 --Cliffspring River Sample (1)
     .use 12350
 step
@@ -3599,7 +3599,7 @@ step << Druid
     #requires earthroot
     #season 0
     .goto Moonglade,52.53,40.57
-	>>Vá para Moonglade
+	>>Vá para Clareira da Lua
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Loganaar|r
     .trainer >> Treine suas magias de classe
     .target Loganaar
@@ -4106,7 +4106,7 @@ step << Druid
     #xprate >1.59
     #optional
     .goto Moonglade,52.53,40.57
-	>>Vá para Moonglade
+	>>Vá para Clareira da Lua
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Loganaar|r
     .trainer >> Treine suas magias de classe
     .target Loganaar
@@ -5899,7 +5899,7 @@ step << Druid
 step << Druid
     #xprate <1.5
     .goto Moonglade,56.2,30.4
-    >>Vá para Moonglade
+    >>Vá para Clareira da Lua
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Dendrite Stellardor|r
     .turnin 6124 >> Entregue Curando os Enfermos
     .accept 6125 >> Aceite Poder sobre o Veneno
@@ -7647,7 +7647,7 @@ step
     #optional
     #hardcore << !Paladin
     #completewith DeadminesEnd
-    .abandon 103 >> Abandone Guardião da Chama
+    .abandon 103 >> Abandone A chama não pode apagar
     .dungeon DM
 step << Paladin
     #xprate >1.59
@@ -7964,7 +7964,7 @@ step << Druid
     #optional
     #completewith next
     .goto Moonglade,52.53,40.57
-	>>Vá para Moonglade
+	>>Vá para Clareira da Lua
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Loganaar|r
     .train 8926 >> Treine suas magias de classe
     .target Loganaar
@@ -8330,7 +8330,7 @@ step << !Hunter
 step << !Hunter
     #xprate <1.59
     .goto Ironforge,78.00,52.00,5,0
-    .zone Stormwind City >> Entre no Deeprun Tram. Pegue o tram para Ventobravo
+    .zone Stormwind City >> Entre no Metrô Correfundo. Pegue o metrô até Ventobravo
     >>|cRXP_WARN_Nível sua|r |T135966:0|t[Primeiros Socorros] |cRXP_WARN_e|r |T133971:0|t[Culinária] |cRXP_WARN_se necessário enquanto aguarda o bonde|r
     >>você precisará de seu|cRXP_WARN_ |T135966:0|t[Primeiros Socorros] |rem nível 80 para uma missão de nível 24|cRXP_WARN_ << Rogue !Dwarf
 
@@ -10813,7 +10813,7 @@ step << Druid
 step << Druid
     #xprate <1.59
     .goto Moonglade,52.53,40.57
-	>>Vá para Moonglade
+	>>Vá para Clareira da Lua
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Loganaar|r
     .trainer >> Treine suas magias de classe
     .target Loganaar

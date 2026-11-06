@@ -6,7 +6,7 @@ RXPGuides.RegisterGuide([[
 #forever
 #version 1
 << Alliance
-#group RestedXP Guia de Masmorra Eterna (A)
+#group Guia de Masmorras do RestedXP Forever (A)
 #subgroup Guia da Masmorra 1-20
 --#groupid RXP-SRGCE-A1
 #name 1-5 Coldridge Valley
@@ -14,14 +14,14 @@ RXPGuides.RegisterGuide([[
 #defaultfor Dwarf/Gnome
 
 step
-#include RestedXP Forever Guia (A)\1-5 Coldridge Valley
+#include Guia RestedXP Forever (A)\1-5 Coldridge Valley
 ]])
 
 RXPGuides.RegisterGuide([[
 #forever
 #version 1
 << Alliance
-#group RestedXP Guia de Masmorra Eterna (A)
+#group Guia de Masmorras do RestedXP Forever (A)
 #subgroup Guia da Masmorra 1-20
 --#groupid RXP-SRGCE-A1
 #name 5-11 Dun Morogh
@@ -29,13 +29,13 @@ RXPGuides.RegisterGuide([[
 #defaultfor Dwarf/Gnome
 
 step
-#include RestedXP Forever Guia (A)\5-11 Dun Morogh
+#include Guia RestedXP Forever (A)\5-11 Dun Morogh
 ]])
 
 RXPGuides.RegisterGuide([[
 #forever
 << Alliance !Hunter
-#group RestedXP Guia de Masmorra Eterna (A)
+#group Guia de Masmorras do RestedXP Forever (A)
 #subgroup Guia da Masmorra 1-20
 --#groupid RXP-SRGCE-A1
 #name 11-12 Elwynn (Anão/Gnomo)
@@ -44,14 +44,14 @@ RXPGuides.RegisterGuide([[
 #next 12-14 Loch Modan (Anão/Gnomo)
 
 step
-#include RestedXP Forever Guia (A)\11-12 Elwynn (Anão/Gnomo)
+#include Guia RestedXP Forever (A)\11-12 Elwynn (Anão/Gnomo)
 ]])
 
 RXPGuides.RegisterGuide([[
 #forever
 #version 1
 << Alliance !Hunter
-#group RestedXP Guia de Masmorra Eterna (A)
+#group Guia de Masmorras do RestedXP Forever (A)
 #subgroup Guia da Masmorra 1-20
 --#groupid RXP-SRGCE-A1
 #name 12-14 Loch Modan (Anão/Gnomo)
@@ -59,14 +59,14 @@ RXPGuides.RegisterGuide([[
 #defaultfor Gnome/Dwarf
 
 step
-#include RestedXP Forever Guia (A)\12-14 Loch Modan (Anão/Gnomo)
+#include Guia RestedXP Forever (A)\12-14 Loch Modan (Anão/Gnomo)
 ]])
 
 RXPGuides.RegisterGuide([[
 #forever
 #version 1
 << Alliance Hunter
-#group RestedXP Guia de Masmorra Eterna (A)
+#group Guia de Masmorras do RestedXP Forever (A)
 #subgroup Guia da Masmorra 1-20
 --#groupid RXP-SRGCE-A1
 #name 11-13 Loch Modan (Caçador)
@@ -74,5 +74,5 @@ RXPGuides.RegisterGuide([[
 #defaultfor Dwarf
 
 step
-#include RestedXP Forever Guia (A)\11-13 Loch Modan (Caçador)@NormalRouteStart-NormalRouteEnd
+#include Guia RestedXP Forever (A)\11-13 Loch Modan (Caçador)@NormalRouteStart-NormalRouteEnd
 ]])

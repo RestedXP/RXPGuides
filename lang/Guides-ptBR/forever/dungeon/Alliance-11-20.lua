@@ -6,15 +6,15 @@ RXPGuides.RegisterGuide([[
 #version 1
 << Alliance NightElf
 #name 11-16 Costa Negra/Loch Modan
-#group RestedXP Guia de Masmorra Eterna (A)
+#group Guia de Masmorras do RestedXP Forever (A)
 #subgroup Guia da Masmorra 1-20
 --#groupid RXP-SRGCE-A1
 #next 17-18 Hall of Thanes
 
 step
-    #include RestedXP Forever Guia (A)\14-16 Costa Negra@WashedA-DarkshoreEndNE
+    #include Guia RestedXP Forever (A)\14-16 Costa Negra@WashedA-DarkshoreEndNE
 step
-    #include RestedXP Forever Guia (A)\15-16 Loch Modan@SWBoat-IFExit
+    #include Guia RestedXP Forever (A)\15-16 Loch Modan@SWBoat-IFExit
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Estalajadeiro Aguardente|r
     .goto 1455/0,-856.69,-4841.490
@@ -103,7 +103,7 @@ step
     .turnin 96390 >> Entregue Nip 'Em in the Migo
     .target Earthseer Farsen
 step
-    #include RestedXP Forever Guia (A)\15-16 Loch Modan@LochEnter-LochEnd
+    #include Guia RestedXP Forever (A)\15-16 Loch Modan@LochEnter-LochEnd
 step << NightElf Druid
     #completewith next
 	.cast 18960 >> Lance Teleporte: Clareira da Lua
@@ -662,7 +662,7 @@ RXPGuides.RegisterGuide([[
 << Alliance !NightElf
 #name 13-15 Cerro Oeste 
 #displayname 14-15 Cerro Oeste << Gnome/Dwarf !Hunter
-#group RestedXP Guia de Masmorra Eterna (A)
+#group Guia de Masmorras do RestedXP Forever (A)
 #subgroup Guia da Masmorra 1-20
 --#groupid RXP-SRGCE-A1
 #next 15-17 Costa Negra
@@ -1426,7 +1426,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 << Alliance !NightElf
 #name 15-17 Costa Negra
-#group RestedXP Guia de Masmorra Eterna (A)
+#group Guia de Masmorras do RestedXP Forever (A)
 #subgroup Guia da Masmorra 1-20
 --#groupid RXP-SRGCE-A1
 #next 17-18 Hall of Thanes
@@ -2126,7 +2126,7 @@ step
     .accept 4725 >> Aceite Tartaruga Marinha Encalhada
 step
     .goto 1439/1,-386.39,7219.830
-    >>Use o [Tubo de Amostragem Vazio] na base do **Rio Fontescarpa**
+    >>Use o [Tubo de Amostragem Vazio] na base do Rio Fontescarpa
     .complete 4762,1 --Cliffspring River Sample (1)
     .use 12350
 step
@@ -2435,7 +2435,7 @@ RXPGuides.RegisterGuide([[
 #forever
 #version 1
 << Alliance
-#group RestedXP Guia de Masmorra Eterna (A)
+#group Guia de Masmorras do RestedXP Forever (A)
 #subgroup Guia da Masmorra 1-20
 --#groupid RXP-SRGCE-A1
 #name 17-18 Hall of Thanes
@@ -2684,7 +2684,7 @@ RXPGuides.RegisterGuide([[
 #forever
 #version 1
 << Alliance
-#group RestedXP Guia de Masmorra Eterna (A)
+#group Guia de Masmorras do RestedXP Forever (A)
 #subgroup Guia da Masmorra 1-20
 --#groupid RXP-SRGCE-A1
 #name 18-19 Ruins of Lordaeron
@@ -3063,7 +3063,7 @@ RXPGuides.RegisterGuide([[
 #forever
 #version 1
 << Alliance
-#group RestedXP Guia de Masmorra Eterna (A)
+#group Guia de Masmorras do RestedXP Forever (A)
 #subgroup Guia da Masmorra 1-20
 --#groupid RXP-SRGCE-A1
 #name 19-20 Minas Mortas
@@ -3801,7 +3801,7 @@ step << Shaman
     #completewith ShamTrain
     .goto 1453/0,558.96,-8382.54,25,0
     .goto 1453/0,520.64,-8351.460
-    .zone Ironforge >> Entre no Deeprun Tram. Pegue o metrô para Ironforge
+    .zone Ironforge >> Entre no Bonde Subterrâneo. Pegue o bonde até Altaforja
 step << Shaman
     .goto 1455/0,-1086.500,-4642.400
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Eldrun Rompe-procelas::258098|r
@@ -3819,7 +3819,7 @@ step << Shaman
     .xp <22,1
 step << Shaman
     .goto 1455/0,-1330.28,-4843.6,5,0
-    .zone Stormwind City >> Entre no Deeprun Tram. Pegue o tram para Ventobravo
+    .zone Stormwind City >> Entre no Metrô Correfundo. Pegue o metrô até Ventobravo
     .zoneskip Darkshore
     .zoneskip Ashenvale
 step
@@ -3891,11 +3891,11 @@ RXPGuides.RegisterGuide([[
 #forever
 #version 1
 << Alliance
-#group RestedXP Guia de Masmorra Eterna (A)
+#group Guia de Masmorras do RestedXP Forever (A)
 #subgroup Guia da Masmorra 1-20
 --#groupid RXP-SRGCE-A1
 #name 20-21 Costa Negra/Vale Gris
-#next RestedXP Guia de Masmorra Eterna (A)\21-23 Vale Gris/Stonetalon
+#next Guia de Masmorras do RestedXP Forever (A)\21-23 Vale Gris/Stonetalon
 
 step << Druid
     #completewith catspirit1

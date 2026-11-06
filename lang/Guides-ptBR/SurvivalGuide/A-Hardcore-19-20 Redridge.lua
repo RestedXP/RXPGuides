@@ -7,7 +7,7 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #name 19-20 Redridge
 #version 1
-#group Guia de Sobrevivência RestedXP (A)
+#group RestedXP Guia de Sobrevivência (A)
 #subgroup RXP Guia de Sobrevivência 1-20
 #next 20-21 Costa Negra/Vale Gris
 
@@ -337,7 +337,7 @@ step
     .turnin 104 >> Entregue O mar não está para peixe
     .target Captain Grayson
 step
-    .abandon 103 >> Abandone Guardião da Chama
+    .abandon 103 >> Abandone A chama não pode apagar
 step
     .goto Westfall,56.33,47.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Miguel Mantoforte|r
