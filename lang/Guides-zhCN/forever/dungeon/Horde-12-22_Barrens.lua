@@ -9,7 +9,7 @@ RXPGuides.RegisterGuide([[
 #displayname 14-16级 贫瘠之地 << !Shaman !Hunter !Tauren
 #displayname 15-16级 贫瘠之地 << Paladin
 #version 11
-#group RestedXP无限服地下城指南（部落）
+#group RestedXP 无限 地下城指南 (部落)
 #subgroup 地下城指南 1-22级
 --#groupid RXP-SRGCE-H1
 #next 16-17级 怒焰裂谷
@@ -72,7 +72,7 @@ step << !Tauren
     #softcore
     #completewith ThievesPickup
     .goto 1413/1,-2516.71,-590.71
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
     .xp >15,1
 step << !Tauren
     #softcore
@@ -1690,7 +1690,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 16-17级 怒焰裂谷
 #version 11
-#group RestedXP无限服地下城指南（部落）
+#group RestedXP 无限 地下城指南 (部落)
 #subgroup 地下城指南 1-22级
 --#groupid RXP-SRGCE-H1
 #next 17-18级 洛丹伦废墟
@@ -2186,7 +2186,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 17-18级 洛丹伦废墟
 #version 11
-#group RestedXP无限服地下城指南（部落）
+#group RestedXP 无限 地下城指南 (部落)
 #subgroup 地下城指南 1-22级
 --#groupid RXP-SRGCE-H1
 #next 18-21级 The Barrens
@@ -2587,7 +2587,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 18-21级 The Barrens
 #version 11
-#group RestedXP无限服地下城指南（部落）
+#group RestedXP 无限 地下城指南 (部落)
 #subgroup 地下城指南 1-22级
 --#groupid RXP-SRGCE-H1
 #next 21-22级 哀嚎洞穴
@@ -3431,7 +3431,7 @@ step << Hunter
 step
     #label XroadsHS2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_曼科里克|r 和 |cRXP_FRIENDLY_图加|r 对话
-    .turnin 899 >>交任务  复仇的怒火
+    .turnin 899 >>交任务复仇的怒火
     .turnin 95774 >>交任务 她的名字叫奥格拉
     .target 曼科里克
     .goto 1413/1,-2641.35,-521.12
@@ -4029,8 +4029,8 @@ step
 step
     .goto 1456/1,278.48,-995.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_药剂师扎玛|r 对话
-    .turnin 853 >> 交任务  药剂师扎玛
-    .accept 962 >> 接受任务 毒蛇花
+    .turnin 853 >> 交任务药剂师扎玛
+    .accept 962 >> 接受任务毒蛇花
     .target 药剂师扎玛
     .isOnQuest 853
 step
@@ -4038,7 +4038,7 @@ step
     #optional
     .goto 1456/1,278.48,-995.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_药剂师扎玛|r 对话
-    .accept 962 >> 接受任务 毒蛇花
+    .accept 962 >> 接受任务毒蛇花
     .target 药剂师扎玛
 step << Priest
     .goto 1456/1,252.49,-956.04
@@ -4401,7 +4401,7 @@ RXPGuides.RegisterGuide([[
 #name 21-22级 哀嚎洞穴
 #next 22-24级 希尔斯布莱德
 #version 11
-#group RestedXP无限服地下城指南（部落）
+#group RestedXP 无限 地下城指南 (部落)
 #subgroup 地下城指南 1-22级
 --#groupid RXP-SRGCE-H1
 
@@ -4829,7 +4829,7 @@ step
 step
     .goto 1413/1,-2711.800,-350.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_古尔阿克|r 对话
-    .turnin 97003 >>交任务 Chol'aruk the Ravener
+    .turnin 97003 >>交任务 乔拉鲁克·掠夺者
     .target Gur'ak
     .isQuestComplete 97003
 step
@@ -4860,7 +4860,7 @@ step
     >>击杀 |cRXP_ENEMY_督军克罗姆扎|r当他出现后。拾取他掉落在地上的 |cRXP_PICK_旗帜|r
     >>|cRXP_WARN_小心！他是一个强力精英，并且至少有两个|r |cRXP_ENEMY_科卡尔|r |cRXP_WARN_怪物守卫|r
     >>|cRXP_WARN_他可能需要最长 3 分钟才会刷新|r
-    .link https://www.youtube.com/watch?v=xrm0PWe5wf4 >>|cRXP_WARN_点击此处查看风筝战术指南视频|r |cRXP_ENEMY_督军 督军克罗姆扎|r
+    .link https://www.youtube.com/watch?v=xrm0PWe5wf4 >>|cRXP_WARN_点击此处查看指南视频风筝|r |cRXP_ENEMY_督军克罗姆扎|r
     .complete 4021,1 --Piece of Krom'zar's Banner (1)
     .unitscan 督军克罗姆扎
     .isQuestTurnedIn 852
@@ -4884,7 +4884,7 @@ step
 step
     #optional
     #completewith TopofWCturnins
-    .abandon 97003 >>放弃任务 Chol'aruk the Ravener
+    .abandon 97003 >>放弃任务 乔拉鲁克·掠夺者
 step
     #optional
     #completewith TopofWCturnins
@@ -5134,7 +5134,7 @@ step << Mage
     .xp <24,1
 step << Mage
     .goto 1454/1,-4222.85,1474.94
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与位于小屋顶部的|r |cRXP_FRIENDLY_索乌|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|r |cRXP_FRIENDLY_索乌|r 在小屋顶部对话
     .train 3567 >> 训练 |T135759:0|t[传送：奥格瑞玛]
     .target 索乌
 step << Troll Priest
@@ -5232,7 +5232,7 @@ step << skip --Rogue/Druid
 step << Rogue/Druid
     #softcore
     #completewith next
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
 step << Rogue/Druid
     #softcore
     .goto 1413/1,-2595.75,-437.35

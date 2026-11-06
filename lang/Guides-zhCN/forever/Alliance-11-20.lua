@@ -133,7 +133,7 @@ step << !Human
 step
     .goto 1436/0,1166.57,-10653.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_与旅店老板对话|r
-    .vendor >>|cRXP_BUY_按需购买食物/水|r
+    .vendor >>|cRXP_BUY_如有需要，购买食物/水|r
 	.target 旅店老板希瑟尔
 step
     .goto 1436/0,1179.800,-10635.601
@@ -1067,7 +1067,7 @@ step << NightElf
     .goto 1439/1,643.40,5927.95,60,0--c:1439,35.088,55.085
     .goto 1439/1,631.15,5998.74,60,0--c:1439,35.275,53.464
     .goto 1439/1,577.71,6084.46,60,0--c:1439,36.091,51.501
-    .xp 12-2500 >> 升级到6300+/8800经验值
+    .xp 12-2500 >> 刷怪升级到6300+/8800经验值
 step
     #label invisThistle
     #optional
@@ -1132,7 +1132,7 @@ step
     .target 温尼斯·布莱葛
 step << Druid NightElf
     #optional
-    .xp 12 >> 升级到12级
+    .xp 12 >> 刷怪升级到12级
 step << Druid NightElf
     .goto 1439/1,472.12,6438.51--c:1439,37.703,43.393
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哨兵戈琳达·纳希恩|r 对话
@@ -1873,7 +1873,7 @@ step
 step
     #optional
     #completewith AmethStart
-    >>杀死 |cRXP_ENEMY_月夜猛虎幼崽|r 和 |cRXP_ENEMY_月夜猛虎|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
+    >>击杀 |cRXP_ENEMY_月夜猛虎幼崽|r 和 |cRXP_ENEMY_月夜猛虎|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
     .complete 1002,1 -- Moonstalker Fang (6)
     .mob 月夜猛虎幼崽
     .mob Moonstalker
@@ -2013,7 +2013,7 @@ step << !sod/Warrior/Rogue
 step
     #optional
     #completewith FurbolgGrind
-    >>杀死 |cRXP_ENEMY_月夜猛虎幼崽|r 和 |cRXP_ENEMY_月夜猛虎|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
+    >>击杀 |cRXP_ENEMY_月夜猛虎幼崽|r 和 |cRXP_ENEMY_月夜猛虎|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
     .complete 1002,1 -- Moonstalker Fang (6)
     .mob 月夜猛虎幼崽
     .mob Moonstalker
@@ -2298,7 +2298,7 @@ step
     #optional
     #completewith BoatSeaCreature
     .goto 1439/1,47.22,6861.90,0--c:1439,44.190,33.697
-    >>杀死 |cRXP_ENEMY_月夜猛虎幼崽|r 和 |cRXP_ENEMY_月夜猛虎|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
+    >>击杀 |cRXP_ENEMY_月夜猛虎幼崽|r 和 |cRXP_ENEMY_月夜猛虎|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
     .complete 1002,1 -- Moonstalker Fang (6)
     .mob 月夜猛虎幼崽
     .mob Moonstalker
@@ -2362,7 +2362,7 @@ step
 step
     #optional
     #completewith CrabTurtle
-    >>杀死 |cRXP_ENEMY_月夜猛虎幼崽|r 和 |cRXP_ENEMY_月夜猛虎|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
+    >>击杀 |cRXP_ENEMY_月夜猛虎幼崽|r 和 |cRXP_ENEMY_月夜猛虎|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
     .complete 1002,1 -- Moonstalker Fang (6)
     .mob 月夜猛虎幼崽
     .mob Moonstalker
@@ -2627,7 +2627,7 @@ step
 step
     #requires MushroomLS
     #completewith CavetoAuber
-    >>杀死 |cRXP_ENEMY_月夜猛虎幼崽|r 和 |cRXP_ENEMY_月夜猛虎|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
+    >>击杀 |cRXP_ENEMY_月夜猛虎幼崽|r 和 |cRXP_ENEMY_月夜猛虎|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
     .complete 1002,1 -- Moonstalker Fang (6)
     .mob 月夜猛虎幼崽
     .mob Moonstalker
@@ -2990,7 +2990,7 @@ step
     .fp Ironforge >> 获取铁炉堡的飞行路径
     .target 格莱斯·瑟登
 step Warrior
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_比尔班·飞钳|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_比尔班·飞钳|r 对话
     .goto 1455/0,-1234.65,-5035.67
     .trainer >> 训练你的职业技能
     .target 比尔班·飞钳
@@ -3469,7 +3469,7 @@ step
     .mob Loch Crocolisk
 step
     .goto 1432/0,-3703.9165,-5296.9165
-    >>杀死 |cRXP_ENEMY_Daggerfang|r，他 |cRXP_WARN_可能在沿岸巡逻|r。拾取他的 |T3736888:0|t[|cRXP_LOOT_Marek's Croc-狩猎小刀|r]
+    >>击杀 |cRXP_ENEMY_刀齿鳄|r，他 |cRXP_WARN_可能沿着海岸巡逻|r。拾取他的 |T3736888:0|t[|cRXP_LOOT_马雷克的猎鳄小刀|r]
     .complete 86758,1 --Marek's Croc Hunting Knife (1)
     .mob Daggerfang
 step
@@ -3595,7 +3595,7 @@ step << Rogue
     .target 芬斯维克
 step << Warrior
     .goto 1455/0,-1234.65,-5035.67
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_比尔班·飞钳|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_比尔班·飞钳|r 对话
     .trainer >> 训练你的职业技能
     .target 比尔班·飞钳
 step << Druid
@@ -3784,7 +3784,7 @@ step
 step
     #optional
     #completewith CompleteFangs
-    >>杀死 |cRXP_ENEMY_月夜猛虎幼崽|r 和 |cRXP_ENEMY_月夜猛虎|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
+    >>击杀 |cRXP_ENEMY_月夜猛虎幼崽|r 和 |cRXP_ENEMY_月夜猛虎|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
     .complete 1002,1 -- Moonstalker Fang (6)
     .mob 月夜猛虎幼崽
     .mob Moonstalker
@@ -4299,7 +4299,7 @@ step
     .goto 1439/1,-533.04,7111.41,60,0--c:1439,53.049,27.983
     .goto 1439/1,-514.38,7184.38,60,0--c:1439,52.764,26.312
     .goto 1439/1,-571.03,7195.64,60,0--c:1439,53.629,26.054
-    >>杀死 |cRXP_ENEMY_月夜猛虎幼崽|r 和 |cRXP_ENEMY_月夜猛虎|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
+    >>击杀 |cRXP_ENEMY_月夜猛虎幼崽|r 和 |cRXP_ENEMY_月夜猛虎|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
     .complete 1002,1 -- Moonstalker Fang (6)
     .mob 月夜猛虎幼崽
     .mob Moonstalker
@@ -4453,7 +4453,7 @@ step
     >>在其变为敌对后击杀 |cRXP_ENEMY_机械打手4100型|r
     >>|cRXP_WARN_这个任务非常困难|r
     *仅使用远程攻击逃离它，避免处于近战范围 << Druid
-    >>|cRXP_WARN_如果能做的话，尽量做这个任务，因为它会为你节省时间，并奖励|r |T134797:0|t[Draught of 水下呼吸] |cRXP_WARN_供日后的水下任务使用|r << !Druid !Warlock !Shaman
+    >>尽量完成这个任务，因为它会奖励 |T134797:0|t[|cRXP_WARN_水下呼吸饮剂|r]，|cRXP_WARN_能为后续的水下任务节省时间|r << !Druid !Warlock !Shaman
     >>|cRXP_WARN_使用|r |T136100:0|t[纠缠根须] |cRXP_WARN_在他变成敌对时，然后拉开距离并使用即时施放的咒语来风筝|r << Druid
     >>|cRXP_WARN_如果你无法击杀|cRXP_ENEMY_ 机械打手4100型|r，跳过这一步|r
     .complete 2078,1 --Gyromast's Revenge (1)
@@ -4531,7 +4531,7 @@ step << !NightElf !Hunter
     #softcore
     #optional
     #completewith next
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
     .target 灵魂医者
 step << !NightElf
     .goto 1439/1,492.36,6581.08--c:1439,37.394,40.128
@@ -5848,7 +5848,7 @@ step << Rogue
     >>|cRXP_WARN_|cRXP_ENEMY_丑陋的迪菲亚懒汉|r 出现在塔楼入口处，随后会在塔楼外侧巡逻|r
     >>|cRXP_WARN_小心，他伤害很高。如果你的|r |T132320:0|t[潜行] |cRXP_WARN_被打破，立刻使用|r |T132307:0|t[疾跑] |cRXP_WARN_并逃离|r
     .complete 2359,2 --Collect Defias Tower Key (x1)
-    .link https://www.youtube.com/watch?v=5sIew15IcG0 >> 点这里看视频教学
+    .link https://www.youtube.com/watch?v=5sIew15IcG0 >> 点击此处查看视频指南
     .mob Malformed Defias Drone
 step << Rogue
     #optional
@@ -5866,7 +5866,7 @@ step << Rogue
     >>|cRXP_WARN_如果你的背包中或已装备|r |T135641:0|t[匕首] |cRXP_WARN_，你可以施放|r |T132282:0|t[伏击] |cRXP_WARN_对付里面的 |cRXP_ENEMY_迪菲亚巡塔员|r 和 |cRXP_ENEMY_迪菲亚哨兵|r，从而瞬间击杀他们。击杀第一个 |cRXP_ENEMY_迪菲亚哨兵|r 后请做好逃跑准备，并记住你可能会从上方被攻击。这种方法更慢，但安全性高得多|r
     >>|cRXP_WARN_注意，如果你需要跑出塔楼，|cRXP_ENEMY_丑陋的迪菲亚懒汉|r 和 |cRXP_ENEMY_迪菲亚苦工|r 可能会在塔楼入口处|r
     .complete 2359,1 --Collect Klaven Mortwake's Journal (x1)
-    .link https://www.youtube.com/watch?v=5sIew15IcG0 >> 点这里看视频教学
+    .link https://www.youtube.com/watch?v=5sIew15IcG0 >> 点击此处查看视频指南
     .mob Defias Tower Patroller
     .mob Defias Tower Sentry
 step << !Dwarf Rogue
@@ -5888,7 +5888,7 @@ step << Dwarf Rogue
     #optional
     #sticky
     #label AntiVenomEnd2
-    .cast 20594 >>|cRXP_WARN_施放 |T136225:0|t[石像形态] ，来移除 |T136230:0|t[赞吉尔之触] 的减益效果|r
+    .cast 20594 >>|cRXP_WARN_施放 |T136225:0|t[石像形态] 来移除 |T136230:0|t[赞吉尔之触] 的减益效果|r
     .aura -9991
 step << Rogue
     #optional
@@ -5909,7 +5909,7 @@ step << !Dwarf Rogue
 step << !Dwarf Rogue
     #requires AntiVenomEnd
     .goto 1453/0,801.99,-8513.29--c:1453,43.070,26.155
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_珊娜·弗勒|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_珊娜·弗勒|r 对话
     >>|cRXP_WARN_如果你有一个|r |T626003:0|t|cFFF48CBA圣骑士|r|cRXP_WARN_、|r |T625999:0|t|cFFFF7C0A德鲁伊|r |cRXP_WARN_或者|r |T626006:0|t|cFF0070DD萨满|r |cRXP_WARN_朋友，|r |cRXP_WARN_请他们为你移除|r |T136230:0|t[赞吉尔之触]
     .skill firstaid,80 >> |cRXP_WARN_将你的|r |T135966:0|t[急救] |cRXP_WARN_提升到 80|r
     .aura -9991
@@ -5917,7 +5917,7 @@ step << !Dwarf Rogue
 step << !Dwarf Rogue
     #label FirstAidEnd
     .goto 1453/0,801.99,-8513.29--c:1453,43.070,26.155
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_珊娜·弗勒|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_珊娜·弗勒|r 对话
     >>|cRXP_WARN_如果你有一个|r |T626003:0|t|cFFF48CBA圣骑士|r|cRXP_WARN_、|r |T625999:0|t|cFFFF7C0A德鲁伊|r |cRXP_WARN_或者|r |T626006:0|t|cFF0070DD萨满|r |cRXP_WARN_朋友，|r |cRXP_WARN_请他们为你移除|r |T136230:0|t[赞吉尔之触]
     .train 7934 >> |cRXP_WARN_学习|r |T134437:0|t[抗毒药剂]
     .aura -9991
@@ -6299,7 +6299,7 @@ step
 step
     #sticky
     #completewith next
-    >>在任务过程中击杀并拾取|cRXP_WARN_幽爪奔跑者|r。保留获得的任何|T133970:0|t|T133970:0|t[|cRXP_LOOT_狼肋排|r]。后续烹饪任务需要10个
+    >>在任务过程中击杀并拾取|cRXP_WARN_幽爪奔跑者|r。保留获得的任何|T133970:0|t[|cRXP_LOOT_狼肋排|r]。后续烹饪任务需要10个
     .collect 1015,10
     .mob Ghostpaw Runner
 step
@@ -6381,7 +6381,7 @@ step
 step
     #sticky
     #completewith Astranaar
-    >>在任务过程中击杀并拾取|cRXP_WARN_幽爪奔跑者|r。保留获得的任何|T133970:0|t|T133970:0|t[|cRXP_LOOT_狼肋排|r]。后续烹饪任务需要10个
+    >>在任务过程中击杀并拾取|cRXP_WARN_幽爪奔跑者|r。保留获得的任何|T133970:0|t[|cRXP_LOOT_狼肋排|r]。后续烹饪任务需要10个
     .collect 1015,10
     .mob Ghostpaw Runner
 step
@@ -6516,7 +6516,7 @@ step
 step
     #sticky
     #completewith StatuetteStart
-    >>在任务过程中击杀并拾取|cRXP_WARN_幽爪奔跑者|r。保留获得的任何|T133970:0|t|T133970:0|t[|cRXP_LOOT_狼肋排|r]。后续烹饪任务需要10个
+    >>在任务过程中击杀并拾取|cRXP_WARN_幽爪奔跑者|r。保留获得的任何|T133970:0|t[|cRXP_LOOT_狼肋排|r]。后续烹饪任务需要10个
     .collect 1015,10
     .mob Ghostpaw Runner
 step
@@ -6598,7 +6598,7 @@ step
 step
     #sticky
     #completewith SoulGemStart
-    >>在任务过程中击杀并拾取|cRXP_WARN_幽爪奔跑者|r。保留获得的任何|T133970:0|t|T133970:0|t[|cRXP_LOOT_狼肋排|r]。后续烹饪任务需要10个
+    >>在任务过程中击杀并拾取|cRXP_WARN_幽爪奔跑者|r。保留获得的任何|T133970:0|t[|cRXP_LOOT_狼肋排|r]。后续烹饪任务需要10个
     .collect 1015,10
     .mob Ghostpaw Runner
 step
@@ -6698,7 +6698,7 @@ step
     .goto 1457/1,2515.03,9940.50
     .bankdeposit 5996,1468,2251,1015 >> 将以下物品存入你的银行
     .target Garryeth
-    >>|T134797:0|t[Draught of 水下呼吸] --5996
+    >>|T134797:0|t[水下呼吸饮剂] --5996
     >>|T134304:0|t[鱼人的鳍] --1468
     >>|T134321:0|t[粘糊的蜘蛛腿] --2251
     >>|T133970:0|t[狼肋排] --1015

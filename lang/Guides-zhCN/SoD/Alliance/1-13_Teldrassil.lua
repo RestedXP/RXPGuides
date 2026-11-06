@@ -110,7 +110,7 @@ step << Warrior/Rogue
     #season 2
     .goto Teldrassil,59.306,41.091
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奇娜|r 对话
-	.vendor >> |cRXP_WARN_出售垃圾物品|r
+	.vendor >> 出售垃圾物品
     .target 奇娜
 step << Rogue
     .goto Teldrassil,59.63,38.67
@@ -328,7 +328,7 @@ step << !Hunter !Druid !Priest
     #season 2
     .goto Teldrassil,59.306,41.091
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奇娜|r 对话
-	.vendor >> |cRXP_WARN_出售垃圾物品|r
+	.vendor >> 出售垃圾物品
     .target 奇娜
  step << NightElf Warrior
     #season 2
@@ -343,7 +343,7 @@ step << Druid/Priest
     #label DTrain4
     .goto Teldrassil,59.602,40.696
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德林拉尔|r 对话
-    .vendor >> |cRXP_WARN_出售垃圾物品|r
+    .vendor >> 出售垃圾物品
     >>|cRXP_BUY_购买10瓶|r |T132794:0|t[清凉的泉水]
     .collect 159,10 --Collect Refreshing Spring Water (x10)
     .target 德林拉尔
@@ -409,13 +409,13 @@ step
 step << !Hunter
     .goto Teldrassil,59.306,41.091
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奇娜|r 对话
-	.vendor >> |cRXP_WARN_出售垃圾物品|r << !Hunter
+	.vendor >> 出售垃圾物品 << !Hunter
     .target 奇娜
 step << Hunter
     #season 2
     .goto Teldrassil,59.306,41.091
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奇娜|r 对话
-	.vendor >> |cRXP_WARN_出售垃圾物品|r << !Hunter
+	.vendor >> 出售垃圾物品 << !Hunter
 	.vendor >> |cRXP_BUY_购买3或4组|r |T132382:0|t[劣质箭] << Hunter
     .vendor >> |cRXP_BUY_购买|r |T135499:0|t|T135499:0|t[角木弯弓] |cRXP_BUY_如果还没有的话就买下它|r << Hunter
     .target 奇娜
@@ -1782,7 +1782,7 @@ step << Hunter
     .goto Darnassus,40.377,8.545
     .target 祖卡斯特
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_祖卡斯特|r 对话
-    .turnin 6103 >> 交任务 训练野兽
+    .turnin 6103 >> 交任务  训练野兽
 step << !Rogue
     .goto Darnassus,39.72,92.68,10,0
     .goto Darnassus,36.65,85.93
@@ -2479,7 +2479,7 @@ step << Hunter
     .goto Darnassus,40.377,8.545
     .target 祖卡斯特
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_祖卡斯特|r 对话
-    .turnin 6103 >> 交任务 训练野兽
+    .turnin 6103 >> 交任务  训练野兽
 step << Druid
     #season 0
     .goto Darnassus,35.38,8.40

@@ -7,7 +7,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 1-6级 莫高雷
 #version 11
-#group RestedXP无限服地下城指南（部落）
+#group RestedXP 无限 地下城指南 (部落)
 #subgroup 地下城指南 1-22级
 --#groupid RXP-SRGCE-H1
 #defaultfor Tauren
@@ -24,7 +24,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 6-12级 莫高雷
 #version 11
-#group RestedXP无限服地下城指南（部落）
+#group RestedXP 无限 地下城指南 (部落)
 #subgroup 地下城指南 1-22级
 --#groupid RXP-SRGCE-H1
 #defaultfor Tauren

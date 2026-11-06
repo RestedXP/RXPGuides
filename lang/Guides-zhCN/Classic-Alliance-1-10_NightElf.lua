@@ -10,7 +10,7 @@ RXPGuides.RegisterGuide([[
 #name 1-6级 幽影谷
 #displayname 1-7级 幽影谷 << sod
 #version 1
-#group RestedXP 联盟 1-20 级
+#group RestedXP 联盟 1-20级
 #groupid RXP-SRGCE-A1
 #defaultfor NightElf
 #next 6-11级 泰达希尔
@@ -98,7 +98,7 @@ step << Hunter
 step << Druid
     .goto Teldrassil,59.602,40.696
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德林拉尔|r 对话
-    .vendor >> |cRXP_WARN_出售垃圾物品|r
+    .vendor >> 出售垃圾物品
     >>|cRXP_BUY_购买15瓶|r |T132794:0|t[清凉的泉水]
     .collect 159,15 --Collect Refreshing Spring Water (x15)
     .target 德林拉尔
@@ -120,7 +120,7 @@ step << Warrior
     #season 0
     .goto Teldrassil,59.306,41.091
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奇娜|r 对话
-	.vendor >> |cRXP_WARN_出售垃圾物品|r
+	.vendor >> 出售垃圾物品
     .target 奇娜
 step << Warrior
     #season 0
@@ -141,7 +141,7 @@ step << !Hunter
     #season 0 << Warrior
     .goto Teldrassil,54.593,32.992
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_埃沃隆|r 对话
-    .turnin 4495 >> 交任务  好朋友
+    .turnin 4495 >> 交任务 好朋友
     .target 埃沃隆
     .accept 3519 >> 接受任务 需要帮助的朋友
 step << !Hunter !Warrior
@@ -183,7 +183,7 @@ step << Druid
     #season 0,1
     .goto Teldrassil,59.602,40.696
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德林拉尔|r 对话
-    .vendor >> |cRXP_WARN_出售垃圾物品|r
+    .vendor >> 出售垃圾物品
     >>|cRXP_BUY_购买20|r |T132794:0|t[清凉的泉水]
     .collect 159,20 --Collect Refreshing Spring Water (x20)
     .target 德林拉尔
@@ -271,7 +271,7 @@ step << !Priest !Warrior
     #season 0 << Hunter
     .goto Teldrassil,59.306,41.091
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奇娜|r 对话
-	.vendor >> |cRXP_WARN_出售垃圾物品|r << !Hunter
+	.vendor >> 出售垃圾物品 << !Hunter
 	.vendor >> |cRXP_BUY_购买3或4组|r |T132382:0|t[劣质箭] << Hunter
     .target 奇娜
 step << Warrior
@@ -284,7 +284,7 @@ step << Priest
     #completewith next
     .goto Teldrassil,59.456,41.050
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与楼上的 |cRXP_FRIENDLY_简娜·明月|r 对话
-	.vendor >> |cRXP_WARN_出售垃圾物品|r
+	.vendor >> 出售垃圾物品
     .target Janna Brightmoon
 step << Priest
     #season 0,1,2
@@ -420,7 +420,7 @@ RXPGuides.RegisterGuide([[
 #name 6-11级 泰达希尔
 #displayname 7-13级 泰达希尔 << SoD
 #version 1
-#group RestedXP 联盟 1-20 级
+#group RestedXP 联盟 1-20级
 #groupid RXP-SRGCE-A1
 #defaultfor NightElf
 #next 14-16级 黑海岸
@@ -759,7 +759,7 @@ step
 step
     #xprate < 1.5
     .goto Teldrassil,60.7,54.4
-	.xp 7+3520 >> 刷怪到7级 +3520经验
+	.xp 7+3520 >> 刷怪到7级 +3520xp
 step
     #xprate >1.49
     .xp 7+2350 >> 刷怪到7级 +2350xp
@@ -1225,7 +1225,7 @@ step << Hunter
 	#xprate <1.5
     #sticky
     #label xp10
-    .xp 10-2670 >> 刷怪升级直到离10级还差2670经验（3830/6500）
+    .xp 10-2670 >> 刷怪升级直到离10级还差2670xp（3830/6500）
     >>|cRXP_WARN_一旦你达到这个经验值临界点，就跳过鹰身人任务和护送任务，直接前往达纳苏斯。你稍后还会有机会来完成这些任务|r
 step << Hunter
 	#xprate <1.5
@@ -1356,7 +1356,7 @@ step << Hunter
     .goto Darnassus,40.377,8.545
     .target 祖卡斯特
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_祖卡斯特|r 对话
-    .turnin 6103 >> 交任务 训练野兽
+    .turnin 6103 >> 交任务  训练野兽
 step << !Rogue
     .goto Darnassus,39.72,92.68,10,0
     .goto Darnassus,36.65,85.93
@@ -1825,7 +1825,7 @@ step << Hunter
     .goto Darnassus,40.377,8.545
     .target 祖卡斯特
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_祖卡斯特|r 对话
-    .turnin 6103 >> 交任务 训练野兽
+    .turnin 6103 >> 交任务  训练野兽
 step << Hunter
     >>|cRXP_WARN_从 |r祖卡斯特|cRXP_FRIENDLY_ 右侧的坡道上去|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_西尔瓦莉雅|r 对话

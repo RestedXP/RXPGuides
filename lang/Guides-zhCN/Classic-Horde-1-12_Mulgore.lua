@@ -230,7 +230,7 @@ step << Warrior
     .goto Mulgore,44.02,76.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哈鲁特|r 对话
     .turnin 3091 >>交任务 简易便笺
-    .accept 77651 >>接受任务 深入荆棘
+    .accept 77651 >>Accept 深入荆棘
     .train 100 >> 学习 |T132337:0|t[冲锋]
     .train 772 >> 学习 |T132155:0|t[撕裂]
     .target 哈鲁特·雷角
@@ -240,7 +240,7 @@ step << Warrior
     .goto Mulgore,44.02,76.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哈鲁特|r 对话
     .turnin 3091 >>交任务 简易便笺
-    .accept 77651 >>接受任务 深入荆棘
+    .accept 77651 >>Accept 深入荆棘
     .train 772 >> 学习 |T132155:0|t[撕裂]
     .target 哈鲁特·雷角
 step << Warrior
@@ -299,14 +299,14 @@ step << Shaman
     .goto Mulgore,45.01,75.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_米拉|r 对话
     .turnin 3093 >>交任务 符文便笺
-    .train 8042 >>影袭 |T136026:0|t[大地震击]
+    .train 8042 >>学习 |T136026:0|t[大地震击]
     .target 米拉·晨行者
 step << Shaman
     #season 0
     .goto Mulgore,45.01,75.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_米拉|r 对话
     .turnin 3093 >>交任务 符文便笺
-    .train 8042 >>影袭 |T136026:0|t[大地震击]
+    .train 8042 >>学习 |T136026:0|t[大地震击]
     .target 米拉·晨行者
 step
     #loop
@@ -607,7 +607,7 @@ step << Druid
 step
 	#completewith BloodhoofHome
 	#softcore
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
 step
 	#hardcore
 	#completewith BloodhoofHome
@@ -714,11 +714,11 @@ step << Hunter
 step << Tauren
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_玛尔|r，|cRXP_FRIENDLY_扎尔曼|r，|cRXP_FRIENDLY_哈肯|r 和 |cRXP_FRIENDLY_穆尔|r 对话
     .accept 766 >>接受任务 马兹拉纳其
-    .target 装备你的普通 |T133127:0|t[经典怀旧服 道具]
+    .target +Maur Raincaller
     .goto Mulgore,46.97,57.07
     .turnin 767 >>交任务 幻象仪祭
     .accept 771 >>接受任务 幻象仪祭
-    .target 仲裁者索鲁斯
+    .target +Zarlman Two-Moons
     .goto Mulgore,47.76,57.53
     .accept 761 >>接受任务 猎捕猛鹫
     .target 哈肯·风之图腾
@@ -729,11 +729,11 @@ step << Tauren
 step << !Tauren
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_玛尔|r，|cRXP_FRIENDLY_扎尔曼|r 和 |cRXP_FRIENDLY_哈肯|r 对话
     .accept 766 >>接受任务 马兹拉纳其
-    .target +愤怒的火灵
+    .target +Maur Raincaller
     .goto Mulgore,46.97,57.07
     .turnin 767 >>交任务 幻象仪祭
     .accept 771 >>接受任务 幻象仪祭
-    .target 大地治愈者托洛克
+    .target +Zarlman Two-Moons
     .goto Mulgore,47.76,57.53
     .accept 761 >>接受任务 猎捕猛鹫
     .target 哈肯·风之图腾
@@ -756,7 +756,7 @@ step << Tauren
 step << Hunter
     #season 2
     .goto Mulgore,59.02,54.36
-    >>对|cRXP_ENEMY_沙沙作响的灌木丛|r 施放|T132212:0|t[猎人印记]
+    >>对|cRXP_ENEMY_沙沙作响的灌木丛|r施放|T132212:0|t[猎人印记]
     >>击杀 |cRXP_ENEMY_风险投资公司偷猎者|r。拾取他的 |T134419:0|t[|cRXP_FRIENDLY_神射手符文|r]
     .collect 206155,1 --Rune of Marksmanship (1)
     .mob Rustling Bush
@@ -764,7 +764,7 @@ step << Hunter
     .train 410113,1
 step << Hunter
     #season 2
-    .train 410113 >>使用|T134419:0|t|T134419:0|t[|cRXP_FRIENDLY_神射手符文|r]
+    .train 410113 >>使用|T134419:0|t[|cRXP_FRIENDLY_神射手符文|r]
     .use 206155
     .itemcount 206155,1
 step
@@ -1057,7 +1057,7 @@ step
 step
     #softcore
 	#completewith Thunderhorn
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
 step
     #hardcore
     #completewith Thunderhorn
@@ -1681,7 +1681,7 @@ step << !Druid
 step << Druid
     #sofcore
     #completewith Bloodhoofturnins1
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
 step << Druid
     #hardcore
     #completewith Bloodhoofturnins1
@@ -1924,7 +1924,7 @@ step << Tauren
 step << Tauren
     #softcore
 	#completewith Thunderhorn2
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
 step << Tauren
     #hardcore
     #completewith Thunderhorn2
@@ -2109,7 +2109,7 @@ step
 step
     #softcore
 	#completewith ZamahPickup
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
 step
     #hardcore
     #completewith ZamahPickup
@@ -2195,7 +2195,7 @@ step << Hunter
 step << Hunter
 	.goto Thunder Bluff,57.4,89.4
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_浩特|r 对话
-	.turnin 6089 >> 交任务 训练野兽
+	.turnin 6089 >> 交任务  训练野兽
     .target Holt Thunderhorn
 step << Hunter
     .goto Thunder Bluff,54.08,84.08
@@ -2238,7 +2238,7 @@ step
     #label CauldronStirrer
     .goto Thunder Bluff,22.82,20.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_药剂师扎玛|r 对话
-    .turnin 853 >>交任务  药剂师扎玛
+    .turnin 853 >>交任务药剂师扎玛
     .target 药剂师扎玛
     .isOnQuest 853
 step
@@ -2314,7 +2314,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拍卖师斯塔比|r 对话
     >>|cRXP_BUY_从拍卖行购买12个|r |T134252:0|t[轻皮] |cRXP_BUY_|r
     .collect 2318,12,768,1 --Light Leather (12)
-    .target 拍卖师斯塔比
+    .target Auctioneer Stampi
     .skill skinning,<1,1
 step
     #ah
@@ -2600,7 +2600,7 @@ step << Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拍卖师斯塔比|r 对话
     >>|cRXP_BUY_从拍卖行购买1条|r |T133894:0|t[新鲜的美味小鱼] |cRXP_BUY_|r
     .collect 6291,1,76240,1 --Raw Brilliant Smallfish (1)
-    .target 拍卖师斯塔比
+    .target Auctioneer Stampi
     .train 410104,1
     .xp <4,1
 step << Shaman
@@ -3404,14 +3404,14 @@ step << Shaman
     .goto Mulgore,45.01,75.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_米拉|r 对话
     .turnin 3093 >>交任务 符文便笺
-    .train 8042 >>影袭 |T136026:0|t[大地震击]
+    .train 8042 >>学习 |T136026:0|t[大地震击]
     .target 米拉·晨行者
 step << Shaman
     #season 0
     .goto Mulgore,45.01,75.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_米拉|r 对话
     .turnin 3093 >>交任务 符文便笺
-    .train 8042 >>影袭 |T136026:0|t[大地震击]
+    .train 8042 >>学习 |T136026:0|t[大地震击]
     .target 米拉·晨行者
 step
     #loop
@@ -3669,7 +3669,7 @@ step << Druid
 step
 	#completewith BloodhoofHome
 	#softcore
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
 step
 	#hardcore
 	#completewith BloodhoofHome
@@ -3786,13 +3786,13 @@ step << Hunter
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.0
 step << Tauren
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_茂尔|r, |cRXP_FRIENDLY_扎尔曼|r, |cRXP_FRIENDLY_哈肯|r 和 |cRXP_FRIENDLY_穆尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_玛尔|r，|cRXP_FRIENDLY_扎尔曼|r，|cRXP_FRIENDLY_哈肯|r 和 |cRXP_FRIENDLY_穆尔|r 对话
     .accept 766 >>接受任务 马兹拉纳其
-    .target 茂尔·祈雨
+    .target +Maur Raincaller
     .goto Mulgore,46.97,57.07
     .turnin 767 >>交任务 幻象仪祭
     .accept 771 >>接受任务 幻象仪祭
-    .target 扎尔曼·双月
+    .target +Zarlman Two-Moons
     .goto Mulgore,47.76,57.53
     .accept 761 >>接受任务 猎捕猛鹫
     .target 哈肯·风之图腾
@@ -3801,13 +3801,13 @@ step << Tauren
     .target 穆尔·雷角
     .goto Mulgore,48.53,60.40
 step << !Tauren
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_茂尔|r, |cRXP_FRIENDLY_扎尔曼|r 和 |cRXP_FRIENDLY_哈肯|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_玛尔|r，|cRXP_FRIENDLY_扎尔曼|r 和 |cRXP_FRIENDLY_哈肯|r 对话
     .accept 766 >>接受任务 马兹拉纳其
-    .target 茂尔·祈雨
+    .target +Maur Raincaller
     .goto Mulgore,46.97,57.07
     .turnin 767 >>交任务 幻象仪祭
     .accept 771 >>接受任务 幻象仪祭
-    .target 扎尔曼·双月
+    .target +Zarlman Two-Moons
     .goto Mulgore,47.76,57.53
     .accept 761 >>接受任务 猎捕猛鹫
     .target 哈肯·风之图腾
@@ -3830,7 +3830,7 @@ step << Tauren
 step << Hunter
     #season 2
     .goto Mulgore,59.02,54.36
-    >>对|cRXP_ENEMY_沙沙作响的灌木丛|r 施放|T132212:0|t[猎人印记]
+    >>对|cRXP_ENEMY_沙沙作响的灌木丛|r施放|T132212:0|t[猎人印记]
     >>击杀 |cRXP_ENEMY_风险投资公司偷猎者|r。拾取他的 |T134419:0|t[|cRXP_FRIENDLY_神射手符文|r]
     .collect 206155,1 --Rune of Marksmanship (1)
     .mob Rustling Bush
@@ -3838,7 +3838,7 @@ step << Hunter
     .train 410113,1
 step << Hunter
     #season 2
-    .train 410113 >>使用|T134419:0|t|T134419:0|t[|cRXP_FRIENDLY_神射手符文|r]
+    .train 410113 >>使用|T134419:0|t[|cRXP_FRIENDLY_神射手符文|r]
     .use 206155
     .itemcount 206155,1
 step
@@ -4150,7 +4150,7 @@ step
     #xprate <2.1
     #softcore
 	#completewith Thunderhorn
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
 step
     #xprate <2.1
     #hardcore
@@ -4662,7 +4662,7 @@ step << Druid
 step << Hunter
 	.goto Thunder Bluff,57.4,89.4
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_浩特|r 对话
-	.turnin 6089 >> 交任务 训练野兽
+	.turnin 6089 >> 交任务  训练野兽
     .target Holt Thunderhorn
     .isOnQuest 6089
 step << Hunter
@@ -4864,7 +4864,7 @@ step
     #softcore
     #completewith Bloodhoofturnins1
     .goto Mulgore,48.22,38.85
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
     >>|cRXP_WARN_确保你在路点箭头处或者它的南边死去|r
     .zoneskip Thunder Bluff
 step
@@ -4940,7 +4940,7 @@ step << !Tauren
 step << Tauren
     #xprate <2.1
     #label Bloodhoofturnins1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Baine|r 和 |cRXP_FRIENDLY_卢尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_贝恩|r 和 |cRXP_FRIENDLY_卢尔|r对话
     .turnin 746 >>交任务 矮人的挖掘场
     .target 贝恩·血蹄
     .goto Mulgore,47.51,60.16
@@ -5284,7 +5284,7 @@ step << skip
 step << skip
     #softcore
 	#completewith Thunderhorn2
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
 step << skip
     #hardcore
     #completewith Thunderhorn2
@@ -5467,7 +5467,7 @@ step
     #xprate <2.1
     #softcore
 	#completewith ZamahPickup
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
 step
     #xprate <2.1
     #hardcore
@@ -5552,7 +5552,7 @@ step
 step << Hunter
 	.goto Thunder Bluff,57.4,89.4
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_浩特|r 对话
-	.turnin 6089 >> 交任务 训练野兽
+	.turnin 6089 >> 交任务  训练野兽
     .target Holt Thunderhorn
 step << Hunter
     #optional
@@ -5610,7 +5610,7 @@ step
     #label CauldronStirrer
     .goto Thunder Bluff,22.82,20.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_药剂师扎玛|r 对话
-    .turnin 853 >>交任务  药剂师扎玛
+    .turnin 853 >>交任务药剂师扎玛
     .target 药剂师扎玛
     .isOnQuest 853
 step
@@ -5708,7 +5708,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拍卖师斯塔比|r 对话
     >>|cRXP_BUY_从拍卖行购买12个|r |T134252:0|t[轻皮] |cRXP_BUY_|r
     .collect 2318,12,768,1 --Light Leather (12)
-    .target 拍卖师斯塔比
+    .target Auctioneer Stampi
     .skill skinning,<1,1
 step
     #optional
@@ -5794,7 +5794,7 @@ step << Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拍卖师斯塔比|r 对话
     >>|cRXP_BUY_从拍卖行购买1条|r |T133894:0|t[新鲜的美味小鱼] |cRXP_BUY_|r
     .collect 6291,1,76240,1 --Raw Brilliant Smallfish (1)
-    .target 拍卖师斯塔比
+    .target Auctioneer Stampi
     .train 410104,1
 step << Shaman
     #season 2

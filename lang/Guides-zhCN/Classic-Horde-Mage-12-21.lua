@@ -914,7 +914,7 @@ step
     .goto The Barrens,52.0,31.6
 .target 曼科里克
 >>与 |cRXP_FRIENDLY_曼科里克|r 对话
-    .turnin 899 >>交任务  复仇的怒火
+    .turnin 899 >>交任务复仇的怒火
 step
     >>塔顶
     .goto The Barrens,51.60,30.90
@@ -1037,7 +1037,7 @@ step
 	.goto Thunder Bluff,23.00,21.00
 .target 药剂师扎玛
 >>与 |cRXP_FRIENDLY_药剂师扎玛|r 对话
-    .turnin 853 >> 交任务  药剂师扎玛
+    .turnin 853 >> 交任务药剂师扎玛
 step
     .goto Thunder Bluff,25.16,20.95
     .trainer >> 训练你的职业技能
@@ -1093,7 +1093,7 @@ step
 >>与 |cRXP_FRIENDLY_玛加萨·恐怖图腾|r 对话
     .turnin 1063 >> 交任务  巫婆长老
 .target 玛加萨·恐怖图腾
-    .accept 1064 >> 接受任务 被遗忘者的援助
+    .accept 1064 >> 接受任务被遗忘者的援助
 step
     .goto Thunder Bluff,78.62,28.56
 >>与 |cRXP_FRIENDLY_大德鲁伊哈缪尔·符文图腾|r 对话

@@ -134,7 +134,7 @@ step << !Priest !Mage !Warlock !Shaman
     .goto 1426/0,320.30,-6226.74
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾德林·怒流|r 对话
     >>|cRXP_BUY_从他那里|r|cRXP_BUY_购买 600发|r |T132384:0|t[轻弹丸] << Hunter
-    .vendor >> |cRXP_WARN_出售垃圾物品|r << !Hunter
+    .vendor >> 出售垃圾物品 << !Hunter
     .collect 2516,600 << Hunter --Light Shot (600)
     .target 艾德林·怒流
     .xp >6,1
@@ -213,7 +213,7 @@ step << Warlock
     #softcore
     #label BeginningsHS
     #completewith BeginningsEnd
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
     >>|cRXP_WARN_确保当你死亡时，你所在的子区域是寒脊山谷！否则你将被传送到卡拉诺斯墓地|r
     .target 灵魂医者
 step << Warlock
@@ -349,7 +349,7 @@ step << Shaman
     .target Teo Hammerstorm::257446
     .turnin 98581 >>交任务 古老符文
     .accept 94373 >>接受任务 大地的召唤
-    .train 8042 >> 影袭 |T136026:0|t[大地震击]
+    .train 8042 >> 学习 |T136026:0|t[大地震击]
 step << Paladin/Warlock/Hunter/Shaman
     .goto 1426/0,390.000,-6093.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格伦德·德罗克达::2756|r 对话
@@ -446,7 +446,7 @@ step
 step << !Paladin !Warlock !Hunter !Shaman
     #softcore
     #completewith next
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
     .target 灵魂医者
 step
     #hardcore << !Paladin !Warlock !Hunter !Shaman
@@ -701,7 +701,7 @@ step
     #softcore
     #completewith next
     >>|cRXP_WARN_请确保你的区域不是寒脊山小径|r
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
     .target 灵魂医者
 step
     .goto 1426/0,-498.400,-5648.400
@@ -1055,7 +1055,7 @@ step
     .mob +Young Wendigo
     .complete 98321,1 --|8/8 Flintfire's Shipment
 step
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
     .target 灵魂医者
     .subzoneskip 136,1
 step
@@ -1178,7 +1178,7 @@ step << !Mage !Priest !Warlock
     #completewith next
     .goto 1426/0,302.27,-5387.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_基格·吉布恩|r 对话
-    .vendor >> |cRXP_WARN_出售垃圾物品|r
+    .vendor >> 出售垃圾物品
     .target 基格·吉布恩
 step << Priest/Mage/Warlock
     #completewith next
@@ -1330,7 +1330,7 @@ step
 step
     #softcore
     #completewith next
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
     .target 灵魂医者
 step
     .goto 1426/0,-501.400,-5643.900
@@ -1650,7 +1650,7 @@ step << !Hunter
     .xp 9 >> 刷怪升级到 9 级
 step
     #completewith next
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
     .target 灵魂医者
     .subzoneskip 2102
 step
@@ -2326,12 +2326,12 @@ step << !Hunter
 step << !Hunter
     #completewith flyIF
     .hs >> 炉石到塞尔萨玛
-    >>|cRXP_BUY_按需购买食物/水|r << !Warrior !Rogue
-	>>|cRXP_BUY_如有需要，购买食物|r << Warrior/Rogue
+    >>|cRXP_BUY_如有需要，购买食物/水|r << !Warrior !Rogue
+	>>|cRXP_BUY_需要的话就买点食物|r << Warrior/Rogue
     .cooldown item,6948,>2,1
 step << Hunter
     #completewith flyIF
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
     .subzoneskip 2101 -- stoutlager inn
     .subzoneskip 144 -- thelsamar
     .target 灵魂医者
@@ -2460,7 +2460,7 @@ step << Hunter
 step << Hunter
     .goto 1455/0,-1273.83,-5022.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_贝莉亚·雷岩|r 对话
-    .turnin 6086 >> 交任务 训练野兽
+    .turnin 6086 >> 交任务  训练野兽
     .trainer >> 训练你的宠物技能
     .target 贝莉亚·雷岩
 step << Hunter
@@ -2550,8 +2550,8 @@ step << Dwarf Paladin
     .bindlocation 1537
 step << Hunter
     .hs >> 炉石到塞尔萨玛
-    >>|cRXP_BUY_按需购买食物/水|r << !Warrior !Rogue
-	>>|cRXP_BUY_如有需要，购买食物|r << Warrior/Rogue
+    >>|cRXP_BUY_如有需要，购买食物/水|r << !Warrior !Rogue
+	>>|cRXP_BUY_需要的话就买点食物|r << Warrior/Rogue
     .cooldown item,6948,>2,1
     .zoneskip Loch Modan
 step << Hunter
@@ -3424,8 +3424,8 @@ step
     .target 索尔
 step << Dwarf Paladin
     .hs >> 将炉石使用回铁炉堡
-    >>|cRXP_BUY_按需购买食物/水|r << !Warrior !Rogue
-	>>|cRXP_BUY_如有需要，购买食物|r << Warrior/Rogue
+    >>|cRXP_BUY_如有需要，购买食物/水|r << !Warrior !Rogue
+	>>|cRXP_BUY_需要的话就买点食物|r << Warrior/Rogue
     .cooldown item,6948,>2,1
     .bindlocation 1537,1
 step << Dwarf Paladin
@@ -3438,8 +3438,8 @@ step << Dwarf Paladin
     .zoneskip Loch Modan
 step << !Paladin
     .hs >> 炉石到塞尔萨玛
-    >>|cRXP_BUY_按需购买食物/水|r << !Warrior !Rogue
-	>>|cRXP_BUY_如有需要，购买食物|r << Warrior/Rogue
+    >>|cRXP_BUY_如有需要，购买食物/水|r << !Warrior !Rogue
+	>>|cRXP_BUY_需要的话就买点食物|r << Warrior/Rogue
     .cooldown item,6948,>2,1
     .zoneskip Loch Modan
 step << !Paladin
@@ -4184,7 +4184,7 @@ step << Mage/Priest/Warlock
     .itemcount 11288,<1
 step << Mage
     .goto 1455/0,-928.48,-4614.620
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_丁克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_丁克|r 对话
     .trainer >> 训练你的职业技能
     .target 丁克
 step << Priest
@@ -4196,7 +4196,7 @@ step << skip --logout skip << Mage/Priest
     #optional
     #completewith Deeprun
     .goto 1455/0,-931.89,-4611.84--c:1455,27.611,8.074
-    .goto 1455/0,-1317.74,-4839.51,20 >>|cRXP_WARN_跳到|cRXP_FRIENDLY_宾克|r上方的柱子顶端，然后向她的东边稍微走一点，走到箭头指示的位置。调整你的角色位置，直到看起来像是在悬空漂浮，然后通过下线并重新上线来执行下线跳过操作|r--c:1455,76.414,51.226
+    .goto 1455/0,-1317.74,-4839.51,20 >>|cRXP_WARN_跳到|cRXP_FRIENDLY_彬克|r上方的柱子上，然后稍微往东走到箭头位置。调整角色位置直到看起来像漂浮状态，然后通过登出再登入执行登出跳过|r--c:1455,76.414,51.226
 step << Dwarf Rogue/Gnome Rogue
     #season 0,1
     #optional
@@ -4241,7 +4241,7 @@ step << Warrior
     .goto 1455/0,-1234.65,-5035.67,12 >> 前往 |cRXP_FRIENDLY_比尔班·飞钳|r
 step << Warrior
     .goto 1455/0,-1234.65,-5035.67
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_比尔班·飞钳|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_比尔班·飞钳|r 对话
     .trainer >> 训练你的职业技能
     .target 比尔班·飞钳
 
@@ -4544,7 +4544,7 @@ step << Hunter
     .goto 1455/0,-1273.83,-5022.08
     .target 贝莉亚·雷岩
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_贝莉亚·雷岩|r 对话
-    .turnin 6086 >> 交任务 训练野兽
+    .turnin 6086 >> 交任务  训练野兽
 step << Hunter
     #label RTB
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
@@ -4834,7 +4834,7 @@ step
 step
     #softcore
     #completewith next
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
     .target 灵魂医者
 step
     .goto 1432/0,-3019.02,-5369.40,8,0

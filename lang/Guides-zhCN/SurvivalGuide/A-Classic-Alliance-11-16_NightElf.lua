@@ -63,7 +63,7 @@ step
     #completewith next
     .goto Felwood,19.27,19.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莱尔德|r 对话
-    >>|cRXP_BUY_如有需要，购买食物|r
+    >>|cRXP_BUY_需要的话就买点食物|r
     .vendor >>|T133918:0|t[长嘴泥鳅] |cRXP_WARN_非常便宜|r
     .target 莱尔德
 step
@@ -571,7 +571,7 @@ step
     .goto StormwindClassic,5.560,50.125,10,0
     .goto StormwindClassic,13.669,74.499,20,0
     .goto Westfall,42.024,70.980
-    .zone Westfall >> 如果网站的角色卡死服务不可用，就游到西部荒野
+    .zone Westfall >> 如果网站卡死不可用，请游泳前往西部荒野
     .zoneskip Ironforge
     .subzoneskip 809--IF Gates
     .subzoneskip 2257--Deeprun Tram
@@ -1107,7 +1107,7 @@ step << Hunter
     .target 雷格努斯·雷石
 step << Warrior
     .goto Ironforge,65.907,88.409
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_比尔班·飞钳|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_比尔班·飞钳|r 对话
     .trainer >> 训练你的职业技能
     .target 比尔班·飞钳
 step << Warrior
