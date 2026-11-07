@@ -8,8 +8,8 @@ RXPGuides.RegisterGuide([[
 #displayname 1-9 Skyborne << Horde
 #group Guia de Masmorras do RestedXP Forever (A) << Alliance
 #group Guia de Masmorras do RestedXP Forever (H) << Horde
-#subgroup Guia da Masmorra 1-20 << Alliance
-#subgroup Masmorra Guia 1-22 << Horde
+#subgroup Guia de Masmorra 1-20 << Alliance
+#subgroup Guia de Masmorra 1-22 << Horde
 #defaultfor Skyborne
 #next 9-13 Zephras Isle
 
@@ -28,8 +28,8 @@ RXPGuides.RegisterGuide([[
 #displayname 9-12 Skyborne << Horde
 #group Guia de Masmorras do RestedXP Forever (A) << Alliance
 #group Guia de Masmorras do RestedXP Forever (H) << Horde
-#subgroup Guia da Masmorra 1-20 << Alliance
-#subgroup Masmorra Guia 1-22 << Horde
+#subgroup Guia de Masmorra 1-20 << Alliance
+#subgroup Guia de Masmorra 1-22 << Horde
 #defaultfor Skyborne
 #next 13-15 Cerro Oeste << Alliance
 #next 12-14 Floresta de Pinhaprata << Horde !Hunter

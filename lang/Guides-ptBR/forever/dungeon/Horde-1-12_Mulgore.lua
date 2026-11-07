@@ -8,14 +8,14 @@ RXPGuides.RegisterGuide([[
 #name 1-6 Mulgore
 #version 11
 #group Guia de Masmorras do RestedXP Forever (H)
-#subgroup Masmorra Guia 1-22
+#subgroup Guia de Masmorra 1-22
 --#groupid RXP-SRGCE-H1
 #defaultfor Tauren
 #next 6-12 Mulgore;6-13 Mulgore
 
 step
 .enabledungeon RFC
-#include Guia RestedXP Forever (H)\1-6 Mulgore
+#include Guia de Progressão Rápida do RestedXP Forever (H)\1-6 Mulgore
 ]])
 
 
@@ -25,7 +25,7 @@ RXPGuides.RegisterGuide([[
 #name 6-12 Mulgore
 #version 11
 #group Guia de Masmorras do RestedXP Forever (H)
-#subgroup Masmorra Guia 1-22
+#subgroup Guia de Masmorra 1-22
 --#groupid RXP-SRGCE-H1
 #defaultfor Tauren
 #next 12-16 Terras Devastadas
@@ -33,5 +33,5 @@ RXPGuides.RegisterGuide([[
 
 step
 .enabledungeon RFC
-#include Guia RestedXP Forever (H)\6-12 Mulgore
+#include Guia de Progressão Rápida do RestedXP Forever (H)\6-12 Mulgore
 ]])

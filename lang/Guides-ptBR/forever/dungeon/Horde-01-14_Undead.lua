@@ -7,7 +7,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #version 11
 #group Guia de Masmorras do RestedXP Forever (H)
-#subgroup Masmorra Guia 1-22
+#subgroup Guia de Masmorra 1-22
 --#groupid RXP-SRGCE-H1
 #defaultfor Undead
 #name 1-6 Clareiras de Tirisfal
@@ -15,7 +15,7 @@ RXPGuides.RegisterGuide([[
 
 step
 .enabledungeon RFC
-#include Guia RestedXP Forever (H)\1-6 Clareiras de Tirisfal
+#include Guia de Progressão Rápida do RestedXP Forever (H)\1-6 Clareiras de Tirisfal
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -25,7 +25,7 @@ RXPGuides.RegisterGuide([[
 #displayname 6-13 Tirisfal Glades << Paladin
 #version 11
 #group Guia de Masmorras do RestedXP Forever (H)
-#subgroup Masmorra Guia 1-22
+#subgroup Guia de Masmorra 1-22
 --#groupid RXP-SRGCE-H1
 #defaultfor Undead
 #next 12-14 Floresta de Pinhaprata; 12-17 Sertões
@@ -33,13 +33,13 @@ RXPGuides.RegisterGuide([[
 step
 .enabledungeon ROL
 .enabledungeon RFC
-#include Guia RestedXP Forever (H)\6-12 Clareiras de Tirisfal
+#include Guia de Progressão Rápida do RestedXP Forever (H)\6-12 Clareiras de Tirisfal
 ]])
 
 
 RXPGuides.RegisterGuide([[
 #group Guia de Masmorras do RestedXP Forever (H)
-#subgroup Masmorra Guia 1-22
+#subgroup Guia de Masmorra 1-22
 --#groupid RXP-SRGCE-H1
 << Horde
 #version 11
@@ -54,5 +54,5 @@ RXPGuides.RegisterGuide([[
 step
 .enabledungeon RFC
 .enabledungeon ROL
-#include Guia RestedXP Forever (H)\12-14 Floresta de Pinhaprata
+#include Guia de Progressão Rápida do RestedXP Forever (H)\12-14 Floresta de Pinhaprata
 ]])

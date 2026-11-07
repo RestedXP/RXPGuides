@@ -10,7 +10,7 @@ RXPGuides.RegisterGuide([[
 #displayname 14-18 Sertões << !Shaman !Hunter !Tauren
 #displayname 15-18 Sertões << Paladin
 #version 11
-#group Guia RestedXP Forever (H)
+#group Guia de Progressão Rápida do RestedXP Forever (H)
 #subgroup Guia Speedrun 1-22
 --#groupid RXP-SRGCE-H1
 #next 17-22 Cordilheira das Torres de Pedra/Sertões/Vale Gris
@@ -2561,7 +2561,7 @@ RXPGuides.RegisterGuide([[
 #name 17-22 Cordilheira das Torres de Pedra/Sertões/Vale Gris
 #displayname 18-22 Cordilheira das Torres de Pedra/Sertões/Vale Gris << !Shaman !Hunter !Tauren
 #version 11
-#group Guia RestedXP Forever (H)
+#group Guia de Progressão Rápida do RestedXP Forever (H)
 #subgroup Guia Speedrun 1-22
 --#groupid RXP-SRGCE-H1
 #next 22-24 Eira dos montes

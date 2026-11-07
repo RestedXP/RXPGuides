@@ -10,7 +10,7 @@ RXPGuides.RegisterGuide([[
 #displayname 15-16 Terras Devastadas << Paladin
 #version 11
 #group Guia de Masmorras do RestedXP Forever (H)
-#subgroup Masmorra Guia 1-22
+#subgroup Guia de Masmorra 1-22
 --#groupid RXP-SRGCE-H1
 #next 16-17 Cavernas Ígneas
 
@@ -1684,7 +1684,7 @@ RXPGuides.RegisterGuide([[
 #name 16-17 Cavernas Ígneas
 #version 11
 #group Guia de Masmorras do RestedXP Forever (H)
-#subgroup Masmorra Guia 1-22
+#subgroup Guia de Masmorra 1-22
 --#groupid RXP-SRGCE-H1
 #next 17-18 Ruins of Lordaeron
 
@@ -2180,7 +2180,7 @@ RXPGuides.RegisterGuide([[
 #name 17-18 Ruins of Lordaeron
 #version 11
 #group Guia de Masmorras do RestedXP Forever (H)
-#subgroup Masmorra Guia 1-22
+#subgroup Guia de Masmorra 1-22
 --#groupid RXP-SRGCE-H1
 #next 18-21 Savanas
 
@@ -2583,7 +2583,7 @@ RXPGuides.RegisterGuide([[
 #name 18-21 Savanas
 #version 11
 #group Guia de Masmorras do RestedXP Forever (H)
-#subgroup Masmorra Guia 1-22
+#subgroup Guia de Masmorra 1-22
 --#groupid RXP-SRGCE-H1
 #next 21-22 Caverna Ululante
 
@@ -4388,7 +4388,7 @@ RXPGuides.RegisterGuide([[
 #next 22-24 Eira dos montes
 #version 11
 #group Guia de Masmorras do RestedXP Forever (H)
-#subgroup Masmorra Guia 1-22
+#subgroup Guia de Masmorra 1-22
 --#groupid RXP-SRGCE-H1
 
 step

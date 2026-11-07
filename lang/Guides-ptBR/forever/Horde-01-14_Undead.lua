@@ -7,7 +7,7 @@ RXPGuides.RegisterGuide([[
 #disabledungeons
 << Horde
 #version 11
-#group Guia RestedXP Forever (H)
+#group Guia de Progressão Rápida do RestedXP Forever (H)
 #subgroup Guia Speedrun 1-22
 --#groupid RXP-SRGCE-H1
 #defaultfor Undead
@@ -711,7 +711,7 @@ RXPGuides.RegisterGuide([[
 #name 6-12 Clareiras de Tirisfal
 #displayname 6-13 Clareiras de Tirisfal << Paladin
 #version 11
-#group Guia RestedXP Forever (H)
+#group Guia de Progressão Rápida do RestedXP Forever (H)
 #subgroup Guia Speedrun 1-22
 --#groupid RXP-SRGCE-H1
 #defaultfor Undead
@@ -2881,22 +2881,22 @@ step << !Paladin
 step
     .goto 1420/0,73.800,2022.300
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Deathguard Linnea::1495|r
-    >>|cRXP_WARN_Esta é uma pré-missão para "The Ira of Rath'mael"|r
+    >>|cRXP_WARN_Esta é uma missão anterior para "The Ira of Rath'mael"|r
     .turnin 356 >>Entregue Patrulha da retaguarda
     .target Deathguard Linnea::1495
     .accept 99156 >>Aceite Patrulha da retaguarda
     .dungeon ROL
 step
     .goto 1420/0,-765.200,2518.700
-    >>Abate |cRXP_ENEMY_Riptear|r |cRXP_WARN_(level 13 elite)|r. Saqueie dele |T134339:0|t[|cRXP_LOOT_Riptear's Coração|r]
-    >>|cRXP_WARN_Esta é uma pré-missão para "The Ira of Rath'mael"|r
+    >>Abata |cRXP_ENEMY_Riptear|r |cRXP_WARN_(nível 13 elite)|r. Saqueie-o para obter |T134339:0|t[|cRXP_LOOT_Riptear's Coração|r]
+    >>|cRXP_WARN_Esta é uma missão anterior para "The Ira of Rath'mael"|r
     .complete 99156,1 --|1/1 Riptear's Heart
     .mob Riptear
     .dungeon ROL
 step
     .goto 1420/0,74.200,2022.400
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Deathguard Linnea::1495|r
-    >>|cRXP_WARN_Esta é uma pré-missão para "The Ira of Rath'mael"|r
+    >>|cRXP_WARN_Esta é uma missão anterior para "The Ira of Rath'mael"|r
     .turnin 99156 >>Entregue Patrulha da retaguarda
     .target Deathguard Linnea::1495
     .dungeon ROL
@@ -3301,7 +3301,7 @@ step
 
 
 RXPGuides.RegisterGuide([[
-#group Guia RestedXP Forever (H)
+#group Guia de Progressão Rápida do RestedXP Forever (H)
 #subgroup Guia Speedrun 1-22
 --#groupid RXP-SRGCE-H1
 << Horde
