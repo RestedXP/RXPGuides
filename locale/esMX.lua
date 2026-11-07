@@ -144,9 +144,9 @@ L["Skreah"] = "Skreah"
 -- DB\classic\db.lua file
 
 L["RestedXP Speedrun Guide (H)"] = "RestedXP Guía de subida de nivel rápida (H)"
-L["RestedXP Survival Guide (H)"] = "RestedXP Guía de supervivencia (H)"
+L["RestedXP Survival Guide (H)"] = "RestedXP Guía de Supervivencia (H)"
 L["RestedXP Speedrun Guide (A)"] = "RestedXP Guía de subida de nivel rápida (A)"
-L["RestedXP Survival Guide (A)"] = "RestedXP Guía de supervivencia (A)"
+L["RestedXP Survival Guide (A)"] = "RestedXP Guía de Supervivencia (A)"
 L["Mining & Engineering"] = "Minería e Ingeniería"
 L["Mining & Blacksmithing"] = "Minería y Herrería"
 L["Herbalism & Alchemy"] = "Herboristería y Alquimia"
@@ -211,7 +211,7 @@ L["ab) Dwarf Coldridge Vallley"] = "ab) Enano Valle de Crestanevada"
 
 -- DB\mop\db.lua file
 
-L["RestedXP Death Knight Start"] = "RestedXP Inicio de Caballero de la Muerte"
+L["RestedXP Death Knight Start"] = "RestedXP Inicio del Caballero de la Muerte"
 L["RXP MoP 1-80 (H)"] = "RXP MoP 1-80 (H)"
 L["RXP MoP 1-80 (A)"] = "RXP MoP 1-80 (A)"
 
@@ -269,9 +269,9 @@ L["RXP MoP 1-60 (H)"] = "RXP MoP 1-60 (H)"
 -- DB\tbc\db.lua file
 
 L["RestedXP TBC Guide (H)"] = "RestedXP Guía TBC (H)"
-L["RXP TBC Survival Guide (H)"] = "RXP Guía de supervivencia TBC (H)"
+L["RXP TBC Survival Guide (H)"] = "RXP TBC Guía de Supervivencia (H)"
 L["RestedXP TBC Guide (A)"] = "RestedXP Guía TBC (A)"
-L["RXP TBC Survival Guide (A)"] = "RXP Guía de supervivencia TBC (A)"
+L["RXP TBC Survival Guide (A)"] = "RXP TBC Guía de Supervivencia (A)"
 
 -- DB\wotlk\db.lua file
 
@@ -892,7 +892,7 @@ L["Keys"] = "Llaves"
 L["Set Guide"] = "Fijar guía"
 L["Profession Leveling"] = "Subida de Profesión"
 L["Dungeon Guide"] = "Guía de Mazmorras"
-L["Mixes open world questing and dungeons"] = "Mezcla misiones del mundo abierto y mazmorras"
+L["Mixes open world questing and dungeons"] = "Combina misiones en mundo abierto y mazmorras"
 L["Open World Guide"] = "Guía de mundo abierto"
 L["Fastest Solo Leveling Experience"] = "La experiencia de subida de nivel en solitario más rápida"
 L["Speedrun Guide"] = "Guía Speedrun"
@@ -931,7 +931,7 @@ L["Prioritizes the fastest route and skips low-level quests."] = "Prioriza la ru
 L["Discovery Route (Slower)"] = "Ruta de exploración (más lenta)"
 L["Includes more quests for a slower route."] = "Incluye más misiones para una ruta más pausada."
 L["Open World Guide Configuration"] = "Configuración de la guía de mundo abierto"
-L["Dungeon Guide Configuration"] = "Configuración de Guía de Mazmorras"
+L["Dungeon Guide Configuration"] = "Configuración de la guía de mazmorras"
 
 -- UI\V2\GuideImporter.lua file
 
