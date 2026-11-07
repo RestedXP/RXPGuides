@@ -3380,7 +3380,7 @@ step << Alliance Hunter
     #completewith Deliver the Signet
     .xp <9,1
     .itemcount 277110,1 --Zephrali Bow
-    +|cRXP_WARN_Equip the|r |T7810733:0|t[Zephrali Bow].
+    .equip 18,277110 >>|cRXP_WARN_Equip the|r |T7810733:0|t[Zephrali Bow].
     .use 277110 --Zephrali Bow
 step << Alliance Warrior/Alliance Paladin
     .xp <9,1
@@ -3403,7 +3403,7 @@ step << Alliance Warrior/Alliance Paladin
     #completewith Deliver the Signet
     .xp <9,1
     .itemcount 277106,1 --Zephrali Smasher
-    +|cRXP_WARN_Equip the|r |T7792097:0|t[Zephrali Smasher].
+    .equip 16,277106 >>|cRXP_WARN_Equip the|r |T7792097:0|t[Zephrali Smasher].
     .use 277106 --Zephrali Smasher
 step << Alliance Shaman/Alliance Druid
     .xp <9,1
@@ -3422,7 +3422,7 @@ step << Alliance Shaman/Alliance Druid
     #completewith Deliver the Signet
     .xp <9,1
     .itemcount 277109,1 --Zephrali Greatstaff
-    +|cRXP_WARN_Equip the|r |T7798447:0|t[Zephrali Greatstaff].
+    .equip 16,277109 >>|cRXP_WARN_Equip the|r |T7798447:0|t[Zephrali Greatstaff].
     .use 277109 --Zephrali Greatstaff
 step << Alliance Rogue
     .xp <9,1
@@ -3445,7 +3445,7 @@ step << Alliance Rogue
     #completewith Deliver the Signet
     .xp <9,1
     .itemcount 277107,1 --Zephrali Bludgeon
-    +|cRXP_WARN_Equip the|r |T7791298:0|t[Zephrali Bludgeon].
+    .equip 16,277107 >>|cRXP_WARN_Equip the|r |T7791298:0|t[Zephrali Bludgeon].
     .use 277107 --Zephrali Bludgeon
 -- step << Mage/Priest/Warlock
 --     .xp <9,1
@@ -3773,7 +3773,7 @@ step << Horde Hunter
     #completewith LeavingValanaarA
     .xp <9,1
     .itemcount 277110,1 --Zephrali Bow
-    +|cRXP_WARN_Equip the|r |T7810733:0|t[Zephrali Bow].
+    .equip 18,277110 >>|cRXP_WARN_Equip the|r |T7810733:0|t[Zephrali Bow].
     .use 277110 --Zephrali Bow
 step << Horde Warrior
     .xp <9,1
@@ -3795,7 +3795,7 @@ step << Horde Warrior
     #completewith LeavingValanaarA
     .xp <9,1
     .itemcount 277106,1 --Zephrali Smasher
-    +|cRXP_WARN_Equip the|r |T7792097:0|t[Zephrali Smasher].
+    .equip 16,277106 >>|cRXP_WARN_Equip the|r |T7792097:0|t[Zephrali Smasher].
     .use 277106 --Zephrali Smasher
 step << Horde Shaman/Horde Druid
     .xp <9,1
@@ -3818,7 +3818,7 @@ step << Horde Shaman/Horde Druid
     #completewith LeavingValanaarA
     .xp <9,1
     .itemcount 277109,1 --Zephrali Greatstaff
-    +|cRXP_WARN_Equip the|r |T7798447:0|t[Zephrali Greatstaff].
+    .equip 16,277109 >>|cRXP_WARN_Equip the|r |T7798447:0|t[Zephrali Greatstaff].
     .use 277109 --Zephrali Greatstaff
 step << Horde Rogue
     .xp <9,1
@@ -3840,7 +3840,7 @@ step << Horde Rogue
     #completewith LeavingValanaarA
     .xp <9,1
     .itemcount 277107,1 --Zephrali Bludgeon
-    +|cRXP_WARN_Equip the|r |T7791298:0|t[Zephrali Bludgeon].
+    .equip 16,277107 >>|cRXP_WARN_Equip the|r |T7791298:0|t[Zephrali Bludgeon].
     .use 277107 --Zephrali Bludgeon
 step << Horde
     .train 2366,3 -- Herbalism Trained
@@ -4365,9 +4365,9 @@ step
     .target Alvarion Windfield::252448
 step
     #completewith Accept Catching Wind
-    *|cRXP_WARN_Equip the|r |T134435:0|t[Planting Shovel] << Warrior/Shaman/Paladin
-    *|cRXP_WARN_Equip the|r |T133057:0|t[Roofing Hammer] << Druid/Priest
-    *|cRXP_WARN_Equip the|r |T134520:0|t[Trusty Wrench] << Rogue
+    .equip 16,263312 >>|cRXP_WARN_Equip the|r |T134435:0|t[Planting Shovel] << Warrior/Shaman/Paladin
+    .equip 16,263314 >>|cRXP_WARN_Equip the|r |T133057:0|t[Roofing Hammer] << Druid/Priest
+    .equip 16,263313 >>|cRXP_WARN_Equip the|r |T134520:0|t[Trusty Wrench] << Rogue
     .use 263312 << Warrior/Shaman/Paladin -- Planting Shovel
     .use 263314 << Druid/Priest -- Roofing Hammer
     .use 263313 << Rogue -- Trusty Wrench
@@ -4438,7 +4438,7 @@ step << Warrior/Paladin
     #completewith Learn << Horde
     .xp <9,1
     .itemcount 277106,1 --Zephrali Smasher
-    +|cRXP_WARN_Equip the|r |T7792097:0|t[Zephrali Smasher].
+    .equip 16,277106 >>|cRXP_WARN_Equip the|r |T7792097:0|t[Zephrali Smasher].
     .use 277106 --Zephrali Smasher
 step << Shaman/Druid
     .xp <9,1
@@ -4461,7 +4461,7 @@ step << Shaman/Druid
     #completewith Learn << Horde
     .xp <9,1
     .itemcount 277109,1 --Zephrali Greatstaff
-    +|cRXP_WARN_Equip the|r |T7798447:0|t[Zephrali Greatstaff].
+    .equip 16,277109 >>|cRXP_WARN_Equip the|r |T7798447:0|t[Zephrali Greatstaff].
     .use 277109 --Zephrali Greatstaff
 step << Rogue
     .money <0.09
@@ -4500,7 +4500,7 @@ step << Rogue
     #completewith Learn << Horde
     .xp <9,1
     .itemcount 277107,1 --Zephrali Bludgeon
-    +|cRXP_WARN_Equip the|r |T7791298:0|t[Zephrali Bludgeon].
+    .equip 16,277107 >>|cRXP_WARN_Equip the|r |T7791298:0|t[Zephrali Bludgeon].
     .use 277107 --Zephrali Bludgeon
 step << Hunter
     .goto 2521,59.55,73.3,25,0
@@ -4538,7 +4538,7 @@ step << Hunter
     #completewith Learn << Horde
     .xp <9,1
     .itemcount 277110,1 --Zephrali Bow
-    +|cRXP_WARN_Equip the|r |T7810733:0|t[Zephrali Bow].
+    .equip 18,277110 >>|cRXP_WARN_Equip the|r |T7810733:0|t[Zephrali Bow].
     .use 277110 --Zephrali Bow
 step << Horde Druid
     .subzoneskip 16638,1 -- Valanaar
@@ -5485,7 +5485,7 @@ step << Hunter Alliance
     #completewith secluded house
     .xp <9,1
     .itemcount 277110,1 --Zephrali Bow
-    +|cRXP_WARN_Equip the|r |T7810733:0|t[Zephrali Bow].
+    .equip 18,277110 >>|cRXP_WARN_Equip the|r |T7810733:0|t[Zephrali Bow].
     .use 277110 --Zephrali Bow
 step << Warrior Alliance/Paladin Alliance
     .xp <9,1
@@ -5508,7 +5508,7 @@ step << Warrior Alliance/Paladin Alliance
     #completewith secluded house
     .xp <9,1
     .itemcount 277106,1 --Zephrali Smasher
-    +|cRXP_WARN_Equip the|r |T7792097:0|t[Zephrali Smasher].
+    .equip 16,277106 >>|cRXP_WARN_Equip the|r |T7792097:0|t[Zephrali Smasher].
     .use 277106 --Zephrali Smasher
 step << Rogue Alliance
     .xp <9,1
@@ -5531,7 +5531,7 @@ step << Rogue Alliance
     #completewith secluded house
     .xp <9,1
     .itemcount 277107,1 --Zephrali Bludgeon
-    +|cRXP_WARN_Equip the|r |T7791298:0|t[Zephrali Bludgeon].
+    .equip 16,277107 >>|cRXP_WARN_Equip the|r |T7791298:0|t[Zephrali Bludgeon].
     .use 277107 --Zephrali Bludgeon
 -- step << Alliance
 --     .subzoneskip 16638,1 -- Valanaar
