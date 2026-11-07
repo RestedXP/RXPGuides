@@ -2888,7 +2888,7 @@ step
     .dungeon ROL
 step
     .goto 1420/0,-765.200,2518.700
-    >>Tuez |cRXP_ENEMY_Riptear|r |cRXP_WARN_(niveau 13 élite)|r. Dépouillez-le pour |T134339:0|t[|cRXP_LOOT_Riptear's Cœur|r]
+    >>Tuez |cRXP_ENEMY_Riptear|r |cRXP_WARN_(level 13 elite)|r. Ramassez le |T134339:0|t[|cRXP_LOOT_Riptear's Cœur|r]
     >>|cRXP_WARN_Ceci est une quête préalable pour "The Courroux of Rath'mael"|r
     .complete 99156,1 --|1/1 Riptear's Heart
     .mob Riptear
