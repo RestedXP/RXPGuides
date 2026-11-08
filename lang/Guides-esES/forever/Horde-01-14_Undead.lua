@@ -2881,22 +2881,22 @@ step << !Paladin
 step
     .goto 1420/0,73.800,2022.300
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Deathguard Linnea::1495|r
-    >>|cRXP_WARN_Esta es una misión previa para "la Cólera de Rath'mael"|r
+    >>|cRXP_WARN_Esta es una misión previa para "The Cólera of Rath'mael"|r
     .turnin 356 >>Entrega la misión Patrulla de la retaguardia
     .target Deathguard Linnea::1495
     .accept 99156 >>Acepta la misión Patrulla de la retaguardia
     .dungeon ROL
 step
     .goto 1420/0,-765.200,2518.700
-    >>Mata a |cRXP_ENEMY_Riptear|r |cRXP_WARN_(nivel 13 élite)|r. Despójalo para obtener |T134339:0|t[|cRXP_LOOT_Corazón de Riptear|r]
-    >>|cRXP_WARN_Esta es una misión previa para "la Cólera de Rath'mael"|r
+    >>Mata a |cRXP_ENEMY_Riptear|r |cRXP_WARN_(nivel 13 élite)|r. Despójalo para obtener |T134339:0|t[|cRXP_LOOT_Riptear's Corazón|r]
+    >>|cRXP_WARN_Esta es una misión previa para "The Cólera of Rath'mael"|r
     .complete 99156,1 --|1/1 Riptear's Heart
     .mob Riptear
     .dungeon ROL
 step
     .goto 1420/0,74.200,2022.400
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Deathguard Linnea::1495|r
-    >>|cRXP_WARN_Esta es una misión previa para "la Cólera de Rath'mael"|r
+    >>|cRXP_WARN_Esta es una misión previa para "The Cólera of Rath'mael"|r
     .turnin 99156 >>Entrega la misión Patrulla de la retaguardia
     .target Deathguard Linnea::1495
     .dungeon ROL

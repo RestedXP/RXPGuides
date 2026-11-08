@@ -5337,7 +5337,7 @@ step
     .goto Elwynn Forest,42.140,67.254
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Remy "Dos Veces"|r
     >>|cRXP_WARN_NO vendas la recompensa|r |T133581:0|t[Bolsa de canicas] |cRXP_WARN_. Es un objeto increíblemente valioso hasta el nivel 60|r
-    .turnin 47 >> Entrega la misión Intercambio de polvo de oro
+    .turnin 47 >> Acepta la misión Intercambio de polvo de oro
     .target Remy "Two Times"
 step << Paladin
     #season 2
@@ -5390,7 +5390,7 @@ step
     >>|cRXP_WARN_NO vendas la recompensa|r |T133581:0|t[Bolsa de canicas] |cRXP_WARN_. Es un objeto increíblemente valioso hasta el nivel 60|r
     .target Remy "Two Times"
     .goto Elwynn Forest,42.140,67.254
-    .turnin 47 >> Entrega la misión Intercambio de polvo de oro
+    .turnin 47 >> Acepta la misión Intercambio de polvo de oro
 step
     #completewith next
     .goto Elwynn Forest,73.973,72.179,30 >> Viaja al este hacia el |cRXP_FRIENDLY_Guardia Thomas|r
