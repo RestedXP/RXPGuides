@@ -1342,7 +1342,7 @@ step
     #label BoarMeatQuest
     #completewith SenirEnd
     >>Tuez les |cRXP_ENEMY_Crag Boars|r. Dépouillez-les pour leur |cRXP_LOOT_[Chunks of Boar Meat]|r et leur |cRXP_LOOT_Crag Boar Ribs|r
-    >>Gardez tous les |cRXP_LOOT_[Chunks of Boar Meat]|r que vous obtenez pour Ravitailler le Crache-vapeur et ensuite pour monter votre niveau en [Cuisine] plus tard
+    >>Gardez tous les |cRXP_LOOT_[Chunks of Boar Meat]|r que vous récupérez pour Ravitailler le Crache-vapeur et ensuite pour monter votre niveau de [Cuisine] plus tard
     >>Vous aurez besoin d'un niveau de [Cuisine] de 10 pour une quête à Auberdine plus tard
     >>Vous aurez besoin d'un niveau de 50 en [Cuisine] pour une quête au Bois de la Pénombre plus tard
     .collect 769,4,317,1 --Collect Chunk of Boar Meat (x4)
@@ -1403,7 +1403,7 @@ step << !Priest
     #xprate <1.5
     #optional
     .goto Dun Morogh,48.3,57.0
-    .xp 5+2690 >> Montez votre expérience jusqu'à 2690+/2800xp
+    .xp 5+2690 >> Monter votre expérience jusqu'à 2690+/2800xp
 step << !Priest
     #xprate 1.49-1.59
     #optional
@@ -1690,7 +1690,7 @@ step << Warrior/Paladin/Rogue
 step << Warrior/Paladin/Rogue
     #xprate <1.59
     #completewith BearFur
-    >>Tuez les |cRXP_ENEMY_Young Black Bears|r. Dépouillez-les pour leur |cRXP_LOOT_Thick Bear Fur|r
+    >>Tuez |cRXP_ENEMY_Young Black Bears|r. Dépouillez-les pour leur |cRXP_LOOT_Thick Bear Fur|r
     .complete 317,2 --Collect Thick Bear Fur (x2)
     .mob Young Black Bear
 step << Hunter
@@ -1716,7 +1716,7 @@ step
     .goto Dun Morogh,48.0,49.5,75,0
     .goto Dun Morogh,48.2,46.9,75,0
     .goto Dun Morogh,43.5,52.5,75,0
-    >>Tuez les |cRXP_ENEMY_Young Black Bears|r. Dépouillez-les pour leur |cRXP_LOOT_Thick Bear Fur|r
+    >>Tuez |cRXP_ENEMY_Young Black Bears|r. Dépouillez-les pour leur |cRXP_LOOT_Thick Bear Fur|r
     >>Tuez les |cRXP_ENEMY_Crag Boars|r et les |cRXP_ENEMY_Large Crag Boars|r. Dépouillez-les pour leur |cRXP_LOOT_[Chunks of Boar Meat]|r et leur |cRXP_LOOT_Crag Boar Ribs|r
     .complete 317,2 --Collect Thick Bear Fur (x2)
     .mob +Young Black Bear
@@ -1936,7 +1936,7 @@ step
     .goto 1426,41.100,48.927,40,0
     >>Tuez les |cRXP_ENEMY_Wendigos|r et les |cRXP_ENEMY_Young Wendigos|r. Dépouillez-les pour leur |cRXP_LOOT_Wendigo Manes|r
     >>N'oubliez pas de garder un oeil sur les [Filons de cuivre] qui possèdent des |cRXP_LOOT_[Rough Stones]|r vous permettant de fabriquer des [Pierre à aiguiser brute] << Warrior/Rogue
-    >>N'oubliez pas de garder un œil pour les [Filons de cuivre] qui contiennent des |cRXP_LOOT_[Rough Stones]|r pour fabriquer des [Caillou brute] << Paladin
+    >>N'oubliez pas de garder un oeil sur les [Filons de cuivre] qui possèdent des |cRXP_LOOT_[Rough Stones]|r vous permettant de fabriquer des [Caillou brut] << Paladin
     .complete 313,1 --Collect Wendigo Mane (x8)
     .mob Wendigo
     .mob Young Wendigo
@@ -2348,7 +2348,7 @@ step
     .waypoint 1426,33.832,48.153,60,0
     .waypoint 1426,31.691,46.837,60,0
     >>Tuez les |cRXP_ENEMY_Elder Crag Boars|r. Dépouillez-les pour leur |cRXP_LOOT_Crag Boar Ribs|r
-    >>Tuez les |cRXP_ENEMY_Ice Claw Bears|r et les |cRXP_ENEMY_Snow Leopards|r
+    >>Tuez les|cRXP_ENEMY_Ice Claw Bears|r et les |cRXP_ENEMY_Snow Leopards|r
     .complete 319,2 --Kill Elder Crag Boar (x8)
     .mob +Elder Crag Boar
     .collect 2886,6,384,1 --Collect Crag Boar Rib (x6)
@@ -3855,7 +3855,7 @@ step
     .goto Loch Modan,23.12,73.93,12 >> Entrez dans le bunker. Montez à l'étage
 step
     .goto Loch Modan,23.233,73.675
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Captain Rugelfuss|r dans le bunker
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Captain Rugelfuss|r à l'intérieur du bunker
     .accept 267 >> Acceptez la quête La menace trogg
     .target Captain Rugelfuss
     .xp >14,1 << !Warrior !Dwarf/!Paladin
@@ -6563,7 +6563,7 @@ step
 step
     #label TroggEnd
     .goto Loch Modan,23.233,73.675
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Captain Rugelfuss|r dans le bunker
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Captain Rugelfuss|r à l'intérieur du bunker
     .turnin 267 >> Rendez la quête La menace trogg
     .target Captain Rugelfuss
     .isQuestComplete 267 << !Dwarf/!Paladin

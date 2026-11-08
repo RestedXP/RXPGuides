@@ -137,7 +137,7 @@ step
     #xprate <1.5
     #optional << NightElf
     .goto 1439,37.703,43.393
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinelle Glynda Nal'Shea|r
     .accept 4811 >> Accept Les Red Crystal
     .target Sentinel Glynda Nal'Shea
     .xp <12,1
@@ -150,12 +150,12 @@ step
 step
     #xprate >1.49
     .goto 1439,37.703,43.393
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinelle Glynda Nal'Shea|r
     .accept 4811 >> Accept Les Red Crystal
     .target Sentinel Glynda Nal'Shea
 step
     .goto 1439,38.843,43.416
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tharnariun Soigneflore|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tharnariun Treetender|r
     .accept 2118 >> Acceptez Plagued Lands
     .target Tharnariun Treetender
 step
@@ -364,7 +364,7 @@ step << !sod/Warrior/Rogue
     .subzoneskip 442
 step
     .goto Darkshore,38.90,53.59
-    >>Courrez vers le bord du Camp Furbolg
+    >>Courez vers le bord du Camp Furbolg
     .complete 984,1 -- Find a corrupt furbolg camp
 step << NightElf
     #xprate <1.5
@@ -530,12 +530,12 @@ step
 step
     #xprate <1.5
     .goto 1439,37.703,43.393
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinelle Glynda Nal'Shea|r
     .accept 4811 >> Accept Les Red Crystal
     .target Sentinel Glynda Nal'Shea
 step
     .goto 1439,38.843,43.416
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tharnariun Soigneflore|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tharnariun Treetender|r
     .turnin 2118 >> Rendez la quête Terres malades
     .accept 2138 >> Acceptez la quête Nettoyage de l'infection
     .target Tharnariun Treetender
@@ -556,7 +556,7 @@ step << Druid
     #completewith DruidEarlyNessa
     #season 0
     >>Tuez des |cRXP_ENEMY_Sélénien|r. Dépouillez-les pour leur |cRXP_LOOT_[Petit oeuf]|r
-    >>Ils seront utilisés pour monter votre [Cuisine] à un niveau de 10 plus tard
+    >>Ils seront utilisés pour monter votre niveau de [Cuisine] à 10 plus tard
     .collect 6889,10,2178,1,0x20,cooking --Small Egg (1-10)
     .mob Young Moonkin
     .mob Raging Moonkin
@@ -839,7 +839,7 @@ step << Druid
 step << Druid
     #season 2
     .goto 1439,37.703,43.393
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinelle Glynda Nal'Shea|r
     .turnin 4811 >> Rendez la quête Le cristal rouge
     .accept 4812 >> Acceptez la quête Comme l'eau tombe en cascade
     .target Sentinel Glynda Nal'Shea
@@ -1200,7 +1200,7 @@ step
     #completewith LateTurtleStart << era
     #completewith RedCrystal << sod
     >>Tuez des |cRXP_ENEMY_Sélénien|r. Dépouillez-les pour leur |cRXP_LOOT_[Petit oeuf]|r
-    >>Ils seront utilisés pour monter votre [Cuisine] à un niveau de 10 plus tard
+    >>Ils seront utilisés pour monter votre niveau de [Cuisine] à 10 plus tard
     .collect 6889,10,2178,1,0x20,cooking --Small Egg (1-9)
     .mob Young Moonkin
     .mob Raging Moonkin
@@ -1266,7 +1266,7 @@ step << NightElf/Hunter/Druid/Rogue
     #season 2 << Warrior/Rogue
     #optional
     .goto 1439,37.703,43.393
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinelle Glynda Nal'Shea|r
     .turnin 4811 >> Rendez la quête Le cristal rouge << !Druid sod
     .accept 4812 >> Acceptez la quête Comme l'eau tombe en cascade << !Druid sod
     .turnin 4813 >> Rendez la quête Les fragments à l'intérieur << Druid sod
@@ -1276,7 +1276,7 @@ step << NightElf/Hunter/Druid/Rogue
 step << Hunter/Druid/Warrior
     #season 0,1 << Druid
     .goto 1439,37.703,43.393
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinelle Glynda Nal'Shea|r
     .turnin 4811 >> Rendez la quête Le cristal rouge
     .accept 4812 >> Acceptez la quête Comme l'eau tombe en cascade
     .target Sentinel Glynda Nal'Shea
@@ -1287,7 +1287,7 @@ step << NightElf/Hunter/Druid/Warrior
     #optional
     #label Cascade
     .goto 1439,37.703,43.393
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinelle Glynda Nal'Shea|r
     .accept 4812 >> Acceptez la quête Comme l'eau tombe en cascade
     .target Sentinel Glynda Nal'Shea
     .isQuestTurnedIn 4811 --show step if Red Crystal turned in
@@ -1325,7 +1325,7 @@ step << NightElf/Hunter/Druid/Warrior/Rogue
     #season 2 << Warrior/Rogue
     #season 0 << Hunter/Druid/Rogue/Priest
     >>Tuez des |cRXP_ENEMY_Sélénien|r. Dépouillez-les pour leur |cRXP_LOOT_[Petit oeuf]|r
-    >>Ils seront utilisés pour monter votre [Cuisine] à un niveau de 10 plus tard
+    >>Ils seront utilisés pour monter votre niveau de [Cuisine] à 10 plus tard
     .collect 6889,10,2178,1,0x20,cooking --Small Egg (1-9)
     .mob Young Moonkin
     .mob Raging Moonkin
@@ -1378,7 +1378,7 @@ step
     #season 2 << Hunter
     #season 1 << Druid/Warrior/Rogue/Priest
     .goto Darkshore,37.70,43.39
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinelle Glynda Nal'Shea|r
     >>|cRXP_WARN_Choisissez la|r |T135641:0|t[Dague de Courbebois] |cRXP_WARN_comme vous devez essayer de sauvegarder une|r |T135641:0|t[Dague] |cRXP_WARN_pour votre quête de|r |T132290:0|t[Poisons] |cRXP_WARN_plus tard|r << Rogue
     .turnin 4813 >> Rendez la quête Les fragments à l'intérieur << !Hunter !Druid
     .turnin 4813,3 >> Rendez la quête Les fragments à l'intérieur << Hunter/Druid
@@ -1614,7 +1614,7 @@ step
     .goto 1439,43.101,44.400,60,0
     .goto 1439,45.322,44.756,60,0
     >>Tuez des |cRXP_ENEMY_Sélénien|r. Dépouillez-les pour leur |cRXP_LOOT_[Petit oeuf]|r
-    >>Ils seront utilisés pour monter votre [Cuisine] à un niveau de 10 plus tard
+    >>Ils seront utilisés pour monter votre niveau de [Cuisine] à 10 plus tard
     .collect 6889,10,2178,1,0x20,cooking --Small Egg (1-9)
     .mob Young Moonkin
     .mob Raging Moonkin
@@ -1927,14 +1927,14 @@ step << !sod/Warrior/Rogue/Priest
 step
     #season 0
     .goto 1439,37.703,43.393
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinelle Glynda Nal'Shea|r
     .turnin 4811 >> Rendez la quête Le cristal rouge
     .accept 4812 >> Acceptez la quête Comme l'eau tombe en cascade
     .target Sentinel Glynda Nal'Shea
     .isOnQuest 4811
 step << !sod/Warrior/Rogue/Priest
     .goto 1439,37.703,43.393
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinelle Glynda Nal'Shea|r
     .turnin 4812 >> Rendez la quête Comme l'eau tombe en cascade
     .target Sentinel Glynda Nal'Shea
     .isQuestComplete 4812
@@ -1947,7 +1947,7 @@ step
 step << !sod/Warrior/Rogue/Priest
     #optional
     .goto 1439,38.843,43.416
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tharnariun Soigneflore|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tharnariun Treetender|r
     .turnin 2138 >> Rendez la quête Nettoyage de l'infection
     .accept 2139 >> Acceptez la quête Espoir de Tharnariun
     .target Tharnariun Treetender
@@ -1955,7 +1955,7 @@ step << !sod/Warrior/Rogue/Priest
 step << !sod/Warrior/Rogue/Priest
     #optional
     .goto 1439,38.843,43.416
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tharnariun Soigneflore|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tharnariun Treetender|r
     .accept 2139 >> Acceptez la quête Espoir de Tharnariun
     .target Tharnariun Treetender
     .isQuestTurnedIn 2138
@@ -2148,7 +2148,7 @@ step << Priest
 step << Priest
     #season 2
     .goto 1439,38.843,43.416
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tharnariun Soigneflore|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tharnariun Treetender|r
     .turnin 2139 >> Rendez la quête Espoir de Tharnariun
     .target Tharnariun Treetender
 step << Priest
@@ -2265,7 +2265,7 @@ step
     #season 0 << !Warrior !Rogue
     #completewith CrabTurtle
     >>Tuez des |cRXP_ENEMY_Jeunes trotteur des forêts|r et des |cRXP_ENEMY_Trotteur des forêts|r. Dépouillez-les pour leur |cRXP_LOOT_Viande de trotteur|r
-    >>Faites attention les |cRXP_ENEMY_Jeune trotteur des forêts|r s'enfuient à <30% de vie
+    >>Attention car les |cRXP_ENEMY_Foreststrider Fledglings|r peuvent s'enfuir à <30% de vie
     .collect 5469,5,2178,1 -- Strider Meat (5)
     .mob Foreststrider Fledgling
     .mob Foreststrider
@@ -2489,7 +2489,7 @@ step
 step << Druid
     .goto Darkshore,54.99,33.41
     #season 0
-    >>Utilisez la [Fiole d'échantillon des Chutes de la Bondissante vide] à la cascade à l'entrée de la grotte des Chutes de la Bondissante
+    >>Utilisez la [Fiole d'échantillon des Chutes de la Bondissante vide] à l'entrée de la Grotte de la Bondissante
     .complete 6122,1 --Filled Cliffspring Falls Sampler (1)
 step << Warrior
     #season 1 -- not loading for now
@@ -2588,7 +2588,7 @@ step << !Druid
 step
     #season 2
     .goto Darkshore,37.70,43.39
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinelle Glynda Nal'Shea|r
     >>|cRXP_WARN_Choisissez la|r |T135641:0|t[Dague de Courbebois] |cRXP_WARN_comme vous devez essayer de sauvegarder une|r |T135641:0|t[Dague] |cRXP_WARN_pour votre quête de|r |T132290:0|t[Poisons] |cRXP_WARN_plus tard|r << Rogue
     .turnin 4813 >> Rendez la quête Les fragments à l'intérieur << !Hunter !Druid
     .turnin 4813,3 >> Rendez la quête Les fragments à l'intérieur << Hunter/Druid
@@ -3104,14 +3104,14 @@ step << !Warrior !Rogue !Priest
 step
     .goto 1439,37.703,43.393
     #season 2
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinelle Glynda Nal'Shea|r
     .turnin 4740 >> Rendez la quête On recherche : Fondeboue !
     .target Sentinel Glynda Nal'Shea
 step << !Priest
     #label CleansingTharnariunSod
     #season 2
     .goto 1439,38.843,43.416
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tharnariun Soigneflore|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tharnariun Treetender|r
     .turnin 2138 >> Rendez la quête Nettoyage de l'infection
     .accept 2139 >> Acceptez la quête Espoir de Tharnariun
     .target Tharnariun Treetender
@@ -4067,7 +4067,7 @@ step
 step
     #xprate >1.59
     .goto 1439,38.843,43.416
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tharnariun Soigneflore|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tharnariun Treetender|r
     .turnin 2139 >> Rendez la quête Espoir de Tharnariun
     .target Tharnariun Treetender
 step
@@ -4623,7 +4623,7 @@ step << Rogue
     #completewith WepTrainNoDM << !Warrior
     >>|cRXP_WARN_Montez le niveau de compétence de vos|r |T135966:0|t[Premiers soins] |cRXP_WARN_et de votre|r |T133971:0|t[Cuisine] |cRXP_WARN_si nécessaire pendant le Tram|r
     >>|cRXP_WARN_Vous aurez besoin d'un niveau de 80+ en|r |T135966:0|t[Premiers soins] |cRXP_WARN_pour une quête à venir|r << Rogue !Dwarf
-    .zone Stormwind City >> Prenez le Tram des profondeurs vers Hurlevent
+    .zone Stormwind City >> Prenez le Tram des profondeurs vers Stormwind
     .zoneskip Darkshore << Warrior
     .zoneskip Elwynn Forest
     .zoneskip Westfall
@@ -4659,7 +4659,7 @@ step << Rogue
     >>|cRXP_WARN_Assurez-vous d'apprendre|r |T132320:0|t[Camouflage]|cRXP_WARN_,|r |T133644:0|t[Vol à la tire]|cRXP_WARN_, et|r |T136058:0|t[Crochetage] |cRXP_WARN_comme vous en aurez besoin plus tard|r
     .train 1784 >>Apprenez [Camouflage]
     .train 921 >>Apprenez [Vol à la tire]
-    .train 1804 >> Montez le niveau de votre [Crochetage]
+    .train 1804 >> Apprenez [Crochetage]
     .trainer >> Apprenez vos sorts de classe
     .target Osborne the Night Man
     .dungeon !DM
@@ -4673,7 +4673,7 @@ step << Rogue
     >>|cRXP_WARN_Assurez-vous d'apprendre|r |T133644:0|t[Vol à la tire]|cRXP_WARN_et|r |T136058:0|t[Crochetage] |cRXP_WARN_comme vous en aurez besoin plus tard|r
     >>|cRXP_WARN_SOYEZ TRÈS PRUDENT avec la gestion de votre argent dans les prochaines étapes. N'achetez que les sorts essentiels. Vous devrez avoir de l'argent pour Disparition bientôt et 75 pièces d'argent pour obtenir une rune après votre retour des Paluns|r
     .train 921 >>Apprenez [Vol à la tire]
-    .train 1804 >> Montez le niveau de votre [Crochetage]
+    .train 1804 >> Apprenez [Crochetage]
     .trainer >> Apprenez vos sorts de classe
     .target Osborne the Night Man
     .dungeon !DM
@@ -4685,7 +4685,7 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Osborne the Night Man|r
     >>Faites bien attention à apprendre la capacité [Crochetage], vous en aurez besoin plus tard
     >>|cRXP_WARN_SOYEZ TRÈS PRUDENT avec la gestion de votre argent dans les prochaines étapes. N'achetez que les sorts essentiels. Vous devrez avoir de l'argent pour Disparition bientôt et 75 pièces d'argent pour obtenir une rune après votre retour des Paluns|r
-    .train 1804 >> Montez le niveau de votre [Crochetage]
+    .train 1804 >> Apprenez [Crochetage]
     .trainer >> Apprenez vos sorts de classe
     .target Osborne the Night Man
     .dungeon !DM
@@ -4701,7 +4701,7 @@ step << Rogue
     .dungeon !DM
 step << Rogue
     #xprate >1.59
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Renzik "The Shiv"|r et |cRXP_FRIENDLY_Master Mathias Shaw|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Renzik "The Shiv"|r et à|cRXP_FRIENDLY_Master Mathias Shaw|r
     .accept 2281 >> Acceptez la quête Le Rendez-vous des Carmines
     .goto StormwindClassic,75.76,60.35
     .target +Renzik "The Shiv"
@@ -4841,7 +4841,7 @@ step << Rogue
     #label WileyStart
     .goto Redridge Mountains,27.35,44.07,8,0
     .goto Redridge Mountains,26.48,45.34
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Wiley the Black|r à l'intérieur, en haut des escaliers
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Wiley the Black|r dans le bâtiment en haut des escaliers
     .turnin 65 >> Rendez la quête La Confrérie défias
     .accept 132 >> Acceptez la quête La Confrérie défias
 	.target Wiley the Black
@@ -5014,7 +5014,7 @@ step << Rogue
     >>|T133644:0|tUtilisez [Vol à la tire] sur le |cRXP_ENEMY_Malformed Defias Drone|r. Volez-lui la |cRXP_LOOT_Defias Tower Key|r
     >>Vous devez être en [Camouflage] pour utiliser votre [Vol à la tire]
     >>|cRXP_WARN_Le |cRXP_ENEMY_Malformed Defias Drone|r apparaissent à l'entrée de la tour, puis font le tour de celle-ci|r
-    >>Faites attention car il fait BEAUCOUP de dégâts. Si vous perdez votre [Camouflage], utilisez vite votre [Sprint] pour vous enfuir
+    >>Faites attention, il tape TRÈS fort. Si vous perdez votre [Camouflage], utilisez rapidement votre [Sprint] et enfuyez-vous
     .complete 2359,2 --Collect Defias Tower Key (x1)
     .link https://www.youtube.com/watch?v=5sIew15IcG0 >> Cliquez ICI pour un guide vidéo
     .mob Malformed Defias Drone
@@ -5108,7 +5108,7 @@ step << !Dwarf Rogue
     .goto 1453,43.070,26.155
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Shaina Fuller|r
     >>Si vous avez un ami |cFFF48CBAPaladin|r ou |cFFFF7C0ADruid|r demandez-leur de vous enlever le debuff [Toucher de Zanzil]
-    .train 7934 >> Apprenez [Anti-Venom]
+    .train 7934 >> Apprenez [Anti-Venin]
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
     .dungeon !DM
@@ -5720,7 +5720,7 @@ step
     #completewith ShoniAccept
     >>|cRXP_WARN_Montez le niveau de compétence de vos|r |T135966:0|t[Premiers soins] |cRXP_WARN_et de votre|r |T133971:0|t[Cuisine] |cRXP_WARN_si nécessaire pendant le Tram|r
     >>|cRXP_WARN_Vous aurez besoin d'un niveau de 80+ en|r |T135966:0|t[Premiers soins] |cRXP_WARN_pour une quête à venir|r << Rogue !Dwarf
-    .zone Stormwind City >> Prenez le Tram des profondeurs vers Hurlevent
+    .zone Stormwind City >> Prenez le Tram des profondeurs vers Stormwind
     .zoneskip Wetlands << NightElf
     .zoneskip Elwynn Forest
     .zoneskip Westfall
@@ -5801,7 +5801,7 @@ step << Rogue
     >>|cRXP_WARN_Assurez-vous d'apprendre|r |T132320:0|t[Camouflage]|cRXP_WARN_,|r |T133644:0|t[Vol à la tire]|cRXP_WARN_, et|r |T136058:0|t[Crochetage] |cRXP_WARN_comme vous en aurez besoin plus tard|r
     .train 1784 >>Apprenez [Camouflage]
     .train 921 >>Apprenez [Vol à la tire]
-    .train 1804 >> Montez le niveau de votre [Crochetage]
+    .train 1804 >> Apprenez [Crochetage]
     .trainer >> Apprenez vos sorts de classe
     .target Osborne the Night Man
     .dungeon DM
@@ -5814,7 +5814,7 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Osborne the Night Man|r
     >>|cRXP_WARN_Assurez-vous d'apprendre|r |T133644:0|t[Vol à la tire]|cRXP_WARN_et|r |T136058:0|t[Crochetage] |cRXP_WARN_comme vous en aurez besoin plus tard|r
     .train 921 >>Apprenez [Vol à la tire]
-    .train 1804 >> Montez le niveau de votre [Crochetage]
+    .train 1804 >> Apprenez [Crochetage]
     .trainer >> Apprenez vos sorts de classe
     .target Osborne the Night Man
     .dungeon DM
@@ -5825,7 +5825,7 @@ step << Rogue
     .goto StormwindClassic,74.65,52.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Osborne the Night Man|r
     >>Faites bien attention à apprendre la capacité [Crochetage], vous en aurez besoin plus tard
-    .train 1804 >> Montez le niveau de votre [Crochetage]
+    .train 1804 >> Apprenez [Crochetage]
     .trainer >> Apprenez vos sorts de classe
     .target Osborne the Night Man
     .dungeon DM
@@ -5841,7 +5841,7 @@ step << Rogue
     .dungeon DM
 step << Rogue
     #xprate >1.59
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Renzik "The Shiv"|r et |cRXP_FRIENDLY_Master Mathias Shaw|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Renzik "The Shiv"|r et à|cRXP_FRIENDLY_Master Mathias Shaw|r
     .accept 2281 >> Acceptez la quête Le Rendez-vous des Carmines
     .goto StormwindClassic,75.76,60.35
     .target +Renzik "The Shiv"
@@ -6077,7 +6077,7 @@ step << Mage
     #xprate >1.59
     .goto Stormwind City,39.681,79.538
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Larimaine Purdue|r
-    .train 3561 >> Apprenez [Téléportation : Stormwind]
+    .train 3561 >> Apprenez [Téléportation : Hurlevent]
     .target Larimaine Purdue
     .dungeon DM
 step << !Paladin
@@ -6251,7 +6251,7 @@ step
     #label WileyStart
     .goto Redridge Mountains,27.35,44.07,8,0
     .goto Redridge Mountains,26.48,45.34
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Wiley the Black|r à l'intérieur, en haut des escaliers
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Wiley the Black|r dans le bâtiment en haut des escaliers
     .turnin 65 >> Rendez la quête La Confrérie défias
     .accept 132 >> Acceptez la quête La Confrérie défias
 	.target Wiley the Black
@@ -6367,7 +6367,7 @@ step << Rogue
     >>|T133644:0|tUtilisez [Vol à la tire] sur le |cRXP_ENEMY_Malformed Defias Drone|r. Volez-lui la |cRXP_LOOT_Defias Tower Key|r
     >>Vous devez être en [Camouflage] pour utiliser votre [Vol à la tire]
     >>|cRXP_WARN_Le |cRXP_ENEMY_Malformed Defias Drone|r apparaissent à l'entrée de la tour, puis font le tour de celle-ci|r
-    >>Faites attention car il fait BEAUCOUP de dégâts. Si vous perdez votre [Camouflage], utilisez vite votre [Sprint] pour vous enfuir
+    >>Faites attention, il tape TRÈS fort. Si vous perdez votre [Camouflage], utilisez rapidement votre [Sprint] et enfuyez-vous
     .complete 2359,2 --Collect Defias Tower Key (x1)
     .link https://www.youtube.com/watch?v=5sIew15IcG0 >> Cliquez ICI pour un guide vidéo
     .mob Malformed Defias Drone
@@ -6458,7 +6458,7 @@ step << !Dwarf Rogue
     .goto 1453,43.070,26.155
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Shaina Fuller|r
     >>Si vous avez un ami |cFFF48CBAPaladin|r ou |cFFFF7C0ADruid|r demandez-leur de vous enlever le debuff [Toucher de Zanzil]
-    .train 7934 >> Apprenez [Anti-Venom]
+    .train 7934 >> Apprenez [Anti-Venin]
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
     .dungeon DM

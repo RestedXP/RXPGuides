@@ -1905,7 +1905,7 @@ step
     .goto 2521,41.67,44.79
     >>Cliquez sur la macro dans le cadre des Objets actifs pour vous asseoir.
     .complete 96101,1 --1/1 Use the /sit emote near the campfire
-    .macro Sit,134400 >>Asseyez-vous 
+    .macro Sit,134400 >>Asseyez-vous
     .timer 59,Durée jusqu'à la complétion 1
 step << Alliance
     .aura -1289723
@@ -1951,7 +1951,7 @@ step
     *|cRXP_WARN_Ne vous déplacez pas et ne sautez pas jusqu'à ce que la quête soit terminée|r.
     .complete 96101,2 --Gain the Boosted Rest buff
     .timer 59,Durée jusqu'à la complétion 2
-    .macro Sit,134400 >>Asseyez-vous 
+    .macro Sit,134400 >>Asseyez-vous
 step << Alliance
     .train 3273,3 -- First Aid Trained
     .itemcount 2589,1 -- Linen Cloth
@@ -3380,7 +3380,7 @@ step << Alliance Hunter
     #completewith Deliver the Signet
     .xp <9,1
     .itemcount 277110,1 --Zephrali Bow
-    +|cRXP_WARN_Équipez l'|r |T7810733:0|t[Arc zéphrali].
+    .equip 18,277110 >>|cRXP_WARN_Équipez l'|r |T7810733:0|t[Arc zéphrali].
     .use 277110 --Zephrali Bow
 step << Alliance Warrior/Alliance Paladin
     .xp <9,1
@@ -3403,7 +3403,7 @@ step << Alliance Warrior/Alliance Paladin
     #completewith Deliver the Signet
     .xp <9,1
     .itemcount 277106,1 --Zephrali Smasher
-    +|cRXP_WARN_Équipez le|r |T7792097:0|t[Fracasseur zéphrali].
+    .equip 16,277106 >>|cRXP_WARN_Équipez le|r |T7792097:0|t[Fracasseur zéphrali].
     .use 277106 --Zephrali Smasher
 step << Alliance Shaman/Alliance Druid
     .xp <9,1
@@ -3422,7 +3422,7 @@ step << Alliance Shaman/Alliance Druid
     #completewith Deliver the Signet
     .xp <9,1
     .itemcount 277109,1 --Zephrali Greatstaff
-    +|cRXP_WARN_Équipez le|r |T7798447:0|t[Grand bâton zéphrali].
+    .equip 16,277109 >>|cRXP_WARN_Équipez le|r |T7798447:0|t[Grand bâton zéphrali].
     .use 277109 --Zephrali Greatstaff
 step << Alliance Rogue
     .xp <9,1
@@ -3445,7 +3445,7 @@ step << Alliance Rogue
     #completewith Deliver the Signet
     .xp <9,1
     .itemcount 277107,1 --Zephrali Bludgeon
-    +|cRXP_WARN_Équipez le|r |T7791298:0|t[Gourdin zéphrali].
+    .equip 16,277107 >>|cRXP_WARN_Équipez le|r |T7791298:0|t[Gourdin zéphrali].
     .use 277107 --Zephrali Bludgeon
 -- step << Mage/Priest/Warlock
 --     .xp <9,1
@@ -3577,7 +3577,7 @@ step << Alliance
     .cooldown spell,1259416,>0,1 -- Walk on Air
     .goto 2521,66.47,76.68,10,0
     .goto 2521,66.63,79.94
-    .cast 1259416 >>Sautez de la montagne et utilisez |T132845:0|t[Marche sur l’air] pour voler vers le donneur de quête.
+    .cast 1259416 >>Sautez de l'arbre et utilisez |T132845:0|t[Marche sur l'air] pour voler vers le maître de quête.
     *|cRXP_WARN_Si vous le faites au bon timing, vous pouvez l'annuler en l'air pour tomber dans le bâtiment|r
     .usespell 1259416
     .macro Cancel Walk on Air,132845 >>Annulez Marche sur l'air
@@ -3773,7 +3773,7 @@ step << Horde Hunter
     #completewith LeavingValanaarA
     .xp <9,1
     .itemcount 277110,1 --Zephrali Bow
-    +|cRXP_WARN_Équipez l'|r |T7810733:0|t[Arc zéphrali].
+    .equip 18,277110 >>|cRXP_WARN_Équipez l'|r |T7810733:0|t[Arc zéphrali].
     .use 277110 --Zephrali Bow
 step << Horde Warrior
     .xp <9,1
@@ -3795,7 +3795,7 @@ step << Horde Warrior
     #completewith LeavingValanaarA
     .xp <9,1
     .itemcount 277106,1 --Zephrali Smasher
-    +|cRXP_WARN_Équipez le|r |T7792097:0|t[Fracasseur zéphrali].
+    .equip 16,277106 >>|cRXP_WARN_Équipez le|r |T7792097:0|t[Fracasseur zéphrali].
     .use 277106 --Zephrali Smasher
 step << Horde Shaman/Horde Druid
     .xp <9,1
@@ -3818,7 +3818,7 @@ step << Horde Shaman/Horde Druid
     #completewith LeavingValanaarA
     .xp <9,1
     .itemcount 277109,1 --Zephrali Greatstaff
-    +|cRXP_WARN_Équipez le|r |T7798447:0|t[Grand bâton zéphrali].
+    .equip 16,277109 >>|cRXP_WARN_Équipez le|r |T7798447:0|t[Grand bâton zéphrali].
     .use 277109 --Zephrali Greatstaff
 step << Horde Rogue
     .xp <9,1
@@ -3840,7 +3840,7 @@ step << Horde Rogue
     #completewith LeavingValanaarA
     .xp <9,1
     .itemcount 277107,1 --Zephrali Bludgeon
-    +|cRXP_WARN_Équipez le|r |T7791298:0|t[Gourdin zéphrali].
+    .equip 16,277107 >>|cRXP_WARN_Équipez le|r |T7791298:0|t[Gourdin zéphrali].
     .use 277107 --Zephrali Bludgeon
 step << Horde
     .train 2366,3 -- Herbalism Trained
@@ -4365,9 +4365,9 @@ step
     .target Alvarion Windfield::252448
 step
     #completewith Accept Catching Wind
-    *|cRXP_WARN_Équipez la|r |T134435:0|t[Pelle à plantations] << Warrior/Shaman/Paladin
-    *|cRXP_WARN_Équipez le|r |T133057:0|t[Marteau à toiture] << Druid/Priest
-    *|cRXP_WARN_Équipez la|r |T134520:0|t[Clé à molette fiable] << Rogue
+    .equip 16,263312 >>|cRXP_WARN_Équipez la|r |T134435:0|t[Pelle à plantations] << Warrior/Shaman/Paladin
+    .equip 16,263314 >>|cRXP_WARN_Équipez le|r |T133057:0|t[Marteau à toiture] << Druid/Priest
+    .equip 16,263313 >>|cRXP_WARN_Équipez la|r |T134520:0|t[Clé à molette fiable] << Rogue
     .use 263312 << Warrior/Shaman/Paladin -- Planting Shovel
     .use 263314 << Druid/Priest -- Roofing Hammer
     .use 263313 << Rogue -- Trusty Wrench
@@ -4438,7 +4438,7 @@ step << Warrior/Paladin
     #completewith Learn << Horde
     .xp <9,1
     .itemcount 277106,1 --Zephrali Smasher
-    +|cRXP_WARN_Équipez le|r |T7792097:0|t[Fracasseur zéphrali].
+    .equip 16,277106 >>|cRXP_WARN_Équipez le|r |T7792097:0|t[Fracasseur zéphrali].
     .use 277106 --Zephrali Smasher
 step << Shaman/Druid
     .xp <9,1
@@ -4461,7 +4461,7 @@ step << Shaman/Druid
     #completewith Learn << Horde
     .xp <9,1
     .itemcount 277109,1 --Zephrali Greatstaff
-    +|cRXP_WARN_Équipez le|r |T7798447:0|t[Grand bâton zéphrali].
+    .equip 16,277109 >>|cRXP_WARN_Équipez le|r |T7798447:0|t[Grand bâton zéphrali].
     .use 277109 --Zephrali Greatstaff
 step << Rogue
     .money <0.09
@@ -4500,7 +4500,7 @@ step << Rogue
     #completewith Learn << Horde
     .xp <9,1
     .itemcount 277107,1 --Zephrali Bludgeon
-    +|cRXP_WARN_Équipez le|r |T7791298:0|t[Gourdin zéphrali].
+    .equip 16,277107 >>|cRXP_WARN_Équipez le|r |T7791298:0|t[Gourdin zéphrali].
     .use 277107 --Zephrali Bludgeon
 step << Hunter
     .goto 2521,59.55,73.3,25,0
@@ -4538,7 +4538,7 @@ step << Hunter
     #completewith Learn << Horde
     .xp <9,1
     .itemcount 277110,1 --Zephrali Bow
-    +|cRXP_WARN_Équipez l'|r |T7810733:0|t[Arc zéphrali].
+    .equip 18,277110 >>|cRXP_WARN_Équipez l'|r |T7810733:0|t[Arc zéphrali].
     .use 277110 --Zephrali Bow
 step << Horde Druid
     .subzoneskip 16638,1 -- Valanaar
@@ -5212,7 +5212,7 @@ step << Alliance !Druid
     .cooldown spell,1259416,>0,1 -- Walk on Air
     .goto 2521,66.47,76.64,10,0
     .goto 2521,65.36,71.79
-    .cast 1259416 >>Sautez de la montagne et utilisez |T132845:0|t[Marche sur l’air] pour voler jusqu'à l'emplacement du point de repère.
+    .cast 1259416 >>Sautez de l'arbre et utilisez |T132845:0|t[Marche sur l'air] pour voler vers la position.
     .usespell 1259416
 step << Alliance
     .goto 2521,65.956,74.309
@@ -5449,7 +5449,7 @@ step << Alliance
     .goto 2521,66.47,76.61,8,0
     .goto 2521,66.31,76.18,15,0
     .goto 2521,63.14,76.9
-    .cast 1259416 >>Sautez de la montagne et utilisez |T132845:0|t[Marche sur l’air] pour voler jusqu'à l'emplacement du point de repère.
+    .cast 1259416 >>Sautez de l'arbre et utilisez |T132845:0|t[Marche sur l'air] pour voler vers la position.
     .usespell 1259416
 step << Alliance
     .subzoneskip 16638,1 -- Valanaar
@@ -5485,7 +5485,7 @@ step << Hunter Alliance
     #completewith secluded house
     .xp <9,1
     .itemcount 277110,1 --Zephrali Bow
-    +|cRXP_WARN_Équipez l'|r |T7810733:0|t[Arc zéphrali].
+    .equip 18,277110 >>|cRXP_WARN_Équipez l'|r |T7810733:0|t[Arc zéphrali].
     .use 277110 --Zephrali Bow
 step << Warrior Alliance/Paladin Alliance
     .xp <9,1
@@ -5508,7 +5508,7 @@ step << Warrior Alliance/Paladin Alliance
     #completewith secluded house
     .xp <9,1
     .itemcount 277106,1 --Zephrali Smasher
-    +|cRXP_WARN_Équipez le|r |T7792097:0|t[Fracasseur zéphrali].
+    .equip 16,277106 >>|cRXP_WARN_Équipez le|r |T7792097:0|t[Fracasseur zéphrali].
     .use 277106 --Zephrali Smasher
 step << Rogue Alliance
     .xp <9,1
@@ -5531,7 +5531,7 @@ step << Rogue Alliance
     #completewith secluded house
     .xp <9,1
     .itemcount 277107,1 --Zephrali Bludgeon
-    +|cRXP_WARN_Équipez le|r |T7791298:0|t[Gourdin zéphrali].
+    .equip 16,277107 >>|cRXP_WARN_Équipez le|r |T7791298:0|t[Gourdin zéphrali].
     .use 277107 --Zephrali Bludgeon
 -- step << Alliance
 --     .subzoneskip 16638,1 -- Valanaar
@@ -5646,7 +5646,7 @@ step << Rogue Alliance
 step << Alliance
     .isNotOnQuest 98512 --Al'Aketh Assassins
     .isQuestAvailable 98512 --Al'Aketh Assassins
-    .goto 2521,66.49,76.65,8,0
+    -- .goto 2521,66.49,76.65,8,0
     .goto 2521,68.84,78.42,-1
     .goto 2521,60.74,78.02,-1
     .subzone 16626 >>Sautez du précipice
@@ -6045,7 +6045,6 @@ step
     #hidewindow
     #completewith ToHermit << Alliance
     #completewith ForestHollowsA << Horde
-    #loop
     .goto 2521,62.83,38.25,35,0
     .goto 2521,62.08,36.7,35,0
     .goto 2521,61.17,35.44,35,0
@@ -6212,6 +6211,12 @@ step
     .turnin 93165,2 >>Rendez la quête La miséricorde tombe dans l’oreille d’un sourd << Mage/Priest/Warlock
     .turnin 93165,3 >>Rendez la quête La miséricorde tombe dans l’oreille d’un sourd << Warrior/Paladin
     .target Vayn Moongaze::254151
+step << Alliance
+    .goto 2521,63.80,36.00
+    .itemcount 265476,1
+    >>Utilisez la |T134332:0|t[Missive déchirée] dans vos sacs pour lancer une quête.
+    .accept 94490 >>Acceptez la quête Missive déchirée
+    .use 265476 -- Ripped Missive
 step
     .goto 2521,63.93,33.76,20,0
     .goto 2521,63.69,32.49,20,0
@@ -6254,8 +6259,8 @@ step
     .target Jorel Windsinger::258130
 step << Horde
     .itemcount 265476,1
-    >>Utilisez la |T134332:0|t[Missive déchirée] dans vos sacs pour lancer une quête.
-    .accept 94490 >>Acceptez la quête Missive déchirée
+    >>Utilisez la |T134332:0|t[Ripped Missive] dans vos sacs pour commencer la quête.
+    .accept 94490 >>Acceptez la quête Ripped Missive
     .use 265476 -- Ripped Missive
 step
     #optional
@@ -6473,7 +6478,7 @@ step << Alliance
     .cooldown spell,1259416,>0,1 -- Walk on Air
     .goto 2521,66.49,76.64,8,0
     .goto 2521,63.33,78.16
-    .cast 1259416 >>Sautez de la montagne et utilisez |T132845:0|t[Marche sur l’air] pour voler jusqu'à l'emplacement du point de repère.
+    .cast 1259416 >>Sautez de l'arbre et utilisez |T132845:0|t[Marche sur l'air] pour voler vers la position.
     .usespell 1259416
 step << Alliance
     .goto 2521,63.33,78.16,30,0
@@ -6562,7 +6567,7 @@ step << Alliance
     .goto 2521,66.49,76.64,8,0
     .goto 2521,66.39,76.26,10,0
     .goto 2521,63.9,74.16
-    .cast 1259416 >>Sautez de la montagne et utilisez |T132845:0|t[Marche sur l’air] pour voler jusqu'à l'emplacement du point de repère.
+    .cast 1259416 >>Sautez de l'arbre et utilisez |T132845:0|t[Marche sur l'air] pour voler vers la position.
     .usespell 1259416
 step << Alliance
     .subzoneskip 16638,1 -- Valanaar

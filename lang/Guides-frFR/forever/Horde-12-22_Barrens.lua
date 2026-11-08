@@ -616,7 +616,7 @@ step << Undead Warrior/Skyborne Warrior
 step << Undead Warrior/Skyborne Warrior
     #optional
     #completewith BaronLongshore
-    +Équipez l'[Espadon] lorsque vous passez niveau 16
+    +Équipez l'[Espadon] lorsque vous passez au niveau 16
     .use 2024
     .itemcount 2024,1
     .itemStat 16,QUALITY,<7
@@ -867,7 +867,7 @@ step << Undead Warrior/Skyborne Warrior
 step << Undead Warrior/Skyborne Warrior
     #optional
     #completewith FlyToXroads1
-    +Équipez l'[Espadon] lorsque vous passez niveau 16
+    +Équipez l'[Espadon] lorsque vous passez au niveau 16
     .use 2024
     .itemcount 2024,1
     .itemStat 16,QUALITY,<7
@@ -1145,14 +1145,14 @@ step << Troll Hunter/Orc Hunter
 step << Tauren Hunter
     .goto 1413/1,-2612.98,-411.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Parlez à|r |cRXP_FRIENDLY_Barg|r
-    >>|cRXP_BUY_Achetez des|r [Balle lourde] |cRXP_BUY_à Kennah|r
+    >>|cRXP_BUY_Achetez des|r [Balle lourde] |cRXP_BUY_à Barg|r
     .collect 2519,1000,850,1 << Hunter --Heavy Shot (1000)
     .target Barg
 step << Troll Hunter/Orc Hunter/Skyborne Hunter
     .goto 1413/1,-2556.23,-351.54
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Parlez à|r |cRXP_FRIENDLY_Uthrok|r
     .vendor >> |cRXP_BUY_Achetez un|r [|cRXP_FRIENDLY_Bon arc long|r] |cRXP_BUY_à Uthrok si il en a en stock et faites un stock de flèches|r
-    >>Si il n'est pas disponible, achetez un [Arc renforcé] à la place
+    >>Si il n'est pas disponible, achetez à la place un [Arc renforcé]
     .collect 2515,1200,870,1 << Hunter --Sharp Arrow (1200)
     .target Uthrok
     .isOnQuest 903
@@ -1289,7 +1289,7 @@ step
     .mob Witchwing Roguefeather
 step
     #completewith Samophlange
-    +Faites attention aux |cRXP_ENEMY_Sunscale Scytheclaws|r dans la zone. Ils sont niveau 18 et peuvent utiliser [Rosser]
+    +Faites attention aux |cRXP_ENEMY_Sunscale Scytheclaws|r dans la zone. Ils vont jusqu'au niveau 18 et peuvent utiliser [Rosser]
     .xp >17,1
 step
     #optional
@@ -1620,7 +1620,7 @@ step
 step
     .goto 1454/1,-4160.01,1483.17
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|r |cRXP_FRIENDLY_Arnok|r
-    >>Passez cette étape si vous n'avez pas assez d'[Etoffe de lin] pour monter votre compétence à 50
+    >>Passez cette étape si vous avez pas assez d'[Étoffe de lin] pour monter votre compétence à 50
     .train 3274 >> Apprenez Premiers soins compagnon
     .target Arnok
     .skill firstaid,<40,1
@@ -1769,7 +1769,7 @@ step << Warrior
 step << Warrior
     #optional
     #completewith FoodandWater2
-    +Équipez la [Hache de bataille] lorsque vous passez niveau 20
+    +Équipez la [Hache de bataile] lorsque vous passez au niveau 20
     .use 926
     .itemcount 926,1
     .itemStat 16,QUALITY,<7
@@ -1806,7 +1806,7 @@ step
 step << Rogue
     .goto 1454/1,-4284.42,1771.28
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Shenthul|r
-    .train 1804 >> Montez le niveau de votre [Crochetage]
+    .train 1804 >> Apprenez [Crochetage]
     .train 921 >> Apprenez [Vol à la tire]
     .accept 2379 >> Acceptez la quête Zando'zan
     .target Shenthul
@@ -3830,11 +3830,11 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|r |cRXP_FRIENDLY_Pand|r
     >>Passez cette étape si vous n'avez pas assez d'[Etoffe de lin] pour monter vos [Premiers soins] à 80
     .train 3277 >> Apprenez  [Bandage en laine]
-    .train 7934 >> Apprenez [Anti-Venin] << Rogue
+    .train 7934 >> Apprenez [Anti-venin] << Rogue
     .target Pand Stonebinder
     .skill firstaid,<1,1
 step << Rogue
-    >>Fabriquez des [Anti-venin] si vous avez trouvé des [Petites glandes à venin]
+    >>Fabriquez des [Anti-Venin] si vous avez trouvé des [Petites glandes à venin]
     >>Gardez-les pour plus tard
     .collect 6452,1 --Anti Venom
     .itemcount 1475,1
@@ -4861,7 +4861,7 @@ step << Warlock
     .use 6626
 step << Warlock
     .goto 1454/1,-4377.13,1804.77
-    >>Tuez la |cRXP_ENEMY_Summoned Succubus|r
+    >>Tuez les |cRXP_ENEMY_Summoned Succubus|r
     .complete 1513,1 --Kill Summoned Succubus (1)
     .mob Summoned Succubus
     .use 6626
@@ -4944,7 +4944,7 @@ step << Mage
 step << Mage
     .goto 1454/1,-4222.85,1474.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|r |cRXP_FRIENDLY_Thuul|r en haut de la hutte
-    .train 3567 >> Apprenez [Téléportation: Orgrimmar]
+    .train 3567 >> Apprenez [Téléportation : Orgrimmar]
     .target Thuul
 step << Troll Priest
     .goto 1454/1,-4179.79,1452.580
@@ -5147,7 +5147,7 @@ step << skip --Rogue
     .collect 3137,1,6544,1 --Deadly Throwing Axe (200)
     .target Trak'gen
 step << Rogue
-    >>Si vous avez des [Anti-Venin], utilisez-en un pour pour guérir du [Toucher de Zanzil]
+    >>Si vous avez un [Anti-Venin], utilisez-le pour vous guérir du [Toucher de Zanzil]
     .itemcount 6452,1
     .use 6452
     .aura -9991

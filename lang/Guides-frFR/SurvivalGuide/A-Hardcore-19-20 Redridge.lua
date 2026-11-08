@@ -835,7 +835,7 @@ step << Mage
 step << Mage
     .goto StormwindClassic,39.68,79.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Larimaine|r
-    .train 3561 >> Apprenez [Téléportation : Stormwind]
+    .train 3561 >> Apprenez [Téléportation : Hurlevent]
 	.xp <20,1
     .target Larimaine Purdue
 step << Druid
@@ -950,7 +950,7 @@ step << Rogue
     .goto StormwindClassic,78.43,60.15,20,0
     .goto StormwindClassic,78.67,60.13,5 >> Entrez dans le QG du SI:7. Montez les escaliers vers |cRXP_FRIENDLY_Renzik « le kriss »|r et |cRXP_FRIENDLY_Maître Mathias Shaw|r
 step << Rogue
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Renzik "The Shiv"|r et |cRXP_FRIENDLY_Master Mathias Shaw|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Renzik "The Shiv"|r et à|cRXP_FRIENDLY_Master Mathias Shaw|r
     .accept 2281 >> Acceptez la quête Le Rendez-vous des Carmines
     .target +Renzik "The Shiv"
     .goto StormwindClassic,75.76,60.35
@@ -1216,7 +1216,7 @@ step << Rogue
     >>|T133644:0|tUtilisez [Vol à la tire] sur le |cRXP_ENEMY_Malformed Defias Drone|r. Volez-lui la |cRXP_LOOT_Defias Tower Key|r
     >>Vous devez être en [Camouflage] pour utiliser votre [Vol à la tire]
     >>|cRXP_WARN_Le |cRXP_ENEMY_Malformed Defias Drone|r apparaissent à l'entrée de la tour, puis font le tour de celle-ci|r
-    >>Faites attention car il fait BEAUCOUP de dégâts. Si vous perdez votre [Camouflage], utilisez vite votre [Sprint] pour vous enfuir
+    >>Faites attention, il tape TRÈS fort. Si vous perdez votre [Camouflage], utilisez rapidement votre [Sprint] et enfuyez-vous
     .complete 2359,2 --Collect Defias Tower Key (x1)
     .link https://www.youtube.com/watch?v=5sIew15IcG0 >> Cliquez ICI pour un guide vidéo
     .mob Malformed Defias Drone
@@ -1314,7 +1314,7 @@ step << !Dwarf Rogue
     .goto 1453,43.070,26.155
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Shaina Fuller|r
     >>Si vous avez un ami |cFFF48CBAPaladin|r ou |cFFFF7C0ADruid|r demandez-leur de vous enlever le debuff [Toucher de Zanzil]
-    .train 7934 >> Apprenez [Anti-Venom]
+    .train 7934 >> Apprenez [Anti-Venin]
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
     .isQuestComplete 2359

@@ -781,7 +781,7 @@ step << !Human
     .accept 153 >> Acceptez la quête Les masques en cuir rouge
 step
     .goto 1436/0,1166.57,-10653.23
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Innkeeper Heather|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Aubergiste Heather|r
     .vendor >>|cRXP_BUY_Achetez de la nourriture/eau si besoin|r
 	.target Innkeeper Heather
 step
@@ -1452,12 +1452,12 @@ step
     .target Barithras Moonshade
 step
     .goto 1439/1,472.12,6438.51--c:1439,37.703,43.393
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinelle Glynda Nal'Shea|r
     .accept 4811 >> Accept Les Red Crystal
     .target Sentinel Glynda Nal'Shea
 step
     .goto 1439/1,397.45,6437.50--c:1439,38.843,43.416
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tharnariun Soigneflore|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tharnariun Treetender|r
     .accept 2118 >> Acceptez Plagued Lands
     .target Tharnariun Treetender
 step
@@ -1575,7 +1575,7 @@ step
     .use 7586
 step
     .goto 1439/1,393.72,5993.24
-    >>Courrez vers le bord du Camp Furbolg
+    >>Courez vers le bord du Camp Furbolg
     .complete 984,1 -- Find a corrupt furbolg camp
 step
     #sticky
@@ -1656,12 +1656,12 @@ step
     .target Barithras Moonshade
 step
     .goto 1439/1,472.12,6438.51--c:1439,37.703,43.393
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinelle Glynda Nal'Shea|r
     .accept 4811 >> Accept Les Red Crystal
     .target Sentinel Glynda Nal'Shea
 step
     .goto 1439/1,397.45,6437.50--c:1439,38.843,43.416
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tharnariun Soigneflore|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tharnariun Treetender|r
     .turnin 2118 >> Rendez la quête Terres malades
     .accept 2138 >> Acceptez la quête Nettoyage de l'infection
     .target Tharnariun Treetender
@@ -2038,7 +2038,7 @@ step
     .turnin 98025 >>Rendez la quête ON RECHERCHE : Jai'vhanel
 step
     .goto 1439/1,472.12,6438.51--c:1439,37.703,43.393
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinelle Glynda Nal'Shea|r
     .turnin 4811 >> Rendez la quête Le cristal rouge
     .accept 4812 >> Acceptez la quête Comme l'eau tombe en cascade
     .target Sentinel Glynda Nal'Shea
@@ -2050,7 +2050,7 @@ step
 step
     #optional
     .goto 1439/1,397.45,6437.50--c:1439,38.843,43.416
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tharnariun Soigneflore|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tharnariun Treetender|r
     .turnin 2138 >> Rendez la quête Nettoyage de l'infection
     .accept 2139 >> Acceptez la quête Espoir de Tharnariun
     .target Tharnariun Treetender
@@ -2058,7 +2058,7 @@ step
 step
     #optional
     .goto 1439/1,397.45,6437.50--c:1439,38.843,43.416
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tharnariun Soigneflore|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tharnariun Treetender|r
     .accept 2139 >> Acceptez la quête Espoir de Tharnariun
     .target Tharnariun Treetender
     .isQuestTurnedIn 2138
@@ -2160,7 +2160,7 @@ step
     .goto 1439/1,-667.91,6866.13,40 >> Voyagez vers la Grotte de la Bondissante--c:1439,55.108,33.600
 step << Druid
     .goto 1439/1,-660.18,6874.43
-    >>Utilisez la [Fiole d'échantillon des Chutes de la Bondissante vide] à la cascade à l'entrée de la grotte des Chutes de la Bondissante
+    >>Utilisez la [Fiole d'échantillon des Chutes de la Bondissante vide] à l'entrée de la Grotte de la Bondissante
     .complete 6122,1 --Filled Cliffspring Falls Sampler (1)
     .isOnQuest 6122
 step
@@ -2227,13 +2227,13 @@ step << !Druid
     .target Archaeologist Hollee
 step
     .goto 1439/1,397.45,6437.50--c:1439,38.843,43.416
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tharnariun Soigneflore|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tharnariun Treetender|r
     .turnin 2138 >> Rendez la quête Nettoyage de l'infection
     .accept 2139 >> Acceptez la quête Espoir de Tharnariun
     .target Tharnariun Treetender
 step
     .goto 1439/1,472.32,6438.64
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinelle Glynda Nal'Shea|r
     >>|cRXP_WARN_Choisissez la|r |T135641:0|t[Dague de Courbebois] |cRXP_WARN_comme vous devez essayer de sauvegarder une|r |T135641:0|t[Dague] |cRXP_WARN_pour votre quête de|r |T132290:0|t[Poisons] |cRXP_WARN_plus tard|r << Rogue
     .turnin 4813 >> Rendez la quête Les fragments à l'intérieur
     .target Sentinel Glynda Nal'Shea
@@ -2673,7 +2673,7 @@ step << Warrior/Hunter
     .target Regnus Thundergranite << Hunter
     .target Bilban Tosslespanner << Warrior
 step << Hunter/Druid
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Buliwyf Stonehand|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Buliwyf Main-de-pierre|r
     .train 266 >> Apprenez la compétence pour porter des Fusils << Hunter
     .train 199 >> Acheter la compétence pour porter des masses à deux mains << Druid
     .goto 1455/0,-1197.27,-5041.49
@@ -2890,7 +2890,7 @@ step << NightElf Rogue
     .goto 1453/0,377.61,-8752.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Osborne l'homme de la nuit|r
     >>|cRXP_WARN_Assurez-vous d'entraîner|r |T136058:0|t[Crochetage] |cRXP_WARN_car vous en aurez besoin pour votre quête de classe Voleur bientôt|r
-    .train 1804 >> Montez le niveau de votre [Crochetage]
+    .train 1804 >> Apprenez [Crochetage]
     .target Osborne the Night Man
     .xp >20,1
     .xp <18,1
@@ -2898,7 +2898,7 @@ step << NightElf Rogue
     .goto 1453/0,377.61,-8752.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Osborne l'homme de la nuit|r
     >>|cRXP_WARN_Assurez-vous d'entraîner|r |T136058:0|t[Crochetage] |cRXP_WARN_car vous en aurez besoin pour votre quête de classe Voleur bientôt|r
-    .train 1804 >> Montez le niveau de votre [Crochetage]
+    .train 1804 >> Apprenez [Crochetage]
     .trainer >> Apprenez vos sorts de classe
     .target Osborne the Night Man
     .xp <20,1
@@ -2976,7 +2976,7 @@ step << !NightElf Rogue
     .goto 1453/0,377.61,-8752.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Osborne l'homme de la nuit|r
     >>|cRXP_WARN_Assurez-vous d'entraîner|r |T136058:0|t[Crochetage] |cRXP_WARN_car vous en aurez besoin pour votre quête de classe Voleur bientôt|r
-    .train 1804 >> Montez le niveau de votre [Crochetage]
+    .train 1804 >> Apprenez [Crochetage]
     .target Osborne the Night Man
     .xp >20,1
     .xp <18,1
@@ -2984,7 +2984,7 @@ step << !NightElf Rogue
     .goto 1453/0,377.61,-8752.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Osborne l'homme de la nuit|r
     >>|cRXP_WARN_Assurez-vous d'entraîner|r |T136058:0|t[Crochetage] |cRXP_WARN_car vous en aurez besoin pour votre quête de classe Voleur bientôt|r
-    .train 1804 >> Montez le niveau de votre [Crochetage]
+    .train 1804 >> Apprenez [Crochetage]
     .trainer >> Apprenez vos sorts de classe
     .target Osborne the Night Man
     .xp <20,1
@@ -3127,7 +3127,7 @@ step
     #label RRDB
     .goto 1433/0,-2164.56,-9213.10,8,0
     .goto 1433/0,-2145.67,-9231.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Wiley the Black|r à l'intérieur, en haut des escaliers
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Wiley the Black|r dans le bâtiment en haut des escaliers
     .turnin 65 >> Rendez la quête La Confrérie défias
     .accept 132 >> Acceptez la quête La Confrérie défias
 	.target Wiley the Black
@@ -3633,7 +3633,7 @@ step << Rogue
     >>|T133644:0|tUtilisez [Vol à la tire] sur le |cRXP_ENEMY_Malformed Defias Drone|r. Volez-lui la |cRXP_LOOT_Defias Tower Key|r
     >>Vous devez être en [Camouflage] pour utiliser votre [Vol à la tire]
     >>|cRXP_WARN_Le |cRXP_ENEMY_Malformed Defias Drone|r apparaissent à l'entrée de la tour, puis font le tour de celle-ci|r
-    >>Faites attention car il fait BEAUCOUP de dégâts. Si vous perdez votre [Camouflage], utilisez vite votre [Sprint] pour vous enfuir
+    >>Faites attention, il tape TRÈS fort. Si vous perdez votre [Camouflage], utilisez rapidement votre [Sprint] et enfuyez-vous
     .complete 2359,2 --Collect Defias Tower Key (x1)
     .link https://www.youtube.com/watch?v=5sIew15IcG0 >> Cliquez ICI pour un guide vidéo
     .mob Malformed Defias Drone
@@ -3712,7 +3712,7 @@ step << !Dwarf Rogue
     .goto 1453/0,801.99,-8513.29--c:1453,43.070,26.155
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Shaina Fuller|r
     >>|cRXP_WARN_Si vous avez un|r |T626003:0|t|cFFF48CBAPaladin|r|cRXP_WARN_,|r |T625999:0|t|cFFFF7C0ADruide|r |cRXP_WARN_ou|r |T626006:0|t|cFF0070DDChaman|r |cRXP_WARN_ami, demandez-leur de retirer le|r |T136230:0|t[Toucher de Zanzil] |cRXP_WARN_pour vous à la place|r
-    .train 7934 >> Apprenez [Anti-Venom]
+    .train 7934 >> Apprenez [Anti-Venin]
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
 step << !Dwarf Rogue
@@ -4063,7 +4063,7 @@ step
 step
     .isQuestTurnedIn 2138
     .goto 1439/1,397.45,6437.50--c:1439,38.843,43.416
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tharnariun Soigneflore|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tharnariun Treetender|r
     .accept 2139 >> Acceptez la quête Espoir de Tharnariun
     .target Tharnariun Treetender
 step
@@ -4346,7 +4346,7 @@ step
 step
     .isQuestComplete 2139
     .goto 1439/1,397.45,6437.50--c:1439,38.843,43.416
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tharnariun Soigneflore|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tharnariun Treetender|r
     .turnin 2139 >> Rendez la quête Espoir de Tharnariun
     .target Tharnariun Treetender
 step

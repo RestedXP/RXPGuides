@@ -671,7 +671,7 @@ step
     #label BoarMeatQuest
     #completewith SenirEnd
     >>Tuez les |cRXP_ENEMY_Crag Boars|r. Dépouillez-les pour leur |cRXP_LOOT_[Chunks of Boar Meat]|r et leur |cRXP_LOOT_Crag Boar Ribs|r
-    >>Gardez tous les |cRXP_LOOT_[Chunks of Boar Meat]|r que vous obtenez pour Ravitailler le Crache-vapeur et ensuite pour monter votre niveau en [Cuisine] plus tard
+    >>Gardez tous les |cRXP_LOOT_[Chunks of Boar Meat]|r que vous récupérez pour Ravitailler le Crache-vapeur et ensuite pour monter votre niveau de [Cuisine] plus tard
     >>Vous aurez besoin d'un niveau de [Cuisine] de 10 pour une quête à Auberdine plus tard
     >>Vous aurez besoin d'un niveau de 50 en [Cuisine] pour une quête au Bois de la Pénombre plus tard
     .collect 769,4,317,1 --Collect Chunk of Boar Meat (x4)
@@ -987,7 +987,7 @@ step << Warrior/Paladin/Rogue
     .train 2575,3 --Mining
 step
     #completewith RumbleshotAmmo
-    >>Tuez les |cRXP_ENEMY_Young Black Bears|r. Dépouillez-les pour leur |cRXP_LOOT_Thick Bear Fur|r
+    >>Tuez |cRXP_ENEMY_Young Black Bears|r. Dépouillez-les pour leur |cRXP_LOOT_Thick Bear Fur|r
     >>Tuez les |cRXP_ENEMY_Crag Boars|r et les |cRXP_ENEMY_Large Crag Boars|r. Dépouillez-les pour leur |cRXP_LOOT_[Chunks of Boar Meat]|r et leur |cRXP_LOOT_Crag Boar Ribs|r
     .complete 317,2 --Collect Thick Bear Fur (x2)
     .mob +Young Black Bear
@@ -1226,7 +1226,7 @@ step
     .waypoint 1426/0,135.86,-5458.11,60,0--c:1426,33.832,48.153
     .waypoint 1426/0,241.30,-5414.90,60,0--c:1426,31.691,46.837
     >>Tuez les |cRXP_ENEMY_Elder Crag Boars|r. Dépouillez-les pour leur |cRXP_LOOT_Crag Boar Ribs|r
-    >>Tuez les |cRXP_ENEMY_Ice Claw Bears|r et les |cRXP_ENEMY_Snow Leopards|r
+    >>Tuez les|cRXP_ENEMY_Ice Claw Bears|r et les |cRXP_ENEMY_Snow Leopards|r
     .complete 319,2 --Kill Elder Crag Boar (x8)
     .mob +Elder Crag Boar
     .collect 2886,6,384,1 --Collect Crag Boar Rib (x6)
@@ -2144,7 +2144,7 @@ step
     .goto 1432/0,-2631.48,-5847.50,12 >> Entrez dans le bunker. Montez à l'étage
 step
     .goto 1432/0,-2634.59,-5842.81
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Captain Rugelfuss|r dans le bunker
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Captain Rugelfuss|r à l'intérieur du bunker
     .accept 267 >> Acceptez la quête La menace trogg
     .target Captain Rugelfuss
 step
@@ -4037,7 +4037,7 @@ step
     .goto 1432/0,-2648.30,-5876.75,15 >> Montez le chemin de terre et ensuite descendez dans le bunker
 step
     .goto 1432/0,-2634.59,-5842.81
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Captain Rugelfuss|r dans le bunker
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Captain Rugelfuss|r à l'intérieur du bunker
     .turnin 267 >> Rendez la quête La menace trogg
     .target Captain Rugelfuss
     .isQuestComplete 267

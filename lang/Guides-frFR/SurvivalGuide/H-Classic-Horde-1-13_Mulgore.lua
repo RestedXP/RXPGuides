@@ -1307,7 +1307,7 @@ step
 step << Hunter
     .goto Mulgore,45.50,58.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Parlez à|r |cRXP_FRIENDLY_Kennah|r
-    >>|cRXP_BUY_Achetez des|r [Balle lourde] |cRXP_BUY_à Kennah|r << Hunter
+    >>|cRXP_BUY_Achetez des|r [Balle lourde] |cRXP_BUY_à Barg|r << Hunter
     .collect 2519,1000,6061,1 << Hunter --Heavy Shot (1000)
     .target Kennah Hawkseye
 step

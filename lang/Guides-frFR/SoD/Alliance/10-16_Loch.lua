@@ -1070,7 +1070,7 @@ step
     .goto Loch Modan,23.12,73.93,12 >> Entrez dans le bunker. Montez à l'étage
 step
     .goto Loch Modan,23.233,73.675
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Captain Rugelfuss|r dans le bunker
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Captain Rugelfuss|r à l'intérieur du bunker
     .accept 267 >> Acceptez la quête La menace trogg
     .target Captain Rugelfuss
 
@@ -1178,7 +1178,7 @@ step
 step
     #requires geode2 << Warrior
     .goto Loch Modan,23.233,73.675
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Captain Rugelfuss|r dans le bunker
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Captain Rugelfuss|r à l'intérieur du bunker
     .turnin 267 >> Rendez la quête La menace trogg
     .target Captain Rugelfuss
 step

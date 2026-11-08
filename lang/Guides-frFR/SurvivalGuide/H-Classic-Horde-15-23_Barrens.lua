@@ -1369,7 +1369,7 @@ step
 step << Rogue
     .goto Orgrimmar,43.05,53.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Shenthul|r
-    .train 1804 >> Montez le niveau de votre [Crochetage]
+    .train 1804 >> Apprenez [Crochetage]
     .train 921 >> Apprenez [Vol à la tire]
     .accept 2379 >> Acceptez la quête Zando'zan
     .target Shenthul
@@ -3367,11 +3367,11 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|r |cRXP_FRIENDLY_Pand|r
     >>Passez cette étape si vous n'avez pas assez d'[Etoffe de lin] pour monter vos [Premiers soins] à 80
     .train 3277 >> Apprenez  [Bandage en laine]
-    .train 7934 >> Apprenez [Anti-Venin] << Rogue
+    .train 7934 >> Apprenez [Anti-venin] << Rogue
     .target Pand Stonebinder
     .skill firstaid,<1,1
 step << Rogue
-    >>Fabriquez des [Anti-venin] si vous avez trouvé des [Petites glandes à venin]
+    >>Fabriquez des [Anti-Venin] si vous avez trouvé des [Petites glandes à venin]
     >>Gardez-les pour plus tard
     .collect 6452,1 --Anti Venom
     .itemcount 1475,1
@@ -3662,7 +3662,7 @@ step
     #completewith EnterWC
     >>Cueillez les |cRXP_PICK_Serpentbloom|r sur le sol
     >>|cRXP_WARN_Il est recommandé qu'au maximum 3 joueurs fassent cette quête si vous ne faites le donjon qu'une seule fois. Il n'y a pas assez de|r |cRXP_PICK_Fleur de serpent|r |cRXP_WARN_pour tout le monde|r
-    >>Utilisez [Découverte d'herbes] pour les voir sur votre minicarte
+    >>Lancez [Découverte d'herbes] pour les voir sur votre minicarte
     .complete 962,1 --Serpentbloom (10)
     .skill herbalism,<1,1
     .isOnQuest 962
@@ -3718,7 +3718,7 @@ step
     #completewith GlowingShard
     >>Cueillez les |cRXP_PICK_Serpentbloom|r sur le sol
     >>|cRXP_WARN_Il est recommandé qu'au maximum 3 joueurs fassent cette quête si vous ne faites le donjon qu'une seule fois. Il n'y a pas assez de|r |cRXP_PICK_Fleur de serpent|r |cRXP_WARN_pour tout le monde|r
-    >>Utilisez [Découverte d'herbes] pour les voir sur votre minicarte
+    >>Lancez [Découverte d'herbes] pour les voir sur votre minicarte
     .complete 962,1 --Serpentbloom (10)
     .skill herbalism,<1,1
     .isOnQuest 962
@@ -3795,7 +3795,7 @@ step
     #completewith Ectoplasms
     >>Cueillez les |cRXP_PICK_Serpentbloom|r sur le sol
     >>|cRXP_WARN_Il est recommandé qu'au maximum 3 joueurs fassent cette quête si vous ne faites le donjon qu'une seule fois. Il n'y a pas assez de|r |cRXP_PICK_Fleur de serpent|r |cRXP_WARN_pour tout le monde|r
-    >>Utilisez [Découverte d'herbes] pour les voir sur votre minicarte
+    >>Lancez [Découverte d'herbes] pour les voir sur votre minicarte
     .complete 962,1 --Serpentbloom (10)
     .skill herbalism,<1,1
     .isOnQuest 962
@@ -3861,7 +3861,7 @@ step
     #hardcore
     >>Cueillez les |cRXP_PICK_Serpentbloom|r sur le sol
     >>|cRXP_WARN_Il est recommandé qu'au maximum 3 joueurs fassent cette quête si vous ne faites le donjon qu'une seule fois. Il n'y a pas assez de|r |cRXP_PICK_Fleur de serpent|r |cRXP_WARN_pour tout le monde|r
-    >>Utilisez [Découverte d'herbes] pour les voir sur votre minicarte
+    >>Lancez [Découverte d'herbes] pour les voir sur votre minicarte
     .complete 962,1 --Serpentbloom (10)
     .skill herbalism,<1,1
     .isOnQuest 962
@@ -3878,7 +3878,7 @@ step
     #optional
     #softcore
     >>Cueillez les |cRXP_PICK_Serpentbloom|r sur le sol
-    >>Utilisez [Découverte d'herbes] pour les voir sur votre minicarte
+    >>Lancez [Découverte d'herbes] pour les voir sur votre minicarte
     .complete 962,1 --Serpentbloom (10)
     .skill herbalism,<1,1
     .isOnQuest 962
@@ -4733,7 +4733,7 @@ step << Warlock
     .use 6626
 step << Warlock
     .goto Orgrimmar,49.66,50.15
-    >>Tuez la |cRXP_ENEMY_Summoned Succubus|r
+    >>Tuez les |cRXP_ENEMY_Summoned Succubus|r
     .complete 1513,1 --Kill Summoned Succubus (1)
     .mob Summoned Succubus
     .use 6626
@@ -4822,7 +4822,7 @@ step << Mage
 step << Mage
     .goto Orgrimmar,38.66,85.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|r |cRXP_FRIENDLY_Thuul|r en haut de la hutte
-    .train 3567 >> Apprenez [Téléportation: Orgrimmar]
+    .train 3567 >> Apprenez [Téléportation : Orgrimmar]
     .target Thuul
 step << Troll Priest
     .goto Orgrimmar,35.59,87.80

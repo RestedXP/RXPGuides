@@ -83,7 +83,7 @@ step << !Human
     .accept 153 >> Acceptez la quête Les masques en cuir rouge
 step
     .goto Westfall,52.86,53.71
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Innkeeper Heather|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Aubergiste Heather|r
 	>>|cRXP_BUY_Achetez de la nourriture/eau si besoin|r << !Warrior !Rogue
 	>>|cRXP_BUY_Achetez de la nourriture si besoin|r << Warrior/Rogue
     .vendor >>Les |T133918:0|t[Lutjans à longue mâchoire] |cRXP_WARN_sont très peu coûteux|r
@@ -579,7 +579,7 @@ step
 step
 #map Darkshore
     .goto Felwood,21.63,18.15
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tharnariun Soigneflore|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tharnariun Treetender|r
     .accept 2118 >> Acceptez Plagued Lands
     .target Tharnariun Treetender
 step
@@ -699,13 +699,13 @@ step
     .accept 947 >> Acceptez la quête La caverne aux champignons
 step
 #map Darkshore
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinelle Glynda Nal'Shea|r
 	.target Sentinel Glynda Nal'Shea
     .goto Felwood,20.34,18.12
     .accept 4811 >> Accept Les Red Crystal
 step
 #map Darkshore
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tharnariun Soigneflore|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tharnariun Treetender|r
 	.target Tharnariun Treetender
     .goto Felwood,21.63,18.15
     .turnin 2118 >> Rendez la quête Terres malades
@@ -841,7 +841,7 @@ step
     .goto Darkshore,47.36,36.86,40,0
     .goto Darkshore,44.80,36.91,40,0
     .goto Darkshore,46.30,39.01
-    >>Tuez les |cRXP_ENEMY_Grell sauvage|r et les |cRXP_ENEMY_Fée vile|r. Dépouillez-les pour leur |cRXP_LOOT_Boucle d'oreille de Grell|r
+    >>Tuez les |cRXP_ENEMY_Grells sauvages|r et les |cRXP_ENEMY_Fées viles|r. Dépouillez-les pour leurr |cRXP_LOOT_Boucles d'oreille de Grell|r
     .complete 955,1
     .mob Wild Grell
     .mob Vile Sprite
@@ -1156,7 +1156,7 @@ step
     .accept 4763 >> Acceptez la quête La corruption des Noirbois
 step
 #map Darkshore
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinelle Glynda Nal'Shea|r
 	.target Sentinel Glynda Nal'Shea
     .goto Felwood,20.34,18.12
     .turnin 4811 >> Rendez la quête Le cristal rouge
@@ -1174,7 +1174,7 @@ step
 step
 #requires tube1
 #map Darkshore
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tharnariun Soigneflore|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tharnariun Treetender|r
 	.target Tharnariun Treetender
     .goto Felwood,21.63,18.15
     .turnin 2138 >> Rendez la quête Nettoyage de l'infection
@@ -1282,7 +1282,7 @@ step
     .goto Darkshore,54.99,32.04,30,0
     .goto Darkshore,54.99,33.41,15 >> Voyagez vers la Grotte de la Bondissante
 step << Druid
-    >>Utilisez la [Fiole d'échantillon des Chutes de la Bondissante vide] à la cascade à l'entrée de la grotte des Chutes de la Bondissante
+    >>Utilisez la [Fiole d'échantillon des Chutes de la Bondissante vide] à l'entrée de la Grotte de la Bondissante
     .goto Darkshore,54.99,33.41
     .complete 6122,1 --Filled Cliffspring Falls Sampler (1)
 step
@@ -1508,14 +1508,14 @@ step
 step
 #map Darkshore
     #label NorthDarkshore
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinelle Glynda Nal'Shea|r
 	.target Sentinel Glynda Nal'Shea
     .goto Darkshore,37.70,43.39
     .turnin 4813 >> Rendez la quête Les fragments à l'intérieur
 step
 .group
 #map Darkshore
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tharnariun Soigneflore|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tharnariun Treetender|r
 	.target Tharnariun Treetender
     .goto Felwood,21.63,18.15
     .turnin 2139 >> Rendez la quête Espoir de Tharnariun
@@ -1705,7 +1705,7 @@ step
     .target Gershala Nightwhisper
 step
 #map Darkshore
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tharnariun Soigneflore|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tharnariun Treetender|r
 	.target Tharnariun Treetender
     .goto Felwood,21.63,18.15
     .accept 2139 >> Acceptez la quête Espoir de Tharnariun
@@ -1768,7 +1768,7 @@ step
     .accept 948 >> Acceptez la quête Onu
 step
 #map Darkshore
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tharnariun Soigneflore|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tharnariun Treetender|r
 	.target Tharnariun Treetender
     .goto Felwood,21.63,18.15
     .turnin 2139 >> Rendez la quête Espoir de Tharnariun
@@ -2225,7 +2225,7 @@ step
 .dungeon WC
     >>Tuez |cRXP_ENEMY_Lord Cobrahn|r, |cRXP_ENEMY_Lord Pythas|r, |cRXP_ENEMY_Lord Serpentis|r et |cRXP_ENEMY_Lady Anacondra|r puis parlez au |cRXP_FRIENDLY_Disciple of Naralex|r au début du donjon pour commencer son escorte
     >>Escortez le |cRXP_FRIENDLY_Disciple of Naralex|r à travers les Cavernes des Lamentations et compléter son rituel
-    >>Tuez|cRXP_ENEMY_Mutanus the Devourer|r. Dépouillez-le pour sa [|cRXP_LOOT_Glowing Shard|r]
+    >>Tuez|cRXP_ENEMY_Mutanus the Devourer|r. Dépouillez-le pour son [|cRXP_LOOT_Glowing Shard|r]
     >>|cRXP_WARN_Utilisez le [|cRXP_LOOT_Glowing Shard|r] pour commencer la quête|r
     .collect 10441,1,6981,1 -- Glowing Shard (1)
     .accept 6981 >> Acceptez la quête L'Éclat luminescent

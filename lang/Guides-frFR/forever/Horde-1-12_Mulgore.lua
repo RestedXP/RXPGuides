@@ -506,7 +506,7 @@ step
     .goto 1412/1,-363.000,-2490.700
     >>|cRXP_WARN_Tapez /assis près du feu de camp et attendez une minute jusqu'à ce que vous obteniez le buff "Avantages du camp"|r
     .complete 96605,1 --|1/1 Use the /sit emote near the campfire
-    .macro Sit,134400 >>Asseyez-vous 
+    .macro Sit,134400 >>Asseyez-vous
     .timer 59, RP
     .complete 96605,2 --|Gain the Boosted Rest buff
 step
@@ -707,7 +707,7 @@ step
     .goto 1412/1,-363.000,-2490.700
     >>|cRXP_WARN_Tapez /assis près du feu de camp et attendez une minute jusqu'à ce que vous obteniez le buff "Avantages du camp"|r
     .complete 96605,1 --|1/1 Use the /sit emote near the campfire
-    .macro Sit,134400 >>Asseyez-vous 
+    .macro Sit,134400 >>Asseyez-vous
     .timer 59, RP
     .complete 96605,2 --|Gain the Boosted Rest buff
 step
@@ -1684,7 +1684,7 @@ step
 step << Hunter
     .goto 1412/1,-289.65,-2275.51--c:Mulgore,45.50,58.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Parlez à|r |cRXP_FRIENDLY_Kennah|r
-    >>|cRXP_BUY_Achetez des|r [Balle lourde] |cRXP_BUY_à Kennah|r << Hunter
+    >>|cRXP_BUY_Achetez des|r [Balle lourde] |cRXP_BUY_à Barg|r << Hunter
     .collect 2519,1000,6061,1 << Hunter --Heavy Shot (1000)
     .target Kennah Hawkseye
 step

@@ -511,7 +511,7 @@ step
     .goto Elwynn Forest,42.140,67.254
     .accept 47 >> Acceptez la quête L'échange de poussière d'or
 step << Priest
-    >>Lancez [Soins inférieurs (Rang 2)] et [Mot de pouvoir : Robustesse] sur le |cRXP_FRIENDLY_Guard Roberts|r
+    >>Lancez [Soins inférieurs (Rang 2)] et [Mot de pouvoir : Robustesse] sur |cRXP_FRIENDLY_Guard Roberts|r
     .target Guard Roberts
     .goto Elwynn Forest,48.148,68.046
     .complete 5624,1 --Heal and fortify Guard Roberts
@@ -1790,7 +1790,7 @@ step
     .goto Dun Morogh,70.7,56.4,40,0
     .goto Dun Morogh,70.62,52.39,25,0
     .goto Dun Morogh,70.7,56.4
-    >>Tuez les |cRXP_ENEMY_Brise-crânes Mâcherocs|r et les |cRXP_ENEMY_Briseurs d'os Mâcherocs|r
+    >>Tuez les |cRXP_ENEMY_Rockjaw Skullthumpers|r et les |cRXP_ENEMY_Rockjaw Bonesnappers|r
     .complete 432,1 --Kill Rockjaw Skullthumper (x6)
     .mob +Rockjaw Skullthumper
     .complete 433,1 --Kill Rockjaw Bonesnapper (x10)

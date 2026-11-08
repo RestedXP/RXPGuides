@@ -1046,7 +1046,7 @@ step << Undead Warrior
 step << Undead Warrior
     #optional
     #completewith BaronLongshore
-    +Équipez l'[Espadon] lorsque vous passez niveau 16
+    +Équipez l'[Espadon] lorsque vous passez au niveau 16
     .use 2024
     .itemcount 2024,1
     .itemStat 16,QUALITY,<7
@@ -1197,7 +1197,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Wiley l'aubergiste|r
     >>|cRXP_BUY_Buy|r Achetez des [Lutjan à longue mâchoire]|cRXP_BUY_au marchand|r
     >>|cRXP_BUY_Achetez du|r [Jus de melon] |cRXP_BUY_au marchand|r << Mage/Warlock/Priest/Shaman/Druid
-    >>|T133918:0|tLes [Lutjan à longue mâchoire] sont très abordables, achetez-en autant que vous voulez
+    >>|T133918:0|tLes [Lutjan à longue mâchoire] sont très abordables, achetez-en autant que vous le voulez
     .vendor >> Vendez tout ce dont nous n'avez pas besoin
     .collect 4592,20,895,1 --Longjaw Mud Snapper (20)
     .collect 1205,10,895,1 << Mage/Warlock/Priest/Shaman/Druid --Melon Juice (10)
@@ -1286,7 +1286,7 @@ step << Undead Warrior
 step << Undead Warrior
     #optional
     #completewith FlyToXroads1
-    +Équipez l'[Espadon] lorsque vous passez niveau 16
+    +Équipez l'[Espadon] lorsque vous passez au niveau 16
     .use 2024
     .itemcount 2024,1
     .itemStat 16,QUALITY,<7
@@ -1474,14 +1474,14 @@ step << Troll Hunter/Orc Hunter
 step << Tauren Hunter
     .goto The Barrens,51.67,29.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Parlez à|r |cRXP_FRIENDLY_Barg|r
-    >>|cRXP_BUY_Achetez des|r [Balle lourde] |cRXP_BUY_à Kennah|r
+    >>|cRXP_BUY_Achetez des|r [Balle lourde] |cRXP_BUY_à Barg|r
     .collect 2519,1000,850,1 << Hunter --Heavy Shot (1000)
     .target Barg
 step << Troll Hunter/Orc Hunter
     .goto The Barrens,51.11,29.07
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Parlez à|r |cRXP_FRIENDLY_Uthrok|r
     .vendor >> |cRXP_BUY_Achetez un|r [|cRXP_FRIENDLY_Bon arc long|r] |cRXP_BUY_à Uthrok si il en a en stock et faites un stock de flèches|r
-    >>Si il n'est pas disponible, achetez un [Arc renforcé] à la place
+    >>Si il n'est pas disponible, achetez à la place un [Arc renforcé]
     .collect 2515,1200,870,1 << Hunter --Sharp Arrow (1200)
     .target Uthrok
     .isOnQuest 903
@@ -1776,7 +1776,7 @@ step << skip --!Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
     .dungeon RFC
 step << skip --!Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
     #completewith Samophlange
-    +Faites attention aux |cRXP_ENEMY_Sunscale Scytheclaws|r dans la zone. Ils sont niveau 18 et peuvent utiliser [Rosser]
+    +Faites attention aux |cRXP_ENEMY_Sunscale Scytheclaws|r dans la zone. Ils vont jusqu'au niveau 18 et peuvent utiliser [Rosser]
     .dungeon RFC
     .xp >17,1
 step << skip --!Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
@@ -1789,7 +1789,7 @@ step << skip --!Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
     .dungeon RFC
 step
     #completewith Samophlange
-    +Faites attention aux |cRXP_ENEMY_Sunscale Scytheclaws|r dans la zone. Ils sont niveau 18 et peuvent utiliser [Rosser]
+    +Faites attention aux |cRXP_ENEMY_Sunscale Scytheclaws|r dans la zone. Ils vont jusqu'au niveau 18 et peuvent utiliser [Rosser]
     --.dungeon !RFC
     .xp >17,1
 step
@@ -2003,7 +2003,7 @@ step
 step
     .goto Orgrimmar,34.18,84.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|r |cRXP_FRIENDLY_Arnok|r
-    >>Passez cette étape si vous n'avez pas assez d'[Etoffe de lin] pour monter votre compétence à 50
+    >>Passez cette étape si vous avez pas assez d'[Étoffe de lin] pour monter votre compétence à 50
     .train 3274 >> Apprenez Premiers soins compagnon
     .target Arnok
     .skill firstaid,<40,1
@@ -2120,7 +2120,7 @@ step
 step << Rogue
     .goto Orgrimmar,43.05,53.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Shenthul|r
-    .train 1804 >> Montez le niveau de votre [Crochetage]
+    .train 1804 >> Apprenez [Crochetage]
     .train 921 >> Apprenez [Vol à la tire]
     .accept 2379 >> Acceptez la quête Zando'zan
     .target Shenthul
@@ -2272,7 +2272,7 @@ step << Warrior
 step << Warrior
     #optional
     #completewith FoodandWater2
-    +Équipez la [Hache de bataille] lorsque vous passez niveau 20
+    +Équipez la [Hache de bataile] lorsque vous passez au niveau 20
     .use 926
     .itemcount 926,1
     .itemStat 16,QUALITY,<7
@@ -2513,7 +2513,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|cRXP_FRIENDLY_Innkeeper Wiley|r
     >>|cRXP_BUY_Buy|r Achetez des [Lutjan à longue mâchoire]|cRXP_BUY_au marchand|r
     >>|cRXP_BUY_Achetez du|r [Jus de melon] |cRXP_BUY_au marchand|r << Mage/Warlock/Priest/Shaman/Druid
-    >>|T133918:0|tLes [Lutjan à longue mâchoire] sont très abordables, achetez-en autant que vous voulez
+    >>|T133918:0|tLes [Lutjan à longue mâchoire] sont très abordables, achetez-en autant que vous le voulez
     .vendor >> Vendez tout ce dont nous n'avez pas besoin
     .collect 4592,20,888,1 --Longjaw Mud Snapper (20)
     .collect 1205,10,888,1 << Mage/Warlock/Priest/Shaman/Druid --Melon Juice (10)
@@ -4770,11 +4770,11 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|r |cRXP_FRIENDLY_Pand|r
     >>Passez cette étape si vous n'avez pas assez d'[Etoffe de lin] pour monter vos [Premiers soins] à 80
     .train 3277 >> Apprenez  [Bandage en laine]
-    .train 7934 >> Apprenez [Anti-Venin] << Rogue
+    .train 7934 >> Apprenez [Anti-venin] << Rogue
     .target Pand Stonebinder
     .skill firstaid,<1,1
 step << Rogue
-    >>Fabriquez des [Anti-venin] si vous avez trouvé des [Petites glandes à venin]
+    >>Fabriquez des [Anti-Venin] si vous avez trouvé des [Petites glandes à venin]
     >>Gardez-les pour plus tard
     .collect 6452,1 --Anti Venom
     .itemcount 1475,1
@@ -5034,7 +5034,7 @@ step
     #completewith EnterWC
     >>Cueillez les |cRXP_PICK_Serpentbloom|r sur le sol
     >>|cRXP_WARN_Il est recommandé qu'au maximum 3 joueurs fassent cette quête si vous ne faites le donjon qu'une seule fois. Il n'y a pas assez de|r |cRXP_PICK_Fleur de serpent|r |cRXP_WARN_pour tout le monde|r
-    >>Utilisez [Découverte d'herbes] pour les voir sur votre minicarte
+    >>Lancez [Découverte d'herbes] pour les voir sur votre minicarte
     .complete 962,1 --Serpentbloom (10)
     .skill herbalism,<1,1
     .isOnQuest 962
@@ -5053,7 +5053,7 @@ step
     #softcore
     #completewith EnterWC
     >>Cueillez les |cRXP_PICK_Serpentbloom|r sur le sol
-    >>Utilisez [Découverte d'herbes] pour les voir sur votre minicarte
+    >>Lancez [Découverte d'herbes] pour les voir sur votre minicarte
     .complete 962,1 --Serpentbloom (10)
     .skill herbalism,<1,1
     .isOnQuest 962
@@ -5119,7 +5119,7 @@ step
     #completewith GlowingShard
     >>Cueillez les |cRXP_PICK_Serpentbloom|r sur le sol
     >>|cRXP_WARN_Il est recommandé qu'au maximum 3 joueurs fassent cette quête si vous ne faites le donjon qu'une seule fois. Il n'y a pas assez de|r |cRXP_PICK_Fleur de serpent|r |cRXP_WARN_pour tout le monde|r
-    >>Utilisez [Découverte d'herbes] pour les voir sur votre minicarte
+    >>Lancez [Découverte d'herbes] pour les voir sur votre minicarte
     .complete 962,1 --Serpentbloom (10)
     .skill herbalism,<1,1
     .isOnQuest 962
@@ -5139,7 +5139,7 @@ step
     #softcore
     #completewith GlowingShard
     >>Cueillez les |cRXP_PICK_Serpentbloom|r sur le sol
-    >>Utilisez [Découverte d'herbes] pour les voir sur votre minicarte
+    >>Lancez [Découverte d'herbes] pour les voir sur votre minicarte
     .complete 962,1 --Serpentbloom (10)
     .skill herbalism,<1,1
     .isOnQuest 962
@@ -5226,7 +5226,7 @@ step
     #completewith Ectoplasms
     >>Cueillez les |cRXP_PICK_Serpentbloom|r sur le sol
     >>|cRXP_WARN_Il est recommandé qu'au maximum 3 joueurs fassent cette quête si vous ne faites le donjon qu'une seule fois. Il n'y a pas assez de|r |cRXP_PICK_Fleur de serpent|r |cRXP_WARN_pour tout le monde|r
-    >>Utilisez [Découverte d'herbes] pour les voir sur votre minicarte
+    >>Lancez [Découverte d'herbes] pour les voir sur votre minicarte
     .complete 962,1 --Serpentbloom (10)
     .skill herbalism,<1,1
     .isOnQuest 962
@@ -5246,7 +5246,7 @@ step
     #softcore
     #completewith Ectoplasms
     >>Cueillez les |cRXP_PICK_Serpentbloom|r sur le sol
-    >>Utilisez [Découverte d'herbes] pour les voir sur votre minicarte
+    >>Lancez [Découverte d'herbes] pour les voir sur votre minicarte
     .complete 962,1 --Serpentbloom (10)
     .skill herbalism,<1,1
     .isOnQuest 962
@@ -5312,7 +5312,7 @@ step
     #hardcore
     >>Cueillez les |cRXP_PICK_Serpentbloom|r sur le sol
     >>|cRXP_WARN_Il est recommandé qu'au maximum 3 joueurs fassent cette quête si vous ne faites le donjon qu'une seule fois. Il n'y a pas assez de|r |cRXP_PICK_Fleur de serpent|r |cRXP_WARN_pour tout le monde|r
-    >>Utilisez [Découverte d'herbes] pour les voir sur votre minicarte
+    >>Lancez [Découverte d'herbes] pour les voir sur votre minicarte
     .complete 962,1 --Serpentbloom (10)
     .skill herbalism,<1,1
     .isOnQuest 962
@@ -5329,7 +5329,7 @@ step
     #optional
     #softcore
     >>Cueillez les |cRXP_PICK_Serpentbloom|r sur le sol
-    >>Utilisez [Découverte d'herbes] pour les voir sur votre minicarte
+    >>Lancez [Découverte d'herbes] pour les voir sur votre minicarte
     .complete 962,1 --Serpentbloom (10)
     .skill herbalism,<1,1
     .isOnQuest 962
@@ -6209,7 +6209,7 @@ step << Priest
     #xprate <1.5
     #season 0,1
     #completewith next
-    >>Ramassez le |cRXP_LOOT_Sapphire of Aku'Mai|r sur le mur
+    >>Récupérez le |cRXP_LOOT_Saphir d'Aku'Mai|r sur le mur
     .complete 6563,1 --Sapphire of Aku'Mai (20)
     .dungeon BFD
     .isOnQuest 6563
@@ -6245,7 +6245,7 @@ step << Priest
     .goto Kalimdor,43.94,34.86,20,0
     .goto Kalimdor,43.81,35.16,20,0
     .goto Kalimdor,44.34,35.11,20,0
-    >>Ramassez le |cRXP_LOOT_Sapphire of Aku'Mai|r sur le mur
+    >>Récupérez le |cRXP_LOOT_Saphir d'Aku'Mai|r sur le mur
     .complete 6563,1 --Sapphire of Aku'Mai (20)
     .dungeon BFD
     .isOnQuest 6563
@@ -6481,7 +6481,7 @@ step << Warlock
     .use 6626
 step << Warlock
     .goto Orgrimmar,49.66,50.15
-    >>Tuez la |cRXP_ENEMY_Summoned Succubus|r
+    >>Tuez les |cRXP_ENEMY_Summoned Succubus|r
     .complete 1513,1 --Kill Summoned Succubus (1)
     .mob Summoned Succubus
     .use 6626
@@ -6564,7 +6564,7 @@ step << Mage
 step << Mage
     .goto Orgrimmar,38.66,85.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|r |cRXP_FRIENDLY_Thuul|r en haut de la hutte
-    .train 3567 >> Apprenez [Téléportation: Orgrimmar]
+    .train 3567 >> Apprenez [Téléportation : Orgrimmar]
     .target Thuul
 step << Troll Priest
     .goto Orgrimmar,35.59,87.80
@@ -6745,7 +6745,7 @@ step << Rogue
     .collect 3137,200,6544,1 --Deadly Throwing Axe (200)
     .target Trak'gen
 step << Rogue
-    >>Si vous avez des [Anti-Venin], utilisez-en un pour pour guérir du [Toucher de Zanzil]
+    >>Si vous avez un [Anti-Venin], utilisez-le pour vous guérir du [Toucher de Zanzil]
     .itemcount 6452,1
     .use 6452
     .aura -9991
@@ -6889,7 +6889,7 @@ step << Troll Hunter/Orc Hunter
     .goto The Barrens,51.11,29.07
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Parlez à|r |cRXP_FRIENDLY_Uthrok|r
     .vendor >> |cRXP_BUY_Achetez un|r [|cRXP_FRIENDLY_Bon arc long|r] |cRXP_BUY_à Uthrok si il en a en stock et faites un stock de flèches|r
-    >>Si il n'est pas disponible, achetez un [Arc renforcé] à la place
+    >>Si il n'est pas disponible, achetez à la place un [Arc renforcé]
     .collect 2515,1200,870,1 << Hunter --Sharp Arrow (1200)
     .target Uthrok
     .xp <16,1
@@ -7254,7 +7254,7 @@ step << Troll Hunter/Orc Hunter
     .goto The Barrens,51.11,29.07
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Parlez à|r |cRXP_FRIENDLY_Uthrok|r
     .vendor >> |cRXP_BUY_Achetez un|r [|cRXP_FRIENDLY_Bon arc long|r] |cRXP_BUY_à Uthrok si il en a en stock et faites un stock de flèches|r
-    >>Si il n'est pas disponible, achetez un [Arc renforcé] à la place
+    >>Si il n'est pas disponible, achetez à la place un [Arc renforcé]
     .collect 2515,1200,870,1 << Hunter --Sharp Arrow (1200)
     .target Uthrok
     .xp <16,1
@@ -7996,7 +7996,7 @@ step << Undead Warrior
 step << Undead Warrior
     #optional
     #completewith BaronLongshore
-    +Équipez l'[Espadon] lorsque vous passez niveau 16
+    +Équipez l'[Espadon] lorsque vous passez au niveau 16
     .use 2024
     .itemcount 2024,1
     .itemStat 16,QUALITY,<7
@@ -8169,7 +8169,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Wiley l'aubergiste|r
     >>|cRXP_BUY_Buy|r Achetez des [Lutjan à longue mâchoire]|cRXP_BUY_au marchand|r
     >>|cRXP_BUY_Achetez du|r [Jus de melon] |cRXP_BUY_au marchand|r << Mage/Warlock/Priest/Shaman/Druid
-    >>|T133918:0|tLes [Lutjan à longue mâchoire] sont très abordables, achetez-en autant que vous voulez
+    >>|T133918:0|tLes [Lutjan à longue mâchoire] sont très abordables, achetez-en autant que vous le voulez
     .vendor >> Vendez tout ce dont nous n'avez pas besoin
     .collect 4592,20,895,1 --Longjaw Mud Snapper (20)
     .collect 1205,10,895,1 << Mage/Warlock/Priest/Shaman/Druid --Melon Juice (10)
@@ -8277,7 +8277,7 @@ step << Undead Warrior
 step << Undead Warrior
     #optional
     #completewith FlyToXroads1
-    +Équipez l'[Espadon] lorsque vous passez niveau 16
+    +Équipez l'[Espadon] lorsque vous passez au niveau 16
     .use 2024
     .itemcount 2024,1
     .itemStat 16,QUALITY,<7
@@ -8509,14 +8509,14 @@ step << skip
 step << Tauren Hunter
     .goto The Barrens,51.67,29.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Parlez à|r |cRXP_FRIENDLY_Barg|r
-    >>|cRXP_BUY_Achetez des|r [Balle lourde] |cRXP_BUY_à Kennah|r
+    >>|cRXP_BUY_Achetez des|r [Balle lourde] |cRXP_BUY_à Barg|r
     .collect 2519,1000,850,1 << Hunter --Heavy Shot (1000)
     .target Barg
 step << Troll Hunter/Orc Hunter
     .goto The Barrens,51.11,29.07
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Parlez à|r |cRXP_FRIENDLY_Uthrok|r
     .vendor >> |cRXP_BUY_Achetez un|r [|cRXP_FRIENDLY_Bon arc long|r] |cRXP_BUY_à Uthrok si il en a en stock et faites un stock de flèches|r
-    >>Si il n'est pas disponible, achetez un [Arc renforcé] à la place
+    >>Si il n'est pas disponible, achetez à la place un [Arc renforcé]
     .collect 2515,1200,870,1 << Hunter --Sharp Arrow (1200)
     .target Uthrok
 step << Tauren Hunter
@@ -8835,7 +8835,7 @@ step << skip --!Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
 step << skip --!Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
     #xprate <2.1
     #completewith Samophlange
-    +Faites attention aux |cRXP_ENEMY_Sunscale Scytheclaws|r dans la zone. Ils sont niveau 18 et peuvent utiliser [Rosser]
+    +Faites attention aux |cRXP_ENEMY_Sunscale Scytheclaws|r dans la zone. Ils vont jusqu'au niveau 18 et peuvent utiliser [Rosser]
     .dungeon RFC
     .xp >17,1
 step << skip --!Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
@@ -8850,7 +8850,7 @@ step << skip --!Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
 step
     #xprate <2.1
     #completewith Samophlange
-    +Faites attention aux |cRXP_ENEMY_Sunscale Scytheclaws|r dans la zone. Ils sont niveau 18 et peuvent utiliser [Rosser]
+    +Faites attention aux |cRXP_ENEMY_Sunscale Scytheclaws|r dans la zone. Ils vont jusqu'au niveau 18 et peuvent utiliser [Rosser]
     --.dungeon !RFC
     .xp >17,1
 step
@@ -9156,7 +9156,7 @@ step
 step
     .goto Orgrimmar,34.18,84.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|r |cRXP_FRIENDLY_Arnok|r
-    >>Passez cette étape si vous n'avez pas assez d'[Etoffe de lin] pour monter votre compétence à 50
+    >>Passez cette étape si vous avez pas assez d'[Étoffe de lin] pour monter votre compétence à 50
     .train 3274 >> Apprenez Premiers soins compagnon
     .target Arnok
     .skill firstaid,<40,1
@@ -9282,7 +9282,7 @@ step << Shaman/Hunter
 step << Rogue
     .goto Orgrimmar,43.05,53.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Shenthul|r
-    .train 1804 >> Montez le niveau de votre [Crochetage]
+    .train 1804 >> Apprenez [Crochetage]
     .train 921 >> Apprenez [Vol à la tire]
     .accept 2379 >> Acceptez la quête Zando'zan
     .target Shenthul
@@ -9469,7 +9469,7 @@ step << Warrior
 step << Warrior
     #optional
     #completewith FoodandWater2
-    +Équipez la [Hache de bataille] lorsque vous passez niveau 20
+    +Équipez la [Hache de bataile] lorsque vous passez au niveau 20
     .use 926
     .itemcount 926,1
     .itemStat 16,QUALITY,<7
@@ -9744,7 +9744,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Wiley l'aubergiste|r
     >>|cRXP_BUY_Buy|r Achetez des [Lutjan à longue mâchoire]|cRXP_BUY_au marchand|r
     >>|cRXP_BUY_Achetez du|r [Jus de melon] |cRXP_BUY_au marchand|r << Mage/Warlock/Priest/Shaman/Druid
-    >>|T133918:0|tLes [Lutjan à longue mâchoire] sont très abordables, achetez-en autant que vous voulez
+    >>|T133918:0|tLes [Lutjan à longue mâchoire] sont très abordables, achetez-en autant que vous le voulez
     .vendor >> Vendez tout ce dont nous n'avez pas besoin
     .collect 4592,20,888,1 --Longjaw Mud Snapper (20)
     .collect 1205,10,888,1 << Mage/Warlock/Priest/Shaman/Druid --Melon Juice (10)
@@ -12186,11 +12186,11 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|r |cRXP_FRIENDLY_Pand|r
     >>Passez cette étape si vous n'avez pas assez d'[Etoffe de lin] pour monter vos [Premiers soins] à 80
     .train 3277 >> Apprenez  [Bandage en laine]
-    .train 7934 >> Apprenez [Anti-Venin] << Rogue
+    .train 7934 >> Apprenez [Anti-venin] << Rogue
     .target Pand Stonebinder
     .skill firstaid,<1,1
 step << Rogue
-    >>Fabriquez des [Anti-venin] si vous avez trouvé des [Petites glandes à venin]
+    >>Fabriquez des [Anti-Venin] si vous avez trouvé des [Petites glandes à venin]
     >>Gardez-les pour plus tard
     .collect 6452,1 --Anti Venom
     .itemcount 1475,1
@@ -12431,7 +12431,7 @@ step
     #completewith EnterWC
     >>Cueillez les |cRXP_PICK_Serpentbloom|r sur le sol
     >>|cRXP_WARN_Il est recommandé qu'au maximum 3 joueurs fassent cette quête si vous ne faites le donjon qu'une seule fois. Il n'y a pas assez de|r |cRXP_PICK_Fleur de serpent|r |cRXP_WARN_pour tout le monde|r
-    >>Utilisez [Découverte d'herbes] pour les voir sur votre minicarte
+    >>Lancez [Découverte d'herbes] pour les voir sur votre minicarte
     .complete 962,1 --Serpentbloom (10)
     .skill herbalism,<1,1
     .isOnQuest 962
@@ -12450,7 +12450,7 @@ step
     #softcore
     #completewith EnterWC
     >>Cueillez les |cRXP_PICK_Serpentbloom|r sur le sol
-    >>Utilisez [Découverte d'herbes] pour les voir sur votre minicarte
+    >>Lancez [Découverte d'herbes] pour les voir sur votre minicarte
     .complete 962,1 --Serpentbloom (10)
     .skill herbalism,<1,1
     .isOnQuest 962
@@ -12516,7 +12516,7 @@ step
     #completewith GlowingShard
     >>Cueillez les |cRXP_PICK_Serpentbloom|r sur le sol
     >>|cRXP_WARN_Il est recommandé qu'au maximum 3 joueurs fassent cette quête si vous ne faites le donjon qu'une seule fois. Il n'y a pas assez de|r |cRXP_PICK_Fleur de serpent|r |cRXP_WARN_pour tout le monde|r
-    >>Utilisez [Découverte d'herbes] pour les voir sur votre minicarte
+    >>Lancez [Découverte d'herbes] pour les voir sur votre minicarte
     .complete 962,1 --Serpentbloom (10)
     .skill herbalism,<1,1
     .isOnQuest 962
@@ -12536,7 +12536,7 @@ step
     #softcore
     #completewith GlowingShard
     >>Cueillez les |cRXP_PICK_Serpentbloom|r sur le sol
-    >>Utilisez [Découverte d'herbes] pour les voir sur votre minicarte
+    >>Lancez [Découverte d'herbes] pour les voir sur votre minicarte
     .complete 962,1 --Serpentbloom (10)
     .skill herbalism,<1,1
     .isOnQuest 962
@@ -12623,7 +12623,7 @@ step
     #completewith Ectoplasms
     >>Cueillez les |cRXP_PICK_Serpentbloom|r sur le sol
     >>|cRXP_WARN_Il est recommandé qu'au maximum 3 joueurs fassent cette quête si vous ne faites le donjon qu'une seule fois. Il n'y a pas assez de|r |cRXP_PICK_Fleur de serpent|r |cRXP_WARN_pour tout le monde|r
-    >>Utilisez [Découverte d'herbes] pour les voir sur votre minicarte
+    >>Lancez [Découverte d'herbes] pour les voir sur votre minicarte
     .complete 962,1 --Serpentbloom (10)
     .skill herbalism,<1,1
     .isOnQuest 962
@@ -12643,7 +12643,7 @@ step
     #softcore
     #completewith Ectoplasms
     >>Cueillez les |cRXP_PICK_Serpentbloom|r sur le sol
-    >>Utilisez [Découverte d'herbes] pour les voir sur votre minicarte
+    >>Lancez [Découverte d'herbes] pour les voir sur votre minicarte
     .complete 962,1 --Serpentbloom (10)
     .skill herbalism,<1,1
     .isOnQuest 962
@@ -12709,7 +12709,7 @@ step
     #hardcore
     >>Cueillez les |cRXP_PICK_Serpentbloom|r sur le sol
     >>|cRXP_WARN_Il est recommandé qu'au maximum 3 joueurs fassent cette quête si vous ne faites le donjon qu'une seule fois. Il n'y a pas assez de|r |cRXP_PICK_Fleur de serpent|r |cRXP_WARN_pour tout le monde|r
-    >>Utilisez [Découverte d'herbes] pour les voir sur votre minicarte
+    >>Lancez [Découverte d'herbes] pour les voir sur votre minicarte
     .complete 962,1 --Serpentbloom (10)
     .skill herbalism,<1,1
     .isOnQuest 962
@@ -12727,7 +12727,7 @@ step
     #optional
     #softcore
     >>Cueillez les |cRXP_PICK_Serpentbloom|r sur le sol
-    >>Utilisez [Découverte d'herbes] pour les voir sur votre minicarte
+    >>Lancez [Découverte d'herbes] pour les voir sur votre minicarte
     .complete 962,1 --Serpentbloom (10)
     .skill herbalism,<1,1
     .isOnQuest 962
@@ -13342,7 +13342,7 @@ step << Rogue
     .collect 3371,20,2479,1 --Collect Empty Vial (20)
     .target Rekkul
 step << Rogue
-    >>Si vous avez des [Anti-Venin], utilisez-en un pour pour guérir du [Toucher de Zanzil]
+    >>Si vous avez un [Anti-Venin], utilisez-le pour vous guérir du [Toucher de Zanzil]
     .itemcount 6452,1
     .use 6452
     .aura -9991

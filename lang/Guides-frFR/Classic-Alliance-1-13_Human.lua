@@ -1380,7 +1380,7 @@ step
     .target Remy "Two Times"
 step << Priest
     .goto Elwynn Forest,48.148,68.046
-    >>Lancez [Soins inférieurs (Rang 2)] et [Mot de pouvoir : Robustesse] sur le |cRXP_FRIENDLY_Guard Roberts|r
+    >>Lancez [Soins inférieurs (Rang 2)] et [Mot de pouvoir : Robustesse] sur |cRXP_FRIENDLY_Guard Roberts|r
     .complete 5624,1 --Heal and fortify Guard Roberts
     .target Guard Roberts
 step
@@ -3407,7 +3407,7 @@ step
     .isQuestAvailable 6181 << Human
 step
     .goto Westfall,52.86,53.71
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Innkeeper Heather|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Aubergiste Heather|r
     >>|cRXP_BUY_Achetez-lui jusqu'à 20|r |T133918:0|t[Lutjans à longue mâchoire] |cRXP_BUY_. Cette nourriture de niveau 5 est peu coûteuse|r
     .collect 4592,20,314,1 --Longjaw Mud Snapper (20)
 	.target Innkeeper Heather

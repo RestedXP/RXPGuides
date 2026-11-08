@@ -1122,7 +1122,7 @@ step << Hunter
     .target Josephine Carson
 step << Priest
     .goto 1429/0,-135.72,-9514.56
-    >>Lancez [Soins inférieurs (Rang 2)] et [Mot de pouvoir : Robustesse] sur le |cRXP_FRIENDLY_Guard Roberts|r
+    >>Lancez [Soins inférieurs (Rang 2)] et [Mot de pouvoir : Robustesse] sur |cRXP_FRIENDLY_Guard Roberts|r
     .complete 5624,1 --Heal and fortify Guard Roberts
     .target Guard Roberts
 step

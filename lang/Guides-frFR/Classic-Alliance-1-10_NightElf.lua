@@ -1679,7 +1679,7 @@ step
     >>Tuez |cRXP_ENEMY_Lady Sathrah|r. Dépouillez-la pour ses |cRXP_LOOT_Spinnerets|r
     >>|cRXP_ENEMY_Lady Sathrah|r peut apparaître à 3 endroits différents, regardez votre carte pour le chemin que nous vous recommandons de prendre
     >>Dirigez-vous au nord le long de la rivière et vérifiez le premier endroit le plus à l'est. Commencez la quête des [Tumeurs] sur la route
-    >>Si elle n'est pas à l'est de la rivière, terminez la quête des [Tumeurs] avant de vous rendre à l'ouest
+    >>Si elle n'est pas à l'est de la rivière, complétez la quête des [Tumeurs] avant de vous diriger vers l'ouest
     .complete 2518,1 --Collect Silvery Spinnerets (x1)
     .mob Lady Sathrah
 step
