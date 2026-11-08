@@ -6045,7 +6045,6 @@ step
     #hidewindow
     #completewith ToHermit << Alliance
     #completewith ForestHollowsA << Horde
-    #loop
     .goto 2521,62.83,38.25,35,0
     .goto 2521,62.08,36.7,35,0
     .goto 2521,61.17,35.44,35,0
