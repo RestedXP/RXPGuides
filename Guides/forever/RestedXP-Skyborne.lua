@@ -6212,6 +6212,12 @@ step
     .turnin 93165,2 >>Turn in Mercy Falls on Deaf Ears << Mage/Priest/Warlock
     .turnin 93165,3 >>Turn in Mercy Falls on Deaf Ears << Warrior/Paladin
     .target Vayn Moongaze::254151
+step << Alliance
+    .goto 2521,63.80,36.00
+    .itemcount 265476,1
+    >>Use the |T134332:0|t[Ripped Missive] in your bags to begin the quest.
+    .accept 94490 >>Accept Ripped Missive
+    .use 265476 -- Ripped Missive
 step
     .goto 2521,63.93,33.76,20,0
     .goto 2521,63.69,32.49,20,0
