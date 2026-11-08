@@ -903,8 +903,14 @@ function addon.GetNpcName(id)
         if GameTooltip:IsShown() then
             name = GameTooltipTextLeft1:GetText()
             --DevTools_Dump(name)
-            name = name:match("^|c%x%x%x%x%x%x%x%x(.*)|") or name
-            NPCNames[id] = name
+            -- Tooltip text can be a secret value (e.g. in combat on 12.x);
+            -- string ops on it error, so skip it and retry later
+            if type(name) ~= "string" or addon.IsSecretValue(name) then
+                name = nil
+            else
+                name = name:match("^|c%x%x%x%x%x%x%x%x(.*)|") or name
+                NPCNames[id] = name
+            end
         end
         GameTooltip:Hide()
         if name then

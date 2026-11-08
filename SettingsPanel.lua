@@ -3834,6 +3834,7 @@ function addon.GetXPBonuses(ignoreBuffs,playerLevel)
                 GameTooltip:SetInventoryItem("player",i)
                 for n = 2,GameTooltip:NumLines() do
                     local text = getglobal("GameTooltipTextLeft"..n):GetText() or ""
+                    if addon.IsSecretValue(text) then text = "" end
                     --print(text)
                     if not (minilvl and maxilvl) then
                         local tminlvl,tmaxlvl = text:match(ITEM_RANGE)
