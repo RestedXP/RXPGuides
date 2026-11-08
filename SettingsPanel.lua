@@ -3696,10 +3696,15 @@ function addon.settings.ToggleActive()
         addon.HideTimers()
     end
 
+    local shown, isSecure
     for _, frame in pairs(addon.enabledFrames) do
-        local shown, isSecure = frame.IsFeatureEnabled()
-        if not (isSecure and InCombatLockdown()) and shown then
-            frame:SetShown(addon.settings.profile.showEnabled)
+        if frame.IsFeatureEnabled then
+            shown, isSecure = frame.IsFeatureEnabled()
+            if not (isSecure and InCombatLockdown()) and shown then
+                frame:SetShown(addon.settings.profile.showEnabled)
+            end
+        elseif not addon.settings.profile.showEnabled then
+            frame:Hide()
         end
     end
 
