@@ -1252,7 +1252,7 @@ RXPGuides.RegisterGuide([[
     #name Matança Veloz - 45 (Garganta Abrasadora & Barreira do Inferno)
 step
     #completewith next
-    .zone Searing Gorge >>Viaje para Garganta Abrasadora
+    .zone Searing Gorge >>Vá à Garganta Abrasadora
 step
     .goto 1427/0,-832.800,-6647.500,10
     >>Voe para a entrada da caverna em Firewatch Serra. Nota que você precisará entrar em uma caverna cheia de elites de nível 47-48. Dito isto, é possível completar esta parte usando deathruns.

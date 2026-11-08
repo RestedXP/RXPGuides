@@ -401,7 +401,7 @@ step
 step
     .goto Thunder Bluff,39.45,65.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Javaton Totem das Sombras|r
-    >>|cRXP_WARN_Ele é|r |T132320:0|t[Furtivo]
+    >>|cRXP_WARN_Ele está|r |T132320:0|t[Furtivo]
     .accept 76156 >>Aceite À espreita com a Mãe Terra
     .target Boarton Shadetotem
     .train 410104,1
@@ -470,8 +470,8 @@ step
 step
     .goto Thunder Bluff,39.45,65.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Javaton Totem das Sombras|r
-    >>|cRXP_WARN_Ele é|r |T132320:0|t[Furtivo]
-    .turnin 76156 >>Entregue À Espreita com a Mãe Terra
+    >>|cRXP_WARN_Ele está|r |T132320:0|t[Furtivo]
+    .turnin 76156 >>Entregue À espreita com a Mãe Terra
     .accept 76160 >>Aceite À espreita com a Mãe Terra
     .target Boarton Shadetotem
     .train 410104,1
@@ -510,8 +510,8 @@ step
 step
     .goto Thunder Bluff,39.45,65.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Javaton Totem das Sombras|r
-    >>|cRXP_WARN_Ele é|r |T132320:0|t[Furtivo]
-    .turnin 76160 >>Entregue À Espreita com a Mãe Terra
+    >>|cRXP_WARN_Ele está|r |T132320:0|t[Furtivo]
+    .turnin 76160 >>Entregue À espreita com a Mãe Terra
     .accept 76240 >>Aceite À espreita com a Mãe Terra
     .target Boarton Shadetotem
     .train 410104,1
@@ -593,8 +593,8 @@ step
 step
     .goto Thunder Bluff,39.45,65.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Javaton Totem das Sombras|r
-    >>|cRXP_WARN_Ele é|r |T132320:0|t[Furtivo]
-    .turnin 76240 >>Entregue À Espreita com a Mãe Terra
+    >>|cRXP_WARN_Ele está|r |T132320:0|t[Furtivo]
+    .turnin 76240 >>Entregue À espreita com a Mãe Terra
 -- .train 410104 >>|cRXP_WARN_You will train|r |T236289:0|t[Lava Lash] |cRXP_WARN_and|r |T132147:0|t[Dual Wield] |cRXP_WARN_upon turnin|r
     .target Boarton Shadetotem
     .train 410104,1
@@ -2972,7 +2972,7 @@ step
     .train 432241,1
 step
     #completewith next
-    .zone Searing Gorge >>Viaje para Garganta Abrasadora
+    .zone Searing Gorge >>Vá à Garganta Abrasadora
     .train 432241,1
 step
     #loop

@@ -656,7 +656,7 @@ step << Shaman/Druid
 step << Warrior
     .goto Mulgore,45.66,58.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mahnott Ferida Aberta|r
-    .vendor >> Lixo de vendedor. Venda sua arma se ela render dinheiro suficiente para uma |T133053:0|t[Marreta de Madeira] (7s 1c). Volte depois se ainda não tiver o suficiente
+    .vendor >> Venda os lixos. Venda sua arma se ela lhe der dinheiro suficiente para uma |T133053:0|t[Marreta de Madeira] (7p 1c). Você voltará depois se ainda não tiver o suficiente
     .target Mahnott Roughwound
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.9
@@ -919,7 +919,7 @@ step << Shaman/Druid
 step << Warrior
     .goto Mulgore,45.66,58.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mahnott Ferida Aberta|r
-    .vendor >> Lixo de vendedor. Venda sua arma se ela render dinheiro suficiente para uma |T133053:0|t[Marreta de Madeira] (7s 1c). Volte depois se ainda não tiver o suficiente
+    .vendor >> Venda os lixos. Venda sua arma se ela lhe der dinheiro suficiente para uma |T133053:0|t[Marreta de Madeira] (7p 1c). Você voltará depois se ainda não tiver o suficiente
     .target Mahnott Roughwound
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.9
@@ -1093,7 +1093,7 @@ step << Shaman/Druid
 step << Warrior
     .goto Mulgore,45.66,58.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mahnott Ferida Aberta|r
-    .vendor >> Lixo de vendedor. Venda sua arma se ela render dinheiro suficiente para uma |T133053:0|t[Marreta de Madeira] (7s 1c). Volte depois se ainda não tiver o suficiente
+    .vendor >> Venda os lixos. Venda sua arma se ela lhe der dinheiro suficiente para uma |T133053:0|t[Marreta de Madeira] (7p 1c). Você voltará depois se ainda não tiver o suficiente
     .target Mahnott Roughwound
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.9
@@ -2225,7 +2225,7 @@ step << Shaman
     #season 2
     .goto Thunder Bluff,39.45,65.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Javaton Totem das Sombras|r
-    >>|cRXP_WARN_Ele é|r |T132320:0|t[Furtivo]
+    >>|cRXP_WARN_Ele está|r |T132320:0|t[Furtivo]
     .accept 76156 >>Aceite À espreita com a Mãe Terra
     .target Boarton Shadetotem
     .train 410104,1
@@ -2404,8 +2404,8 @@ step << Shaman
     #season 2
     .goto Thunder Bluff,39.45,65.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Javaton Totem das Sombras|r
-    >>|cRXP_WARN_Ele é|r |T132320:0|t[Furtivo]
-    .turnin 76156 >>Entregue À Espreita com a Mãe Terra
+    >>|cRXP_WARN_Ele está|r |T132320:0|t[Furtivo]
+    .turnin 76156 >>Entregue À espreita com a Mãe Terra
     .accept 76160 >>Aceite À espreita com a Mãe Terra
     .target Boarton Shadetotem
     .train 410104,1
@@ -2586,8 +2586,8 @@ step << Shaman
     #season 2
     .goto Thunder Bluff,39.45,65.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Javaton Totem das Sombras|r
-    >>|cRXP_WARN_Ele é|r |T132320:0|t[Furtivo]
-    .turnin 76160 >>Entregue À Espreita com a Mãe Terra
+    >>|cRXP_WARN_Ele está|r |T132320:0|t[Furtivo]
+    .turnin 76160 >>Entregue À espreita com a Mãe Terra
     .accept 76240 >>Aceite À espreita com a Mãe Terra
     .target Boarton Shadetotem
     .train 410104,1
@@ -2678,8 +2678,8 @@ step << Shaman
     #season 2
     .goto Thunder Bluff,39.45,65.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Javaton Totem das Sombras|r
-    >>|cRXP_WARN_Ele é|r |T132320:0|t[Furtivo]
-    .turnin 76240 >>Entregue À Espreita com a Mãe Terra
+    >>|cRXP_WARN_Ele está|r |T132320:0|t[Furtivo]
+    .turnin 76240 >>Entregue À espreita com a Mãe Terra
 -- .train 410104 >>|cRXP_WARN_You will train|r |T236289:0|t[Lava Lash] |cRXP_WARN_and|r |T132147:0|t[Dual Wield] |cRXP_WARN_upon turnin|r
     .target Boarton Shadetotem
     .train 410104,1
@@ -3730,7 +3730,7 @@ step << Shaman/Druid
 step << Warrior
     .goto Mulgore,45.66,58.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mahnott Ferida Aberta|r
-    .vendor >> Lixo de vendedor. Venda sua arma se ela render dinheiro suficiente para uma |T133053:0|t[Marreta de Madeira] (7s 1c). Volte depois se ainda não tiver o suficiente
+    .vendor >> Venda os lixos. Venda sua arma se ela lhe der dinheiro suficiente para uma |T133053:0|t[Marreta de Madeira] (7p 1c). Você voltará depois se ainda não tiver o suficiente
     .target Mahnott Roughwound
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.9
@@ -4004,7 +4004,7 @@ step << Shaman/Druid
 step << Warrior
     .goto Mulgore,45.66,58.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mahnott Ferida Aberta|r
-    .vendor >> Lixo de vendedor. Venda sua arma se ela render dinheiro suficiente para uma |T133053:0|t[Marreta de Madeira] (7s 1c). Volte depois se ainda não tiver o suficiente
+    .vendor >> Venda os lixos. Venda sua arma se ela lhe der dinheiro suficiente para uma |T133053:0|t[Marreta de Madeira] (7p 1c). Você voltará depois se ainda não tiver o suficiente
     .target Mahnott Roughwound
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.9
@@ -4192,7 +4192,7 @@ step << Warrior
     #xprate <2.1
     .goto Mulgore,45.66,58.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mahnott Ferida Aberta|r
-    .vendor >> Lixo de vendedor. Venda sua arma se ela render dinheiro suficiente para uma |T133053:0|t[Marreta de Madeira] (7s 1c). Volte depois se ainda não tiver o suficiente
+    .vendor >> Venda os lixos. Venda sua arma se ela lhe der dinheiro suficiente para uma |T133053:0|t[Marreta de Madeira] (7p 1c). Você voltará depois se ainda não tiver o suficiente
     .target Mahnott Roughwound
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.9
@@ -4570,7 +4570,7 @@ step << Shaman
     #season 2
     .goto Thunder Bluff,39.45,65.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Javaton Totem das Sombras|r
-    >>|cRXP_WARN_Ele é|r |T132320:0|t[Furtivo]
+    >>|cRXP_WARN_Ele está|r |T132320:0|t[Furtivo]
     .accept 76156 >>Aceite À espreita com a Mãe Terra
     .target Boarton Shadetotem
     .train 410104,1
@@ -5595,8 +5595,8 @@ step << Shaman
     #season 2
     .goto Thunder Bluff,39.45,65.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Javaton Totem das Sombras|r
-    >>|cRXP_WARN_Ele é|r |T132320:0|t[Furtivo]
-    .turnin 76156 >>Entregue À Espreita com a Mãe Terra
+    >>|cRXP_WARN_Ele está|r |T132320:0|t[Furtivo]
+    .turnin 76156 >>Entregue À espreita com a Mãe Terra
     .accept 76160 >>Aceite À espreita com a Mãe Terra
     .target Boarton Shadetotem
     .train 410104,1
@@ -5781,8 +5781,8 @@ step << Shaman
     #season 2
     .goto Thunder Bluff,39.45,65.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Javaton Totem das Sombras|r
-    >>|cRXP_WARN_Ele é|r |T132320:0|t[Furtivo]
-    .turnin 76160 >>Entregue À Espreita com a Mãe Terra
+    >>|cRXP_WARN_Ele está|r |T132320:0|t[Furtivo]
+    .turnin 76160 >>Entregue À espreita com a Mãe Terra
     .accept 76240 >>Aceite À espreita com a Mãe Terra
     .target Boarton Shadetotem
     .train 410104,1
@@ -5864,8 +5864,8 @@ step << Shaman
     #season 2
     .goto Thunder Bluff,39.45,65.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Javaton Totem das Sombras|r
-    >>|cRXP_WARN_Ele é|r |T132320:0|t[Furtivo]
-    .turnin 76240 >>Entregue À Espreita com a Mãe Terra
+    >>|cRXP_WARN_Ele está|r |T132320:0|t[Furtivo]
+    .turnin 76240 >>Entregue À espreita com a Mãe Terra
 -- .train 410104 >>|cRXP_WARN_You will train|r |T236289:0|t[Lava Lash] |cRXP_WARN_and|r |T132147:0|t[Dual Wield] |cRXP_WARN_upon turnin|r
     .target Boarton Shadetotem
     .train 410104,1

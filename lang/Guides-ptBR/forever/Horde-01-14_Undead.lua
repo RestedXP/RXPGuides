@@ -4241,7 +4241,7 @@ step << Undead/Skyborne
     .dungeon RFC
 step << Undead/Skyborne
     #completewith Gazzuz
-    >>Mate os |cRXP_ENEMY_Burning Blade Orcs|r. Saqueie-os para obter a |cRXP_LOOT_Lieutenant's Insignia|r
+    >>Mate |cRXP_ENEMY_Orcs da Lâmina Ardente|r. Pegue uma |cRXP_LOOT_Insígnia do Tenente|r deles
     >>|cRXP_WARN_Esta é uma pré-missão para RFC. Tem uma chance de drop baixa|r
     .complete 5726,1 --Lieutenant's Insignia (1)
     .mob Burning Blade Fanatic
@@ -4273,7 +4273,7 @@ step << Undead/Skyborne
     .goto 1411/1,-4679.75,1501.31,15,0
     .goto 1411/1,-4684.50,1466.06,15,0
     .goto 1411/1,-4805.59,1495.67,15,0
-    >>Mate os |cRXP_ENEMY_Burning Blade Orcs|r. Saqueie-os para obter a |cRXP_LOOT_Lieutenant's Insignia|r
+    >>Mate |cRXP_ENEMY_Orcs da Lâmina Ardente|r. Pegue uma |cRXP_LOOT_Insígnia do Tenente|r deles
     >>|cRXP_WARN_Esta é uma pré-missão para RFC. Tem uma chance de drop baixa|r
     .complete 5726,1 --Lieutenant's Insignia (1)
     .mob Burning Blade Fanatic

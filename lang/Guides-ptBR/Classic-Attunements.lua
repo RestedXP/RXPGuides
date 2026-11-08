@@ -1007,7 +1007,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Mensageiro Desçomalho|r
     >>|cRXP_FRIENDLY_Mensageiro Desçomalho|r |cRXP_WARN_patrula por todo Ironforge|r
     >>|cRXP_WARN_Esta missão também pode ser aceita em|r |cFFfa9602Stormwind City|r |cRXP_WARN_ou|r |cFFfa9602Darnassus|r
-    .acceptmultiple 5091,5090,5066 >> Aceite A Chamado às armas: The Plaguelands!
+    .acceptmultiple 5091,5090,5066 >> Aceite Um chamado às armas: as Terras Pestilentas!
     .unitscan Courier Hammerfall --IF
     .unitscan Herald Moonstalker --DARN
     .unitscan Crier Goodman --SW
@@ -1263,7 +1263,7 @@ step
     .goto Undercity,66.07,54.64,50,0
     .goto Undercity,70.81,51.49,50,0
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConversar com o |cRXP_FRIENDLY_Emissário Baltazar|r
-    .acceptmultiple 5093,5094,5095 >>Aceite A Chamado às armas: The Plaguelands!
+    .acceptmultiple 5093,5094,5095 >>Aceite Um chamado às armas: as Terras Pestilentas!
     >>|cRXP_WARN_Esta missão também pode ser aceita em|r |cFFfa9602Orgrimmar|r |cRXP_WARN_or|r |cFFfa9602Thunder Blefe|r
     .unitscan Warcaller Gorlach --ORG
     .unitscan Harbinger Balthazadd --UC
@@ -1332,7 +1332,7 @@ step
 step
     .goto Western Plaguelands,40.5,51.8
     .use 12807 >>Clique em |cRXP_PICK_Comando Tenda|r, depois use seu |T132484:0|t[Estandarte do Flagelo]
-	>>|cRXP_WARN_Estes inimigos são relativamente difíceis e podem se encadear um ao outro, então tenha cuidado|r
+	>>|cRXP_WARN_Esses inimigos são relativamente difíceis e podem atrair outros para o combate, então tenha cuidado|r
     .complete 5096,1 --Destroy the command tent and plant the Scourge banner in the camp (1)
 step
     .goto Tirisfal Glades,83.15,68.92
@@ -1418,7 +1418,7 @@ step
 step
     #completewith next
     .goto Silithus,48.69,36.67
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Runk|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Runk Adestra Vento|r
     .fly Un'Goro >>Voe para Cratera Un'Goro
 	.target Runk Windtamer
 	.zoneskip Un'Goro Crater
@@ -1623,7 +1623,7 @@ step
     >>|cRXP_WARN_Triture |cRXP_ENEMY_Mortos-Vivos|r inimigos em EPL/WPL ou complete masmorras com seu|r |T133440:0|t[Ordem da Aurora Argêntea] |cRXP_WARN_equipado para coletar e entregar|r |T133447:0|t[Pedra do Flagelo]
 step
     .goto Eastern Plaguelands,81.523,58.269
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Arquimaga Ângela Santoro|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Arquimaga Ângela Santoro|r
     >>|cRXP_WARN_Sua reputação deve ser Honrada para aceitar esta missão|r
     >>|cRXP_WARN_Você também precisará pagar|r |cRXP_WARN_60 ouro|r |cRXP_WARN_para entregar a missão|r
     .accept 9121 >>Aceite A Cidadela Medonha: Naxxramas
@@ -1633,7 +1633,7 @@ step
     .isQuestAvailable 9121 --The Dread Citadel - Naxxramas
 step
     .goto Eastern Plaguelands,81.523,58.269
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Arquimaga Ângela Santoro|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Arquimaga Ângela Santoro|r
     >>|cRXP_WARN_Sua reputação deve ser Venerada para aceitar esta missão|r
     >>|cRXP_WARN_Você também precisará pagar|r |cRXP_WARN_30 ouro|r |cRXP_WARN_para entregar a missão|r
     .accept 9122 >>Aceite A Cidadela Medonha: Naxxramas
@@ -1645,7 +1645,7 @@ step
 step
     #label AttuneComplete
     .goto Eastern Plaguelands,81.523,58.269
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Arquimaga Ângela Santoro|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Arquimaga Ângela Santoro|r
     >>|cRXP_WARN_Sua reputação deve ser Exaltada para aceitar esta missão|r
     .accept 9123 >>Aceite A Cidadela Medonha: Naxxramas
     .turnin 9123 >>Entregue A Cidadela Medonha: Naxxramas

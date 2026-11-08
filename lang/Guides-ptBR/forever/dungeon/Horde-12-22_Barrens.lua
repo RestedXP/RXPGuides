@@ -1927,7 +1927,7 @@ step
     .zone Durotar >>Saia de Orgrimmar
 step
     #completewith Gazzuz
-    >>Mate os |cRXP_ENEMY_Burning Blade Orcs|r. Saqueie-os para obter a |cRXP_LOOT_Lieutenant's Insignia|r
+    >>Mate |cRXP_ENEMY_Orcs da Lâmina Ardente|r. Pegue uma |cRXP_LOOT_Insígnia do Tenente|r deles
     >>|cRXP_WARN_Esta é uma pré-missão para RFC. Tem uma chance de drop baixa|r
     .complete 5726,1 --Lieutenant's Insignia (1)
     .mob Burning Blade Fanatic
@@ -1958,7 +1958,7 @@ step
     .goto 1411/1,-4679.75,1501.31,15,0
     .goto 1411/1,-4684.50,1466.06,15,0
     .goto 1411/1,-4805.59,1495.67,15,0
-    >>Mate os |cRXP_ENEMY_Burning Blade Orcs|r. Saqueie-os para obter a |cRXP_LOOT_Lieutenant's Insignia|r
+    >>Mate |cRXP_ENEMY_Orcs da Lâmina Ardente|r. Pegue uma |cRXP_LOOT_Insígnia do Tenente|r deles
     >>|cRXP_WARN_Esta é uma pré-missão para RFC. Tem uma chance de drop baixa|r
     .complete 5726,1 --Lieutenant's Insignia (1)
     .mob Burning Blade Fanatic
@@ -3888,7 +3888,7 @@ step
 step << !Tauren !Skyborne
     .goto 1413/1,-1891.48,-2391.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Denterroto|r
-    .aura 16618 >>|cRXP_WARN_Se você tem 10|r |T134128:0|t[|cRXP_LOOT_Fragmentos Sanguíneos|r] |cRXP_WARN_restantes, use-os para obter|r |T136022:0|t[Espírito of the Vento - Missão - Missão] |cRXP_WARN_de|r |cRXP_FRIENDLY_Denterroto|r
+    .aura 16618 >>|cRXP_WARN_Se você tem 10|r |T134128:0|t[|cRXP_LOOT_Estilhaços de Sangue|r] |cRXP_WARN_sobrando, use-os para obter|r |T136022:0|t[Espírito do vento] |cRXP_WARN_de|r |cRXP_FRIENDLY_Denterroto|r
     >>|cRXP_WARN_Pule esta etapa se tiver a rota de voo de Penhasco do Trovão|r
     .itemcount 5075,10
     .target Mangletooth
@@ -3935,7 +3935,7 @@ step << Rogue
     #optional
     .goto 1456/1,104.500,-1308.400
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Javaton Totem das Sombras|r
-    >>|cRXP_WARN_Ele é|r |T132320:0|t[Furtivo] 
+    >>|cRXP_WARN_Ele está|r |T132320:0|t[Furtivo] 
     .train 6761 >>Treine suas magias de classe
     .target Boarton Shadetotem
     .xp <16,1
@@ -3943,7 +3943,7 @@ step << Rogue
 step << Rogue
     .goto 1456/1,104.500,-1308.400
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Javaton Totem das Sombras|r
-    >>|cRXP_WARN_Ele é|r |T132320:0|t[Furtivo] 
+    >>|cRXP_WARN_Ele está|r |T132320:0|t[Furtivo] 
     .train 1943 >>Treine suas magias de classe
     .target Boarton Shadetotem
     .xp <20,1

@@ -3233,7 +3233,7 @@ step
     .mob +Razormane Battleguard
 step << Warrior/Shaman
     #xprate >1.49
-    .goto The Barrens,62.26,19.38,40 >> Vá para Far Vigiar Post
+    .goto The Barrens,62.26,19.38,40 >> Vá para o Posto Remoto
     .zoneskip The Barrens
 step << Warrior/Shaman
     #xprate >1.49
@@ -3444,7 +3444,7 @@ step
     .goto Durotar,42.28,25.45,30,0
     .goto Durotar,41.66,25.68,20 >>Pule para dentro do Desfiladeiro do Trovão << !Hunter !Warlock
     .goto Durotar,41.66,25.68,20 >>|cRXP_WARN_Dispense seu|r |T136218:0|t[Diabrete] |cRXP_WARN_clicando com o botão direito no quadro de unidade dele e selecionando dispensar|r << Warlock
-    .cast 2641 >> |cRXP_WARN_Lance|r |T136095:0|t[Dispensar Ajudante] |cRXP_WARN_e então pule para Trovão Serra|r << Hunter
+    .cast 2641 >> |cRXP_WARN_Use|r |T136095:0|t[Dispensar Ajudante] |cRXP_WARN_e depois pule para dentro do Desfiladeiro do Trovão|r << Hunter
 step
     #xprate <1.5 << Shaman/Warrior
     #softcore
@@ -3781,7 +3781,7 @@ step << Warrior/Shaman
     .target Takrin Pathseeker
 step << Warrior/Shaman
     #label FarWatchPost
-    .goto The Barrens,62.26,19.38,40 >> Vá para Far Vigiar Post
+    .goto The Barrens,62.26,19.38,40 >> Vá para o Posto Remoto
     .zoneskip The Barrens
 step << Warrior/Shaman
     .goto The Barrens,62.27,19.38
@@ -4050,7 +4050,7 @@ step << Shaman
     #season 2
     .goto Thunder Bluff,39.45,65.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Javaton Totem das Sombras|r
-    >>|cRXP_WARN_Ele é|r |T132320:0|t[Furtivo]
+    >>|cRXP_WARN_Ele está|r |T132320:0|t[Furtivo]
     .accept 76156 >>Aceite À espreita com a Mãe Terra
     .target Boarton Shadetotem
     .train 410104,1
@@ -4435,8 +4435,8 @@ step << Shaman
     #season 2
     .goto Thunder Bluff,39.45,65.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Javaton Totem das Sombras|r
-    >>|cRXP_WARN_Ele é|r |T132320:0|t[Furtivo]
-    .turnin 76156 >>Entregue À Espreita com a Mãe Terra
+    >>|cRXP_WARN_Ele está|r |T132320:0|t[Furtivo]
+    .turnin 76156 >>Entregue À espreita com a Mãe Terra
     .accept 76160 >>Aceite À espreita com a Mãe Terra
     .target Boarton Shadetotem
     .train 410104,1
@@ -4508,8 +4508,8 @@ step << Shaman
     #season 2
     .goto Thunder Bluff,39.45,65.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Javaton Totem das Sombras|r
-    >>|cRXP_WARN_Ele é|r |T132320:0|t[Furtivo]
-    .turnin 76160 >>Entregue À Espreita com a Mãe Terra
+    >>|cRXP_WARN_Ele está|r |T132320:0|t[Furtivo]
+    .turnin 76160 >>Entregue À espreita com a Mãe Terra
     .accept 76240 >>Aceite À espreita com a Mãe Terra
     .target Boarton Shadetotem
     .train 410104,1
@@ -4600,8 +4600,8 @@ step << Shaman
     #season 2
     .goto Thunder Bluff,39.45,65.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Javaton Totem das Sombras|r
-    >>|cRXP_WARN_Ele é|r |T132320:0|t[Furtivo]
-    .turnin 76240 >>Entregue À Espreita com a Mãe Terra
+    >>|cRXP_WARN_Ele está|r |T132320:0|t[Furtivo]
+    .turnin 76240 >>Entregue À espreita com a Mãe Terra
 -- .train 410104 >>|cRXP_WARN_You will train|r |T236289:0|t[Lava Lash] |cRXP_WARN_and|r |T132147:0|t[Dual Wield] |cRXP_WARN_upon turnin|r
     .target Boarton Shadetotem
     .train 410104,1
@@ -5108,7 +5108,7 @@ step << Warrior/Shaman/Hunter
 step << Warrior/Shaman/Hunter
     #xprate <1.5 << !Hunter
     #label FarWatchPost
-    .goto The Barrens,62.26,19.38,40 >> Vá para Far Vigiar Post
+    .goto The Barrens,62.26,19.38,40 >> Vá para o Posto Remoto
     .zoneskip The Barrens
 step << Hunter
     .goto The Barrens,62.27,19.38
@@ -9606,7 +9606,7 @@ step << Warrior
 step << Warrior/Shaman
     #xprate <2.1
     #completewith next
-    .goto The Barrens,62.26,19.38,40 >> Vá para Far Vigiar Post
+    .goto The Barrens,62.26,19.38,40 >> Vá para o Posto Remoto
     .zoneskip The Barrens
 step << Warrior/Shaman
     #xprate <2.1
@@ -9618,7 +9618,7 @@ step << Warrior/Shaman
 step
     #xprate >2.09
     #completewith next
-    .goto The Barrens,62.26,19.38,40 >> Vá para Far Vigiar Post
+    .goto The Barrens,62.26,19.38,40 >> Vá para o Posto Remoto
     .zoneskip The Barrens
 step
     #xprate >2.09
@@ -9681,7 +9681,7 @@ step << !Warrior
     #completewith next
     .goto Durotar,41.66,25.68,20 >>Pule para dentro do Desfiladeiro do Trovão << !Hunter !Warlock
     .goto Durotar,41.66,25.68,20 >>|cRXP_WARN_Dispense seu|r |T136218:0|t[Diabrete] |cRXP_WARN_clicando com o botão direito no quadro de unidade dele e selecionando dispensar|r << Warlock
-    .goto Durotar,41.66,25.68,20 >>|cRXP_WARN_Lance|r |T136095:0|t[Dispensar Ajudante] |cRXP_WARN_e então pule para Trovão Serra|r << Hunter
+    .goto Durotar,41.66,25.68,20 >>|cRXP_WARN_Use|r |T136095:0|t[Dispensar Ajudante] |cRXP_WARN_e depois pule para dentro do Desfiladeiro do Trovão|r << Hunter
 step
     #xprate <2.1
     #softcore
@@ -9835,7 +9835,7 @@ step << Mage
 step << Warrior/Shaman
     #xprate >2.09
     #completewith next
-    .goto The Barrens,62.26,19.38,40 >> Vá para Far Vigiar Post
+    .goto The Barrens,62.26,19.38,40 >> Vá para o Posto Remoto
     .zoneskip The Barrens
 step << Warrior
     #xprate >2.09
@@ -10147,7 +10147,7 @@ step << Warlock
     .unitscan Gazz'uz
 step << Warlock
     #completewith next
-    >>Mate os |cRXP_ENEMY_Burning Blade Orcs|r. Saqueie-os para obter a |cRXP_LOOT_Lieutenant's Insignia|r
+    >>Mate |cRXP_ENEMY_Orcs da Lâmina Ardente|r. Pegue uma |cRXP_LOOT_Insígnia do Tenente|r deles
     >>|cRXP_WARN_Pular isto se você tiver azar com o drop|r
     .complete 5726,1 --Lieutenant's Insignia (1)
     .mob Burning Blade Fanatic
@@ -10373,7 +10373,7 @@ step << Hunter
 step
     #xprate <2.1
     #label FarWatchPost
-    .goto The Barrens,62.26,19.38,40 >> Vá para Far Vigiar Post
+    .goto The Barrens,62.26,19.38,40 >> Vá para o Posto Remoto
     .zoneskip The Barrens
 step
     #xprate <2.1

@@ -1248,7 +1248,7 @@ step
     .train 402864,1
 step
     #completewith next
-    .zone Searing Gorge >>Viaje para Garganta Abrasadora
+    .zone Searing Gorge >>Vá à Garganta Abrasadora
     .train 402864,1
 step
     .goto Searing Gorge,43.8,45.8

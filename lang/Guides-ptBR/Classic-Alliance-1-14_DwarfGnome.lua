@@ -3141,7 +3141,7 @@ step << Dwarf Rogue/Gnome Rogue
     #xprate >1.59
     .goto Dun Morogh,25.164,44.460
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Onin MacHammar|r no topo do porto da Máquina Voadora
-    >>|cRXP_WARN_Ele é|r |T132320:0|t[Furtivo]
+    >>|cRXP_WARN_Ele está|r |T132320:0|t[Furtivo]
     .turnin 2238 >> Entregue Simple Subterfugin'
     .accept 2239 >> Aceite Onin's Report
     .target Onin MacHammar

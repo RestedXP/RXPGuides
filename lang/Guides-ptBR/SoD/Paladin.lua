@@ -2146,7 +2146,7 @@ step << Horde
     .complete 81970,4 --1/1 Symbol of Faith
 step << Horde
     #completewith next
-    .zone Searing Gorge >>Viaje para Garganta Abrasadora
+    .zone Searing Gorge >>Vá à Garganta Abrasadora
     .train 410013,1
 step << Horde
     >>|cRXP_WARN_É recomendado formar um grupo de 5 jogadores e você precisará de 3 ouro.|r

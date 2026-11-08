@@ -2248,7 +2248,7 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith next
-    .zone Searing Gorge >> Viaje para Garganta Abrasadora
+    .zone Searing Gorge >> Vá à Garganta Abrasadora
 step
     .goto 1427/0,-1425.800,-6772.400,25 >> Entre em Slag Pits através da entrada da caverna marcada no seu mapa
 step

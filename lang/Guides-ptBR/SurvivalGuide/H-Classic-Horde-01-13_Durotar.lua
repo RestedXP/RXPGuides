@@ -2676,7 +2676,7 @@ step
     .goto Durotar,44.72,24.86,40,0
     .goto Durotar,42.28,25.45,30,0
     .goto Durotar,41.66,25.68,20 >>Pule para dentro do Desfiladeiro do Trovão << !Hunter !Warlock
-    .cast 2641 >>|cRXP_WARN_Lance|r |T136095:0|t[Dispensar Ajudante] |cRXP_WARN_e então pule para Trovão Serra|r << Hunter
+    .cast 2641 >>|cRXP_WARN_Use|r |T136095:0|t[Dispensar Ajudante] |cRXP_WARN_e depois pule para dentro do Desfiladeiro do Trovão|r << Hunter
     +|cRXP_WARN_Dispense seu diabrete e depois pule para Serra do Trovão|r << Warlock
     .group
 step
@@ -3235,7 +3235,7 @@ step << Shaman/Hunter
     .isQuestComplete 816
 step << Shaman/Hunter
     #label FarWatchPost
-    .goto The Barrens,62.26,19.38,40 >> Vá para Far Vigiar Post
+    .goto The Barrens,62.26,19.38,40 >> Vá para o Posto Remoto
     .zoneskip The Barrens
 step << Shaman/Hunter
     .goto The Barrens,62.27,19.38
