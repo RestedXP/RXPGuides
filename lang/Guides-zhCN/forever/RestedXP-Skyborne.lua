@@ -206,7 +206,7 @@ step << Horde Shaman
     .xp <1,1
     .goto 2521,42.79,23.57
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塑风者波罗::251374|r 对话。
-    .train 8017 >>影袭 |T136086:0|t[石化武器]
+    .train 8017 >>学习 |T136086:0|t[石化武器]
     .target Windshaper Boro::251374
     .skipgossipid 136811
 step << Hunter
@@ -3380,7 +3380,7 @@ step << Alliance Hunter
     #completewith Deliver the Signet
     .xp <9,1
     .itemcount 277110,1 --Zephrali Bow
-    +|cRXP_WARN_装备|r |T7810733:0|t[泽风弓]。
+    .equip 18,277110 >>|cRXP_WARN_装备|r |T7810733:0|t[泽风弓]。
     .use 277110 --Zephrali Bow
 step << Alliance Warrior/Alliance Paladin
     .xp <9,1
@@ -3403,7 +3403,7 @@ step << Alliance Warrior/Alliance Paladin
     #completewith Deliver the Signet
     .xp <9,1
     .itemcount 277106,1 --Zephrali Smasher
-    +|cRXP_WARN_装备|r |T7792097:0|t[泽风粉碎者]。
+    .equip 16,277106 >>|cRXP_WARN_装备|r |T7792097:0|t[泽风粉碎者]。
     .use 277106 --Zephrali Smasher
 step << Alliance Shaman/Alliance Druid
     .xp <9,1
@@ -3422,7 +3422,7 @@ step << Alliance Shaman/Alliance Druid
     #completewith Deliver the Signet
     .xp <9,1
     .itemcount 277109,1 --Zephrali Greatstaff
-    +|cRXP_WARN_装备|r |T7798447:0|t[泽风巨杖]。
+    .equip 16,277109 >>|cRXP_WARN_装备|r |T7798447:0|t[泽风巨杖]。
     .use 277109 --Zephrali Greatstaff
 step << Alliance Rogue
     .xp <9,1
@@ -3445,7 +3445,7 @@ step << Alliance Rogue
     #completewith Deliver the Signet
     .xp <9,1
     .itemcount 277107,1 --Zephrali Bludgeon
-    +|cRXP_WARN_装备|r |T7791298:0|t[泽风大头棒]。
+    .equip 16,277107 >>|cRXP_WARN_装备|r |T7791298:0|t[泽风大头棒]。
     .use 277107 --Zephrali Bludgeon
 -- step << Mage/Priest/Warlock
 --     .xp <9,1
@@ -3577,7 +3577,7 @@ step << Alliance
     .cooldown spell,1259416,>0,1 -- Walk on Air
     .goto 2521,66.47,76.68,10,0
     .goto 2521,66.63,79.94
-    .cast 1259416 >>从山上跳下，使用 |T132845:0|t[踏空而行] 飞向任务发布者。
+    .cast 1259416 >>从树上跳下，使用 |T132845:0|t[踏空而行] 飞往任务给予者。
     *|cRXP_WARN_如果时机把握准确，你可以在半空中取消飞行，从而落入建筑内|r
     .usespell 1259416
     .macro Cancel Walk on Air,132845 >>取消踏空而行
@@ -3773,7 +3773,7 @@ step << Horde Hunter
     #completewith LeavingValanaarA
     .xp <9,1
     .itemcount 277110,1 --Zephrali Bow
-    +|cRXP_WARN_装备|r |T7810733:0|t[泽风弓]。
+    .equip 18,277110 >>|cRXP_WARN_装备|r |T7810733:0|t[泽风弓]。
     .use 277110 --Zephrali Bow
 step << Horde Warrior
     .xp <9,1
@@ -3795,7 +3795,7 @@ step << Horde Warrior
     #completewith LeavingValanaarA
     .xp <9,1
     .itemcount 277106,1 --Zephrali Smasher
-    +|cRXP_WARN_装备|r |T7792097:0|t[泽风粉碎者]。
+    .equip 16,277106 >>|cRXP_WARN_装备|r |T7792097:0|t[泽风粉碎者]。
     .use 277106 --Zephrali Smasher
 step << Horde Shaman/Horde Druid
     .xp <9,1
@@ -3818,7 +3818,7 @@ step << Horde Shaman/Horde Druid
     #completewith LeavingValanaarA
     .xp <9,1
     .itemcount 277109,1 --Zephrali Greatstaff
-    +|cRXP_WARN_装备|r |T7798447:0|t[泽风巨杖]。
+    .equip 16,277109 >>|cRXP_WARN_装备|r |T7798447:0|t[泽风巨杖]。
     .use 277109 --Zephrali Greatstaff
 step << Horde Rogue
     .xp <9,1
@@ -3840,7 +3840,7 @@ step << Horde Rogue
     #completewith LeavingValanaarA
     .xp <9,1
     .itemcount 277107,1 --Zephrali Bludgeon
-    +|cRXP_WARN_装备|r |T7791298:0|t[泽风大头棒]。
+    .equip 16,277107 >>|cRXP_WARN_装备|r |T7791298:0|t[泽风大头棒]。
     .use 277107 --Zephrali Bludgeon
 step << Horde
     .train 2366,3 -- Herbalism Trained
@@ -4365,9 +4365,9 @@ step
     .target Alvarion Windfield::252448
 step
     #completewith Accept Catching Wind
-    *|cRXP_WARN_装备|r |T134435:0|t[种植铲] << Warrior/Shaman/Paladin
-    *|cRXP_WARN_装备|r |T133057:0|t[屋面锤] << Druid/Priest
-    *|cRXP_WARN_装备|r |T134520:0|t[可靠的扳手] << Rogue
+    .equip 16,263312 >>|cRXP_WARN_装备|r |T134435:0|t[种植铲] << Warrior/Shaman/Paladin
+    .equip 16,263314 >>|cRXP_WARN_装备|r |T133057:0|t[屋面锤] << Druid/Priest
+    .equip 16,263313 >>|cRXP_WARN_装备|r |T134520:0|t[可靠的扳手] << Rogue
     .use 263312 << Warrior/Shaman/Paladin -- Planting Shovel
     .use 263314 << Druid/Priest -- Roofing Hammer
     .use 263313 << Rogue -- Trusty Wrench
@@ -4438,7 +4438,7 @@ step << Warrior/Paladin
     #completewith Learn << Horde
     .xp <9,1
     .itemcount 277106,1 --Zephrali Smasher
-    +|cRXP_WARN_装备|r |T7792097:0|t[泽风粉碎者]。
+    .equip 16,277106 >>|cRXP_WARN_装备|r |T7792097:0|t[泽风粉碎者]。
     .use 277106 --Zephrali Smasher
 step << Shaman/Druid
     .xp <9,1
@@ -4461,7 +4461,7 @@ step << Shaman/Druid
     #completewith Learn << Horde
     .xp <9,1
     .itemcount 277109,1 --Zephrali Greatstaff
-    +|cRXP_WARN_装备|r |T7798447:0|t[泽风巨杖]。
+    .equip 16,277109 >>|cRXP_WARN_装备|r |T7798447:0|t[泽风巨杖]。
     .use 277109 --Zephrali Greatstaff
 step << Rogue
     .money <0.09
@@ -4500,7 +4500,7 @@ step << Rogue
     #completewith Learn << Horde
     .xp <9,1
     .itemcount 277107,1 --Zephrali Bludgeon
-    +|cRXP_WARN_装备|r |T7791298:0|t[泽风大头棒]。
+    .equip 16,277107 >>|cRXP_WARN_装备|r |T7791298:0|t[泽风大头棒]。
     .use 277107 --Zephrali Bludgeon
 step << Hunter
     .goto 2521,59.55,73.3,25,0
@@ -4538,7 +4538,7 @@ step << Hunter
     #completewith Learn << Horde
     .xp <9,1
     .itemcount 277110,1 --Zephrali Bow
-    +|cRXP_WARN_装备|r |T7810733:0|t[泽风弓]。
+    .equip 18,277110 >>|cRXP_WARN_装备|r |T7810733:0|t[泽风弓]。
     .use 277110 --Zephrali Bow
 step << Horde Druid
     .subzoneskip 16638,1 -- Valanaar
@@ -5212,7 +5212,7 @@ step << Alliance !Druid
     .cooldown spell,1259416,>0,1 -- Walk on Air
     .goto 2521,66.47,76.64,10,0
     .goto 2521,65.36,71.79
-    .cast 1259416 >>从山上跳下，使用 |T132845:0|t[踏空而行] 飞向路径点位置。
+    .cast 1259416 >>从树上跳下，使用 |T132845:0|t[踏空而行] 飞往路点所在地区。
     .usespell 1259416
 step << Alliance
     .goto 2521,65.956,74.309
@@ -5449,7 +5449,7 @@ step << Alliance
     .goto 2521,66.47,76.61,8,0
     .goto 2521,66.31,76.18,15,0
     .goto 2521,63.14,76.9
-    .cast 1259416 >>从山上跳下，使用 |T132845:0|t[踏空而行] 飞向路径点位置。
+    .cast 1259416 >>从树上跳下，使用 |T132845:0|t[踏空而行] 飞往路点所在地区。
     .usespell 1259416
 step << Alliance
     .subzoneskip 16638,1 -- Valanaar
@@ -5485,7 +5485,7 @@ step << Hunter Alliance
     #completewith secluded house
     .xp <9,1
     .itemcount 277110,1 --Zephrali Bow
-    +|cRXP_WARN_装备|r |T7810733:0|t[泽风弓]。
+    .equip 18,277110 >>|cRXP_WARN_装备|r |T7810733:0|t[泽风弓]。
     .use 277110 --Zephrali Bow
 step << Warrior Alliance/Paladin Alliance
     .xp <9,1
@@ -5508,7 +5508,7 @@ step << Warrior Alliance/Paladin Alliance
     #completewith secluded house
     .xp <9,1
     .itemcount 277106,1 --Zephrali Smasher
-    +|cRXP_WARN_装备|r |T7792097:0|t[泽风粉碎者]。
+    .equip 16,277106 >>|cRXP_WARN_装备|r |T7792097:0|t[泽风粉碎者]。
     .use 277106 --Zephrali Smasher
 step << Rogue Alliance
     .xp <9,1
@@ -5531,7 +5531,7 @@ step << Rogue Alliance
     #completewith secluded house
     .xp <9,1
     .itemcount 277107,1 --Zephrali Bludgeon
-    +|cRXP_WARN_装备|r |T7791298:0|t[泽风大头棒]。
+    .equip 16,277107 >>|cRXP_WARN_装备|r |T7791298:0|t[泽风大头棒]。
     .use 277107 --Zephrali Bludgeon
 -- step << Alliance
 --     .subzoneskip 16638,1 -- Valanaar
@@ -5646,7 +5646,7 @@ step << Rogue Alliance
 step << Alliance
     .isNotOnQuest 98512 --Al'Aketh Assassins
     .isQuestAvailable 98512 --Al'Aketh Assassins
-    .goto 2521,66.49,76.65,8,0
+    -- .goto 2521,66.49,76.65,8,0
     .goto 2521,68.84,78.42,-1
     .goto 2521,60.74,78.02,-1
     .subzone 16626 >>跳下悬崖
@@ -6045,7 +6045,6 @@ step
     #hidewindow
     #completewith ToHermit << Alliance
     #completewith ForestHollowsA << Horde
-    #loop
     .goto 2521,62.83,38.25,35,0
     .goto 2521,62.08,36.7,35,0
     .goto 2521,61.17,35.44,35,0
@@ -6212,6 +6211,12 @@ step
     .turnin 93165,2 >>交任务 充耳不闻的怜悯 << Mage/Priest/Warlock
     .turnin 93165,3 >>交任务 充耳不闻的怜悯 << Warrior/Paladin
     .target Vayn Moongaze::254151
+step << Alliance
+    .goto 2521,63.80,36.00
+    .itemcount 265476,1
+    >>使用你背包中的 |T134332:0|t[撕破的信件] 来开始任务。
+    .accept 94490 >>接受任务 撕破的信件
+    .use 265476 -- Ripped Missive
 step
     .goto 2521,63.93,33.76,20,0
     .goto 2521,63.69,32.49,20,0
@@ -6254,8 +6259,8 @@ step
     .target Jorel Windsinger::258130
 step << Horde
     .itemcount 265476,1
-    >>使用你背包中的 |T134332:0|t[撕破的信件] 来开始任务。
-    .accept 94490 >>接受任务 撕破的信件
+    >>在你的包裹中使用 |T134332:0|t[Ripped Missive] 来开始任务。
+    .accept 94490 >>接受任务 Ripped Missive
     .use 265476 -- Ripped Missive
 step
     #optional
@@ -6473,7 +6478,7 @@ step << Alliance
     .cooldown spell,1259416,>0,1 -- Walk on Air
     .goto 2521,66.49,76.64,8,0
     .goto 2521,63.33,78.16
-    .cast 1259416 >>从山上跳下，使用 |T132845:0|t[踏空而行] 飞向路径点位置。
+    .cast 1259416 >>从树上跳下，使用 |T132845:0|t[踏空而行] 飞往路点所在地区。
     .usespell 1259416
 step << Alliance
     .goto 2521,63.33,78.16,30,0
@@ -6562,7 +6567,7 @@ step << Alliance
     .goto 2521,66.49,76.64,8,0
     .goto 2521,66.39,76.26,10,0
     .goto 2521,63.9,74.16
-    .cast 1259416 >>从山上跳下，使用 |T132845:0|t[踏空而行] 飞向路径点位置。
+    .cast 1259416 >>从树上跳下，使用 |T132845:0|t[踏空而行] 飞往路点所在地区。
     .usespell 1259416
 step << Alliance
     .subzoneskip 16638,1 -- Valanaar

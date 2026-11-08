@@ -470,7 +470,7 @@ step
     .turnin 5545 >> 交任务 木材危机
 step
     #label Prowlers
-    .xp 9 >> 刷怪升到9级
+    .xp 9 >> 刷怪到9级
 step
     #label Bears
     .goto 1429/0,-1222.40,-9531.76
@@ -1316,7 +1316,7 @@ step
     .complete 412,2 --Collect Gyromechanic Gear (x8)
     .complete 412,1 --Collect Restabilization Cog (x8)
 step
-    .xp 9 >> 刷怪升到9级
+    .xp 9 >> 刷怪到9级
 step
     .goto 1426/0,595.46,-5545.02,35 >>进入洞穴
 step
@@ -1636,7 +1636,7 @@ step
     .goto 1432/0,-2636.44,-4816.79,60 >>跑回地堡，路上刷小怪
 step
     .goto 1432/0,-2658.51,-4822.30
-    .vendor >>出售物品并修理装备
+    .vendor >>垃圾卖店，修理装备
 step
     .goto 1432/0,-2675.06,-4824.14
 >>与|cRXP_FRIENDLY_巡山人雷矛|r 对话
@@ -1844,7 +1844,7 @@ step
     .goto 1437/0,-1014.03,-3911.92,40,0
     .goto 1437/0,-889.97,-3809.94,40,0
     >>打开这个链接，并在另一个屏幕上跟随它。
-    >>走无伤翻山路线，从丹莫罗直接翻山前往湿地
+    >>走无伤翻山路线。从丹莫罗直接翻山前往湿地
     >>走水路的时候小心避开海里的鳄鱼
     .link https://www.youtube.com/watch?v=9afQTimaiZQ >> 点击此处查看参考视频
     .goto 1437/0,-889.97,-3809.94,80 >> 前往米奈希尔港，湿地

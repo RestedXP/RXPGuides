@@ -1740,7 +1740,7 @@ step << Hunter
 step << Hunter
     .goto 1438/1,968.85,9821.98--c:Teldrassil,55.890,59.205
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_吉娜·羽弓|r 对话
-	.vendor >> |cRXP_BUY_购买4组|r |T132382:0|t[锋利的箭]|cRXP_BUY_。达到10级后立即装备它们|r
+	.vendor >> |cRXP_BUY_购买4组|r |T132382:0|t[锋利的箭]|cRXP_BUY_，达到10级后立即装备它们|r
     .target 吉娜·羽弓
 step << Hunter/Warrior/Rogue
     .goto 1438/1,1172.01,9917.17

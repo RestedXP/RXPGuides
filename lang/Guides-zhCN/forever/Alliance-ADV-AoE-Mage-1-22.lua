@@ -16,7 +16,7 @@ RXPGuides.RegisterGuide([[
 step << !Human Mage
     #season 2
     #completewith next
-    +在探索赛季中，法师不应在种族初始区域之外开始游戏，因为你将无法在此处获得第一个符文（|T133816:0|t|T133816:0|t[铭刻手套 - 冰枪术]）
+    +在探索赛季中，作为法师你不应该在自己种族以外的新手区域开始游戏，因为你将无法在这里获得你的第一个符文（|T133816:0|t[刻印手套 - 冰枪术]）
 step
     #completewith next
     +你已选择进阶指南。这是专为游戏中升级最快的职业（联盟法师）量身定制的最速指南。因此，本指南中会使用大量小众机制，并包含极高难度的 AoE 拉怪操作。在学习过程中请保持耐心与毅力！祝你好运！
@@ -1039,7 +1039,7 @@ step
     .goto 1453/0,685.18,-8387.13,12 >>前往 |cRXP_FRIENDLY_格瑞曼德|r
 step
     .goto 1453/0,685.18,-8387.13
-    >>与 |cRXP_FRIENDLY_格瑞曼德|r 对话
+    >>与|cRXP_FRIENDLY_格瑞曼德|r 对话
     .turnin 1097 >> 交任务 艾尔默的任务
     .accept 353 >> 接受任务 雷矛的包裹
     .target 格瑞曼德·艾尔默
@@ -1449,7 +1449,7 @@ RXPGuides.RegisterGuide([[
 step << !Gnome Mage
     #season 2
     #completewith next
-    +在探索赛季中，法师不应在种族初始区域之外开始游戏，因为你将无法在此处获得第一个符文（|T133816:0|t|T133816:0|t[铭刻手套 - 冰枪术]）
+    +在探索赛季中，作为法师你不应该在自己种族以外的新手区域开始游戏，因为你将无法在这里获得你的第一个符文（|T133816:0|t[刻印手套 - 冰枪术]）
 step
     #completewith next
     +你已选择进阶指南。这是专为游戏中升级最快的职业（联盟法师）量身定制的最速指南。因此，本指南中会使用大量小众机制，并包含极高难度的 AoE 拉怪操作。在学习过程中请保持耐心与毅力！祝你好运！
@@ -3074,7 +3074,7 @@ step
     >>透过墙壁与|cRXP_FRIENDLY_萨莫尔|r对话
     >>|cRXP_WARN_注意：要实现此操作，请在选项菜单的“游戏功能 -> 控制”中绑定“与目标互动”按键|r
     >>|cRXP_WARN_如果船只刚刚抵达，跳过此步骤|r
-    .vendor 1457 >> |cRXP_BUY_从他那里购买|r |T134831:0|t[治疗药水] |cRXP_BUY_(如果有)|r
+    .vendor 1457 >> |cRXP_BUY_购买|r |T134831:0|t[治疗药水] |cRXP_BUY_从他那里(如果有)|r
     .target 萨莫尔·菲斯蒂沃斯
     .money <0.03
 step
@@ -3092,7 +3092,7 @@ step
     .goto 1437/0,-715.87,-3697.48
     >>隔墙与 |cRXP_FRIENDLY_德温|r 对话
     >>|cRXP_WARN_如果船只刚刚抵达，跳过此步骤|r
-    .vendor 1453 >> |cRXP_BUY_从他那里购买|r |T134831:0|t[治疗药水] |cRXP_BUY_(如果有)|r
+    .vendor 1453 >> |cRXP_BUY_购买|r |T134831:0|t[治疗药水] |cRXP_BUY_从他那里(如果有)|r
     .target 德温·晨光
     .money <0.03
 step
@@ -3630,7 +3630,7 @@ step
     >>透过墙壁与|cRXP_FRIENDLY_萨莫尔|r对话
     >>|cRXP_WARN_注意：要实现此操作，请在选项菜单的“游戏功能 -> 控制”中绑定“与目标互动”按键|r
     >>|cRXP_WARN_如果船只刚刚抵达，跳过此步骤|r
-    .vendor 1457 >> |cRXP_BUY_从他那里购买|r |T134831:0|t[治疗药水] |cRXP_BUY_(如果有)|r
+    .vendor 1457 >> |cRXP_BUY_购买|r |T134831:0|t[治疗药水] |cRXP_BUY_从他那里(如果有)|r
     .target 萨莫尔·菲斯蒂沃斯
     .money <0.03
 step
@@ -3648,7 +3648,7 @@ step
     .goto 1437/0,-715.87,-3697.48
     >>隔墙与 |cRXP_FRIENDLY_德温|r 对话
     >>|cRXP_WARN_如果船只刚刚抵达，跳过此步骤|r
-    .vendor 1453 >> |cRXP_BUY_从他那里购买|r |T134831:0|t[治疗药水] |cRXP_BUY_(如果有)|r
+    .vendor 1453 >> |cRXP_BUY_购买|r |T134831:0|t[治疗药水] |cRXP_BUY_从他那里(如果有)|r
     .target 德温·晨光
     .money <0.03
 step
@@ -4776,7 +4776,7 @@ step
     .goto 1453/0,822.16,-8865.60
     >>进入建筑
     >>与 |cRXP_FRIENDLY_艾代尔|r 对话
-    .vendor 1316 >> |cRXP_BUY_从他那里购买非智力|r |T134943:0|t|T134943:0|t[卷轴] |cRXP_BUY_（如果有货）|r
+    .vendor 1316 >> |cRXP_BUY_从他那里购买非智力|r |T134943:0|t|T134943:0|t[卷轴] |cRXP_BUY_（如果有货的话）|r
     .money <0.0090
     .target 艾代尔·吉尔罗
 step << skip
@@ -4806,10 +4806,10 @@ step
     .target 凯德雷克·布舍尔
 step
     #completewith Bank
-    .goto 1453/0,637.59,-8889.81,10 >>进入 暴风城银行
+    .goto 1453/0,637.59,-8889.81,10 >>进入暴风城银行
 step
     .goto 1453/0,614.33,-8932.92
-    >>与|cRXP_FRIENDLY_牛顿|r 交谈
+    >>与|cRXP_FRIENDLY_牛顿|r交谈
     .bankdeposit 769,4371,730,7207,1941,1711,1478,1712,3012,1180,1181,3013,6889 >> 将以下物品存入银行：
     >>|T133970:0|t[大块野猪肉]
     >>|T133024:0|t[青铜管]
@@ -5580,16 +5580,16 @@ step << skip
 step
     #sticky
     #label Bank2
-    >>与|cRXP_FRIENDLY_牛顿|r 交谈
+    >>与|cRXP_FRIENDLY_牛顿|r交谈
     .bankdeposit 17056,5354,2592,6889 >> 将以下物品存入银行：
-    >>|T132917:0|t[轻羽毛]
+    >>|T132917:0|t|T132917:0|t[轻羽毛]
     >>|T133469:0|t|T133469:0|t[写给德尔格伦的信]
     >>|T132911:0|t|T132911:0|t[毛料]
     >>|T132832:0|t[小蛋]
     .target 牛顿·伯恩赛德
 step
     .goto 1453/0,614.33,-8932.92
-    >>与|cRXP_FRIENDLY_牛顿|r 交谈
+    >>与|cRXP_FRIENDLY_牛顿|r交谈
     .bankwithdraw 730,7207 >> 从你的银行中取出以下物品： << Gnome
     .bankwithdraw 730,16115 >> 从你的银行中取出以下物品： << Human
     >>|T133884:0|t[鱼人眼睛]
@@ -5675,7 +5675,7 @@ step << skip
 step << skip
     .goto 1429/0,8.25,-9460.03
     >>与 |cRXP_FRIENDLY_酒吧老板杜宾斯|r 对话
-    >>|cRXP_BUY_从他那里购买|r |T132794:0|t|T132794:0|t一袋蜂蜜酒|cRXP_BUY_|r
+    >>|cRXP_BUY_从他那里购买|r |T132794:0|t一袋蜂蜜酒|cRXP_BUY_|r
     .collect 1939,1,116,1 --Skin of Sweet Rum
     .target Barkeep Dobbins
 step << skip
@@ -6209,7 +6209,7 @@ step
     .goto 1453/0,822.16,-8865.60
     >>进入建筑
     >>与 |cRXP_FRIENDLY_艾代尔|r 对话
-    .vendor 1316 >> |cRXP_BUY_从他那里购买非智力|r |T134943:0|t|T134943:0|t[卷轴] |cRXP_BUY_（如果有货）|r
+    .vendor 1316 >> |cRXP_BUY_从他那里购买非智力|r |T134943:0|t|T134943:0|t[卷轴] |cRXP_BUY_（如果有货的话）|r
     .target 艾代尔·吉尔罗
 step
     #completewith next
@@ -6236,12 +6236,12 @@ step
     .target 凯德雷克·布舍尔
 step
     #completewith Bank3
-    .goto 1453/0,637.59,-8889.81,10 >>进入 暴风城银行
+    .goto 1453/0,637.59,-8889.81,10 >>进入暴风城银行
 step
     #sticky
     #label Bank4
     .goto 1453/0,614.33,-8932.92
-    >>与|cRXP_FRIENDLY_牛顿|r 交谈
+    >>与|cRXP_FRIENDLY_牛顿|r交谈
     .bankwithdraw 769,5354,6889 >> 从你的银行中取出以下物品：
     >>|T133970:0|t[大块野猪肉]
     >>|T133469:0|t|T133469:0|t[写给德尔格伦的信]
@@ -6249,12 +6249,12 @@ step
 step
     #label Bank3
     .goto 1453/0,614.33,-8932.92
-    >>与|cRXP_FRIENDLY_牛顿|r 交谈
+    >>与|cRXP_FRIENDLY_牛顿|r交谈
     >>|cRXP_WARN_注意：每种布料需要准备12组（|r|T132911:0|t|T132905:0|t[毛料]|cRXP_WARN_、|r |T132892:0|t|T132903:0|t[丝绸]|cRXP_WARN_、|r |T132892:0|t|T132892:0|t[魔纹布]|cRXP_WARN_、|r 和 |T132903:0|t|T132903:0|t[符文布]|cRXP_WARN_），用于后续的布料捐献任务。这些布料在升级过程中会自然获得|r
     .bankdeposit 2998,4371,1711,1478,1712,3012,1180,1181,3013,17056,2592,2998,1941 >> 将以下物品存入银行：
     >>|T133024:0|t[青铜管]
     >>|T134943:0|t|T134943:0|t[卷轴]
-    >>|T132917:0|t[轻羽毛]
+    >>|T132917:0|t|T132917:0|t[轻羽毛]
     >>|T132911:0|t|T132911:0|t[毛料]
     >>|T134377:0|t|T134377:0|t[简易罗盘]
     >>|T132620:0|t[一桶葡萄酒]
@@ -6928,7 +6928,7 @@ step
     #completewith next
     .goto 1440/1,-284.31,2828.30
     >>与 |cRXP_FRIENDLY_黛琳希亚|r 对话
-    .fly Auberdine >> 飞往奥伯丁
+    .fly Auberdine >> 飞往奥伯丁，黑海岸
     .target 黛琳希亚
 step
     >>与 |cRXP_FRIENDLY_温尼斯|r 和 |cRXP_FRIENDLY_古博|r 对话
@@ -7081,12 +7081,12 @@ step
     .target 凯德雷克·布舍尔
 step
     #completewith Bank
-    .goto 1453/0,637.59,-8889.81,10 >>进入 暴风城银行
+    .goto 1453/0,637.59,-8889.81,10 >>进入暴风城银行
 step
     #sticky
     #label Bank1
     .goto 1453/0,614.33,-8932.92
-    >>与|cRXP_FRIENDLY_牛顿|r 交谈
+    >>与|cRXP_FRIENDLY_牛顿|r交谈
     .bankwithdraw 4371,1941,1711,1478,1712,3012,1180,1181,3013,2998 >> 从你的银行中取出以下物品：
     >>|T133024:0|t[青铜管]
     >>|T134943:0|t|T134943:0|t[卷轴]
@@ -7096,10 +7096,10 @@ step
 step
     #label Bank
     .goto 1453/0,614.33,-8932.92
-    >>与|cRXP_FRIENDLY_牛顿|r 交谈
+    >>与|cRXP_FRIENDLY_牛顿|r交谈
     >>|cRXP_WARN_注意：每种布料需要准备12组（|r|T132911:0|t|T132905:0|t[毛料]|cRXP_WARN_、|r |T132892:0|t|T132903:0|t[丝绸]|cRXP_WARN_、|r |T132892:0|t|T132892:0|t[魔纹布]|cRXP_WARN_、|r 和 |T132903:0|t|T132903:0|t[符文布]|cRXP_WARN_），用于后续的布料捐献任务。这些布料在升级过程中会自然获得|r
     .bankdeposit 17056,2592,1015,4654 >> 将以下物品存入银行：
-    >>|T132917:0|t[轻羽毛]
+    >>|T132917:0|t|T132917:0|t[轻羽毛]
     >>|T132911:0|t|T132911:0|t[毛料]
     >>|T133970:0|t[狼肋排]
     >>|T134431:0|t|T134431:0|t[神秘的化石]
@@ -7189,7 +7189,7 @@ step
     .goto 1453/0,822.16,-8865.60
     >>进入建筑
     >>与 |cRXP_FRIENDLY_艾代尔|r 对话
-    .vendor 1316 >> |cRXP_BUY_从他那里购买非智力|r |T134943:0|t|T134943:0|t[卷轴] |cRXP_BUY_（如果有货）|r
+    .vendor 1316 >> |cRXP_BUY_从他那里购买非智力|r |T134943:0|t|T134943:0|t[卷轴] |cRXP_BUY_（如果有货的话）|r
     >>|cRXP_WARN_不要让你的钱低于18银31铜|r
     .money <0.1831
     .target 艾代尔·吉尔罗
@@ -7198,14 +7198,14 @@ step
     .goto 1453/0,822.16,-8865.60
     >>进入建筑
     >>与 |cRXP_FRIENDLY_艾代尔|r 对话
-    .vendor 1316 >> |cRXP_BUY_从他那里购买非智力|r |T134943:0|t|T134943:0|t[卷轴] |cRXP_BUY_（如果有货）|r
+    .vendor 1316 >> |cRXP_BUY_从他那里购买非智力|r |T134943:0|t|T134943:0|t[卷轴] |cRXP_BUY_（如果有货的话）|r
     >>|cRXP_WARN_不要让你的钱低于 26银31铜|r
     .money <0.2631
     .target 艾代尔·吉尔罗
 step
     #completewith next
     .goto 1453/0,872.30,-8803.220,5,0
-    .goto 1453/0,872.70,-8682.39,20 >>沿着墙边往上跑，而不是绕过
+    .goto 1453/0,872.70,-8682.39,20 >>沿着墙边跑上去，而不是绕过去
 step
     .goto 1453/0,766.64,-8623.23
     >>与 |cRXP_FRIENDLY_克里斯托弗修士|r 对话
@@ -7282,7 +7282,7 @@ step << skip
 step
     .goto 1429/0,8.25,-9460.03
     >>与 |cRXP_FRIENDLY_酒吧老板杜宾斯|r 对话
-    >>|cRXP_BUY_从他那里购买|r |T132794:0|t|T132794:0|t一袋蜂蜜酒|cRXP_BUY_|r
+    >>|cRXP_BUY_从他那里购买|r |T132794:0|t一袋蜂蜜酒|cRXP_BUY_|r
     .collect 1939,1,116,1 --Skin of Sweet Rum
     .target Barkeep Dobbins
 step
@@ -7878,7 +7878,7 @@ step
 step
     >>与 |cRXP_FRIENDLY_玛蒂|r 和 |cRXP_FRIENDLY_工头奥斯洛|r 对话
     .turnin 20 >>交任务 黑石氏族的威胁
-    .accept 19 >>接受任务 萨瑞尔祖恩
+    .accept 19 >>接受任务萨瑞尔祖恩
     .target +Marshal Marris
     .goto 1433/0,-2298.28,-9283.90
     .turnin 89,1 >>交任务 止水湖上的桥
@@ -8018,12 +8018,12 @@ step
     .goto 1453/0,822.16,-8865.60
     >>进入建筑
     >>与 |cRXP_FRIENDLY_艾代尔|r 对话
-    .vendor 1316 >> |cRXP_BUY_从他那里购买非智力|r |T134943:0|t|T134943:0|t[卷轴] |cRXP_BUY_（如果有货）|r
+    .vendor 1316 >> |cRXP_BUY_从他那里购买非智力|r |T134943:0|t|T134943:0|t[卷轴] |cRXP_BUY_（如果有货的话）|r
     .target 艾代尔·吉尔罗
 step
     #completewith next
     .goto 1453/0,872.30,-8803.220,5,0
-    .goto 1453/0,872.70,-8682.39,20 >>沿着墙边往上跑，而不是绕过
+    .goto 1453/0,872.70,-8682.39,20 >>沿着墙边跑上去，而不是绕过去
 step
     .goto 1453/0,766.64,-8623.23
     >>与 |cRXP_FRIENDLY_克里斯托弗修士|r 对话
@@ -8059,7 +8059,7 @@ step
     >>与 |cRXP_FRIENDLY_拜雷|r 对话
     >>|cRXP_WARN_注意：每种布料需要准备12组（|r|T132911:0|t|T132905:0|t[毛料]|cRXP_WARN_、|r |T132892:0|t|T132903:0|t[丝绸]|cRXP_WARN_、|r |T132892:0|t|T132892:0|t[魔纹布]|cRXP_WARN_、|r 和 |T132903:0|t|T132903:0|t[符文布]|cRXP_WARN_），用于后续的布料捐献任务。这些布料在升级过程中会自然获得|r
     .bankdeposit 17056,2592,1015,1083,2665,1922,1284 >> 将以下物品存入银行：
-    >>|T132917:0|t[轻羽毛]
+    >>|T132917:0|t|T132917:0|t[轻羽毛]
     >>|T132911:0|t|T132911:0|t[毛料]
     >>|T133970:0|t[狼肋排]
     >>|T133277:0|t|T133277:0|t[阿祖拉的铭文饰品]

@@ -920,7 +920,7 @@ step
 step << Horde
     #season 2
     .goto Undercity,63.27,48.55
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_麦克尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迈克尔 |r 对话
     .fly The Sepulcher>> 飞往瑟伯切尔
     .target 迈克尔·加勒特
     .zoneskip Silverpine Forest
@@ -1368,7 +1368,7 @@ RXPGuides.RegisterGuide([[
 step
     #season 2
     .goto Orgrimmar,55.87,44.89
-    >>打开|cRXP_PICK_布满灰尘的箱子|r 获取 |T134419:0|t[|cRXP_FRIENDLY_精准符文|r]
+    >>打开|cRXP_PICK_布满灰尘的箱子|r获取|T134419:0|t|T134419:0|t[|cRXP_FRIENDLY_精准符文|r]
     >>|cRXP_WARN_它位于暗影裂口的二楼|r
     .collect 204174,1 --Rune of Precision (1)
     .train 400081,1
@@ -1576,7 +1576,7 @@ step
     +|cRXP_WARN_打开邮箱，阅读*C*寄来的信件。准备好后飞回南海镇然后前往银松森林|r << Alliance
 step << Horde
     .goto Undercity,63.27,48.55
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_麦克尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迈克尔 |r 对话
     .fly The Sepulcher>> 飞往瑟伯切尔
     .target 迈克尔·加勒特
     .zoneskip Silverpine Forest
