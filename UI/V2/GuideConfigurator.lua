@@ -1481,11 +1481,13 @@ function addon.ui.v2.configurator:GetGuideChoices(guideGroup, subgroup, icon, gu
         guides = addon.GetSelectableGuidesInGroup(guideGroup, subgroup, true)
     end
     local recommendedGuide
+    local isDefaultGuideGroup = guideGroup == addon.defaultGroup or guideGroup == addon.defaultGroupHC
+    local isForeverDungeonGuideGroup = guideGroup == L("RestedXP Forever Dungeon Guide (A)") or
+        guideGroup == L("RestedXP Forever Dungeon Guide (H)")
 
     table.sort(guides, function(first, second) return first.name < second.name end)
 
-    if guideGroup == addon.defaultGroup or guideGroup == addon.defaultGroupHC or guideGroup ==
-        L"RestedXP Forever Dungeon Guide (A)" or guideGroup == L"RestedXP Forever Dungeon Guide (H)" then
+    if isDefaultGuideGroup or isForeverDungeonGuideGroup then
         local playerGuides = {}
         local playerLevel = addon.player.level
         local guideName, minimumLevel, maximumLevel
@@ -1502,7 +1504,7 @@ function addon.ui.v2.configurator:GetGuideChoices(guideGroup, subgroup, icon, gu
         guides = playerGuides
     end
 
-    if guideGroup == addon.defaultGroup or guideGroup == addon.defaultGroupHC then
+    if isDefaultGuideGroup or isForeverDungeonGuideGroup then
         local currentGuide = addon.currentGuide
         for _, guide in ipairs(guides) do
             if currentGuide and guide.key == currentGuide.key then
@@ -1533,7 +1535,7 @@ function addon.ui.v2.configurator:GetGuideChoices(guideGroup, subgroup, icon, gu
             recommendedGuide = recommendedGuide or zoneGuide
         end
 
-        if not recommendedGuide then
+        if not recommendedGuide and isDefaultGuideGroup then
             local defaultGuideName = guideGroup == addon.defaultGroupHC and addon.defaultGuideHC or addon.defaultGuide
 
             if type(defaultGuideName) == "table" then defaultGuideName = defaultGuideName.name end
@@ -1575,8 +1577,7 @@ function addon.ui.v2.configurator:GetGuideChoices(guideGroup, subgroup, icon, gu
             label = L(addon.GetGuideName(selectedGuide) or selectedGuide.name),
             recommended = selectedGuide == recommendedGuide,
             callback = function()
-                if (guideGroup == addon.defaultGroup or guideGroup == addon.defaultGroupHC) and selectedGuide ~=
-                    recommendedGuide then
+                if (isDefaultGuideGroup or isForeverDungeonGuideGroup) and selectedGuide ~= recommendedGuide then
                     -- If a non-recommended guide is selected, make follow-ups are easier to see
                     addon.settings.profile.showUnusedGuides = true
                 end
@@ -1935,11 +1936,13 @@ function addon.ui.v2.configurator:LoadPages(setDungeonMode)
         },
         speedrunGuides = {
             kind = "choices",
-            title = L("Speedrun Guide Configuration"),
+            title = L(addon.game == "FOREVER" and "Open World Guide Configuration" or
+                      "Speedrun Guide Configuration"),
             description = L("Select your preferred guide."),
             options = function()
                 return self:GetGuideChoices(addon.defaultGroup, nil,
-                                            addon.ui.v2:GetTexture("rxp-icon-speedrun_guides"))
+                                            addon.ui.v2:GetTexture(addon.game == "FOREVER" and "rxp-icon-route" or
+                                                                   "rxp-icon-speedrun_guides"))
             end
         },
         survivalGuides = {
@@ -2004,6 +2007,7 @@ function addon.ui.v2.configurator:LoadPages(setDungeonMode)
             title = L("Open World Guide Configuration"),
             description = L(
                 "Select your preferred features to customize the guide. The leveling route automatically adapts to your choices."),
+            next = function() return "speedrunGuides" end,
             options = {
                 auctionHouseOption, sharedOptions.groupQuests, sharedOptions.skipLowLevelQuests
             }
@@ -2017,9 +2021,9 @@ function addon.ui.v2.configurator:LoadPages(setDungeonMode)
             nextLabel = L("Next step"),
             next = function()
                 if addon.player.faction == "Horde" then
-                    currentGroup = L"RestedXP Forever Dungeon Guide (H)"
+                    currentGroup = L("RestedXP Forever Dungeon Guide (H)")
                 elseif addon.player.faction == "Alliance" then
-                    currentGroup = L"RestedXP Forever Dungeon Guide (A)"
+                    currentGroup = L("RestedXP Forever Dungeon Guide (A)")
                 end
                 return "foreverDungeonOptions2"
             end
@@ -2038,8 +2042,8 @@ function addon.ui.v2.configurator:LoadPages(setDungeonMode)
             description = L("Select your preferred guide."),
             options = function()
                 return self:GetGuideChoices(addon.player.faction == "Horde" and
-                                                L"RestedXP Forever Dungeon Guide (H)" or
-                                                L"RestedXP Forever Dungeon Guide (A)", nil,
+                                                L("RestedXP Forever Dungeon Guide (H)") or
+                                                L("RestedXP Forever Dungeon Guide (A)"), nil,
                                             addon.ui.v2:GetTexture("dungeons-icon"))
             end
         }
