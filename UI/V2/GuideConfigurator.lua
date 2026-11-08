@@ -1066,6 +1066,7 @@ function addon.ui.v2.configurator:CreateGuideConfigurator()
     if self.ui then return self.ui end
 
     addon.enabledFrames.RXPV2GuideConfigurator = configurator.frame
+    configurator.frame.IsFeatureEnabled = function() return configurator.frame:IsShown(), false end
     addon.settings:LoadFramePosition("RXPV2GuideConfigurator", configurator.frame)
     configurator.localstatus.top = configurator.frame:GetTop()
     configurator.localstatus.left = configurator.frame:GetLeft()
