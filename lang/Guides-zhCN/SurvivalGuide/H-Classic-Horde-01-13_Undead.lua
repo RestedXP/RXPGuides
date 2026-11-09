@@ -132,7 +132,7 @@ step << Warlock
     .goto Tirisfal Glades,33.94,61.81,30,0
     .goto Tirisfal Glades,34.21,63.05,30,0
     .goto Tirisfal Glades,33.01,63.01,30,0
-    >>击杀 |cRXP_ENEMY_断骨骷髅|r，拾取他们的 |cRXP_LOOT_断骨骷髅的颅骨|r
+    >>击杀 |cRXP_ENEMY_断骨骷髅|r。拾取他们的 |cRXP_LOOT_断骨骷髅的颅骨|r
     .complete 1470,1 --Rattlecage Skull (3)
     .mob 断骨骷髅
 step << Warlock

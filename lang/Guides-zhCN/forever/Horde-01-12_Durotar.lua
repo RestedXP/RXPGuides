@@ -4023,23 +4023,23 @@ step
 step
     #label LinneaTurnin
     .goto 1420/0,73.800,2022.300
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Deathguard Linnea::1495|r 对话
-    >>|cRXP_WARN_这是"The 愤怒 of Rath'mael"的前置任务|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_亡灵卫兵林奈::1495|r对话
+    >>|cRXP_WARN_这是"愤怒的拉斯玛尔"的前置任务|r
     .turnin 356 >>交任务 巡查后方
     .target Deathguard Linnea::1495
     .accept 99156 >>接受任务 巡查后方
     .dungeon ROL
 step
     .goto 1420/0,-765.200,2518.700
-    >>杀死 |cRXP_ENEMY_Riptear|r |cRXP_WARN_(level 13 elite)|r。拾取 |T134339:0|t[|cRXP_LOOT_Riptear's Heart|r]
-    >>|cRXP_WARN_这是"The 愤怒 of Rath'mael"的前置任务|r
+    >>击杀|cRXP_ENEMY_撕裂者|r |cRXP_WARN_（13级精英）|r。拾取|T134339:0|t[|cRXP_LOOT_撕裂者的心脏|r]
+    >>|cRXP_WARN_这是"愤怒的拉斯玛尔"的前置任务|r
     .complete 99156,1 --|1/1 Riptear's Heart
     .mob Riptear
     .dungeon ROL
 step
     .goto 1420/0,74.200,2022.400
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Deathguard Linnea::1495|r 对话
-    >>|cRXP_WARN_这是"The 愤怒 of Rath'mael"的前置任务|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_亡灵卫兵林奈::1495|r对话
+    >>|cRXP_WARN_这是"愤怒的拉斯玛尔"的前置任务|r
     .turnin 99156 >>交任务 巡查后方
     .target Deathguard Linnea::1495
     .dungeon ROL

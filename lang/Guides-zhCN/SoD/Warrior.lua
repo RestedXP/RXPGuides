@@ -594,7 +594,7 @@ step << Tauren
     #season 2
     .goto Mulgore,44.02,76.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哈鲁特|r 对话
-    .accept 77651 >>接受任务 深入荆棘
+    .accept 77651 >>Accept 深入荆棘
     .target 哈鲁特·雷角
 step
     #season 2

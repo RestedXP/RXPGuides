@@ -52,7 +52,7 @@ step << Warlock
     .target 德南·弗卡特
 step << Warlock
     .goto Dun Morogh,28.650,66.145
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿拉玛尔·格里姆|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿拉玛尔·格里姆|r对话
     .train 348 >> 学习 |T135817:0|t[献祭]
     .accept 1599 >> 接受任务 开端
     .target 阿拉玛尔·格里姆
@@ -102,7 +102,7 @@ step << Warlock
     #completewith next
     .hs >> 炉石返回寒脊山谷
 step << Warlock
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿拉玛尔·格里姆|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿拉玛尔·格里姆|r对话
     .goto Dun Morogh,28.650,66.145
     .turnin 1599 >> 交任务 开端
     .turnin 3115 >> 交任务 被污染的备忘录 << Gnome Warlock
@@ -229,7 +229,7 @@ step << Gnome Mage
     .turnin 3114 >> 交任务 雕文备忘录
     .trainer >> 训练你的职业技能
 step << Warlock
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿拉玛尔·格里姆|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿拉玛尔·格里姆|r对话
     .target 阿拉玛尔·格里姆
     .goto Dun Morogh,28.650,66.145
     .trainer >> 训练你的腐蚀术

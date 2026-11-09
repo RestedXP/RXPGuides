@@ -3577,7 +3577,7 @@ step << Alliance
     .cooldown spell,1259416,>0,1 -- Walk on Air
     .goto 2521,66.47,76.68,10,0
     .goto 2521,66.63,79.94
-    .cast 1259416 >>从树上跳下，使用 |T132845:0|t[踏空而行] 飞往任务给予者。
+    .cast 1259416 >>从树上跳下并使用 |T132845:0|t[踏空而行] 飞向任务发布者。
     *|cRXP_WARN_如果时机把握准确，你可以在半空中取消飞行，从而落入建筑内|r
     .usespell 1259416
     .macro Cancel Walk on Air,132845 >>取消踏空而行
@@ -5212,7 +5212,7 @@ step << Alliance !Druid
     .cooldown spell,1259416,>0,1 -- Walk on Air
     .goto 2521,66.47,76.64,10,0
     .goto 2521,65.36,71.79
-    .cast 1259416 >>从树上跳下，使用 |T132845:0|t[踏空而行] 飞往路点所在地区。
+    .cast 1259416 >>从树上跳下，使用 |T132845:0|t[踏空而行] 飞向路径点位置。
     .usespell 1259416
 step << Alliance
     .goto 2521,65.956,74.309
@@ -5449,7 +5449,7 @@ step << Alliance
     .goto 2521,66.47,76.61,8,0
     .goto 2521,66.31,76.18,15,0
     .goto 2521,63.14,76.9
-    .cast 1259416 >>从树上跳下，使用 |T132845:0|t[踏空而行] 飞往路点所在地区。
+    .cast 1259416 >>从树上跳下，使用 |T132845:0|t[踏空而行] 飞向路径点位置。
     .usespell 1259416
 step << Alliance
     .subzoneskip 16638,1 -- Valanaar
@@ -6259,8 +6259,8 @@ step
     .target Jorel Windsinger::258130
 step << Horde
     .itemcount 265476,1
-    >>在你的包裹中使用 |T134332:0|t[Ripped Missive] 来开始任务。
-    .accept 94490 >>接受任务 Ripped Missive
+    >>使用你背包中的 |T134332:0|t[撕破的信件] 来开始任务。
+    .accept 94490 >>接受任务 撕破的信件
     .use 265476 -- Ripped Missive
 step
     #optional
@@ -6478,7 +6478,7 @@ step << Alliance
     .cooldown spell,1259416,>0,1 -- Walk on Air
     .goto 2521,66.49,76.64,8,0
     .goto 2521,63.33,78.16
-    .cast 1259416 >>从树上跳下，使用 |T132845:0|t[踏空而行] 飞往路点所在地区。
+    .cast 1259416 >>从树上跳下，使用 |T132845:0|t[踏空而行] 飞向路径点位置。
     .usespell 1259416
 step << Alliance
     .goto 2521,63.33,78.16,30,0
@@ -6567,7 +6567,7 @@ step << Alliance
     .goto 2521,66.49,76.64,8,0
     .goto 2521,66.39,76.26,10,0
     .goto 2521,63.9,74.16
-    .cast 1259416 >>从树上跳下，使用 |T132845:0|t[踏空而行] 飞往路点所在地区。
+    .cast 1259416 >>从树上跳下，使用 |T132845:0|t[踏空而行] 飞向路径点位置。
     .usespell 1259416
 step << Alliance
     .subzoneskip 16638,1 -- Valanaar

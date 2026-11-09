@@ -2807,7 +2807,7 @@ step
     .target 斯布特瓦夫
 step
     .goto 1413/1,-3796.55,-985.28
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Dizzywig|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迪兹维格|r 对话
     .turnin 896 >> 交任务  矿工的宝贝
     .target 码头管理员迪兹维格
     .isQuestComplete 896
