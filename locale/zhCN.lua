@@ -143,9 +143,9 @@ L["Skreah"] = "斯克雷亚"
 -- DB\classic\db.lua file
 
 L["RestedXP Speedrun Guide (H)"] = "RestedXP 速通指南 (部落)"
-L["RestedXP Survival Guide (H)"] = "RestedXP 生存向导 (部落)"
+L["RestedXP Survival Guide (H)"] = "RestedXP 生存指南 (部落)"
 L["RestedXP Speedrun Guide (A)"] = "RestedXP 速通指南 (联盟)"
-L["RestedXP Survival Guide (A)"] = "RestedXP 生存向导 (联盟)"
+L["RestedXP Survival Guide (A)"] = "RestedXP 生存指南 (联盟)"
 L["Mining & Engineering"] = "采矿与工程学"
 L["Mining & Blacksmithing"] = "采矿与锻造"
 L["Herbalism & Alchemy"] = "草药学与炼金术"
@@ -267,15 +267,15 @@ L["RXP MoP 1-60 (H)"] = "RXP 熊猫人之谜 1-60级 (部落)"
 
 -- DB\tbc\db.lua file
 
-L["RestedXP TBC Guide (H)"] = "RestedXP TBC 向导 (部落)"
-L["RXP TBC Survival Guide (H)"] = "RXP TBC 生存向导 (部落)"
-L["RestedXP TBC Guide (A)"] = "RestedXP TBC 向导 (联盟)"
-L["RXP TBC Survival Guide (A)"] = "RXP TBC 生存向导 (联盟)"
+L["RestedXP TBC Guide (H)"] = "RestedXP 燃烧的远征 练级指南 (部落)"
+L["RXP TBC Survival Guide (H)"] = "RXP 燃烧的远征 生存指南 (部落)"
+L["RestedXP TBC Guide (A)"] = "RestedXP 燃烧的远征 练级指南 (联盟)"
+L["RXP TBC Survival Guide (A)"] = "RXP 燃烧的远征 生存指南 (联盟)"
 
 -- DB\wotlk\db.lua file
 
-L["RestedXP Horde 1-30"] = "RestedXP 部落 1-30"
-L["RestedXP Alliance 1-20"] = "RestedXP 联盟 1-20"
+L["RestedXP Horde 1-30"] = "RestedXP 部落 1-30级"
+L["RestedXP Alliance 1-20"] = "RestedXP 联盟 1-20 级"
 
 -- functions.lua file
 
