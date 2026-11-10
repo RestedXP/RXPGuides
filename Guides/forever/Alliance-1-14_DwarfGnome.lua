@@ -3406,7 +3406,7 @@ step
     .target Gryan Stoutmantle
     .goto 1436/0,1045.12,-10508.80
     .accept 12 >> Accept The People's Militia
-step
+step << skip
     #era
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Danuvin|r
     .target Captain Danuvin

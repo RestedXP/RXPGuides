@@ -688,14 +688,14 @@ step
     >>|T135997:0|t[Goretusk Snout]
     >>|T134185:0|t[Okra]
     >>|T134341:0|t[Goretusk Liver]
-    -->>|T4548890:0|t[Golem Isospring]
+    >>|T4548890:0|t[Golem Isospring]
     -->>|T132995:0|t[Harvester Gyrostabilizer]
     .collect 729,3,38,1 -- Stringy Vulture Meat (3)
     .collect 730,3,38,1 -- Murloc Eye (3)
     .collect 731,3,38,1 -- Goretusk Snout (3)
     .collect 732,3,38,1 -- Okra (3)
     .collect 723,8,22,1 -- Goretusk Liver (8)
-    --.collect 255007,14,92909,1 -- Golem Isospring (14)
+    .collect 255007,14,92909,1 -- Golem Isospring (14)
     --.collect 255010,5,92909,1 -- Harvester Gyrostabilizer (5)
     .target Auctioneer Jaxon
 
@@ -826,20 +826,34 @@ step
     .isOnQuest 399
     .goto 1436/0,1602.67,-10629.67,75 >> Travel to the Alexston's Farmstead
     >>|cRXP_WARN_Work on completing the other quest objectives as you move there|r
-step << skip -- quests drop rate is beyond dreadful. over 50 kills to complete
+step
+    #optional
+    .itemcount 255007,10 -- only accepting this quest if they bought a bunch of isosprings from AH
     .goto 1436/0,1213.400,-10153.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ozwin Ironsprocket::253395|r in the barn
     .target Ozwin Ironsprocket::253395
     .accept 92909 >>Accept Harvesting the Harvesters
 step
-    #sticky
+    .isNotOnQuest 92909
     #completewith bennytime
     >>Kill |cRXP_ENEMY_Harvest Watchers|r located on any of the fields as you run by them
     >>Loot them for their |cRXP_LOOT_Okra|r and |cRXP_LOOT_Flasks of Oil|r
     .mob Harvest Watcher
     .complete 9,1 --Havest Watcher slain (20)
     .collect 732,3,38,1 --Okra (3)
-    .collect 814,5,103,1 --Flask of Oil (5)
+    .collect 814,5,103,1,1 --Flask of Oil (5)
+step
+    #optional
+    .isOnQuest 92909
+    #completewith bennytime
+    >>Kill |cRXP_ENEMY_Harvest Watchers|r located on any of the fields as you run by them
+    >>Loot them for their |cRXP_LOOT_Okra|r, |cRXP_LOOT_Flasks of Oil|r, |cRXP_LOOT_Golem Isosprings|r and |cRXP_LOOT_Harvester Gyrostabilizers|r
+    .mob Harvest Watcher
+    .complete 9,1 --Havest Watcher slain (20)
+    .collect 732,3,38,1 --Okra (3)
+    .collect 814,5,103,1,1 --Flask of Oil (5)
+    .complete 92909,1 -- Golem Isosprings (14)
+    .complete 92909,2 -- Harvester Gyrostabilizer (5)
 step
     .goto 1436/0,1748.27,-10672.13
     >>Open |cRXP_PICK_Alexston's Chest|r. Loot it for |cRXP_LOOT_A Simple Compass|r
@@ -977,7 +991,6 @@ step
     .goto 1436/0,1213.400,-10153.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ozwin Ironsprocket::253395|r
     .target Ozwin Ironsprocket::253395
-    .accept 92909 >>Accept Harvesting the Harvesters
     .turnin 92909 >>Turn in Harvesting the Harvesters
     .itemcount 255007,14 -- Golem Isospring (14)
     .itemcount 255010,5 -- Harvester Gyrostabilizer (5)
@@ -996,6 +1009,13 @@ step
     .isQuestComplete 38
     .target Salma Saldean
 step
+    #optional
+    #completewith HarvestW
+    .isOnQuest 92909
+    >>Loot |cRXP_ENEMY_Harvest Watchers|r for |cRXP_LOOT_Golem Isosprings|r and |cRXP_LOOT_Harvester Gyrostabilizers|r
+    .complete 92909,1 -- Golem Isosprings (14)
+    .complete 92909,2 -- Harvester Gyrostabilizer (5)
+step
     .isQuestAvailable 38
     .goto 1436/0,1132.27,-10146.67,60,0
     .goto 1436/0,1238.67,-9907.73,80,0
@@ -1010,7 +1030,7 @@ step
     .complete 9,1 --Harvest Watcher (20)
     .mob Harvest Watcher
     .collect 732,3,38,1 --Okra (3)
-    .collect 814,5,103,1 --Flask of Oil (5)
+    .collect 814,5,103,1,1 --Flask of Oil (5)
 step
     .isQuestTurnedIn 38
     #label HarvestW
@@ -1026,7 +1046,23 @@ step
     >>Kill |cRXP_ENEMY_Harvest Watchers|r. Loot them for their |cRXP_LOOT_Flasks of Oil|r
     .complete 9,1 --Harvest Watcher (20)
     .mob Harvest Watcher
-    .collect 814,5,103,1 --Flask of Oil (5)
+    .collect 814,5,103,1,1 --Flask of Oil (5)
+step
+    .isOnQuest 92909
+    #optional
+    .goto 1436/0,1132.27,-10146.67,60,0
+    .goto 1436/0,1238.67,-9907.73,80,0
+    .goto 1436/0,1460.22,-10224.83,80,0
+    .goto 1436/0,1132.27,-10146.67,80,0
+    .goto 1436/0,1238.67,-9907.73,80,0
+    .goto 1436/0,1460.22,-10224.83,80,0
+    .goto 1436/0,1132.27,-10146.67,60,0
+    .goto 1436/0,1460.22,-10224.83,60,0
+    .goto 1436/0,1238.67,-9907.73
+    >>Kill |cRXP_ENEMY_Harvest Watchers|r. Loot them for their |cRXP_LOOT_Golem Isosprings|r and |cRXP_LOOT_Harvester Gyrostabilizers|r
+    .complete 92909,1 -- Golem Isosprings (14)
+    .complete 92909,2 -- Harvester Gyrostabilizer (5)
+    .mob Harvest Watcher
 step
     #optional
     .isQuestComplete 9
@@ -1035,15 +1071,6 @@ step
 	.target Farmer Saldean
     .goto 1436/0,1055.27,-10128.70
     .turnin 9 >> Turn in The Killing Fields
-step
-    #optional
-    .goto 1436/0,1213.400,-10153.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ozwin Ironsprocket::253395|r
-    .target Ozwin Ironsprocket::253395
-    .accept 92909 >>Accept Harvesting the Harvesters
-    .turnin 92909 >>Turn in Harvesting the Harvesters
-    .itemcount 255007,14 -- Golem Isospring (14)
-    .itemcount 255010,5 -- Harvester Gyrostabilizer (5)
 step
     .goto 1436/0,1179.52,-10382.57,75,0
     .goto 1436/0,1138.22,-10474.97,75,0
@@ -1080,7 +1107,6 @@ step
     .goto 1436/0,1213.400,-10153.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ozwin Ironsprocket::253395|r
     .target Ozwin Ironsprocket::253395
-    .accept 92909 >>Accept Harvesting the Harvesters
     .turnin 92909 >>Turn in Harvesting the Harvesters
     .itemcount 255007,14 -- Golem Isospring (14)
     .itemcount 255010,5 -- Harvester Gyrostabilizer (5)
@@ -1132,6 +1158,11 @@ step
 	.target Gryan Stoutmantle
     .goto 1436/0,1045.12,-10508.80
     .accept 65 >> Accept The Defias Brotherhood
+step << Skyborne
+    .goto 1436/0,1037.42,-10628.27
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thor|r
+    .fp Westfall >> Get the Westfall flight path
+    .target Thor
 step
     #optional
     .isQuestComplete 102
@@ -2049,6 +2080,29 @@ step
     .use 14338
 step
     #optional
+    .goto 1439/1,445.66,6535.79--c:1439,38.107,41.165
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gorbold Steelhand|r
+    .turnin 982 >> Turn in Deep Ocean, Vast Sea
+    .target Gorbold Steelhand
+    .isQuestComplete 982
+step
+    #optional
+    .goto 1439/1,472.32,6556.100
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alanndarian Nightsong|r
+    .accept 2178 >> Accept Easy Strider Living
+    .turnin 2178 >> Turn in Easy Strider Living
+    .target Alanndarian Nightsong
+    .itemcount 5469,5 -- Strider Meat (5)
+    .skill cooking,<10,1 -- step only displays if skill is 10 or higher
+step
+    #label TOTH
+    .goto 1439/1,492.36,6581.08--c:1439,37.394,40.128
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thundris Windweaver|r
+    .turnin 958 >> Turn in Tools of the Highborne
+    .target Thundris Windweaver
+    .isQuestComplete 958
+step
+    #optional
     .goto 1439/1,397.45,6437.50--c:1439,38.843,43.416
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tharnariun Treetender|r
     .turnin 2138 >> Turn in Cleansing of the Infected
@@ -2077,29 +2131,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Elissa Starbreeze|r upstairs
     .accept 965 >> Accept The Tower of Althalaxx
     .target Sentinel Elissa Starbreeze
-step
-    #optional
-    .goto 1439/1,445.66,6535.79--c:1439,38.107,41.165
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gorbold Steelhand|r
-    .turnin 982 >> Turn in Deep Ocean, Vast Sea
-    .target Gorbold Steelhand
-    .isQuestComplete 982
-step
-    #optional
-    .goto 1439/1,472.32,6556.100
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alanndarian Nightsong|r
-    .accept 2178 >> Accept Easy Strider Living
-    .turnin 2178 >> Turn in Easy Strider Living
-    .target Alanndarian Nightsong
-    .itemcount 5469,5 -- Strider Meat (5)
-    .skill cooking,<10,1 -- step only displays if skill is 10 or higher
-step
-    #label TOTH
-    .goto 1439/1,492.36,6581.08--c:1439,37.394,40.128
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thundris Windweaver|r
-    .turnin 958 >> Turn in Tools of the Highborne
-    .target Thundris Windweaver
-    .isQuestComplete 958
 step
     .goto 1439/1,-157.40,6207.81--c:1439,47.314,48.676
     >>Click the |cRXP_PICK_Mysterious Red Crystal|r
@@ -2251,10 +2282,8 @@ step
     .goto 1439/1,537.75,6363.01,8,0--c:1439,36.701,45.122
     .goto 1439/1,542.99,6342.31--c:1439,36.621,45.596
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
-    .turnin 4723 >> Turn in Beached Sea Creature
     .turnin 4725 >> Turn in Beached Sea Turtle
     .target Gwennyth Bly'Leggonde
-    .isOnQuest 4723
 
 ----Start of Druid Quest section----
 step << Druid
@@ -2315,7 +2344,6 @@ step << Druid
 step
     .hs >> Hearth to Stormwind
     .zoneskip Stormwind City
-    .zoneskip Darkshore
     .zoneskip Ironforge
 step
     .goto 1453/0,566.600,-8845.500
@@ -2332,7 +2360,7 @@ step
     .goto 1453/0,566.600,-8845.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elaine Trias::483|r
     .target Elaine Trias::483
-    .turnin 97222 >>Turn in Gatehouse Goods  
+    .turnin 97222 >>Turn in Gatehouse Goods
 step << Druid
     .goto 1453/0,1095.500,-8741.700
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Theridran|r
@@ -2395,13 +2423,6 @@ step << Hunter
     .target Einris Brightspear
     .zoneskip Dun Morogh
     .zoneskip Ironforge
-step << Hunter
-    .goto 1453/0,553.22,-8422.23
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Karrina Mekenda|r
-    .trainer >> Train your pet spells
-    .target Karrina Mekenda
-    .zoneskip Dun Morogh
-    .zoneskip Ironforge
 step << Rogue
     .goto 1453/0,377.47,-8752.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Osborne|r
@@ -2420,14 +2441,55 @@ step << Warrior
     .zoneskip Dun Morogh
     .zoneskip Ironforge
 step
-    #completewith next
+    .goto 1453/0,501.200,-8468.601
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wilder Thistlenettle|r
+    .accept 167 >> Accept Oh Brother. . .
+    .accept 168 >> Accept Collecting Memories
+    .target Wilder Thistlenettle
+    .zoneskip Dun Morogh
+    .zoneskip Ironforge
+step << Hunter
+    .goto 1453/0,553.22,-8422.23
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Karrina Mekenda|r
+    .trainer >> Train your pet spells
+    .target Karrina Mekenda
+    .zoneskip Dun Morogh
+    .zoneskip Ironforge
+step
+    .goto 1453/0,634.700,-8390.800
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shoni the Shilent|r
+    .accept 2040 >> Accept Underground Assault
+    .target Shoni the Shilent
+    .zoneskip Dun Morogh
+    .zoneskip Ironforge
+step
+    #completewith TramIF
     .goto 1453/0,562.300,-8385.300,20,0
     .goto 1453/0,522.000,-8352.101
     .subzone 2257 >>Enter the Deeprun Tram
     .zoneskip Ironforge
     .zoneskip Dun Morogh
 step
-    .zone Ironforge >> Take the tram to Ironforge
+    >>|cRXP_WARN_Take the Deeprun Tram to the Ironforge side|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Monty|r on the middle platform on the Ironforge side of the Deeprun Tram
+    >>|cRXP_WARN_Skip this step if you are level 18 or above|r
+    .accept 6661 >> Accept Deeprun Rat Roundup
+    .target Monty
+    .xp >17,1
+step
+    .isOnQuest 6661
+    >>|cRXP_WARN_Use the|r |T133942:0|t[Rat Catcher's Flute] |cRXP_WARN_on |cRXP_ENEMY_Deeprun Rats|r inside the Deeprun Tram|r
+    .complete 6661,1 --Rats Captured (x5)
+    .use 17117
+    .mob Deeprun Rat
+step
+    .isQuestComplete 6661
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Monty|r inside the Deeprun Tram
+    .turnin 6661 >> Turn in Deeprun Rat Roundup
+    .target Monty
+step
+    #label TramIF
+    .zone Ironforge >> Take the tram and enter Ironforge
     .zoneskip Dun Morogh
 ]])
 
