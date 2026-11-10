@@ -2507,8 +2507,14 @@ end
 function addon.stepLogic.PhaseCheck(phase)
 
     if type(phase) == "table" then phase = phase.phase end
-
-    local currentPhase = addon.settings.profile.phase or 6
+    local default = 6
+    if addon.game == "FOREVER" then
+        default = 5
+        if  addon.settings.profile.phase then
+             addon.settings.profile.phase = 5
+        end
+    end
+    local currentPhase = addon.settings.profile.phase or default
 
     if phase and currentPhase then
         local pmin, pmax
