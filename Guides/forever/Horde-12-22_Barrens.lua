@@ -5131,6 +5131,7 @@ step << skip
     .accept 2841 >>Accept Rig Wars
     .target Nogg
 step
+    #completewith next
     .goto 1454/1,-4739.57,2036.84
     .gossipoption 95758 >>Talk to |cRXP_FRIENDLY_Sovik|r
     .isNotOnQuest 2842
@@ -5138,7 +5139,7 @@ step
 step
     .goto 1454/1,-4739.57,2036.84
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sovik|r
-    -->>|cRXP_WARN_You are required to have Rig Wars in your quest log to accept this quest|r
+    >>|cRXP_WARN_Pay attention! You need to go through his dialogue first, after which you will accept the quest automatically|r
     .accept 2842 >>Accept Chief Engineer Scooty
     .target Sovik
 step << skip --Rogue
