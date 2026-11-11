@@ -1542,6 +1542,15 @@ function addon:OnInitialize()
     addon.CreateMetaDataTable()
     addon.settings:InitializeSettings()
 
+    if addon.game == "FOREVER" and addon.settings.profile.lootSparkle then
+        addon.settings.profile.lootSparkle = true
+        local SetCVar = _G.SetCVar or C_CVar.SetCVar
+        SetCVar("outlineModeShowLootEffectWhenDisabled", 1)
+        SetCVar("graphicsOutlineMode", 0)
+        SetCVar("OutlineEngineMode", 0)
+        SetCVar("raidGraphicsOutlineMode", 0)
+        SetCVar("RAIDOutlineEngineMode", 0)
+    end
 
     -- Retail has enough helpers and massive UI differences
     if addon.gameVersion < 40000 then
