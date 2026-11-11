@@ -2991,15 +2991,11 @@ step << skip
     .target Spirit Healer
 -- .subzoneskip 108
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r and |cRXP_FRIENDLY_Captain Danuvin|r << !Hunter
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r << Hunter
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
     .turnin 109 >> Turn in Report to Gryan Stoutmantle
     .accept 12 >> Accept The People's Militia << !Hunter
     .goto 1436/0,1045.22,-10508.800
-    .target +Gryan Stoutmantle
-    .accept 102 >> Accept Patrolling Westfall << !Hunter
-    .goto 1436/0,1041.93,-10511.20 << !Hunter
-    .target +Captain Danuvin << !Hunter
+    .target Gryan Stoutmantle
 step << Human
     #optional
     .goto 1436/0,1055.27,-10128.70
