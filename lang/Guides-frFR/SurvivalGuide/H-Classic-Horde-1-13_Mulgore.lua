@@ -3254,7 +3254,7 @@ step
     .goto Undercity,34.80,33.19,15,0
     .goto Undercity,27.39,30.23,35,0
     .goto Undercity,21.89,43.35,35,0
-    .goto Tirisfal Glades,51.10,71.53,50 >> Quittez Undercity par les Égouts
+    .goto Tirisfal Glades,51.10,71.53,50 >> Sortez de Fossoyeuse par les Égouts
     .zoneskip Tirisfal Glades
     .zoneskip Tirisfal Glades
 step

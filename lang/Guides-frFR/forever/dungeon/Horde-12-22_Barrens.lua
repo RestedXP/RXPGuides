@@ -348,7 +348,7 @@ step
 step << Tauren/Hunter/Orc Shaman/Troll Shaman
     .goto 1413/1,-2607.91,-475.180
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Darsok|r
-    >>Il est au sommet de la tour
+    >>Il est en haut de la tour
     .accept 867 >>Acceptez la quête Les harpies pillardes
     .target Darsok Swiftdagger
 step << Orc/Troll
@@ -714,7 +714,7 @@ step << Rogue
 step << Rogue
     #optional
     #completewith BaronLongshore
-    +Équipez la [Cimeterre]
+    +Équipez la [CImeterre]
     .use 2027
     .itemcount 2027,1
     .itemStat 16,QUALITY,<7
@@ -847,7 +847,7 @@ step
     .turnin 1492 >>Rendez Maître des quais Dizzywig
     .turnin 890 >>Rendez la quête La livraison perdue
     .accept 892 >>Acceptez la quête La livraison perdue
-    .accept 896 >>Acceptez la quête La bonne fortune d'un mineur pauvre
+    --.accept 896 >>Accept Miner's Fortune
     .target Wharfmaster Dizzywig
 step
     .goto 1413/1,-3728.66,-835.29
@@ -965,7 +965,7 @@ step << Rogue
 step << Rogue
     #optional
     #completewith FlyToXroads1
-    +Équipez la [Cimeterre]
+    +Équipez la [CImeterre]
     .use 2027
     .itemcount 2027,1
     .itemStat 16,QUALITY,<7
@@ -981,7 +981,7 @@ step << Rogue
 step << skip
     #optional
     #completewith FlyToXroads1
-    +Équipez la [Cimeterre]
+    +Équipez la [CImeterre]
     .use 2027
     .itemcount 2027,1
     .itemStat 17,QUALITY,<7
@@ -1138,7 +1138,7 @@ step << Tauren
 step << Troll Hunter/Orc Hunter
     .goto 1413/1,-2612.98,-411.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Parlez à|r |cRXP_FRIENDLY_Barg|r
-    >>|cRXP_BUY_Achetez des|r [Flèches pointues] |cRXP_BUY_à Kayren|r
+    >>|cRXP_BUY_Achetez des|r [Flèche grossières] |cRXP_BUY_à Paelarin|r
     .collect 2515,1200,850,1 << Hunter --Sharp Arrow (1200)
     .target Barg
 step << Tauren Hunter
@@ -1734,7 +1734,7 @@ step
 step
     .goto 1454/1,-4160.01,1483.17
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|r |cRXP_FRIENDLY_Arnok|r
-    >>Passez cette étape si vous avez pas assez d'[Étoffe de lin] pour monter votre compétence à 50
+    >>Passez cette étape si vous n'avez pas assez d'[Etoffe de lin] pour atteindre une compétence de 50
     .train 3274 >> Apprenez Premiers soins compagnon
     .target Arnok
     .skill firstaid,<40,1
@@ -2218,6 +2218,48 @@ step
     .target Magistrate Sevren
     .isQuestTurnedIn 440
 step
+    .goto 1420/0,74.200,2022.700
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Deathguard Linnea::1495|r
+    >>|cRXP_WARN_Ceci est une pré-quête pour "The Courroux of Rath'mael"|r
+    .accept 356 >>Acceptez la quête Patrouille d'arrière-garde
+    .target Deathguard Linnea::1495
+step
+    #loop
+	.goto 1420/0,-324.55,2000.48,0
+	.goto 1420/0,-324.55,2000.48,50,0
+	.goto 1420/0,-330.88,2040.84,50,0
+	.goto 1420/0,-359.34,2073.38,50,0
+	.goto 1420/0,-421.25,2070.07,50,0
+	.goto 1420/0,-464.63,2070.37,50,0
+	.goto 1420/0,-516.14,2017.05,50,0
+	.goto 1420/0,-466.44,1986.02,50,0
+	.goto 1420/0,-436.61,1951.670,50,0
+	.goto 1420/0,-355.28,1970.35,50,0
+    >>Tuez les |cRXP_ENEMY_Horreurs sanguinolentes|r et les |cRXP_ENEMY_Esprits vagabonds|r
+    .complete 356,1 --Bleeding Horror (8)
+    .mob +Bleeding Horror
+    .complete 356,2 --Wandering Spirit (8)
+    .mob +Wandering Spirit
+step
+    .goto 1420/0,73.800,2022.300
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Deathguard Linnea::1495|r
+    >>|cRXP_WARN_Ceci est une pré-quête pour "The Courroux of Rath'mael"|r
+    .turnin 356 >>Rendez la quête Patrouille d'arrière-garde
+    .target Deathguard Linnea::1495
+    .accept 99156 >>Acceptez la quête Patrouille d'arrière-garde
+step
+    .goto 1420/0,-765.200,2518.700
+    >>Tuez |cRXP_ENEMY_Riptear|r |cRXP_WARN_(niveau 13 élite)|r. Pillagez-le pour |T134339:0|t[|cRXP_LOOT_Riptear's Cœur|r]
+    >>|cRXP_WARN_Ceci est une pré-quête pour "The Courroux of Rath'mael"|r
+    .complete 99156,1 --|1/1 Riptear's Heart
+    .mob Riptear
+step
+    .goto 1420/0,74.200,2022.400
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Deathguard Linnea::1495|r
+    >>|cRXP_WARN_Ceci est une pré-quête pour "The Courroux of Rath'mael"|r
+    .turnin 99156 >>Rendez la quête Patrouille d'arrière-garde
+    .target Deathguard Linnea::1495
+step
     .goto 1420/0,84.900,2023.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Deathguard Kristof::251001|r
     .accept 92422 >>Acceptez la quête Le Courroux de Rath'mael
@@ -2253,6 +2295,14 @@ step << Tauren/Hunter/Orc Shaman/Troll Shaman
     .fp Undercity >>Prenez le chemin de vol de Fossoyeuse
     .target Michael Garrett::4551
 step
+    .goto 1458/0,404.63,1434.67
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Maître apothicaire Faranell|r et à l' |cRXP_FRIENDLY_Apothicaire Zinge|r à l'Apothicarium
+    >>|cRXP_WARN_Ceci est une pré-quête pour "La Peste nouvelle"|r
+    .accept 450 >>Acceptez la quête Une recette mortelle
+    .target Master Apothecary Faranell
+    .isQuestTurnedIn 447
+step
+    #optional
     .goto 1458/0,344.000,1423.800,50,0
     .goto 1458/0,373.200,1362.100,50,0
     .goto 1458/0,428.400,1417.700
@@ -2293,7 +2343,7 @@ step << Tauren/Hunter/Orc Shaman/Troll Shaman
     .goto 1458/0,610.42,1684.44,35,0
     .goto 1458/0,663.19,1600.46,35,0
     .goto 1420/0,724.25,1682.66,50,0
-    .zone Tirisfal Glades >>Quittez Undercity par les Égouts
+    .zone Tirisfal Glades >>Sortez de Fossoyeuse par les Égouts
 step << Tauren/Hunter/Orc Shaman/Troll Shaman
     .isQuestAvailable 92401
     .isNotOnQuest 92401
@@ -2322,12 +2372,95 @@ step << !Tauren !Hunter !Shaman/Skyborne
     .fly Sepulcher >>Envolez-vous vers Sepulcher
     .target Michael Garrett::4551
 step
-    #label AFrightenedRequest
     .goto 1421/0,1579.600,461.700
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tabitha Heartweaver::250686|r
     .accept 92401 >>Acceptez la quête Une requête effrayée
     .target Tabitha Heartweaver::250686
 step
+    .goto Silverpine Forest,42.98,73.22
+    >>Tuez l' |cRXP_ENEMY_Apothicaire Berard|r. Ramassez son |cRXP_LOOT_Livre|r situé sur l'étagère
+    >>|cRXP_WARN_Ceci devrait être complété en groupe|r
+    .complete 450,1 --Berard's Journal (1)
+    .mob Apothecary Berard
+    .isQuestTurnedIn 447
+step
+    .goto 1421/0,1649.400,522.500
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Apothecary Renferrel::1937|r
+    >>|cRXP_WARN_Ceci est une pré-quête pour "La Peste nouvelle"|r
+    .turnin 450 >>Rendez la quête Une recette mortelle
+    .accept 451 >>Acceptez la quête Une recette mortelle
+    .target Apothecary Renferrel::1937
+    .isQuestTurnedIn 447
+step
+    #completewith LakeSkulkerMoss
+    >>Tuez les |cRXP_ENEMY_Vile Fins|r. Pillagez-les pour |T134339:0|t[|cRXP_LOOT_Hardened Tumor|r]
+    .complete 451,3 --|1/1 Hardened Tumor
+    .mob Vile Fin Shorecreeper
+    .mob Vile Fin Tidecaller
+    .mob Vile Fin Tidehunter
+    .mob Vile Fin Shredder
+    .mob Vile Fin Lakestalker
+    .mob Vile Fin Oracle
+    .isQuestTurnedIn 447
+step
+    #loop
+    .goto 1421/0,214.000,871.700,0
+    .goto 1421/0,214.000,871.700,35,0
+    .goto 1421/0,134.800,932.100,35,0
+    .goto 1421/0,287.100,1117.300,35,0
+    >>Tuez les |cRXP_ENEMY_Lake Rampant|r. Pillagez-les pour |T134186:0|t[|cRXP_LOOT_Lake Rampant Moss|r]
+    .complete 451,2 --|6/6 Lake Creeper Moss
+    .mob Lake Creeper
+    .mob Elder Lake Creeper
+    .isQuestTurnedIn 447
+step
+    #label LakeSkulkerMoss
+    #loop
+    .goto 1421/0,499.300,645.000,0
+    .goto 1421/0,499.300,645.000,35,0
+    .goto 1421/0,300.300,724.800,35,0
+    >>Tuez les |cRXP_ENEMY_Lake Skulker|r. Pillagez-les pour |T134186:0|t[|cRXP_LOOT_Lake Skuler Moss|r]
+    .complete 451,1 --|6/6 Lake Skulker Moss
+    .mob Lake Skulker
+    .mob Elder Lake Skulker
+    .isQuestTurnedIn 447
+step
+    #label AFrightenedRequest
+    #loop
+    .goto 1421/0,694.600,1323.800,0
+    .goto 1421/0,694.600,1323.800,30,0
+    .goto 1421/0,964.900,1167.900,30,0
+    .goto 1421/0,1061.100,1032.000,30,0
+    .goto 1421/0,1089.000,884.900,30,0
+    >>Tuez les |cRXP_ENEMY_Vile Fins|r. Pillagez-les pour |T134339:0|t[|cRXP_LOOT_Hardened Tumor|r]
+    .complete 451,3 --|1/1 Hardened Tumor
+    .mob Vile Fin Shorecreeper
+    .mob Vile Fin Tidecaller
+    .mob Vile Fin Tidehunter
+    .mob Vile Fin Shredder
+    .mob Vile Fin Lakestalker
+    .mob Vile Fin Oracle
+    .isQuestTurnedIn 447
+step
+    #completewith EnterRoL
+    .zone Undercity >>Voyagez à Undercity
+step
+    .goto 1458/0,404.500,1434.700
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Master Apothecary Faranell::2055|r
+    >>|cRXP_WARN_Ceci est une pré-quête pour "La Peste nouvelle"|r
+    .target Master Apothecary Faranell::2055
+    .turnin 451 >>Rendez la quête Une recette mortelle
+    .isQuestComplete 451
+step
+    .goto 1458/0,344.000,1423.800,50,0
+    .goto 1458/0,373.200,1362.100,50,0
+    .goto 1458/0,428.400,1417.700
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Theodore Griffs::11835|r
+    .accept 95216 >>Acceptez la quête La Peste nouvelle
+    .target Theodore Griffs::11835
+    .isQuestTurnedIn 451
+step
+    #optional
     #completewith next
     .zoneskip Silverpine Forest,1
     .goto 1421/0,1533.96,474.43
@@ -2365,7 +2498,7 @@ step
     >>Ramassez et utilisez le |T4504543:0|t[|cRXP_LOOT_Crest of Lordaeron|r] pour commencer la quête
     >>|cRXP_WARN_Elle a 5 emplacements d'apparition possibles|r
     .collect 275521,1,95204 --Crest of Lordaeron (1)
-    .accept 95204 >>Acceptez la quête Crest of Lordaeron
+    .accept 95204 >>Acceptez la quête Écu de Lordaeron
     .use 275521
 step
     .isOnQuest 95216
@@ -2416,7 +2549,7 @@ step
     >>Ramassez et utilisez le |T4504543:0|t[|cRXP_LOOT_Crest of Lordaeron|r] pour commencer la quête
     >>|cRXP_WARN_Elle a 5 emplacements d'apparition possibles|r
     .collect 275521,1,95204 --Crest of Lordaeron (1)
-    .accept 95204 >>Acceptez la quête Écu de Lordaeron
+    .accept 95204 >>Acceptez la quête Crest of Lordaeron
     .use 275521
 step
     .goto 1458/0,188.400,1804.500
@@ -2766,11 +2899,11 @@ step
 step
     #optional
     #completewith RapHornsPickup
-    .destroy 10327 >>Détruisez la [Corne d'Echeyakee] comme vous n'en avez plus besoin
+    .destroy 10327 >>Détruisez la [Corne d'Echeyakee], vous n'en aurez plus besoin
 step << Hunter
     .goto 1413/1,-2612.98,-411.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Parlez à|r |cRXP_FRIENDLY_Barg|r
-    >>|cRXP_BUY_Achetez des|r [Flèches pointues] |cRXP_BUY_à Kayren|r
+    >>|cRXP_BUY_Achetez des|r [Flèche grossières] |cRXP_BUY_à Paelarin|r
     .collect 2515,1800,888,1 << Hunter --Sharp Arrow (1800)
     .target Barg
 step
@@ -2805,7 +2938,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sputtervalve|r
     .turnin 902 >>Rendez la quête Samophlange
     .target Sputtervalve
-step
+step << skip
     .goto 1413/1,-3796.55,-985.28
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Dizzywig|r
     .turnin 896 >> Rendez la quête La bonne fortune d'un mineur pauvre
@@ -3061,7 +3194,7 @@ step
     .itemcount 5165,1
 step << Hunter
     .goto 1413/1,-2556.23,-351.54
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Parlez à|r |cRXP_FRIENDLY_Uthrok|r|cRXP_BUY_. Achetez un|r [Carquois moyen] |cRXP_BUY_à Uthrok|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Parlez à|r |cRXP_FRIENDLY_Uthrok|r|cRXP_BUY_. Achetez un|r [Carquoi moyen] |cRXP_BUY_à Uthrok|r
     .collect 11362,1,896,1 --Medium Quiver (1)
     .collect 2515,2200,896,1 --Sharp Arrow (2200)
     .target Uthrok
@@ -4472,7 +4605,7 @@ step
     #optional
     #completewith EnterWC
     >>Cueillez les |cRXP_PICK_Serpentbloom|r sur le sol
-    >>Lancez [Découverte d'herbes] pour les voir sur votre minicarte
+    >>Utilisez [Découverte d'herbes] pour les voir sur votre minicarte
     .complete 962,1 --Serpentbloom (10)
     .skill herbalism,<1,1
     .isOnQuest 962
@@ -4521,7 +4654,7 @@ step
     #completewith GlowingShard
     >>Cueillez les |cRXP_PICK_Serpentbloom|r sur le sol
     >>|cRXP_WARN_Il est recommandé qu'au maximum 3 joueurs fassent cette quête si vous ne faites le donjon qu'une seule fois. Il n'y a pas assez de|r |cRXP_PICK_Fleur de serpent|r |cRXP_WARN_pour tout le monde|r
-    >>Lancez [Découverte d'herbes] pour les voir sur votre minicarte
+    >>Utilisez [Découverte d'herbes] pour les voir sur votre minicarte
     .complete 962,1 --Serpentbloom (10)
     .skill herbalism,<1,1
     .isOnQuest 962
@@ -4589,7 +4722,7 @@ step
     #optional
     #completewith Ectoplasms
     >>Cueillez les |cRXP_PICK_Serpentbloom|r sur le sol
-    >>Lancez [Découverte d'herbes] pour les voir sur votre minicarte
+    >>Utilisez [Découverte d'herbes] pour les voir sur votre minicarte
     >>|cRXP_WARN_La plupart des |cRXP_PICK_Fleur de serpent|r devraient avoir repoussé après avoir tué le Boss final !|r
     .complete 962,1 --Serpentbloom (10)
     .skill herbalism,<1,1
@@ -4649,7 +4782,7 @@ step
     #optional
     >>Cueillez les |cRXP_PICK_Serpentbloom|r sur le sol
     >>|cRXP_WARN_Il est recommandé qu'au maximum 3 joueurs fassent cette quête si vous ne faites le donjon qu'une seule fois. Il n'y a pas assez de|r |cRXP_PICK_Fleur de serpent|r |cRXP_WARN_pour tout le monde|r
-    >>Lancez [Découverte d'herbes] pour les voir sur votre minicarte
+    >>Utilisez [Découverte d'herbes] pour les voir sur votre minicarte
     .complete 962,1 --Serpentbloom (10)
     .skill herbalism,<1,1
     .isOnQuest 962
@@ -5011,6 +5144,16 @@ step << Shaman
     .turnin 1530 >>Rendez la quête L'appel de l'eau
     .accept 1535 >>Acceptez la quête L'appel de l'eau
     .target Brine
+step << Shaman
+    .goto 1413/1,-1858.04,-3572.92
+    .use 7766 >> Remplissez votre [Outre marron vide] au point d'eau près de la hutte de Brine
+    .complete 1535,1 --Filled Brown Waterskin (1)
+step << Shaman
+    .goto 1413/1,-1776.98,-3617.51
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Brine|r
+    .turnin 1535 >>Rendez la quête L'appel de l'eau
+    .accept 1536 >>Acceptez la quête L'appel de l'eau
+    .target Brine
 step << Warlock/Shaman
     #completewith next
     .subzone 378 >>Revenez au Camp Taurajo
@@ -5038,7 +5181,7 @@ step << Warlock
     .use 6626
 step << Warlock
     .goto 1454/1,-4377.13,1804.77
-    >>Tuez les |cRXP_ENEMY_Summoned Succubus|r
+    >>Tuez la |cRXP_ENEMY_Summoned Succubus|r
     .complete 1513,1 --Kill Summoned Succubus (1)
     .mob Summoned Succubus
     .use 6626

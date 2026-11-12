@@ -853,7 +853,8 @@ step
     #softcore
     #completewith RazorHill1
     .goto 1411/1,-4326.01,-41.23
-    .deathskip >> |cRXP_WARN_Mourez et ressuscitez au |cRXP_FRIENDLY_Gardien des âmes|r près de la flèche|r
+    .deathskip >>Mourez et ressuscitez au |cRXP_FRIENDLY_Gardien des âmes|r
+    >>|cRXP_WARN_Assurez-vous d'être sur la flèche quand vous mourez!|r
     .target Gardien des âmes
 step
     #softcore
@@ -3869,7 +3870,7 @@ step << Warrior
     .isQuestAvailable 1498
 step << Warrior
     .goto 1420/0,360.04,2376.14
-    >>|cRXP_WARN_Cliquez sur le|r |cRXP_WARN_Déclencheur du mausolée|r |cRXP_WARN_au sol. Cela va invoquer|r |cRXP_ENEMY_Ulag.|r |cRXP_WARN_Tuez-le|r
+    >>Cliquez sur le Déclencheur du mausolée sur le sol. Cela va invoquer |cRXP_ENEMY_Ulag.|r. Tuez-le
     .complete 1819,1 --Ulag the Cleaver (1)
     .mob Ulag the Cleaver
     .isQuestAvailable 1498
@@ -4024,22 +4025,22 @@ step
     #label LinneaTurnin
     .goto 1420/0,73.800,2022.300
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Deathguard Linnea::1495|r
-    >>|cRXP_WARN_Ceci est une quête préalable pour "The Courroux of Rath'mael"|r
+    >>|cRXP_WARN_Ceci est une pré-quête pour "The Courroux of Rath'mael"|r
     .turnin 356 >>Rendez la quête Patrouille d'arrière-garde
     .target Deathguard Linnea::1495
     .accept 99156 >>Acceptez la quête Patrouille d'arrière-garde
     .dungeon ROL
 step
     .goto 1420/0,-765.200,2518.700
-    >>Tuez |cRXP_ENEMY_Riptear|r |cRXP_WARN_(level 13 elite)|r. Ramassez le |T134339:0|t[|cRXP_LOOT_Riptear's Cœur|r]
-    >>|cRXP_WARN_Ceci est une quête préalable pour "The Courroux of Rath'mael"|r
+    >>Tuez |cRXP_ENEMY_Riptear|r |cRXP_WARN_(niveau 13 élite)|r. Pillagez-le pour |T134339:0|t[|cRXP_LOOT_Riptear's Cœur|r]
+    >>|cRXP_WARN_Ceci est une pré-quête pour "The Courroux of Rath'mael"|r
     .complete 99156,1 --|1/1 Riptear's Heart
     .mob Riptear
     .dungeon ROL
 step
     .goto 1420/0,74.200,2022.400
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Deathguard Linnea::1495|r
-    >>|cRXP_WARN_Ceci est une quête préalable pour "The Courroux of Rath'mael"|r
+    >>|cRXP_WARN_Ceci est une pré-quête pour "The Courroux of Rath'mael"|r
     .turnin 99156 >>Rendez la quête Patrouille d'arrière-garde
     .target Deathguard Linnea::1495
     .dungeon ROL
@@ -4153,7 +4154,7 @@ step << Warlock
     .goto 1458/0,610.42,1684.44,35,0
     .goto 1458/0,663.19,1600.46,35,0
     .goto 1420/0,724.25,1682.66,50,0
-    .zone Tirisfal Glades >> Quittez Undercity par les Égouts
+    .zone Tirisfal Glades >> Sortez de Fossoyeuse par les Égouts
     .zoneskip Tirisfal Glades
 step << Warlock
     #optional
@@ -4332,7 +4333,7 @@ step
     .goto 1458/0,610.42,1684.44,35,0
     .goto 1458/0,663.19,1600.46,35,0
     .goto 1420/0,724.25,1682.66,50,0
-    .zone Tirisfal Glades >> Quittez Undercity par les Égouts
+    .zone Tirisfal Glades >> Sortez de Fossoyeuse par les Égouts
     .zoneskip Silverpine Forest
 step
     #label Entersilverpine

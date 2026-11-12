@@ -93,7 +93,7 @@ step << Rogue
     .goto Elwynn Forest,25.2,92.7,70,0
     .goto Elwynn Forest,27.0,93.9
     >>Utilisez |T133644:0|t[Vol à la tire] sur les |cRXP_ENEMY_Estafettes Rivepattes|r et les |cRXP_ENEMY_Rivepattes chétifs|r. Dépouillez-les pour obtenir le |T134327:0|t[|cRXP_LOOT_Morceau inférieur gauche de carte]|r
-    >>Vous devez être en [Camouflage] pour utiliser votre [Vol à la tire]
+    >>Vous devez être en [Camouflage] pour utiliser [Vol à la tire]
     .collect 203787,1 -- Bottom-Left Map Piece (1)
     .mob Riverpaw Outrunner
     .mob Riverpaw Runt
@@ -103,7 +103,7 @@ step << Rogue
     .goto Elwynn Forest,40.5,82.3,25,0
     .goto Elwynn Forest,37.71,83.76
     >>Utilisez le |T133644:0|t[Vol à la tire] sur les |cRXP_ENEMY_Mineurs kobolds|r et les |cRXP_ENEMY_Tunneliers kobolds|r. Dépouillez-les pour le |T134327:0|t|cRXP_LOOT_[Morceau supérieur droit de carte]|r
-    >>Vous devez être en [Camouflage] pour utiliser votre [Vol à la tire]
+    >>Vous devez être en [Camouflage] pour utiliser [Vol à la tire]
     .collect 203784,1 -- Top-Right Map Piece (1)
     .mob Kobold Miner
     .mob Kobold Tunneler
@@ -114,7 +114,7 @@ step << Rogue
     .goto Elwynn Forest,70.8,79.8,60,0
     .goto Elwynn Forest,89.2,78.8
     >>Utilisez|T133644:0|t[Vol à la tire] sur les |cRXP_ENEMY_Défias|r. Récupérez le |T134327:0|t[|cRXP_LOOT_Morceau supérieur gauche de carte]|r
-    >>Vous devez être en [Camouflage] pour utiliser votre [Vol à la tire]
+    >>Vous devez être en [Camouflage] pour utiliser [Vol à la tire]
     >>|cRXP_WARN_Note: Celui-ci peut aussi se trouver sur un autre membre des |cRXP_ENEMY_Défias|r dans la Forêt d'Elwynn|r
     .collect 203785,1 -- Top-Left Map Piece (1)
     .mob Defias Bandit
@@ -126,7 +126,7 @@ step << Rogue
     .goto Elwynn Forest,83.2,87.0,60,0
     .goto Elwynn Forest,75.4,82.4
     >>Utilisez |T133644:0|t[Vol à la tire] sur les |cRXP_ENEMY_Fourrageurs murlocs|r et les |cRXP_ENEMY_Rôdeurs murlocs|r. Dépouillez-les pour obtenir le |T134269:0|t[|cRXP_LOOT_Morceau inférieur droit de carte|r]
-    >>Vous devez être en [Camouflage] pour utiliser votre [Vol à la tire]
+    >>Vous devez être en [Camouflage] pour utiliser [Vol à la tire]
     >>|cRXP_WARN_Note: Vous pouvez aussi l'obtenir sur n'importe quel autre |cRXP_ENEMY_Murloc|r de la Forêt d’Elwynn|r
     .collect 203786,1 -- Bottom-Right Map Piece (1)
     .mob Murloc Forager
@@ -179,7 +179,7 @@ step << Rogue
     #season 2
     .goto Dun Morogh,77.86,61.66
     >>Utilisez |T133644:0|t[Vol à la tire] sur les |cRXP_ENEMY_Espion Sombrefer|r. Récupérez le |T134327:0|t[|cRXP_LOOT_Morceau inférieur gauche de carte]|r
-    >>Vous devez être en [Camouflage] pour utiliser votre [Vol à la tire]
+    >>Vous devez être en [Camouflage] pour utiliser [Vol à la tire]
     .collect 208219,1 -- Bottom-Left Map Piece (1)
     .mob Dark Iron Spy
     .train 398196,1
@@ -187,7 +187,7 @@ step << Rogue
     #season 2
     .goto Dun Morogh,25.4,50.8
     >>Utilisez |T133644:0|t[Vol à la tire] sur les |cRXP_ENEMY_Trolls Crins-de-givre|r. Récupérez le |T134327:0|t[|cRXP_LOOT_Morceau supérieur droit de carte|r]
-    >>Vous devez être en [Camouflage] pour utiliser votre [Vol à la tire]
+    >>Vous devez être en [Camouflage] pour utiliser [Vol à la tire]
     .collect 208213,1 -- Top-Right Map Piece (1)
     .mob Frostmane Headhunter
     .mob Frostmane Hideskinner
@@ -197,7 +197,7 @@ step << Rogue
     #season 2
     .goto Dun Morogh,70.8,56.0
     >>Utilisez |T133644:0|t[Vol à la tire] sur les |cRXP_ENEMY_Brise-crânes Mâcherocs|r et les |cRXP_ENEMY_Briseurs d’os Mâcherocs|r. Dépouillez-les pour le |T134327:0|t[|cRXP_LOOT_Morceau supérieur gauche de carte]|r
-    >>Vous devez être en [Camouflage] pour utiliser votre [Vol à la tire]
+    >>Vous devez être en [Camouflage] pour utiliser [Vol à la tire]
     .collect 208215,1 -- Top-Left Map Piece (1)
     .mob Rockjaw Skullthumper
     .mob Rockjaw Bonesnapper
@@ -206,7 +206,7 @@ step << Rogue
     #season 2
     .goto Dun Morogh,26.0,41.8
     >>Utilisez le |T133644:0|t[Vol à la tire] sur les |cRXP_ENEMY_Gnomes lépreux|r. Récupérez le |T134269:0|t[|cRXP_LOOT_Morceau inférieur droit de carte]|r
-    >>Vous devez être en [Camouflage] pour utiliser votre [Vol à la tire]
+    >>Vous devez être en [Camouflage] pour utiliser [Vol à la tire]
     .collect 208218,1 -- Bottom-Right Map Piece (1)
     .mob Leper Gnome
     .train 398196,1
@@ -280,7 +280,7 @@ step << Rogue
     .goto Teldrassil,46.8,54.6,60,0
     .goto Teldrassil,44.2,59.2
     >>Tuez ou utilisez |T133644:0|t[Vol à la tire] sur les |cRXP_ENEMY_Furbolgs Pin-tordu|r. Dépouillez-les pour obtenir le |T134327:0|t[|cRXP_LOOT_Morceau supérieur gauche de carte]|r
-    >>Vous devez être en [Camouflage] pour utiliser votre [Vol à la tire]
+    >>Vous devez être en [Camouflage] pour utiliser [Vol à la tire]
     .collect 208602,1 -- Top-Left Map Piece (1)
     .mob Gnarlpine Ambusher
     .mob Gnarlpine Shaman
@@ -294,7 +294,7 @@ step << Rogue
     .goto Teldrassil,34.6,28.8,60,0
     .goto Teldrassil,37.8,43.0
     >>Tuez ou utilisez |T133644:0|tVol à la tire sur les |cRXP_ENEMY_Harpies Plumesang|r. Dépouillez-les pour le |T134327:0|t[|cRXP_LOOT_Morceau supérieur gauche de carte]|r
-    >>Vous devez être en [Camouflage] pour utiliser votre [Vol à la tire]
+    >>Vous devez être en [Camouflage] pour utiliser [Vol à la tire]
     .collect 208603,1 -- Bottom-Right Map Piece (1)
     .mob Bloodfeather Harpy
     .mob Bloodfeather Rogue
@@ -487,7 +487,7 @@ step << Rogue
     .goto Westfall,46.39,37.38,60,0
     .goto Westfall,48.27,46.91
     >>Utilisez |T133644:0|t[Vol à la tire] sur les |cRXP_ENEMY_Défias|r dans toute la Marche de l’Ouest. Dépouillez-les pour obtenir une |T133463:0|t[|cRXP_LOOT_Enveloppe discrète|r]
-    >>Vous devez être en [Camouflage] pour utiliser votre [Vol à la tire]
+    >>Vous devez être en [Camouflage] pour utiliser [Vol à la tire]
     .collect 209031,1 -- Discreet Envelope (1)
     .mob Defias Trapper
     .mob Defias Smuggler
@@ -527,7 +527,7 @@ step << Rogue
     #season 2
     .goto Dun Morogh,77.86,61.66
     >>Utilisez |T133644:0|t[Vol à la tire] sur les |cRXP_ENEMY_Espions Sombrefers|r. Dépouillez-les pour un |T133875:0|t[|cRXP_LOOT_Coffret Sombrefer|r]
-    >>Vous devez être en [Camouflage] pour utiliser votre [Vol à la tire]
+    >>Vous devez être en [Camouflage] pour utiliser [Vol à la tire]
     .collect 208838,1 -- Dark Iron Lockbox (1)
     .mob Dark Iron Spy
     .train 400099,1
@@ -591,7 +591,7 @@ step << Rogue
     #season 2
     .goto Elwynn Forest,57.5,48.2
     >>Utilisez |T133644:0|t[Vol à la tire] sur |cRXP_ENEMY_Garrick Ladétrousse|r pour la |T134331:0|t[Note de Cutty]
-    >>Vous devez être en [Camouflage] pour utiliser votre [Vol à la tire]
+    >>Vous devez être en [Camouflage] pour utiliser [Vol à la tire]
     .collect 203723,1 -- Cutty's Note (1)
     .mob Garrick Padfoot
     .train 400094,1
@@ -624,7 +624,7 @@ step << Rogue
     #season 2
     .goto Dun Morogh,77.86,61.66
     >>Utilisez |T133644:0|t[Vol à la tire] sur les |cRXP_ENEMY_Espions Sombrefers|r. Récupérez la |T134331:0|t[Note de Ratnoir]
-    >>Vous devez être en [Camouflage] pour utiliser votre [Vol à la tire]
+    >>Vous devez être en [Camouflage] pour utiliser [Vol à la tire]
     .collect 208205,1 --Blackrat's Note (1)
     .mob Dark Iron Spy
     .train 400094,1
@@ -657,7 +657,7 @@ step << Rogue
     .goto Westfall,50.81,47.15,50,0
     .goto Westfall,51.093,54.642
     >>Utilisez le|T133644:0|t[Vol à la tire] sur l' |cRXP_ENEMY_Eclaireur défias|r pour la |T134419:0|t[|cRXP_FRIENDLY_Rune de Coup de sabre|r]
-    >>Vous devez être en [Camouflage] pour utiliser votre [Vol à la tire]
+    >>Vous devez être en [Camouflage] pour utiliser [Vol à la tire]
     .collect 208772,1 -- Rune of Saber Slash (1)
     .mob Defias Scout
     .train 424785,1

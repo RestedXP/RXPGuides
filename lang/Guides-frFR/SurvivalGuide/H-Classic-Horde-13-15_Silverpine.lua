@@ -574,7 +574,7 @@ step << Rogue
 step << Rogue
     #optional
     #completewith PyrewoodAmbush
-    +Équipez la [Cimeterre]
+    +Équipez la [CImeterre]
     .use 2027
     .itemcount 2027,1
     .itemStat 16,QUALITY,<7

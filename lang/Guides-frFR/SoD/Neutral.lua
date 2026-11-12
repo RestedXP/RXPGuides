@@ -382,7 +382,7 @@ step << Druid
     .train 410028,1
 step << Druid
     #completewith next
-    .zone Hillsbrad Foothills >> Voyagez aux Contreforts de Hautebrande
+    .zone Hillsbrad Foothills >> Voyagez aux Contreforts d'Hillsbrad
     .train 410028,1
 step << Druid
     .goto Hillsbrad Foothills,36.914,76.142

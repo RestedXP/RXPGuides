@@ -2094,7 +2094,7 @@ step << Warlock
     .goto 1458/0,610.42,1684.44,35,0
     .goto 1458/0,663.19,1600.46,35,0
     .goto 1420/0,724.25,1682.66,50,0
-    .zone Tirisfal Glades >> Quittez Undercity par les Égouts
+    .zone Tirisfal Glades >> Sortez de Fossoyeuse par les Égouts
     .zoneskip Tirisfal Glades
 step << Warlock
     #completewith next
@@ -2261,7 +2261,7 @@ step << Rogue
 step << Rogue
     #optional
     #completewith LogoutSkip1
-    +Équipez les [Couteau de lancer perçant]
+    +Équipez le [Couteau de lancer perçant]
     .use 3107
     .itemcount 3107,1
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.3
@@ -2878,25 +2878,25 @@ step << !Paladin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à la |cRXP_FRIENDLY_Nécrogarde Linnea|r
     .turnin 356 >>Rendez la quête Patrouille d'arrière-garde
     .target Deathguard Linnea
-step
+step << !Paladin
     .goto 1420/0,73.800,2022.300
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Deathguard Linnea::1495|r
-    >>|cRXP_WARN_Ceci est une quête préalable pour "The Courroux of Rath'mael"|r
+    >>|cRXP_WARN_Ceci est une pré-quête pour "The Courroux of Rath'mael"|r
     .turnin 356 >>Rendez la quête Patrouille d'arrière-garde
     .target Deathguard Linnea::1495
     .accept 99156 >>Acceptez la quête Patrouille d'arrière-garde
     .dungeon ROL
-step
+step << !Paladin
     .goto 1420/0,-765.200,2518.700
-    >>Tuez |cRXP_ENEMY_Riptear|r |cRXP_WARN_(level 13 elite)|r. Ramassez le |T134339:0|t[|cRXP_LOOT_Riptear's Cœur|r]
-    >>|cRXP_WARN_Ceci est une quête préalable pour "The Courroux of Rath'mael"|r
+    >>Tuez |cRXP_ENEMY_Riptear|r |cRXP_WARN_(niveau 13 élite)|r. Pillagez-le pour |T134339:0|t[|cRXP_LOOT_Riptear's Cœur|r]
+    >>|cRXP_WARN_Ceci est une pré-quête pour "The Courroux of Rath'mael"|r
     .complete 99156,1 --|1/1 Riptear's Heart
     .mob Riptear
     .dungeon ROL
-step
+step << !Paladin
     .goto 1420/0,74.200,2022.400
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Deathguard Linnea::1495|r
-    >>|cRXP_WARN_Ceci est une quête préalable pour "The Courroux of Rath'mael"|r
+    >>|cRXP_WARN_Ceci est une pré-quête pour "The Courroux of Rath'mael"|r
     .turnin 99156 >>Rendez la quête Patrouille d'arrière-garde
     .target Deathguard Linnea::1495
     .dungeon ROL
@@ -2940,6 +2940,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Glix Xizzix|r
     .turnin 98545 >>Rendez la quête La lettre de Leonid
     .target Glix Xizzix
+    .isOnQuest 98545
 step << Rogue
     #ssf
     .goto 1458/0,133.71,1561.730
@@ -3183,6 +3184,28 @@ step << Paladin
     .turnin 356 >>Rendez la quête Patrouille d'arrière-garde
     .target Deathguard Linnea
 step << Paladin
+    .goto 1420/0,73.800,2022.300
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Deathguard Linnea::1495|r
+    >>|cRXP_WARN_Ceci est une pré-quête pour "The Courroux of Rath'mael"|r
+    .turnin 356 >>Rendez la quête Patrouille d'arrière-garde
+    .target Deathguard Linnea::1495
+    .accept 99156 >>Acceptez la quête Patrouille d'arrière-garde
+    .dungeon ROL
+step << Paladin
+    .goto 1420/0,-765.200,2518.700
+    >>Tuez |cRXP_ENEMY_Riptear|r |cRXP_WARN_(niveau 13 élite)|r. Pillagez-le pour |T134339:0|t[|cRXP_LOOT_Riptear's Cœur|r]
+    >>|cRXP_WARN_Ceci est une pré-quête pour "The Courroux of Rath'mael"|r
+    .complete 99156,1 --|1/1 Riptear's Heart
+    .mob Riptear
+    .dungeon ROL
+step << Paladin
+    .goto 1420/0,74.200,2022.400
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Deathguard Linnea::1495|r
+    >>|cRXP_WARN_Ceci est une pré-quête pour "The Courroux of Rath'mael"|r
+    .turnin 99156 >>Rendez la quête Patrouille d'arrière-garde
+    .target Deathguard Linnea::1495
+    .dungeon ROL
+step << Paladin
     .goto 1420/0,311.600,2251.000
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Shari Morpuits|r
     .train 678 >> Apprenez vos sorts de classe
@@ -3292,7 +3315,7 @@ step << !Paladin
     .goto 1458/0,610.42,1684.44,35,0
     .goto 1458/0,663.19,1600.46,35,0
     .goto 1420/0,724.25,1682.66,50,0
-    .zone Tirisfal Glades >> Quittez Undercity par les Égouts
+    .zone Tirisfal Glades >> Sortez de Fossoyeuse par les Égouts
 step
     #label Entersilverpine
     .goto 1420/0,629.36,1553.42
@@ -3921,7 +3944,7 @@ step << Rogue
 step << Rogue
     #optional
     #completewith Conscript
-    +Équipez la [Cimeterre]
+    +Équipez la [CImeterre]
     .use 2027
     .itemcount 2027,1
     .itemStat 16,QUALITY,<7
@@ -4031,6 +4054,18 @@ step
     .accept 1358 >> Acceptez la quête Un échantillon pour Helbrim
     .target +Apothecary Zinge
     .goto 1458/0,391.97,1442.87
+    .dungeon !ROL
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Maître apothicaire Faranell|r et à l' |cRXP_FRIENDLY_Apothicaire Zinge|r à l'Apothicarium
+    .turnin 447 >>Rendez la quête Une recette mortelle
+    .accept 450 >>Acceptez la quête Une recette mortelle
+    .target +Master Apothecary Faranell
+    .goto 1458/0,404.63,1434.67
+    .turnin 1359 >> Rendez la quête Une livraison pour Zinge
+    .accept 1358 >> Acceptez la quête Un échantillon pour Helbrim
+    .target +Apothecary Zinge
+    .goto 1458/0,391.97,1442.87
+    .dungeon ROL
 step
     .goto 1458/0,334.02,1262.17--c:Undercity,56.2,96.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Varimathras|r

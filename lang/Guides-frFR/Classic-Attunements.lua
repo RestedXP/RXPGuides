@@ -1331,8 +1331,8 @@ step
     .isQuestTurnedIn 5095
 step
     .goto Western Plaguelands,40.5,51.8
-    .use 12807 >>Cliquez sur la|cRXP_PICK_Command Tent|r, puis utilisez votre |T132484:0|t[Scourge Banner]
-	>>Ces créatures sont assez difficiles à tuer et peuvent chain-pull, faites attention
+    .use 12807 >>Cliquez sur la|cRXP_PICK_Command Tent|r, puis utilisez votre [Bannière du Fléau]
+	>>|cRXP_WARN_Ces créatures sont assez difficiles à tuer et peuvent chain-pull, faites attention|r
     .complete 5096,1 --Destroy the command tent and plant the Scourge banner in the camp (1)
 step
     .goto Tirisfal Glades,83.15,68.92

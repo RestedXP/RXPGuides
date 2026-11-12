@@ -688,14 +688,14 @@ step
     >>|T135997:0|t[Groin de broche-tripes]
     >>|T134185:0|t[Okra]
     >>|T134341:0|t[Foie de broche-tripes]
-    -->>|T4548890:0|t[Golem Isospring]
+    >>|T4548890:0|t[Isoressort de golem]
     -->>|T132995:0|t[Harvester Gyrostabilizer]
     .collect 729,3,38,1 -- Stringy Vulture Meat (3)
     .collect 730,3,38,1 -- Murloc Eye (3)
     .collect 731,3,38,1 -- Goretusk Snout (3)
     .collect 732,3,38,1 -- Okra (3)
     .collect 723,8,22,1 -- Goretusk Liver (8)
-    --.collect 255007,14,92909,1 -- Golem Isospring (14)
+    .collect 255007,14,92909,1 -- Golem Isospring (14)
     --.collect 255010,5,92909,1 -- Harvester Gyrostabilizer (5)
     .target Auctioneer Jaxon
 
@@ -826,20 +826,34 @@ step
     .isOnQuest 399
     .goto 1436/0,1602.67,-10629.67,75 >> Allez à la ferme des Alexston
     >>|cRXP_WARN_Avancez sur les autres quêtes sur votre trajet|r
-step << skip -- quests drop rate is beyond dreadful. over 50 kills to complete
+step
+    #optional
+    .itemcount 255007,10 -- only accepting this quest if they bought a bunch of isosprings from AH
     .goto 1436/0,1213.400,-10153.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Ozwin Pignondefer::253395|r dans la grange
     .target Ozwin Ironsprocket::253395
     .accept 92909 >>Acceptez la quête La moisson des moissonneurs
 step
-    #sticky
+    .isNotOnQuest 92909
     #completewith bennytime
     >>Tuez les |cRXP_ENEMY_Gardiens des moissons|r dans les champs quand vous passez à côté
     >>Dépouillez-les pour leur |cRXP_LOOT_Okras|r et leur |cRXP_LOOT_Flasques d'huile|r
     .mob Harvest Watcher
     .complete 9,1 --Havest Watcher slain (20)
     .collect 732,3,38,1 --Okra (3)
-    .collect 814,5,103,1 --Flask of Oil (5)
+    .collect 814,5,103,1,1 --Flask of Oil (5)
+step
+    #optional
+    .isOnQuest 92909
+    #completewith bennytime
+    >>Tuez les |cRXP_ENEMY_Gardiens des moissons|r dans les champs quand vous passez à côté
+    >>Récoltez-les pour le Butin: |cRXP_LOOT_Okra|r, |cRXP_LOOT_Flasks of Oil|r, |cRXP_LOOT_Golem Isosprings|r et |cRXP_LOOT_Harvester Gyrostabilizers|r
+    .mob Harvest Watcher
+    .complete 9,1 --Havest Watcher slain (20)
+    .collect 732,3,38,1 --Okra (3)
+    .collect 814,5,103,1,1 --Flask of Oil (5)
+    .complete 92909,1 -- Golem Isosprings (14)
+    .complete 92909,2 -- Harvester Gyrostabilizer (5)
 step
     .goto 1436/0,1748.27,-10672.13
     >>Ouvrez le |cRXP_PICK_Coffre d'Alexston|r. Dépouillez-le pour |cRXP_LOOT_Une simple boussole|r
@@ -977,7 +991,6 @@ step
     .goto 1436/0,1213.400,-10153.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Ozwin Pignondefer::253395|r
     .target Ozwin Ironsprocket::253395
-    .accept 92909 >>Acceptez la quête Récolter les récolteurs
     .turnin 92909 >>Rendez la quête La moisson des moissonneurs
     .itemcount 255007,14 -- Golem Isospring (14)
     .itemcount 255010,5 -- Harvester Gyrostabilizer (5)
@@ -996,6 +1009,13 @@ step
     .isQuestComplete 38
     .target Salma Saldean
 step
+    #optional
+    #completewith HarvestW
+    .isOnQuest 92909
+    >>Ramassez les |cRXP_ENEMY_Golem Isosprings|r et les |cRXP_LOOT_Harvester Gyrostabilizers|r sur les |cRXP_LOOT_Harvest Watchers|r
+    .complete 92909,1 -- Golem Isosprings (14)
+    .complete 92909,2 -- Harvester Gyrostabilizer (5)
+step
     .isQuestAvailable 38
     .goto 1436/0,1132.27,-10146.67,60,0
     .goto 1436/0,1238.67,-9907.73,80,0
@@ -1010,7 +1030,7 @@ step
     .complete 9,1 --Harvest Watcher (20)
     .mob Harvest Watcher
     .collect 732,3,38,1 --Okra (3)
-    .collect 814,5,103,1 --Flask of Oil (5)
+    .collect 814,5,103,1,1 --Flask of Oil (5)
 step
     .isQuestTurnedIn 38
     #label HarvestW
@@ -1026,7 +1046,23 @@ step
     >>Tuez les |cRXP_ENEMY_Gardiens des moissons|r. Dépouillez-les pour leur |cRXP_LOOT_Flasques d'huile|r
     .complete 9,1 --Harvest Watcher (20)
     .mob Harvest Watcher
-    .collect 814,5,103,1 --Flask of Oil (5)
+    .collect 814,5,103,1,1 --Flask of Oil (5)
+step
+    .isOnQuest 92909
+    #optional
+    .goto 1436/0,1132.27,-10146.67,60,0
+    .goto 1436/0,1238.67,-9907.73,80,0
+    .goto 1436/0,1460.22,-10224.83,80,0
+    .goto 1436/0,1132.27,-10146.67,80,0
+    .goto 1436/0,1238.67,-9907.73,80,0
+    .goto 1436/0,1460.22,-10224.83,80,0
+    .goto 1436/0,1132.27,-10146.67,60,0
+    .goto 1436/0,1460.22,-10224.83,60,0
+    .goto 1436/0,1238.67,-9907.73
+    >>Tuez les |cRXP_ENEMY_Harvest Watchers|r. Ramassez-les pour leurs |cRXP_LOOT_Golem Isosprings|r et |cRXP_LOOT_Harvester Gyrostabilizers|r
+    .complete 92909,1 -- Golem Isosprings (14)
+    .complete 92909,2 -- Harvester Gyrostabilizer (5)
+    .mob Harvest Watcher
 step
     #optional
     .isQuestComplete 9
@@ -1035,15 +1071,6 @@ step
 	.target Farmer Saldean
     .goto 1436/0,1055.27,-10128.70
     .turnin 9 >> Rendez la quête Les champs de mort
-step
-    #optional
-    .goto 1436/0,1213.400,-10153.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Ozwin Pignondefer::253395|r
-    .target Ozwin Ironsprocket::253395
-    .accept 92909 >>Acceptez la quête La moisson des moissonneurs
-    .turnin 92909 >>Rendez la quête La moisson des moissonneurs
-    .itemcount 255007,14 -- Golem Isospring (14)
-    .itemcount 255010,5 -- Harvester Gyrostabilizer (5)
 step
     .goto 1436/0,1179.52,-10382.57,75,0
     .goto 1436/0,1138.22,-10474.97,75,0
@@ -1080,7 +1107,6 @@ step
     .goto 1436/0,1213.400,-10153.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Ozwin Pignondefer::253395|r
     .target Ozwin Ironsprocket::253395
-    .accept 92909 >>Acceptez la quête La moisson des moissonneurs
     .turnin 92909 >>Rendez la quête La moisson des moissonneurs
     .itemcount 255007,14 -- Golem Isospring (14)
     .itemcount 255010,5 -- Harvester Gyrostabilizer (5)
@@ -1132,6 +1158,11 @@ step
 	.target Gryan Stoutmantle
     .goto 1436/0,1045.12,-10508.80
     .accept 65 >> Acceptez la quête La Confrérie défias
+step << Skyborne
+    .goto 1436/0,1037.42,-10628.27
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Thor|r
+    .fp Westfall >> Prenez le chemin de vol de la Marche de l'Ouest
+    .target Thor
 step
     #optional
     .isQuestComplete 102
@@ -1376,7 +1407,7 @@ step
     >>Vous avez besoin de 50 en [Cuisine] pour une quête au Bois de la Pénombre plus tard
     >>|T133971:0|t[Cuisiner] les objets suivants:
     >>|T133971:0|t[Cuisiner] les |cRXP_LOOT_[Morceau de viande de sanglier]|r en [Viande de sanglier rôtie]
-    >>|T133971:0|t[Cuisinez] les |cRXP_LOOT_[Stringy Wolf Meat]|r en [Viande de loup grillée]
+    >>|T133971:0|t[Cuisiner] les |cRXP_LOOT_[Viande de loup maigre]|r en [Viande de loup grillée]
     .usespell 2550
     .zoneskip Darkshore
     .itemcount 769,1 --Chunk of Boar Meat (1+)
@@ -1389,7 +1420,7 @@ step
     #label DarkshoreCook5
     #completewith DarkshoreBoat
     >>Vous avez besoin de 50 en [Cuisine] pour une quête au Bois de la Pénombre plus tard
-    >>|T133971:0|t[Cuisinez] les |cRXP_LOOT_[Stringy Wolf Meat]|r en [Viande de loup grillée]
+    >>|T133971:0|t[Cuisiner] les |cRXP_LOOT_[Viande de loup maigre]|r en [Viande de loup grillée]
     .usespell 2550
     .zoneskip Darkshore
     .itemcount 769,<1 --Chunk of Boar Meat (<1)
@@ -1457,7 +1488,7 @@ step
     .target Sentinel Glynda Nal'Shea
 step
     .goto 1439/1,397.45,6437.50--c:1439,38.843,43.416
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tharnariun Treetender|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|cRXP_FRIENDLY_Tharnariun Treetender|r
     .accept 2118 >> Acceptez Plagued Lands
     .target Tharnariun Treetender
 step
@@ -1575,7 +1606,7 @@ step
     .use 7586
 step
     .goto 1439/1,393.72,5993.24
-    >>Courez vers le bord du Camp Furbolg
+    >>Courrez vers le bord du Camp Furbolg
     .complete 984,1 -- Find a corrupt furbolg camp
 step
     #sticky
@@ -1661,7 +1692,7 @@ step
     .target Sentinel Glynda Nal'Shea
 step
     .goto 1439/1,397.45,6437.50--c:1439,38.843,43.416
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tharnariun Treetender|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|cRXP_FRIENDLY_Tharnariun Treetender|r
     .turnin 2118 >> Rendez la quête Terres malades
     .accept 2138 >> Acceptez la quête Nettoyage de l'infection
     .target Tharnariun Treetender
@@ -1674,7 +1705,7 @@ step
     .target Terenthis
 step
     .goto 1439/1,445.66,6535.79--c:1439,38.107,41.165
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|cRXP_FRIENDLY_Gorbold Steelhand|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Gorbold Steelhand|r
     .accept 982 >> Acceptez la quête Océan profond, mer immense
     .target Gorbold Steelhand
 step
@@ -1937,7 +1968,7 @@ step
     .isOnQuest 958
 step
     .goto 1439/1,301.89,5725.08--c:1439,40.302,59.731
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinel Tysha Moonblade|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinelle Tysha Moonblade|r
     .accept 953 >> Acceptez la quête La Chute d'Ameth'Aran
     .target Sentinel Tysha Moonblade
     .xp >17,1
@@ -1974,7 +2005,7 @@ step
 step
     .isQuestComplete 953
     .goto 1439/1,301.89,5725.08--c:1439,40.302,59.731
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinel Tysha Moonblade|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinelle Tysha Moonblade|r
     .turnin 953 >> Rendez la quête La Chute d'Ameth'Aran
     .target Sentinel Tysha Moonblade
 step
@@ -2049,38 +2080,8 @@ step
     .use 14338
 step
     #optional
-    .goto 1439/1,397.45,6437.50--c:1439,38.843,43.416
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tharnariun Treetender|r
-    .turnin 2138 >> Rendez la quête Nettoyage de l'infection
-    .accept 2139 >> Acceptez la quête Espoir de Tharnariun
-    .target Tharnariun Treetender
-    .isQuestComplete 2138
-step
-    #optional
-    .goto 1439/1,397.45,6437.50--c:1439,38.843,43.416
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tharnariun Treetender|r
-    .accept 2139 >> Acceptez la quête Espoir de Tharnariun
-    .target Tharnariun Treetender
-    .isQuestTurnedIn 2138
-step
-    .goto 1439/1,362.74,6434.58--c:1439,39.373,43.483
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Terenthis|r
-    .turnin 985 >> Rendez la quête Quelle est l’ampleur de la menace ?
-    .target Terenthis
-step
-    #optional
-    #completewith next
-    .goto 1439/1,368.83,6450.38,6,0--c:1439,39.280,43.121
-    .goto 1439/1,376.56,6447.20,6 >> Montez à l'étage--c:1439,39.162,43.194
-step
-    .goto 1439/1,384.35,6431.43--c:1439,39.043,43.555
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinel Elissa Starbreeze|r à l'étage
-    .accept 965 >> Acceptez la quête La Tour d'Althalaxx
-    .target Sentinel Elissa Starbreeze
-step
-    #optional
     .goto 1439/1,445.66,6535.79--c:1439,38.107,41.165
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|cRXP_FRIENDLY_Gorbold Steelhand|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Gorbold Steelhand|r
     .turnin 982 >> Rendez la quête Océan profond, mer immense
     .target Gorbold Steelhand
     .isQuestComplete 982
@@ -2100,6 +2101,36 @@ step
     .turnin 958 >> Rendez la quête Les outils des Bien-nés
     .target Thundris Windweaver
     .isQuestComplete 958
+step
+    #optional
+    .goto 1439/1,397.45,6437.50--c:1439,38.843,43.416
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|cRXP_FRIENDLY_Tharnariun Treetender|r
+    .turnin 2138 >> Rendez la quête Nettoyage de l'infection
+    .accept 2139 >> Acceptez la quête Espoir de Tharnariun
+    .target Tharnariun Treetender
+    .isQuestComplete 2138
+step
+    #optional
+    .goto 1439/1,397.45,6437.50--c:1439,38.843,43.416
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|cRXP_FRIENDLY_Tharnariun Treetender|r
+    .accept 2139 >> Acceptez la quête Espoir de Tharnariun
+    .target Tharnariun Treetender
+    .isQuestTurnedIn 2138
+step
+    .goto 1439/1,362.74,6434.58--c:1439,39.373,43.483
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Terenthis|r
+    .turnin 985 >> Rendez la quête Quelle est l’ampleur de la menace ?
+    .target Terenthis
+step
+    #optional
+    #completewith next
+    .goto 1439/1,368.83,6450.38,6,0--c:1439,39.280,43.121
+    .goto 1439/1,376.56,6447.20,6 >> Montez à l'étage--c:1439,39.162,43.194
+step
+    .goto 1439/1,384.35,6431.43--c:1439,39.043,43.555
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinel Elissa Starbreeze|r à l'étage
+    .accept 965 >> Acceptez la quête La Tour d'Althalaxx
+    .target Sentinel Elissa Starbreeze
 step
     .goto 1439/1,-157.40,6207.81--c:1439,47.314,48.676
     >>Cliquez sur le |cRXP_PICK_Mystérieux Cristal Rouge|r
@@ -2227,7 +2258,7 @@ step << !Druid
     .target Archaeologist Hollee
 step
     .goto 1439/1,397.45,6437.50--c:1439,38.843,43.416
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tharnariun Treetender|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|cRXP_FRIENDLY_Tharnariun Treetender|r
     .turnin 2138 >> Rendez la quête Nettoyage de l'infection
     .accept 2139 >> Acceptez la quête Espoir de Tharnariun
     .target Tharnariun Treetender
@@ -2251,10 +2282,8 @@ step
     .goto 1439/1,537.75,6363.01,8,0--c:1439,36.701,45.122
     .goto 1439/1,542.99,6342.31--c:1439,36.621,45.596
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
-    .turnin 4723 >> Rendez la quête La créature marine échouée
     .turnin 4725 >> Rendez la quête La tortue de mer échouée
     .target Gwennyth Bly'Leggonde
-    .isOnQuest 4723
 
 ----Start of Druid Quest section----
 step << Druid
@@ -2315,7 +2344,6 @@ step << Druid
 step
     .hs >> Utilisez votre Pierre de foyer pour revenir à Stormwind
     .zoneskip Stormwind City
-    .zoneskip Darkshore
     .zoneskip Ironforge
 step
     .goto 1453/0,566.600,-8845.500
@@ -2332,7 +2360,7 @@ step
     .goto 1453/0,566.600,-8845.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Elaine Trias::483|r
     .target Elaine Trias::483
-    .turnin 97222 >>Rendez la quête Livraison au corps de garde  
+    .turnin 97222 >>Rendez la quête Livraison au corps de garde
 step << Druid
     .goto 1453/0,1095.500,-8741.700
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Theridran|r
@@ -2395,13 +2423,6 @@ step << Hunter
     .target Einris Brightspear
     .zoneskip Dun Morogh
     .zoneskip Ironforge
-step << Hunter
-    .goto 1453/0,553.22,-8422.23
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Karrina Mekenda|r
-    .trainer >> Apprenez les compétences de votre familier
-    .target Karrina Mekenda
-    .zoneskip Dun Morogh
-    .zoneskip Ironforge
 step << Rogue
     .goto 1453/0,377.47,-8752.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Osborne l'homme de la nuit|r
@@ -2420,14 +2441,55 @@ step << Warrior
     .zoneskip Dun Morogh
     .zoneskip Ironforge
 step
-    #completewith next
+    .goto 1453/0,501.200,-8468.601
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Wilder Thistlenettle|r
+    .accept 167 >> Acceptez la quête Adieu mon frère…
+    .accept 168 >> Acceptez la quête À la recherche de cartes du syndicat des mineurs
+    .target Wilder Thistlenettle
+    .zoneskip Dun Morogh
+    .zoneskip Ironforge
+step << Hunter
+    .goto 1453/0,553.22,-8422.23
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Karrina Mekenda|r
+    .trainer >> Apprenez les compétences de votre familier
+    .target Karrina Mekenda
+    .zoneskip Dun Morogh
+    .zoneskip Ironforge
+step
+    .goto 1453/0,634.700,-8390.800
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Shoni the Shilent|r
+    .accept 2040 >> Acceptez la quête Assaut souterrain
+    .target Shoni the Shilent
+    .zoneskip Dun Morogh
+    .zoneskip Ironforge
+step
+    #completewith TramIF
     .goto 1453/0,562.300,-8385.300,20,0
     .goto 1453/0,522.000,-8352.101
     .subzone 2257 >>Entrez dans le Tram des profondeurs
     .zoneskip Ironforge
     .zoneskip Dun Morogh
 step
-    .zone Ironforge >> Prenez le tram pour Ironforge
+    >>Prenez le Tram des profondeurs pour Ironforge
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Monty|r sur la plateforme du milieu du Tram des Profondeurs du côté d'Ironforge
+    >>|cRXP_WARN_Passez cette étape si vous êtes niveau 18 ou plus|r
+    .accept 6661 >> Acceptez la quête Chasse au rat dans les profondeurs
+    .target Monty
+    .xp >17,1
+step
+    .isOnQuest 6661
+    >>Utilisez le [Pipeau du dératiseur] |cRXP_WARN_sur les |cRXP_ENEMY_Deeprun Rats|r à l'intérieur du Tram des Profondeurs|r
+    .complete 6661,1 --Rats Captured (x5)
+    .use 17117
+    .mob Deeprun Rat
+step
+    .isQuestComplete 6661
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Monty|r à l'intérieur du Tram des Profondeurs
+    .turnin 6661 >> Rendez la quête Chasse au rat dans les profondeurs
+    .target Monty
+step
+    #label TramIF
+    .zone Ironforge >> Prenez le tram et entrez à Forgefer
     .zoneskip Dun Morogh
 ]])
 
@@ -2673,7 +2735,7 @@ step << Warrior/Hunter
     .target Regnus Thundergranite << Hunter
     .target Bilban Tosslespanner << Warrior
 step << Hunter/Druid
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Buliwyf Main-de-pierre|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Buliwyf Stonehand|r
     .train 266 >> Apprenez la compétence pour porter des Fusils << Hunter
     .train 199 >> Acheter la compétence pour porter des masses à deux mains << Druid
     .goto 1455/0,-1197.27,-5041.49
@@ -2864,27 +2926,27 @@ step << NightElf
     #completewith next
     .goto 1453/0,437.600,-8524.5000,20,0
     .goto 1453/0,408.100,-8478.500,15,0
-    .goto 1453/0,502.900,-8358.800,15 >> Allez à la Bibliothèque de Stormwind
+    .goto 1453/0,502.900,-8358.800,15 >> Voyagez vers la Bibliothèque de Hurlevent
 step << NightElf
     .isOnQuest 95189
     .goto 1453/0,531.000,-8322.400
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Lady Dena Kennedy|r
-    >>|cRXP_WARN_Elle patrouille non loin dans la Galerie royale|r
-    .turnin 95189 >> Rendez la quête Écu de Lordaeron
+    >>|cRXP_WARN_Elle marche un peu dans la Galerie Royale|r
+    .turnin 95189 >> Rendez la quête Crest of Lordaeron
     .target Lady Dena Kennedy
 step << NightElf
     .isOnQuest 92415
     .goto 1453/0,744.400,-8621.101
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à la |cRXP_FRIENDLY_Directrice de l'orphelinat Nightingale|r
-    .turnin 92415 >> Rendez la quête N’oublie pas que je t’aime
-    .accept 95161 >> Acceptez la quête N’oublie pas que je t’aime
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Directrice de l'orphelinat Rossignol|r
+    .turnin 92415 >> Rendez la quête Se souvenir que je vous aime
+    .accept 95161 >> Acceptez la quête Se souvenir que je t'aime
     .target Orphan Matron Nightingale
 step << NightElf
     #optional
     .isQuestTurnedIn 92415
     .goto 1453/0,744.400,-8621.101
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à la |cRXP_FRIENDLY_Directrice de l'orphelinat Nightingale|r
-    .accept 95161 >> Acceptez la quête N’oublie pas que je t’aime
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Directrice de l'orphelinat Rossignol|r
+    .accept 95161 >> Acceptez la quête Se souvenir que je t'aime
     .target Orphan Matron Nightingale
 step << NightElf Rogue
     .goto 1453/0,377.61,-8752.30
@@ -2927,21 +2989,21 @@ step << NightElf
     .isOnQuest 95195
     .goto 1453/0,521.000,-8954.101
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Général Marcus Jonathan|r
-    .turnin 95195 >> Rendez la quête Insigne ensanglanté
+    .turnin 95195 >> Rendez la quête Ensanglanté Insignia
     .target General Marcus Jonathan
 step << !NightElf
     .isOnQuest 92415
     .goto 1453/0,744.400,-8621.101
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Directrice de l'orphelinat Rossignol|r
-    .turnin 92415 >> Rendez la quête Se souvenir que je vous aime
-    .accept 95161 >> Acceptez la quête Se souvenir que je t'aime
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à la |cRXP_FRIENDLY_Directrice de l'orphelinat Nightingale|r
+    .turnin 92415 >> Rendez la quête N’oublie pas que je t’aime
+    .accept 95161 >> Acceptez la quête N’oublie pas que je t’aime
     .target Orphan Matron Nightingale
 step << !NightElf
     #optional
     .isQuestTurnedIn 92415
     .goto 1453/0,744.400,-8621.101
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Directrice de l'orphelinat Rossignol|r
-    .accept 95161 >> Acceptez la quête Se souvenir que je t'aime
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à la |cRXP_FRIENDLY_Directrice de l'orphelinat Nightingale|r
+    .accept 95161 >> Acceptez la quête N’oublie pas que je t’aime
     .target Orphan Matron Nightingale
 step << !NightElf
     .goto 1453/0,634.700,-8390.800
@@ -2958,19 +3020,19 @@ step << !NightElf
     #completewith next
     .goto 1453/0,437.600,-8524.5000,20,0
     .goto 1453/0,408.100,-8478.500,15,0
-    .goto 1453/0,502.900,-8358.800,15 >> Voyagez vers la Bibliothèque de Hurlevent
+    .goto 1453/0,502.900,-8358.800,15 >> Allez à la Bibliothèque de Stormwind
 step << !NightElf
     .isOnQuest 95189
     .goto 1453/0,531.000,-8322.400
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Lady Dena Kennedy|r
-    >>|cRXP_WARN_Elle marche un peu dans la Galerie Royale|r
-    .turnin 95189 >> Rendez la quête Crest of Lordaeron
+    >>|cRXP_WARN_Elle patrouille non loin dans la Galerie royale|r
+    .turnin 95189 >> Rendez la quête Écu de Lordaeron
     .target Lady Dena Kennedy
 step << !NightElf
     .isOnQuest 95195
     .goto 1453/0,521.000,-8954.101
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Général Marcus Jonathan|r
-    .turnin 95195 >> Rendez la quête Ensanglanté Insignia
+    .turnin 95195 >> Rendez la quête Insigne ensanglanté
     .target General Marcus Jonathan
 step << !NightElf Rogue
     .goto 1453/0,377.61,-8752.30
@@ -3127,7 +3189,7 @@ step
     #label RRDB
     .goto 1433/0,-2164.56,-9213.10,8,0
     .goto 1433/0,-2145.67,-9231.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Wiley the Black|r dans le bâtiment en haut des escaliers
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Wiley the Black|r à l'intérieur, en haut des escaliers
     .turnin 65 >> Rendez la quête La Confrérie défias
     .accept 132 >> Acceptez la quête La Confrérie défias
 	.target Wiley the Black
@@ -3290,7 +3352,7 @@ step
     .target Gryan Stoutmantle
 step
     .goto 1436/0,1033.22,-10504.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez |cRXP_FRIENDLY_Scout Riell|r tout en haut de la Tour
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Scout Riell|r au sommet de la Tour
     .accept 214 >> Acceptez la quête Les masques rouges en soie
     .target Scout Riell
 step
@@ -3631,9 +3693,9 @@ step << Rogue
     .goto 1436/0,531.32,-11166.80,30,0
     .goto 1436/0,581.37,-11104.97,30,0
     >>|T133644:0|tUtilisez [Vol à la tire] sur le |cRXP_ENEMY_Malformed Defias Drone|r. Volez-lui la |cRXP_LOOT_Defias Tower Key|r
-    >>Vous devez être en [Camouflage] pour utiliser votre [Vol à la tire]
+    >>Vous devez être en [Camouflage] pour utiliser [Vol à la tire]
     >>|cRXP_WARN_Le |cRXP_ENEMY_Malformed Defias Drone|r apparaissent à l'entrée de la tour, puis font le tour de celle-ci|r
-    >>Faites attention, il tape TRÈS fort. Si vous perdez votre [Camouflage], utilisez rapidement votre [Sprint] et enfuyez-vous
+    >>Faites attention car il fait BEAUCOUP de dégâts. Si vous perdez votre [Camouflage], utilisez vite votre [Sprint] pour vous enfuir
     .complete 2359,2 --Collect Defias Tower Key (x1)
     .link https://www.youtube.com/watch?v=5sIew15IcG0 >> Cliquez ICI pour un guide vidéo
     .mob Malformed Defias Drone
@@ -3648,7 +3710,7 @@ step << Rogue
     .goto 1436/0,551.93,-11127.39--c:1436,70.421,74.031
     >>Allez jusqu'à l'avant dernier étage de la tour. Lorsque vous êtes en [Camouflage] |cRXP_WARN_et que les |cRXP_ENEMY_Defias Tower Sentries|r ne sont pas proches de vous, sautez sur la chaise, puis sur la lampe, et ensuite sur la bibliothèque au-dessus du point de repère|r
     >>Enlevez votre [Camouflage] manuellement|cRXP_WARN_, puis appuyez sur votre touche "Interagir avec la cible" pour ouvrir le |cRXP_PICK_Duskwood Chest|r. Récupérez le|r |cRXP_LOOT_Klaven Mortwake's Journal|r
-    >>NOTE: Votre [Camouflage] ne fonctionnera pas un moment après avoir récupéré le |cRXP_LOOT_Klaven Mortwake's Journal|r
+    >>NOTE: Votre [Camouflage] ne marchera pas plus temporairement après avoir récupéré le |cRXP_LOOT_Klaven Mortwake's Journal|r
     >>|cRXP_WARN_Soyez prêt à courir si vous ne voulez pas tuer les |cRXP_ENEMY_Defias Tower Sentries|r au deuxième étage. Ils vont sûrement vous aggro de manière permanente (mais sans vous attaquer) lorsque vous êtes en haut de la bibliothèque comme il s'agit d'un evade spot|r
     >>Si vous avez une [Dague] dans vos sacs ou déjà équipée, vous pouvez lancez [Embuscade] |cRXP_WARN_sur le |cRXP_ENEMY_Defias Tower Patrollers|r et sur les |cRXP_ENEMY_Defias Tower Sentries|r à l'intérieur pour les tuer instantanément. Soyez prêt à vous enfuir après avoir tué le premier|cRXP_ENEMY_Defias Tower Sentry|r  et n'oubliez pas que vous pouvez être touché d'en dessous. Cette technique est plus lente, mais BEAUCOUP plus sure|r
     >>|cRXP_WARN_Faites attention car les |cRXP_ENEMY_Malformed Defias Drone|r et les |cRXP_ENEMY_Defias Drones|r peuvent se trouver à l'entrée de la tour si vous devez vous enfuir de celle-ci|r
@@ -3935,16 +3997,16 @@ step << Druid
     .accept 98394 >>Acceptez la quête L’esprit du Grand félin << !Skyborne
 step << Druid !Skyborne
     .goto 1450/1,-2640.000,7338.900
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Esprit du Grand félin|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à l' |cRXP_FRIENDLY_Esprit du Grand félin|r
     .turnin 98394 >>Rendez la quête Esprit du Grand félin
     .accept 98396 >>Acceptez la quête L’esprit du Grand félin
     .target Great Cat Spirit
 step << Druid Skyborne
     .goto 1450/1,-2352.700,7375.600,10,0
     .goto 1450/1,-2394.300,7361.200
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Avatar of Saeyleenan::272054|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à l' |cRXP_FRIENDLY_Avatar de Saeyleenan::272054|r
     .target Avatar of Saeyleenan::272054
-    .turnin 98341 >>Rendez la quête The Great Windborne Chat Esprit
+    .turnin 98341 >>Rendez la quête L’esprit du Grand félin du vent
     .accept 98404 >>Acceptez la quête L’esprit du Grand félin du vent
 step << Druid
     #completewith next
@@ -3971,15 +4033,15 @@ step << Druid
     .complete 98396,1  << !Skyborne --|1/1 Relic of the Fang
 step << Druid !Skyborne
     .goto 1450/1,-2640.000,7338.900
-     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à l' |cRXP_FRIENDLY_Esprit du Grand félin|r
+     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Esprit du Grand félin|r
     .turnin 98396 >>Rendez la quête L’esprit du Grand félin
     .accept 98731 >>Acceptez la quête Blessings of the Esprit du Grand f??lin
     .target Great Cat Spirit
 step << Druid Skyborne
     .goto 1450/1,-2395.400,7361.400
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à l' |cRXP_FRIENDLY_Avatar de Saeyleenan::272054|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Avatar of Saeyleenan::272054|r
     .target Avatar of Saeyleenan::272054
-    .turnin 98404 >>Rendez la quête L’esprit du Grand félin du vent
+    .turnin 98404 >>Rendez la quête The Great Windborne Chat Esprit
     .accept 98738 >>Acceptez la quête Blessings of the Great Windborne Chat Esprit
 step << Druid
     .goto 1450/1,-2678.200,8021.500
@@ -4063,7 +4125,7 @@ step
 step
     .isQuestTurnedIn 2138
     .goto 1439/1,397.45,6437.50--c:1439,38.843,43.416
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tharnariun Treetender|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|cRXP_FRIENDLY_Tharnariun Treetender|r
     .accept 2139 >> Acceptez la quête Espoir de Tharnariun
     .target Tharnariun Treetender
 step
@@ -4346,7 +4408,7 @@ step
 step
     .isQuestComplete 2139
     .goto 1439/1,397.45,6437.50--c:1439,38.843,43.416
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tharnariun Treetender|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|cRXP_FRIENDLY_Tharnariun Treetender|r
     .turnin 2139 >> Rendez la quête Espoir de Tharnariun
     .target Tharnariun Treetender
 step
@@ -4420,7 +4482,7 @@ step
 step
     #optional
     #completewith next
-    .cast 5809 >> Utilisez la [Fiole de divination] et placez la sur le sol
+    .cast 5809 >> Utilisez la [Fiole de divination] et placez-la sur le sol
     .use 5251
 step
     .goto 1439/1,417.30,4575.82
@@ -4447,7 +4509,7 @@ step
     .disablecheckbox
 step
     .goto 1439/1,409.44,4521.01--c:1439,38.660,87.305
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|cRXP_FRIENDLY_Therylune|r. Cela va commencer une escorte
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Therylune|r. Cela va démarrer une escorte
     >>Passez cette étape si elle n'est pas présente
     .accept 945 >> Acceptez la quête L'évasion de Therylune
     .target Therylune
@@ -4479,7 +4541,7 @@ step
     #sticky
     #label prospector
     .goto 1439/1,601.74,4678.61--c:1439,35.724,83.696
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Prospector Remtravel|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Prospector Remtravel|r
     >>|cRXP_WARN_Vous devrez peut-être attendre qu'il réapparaisse ou que les autres joueurs terminent l'escorte|r
     .turnin 729 >> Rendez la quête Les absences du Prospecteur
     .target Prospector Remtravel
@@ -4589,7 +4651,7 @@ step
     .target Delgren the Purifier
 step
     #optional
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Orendil Broadleaf|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|cRXP_FRIENDLY_Orendil Broadleaf|r
 	.target Orendil Broadleaf
     .goto 1440/1,175.87,3189.61
     .accept 1010 >> Acceptez la quête Les Cheveux de Bathran
@@ -4631,7 +4693,7 @@ step
 step
     #optional
     .goto 1440/1,175.87,3189.61
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Orendil Broadleaf|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|cRXP_FRIENDLY_Orendil Broadleaf|r
     .turnin 1010 >> Rendez la quête Les cheveux de Bathran
     .accept 1020 >> Acceptez la quête Jouvence d'Orendil
     .target Orendil Broadleaf
@@ -4639,7 +4701,7 @@ step
 step
     #optional
     .goto 1440/1,175.87,3189.61
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Orendil Broadleaf|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|cRXP_FRIENDLY_Orendil Broadleaf|r
     .accept 1020 >> Acceptez la quête Jouvence d'Orendil
     .target Orendil Broadleaf
     .isQuestTurnedIn 1010
@@ -4655,7 +4717,7 @@ step
     .xp 20 >> Montez jusqu'au niveau 20
 step
     .goto 1440/1,175.87,3189.61
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Orendil Broadleaf|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|cRXP_FRIENDLY_Orendil Broadleaf|r
     .accept 1010 >> Acceptez la quête Les Cheveux de Bathran
     .target Orendil Broadleaf
 step
@@ -4678,7 +4740,7 @@ step
     .skill herbalism,1,1
 step
     .goto 1440/1,175.87,3189.61
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Orendil Broadleaf|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|cRXP_FRIENDLY_Orendil Broadleaf|r
     .turnin 1010 >> Rendez la quête Les cheveux de Bathran
     .accept 1020 >> Acceptez la quête Jouvence d'Orendil
     .target Orendil Broadleaf

@@ -731,7 +731,7 @@ step
     #season 2
     .goto Orgrimmar,58.52,52.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Zamja|r
-    >>Recevez auprès d'elle la |T134419:0|t[|cRXP_FRIENDLY_Rune d’assaut frénétique|r] 
+    >>Recevez auprès d'elle la |T134419:0|t[|cRXP_FRIENDLY_Rune d’assaut frénétique|r]
     .collect 204716,1 --Rune of Frenzied Assault (1)
     .target Zamja
     .train 425447,1
@@ -770,7 +770,7 @@ step
     #season 2
     .goto Thunder Bluff,28.73,18.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Nétali|r
-    >>Recevez auprès d'elle la |T134419:0|t[|cRXP_FRIENDLY_Rune d’assaut frénétique|r] 
+    >>Recevez auprès d'elle la |T134419:0|t[|cRXP_FRIENDLY_Rune d’assaut frénétique|r]
     .collect 204716,1 --Rune of Frenzied Assault (1)
     .target Netali
     .train 425447,1
@@ -808,7 +808,7 @@ step
     #season 2
     .goto Tirisfal Glades,61.72,51.91
     >>Tuez |cRXP_ENEMY_Coeurbleu|r, puis parlez à |cRXP_FRIENDLY_Penny|r en haut des escaliers
-    .gossipoption 110751 >>Recevez auprès d'elle la |T134419:0|t[|cRXP_FRIENDLY_Rune d’assaut frénétique|r] 
+    .gossipoption 110751 >>Recevez auprès d'elle la |T134419:0|t[|cRXP_FRIENDLY_Rune d’assaut frénétique|r]
     .collect 204716,1 --Rune of Frenzied Assault (1)
     .target Netali
     .mob Blueheart
@@ -1379,7 +1379,7 @@ step
 step
     .train 416004,1
     #completewith next
-    .zone Hillsbrad Foothills >>Voyagez aux Contreforts de Hautebrande
+    .zone Hillsbrad Foothills >>Voyagez aux Contreforts d'Hillsbrad
 step
     .train 416004,1
     #loop
