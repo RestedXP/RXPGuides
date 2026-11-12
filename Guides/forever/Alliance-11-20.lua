@@ -2797,7 +2797,16 @@ step << Druid
     .xp 16 >> Grind to level 16
     .mob Blackwood Pathfinder
     .mob Blackwood Windtalker
-step << Druid
+step << Skyborne Druid
+    .goto 1439/1,766.22,6591.78--c:1439,33.213,39.883
+    .zone Teldrassil >> Take the boat to Darnassus
+    .zoneskip Darnassus
+step << Skyborne Druid
+    .goto 1438/1,841.56,8640.79
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vesprystus|r
+    .fp Teldrassil >> Get the Teldrassil Flight Path
+    .target Vesprystus
+step << NightElf Druid
     #optional
     #completewith DruidLesson
     .goto 1439/1,561.66,6343.27
@@ -3015,7 +3024,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryth Thurden|r
     .fp Ironforge >> Get the Ironforge flight path
     .target Gryth Thurden
-step Warrior
+step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bilban Tosslespanner|r
     .goto 1455/0,-1234.65,-5035.67
     .trainer >> Train your class spells
