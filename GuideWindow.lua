@@ -85,6 +85,10 @@ function addon.ReloadStep()
     addon.SetStep(addon.GetGuideProgress())
 end
 
+function addon.NextStep()
+    RXP.SetStep(RXPCData.currentStep + 1)
+end
+
 function addon.RenderFrame(themeUpdate,isLoading)
     addon:LoadActiveTheme()
 
