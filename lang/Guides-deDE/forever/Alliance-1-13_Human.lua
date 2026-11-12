@@ -4137,7 +4137,7 @@ RXPGuides.RegisterGuide([[
 #name 11-13 Loch Modan
 #displayname 13-15 Loch Modan << SoD
 #next 13-15 Westfall << !Hunter
-#next 14-16 Darkshore << Hunter
+#next 14-16 Dunkelküste << Hunter
 #defaultfor Human
 
 step -- dont delete

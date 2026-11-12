@@ -455,7 +455,7 @@ RXPGuides.RegisterGuide([[
 #subgroup Schnellste Route 1-20
 --#groupid RXP-SRGCE-A1
 #defaultfor NightElf
-#next 14-16 Darkshore
+#next 14-16 Dunkelküste
 
 step
     .goto 1438/1,734.13,9920.57

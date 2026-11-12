@@ -5133,55 +5133,55 @@ step << skip
 step
     #completewith next
     .goto 1454/1,-4739.57,2036.84
-    .gossipoption 95758 >>Talk to |cRXP_FRIENDLY_Sovik|r
+    .gossipoption 95758 >>Sprecht mit |cRXP_FRIENDLY_Sovik|r
     .isNotOnQuest 2842
     .target Sovik
 step
     .goto 1454/1,-4739.57,2036.84
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sovik|r
-    >>|cRXP_WARN_Pay attention! You need to go through his dialogue first, after which you will accept the quest automatically|r
-    .accept 2842 >>Accept Chief Engineer Scooty
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Sovik|r
+    >>|cRXP_WARN_Passt auf! Ihr müsst zuerst seinen Dialog durchgehen, danach wird die Quest automatisch angenommen.|r
+    .accept 2842 >>Akzeptiert die Quest Chefingenieur Scooty
     .target Sovik
 step << skip --Rogue
     .goto 1454/1,-4355.53,1520.68
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Trak'gen|r|cRXP_BUY_. Buy |r |T135423:0|t[Deadly Throwing Axe] |cRXP_BUY_from him|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Sprecht mit|r |cRXP_FRIENDLY_Trak'gen|r|cRXP_BUY_. Kauft|r |T135423:0|t[Tödliche Wurfaxt] |cRXP_BUY_von ihm|r
     .collect 3137,1,6544,1 --Deadly Throwing Axe (200)
     .target Trak'gen
 step << Rogue
-    >>|cRXP_WARN_If you have any|r |T134437:0|t[Anti-Venom]|cRXP_WARN_, use one to cure yourself of|r |T136230:0|t[Touch of Zanzil]
+    >>Falls ihr irgendwelche |T134437:0|t[Gegengift]  habt|cRXP_WARN_, benutzt einen davon, um euch von|r |T136230:0|t[Berührung von Zanzil]|cRXP_WARN_ zu heilen|r
     .itemcount 6452,1
     .use 6452
     .aura -9991
 step << Rogue
     #optional
-    .destroy 8051 >> |cRXP_WARN_Delete the|r |T134536:0|t[Flare Gun] |cRXP_WARN_from your bags, as it's no longer needed|r
-    .destroy 8066 >> |cRXP_WARN_Delete|r |T134374:0|t[Fizzule's Whistle] |cRXP_WARN_from your bags, as it's no longer needed|r
+    .destroy 8051 >> |cRXP_WARN_Löscht die|r |T134536:0|t[Leuchtfeuerwaffe] |cRXP_WARN_aus euren Taschen, da sie nicht mehr benötigt wird|r
+    .destroy 8066 >> |cRXP_WARN_Löscht|r |T134374:0|t[Fizzule's Pfeife] |cRXP_WARN_aus eurer Tasche, da sie nicht mehr benötigt wird|r
 step
     #optional
     #label flytoORG
 step
     #optional
-    .abandon 6421 >>Abandon Boulderslide Ravine
+    .abandon 6421 >>Brecht die Quest Steinschlagklamm ab
 step
     #optional
-    .abandon 4021 >>Abandon Counterattack!
+    .abandon 4021 >>Brecht die Quest Gegenangriff ab!
 step
     #optional
-    .abandon 6481 >>Abandon Earthen Arise
+    .abandon 6481 >>Brecht die Quest Der Irdene erhebt sich ab
 step
     #optional
-    .abandon 6284 >>Abandon Arachnophobia
+    .abandon 6284 >>Brecht die Quest Arachnophobie ab
 step
     #optional
-    .abandon 6641 >>Abandon Vorsha the Lasher
+    .abandon 6641 >>Brecht die Quest Vorsha die Peitscherin ab
 step
     #optional
-    .abandon 6563 >>Abandon The Essence of Aku'Mai
+    .abandon 6563 >>Brecht die Quest Die Essenz von Aku'mai ab
 step
     #optional
-    .abandon 97003 >>Abandon Chol'aruk the Ravener
+    .abandon 97003 >>Brecht die Quest Chol'aruk the Ravener ab
 step
-    .zone Durotar >> Leave Orgrimmar
+    .zone Durotar >> Verlass Orgrimmar
     .zoneskip Tirisfal Glades
     .zoneskip Undercity
     .zoneskip Silverpine Forest

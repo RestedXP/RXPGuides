@@ -12,7 +12,7 @@ RXPGuides.RegisterGuide([[
 #next 17-18 Die Halle der Thanen
 
 step
-    #include RestedXP Forever Route (A)\14-16 Darkshore@WashedA-DarkshoreEndNE
+    #include RestedXP Forever Route (A)\14-16 Dunkelküste@WashedA-DarkshoreEndNE
 step
     #include RestedXP Forever Route (A)\15-16 Loch Modan@SWBoat-IFExit
 step
@@ -847,7 +847,7 @@ step
     .isOnQuest 92909
     #completewith bennytime
     >>Tötet die |cRXP_ENEMY_Erntebehüer|r auf jedem Feld, während ihr vorbeilauft
-    >>Loot them for their |cRXP_LOOT_Okra|r, |cRXP_LOOT_Flasks of Oil|r, |cRXP_LOOT_Golem Isosprings|r and |cRXP_LOOT_Harvester Gyrostabilizers|r (NOT TRANSLATED IN :deDE YET)
+    >>Plündert sie für ihre |cRXP_LOOT_Okra|r, |cRXP_LOOT_Flasks of Oil|r, |cRXP_LOOT_Golem Isosprings|r und |cRXP_LOOT_Harvester Gyrostabilizers|r
     .mob Harvest Watcher
     .complete 9,1 --Havest Watcher slain (20)
     .collect 732,3,38,1 --Okra (3)
@@ -1012,7 +1012,7 @@ step
     #optional
     #completewith HarvestW
     .isOnQuest 92909
-    >>Loot |cRXP_ENEMY_Harvest Watchers|r for |cRXP_LOOT_Golem Isosprings|r and |cRXP_LOOT_Harvester Gyrostabilizers|r (NOT TRANSLATED IN :deDE YET)
+    >>Plündert |cRXP_ENEMY_Harvest Watchers|r für |cRXP_LOOT_Golem Isosprings|r und |cRXP_LOOT_Harvester Gyrostabilizers|r
     .complete 92909,1 -- Golem Isosprings (14)
     .complete 92909,2 -- Harvester Gyrostabilizer (5)
 step
@@ -1059,7 +1059,7 @@ step
     .goto 1436/0,1132.27,-10146.67,60,0
     .goto 1436/0,1460.22,-10224.83,60,0
     .goto 1436/0,1238.67,-9907.73
-    >>Kill |cRXP_ENEMY_Harvest Watchers|r. Loot them for their |cRXP_LOOT_Golem Isosprings|r and |cRXP_LOOT_Harvester Gyrostabilizers|r (NOT TRANSLATED IN :deDE YET)
+    >>Tötet |cRXP_ENEMY_Harvest Watchers|r. Plündert sie für |cRXP_LOOT_Golem Isosprings|r und |cRXP_LOOT_Harvester Gyrostabilizers|r
     .complete 92909,1 -- Golem Isosprings (14)
     .complete 92909,2 -- Harvester Gyrostabilizer (5)
     .mob Harvest Watcher
@@ -2470,26 +2470,26 @@ step
     .zoneskip Ironforge
     .zoneskip Dun Morogh
 step
-    >>|cRXP_WARN_Take the Deeprun Tram to the Ironforge side|r (NOT TRANSLATED IN :deDE YET)
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Monty|r on the middle platform on the Ironforge side of the Deeprun Tram (NOT TRANSLATED IN :deDE YET)
-    >>|cRXP_WARN_Skip this step if you are level 18 or above|r (NOT TRANSLATED IN :deDE YET)
-    .accept 6661 >> Accept Deeprun Rat Roundup (NOT TRANSLATED IN :deDE YET)
+    >>|cRXP_WARN_Nehmt die Tiefenbahn nach Eisenschmiede|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Monty|r auf der mittleren Plattform auf der Eisenschmiede-Seite der Tiefenbahn
+    >>|cRXP_WARN_Überspringt diesen Schritt, wenn ihr Stufe 18 oder höher seid|r
+    .accept 6661 >> Akzeptiert die Quest Tiefenbahn-Ratten-Razzia
     .target Monty
     .xp >17,1
 step
     .isOnQuest 6661
-    >>|cRXP_WARN_Use the|r |T133942:0|t[Rat Catcher's Flute] |cRXP_WARN_on |cRXP_ENEMY_Deeprun Rats|r inside the Deeprun Tram|r (NOT TRANSLATED IN :deDE YET)
+    >>|cRXP_WARN_Benutzt die|r |T133942:0|t[Rattenfänger-Flöte] |cRXP_WARN_gegen |cRXP_ENEMY_Untergrundratte|r in der Tiefenbahn|r
     .complete 6661,1 --Rats Captured (x5)
     .use 17117
     .mob Deeprun Rat
 step
     .isQuestComplete 6661
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Monty|r inside the Deeprun Tram (NOT TRANSLATED IN :deDE YET)
-    .turnin 6661 >> Turn in Deeprun Rat Roundup (NOT TRANSLATED IN :deDE YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Monty|r in der Tiefenbahn
+    .turnin 6661 >> Gebt die Quest Tiefenbahn-Ratten-Razzia ab
     .target Monty
 step
     #label TramIF
-    .zone Ironforge >> Take the tram and enter Ironforge (NOT TRANSLATED IN :deDE YET)
+    .zone Ironforge >> Nehmt die Straßenbahn und betretet Eisenschmiede
     .zoneskip Dun Morogh
 ]])
 
@@ -3008,13 +3008,13 @@ step << !NightElf
 step << !NightElf
     .goto 1453/0,634.700,-8390.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Shoni die Schtille|r
-    .accept 2040 >> Accept Underground Assault (NOT TRANSLATED IN :deDE YET)
+    .accept 2040 >> Unterirdischer Angriff annehmen
     .target Shoni the Shilent
 step << !NightElf
     .goto 1453/0,501.200,-8468.601
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Wilder Thistlenettle|r
-    .accept 167 >> Accept Oh Brother. . . (NOT TRANSLATED IN :deDE YET)
-    .accept 168 >> Accept Collecting Memories (NOT TRANSLATED IN :deDE YET)
+    .accept 167 >> Akzeptiert die Quest Oh Bruder...
+    .accept 168 >> Akzeptiert Die Suche nach Andenken
     .target Wilder Thistlenettle
 step << !NightElf
     #completewith next
@@ -3161,7 +3161,7 @@ step << !Skyborne
     .goto 1436/0,1037.42,-10628.27,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Dungar Longdrink|r oder |cRXP_FRIENDLY_Thor|r
     .fly Redridge >> Fliegt ins Rotkammgebirge << !NightElf !Dwarf/!Hunter
-    .fp Westfall >> Get the Westfall flight path (NOT TRANSLATED IN :deDE YET) << NightElf/Dwarf Hunter
+    .fp Westfall >> Erlernt die Flugroute nach Westfall << NightElf/Dwarf Hunter
     .target Dungar Longdrink
     .target Thor
     .zoneskip Redridge Mountains
@@ -3748,7 +3748,7 @@ step << Rogue
     #optional
     #completewith KlavenEnd
     .goto 1436/0,1037.42,-10628.27
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thor|r (NOT TRANSLATED IN :deDE YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Thor|r
     .fly Stormwind >> Fliege nach Sturmwind
     .target Thor
     .zoneskip Stormwind City
@@ -3839,7 +3839,7 @@ step
     .target Wilder Thistlenettle
 step
     .isQuestComplete 168
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wilder Thistlenettle|r (NOT TRANSLATED IN :deDE YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Wilder Thistlenettle|r
     .turnin 168 >> Gebt die Quest Die Suche nach Andenken ab
     .goto 1453/0,501.200,-8468.601
     .target Wilder Thistlenettle
@@ -3856,7 +3856,7 @@ step << Hunter
 step
     .isQuestComplete 2040
     .goto 1453/0,634.800,-8390.900
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shoni the Shilent|r (NOT TRANSLATED IN :deDE YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Shoni die Schtille|r
     .turnin 2040 >> Gebt die Quest Unterirdischer Angriff ab
     .target Shoni the Shilent
 step << Shaman

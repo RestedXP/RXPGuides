@@ -3228,7 +3228,7 @@ RXPGuides.RegisterGuide([[
 #subgroup Schnellste Route 1-20 << Alliance
 #subgroup Schnellste Route 1-22 << Horde
 #next 13-15 Westfall << Alliance !Hunter
-#next 14-16 Darkshore << Alliance Hunter
+#next 14-16 Dunkelküste << Alliance Hunter
 #next 12-14 Silberwald << Horde !Hunter
 #next 12-17 das Brachland << Horde Hunter
 #defaultfor Skyborne

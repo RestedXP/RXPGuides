@@ -3462,7 +3462,7 @@ RXPGuides.RegisterGuide([[
 #subgroup Schnellste Route 1-20
 --#groupid RXP-SRGCE-A1
 #name 12-14 Loch Modan (Zwerg/Gnom)
-#next 13-15 Westfall;14-16 Darkshore
+#next 13-15 Westfall;14-16 Dunkelküste
 #defaultfor Gnome/Dwarf
 
 step << Dwarf Paladin
@@ -4463,7 +4463,7 @@ RXPGuides.RegisterGuide([[
 #subgroup Schnellste Route 1-20
 --#groupid RXP-SRGCE-A1
 #name 11-13 Loch Modan (Jäger)
-#next 14-16 Darkshore
+#next 14-16 Dunkelküste
 #defaultfor Dwarf
 
 step -- dont delete

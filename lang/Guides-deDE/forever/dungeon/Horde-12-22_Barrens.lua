@@ -2219,9 +2219,9 @@ step
     .isQuestTurnedIn 440
 step
     .goto 1420/0,74.200,2022.700
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathguard Linnea::1495|r (NOT TRANSLATED IN :deDE YET)
-    >>|cRXP_WARN_This is a pre-quest for "The Wrath of Rath'mael"|r (NOT TRANSLATED IN :deDE YET)
-    .accept 356 >>Accept Rear Guard Patrol (NOT TRANSLATED IN :deDE YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Deathguard Linnea::1495|r
+    >>|cRXP_WARN_Dies ist eine Vorquest für "The Zorn of Rath'mael"|r
+    .accept 356 >>Akzeptiert die Quest Patrouille zur Rückendeckung
     .target Deathguard Linnea::1495
 step
     #loop
@@ -2235,29 +2235,29 @@ step
 	.goto 1420/0,-466.44,1986.02,50,0
 	.goto 1420/0,-436.61,1951.670,50,0
 	.goto 1420/0,-355.28,1970.35,50,0
-    >>Kill |cRXP_ENEMY_Bleeding Horrors|r and |cRXP_ENEMY_Wandering Spirits|r (NOT TRANSLATED IN :deDE YET)
+    >>Tötet |cRXP_ENEMY_Blutender Schrecken|r und |cRXP_ENEMY_Wandernder Geist|r
     .complete 356,1 --Bleeding Horror (8)
     .mob +Bleeding Horror
     .complete 356,2 --Wandering Spirit (8)
     .mob +Wandering Spirit
 step
     .goto 1420/0,73.800,2022.300
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathguard Linnea::1495|r (NOT TRANSLATED IN :deDE YET)
-    >>|cRXP_WARN_This is a pre-quest for "The Wrath of Rath'mael"|r (NOT TRANSLATED IN :deDE YET)
-    .turnin 356 >>Turn in Rear Guard Patrol (NOT TRANSLATED IN :deDE YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Deathguard Linnea::1495|r
+    >>|cRXP_WARN_Dies ist eine Vorquest für "The Zorn of Rath'mael"|r
+    .turnin 356 >>Gebt die Quest Patrouille zur Rückendeckung ab
     .target Deathguard Linnea::1495
-    .accept 99156 >>Accept Rear Guard Patrol (NOT TRANSLATED IN :deDE YET)
+    .accept 99156 >>Akzeptiert die Quest Patrouille zur Rückendeckung
 step
     .goto 1420/0,-765.200,2518.700
-    >>Kill |cRXP_ENEMY_Riptear|r |cRXP_WARN_(level 13 elite)|r. Loot him for |T134339:0|t[|cRXP_LOOT_Riptear's Heart|r] (NOT TRANSLATED IN :deDE YET)
-    >>|cRXP_WARN_This is a pre-quest for "The Wrath of Rath'mael"|r (NOT TRANSLATED IN :deDE YET)
+    >>Tötet |cRXP_ENEMY_Riptear|r |cRXP_WARN_(level 13 elite)|r. Plündert sie für |T134339:0|t[|cRXP_LOOT_Riptear's Herz|r]
+    >>|cRXP_WARN_Dies ist eine Vorquest für "The Zorn of Rath'mael"|r
     .complete 99156,1 --|1/1 Riptear's Heart
     .mob Riptear
 step
     .goto 1420/0,74.200,2022.400
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathguard Linnea::1495|r (NOT TRANSLATED IN :deDE YET)
-    >>|cRXP_WARN_This is a pre-quest for "The Wrath of Rath'mael"|r (NOT TRANSLATED IN :deDE YET)
-    .turnin 99156 >>Turn in Rear Guard Patrol (NOT TRANSLATED IN :deDE YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Deathguard Linnea::1495|r
+    >>|cRXP_WARN_Dies ist eine Vorquest für "The Zorn of Rath'mael"|r
+    .turnin 99156 >>Gebt die Quest Patrouille zur Rückendeckung ab
     .target Deathguard Linnea::1495
 step
     .goto 1420/0,84.900,2023.500
@@ -2296,9 +2296,9 @@ step << Tauren/Hunter/Orc Shaman/Troll Shaman
     .target Michael Garrett::4551
 step
     .goto 1458/0,404.63,1434.67
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Faranell|r and |cRXP_FRIENDLY_Zinge|r in The Apothecarium (NOT TRANSLATED IN :deDE YET)
-    >>|cRXP_WARN_This is a pre-quest for "The New Plague"|r (NOT TRANSLATED IN :deDE YET)
-    .accept 450 >>Accept A Recipe For Death (NOT TRANSLATED IN :deDE YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Faranell|r und |cRXP_FRIENDLY_Zinge|r im Apothekarium
+    >>|cRXP_WARN_Dies ist eine Vorquest für "Die neue Seuche"|r
+    .accept 450 >>Akzeptiert die Quest Rezept für den Tod
     .target Master Apothecary Faranell
     .isQuestTurnedIn 447
 step
@@ -2378,22 +2378,22 @@ step
     .target Tabitha Heartweaver::250686
 step
     .goto Silverpine Forest,42.98,73.22
-    >>Kill |cRXP_ENEMY_Apothecary Berard|r. Loot his |cRXP_LOOT_Book|r located in the bookshelf (NOT TRANSLATED IN :deDE YET)
-    >>|cRXP_WARN_This should be completed in a group|r (NOT TRANSLATED IN :deDE YET)
+    >>Tötet |cRXP_ENEMY_Apotheker Berard|r. Plündert sein |cRXP_LOOT_Buch|r im Bücherregal
+    >>|cRXP_WARN_Dies sollte in einer Gruppe abgeschlossen werden|r
     .complete 450,1 --Berard's Journal (1)
     .mob Apothecary Berard
     .isQuestTurnedIn 447
 step
     .goto 1421/0,1649.400,522.500
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apothecary Renferrel::1937|r (NOT TRANSLATED IN :deDE YET)
-    >>|cRXP_WARN_This is a pre-quest for "The New Plague"|r (NOT TRANSLATED IN :deDE YET)
-    .turnin 450 >>Turn in A Recipe For Death (NOT TRANSLATED IN :deDE YET)
-    .accept 451 >>Accept A Recipe For Death (NOT TRANSLATED IN :deDE YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Apothecary Renferrel::1937|r
+    >>|cRXP_WARN_Dies ist eine Vorquest für "Die neue Seuche"|r
+    .turnin 450 >>Gebt die Quest Rezept für den Tod ab
+    .accept 451 >>Akzeptiert die Quest Rezept für den Tod
     .target Apothecary Renferrel::1937
     .isQuestTurnedIn 447
 step
     #completewith LakeSkulkerMoss
-    >>Kill the |cRXP_ENEMY_Vile Fins|r. Loot them for the |T134339:0|t[|cRXP_LOOT_Hardened Tumor|r] (NOT TRANSLATED IN :deDE YET)
+    >>Tötet die |cRXP_ENEMY_Vile Fins|r. Plündert sie für |T134339:0|t[|cRXP_LOOT_Hardened Tumor|r]
     .complete 451,3 --|1/1 Hardened Tumor
     .mob Vile Fin Shorecreeper
     .mob Vile Fin Tidecaller
@@ -2408,7 +2408,7 @@ step
     .goto 1421/0,214.000,871.700,35,0
     .goto 1421/0,134.800,932.100,35,0
     .goto 1421/0,287.100,1117.300,35,0
-    >>Kill the |cRXP_ENEMY_Lake Creeper|r. Loot them for the |T134186:0|t[|cRXP_LOOT_Lake Creeper Moss|r] (NOT TRANSLATED IN :deDE YET)
+    >>Tötet die |cRXP_ENEMY_Lake Kriecher|r. Plündert sie für |T134186:0|t[|cRXP_LOOT_Lake Kriecher Moss|r]
     .complete 451,2 --|6/6 Lake Creeper Moss
     .mob Lake Creeper
     .mob Elder Lake Creeper
@@ -2419,7 +2419,7 @@ step
     .goto 1421/0,499.300,645.000,0
     .goto 1421/0,499.300,645.000,35,0
     .goto 1421/0,300.300,724.800,35,0
-    >>Kill the |cRXP_ENEMY_Lake Skulker|r. Loot them for the |T134186:0|t[|cRXP_LOOT_Lake Skuler Moss|r] (NOT TRANSLATED IN :deDE YET)
+    >>Tötet die |cRXP_ENEMY_Lake Skulker|r. Plündert sie für |T134186:0|t[|cRXP_LOOT_Lake Skuler Moss|r]
     .complete 451,1 --|6/6 Lake Skulker Moss
     .mob Lake Skulker
     .mob Elder Lake Skulker
@@ -2432,7 +2432,7 @@ step
     .goto 1421/0,964.900,1167.900,30,0
     .goto 1421/0,1061.100,1032.000,30,0
     .goto 1421/0,1089.000,884.900,30,0
-    >>Kill the |cRXP_ENEMY_Vile Fins|r. Loot them for the |T134339:0|t[|cRXP_LOOT_Hardened Tumor|r] (NOT TRANSLATED IN :deDE YET)
+    >>Tötet die |cRXP_ENEMY_Vile Fins|r. Plündert sie für |T134339:0|t[|cRXP_LOOT_Hardened Tumor|r]
     .complete 451,3 --|1/1 Hardened Tumor
     .mob Vile Fin Shorecreeper
     .mob Vile Fin Tidecaller
@@ -2443,20 +2443,20 @@ step
     .isQuestTurnedIn 447
 step
     #completewith EnterRoL
-    .zone Undercity >>Travel to Undercity (NOT TRANSLATED IN :deDE YET)
+    .zone Undercity >>Reist nach Unterstadt
 step
     .goto 1458/0,404.500,1434.700
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Master Apothecary Faranell::2055|r
-    >>|cRXP_WARN_This is a pre-quest for "The New Plague"|r (NOT TRANSLATED IN :deDE YET)
+    >>|cRXP_WARN_Dies ist eine Vorquest für "Die neue Seuche"|r
     .target Master Apothecary Faranell::2055
-    .turnin 451 >>Turn in A Recipe For Death (NOT TRANSLATED IN :deDE YET)
+    .turnin 451 >>Gebt die Quest Rezept für den Tod ab
     .isQuestComplete 451
 step
     .goto 1458/0,344.000,1423.800,50,0
     .goto 1458/0,373.200,1362.100,50,0
     .goto 1458/0,428.400,1417.700
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Theodore Griffs::11835|r
-    .accept 95216 >>Accept The New Plague (NOT TRANSLATED IN :deDE YET)
+    .accept 95216 >>Akzeptiert die Quest Die neue Seuche
     .target Theodore Griffs::11835
     .isQuestTurnedIn 451
 step
@@ -2595,7 +2595,7 @@ step
     .goto 1458/0,344.000,1423.800,15,0
     .goto 1458/0,373.200,1362.100,15,0
     .goto 1458/0,428.400,1417.700
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Theodore Griffs::11835|r (NOT TRANSLATED IN :deDE YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Theodore Griffs::11835|r
     .turnin 95216 >>Gebt die Quest Die neue Seuche ab
     .target Theodore Griffs::11835
 step
@@ -2674,7 +2674,7 @@ step
 step
     .isQuestComplete 97292
     .goto 1458/0,404.800,1434.500
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Apothecary Faranell::2055|r (NOT TRANSLATED IN :deDE YET)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Master Apothecary Faranell::2055|r
     .turnin 97292 >>Gebt die Quest Endlose Qual ab
     .target Master Apothecary Faranell::2055
 step
