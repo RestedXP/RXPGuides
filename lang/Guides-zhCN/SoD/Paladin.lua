@@ -360,7 +360,7 @@ step
     .xp <8,1
 step
     .goto StormwindClassic,38.67,32.82
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_虔诚的亚瑟|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_虔诚的亚瑟|r 对话
     .train 853 >> 训练 |T135963:0|t[制裁之锤]
     .target 虔诚的亚瑟
     .train 410001,1
@@ -571,7 +571,7 @@ step
     .xp <4,1
 step
     .goto StormwindClassic,38.67,32.82
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_虔诚的亚瑟|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_虔诚的亚瑟|r 对话
     .train 20271 >> 学习 |T135959:0|t[审判]
     .train 19740 >> 学习 |T135906:0|t[力量祝福]
     .target 虔诚的亚瑟
@@ -668,7 +668,7 @@ step
     .xp <8,1
 step
     .goto StormwindClassic,38.67,32.82
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_虔诚的亚瑟|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_虔诚的亚瑟|r 对话
     .train 1152 >> 训练 |T135949:0|t[纯净术]
     .target 虔诚的亚瑟
     .train 425619,1
@@ -1364,7 +1364,7 @@ step
     .xp <24,1
 step
     .goto StormwindClassic,38.67,32.82
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_虔诚的亚瑟|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_虔诚的亚瑟|r 对话
     .train 2878 >> 训练 |T135983:0|t[超度亡灵]
     .target 虔诚的亚瑟
     .train 416037,1

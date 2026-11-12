@@ -7488,7 +7488,7 @@ step
     .fp Redridge Mountains >> 获取赤脊山的飞行路径
 step
     >>与 |cRXP_FRIENDLY_玛蒂|r 和 |cRXP_FRIENDLY_工头奥斯洛|r 对话
-    .accept 20 >>接受任务 黑石氏族的威胁
+    .accept 20 >>接受任务黑石氏族的威胁
     .target +Marshal Marris
     .goto Redridge Mountains,33.51,48.96
     .accept 125 >>接受任务 丢失的工具

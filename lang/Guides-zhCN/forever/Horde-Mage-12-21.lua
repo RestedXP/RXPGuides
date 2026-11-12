@@ -68,7 +68,7 @@ step
     .goto 1413/1,-2595.75,-421.13
 .target 药剂师赫布瑞姆
 >>与 |cRXP_FRIENDLY_药剂师赫布瑞姆|r 对话
-    .accept 848 >>接受任务菌类孢子
+    .accept 848 >>接受任务 菌类孢子
     .accept 1492 >>接受任务 码头主管迪兹维格
 step
     #sticky
@@ -698,7 +698,7 @@ step
 step
     .goto 1413/1,-954.15,-272.49
 >>与 |cRXP_FRIENDLY_希雷斯·碎石|r 对话
-    .turnin 1061 >> 交任务  石爪之灵
+    .turnin 1061 >> 交任务石爪之灵
 .target 希雷斯·碎石
     .accept 1062 >> 接受任务 地精侵略者
 .target 玛卡巴·扁蹄
@@ -819,7 +819,7 @@ step
 step
     .goto 1413/1,-1926.95,-2380.44
 >>与 |cRXP_FRIENDLY_乔恩·星眼|r 对话
-    .turnin 3261 >>交任务  乔恩·星眼
+    .turnin 3261 >>交任务  [DEPRECATED in 4.x] 乔恩·星眼
 .target 乔恩·星眼
     .accept 882 >>接受任务 伊沙姆哈尔
 step
@@ -992,7 +992,7 @@ step
     .goto 1413/1,-1926.95,-2380.44
 .target 乔恩·星眼
 >>与 |cRXP_FRIENDLY_乔恩·星眼|r 对话
-    .turnin 884 >>交任务  奥瓦坦卡
+    .turnin 884 >>交任务奥瓦坦卡
     .isOnQuest 884
 step
     .goto 1413/1,-1926.95,-2380.44
@@ -1067,13 +1067,13 @@ step
 .target 玛卡巴·扁蹄
     .accept 6401 >>接受任务卡雅还活着
 .target 希雷斯·碎石
-    .accept 1063 >>接受任务巫婆长老
+    .accept 1063 >>接受任务 巫婆长老
 --    .accept 1068 >> Accept Shredding Machines
 step
     .goto 1442/1,-235.98,-180.03
 .target 辛吉拉
 >>与 |cRXP_FRIENDLY_辛吉拉|r 对话
-    .turnin 6461 >>交任务盗窃的蜘蛛
+    .turnin 6461 >>交任务  盗窃的蜘蛛
 step
     .goto 1442/1,365.2,878.29
 .target 菲兹克斯
@@ -1095,11 +1095,11 @@ step
 >>与 |cRXP_FRIENDLY_玛加萨·恐怖图腾|r 对话
     .turnin 1063 >> 交任务  巫婆长老
 .target 玛加萨·恐怖图腾
-    .accept 1064 >> 接受任务被遗忘者的援助
+    .accept 1064 >> 接受任务 被遗忘者的援助
 step
     .goto 1456/1,-303.93,-1048.73
 >>与 |cRXP_FRIENDLY_大德鲁伊哈缪尔·符文图腾|r 对话
-    .turnin 1489 >> 交任务  哈缪尔·符文图腾
+    .turnin 1489 >> 交任务哈缪尔·符文图腾
 .target 大德鲁伊哈缪尔·符文图腾
     .accept 1490 >> 接受任务 纳拉·蛮鬃
 step

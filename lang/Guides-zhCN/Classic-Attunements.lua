@@ -130,7 +130,7 @@ step
 step
     .isQuestTurnedIn 4182
     .goto Burning Steppes,65.012,23.757
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_狼狈不堪的约翰|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_狼狈不堪的约翰|r 对话
     .complete 4224,1 -- Ragged John's Story (1)
     .skipgossip
     .target Ragged John
@@ -1007,7 +1007,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_信使考雷·落锤|r 对话
     >>|cRXP_FRIENDLY_信使考雷·落锤|r |cRXP_WARN_在整个铁炉堡巡逻|r
     >>|cRXP_WARN_此任务也可在|r |cFFfa9602暴风城|r |cRXP_WARN_或者|r |cFFfa9602达纳苏斯|r 接取
-    .acceptmultiple 5091,5090,5066 >> 接受任务战斗的号角：瘟疫之地！
+    .acceptmultiple 5091,5090,5066 >> 接受任务 战斗的号角：瘟疫之地！
     .unitscan Courier Hammerfall --IF
     .unitscan Herald Moonstalker --DARN
     .unitscan Crier Goodman --SW
@@ -1263,7 +1263,7 @@ step
     .goto Undercity,66.07,54.64,50,0
     .goto Undercity,70.81,51.49,50,0
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_预言者巴萨扎德|r 对话
-    .acceptmultiple 5093,5094,5095 >>接受任务战斗的号角：瘟疫之地！
+    .acceptmultiple 5093,5094,5095 >>接受任务 战斗的号角：瘟疫之地！
     >>|cRXP_WARN_此任务也可在|r |cFFfa9602奥格瑞玛|r |cRXP_WARN_或者|r |cFFfa9602雷霆崖|r 接取
     .unitscan 公告员高拉克 --ORG
     .unitscan Harbinger Balthazadd --UC

@@ -470,7 +470,7 @@ step
     .turnin 5545 >> 交任务 木材危机
 step
     #label Prowlers
-    .xp 9 >> 刷怪到9级
+    .xp 9 >> 刷怪升到9级
 step
     #label Bears
     .goto 1429/0,-1222.40,-9531.76
@@ -798,7 +798,7 @@ step
     .turnin 419 >> 交任务 失踪的驾驶员
     .accept 417 >> 接受任务 驾驶员的复仇
 step
-    >>击杀癞爪，拾取它的爪子
+    >>击杀癞爪。拾取它的爪子
     .goto 1426/0,-2137.92,-5072.22
     .complete 417,1 --Collect Mangy Claw (x1)
 step
@@ -1316,7 +1316,7 @@ step
     .complete 412,2 --Collect Gyromechanic Gear (x8)
     .complete 412,1 --Collect Restabilization Cog (x8)
 step
-    .xp 9 >> 刷怪到9级
+    .xp 9 >> 刷怪升到9级
 step
     .goto 1426/0,595.46,-5545.02,35 >>进入洞穴
 step
@@ -1442,7 +1442,7 @@ step
     .turnin 419 >> 交任务 失踪的驾驶员
     .accept 417 >> 接受任务 驾驶员的复仇
 step
-    >>击杀癞爪，拾取它的爪子
+    >>击杀癞爪。拾取它的爪子
     .goto 1426/0,-2137.92,-5072.22
     .complete 417,1 --Collect Mangy Claw (x1)
 step

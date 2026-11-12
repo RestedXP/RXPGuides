@@ -360,7 +360,7 @@ step << Rogue
     .train 424992,1
 step << Rogue
     #season 2
-    .train 424992 >>|cRXP_WARN_使用|r |T134419:0|t|T236280:0|t[|cRXP_FRIENDLY_杀手符文|r] |cRXP_WARN_训练|r |T236280:0|t|T236280:0|t[暗影杀手]
+    .train 424992 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_杀手符文|r] |cRXP_WARN_训练|r |T236280:0|t[暗影杀手]
     .use 203993
     .itemcount 203993,1
 ]])
@@ -384,7 +384,7 @@ step << Rogue
     .train 424992,1
 step << Rogue
     #season 2
-    .train 424992 >>|cRXP_WARN_使用|r |T134419:0|t|T236280:0|t[|cRXP_FRIENDLY_杀手符文|r] |cRXP_WARN_训练|r |T236280:0|t|T236280:0|t[暗影杀手]
+    .train 424992 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_杀手符文|r] |cRXP_WARN_训练|r |T236280:0|t[暗影杀手]
     .use 203993
     .itemcount 203993,1
 ]])
@@ -1171,7 +1171,7 @@ step
     .train 42992,1
 step
     #season 2
-    .train 42992 >>|cRXP_WARN_使用|r |T134419:0|t|T236280:0|t[|cRXP_FRIENDLY_杀手符文|r] |cRXP_WARN_训练|r |T236280:0|t|T236280:0|t[暗影杀手]
+    .train 42992 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_杀手符文|r] |cRXP_WARN_训练|r |T236280:0|t[暗影杀手]
     .use 203993
     .itemcount 203993,1
 
@@ -1216,7 +1216,7 @@ step
     .train 42992,1
 step
     #season 2
-    .train 42992 >>|cRXP_WARN_使用|r |T134419:0|t|T236280:0|t[|cRXP_FRIENDLY_杀手符文|r] |cRXP_WARN_训练|r |T236280:0|t|T236280:0|t[暗影杀手]
+    .train 42992 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_杀手符文|r] |cRXP_WARN_训练|r |T236280:0|t[暗影杀手]
     .use 203993
     .itemcount 203993,1
 

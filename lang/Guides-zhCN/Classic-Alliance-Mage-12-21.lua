@@ -835,7 +835,7 @@ step
     .goto Redridge Mountains,33.51,48.96
 .target 治安官马瑞斯
 >>与|cRXP_FRIENDLY_治安官马瑞斯|r 对话
-    .accept 20 >>接受任务 黑石氏族的威胁
+    .accept 20 >>接受任务黑石氏族的威胁
 step
     .goto Redridge Mountains,32.14,48.64
 .target Foreman Oslow
