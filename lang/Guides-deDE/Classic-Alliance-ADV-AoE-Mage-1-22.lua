@@ -2751,7 +2751,7 @@ step
     #requires Shortcut2
     #completewith next
     .goto Dun Morogh,81.23,42.66,50,0
-    .goto Dun Morogh,83.01,40.31,30 >>Lockt einen |cRXP_ENEMY_Vernarbter Klippeneber|r durch den Tunnel
+    .goto Dun Morogh,83.01,40.31,30 >>Zieht einen |cRXP_ENEMY_Vernarbter Klippeneber|r durch den Tunnel
     >>|cRXP_WARN_Seid vorsichtig, da sie|r |T132337:0|t[Ansturm] wirken|cRXP_WARN_(Selbst Sofort: Erhöht die Bewegungsgeschwindigkeit für 3 Sek., verursacht 40-100 Nahkampfschaden bei Treffer. Nur in der Ferne wirkbar)|r
     .mob Scarred Crag Boar
 step

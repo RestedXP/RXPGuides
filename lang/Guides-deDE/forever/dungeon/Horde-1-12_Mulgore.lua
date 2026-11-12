@@ -28,7 +28,7 @@ RXPGuides.RegisterGuide([[
 #subgroup Dungeonführer 1-22
 --#groupid RXP-SRGCE-H1
 #defaultfor Tauren
-#next 12-16 Das Brachland
+#next 14-18 Das Brachland
 
 
 step

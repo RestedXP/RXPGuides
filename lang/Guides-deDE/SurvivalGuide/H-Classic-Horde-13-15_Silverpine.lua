@@ -856,7 +856,7 @@ step
 step
     #label BerardsJournal
     .goto Silverpine Forest,42.98,73.22
-    >>Tötet |cRXP_ENEMY_Apotheker Berard|r. Beute seinen |cRXP_LOOT_Buch|r im Bücherschrank
+    >>Tötet |cRXP_ENEMY_Apotheker Berard|r. Plündert sein |cRXP_LOOT_Buch|r aus dem Bücherregal
     .complete 450,1 --Berard's Journal (1)
     .mob Apothecary Berard
     .isOnQuest 450

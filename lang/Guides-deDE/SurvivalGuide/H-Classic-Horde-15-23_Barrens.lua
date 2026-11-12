@@ -3811,7 +3811,7 @@ step
     .dungeon WC
 step
     #optional
-    >>Tötet |cRXP_ENEMY_Deviate Ravagers|r, |cRXP_ENEMY_Vipers|r, |cRXP_ENEMY_Shamblers|r und |cRXP_ENEMY_Dreadfangs|r. Plündert sie für |cRXP_ENEMY_Hides|r
+    >>Tötet |cRXP_ENEMY_Deviatverheerer|r, |cRXP_ENEMY_Deviatviper|r, |cRXP_ENEMY_Deviatschlurfer|r und |cRXP_ENEMY_Deviatschreckensfang|r. Plündert sie für |cRXP_ENEMY_Bälge|r
     .complete 1487,1 --Deviate Ravager (7)
     .mob +Deviate Ravager
     .complete 1487,2 --Deviate Viper (7)

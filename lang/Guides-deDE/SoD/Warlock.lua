@@ -16,7 +16,7 @@ step << Warlock
 step << Warlock
     #season 2
     #label RoH
-    .cast 402265 >>|cRXP_WARN_Benutzt die|r |T134419:0|t[|cRXP_FRIENDLY_Rune der Heimsuchung|r] |cRXP_WARN_um zu erlernen|r |T133816:0|t[Handschuhe prägen - Heimsuchung]
+    .cast 402265 >>|cRXP_WARN_Benutzt die|r |T134419:0|t[|cRXP_FRIENDLY_Rune der Heimsuchung|r] |cRXP_WARN_um|r |T133816:0|t[Handschuhe prägen - Heimsuchung] zu erlernen
     .use 205230
     .itemcount 205230,1
     .train 403919,1

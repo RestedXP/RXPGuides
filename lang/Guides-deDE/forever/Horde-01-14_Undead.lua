@@ -2879,6 +2879,28 @@ step << !Paladin
     .turnin 356 >>Gebt die Quest Patrouille zur Rückendeckung ab
     .target Deathguard Linnea
 step << !Paladin
+    .goto 1420/0,73.800,2022.300
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Deathguard Linnea::1495|r
+    >>|cRXP_WARN_Dies ist eine Vorquest für "Der Zorn von Rath'mael"|r
+    .turnin 356 >>Gebt die Quest Patrouille zur Rückendeckung ab
+    .target Deathguard Linnea::1495
+    .accept 99156 >>Akzeptiert die Quest Patrouille zur Rückendeckung
+    .dungeon ROL
+step << !Paladin
+    .goto 1420/0,-765.200,2518.700
+    >>Tötet |cRXP_ENEMY_Riptear|r |cRXP_WARN_(level 13 elite)|r. Plündert sie für |T134339:0|t[|cRXP_LOOT_Riptear's Herz|r]
+    >>|cRXP_WARN_Dies ist eine Vorquest für "Der Zorn von Rath'mael"|r
+    .complete 99156,1 --|1/1 Riptear's Heart
+    .mob Riptear
+    .dungeon ROL
+step << !Paladin
+    .goto 1420/0,74.200,2022.400
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Deathguard Linnea::1495|r
+    >>|cRXP_WARN_Dies ist eine Vorquest für "Der Zorn von Rath'mael"|r
+    .turnin 99156 >>Gebt die Quest Patrouille zur Rückendeckung ab
+    .target Deathguard Linnea::1495
+    .dungeon ROL
+step << !Paladin
     #label EnterUC2
     #completewith Glix
     .goto 1420/0,240.75,1877.57,20 >> Betrete Unterstadt
@@ -2918,6 +2940,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Glix Xizzix|r
     .turnin 98545 >>Gebt die Quest Leonids Brief ab
     .target Glix Xizzix
+    .isOnQuest 98545
 step << Rogue
     #ssf
     .goto 1458/0,133.71,1561.730
@@ -3160,6 +3183,28 @@ step << Paladin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Linnea|r
     .turnin 356 >>Gebt die Quest Patrouille zur Rückendeckung ab
     .target Deathguard Linnea
+step << Paladin
+    .goto 1420/0,73.800,2022.300
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathguard Linnea::1495|r (NOT TRANSLATED IN :deDE YET)
+    >>|cRXP_WARN_This is a pre-quest for "The Wrath of Rath'mael"|r (NOT TRANSLATED IN :deDE YET)
+    .turnin 356 >>Turn in Rear Guard Patrol (NOT TRANSLATED IN :deDE YET)
+    .target Deathguard Linnea::1495
+    .accept 99156 >>Accept Rear Guard Patrol (NOT TRANSLATED IN :deDE YET)
+    .dungeon ROL
+step << Paladin
+    .goto 1420/0,-765.200,2518.700
+    >>Kill |cRXP_ENEMY_Riptear|r |cRXP_WARN_(level 13 elite)|r. Loot him for |T134339:0|t[|cRXP_LOOT_Riptear's Heart|r] (NOT TRANSLATED IN :deDE YET)
+    >>|cRXP_WARN_This is a pre-quest for "The Wrath of Rath'mael"|r (NOT TRANSLATED IN :deDE YET)
+    .complete 99156,1 --|1/1 Riptear's Heart
+    .mob Riptear
+    .dungeon ROL
+step << Paladin
+    .goto 1420/0,74.200,2022.400
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathguard Linnea::1495|r (NOT TRANSLATED IN :deDE YET)
+    >>|cRXP_WARN_This is a pre-quest for "The Wrath of Rath'mael"|r (NOT TRANSLATED IN :deDE YET)
+    .turnin 99156 >>Turn in Rear Guard Patrol (NOT TRANSLATED IN :deDE YET)
+    .target Deathguard Linnea::1495
+    .dungeon ROL
 step << Paladin
     .goto 1420/0,311.600,2251.000
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Shari Stilwell|r
@@ -4009,6 +4054,18 @@ step
     .accept 1358 >> Akzeptiert die Quest Probe für Helbrim
     .target +Apothecary Zinge
     .goto 1458/0,391.97,1442.87
+    .dungeon !ROL
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Faranell|r and |cRXP_FRIENDLY_Zinge|r in The Apothecarium (NOT TRANSLATED IN :deDE YET)
+    .turnin 447 >>Turn in A Recipe For Death (NOT TRANSLATED IN :deDE YET)
+    .accept 450 >>Accept A Recipe For Death (NOT TRANSLATED IN :deDE YET)
+    .target +Master Apothecary Faranell
+    .goto 1458/0,404.63,1434.67
+    .turnin 1359 >> Turn in Zinge's Delivery (NOT TRANSLATED IN :deDE YET)
+    .accept 1358 >> Accept Sample for Helbrim (NOT TRANSLATED IN :deDE YET)
+    .target +Apothecary Zinge
+    .goto 1458/0,391.97,1442.87
+    .dungeon ROL
 step
     .goto 1458/0,334.02,1262.17--c:Undercity,56.2,96.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Varimathras|r

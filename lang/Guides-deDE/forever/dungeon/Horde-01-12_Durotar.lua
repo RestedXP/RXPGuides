@@ -45,10 +45,11 @@ RXPGuides.RegisterGuide([[
 --#groupid RXP-SRGCE-H1
 #defaultfor Troll/Orc
 #next 10-12 Tirisfal (Orc/Troll) << !Hunter !Shaman !Tauren !Skyborne
-#next 12-16 Das Brachland << Orc Hunter/Troll Hunter/Orc Shaman/Troll Shaman
+#next 14-18 Das Brachland << Orc Hunter/Troll Hunter/Orc Shaman/Troll Shaman
 
 
 step
+.enabledungeon ROL
 .enabledungeon RFC
 #include RestedXP Forever Route (H)\10-12 Durotar
 ]])

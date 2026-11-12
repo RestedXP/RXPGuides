@@ -12,7 +12,7 @@ RXPGuides.RegisterGuide([[
 step
     +|cRXP_WARN_Ihr müsst mindestens Stufe 8 sein, um|r |T133816:0|t[Handschuhe prägen - Schmelzschlag] |cRXP_WARN_allein in Mulgore zu erwerben|r
     >>|cRXP_WARN_Ihr MÜSST mindestens Stufe 3 haben, um das|r |T134918:0|t|cRXP_LOOT_[Schwefliges Symbol]|r
-    >>|cRXP_WARN_Ihr müsst stärker leveln, bevor ihr überhaupt versucht zu erwerben|r |T133816:0|t[Handschuhe prägen - Schmelzschlag]
+    >>|cRXP_WARN_Ihr müsst stärker leveln, bevor ihr überhaupt versucht|r |T133816:0|t[Handschuhe prägen - Schmelzschlag] zu erwerben
     .train 425344,1
     .xp >3,1
 step

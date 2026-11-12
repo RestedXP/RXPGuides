@@ -3,7 +3,7 @@ RXPGuides.RegisterGuide([[
 #classic
 #season 2
 #group RestedXP Alptraum Incursion Dailies
-#name (25-32) Dämmerwald Alptraum Incursion
+#name (25-32) Alptraumeinfall im Dämmerwald
 
 step
     #optional

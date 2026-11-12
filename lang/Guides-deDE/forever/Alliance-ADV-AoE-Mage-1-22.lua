@@ -1151,7 +1151,7 @@ RXPGuides.RegisterGuide([[
 #version 2
 #group RestedXP ADV AoE Allianz Magier
 #defaultfor none Human Mage
-#next 10-12 ADV Dunkelküste 1 Magier AoE
+#next 10-12 Fortgeschrittender Dunkelküste 1 Magier AoE Guide
 
 step
     #completewith Rudra
@@ -1309,7 +1309,7 @@ step
     #requires Shortcut2
     #completewith next
     .goto 1426/0,-2198.49,-5277.75,50,0
-    .goto 1426/0,-2286.16,-5200.59,30 >>Lockt einen |cRXP_ENEMY_Vernarbter Klippeneber|r durch den Tunnel
+    .goto 1426/0,-2286.16,-5200.59,30 >>Zieht einen |cRXP_ENEMY_Vernarbter Klippeneber|r durch den Tunnel
     >>|cRXP_WARN_Seid vorsichtig, da sie|r |T132337:0|t[Ansturm] wirken|cRXP_WARN_(Selbst Sofort: Erhöht die Bewegungsgeschwindigkeit für 3 Sek., verursacht 40-100 Nahkampfschaden bei Treffer. Nur in der Ferne wirkbar)|r
     .mob Scarred Crag Boar
 step
@@ -1356,7 +1356,7 @@ step
     .mob Scarred Crag Boar
 step
     .goto 1432/0,-2518.11,-5625.83
-    >>Lockt einen |cRXP_ENEMY_Vernarbter Klippeneber|r durch den Tunnel
+    >>Zieht einen |cRXP_ENEMY_Vernarbter Klippeneber|r durch den Tunnel
     >>|cRXP_WARN_Seid vorsichtig, da sie|r |T132337:0|t[Ansturm] wirken|cRXP_WARN_(Selbst Sofort: Erhöht die Bewegungsgeschwindigkeit für 3 Sek., verursacht 40-100 Nahkampfschaden bei Treffer. Nur in der Ferne wirkbar)|r
     .zone Loch Modan >> Reist durch den Tunnel nach Loch Modan
     .mob Scarred Crag Boar
@@ -1443,7 +1443,7 @@ RXPGuides.RegisterGuide([[
 #version 2
 #group RestedXP ADV AoE Allianz Magier
 #defaultfor none Gnome Mage
-#next 10-12 ADV Dunkelküste 1 Magier AoE
+#next 10-12 Fortgeschrittender Dunkelküste 1 Magier AoE Guide
 
 
 step << !Gnome Mage
@@ -2751,7 +2751,7 @@ step
     #requires Shortcut2
     #completewith next
     .goto 1426/0,-2198.49,-5277.75,50,0
-    .goto 1426/0,-2286.16,-5200.59,30 >>Lockt einen |cRXP_ENEMY_Vernarbter Klippeneber|r durch den Tunnel
+    .goto 1426/0,-2286.16,-5200.59,30 >>Zieht einen |cRXP_ENEMY_Vernarbter Klippeneber|r durch den Tunnel
     >>|cRXP_WARN_Seid vorsichtig, da sie|r |T132337:0|t[Ansturm] wirken|cRXP_WARN_(Selbst Sofort: Erhöht die Bewegungsgeschwindigkeit für 3 Sek., verursacht 40-100 Nahkampfschaden bei Treffer. Nur in der Ferne wirkbar)|r
     .mob Scarred Crag Boar
 step
@@ -2829,7 +2829,7 @@ step
     #label CragB1
     #completewith Cobbleflint
     .goto 1432/0,-2447.50,-5564.39,20,0
-    .goto 1432/0,-2534.11,-5642.02,30 >>Lockt einen |cRXP_ENEMY_Vernarbter Klippeneber|r durch den Tunnel
+    .goto 1432/0,-2534.11,-5642.02,30 >>Zieht einen |cRXP_ENEMY_Vernarbter Klippeneber|r durch den Tunnel
     >>|cRXP_WARN_Seid vorsichtig, da sie|r |T132337:0|t[Ansturm] wirken|cRXP_WARN_(Selbst Sofort: Erhöht die Bewegungsgeschwindigkeit für 3 Sek., verursacht 40-100 Nahkampfschaden bei Treffer. Nur in der Ferne wirkbar)|r
     .mob Scarred Crag Boar
 step
@@ -2999,7 +2999,7 @@ RXPGuides.RegisterGuide([[
 #forever
 #disabledungeons
 << Alliance Mage
-#name 10-12 ADV Dunkelküste 1 Magier AoE
+#name 10-12 Fortgeschrittender Dunkelküste 1 Magier AoE Guide
 #version 2
 #group RestedXP ADV AoE Allianz Magier
 #defaultfor none Mage
@@ -3221,7 +3221,7 @@ step
 step
     .goto 1439/1,393.72,5993.24
     >>Lauft zum Furbolg Camp
-    >>|cRXP_WARN_Versucht nicht gegen die, |rWindsprecher der Schwarzfelle|cRXP_ENEMY_ zu kämpfen|r
+    >>|cRXP_WARN_Versucht nicht gegen den|r |cRXP_ENEMY_Windsprecher der Schwarzfelle|r zu kämpfen
     .complete 984,1 --Find a corrupt furbolg camp (1)
 step
     .goto 1439/1,411.40,5873.15,60,0
@@ -3240,7 +3240,7 @@ step
     .target Sentinel Tysha Moonblade
 step
     #completewith Relics
-    +|cRXP_WARN_Meidet es |cRXP_ENEMY_Lady Mondblick|r (rare) zu pullen, wenn sie up ist|r
+    +|cRXP_WARN_Meidet es |cRXP_ENEMY_Lady Mondblick|r (rare) wenn sie up ist|r zu pullen
     .unitscan Lady Moongazer
 step
     #completewith Fall
@@ -3444,7 +3444,7 @@ step
     .mob Young Reef Crawler
 step
     .goto 1439/1,541.75,6313.31
-    >>Clickt die |cRXP_PICK_Buzzbox 827|r
+    >>Klickt |cRXP_PICK_Buzzbox 827|r
     .turnin 983 >>Gebt die Quest Dröhnkiste 827 ab
     .accept 1001 >>Akzeptiert die Quest Dröhnkiste 411
 step
@@ -3899,7 +3899,7 @@ step
     #requires Gwennyth
     .goto 1439/1,393.72,5993.24
     >>Lauft zum Furbolg Camp
-    >>|cRXP_WARN_Versucht nicht gegen die, |rWindsprecher der Schwarzfelle|cRXP_ENEMY_ zu kämpfen|r
+    >>|cRXP_WARN_Versucht nicht gegen den|r |cRXP_ENEMY_Windsprecher der Schwarzfelle|r zu kämpfen
     .complete 984,1 --Find a corrupt furbolg camp (1)
 step
     .goto 1439/1,302.02,5726.433
@@ -3908,7 +3908,7 @@ step
     .target Sentinel Tysha Moonblade
 step
     #completewith Anaya
-    +|cRXP_WARN_Meidet es |cRXP_ENEMY_Lady Mondblick|r (rare) zu pullen, wenn sie up ist|r
+    +|cRXP_WARN_Meidet es |cRXP_ENEMY_Lady Mondblick|r (rare) wenn sie up ist|r zu pullen
     .unitscan Lady Moongazer
  step
     #completewith Relics
@@ -4012,7 +4012,7 @@ step
     .target Terenthis
 step
     .goto 1439/1,541.75,6313.31
-    >>Clickt die |cRXP_PICK_Buzzbox 827|r
+    >>Klickt |cRXP_PICK_Buzzbox 827|r
     .turnin 983 >>Gebt die Quest Dröhnkiste 827 ab
     .accept 1001 >>Akzeptiert die Quest Dröhnkiste 411
 step
@@ -4770,7 +4770,7 @@ step
     .goto 1453/0,758.31,-8878.78,20,0
     .goto 1453/0,810.33,-8832.44,20,0
     .goto 1453/0,827.54,-8850.19,15,0
-    .goto 1453/0,822.16,-8865.60,10 >>Reisen zu |cRXP_FRIENDLY_Adair|r
+    .goto 1453/0,822.16,-8865.60,10 >>Reist zu |cRXP_FRIENDLY_Adair|r
     .money <0.0090
 step
     .goto 1453/0,822.16,-8865.60
@@ -4889,7 +4889,7 @@ step
     #completewith next
     .goto 1453/0,662.46,-8860.76,10,0
     >>Betretet das Gasthaus
-    .goto 1453/0,673.75,-8867.93,10 >>Reisen zu |cRXP_FRIENDLY_Allison|r
+    .goto 1453/0,673.75,-8867.93,10 >>Reist zu |cRXP_FRIENDLY_Allison|r
     .target Innkeeper Allison
 step
     .goto 1453/0,673.75,-8867.93
@@ -6269,7 +6269,7 @@ step
     #completewith next
     .goto 1453/0,662.46,-8860.76,10,0
     >>Betretet das Gasthaus
-    .goto 1453/0,673.75,-8867.93,10 >>Reisen zu |cRXP_FRIENDLY_Allison|r
+    .goto 1453/0,673.75,-8867.93,10 >>Reist zu |cRXP_FRIENDLY_Allison|r
     .target Innkeeper Allison
 step
     .goto 1453/0,673.75,-8867.93
@@ -7184,7 +7184,7 @@ step
     .goto 1453/0,758.31,-8878.78,20,0
     .goto 1453/0,810.33,-8832.44,20,0
     .goto 1453/0,827.54,-8850.19,15,0
-    .goto 1453/0,822.16,-8865.60,10 >>Reisen zu |cRXP_FRIENDLY_Adair|r
+    .goto 1453/0,822.16,-8865.60,10 >>Reist zu |cRXP_FRIENDLY_Adair|r
 step
     .goto 1453/0,822.16,-8865.60
     >>Betretet das Gebäude
@@ -8012,7 +8012,7 @@ step
     .goto 1453/0,758.31,-8878.78,20,0
     .goto 1453/0,810.33,-8832.44,20,0
     .goto 1453/0,827.54,-8850.19,15,0
-    .goto 1453/0,822.16,-8865.60,10 >>Reisen zu |cRXP_FRIENDLY_Adair|r
+    .goto 1453/0,822.16,-8865.60,10 >>Reist zu |cRXP_FRIENDLY_Adair|r
 step
     #label AdairX
     .goto 1453/0,822.16,-8865.60

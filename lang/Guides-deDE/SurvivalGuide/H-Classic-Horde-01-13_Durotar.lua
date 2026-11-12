@@ -3799,7 +3799,7 @@ step
 step
     #optional
     #completewith Pumpkins
-    >>Tötet jeden |cRXP_ENEMY_Nachtsauger|r, den ihr seht. Sammelt ihre |cRXP_LOOT_Nachtsaugerpelz|r als Beute
+    >>Tötet jeden |cRXP_ENEMY_Nachtsauger|r, den ihr seht. Sammelt ihre |cRXP_LOOT_Nachtsaugerpelze|r als Beute
     .complete 375,1 --Duskbat Pelt (5)
     .mob Greater Duskbat
     .mob Vampiric Duskbat
@@ -3845,7 +3845,7 @@ step
     .isOnQuest 427
 step
     #completewith next
-    >>Tötet jeden |cRXP_ENEMY_Nachtsauger|r, den ihr seht. Sammelt ihre |cRXP_LOOT_Nachtsaugerpelz|r als Beute
+    >>Tötet jeden |cRXP_ENEMY_Nachtsauger|r, den ihr seht. Sammelt ihre |cRXP_LOOT_Nachtsaugerpelze|r als Beute
     .complete 375,1 --Duskbat Pelt (5)
     .mob Greater Duskbat
     .mob Vampiric Duskbat
@@ -4265,7 +4265,7 @@ step << Warlock
 step
     #optional
     #completewith next
-    >>Tötet jeden |cRXP_ENEMY_Nachtsauger|r, den ihr seht. Sammelt ihre |cRXP_LOOT_Nachtsaugerpelz|r als Beute
+    >>Tötet jeden |cRXP_ENEMY_Nachtsauger|r, den ihr seht. Sammelt ihre |cRXP_LOOT_Nachtsaugerpelze|r als Beute
     .complete 375,1 --Duskbat Pelt (5)
     .mob Greater Duskbat
     .mob Vampiric Duskbat
@@ -4318,7 +4318,7 @@ step
     .goto Tirisfal Glades,42.82,31.93,60,0
     .goto Tirisfal Glades,42.82,31.93,60,0
     .goto Tirisfal Glades,45.08,31.15,60,0
-    >>Tötet |cRXP_ENEMY_Thurman|r und |cRXP_ENEMY_Gregor|r. Plündert sie für ihre |cRXP_LOOT_Überreste|r. Sie können umher patroullieren
+    >>Tötet |cRXP_ENEMY_Thurman|r und |cRXP_ENEMY_Gregor|r. Plündert sie für ihre |cRXP_LOOT_überreste|r. Sie können umher patroullieren
     .complete 354,3 --Thurman's Remains (1)
     .unitscan +Thurman Agamand
     .complete 354,1 --Gregor's Remains (1)
@@ -4393,7 +4393,7 @@ step
 step
     #optional
     #completewith RotHideGnolls
-    >>Tötet jeden |cRXP_ENEMY_Nachtsauger|r, den ihr seht. Sammelt ihre |cRXP_LOOT_Nachtsaugerpelz|r als Beute
+    >>Tötet jeden |cRXP_ENEMY_Nachtsauger|r, den ihr seht. Sammelt ihre |cRXP_LOOT_Nachtsaugerpelze|r als Beute
     .complete 375,1 --Duskbat Pelt (5)
     .mob Greater Duskbat
     .mob Vampiric Duskbat
@@ -4672,7 +4672,7 @@ step
 step
     #optional
     #completewith HorrorsandSpirits
-    >>Tötet jeden |cRXP_ENEMY_Nachtsauger|r, den ihr seht. Sammelt ihre |cRXP_LOOT_Nachtsaugerpelz|r als Beute
+    >>Tötet jeden |cRXP_ENEMY_Nachtsauger|r, den ihr seht. Sammelt ihre |cRXP_LOOT_Nachtsaugerpelze|r als Beute
     .complete 375,1 --Duskbat Pelt (5)
     .mob Greater Duskbat
     .mob Vampiric Duskbat
@@ -4783,7 +4783,7 @@ step << Priest/Warlock
 step
     #optional
     #completewith next
-    >>Tötet jeden |cRXP_ENEMY_Nachtsauger|r, den ihr seht. Sammelt ihre |cRXP_LOOT_Nachtsaugerpelz|r als Beute
+    >>Tötet jeden |cRXP_ENEMY_Nachtsauger|r, den ihr seht. Sammelt ihre |cRXP_LOOT_Nachtsaugerpelze|r als Beute
     .complete 375,1 --Duskbat Pelt (5)
     .mob Greater Duskbat
     .mob Vampiric Duskbat
@@ -5377,7 +5377,7 @@ step
     .isOnQuest 408
 step << Warrior
     #optional
-    .abandon 1821 >> Brecht die Quest Agamand-Erbstücke ab.
+    .abandon 1821 >> Brecht die Quest Agamand-Erbstücke ab
     .isOnQuest 1821
 step << Shaman/Hunter
     #optional

@@ -1013,7 +1013,7 @@ step
 step
     #completewith next
     .goto Eastern Kingdoms,48.07,62.42
-    .subzone 1584,2 >>Schwarzfelstiefen betreten
+    .subzone 1584,2 >>Betretet Schwarzfelstiefen
     >>|cRXP_WARN_Stellt sicher, dass ihr eine Gruppe parat habt|r
 step
     .use 21986 >>Betretet den Ring des Gesetzes und benutzt |T132619:0|t[Banner der Provokation]

@@ -3241,7 +3241,7 @@ step
     .isOnQuest 408
 step << Warrior
     #optional
-    .abandon 1821 >> Brecht die Quest Agamand-Erbstücke ab.
+    .abandon 1821 >> Brecht die Quest Agamand-Erbstücke ab
     .isOnQuest 1821
 step
     #label LeaveUndercity3

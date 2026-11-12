@@ -3112,7 +3112,7 @@ step
     >>Tötet |cRXP_ENEMY_Kriegsherr Krom'zar|r, sobald er erscheint. Plündert die |cRXP_PICK_Flagge|r, welche er auf dem Boden fallen lässt
     >>|cRXP_WARN_Seid vorsichtig! Er ist ein starker Elite und wird von mindestens zwei|r |cRXP_ENEMY_Kolkar|r |cRXP_WARN_mobs|r beschützt
     >>|cRXP_WARN_Es kann bis zu 3 Minuten dauern, bis er erscheint|r
-    .link https://www.youtube.com/watch?v=xrm0PWe5wf4 >>|cRXP_WARN_Klickt hier für ein Anleitungsvideo zum Kiten|r |cRXP_ENEMY_Kriegsherr Krom'zar|r
+    .link https://www.youtube.com/watch?v=xrm0PWe5wf4 >>|cRXP_WARN_Klickt hier für ein Anleitungsvideo zum Kiten von|r |cRXP_ENEMY_Kriegsherr Krom'zar|r
     .complete 4021,1 --Piece of Krom'zar's Banner (1)
     .unitscan Warlord Krom'zar
     .isOnQuest 4021
@@ -4626,7 +4626,7 @@ step
 step << !Tauren !Shaman !Warrior/Undead
     .goto The Barrens,44.55,59.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Quetschzahn|r
-    .aura 16618 >>|cRXP_WARN_Falls ihr 10 habt|r |T134128:0|t[|cRXP_LOOT_Blutsplitter|r] |cRXP_WARN_übrig, benutzt sie, um|r |T136022:0|t[Geist des Windes] |cRXP_WARN_von|r |cRXP_FRIENDLY_Quetschzahn|r zu erhalten
+    .aura 16618 >>|cRXP_WARN_Falls ihr 10|r |T134128:0|t[|cRXP_LOOT_Blutsplitter|r] |cRXP_WARN_übrig habt, benutzt sie, um|r |T136022:0|t[Geist des Windes] |cRXP_WARN_von|r |cRXP_FRIENDLY_Quetschzahn|r zu erhalten
     >>|cRXP_WARN_Überspringen diesen Schritt, falls ihr die Donnerfels-Flugroute habt|r
     .itemcount 5075,10
     .target Mangletooth
@@ -5262,7 +5262,7 @@ step
     .dungeon WC
 step
     #optional
-    >>Tötet |cRXP_ENEMY_Deviate Ravagers|r, |cRXP_ENEMY_Vipers|r, |cRXP_ENEMY_Shamblers|r und |cRXP_ENEMY_Dreadfangs|r. Plündert sie für |cRXP_ENEMY_Hides|r
+    >>Tötet |cRXP_ENEMY_Deviatverheerer|r, |cRXP_ENEMY_Deviatviper|r, |cRXP_ENEMY_Deviatschlurfer|r und |cRXP_ENEMY_Deviatschreckensfang|r. Plündert sie für |cRXP_ENEMY_Bälge|r
     .complete 1487,1 --Deviate Ravager (7)
     .mob +Deviate Ravager
     .complete 1487,2 --Deviate Viper (7)
@@ -5552,7 +5552,7 @@ step
     >>Tötet |cRXP_ENEMY_Kriegsherr Krom'zar|r, sobald er erscheint. Plündert die |cRXP_PICK_Flagge|r, welche er auf dem Boden fallen lässt
     >>|cRXP_WARN_Seid vorsichtig! Er ist ein starker Elite und wird von mindestens zwei|r |cRXP_ENEMY_Kolkar|r |cRXP_WARN_mobs|r beschützt
     >>|cRXP_WARN_Es kann bis zu 3 Minuten dauern, bis er erscheint|r
-    .link https://www.youtube.com/watch?v=xrm0PWe5wf4 >>|cRXP_WARN_Klickt hier für ein Anleitungsvideo zum Kiten|r |cRXP_ENEMY_Kriegsherr Krom'zar|r
+    .link https://www.youtube.com/watch?v=xrm0PWe5wf4 >>|cRXP_WARN_Klickt hier für ein Anleitungsvideo zum Kiten von|r |cRXP_ENEMY_Kriegsherr Krom'zar|r
     .complete 4021,1 --Piece of Krom'zar's Banner (1)
     .unitscan Warlord Krom'zar
     .isQuestTurnedIn 852
@@ -7038,7 +7038,7 @@ step << Warlock/Mage
     .itemcount 221499,1 << Warlock --Rune of the Felguard
     .itemcount 223147,1 << Mage --Spell Notes: Balefire Bolt
     .train 431756 >>|cRXP_WARN_Benutzt die|r |T134419:0|t[|cRXP_FRIENDLY_Rune der Teufelswache|r] |cRXP_WARN_um |r |T136216:0|t[Teufelswache beschwören] zu erlernen << Warlock
-    .train 429311 >>|cRXP_WARN_Benutzt die|r |T134939:0|t[|cRXP_FRIENDLY_Zaubernotizen: Qualfeuerblitz|r] |cRXP_WARN_zum Trainieren|r |T135809:0|t[Qualfeuerblitz] << Mage
+    .train 429311 >>|cRXP_WARN_Benutzt die|r |T134939:0|t[|cRXP_FRIENDLY_Zaubernotizen: Qualfeuerblitz|r] |cRXP_WARN_um|r |T135809:0|t[Qualfeuerblitz] zu erlernen << Mage
     .use 221499 << Warlock
     .use 223147 << Mage
 step
@@ -10290,7 +10290,7 @@ step
     >>Tötet |cRXP_ENEMY_Kriegsherr Krom'zar|r, sobald er erscheint. Plündert die |cRXP_PICK_Flagge|r, welche er auf dem Boden fallen lässt
     >>|cRXP_WARN_Seid vorsichtig! Er ist ein starker Elite und wird von mindestens zwei|r |cRXP_ENEMY_Kolkar|r |cRXP_WARN_mobs|r beschützt
     >>|cRXP_WARN_Es kann bis zu 3 Minuten dauern, bis er erscheint|r
-    .link https://www.youtube.com/watch?v=xrm0PWe5wf4 >>|cRXP_WARN_Klickt hier für ein Anleitungsvideo zum Kiten|r |cRXP_ENEMY_Kriegsherr Krom'zar|r
+    .link https://www.youtube.com/watch?v=xrm0PWe5wf4 >>|cRXP_WARN_Klickt hier für ein Anleitungsvideo zum Kiten von|r |cRXP_ENEMY_Kriegsherr Krom'zar|r
     .complete 4021,1 --Piece of Krom'zar's Banner (1)
     .unitscan Warlord Krom'zar
     .isOnQuest 4021
@@ -11035,7 +11035,7 @@ step << Warlock/Mage
     .itemcount 221499,1 << Warlock --Rune of the Felguard
     .itemcount 223147,1 << Mage --Spell Notes: Balefire Bolt
     .train 431756 >>|cRXP_WARN_Benutzt die|r |T134419:0|t[|cRXP_FRIENDLY_Rune der Teufelswache|r] |cRXP_WARN_um |r |T136216:0|t[Teufelswache beschwören] zu erlernen << Warlock
-    .train 429311 >>|cRXP_WARN_Benutzt die|r |T134939:0|t[|cRXP_FRIENDLY_Zaubernotizen: Qualfeuerblitz|r] |cRXP_WARN_zum Trainieren|r |T135809:0|t[Qualfeuerblitz] << Mage
+    .train 429311 >>|cRXP_WARN_Benutzt die|r |T134939:0|t[|cRXP_FRIENDLY_Zaubernotizen: Qualfeuerblitz|r] |cRXP_WARN_um|r |T135809:0|t[Qualfeuerblitz] zu erlernen << Mage
     .use 221499 << Warlock
     .use 223147 << Mage
 step
@@ -12044,7 +12044,7 @@ step
 step << !Tauren
     .goto The Barrens,44.55,59.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Quetschzahn|r
-    .aura 16618 >>|cRXP_WARN_Falls ihr 10 habt|r |T134128:0|t[|cRXP_LOOT_Blutsplitter|r] |cRXP_WARN_übrig, benutzt sie, um|r |T136022:0|t[Geist des Windes] |cRXP_WARN_von|r |cRXP_FRIENDLY_Quetschzahn|r zu erhalten
+    .aura 16618 >>|cRXP_WARN_Falls ihr 10|r |T134128:0|t[|cRXP_LOOT_Blutsplitter|r] |cRXP_WARN_übrig habt, benutzt sie, um|r |T136022:0|t[Geist des Windes] |cRXP_WARN_von|r |cRXP_FRIENDLY_Quetschzahn|r zu erhalten
     >>|cRXP_WARN_Überspringen diesen Schritt, falls ihr die Donnerfels-Flugroute habt|r
     .itemcount 5075,10
     .target Mangletooth
@@ -12659,7 +12659,7 @@ step
     .dungeon WC
 step
     #optional
-    >>Tötet |cRXP_ENEMY_Deviate Ravagers|r, |cRXP_ENEMY_Vipers|r, |cRXP_ENEMY_Shamblers|r und |cRXP_ENEMY_Dreadfangs|r. Plündert sie für |cRXP_ENEMY_Hides|r
+    >>Tötet |cRXP_ENEMY_Deviatverheerer|r, |cRXP_ENEMY_Deviatviper|r, |cRXP_ENEMY_Deviatschlurfer|r und |cRXP_ENEMY_Deviatschreckensfang|r. Plündert sie für |cRXP_ENEMY_Bälge|r
     .complete 1487,1 --Deviate Ravager (7)
     .mob +Deviate Ravager
     .complete 1487,2 --Deviate Viper (7)
@@ -12929,7 +12929,7 @@ step
     >>Tötet |cRXP_ENEMY_Kriegsherr Krom'zar|r, sobald er erscheint. Plündert die |cRXP_PICK_Flagge|r, welche er auf dem Boden fallen lässt
     >>|cRXP_WARN_Seid vorsichtig! Er ist ein starker Elite und wird von mindestens zwei|r |cRXP_ENEMY_Kolkar|r |cRXP_WARN_mobs|r beschützt
     >>|cRXP_WARN_Es kann bis zu 3 Minuten dauern, bis er erscheint|r
-    .link https://www.youtube.com/watch?v=xrm0PWe5wf4 >>|cRXP_WARN_Klickt hier für ein Anleitungsvideo zum Kiten|r |cRXP_ENEMY_Kriegsherr Krom'zar|r
+    .link https://www.youtube.com/watch?v=xrm0PWe5wf4 >>|cRXP_WARN_Klickt hier für ein Anleitungsvideo zum Kiten von|r |cRXP_ENEMY_Kriegsherr Krom'zar|r
     .complete 4021,1 --Piece of Krom'zar's Banner (1)
     .unitscan Warlord Krom'zar
     .isQuestTurnedIn 852
@@ -13072,7 +13072,7 @@ step
     >>Tötet |cRXP_ENEMY_Kriegsherr Krom'zar|r, sobald er erscheint. Plündert die |cRXP_PICK_Flagge|r, welche er auf dem Boden fallen lässt
     >>|cRXP_WARN_Seid vorsichtig! Er ist ein starker Elite und wird von mindestens zwei|r |cRXP_ENEMY_Kolkar|r |cRXP_WARN_mobs|r beschützt
     >>|cRXP_WARN_Es kann bis zu 3 Minuten dauern, bis er erscheint|r
-    .link https://www.youtube.com/watch?v=xrm0PWe5wf4 >>|cRXP_WARN_Klickt hier für ein Anleitungsvideo zum Kiten|r |cRXP_ENEMY_Kriegsherr Krom'zar|r
+    .link https://www.youtube.com/watch?v=xrm0PWe5wf4 >>|cRXP_WARN_Klickt hier für ein Anleitungsvideo zum Kiten von|r |cRXP_ENEMY_Kriegsherr Krom'zar|r
     .complete 4021,1 --Piece of Krom'zar's Banner (1)
     .unitscan Warlord Krom'zar
     .isQuestTurnedIn 852

@@ -31,6 +31,7 @@ RXPGuides.RegisterGuide([[
 #next 12-14 Silberwald; 12-17 das Brachland
 
 step
+.enabledungeon ROL
 .enabledungeon RFC
 #include RestedXP Forever Route (H)\6-12 Tirisfal
 ]])
@@ -47,7 +48,7 @@ RXPGuides.RegisterGuide([[
 #era/som--h
 #name 12-14 Silberwald
 #displayname 13-15 Silberwald << Paladin
-#next 12-16 Das Brachland
+#next 14-18 Das Brachland
 
 
 step

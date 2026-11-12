@@ -9,8 +9,8 @@ RXPGuides.RegisterGuide([[
 
 
 step
-    +|cRXP_WARN_Ihr müsst mindestens Stufe 2 sein, um|r |T133816:0|t[Handschuhe prägen - Eislanze] |cRXP_WARN_zu erwerben, da dies die Stufenvoraussetzung für den Erhalt von|r |T133736:0|t[Verständnis Primer]
-    >>|cRXP_WARN_Ihr braucht eine höhere Stufe, bevor ihr versucht zu erwerben|r |T133816:0|t[Handschuhe prägen - Eislanze]
+    +|cRXP_WARN_Ihr müsst mindestens Stufe 2 sein, um|r |T133816:0|t[Handschuhe prägen - Eislanze] |cRXP_WARN_zu erwerben, da dies die Stufenvoraussetzung für den Erhalt von|r |T133736:0|t[Verständnisfibel] ist
+    >>|cRXP_WARN_Ihr braucht eine höhere Stufe, bevor ihr versucht|r |T133816:0|t[Handschuhe prägen - Eislanze] zu erwerben
     .train 401760,1
     .xp >2,1
 step

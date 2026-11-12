@@ -214,7 +214,7 @@ step << Warlock
     #label BeginningsHS
     #completewith BeginningsEnd
     .deathskip >> Stirb und beleb dich am |cRXP_FRIENDLY_Geistheiler|r wieder
-    >>|cRXP_WARN_Stellt sicher, dass eure Subzone Das Eisklammtal ist, wenn ihr sterbt! Andernfalls werdet ihr zum Kharanos-Friedhof geschickt.|r
+    >>|cRXP_WARN_Stelle sicher, dass du dich beim Sterben im Teilgebiet „Das Eisklammtal“ befindest! Andernfalls wirst du zum Friedhof in Kharanos geschickt.|r
     .target Geistheiler
 step << Warlock
     #season 0,1
@@ -2902,6 +2902,35 @@ step
     .accept 88 >> Prinzessin muss sterben! annehmen
     .target +Ma Stonefield
     .goto 1429/0,332.43,-9895.01--c:Elwynn Forest,34.660,84.483
+step
+    .goto 1429/0,-869.87,-9768.10
+    >>Tötet |cRXP_ENEMY_Prinzessin|r. Plündert sie für |cRXP_LOOT_Meesinghalsband|r
+    >>|cRXP_ENEMY_Prinzessin|r |cRXP_WARN_wird mit beiden ihrer |r |cRXP_ENEMY_Gefolgsschwein|r angreifen
+    >>|cRXP_ENEMY_Prinzessin|r |cRXP_WARN_wird auch eine|r |T132368:0|t[Sturmattacke] machen|cRXP_WARN_was viel Schaden verursacht|r
+    >>|cRXP_WARN_Sammelt 100 Wut, bevor ihr gegen |rPrinzessin|cRXP_ENEMY_ kämpft|r << Warrior
+    >>|cRXP_WARN_Stellt sicher, dass |T136205:0|t[Entrinnen] |cRXP_WARN_bereit ist. Wenn ihr Schwierigkeiten habt, könnt ihr den Zaun mit Wurfwaffen nutzen, um das pathing auszunutzen und Zeit zu gewinnen|r << Rogue
+    >>|cRXP_WARN_Seid bereit, einen|r |T134830:0|t[Geringer Heiltrank] zu benutzen
+    .link https://www.youtube.com/watch?v=GRrXOV-UvD4 >> |cRXP_WARN_Klickt hier für eine Videoanleitung |r << !Warrior
+    .complete 88,1 --Collect Brass Collar (x1)
+    .mob Princess
+step << Warlock
+    .isOnQuest 147
+    .goto 1429/0,-932.35,-9806.53
+    >>Tötet |cRXP_ENEMY_Surena Caledon|r. Plündert sie für |cRXP_LOOT_Surenas Halsschmuck|r
+    >>Tötet |cRXP_ENEMY_Morgan der Sammler|r. Plündert ihn für |cRXP_LOOT_Der Ring des Sammlers|r
+    >>|cRXP_WARN_Fokussiert euch auf das sehr schnelle Töten von |cRXP_ENEMY_Surena Caledon|r |r
+    >>|cRXP_WARN_Wirkt|r |T136183:0|t[Furcht] kontinuierlich auf|cRXP_WARN_auf |cRXP_ENEMY_Morgan der Sammler|r|r
+    .complete 1688,1 --Surena's Choker (1)
+    .mob +Surena Caledon
+    .complete 147,1 -- The Collector's Ring (1)
+    .mob +Morgan the Collector
+step << Warlock
+    .goto 1429/0,-932.35,-9806.53
+    >>Tötet |cRXP_ENEMY_Surena Caledon|r. Plündert sie für |cRXP_LOOT_Surenas Halsschmuck|r
+    >>|cRXP_WARN_Fokussiert euch auf das sehr schnelle Töten von |cRXP_ENEMY_Surena Caledon|r |r
+    >>|cRXP_WARN_Wirkt|r |T136183:0|t[Furcht] kontinuierlich auf|cRXP_WARN_auf |cRXP_ENEMY_Morgan der Sammler|r|r
+    .complete 1688,1 --Surena's Choker (1)
+    .mob Surena Caledon
 
 --
 step << skip
@@ -3129,35 +3158,6 @@ step
     .mob +Prowler
     .complete 52,2 --Kill Young Forest Bear (x5)
     .mob +Young Forest Bear
-step << Warlock
-    .isOnQuest 147
-    .goto 1429/0,-932.35,-9806.53
-    >>Tötet |cRXP_ENEMY_Surena Caledon|r. Plündert sie für |cRXP_LOOT_Surenas Halsschmuck|r
-    >>Tötet |cRXP_ENEMY_Morgan der Sammler|r. Plündert ihn für |cRXP_LOOT_Der Ring des Sammlers|r
-    >>|cRXP_WARN_Fokussiert euch auf das sehr schnelle Töten von |cRXP_ENEMY_Surena Caledon|r |r
-    >>|cRXP_WARN_Wirkt|r |T136183:0|t[Furcht] kontinuierlich auf|cRXP_WARN_auf |cRXP_ENEMY_Morgan der Sammler|r|r
-    .complete 1688,1 --Surena's Choker (1)
-    .mob +Surena Caledon
-    .complete 147,1 -- The Collector's Ring (1)
-    .mob +Morgan the Collector
-step << Warlock
-    .goto 1429/0,-932.35,-9806.53
-    >>Tötet |cRXP_ENEMY_Surena Caledon|r. Plündert sie für |cRXP_LOOT_Surenas Halsschmuck|r
-    >>|cRXP_WARN_Fokussiert euch auf das sehr schnelle Töten von |cRXP_ENEMY_Surena Caledon|r |r
-    >>|cRXP_WARN_Wirkt|r |T136183:0|t[Furcht] kontinuierlich auf|cRXP_WARN_auf |cRXP_ENEMY_Morgan der Sammler|r|r
-    .complete 1688,1 --Surena's Choker (1)
-    .mob Surena Caledon
-step
-    .goto 1429/0,-869.87,-9768.10
-    >>Tötet |cRXP_ENEMY_Prinzessin|r. Plündert sie für |cRXP_LOOT_Meesinghalsband|r
-    >>|cRXP_ENEMY_Prinzessin|r |cRXP_WARN_wird mit beiden ihrer |r |cRXP_ENEMY_Gefolgsschwein|r angreifen
-    >>|cRXP_ENEMY_Prinzessin|r |cRXP_WARN_wird auch eine|r |T132368:0|t[Sturmattacke] machen|cRXP_WARN_was viel Schaden verursacht|r
-    >>|cRXP_WARN_Sammelt 100 Wut, bevor ihr gegen |rPrinzessin|cRXP_ENEMY_ kämpft|r << Warrior
-    >>|cRXP_WARN_Stellt sicher, dass |T136205:0|t[Entrinnen] |cRXP_WARN_bereit ist. Wenn ihr Schwierigkeiten habt, könnt ihr den Zaun mit Wurfwaffen nutzen, um das pathing auszunutzen und Zeit zu gewinnen|r << Rogue
-    >>|cRXP_WARN_Seid bereit, einen|r |T134830:0|t[Geringer Heiltrank] zu benutzen
-    .link https://www.youtube.com/watch?v=GRrXOV-UvD4 >> |cRXP_WARN_Klickt hier für eine Videoanleitung |r << !Warrior
-    .complete 88,1 --Collect Brass Collar (x1)
-    .mob Princess
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Wache Thomas|r
     .target Guard Thomas
@@ -3406,7 +3406,7 @@ step
     .target Gryan Stoutmantle
     .goto 1436/0,1045.12,-10508.80
     .accept 12 >> Akzeptiert die Quest Die Volksmiliz
-step
+step << skip
     #era
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Captain Danuvin|r
     .target Captain Danuvin
@@ -3462,7 +3462,7 @@ RXPGuides.RegisterGuide([[
 #subgroup Schnellste Route 1-20
 --#groupid RXP-SRGCE-A1
 #name 12-14 Loch Modan (Zwerg/Gnom)
-#next 13-15 Westfall;14-16 Dunkelküste
+#next 13-15 Westfall;14-16 Darkshore
 #defaultfor Gnome/Dwarf
 
 step << Dwarf Paladin
@@ -4463,7 +4463,7 @@ RXPGuides.RegisterGuide([[
 #subgroup Schnellste Route 1-20
 --#groupid RXP-SRGCE-A1
 #name 11-13 Loch Modan (Jäger)
-#next 14-16 Dunkelküste
+#next 14-16 Darkshore
 #defaultfor Dwarf
 
 step -- dont delete
@@ -4959,7 +4959,7 @@ step << Hunter skip
     #requires DockTravel
     #label DarkshoreCook1
     #completewith DarkshoreBoat
-    >>|cRXP_WARN_Während des Wartens auf das Boot am Dock:|r
+    >>|cRXP_WARN_Während ihr auf das Boot auf dem Dock wartet:|r
     .cast 818 >>|cRXP_WARN_Erstellt ein|r |T135805:0|t[Einfaches Lagerfeuer] |cRXP_WARN_(in eurem Berufe-Buch)|r
     .usespell 818
     .zoneskip Darkshore
@@ -4973,7 +4973,7 @@ step << Hunter skip
     #requires DarkshoreCook1
     #label DarkshoreCook2
     #completewith DarkshoreBoat
-    >>|cRXP_WARN_Während des Wartens auf das Boot am Dock:|r
+    >>|cRXP_WARN_Während ihr auf das Boot auf dem Dock wartet:|r
     .cast 818 >>|cRXP_WARN_Erstellt ein|r |T135805:0|t[Einfaches Lagerfeuer] |cRXP_WARN_(in eurem Berufe-Buch)|r
     .usespell 818
     .zoneskip Darkshore
@@ -4987,7 +4987,7 @@ step << Hunter skip
     #requires DarkshoreCook2
     #label DarkshoreCook3
     #completewith DarkshoreBoat
-    >>|cRXP_WARN_Während des Wartens auf das Boot am Dock:|r
+    >>|cRXP_WARN_Während ihr auf das Boot auf dem Dock wartet:|r
     .cast 818 >>|cRXP_WARN_Erstellt ein|r |T135805:0|t[Einfaches Lagerfeuer] |cRXP_WARN_(in eurem Berufe-Buch)|r
     .usespell 818
     .zoneskip Darkshore

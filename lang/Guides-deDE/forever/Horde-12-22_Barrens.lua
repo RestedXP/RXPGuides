@@ -571,19 +571,12 @@ step
     .mob Sunscale Screecher
 step
     #optional
-    #completewith next
+    #completewith RatchetEnter
     .goto 1413/1,-3851.27,-526.53,100,0
     >>Tötet |cRXP_ENEMY_Zhevra-Läufer|r. Plündert sie für ihre |cRXP_LOOT_Hufe|r
     .complete 845,1 --Zhevra Hooves (4)
     .mob Zhevra Runner
     .isOnQuest 872
-step
-    #optional
-    #completewith next
-    >>Tötet |cRXP_ENEMY_Zhevra-Läufer|r. Plündert sie für ihre |cRXP_LOOT_Hufe|r
-    .complete 845,1 --Zhevra Hooves (4)
-    .mob Zhevra Runner
-    .isNotOnQuest 872
 step
     #label RatchetEnter
     .goto 1413/1,-3728.66,-835.29
@@ -2027,44 +2020,28 @@ step << Rogue
     .collect 7970,1,888,1 --E.C.A.C. (1)
     .collect 5060,1,888,1 --Thieves' Tools (1)
 step
+    .goto 1413/1,-3759.06,-902.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Sputtervalve|r und |cRXP_FRIENDLY_Dizzywig|r
     .turnin 902 >>Gebt die Quest Samophlang ab
     .turnin 863 >> Gebt die Quest Die Flucht ab
     .accept 3921 >> Akzeptiert die Quest Wenikee Boltbucket << Hunter
-    .accept 1483 >> Akzeptiert die Quest Ziz Fizziks
-    .target +Sputtervalve
-    .goto 1413/1,-3759.06,-902.18
-    .turnin 896 >> Gebt die Quest Des Minenarbeiters Vermögen ab
-    .target +Wharfmaster Dizzywig
-    .goto 1413/1,-3796.55,-985.28
-    .isQuestComplete 896
-    .isQuestComplete 863
-step
-    #optional
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Sputtervalve|r und |cRXP_FRIENDLY_Dizzywig|r
-    .turnin 902 >>Gebt die Quest Samophlang ab
-    .accept 3921 >> Akzeptiert die Quest Wenikee Boltbucket << Hunter
-    .accept 1483 >> Akzeptiert die Quest Ziz Fizziks
-    .target +Sputtervalve
-    .goto 1413/1,-3759.06,-902.18
-    .turnin 896 >> Gebt die Quest Des Minenarbeiters Vermögen ab
-    .target +Wharfmaster Dizzywig
-    .goto 1413/1,-3796.55,-985.28
-    .isQuestComplete 896
-step
-    #optional
-    .goto 1413/1,-3759.06,-902.18
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Sputtervalve|r
-    .turnin 863 >> Gebt die Quest Die Flucht ab
     .accept 1483 >> Akzeptiert die Quest Ziz Fizziks
     .target Sputtervalve
     .isQuestComplete 863
 step
     #optional
     .goto 1413/1,-3759.06,-902.18
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Sputtervalve|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Sputtervalve|r und |cRXP_FRIENDLY_Dizzywig|r
+    .turnin 902 >>Gebt die Quest Samophlang ab
+    .accept 3921 >> Akzeptiert die Quest Wenikee Boltbucket << Hunter
     .accept 1483 >> Akzeptiert die Quest Ziz Fizziks
     .target Sputtervalve
+step
+    .goto 1413/1,-3796.55,-985.28
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Dizzywig|r
+    .turnin 896 >> Gebt die Quest Des Minenarbeiters Vermögen ab
+    .target Wharfmaster Dizzywig
+    .isQuestComplete 896
 step
     #label RapHornsPickup
     .goto 1413/1,-3697.24,-929.20
@@ -2485,7 +2462,7 @@ step
     >>Tötet |cRXP_ENEMY_Kriegsherr Krom'zar|r, sobald er erscheint. Plündert die |cRXP_PICK_Flagge|r, welche er auf dem Boden fallen lässt
     >>|cRXP_WARN_Seid vorsichtig! Er ist ein starker Elite und wird von mindestens zwei|r |cRXP_ENEMY_Kolkar|r |cRXP_WARN_mobs|r beschützt
     >>|cRXP_WARN_Es kann bis zu 3 Minuten dauern, bis er erscheint|r
-    .link https://www.youtube.com/watch?v=xrm0PWe5wf4 >>|cRXP_WARN_Klickt hier für ein Anleitungsvideo zum Kiten|r |cRXP_ENEMY_Kriegsherr Krom'zar|r
+    .link https://www.youtube.com/watch?v=xrm0PWe5wf4 >>|cRXP_WARN_Klickt hier für ein Anleitungsvideo zum Kiten von|r |cRXP_ENEMY_Kriegsherr Krom'zar|r
     .complete 4021,1 --Piece of Krom'zar's Banner (1)
     .unitscan Warlord Krom'zar
     .isOnQuest 4021
@@ -3699,7 +3676,7 @@ step << Rogue !Skyborne
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Ansekhwa|r
     .train 198 >>Erlernt Streitkolben
     .target Ansekhwa
-step << Rogue
+step << skip --Rogue
     .goto 1456/1,110.13,-1299.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Sprecht mit|r |cRXP_FRIENDLY_Kuruk|r|cRXP_BUY_. Kauft |r |T135423:0|t[Tödliche Wurfaxt] |cRXP_BUY_von ihm|r
     .collect 3137,1,6562,1 --Deadly Throwing Axe (200)
@@ -4108,7 +4085,7 @@ step
     >>Tötet |cRXP_ENEMY_Kriegsherr Krom'zar|r, sobald er erscheint. Plündert die |cRXP_PICK_Flagge|r, welche er auf dem Boden fallen lässt
     >>|cRXP_WARN_Seid vorsichtig! Er ist ein starker Elite und wird von mindestens zwei|r |cRXP_ENEMY_Kolkar|r |cRXP_WARN_mobs|r beschützt
     >>|cRXP_WARN_Es kann bis zu 3 Minuten dauern, bis er erscheint|r
-    .link https://www.youtube.com/watch?v=xrm0PWe5wf4 >>|cRXP_WARN_Klickt hier für ein Anleitungsvideo zum Kiten|r |cRXP_ENEMY_Kriegsherr Krom'zar|r
+    .link https://www.youtube.com/watch?v=xrm0PWe5wf4 >>|cRXP_WARN_Klickt hier für ein Anleitungsvideo zum Kiten von|r |cRXP_ENEMY_Kriegsherr Krom'zar|r
     .complete 4021,1 --Piece of Krom'zar's Banner (1)
     .unitscan Warlord Krom'zar
     .isQuestTurnedIn 852
@@ -5154,56 +5131,57 @@ step << skip
     .accept 2841 >>Akzeptiert die Quest Maschinenkriege
     .target Nogg
 step
+    #completewith next
     .goto 1454/1,-4739.57,2036.84
-    .gossipoption 95758 >>Sprecht mit |cRXP_FRIENDLY_Sovik|r
+    .gossipoption 95758 >>Talk to |cRXP_FRIENDLY_Sovik|r
     .isNotOnQuest 2842
     .target Sovik
 step
     .goto 1454/1,-4739.57,2036.84
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Sovik|r
-    -->>|cRXP_WARN_You are required to have Rig Wars in your quest log to accept this quest|r
-    .accept 2842 >>Akzeptiert die Quest Chefingenieur Scooty
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sovik|r
+    >>|cRXP_WARN_Pay attention! You need to go through his dialogue first, after which you will accept the quest automatically|r
+    .accept 2842 >>Accept Chief Engineer Scooty
     .target Sovik
-step << Rogue
+step << skip --Rogue
     .goto 1454/1,-4355.53,1520.68
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Sprecht mit|r |cRXP_FRIENDLY_Trak'gen|r|cRXP_BUY_. Kauft|r |T135423:0|t[Tödliche Wurfaxt] |cRXP_BUY_von ihm|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Trak'gen|r|cRXP_BUY_. Buy |r |T135423:0|t[Deadly Throwing Axe] |cRXP_BUY_from him|r
     .collect 3137,1,6544,1 --Deadly Throwing Axe (200)
     .target Trak'gen
 step << Rogue
-    >>Falls ihr irgendwelche |T134437:0|t[Gegengift]  habt|cRXP_WARN_, benutzt einen davon, um euch von|r |T136230:0|t[Berührung von Zanzil]|cRXP_WARN_ zu heilen|r
+    >>|cRXP_WARN_If you have any|r |T134437:0|t[Anti-Venom]|cRXP_WARN_, use one to cure yourself of|r |T136230:0|t[Touch of Zanzil]
     .itemcount 6452,1
     .use 6452
     .aura -9991
 step << Rogue
     #optional
-    .destroy 8051 >> |cRXP_WARN_Löscht die|r |T134536:0|t[Leuchtfeuerwaffe] |cRXP_WARN_aus euren Taschen, da sie nicht mehr benötigt wird|r
-    .destroy 8066 >> |cRXP_WARN_Löscht|r |T134374:0|t[Fizzule's Pfeife] |cRXP_WARN_aus eurer Tasche, da sie nicht mehr benötigt wird|r
+    .destroy 8051 >> |cRXP_WARN_Delete the|r |T134536:0|t[Flare Gun] |cRXP_WARN_from your bags, as it's no longer needed|r
+    .destroy 8066 >> |cRXP_WARN_Delete|r |T134374:0|t[Fizzule's Whistle] |cRXP_WARN_from your bags, as it's no longer needed|r
 step
     #optional
     #label flytoORG
 step
     #optional
-    .abandon 6421 >>Brecht die Quest Steinschlagklamm ab
+    .abandon 6421 >>Abandon Boulderslide Ravine
 step
     #optional
-    .abandon 4021 >>Brecht die Quest Gegenangriff ab!
+    .abandon 4021 >>Abandon Counterattack!
 step
     #optional
-    .abandon 6481 >>Brecht die Quest Der Irdene erhebt sich ab
+    .abandon 6481 >>Abandon Earthen Arise
 step
     #optional
-    .abandon 6284 >>Brecht die Quest Arachnophobie ab
+    .abandon 6284 >>Abandon Arachnophobia
 step
     #optional
-    .abandon 6641 >>Brecht die Quest Vorsha die Peitscherin ab
+    .abandon 6641 >>Abandon Vorsha the Lasher
 step
     #optional
-    .abandon 6563 >>Brecht die Quest Die Essenz von Aku'mai ab
+    .abandon 6563 >>Abandon The Essence of Aku'Mai
 step
     #optional
-    .abandon 97003 >>Brecht die Quest Chol'aruk the Ravener ab
+    .abandon 97003 >>Abandon Chol'aruk the Ravener
 step
-    .zone Durotar >> Verlass Orgrimmar
+    .zone Durotar >> Leave Orgrimmar
     .zoneskip Tirisfal Glades
     .zoneskip Undercity
     .zoneskip Silverpine Forest

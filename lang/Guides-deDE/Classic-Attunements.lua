@@ -149,7 +149,7 @@ step
     .isQuestTurnedIn 4182
     #completewith next
     .goto Eastern Kingdoms,48.07,62.42
-    .subzone 1584,2 >>Schwarzfelstiefen betreten
+    .subzone 1584,2 >>Betretet Schwarzfelstiefen
     >>|cRXP_WARN_Stellt sicher, dass ihr eine Gruppe parat habt|r
 step
     .isQuestTurnedIn 4182
@@ -175,7 +175,7 @@ step
     .isQuestTurnedIn 4242
     .goto Eastern Kingdoms,48.07,62.42
     #completewith next
-    .subzone 1584,2 >>Schwarzfelstiefen betreten
+    .subzone 1584,2 >>Betretet Schwarzfelstiefen
 step
     .isQuestTurnedIn 4242
     >>Tötet |cRXP_ENEMY_Zwerge|r in BRD. Plündert sie für |T134331:0|t[Eine zusammengeknüllte Notiz]
@@ -810,7 +810,7 @@ step
 step
     #completewith next
     .goto Eastern Kingdoms,48.07,62.42
-    .subzone 1584,2 >>Schwarzfelstiefen betreten
+    .subzone 1584,2 >>Betretet Schwarzfelstiefen
     >>|cRXP_WARN_Stellt sicher, dass ihr eine Gruppe parat habt|r
 step
     #softcore
@@ -1536,7 +1536,7 @@ step
     #hardcoreserver
     #completewith next
     .goto Eastern Kingdoms,48.07,62.42
-    .subzone 1584,2 >>Schwarzfelstiefen betreten
+    .subzone 1584,2 >>Betretet Schwarzfelstiefen
     >>|cRXP_WARN_Stellt sicher, dass ihr eine Gruppe parat habt|r
 step
     >>Tötet |cRXP_ENEMY_Fineous Darkvire|r. Plündert ihn für |cRXP_LOOT_Ironfel|r

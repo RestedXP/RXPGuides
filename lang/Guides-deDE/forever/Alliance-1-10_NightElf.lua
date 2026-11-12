@@ -46,7 +46,7 @@ step << Druid
     .mob +Young Thistle Boar
 step << Druid
     #completewith next
-    +|cRXP_WARN_Stellt sicher, dass ihr mindestens 1 Silber 2 Kupfer an Händlermüll habt|r, ihr könnt eure Gegenstände zählen, die 9 Kupfer wert sind
+    +|cRXP_WARN_Stellt sicher, dass ihr mindestens 1 Silber 2 Kupfer an trash habt|r, ihr könnt eure Gegenstände zählen, die 9 Kupfer wert sind
 step << !sod/Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Dirania Silvershine|r und |cRXP_FRIENDLY_Melithar Staghelm|r
     #label GoodProtector
@@ -121,7 +121,7 @@ step << !Priest !Rogue
 	.accept 3120 >> Akzeptiert die Quest Tiefgrünes Siegelzeichen << Druid
 step << !Hunter !Druid !Warrior
     #completewith next
-    >>Tötet |cRXP_ENEMY_Thistle Boars|r auf dem Weg zu Iverron. Ihr müsst das jetzt nicht fertigstellen.
+    >>Tötet |cRXP_ENEMY_Disteleber|r auf dem Weg zu Iverron. Ihr müsst das nicht jetzt Abschließen.
     .complete 457,2 --Kill Thistle Boar (x7)
     .mob +Thistle Boar
 step << !Hunter !Druid !Warrior
@@ -163,7 +163,7 @@ step << Druid
     .mob Grellkin
 step << Druid
     #completewith next
-    >>Tötet |cRXP_ENEMY_Thistle Boars|r auf dem Weg zu Iverron. Ihr müsst das jetzt nicht fertigstellen.
+    >>Tötet |cRXP_ENEMY_Disteleber|r auf dem Weg zu Iverron. Ihr müsst das nicht jetzt Abschließen.
     .complete 457,2 --Kill Thistle Boar (x7)
     .mob +Thistle Boar
 step << Druid
@@ -258,7 +258,7 @@ step
     .mob Webwood Spider
 step
     #completewith next
-    >>Tötet |cRXP_ENEMY_Thistle Boars|r auf dem Weg zu den Grells. Ihr müsst das jetzt nicht fertigstellen.
+    >>Tötet |cRXP_ENEMY_Disteleber|r auf dem Weg zu den Grells. Ihr müsst das jetzt nicht abschließen.
     .complete 457,2 --Kill Thistle Boar (x7)
     .mob +Thistle Boar
 step << !Druid
@@ -285,7 +285,7 @@ step
     .turnin 97977 >>Gebt die Quest Ruf der Natur ab
 step
     #completewith next
-    >>Tötet |cRXP_ENEMY_Thistle Boars|r auf dem Weg zu Iverron. Ihr müsst das jetzt nicht fertigstellen.
+    >>Tötet |cRXP_ENEMY_Disteleber|r auf dem Weg zu Iverron. Ihr müsst das nicht jetzt Abschließen.
     .complete 457,2 --Kill Thistle Boar (x7)
     .mob +Thistle Boar
 step
@@ -321,7 +321,7 @@ step << Hunter/Rogue
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.05
 step
     #completewith next
-    >>Tötet |cRXP_ENEMY_Thistle Boars|r auf dem Weg zu Iverron. Ihr müsst das jetzt nicht fertigstellen.
+    >>Tötet |cRXP_ENEMY_Disteleber|r auf dem Weg zu Iverron. Ihr müsst das nicht jetzt Abschließen.
     .complete 457,2 --Kill Thistle Boar (x7)
     .mob +Thistle Boar
 step
@@ -455,7 +455,7 @@ RXPGuides.RegisterGuide([[
 #subgroup Schnellste Route 1-20
 --#groupid RXP-SRGCE-A1
 #defaultfor NightElf
-#next 14-16 Dunkelküste
+#next 14-16 Darkshore
 
 step
     .goto 1438/1,734.13,9920.57
@@ -492,7 +492,7 @@ step
 step
     .goto 1438/1,882.300,9909.101
     >>Benutzt das |cRXP_WARN_/sitzen|r Emote neben dem Lagerfeuer und |cRXP_WARN_bleibt 1 Minute lang sitzen|r um das Ziel zu abzuschließen
-    >>|cRXP_WARN_Falls das Sitzen nicht für die Quest zählt, brecht sie ab und nehmt sie erneut auf!|r
+    >>|cRXP_WARN_Falls das Sitzen nicht für die Quest zählt, brecht sie ab und nehmt sie erneut an!|r
     .complete 96606,1 --Sit
     .complete 96606,2 --Gain the Boosted Rest buff
 step

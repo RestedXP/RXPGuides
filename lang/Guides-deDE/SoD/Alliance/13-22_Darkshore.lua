@@ -1915,7 +1915,7 @@ step << !sod/Warrior/Rogue/Priest
     #optional
     #completewith next
     .goto 1439,36.806,44.137,8,0
-    .goto 1439,35.743,43.710,12 >> Kehrt zu |cRXP_FRIENDLY_Cerellean Whiteclaw|r auf dem Dock zurück
+    .goto 1439,35.743,43.710,12 >> Kehrt zum |cRXP_FRIENDLY_Cerellean Whiteclaw|r auf dem Dock zurück
 step << !sod/Warrior/Rogue/Priest
     #optional
     .goto 1439,35.743,43.710
@@ -3091,7 +3091,7 @@ step << !Warrior !Rogue !Priest
     #completewith next
     #season 2
     .goto 1439,36.806,44.137,8,0
-    .goto 1439,35.743,43.710,12 >> Kehrt zu |cRXP_FRIENDLY_Cerellean Whiteclaw|r auf dem Dock zurück
+    .goto 1439,35.743,43.710,12 >> Kehrt zum |cRXP_FRIENDLY_Cerellean Whiteclaw|r auf dem Dock zurück
 step << !Warrior !Rogue !Priest
     #optional
     #season 2
