@@ -2316,7 +2316,7 @@ step
     .use 247826 >> |cRXP_WARN_Usa la|r |T134169:0|t[|cRXP_LOOT_Cabeza de Croaky|r] |cRXP_WARN_para iniciar la misión|r
     >>|cRXP_WARN_Es un enemigo élite de nivel 11. Omite este paso si no puedes matarlo|r
     .collect 247826,1,91740,1 -- Croaky's Head (1)
-    .accept 91740 >>Acepta la misión Croaky's Cabeza
+    .accept 91740 >>Acepta la misión Cabeza de Croaky
     .mob Croaky
 step
     #loop
@@ -2584,7 +2584,7 @@ step
     .goto 1429/0,-69.500,-9380.200
     .isQuestComplete 91746
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Helene Desollapelambres|r
-    .turnin 91746 >> Entrega la misión Elmpaw's Cabeza
+    .turnin 91746 >> Entrega la misión Cabeza de Patolmo
     .target Helene Peltskinner
 step
     #optional
@@ -2714,7 +2714,7 @@ step << Priest
     #requires GoldshireVendor
     .goto 1429/0,33.14,-9460.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con la |cRXP_FRIENDLY_Sacerdotisa Josetta|r
-    .accept 94774 >> Acepta la misión Sacroarcano Gracia
+    .accept 94774 >> Acepta la misión Gracia divina
     .trainer >> Aprende tus hechizos de clase
     .target Priestess Josetta
     .xp <10,1
@@ -2991,15 +2991,11 @@ step << skip
     .target Ángel de la Resurrección
 -- .subzoneskip 108
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Gryan Mantorrecio|r y el |cRXP_FRIENDLY_Capitán Danuvin|r << !Hunter
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Gryan Mantorrecio|r << Hunter
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Gryan Mantorrecio|r
     .turnin 109 >> Entrega la misión Habla con Gryan Mantorrecio
     .accept 12 >> Acepta la misión La Milicia Popular << !Hunter
     .goto 1436/0,1045.22,-10508.800
-    .target +Gryan Stoutmantle
-    .accept 102 >> Acepta la misión En patrulla por los Páramos de Poniente << !Hunter
-    .goto 1436/0,1041.93,-10511.20 << !Hunter
-    .target +Captain Danuvin << !Hunter
+    .target Gryan Stoutmantle
 step << Human
     #optional
     .goto 1436/0,1055.27,-10128.70
@@ -3509,7 +3505,7 @@ step << Priest
 step << Priest
     .goto 1453/0,862.89,-8519.61
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con la |cRXP_FRIENDLY_Suma sacerdotisa Laurena|r
-    .turnin -94774 >> Entrega la misión Sacroarcano Gracia
+    .turnin -94774 >> Entrega la misión Gracia divina
     .trainer >> Aprende tus hechizos de clase
     .target High Priestess Laurena
 step << Priest
@@ -3806,7 +3802,7 @@ step
     .goto 1426/0,-682.300,-5489.000
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Beldin Brasacerada::1376|r
     .target Beldin Steelgrill::1376
-    .accept 96408 >>Acepta la misión A Visitor to Dun Morogh
+    .accept 96408 >>Acepta la misión Un visitante en Dun Morogh
 step
     #optional
     #label BoarMeatDunMorogh1
@@ -3905,14 +3901,14 @@ step
 step
     #label QuarryStart
     .goto 1426/0,-1394.24,-5797.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Earthseer Farsen|r
-    .turnin -96408 >> Entrega la misión A Visitor to Dun Morogh
-    .accept 96392 >> Acepta la misión Farsen's Observar
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Videnterra Farsen|r
+    .turnin -96408 >> Entrega la misión Un visitante en Dun Morogh
+    .accept 96392 >> Acepta la misión La vigilancia de Farsen
     .target Earthseer Farsen
 step
     .isOnQuest 96392
     .goto 1426/0,-1394.24,-5797.83
-    .gossipoption 139831 >> Habla con |cRXP_FRIENDLY_Earthseer Farsen|r para ver su vista lejana
+    .gossipoption 139831 >> Habla con |cRXP_FRIENDLY_Videnterra Farsen|r para ver su vista lejana
     >>|cRXP_WARN_Puedes cancelar la Vista lejana cuando se completa el objetivo|r
     .target Earthseer Farsen
 step
@@ -3920,17 +3916,17 @@ step
     .aura -1293681 >> |cRXP_WARN_Presiona ESC para cancelar la Vista lejana|r
 step << skip
     .goto 1426/0,-1394.24,-5797.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Earthseer Farsen|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Videnterra Farsen|r
     >>|cRXP_WARN_Puedes cancelar la Vista lejana cuando se completa el objetivo|r
     .complete 96392,1 -- Use Farsen's Farsight
     .skipgossip
     .target Earthseer Farsen
 step
     .goto 1426/0,-1394.24,-5797.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Earthseer Farsen|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Videnterra Farsen|r
     >>|cRXP_WARN_Presiona ESC para cancelar la Vista lejana|r
-    .turnin 96392 >> Entrega la misión Farsen's Observar
-    .accept 96390 >> Acepta la misión Nip 'Em in the Compa
+    .turnin 96392 >> Entrega la misión La vigilancia de Farsen
+    .accept 96390 >> Acepta la misión Párteles el coco
     .target Earthseer Farsen
 step
     #optional
@@ -3981,7 +3977,7 @@ step
     .mob +Rockjaw Bonesnapper
     .collect 268548,1,95213,1 -- Empty Powder Keg (1)
     .disablecheckbox
-    .accept 95213 >> Acepta la misión Stolen Reventar Powder
+    .accept 95213 >> Acepta la misión Pólvora explosiva robada
     .disablecheckbox
 step
     #label QuarryEnd
@@ -3996,15 +3992,15 @@ step
     .isOnQuest 95213
     .goto 1426/0,-1606.02,-5676.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Capataz de cantera Thesten|r
-    .turnin 95213 >> Entrega la misión Stolen Reventar Powder
-    .accept 95214 >> Acepta la misión Stolen Reventar Powder
+    .turnin 95213 >> Entrega la misión Pólvora explosiva robada
+    .accept 95214 >> Acepta la misión Pólvora explosiva robada
     .target Quarrymaster Thesten
 step
     #optional
     .isQuestTurnedIn 95213
     .goto 1426/0,-1606.02,-5676.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Capataz de cantera Thesten|r
-    .accept 95214 >> Acepta la misión Stolen Reventar Powder
+    .accept 95214 >> Acepta la misión Pólvora explosiva robada
     .target Quarrymaster Thesten
 step << !Warrior !Rogue !Paladin !Hunter
     .goto 1426/0,-1577.16,-5671.20
@@ -4024,7 +4020,7 @@ step
     .use 268548 >> |cRXP_WARN_Usa el|r |T132621:0|t[|cRXP_LOOT_Tonel de pólvora vacío|r] |cRXP_WARN_para iniciar la misión|r
     >>|cRXP_WARN_NOTA: Este objeto tiene una baja probabilidad de caída. Omite este paso si no lo encuentras para cuando hayas terminado con los|r |cRXP_ENEMY_Espías Hierro Negro|r
     .collect 268548,1,95213,1 -- Empty Powder Keg (1)
-    .accept 95213 >> Acepta la misión Stolen Reventar Powder
+    .accept 95213 >> Acepta la misión Pólvora explosiva robada
     .mob Rockjaw Ambusher
 step
     #label SpyMap
@@ -4052,28 +4048,28 @@ step
     .isQuestComplete 95214
     .goto 1426/0,-1606.02,-5676.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Capataz de cantera Thesten|r
-    .turnin 95214 >> Entrega la misión Stolen Reventar Powder
+    .turnin 95214 >> Entrega la misión Pólvora explosiva robada
     .target Quarrymaster Thesten
 step
     #label OII
     .goto 1426/0,-1394.24,-5797.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Earthseer Farsen|r
-    .turnin 96390 >> Entrega la misión Nip 'Em in the Compa
-    .turnin 96391 >> Entrega la misión Mapa Subterráneo
-    .accept 96393 >> Acepta la misión Old Ironforge Incursion
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Videnterra Farsen|r
+    .turnin 96390 >> Entrega la misión Párteles el coco
+    .turnin 96391 >> Entrega la misión Mapa subterráneo
+    .accept 96393 >> Acepta la misión Incursión a Antigua Forjaz
     .target Earthseer Farsen
 step
     .isOnQuest 95213
     .goto 1426/0,-1606.02,-5676.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Capataz de cantera Thesten|r
-    .turnin 95213 >> Entrega la misión Stolen Reventar Powder
-    .accept 95214 >> Acepta la misión Stolen Reventar Powder
+    .turnin 95213 >> Entrega la misión Pólvora explosiva robada
+    .accept 95214 >> Acepta la misión Pólvora explosiva robada
     .target Quarrymaster Thesten
 step
     .isQuestTurnedIn 95213
     .goto 1426/0,-1606.02,-5676.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Capataz de cantera Thesten|r
-    .accept 95214 >> Acepta la misión Stolen Reventar Powder
+    .accept 95214 >> Acepta la misión Pólvora explosiva robada
     .target Quarrymaster Thesten
 step
     .isOnQuest 95214
@@ -4091,7 +4087,7 @@ step
     .isQuestComplete 95214
     .goto 1426/0,-1606.02,-5676.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Capataz de cantera Thesten|r
-    .turnin 95214 >> Entrega la misión Stolen Reventar Powder
+    .turnin 95214 >> Entrega la misión Pólvora explosiva robada
     .target Quarrymaster Thesten
 step
     .goto 1426/0,-2197.02,-5279.07,45,0

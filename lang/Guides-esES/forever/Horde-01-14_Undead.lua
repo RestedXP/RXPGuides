@@ -1062,7 +1062,7 @@ step
     .goto 1420/0,496.96,2256.54,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Gordo|r
     >>|cRXP_WARN_Es una abominación que patrulla por el camino a Rémol|r
-    >>|cRXP_WARN_Selecciona "Necesito un informe para Ejecutor Zygand|r"
+    >>|cRXP_WARN_Selecciona "Necesito un reporte para el Ejecutor Zygand"|r
     .complete 99141,3 --|1/1 Gordo's Report
     .target Gordo
     --.gossipoption 142737
@@ -1187,7 +1187,7 @@ step
 step
     .goto 1420/0,403.300,2287.700
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Guardia de la Muerte Dillinger|r
-    >>|cRXP_WARN_Selecciona "Necesito un informe para Ejecutor Zygand|r"
+    >>|cRXP_WARN_Selecciona "Necesito un reporte para el Ejecutor Zygand"|r
     .turnin 404 >>Entrega la misión Una tarea pútrida
     .accept 426 >>Acepta la misión La invasión de los molinos
     .complete 99141,1 --|1/1 Dillinger's Report
@@ -2733,7 +2733,7 @@ step
     .use 268812 >>Mata al |cRXP_ENEMY_Horror susurrante|r (élite). Despójalo para obtener |T134438:0|t[|cRXP_LOOT_Residuo de horror susurrante|r]
     >>|cRXP_WARN_¡Esto es difícil! Únete a un grupo si es posible. Tiene 700 de salud, pero su daño es manejable. Omite este paso si no puedes matarlo|r
     .collect 268812,1,95328 --Whispering Horror Residue (x1)
-    .accept 95328 >>Acepta la misión Horror susurrante Residuo
+    .accept 95328 >>Acepta la misión Residuo de horror susurrante
     .mob Whispering Horror
 step
     #requires ShadowValeCrypt
@@ -2878,25 +2878,25 @@ step << !Paladin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Linnea|r
     .turnin 356 >>Entrega la misión Patrulla de la retaguardia
     .target Deathguard Linnea
-step
+step << !Paladin
     .goto 1420/0,73.800,2022.300
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Deathguard Linnea::1495|r
-    >>|cRXP_WARN_Esta es una misión previa para "The Cólera of Rath'mael"|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con la |cRXP_FRIENDLY_Guardia de la Muerte Linnea::1495|r
+    >>|cRXP_WARN_Esta es una misión previa para "La furia de Rath'mael"|r
     .turnin 356 >>Entrega la misión Patrulla de la retaguardia
     .target Deathguard Linnea::1495
     .accept 99156 >>Acepta la misión Patrulla de la retaguardia
     .dungeon ROL
-step
+step << !Paladin
     .goto 1420/0,-765.200,2518.700
-    >>Mata a |cRXP_ENEMY_Riptear|r |cRXP_WARN_(nivel 13 élite)|r. Despójalo para obtener |T134339:0|t[|cRXP_LOOT_Riptear's Corazón|r]
-    >>|cRXP_WARN_Esta es una misión previa para "The Cólera of Rath'mael"|r
+    >>Mata al |cRXP_ENEMY_Riptear|r |cRXP_WARN_(nivel 13 élite)|r. Despójalo para obtener |T134339:0|t[|cRXP_LOOT_Riptear's Corazón|r]
+    >>|cRXP_WARN_Esta es una misión previa para "La furia de Rath'mael"|r
     .complete 99156,1 --|1/1 Riptear's Heart
     .mob Riptear
     .dungeon ROL
-step
+step << !Paladin
     .goto 1420/0,74.200,2022.400
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Deathguard Linnea::1495|r
-    >>|cRXP_WARN_Esta es una misión previa para "The Cólera of Rath'mael"|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con la |cRXP_FRIENDLY_Guardia de la Muerte Linnea::1495|r
+    >>|cRXP_WARN_Esta es una misión previa para "La furia de Rath'mael"|r
     .turnin 99156 >>Entrega la misión Patrulla de la retaguardia
     .target Deathguard Linnea::1495
     .dungeon ROL
@@ -2940,6 +2940,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Glix Xizzix|r
     .turnin 98545 >>Entrega la misión Carta de Leónidas
     .target Glix Xizzix
+    .isOnQuest 98545
 step << Rogue
     #ssf
     .goto 1458/0,133.71,1561.730
@@ -3052,7 +3053,7 @@ step << Rogue
 step
     .goto 1458/0,399.800,1776.600
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Padre Lankester|r
-    .turnin 95328 >>Entrega la misión Horror susurrante Residuo
+    .turnin 95328 >>Entrega la misión Residuo de horror susurrante
     .target Father Lankester
     .isOnQuest 95328
 step << Priest
@@ -3182,6 +3183,28 @@ step << Paladin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Linnea|r
     .turnin 356 >>Entrega la misión Patrulla de la retaguardia
     .target Deathguard Linnea
+step << Paladin
+    .goto 1420/0,73.800,2022.300
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Guardia de la Muerte Linnea::1495|r
+    >>|cRXP_WARN_Esta es una pre-misión para "The Cólera of Rath'mael"|r
+    .turnin 356 >>Entrega la misión Patrulla de la retaguardia
+    .target Deathguard Linnea::1495
+    .accept 99156 >>Acepta la misión Patrulla de la retaguardia
+    .dungeon ROL
+step << Paladin
+    .goto 1420/0,-765.200,2518.700
+    >>Mata al |cRXP_ENEMY_Riptear|r |cRXP_WARN_(nivel 13 élite)|r. Despójalo para obtener |T134339:0|t[|cRXP_LOOT_Riptear's Corazón|r]
+    >>|cRXP_WARN_Esta es una pre-misión para "The Cólera of Rath'mael"|r
+    .complete 99156,1 --|1/1 Riptear's Heart
+    .mob Riptear
+    .dungeon ROL
+step << Paladin
+    .goto 1420/0,74.200,2022.400
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Guardia de la Muerte Linnea::1495|r
+    >>|cRXP_WARN_Esta es una pre-misión para "The Cólera of Rath'mael"|r
+    .turnin 99156 >>Entrega la misión Patrulla de la retaguardia
+    .target Deathguard Linnea::1495
+    .dungeon ROL
 step << Paladin
     .goto 1420/0,311.600,2251.000
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Shari Fontana|r
@@ -4031,6 +4054,18 @@ step
     .accept 1358 >> Acepta la misión Muestra para Helbrim
     .target +Apothecary Zinge
     .goto 1458/0,391.97,1442.87
+    .dungeon !ROL
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Faranell|r y |cRXP_FRIENDLY_Zinge|r en El Apothecarium
+    .turnin 447 >>Entrega la misión Una fórmula mortal
+    .accept 450 >>Acepta la misión Una fórmula mortal
+    .target +Master Apothecary Faranell
+    .goto 1458/0,404.63,1434.67
+    .turnin 1359 >> Entrega la misión Una entrega de Zinge
+    .accept 1358 >> Acepta la misión Muestra para Helbrim
+    .target +Apothecary Zinge
+    .goto 1458/0,391.97,1442.87
+    .dungeon ROL
 step
     .goto 1458/0,334.02,1262.17--c:Undercity,56.2,96.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Varimathras|r

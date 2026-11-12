@@ -853,7 +853,8 @@ step
     #softcore
     #completewith RazorHill1
     .goto 1411/1,-4326.01,-41.23
-    .deathskip >> |cRXP_WARN_Muere y resucita en el |cRXP_FRIENDLY_Ángel de la Resurrección|r cerca de la flecha|r
+    .deathskip >>Muere y reaparece en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
+    >>|cRXP_WARN_¡Asegúrate de estar en la flecha del punto de ruta cuando mueras!|r
     .target Ángel de la Resurrección
 step
     #softcore
@@ -1382,7 +1383,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Pal'juh|r
     >>|cRXP_WARN_Esto inicia una misión de escolta|r
     >>|cRXP_WARN_Si |cRXP_FRIENDLY_Pal'juh|r no está ahí, puedes saltarte este paso y suicidarte (deathskip) para reaparecer en la hoguera del Poblado Sen'jin|r
-    .accept 99123,1 >>Acepta la misión Perdido in the Sombras
+    .accept 99123,1 >>Acepta la misión Sin rumbo en las sombras
     .target Pal'juh
 step
     #hardcore
@@ -1390,7 +1391,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Pal'juh|r
     >>|cRXP_WARN_Esto inicia una misión de escolta|r
     >>|cRXP_WARN_Si |cRXP_FRIENDLY_Pal'juh|r no está ahí, puedes omitir este paso|r
-    .accept 99123,1 >>Acepta la misión Perdido in the Sombras
+    .accept 99123,1 >>Acepta la misión Sin rumbo en las sombras
     .target Pal'juh
 step
     #softcore
@@ -1425,7 +1426,7 @@ step
 step
     .goto 1411/1,-4920.900,-814.000
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Maestro Vornal|r
-    .turnin 99123 >>Entrega la misión Perdido in the Sombras
+    .turnin 99123 >>Entrega la misión Sin rumbo en las sombras
     .target Master Vornal
     .isQuestComplete 99123
 step << Shaman
@@ -1966,7 +1967,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con|r |cRXP_FRIENDLY_Gar'Thok|r
     .turnin 784 >>Entrega la misión Vencer a los traidores
     .turnin 830 >>Entrega la misión Las órdenes del almirante
-    .turnin 96821 >>Entrega la misión Legging It
+    .turnin 96821 >>Entrega la misión A pie
     .accept 825 >>Acepta la misión Los restos del naufragio...
     .accept 831 >>Acepta la misión Las órdenes del almirante
     .target +Gar'Thok
@@ -2964,7 +2965,7 @@ step << Hunter/Shaman
 step << Hunter/Shaman
     .goto 1454/1,-4568.100,1855.200
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Kamari|r
-    .turnin 96877 >>Entrega la misión Halikor's Hoof
+    .turnin 96877 >>Entrega la misión Pezuña de Halikor
     .target Kamari
     .isOnQuest 96877
 step << Hunter/Shaman
@@ -3370,7 +3371,7 @@ step
     >>|cRXP_WARN_¡Esto es difícil! Únete a un grupo si es posible. Tiene 800 de salud, pero su daño es manejable. Omite este paso si no puedes matarlo|r
     >>|cRXP_WARN_Tiene al menos dos ubicaciones de aparición diferentes dentro de Monte del Trueno|r
     .collect 275723,1,96877 --Halikor's Hoof (x1)
-    .accept 96877 >>Acepta la misión Halikor's Hoof
+    .accept 96877 >>Acepta la misión Pezuña de Halikor
     .mob Halikor
 step
     .goto 1411/1,-4047.300,918.400
@@ -3541,7 +3542,7 @@ step
 step
     .goto 1454/1,-4568.100,1855.200
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Kamari|r
-    .turnin 96877 >>Entrega la misión Halikor's Hoof
+    .turnin 96877 >>Entrega la misión Pezuña de Halikor
     .target Kamari
     .isOnQuest 96877
 step
@@ -3777,7 +3778,7 @@ step << !Shaman !Hunter
     >>Mata a |cRXP_ENEMY_Gazz'uz|r. Despójalo para obtener su |T134085:0|t[|cRXP_LOOT_Ojo de la Sombra ardiente|r]
     >>|cRXP_WARN_Ten cuidado, es MUY difícil. No dudes en omitir esta misión si no puedes conseguir un grupo o hacerlo en solitario|r
     >>|cRXP_WARN_Usa el |T134085:0|t[|cRXP_LOOT_Ojo de la Sombra ardiente|r] para empezar la misión|r
-    >>|cRXP_WARN_Usa LoS (línea de visión) para evitar |cRXP_ENEMY_Gazz'uz|r sus Descargas de las Sombras|r
+    >>|cRXP_WARN_Corta la línea de visión (LoS) para evitar las Descargas de las Sombras de |cRXP_ENEMY_Gazz'uz|r|r
     >>|cRXP_WARN_Puedes correr hacia las zonas de agua que hay dentro de la cueva para evadir al|r |cRXP_ENEMY_Abisario|r |cRXP_WARN_después de matar a|r |cRXP_ENEMY_Gazz'uz|r
     .collect 4903,1,832,1 --Collect Eye of Burning Shadow
     .accept 832 >>Acepta la misión Sombras Ardientes
@@ -3798,7 +3799,7 @@ step << !Shaman !Hunter
     .goto 1411/1,-4684.50,1466.06,15,0
     .goto 1411/1,-4805.59,1495.67,15,0
     >>Mata a los |cRXP_ENEMY_Orcos Filo Ardiente|r. Despójalos para obtener una |cRXP_LOOT_Insignia de Teniente|r
-    >>|cRXP_WARN_Esta es una misión previa para RFC. Tiene una baja tasa de caída|r
+    >>|cRXP_WARN_Esta misión es un prerrequisito para Sima Ígnea. Tiene una baja probabilidad de caída|r
     .complete 5726,1 --Lieutenant's Insignia (1)
     .mob Burning Blade Fanatic
     .mob Burning Blade Apprentice
@@ -4023,23 +4024,23 @@ step
 step
     #label LinneaTurnin
     .goto 1420/0,73.800,2022.300
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Deathguard Linnea::1495|r
-    >>|cRXP_WARN_Esta es una misión previa para "The Cólera of Rath'mael"|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con la |cRXP_FRIENDLY_Guardia de la Muerte Linnea::1495|r
+    >>|cRXP_WARN_Esta es una misión previa para "La furia de Rath'mael"|r
     .turnin 356 >>Entrega la misión Patrulla de la retaguardia
     .target Deathguard Linnea::1495
     .accept 99156 >>Acepta la misión Patrulla de la retaguardia
     .dungeon ROL
 step
     .goto 1420/0,-765.200,2518.700
-    >>Mata a |cRXP_ENEMY_Riptear|r |cRXP_WARN_(nivel 13 élite)|r. Despójalo para obtener |T134339:0|t[|cRXP_LOOT_Riptear's Corazón|r]
-    >>|cRXP_WARN_Esta es una misión previa para "The Cólera of Rath'mael"|r
+    >>Mata al |cRXP_ENEMY_Riptear|r |cRXP_WARN_(nivel 13 élite)|r. Despójalo para obtener |T134339:0|t[|cRXP_LOOT_Riptear's Corazón|r]
+    >>|cRXP_WARN_Esta es una misión previa para "La furia de Rath'mael"|r
     .complete 99156,1 --|1/1 Riptear's Heart
     .mob Riptear
     .dungeon ROL
 step
     .goto 1420/0,74.200,2022.400
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Deathguard Linnea::1495|r
-    >>|cRXP_WARN_Esta es una misión previa para "The Cólera of Rath'mael"|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con la |cRXP_FRIENDLY_Guardia de la Muerte Linnea::1495|r
+    >>|cRXP_WARN_Esta es una misión previa para "La furia de Rath'mael"|r
     .turnin 99156 >>Entrega la misión Patrulla de la retaguardia
     .target Deathguard Linnea::1495
     .dungeon ROL

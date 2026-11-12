@@ -52,13 +52,13 @@ step
 step
     #label QuarryStart
     .goto 1426/0,-1394.24,-5797.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Earthseer Farsen|r
-    .accept 96392 >> Acepta la misión Farsen's Observar
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Videnterra Farsen|r
+    .accept 96392 >> Acepta la misión La vigilancia de Farsen
     .target Earthseer Farsen
 step
     .isOnQuest 96392
     .goto 1426/0,-1394.24,-5797.83
-    .gossipoption 139831 >> Habla con |cRXP_FRIENDLY_Earthseer Farsen|r para ver su vista lejana
+    .gossipoption 139831 >> Habla con |cRXP_FRIENDLY_Videnterra Farsen|r para ver su vista lejana
     >>|cRXP_WARN_Puedes cancelar la Vista lejana cuando se completa el objetivo|r
     .target Earthseer Farsen
 step
@@ -66,16 +66,16 @@ step
     .aura -1293681 >> |cRXP_WARN_Presiona ESC para cancelar la Vista lejana|r
 step << skip
     .goto 1426/0,-1394.24,-5797.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Earthseer Farsen|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Videnterra Farsen|r
     >>|cRXP_WARN_Puedes cancelar la Vista lejana cuando se completa el objetivo|r
     .complete 96392,1 -- Use Farsen's Farsight
     .skipgossip
     .target Earthseer Farsen
 step
     .goto 1426/0,-1394.24,-5797.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Earthseer Farsen|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Videnterra Farsen|r
     >>|cRXP_WARN_Presiona ESC para cancelar la Vista lejana|r
-    .turnin 96392 >> Entrega la misión Farsen's Observar
+    .turnin 96392 >> Entrega la misión La vigilancia de Farsen
     --.accept 96390 >> Accept Nip 'Em in the Bud
     .target Earthseer Farsen
 step
@@ -91,16 +91,16 @@ step
     .mob Dark Iron Spy
 step
     .goto 1426/0,-1394.24,-5797.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Earthseer Farsen|r
-    .turnin 96391 >> Entrega la misión Mapa Subterráneo
-    .accept 96393 >> Acepta la misión Old Ironforge Incursion
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Videnterra Farsen|r
+    .turnin 96391 >> Entrega la misión Mapa subterráneo
+    .accept 96393 >> Acepta la misión Incursión a Antigua Forjaz
     .target Earthseer Farsen
 step
     #optional
     .isQuestComplete 96390
     .goto 1426/0,-1394.24,-5797.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Earthseer Farsen|r
-    .turnin 96390 >> Entrega la misión Nip 'Em in the Compa
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Videnterra Farsen|r
+    .turnin 96390 >> Entrega la misión Párteles el coco
     .target Earthseer Farsen
 step
     #include RestedXP Guía Forever (A)\15-16 Loch Modan@LochEnter-LochEnd
@@ -688,14 +688,14 @@ step
     >>|T135997:0|t[Morro de dentrosangre]
     >>|T134185:0|t[Okra]
     >>|T134341:0|t[Hígado de Dentosangre]
-    -->>|T4548890:0|t[Golem Isospring]
+    >>|T4548890:0|t[Isorresorte de gólem]
     -->>|T132995:0|t[Harvester Gyrostabilizer]
     .collect 729,3,38,1 -- Stringy Vulture Meat (3)
     .collect 730,3,38,1 -- Murloc Eye (3)
     .collect 731,3,38,1 -- Goretusk Snout (3)
     .collect 732,3,38,1 -- Okra (3)
     .collect 723,8,22,1 -- Goretusk Liver (8)
-    --.collect 255007,14,92909,1 -- Golem Isospring (14)
+    .collect 255007,14,92909,1 -- Golem Isospring (14)
     --.collect 255010,5,92909,1 -- Harvester Gyrostabilizer (5)
     .target Auctioneer Jaxon
 
@@ -826,20 +826,34 @@ step
     .isOnQuest 399
     .goto 1436/0,1602.67,-10629.67,75 >> Viaja a la Hacienda de Alexston
     >>|cRXP_WARN_Ve completando los otros objetivos de misión mientras te diriges hacia allí|r
-step << skip -- quests drop rate is beyond dreadful. over 50 kills to complete
+step
+    #optional
+    .itemcount 255007,10 -- only accepting this quest if they bought a bunch of isosprings from AH
     .goto 1436/0,1213.400,-10153.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ozwin Piñón de Hierro::253395|r en el granero
     .target Ozwin Ironsprocket::253395
     .accept 92909 >>Acepta la misión Cosechar a los cosechadores
 step
-    #sticky
+    .isNotOnQuest 92909
     #completewith bennytime
     >>Mata |cRXP_ENEMY_Vigilantes de la cosecha|r ubicados en cualquiera de los campos mientras corres cerca de ellos
     >>Despójalos para obtener su |cRXP_LOOT_Okra|r y sus |cRXP_LOOT_Frascos de aceite|r
     .mob Harvest Watcher
     .complete 9,1 --Havest Watcher slain (20)
     .collect 732,3,38,1 --Okra (3)
-    .collect 814,5,103,1 --Flask of Oil (5)
+    .collect 814,5,103,1,1 --Flask of Oil (5)
+step
+    #optional
+    .isOnQuest 92909
+    #completewith bennytime
+    >>Mata |cRXP_ENEMY_Vigilantes de la cosecha|r ubicados en cualquiera de los campos mientras corres cerca de ellos
+    >>Despójalos por sus |cRXP_LOOT_Okra|r, |cRXP_LOOT_Flasks of Oil|r, |cRXP_LOOT_Golem Isosprings|r y |cRXP_LOOT_Harvester Gyrostabilizers|r
+    .mob Harvest Watcher
+    .complete 9,1 --Havest Watcher slain (20)
+    .collect 732,3,38,1 --Okra (3)
+    .collect 814,5,103,1,1 --Flask of Oil (5)
+    .complete 92909,1 -- Golem Isosprings (14)
+    .complete 92909,2 -- Harvester Gyrostabilizer (5)
 step
     .goto 1436/0,1748.27,-10672.13
     >>Abre el |cRXP_PICK_Cofre de Alexston|r. Despójalo para obtener |cRXP_LOOT_Una sencilla brújula|r
@@ -896,7 +910,7 @@ step
     .goto 1436/0,1192.12,-9641.73
     .goto 1436/0,1042.67,-9619.33,0
     >>Mata a los |cRXP_ENEMY_Asaltantes múrloc|r y a los |cRXP_ENEMY_Correcostas múrloc|r. Despójalos para obtener sus |cRXP_LOOT_Ojos|r y |cRXP_LOOT_Branquias|r
-    >>|cRXP_WARN_Si no tienes muchos |cRXP_LOOT_Gills|r para cuando hayas terminado |cRXP_LOOT_Ojos|r, omite este paso|r
+    >>|cRXP_WARN_Si no tienes muchas |cRXP_LOOT_Branquias|r para cuando hayas terminado con los |cRXP_LOOT_Ojos|r, omite este paso|r
     .collect 730,3,38,1 --Murloc Eye (3)
     .complete 92744,1 -- Longshore Murloc Gills 7/7
     .mob Murloc Raider
@@ -977,7 +991,6 @@ step
     .goto 1436/0,1213.400,-10153.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ozwin Piñón de Hierro::253395|r
     .target Ozwin Ironsprocket::253395
-    .accept 92909 >>Acepta la misión Cosechar a los cosechadores
     .turnin 92909 >>Entrega la misión Cosechar a los cosechadores
     .itemcount 255007,14 -- Golem Isospring (14)
     .itemcount 255010,5 -- Harvester Gyrostabilizer (5)
@@ -996,6 +1009,13 @@ step
     .isQuestComplete 38
     .target Salma Saldean
 step
+    #optional
+    #completewith HarvestW
+    .isOnQuest 92909
+    >>Despoja a los |cRXP_ENEMY_Harvest Watchers|r para obtener |cRXP_LOOT_Golem Isosprings|r y |cRXP_LOOT_Harvester Gyrostabilizers|r
+    .complete 92909,1 -- Golem Isosprings (14)
+    .complete 92909,2 -- Harvester Gyrostabilizer (5)
+step
     .isQuestAvailable 38
     .goto 1436/0,1132.27,-10146.67,60,0
     .goto 1436/0,1238.67,-9907.73,80,0
@@ -1010,7 +1030,7 @@ step
     .complete 9,1 --Harvest Watcher (20)
     .mob Harvest Watcher
     .collect 732,3,38,1 --Okra (3)
-    .collect 814,5,103,1 --Flask of Oil (5)
+    .collect 814,5,103,1,1 --Flask of Oil (5)
 step
     .isQuestTurnedIn 38
     #label HarvestW
@@ -1026,7 +1046,23 @@ step
     >>Mata a los |cRXP_ENEMY_Vigías de la cosecha|r. Despójalos para obtener sus |cRXP_LOOT_Frascos de aceite|r
     .complete 9,1 --Harvest Watcher (20)
     .mob Harvest Watcher
-    .collect 814,5,103,1 --Flask of Oil (5)
+    .collect 814,5,103,1,1 --Flask of Oil (5)
+step
+    .isOnQuest 92909
+    #optional
+    .goto 1436/0,1132.27,-10146.67,60,0
+    .goto 1436/0,1238.67,-9907.73,80,0
+    .goto 1436/0,1460.22,-10224.83,80,0
+    .goto 1436/0,1132.27,-10146.67,80,0
+    .goto 1436/0,1238.67,-9907.73,80,0
+    .goto 1436/0,1460.22,-10224.83,80,0
+    .goto 1436/0,1132.27,-10146.67,60,0
+    .goto 1436/0,1460.22,-10224.83,60,0
+    .goto 1436/0,1238.67,-9907.73
+    >>Mata a los |cRXP_ENEMY_Harvest Watchers|r. Despójalos por sus |cRXP_LOOT_Golem Isosprings|r y |cRXP_LOOT_Harvester Gyrostabilizers|r
+    .complete 92909,1 -- Golem Isosprings (14)
+    .complete 92909,2 -- Harvester Gyrostabilizer (5)
+    .mob Harvest Watcher
 step
     #optional
     .isQuestComplete 9
@@ -1035,15 +1071,6 @@ step
 	.target Farmer Saldean
     .goto 1436/0,1055.27,-10128.70
     .turnin 9 >> Entrega la misión Campos de la muerte
-step
-    #optional
-    .goto 1436/0,1213.400,-10153.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ozwin Piñón de Hierro::253395|r
-    .target Ozwin Ironsprocket::253395
-    .accept 92909 >>Acepta la misión Cosechar a los cosechadores
-    .turnin 92909 >>Entrega la misión Cosechar a los cosechadores
-    .itemcount 255007,14 -- Golem Isospring (14)
-    .itemcount 255010,5 -- Harvester Gyrostabilizer (5)
 step
     .goto 1436/0,1179.52,-10382.57,75,0
     .goto 1436/0,1138.22,-10474.97,75,0
@@ -1080,7 +1107,6 @@ step
     .goto 1436/0,1213.400,-10153.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ozwin Piñón de Hierro::253395|r
     .target Ozwin Ironsprocket::253395
-    .accept 92909 >>Acepta la misión Cosechar a los cosechadores
     .turnin 92909 >>Entrega la misión Cosechar a los cosechadores
     .itemcount 255007,14 -- Golem Isospring (14)
     .itemcount 255010,5 -- Harvester Gyrostabilizer (5)
@@ -1132,6 +1158,11 @@ step
 	.target Gryan Stoutmantle
     .goto 1436/0,1045.12,-10508.80
     .accept 65 >> Acepta la misión La hermandad de los Defias
+step << Skyborne
+    .goto 1436/0,1037.42,-10628.27
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Thor|r
+    .fp Westfall >> Consigue la ruta de vuelo de Páramos de Poniente
+    .target Thor
 step
     #optional
     .isQuestComplete 102
@@ -1319,7 +1350,7 @@ step
     .goto 1453/0,1193.100,-8328.900
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Manifest Clerk Philmor::268511|r 
     .target Manifest Clerk Philmor::268511
-    .accept 97220 >>Acepta la misión Philmor's Favor
+    .accept 97220 >>Acepta la misión Favor de Philmor
 step
     .goto 1453/0,1269.100,-8540.601
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Gilbert Gray::267118|r
@@ -2049,6 +2080,29 @@ step
     .use 14338
 step
     #optional
+    .goto 1439/1,445.66,6535.79--c:1439,38.107,41.165
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Gorbold Mano de Acero|r
+    .turnin 982 >> Entrega la misión Profundo océano, mar inmenso
+    .target Gorbold Steelhand
+    .isQuestComplete 982
+step
+    #optional
+    .goto 1439/1,472.32,6556.100
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Alanndarian Arrullanoche|r
+    .accept 2178 >> Acepta la misión Guiso de zancudo
+    .turnin 2178 >> Entrega la misión Guiso de zancudo
+    .target Alanndarian Nightsong
+    .itemcount 5469,5 -- Strider Meat (5)
+    .skill cooking,<10,1 -- step only displays if skill is 10 or higher
+step
+    #label TOTH
+    .goto 1439/1,492.36,6581.08--c:1439,37.394,40.128
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Thundris Tejevientos|r
+    .turnin 958 >> Entrega la misión Las herramientas de los Altonato
+    .target Thundris Windweaver
+    .isQuestComplete 958
+step
+    #optional
     .goto 1439/1,397.45,6437.50--c:1439,38.843,43.416
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Tharnariun Espinarbolado|r
     .turnin 2138 >> Entrega la misión La limpieza de la infección
@@ -2077,29 +2131,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con la |cRXP_FRIENDLY_Centinela Elissa Brisa Estelar|r arriba
     .accept 965 >> Acepta la misión La Torre de Althalaxx
     .target Sentinel Elissa Starbreeze
-step
-    #optional
-    .goto 1439/1,445.66,6535.79--c:1439,38.107,41.165
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Gorbold Mano de Acero|r
-    .turnin 982 >> Entrega la misión Profundo océano, mar inmenso
-    .target Gorbold Steelhand
-    .isQuestComplete 982
-step
-    #optional
-    .goto 1439/1,472.32,6556.100
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Alanndarian Arrullanoche|r
-    .accept 2178 >> Acepta la misión Guiso de zancudo
-    .turnin 2178 >> Entrega la misión Guiso de zancudo
-    .target Alanndarian Nightsong
-    .itemcount 5469,5 -- Strider Meat (5)
-    .skill cooking,<10,1 -- step only displays if skill is 10 or higher
-step
-    #label TOTH
-    .goto 1439/1,492.36,6581.08--c:1439,37.394,40.128
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Thundris Tejevientos|r
-    .turnin 958 >> Entrega la misión Las herramientas de los Altonato
-    .target Thundris Windweaver
-    .isQuestComplete 958
 step
     .goto 1439/1,-157.40,6207.81--c:1439,47.314,48.676
     >>Haz clic en el |cRXP_PICK_Cristal rojo misterioso|r
@@ -2251,10 +2282,8 @@ step
     .goto 1439/1,537.75,6363.01,8,0--c:1439,36.701,45.122
     .goto 1439/1,542.99,6342.31--c:1439,36.621,45.596
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
-    .turnin 4723 >> Entrega la misión Criatura marina varada
     .turnin 4725 >> Entrega la misión Tortuga marina varada
     .target Gwennyth Bly'Leggonde
-    .isOnQuest 4723
 
 ----Start of Druid Quest section----
 step << Druid
@@ -2315,14 +2344,13 @@ step << Druid
 step
     .hs >> Usa tu Piedra de hogar para ir a Ventormenta
     .zoneskip Stormwind City
-    .zoneskip Darkshore
     .zoneskip Ironforge
 step
     .goto 1453/0,566.600,-8845.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Elaine Trias::483|r
     .target Elaine Trias::483
-    .turnin 97220 >>Entrega la misión Philmor's Favor
-    .accept 97222 >>Acepta la misión Gatehouse Objetos
+    .turnin 97220 >>Entrega la misión Favor de Philmor
+    .accept 97222 >>Acepta la misión Víveres de entrada
 step
     .goto 1453/0,568.300,-8862.200
     .use 277198 >> |cRXP_WARN_Usa el|r |T132762:0|t[Cargamento de entrada] |cRXP_WARN_frente a la |cRXP_PICK_Entrada|r arriba|r
@@ -2332,7 +2360,7 @@ step
     .goto 1453/0,566.600,-8845.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Elaine Trias::483|r
     .target Elaine Trias::483
-    .turnin 97222 >>Entrega la misión Gatehouse Objetos  
+    .turnin 97222 >>Entrega la misión Víveres de entrada
 step << Druid
     .goto 1453/0,1095.500,-8741.700
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Theridran|r
@@ -2395,13 +2423,6 @@ step << Hunter
     .target Einris Brightspear
     .zoneskip Dun Morogh
     .zoneskip Ironforge
-step << Hunter
-    .goto 1453/0,553.22,-8422.23
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Karrina Mekenda|r
-    .trainer >> Entrena los hechizos de tu mascota
-    .target Karrina Mekenda
-    .zoneskip Dun Morogh
-    .zoneskip Ironforge
 step << Rogue
     .goto 1453/0,377.47,-8752.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Osborne|r
@@ -2420,14 +2441,55 @@ step << Warrior
     .zoneskip Dun Morogh
     .zoneskip Ironforge
 step
-    #completewith next
+    .goto 1453/0,501.200,-8468.601
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Wilder Cardortiga|r
+    .accept 167 >> Acepta la misión Oh, hermano...
+    .accept 168 >> Acepta la misión Recolección de recuerdos
+    .target Wilder Thistlenettle
+    .zoneskip Dun Morogh
+    .zoneskip Ironforge
+step << Hunter
+    .goto 1453/0,553.22,-8422.23
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Karrina Mekenda|r
+    .trainer >> Entrena los hechizos de tu mascota
+    .target Karrina Mekenda
+    .zoneskip Dun Morogh
+    .zoneskip Ironforge
+step
+    .goto 1453/0,634.700,-8390.800
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Shoni la Shilenshiosha|r
+    .accept 2040 >> Acepta la misión Asalto subterráneo
+    .target Shoni the Shilent
+    .zoneskip Dun Morogh
+    .zoneskip Ironforge
+step
+    #completewith TramIF
     .goto 1453/0,562.300,-8385.300,20,0
     .goto 1453/0,522.000,-8352.101
     .subzone 2257 >>Entra en el Tranvía Subterráneo
     .zoneskip Ironforge
     .zoneskip Dun Morogh
 step
-    .zone Ironforge >> Toma el Tranvía a Forjaz
+    >>|cRXP_WARN_Toma el Tranvía Subterráneo hacia el lado de Forjaz|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Monty|r en el andén central del lado de Forjaz del Tranvía Subterráneo
+    >>|cRXP_WARN_Omite este paso si eres nivel 18 o superior|r
+    .accept 6661 >> Acepta la misión A por las ratas del tranvía subterráneo
+    .target Monty
+    .xp >17,1
+step
+    .isOnQuest 6661
+    >>|cRXP_WARN_Usa la|r |T133942:0|t[Flauta cazarratas] |cRXP_WARN_en las |cRXP_ENEMY_Rata del subterráneo|r dentro del Tranvía Subterráneo|r
+    .complete 6661,1 --Rats Captured (x5)
+    .use 17117
+    .mob Deeprun Rat
+step
+    .isQuestComplete 6661
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Monty|r dentro del Tranvía Subterráneo
+    .turnin 6661 >> Entrega la misión A por las ratas del tranvía subterráneo
+    .target Monty
+step
+    #label TramIF
+    .zone Ironforge >> Toma el tranvía y entra a Ironforge
     .zoneskip Dun Morogh
 ]])
 
@@ -2456,13 +2518,13 @@ step << !NightElf
 step << !NightElf
     #label QuarryStart
     .goto 1426/0,-1394.24,-5797.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Earthseer Farsen|r
-    .accept 96392 >> Acepta la misión Farsen's Observar
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Videnterra Farsen|r
+    .accept 96392 >> Acepta la misión La vigilancia de Farsen
     .target Earthseer Farsen
 step << !NightElf
     .isOnQuest 96392
     .goto 1426/0,-1394.24,-5797.83
-    .gossipoption 139831 >> Habla con |cRXP_FRIENDLY_Earthseer Farsen|r para ver su vista lejana
+    .gossipoption 139831 >> Habla con |cRXP_FRIENDLY_Videnterra Farsen|r para ver su vista lejana
     >>|cRXP_WARN_Puedes cancelar la Vista lejana cuando se completa el objetivo|r
     .target Earthseer Farsen
 step << !NightElf
@@ -2477,7 +2539,7 @@ step << skip
     .target Earthseer Farsen
 step << !NightElf
     .goto 1426/0,-1394.24,-5797.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Earthseer Farsen|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Videnterra Farsen|r
     >>|cRXP_WARN_Presiona ESC para cancelar la Vista lejana|r
     .turnin 96392 >> Entrega la misión Farsen's Observar
     --.accept 96390 >> Accept Nip 'Em in the Bud
@@ -2496,7 +2558,7 @@ step << !NightElf
 step << !NightElf
     #label OII
     .goto 1426/0,-1394.24,-5797.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Earthseer Farsen|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Videnterra Farsen|r
     .turnin 96391 >> Entrega la misión Mapa Subterráneo
     .accept 96393 >> Acepta la misión Old Ironforge Incursion
     .target Earthseer Farsen
@@ -2504,8 +2566,8 @@ step << !NightElf
     #optional
     .isQuestComplete 96390
     .goto 1426/0,-1394.24,-5797.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Earthseer Farsen|r
-    .turnin 96390 >> Entrega la misión Nip 'Em in the Compa
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Videnterra Farsen|r
+    .turnin 96390 >> Entrega la misión Párteles el coco
     .target Earthseer Farsen
 
 step
@@ -2523,10 +2585,10 @@ step
     .goto 1455/0,-1081.900,-4850.100,10,0
     .goto 1455/0,-1082.800,-4886.000,10,0
     .goto 1455/0,-1087.700,-4821.900,10,0
-    .goto 1455/0,-1010.300,-4850.900,10 >> Baja a Old Ironforge a través de la habitación de |cRXP_FRIENDLY_King Magni's|r
+    .goto 1455/0,-1010.300,-4850.900,10 >> Baja a Antigua Forjaz a través de la sala del |cRXP_FRIENDLY_Rey Magni|r
 step
     .goto 1455/0,-971.800,-4820.700
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Afadra Dunwall|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Afadra Muropardo|r
     .accept 96394 >> Acepta la misión Los muertos sin descanso
     .target Afadra Dunwall
 step
@@ -2537,7 +2599,7 @@ step
 step
     .goto 1455/0,-968.200,-4803.700
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Thom Filch|r
-    .accept 96403 >> Acepta la misión Important Heirlooms
+    .accept 96403 >> Acepta la misión Reliquias importantes
     .target Thom Filch
 step
     #label EnterHoT
@@ -2552,14 +2614,14 @@ step
     .complete 96403,1 -- Dwarven Heirloom (8)
 step
     #completewith FaldrimAnvilmar
-    >>Mata a las |cRXP_ENEMY_Enraged Apariciones|r y a las |cRXP_ENEMY_Almas atormentadas|r
+    >>Mata |cRXP_ENEMY_Aparecidos iracundos|r y |cRXP_ENEMY_Almas atormentadas|r
     .complete 96394,1 -- Enraged Apparition slain (15)
     .mob +Enraged Apparition slain (15)
     .complete 96394,2 -- Tormented Soul slain (10)
     .mob +Tormented Soul slain (10)
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ghostly Asistente|r
-    .accept 96395 >> Acepta la misión Un Antiguo Resentimiento
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Asistente fantasmal|r
+    .accept 96395 >> Acepta la misión Un rencor antiguo
     .target Ghostly Attendant
 step
     #label FaldrimAnvilmar
@@ -2568,13 +2630,13 @@ step
     .mob Faldrim Anvilmar
 step
     #completewith next
-    +|cRXP_WARN_Regresa al|r |cRXP_FRIENDLY_Ghostly Asistente|r
+    +|cRXP_WARN_Regresa con el|r |cRXP_FRIENDLY_Asistente fantasmal|r
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ghostly Asistente|r
-    .turnin 96395 >> Entrega la misión Un Antiguo Resentimiento
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Asistente fantasmal|r
+    .turnin 96395 >> Entrega la misión Un rencor antiguo
     .target Ghostly Attendant
 step
-    >>Mata a las |cRXP_ENEMY_Enraged Apariciones|r y a las |cRXP_ENEMY_Almas atormentadas|r
+    >>Mata |cRXP_ENEMY_Aparecidos iracundos|r y |cRXP_ENEMY_Almas atormentadas|r
     >>|cRXP_WARN_Completa esto ahora porque quizás no tengas la oportunidad de terminarla después|r
     .complete 96394,1 -- Enraged Apparition slain (15)
     .mob +Enraged Apparition slain (15)
@@ -2592,7 +2654,7 @@ step
 step
     #label ToU
     >>Haz clic en el |cRXP_PICK_Tratado del entendimiento|r
-    .accept 98423 >> Acepta la misión The Treaty of Understanding
+    .accept 98423 >> Acepta la misión El Tratado del entendimiento
 step
     >>Despoja las |cRXP_PICK_Reliquias de los enanos|r del suelo a lo largo de El Salón de Señores Feudales
     .complete 96403,1 -- Dwarven Heirloom (8)
@@ -2603,7 +2665,7 @@ step
 step
     .goto 1455/0,-968.200,-4803.700
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Thom Filch|r
-    .turnin 96403 >> Entrega la misión Important Heirlooms
+    .turnin 96403 >> Entrega la misión Reliquias importantes
     .target Thom Filch
 step
     #completewith next
@@ -2613,10 +2675,10 @@ step
     .goto 1455/0,-993.500,-4817.600,10,0
     .goto 1455/0,-983.700,-4847.800,10,0
     .goto 1455/0,-1022.000,-4842.100,10,0
-    .goto 1455/0,-994.000,-4843.100,10 >> Regresa a |cRXP_FRIENDLY_Afadra Dunwall|r subiendo la rampa
+    .goto 1455/0,-994.000,-4843.100,10 >> Regresa con |cRXP_FRIENDLY_Afadra Muropardo|r subiendo la rampa
 step
     .goto 1455/0,-971.800,-4820.700
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Afadra Dunwall|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Afadra Muropardo|r
     .turnin 96394 >> Entrega la misión Los muertos sin descanso
     .target Afadra Dunwall
 step
@@ -2628,8 +2690,8 @@ step
 step
     .goto 1455/0,-1022.600,-4865.700
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Rey Magni Barbabronce|r
-    .turnin 96393 >> Entrega la misión Old Ironforge Incursion
-    .turnin 98423 >> Entrega la misión The Treaty of Understanding
+    .turnin 96393 >> Entrega la misión Incursión a Antigua Forjaz
+    .turnin 98423 >> Entrega la misión El Tratado del entendimiento
     .target King Magni Bronzebeard
 
 step << Shaman
@@ -2784,7 +2846,7 @@ step
     .link https://www.youtube.com/watch?v=jxmG6_JPFMc >> |cRXP_WARN_Haz clic aquí para ver una videoguía sobre cómo entrar a la mazmorra de las Ruinas de Lordaeron|r
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Capitán Truman|r
-    .accept 95250 >> Acepta la misión Abominable Creatures
+    .accept 95250 >> Acepta la misión Criaturas abominables
     .target Captain Truman
 step
     #sticky
@@ -2796,7 +2858,7 @@ step
     >>Despoja todos los enemigos para obtener la |T133328:0|t[|cRXP_LOOT_Insignia ensangrentada|r]
     .use 268535 >> |cRXP_WARN_Usa la|r |T133328:0|t[|cRXP_LOOT_Insignia ensangrentada|r] |cRXP_WARN_para iniciar la misión|r
     .collect 268535,1,95195,1 -- Bloodied Insignia (1)  
-    .accept 95195 >> Acepta la misión Ensangrentado Insignia
+    .accept 95195 >> Acepta la misión Insignia ensangrentada
 step
     #sticky
     #label BloodiedInsignia
@@ -2809,13 +2871,13 @@ step
     >>|cRXP_WARN_Mantente atento a esto. Puede aparecer en muchas ubicaciones diferentes y puede ser difícil de ver|r
     .use 268579 >> |cRXP_WARN_Usa el|r |T4504543:0|t[|cRXP_LOOT_Blasón de Lordaeron|r] |cRXP_WARN_para iniciar la misión|r
     .collect 268579,1,95189,1 -- Crest of Lordaeron (1)
-    .accept 95189 >> Acepta la misión Crest of Lordaeron
+    .accept 95189 >> Acepta la misión Blasón de Lordaeron
 step
     #sticky
     #label CrumpledPaper
     >>Haz clic en el |cRXP_PICK_Papel trituradol|r en el suelo cerca de |cRXP_ENEMY_Rath'mael|r
     >>|cRXP_WARN_Puedes hacer esto después de haberlo matado|r
-    .accept 92415 >> Acepta la misión Recuerdo That I Love You
+    .accept 92415 >> Acepta la misión Recuerda que te amo
 step
     #requires BaronHead
 step
@@ -2869,22 +2931,22 @@ step << NightElf
     .isOnQuest 95189
     .goto 1453/0,531.000,-8322.400
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Lady Dena Kennedy|r
-    >>|cRXP_WARN_Ella deambula ligeramente en la Royal Gallery|r
-    .turnin 95189 >> Entrega la misión Crest of Lordaeron
+    >>|cRXP_WARN_Ella deambula un poco por la Galería Real|r
+    .turnin 95189 >> Entrega la misión Blasón de Lordaeron
     .target Lady Dena Kennedy
 step << NightElf
     .isOnQuest 92415
     .goto 1453/0,744.400,-8621.101
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con la |cRXP_FRIENDLY_Supervisora de huérfanos Ruiseñor|r
-    .turnin 92415 >> Entrega la misión Recuerdo That I Love You
-    .accept 95161 >> Acepta la misión Recuerdo That I Love You
+    .turnin 92415 >> Entrega la misión Recuerda que te amo
+    .accept 95161 >> Acepta la misión Recuerda que te amo
     .target Orphan Matron Nightingale
 step << NightElf
     #optional
     .isQuestTurnedIn 92415
     .goto 1453/0,744.400,-8621.101
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con la |cRXP_FRIENDLY_Supervisora de huérfanos Ruiseñor|r
-    .accept 95161 >> Acepta la misión Recuerdo That I Love You
+    .accept 95161 >> Acepta la misión Recuerda que te amo
     .target Orphan Matron Nightingale
 step << NightElf Rogue
     .goto 1453/0,377.61,-8752.30
@@ -2927,14 +2989,14 @@ step << NightElf
     .isOnQuest 95195
     .goto 1453/0,521.000,-8954.101
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_General Marcus Jonathan|r
-    .turnin 95195 >> Entrega la misión Ensangrentado Insignia
+    .turnin 95195 >> Entrega la misión Insignia ensangrentada
     .target General Marcus Jonathan
 step << !NightElf
     .isOnQuest 92415
     .goto 1453/0,744.400,-8621.101
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con la |cRXP_FRIENDLY_Supervisora de huérfanos Ruiseñor|r
-    .turnin 92415 >> Entrega la misión Recuerdo That I Love You
-    .accept 95161 >> Acepta la misión Recuerdo That I Love You
+    .turnin 92415 >> Entrega la misión Recuerda que te amo
+    .accept 95161 >> Acepta la misión Recuerda que te amo
     .target Orphan Matron Nightingale
 step << !NightElf
     #optional
@@ -2970,7 +3032,7 @@ step << !NightElf
     .isOnQuest 95195
     .goto 1453/0,521.000,-8954.101
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_General Marcus Jonathan|r
-    .turnin 95195 >> Entrega la misión Ensangrentado Insignia
+    .turnin 95195 >> Entrega la misión Insignia ensangrentada
     .target General Marcus Jonathan
 step << !NightElf Rogue
     .goto 1453/0,377.61,-8752.30
@@ -3542,14 +3604,14 @@ step
 	.target Marshal Marris
     .goto 1433/0,-2298.06,-9284.04
     .turnin 20 >> Entrega la misión La amenaza de los Roca Negra
-    .turnin 98387 >>Entrega la misión Blackrock Blockade
+    .turnin 98387 >>Entrega la misión Bloqueo a los Roca Negra
 step
     .isQuestComplete 95999
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Magistrado Solomon|r
 	.target Magistrate Solomon
     .goto 1433/0,-2207.10,-9231.34,15,0
     .goto 1433/0,-2221.65,-9218.60
-    .turnin 95999 >>Entrega la misión WANTED: Incinerador Gar'im
+    .turnin 95999 >>Entrega la misión Se busca: incinerador Gar'im
 step
     #optional
     .xp 20 >> Mata enemigos hasta el nivel 20
@@ -3617,7 +3679,7 @@ step << Rogue
 step << Rogue
     .goto 1436/0,619.17,-11035.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Agente Kearnen|r
-    >>|cRXP_WARN_Debes completar esta misión para desbloquear|r |T132290:0|t[Venenos].
+    >>|cRXP_WARN_DEBES completar esta misión para desbloquear|r |T132290:0|t[Venenos].
     .turnin 2360 >> Entrega la misión Mathias y los Defias
     .accept 2359 >> Acepta la misión La torre de Klaven
     .target Agent Kearnen
@@ -3921,7 +3983,7 @@ step << Druid
     .goto 1457/1,2564.600,10179.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Mathrengyl Garroso::4217|r
     .target Mathrengyl Bearwalker::4217
-    .accept 98393 >>Acepta la misión El Gran espíritu felino
+    .accept 98393 >>Acepta la misión El gran espíritu felino
 step << Druid
     #completewith next
 	.cast 18960 >> Lanza Teletransporte a: Claro de la Luna
@@ -3930,14 +3992,14 @@ step << Druid
     .goto 1450/1,-2678.900,8020.000
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Dendrita Rafagaestelar::11802|r
     .target Dendrite Starblaze::11802
-    .turnin 98393 >>Entrega la misión El Gran espíritu felino
+    .turnin 98393 >>Entrega la misión El gran espíritu felino
     .accept 98341 >>Acepta la misión El gran espíritu felino del viento << Skyborne
-    .accept 98394 >>Acepta la misión El Gran espíritu felino << !Skyborne
+    .accept 98394 >>Acepta la misión El gran espíritu felino << !Skyborne
 step << Druid !Skyborne
     .goto 1450/1,-2640.000,7338.900
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Gran espíritu felino|r
-    .turnin 98394 >>Entrega la misión El Gran espíritu felino
-    .accept 98396 >>Acepta la misión El Gran espíritu felino
+    .turnin 98394 >>Entrega la misión El gran espíritu felino
+    .accept 98396 >>Acepta la misión El gran espíritu felino
     .target Great Cat Spirit
 step << Druid Skyborne
     .goto 1450/1,-2352.700,7375.600,10,0
@@ -3972,8 +4034,8 @@ step << Druid
 step << Druid !Skyborne
     .goto 1450/1,-2640.000,7338.900
      >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Gran espíritu felino|r
-    .turnin 98396 >>Entrega la misión El Gran espíritu felino
-    .accept 98731 >>Acepta la misión Bendiciones del Gran espíritu felino
+    .turnin 98396 >>Entrega la misión El gran espíritu felino
+    .accept 98731 >>Acepta la misión Bendiciones del gran espíritu felino
     .target Great Cat Spirit
 step << Druid Skyborne
     .goto 1450/1,-2395.400,7361.400
@@ -4034,7 +4096,7 @@ step
     #optional
     .isOnQuest 4763
     .goto 1439/1,467.08,6409.38
-    >>|cRXP_WARN_Usa el|r |T133748:0|t[Cuenco de purificación vacío] |cRXP_WARN_en la Poza de la Luna de Auberdine|r
+    >>|cRXP_WARN_Usa el|r |T133748:0|t[Cuenco de purificación vacío] |cRXP_WARN_en el pozo lunar de Auberdine|r
     .collect 12347,1,4763,1 --Filled Cleansing Bowl (1)
     .use 12346
 step
@@ -4074,7 +4136,7 @@ step
 step
     .isOnQuest 4763
     .goto 1439/1,467.08,6409.38
-    >>|cRXP_WARN_Usa el|r |T133748:0|t[Cuenco de purificación vacío] |cRXP_WARN_en la Poza de la Luna de Auberdine|r
+    >>|cRXP_WARN_Usa el|r |T133748:0|t[Cuenco de purificación vacío] |cRXP_WARN_en el pozo lunar de Auberdine|r
     .collect 12347,1,4763,1 --Filled Cleansing Bowl (1)
     .use 12346
 step
@@ -4434,7 +4496,7 @@ step
     >>Haz clic en el |cRXP_PICK_Libro del Crepúsculo|r en el pedestal del norte
     .turnin 949 >> Entrega la misión El campamento del Martillo Crepuscular
     .accept 950 >> Acepta la misión Regresa junto a Onus
-    .accept 98042 >>Acepta la misión Es pura diversión y juegos hasta que...
+    .accept 98042 >>Acepta la misión Es todo diversión hasta que...
 step
     #completewith TheryluneEnd
     >>Mata a los |cRXP_ENEMY_Discípulos Crepuscular|r y a los |cRXP_ENEMY_Matones Crepuscular|r. Despójalos para obtener el |cRXP_LOOT_Ojo incomparable|r y el |T133743:0|t[|cRXP_LOOT_Libro: Los Poderes inferiores|r]

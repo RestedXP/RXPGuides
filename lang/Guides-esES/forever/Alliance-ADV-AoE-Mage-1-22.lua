@@ -3014,7 +3014,7 @@ step
     #completewith next
     .goto 1426/0,-831.81,-5108.330,30,0
     .goto 1426/0,-859.39,-5144.450,30,0
-    .goto 1426/0,-1124.84,-5283.99,150 >> Viaja hasta el punto de skip. Ve pegado al lado izquierdo de la montaña durante el trayecto
+    .goto 1426/0,-1124.84,-5283.99,150 >> Viaja hasta el punto de "skip". Ve pegado al lado izquierdo de la montaña durante el trayecto
 step
     #label DeathlessSkip
     .goto 1426/0,-1161.78,-5289.24,12,0
@@ -3570,7 +3570,7 @@ step
     #completewith next
     .goto 1426/0,-831.81,-5108.330,30,0
     .goto 1426/0,-859.39,-5144.450,30,0
-    .goto 1426/0,-1124.84,-5283.99,150 >> Viaja hasta el punto de skip. Ve pegado al lado izquierdo de la montaña durante el trayecto
+    .goto 1426/0,-1124.84,-5283.99,150 >> Viaja hasta el punto de "skip". Ve pegado al lado izquierdo de la montaña durante el trayecto
 step
     .goto 1426/0,-1161.78,-5289.24,12,0
     .goto 1426/0,-1173.60,-5313.54,12,0

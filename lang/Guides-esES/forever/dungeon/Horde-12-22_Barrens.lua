@@ -847,7 +847,7 @@ step
     .turnin 1492 >>Entrega la misión Maestro de muelles Vertipeluca
     .turnin 890 >>Entrega la misión El envío perdido
     .accept 892 >>Acepta la misión El envío perdido
-    .accept 896 >>Acepta la misión La fortuna de un minero
+    --.accept 896 >>Accept Miner's Fortune
     .target Wharfmaster Dizzywig
 step
     .goto 1413/1,-3728.66,-835.29
@@ -1928,7 +1928,7 @@ step
 step
     #completewith Gazzuz
     >>Mata a los |cRXP_ENEMY_Orcos Filo Ardiente|r. Despójalos para obtener una |cRXP_LOOT_Insignia de Teniente|r
-    >>|cRXP_WARN_Esta es una misión previa para RFC. Tiene una baja tasa de caída|r
+    >>|cRXP_WARN_Esta misión es un prerrequisito para Sima Ígnea. Tiene una baja probabilidad de caída|r
     .complete 5726,1 --Lieutenant's Insignia (1)
     .mob Burning Blade Fanatic
     .mob Burning Blade Apprentice
@@ -1937,7 +1937,7 @@ step
     .goto 1411/1,-4701.42,1455.83
     >>Mata a |cRXP_ENEMY_Gazz'uz|r. Despójalo para obtener su |T134085:0|t[|cRXP_LOOT_Ojo de la Sombra ardiente|r]
     >>|cRXP_WARN_Usa el |T134085:0|t[|cRXP_LOOT_Ojo de la Sombra ardiente|r] para empezar la misión|r
-    >>|cRXP_WARN_Usa LoS (línea de visión) para evitar |cRXP_ENEMY_Gazz'uz|r sus Descargas de las Sombras|r
+    >>|cRXP_WARN_Corta la línea de visión (LoS) para evitar las Descargas de las Sombras de |cRXP_ENEMY_Gazz'uz|r|r
     >>|cRXP_WARN_Puedes correr hacia las zonas de agua que hay dentro de la cueva para evadir al|r |cRXP_ENEMY_Abisario|r |cRXP_WARN_después de matar a|r |cRXP_ENEMY_Gazz'uz|r
     >>|cRXP_WARN_Ten cuidado, ya que es difícil. Puedes saltarte esta misión si lo necesitas|r
     .collect 4903,1,832,1 --Collect Eye of Burning Shadow
@@ -2218,6 +2218,48 @@ step
     .target Magistrate Sevren
     .isQuestTurnedIn 440
 step
+    .goto 1420/0,74.200,2022.700
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Guardia de la Muerte Linnea::1495|r
+    >>|cRXP_WARN_Esta es una pre-misión para "The Cólera of Rath'mael"|r
+    .accept 356 >>Acepta la misión Patrulla de la retaguardia
+    .target Deathguard Linnea::1495
+step
+    #loop
+	.goto 1420/0,-324.55,2000.48,0
+	.goto 1420/0,-324.55,2000.48,50,0
+	.goto 1420/0,-330.88,2040.84,50,0
+	.goto 1420/0,-359.34,2073.38,50,0
+	.goto 1420/0,-421.25,2070.07,50,0
+	.goto 1420/0,-464.63,2070.37,50,0
+	.goto 1420/0,-516.14,2017.05,50,0
+	.goto 1420/0,-466.44,1986.02,50,0
+	.goto 1420/0,-436.61,1951.670,50,0
+	.goto 1420/0,-355.28,1970.35,50,0
+    >>Mata |cRXP_ENEMY_Horrores sangrantes|r y |cRXP_ENEMY_Espíritus deambulantes|r
+    .complete 356,1 --Bleeding Horror (8)
+    .mob +Bleeding Horror
+    .complete 356,2 --Wandering Spirit (8)
+    .mob +Wandering Spirit
+step
+    .goto 1420/0,73.800,2022.300
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Guardia de la Muerte Linnea::1495|r
+    >>|cRXP_WARN_Esta es una pre-misión para "The Cólera of Rath'mael"|r
+    .turnin 356 >>Entrega la misión Patrulla de la retaguardia
+    .target Deathguard Linnea::1495
+    .accept 99156 >>Acepta la misión Patrulla de la retaguardia
+step
+    .goto 1420/0,-765.200,2518.700
+    >>Mata al |cRXP_ENEMY_Riptear|r |cRXP_WARN_(nivel 13 élite)|r. Despójalo para obtener |T134339:0|t[|cRXP_LOOT_Riptear's Corazón|r]
+    >>|cRXP_WARN_Esta es una pre-misión para "The Cólera of Rath'mael"|r
+    .complete 99156,1 --|1/1 Riptear's Heart
+    .mob Riptear
+step
+    .goto 1420/0,74.200,2022.400
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Guardia de la Muerte Linnea::1495|r
+    >>|cRXP_WARN_Esta es una pre-misión para "The Cólera of Rath'mael"|r
+    .turnin 99156 >>Entrega la misión Patrulla de la retaguardia
+    .target Deathguard Linnea::1495
+step
     .goto 1420/0,84.900,2023.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con la |cRXP_FRIENDLY_Guardia de la Muerte Kristof::251001|r
     .accept 92422 >>Acepta la misión La furia de Rath'mael
@@ -2253,6 +2295,14 @@ step << Tauren/Hunter/Orc Shaman/Troll Shaman
     .fp Undercity >>Consigue la ruta de vuelo de Entrañas
     .target Michael Garrett::4551
 step
+    .goto 1458/0,404.63,1434.67
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Faranell|r y |cRXP_FRIENDLY_Zinge|r en El Apothecarium
+    >>|cRXP_WARN_Esta es una pre-misión para "La nueva peste"|r
+    .accept 450 >>Acepta la misión Una fórmula mortal
+    .target Master Apothecary Faranell
+    .isQuestTurnedIn 447
+step
+    #optional
     .goto 1458/0,344.000,1423.800,50,0
     .goto 1458/0,373.200,1362.100,50,0
     .goto 1458/0,428.400,1417.700
@@ -2322,12 +2372,95 @@ step << !Tauren !Hunter !Shaman/Skyborne
     .fly Sepulcher >>Vuela a El Sepulcro
     .target Michael Garrett::4551
 step
-    #label AFrightenedRequest
     .goto 1421/0,1579.600,461.700
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Tabitha Tejecorazones::250686|r
     .accept 92401 >>Acepta la misión Una pregunta con miedo
     .target Tabitha Heartweaver::250686
 step
+    .goto Silverpine Forest,42.98,73.22
+    >>Mata al |cRXP_ENEMY_Boticario Berard|r. Despoja su |cRXP_LOOT_Libro|r ubicado en la estantería
+    >>|cRXP_WARN_Esto debería completarse en un grupo|r
+    .complete 450,1 --Berard's Journal (1)
+    .mob Apothecary Berard
+    .isQuestTurnedIn 447
+step
+    .goto 1421/0,1649.400,522.500
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Boticario Renferrel::1937|r
+    >>|cRXP_WARN_Esta es una pre-misión para "La nueva peste"|r
+    .turnin 450 >>Entrega la misión Una fórmula mortal
+    .accept 451 >>Acepta la misión Una fórmula mortal
+    .target Apothecary Renferrel::1937
+    .isQuestTurnedIn 447
+step
+    #completewith LakeSkulkerMoss
+    >>Mata a los |cRXP_ENEMY_Vile Fins|r. Despójalos para obtener |T134339:0|t[|cRXP_LOOT_Hardened Tumor|r]
+    .complete 451,3 --|1/1 Hardened Tumor
+    .mob Vile Fin Shorecreeper
+    .mob Vile Fin Tidecaller
+    .mob Vile Fin Tidehunter
+    .mob Vile Fin Shredder
+    .mob Vile Fin Lakestalker
+    .mob Vile Fin Oracle
+    .isQuestTurnedIn 447
+step
+    #loop
+    .goto 1421/0,214.000,871.700,0
+    .goto 1421/0,214.000,871.700,35,0
+    .goto 1421/0,134.800,932.100,35,0
+    .goto 1421/0,287.100,1117.300,35,0
+    >>Mata al |cRXP_ENEMY_Lake Trepador|r. Despójalo para obtener |T134186:0|t[|cRXP_LOOT_Lake Trepador Moss|r]
+    .complete 451,2 --|6/6 Lake Creeper Moss
+    .mob Lake Creeper
+    .mob Elder Lake Creeper
+    .isQuestTurnedIn 447
+step
+    #label LakeSkulkerMoss
+    #loop
+    .goto 1421/0,499.300,645.000,0
+    .goto 1421/0,499.300,645.000,35,0
+    .goto 1421/0,300.300,724.800,35,0
+    >>Mata al |cRXP_ENEMY_Lake Skulker|r. Despójalo para obtener |T134186:0|t[|cRXP_LOOT_Lake Skuler Moss|r]
+    .complete 451,1 --|6/6 Lake Skulker Moss
+    .mob Lake Skulker
+    .mob Elder Lake Skulker
+    .isQuestTurnedIn 447
+step
+    #label AFrightenedRequest
+    #loop
+    .goto 1421/0,694.600,1323.800,0
+    .goto 1421/0,694.600,1323.800,30,0
+    .goto 1421/0,964.900,1167.900,30,0
+    .goto 1421/0,1061.100,1032.000,30,0
+    .goto 1421/0,1089.000,884.900,30,0
+    >>Mata a los |cRXP_ENEMY_Vile Fins|r. Despójalos para obtener |T134339:0|t[|cRXP_LOOT_Hardened Tumor|r]
+    .complete 451,3 --|1/1 Hardened Tumor
+    .mob Vile Fin Shorecreeper
+    .mob Vile Fin Tidecaller
+    .mob Vile Fin Tidehunter
+    .mob Vile Fin Shredder
+    .mob Vile Fin Lakestalker
+    .mob Vile Fin Oracle
+    .isQuestTurnedIn 447
+step
+    #completewith EnterRoL
+    .zone Undercity >>Viaja a Entrañas
+step
+    .goto 1458/0,404.500,1434.700
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Maestro boticario Faranell::2055|r
+    >>|cRXP_WARN_Esta es una pre-misión para "La nueva peste"|r
+    .target Master Apothecary Faranell::2055
+    .turnin 451 >>Entrega la misión Una fórmula mortal
+    .isQuestComplete 451
+step
+    .goto 1458/0,344.000,1423.800,50,0
+    .goto 1458/0,373.200,1362.100,50,0
+    .goto 1458/0,428.400,1417.700
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Theodore Griffs::11835|r
+    .accept 95216 >>Acepta la misión La nueva peste
+    .target Theodore Griffs::11835
+    .isQuestTurnedIn 451
+step
+    #optional
     #completewith next
     .zoneskip Silverpine Forest,1
     .goto 1421/0,1533.96,474.43
@@ -2365,11 +2498,11 @@ step
     >>Despoja y usa el |T4504543:0|t[|cRXP_LOOT_Blasón de Lordaeron|r] para iniciar la misión
     >>|cRXP_WARN_Tiene 5 posibles ubicaciones de aparición|r
     .collect 275521,1,95204 --Crest of Lordaeron (1)
-    .accept 95204 >>Acepta la misión Crest of Lordaeron
+    .accept 95204 >>Acepta la misión Blasón de Lordaeron
     .use 275521
 step
     .isOnQuest 95216
-    >>Mata a |cRXP_ENEMY_Witherfang::250483|r. Despoja su |T132108:0|t[|cRXP_LOOT_Highly Tóxico Sufrimiento|r]
+    >>Mata a |cRXP_ENEMY_Marchitacolmillos::250483|r. Despójalo para obtener una |T132108:0|t[|cRXP_LOOT_Cepa muy tóxica|r]
     .complete 95216,1 --Highly Toxic Strain (1)
     .mob Witherfang::250483
 step
@@ -2416,7 +2549,7 @@ step
     >>Despoja y usa el |T4504543:0|t[|cRXP_LOOT_Blasón de Lordaeron|r] para iniciar la misión
     >>|cRXP_WARN_Tiene 5 posibles ubicaciones de aparición|r
     .collect 275521,1,95204 --Crest of Lordaeron (1)
-    .accept 95204 >>Acepta la misión Crest of Lordaeron
+    .accept 95204 >>Acepta la misión Blasón de Lordaeron
     .use 275521
 step
     .goto 1458/0,188.400,1804.500
@@ -2449,12 +2582,12 @@ step
     .isOnQuest 95204
     .goto 1458/0,172.100,1667.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Oran Snakewrithe::7825|r
-    .turnin 95204 >>Entrega la misión Crest of Lordaeron
+    .turnin 95204 >>Entrega la misión Blasón de Lordaeron
     .target Oran Snakewrithe::7825
 step
     .goto 1458/0,151.500,1550.200
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ezekiel Tumbas::4585|r
-    >>Compra una |T134799:0|t[|cRXP_LOOT_Esencia de Agonía|r]
+    >>|cRXP_BUY_Compra una|r |T134799:0|t[|cRXP_LOOT_Esencia de agonía|r]
     .collect 8923,1,97291,1 --Essence of Agony (1)
     .target Ezekiel Graves::4585
 step
@@ -2468,22 +2601,22 @@ step
 step
     .isOnQuest 97288
     .goto 1458/0,404.800,1434.500
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Master Apothecary Faranell::2055|r
-    .turnin 97288 >>Entrega la misión Tormento infinito
-    .accept 97289 >>Acepta la misión Tormento infinito
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Maestro boticario Faranell::2055|r
+    .turnin 97288 >>Entrega la misión Tormento eterno
+    .accept 97289 >>Acepta la misión Tormento eterno
     .target Master Apothecary Faranell::2055
 step
     #optional
     .isQuestTurnedIn 97288
     .goto 1458/0,404.800,1434.500
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Master Apothecary Faranell::2055|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Maestro boticario Faranell::2055|r
     .accept 97289 >>Acepta la misión Tormento eterno
     .target Master Apothecary Faranell::2055
 step
     .isOnQuest 97289
     .goto 1458/0,433.300,1482.600
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con la |cRXP_FRIENDLY_Abominación incompleta::271613|r
-    .turnin 97289 >>Entrega la misión Tormento infinito
+    .turnin 97289 >>Entrega la misión Tormento eterno
     .accept 97290 >>Acepta la misión Tormento eterno
     .target Unfinished Abomination::271613
 step
@@ -2496,9 +2629,9 @@ step
 step
     .isOnQuest 97290
     .goto 1458/0,404.800,1434.500
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Master Apothecary Faranell::2055|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Maestro boticario Faranell::2055|r
     .turnin 97290 >>Entrega la misión Tormento eterno
-    .accept 97291 >>Acepta la misión Tormento infinito
+    .accept 97291 >>Acepta la misión Tormento eterno
     .target Master Apothecary Faranell::2055
 step
     #optional
@@ -2541,7 +2674,7 @@ step
 step
     .isQuestComplete 97292
     .goto 1458/0,404.800,1434.500
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Maestro boticario Faranell::2055|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Maestro boticario Faranell::2055|r
     .turnin 97292 >>Entrega la misión Tormento eterno
     .target Master Apothecary Faranell::2055
 step
@@ -2805,9 +2938,9 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Petardol|r
     .turnin 902 >>Entrega la misión El churumbele
     .target Sputtervalve
-step
+step << skip
     .goto 1413/1,-3796.55,-985.28
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Dizzywig|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con  |cRXP_FRIENDLY_Vertipeluca|r
     .turnin 896 >> Entrega la misión La fortuna de un minero
     .target Wharfmaster Dizzywig
     .isQuestComplete 896
@@ -4151,7 +4284,7 @@ step << Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Turak|r
     .trainer >>Aprende tus hechizos de clase
     .accept 27 >>Acepta la misión Una lección que aprender
-    .accept 98340 >>Acepta la misión El Gran espíritu felino
+    .accept 98340 >>Acepta la misión El gran espíritu felino
     .target Turak Runetotem
 step << Druid
     #completewith next
@@ -4162,9 +4295,9 @@ step << Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Dendrita|r
     .turnin 27 >>Entrega la misión Una lección que aprender
     .accept 28 >>Acepta la misión La prueba del lago
-    .turnin 98340 >>Entrega la misión El Gran espíritu felino
+    .turnin 98340 >>Entrega la misión El gran espíritu felino
     .accept 98341 >>Acepta la misión El gran espíritu felino del viento << Skyborne
-    .accept 98405 >>Acepta la misión El Gran espíritu felino << !Skyborne
+    .accept 98405 >>Acepta la misión El gran espíritu felino << !Skyborne
     .target Dendrite Starblaze
 step << Druid
     #completewith next
@@ -4185,7 +4318,7 @@ step << Druid
 step << Druid !Skyborne
     .goto 1450/1,-2640.000,7338.900
      >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Gran espíritu felino|r
-    .turnin 98405 >>Entrega la misión El Gran espíritu felino
+    .turnin 98405 >>Entrega la misión El gran espíritu felino
     .accept 98342 >>Acepta la misión El Gran espíritu felino
     .target Great Cat Spirit
 step << Druid Skyborne
@@ -4221,8 +4354,8 @@ step << Druid
 step << Druid !Skyborne
     .goto 1450/1,-2640.000,7338.900
      >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Gran espíritu felino|r
-    .turnin 98342 >>Entrega la misión El Gran espíritu felino
-    .accept 98739 >>Acepta la misión Bendiciones del Gran espíritu felino
+    .turnin 98342 >>Entrega la misión El gran espíritu felino
+    .accept 98739 >>Acepta la misión Bendiciones del gran espíritu felino
     .target Great Cat Spirit
 step << Druid Skyborne
     .goto 1450/1,-2395.400,7361.400
@@ -4238,7 +4371,7 @@ step << Druid
     .goto 1450/1,-2678.200,8021.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Dendrita Rafagaestelar::11802|r
     .turnin 98738 >>Entrega la misión Bendiciones del gran espíritu felino del viento << Skyborne
-    .turnin 98739 >>Entrega la misión Blessings of the Gran esp??ritu felino << !Skyborne
+    .turnin 98739 >>Entrega la misión Bendiciones del gran espíritu felino << !Skyborne
     .accept 98362 >>Acepta la misión To Trueno Engaño
     .target Dendrite Starblaze::11802
 step << Druid
@@ -4815,7 +4948,7 @@ step
 step
     .goto 1413/1,-2711.800,-350.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Gur'ak|r
-    .turnin 97003 >>Entrega la misión Chol'aruk the Ravener
+    .turnin 97003 >>Entrega la misión Chol'aruk, el Insaciable
     .target Gur'ak
     .isQuestComplete 97003
 step
@@ -4870,7 +5003,7 @@ step
 step
     #optional
     #completewith TopofWCturnins
-    .abandon 97003 >>Abandona la misión Chol'aruk the Ravener
+    .abandon 97003 >>Abandona la misión Chol'aruk, el Insaciable
 step
     #optional
     #completewith TopofWCturnins
@@ -5010,6 +5143,16 @@ step << Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Salmuera|r
     .turnin 1530 >>Entrega la misión La llamada del agua
     .accept 1535 >>Acepta la misión La llamada del agua
+    .target Brine
+step << Shaman
+    .goto 1413/1,-1858.04,-3572.92
+    .use 7766 >> |cRXP_WARN_Llena tu|r |T132825:0|t[Odre de agua marrón vacío] |cRXP_WARN_en la charca debajo de la cabaña de Salmuera|r
+    .complete 1535,1 --Filled Brown Waterskin (1)
+step << Shaman
+    .goto 1413/1,-1776.98,-3617.51
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Salmuera|r
+    .turnin 1535 >>Entrega la misión La llamada del agua
+    .accept 1536 >>Acepta la misión La llamada del agua
     .target Brine
 step << Warlock/Shaman
     #completewith next

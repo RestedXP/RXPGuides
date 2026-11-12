@@ -497,7 +497,7 @@ step
 step
     #hardcore
     .goto 1412/1,-363.000,-2490.700
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Kaga Wildhoof|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Kuga Cascosalvaje|r
     .turnin 96659 >>Entrega la misión El aventurero
     .accept 96605 >>Acepta la misión Bendita naturaleza
     .target Kaga Wildhoof
@@ -512,7 +512,7 @@ step
 step
     #hardcore
     .goto 1412/1,-363.000,-2490.700
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Kaga Wildhoof|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Kuga Cascosalvaje|r
     .turnin 96605 >>Entrega la misión Bendita naturaleza
     .accept 96661 >>Acepta la misión Campamento básico: Cocina
     .target Kaga Wildhoof
@@ -665,7 +665,7 @@ step
 step
     .goto 1412/1,-496.200,-2347.900
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Krang Pezuña Pétrea|r
-    .accept 99108 >>Acepta la misión Combate de práctica
+    .accept 99108 >>Acepta la misión Combate de entrenamiento
     .target Krang Stonehoof
 step
     .goto 1412/1,-521.600,-2345.400
@@ -676,7 +676,7 @@ step
 step
     .goto 1412/1,-496.100,-2348.100
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Krang Pezuña Pétrea|r
-    .turnin 99108 >>Entrega la misión Entrenamiento Partida
+    .turnin 99108 >>Entrega la misión Combate de entrenamiento
     .target Krang Stonehoof
 step << Tauren
     .goto 1412/1,-445.31,-2341.62--c:Mulgore,48.53,60.40
@@ -687,7 +687,7 @@ step
     .goto 1412/1,-426.800,-2373.400
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Valiente Corresalvaje|r
     >>|cRXP_WARN_Patrulla por la zona|r
-    .accept 99079 >>Acepta la misión Longwalker Malah
+    .accept 99079 >>Acepta la misión Zancalargo Malah
     .target Brave Wildrunner
 step
     #softcore
@@ -698,7 +698,7 @@ step
 step
     #softcore
     .goto 1412/1,-363.000,-2490.700
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Kaga Wildhoof|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Kuga Cascosalvaje|r
     .turnin 96659 >>Entrega la misión El aventurero
     .accept 96605 >>Acepta la misión Bendita naturaleza
     .target Kaga Wildhoof
@@ -713,7 +713,7 @@ step
 step
     #softcore
     .goto 1412/1,-363.000,-2490.700
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Kaga Wildhoof|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Kuga Cascosalvaje|r
     .turnin 96605 >>Entrega la misión Bendita naturaleza
     .accept 96661 >>Acepta la misión Campamento básico: Cocina
     .target Kaga Wildhoof
@@ -989,8 +989,8 @@ step
 step
     .goto 1412/1,-1066.400,-2325.200
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Malah Ventolongo|r
-    .turnin 99079 >>Entrega la misión Longwalker Malah
-    .accept 99081 >>Acepta la misión Grim Tidings
+    .turnin 99079 >>Entrega la misión Zancalargo Malah
+    .accept 99081 >>Acepta la misión Novedades funestas
     .target Malah Longwind
 step
     #completewith EnterCave
@@ -1943,7 +1943,7 @@ step
     >>|cRXP_WARN_Patrulla a lo largo del camino oriental|r
     .turnin 764 >>Entrega la misión Los Ventura y Cía.
     .turnin 765 >>Entrega la misión Supervisor Saltatuercas
-    .turnin 98424 >>Entrega la misión Fizsprocket's Notes
+    .turnin 98424 >>Entrega la misión Notas de Saltatuercas
 	.unitscan Morin Cloudstalker
 step << skip -- Tauren
     #softcore

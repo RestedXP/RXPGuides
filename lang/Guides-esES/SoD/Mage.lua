@@ -1577,7 +1577,7 @@ step
     .accept 79094 >>Entrega la misión Las enseñanzas de Ta'zo
     .accept 79095 >>Entrega la misión El manual de la metafísica del boticario
     .accept 79096 >>Entrega la misión Ataeric: Tratado de curiosidades arcanas
-    .accept 79097 >>Entrega la misión Baxtan: Sobre la magia destructiva
+    .accept 79097 >>Entrega la misión Baxtan: Tratado de magias destructivas
     .accept 79535 >>Entrega la misión Los basiliscos y el infundado miedo a la petrificación
     .accept 79947 >>Entrega la misión Geomancia: De rocas y verdades
     .accept 79948 >>Entrega la misión Magia defensiva I
@@ -2001,7 +2001,7 @@ step
     .accept 79094 >>Entrega la misión Las enseñanzas de Ta'zo
     .accept 79095 >>Entrega la misión El manual de la metafísica del boticario
     .accept 79096 >>Entrega la misión Ataeric: Tratado de curiosidades arcanas
-    .accept 79097 >>Entrega la misión Baxtan: Sobre la magia destructiva
+    .accept 79097 >>Entrega la misión Baxtan: Tratado de magias destructivas
     .accept 79535 >>Entrega la misión Los basiliscos y el infundado miedo a la petrificación
     .accept 79947 >>Entrega la misión Geomancia: De rocas y verdades
     .accept 79948 >>Entrega la misión Magia defensiva I
@@ -2998,7 +2998,7 @@ step
     .collect 223147,1 --Spell Notes: Balefire Bolt
     .mob Fel Interloper
 step
-    .train 429311 >>|cRXP_WARN_Usa el|r |T134939:0|t[|cRXP_FRIENDLY_Notas sobre hechizos: Descarga de Fuegotorvo|r] |cRXP_WARN_para entrenar|r |T135809:0|t[Descarga de Fuegotorvo.]
+    .train 429311 >>|cRXP_WARN_Usa las|r |T134939:0|t[|cRXP_FRIENDLY_Notas de hechizo: Descarga de fuego fardo|r] |cRXP_WARN_para aprender|r |T135809:0|t[Descarga de fuego fardo]
     .use 223147
 ]])
 
@@ -3261,7 +3261,7 @@ step
     .collect 223147,1 --Spell Notes: Balefire Bolt
     .mob Fel Interloper
 step
-    .train 429311 >>|cRXP_WARN_Usa el|r |T134939:0|t[|cRXP_FRIENDLY_Notas sobre hechizos: Descarga de Fuegotorvo|r] |cRXP_WARN_para entrenar|r |T135809:0|t[Descarga de Fuegotorvo.]
+    .train 429311 >>|cRXP_WARN_Usa las|r |T134939:0|t[|cRXP_FRIENDLY_Notas de hechizo: Descarga de fuego fardo|r] |cRXP_WARN_para aprender|r |T135809:0|t[Descarga de fuego fardo]
     .use 223147
 ]])
 

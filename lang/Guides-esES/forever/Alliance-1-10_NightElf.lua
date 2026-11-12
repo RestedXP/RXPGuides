@@ -46,7 +46,7 @@ step << Druid
     .mob +Young Thistle Boar
 step << Druid
     #completewith next
-    +|cRXP_WARN_Asegúrate de tener al menos 1 plata y 2 cobres en basura de vendedor|r, puedes contar tu bastón que se vende por 9c
+    +|cRXP_WARN_Asegúrate de tener al menos 1 de plata y 2 de cobre en basura para vender|r, puedes contar tu bastón que se vende por 9 cobres
 step << !sod/Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Dirania Brillargente|r y |cRXP_FRIENDLY_Melithar Corzocelada|r
     #label GoodProtector
@@ -163,7 +163,7 @@ step << Druid
     .mob Grellkin
 step << Druid
     #completewith next
-    >>Mata a |cRXP_ENEMY_Thistle Boars|r de camino hacia Iverron. No tienes que completar esto ahora.
+    >>Mata |cRXP_ENEMY_Jabalíes Cardo|r de camino hacia Iverron. No tienes que completar esto ahora
     .complete 457,2 --Kill Thistle Boar (x7)
     .mob +Thistle Boar
 step << Druid
@@ -258,7 +258,7 @@ step
     .mob Webwood Spider
 step
     #completewith next
-    >>Mata a |cRXP_ENEMY_Thistle Boars|r de camino hacia los Grells. No tienes que completar esto ahora.
+    >>Mata |cRXP_ENEMY_Jabalíes Cardo|r de camino hacia los Grells. No tienes que completar esto ahora
     .complete 457,2 --Kill Thistle Boar (x7)
     .mob +Thistle Boar
 step << !Druid
@@ -285,7 +285,7 @@ step
     .turnin 97977 >>Entrega la misión Llamada de la naturaleza
 step
     #completewith next
-    >>Mata a |cRXP_ENEMY_Thistle Boars|r de camino hacia Iverron. No tienes que completar esto ahora.
+    >>Mata |cRXP_ENEMY_Jabalíes Cardo|r de camino hacia Iverron. No tienes que completar esto ahora
     .complete 457,2 --Kill Thistle Boar (x7)
     .mob +Thistle Boar
 step
@@ -492,7 +492,7 @@ step
 step
     .goto 1438/1,882.300,9909.101
     >>Usa el "emote" |cRXP_WARN_/sit (sentarse)|r junto a la hoguera y |cRXP_WARN_quédate quieto durante 1 minuto|r para completar el objetivo
-    >>|cRXP_WARN_Si no obtienes el crédito de la misión al sentarte, ¡abandona la misión y vuelve a aceptarla!|r
+    >>|cRXP_WARN_¡Si no recibes el crédito de la misión al sentarte, abandona la misión y aceptala de nuevo!|r
     .complete 96606,1 --Sit
     .complete 96606,2 --Gain the Boosted Rest buff
 step
@@ -1316,7 +1316,7 @@ step
     .goto 1438/1,1899.700,10582.900,50 >> Viaja al Claro del Oráculo
 step
     .goto 1438/1,1899.700,10582.900
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Sentinel Eralya Sombra de Hoja::275683|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con la |cRXP_FRIENDLY_Centinela Eralya Sombra de Hoja::275683|r
     .target Sentinel Eralya Leafshadow::275683
     .turnin 99046 >>Entrega la misión La corredora perdida
     .accept 99047 >>Acepta la misión Aún con vida
@@ -1409,7 +1409,7 @@ step << Druid/Priest
     .accept 940 >> Acepta la misión Teldrassil
 step << Druid/Priest
     #label xp10
-    .xp 10-870 >> Farmea hasta que te falten 870 xp para nivel 10 (5630/6500)
+    .xp 10-870 >> Mata enemigos hasta que te falten 870 xp para el nivel 10 (5630/6500)
 step << Hunter
     #completewith xp10
     #label mist1
@@ -1422,7 +1422,7 @@ step << Hunter
     #sticky
     #label xp10
     .xp 9+800 >> Mata enemigos hasta tener 800xp en el nivel 9
-    >>|cRXP_WARN_Una vez que llegues a este punto de ruptura de experiencia, omite la misión de arpías/escolta y ve directamente a Darnassus. Tendrás otra oportunidad para completar esas misiones más tarde|r
+    >>|cRXP_WARN_Una vez que llegues a este punto de ruptura de experiencia, omite la misión de harpías/escolta y ve directamente a Darnassus. Tendrás otra oportunidad para completar esas misiones más tarde|r
 step << Hunter
     #completewith xp10
     #requires mist1
@@ -2097,7 +2097,7 @@ step
 step
     .isOnQuest 99073
     .goto 1438/1,1899.700,10582.900
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Sentinel Eralya Sombra de Hoja::275683|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con la |cRXP_FRIENDLY_Centinela Eralya Sombra de Hoja::275683|r
     .target Sentinel Eralya Leafshadow::275683
     .turnin 99073 >>Entrega la misión Aliviar el sufrimiento
 step

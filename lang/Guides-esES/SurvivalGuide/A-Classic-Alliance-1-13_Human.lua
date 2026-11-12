@@ -680,7 +680,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Remy "Dos Veces"|r
     .target Remy "Two Times"
     .goto Elwynn Forest,42.140,67.254
-    .turnin 47 >> Acepta la misión Intercambio de polvo de oro
+    .turnin 47 >> Entrega la misión Intercambio de polvo de oro
     .accept 40 >> Acepta la misión Un peligro con olor a pescado
     >>|cRXP_WARN_NO vendas la recompensa|r |T133581:0|t[Bolsa de canicas] |cRXP_WARN_. Es un objeto increíblemente valioso hasta el nivel 60|r
 step

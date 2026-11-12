@@ -214,7 +214,7 @@ step << Warlock
     #label BeginningsHS
     #completewith BeginningsEnd
     .deathskip >> Muere y reaparece en el |cRXP_FRIENDLY_Ángel de la Resurrección|r
-    >>|cRXP_WARN_¡Asegúrate de que tu subzona sea Coldridge Valley cuando mueras! De lo contrario, serás enviado al cementerio de Kharanos|r
+    >>|cRXP_WARN_¡Asegúrate de que tu subzona sea el Valle de Crestanevada al morir! De lo contrario, serás enviado al cementerio de Kharanos|r
     .target Ángel de la Resurrección
 step << Warlock
     #season 0,1
@@ -759,7 +759,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Maxan Anvol::1226|r
     .target Maxan Anvol::1226
     .accept 5625 >> Acepta la misión Las prendas de la Luz << Priest
-    .accept 99158 >>Acepta la misión Alba in the Mountains
+    .accept 99158 >>Acepta la misión Alba en las montañas
 step << Priest
     .goto 1426/0,-453.81,-5668.73
     >>|cRXP_WARN_Lanza|r |T135929:0|t[Sanación inferior] (Rango 2) |cRXP_WARN_y luego|r |T135987:0|t[Palabra de poder: entereza] |cRXP_WARN_al |cRXP_FRIENDLY_Montaraz Dolf|r que está fuera|r
@@ -1419,7 +1419,7 @@ step << Hunter
     .goto 1426/0,-1041.000,-5350.600
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Padre Gavin::1253|r
     .target Father Gavin::1253
-    .turnin 99158 >>Entrega la misión Alba in the Mountains
+    .turnin 99158 >>Entrega la misión Alba en las montañas
 step << Hunter
     #completewith Rudra
     #label Dirt
@@ -1477,22 +1477,22 @@ step << Hunter
     .complete 432,1 --Kill Rockjaw Skullthumper (x6)
     .collect 268548,1,95213,1 -- Empty Powder Keg (1)
     .disablecheckbox
-    .accept 95213 >> Acepta la misión Stolen Reventar Powder
+    .accept 95213 >> Acepta la misión Pólvora explosiva robada
     .disablecheckbox
     .mob Rockjaw Skullthumper
 step << Hunter
     .isOnQuest 95213
     .goto 1426/0,-1606.02,-5676.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Capataz de cantera Thesten|r
-    .turnin 95213 >> Entrega la misión Stolen Reventar Powder
-    .accept 95214 >> Acepta la misión Stolen Reventar Powder
+    .turnin 95213 >> Entrega la misión Pólvora explosiva robada
+    .accept 95214 >> Acepta la misión Pólvora explosiva robada
     .target Quarrymaster Thesten
 step << Hunter
     #optional
     .isQuestTurnedIn 95213
     .goto 1426/0,-1606.02,-5676.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Capataz de cantera Thesten|r
-    .accept 95214 >> Acepta la misión Stolen Reventar Powder
+    .accept 95214 >> Acepta la misión Pólvora explosiva robada
     .target Quarrymaster Thesten
 step << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Supervisor Petrocejas|r
@@ -1715,7 +1715,7 @@ step
     .goto 1426/0,-682.300,-5489.000
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Beldin Brasacerada::1376|r
     .target Beldin Steelgrill::1376
-    .accept 96408 >>Acepta la misión A Visitor to Dun Morogh
+    .accept 96408 >>Acepta la misión Un visitante en Dun Morogh
 step << Warrior
     #optional
     #completewith WarriorThrown
@@ -1857,14 +1857,14 @@ step
     .subzoneskip 134 --Gol'Bolar Quarry
 step
     .goto 1426/0,-1394.24,-5797.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Earthseer Farsen|r
-    .turnin 96408 >> Entrega la misión A Visitor to Dun Morogh
-    .accept 96392 >> Acepta la misión Farsen's Observar
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Videnterra Farsen|r
+    .turnin 96408 >> Entrega la misión Un visitante en Dun Morogh
+    .accept 96392 >> Acepta la misión La vigilancia de Farsen
     .target Earthseer Farsen
 step
     .isOnQuest 96392
     .goto 1426/0,-1394.24,-5797.83
-    .gossipoption 139831 >> Habla con |cRXP_FRIENDLY_Earthseer Farsen|r para ver su vista lejana
+    .gossipoption 139831 >> Habla con |cRXP_FRIENDLY_Videnterra Farsen|r para ver su vista lejana
     >>|cRXP_WARN_Puedes cancelar la Vista lejana cuando se completa el objetivo|r
     .target Earthseer Farsen
 step
@@ -1872,17 +1872,17 @@ step
     .aura -1293681 >> |cRXP_WARN_Presiona ESC para cancelar la Vista lejana|r
 step << skip
     .goto 1426/0,-1394.24,-5797.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Earthseer Farsen|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Videnterra Farsen|r
     >>|cRXP_WARN_Puedes cancelar la Vista lejana cuando se completa el objetivo|r
     .complete 96392,1 -- Use Farsen's Farsight
     .skipgossip
     .target Earthseer Farsen
 step
     .goto 1426/0,-1394.24,-5797.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Earthseer Farsen|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Videnterra Farsen|r
     >>|cRXP_WARN_Presiona ESC para cancelar la Vista lejana|r
-    .turnin 96392 >> Entrega la misión Farsen's Observar
-    .accept 96390 >> Acepta la misión Nip 'Em in the Compa
+    .turnin 96392 >> Entrega la misión La vigilancia de Farsen
+    .accept 96390 >> Acepta la misión Párteles el coco
     .target Earthseer Farsen
 step
     #optional
@@ -1926,7 +1926,7 @@ step
     .use 268548 >> |cRXP_WARN_Usa el|r |T132621:0|t[|cRXP_LOOT_Tonel de pólvora vacío|r] |cRXP_WARN_para iniciar la misión|r
     >>|cRXP_WARN_NOTA: Este objeto tiene una probabilidad de caida baja. Salta este paso si no lo encuentras|r
     .collect 268548,1,95213,1 -- Empty Powder Keg (1)
-    .accept 95213 >> Acepta la misión Stolen Reventar Powder
+    .accept 95213 >> Acepta la misión Pólvora explosiva robada
 step
     #sticky
     #label Skullthumpers
@@ -1986,15 +1986,15 @@ step
     .isOnQuest 95213
     .goto 1426/0,-1606.02,-5676.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Capataz de cantera Thesten|r
-    .turnin 95213 >> Entrega la misión Stolen Reventar Powder
-    .accept 95214 >> Acepta la misión Stolen Reventar Powder
+    .turnin 95213 >> Entrega la misión Pólvora explosiva robada
+    .accept 95214 >> Acepta la misión Pólvora explosiva robada
     .target Quarrymaster Thesten
 step
     #optional
     .isQuestTurnedIn 95213
     .goto 1426/0,-1606.02,-5676.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Capataz de cantera Thesten|r
-    .accept 95214 >> Acepta la misión Stolen Reventar Powder
+    .accept 95214 >> Acepta la misión Pólvora explosiva robada
     .target Quarrymaster Thesten
 step
     #optional
@@ -2040,7 +2040,7 @@ step
     .use 268548 >> |cRXP_WARN_Usa el|r |T132621:0|t[|cRXP_LOOT_Tonel de pólvora vacío|r] |cRXP_WARN_para iniciar la misión|r
     >>|cRXP_WARN_NOTA: Este objeto tiene una baja probabilidad de caída. Omite este paso si no lo encuentras para cuando hayas terminado con los|r |cRXP_ENEMY_Espías Hierro Negro|r
     .collect 268548,1,95213,1 -- Empty Powder Keg (1)
-    .accept 95213 >> Acepta la misión Stolen Reventar Powder
+    .accept 95213 >> Acepta la misión Pólvora explosiva robada
     .mob Rockjaw Ambusher
 step
     #label SpyMap
@@ -2068,14 +2068,14 @@ step
     .isQuestComplete 95214
     .goto 1426/0,-1606.02,-5676.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Capataz de cantera Thesten|r
-    .turnin 95214 >> Entrega la misión Stolen Reventar Powder
+    .turnin 95214 >> Entrega la misión Pólvora explosiva robada
     .target Quarrymaster Thesten
 step
     #label OII
     .goto 1426/0,-1394.24,-5797.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Earthseer Farsen|r
-    .turnin 96390 >> Entrega la misión Nip 'Em in the Compa
-    .turnin 96391 >> Entrega la misión Mapa Subterráneo
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Videnterra Farsen|r
+    .turnin 96390 >> Entrega la misión Párteles el coco
+    .turnin 96391 >> Entrega la misión Mapa subterráneo
     .accept 96393 >> Acepta la misión Old Ironforge Incursion
     .target Earthseer Farsen
 step
@@ -2107,7 +2107,7 @@ step
     .isQuestComplete 95214
     .goto 1426/0,-1606.02,-5676.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Capataz de cantera Thesten|r
-    .turnin 95214 >> Entrega la misión Stolen Reventar Powder
+    .turnin 95214 >> Entrega la misión Pólvora explosiva robada
     .target Quarrymaster Thesten
 step
     #completewith next
@@ -2902,6 +2902,35 @@ step
     .accept 88 >> Acepta la misión ¡Princesa debe morir!
     .target +Ma Stonefield
     .goto 1429/0,332.43,-9895.01--c:Elwynn Forest,34.660,84.483
+step
+    .goto 1429/0,-869.87,-9768.10
+    >>Mata a |cRXP_ENEMY_Princesa|r. Despójala para obtener su |cRXP_LOOT_Collera|r
+    >>|cRXP_ENEMY_Princesa|r |cRXP_WARN_vendrá con ambos de sus|r |cRXP_ENEMY_Séquitos porcinos|r
+    >>|cRXP_ENEMY_Princesa|r |cRXP_WARN_también lanzará|r |T132368:0|t[Carga impetuosa] |cRXP_WARN_que inflige mucho daño|r
+    >>|cRXP_WARN_Acumula 100 Ira antes de atacar a|r |cRXP_ENEMY_Princesa|r << Warrior
+    >>Asegúrate de que|cRXP_WARN_ |T136205:0|t[Evasión] |cRXP_WARN_esté lista. Si te cuesta, puedes usar la valla con armas arrojadizas para aprovechar el "pathing" y ganar tiempo|r << Rogue
+    >>|cRXP_WARN_Prepárate para usar una|r |T134830:0|t[Poción de sanación inferior]
+    .link https://www.youtube.com/watch?v=GRrXOV-UvD4 >> |cRXP_WARN_Haz clic aquí para ver el video de referencia|r << !Warrior
+    .complete 88,1 --Collect Brass Collar (x1)
+    .mob Princess
+step << Warlock
+    .isOnQuest 147
+    .goto 1429/0,-932.35,-9806.53
+    >>Mata a |cRXP_ENEMY_Surena Caledon|r. Despójala para obtener su |cRXP_LOOT_Gargantilla|r
+    >>Mata a |cRXP_ENEMY_Morgan el Coleccionista|r. Despójalo para obtener el |cRXP_LOOT_El anillo del coleccionista|r
+    >>|cRXP_WARN_Enfócate en matar a |cRXP_ENEMY_Surena Caledon|r muy rápidamente|r
+    >>|cRXP_WARN_Lanza|r |T136183:0|t[Miedo] |cRXP_WARN_en |cRXP_ENEMY_Morgan el Coleccionista|r continuamente|r
+    .complete 1688,1 --Surena's Choker (1)
+    .mob +Surena Caledon
+    .complete 147,1 -- The Collector's Ring (1)
+    .mob +Morgan the Collector
+step << Warlock
+    .goto 1429/0,-932.35,-9806.53
+    >>Mata a |cRXP_ENEMY_Surena Caledon|r. Despójala para obtener su |cRXP_LOOT_Gargantilla|r
+    >>|cRXP_WARN_Enfócate en matar a |cRXP_ENEMY_Surena Caledon|r muy rápidamente|r
+    >>|cRXP_WARN_Lanza|r |T136183:0|t[Miedo] |cRXP_WARN_en |cRXP_ENEMY_Morgan el Coleccionista|r continuamente|r
+    .complete 1688,1 --Surena's Choker (1)
+    .mob Surena Caledon
 
 --
 step << skip
@@ -3110,7 +3139,7 @@ step
     .use 247826 >> |cRXP_WARN_Usa la|r |T134169:0|t[|cRXP_LOOT_Cabeza de Croaky|r] |cRXP_WARN_para iniciar la misión|r
     >>|cRXP_WARN_Es un enemigo élite de nivel 11. Omite este paso si no puedes matarlo|r
     .collect 247826,1,91740,1 -- Croaky's Head (1)
-    .accept 91740 >>Acepta la misión Croaky's Cabeza
+    .accept 91740 >>Acepta la misión Cabeza de Croaky
     .mob Croaky
 step
     #loop
@@ -3129,35 +3158,6 @@ step
     .mob +Prowler
     .complete 52,2 --Kill Young Forest Bear (x5)
     .mob +Young Forest Bear
-step << Warlock
-    .isOnQuest 147
-    .goto 1429/0,-932.35,-9806.53
-    >>Mata a |cRXP_ENEMY_Surena Caledon|r. Despójala para obtener su |cRXP_LOOT_Gargantilla|r
-    >>Mata a |cRXP_ENEMY_Morgan el Coleccionista|r. Despójalo para obtener el |cRXP_LOOT_El anillo del coleccionista|r
-    >>|cRXP_WARN_Enfócate en matar a |cRXP_ENEMY_Surena Caledon|r muy rápidamente|r
-    >>|cRXP_WARN_Lanza|r |T136183:0|t[Miedo] |cRXP_WARN_en |cRXP_ENEMY_Morgan el Coleccionista|r continuamente|r
-    .complete 1688,1 --Surena's Choker (1)
-    .mob +Surena Caledon
-    .complete 147,1 -- The Collector's Ring (1)
-    .mob +Morgan the Collector
-step << Warlock
-    .goto 1429/0,-932.35,-9806.53
-    >>Mata a |cRXP_ENEMY_Surena Caledon|r. Despójala para obtener su |cRXP_LOOT_Gargantilla|r
-    >>|cRXP_WARN_Enfócate en matar a |cRXP_ENEMY_Surena Caledon|r muy rápidamente|r
-    >>|cRXP_WARN_Lanza|r |T136183:0|t[Miedo] |cRXP_WARN_en |cRXP_ENEMY_Morgan el Coleccionista|r continuamente|r
-    .complete 1688,1 --Surena's Choker (1)
-    .mob Surena Caledon
-step
-    .goto 1429/0,-869.87,-9768.10
-    >>Mata a |cRXP_ENEMY_Princesa|r. Despójala para obtener su |cRXP_LOOT_Collera|r
-    >>|cRXP_ENEMY_Princesa|r |cRXP_WARN_vendrá con ambos de sus|r |cRXP_ENEMY_Séquitos porcinos|r
-    >>|cRXP_ENEMY_Princesa|r |cRXP_WARN_también lanzará|r |T132368:0|t[Carga impetuosa] |cRXP_WARN_que inflige mucho daño|r
-    >>|cRXP_WARN_Acumula 100 Ira antes de atacar a|r |cRXP_ENEMY_Princesa|r << Warrior
-    >>Asegúrate de que|cRXP_WARN_ |T136205:0|t[Evasión] |cRXP_WARN_esté lista. Si te cuesta, puedes usar la valla con armas arrojadizas para aprovechar el "pathing" y ganar tiempo|r << Rogue
-    >>|cRXP_WARN_Prepárate para usar una|r |T134830:0|t[Poción de sanación inferior]
-    .link https://www.youtube.com/watch?v=GRrXOV-UvD4 >> |cRXP_WARN_Haz clic aquí para ver el video de referencia|r << !Warrior
-    .complete 88,1 --Collect Brass Collar (x1)
-    .mob Princess
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Guardia Thomas|r
     .target Guard Thomas
@@ -3406,7 +3406,7 @@ step
     .target Gryan Stoutmantle
     .goto 1436/0,1045.12,-10508.80
     .accept 12 >> Acepta la misión La Milicia Popular
-step
+step << skip
     #era
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Capitán Danuvin|r
     .target Captain Danuvin
@@ -4027,7 +4027,7 @@ step << Shaman
     .complete 94467,1 -- Glowing Ember (1)
 step << Shaman
     .goto 1432/0,-2870.700,-5674.600
-    >>Haz clic en el |cRXP_PICK_Brasero de la Llama Durmiente|r
+    >>Haz clic en el |cRXP_PICK_Blandón de la Llama Latente|r
     .turnin 94467 >>Entrega la misión La llamada del fuego
     .accept 94468 >>Acepta la misión La llamada del fuego
 step
@@ -4080,7 +4080,7 @@ step
     >>Haz clic en la |cRXP_PICK_Caja de herramientas de pesca descartada|r en el piso del lago
     >>|cRXP_WARN_NOTA: Esto puede aparecer en una de muchas ubicaciones distintas. Nada por los alrededores hasta que veas el signo de exclamación en tu minimapa|r
     >>|cRXP_WARN_Ten cuidado con los|r Jóvenes trillanodontes|cRXP_ENEMY_ de nivel alto|r
-    .accept 86614 >>Acepta la misión Plateado of the Waves
+    .accept 86614 >>Acepta la misión Olas de plata
     .xp <13,1
 step
     .goto 1432/0,-3104.900,-5210.100,5,0
@@ -4770,7 +4770,7 @@ step
     >>Haz clic en la |cRXP_PICK_Caja de herramientas de pesca descartada|r en el piso del lago
     >>|cRXP_WARN_NOTA: Esto puede aparecer en una de muchas ubicaciones distintas. Nada por los alrededores hasta que veas el signo de exclamación en tu minimapa|r
     >>|cRXP_WARN_Ten cuidado con los|r Jóvenes trillanodontes|cRXP_ENEMY_ de nivel alto|r
-    .accept 86614 >>Acepta la misión Plateado of the Waves
+    .accept 86614 >>Acepta la misión Olas de plata
     .xp <13,1
 step
     #optional
@@ -4778,7 +4778,7 @@ step
     .goto 1432/0,-3086.600,-5216.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Khara Aguahonda::1684|r
     .target Khara Deepwater::1684
-    .turnin 86614 >>Entrega la misión Plateado of the Waves
+    .turnin 86614 >>Entrega la misión Olas de plata
     .xp <13,1
 step
     #completewith next
