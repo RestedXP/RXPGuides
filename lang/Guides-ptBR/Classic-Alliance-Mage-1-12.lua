@@ -561,12 +561,12 @@ step
 step
     #softcore
     .goto Redridge Mountains,30.6,59.4
-    .fp Redridge Mountains >> Aprenda a rota de voo para Montanhas Cristarrubra
+    .fp Redridge Mountains >> Pegue o ponto de voo das Montanhas Cristarrubra
 step
     #hardcore
     >>Corra em direção à Rota de Voo. Tenha muito cuidado para não atrair inimigos ou morrer no caminho. Tente ficar na estrada e fique atento
     .goto Redridge Mountains,30.6,59.4
-    .fp Redridge Mountains >> Aprenda a rota de voo para Montanhas Cristarrubra
+    .fp Redridge Mountains >> Pegue o ponto de voo das Montanhas Cristarrubra
 step
     .hs >> Use sua Pedra de Retorno para Goldshire
 step

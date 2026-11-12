@@ -7453,7 +7453,7 @@ step << Horde
     .turnin 95350 >>Entregue Bem-vindo a Azeroth
     .accept 98024 >>Aceite Jornada para a Encruzilhada
     --.accept 93739 >>Accept Exploring the Horde
-    .accept 5726 >>Aceite Escondido Enemies
+    .accept 5726 >>Aceite Inimigos ocultos
     .target Thrall::4949
     .dungeon RFC
 step << skip --Horde

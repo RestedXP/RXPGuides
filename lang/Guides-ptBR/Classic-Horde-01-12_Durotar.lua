@@ -392,7 +392,7 @@ step << Warlock
     #label Nartok2
     .goto Durotar,40.65,68.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Nartok|r
-    .turnin 3090 >>Entregue Pergaminho Maculado
+    .turnin 3090 >>Entregue Pergaminho maculado
     .accept 77586 >>Aceite Poder Roubado
     .target Nartok
 step << Warlock
@@ -400,7 +400,7 @@ step << Warlock
     #label Nartok2
     .goto Durotar,40.65,68.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Nartok|r
-    .turnin 3090 >>Entregue Pergaminho Maculado
+    .turnin 3090 >>Entregue Pergaminho maculado
     .train 172 >> Treine |T136118:0|t [Corrupção]
     .target Nartok
 step
@@ -1268,7 +1268,7 @@ step
 step << skip
 	#completewith next
     .goto Durotar,44.70,52.47
-    .goto Durotar,53.55,44.68,30 >>|cRXP_WARN_Faça um Atalho por Logout posicionando seu personagem na borda da pedra até parecer que está flutuando, depois desconecte-se e entre novamente|r
+    .goto Durotar,53.55,44.68,30 >>|cRXP_WARN_Faça o atalho por reconexão posicionando seu personagem na beirada da rocha até parecer que está flutuando; depois, desconecte-se e conecte-se novamente|r
 	.link https://www.youtube.com/watch?v=7vmnvdjbUnM >> CLIQUE AQUI para um exemplo
 step
     #softcore
@@ -2993,7 +2993,7 @@ step
     .goto Durotar,41.64,38.27,50,0
     .goto Durotar,41.94,40.46,50,0
     .goto Durotar,43.30,40.40,50,0
-    >>Mate os |cRXP_ENEMY_Razormane Dustrunners|r e os |cRXP_ENEMY_Razormane Battleguards|r
+    >>Mate |cRXP_ENEMY_Levanta-poeira Crinavalha|r e |cRXP_ENEMY_Guardas de Batalha Crinavalha|r
     .complete 837,3 --Razormane Dustrunner (4)
     .mob +Razormane Dustrunner
     .complete 837,4 --Razormane Battleguard (4)
@@ -3226,7 +3226,7 @@ step
 	.goto Durotar,41.64,38.27,50,0
 	.goto Durotar,41.94,40.46,50,0
 	.goto Durotar,43.30,40.40,50,0
-    >>Mate os |cRXP_ENEMY_Razormane Dustrunners|r e os |cRXP_ENEMY_Razormane Battleguards|r
+    >>Mate |cRXP_ENEMY_Levanta-poeira Crinavalha|r e |cRXP_ENEMY_Guardas de Batalha Crinavalha|r
     .complete 837,3 --Razormane Dustrunner (4)
     .mob +Razormane Dustrunner
     .complete 837,4 --Razormane Battleguard (4)
@@ -3547,7 +3547,7 @@ step << Warrior/Shaman/Hunter
     #xprate <1.5 << Shaman
     .goto Orgrimmar,31.74,37.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thrall|r
-    .accept 5726 >>Aceite Inimigos Escondidos
+    .accept 5726 >>Aceite Inimigos ocultos
     .target Thrall
 step << Hunter
     #completewith next
@@ -4611,7 +4611,7 @@ step << Warrior/Shaman
     .abandon 766 >> Abandone Mazzranache
 step << Warrior/Shaman
     #xprate >1.49
-    .hs >> Use sua Pedra de Retorno para ir a Encruzilhada
+    .hs >> Use sua Pedra de Regresso para ir à Encruzilhada
     .subzoneskip 380
     .bindlocation 380,1
     .use 6948
@@ -4978,7 +4978,7 @@ step << Warrior/Shaman/Hunter
     .goto Orgrimmar,31.74,37.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thrall|r
     .turnin 5726 >>Entregue Inimigos ocultos
-    .accept 5727 >>Aceite Inimigos Escondidos
+    .accept 5727 >>Aceite Inimigos ocultos
     .target Thrall
     .isQuestComplete 5726
     .dungeon RFC
@@ -5257,7 +5257,7 @@ step << Orc Rogue/Troll Rogue
     .zoneskip Undercity,1
 step << skip --Orc Rogue/Troll Rogue
     .goto Undercity,84.86,20.34
-    .goto Undercity,67.90,15.28,30 >>|cRXP_WARN_Execute um Logout Pular na Magic Quarter posicionando seu personagem na parte mais alta do degrau mais baixo até parecer flutuante, depois faça logout e acesse novamente|r
+    .goto Undercity,67.90,15.28,30 >>|cRXP_WARN_Faça o atalho por reconexão no Distrito da Magia, posicionando seu personagem no ponto mais alto da escadaria inferior até parecer que está flutuando; depois, desconecte-se e conecte-se novamente|r
     .link https://www.youtube.com/watch?v=-Bi95bCN8dM >> |cRXP_WARN_CLIQUE AQUI para ver um exemplo|r
     >>|cRXP_WARN_Se você não conseguir fazer isso, apenas saia de Cidade Baixa normalmente|r
     .zoneskip Undercity,1
@@ -6634,7 +6634,7 @@ step << Warrior
     .isOnQuest 1821
 step << skip --Warrior
     .goto Tirisfal Glades,51.68,25.67
-    .goto Tirisfal Glades,56.24,49.42,30 >>|cRXP_WARN_Pule em uma das estantes de armas. Faça um Logout Pular desconectando e reconectando|r
+    .goto Tirisfal Glades,56.24,49.42,30 >>|cRXP_WARN_Pule em um dos suportes de armas. Faça o atalho por reconexão saindo e entrando no jogo novamente|r
     .link https://www.youtube.com/watch?v=bH_NYmWf8Lc&ab >> |cRXP_WARN_CLIQUE AQUI para ver um exemplo|r
     .isQuestComplete 408
 step << Warrior
@@ -7581,14 +7581,14 @@ step << Warlock
     #label Nartok2
     .goto Durotar,40.65,68.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Nartok|r
-    .turnin 3090 >>Entregue Pergaminho Maculado
+    .turnin 3090 >>Entregue Pergaminho maculado
     .target Nartok
 step << Warlock
     #season 0
     #label Nartok2
     .goto Durotar,40.65,68.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Nartok|r
-    .turnin 3090 >>Entregue Pergaminho Maculado
+    .turnin 3090 >>Entregue Pergaminho maculado
     .train 172 >> Treine |T136118:0|t [Corrupção]
     .target Nartok
 step
@@ -8195,7 +8195,7 @@ step << Shaman
 step << skip
 	#completewith next
     .goto Durotar,44.70,52.47
-    .goto Durotar,53.55,44.68,30 >>|cRXP_WARN_Faça um Atalho por Logout posicionando seu personagem na borda da pedra até parecer que está flutuando, depois desconecte-se e entre novamente|r
+    .goto Durotar,53.55,44.68,30 >>|cRXP_WARN_Faça o atalho por reconexão posicionando seu personagem na beirada da rocha até parecer que está flutuando; depois, desconecte-se e conecte-se novamente|r
 	.link https://www.youtube.com/watch?v=7vmnvdjbUnM >> CLIQUE AQUI para um exemplo
 step
     #softcore
@@ -9577,7 +9577,7 @@ step
 	.goto Durotar,41.64,38.27,50,0
 	.goto Durotar,41.94,40.46,50,0
 	.goto Durotar,43.30,40.40,50,0
-    >>Mate os |cRXP_ENEMY_Razormane Dustrunners|r e os |cRXP_ENEMY_Razormane Battleguards|r
+    >>Mate |cRXP_ENEMY_Levanta-poeira Crinavalha|r e |cRXP_ENEMY_Guardas de Batalha Crinavalha|r
     .complete 837,3 --Razormane Dustrunner (4)
     .mob +Razormane Dustrunner
     .complete 837,4 --Razormane Battleguard (4)
@@ -10002,7 +10002,7 @@ step
 step << Warlock
     .goto Orgrimmar,31.74,37.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thrall|r
-    .accept 5726 >>Aceite Inimigos Escondidos
+    .accept 5726 >>Aceite Inimigos ocultos
     .target Thrall
 step << Shaman/Hunter
     #season 2
@@ -10172,14 +10172,14 @@ step << Warlock
     .goto Orgrimmar,31.74,37.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thrall|r
     .turnin 5726 >>Entregue Inimigos ocultos
-    .accept 5727 >>Aceite Inimigos Escondidos
+    .accept 5727 >>Aceite Inimigos ocultos
     .target Thrall
     .isQuestComplete 5726
 step << Warlock
     #optional
     .goto Orgrimmar,31.74,37.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thrall|r
-    .accept 5727 >>Aceite Inimigos Escondidos
+    .accept 5727 >>Aceite Inimigos ocultos
     .target Thrall
     .isQuestTurnedIn 5726
 step << Warlock

@@ -2326,7 +2326,7 @@ step
 step << Hunter
     .goto Thunder Bluff,52.32,47.79
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kara Corre com a Névoa|r
-    >>|cRXP_BUY_Compre|r |T133972:0|t[Fortalecer Jerky] |cRXP_BUY_dela para alimentar seu animal de estimação|r
+    >>|cRXP_BUY_Compre|r |T133972:0|t[Carne-seca Dura] |cRXP_BUY_dela para alimentar seu ajudante|r
     .collect 117,5,744,1 --Tough Jerky (5)
     .target Kaga Mistrunner
 step << Shaman
@@ -5721,7 +5721,7 @@ step
 step << Hunter
     .goto Thunder Bluff,52.32,47.79
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kara Corre com a Névoa|r
-    >>|cRXP_BUY_Compre|r |T133972:0|t[Fortalecer Jerky] |cRXP_BUY_dela para alimentar seu animal de estimação|r
+    >>|cRXP_BUY_Compre|r |T133972:0|t[Carne-seca Dura] |cRXP_BUY_dela para alimentar seu ajudante|r
     .collect 117,5,744,1 --Tough Jerky (5)
     .target Kaga Mistrunner
 step << Shaman

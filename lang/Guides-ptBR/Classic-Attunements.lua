@@ -1161,7 +1161,7 @@ step
     #completewith next
     .goto Tanaris,51.006,29.345
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Bera Rochamalho|r
-    .fly Un'Goro >> Voe para Cratera Un'Goro
+    .fly Un'Goro >> Voe para a Cratera Un'Goro
     .target Bera Stonehammer
     .zoneskip Un'Goro Crater
 step
@@ -1278,7 +1278,7 @@ step
     #optional
     #requires ThoriumBars
     .goto Tirisfal Glades,83.15,68.92
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Derrington|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Alto-executor Arcabuz|r
     .turnin 5093 >>Vire em A Chamado às Armas: The Plaguelands!
     .accept 5096 >>Aceite Distrações escarlate
 	.target High Executor Derrington
@@ -1287,7 +1287,7 @@ step
     #optional
     #requires ThoriumBars
     .goto Tirisfal Glades,83.15,68.92
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Derrington|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Alto-executor Arcabuz|r
     .accept 5096 >>Aceite Distrações escarlate
 	.target High Executor Derrington
     .isQuestTurnedIn 5093
@@ -1295,7 +1295,7 @@ step
     #optional
     #requires ThoriumBars
     .goto Tirisfal Glades,83.15,68.92
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Derrington|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Alto-executor Arcabuz|r
     .turnin 5094 >>Vire em A Chamado às Armas: The Plaguelands!
     .accept 5096 >>Aceite Distrações escarlate
 	.target High Executor Derrington
@@ -1304,14 +1304,14 @@ step
     #optional
     #requires ThoriumBars
     .goto Tirisfal Glades,83.15,68.92
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Derrington|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Alto-executor Arcabuz|r
     .accept 5096 >>Aceite Distrações escarlate
 	.target High Executor Derrington
     .isQuestTurnedIn 5094
 step
     #requires ThoriumBars
     .goto Tirisfal Glades,83.15,68.92
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Derrington|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Alto-executor Arcabuz|r
     .turnin 5095 >>Vire em A Chamado às Armas: The Plaguelands!
     .accept 5096 >>Aceite Distrações escarlate
 	.target High Executor Derrington
@@ -1325,7 +1325,7 @@ step
     #label ScarletDiversionsPU
     #requires ThoriumBars
     .goto Tirisfal Glades,83.15,68.92
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Derrington|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Alto-executor Arcabuz|r
     .accept 5096 >>Aceite Distrações escarlate
 	.target High Executor Derrington
     .isQuestTurnedIn 5095
@@ -1336,7 +1336,7 @@ step
     .complete 5096,1 --Destroy the command tent and plant the Scourge banner in the camp (1)
 step
     .goto Tirisfal Glades,83.15,68.92
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Derrington|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Alto-executor Arcabuz|r
     .turnin 5096 >>Entregue Scarlet Diversions
     .accept 5098 >>Aceite Você não vê as torres?
 	.target High Executor Derrington
@@ -1362,7 +1362,7 @@ step
     .complete 5098,1 --Tower One marked
 step
     .goto Tirisfal Glades,83.15,68.92
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Derrington|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Alto-executor Arcabuz|r
     .turnin 5098 >>Entregue All Along the Watchtowers
     .accept 838 >>Aceite Scolomântia
 	.target High Executor Derrington
@@ -1373,7 +1373,7 @@ step
 step
  	#era/som
     .goto Tirisfal Glades,83.28,69.23
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dithers|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Boticário Trépido|r
     .turnin 838 >>Entregue Scolomântia
     .accept 964 >>Aceite Fragmentos de Ossos
 	.target Apothecary Dithers
@@ -1398,7 +1398,7 @@ step
     .mob Skeletal Acolyte
 step
     .goto Tirisfal Glades,83.28,69.23
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dithers|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Boticário Trépido|r
     .turnin 964 >>Entregue Fragmentos de Ossos
     .accept 5514 >>Aceite Mold Rhymes With...
 	.target Apothecary Dithers
@@ -1419,7 +1419,7 @@ step
     #completewith next
     .goto Silithus,48.69,36.67
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Runk Adestra Vento|r
-    .fly Un'Goro >>Voe para Cratera Un'Goro
+    .fly Un'Goro >>Voe para a Cratera Un'Goro
 	.target Runk Windtamer
 	.zoneskip Un'Goro Crater
 step
@@ -1434,7 +1434,7 @@ step
 	.subzone 152 >> Vá para The Baluarte em |cFFfa9602Tirisfal Glades|r
 step
     .goto Tirisfal Glades,83.28,69.23
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dithers|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Boticário Trépido|r
     .turnin 5802 >>Entregue Fogo Plume Forged
     .accept 5804 >>Aceite Araj's Scarab
 	.target Apothecary Dithers
@@ -1477,12 +1477,12 @@ step
     .mob Araj the Summoner
 step
     .goto Tirisfal Glades,83.28,69.23
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dithers|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Boticário Trépido|r
     .turnin 5804 >>Entregue Araj's Scarab
 	.target Apothecary Dithers
 step
     .goto Tirisfal Glades,83.28,69.23
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dithers|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Boticário Trépido|r
     .turnin 5511 >>Entregue A Chave da Scolomântia
 	.target Apothecary Dithers
 

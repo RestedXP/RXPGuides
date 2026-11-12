@@ -853,7 +853,7 @@ step << skip
 step << skip
     .goto 1433/0,-2234.89,-9435.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ariena|r
-    .fp Redridge Mountains >> Aprenda a rota de voo para Montanhas Cristarrubra
+    .fp Redridge Mountains >> Pegue o ponto de voo das Montanhas Cristarrubra
     .target Ariena Stormfeather
 step
     #completewith next
@@ -7485,7 +7485,7 @@ step
 step
     .goto 1433/0,-2234.89,-9435.060
     >>Fale com |cRXP_FRIENDLY_Ariena|r
-    .fp Redridge Mountains >> Aprenda a rota de voo para Montanhas Cristarrubra
+    .fp Redridge Mountains >> Pegue o ponto de voo das Montanhas Cristarrubra
 step
     >>Fale com |cRXP_FRIENDLY_Marris|r e |cRXP_FRIENDLY_Oslow|r
     .accept 20 >>Aceite Ameaça dos Rochas Negras

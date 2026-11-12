@@ -847,13 +847,14 @@ step
 step << skip
 	#completewith next
     .goto 1411/1,-4326.01,-41.23
-    .goto 1411/1,-4793.96,233.36,30 >>|cRXP_WARN_Faça um Atalho por Logout posicionando seu personagem na borda da pedra até parecer que está flutuando, depois desconecte-se e entre novamente|r
+    .goto 1411/1,-4793.96,233.36,30 >>|cRXP_WARN_Faça o atalho por reconexão posicionando seu personagem na beirada da rocha até parecer que está flutuando; depois, desconecte-se e conecte-se novamente|r
 	.link https://www.youtube.com/watch?v=7vmnvdjbUnM >> CLIQUE AQUI para um exemplo
 step
     #softcore
     #completewith RazorHill1
     .goto 1411/1,-4326.01,-41.23
-    .deathskip >> |cRXP_WARN_Morra e ressuscite com o |cRXP_FRIENDLY_Anjo da Cura|r perto da seta|r
+    .deathskip >>Morra e reviva no |cRXP_FRIENDLY_Anjo da Cura|r
+    >>|cRXP_WARN_Certifique-se de que está na seta do ponto de passagem quando morre!|r
     .target Anjo da Cura
 step
     #softcore
@@ -4024,22 +4025,22 @@ step
     #label LinneaTurnin
     .goto 1420/0,73.800,2022.300
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Deathguard Linnea::1495|r
-    >>|cRXP_WARN_Esta é uma missão anterior para "The Ira of Rath'mael"|r
+    >>|cRXP_WARN_Esta é uma missão preliminar para "The Ira of Rath'mael"|r
     .turnin 356 >>Entregue Patrulha da retaguarda
     .target Deathguard Linnea::1495
     .accept 99156 >>Aceite Patrulha da retaguarda
     .dungeon ROL
 step
     .goto 1420/0,-765.200,2518.700
-    >>Abata |cRXP_ENEMY_Riptear|r |cRXP_WARN_(nível 13 elite)|r. Saqueie-o para obter |T134339:0|t[|cRXP_LOOT_Riptear's Coração|r]
-    >>|cRXP_WARN_Esta é uma missão anterior para "The Ira of Rath'mael"|r
+    >>Mate |cRXP_ENEMY_Riptear|r |cRXP_WARN_(nível 13 élite)|r. Saque-o para |T134339:0|t[|cRXP_LOOT_Coração de Riptear|r]
+    >>|cRXP_WARN_Esta é uma missão preliminar para "The Ira of Rath'mael"|r
     .complete 99156,1 --|1/1 Riptear's Heart
     .mob Riptear
     .dungeon ROL
 step
     .goto 1420/0,74.200,2022.400
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Deathguard Linnea::1495|r
-    >>|cRXP_WARN_Esta é uma missão anterior para "The Ira of Rath'mael"|r
+    >>|cRXP_WARN_Esta é uma missão preliminar para "The Ira of Rath'mael"|r
     .turnin 99156 >>Entregue Patrulha da retaguarda
     .target Deathguard Linnea::1495
     .dungeon ROL

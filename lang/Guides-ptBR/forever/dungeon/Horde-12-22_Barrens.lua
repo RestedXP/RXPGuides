@@ -847,7 +847,7 @@ step
     .turnin 1492 >>Entregue Mestre Portuário Caruncho
     .turnin 890 >>Entregue Carregamento perdido
     .accept 892 >>Aceite Carregamento perdido
-    .accept 896 >>Aceite A fortuna do mineiro
+    --.accept 896 >>Accept Miner's Fortune
     .target Wharfmaster Dizzywig
 step
     .goto 1413/1,-3728.66,-835.29
@@ -1672,7 +1672,7 @@ step << Tauren/Hunter/Orc Shaman/Troll Shaman
     .dungeon DM
 step << skip
     .goto 1413/1,-3505.72,1358.46
-    .goto 1454/1,-4242.34,1637.33,30 >>|cRXP_WARN_Pule na viga de madeira. Faça um Logout Skip saindo e entrando no jogo. Volte a Orgrimmar se não conseguir|r
+    .goto 1454/1,-4242.34,1637.33,30 >>|cRXP_WARN_Pule na viga de madeira. Faça o atalho por reconexão saindo e entrando no jogo novamente. Volte a Orgrimmar se não conseguir|r
     .link https://www.youtube.com/watch?v=U7YfoaO-X8E&ab_channel=RestedXP >> |cRXP_WARN_CLIQUE AQUI para ver um exemplo|r
     .zoneskip Orgrimmar
 
@@ -2218,6 +2218,48 @@ step
     .target Magistrate Sevren
     .isQuestTurnedIn 440
 step
+    .goto 1420/0,74.200,2022.700
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Deathguard Linnea::1495|r
+    >>|cRXP_WARN_Esta é uma missão preliminar para "The Ira of Rath'mael"|r
+    .accept 356 >>Aceite Patrulha da retaguarda
+    .target Deathguard Linnea::1495
+step
+    #loop
+	.goto 1420/0,-324.55,2000.48,0
+	.goto 1420/0,-324.55,2000.48,50,0
+	.goto 1420/0,-330.88,2040.84,50,0
+	.goto 1420/0,-359.34,2073.38,50,0
+	.goto 1420/0,-421.25,2070.07,50,0
+	.goto 1420/0,-464.63,2070.37,50,0
+	.goto 1420/0,-516.14,2017.05,50,0
+	.goto 1420/0,-466.44,1986.02,50,0
+	.goto 1420/0,-436.61,1951.670,50,0
+	.goto 1420/0,-355.28,1970.35,50,0
+    >>Mate |cRXP_ENEMY_Horrores Sangrentos|r e |cRXP_ENEMY_Espíritos Errantes|r
+    .complete 356,1 --Bleeding Horror (8)
+    .mob +Bleeding Horror
+    .complete 356,2 --Wandering Spirit (8)
+    .mob +Wandering Spirit
+step
+    .goto 1420/0,73.800,2022.300
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Deathguard Linnea::1495|r
+    >>|cRXP_WARN_Esta é uma missão preliminar para "The Ira of Rath'mael"|r
+    .turnin 356 >>Entregue Patrulha da retaguarda
+    .target Deathguard Linnea::1495
+    .accept 99156 >>Aceite Patrulha da retaguarda
+step
+    .goto 1420/0,-765.200,2518.700
+    >>Mate |cRXP_ENEMY_Riptear|r |cRXP_WARN_(nível 13 élite)|r. Saque-o para |T134339:0|t[|cRXP_LOOT_Coração de Riptear|r]
+    >>|cRXP_WARN_Esta é uma missão preliminar para "The Ira of Rath'mael"|r
+    .complete 99156,1 --|1/1 Riptear's Heart
+    .mob Riptear
+step
+    .goto 1420/0,74.200,2022.400
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Deathguard Linnea::1495|r
+    >>|cRXP_WARN_Esta é uma missão preliminar para "The Ira of Rath'mael"|r
+    .turnin 99156 >>Entregue Patrulha da retaguarda
+    .target Deathguard Linnea::1495
+step
     .goto 1420/0,84.900,2023.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Deathguard Kristof::251001|r
     .accept 92422 >>Aceite The Ira of Rath'mael
@@ -2253,11 +2295,19 @@ step << Tauren/Hunter/Orc Shaman/Troll Shaman
     .fp Undercity >>Aprenda a rota de voo de Cidade Baixa
     .target Michael Garrett::4551
 step
+    .goto 1458/0,404.63,1434.67
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mestre-boticário Faranello|r e |cRXP_FRIENDLY_Boticária Zilda|r no Boticarium
+    >>|cRXP_WARN_Esta é uma missão preliminar para "A nova peste"|r
+    .accept 450 >>Aceite Receita mortal
+    .target Master Apothecary Faranell
+    .isQuestTurnedIn 447
+step
+    #optional
     .goto 1458/0,344.000,1423.800,50,0
     .goto 1458/0,373.200,1362.100,50,0
     .goto 1458/0,428.400,1417.700
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Theodore Griffs::11835|r
-    .accept 95216 >>Aceite A nova peste
+    .accept 95216 >>Aceite A Nova Peste
     .target Theodore Griffs::11835
     .isQuestTurnedIn 451
 step
@@ -2322,12 +2372,95 @@ step << !Tauren !Hunter !Shaman/Skyborne
     .fly Sepulcher >>Voe para Sepulcher
     .target Michael Garrett::4551
 step
-    #label AFrightenedRequest
     .goto 1421/0,1579.600,461.700
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tabitha Heartweaver::250686|r
     .accept 92401 >>Aceite A Amedrontado Request
     .target Tabitha Heartweaver::250686
 step
+    .goto Silverpine Forest,42.98,73.22
+    >>Mate |cRXP_ENEMY_Boticário Berardo|r. Saque o |cRXP_LOOT_Livro|r localizado na estante de livros
+    >>|cRXP_WARN_Isto deve ser concluído em grupo|r
+    .complete 450,1 --Berard's Journal (1)
+    .mob Apothecary Berard
+    .isQuestTurnedIn 447
+step
+    .goto 1421/0,1649.400,522.500
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Boticário Renferrel::1937|r
+    >>|cRXP_WARN_Esta é uma missão preliminar para "A nova peste"|r
+    .turnin 450 >>Entregue Receita mortal
+    .accept 451 >>Aceite Receita mortal
+    .target Apothecary Renferrel::1937
+    .isQuestTurnedIn 447
+step
+    #completewith LakeSkulkerMoss
+    >>Mate os |cRXP_ENEMY_Vile Fins|r. Saqueie-os para |T134339:0|t[|cRXP_LOOT_Hardened Tumor|r]
+    .complete 451,3 --|1/1 Hardened Tumor
+    .mob Vile Fin Shorecreeper
+    .mob Vile Fin Tidecaller
+    .mob Vile Fin Tidehunter
+    .mob Vile Fin Shredder
+    .mob Vile Fin Lakestalker
+    .mob Vile Fin Oracle
+    .isQuestTurnedIn 447
+step
+    #loop
+    .goto 1421/0,214.000,871.700,0
+    .goto 1421/0,214.000,871.700,35,0
+    .goto 1421/0,134.800,932.100,35,0
+    .goto 1421/0,287.100,1117.300,35,0
+    >>Mate os |cRXP_ENEMY_Lake Rastejante|r. Saqueie-os para |T134186:0|t[|cRXP_LOOT_Lake Rastejante Moss|r]
+    .complete 451,2 --|6/6 Lake Creeper Moss
+    .mob Lake Creeper
+    .mob Elder Lake Creeper
+    .isQuestTurnedIn 447
+step
+    #label LakeSkulkerMoss
+    #loop
+    .goto 1421/0,499.300,645.000,0
+    .goto 1421/0,499.300,645.000,35,0
+    .goto 1421/0,300.300,724.800,35,0
+    >>Mate os |cRXP_ENEMY_Lake Skulker|r. Saque-os para |T134186:0|t[|cRXP_LOOT_Lake Skuler Moss|r]
+    .complete 451,1 --|6/6 Lake Skulker Moss
+    .mob Lake Skulker
+    .mob Elder Lake Skulker
+    .isQuestTurnedIn 447
+step
+    #label AFrightenedRequest
+    #loop
+    .goto 1421/0,694.600,1323.800,0
+    .goto 1421/0,694.600,1323.800,30,0
+    .goto 1421/0,964.900,1167.900,30,0
+    .goto 1421/0,1061.100,1032.000,30,0
+    .goto 1421/0,1089.000,884.900,30,0
+    >>Mate os |cRXP_ENEMY_Vile Fins|r. Saqueie-os para |T134339:0|t[|cRXP_LOOT_Hardened Tumor|r]
+    .complete 451,3 --|1/1 Hardened Tumor
+    .mob Vile Fin Shorecreeper
+    .mob Vile Fin Tidecaller
+    .mob Vile Fin Tidehunter
+    .mob Vile Fin Shredder
+    .mob Vile Fin Lakestalker
+    .mob Vile Fin Oracle
+    .isQuestTurnedIn 447
+step
+    #completewith EnterRoL
+    .zone Undercity >>Vá à Cidade Baixa
+step
+    .goto 1458/0,404.500,1434.700
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Master Apothecary Faranell::2055|r
+    >>|cRXP_WARN_Esta é uma missão preliminar para "A nova peste"|r
+    .target Master Apothecary Faranell::2055
+    .turnin 451 >>Entregue Receita mortal
+    .isQuestComplete 451
+step
+    .goto 1458/0,344.000,1423.800,50,0
+    .goto 1458/0,373.200,1362.100,50,0
+    .goto 1458/0,428.400,1417.700
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Theodore Griffs::11835|r
+    .accept 95216 >>Aceite A Nova Peste
+    .target Theodore Griffs::11835
+    .isQuestTurnedIn 451
+step
+    #optional
     #completewith next
     .zoneskip Silverpine Forest,1
     .goto 1421/0,1533.96,474.43
@@ -2468,7 +2601,7 @@ step
 step
     .isOnQuest 97288
     .goto 1458/0,404.800,1434.500
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Master Apothecary Faranell::2055|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Master Apothecary Faranell::2055|r
     .turnin 97288 >>Entregue Tormento Infinito
     .accept 97289 >>Aceite Tormento Infinito
     .target Master Apothecary Faranell::2055
@@ -2476,7 +2609,7 @@ step
     #optional
     .isQuestTurnedIn 97288
     .goto 1458/0,404.800,1434.500
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Master Apothecary Faranell::2055|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Master Apothecary Faranell::2055|r
     .accept 97289 >>Aceite Tormento Infinito
     .target Master Apothecary Faranell::2055
 step
@@ -2496,7 +2629,7 @@ step
 step
     .isOnQuest 97290
     .goto 1458/0,404.800,1434.500
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Master Apothecary Faranell::2055|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Master Apothecary Faranell::2055|r
     .turnin 97290 >>Entregue Tormento Infinito
     .accept 97291 >>Aceite Tormento Infinito
     .target Master Apothecary Faranell::2055
@@ -2504,7 +2637,7 @@ step
     #optional
     .isQuestTurnedIn 97290
     .goto 1458/0,404.800,1434.500
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Master Apothecary Faranell::2055|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Master Apothecary Faranell::2055|r
     .accept 97291 >>Aceite Tormento Infinito
     .target Master Apothecary Faranell::2055
 step
@@ -2520,7 +2653,7 @@ step
 step
     .isOnQuest 97291
     .goto 1458/0,404.800,1434.500
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Master Apothecary Faranell::2055|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Master Apothecary Faranell::2055|r
     .turnin 97291 >>Entregue Tormento Infinito
     .accept 97292 >>Aceite Tormento Infinito
     .target Master Apothecary Faranell::2055
@@ -2528,7 +2661,7 @@ step
     #optional
     .isQuestTurnedIn 97291
     .goto 1458/0,404.800,1434.500
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Master Apothecary Faranell::2055|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Master Apothecary Faranell::2055|r
     .accept 97292 >>Aceite Tormento Infinito
     .target Master Apothecary Faranell::2055
 step
@@ -2541,7 +2674,7 @@ step
 step
     .isQuestComplete 97292
     .goto 1458/0,404.800,1434.500
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Master Apothecary Faranell::2055|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Master Apothecary Faranell::2055|r
     .turnin 97292 >>Entregue Tormento Infinito
     .target Master Apothecary Faranell::2055
 step
@@ -2805,7 +2938,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Cobogó|r
     .turnin 902 >>Entregue A rebimboca
     .target Sputtervalve
-step
+step << skip
     .goto 1413/1,-3796.55,-985.28
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dizzywig|r
     .turnin 896 >> Entregue A fortuna do mineiro
@@ -5011,6 +5144,16 @@ step << Shaman
     .turnin 1530 >>Entregue Clamor da água
     .accept 1535 >>Aceite Clamor da água
     .target Brine
+step << Shaman
+    .goto 1413/1,-1858.04,-3572.92
+    .use 7766 >> |cRXP_WARN_Encha seu|r |T132825:0|t[Odre Marrom Vazio] |cRXP_WARN_na fonte abaixo da cabana de Salma|r
+    .complete 1535,1 --Filled Brown Waterskin (1)
+step << Shaman
+    .goto 1413/1,-1776.98,-3617.51
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Salma|r
+    .turnin 1535 >>Entregue Clamor da água
+    .accept 1536 >>Aceite Clamor da água
+    .target Brine
 step << Warlock/Shaman
     #completewith next
     .subzone 378 >>Volte em direção ao Acampamento Taurajo
@@ -5212,7 +5355,7 @@ step << skip --Rogue/Druid
 step << skip --Rogue/Druid
     #hardcore
     .goto 1413/1,-3505.72,1358.46
-    .goto 1454/1,-4242.34,1637.33,30 >>|cRXP_WARN_Pule na viga de madeira. Faça um Logout Skip saindo e entrando no jogo. Volte a Orgrimmar se não conseguir|r
+    .goto 1454/1,-4242.34,1637.33,30 >>|cRXP_WARN_Pule na viga de madeira. Faça o atalho por reconexão saindo e entrando no jogo novamente. Volte a Orgrimmar se não conseguir|r
     .link https://www.youtube.com/watch?v=U7YfoaO-X8E&ab_channel=RestedXP >> |cRXP_WARN_CLIQUE AQUI para ver um exemplo|r
     .zoneskip Orgrimmar
 step << Rogue/Druid

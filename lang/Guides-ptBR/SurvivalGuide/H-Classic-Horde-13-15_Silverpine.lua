@@ -13,7 +13,7 @@ RXPGuides.RegisterGuide([[
 step << Undead Rogue
     #sticky
     #completewith RotHideCluesTurnIn
-    >>|cRXP_WARN_Se você vir|r |cRXP_FRIENDLY_Astolfo Hadren|r|cRXP_WARN_, fale com ele e mate-o. Saque-o pela carta. Ele patrula a estrada entre Montalvo e Sepulcro|r
+    >>|cRXP_WARN_Se você vir|r |cRXP_FRIENDLY_Astolfo Hadren|r|cRXP_WARN_, fale com ele e mate-o. Saqueie-o pela carta. Ele patrula a estrada entre Montalvo e Sepulcro|r
     .complete 1886,1 --Astor's Letter of Introduction (1)
     .unitscan Astor Hadren
 step
@@ -492,7 +492,7 @@ step
     #completewith ZingeAndFaranell
     .goto Silverpine Forest,45.62,42.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Carlos Razok|r
-    .fp Sepulcher >> Aprenda a rota de voo para o Sepulcro << !Undead
+    .fp Sepulcher >> Pegue o ponto de voo do Sepulcro << !Undead
     .fly Undercity >> Voe para Cidade Baixa
     .target Karos Razok
     .zoneskip Undercity
@@ -856,7 +856,7 @@ step
 step
     #label BerardsJournal
     .goto Silverpine Forest,42.98,73.22
-    >>Mate |cRXP_ENEMY_Boticário Berardo|r. Saque seu |cRXP_LOOT_Livro|r localizado na estante
+    >>Mate |cRXP_ENEMY_Boticário Berardo|r. Saque o |cRXP_LOOT_Livro|r localizado na estante de livros
     .complete 450,1 --Berard's Journal (1)
     .mob Apothecary Berard
     .isOnQuest 450

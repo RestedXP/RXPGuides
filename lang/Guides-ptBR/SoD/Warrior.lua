@@ -1344,7 +1344,7 @@ step
     >>|cRXP_WARN_Use a|r |T237451:0|t[|cRXP_LOOT_Illegible Recipe|r] |cRXP_WARN_para começar a missão|r
     >>|cRXP_WARN_Você também pode matar |cRXP_ENEMY_Crushridge Ogres|r em Alterac Mountains|r
     .collect 213422,1,79624 --Illegible Recipe (1x)
-    .accept 79624 >>Aceite Qualquer um Cozinha
+    .accept 79624 >>Aceite Qualquer um cozinha
     .mob Boulderfist Shaman
     .mob Boulderfist Mauler
     .mob Boulderfist Lord
@@ -1359,7 +1359,7 @@ step
     .train 416004,1
     .goto Arathi Highlands,57.68,74.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Skonk|r
-    .turnin 79624 >>Entregue Qualquer um Cozinha
+    .turnin 79624 >>Entregue Qualquer um cozinha
     .accept 79677 >>Aceite Ida Rápida ao Mercado
     .target Skonk
 step

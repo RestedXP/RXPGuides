@@ -831,7 +831,7 @@ step
     .accept 246 >>Aceite Assessing the Ameaça
 step
     .goto 1433/0,-2234.89,-9435.060
-    .fp Redridge Mountains >> Aprenda a rota de voo para Montanhas Cristarrubra
+    .fp Redridge Mountains >> Pegue o ponto de voo das Montanhas Cristarrubra
 step
     #requires Gnolls
     .goto 1433/0,-2298.28,-9283.90
