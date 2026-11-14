@@ -392,7 +392,7 @@ step << Mage
     .goto 1411/1,-4210.22,-625.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Mai'ah|r
     .turnin 3086 >>Entrega la misión Tablilla glífica << Troll Mage
-    .turnin 98576 >>Entrega la misión Glyph Papyrus << Orc Mage
+    .turnin 98576 >>Entrega la misión Papiro glífico << Orc Mage
     .train 1459 >> Aprende |T135932:0|t[Intelecto Arcano]
     .target Mai'ah
 step << !Warlock

@@ -5367,7 +5367,7 @@ step
     .mob Incinerator Gar'im
 step
     #completewith next
-    >>Despoja los |cRXP_PICK_Sacos de Grano|r y los |cRXP_PICK_Piezas de Carne|r en el suelo para obtener los |cRXP_LOOT_Suministros Robados|r
+    >>Despoja los |cRXP_PICK_sacos de grano|r y los |cRXP_PICK_paletadas de carne|r en el suelo para los |cRXP_LOOT_Suministros robados|r
     >>Despoja los |cRXP_PICK_Expositores de armas|r y las |cRXP_PICK_Armas robadas|r del suelo
     .complete 98387,1 -- Stolen Supplies (10)
     .complete 98387,2 -- Stolen Weapon (8)
@@ -5391,8 +5391,8 @@ step
     .goto 1433/0,-3259.74,-9566.82,60,0
     .goto 1433/0,-3092.80,-9694.82,60,0
     .goto 1433/0,-3177.25,-9718.85,60,0
-    >>Despoja los |cRXP_PICK_Sacos de Grano|r y los |cRXP_PICK_Piezas de Carne|r en el suelo para obtener los |cRXP_LOOT_Suministros Robados|r
-    >>Despoja los |cRXP_PICK_Estantes de Armas|r y las |cRXP_PICK_Armas Robadas|r en el suelo
+    >>Despoja los |cRXP_PICK_sacos de grano|r y los |cRXP_PICK_paletadas de carne|r en el suelo para los |cRXP_LOOT_Suministros robados|r
+    >>Despoja las |cRXP_PICK_rejillas de armas|r y las |cRXP_PICK_armas robadas|r en el suelo
     .complete 98387,1 -- Stolen Supplies (10)
     .complete 98387,2 -- Stolen Weapon (8)
 step
@@ -6150,7 +6150,7 @@ RXPGuides.RegisterGuide([[
 #subgroup Guía de subida rápida de nivel (Speedrun) 1-20
 --#groupid RXP-SRGCE-A1
 #name 19-21 Costa Oscura/Vallefresno
-#next RestedXP Guía Forever (A)\21-23 Vallefresno/Sierra Espolón
+#next RestedXP Guía Forever (A)\21-23 Vallefresno/Stonetalon
 
 step
     #optional
