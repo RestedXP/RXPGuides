@@ -7,7 +7,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 14-18 Das Brachland
 #displayname 14-16 The Barrens << !Shaman !Hunter !Tauren
-#displayname 15-16 The Barrens << Paladin
+#displayname 15-16 Das Brachland << Paladin
 #version 11
 #group RestedXP Forever Dungeonführer (H)
 #subgroup Dungeonführer 1-22
@@ -389,8 +389,8 @@ step << Orc Warrior/Troll Warrior/Tauren Warrior/Skyborne Warrior
 step
     .goto 1413/1,-2645.40,-406.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gastwirt Boorand|r
-    .vendor >>Stock up on food und water << !Rogue !Warrior
-    .vendor >>Kauft Nahrung << Rogue/Warrior
+    .vendor >>Füllt euer Essen und Wasser auf << !Rogue !Warrior
+    .vendor >>Füllt essen auf << Rogue/Warrior
     .target Innkeeper Boorand Plainswind
     .isOnQuest 872,5041,845
 step
@@ -584,7 +584,7 @@ step
 step
     .goto 1413/1,-3767.800,-842.900
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Wrenix|r
-    .accept 97253 >>Akzeptiert die Quest Parts and Pieces
+    .accept 97253 >>Akzeptiert die Quest Teile und Stücke
     .target Wrenix the Wretched
 step
     .goto 1413/1,-3728.66,-835.29
@@ -3930,8 +3930,8 @@ step
 step
     #label SleepingBag1
     .goto 1413/1,-2075.00,-3380.64--c:The Barrens,46.361,73.904
-    >>Klickt die |cRXP_PICK_Verbrannten Überreste|r auf dem Boden an
-    .accept 79007 >> Nehmt an ...und diese Notiz, die Ihr gefunden habt.
+    >>Klickt auf die |cRXP_PICK_Ausgebrannten Überreste|r auf dem Boden
+    .accept 79007 >> Akzeptiert die Quest ...und diese Notiz, die Ihr gefunden habt.
 step
     #label LizardBlood
     #loop

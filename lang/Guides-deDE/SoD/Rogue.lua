@@ -1662,7 +1662,7 @@ step
     #label Uniform
     .train 425103,1
     .goto Stranglethorn Vale,49.616,7.743
-    >>Öffnet die |cRXP_PICK_Kurzen Vorratskiste|r. Plündert sie für die |cRXP_LOOT_Kurzens Kämpferuniform|r
+    >>Öffnet die |cRXP_PICK_Kurzens Vorratskiste|r. Plündert sie für die |cRXP_LOOT_Kurzens Kämpferuniform|r
     .collect 216617,1
 step
     .train 425103,1

@@ -20,7 +20,7 @@ step
 step
     #season 2
     #completewith next
-    .goto Wetlands,51.914,62.692,30 >> Betretet die Thelgenfelsen-Höhle
+    .goto Wetlands,51.914,62.692,30 >> BETRETET die Thelgenfelsen-Höhle
     .train 425446,1 << Warrior
     .train 410115,1 << Hunter
 step
@@ -1724,40 +1724,40 @@ step << Alliance
     .zone Westfall >> Lauf nach Westfall
 step << Alliance
     .goto Westfall,37.413,50.701
-    >>Klickt die |cRXP_PICK_Verbrannten Überreste|r auf dem Boden an
-    .accept 79008 >> Nehmt an ...und diese Notiz, die Ihr gefunden habt.
+    >>Klickt auf die |cRXP_PICK_Ausgebrannten Überreste|r auf dem Boden
+    .accept 79008 >> Akzeptiert die Quest ...und diese Notiz, die Ihr gefunden habt.
 step << Alliance
     #completewith next
     .zone The Barrens >> Reist nach Das Brachland
 step << Alliance
     .goto The Barrens,46.361,73.904
-    >>Klickt die |cRXP_PICK_Verbrannten Überreste|r auf dem Boden an
-    .turnin 79008 >> Gebt die Quest ...und diese Notiz, die Ihr gefunden habt ab
-    .accept 79192 >> Akzeptiert die Quest Trittsteine
+    >>Klickt auf die |cRXP_PICK_Ausgebrannten Überreste|r auf dem Boden
+    .turnin 79008 >> Gebt die Quest "...und diese Notiz, die ihr gefunden habt" ab
+    .accept 79192 >> Akzeptiert die Quest Trittsteine.
 step << Horde
     #completewith next
     .zone The Barrens >> Reist nach Das Brachland
 step << Horde
     .goto The Barrens,46.361,73.904
-    >>Klickt die |cRXP_PICK_Verbrannten Überreste|r auf dem Boden an
-    .accept 79007 >> Nehmt an ...und diese Notiz, die Ihr gefunden habt.
+    >>Klickt auf die |cRXP_PICK_Ausgebrannten Überreste|r auf dem Boden
+    .accept 79007 >> Akzeptiert die Quest ...und diese Notiz, die Ihr gefunden habt.
 step << Horde
     #completewith next
     .zone Westfall >> Lauf nach Westfall
 step << Horde
     .goto Westfall,37.413,50.701
-    >>Klickt die |cRXP_PICK_Verbrannten Überreste|r auf dem Boden an
-    .turnin 79007 >> Gebt die Quest ...und diese Notiz, die Ihr gefunden habt ab
-    .accept 79192 >> Akzeptiert die Quest Trittsteine
+    >>Klickt auf die |cRXP_PICK_Ausgebrannten Überreste|r auf dem Boden
+    .turnin 79007 >> Gebt die Quest "...und diese Notiz, die ihr gefunden habt" ab
+    .accept 79192 >> Akzeptiert die Quest Trittsteine.
 step
     #completewith next
     .zone Stonetalon Mountains >> Reist ins Steinkrallengebirge
 step
     #completewith next
-    .goto Stonetalon Mountains,50.29,52.94,25 >> Reist oben entlang des Feldwegs nördlich von Sonnenfels
+    .goto Stonetalon Mountains,50.29,52.94,25 >> Reist hinauf und entlang dem Feldweg nördlich von Sonnenfels
 step
     .goto Stonetalon Mountains,40.748,52.576
-    >>Sammelt das |cRXP_PICK_Pocket Litter|r auf der Box
+    >>Klickt |cRXP_PICK_Pocket Litter|r auf der Kiste an
     .turnin 79192 >> Gebt die Quest Trittsteine ab
     .accept 79980 >> Akzeptiert die Quest Weg hier
 step
@@ -1765,7 +1765,7 @@ step
     .goto Stonetalon Mountains,40.19,50.80,15 >> Folgt dem Pfad durch die Berge
 step
     .goto Stonetalon Mountains,39.614,49.783
-    >>Sammelt das |cRXP_PICK_Mound of Dirt|r vom Boden
+    >>Klickt |cRXP_PICK_Mound of Dirt|r auf dem Boden
     .turnin 79980 >> Gebt die Quest Weg hier ab
     .accept 79974 >> Akzeptiert die Quest Feuchte Angelegenheit
 step
@@ -1775,26 +1775,26 @@ step
     #completewith next
     .goto Loch Modan,41.01,12.60,50,0
     .goto Loch Modan,42.86,10.36,60,0
-    .goto Loch Modan,49.4,12.9,8 >> |cRXP_WARN_Geht auf die Mauer des Stausees von Loch Modan und fallt vorsichtig auf den Felsvorsprung in der Mitte hinunter. Folgt dem Pfeil|r
+    .goto Loch Modan,49.4,12.9,8 >> |cRXP_WARN_Begebt euch auf die Mauer des Loch-Modan-Damms und fällt vorsichtig auf das Sims in der Mitte des Damms. Folgt dem Pfeil|r
 step
     .goto Loch Modan,49.421,12.917
-    >>Hebt die |cRXP_PICK_Schnitzfigur|r vom Sims auf
+    >>Klickt |cRXP_PICK_Geschnitzte Figur|r auf dem Sims
     .turnin 79974 >> Gebt die Quest Feuchte Angelegenheit ab
-    .accept 79975 >> Nehmt die Quest Adlerfaust an
+    .accept 79975 >> Akzeptiert die Quest Adlerfaust
 step
     #completewith next
-    .goto Hillsbrad Foothills,87.691,48.166,10 >> Reist zum Thoradinswall an der Zonengrenze zwischen Arathihochland und Vorgebirge des Hügellands
+    .goto Hillsbrad Foothills,87.691,48.166,10 >> Reist zur Thoradinsmauer an der Grenze zwischen Arathihochland und Vorgebirge des Hügellands
 step
     #completewith next
-    .goto Arathi Highlands,24.132,21.470,7 >> Klettert auf den Wagen und arbeitet euch die Mauer entlang nach oben
+    .goto Arathi Highlands,24.132,21.470,7 >> Klettert auf den Karren und begebt euch entlang der Mauer hinauf
 step
     .goto Arathi Highlands,22.466,24.127
-    >>Hebt die |cRXP_PICK_Kuriertasche|r von der Wand auf
+    >>Klickt |cRXP_PICK_Botenschultertasche|r an der Mauer
     .turnin 79975 >> Gebt die Quest Adlerfaust ab
-    .accept 79976 >> Nehmt die Quest Das muss der Ort sein an
+    .accept 79976 >> Akzeptiert die Quest Das muss der Ort sein
 step
     .goto Arathi Highlands,22.466,24.127
-    >>Hebt die |cRXP_PICK_überstürzt zusammengerollte Tasche|r vom Boden auf
+    >>Klickt |cRXP_PICK_überhastet zusammengerollte Tasche|r auf dem Boden
     .turnin 79976 >> Gebt die Quest Das muss der Ort sein ab
 step
     +|cRXP_WARN_Es wird dringend empfohlen, von Euch|r |T134057:0|t[|cRXP_LOOT_Student Futter|r] |cRXP_WARN_für höhere Level aufzusparen, bevor ihr diese verbraucht. Jede Verwendung von|r |T134057:0|t[|cRXP_LOOT_Student Futter|r] |cRXP_WARN_addiert 20% rested experience zu von Euch Charakter; daher ist es effizienter, diese bei höheren Levels zu nutzen|r
@@ -2472,7 +2472,7 @@ step
     #completewith next
     .zone Arathi Highlands >> Reist zum Arathihochland
 step
-    .goto Arathi Highlands,21.98,79.75,40 >> Begebt euch zur Faldirbucht und folgt dem Pfad zwischen den Bergen und Stromgardes südöstlicher Mauer
+    .goto Arathi Highlands,21.98,79.75,40 >> Geht zur Faldirbucht, folgt dem Weg zwischen den Bergen und der südöstlichen Mauer von Stromgarde.
 step
     .goto Arathi Highlands,35.2,79.1
     >>|cRXP_WARN_Kopf zum Lagerfeuer neben |cRXP_FRIENDLY_Professor Prasseltrop|r, sucht nach einem |cRXP_WARN_grauen Buch|r, das auf einer Kiste neben dem Lagerfeuer liegt. Beute es für die Rune|r

@@ -109,7 +109,7 @@ step
 step << Shaman
     .goto 1412/1,-216.18,-2926.26--c:Mulgore,44.07,77.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Marjak|r
-    .vendor >> Verkauft Ramsch. Verkauft die Waffe von Euch, wenn sie euch genug Geld für einen |T135139:0|t[Kurzstab] (1s 02c) bringt. Ihr werdet später zurückkommen, wenn ihr noch nicht genug habt.
+    .vendor >> Verkauft Müll. Verkauft die Waffe von Euch, wenn sie euch genug Geld für einen |T135139:0|t[Kurzstab] (1s 02c) bringt. Ihr werdet später zurückkommen, falls ihr jetzt noch nicht genug habt
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<1.9
     .target Marjak Keenblade
@@ -141,7 +141,7 @@ step
     >>|cRXP_WARN_Dies startet eine Quest mit einem 10-Minuten-Zeitlimit|r
     .turnin 755 >>Gebt die Quest Riten der Erdenmutter ab
     .accept 757 >>Akzeptiert die Quest Ritus der Kraft
-    .accept 95805 >>Akzeptiert die Quest Barmherzigkeit von An'she und Mu'sha
+    .accept 95805 >>Akzeptiert die Quest Gunst von An'she und Mu'sha
     .target Seer Graytongue
 step
     #loop
@@ -263,7 +263,7 @@ step
     .goto 1412/1,-1005.500,-3372.700
     >>Klickt den |cRXP_PICK_Schrein|r
     >>|cRXP_WARN_Stellt sicher, dass der Timer nicht abläuft|r
-    .turnin 95805 >>Gebt die Quest Barmherzigkeit von An'she und Mu'sha ab
+    .turnin 95805 >>Gebt die Quest Gunst von An'she und Mu'sha ab
 step
     #loop
     .goto 1412/1,-828.57,-3199.92,0--c:Mulgore,55.99,85.46
@@ -1227,7 +1227,7 @@ step
     .goto 1412/1,-285.000,-2263.400
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Pyall|r
     .train 2550 >>Erlerne Kochkunst
-    .turnin 96661 >>Gebt die Quest Lager aufschlagen 101 ab: Kochkunst
+    .turnin 96661 >>Gebt die Quest Grundlagen des Zeltens: Kochen ab
     .target Pyall Silentstride
 step
     .goto 1412/1,-392.500,-2318.500

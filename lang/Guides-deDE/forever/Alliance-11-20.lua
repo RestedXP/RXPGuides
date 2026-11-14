@@ -194,7 +194,7 @@ step
     .isOnQuest 92909
     #completewith bennytime
     >>Tötet die |cRXP_ENEMY_Erntebehüer|r auf jedem Feld, während ihr vorbeilauft
-    >>Plündert sie für ihre |cRXP_LOOT_Okra|r, |cRXP_LOOT_Flasks of Oil|r, |cRXP_LOOT_Golem Isosprings|r und |cRXP_LOOT_Harvester Gyrostabilizers|r
+    >>Plündert sie für ihre |cRXP_LOOT_Okraschoten|r, |cRXP_LOOT_Fläschchen Öl|r, |cRXP_LOOT_Golemisofedern|r und |cRXP_LOOT_Gyrostabilisator für Erntearbeiter|r
     .mob Harvest Watcher
     .complete 9,1 --Havest Watcher slain (20)
     .collect 732,3,38,1 --Okra (3)
@@ -355,7 +355,7 @@ step
     #optional
     #completewith HarvestW
     .isOnQuest 92909
-    >>Plündert |cRXP_ENEMY_Harvest Watchers|r für |cRXP_LOOT_Golem Isosprings|r und |cRXP_LOOT_Harvester Gyrostabilizers|r
+    >>Plündert |cRXP_ENEMY_Erntebehüter|r für |cRXP_LOOT_Golemisofeder|r und |cRXP_LOOT_Gyrostabilisator für Erntearbeiter|r
     .complete 92909,1 -- Golem Isosprings (14)
     .complete 92909,2 -- Harvester Gyrostabilizer (5)
 step
@@ -402,7 +402,7 @@ step
     .goto 1436/0,1132.27,-10146.67,60,0
     .goto 1436/0,1460.22,-10224.83,60,0
     .goto 1436/0,1238.67,-9907.73
-    >>Tötet |cRXP_ENEMY_Harvest Watchers|r. Plündert sie für |cRXP_LOOT_Golem Isosprings|r und |cRXP_LOOT_Harvester Gyrostabilizers|r
+    >>Tötet |cRXP_ENEMY_Erntebehüter|r. Plündert sie für |cRXP_LOOT_Golemisofeder|r und |cRXP_LOOT_Gyrostabilisator für Erntearbeiter|r
     .complete 92909,1 -- Golem Isosprings (14)
     .complete 92909,2 -- Harvester Gyrostabilizer (5)
     .mob Harvest Watcher
@@ -5898,7 +5898,7 @@ step << Rogue
 step << !Dwarf Rogue
     #sticky
     #label AntiVenomStart
-    .collect 6452,1 >> Crafte ein |T134437:0|t[Gegengift]
+    .collect 6452,1 >> Stelle ein |T134437:0|t[Gegengift] her
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
     .train 7934,3 --Anti Venom spell trained
@@ -5951,7 +5951,7 @@ step << !Dwarf Rogue
 step << !Dwarf Rogue
     #sticky
     #label AntiVenomStart2
-    .collect 6452,1 >> Crafte ein |T134437:0|t[Gegengift]
+    .collect 6452,1 >> Stelle ein |T134437:0|t[Gegengift] her
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
     .train 7934,3 --Anti Venom spell trained
@@ -6150,7 +6150,7 @@ RXPGuides.RegisterGuide([[
 #subgroup Schnellste Route 1-20
 --#groupid RXP-SRGCE-A1
 #name 19-21 Dunkelküste/Eschental
-#next RestedXP Forever Route (A)\21-23 Eschental/Steinkrallengebirge
+#next RestedXP Forever Route (A)\21-23 Eschental/Stonetalon
 
 step
     #optional
