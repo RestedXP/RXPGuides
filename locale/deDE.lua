@@ -350,7 +350,7 @@ L["Rare Found! %s is nearby."] = "Seltener Mob gefunden! %s ist in der Naehe."
 
 -- Timers.lua file
 
-L["RestedXP Forever Guide (A)"] = "RestedXP Forever Dungeonführer (A)"
-L["RestedXP Forever Guide (H)"] = "RestedXP Forever Dungeonführer (H)"
-L["RestedXP Forever Dungeon Guide (A)"] = "RestedXP Forever Dungeon Dungeonführer (A)"
-L["RestedXP Forever Dungeon Guide (H)"] = "RestedXP Forever Dungeon Dungeonführer (H)"
+L["RestedXP Forever Guide (A)"] = "RestedXP Forever Route (A)"
+L["RestedXP Forever Guide (H)"] = "RestedXP Forever Route (H)"
+L["RestedXP Forever Dungeon Guide (A)"] = "RestedXP Forever Dungeonführer (A)"
+L["RestedXP Forever Dungeon Guide (H)"] = "RestedXP Forever Dungeonführer (H)"
