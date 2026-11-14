@@ -279,7 +279,7 @@ step << Druid
     .xp 16 >> Farme caranguejos em Cerro Oeste até o nível 16
 step << Dwarf !Paladin/Gnome
     #label end
-    .hs >> Vá para Thelsamar
+    .hs >> Use sua Pedra de Retorno para ir a Thelsamar
 step << Dwarf !Paladin/Gnome
     #hardcore
     .goto Loch Modan,33.94,50.95
@@ -334,7 +334,7 @@ step
     .goto Ironforge,25.800,75.500,-1
     .goto Ironforge,24.200,74.600,-1
     .goto Ironforge,23.800,71.800,-1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com um |cRXP_FRIENDLY_Leiloeiro de Ironforge|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Leiloeiro de Ironforge|r
     >>Compre os seguintes itens para entregas instantâneas em Costa Negra em breve. Pule este passo se você desejar não comprar nenhum
     >>|T133972:0|t[Carne de Moa]
     >>|T133912:0|t[Garoupa da Costa Negra]
@@ -432,7 +432,7 @@ step << NightElf !Druid
     .target Thor
 step << Druid
 	#completewith next
-	.cast 18960 >> Lance Teleporte: Clareira da Lua
+	.cast 18960 >> Lance Teleporte: Bosque da Lua
 	.zoneskip Moonglade
 step << Druid
     .goto Moonglade,44.1444,45.227
@@ -453,7 +453,7 @@ step << Druid
     .target Mathrengyl Bearwalker
 step << Druid
 	#completewith next
-	.cast 18960 >> Lance Teleporte: Clareira da Lua
+	.cast 18960 >> Lance Teleporte: Bosque da Lua
 	.zoneskip Moonglade
 step << Druid
     .goto Moonglade,56.21,30.63
@@ -471,7 +471,7 @@ step << Druid
     .collect 15877,1,29,1 -- Shrine Bauble (1)
 step << Druid
     #completewith next
-    .cast 18960 >> Lance Teleporte: Clareira da Lua
+    .cast 18960 >> Lance Teleporte: Bosque da Lua
     >>|cRXP_WARN_Será mais rápido desta forma para que você não precise nadar por mais tempo|r
 step << Druid
     .goto Moonglade,36.026,41.374
@@ -1594,7 +1594,7 @@ step << Druid
     .unitscan Sickly Deer
 step << Druid
 	#completewith next
-	.cast 18960 >> Lance Teleporte: Clareira da Lua
+	.cast 18960 >> Lance Teleporte: Bosque da Lua
 	.zoneskip Moonglade
 step << Druid
     .goto Moonglade,56.2,30.4
@@ -1660,7 +1660,7 @@ RXPGuides.RegisterGuide([[
 
 step << Druid
 	#completewith next
-	.cast 18960 >> Lance Teleporte: Clareira da Lua
+	.cast 18960 >> Lance Teleporte: Bosque da Lua
 	.zoneskip Moonglade
 step << Druid
     .goto Moonglade,52.53,40.57
@@ -2092,9 +2092,9 @@ step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Shindrell Fogofugaz|r
 	.target Shindrell Swiftfire
     .goto Ashenvale,34.67,48.83
-    .accept 1008 >> Aceite A Zoram Strand
+    .accept 1008 >> Aceite The Zoram Strand
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Sentinela Tenysil|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sentinela Tenysil|r
 	.target Sentinel Thenysil
     .goto Ashenvale,34.89,49.79
     .accept 1070 >> Aceite a missão “Em Guarda” na Cordilheira das Torres de Pedra
@@ -2102,7 +2102,7 @@ step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Faldreas Goeth'Shael|r
 	.target Faldreas Goeth'Shael
     .goto Ashenvale,35.76,49.10
-    .accept 1056 >> Aceite Jornada ao Pico Petrel
+    .accept 1056 >> Aceite Journey to Stonetalon Peak
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_a Raene Correlobos|r
 	.target Raene Wolfrunner

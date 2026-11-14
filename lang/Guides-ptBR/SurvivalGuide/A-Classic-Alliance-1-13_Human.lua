@@ -66,7 +66,7 @@ step << Warrior
     .target +Brother Danil
     .goto Elwynn Forest,47.486,41.566
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Hipólito Valentim|r
-    .train 6673 >>Treine |T132333:0|t[Brado de Batalha]
+    .train 6673 >>Aprenda |T132333:0|t[Brado de Batalha]
     .target +Llane Beshere
     .goto Elwynn Forest,50.242,42.287
     .mob Young Wolf
@@ -1339,7 +1339,7 @@ step << Rogue
     #era
     .goto StormwindClassic,57.32,62.08,20,0
     .goto StormwindClassic,58.362,61.678
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com Túlio Malheiros|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Túlio Malheiros|r
     .vendor >> |cRXP_WARN_Compre uma|r |T135641:0|t[Adaga Equilibrada de Arremesso]|cRXP_WARN_. Equipe-a|r
     .target Thurman Mullby
 step
@@ -1366,7 +1366,7 @@ step << Rogue
 step
     .goto StormwindClassic,52.623,65.701
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estalajadeira Cristine|r
-    .home >> Defina sua Pedra de Retorno na Cidade de Ventobravo
+    .home >> Defina sua Pedra de Retorno em Cidade de Ventobravo
     .target Innkeeper Allison
 step << Warlock
     #completewith next
@@ -1583,7 +1583,7 @@ step
     .goto StormwindClassic,61.149,11.568,25,0
     .goto StormwindClassic,64.0,8.10
     .zone Ironforge >> Entre no Bonde Subterrâneo. Pegue o bonde até Altaforja
-    >>|cRXP_WARN_Nível seu|r |T135966:0|t[Primeiros Socorros] |cRXP_WARN_se necessário enquanto aguarda o bonde|r
+    >>|cRXP_WARN_Aumente o Nível de seu|r |T135966:0|t[Primeiros Socorros] |cRXP_WARN_se necessário enquanto espera o bonde|r
 step
     >>|cRXP_WARN_Suba no Tram quando chegar. Saia no outro lado e procure |cRXP_FRIENDLY_Monty|r na plataforma do meio|r
     >>|cRXP_WARN_Lance|r |T136221:0|t[Evocar Emissário do Caos] |cRXP_WARN_e|r |T135230:0|t[Criar Pedra de Vida] |cRXP_WARN_enquanto aguarda|r << Warlock
@@ -1623,7 +1623,7 @@ step
     .goto Ironforge,25.800,75.500,-1
     .goto Ironforge,24.200,74.600,-1
     .goto Ironforge,23.800,71.800,-1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com um |cRXP_FRIENDLY_Leiloeiro de Ironforge|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Leiloeiro de Ironforge|r
     >>Compre os itens a seguir para uma entrega mais rápida em Loch Modan em breve
     >>Isso vai economizar tempo, pois você não precisará ficar procurando inimigos para matar. Pule esta etapa se preferir não comprar nenhum
     >>|T134342:0|t[Javali Intestines]
@@ -1916,7 +1916,7 @@ step
 step
     #label StormpikeO
     .goto Loch Modan,35.534,48.404
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estalajadeiro Fornalenha|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Estalajadeiro Fornalenha|r
     .vendor 6734 >> |cRXP_BUY_Compre|r |T133968:0|t[Pão Fresquinho]|cRXP_BUY_. Procure ter cerca de 20|r << Warrior/Rogue
     .vendor 6734 >> |cRXP_BUY_Compre|r |T133968:0|t[Pão Fresquinho] |cRXP_BUY_e|r |T132815:0|t[Leite Gelado]|cRXP_BUY_. Procure ter cerca de 10|r |T133968:0|t[Pão Fresquinho] |cRXP_BUY_e 20|r |T132815:0|t[Leite Gelado] << !Warrior !Rogue
     .target Innkeeper Hearthstove

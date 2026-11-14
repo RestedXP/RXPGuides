@@ -1017,7 +1017,7 @@ step
 step
     #optional
     #completewith next
-    .zone Stranglethorn Vale >>Vá para Stranglethorn Vale
+    .zone Stranglethorn Vale >>Voe para Stranglethorn Vale
     .train 410114,1
 step
     .goto Stranglethorn Vale,35.658,10.808
@@ -1057,7 +1057,7 @@ step
     .train 410114,1
 step
     #completewith next
-    .zone Stranglethorn Vale >>Vá para Stranglethorn Vale
+    .zone Stranglethorn Vale >>Voe para Stranglethorn Vale
     .train 410114,1
 step
     .goto Stranglethorn Vale,35.658,10.808
@@ -1119,7 +1119,7 @@ step
     .train 1543 >>|cRXP_WARN_You must train|r |T135815:0|t[Flare] |cRXP_WARN_to acquire the|r |T132147:0|t[Dual Wield Specialization] |cRXP_WARN_rune|r
 step
     #completewith next
-    .zone Stranglethorn Vale >>Vá para Stranglethorn Vale
+    .zone Stranglethorn Vale >>Voe para Stranglethorn Vale
 step
     .train 410116,1
     .goto Stranglethorn Vale,31.84,15.61

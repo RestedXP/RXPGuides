@@ -36,7 +36,7 @@ step << Warrior
     .target +Grundel Harkin
     .goto Dun Morogh,28.793,67.838
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thran Khorman|r
-    .train 6673 >>Treine |T132333:0|t[Brado de Batalha]
+    .train 6673 >>Aprenda |T132333:0|t[Brado de Batalha]
     .target +Thran Khorman
     .goto Dun Morogh,28.832,67.242
     .mob Ragged Young Wolf
@@ -1442,8 +1442,8 @@ step
     .target Yanni Stoutheart
 step << !Paladin
     .goto Loch Modan,35.534,48.404
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estalajadeiro Fornalenha|r
-    .home >> Defina sua Pedra de Retorno em Thelsamar
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Estalajadeiro Fornalenha|r
+    .home >> Defina sua Pedra de Regresso em Thelsamar
     .target Innkeeper Hearthstove
 step
     #label HonorStudents
@@ -1690,7 +1690,7 @@ step << Rogue
 step << Rogue
     .goto StormwindClassic,57.32,62.08,20,0
     .goto StormwindClassic,58.362,61.678
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com Túlio Malheiros|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Túlio Malheiros|r
     .vendor >> |cRXP_BUY_Compre um|r |T135425:0|t[Faca de Arremesso Afiada]|cRXP_BUY_. Equipe quando estiver no nível 11|r
     .target Thurman Mullby
 ]])
@@ -2350,7 +2350,7 @@ step
     .fly Stormwind >> Voe para Ventobravo << Dwarf Paladin
     .target Thor
 step << !Paladin
-    .hs >> Volte para Loch Modan
+    .hs >> Use sua Pedra de Retorno para ir a Loch Modan
 step << Dwarf Paladin
     .goto StormwindClassic,61.149,11.568,25,0
     .goto StormwindClassic,64.0,8.10
@@ -2445,7 +2445,7 @@ step
 step
     #completewith RTB
     .goto Loch Modan,35.534,48.404
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estalajadeiro Fornalenha|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Estalajadeiro Fornalenha|r
     .vendor 6734 >> |cRXP_BUY_Compre alguns|r |T133968:0|t[Pão Fresquinho] |cRXP_BUY_se necessário|r << Warrior/Rogue
     .vendor 6734 >> |cRXP_BUY_Compre alguns|r |T133968:0|t[Pão Fresquinho] |cRXP_BUY_e|r |T132815:0|t[Leite Gelado] |cRXP_BUY_se necessário|r << !Warrior !Rogue
     .target Innkeeper Hearthstove
@@ -2734,7 +2734,7 @@ step << Mage
     .target Dink
 step << Mage/Priest/Warlock
     #ah
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com um |cRXP_FRIENDLY_Leiloeiro de Ironforge|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Leiloeiro de Ironforge|r
     >>|cRXP_BUY_Compre uma|r |T135144:0|t[Varinha Mágica Maior] |cRXP_BUY_se custar menos de 33p 40c|r
     .goto Ironforge,25.800,75.500,-1
     .goto Ironforge,24.200,74.600,-1

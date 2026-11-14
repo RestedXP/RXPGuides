@@ -84,7 +84,7 @@ step << Warrior
     #season 0,1
     .goto 1426,28.831,67.238
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thran Khorman|r dentro
-    .train 6673 >>Treine |T132333:0|t[Brado de Batalha]
+    .train 6673 >>Aprenda |T132333:0|t[Brado de Batalha]
     .target Thran Khorman
 step << Warlock
     #season 0,1
@@ -256,7 +256,7 @@ step << Warrior
     .turnin 3112 >> Entregue Memorando Simples << Gnome
     .accept 77655 >> Aceite A Runa Perdida << Dwarf
     .accept 77656 >> Aceite A Runa Perdida << Gnome
-    .train 6673 >>Treine |T132333:0|t[Brado de Batalha]
+    .train 6673 >>Aprenda |T132333:0|t[Brado de Batalha]
     .trainer >> Treine suas magias de classe
     .target Thran Khorman
 step << Rogue
@@ -1133,7 +1133,7 @@ step << Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Marryk Nurribit|r dentro
     .turnin 3114 >> Entregue Glyphic Memorandum << Gnome
     .train 1459 >> Aprenda |T135932:0|t[Inteligência Arcana]
-    .train 116 >> Treine |T135846:0|t[Seta de Gelo]
+    .train 116 >> Aprenda |T135846:0|t[Seta de Gelo]
     .target Marryk Nurribit
 step << Mage
     #xprate <1.59
@@ -1143,7 +1143,7 @@ step << Mage
     .turnin 3114 >> Entregue Glyphic Memorandum << Gnome
     .accept 77667 >> Aceite Pesquisa de Feitiços << Gnome
     .train 1459 >> Aprenda |T135932:0|t[Inteligência Arcana]
-    .train 116 >> Treine |T135846:0|t[Seta de Gelo]
+    .train 116 >> Aprenda |T135846:0|t[Seta de Gelo]
     .target Marryk Nurribit
 step << Gnome Mage
     #xprate <1.59
@@ -3840,7 +3840,7 @@ step
     .goto 1432,21.106,65.007,20,0
     .goto 1432,21.388,66.357,20,0
     .goto 1432,21.498,67.840
-    .subzone 924 >> Viaje pelo Portal do Sul para Loch Modan
+    .subzone 924 >> Passe pelo Portal do Sul para Loch Modan
 step
     .goto Loch Modan,22.071,73.127
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Montanhista Sapatorro|r
@@ -3905,7 +3905,7 @@ step
     #label ThelsaHS
     .goto Loch Modan,35.534,48.404
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estalajadeiro Fornalenha|r dentro
-    .home >> Defina sua Pedra de Retorno em Thelsamar
+    .home >> Defina sua Pedra de Regresso em Thelsamar
     .target Innkeeper Hearthstove
 step
     #optional
@@ -4279,7 +4279,7 @@ step
     .goto Ironforge,25.800,75.500,-1
     .goto Ironforge,24.200,74.600,-1
     .goto Ironforge,23.800,71.800,-1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com um |cRXP_FRIENDLY_Leiloeiro de Ironforge|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Leiloeiro de Ironforge|r
     >>|cRXP_BUY_Compre|r |T133970:0|t|cRXP_LOOT_[Nacos de Carne de Javali]|r |cRXP_BUY_e/ou|r |T133970:0|t|cRXP_LOOT_[Acém de Lobo]|r |cRXP_BUY_para aumentar sua habilidade de|r |T133971:0|t[Culinária] |cRXP_BUY_mais tarde|r
     >>|cRXP_WARN_Você precisará de 50 em|r |T133971:0|t[Culinária] |cRXP_WARN_para uma missão em Vila Sombria mais tarde|r
     >>Se você não quiser ou não puder fazer isso, pule esta etapa
@@ -4308,7 +4308,7 @@ step
     .goto Ironforge,25.800,75.500,-1
     .goto Ironforge,24.200,74.600,-1
     .goto Ironforge,23.800,71.800,-1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com um |cRXP_FRIENDLY_Leiloeiro de Ironforge|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Leiloeiro de Ironforge|r
     >>Se você não quiser ou não puder fazer isso, pule esta etapa
     >>|cRXP_BUY_Compre os itens a seguir para uma entrega mais rápida em Loch Modan em breve:|r
     >>|T134342:0|t[Javali Intestines]
@@ -5804,7 +5804,7 @@ step
     .fly Stormwind >> Voe para Ventobravo << Dwarf Paladin
     .target Thor
 step << !Paladin
-    .hs >> Volte para Loch Modan
+    .hs >> Use sua Pedra de Retorno para ir a Loch Modan
 step << Dwarf Paladin
     .goto StormwindClassic,61.149,11.568,25,0
     .goto StormwindClassic,64.0,8.10
@@ -5911,7 +5911,7 @@ step << Rogue
     #optional
     #label KeenT
     .goto 1453,58.380,61.683
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com Túlio Malheiros|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Túlio Malheiros|r
     >>|cRXP_BUY_Compre|r |T135425:0|t[Keen Arremessando Knives] |cRXP_BUY_dele|r
     .collect 3107,200 --Collect Keen Throwing Knife (200)
     .target Thurman Mullby
@@ -5920,7 +5920,7 @@ step << Rogue
 step << Rogue
     #optional
     .goto 1453,58.380,61.683
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com Túlio Malheiros|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Túlio Malheiros|r
     >>|cRXP_BUY_Compre|r |T135641:0|t[Equilibrado Arremessando Adagas] |cRXP_BUY_dele|r
     .collect 2946,200 --Collect Balanced Throwing Dagger (200)
     .target Thurman Mullby
@@ -5955,7 +5955,7 @@ step
 step
     #season 0,1 << Paladin
     #xprate >1.49
-    .hs >> Volte para Loch Modan
+    .hs >> Use sua Pedra de Retorno para ir a Loch Modan
     .cooldown item,6948,>180--wait for cd if <3min
     .zoneskip Loch Modan
     .zoneskip Wetlands
@@ -6102,7 +6102,7 @@ step
     .target Yanni Stoutheart
 step << !Hunter
     .goto Loch Modan,35.534,48.404
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estalajadeiro Fornalenha|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Estalajadeiro Fornalenha|r
     .vendor 6734 >> |cRXP_BUY_Compre alguns|r |T133968:0|t[Pão Fresquinho] |cRXP_BUY_se necessário|r << Warrior/Rogue
     .vendor 6734 >> |cRXP_BUY_Compre alguns|r |T133968:0|t[Pão Fresquinho] |cRXP_BUY_e|r |T132815:0|t[Leite Gelado] |cRXP_BUY_dela se necessário|r << !Warrior !Rogue
     .target Innkeeper Hearthstove
@@ -7241,7 +7241,7 @@ step << Mage/Priest/Warlock
     .goto Ironforge,25.800,75.500,-1
     .goto Ironforge,24.200,74.600,-1
     .goto Ironforge,23.800,71.800,-1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com um |cRXP_FRIENDLY_Leiloeiro de Ironforge|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Leiloeiro de Ironforge|r
     >>|cRXP_BUY_Compre uma|r |T135144:0|t[Varinha Mágica Maior] |cRXP_BUY_se puder pagar|r
     >>Se você não quiser ou não puder fazer isso, pule esta etapa
     .collect 11288,1 --Greater Magic Wand (1)
@@ -7256,7 +7256,7 @@ step
     .goto Ironforge,25.800,75.500,-1
     .goto Ironforge,24.200,74.600,-1
     .goto Ironforge,23.800,71.800,-1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com um |cRXP_FRIENDLY_Leiloeiro de Ironforge|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Leiloeiro de Ironforge|r
     >>|cRXP_BUY_Compre|r |T133970:0|t|cRXP_LOOT_[Nacos de Carne de Javali]|r |cRXP_BUY_e/ou|r |T133970:0|t|cRXP_LOOT_[Acém de Lobo]|r |cRXP_BUY_para aumentar sua habilidade de|r |T133971:0|t[Culinária] |cRXP_BUY_mais tarde|r
     >>|cRXP_WARN_Você precisará de 50 em|r |T133971:0|t[Culinária] |cRXP_WARN_para uma missão em Vila Sombria mais tarde|r
     >>Se você não quiser ou não puder fazer isso, pule esta etapa
@@ -7283,7 +7283,7 @@ step
     .goto Ironforge,25.800,75.500,-1
     .goto Ironforge,24.200,74.600,-1
     .goto Ironforge,23.800,71.800,-1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com um |cRXP_FRIENDLY_Leiloeiro de Ironforge|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Leiloeiro de Ironforge|r
     >>Se você não quiser ou não puder fazer isso, pule esta etapa
     >>|cRXP_BUY_Compre os itens a seguir para entregas mais rápidas em Costa Negra em breve:|r
     >>|T133972:0|t[Carne de Moa]
@@ -7345,7 +7345,7 @@ step << Dwarf/Gnome
     #completewith DarkshoreBoat
     .goto Ironforge,55.501,47.742
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Grif Trovino|r
-    .fly Wetlands>> Voe para Terras do Interior
+    .fly Wetlands>> Voe para Pantanal
     .target Gryth Thurden
 step
     #xprate >1.49
@@ -8319,8 +8319,8 @@ step
     .accept 418 >> Aceite Chouriço de Thelsamar
 step
     .goto Loch Modan,35.534,48.404
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estalajadeiro Fornalenha|r
-    .home >> Defina sua Pedra de Retorno em Thelsamar
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Estalajadeiro Fornalenha|r
+    .home >> Defina sua Pedra de Regresso em Thelsamar
     .target Innkeeper Hearthstove
 step
     .goto Loch Modan,37.17,47.94,8,0
@@ -8623,7 +8623,7 @@ step
 step
 #xprate <1.5
     #hardcore
-    .hs >> Vá para Thelsamar
+    .hs >> Use sua Pedra de Retorno para ir a Thelsamar
 step
 #xprate <1.5
     #softcore
@@ -8735,7 +8735,7 @@ step
     .skill cooking,<50,1 --XX Shows if cooking skill is 50+
 step
     #softcore
-    .hs >> Volte para Loch Modan
+    .hs >> Use sua Pedra de Retorno para ir a Loch Modan
 step
     #softcore
     #completewith next
@@ -8755,7 +8755,7 @@ step
     #softcore
     .goto Loch Modan,33.938,50.954
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thorgrum|r
-    .fly Wetlands >> Voe para Terras do Interior
+    .fly Wetlands >> Voe para Pantanal
     .target Thorgrum Borrelson
 step << skip --logout skip
     #hardcore

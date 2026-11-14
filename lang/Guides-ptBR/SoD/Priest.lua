@@ -1119,7 +1119,7 @@ step
     .mob Lord Sakrasis
 step
     #completewith next
-    .subzone 102 >> Viaje para as Ruínas de Zul'Kunda
+    .subzone 102 >> Vá para as Ruínas de Zul'Kunda
 step
     .train 425314,1
     .goto Stranglethorn Vale,23.569,7.955
@@ -1257,7 +1257,7 @@ step
     .train 402864,1
 step
     #completewith next
-    .zone Stranglethorn Vale >>Vá para Stranglethorn Vale
+    .zone Stranglethorn Vale >>Voe para Stranglethorn Vale
     .train 402864,1
 step
     .goto Stranglethorn Vale,33,88
@@ -1420,7 +1420,7 @@ step
     .train 431669,1
 step
     #completewith next
-    .zone Stranglethorn Vale >>Vá para Stranglethorn Vale
+    .zone Stranglethorn Vale >>Voe para Stranglethorn Vale
     .train 431669,1
 step
     .train 431669,1
@@ -1453,7 +1453,7 @@ step
     .train 431669,1
 step
     #completewith next
-    .zone Stranglethorn Vale >>Vá para Stranglethorn Vale
+    .zone Stranglethorn Vale >>Voe para Stranglethorn Vale
     .train 431669,1
 step
     .train 431669,1

@@ -405,7 +405,7 @@ step
     .isQuestTurnedIn 2078
     .goto Ironforge,35.90,60.17
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Bailey Itamanto|r
-    .bankdeposit 5996 >> Deposite os seguintes itens no seu banco:
+    .bankdeposit 5996 >> Deposite os itens seguintes em seu banco:
     >>|T134797:0|t[Elixir de Respiração Aquática] (Se você os tiver) -- 5996
     .target Bailey Stonemantle
 step

@@ -192,7 +192,7 @@ step
     .goto Elwynn Forest,49.66,39.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Khelden|r
     .turnin 3104 >> Entregue Carta Glífica
-    .train 116 >> Treine |T135846:0|t[Seta de Gelo]
+    .train 116 >> Aprenda |T135846:0|t[Seta de Gelo]
     .target Khelden Bremen
 step
     #season 2
@@ -200,7 +200,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Khelden|r
     .accept 77620 >> Aceite Pesquisa de Feitiços << Human
     .turnin 3104 >> Entregue Carta Glífica
-    .train 116 >> Treine |T135846:0|t[Seta de Gelo]
+    .train 116 >> Aprenda |T135846:0|t[Seta de Gelo]
     .target Khelden Bremen
 step
     #completewith next
@@ -344,7 +344,7 @@ step
 	.goto Elwynn Forest,54.43,48.10,35,0
 	.goto Elwynn Forest,53.68,47.29,35,0
     >>Saque o |cRXP_PICK_Buckets of Grapes|r no chão
-    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
+    >>|cRXP_WARN_Isto leva 5 segundos para canalizar|r
     .complete 3904,1 --Collect Milly's Harvest (x8)
 step
     .goto Elwynn Forest,57.52,48.25
@@ -364,7 +364,7 @@ step
 	.goto Elwynn Forest,54.43,48.10,35,0
 	.goto Elwynn Forest,53.68,47.29,35,0
     >>Saque o |cRXP_PICK_Buckets of Grapes|r no chão
-    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
+    >>|cRXP_WARN_Isto leva 5 segundos para canalizar|r
     .complete 3904,1 --Collect Milly's Harvest (x8)
 step
 #loop
@@ -702,7 +702,7 @@ step
 step
     .goto Elwynn Forest,72.65,60.33
 	>>Clique em |cRXP_PICK_corpo semicomido|r no chão
-    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
+    >>|cRXP_WARN_Isto leva 5 segundos para canalizar|r
     .turnin 37 >> Entregue Encontre os Guardas Perdidos
     .accept 45 >> Aceite Descubra o Destino de Rodolfo
 step
@@ -721,7 +721,7 @@ step
 step
     #completewith next
     >>Pegue os |cRXP_PICK_Feixes de Madeira|r na base das árvores
-    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
+    >>|cRXP_WARN_Isto leva 5 segundos para canalizar|r
     .complete 5545,1 --Collect Bundle of Wood (x8)
 step
     .goto Elwynn Forest,79.79,55.51,45 >> Viaje para |cRXP_PICK_Cadáver de Rolf|r
@@ -732,7 +732,7 @@ step
     >>|cRXP_WARN_Você pode ter que matar um e depois reiniciar|r
     >>Tenha cuidado, pois |cRXP_ENEMY_Murloc Lurkers|r lançam |T132090:0|t[Punhalada pelas Costas] |cRXP_WARN_(Ataque Corpo a Corpo Instantâneo: Causa dano duplo quando atacado pelas costas) e |cRXP_ENEMY_Murloc Foragers|r lançam|r |T135915:0|t[Beber Poção Menor] |cRXP_WARN_(Auto-lançamento: Cura aproximadamente 65 de vida)|r
 	>>Clique em |cRXP_PICK_Cadáver de Rolf|r no chão
-    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
+    >>|cRXP_WARN_Isto leva 5 segundos para canalizar|r
     .turnin 45 >> Entregue Descubra o Destino de Rodolfo
     .accept 71 >> Aceite Apresente-se a Tomás
 step
@@ -755,7 +755,7 @@ step
 	.goto Elwynn Forest,81.77,59.17,35,0
 	.goto Elwynn Forest,80.48,55.18,35,0
     >>Pegue os |cRXP_PICK_Feixes de Madeira|r na base das árvores
-    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
+    >>|cRXP_WARN_Isto leva 5 segundos para canalizar|r
     .complete 5545,1 --Collect Bundle of Wood (x8)
 step
     .goto Elwynn Forest,81.382,66.112
@@ -938,7 +938,7 @@ step
 step
     #completewith next
     >>Abra os |cRXP_PICK_Sacos de Aveia|r no chão. Saque-os por |cRXP_LOOT_Handfuls of Oats|r
-    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
+    >>|cRXP_WARN_Isto leva 5 segundos para canalizar|r
     .complete 151,1 --Handful of Oats (8)
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Fazendeiro Saldanha|r e depois com |cRXP_FRIENDLY_Salma|r dentro
@@ -2142,7 +2142,7 @@ step
 step
     .goto Dun Morogh,44.13,56.95
     >>Abra o |cRXP_PICK_Caixote de Munição|r no chão. Saque-o por |cRXP_LOOT_Munição de Rumbleshot|r
-    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
+    >>|cRXP_WARN_Isto leva 5 segundos para canalizar|r
     .complete 5541,1 --Collect Rumbleshot's Ammo (x1)
 step
     #completewith Ammo
@@ -2395,7 +2395,7 @@ step
     .goto Dun Morogh,41.84,35.63
     >>Mate os |cRXP_ENEMY_Frostmane Seers|r. Saque-os para obter suas |cRXP_LOOT_Tremulerva|r
     >>Abra os |cRXP_PICK_Tremulerva Cestos|r no chão. Saque-os para obter |cRXP_LOOT_Tremulerva|r
-    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
+    >>|cRXP_WARN_Isto leva 5 segundos para canalizar|r
     >>|cRXP_WARN_Tenha cuidado pois eles lançam|r |T136048:0|t[Raio] |cRXP_WARN_(Ataque à Distância: Causa 15-30 dano de Natureza)|r
     .complete 315,1 --Collect Shimmerweed (x6)
     .mob Frostmane Seer
@@ -2424,7 +2424,7 @@ step
     .goto Dun Morogh,38.51,53.93
     >>|cRXP_WARN_Se o |cRXP_ENEMY_Velho Barbafria|r está na caverna, puxe-o pela lateral da caverna, depois todo o caminho acima dela. Espere ele chegar perto, depois pule para baixo e vá em direção ao fundo da caverna|r
     >>Abra |cRXP_PICK_MacGrann's Carne Locker|r no chão. Saque-o para obter |cRXP_LOOT_Macgrann's Dried Meats|r
-    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
+    >>|cRXP_WARN_Isto leva 5 segundos para canalizar|r
     .link https://youtu.be/Zg4FNWw-P5k?t=3120 >>|cRXP_WARN_CLIQUE AQUI Se você está tendo dificuldades|r
     .complete 312,1 --Collect MacGrann's Dried Meats (x1)
     .mob Old Icebeard
@@ -3252,12 +3252,12 @@ step
 step
     .goto Darkshore,42.65,63.15
     >>Clique em |cRXP_PICK_The Queda of Ameth'Aran|r no chão
-    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
+    >>|cRXP_WARN_Isto leva 5 segundos para canalizar|r
     .complete 953,2 --Read the Fall of Ameth'Aran (1)
 step
     .goto Darkshore,43.30,58.70
     >>Clique em |cRXP_PICK_The Lay of Ameth'Aran|r no chão
-    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
+    >>|cRXP_WARN_Isto leva 5 segundos para canalizar|r
     .complete 953,1 --Read the Lay of Ameth'Aran (1)
 step
     #label Fall
@@ -3434,7 +3434,7 @@ step
     .goto Darkshore,36.38,50.88
     >>Saqueie a |cRXP_LOOT_Beached Sea Criatura - Missão|r
     >>|cRXP_WARN_Tenha cuidado pois os |cRXP_ENEMY_Brumagris Coastrunners|r próximos têm |T132307:0|t[Velocidade de Movimento Aumentada]
-    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
+    >>|cRXP_WARN_Isto leva 5 segundos para canalizar|r
     .complete 3524,1 --Sea Creature Bones (1)
 step
     .goto Darkshore,36.22,44.89
@@ -3887,7 +3887,7 @@ step
     .goto Darkshore,36.38,50.88
     >>Saqueie a |cRXP_LOOT_Beached Sea Criatura - Missão|r
     >>|cRXP_WARN_Tenha cuidado pois os |cRXP_ENEMY_Brumagris Coastrunners|r próximos têm |T132307:0|t[Velocidade de Movimento Aumentada]
-    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
+    >>|cRXP_WARN_Isto leva 5 segundos para canalizar|r
     .complete 3524,1 --Sea Creature Bones (1)
 step
     .goto Darkshore,36.22,44.89
@@ -3926,17 +3926,17 @@ step
 step
     .goto Darkshore,42.37,61.82
     >>Clique na |cRXP_PICK_Chama Antiga|r
-    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
+    >>|cRXP_WARN_Isto leva 5 segundos para canalizar|r
     .complete 957,1 --Destroy the seal at the ancient flame (1)
 step
     .goto Darkshore,42.65,63.15
     >>Clique em |cRXP_PICK_The Queda of Ameth'Aran|r no chão
-    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
+    >>|cRXP_WARN_Isto leva 5 segundos para canalizar|r
     .complete 953,2 --Read the Fall of Ameth'Aran (1)
 step
     .goto Darkshore,43.30,58.70
     >>Clique em |cRXP_PICK_The Lay of Ameth'Aran|r no chão
-    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
+    >>|cRXP_WARN_Isto leva 5 segundos para canalizar|r
     .complete 953,1 --Read the Lay of Ameth'Aran (1)
 step
     #label Fall
@@ -4811,7 +4811,7 @@ step
     .goto Stormwind City,57.03,72.97
     >>Fale com |cRXP_FRIENDLY_Newton|r
     .bankdeposit 769,4371,730,7207,1941,1711,1478,1712,3012,1180,1181,3013,6889 >> Deposite os itens a seguir no banco:
-    >>|T133970:0|t[Pedaço de Carne de Javali]
+    >>|T133970:0|t[Chunk of Javali Carne]
     >>|T133024:0|t[Tubo de Bronze]
     >>|T133884:0|t[Olhos Murloc]
     >>|T132788:0|t[Frasco de Jennea]
@@ -4828,7 +4828,7 @@ step
 step << skip
     .goto Stormwind City,57.03,72.97
     .bankdeposit 769,4371,7207 >> Deposite os itens a seguir no banco:
-    >>|T133970:0|t[Pedaço de Carne de Javali]
+    >>|T133970:0|t[Chunk of Javali Carne]
     >>|T133024:0|t[Tubo de Bronze]
     >>|T132788:0|t[Frasco de Jennea]
     .target Newton Burnside
@@ -4838,7 +4838,7 @@ step << skip
 step << skip
     .goto Stormwind City,57.03,72.97
     .bankdeposit 769,730,7207 >> Deposite os itens a seguir no banco:
-    >>|T133970:0|t[Pedaço de Carne de Javali]
+    >>|T133970:0|t[Chunk of Javali Carne]
     >>|T133884:0|t[Olhos Murloc]
     >>|T132788:0|t[Frasco de Jennea]
     .target Newton Burnside
@@ -4858,7 +4858,7 @@ step << skip
 step << skip
     .goto Stormwind City,57.03,72.97
     .bankdeposit 769,7207 >> Deposite os itens a seguir no banco:
-    >>|T133970:0|t[Pedaço de Carne de Javali]
+    >>|T133970:0|t[Chunk of Javali Carne]
     >>|T132788:0|t[Frasco de Jennea]
     .target Newton Burnside
     .itemcount 769,1
@@ -4955,7 +4955,7 @@ step
 --  .goto Darkshore,38.23,28.79
     >>Pegue a |cRXP_LOOT_Silver Dawning Caixa-forte|r através da parede do barco
     >>|cRXP_WARN_Use a tecla de atalho 'Interagir com Alvo' debaixo da água ao lado da seta|r
-    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
+    >>|cRXP_WARN_Isto leva 5 segundos para canalizar|r
    .complete 982,1 --Silver Dawning's Lockbox (1)
 step
    #label MistV
@@ -4963,7 +4963,7 @@ step
 --  .goto Darkshore,39.63,27.45
    >>Pegue a |cRXP_LOOT_Mist Véu Caixa-forte|r através da parede do barco
    >>|cRXP_WARN_Use a tecla de atalho 'Interagir com Alvo' debaixo da água ao lado da seta|r
-   >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
+   >>|cRXP_WARN_Isto leva 5 segundos para canalizar|r
    .complete 982,2 --Mist Veil's Lockbox (1)
 step
    .goto Darkshore,40.44,28.63,50,0
@@ -4983,7 +4983,7 @@ step
 step
    .goto Darkshore,41.91,31.48
    >>Pegue a |cRXP_LOOT_Beached Sea Criatura - Missão|r no chão
-   >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
+   >>|cRXP_WARN_Isto leva 5 segundos para canalizar|r
    .accept 4723 >> Aceite Criatura Marinha Encalhada
 step
    .goto Darkshore,41.96,28.61
@@ -5018,7 +5018,7 @@ step
 step
     .goto Darkshore,44.20,20.60
     >>Pegue o |cRXP_LOOT_Beached Tartaruga Marinha|r no chão
-    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
+    >>|cRXP_WARN_Isto leva 5 segundos para canalizar|r
     .accept 4725 >> Aceite Tartaruga Marinha Encalhada
 step
     #completewith River
@@ -5086,7 +5086,7 @@ step
 step
     .goto Darkshore,42.37,61.82
     >>Clique na |cRXP_PICK_Chama Antiga|r
-    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
+    >>|cRXP_WARN_Isto leva 5 segundos para canalizar|r
     .complete 957,1 --Destroy the seal at the ancient flame (1)
 step
     .goto Darkshore,42.45,60.66,50,0
@@ -5118,7 +5118,7 @@ step
     #label BeachedST
     .goto Darkshore,37.10,62.17
     >>Clique na |cRXP_PICK_Tartaruga Marinha Encalhada|r
-    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
+    >>|cRXP_WARN_Isto leva 5 segundos para canalizar|r
     .accept 4722 >> Aceite Tartaruga Marinha Encalhada
 step
 #loop
@@ -5310,7 +5310,7 @@ step << Gnome
 step
     .goto Darkshore,47.32,48.70
     >>Clique em |cRXP_PICK_The Vermelho Cristal|r
-    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
+    >>|cRXP_WARN_Isto leva 5 segundos para canalizar|r
     >>|cRXP_WARN_Lembre-se de puxar os |cRXP_ENEMY_Raging Moonkins|r que estão ligados entre si|r
     .turnin 4812 >> Entregue Como cascatas
     .accept 4813 >> Aceite Fragmentos incrustados
@@ -5330,7 +5330,7 @@ step
     .goto Darkshore,50.66,34.98
     >>Abra |cRXP_PICK_Blackwood Grão Stores|r. Saque a |cRXP_LOOT_Amostra de Grão Bosquenero|r
     >>|cRXP_WARN_Agro os inimigos que o protegem, lance|r |T135848:0|t[Novane Congelante]|cRXP_WARN_, saque a |cRXP_LOOT_Amostra de Grão Bosquenero|r, depois corra em direção à |cRXP_ENEMY_Matriarca do Covil|r para longe dos inimigos que aparecem|r
-    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
+    >>|cRXP_WARN_Isto leva 5 segundos para canalizar|r
     .collect 12342,1,4673,1 --Blackwood Grain Sample (1)
 step
     #completewith next
@@ -5367,19 +5367,19 @@ step
     .goto Darkshore,51.80,33.51
     >>Abra |cRXP_PICK_Blackwood Nut Stores|r. Saque a |cRXP_LOOT_Amostra de Castanha Bosquenero|r :3
     >>|cRXP_WARN_Agro os inimigos que o protegem, lance|r |T135848:0|t[Novane Congelante]|cRXP_WARN_, saque a |cRXP_LOOT_Amostra de Castanha Bosquenero|r, depois corra para o norte|r
-    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
+    >>|cRXP_WARN_Isto leva 5 segundos para canalizar|r
     .collect 12343,1,4673,1 --Blackwood Nut Sample (1)
 step
     .goto Darkshore,52.85,33.42
     >>Abra |cRXP_PICK_Blackwood Fruit Stores|r. Saque a |cRXP_LOOT_Amostra de Fruta Bosquenero|r
     >>Mate os |cRXP_ENEMY_Blackwood Warriors|r que atacam
-    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
+    >>|cRXP_WARN_Isto leva 5 segundos para canalizar|r
     .collect 12341,1,4673,1 --Blackwood Fruit Sample (1)
 step
     #completewith next
     .goto Darkshore,52.51,33.11
     .cast 16072 >>Usar |T134712:0|t[Cheio Purificação Tigela] perto da fogueira para invocar |cRXP_ENEMY_Zabraxxis|r
-    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
+    >>|cRXP_WARN_Isto leva 5 segundos para canalizar|r
     .timer 20,O RP Corrompido Bosquenero
     .use 12347
 step
@@ -5388,7 +5388,7 @@ step
     >>|cRXP_WARN_Espere a sequência de RP terminar|r
     >>Mate |cRXP_ENEMY_Zabraxxis|r
     >>Saque |cRXP_PICK_Saco de Demônio de Zabraxxis|r que cai no chão. Saque dele o |cRXP_LOOT_Talisman of Corrupção|r
-    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
+    >>|cRXP_WARN_Isto leva 5 segundos para canalizar|r
     .complete 4763,1 --Talisman of Corruption (1)
     .mob Xabraxxis
 step
@@ -5416,7 +5416,7 @@ step
 step
     .goto Darkshore,53.11,18.10
     >>Saque a |cRXP_LOOT_Tartaruga Marinha Encalhada|r
-    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
+    >>|cRXP_WARN_Isto leva 5 segundos para canalizar|r
     .accept 4727 >>Aceite Tartaruga Marinha Encalhada
 step
     .goto Darkshore,53.74,31.52,60,0
@@ -5475,7 +5475,7 @@ step
     .goto Darkshore,55.09,34.67,8,0
     .goto Darkshore,55.30,35.58,8,0
     >>Saque os azuis |cRXP_LOOT_Scaber Stalks|r no chão
-    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
+    >>|cRXP_WARN_Isto leva 5 segundos para canalizar|r
     .complete 947,1,4 --Scaber Stalk (5)
 step
     .goto Darkshore,55.45,36.23,12,0
@@ -5483,7 +5483,7 @@ step
     .goto Darkshore,55.89,35.40,12,0
     >>Fique no nível superior da caverna. Desça se não houver |cRXP_LOOT_Death Cap|r no nível superior
     >>Saque a laranja |cRXP_LOOT_Death Cap|r no chão, no final do caminho superior da caverna
-    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
+    >>|cRXP_WARN_Isto leva 5 segundos para canalizar|r
     .complete 947,2 --Death Cap (1)
 step
     #label CapCave1
@@ -5492,7 +5492,7 @@ step
     .goto Darkshore,55.09,34.67,8,0
     .goto Darkshore,55.30,35.58
     >>Saque a primeira |cRXP_LOOT_Scaber Stalks|r na entrada da caverna depois de saquear a |cRXP_LOOT_Death Cap|r
-    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
+    >>|cRXP_WARN_Isto leva 5 segundos para canalizar|r
     .complete 947,1 --Scaber Stalk (5)
 step << skip
     .goto Darkshore,54.96,34.52
@@ -5590,8 +5590,8 @@ step
 step
     .goto Stormwind City,57.03,72.97
     >>Fale com |cRXP_FRIENDLY_Newton|r
-    .bankwithdraw 730,7207 >> Retire os itens a seguir do seu banco: << Gnome
-    .bankwithdraw 730,16115 >> Retire os itens a seguir do seu banco: << Human
+    .bankwithdraw 730,7207 >> Retire os seguintes itens do seu banco: << Gnome
+    .bankwithdraw 730,16115 >> Retire os seguintes itens do seu banco: << Human
     >>|T133884:0|t[Olhos Murloc]
     >>|T132788:0|t[Frasco de Jennea] << Gnome
     >>|T132763:0|t[Caixote de Osric] << Human
@@ -5688,7 +5688,7 @@ step << skip
 step << Gnome
     .goto Elwynn Forest,28.98,61.50
     >>Usar |T132788:0|t[Jennea's Frasco] na cachoeira
-    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
+    >>|cRXP_WARN_Isto leva 5 segundos para canalizar|r
     .use 7207
     .complete 1861,1 --Mirror Lake Water Sample (1)
 step
@@ -5704,7 +5704,7 @@ step
 step << Gnome
     #completewith Gryan
     >>Abra os |cRXP_PICK_Sacos de Aveia|r no chão. Saque-os por |cRXP_LOOT_Handfuls of Oats|r
-    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
+    >>|cRXP_WARN_Isto leva 5 segundos para canalizar|r
     .complete 151,1 --Handful of Oats (8)
 step
     >>Fale com o |cRXP_FRIENDLY_Fazendeiro Saldanha|r e depois |cRXP_FRIENDLY_Salma|r dentro
@@ -5822,7 +5822,7 @@ step
 step
     #completewith Grayson
     >>Abra os |cRXP_PICK_Sacos de Aveia|r no chão. Saque-os por |cRXP_LOOT_Handfuls of Oats|r
-    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
+    >>|cRXP_WARN_Isto leva 5 segundos para canalizar|r
     .complete 151,1 --Handful of Oats (8)
 step
     #completewith Oil
@@ -5854,7 +5854,7 @@ step
     #label Compass
     .goto Westfall,36.24,54.52
     >>Abra o |cRXP_PICK_Alexston's Baú|r. Saqueie-o para obter o |cRXP_LOOT_A Simple Compass|r
-    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
+    >>|cRXP_WARN_Isto leva 5 segundos para canalizar|r
     .complete 399,1 --A Simple Compass (1)
 step
     #label Oil
@@ -5965,7 +5965,7 @@ step
 step
     #completewith Footpads
     >>Abra os |cRXP_PICK_Sacos de Aveia|r no chão. Saque-os por |cRXP_LOOT_Handfuls of Oats|r
-    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
+    >>|cRXP_WARN_Isto leva 5 segundos para canalizar|r
     .complete 151,1 --Handful of Oats (8)
 step
     #completewith AoE1
@@ -6039,7 +6039,7 @@ step
     #label Watch
     .goto Westfall,49.33,19.26
     >>Abra o |cRXP_PICK_Furlbrow's Wardrobe|r. Saqueie-o para obter o |cRXP_LOOT_Furlbrow's Pocket Vigiar|r
-    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
+    >>|cRXP_WARN_Isto leva 5 segundos para canalizar|r
     .complete 64,1 --Furlbrow's Pocket Watch (1)
 step
     #completewith Oats
@@ -6074,7 +6074,7 @@ step
     #label Oats
     .goto Westfall,56.56,19.25
     >>Abra os |cRXP_PICK_Sacos de Aveia|r no chão. Saque-os por |cRXP_LOOT_Handfuls of Oats|r
-    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
+    >>|cRXP_WARN_Isto leva 5 segundos para canalizar|r
     .complete 151,1 --Handful of Oats (8)
 step
     #label Furlbrows
@@ -6242,8 +6242,8 @@ step
     #label Bank4
     .goto Stormwind City,57.03,72.97
     >>Fale com |cRXP_FRIENDLY_Newton|r
-    .bankwithdraw 769,5354,6889 >> Retire os itens a seguir do seu banco:
-    >>|T133970:0|t[Pedaço de Carne de Javali]
+    .bankwithdraw 769,5354,6889 >> Retire os seguintes itens do seu banco:
+    >>|T133970:0|t[Chunk of Javali Carne]
     >>|T133469:0|t[Carta para Delgren]
     >>|T132832:0|t[Ovo Pequeno]
 step
@@ -6425,7 +6425,7 @@ step
     #completewith next
     .goto Darkshore,38.65,87.34
     >>Coloque |T134715:0|t[Frasco de Vidência] no chão
-    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
+    >>|cRXP_WARN_Isto leva 5 segundos para canalizar|r
     >>Clique em |cRXP_PICK_Frasco de Vidência|r no chão
     .turnin 944 >> Entregue A Alveola do Mestre
     .accept 949 >> Aceite O Acampamento do Crepúsculo
@@ -6450,7 +6450,7 @@ step
 step
    .goto Darkshore,38.55,86.03
    >>Coloque |T134715:0|t[Frasco de Vidência] no chão
-   >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
+   >>|cRXP_WARN_Isto leva 5 segundos para canalizar|r
    >>Clique em |cRXP_PICK_Frasco de Vidência|r no chão
    .turnin 944 >> Entregue A Alveola do Mestre
    .accept 949 >> Aceite O Acampamento do Crepúsculo
@@ -6539,7 +6539,7 @@ step
     .goto Darkshore,31.28,87.39
     >>Pegue a |cRXP_LOOT_Beached Sea Criatura - Missão|r no chão
     >>|cRXP_WARN_Saqueie-o no Neck|r
-    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
+    >>|cRXP_WARN_Isto leva 5 segundos para canalizar|r
     .accept 4733 >>Aceite Criatura Marinha Encalhada
     .isOnQuest 950
 step
@@ -6550,7 +6550,7 @@ step
     .goto Darkshore,31.22,85.56
     >>Pegue o |cRXP_LOOT_Beached Tartaruga Marinha|r no chão
     >>|cRXP_WARN_The Tartaruga Casca has LoS|r
-    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
+    >>|cRXP_WARN_Isto leva 5 segundos para canalizar|r
     .accept 4732 >>Aceite Tartaruga Marinha Encalhada
     .isOnQuest 950
 step
@@ -6563,14 +6563,14 @@ step
     .goto Darkshore,31.70,83.72
     >>Pegue o |cRXP_LOOT_Beached Tartaruga Marinha|r no chão
     >>|cRXP_WARN_The Tartaruga Casca has LoS|r
-    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
+    >>|cRXP_WARN_Isto leva 5 segundos para canalizar|r
     .accept 4731 >>Aceite Tartaruga Marinha Encalhada
     .isOnQuest 950
 step
     #label SeaCreature
     .goto Darkshore,32.70,80.73
     >>Pegue a |cRXP_LOOT_Beached Sea Criatura - Missão|r no chão
-    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
+    >>|cRXP_WARN_Isto leva 5 segundos para canalizar|r
     .accept 4730 >>Aceite Criatura Marinha Encalhada
     .isOnQuest 950
 step
@@ -6600,7 +6600,7 @@ step
 step
     .goto Darkshore,35.97,70.90
     >>Pegue a |cRXP_LOOT_Beached Sea Criatura - Missão|r no chão
-    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
+    >>|cRXP_WARN_Isto leva 5 segundos para canalizar|r
     .accept 4728 >>Aceite Criatura Marinha Encalhada
     .isOnQuest 950
 step
@@ -6640,7 +6640,7 @@ step
     #label SeaCreatureGiga
     .goto Darkshore,35.97,70.90
     >>Pegue a |cRXP_LOOT_Beached Sea Criatura - Missão|r no chão
-    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
+    >>|cRXP_WARN_Isto leva 5 segundos para canalizar|r
     .accept 4728 >>Aceite Criatura Marinha Encalhada
 step
     #completewith next
@@ -6669,7 +6669,7 @@ step
 step
     .goto Darkshore,32.70,80.73
     >>Pegue a |cRXP_LOOT_Beached Sea Criatura - Missão|r no chão
-    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
+    >>|cRXP_WARN_Isto leva 5 segundos para canalizar|r
     .accept 4730 >>Aceite Criatura Marinha Encalhada
 step
     .goto Darkshore,32.80,81.72,60,0
@@ -6681,19 +6681,19 @@ step
     .goto Darkshore,31.70,83.72
     >>Pegue o |cRXP_LOOT_Beached Tartaruga Marinha|r no chão
     >>|cRXP_WARN_The Tartaruga Casca has LoS|r
-    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
+    >>|cRXP_WARN_Isto leva 5 segundos para canalizar|r
     .accept 4731 >>Aceite Tartaruga Marinha Encalhada
 step
     .goto Darkshore,31.22,85.56
     >>Pegue o |cRXP_LOOT_Beached Tartaruga Marinha|r no chão
     >>|cRXP_WARN_The Tartaruga Casca has LoS|r
-    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
+    >>|cRXP_WARN_Isto leva 5 segundos para canalizar|r
     .accept 4732 >>Aceite Tartaruga Marinha Encalhada
 step
     .goto Darkshore,31.28,87.39
     >>Pegue a |cRXP_LOOT_Beached Sea Criatura - Missão|r no chão
     >>|cRXP_WARN_Saqueie-o no Neck|r
-    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
+    >>|cRXP_WARN_Isto leva 5 segundos para canalizar|r
     .accept 4733 >>Aceite Criatura Marinha Encalhada
 step
     #completewith Remtravel3
@@ -6762,7 +6762,7 @@ step
     #completewith next
     .goto Darkshore,38.65,87.34
     >>Coloque |T134715:0|t[Frasco de Vidência] no chão
-    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
+    >>|cRXP_WARN_Isto leva 5 segundos para canalizar|r
     >>Clique em |cRXP_PICK_Frasco de Vidência|r no chão
     .turnin 944 >> Entregue A Alveola do Mestre
     .accept 949 >> Aceite O Acampamento do Crepúsculo
@@ -6781,7 +6781,7 @@ step
 step
     .goto Darkshore,38.55,86.03
     >>Coloque |T134715:0|t[Frasco de Vidência] no chão
-    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
+    >>|cRXP_WARN_Isto leva 5 segundos para canalizar|r
     >>Clique em |cRXP_PICK_Frasco de Vidência|r no chão
     .turnin 944 >> Entregue A Alveola do Mestre
     .accept 949 >> Aceite O Acampamento do Crepúsculo
@@ -6834,7 +6834,7 @@ step
 step
     .goto Darkshore,44.39,76.30
     >>Abra |cRXP_PICK_Baú de Kerlonian|r. Saque-o para obter a |cRXP_LOOT_Corneta do Despertar|r
-    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
+    >>|cRXP_WARN_Isto leva 5 segundos para canalizar|r
     .complete 5321,1 --Horn of Awakening (1)
     .isOnQuest 5321
 step
@@ -7014,7 +7014,7 @@ step
     #completewith Teldrassil
     #requires BoatT
     .cast 818 >> Use |T135805:0|t[Fogo para Cozinhar] no barco (ou no Dock se o barco ainda não estiver visível)
-    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
+    >>|cRXP_WARN_Isto leva 5 segundos para canalizar|r
     .skill cooking,50,1
 step
     #completewith Teldrassil
@@ -7087,7 +7087,7 @@ step
     #label Bank1
     .goto Stormwind City,57.03,72.97
     >>Fale com |cRXP_FRIENDLY_Newton|r
-    .bankwithdraw 4371,1941,1711,1478,1712,3012,1180,1181,3013,2998 >> Retire os itens a seguir do seu banco:
+    .bankwithdraw 4371,1941,1711,1478,1712,3012,1180,1181,3013,2998 >> Retire os seguintes itens do seu banco:
     >>|T133024:0|t[Tubo de Bronze]
     >>|T134943:0|t[Pergaminhos]
     >>|T132620:0|t[Cask of Merlot]
@@ -7556,7 +7556,7 @@ step
     .goto Redridge Mountains,38.09,54.49
     >>|cRXP_WARN_Nade debaixo d'água e verifique os locais de spawn. Existem 8 locais com 2 aparições de uma vez|r
     >>Abra a |cRXP_PICK_Glinting Mud|r. Saqueie-a para |cRXP_LOOT_Hilary's Colar|r
-    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
+    >>|cRXP_WARN_Isto leva 5 segundos para canalizar|r
     .complete 3741,1 --Hilary's Necklace (1)
 step
     .goto Redridge Mountains,29.24,53.63
@@ -7638,7 +7638,7 @@ step
     .goto Redridge Mountains,41.52,54.68,-1
     >>Vá para debaixo da água
     >>Abra o |cRXP_PICK_Sunken Baú|r. Saque-o para obter |cRXP_LOOT_Oslow's Caixa de Ferramentas|r
-    >>|cRXP_WARN_Isto tem um tempo de lançamento de 5 segundos|r
+    >>|cRXP_WARN_Isto leva 5 segundos para canalizar|r
     .complete 125,1 --Oslow's Toolbox (1)
 step
     #completewith next
@@ -8070,7 +8070,7 @@ step
 step
     #label BankDeposit
     .goto Ironforge,35.93,60.13
-    .bankwithdraw 4654 >> Retire os itens a seguir do seu banco:
+    .bankwithdraw 4654 >> Retire os seguintes itens do seu banco:
     >>|T134431:0|t[Mysterious Fossil]
     .target Bailey Stonemantle
 step

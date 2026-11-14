@@ -3930,7 +3930,7 @@ step
 step
     #label SleepingBag1
     .goto 1413/1,-2075.00,-3380.64--c:The Barrens,46.361,73.904
-    >>Clique em |cRXP_PICK_Restos Queimados|r no chão
+    >>Clique no |cRXP_PICK_Burned-Saída Remains|r no chão
     .accept 79007 >> Aceite ...e aquele bilhete que você encontrou
 step
     #label LizardBlood

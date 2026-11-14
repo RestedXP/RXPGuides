@@ -376,7 +376,7 @@ step << Warrior
     .turnin 77655 >> Entregue A Runa Perdida << Dwarf
     .accept 77656 >> Aceite A Runa Perdida << Gnome
     .turnin 77656 >> Entregue A Runa Perdida << Gnome
-    .train 6673 >>Treine |T132333:0|t[Brado de Batalha]
+    .train 6673 >>Aprenda |T132333:0|t[Brado de Batalha]
     .target Thran Khorman
 step << Rogue
     #season 2
@@ -938,7 +938,7 @@ step << Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Marryk Nurribit|r dentro
     .turnin 3114 >> Entregue Glyphic Memorandum << Gnome
     .train 1459 >> Aprenda |T135932:0|t[Inteligência Arcana]
-    .train 116 >> Treine |T135846:0|t[Seta de Gelo]
+    .train 116 >> Aprenda |T135846:0|t[Seta de Gelo]
     .target Marryk Nurribit
 step << Mage
     #xprate <1.59
@@ -948,7 +948,7 @@ step << Mage
     .turnin 3114 >> Entregue Glyphic Memorandum << Gnome
     .accept 77667 >> Aceite Pesquisa de Feitiços << Gnome
     .train 1459 >> Aprenda |T135932:0|t[Inteligência Arcana]
-    .train 116 >> Treine |T135846:0|t[Seta de Gelo]
+    .train 116 >> Aprenda |T135846:0|t[Seta de Gelo]
     .target Marryk Nurribit
 step << Gnome Mage
     #xprate <1.59

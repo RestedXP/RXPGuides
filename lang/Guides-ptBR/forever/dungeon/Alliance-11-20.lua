@@ -106,7 +106,7 @@ step
     #include Guia RestedXP Forever (A)\15-16 Loch Modan@LochEnter-LochEnd
 step << NightElf Druid
     #completewith next
-	.cast 18960 >> Lance Teleporte: Clareira da Lua
+	.cast 18960 >> Lance Teleporte: Bosque da Lua
 	.zoneskip Moonglade
 step << Druid
 	.goto 1450/1,-2400.33,7795.33--c:Moonglade,44.148,45.229
@@ -125,7 +125,7 @@ step << Druid
 	.target Mathrengyl Bearwalker
 step << Druid
 	#completewith next
-	.cast 18960 >> Lance Teleporte: Clareira da Lua
+	.cast 18960 >> Lance Teleporte: Bosque da Lua
 	.zoneskip Moonglade
 step << Druid
     .goto 1450/1,-2676.22,8019.01
@@ -142,7 +142,7 @@ step << Druid
 step << Druid
     #optional
     #completewith next
-    .cast 18960 >> Lance Teleporte: Clareira da Lua
+    .cast 18960 >> Lance Teleporte: Bosque da Lua
     .itemcount 15877,1 -- Shrine Bauble (1)
 step << Druid
     .goto 1450/1,-2212.85,7854.68
@@ -674,7 +674,7 @@ step
 step
     .goto 1453/0,673.58,-8867.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estalajadeira Cristine|r
-    .home >> Defina sua Pedra de Retorno na Cidade de Ventobravo
+    .home >> Defina sua Pedra de Retorno em Cidade de Ventobravo
     .target Innkeeper Allison
     .bindlocation 16509
 step
@@ -1313,7 +1313,7 @@ step
 step
     .goto 1453/0,673.58,-8867.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estalajadeira Cristine|r
-    .home >> Defina sua Pedra de Retorno na Cidade de Ventobravo
+    .home >> Defina sua Pedra de Retorno em Cidade de Ventobravo
     .target Innkeeper Allison
     .bindlocation 16509
 step
@@ -2310,7 +2310,7 @@ step << Druid
 step << Druid
     #optional
 	#completewith TotL
-	.cast 18960 >> Lance Teleporte: Clareira da Lua
+	.cast 18960 >> Lance Teleporte: Bosque da Lua
 	.zoneskip Moonglade
 step << Druid
     .goto 1450/1,-2676.22,8019.01
@@ -2327,7 +2327,7 @@ step << Druid
 step << Druid
     #optional
     #completewith next
-    .cast 18960 >> Lance Teleporte: Clareira da Lua
+    .cast 18960 >> Lance Teleporte: Bosque da Lua
     .itemcount 15877,1 -- Shrine Bauble (1)
 step << Druid
     .goto 1450/1,-2212.85,7854.68
@@ -2761,7 +2761,7 @@ step
     .goto 1455/0,-1152.400,-4821.100
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Grif Trovino|r
     >>|cRXP_WARN_Se você não tiver a rota de voo Pantanal, pule este passo|r
-    .fly Wetlands >> Voe para Terras do Interior
+    .fly Wetlands >> Voe para Pantanal
     .target Gryth Thurden
     .zoneskip Ironforge,1
 
@@ -2938,7 +2938,7 @@ step << NightElf
     .isOnQuest 92415
     .goto 1453/0,744.400,-8621.101
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Matriarca Anan??ri|r
-    .turnin 92415 >> Entregue Lembrar Que Eu Te Amo
+    .turnin 92415 >> Entregue Lembrar Que Te Amo
     .accept 95161 >> Aceite Lembrar Que Eu Te Amo
     .target Orphan Matron Nightingale
 step << NightElf
@@ -2977,7 +2977,7 @@ step << NightElf Rogue
 step << NightElf
     .goto 1453/0,673.58,-8867.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estalajadeira Cristine|r
-    .home >> Defina sua Pedra de Retorno na Cidade de Ventobravo
+    .home >> Defina sua Pedra de Retorno em Cidade de Ventobravo
     .target Innkeeper Allison
     .bindlocation 16509
 step << NightElf
@@ -2995,7 +2995,7 @@ step << !NightElf
     .isOnQuest 92415
     .goto 1453/0,744.400,-8621.101
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Matriarca Anan??ri|r
-    .turnin 92415 >> Entregue Lembrar Que Eu Te Amo
+    .turnin 92415 >> Entregue Lembrar Que Te Amo
     .accept 95161 >> Aceite Lembrar Que Eu Te Amo
     .target Orphan Matron Nightingale
 step << !NightElf
@@ -3136,7 +3136,7 @@ step
     #optional
     .goto 1453/0,673.58,-8867.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estalajadeira Cristine|r
-    .home >> Defina sua Pedra de Retorno na Cidade de Ventobravo
+    .home >> Defina sua Pedra de Retorno em Cidade de Ventobravo
     .target Innkeeper Allison
     .bindlocation 16509
 step << !NightElf !Dwarf/!Hunter
@@ -3459,7 +3459,7 @@ step
     .isQuestComplete 104
 step << Druid
     .goto 1436/0,1707.2116,-10583.0227
-    >>Clique em |cRXP_PICK_Restos Queimados|r no chão
+    >>Clique no |cRXP_PICK_Burned-Saída Remains|r no chão
     .accept 79008 >> Aceite ...e aquele bilhete que você encontrou
 step << Druid
     #completewith next
@@ -3470,7 +3470,7 @@ step << Druid
     .collect 15882,1,272,1 --Collect Half Pendant of Aquatic Endurance (x1)
 step << Druid
     #completewith next
-	.cast 18960 >> Lance Teleporte: Clareira da Lua
+	.cast 18960 >> Lance Teleporte: Bosque da Lua
 step << Druid
     .goto 1450/1,-2593.82,7867.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Loganaar|r
@@ -3480,7 +3480,7 @@ step << Druid
     .hs >> Use sua Pedra de Retorno para Colina do Sentinela
 step << !Druid
     .goto 1436/0,1707.2116,-10583.0227
-    >>Clique em |cRXP_PICK_Restos Queimados|r no chão
+    >>Clique no |cRXP_PICK_Burned-Saída Remains|r no chão
     .accept 79008 >> Aceite ...e aquele bilhete que você encontrou
 step
     #completewith RSB
@@ -3551,21 +3551,21 @@ step
     #sticky
     #label IncineratorGarim
     .waypoint 1433/0,-3261.400,-9824.700
-    >>Abata o |cRXP_ENEMY_Incinerador Gar'im|r dentro da caverna. Saqueie-o para obter o |cRXP_LOOT_Broken Cajado of Incinerador Gar'im|r
-    >>|cRXP_WARN_Pule esta etapa se você não conseguir encontrar um grupo para ele|r
+    >>Mate o |cRXP_ENEMY_Incinerador Gar'im|r dentro da caverna. Saqueie-o pelo |cRXP_LOOT_Degradado Cajado de Incinerador Gar'im|r
+    >>|cRXP_WARN_Pule este passo se você não conseguir encontrar um grupo para ele|r
     .complete 95999,1 -- Broken Staff of Incinerator Gar'im (1)
     .mob Incinerator Gar'im
 step
     #completewith next
-    >>Saque os |cRXP_PICK_Sacos de Grão|r e os |cRXP_PICK_Pernas de Carne|r no chão para obter |cRXP_LOOT_Suprimentos Roubados|r
-    >>Saque os |cRXP_PICK_Suportes de Arma|r e os |cRXP_PICK_Armas Roubadas|r no chão
+    >>Saqueie os |cRXP_PICK_Grãos|r e os |cRXP_PICK_Carnes|r no chão para |cRXP_LOOT_Suprimentos Roubados|r
+    >>Saqueie os |cRXP_PICK_Armas|r e os |cRXP_PICK_Armas Roubadas|r no chão
     .complete 98387,1 -- Stolen Supplies (10)
     .complete 98387,2 -- Stolen Weapon (8)
 step
     #label orcs
     #loop
     >>Mate |cRXP_ENEMY_Brutos Rocha Negra|r e |cRXP_ENEMY_Vanguardeiros Rocha Negra|r. Saqueie-os em busca de seus |cRXP_LOOT_Machados|r
-	>>|cRXP_WARN_Cuidado, os |cRXP_ENEMY_Blackrock Outrunners|r lançarão |T132149:0|t[Rede] em você|r
+	>>|cRXP_WARN_Tenha cuidado, os |cRXP_ENEMY_Blackrock Outrunners|r lançarão |T132149:0|t[Rede] em você|r
     .goto 1433/0,-3177.25,-9718.85,60,0
     .goto 1433/0,-3224.57,-9782.42,60,0
     .goto 1433/0,-3259.74,-9566.82,60,0
@@ -3581,8 +3581,8 @@ step
     .goto 1433/0,-3259.74,-9566.82,60,0
     .goto 1433/0,-3092.80,-9694.82,60,0
     .goto 1433/0,-3177.25,-9718.85,60,0
-    >>Saque os |cRXP_PICK_Sacos de Grão|r e os |cRXP_PICK_Pernas de Carne|r no chão para obter |cRXP_LOOT_Suprimentos Roubados|r
-    >>Saque os |cRXP_PICK_Suportes de Arma|r e os |cRXP_PICK_Armas Roubadas|r no chão
+    >>Saqueie os |cRXP_PICK_Grãos|r e os |cRXP_PICK_Carnes|r no chão para |cRXP_LOOT_Suprimentos Roubados|r
+    >>Saqueie os |cRXP_PICK_Armas|r e os |cRXP_PICK_Armas Roubadas|r no chão
     .complete 98387,1 -- Stolen Supplies (10)
     .complete 98387,2 -- Stolen Weapon (8)
 step
@@ -3662,7 +3662,7 @@ step << !Dwarf Rogue
     >>Mate os |cRXP_ENEMY_Pygmy Venenom Teia Aranhas|r e os |cRXP_ENEMY_Venom Teia Aranhas|r. Saqueie-os para obter um |cRXP_LOOT_Small Venenom Sac|r e suas |cRXP_LOOT_Gooey Pernas de Aranha|r
     >>|cRXP_WARN_Você precisa de um |cRXP_LOOT_Pequeno Venenom Sac|r para criar uma|r |T134437:0|t[Antipeçonha] |cRXP_WARN_depois para remover o|r |T136230:0|t[Toque de Zanzil] |cRXP_WARN_debuff depois|r
     >>|cRXP_WARN_Guarde as |cRXP_LOOT_Gooey Pernas de Aranha|r para depois|r
-    >>|cRXP_WARN_Se você tem um|r |T626003:0|t|cFFF48CBAThe Defias Brotherhood|r|cRXP_WARN_,|r |T625999:0|t|cFFFF7C0ADruida|r |cRXP_WARN_ou|r |T626006:0|t|cFF0070DDXamã|r |cRXP_WARN_amigo, você pode pular este passo e pedir-lhes para remover para você|r
+    >>|cRXP_WARN_Se você tem um amigo|r |T626003:0|t|cFFF48CBAPaladino|r|cRXP_WARN_,|r |T625999:0|t|cFFFF7C0ADruida|r |cRXP_WARN_ou|r |T626006:0|t|cFF0070DDXamã|r|cRXP_WARN_, você pode pular este passo e pedir a ele para removê-lo para você|r
     .collect 1475,1,2359,1 -- Small Venom Sac (1)
     .collect 2251,6,93,1,1 -- Gooey Spider Legs (6)
     .disablecheckbox
@@ -3672,7 +3672,7 @@ step << !Dwarf Rogue
 step << Rogue
     #optional
     #completewith TowerKey
-    +|cRXP_WARN_==PRESTE ATENÇÃO NA PRÓXIMA SEÇÃO==|r
+    +|cRXP_WARN_==PRESTE ATENÇÃO À PRÓXIMA SEÇÃO==|r
     >>Pressione Escape, depois vá em -> Opções -> Controles
     >>Marque "Ativar Tecla de Interação" e vincule a opção "Interagir com o Alvo" a uma tecla
     >>|cRXP_WARN_Além disso, é recomendável ativar as placas de nome dos inimigos (tecla padrão: V), pois isso permite ver os inimigos atrás de alguns cantos dentro da torre.|r
@@ -3695,7 +3695,7 @@ step << Rogue
     >>|T133644:0|t[Bater de Carteira] o |cRXP_ENEMY_Drone Défias Malformado|r. Saqueie-o para obter a |cRXP_LOOT_Chave da Torre Défias|r
     >>Você deve estar em [Furtividade] para usar [Bater Carteira]
     >>|cRXP_WARN_O |cRXP_ENEMY_Drone Défias Malformado|r surge na entrada da torre, depois patrulha ao redor da parte externa|r
-    >>Tome cuidado, pois ele causa MUITO dano. Se sua [Furtividade] quebrar, use rapidamente [Disparada] e fuja
+    >>|cRXP_WARN_Tenha cuidado, pois ele causa MUITO dano. Se o seu|r |T132320:0|t[Furtividade] |cRXP_WARN_interrompa, use rapidamente|r |T132307:0|t[Disparada] |cRXP_WARN_e fuja|r
     .complete 2359,2 --Collect Defias Tower Key (x1)
     .link https://www.youtube.com/watch?v=5sIew15IcG0 >> Clique AQUI para o guia em vídeo
     .mob Malformed Defias Drone
@@ -3765,7 +3765,7 @@ step << !Dwarf Rogue
     #requires AntiVenomEnd
     .goto 1453/0,801.99,-8513.29--c:1453,43.070,26.155
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Suzi Lira|r
-    >>|cRXP_WARN_Se você tem um|r |T626003:0|t|cFFF48CBAThe Defias Brotherhood|r|cRXP_WARN_,|r |T625999:0|t|cFFFF7C0ADruida|r |cRXP_WARN_ou|r |T626006:0|t|cFF0070DDXamã|r |cRXP_WARN_amigo, peça-lhes para remover o|r |T136230:0|t[Toque de Zanzil] |cRXP_WARN_para você em vez disso|r
+    >>|cRXP_WARN_Se você tem um amigo|r |T626003:0|t|cFFF48CBAPaladino|r|cRXP_WARN_,|r |T625999:0|t|cFFFF7C0ADruida|r |cRXP_WARN_ou|r |T626006:0|t|cFF0070DDXamã|r|cRXP_WARN_, peça a ele para remover o|r |T136230:0|t[Toque de Zanzil] |cRXP_WARN_para você em vez disso|r
     .skill firstaid,80 >> |cRXP_WARN_Eleve seu|r |T135966:0|t[Primeiros Socorros] |cRXP_WARN_até 80|r
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
@@ -3773,7 +3773,7 @@ step << !Dwarf Rogue
     #label FirstAidEnd
     .goto 1453/0,801.99,-8513.29--c:1453,43.070,26.155
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Suzi Lira|r
-    >>|cRXP_WARN_Se você tem um|r |T626003:0|t|cFFF48CBAThe Defias Brotherhood|r|cRXP_WARN_,|r |T625999:0|t|cFFFF7C0ADruida|r |cRXP_WARN_ou|r |T626006:0|t|cFF0070DDXamã|r |cRXP_WARN_amigo, peça-lhes para remover o|r |T136230:0|t[Toque de Zanzil] |cRXP_WARN_para você em vez disso|r
+    >>|cRXP_WARN_Se você tem um amigo|r |T626003:0|t|cFFF48CBAPaladino|r|cRXP_WARN_,|r |T625999:0|t|cFFFF7C0ADruida|r |cRXP_WARN_ou|r |T626006:0|t|cFF0070DDXamã|r|cRXP_WARN_, peça a ele para remover o|r |T136230:0|t[Toque de Zanzil] |cRXP_WARN_para você em vez disso|r
     .train 7934 >> |cRXP_WARN_treine|r |T134437:0|t[Antipeçonha]
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
@@ -3820,7 +3820,7 @@ step << Rogue
     #requires AntiVenomEnd2 << Rogue
     .goto 1453/0,362.28,-8815.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mestre Mathias Shaw|r
-    >>|cRXP_WARN_Lembre-se de reequipar sua arma principal se você trocou para um|r |T135641:0|t[Dagger] |cRXP_WARN_antes|r << Rogue
+    >>|cRXP_WARN_Lembre-se|r de re-equipar sua arma principal se você trocou para uma |T135641:0|t[Adaga] |cRXP_WARN_anteriormente|r << Rogue
     .turnin 2359 >> Entregue A Torre de Klaven
     .target Master Mathias Shaw
 step << Warrior
@@ -3961,7 +3961,7 @@ RXPGuides.RegisterGuide([[
 
 step << Druid
     #completewith catspirit1
-	.cast 18960 >> Lance Teleporte: Clareira da Lua
+	.cast 18960 >> Lance Teleporte: Bosque da Lua
 step << Druid
     #completewith next
     .goto 1450/1,-2400.33,7795.33--c:Moonglade,44.148,45.229
@@ -3986,7 +3986,7 @@ step << Druid
     .accept 98393 >>Aceite O Espírito do Grande Felino
 step << Druid
     #completewith next
-	.cast 18960 >> Lance Teleporte: Clareira da Lua
+	.cast 18960 >> Lance Teleporte: Bosque da Lua
     .zoneskip Moonglade
 step << Druid
     .goto 1450/1,-2678.900,8020.000
@@ -4371,7 +4371,7 @@ step << Druid
     .collect 15883,1,272,1 --Collect Half Pendant of Aquatic Agility (x1)
 step << Druid
     #completewith next
-	.cast 18960 >> Lance Teleporte: Clareira da Lua
+	.cast 18960 >> Lance Teleporte: Bosque da Lua
 step << Druid
     .goto 1450/1,-2593.82,7867.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Loganaar|r
@@ -4383,12 +4383,12 @@ step << Druid
     .complete 272,1 --Collect Pendant of the Sea Lion (x1)
 step << Druid
     #completewith next
-	.cast 18960 >> Lance Teleporte: Clareira da Lua
+	.cast 18960 >> Lance Teleporte: Bosque da Lua
     >>|cRXP_WARN_Isso economizará seu tempo, evitando que você precise voltar correndo|r
 step << Druid
     .goto 1450/1,-2678.74,8020.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Dendrite Stellardor|r
-    .turnin 272 >> Entregue Julgamento do Leão-marinho
+    .turnin 272 >> Entregue Julgamento do Mar Leão
     .accept 5061 >> Aceite Forma aquática
     .target Dendrite Starblaze
 step << Druid
@@ -4758,17 +4758,17 @@ step
     #label TZS
     .goto 1440/1,-299.30,2796.01
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Shindrell Fogofugaz|r
-    .accept 1008 >> Aceite A Zoram Strand
+    .accept 1008 >> Aceite The Zoram Strand
     .target Shindrell Swiftfire
 step
     .goto 1440/1,-311.99,2759.11
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Sentinela Tenysil|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sentinela Tenysil|r
     .accept 1070 >> Aceite a missão “Em Guarda” na Cordilheira das Torres de Pedra
     .target Sentinel Thenysil
 step
     .goto 1440/1,-362.16,2785.640
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Faldreas Goeth'Shael|r
-    .accept 1056 >> Aceite Jornada ao Pico Petrel
+    .accept 1056 >> Aceite Journey to Stonetalon Peak
     .target Faldreas Goeth'Shael
 step
     .goto 1440/1,-411.18,2767.19

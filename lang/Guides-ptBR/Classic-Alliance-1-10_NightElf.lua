@@ -315,7 +315,7 @@ step << Druid
     .target Mardant Strongoak
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mardant Carvalhaço|r
 	.turnin 3120 >> Entregue O Selo Verdejante
-	.train 8921 >>Treine |T136096:0|t[Fogo Lunar]
+	.train 8921 >>Aprenda |T136096:0|t[Fogo Lunar]
 step
     #season 0 << Warrior
     .goto Teldrassil,54.593,32.992
@@ -1218,7 +1218,7 @@ step << Hunter
     #label mist1
     .goto Teldrassil,31.54,31.62
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com Bruma|r
-    >>|cRXP_WARN_Isto iniciará uma missão de escolta|r
+    >>|cRXP_WARN_Isso iniciará uma missão de escolta|r
     .accept 938 >> Aceite Bruma
     .target Mist
 step << Hunter
@@ -1250,7 +1250,7 @@ step << !Hunter
     #label mist1
     .goto Teldrassil,31.54,31.62
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com Bruma|r
-    >>|cRXP_WARN_Isto iniciará uma missão de escolta|r
+    >>|cRXP_WARN_Isso iniciará uma missão de escolta|r
     .accept 938 >> Aceite Bruma
     .target Mist
 step << !Hunter
@@ -1365,7 +1365,7 @@ step << !Rogue
     .accept 2518 >> Aceite Lágrima da Lua
 step << Druid
 	#completewith next
-	.cast 18960 >> Lance Teleporte: Clareira da Lua
+	.cast 18960 >> Lance Teleporte: Bosque da Lua
     >>|cRXP_WARN_Estará em seu grimório|r
 	.zoneskip Moonglade
 step << Druid
@@ -1383,7 +1383,7 @@ step << Druid
     .target Great Bear Spirit
 step << Druid
 	#completewith next
-	.cast 18960 >> Lance Teleporte: Clareira da Lua
+	.cast 18960 >> Lance Teleporte: Bosque da Lua
     >>|cRXP_WARN_Isso o fará voltar mais rápido|r
 step << Druid
     .goto Moonglade,56.21,30.64
@@ -1720,7 +1720,7 @@ step
     .target Mist
     #label MistStart
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com Bruma|r
-    >>|cRXP_WARN_Isto iniciará uma missão de escolta|r
+    >>|cRXP_WARN_Isso iniciará uma missão de escolta|r
     >>|cRXP_WARN_Pular esta missão se o NPC não estiver lá|r
     .accept 938 >> Aceite Bruma
 step
@@ -1874,7 +1874,7 @@ step
     #ah
     .goto Darnassus,56.245,54.039,-1
     .goto Darnassus,56.374,51.820,-1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com um |cRXP_FRIENDLY_Darnassus Auctioneer|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Leiloeira de Darnassus|r
     >>Compre os itens a seguir para entrega imediata em Costa Negra mais tarde:
     >>|T134187:0|t[Earthroot] << Druid era
     >>|T133912:0|t[Garoupa da Costa Negra]

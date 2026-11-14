@@ -20,7 +20,7 @@ step
 step
     #season 2
     #completewith next
-    .goto Wetlands,51.914,62.692,30 >> Entre na caverna de Thelgen Pedra
+    .goto Wetlands,51.914,62.692,30 >> Entre na caverna Thelgen Pedra
     .train 425446,1 << Warrior
     .train 410115,1 << Hunter
 step
@@ -1629,7 +1629,7 @@ step
     .train 416089,1 << Hunter
     .train 410027,1 << Druid
     #completewith next
-    .zone Stranglethorn Vale >>Vá para Stranglethorn Vale
+    .zone Stranglethorn Vale >>Voe para Stranglethorn Vale
 step
     .train 416089,1 << Hunter
     .train 410027,1 << Druid
@@ -1724,14 +1724,14 @@ step << Alliance
     .zone Westfall >> Viaje até Cerro Oeste
 step << Alliance
     .goto Westfall,37.413,50.701
-    >>Clique em |cRXP_PICK_Restos Queimados|r no chão
+    >>Clique no |cRXP_PICK_Burned-Saída Remains|r no chão
     .accept 79008 >> Aceite ...e aquele bilhete que você encontrou
 step << Alliance
     #completewith next
     .zone The Barrens >> Viaje para os Sertões
 step << Alliance
     .goto The Barrens,46.361,73.904
-    >>Clique em |cRXP_PICK_Restos Queimados|r no chão
+    >>Clique no |cRXP_PICK_Burned-Saída Remains|r no chão
     .turnin 79008 >> Entregue ... e aquele bilhete, hein?
     .accept 79192 >> Aceite Degraus
 step << Horde
@@ -1739,14 +1739,14 @@ step << Horde
     .zone The Barrens >> Viaje para os Sertões
 step << Horde
     .goto The Barrens,46.361,73.904
-    >>Clique em |cRXP_PICK_Restos Queimados|r no chão
+    >>Clique no |cRXP_PICK_Burned-Saída Remains|r no chão
     .accept 79007 >> Aceite ...e aquele bilhete que você encontrou
 step << Horde
     #completewith next
     .zone Westfall >> Viaje até Cerro Oeste
 step << Horde
     .goto Westfall,37.413,50.701
-    >>Clique em |cRXP_PICK_Restos Queimados|r no chão
+    >>Clique no |cRXP_PICK_Burned-Saída Remains|r no chão
     .turnin 79007 >> Entregue ... e aquele bilhete, hein?
     .accept 79192 >> Aceite Degraus
 step
@@ -1775,7 +1775,7 @@ step
     #completewith next
     .goto Loch Modan,41.01,12.60,50,0
     .goto Loch Modan,42.86,10.36,60,0
-    .goto Loch Modan,49.4,12.9,8 >> |cRXP_WARN_Dirija-se para a parede da Barragem de Loch Modan e desça cuidadosamente para a saliência no centro da Barragem. Siga a seta|r
+    .goto Loch Modan,49.4,12.9,8 >> |cRXP_WARN_Siga para a parede da Barragem de Loch Modan e cuidadosamente desça para a saliência no centro da Barragem. Siga a seta|r
 step
     .goto Loch Modan,49.421,12.917
     >>Clique em |cRXP_PICK_Carved Figurine|r na saliência
@@ -1783,19 +1783,19 @@ step
     .accept 79975 >> Aceite Punho da Águia
 step
     #completewith next
-    .goto Hillsbrad Foothills,87.691,48.166,10 >> Vá para a Parede de Thoradin na borda entre Planalto Arathi e Contraforte de Eira dos Montes
+    .goto Hillsbrad Foothills,87.691,48.166,10 >> Vá para a Parede de Thoradin na fronteira entre os Planaltos de Arathi e os Contrafortes de Hillsbrad
 step
     #completewith next
-    .goto Arathi Highlands,24.132,21.470,7 >> Suba no carrinho e continue subindo ao longo da parede
+    .goto Arathi Highlands,24.132,21.470,7 >> Suba no carrinho e caminhe ao longo da parede
 step
     .goto Arathi Highlands,22.466,24.127
-    >>Clique em |cRXP_PICK_Messenger Bolsa|r pendurado na parede
-    .turnin 79975 >> Vire em Punho da Águia
-    .accept 79976 >> Aceite Deve Ser Aqui
+    >>Clique em |cRXP_PICK_Messenger Bolsa|r pendurada na parede
+    .turnin 79975 >> Entregue Punho da Águia
+    .accept 79976 >> Aceite Deve Ser Este o Lugar
 step
     .goto Arathi Highlands,22.466,24.127
     >>Clique em |cRXP_PICK_Hastily Rolled-Up Satchel|r no chão
-    .turnin 79976 >> Vire em Deve Ser Aqui
+    .turnin 79976 >> Entregue Deve Ser Aqui
 step
     +|cRXP_WARN_É altamente recomendado que você guarde seu|r |T134057:0|t[|cRXP_LOOT_Ração de Estudante|r] |cRXP_WARN_para níveis mais altos antes de consumi-los. Cada uso de|r |T134057:0|t[|cRXP_LOOT_Ração de Estudante|r] |cRXP_WARN_adiciona 20% de experiência descansada ao seu personagem, portanto é mais eficiente usar em níveis mais altos|r
 ]])

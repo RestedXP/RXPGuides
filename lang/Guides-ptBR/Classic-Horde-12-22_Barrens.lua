@@ -5922,7 +5922,7 @@ step << skip
     #xprate <1.5
     .goto Stonetalon Mountains,71.83,60.34
     .goto Stonetalon Mountains,57.57,61.99,30 >>|cRXP_WARN_Pule na roda de madeira. Faça o atalho por reconexão saindo e entrando no jogo novamente|r
-    .link https://www.youtube.com/watch?v=8s1SRza7qFg&ab_channel=RestedXP >> |cRXP_WARN_CLIQUE AQUI para um exemplo|r
+    .link https://www.youtube.com/watch?v=8s1SRza7qFg&ab_channel=RestedXP >> |cRXP_WARN_CLIQUE AQUI para ver um exemplo|r
     .group
 step
     #xprate <1.5

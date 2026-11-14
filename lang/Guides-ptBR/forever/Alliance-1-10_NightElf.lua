@@ -228,7 +228,7 @@ step << Druid
     .target Mardant Strongoak
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mardant Carvalhaço|r
 	.turnin 3120 >> Entregue O Selo Verdejante
-	.train 8921 >>Treine |T136096:0|t[Fogo Lunar]
+	.train 8921 >>Aprenda |T136096:0|t[Fogo Lunar]
 step << Hunter
     .goto 1438/1,871.6,10440.83,25,0
     .goto 1438/1,827.86,10458.51
@@ -1346,7 +1346,7 @@ step << Druid/Priest
 step << Druid/Priest
     .goto 1438/1,2208.67,10758.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com Bruma|r
-    >>|cRXP_WARN_Isto iniciará uma missão de escolta|r
+    >>|cRXP_WARN_Isso iniciará uma missão de escolta|r
     .accept 938 >> Aceite Bruma
     .target Mist
 step << Druid/Priest
@@ -1415,7 +1415,7 @@ step << Hunter
     #label mist1
     .goto 1438/1,2208.67,10758.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com Bruma|r
-    >>|cRXP_WARN_Isto iniciará uma missão de escolta|r
+    >>|cRXP_WARN_Isso iniciará uma missão de escolta|r
     .accept 938 >> Aceite Bruma
     .target Mist
 step << Hunter
@@ -1547,7 +1547,7 @@ step << Priest
     #optional
     .goto 1457/1,2343.10,9856.95,-1
     .goto 1457/1,2341.74,9872.610,-1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com um |cRXP_FRIENDLY_Darnassus Auctioneer|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Leiloeira de Darnassus|r
     >>|T134711:0|t[Óleo Menor de Teurgo] |cRXP_WARN_e|r |T133906:0|t[Sabichão Defumado] |cRXP_WARN_fornecerão um grande aumento de DPS nos níveis iniciais|r
     >>|cRXP_WARN_Também procure por melhorias de alto DPS|r |T132317:0|t[Varinha] |cRXP_WARN_que você pode usar agora/em breve|r
     *|cRXP_WARN_Pule este passo se não quiser comprar nada|r
@@ -1618,7 +1618,7 @@ step << Priest
     .target Priestess Alathea
 step << Druid NightElf
 	#completewith next
-	.cast 18960 >> Lance Teleporte: Clareira da Lua
+	.cast 18960 >> Lance Teleporte: Bosque da Lua
     >>|cRXP_WARN_Estará em seu grimório|r
 	.zoneskip Moonglade
 step << Druid NightElf
@@ -1636,7 +1636,7 @@ step << Druid NightElf
     .target Great Bear Spirit
 step << Druid NightElf
 	#completewith next
-	.cast 18960 >> Lance Teleporte: Clareira da Lua
+	.cast 18960 >> Lance Teleporte: Bosque da Lua
     >>|cRXP_WARN_Isso o fará voltar mais rápido|r
 step << Druid NightElf
     .goto 1450/1,-2678.76,8019.94
@@ -2076,7 +2076,7 @@ step
     .target Mist
     #label MistStart
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com Bruma|r
-    >>|cRXP_WARN_Isto iniciará uma missão de escolta|r
+    >>|cRXP_WARN_Isso iniciará uma missão de escolta|r
     >>|cRXP_WARN_Pular esta missão se o NPC não estiver lá|r
     .accept 938 >> Aceite Bruma
 step
@@ -2291,7 +2291,7 @@ step
     #ah
     .goto 1457/1,2343.10,9856.95,-1
     .goto 1457/1,2341.74,9872.610,-1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com um |cRXP_FRIENDLY_Darnassus Auctioneer|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Leiloeira de Darnassus|r
     >>Compre os itens a seguir para entrega imediata em Costa Negra mais tarde:
     -- >>|T134187:0|t[Earthroot] << Druid era
     >>|T133912:0|t[Garoupa da Costa Negra]

@@ -791,7 +791,7 @@ step << Hunter
     #label mist1
     .goto Teldrassil,31.54,31.62
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com Bruma|r
-    >>|cRXP_WARN_Isto iniciará uma missão de escolta|r
+    >>|cRXP_WARN_Isso iniciará uma missão de escolta|r
     .accept 938 >> Aceite Bruma
     .target Mist
 step << Hunter
@@ -828,7 +828,7 @@ step << !Hunter
     #label mist1
     .goto Teldrassil,31.54,31.62
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com Bruma|r
-    >>|cRXP_WARN_Isto iniciará uma missão de escolta|r
+    >>|cRXP_WARN_Isso iniciará uma missão de escolta|r
     .accept 938 >> Aceite Bruma
     .target Mist
 step << !Hunter
@@ -900,7 +900,7 @@ step << !Rogue
     .accept 2518 >> Aceite Lágrima da Lua
 step << Druid
 	#completewith next
-	.cast 18960 >> Lance Teleporte: Clareira da Lua
+	.cast 18960 >> Lance Teleporte: Bosque da Lua
     >>|cRXP_WARN_Estará em seu grimório|r
 	.zoneskip Moonglade
 step << Druid
@@ -918,7 +918,7 @@ step << Druid
     .target Great Bear Spirit
 step << Druid
 	#completewith next
-	.cast 18960 >> Lance Teleporte: Clareira da Lua
+	.cast 18960 >> Lance Teleporte: Bosque da Lua
     >>|cRXP_WARN_Isso o fará voltar mais rápido|r
 step << Druid
     .goto Moonglade,56.21,30.64
@@ -1199,7 +1199,7 @@ step
     .goto Teldrassil,31.54,31.62
     .target Mist
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com Bruma|r
-    >>|cRXP_WARN_Isto iniciará uma missão de escolta|r
+    >>|cRXP_WARN_Isso iniciará uma missão de escolta|r
     .accept 938 >> Aceite Bruma
 step
 	#som << !Hunter
@@ -1224,7 +1224,7 @@ step
     #ah
     .goto Darnassus,56.245,54.039,-1
     .goto Darnassus,56.374,51.820,-1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com um |cRXP_FRIENDLY_Darnassus Auctioneer|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Leiloeira de Darnassus|r
     >>Compre os seguintes itens para entregas instantâneas em Costa Negra em breve. Pule este passo se não desejar comprar nada
     >>|T133972:0|t[Carne de Moa]
     >>|T133912:0|t[Garoupa da Costa Negra]
