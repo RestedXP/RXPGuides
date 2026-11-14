@@ -846,25 +846,32 @@ function addon.SetStep(n, n2, loopback)
     for i = 1, n - 1 do
         local step = guide.steps[i]
         if step.sticky then
-            local req = guide.labels[step.requires]
-            if step.requires and req then
-                local requiredSteps = {}
-                req = guide.steps[req]
-                while req and req.requires and not RXPCData.stepSkip[req.index] and
-                    not req.active do
-                    if requiredSteps[req] then
-                        addon.comms.PrettyPrint('ERROR: Step requirement loop at steps %d and %d',
-                              step.index or 0, req.index or 0)
-                        break
+
+            local reqFulfilled = true
+            for requires in string.gmatch(step.requires or "","%s*([^;]+)%s*") do
+                local req = guide.labels[requires]
+                if req then
+                    local requiredSteps = {}
+                    req = guide.steps[req]
+                    while req and req.requires and not RXPCData.stepSkip[req.index] and
+                        not req.active do
+                        if requiredSteps[req] then
+                            addon.comms.PrettyPrint('ERROR: Step requirement loop at steps %d and %d',
+                                step.index or 0, req.index or 0)
+                            break
+                        end
+                        requiredSteps[req] = true
+                        req = guide.steps[guide.labels[req.requires:gmatch("^([^;]+)%s*")]]
                     end
-                    requiredSteps[req] = true
-                    req = guide.steps[guide.labels[req.requires]]
                 end
+                reqFulfilled = reqFulfilled and not (req and
+                                        (req.active or
+                                            (req.sticky and
+                                                not RXPCData.stepSkip[req.index])))
             end
-            step.reqFulfilled = not (req and
-                                    (req.active or
-                                        (req.sticky and
-                                            not RXPCData.stepSkip[req.index])))
+
+            step.reqFulfilled = reqFulfilled
+
             if not RXPCData.stepSkip[i] and step.reqFulfilled and level >=
                 step.level then
                 tinsert(activeSteps, step)
@@ -877,12 +884,22 @@ function addon.SetStep(n, n2, loopback)
 
     local lastTip = addon.currentTip
     local step = guide.steps[n]
-    local req = step.requires and guide.labels[step.requires] and
-                    guide.steps[guide.labels[step.requires]]
+
+    local reqFulfilled = true
+    if step.requires then
+        for requires in string.gmatch(step.requires,"%s*([^;]+)%s*") do
+
+        local req = guide.labels[requires] and
+                        guide.steps[guide.labels[requires]]
+
+            reqFulfilled = reqFulfilled and not (req and #activeSteps > 0 and (req.active or not (req.reqFulfilled)))
+        end
+    end
+
     if step.completed and n < #guide.steps then
         return addon.SetStep(n + 1)
     elseif step and not step.completed and
-        not (req and #activeSteps > 0 and (req.active or not (req.reqFulfilled))) and
+        reqFulfilled and
         level >= step.level then
         step.completed = false
         addon.settings.ReplaceColors(step)
