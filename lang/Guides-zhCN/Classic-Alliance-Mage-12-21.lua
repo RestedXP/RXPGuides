@@ -741,7 +741,7 @@ step
 step
     .goto Teldrassil,58.40,94.02
     .fp Teldrassil >> 开启泰达希尔的飞行路径
-    .fly Auberdine >> 飞往奥伯丁，黑海岸
+    .fly Auberdine >> 飞往奥伯丁
 step
     .goto Darkshore,32.42,43.75,50,0
     .zone Wetlands >> 乘船前往米奈希尔

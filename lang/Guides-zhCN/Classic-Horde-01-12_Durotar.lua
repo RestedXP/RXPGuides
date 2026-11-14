@@ -466,7 +466,7 @@ step << Shaman
     .turnin 3089 >>交任务 符文羊皮纸 << Orc
     .accept 77587 >>接受任务 力量神像 << Troll Shaman
     .accept 77585 >>接受任务 力量神像 << Orc Shaman
-    .train 8042 >>学习 |T136026:0|t[大地震击]
+    .train 8042 >>影袭 |T136026:0|t[大地震击]
     .goto Durotar,42.39,69.00
     .accept 1516 >>接受任务 大地的召唤
     .goto Durotar,42.40,69.17
@@ -965,7 +965,7 @@ step
 step << Shaman
     #season 2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_史克里克|r 和 |cRXP_FRIENDLY_坎纳甘·地鸣|r 对话
-    .train 8042 >> 学习 |T136026:0|t[大地震击]
+    .train 8042 >> 影袭 |T136026:0|t[大地震击]
     .turnin 77587 >>交任务 力量神像 << Troll Shaman
     .turnin 77585 >>交任务 力量神像 << Orc Shaman
     .goto Durotar,42.39,69.00
@@ -976,7 +976,7 @@ step << Shaman
 step << Shaman
     #season 0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_史克里克|r 和 |cRXP_FRIENDLY_坎纳甘·地鸣|r 对话
-    .train 8042 >> 学习 |T136026:0|t[大地震击]
+    .train 8042 >> 影袭 |T136026:0|t[大地震击]
     .goto Durotar,42.39,69.00
     .accept 1516 >>接受任务 大地的召唤
     .goto Durotar,42.40,69.17
@@ -1500,7 +1500,7 @@ step << Shaman
 step << Shaman
     #completewith next
     #requires Shrine
-    .cast 8202 >>|cRXP_WARN_使用|r |T134743:0|t[大地灵契]
+    .cast 8202 >>|cRXP_WARN_使用 |T134743:0|t[大地显形图腾]|r
     .use 6635
 step << Shaman
     #label CallOE1
@@ -7656,7 +7656,7 @@ step << Shaman
     .turnin 3089 >>交任务 符文羊皮纸 << Orc
     .accept 77587 >>接受任务 力量神像 << Troll Shaman
     .accept 77585 >>接受任务 力量神像 << Orc Shaman
-    .train 8042 >>学习 |T136026:0|t[大地震击]
+    .train 8042 >>影袭 |T136026:0|t[大地震击]
     .goto Durotar,42.39,69.00
     .accept 1516 >>接受任务 大地的召唤
     .goto Durotar,42.40,69.17
@@ -7992,7 +7992,7 @@ step
 step << Shaman
     #season 2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_史克里克|r 和 |cRXP_FRIENDLY_坎纳甘·地鸣|r 对话
-    .train 8042 >> 学习 |T136026:0|t[大地震击]
+    .train 8042 >> 影袭 |T136026:0|t[大地震击]
     .turnin 77587 >>交任务 力量神像 << Troll Shaman
     .turnin 77585 >>交任务 力量神像 << Orc Shaman
     .goto Durotar,42.39,69.00
@@ -8003,7 +8003,7 @@ step << Shaman
 step << Shaman
     #season 0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_史克里克|r 和 |cRXP_FRIENDLY_坎纳甘·地鸣|r 对话
-    .train 8042 >> 学习 |T136026:0|t[大地震击]
+    .train 8042 >> 影袭 |T136026:0|t[大地震击]
     .goto Durotar,42.39,69.00
     .accept 1516 >>接受任务 大地的召唤
     .goto Durotar,42.40,69.17
@@ -8438,7 +8438,7 @@ step << Shaman
 step << Shaman
     #completewith next
     #requires Shrine
-    .cast 8202 >>|cRXP_WARN_使用|r |T134743:0|t[大地灵契]
+    .cast 8202 >>|cRXP_WARN_使用 |T134743:0|t[大地显形图腾]|r
     .use 6635
 step << Shaman
     #label CallOE1

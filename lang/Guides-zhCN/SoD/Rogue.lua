@@ -360,7 +360,7 @@ step << Rogue
     .train 424992,1
 step << Rogue
     #season 2
-    .train 424992 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_杀手符文|r] |cRXP_WARN_训练|r |T236280:0|t[暗影杀手]
+    .train 424992 >>|cRXP_WARN_使用|r |T134419:0|t|T236280:0|t[|cRXP_FRIENDLY_杀手符文|r] |cRXP_WARN_训练|r |T236280:0|t|T236280:0|t[暗影杀手]
     .use 203993
     .itemcount 203993,1
 ]])
@@ -384,7 +384,7 @@ step << Rogue
     .train 424992,1
 step << Rogue
     #season 2
-    .train 424992 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_杀手符文|r] |cRXP_WARN_训练|r |T236280:0|t[暗影杀手]
+    .train 424992 >>|cRXP_WARN_使用|r |T134419:0|t|T236280:0|t[|cRXP_FRIENDLY_杀手符文|r] |cRXP_WARN_训练|r |T236280:0|t|T236280:0|t[暗影杀手]
     .use 203993
     .itemcount 203993,1
 ]])
@@ -903,7 +903,7 @@ step << Horde
     .train 400080,1
 step << Alliance
     >>前往南海镇
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_达尔拉·哈瑞斯|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达尔拉·哈瑞斯|r 对话
     .goto Hillsbrad Foothills,49.338,52.272
     .fly Ironforge >> 飞往铁炉堡
     .target 达尔拉·哈瑞斯
@@ -1171,7 +1171,7 @@ step
     .train 42992,1
 step
     #season 2
-    .train 42992 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_杀手符文|r] |cRXP_WARN_训练|r |T236280:0|t[暗影杀手]
+    .train 42992 >>|cRXP_WARN_使用|r |T134419:0|t|T236280:0|t[|cRXP_FRIENDLY_杀手符文|r] |cRXP_WARN_训练|r |T236280:0|t|T236280:0|t[暗影杀手]
     .use 203993
     .itemcount 203993,1
 
@@ -1216,7 +1216,7 @@ step
     .train 42992,1
 step
     #season 2
-    .train 42992 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_杀手符文|r] |cRXP_WARN_训练|r |T236280:0|t[暗影杀手]
+    .train 42992 >>|cRXP_WARN_使用|r |T134419:0|t|T236280:0|t[|cRXP_FRIENDLY_杀手符文|r] |cRXP_WARN_训练|r |T236280:0|t|T236280:0|t[暗影杀手]
     .use 203993
     .itemcount 203993,1
 
@@ -1561,7 +1561,7 @@ step << Horde
     .train 400101,1
 step << Alliance
     >>前往南海镇
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_达尔拉·哈瑞斯|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达尔拉·哈瑞斯|r 对话
     .goto Hillsbrad Foothills,49.338,52.272
     .fly Ironforge >> 飞往铁炉堡
     .target 达尔拉·哈瑞斯

@@ -680,7 +680,7 @@ step
 step
     #ah
     .goto 1453/0,660.28,-8814.55
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
     >>|cRXP_BUY_购买以下物品以便在西部荒野快速交任务：|r
     >>|cRXP_WARN_如果你不想这样做，或者无法完成，可以跳过此步骤|r
     >>|T133972:0|t[秃鹫肉条]
@@ -847,7 +847,7 @@ step
     .isOnQuest 92909
     #completewith bennytime
     >>当你路过农田时，顺手击杀|cRXP_ENEMY_看守傀儡|r
-    >>拾取他们的 |cRXP_LOOT_Okra|r、|cRXP_LOOT_Flasks of Oil|r、|cRXP_LOOT_Golem Isosprings|r 和 |cRXP_LOOT_Harvester Gyrostabilizers|r
+    >>拾取它们以获得|cRXP_LOOT_秋葵|r、|cRXP_LOOT_油瓶|r、|cRXP_LOOT_魔像等渗弹簧|r和|cRXP_LOOT_收割机陀螺稳定器|r
     .mob Harvest Watcher
     .complete 9,1 --Havest Watcher slain (20)
     .collect 732,3,38,1 --Okra (3)
@@ -1012,7 +1012,7 @@ step
     #optional
     #completewith HarvestW
     .isOnQuest 92909
-    >>从 |cRXP_ENEMY_Harvest Watchers|r 身上拾取 |cRXP_LOOT_Golem Isosprings|r 和 |cRXP_LOOT_Harvester Gyrostabilizers|r
+    >>拾取|cRXP_ENEMY_收割者卫士|r以获得|cRXP_LOOT_魔像等渗弹簧|r和|cRXP_LOOT_收割者陀螺稳定器|r
     .complete 92909,1 -- Golem Isosprings (14)
     .complete 92909,2 -- Harvester Gyrostabilizer (5)
 step
@@ -1059,7 +1059,7 @@ step
     .goto 1436/0,1132.27,-10146.67,60,0
     .goto 1436/0,1460.22,-10224.83,60,0
     .goto 1436/0,1238.67,-9907.73
-    >>击杀 |cRXP_ENEMY_Harvest Watchers|r，拾取他们的 |cRXP_LOOT_Golem Isosprings|r 和 |cRXP_LOOT_Harvester Gyrostabilizers|r
+    >>击杀|cRXP_ENEMY_收割者卫士|r，拾取以获得|cRXP_LOOT_魔像等渗弹簧|r和|cRXP_LOOT_收割者陀螺稳定器|r
     .complete 92909,1 -- Golem Isosprings (14)
     .complete 92909,2 -- Harvester Gyrostabilizer (5)
     .mob Harvest Watcher
@@ -1319,7 +1319,7 @@ step
 step
     #ah
     .goto 1453/0,660.28,-8814.55
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
     >>|cRXP_BUY_购买|r |T133970:0|t|cRXP_LOOT_[野猪肉块]|r|cRXP_BUY_ 或|r |T133970:0|t|cRXP_LOOT_[多汁狼肉]|r|cRXP_BUY_，以便稍后提升你的 |r|T133971:0|t[烹饪] |cRXP_BUY_技能|r
     >>|cRXP_WARN_你的|r |T133971:0|t[烹饪] |cRXP_WARN_技能必须达到10级才能在黑海岸交付|r |T133972:0|t[陆行鸟肉]
     >>|cRXP_WARN_如果你不想这样做，或者无法完成，可以跳过此步骤|r
@@ -1340,7 +1340,7 @@ step
     #ah
     #optional
     .goto 1453/0,660.28,-8814.55
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
     >>|cRXP_WARN_如果你不想这样做，或者无法完成，可以跳过此步骤|r
     >>|cRXP_BUY_购买以下物品，以便稍后在黑海岸更快交任务|r
     >>|T133912:0|t[黑海岸石斑鱼]
@@ -2701,8 +2701,8 @@ step << Shaman
     .trainer >> 训练你的职业技能
 step << Priest/Paladin/Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_托德雷·铁矿|r 对话 << Priest
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_布兰度尔·铁锤|r 对话 << Paladin
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_丁克|r 对话 << Mage
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布兰度尔·铁锤|r 对话 << Paladin
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_丁克|r 对话 << Mage
     .goto 1455/0,-928.48,-4614.620 << Mage
     .goto 1455/0,-912.88,-4625.99 << Priest
     .goto 1455/0,-896.55,-4601.68 << Paladin
@@ -2727,7 +2727,7 @@ step << Warlock
     .target 寻尸者祖贝尔
     .train 20381,1
 step << Warrior/Hunter
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_雷格努斯·雷石|r 对话 << Hunter
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雷格努斯·雷石|r 对话 << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_比尔班·飞钳|r 对话 << Warrior
     .goto 1455/0,-1266.02,-5006.570 << Hunter
     .goto 1455/0,-1234.65,-5035.67 << Warrior
@@ -2817,7 +2817,7 @@ step
     .subzoneskip 16611 -- ruins of lordaeron
 step
     .goto 1424/0,-512.15,-715.14
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_达尔拉·哈瑞斯|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达尔拉·哈瑞斯|r 对话
     .fp Southshore >> 开启南海镇的飞行点
     .target 达尔拉·哈瑞斯
     .subzoneskip 16611 -- ruins of lordaeron
@@ -3294,7 +3294,7 @@ step << Rogue
 step
     #ah
     .goto 1453/0,660.28,-8814.55
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
     >>|cRXP_BUY_购买以下物品以便在西部荒野快速交任务：|r
     >>|cRXP_WARN_如果你不想这样做，或者无法完成，可以跳过此步骤|r
     >>|T132794:0|t|T132794:0|t[灯油]

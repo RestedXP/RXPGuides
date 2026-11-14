@@ -614,7 +614,7 @@ step
 step
     .goto 1413/1,-2666.68,-481.94--??
 >>与 |cRXP_FRIENDLY_图加·符文图腾|r 对话
-    .turnin 877 >>交任务  死水绿洲
+    .turnin 877 >>交任务死水绿洲
 .target 图加·符文图腾
     .accept 880 >>接受任务 变异的生物
 step

@@ -643,7 +643,7 @@ step << Horde Shaman
     .xp <4,1
     .goto 2521,42.788,23.566
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塑风者波罗::251374|r 对话。
-    .train 8042 >>学习 |T136026:0|t[大地震击]
+    .train 8042 >>影袭 |T136026:0|t[大地震击]
     .target Windshaper Boro::251374
     .skipgossipid 136811
 step << Horde
@@ -2465,7 +2465,7 @@ step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_科尔桑·裂地者::254088|r 对话
     .train 284 >> 学习 |T132282:0|t[英勇打击 (等级 2)]
     .train 1715 >> 学习 |T132316:0|t[断筋]
-    .train 6343 >> 学习 |T136105:0|t[雷霆一击]
+    .train 6343 >> 训练|T136105:0|t|T136105:0|t[雷霆一击]
     .skipgossipid 136813
     .target Corsan Earthrazer::254088
 step

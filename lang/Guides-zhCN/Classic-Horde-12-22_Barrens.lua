@@ -2896,7 +2896,7 @@ step
     .turnin 4921 >>交任务在战斗中失踪
     .target 曼科里克
     .goto The Barrens,51.95,31.58
-    .turnin 877 >>交任务  死水绿洲
+    .turnin 877 >>交任务死水绿洲
     .accept 880 >>接受任务 变异的生物
     .target 图加·符文图腾
     .goto The Barrens,52.26,31.93
@@ -10072,7 +10072,7 @@ step
     .turnin 4921 >>交任务在战斗中失踪
     .target 曼科里克
     .goto The Barrens,51.95,31.58
-    .turnin 877 >>交任务  死水绿洲
+    .turnin 877 >>交任务死水绿洲
     .accept 880 >>接受任务 变异的生物
     .target 图加·符文图腾
     .goto The Barrens,52.26,31.93

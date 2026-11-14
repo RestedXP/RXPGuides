@@ -33,7 +33,7 @@ step
 step
     #ah
     .goto 1453/0,660.28,-8814.55
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
     >>|cRXP_BUY_购买以下物品以便在西部荒野快速交任务：|r
     >>|cRXP_WARN_如果你不想这样做，或者无法完成，可以跳过此步骤|r
     >>|T133972:0|t[秃鹫肉条]
@@ -194,7 +194,7 @@ step
     .isOnQuest 92909
     #completewith bennytime
     >>当你路过农田时，顺手击杀|cRXP_ENEMY_看守傀儡|r
-    >>拾取他们的 |cRXP_LOOT_Okra|r、|cRXP_LOOT_Flasks of Oil|r、|cRXP_LOOT_Golem Isosprings|r 和 |cRXP_LOOT_Harvester Gyrostabilizers|r
+    >>拾取它们以获得|cRXP_LOOT_秋葵|r、|cRXP_LOOT_油瓶|r、|cRXP_LOOT_魔像等渗弹簧|r和|cRXP_LOOT_收割机陀螺稳定器|r
     .mob Harvest Watcher
     .complete 9,1 --Havest Watcher slain (20)
     .collect 732,3,38,1 --Okra (3)
@@ -355,7 +355,7 @@ step
     #optional
     #completewith HarvestW
     .isOnQuest 92909
-    >>从 |cRXP_ENEMY_Harvest Watchers|r 身上拾取 |cRXP_LOOT_Golem Isosprings|r 和 |cRXP_LOOT_Harvester Gyrostabilizers|r
+    >>拾取|cRXP_ENEMY_收割者卫士|r以获得|cRXP_LOOT_魔像等渗弹簧|r和|cRXP_LOOT_收割者陀螺稳定器|r
     .complete 92909,1 -- Golem Isosprings (14)
     .complete 92909,2 -- Harvester Gyrostabilizer (5)
 step
@@ -402,7 +402,7 @@ step
     .goto 1436/0,1132.27,-10146.67,60,0
     .goto 1436/0,1460.22,-10224.83,60,0
     .goto 1436/0,1238.67,-9907.73
-    >>击杀 |cRXP_ENEMY_Harvest Watchers|r，拾取他们的 |cRXP_LOOT_Golem Isosprings|r 和 |cRXP_LOOT_Harvester Gyrostabilizers|r
+    >>击杀|cRXP_ENEMY_收割者卫士|r，拾取以获得|cRXP_LOOT_魔像等渗弹簧|r和|cRXP_LOOT_收割者陀螺稳定器|r
     .complete 92909,1 -- Golem Isosprings (14)
     .complete 92909,2 -- Harvester Gyrostabilizer (5)
     .mob Harvest Watcher
@@ -599,7 +599,7 @@ step << !NightElf
 step << !NightElf
     #ah
     .goto 1453/0,660.28,-8814.55
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
     >>|cRXP_BUY_购买|r |T133970:0|t|cRXP_LOOT_[野猪肉块]|r|cRXP_BUY_ 或|r |T133970:0|t|cRXP_LOOT_[多汁狼肉]|r|cRXP_BUY_，以便稍后提升你的 |r|T133971:0|t[烹饪] |cRXP_BUY_技能|r
     >>|cRXP_WARN_你需要50点|r |T133971:0|t[烹饪]|cRXP_WARN_后续在夜色镇完成一个任务|r
     >>|cRXP_WARN_如果你不想这样做，或者无法完成，可以跳过此步骤|r
@@ -620,7 +620,7 @@ step << !NightElf
     #ah
     #optional
     .goto 1453/0,660.28,-8814.55
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
     >>|cRXP_WARN_如果你不想这样做，或者无法完成，可以跳过此步骤|r
     >>|cRXP_BUY_购买以下物品，以便在西部荒野和黑海岸更快交任务：|r
     >>|T133972:0|t[陆行鸟肉]
@@ -1453,7 +1453,7 @@ step
     #optional
     #completewith AsterionTravel
     .goto 1439/1,47.22,6861.90,0--c:1439,44.190,33.697
-    >>击杀 |cRXP_ENEMY_月夜猛虎幼崽|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
+    >>杀死 |cRXP_ENEMY_月夜猛虎幼崽|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
     .complete 1002,1 -- Moonstalker Fang (6)
     .mob 月夜猛虎幼崽
     .isQuestTurnedIn 1001
@@ -1609,7 +1609,7 @@ step
     #optional
     #completewith AuberdineTurnin2 << NightElf/Hunter/Druid/Warrior
     #completewith EndFirstMoonstalker << !NightElf !Hunter !Druid !Warrior
-    >>击杀 |cRXP_ENEMY_月夜猛虎幼崽|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
+    >>杀死 |cRXP_ENEMY_月夜猛虎幼崽|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
     .complete 1002,1 -- Moonstalker Fang (6)
     .mob 月夜猛虎幼崽
     .isQuestTurnedIn 1001
@@ -1731,7 +1731,7 @@ step << NightElf/Hunter/Druid/Warrior
 step << NightElf/Hunter/Druid/Warrior
     #optional
     #completewith EndFirstMoonstalker
-    >>击杀 |cRXP_ENEMY_月夜猛虎幼崽|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
+    >>杀死 |cRXP_ENEMY_月夜猛虎幼崽|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
     .complete 1002,1 -- Moonstalker Fang (6)
     .mob 月夜猛虎幼崽
     .isOnQuest 1002
@@ -2086,7 +2086,7 @@ step
 step
     #optional
     #completewith FurbolgGrindEnd
-    >>击杀 |cRXP_ENEMY_月夜猛虎幼崽|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
+    >>杀死 |cRXP_ENEMY_月夜猛虎幼崽|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
     .complete 1002,1 -- Moonstalker Fang (6)
     .mob 月夜猛虎幼崽
     .isOnQuest 1002
@@ -5100,7 +5100,7 @@ step << Rogue
 step -- must be on quest now to loot Great Goretusk Snout
     #ah
     .goto 1453/0,660.28,-8814.55
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
     >>购买|T134437:0|t[抗毒药剂] 用于你稍后的 |T132290:0|t[毒药] 职业任务，其余的留着稍后在赤脊山快速交任务 << !Dwarf Rogue
     >>购买以下物品，以便稍后在赤脊山更快地完成任务 << !Rogue/Dwarf Rogue
     >>这样可以节省时间，因为你不需要四处跑去找怪击杀。如果你不想购买，可以跳过这一步
@@ -6150,7 +6150,7 @@ RXPGuides.RegisterGuide([[
 #subgroup 速通指南 1-20级
 --#groupid RXP-SRGCE-A1
 #name 19-21级 黑海岸/灰谷
-#next RestedXP无限服指南（联盟）\21-23级 灰谷/石爪山脉
+#next RestedXP无限服指南（联盟）\21-23 灰谷/Stonetalon
 
 step
     #optional
@@ -6426,7 +6426,7 @@ step << Hunter
     #sticky
     .goto 1440/1,663.38,2365.17
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_波尔温|r 对话
-    .trainer >> 训练你的宠物技能
+    .trainer >> 学习你的宠物技能
     .target Bolyun
 --XX Train in darn at 20 on 2x
 step << Hunter
