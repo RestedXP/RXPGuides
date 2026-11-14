@@ -296,7 +296,7 @@ local _G = _G
 
 local GetNumQuests = C_QuestLog.GetNumQuestLogEntries or
                          _G.GetNumQuestLogEntries
-local GetQuestLogTitle = _G.GetQuestLogTitle
+local GetQuestLogTitle = addon.game ~= "FOREVER" and _G.GetQuestLogTitle
 local GetNumDayEvents = _G.C_Calendar and _G.C_Calendar.GetNumDayEvents
 local GetDayEvent = _G.C_Calendar and _G.C_Calendar.GetDayEvent
 local GetCurrentCalendarTime = _G.C_DateAndTime.GetCurrentCalendarTime
@@ -314,6 +314,9 @@ addon.recentTurnIn = {}
 addon.recentAccept = {}
 
 function addon.ExpandQuestHeaders()
+    -- Forever exposes quests in collapsed headers through C_QuestLog.
+    if addon.game == "FOREVER" then return end
+
     for i = 1, GetNumQuests() do
         local isCollapsed
         if GetQuestLogTitle then
