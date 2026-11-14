@@ -1994,7 +1994,7 @@ step
 step
     #completewith ZalazaneKill
     >>Tuez les |cRXP_ENEMY_Hexed Trolls|r et les |cRXP_ENEMY_Voodoo Trolls|r.
-    >>|cRXP_WARN_Faites attention !|r Les |cRXP_ENEMY_Trolls vaudou|r |cRXP_WARN_peuvent lancer|r |T136052:0|t[Vague de soins]
+    >>Faites attention ! |cRXP_ENEMY_Voodoo Trolls|r peuvent lancer [Vague de soins]
     .complete 826,1 --Hexed Troll (8)
     .mob +Hexed Troll
     .complete 826,2 --Voodoo Troll (8)
@@ -2041,7 +2041,7 @@ step
     .goto Durotar,68.47,86.77,40,0
     .goto Durotar,67.23,88.00,40,0
     >>Tuez les |cRXP_ENEMY_Hexed Trolls|r et les |cRXP_ENEMY_Voodoo Trolls|r.
-    >>|cRXP_WARN_Faites attention !|r Les |cRXP_ENEMY_Trolls vaudou|r |cRXP_WARN_peuvent lancer|r |T136052:0|t[Vague de soins]
+    >>Faites attention ! |cRXP_ENEMY_Voodoo Trolls|r peuvent lancer [Vague de soins]
     .complete 826,1 --Hexed Troll (8)
     .mob +Hexed Troll
     .complete 826,2 --Voodoo Troll (8)
@@ -3759,7 +3759,7 @@ step << Warrior
     .isOnQuest 1818
 step << Warrior
     .goto Tirisfal Glades,59.16,48.51
-    >>Cliquez sur le Déclencheur du mausolée sur le sol. Cela va invoquer |cRXP_ENEMY_Ulag.|r. Tuez-le
+    >>|cRXP_WARN_Cliquez sur le|r |cRXP_WARN_Déclencheur du mausolée|r |cRXP_WARN_au sol. Cela va invoquer|r |cRXP_ENEMY_Ulag.|r |cRXP_WARN_Tuez-le|r
     .complete 1819,1 --Ulag the Cleaver (1)
     .mob Ulag the Cleaver
     .isQuestTurnedIn 1818
@@ -3950,7 +3950,7 @@ step << Warrior
     .isQuestAvailable 1498
 step << Warrior
     .goto Tirisfal Glades,59.16,48.51
-    >>Cliquez sur le Déclencheur du mausolée sur le sol. Cela va invoquer |cRXP_ENEMY_Ulag.|r. Tuez-le
+    >>|cRXP_WARN_Cliquez sur le|r |cRXP_WARN_Déclencheur du mausolée|r |cRXP_WARN_au sol. Cela va invoquer|r |cRXP_ENEMY_Ulag.|r |cRXP_WARN_Tuez-le|r
     .complete 1819,1 --Ulag the Cleaver (1)
     .mob Ulag the Cleaver
     .isQuestAvailable 1498

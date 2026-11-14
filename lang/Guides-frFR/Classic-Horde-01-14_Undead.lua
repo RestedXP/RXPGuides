@@ -955,7 +955,7 @@ step << Rogue
 step << Warlock
     .goto Tirisfal Glades,61.56,52.61
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Gina Lang|r au second étage
-    >>|cRXP_BUY_Achetez un|r [Grimoire de Pacte de Sang] |cRXP_BUY_à Gina|r
+    >>|cRXP_BUY_Achetez un|r [Grimoire de Pacte de sang] |cRXP_BUY_ à Gina|r
     .collect 16321,1,404,1 --Grimoire of Blood Pact
     .vendor >>Vendez tout ce dont nous n'avez pas besoin
     .target Gina Lang
@@ -3308,7 +3308,7 @@ step << Warrior
     #season 2
     .goto Tirisfal Glades,61.72,51.91
     >>Tuez |cRXP_ENEMY_Coeurbleu|r, puis parlez à |cRXP_FRIENDLY_Penny|r en haut des escaliers
-    .gossipoption 110751 >>Recevez auprès d'elle la |T134419:0|t[|cRXP_FRIENDLY_Rune d’assaut frénétique|r]
+    .gossipoption 110751 >>Recevez auprès d'elle la |T134419:0|t[|cRXP_FRIENDLY_Rune d’assaut frénétique|r] 
     .collect 204716,1 --Rune of Frenzied Assault (1)
     .target Netali
     .mob Blueheart
@@ -6682,7 +6682,7 @@ step << Rogue
 step << Warlock
     .goto Tirisfal Glades,61.56,52.61
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Gina Lang|r au second étage
-    >>|cRXP_BUY_Achetez un|r [Grimoire de Pacte de Sang] |cRXP_BUY_à Gina|r
+    >>|cRXP_BUY_Achetez un|r [Grimoire de Pacte de sang] |cRXP_BUY_ à Gina|r
     .collect 16321,1,404,1 --Grimoire of Blood Pact
     .vendor >>Vendez tout ce dont nous n'avez pas besoin
     .target Gina Lang
@@ -9512,7 +9512,7 @@ step << Warrior
     #season 2
     .goto Tirisfal Glades,61.72,51.91
     >>Tuez |cRXP_ENEMY_Coeurbleu|r, puis parlez à |cRXP_FRIENDLY_Penny|r en haut des escaliers
-    .gossipoption 110751 >>Recevez auprès d'elle la |T134419:0|t[|cRXP_FRIENDLY_Rune d’assaut frénétique|r]
+    .gossipoption 110751 >>Recevez auprès d'elle la |T134419:0|t[|cRXP_FRIENDLY_Rune d’assaut frénétique|r] 
     .collect 204716,1 --Rune of Frenzied Assault (1)
     .target Netali
     .mob Blueheart

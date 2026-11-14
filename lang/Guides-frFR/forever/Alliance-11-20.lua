@@ -194,7 +194,7 @@ step
     .isOnQuest 92909
     #completewith bennytime
     >>Tuez les |cRXP_ENEMY_Gardiens des moissons|r dans les champs quand vous passez à côté
-    >>Récoltez-les pour le Butin: |cRXP_LOOT_Okra|r, |cRXP_LOOT_Flasks of Oil|r, |cRXP_LOOT_Golem Isosprings|r et |cRXP_LOOT_Harvester Gyrostabilizers|r
+    >>Dépouillez-les pour leur: |cRXP_LOOT_Okra|r, |cRXP_LOOT_Flasque d'huile|r, |cRXP_LOOT_Isoressort de golem|r et leur |cRXP_LOOT_Gyrostabiliseurs de moissonneur|r
     .mob Harvest Watcher
     .complete 9,1 --Havest Watcher slain (20)
     .collect 732,3,38,1 --Okra (3)
@@ -204,7 +204,7 @@ step
 step
     .goto 1436/0,1748.27,-10672.13
     >>Ouvrez le |cRXP_PICK_Coffre d'Alexston|r. Dépouillez-le pour |cRXP_LOOT_Une simple boussole|r
-    >>|cRXP_WARN_Évitez les mobs devant le bâtiment brûlé. Ramassez-le à l'arrière, à côté de la cheminée. Utilisez la cheminée pour LoS les sorts de |cRXP_ENEMY_Pillagers|r si nécessaire|r
+    >>|cRXP_WARN_Évitez les mobs devant le bâtiment brûlé. Ramassez-le en restant en arrière, à côté de la cheminée. Utilisez la cheminée pour vous cacher (LoS) des sorts des |cRXP_ENEMY_Pilleurs|r si vous en avez besoin|r
     .complete 399,1 --A Simple Compass (1)
     .isOnQuest 399
 step
@@ -355,7 +355,7 @@ step
     #optional
     #completewith HarvestW
     .isOnQuest 92909
-    >>Ramassez les |cRXP_ENEMY_Golem Isosprings|r et les |cRXP_LOOT_Harvester Gyrostabilizers|r sur les |cRXP_LOOT_Harvest Watchers|r
+    >>Dépouillez les |cRXP_ENEMY_Gardien des moissons|r pour leurs |cRXP_LOOT_Isoressorts de golem|r et leurs |cRXP_LOOT_Gyrostabiliseurs de moissonneur|r
     .complete 92909,1 -- Golem Isosprings (14)
     .complete 92909,2 -- Harvester Gyrostabilizer (5)
 step
@@ -402,7 +402,7 @@ step
     .goto 1436/0,1132.27,-10146.67,60,0
     .goto 1436/0,1460.22,-10224.83,60,0
     .goto 1436/0,1238.67,-9907.73
-    >>Tuez les |cRXP_ENEMY_Harvest Watchers|r. Ramassez-les pour leurs |cRXP_LOOT_Golem Isosprings|r et |cRXP_LOOT_Harvester Gyrostabilizers|r
+    >>Tuez les |cRXP_ENEMY_Gardiens des moissons|r. Dépouillez-les pour leurs |cRXP_LOOT_Isoressorts de golem|r et leurs |cRXP_LOOT_Gyrostabiliseurs de moissonneur|r
     .complete 92909,1 -- Golem Isosprings (14)
     .complete 92909,2 -- Harvester Gyrostabilizer (5)
     .mob Harvest Watcher
@@ -547,7 +547,7 @@ step << Skyborne
 step << Skyborne
     >>Utilisez le [Pipeau du dératiseur] |cRXP_WARN_sur les |cRXP_ENEMY_Deeprun Rats|r à l'intérieur du Tram des Profondeurs|r
     .complete 6661,1 --Rats Captured (x5)
-    .macro Rat Catcher's Flute,133942 >>Flûte de l'attrape-rats
+    .macro Rat Catcher's Flute,133942 >>Pipeau du dératiseur
     .mob Deeprun Rat
 step << Skyborne
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Monty|r à l'intérieur du Tram des Profondeurs
@@ -1093,7 +1093,7 @@ step << NightElf
     .goto 1439/1,643.40,5927.95,60,0--c:1439,35.088,55.085
     .goto 1439/1,631.15,5998.74,60,0--c:1439,35.275,53.464
     .goto 1439/1,577.71,6084.46,60,0--c:1439,36.091,51.501
-    .xp 12-2500 >> Montez jusqu'à 6300+/8800 xp
+    .xp 12-2500 >> Monter votre expérience jusqu'à 6300+/8800xp
 step
     #label invisThistle
     #optional
@@ -1158,7 +1158,7 @@ step
     .target Gwennyth Bly'Leggonde
 step << Druid NightElf
     #optional
-    .xp 12 >> Montez au niveau 12
+    .xp 12 >> Montez jusqu'au niveau 12
 step << Druid NightElf
     .goto 1439/1,472.12,6438.51--c:1439,37.703,43.393
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinelle Glynda Nal'Shea|r
@@ -1214,7 +1214,7 @@ step << NightElf Druid
     #optional
     #completewith next
     .goto 1438/1,965.80,8780.95
-    .zone Darnassus >> Prenez le portail violet pour Darnassus
+    .zone Darnassus >> Prenez le portail violet vers Darnassus
 step << Druid NightElf
     .goto 1457/1,2563.98,10179.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Mathrengyl Bearwalker|r
@@ -2815,7 +2815,7 @@ step << Druid
     #label DruidLesson
     #completewith next
     .goto 1438/1,965.80,8780.95
-    .zone Darnassus >> Prenez le portail violet pour Darnassus
+    .zone Darnassus >> Prenez le portail violet vers Darnassus
 step << Druid
     .goto 1457/1,2563.98,10179.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Mathrengyl Bearwalker|r
@@ -2988,13 +2988,13 @@ step
     .zoneskip Loch Modan
     .zoneskip Dun Morogh
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Monty|r sur la plateforme du milieu du Tram des profondeurs |cRXP_WARN_du côté de Forgefer!|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Monty|r sur le quai du milieu au Tram des profondeurs |cRXP_WARN_du côté de Forgefer !|r
     .accept 6661 >> Acceptez la quête Chasse au rat dans les profondeurs
     .target Monty
 step
     >>Utilisez le |T133942:0|t[Pipeau du dératiseur] sur les |cRXP_FRIENDLY_Rats des profondeurs|r dans le Tram des profondeurs
     .complete 6661,1 --Rats Captured (x5)
-    .macro Rat Catcher's Flute,133942 >>Flûte de l'attrape-rats
+    .macro Rat Catcher's Flute,133942 >>Pipeau du dératiseur
     .mob Deeprun Rat
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Monty|r sur la plateforme du milieu dans le Tram des profondeurs
@@ -3495,12 +3495,12 @@ step
     .mob Loch Crocolisk
 step
     .goto 1432/0,-3703.9165,-5296.9165
-    >>Tuez |cRXP_ENEMY_Daggerfang|r, il |cRXP_WARN_pourrait patrouiller le long du rivage|r. Ramassez-le pour |T3736888:0|t[|cRXP_LOOT_Marek's Croco-Couteau de chasse|r]
+    >>Tuez |cRXP_ENEMY_Daguecroc|r, il |cRXP_WARN_peut être en patrouille le long de la rive|r. Dépouillez-le pour le |T3736888:0|t[|cRXP_LOOT_Couteau de chasse-croc de Marek|r]
     .complete 86758,1 --Marek's Croc Hunting Knife (1)
     .mob Daggerfang
 step
     .goto 1432/0,-3747.000,-5369.000
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Bingles Explonheimer|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Bingles Blastenheimer|r
     .target Bingles Blastenheimer
     .turnin 2039 >>Rendez la quête Trouvez Bingles
 step
@@ -3557,7 +3557,7 @@ step
     .isOnQuest 258
 step
     #optional
-    .xp 16-2360 >> Farmez jusqu'à être à 2360 XP du niveau 16 (12.040/14.400)
+    .xp 16-2360 >> Gagnez en expérience jusqu'à ce qu'il ne vous manque que 2360xp pour le niveau 16 (12040/14400)
 step
     >>Sautez hors du pavillon et laissez-vous tuer par les mobs en bas
     .deathskip >> Mourez et ressuscitez au cimetière de Thelsamar
@@ -3907,7 +3907,7 @@ step
     >>|cRXP_WARN_Cliquez sur |cRXP_PICK_Scrying Bowl|r sur le sol|r
     .turnin 944 >> Rendez la quête Le Glaive du Maître
     .accept 949 >> Acceptez la quête Le camp du Marteau du crépuscule
-    .macro Phial of Scrying,134715 >>Flasque de divination
+    .macro Phial of Scrying,134715 >>Fiole de divination
 step
     #label FunandGames
     .goto 1439/1,417.49,4575.82--c:1439,38.537,86.050
@@ -4479,7 +4479,7 @@ step
     >>Tuez|cRXP_ENEMY_The Threshwackonator 4100|r dès qu'il devient hostile
     >>|cRXP_WARN_Cette quête est TRÈS difficile|r
     *Utilisez uniquement des attaques à distance en fuyant et évitez de rester en mêlée << Druid
-    >>|cRXP_WARN_Essayez de faire cette quête si vous le pouvez, cela vous fera gagner du temps plus tard car elle récompense|r |T134797:0|t[Draught of Respiration aquatique] |cRXP_WARN_pour les quêtes sous-marines ultérieures|r << !Druid !Warlock !Shaman
+    >>|cRXP_WARN_Essayez de faire cette quête si vous le pouvez car cela vous fera gagner du temps plus tard et elle vous récompense d'un |r |T134797:0|t[Breuvage de respiration aquatique] |cRXP_WARN_pour des quêtes dans l'eau plus tard|r << !Druid !Warlock !Shaman
     >>|cRXP_WARN_Utilisez|r |T136100:0|t[Sarments] |cRXP_WARN_sur lui lorsqu'il devient hostile, puis créez de la distance et kitez en utilisant des sorts instantanés|r << Druid
     >>|cRXP_WARN_Si vous êtes pas capable de tuer |cRXP_ENEMY_Le Destructomembreur 4100|r, passez cette étape|r
     .complete 2078,1 --Gyromast's Revenge (1)
@@ -4648,7 +4648,7 @@ step << Dwarf Hunter/Human Hunter/Skyborne Hunter
     #optional
     #completewith next
     .goto 1438/1,965.80,8780.95
-    .zone Darnassus >> Prenez le portail violet pour Darnassus
+    .zone Darnassus >> Prenez le portail violet vers Darnassus
 step << Dwarf Hunter/Human Hunter/Skyborne Hunter
     .goto 1457/1,2511.01,10178.05
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Jocaste|r
@@ -5418,7 +5418,7 @@ step << Rogue
 step << Rogue
     -- .goto 1433/0,-2702.500,-9230.300
     .goto 1433/0,-2696.32,-9228.24--c:1433,51.846,45.116
-    >>Vous DEVEZ le faire pour votre quête de [Poisons] plus tard
+    >>Vous DEVEZ le faire pour votre de quête de [Poisons] plus tard
     >>|cRXP_WARN_Restez sur la location du point de repère. Positionnez votre caméra et votre curseur jusqu'à ce que vous puissiez cliquer sur 3 |cRXP_PICK_Practice Lockboxes|r en même temps et sans avoir à bouger|r
     .skill lockpicking,80 >>|cRXP_WARN_Ouvrez les |cRXP_PICK_Practice Lockboxes|r sur le sol dans la scierie d'Alther jusqu'à ce que votre score de|r [Crochetage] soit de 80|r
 step << Rogue
@@ -5532,7 +5532,7 @@ step << NightElf !Druid
     #optional
     #completewith next
     .goto 1438/1,965.80,8780.95
-    .zone Darnassus >> Prenez le portail violet pour Darnassus
+    .zone Darnassus >> Prenez le portail violet vers Darnassus
 step << Druid
     #label catspirit1
     .goto 1457/1,2564.600,10179.800
@@ -5839,7 +5839,7 @@ step << !Dwarf Rogue
     >>Tuez les |cRXP_ENEMY_Araignées Tisse-venin pygmées|r et les |cRXP_ENEMY_Araignées Tisse-venins|r. Dépouillez-les pour une |cRXP_LOOT_Petite glande à venin|r et leurs |cRXP_LOOT_Pattes d'araignée fondantes|r
     >>|cRXP_WARN_Vous avez besoin d'une |cRXP_LOOT_Petite glande à venin|r pour créer un|r |T134437:0|t[Anti-venin]|cRXP_WARN_ pour enlever le debuff|r |T136230:0|t[Toucher de Zanzil]|cRXP_WARN_ plus tard|r
     >>|cRXP_WARN_Gardez les |cRXP_LOOT_Pattes d'araignée fondantes|r plus tard|r
-    >>|cRXP_WARN_Si vous avez un|r |T626003:0|t|cFFF48CBAPaladin|r|cRXP_WARN_,|r |T625999:0|t|cFFFF7C0ADruide|r |cRXP_WARN_ou|r |T626006:0|t|cFF0070DDChaman|r |cRXP_WARN_ami, vous pouvez sauter cette étape et leur demander de le retirer pour vous|r
+    >>|cRXP_WARN_Si vous avez un ami|r |T626003:0|t|cFFF48CBAPaladin|r|cRXP_WARN_,|r |T625999:0|t|cFFFF7C0ADruide|r |cRXP_WARN_ou|r |T626006:0|t|cFF0070DDChaman|r |cRXP_WARN_, vous pouvez passer cette étape et leur demander de vous le retirer|r
     .collect 1475,1,2359,1 -- Small Venom Sac (1)
     .collect 2251,6,93,1,1 -- Gooey Spider Legs (6)
     .disablecheckbox
@@ -5856,7 +5856,7 @@ step << Rogue
 step << Rogue
     .goto 1436/0,619.17,-11035.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Agent Kearnen|r
-    >>|cRXP_WARN_Vous devez terminer cette quête pour déverrouiller|r |T132290:0|t[Poisons].
+    >>|cRXP_WARN_Vous DEVEZ terminer cette quête pour débloquer les|r |T132290:0|t[Poisons].
     .turnin 2360 >> Rendez la quête Mathias et les Défias
     .accept 2359 >> Acceptez la quête La Tour de Klaven
     .target Agent Kearnen
@@ -5872,7 +5872,7 @@ step << Rogue
     >>|T133644:0|tUtilisez [Vol à la tire] sur le |cRXP_ENEMY_Malformed Defias Drone|r. Volez-lui la |cRXP_LOOT_Defias Tower Key|r
     >>Vous devez être en [Camouflage] pour utiliser [Vol à la tire]
     >>|cRXP_WARN_Le |cRXP_ENEMY_Malformed Defias Drone|r apparaissent à l'entrée de la tour, puis font le tour de celle-ci|r
-    >>Faites attention car il fait BEAUCOUP de dégâts. Si vous perdez votre [Camouflage], utilisez vite votre [Sprint] pour vous enfuir
+    >>Faites attention, il tape TRÈS fort. Si vous perdez votre [Camouflage], utilisez rapidement votre [Sprint] et enfuyez-vous
     .complete 2359,2 --Collect Defias Tower Key (x1)
     .link https://www.youtube.com/watch?v=5sIew15IcG0 >> Cliquez ICI pour un guide vidéo
     .mob Malformed Defias Drone
@@ -5936,15 +5936,15 @@ step << !Dwarf Rogue
     #requires AntiVenomEnd
     .goto 1453/0,801.99,-8513.29--c:1453,43.070,26.155
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Shaina Fuller|r
-    >>|cRXP_WARN_Si vous avez un|r |T626003:0|t|cFFF48CBAPaladin|r|cRXP_WARN_,|r |T625999:0|t|cFFFF7C0ADruide|r |cRXP_WARN_ou|r |T626006:0|t|cFF0070DDChaman|r |cRXP_WARN_ami, demandez-leur de retirer le|r |T136230:0|t[Toucher de Zanzil] |cRXP_WARN_pour vous à la place|r
-    .skill firstaid,80 >> Montez vos [Premier soins] à un niveau de compétence de 80
+    >>|cRXP_WARN_Si vous avez un ami|r |T626003:0|t|cFFF48CBAPaladin|r|cRXP_WARN_,|r |T625999:0|t|cFFFF7C0ADruide|r |cRXP_WARN_ou|r |T626006:0|t|cFF0070DDChaman|r |cRXP_WARN_, demandez-leur de vous enlever le|r |T136230:0|t[Toucher de Zanzil] |cRXP_WARN_à la place|r
+    .skill firstaid,80 >> Montez votre niveau de compétence en [Premiers soins] jusqu'à 80
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
 step << !Dwarf Rogue
     #label FirstAidEnd
     .goto 1453/0,801.99,-8513.29--c:1453,43.070,26.155
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Shaina Fuller|r
-    >>|cRXP_WARN_Si vous avez un|r |T626003:0|t|cFFF48CBAPaladin|r|cRXP_WARN_,|r |T625999:0|t|cFFFF7C0ADruide|r |cRXP_WARN_ou|r |T626006:0|t|cFF0070DDChaman|r |cRXP_WARN_ami, demandez-leur de retirer le|r |T136230:0|t[Toucher de Zanzil] |cRXP_WARN_pour vous à la place|r
+    >>|cRXP_WARN_Si vous avez un ami|r |T626003:0|t|cFFF48CBAPaladin|r|cRXP_WARN_,|r |T625999:0|t|cFFFF7C0ADruide|r |cRXP_WARN_ou|r |T626006:0|t|cFF0070DDChaman|r |cRXP_WARN_, demandez-leur de vous enlever le|r |T136230:0|t[Toucher de Zanzil] |cRXP_WARN_à la place|r
     .train 7934 >> Apprenez [Anti-Venin]
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
@@ -6150,7 +6150,7 @@ RXPGuides.RegisterGuide([[
 #subgroup Guide Speedrun 1-20
 --#groupid RXP-SRGCE-A1
 #name 19-21 Sombrivage/Orneval
-#next RestedXP Guide Forever (A)\21-23 Orneval/Serres-Rocheuses
+#next RestedXP Guide Forever (A)\21-23 Orneval/Stonetalon
 
 step
     #optional
@@ -6712,7 +6712,7 @@ step
     #optional
     #completewith next
     .goto 1438/1,968.90,8795.34
-    .zone Darnassus >> Prenez le portail violet pour Darnassus
+    .zone Darnassus >> Prenez le portail violet vers Darnassus
 step << Hunter
     .goto 1457/1,2511.04,10178.01
     .target Jocaste
@@ -6724,7 +6724,7 @@ step
     .goto 1457/1,2515.03,9940.50
     .bankdeposit 5996,1468,2251,1015 >> Déposez les objets suivants dans votre banque:
     .target Garryeth
-    >>|T134797:0|t[Draught of Respiration aquatique] --5996
+    >>|T134797:0|t[Breuvage de respiration aquatique] --5996
     >>|T134304:0|t[Ailerons de murloc] --1468
     >>|T134321:0|t[Pattes d'araignée fondantes] --2251
     >>|T133970:0|t[Steaks de loup] --1015
@@ -6888,7 +6888,7 @@ step
     >>|cRXP_WARN_Cliquez sur |cRXP_PICK_Scrying Bowl|r sur le sol|r
     .turnin 944 >> Rendez la quête Le Glaive du Maître
     .accept 949 >> Acceptez la quête Le camp du Marteau du crépuscule
-    .macro Phial of Scrying,134715 >>Flasque de divination
+    .macro Phial of Scrying,134715 >>Fiole de divination
 step
     #label FunandGames
     .goto 1439/1,417.49,4575.82--c:1439,38.537,86.050

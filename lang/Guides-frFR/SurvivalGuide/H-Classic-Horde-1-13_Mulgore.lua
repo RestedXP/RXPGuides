@@ -2028,7 +2028,7 @@ step
 step
     #completewith MinshinasSkull
     >>Tuez les |cRXP_ENEMY_Hexed Trolls|r et les |cRXP_ENEMY_Voodoo Trolls|r.
-    >>|cRXP_WARN_Faites attention !|r Les |cRXP_ENEMY_Trolls vaudou|r |cRXP_WARN_peuvent lancer|r |T136052:0|t[Vague de soins]
+    >>Faites attention ! |cRXP_ENEMY_Voodoo Trolls|r peuvent lancer [Vague de soins]
     .complete 826,1 --Hexed Troll (8)
     .mob +Hexed Troll
     .complete 826,2 --Voodoo Troll (8)
@@ -2190,7 +2190,7 @@ step
     .complete 837,4 --Razormane Battleguard (4)
     .mob +Razormane Battleguard
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|r |cRXP_FRIENDLY_Torka|r, à |cRXP_FRIENDLY_Orgnil|r et à |cRXP_FRIENDLY_Gar'Thok|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|r |cRXP_FRIENDLY_Torka|r, |cRXP_FRIENDLY_Orgnil|r et |cRXP_FRIENDLY_Gar'Thok|r
     .turnin 815 >>Rendez la quête Des œufs pour l'omelette
     .target +Cook Torka
     .goto Durotar,51.12,42.46
@@ -2206,7 +2206,7 @@ step
     .goto Durotar,51.95,43.50
     .group
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|r |cRXP_FRIENDLY_Torka|r, à |cRXP_FRIENDLY_Orgnil|r et à |cRXP_FRIENDLY_Gar'Thok|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|r |cRXP_FRIENDLY_Torka|r, |cRXP_FRIENDLY_Orgnil|r et |cRXP_FRIENDLY_Gar'Thok|r
     .turnin 815 >>Rendez la quête Des œufs pour l'omelette
     .target +Cook Torka
     .goto Durotar,51.12,42.46

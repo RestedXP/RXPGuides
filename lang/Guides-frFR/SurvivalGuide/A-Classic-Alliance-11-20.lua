@@ -443,7 +443,7 @@ step << Druid
 step << Druid
     #completewith next
     .goto Teldrassil,55.889,89.456
-    .zone Darnassus >> Prenez le portail violet pour Darnassus
+    .zone Darnassus >> Prenez le portail violet vers Darnassus
 step << Druid
     .goto Darnassus,35.375,8.405
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Mathrengyl Bearwalker|r
@@ -1079,7 +1079,7 @@ step << !NightElf !Mage !Paladin !Warlock
 step << !NightElf !Mage !Paladin !Warlock
     #completewith next
     .goto Teldrassil,55.889,89.456
-    .zone Darnassus >> Prenez le portail violet pour Darnassus
+    .zone Darnassus >> Prenez le portail violet vers Darnassus
 step << !NightElf Hunter
     .goto Darnassus,40.377,8.545
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Jocaste|r
@@ -1619,7 +1619,7 @@ step << Druid
 step << Druid
     #completewith next
     .goto Teldrassil,55.889,89.456
-    .zone Darnassus >> Prenez le portail violet pour Darnassus
+    .zone Darnassus >> Prenez le portail violet vers Darnassus
 step << Druid
     .goto Darnassus,35.375,8.405
     .target Mathrengyl Bearwalker

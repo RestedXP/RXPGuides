@@ -784,7 +784,7 @@ step
     .goto 1411/1,-4715.200,140.100
     >>|cRXP_WARN_Tapez /assis près du feu de camp et attendez une minute jusqu'à ce que vous obteniez le buff "Avantages du camp"|r
     .complete 96607,1 --|1/1 Use the /sit emote near the campfire
-    .macro Sit,134400 >>Asseyez-vous
+    .macro Sit,134400 >>Asseyez-vous 
     .timer 59, RP
     .complete 96607,2 --|Gain the Boosted Rest buff
 step
@@ -965,7 +965,7 @@ step << Rogue
 step << Warlock
     .goto 1420/0,251.59,2252.62
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Gina Lang|r au second étage
-    >>|cRXP_BUY_Achetez un|r [Grimoire de Pacte de Sang] |cRXP_BUY_à Gina|r
+    >>|cRXP_BUY_Achetez un|r [Grimoire de Pacte de sang] |cRXP_BUY_ à Gina|r
     .collect 16321,1,404,1 --Grimoire of Blood Pact
     .vendor >>Vendez tout ce dont nous n'avez pas besoin
     .target Gina Lang

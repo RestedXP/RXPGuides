@@ -46,7 +46,7 @@ step << Druid
     .mob +Young Thistle Boar
 step << Druid
     #completewith next
-    +|cRXP_WARN_Assurez-vous d'avoir au moins 1 argent 2 cuivre de rebut de vendeur|r, vous pouvez compter vos objets qui se vendent 9 cuivres
+    +|cRXP_WARN_Gardez bien 1 argent et 2 cuivre à vendre au marchand avec votre camelote|r, vous pouvez y ajouter votre bâton qui se vend pour 9 cuivre
 step << !sod/Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Dirania Silvershine|r et à |cRXP_FRIENDLY_Melithar Staghelm|r
     #label GoodProtector
@@ -121,7 +121,7 @@ step << !Priest !Rogue
 	.accept 3120 >> Acceptez la quête Sceau verdoyant << Druid
 step << !Hunter !Druid !Warrior
     #completewith next
-    >>Tuez les |cRXP_ENEMY_Thistle Boars|r sur le chemin vers Iverron. Vous n'êtes pas obligés de terminer cela maintenant
+    >>Tuez les |cRXP_ENEMY_Sangliers des chardons|r sur la route vers Iverron. Vous n'avez pas à terminer cet objectif maintenant
     .complete 457,2 --Kill Thistle Boar (x7)
     .mob +Thistle Boar
 step << !Hunter !Druid !Warrior
@@ -163,7 +163,7 @@ step << Druid
     .mob Grellkin
 step << Druid
     #completewith next
-    >>Tuez les |cRXP_ENEMY_Thistle Boars|r sur le chemin vers Iverron. Vous n'êtes pas obligés de terminer cela maintenant
+    >>Tuez les |cRXP_ENEMY_Sangliers des chardons|r sur la route vers Iverron. Vous n'avez pas à terminer cet objectif maintenant
     .complete 457,2 --Kill Thistle Boar (x7)
     .mob +Thistle Boar
 step << Druid
@@ -258,7 +258,7 @@ step
     .mob Webwood Spider
 step
     #completewith next
-    >>Tuez les |cRXP_ENEMY_Thistle Boars|r sur le chemin vers les Grells. Vous n'êtes pas obligés de terminer cela maintenant
+    >>Tuez les |cRXP_ENEMY_Sangliers des chardons|r sur la route vers les Grells. Vous n'avez pas à terminer cet objectif maintenant
     .complete 457,2 --Kill Thistle Boar (x7)
     .mob +Thistle Boar
 step << !Druid
@@ -285,7 +285,7 @@ step
     .turnin 97977 >>Rendez la quête L’appel de la nature
 step
     #completewith next
-    >>Tuez les |cRXP_ENEMY_Thistle Boars|r sur le chemin vers Iverron. Vous n'êtes pas obligés de terminer cela maintenant
+    >>Tuez les |cRXP_ENEMY_Sangliers des chardons|r sur la route vers Iverron. Vous n'avez pas à terminer cet objectif maintenant
     .complete 457,2 --Kill Thistle Boar (x7)
     .mob +Thistle Boar
 step
@@ -321,7 +321,7 @@ step << Hunter/Rogue
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.05
 step
     #completewith next
-    >>Tuez les |cRXP_ENEMY_Thistle Boars|r sur le chemin vers Iverron. Vous n'êtes pas obligés de terminer cela maintenant
+    >>Tuez les |cRXP_ENEMY_Sangliers des chardons|r sur la route vers Iverron. Vous n'avez pas à terminer cet objectif maintenant
     .complete 457,2 --Kill Thistle Boar (x7)
     .mob +Thistle Boar
 step
@@ -492,7 +492,7 @@ step
 step
     .goto 1438/1,882.300,9909.101
     >>Utilisez l'émote |cRXP_WARN_/assis|r à côté du feu de camp et |cRXP_WARN_restez immobile pendant 1 minute|r afin de compléter l'objectif
-    >>|cRXP_WARN_Si vous n'obtenez pas le crédit de la quête en vous asseyant, abandonnez la quête et acceptez-la à nouveau!|r
+    >>|cRXP_WARN_Si la quête ne se valide pas lorsque vous vous asseyez, abandonnez la quête et acceptez-la à nouveau !|r
     .complete 96606,1 --Sit
     .complete 96606,2 --Gain the Boosted Rest buff
 step
@@ -1409,7 +1409,7 @@ step << Druid/Priest
     .accept 940 >> Acceptez la quête Teldrassil
 step << Druid/Priest
     #label xp10
-    .xp 10-870 >> Farmez jusqu'à être à 870 xp du niveau 10 (5630/6500)
+    .xp 10-870 >> Gagnez en expérience jusqu'à ce qu'il ne vous manque que 9870xp pour le niveau 10 (5630/6500)
 step << Hunter
     #completewith xp10
     #label mist1

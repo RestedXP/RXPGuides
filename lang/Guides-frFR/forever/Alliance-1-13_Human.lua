@@ -1200,7 +1200,7 @@ step << Warrior/Paladin/Rogue
     #label RoughStoneCraft1
     #completewith NecklaceStart
     +|T136241:0|tÀ l'aide de votre [Forge], transformez les |cRXP_LOOT_[Rough Stones]|r en [Pierre à aiguiser brute] << Warrior/Rogue
-    +|T136241:0|t[Forge] |cRXP_WARN_la|r |T135232:0|t|cRXP_LOOT_[Pierre brute]|r |cRXP_WARN_en|r |T135255:0|t[Rough Weightstones] << Paladin
+    +Utilisez votre |T136241:0|t[Forge] |cRXP_WARN_pour transformer les|r |T135232:0|t|cRXP_LOOT_[Pierres brutes]|r |cRXP_WARN_en|r |T135255:0|t[Cailloux bruts] << Paladin
     .collect 2862,5 << Rogue/Warrior --Rough Sharpening Stone (5)
     .disablecheckbox
     .collect 3239,5 << Paladin --Rough Weightstone (5)
@@ -1281,7 +1281,7 @@ step << Warrior/Paladin/Rogue
     #label RoughStoneCraft2
     #completewith Lovers
     +|T136241:0|tÀ l'aide de votre [Forge], transformez les |cRXP_LOOT_[Rough Stones]|r en [Pierre à aiguiser brute] << Warrior/Rogue
-    +|T136241:0|t[Forge] |cRXP_WARN_la|r |T135232:0|t|cRXP_LOOT_[Pierre brute]|r |cRXP_WARN_en|r |T135255:0|t[Rough Weightstones] << Paladin
+    +Utilisez votre |T136241:0|t[Forge] |cRXP_WARN_pour transformer les|r |T135232:0|t|cRXP_LOOT_[Pierres brutes]|r |cRXP_WARN_en|r |T135255:0|t[Cailloux bruts] << Paladin
     .collect 2862,5 << Rogue/Warrior --Rough Sharpening Stone (5)
     .disablecheckbox
     .collect 3239,5 << Paladin --Rough Weightstone (5)
@@ -1362,7 +1362,7 @@ step << Warrior/Paladin/Rogue
     #label RoughStoneCraft3
     #completewith Exchange
     +|T136241:0|tÀ l'aide de votre [Forge], transformez les |cRXP_LOOT_[Rough Stones]|r en [Pierre à aiguiser brute] << Warrior/Rogue
-    +|T136241:0|t[Forge] |cRXP_WARN_la|r |T135232:0|t|cRXP_LOOT_[Pierre brute]|r |cRXP_WARN_en|r |T135255:0|t[Rough Weightstones] << Paladin
+    +Utilisez votre |T136241:0|t[Forge] |cRXP_WARN_pour transformer les|r |T135232:0|t|cRXP_LOOT_[Pierres brutes]|r |cRXP_WARN_en|r |T135255:0|t[Cailloux bruts] << Paladin
     .collect 2862,5 << Rogue/Warrior --Rough Sharpening Stone (5)
     .disablecheckbox
     .collect 3239,5 << Paladin --Rough Weightstone (5)
@@ -1877,7 +1877,7 @@ step << Warrior/Paladin/Rogue
     #label RoughStoneCraft4
     #completewith JasperlodeExplore
     +|T136241:0|tÀ l'aide de votre [Forge], transformez les |cRXP_LOOT_[Rough Stones]|r en [Pierre à aiguiser brute] << Warrior/Rogue
-    +|T136241:0|t[Forge] |cRXP_WARN_la|r |T135232:0|t|cRXP_LOOT_[Pierre brute]|r |cRXP_WARN_en|r |T135255:0|t[Rough Weightstones] << Paladin
+    +Utilisez votre |T136241:0|t[Forge] |cRXP_WARN_pour transformer les|r |T135232:0|t|cRXP_LOOT_[Pierres brutes]|r |cRXP_WARN_en|r |T135255:0|t[Cailloux bruts] << Paladin
     .collect 2862,5 << Rogue/Warrior --Rough Sharpening Stone (5)
     .disablecheckbox
     .collect 3239,5 << Paladin --Rough Weightstone (5)
@@ -1964,7 +1964,7 @@ step << Warrior/Paladin/Rogue
     #label RoughStoneCraft5
     #completewith Find
     +|T136241:0|tÀ l'aide de votre [Forge], transformez les |cRXP_LOOT_[Rough Stones]|r en [Pierre à aiguiser brute] << Warrior/Rogue
-    +|T136241:0|t[Forge] |cRXP_WARN_la|r |T135232:0|t|cRXP_LOOT_[Pierre brute]|r |cRXP_WARN_en|r |T135255:0|t[Rough Weightstones] << Paladin
+    +Utilisez votre |T136241:0|t[Forge] |cRXP_WARN_pour transformer les|r |T135232:0|t|cRXP_LOOT_[Pierres brutes]|r |cRXP_WARN_en|r |T135255:0|t[Cailloux bruts] << Paladin
     .collect 2862,5 << Rogue/Warrior --Rough Sharpening Stone (5)
     .disablecheckbox
     .collect 3239,5 << Paladin --Rough Weightstone (5)
@@ -2714,7 +2714,7 @@ step << Priest
     #requires GoldshireVendor
     .goto 1429/0,33.14,-9460.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Priestess Josetta|r
-    .accept 94774 >> Acceptez la quête Divin Grâce
+    .accept 94774 >> Acceptez la quête Grâce divine
     .trainer >> Apprenez vos sorts de classe
     .target Priestess Josetta
     .xp <10,1
@@ -3505,7 +3505,7 @@ step << Priest
 step << Priest
     .goto 1453/0,862.89,-8519.61
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_High Priestess Laurena|r
-    .turnin -94774 >> Rendez la quête Divin Grâce
+    .turnin -94774 >> Rendez la quête Grâce divine
     .trainer >> Apprenez vos sorts de classe
     .target High Priestess Laurena
 step << Priest
@@ -3968,9 +3968,9 @@ step
     .goto 1426/0,-1679.89,-5728.88,40,0
     .goto 1426/0,-1675.95,-5597.22,25,0
     .goto 1426/0,-1679.89,-5728.88
-    >>Tuez |cRXP_ENEMY_Rockjaw Skullthumpers|r et |cRXP_ENEMY_Rockjaw Bonesnappers|r à l'intérieur de la grotte. Ramassez-les pour le |T132621:0|t[|cRXP_LOOT_Empty Baril de poudre|r]
+    >>Tuez les |cRXP_ENEMY_Brise-crânes Mâcheroc|r et les |cRXP_ENEMY_Briseurs d’os Mâcheroc|r dans la grotte. Dépouillez-les pour le |T132621:0|t[|cRXP_LOOT_Baril de poudre vide|r]
     .use 268548 >> |cRXP_WARN_Utilisez le|r |T132621:0|t[|cRXP_LOOT_Baril de poudre vide|r] |cRXP_WARN_pour lancer une quête|r
-    >>|cRXP_WARN_NOTE: Cet objet a un faible taux de drop. Passez cette étape si vous ne le trouvez pas|r
+    >>|cRXP_WARN_NOTE: Cet objet n'a que peu de chance de tomber. Passez cette étape si vous n'arrivez pas à l'obtenir|r
     .complete 432,1 --Kill Rockjaw Skullthumper (x6)
     .mob +Rockjaw Skullthumper
     .complete 433,1 --Kill Rockjaw Bonesnapper (x10)
@@ -4017,7 +4017,7 @@ step
 step
     #completewith OII
     >>Tuez les |cRXP_ENEMY_Embusqués Mâcherocs|r. Dépouillez-les pour le |T132621:0|t[|cRXP_LOOT_Baril de poudre vide|r]
-    .use 268548 >> |cRXP_WARN_Utilisez le|r |T132621:0|t[|cRXP_LOOT_Empty Baril de poudre|r] |cRXP_WARN_pour commencer la quête|r
+    .use 268548 >> |cRXP_WARN_Utilisez le|r |T132621:0|t[|cRXP_LOOT_Baril de poudre vide|r] |cRXP_WARN_pour lancer une quête|r
     >>|cRXP_WARN_NOTE: Cet objet a très peu de chance de tomber. Passez cette étape si vous ne le trouvez pas après en avoir fini avec les|r |cRXP_ENEMY_Espions Sombrefers|r
     .collect 268548,1,95213,1 -- Empty Powder Keg (1)
     .accept 95213 >> Acceptez la quête Poudre explosive volée

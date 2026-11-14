@@ -1905,7 +1905,7 @@ step
     .goto 2521,41.67,44.79
     >>Cliquez sur la macro dans le cadre des Objets actifs pour vous asseoir.
     .complete 96101,1 --1/1 Use the /sit emote near the campfire
-    .macro Sit,134400 >>Asseyez-vous
+    .macro Sit,134400 >>Asseyez-vous 
     .timer 59,Durée jusqu'à la complétion 1
 step << Alliance
     .aura -1289723
@@ -1951,7 +1951,7 @@ step
     *|cRXP_WARN_Ne vous déplacez pas et ne sautez pas jusqu'à ce que la quête soit terminée|r.
     .complete 96101,2 --Gain the Boosted Rest buff
     .timer 59,Durée jusqu'à la complétion 2
-    .macro Sit,134400 >>Asseyez-vous
+    .macro Sit,134400 >>Asseyez-vous 
 step << Alliance
     .train 3273,3 -- First Aid Trained
     .itemcount 2589,1 -- Linen Cloth

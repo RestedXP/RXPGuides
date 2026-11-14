@@ -116,7 +116,7 @@ step << Druid
 step << Druid
     #completewith next
     .goto 1438/1,965.7958,8780.9475
-    .zone Darnassus >> Prenez le portail violet pour Darnassus
+    .zone Darnassus >> Prenez le portail violet vers Darnassus
 step << Druid
 	.goto 1457/1,2563.92,10179.040
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Mathrengyl Bearwalker|r
@@ -847,7 +847,7 @@ step
     .isOnQuest 92909
     #completewith bennytime
     >>Tuez les |cRXP_ENEMY_Gardiens des moissons|r dans les champs quand vous passez à côté
-    >>Récoltez-les pour le Butin: |cRXP_LOOT_Okra|r, |cRXP_LOOT_Flasks of Oil|r, |cRXP_LOOT_Golem Isosprings|r et |cRXP_LOOT_Harvester Gyrostabilizers|r
+    >>Dépouillez-les pour leur: |cRXP_LOOT_Okra|r, |cRXP_LOOT_Flasque d'huile|r, |cRXP_LOOT_Isoressort de golem|r et leur |cRXP_LOOT_Gyrostabiliseurs de moissonneur|r
     .mob Harvest Watcher
     .complete 9,1 --Havest Watcher slain (20)
     .collect 732,3,38,1 --Okra (3)
@@ -857,7 +857,7 @@ step
 step
     .goto 1436/0,1748.27,-10672.13
     >>Ouvrez le |cRXP_PICK_Coffre d'Alexston|r. Dépouillez-le pour |cRXP_LOOT_Une simple boussole|r
-    >>|cRXP_WARN_Évitez les mobs devant le bâtiment brûlé. Ramassez-le à l'arrière, à côté de la cheminée. Utilisez la cheminée pour LoS les sorts de |cRXP_ENEMY_Pillagers|r si nécessaire|r
+    >>|cRXP_WARN_Évitez les mobs devant le bâtiment brûlé. Ramassez-le en restant en arrière, à côté de la cheminée. Utilisez la cheminée pour vous cacher (LoS) des sorts des |cRXP_ENEMY_Pilleurs|r si vous en avez besoin|r
     .complete 399,1 --A Simple Compass (1)
     .isOnQuest 399
 step
@@ -910,7 +910,7 @@ step
     .goto 1436/0,1192.12,-9641.73
     .goto 1436/0,1042.67,-9619.33,0
     >>Tuez les |cRXP_ENEMY_Ecumeurs murlocs|r et les |cRXP_ENEMY_Cours-la-côtes murlocs|r. Dépouillez-les pour leur |cRXP_LOOT_Oeil|r et leurs |cRXP_LOOT_Branchies|r
-    >>|cRXP_WARN_Si vous n'avez pas beaucoup de |cRXP_LOOT_Gills|r au moment où vous aurez terminé |cRXP_LOOT_Les regards|r, passez cette étape|r
+    >>|cRXP_WARN_Si vous n'avez pas beaucoup de |cRXP_LOOT_Branchies|r au moment où vous aurez terminé |cRXP_LOOT_les yeux de murlocs|r, passez cette étape|r
     .collect 730,3,38,1 --Murloc Eye (3)
     .complete 92744,1 -- Longshore Murloc Gills 7/7
     .mob Murloc Raider
@@ -1012,7 +1012,7 @@ step
     #optional
     #completewith HarvestW
     .isOnQuest 92909
-    >>Ramassez les |cRXP_ENEMY_Golem Isosprings|r et les |cRXP_LOOT_Harvester Gyrostabilizers|r sur les |cRXP_LOOT_Harvest Watchers|r
+    >>Dépouillez les |cRXP_ENEMY_Gardien des moissons|r pour leurs |cRXP_LOOT_Isoressorts de golem|r et leurs |cRXP_LOOT_Gyrostabiliseurs de moissonneur|r
     .complete 92909,1 -- Golem Isosprings (14)
     .complete 92909,2 -- Harvester Gyrostabilizer (5)
 step
@@ -1059,7 +1059,7 @@ step
     .goto 1436/0,1132.27,-10146.67,60,0
     .goto 1436/0,1460.22,-10224.83,60,0
     .goto 1436/0,1238.67,-9907.73
-    >>Tuez les |cRXP_ENEMY_Harvest Watchers|r. Ramassez-les pour leurs |cRXP_LOOT_Golem Isosprings|r et |cRXP_LOOT_Harvester Gyrostabilizers|r
+    >>Tuez les |cRXP_ENEMY_Gardiens des moissons|r. Dépouillez-les pour leurs |cRXP_LOOT_Isoressorts de golem|r et leurs |cRXP_LOOT_Gyrostabiliseurs de moissonneur|r
     .complete 92909,1 -- Golem Isosprings (14)
     .complete 92909,2 -- Harvester Gyrostabilizer (5)
     .mob Harvest Watcher
@@ -2296,7 +2296,7 @@ step << Druid
     #label DruidLesson
     #completewith TotL
     .goto 1438/1,965.80,8780.95
-    .zone Darnassus >> Prenez le portail violet pour Darnassus
+    .zone Darnassus >> Prenez le portail violet vers Darnassus
 step << Druid
     .goto 1457/1,2563.98,10179.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Mathrengyl Bearwalker|r
@@ -3227,7 +3227,7 @@ step << Rogue
     .subzone 97 >> Voyagez vers La scierie d'Alther
 step << Rogue
     .goto 1433/0,-2696.32,-9228.24--c:1433,51.846,45.116
-    >>Vous DEVEZ le faire pour votre quête de [Poisons] plus tard
+    >>Vous DEVEZ le faire pour votre de quête de [Poisons] plus tard
     >>|cRXP_WARN_Restez sur la location du point de repère. Positionnez votre caméra et votre curseur jusqu'à ce que vous puissiez cliquer sur 3 |cRXP_PICK_Practice Lockboxes|r en même temps et sans avoir à bouger|r
     .skill lockpicking,80 >>|cRXP_WARN_Ouvrez les |cRXP_PICK_Practice Lockboxes|r sur le sol dans la scierie d'Alther jusqu'à ce que votre score de|r [Crochetage] soit de 80|r
 step << Rogue
@@ -3662,7 +3662,7 @@ step << !Dwarf Rogue
     >>Tuez les |cRXP_ENEMY_Araignées Tisse-venin pygmées|r et les |cRXP_ENEMY_Araignées Tisse-venins|r. Dépouillez-les pour une |cRXP_LOOT_Petite glande à venin|r et leurs |cRXP_LOOT_Pattes d'araignée fondantes|r
     >>|cRXP_WARN_Vous avez besoin d'une |cRXP_LOOT_Petite glande à venin|r pour créer un|r |T134437:0|t[Anti-venin]|cRXP_WARN_ pour enlever le debuff|r |T136230:0|t[Toucher de Zanzil]|cRXP_WARN_ plus tard|r
     >>|cRXP_WARN_Gardez les |cRXP_LOOT_Pattes d'araignée fondantes|r plus tard|r
-    >>|cRXP_WARN_Si vous avez un|r |T626003:0|t|cFFF48CBAPaladin|r|cRXP_WARN_,|r |T625999:0|t|cFFFF7C0ADruide|r |cRXP_WARN_ou|r |T626006:0|t|cFF0070DDChaman|r |cRXP_WARN_ami, vous pouvez sauter cette étape et leur demander de le retirer pour vous|r
+    >>|cRXP_WARN_Si vous avez un|r |T626003:0|t|cFFF48CBALa Confrérie défias|r|cRXP_WARN_,|r |T625999:0|t|cFFFF7C0ADruide|r |cRXP_WARN_ou un|r |T626006:0|t|cFF0070DDChaman|r |cRXP_WARN_ami, vous pouvez passer cette étape et leur demander de le retirer pour vous|r
     .collect 1475,1,2359,1 -- Small Venom Sac (1)
     .collect 2251,6,93,1,1 -- Gooey Spider Legs (6)
     .disablecheckbox
@@ -3695,7 +3695,7 @@ step << Rogue
     >>|T133644:0|tUtilisez [Vol à la tire] sur le |cRXP_ENEMY_Malformed Defias Drone|r. Volez-lui la |cRXP_LOOT_Defias Tower Key|r
     >>Vous devez être en [Camouflage] pour utiliser [Vol à la tire]
     >>|cRXP_WARN_Le |cRXP_ENEMY_Malformed Defias Drone|r apparaissent à l'entrée de la tour, puis font le tour de celle-ci|r
-    >>Faites attention car il fait BEAUCOUP de dégâts. Si vous perdez votre [Camouflage], utilisez vite votre [Sprint] pour vous enfuir
+    >>Faites attention, il tape TRÈS fort. Si vous perdez votre [Camouflage], utilisez rapidement votre [Sprint] et enfuyez-vous
     .complete 2359,2 --Collect Defias Tower Key (x1)
     .link https://www.youtube.com/watch?v=5sIew15IcG0 >> Cliquez ICI pour un guide vidéo
     .mob Malformed Defias Drone
@@ -3765,15 +3765,15 @@ step << !Dwarf Rogue
     #requires AntiVenomEnd
     .goto 1453/0,801.99,-8513.29--c:1453,43.070,26.155
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Shaina Fuller|r
-    >>|cRXP_WARN_Si vous avez un|r |T626003:0|t|cFFF48CBAPaladin|r|cRXP_WARN_,|r |T625999:0|t|cFFFF7C0ADruide|r |cRXP_WARN_ou|r |T626006:0|t|cFF0070DDChaman|r |cRXP_WARN_ami, demandez-leur de retirer le|r |T136230:0|t[Toucher de Zanzil] |cRXP_WARN_pour vous à la place|r
-    .skill firstaid,80 >> Montez vos [Premier soins] à un niveau de compétence de 80
+    >>|cRXP_WARN_Si vous avez un|r |T626003:0|t|cFFF48CBALa Confrérie défias|r|cRXP_WARN_,|r |T625999:0|t|cFFFF7C0ADruide|r |cRXP_WARN_ou un|r |T626006:0|t|cFF0070DDChaman|r |cRXP_WARN_ami, demandez-lui de retirer le|r |T136230:0|t[Toucher de Zanzil] |cRXP_WARN_pour vous à la place|r
+    .skill firstaid,80 >> Montez votre niveau de compétence en [Premiers soins] jusqu'à 80
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
 step << !Dwarf Rogue
     #label FirstAidEnd
     .goto 1453/0,801.99,-8513.29--c:1453,43.070,26.155
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Shaina Fuller|r
-    >>|cRXP_WARN_Si vous avez un|r |T626003:0|t|cFFF48CBAPaladin|r|cRXP_WARN_,|r |T625999:0|t|cFFFF7C0ADruide|r |cRXP_WARN_ou|r |T626006:0|t|cFF0070DDChaman|r |cRXP_WARN_ami, demandez-leur de retirer le|r |T136230:0|t[Toucher de Zanzil] |cRXP_WARN_pour vous à la place|r
+    >>|cRXP_WARN_Si vous avez un|r |T626003:0|t|cFFF48CBALa Confrérie défias|r|cRXP_WARN_,|r |T625999:0|t|cFFFF7C0ADruide|r |cRXP_WARN_ou un|r |T626006:0|t|cFF0070DDChaman|r |cRXP_WARN_ami, demandez-lui de retirer le|r |T136230:0|t[Toucher de Zanzil] |cRXP_WARN_pour vous à la place|r
     .train 7934 >> Apprenez [Anti-Venin]
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
@@ -3977,7 +3977,7 @@ step << NightElf !Druid
     #optional
     #completewith next
     .goto 1438/1,965.80,8780.95
-    .zone Darnassus >> Prenez le portail violet pour Darnassus
+    .zone Darnassus >> Prenez le portail violet vers Darnassus
 step << Druid
     #label catspirit1
     .goto 1457/1,2564.600,10179.800
