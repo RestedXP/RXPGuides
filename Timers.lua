@@ -186,6 +186,35 @@ local nodeHash = {}
 flightInfo.nodeHash = nodeHash
 local flightUpdate = 0
 
+-- LibCandyBar recycles a bar into its shared pool (used by every addon embedding
+-- the library) when the bar expires or is stopped. Forget the bar everywhere so
+-- it's never reused from barPool or BarContainer.bars after that.
+candy.RegisterCallback(BarContainer, "LibCandyBar_Stop", function(_, stoppedBar)
+    for i = #barPool, 1, -1 do
+        if barPool[i] == stoppedBar then
+            table.remove(barPool, i)
+        end
+    end
+    local wasListed
+    for label, bar in pairs(BarContainer.bars) do
+        if bar == stoppedBar then
+            BarContainer.bars[label] = nil
+            wasListed = true
+        end
+    end
+    if flightInfo.flightBar == stoppedBar then
+        flightInfo.flightBar = nil
+    end
+    if wasListed then
+        addon:SortTimers()
+        if not next(BarContainer.bars) then
+            RXPFrame.Footer.icon:SetAlpha(1)
+            RXPFrame.Footer.text:SetAlpha(1)
+            RXPFrame.Footer.cog:SetAlpha(1)
+        end
+    end
+end)
+
 function addon:TAXIMAP_OPENED()
     local mapID = C_Map.GetBestMapForUnit("player")
     local cTime = GetTime()
