@@ -27,6 +27,11 @@ addon.FPDB = {
         [3242] = {
             ["name"] = "Tainted Foothills, Mount Hyjal",
             [53] = 83,
+            [559] = 38,
+        },
+        [559] = {
+            ["name"]="Summit of Eternity, Mount Hyjal",
+            [3242] = 38,
         },
         [30] = {
             [61] = 356,
@@ -664,6 +669,11 @@ addon.FPDB = {
         [3242] = {
             ["name"] = "Tainted Foothills, Mount Hyjal",
             [52] = 83,
+            [559] = 38,
+        },
+        [559] = {
+            ["name"]="Summit of Eternity, Mount Hyjal",
+            [3242] = 38,
         },
         [66] = {
             [7] = 193,

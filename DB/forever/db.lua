@@ -144,9 +144,9 @@ local dungeonList = {
     ["ROL"] = 153,--Ruins of lordaeron
     ["ES"] = 16732,--Excavation site
     ["COD"] = 16544,--City of dalaran
-    ["TDC"] = 17853,--The Drowned city
+    ["TDC"] = 16550,--The Drowned city
     ["KS"] = 17780,--Krol'dok stronghold
-    ["AP"] = 2079,--Alcaz Prison
+    ["AP"] = 16620,--Alcaz Prison
     ["BH"] = 1216,--Blackmaw Hold
     ["TST"] = 16985,--The shaper's terrace
 }
