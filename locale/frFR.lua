@@ -268,9 +268,9 @@ L["RXP MoP 1-60 (H)"] = "RXP MoP 1-60 (H)"
 -- DB\tbc\db.lua file
 
 L["RestedXP TBC Guide (H)"] = "RestedXP Guide TBC (H)"
-L["RXP TBC Survival Guide (H)"] = "RXP Guide TBC Survie (H)"
+L["RXP TBC Survival Guide (H)"] = "RXP TBC Guide de Survie (H)"
 L["RestedXP TBC Guide (A)"] = "RestedXP Guide TBC (A)"
-L["RXP TBC Survival Guide (A)"] = "RXP Guide TBC Survie (A)"
+L["RXP TBC Survival Guide (A)"] = "RXP TBC Guide de Survie (A)"
 
 -- DB\wotlk\db.lua file
 
