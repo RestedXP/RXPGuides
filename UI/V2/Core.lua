@@ -82,22 +82,6 @@ function addon.ui.v2:RegisterRXPV2CommsWindow()
     local Type, Version = "RXPV2CommsWindow", 1
     if not AceGUI or (AceGUI:GetWidgetVersion(Type) or 0) >= Version then return end
 
-    local function frame_OnShow(frame) frame.obj:Fire("OnShow") end
-
-    local function frame_OnHide(frame) frame.obj:Fire("OnClose") end
-
-    local function frame_OnMouseDown() AceGUI:ClearFocus() end
-
-    local function frame_OnDragStart(frame) frame:StartMoving() end
-
-    local function frame_OnDragStop(frame)
-        frame:StopMovingOrSizing()
-        local widget = frame.obj
-        local status = widget.status or widget.localstatus
-        status.top = frame:GetTop()
-        status.left = frame:GetLeft()
-    end
-
     local methods = {
         ["OnAcquire"] = function(this)
             this.frame:SetParent(UIParent)
@@ -182,12 +166,18 @@ function addon.ui.v2:RegisterRXPV2CommsWindow()
         frame:SetFrameLevel(200)
         frame:SetSize(360, 200)
         frame:SetToplevel(true)
-        frame:SetScript("OnShow", frame_OnShow)
-        frame:SetScript("OnHide", frame_OnHide)
-        frame:SetScript("OnMouseDown", frame_OnMouseDown)
+        frame:SetScript("OnShow", function(this) this.obj:Fire("OnShow") end)
+        frame:SetScript("OnHide", function(this) this.obj:Fire("OnClose") end)
+        frame:SetScript("OnMouseDown", function() AceGUI:ClearFocus() end)
         frame:RegisterForDrag("LeftButton")
-        frame:SetScript("OnDragStart", frame_OnDragStart)
-        frame:SetScript("OnDragStop", frame_OnDragStop)
+        frame:SetScript("OnDragStart", function(this) this:StartMoving() end)
+        frame:SetScript("OnDragStop", function(this)
+            this:StopMovingOrSizing()
+            local widget = this.obj
+            local status = widget.status or widget.localstatus
+            status.top = this:GetTop()
+            status.left = this:GetLeft()
+        end)
 
         if frame.SetResizeBounds then
             frame:SetResizeBounds(265, 105)
@@ -612,44 +602,6 @@ function addon.ui.v2:RegisterRXPV2CommsEditBox()
                                   this.submitButton.frame:IsShown() and 28 or 0)
     end
 
-    local function onVerticalScroll(scrollFrame, offset)
-        local widget = scrollFrame.obj
-        local editBox = widget.editBox
-        editBox:SetHitRectInsets(0, 0, offset, editBox:GetHeight() - offset - scrollFrame:GetHeight())
-        widget.scrollbar:SetValue(offset)
-    end
-
-    local function onScrollRangeChanged(scrollFrame, _, range)
-        local widget = scrollFrame.obj
-        local scrollbar = widget.scrollbar
-        range = max(range or 0, 0)
-
-        if widget.scrollRange ~= range then
-            widget.scrollRange = range
-            local showScrollbar = range > 0
-            if scrollbar:IsShown() ~= showScrollbar then
-                scrollbar:SetShown(showScrollbar)
-                updateEditBoxLayout(widget)
-            end
-        end
-
-        scrollbar:SetMinMaxValues(0, range)
-        if scrollFrame:GetVerticalScroll() > range then scrollFrame:SetVerticalScroll(range) end
-        scrollbar:SetValue(scrollFrame:GetVerticalScroll())
-    end
-
-    local function onCursorChanged(editBox, _, y, _, cursorHeight)
-        local scrollFrame = editBox.obj.scrollFrame
-        y = -y
-        local offset = scrollFrame:GetVerticalScroll()
-        if y < offset then
-            scrollFrame:SetVerticalScroll(y)
-        else
-            y = y + (cursorHeight or 0) - scrollFrame:GetHeight()
-            if y > offset then scrollFrame:SetVerticalScroll(y) end
-        end
-    end
-
     local methods = {
         ["OnAcquire"] = function(this)
             this.readOnly = false
@@ -818,7 +770,17 @@ function addon.ui.v2:RegisterRXPV2CommsEditBox()
             this.obj:Fire("OnEditFocusGained")
         end)
         editBox:SetScript("OnEscapePressed", function(this) this:ClearFocus() end)
-        editBox:SetScript("OnCursorChanged", onCursorChanged)
+        editBox:SetScript("OnCursorChanged", function(this, _, y, _, cursorHeight)
+            local scrollFrame = this.obj.scrollFrame
+            y = -y
+            local offset = scrollFrame:GetVerticalScroll()
+            if y < offset then
+                scrollFrame:SetVerticalScroll(y)
+            else
+                y = y + (cursorHeight or 0) - scrollFrame:GetHeight()
+                if y > offset then scrollFrame:SetVerticalScroll(y) end
+            end
+        end)
         scrollFrame:SetScript("OnMouseWheel", function(this, delta)
             local widget = this.obj
             local nextScroll = this:GetVerticalScroll() - delta * 24
@@ -829,8 +791,30 @@ function addon.ui.v2:RegisterRXPV2CommsEditBox()
         scrollFrame:SetScript("OnSizeChanged", function(this, width)
             this.obj.editBox:SetWidth(width)
         end)
-        scrollFrame:HookScript("OnVerticalScroll", onVerticalScroll)
-        scrollFrame:HookScript("OnScrollRangeChanged", onScrollRangeChanged)
+        scrollFrame:HookScript("OnVerticalScroll", function(this, offset)
+            local widget = this.obj
+            local editBox = widget.editBox
+            editBox:SetHitRectInsets(0, 0, offset, editBox:GetHeight() - offset - this:GetHeight())
+            widget.scrollbar:SetValue(offset)
+        end)
+        scrollFrame:HookScript("OnScrollRangeChanged", function(this, _, range)
+            local widget = this.obj
+            local scrollbar = widget.scrollbar
+            range = max(range or 0, 0)
+
+            if widget.scrollRange ~= range then
+                widget.scrollRange = range
+                local showScrollbar = range > 0
+                if scrollbar:IsShown() ~= showScrollbar then
+                    scrollbar:SetShown(showScrollbar)
+                    updateEditBoxLayout(widget)
+                end
+            end
+
+            scrollbar:SetMinMaxValues(0, range)
+            if this:GetVerticalScroll() > range then this:SetVerticalScroll(range) end
+            scrollbar:SetValue(this:GetVerticalScroll())
+        end)
         return AceGUI:RegisterAsWidget(widget)
     end
 
@@ -936,26 +920,6 @@ function addon.ui.v2:RegisterRXPV2Popup()
     if not AceGUI or (AceGUI:GetWidgetVersion(Type) or 0) >= Version then
 
         return
-    end
-
-    local function frame_OnHide(frame)
-        frame.obj:Fire("OnClose")
-    end
-
-    local function frame_OnMouseDown()
-        AceGUI:ClearFocus()
-    end
-
-    local function frame_OnDragStart(frame)
-        frame:StartMoving()
-    end
-
-    local function frame_OnDragStop(frame)
-        frame:StopMovingOrSizing()
-        local widget = frame.obj
-        local status = widget.status or widget.localstatus
-        status.top = frame:GetTop()
-        status.left = frame:GetLeft()
     end
 
     local methods = {
@@ -1069,11 +1033,17 @@ function addon.ui.v2:RegisterRXPV2Popup()
         frame:SetFrameLevel(200)
         frame:SetSize(320, 126)
         frame:SetToplevel(true)
-        frame:SetScript("OnHide", frame_OnHide)
-        frame:SetScript("OnMouseDown", frame_OnMouseDown)
+        frame:SetScript("OnHide", function(this) this.obj:Fire("OnClose") end)
+        frame:SetScript("OnMouseDown", function() AceGUI:ClearFocus() end)
         frame:RegisterForDrag("LeftButton")
-        frame:SetScript("OnDragStart", frame_OnDragStart)
-        frame:SetScript("OnDragStop", frame_OnDragStop)
+        frame:SetScript("OnDragStart", function(this) this:StartMoving() end)
+        frame:SetScript("OnDragStop", function(this)
+            this:StopMovingOrSizing()
+            local widget = this.obj
+            local status = widget.status or widget.localstatus
+            status.top = this:GetTop()
+            status.left = this:GetLeft()
+        end)
 
         local closebutton = CreateFrame("Button", nil, frame)
         closebutton:SetFrameLevel(frame:GetFrameLevel() + 3)
@@ -2604,12 +2574,6 @@ function addon.ui.v2:RegisterRXPV2ScrollFrame()
     --[[-----------------------------------------------------------------------------
     Scripts
     -------------------------------------------------------------------------------]]
-    local function ScrollFrame_OnMouseWheel(frame, value) frame.obj:MoveScroll(value) end
-
-    local function ScrollFrame_OnSizeChanged(frame) frame:SetScript("OnUpdate", FixScrollOnUpdate) end
-
-    local function ScrollBar_OnScrollValueChanged(frame, value) frame.obj:SetScroll(value) end
-
     --[[-----------------------------------------------------------------------------
     Methods
     -------------------------------------------------------------------------------]]
@@ -2806,8 +2770,10 @@ function addon.ui.v2:RegisterRXPV2ScrollFrame()
         scrollframe:SetPoint("TOPLEFT")
         scrollframe:SetPoint("BOTTOMRIGHT")
         scrollframe:EnableMouseWheel(true)
-        scrollframe:SetScript("OnMouseWheel", ScrollFrame_OnMouseWheel)
-        scrollframe:SetScript("OnSizeChanged", ScrollFrame_OnSizeChanged)
+        scrollframe:SetScript("OnMouseWheel", function(this, value) this.obj:MoveScroll(value) end)
+        scrollframe:SetScript("OnSizeChanged", function(this)
+            this:SetScript("OnUpdate", FixScrollOnUpdate)
+        end)
 
         local scrollbar = CreateFrame("Slider", ("RXPV2ScrollFrame%dScrollBar"):format(num), scrollframe,
                                       "RXPV2ScrollBarTemplate")
@@ -2822,7 +2788,7 @@ function addon.ui.v2:RegisterRXPV2ScrollFrame()
         scrollbar:Hide()
 
         -- set the script as the last step, so it doesn't fire yet
-        scrollbar:SetScript("OnValueChanged", ScrollBar_OnScrollValueChanged)
+        scrollbar:SetScript("OnValueChanged", function(this, value) this.obj:SetScroll(value) end)
 
         local scrollbg = scrollbar:CreateTexture(nil, "BACKGROUND")
         scrollbg:SetAllPoints(scrollbar)
@@ -2862,13 +2828,6 @@ function addon.ui.v2:RegisterRXPV2ActiveStepsFrame()
     -------------------------------------------------------------------------------]]
     local Type, Version = "RXPV2ActiveStepsFrame", 4
     if not AceGUI or (AceGUI:GetWidgetVersion(Type) or 0) >= Version then return end
-
-    --[[-----------------------------------------------------------------------------
-    Scripts
-    -------------------------------------------------------------------------------]]
-    local function Frame_OnShow(frame) frame.obj:Fire("OnShow") end
-
-    local function Frame_OnClose(frame) frame.obj:Fire("OnClose") end
 
     --[[-----------------------------------------------------------------------------
     Methods
@@ -2924,8 +2883,8 @@ function addon.ui.v2:RegisterRXPV2ActiveStepsFrame()
         frame:SetFrameStrata("LOW")
         frame:SetFrameLevel(100)
 
-        frame:SetScript("OnShow", Frame_OnShow)
-        frame:SetScript("OnHide", Frame_OnClose)
+        frame:SetScript("OnShow", function(this) this.obj:Fire("OnShow") end)
+        frame:SetScript("OnHide", function(this) this.obj:Fire("OnClose") end)
 
         -- Container Support
         local content = CreateFrame("Frame", nil, frame)
@@ -2952,18 +2911,6 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
 
     local tabHeight, activeTabHeight = 22, 24
 
-    --[[-----------------------------------------------------------------------------
-    Scripts
-    -------------------------------------------------------------------------------]]
-    local function Frame_OnShow(frame) frame.obj:Fire("OnShow") end
-
-    local function Frame_OnClose(frame) frame.obj:Fire("OnClose") end
-
-    local function Frame_OnMouseDown(frame)
-        frame:StartMoving()
-        AceGUI:ClearFocus()
-    end
-
     local function SaveFrameStatus(frame)
         frame:StopMovingOrSizing()
 
@@ -2976,67 +2923,6 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
         status.left = frame:GetLeft()
 
         addon.settings:SaveFramePositions()
-    end
-
-    local function Frame_OnMouseUp(frame)
-        SaveFrameStatus(frame)
-        AceGUI:ClearFocus()
-    end
-
-    local function MoverSizer_OnMouseUp(mover) SaveFrameStatus(mover:GetParent()) end
-
-    local function Sizer_OnMouseDown(frame)
-        local this = frame:GetParent().obj
-
-        if this.autoSize then
-            this.autoSize = false
-            addon.settings.profile.activePartyStepsV2AutoSize = false
-        end
-
-        this.frame:StartSizing("BOTTOMRIGHT")
-
-        AceGUI:ClearFocus()
-    end
-
-    local function Tab_OnClick(tab, button)
-        local this = tab:GetParent().obj
-
-        if button == "RightButton" then
-            this:Fire("OnMenuRequested")
-
-            return
-        end
-
-        this:SetActiveTab(tab.rxpPlayer)
-        this:Fire("OnTabSelected", tab.rxpPlayer)
-    end
-
-    local function Tab_OnMouseDown(tab, button)
-        if button == "RightButton" then return end
-
-        tab:GetParent():StartMoving()
-
-        AceGUI:ClearFocus()
-    end
-
-    local function Tab_OnEnter(tab)
-        if tab.rxpHighlight then tab.rxpHighlight:Show() end
-    end
-
-    local function Tab_OnLeave(tab)
-        if tab.rxpHighlight then tab.rxpHighlight:Hide() end
-    end
-
-    local function CloseButton_OnClick(button, mouseButton)
-        local widget = button:GetParent().obj
-
-        if mouseButton == "RightButton" then
-            widget:Fire("OnMenuRequested")
-            return
-        end
-
-        widget:Fire("OnCloseClicked")
-        widget:Hide()
     end
 
     --[[-----------------------------------------------------------------------------
@@ -3207,11 +3093,30 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
                     tab:SetFrameLevel(this.frame:GetFrameLevel() + 2)
                     tab:EnableMouse(true)
                     tab:RegisterForClicks("LeftButtonUp", "RightButtonUp")
-                    tab:SetScript("OnClick", Tab_OnClick)
-                    tab:SetScript("OnMouseDown", Tab_OnMouseDown)
-                    tab:SetScript("OnMouseUp", MoverSizer_OnMouseUp)
-                    tab:SetScript("OnEnter", Tab_OnEnter)
-                    tab:SetScript("OnLeave", Tab_OnLeave)
+                    tab:SetScript("OnClick", function(this, button)
+                        local widget = this:GetParent().obj
+
+                        if button == "RightButton" then
+                            widget:Fire("OnMenuRequested")
+                            return
+                        end
+
+                        widget:SetActiveTab(this.rxpPlayer)
+                        widget:Fire("OnTabSelected", this.rxpPlayer)
+                    end)
+                    tab:SetScript("OnMouseDown", function(this, button)
+                        if button == "RightButton" then return end
+
+                        this:GetParent():StartMoving()
+                        AceGUI:ClearFocus()
+                    end)
+                    tab:SetScript("OnMouseUp", function(this) SaveFrameStatus(this:GetParent()) end)
+                    tab:SetScript("OnEnter", function(this)
+                        if this.rxpHighlight then this.rxpHighlight:Show() end
+                    end)
+                    tab:SetScript("OnLeave", function(this)
+                        if this.rxpHighlight then this.rxpHighlight:Hide() end
+                    end)
 
                     tab.text = tab:CreateFontString(nil, "OVERLAY")
                     tab.text:SetFont(addon.v2:GetTheme().font, 12, "")
@@ -3340,10 +3245,16 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
         end
 
         frame:SetToplevel(true)
-        frame:SetScript("OnShow", Frame_OnShow)
-        frame:SetScript("OnHide", Frame_OnClose)
-        frame:SetScript("OnMouseDown", Frame_OnMouseDown)
-        frame:SetScript("OnMouseUp", Frame_OnMouseUp)
+        frame:SetScript("OnShow", function(this) this.obj:Fire("OnShow") end)
+        frame:SetScript("OnHide", function(this) this.obj:Fire("OnClose") end)
+        frame:SetScript("OnMouseDown", function(this)
+            this:StartMoving()
+            AceGUI:ClearFocus()
+        end)
+        frame:SetScript("OnMouseUp", function(this)
+            SaveFrameStatus(this)
+            AceGUI:ClearFocus()
+        end)
 
         local closebutton = CreateFrame("Button", nil, frame)
         closebutton:SetFrameLevel(frame:GetFrameLevel() + 20)
@@ -3353,7 +3264,17 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
         closebutton:SetPushedTexture(addon.ui.v2:GetTexture("rxp-btn-close"))
         closebutton:SetHighlightTexture(addon.ui.v2:GetTexture("rxp-btn-close"), "ADD")
         closebutton:RegisterForClicks("LeftButtonUp", "RightButtonUp")
-        closebutton:SetScript("OnClick", CloseButton_OnClick)
+        closebutton:SetScript("OnClick", function(this, mouseButton)
+            local widget = this:GetParent().obj
+
+            if mouseButton == "RightButton" then
+                widget:Fire("OnMenuRequested")
+                return
+            end
+
+            widget:Fire("OnCloseClicked")
+            widget:Hide()
+        end)
 
         local footer = CreateFrame("Frame", nil, frame)
         footer:SetPoint("BOTTOMLEFT", frame, "BOTTOMLEFT", 1, 1)
@@ -3380,8 +3301,18 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
         sizer:SetNormalTexture("Interface/CHATFRAME/UI-ChatIM-SizeGrabber-Up")
         sizer:SetHighlightTexture("Interface/CHATFRAME/UI-ChatIM-SizeGrabber-Highlight", "ADD")
         sizer:EnableMouse(true)
-        sizer:SetScript("OnMouseDown", Sizer_OnMouseDown)
-        sizer:SetScript("OnMouseUp", MoverSizer_OnMouseUp)
+        sizer:SetScript("OnMouseDown", function(this)
+            local widget = this:GetParent().obj
+
+            if widget.autoSize then
+                widget.autoSize = false
+                addon.settings.profile.activePartyStepsV2AutoSize = false
+            end
+
+            widget.frame:StartSizing("BOTTOMRIGHT")
+            AceGUI:ClearFocus()
+        end)
+        sizer:SetScript("OnMouseUp", function(this) SaveFrameStatus(this:GetParent()) end)
 
         -- Container Support
         local content = CreateFrame("Frame", nil, frame, BackdropTemplateMixin and "BackdropTemplate")
