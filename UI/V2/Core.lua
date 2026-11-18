@@ -274,6 +274,7 @@ function addon.ui.v2:RegisterRXPV2CommsText()
             this.flags = nil
             this.fontSize = 9
             this.wordWrap = true
+            this.frame:SetAlpha(1)
             this.text:SetJustifyH("LEFT")
             this.text:SetJustifyV("TOP")
             this:UpdateSubTheme()

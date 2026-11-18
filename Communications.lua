@@ -758,27 +758,49 @@ function addon.comms.OpenBrandedExport(title, description, content, width, heigh
 end
 
 function addon.comms.OpenSupport()
-    local theme = addon.v2:GetTheme()
-    local f = addon.comms.CreateWindow(L("RestedXP Info & Support"), 410, 250)
-    f:SetLayout("List")
+    local f = addon.comms.CreateWindow(L("RestedXP Info & Support"), 410)
+    f:SetLayout("RXPV2CommsWindow")
     f:EnableResize(false)
 
-    local function addText(text, fontSize)
-        local label = AceGUI:Create("RXPV2CommsText")
-        label:SetText(text)
-        label:SetFontSize(fontSize)
-        label:SetColor(theme.textColor.common)
-        label:SetFullWidth(true)
-        f:AddChild(label)
+    local content = AceGUI:Create("SimpleGroup")
+    content:SetLayout("Table")
+    content:SetUserData("table", {columns = {1}, spaceV = 10})
+    content:SetWidth(f.content:GetWidth() - 16)
+    f:AddChild(content)
+    content.frame:SetPoint("TOPLEFT", f.content, "TOPLEFT", 8, -6)
+
+    local function addSection(title, description)
+        local section = AceGUI:Create("SimpleGroup")
+        section:SetLayout("Table")
+        section:SetUserData("table", {columns = {1}, spaceV = 4})
+        section:SetWidth(content.frame:GetWidth())
+        section:SetFullWidth(true)
+
+        local heading = AceGUI:Create("RXPV2CommsText")
+        heading:SetWidth(section.frame:GetWidth())
+        heading:SetFontSize(10)
+        heading:SetText(title)
+        heading:SetFullWidth(true)
+
+        local paragraph = AceGUI:Create("RXPV2CommsText")
+        paragraph:SetWidth(section.frame:GetWidth())
+        paragraph:SetText(description)
+        paragraph:SetFullWidth(true)
+        paragraph.frame:SetAlpha(0.72)
+
+        section:AddChildren(heading, paragraph)
+        content:AddChild(section)
     end
 
-    addText(L("Welcome to RestedXP"), 10)
-    addText(L("The RestedXP Addon is your fastest way to level in World of Warcraft and works with every expansion. Follow optimized routes built by top players and enjoy a smoother, faster leveling experience from start to finish."), 9)
-    addText(L("Need help?"), 10)
-    addText(L("If you need assistance with our addon or guides, please contact us. For quick help, visit our Discord server and use the “Ask a Question” channel in our support category. You can also find our contact details there."), 9)
-    addText(L("Report a bug"), 10)
-    addText(L("Help us improve our addon and guides! If you find a bug, please report it in our Discord under the support category. The bug report channel contains instructions on how to submit a report. Your feedback helps us improve your experience."), 9)
+    addSection(L("Welcome to RestedXP"),
+               L("The RestedXP Addon is your fastest way to level in World of Warcraft and works with every expansion. Follow optimized routes built by top players and enjoy a smoother, faster leveling experience from start to finish."))
+    addSection(L("Need help?"),
+               L("If you need assistance with our addon or guides, please contact us. For quick help, visit our Discord server and use the “Ask a Question” channel in our support category. You can also find our contact details there."))
+    addSection(L("Report a bug"),
+               L("Help us improve our addon and guides! If you find a bug, please report it in our Discord under the support category. The bug report channel contains instructions on how to submit a report. Your feedback helps us improve your experience."))
 
+    -- Leave room for the header, content inset, and Discord footer.
+    f:SetHeight(f.frame:GetHeight() - f.content:GetHeight() + content.frame:GetHeight() + 40)
     addDiscordFooter(f)
 
     f:SetCallback("OnClose", function(widget) widget:Release() end)
