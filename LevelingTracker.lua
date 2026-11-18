@@ -952,7 +952,7 @@ function addon.tracker.splits:UpdateTheme()
     f.title:SetWidth(f.title.text:GetStringWidth() + 10)
 
     local fontSize = addon.settings.profile.levelSplitsFontSize
-    f.measureText:SetFontSize(fontSize)
+    f.measureText:SetFont(theme.font, fontSize, "")
     local guideGroupColor = {addon.settings:HexToRGB(addon.guideTextColors["RXP_WARN_"])}
     f.current:UpdateSubTheme()
     f.current:SetFontSize(fontSize)
