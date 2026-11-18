@@ -1888,7 +1888,7 @@ function addon.ui.v2:RegisterRXPV2GuideSteps()
         end,
 
         ["SetRows"] = function(this, rows, force, scrollToActive)
-            local previous, item, activeOffset, activeIndex, itemHeight, _, textChanged
+            local previous, item, activeOffset, activeIndex, itemHeight, textChanged
             local height = 0
 
             force = force or this.rowsWidth ~= this.scroll.scrollframe:GetWidth()
@@ -1917,7 +1917,7 @@ function addon.ui.v2:RegisterRXPV2GuideSteps()
 
                     item.frame:SetPoint("TOPRIGHT", this.content, "TOPRIGHT", 0, 0)
 
-                    _, textChanged = item:SetRow(row, force)
+                    textChanged = select(2, item:SetRow(row, force))
                     if textChanged or force then item:UpdateHeight() end
                     addon.ui.v2:SetFrameTopShadowShown(item.frame, previous ~= nil)
 
