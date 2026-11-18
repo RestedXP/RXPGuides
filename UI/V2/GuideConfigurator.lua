@@ -247,28 +247,6 @@ function addon.ui.v2.configurator:RegisterRXPV2GuideConfigurator()
         frame.obj:Hide()
     end
 
-    local function Frame_OnShow(frame) frame.obj:Fire("OnShow") end
-
-    local function Frame_OnClose(frame) frame.obj:Fire("OnClose") end
-
-    local function Frame_OnMouseDown() AceGUI:ClearFocus() end
-
-    local function Title_OnMouseDown(frame)
-        frame:GetParent():StartMoving()
-        AceGUI:ClearFocus()
-    end
-
-    local function Title_OnMouseUp(frame)
-        local parent = frame:GetParent()
-        parent:StopMovingOrSizing()
-        local widget = parent.obj
-        local status = widget.status or widget.localstatus
-
-        status.top = parent:GetTop()
-        status.left = parent:GetLeft()
-        addon.settings:SaveFramePositions()
-    end
-
     local methods = {
         ["OnAcquire"] = function(this)
             this.frame:SetParent(UIParent)
@@ -463,16 +441,28 @@ function addon.ui.v2.configurator:RegisterRXPV2GuideConfigurator()
         frame:SetFrameStrata("LOW")
         frame:SetFrameLevel(100)
         frame:SetToplevel(true)
-        frame:SetScript("OnShow", Frame_OnShow)
-        frame:SetScript("OnHide", Frame_OnClose)
-        frame:SetScript("OnMouseDown", Frame_OnMouseDown)
+        frame:SetScript("OnShow", function(this) this.obj:Fire("OnShow") end)
+        frame:SetScript("OnHide", function(this) this.obj:Fire("OnClose") end)
+        frame:SetScript("OnMouseDown", function() AceGUI:ClearFocus() end)
 
         local title = CreateFrame("Frame", nil, frame)
         title:SetPoint("TOPLEFT", frame, "TOPLEFT", 29, -1)
         title:SetPoint("BOTTOMRIGHT", frame, "TOPRIGHT", -14, -21)
         title:EnableMouse(true)
-        title:SetScript("OnMouseDown", Title_OnMouseDown)
-        title:SetScript("OnMouseUp", Title_OnMouseUp)
+        title:SetScript("OnMouseDown", function(this)
+            this:GetParent():StartMoving()
+            AceGUI:ClearFocus()
+        end)
+        title:SetScript("OnMouseUp", function(this)
+            local parent = this:GetParent()
+            parent:StopMovingOrSizing()
+            local widget = parent.obj
+            local status = widget.status or widget.localstatus
+
+            status.top = parent:GetTop()
+            status.left = parent:GetLeft()
+            addon.settings:SaveFramePositions()
+        end)
 
         local closebutton = CreateFrame("Button", nil, frame)
         closebutton:SetNormalTexture(addon.ui.v2:GetTexture("rxp-btn-close"))
@@ -571,35 +561,6 @@ function addon.ui.v2.configurator:RegisterRXPV2GuideConfiguratorOption()
 
     -- WoW APIs
     local CreateFrame, UIParent = CreateFrame, UIParent
-
-    local function Control_OnEnter(frame) frame.obj:Fire("OnEnter") end
-
-    local function Control_OnLeave(frame) frame.obj:Fire("OnLeave") end
-
-    local function CheckBox_OnMouseDown() AceGUI:ClearFocus() end
-
-    local function CheckBox_OnMouseUp(frame, button)
-        if button ~= "LeftButton" then return end
-
-        local this = frame.obj
-        if this.choiceCallback then
-            this.choiceCallback()
-
-            return
-        end
-
-        if this.toggleCallback then
-            this.toggleCallback(this.toggleArgument)
-
-            return
-        end
-
-        if not this.values then return end
-
-        this:ToggleChecked()
-
-        this:Fire("OnValueChanged", this:GetValue())
-    end
 
     local methods = {
         ["OnAcquire"] = function(this)
@@ -832,10 +793,31 @@ function addon.ui.v2.configurator:RegisterRXPV2GuideConfiguratorOption()
         local frame = CreateFrame("Button", nil, UIParent, BackdropTemplateMixin and "BackdropTemplate")
 
         frame:EnableMouse(true)
-        frame:SetScript("OnEnter", Control_OnEnter)
-        frame:SetScript("OnLeave", Control_OnLeave)
-        frame:SetScript("OnMouseDown", CheckBox_OnMouseDown)
-        frame:SetScript("OnMouseUp", CheckBox_OnMouseUp)
+        frame:SetScript("OnEnter", function(this) this.obj:Fire("OnEnter") end)
+        frame:SetScript("OnLeave", function(this) this.obj:Fire("OnLeave") end)
+        frame:SetScript("OnMouseDown", function() AceGUI:ClearFocus() end)
+        frame:SetScript("OnMouseUp", function(this, button)
+            if button ~= "LeftButton" then return end
+
+            local widget = this.obj
+            if widget.choiceCallback then
+                widget.choiceCallback()
+
+                return
+            end
+
+            if widget.toggleCallback then
+                widget.toggleCallback(widget.toggleArgument)
+
+                return
+            end
+
+            if not widget.values then return end
+
+            widget:ToggleChecked()
+
+            widget:Fire("OnValueChanged", widget:GetValue())
+        end)
 
         local image = frame:CreateTexture(nil, "OVERLAY")
         image:SetSize(40, 40)
@@ -1448,31 +1430,6 @@ function addon.ui.v2.configurator:CreateGuideConfigurator()
         self:ShowPage(firstPage, false)
     end
 
-    local function pageForward()
-        local page = self.pages[self.currentPage]
-
-        if page.next then
-            local nextPage = page.next()
-            if nextPage then
-                self:ShowPage(nextPage, true)
-                return
-            end
-        end
-
-        self:FinishFlow(true)
-    end
-
-    local function pageBackward()
-        local previousPage = table.remove(self.backStack)
-        if not previousPage then
-            configurator.Refresh()
-
-            return
-        end
-
-        self:ShowPage(previousPage, false)
-    end
-
     configurator.resetbutton:SetText(L("Clear All"))
     configurator.resetbutton:SetScript("OnClick", function()
         if addon.game ~= "FOREVER" then
@@ -1483,8 +1440,27 @@ function addon.ui.v2.configurator:CreateGuideConfigurator()
         end
     end)
 
-    configurator.backbutton:SetScript("OnClick", function(this) pageBackward() end)
-    configurator.submitbutton:SetScript("OnClick", function(this) pageForward() end)
+    configurator.backbutton:SetScript("OnClick", function()
+        local previousPage = table.remove(self.backStack)
+        if not previousPage then
+            configurator.Refresh()
+            return
+        end
+
+        self:ShowPage(previousPage, false)
+    end)
+    configurator.submitbutton:SetScript("OnClick", function()
+        local page = self.pages[self.currentPage]
+        if page.next then
+            local nextPage = page.next()
+            if nextPage then
+                self:ShowPage(nextPage, true)
+                return
+            end
+        end
+
+        self:FinishFlow(true)
+    end)
 
     self.ui = configurator
 
