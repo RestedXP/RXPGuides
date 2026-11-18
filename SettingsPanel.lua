@@ -600,7 +600,7 @@ function addon.settings:CreateAceOptionsPanel()
                 name = L("Join Discord"),
                 type = "execute",
                 width = "normal",
-                func = function() addon.comms.OpenSupport() end
+                func = function() addon.comms.OpenLink("https://discord.gg/restedxp") end
             },
             importGuidesButton = {
                 order = 1.05,
