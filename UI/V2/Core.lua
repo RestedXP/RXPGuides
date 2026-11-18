@@ -464,9 +464,9 @@ function addon.ui.v2:RegisterRXPV2LevelSplitsRow()
 
         ["UpdateSubTheme"] = function(this, payload)
             local theme = addon.v2:GetTheme()
-            addon.ui.v2:ApplyFrameBackdrop(this.frame, theme.edge, theme.backgroundColors.activeStepCheckbox,
+            addon.ui.v2:ApplyFrameBackdrop(this.background, theme.edge, theme.backgroundColors.activeStepCheckbox,
                                            theme.borderColors.commonEdge)
-            addon.ui.v2:SetFrameBackdropShown(this.frame, not addon.settings.profile.hideSplitsBackground)
+            addon.ui.v2:SetFrameBackdropShown(this.background, not addon.settings.profile.hideSplitsBackground)
             this.leftColumn:UpdateSubTheme(payload)
             this.rightColumn:UpdateSubTheme(payload)
         end
@@ -475,11 +475,14 @@ function addon.ui.v2:RegisterRXPV2LevelSplitsRow()
     local function Constructor()
         local frame = CreateFrame("Frame", nil, UIParent)
         frame:Hide()
+        local background = CreateFrame("Frame", nil, frame)
+        background:SetPoint("TOPLEFT", frame, "TOPLEFT", 2, 0)
+        background:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -2, 0)
         local content = CreateFrame("Frame", nil, frame)
         content:SetPoint("TOPLEFT")
         content:SetPoint("BOTTOMRIGHT")
 
-        local widget = {frame = frame, content = content, type = Type}
+        local widget = {frame = frame, content = content, background = background, type = Type}
         for method, func in pairs(methods) do widget[method] = func end
 
         return AceGUI:RegisterAsContainer(widget)
