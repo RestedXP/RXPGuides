@@ -2065,9 +2065,9 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
 
         if saveHeight and not this.snapshotEmpty then
             if frame:GetHeight() < this:GetMinimumExpandedHeight() then
-                if addon.settings:IsStepListShown() then
+                if this.resizeStartedExpanded and addon.settings:IsStepListShown() then
                     addon.settings:SetStepListShown(false)
-                else
+                elseif not addon.settings:IsStepListShown() then
                     frame:SetHeight(this:GetShellHeight())
                 end
             elseif this.guideSteps.frame:IsShown() or not addon.settings:IsStepListShown() then
@@ -2078,6 +2078,7 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
             end
         end
 
+        this.resizeStartedExpanded = nil
         if saveHeight then this:RefreshLayout() end
         addon.settings:SaveFramePositions()
         addon.v2.events:Trigger("GuideWindowRefresh", "layout")
@@ -2493,6 +2494,7 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
         frame:SetScript("OnMouseUp", function() SaveStatus(widget) end)
         sizer:SetScript("OnMouseDown", function()
             if not addon.settings.profile.lockFrames then
+                widget.resizeStartedExpanded = guideSteps.frame:IsShown()
                 guideSteps.resizing = true
                 frame:StartSizing("BOTTOMRIGHT")
             end
