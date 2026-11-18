@@ -3,6 +3,7 @@ local addonName, addon = ...
 local _G = _G
 
 local AceConfig = LibStub("AceConfig-3.0")
+local AceConfigRegistry = LibStub("AceConfigRegistry-3.0")
 local LibDBIcon = LibStub("LibDBIcon-1.0")
 local LibDataBroker = LibStub("LibDataBroker-1.1")
 local AceConfigDialog = LibStub("AceConfigDialog-3.0")
@@ -109,7 +110,7 @@ function addon.settings.ChatCommand(input)
     elseif input == "debug" then
         addon.settings.profile.debug = not addon.settings.profile.debug
     elseif input == "splits" then
-        addon.tracker:ToggleLevelSplits()
+        addon.tracker.splits:Toggle()
     elseif input == "show" or input == "hide" or input == "toggle" then
         addon.settings.ToggleActive()
     elseif input == "bug" or input == "feedback" then
@@ -133,9 +134,12 @@ local settingsDBDefaults = {
         alwaysSendBranded = true,
         checkVersions = true,
         enableLevelingReportInspections = true,
+        showLevelSplitsHistory = true,
         levelSplitsHistory = 10,
         levelSplitsFontSize = 11,
         levelSplitsOpacity = 0.9,
+        levelSplitsScale = 1,
+        compareNextLevelSplit = true,
         compareTotalTimeSplit = true,
         enableMinimapButton = true,
         enableWorldMapButton = true,
@@ -325,14 +329,14 @@ function addon.settings:SetStepListShown(value)
     self.profile.frameHeight = value and addon.height or 10
     addon.updateBottomFrame = true
 
-    if addon.v2:IsGuideWindowEnabled() then addon.v2:UpdateGuideWindow(value) end
+    if addon.v2:IsEnabled() then addon.v2:UpdateGuideWindow(value) end
 end
 
 function addon.settings:SetHideCompletedSteps(value)
     self.profile.hideCompletedSteps = value
     addon.RXPFrame.ScrollFrame.ScrollBar:SetValue(0)
 
-    if addon.v2:IsGuideWindowEnabled() then
+    if addon.v2:IsEnabled() then
         addon.v2:UpdateGuideWindow()
 
         local window = addon.v2:GetGuideWindow()
@@ -593,14 +597,10 @@ function addon.settings:CreateAceOptionsPanel()
         args = {
             discordButton = {
                 order = 1.0,
-                name = L("Join Discord"), -- TODO locale
+                name = L("Join Discord"),
                 type = "execute",
                 width = "normal",
-                func = function()
-                    addon.url = "https://discord.gg/restedxp"
-                    _G.StaticPopup_Show("RXP_Link")
-                    addon.url = nil
-                end
+                func = function() addon.comms.OpenLink("https://discord.gg/restedxp") end
             },
             importGuidesButton = {
                 order = 1.05,
@@ -962,7 +962,7 @@ function addon.settings:CreateAceOptionsPanel()
                         end,
                         hidden = isNotAdvanced,
                         disabled = function()
-                            return not addon.v2:IsGuideWindowEnabled()
+                            return not addon.v2:IsEnabled()
                         end
                     },
                     enableV2MenuTheme = {
@@ -973,7 +973,7 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 5.3,
                         hidden = isNotAdvanced,
                         disabled = function()
-                            return not addon.v2:IsGuideWindowEnabled()
+                            return not addon.v2:IsEnabled()
                         end
                     },
                     inventoryHeader = {
@@ -1972,20 +1972,6 @@ function addon.settings:CreateAceOptionsPanel()
                             _G.ReloadUI()
                         end
                     },
-                    openTrackerReportOnCharOpen = {
-                        name =
-                            L"Always Open Leveling Report With Character Panel",
-                        desc =
-                            L"Enables the RestedXP Leveling Report when you open your character panel",
-                        type = "toggle",
-                        width = "full",
-                        order = 1.1,
-                        confirm = requiresReload,
-                        set = function(info, value)
-                            SetProfileOption(info, value)
-                            _G.ReloadUI()
-                        end
-                    },
                     enableLevelingReportInspections = {
                         name = L("Enable Leveling Report Inspections") ..
                             L(" (Beta)"),
@@ -1993,7 +1979,7 @@ function addon.settings:CreateAceOptionsPanel()
                             L"Send or receive inspection requests for other Leveling Reports",
                         type = "toggle",
                         width = "full",
-                        order = 1.2,
+                        order = 1.1,
                         set = function(info, value)
                             SetProfileOption(info, value)
                             addon.tracker:SetupInspections()
@@ -2017,12 +2003,11 @@ function addon.settings:CreateAceOptionsPanel()
                         set = function(info, value)
                             SetProfileOption(info, value)
                             if value then
-                                addon.tracker:CreateLevelSplits()
-                                addon.tracker.levelSplits:Show()
+                                addon.tracker.splits:Create()
+                                addon.tracker.splits.frame:Show()
                             else
-                                if addon.tracker.levelSplits and
-                                    addon.tracker.levelSplits:IsShown() then
-                                    addon.tracker.levelSplits:Hide()
+                                if addon.tracker.splits.frame and addon.tracker.splits.frame:IsShown() then
+                                    addon.tracker.splits.frame:Hide()
                                 end
                             end
                         end,
@@ -2038,11 +2023,10 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 2.2,
                         set = function(info, value)
                             SetProfileOption(info, value)
-                            addon.tracker:UpdateLevelSplits("full")
+                            addon.tracker.splits:Update("full")
                         end,
                         disabled = function()
-                            return not self.profile.enableTracker or
-                                       not self.profile.enablelevelSplits
+                            return not self.profile.enableTracker or not self.profile.enablelevelSplits
                         end
                     },
                     compareTotalTimeSplit = {
@@ -2053,7 +2037,7 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 2.3,
                         set = function(info, value)
                             SetProfileOption(info, value)
-                            addon.tracker:UpdateLevelSplits("full")
+                            addon.tracker.splits:Update("full")
                         end,
                         disabled = function()
                             return not addon.settings.profile.enableTracker or
@@ -2068,7 +2052,22 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 2.4,
                         set = function(info, value)
                             SetProfileOption(info, value)
-                            addon.tracker:RenderSplitsBackground()
+                            addon.tracker.splits:UpdateTheme()
+                        end,
+                        disabled = function()
+                            return not self.profile.enableTracker or
+                                       not self.profile.enablelevelSplits
+                        end
+                    },
+                    showLevelSplitsHistory = {
+                        name = L("Show History"),
+                        desc = L("Show historical level splits"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 2.5,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.tracker.splits:Update("full", true)
                         end,
                         disabled = function()
                             return not self.profile.enableTracker or
@@ -2080,30 +2079,31 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L("Historical levels to show"),
                         type = "range",
                         width = optionsWidth,
-                        order = 2.5,
+                        order = 2.6,
                         min = 1,
                         max = GetMaxPlayerLevel(),
                         step = 1,
                         set = function(info, value)
                             SetProfileOption(info, value)
-                            addon.tracker:UpdateLevelSplits("full")
+                            addon.tracker.splits:Update("full")
                         end,
                         disabled = function()
                             return not self.profile.enableTracker or
-                                       not self.profile.enablelevelSplits
+                                       not self.profile.enablelevelSplits or
+                                       not self.profile.showLevelSplitsHistory
                         end
                     },
                     levelSplitsFontSize = {
                         name = L("Level Splits Font Size"),
                         type = "range",
                         width = optionsWidth,
-                        order = 2.6,
+                        order = 2.7,
                         min = 9,
                         max = 17, -- Formatting gets wonky >=18
                         step = 1,
                         set = function(info, value)
                             SetProfileOption(info, value)
-                            addon.tracker:UpdateLevelSplits("full")
+                            addon.tracker.splits:Update("full")
                         end,
                         disabled = function()
                             return not self.profile.enableTracker or
@@ -2116,18 +2116,94 @@ function addon.settings:CreateAceOptionsPanel()
                             L"Lower number to make Level Splits more transparent",
                         type = "range",
                         width = optionsWidth,
-                        order = 2.7,
+                        order = 2.8,
                         min = 0.1,
                         max = 1,
                         step = 0.1,
                         isPercent = true,
                         set = function(info, value)
                             SetProfileOption(info, value)
-                            addon.tracker:UpdateLevelSplits("full")
+                            addon.tracker.splits:Update("full")
                         end,
                         disabled = function()
                             return not self.profile.enableTracker or
                                        not self.profile.enablelevelSplits
+                        end
+                    },
+                    levelSplitsScale = {
+                        name = L("Level Splits Scale"),
+                        desc = L("Scale of the Level Splits frame"),
+                        type = "range",
+                        width = optionsWidth,
+                        order = 2.9,
+                        min = 0.5,
+                        max = 2,
+                        step = 0.05,
+                        isPercent = true,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            if addon.tracker.splits.frame then
+                                addon.tracker.splits.frame:SetScale(value)
+                            end
+                        end,
+                        disabled = function()
+                            return not self.profile.enableTracker or
+                                       not self.profile.enablelevelSplits
+                        end
+                    },
+                    levelSplitsComparisonToDelete = {
+                        name = L("Saved Comparisons"),
+                        desc = L("Select a saved comparison to delete"),
+                        type = "select",
+                        width = optionsWidth,
+                        order = 3.0,
+                        get = function() return settingsCache.selectedSplitsComparison end,
+                        set = function(_, value)
+                            settingsCache.selectedSplitsComparison = value
+                        end,
+                        values = function()
+                            local comparisons = {}
+                            for key, comparison in pairs(addon.db.profile.reports.splits) do
+                                if key ~= addon.tracker.reportKey then
+                                    comparisons[key] = addon.tracker.splits:FormatReportTitle(key, comparison.title)
+                                end
+                            end
+                            return comparisons
+                        end
+                    },
+                    deleteLevelSplitsComparison = {
+                        name = L("Delete"),
+                        desc = L("Delete the selected saved comparison"),
+                        type = "execute",
+                        width = optionsWidth,
+                        order = 3.1,
+                        confirm = function()
+                            local comparison = addon.db.profile.reports.splits[settingsCache.selectedSplitsComparison]
+                            if comparison then
+                                return fmt("%s %s?", L("Delete"),
+                                           addon.tracker.splits:FormatReportTitle(
+                                               settingsCache.selectedSplitsComparison, comparison.title))
+                            end
+                        end,
+                        func = function()
+                            local comparisonKey = settingsCache.selectedSplitsComparison
+                            local comparisons = addon.db.profile.reports.splits
+                            if not comparisonKey or comparisonKey == addon.tracker.reportKey or
+                                not comparisons[comparisonKey] then
+                                return
+                            end
+
+                            comparisons[comparisonKey] = nil
+                            if addon.tracker.splits.comparisonKey == comparisonKey then
+                                addon.tracker.splits.comparisonKey = nil
+                                addon.tracker.splits:Update("full")
+                            end
+                            AceConfigRegistry:NotifyChange(addon.title)
+                        end,
+                        disabled = function()
+                            local comparisonKey = settingsCache.selectedSplitsComparison
+                            return not comparisonKey or comparisonKey == addon.tracker.reportKey or
+                                       not addon.db.profile.reports.splits[comparisonKey]
                         end
                     }
                 }
@@ -2759,7 +2835,7 @@ function addon.settings:CreateAceOptionsPanel()
                         hidden = function()
                             return self.profile.activeTheme ~= 'Custom'
                         end,
-                        disabled = function() return addon.v2:IsGuideWindowEnabled() end,
+                        disabled = function() return addon.v2:IsEnabled() end,
                     },
                     customThemeMapPins = {
                         name = L("Map Pins"), -- TODO locale
@@ -2779,7 +2855,7 @@ function addon.settings:CreateAceOptionsPanel()
                         hidden = function()
                             return self.profile.activeTheme ~= 'Custom'
                         end,
-                        disabled = function() return addon.v2:IsGuideWindowEnabled() end,
+                        disabled = function() return addon.v2:IsEnabled() end,
                     },
                     customThemeTooltip = {
                         name = L("Tooltip"), -- TODO locale
@@ -2800,7 +2876,7 @@ function addon.settings:CreateAceOptionsPanel()
                         hidden = function()
                             return self.profile.activeTheme ~= 'Custom'
                         end,
-                        disabled = function() return addon.v2:IsGuideWindowEnabled() end,
+                        disabled = function() return addon.v2:IsEnabled() end,
                     },
                     customThemeFont = {
                         name = L("Font"), -- TODO locale
@@ -2896,7 +2972,7 @@ function addon.settings:CreateAceOptionsPanel()
                         func = function()
                             addon.settings:EnableFramePreviews()
                         end,
-                        disabled = function() return addon.v2:IsGuideWindowEnabled() end,
+                        disabled = function() return addon.v2:IsEnabled() end,
                     },
                     textColorsHeader = {
                         name = _G.LOCALE_TEXT_LABEL,
@@ -3036,7 +3112,7 @@ function addon.settings:CreateAceOptionsPanel()
                             addon.RXPFrame:SetScale(value)
                             addon.ui.v2.configurator:SetScale(value)
 
-                            if addon.v2:IsGuideWindowEnabled() then
+                            if addon.v2:IsEnabled() then
                                 local window = addon.v2:GetGuideWindowAnchorFrame()
 
                                 if window then window:SetScale(value) end
@@ -3356,9 +3432,7 @@ function addon.settings:CreateAceOptionsPanel()
                             else
                                 return
                             end
-                            addon.url = out:sub(1,-2)
-                            _G.StaticPopup_Show("RXP_Link")
-                            addon.url = nil
+                            addon.comms.OpenLink(out:sub(1,-2))
                         end,
                         hidden = function()
                             return not addon.settings.profile.debug
@@ -3698,7 +3772,7 @@ function addon.settings:UpdateMinimapButton()
     end
 
     local icon = addon.GetV1Texture("rxp_logo-64")
-    if addon.v2:IsGuideWindowEnabled() then
+    if addon.v2:IsEnabled() then
         icon = addon.ui.v2:GetTexture("rxp-minimap-icon")
     end
 
@@ -4103,7 +4177,7 @@ end
 function addon.settings:RefreshTextColors()
     self:LoadTextColors()
 
-    if addon.v2:IsGuideWindowEnabled() then
+    if addon.v2:IsEnabled() then
         addon.v2:UpdateGuideWindow()
 
         if addon.RXPFrame.activeSteps then
@@ -4111,6 +4185,8 @@ function addon.settings:RefreshTextColors()
                                     addon.player.name)
         end
     end
+
+    if addon.tracker then addon.tracker:UpdateTheme() end
 end
 
 function addon.settings:ResetTextColors()
@@ -4299,7 +4375,7 @@ function addon.settings:SetupMapButton()
                                          "TOPRIGHT", -10, -26)
         else
             self.worldMapButton:SetSize(20, 20)
-            self.worldMapButton:SetPoint("TOPRIGHT", ref or _G.WorldMapFrameCloseButton, "TOPLEFT", 0, -5.5)
+            self.worldMapButton:SetPoint("TOPRIGHT", ref or _G.WorldMapFrameCloseButton, "TOPLEFT", 0, -6)
         end
     end
 
@@ -4373,17 +4449,15 @@ function addon.settings:SaveFramePositions()
         addon.settings.profile.frameSizes = {}
     end
 
-    local point, relativeToFrameOrPoint, relativePointOrX, offsetXOrY,
-          offsetYOrNil
+    local point, relativeToFrameOrPoint, relativePointOrX, offsetXOrY, offsetYOrNil
 
     for frameName, frame in pairs(addon.enabledFrames) do
         if frame.savePosition ~= false then
             if frame.saveSize == false then
                 addon.settings.profile.frameSizes[frameName] = nil
             else
-                addon.settings.profile.frameSizes[frameName] = {
-                    frame:GetWidth(), frame:GetHeight()
-                }
+                addon.settings.profile.frameSizes[frameName] = frame.GetSavedSize and
+                    {frame:GetSavedSize()} or {frame:GetWidth(), frame:GetHeight()}
             end
 
             addon.settings.profile.framePositions[frameName] = {}
@@ -4429,7 +4503,11 @@ function addon.settings:LoadFramePosition(frameName, frame)
         if p.frameSizes then p.frameSizes[frameName] = nil end
     else
         local size = p.frameSizes and p.frameSizes[frameName]
-        if size then frame:SetSize(unpack(size)) end
+        if frame.RestoreSavedSize then
+            frame:RestoreSavedSize(size)
+        elseif size then
+            frame:SetSize(unpack(size))
+        end
     end
 end
 
@@ -4444,6 +4522,10 @@ end
 function addon.settings:LoadScales()
     addon.RXPFrame:SetScale(self.profile.windowScale)
     addon.ui.v2.configurator:SetScale(self.profile.windowScale)
+
+    if addon.tracker.splits.frame then
+        addon.tracker.splits.frame:SetScale(self.profile.levelSplitsScale)
+    end
 
     if addon.arrowFrame then
         addon.arrowFrame:SetSize(32 * self.profile.arrowScale,

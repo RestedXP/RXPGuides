@@ -1972,7 +1972,7 @@ function addon.itemUpgrades.AH:Analyze()
     RXPCData.itemUpgradeAHCache = cache
 end
 
-local function isAHV2Enabled() return addon.v2 and addon.v2:IsGuideWindowEnabled() end
+local function isAHV2Enabled() return addon.v2 and addon.v2:IsEnabled() end
 
 local function setKindIcon(frame, image)
     if not frame or not image then

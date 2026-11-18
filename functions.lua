@@ -1653,7 +1653,8 @@ function addon.UpdateQuestCompletionData(self)
         end
         if obj.type == "item" then
             icon = addon.icons.collect
-        elseif obj.type == "monster" and (t:find(questMonster) or obj.questie) then
+        elseif obj.type == "monster" and
+            (addon.v2:IsEnabled() or t:find(questMonster) or obj.questie) then
             icon = addon.icons.combat
         end
         if element.rawtext then
@@ -4797,10 +4798,7 @@ end
 addon.separators.clicknext = addon.separators.link
 
 local function LinkOnClick(self)
-
-    addon.url = self.element.url
-    _G.StaticPopup_Show("RXP_Link")
-    addon.url = nil
+    addon.comms.OpenLink(self.element.url)
 end
 
 function addon.functions.link(self, ...)
@@ -4824,28 +4822,6 @@ function addon.functions.link(self, ...)
         self:SetScript("OnMouseDown", LinkOnClick)
     end
 end
-
-_G.StaticPopupDialogs["RXP_Link"] = {
-    text = L"Press Ctrl+C to copy the URL to your clipboard",
-    hasEditBox = 1,
-    button1 = _G.OKAY,
-    OnShow = function(self)
-        if addon.url then
-            local box = getglobal(self:GetName() .. "EditBox")
-            if box then
-                box:SetWidth(275)
-                box:SetText(addon.url)
-                box:HighlightText()
-                box:SetFocus()
-            end
-        end
-    end,
-
-    EditBoxOnEscapePressed = function(self) self:GetParent():Hide() end,
-    timeout = 0,
-    whileDead = 1,
-    hideOnEscape = 1
-}
 
 function addon.functions.cast(self, text, ...)
     if type(self) == "string" then -- on parse

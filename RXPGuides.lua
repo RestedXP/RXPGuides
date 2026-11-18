@@ -782,7 +782,7 @@ local function createRewardChoiceIcons()
 
     if not questRewardChoiceIcons["ratio"] then
         questRewardChoiceIcons["ratio"] = _G.QuestInfoRewardsFrame:CreateTexture()
-        questRewardChoiceIcons["ratio"]:SetTexture(addon.v2:IsGuideWindowEnabled() and
+        questRewardChoiceIcons["ratio"]:SetTexture(addon.v2:IsEnabled() and
                                                          addon.ui.v2:GetTexture("rxp-reward-upgrade") or
                                                          "Interface/AddOns/" .. addonName .. "/Textures/rxp_logo-64")
         questRewardChoiceIcons["ratio"]:SetSize(20, 20)
@@ -793,14 +793,14 @@ local function createRewardChoiceIcons()
 
     if not questRewardChoiceIcons["value"] then
         questRewardChoiceIcons["value"] = _G.QuestInfoRewardsFrame:CreateTexture()
-        questRewardChoiceIcons["value"]:SetTexture(addon.v2:IsGuideWindowEnabled() and
+        questRewardChoiceIcons["value"]:SetTexture(addon.v2:IsEnabled() and
                                                          addon.ui.v2:GetTexture("rxp-reward-gold") or
                                                          "Interface/GossipFrame/VendorGossipIcon.blp")
         questRewardChoiceIcons["value"]:SetSize(20, 20)
         questRewardChoiceIcons["value"]:SetDrawLayer("OVERLAY", 1)
     end
 
-    if addon.v2:IsGuideWindowEnabled() then
+    if addon.v2:IsEnabled() then
         createRewardChoiceGlow(_G.QuestInfoRewardsFrame, questRewardChoiceIcons["ratio"])
         createRewardChoiceGlow(_G.QuestInfoRewardsFrame, questRewardChoiceIcons["value"])
     end
@@ -817,7 +817,7 @@ local function createLogRewardChoiceIcons()
 
     if not questLogRewardChoiceIcons["ratio"] then
         questLogRewardChoiceIcons["ratio"] = _G.QuestLogDetailScrollFrame:CreateTexture()
-        questLogRewardChoiceIcons["ratio"]:SetTexture(addon.v2:IsGuideWindowEnabled() and
+        questLogRewardChoiceIcons["ratio"]:SetTexture(addon.v2:IsEnabled() and
                                                             addon.ui.v2:GetTexture("rxp-reward-upgrade") or
                                                             "Interface/AddOns/" .. addonName .. "/Textures/rxp_logo-64")
         questLogRewardChoiceIcons["ratio"]:SetSize(20, 20)
@@ -828,14 +828,14 @@ local function createLogRewardChoiceIcons()
 
     if not questLogRewardChoiceIcons["value"] then
         questLogRewardChoiceIcons["value"] = _G.QuestLogDetailScrollFrame:CreateTexture()
-        questLogRewardChoiceIcons["value"]:SetTexture(addon.v2:IsGuideWindowEnabled() and
+        questLogRewardChoiceIcons["value"]:SetTexture(addon.v2:IsEnabled() and
                                                             addon.ui.v2:GetTexture("rxp-reward-gold") or
                                                             "Interface/GossipFrame/VendorGossipIcon.blp")
         questLogRewardChoiceIcons["value"]:SetSize(20, 20)
         questLogRewardChoiceIcons["value"]:SetDrawLayer("OVERLAY", 1)
     end
 
-    if addon.v2:IsGuideWindowEnabled() then
+    if addon.v2:IsEnabled() then
         createRewardChoiceGlow(_G.QuestLogDetailScrollFrame, questLogRewardChoiceIcons["ratio"])
         createRewardChoiceGlow(_G.QuestLogDetailScrollFrame, questLogRewardChoiceIcons["value"])
     end
@@ -1592,7 +1592,7 @@ function addon:OnInitialize()
     addon.targeting:Setup()
     if addon.talents then addon.talents:Setup() end
     if addon.settings.profile.enableTracker then
-        addon.tracker:SetupTracker()
+        addon.safeCall(addon.tracker.Setup, addon.tracker)
     end
     if addon.tips then addon.tips:Setup() end
     if addon.player.season == 2 then
@@ -2162,7 +2162,7 @@ function addon.LegacyUpdateLoop()
 
             addon.updateStepText = false
 
-            if addon.v2:IsGuideWindowEnabled() then
+            if addon.v2:IsEnabled() then
                 table.wipe(addon.stepUpdateList)
                 addon.updateTipWindow = false
                 addon.v2.events:Trigger("GuideStepsChanged")
@@ -2199,7 +2199,7 @@ function addon.LegacyUpdateLoop()
 
             errorCount = 0
 
-            if addon.v2:IsGuideWindowEnabled() then
+            if addon.v2:IsEnabled() then
                 addon.updateBottomFrame = false
                 addon.RXPFrame.SetStepFrameAnchor()
                 addon.v2.events:Trigger("GuideStepsChanged")
@@ -2258,7 +2258,7 @@ function addon.LegacyUpdateLoop()
     elseif cycle32 == 29 then
         addon.tickers.CycleThirty()
     elseif skip ~= 1 and not guideLoaded and addon.currentGuide and
-           not addon.v2:IsGuideWindowEnabled() then
+           not addon.v2:IsEnabled() then
 
         event = event .. "/istep"
         local max = #addon.currentGuide.steps
@@ -2472,7 +2472,7 @@ function addon.HardcoreToggle()
         end
         if hc ~= addon.settings.profile.hardcore then
             addon.RenderFrame()
-            if addon.v2:IsGuideWindowEnabled() then
+            if addon.v2:IsEnabled() then
                 addon.v2:UpdateActiveStepTheme()
             end
         end
@@ -2785,7 +2785,7 @@ function addon:ShowMenu(menu, menuFrame, anchor, x, y, displayMode, autoHideDela
     y = y or 0
     displayMode = displayMode or "MENU"
 
-    local v2GuideWindow = addon.v2:IsGuideWindowEnabled()
+    local v2GuideWindow = addon.v2:IsEnabled()
     local hadV2MenuTheme = menuFrame.rxpV2MenuTheme
     if v2GuideWindow then
         menuFrame.rxpV2MenuTheme = addon.settings.profile.enableV2MenuTheme
@@ -2802,7 +2802,7 @@ function addon:ShowMenu(menu, menuFrame, anchor, x, y, displayMode, autoHideDela
             addon.v2:UpdateMenuTheme(_G.DropDownList1, menuFrame.rxpV2MenuTheme)
         end
 
-        if v2GuideWindow then addon.v2:HookMenuSubmenus("DropDownList") end
+        if v2GuideWindow then addon.v2:HookMenuListFrames("DropDownList") end
     else
         if hadV2MenuTheme then addon.v2:UpdateMenuTheme(_G.L_DropDownList1, false) end
 
@@ -2812,7 +2812,7 @@ function addon:ShowMenu(menu, menuFrame, anchor, x, y, displayMode, autoHideDela
             addon.v2:UpdateMenuTheme(_G.L_DropDownList1, menuFrame.rxpV2MenuTheme)
         end
 
-        if v2GuideWindow then addon.v2:HookMenuSubmenus("L_DropDownList") end
+        if v2GuideWindow then addon.v2:HookMenuListFrames("L_DropDownList") end
     end
 end
 
@@ -2821,7 +2821,7 @@ addon.ui.v2.configurator = addon:NewModule("GuideConfigurator", addon.ui.v2.conf
 function addon.v2:Setup()
     addon.v2.events:Setup()
     addon.ui.v2.configurator:Setup()
-    if not self:IsGuideWindowEnabled() then return end
+    if not self:IsEnabled() then return end
 
     local legacy = addon.RXPFrame
     self:GetGuideWindow()
@@ -2889,7 +2889,7 @@ function addon.v2.events:GuideStepsChanged(_, scheduled)
         end
 
         addon.v2:UpdateGuideWindow()
-    elseif addon.v2:IsGuideWindowEnabled() then
+    elseif addon.v2:IsEnabled() then
         addon:ScheduleTask(addon.v2.events.GuideStepsChanged, false, true)
     end
 end
@@ -2900,12 +2900,12 @@ function addon.v2.events:GuideWindowRefresh(_, change, value)
 
         if window then window:UpdateTheme({}) end
     elseif change == "visibility" then
-        if addon.v2:IsGuideWindowEnabled() then
+        if addon.v2:IsEnabled() then
             local window = addon.v2:GetGuideWindow()
 
             if window then window.frame:SetShown(value) end
         end
-    elseif change == "layout" and addon.v2:IsGuideWindowEnabled() then
+    elseif change == "layout" and addon.v2:IsEnabled() then
         addon.v2:SetActiveStepsFrameAnchor()
     end
 end

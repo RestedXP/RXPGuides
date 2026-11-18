@@ -3,7 +3,6 @@ local addonName, addon = ...
 local locale = _G.GetLocale()
 local pairs, assert, type = pairs, assert, type
 local min, max, floor, ceil, abs = math.min, math.max, math.floor, math.ceil, math.abs
-local strbyte, strsub = string.byte, string.sub
 local CreateFrame, UIParent = CreateFrame, UIParent
 
 -- AceAddon doesn't exist yet
@@ -20,6 +19,13 @@ function addon.ui.v2:Initialize()
     -- Locales.lua loads after this file is included
     L = addon.locale.Get
 
+    self:RegisterRXPV2CommsWindow()
+    self:RegisterRXPV2CommsText()
+    self:RegisterRXPV2LevelSplitsColumn()
+    self:RegisterRXPV2LevelSplitsRow()
+    self:RegisterRXPV2Button()
+    self:RegisterRXPV2CommsEditBox()
+    self:RegisterRXPV2LinkBox()
     self:RegisterRXPV2ScrollFrame()
     self:RegisterRXPV2GuideStepsItem()
     self:RegisterRXPV2GuideSteps()
@@ -31,7 +37,7 @@ function addon.ui.v2:Initialize()
 end
 
 local function updateTheme(this, payload)
-    if not payload then return end
+    payload = payload or {}
 
     if payload.scale and this.SetScale then this:SetScale(payload.scale) end
 
@@ -39,9 +45,877 @@ local function updateTheme(this, payload)
 
     if payload.updateChildren then
         for _, child in pairs(this.children or {}) do
-            if child.UpdateTheme then child:UpdateTheme({updateChildren = true}) end
+            if child.UpdateTheme then
+                child:UpdateTheme({updateChildren = true})
+            elseif child.children then
+                updateTheme(child, {updateChildren = true})
+            end
         end
     end
+end
+
+addon.ui.v2.UpdateTheme = updateTheme
+
+local function updateScrollBarVisuals(scrollbar, background, theme)
+    if theme.version == 1 then
+        background:SetColorTexture(unpack(theme.backgroundColors.common))
+        scrollbar.ThumbTexture:SetDesaturated(true)
+        scrollbar.ThumbTexture:SetVertexColor(unpack(theme.backgroundColors.activeStepCheckboxChecked))
+
+        for _, button in ipairs({scrollbar.ScrollUpButton, scrollbar.ScrollDownButton}) do
+            button.Normal:SetDesaturated(true)
+            button.Normal:SetVertexColor(unpack(theme.backgroundColors.activeStepCheckboxChecked))
+        end
+    else
+        background:SetColorTexture(unpack(theme.backgroundColors.scrollbar))
+        scrollbar.ThumbTexture:SetDesaturated(false)
+        scrollbar.ThumbTexture:SetVertexColor(1, 1, 1, 1)
+
+        for _, button in ipairs({scrollbar.ScrollUpButton, scrollbar.ScrollDownButton}) do
+            button.Normal:SetDesaturated(false)
+            button.Normal:SetVertexColor(1, 1, 1, 1)
+        end
+    end
+end
+
+function addon.ui.v2:RegisterRXPV2CommsWindow()
+    local Type, Version = "RXPV2CommsWindow", 1
+    if not AceGUI or (AceGUI:GetWidgetVersion(Type) or 0) >= Version then return end
+
+    local methods = {
+        ["OnAcquire"] = function(this)
+            this.frame:SetParent(UIParent)
+            this.frame:SetFrameStrata("DIALOG")
+            this.frame:SetFrameLevel(200)
+            this:EnableResize(true)
+            this:UpdateSubTheme()
+            this.title:SetPoint("TOPLEFT", this.frame, "TOPLEFT", 18, -1)
+            this:SetTitle("")
+            this:ApplyStatus()
+        end,
+
+        ["OnRelease"] = function(this)
+            this:Hide()
+            this.status = nil
+            wipe(this.localstatus)
+        end,
+
+        ["OnWidthSet"] = function(this, width)
+            this.content:SetWidth(max(width - 20, 0))
+        end,
+
+        ["OnHeightSet"] = function(this, height)
+            this.content:SetHeight(max(height - 36, 0))
+        end,
+
+        ["Hide"] = function(this) this.frame:Hide() end,
+
+        ["Show"] = function(this)
+            this:UpdateSubTheme()
+            this.frame:Show()
+        end,
+
+        ["EnableResize"] = function(this, enabled)
+            this.frame:SetResizable(enabled)
+            this.sizer:SetShown(enabled)
+        end,
+
+        ["SetTitle"] = function(this, title) this.title:SetText(title or "") end,
+
+        ["SetStatusTable"] = function(this, status)
+            assert(type(status) == "table")
+            this.status = status
+            this:ApplyStatus()
+        end,
+
+        ["ApplyStatus"] = function(this)
+            local status = this.status or this.localstatus
+            this:SetWidth(status.width or 360)
+            this:SetHeight(status.height or 200)
+            this.frame:ClearAllPoints()
+            if status.top and status.left then
+                this.frame:SetPoint("TOP", UIParent, "BOTTOM", 0, status.top)
+                this.frame:SetPoint("LEFT", UIParent, "LEFT", status.left, 0)
+            else
+                this.frame:SetPoint("CENTER")
+            end
+        end,
+
+        ["UpdateTheme"] = updateTheme,
+
+        ["UpdateSubTheme"] = function(this)
+            local theme = addon.v2:GetTheme()
+            addon.ui.v2:ApplyFrameBackdrop(this.frame, theme.edge, theme.backgroundColors.common,
+                                           theme.borderColors.commonEdge)
+            addon.ui.v2:AddFrameShadow(this.frame)
+            this.title:SetFont(theme.font, 10, "")
+            this.title:SetTextColor(unpack(theme.textColor.common))
+            this.headerBackground:SetColorTexture(unpack(theme.version == 1 and
+                                                          theme.backgroundColors.inactivePartyTab or
+                                                          theme.backgroundColors.scrollbar))
+        end
+    }
+
+    local function Constructor()
+        local frameName = ("RXPV2CommsWindow%d"):format(AceGUI:GetNextWidgetNum(Type))
+        local frame = CreateFrame("Frame", frameName, UIParent, BackdropTemplateMixin and "BackdropTemplate")
+        frame:Hide()
+        frame:EnableMouse(true)
+        frame:SetMovable(true)
+        frame:SetFrameStrata("DIALOG")
+        frame:SetFrameLevel(200)
+        frame:SetSize(360, 200)
+        frame:SetToplevel(true)
+        frame:SetScript("OnShow", function(this) this.obj:Fire("OnShow") end)
+        frame:SetScript("OnHide", function(this) this.obj:Fire("OnClose") end)
+        frame:SetScript("OnMouseDown", function() AceGUI:ClearFocus() end)
+        frame:RegisterForDrag("LeftButton")
+        frame:SetScript("OnDragStart", function(this) this:StartMoving() end)
+        frame:SetScript("OnDragStop", function(this)
+            this:StopMovingOrSizing()
+            local widget = this.obj
+            local status = widget.status or widget.localstatus
+            status.top = this:GetTop()
+            status.left = this:GetLeft()
+        end)
+
+        if frame.SetResizeBounds then
+            frame:SetResizeBounds(265, 105)
+        else
+            frame:SetMinResize(265, 105)
+        end
+
+        local theme = addon.v2:GetTheme()
+        addon.ui.v2:ApplyFrameBackdrop(frame, theme.edge, theme.backgroundColors.common,
+                                       theme.borderColors.commonEdge)
+        addon.ui.v2:AddFrameShadow(frame)
+
+        local headerBackground = frame.rxpBackground:CreateTexture(nil, "BACKGROUND", nil, 1)
+        headerBackground:SetPoint("TOPLEFT", frame.rxpBackground, "TOPLEFT", 1, -1)
+        headerBackground:SetPoint("TOPRIGHT", frame.rxpBackground, "TOPRIGHT", -1, -1)
+        headerBackground:SetHeight(18)
+        local headerColor = theme.version == 1 and theme.backgroundColors.inactivePartyTab or
+                                theme.backgroundColors.scrollbar
+        headerBackground:SetColorTexture(unpack(headerColor))
+
+        local closebutton = CreateFrame("Button", nil, frame)
+        closebutton:SetFrameLevel(frame:GetFrameLevel() + 3)
+        closebutton:SetNormalTexture(addon.ui.v2:GetTexture("rxp-btn-close"))
+        closebutton:SetPushedTexture(addon.ui.v2:GetTexture("rxp-btn-close"))
+        closebutton:SetHighlightTexture(addon.ui.v2:GetTexture("rxp-btn-close"), "ADD")
+        closebutton:SetSize(20, 20)
+        closebutton:SetPoint("TOPRIGHT", frame, "TOPRIGHT", 6, 6)
+
+        local title = frame:CreateFontString(nil, "ARTWORK")
+        title:SetPoint("RIGHT", closebutton, "LEFT", -4, 0)
+        title:SetHeight(18)
+        title:SetJustifyH("LEFT")
+        title:SetJustifyV("MIDDLE")
+
+        local sizer = CreateFrame("Button", nil, frame)
+        sizer:SetSize(12, 12)
+        sizer:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -2, 2)
+        sizer:SetNormalTexture("Interface/CHATFRAME/UI-ChatIM-SizeGrabber-Up")
+        sizer:SetHighlightTexture("Interface/CHATFRAME/UI-ChatIM-SizeGrabber-Highlight", "ADD")
+        sizer:SetScript("OnMouseDown", function() frame:StartSizing("BOTTOMRIGHT") end)
+        sizer:SetScript("OnMouseUp", function() frame:StopMovingOrSizing() end)
+
+        local content = CreateFrame("Frame", nil, frame)
+        content:SetPoint("TOPLEFT", frame, "TOPLEFT", 10, -26)
+        content:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -10, 10)
+
+        local widget = {
+            localstatus = {},
+            closebutton = closebutton,
+            content = content,
+            frame = frame,
+            sizer = sizer,
+            title = title,
+            headerBackground = headerBackground,
+            type = Type
+        }
+        for method, func in pairs(methods) do widget[method] = func end
+
+        closebutton:SetScript("OnClick", function() widget:Hide() end)
+        table.insert(_G.UISpecialFrames, frameName)
+
+        return AceGUI:RegisterAsContainer(widget)
+    end
+
+    AceGUI:RegisterLayout(Type, function() end)
+    AceGUI:RegisterWidgetType(Type, Constructor, Version)
+end
+
+function addon.ui.v2:RegisterRXPV2CommsText()
+    local Type, Version = "RXPV2CommsText", 1
+    if not AceGUI or (AceGUI:GetWidgetVersion(Type) or 0) >= Version then return end
+
+    local function updateTextHeight(this)
+        this.text:SetWidth(max(this.frame:GetWidth(), 0))
+        local height = max(ceil(this.text:GetStringHeight()), this.fontSize + 2)
+        this:SetHeight(height)
+    end
+
+    local methods = {
+        ["OnAcquire"] = function(this)
+            this.color = nil
+            this.fontSize = 9
+            this.wordWrap = true
+            this.frame:SetAlpha(1)
+            this.text:SetJustifyH("LEFT")
+            this.text:SetJustifyV("TOP")
+            this:UpdateSubTheme()
+            this:SetWidth(200)
+            this:SetText("")
+        end,
+
+        ["OnRelease"] = function(this) this.text:SetText("") end,
+
+        ["OnWidthSet"] = updateTextHeight,
+
+        ["SetText"] = function(this, text)
+            this.text:SetText(text or "")
+            updateTextHeight(this)
+        end,
+
+        ["SetFontSize"] = function(this, size)
+            this.fontSize = size
+            this:UpdateSubTheme()
+        end,
+
+        ["SetColor"] = function(this, color)
+            this.color = color
+            this.text:SetTextColor(unpack(color or addon.v2:GetTheme().textColor.common))
+        end,
+
+        ["SetJustifyH"] = function(this, justify)
+            this.text:SetJustifyH(justify)
+            updateTextHeight(this)
+        end,
+
+        ["SetJustifyV"] = function(this, justify) this.text:SetJustifyV(justify) end,
+
+        ["SetWordWrap"] = function(this, wordWrap)
+            this.wordWrap = wordWrap
+            this.text:SetWordWrap(wordWrap)
+            updateTextHeight(this)
+        end,
+
+        ["UpdateTheme"] = updateTheme,
+
+        ["UpdateSubTheme"] = function(this)
+            local theme = addon.v2:GetTheme()
+            this.text:SetFont(theme.font, this.fontSize, "")
+            this.text:SetTextColor(unpack(this.color or theme.textColor.common))
+            this.text:SetWordWrap(this.wordWrap)
+            updateTextHeight(this)
+        end
+    }
+
+    local function Constructor()
+        local frame = CreateFrame("Frame", nil, UIParent)
+        frame:Hide()
+
+        local text = frame:CreateFontString(nil, "ARTWORK")
+        text:SetPoint("TOPLEFT")
+        text:SetPoint("TOPRIGHT")
+        text:SetJustifyH("LEFT")
+        text:SetJustifyV("TOP")
+        text:SetWordWrap(true)
+
+        local widget = {frame = frame, text = text, type = Type, fontSize = 9}
+        for method, func in pairs(methods) do widget[method] = func end
+
+        return AceGUI:RegisterAsWidget(widget)
+    end
+
+    AceGUI:RegisterWidgetType(Type, Constructor, Version)
+end
+
+function addon.ui.v2:RegisterRXPV2LevelSplitsColumn()
+    local Type, Version = "RXPV2LevelSplitsColumn", 1
+    if not AceGUI or (AceGUI:GetWidgetVersion(Type) or 0) >= Version then return end
+
+    local methods = {
+        ["OnAcquire"] = function(this)
+            this.fontSize = 9
+            this.color = nil
+            this:SetHorizontalInset(0)
+            this:UpdateSubTheme()
+            this:SetText("")
+            this:SetHeight(20)
+        end,
+
+        ["OnRelease"] = function(this) this:SetText("") end,
+
+        ["SetText"] = function(this, text)
+            this.text:SetText(text or "")
+            this:SetHeight(max(20, this.fontSize + 2, this.text:GetStringHeight()))
+        end,
+
+        ["SetJustifyH"] = function(this, justify)
+            this.text:SetJustifyH(justify)
+        end,
+
+        ["SetHorizontalInset"] = function(this, inset)
+            this.text:ClearAllPoints()
+            this.text:SetPoint("TOPLEFT", this.frame, "TOPLEFT", inset, 0)
+            this.text:SetPoint("BOTTOMRIGHT", this.frame, "BOTTOMRIGHT", -inset, 0)
+        end,
+
+        ["SetFontSize"] = function(this, size)
+            this.fontSize = size
+            this:UpdateSubTheme()
+        end,
+
+        ["SetColor"] = function(this, color)
+            this.color = color
+            this.text:SetTextColor(unpack(color or addon.v2:GetTheme().textColor.common))
+        end,
+
+        ["UpdateTheme"] = updateTheme,
+        ["UpdateSubTheme"] = function(this)
+            local theme = addon.v2:GetTheme()
+            this.text:SetFont(theme.font, this.fontSize, "")
+            this.text:SetTextColor(unpack(this.color or theme.textColor.common))
+            this:SetHeight(max(20, this.fontSize + 2, this.text:GetStringHeight()))
+        end
+    }
+
+    local function Constructor()
+        local frame = CreateFrame("Frame", nil, UIParent)
+        frame:Hide()
+
+        local text = frame:CreateFontString(nil, "ARTWORK")
+        text:SetAllPoints(frame)
+        text:SetJustifyH("LEFT")
+        text:SetJustifyV("MIDDLE")
+        text:SetWordWrap(false)
+
+        local widget = {frame = frame, text = text, type = Type}
+        for method, func in pairs(methods) do widget[method] = func end
+
+        return AceGUI:RegisterAsWidget(widget)
+    end
+
+    AceGUI:RegisterWidgetType(Type, Constructor, Version)
+end
+
+function addon.ui.v2:RegisterRXPV2LevelSplitsRow()
+    local Type, Version = "RXPV2LevelSplitsRow", 1
+    if not AceGUI or (AceGUI:GetWidgetVersion(Type) or 0) >= Version then return end
+
+    local methods = {
+        ["OnAcquire"] = function(this)
+            this.leftColumn = AceGUI:Create("RXPV2LevelSplitsColumn")
+            this.leftColumn:SetHorizontalInset(4)
+            this.leftColumn:SetJustifyH("LEFT")
+            this.leftColumn:SetFullWidth(true)
+
+            this.rightColumn = AceGUI:Create("RXPV2LevelSplitsColumn")
+            this.rightColumn:SetHorizontalInset(4)
+            this.rightColumn:SetJustifyH("RIGHT")
+            this.rightColumn:SetFullWidth(true)
+            this:SetFullWidth(true)
+            this:SetUserData("table", {columns = {{weight = 1}, {weight = 1}}, spaceH = 12})
+            this:SetHeight(20)
+            this:PauseLayout()
+            this:AddChildren(this.leftColumn, this.rightColumn)
+            this:ResumeLayout()
+        end,
+
+        ["OnRelease"] = function(this)
+            this.leftColumn = nil
+            this.rightColumn = nil
+        end,
+
+        ["OnWidthSet"] = function(this, width)
+            this.content:SetWidth(width)
+            this.content.width = width
+        end,
+
+        ["OnHeightSet"] = function(this, height)
+            this.content:SetHeight(height)
+            this.content.height = height
+        end,
+
+        ["LayoutFinished"] = function(this, width, height)
+            this:SetHeight(height or 0)
+        end,
+
+        ["SetText"] = function(this, leftText, rightText)
+            this.leftColumn:SetText(leftText)
+            this.rightColumn:SetText(rightText)
+            this:DoLayout()
+        end,
+
+        ["SetFontSize"] = function(this, size)
+            this.leftColumn:SetFontSize(size)
+            this.rightColumn:SetFontSize(size)
+            this:DoLayout()
+        end,
+
+        ["SetColors"] = function(this, leftColor, rightColor)
+            this.leftColumn:SetColor(leftColor)
+            this.rightColumn:SetColor(rightColor)
+        end,
+
+        ["UpdateTheme"] = updateTheme,
+
+        ["UpdateSubTheme"] = function(this, payload)
+            local theme = addon.v2:GetTheme()
+            addon.ui.v2:ApplyFrameBackdrop(this.background, theme.edge, theme.backgroundColors.activeStepCheckbox,
+                                           theme.borderColors.commonEdge)
+            addon.ui.v2:SetFrameBackdropShown(this.background, not addon.settings.profile.hideSplitsBackground)
+            this.leftColumn:UpdateSubTheme(payload)
+            this.rightColumn:UpdateSubTheme(payload)
+        end
+    }
+
+    local function Constructor()
+        local frame = CreateFrame("Frame", nil, UIParent)
+        frame:Hide()
+        local background = CreateFrame("Frame", nil, frame)
+        background:SetPoint("TOPLEFT", frame, "TOPLEFT", 2, 0)
+        background:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -2, 0)
+        local content = CreateFrame("Frame", nil, frame)
+        content:SetPoint("TOPLEFT")
+        content:SetPoint("BOTTOMRIGHT")
+
+        local widget = {frame = frame, content = content, background = background, type = Type}
+        for method, func in pairs(methods) do widget[method] = func end
+
+        return AceGUI:RegisterAsContainer(widget)
+    end
+
+    AceGUI:RegisterWidgetType(Type, Constructor, Version)
+end
+
+function addon.ui.v2:RegisterRXPV2Button()
+    local Type, Version = "RXPV2Button", 1
+    if not AceGUI or (AceGUI:GetWidgetVersion(Type) or 0) >= Version then return end
+
+    local methods = {
+        ["OnAcquire"] = function(this)
+            this.frame:SetParent(UIParent)
+            this.primary = false
+            this.clickSound = nil
+            this:SetWidth(200)
+            this:SetHeight(24)
+            this:SetDisabled(false)
+            this:UpdateSubTheme()
+            this:SetText()
+        end,
+
+        ["OnRelease"] = function(this)
+            this:SetText("")
+            this.clickSound = nil
+            this.frame.rxpBackground:ClearAllPoints()
+            this.frame.rxpBackground:SetAllPoints(this.frame)
+        end,
+
+        ["OnWidthSet"] = function(this, width) this.text:SetWidth(max(width - 16, 0)) end,
+
+        ["SetText"] = function(this, text) this.text:SetText(text or "") end,
+
+        ["SetDisabled"] = function(this, disabled)
+            this.disabled = disabled
+            this.frame:SetAlpha(disabled and 0.5 or 1)
+            if disabled then
+                this.frame:Disable()
+            else
+                this.frame:Enable()
+            end
+        end,
+
+        ["SetPrimary"] = function(this, primary)
+            this.primary = not not primary
+            this:UpdateSubTheme()
+        end,
+
+        ["SetClickSound"] = function(this, sound) this.clickSound = sound end,
+
+        ["UpdateTheme"] = updateTheme,
+
+        ["UpdateSubTheme"] = function(this)
+            local theme = addon.v2:GetTheme()
+            addon.ui.v2:ApplyFrameBackdrop(this.frame, theme.edge,
+                                           this.primary and theme.backgroundColors.activeStepCheckboxChecked or
+                                               (theme.version == 1 and theme.backgroundColors.inactivePartyTab or
+                                                   theme.backgroundColors.guideSelector),
+                                           theme.borderColors.commonEdge)
+            this.frame.rxpBorder:Hide()
+            this.frame:SetHighlightTexture("Interface\\Buttons\\WHITE8X8", "BLEND")
+            local highlight = this.frame:GetHighlightTexture()
+            highlight:SetVertexColor(unpack(theme.borderColors.commonEdge))
+            highlight:SetAlpha(0.2)
+            this.text:SetFont(theme.font, 9, "")
+            this.text:SetTextColor(unpack(theme.textColor.common))
+            this:SetDisabled(this.disabled)
+        end
+    }
+
+    local function Constructor()
+        local frame = CreateFrame("Button", nil, UIParent, BackdropTemplateMixin and "BackdropTemplate")
+        frame:Hide()
+        frame:EnableMouse(true)
+        frame:SetScript("OnClick", function(this, ...)
+            AceGUI:ClearFocus()
+            if this.obj.clickSound then PlaySound(this.obj.clickSound) end
+            this.obj:Fire("OnClick", ...)
+        end)
+        local text = frame:CreateFontString(nil, "OVERLAY")
+        text:SetPoint("TOPLEFT", frame, "TOPLEFT", 15, -1)
+        text:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -15, 1)
+        text:SetJustifyH("CENTER")
+        text:SetJustifyV("MIDDLE")
+
+        local widget = {frame = frame, text = text, type = Type}
+        for method, func in pairs(methods) do widget[method] = func end
+
+        return AceGUI:RegisterAsWidget(widget)
+    end
+
+    AceGUI:RegisterWidgetType(Type, Constructor, Version)
+end
+
+function addon.ui.v2:RegisterRXPV2CommsEditBox()
+    local Type, Version = "RXPV2CommsEditBox", 1
+    if not AceGUI or (AceGUI:GetWidgetVersion(Type) or 0) >= Version then return end
+
+    local function updateEditBoxLayout(this)
+        local width, height = this.frame:GetWidth(), this.frame:GetHeight()
+        if width <= 0 or height <= 0 then return end
+        this.submitButton:SetWidth(width)
+
+        local hasLabel = this.label:GetText() ~= ""
+        if hasLabel then
+            this.label:Show()
+            this.label:SetWidth(max(width - 4, 0))
+        else
+            this.label:Hide()
+        end
+
+        local labelHeight = hasLabel and ceil(this.label:GetStringHeight()) or 0
+        this.scrollFrame:ClearAllPoints()
+        this.scrollFrame:SetPoint("TOPLEFT", this.frame, "TOPLEFT", 0,
+                                  -(labelHeight + (labelHeight > 0 and 6 or 0)))
+        this.scrollFrame:SetPoint("BOTTOMRIGHT", this.frame, "BOTTOMRIGHT",
+                                  this.scrollbar:IsShown() and -20 or -4,
+                                  this.submitButton.frame:IsShown() and 28 or 0)
+    end
+
+    local methods = {
+        ["OnAcquire"] = function(this)
+            this.readOnly = false
+            this.value = ""
+            this.submitButton.frame:Hide()
+            this.submitButton:SetDisabled(true)
+            this.editBox:SetMaxLetters(0)
+            this.editBox:SetAutoFocus(false)
+            this.editBox:SetScript("OnMouseUp", function(editBox)
+                local widget = editBox.obj
+                if widget.readOnly then
+                    editBox:HighlightText()
+                    editBox:SetScript("OnMouseUp", nil)
+                end
+            end)
+            this.scrollFrame:SetVerticalScroll(0)
+            this:UpdateSubTheme()
+            this.scrollRange = 0
+            this.label:SetText("")
+            this.settingText = true
+            this.editBox:SetText("")
+            this.settingText = nil
+            this.submitButton:SetText("")
+            this.scrollbar:Hide()
+            updateEditBoxLayout(this)
+        end,
+
+        ["OnRelease"] = function(this)
+            this:ClearFocus()
+            this.label:SetText("")
+            this.readOnly = false
+            this.value = ""
+            this.scrollRange = 0
+            this.settingText = true
+            this.editBox:SetText("")
+            this.settingText = nil
+            this.submitButton.frame:Hide()
+            this.submitButton:SetDisabled(true)
+        end,
+
+        ["OnWidthSet"] = updateEditBoxLayout,
+
+        ["OnHeightSet"] = updateEditBoxLayout,
+
+        ["SetLabel"] = function(this, label)
+            this.label:SetText(label or "")
+            updateEditBoxLayout(this)
+        end,
+
+        ["SetText"] = function(this, text)
+            this.value = text or ""
+            this.settingText = true
+            this.editBox:SetText(this.value)
+            this.settingText = nil
+            this.editBox:SetCursorPosition(0)
+            this.scrollFrame:SetVerticalScroll(0)
+            if this.submitButton.frame:IsShown() then this.submitButton:SetDisabled(true) end
+        end,
+
+        ["SetSubmitButton"] = function(this, text)
+            this.submitButton:SetText(text or "")
+            this.submitButton.frame:SetShown(not not (text and text ~= ""))
+            this.submitButton:SetDisabled(true)
+            updateEditBoxLayout(this)
+        end,
+
+        ["SetReadOnly"] = function(this, readOnly) this.readOnly = readOnly end,
+
+        ["ClearFocus"] = function(this) this.editBox:ClearFocus() end,
+
+        ["UpdateTheme"] = updateTheme,
+
+        ["UpdateSubTheme"] = function(this)
+            local theme = addon.v2:GetTheme()
+            this.label:SetFont(theme.font, 9, "")
+            this.label:SetTextColor(unpack(theme.textColor.common))
+            this.editBox:SetFont(theme.font, 9, "")
+            this.editBox:SetTextColor(unpack(theme.textColor.common))
+            local fieldBackground = theme.version == 1 and theme.backgroundColors.inactivePartyTab or
+                                    theme.backgroundColors.scrollbar
+            addon.ui.v2:ApplyFrameBackdrop(this.scrollFrame, theme.edge, fieldBackground,
+                                           theme.borderColors.common)
+            updateScrollBarVisuals(this.scrollbar, this.scrollbarBackground, theme)
+            this.submitButton:UpdateTheme()
+            updateEditBoxLayout(this)
+        end
+    }
+
+    local function Constructor()
+        local frame = CreateFrame("Frame", nil, UIParent)
+        frame:Hide()
+
+        local label = frame:CreateFontString(nil, "ARTWORK")
+        label:SetPoint("TOPLEFT", frame, "TOPLEFT", 0, 0)
+        label:SetPoint("TOPRIGHT", frame, "TOPRIGHT", 0, 0)
+        label:SetJustifyH("LEFT")
+        label:SetJustifyV("TOP")
+        label:SetWordWrap(true)
+
+        local scrollFrame = CreateFrame("ScrollFrame", nil, frame)
+        scrollFrame:EnableMouseWheel(true)
+
+        local editBox = CreateFrame("EditBox", nil, scrollFrame)
+        editBox:SetMultiLine(true)
+        editBox:EnableMouse(true)
+        editBox:SetAutoFocus(false)
+        editBox:SetTextInsets(4, 4, 4, 4)
+        editBox:SetAllPoints(scrollFrame)
+        scrollFrame:SetScrollChild(editBox)
+
+        local scrollbar = CreateFrame("Slider", nil, frame, "RXPV2ScrollBarTemplate")
+        scrollbar:Hide()
+        scrollbar:SetOrientation("VERTICAL")
+        local scrollbarBackground = scrollbar:CreateTexture(nil, "BACKGROUND")
+        scrollbarBackground:SetAllPoints(scrollbar)
+        local buttonHeight = scrollbar.ScrollUpButton:GetHeight()
+        scrollbar:SetPoint("TOPLEFT", scrollFrame, "TOPRIGHT", 2, -buttonHeight - 1)
+        scrollbar:SetPoint("BOTTOMLEFT", scrollFrame, "BOTTOMRIGHT", 2, buttonHeight + 1)
+        scrollbar:SetWidth(16)
+        scrollbar:SetValueStep(1)
+        scrollbar:SetScript("OnValueChanged", function(this, value)
+            this.obj.scrollFrame:SetVerticalScroll(value)
+        end)
+
+        local submitButton = AceGUI:Create("RXPV2Button")
+        submitButton:SetPrimary(true)
+        submitButton:SetHeight(24)
+        submitButton.frame:SetParent(frame)
+        submitButton.frame:ClearAllPoints()
+        submitButton.frame:SetPoint("BOTTOMLEFT", frame, "BOTTOMLEFT")
+        submitButton:SetCallback("OnClick", function(this)
+            local editBoxWidget = frame.obj
+            editBoxWidget.editBox:ClearFocus()
+            if not editBoxWidget:Fire("OnEnterPressed", editBoxWidget.editBox:GetText()) then
+                this:SetDisabled(true)
+            end
+        end)
+
+        local widget = {
+            frame = frame,
+            label = label,
+            editBox = editBox,
+            scrollFrame = scrollFrame,
+            scrollbar = scrollbar,
+            scrollbarBackground = scrollbarBackground,
+            submitButton = submitButton,
+            type = Type
+        }
+        for method, func in pairs(methods) do widget[method] = func end
+
+        editBox.obj = widget
+        scrollbar.obj = widget
+        editBox:SetScript("OnTextChanged", function(this, userInput)
+            local widget = this.obj
+            if widget.readOnly and not widget.settingText and this:GetText() ~= widget.value then
+                widget.settingText = true
+                this:SetText(widget.value)
+                widget.settingText = nil
+            elseif not widget.settingText then
+                widget.value = this:GetText()
+                if userInput and widget.submitButton.frame:IsShown() then widget.submitButton:SetDisabled(false) end
+            end
+        end)
+        editBox:SetScript("OnEditFocusGained", function(this)
+            AceGUI:SetFocus(this.obj)
+            this.obj:Fire("OnEditFocusGained")
+        end)
+        editBox:SetScript("OnEscapePressed", function(this) this:ClearFocus() end)
+        editBox:SetScript("OnCursorChanged", function(this, _, y, _, cursorHeight)
+            local scrollFrame = this.obj.scrollFrame
+            y = -y
+            local offset = scrollFrame:GetVerticalScroll()
+            if y < offset then
+                scrollFrame:SetVerticalScroll(y)
+            else
+                y = y + (cursorHeight or 0) - scrollFrame:GetHeight()
+                if y > offset then scrollFrame:SetVerticalScroll(y) end
+            end
+        end)
+        scrollFrame:SetScript("OnMouseWheel", function(this, delta)
+            local widget = this.obj
+            local nextScroll = this:GetVerticalScroll() - delta * 24
+            this:SetVerticalScroll(min(max(nextScroll, 0), widget.scrollRange or 0))
+        end)
+
+        scrollFrame.obj = widget
+        scrollFrame:SetScript("OnSizeChanged", function(this, width)
+            this.obj.editBox:SetWidth(width)
+        end)
+        scrollFrame:HookScript("OnVerticalScroll", function(this, offset)
+            local widget = this.obj
+            local editBox = widget.editBox
+            editBox:SetHitRectInsets(0, 0, offset, editBox:GetHeight() - offset - this:GetHeight())
+            widget.scrollbar:SetValue(offset)
+        end)
+        scrollFrame:HookScript("OnScrollRangeChanged", function(this, _, range)
+            local widget = this.obj
+            local scrollbar = widget.scrollbar
+            range = max(range or 0, 0)
+
+            if widget.scrollRange ~= range then
+                widget.scrollRange = range
+                local showScrollbar = range > 0
+                if scrollbar:IsShown() ~= showScrollbar then
+                    scrollbar:SetShown(showScrollbar)
+                    updateEditBoxLayout(widget)
+                end
+            end
+
+            scrollbar:SetMinMaxValues(0, range)
+            if this:GetVerticalScroll() > range then this:SetVerticalScroll(range) end
+            scrollbar:SetValue(this:GetVerticalScroll())
+        end)
+        return AceGUI:RegisterAsWidget(widget)
+    end
+
+    AceGUI:RegisterWidgetType(Type, Constructor, Version)
+end
+
+function addon.ui.v2:RegisterRXPV2LinkBox()
+    local Type, Version = "RXPV2LinkBox", 1
+    if not AceGUI or (AceGUI:GetWidgetVersion(Type) or 0) >= Version then return end
+
+    local methods = {
+        ["OnAcquire"] = function(this)
+            this:UpdateSubTheme()
+            this.label:SetText("")
+            this:SetURL("")
+            this:SetWidth(200)
+            this:SetHeight(42)
+        end,
+
+        ["OnRelease"] = function(this)
+            this:ClearFocus()
+            this.label:SetText("")
+            this:SetURL("")
+        end,
+
+        ["SetLabel"] = function(this, label) this.label:SetText(label or "") end,
+
+        ["SetURL"] = function(this, url)
+            this.url = url or ""
+            this.editBox:SetText(this.url)
+            this.editBox:SetCursorPosition(0)
+        end,
+
+        ["SetFocus"] = function(this) this.editBox:SetFocus() end,
+
+        ["HighlightText"] = function(this) this.editBox:HighlightText() end,
+
+        ["ClearFocus"] = function(this) this.editBox:ClearFocus() end,
+
+        ["UpdateTheme"] = updateTheme,
+
+        ["UpdateSubTheme"] = function(this)
+            local theme = addon.v2:GetTheme()
+            this.label:SetFont(theme.font, 9, "")
+            this.label:SetTextColor(unpack(theme.textColor.common))
+            this.editBox:SetFont(theme.font, 9, "")
+            this.editBox:SetTextColor(unpack(theme.textColor.common))
+            addon.ui.v2:ApplyFrameBackdrop(this.editBox, theme.edge,
+                                           theme.version == 1 and theme.backgroundColors.inactivePartyTab or
+                                               theme.backgroundColors.scrollbar,
+                                           theme.borderColors.common)
+        end
+    }
+
+    local function Constructor()
+        local frame = CreateFrame("Frame", nil, UIParent)
+        frame:Hide()
+
+        local label = frame:CreateFontString(nil, "ARTWORK")
+        label:SetPoint("TOPLEFT", frame, "TOPLEFT", 0, 0)
+        label:SetPoint("TOPRIGHT", frame, "TOPRIGHT", 0, 0)
+        label:SetHeight(12)
+        label:SetJustifyH("LEFT")
+        label:SetJustifyV("MIDDLE")
+        label:SetWordWrap(false)
+
+        local editBox = CreateFrame("EditBox", nil, frame, BackdropTemplateMixin and "BackdropTemplate")
+        editBox:SetPoint("TOPLEFT", label, "BOTTOMLEFT", 0, -2)
+        editBox:SetPoint("TOPRIGHT", label, "BOTTOMRIGHT", 0, -2)
+        editBox:SetHeight(22)
+        editBox:SetAutoFocus(false)
+        editBox:SetMaxLetters(0)
+        editBox:SetTextInsets(4, 4, 3, 3)
+        editBox:EnableMouse(true)
+        editBox:SetScript("OnTextChanged", function(this)
+            local widget = this.obj
+            if this:GetText() == widget.url then return end
+            this:SetText(widget.url)
+            this:HighlightText()
+        end)
+        editBox:SetScript("OnMouseUp", function(this) this:HighlightText() end)
+        editBox:SetScript("OnEditFocusGained", function(this)
+            AceGUI:SetFocus(this.obj)
+            this.obj:Fire("OnEditFocusGained")
+        end)
+        editBox:SetScript("OnEnterPressed", function(this)
+            this:ClearFocus()
+            this.obj:Fire("OnEnterPressed")
+        end)
+        editBox:SetScript("OnEscapePressed", function(this) this:ClearFocus() end)
+
+        local widget = {frame = frame, label = label, editBox = editBox, type = Type}
+        for method, func in pairs(methods) do widget[method] = func end
+        editBox.obj = widget
+        return AceGUI:RegisterAsWidget(widget)
+    end
+
+    AceGUI:RegisterWidgetType(Type, Constructor, Version)
 end
 
 function addon.ui.v2:RegisterRXPV2Popup()
@@ -49,49 +923,6 @@ function addon.ui.v2:RegisterRXPV2Popup()
     if not AceGUI or (AceGUI:GetWidgetVersion(Type) or 0) >= Version then
 
         return
-    end
-
-    local function frame_OnHide(frame)
-        frame.obj:Fire("OnClose")
-    end
-
-    local function frame_OnMouseDown()
-        AceGUI:ClearFocus()
-    end
-
-    local function frame_OnDragStart(frame)
-        frame:StartMoving()
-    end
-
-    local function frame_OnDragStop(frame)
-        frame:StopMovingOrSizing()
-        local widget = frame.obj
-        local status = widget.status or widget.localstatus
-        status.top = frame:GetTop()
-        status.left = frame:GetLeft()
-    end
-
-    local function updatePopupTheme(this)
-        local baseTheme = addon.v2.themes["RXP Blue V2"]
-        local theme = addon.v2.themes[addon.settings and addon.settings.profile.activeTheme]
-        if addon.v2:IsGuideWindowEnabled() then theme = addon.v2:GetTheme() end
-        theme = theme or baseTheme
-
-        addon.ui.v2:ApplyFrameBackdrop(this.frame, theme.edge, theme.backgroundColors.common,
-                                       theme.borderColors.commonEdge)
-        addon.ui.v2:AddFrameShadow(this.frame)
-
-        this.title:SetFont(theme.font, 10, "")
-        this.title:SetTextColor(unpack(theme.textColor.title))
-        this.message:SetFont(theme.font, 9, "")
-        this.message:SetTextColor(unpack(theme.textColor.common))
-        for _, button in ipairs(this.buttons) do
-            addon.ui.v2:ApplyFrameBackdrop(button, theme.edge,
-                                           theme.backgroundColors.inactivePartyTab,
-                                           theme.borderColors.commonEdge)
-            button.text:SetFont(theme.font, 9, "")
-            button.text:SetTextColor(unpack(theme.textColor.common))
-        end
     end
 
     local methods = {
@@ -137,7 +968,27 @@ function addon.ui.v2:RegisterRXPV2Popup()
 
         ["UpdateTheme"] = updateTheme,
 
-        ["UpdateSubTheme"] = updatePopupTheme,
+        ["UpdateSubTheme"] = function(this)
+            local theme = addon.v2:GetTheme()
+
+            addon.ui.v2:ApplyFrameBackdrop(this.frame, theme.edge, theme.backgroundColors.common,
+                                           theme.borderColors.commonEdge)
+            addon.ui.v2:AddFrameShadow(this.frame)
+            this.title:SetFont(theme.font, 10, "")
+            this.title:SetTextColor(unpack(theme.textColor.title))
+            this.message:SetFont(theme.font, 9, "")
+            this.message:SetTextColor(unpack(theme.textColor.common))
+            for _, button in ipairs(this.buttons) do
+                addon.ui.v2:ApplyFrameBackdrop(button, theme.edge,
+                                               theme.backgroundColors.inactivePartyTab,
+                                               theme.borderColors.commonEdge)
+                button:SetHighlightTexture("Interface\\Buttons\\WHITE8X8", "BLEND")
+                button:GetHighlightTexture():SetVertexColor(unpack(theme.borderColors.commonEdge))
+                button:GetHighlightTexture():SetAlpha(0.2)
+                button.text:SetFont(theme.font, 9, "")
+                button.text:SetTextColor(unpack(theme.textColor.common))
+            end
+        end,
 
         ["SetTitle"] = function(this, title)
             this.title:SetText(title or "")
@@ -185,11 +1036,17 @@ function addon.ui.v2:RegisterRXPV2Popup()
         frame:SetFrameLevel(200)
         frame:SetSize(320, 126)
         frame:SetToplevel(true)
-        frame:SetScript("OnHide", frame_OnHide)
-        frame:SetScript("OnMouseDown", frame_OnMouseDown)
+        frame:SetScript("OnHide", function(this) this.obj:Fire("OnClose") end)
+        frame:SetScript("OnMouseDown", function() AceGUI:ClearFocus() end)
         frame:RegisterForDrag("LeftButton")
-        frame:SetScript("OnDragStart", frame_OnDragStart)
-        frame:SetScript("OnDragStop", frame_OnDragStop)
+        frame:SetScript("OnDragStart", function(this) this:StartMoving() end)
+        frame:SetScript("OnDragStop", function(this)
+            this:StopMovingOrSizing()
+            local widget = this.obj
+            local status = widget.status or widget.localstatus
+            status.top = this:GetTop()
+            status.left = this:GetLeft()
+        end)
 
         local closebutton = CreateFrame("Button", nil, frame)
         closebutton:SetFrameLevel(frame:GetFrameLevel() + 3)
@@ -214,11 +1071,7 @@ function addon.ui.v2:RegisterRXPV2Popup()
         for index = 1, 2 do
             button = CreateFrame("Button", nil, frame)
             button:SetHeight(24)
-            button:SetHighlightTexture(addon.ui.v2:GetTexture("configurator-option-hover"), "ADD")
-            local highlight = button:GetHighlightTexture()
-            highlight:ClearAllPoints()
-            highlight:SetPoint("TOPLEFT", button, "TOPLEFT", 2, -2)
-            highlight:SetPoint("BOTTOMRIGHT", button, "BOTTOMRIGHT", -2, 2)
+            button:SetHighlightTexture("Interface\\Buttons\\WHITE8X8", "BLEND")
 
             button.text = button:CreateFontString(nil, "OVERLAY")
             button.text:SetPoint("TOPLEFT", button, "TOPLEFT", 8, -1)
@@ -269,21 +1122,28 @@ function addon.ui.v2:ApplyDropdownTheme(dropdown, theme)
     local button = dropdown.button
 
     if button then
-        local normal = button:GetNormalTexture()
-        local pushed = button:GetPushedTexture()
-        local highlight = button:GetHighlightTexture()
-        local disabled = button:GetDisabledTexture()
-        for _, texture in ipairs({normal, pushed, highlight, disabled}) do
-            if texture then
-                if theme.version == 1 then
-                    texture:SetDesaturated(true)
-                    texture:SetVertexColor(unpack(theme.backgroundColors.activeStepCheckboxChecked))
-                else
-                    texture:SetDesaturated(false)
-                    texture:SetVertexColor(1, 1, 1, 1)
-                end
+        if not button.rxpDropdownBackground then
+            button.rxpDropdownBackground = button:CreateTexture(nil, "BACKGROUND")
+            button.rxpDropdownBackground:SetAllPoints(button)
+
+            local chevron = self:GetTexture("dropdown-chevron")
+            button:SetNormalTexture(chevron)
+            button:SetPushedTexture(chevron)
+            button:SetDisabledTexture(chevron)
+            button:SetHighlightTexture("Interface\\Buttons\\WHITE8X8", "BLEND")
+
+            for _, texture in ipairs({button:GetNormalTexture(), button:GetPushedTexture(),
+                                     button:GetDisabledTexture(), button:GetHighlightTexture()}) do
+                texture:SetAllPoints(button)
+                texture:SetTexCoord(0, 1, 0, 1)
             end
         end
+
+        button.rxpDropdownBackground:SetColorTexture(unpack(theme.version == 1 and
+            theme.backgroundColors.inactivePartyTab or theme.backgroundColors.guideSelector))
+        local highlight = button:GetHighlightTexture()
+        highlight:SetVertexColor(unpack(theme.borderColors.commonEdge))
+        highlight:SetAlpha(0.2)
     end
 
     frame:SetBackdrop(nil)
@@ -321,27 +1181,10 @@ function addon.ui.v2:ApplyDropdownTheme(dropdown, theme)
         pullout.rxpV2SliderBackground = slider:CreateTexture(nil, "BACKGROUND")
         pullout.rxpV2SliderBackground:SetAllPoints(slider)
     end
-    pullout.rxpV2SliderBackground:SetColorTexture(unpack(theme.version == 1 and theme.backgroundColors.common or
-                                                          theme.backgroundColors.scrollbar))
-    for _, button in ipairs({slider.ScrollUpButton, slider.ScrollDownButton}) do
-        if theme.version == 1 then
-            button.Normal:SetDesaturated(true)
-            button.Normal:SetVertexColor(unpack(theme.backgroundColors.activeStepCheckboxChecked))
-        else
-            button.Normal:SetDesaturated(false)
-            button.Normal:SetVertexColor(1, 1, 1, 1)
-        end
-    end
-    if theme.version == 1 then
-        slider.ThumbTexture:SetDesaturated(true)
-        slider.ThumbTexture:SetVertexColor(unpack(theme.backgroundColors.activeStepCheckboxChecked))
-    else
-        slider.ThumbTexture:SetDesaturated(false)
-        slider.ThumbTexture:SetVertexColor(1, 1, 1, 1)
-    end
+    updateScrollBarVisuals(slider, pullout.rxpV2SliderBackground, theme)
 
     for _, item in ipairs(pullout.items) do
-        item.text:SetFont(theme.font, 9, "")
+        item.text:SetFont(theme.font, addon.v2:GetGuideFontSize(), "")
         item.text:SetTextColor(unpack(theme.textColor.common))
         item.highlight:ClearAllPoints()
         item.highlight:SetAllPoints(item.frame)
@@ -533,10 +1376,14 @@ function addon.ui.v2.HideFrameTopEdge(this, frame)
     this:SetFrameTopShadowShown(frame, false)
 end
 
-function addon.v2:IsGuideWindowEnabled()
+function addon.v2:IsEnabled()
     local profile = addon.settings and addon.settings.profile
 
     return profile and profile.enableBetaFeatures and profile.enableV2Interface
+end
+
+function addon.v2:GetGuideFontSize()
+    return addon.settings.profile.guideFontSize + 2
 end
 
 function addon.ui.v2:GetTexture(textureName)
@@ -544,9 +1391,10 @@ function addon.ui.v2:GetTexture(textureName)
 end
 
 function addon.v2:UpdateMenuTheme(listFrame, enabled)
-    if not self:IsGuideWindowEnabled() or not listFrame then return end
+    if not listFrame or (enabled and not self:IsEnabled()) then return end
 
     local name = listFrame:GetName()
+    local button, check, uncheck, checkbox, checked, text
     local backdrop = _G[name .. "Backdrop"]
     local menuBackdrop = _G[name .. "MenuBackdrop"]
 
@@ -556,6 +1404,22 @@ function addon.v2:UpdateMenuTheme(listFrame, enabled)
         if listFrame.rxpV2MenuThemeApplied then
             if backdrop then backdrop:Show() end
             if menuBackdrop then menuBackdrop:Show() end
+            for index = 1, listFrame.numButtons or 0 do
+                button = _G[name .. "Button" .. index]
+                checkbox = button and button.rxpV2Checkbox
+                if checkbox then
+                    checkbox:Hide()
+                    if not button.notCheckable then
+                        check = _G[name .. "Button" .. index .. "Check"]
+                        uncheck = _G[name .. "Button" .. index .. "UnCheck"]
+                        checked = button.checked
+                        if type(checked) == "function" then checked = checked(button) end
+                        checked = not not checked
+                        if check then check:SetShown(checked) end
+                        if uncheck then uncheck:SetShown(not checked) end
+                    end
+                end
+            end
             listFrame.rxpV2MenuThemeApplied = nil
         end
 
@@ -574,19 +1438,72 @@ function addon.v2:UpdateMenuTheme(listFrame, enabled)
 
     listFrame.rxpV2MenuThemeApplied = true
 
-    local text
     for index = 1, listFrame.numButtons or 0 do
-        text = _G[name .. "Button" .. index .. "NormalText"]
+        button = _G[name .. "Button" .. index]
+        if button then
+            text = _G[name .. "Button" .. index .. "NormalText"]
+            if text then text:SetFont(theme.font, addon.v2:GetGuideFontSize(), "") end
 
-        if text then text:SetFont(theme.font, select(2, text:GetFont())) end
+            if not button.notCheckable then
+                check = _G[name .. "Button" .. index .. "Check"]
+                uncheck = _G[name .. "Button" .. index .. "UnCheck"]
+                if check and uncheck then
+                    checkbox = button.rxpV2Checkbox
+                    if not checkbox then
+                        checkbox = CreateFrame("Frame", nil, button, BackdropTemplateMixin and "BackdropTemplate")
+                        checkbox:SetSize(11, 11)
+                        checkbox:SetPoint("CENTER", check)
+                        checkbox:SetFrameLevel(button:GetFrameLevel() + 1)
+                        checkbox:EnableMouse(false)
+
+                        checkbox.checkShort = checkbox:CreateTexture(nil, "OVERLAY")
+                        checkbox.checkShort:SetSize(3, 1)
+                        checkbox.checkShort:SetPoint("CENTER", checkbox, "CENTER", -2, -1)
+                        checkbox.checkShort:SetRotation(-math.pi / 4)
+
+                        checkbox.checkLong = checkbox:CreateTexture(nil, "OVERLAY")
+                        checkbox.checkLong:SetSize(6, 1)
+                        checkbox.checkLong:SetPoint("CENTER", checkbox, "CENTER", 1, 1)
+                        checkbox.checkLong:SetRotation(math.pi / 4)
+
+                        button.rxpV2Checkbox = checkbox
+                        button:HookScript("OnClick", function(this)
+                            local parent = this:GetParent()
+                            if parent:IsShown() and parent.rxpV2MenuThemeApplied then
+                                addon.v2:UpdateMenuTheme(parent, true)
+                            end
+                        end)
+                    end
+
+                    checked = button.checked
+                    if type(checked) == "function" then checked = checked(button) end
+                    checked = not not checked
+                    check:Hide()
+                    uncheck:Hide()
+                    checkbox:Show()
+                    checkbox:SetAlpha(button:IsEnabled() and 1 or 0.5)
+                    addon.ui.v2:ApplyFrameBackdrop(checkbox, theme.edge,
+                                                   checked and theme.backgroundColors.activeStepCheckboxChecked or
+                                                       theme.backgroundColors.activeStepCheckbox,
+                                                   checked and theme.borderColors.activeStepCheckboxChecked or
+                                                       theme.borderColors.commonEdge)
+                    checkbox.checkShort:SetColorTexture(unpack(theme.textColor.common))
+                    checkbox.checkLong:SetColorTexture(unpack(theme.textColor.common))
+                    checkbox.checkShort:SetShown(checked)
+                    checkbox.checkLong:SetShown(checked)
+                end
+            elseif button.rxpV2Checkbox then
+                button.rxpV2Checkbox:Hide()
+            end
+        end
     end
 end
 
-function addon.v2:HookMenuSubmenus(prefix)
-    if not self:IsGuideWindowEnabled() then return end
+function addon.v2:HookMenuListFrames(prefix)
+    if not self:IsEnabled() then return end
 
     local listFrame
-    for level = 2, 3 do
+    for level = 1, 3 do
         listFrame = _G[prefix .. level]
 
         if listFrame and not listFrame.rxpV2MenuThemeHooked then
@@ -598,6 +1515,10 @@ function addon.v2:HookMenuSubmenus(prefix)
                 elseif this.rxpV2MenuThemeApplied then
                     addon.v2:UpdateMenuTheme(this, false)
                 end
+            end)
+
+            listFrame:HookScript("OnHide", function(this)
+                if this.rxpV2MenuThemeApplied then addon.v2:UpdateMenuTheme(this, false) end
             end)
 
             listFrame.rxpV2MenuThemeHooked = true
@@ -766,7 +1687,10 @@ function addon.ui.v2:RegisterRXPV2GuideStepsItem()
     end
 
     local methods = {
-        ["OnAcquire"] = function(this) this.frame:Show() end,
+        ["OnAcquire"] = function(this)
+            this:UpdateSubTheme()
+            this.frame:Show()
+        end,
 
         ["OnRelease"] = function(this)
             this.row = nil
@@ -788,28 +1712,12 @@ function addon.ui.v2:RegisterRXPV2GuideStepsItem()
 
             local theme = addon.v2:GetTheme()
 
-            if force or not previous then
-                this.text:SetFont(theme.font, addon.settings.profile.guideFontSize, "")
-                this.number:SetFont(theme.font, addon.settings.profile.guideFontSize - 1, "")
-            end
+            if force or not previous then this:UpdateSubTheme() end
 
             if textChanged then
                 this.text:SetText(row.text)
                 this.number:SetText(row.index)
                 this.numberFrame:SetWidth(max(this.number:GetStringWidth() + 6, 16))
-            end
-
-            if force or not previous then
-                local background = theme.backgroundColors.common
-                local border = theme.borderColors.commonEdge
-                local badgeBackground = theme.version == 1 and theme.backgroundColors.common or
-                                            theme.backgroundColors.activeStepCheckbox
-
-                addon.ui.v2:ApplyFrameBackdrop(this.frame, theme.edge, background, border)
-                addon.ui.v2:AddFrameShadow(this.frame)
-                addon.ui.v2:ApplyFrameBackdrop(this.numberFrame, theme.edge, badgeBackground,
-                                               theme.borderColors.commonEdge)
-                this.text:SetTextColor(unpack(theme.textColor.common))
             end
 
             if visualChanged then
@@ -829,7 +1737,28 @@ function addon.ui.v2:RegisterRXPV2GuideStepsItem()
 
         ["SetWidth"] = function(this, width) this.frame:SetWidth(width) end,
 
-        ["GetHeight"] = function(this) return this.frame:GetHeight() end
+        ["GetHeight"] = function(this) return this.frame:GetHeight() end,
+
+        ["UpdateTheme"] = updateTheme,
+
+        ["UpdateSubTheme"] = function(this)
+            local theme = addon.v2:GetTheme()
+            local badgeBackground = theme.version == 1 and theme.backgroundColors.common or
+                                    theme.backgroundColors.activeStepCheckbox
+            this.text:SetFont(theme.font, addon.v2:GetGuideFontSize(), "")
+            this.text:SetTextColor(unpack(theme.textColor.common))
+            this.number:SetFont(theme.font, addon.v2:GetGuideFontSize() - 1, "")
+            addon.ui.v2:ApplyFrameBackdrop(this.frame, theme.edge, theme.backgroundColors.common,
+                                           theme.borderColors.commonEdge)
+            addon.ui.v2:AddFrameShadow(this.frame)
+            addon.ui.v2:ApplyFrameBackdrop(this.numberFrame, theme.edge, badgeBackground,
+                                           theme.borderColors.commonEdge)
+            if this.row then
+                this.number:SetTextColor(unpack(this.row.current and theme.textColor.title or
+                                                    theme.textColor.inactivePartyTab))
+                this.frame:SetAlpha(this.row.complete and 0.5 or 1)
+            end
+        end
     }
 
     local function Constructor()
@@ -841,7 +1770,7 @@ function addon.ui.v2:RegisterRXPV2GuideStepsItem()
         text:SetPoint("TOPLEFT", frame, "TOPLEFT", 4, -5)
         text:SetJustifyH("LEFT")
         text:SetJustifyV("MIDDLE")
-        text:SetFont(addon.v2:GetTheme().font, addon.settings.profile.guideFontSize, "")
+        text:SetFont(addon.v2:GetTheme().font, addon.v2:GetGuideFontSize(), "")
         text:SetWordWrap(true)
 
         local numberFrame = CreateFrame("Frame", nil, frame, BackdropTemplateMixin and "BackdropTemplate")
@@ -853,7 +1782,7 @@ function addon.ui.v2:RegisterRXPV2GuideStepsItem()
         number:SetPoint("CENTER")
         number:SetJustifyH("CENTER")
         number:SetJustifyV("MIDDLE")
-        number:SetFont(addon.v2:GetTheme().font, addon.settings.profile.guideFontSize - 1, "")
+        number:SetFont(addon.v2:GetTheme().font, addon.v2:GetGuideFontSize() - 1, "")
 
         local widget = {frame = frame, text = text, number = number, numberFrame = numberFrame, type = Type}
         for method, func in pairs(methods) do widget[method] = func end
@@ -880,7 +1809,10 @@ function addon.ui.v2:RegisterRXPV2GuideSteps()
     end
 
     local methods = {
-        ["OnAcquire"] = function(this) this.frame:Show() end,
+        ["OnAcquire"] = function(this)
+            this:UpdateSubTheme()
+            this.frame:Show()
+        end,
 
         ["OnRelease"] = function(this)
             this.rows = nil
@@ -888,7 +1820,6 @@ function addon.ui.v2:RegisterRXPV2GuideSteps()
             for index in pairs(this.items) do ReleaseItem(this, index) end
 
             this.rowsHeight = nil
-            this.minimumRowsHeight = nil
             this.rowsWidth = nil
             this.activeIndex = nil
             this.activeOffset = nil
@@ -897,7 +1828,7 @@ function addon.ui.v2:RegisterRXPV2GuideSteps()
         end,
 
         ["SetRows"] = function(this, rows, force, scrollToActive)
-            local previous, item, minimumHeight, activeOffset, activeIndex, itemHeight, _, textChanged
+            local previous, item, activeOffset, activeIndex, itemHeight, textChanged
             local height = 0
 
             force = force or this.rowsWidth ~= this.scroll.scrollframe:GetWidth()
@@ -926,13 +1857,11 @@ function addon.ui.v2:RegisterRXPV2GuideSteps()
 
                     item.frame:SetPoint("TOPRIGHT", this.content, "TOPRIGHT", 0, 0)
 
-                    _, textChanged = item:SetRow(row, force)
+                    textChanged = select(2, item:SetRow(row, force))
                     if textChanged or force then item:UpdateHeight() end
                     addon.ui.v2:SetFrameTopShadowShown(item.frame, previous ~= nil)
 
                     itemHeight = item:GetHeight()
-                    minimumHeight = min(minimumHeight or itemHeight, itemHeight)
-
                     if row.current then
                         activeOffset = height
                         activeIndex = row.index
@@ -946,7 +1875,6 @@ function addon.ui.v2:RegisterRXPV2GuideSteps()
             for index in pairs(this.items) do if index > #rows then ReleaseItem(this, index) end end
 
             this.rowsHeight = height
-            this.minimumRowsHeight = minimumHeight or 0
             this.activeOffset = activeOffset
             this.content:SetHeight(math.max(height, 1))
 
@@ -972,9 +1900,10 @@ function addon.ui.v2:RegisterRXPV2GuideSteps()
             if this.activeOffset then this.scroll:ScrollToOffset(this.activeOffset) end
         end,
 
-        ["RefreshVisuals"] = function(this)
-            this.scroll:RefreshVisuals()
+        ["UpdateTheme"] = updateTheme,
 
+        ["UpdateSubTheme"] = function(this)
+            this.scroll:UpdateSubTheme()
             if this.rows then this:SetRows(this.rows, true) end
         end
     }
@@ -1014,7 +1943,32 @@ local function GetGuideWindowHeaderBackgroundColor(theme)
 end
 
 function addon.ui.v2.Button_OnEnter(button)
-    if button:IsForbidden() or _G.GameTooltip:IsForbidden() then return end
+    if button:IsForbidden() then return end
+
+    if button.GetNormalTexture then
+        local texture = button:GetNormalTexture()
+        if texture then
+            texture:ClearAllPoints()
+            texture:SetPoint("TOPLEFT", button, "TOPLEFT", -1, 1)
+            texture:SetPoint("BOTTOMRIGHT", button, "BOTTOMRIGHT", 1, -1)
+        end
+
+        texture = button:GetPushedTexture()
+        if texture then
+            texture:ClearAllPoints()
+            texture:SetPoint("TOPLEFT", button, "TOPLEFT", -1, 1)
+            texture:SetPoint("BOTTOMRIGHT", button, "BOTTOMRIGHT", 1, -1)
+        end
+
+        texture = button:GetHighlightTexture()
+        if texture then
+            texture:ClearAllPoints()
+            texture:SetPoint("TOPLEFT", button, "TOPLEFT", -1, 1)
+            texture:SetPoint("BOTTOMRIGHT", button, "BOTTOMRIGHT", 1, -1)
+        end
+    end
+
+    if _G.GameTooltip:IsForbidden() then return end
 
     _G.GameTooltip:SetOwner(button, "ANCHOR_TOP")
     _G.GameTooltip:ClearLines()
@@ -1023,9 +1977,20 @@ function addon.ui.v2.Button_OnEnter(button)
 end
 
 function addon.ui.v2.Button_OnLeave(button)
-    if not button:IsForbidden() and not _G.GameTooltip:IsForbidden() and _G.GameTooltip:IsOwned(button) then
-        _G.GameTooltip:Hide()
+    if button:IsForbidden() then return end
+
+    if button.GetNormalTexture then
+        local texture = button:GetNormalTexture()
+        if texture then texture:SetAllPoints(button) end
+
+        texture = button:GetPushedTexture()
+        if texture then texture:SetAllPoints(button) end
+
+        texture = button:GetHighlightTexture()
+        if texture then texture:SetAllPoints(button) end
     end
+
+    if not _G.GameTooltip:IsForbidden() and _G.GameTooltip:IsOwned(button) then _G.GameTooltip:Hide() end
 end
 
 function addon.ui.v2:RegisterRXPV2GuideWindow()
@@ -1038,14 +2003,22 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
         frame:StopMovingOrSizing()
         this.guideSteps.resizing = nil
 
-        if saveHeight and not this.snapshotEmpty and frame:GetHeight() > this:GetShellHeight() and
-            (this.guideSteps.frame:IsShown() or not addon.settings:IsStepListShown()) then
-            this.guideHeight = frame:GetHeight()
-            addon.settings.profile.v2GuideWindowExpandedHeight = this.guideHeight
+        if saveHeight and not this.snapshotEmpty then
+            if frame:GetHeight() < this:GetMinimumExpandedHeight() then
+                if this.resizeStartedExpanded and addon.settings:IsStepListShown() then
+                    addon.settings:SetStepListShown(false)
+                elseif not addon.settings:IsStepListShown() then
+                    frame:SetHeight(this:GetShellHeight())
+                end
+            elseif this.guideSteps.frame:IsShown() or not addon.settings:IsStepListShown() then
+                this.guideHeight = frame:GetHeight()
+                addon.settings.profile.v2GuideWindowExpandedHeight = this.guideHeight
 
-            if not addon.settings:IsStepListShown() then addon.settings:SetStepListShown(true) end
+                if not addon.settings:IsStepListShown() then addon.settings:SetStepListShown(true) end
+            end
         end
 
+        this.resizeStartedExpanded = nil
         if saveHeight then this:RefreshLayout() end
         addon.settings:SaveFramePositions()
         addon.v2.events:Trigger("GuideWindowRefresh", "layout")
@@ -1055,6 +2028,12 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
         ["GetCollapsedHeight"] = function(this) return this.upperFrame:GetHeight() end,
 
         ["GetShellHeight"] = function(this) return this:GetCollapsedHeight() + this.footer:GetHeight() end,
+
+        ["GetMinimumExpandedHeight"] = function(this)
+            local scrollbar = this.guideSteps.scroll.scrollbar
+            return this:GetShellHeight() + 4 + scrollbar.ScrollUpButton:GetHeight() +
+                       scrollbar.ScrollDownButton:GetHeight() + scrollbar.ThumbTexture:GetHeight()
+        end,
 
         ["GetMinimumWidth"] = function(this)
             local textWidth = max(this.title:GetStringWidth() or 0, this.subtitle:GetStringWidth() or 0)
@@ -1126,8 +2105,7 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
             this.closebutton:SetShown(addon.v2:GetTheme().version ~= 1)
             addon.ui.v2:SetFrameBottomShadowShown(this.upperFrame, not this.guideStepsFrame:IsShown())
 
-            this:UpdateResizeBounds(this.guideStepsFrame:IsShown() and this.guideSteps.frame:IsShown(),
-                                    this.snapshotEmpty)
+            this:UpdateResizeBounds()
 
             if this.snapshotEmpty then
                 this.frame:SetHeight(this:GetShellHeight())
@@ -1138,22 +2116,22 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
             this:RefreshLayout()
         end,
 
-        ["UpdateResizeBounds"] = function(this, hasRows, emptyGuide)
-            local minimumHeight = this:GetCollapsedHeight()
-
-            if emptyGuide or not hasRows then
-                minimumHeight = max(minimumHeight, this:GetShellHeight())
-            elseif hasRows then
-                local guideStepsInset = this.frame:GetHeight() - this.guideSteps.frame:GetHeight()
-                minimumHeight = max(minimumHeight, guideStepsInset + (this.guideSteps.minimumRowsHeight or 0) +
-                                        this.guideSteps.scroll:GetContentTopPadding())
-            end
-
+        ["UpdateResizeBounds"] = function(this)
             local minimumWidth = this:GetMinimumWidth()
 
-            addon.SetResizeBounds(this.frame, minimumWidth, minimumHeight)
+            addon.SetResizeBounds(this.frame, minimumWidth, this:GetShellHeight())
 
             if this.frame:GetWidth() < minimumWidth then this.frame:SetWidth(minimumWidth) end
+        end,
+
+        ["OnHeightSet"] = function(this, height)
+            if not this.guideSteps.resizing or this.snapshotEmpty or not addon.settings:IsStepListShown() then return end
+
+            local showSteps = height >= this:GetMinimumExpandedHeight() and (this.guideSteps.rowsHeight or 0) > 0
+            if this.guideSteps.frame:IsShown() ~= showSteps then
+                this.guideSteps.frame:SetShown(showSteps)
+                this.guideSteps:UpdateScrollbar()
+            end
         end,
 
         ["OnAcquire"] = function(this) this.frame:Show() end,
@@ -1184,6 +2162,13 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
             this.snapshotEmpty = emptyGuide
             this:UpdateHeaderHeight()
 
+            if hasRows and this.guideHeight < this:GetMinimumExpandedHeight() then
+                this.guideHeight = guideWindowDefaultHeight
+                addon.settings.profile.v2GuideWindowExpandedHeight = this.guideHeight
+                addon.settings:SetStepListShown(false)
+                return
+            end
+
             if emptyGuide then
                 this.frame:SetHeight(this:GetShellHeight())
             elseif empty then
@@ -1202,7 +2187,7 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
 
             if guideStepsShown ~= (not empty) then addon:SortTimers() end
 
-            this:UpdateResizeBounds(not empty, emptyGuide)
+            this:UpdateResizeBounds()
             this.guideSteps:UpdateScrollbar()
 
             if not empty then
@@ -1228,11 +2213,11 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
                                            {0, 0, 0, 0})
             addon.ui.v2:HideFrameTopEdge(this.guideStepsFrame)
 
-            this.title:SetFont(theme.font, addon.settings.profile.guideFontSize, "")
+            this.title:SetFont(theme.font, addon.v2:GetGuideFontSize(), "")
             this.title:SetTextColor(1, 0.82, 0)
-            this.subtitle:SetFont(theme.font, addon.settings.profile.guideFontSize + 2, "")
+            this.subtitle:SetFont(theme.font, addon.v2:GetGuideFontSize() + 2, "")
             this.subtitle:SetTextColor(unpack(theme.textColor.common))
-            this.footerText:SetFont(theme.font, addon.settings.profile.guideFontSize - 1, "")
+            this.footerText:SetFont(theme.font, addon.v2:GetGuideFontSize() - 1, "")
             this.footerBackground:SetColorTexture(unpack(theme.version == 1 and theme.backgroundColors.common or
                                                              theme.backgroundColors.scrollbar))
 
@@ -1242,7 +2227,7 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
             this.closebutton:SetShown(theme.version ~= 1)
             this.classIcon:SetTexture(addon.GetV1Texture(addon.player.class))
 
-            this.iconLogo:SetTexture(theme.guideWindow.logo)
+            this.iconLogo:SetTexture(theme.guideWindow.logo, nil, nil, "TRILINEAR")
             this.settingsButton:SetNormalTexture(theme.guideWindow.settingsIcon)
             this.settingsButton:SetPushedTexture(theme.guideWindow.settingsIcon)
             this.settingsButton:SetHighlightTexture(theme.guideWindow.settingsIcon, "ADD")
@@ -1255,7 +2240,7 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
 
             this:UpdateFrameLayout()
 
-            this.guideSteps:RefreshVisuals()
+            this.guideSteps:UpdateSubTheme()
         end
     }
 
@@ -1321,7 +2306,7 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
         settingsButton:SetPoint("RIGHT", guideNameFrame, "RIGHT", -16, 0)
         settingsButton:SetSize(21, 21)
 
-        iconLogo:SetTexture(theme.guideWindow.logo)
+        iconLogo:SetTexture(theme.guideWindow.logo, nil, nil, "TRILINEAR")
         settingsButton:SetNormalTexture(theme.guideWindow.settingsIcon)
         settingsButton:SetPushedTexture(theme.guideWindow.settingsIcon)
         settingsButton:SetHighlightTexture(theme.guideWindow.settingsIcon, "ADD")
@@ -1347,14 +2332,14 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
         title:SetPoint("TOPLEFT", guideNameFrame, "TOPLEFT", 40, -9)
         title:SetPoint("TOPRIGHT", guideSelectButton, "TOPLEFT", -4, -9)
         title:SetJustifyH("LEFT")
-        title:SetFont(theme.font, addon.settings.profile.guideFontSize, "")
+        title:SetFont(theme.font, addon.v2:GetGuideFontSize(), "")
         title:SetTextColor(1, 0.82, 0)
 
         local subtitle = guideNameFrame:CreateFontString(nil, "OVERLAY")
         subtitle:SetPoint("TOPLEFT", title, "BOTTOMLEFT", 0, -2)
         subtitle:SetPoint("TOPRIGHT", title, "BOTTOMRIGHT", 0, -2)
         subtitle:SetJustifyH("LEFT")
-        subtitle:SetFont(theme.font, addon.settings.profile.guideFontSize + 2, "")
+        subtitle:SetFont(theme.font, addon.v2:GetGuideFontSize() + 2, "")
         subtitle:SetTextColor(unpack(theme.textColor.common))
 
         local closebutton = CreateFrame("Button", nil, upperFrame)
@@ -1387,7 +2372,7 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
 
         local footerText = footer:CreateFontString(nil, "OVERLAY")
         footerText:SetPoint("CENTER")
-        footerText:SetFont(theme.font, addon.settings.profile.guideFontSize - 1, "")
+        footerText:SetFont(theme.font, addon.v2:GetGuideFontSize() - 1, "")
         footerText:SetTextColor(0.65, 0.65, 0.7)
         footerText:SetText("RestedXP Guides " .. (addon.release or ""))
 
@@ -1441,7 +2426,7 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
             end
         end)
 
-        widget:UpdateResizeBounds(false)
+        widget:UpdateResizeBounds()
         frame:SetScript("OnMouseDown", function(_, button)
             if button == "LeftButton" and not addon.settings.profile.lockFrames then frame:StartMoving() end
         end)
@@ -1449,6 +2434,7 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
         frame:SetScript("OnMouseUp", function() SaveStatus(widget) end)
         sizer:SetScript("OnMouseDown", function()
             if not addon.settings.profile.lockFrames then
+                widget.resizeStartedExpanded = guideSteps.frame:IsShown()
                 guideSteps.resizing = true
                 frame:StartSizing("BOTTOMRIGHT")
             end
@@ -1481,14 +2467,14 @@ function addon.v2:GetGuideWindow()
     addon.enabledFrames.RXPV2GuideWindow = frame
 
     frame.IsFeatureEnabled = function()
-        return addon.v2:IsGuideWindowEnabled() and not addon.settings.profile.hideGuideWindow, false
+        return addon.v2:IsEnabled() and not addon.settings.profile.hideGuideWindow, false
     end
 
     addon.RXPFrame:HookScript("OnShow", function()
-        if addon.v2:IsGuideWindowEnabled() and not addon.settings.profile.hideGuideWindow then frame:Show() end
+        if addon.v2:IsEnabled() and not addon.settings.profile.hideGuideWindow then frame:Show() end
     end)
 
-    addon.RXPFrame:HookScript("OnHide", function() if addon.v2:IsGuideWindowEnabled() then frame:Hide() end end)
+    addon.RXPFrame:HookScript("OnHide", function() if addon.v2:IsEnabled() then frame:Hide() end end)
 
     local profile = addon.settings.profile
     local positions = profile.framePositions
@@ -1504,7 +2490,7 @@ function addon.v2:GetGuideWindow()
 
     frame:SetScale(profile.windowScale)
 
-    if not profile.v2GuideWindowExpandedHeight and frame:GetHeight() > window:GetCollapsedHeight() then
+    if not profile.v2GuideWindowExpandedHeight and frame:GetHeight() >= window:GetMinimumExpandedHeight() then
         profile.v2GuideWindowExpandedHeight = frame:GetHeight()
     end
 
@@ -1515,7 +2501,7 @@ function addon.v2:GetGuideWindow()
 end
 
 function addon.v2:GetGuideWindowAnchorFrame()
-    if not self:IsGuideWindowEnabled() then return end
+    if not self:IsEnabled() then return end
 
     local window = self.state and self.state.guideWindow
 
@@ -1523,7 +2509,7 @@ function addon.v2:GetGuideWindowAnchorFrame()
 end
 
 function addon.v2:UpdateGuideWindow(scrollToActive)
-    if not self:IsGuideWindowEnabled() then return end
+    if not self:IsEnabled() then return end
 
     local window = self:GetGuideWindow()
     if not window then return end
@@ -1558,7 +2544,7 @@ function addon.v2:DisableLegacyGuideWindow()
     if scrollbar then
         if not scrollbar.rxpV2HideHook then
             scrollbar:HookScript("OnShow", function(this)
-                if addon.v2:IsGuideWindowEnabled() then this:Hide() end
+                if addon.v2:IsEnabled() then this:Hide() end
             end)
 
             scrollbar.rxpV2HideHook = true
@@ -1591,35 +2577,25 @@ function addon.ui.v2:RegisterRXPV2ScrollFrame()
     --[[-----------------------------------------------------------------------------
     Scripts
     -------------------------------------------------------------------------------]]
-    local function ScrollFrame_OnMouseWheel(frame, value) frame.obj:MoveScroll(value) end
-
-    local function ScrollFrame_OnSizeChanged(frame) frame:SetScript("OnUpdate", FixScrollOnUpdate) end
-
-    local function ScrollBar_OnScrollValueChanged(frame, value) frame.obj:SetScroll(value) end
-
     --[[-----------------------------------------------------------------------------
     Methods
     -------------------------------------------------------------------------------]]
     local methods = {
         ["OnAcquire"] = function(this)
-            this.v2 = addon.v2:IsGuideWindowEnabled()
-            this.theme = nil
             this.contentTopPadding = 0
             this:SetScroll(0)
             this.scrollframe:SetScript("OnUpdate", FixScrollOnUpdate)
-            this:RefreshVisuals()
+            this:UpdateSubTheme()
         end,
 
         ["OnRelease"] = function(this)
             this.status = nil
             this.noScrollbar = nil
-            this.theme = nil
 
             for k in pairs(this.localstatus) do this.localstatus[k] = nil end
 
             this.scrollframe:SetPoint("BOTTOMRIGHT")
             this.scrollbar:Hide()
-            this.scrollBarShown = nil
             this.contentTopPadding = 0
 
             this.content.height, this.content.width, this.content.original_width = nil, nil, nil
@@ -1663,7 +2639,7 @@ function addon.ui.v2:RegisterRXPV2ScrollFrame()
             local status = this.status or this.localstatus
             local height, viewheight = this.scrollframe:GetHeight(), this.content:GetHeight()
 
-            if this.scrollBarShown then
+            if this.scrollbar:IsShown() then
                 local diff = height - viewheight
                 local delta = 1
 
@@ -1680,12 +2656,11 @@ function addon.ui.v2:RegisterRXPV2ScrollFrame()
             local status = this.status or this.localstatus
             local height, viewheight = this.scrollframe:GetHeight(), this.content:GetHeight()
 
-            if this.noScrollbar or viewheight <= 1 then
-                local scrollbarWasShown = this.scrollBarShown
+            if this.noScrollbar or height <= 1 or viewheight <= 1 then
+                local scrollbarWasShown = this.scrollbar:IsShown()
 
                 this:SetScroll(0)
                 if this.scrollbar:GetValue() ~= 0 then this.scrollbar:SetValue(0) end
-                this.scrollBarShown = nil
                 this.scrollbar:Hide()
                 this.scrollframe:SetPoint("BOTTOMRIGHT")
 
@@ -1702,8 +2677,7 @@ function addon.ui.v2:RegisterRXPV2ScrollFrame()
             local offset = status.offset or 0
 
             if viewheight < height + 2 then
-                if this.scrollBarShown then
-                    this.scrollBarShown = nil
+                if this.scrollbar:IsShown() then
                     this.scrollbar:Hide()
                     this.scrollbar:SetValue(0)
                     this.scrollframe:SetPoint("BOTTOMRIGHT")
@@ -1715,8 +2689,7 @@ function addon.ui.v2:RegisterRXPV2ScrollFrame()
                     this:DoLayout()
                 end
             else
-                if not this.scrollBarShown then
-                    this.scrollBarShown = true
+                if not this.scrollbar:IsShown() then
                     this.scrollbar:Show()
                     this.scrollframe:SetPoint("BOTTOMRIGHT", -20, 0)
 
@@ -1755,41 +2728,8 @@ function addon.ui.v2:RegisterRXPV2ScrollFrame()
             this.scrollframe:SetScript("OnUpdate", FixScrollOnUpdate)
         end,
 
-        ["RefreshVisuals"] = function(this)
-            local theme = this.theme or (this.v2 and addon.v2:GetTheme() or addon.activeTheme)
-            local isLegacyTheme = not theme.backgroundColors or theme.version == 1
-
-            if isLegacyTheme then
-                local background = theme.backgroundColors and theme.backgroundColors.common or theme.background
-
-                this.scrollbg:SetColorTexture(unpack(background))
-                this.scrollbar.ThumbTexture:SetDesaturated(true)
-                this.scrollbar.ThumbTexture:SetVertexColor(unpack(background))
-
-                for _, button in ipairs({this.scrollbar.ScrollUpButton, this.scrollbar.ScrollDownButton}) do
-                    button.Normal:SetDesaturated(true)
-                    button.Normal:SetVertexColor(unpack(background))
-                end
-            else
-                this.scrollbg:SetColorTexture(unpack(theme.backgroundColors.scrollbar))
-                this.scrollbar.ThumbTexture:SetDesaturated(false)
-                this.scrollbar.ThumbTexture:SetVertexColor(1, 1, 1, 1)
-
-                for _, button in ipairs({this.scrollbar.ScrollUpButton, this.scrollbar.ScrollDownButton}) do
-                    button.Normal:SetDesaturated(false)
-                    button.Normal:SetVertexColor(1, 1, 1, 1)
-                end
-            end
-        end,
-
-        ["SetTheme"] = function(this, theme)
-            this.theme = theme
-            this:RefreshVisuals()
-        end,
-
         ["UpdateSubTheme"] = function(this)
-            this.theme = this.v2 and addon.v2:GetTheme() or addon.activeTheme
-            this:RefreshVisuals()
+            updateScrollBarVisuals(this.scrollbar, this.scrollbg, addon.v2:GetTheme())
         end,
 
         ["UpdateTheme"] = updateTheme,
@@ -1812,7 +2752,7 @@ function addon.ui.v2:RegisterRXPV2ScrollFrame()
         ["OnWidthSet"] = function(this, width)
             local content = this.content
 
-            content.width = max(width - 4 - (this.scrollBarShown and 20 or 0), 0)
+            content.width = max(width - 4 - (this.scrollbar:IsShown() and 20 or 0), 0)
             content.original_width = width
         end,
 
@@ -1833,8 +2773,10 @@ function addon.ui.v2:RegisterRXPV2ScrollFrame()
         scrollframe:SetPoint("TOPLEFT")
         scrollframe:SetPoint("BOTTOMRIGHT")
         scrollframe:EnableMouseWheel(true)
-        scrollframe:SetScript("OnMouseWheel", ScrollFrame_OnMouseWheel)
-        scrollframe:SetScript("OnSizeChanged", ScrollFrame_OnSizeChanged)
+        scrollframe:SetScript("OnMouseWheel", function(this, value) this.obj:MoveScroll(value) end)
+        scrollframe:SetScript("OnSizeChanged", function(this)
+            this:SetScript("OnUpdate", FixScrollOnUpdate)
+        end)
 
         local scrollbar = CreateFrame("Slider", ("RXPV2ScrollFrame%dScrollBar"):format(num), scrollframe,
                                       "RXPV2ScrollBarTemplate")
@@ -1849,7 +2791,7 @@ function addon.ui.v2:RegisterRXPV2ScrollFrame()
         scrollbar:Hide()
 
         -- set the script as the last step, so it doesn't fire yet
-        scrollbar:SetScript("OnValueChanged", ScrollBar_OnScrollValueChanged)
+        scrollbar:SetScript("OnValueChanged", function(this, value) this.obj:SetScroll(value) end)
 
         local scrollbg = scrollbar:CreateTexture(nil, "BACKGROUND")
         scrollbg:SetAllPoints(scrollbar)
@@ -1876,8 +2818,6 @@ function addon.ui.v2:RegisterRXPV2ScrollFrame()
 
         scrollframe.obj, scrollbar.obj = widget, widget
 
-        widget:RefreshVisuals()
-
         return AceGUI:RegisterAsContainer(widget)
     end
 
@@ -1891,13 +2831,6 @@ function addon.ui.v2:RegisterRXPV2ActiveStepsFrame()
     -------------------------------------------------------------------------------]]
     local Type, Version = "RXPV2ActiveStepsFrame", 4
     if not AceGUI or (AceGUI:GetWidgetVersion(Type) or 0) >= Version then return end
-
-    --[[-----------------------------------------------------------------------------
-    Scripts
-    -------------------------------------------------------------------------------]]
-    local function Frame_OnShow(frame) frame.obj:Fire("OnShow") end
-
-    local function Frame_OnClose(frame) frame.obj:Fire("OnClose") end
 
     --[[-----------------------------------------------------------------------------
     Methods
@@ -1922,7 +2855,7 @@ function addon.ui.v2:RegisterRXPV2ActiveStepsFrame()
         ["LayoutFinished"] = function(this, width, height)
             if this.noAutoHeight then return end
 
-            this:SetHeight((height or 0) + 8 + 8 - 8)
+            this:SetHeight((height or 0) + 8)
         end,
 
         ["OnHeightSet"] = function(this, height)
@@ -1930,7 +2863,9 @@ function addon.ui.v2:RegisterRXPV2ActiveStepsFrame()
 
             content:SetHeight(height)
             content.height = height
-        end
+        end,
+
+        ["UpdateTheme"] = updateTheme
     }
 
     --[[-----------------------------------------------------------------------------
@@ -1951,8 +2886,8 @@ function addon.ui.v2:RegisterRXPV2ActiveStepsFrame()
         frame:SetFrameStrata("LOW")
         frame:SetFrameLevel(100)
 
-        frame:SetScript("OnShow", Frame_OnShow)
-        frame:SetScript("OnHide", Frame_OnClose)
+        frame:SetScript("OnShow", function(this) this.obj:Fire("OnShow") end)
+        frame:SetScript("OnHide", function(this) this.obj:Fire("OnClose") end)
 
         -- Container Support
         local content = CreateFrame("Frame", nil, frame)
@@ -1979,18 +2914,6 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
 
     local tabHeight, activeTabHeight = 22, 24
 
-    --[[-----------------------------------------------------------------------------
-    Scripts
-    -------------------------------------------------------------------------------]]
-    local function Frame_OnShow(frame) frame.obj:Fire("OnShow") end
-
-    local function Frame_OnClose(frame) frame.obj:Fire("OnClose") end
-
-    local function Frame_OnMouseDown(frame)
-        frame:StartMoving()
-        AceGUI:ClearFocus()
-    end
-
     local function SaveFrameStatus(frame)
         frame:StopMovingOrSizing()
 
@@ -2003,107 +2926,6 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
         status.left = frame:GetLeft()
 
         addon.settings:SaveFramePositions()
-    end
-
-    local function Frame_OnMouseUp(frame)
-        SaveFrameStatus(frame)
-        AceGUI:ClearFocus()
-    end
-
-    local function MoverSizer_OnMouseUp(mover) SaveFrameStatus(mover:GetParent()) end
-
-    local function Sizer_OnMouseDown(frame)
-        local this = frame:GetParent().obj
-
-        this.autoSize = false
-        addon.settings.profile.activePartyStepsV2AutoSize = false
-
-        this.frame:StartSizing("BOTTOMRIGHT")
-
-        AceGUI:ClearFocus()
-    end
-
-    local function Tab_OnClick(tab, button)
-        local this = tab:GetParent().obj
-
-        if button == "RightButton" then
-            this:Fire("OnMenuRequested")
-
-            return
-        end
-
-        this:SetActiveTab(tab.rxpPlayer)
-        this:Fire("OnTabSelected", tab.rxpPlayer)
-    end
-
-    local function Tab_OnMouseDown(tab, button)
-        if button == "RightButton" then return end
-
-        tab:GetParent():StartMoving()
-
-        AceGUI:ClearFocus()
-    end
-
-    local function Tab_OnEnter(tab)
-        if tab.rxpHighlight then tab.rxpHighlight:Show() end
-
-        if not (tab.rxpTruncated and tab.rxpFullName) then return end
-
-        _G.GameTooltip:SetOwner(tab, "ANCHOR_TOP")
-        _G.GameTooltip:SetText(tab.rxpFullName)
-        _G.GameTooltip:Show()
-    end
-
-    local function Tab_OnLeave(tab)
-        if tab.rxpHighlight then tab.rxpHighlight:Hide() end
-        if _G.GameTooltip:IsOwned(tab) then _G.GameTooltip:Hide() end
-    end
-
-    local function RemoveLastUTF8Codepoint(text)
-        local index = #text
-        local byte
-
-        while index > 0 do
-            byte = strbyte(text, index)
-            if byte < 0x80 or byte > 0xBF then return strsub(text, 1, index - 1) end
-
-            index = index - 1
-        end
-
-        return ""
-    end
-
-    local function FitTabText(fontString, text, width)
-        local label = text or ""
-        local availableWidth = max(width or 0, 0)
-
-        fontString:SetText(label)
-
-        if fontString:GetStringWidth() <= availableWidth then return false end
-
-        while #label > 1 do
-            label = RemoveLastUTF8Codepoint(label)
-
-            fontString:SetText(label .. "...")
-
-            if fontString:GetStringWidth() <= availableWidth then return true end
-        end
-
-        fontString:SetText("...")
-
-        return true
-    end
-
-    local function CloseButton_OnClick(button, mouseButton)
-        local widget = button:GetParent().obj
-
-        if mouseButton == "RightButton" then
-            widget:Fire("OnMenuRequested")
-            return
-        end
-
-        widget:Fire("OnCloseClicked")
-        widget:Hide()
     end
 
     --[[-----------------------------------------------------------------------------
@@ -2121,6 +2943,7 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
             this.unusedTabButtons = this.unusedTabButtons or {}
             this.autoSize = addon.settings.profile.activePartyStepsV2AutoSize ~= false
 
+            this:UpdateSubTheme({})
             this:ApplyStatus()
             this:Show()
 
@@ -2141,8 +2964,6 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
                 tab:Hide()
 
                 tab.rxpPlayer = nil
-                tab.rxpFullName = nil
-                tab.rxpTruncated = nil
 
                 if tab.rxpHighlight then tab.rxpHighlight:Hide() end
 
@@ -2203,14 +3024,15 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
 
         ["RefreshTabTheme"] = function(this, tab, active)
             local theme = addon.v2:GetTheme()
-            local backgroundColors = theme.backgroundColors
-            local borderColors = theme.borderColors
-            local textColor = theme.textColor
-            local background = backgroundColors.common
-            local border = borderColors.commonEdge
-            local labelColor = active and textColor.title or textColor.inactivePartyTab
 
-            addon.ui.v2:ApplyFrameBackdrop(tab, theme.edge, background, border)
+            tab.text:SetFont(theme.font, 12, "")
+            local labelWidth = ceil(tab.text:GetStringWidth())
+            tab.text:SetWidth(labelWidth)
+            tab:SetWidth(labelWidth + 16)
+            tab.text:SetTextColor(unpack(active and theme.textColor.title or theme.textColor.inactivePartyTab))
+
+            addon.ui.v2:ApplyFrameBackdrop(tab, theme.edge, theme.backgroundColors.common,
+                                           theme.borderColors.commonEdge)
             tab.rxpBorder.textures[1]:Show()
             tab.rxpBorder.textures[2]:Hide()
 
@@ -2220,8 +3042,6 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
                 tab.rxpHighlight:SetColorTexture(1, 1, 1, 0.12)
                 tab.rxpHighlight:Hide()
             end
-
-            tab.text:SetTextColor(unpack(labelColor))
         end,
 
         ["SetActiveTab"] = function(this, player)
@@ -2263,21 +3083,6 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
             local previousTab
             local tab, player
             local usedTabs = {}
-            local tabCount = #players
-            local frameWidth = this.frame:GetWidth() or 0
-            local minWidth = tabCount > 4 and 24 or 58
-
-            local availableWidth = frameWidth - 18 - 42 - (3 * max(tabCount - 1, 0))
-            local tabWidth = 92
-            local labelWidth
-            local theme = addon.v2:GetTheme()
-            local tabFont = theme.font
-            local tabFontSize = 12
-
-            if tabCount > 0 and availableWidth > 0 then
-                tabWidth = min(92, floor(availableWidth / tabCount))
-                tabWidth = max(tabWidth, minWidth)
-            end
 
             for playerIndex = 1, #players do
                 player = players[playerIndex]
@@ -2291,13 +3096,33 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
                     tab:SetFrameLevel(this.frame:GetFrameLevel() + 2)
                     tab:EnableMouse(true)
                     tab:RegisterForClicks("LeftButtonUp", "RightButtonUp")
-                    tab:SetScript("OnClick", Tab_OnClick)
-                    tab:SetScript("OnMouseDown", Tab_OnMouseDown)
-                    tab:SetScript("OnMouseUp", MoverSizer_OnMouseUp)
-                    tab:SetScript("OnEnter", Tab_OnEnter)
-                    tab:SetScript("OnLeave", Tab_OnLeave)
+                    tab:SetScript("OnClick", function(this, button)
+                        local widget = this:GetParent().obj
+
+                        if button == "RightButton" then
+                            widget:Fire("OnMenuRequested")
+                            return
+                        end
+
+                        widget:SetActiveTab(this.rxpPlayer)
+                        widget:Fire("OnTabSelected", this.rxpPlayer)
+                    end)
+                    tab:SetScript("OnMouseDown", function(this, button)
+                        if button == "RightButton" then return end
+
+                        this:GetParent():StartMoving()
+                        AceGUI:ClearFocus()
+                    end)
+                    tab:SetScript("OnMouseUp", function(this) SaveFrameStatus(this:GetParent()) end)
+                    tab:SetScript("OnEnter", function(this)
+                        if this.rxpHighlight then this.rxpHighlight:Show() end
+                    end)
+                    tab:SetScript("OnLeave", function(this)
+                        if this.rxpHighlight then this.rxpHighlight:Hide() end
+                    end)
 
                     tab.text = tab:CreateFontString(nil, "OVERLAY")
+                    tab.text:SetFont(addon.v2:GetTheme().font, 12, "")
                     tab.text:SetPoint("CENTER", tab, 0, -1)
                     tab.text:SetJustifyH("CENTER")
                     tab.text:SetJustifyV("MIDDLE")
@@ -2309,25 +3134,9 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
                 this.tabButtons[player] = tab
 
                 tab.rxpPlayer = player
-                tab.rxpFullName = player
 
-                labelWidth = max(tabWidth - 16, 1)
+                tab.text:SetText(player)
 
-                if tab.rxpLabel ~= player or tab.rxpLabelWidth ~= labelWidth or tab.rxpTabFont ~= tabFont or
-                    tab.rxpTabFontSize ~= tabFontSize then
-
-                    tab.text:SetFontObject(_G.GameFontNormalSmall)
-                    tab.text:SetFont(tabFont, tabFontSize, "")
-                    tab.text:SetWidth(labelWidth)
-                    tab.rxpTruncated = FitTabText(tab.text, player, labelWidth)
-
-                    tab.rxpLabel = player
-                    tab.rxpLabelWidth = labelWidth
-                    tab.rxpTabFont = tabFont
-                    tab.rxpTabFontSize = tabFontSize
-                end
-
-                tab:SetSize(tabWidth, player == activePlayer and activeTabHeight or tabHeight)
                 tab:ClearAllPoints()
 
                 if previousTab then
@@ -2336,7 +3145,6 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
                     tab:SetPoint("TOPLEFT", this.frame, "TOPLEFT", 18, tabHeight)
                 end
 
-                this:RefreshTabTheme(tab, player == activePlayer)
                 tab:Show()
 
                 previousTab = tab
@@ -2348,10 +3156,6 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
                     tab:Hide()
 
                     tab.rxpPlayer = nil
-                    tab.rxpFullName = nil
-                    tab.rxpTruncated = nil
-                    tab.rxpLabel = nil
-
                     if tab.rxpHighlight then tab.rxpHighlight:Hide() end
 
                     this.tabButtons[tabPlayer] = nil
@@ -2364,7 +3168,23 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
 
         ["UpdateTheme"] = updateTheme,
 
-        ["UpdateSubTheme"] = updatePartyFrameBackgroundVisibility,
+        ["UpdateSubTheme"] = function(this, payload)
+            local theme = addon.v2:GetTheme()
+            addon.ui.v2:ApplyFrameBackdrop(this.frame, theme.edge, theme.backgroundColors.common,
+                                           theme.borderColors.commonEdge)
+            this.footerBackground:SetColorTexture(unpack(theme.version == 1 and theme.backgroundColors.common or
+                                                             theme.backgroundColors.scrollbar))
+            this.footertext:SetFont(theme.font, addon.v2:GetGuideFontSize() - 1, "")
+            for player, tab in pairs(this.tabButtons or {}) do
+                this:RefreshTabTheme(tab, player == this.activeTab)
+            end
+            if payload and payload.updateChildren then
+                for _, container in pairs(this.playerContainers or {}) do
+                    if container.UpdateTheme then container:UpdateTheme({updateChildren = true}) end
+                end
+            end
+            updatePartyFrameBackgroundVisibility(this, payload)
+        end,
 
         ["Hide"] = function(this) this.frame:Hide() end,
 
@@ -2428,10 +3248,16 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
         end
 
         frame:SetToplevel(true)
-        frame:SetScript("OnShow", Frame_OnShow)
-        frame:SetScript("OnHide", Frame_OnClose)
-        frame:SetScript("OnMouseDown", Frame_OnMouseDown)
-        frame:SetScript("OnMouseUp", Frame_OnMouseUp)
+        frame:SetScript("OnShow", function(this) this.obj:Fire("OnShow") end)
+        frame:SetScript("OnHide", function(this) this.obj:Fire("OnClose") end)
+        frame:SetScript("OnMouseDown", function(this)
+            this:StartMoving()
+            AceGUI:ClearFocus()
+        end)
+        frame:SetScript("OnMouseUp", function(this)
+            SaveFrameStatus(this)
+            AceGUI:ClearFocus()
+        end)
 
         local closebutton = CreateFrame("Button", nil, frame)
         closebutton:SetFrameLevel(frame:GetFrameLevel() + 20)
@@ -2441,7 +3267,17 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
         closebutton:SetPushedTexture(addon.ui.v2:GetTexture("rxp-btn-close"))
         closebutton:SetHighlightTexture(addon.ui.v2:GetTexture("rxp-btn-close"), "ADD")
         closebutton:RegisterForClicks("LeftButtonUp", "RightButtonUp")
-        closebutton:SetScript("OnClick", CloseButton_OnClick)
+        closebutton:SetScript("OnClick", function(this, mouseButton)
+            local widget = this:GetParent().obj
+
+            if mouseButton == "RightButton" then
+                widget:Fire("OnMenuRequested")
+                return
+            end
+
+            widget:Fire("OnCloseClicked")
+            widget:Hide()
+        end)
 
         local footer = CreateFrame("Frame", nil, frame)
         footer:SetPoint("BOTTOMLEFT", frame, "BOTTOMLEFT", 1, 1)
@@ -2457,7 +3293,7 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
         local footertext = footer:CreateFontString(nil, "OVERLAY")
         footertext:SetPoint("CENTER", footer, 0, 0)
         footertext:SetTextColor(0.65, 0.65, 0.7)
-        footertext:SetFont(theme.font, addon.settings.profile.guideFontSize - 1, "")
+        footertext:SetFont(theme.font, addon.v2:GetGuideFontSize() - 1, "")
         footertext:SetText("RestedXP: Active Party Steps")
 
         local sizer = CreateFrame("Button", nil, frame)
@@ -2468,8 +3304,18 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
         sizer:SetNormalTexture("Interface/CHATFRAME/UI-ChatIM-SizeGrabber-Up")
         sizer:SetHighlightTexture("Interface/CHATFRAME/UI-ChatIM-SizeGrabber-Highlight", "ADD")
         sizer:EnableMouse(true)
-        sizer:SetScript("OnMouseDown", Sizer_OnMouseDown)
-        sizer:SetScript("OnMouseUp", MoverSizer_OnMouseUp)
+        sizer:SetScript("OnMouseDown", function(this)
+            local widget = this:GetParent().obj
+
+            if widget.autoSize then
+                widget.autoSize = false
+                addon.settings.profile.activePartyStepsV2AutoSize = false
+            end
+
+            widget.frame:StartSizing("BOTTOMRIGHT")
+            AceGUI:ClearFocus()
+        end)
+        sizer:SetScript("OnMouseUp", function(this) SaveFrameStatus(this:GetParent()) end)
 
         -- Container Support
         local content = CreateFrame("Frame", nil, frame, BackdropTemplateMixin and "BackdropTemplate")
@@ -2480,6 +3326,7 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
             localstatus = {},
             closebutton = closebutton,
             footer = footer,
+            footerBackground = footerBackground,
             footertext = footertext,
             sizer = sizer,
             content = content,
@@ -2534,9 +3381,6 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
         if not this.rxpElementsDirty and this.rxpLayoutWidth == width then return end
 
         local row, element, hasButton, hasIcon, textLeft, textTop, textWidth, textHeight, textAvailable, rowHeight
-        local checkboxLeft = 2
-        local checkboxSize = 11
-        local textGap = 7
         local height = 0
 
         for rowIndex = 1, rowCount do
@@ -2546,10 +3390,10 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
             hasIcon = row.icon:IsShown()
 
             if hasIcon then
-                textLeft = checkboxLeft + checkboxSize + 5 + 14 + 1
+                textLeft = 33
                 textTop = -3
             else
-                textLeft = hasButton and (checkboxLeft + checkboxSize + textGap) or 17
+                textLeft = hasButton and 20 or 17
                 textTop = -1
             end
 
@@ -2616,34 +3460,6 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
         button.rxpHoverFrame:SetShown(hovered)
     end
 
-    local function elementCheckboxOnEnter(button)
-        button.rxpHovered = true
-        updateElementCheckbox(button)
-
-        if button:IsForbidden() or _G.GameTooltip:IsForbidden() then return end
-
-        _G.GameTooltip:SetOwner(button.rxpHoverFrame, "ANCHOR_NONE")
-        _G.GameTooltip:ClearAllPoints()
-        _G.GameTooltip:SetPoint("BOTTOM", button.rxpHoverFrame, "TOP", 0, 6)
-        _G.GameTooltip:ClearLines()
-        _G.GameTooltip:AddLine(L("Skip step"), 1, 1, 1)
-
-        local element = button:GetParent().element
-
-        if addon.settings.profile.debug and element and element.tooltip then
-            _G.GameTooltip:AddLine(tostring(element.tooltip), 0.65, 0.7, 0.9)
-        end
-
-        _G.GameTooltip:Show()
-    end
-
-    local function elementCheckboxOnLeave(button)
-        button.rxpHovered = nil
-        updateElementCheckbox(button)
-
-        if not button:IsForbidden() and not _G.GameTooltip:IsForbidden() then _G.GameTooltip:Hide() end
-    end
-
     local function elementTextOnHyperlinkClick(_, link, text, button) _G.SetItemRef(link, text, button) end
 
     local function elementTextOnHyperlinkEnter(row, link)
@@ -2657,24 +3473,6 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
         if not row:IsForbidden() and not _G.GameTooltip:IsForbidden() and _G.GameTooltip:GetOwner() == row then
             _G.GameTooltip:Hide()
         end
-    end
-
-    local function elementRowOnEnter(hoverFrame)
-        local row = hoverFrame.row
-
-        if row.rxpQuestLink then elementTextOnHyperlinkEnter(row, row.rxpQuestLink) end
-    end
-
-    local function elementRowOnLeave(hoverFrame)
-        local row = hoverFrame.row
-
-        if row.rxpQuestLink then elementTextOnHyperlinkLeave(row) end
-    end
-
-    local function elementRowOnClick(hoverFrame, button)
-        local row = hoverFrame.row
-
-        if row.rxpQuestLink then elementTextOnHyperlinkClick(row, row.rxpQuestLink, row.text:GetText(), button) end
     end
 
     local function updateElementRowText(row, element, resetPending)
@@ -2721,55 +3519,77 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
 
         local button = CreateFrame("CheckButton", nil, row, BackdropTemplateMixin and "BackdropTemplate")
 
-        local checkboxSize = 11
-
-        button:SetSize(checkboxSize, checkboxSize)
+        button:SetSize(11, 11)
         button:SetPoint("TOPLEFT", row, "TOPLEFT", 2, -2)
         button:SetPushedTexture("")
 
         local checkShort = button:CreateTexture(nil, "OVERLAY")
         checkShort:SetColorTexture(1, 1, 1, 1)
-        checkShort:SetSize(3.5, 1.25)
-        checkShort:SetPoint("CENTER", button, "CENTER", -1.5, -0.8)
+        checkShort:SetSize(4, 1)
+        checkShort:SetPoint("CENTER", button, "CENTER", -2, -1)
         checkShort:SetRotation(-math.pi / 4)
         checkShort:Hide()
         button.rxpCheckShort = checkShort
 
         local checkLong = button:CreateTexture(nil, "OVERLAY")
         checkLong:SetColorTexture(1, 1, 1, 1)
-        checkLong:SetSize(6, 1.25)
-        checkLong:SetPoint("CENTER", button, "CENTER", 1, -0.1)
+        checkLong:SetSize(6, 1)
+        checkLong:SetPoint("CENTER", button, "CENTER", 1, 0)
         checkLong:SetRotation(math.pi / 4)
         checkLong:Hide()
         button.rxpCheckLong = checkLong
 
         local checkboxHoverFrame = CreateFrame("Frame", nil, button)
-        checkboxHoverFrame:SetSize(checkboxSize, checkboxSize)
+        checkboxHoverFrame:SetSize(11, 11)
         checkboxHoverFrame:SetPoint("CENTER", button, "CENTER")
         checkboxHoverFrame:SetFrameLevel(button:GetFrameLevel() + 2)
         checkboxHoverFrame:EnableMouse(false)
         button.rxpHoverFrame = checkboxHoverFrame
 
         local skipIcon = checkboxHoverFrame:CreateTexture(nil, "OVERLAY")
-        local hoverIconInset = 2
-        skipIcon:SetPoint("TOPLEFT", checkboxHoverFrame, "TOPLEFT", hoverIconInset, -hoverIconInset)
-        skipIcon:SetPoint("BOTTOMRIGHT", checkboxHoverFrame, "BOTTOMRIGHT", -hoverIconInset, hoverIconInset)
+        skipIcon:SetPoint("TOPLEFT", checkboxHoverFrame, "TOPLEFT", 2, -2)
+        skipIcon:SetPoint("BOTTOMRIGHT", checkboxHoverFrame, "BOTTOMRIGHT", -2, 2)
         skipIcon:SetTexture(addon.ui.v2:GetTexture("rxp-skip-step-hover"))
 
         updateElementCheckbox(button)
-        button:SetScript("OnEnter", elementCheckboxOnEnter)
-        button:SetScript("OnLeave", elementCheckboxOnLeave)
+        button:SetScript("OnEnter", function(this)
+            this.rxpHovered = true
+            updateElementCheckbox(this)
+
+            if this:IsForbidden() or _G.GameTooltip:IsForbidden() then return end
+
+            _G.GameTooltip:SetOwner(this.rxpHoverFrame, "ANCHOR_NONE")
+            _G.GameTooltip:ClearAllPoints()
+            _G.GameTooltip:SetPoint("BOTTOM", this.rxpHoverFrame, "TOP", 0, 6)
+            _G.GameTooltip:ClearLines()
+            _G.GameTooltip:AddLine(L("Skip step"), 1, 1, 1)
+
+            local element = this:GetParent().element
+
+            if addon.settings.profile.debug and element and element.tooltip then
+                _G.GameTooltip:AddLine(tostring(element.tooltip), 0.65, 0.7, 0.9)
+            end
+
+            _G.GameTooltip:Show()
+        end)
+        button:SetScript("OnLeave", function(this)
+            this.rxpHovered = nil
+            updateElementCheckbox(this)
+
+            if not this:IsForbidden() and not _G.GameTooltip:IsForbidden() then _G.GameTooltip:Hide() end
+        end)
         button:SetScript("PostClick", addon.ActiveStepElementPostClick)
         button:HookScript("PostClick", updateElementCheckbox)
         row.button = button
 
+        local theme = addon.v2:GetTheme()
         local icon = row:CreateFontString(nil, "OVERLAY")
-        icon:SetFontObject(_G.GameFontNormalSmall)
+        icon:SetFont(theme.font, addon.v2:GetGuideFontSize() - 1, "")
         icon:SetPoint("TOPLEFT", button, "TOPRIGHT", 5, -1)
         row.icon = icon
 
         local text = row:CreateFontString(nil, "OVERLAY")
-        text:SetFontObject(_G.GameFontNormalSmall)
+        text:SetFont(theme.font, addon.v2:GetGuideFontSize(), "")
         text:SetJustifyH("LEFT")
         text:SetJustifyV("MIDDLE")
         text:SetWordWrap(true)
@@ -2780,9 +3600,20 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
         rowHoverFrame.row = row
         rowHoverFrame:SetFrameLevel(row:GetFrameLevel() + 3)
         rowHoverFrame:EnableMouse(true)
-        rowHoverFrame:SetScript("OnEnter", elementRowOnEnter)
-        rowHoverFrame:SetScript("OnLeave", elementRowOnLeave)
-        rowHoverFrame:SetScript("OnClick", elementRowOnClick)
+        rowHoverFrame:SetScript("OnEnter", function(this)
+            local row = this.row
+            if row.rxpQuestLink then elementTextOnHyperlinkEnter(row, row.rxpQuestLink) end
+        end)
+        rowHoverFrame:SetScript("OnLeave", function(this)
+            local row = this.row
+            if row.rxpQuestLink then elementTextOnHyperlinkLeave(row) end
+        end)
+        rowHoverFrame:SetScript("OnClick", function(this, button)
+            local row = this.row
+            if row.rxpQuestLink then
+                elementTextOnHyperlinkClick(row, row.rxpQuestLink, row.text:GetText(), button)
+            end
+        end)
         rowHoverFrame:Hide()
         row.hoverFrame = rowHoverFrame
 
@@ -2880,7 +3711,7 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
                         row.rxpResetPending = previousElement ~= element
 
                         row.text:SetTextColor(unpack(textColor))
-                        row.text:SetFont(theme.font, addon.settings.profile.guideFontSize, "")
+                        row.text:SetFont(theme.font, addon.v2:GetGuideFontSize(), "")
 
                         if element.tag and (element.text or element.rawtext or element.tooltipText) then
                             row.icon:SetText(element.icon or addon.icons[element.tag] or "")
@@ -2982,7 +3813,8 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
                 row = this.elementRows[rowIndex]
 
                 row.text:SetTextColor(unpack(textColor))
-                row.text:SetFont(theme.font, addon.settings.profile.guideFontSize, "")
+                row.text:SetFont(theme.font, addon.v2:GetGuideFontSize(), "")
+                row.icon:SetFont(theme.font, addon.v2:GetGuideFontSize() - 1, "")
 
                 updateElementCheckbox(row.button, true)
             end
@@ -3018,8 +3850,7 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
         titletext:SetJustifyH("CENTER")
         titletext:SetJustifyV("MIDDLE")
         titletext:SetTextColor(unpack(theme.textColor.title))
-        titletext:SetFontObject(_G.GameFontNormalSmall)
-        titletext:SetFont(theme.font, addon.settings.profile.guideFontSize - 1, "")
+        titletext:SetFont(theme.font, addon.v2:GetGuideFontSize() - 1, "")
 
         -- Container Support
         local content = CreateFrame("Frame", nil, card)
@@ -3113,6 +3944,16 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepItem()
             addon.ui.v2:ApplyFrameBackdrop(this.title, theme.edge, theme.backgroundColors.common,
                                            theme.borderColors.commonEdge)
             this.titletext:SetTextColor(unpack(theme.textColor.title))
+            this.titletext:SetFont(theme.font, addon.v2:GetGuideFontSize() - 1, "")
+            this:SetTitle(this.titletext:GetText() or "")
+
+            if this.stepTextLabel then
+                local layout = theme.layout and theme.layout.activeStepElement
+                this.stepTextLabel:SetColor(unpack(theme.textColor.common))
+                this.stepTextLabel:SetFont(theme.font, addon.settings.profile.guideFontSize +
+                                          (layout and layout.fontSizeOffset or 0), "")
+                this:DoLayout()
+            end
         end
     }
 
@@ -3144,8 +3985,7 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepItem()
         titletext:SetJustifyH("CENTER")
         titletext:SetJustifyV("MIDDLE")
         titletext:SetTextColor(unpack(theme.textColor.title))
-        titletext:SetFontObject(_G.GameFontNormalSmall)
-        titletext:SetFont(theme.font, addon.settings.profile.guideFontSize - 1, "")
+        titletext:SetFont(theme.font, addon.v2:GetGuideFontSize() - 1, "")
 
         -- Container Support
         local content = CreateFrame("Frame", nil, card)

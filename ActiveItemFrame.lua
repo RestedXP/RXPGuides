@@ -240,7 +240,7 @@ local function UpdateV2IconFrameVisuals(self, updateFrame)
     addon.ui.v2:ApplyFrameBackdrop(self.title, theme.edge, theme.backgroundColors.common,
                                    theme.borderColors.commonEdge)
 
-    self.title.text:SetFont(addon.font, 9, "")
+    self.title.text:SetFont(theme.font, 9, "")
     self.title.text:SetTextColor(unpack(theme.textColor.title))
 
     self.title:SetSize(self.title.text:GetStringWidth() + 10, 19)
@@ -269,8 +269,6 @@ function addon.CreateActiveItemFrame(self, anchor, enableText)
                                            BackdropTemplate)
         f = self.activeItemFrame
     end
-    f.v2 = addon.v2:IsGuideWindowEnabled()
-
     addon.enabledFrames["activeItemFrame"] = f
     f.IsFeatureEnabled = function()
         local shown = not addon.settings.profile.disableItemWindow and next(GetActiveItemList()) ~= nil
@@ -306,14 +304,14 @@ function addon.CreateActiveItemFrame(self, anchor, enableText)
         f.title.text:SetPoint("CENTER", f.title, 0, 0)
         f.title.text:SetJustifyH("CENTER")
         f.title.text:SetJustifyV("MIDDLE")
-        f.title.text:SetFont(addon.font, 9, "")
+        f.title.text:SetFont(addon.v2:IsEnabled() and addon.v2:GetTheme().font or addon.font, 9, "")
         f.title.text:SetText(L"Active Items")
         f.title:EnableMouse(true)
         f.title:SetScript("OnMouseDown", f.onMouseDown)
         f.title:SetScript("OnMouseUp", f.onMouseUp)
     end
 
-    f.UpdateVisuals = f.v2 and UpdateV2IconFrameVisuals or UpdateV1IconFrameVisuals
+    f.UpdateVisuals = addon.v2:IsEnabled() and UpdateV2IconFrameVisuals or UpdateV1IconFrameVisuals
     f.UpdateFrame = addon.UpdateItemFrame
     f:UpdateVisuals()
     f:SetHeight(43)

@@ -145,7 +145,7 @@ end
 local function GetDefaultTheme()
     local guideTheme = addon.currentGuide and addon.currentGuide.theme
 
-    if addon.v2:IsGuideWindowEnabled() then
+    if addon.v2:IsEnabled() then
         if guideTheme and addon.v2.themes[guideTheme] then
             return addon.v2.themes[guideTheme]
         elseif RXPCData.GA and addon.v2.themes['RXP Gold'] then
@@ -176,7 +176,7 @@ end
 
 function addon:LoadActiveTheme()
     local applicableTheme = addon.settings.profile.activeTheme
-    local v2Enabled = addon.v2:IsGuideWindowEnabled()
+    local v2Enabled = addon.v2:IsEnabled()
     local useDefaultTheme = self:UsesDefaultTheme()
 
     if applicableTheme == 'Default' then
@@ -243,25 +243,27 @@ function addon:ReloadTheme()
     self.v2:ConvertThemes()
     self.SetupArrow()
 
-    if self.v2:IsGuideWindowEnabled() then
+    if self.v2:IsEnabled() then
         self.v2:UpdateGuideWindow()
         self.v2:GetGuideWindow():UpdateTheme({})
-        self.v2:UpdateActiveStepTheme()
 
         if self.activeItemFrame then self.activeItemFrame:UpdateVisuals() end
 
         if self.targeting and self.targeting.activeTargetFrame then
             self.targeting.activeTargetFrame:UpdateVisuals()
         end
+
+        self.v2:UpdateActiveStepTheme()
     end
 
     if self.guideImporter then self.guideImporter:UpdateTheme() end
+    if self.tracker then self.tracker:UpdateTheme() end
     self.ui.v2.configurator:UpdateTheme()
 end
 
 function addon:GetThemeOptions()
     local themeOptions = {}
-    local selectedThemes = addon.v2:IsGuideWindowEnabled() and addon.v2.themes or themes
+    local selectedThemes = addon.v2:IsEnabled() and addon.v2.themes or themes
 
     for k, t in pairs(selectedThemes) do
         if themeApplies(t.applicable) then
@@ -298,7 +300,7 @@ function addon:RegisterTheme(theme)
 
     themes[theme.name] = theme
 
-    if self.v2:IsGuideWindowEnabled() then self.v2:ConvertThemes() end
+    if self.v2:IsEnabled() then self.v2:ConvertThemes() end
 end
 
 function addon.GetV1Texture(name)
@@ -333,7 +335,7 @@ addon.v2.themes['RXP Blue V2'] = {
     displayName = "RXP Blue V2",
     name = 'RXP Blue',
     version = 2,
-    applicable = function() return addon.v2:IsGuideWindowEnabled() end,
+    applicable = function() return addon.v2:IsEnabled() end,
     font = _G.GameFontNormal:GetFont(),
     mapPins = {26 / 255, 28 / 255, 48 / 255, 0.95}, -- #1A1C30F2
     headerTexture = {
@@ -431,6 +433,9 @@ function addon.v2:ConvertThemes()
 
                 backgroundColors.common = CopyTable(source.background)
                 backgroundColors.inactivePartyTab = CopyTable(source.bottomFrameBG)
+                backgroundColors.guideSelector = CopyTable(source.bottomFrameBG)
+                backgroundColors.guideWindow = CopyTable(source.background)
+                backgroundColors.scrollbar = CopyTable(source.bottomFrameBG)
                 backgroundColors.activeStepCheckbox = CopyTable(source.background)
                 backgroundColors.activeStepCheckboxChecked = CopyTable(source.mapPins)
                 for _, key in ipairs(convertedBorderColors) do borderColors[key] = edgeColor end
