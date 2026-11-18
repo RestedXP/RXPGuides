@@ -2445,6 +2445,8 @@ step
     #completewith EnterRoL
     .zone Undercity >>Travel to Undercity
 step
+    .goto 1458/0,344.000,1423.800,50,0
+    .goto 1458/0,373.200,1362.100,50,0
     .goto 1458/0,404.500,1434.700
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Apothecary Faranell::2055|r
     >>|cRXP_WARN_This is a pre-quest for "The New Plague"|r
@@ -2452,9 +2454,7 @@ step
     .turnin 451 >>Turn in A Recipe For Death
     .isQuestComplete 451
 step
-    .goto 1458/0,344.000,1423.800,50,0
-    .goto 1458/0,373.200,1362.100,50,0
-    .goto 1458/0,428.400,1417.700
+    .goto 1458/0,428.400,1417.70
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Theodore Griffs::11835|r
     .accept 95216 >>Accept The New Plague
     .target Theodore Griffs::11835
@@ -2472,7 +2472,7 @@ step
 .enabledungeon ROL
     #label EnterRoL
     .goto 1458/0,188.400,1804.500
-    .subzone 16611 >>Enter Ruins of Lordaeron
+    .subzone 16611 >>Enter Ruins of Lordaeron above Undercity
 step
     #completewith RuinsRathma
     .isOnQuest 92421
