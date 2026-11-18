@@ -1888,7 +1888,7 @@ function addon.ui.v2:RegisterRXPV2GuideSteps()
         end,
 
         ["SetRows"] = function(this, rows, force, scrollToActive)
-            local previous, item, activeOffset, activeIndex, itemHeight, textChanged
+            local previous, item, activeOffset, activeIndex, itemHeight, _, textChanged
             local height = 0
 
             force = force or this.rowsWidth ~= this.scroll.scrollframe:GetWidth()
