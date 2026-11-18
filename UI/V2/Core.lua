@@ -3214,6 +3214,7 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
                     tab:SetScript("OnLeave", Tab_OnLeave)
 
                     tab.text = tab:CreateFontString(nil, "OVERLAY")
+                    tab.text:SetFont(addon.v2:GetTheme().font, 12, "")
                     tab.text:SetPoint("CENTER", tab, 0, -1)
                     tab.text:SetJustifyH("CENTER")
                     tab.text:SetJustifyV("MIDDLE")
