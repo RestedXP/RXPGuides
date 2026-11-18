@@ -2548,7 +2548,7 @@ function addon.v2:GetGuideWindow()
 
     frame:SetScale(profile.windowScale)
 
-    if not profile.v2GuideWindowExpandedHeight and frame:GetHeight() > window:GetCollapsedHeight() then
+    if not profile.v2GuideWindowExpandedHeight and frame:GetHeight() >= window:GetMinimumExpandedHeight() then
         profile.v2GuideWindowExpandedHeight = frame:GetHeight()
     end
 
