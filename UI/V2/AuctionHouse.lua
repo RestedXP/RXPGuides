@@ -19,6 +19,7 @@ end
 
 local function createAuctionHouseColumnButton(parent, text, width)
     local button = CreateFrame("Button", nil, parent)
+    local theme = addon.v2:GetTheme()
     button:SetSize(width, 19)
 
     local left = button:CreateTexture(nil, "BACKGROUND")
@@ -41,7 +42,8 @@ local function createAuctionHouseColumnButton(parent, text, width)
     middle:SetTexture(columnTexture)
     middle:SetTexCoord(0.078125, 0.90625, 0, 0.59375)
 
-    local label = button:CreateFontString(nil, "ARTWORK", "GameFontHighlightSmall")
+    local label = button:CreateFontString(nil, "ARTWORK")
+    label:SetFont(theme.font, 10, "")
     label:SetPoint("LEFT", 8, 0)
     label:SetJustifyH("LEFT")
     label:SetText(text)
@@ -52,6 +54,7 @@ end
 
 local function createAuctionHouseItemRow(parent, moneyFrameName)
     local row = CreateFrame("Button", nil, parent)
+    local theme = addon.v2:GetTheme()
     row:SetHeight(itemRowHeight)
 
     local left = row:CreateTexture(nil, "BORDER")
@@ -84,7 +87,8 @@ local function createAuctionHouseItemRow(parent, moneyFrameName)
     row.Highlight:SetAllPoints(row)
     row.Highlight:SetTexCoord(0, 1, 0, 0.578125)
 
-    row.Name = row:CreateFontString(nil, "ARTWORK", "GameFontNormal")
+    row.Name = row:CreateFontString(nil, "ARTWORK")
+    row.Name:SetFont(theme.font, 12, "")
     row.Name:SetSize(180, 32)
     row.Name:SetPoint("TOPLEFT", 41, 0)
     row.Name:SetJustifyH("LEFT")
@@ -136,7 +140,8 @@ local function createAuctionHouseItemRow(parent, moneyFrameName)
         if itemRow.OnLeave then itemRow.OnLeave(itemRow, this) end
     end)
 
-    row.ItemLevel.Text = row.ItemLevel:CreateFontString(nil, "ARTWORK", "GameFontHighlightSmall")
+    row.ItemLevel.Text = row.ItemLevel:CreateFontString(nil, "ARTWORK")
+    row.ItemLevel.Text:SetFont(theme.font, 10, "")
     row.ItemLevel.Text:SetAllPoints(row.ItemLevel)
     row.ItemLevel.Text:SetJustifyH("CENTER")
 
@@ -155,10 +160,8 @@ local function createAuctionHouseItemRow(parent, moneyFrameName)
         if itemRow.OnLeave then itemRow.OnLeave(itemRow, this) end
     end)
 
-    row.UpdateEP.Text = row.UpdateEP:CreateFontString(nil, "ARTWORK", "GameFontHighlightSmall")
-
-    local font, _, flags = GameFontHighlightSmall:GetFont()
-    row.UpdateEP.Text:SetFont(font, 11, flags)
+    row.UpdateEP.Text = row.UpdateEP:CreateFontString(nil, "ARTWORK")
+    row.UpdateEP.Text:SetFont(theme.font, 11, "")
     row.UpdateEP.Text:SetPoint("TOPLEFT")
     row.UpdateEP.Text:SetPoint("BOTTOMRIGHT", -10, 0)
     row.UpdateEP.Text:SetJustifyH("CENTER")
@@ -178,7 +181,8 @@ local function createAuctionHouseItemRow(parent, moneyFrameName)
     row.Buyout.Label:SetSize(48, 13)
     row.Buyout.Label:SetPoint("RIGHT", row.Buyout.Money, "LEFT")
 
-    local buyoutLabel = row.Buyout.Label:CreateFontString(nil, "ARTWORK", "GameFontNormalSmall")
+    local buyoutLabel = row.Buyout.Label:CreateFontString(nil, "ARTWORK")
+    buyoutLabel:SetFont(theme.font, 10, "")
     buyoutLabel:SetAllPoints(row.Buyout.Label)
     buyoutLabel:SetJustifyH("LEFT")
     buyoutLabel:SetText(_G.BUYOUT_COST)
@@ -190,6 +194,7 @@ local function createAuctionHousePanelButton(parent, text)
     local button = CreateFrame("Button", nil, parent, "UIPanelButtonTemplate")
     button:SetSize(80, 22)
     button:SetText(text)
+    button:GetFontString():SetFont(addon.v2:GetTheme().font, 12, "")
 
     local divider = button:CreateTexture(nil, "BORDER")
     divider:SetSize(13, 25)
@@ -267,7 +272,8 @@ function addon.ui.v2:RegisterRXPV2AuctionHouseItemBlock()
         headerBottom:SetTexture(kindHeaderTexture, true)
         headerBottom:SetTexCoord(0, 1, 25 / 256, 15 / 256)
 
-        frame.Header.Name = frame.Header:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+        frame.Header.Name = frame.Header:CreateFontString(nil, "OVERLAY")
+        frame.Header.Name:SetFont(addon.v2:GetTheme().font, 12, "")
         frame.Header.Name:SetSize(260, kindHeaderHeight)
         frame.Header.Name:SetPoint("LEFT", 8, 0)
         frame.Header.Name:SetJustifyH("LEFT")
@@ -326,7 +332,8 @@ function addon.ui.v2:RegisterRXPV2AuctionHouse()
     local function Constructor()
         local frame = CreateFrame("Frame", nil, UIParent)
 
-        local title = frame:CreateFontString(nil, "BACKGROUND", "GameFontNormal")
+        local title = frame:CreateFontString(nil, "BACKGROUND")
+        title:SetFont(addon.v2:GetTheme().font, 12, "")
         title:SetPoint("TOP", 0, -18)
         title:SetText(_G.MINIMAP_TRACKING_AUCTIONEER)
         frame.Title = title
