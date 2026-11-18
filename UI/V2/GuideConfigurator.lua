@@ -504,24 +504,22 @@ function addon.ui.v2.configurator:RegisterRXPV2GuideConfigurator()
 
         local backButton = CreateFrame("Button", nil, frame, BackdropTemplateMixin and "BackdropTemplate")
         backButton:SetSize(132, 24)
-        backButton:SetText(_G.BACK)
 
         local resetButton = CreateFrame("Button", nil, frame, BackdropTemplateMixin and "BackdropTemplate")
         resetButton:SetSize(132, 24)
-        resetButton:SetText(_G.RESET)
         resetButton:Disable()
 
         local submitButton = CreateFrame("Button", nil, frame, BackdropTemplateMixin and "BackdropTemplate")
         submitButton:SetSize(132, 24)
-        submitButton:SetText(_G.SUBMIT)
 
-        local buttonText
         for _, button in ipairs({backButton, resetButton, submitButton}) do
             button:SetHighlightTexture("Interface\\Buttons\\WHITE8X8", "BLEND")
-
-            buttonText = button:GetFontString()
-            buttonText:SetFont(theme.font, 12, "")
+            button:GetFontString():SetFont(theme.font, 12, "")
         end
+
+        backButton:SetText(_G.BACK)
+        resetButton:SetText(_G.RESET)
+        submitButton:SetText(_G.SUBMIT)
 
         backButton:Hide()
         resetButton:Hide()
