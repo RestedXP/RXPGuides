@@ -1880,7 +1880,6 @@ function addon.ui.v2:RegisterRXPV2GuideSteps()
             for index in pairs(this.items) do ReleaseItem(this, index) end
 
             this.rowsHeight = nil
-            this.minimumRowsHeight = nil
             this.rowsWidth = nil
             this.activeIndex = nil
             this.activeOffset = nil
@@ -1889,7 +1888,7 @@ function addon.ui.v2:RegisterRXPV2GuideSteps()
         end,
 
         ["SetRows"] = function(this, rows, force, scrollToActive)
-            local previous, item, minimumHeight, activeOffset, activeIndex, itemHeight, _, textChanged
+            local previous, item, activeOffset, activeIndex, itemHeight, textChanged
             local height = 0
 
             force = force or this.rowsWidth ~= this.scroll.scrollframe:GetWidth()
@@ -1923,8 +1922,6 @@ function addon.ui.v2:RegisterRXPV2GuideSteps()
                     addon.ui.v2:SetFrameTopShadowShown(item.frame, previous ~= nil)
 
                     itemHeight = item:GetHeight()
-                    minimumHeight = min(minimumHeight or itemHeight, itemHeight)
-
                     if row.current then
                         activeOffset = height
                         activeIndex = row.index
@@ -1938,7 +1935,6 @@ function addon.ui.v2:RegisterRXPV2GuideSteps()
             for index in pairs(this.items) do if index > #rows then ReleaseItem(this, index) end end
 
             this.rowsHeight = height
-            this.minimumRowsHeight = minimumHeight or 0
             this.activeOffset = activeOffset
             this.content:SetHeight(math.max(height, 1))
 
@@ -2067,12 +2063,19 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
         frame:StopMovingOrSizing()
         this.guideSteps.resizing = nil
 
-        if saveHeight and not this.snapshotEmpty and frame:GetHeight() > this:GetShellHeight() and
-            (this.guideSteps.frame:IsShown() or not addon.settings:IsStepListShown()) then
-            this.guideHeight = frame:GetHeight()
-            addon.settings.profile.v2GuideWindowExpandedHeight = this.guideHeight
+        if saveHeight and not this.snapshotEmpty then
+            if frame:GetHeight() < this:GetMinimumExpandedHeight() then
+                if addon.settings:IsStepListShown() then
+                    addon.settings:SetStepListShown(false)
+                else
+                    frame:SetHeight(this:GetShellHeight())
+                end
+            elseif this.guideSteps.frame:IsShown() or not addon.settings:IsStepListShown() then
+                this.guideHeight = frame:GetHeight()
+                addon.settings.profile.v2GuideWindowExpandedHeight = this.guideHeight
 
-            if not addon.settings:IsStepListShown() then addon.settings:SetStepListShown(true) end
+                if not addon.settings:IsStepListShown() then addon.settings:SetStepListShown(true) end
+            end
         end
 
         if saveHeight then this:RefreshLayout() end
@@ -2084,6 +2087,12 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
         ["GetCollapsedHeight"] = function(this) return this.upperFrame:GetHeight() end,
 
         ["GetShellHeight"] = function(this) return this:GetCollapsedHeight() + this.footer:GetHeight() end,
+
+        ["GetMinimumExpandedHeight"] = function(this)
+            local scrollbar = this.guideSteps.scroll.scrollbar
+            return this:GetShellHeight() + 4 + scrollbar.ScrollUpButton:GetHeight() +
+                       scrollbar.ScrollDownButton:GetHeight() + scrollbar.ThumbTexture:GetHeight()
+        end,
 
         ["GetMinimumWidth"] = function(this)
             local textWidth = max(this.title:GetStringWidth() or 0, this.subtitle:GetStringWidth() or 0)
@@ -2155,8 +2164,7 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
             this.closebutton:SetShown(addon.v2:GetTheme().version ~= 1)
             addon.ui.v2:SetFrameBottomShadowShown(this.upperFrame, not this.guideStepsFrame:IsShown())
 
-            this:UpdateResizeBounds(this.guideStepsFrame:IsShown() and this.guideSteps.frame:IsShown(),
-                                    this.snapshotEmpty)
+            this:UpdateResizeBounds()
 
             if this.snapshotEmpty then
                 this.frame:SetHeight(this:GetShellHeight())
@@ -2167,22 +2175,22 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
             this:RefreshLayout()
         end,
 
-        ["UpdateResizeBounds"] = function(this, hasRows, emptyGuide)
-            local minimumHeight = this:GetCollapsedHeight()
-
-            if emptyGuide or not hasRows then
-                minimumHeight = max(minimumHeight, this:GetShellHeight())
-            elseif hasRows then
-                local guideStepsInset = this.frame:GetHeight() - this.guideSteps.frame:GetHeight()
-                minimumHeight = max(minimumHeight, guideStepsInset + (this.guideSteps.minimumRowsHeight or 0) +
-                                        this.guideSteps.scroll:GetContentTopPadding())
-            end
-
+        ["UpdateResizeBounds"] = function(this)
             local minimumWidth = this:GetMinimumWidth()
 
-            addon.SetResizeBounds(this.frame, minimumWidth, minimumHeight)
+            addon.SetResizeBounds(this.frame, minimumWidth, this:GetShellHeight())
 
             if this.frame:GetWidth() < minimumWidth then this.frame:SetWidth(minimumWidth) end
+        end,
+
+        ["OnHeightSet"] = function(this, height)
+            if not this.guideSteps.resizing or this.snapshotEmpty or not addon.settings:IsStepListShown() then return end
+
+            local showSteps = height >= this:GetMinimumExpandedHeight() and (this.guideSteps.rowsHeight or 0) > 0
+            if this.guideSteps.frame:IsShown() ~= showSteps then
+                this.guideSteps.frame:SetShown(showSteps)
+                this.guideSteps:UpdateScrollbar()
+            end
         end,
 
         ["OnAcquire"] = function(this) this.frame:Show() end,
@@ -2213,6 +2221,13 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
             this.snapshotEmpty = emptyGuide
             this:UpdateHeaderHeight()
 
+            if hasRows and this.guideHeight < this:GetMinimumExpandedHeight() then
+                this.guideHeight = guideWindowDefaultHeight
+                addon.settings.profile.v2GuideWindowExpandedHeight = this.guideHeight
+                addon.settings:SetStepListShown(false)
+                return
+            end
+
             if emptyGuide then
                 this.frame:SetHeight(this:GetShellHeight())
             elseif empty then
@@ -2231,7 +2246,7 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
 
             if guideStepsShown ~= (not empty) then addon:SortTimers() end
 
-            this:UpdateResizeBounds(not empty, emptyGuide)
+            this:UpdateResizeBounds()
             this.guideSteps:UpdateScrollbar()
 
             if not empty then
@@ -2470,7 +2485,7 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
             end
         end)
 
-        widget:UpdateResizeBounds(false)
+        widget:UpdateResizeBounds()
         frame:SetScript("OnMouseDown", function(_, button)
             if button == "LeftButton" and not addon.settings.profile.lockFrames then frame:StartMoving() end
         end)
