@@ -3526,34 +3526,6 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
         button.rxpHoverFrame:SetShown(hovered)
     end
 
-    local function elementCheckboxOnEnter(button)
-        button.rxpHovered = true
-        updateElementCheckbox(button)
-
-        if button:IsForbidden() or _G.GameTooltip:IsForbidden() then return end
-
-        _G.GameTooltip:SetOwner(button.rxpHoverFrame, "ANCHOR_NONE")
-        _G.GameTooltip:ClearAllPoints()
-        _G.GameTooltip:SetPoint("BOTTOM", button.rxpHoverFrame, "TOP", 0, 6)
-        _G.GameTooltip:ClearLines()
-        _G.GameTooltip:AddLine(L("Skip step"), 1, 1, 1)
-
-        local element = button:GetParent().element
-
-        if addon.settings.profile.debug and element and element.tooltip then
-            _G.GameTooltip:AddLine(tostring(element.tooltip), 0.65, 0.7, 0.9)
-        end
-
-        _G.GameTooltip:Show()
-    end
-
-    local function elementCheckboxOnLeave(button)
-        button.rxpHovered = nil
-        updateElementCheckbox(button)
-
-        if not button:IsForbidden() and not _G.GameTooltip:IsForbidden() then _G.GameTooltip:Hide() end
-    end
-
     local function elementTextOnHyperlinkClick(_, link, text, button) _G.SetItemRef(link, text, button) end
 
     local function elementTextOnHyperlinkEnter(row, link)
@@ -3567,24 +3539,6 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
         if not row:IsForbidden() and not _G.GameTooltip:IsForbidden() and _G.GameTooltip:GetOwner() == row then
             _G.GameTooltip:Hide()
         end
-    end
-
-    local function elementRowOnEnter(hoverFrame)
-        local row = hoverFrame.row
-
-        if row.rxpQuestLink then elementTextOnHyperlinkEnter(row, row.rxpQuestLink) end
-    end
-
-    local function elementRowOnLeave(hoverFrame)
-        local row = hoverFrame.row
-
-        if row.rxpQuestLink then elementTextOnHyperlinkLeave(row) end
-    end
-
-    local function elementRowOnClick(hoverFrame, button)
-        local row = hoverFrame.row
-
-        if row.rxpQuestLink then elementTextOnHyperlinkClick(row, row.rxpQuestLink, row.text:GetText(), button) end
     end
 
     local function updateElementRowText(row, element, resetPending)
@@ -3664,8 +3618,32 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
         skipIcon:SetTexture(addon.ui.v2:GetTexture("rxp-skip-step-hover"))
 
         updateElementCheckbox(button)
-        button:SetScript("OnEnter", elementCheckboxOnEnter)
-        button:SetScript("OnLeave", elementCheckboxOnLeave)
+        button:SetScript("OnEnter", function(this)
+            this.rxpHovered = true
+            updateElementCheckbox(this)
+
+            if this:IsForbidden() or _G.GameTooltip:IsForbidden() then return end
+
+            _G.GameTooltip:SetOwner(this.rxpHoverFrame, "ANCHOR_NONE")
+            _G.GameTooltip:ClearAllPoints()
+            _G.GameTooltip:SetPoint("BOTTOM", this.rxpHoverFrame, "TOP", 0, 6)
+            _G.GameTooltip:ClearLines()
+            _G.GameTooltip:AddLine(L("Skip step"), 1, 1, 1)
+
+            local element = this:GetParent().element
+
+            if addon.settings.profile.debug and element and element.tooltip then
+                _G.GameTooltip:AddLine(tostring(element.tooltip), 0.65, 0.7, 0.9)
+            end
+
+            _G.GameTooltip:Show()
+        end)
+        button:SetScript("OnLeave", function(this)
+            this.rxpHovered = nil
+            updateElementCheckbox(this)
+
+            if not this:IsForbidden() and not _G.GameTooltip:IsForbidden() then _G.GameTooltip:Hide() end
+        end)
         button:SetScript("PostClick", addon.ActiveStepElementPostClick)
         button:HookScript("PostClick", updateElementCheckbox)
         row.button = button
@@ -3688,9 +3666,20 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
         rowHoverFrame.row = row
         rowHoverFrame:SetFrameLevel(row:GetFrameLevel() + 3)
         rowHoverFrame:EnableMouse(true)
-        rowHoverFrame:SetScript("OnEnter", elementRowOnEnter)
-        rowHoverFrame:SetScript("OnLeave", elementRowOnLeave)
-        rowHoverFrame:SetScript("OnClick", elementRowOnClick)
+        rowHoverFrame:SetScript("OnEnter", function(this)
+            local row = this.row
+            if row.rxpQuestLink then elementTextOnHyperlinkEnter(row, row.rxpQuestLink) end
+        end)
+        rowHoverFrame:SetScript("OnLeave", function(this)
+            local row = this.row
+            if row.rxpQuestLink then elementTextOnHyperlinkLeave(row) end
+        end)
+        rowHoverFrame:SetScript("OnClick", function(this, button)
+            local row = this.row
+            if row.rxpQuestLink then
+                elementTextOnHyperlinkClick(row, row.rxpQuestLink, row.text:GetText(), button)
+            end
+        end)
         rowHoverFrame:Hide()
         row.hoverFrame = rowHoverFrame
 
