@@ -8,6 +8,13 @@ local strbuffer = {}
 local importerBaseHeight = 298
 local maxHistoryEntries = 6
 
+local function updateHistoryHeight(widgets)
+    local historyHeight = widgets.history:IsShown() and
+                          math.min(math.max(widgets.history:GetStringHeight(), 18), 72) or 0
+    widgets.history:SetHeight(historyHeight)
+    widgets.import:SetHeight(importerBaseHeight + historyHeight)
+end
+
 addon.guideImporter = addon.guideImporter or {}
 
 function addon.ui.v2:InitializeGuideImporter()
@@ -15,10 +22,11 @@ function addon.ui.v2:InitializeGuideImporter()
     self:RegisterRXPV2GuideImporterEditBox()
 end
 
-local function updateImporterTheme()
-    local widgets = addon.guideImporter.widgets
-    if not widgets.importButton then return end
+function addon.guideImporter:UpdateTheme()
+    local widgets = self.widgets
+    if not widgets.import then return end
 
+    widgets.import:UpdateTheme({updateChildren = true})
     local theme = addon.v2:GetTheme()
     local textColor = theme.textColor.common
 
@@ -30,12 +38,6 @@ local function updateImporterTheme()
 
     widgets.importLabel:SetFont(theme.font, 8, "")
     widgets.importLabel:SetTextColor(addon.settings:HexToRGB(addon.guideTextColors["RXP_WARN_"]))
-    widgets.importBox:UpdateTheme({})
-
-    for _, button in ipairs({widgets.importButton, widgets.importSplicedString, widgets.purgeButton,
-                             widgets.reloadButton, widgets.deleteButton}) do
-        button:UpdateTheme({})
-    end
 
     widgets.guidesLabel:SetFont(theme.font, 8, "")
     widgets.guidesLabel:SetTextColor(unpack(textColor))
@@ -54,19 +56,18 @@ local function updateImporterTheme()
     widgets.progress:SetStatusBarColor(unpack(theme.backgroundColors.activeStepCheckboxChecked))
     widgets.progressBackground:SetColorTexture(unpack(fieldBackground))
     widgets.progressText:SetFont(theme.font, 8, "")
-    if addon.guideImporter.gui.progressError then
+    if self.gui.progressError then
         widgets.progressText:SetTextColor(1, 0.45, 0.35)
     else
         widgets.progressText:SetTextColor(unpack(textColor))
     end
     widgets.history:SetFont(theme.font, 8, "")
     widgets.history:SetTextColor(unpack(textColor))
+    updateHistoryHeight(widgets)
 
     for _, popup in ipairs({widgets.purgeConfirmation, widgets.deleteConfirmation}) do
-        popup:UpdateTheme({})
+        popup:UpdateTheme()
     end
-
-    addon.guideImporter:UpdateImportUI()
 end
 
 function addon.ui.v2:RegisterRXPV2GuideImporterEditBox()
@@ -192,7 +193,7 @@ function addon.ui.v2:RegisterRXPV2GuideImporterEditBox()
         local frame = CreateFrame("Frame", nil, UIParent)
         frame:Hide()
 
-        local label = frame:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+        local label = frame:CreateFontString(nil, "OVERLAY")
         label:SetPoint("TOPLEFT", frame, "TOPLEFT", 0, -4)
         label:SetPoint("TOPRIGHT", frame, "TOPRIGHT", 0, -4)
         label:SetJustifyH("LEFT")
@@ -204,7 +205,6 @@ function addon.ui.v2:RegisterRXPV2GuideImporterEditBox()
         local editBox = CreateFrame("EditBox", Type .. widgetNum .. "Edit", background)
         editBox:SetPoint("TOPLEFT", background, "TOPLEFT", 5, -6)
         editBox:SetPoint("BOTTOMRIGHT", background, "BOTTOMRIGHT", -4, 4)
-        editBox:SetFontObject(ChatFontNormal)
         editBox:SetMultiLine(true)
         editBox:SetTextInsets(4, 4, 2, 2)
         editBox:EnableMouse(true)
@@ -536,20 +536,7 @@ function addon.guideImporter:UpdateImportUI()
         widgets.history:SetText(table.concat(gui.importStatusHistory, "\n"))
         local historyShown = next(gui.importStatusHistory) ~= nil
         widgets.history:SetShown(historyShown)
-        local historyHeight = historyShown and
-                              math.min(math.max(widgets.history:GetStringHeight(), 18),
-                                       72) or 0
-        widgets.history:SetHeight(historyHeight)
-        local frameHeight = importerBaseHeight + historyHeight
-        widgets.import:SetHeight(frameHeight)
-    end
-end
-
-function addon.guideImporter:UpdateTheme()
-    local importer = self.widgets.import
-    if importer then
-        importer:UpdateTheme({})
-        updateImporterTheme()
+        updateHistoryHeight(widgets)
     end
 end
 
@@ -571,7 +558,8 @@ function addon.ui.v2:CreateGuideImporter()
 
     local theme = addon.v2:GetTheme()
     local windowContent = importer.content
-    local description = windowContent:CreateFontString(nil, "ARTWORK", "GameFontNormal")
+    local description = windowContent:CreateFontString(nil, "ARTWORK")
+    description:SetFont(theme.font, 12, "")
     description:SetPoint("TOPLEFT", windowContent, "TOPLEFT", 8, -5)
     description:SetText(L("Import Guides"))
 
@@ -802,8 +790,8 @@ function addon.ui.v2:CreateGuideImporter()
     importer:SetCallback("OnShow", function()
         guideImporter:UpdateImportUI()
     end)
-    importer:UpdateTheme({})
-    updateImporterTheme()
+    guideImporter:UpdateTheme()
+    guideImporter:UpdateImportUI()
 
     if not RXPData.cache then
         guideImporter:UpdateImportStatusHistory(
