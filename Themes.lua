@@ -246,13 +246,14 @@ function addon:ReloadTheme()
     if self.v2:IsEnabled() then
         self.v2:UpdateGuideWindow()
         self.v2:GetGuideWindow():UpdateTheme({})
-        self.v2:UpdateActiveStepTheme()
 
         if self.activeItemFrame then self.activeItemFrame:UpdateVisuals() end
 
         if self.targeting and self.targeting.activeTargetFrame then
             self.targeting.activeTargetFrame:UpdateVisuals()
         end
+
+        self.v2:UpdateActiveStepTheme()
     end
 
     if self.guideImporter then self.guideImporter:UpdateTheme() end

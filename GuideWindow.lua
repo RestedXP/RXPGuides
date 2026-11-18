@@ -3110,16 +3110,9 @@ function addon.v2:UpdateActiveStepTheme()
     partyFrame:UpdateTheme({
         hideBackground = addon.settings.profile.activePartyStepsV2HideBackground,
         scale = addon.settings.profile.activePartyStepsV2WindowScale,
+        updateChildren = true,
     })
-
-    for player, data in pairs(self.state.player) do
-        if player ~= addon.player.name and data.childContainer and
-            data.childContainer.UpdateTheme then
-            data.childContainer:UpdateTheme({updateChildren = true})
-        end
-    end
-
-    self:RefreshActivePartyTabs()
+    partyFrame:RefreshActiveContent()
 end
 
 -- hiddentext only hides a step in the main guide list; optional steps still
