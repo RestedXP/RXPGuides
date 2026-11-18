@@ -377,11 +377,10 @@ function addon.tracker:UpdateReportLevels(trackerUi, levelData, playerLevel)
     return selectedLevel
 end
 
-local function createReportText(parent, text, fontSize, color)
+local function createReportText(parent, text, fontSize)
     local widget = AceGUI:Create("RXPV2CommsText")
     widget:SetText(text)
     widget:SetFontSize(fontSize)
-    widget:SetColor(color)
     widget:SetFullWidth(true)
     parent:AddChild(widget)
 
@@ -389,35 +388,20 @@ local function createReportText(parent, text, fontSize, color)
 end
 
 local function updateReportDropdown(dropdown, theme)
-    dropdown.label:Hide()
-    dropdown.button_cover:Hide()
     dropdown.text:SetFont(theme.font, 9, "")
-    dropdown.text:SetJustifyH("LEFT")
     dropdown.text:SetTextColor(unpack(theme.textColor.common))
-    local name = dropdown.dropdown:GetName()
-    _G[name .. "Left"]:Hide()
-    _G[name .. "Middle"]:Hide()
-    _G[name .. "Right"]:Hide()
-    dropdown.button:ClearAllPoints()
-    dropdown.button:SetSize(24, 24)
-    dropdown.button:SetPoint("TOPRIGHT", dropdown.frame, "TOPRIGHT")
     addon.ui.v2:ApplyFrameBackdrop(dropdown.frame, theme.edge,
                                    theme.version == 1 and theme.backgroundColors.inactivePartyTab or
                                        theme.backgroundColors.scrollbar,
                                    theme.borderColors.common)
     addon.ui.v2:ApplyDropdownTheme(dropdown, theme)
-    dropdown:SetCallback("OnOpened", function()
-        addon.ui.v2:ApplyDropdownTheme(dropdown, addon.v2:GetTheme())
-    end)
 end
 
-local function createReportCard(title, iconName, theme)
+local function createReportCard(title, iconName)
     local card = AceGUI:Create("SimpleGroup")
     card:SetLayout("Table")
     card:SetUserData("table", {columns = {40, {weight = 1}, {weight = 2}, {width = 1}}, spaceH = 8})
     card:SetFullWidth(true)
-    addon.ui.v2:ApplyFrameBackdrop(card.frame, theme.edge, theme.backgroundColors.common,
-                                   theme.borderColors.commonEdge)
 
     local icon = AceGUI:Create("Icon")
     icon:SetWidth(40)
@@ -426,9 +410,8 @@ local function createReportCard(title, iconName, theme)
     icon.frame:EnableMouse(false)
     card:AddChild(icon)
 
-    card.label = createReportText(card, title, 10, theme.textColor.common)
-    card.label:SetJustifyV("MIDDLE")
-    card.data = createReportText(card, "", 10, {addon.settings:HexToRGB(addon.guideTextColors["RXP_WARN_"])})
+    createReportText(card, title, 10):SetJustifyV("MIDDLE")
+    card.data = createReportText(card, "", 10)
     card.data:SetJustifyH("RIGHT")
     card.data:SetJustifyV("MIDDLE")
 
@@ -439,41 +422,29 @@ function addon.tracker:UpdateTheme()
     local theme = addon.v2:GetTheme()
     local guideGroupColor = {addon.settings:HexToRGB(addon.guideTextColors["RXP_WARN_"])}
     if self.reportFrame then
-        self.reportFrame:UpdateTheme({hideBackground = false, updateChildren = true})
+        self.reportFrame:UpdateTheme({hideBackground = false})
     end
     for _, trackerUi in pairs(self.ui) do
-        trackerUi.scrollContainer:SetTheme(theme)
         updateReportDropdown(trackerUi.levelBracketDropdown, theme)
         updateReportDropdown(trackerUi.levelDropdown, theme)
-        trackerUi.exportButton:UpdateSubTheme()
-        trackerUi.levelBracketLabel:SetColor(theme.textColor.common)
-        trackerUi.levelLabel:SetColor(theme.textColor.common)
-        trackerUi.levelBracketLabel:UpdateSubTheme()
-        trackerUi.levelLabel:UpdateSubTheme()
 
-        local card
-        for index = 1, #trackerUi.reportSections do
-            card = trackerUi.reportSections[index]
+        for _, card in ipairs(trackerUi.reportSections) do
             addon.ui.v2:ApplyFrameBackdrop(card.frame, theme.edge, theme.backgroundColors.common,
                                            theme.borderColors.commonEdge)
-            card.label:SetColor(theme.textColor.common)
-            card.label:UpdateSubTheme()
             card.data:SetColor(guideGroupColor)
-            card.data:UpdateSubTheme()
         end
 
+        trackerUi.scrollContainer:UpdateTheme({updateChildren = true})
         trackerUi.scrollContainer:DoLayout()
     end
 
     if self.splits.frame then
         self.splits:UpdateTheme()
-        self.splits:Update("full")
     end
 end
 
 function addon.tracker:CreateGui(target)
     if self.ui[target] then return end
-    local theme = addon.v2:GetTheme()
 
     if not self.reportFrame then
         self.reportFrame = AceGUI:Create("RXPV2ActivePartyStepsFrame")
@@ -510,7 +481,6 @@ function addon.tracker:CreateGui(target)
     self.ui[target] = {}
     local trackerUi = self.ui[target]
     trackerUi.scrollContainer = AceGUI:Create("RXPV2ScrollFrame")
-    trackerUi.scrollContainer:SetTheme(theme)
     trackerUi.scrollContainer:SetLayout("Table")
     trackerUi.scrollContainer:SetUserData("table", {columns = {{weight = 1}}, spaceV = 5})
     trackerUi.scrollContainer:SetFullWidth(true)
@@ -534,7 +504,7 @@ function addon.tracker:CreateGui(target)
     local bracketColumn = AceGUI:Create("SimpleGroup")
     bracketColumn:SetLayout("List")
     bracketColumn:SetFullWidth(true)
-    trackerUi.levelBracketLabel = createReportText(bracketColumn, L("Level bracket"), 9, theme.textColor.common)
+    createReportText(bracketColumn, L("Level bracket"), 9)
     trackerUi.levelBracketDropdown = AceGUI:Create("Dropdown")
     trackerUi.levelBracketDropdown:SetFullWidth(true)
     trackerUi.levelBracketDropdown:SetHeight(24)
@@ -543,11 +513,27 @@ function addon.tracker:CreateGui(target)
     local levelColumn = AceGUI:Create("SimpleGroup")
     levelColumn:SetLayout("List")
     levelColumn:SetFullWidth(true)
-    trackerUi.levelLabel = createReportText(levelColumn, L("Level-up"), 9, theme.textColor.common)
+    createReportText(levelColumn, L("Level-up"), 9)
     trackerUi.levelDropdown = AceGUI:Create("Dropdown")
     trackerUi.levelDropdown:SetFullWidth(true)
     trackerUi.levelDropdown:SetHeight(24)
     levelColumn:AddChild(trackerUi.levelDropdown)
+
+    for _, dropdown in ipairs({trackerUi.levelBracketDropdown, trackerUi.levelDropdown}) do
+        dropdown.label:Hide()
+        dropdown.button_cover:Hide()
+        dropdown.text:SetJustifyH("LEFT")
+        local name = dropdown.dropdown:GetName()
+        _G[name .. "Left"]:Hide()
+        _G[name .. "Middle"]:Hide()
+        _G[name .. "Right"]:Hide()
+        dropdown.button:ClearAllPoints()
+        dropdown.button:SetSize(24, 24)
+        dropdown.button:SetPoint("TOPRIGHT", dropdown.frame, "TOPRIGHT")
+        dropdown:SetCallback("OnOpened", function(widget)
+            addon.ui.v2:ApplyDropdownTheme(widget, addon.v2:GetTheme())
+        end)
+    end
 
     trackerUi.selectedBracket = mmax(floor((trackerUi.reportPlayerLevel - 1) / 10) * 10 + 1, 1)
     addon.tracker:UpdateReportLevels(trackerUi, trackerUi.reportLevels, trackerUi.reportPlayerLevel)
@@ -561,13 +547,13 @@ function addon.tracker:CreateGui(target)
         addon.tracker:UpdateReport(selectedLevel, trackerUi.reportTarget)
     end)
 
-    trackerUi.exportButton = AceGUI:Create("RXPV2Button")
-    trackerUi.exportButton:SetText(L("Export Report"))
-    trackerUi.exportButton:SetFullWidth(true)
-    trackerUi.exportButton:SetUserData("cell", {align = "BOTTOMLEFT"})
-    trackerUi.exportButton:SetHeight(24)
-    trackerUi.exportButton:SetPrimary(true)
-    trackerUi.exportButton:SetCallback("OnClick", function()
+    local exportButton = AceGUI:Create("RXPV2Button")
+    exportButton:SetText(L("Export Report"))
+    exportButton:SetFullWidth(true)
+    exportButton:SetUserData("cell", {align = "BOTTOMLEFT"})
+    exportButton:SetHeight(24)
+    exportButton:SetPrimary(true)
+    exportButton:SetCallback("OnClick", function()
         local characterName = trackerUi.reportTarget
         local className
         if characterName == playerName then
@@ -597,11 +583,11 @@ function addon.tracker:CreateGui(target)
                                       reportFrame:GetHeight())
     end)
 
-    levelRow:AddChildren(bracketColumn, levelColumn, trackerUi.exportButton)
-    trackerUi.dingContainer = createReportCard(L("Ding Time:"), "rxp-icon-stopwatch", theme)
-    trackerUi.speedContainer = createReportCard(L("Speed:"), "rxp-icon-lvl_speed", theme)
-    trackerUi.zonesContainer = createReportCard(L("Zones & Dungeons"), "rxp-icon-route", theme)
-    trackerUi.teamworkContainer = createReportCard(L("Teamwork:"), "rxp-icon-group-4", theme)
+    levelRow:AddChildren(bracketColumn, levelColumn, exportButton)
+    trackerUi.dingContainer = createReportCard(L("Ding Time:"), "rxp-icon-stopwatch")
+    trackerUi.speedContainer = createReportCard(L("Speed:"), "rxp-icon-lvl_speed")
+    trackerUi.zonesContainer = createReportCard(L("Zones & Dungeons"), "rxp-icon-route")
+    trackerUi.teamworkContainer = createReportCard(L("Teamwork:"), "rxp-icon-group-4")
     trackerUi.reportSections = {
         trackerUi.dingContainer,
         trackerUi.speedContainer,
@@ -960,24 +946,32 @@ function addon.tracker.splits:UpdateTheme()
 
     addon.ui.v2:ApplyFrameBackdrop(f.title, theme.edge, theme.backgroundColors.common,
                                    theme.borderColors.commonEdge)
-    f.history:SetTheme(theme)
+    f.history:UpdateTheme()
     f.title.text:SetFont(theme.font, 9, "")
     f.title.text:SetTextColor(unpack(theme.textColor.title))
     f.title:SetWidth(f.title.text:GetStringWidth() + 10)
 
     local fontSize = addon.settings.profile.levelSplitsFontSize
-    f.measureText:SetFont(theme.font, fontSize, "")
+    f.measureText:SetFontSize(fontSize)
     local guideGroupColor = {addon.settings:HexToRGB(addon.guideTextColors["RXP_WARN_"])}
     f.current:UpdateSubTheme()
-    f.current:SetFont(theme.font, fontSize, "")
+    f.current:SetFontSize(fontSize)
     f.current:SetColors(theme.textColor.common, guideGroupColor)
     f.total:UpdateSubTheme()
-    f.total:SetFont(theme.font, fontSize, "")
+    f.total:SetFontSize(fontSize)
     f.total:SetColors(theme.textColor.common, guideGroupColor)
     for _, row in ipairs(f.history.children) do
         row:UpdateSubTheme()
-        row:SetFont(theme.font, fontSize, "")
+        row:SetFontSize(fontSize)
         row:SetColors(theme.textColor.common, guideGroupColor)
+    end
+
+    f.history:DoLayout()
+    if f.userResizing then
+        self:ResizeHistory()
+    else
+        if f.history.frame:IsShown() then f.history:SetHeight(min(f.history.content:GetHeight(), 154)) end
+        f.rows:DoLayout()
     end
 end
 
@@ -1122,7 +1116,6 @@ function addon.tracker.splits:Create()
     f.history:SetFullWidth(true)
     f.history:SetUserData("table", {columns = {{weight = 1}}, spaceV = 2})
     f.history:SetLayout("Table")
-    f.history:SetTheme(addon.v2:GetTheme())
     f.history:SetHeight(0)
     f.current = AceGUI:Create("RXPV2LevelSplitsRow")
     f.total = AceGUI:Create("RXPV2LevelSplitsRow")
@@ -1427,7 +1420,7 @@ function addon.tracker.splits:Update(kind, fitToContent)
                     historyRow:SetLayout("Table")
                     historyRow:SetText(fmt("%s %d", L("Level"), level + 1), displayDuration)
                     historyRow:UpdateSubTheme()
-                    historyRow:SetFont(theme.font, fontSize, "")
+                    historyRow:SetFontSize(fontSize)
                     historyRow:SetColors(theme.textColor.common, guideGroupColor)
                     f.history:AddChild(historyRow)
                 end
@@ -1449,8 +1442,7 @@ function addon.tracker.splits:Update(kind, fitToContent)
     local currentFont, currentFontSize = f.current.leftColumn.text:GetFont()
     if currentFont ~= theme.font or currentFontSize ~= addon.settings.profile.levelSplitsFontSize then
         self:UpdateTheme()
-    end
-    if f.userResizing then
+    elseif f.userResizing then
         self:ResizeHistory()
     else
         f.rows:DoLayout()
