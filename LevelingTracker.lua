@@ -778,11 +778,11 @@ function addon.tracker:UpdateReport(selectedLevel, target)
     trackerUi.speedContainer.data:SetText(speed)
 
     local teamworkText
-    if selectedLevel == addon.tracker.maxLevel or UnitXP("player") == 0 then
+    local totalExperience = (report.soloExperience or 0) + (report.groupExperience or 0)
+    if selectedLevel == addon.tracker.maxLevel or totalExperience == 0 then
         teamworkText = fmt(L("Solo: %s"), "N/A") .. "\n" .. fmt(L("Group: %s"), "N/A")
     else
-        local totalExperience = report.soloExperience + report.groupExperience
-        local groupPercentage = totalExperience > 0 and 100 * report.groupExperience / totalExperience or 0
+        local groupPercentage = 100 * (report.groupExperience or 0) / totalExperience
         teamworkText = fmt(L("Solo: %.2f%%"), 100 - groupPercentage) .. "\n" ..
                            fmt(L("Group: %.2f%%"), groupPercentage)
     end
