@@ -583,7 +583,9 @@ function addon.tracker:CreateGui(target)
             L("Teamwork:"),
             trackerUi.teamworkContainer.data.text:GetText()
         }, "\n")
-        addon.comms.OpenBrandedExport(L("Export Report"), "", reportText, 20, 200)
+        local reportFrame = self.reportFrame.frame
+        addon.comms.OpenBrandedExport(L("Export Report"), "", reportText, reportFrame:GetWidth() / 2,
+                                      reportFrame:GetHeight())
     end)
 
     levelRow:AddChildren(bracketColumn, levelColumn, trackerUi.exportButton)
