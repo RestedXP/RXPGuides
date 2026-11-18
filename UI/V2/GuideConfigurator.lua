@@ -39,6 +39,7 @@ function addon.ui.v2.configurator:RegisterRXPV2GuideConfiguratorCard()
 
     local methods = {
         ["OnAcquire"] = function(this)
+            this:UpdateSubTheme({})
             this:SetLabel()
             this:SetDescription()
             this:SetImage(nil)
@@ -595,6 +596,7 @@ function addon.ui.v2.configurator:RegisterRXPV2GuideConfiguratorOption()
         ["OnAcquire"] = function(this)
             this:SetWidth(180)
             this:SetHeight(34)
+            this:UpdateSubTheme({})
 
             this.values = nil
             this.settingkey = nil
@@ -1503,7 +1505,25 @@ function addon.ui.v2.configurator:SetScale(scale)
     if self.ui then self.ui:SetScale(scale) end
 end
 
-function addon.ui.v2.configurator:UpdateTheme() if self.ui then self.ui:UpdateTheme({updateChildren = true}) end end
+function addon.ui.v2.configurator:UpdateTheme()
+    if not self.ui then return end
+
+    self.ui:UpdateTheme({updateChildren = true})
+    local theme = addon.v2:GetTheme()
+    self.ui.scrollContainer:SetTheme(theme)
+
+    for _, child in ipairs(self.ui.scrollContainer.children) do
+        if child.type == "Heading" then
+            child.label:SetFont(theme.font, addon.v2:GetGuideFontSize(), "")
+            child.left:SetVertexColor(unpack(theme.borderColors.commonEdge))
+            child.right:SetVertexColor(unpack(theme.borderColors.commonEdge))
+        elseif child.type == "Label" then
+            local _, _, _, alpha = child.label:GetTextColor()
+            child:SetFont(theme.font, addon.v2:GetGuideFontSize() - 1, "")
+            child:SetColor(theme.textColor.common[1], theme.textColor.common[2], theme.textColor.common[3], alpha)
+        end
+    end
+end
 
 function addon.ui.v2.configurator:IsShown() return self.ui and self.ui:IsShown() or false end
 

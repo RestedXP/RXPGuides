@@ -45,7 +45,11 @@ local function updateTheme(this, payload)
 
     if payload.updateChildren then
         for _, child in pairs(this.children or {}) do
-            if child.UpdateTheme then child:UpdateTheme({updateChildren = true}) end
+            if child.UpdateTheme then
+                child:UpdateTheme({updateChildren = true})
+            elseif child.children then
+                updateTheme(child, {updateChildren = true})
+            end
         end
     end
 end
@@ -61,11 +65,13 @@ local function updateScrollBarVisuals(scrollbar, background, theme)
         local color = theme.backgroundColors and theme.backgroundColors.common or theme.background
         background:SetColorTexture(unpack(color))
         scrollbar.ThumbTexture:SetDesaturated(true)
-        scrollbar.ThumbTexture:SetVertexColor(unpack(color))
+        scrollbar.ThumbTexture:SetVertexColor(unpack(theme.backgroundColors and
+                                                       theme.backgroundColors.activeStepCheckboxChecked or color))
 
         for _, button in ipairs({scrollbar.ScrollUpButton, scrollbar.ScrollDownButton}) do
             button.Normal:SetDesaturated(true)
-            button.Normal:SetVertexColor(unpack(color))
+            button.Normal:SetVertexColor(unpack(theme.backgroundColors and
+                                                  theme.backgroundColors.activeStepCheckboxChecked or color))
         end
     else
         background:SetColorTexture(unpack(theme.backgroundColors.scrollbar))
@@ -3097,6 +3103,7 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
             this.unusedTabButtons = this.unusedTabButtons or {}
             this.autoSize = addon.settings.profile.activePartyStepsV2AutoSize ~= false
 
+            this:UpdateSubTheme({})
             this:ApplyStatus()
             this:Show()
 
@@ -3312,7 +3319,23 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
 
         ["UpdateTheme"] = updateTheme,
 
-        ["UpdateSubTheme"] = updatePartyFrameBackgroundVisibility,
+        ["UpdateSubTheme"] = function(this, payload)
+            local theme = addon.v2:GetTheme()
+            addon.ui.v2:ApplyFrameBackdrop(this.frame, theme.edge, theme.backgroundColors.common,
+                                           theme.borderColors.commonEdge)
+            this.footerBackground:SetColorTexture(unpack(theme.version == 1 and theme.backgroundColors.common or
+                                                             theme.backgroundColors.scrollbar))
+            this.footertext:SetFont(theme.font, addon.v2:GetGuideFontSize() - 1, "")
+            for player, tab in pairs(this.tabButtons or {}) do
+                this:RefreshTabTheme(tab, player == this.activeTab)
+            end
+            if payload and payload.updateChildren then
+                for _, container in pairs(this.playerContainers or {}) do
+                    if container.UpdateTheme then container:UpdateTheme({updateChildren = true}) end
+                end
+            end
+            updatePartyFrameBackgroundVisibility(this, payload)
+        end,
 
         ["Hide"] = function(this) this.frame:Hide() end,
 
@@ -3428,6 +3451,7 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
             localstatus = {},
             closebutton = closebutton,
             footer = footer,
+            footerBackground = footerBackground,
             footertext = footertext,
             sizer = sizer,
             content = content,

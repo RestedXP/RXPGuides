@@ -439,12 +439,7 @@ function addon.tracker:UpdateTheme()
     local theme = addon.v2:GetTheme()
     local guideGroupColor = {addon.settings:HexToRGB(addon.guideTextColors["RXP_WARN_"])}
     if self.reportFrame then
-        self.reportFrame:UpdateTheme({hideBackground = false})
-        for target, tab in pairs(self.reportFrame.tabButtons) do
-            if tab.rxpPlayer then
-                self.reportFrame:RefreshTabTheme(tab, target == self.reportFrame.activeTab)
-            end
-        end
+        self.reportFrame:UpdateTheme({hideBackground = false, updateChildren = true})
     end
     for _, trackerUi in pairs(self.ui) do
         trackerUi.scrollContainer:SetTheme(theme)

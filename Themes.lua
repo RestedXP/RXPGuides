@@ -432,6 +432,9 @@ function addon.v2:ConvertThemes()
 
                 backgroundColors.common = CopyTable(source.background)
                 backgroundColors.inactivePartyTab = CopyTable(source.bottomFrameBG)
+                backgroundColors.guideSelector = CopyTable(source.bottomFrameBG)
+                backgroundColors.guideWindow = CopyTable(source.background)
+                backgroundColors.scrollbar = CopyTable(source.bottomFrameBG)
                 backgroundColors.activeStepCheckbox = CopyTable(source.background)
                 backgroundColors.activeStepCheckboxChecked = CopyTable(source.mapPins)
                 for _, key in ipairs(convertedBorderColors) do borderColors[key] = edgeColor end
