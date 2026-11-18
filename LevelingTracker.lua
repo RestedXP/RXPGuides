@@ -488,6 +488,16 @@ function addon.tracker:CreateGui(target)
         self.reportFrame.footertext:SetText(L("RestedXP Leveling Report"))
         _G.RESTEDXP_TRACKER_SUMMARY_WINDOW = self.reportFrame.frame
         tinsert(_G.UISpecialFrames, "RESTEDXP_TRACKER_SUMMARY_WINDOW")
+        self.reportFrame:SetCallback("OnMenuRequested", function()
+            local menu = {{text = playerName, notCheckable = true, func = function() self:ShowReport(playerName) end}}
+            for name in pairs(self.state.otherReports) do
+                local targetName = name
+                tinsert(menu, {text = targetName, notCheckable = true, func = function()
+                    self:ShowReport(targetName)
+                end})
+            end
+            addon:ShowMenu(menu)
+        end)
         self.reportFrame:SetCallback("OnTabSelected", function(_, _, selectedTarget)
             if selectedTarget ~= playerName then return end
 
@@ -620,9 +630,12 @@ function addon.tracker:ShowReport(target)
     local players = {playerName}
     local inspectedPlayers = {}
     for reportTarget in pairs(self.state.otherReports) do
-        inspectedPlayers[#inspectedPlayers + 1] = reportTarget
+        if reportTarget ~= target and reportTarget ~= playerName then
+            inspectedPlayers[#inspectedPlayers + 1] = reportTarget
+        end
     end
     table.sort(inspectedPlayers)
+    if target ~= playerName then players[#players + 1] = target end
     for _, reportTarget in ipairs(inspectedPlayers) do
         players[#players + 1] = reportTarget
     end
