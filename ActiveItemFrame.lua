@@ -269,7 +269,7 @@ function addon.CreateActiveItemFrame(self, anchor, enableText)
                                            BackdropTemplate)
         f = self.activeItemFrame
     end
-    f.v2 = addon.v2:IsGuideWindowEnabled()
+    f.v2 = addon.v2:IsEnabled()
 
     addon.enabledFrames["activeItemFrame"] = f
     f.IsFeatureEnabled = function()

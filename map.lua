@@ -43,7 +43,7 @@ local af = addon.arrowFrame
 
 function addon.arrowFrame:UpdateVisuals()
     local texture = addon.GetV1Texture("rxp_navigation_arrow-1")
-    if addon.v2 and addon.v2:IsGuideWindowEnabled() then
+    if addon.v2 and addon.v2:IsEnabled() then
         texture = addon.v2:GetTheme().navigationArrow
     end
     self.texture:SetTexture(texture)

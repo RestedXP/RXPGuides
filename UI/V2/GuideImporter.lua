@@ -1,8 +1,7 @@
 local addonName, addon = ...
 
 local AceGUI = LibStub("AceGUI-3.0")
-local pairs, assert, type = pairs, assert, type
-local wipe = table.wipe
+local pairs, type = pairs, type
 local fmt, tinsert, GetTime = string.format, table.insert, GetTime
 local _G = _G
 local strbuffer = {}
@@ -14,119 +13,29 @@ addon.guideImporter = addon.guideImporter or {}
 
 function addon.ui.v2:InitializeGuideImporter()
     self:RegisterRXPV2Popup()
-    self:RegisterRXPV2GuideImporter()
     self:RegisterRXPV2GuideImporterEditBox()
-    self:RegisterRXPV2GuideImporterButton()
 end
 
-local function getTheme()
-    local theme = addon.v2.themes[addon.settings.profile.activeTheme]
-    if addon.v2:IsGuideWindowEnabled() then theme = addon.v2:GetTheme() end
-
-    return theme or addon.v2.themes["RXP Blue V2"]
-end
-
-local function applyTheme(frame, ...)
-    local theme = getTheme()
-    local backgroundColor = theme.version == 1 and theme.backgroundColors.common or
-                            theme.backgroundColors.guideWindow
-    local textColor = theme.textColor.common
-    if not addon.v2:IsGuideWindowEnabled() then
-        local legacyTheme = addon.themes[addon.settings.profile.activeTheme]
-        if legacyTheme then textColor = legacyTheme.textColor end
-    end
-
-    addon.ui.v2:ApplyFrameBackdrop(frame, theme.edge, backgroundColor,
-                                    theme.borderColors.commonEdge)
-    frame.rxpBackground:Hide()
-
-    if not frame.importerBackground then
-        frame.importerBackground = frame:CreateTexture(nil, "BACKGROUND")
-        frame.importerBackground:SetAllPoints()
-    end
-    frame.importerBackground:SetColorTexture(unpack(backgroundColor))
-
-    local text, _, size, flags
-    for index = 1, select("#", ...) do
-        text = select(index, ...)
-        _, size, flags = text:GetFont()
-        text:SetFont(theme.font, size, flags)
-        text:SetTextColor(unpack(textColor))
-    end
-
-    return theme, textColor
-end
-
-local function applyWindowTheme(frame, ...)
-    local theme, textColor = applyTheme(frame, ...)
-
-    local body = frame.importerBody
-    if not body then
-        body = frame:CreateTexture(nil, "BACKGROUND", nil, 1)
-        body:SetPoint("TOPLEFT", frame, "TOPLEFT", 1, -18)
-        body:SetPoint("TOPRIGHT", frame, "TOPRIGHT", -1, -18)
-        body:SetPoint("BOTTOM", frame, "BOTTOM", 0, 1)
-        frame.importerBody = body
-    end
-    body:SetColorTexture(unpack(theme.backgroundColors.common))
-    body:SetAlpha(1)
-
-    local header = frame.importerHeader
-    if not header then
-        header = frame:CreateTexture(nil, "BACKGROUND", nil, 1)
-        header:SetPoint("TOPLEFT", frame, "TOPLEFT", 1, -1)
-        header:SetPoint("TOPRIGHT", frame, "TOPRIGHT", -1, -1)
-        header:SetHeight(18)
-        frame.importerHeader = header
-    end
-    header:SetColorTexture(unpack(theme.version == 1 and theme.backgroundColors.common or
-                                      theme.backgroundColors.guideName))
-    header:SetAlpha(0.5)
-
-    return theme, textColor
-end
-
-local function updateTheme(this, payload)
-    if not payload then return end
-
-    if payload.scale and this.SetScale then this:SetScale(payload.scale) end
-
-    if this.UpdateSubTheme then this:UpdateSubTheme(payload) end
-
-    if payload.updateChildren then
-        for _, child in pairs(this.children or {}) do
-            if child.UpdateTheme then child:UpdateTheme({updateChildren = true}) end
-        end
-    end
-end
-
-local function updateImporterTheme(this)
+local function updateImporterTheme()
     local widgets = addon.guideImporter.widgets
     if not widgets.importButton then return end
 
-    local theme, textColor = applyWindowTheme(this.frame, this.title, this.description)
+    local theme = addon.v2:GetTheme()
+    local textColor = theme.textColor.common
+
     local fieldBackground = theme.version == 1 and theme.backgroundColors.inactivePartyTab or
                             theme.backgroundColors.scrollbar
-
-    this.title:SetFont(theme.font, 10, "")
-    this.title:SetTextColor(unpack(theme.textColor.title))
+    local _, descriptionSize, descriptionFlags = widgets.description:GetFont()
+    widgets.description:SetFont(theme.font, descriptionSize, descriptionFlags)
+    widgets.description:SetTextColor(unpack(textColor))
 
     widgets.importLabel:SetFont(theme.font, 8, "")
-    widgets.importLabel:SetTextColor(unpack(theme.textColor.title))
-    widgets.importBox:GetEditBox():SetFont(theme.font, 9, "")
-    widgets.importBox:GetEditBox():SetTextColor(unpack(textColor))
-    addon.ui.v2:ApplyFrameBackdrop(widgets.importBox.background, theme.edge,
-                                    fieldBackground,
-                                    theme.borderColors.commonEdge)
+    widgets.importLabel:SetTextColor(addon.settings:HexToRGB(addon.guideTextColors["RXP_WARN_"]))
+    widgets.importBox:UpdateTheme({})
 
     for _, button in ipairs({widgets.importButton, widgets.importSplicedString, widgets.purgeButton,
                              widgets.reloadButton, widgets.deleteButton}) do
-        addon.ui.v2:ApplyFrameBackdrop(button.frame, theme.edge,
-                                       theme.backgroundColors.inactivePartyTab,
-                                       theme.borderColors.commonEdge)
-        button.text:SetFont(theme.font, 9, "")
-        button.text:SetTextColor(unpack(textColor))
-        button:SetDisabled(button.disabled)
+        button:UpdateTheme({})
     end
 
     widgets.guidesLabel:SetFont(theme.font, 8, "")
@@ -135,14 +44,17 @@ local function updateImporterTheme(this)
     widgets.currentGuides.text:SetTextColor(unpack(textColor))
     addon.ui.v2:ApplyFrameBackdrop(widgets.currentGuides.frame, theme.edge,
                                     fieldBackground,
-                                    theme.borderColors.commonEdge)
+                                    theme.borderColors.common)
+    addon.ui.v2:ApplyFrameBackdrop(widgets.currentGuides.button, theme.edge,
+                                   theme.backgroundColors.activeStepCheckboxChecked,
+                                   theme.borderColors.commonEdge)
     addon.ui.v2:ApplyDropdownTheme(widgets.currentGuides, theme)
 
     widgets.progressLabel:SetFont(theme.font, 8, "")
     widgets.progressLabel:SetTextColor(unpack(textColor))
     addon.ui.v2:ApplyFrameBackdrop(widgets.progress, theme.edge,
                                     fieldBackground,
-                                    theme.borderColors.commonEdge)
+                                    theme.borderColors.common)
     widgets.progress:SetStatusBarColor(unpack(theme.backgroundColors.activeStepCheckboxChecked))
     widgets.progressBackground:SetColorTexture(unpack(fieldBackground))
     widgets.progressText:SetFont(theme.font, 8, "")
@@ -159,150 +71,6 @@ local function updateImporterTheme(this)
     end
 
     addon.guideImporter:UpdateImportUI()
-end
-
-function addon.ui.v2:RegisterRXPV2GuideImporter()
-    local Type, Version = "RXPV2GuideImporter", 1
-    if not AceGUI or (AceGUI:GetWidgetVersion(Type) or 0) >= Version then
-
-        return
-    end
-
-    local function frame_OnShow(frame)
-        frame.obj:Fire("OnShow")
-    end
-
-    local function frame_OnHide(frame)
-        frame.obj:Fire("OnClose")
-    end
-
-    local function frame_OnMouseDown()
-        AceGUI:ClearFocus()
-    end
-
-    local function frame_OnDragStart(frame)
-        frame:StartMoving()
-    end
-
-    local function frame_OnDragStop(frame)
-        frame:StopMovingOrSizing()
-        local widget = frame.obj
-        local status = widget.status or widget.localstatus
-        status.top = frame:GetTop()
-        status.left = frame:GetLeft()
-    end
-
-    local methods = {
-        ["OnAcquire"] = function(this)
-            this.frame:SetParent(UIParent)
-            this.frame:SetFrameStrata("MEDIUM")
-            this.frame:SetFrameLevel(100)
-            this:ApplyStatus()
-        end,
-
-        ["OnRelease"] = function(this)
-            this.status = nil
-            wipe(this.localstatus)
-        end,
-
-        ["OnWidthSet"] = function(this, width)
-            this.content:SetWidth(math.max(width - 20, 0))
-        end,
-
-        ["OnHeightSet"] = function(this, height)
-            this.content:SetHeight(math.max(height - 50, 0))
-        end,
-
-        ["Hide"] = function(this)
-            this.frame:Hide()
-        end,
-
-        ["Show"] = function(this)
-            this.frame:Show()
-        end,
-
-        ["SetStatusTable"] = function(this, status)
-            assert(type(status) == "table")
-            this.status = status
-            this:ApplyStatus()
-        end,
-
-        ["UpdateTheme"] = updateTheme,
-
-        ["UpdateSubTheme"] = updateImporterTheme,
-
-        ["ApplyStatus"] = function(this)
-            local status = this.status or this.localstatus
-            this:SetWidth(status.width or 500)
-            this:SetHeight(status.height or importerBaseHeight)
-            this.frame:ClearAllPoints()
-            if status.top and status.left then
-                this.frame:SetPoint("TOP", UIParent, "BOTTOM", 0, status.top)
-                this.frame:SetPoint("LEFT", UIParent, "LEFT", status.left, 0)
-            else
-                this.frame:SetPoint("CENTER")
-            end
-        end
-    }
-
-    local function Constructor()
-        local frame = CreateFrame("Frame", nil, UIParent, "BackdropTemplate")
-        frame:Hide()
-        frame:EnableMouse(true)
-        frame:SetMovable(true)
-        frame:SetResizable(false)
-        frame:SetFrameStrata("MEDIUM")
-        frame:SetFrameLevel(100)
-        frame:SetSize(500, importerBaseHeight)
-        frame:SetToplevel(true)
-        frame:SetScript("OnShow", frame_OnShow)
-        frame:SetScript("OnHide", frame_OnHide)
-        frame:SetScript("OnMouseDown", frame_OnMouseDown)
-        frame:RegisterForDrag("LeftButton")
-        frame:SetScript("OnDragStart", frame_OnDragStart)
-        frame:SetScript("OnDragStop", frame_OnDragStop)
-
-        local closebutton = CreateFrame("Button", nil, frame)
-        closebutton:SetFrameLevel(frame:GetFrameLevel() + 3)
-        closebutton:SetNormalTexture(addon.ui.v2:GetTexture("rxp-btn-close"))
-        closebutton:SetPushedTexture(addon.ui.v2:GetTexture("rxp-btn-close"))
-        closebutton:SetHighlightTexture(addon.ui.v2:GetTexture("rxp-btn-close"), "ADD")
-        closebutton:SetSize(20, 20)
-        closebutton:SetPoint("TOPRIGHT", frame, "TOPRIGHT", 6, 6)
-        local title = frame:CreateFontString(nil, "ARTWORK", "GameFontNormal")
-        title:SetPoint("TOP", frame, "TOP", 0, -4)
-        title:SetText(fmt("RestedXP %s - %s", addon.locale.Get("Guide Import"), addon.versionText))
-
-        local description = frame:CreateFontString(nil, "ARTWORK", "GameFontNormal")
-        description:SetPoint("TOPLEFT", frame, "TOPLEFT", 18, -31)
-        description:SetText(addon.locale.Get("Import Guides"))
-
-        local theme = applyWindowTheme(frame, title, description)
-        title:SetFont(theme.font, 10, "")
-        title:SetTextColor(unpack(theme.textColor.title))
-        addon.ui.v2:AddFrameShadow(frame)
-
-        local content = CreateFrame("Frame", nil, frame)
-        content:SetPoint("TOPLEFT", frame, "TOPLEFT", 10, -48)
-        content:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -10, 10)
-
-        local widget = {
-            localstatus = {},
-            frame = frame,
-            content = content,
-            title = title,
-            description = description,
-            closebutton = closebutton,
-            type = Type
-        }
-        for method, func in pairs(methods) do widget[method] = func end
-        closebutton:SetScript("OnClick", function() widget:Hide() end)
-
-        return AceGUI:RegisterAsContainer(widget)
-    end
-
-    AceGUI:RegisterLayout(Type, function() end)
-    AceGUI:RegisterWidgetType(Type, Constructor, Version)
 end
 
 function addon.ui.v2:RegisterRXPV2GuideImporterEditBox()
@@ -333,6 +101,7 @@ function addon.ui.v2:RegisterRXPV2GuideImporterEditBox()
             this:SetNumLines()
             this:SetMaxLetters(0)
             this.editBox:SetMaxBytes(0)
+            this:UpdateSubTheme()
         end,
 
         ["OnRelease"] = function(this)
@@ -403,6 +172,20 @@ function addon.ui.v2:RegisterRXPV2GuideImporterEditBox()
         ["SetCursorPosition"] = function(this, ...)
 
             return this.editBox:SetCursorPosition(...)
+        end,
+
+        ["UpdateTheme"] = addon.ui.v2.UpdateTheme,
+
+        ["UpdateSubTheme"] = function(this)
+            local theme = addon.v2:GetTheme()
+            local fieldBackground = theme.version == 1 and theme.backgroundColors.inactivePartyTab or
+                                    theme.backgroundColors.scrollbar
+            this.label:SetFont(theme.font, 8, "")
+            this.label:SetTextColor(addon.settings:HexToRGB(addon.guideTextColors["RXP_WARN_"]))
+            this.editBox:SetFont(theme.font, 9, "")
+            this.editBox:SetTextColor(unpack(theme.textColor.common))
+            addon.ui.v2:ApplyFrameBackdrop(this.background, theme.edge, fieldBackground,
+                                           theme.borderColors.common)
         end
     }
 
@@ -474,82 +257,6 @@ function addon.ui.v2:RegisterRXPV2GuideImporterEditBox()
             importCache.lastBuffer = GetTime()
             importCache.bufferData[#importCache.bufferData + 1] = char
         end)
-
-        return AceGUI:RegisterAsWidget(widget)
-    end
-
-    AceGUI:RegisterWidgetType(Type, Constructor, Version)
-end
-
-function addon.ui.v2:RegisterRXPV2GuideImporterButton()
-    local Type, Version = "RXPV2GuideImporterButton", 1
-    if not AceGUI or (AceGUI:GetWidgetVersion(Type) or 0) >= Version then
-
-        return
-    end
-
-    local CreateFrame, UIParent = CreateFrame, UIParent
-    local PlaySound = PlaySound
-
-    local function Button_OnClick(frame, ...)
-        AceGUI:ClearFocus()
-        PlaySound(852)
-        frame.obj:Fire("OnClick", ...)
-    end
-
-    local function Control_OnEnter(frame)
-        frame.obj:Fire("OnEnter")
-    end
-
-    local function Control_OnLeave(frame)
-        frame.obj:Fire("OnLeave")
-    end
-
-    local methods = {
-        ["OnAcquire"] = function(this)
-            this.frame:SetParent(UIParent)
-            this:SetWidth(200)
-            this:SetHeight(24)
-            this:SetDisabled(false)
-            this:SetText()
-        end,
-
-        ["SetText"] = function(this, text)
-            this.text:SetText(text or "")
-        end,
-
-        ["SetDisabled"] = function(this, disabled)
-            this.disabled = disabled
-            this.frame:SetAlpha(disabled and 0.5 or 1)
-            if disabled then
-                this.frame:Disable()
-            else
-                this.frame:Enable()
-            end
-        end
-    }
-
-    local function Constructor()
-        local frame = CreateFrame("Button", nil, UIParent, BackdropTemplateMixin and "BackdropTemplate")
-        frame:Hide()
-        frame:EnableMouse(true)
-        frame:SetScript("OnClick", Button_OnClick)
-        frame:SetScript("OnEnter", Control_OnEnter)
-        frame:SetScript("OnLeave", Control_OnLeave)
-
-        local text = frame:CreateFontString(nil, "OVERLAY")
-        text:SetFontObject(GameFontNormal)
-        text:SetPoint("TOPLEFT", frame, "TOPLEFT", 15, -1)
-        text:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -15, 1)
-        text:SetJustifyH("CENTER")
-        text:SetJustifyV("MIDDLE")
-
-        local widget = {
-            text = text,
-            frame = frame,
-            type = Type
-        }
-        for method, func in pairs(methods) do widget[method] = func end
 
         return AceGUI:RegisterAsWidget(widget)
     end
@@ -668,7 +375,7 @@ function addon.guideImporter:UpdateImportStatusHistory(data, isError, ...)
         if self.gui.progressError then
             self.widgets.progressText:SetTextColor(1, 0.45, 0.35)
         else
-            self.widgets.progressText:SetTextColor(unpack(getTheme().textColor.common))
+            self.widgets.progressText:SetTextColor(unpack(addon.v2:GetTheme().textColor.common))
         end
         self.widgets.progressText:SetText(latest or "")
     end
@@ -800,7 +507,7 @@ function addon.guideImporter:UpdateImportUI()
         widgets.currentGuides:SetList(self:GetImportedGuides())
         widgets.currentGuides:SetValue(gui.selectedDeleteGuide)
         widgets.currentGuides:SetDisabled(not next(addon.db.profile.guides))
-        addon.ui.v2:ApplyDropdownTheme(widgets.currentGuides, getTheme())
+        addon.ui.v2:ApplyDropdownTheme(widgets.currentGuides, addon.v2:GetTheme())
     end
     if widgets.deleteButton then
         widgets.deleteButton:SetDisabled(not gui.selectedDeleteGuide or
@@ -844,7 +551,10 @@ end
 
 function addon.guideImporter:UpdateTheme()
     local importer = self.widgets.import
-    if importer then importer:UpdateTheme({}) end
+    if importer then
+        importer:UpdateTheme({})
+        updateImporterTheme()
+    end
 end
 
 function addon.ui.v2:CreateGuideImporter()
@@ -858,12 +568,21 @@ function addon.ui.v2:CreateGuideImporter()
     guideImporter:Setup()
 
     local L = addon.locale.Get
-    local importer = AceGUI:Create("RXPV2GuideImporter")
+    local importer = addon.comms.CreateWindow(fmt("RestedXP %s", L("Guide Import")), 500, importerBaseHeight)
+    importer:SetLayout("RXPV2CommsWindow")
+    importer:EnableResize(false)
+    importer:SetTitle(fmt("RestedXP %s - %s", L("Guide Import"), addon.versionText))
 
-    importer:SetLayout("RXPV2GuideImporter")
+    local theme = addon.v2:GetTheme()
+    local windowContent = importer.content
+    local description = windowContent:CreateFontString(nil, "ARTWORK", "GameFontNormal")
+    description:SetPoint("TOPLEFT", windowContent, "TOPLEFT", 8, -5)
+    description:SetText(L("Import Guides"))
 
-    local theme = getTheme()
-    local content = importer.content
+    local content = CreateFrame("Frame", nil, windowContent)
+    content:SetPoint("TOPLEFT", windowContent, "TOPLEFT", 0, -22)
+    content:SetPoint("BOTTOMRIGHT", windowContent, "BOTTOMRIGHT")
+
     local fieldBackground = theme.version == 1 and theme.backgroundColors.inactivePartyTab or
                             theme.backgroundColors.scrollbar
     local textColor = theme.textColor.common
@@ -891,59 +610,45 @@ function addon.ui.v2:CreateGuideImporter()
     importLabel:SetPoint("TOPLEFT", content, "TOPLEFT", 8, -1)
     importLabel:SetFont(theme.font, 8, "")
     importLabel:SetText(L("Paste your guide string into the text field and click \"Import\"."))
-    importLabel:SetTextColor(unpack(theme.textColor.title))
+    importLabel:SetTextColor(addon.settings:HexToRGB(addon.guideTextColors["RXP_WARN_"]))
 
     local importBox = AceGUI:Create("RXPV2GuideImporterEditBox")
     importBox:SetLabel(nil)
     importBox:SetNumLines(4)
     importer:AddChild(importBox)
     importBox.frame:ClearAllPoints()
-    importBox.frame:SetPoint("TOPLEFT", content, "TOPLEFT", 8, -18)
-    importBox.frame:SetPoint("TOPRIGHT", content, "TOPRIGHT", -8, -18)
+    importBox.frame:SetPoint("TOPLEFT", content, "TOPLEFT", 8, -12)
+    importBox.frame:SetPoint("TOPRIGHT", content, "TOPRIGHT", -8, -12)
     importBox.frame:SetHeight(50)
     importBox.label:Hide()
-    local editBox = importBox:GetEditBox()
-    editBox:SetFont(theme.font, 9, "")
-    editBox:SetTextColor(unpack(textColor))
-    addon.ui.v2:ApplyFrameBackdrop(importBox.background, theme.edge,
-                                    fieldBackground,
-                                    theme.borderColors.commonEdge)
 
     widgets.importBox = importBox
     importBox:SetCallback("OnEditFocusGained", function()
         guideImporter:UpdateImportUI()
     end)
 
-    local importButton = AceGUI:Create("RXPV2GuideImporterButton")
+    local importButton = AceGUI:Create("RXPV2Button")
+    importButton:SetClickSound(852)
     importButton:SetText(L("Import"))
     importer:AddChild(importButton)
     importButton.frame:ClearAllPoints()
     importButton.frame:SetPoint("TOPLEFT", importBox.frame, "BOTTOMLEFT", 0, -8)
     importButton.frame:SetPoint("TOPRIGHT", importBox.frame, "BOTTOMRIGHT", 0, -8)
     importButton:SetHeight(24)
-    importButton.frame:SetHighlightTexture(addon.ui.v2:GetTexture("configurator-option-hover"), "ADD")
-    addon.ui.v2:ApplyFrameBackdrop(importButton.frame, theme.edge,
-                                    theme.backgroundColors.inactivePartyTab,
-                                    theme.borderColors.commonEdge)
-    importButton.text:SetFont(theme.font, 9, "")
-    importButton.text:SetTextColor(unpack(textColor))
+    importButton:SetPrimary(true)
     importButton:SetCallback("OnClick", function()
         guideImporter:Validate()
     end)
 
     widgets.importButton = importButton
 
-    local spliceButton = AceGUI:Create("RXPV2GuideImporterButton")
+    local spliceButton = AceGUI:Create("RXPV2Button")
+    spliceButton:SetClickSound(852)
     spliceButton:SetText(L("Import Spliced String"))
     importer:AddChild(spliceButton)
     spliceButton.frame:SetWidth((importBox.frame:GetWidth() - 8) / 2)
     spliceButton:SetHeight(24)
-    spliceButton.frame:SetHighlightTexture(addon.ui.v2:GetTexture("configurator-option-hover"), "ADD")
-    addon.ui.v2:ApplyFrameBackdrop(spliceButton.frame, theme.edge,
-                                    theme.backgroundColors.inactivePartyTab,
-                                    theme.borderColors.commonEdge)
-    spliceButton.text:SetFont(theme.font, 9, "")
-    spliceButton.text:SetTextColor(unpack(textColor))
+    spliceButton:SetPrimary(true)
     spliceButton.frame:SetShown(addon.settings.profile.enableBetaFeatures)
     spliceButton:SetCallback("OnClick", function() guideImporter:ImportSplicedString() end)
     widgets.importSplicedString = spliceButton
@@ -951,6 +656,7 @@ function addon.ui.v2:CreateGuideImporter()
     local guidesLabel = content:CreateFontString(nil, "ARTWORK")
     guidesLabel:SetPoint("TOPLEFT", importButton.frame, "BOTTOMLEFT", 0, -12)
     guidesLabel:SetPoint("TOPRIGHT", content, "TOPRIGHT", -8, -156)
+    guidesLabel:SetJustifyH("LEFT")
     guidesLabel:SetFont(theme.font, 8, "")
     guidesLabel:SetText(L("Show imported guides"))
     guidesLabel:SetTextColor(unpack(textColor))
@@ -979,61 +685,46 @@ function addon.ui.v2:CreateGuideImporter()
     currentGuides.button:SetPoint("TOPRIGHT", currentGuides.frame, "TOPRIGHT")
     addon.ui.v2:ApplyFrameBackdrop(currentGuides.frame, theme.edge,
                                     fieldBackground,
-                                    theme.borderColors.commonEdge)
+                                    theme.borderColors.common)
 
     currentGuides:SetCallback("OnValueChanged", function(_, _, value)
         guideImporter.gui.selectedDeleteGuide = value
         guideImporter:UpdateImportUI()
     end)
     currentGuides:SetCallback("OnOpened", function()
-        addon.ui.v2:ApplyDropdownTheme(currentGuides, getTheme())
+        addon.ui.v2:ApplyDropdownTheme(currentGuides, addon.v2:GetTheme())
     end)
 
     widgets.currentGuides = currentGuides
 
-    local purgeButton = AceGUI:Create("RXPV2GuideImporterButton")
+    local purgeButton = AceGUI:Create("RXPV2Button")
+    purgeButton:SetClickSound(852)
     purgeButton:SetText(L("Purge"))
     importer:AddChild(purgeButton)
     purgeButton.frame:ClearAllPoints()
     purgeButton.frame:SetPoint("TOPLEFT", currentGuides.frame, "BOTTOMLEFT", 0, -8)
     purgeButton.frame:SetWidth(150)
     purgeButton:SetHeight(24)
-    purgeButton.frame:SetHighlightTexture(addon.ui.v2:GetTexture("configurator-option-hover"), "ADD")
-    addon.ui.v2:ApplyFrameBackdrop(purgeButton.frame, theme.edge,
-                                    theme.backgroundColors.inactivePartyTab,
-                                    theme.borderColors.commonEdge)
-    purgeButton.text:SetFont(theme.font, 9, "")
-    purgeButton.text:SetTextColor(unpack(textColor))
     purgeButton:SetCallback("OnClick", function() purgeConfirmation:Show() end)
 
-    local reloadButton = AceGUI:Create("RXPV2GuideImporterButton")
+    local reloadButton = AceGUI:Create("RXPV2Button")
+    reloadButton:SetClickSound(852)
     reloadButton:SetText(L("Reload"))
     importer:AddChild(reloadButton)
     reloadButton.frame:ClearAllPoints()
     reloadButton.frame:SetPoint("TOPLEFT", currentGuides.frame, "BOTTOMLEFT", 160, -8)
     reloadButton.frame:SetWidth(150)
     reloadButton:SetHeight(24)
-    reloadButton.frame:SetHighlightTexture(addon.ui.v2:GetTexture("configurator-option-hover"), "ADD")
-    addon.ui.v2:ApplyFrameBackdrop(reloadButton.frame, theme.edge,
-                                    theme.backgroundColors.inactivePartyTab,
-                                    theme.borderColors.commonEdge)
-    reloadButton.text:SetFont(theme.font, 9, "")
-    reloadButton.text:SetTextColor(unpack(textColor))
     reloadButton:SetCallback("OnClick", function() _G.ReloadUI() end)
 
-    local deleteButton = AceGUI:Create("RXPV2GuideImporterButton")
+    local deleteButton = AceGUI:Create("RXPV2Button")
+    deleteButton:SetClickSound(852)
     deleteButton:SetText(L("Delete"))
     importer:AddChild(deleteButton)
     deleteButton.frame:ClearAllPoints()
-    deleteButton.frame:SetPoint("TOPLEFT", currentGuides.frame, "BOTTOMLEFT", 320, -8)
-    deleteButton.frame:SetWidth(150)
+    deleteButton.frame:SetPoint("TOPLEFT", reloadButton.frame, "TOPRIGHT", 10, 0)
+    deleteButton.frame:SetPoint("TOPRIGHT", currentGuides.frame, "BOTTOMRIGHT", 0, -8)
     deleteButton:SetHeight(24)
-    deleteButton.frame:SetHighlightTexture(addon.ui.v2:GetTexture("configurator-option-hover"), "ADD")
-    addon.ui.v2:ApplyFrameBackdrop(deleteButton.frame, theme.edge,
-                                    theme.backgroundColors.inactivePartyTab,
-                                    theme.borderColors.commonEdge)
-    deleteButton.text:SetFont(theme.font, 9, "")
-    deleteButton.text:SetTextColor(unpack(textColor))
 
     local deleteConfirmation = AceGUI:Create("RXPV2Popup")
     deleteConfirmation:SetTitle(L("Remove"))
@@ -1072,7 +763,7 @@ function addon.ui.v2:CreateGuideImporter()
     if progressTexture then progressTexture:SetDrawLayer("ARTWORK") end
     progress:SetStatusBarColor(unpack(theme.backgroundColors.activeStepCheckboxChecked))
     addon.ui.v2:ApplyFrameBackdrop(progress, theme.edge, fieldBackground,
-                                    theme.borderColors.commonEdge)
+                                    theme.borderColors.common)
     progress.rxpBackground:Hide()
     local progressBackground = progress:CreateTexture(nil, "BACKGROUND")
     progressBackground:SetAllPoints(progress)
@@ -1099,6 +790,7 @@ function addon.ui.v2:CreateGuideImporter()
     history:Hide()
 
     widgets.import = importer
+    widgets.description = description
     widgets.importLabel = importLabel
     widgets.importBox = importBox
     widgets.importButton = importButton
@@ -1118,7 +810,8 @@ function addon.ui.v2:CreateGuideImporter()
     importer:SetCallback("OnShow", function()
         guideImporter:UpdateImportUI()
     end)
-    importer:UpdateSubTheme()
+    importer:UpdateTheme({})
+    updateImporterTheme()
 
     if not RXPData.cache then
         guideImporter:UpdateImportStatusHistory(

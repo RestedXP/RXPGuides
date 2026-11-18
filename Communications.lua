@@ -461,6 +461,99 @@ function addon.comms.PrettyDebug(msg, ...)
     print(fmt("%s (Debug): %s", addon.title, msg))
 end
 
+function addon.comms.CreateWindow(title, width, height, includeVersion)
+    local window = AceGUI:Create("RXPV2CommsWindow")
+    window:SetTitle(includeVersion == true and fmt("%s - Version %s", title, addon.release) or title)
+    window:SetWidth(width or 360)
+    window:SetHeight(height or 200)
+
+    return window
+end
+
+local function addDiscordFooter(frame, url)
+    url = url or "https://discord.gg/RestedXP"
+
+    local discordLink = AceGUI:Create("RXPV2CommsText")
+    discordLink:SetText(fmt("%s: |c%s%s|r", L("Join Discord"), addon.guideTextColors["RXP_WARN_"], url))
+    discordLink:SetWidth(200)
+
+    local copyLinkButton = AceGUI:Create("RXPV2Button")
+    copyLinkButton:SetText(L("Copy Link"))
+    copyLinkButton:SetWidth(110)
+    copyLinkButton:SetHeight(24)
+    copyLinkButton:SetPrimary(true)
+    copyLinkButton:SetCallback("OnClick", function() addon.comms.OpenLink(url) end)
+
+    frame:AddChild(discordLink)
+    frame:AddChild(copyLinkButton)
+
+    copyLinkButton.frame:ClearAllPoints()
+    copyLinkButton.frame:SetPoint("LEFT", discordLink.frame, "RIGHT", 16, 0)
+    discordLink.frame:ClearAllPoints()
+    discordLink.frame:SetPoint("BOTTOMLEFT", frame.content, "BOTTOMLEFT", 8, 6)
+end
+
+function addon.comms.OpenLink(url)
+    if type(url) ~= "string" or url == "" then return end
+
+    if not addon.v2:IsEnabled() then
+        if not _G.StaticPopupDialogs["RXP_Link"] then
+            _G.StaticPopupDialogs["RXP_Link"] = {
+                text = L("Press Ctrl+C to copy the URL to your clipboard"),
+                hasEditBox = 1,
+                button1 = _G.OKAY,
+                OnShow = function(popup)
+                    if addon.url then
+                        local box = _G[popup:GetName() .. "EditBox"]
+                        if box then
+                            box:SetWidth(275)
+                            box:SetText(addon.url)
+                            box:HighlightText()
+                            box:SetFocus()
+                        end
+                    end
+                end,
+                EditBoxOnEscapePressed = function(editBox) editBox:GetParent():Hide() end,
+                timeout = 0,
+                whileDead = 1,
+                hideOnEscape = 1
+            }
+        end
+
+        addon.url = url
+        _G.StaticPopup_Show("RXP_Link")
+        addon.url = nil
+        return
+    end
+
+    local f = addon.comms.CreateWindow(L("Copy Link"), 250, 80)
+    f:SetLayout("RXPV2CommsWindow")
+    f:EnableResize(false)
+
+    local staticPopup = _G.StaticPopup1
+    f.frame:ClearAllPoints()
+    if staticPopup then
+        f.frame:SetPoint("TOP", staticPopup, "TOP")
+    else
+        f.frame:SetPoint("TOP", UIParent, "TOP", 0, -135)
+    end
+
+    local linkBox = AceGUI:Create("RXPV2LinkBox")
+    linkBox:SetLabel(L("Press Ctrl+C to copy the URL to your clipboard"))
+    linkBox:SetURL(url)
+    linkBox:SetCallback("OnEnterPressed", function() f:Hide() end)
+    f:AddChild(linkBox)
+    linkBox.frame:ClearAllPoints()
+    linkBox.frame:SetPoint("TOPLEFT", f.content, "TOPLEFT")
+    linkBox:SetWidth(f.content:GetWidth() - 6)
+
+    f:SetCallback("OnClose", function(widget) widget:Release() end)
+    f:DoLayout()
+    f:Show()
+    linkBox:SetFocus()
+    linkBox:HighlightText()
+end
+
 function addon.comms.OpenBugReport(stepNumber)
     -- Came from dropdown menu
     if type(stepNumber) == "table" and stepNumber.arg1 then stepNumber = stepNumber.arg1 end
@@ -592,86 +685,102 @@ Arrow data
                         GetLocale(), select(1, GetBuildInfo()), select(2, BNGetInfo()) ~= nil and "Online" or "Offline",
                         stepData, arrowData, addonErrors, errorFlags)
 
-    local f = AceGUI:Create("Frame")
+    local f = addon.comms.CreateWindow(L("RestedXP Feedback Form"), 480, 260)
+    f:SetLayout("RXPV2CommsWindow")
+    f:EnableResize(false)
+    local theme = addon.v2:GetTheme()
 
-    f:SetLayout("Fill")
-    f:EnableResize(true)
-    f.statustext:GetParent():Hide()
-    f:SetTitle(L("RestedXP Feedback Form"))
-
-    f.scrollContainer = AceGUI:Create("ScrollFrame")
-    f.scrollContainer:SetLayout("Fill")
-    f.scrollContainer:SetFullHeight(true)
-    f:AddChild(f.scrollContainer)
-
-    f.frame:SetBackdrop(addon.RXPFrame.backdrop.edge)
-    f.frame:SetBackdropColor(unpack(addon.colors.background))
-
-    local editbox = AceGUI:Create("MultiLineEditBox")
-    editbox:SetLabel(L("Join our support discord at discord.gg/RestedXP and copy paste this form into #bug-report"))
-    editbox:SetFullWidth(true)
-    editbox:SetFullHeight(true)
+    local editbox = AceGUI:Create("RXPV2CommsEditBox")
+    editbox.label:SetFont(theme.font, 10, "")
+    editbox.editBox:SetFont(theme.font, 10, "")
+    editbox:SetLabel(L("Join our Discord, enter #bug-report and learn how to submit a bug-report."))
     editbox:SetText(content)
-    editbox:DisableButton(true)
-    f.scrollContainer:AddChild(editbox)
+    f:AddChild(editbox)
+    editbox.frame:ClearAllPoints()
+    editbox.frame:SetPoint("TOPLEFT", f.content, "TOPLEFT", 8, -6)
+    editbox:SetWidth(f.content:GetWidth() - 16)
+    editbox:SetHeight(f.content:GetHeight() - 38)
+    addDiscordFooter(f)
 
-    _G["RESTEDXP_BUG_REPORT_WINDOW"] = f.frame
-    tinsert(_G.UISpecialFrames, "RESTEDXP_BUG_REPORT_WINDOW")
-
-    -- TODO save to variable to preserve open/close
+    f:SetCallback("OnClose", function(widget) widget:Release() end)
+    f:DoLayout()
+    f:Show()
 end
 
-function addon.comms.OpenBrandedExport(title, description, content, width, height, acceptCallback)
+function addon.comms.OpenBrandedExport(title, description, content, width, height, acceptCallback, copyUrl,
+                                      includeVersion)
+    local f = addon.comms.CreateWindow(copyUrl and title or fmt("RestedXP: %s", title), width or 360, height or 100,
+                                       includeVersion)
+    if copyUrl and not acceptCallback then
+        f:SetLayout("RXPV2CommsWindow")
+        f:EnableResize(false)
+    else
+        f:SetLayout("Fill")
+    end
 
-    local f = AceGUI:Create("Frame") -- TODO use AceGUI:Create("Window")
-    f:Hide()
-
-    f:SetLayout("Fill")
-    f:EnableResize(true)
-    f.statustext:GetParent():Hide()
-    f:SetTitle("RestedXP: " .. title)
-
-    f.frame:SetBackdrop(addon.RXPFrame.backdrop.edge)
-    f.frame:SetBackdropColor(unpack(addon.colors.background))
-
-    local editbox = AceGUI:Create("MultiLineEditBox")
+    local editbox = AceGUI:Create("RXPV2CommsEditBox")
     editbox:SetLabel(description)
-    editbox:SetFullWidth(true)
-    editbox:SetFullHeight(true)
-    editbox:SetMaxLetters(0)
     editbox:SetText(content)
 
     if acceptCallback then
+        editbox:SetSubmitButton(L("Import"))
         editbox:SetCallback("OnEnterPressed", function(_, _, text)
             local success = pcall(acceptCallback, text)
             if success then editbox:SetText("") end
+            return success
         end)
     else
-        -- Fake read-only
-        editbox:DisableButton(true)
-        editbox:SetCallback("OnTextChanged", function() editbox:SetText(content) end)
-
-        editbox.editBox:SetScript("OnMouseUp", function()
-            editbox:HighlightText()
-
-            -- Only highlight text on first enter
-            editbox.editBox:SetScript("OnMouseUp", nil)
-        end)
+        editbox:SetReadOnly(true)
     end
-
     f:AddChild(editbox)
 
-    local frameWidth = max(width or 0, f.titletext:GetWidth() * 1.5, editbox.label:GetStringWidth() * 1.1)
+    local frameWidth = math.ceil(max(width or 0, f.title:GetStringWidth() + 30,
+                                     editbox.label:GetStringWidth() + 16))
 
     f:SetWidth(frameWidth)
     f:SetHeight(height or 100)
-    addon.SetResizeBounds(f.frame, frameWidth, height or 20)
-    _G["RESTEDXP_BRANDED_EXPORT"] = f.frame
-    tinsert(_G.UISpecialFrames, "RESTEDXP_BRANDED_EXPORT")
+
+    if copyUrl and not acceptCallback then
+        editbox.frame:ClearAllPoints()
+        editbox.frame:SetPoint("TOPLEFT", f.content, "TOPLEFT", 8, -6)
+        editbox:SetWidth(f.content:GetWidth() - 16)
+        editbox:SetHeight(f.content:GetHeight() - 38)
+        addDiscordFooter(f, copyUrl)
+    else
+        addon.SetResizeBounds(f.frame, frameWidth, height or 20)
+    end
 
     f:SetCallback("OnClose", function() f:Release() end)
 
     f:DoLayout()
+    f:Show()
+end
+
+function addon.comms.OpenSupport()
+    local theme = addon.v2:GetTheme()
+    local f = addon.comms.CreateWindow(L("RestedXP Info & Support"), 410, 250)
+    f:SetLayout("List")
+    f:EnableResize(false)
+
+    local function addText(text, fontSize)
+        local label = AceGUI:Create("RXPV2CommsText")
+        label:SetText(text)
+        label:SetFontSize(fontSize)
+        label:SetColor(theme.textColor.common)
+        label:SetFullWidth(true)
+        f:AddChild(label)
+    end
+
+    addText(L("Welcome to RestedXP"), 10)
+    addText(L("The RestedXP Addon is your fastest way to level in World of Warcraft and works with every expansion. Follow optimized routes built by top players and enjoy a smoother, faster leveling experience from start to finish."), 9)
+    addText(L("Need help?"), 10)
+    addText(L("If you need assistance with our addon or guides, please contact us. For quick help, visit our Discord server and use the “Ask a Question” channel in our support category. You can also find our contact details there."), 9)
+    addText(L("Report a bug"), 10)
+    addText(L("Help us improve our addon and guides! If you find a bug, please report it in our Discord under the support category. The bug report channel contains instructions on how to submit a report. Your feedback helps us improve your experience."), 9)
+
+    addDiscordFooter(f)
+
+    f:SetCallback("OnClose", function(widget) widget:Release() end)
     f:Show()
 end
 

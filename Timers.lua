@@ -36,8 +36,8 @@ function addon:SortTimers()
         table.insert(bars,bar)
     end
 
-    local guideWindow = addon.v2 and addon.v2.IsGuideWindowEnabled and
-                            addon.v2:IsGuideWindowEnabled() and addon.v2:GetGuideWindow()
+    local guideWindow = addon.v2 and addon.v2.IsEnabled and
+                            addon.v2:IsEnabled() and addon.v2:GetGuideWindow()
     if guideWindow then
         BarContainer:ClearAllPoints()
         BarContainer:SetPoint("TOPLEFT", guideWindow.footer, "TOPLEFT", 0, 0)
