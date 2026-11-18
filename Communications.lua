@@ -529,6 +529,7 @@ function addon.comms.OpenLink(url)
     local f = addon.comms.CreateWindow(L("Copy Link"), 250, 80)
     f:SetLayout("RXPV2CommsWindow")
     f:EnableResize(false)
+    f.title:SetPoint("TOPLEFT", f.frame, "TOPLEFT", 10, -1)
 
     local staticPopup = _G.StaticPopup1
     f.frame:ClearAllPoints()

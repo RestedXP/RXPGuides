@@ -398,10 +398,6 @@ local function updateReportDropdown(dropdown, theme)
     _G[name .. "Left"]:Hide()
     _G[name .. "Middle"]:Hide()
     _G[name .. "Right"]:Hide()
-    dropdown.button:SetNormalTexture(addon.ui.v2:GetTexture("scrollbar_down"))
-    dropdown.button:SetPushedTexture(addon.ui.v2:GetTexture("scrollbar_down"))
-    dropdown.button:SetDisabledTexture(addon.ui.v2:GetTexture("scrollbar_down"))
-    dropdown.button:SetHighlightTexture(addon.ui.v2:GetTexture("scrollbar_down"), "ADD")
     dropdown.button:ClearAllPoints()
     dropdown.button:SetSize(24, 24)
     dropdown.button:SetPoint("TOPRIGHT", dropdown.frame, "TOPRIGHT")
@@ -409,9 +405,6 @@ local function updateReportDropdown(dropdown, theme)
                                    theme.version == 1 and theme.backgroundColors.inactivePartyTab or
                                        theme.backgroundColors.scrollbar,
                                    theme.borderColors.common)
-    addon.ui.v2:ApplyFrameBackdrop(dropdown.button, theme.edge,
-                                   theme.backgroundColors.activeStepCheckboxChecked,
-                                   theme.borderColors.commonEdge)
     addon.ui.v2:ApplyDropdownTheme(dropdown, theme)
     dropdown:SetCallback("OnOpened", function()
         addon.ui.v2:ApplyDropdownTheme(dropdown, addon.v2:GetTheme())
@@ -568,8 +561,17 @@ function addon.tracker:CreateGui(target)
     trackerUi.exportButton:SetHeight(24)
     trackerUi.exportButton:SetPrimary(true)
     trackerUi.exportButton:SetCallback("OnClick", function()
+        local characterName = trackerUi.reportTarget
+        local className
+        if characterName == playerName then
+            className = addon.player.localeClass
+        else
+            local report = self.state.otherReports[characterName]
+            className = localizedClassNames[report.playerClass] or UnitClass(characterName)
+        end
+
         local reportText = table.concat({
-            trackerUi.reportTarget,
+            className and fmt("%s (%s)", characterName, className) or characterName,
             "",
             fmt("%s: %s", L("Level bracket"), trackerUi.levelBracketDropdown.text:GetText()),
             fmt("%s: %s", L("Level-up"), trackerUi.levelDropdown.text:GetText()),
@@ -1593,6 +1595,7 @@ function addon.tracker:BuildReportPayload(target)
     return {
         command = "LEVEL_REPORT_RESP",
         playerName = playerName,
+        playerClass = addon.player.class,
         reportData = self:CompileData(),
         compileTime = GetServerTime(),
         playerLevel = self.playerLevel,

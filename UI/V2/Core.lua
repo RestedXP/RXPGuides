@@ -106,6 +106,7 @@ function addon.ui.v2:RegisterRXPV2CommsWindow()
             this.frame:SetFrameLevel(200)
             this:EnableResize(true)
             this:UpdateSubTheme()
+            this.title:SetPoint("TOPLEFT", this.frame, "TOPLEFT", 18, -1)
             this:SetTitle("")
             this:ApplyStatus()
         end,
@@ -217,7 +218,6 @@ function addon.ui.v2:RegisterRXPV2CommsWindow()
         closebutton:SetPoint("TOPRIGHT", frame, "TOPRIGHT", 6, 6)
 
         local title = frame:CreateFontString(nil, "ARTWORK")
-        title:SetPoint("TOPLEFT", frame, "TOPLEFT", 18, -1)
         title:SetPoint("RIGHT", closebutton, "LEFT", -4, 0)
         title:SetHeight(18)
         title:SetJustifyH("LEFT")
@@ -1164,23 +1164,28 @@ function addon.ui.v2:ApplyDropdownTheme(dropdown, theme)
     local button = dropdown.button
 
     if button then
-        if button.rxpBorder then button.rxpBorder:Hide() end
+        if not button.rxpDropdownBackground then
+            button.rxpDropdownBackground = button:CreateTexture(nil, "BACKGROUND")
+            button.rxpDropdownBackground:SetAllPoints(button)
 
-        local normal = button:GetNormalTexture()
-        local pushed = button:GetPushedTexture()
-        local highlight = button:GetHighlightTexture()
-        local disabled = button:GetDisabledTexture()
-        for _, texture in ipairs({normal, pushed, highlight, disabled}) do
-            if texture then
-                if theme.version == 1 then
-                    texture:SetDesaturated(true)
-                    texture:SetVertexColor(unpack(theme.backgroundColors.activeStepCheckboxChecked))
-                else
-                    texture:SetDesaturated(false)
-                    texture:SetVertexColor(1, 1, 1, 1)
-                end
+            local chevron = self:GetTexture("dropdown-chevron")
+            button:SetNormalTexture(chevron)
+            button:SetPushedTexture(chevron)
+            button:SetDisabledTexture(chevron)
+            button:SetHighlightTexture("Interface\\Buttons\\WHITE8X8", "BLEND")
+
+            for _, texture in ipairs({button:GetNormalTexture(), button:GetPushedTexture(),
+                                     button:GetDisabledTexture(), button:GetHighlightTexture()}) do
+                texture:SetAllPoints(button)
+                texture:SetTexCoord(0, 1, 0, 1)
             end
         end
+
+        button.rxpDropdownBackground:SetColorTexture(unpack(theme.version == 1 and
+            theme.backgroundColors.inactivePartyTab or theme.backgroundColors.guideSelector))
+        local highlight = button:GetHighlightTexture()
+        highlight:SetVertexColor(unpack(theme.borderColors.commonEdge))
+        highlight:SetAlpha(0.2)
     end
 
     frame:SetBackdrop(nil)

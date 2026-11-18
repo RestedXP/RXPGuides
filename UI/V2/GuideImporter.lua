@@ -45,9 +45,6 @@ local function updateImporterTheme()
     addon.ui.v2:ApplyFrameBackdrop(widgets.currentGuides.frame, theme.edge,
                                     fieldBackground,
                                     theme.borderColors.common)
-    addon.ui.v2:ApplyFrameBackdrop(widgets.currentGuides.button, theme.edge,
-                                   theme.backgroundColors.activeStepCheckboxChecked,
-                                   theme.borderColors.commonEdge)
     addon.ui.v2:ApplyDropdownTheme(widgets.currentGuides, theme)
 
     widgets.progressLabel:SetFont(theme.font, 8, "")
@@ -676,10 +673,6 @@ function addon.ui.v2:CreateGuideImporter()
     _G[dropdownName .. "Left"]:Hide()
     _G[dropdownName .. "Middle"]:Hide()
     _G[dropdownName .. "Right"]:Hide()
-    currentGuides.button:SetNormalTexture(addon.ui.v2:GetTexture("scrollbar_down"))
-    currentGuides.button:SetPushedTexture(addon.ui.v2:GetTexture("scrollbar_down"))
-    currentGuides.button:SetDisabledTexture(addon.ui.v2:GetTexture("scrollbar_down"))
-    currentGuides.button:SetHighlightTexture(addon.ui.v2:GetTexture("scrollbar_down"), "ADD")
     currentGuides.button:ClearAllPoints()
     currentGuides.button:SetSize(24, 24)
     currentGuides.button:SetPoint("TOPRIGHT", currentGuides.frame, "TOPRIGHT")
