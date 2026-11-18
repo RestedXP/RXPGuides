@@ -486,6 +486,8 @@ function addon.tracker:CreateGui(target)
         self.reportFrame:SetSize(450, 250)
         self.reportFrame.autoSize = false
         self.reportFrame.footertext:SetText(L("RestedXP Leveling Report"))
+        _G.RESTEDXP_TRACKER_SUMMARY_WINDOW = self.reportFrame.frame
+        tinsert(_G.UISpecialFrames, "RESTEDXP_TRACKER_SUMMARY_WINDOW")
         self.reportFrame:SetCallback("OnTabSelected", function(_, _, selectedTarget)
             if selectedTarget ~= playerName then return end
 
