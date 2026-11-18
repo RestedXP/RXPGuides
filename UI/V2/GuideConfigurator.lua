@@ -24,6 +24,45 @@ function addon.ui.v2.configurator:Setup()
     self:RegisterRXPV2GuideConfigurator()
     self:RegisterRXPV2GuideConfiguratorOption()
     self:RegisterRXPV2GuideConfiguratorOptionPadding()
+    self:RegisterRXPV2GuideConfiguratorHeading()
+end
+
+function addon.ui.v2.configurator:RegisterRXPV2GuideConfiguratorHeading()
+    local Type = "RXPV2GuideConfiguratorHeading"
+    AceGUI:RegisterWidgetType(Type, function()
+        local frame = CreateFrame("Frame", nil, UIParent)
+        local label = frame:CreateFontString(nil, "ARTWORK")
+        label:SetPoint("CENTER")
+
+        local left = frame:CreateTexture(nil, "BACKGROUND")
+        left:SetHeight(1)
+        left:SetPoint("LEFT", 3, 0)
+        left:SetPoint("RIGHT", label, "LEFT", -5, 0)
+
+        local right = frame:CreateTexture(nil, "BACKGROUND")
+        right:SetHeight(1)
+        right:SetPoint("LEFT", label, "RIGHT", 5, 0)
+        right:SetPoint("RIGHT", -3, 0)
+
+        return AceGUI:RegisterAsWidget({
+            type = Type,
+            frame = frame,
+            OnAcquire = function(this)
+                this:SetHeight(18)
+                this:UpdateSubTheme()
+                label:SetText("")
+            end,
+            SetText = function(_, value) label:SetText(value) end,
+            UpdateTheme = addon.ui.v2.UpdateTheme,
+            UpdateSubTheme = function()
+                local theme = addon.v2:GetTheme()
+                label:SetFont(theme.font, addon.v2:GetGuideFontSize(), "")
+                label:SetTextColor(unpack(theme.textColor.title))
+                left:SetColorTexture(unpack(theme.borderColors.commonEdge))
+                right:SetColorTexture(unpack(theme.borderColors.commonEdge))
+            end
+        })
+    end, 1)
 end
 
 function addon.ui.v2.configurator:RegisterRXPV2GuideConfiguratorCard()
@@ -39,7 +78,6 @@ function addon.ui.v2.configurator:RegisterRXPV2GuideConfiguratorCard()
 
     local methods = {
         ["OnAcquire"] = function(this)
-            this:UpdateSubTheme({})
             this:SetLabel()
             this:SetDescription()
             this:SetImage(nil)
@@ -82,9 +120,7 @@ function addon.ui.v2.configurator:RegisterRXPV2GuideConfiguratorCard()
 
         ["UpdateTheme"] = addon.ui.v2.UpdateTheme,
 
-        ["UpdateSubTheme"] = function(this, payload)
-            if not payload then return end
-
+        ["UpdateSubTheme"] = function(this)
             local theme = addon.v2:GetTheme()
             local textColor = theme.textColor.common
             local highlightColor = theme.borderColors.activeStepCheckboxChecked
@@ -144,15 +180,9 @@ function addon.ui.v2.configurator:RegisterRXPV2GuideConfiguratorCard()
         local image = frame:CreateTexture(nil, "OVERLAY")
 
         local label = frame:CreateFontString(nil, "OVERLAY")
+        local theme = addon.v2:GetTheme()
         local guideFontSize = addon.v2:GetGuideFontSize()
-        local font, _, fontFlags
-        if locale == "enUS" then
-            font, fontFlags = addon.font, ""
-        else
-            label:SetFontObject(GameFontNormal)
-            font, _, fontFlags = label:GetFont()
-        end
-        label:SetFont(font, guideFontSize + 1, fontFlags)
+        label:SetFont(theme.font, guideFontSize + 1, "")
 
         label:SetJustifyH("CENTER")
         label:SetHeight(13)
@@ -164,7 +194,7 @@ function addon.ui.v2.configurator:RegisterRXPV2GuideConfiguratorCard()
         frame:SetPushedTexture(pushedHighlight)
 
         local description = frame:CreateFontString(nil, "OVERLAY")
-        description:SetFont(font, guideFontSize - 1, fontFlags)
+        description:SetFont(theme.font, guideFontSize - 1, "")
 
         description:SetJustifyH("CENTER")
         description:SetWordWrap(true)
@@ -186,7 +216,7 @@ function addon.ui.v2.configurator:RegisterRXPV2GuideConfiguratorCard()
 
         for method, func in pairs(methods) do widget[method] = func end
 
-        widget:UpdateTheme({})
+        widget:UpdateTheme()
         widget.cardBackground = frame.rxpBackground:CreateTexture(nil, "ARTWORK")
         widget.cardBackground:SetAllPoints(frame.rxpBackground)
         widget.cardBackground:Hide()
@@ -351,9 +381,7 @@ function addon.ui.v2.configurator:RegisterRXPV2GuideConfigurator()
 
         ["UpdateTheme"] = addon.ui.v2.UpdateTheme,
 
-        ["UpdateSubTheme"] = function(this, payload)
-            if not payload then return end
-
+        ["UpdateSubTheme"] = function(this)
             local theme = addon.v2:GetTheme()
             local textColor = theme.textColor.common
 
@@ -367,11 +395,8 @@ function addon.ui.v2.configurator:RegisterRXPV2GuideConfigurator()
 
             local background = frame.rxpBackground
 
-            local _, size, flags = this.titletext:GetFont()
-            this.titletext:SetFont(theme.font, size, flags)
-            this.titletext:SetTextColor(unpack(textColor))
-
-            _, size, flags = this.description:GetFont()
+            this.titletext:SetFont(theme.font, addon.v2:GetGuideFontSize() + 2, "")
+            local _, size, flags = this.description:GetFont()
             this.description:SetFont(theme.font, size, flags)
             this.description:SetTextColor(unpack(textColor))
 
@@ -410,8 +435,6 @@ function addon.ui.v2.configurator:RegisterRXPV2GuideConfigurator()
                     button.configuratorBackground = button:CreateTexture(nil, "BACKGROUND")
                     button.configuratorBackground:SetAllPoints()
                 end
-                button.configuratorBackground:SetColorTexture(unpack(theme.backgroundColors.common))
-
                 buttonText = button:GetFontString()
                 _, size, flags = buttonText:GetFont()
                 buttonText:SetFont(theme.font, size, flags)
@@ -430,6 +453,7 @@ function addon.ui.v2.configurator:RegisterRXPV2GuideConfigurator()
 
     local function Constructor()
         local frame = CreateFrame("Frame", nil, UIParent, "BackdropTemplate")
+        local theme = addon.v2:GetTheme()
         frame:Hide()
 
         frame:EnableMouse(true)
@@ -461,7 +485,7 @@ function addon.ui.v2.configurator:RegisterRXPV2GuideConfigurator()
         closebutton:SetScript("OnClick", Button_OnClick)
 
         local titletext = frame:CreateFontString(nil, "ARTWORK")
-        titletext:SetFontObject(GameFontNormal)
+        titletext:SetFont(theme.font, addon.v2:GetGuideFontSize() + 2, "")
         titletext:SetPoint("TOP", frame, "TOP", 0, -1)
         titletext:SetSize(162, 16)
         titletext:SetText(addon.title or addonName)
@@ -472,16 +496,8 @@ function addon.ui.v2.configurator:RegisterRXPV2GuideConfigurator()
         topLeftIcon:SetPoint("TOPLEFT", frame, -12, 12)
 
         local description = frame:CreateFontString(nil, "ARTWORK")
-        description:SetFontObject(GameFontNormal)
+        description:SetFont(theme.font, addon.v2:GetGuideFontSize() - 1, "")
         description:SetPoint("TOPLEFT", frame, "TOPLEFT", 17, -31)
-
-        if locale == "enUS" then
-            description:SetFont(addon.font, addon.v2:GetGuideFontSize() - 1, "")
-        else
-            description:SetFontObject(GameFontNormal)
-            local font, size, flags = description:GetFont()
-            description:SetFont(font, size, flags)
-        end
 
         description:SetText()
         addon.ui.v2:AddFrameShadow(frame)
@@ -499,17 +515,12 @@ function addon.ui.v2.configurator:RegisterRXPV2GuideConfigurator()
         submitButton:SetSize(132, 24)
         submitButton:SetText(_G.SUBMIT)
 
-        local buttonText, font, fontSize, fontFlags
+        local buttonText
         for _, button in ipairs({backButton, resetButton, submitButton}) do
-            button:SetNormalFontObject(GameFontNormal)
-            button:SetHighlightFontObject(GameFontHighlight)
-            button:SetDisabledFontObject(GameFontDisable)
             button:SetHighlightTexture("Interface\\Buttons\\WHITE8X8", "BLEND")
 
             buttonText = button:GetFontString()
-            font, fontSize, fontFlags = buttonText:GetFont()
-
-            buttonText:SetFont(font, fontSize, fontFlags)
+            buttonText:SetFont(theme.font, 12, "")
         end
 
         backButton:Hide()
@@ -543,7 +554,7 @@ function addon.ui.v2.configurator:RegisterRXPV2GuideConfigurator()
         }
 
         for method, func in pairs(methods) do widget[method] = func end
-        widget:UpdateTheme({})
+        widget:UpdateTheme()
         -- The logo must render above the backdrop's border frame.
         topLeftIcon:SetParent(frame.rxpBorder)
         topLeftIcon:SetDrawLayer("OVERLAY")
@@ -596,7 +607,7 @@ function addon.ui.v2.configurator:RegisterRXPV2GuideConfiguratorOption()
         ["OnAcquire"] = function(this)
             this:SetWidth(180)
             this:SetHeight(34)
-            this:UpdateSubTheme({})
+            this:UpdateSubTheme()
 
             this.values = nil
             this.settingkey = nil
@@ -782,9 +793,7 @@ function addon.ui.v2.configurator:RegisterRXPV2GuideConfiguratorOption()
 
         ["UpdateTheme"] = addon.ui.v2.UpdateTheme,
 
-        ["UpdateSubTheme"] = function(this, payload)
-            if not payload then return end
-
+        ["UpdateSubTheme"] = function(this)
             local theme = addon.v2:GetTheme()
             local textColor = theme.textColor.common
             if not addon.v2:IsEnabled() and addon.activeTheme then
@@ -806,6 +815,8 @@ function addon.ui.v2.configurator:RegisterRXPV2GuideConfiguratorOption()
             local _, size, flags = this.text:GetFont()
             this.text:SetFont(theme.font, size, flags)
             this.text:SetTextColor(unpack(textColor))
+            this.recommendation:SetFont(theme.font, addon.v2:GetGuideFontSize(), "")
+            this.recommendation:SetTextColor(unpack(theme.textColor.title))
 
             this.frame.configuratorBackground:SetColorTexture(unpack(theme.backgroundColors.activeStepCheckbox))
             this.checkbg.configuratorBackground:SetColorTexture(unpack(theme.backgroundColors.activeStepCheckbox))
@@ -832,14 +843,15 @@ function addon.ui.v2.configurator:RegisterRXPV2GuideConfiguratorOption()
         image:SetSize(40, 40)
         image:SetPoint("LEFT", frame, "LEFT", 2, 0)
 
-        local text = frame:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
-        text:SetFont(addon.font, addon.v2:GetGuideFontSize(), "")
+        local theme = addon.v2:GetTheme()
+        local text = frame:CreateFontString(nil, "OVERLAY")
+        text:SetFont(theme.font, addon.v2:GetGuideFontSize(), "")
         text:SetJustifyH("LEFT")
         text:SetHeight(16)
         text:SetPoint("LEFT", image, "RIGHT", 7, 0)
 
-        local recommendation = frame:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
-        recommendation:SetFont(addon.font, addon.v2:GetGuideFontSize(), "")
+        local recommendation = frame:CreateFontString(nil, "OVERLAY")
+        recommendation:SetFont(theme.font, addon.v2:GetGuideFontSize(), "")
         recommendation:SetTextColor(0.05, 0.75, 1)
         recommendation:SetPoint("BOTTOMLEFT", text, "TOPLEFT", 0, 2)
         recommendation:SetHeight(12)
@@ -940,7 +952,7 @@ function addon.ui.v2.configurator:RegisterRXPV2GuideConfiguratorOption()
         end
 
         for method, func in pairs(methods) do widget[method] = func end
-        widget:UpdateTheme({})
+        widget:UpdateTheme()
         image:SetParent(frame.rxpBorder)
         image:SetDrawLayer("OVERLAY")
         recommendation:SetParent(frame.rxpBorder)
@@ -989,9 +1001,7 @@ function addon.ui.v2.configurator:RegisterRXPV2GuideConfiguratorOptionPadding()
 
         ["UpdateTheme"] = addon.ui.v2.UpdateTheme,
 
-        ["UpdateSubTheme"] = function(this, payload)
-            if not payload then return end
-
+        ["UpdateSubTheme"] = function(this)
             local theme = addon.v2:GetTheme()
             local textColor = theme.textColor.common
 
@@ -1079,7 +1089,6 @@ function addon.ui.v2.configurator:CreateGuideConfigurator()
     helpButton:SetScript("OnClick", function() addon.comms.OpenSupport() end)
 
     local guideScroll = AceGUI:Create("RXPV2ScrollFrame")
-    guideScroll:SetTheme(addon.v2:GetTheme())
     guideScroll:SetLayout("Flow")
 
     configurator:AddChild(guideScroll)
@@ -1176,8 +1185,9 @@ function addon.ui.v2.configurator:CreateGuideConfigurator()
         local options = type(page.options) == "function" and page.options() or page.options
         local hidden, padding, setting
         if #options == 0 and not (addon.game == "FOREVER" and page.kind == "dungeonSettings") then
-            local emptyLabel = AceGUI:Create("Label")
+            local emptyLabel = AceGUI:Create("RXPV2CommsText")
             emptyLabel:SetFullWidth(true)
+            emptyLabel:SetFontSize(addon.v2:GetGuideFontSize() - 1)
 
             emptyLabel:SetText(L("No guides available."))
 
@@ -1221,7 +1231,7 @@ function addon.ui.v2.configurator:CreateGuideConfigurator()
                 for key in pairs(dungeons) do dungeonKeys[#dungeonKeys + 1] = key end
                 table.sort(dungeonKeys, function(a, b) return dungeons[a] < dungeons[b] end)
 
-                local heading = AceGUI:Create("Heading")
+                local heading = AceGUI:Create("RXPV2GuideConfiguratorHeading")
                 heading:SetFullWidth(true)
                 heading:SetText(L("Dungeon List"))
                 configurator.scrollContainer:AddChild(heading)
@@ -1261,8 +1271,6 @@ function addon.ui.v2.configurator:CreateGuideConfigurator()
                 local enabled, required = addon.settings.dungeons:GetAllEnabledDungeons(currentGroup)
                 for key in pairs(required) do available[key] = enabled[key] end
 
-                local theme = addon.v2:GetTheme()
-                local textColor = theme.textColor.common
                 local requiredKeys, optionalKeys = {}, {}
 
                 for key in pairs(available) do
@@ -1278,7 +1286,7 @@ function addon.ui.v2.configurator:CreateGuideConfigurator()
 
                 local check, sectionHeading
                 if #requiredKeys > 0 then
-                    sectionHeading = AceGUI:Create("Heading")
+                    sectionHeading = AceGUI:Create("RXPV2GuideConfiguratorHeading")
                     sectionHeading:SetFullWidth(true)
                     sectionHeading:SetText(L("Required Dungeons"))
                     configurator.scrollContainer:AddChild(sectionHeading)
@@ -1293,15 +1301,15 @@ function addon.ui.v2.configurator:CreateGuideConfigurator()
                 end
 
                 if #optionalKeys > 0 then
-                    sectionHeading = AceGUI:Create("Heading")
+                    sectionHeading = AceGUI:Create("RXPV2GuideConfiguratorHeading")
                     sectionHeading:SetFullWidth(true)
                     sectionHeading:SetText(L("Optional Dungeons"))
                     configurator.scrollContainer:AddChild(sectionHeading)
 
-                    local description = AceGUI:Create("Label")
+                    local description = AceGUI:Create("RXPV2CommsText")
                     description:SetFullWidth(true)
-                    description:SetFont(theme.font, addon.v2:GetGuideFontSize() - 1, "")
-                    description:SetColor(textColor[1], textColor[2], textColor[3], 0.72)
+                    description:SetFontSize(addon.v2:GetGuideFontSize() - 1)
+                    description.frame:SetAlpha(0.72)
                     description:SetText(L("These dungeons are less efficient for your class, but you can select them if you'd like to include them in your route.") .. "\n\n")
                     configurator.scrollContainer:AddChild(description)
 
@@ -1354,7 +1362,7 @@ function addon.ui.v2.configurator:CreateGuideConfigurator()
                 option.cardBackground:Show()
                 option.bottomShade:Show()
             end
-            option:UpdateSubTheme({})
+            option:UpdateSubTheme()
             option:SetEnabled(not card.disabled)
             -- Refresh pooled version-1 widgets without changing AceGUI's version.
             option.highlight:SetAlpha(0.1)
@@ -1509,20 +1517,7 @@ function addon.ui.v2.configurator:UpdateTheme()
     if not self.ui then return end
 
     self.ui:UpdateTheme({updateChildren = true})
-    local theme = addon.v2:GetTheme()
-    self.ui.scrollContainer:SetTheme(theme)
-
-    for _, child in ipairs(self.ui.scrollContainer.children) do
-        if child.type == "Heading" then
-            child.label:SetFont(theme.font, addon.v2:GetGuideFontSize(), "")
-            child.left:SetVertexColor(unpack(theme.borderColors.commonEdge))
-            child.right:SetVertexColor(unpack(theme.borderColors.commonEdge))
-        elseif child.type == "Label" then
-            local _, _, _, alpha = child.label:GetTextColor()
-            child:SetFont(theme.font, addon.v2:GetGuideFontSize() - 1, "")
-            child:SetColor(theme.textColor.common[1], theme.textColor.common[2], theme.textColor.common[3], alpha)
-        end
-    end
+    self.ui.scrollContainer:DoLayout()
 end
 
 function addon.ui.v2.configurator:IsShown() return self.ui and self.ui:IsShown() or false end
