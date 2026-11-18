@@ -56,22 +56,15 @@ end
 
 addon.ui.v2.UpdateTheme = updateTheme
 
-local function getCommsTheme()
-    return addon.v2:GetTheme()
-end
-
 local function updateScrollBarVisuals(scrollbar, background, theme)
-    if not theme.backgroundColors or theme.version == 1 then
-        local color = theme.backgroundColors and theme.backgroundColors.common or theme.background
-        background:SetColorTexture(unpack(color))
+    if theme.version == 1 then
+        background:SetColorTexture(unpack(theme.backgroundColors.common))
         scrollbar.ThumbTexture:SetDesaturated(true)
-        scrollbar.ThumbTexture:SetVertexColor(unpack(theme.backgroundColors and
-                                                       theme.backgroundColors.activeStepCheckboxChecked or color))
+        scrollbar.ThumbTexture:SetVertexColor(unpack(theme.backgroundColors.activeStepCheckboxChecked))
 
         for _, button in ipairs({scrollbar.ScrollUpButton, scrollbar.ScrollDownButton}) do
             button.Normal:SetDesaturated(true)
-            button.Normal:SetVertexColor(unpack(theme.backgroundColors and
-                                                  theme.backgroundColors.activeStepCheckboxChecked or color))
+            button.Normal:SetVertexColor(unpack(theme.backgroundColors.activeStepCheckboxChecked))
         end
     else
         background:SetColorTexture(unpack(theme.backgroundColors.scrollbar))
@@ -167,7 +160,7 @@ function addon.ui.v2:RegisterRXPV2CommsWindow()
         ["UpdateTheme"] = updateTheme,
 
         ["UpdateSubTheme"] = function(this)
-            local theme = getCommsTheme()
+            local theme = addon.v2:GetTheme()
             addon.ui.v2:ApplyFrameBackdrop(this.frame, theme.edge, theme.backgroundColors.common,
                                            theme.borderColors.commonEdge)
             addon.ui.v2:AddFrameShadow(this.frame)
@@ -276,8 +269,6 @@ function addon.ui.v2:RegisterRXPV2CommsText()
     local methods = {
         ["OnAcquire"] = function(this)
             this.color = nil
-            this.font = nil
-            this.flags = nil
             this.fontSize = 9
             this.wordWrap = true
             this.frame:SetAlpha(1)
@@ -302,16 +293,9 @@ function addon.ui.v2:RegisterRXPV2CommsText()
             this:UpdateSubTheme()
         end,
 
-        ["SetFont"] = function(this, font, size, flags)
-            this.font = font
-            this.fontSize = size
-            this.flags = flags
-            this:UpdateSubTheme()
-        end,
-
         ["SetColor"] = function(this, color)
             this.color = color
-            this.text:SetTextColor(unpack(color or this.theme.textColor.common))
+            this.text:SetTextColor(unpack(color or addon.v2:GetTheme().textColor.common))
         end,
 
         ["SetJustifyH"] = function(this, justify)
@@ -330,9 +314,8 @@ function addon.ui.v2:RegisterRXPV2CommsText()
         ["UpdateTheme"] = updateTheme,
 
         ["UpdateSubTheme"] = function(this)
-            local theme = getCommsTheme()
-            this.theme = theme
-            this.text:SetFont(this.font or theme.font, this.fontSize, this.flags or "")
+            local theme = addon.v2:GetTheme()
+            this.text:SetFont(theme.font, this.fontSize, "")
             this.text:SetTextColor(unpack(this.color or theme.textColor.common))
             this.text:SetWordWrap(this.wordWrap)
             updateTextHeight(this)
@@ -365,9 +348,7 @@ function addon.ui.v2:RegisterRXPV2LevelSplitsColumn()
 
     local methods = {
         ["OnAcquire"] = function(this)
-            this.font = nil
             this.fontSize = 9
-            this.flags = nil
             this.color = nil
             this:SetHorizontalInset(0)
             this:UpdateSubTheme()
@@ -392,23 +373,20 @@ function addon.ui.v2:RegisterRXPV2LevelSplitsColumn()
             this.text:SetPoint("BOTTOMRIGHT", this.frame, "BOTTOMRIGHT", -inset, 0)
         end,
 
-        ["SetFont"] = function(this, font, size, flags)
-            this.font = font
+        ["SetFontSize"] = function(this, size)
             this.fontSize = size
-            this.flags = flags
             this:UpdateSubTheme()
         end,
 
         ["SetColor"] = function(this, color)
             this.color = color
-            this.text:SetTextColor(unpack(color or this.theme.textColor.common))
+            this.text:SetTextColor(unpack(color or addon.v2:GetTheme().textColor.common))
         end,
 
         ["UpdateTheme"] = updateTheme,
         ["UpdateSubTheme"] = function(this)
             local theme = addon.v2:GetTheme()
-            this.theme = theme
-            this.text:SetFont(this.font or theme.font, this.fontSize, this.flags or "")
+            this.text:SetFont(theme.font, this.fontSize, "")
             this.text:SetTextColor(unpack(this.color or theme.textColor.common))
             this:SetHeight(max(20, this.fontSize + 2, this.text:GetStringHeight()))
         end
@@ -481,9 +459,9 @@ function addon.ui.v2:RegisterRXPV2LevelSplitsRow()
             this:DoLayout()
         end,
 
-        ["SetFont"] = function(this, font, size, flags)
-            this.leftColumn:SetFont(font, size, flags)
-            this.rightColumn:SetFont(font, size, flags)
+        ["SetFontSize"] = function(this, size)
+            this.leftColumn:SetFontSize(size)
+            this.rightColumn:SetFontSize(size)
             this:DoLayout()
         end,
 
@@ -745,7 +723,7 @@ function addon.ui.v2:RegisterRXPV2CommsEditBox()
         ["UpdateTheme"] = updateTheme,
 
         ["UpdateSubTheme"] = function(this)
-            local theme = getCommsTheme()
+            local theme = addon.v2:GetTheme()
             this.label:SetFont(theme.font, 9, "")
             this.label:SetTextColor(unpack(theme.textColor.common))
             this.editBox:SetFont(theme.font, 9, "")
@@ -895,7 +873,7 @@ function addon.ui.v2:RegisterRXPV2LinkBox()
         ["UpdateTheme"] = updateTheme,
 
         ["UpdateSubTheme"] = function(this)
-            local theme = getCommsTheme()
+            local theme = addon.v2:GetTheme()
             this.label:SetFont(theme.font, 9, "")
             this.label:SetTextColor(unpack(theme.textColor.common))
             this.editBox:SetFont(theme.font, 9, "")
@@ -1230,24 +1208,7 @@ function addon.ui.v2:ApplyDropdownTheme(dropdown, theme)
         pullout.rxpV2SliderBackground = slider:CreateTexture(nil, "BACKGROUND")
         pullout.rxpV2SliderBackground:SetAllPoints(slider)
     end
-    pullout.rxpV2SliderBackground:SetColorTexture(unpack(theme.version == 1 and theme.backgroundColors.common or
-                                                          theme.backgroundColors.scrollbar))
-    for _, button in ipairs({slider.ScrollUpButton, slider.ScrollDownButton}) do
-        if theme.version == 1 then
-            button.Normal:SetDesaturated(true)
-            button.Normal:SetVertexColor(unpack(theme.backgroundColors.activeStepCheckboxChecked))
-        else
-            button.Normal:SetDesaturated(false)
-            button.Normal:SetVertexColor(1, 1, 1, 1)
-        end
-    end
-    if theme.version == 1 then
-        slider.ThumbTexture:SetDesaturated(true)
-        slider.ThumbTexture:SetVertexColor(unpack(theme.backgroundColors.activeStepCheckboxChecked))
-    else
-        slider.ThumbTexture:SetDesaturated(false)
-        slider.ThumbTexture:SetVertexColor(1, 1, 1, 1)
-    end
+    updateScrollBarVisuals(slider, pullout.rxpV2SliderBackground, theme)
 
     for _, item in ipairs(pullout.items) do
         item.text:SetFont(theme.font, addon.v2:GetGuideFontSize(), "")
@@ -2654,7 +2615,6 @@ function addon.ui.v2:RegisterRXPV2ScrollFrame()
     -------------------------------------------------------------------------------]]
     local methods = {
         ["OnAcquire"] = function(this)
-            this.v2 = addon.v2:IsEnabled()
             this.contentTopPadding = 0
             this:SetScroll(0)
             this.scrollframe:SetScript("OnUpdate", FixScrollOnUpdate)
@@ -2669,7 +2629,6 @@ function addon.ui.v2:RegisterRXPV2ScrollFrame()
 
             this.scrollframe:SetPoint("BOTTOMRIGHT")
             this.scrollbar:Hide()
-            this.scrollBarShown = nil
             this.contentTopPadding = 0
 
             this.content.height, this.content.width, this.content.original_width = nil, nil, nil
@@ -2713,7 +2672,7 @@ function addon.ui.v2:RegisterRXPV2ScrollFrame()
             local status = this.status or this.localstatus
             local height, viewheight = this.scrollframe:GetHeight(), this.content:GetHeight()
 
-            if this.scrollBarShown then
+            if this.scrollbar:IsShown() then
                 local diff = height - viewheight
                 local delta = 1
 
@@ -2731,11 +2690,10 @@ function addon.ui.v2:RegisterRXPV2ScrollFrame()
             local height, viewheight = this.scrollframe:GetHeight(), this.content:GetHeight()
 
             if this.noScrollbar or height <= 1 or viewheight <= 1 then
-                local scrollbarWasShown = this.scrollBarShown
+                local scrollbarWasShown = this.scrollbar:IsShown()
 
                 this:SetScroll(0)
                 if this.scrollbar:GetValue() ~= 0 then this.scrollbar:SetValue(0) end
-                this.scrollBarShown = nil
                 this.scrollbar:Hide()
                 this.scrollframe:SetPoint("BOTTOMRIGHT")
 
@@ -2752,8 +2710,7 @@ function addon.ui.v2:RegisterRXPV2ScrollFrame()
             local offset = status.offset or 0
 
             if viewheight < height + 2 then
-                if this.scrollBarShown then
-                    this.scrollBarShown = nil
+                if this.scrollbar:IsShown() then
                     this.scrollbar:Hide()
                     this.scrollbar:SetValue(0)
                     this.scrollframe:SetPoint("BOTTOMRIGHT")
@@ -2765,8 +2722,7 @@ function addon.ui.v2:RegisterRXPV2ScrollFrame()
                     this:DoLayout()
                 end
             else
-                if not this.scrollBarShown then
-                    this.scrollBarShown = true
+                if not this.scrollbar:IsShown() then
                     this.scrollbar:Show()
                     this.scrollframe:SetPoint("BOTTOMRIGHT", -20, 0)
 
@@ -2805,13 +2761,8 @@ function addon.ui.v2:RegisterRXPV2ScrollFrame()
             this.scrollframe:SetScript("OnUpdate", FixScrollOnUpdate)
         end,
 
-        ["SetTheme"] = function(this, theme)
-            updateScrollBarVisuals(this.scrollbar, this.scrollbg, theme)
-        end,
-
         ["UpdateSubTheme"] = function(this)
-            local theme = this.v2 and addon.v2:GetTheme() or addon.activeTheme
-            updateScrollBarVisuals(this.scrollbar, this.scrollbg, theme)
+            updateScrollBarVisuals(this.scrollbar, this.scrollbg, addon.v2:GetTheme())
         end,
 
         ["UpdateTheme"] = updateTheme,
@@ -2834,7 +2785,7 @@ function addon.ui.v2:RegisterRXPV2ScrollFrame()
         ["OnWidthSet"] = function(this, width)
             local content = this.content
 
-            content.width = max(width - 4 - (this.scrollBarShown and 20 or 0), 0)
+            content.width = max(width - 4 - (this.scrollbar:IsShown() and 20 or 0), 0)
             content.original_width = width
         end,
 
@@ -3184,14 +3135,15 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
 
         ["RefreshTabTheme"] = function(this, tab, active)
             local theme = addon.v2:GetTheme()
-            local backgroundColors = theme.backgroundColors
-            local borderColors = theme.borderColors
-            local textColor = theme.textColor
-            local background = backgroundColors.common
-            local border = borderColors.commonEdge
-            local labelColor = active and textColor.title or textColor.inactivePartyTab
 
-            addon.ui.v2:ApplyFrameBackdrop(tab, theme.edge, background, border)
+            tab.text:SetFont(theme.font, 12, "")
+            local labelWidth = ceil(tab.text:GetStringWidth())
+            tab.text:SetWidth(labelWidth)
+            tab:SetWidth(labelWidth + 16)
+            tab.text:SetTextColor(unpack(active and theme.textColor.title or theme.textColor.inactivePartyTab))
+
+            addon.ui.v2:ApplyFrameBackdrop(tab, theme.edge, theme.backgroundColors.common,
+                                           theme.borderColors.commonEdge)
             tab.rxpBorder.textures[1]:Show()
             tab.rxpBorder.textures[2]:Hide()
 
@@ -3201,8 +3153,6 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
                 tab.rxpHighlight:SetColorTexture(1, 1, 1, 0.12)
                 tab.rxpHighlight:Hide()
             end
-
-            tab.text:SetTextColor(unpack(labelColor))
         end,
 
         ["SetActiveTab"] = function(this, player)
@@ -3244,9 +3194,6 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
             local previousTab
             local tab, player
             local usedTabs = {}
-            local tabWidth, labelWidth
-            local theme = addon.v2:GetTheme()
-            local tabFont = theme.font
 
             for playerIndex = 1, #players do
                 player = players[playerIndex]
@@ -3279,14 +3226,8 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
 
                 tab.rxpPlayer = player
 
-                tab.text:SetFontObject(_G.GameFontNormalSmall)
-                tab.text:SetFont(tabFont, 12, "")
                 tab.text:SetText(player)
-                labelWidth = ceil(tab.text:GetStringWidth())
-                tabWidth = labelWidth + 16
-                tab.text:SetWidth(labelWidth)
 
-                tab:SetSize(tabWidth, player == activePlayer and activeTabHeight or tabHeight)
                 tab:ClearAllPoints()
 
                 if previousTab then
@@ -3295,7 +3236,6 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
                     tab:SetPoint("TOPLEFT", this.frame, "TOPLEFT", 18, tabHeight)
                 end
 
-                this:RefreshTabTheme(tab, player == activePlayer)
                 tab:Show()
 
                 previousTab = tab
@@ -3729,13 +3669,14 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
         button:HookScript("PostClick", updateElementCheckbox)
         row.button = button
 
+        local theme = addon.v2:GetTheme()
         local icon = row:CreateFontString(nil, "OVERLAY")
-        icon:SetFontObject(_G.GameFontNormalSmall)
+        icon:SetFont(theme.font, addon.v2:GetGuideFontSize() - 1, "")
         icon:SetPoint("TOPLEFT", button, "TOPRIGHT", 5, -1)
         row.icon = icon
 
         local text = row:CreateFontString(nil, "OVERLAY")
-        text:SetFontObject(_G.GameFontNormalSmall)
+        text:SetFont(theme.font, addon.v2:GetGuideFontSize(), "")
         text:SetJustifyH("LEFT")
         text:SetJustifyV("MIDDLE")
         text:SetWordWrap(true)
@@ -3949,6 +3890,7 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
 
                 row.text:SetTextColor(unpack(textColor))
                 row.text:SetFont(theme.font, addon.v2:GetGuideFontSize(), "")
+                row.icon:SetFont(theme.font, addon.v2:GetGuideFontSize() - 1, "")
 
                 updateElementCheckbox(row.button, true)
             end
@@ -3984,7 +3926,6 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
         titletext:SetJustifyH("CENTER")
         titletext:SetJustifyV("MIDDLE")
         titletext:SetTextColor(unpack(theme.textColor.title))
-        titletext:SetFontObject(_G.GameFontNormalSmall)
         titletext:SetFont(theme.font, addon.v2:GetGuideFontSize() - 1, "")
 
         -- Container Support
@@ -4079,6 +4020,16 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepItem()
             addon.ui.v2:ApplyFrameBackdrop(this.title, theme.edge, theme.backgroundColors.common,
                                            theme.borderColors.commonEdge)
             this.titletext:SetTextColor(unpack(theme.textColor.title))
+            this.titletext:SetFont(theme.font, addon.v2:GetGuideFontSize() - 1, "")
+            this:SetTitle(this.titletext:GetText() or "")
+
+            if this.stepTextLabel then
+                local layout = theme.layout and theme.layout.activeStepElement
+                this.stepTextLabel:SetColor(unpack(theme.textColor.common))
+                this.stepTextLabel:SetFont(theme.font, addon.settings.profile.guideFontSize +
+                                          (layout and layout.fontSizeOffset or 0), "")
+                this:DoLayout()
+            end
         end
     }
 
@@ -4110,7 +4061,6 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepItem()
         titletext:SetJustifyH("CENTER")
         titletext:SetJustifyV("MIDDLE")
         titletext:SetTextColor(unpack(theme.textColor.title))
-        titletext:SetFontObject(_G.GameFontNormalSmall)
         titletext:SetFont(theme.font, addon.v2:GetGuideFontSize() - 1, "")
 
         -- Container Support
