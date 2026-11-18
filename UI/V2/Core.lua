@@ -2936,7 +2936,7 @@ function addon.ui.v2:RegisterRXPV2ActiveStepsFrame()
         ["LayoutFinished"] = function(this, width, height)
             if this.noAutoHeight then return end
 
-            this:SetHeight((height or 0) + 8 + 8 - 8)
+            this:SetHeight((height or 0) + 8)
         end,
 
         ["OnHeightSet"] = function(this, height)
@@ -3240,7 +3240,6 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
             local tabWidth, labelWidth
             local theme = addon.v2:GetTheme()
             local tabFont = theme.font
-            local tabFontSize = 12
 
             for playerIndex = 1, #players do
                 player = players[playerIndex]
@@ -3274,7 +3273,7 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
                 tab.rxpPlayer = player
 
                 tab.text:SetFontObject(_G.GameFontNormalSmall)
-                tab.text:SetFont(tabFont, tabFontSize, "")
+                tab.text:SetFont(tabFont, 12, "")
                 tab.text:SetText(player)
                 labelWidth = ceil(tab.text:GetStringWidth())
                 tabWidth = labelWidth + 16
@@ -3483,9 +3482,6 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
         if not this.rxpElementsDirty and this.rxpLayoutWidth == width then return end
 
         local row, element, hasButton, hasIcon, textLeft, textTop, textWidth, textHeight, textAvailable, rowHeight
-        local checkboxLeft = 2
-        local checkboxSize = 11
-        local textGap = 7
         local height = 0
 
         for rowIndex = 1, rowCount do
@@ -3495,10 +3491,10 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
             hasIcon = row.icon:IsShown()
 
             if hasIcon then
-                textLeft = checkboxLeft + checkboxSize + 5 + 14 + 1
+                textLeft = 33
                 textTop = -3
             else
-                textLeft = hasButton and (checkboxLeft + checkboxSize + textGap) or 17
+                textLeft = hasButton and 20 or 17
                 textTop = -1
             end
 
@@ -3670,39 +3666,36 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
 
         local button = CreateFrame("CheckButton", nil, row, BackdropTemplateMixin and "BackdropTemplate")
 
-        local checkboxSize = 11
-
-        button:SetSize(checkboxSize, checkboxSize)
+        button:SetSize(11, 11)
         button:SetPoint("TOPLEFT", row, "TOPLEFT", 2, -2)
         button:SetPushedTexture("")
 
         local checkShort = button:CreateTexture(nil, "OVERLAY")
         checkShort:SetColorTexture(1, 1, 1, 1)
-        checkShort:SetSize(3.5, 1.25)
-        checkShort:SetPoint("CENTER", button, "CENTER", -1.5, -0.8)
+        checkShort:SetSize(4, 1)
+        checkShort:SetPoint("CENTER", button, "CENTER", -2, -1)
         checkShort:SetRotation(-math.pi / 4)
         checkShort:Hide()
         button.rxpCheckShort = checkShort
 
         local checkLong = button:CreateTexture(nil, "OVERLAY")
         checkLong:SetColorTexture(1, 1, 1, 1)
-        checkLong:SetSize(6, 1.25)
-        checkLong:SetPoint("CENTER", button, "CENTER", 1, -0.1)
+        checkLong:SetSize(6, 1)
+        checkLong:SetPoint("CENTER", button, "CENTER", 1, 0)
         checkLong:SetRotation(math.pi / 4)
         checkLong:Hide()
         button.rxpCheckLong = checkLong
 
         local checkboxHoverFrame = CreateFrame("Frame", nil, button)
-        checkboxHoverFrame:SetSize(checkboxSize, checkboxSize)
+        checkboxHoverFrame:SetSize(11, 11)
         checkboxHoverFrame:SetPoint("CENTER", button, "CENTER")
         checkboxHoverFrame:SetFrameLevel(button:GetFrameLevel() + 2)
         checkboxHoverFrame:EnableMouse(false)
         button.rxpHoverFrame = checkboxHoverFrame
 
         local skipIcon = checkboxHoverFrame:CreateTexture(nil, "OVERLAY")
-        local hoverIconInset = 2
-        skipIcon:SetPoint("TOPLEFT", checkboxHoverFrame, "TOPLEFT", hoverIconInset, -hoverIconInset)
-        skipIcon:SetPoint("BOTTOMRIGHT", checkboxHoverFrame, "BOTTOMRIGHT", -hoverIconInset, hoverIconInset)
+        skipIcon:SetPoint("TOPLEFT", checkboxHoverFrame, "TOPLEFT", 2, -2)
+        skipIcon:SetPoint("BOTTOMRIGHT", checkboxHoverFrame, "BOTTOMRIGHT", -2, 2)
         skipIcon:SetTexture(addon.ui.v2:GetTexture("rxp-skip-step-hover"))
 
         updateElementCheckbox(button)

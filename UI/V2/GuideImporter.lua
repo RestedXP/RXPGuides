@@ -7,7 +7,6 @@ local _G = _G
 local strbuffer = {}
 local importerBaseHeight = 298
 local maxHistoryEntries = 6
-local maxHistoryHeight = 72
 
 addon.guideImporter = addon.guideImporter or {}
 
@@ -539,7 +538,7 @@ function addon.guideImporter:UpdateImportUI()
         widgets.history:SetShown(historyShown)
         local historyHeight = historyShown and
                               math.min(math.max(widgets.history:GetStringHeight(), 18),
-                                       maxHistoryHeight) or 0
+                                       72) or 0
         widgets.history:SetHeight(historyHeight)
         local frameHeight = importerBaseHeight + historyHeight
         widgets.import:SetHeight(frameHeight)
@@ -643,7 +642,7 @@ function addon.ui.v2:CreateGuideImporter()
     spliceButton:SetClickSound(852)
     spliceButton:SetText(L("Import Spliced String"))
     importer:AddChild(spliceButton)
-    spliceButton.frame:SetWidth((importBox.frame:GetWidth() - 8) / 2)
+    spliceButton.frame:SetWidth(math.floor((importBox.frame:GetWidth() - 8) / 2))
     spliceButton:SetHeight(24)
     spliceButton:SetPrimary(true)
     spliceButton.frame:SetShown(addon.settings.profile.enableBetaFeatures)

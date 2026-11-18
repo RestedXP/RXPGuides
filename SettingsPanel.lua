@@ -4375,7 +4375,7 @@ function addon.settings:SetupMapButton()
                                          "TOPRIGHT", -10, -26)
         else
             self.worldMapButton:SetSize(20, 20)
-            self.worldMapButton:SetPoint("TOPRIGHT", ref or _G.WorldMapFrameCloseButton, "TOPLEFT", 0, -5.5)
+            self.worldMapButton:SetPoint("TOPRIGHT", ref or _G.WorldMapFrameCloseButton, "TOPLEFT", 0, -6)
         end
     end
 

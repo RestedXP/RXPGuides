@@ -598,7 +598,7 @@ function addon.tracker:CreateGui(target)
             trackerUi.teamworkContainer.data.text:GetText()
         }, "\n")
         local reportFrame = self.reportFrame.frame
-        addon.comms.OpenBrandedExport(L("Export Report"), "", reportText, reportFrame:GetWidth() / 2,
+        addon.comms.OpenBrandedExport(L("Export Report"), "", reportText, floor(reportFrame:GetWidth() / 2),
                                       reportFrame:GetHeight())
     end)
 
