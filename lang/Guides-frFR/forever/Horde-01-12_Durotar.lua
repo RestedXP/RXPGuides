@@ -108,7 +108,7 @@ step << Warlock
 step << Hunter/Mage/Priest
     .goto 1411/1,-4214.45,-565.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Duokna|r
-    >>|cRXP_BUY_Achetez des|r [Refreshing Spring Water] |cRXP_BUY_à Duokna|r << !Hunter
+    >>|cRXP_BUY_Achetez des|r [Eau de source] |cRXP_BUY_à Shara|r << !Hunter
     >>|cRXP_BUY_Achetez des|r [Flèche grossière] |cRXP_BUY_à Duokna|r << Hunter
     .collect 159,10,6394,1 << !Hunter --Refreshing Spring Water (10)
     .collect 2512,1000,6394,1 << Hunter --Rough Arrow (1000)
@@ -118,7 +118,7 @@ step << Hunter/Mage/Priest
 step << Warlock
     .goto 1411/1,-4214.45,-565.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Duokna|r
-    >>|cRXP_BUY_Achetez des|r [Refreshing Spring Water] |cRXP_BUY_à Duokna|r
+    >>|cRXP_BUY_Achetez des|r [Eau de source] |cRXP_BUY_à Shara|r
     .collect 159,5,6394,1 --Refreshing Spring Water (5)
     .target Duokna
     .money <0.0025
@@ -304,7 +304,7 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Rwag|r
     .turnin 3083 >>Rendez la quête Tablette codée << Troll Rogue
     .turnin 3088 >>Rendez la quête Parchemin codé << Orc Rogue
-    .train 53 >> Apprenez [Attaque Sournoise]
+    .train 53 >> Apprenez [Attaque sournoise]
     .target Rwag
     .money <0.04
     .xp <4,1
@@ -324,7 +324,7 @@ step
     .isQuestComplete 97279
 step
     #optional
-    .abandon 97279 >>Abandonnez la quête Wayward Arms
+    .abandon 97279 >>Abandonnez la quête Armes égarées
 step << Shaman
     .goto 1411/1,-4102.600,-588.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Kzan Trancheronce|r
@@ -372,7 +372,7 @@ step
 step << !Rogue !Shaman
     .goto 1411/1,-4214.45,-565.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Duokna|r
-    >>|cRXP_BUY_Achetez des|r [Refreshing Spring Water] |cRXP_BUY_à Duokna|r << !Rogue !Warrior !Hunter !Shaman
+    >>|cRXP_BUY_Achetez des|r [Eau de source] |cRXP_BUY_à Shara|r << !Rogue !Warrior !Hunter !Shaman
     >>|cRXP_BUY_Achetez des|r [Flèche grossière] |cRXP_BUY_à Duokna|r << Hunter
     .collect 159,15,6394,1 << !Rogue !Warrior !Hunter !Shaman --Refreshing Spring Water (15)
     .collect 2512,1000,6394,1 << Hunter --Rough Arrow (1000)
@@ -428,7 +428,7 @@ step
     .goto 1411/1,-4340.82,-628.50,20,0
     .goto 1411/1,-4375.71,-507.590,45,0
     .goto 1411/1,-4467.19,-506.53,45,0
-    >>Utilisez la [Masse de contremaître] sur les |cRXP_FRIENDLY_Lazy Peons qui dorment|r
+    >>Utilisez la [Matraque du contremaître] sur les |cRXP_FRIENDLY_Lazy Peons|r qui dorment
     .complete 5441,1 --Peons Awoken (5)
     .target Lazy Peon
     .use 16114
@@ -526,7 +526,7 @@ step
 	.goto 1411/1,-4144.65,-269.65,25,0
 	.goto 1411/1,-4125.62,-321.12,25,0
 	.goto 1411/1,-4015.64,-371.53,25,0
-    >>Utilisez la [Masse de contremaître] sur les |cRXP_FRIENDLY_Lazy Peons qui dorment|r
+    >>Utilisez la [Matraque du contremaître] sur les |cRXP_FRIENDLY_Lazy Peons|r qui dorment
     .complete 5441,1 --Peons Awoken (5)
     .target Lazy Peon
     .use 16114
@@ -568,7 +568,7 @@ step
 step
     .goto 1411/1,-4214.45,-565.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Duokna|r
-    >>|cRXP_BUY_Achetez des|r [Refreshing Spring Water] |cRXP_BUY_à Duokna|r << !Rogue !Warrior !Hunter !Shaman
+    >>|cRXP_BUY_Achetez des|r [Eau de source] |cRXP_BUY_à Shara|r << !Rogue !Warrior !Hunter !Shaman
     >>|cRXP_BUY_Achetez des|r [Flèche grossière] |cRXP_BUY_à Duokna|r << Hunter
     .collect 159,5,6394,1 << !Rogue !Warrior !Hunter !Shaman --Refreshing Spring Water (5)
     .collect 2512,1000,6394,1 << Hunter --Rough Arrow (1000)
@@ -1014,7 +1014,7 @@ step << Rogue
 step << Rogue
     .goto 1411/1,-4144.65,-588.67
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Rwag|r
-    .train 1757 >> Apprenez [Attaque Pernicieuse]
+    .train 1757 >> Apprenez [Attaque pernicieuse]
     .train 1776 >> Apprenez [Suriner]
     .target Rwag
     .money <0.02
@@ -1023,7 +1023,7 @@ step << Rogue
     #label RogueTraining
     .goto 1411/1,-4144.65,-588.67
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Rwag|r
-    .train 1757 >> Apprenez [Attaque Pernicieuse]
+    .train 1757 >> Apprenez [Attaque pernicieuse]
     .target Rwag
     .xp <6,1
 step << Warlock
@@ -1176,14 +1176,14 @@ step << Rogue
 step << Warlock/Mage/Priest
     .goto 1411/1,-4938.83,-779.37
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Parlez à|r |cRXP_FRIENDLY_K'waii|r
-    >>|cRXP_BUY_Achetez des|r [Refreshing Spring Water] |cRXP_BUY_à Duokna|r --Refreshing Spring Water (20)
+    >>|cRXP_BUY_Achetez des|r [Eau de source] |cRXP_BUY_à Shara|r --Refreshing Spring Water (20)
     .collect 159,20,786,1
     .target K'waii
     .money <0.010
 step << Warlock/Mage/Priest
     .goto 1411/1,-4938.83,-779.37
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Parlez à|r |cRXP_FRIENDLY_K'waii|r
-    >>|cRXP_BUY_Achetez des|r [Refreshing Spring Water] |cRXP_BUY_à Duokna|r --Refreshing Spring Water (10)
+    >>|cRXP_BUY_Achetez des|r [Eau de source] |cRXP_BUY_à Shara|r --Refreshing Spring Water (10)
     .collect 159,10,786,1
     .target K'waii
     .money <0.0050
@@ -1557,7 +1557,7 @@ step
 step << Warlock/Mage/Priest
     .goto 1411/1,-4938.83,-779.37
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Parlez à|r |cRXP_FRIENDLY_K'waii|r
-    >>|cRXP_BUY_Achetez des|r [Refreshing Spring Water] |cRXP_BUY_à Duokna|r --Refreshing Spring Water (20)
+    >>|cRXP_BUY_Achetez des|r [Eau de source] |cRXP_BUY_à Shara|r --Refreshing Spring Water (20)
     .vendor >> Vendez tout ce dont nous n'avez pas besoin
     .collect 159,20,784,1
     .target K'waii
@@ -1661,8 +1661,8 @@ step
 step
     #hardcore
     .goto 1411/1,-4665.400,311.900
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Cuisinier Torka|r
-    .accept 96825 >>Acceptez la quête This Fruit Could Morsure Retour
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Cuisinier Torka|r
+    .accept 96825 >>Acceptez la quête Ces fruits pourraient se défendre
     .target Cook Torka
 step
     #hardcore
@@ -1714,7 +1714,7 @@ step -- (Barracks)
     #label RazorHill1
     .goto 1411/1,-4815.200,306.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Turroc|r
-    .accept 96822 >>Acceptez la quête For Honneur
+    .accept 96822 >>Acceptez la quête Pour l'honneur
     .target Turroc
 step << Warrior/Rogue
     #hardcore
@@ -1798,7 +1798,7 @@ step --south/west of keep
     .goto 1411/1,-5101.700,-178.500,0
     .goto 1411/1,-5101.700,-178.500,25,0
     .goto 1411/1,-4992.700,-234.400,25,0
-    >>Ramassez l'|cRXP_PICK_Arc du Chevaucheur de loup|r sur le sol
+    >>Ramassez l' |cRXP_PICK_Arc d’écumeur|r au sol
     >>|cRXP_WARN_Il y a deux emplacements d'apparition différents|r
     .complete 96822,1 --|1/1 Raider's Bow
 step  --northern tower
@@ -1967,7 +1967,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|r |cRXP_FRIENDLY_Gar'Thok|r
     .turnin 784 >>Rendez la quête Vaincre les traîtres
     .turnin 830 >>Rendez la quête Les ordres de l'amiral
-    .turnin 96821 >>Rendez la quête Legging It
+    .turnin 96821 >>Rendez la quête Toutes pattes dehors
     .accept 825 >>Acceptez la quête Des épaves
     .accept 831 >>Acceptez la quête Les ordres de l'amiral
     .target +Gar'Thok
@@ -2157,8 +2157,8 @@ step
 step
     .goto 1411/1,-4686.09,340.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Innkeeper Grosk|r
-    >>|cRXP_BUY_Achetez du|r [Lait frais] |cRXP_BUY_à Kauth|r << Mage/Warlock/Priest/Shaman/Druid
-    >>|cRXP_BUY_Achetez des|r [Cuissot] |cRXP_BUY_à Grosk|r << Rogue/Warrior
+    >>|cRXP_BUY_Achetez du|r [Lait frais] |cRXP_BUY_à Heron|r << Mage/Warlock/Priest/Shaman/Druid
+    >>|cRXP_BUY_Achetez des|r [Cuissot] |cRXP_BUY_à Hai'zan|r << Rogue/Warrior
     >>Gardez 4 pièces d'argent pour vos sorts de classe ! << Rogue/Warrior/Shaman/Warlock
     >>Gardez 2 pièces d'argent pour vos sorts de classe ! << Priest
     .vendor >> Vendez tout ce dont nous n'avez pas besoin
@@ -2173,8 +2173,8 @@ step << !Mage !Hunter !Druid
     #optional
     .goto 1411/1,-4686.09,340.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Innkeeper Grosk|r
-    >>|cRXP_BUY_Achetez du|r [Lait frais] |cRXP_BUY_à Kauth|r << Mage/Warlock/Priest/Shaman/Druid
-    >>|cRXP_BUY_Achetez des|r [Cuissot] |cRXP_BUY_à Grosk|r << Rogue/Warrior
+    >>|cRXP_BUY_Achetez du|r [Lait frais] |cRXP_BUY_à Heron|r << Mage/Warlock/Priest/Shaman/Druid
+    >>|cRXP_BUY_Achetez des|r [Cuissot] |cRXP_BUY_à Hai'zan|r << Rogue/Warrior
     .vendor >> Vendez tout ce dont nous n'avez pas besoin
     .turnin 2161 >>Rendez la quête Un Fardeau de Péon
     .target Innkeeper Grosk
@@ -2221,7 +2221,7 @@ step << Priest
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tai'jin|r
     .turnin 5649 >> Rendez la quête Au service de la spiritualité
     .accept 5648 >> Acceptez la quête Vêtements de la spiritualité
-    .train 2052 >> Apprenez [Soins inférieurs rang 2]
+    .train 2052 >> Apprenez [Soins inférieurs Rang 2]
     .target Tai'jin
 step << Priest
     .goto 1411/1,-4770.16,170.62
@@ -2366,7 +2366,7 @@ step
     #completewith next
     >>Tuez |cRXP_ENEMY_Zalazane|r. Dépouillez-le pour sa |cRXP_LOOT_Tête|r
     >>Gardez votre [Horion de terre] pour quand il lance [Vague de soins] << Shaman
-    >>Gardez votre [Suriner] pour lorsqu'il lance [Vague de soins] << Rogue
+    >>Gardez votre [Suriner] pour quand il lance [Vague de soins] << Rogue
     .complete 826,3 --Zalazane's Head (1)
     .mob Zalazane
 step
@@ -2379,7 +2379,7 @@ step
     .goto 1411/1,-5526.27,-1286.62
     >>Tuez |cRXP_ENEMY_Zalazane|r. Dépouillez-le pour sa |cRXP_LOOT_Tête|r
     >>Gardez votre [Horion de terre] pour quand il lance [Vague de soins] << Shaman
-    >>Gardez votre [Suriner] pour lorsqu'il lance [Vague de soins] << Rogue
+    >>Gardez votre [Suriner] pour quand il lance [Vague de soins] << Rogue
     .complete 826,3 --Zalazane's Head (1)
     .mob Zalazane
 step
@@ -2632,7 +2632,7 @@ step << Hunter
 	.goto 1411/1,-4208.1,98.71,50,0
 	.goto 1411/1,-4300.1,57.11,50,0
 	.goto 1411/1,-4456.61,65.57,50,0
-    .xp 9+4960 >> Farmez jusqu'à 4960+/6500xp
+    .xp 9+4960 >> Montez votre expérience jusqu'à 4960+/6500xp
 step
     .goto 1411/1,-4709.36,274.960
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|r |cRXP_FRIENDLY_Gar'Thok|r
@@ -2660,7 +2660,7 @@ step << Hunter
     .target Thotar
 step << Hunter
     .goto 1411/1,-4763.29,361.67
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Parlez à |cRXP_FRIENDLY_Ghrawt|r. Achetez des|r [Flèche pointunue] |cRXP_BUY_et un|r [Carquois moyen] |cRXP_BUY_à Ghrawt|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Parlez à |cRXP_FRIENDLY_Ghrawt|r. Achetez des|r [Flèche pointue] |cRXP_BUY_et un|r [Carquois moyen] |cRXP_BUY_à Ghrawt|r
     .collect 2515,1200,6082,1 --Sharp Arrow (1200)
     --.collect 11362,1,6082,1 --Medium Quiver (1)
     .target Ghrawt
@@ -2747,7 +2747,7 @@ step << Hunter
     .isQuestTurnedIn 6062
 step << Hunter
     #completewith Rezlak1
-    +Mettez [Appriovoiser une bête]|cRXP_WARN_,|r [Renvoyer le familier], et [Appel du familier] sur vos barres d'action
+    +Mettez [Apprivoiser une bête]|cRXP_WARN_,|r [Renvoyer le familier] et [Appel du familier] sur vos barres d'action
 step << Hunter
     .goto 1411/1,-4666.0,305.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Grimtak|r
@@ -3117,8 +3117,8 @@ step
     .goto 1411/1,-4686.09,340.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Innkeeper Grosk|r
     .vendor >> Vendez tout ce dont nous n'avez pas besoin
-    >>|cRXP_BUY_Achetez du|r [Lait frais] |cRXP_BUY_à Kauth|r << Mage/Warlock/Priest/Shaman
-    >>|cRXP_BUY_Achetez des|r [Cuissot] |cRXP_BUY_à Grosk|r << Rogue/Warrior
+    >>|cRXP_BUY_Achetez du|r [Lait frais] |cRXP_BUY_à Heron|r << Mage/Warlock/Priest/Shaman
+    >>|cRXP_BUY_Achetez des|r [Cuissot] |cRXP_BUY_à Hai'zan|r << Rogue/Warrior
     .collect 1179,15,828,1 << Mage/Warlock/Priest/Shaman --Ice Cold Milk (15)
     .collect 2287,15,828,1 << Rogue/Warrior --Haunch of Meat (15)
     .target Innkeeper Grosk
@@ -3767,7 +3767,7 @@ step << Shaman/Hunter
 step << !Shaman !Hunter
     #completewith Gazzuz
     >>Tuez les |cRXP_ENEMY_Burning Blade Orcs|r. Dépouillez-les pour une |cRXP_LOOT_Lieutenant's Insignia|r
-    >>|cRXP_WARN_C'est une quête préalable pour RFC. Elle a un faible taux de loot|r
+    >>|cRXP_WARN_Il s'agir d'une pré-quête pour Ragefeu. Celle-ci n'a que peu de chance de tomber|r
     .complete 5726,1 --Lieutenant's Insignia (1)
     .mob Burning Blade Fanatic
     .mob Burning Blade Apprentice
@@ -3778,7 +3778,7 @@ step << !Shaman !Hunter
     >>Tuez |cRXP_ENEMY_Gazz'uz|r. Dépouillez-le pour son [|cRXP_LOOT_Eye of Burning Shadow|r]
     >>|cRXP_WARN_Soyez prudents car il est TRÈS difficile. N'hésitez pas à sauter cette quête si vous ne pouvez pas former un groupe ou le vaincre en solo|r
     >>|cRXP_WARN_Utilisez le [|cRXP_LOOT_Eye of Burning Shadow|r] pour commencer la quête|r
-    >>|cRXP_WARN_Utilisez LoS (ligne de mire) pour éviter |cRXP_ENEMY_Gazz'uz|r ses Traits de l'ombre|r
+    >>|cRXP_WARN_Cachez-vous (LoS) pour éviter les Traits de l'ombre de |cRXP_ENEMY_Gazz'uz|r|r
     >>Vous pouvez aller dans les points d'eau dans la grotte pour vous échapper (evade) des |cRXP_ENEMY_Voidwalker|r après avoir tué |cRXP_ENEMY_Gazz'uz|r
     .collect 4903,1,832,1 --Collect Eye of Burning Shadow
     .accept 832 >>Acceptez la quête Ombres ardentes
@@ -3799,7 +3799,7 @@ step << !Shaman !Hunter
     .goto 1411/1,-4684.50,1466.06,15,0
     .goto 1411/1,-4805.59,1495.67,15,0
     >>Tuez les |cRXP_ENEMY_Burning Blade Orcs|r. Dépouillez-les pour une |cRXP_LOOT_Lieutenant's Insignia|r
-    >>|cRXP_WARN_C'est une quête préalable pour RFC. Elle a un faible taux de loot|r
+    >>|cRXP_WARN_Il s'agir d'une pré-quête pour Ragefeu. Celle-ci n'a que peu de chance de tomber|r
     .complete 5726,1 --Lieutenant's Insignia (1)
     .mob Burning Blade Fanatic
     .mob Burning Blade Apprentice
@@ -3870,7 +3870,7 @@ step << Warrior
     .isQuestAvailable 1498
 step << Warrior
     .goto 1420/0,360.04,2376.14
-    >>|cRXP_WARN_Cliquez sur le|r |cRXP_WARN_Déclencheur du mausolée|r |cRXP_WARN_au sol. Cela va invoquer|r |cRXP_ENEMY_Ulag.|r |cRXP_WARN_Tuez-le|r
+    >>Cliquez sur le Déclencheur du mausolée sur le sol. Cela va invoquer |cRXP_ENEMY_Ulag.|r. Tuez-le
     .complete 1819,1 --Ulag the Cleaver (1)
     .mob Ulag the Cleaver
     .isQuestAvailable 1498
@@ -3991,7 +3991,7 @@ step
 step
     .goto 1420/0,54.500,1996.400
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Hadric Harlson|r
-    .turnin 96897 >>Rendez la quête Le culte des Damnés
+    .turnin 96897 >>Rendez la quête Le Culte des damnés
     .turnin 96898 >>Rendez la quête Les vestiges de la guerre
     .target Hadric Harlson
     .isQuestComplete 96897
@@ -4009,7 +4009,7 @@ step
     #optional
     .goto 1420/0,54.500,1996.400
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Hadric Harlson|r
-    .turnin 96898 >>Rendez la quête Vestiges de guerre
+    .turnin 96898 >>Rendez la quête Les vestiges de la guerre
     .target Hadric Harlson
     .isQuestComplete 96898
     .dungeon !ROL
@@ -4024,23 +4024,23 @@ step
 step
     #label LinneaTurnin
     .goto 1420/0,73.800,2022.300
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Deathguard Linnea::1495|r
-    >>|cRXP_WARN_Ceci est une pré-quête pour "The Courroux of Rath'mael"|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à la |cRXP_FRIENDLY_Garde noir Linnea::1495|r
+    >>|cRXP_WARN_Il s'agit d'une pré-quête pour "La colère de Rath’mael"|r
     .turnin 356 >>Rendez la quête Patrouille d'arrière-garde
     .target Deathguard Linnea::1495
     .accept 99156 >>Acceptez la quête Patrouille d'arrière-garde
     .dungeon ROL
 step
     .goto 1420/0,-765.200,2518.700
-    >>Tuez |cRXP_ENEMY_Riptear|r |cRXP_WARN_(niveau 13 élite)|r. Pillagez-le pour |T134339:0|t[|cRXP_LOOT_Riptear's Cœur|r]
-    >>|cRXP_WARN_Ceci est une pré-quête pour "The Courroux of Rath'mael"|r
+    >>Tuez |cRXP_ENEMY_Fendécorche|r |cRXP_WARN_(élite de niveau 13)|r. Dépouillez-le pour le |T134339:0|t[|cRXP_LOOT_Cœur de Fendécorche|r]
+    >>|cRXP_WARN_Il s'agit d'une pré-quête pour "La colère de Rath’mael"|r
     .complete 99156,1 --|1/1 Riptear's Heart
     .mob Riptear
     .dungeon ROL
 step
     .goto 1420/0,74.200,2022.400
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Deathguard Linnea::1495|r
-    >>|cRXP_WARN_Ceci est une pré-quête pour "The Courroux of Rath'mael"|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à la |cRXP_FRIENDLY_Garde noir Linnea::1495|r
+    >>|cRXP_WARN_Il s'agit d'une pré-quête pour "La colère de Rath’mael"|r
     .turnin 99156 >>Rendez la quête Patrouille d'arrière-garde
     .target Deathguard Linnea::1495
     .dungeon ROL
@@ -4154,7 +4154,7 @@ step << Warlock
     .goto 1458/0,610.42,1684.44,35,0
     .goto 1458/0,663.19,1600.46,35,0
     .goto 1420/0,724.25,1682.66,50,0
-    .zone Tirisfal Glades >> Sortez de Fossoyeuse par les Égouts
+    .zone Tirisfal Glades >> Quittez Undercity par les Égouts
     .zoneskip Tirisfal Glades
 step << Warlock
     #optional
@@ -4333,7 +4333,7 @@ step
     .goto 1458/0,610.42,1684.44,35,0
     .goto 1458/0,663.19,1600.46,35,0
     .goto 1420/0,724.25,1682.66,50,0
-    .zone Tirisfal Glades >> Sortez de Fossoyeuse par les Égouts
+    .zone Tirisfal Glades >> Quittez Undercity par les Égouts
     .zoneskip Silverpine Forest
 step
     #label Entersilverpine

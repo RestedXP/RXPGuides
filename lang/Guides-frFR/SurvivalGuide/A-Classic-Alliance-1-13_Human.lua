@@ -306,7 +306,7 @@ step << Priest/Mage
     .complete 3904,1 --Collect Milly's Harvest (x8)
 step
     .goto Elwynn Forest,57.5,48.2
-    >>Tuez |cRXP_ENEMY_Garrick Padfoot|r. Dépouillez-le pour sa |cRXP_LOOT_Tête|r
+    >>Tuez |cRXP_ENEMY_Garrick Padfoot|r. Dépouillez-le jeu pour sa |cRXP_LOOT_Tête|r
 	.mob Garrick Padfoot
     .complete 6,1 --Collect Garrick's Head (x1)
 step << !Priest !Mage
@@ -652,7 +652,7 @@ step
     .mob Kobold Miner
 step << Warrior
     #completewith Goldtooth
-    +À partir de maintenant, essayez de garder au moins une [Potion de soins mineure] car vous en aurez besoin pour le Cadavre de Rolf plus tard
+    +Essayez de garder une [Potion de soins mineure] à partir de maintenir, vous en aurez besoin pour le Cadavre de Rolf plus tard
 step << Warrior/Rogue
     >>N'oubliez de fabriquer des [Pierre à aiguiser brute] si vous ramassez des |cRXP_LOOT_[Rough Stones]|r
     .xp 7+1600 >>Montez votre expérience jusqu'à 1600+/4500xp

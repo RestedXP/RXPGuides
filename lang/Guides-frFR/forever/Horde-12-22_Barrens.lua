@@ -398,7 +398,7 @@ step
     .goto 1413/1,-3021.35,-231.96,20,0
     .goto 1413/1,-3029.46,261.25
     .use 4926 >> Ramassez le |cRXP_PICK_Chen's Empty Keg|r sur le sol et commencez la quête
-    >>Attendez qu'il revienne si il n'est pas là
+    >>Attendez qu'il réapparaisse si il n'est pas là
     .collect 4926,1,819 --Collect Chen's Empty Keg
     .accept 819 >> Acceptez la quête Tonneau vide de Chen
     .isOnQuest 872
@@ -561,7 +561,7 @@ step << Orc Shaman/Troll Shaman/Tauren Shaman
 step << Orc Shaman/Troll Shaman/Tauren Shaman
     .goto 1413/1,-3029.46,261.25
     .use 4926 >> Ramassez le |cRXP_PICK_Chen's Empty Keg|r sur le sol et commencez la quête
-    >>Attendez qu'il revienne si il n'est pas là
+    >>Attendez qu'il réapparaisse si il n'est pas là
     .collect 4926,1,819 --Collect Chen's Empty Keg
     .accept 819 >> Acceptez la quête Tonneau vide de Chen
 step
@@ -649,7 +649,7 @@ step << Troll Warrior
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.9
 step << Orc Warrior
     .goto 1413/1,-3684.07,-919.74
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Parlez à|r |cRXP_FRIENDLY_Ironzar|r|cRXP_BUY_. Achetez une|r [Hâche ébarbée] |cRXP_BUY_à Ironzar|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Parlez à|r |cRXP_FRIENDLY_Ironzar|r|cRXP_BUY_. Achetez une|r [Hache ébarbée] |cRXP_BUY_à Ironzar|r
     .collect 2025,1,850,1 --Collect Bearded Axe (1)
     .money <0.5304
     .itemStat 16,QUALITY,<7
@@ -673,7 +673,7 @@ step << Tauren Warrior
 step << Tauren Warrior
     #optional
     #completewith BaronLongshore
-    +Équipez le [Marteau en pierre] lorsque vous passez niveau 16
+    +Équipez le [Marteau en pierre] lorsque vous passez au niveau 16
     .use 2026
     .itemcount 2026,1
     .itemStat 16,QUALITY,<7
@@ -715,7 +715,7 @@ step << Rogue
 step << Rogue
     #optional
     #completewith BaronLongshore
-    +Équipez la [CImeterre]
+    +Équipez la [Cimeterre]
     .use 2027
     .itemcount 2027,1
     .itemStat 16,QUALITY,<7
@@ -765,7 +765,7 @@ step << Mage/Priest/Warlock/Shaman/Druid
 step
     #optional
     #completewith BaronLongshore
-    .destroy 5088 >> Détruisez le [Manuel de la console de contrôlel] de vos sacs, vous n'en aurez plus besoin
+    .destroy 5088 >> Détruisez le [Manuel de la console de contrôle] de vos sacs, il n'est plus nécessaire
 step
     #optional
     #completewith BaronLongshore
@@ -778,7 +778,7 @@ step << Orc Rogue/Troll Rogue
     #optional
 	#completewith SouthSea
 	>>Tuez |cRXP_ENEMY_Tazan|r. Dépouillez-le pour sa |cRXP_LOOT_Sacoche|r
-    >>|cRXP_WARN_Il apparaît au premier camp et patrouille en haut de la colline|r
+    >>|cRXP_WARN_Il apparaît dans le premier camp et patrouille en montant la colline|r
 	.complete 1963,1 --Tazan's Satchel (1)
     .unitscan Tazan
 step
@@ -791,7 +791,7 @@ step
     .goto 1413/1,-3818.84,-1707.52,50,0
     .goto 1413/1,-3724.60,-1746.71,50,0
     >>Tuez |cRXP_ENEMY_Baron Longshore|r. Dépouillez-le pour sa |cRXP_LOOT_Tête|r
-    >>Vous pourrez le trouver dans l'un des camps
+    >>Il se trouve dans l'un des camps
     .complete 895,1 --Baron Longshore's Head (1)
     .unitscan Baron Longshore
 step
@@ -826,7 +826,7 @@ step << Orc Rogue/Troll Rogue
     .goto 1413/1,-3895.600,-1365.000,50,0
     .goto 1413/1,-3826.300,-1487.300,50,0
 	>>Tuez |cRXP_ENEMY_Tazan|r. Dépouillez-le pour sa |cRXP_LOOT_Sacoche|r
-    >>|cRXP_WARN_Il apparaît au premier camp et patrouille en haut de la colline|r
+    >>|cRXP_WARN_Il apparaît dans le premier camp et patrouille en montant la colline|r
 	.complete 1963,1 --Tazan's Satchel (1)
     .unitscan Tazan
 step
@@ -900,7 +900,7 @@ step << Troll Warrior
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.9
 step << Orc Warrior
     .goto 1413/1,-3684.07,-919.74
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Parlez à|r |cRXP_FRIENDLY_Ironzar|r|cRXP_BUY_. Achetez une|r [Hâche ébarbée] |cRXP_BUY_à Ironzar|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Parlez à|r |cRXP_FRIENDLY_Ironzar|r|cRXP_BUY_. Achetez une|r [Hache ébarbée] |cRXP_BUY_à Ironzar|r
     .collect 2025,1,850,1 --Collect Bearded Axe (1)
     .money <0.5304
     .itemStat 16,QUALITY,<7
@@ -924,7 +924,7 @@ step << Tauren Warrior
 step << Tauren Warrior
     #optional
     #completewith FlyToXroads1
-    +Équipez le [Marteau en pierre] lorsque vous passez niveau 16
+    +Équipez le [Marteau en pierre] lorsque vous passez au niveau 16
     .use 2026
     .itemcount 2026,1
     .itemStat 16,QUALITY,<7
@@ -966,7 +966,7 @@ step << Rogue
 step << Rogue
     #optional
     #completewith FlyToXroads1
-    +Équipez la [CImeterre]
+    +Équipez la [Cimeterre]
     .use 2027
     .itemcount 2027,1
     .itemStat 16,QUALITY,<7
@@ -982,7 +982,7 @@ step << Rogue
 step << skip
     #optional
     #completewith FlyToXroads1
-    +Équipez la [CImeterre]
+    +Équipez la [Cimeterre]
     .use 2027
     .itemcount 2027,1
     .itemStat 17,QUALITY,<7
@@ -1139,7 +1139,7 @@ step << Tauren
 step << Troll Hunter/Orc Hunter
     .goto 1413/1,-2612.98,-411.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Parlez à|r |cRXP_FRIENDLY_Barg|r
-    >>|cRXP_BUY_Achetez des|r [Flèche grossières] |cRXP_BUY_à Paelarin|r
+    >>|cRXP_BUY_Achetez des|r [Flèche grossières] |cRXP_BUY_à Barg|r
     .collect 2515,1200,850,1 << Hunter --Sharp Arrow (1200)
     .target Barg
 step << Tauren Hunter
@@ -1152,7 +1152,7 @@ step << Troll Hunter/Orc Hunter/Skyborne Hunter
     .goto 1413/1,-2556.23,-351.54
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Parlez à|r |cRXP_FRIENDLY_Uthrok|r
     .vendor >> |cRXP_BUY_Achetez un|r [|cRXP_FRIENDLY_Bon arc long|r] |cRXP_BUY_à Uthrok si il en a en stock et faites un stock de flèches|r
-    >>Si il n'est pas disponible, achetez à la place un [Arc renforcé]
+    >>Si il n'est pas disponible, achetez un [Arc renforcé] à la place
     .collect 2515,1200,870,1 << Hunter --Sharp Arrow (1200)
     .target Uthrok
     .isOnQuest 903
@@ -1269,7 +1269,7 @@ step
     .goto 1413/1,-1483.11,66.67,50,0
     .goto 1413/1,-1531.75,180.85,50,0
     .goto 1413/1,-1462.84,214.63,50,0
-    >>Tuez les |cRXP_ENEMY_Savannah Prowlers|r. Pillez-les pour obtenir leurs |cRXP_LOOT_Claws|r
+    >>Tuez les |cRXP_ENEMY_Rôdeurs des savanes|r. Dépouillez-les pour leurs |cRXP_LOOT_Griffes|r
     .complete 903,1 --Prowler Claws (7)
     .mob Savannah Prowler
     .isQuestAvailable 819
@@ -1289,7 +1289,7 @@ step
     .mob Witchwing Roguefeather
 step
     #completewith Samophlange
-    +Faites attention aux |cRXP_ENEMY_Sunscale Scytheclaws|r dans la zone. Ils vont jusqu'au niveau 18 et peuvent utiliser [Rosser]
+    +Faites attention aux |cRXP_ENEMY_Sunscale Scytheclaws|r dans la zone. Ils sont niveau 18 et peuvent utiliser [Rosser]
     .xp >17,1
 step
     #optional
@@ -1326,8 +1326,8 @@ step
     .goto 1413/1,-1960.600,653.700,50,0
     .goto 1413/1,-1871.600,653.700,50,0
     .goto 1413/1,-1729.700,592.400,50,0
-    >>Tuez les |cRXP_ENEMY_Savannah Patriarchs|r. Pillez-les pour obtenir leurs |cRXP_LOOT_Hides|r et leurs |cRXP_LOOT_Défenses|r
-    >>|cRXP_WARN_Si les |cRXP_ENEMY_Savannah Patriarchs|r sont fortement contestées, envisagez de sauter cette quête pour le moment; elle pourra être complétée plus tard|r
+    >>Tuez les |cRXP_ENEMY_Patriarches des savanes|r. Dépouillez-les pour leurs |cRXP_LOOT_Peaux|r et leurs |cRXP_LOOT_Canines|r
+    >>|cRXP_WARN_Si les |cRXP_ENEMY_Patriarches des savanes|r sont fortement contestés, pensez à ignorer cette quête pour le moment, vous pourrez la faire plus tard|r
     .complete 95494,1 --|6/6 Savannah Lion Hide
     .complete 821,1 --Savannah Lion Tusk (5)
     .disablecheckbox
@@ -1343,8 +1343,8 @@ step
     .goto 1413/1,-1960.600,653.700,50,0
     .goto 1413/1,-1871.600,653.700,50,0
     .goto 1413/1,-1729.700,592.400,50,0
-    >>Tuez les |cRXP_ENEMY_Savannah Patriarchs|r. Pillez-les pour obtenir leurs |cRXP_LOOT_Hides|r
-    >>|cRXP_WARN_Si les |cRXP_ENEMY_Savannah Patriarchs|r sont fortement contestées, envisagez de sauter cette quête pour le moment; elle pourra être complétée plus tard|r
+    >>Tuez les |cRXP_ENEMY_Patriarches des savanes|r. Dépouillez-les pour leur |cRXP_LOOT_Peau|r
+    >>|cRXP_WARN_Si les |cRXP_ENEMY_Patriarches des savanes|r sont fortement contestés, pensez à ignorer cette quête pour le moment, vous pourrez la faire plus tard|r
     .complete 95494,1 --|6/6 Savannah Lion Hide
     .mob Savannah Patriarch
     .isQuestAvailable 819
@@ -1468,7 +1468,7 @@ step
 step
     #optional
     #completewith RaptorHeadsComplete
-    >>Tuez les |cRXP_ENEMY_Savannah Prowlers|r. Pillez-les pour obtenir leurs |cRXP_LOOT_Claws|r
+    >>Tuez les |cRXP_ENEMY_Rôdeurs des savanes|r. Dépouillez-les pour leurs |cRXP_LOOT_Griffes|r
     .complete 903,1 --Prowler Claws (7)
     .mob Savannah Prowler
     .isQuestAvailable 819
@@ -1505,7 +1505,7 @@ step
     .goto 1413/1,-2859.800,565.900,50,0
     .goto 1413/1,-3023.000,530.700,50,0
     .goto 1413/1,-2897.500,642.200,50,0
-    >>Tuez les |cRXP_ENEMY_Savannah Prowlers|r. Pillez-les pour obtenir leurs |cRXP_LOOT_Claws|r
+    >>Tuez les |cRXP_ENEMY_Rôdeurs des savanes|r. Dépouillez-les pour leurs |cRXP_LOOT_Griffes|r
     .complete 903,1 --Prowler Claws (7)
     .mob Savannah Prowler
     .isQuestAvailable 819
@@ -1620,7 +1620,7 @@ step
 step
     .goto 1454/1,-4160.01,1483.17
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|r |cRXP_FRIENDLY_Arnok|r
-    >>Passez cette étape si vous n'avez pas assez d'[Etoffe de lin] pour atteindre une compétence de 50
+    >>Passez cette étape si vous avez pas assez d'[Étoffe de lin] pour monter votre compétence à 50
     .train 3274 >> Apprenez Premiers soins compagnon
     .target Arnok
     .skill firstaid,<40,1
@@ -1641,7 +1641,7 @@ step << Priest
     .xp <18,1
 step << Mage
     .goto 1454/1,-4218.64,1473.72
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |r |cRXP_FRIENDLY_Pephredo|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|r |cRXP_FRIENDLY_Pephredo|r
     .train 2120 >> Apprenez vos sorts de classe
     .target Pephredo
     .xp <16,1
@@ -1649,7 +1649,7 @@ step << Mage
 step << Mage
     #optional
     .goto 1454/1,-4218.64,1473.72
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |r |cRXP_FRIENDLY_Pephredo|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|r |cRXP_FRIENDLY_Pephredo|r
     .train 3140 >> Apprenez vos sorts de classe
     .target Pephredo
     .xp <18,1
@@ -1806,7 +1806,7 @@ step
 step << Rogue
     .goto 1454/1,-4284.42,1771.28
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Shenthul|r
-    .train 1804 >> Apprenez [Crochetage]
+    .train 1804 >> Montez le niveau de votre [Crochetage]
     .train 921 >> Apprenez [Vol à la tire]
     .accept 2379 >> Acceptez la quête Zando'zan
     .target Shenthul
@@ -1993,11 +1993,11 @@ step
 step
     #optional
     #completewith RapHornsPickup
-    .destroy 10327 >>Détruisez la [Corne d'Echeyakee], vous n'en aurez plus besoin
+    .destroy 10327 >>Détruisez la [Corne d'Echeyakee] comme vous n'en avez plus besoin
 step << Hunter
     .goto 1413/1,-2612.98,-411.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Parlez à|r |cRXP_FRIENDLY_Barg|r
-    >>|cRXP_BUY_Achetez des|r [Flèche grossières] |cRXP_BUY_à Paelarin|r
+    >>|cRXP_BUY_Achetez des|r [Flèche grossières] |cRXP_BUY_à Barg|r
     .collect 2515,1800,888,1 << Hunter --Sharp Arrow (1800)
     .target Barg
 step
@@ -2219,7 +2219,7 @@ step
     .goto 1413/1,-2031.32,-1703.47,0
     .goto 1413/1,-2183.32,-1858.19,0
     .goto 1413/1,-2453.88,-1991.28,0
-	>>Tuez |cRXP_ENEMY_Lakota'mani|r. Dépouillez-le pour la [|cRXP_LOOT_Hoof of Lakota'mani|r]
+	>>Tuez |cRXP_ENEMY_Lakota'mani|r. Dépouillez-le pour sa [|cRXP_LOOT_Hoof of Lakota'mani|r]
     >>|cRXP_WARN_Utilisez le [|cRXP_LOOT_Hoof of Lakota'mani|r] pour commencer la quête|r
     >>Il a 4 possibles points d'apparition (marqués sur la carte)
     >>|cRXP_WARN_Passez cette étape si vous n'arrivez pas à le trouver ou le tuer. Vous pourrez revenir ultérieurement|r
@@ -2293,7 +2293,7 @@ step
     .itemcount 5165,1
 step << Hunter
     .goto 1413/1,-2556.23,-351.54
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Parlez à|r |cRXP_FRIENDLY_Uthrok|r|cRXP_BUY_. Achetez un|r [Carquoi moyen] |cRXP_BUY_à Uthrok|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Parlez à|r |cRXP_FRIENDLY_Uthrok|r|cRXP_BUY_. Achetez un|r [Carquois moyen] |cRXP_BUY_à Uthrok|r
     .collect 11362,1,896,1 --Medium Quiver (1)
     .collect 2515,2200,896,1 --Sharp Arrow (2200)
     .target Uthrok
@@ -2612,7 +2612,7 @@ step
     .isQuestTurnedIn 6548
 step
     .goto 1442/1,-350.74,112.06
-    >>Tuez |cRXP_ENEMY_Grundig Darkcloud|r et |cRXP_ENEMY_Grimtotem Brutes|r
+    >>Tuez les |cRXP_ENEMY_Grundig Darkcloud|r et les |cRXP_ENEMY_Grimtotem Brutes|r
     >>Tuez bien les 6 |cRXP_ENEMY_Grimtotem Brutes|r avant de commencer la quête à l'intérieur
     .complete 6629,1 --Kill Grundig Darkcloud (x1)
     .mob +Grundig Darkcloud
@@ -2709,7 +2709,7 @@ step
     .isQuestAvailable 1093
 step
     .goto 1442/1,920.88,911.47
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Jeeda|r au deuxième étage de l'auberge
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Jeeda|r au second étage de l'auberge
     .vendor >> |cRXP_BUY_Achetez-lui des|r [Potions de soins] |cRXP_BUY_si elle en a en stock|r << !Warrior
     .vendor >> |cRXP_BUY_Achetez-lui des|r [Potions de soins] |cRXP_BUY_et des|r [Viétérule] |cRXP_BUY_si elle en a en stock|r << Warrior
     .target Jeeda
@@ -2999,7 +2999,7 @@ step
     .goto 1413/1,-2031.32,-1703.47,80,0
     .goto 1413/1,-2183.32,-1858.19,80,0
     .goto 1413/1,-2453.88,-1991.28,80,0
-	>>Tuez |cRXP_ENEMY_Lakota'mani|r. Dépouillez-le pour la [|cRXP_LOOT_Hoof of Lakota'mani|r]
+	>>Tuez |cRXP_ENEMY_Lakota'mani|r. Dépouillez-le pour sa [|cRXP_LOOT_Hoof of Lakota'mani|r]
     >>|cRXP_WARN_Utilisez le [|cRXP_LOOT_Hoof of Lakota'mani|r] pour commencer la quête|r
     >>Il a 4 possibles points d'apparition (marqués sur la carte)
     >>Passez cette étape si vous n'arrivez pas à le trouver
@@ -3142,7 +3142,7 @@ step
     .mob Oasis Snapjaw
 step
     #completewith IshamuhalesFang
-    >>Tuez les |cRXP_ENEMY_Savannah Matriarchs|r et les |cRXP_ENEMY_Savannah Patriarchs|r. Pillez-les pour obtenir leurs |cRXP_LOOT_Hides|r
+    >>Tuez les |cRXP_ENEMY_Matriarches des savanes|r et les |cRXP_ENEMY_Patriarches des savanes|r. Dépouillez-les pour leurs |cRXP_LOOT_Peaux|r
     .complete 95494,1 --|6/6 Savannah Lion Hide
     .mob Savannah Matriarch
     .mob Savannah Patriarch
@@ -3164,7 +3164,7 @@ step
     .goto 1413/1,-3633.200,-600.500,50,0
     .goto 1413/1,-3469.100,-495.000,50,0
     .goto 1413/1,-3428.300,-584.300,50,0
-    >>Tuez les |cRXP_ENEMY_Savannah Matriarchs|r et les |cRXP_ENEMY_Savannah Patriarchs|r. Pillez-les pour obtenir leurs |cRXP_LOOT_Hides|r
+    >>Tuez les |cRXP_ENEMY_Matriarches des savanes|r et les |cRXP_ENEMY_Patriarches des savanes|r. Dépouillez-les pour leurs |cRXP_LOOT_Peaux|r
     .complete 95494,1 --|6/6 Savannah Lion Hide
     .mob Savannah Matriarch
     .mob Savannah Patriarch
@@ -3245,7 +3245,7 @@ step << Warrior
 step << Rogue/Hunter/Warrior/Shaman/Druid
     #optional
     #completewith FlytoXroads
-    +Équipez les [|cRXP_FRIENDLY_Wolf Bracers|r]
+    +Équipez le [|cRXP_FRIENDLY_Wolf Bracers|r]
     .use 4794
     .itemcount 4794,1
     .itemStat 9,ITEM_MOD_ARMOR_SHORT,<37
@@ -3260,7 +3260,7 @@ step
     .goto 1413/1,-3973.000,-1028.700
     >>Tuez |cRXP_PICK_Bruuz|r (élite de niveau 20) dans la mer près de Cabestan
     >>|cRXP_WARN_Cette étape est difficile ! Trouvez un groupe si possible|r << !Rogue !Warrior
-    >>|cRXP_WARN_Essayez de le kiter vers Cabestan aux gardes qui aideront, mais assurez-vous de causer au moins 50% de dégâts!|r
+    >>|cRXP_WARN_Essayez de l'attirer (kite) jusqu'aux gardes de Cabestan qui vous aideront, mais faites bien en sorte d'infliger au moins 50% des dégâts|r
     .complete 92706,1 --Kill Bruuz
     .mob Bruuz
     .isOnQuest 92706
@@ -3639,7 +3639,7 @@ step << !Tauren !Skyborne
     .goto 1413/1,-1891.48,-2391.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Mangletooth|r
     .aura 16618 >>|cRXP_WARN_S'il vous reste 10|r |T134128:0|t[|cRXP_LOOT_Joyaux de sang|r] |cRXP_WARN_, utilisez-les pour obtenir|r |T136022:0|t[L'esprit du vent] |cRXP_WARN_auprès de|r |cRXP_FRIENDLY_Mutiledent|r
-    >>Passez cette étape si vous pouvez voler jusqu'à Thunder Bluff
+    >>Passez cette étape si vous pouvez voler jusqu'à Pitons-du-Tonnerre
     .itemcount 5075,10
     .target Mangletooth
     .train 2645,1 << Shaman --skip if ghost wolf trained
@@ -3828,9 +3828,9 @@ step
 step
     .goto 1456/1,206.88,-997.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|r |cRXP_FRIENDLY_Pand|r
-    >>Passez cette étape si vous n'avez pas assez d'[Etoffe de lin] pour monter vos [Premiers soins] à 80
-    .train 3277 >> Apprenez  [Bandage en laine]
-    .train 7934 >> Apprenez [Anti-venin] << Rogue
+    >>Passez cette étape si vous n'avez pas assez d'[Etoffe de lin] pour atteindre une compétence de 80
+    .train 3277 >> Apprenez [Bandage en laine]
+    .train 7934 >> Apprenez [Anti-Venin] << Rogue
     .target Pand Stonebinder
     .skill firstaid,<1,1
 step << Rogue
@@ -3857,7 +3857,7 @@ step << Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Turak|r
     .trainer >>Apprenez vos sorts de classe
     .accept 27 >>Acceptez la quête Une leçon à apprendre
-    .accept 98340 >>Acceptez la quête Esprit du Grand félin
+    .accept 98340 >>Acceptez la quête L’esprit du Grand félin
     .target Turak Runetotem
 step << Druid
     #completewith next
@@ -3868,9 +3868,9 @@ step << Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Dendrite|r
     .turnin 27 >>Rendez la quête Une leçon à apprendre
     .accept 28 >>Acceptez la quête L'épreuve du lac
-    .turnin 98340 >>Rendez la quête Esprit du Grand félin
-    .accept 98341 >>Acceptez la quête The Great Windborne Chat Esprit << Skyborne
-    .accept 98405 >>Acceptez la quête Esprit du Grand félin << !Skyborne
+    .turnin 98340 >>Rendez la quête L’esprit du Grand félin
+    .accept 98341 >>Acceptez la quête L’esprit du Grand félin du vent << Skyborne
+    .accept 98405 >>Acceptez la quête L’esprit du Grand félin << !Skyborne
     .target Dendrite Starblaze
 step << Druid
     #completewith next
@@ -3890,52 +3890,52 @@ step << Druid
     .target Tajarri
 step << Druid !Skyborne
     .goto 1450/1,-2640.000,7338.900
-     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Esprit du Grand félin|r
-    .turnin 98405 >>Rendez la quête Esprit du Grand félin
-    .accept 98342 >>Acceptez la quête Esprit du Grand félin
+     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à l' |cRXP_FRIENDLY_Esprit du Grand félin|r
+    .turnin 98405 >>Rendez la quête L’esprit du Grand félin
+    .accept 98342 >>Acceptez la quête L’esprit du Grand félin
     .target Great Cat Spirit
 step << Druid Skyborne
     .goto 1450/1,-2352.700,7375.600,10,0
     .goto 1450/1,-2394.300,7361.200
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Avatar of Saeyleenan::272054|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à l' |cRXP_FRIENDLY_Avatar de Saeyleenan::272054|r
     .target Avatar of Saeyleenan::272054
-    .turnin 98341 >>Rendez la quête The Great Windborne Chat Esprit
-    .accept 98404 >>Acceptez la quête The Great Windborne Chat Esprit
+    .turnin 98341 >>Rendez la quête L’esprit du Grand félin du vent
+    .accept 98404 >>Acceptez la quête L’esprit du Grand félin du vent
 step << Druid
     #completewith next
     .goto 1450/1,-3046.700,7534.400
     --aura 1309054?
-    .subzone 2363 >> Rendez-vous au Refuge des saisons de Malfurion
+    .subzone 2363 >> Allez au Refuge des saisons de Malfurion
 step << Druid
-    >>Allez profondément dans la grotte, traversez le pont, cherchez une statue de chat dans une alcôve et cliquez sur le petit orbe à côté de la statue
-    >>Pillez |cRXP_LOOT_Relic of the Griffe|r
+    >>Engouffrez-vous profondément dans la grotte, prenez le pont, cherchez une statue de chat dans une alcôve et cliquez sur le petit orbe à côté de la statue
+    >>Ramassez la |cRXP_LOOT_Relique de la Griffe|r
     .goto 1450/1,-3117.400,7455.300
     .complete 98404,2 << Skyborne --|1/1 Relic of the Claw
     .complete 98342,2 << !Skyborne --|1/1 Relic of the Claw
 step << Druid
     >>Cliquez sur le petit orbe à côté de la statue de chat
-    >>Pillez |cRXP_LOOT_Relic of the Silent (Ombre)|r
+    >>Ramassez la |cRXP_LOOT_Relique de l'ombre furtive|r
     .goto 1450/1,-3099.200,7485.700
     .complete 98404,3  << Skyborne --|1/1 Relic of the Silent Shadow
     .complete 98342,3  << !Skyborne --|1/1 Relic of the Silent Shadow
 step << Druid
     >>Cliquez sur le petit orbe à côté de la statue de chat
-    >>Pillez |cRXP_LOOT_Relic of the Crok|r
+    >>Ramassez la |cRXP_LOOT_Relique du Croc|r
     .goto 1450/1,-3054.100,7476.800
     .complete 98404,1  << Skyborne --|1/1 Relic of the Fang
     .complete 98342,1  << !Skyborne --|1/1 Relic of the Fang
 step << Druid !Skyborne
     .goto 1450/1,-2640.000,7338.900
-     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Esprit du Grand félin|r
-    .turnin 98342 >>Rendez la quête Esprit du Grand félin
-    .accept 98739 >>Acceptez la quête Blessings of the Esprit du Grand f??lin
+     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à l' |cRXP_FRIENDLY_Esprit du Grand félin|r
+    .turnin 98342 >>Rendez la quête L’esprit du Grand félin
+    .accept 98739 >>Acceptez la quête Bénédiction de l’esprit du Grand félin
     .target Great Cat Spirit
 step << Druid Skyborne
     .goto 1450/1,-2395.400,7361.400
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Avatar of Saeyleenan::272054|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à l' |cRXP_FRIENDLY_Avatar de Saeyleenan::272054|r
     .target Avatar of Saeyleenan::272054
-    .turnin 98404 >>Rendez la quête The Great Windborne Chat Esprit
-    .accept 98738 >>Acceptez la quête Blessings of the Great Windborne Chat Esprit
+    .turnin 98404 >>Rendez la quête L’esprit du Grand félin du vent
+    .accept 98738 >>Acceptez la quête Bénédiction de l’esprit du Grand félin du vent
 step << Druid
     #completewith next
     .cast 18960 >>Lancer [Téléportation : Reflet-de-Lune]
@@ -3943,9 +3943,9 @@ step << Druid
 step << Druid
     .goto 1450/1,-2678.200,8021.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Dendrite Starblaze::11802|r
-    .turnin 98738 >>Rendez la quête Blessings of the Great Windborne Chat Esprit << Skyborne
-    .turnin 98739 >>Rendez la quête Blessings of the Esprit du Grand f??lin << !Skyborne
-    .accept 98362 >>Acceptez la quête Les Pitons-du-Tonnerre
+    .turnin 98738 >>Rendez la quête Bénédiction de l’esprit du Grand félin du vent << Skyborne
+    .turnin 98739 >>Rendez la quête Bénédiction de l’esprit du Grand félin << !Skyborne
+    .accept 98362 >>Acceptez la quête Vers les Pitons-du-Tonnerre
     .target Dendrite Starblaze::11802
 step << Druid
     .hs >> Utilisez votre Pierre de foyer pour revenir aux Pitons-du-Tonnerre
@@ -3964,7 +3964,7 @@ step << Druid
 step << Druid
     .goto 1456/1,-281.59,-1039.61
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Turak|r
-    .turnin 98362 >>Rendez la quête Les Pitons-du-Tonnerre
+    .turnin 98362 >>Rendez la quête Vers les Pitons-du-Tonnerre
     .target Turak Runetotem
 step << Rogue
     .goto 1456/1,-36.52,-1244.05
@@ -4033,7 +4033,7 @@ step << Hunter
 step << Hunter
     #completewith KayaLives
     #optional
-    +Équipez l' [Arc courbe lourd]
+    +Équipez l'[Arc courbe lourd]
     .use 3027
     .itemcount 3027,1
     .itemStat 18,QUALITY,<7
@@ -4122,7 +4122,7 @@ step
     .goto 1413/1,-1960.600,653.700,50,0
     .goto 1413/1,-1871.600,653.700,50,0
     .goto 1413/1,-1729.700,592.400,50,0
-    >>Tuez les |cRXP_ENEMY_Savannah Patriarchs|r. Pillez-les pour obtenir leurs |cRXP_LOOT_Hides|r
+    >>Tuez les |cRXP_ENEMY_Patriarches des savanes|r. Dépouillez-les pour leur |cRXP_LOOT_Peau|r
     .complete 95494,1 --|6/6 Savannah Lion Hide
     .mob Savannah Patriarch
 step
@@ -4212,7 +4212,7 @@ step << Hunter
     .itemcount 10621,1
 step << Hunter
     .goto 1440/1,-2240.94,1778.570
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Torek|r pour commencer l'escorte
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Torek|r pour commencer une escorte
     >>|cRXP_FRIENDLY_Torek|r a un temps de réapparition de 5 minutes
     .accept 6544 >> Acceptez la quête L'assaut de Torek
     .target Torek
@@ -4426,7 +4426,7 @@ step
 step
     .goto 1442/1,925.27,885.42,5,0
     .goto 1442/1,920.88,911.47
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Jeeda|r au deuxième étage de l'auberge
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Jeeda|r au second étage de l'auberge
     .vendor 4083 >> |cRXP_BUY_Achetez-lui des|r [Potions de soins] |cRXP_BUY_si elle en a en stock|r << !Warrior
     .vendor 4083 >> |cRXP_BUY_Achetez-lui des|r [Potions de soins] |cRXP_BUY_et des|r [Viétérule] |cRXP_BUY_si elle en a en stock|r << Warrior
     .target Jeeda
@@ -4549,7 +4549,7 @@ step << skip
 step
     .goto 1440/1,-632.700,2311.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Va'xug Firefure|r
-    .accept 98251 >>Acceptez la quête Jamais Coming Retour
+    .accept 98251 >>Acceptez la quête Point de non-retour
     .target Va'xug Firefure
 step
     #loop
@@ -4560,7 +4560,7 @@ step
     .goto 1440/1,-712.300,2023.900,50,0
     .goto 1440/1,-534.500,2045.100,50,0
     >>Tuez les |cRXP_ENEMY_Vieux ours d’Ashenvale|r et les |cRXP_ENEMY_Cerfs à corne noire|r
-    >>|cRXP_WARN_Attention à |cRXP_ENEMY_Ursangous|r (niveau 25 puissant) qui patrouille dans la zone|r
+    >>|cRXP_WARN_Faites attention à |cRXP_ENEMY_Ursangous|r (mob puissant de niveau 25) qui patrouille dans la zone|r
     .complete 98251,2 --|6/6 Ashenvale Bear slain
     .mob +Ashenvale Bear
     .complete 98251,1 --|6/6 Shadowhorn Stag slain
@@ -4568,8 +4568,8 @@ step
 step
     .goto 1440/1,-632.900,2312.000
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Va'xug Firefure|r
-    .turnin 98251 >>Rendez la quête Jamais Coming Retour
-    .accept 98252 >>Acceptez la quête A Ediv Chemin
+    .turnin 98251 >>Rendez la quête Point de non-retour
+    .accept 98252 >>Acceptez la quête La voie du Vide
     .target Va'xug Firefure
 step
     .goto 1440/1,-545.200,2446.600
@@ -4579,7 +4579,7 @@ step
 step
     .goto 1440/1,-545.500,2445.400
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à l' |cRXP_FRIENDLY_Oeil de Kilrogg|r
-    .turnin 98252 >>Rendez la quête A Ediv Chemin
+    .turnin 98252 >>Rendez la quête La voie du Vide
     .target Eye of Kilrogg
     .isQuestComplete 98252
 step
@@ -4622,7 +4622,7 @@ step
 step
     #label ZoramFP
    .goto 1440/1,994.16,3373.730
-   >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Andruk|r
+   >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Andruk, Zoram'gar|r
    .fp Zoram'gar Outpost >> Prenez le chemin de vol de l'Avant-poste de Zoram'gar
    .target Andruk
    .isQuestAvailable 6442
@@ -4643,7 +4643,7 @@ step
 step
     #ah
     #completewith WrathtailHeads
-    +|cRXP_WARN_Gardez tous les|r |T134332:0|t[Déchiqueteur Operating Manuel Pages] |cRXP_WARN_que vous pillez|r
+    +|cRXP_WARN_Gardez toutes vos|r |T134332:0|t[Pages du Manuel d'utilisation du Déchiqueteur] |cRXP_WARN_que vous récupérez|r
 step
    .goto 1440/1,1004.54,3341.83
    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Muglash|r
@@ -4752,7 +4752,7 @@ step
 step
     #completewith JourneytoTM
     .goto 1440/1,994.16,3373.730
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Andruk|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Andruk, Zoram'gar|r
     .fly Thunder Bluff >> Volez à Thunder Bluff
     .zoneskip Thunder Bluff
     .target Andruk
@@ -4803,7 +4803,7 @@ step
     #ah
     .goto 1456/1,24.85,-1252.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Chesmu|r
-    .bankdeposit 16645,16646,16647,16648,16649,16650,16651,16652,16653,16654,16655,16656 >>Déposez tous vos |T134332:0|t[Déchiqueteur Operating Manuel Pages]
+    .bankdeposit 16645,16646,16647,16648,16649,16650,16651,16652,16653,16654,16655,16656 >>Déposez toutes vos |T134332:0|t[Pages du Manuel d'utilisation du Déchiqueteur]
     .target Chesmu
 step << Warlock
     .goto 1456/1,26.1,-1196.66
@@ -4820,14 +4820,14 @@ step << !Warlock
 step << Warlock
     #optional
     .goto 1440/1,994.16,3373.730
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Andruk|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Andruk, Zoram'gar|r
     .fly Camp Taurajo >>Volez au Camp Taurajo
     .target Andruk
     .zoneskip Ashenvale,1
 step << !Warlock
     #optional
     .goto 1440/1,994.16,3373.730
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Andruk|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Andruk, Zoram'gar|r
     .fly Orgrimmar >>Volez à Orgrimmar
     .target Andruk
     .zoneskip Ashenvale,1
@@ -4929,7 +4929,7 @@ step << Priest/Warlock
     .target Katis
 step << Mage
     .goto 1454/1,-4218.64,1473.72
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |r |cRXP_FRIENDLY_Pephredo|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|r |cRXP_FRIENDLY_Pephredo|r
     .train 2138 >> Apprenez vos sorts de classe
     .target Pephredo
     .xp <22,1
@@ -4937,7 +4937,7 @@ step << Mage
 step << Mage
     #optional
     .goto 1454/1,-4218.64,1473.72
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |r |cRXP_FRIENDLY_Pephredo|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|r |cRXP_FRIENDLY_Pephredo|r
     .train 2121 >> Apprenez vos sorts de classe
     .target Pephredo
     .xp <24,1
@@ -5020,7 +5020,7 @@ step << Rogue
     .goto 1413/1,-2927.11,1236.18
     >>Au sommet de la tour vous trouverez |cRXP_ENEMY_Gallywix|r. Dépouillez-le pour sa |cRXP_LOOT_Tête|r
     >>Utilisez [Embuscade] pour réduire ses PV de moitié. Utilisez [Suriner] pour récupérer votre énergie et utiliser [Évasion]
-	>>Rappelez-vous d'utiliser une potion et un [Thé aux chardons] si nécessaire
+	>>N'oubliez pas d'utiliser une Potion et un [Thé aux chardons] si nécessaire
     .complete 2478,4 --Gallywix's Head (1)
     .mob Grand Foreman Puzik Gallywix
     --VV Video?
@@ -5139,7 +5139,7 @@ step
 step
     .goto 1454/1,-4739.57,2036.84
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sovik|r
-    >>|cRXP_WARN_Faites attention ! Vous devez d'abord passer par son dialogue, après quoi vous accepterez la quête automatiquement|r
+    >>|cRXP_WARN_Soyez vigilant ! Vous devez d'abord parcourir son dialogue, et après cela vous accepterez la quête automatiquement|r
     .accept 2842 >>Acceptez la quête L'ingénieur en chef Scooty
     .target Sovik
 step << skip --Rogue
@@ -5154,7 +5154,7 @@ step << Rogue
     .aura -9991
 step << Rogue
     #optional
-    .destroy 8051 >> Détruisez le [Lance-fusée] de vos sacs, il n'est plus nécessaire
+    .destroy 8051 >> Détruisez le [Lance-fusée] de vos sacs, il n'est plus utile
     .destroy 8066 >> Détruisez le [Sifflet de Fizzule] de vos sacs, il n'est plus nécessaire
 step
     #optional
@@ -5179,7 +5179,7 @@ step
     .abandon 6563 >>Abandonnez la quête L'Essence d'Aku'Mai
 step
     #optional
-    .abandon 97003 >>Abandonnez la quête Chol'aruk the Ravener
+    .abandon 97003 >>Abandonnez la quête Chol’aruk le Vorace
 step
     .zone Durotar >> Quittez Orgrimmar
     .zoneskip Tirisfal Glades

@@ -108,7 +108,7 @@ step << Warrior/Rogue/Paladin
     .target Thelgrum Stonehammer
 step
     .goto Darkshore,38.844,43.416
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|cRXP_FRIENDLY_Tharnariun Treetender|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tharnariun Soigneflore|r
     .accept 2118 >> Acceptez Plagued Lands
     .target Tharnariun Treetender
 step
@@ -194,7 +194,7 @@ step
 step
 #map Darkshore
     .goto Felwood,21.63,18.15
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|cRXP_FRIENDLY_Tharnariun Treetender|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tharnariun Soigneflore|r
     .turnin 2118 >> Rendez la quête Terres malades
     .accept 2138 >> Acceptez la quête Nettoyage de l'infection
     .target Tharnariun Treetender
@@ -257,7 +257,7 @@ step << NightElf
 step << NightElf
     #completewith next
     .goto Teldrassil,55.889,89.456
-    .zone Darnassus >> Prenez le portail violet vers Darnassus
+    .zone Darnassus >> Prenez le portail violet pour Darnassus
 step << Druid
     .goto Darnassus,35.375,8.405
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Mathrengyl Bearwalker|r
@@ -271,7 +271,7 @@ step << NightElf Warrior
     .trainer >> Apprenez vos sorts de classe
     .target Arias'ta Bladesinger
 step << NightElf Warrior
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Ilyenia Moonfire|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t Parlez à |cRXP_FRIENDLY_Ilyenia Moonfire|r
     .skipgossip 11866,1
     .goto Darnassus,57.56,46.72
     .train 2567 >> Apprenez la compétence Armes de jet
@@ -337,7 +337,7 @@ step << Warrior/Rogue
     .target Laird
 step
     .goto Darkshore,37.708,43.431
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinelle Glynda Nal'Shea|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
     .accept 4811 >> Accept Les Red Crystal
     .target Sentinel Glynda Nal'Shea
 step
@@ -392,7 +392,7 @@ step
 step
     #label Tysha
     .goto Darkshore,40.30,59.70
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinelle Tysha Moonblade|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinel Tysha Moonblade|r
     .accept 953 >> Acceptez la quête La Chute d'Ameth'Aran
     .target Sentinel Tysha Moonblade
 step
@@ -437,7 +437,7 @@ step
 #map Darkshore
     .goto Felwood,23.29,36.73
     .target Sentinel Tysha Moonblade
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinelle Tysha Moonblade|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinel Tysha Moonblade|r
     .turnin 953 >> Rendez la quête La Chute d'Ameth'Aran
 step
     #completewith BashalFinal
@@ -485,7 +485,7 @@ step
 step
     .goto Darkshore,38.109,41.170,5,0
     .goto Darkshore,37.512,41.674
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Gorbold Steelhand|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|cRXP_FRIENDLY_Gorbold Steelhand|r
     +Achetez des |T134059:0|t[Epices douces]
     >>|cRXP_WARN_Utilisez des|r |T134059:0|t[Epices douces] |cRXP_WARN_et vos|r |T132832:0|t[Petits Oeufs] |cRXP_WARN_pour faire des Oeufs aux herbes. Faites cela jusqu'à ce que votre Cuisine ait atteint le niveau 10|r
     .skill cooking,10,1 -- step only displays if cooking skill is less than 10
@@ -1097,7 +1097,7 @@ step << Rogue
     .target Fenthwick
 step << Rogue
     .goto Ironforge,61.170,89.539
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Buliwyf Stonehand|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Buliwyf Main-de-pierre|r
     .train 198 >> Acheter la compétence pour porter des masses à une main
     .target Buliwyf Stonehand
 step << Hunter
@@ -1112,7 +1112,7 @@ step << Warrior
     .target Bilban Tosslespanner
 step << Warrior
     .goto Ironforge,61.170,89.539
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Buliwyf Stonehand|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Buliwyf Main-de-pierre|r
     .train 199 >> Acheter la compétence pour porter des masses à deux mains
     .target Buliwyf Stonehand
 step << Warrior

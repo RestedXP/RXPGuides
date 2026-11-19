@@ -239,7 +239,7 @@ step << Horde !Warrior !Rogue/Alliance !Warrior !Rogue !Hunter
     .isQuestAvailable 93552 -- Harvesting Windstones
     .goto 2521,42.749,24.496
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Uualia Solcrête::251537|r
-    >>|cRXP_BUY_Achetez des|r [Refreshing Spring Water] |cRXP_BUY_à Duokna|r << !Hunter !Shaman
+    >>|cRXP_BUY_Achetez des|r [Eau de source] |cRXP_BUY_à Shara|r << !Hunter !Shaman
     .vendor 251537 >>Vendez tout ce dont nous n'avez pas besoin
     *Ne vendez pas votre |T133970:0|t[Viande maigre] et vos |T132889:0|t[Étoffes de lin]. << Alliance
     .collect 159,20 << !Hunter !Shaman --Refreshing Spring Water (20)
@@ -2303,6 +2303,14 @@ step
     .turnin 97965 >>Rendez la quête Introduction au camping : les premiers soins
     .target Naleeia Tattermend::257018
 step
+    .train 2366,3 --Herbalism Trained
+    .isQuestComplete 97968 --Camping 101: Herbalism
+    .isQuestComplete 92516 --Hippogryph Harassment
+    .goto 2521,43.0,43.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Halassa Fernbreeze::257021|r.
+    .turnin 97968 >>Rendez la quête Introduction au camping : l'herboristerie
+    .target Halassa Fernbreeze::257021
+step
     .train 7411,3 -- Enchanting Trained
     .isQuestComplete 98286 -- Camping 101: Enchanting
     .isQuestComplete 92516 -- Hippogryph Harassment
@@ -2566,7 +2574,7 @@ step << Horde Shaman
     .goto 2521,44.71,45.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Veena Vérinuage::254358|r
     .vendor 254358 >>|cRXP_BUY_Achetez jusqu'à trois|r |T133634:0|t[Petites sacoches marrons] |cRXP_BUY_si nécessaire|r.
-    >>|cRXP_BUY_Achetez du|r [Lait frais] |cRXP_BUY_à Kauth|r
+    >>|cRXP_BUY_Achetez du|r [Lait frais] |cRXP_BUY_à Heron|r
     *|cRXP_WARN_Lorsque vous équipez des sacs, assurez-vous que votre Sac de composants est dans l'emplacement dédié au Sac de composants|r.
     *Ne vendez pas les |T132832:0|t[Petits œufs] et la |T133972:0|t[Viande de trotteur].
     .target Veena Vericloud::254358
@@ -3119,6 +3127,14 @@ step
     .turnin 98286 >>Rendez la quête Introduction au camping : l’enchantement
     .target Nasalanna Windsinger::257020
 step
+    .train 2366,3 --Herbalism Trained
+    .isQuestComplete 97968 --Camping 101: Herbalism
+    .isQuestComplete 92550 -- Havoc in the Highlands
+    .goto 2521,43.0,43.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Halassa Fernbreeze::257021|r.
+    .turnin 97968 >>Rendez la quête Introduction au camping : l'herboristerie
+    .target Halassa Fernbreeze::257021
+step
     .train 3273,3 -- First Aid Trained
     .itemcount 2589,1 -- Linen Cloth
     .goto 2521,43.08,46.31
@@ -3187,7 +3203,7 @@ step
     .goto 2521,44.71,45.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Veena Vérinuage::254358|r
     .vendor 254358 >>Vendez votre camelote. |cRXP_BUY_Achetez jusqu'à trois|r |T133634:0|t[Petites sacoches marrons] |cRXP_BUY_si nécessaire|r.
-    *|cRXP_BUY_Achetez du|r [Lait frais] |cRXP_BUY_à Kauth|r << Druid/Mage/Priest/Warlock/Paladin
+    *|cRXP_BUY_Achetez du|r [Lait frais] |cRXP_BUY_à Heron|r << Druid/Mage/Priest/Warlock/Paladin
     -- *|cRXP_BUY_Buy|r |T132382:0|t[Rough Arrows] and |T132382:0|t[Sharp Arrows] << Hunter
     *|cRXP_BUY_Achetez des|r [Flèche pointue] << Hunter
     -- *|cRXP_BUY_Buy|r |T132382:0|t[Sharp Arrows] << Alliance Rogue
@@ -3842,13 +3858,13 @@ step << Horde Rogue
     .itemcount 277107,1 --Zephrali Bludgeon
     .equip 16,277107 >>|cRXP_WARN_Équipez le|r |T7791298:0|t[Gourdin zéphrali].
     .use 277107 --Zephrali Bludgeon
-step << Horde
-    .train 2366,3 -- Herbalism Trained
-    .isQuestComplete 97968 -- Camping 101: Herbalism
-    .goto 2521,57.890,75.514
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Syriel Noctepluie::254345|r.
-    .target Syriel Nightrain::254345
-    .turnin 97968 >>Rendez la quête Introduction au camping : l'herboristerie
+-- step << Horde
+--     .train 2366,3 -- Herbalism Trained
+--     .isQuestComplete 97968 -- Camping 101: Herbalism
+--     .goto 2521,57.890,75.514
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Syriel Nightrain::254345|r.
+--     .target Syriel Nightrain::254345
+--     .turnin 97968 >>Turn in Camping 101: Herbalism
 step << Hunter Horde
     .money <0.1345
     .isOnQuest 93735 -- The Broken Construct
@@ -4716,8 +4732,8 @@ step << Horde Hunter
     -- .goto 2521,53.799,72.161,35,0
     >>|cRXP_WARN_Lancez|r |T132164:0|t[Apprivoise une bête] |cRXP_WARN_sur un |cRXP_ENEMY_Clampant chantevent::254588|r pour le dompter|r -- .tame 1997
     *|cRXP_WARN_NOTE:|r Si tous les crabes sont morts, vous pouvez aussi dompter un |cRXP_ENEMY_Trotteur des trombes hargneux::251707|r jusqu'à ce que vous trouviez un crabe.
-    .train 2981 >> Attaquez des mobs avec celui-ci pour qu'il apprenne [Claw (Rank 2)]
-    .link https://www.wow-petopia.com/classic/training.php >> Cliquez ici pour plus d'information sur le dressage des familiers
+    .train 2981 >> Attaquez des créatures avec pour qu'il apprenne [Griffe (Rang 2)]
+    .link https://www.wow-petopia.com/classic/training.php >> |cRXP_WARN_Cliquez ici pour plus d'information sur le dressage des familiers|r
 	.mob Windsong Crawler::254588
 step << Horde Hunter
     .isOnQuest 93317
@@ -4864,13 +4880,13 @@ step << Alliance Hunter
     .turnin 94979 >>Rendez la quête Dompter la bête
     .accept 94013 >>Acceptez la quête Dompter la bête
     .target Quel'ana Quickgale::252389
-step << Alliance Hunter
-    .train 2366,3 -- Herbalism Trained
-    .isQuestComplete 97968 -- Camping 101: Herbalism
-    .goto 2521,57.890,75.514
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Syriel Noctepluie::254345|r.
-    .turnin 97968 >>Rendez la quête Introduction au camping : l'herboristerie
-    .target Syriel Nightrain::254345
+-- step << Alliance Hunter
+--     .train 2366,3 -- Herbalism Trained
+--     .isQuestComplete 97968 -- Camping 101: Herbalism
+--     .goto 2521,57.890,75.514
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Syriel Nightrain::254345|r.
+--     .turnin 97968 >>Turn in Camping 101: Herbalism
+--     .target Syriel Nightrain::254345
 step << Alliance Hunter
     #optional
     #completewith next
@@ -4931,8 +4947,8 @@ step << Alliance Hunter
     .goto 2521,53.799,72.161,35,0
     >>|cRXP_WARN_Lancez|r |T132164:0|t[Apprivoise une bête] |cRXP_WARN_sur un |cRXP_ENEMY_Clampant chantevent::254588|r pour le dompter|r -- .tame 1997
     *|cRXP_WARN_NOTE:|r Si tous les crabes sont morts, vous pouvez aussi dompter un |cRXP_ENEMY_Trotteur des trombes hargneux::251707|r jusqu'à ce que vous trouviez un crabe.
-    .train 2981 >> Attaquez des mobs avec celui-ci pour qu'il apprenne [Claw (Rank 2)]
-    .link https://www.wow-petopia.com/classic/training.php >> Cliquez ici pour plus d'information sur le dressage des familiers
+    .train 2981 >> Attaquez des créatures avec pour qu'il apprenne [Griffe (Rang 2)]
+    .link https://www.wow-petopia.com/classic/training.php >> |cRXP_WARN_Cliquez ici pour plus d'information sur le dressage des familiers|r
 	.mob Windsong Crawler::254588
 step << Mage
     #label SkyhopperMultiClass
@@ -4954,13 +4970,13 @@ step << Mage
     >>Tuez les |cRXP_ENEMY_Sauteciels::251314|r.
     .complete 93949,1 --|8/8 Enchanted Skyhopper Exterminated
     .mob Skyhopper::251314
-step << Alliance !Hunter
-    .train 2366,3 -- Herbalism Trained
-    .isQuestComplete 97968 -- Camping 101: Herbalism
-    .goto 2521,57.890,75.514
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Syriel Noctepluie::254345|r.
-    .turnin 97968 >>Rendez la quête Introduction au camping : l'herboristerie
-    .target Syriel Nightrain::254345
+-- step << Alliance !Hunter
+--     .train 2366,3 -- Herbalism Trained
+--     .isQuestComplete 97968 -- Camping 101: Herbalism
+--     .goto 2521,57.890,75.514
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Syriel Nightrain::254345|r.
+--     .turnin 97968 >>Turn in Camping 101: Herbalism
+--     .target Syriel Nightrain::254345
 step << Alliance !Mage/Alliance !Hunter
     #loop
     .goto 2521,58.85,75.49,30,0
@@ -6214,8 +6230,8 @@ step
 step << Alliance
     .goto 2521,63.80,36.00
     .itemcount 265476,1
-    >>Utilisez la |T134332:0|t[Missive déchirée] dans vos sacs pour lancer une quête.
-    .accept 94490 >>Acceptez la quête Missive déchirée
+    >>Utilisez la |T134332:0|t[Ripped Missive] dans vos sacs pour commencer la quête.
+    .accept 94490 >>Acceptez la quête Ripped Missive
     .use 265476 -- Ripped Missive
 step
     .goto 2521,63.93,33.76,20,0
@@ -6259,8 +6275,8 @@ step
     .target Jorel Windsinger::258130
 step << Horde
     .itemcount 265476,1
-    >>Utilisez la |T134332:0|t[Ripped Missive] dans vos sacs pour commencer la quête.
-    .accept 94490 >>Acceptez la quête Ripped Missive
+    >>Utilisez la |T134332:0|t[Missive déchirée] dans vos sacs pour lancer une quête.
+    .accept 94490 >>Acceptez la quête Missive déchirée
     .use 265476 -- Ripped Missive
 step
     #optional
@@ -6923,7 +6939,7 @@ step << Alliance Druid
     .target Archmage Ansirem Runeweaver::2543
 step << Alliance
     .goto 1416/0,445.93,450.00
-    >>|TInterface/cursor/crosshair/interact.blp:20|tCliquez sur le |cRXP_PICK_Portail|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tCliquez sur le |cRXP_PICK_Portail|r
     .complete 94947,1 --Take the Skyborne Portal to Stormwind
 step << Alliance Druid
     .goto 1453/0,1100.200,-8776.400
@@ -7621,7 +7637,7 @@ step << Horde !Hunter
     .goto 1458/0,610.42,1684.44,35,0
     .goto 1458/0,663.19,1600.46,35,0
     .goto 1420/0,724.25,1682.66,50,0
-    .zone Tirisfal Glades >> Sortez de Fossoyeuse par les Égouts
+    .zone Tirisfal Glades >> Quittez Undercity par les Égouts
 step << Horde !Hunter
     #label Entersilverpine
     .zoneskip Silverpine Forest

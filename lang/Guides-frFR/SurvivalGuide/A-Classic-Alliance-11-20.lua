@@ -443,7 +443,7 @@ step << Druid
 step << Druid
     #completewith next
     .goto Teldrassil,55.889,89.456
-    .zone Darnassus >> Prenez le portail violet vers Darnassus
+    .zone Darnassus >> Prenez le portail violet pour Darnassus
 step << Druid
     .goto Darnassus,35.375,8.405
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Mathrengyl Bearwalker|r
@@ -579,7 +579,7 @@ step
 step
 #map Darkshore
     .goto Felwood,21.63,18.15
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|cRXP_FRIENDLY_Tharnariun Treetender|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tharnariun Soigneflore|r
     .accept 2118 >> Acceptez Plagued Lands
     .target Tharnariun Treetender
 step
@@ -699,13 +699,13 @@ step
     .accept 947 >> Acceptez la quête La caverne aux champignons
 step
 #map Darkshore
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinelle Glynda Nal'Shea|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
 	.target Sentinel Glynda Nal'Shea
     .goto Felwood,20.34,18.12
     .accept 4811 >> Accept Les Red Crystal
 step
 #map Darkshore
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|cRXP_FRIENDLY_Tharnariun Treetender|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tharnariun Soigneflore|r
 	.target Tharnariun Treetender
     .goto Felwood,21.63,18.15
     .turnin 2118 >> Rendez la quête Terres malades
@@ -720,7 +720,7 @@ step
     .accept 4761 >> Acceptez la quête Thundris Tissevent
 step
 #map Darkshore
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Gorbold Steelhand|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|cRXP_FRIENDLY_Gorbold Steelhand|r
 	.target Gorbold Steelhand
     .goto Felwood,20.80,15.58
     .accept 982 >> Acceptez la quête Océan profond, mer immense
@@ -898,7 +898,7 @@ step
     .goto Darkshore,40.30,59.70,70 >> Voyagez au sud vers |cRXP_FRIENDLY_Sentinel Tysha Moonblade|r à Ameth'Aran
 step
     #label Ameth
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinelle Tysha Moonblade|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinel Tysha Moonblade|r
 	.target Sentinel Tysha Moonblade
     .goto Darkshore,40.30,59.70
     .accept 953 >> Acceptez la quête La Chute d'Ameth'Aran
@@ -971,7 +971,7 @@ step
 #map Darkshore
     .goto Felwood,23.29,36.73
     .target Sentinel Tysha Moonblade
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinelle Tysha Moonblade|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinel Tysha Moonblade|r
     .turnin 953 >> Rendez la quête La Chute d'Ameth'Aran
 step
     #era/som
@@ -1079,7 +1079,7 @@ step << !NightElf !Mage !Paladin !Warlock
 step << !NightElf !Mage !Paladin !Warlock
     #completewith next
     .goto Teldrassil,55.889,89.456
-    .zone Darnassus >> Prenez le portail violet vers Darnassus
+    .zone Darnassus >> Prenez le portail violet pour Darnassus
 step << !NightElf Hunter
     .goto Darnassus,40.377,8.545
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Jocaste|r
@@ -1103,7 +1103,7 @@ step << !NightElf Rogue
     .target Syurna
 step << !NightElf Hunter/!NightElf Warrior
     #sticky
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Ilyenia Moonfire|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t Parlez à |cRXP_FRIENDLY_Ilyenia Moonfire|r
     .skipgossip 11866,1
     .goto Darnassus,57.56,46.72
     .train 264 >> Apprenez la compétence Arcs
@@ -1122,7 +1122,7 @@ step
     #completewith next
     .goto Darkshore,38.109,41.170,5,0
     .goto Darkshore,37.512,41.674
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Gorbold Steelhand|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|cRXP_FRIENDLY_Gorbold Steelhand|r
     +Achetez des |T134059:0|t[Epices douces]
     >>|cRXP_WARN_Utilisez des|r |T134059:0|t[Epices douces] |cRXP_WARN_et vos|r |T132832:0|t[Petits Oeufs] |cRXP_WARN_pour faire des Oeufs aux herbes. Faites cela jusqu'à ce que votre Cuisine ait atteint le niveau 10|r
     .skill cooking,10,1 -- step only displays if cooking skill is less than 10
@@ -1134,7 +1134,7 @@ step
     .target Gorbold Steelhand
 step
 #map Darkshore
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Gorbold Steelhand|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|cRXP_FRIENDLY_Gorbold Steelhand|r
 	.target Gorbold Steelhand
     .goto Felwood,20.80,15.58
     .turnin 982 >> Rendez la quête Océan profond, mer immense
@@ -1156,7 +1156,7 @@ step
     .accept 4763 >> Acceptez la quête La corruption des Noirbois
 step
 #map Darkshore
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinelle Glynda Nal'Shea|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
 	.target Sentinel Glynda Nal'Shea
     .goto Felwood,20.34,18.12
     .turnin 4811 >> Rendez la quête Le cristal rouge
@@ -1174,7 +1174,7 @@ step
 step
 #requires tube1
 #map Darkshore
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|cRXP_FRIENDLY_Tharnariun Treetender|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tharnariun Soigneflore|r
 	.target Tharnariun Treetender
     .goto Felwood,21.63,18.15
     .turnin 2138 >> Rendez la quête Nettoyage de l'infection
@@ -1282,7 +1282,7 @@ step
     .goto Darkshore,54.99,32.04,30,0
     .goto Darkshore,54.99,33.41,15 >> Voyagez vers la Grotte de la Bondissante
 step << Druid
-    >>Utilisez la [Fiole d'échantillon des Chutes de la Bondissante vide] à l'entrée de la Grotte de la Bondissante
+    >>Utilisez la [Fiole d'échantillon des Chutes de la Bondissante vide] à la cascade à l'entrée de la grotte des Chutes de la Bondissante
     .goto Darkshore,54.99,33.41
     .complete 6122,1 --Filled Cliffspring Falls Sampler (1)
 step
@@ -1508,14 +1508,14 @@ step
 step
 #map Darkshore
     #label NorthDarkshore
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinelle Glynda Nal'Shea|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
 	.target Sentinel Glynda Nal'Shea
     .goto Darkshore,37.70,43.39
     .turnin 4813 >> Rendez la quête Les fragments à l'intérieur
 step
 .group
 #map Darkshore
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|cRXP_FRIENDLY_Tharnariun Treetender|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tharnariun Soigneflore|r
 	.target Tharnariun Treetender
     .goto Felwood,21.63,18.15
     .turnin 2139 >> Rendez la quête Espoir de Tharnariun
@@ -1619,7 +1619,7 @@ step << Druid
 step << Druid
     #completewith next
     .goto Teldrassil,55.889,89.456
-    .zone Darnassus >> Prenez le portail violet vers Darnassus
+    .zone Darnassus >> Prenez le portail violet pour Darnassus
 step << Druid
     .goto Darnassus,35.375,8.405
     .target Mathrengyl Bearwalker
@@ -1705,7 +1705,7 @@ step
     .target Gershala Nightwhisper
 step
 #map Darkshore
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|cRXP_FRIENDLY_Tharnariun Treetender|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tharnariun Soigneflore|r
 	.target Tharnariun Treetender
     .goto Felwood,21.63,18.15
     .accept 2139 >> Acceptez la quête Espoir de Tharnariun
@@ -1768,7 +1768,7 @@ step
     .accept 948 >> Acceptez la quête Onu
 step
 #map Darkshore
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|cRXP_FRIENDLY_Tharnariun Treetender|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tharnariun Soigneflore|r
 	.target Tharnariun Treetender
     .goto Felwood,21.63,18.15
     .turnin 2139 >> Rendez la quête Espoir de Tharnariun
@@ -1822,7 +1822,7 @@ step
     .complete 944,1
 step
     #completewith next
-    .cast 5809 >> Utilisez la [Fiole de divination] et placez-la sur le sol
+    .cast 5809 >> Utilisez la [Fiole de divination] et placez la sur le sol
     .use 5251
 step
     .goto Darkshore,38.54,86.05
@@ -1840,7 +1840,7 @@ step
     >>Les |cRXP_ENEMY_Disciples du crépuscule|r |cRXP_WARN_lancent|r |T135953:0|t[Rénovation] |cRXP_WARN_et un sort de |T135915:0|t[Soins] de 3 secondes|r
 step
     .goto Ashenvale,22.36,3.98
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Therylune|r. Cela va démarrer une escorte
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Therylune|r. Cela va commencer une escorte
     >>Passez cette étape si elle n'est pas présente
     >>Les |cRXP_ENEMY_Nervis du crépuscule|r |cRXP_WARN_peuvent|r utiliser |T132343:0|t[Désarmement] |cRXP_WARN_sur vous pendant 6 secondes|r << Rogue/Paladin/Warrior
     >>Les |cRXP_ENEMY_Disciples du crépuscule|r |cRXP_WARN_lancent|r |T135953:0|t[Rénovation] |cRXP_WARN_et un sort de |T135915:0|t[Soins] de 3 secondes|r
@@ -2017,7 +2017,7 @@ step
     .goto Ashenvale,26.19,38.69
     .accept 970 >> Acceptez la quête La Tour d'Althalaxx
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|cRXP_FRIENDLY_Orendil Broadleaf|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Orendil Broadleaf|r
 	.target Orendil Broadleaf
     .goto Ashenvale,26.43,38.59
     .accept 1010 >> Acceptez la quête Les Cheveux de Bathran
@@ -2050,7 +2050,7 @@ step
     .goto Ashenvale,31.89,22.53
     .xp 20 >> Montez jusqu'au niveau 20
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|cRXP_FRIENDLY_Orendil Broadleaf|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Orendil Broadleaf|r
 	.target Orendil Broadleaf
     .goto Ashenvale,26.43,38.59
     .accept 1010 >> Acceptez la quête Les Cheveux de Bathran
@@ -2063,7 +2063,7 @@ step
     .complete 1010,1
     .isOnQuest 1010
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à|cRXP_FRIENDLY_Orendil Broadleaf|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Orendil Broadleaf|r
 	.target Orendil Broadleaf
     .goto Ashenvale,26.43,38.59
     .turnin 1010 >> Rendez la quête Les cheveux de Bathran
@@ -2169,7 +2169,7 @@ step
 step
 .dungeon WC
     #completewith EnterWC
-    >>Tuez tout type de créatures |cRXP_ENEMY_Deviate|r. Dépouillez-les pour leur |cRXP_LOOT_Deviate Hides|r
+    >>Tuez tous types de créatures |cRXP_ENEMY_Deviate|r. Dépouillez-les pour leur |cRXP_LOOT_Deviate Hides|r
     >>Cette quête peut être complétée à l'INTÉRIEUR et à l'EXTÉRIEUR des Cavernes des Lamentations
     .complete 1486,1 -- Deviate Hide (20)
     .isOnQuest 1486
@@ -2198,7 +2198,7 @@ step
     .zoneskip 1414,1 -- similar to stockades, no subzone for WC
 step
 .dungeon WC
-    >>Tuez tout type de créatures |cRXP_ENEMY_Deviate|r. Dépouillez-les pour leur |cRXP_LOOT_Deviate Hides|r
+    >>Tuez tous types de créatures |cRXP_ENEMY_Deviate|r. Dépouillez-les pour leur |cRXP_LOOT_Deviate Hides|r
     .complete 1487,1 -- Deviate Ravager slain (7)
     .complete 1487,2 -- Deviate Viper slain (7)
     .complete 1487,3 -- Deviate Shambler slain (7)
@@ -2218,14 +2218,14 @@ step
 step
 .dungeon WC
     #completewith next
-    >>Tuez tout type de créatures |cRXP_ENEMY_Deviate|r. Dépouillez-les pour leur |cRXP_LOOT_Deviate Hides|r
+    >>Tuez tous types de créatures |cRXP_ENEMY_Deviate|r. Dépouillez-les pour leur |cRXP_LOOT_Deviate Hides|r
     .complete 1486,1 -- Deviate Hide (20)
     .isOnQuest 1486
 step
 .dungeon WC
     >>Tuez |cRXP_ENEMY_Lord Cobrahn|r, |cRXP_ENEMY_Lord Pythas|r, |cRXP_ENEMY_Lord Serpentis|r et |cRXP_ENEMY_Lady Anacondra|r puis parlez au |cRXP_FRIENDLY_Disciple of Naralex|r au début du donjon pour commencer son escorte
     >>Escortez le |cRXP_FRIENDLY_Disciple of Naralex|r à travers les Cavernes des Lamentations et compléter son rituel
-    >>Tuez|cRXP_ENEMY_Mutanus the Devourer|r. Dépouillez-le pour son [|cRXP_LOOT_Glowing Shard|r]
+    >>Tuez |cRXP_ENEMY_Mutanus the Devourer|r. Dépouillez-le pour le [|cRXP_LOOT_Glowing Shard|r]
     >>|cRXP_WARN_Utilisez le [|cRXP_LOOT_Glowing Shard|r] pour commencer la quête|r
     .collect 10441,1,6981,1 -- Glowing Shard (1)
     .accept 6981 >> Acceptez la quête L'Éclat luminescent
@@ -2235,7 +2235,7 @@ step
     .mob Mutanus the Devourer
 step
 .dungeon WC
-    >>Tuez tout type de créatures |cRXP_ENEMY_Deviate|r. Dépouillez-les pour leur |cRXP_LOOT_Deviate Hides|r
+    >>Tuez tous types de créatures |cRXP_ENEMY_Deviate|r. Dépouillez-les pour leur |cRXP_LOOT_Deviate Hides|r
     >>Cette quête peut être complétée à l'INTÉRIEUR et à l'EXTÉRIEUR des Cavernes des Lamentations
     .complete 1486,1 -- Deviate Hide (20)
     .isOnQuest 1486

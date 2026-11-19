@@ -1545,7 +1545,7 @@ step
     .goto Ironforge,39.550,57.490
     .turnin 291 >> Rendez la quête Les rapports
 step << Warrior
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Buliwyf Stonehand|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Buliwyf Main-de-pierre|r
     >>|cRXP_WARN_Équipez maintenant le|r |T133052:0|t[|cRXP_FRIENDLY_Marteau des Frigères|r] |cRXP_WARN_si vous ne l'aviez pas fait avant|r
     .target Buliwyf Stonehand
     .goto Ironforge,61.181,89.514
@@ -2826,7 +2826,7 @@ step << Rogue
 step << Rogue
     #optional
     #completewith next
-    +Équipez la [CImeterre]
+    +Équipez la [Cimeterre]
     .use 2027
     .itemcount 2027,1
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.69
