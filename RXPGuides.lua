@@ -959,7 +959,7 @@ end
 
 local function handleQuestComplete()
     local id = GetQuestID()
-    if not id or id < 0 or addon.questTurnIn[id] == false or addon.disabledQuests[id] then return end
+    if not id or id <= 0 or addon.questTurnIn[id] == false or addon.disabledQuests[id] then return end
 
     local numChoices = GetNumQuestChoices()
 
@@ -1093,6 +1093,8 @@ function addon:QuestAutomation(event, arg1, arg2, arg3)
     if not event then
         if _G.GossipFrame and _G.GossipFrame:IsShown() then
             event = "GOSSIP_SHOW"
+        elseif not (_G.QuestFrame and _G.QuestFrame:IsVisible()) then
+            return
         elseif _G.QuestFrameGreetingPanel and
             _G.QuestFrameGreetingPanel:IsShown() then
             event = "QUEST_GREETING"
