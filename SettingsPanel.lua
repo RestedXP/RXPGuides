@@ -3686,12 +3686,13 @@ function addon.settings:CreateAceOptionsPanel()
 
     AceConfig:RegisterOptionsTable(addon.title, optionsTable)
 
-    optionsTable.args.profiles = LibStub("AceDBOptions-3.0"):GetOptionsTable(
-                                     settingsDB)
-    optionsTable.args.profiles.order = 20
+    local profileOptions = LibStub("AceDBOptions-3.0"):GetOptionsTable(settingsDB)
+    profileOptions.args = copy(profileOptions.args)
+    profileOptions.order = 20
+    optionsTable.args.profiles = profileOptions
 
     -- Add in reload prompt to Ace default pane
-    optionsTable.args.profiles.args["reloadUI"] = {
+    profileOptions.args["reloadUI"] = {
         order = 0,
         name = L("Reload guides and UI"),
         type = 'execute',
@@ -3700,7 +3701,8 @@ function addon.settings:CreateAceOptionsPanel()
             return loadedProfileKey == settingsDB.keys.profile and not settingsDB.isResetting
         end
     }
-    optionsTable.args.profiles.args["resetGuideProgress"] = {
+
+    profileOptions.args["resetGuideProgress"] = {
         order = 0.1,
         name = L("Reset Guide Progress"),
         desc = L("Clear guide progress for current character"),
@@ -3712,14 +3714,14 @@ function addon.settings:CreateAceOptionsPanel()
         end
     }
 
-    optionsTable.args.profiles.args.defaultProfileHeader = {
+    profileOptions.args.defaultProfileHeader = {
         name = "",
         type = "header",
         width = "full",
         order = 900
     }
 
-    optionsTable.args.profiles.args["setDefaultProfile"] = {
+    profileOptions.args["setDefaultProfile"] = {
         order = 910,
         name = L("Set current profile as default"),
         type = 'execute',
