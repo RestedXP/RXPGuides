@@ -2763,7 +2763,7 @@ step << skip
 step
     .goto 1420/0,2037.100,2416.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Hilda, la Ultrajadora|r
-    .turnin 99152 >>Entrega la misión As Above, So Below
+    .turnin 99152 >>Entrega la misión Sea abajo como arriba
     .target Hilda the Breaker
 step
     .goto 1420/0,2122.500,2436.800
@@ -3185,8 +3185,8 @@ step << Paladin
     .target Deathguard Linnea
 step << Paladin
     .goto 1420/0,73.800,2022.300
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Guardia de la Muerte Linnea::1495|r
-    >>|cRXP_WARN_Esta es una pre-misión para "The Cólera of Rath'mael"|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con la |cRXP_FRIENDLY_Guardia de la Muerte Linnea::1495|r
+    >>|cRXP_WARN_Esta es una misión previa para "La furia de Rath'mael"|r
     .turnin 356 >>Entrega la misión Patrulla de la retaguardia
     .target Deathguard Linnea::1495
     .accept 99156 >>Acepta la misión Patrulla de la retaguardia
@@ -3194,14 +3194,14 @@ step << Paladin
 step << Paladin
     .goto 1420/0,-765.200,2518.700
     >>Mata al |cRXP_ENEMY_Riptear|r |cRXP_WARN_(nivel 13 élite)|r. Despójalo para obtener |T134339:0|t[|cRXP_LOOT_Riptear's Corazón|r]
-    >>|cRXP_WARN_Esta es una pre-misión para "The Cólera of Rath'mael"|r
+    >>|cRXP_WARN_Esta es una misión previa para "La furia de Rath'mael"|r
     .complete 99156,1 --|1/1 Riptear's Heart
     .mob Riptear
     .dungeon ROL
 step << Paladin
     .goto 1420/0,74.200,2022.400
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Guardia de la Muerte Linnea::1495|r
-    >>|cRXP_WARN_Esta es una pre-misión para "The Cólera of Rath'mael"|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con la |cRXP_FRIENDLY_Guardia de la Muerte Linnea::1495|r
+    >>|cRXP_WARN_Esta es una misión previa para "La furia de Rath'mael"|r
     .turnin 99156 >>Entrega la misión Patrulla de la retaguardia
     .target Deathguard Linnea::1495
     .dungeon ROL
@@ -3665,7 +3665,7 @@ step
     --#hardcore
     #completewith next
     .goto 1421/0,1538.58,511.39,100,0
-    .subzone 228 >>Viaja de vuelta a El Sepulcro
+    .subzone 228 >>Viaja de regreso a El Sepulcro
 step
     .goto 1421/0,1593.6,554.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Dalar|r
@@ -3822,7 +3822,7 @@ step
     .unitscan Son of Arugal
 step
     #completewith next
-    .goto 1421/0,1538.58,511.39,100 >> Viaja de vuelta a El Sepulcro
+    .goto 1421/0,1538.58,511.39,100 >> Viaja de regreso a El Sepulcro
     .subzoneskip 228
 step
     .goto 1421/0,1593.6,554.23
@@ -3871,7 +3871,7 @@ step
 step
     #completewith next
     #hardcore
-    .goto 1421/0,1538.58,511.39,100 >> Viaja de vuelta a El Sepulcro--c:Silverpine Forest,45.51,41.26
+    .goto 1421/0,1538.58,511.39,100 >> Viaja de regreso a El Sepulcro--c:Silverpine Forest,45.51,41.26
     .subzoneskip 228
 step
     #softcore

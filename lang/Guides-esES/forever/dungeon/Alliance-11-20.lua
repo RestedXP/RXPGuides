@@ -2541,7 +2541,7 @@ step << !NightElf
     .goto 1426/0,-1394.24,-5797.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Videnterra Farsen|r
     >>|cRXP_WARN_Presiona ESC para cancelar la Vista lejana|r
-    .turnin 96392 >> Entrega la misión Farsen's Observar
+    .turnin 96392 >> Entrega la misión La vigilancia de Farsen
     --.accept 96390 >> Accept Nip 'Em in the Bud
     .target Earthseer Farsen
 step << !NightElf
@@ -2559,8 +2559,8 @@ step << !NightElf
     #label OII
     .goto 1426/0,-1394.24,-5797.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Videnterra Farsen|r
-    .turnin 96391 >> Entrega la misión Mapa Subterráneo
-    .accept 96393 >> Acepta la misión Old Ironforge Incursion
+    .turnin 96391 >> Entrega la misión Mapa subterráneo
+    .accept 96393 >> Acepta la misión Incursión a Antigua Forjaz
     .target Earthseer Farsen
 step << !NightElf
     #optional
@@ -2888,12 +2888,12 @@ step
     #requires CrumpledPaper
 step
     #completewith next
-    .goto 1458/0,170.700,1804.700,15 >> |cRXP_WARN_Muere por cualquier enemigo dentro para volver al comienzo de la instancia más rápido. El cementerio está justo afuera del portal de la instancia|r
-    >>|cRXP_WARN_¡NO regreses como espíritu! Corre de vuelta como un|r |T132331:0|t[Fantasma] |cRXP_WARN_hacia el portal de la instancia|r
+    .goto 1458/0,170.700,1804.700,15 >> |cRXP_WARN_Muere a manos de cualquier enemigo de dentro para volver más rápido al inicio de la instancia. El cementerio está justo fuera del portal de la estancia|r
+    >>|cRXP_WARN_¡NO resucites en el ángel! Regresa como|r |T132331:0|t[Fantasma] |cRXP_WARN_hacia el portal de la instancia|r
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Capitán Truman|r
     >>|cRXP_FRIENDLY_Capitán Truman|r |cRXP_WARN_está de vuelta al principio de la mazmorra|r
-    .turnin 95250 >> Entrega la misión Abominable Creatures
+    .turnin 95250 >> Entrega la misión Criaturas abominables
     .target Captain Truman
 step
     .hs >> Usa tu Piedra de hogar para ir a Ventormenta << !NightElf
@@ -3025,8 +3025,8 @@ step << !NightElf
     .isOnQuest 95189
     .goto 1453/0,531.000,-8322.400
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Lady Dena Kennedy|r
-    >>|cRXP_WARN_Ella deambula ligeramente en la Royal Gallery|r
-    .turnin 95189 >> Entrega la misión Crest of Lordaeron
+    >>|cRXP_WARN_Ella deambula un poco por la Galería Real|r
+    .turnin 95189 >> Entrega la misión Blasón de Lordaeron
     .target Lady Dena Kennedy
 step << !NightElf
     .isOnQuest 95195
@@ -3159,7 +3159,7 @@ step << !Skyborne
     #completewith RRDB
     .goto 1453/0,484.200,-8832.500,-1
     .goto 1436/0,1037.42,-10628.27,-1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Dungar Tragolargo|r u |cRXP_FRIENDLY_Thor|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Dungar Tragolargo|r o |cRXP_FRIENDLY_Thor|r
     .fly Redridge >> Vuela a Montañas Crestagrana << !NightElf !Dwarf/!Hunter
     .fp Westfall >> Consigue la ruta de vuelo de Páramos de Poniente << NightElf/Dwarf Hunter
     .target Dungar Longdrink
@@ -4096,7 +4096,7 @@ step
     #optional
     .isOnQuest 4763
     .goto 1439/1,467.08,6409.38
-    >>|cRXP_WARN_Usa el|r |T133748:0|t[Cuenco de purificación vacío] |cRXP_WARN_en el pozo lunar de Auberdine|r
+    >>|cRXP_WARN_Usa el|r |T133748:0|t[Cuenco de purificación vacío] |cRXP_WARN_en la Poza de la Luna de Auberdine|r
     .collect 12347,1,4763,1 --Filled Cleansing Bowl (1)
     .use 12346
 step
@@ -4136,7 +4136,7 @@ step
 step
     .isOnQuest 4763
     .goto 1439/1,467.08,6409.38
-    >>|cRXP_WARN_Usa el|r |T133748:0|t[Cuenco de purificación vacío] |cRXP_WARN_en el pozo lunar de Auberdine|r
+    >>|cRXP_WARN_Usa el|r |T133748:0|t[Cuenco de purificación vacío] |cRXP_WARN_en la Poza de la Luna de Auberdine|r
     .collect 12347,1,4763,1 --Filled Cleansing Bowl (1)
     .use 12346
 step

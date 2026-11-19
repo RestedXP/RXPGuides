@@ -2219,8 +2219,8 @@ step
     .isQuestTurnedIn 440
 step
     .goto 1420/0,74.200,2022.700
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Guardia de la Muerte Linnea::1495|r
-    >>|cRXP_WARN_Esta es una pre-misión para "The Cólera of Rath'mael"|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con la |cRXP_FRIENDLY_Guardia de la Muerte Linnea::1495|r
+    >>|cRXP_WARN_Esta es una misión previa para "La furia de Rath'mael"|r
     .accept 356 >>Acepta la misión Patrulla de la retaguardia
     .target Deathguard Linnea::1495
 step
@@ -2242,21 +2242,21 @@ step
     .mob +Wandering Spirit
 step
     .goto 1420/0,73.800,2022.300
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Guardia de la Muerte Linnea::1495|r
-    >>|cRXP_WARN_Esta es una pre-misión para "The Cólera of Rath'mael"|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con la |cRXP_FRIENDLY_Guardia de la Muerte Linnea::1495|r
+    >>|cRXP_WARN_Esta es una misión previa para "La furia de Rath'mael"|r
     .turnin 356 >>Entrega la misión Patrulla de la retaguardia
     .target Deathguard Linnea::1495
     .accept 99156 >>Acepta la misión Patrulla de la retaguardia
 step
     .goto 1420/0,-765.200,2518.700
     >>Mata al |cRXP_ENEMY_Riptear|r |cRXP_WARN_(nivel 13 élite)|r. Despójalo para obtener |T134339:0|t[|cRXP_LOOT_Riptear's Corazón|r]
-    >>|cRXP_WARN_Esta es una pre-misión para "The Cólera of Rath'mael"|r
+    >>|cRXP_WARN_Esta es una misión previa para "La furia de Rath'mael"|r
     .complete 99156,1 --|1/1 Riptear's Heart
     .mob Riptear
 step
     .goto 1420/0,74.200,2022.400
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Guardia de la Muerte Linnea::1495|r
-    >>|cRXP_WARN_Esta es una pre-misión para "The Cólera of Rath'mael"|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con la |cRXP_FRIENDLY_Guardia de la Muerte Linnea::1495|r
+    >>|cRXP_WARN_Esta es una misión previa para "La furia de Rath'mael"|r
     .turnin 99156 >>Entrega la misión Patrulla de la retaguardia
     .target Deathguard Linnea::1495
 step
@@ -2379,13 +2379,13 @@ step
 step
     .goto Silverpine Forest,42.98,73.22
     >>Mata al |cRXP_ENEMY_Boticario Berard|r. Despoja su |cRXP_LOOT_Libro|r ubicado en la estantería
-    >>|cRXP_WARN_Esto debería completarse en un grupo|r
+    >>|cRXP_WARN_Esto debería completarse en grupo|r
     .complete 450,1 --Berard's Journal (1)
     .mob Apothecary Berard
     .isQuestTurnedIn 447
 step
     .goto 1421/0,1649.400,522.500
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Boticario Renferrel::1937|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Boticario Renferrel::1937|r
     >>|cRXP_WARN_Esta es una pre-misión para "La nueva peste"|r
     .turnin 450 >>Entrega la misión Una fórmula mortal
     .accept 451 >>Acepta la misión Una fórmula mortal
@@ -2445,6 +2445,8 @@ step
     #completewith EnterRoL
     .zone Undercity >>Viaja a Entrañas
 step
+    .goto 1458/0,344.000,1423.800,50,0
+    .goto 1458/0,373.200,1362.100,50,0
     .goto 1458/0,404.500,1434.700
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Maestro boticario Faranell::2055|r
     >>|cRXP_WARN_Esta es una pre-misión para "La nueva peste"|r
@@ -2452,9 +2454,7 @@ step
     .turnin 451 >>Entrega la misión Una fórmula mortal
     .isQuestComplete 451
 step
-    .goto 1458/0,344.000,1423.800,50,0
-    .goto 1458/0,373.200,1362.100,50,0
-    .goto 1458/0,428.400,1417.700
+    .goto 1458/0,428.400,1417.70
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Theodore Griffs::11835|r
     .accept 95216 >>Acepta la misión La nueva peste
     .target Theodore Griffs::11835
@@ -2472,7 +2472,7 @@ step
 .enabledungeon ROL
     #label EnterRoL
     .goto 1458/0,188.400,1804.500
-    .subzone 16611 >>Entra en las Ruinas de Lordaeron
+    .subzone 16611 >>Entra en Ruinas de Lordaeron encima de Entrañas
 step
     #completewith RuinsRathma
     .isOnQuest 92421
@@ -4319,7 +4319,7 @@ step << Druid !Skyborne
     .goto 1450/1,-2640.000,7338.900
      >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Gran espíritu felino|r
     .turnin 98405 >>Entrega la misión El gran espíritu felino
-    .accept 98342 >>Acepta la misión El Gran espíritu felino
+    .accept 98342 >>Acepta la misión El gran espíritu felino
     .target Great Cat Spirit
 step << Druid Skyborne
     .goto 1450/1,-2352.700,7375.600,10,0

@@ -2076,20 +2076,20 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Videnterra Farsen|r
     .turnin 96390 >> Entrega la misión Párteles el coco
     .turnin 96391 >> Entrega la misión Mapa subterráneo
-    .accept 96393 >> Acepta la misión Old Ironforge Incursion
+    .accept 96393 >> Acepta la misión Incursión a Antigua Forjaz
     .target Earthseer Farsen
 step
     .isOnQuest 95213
     .goto 1426/0,-1606.02,-5676.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Capataz de cantera Thesten|r
-    .turnin 95213 >> Entrega la misión Stolen Reventar Powder
-    .accept 95214 >> Acepta la misión Stolen Reventar Powder
+    .turnin 95213 >> Entrega la misión Pólvora explosiva robada
+    .accept 95214 >> Acepta la misión Pólvora explosiva robada
     .target Quarrymaster Thesten
 step
     .isQuestTurnedIn 95213
     .goto 1426/0,-1606.02,-5676.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Capataz de cantera Thesten|r
-    .accept 95214 >> Acepta la misión Stolen Reventar Powder
+    .accept 95214 >> Acepta la misión Pólvora explosiva robada
     .target Quarrymaster Thesten
 step
     .isOnQuest 95214
@@ -2833,7 +2833,7 @@ step << skip
     .target William Pestle
     .goto 1429/0,31.92,-9460.38
     .accept 60 >> Acepta la misión Las velas de los kóbolds
-step << Mage/Rogue
+step << Mage/Rogue/Priest
     #completewith next
     .goto 1429/0,12.52,-9479.85,9 >> Sube al piso de arriba de la Posada
 step << Mage
@@ -2847,6 +2847,11 @@ step << Rogue
     .target Keryn Sylvius
     .goto 1429/0,12.69,-9465.75
     .trainer >> Aprende tus hechizos de clase
+step << Priest
+    .goto 1429/0,33.14,-9460.75
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con la |cRXP_FRIENDLY_Sacerdotisa Josetta|r
+    .trainer >> Aprende tus hechizos de clase
+    .target Priestess Josetta
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Remy "Dos Veces"|r
     .target Remy "Two Times"
@@ -3682,7 +3687,6 @@ step
 step
     .goto 1432/0,-3146.73,-4837.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Norric Lochthane|r
-    >>|cRXP_WARN_Asegúrate de entregar esto antes de que expiren los 10 minutos del|r |T1387609:0|t[Tarro de nieve]
     .turnin 86667 >> Entrega la misión Bajo nieve
     .target Norric Lochthane
 step << Shaman
@@ -4754,7 +4758,6 @@ step
 step
     .goto 1432/0,-3146.73,-4837.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Norric Lochthane|r
-    >>|cRXP_WARN_Asegúrate de entregar esto antes de que expiren los 10 minutos del|r |T1387609:0|t[Tarro de nieve]
     .turnin 86667 >> Entrega la misión Bajo nieve
     .target Norric Lochthane
 step

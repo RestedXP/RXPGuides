@@ -2731,7 +2731,7 @@ step
     .target Sentinel Glynda Nal'Shea
 step
     .goto 1439/1,467.08,6409.38
-    >>|cRXP_WARN_Usa el|r |T133748:0|t[Cuenco de purificación vacío] |cRXP_WARN_en el pozo lunar de Auberdine|r
+    >>|cRXP_WARN_Usa el|r |T133748:0|t[Cuenco de purificación vacío] |cRXP_WARN_en la Poza de la Luna de Auberdine|r
     .collect 12347,1,4763,1 --Filled Cleansing Bowl (1)
     .use 12346
     .isOnQuest 4763
@@ -2797,7 +2797,16 @@ step << Druid
     .xp 16 >> Mata enemigos hasta subir al nivel 16
     .mob Blackwood Pathfinder
     .mob Blackwood Windtalker
-step << Druid
+step << Skyborne Druid
+    .goto 1439/1,766.22,6591.78--c:1439,33.213,39.883
+    .zone Teldrassil >> Toma el barco hacia Darnassus
+    .zoneskip Darnassus
+step << Skyborne Druid
+    .goto 1438/1,841.56,8640.79
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Vesprystus|r
+    .fp Teldrassil >> Consigue la ruta de vuelo de Teldrassil
+    .target Vesprystus
+step << NightElf Druid
     #optional
     #completewith DruidLesson
     .goto 1439/1,561.66,6343.27
@@ -3015,7 +3024,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Gryth Thurden|r
     .fp Ironforge >> Consigue la ruta de vuelo de Forjaz
     .target Gryth Thurden
-step Warrior
+step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Bilban Cálculo|r
     .goto 1455/0,-1234.65,-5035.67
     .trainer >> Aprende tus hechizos de clase
@@ -4952,7 +4961,7 @@ step << !Shaman
     .goto 1453/0,1193.100,-8328.900
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Manifest Clerk Philmor::268511|r
     .target Manifest Clerk Philmor::268511
-    .accept 97220 >>Acepta la misión Philmor's Favor
+    .accept 97220 >>Acepta la misión Favor de Philmor
 step << Mage
     #completewith next
     .goto 1453/0,874.32,-9014.67,10 >> Viaja a la Torre de los Magos
@@ -5334,7 +5343,7 @@ step
     .goto 1433/0,-2508.20,-9620.68,45,0
     .goto 1433/0,-2246.61,-9764.90,45,0
 	>>Mata a los |cRXP_ENEMY_Bastardos de Crestagrana|r y a los |cRXP_ENEMY_Furtivos de Crestagrana|r
-    >>Mata a los |cRXP_ENEMY_Redridge Thrashers|r. Despójalos para obtener sus |cRXP_LOOT_Spiked Collars|r
+    >>Mata a los |cRXP_ENEMY_Descarnadores de Crestagrana|r. Despójalos para obtener sus |cRXP_LOOT_Colleras con pinchos|r
     .complete 246,1 --Redridge Mongrel (10)
     .mob +Redridge Mongrel
     .complete 246,2 --Redridge Poacher (6)
@@ -6150,7 +6159,7 @@ RXPGuides.RegisterGuide([[
 #subgroup Guía de subida rápida de nivel (Speedrun) 1-20
 --#groupid RXP-SRGCE-A1
 #name 19-21 Costa Oscura/Vallefresno
-#next RestedXP Guía Forever (A)\21-23 Vallefresno/Stonetalon
+#next RestedXP Guía Forever (A)\21-23 Vallefresno/Sierra Espolón
 
 step
     #optional

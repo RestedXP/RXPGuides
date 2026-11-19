@@ -1360,7 +1360,7 @@ step
 step
     .goto 2521,44.68,44.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Indari Cosesoles::251993|r.
-    .accept 92515 >>Acepta la misión The Problem With Prideclaws
+    .accept 92515 >>Acepta la misión El problema con los leozarpas
     .target Indari Sunseam::251993
 step
     .goto 2521,44.88,44.19
@@ -2082,7 +2082,7 @@ step
     .subzoneskip 16624,1 -- Shen'dar Village
     .train 2259,3 -- Alchemy Trained
     .goto 2521,41.658,44.784
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Raan Wildwind::263664|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Raan Bravovento::263664|r
     .accept 97963 >>Acepta la misión Campamento básico: Alquimia
     .target Raan Wildwind::263664
 step
@@ -2303,6 +2303,14 @@ step
     .turnin 97965 >>Entrega la misión Campamento básico: Primeros auxilios
     .target Naleeia Tattermend::257018
 step
+    .train 2366,3 --Herbalism Trained
+    .isQuestComplete 97968 --Camping 101: Herbalism
+    .isQuestComplete 92516 --Hippogryph Harassment
+    .goto 2521,43.0,43.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Halassa Fernbreeze::257021|r.
+    .turnin 97968 >>Entrega la misión Campamento básico: Herboristería
+    .target Halassa Fernbreeze::257021
+step
     .train 7411,3 -- Enchanting Trained
     .isQuestComplete 98286 -- Camping 101: Enchanting
     .isQuestComplete 92516 -- Hippogryph Harassment
@@ -2442,7 +2450,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Teeri Bonovento::251906|r
     .target Teeri Wellwind::251906
     .turnin 92516 >>Entrega la misión Acoso de hipogrifos
-    .turnin 93319 >>Entrega los Saqueado Windstones
+    .turnin 93319 >>Entrega la misión Piedras de viento saqueadas
 step << Shaman/Druid
     .money <0.0504
     .isQuestTurnedIn 92516 -- Hippogryph Harassment
@@ -2702,9 +2710,9 @@ step
     .goto 2521,45.67,45.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con la |cRXP_FRIENDLY_Agente Aonda::251523|r.
     *|cRXP_WARN_No uses|r |T132845:0|t[Caminar en el aire] |cRXP_WARN_durante este paso|r.
-    .turnin 92528,1 >>Entrega la misión Among the Faithful << Mage/Druid/Shaman/Priest/Warlock
-    .turnin 92528,2 >>Entrega la misión Among the Faithful << Warrior/Rogue/Paladin
-    .turnin 92528,3 >>Entrega la misión Among the Faithful << Hunter
+    .turnin 92528,1 >>Entrega la misión Entre los fieles << Mage/Druid/Shaman/Priest/Warlock
+    .turnin 92528,2 >>Entrega la misión Entre los fieles << Warrior/Rogue/Paladin
+    .turnin 92528,3 >>Entrega la misión Entre los fieles << Hunter
     .accept 92550 >>Acepta la misión Estragos in the Highlands
     .accept 93926 >>Acepta la misión The Western Observar
     .target Constable Aonda::251523
@@ -2899,7 +2907,7 @@ step
 step
     #optional
     #completewith next
-    >>Mata a |cRXP_ENEMY_Living Relámpago::251662|r.
+    >>Mata al |cRXP_ENEMY_Living Relámpago::251662|r.
     *|cRXP_WARN_Ten cuidado: |cRXP_ENEMY_Living Relámpago|r usa una habilidad similar a Atronar que causa tres veces su daño de cuerpo a cuerpo en un solo golpe.|r
     .complete 92550,2 --4/4 Living Lightning slain
     .mob Living Lightning::251662
@@ -2912,7 +2920,7 @@ step
     .mob +Al'Aketh Stormcaller::252068
 step
     #label LivingLightningA
-    >>Mata al |cRXP_ENEMY_Living Relámpago::251662|r.
+    >>Mata a |cRXP_ENEMY_Living Relámpago::251662|r.
     *|cRXP_WARN_Ten cuidado: |cRXP_ENEMY_Living Relámpago|r usa una habilidad similar a Atronar que causa tres veces su daño de cuerpo a cuerpo en un solo golpe.|r
     .complete 92550,2 --4/4 Living Lightning slain
     .mob Living Lightning::251662
@@ -3069,7 +3077,7 @@ step
     .isQuestComplete 92553 -- Restocking the Larders
     .goto 2521,43.851,43.848
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Zerril Brisaleve::251905|r
-    .turnin 92553 >>Entrega la misión Reposición de existencias
+    .turnin 92553 >>Entrega la misión Reponer de alacenas
     .target Zerril Softbreeze::251905
 step
     .isQuestComplete 92550 -- Havoc in the Highlands
@@ -3118,6 +3126,14 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Nasalanna Vientocantor::257020|r
     .turnin 98286 >>Entrega la misión Campamento básico: Encantamiento
     .target Nasalanna Windsinger::257020
+step
+    .train 2366,3 --Herbalism Trained
+    .isQuestComplete 97968 --Camping 101: Herbalism
+    .isQuestComplete 92550 -- Havoc in the Highlands
+    .goto 2521,43.0,43.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Halassa Fernbreeze::257021|r.
+    .turnin 97968 >>Entrega la misión Campamento básico: Herboristería
+    .target Halassa Fernbreeze::257021
 step
     .train 3273,3 -- First Aid Trained
     .itemcount 2589,1 -- Linen Cloth
@@ -3209,8 +3225,8 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con la |cRXP_FRIENDLY_Agente Aonda::251523|r.
     .turnin 92550,3 >>Entrega la misión Estragos en las Tierras Altas
     .turnin 93927 >>Entrega la misión Un último pedido
-    .accept 92701 >>Acepta la misión a Valanaar << Alliance
-    .accept 92579 >>Acepta la misión a Valanaar << Horde
+    .accept 92701 >>Acepta la misión A Valanaar << Alliance
+    .accept 92579 >>Acepta la misión A Valanaar << Horde
     .accept 93948 >>Acepta la misión Entrega el sello
     .target Constable Aonda::251523
 
@@ -3366,7 +3382,7 @@ step << Alliance Hunter
     .isQuestAvailable 92679 -- Blood Tithe
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.82
     .goto 2521,59.395,75.730
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Falfaan Halfwind::271465|r en la casa.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Falfaan Semivento::271465|r dentro de la casa.
     >>|cRXP_BUY_Compra y equipa un|r |T7810733:0|t[Arco zephralí]
     .collect 277110,1 --Collect Zephrali Bow
     .vendor 271465 >>Vende la basura y repara si es necesario
@@ -3389,7 +3405,7 @@ step << Alliance Warrior/Alliance Paladin
     .isQuestAvailable 92679 --Blood Tithe
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.28
     .goto 2521,59.395,75.730
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Falfaan Halfwind::271465|r en la casa.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Falfaan Semivento::271465|r dentro de la casa.
     >>|cRXP_BUY_Compra y equipa un|r |T7792097:0|t[Quebrantador zephralí].
     .collect 277106,1 --Zephrali Smasher
     .vendor 271465 >>Vende la basura y repara si es necesario.
@@ -3412,7 +3428,7 @@ step << Alliance Shaman/Alliance Druid
     .isQuestAvailable 92679 --Blood Tithe
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.48
     .goto 2521,59.395,75.730
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Falfaan Halfwind::271465|r en la casa.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Falfaan Semivento::271465|r dentro de la casa.
     >>|cRXP_BUY_Compra y equipa un|r |T7798447:0|t[Gran bastón zephralí].
     .collect 277109,1 --Zephrali Greatstaff
     .skipgossipid 141556
@@ -3431,7 +3447,7 @@ step << Alliance Rogue
     .isQuestAvailable 92679 --Blood Tithe
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.35
     .goto 2521,59.395,75.730
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Falfaan Halfwind::271465|r en la casa.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Falfaan Semivento::271465|r dentro de la casa.
     >>|cRXP_BUY_Compra y equipa un|r |T7791298:0|t[Cachiporrazo zephralí].
     .collect 277107,1 --Zephrali Bludgeon
     .vendor 271465 >>Vende la basura y repara si es necesario.
@@ -3537,7 +3553,7 @@ step
     #optional
     #completewith next
     #label DeliverTheSignetA
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Talaanis Shadowsong::252476|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Talaanis Cantosombrío::252476|r.
     .turnin 93948 >>Entrega la misión Entrega el sello
     .target Talaanis Shadowsong::252476
 step
@@ -3554,18 +3570,18 @@ step
     #requires DeliverTheSignetA
     #label Deliver the Signet
     .goto 2521,66.17,76.51
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Talaanis Shadowsong::252476|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Talaanis Cantosombrío::252476|r.
     .turnin 93948 >>Entrega la misión Entrega el sello
     .target Talaanis Shadowsong::252476
 step
     #label BuggedAcceptedA
     .goto 2521,66.18,76.65
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Valennia Stormfist::252383|r.
-    .turnin 92701 >>Entrega la misión To Valanaar << Alliance
-    .turnin 92579,3 >>Entrega la misión To Valanaar << Horde
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Valennia Puñotormenta::252383|r.
+    .turnin 92701 >>Entrega la misión A Valanaar << Alliance
+    .turnin 92579,3 >>Entrega la misión A Valanaar << Horde
     .accept 92699 >>Acepta la misión The Supreme Magister << Alliance
     .accept 92700 >>Acepta la misión The Grand Skyseer << Horde
-    .accept 93949 >>Acepta la misión Bugged << Alliance
+    .accept 93949 >>Acepta la misión Insectos infiltrados << Alliance
     .target Valennia Stormfist::252383
 
 -- ============================================================================
@@ -3584,12 +3600,12 @@ step << Alliance
 step << Alliance
     #completewith Unwelcome Visitors
     .aura 1258510
-    >>Mata |cRXP_ENEMY_Skyhoppers::251314|r.
+    >>Mata a los |cRXP_ENEMY_Saltanubes::251314|r.
     .complete 93949,1 --8/8 Enchanted Skyhopper Exterminated
     .mob Skyhopper::251314
 step << Alliance
     .goto 2521,66.63,79.94
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Elaadrin Evengale::252475|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Elaadrin Ventopar::252475|r.
     .turnin 92699 >>Entrega la misión The Supreme Magister
     .target Elaadrin Evengale::252475
 step << Alliance
@@ -3600,7 +3616,7 @@ step << Alliance
 step << Alliance
     #label Unwelcome Visitors
     .goto 2521,66.35,79.51
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Iaadaria Bitterwind::253004|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Iaadaria Vientoglacial::253004|r.
     .accept 92741 >>Acepta la misión Unwelcome Visitantes
     .target Iaadaria Bitterwind::253004
 step << Alliance
@@ -3635,7 +3651,7 @@ step << Alliance
     .goto 2521,49.75,65.9,30,0
     .goto 2521,50.7,65.36
     >>|TInterface/cursor/crosshair/interact.blp:20|tHaz clic en |cRXP_FRIENDLY_Fillion Flamebreeze::253002|r dentro de la cueva.
-    *|cRXP_WARN_Evita a los pájaros y haz clic en Fillion fuera de combate, o serás teletransportado afuera|r.
+    *|cRXP_WARN_Evita los pájaros y haz clic en Fillion fuera de combate, o te teletransportarás afuera|r.
     *|cRXP_WARN_Si hay un Tornado presente, úsalo para viajar más rápido|r.
     .complete 92849,1 --1/1 Find Fillion Flamebreeze
 step << Alliance
@@ -3655,7 +3671,7 @@ step << Alliance
     .goto 2521,51.55,69.2,35,0
     .goto 2521,52.08,69.41
     >>Lleva |cRXP_FRIENDLY_Fillion Flamebreeze::253281|r a un lugar seguro.
-    *|cRXP_WARN_Evita los pájaros y haz clic en Fillion fuera de combate, o te teletransportarás afuera|r.
+    *|cRXP_WARN_Evita a los pájaros y haz clic en Fillion fuera de combate, o serás teletransportado afuera|r.
     *|cRXP_WARN_Si un pájaro te ataca, cancela el aura portadora para evitar ser teletransportado afuera|r.
     .complete 92849,2 --1/1 Carry Fillion Flamebreeze to safety while avoiding enemies
     .skipgossipid 136430
@@ -3760,7 +3776,7 @@ step << Horde Hunter
     .isQuestAvailable 92679 -- Blood Tithe
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.82
     .goto 2521,59.395,75.730
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Falfaan Halfwind::271465|r en la casa.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Falfaan Semivento::271465|r dentro de la casa.
     >>|cRXP_BUY_Compra y equipa un|r |T7810733:0|t[Arco zephralí]
     .collect 277110,1 --Collect Zephrali Bow
     .vendor 271465 >>Vende la basura y repara si es necesario
@@ -3782,7 +3798,7 @@ step << Horde Warrior
     .isQuestAvailable 92679 --Blood Tithe
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.28
     .goto 2521,59.395,75.730
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Falfaan Halfwind::271465|r en la casa.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Falfaan Semivento::271465|r dentro de la casa.
     >>|cRXP_BUY_Compra y equipa un|r |T7792097:0|t[Quebrantador zephralí].
     .collect 277106,1 --Zephrali Smasher
     .vendor 271465 >>Vende la basura y repara si es necesario.
@@ -3804,7 +3820,7 @@ step << Horde Shaman/Horde Druid
     .isQuestAvailable 92679 --Blood Tithe
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.48
     .goto 2521,59.395,75.730
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Falfaan Halfwind::271465|r en la casa.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Falfaan Semivento::271465|r dentro de la casa.
     >>|cRXP_BUY_Compra y equipa un|r |T7798447:0|t[Gran bastón zephralí].
     .collect 277109,1 --Zephrali Greatstaff
     .vendor 271465 >>Vende la basura y repara si es necesario.
@@ -3827,12 +3843,12 @@ step << Horde Rogue
     .isQuestAvailable 92679 --Blood Tithe
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.35
     .goto 2521,59.395,75.730
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Falfaan Halfwind::271465|r en la casa.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Falfaan Semivento::271465|r dentro de la casa.
     >>|cRXP_BUY_Compra y equipa un|r |T7791298:0|t[Cachiporrazo zephralí].
     .collect 277107,1 --Zephrali Bludgeon
     .vendor 271465 >>Vende la basura y repara si es necesario.
-    *No vendas |T132832:0|t[Pequeño Eggs] y |T133972:0|t[Strider Carne]. << Horde
-    *|cRXP_WARN_Los necesitamos para Cocina más tarde|r.
+    *No vendas |T132832:0|t[Huevos pequeños] ni |T133972:0|t[Carne de zancudo]. << Horde
+    *|cRXP_WARN_Los necesitamos para Cocina después|r.
     .skipgossipid 141556
     .target Falfaan Halfwind::271465
 step << Horde Rogue
@@ -3842,23 +3858,23 @@ step << Horde Rogue
     .itemcount 277107,1 --Zephrali Bludgeon
     .equip 16,277107 >>|cRXP_WARN_Equipa el|r |T7791298:0|t[Cachiporrazo zephralí].
     .use 277107 --Zephrali Bludgeon
-step << Horde
-    .train 2366,3 -- Herbalism Trained
-    .isQuestComplete 97968 -- Camping 101: Herbalism
-    .goto 2521,57.890,75.514
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Syriel Nightrain::254345|r.
-    .target Syriel Nightrain::254345
-    .turnin 97968 >>Entrega la misión Campamento básico: Herboristería
+-- step << Horde
+--     .train 2366,3 -- Herbalism Trained
+--     .isQuestComplete 97968 -- Camping 101: Herbalism
+--     .goto 2521,57.890,75.514
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Syriel Nightrain::254345|r.
+--     .target Syriel Nightrain::254345
+--     .turnin 97968 >>Turn in Camping 101: Herbalism
 step << Hunter Horde
     .money <0.1345
     .isOnQuest 93735 -- The Broken Construct
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.82
     .goto 2521,59.395,75.730
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Falfaan Halfwind::271465|r en la casa.
-    >>|cRXP_BUY_Compra y equipa|r un |T7810733:0|t[Arco zephralí].
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Falfaan Semivento::271465|r dentro de la casa.
+    >>|cRXP_BUY_Compra y equipa un|r |T7810733:0|t[Arco zephralí]
     .collect 277110,1 --Collect Zephrali Bow
-    .vendor 271465 >>Vende basura y repara si es necesario.
-    *No vendas |T133970:0|t[Stringy Carne], |T132832:0|t[Pequeño Eggs] ni |T133972:0|t[Carne de Strider]. << Alliance
+    .vendor 271465 >>Vende la basura y repara si es necesario
+    *No vendas |T133970:0|t[Carne fibrosa], |T132832:0|t[Huevos pequeños], ni |T133972:0|t[Carne de zancudo]. << Alliance
     *No vendas |T132832:0|t[Huevos pequeños] ni |T133972:0|t[Carne de zancudo]. << Horde
     *|cRXP_WARN_Los necesitamos para Cocina después|r.
     .skipgossipid 141556
@@ -4617,7 +4633,7 @@ step << Alliance
     #completewith Accept Catching Wind
     .subzoneskip 16638,1 -- Valanaar
     .aura 1258510
-    >>Mata a los |cRXP_ENEMY_Skyhoppers::251314|r.
+    >>Mata a los |cRXP_ENEMY_Saltanubes::251314|r.
     *|cRXP_WARN_Si encuentras un Tornado, tócalo para obtener su "buff" de velocidad|r.
     *|cRXP_WARN_Mientras el "buff" de velocidad de Tornado esté activo, evita matarlos|r.
     .complete 93949,1 --|8/8 Enchanted Skyhopper Exterminated
@@ -4631,7 +4647,7 @@ step << Alliance
 step << Alliance
     #label Accept Catching Wind
     .goto 2521,66.627,79.942
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Elaadrin Evengale::252475|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Elaadrin Ventopar::252475|r.
     .target Elaadrin Evengale::252475
     .turnin 99260 >>Entrega la misión Fillion's Mission
     .accept 92840 >>Acepta la misión Búsqueda espiritual
@@ -4651,7 +4667,7 @@ step << Horde Hunter
     .mob Windsong Crawler::254588
 step << Horde Hunter
     .goto 2521,59.571,72.639
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Quel'ana Quickgale::252389|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Quel'ana Ventarrápido::252389|r.
     .turnin 94978 >>Entrega la misión Domesticar la bestia
     .accept 94979 >>Acepta la misión Domesticar la bestia
     .target Quel'ana Quickgale::252389
@@ -4670,7 +4686,7 @@ step << Horde Hunter
     .mob Ornery Galestrider::251707
 step << Horde Hunter
     .goto 2521,59.571,72.639
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Quel'ana Quickgale::252389|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Quel'ana Ventarrápido::252389|r.
     .turnin 94979 >>Entrega la misión Domesticar la bestia
     .accept 94013 >>Acepta la misión Domesticar la bestia
     .target Quel'ana Quickgale::252389
@@ -4864,13 +4880,13 @@ step << Alliance Hunter
     .turnin 94979 >>Entrega la misión Domesticar la bestia
     .accept 94013 >>Acepta la misión Domesticar la bestia
     .target Quel'ana Quickgale::252389
-step << Alliance Hunter
-    .train 2366,3 -- Herbalism Trained
-    .isQuestComplete 97968 -- Camping 101: Herbalism
-    .goto 2521,57.890,75.514
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Syriel Noctiluvio::254345|r.
-    .turnin 97968 >>Entrega la misión Campamento básico: Herboristería
-    .target Syriel Nightrain::254345
+-- step << Alliance Hunter
+--     .train 2366,3 -- Herbalism Trained
+--     .isQuestComplete 97968 -- Camping 101: Herbalism
+--     .goto 2521,57.890,75.514
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Syriel Nightrain::254345|r.
+--     .turnin 97968 >>Turn in Camping 101: Herbalism
+--     .target Syriel Nightrain::254345
 step << Alliance Hunter
     #optional
     #completewith next
@@ -4900,26 +4916,26 @@ step << Alliance Hunter
     .mob Vuldren Alpha::250874
 step << Alliance Hunter
     #completewith next
-    >>Mata a los |cRXP_ENEMY_Skyhoppers::251314|r.
+    >>Mata a los |cRXP_ENEMY_Saltanubes::251314|r.
     *|cRXP_WARN_Si encuentras un Tornado, tócalo para obtener su "buff" de velocidad|r.
     *|cRXP_WARN_Mientras el "buff" de velocidad de Tornado esté activo, evita matarlos|r.
     .complete 93949,1 --|8/8 Enchanted Skyhopper Exterminated
     .mob Skyhopper::251314
 step << Alliance Hunter
     .goto 2521,59.571,72.639
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Quel'ana Quickgale::252389|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Quel'ana Ventarrápido::252389|r.
     .turnin 94013 >>Entrega la misión Domesticar la bestia
     .accept 94050 >>Acepta la misión Domesticar la bestia
     .target Quel'ana Quickgale::252389
 step << Alliance Hunter
     .goto 2521,59.605,72.527
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Quel'dora Quickgale::254411|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Quel'dora Ventarrápido::254411|r.
     .turnin 94050 >>Entrega la misión Domesticar la bestia
     .target Quel'dora Quickgale::254411
 step << Alliance Hunter
     .xp <10,1
     .goto 2521,59.605,72.527
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Quel'dora Quickgale::254411|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Quel'dora Ventarrápido::254411|r.
     .train 4195 >>Aprende |T136112:0|t[Gran aguante]
     .train 24547 >>Aprende |T136094:0|t[Armadura natural]
     .skipgossipid 97876
@@ -4930,14 +4946,14 @@ step << Alliance Hunter
     .goto 2521,58.339,68.476,35,0
     .goto 2521,53.799,72.161,35,0
     >>|cRXP_WARN_Lanza|r |T132164:0|t[Domesticar bestia] |cRXP_WARN_en un |cRXP_ENEMY_Windsong Reptador::254588|r para domesticarlo|r -- .tame 1997
-    *|cRXP_WARN_NOTA:|r Si todos los cangrejos están muertos, también puedes domesticar un |cRXP_ENEMY_Ornery Galestrider::251707|r hasta que encuentres un cangrejo.
+    *|cRXP_WARN_NOTA:|r Si todos los cangrejos están muertos, también puedes domesticar un |cRXP_ENEMY_Zancavientos enfurruñado::251707|r hasta que encuentres un cangrejo.
     .train 2981 >> |cRXP_WARN_Ataca a enemigos con ella para aprender|r |T132140:0|t[Zarpa (Rango 2)]
     .link https://www.wow-petopia.com/classic/training.php >> |cRXP_WARN_Haz clic aquí para más información sobre el entrenamiento de mascotas|r
 	.mob Windsong Crawler::254588
 step << Mage
     #label SkyhopperMultiClass
     .goto 2521,62.89,77.44
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Belann Windwood::256507|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Belann Vientosauco::256507|r.
     .turnin 93797 >>Entrega la misión Boughs in the Viento
     .target Belann Windwood::256507
 step << Mage
@@ -4951,16 +4967,16 @@ step << Mage
     .goto 2521,64.18,78.18,30,0
     .goto 2521,63.19,79.17,30,0
     .goto 2521,64.36,80.69,30,0
-    >>Mata a los |cRXP_ENEMY_Skyhoppers::251314|r.
+    >>Mata a los |cRXP_ENEMY_Saltanubes::251314|r.
     .complete 93949,1 --|8/8 Enchanted Skyhopper Exterminated
     .mob Skyhopper::251314
-step << Alliance !Hunter
-    .train 2366,3 -- Herbalism Trained
-    .isQuestComplete 97968 -- Camping 101: Herbalism
-    .goto 2521,57.890,75.514
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Syriel Nightrain::254345|r.
-    .turnin 97968 >>Entrega la misión Campamento básico: Herboristería
-    .target Syriel Nightrain::254345
+-- step << Alliance !Hunter
+--     .train 2366,3 -- Herbalism Trained
+--     .isQuestComplete 97968 -- Camping 101: Herbalism
+--     .goto 2521,57.890,75.514
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Syriel Nightrain::254345|r.
+--     .turnin 97968 >>Turn in Camping 101: Herbalism
+--     .target Syriel Nightrain::254345
 step << Alliance !Mage/Alliance !Hunter
     #loop
     .goto 2521,58.85,75.49,30,0
@@ -5092,7 +5108,7 @@ step << Horde
 step << Horde
     .goto 2521,56.80,61.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Piedra de viento Fendaal::273017|r.
-    .turnin 98512 >>Entrega la misión Asesinos Al'Aketh
+    .turnin 98512 >>Entrega la misión Al'Aketh Assassins.
     .target Fendaal Windstone::273017
 step << Horde Druid
     .goto 2521,54.284,65.803
@@ -5256,7 +5272,7 @@ step << Alliance
     .target Yorana Windyreed::252378
 step << Alliance !Druid
     #completewith Commander Belguilos2
-    >>Mata a los |cRXP_ENEMY_Al'Aketh Brawlers::270201|r, a los |cRXP_ENEMY_Al'Aketh Preachers::253195|r, y a los |cRXP_ENEMY_Al'Aketh Pillagers::253511|r.
+    >>Mata |cRXP_ENEMY_Camorristas Al'Aketh::270201|r, |cRXP_ENEMY_Predicadores Al'Aketh::253195|r y |cRXP_ENEMY_Saqueadores Al'Aketh::253511|r.
     *Despójalos para obtener |T1379232:0|t[|cRXP_LOOT_Talismanes de piedra de viento Al'Aketh|r].
    *|cRXP_WARN_Avanzarás aquí, pero probablemente completes la misión en otra ubicación más adelante|r.
     .complete 92834,1 --10/10 Al'Aketh Windstone Charm
@@ -5329,7 +5345,7 @@ step << Alliance Druid
     .usespell 1259705
 step << Alliance Druid
     #completewith Commander Belguilos Druid2
-    >>Mata |cRXP_ENEMY_Camorristas Al'Aketh::270201|r, |cRXP_ENEMY_Predicadores Al'Aketh::253195|r y |cRXP_ENEMY_Saqueadores Al'Aketh::253511|r.
+    >>Mata a los |cRXP_ENEMY_Al'Aketh Brawlers::270201|r, a los |cRXP_ENEMY_Al'Aketh Preachers::253195|r y a los |cRXP_ENEMY_Al'Aketh Pillagers::253511|r.
     *Despójalos para obtener |T1379232:0|t[|cRXP_LOOT_Talismanes de piedra de viento Al'Aketh|r].
    *|cRXP_WARN_Avanzarás aquí, pero probablemente completes la misión en otra ubicación más adelante|r.
     .complete 92834,1 --10/10 Al'Aketh Windstone Charm
@@ -5341,7 +5357,7 @@ step << Alliance Druid
     #completewith Commander Belguilos Druid2
     >>Mata a los |cRXP_ENEMY_Sanadores Al'Aketh::254596|r y a los |cRXP_ENEMY_Camorristas Al'Aketh::270201|r.
     *|cRXP_WARN_|cRXP_ENEMY_Sanadores Al'Aketh|r pueden curarse a sí mismos u otros. Aturde sus curaciones si puedes|r. << !Rogue
-    *|cRXP_WARN_|cRXP_ENEMY_Al'Aketh Healers|r pueden curarse a sí mismos u otros. Acumula Energía para aturdir sus curaciones si no puedes matarlos antes de que lancen.|r << Rogue
+    *|cRXP_WARN_|cRXP_ENEMY_Sanadores Al'Aketh|r pueden curarse a sí mismos o a otros. Acumula energía para aturdir sus curas si no puedes matarlos antes de que lancen el hechizo|r. << Rogue
     .complete 92642,1 --4/4 Al'Aketh Healer slain
     .mob +Al'Aketh Healer::254596
     .complete 92642,2 --8/8 Al'Aketh Brawler slain
@@ -5363,12 +5379,12 @@ step << Alliance Druid
     #label Commander Belguilos Druid2
     .goto 2521,65.31,65.33,20,0
     .goto 2521,65.58,65.63
-    >>Mata a |cRXP_ENEMY_Commander Belguilos::252666|r |cRXP_WARN_en el segundo piso|r dentro de la casa.
+    >>Mata al |cRXP_ENEMY_Comandante Belguilos::252666|r |cRXP_WARN_en el segundo piso|r dentro de la casa.
     .complete 92645,1 --1/1 Commander Belguilos slain
     .mob Commander Belguilos::252666
 step << Alliance Druid
     #completewith next
-    >>Mata a los |cRXP_ENEMY_Al'Aketh Brawlers::270201|r, a los |cRXP_ENEMY_Al'Aketh Preachers::253195|r y a los |cRXP_ENEMY_Al'Aketh Pillagers::253511|r.
+    >>Mata |cRXP_ENEMY_Camorristas Al'Aketh::270201|r, |cRXP_ENEMY_Predicadores Al'Aketh::253195|r y |cRXP_ENEMY_Saqueadores Al'Aketh::253511|r.
     *Despójalos para obtener |T1379232:0|t[|cRXP_LOOT_Talismanes de piedra de viento Al'Aketh|r].
    *|cRXP_WARN_Avanzarás aquí, pero probablemente completes la misión en otra ubicación más adelante|r.
     .complete 92834,1 --10/10 Al'Aketh Windstone Charm
@@ -5382,9 +5398,9 @@ step << Alliance Druid
     .goto 2521,64.46,66.11,40,0
     .goto 2521,64.71,67.65,40,0
     .goto 2521,66.59,67.5,40,0
-    >>Mata a los |cRXP_ENEMY_Al'Aketh Brawlers::270201|r y a los |cRXP_ENEMY_Al'Aketh Healers::254596|r.
-    *|cRXP_WARN_|cRXP_ENEMY_Al'Aketh Healers|r pueden curarse a sí mismos u otros. Aturde sus curaciones si puedes.|r << !Rogue
-    *|cRXP_WARN_|cRXP_ENEMY_Al'Aketh Healers|r pueden curarse a sí mismos u otros. Acumula Energía para aturdir sus curaciones si no puedes matarlos antes de que lancen.|r << Rogue
+    >>Mata a los |cRXP_ENEMY_Camorristas Al'Aketh::270201|r y a los |cRXP_ENEMY_Sanadores Al'Aketh::254596|r.
+    *|cRXP_WARN_|cRXP_ENEMY_Sanadores Al'Aketh|r pueden curarse a sí mismos u otros. Aturde sus curaciones si puedes|r. << !Rogue
+    *|cRXP_WARN_|cRXP_ENEMY_Sanadores Al'Aketh|r pueden curarse a sí mismos o a otros. Acumula energía para aturdir sus curas si no puedes matarlos antes de que lancen el hechizo|r. << Rogue
     .complete 92642,1 --4/4 Al'Aketh Healer slain
     .mob +Al'Aketh Healer::254596
     .complete 92642,2 --8/8 Al'Aketh Brawler slain
@@ -5404,7 +5420,7 @@ step << Alliance
     #optional
     #completewith next
     #label Return to Valanaar
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Valennia Stormfist::252383|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Valennia Puñotormenta::252383|r.
     .turnin 92880,1 >>Entrega la misión Regresar to Valanaar << Warrior/Paladin
     .turnin 92880,2 >>Entrega la misión Regresar to Valanaar << Rogue -- Quickblade's Dagger
     .turnin 92880,3 >>Entrega la misión Regresar to Valanaar << Hunter/Mage/Druid/Priest/Warlock
@@ -6143,8 +6159,8 @@ step
     #optional
     --@THIDDI: Not sure if worth it (Pristine Shriekling Feathers).
     #completewith next
-    >>Mata a |cRXP_ENEMY_Shadowgale Shrieklings::256092|r. Despójalos para conseguir |T1508517:0|t[|cRXP_LOOT_Shriekling Garfas|r] y |T132927:0|t[|cRXP_LOOT_Pristine Shriekling Plumas|r]. << Alliance
-    >>Mata a los |cRXP_ENEMY_Shadowgale Shrieklings::256092|r. Despoja |T132927:0|t[|cRXP_LOOT_Pristine Shriekling Plumas|r].
+    >>Mata a los |cRXP_ENEMY_Shadowgale Shrieklings::256092|r. Despoja |T1508517:0|t[|cRXP_LOOT_Shriekling Garfas|r] y |T132927:0|t[|cRXP_LOOT_Pristine Shriekling Plumas|r]. << Alliance
+    >>Mata a |cRXP_ENEMY_Shadowgale Shrieklings::256092|r. Despójalos para conseguir las |T132927:0|t[|cRXP_LOOT_Pristine Shriekling Plumas|r].
     .complete 92741,1 << Alliance --8/8 Shriekling Talons
     .complete 94486,1 --20/20 Pristine Shriekling Feathers
     .mob +Shadowgale Shriekling::256092
@@ -6154,8 +6170,8 @@ step
 step
     --@THIDDI: Not sure if worth it (Pristine Shriekling Feathers).
     #label Pristine Shriekling Feathers
-    >>Mata a los |cRXP_ENEMY_Shadowgale Shrieklings::256092|r. Despoja |T1508517:0|t[|cRXP_LOOT_Shriekling Garfas|r] y |T132927:0|t[|cRXP_LOOT_Pristine Shriekling Plumas|r]. << Alliance
-    >>Mata a |cRXP_ENEMY_Shadowgale Shrieklings::256092|r. Despójalos para conseguir las |T132927:0|t[|cRXP_LOOT_Pristine Shriekling Plumas|r].
+    >>Mata a |cRXP_ENEMY_Shadowgale Shrieklings::256092|r. Despójalos para conseguir |T1508517:0|t[|cRXP_LOOT_Shriekling Garfas|r] y |T132927:0|t[|cRXP_LOOT_Pristine Shriekling Plumas|r]. << Alliance
+    >>Mata a los |cRXP_ENEMY_Shadowgale Shrieklings::256092|r. Despoja |T132927:0|t[|cRXP_LOOT_Pristine Shriekling Plumas|r].
     .complete 92741,1 << Alliance --8/8 Shriekling Talons
     .complete 94486,1 --20/20 Pristine Shriekling Feathers
     .mob +Shadowgale Shriekling::256092
@@ -7042,7 +7058,7 @@ step << Alliance Hunter
     #label DarkshoreCook1
     #completewith DarkshoreBoat
     >>|cRXP_WARN_En el barco si acaba de llegar o en el muelle si acaba de partir:|r
-    .cast 818 >>|cRXP_WARN_Crear una|r |T135805:0|t[Lumbre] |cRXP_WARN_(en tu Libro de Profesión)|r
+    .cast 818 >>|cRXP_WARN_Crea una|r |T135805:0|t[Lumbre] |cRXP_WARN_(en tu libro de profesiones)|r
     .usespell 818
     .zoneskip Darkshore
     .itemcount 769,1 --Chunk of Boar Meat (1+)
@@ -7056,7 +7072,7 @@ step << Alliance Hunter
     #label DarkshoreCook2
     #completewith DarkshoreBoat
     >>|cRXP_WARN_En el barco si acaba de llegar o en el muelle si acaba de partir:|r
-    .cast 818 >>|cRXP_WARN_Crea una|r |T135805:0|t[Lumbre] |cRXP_WARN_(en tu libro de profesiones)|r
+    .cast 818 >>|cRXP_WARN_Crear una|r |T135805:0|t[Lumbre] |cRXP_WARN_(en tu Libro de Profesión)|r
     .usespell 818
     .zoneskip Darkshore
     .itemcount 769,<1 --Chunk of Boar Meat (<1)

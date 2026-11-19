@@ -2676,7 +2676,7 @@ step
     .waypoint Thousand Needles,54.29,48.10,40,0
     >>Mata |cRXP_ENEMY_Serpientes nubosas|r. Despójalas para obtener sus |cRXP_LOOT_Colmillos de serpiente nubosa|r
     .collect 213709,3 --Cloud Serpent Fang (3x)
-    .mob Cloud Serpent
+    .mob Dragón nimbo
     .mob Venomous Cloud Serpent
     .mob Elder Cloud Serpent
 step

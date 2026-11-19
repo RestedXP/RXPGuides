@@ -3082,8 +3082,8 @@ step << Priest/Mage/Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con la |cRXP_FRIENDLY_Subastadora Jaxon|r
     >>|cRXP_WARN_Compra lo siguiente si te lo puedes permitir:|r
     >>|T134711:0|t[Aceite de zahorí menor] |cRXP_WARN_y|r |T133906:0|t[Sabiola ahumada]
-    >>|cRXP_WARN_También busca mejoras de DPS altas|r |T132317:0|t[Varita] |cRXP_WARN_que puedas usar ahora/pronto|r
-    >>|cRXP_WARN_Estos proporcionarán un aumento de DPS alto en los primeros niveles. Si no quieres hacerlo o no puedes, omite este paso|r
+    >>|cRXP_WARN_Comprueba también si hay mejoras de|r |T132317:0|t[Varita] |cRXP_WARN_de alto DPS que puedas usar ahora o pronto|r
+    >>|cRXP_WARN_Te proporcionarán un gran aumento de DPS en los niveles iniciales. Si no quieres o no puedes hacer esto, omite este paso|r
     .collect 20744,1 -- Minor Wizard Oil (1)
     .collect 21072,20 -- Smoked Sagefish (20)
     .target Auctioneer Jaxon
@@ -3092,7 +3092,7 @@ step << Rogue
     #optional
     .goto 1453/0,607.38,-8790.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Gunther Pozador|r
-    >>|cRXP_BUY_Compra una|r |T132402:0|t[Hachuela] |cRXP_BUY_de él. Equípala más tarde cuando llegues al nivel 11|r
+    >>|cRXP_BUY_Cómprale una|r |T132402:0|t[Hachuela] |cRXP_BUY_. Equípala más tarde cuando llegues al nivel 11|r
     .collect 853,1 -- Hatchet (1)
     .target Gunther Weller
     .money <0.2490
