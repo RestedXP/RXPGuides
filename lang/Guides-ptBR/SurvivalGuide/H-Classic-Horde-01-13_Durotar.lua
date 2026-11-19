@@ -1835,11 +1835,11 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Estalajadeiro Grosk|r
     >>|cRXP_BUY_Compre|r |T132815:0|t[Leite Gelado] |cRXP_BUY_dele|r << Mage/Warlock/Priest/Shaman/Druid
     >>|cRXP_BUY_Compre|r |T133974:0|t[Pernil de Carne] |cRXP_BUY_dele|r << Rogue/Warrior
-    >>|cRXP_WARN_Guarde 4 de prata para seus feitiços de classe!|r << Rogue/Warrior/Shaman/Warlock
+    >>|cRXP_WARN_Reserve 4 moedas de prata para os feitiços da sua classe!|r << Rogue/Warrior/Shaman/Warlock
     >>|cRXP_WARN_Guarde 2 de prata para os feitiços da sua classe!|r << Priest
     .vendor >> Venda os itens de lixo
     .home >> Defina sua Pedra de Regresso em Monte Navalha
-    .turnin 2161 >>Entregue O Fardo do Peão
+    .turnin 2161 >>Entregue O fardo de um peão
     .target Innkeeper Grosk
     .train 6760,1 << Rogue
     .train 139,1 << Priest
@@ -1855,7 +1855,7 @@ step << !Mage !Hunter !Druid
     >>|cRXP_BUY_Compre|r |T133974:0|t[Pernil de Carne] |cRXP_BUY_dele|r << Rogue/Warrior
     .vendor >> Venda os itens de lixo
     .home >> Defina sua Pedra de Regresso em Monte Navalha
-    .turnin 2161 >>Entregue O Fardo do Peão
+    .turnin 2161 >>Entregue O fardo de um peão
     .target Innkeeper Grosk
     .train 6760,3 << Rogue
     .train 139,3 << Priest
@@ -1893,7 +1893,7 @@ step << Rogue
 step << Troll Priest
     .goto Durotar,54.26,42.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tai'jin|r
-    .turnin 5649 >> Entregue Em Simpatia da Espiritualidade
+    .turnin 5649 >> Entregue Em favor da espiritualidade
     .accept 5648 >> Aceite Vestes da espiritualidade
     .train 2052 >> Aprenda |T135929:0|t[Cura Inferior Grau 2]
     .target Tai'jin
@@ -1917,7 +1917,7 @@ step
 step
     .goto Durotar,54.39,42.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Jark|r
-    >>|cRXP_BUY_Compre uma|r |T133634:0|t[Pequeno Brown Pouch] |cRXP_BUY_de|r |cRXP_BUY_dele|r
+    >>|cRXP_BUY_Compre uma|r |T133634:0|t[Bolsa Marrom Pequena] |cRXP_BUY_de|r |cRXP_BUY_dela|r
     .collect 4496,1,818,1 --Small Brown Pouch (1)
     .target Jark
     .money <0.05
@@ -1945,7 +1945,7 @@ step
     .complete 825,1 --Gnomish Tools (3)
 step
     #completewith TaillasherEggs
-    .goto Durotar,67.10,69.29,100 >> Nade para a Ilha
+    .goto Durotar,67.10,69.29,100 >> Nade até a ilha
 step
     #completewith MinshinasSkull
     >>Mate os |cRXP_ENEMY_Tigers|r. Saqueie-os para obter seu |cRXP_LOOT_Fur|r. Isto não precisa ser terminado agora

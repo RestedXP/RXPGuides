@@ -1009,7 +1009,7 @@ step
     --VV TODO: Library skip video
 step
     #completewith next
-    .subzone 254 >>Voe para |cFFfa9602Blackrock Mountain|r
+    .subzone 254 >>Vá à |cFFfa9602Montanha Rocha Negra|r
 step
     #completewith next
     .goto Eastern Kingdoms,48.07,62.42
@@ -1303,7 +1303,7 @@ step << Horde
     .target Quartermaster Miranda Breechlock
 step
     #completewith next
-    .subzone 254 >>Voe para |cFFfa9602Blackrock Mountain|r
+    .subzone 254 >>Vá à |cFFfa9602Montanha Rocha Negra|r
 step
     .goto Eastern Kingdoms,48.90,63.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Bodley|r
@@ -1411,7 +1411,7 @@ step
     .mob The Duke of Cynders
 step
     #completewith next
-    .subzone 254 >>Voe para |cFFfa9602Blackrock Mountain|r
+    .subzone 254 >>Vá à |cFFfa9602Montanha Rocha Negra|r
 step
     .goto Eastern Kingdoms,48.90,63.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Bodley|r
@@ -1514,7 +1514,7 @@ step
     .isOnQuest 8965
 step
     #completewith LeftPiecePU
-    .subzone 254 >>Voe para |cFFfa9602Blackrock Mountain|r
+    .subzone 254 >>Vá à |cFFfa9602Montanha Rocha Negra|r
 step
     #optional
     .goto Eastern Kingdoms,48.90,63.93
@@ -1652,7 +1652,7 @@ step
     .isOnQuest 8969
 step
     #completewith AlcazIslandPU
-    .subzone 254 >>Voe para |cFFfa9602Blackrock Mountain|r
+    .subzone 254 >>Vá à |cFFfa9602Montanha Rocha Negra|r
 step
     #optional
     .goto Eastern Kingdoms,48.90,63.93
@@ -1743,7 +1743,7 @@ step
     .mob Strashaz Serpent Guard
 step
     #completewith next
-    .subzone 254 >>Voe para |cFFfa9602Blackrock Mountain|r
+    .subzone 254 >>Vá à |cFFfa9602Montanha Rocha Negra|r
 step
     .goto Eastern Kingdoms,48.90,63.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Bodley|r
@@ -1852,7 +1852,7 @@ step
     .isOnQuest 8988
 step
     #completewith RightPiecePU
-    .subzone 254 >>Voe para |cFFfa9602Blackrock Mountain|r
+    .subzone 254 >>Vá à |cFFfa9602Montanha Rocha Negra|r
 step
     #optional
     .goto Eastern Kingdoms,48.90,63.93
@@ -2054,7 +2054,7 @@ step
     .isOnQuest 8992
 step
     #completewith FinalPrepPU
-    .subzone 254 >>Voe para |cFFfa9602Blackrock Mountain|r
+    .subzone 254 >>Vá à |cFFfa9602Montanha Rocha Negra|r
 step
     #optional
     .goto Eastern Kingdoms,48.90,63.93
@@ -2137,7 +2137,7 @@ step
     .collect 13512,1,8994,1 --Flask of Supreme Power (x1)
 step
     #completewith next
-    .subzone 254 >>Voe para |cFFfa9602Blackrock Mountain|r
+    .subzone 254 >>Vá à |cFFfa9602Montanha Rocha Negra|r
 step
     .goto Eastern Kingdoms,48.90,63.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Bodley|r
@@ -2164,7 +2164,7 @@ step
     .target Spirit of Lord Valthalak
 step
     #completewith next
-    .subzone 254 >>Voe para |cFFfa9602Blackrock Mountain|r
+    .subzone 254 >>Vá à |cFFfa9602Montanha Rocha Negra|r
 step
     .goto Eastern Kingdoms,48.90,63.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Bodley|r

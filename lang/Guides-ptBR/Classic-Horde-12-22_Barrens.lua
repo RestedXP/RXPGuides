@@ -12008,7 +12008,7 @@ step << Shaman
     >>Mate |cRXP_ENEMY_Owatanka|r. Pegue a |T133723:0|t[|cRXP_LOOT_Ponta da Cauda de Owatanka|r]
     >>|cRXP_WARN_Use a |T133723:0|t[|cRXP_LOOT_Ponta da Cauda de Owatanka|r] para iniciar a missão|r
     >>|cRXP_WARN_Ele tem 4 pontos de aparecimento (marcados no mapa)|r
-    >>|cRXP_WARN_Pule este passo por enquanto se você não conseguir encontrá-lo|r
+    >>|cRXP_WARN_Pule esta etapa por enquanto se não conseguir encontrá-lo|r
     .collect 5102,1,884,1 --Collect Owatanka's Tailspike
     .accept 884 >>Aceite Owatanka
     .use 5102

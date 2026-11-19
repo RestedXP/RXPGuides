@@ -2445,6 +2445,8 @@ step
     #completewith EnterRoL
     .zone Undercity >>Vá à Cidade Baixa
 step
+    .goto 1458/0,344.000,1423.800,50,0
+    .goto 1458/0,373.200,1362.100,50,0
     .goto 1458/0,404.500,1434.700
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Master Apothecary Faranell::2055|r
     >>|cRXP_WARN_Esta é uma missão preliminar para "A nova peste"|r
@@ -2452,9 +2454,7 @@ step
     .turnin 451 >>Entregue Receita mortal
     .isQuestComplete 451
 step
-    .goto 1458/0,344.000,1423.800,50,0
-    .goto 1458/0,373.200,1362.100,50,0
-    .goto 1458/0,428.400,1417.700
+    .goto 1458/0,428.400,1417.70
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Theodore Griffs::11835|r
     .accept 95216 >>Aceite A Nova Peste
     .target Theodore Griffs::11835
@@ -2472,7 +2472,7 @@ step
 .enabledungeon ROL
     #label EnterRoL
     .goto 1458/0,188.400,1804.500
-    .subzone 16611 >>Entre em Ruins of Lordaeron
+    .subzone 16611 >>Entre nas Ruínas de Lordaeron acima de Undercity
 step
     #completewith RuinsRathma
     .isOnQuest 92421

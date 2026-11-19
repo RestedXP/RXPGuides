@@ -3044,7 +3044,7 @@ step << Priest
     .goto Ashenvale,37.36,51.79
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Pelturas Lunalva|r
 	.target Pelturas Whitemoon
-    .turnin 1020 >> Entregue A Cura de Orendil
+    .turnin 1020 >> Entregue Cura de Orendil
 step << Priest
     #season 2
     #optional
@@ -4192,7 +4192,7 @@ step << Warrior
     .goto Ashenvale,37.36,51.79
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Pelturas Lunalva|r
 	.target Pelturas Whitemoon
-    .turnin 1020 >> Entregue A Cura de Orendil
+    .turnin 1020 >> Entregue Cura de Orendil
 step << Warrior
     #season 2
     .goto Ashenvale,34.40,48.00
@@ -4368,7 +4368,7 @@ step
     #season 2
     .goto Wetlands,7.95,56.38
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Devin Tremulaurora|r
-    .vendor 1453 >> |cRXP_WARN_Compre quantas|r |T134831:0|t[Cura Potions] |cRXP_WARN_estiverem disponíveis|r
+    .vendor 1453 >> |cRXP_WARN_Compre o máximo possível de|r |T134831:0|t[Poçãos de Cura] |cRXP_WARN_que estiverem disponíveis|r
     >>|cRXP_WARN_Este é um item de suprimento limitado. Pule esta etapa se o|cRXP_FRIENDLY_ Devin Tremulaurora|r não tiver nenhuma|r
     .target Dewin Shimmerdawn
 step << Rogue
@@ -4621,8 +4621,8 @@ step << Rogue
 step << Rogue
     #xprate >1.59
     #completewith WepTrainNoDM << !Warrior
-    >>|cRXP_WARN_Aumente seu Nível de|r |T135966:0|t[Primeiros Socorros] |cRXP_WARN_e|r |T133971:0|t[Culinária] |cRXP_WARN_se necessário enquanto estiver no Tram|r
-    >>|cRXP_WARN_Você precisará que seu|r |T135966:0|t[Primeiros Socorros] |cRXP_WARN_chegue a 80+ para uma missão mais tarde|r << Rogue !Dwarf
+    >>|cRXP_WARN_Suba seu|r |T135966:0|t[Primeiros Socorros] |cRXP_WARN_e|r |T133971:0|t[Culinária] |cRXP_WARN_se necessário enquanto estiver no bonde|r
+    >>|cRXP_WARN_Você precisará do seu|r |T135966:0|t[Primeiros Socorros] |cRXP_WARN_ser 80+ para uma missão mais tarde|r << Rogue !Dwarf
     .zone Stormwind City >> Pegue o Metrô Correfundo para Ventobravo
     .zoneskip Darkshore << Warrior
     .zoneskip Elwynn Forest
@@ -4683,7 +4683,7 @@ step << Rogue
     #label RogueTrainNoDMEnd
     .goto StormwindClassic,74.65,52.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Osborne, o Homem da Madrugada|r
-    >>Certifique-se de treinar [Abrir Fechadura] pois você precisará disso mais tarde
+    >>Certifique-se de treinar [Abrir Fechadura], pois você vai precisar disso mais tarde
     >>|cRXP_WARN_TENHA MUITO CUIDADO com sua gestão de dinheiro nos próximos passos. Compre apenas feitiços essenciais. Você precisará ter dinheiro para Esfumar-se em breve e 75 pratas para obter uma runa após retornar às Terras do Interior|r
     .train 1804 >> Treine [Abrir Fechadura]
     .trainer >> Treine suas magias de classe
@@ -5014,7 +5014,7 @@ step << Rogue
     >>|T133644:0|t[Bater de Carteira] o |cRXP_ENEMY_Drone Défias Malformado|r. Saqueie-o para obter a |cRXP_LOOT_Chave da Torre Défias|r
     >>Você deve estar em [Furtividade] para usar [Bater Carteira]
     >>|cRXP_WARN_O |cRXP_ENEMY_Drone Défias Malformado|r surge na entrada da torre, depois patrulha ao redor da parte externa|r
-    >>|cRXP_WARN_Tenha cuidado, pois ele causa MUITO dano. Se o seu|r |T132320:0|t[Furtividade] |cRXP_WARN_interrompa, use rapidamente|r |T132307:0|t[Disparada] |cRXP_WARN_e fuja|r
+    >>Tome cuidado, pois ele causa MUITO dano. Se sua [Furtividade] quebrar, use rapidamente [Disparada] e fuja
     .complete 2359,2 --Collect Defias Tower Key (x1)
     .link https://www.youtube.com/watch?v=5sIew15IcG0 >> Clique AQUI para o guia em vídeo
     .mob Malformed Defias Drone
@@ -5187,7 +5187,7 @@ step << Rogue
     #xprate >1.59
     .goto StormwindClassic,39.834,54.360
     >>|cRXP_WARN_Entre em Stockades em Ventobravo|r
-    >>|cRXP_WARN_Uma vez dentro:|r
+    >>|cRXP_WARN_Assim que entrar:|r
     .link /run InviteUnit("aa");C_Timer.After(1,function() LeaveParty() end) >> |cRXP_WARN_Clique aqui para Copiar + Colar esta macro no chat para fazer ghetto hearth de volta a Auberdine|r
     .zone Darkshore >>|cRXP_WARN_Se você não conseguir fazer isso, volte para Auberdine|r
     .zoneskip Teldrassil
@@ -5214,7 +5214,7 @@ step << NightElf Rogue
     #optional
     #label NEWarRogNoDMNoFP1
     #completewith NEWarRogNoDMIFPP
-    >>|cRXP_WARN_Aumente seu Nível de|r |T135966:0|t[Primeiros Socorros] |cRXP_WARN_e|r |T133971:0|t[Culinária] |cRXP_WARN_se necessário enquanto estiver no Tram|r
+    >>|cRXP_WARN_Suba seu|r |T135966:0|t[Primeiros Socorros] |cRXP_WARN_e|r |T133971:0|t[Culinária] |cRXP_WARN_se necessário enquanto estiver no bonde|r
     .zone Ironforge >> Pegue o Deeprun Tram para Ironforge
     .zoneskip Darkshore
     .zoneskip Teldrassil
@@ -5718,8 +5718,8 @@ step
     #xprate >1.59 << !Hunter
     #optional << NightElf
     #completewith ShoniAccept
-    >>|cRXP_WARN_Aumente seu Nível de|r |T135966:0|t[Primeiros Socorros] |cRXP_WARN_e|r |T133971:0|t[Culinária] |cRXP_WARN_se necessário enquanto estiver no Tram|r
-    >>|cRXP_WARN_Você precisará que seu|r |T135966:0|t[Primeiros Socorros] |cRXP_WARN_chegue a 80+ para uma missão mais tarde|r << Rogue !Dwarf
+    >>|cRXP_WARN_Suba seu|r |T135966:0|t[Primeiros Socorros] |cRXP_WARN_e|r |T133971:0|t[Culinária] |cRXP_WARN_se necessário enquanto estiver no bonde|r
+    >>|cRXP_WARN_Você precisará do seu|r |T135966:0|t[Primeiros Socorros] |cRXP_WARN_ser 80+ para uma missão mais tarde|r << Rogue !Dwarf
     .zone Stormwind City >> Pegue o Metrô Correfundo para Ventobravo
     .zoneskip Wetlands << NightElf
     .zoneskip Elwynn Forest
@@ -5824,7 +5824,7 @@ step << Rogue
     #label RogueTrainDMEnd
     .goto StormwindClassic,74.65,52.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Osborne, o Homem da Madrugada|r
-    >>Certifique-se de treinar [Abrir Fechadura] pois você precisará disso mais tarde
+    >>Certifique-se de treinar [Abrir Fechadura], pois você vai precisar disso mais tarde
     .train 1804 >> Treine [Abrir Fechadura]
     .trainer >> Treine suas magias de classe
     .target Osborne the Night Man
@@ -6367,7 +6367,7 @@ step << Rogue
     >>|T133644:0|t[Bater de Carteira] o |cRXP_ENEMY_Drone Défias Malformado|r. Saqueie-o para obter a |cRXP_LOOT_Chave da Torre Défias|r
     >>Você deve estar em [Furtividade] para usar [Bater Carteira]
     >>|cRXP_WARN_O |cRXP_ENEMY_Drone Défias Malformado|r surge na entrada da torre, depois patrulha ao redor da parte externa|r
-    >>|cRXP_WARN_Tenha cuidado, pois ele causa MUITO dano. Se o seu|r |T132320:0|t[Furtividade] |cRXP_WARN_interrompa, use rapidamente|r |T132307:0|t[Disparada] |cRXP_WARN_e fuja|r
+    >>Tome cuidado, pois ele causa MUITO dano. Se sua [Furtividade] quebrar, use rapidamente [Disparada] e fuja
     .complete 2359,2 --Collect Defias Tower Key (x1)
     .link https://www.youtube.com/watch?v=5sIew15IcG0 >> Clique AQUI para o guia em vídeo
     .mob Malformed Defias Drone
@@ -7185,7 +7185,7 @@ step << NightElf
     #optional
     #label DeeprunDMNoFP1
     #completewith NEIFFP
-    >>|cRXP_WARN_Aumente seu Nível de|r |T135966:0|t[Primeiros Socorros] |cRXP_WARN_e|r |T133971:0|t[Culinária] |cRXP_WARN_se necessário enquanto estiver no Tram|r
+    >>|cRXP_WARN_Suba seu|r |T135966:0|t[Primeiros Socorros] |cRXP_WARN_e|r |T133971:0|t[Culinária] |cRXP_WARN_se necessário enquanto estiver no bonde|r
     .zone Ironforge >> Pegue o Deeprun Tram para Ironforge
     .zoneskip Ironforge
     .dungeon DM

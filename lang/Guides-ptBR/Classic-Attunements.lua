@@ -144,7 +144,7 @@ step
     .target Marshal Maxwell
 step
     #completewith next
-    .subzone 254 >>Voe para |cFFfa9602Blackrock Mountain|r
+    .subzone 254 >>Vá à |cFFfa9602Montanha Rocha Negra|r
 step
     .isQuestTurnedIn 4182
     #completewith next
@@ -170,7 +170,7 @@ step
     .target Marshal Maxwell
 step
     #completewith next
-    .subzone 254 >>Voe para |cFFfa9602Blackrock Mountain|r
+    .subzone 254 >>Vá à |cFFfa9602Montanha Rocha Negra|r
 step
     .isQuestTurnedIn 4242
     .goto Eastern Kingdoms,48.07,62.42
@@ -289,7 +289,7 @@ step
     .target Haleh
 step
     #completewith next
-    .subzone 254 >>Voe para |cFFfa9602Blackrock Mountain|r
+    .subzone 254 >>Vá à |cFFfa9602Montanha Rocha Negra|r
 step
     #completewith next
     .goto Eastern Kingdoms,48.95,63.89
@@ -361,7 +361,7 @@ step
     .skipgossip 0,1,1,1,1,1
 step
     #completewith next
-    .subzone 254 >>Voe para |cFFfa9602Blackrock Mountain|r
+    .subzone 254 >>Vá à |cFFfa9602Montanha Rocha Negra|r
 step
     #completewith next
     .goto Eastern Kingdoms,48.95,63.89
@@ -410,7 +410,7 @@ step
     .skipgossip
 step
     #completewith next
-    .subzone 254 >>Voe para |cFFfa9602Blackrock Mountain|r
+    .subzone 254 >>Vá à |cFFfa9602Montanha Rocha Negra|r
 step
     #completewith next
     .subzone 1583,2 >>Entre no Pico da Rocha Negra
@@ -505,7 +505,7 @@ step
     .target Myranda the Hag
 step
     #completewith next
-    .subzone 254 >>Voe para |cFFfa9602Blackrock Mountain|r
+    .subzone 254 >>Vá à |cFFfa9602Montanha Rocha Negra|r
 step
     #completewith next
     .goto Eastern Kingdoms,48.95,63.89
@@ -727,7 +727,7 @@ step
     .unitscan Rexxar
 step
     #completewith next
-    .subzone 254 >>Voe para |cFFfa9602Blackrock Mountain|r
+    .subzone 254 >>Vá à |cFFfa9602Montanha Rocha Negra|r
 step
     #completewith next
     .goto Eastern Kingdoms,48.95,63.89
@@ -801,7 +801,7 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith next
-    .subzone 254 >>Voe para |cFFfa9602Blackrock Mountain|r
+    .subzone 254 >>Vá à |cFFfa9602Montanha Rocha Negra|r
 step
     .goto Eastern Kingdoms,48.41,63.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Lothos Fendespéril|r
@@ -825,7 +825,7 @@ step
     .complete 7848,1 --Core Fragment 1/1
 step
     #completewith next
-    .subzone 254 >>Voe para |cFFfa9602Blackrock Mountain|r
+    .subzone 254 >>Vá à |cFFfa9602Montanha Rocha Negra|r
 step
     .goto Eastern Kingdoms,48.41,63.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Lothos Fendespéril|r
@@ -847,7 +847,7 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith next
-    .subzone 254 >>Voe para |cFFfa9602Blackrock Mountain|r
+    .subzone 254 >>Vá à |cFFfa9602Montanha Rocha Negra|r
 step
     #hardcore
     .goto Eastern Kingdoms,48.94,63.92,10,0
@@ -892,7 +892,7 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith next
-    .subzone 254 >>Voe para |cFFfa9602Blackrock Mountain|r
+    .subzone 254 >>Vá à |cFFfa9602Montanha Rocha Negra|r
 step
     #completewith next
     .goto Eastern Kingdoms,48.07,62.42
@@ -957,7 +957,7 @@ step
     .mob Emberstrife
 step
     #completewith next
-    .subzone 254 >>Voe para |cFFfa9602Blackrock Mountain|r
+    .subzone 254 >>Vá à |cFFfa9602Montanha Rocha Negra|r
 step
     #completewith next
     .goto Eastern Kingdoms,48.07,62.42
@@ -1106,7 +1106,7 @@ step
 step
     .goto Western Plaguelands,42.702,84.031
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Comandante Ashlam Punhobom|r
-    .turnin 5098 >> Entregue All Along the Watchtowers
+    .turnin 5098 >> Entregue Você não vê as torres?
     .accept 5533 >> Aceite Scolomântia
     .target Commander Ashlam Valorfist
 step
@@ -1363,7 +1363,7 @@ step
 step
     .goto Tirisfal Glades,83.15,68.92
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Alto-executor Arcabuz|r
-    .turnin 5098 >>Entregue All Along the Watchtowers
+    .turnin 5098 >>Entregue Você não vê as torres?
     .accept 838 >>Aceite Scolomântia
 	.target High Executor Derrington
  step
@@ -1500,7 +1500,7 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith next
-    .subzone 254 >>Voe para |cFFfa9602Blackrock Mountain|r
+    .subzone 254 >>Vá à |cFFfa9602Montanha Rocha Negra|r
 step
     #softcoreserver
     #softcore
