@@ -125,7 +125,7 @@ step << Hunter
     #completewith htraining
     .goto Teldrassil,59.306,41.091
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Keina|r
-	.vendor >> |cRXP_BUY_Kauft 3 Stapel|r |T132382:0|t[Rohe Pfeile]
+	.vendor >> |cRXP_BUY_Kauft 3 Stapel|r |T132382:0|t[Rauer Pfeile]
     .target Keina
 step
     .goto Teldrassil,57.807,41.653
@@ -215,7 +215,7 @@ step << Druid
     .target Mardant Strongoak
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Mardant Strongoak|r
 	.turnin 3120 >> Gebt die Quest Tiefgrünes Siegelzeichen ab
-	.train 8921 >>Erlernen Mondfeuer
+	.train 8921 >>Erlernt Mondfeuer
 step
     .goto Teldrassil,54.593,32.992
     .target Iverron

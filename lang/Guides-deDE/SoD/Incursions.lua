@@ -8,7 +8,7 @@ RXPGuides.RegisterGuide([[
 step
     #optional
     #completewith travel
-    +|cRXP_WARN_Ihr habt diese Eindringlingszone übertroffen und die XP-Belohnungen für das Questen hier lassen nach. Wählt eine andere Eindringlingszone aus der Liste, die besser für von Euch geeignet ist.|r
+    +|cRXP_WARN_Ihr habt diese Alptraumeinfallszone überlevelt und die XP-Belohnungen für das Questen hier lassen nach. Wählt eine andere Alptraumeinfallszone aus der Liste, die besser für eurer Level geeignet ist.|r
     >>|cRXP_WARN_Ruf-Gewinne sind gleich, unabhängig von der Stufe von Euch. Sobald ihr Stufe 53 erreicht, könnt ihr einfach eine unendliche Berufsrohstoff-Abgabequeste für extrem schnellen Ruf machen.|r
     .xp <33,1
     .xp >53,1
@@ -29,7 +29,7 @@ step
   .goto 1431/0,-438.800,-10793.400,30 >> Geht zum Weg, der zum Zwielichtshain führt.
   .maxlevel 53
 step
-    .goto 1431/0,-376.600,-10768.500,30 >> Geht den Weg hinauf.
+    .goto 1431/0,-376.600,-10768.500,30 >> Geht den Weg hinauf
     .maxlevel 53
 step
     >>Sucht einen Quartiermeister der |cRXP_FRIENDLY_The Emerald Wardens|r am Ort auf und kauft von ihm eine Rune für von Euch.

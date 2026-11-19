@@ -10,7 +10,7 @@ RXPGuides.RegisterGuide([[
 step << Warlock
     #season 2
     .goto Elwynn Forest,52.544,51.922
-    >>Öffnet |cRXP_PICK_Defias Stashbox|r auf dem Boden. Plündert es für die |T134419:0|t[|cRXP_FRIENDLY_Rune der Heimsuchung|r]
+    >>Öffnet die|cRXP_PICK_Lagertruhe der Defias|r auf dem Boden. Plündert sie für die |T134419:0|t[|cRXP_FRIENDLY_Rune der Heimsuchung|r]
     .collect 205230,1 -- Rune of Haunting (1)
     .train 403919,1
 step << Warlock

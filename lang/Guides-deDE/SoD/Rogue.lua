@@ -4,8 +4,8 @@ RXPGuides.RegisterGuide([[
 << Alliance Rogue SoD
 #group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
-#name Schattenschlagschaden - 3 (Wald von Elwynn)
-#title Schattenschlagschaden
+#name Schattenschlag - 3 (Wald von Elwynn)
+#title Schattenschlag
 
 step << Rogue
     #season 2
@@ -25,7 +25,7 @@ RXPGuides.RegisterGuide([[
 << Alliance Rogue SoD
 #group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
-#name Schattenschlagschaden - 3 (Dun Morogh)
+#name Schattenschlag - 3 (Dun Morogh)
 #title Schattenschlagschaden
 
 step
@@ -1440,7 +1440,7 @@ step
     .train 424984,1
 step
     #season 2
-    .train 424984 >>|cRXP_WARN_Benutzt|r |T134419:0|t[|cRXP_FRIENDLY_Rune des Säbelschlitzers|r] |cRXP_WARN_zum Trainieren von|r |T132375:0|t[Säbelhieb]
+    .train 424984 >>|cRXP_WARN_Benutzt|r |T134419:0|t[|cRXP_FRIENDLY_Rune des Säbelschlitzers|r] |cRXP_WARN_zum Trainieren von|r |T132375:0|t[Säbelschlitzer]
     .use 208772
     .itemcount 208772,1
 
@@ -1466,7 +1466,7 @@ step
     .train 424984,1
 step
     #season 2
-    .train 424984 >>|cRXP_WARN_Benutzt|r |T134419:0|t[|cRXP_FRIENDLY_Rune des Säbelschlitzers|r] |cRXP_WARN_zum Trainieren von|r |T132375:0|t[Säbelhieb]
+    .train 424984 >>|cRXP_WARN_Benutzt|r |T134419:0|t[|cRXP_FRIENDLY_Rune des Säbelschlitzers|r] |cRXP_WARN_zum Trainieren von|r |T132375:0|t[Säbelschlitzer]
     .use 208772
     .itemcount 208772,1
 ]])

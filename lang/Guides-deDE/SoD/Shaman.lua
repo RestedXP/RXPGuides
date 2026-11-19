@@ -4,8 +4,8 @@ RXPGuides.RegisterGuide([[
 << Horde Shaman SoD
 #group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
-#name Geschmolzener Schlag - 8 (Mulgore)
-#title Geschmolzener Schlag
+#name Schmelzschlag - 8 (Mulgore)
+#title Schmelzschlag
 #next Lavapeitsche - 10 (Mulgore)
 
 
@@ -1499,7 +1499,7 @@ RXPGuides.RegisterGuide([[
 #subgroup Brust
 #name Schildmeisterschaft - 6 (Mulgore)
 #title Schildmeisterschaft
-#next Geschmolzener Schlag - 8 (Mulgore)
+#next Schmelzschlag - 8 (Mulgore)
 
 
     --Rune of Shield Mastery

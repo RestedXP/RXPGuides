@@ -667,7 +667,7 @@ step << Priest/Warlock
     .goto Tirisfal Glades,52.59,55.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Bowen|r
     .train 3908 >> Erlernt |T136249:0|t[Schneiderei]
-    >>|cRXP_WARN_Sammelt euren|r |T132889:0|t[Leinenstoff]|cRXP_WARN_. Damit könnt ihr später einen Zauberstab herstellen|r
+    >>|cRXP_WARN_Behaltet euren|r |T132889:0|t[Leinenstoff]|cRXP_WARN_. Damit könnt ihr später einen Zauberstab herstellen|r
     .target Bowen Brisboise
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Dillinger|r und |cRXP_FRIENDLY_Zygand|r
@@ -2746,7 +2746,7 @@ step
     .goto Tirisfal Glades,42.82,31.93,60,0
     .goto Tirisfal Glades,42.82,31.93,60,0
     .goto Tirisfal Glades,45.08,31.15,60,0
-    >>Tötet |cRXP_ENEMY_Thurman|r und |cRXP_ENEMY_Gregor|r. Plündert sie für ihre |cRXP_LOOT_überreste|r. Sie können umher patroullieren
+    >>Tötet |cRXP_ENEMY_Thurman|r und |cRXP_ENEMY_Gregor|r. Plündert sie für ihre |cRXP_LOOT_Überreste|r. Sie können umher patroullieren
     .complete 354,3 --Thurman's Remains (1)
     .unitscan +Thurman Agamand
     .complete 354,1 --Gregor's Remains (1)

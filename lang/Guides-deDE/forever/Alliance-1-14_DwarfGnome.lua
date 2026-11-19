@@ -2833,7 +2833,7 @@ step << skip
     .target William Pestle
     .goto 1429/0,31.92,-9460.38
     .accept 60 >> Koboldkerzen annehmen
-step << Mage/Rogue
+step << Mage/Rogue/Priest
     #completewith next
     .goto 1429/0,12.52,-9479.85,9 >> Geht im Gasthaus nach oben
 step << Mage
@@ -2847,6 +2847,11 @@ step << Rogue
     .target Keryn Sylvius
     .goto 1429/0,12.69,-9465.75
     .trainer >> Trainiere deine Klassenfähigkeiten
+step << Priest
+    .goto 1429/0,33.14,-9460.75
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Priesterin Josetta|r
+    .trainer >> Trainiere deine Klassenfähigkeiten
+    .target Priestess Josetta
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Remy "Zweifach"|r
     .target Remy "Two Times"
@@ -3682,7 +3687,6 @@ step
 step
     .goto 1432/0,-3146.73,-4837.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Norric Lochthane|r
-    >>Stellt sicher, dass ihr dies abgebt, bevor die 10-Minuten-Frist des |T1387609:0|t[Krug mit Schnee] |cRXP_WARN_abläuft|r
     .turnin 86667 >> Gebt die Quest Eingeschneit ab
     .target Norric Lochthane
 step << Shaman
@@ -4754,7 +4758,6 @@ step
 step
     .goto 1432/0,-3146.73,-4837.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Norric Lochthane|r
-    >>Stellt sicher, dass ihr dies abgebt, bevor die 10-Minuten-Frist des |T1387609:0|t[Krug mit Schnee] |cRXP_WARN_abläuft|r
     .turnin 86667 >> Gebt die Quest Eingeschneit ab
     .target Norric Lochthane
 step

@@ -10,7 +10,7 @@ RXPGuides.RegisterGuide([[
 step << Priest
     #season 2
     .goto Elwynn Forest,48.61,27.63
-    >>Tötet |cRXP_ENEMY_Kobold Laborers|r. Plündert sie für |T136222:0|t[|cRXP_FRIENDLY_Memory of a Troubled Akolyth|r]
+    >>Tötet |cRXP_ENEMY_Koboldhilfsarbeiter|r. Plündert sie für |T136222:0|t[|cRXP_FRIENDLY_Erinnerung an einen besorgten Akolythen|r]
     .collect 205951,1 -- Memory of a Troubled Acolyte (1)
     .mob Kobold Laborer
     .train 402862,1

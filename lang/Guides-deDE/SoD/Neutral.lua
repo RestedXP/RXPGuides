@@ -7,7 +7,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Runen & Bücher Guide
 #subgroup Beine << Warrior
 #subgroup Brust << Hunter
-#name NPCs Runen
+#name Carrodin Runen
 #displayname Von Wut zerfressen - 25 (Sumpfland) << Warrior
 #displayname Kobraschlächter - 25 (Sumpfland) << Hunter
 #title Von Wut zerfressen << Warrior

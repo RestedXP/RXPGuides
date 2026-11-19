@@ -1151,7 +1151,7 @@ RXPGuides.RegisterGuide([[
 #version 2
 #group RestedXP ADV AoE Allianz Magier
 #defaultfor none Human Mage
-#next 10-12 Fortgeschrittender Dunkelküste 1 Magier AoE Guide
+#next 10-12 ADV Dunkelküste 1 Magier AoE
 
 step
     #completewith Rudra
@@ -1443,7 +1443,7 @@ RXPGuides.RegisterGuide([[
 #version 2
 #group RestedXP ADV AoE Allianz Magier
 #defaultfor none Gnome Mage
-#next 10-12 Fortgeschrittender Dunkelküste 1 Magier AoE Guide
+#next 10-12 ADV Dunkelküste 1 Magier AoE
 
 
 step << !Gnome Mage
@@ -2999,7 +2999,7 @@ RXPGuides.RegisterGuide([[
 #forever
 #disabledungeons
 << Alliance Mage
-#name 10-12 Fortgeschrittender Dunkelküste 1 Magier AoE Guide
+#name 10-12 ADV Dunkelküste 1 Magier AoE
 #version 2
 #group RestedXP ADV AoE Allianz Magier
 #defaultfor none Mage
@@ -3221,7 +3221,7 @@ step
 step
     .goto 1439/1,393.72,5993.24
     >>Lauft zum Furbolg Camp
-    >>|cRXP_WARN_Versucht nicht gegen den|r |cRXP_ENEMY_Windsprecher der Schwarzfelle|r zu kämpfen
+    >>|cRXP_WARN_Versucht nicht gegen die, |rWindsprecher der Schwarzfelle|cRXP_ENEMY_ zu kämpfen|r
     .complete 984,1 --Find a corrupt furbolg camp (1)
 step
     .goto 1439/1,411.40,5873.15,60,0
@@ -3240,7 +3240,7 @@ step
     .target Sentinel Tysha Moonblade
 step
     #completewith Relics
-    +|cRXP_WARN_Meidet es |cRXP_ENEMY_Lady Mondblick|r (rare) wenn sie up ist|r zu pullen
+    +|cRXP_WARN_Meidet es |cRXP_ENEMY_Lady Mondblick|r (rare) zu pullen, wenn sie up ist|r
     .unitscan Lady Moongazer
 step
     #completewith Fall
@@ -3899,7 +3899,7 @@ step
     #requires Gwennyth
     .goto 1439/1,393.72,5993.24
     >>Lauft zum Furbolg Camp
-    >>|cRXP_WARN_Versucht nicht gegen den|r |cRXP_ENEMY_Windsprecher der Schwarzfelle|r zu kämpfen
+    >>|cRXP_WARN_Versucht nicht gegen die, |rWindsprecher der Schwarzfelle|cRXP_ENEMY_ zu kämpfen|r
     .complete 984,1 --Find a corrupt furbolg camp (1)
 step
     .goto 1439/1,302.02,5726.433
@@ -3908,7 +3908,7 @@ step
     .target Sentinel Tysha Moonblade
 step
     #completewith Anaya
-    +|cRXP_WARN_Meidet es |cRXP_ENEMY_Lady Mondblick|r (rare) wenn sie up ist|r zu pullen
+    +|cRXP_WARN_Meidet es |cRXP_ENEMY_Lady Mondblick|r (rare) zu pullen, wenn sie up ist|r
     .unitscan Lady Moongazer
  step
     #completewith Relics
@@ -4770,7 +4770,7 @@ step
     .goto 1453/0,758.31,-8878.78,20,0
     .goto 1453/0,810.33,-8832.44,20,0
     .goto 1453/0,827.54,-8850.19,15,0
-    .goto 1453/0,822.16,-8865.60,10 >>Reist zu |cRXP_FRIENDLY_Adair|r
+    .goto 1453/0,822.16,-8865.60,10 >>Reisen zu |cRXP_FRIENDLY_Adair|r
     .money <0.0090
 step
     .goto 1453/0,822.16,-8865.60
@@ -7184,7 +7184,7 @@ step
     .goto 1453/0,758.31,-8878.78,20,0
     .goto 1453/0,810.33,-8832.44,20,0
     .goto 1453/0,827.54,-8850.19,15,0
-    .goto 1453/0,822.16,-8865.60,10 >>Reist zu |cRXP_FRIENDLY_Adair|r
+    .goto 1453/0,822.16,-8865.60,10 >>Reisen zu |cRXP_FRIENDLY_Adair|r
 step
     .goto 1453/0,822.16,-8865.60
     >>Betretet das Gebäude
@@ -8012,7 +8012,7 @@ step
     .goto 1453/0,758.31,-8878.78,20,0
     .goto 1453/0,810.33,-8832.44,20,0
     .goto 1453/0,827.54,-8850.19,15,0
-    .goto 1453/0,822.16,-8865.60,10 >>Reist zu |cRXP_FRIENDLY_Adair|r
+    .goto 1453/0,822.16,-8865.60,10 >>Reisen zu |cRXP_FRIENDLY_Adair|r
 step
     #label AdairX
     .goto 1453/0,822.16,-8865.60

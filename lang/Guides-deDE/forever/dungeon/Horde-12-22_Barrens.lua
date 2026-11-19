@@ -1939,7 +1939,7 @@ step
     >>|cRXP_WARN_Benutzt |T134085:0|t[|cRXP_LOOT_Auge des brennenden Schatten|r] um die Quest zu starten|r
     >>|cRXP_WARN_Benutzt LoS (Sichtlinie), um |cRXP_ENEMY_Gazz'uz|r seine Schattenblitze zu vermeiden|r
     >>|cRXP_WARN_Ihr könnt zu Gewässern innerhalb der Höhle fliehen um dem|r Leerwandler|cRXP_ENEMY_ nach dem Töten von|r |cRXP_WARN_Gazz'uz|r |cRXP_ENEMY_zu entkommen|r
-    >>|cRXP_WARN_Seid vorsichtig, er ist schwierig. Ihr könnt diese Quest überspringen, falls erforderlich|r
+    >>|cRXP_WARN_Seid vorsichtig, da er schwierig ist. Ihr könnt diese Quest überspringen, falls nötig|r
     .collect 4903,1,832,1 --Collect Eye of Burning Shadow
     .accept 832 >>Akzeptiert die Quest Brennende Schatten
     .use 4903
@@ -2445,6 +2445,8 @@ step
     #completewith EnterRoL
     .zone Undercity >>Reist nach Unterstadt
 step
+    .goto 1458/0,344.000,1423.800,50,0
+    .goto 1458/0,373.200,1362.100,50,0
     .goto 1458/0,404.500,1434.700
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Master Apothecary Faranell::2055|r
     >>|cRXP_WARN_Dies ist eine Vorquest für "Die neue Seuche"|r
@@ -2452,9 +2454,7 @@ step
     .turnin 451 >>Gebt die Quest Rezept für den Tod ab
     .isQuestComplete 451
 step
-    .goto 1458/0,344.000,1423.800,50,0
-    .goto 1458/0,373.200,1362.100,50,0
-    .goto 1458/0,428.400,1417.700
+    .goto 1458/0,428.400,1417.70
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Theodore Griffs::11835|r
     .accept 95216 >>Akzeptiert die Quest Die neue Seuche
     .target Theodore Griffs::11835
@@ -2472,7 +2472,7 @@ step
 .enabledungeon ROL
     #label EnterRoL
     .goto 1458/0,188.400,1804.500
-    .subzone 16611 >>Betretet Ruinen von Lordaeron
+    .subzone 16611 >>Betretet Ruinen von Lordaeron above Unterstadt
 step
     #completewith RuinsRathma
     .isOnQuest 92421
@@ -4224,7 +4224,7 @@ step
     .skill firstaid,<1,1
 step
     .goto 1456/1,206.88,-997.45
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |r |cRXP_FRIENDLY_Pand|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit|r |cRXP_FRIENDLY_Pand|r
     >>|cRXP_WARN_Überspringt diesen Schritt, wenn ihr nicht genug|r |T132889:0|t[Leinenstoff] |cRXP_WARN_hattet, um Skill 80 zu erreichen|r
     .train 3277 >> Erlernt |T133684:0|t[Wollverband]
     .train 7934 >> Erlernt |T134437:0|t[Gegengift] << Rogue
@@ -4518,7 +4518,7 @@ RXPGuides.RegisterGuide([[
 #forever
 << Horde
 #name 21-22 Die Höhlen des Wehklagens
-#next 22-24 Hügellandhof
+#next 22-24 Hillsbrad
 #version 11
 #group RestedXP Forever Dungeonführer (H)
 #subgroup Dungeonführer 1-22

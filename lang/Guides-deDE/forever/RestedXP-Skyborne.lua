@@ -6,7 +6,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #name 1-9 Insel Zephras
 #displayname 1-9 Himmelsgeborene << Alliance
-#displayname 1-9 Skyborne << Horde
+#displayname 1-9 Himmelsgeborene << Horde
 #group RestedXP Forever Route (A) << Alliance
 #group RestedXP Forever Route (H) << Horde
 #subgroup Schnellste Route 1-20 << Alliance
@@ -17,7 +17,7 @@ RXPGuides.RegisterGuide([[
 step
     .goto 2521,42.82,23.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Ailee Farheart::251362|r.
-    .accept 92460 >>Akzeptiert die Quest Reifer werden
+    .accept 92460 >>Akzeptiert die Quest Erwachsen werden
     .target Ailee Farheart::251362
 step
     .goto 2521,42.07,23.49
@@ -2303,6 +2303,14 @@ step
     .turnin 97965 >>Gebt die Quest Lager aufschlagen 101: Erste Hilfe ab
     .target Naleeia Tattermend::257018
 step
+    .train 2366,3 --Herbalism Trained
+    .isQuestComplete 97968 --Camping 101: Herbalism
+    .isQuestComplete 92516 --Hippogryph Harassment
+    .goto 2521,43.0,43.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Halassa Fernbreeze::257021|r.
+    .turnin 97968 >>Gebt die Quest Lager aufschlagen 101: Kräuterkunde ab
+    .target Halassa Fernbreeze::257021
+step
     .train 7411,3 -- Enchanting Trained
     .isQuestComplete 98286 -- Camping 101: Enchanting
     .isQuestComplete 92516 -- Hippogryph Harassment
@@ -2780,7 +2788,7 @@ step
 step
     .goto 2521,42.38,62.07
     >>|TInterface/cursor/crosshair/interact.blp:20|tKlickt auf |cRXP_PICK_Blutigen Hinweis|r.
-    *|cRXP_WARN_Haltet einen Taschenplatz frei|r.
+    *|cRXP_WARN_Haltet einen Taschenplatz frei.|r
     .complete 93927,1 --1/1 Collect and read the note
 step
     .goto 2521,40.988,64.088
@@ -2790,7 +2798,7 @@ step
 step
     .goto 2521,41.12,64.09
     >>|TInterface/cursor/crosshair/interact.blp:20|tKlickt |cRXP_PICK_Raani Windgazer|r\n |cRXP_WARN_aus der Ferne|r.
-    *|cRXP_WARN_Haltet einen Taschenplatz frei.|r
+    *|cRXP_WARN_Haltet einen Taschenplatz frei|r.
     .complete 93927,3 --1/1 Raani's Favorite Feather
 step
     #label Skypriest Aanders
@@ -3118,6 +3126,14 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Nasalanna Windsinger::257020|r
     .turnin 98286 >>Gebt die Quest Lager aufschlagen 101: Verzauberkunst ab
     .target Nasalanna Windsinger::257020
+step
+    .train 2366,3 --Herbalism Trained
+    .isQuestComplete 97968 --Camping 101: Herbalism
+    .isQuestComplete 92550 -- Havoc in the Highlands
+    .goto 2521,43.0,43.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Halassa Fernbreeze::257021|r.
+    .turnin 97968 >>Gebt die Quest Lager aufschlagen 101: Kräuterkunde ab
+    .target Halassa Fernbreeze::257021
 step
     .train 3273,3 -- First Aid Trained
     .itemcount 2589,1 -- Linen Cloth
@@ -3538,7 +3554,7 @@ step
     #completewith next
     #label DeliverTheSignetA
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Talaanis Shadowsong::252476|r.
-    .turnin 93948 >>Gebt die Quest Deliver the Signet ab
+    .turnin 93948 >>Gebt die Quest Deliver the Signet ab.
     .target Talaanis Shadowsong::252476
 step
     #completewith DeliverTheSignetA
@@ -3555,7 +3571,7 @@ step
     #label Deliver the Signet
     .goto 2521,66.17,76.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Talaanis Shadowsong::252476|r.
-    .turnin 93948 >>Gebt die Quest Deliver the Signet ab.
+    .turnin 93948 >>Gebt die Quest Deliver the Signet ab
     .target Talaanis Shadowsong::252476
 step
     #label BuggedAcceptedA
@@ -3842,13 +3858,13 @@ step << Horde Rogue
     .itemcount 277107,1 --Zephrali Bludgeon
     .equip 16,277107 >>|cRXP_WARN_Legt|r |T7791298:0|t[Knüppel der Zephrali] an.
     .use 277107 --Zephrali Bludgeon
-step << Horde
-    .train 2366,3 -- Herbalism Trained
-    .isQuestComplete 97968 -- Camping 101: Herbalism
-    .goto 2521,57.890,75.514
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Syriel Nightrain::254345|r.
-    .target Syriel Nightrain::254345
-    .turnin 97968 >>Gebt die Quest Lager aufschlagen 101: Kräuterkunde ab
+-- step << Horde
+--     .train 2366,3 -- Herbalism Trained
+--     .isQuestComplete 97968 -- Camping 101: Herbalism
+--     .goto 2521,57.890,75.514
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Syriel Nightrain::254345|r.
+--     .target Syriel Nightrain::254345
+--     .turnin 97968 >>Turn in Camping 101: Herbalism
 step << Hunter Horde
     .money <0.1345
     .isOnQuest 93735 -- The Broken Construct
@@ -4168,7 +4184,7 @@ step
     *|cRXP_WARN_Falls ihr einen Tornado seht, benutzt ihn zum schnelleren Reisen.|r
 step << Horde
     #completewith next
-    >>|TInterface/cursor/crosshair/interact.blp:20|tKlickt |cRXP_PICK_Konstrukt-Teile|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tKlickt die |cRXP_PICK_Konstrukt Teile|r.
     .complete 93737,4 --|1/1 Obtain Air Construct Core from the Bandit Camp
 step
     #requires Bandit Highwaymen
@@ -4183,7 +4199,7 @@ step << Horde
     #loop
     .goto 2521,45.615,72.361,35,0
     .goto 2521,43.551,74.999,35,0
-    >>|TInterface/cursor/crosshair/interact.blp:20|tKlickt die |cRXP_PICK_Konstrukt Teile|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tKlickt |cRXP_PICK_Konstrukt-Teile|r.
     .complete 93737,4 --|1/1 Obtain Air Construct Core from the Bandit Camp
 step << Horde Shaman
     .goto 2521,42.393,68.887
@@ -4359,8 +4375,8 @@ step
     .goto 2521,62.11,73.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Alvarion Windfield::252448|r |cRXP_WARN_auf dem zweiten Stock|r.
     .turnin 92703,1 >>Gebt die Quest Deliver the Neues ab << Warrior/Shaman/Paladin
-    .turnin 92703,2 >>Gebt die Quest Deliver the Neues ab << Druid/Priest
-    .turnin 92703,3 >>Gebt die Quest Lieferung des Neuen ab << Rogue
+    .turnin 92703,2 >>Gebt die Quest Lieferung des Neuen ab << Druid/Priest
+    .turnin 92703,3 >>Gebt die Quest Deliver the Neues ab << Rogue
     .turnin 92703 >>Gebt die Quest Deliver the Neues ab << Hunter/Mage/Warlock
     .target Alvarion Windfield::252448
 step
@@ -4864,13 +4880,13 @@ step << Alliance Hunter
     .turnin 94979 >>Gebt die Quest Die Zähmung der Bestie ab
     .accept 94013 >>Akzeptiert die Quest Die Zähmung der Bestie
     .target Quel'ana Quickgale::252389
-step << Alliance Hunter
-    .train 2366,3 -- Herbalism Trained
-    .isQuestComplete 97968 -- Camping 101: Herbalism
-    .goto 2521,57.890,75.514
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Syriel Nightrain::254345|r.
-    .turnin 97968 >>Gebt die Quest Lager aufschlagen 101: Kräuterkunde ab
-    .target Syriel Nightrain::254345
+-- step << Alliance Hunter
+--     .train 2366,3 -- Herbalism Trained
+--     .isQuestComplete 97968 -- Camping 101: Herbalism
+--     .goto 2521,57.890,75.514
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Syriel Nightrain::254345|r.
+--     .turnin 97968 >>Turn in Camping 101: Herbalism
+--     .target Syriel Nightrain::254345
 step << Alliance Hunter
     #optional
     #completewith next
@@ -4954,13 +4970,13 @@ step << Mage
     >>Tötet |cRXP_ENEMY_Skyhoppers::251314|r.
     .complete 93949,1 --|8/8 Enchanted Skyhopper Exterminated
     .mob Skyhopper::251314
-step << Alliance !Hunter
-    .train 2366,3 -- Herbalism Trained
-    .isQuestComplete 97968 -- Camping 101: Herbalism
-    .goto 2521,57.890,75.514
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Syriel Nightrain::254345|r.
-    .turnin 97968 >>Gebt die Quest Lager aufschlagen 101: Kräuterkunde ab
-    .target Syriel Nightrain::254345
+-- step << Alliance !Hunter
+--     .train 2366,3 -- Herbalism Trained
+--     .isQuestComplete 97968 -- Camping 101: Herbalism
+--     .goto 2521,57.890,75.514
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Syriel Nightrain::254345|r.
+--     .turnin 97968 >>Turn in Camping 101: Herbalism
+--     .target Syriel Nightrain::254345
 step << Alliance !Mage/Alliance !Hunter
     #loop
     .goto 2521,58.85,75.49,30,0
@@ -5178,7 +5194,7 @@ step << Alliance
     #label Service of Zephras
     *|cRXP_WARN_Legt an|r |T7810733:0|t[Verbeugen of Hours] << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Valennia Stormfist::252383|r.
-    .turnin 92860 >>Gebt die Quest Im Dienste von Zephras ab
+    .turnin 92860 >>Gebt die Quest In Service of Zephras ab
     .turnin 93949 >>Gebt die Quest Bugged ab
     .accept 93320 >>Akzeptiert die Quest Turmverteidigung
     .disablecheckbox
@@ -5201,7 +5217,7 @@ step << Alliance
     #requires Service of Zephras
     .goto 2521,66.18,76.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Valennia Stormfist::252383|r.
-    .turnin 92860 >>Gebt die Quest In Service of Zephras ab
+    .turnin 92860 >>Gebt die Quest Im Dienste von Zephras ab
     .turnin 93949 >>Gebt die Quest Bugged ab
     .accept 93320 >>Akzeptiert die Quest Turmverteidigung
     .target Valennia Stormfist::252383
@@ -5406,9 +5422,9 @@ step << Alliance
     #label Return to Valanaar
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Valennia Stormfist::252383|r.
     .turnin 92880,1 >>Gebt die Quest Zurückkehren zu Valanaar ab << Warrior/Paladin
-    .turnin 92880,2 >>Gebt die Quest Zurückkehren zu Valanaar ab << Rogue -- Quickblade's Dagger
+    .turnin 92880,2 >>Gebt die Quest Rückkehr zu Valanaar ab << Rogue -- Quickblade's Dagger
     .turnin 92880,3 >>Gebt die Quest Zurückkehren zu Valanaar ab << Hunter/Mage/Druid/Priest/Warlock
-    .accept 92881 >>Akzeptiert die Quest The Hoch Elder's Request
+    .accept 92881 >>Akzeptiert die Quest Die Bitte des Hohen Ältesten
     .target Valennia Stormfist::252383
 step << Alliance
     #completewith Return to Valanaar
@@ -5427,9 +5443,9 @@ step << Alliance
     .goto 2521,66.20,76.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Valennia Stormfist::252383|r.
     .turnin 92880,1 >>Gebt die Quest Zurückkehren zu Valanaar ab << Alliance Warrior/Alliance Paladin
-    .turnin 92880,2 >>Gebt die Quest Rückkehr zu Valanaar ab << Alliance Rogue -- Quickblade's Dagger
+    .turnin 92880,2 >>Gebt die Quest Zurückkehren zu Valanaar ab << Alliance Rogue -- Quickblade's Dagger
     .turnin 92880,3 >>Gebt die Quest Zurückkehren zu Valanaar ab << Alliance Hunter/Alliance Mage/Alliance Druid/Alliance Priest/Alliance Warlock
-    .accept 92881 >>Akzeptiert die Quest Die Bitte des Hohen Ältesten
+    .accept 92881 >>Akzeptiert die Quest The Hoch Elder's Request
     .target Valennia Stormfist::252383
 step << Alliance
     .goto 2521,66.17,76.50
@@ -5918,7 +5934,7 @@ step << Alliance
 step << Alliance
     #optional
     #completewith Abandoned BelongingsZ
-    >>|TInterface/cursor/crosshair/interact.blp:20|tKlickt auf die |cRXP_PICK_Crates|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tKlickt |cRXP_PICK_Crates|r
     .complete 94896,1 --8/8 Abandoned Belongings
 step << Alliance
     #label Abandoned BelongingsZ
@@ -5968,7 +5984,7 @@ step
     -- .complete 93736,1 << Horde--10/10 Wind Hollow Essence
     .mob +Wind Hollow::251676
 step
-    >>|TInterface/cursor/crosshair/interact.blp:20|tKlickt |cRXP_PICK_Crates|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tKlickt auf die |cRXP_PICK_Crates|r
     *|cRXP_WARN_HINWEIS:|r Diese Quest ist optional. Ihr könnt sie überspringen, wenn zu viele Spieler sie ausführen. << Horde
     .complete 94896,1 --8/8 Abandoned Belongings
 step
@@ -6082,12 +6098,12 @@ step << Alliance
 step << Alliance
     #optional
     #completewith ToHermit
-    >>|TInterface/cursor/crosshair/interact.blp:20|tKlickt |cRXP_PICK_Riss Moos|r |cRXP_WARN_auf Bäumen|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tKlickt |cRXP_PICK_Tear Moss|r |cRXP_WARN_auf Bäumen|r an.
     .complete 94485,1 --8/8 Lady's Tear Moss
 step << Horde
     #optional
     #completewith ForestHollowsB
-    >>|TInterface/cursor/crosshair/interact.blp:20|tKlickt |cRXP_PICK_Tear Moss|r |cRXP_WARN_auf Bäumen|r an.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tKlickt |cRXP_PICK_Riss Moos|r |cRXP_WARN_auf Bäumen|r.
     .complete 94485,1 --8/8 Lady's Tear Moss
 step << Horde
     #label ForestHollowsA
@@ -6225,7 +6241,7 @@ step
     .goto 2521,64,31.97,15,0
     .goto 2521,64.52,31.88,15,0
     .goto 2521,64.25,31.93
-    >>|TInterface/cursor/crosshair/interact.blp:20|tKlickt |cRXP_PICK_Druiden|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tKlickt |cRXP_PICK_Druids|r
     .complete 94489,1,2 --7/7 Injured Druids healed
     .target Neyasteel Mossmender::258275
     .target Bryaes Galechaser::258277
@@ -6246,7 +6262,7 @@ step
     #loop
     .goto 2521,64.98,34.96,10,0
     .goto 2521,64.51,34.89,10,0
-    >>|TInterface/cursor/crosshair/interact.blp:20|tKlickt |cRXP_PICK_Druids|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tKlickt |cRXP_PICK_Druiden|r
     .complete 94489,1,7 --7/7 Injured Druids healed
     .target Nayeela Snarlfang::258138
     .target Telenos Leafwhisper::258137
@@ -6443,7 +6459,7 @@ step << Alliance
     #optional
     #completewith next
     #label Talaanis Shadowsong
-    >>|cRXP_WARN_Wait for the Roleplay|r.
+    >>|cRXP_WARN_Wartet auf das Rollenspiel|r.
     .complete 94568,1 --1/1 Learn what you can from the crystal
     .target Talaanis Shadowsong::252476
 step << Alliance
@@ -6454,7 +6470,7 @@ step << Alliance
 step << Alliance
     #requires Talaanis Shadowsong
     .goto 2521,66.17,76.52
-    >>|cRXP_WARN_Wartet auf das Rollenspiel|r.
+    >>|cRXP_WARN_Wait for the Roleplay|r.
     -- *Cook |T132834:0|t[Herb Baked Eggs] and |T133974:0|t[Charred Wolf Meat] if you have the required materials.
     -- *Otherwise, craft any items you can using your other professions.
     .complete 94568,1 --1/1 Learn what you can from the crystal
@@ -6822,24 +6838,6 @@ step << Alliance !Hunter !Rogue !Warrior
 
 step << Horde
     >>Brecht die verbleibenden Quests "Lager aufschlagen 101" ab.
-    *Klickt das Makro im Fenster der Aktiv Gegenstände, um sie alle auf einmal aufzugeben.
-    .abandon 97970 >>Brecht die Quest Lager aufschlagen 101: Bergbau ab.
-    .abandon 97971 >>Brecht die Quest Lager aufschlagen 101: Kürschnerei ab.
-    .abandon 96646 >>Brecht die Quest Lager aufschlagen 101: Kochkunst ab.
-    .abandon 97968 >>Brecht die Quest Lager aufschlagen 101: Kräuterkunde ab.
-    .abandon 97965 >>Brecht die Quest Lager aufschlagen 101: Erste Hilfe ab.
-    .abandon 97967 >>Brecht die Quest Lager aufschlagen 101: Angeln ab.
-    .abandon 97963 >>Brecht die Quest Lager aufschlagen 101: Alchemie ab.
-    .abandon 97964 >>Brecht die Quest Lager aufschlagen 101: Schmiedekunst ab.
-    .abandon 97973 >>Brecht die Quest Lager aufschlagen 101: Schneiderei ab.
-    .abandon 98286 >>Brecht die Quest Lager aufschlagen 101: Verzauberkunst ab.
-    .abandon 97969 >>Brecht die Quest Lager aufschlagen 101: Lederverarbeitung ab.
-    .abandon 98285 >>Brecht die Quest Lager aufschlagen 101: Ingenieurskunst ab.
-    .abandon 93318 >>Brecht die Quest WANTED: Vulgara the Unersättlich ab
-    .macro Abandon 101,130722 >>Brecht die Quest 101 ab
-step << Alliance
-    #completewith Magical City of Dalaran
-    >>Brecht die verbleibenden Quests "Lager aufschlagen 101" ab.
     *Klickt auf das Makro im Fenster der Aktiven Gegenstände, um sie alle auf einmal abzubrechen.
     .abandon 97970 >>Brecht die Quest Lager aufschlagen 101: Bergbau ab.
     .abandon 97971 >>Brecht die Quest Lager aufschlagen 101: Kürschnerei ab.
@@ -6854,8 +6852,26 @@ step << Alliance
     .abandon 97969 >>Brecht die Quest Lager aufschlagen 101: Lederverarbeitung ab.
     .abandon 98285 >>Brecht die Quest Lager aufschlagen 101: Ingenieurskunst ab.
     .abandon 93318 >>Brecht die Quest WANTED: Vulgara the Unersättlich ab
-    .abandon 92709 >>Brecht die Quest A Grand Adventure ab
     .macro Abandon 101,130722 >>Abbrechen 101
+step << Alliance
+    #completewith Magical City of Dalaran
+    >>Brecht die verbleibenden Quests "Lager aufschlagen 101" ab.
+    *Klickt das Makro im Fenster der Aktiv Gegenstände, um sie alle auf einmal aufzugeben.
+    .abandon 97970 >>Brecht die Quest Lager aufschlagen 101: Bergbau ab.
+    .abandon 97971 >>Brecht die Quest Lager aufschlagen 101: Kürschnerei ab.
+    .abandon 96646 >>Brecht die Quest Lager aufschlagen 101: Kochkunst ab.
+    .abandon 97968 >>Brecht die Quest Lager aufschlagen 101: Kräuterkunde ab.
+    .abandon 97965 >>Brecht die Quest Lager aufschlagen 101: Erste Hilfe ab.
+    .abandon 97967 >>Brecht die Quest Lager aufschlagen 101: Angeln ab.
+    .abandon 97963 >>Brecht die Quest Lager aufschlagen 101: Alchemie ab.
+    .abandon 97964 >>Brecht die Quest Lager aufschlagen 101: Schmiedekunst ab.
+    .abandon 97973 >>Brecht die Quest Lager aufschlagen 101: Schneiderei ab.
+    .abandon 98286 >>Brecht die Quest Lager aufschlagen 101: Verzauberkunst ab.
+    .abandon 97969 >>Brecht die Quest Lager aufschlagen 101: Lederverarbeitung ab.
+    .abandon 98285 >>Brecht die Quest Lager aufschlagen 101: Ingenieurskunst ab.
+    .abandon 93318 >>Brecht die Quest WANTED: Vulgara the Unersättlich ab
+    .abandon 92709 >>Brecht die Quest A Grand Adventure ab
+    .macro Abandon 101,130722 >>Brecht die Quest 101 ab
 
 -- ============================================================================
 -- Alliance Discovery

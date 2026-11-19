@@ -3772,7 +3772,7 @@ step << Warrior
     .isQuestTurnedIn 1818
 step
     #completewith Pumpkins
-    >>Tötet alle |cRXP_ENEMY_Schattenhunde|r, die ihr seht. Plündert sie für ihre |cRXP_LOOT_Schattenhundblut|r
+    >>Tötet alle |cRXP_ENEMY_Schattenhunde|r, die ihr seht. Plündert sie für ihre |cRXP_LOOT_Schattenhundblut|r.
     >>|cRXP_WARN_Ihr erhaltet|r |T133849:0|t[Schlummersand] |cRXP_WARN_von der Folgequest dieser Quest|r
     .complete 367,1 --Darkhound Blood (5)
     .mob Decrepit Darkhound
@@ -3858,7 +3858,7 @@ step
     .goto Tirisfal Glades,45.11,48.06,50,0
     .goto Tirisfal Glades,47.07,45.37,50,0
     .goto Tirisfal Glades,50.36,49.51,50,0
-    >>Tötet alle |cRXP_ENEMY_Schattenhunde|r, die ihr seht. Plündert sie für ihre |cRXP_LOOT_Schattenhundblut|r
+    >>Tötet alle |cRXP_ENEMY_Schattenhunde|r, die ihr seht. Plündert sie für ihre |cRXP_LOOT_Schattenhundblut|r.
     >>|cRXP_WARN_Ihr erhaltet|r |T133849:0|t[Schlummersand] |cRXP_WARN_von der Folgequest dieser Quest|r
     .complete 367,1 --Darkhound Blood (5)
     .mob Decrepit Darkhound
@@ -4318,7 +4318,7 @@ step
     .goto Tirisfal Glades,42.82,31.93,60,0
     .goto Tirisfal Glades,42.82,31.93,60,0
     .goto Tirisfal Glades,45.08,31.15,60,0
-    >>Tötet |cRXP_ENEMY_Thurman|r und |cRXP_ENEMY_Gregor|r. Plündert sie für ihre |cRXP_LOOT_überreste|r. Sie können umher patroullieren
+    >>Tötet |cRXP_ENEMY_Thurman|r und |cRXP_ENEMY_Gregor|r. Plündert sie für ihre |cRXP_LOOT_Überreste|r. Sie können umher patroullieren
     .complete 354,3 --Thurman's Remains (1)
     .unitscan +Thurman Agamand
     .complete 354,1 --Gregor's Remains (1)

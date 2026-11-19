@@ -13,7 +13,7 @@ step
 step
     .goto Eastern Plaguelands,81.3,58.75
     >>Klickt auf das Billboard |cRXP_FRIENDLY_Seeking Seasoned Adventurers|r rechts vom Eingang der Kapelle
-    .accept 86964 >> Akzeptiert die Quest For Gold and Ruhm
+    .accept 86964 >> Akzeptiert die Quest Für Gold und Ehre!
 step
     .goto Deadwind Pass,43.08,34.22 << Alliance
     .goto Deadwind Pass,51.01,42.19 << Horde

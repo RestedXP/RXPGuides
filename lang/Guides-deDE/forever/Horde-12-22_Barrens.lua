@@ -1269,7 +1269,7 @@ step
     .goto 1413/1,-1483.11,66.67,50,0
     .goto 1413/1,-1531.75,180.85,50,0
     .goto 1413/1,-1462.84,214.63,50,0
-    >>Tötet |cRXP_ENEMY_Savannah Prowlers|r. Plündert sie für |cRXP_LOOT_Claws|r
+    >>Tötet |cRXP_ENEMY_Savannenstreuner|r. Plündert sie für |cRXP_LOOT_Klauen|r
     .complete 903,1 --Prowler Claws (7)
     .mob Savannah Prowler
     .isQuestAvailable 819
@@ -1326,8 +1326,8 @@ step
     .goto 1413/1,-1960.600,653.700,50,0
     .goto 1413/1,-1871.600,653.700,50,0
     .goto 1413/1,-1729.700,592.400,50,0
-    >>Tötet |cRXP_ENEMY_Savannah Patriarchs|r. Plündert sie für |cRXP_LOOT_Hides|r und |cRXP_LOOT_Tusks|r
-    >>|cRXP_WARN_Falls die |cRXP_ENEMY_Savannah Patriarchs|r stark umkämpft sind, überspringt diese Quest vorerst. Sie kann später abgeschlossen werden|r
+    >>Tötet |cRXP_ENEMY_Savannenpatriarch|r. Plündert sie für |cRXP_LOOT_Bälge|r und |cRXP_LOOT_Hauer|r
+    >>|cRXP_WARN_Falls die |cRXP_ENEMY_Savannenpatriarchen|r stark umkämpft sind, überspringt diese Quest vorerst, da sie später abgeschlossen werden kann|r
     .complete 95494,1 --|6/6 Savannah Lion Hide
     .complete 821,1 --Savannah Lion Tusk (5)
     .disablecheckbox
@@ -1343,8 +1343,8 @@ step
     .goto 1413/1,-1960.600,653.700,50,0
     .goto 1413/1,-1871.600,653.700,50,0
     .goto 1413/1,-1729.700,592.400,50,0
-    >>Tötet |cRXP_ENEMY_Savannah Patriarchs|r. Plündert sie für |cRXP_LOOT_Hides|r
-    >>|cRXP_WARN_Falls die |cRXP_ENEMY_Savannah Patriarchs|r stark umkämpft sind, überspringt diese Quest vorerst. Sie kann später abgeschlossen werden|r
+    >>Tötet |cRXP_ENEMY_Savannenpatriarch|r. Plündert sie für |cRXP_LOOT_Bälge|r
+    >>|cRXP_WARN_Falls die |cRXP_ENEMY_Savannenpatriarchen|r stark umkämpft sind, überspringt diese Quest vorerst, da sie später abgeschlossen werden kann|r
     .complete 95494,1 --|6/6 Savannah Lion Hide
     .mob Savannah Patriarch
     .isQuestAvailable 819
@@ -1468,7 +1468,7 @@ step
 step
     #optional
     #completewith RaptorHeadsComplete
-    >>Tötet |cRXP_ENEMY_Savannah Prowlers|r. Plündert sie für |cRXP_LOOT_Claws|r
+    >>Tötet |cRXP_ENEMY_Savannenstreuner|r. Plündert sie für |cRXP_LOOT_Klauen|r
     .complete 903,1 --Prowler Claws (7)
     .mob Savannah Prowler
     .isQuestAvailable 819
@@ -1505,7 +1505,7 @@ step
     .goto 1413/1,-2859.800,565.900,50,0
     .goto 1413/1,-3023.000,530.700,50,0
     .goto 1413/1,-2897.500,642.200,50,0
-    >>Tötet |cRXP_ENEMY_Savannah Prowlers|r. Plündert sie für |cRXP_LOOT_Claws|r
+    >>Tötet |cRXP_ENEMY_Savannenstreuner|r. Plündert sie für |cRXP_LOOT_Klauen|r
     .complete 903,1 --Prowler Claws (7)
     .mob Savannah Prowler
     .isQuestAvailable 819
@@ -2038,7 +2038,7 @@ step
     .target Sputtervalve
 step
     .goto 1413/1,-3796.55,-985.28
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Dizzywig|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit  |cRXP_FRIENDLY_Dizzywig|r
     .turnin 896 >> Gebt die Quest Des Minenarbeiters Vermögen ab
     .target Wharfmaster Dizzywig
     .isQuestComplete 896
@@ -2564,7 +2564,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Forever Route (H)
 #subgroup Schnellste Route 1-22
 --#groupid RXP-SRGCE-H1
-#next 22-24 Hügellandhof
+#next 22-24 Hillsbrad
 
 
 step
@@ -3142,7 +3142,7 @@ step
     .mob Oasis Snapjaw
 step
     #completewith IshamuhalesFang
-    >>Tötet |cRXP_ENEMY_Savannah Matriarchs|r und |cRXP_ENEMY_Savannah Patriarchs|r. Plündert sie für |cRXP_LOOT_Hides|r
+    >>Tötet |cRXP_ENEMY_Savannenmatriarchin|r und |cRXP_ENEMY_Savannenpatriarch|r. Plündert sie für |cRXP_LOOT_Bälge|r
     .complete 95494,1 --|6/6 Savannah Lion Hide
     .mob Savannah Matriarch
     .mob Savannah Patriarch
@@ -3164,7 +3164,7 @@ step
     .goto 1413/1,-3633.200,-600.500,50,0
     .goto 1413/1,-3469.100,-495.000,50,0
     .goto 1413/1,-3428.300,-584.300,50,0
-    >>Tötet |cRXP_ENEMY_Savannah Matriarchs|r und |cRXP_ENEMY_Savannah Patriarchs|r. Plündert sie für |cRXP_LOOT_Hides|r
+    >>Tötet |cRXP_ENEMY_Savannenmatriarchin|r und |cRXP_ENEMY_Savannenpatriarch|r. Plündert sie für |cRXP_LOOT_Bälge|r
     .complete 95494,1 --|6/6 Savannah Lion Hide
     .mob Savannah Matriarch
     .mob Savannah Patriarch
@@ -3197,7 +3197,7 @@ step
 step
     .goto 1413/1,-3720.300,-920.000
     >>Klickt das |cRXP_PICK_Gesucht-Plakat|r
-    .accept 92706 >>Nehmt WANTED: Bruuz an
+    .accept 92706 >>Nehmt Gesucht: Bruuz an
     .group << Rogue/Warrior
 step
     .goto 1413/1,-3697.24,-929.20
@@ -3208,7 +3208,7 @@ step
 step
     #optional
     #completewith XroadsHS2
-    .destroy 5570 >>|cRXP_WARN_Löscht beliebige|r |T132834:0|t[Eier der Kluftmoosspinnen] |cRXP_WARN_die ihr übrig habt|r
+    .destroy 5570 >>|cRXP_WARN_Löscht sämtliche|r |T132834:0|t[Eier der Kluftmoosspinnen] |cRXP_WARN_die ihr übrig habt|r
 step
     .goto 1413/1,-3687.11,-981.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Drohn|r
@@ -3260,7 +3260,7 @@ step
     .goto 1413/1,-3973.000,-1028.700
     >>Tötet |cRXP_PICK_Bruuz|r (Stufe 20 Elite) im Meer in der Nähe von Ratschet
     >>|cRXP_WARN_Das ist schwer! Bildet eine Gruppe, falls möglich|r << !Rogue !Warrior
-    >>|cRXP_WARN_Versucht, ihn nach Ratschet zu den Wachen zu locken, die euch helfen werden, aber stellt sicher, dass ihr mindestens 50 % Schaden anrichtet!|r
+    >>|cRXP_WARN_Versucht, ihn nach Ratschet zu den Wachen zu locken, die euch helfen werden, aber stellt sicher, dass ihr mindestens 50% des Schadens verursacht!|r
     .complete 92706,1 --Kill Bruuz
     .mob Bruuz
     .isOnQuest 92706
@@ -3500,7 +3500,7 @@ step
 step
     #label SleepingBag1
     .goto 1413/1,-2075.00,-3380.64--c:The Barrens,46.361,73.904
-    >>Klickt auf die |cRXP_PICK_Ausgebrannten Überreste|r auf dem Boden
+    >>Klickt die |cRXP_PICK_Ausgebrannten Überreste|r auf dem Boden
     .accept 79007 >> Akzeptiert die Quest ...und diese Notiz, die Ihr gefunden habt.
 step
     #label LizardBlood
@@ -3638,7 +3638,7 @@ step
 step << !Tauren !Skyborne
     .goto 1413/1,-1891.48,-2391.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Quetschzahn|r
-    .aura 16618 >>|cRXP_WARN_Falls ihr 10 habt|r |T134128:0|t[|cRXP_LOOT_Blutsplitter|r] |cRXP_WARN_übrig, benutzt sie, um|r |T136022:0|t[Geist des Windes] |cRXP_WARN_von|r |cRXP_FRIENDLY_Quetschzahn|r zu erhalten
+    .aura 16618 >>|cRXP_WARN_Falls ihr 10|r |T134128:0|t[|cRXP_LOOT_Blutsplitter|r] |cRXP_WARN_übrig habt, benutzt sie, um|r |T136022:0|t[Geist des Windes] |cRXP_WARN_von|r |cRXP_FRIENDLY_Quetschzahn|r zu erhalten
     >>|cRXP_WARN_Überspringen diesen Schritt, falls ihr die Donnerfels-Flugroute habt|r
     .itemcount 5075,10
     .target Mangletooth
@@ -3827,7 +3827,7 @@ step
     .skill firstaid,<1,1
 step
     .goto 1456/1,206.88,-997.45
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |r |cRXP_FRIENDLY_Pand|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit|r |cRXP_FRIENDLY_Pand|r
     >>|cRXP_WARN_Überspringt diesen Schritt, wenn ihr nicht genug|r |T132889:0|t[Leinenstoff] |cRXP_WARN_hattet, um Skill 80 zu erreichen|r
     .train 3277 >> Erlernt |T133684:0|t[Wollverband]
     .train 7934 >> Erlernt |T134437:0|t[Gegengift] << Rogue
@@ -3857,7 +3857,7 @@ step << Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Turak|r
     .trainer >>Trainiere deine Klassenfähigkeiten
     .accept 27 >>Akzeptiert die Quest Eine wertvolle Lektion
-    .accept 98340 >>Akzeptiert die Quest Der Große Katzengeist
+    .accept 98340 >>Akzeptiert die Quest Der große Katzengeist
     .target Turak Runetotem
 step << Druid
     #completewith next
@@ -3868,9 +3868,9 @@ step << Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Dendrite|r
     .turnin 27 >>Gebt die Quest Eine wertvolle Lektion ab
     .accept 28 >>Akzeptiert die Quest Prüfung des Sees
-    .turnin 98340 >>Gebt die Quest Der Große Katzengeist ab
+    .turnin 98340 >>Gebt die Quest Der große Katzengeist ab
     .accept 98341 >>Akzeptiert die Quest Der Große windgetragene Katzengeist << Skyborne
-    .accept 98405 >>Akzeptiert die Quest Der Große Katzengeist << !Skyborne
+    .accept 98405 >>Akzeptiert die Quest Der große Katzengeist << !Skyborne
     .target Dendrite Starblaze
 step << Druid
     #completewith next
@@ -3890,14 +3890,14 @@ step << Druid
     .target Tajarri
 step << Druid !Skyborne
     .goto 1450/1,-2640.000,7338.900
-     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Great Katze Willenskraft|r
-    .turnin 98405 >>Gebt die Quest Der Große Katzengeist ab
-    .accept 98342 >>Akzeptiert die Quest Der Große Katzengeist
+     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Großer Katzengeist|r
+    .turnin 98405 >>Gebt die Quest Der große Katzengeist ab
+    .accept 98342 >>Akzeptiert die Quest Der große Katzengeist
     .target Great Cat Spirit
 step << Druid Skyborne
     .goto 1450/1,-2352.700,7375.600,10,0
     .goto 1450/1,-2394.300,7361.200
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Avatar of Saeyleenan::272054|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Avatar von Saeyleenan::272054|r
     .target Avatar of Saeyleenan::272054
     .turnin 98341 >>Gebt die Quest Der Große windgetragene Katzengeist ab
     .accept 98404 >>Akzeptiert die Quest Der Große windgetragene Katzengeist
@@ -3905,37 +3905,37 @@ step << Druid
     #completewith next
     .goto 1450/1,-3046.700,7534.400
     --aura 1309054?
-    .subzone 2363 >> Geht zum Sturmgrimms Grabhügel
+    .subzone 2363 >> Geht zu Sturmgrimms Grabhügel
 step << Druid
-    >>Geht tief in die Höhle, wandert über die Brücke, sucht nach einer Katzenstatue in einer Nische und klickt auf die kleine Sphäre neben der Statue
-    >>Beute |cRXP_LOOT_Relikt der Klaue|r
+    >>Geht tief in die Höhle, überquert die Brücke, sucht nach einer Katzenstatue in einer Nische und klickt auf den kleinen Orb neben der Statue
+    >>Plündert das |cRXP_LOOT_Relikt der Klaue|r
     .goto 1450/1,-3117.400,7455.300
     .complete 98404,2 << Skyborne --|1/1 Relic of the Claw
     .complete 98342,2 << !Skyborne --|1/1 Relic of the Claw
 step << Druid
-    >>Klickt auf die kleine Sphäre neben der Katzenstatue
-    >>Beute |cRXP_LOOT_Relikt des stillen Schattens|r
+    >>Klickt auf den kleinen Orb neben der Katzenstatue
+    >>Plündert das |cRXP_LOOT_Relikt des stillen Schattens|r
     .goto 1450/1,-3099.200,7485.700
     .complete 98404,3  << Skyborne --|1/1 Relic of the Silent Shadow
     .complete 98342,3  << !Skyborne --|1/1 Relic of the Silent Shadow
 step << Druid
-    >>Klickt auf die kleine Sphäre neben der Katzenstatue
-    >>Plündert |cRXP_LOOT_Relic of the Zerrender Biss|r
+    >>Klickt auf den kleinen Orb neben der Katzenstatue
+    >>Plündert das |cRXP_LOOT_Relikt des Fangzahns|r
     .goto 1450/1,-3054.100,7476.800
     .complete 98404,1  << Skyborne --|1/1 Relic of the Fang
     .complete 98342,1  << !Skyborne --|1/1 Relic of the Fang
 step << Druid !Skyborne
     .goto 1450/1,-2640.000,7338.900
-     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Great Katze Willenskraft|r
-    .turnin 98342 >>Gebt die Quest Der Große Katzengeist ab
-    .accept 98739 >>Akzeptiert die Quest Segnungen des Großen Katzengeists
+     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Großer Katzengeist|r
+    .turnin 98342 >>Gebt die Quest Der große Katzengeist ab
+    .accept 98739 >>Akzeptiert die Quest Segen des großen Katzengeistes
     .target Great Cat Spirit
 step << Druid Skyborne
     .goto 1450/1,-2395.400,7361.400
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Avatar of Saeyleenan::272054|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Avatar von Saeyleenan::272054|r
     .target Avatar of Saeyleenan::272054
     .turnin 98404 >>Gebt die Quest Der Große windgetragene Katzengeist ab
-    .accept 98738 >>Akzeptiert die Quest Segnungen des Großen windgetragenen Katzengeists
+    .accept 98738 >>Akzeptiert die Quest Segen des großen windgetragenen Katzengeistes
 step << Druid
     #completewith next
     .cast 18960 >>|cRXP_WARN_Wirkt |r|T135758:0|t[Teleportieren: Mondlichtung]
@@ -3943,9 +3943,9 @@ step << Druid
 step << Druid
     .goto 1450/1,-2678.200,8021.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Dendrite Starblaze::11802|r
-    .turnin 98738 >>Gebt die Quest Segnungen des Großen windgetragenen Katzengeists ab << Skyborne
-    .turnin 98739 >>Gebt die Quest Segnungen des Großen Katzengeists ab << !Skyborne
-    .accept 98362 >>Akzeptiert die Quest Nach Donnerfels
+    .turnin 98738 >>Gebt die Quest Segen des großen windgetragenen Katzengeistes ab << Skyborne
+    .turnin 98739 >>Gebt die Quest Segen des großen Katzengeistes ab << !Skyborne
+    .accept 98362 >>Akzeptiert die Quest Nach Thunder Bluff
     .target Dendrite Starblaze::11802
 step << Druid
     .hs >> Ruhestein nach Donnerfels
@@ -3964,7 +3964,7 @@ step << Druid
 step << Druid
     .goto 1456/1,-281.59,-1039.61
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Turak|r
-    .turnin 98362 >>Gebt die Quest Nach Donnerfels ab
+    .turnin 98362 >>Gebt die Quest Nach Thunder Bluff ab
     .target Turak Runetotem
 step << Rogue
     .goto 1456/1,-36.52,-1244.05
@@ -4122,7 +4122,7 @@ step
     .goto 1413/1,-1960.600,653.700,50,0
     .goto 1413/1,-1871.600,653.700,50,0
     .goto 1413/1,-1729.700,592.400,50,0
-    >>Tötet |cRXP_ENEMY_Savannah Patriarchs|r. Plündert sie für |cRXP_LOOT_Hides|r
+    >>Tötet |cRXP_ENEMY_Savannenpatriarch|r. Plündert sie für |cRXP_LOOT_Bälge|r
     .complete 95494,1 --|6/6 Savannah Lion Hide
     .mob Savannah Patriarch
 step
@@ -4206,8 +4206,8 @@ step << Hunter
     #optional
     .goto 1413/1,-2253.24,1246.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Torek|r
-    .accept 3513 >>Akzeptiert die Quest Die Runenverzierte Schriftrolle
-    .turnin 3513 >>Gebt die Quest Die Runenverzierte Schriftrolle ab
+    .accept 3513 >>Akzeptiert die Quest Die runenverzierte Rolle
+    .turnin 3513 >>Gebt die Quest Die runenverzierte Rolle ab
     .target Kadrak
     .itemcount 10621,1
 step << Hunter
@@ -4643,7 +4643,7 @@ step
 step
     #ah
     #completewith WrathtailHeads
-    +|cRXP_WARN_Speichert alle|r |T134332:0|t[Schredder Operating Manuell Pages] |cRXP_WARN_die ihr plündert|r
+    +|cRXP_WARN_Behaltet alle|r |T134332:0|t[Schredderanleitungsseiten] |cRXP_WARN_die ihr plündert|r
 step
    .goto 1440/1,1004.54,3341.83
    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Muglash|r
@@ -4803,7 +4803,7 @@ step
     #ah
     .goto 1456/1,24.85,-1252.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Chesmu|r
-    .bankdeposit 16645,16646,16647,16648,16649,16650,16651,16652,16653,16654,16655,16656 >>Einzahlen alle von Euch |T134332:0|t[Schredder Operating Manuell Pages]
+    .bankdeposit 16645,16646,16647,16648,16649,16650,16651,16652,16653,16654,16655,16656 >>Legt alle eure |T134332:0|t[Schredderanleitungsseiten] auf die Bank
     .target Chesmu
 step << Warlock
     .goto 1456/1,26.1,-1196.66
@@ -5139,7 +5139,7 @@ step
 step
     .goto 1454/1,-4739.57,2036.84
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Sovik|r
-    >>|cRXP_WARN_Passt auf! Ihr müsst zuerst seinen Dialog durchgehen, danach wird die Quest automatisch angenommen.|r
+    >>|cRXP_WARN_Achtung! Ihr müsst zuerst seinen Dialog durchgehen, danach wird die Quest automatisch angenommen.|r
     .accept 2842 >>Akzeptiert die Quest Chefingenieur Scooty
     .target Sovik
 step << skip --Rogue
@@ -5179,7 +5179,7 @@ step
     .abandon 6563 >>Brecht die Quest Die Essenz von Aku'mai ab
 step
     #optional
-    .abandon 97003 >>Brecht die Quest Chol'aruk the Ravener ab
+    .abandon 97003 >>Brecht die Quest Chol'aruk der Verschlinger ab
 step
     .zone Durotar >> Verlass Orgrimmar
     .zoneskip Tirisfal Glades
