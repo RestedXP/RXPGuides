@@ -2983,6 +2983,11 @@ step << Hunter
     .trainer >> Train your pet spells
     .target Karrina Mekenda
 step
+    .goto StormwindClassic,51.757,12.091
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grimand Elmore|r
+    .accept 353 >> Accept Stormpike's Delivery
+    .target Grimand Elmore
+step
     #label DeeprunEnter
     #completewith next
     .goto 1453/0,562.300,-8385.300,20,0
@@ -3226,6 +3231,7 @@ step
     .goto 1432/0,-2676.82,-4825.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Stormpike|r inside the bunker
     .turnin 1339 >> Turn in Mountaineer Stormpike's Task
+    .turnin 353 >> Turn in Stormpike's Delivery
     .accept 307 >> Accept Filthy Paws
     .target Mountaineer Stormpike
 step
