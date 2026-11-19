@@ -3648,7 +3648,7 @@ step
     .goto Wetlands,7.89,56.22
     >>隔墙与 |cRXP_FRIENDLY_德温|r 对话
     >>|cRXP_WARN_如果船只刚刚抵达，跳过此步骤|r
-    .vendor 1453 >> |cRXP_BUY_从他那里购买|r |T134831:0|t[治疗药水] |cRXP_BUY_(如果有)|r
+    .vendor 1453 >> |cRXP_BUY_购买|r |T134831:0|t[治疗药水] |cRXP_BUY_从他那里(如果有)|r
     .target 德温·晨光
     .money <0.03
 step
@@ -6493,7 +6493,7 @@ step
     #label Remtravel1
     .goto Darkshore,35.72,83.69
     >>与 |cRXP_FRIENDLY_勘察员雷姆塔维尔|r 对话来开始护送
-    .turnin 729 >> 交任务 健忘的勘察员
+    .turnin 729 >> 交任务健忘的勘察员
     .accept 731 >> 接受任务 健忘的勘察员
     .target 勘察员雷塔维
     .use 13536
@@ -6718,7 +6718,7 @@ step
     #label Remtravel3
     .goto Darkshore,35.72,83.69
     >>与 |cRXP_FRIENDLY_勘察员雷姆塔维尔|r 对话来开始护送
-    .turnin 729 >> 交任务 健忘的勘察员
+    .turnin 729 >> 交任务健忘的勘察员
     .accept 731 >> 接受任务 健忘的勘察员
     .target 勘察员雷塔维
 step
@@ -6999,7 +6999,7 @@ step
 step
     .goto Darkshore,37.44,41.84
     >>与|cRXP_FRIENDLY_霍莉|r 对话
-    .turnin 731 >> 交任务 健忘的勘察员
+    .turnin 731 >> 交任务健忘的勘察员
     .accept 741 >> 接受任务 健忘的勘察员
     .target 考古学家霍莉
 step
@@ -7054,7 +7054,7 @@ step
 step
     .goto Darnassus,31.24,84.49
     >>与 |cRXP_FRIENDLY_杜瑟·灰须|r 对话
-    .turnin 741,3 >>交任务 健忘的勘察员
+    .turnin 741,3 >>交任务健忘的勘察员
     .accept 942 >>接受任务 健忘的勘察员
     .target 首席考古学家杜瑟·灰胡
 

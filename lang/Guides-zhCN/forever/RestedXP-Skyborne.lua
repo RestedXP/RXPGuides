@@ -224,7 +224,7 @@ step << Alliance Rogue/Alliance Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德斯汀·三铸::251364|r 对话。
     .collect 2131,1 >>购买并装备 |T135274:0|t[农夫之剑] << Rogue
     .collect 1194,1 >>购买并装备 |T135276:0|t[损坏的双刃刀] << Warrior
-    .vendor 251364 >>出售垃圾物品
+    .vendor 251364 >>|cRXP_WARN_出售垃圾物品|r
     *不要出售 |T133970:0|t[多汁肉] 或 |T132889:0|t[亚麻布]。
     .target Destin Thriceforged::251364
 step << Horde
@@ -240,7 +240,7 @@ step << Horde !Warrior !Rogue/Alliance !Warrior !Rogue !Hunter
     .goto 2521,42.749,24.496
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乌阿莉亚·日冠::251537|r 对话
     >>|cRXP_BUY_从她那里|r|cRXP_BUY_购买|r |T132794:0|t[清凉的泉水] << !Hunter !Shaman
-    .vendor 251537 >>出售垃圾物品
+    .vendor 251537 >>|cRXP_WARN_出售垃圾物品|r
     *不要出售 |T133970:0|t[多汁肉] 或 |T132889:0|t[亚麻布]。 << Alliance
     .collect 159,20 << !Hunter !Shaman --Refreshing Spring Water (20)
     .target Uualia Suncrest::251537
@@ -264,7 +264,7 @@ step << Alliance Hunter/Horde Rogue/Horde Warrior
     .goto 2521,43.41,23.51
     .collect 1194,1 >>购买并装备 |T135276:0|t[损坏的双刃刀] << Hunter/Horde Warrior
     .collect 2131,1 >>购买并装备 |T135274:0|t[农夫之剑] << Horde Rogue
-    .vendor 251364 >>出售垃圾物品
+    .vendor 251364 >>|cRXP_WARN_出售垃圾物品|r
     *不要出售 |T133970:0|t[多汁肉] 或 |T132889:0|t[亚麻布]。
     .target Destin Thriceforged::251364
 step << Alliance
@@ -733,7 +733,7 @@ step
     #label AggressiveVendor
     #completewith Aggressive Encroachment
     .goto 2521,42.76,24.5
-    .vendor 251537 >>出售垃圾物品
+    .vendor 251537 >>|cRXP_WARN_出售垃圾物品|r
     *不要出售 |T133970:0|t[多汁肉] 或 |T132889:0|t[亚麻布]。 << Alliance
     .collect 2512,1200 << Hunter --Rough Arrow (1200)
     .collect 159,20 >>购买 |T132794:0|t[清凉的泉水] << Druid/Mage/Priest/Warlock/Paladin
@@ -864,7 +864,7 @@ step
 step
     #completewith Aggressive Encroachment2
     .goto 2521,42.76,24.52
-    .vendor 251537 >>出售垃圾物品
+    .vendor 251537 >>|cRXP_WARN_出售垃圾物品|r
     *不要出售 |T133970:0|t[多汁肉]、|T132832:0|t[小蛋] 或 |T132889:0|t[亚麻布]。 << Alliance
     *不要出售 |T132832:0|t[小蛋] 或 |T132889:0|t[亚麻布]。 << Horde
     *|cRXP_WARN_之后烹饪会用到它们|r。
@@ -2303,6 +2303,14 @@ step
     .turnin 97965 >>交任务 露营基础：急救
     .target Naleeia Tattermend::257018
 step
+    .train 2366,3 --Herbalism Trained
+    .isQuestComplete 97968 --Camping 101: Herbalism
+    .isQuestComplete 92516 --Hippogryph Harassment
+    .goto 2521,43.0,43.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Halassa Fernbreeze::257021|r 对话。
+    .turnin 97968 >>交任务 露营基础：草药学
+    .target Halassa Fernbreeze::257021
+step
     .train 7411,3 -- Enchanting Trained
     .isQuestComplete 98286 -- Camping 101: Enchanting
     .isQuestComplete 92516 -- Hippogryph Harassment
@@ -2465,7 +2473,7 @@ step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_科尔桑·裂地者::254088|r 对话
     .train 284 >> 学习 |T132282:0|t[英勇打击 (等级 2)]
     .train 1715 >> 学习 |T132316:0|t[断筋]
-    .train 6343 >> 训练|T136105:0|t|T136105:0|t[雷霆一击]
+    .train 6343 >> 学习 |T136105:0|t[雷霆一击]
     .skipgossipid 136813
     .target Corsan Earthrazer::254088
 step
@@ -3118,6 +3126,14 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_娜萨兰娜·风歌::257020|r 对话
     .turnin 98286 >>交任务 露营基础：附魔
     .target Nasalanna Windsinger::257020
+step
+    .train 2366,3 --Herbalism Trained
+    .isQuestComplete 97968 --Camping 101: Herbalism
+    .isQuestComplete 92550 -- Havoc in the Highlands
+    .goto 2521,43.0,43.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Halassa Fernbreeze::257021|r 对话。
+    .turnin 97968 >>交任务 露营基础：草药学
+    .target Halassa Fernbreeze::257021
 step
     .train 3273,3 -- First Aid Trained
     .itemcount 2589,1 -- Linen Cloth
@@ -3842,13 +3858,13 @@ step << Horde Rogue
     .itemcount 277107,1 --Zephrali Bludgeon
     .equip 16,277107 >>|cRXP_WARN_装备|r |T7791298:0|t[泽风大头棒]。
     .use 277107 --Zephrali Bludgeon
-step << Horde
-    .train 2366,3 -- Herbalism Trained
-    .isQuestComplete 97968 -- Camping 101: Herbalism
-    .goto 2521,57.890,75.514
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_希瑞尔·夜雨::254345|r 对话。
-    .target Syriel Nightrain::254345
-    .turnin 97968 >>交任务 露营基础：草药学
+-- step << Horde
+--     .train 2366,3 -- Herbalism Trained
+--     .isQuestComplete 97968 -- Camping 101: Herbalism
+--     .goto 2521,57.890,75.514
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Syriel Nightrain::254345|r.
+--     .target Syriel Nightrain::254345
+--     .turnin 97968 >>Turn in Camping 101: Herbalism
 step << Hunter Horde
     .money <0.1345
     .isOnQuest 93735 -- The Broken Construct
@@ -4864,13 +4880,13 @@ step << Alliance Hunter
     .turnin 94979 >>交任务 驯服野兽
     .accept 94013 >>接受任务 驯服野兽
     .target Quel'ana Quickgale::252389
-step << Alliance Hunter
-    .train 2366,3 -- Herbalism Trained
-    .isQuestComplete 97968 -- Camping 101: Herbalism
-    .goto 2521,57.890,75.514
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_希瑞尔·夜雨::254345|r 对话。
-    .turnin 97968 >>交任务 露营基础：草药学
-    .target Syriel Nightrain::254345
+-- step << Alliance Hunter
+--     .train 2366,3 -- Herbalism Trained
+--     .isQuestComplete 97968 -- Camping 101: Herbalism
+--     .goto 2521,57.890,75.514
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Syriel Nightrain::254345|r.
+--     .turnin 97968 >>Turn in Camping 101: Herbalism
+--     .target Syriel Nightrain::254345
 step << Alliance Hunter
     #optional
     #completewith next
@@ -4954,13 +4970,13 @@ step << Mage
     >>击杀 |cRXP_ENEMY_天空跳跃者::251314|r。
     .complete 93949,1 --|8/8 Enchanted Skyhopper Exterminated
     .mob Skyhopper::251314
-step << Alliance !Hunter
-    .train 2366,3 -- Herbalism Trained
-    .isQuestComplete 97968 -- Camping 101: Herbalism
-    .goto 2521,57.890,75.514
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_希瑞尔·夜雨::254345|r 对话。
-    .turnin 97968 >>交任务 露营基础：草药学
-    .target Syriel Nightrain::254345
+-- step << Alliance !Hunter
+--     .train 2366,3 -- Herbalism Trained
+--     .isQuestComplete 97968 -- Camping 101: Herbalism
+--     .goto 2521,57.890,75.514
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Syriel Nightrain::254345|r.
+--     .turnin 97968 >>Turn in Camping 101: Herbalism
+--     .target Syriel Nightrain::254345
 step << Alliance !Mage/Alliance !Hunter
     #loop
     .goto 2521,58.85,75.49,30,0
@@ -5075,7 +5091,7 @@ step << Horde Druid
 step << Horde
     .goto 2521,59.528,66.902,30,0 << Druid
     .goto 2521,56.81,61.11
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_芬达尔·风石::273017|r 对话。
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_芬达尔·风石::273017|r交谈。
     *|cRXP_WARN_如果附近有龙卷风，接触它可获得40%移动速度加成，持续5分钟。造成伤害会移除该效果|r。
     .accept 98512 >>接受任务 奥拉凯斯刺客
     .target Fendaal Windstone::273017
@@ -5091,7 +5107,7 @@ step << Horde
     .mob Al'Aketh Assassin::254626
 step << Horde
     .goto 2521,56.80,61.10
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_芬达尔·风石::273017|r交谈。
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_芬达尔·风石::273017|r 对话。
     .turnin 98512 >>交任务 奥拉凯斯刺客
     .target Fendaal Windstone::273017
 step << Horde Druid
@@ -7085,8 +7101,8 @@ step << Alliance Hunter
     #completewith DarkshoreBoat
     >>|cRXP_WARN_你需要 50 点|r |T133971:0|t[烹饪] |cRXP_WARN_，以便之后在暮色森林完成一个任务|r
     >>|T133971:0|t[烹饪] 以下物品：
-    >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[大块野猪肉]|r|cRXP_WARN_|r |T133974:0|t[烤野猪肉]
-    >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[多汁狼肉]|r|cRXP_WARN_|r |T133974:0|t[烧烤狼肉]
+    >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[大块野猪肉]|r|cRXP_WARN_制作为|r |T133974:0|t[烤野猪肉]
+    >>|T133971:0|t[Cook]|cRXP_WARN_the|r |T133970:0|t|cRXP_LOOT_[多汁狼肉]|r|cRXP_WARN_into|r |T133974:0|t[Charred Wolf Meat]
     .usespell 2550
     .zoneskip Darkshore
     .itemcount 769,1 --Chunk of Boar Meat (1+)
@@ -7099,7 +7115,7 @@ step << Alliance Hunter
     #label DarkshoreCook5
     #completewith DarkshoreBoat
     >>|cRXP_WARN_你需要 50 点|r |T133971:0|t[烹饪] |cRXP_WARN_，以便之后在暮色森林完成一个任务|r
-    >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[多汁狼肉]|r|cRXP_WARN_|r |T133974:0|t[烧烤狼肉]
+    >>|T133971:0|t[Cook]|cRXP_WARN_the|r |T133970:0|t|cRXP_LOOT_[多汁狼肉]|r|cRXP_WARN_into|r |T133974:0|t[Charred Wolf Meat]
     .usespell 2550
     .zoneskip Darkshore
     .itemcount 769,<1 --Chunk of Boar Meat (<1)
@@ -7112,7 +7128,7 @@ step << Alliance Hunter
     #label DarkshoreCook6
     #completewith DarkshoreBoat
     >>|cRXP_WARN_你需要 50 点|r |T133971:0|t[烹饪] |cRXP_WARN_，以便之后在暮色森林完成一个任务|r
-    >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[大块野猪肉]|r|cRXP_WARN_|r |T133974:0|t[烤野猪肉]
+    >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[大块野猪肉]|r|cRXP_WARN_制作为|r |T133974:0|t[烤野猪肉]
     .usespell 2550
     .zoneskip Darkshore
     .itemcount 769,1 --Chunk of Boar Meat (1)

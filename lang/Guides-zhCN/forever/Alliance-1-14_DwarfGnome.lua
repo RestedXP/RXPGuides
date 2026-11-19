@@ -134,7 +134,7 @@ step << !Priest !Mage !Warlock !Shaman
     .goto 1426/0,320.30,-6226.74
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾德林·怒流|r 对话
     >>|cRXP_BUY_从他那里|r|cRXP_BUY_购买 600发|r |T132384:0|t[轻弹丸] << Hunter
-    .vendor >> 出售垃圾物品 << !Hunter
+    .vendor >> |cRXP_WARN_出售垃圾物品|r << !Hunter
     .collect 2516,600 << Hunter --Light Shot (600)
     .target 艾德林·怒流
     .xp >6,1
@@ -213,7 +213,7 @@ step << Warlock
     #softcore
     #label BeginningsHS
     #completewith BeginningsEnd
-    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
     >>|cRXP_WARN_确保当你死亡时，你所在的子区域是寒脊山谷！否则你将被传送到卡拉诺斯墓地|r
     .target 灵魂医者
 step << Warlock
@@ -446,7 +446,7 @@ step
 step << !Paladin !Warlock !Hunter !Shaman
     #softcore
     #completewith next
-    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
     .target 灵魂医者
 step
     #hardcore << !Paladin !Warlock !Hunter !Shaman
@@ -701,7 +701,7 @@ step
     #softcore
     #completewith next
     >>|cRXP_WARN_请确保你的区域不是寒脊山小径|r
-    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
     .target 灵魂医者
 step
     .goto 1426/0,-498.400,-5648.400
@@ -1055,7 +1055,7 @@ step
     .mob +Young Wendigo
     .complete 98321,1 --|8/8 Flintfire's Shipment
 step
-    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
     .target 灵魂医者
     .subzoneskip 136,1
 step
@@ -1178,7 +1178,7 @@ step << !Mage !Priest !Warlock
     #completewith next
     .goto 1426/0,302.27,-5387.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_基格·吉布恩|r 对话
-    .vendor >> 出售垃圾物品
+    .vendor >> |cRXP_WARN_出售垃圾物品|r
     .target 基格·吉布恩
 step << Priest/Mage/Warlock
     #completewith next
@@ -1330,7 +1330,7 @@ step
 step
     #softcore
     #completewith next
-    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
     .target 灵魂医者
 step
     .goto 1426/0,-501.400,-5643.900
@@ -1410,7 +1410,7 @@ step << Hunter
     .trainer >> 训练你的职业技能
 step
     .goto 1426/0,-504.05,-5596.27
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在外面与 |cRXP_FRIENDLY_拉格纳·雷酒|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与外面的 |cRXP_FRIENDLY_拉格纳·雷酒|r 对话
     .turnin 384 >> 交任务 啤酒烤猪排
     .target 拉格纳·雷酒
 
@@ -1650,7 +1650,7 @@ step << !Hunter
     .xp 9 >> 刷怪升级到 9 级
 step
     #completewith next
-    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
     .target 灵魂医者
     .subzoneskip 2102
 step
@@ -1735,7 +1735,7 @@ step << Warrior
     .target 布里维夫·石拳
 step << Warrior
     .goto 1455/0,-1206.77,-5037.07--c:1455,62.378,88.671
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在楼下与 |cRXP_FRIENDLY_布雷文·寒钢|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布雷文·寒钢|r 在楼下对话
     >>|cRXP_BUY_从她那里|r|cRXP_BUY_购买一把|r |T135425:0|t[锐利的飞刀]
     .collect 3107,1 --Collect Keen Throwing Knife (1)
     .target 布雷文·寒钢
@@ -1743,7 +1743,7 @@ step << Warrior
     .xp <11,1
 step << Warrior
     .goto 1455/0,-1206.77,-5037.07--c:1455,62.378,88.671
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在楼下与 |cRXP_FRIENDLY_布雷文·寒钢|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布雷文·寒钢|r 在楼下对话
     >>|cRXP_BUY_从她那里|r|cRXP_BUY_购买|r |T135641:0|t[平衡飞刀]
     .collect 2946,1 --Collect Balanced Throwing Dagger (1)
     .target 布雷文·寒钢
@@ -2326,12 +2326,12 @@ step << !Hunter
 step << !Hunter
     #completewith flyIF
     .hs >> 炉石到塞尔萨玛
-    >>|cRXP_BUY_如有需要，购买食物/水|r << !Warrior !Rogue
+    >>|cRXP_BUY_按需购买食物/水|r << !Warrior !Rogue
 	>>|cRXP_BUY_需要的话就买点食物|r << Warrior/Rogue
     .cooldown item,6948,>2,1
 step << Hunter
     #completewith flyIF
-    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
     .subzoneskip 2101 -- stoutlager inn
     .subzoneskip 144 -- thelsamar
     .target 灵魂医者
@@ -2423,7 +2423,7 @@ step << Warrior
     .target 布里维夫·石拳
 step << Warrior
     .goto 1455/0,-1206.77,-5037.07--c:1455,62.378,88.671
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在楼下与 |cRXP_FRIENDLY_布雷文·寒钢|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布雷文·寒钢|r 在楼下对话
     >>|cRXP_BUY_从她那里|r|cRXP_BUY_购买一把|r |T135425:0|t[锐利的飞刀]
     .collect 3107,1 --Collect Keen Throwing Knife (200)
     .target 布雷文·寒钢
@@ -2431,7 +2431,7 @@ step << Warrior
     .xp <11,1
 step << Warrior
     .goto 1455/0,-1206.77,-5037.07--c:1455,62.378,88.671
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在楼下与 |cRXP_FRIENDLY_布雷文·寒钢|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布雷文·寒钢|r 在楼下对话
     >>|cRXP_BUY_从她那里|r|cRXP_BUY_购买|r |T135641:0|t[平衡飞刀]
     .collect 2946,1 --Collect Balanced Throwing Dagger (200)
     .target 布雷文·寒钢
@@ -2550,7 +2550,7 @@ step << Dwarf Paladin
     .bindlocation 1537
 step << Hunter
     .hs >> 炉石到塞尔萨玛
-    >>|cRXP_BUY_如有需要，购买食物/水|r << !Warrior !Rogue
+    >>|cRXP_BUY_按需购买食物/水|r << !Warrior !Rogue
 	>>|cRXP_BUY_需要的话就买点食物|r << Warrior/Rogue
     .cooldown item,6948,>2,1
     .zoneskip Loch Modan
@@ -2629,8 +2629,8 @@ step << !Hunter skip
     #completewith TramEnd
     >>|cRXP_WARN_你需要 50 点|r |T133971:0|t[烹饪] |cRXP_WARN_，以便之后在暮色森林完成一个任务|r
     >>|T133971:0|t[烹饪] 以下物品：
-    >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[大块野猪肉]|r|cRXP_WARN_|r |T133974:0|t[烤野猪肉]
-    >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[多汁狼肉]|r|cRXP_WARN_|r |T133974:0|t[烧烤狼肉]
+    >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[大块野猪肉]|r|cRXP_WARN_制作为|r |T133974:0|t[烤野猪肉]
+    >>|T133971:0|t[Cook]|cRXP_WARN_the|r |T133970:0|t|cRXP_LOOT_[多汁狼肉]|r|cRXP_WARN_into|r |T133974:0|t[Charred Wolf Meat]
     .usespell 2550
     .zoneskip Stormwind City
     .itemcount 769,1 --Chunk of Boar Meat (1+)
@@ -2643,7 +2643,7 @@ step << !Hunter skip
     #label TramCook5
     #completewith TramEnd
     >>|cRXP_WARN_你需要 50 点|r |T133971:0|t[烹饪] |cRXP_WARN_，以便之后在暮色森林完成一个任务|r
-    >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[多汁狼肉]|r|cRXP_WARN_|r |T133974:0|t[烧烤狼肉]
+    >>|T133971:0|t[Cook]|cRXP_WARN_the|r |T133970:0|t|cRXP_LOOT_[多汁狼肉]|r|cRXP_WARN_into|r |T133974:0|t[Charred Wolf Meat]
     .usespell 2550
     .zoneskip Stormwind City
     .itemcount 769,<1 --Chunk of Boar Meat (<1)
@@ -2656,7 +2656,7 @@ step << !Hunter skip
     #label TramCook6
     #completewith TramEnd
     >>|cRXP_WARN_你需要 50 点|r |T133971:0|t[烹饪] |cRXP_WARN_，以便之后在暮色森林完成一个任务|r
-    >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[大块野猪肉]|r|cRXP_WARN_|r |T133974:0|t[烤野猪肉]
+    >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[大块野猪肉]|r|cRXP_WARN_制作为|r |T133974:0|t[烤野猪肉]
     .usespell 2550
     .zoneskip Stormwind City
     .itemcount 769,1 --Chunk of Boar Meat (1)
@@ -2740,7 +2740,7 @@ step << Warlock
     .goto 1453/0,1015.33,-8978.9,15 >> 前往屠宰场，进入地下室
 step << Warlock
     .goto 1453/0,1029.89,-8971.06
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
     .trainer >> 训练你的职业技能
     .target 厄苏拉·德林
 step << Warlock
@@ -2833,7 +2833,7 @@ step << skip
     .target 威廉·匹斯特
     .goto 1429/0,31.92,-9460.38
     .accept 60 >> 接受任务 狗头人的蜡烛
-step << Mage/Rogue
+step << Mage/Rogue/Priest
     #completewith next
     .goto 1429/0,12.52,-9479.85,9 >> 前往旅店楼上
 step << Mage
@@ -2847,6 +2847,11 @@ step << Rogue
     .target 科瑞恩·塞尔留斯
     .goto 1429/0,12.69,-9465.75
     .trainer >> 训练你的职业技能
+step << Priest
+    .goto 1429/0,33.14,-9460.75
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_女牧师洁塞塔|r 对话
+    .trainer >> 训练你的职业技能
+    .target 女牧师洁塞塔
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雷米|r 对话
     .target 雷米
@@ -3233,7 +3238,7 @@ step << Warlock
     .goto 1453/0,1015.33,-8978.9,15 >> 前往屠宰场，进入地下室
 step << Warlock
     .goto 1453/0,1029.89,-8971.06
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
     .trainer >> 训练你的职业技能
     .target 厄苏拉·德林
 step << Warlock
@@ -3424,7 +3429,7 @@ step
     .target 索尔
 step << Dwarf Paladin
     .hs >> 将炉石使用回铁炉堡
-    >>|cRXP_BUY_如有需要，购买食物/水|r << !Warrior !Rogue
+    >>|cRXP_BUY_按需购买食物/水|r << !Warrior !Rogue
 	>>|cRXP_BUY_需要的话就买点食物|r << Warrior/Rogue
     .cooldown item,6948,>2,1
     .bindlocation 1537,1
@@ -3438,7 +3443,7 @@ step << Dwarf Paladin
     .zoneskip Loch Modan
 step << !Paladin
     .hs >> 炉石到塞尔萨玛
-    >>|cRXP_BUY_如有需要，购买食物/水|r << !Warrior !Rogue
+    >>|cRXP_BUY_按需购买食物/水|r << !Warrior !Rogue
 	>>|cRXP_BUY_需要的话就买点食物|r << Warrior/Rogue
     .cooldown item,6948,>2,1
     .zoneskip Loch Modan
@@ -3473,7 +3478,7 @@ step << Dwarf Paladin
     .goto 1455/0,-896.47,-4601.65,12 >>前往 |cRXP_FRIENDLY_布兰度尔·铁锤|r
 step << Dwarf Paladin
     .goto 1455/0,-896.47,-4601.65
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布兰度尔·铁锤|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_布兰度尔·铁锤|r 对话
     .accept 2999 >>接受任务圣洁之书
     .target 布兰度尔·铁锤
 step << Dwarf Paladin
@@ -3682,7 +3687,6 @@ step
 step
     .goto 1432/0,-3146.73,-4837.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_诺里克·洛克塞恩|r 对话
-    >>|cRXP_WARN_确保在|T1387609:0|t[雪罐] 10分钟计时结束前交掉此任务|r
     .turnin 86667 >> 交任务 困于风雪
     .target Norric Lochthane
 step << Shaman
@@ -4322,8 +4326,8 @@ step << skip
     #completewith WestfallTramEnd
     +|cRXP_WARN_你需要 50 点|r |T133971:0|t[烹饪] |cRXP_WARN_，以便之后在暮色森林完成一个任务|r
     >>|T133971:0|t[烹饪] 以下物品：
-    >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[大块野猪肉]|r|cRXP_WARN_|r |T133974:0|t[烤野猪肉]
-    >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[多汁狼肉]|r|cRXP_WARN_|r |T133974:0|t[烧烤狼肉]
+    >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[大块野猪肉]|r|cRXP_WARN_制作为|r |T133974:0|t[烤野猪肉]
+    >>|T133971:0|t[Cook]|cRXP_WARN_the|r |T133970:0|t|cRXP_LOOT_[多汁狼肉]|r|cRXP_WARN_into|r |T133974:0|t[Charred Wolf Meat]
     .usespell 2550
     .zoneskip Stormwind City
     .itemcount 769,1 --Chunk of Boar Meat (1+)
@@ -4336,7 +4340,7 @@ step << skip
     #label WestfallTramCook5
     #completewith WestfallTramEnd
     +|cRXP_WARN_你需要 50 点|r |T133971:0|t[烹饪] |cRXP_WARN_，以便之后在暮色森林完成一个任务|r
-    >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[多汁狼肉]|r|cRXP_WARN_|r |T133974:0|t[烧烤狼肉]
+    >>|T133971:0|t[Cook]|cRXP_WARN_the|r |T133970:0|t|cRXP_LOOT_[多汁狼肉]|r|cRXP_WARN_into|r |T133974:0|t[Charred Wolf Meat]
     .usespell 2550
     .zoneskip Stormwind City
     .itemcount 769,<1 --Chunk of Boar Meat (<1)
@@ -4349,7 +4353,7 @@ step << skip
     #label WestfallTramCook6
     #completewith WestfallTramEnd
     +|cRXP_WARN_你需要 50 点|r |T133971:0|t[烹饪] |cRXP_WARN_，以便之后在暮色森林完成一个任务|r
-    >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[大块野猪肉]|r|cRXP_WARN_|r |T133974:0|t[烤野猪肉]
+    >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[大块野猪肉]|r|cRXP_WARN_制作为|r |T133974:0|t[烤野猪肉]
     .usespell 2550
     .zoneskip Stormwind City
     .itemcount 769,1 --Chunk of Boar Meat (1)
@@ -4754,7 +4758,6 @@ step
 step
     .goto 1432/0,-3146.73,-4837.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_诺里克·洛克塞恩|r 对话
-    >>|cRXP_WARN_确保在|T1387609:0|t[雪罐] 10分钟计时结束前交掉此任务|r
     .turnin 86667 >> 交任务 困于风雪
     .target Norric Lochthane
 step
@@ -4834,7 +4837,7 @@ step
 step
     #softcore
     #completewith next
-    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
     .target 灵魂医者
 step
     .goto 1432/0,-3019.02,-5369.40,8,0
@@ -5003,8 +5006,8 @@ step << Hunter skip
     #completewith DarkshoreBoat
     +|cRXP_WARN_你需要 50 点|r |T133971:0|t[烹饪] |cRXP_WARN_，以便之后在暮色森林完成一个任务|r
     >>|T133971:0|t[烹饪] 以下物品：
-    >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[大块野猪肉]|r|cRXP_WARN_|r |T133974:0|t[烤野猪肉]
-    >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[多汁狼肉]|r|cRXP_WARN_|r |T133974:0|t[烧烤狼肉]
+    >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[大块野猪肉]|r|cRXP_WARN_制作为|r |T133974:0|t[烤野猪肉]
+    >>|T133971:0|t[Cook]|cRXP_WARN_the|r |T133970:0|t|cRXP_LOOT_[多汁狼肉]|r|cRXP_WARN_into|r |T133974:0|t[Charred Wolf Meat]
     .usespell 2550
     .zoneskip Darkshore
     .itemcount 769,1 --Chunk of Boar Meat (1+)
@@ -5017,7 +5020,7 @@ step << Hunter skip
     #label DarkshoreCook5
     #completewith DarkshoreBoat
     +|cRXP_WARN_你需要 50 点|r |T133971:0|t[烹饪] |cRXP_WARN_，以便之后在暮色森林完成一个任务|r
-    >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[多汁狼肉]|r|cRXP_WARN_|r |T133974:0|t[烧烤狼肉]
+    >>|T133971:0|t[Cook]|cRXP_WARN_the|r |T133970:0|t|cRXP_LOOT_[多汁狼肉]|r|cRXP_WARN_into|r |T133974:0|t[Charred Wolf Meat]
     .usespell 2550
     .zoneskip Darkshore
     .itemcount 769,<1 --Chunk of Boar Meat (<1)
@@ -5030,7 +5033,7 @@ step << Hunter skip
     #label DarkshoreCook6
     #completewith DarkshoreBoat
     +|cRXP_WARN_你需要 50 点|r |T133971:0|t[烹饪] |cRXP_WARN_，以便之后在暮色森林完成一个任务|r
-    >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[大块野猪肉]|r|cRXP_WARN_|r |T133974:0|t[烤野猪肉]
+    >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[大块野猪肉]|r|cRXP_WARN_制作为|r |T133974:0|t[烤野猪肉]
     .usespell 2550
     .zoneskip Darkshore
     .itemcount 769,1 --Chunk of Boar Meat (1)

@@ -56,7 +56,7 @@ step << Human Paladin
     .target 达索瑞恩·拉尔
 step << Paladin
     .goto StormwindClassic,38.67,32.82
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_虔诚的亚瑟|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_虔诚的亚瑟|r 对话
     .trainer >> 训练你的职业技能
     .target 虔诚的亚瑟
 step << Human Paladin
@@ -91,7 +91,7 @@ step << Warlock
     .goto StormwindClassic,27.2,78.1,15 >> 前往屠宰场，进入地下室
 step << Warlock
     .goto StormwindClassic,26.117,77.225
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
     .trainer >> 训练你的职业技能
     .target 厄苏拉·德林
 step << Warlock
@@ -151,7 +151,7 @@ step << Rogue
     .goto StormwindClassic,78.67,60.13,5 >> 进入军情7处总部。上楼去找 |cRXP_FRIENDLY_"剃刀"雷吉克|r
 step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_"剃刀"雷吉克|r对话
-    .accept 2281 >> 接受任务赤脊山的联络员
+    .accept 2281 >> 接受任务 赤脊山的联络员
     .goto StormwindClassic,75.76,60.35
     .target Renzik "The Shiv"
 step << Warrior
@@ -475,7 +475,7 @@ RXPGuides.RegisterGuide([[
 
 step
     #label BMenace
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_治安官马瑞斯|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_治安官马瑞斯|r 对话
     .goto Redridge Mountains,33.50,48.97
     .accept 20 >> 接受任务黑石氏族的威胁
     .target 治安官马瑞斯
@@ -591,7 +591,7 @@ step
     .accept 89 >> 接受任务 止水湖上的桥
 step
     #label BMenace
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_治安官马瑞斯|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_治安官马瑞斯|r 对话
     .goto Redridge Mountains,33.50,48.97
     .accept 20 >> 接受任务黑石氏族的威胁
     .target 治安官马瑞斯
@@ -760,7 +760,7 @@ step << Human
     .zoneskip Redridge Mountains
 step
     #label BMenace
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_治安官马瑞斯|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_治安官马瑞斯|r 对话
     .goto Redridge Mountains,33.50,48.97
     .accept 20 >> 接受任务黑石氏族的威胁
     .target 治安官马瑞斯
@@ -1121,7 +1121,7 @@ step << Rogue
     .goto StormwindClassic,75.78,59.84
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_马迪亚斯·肖尔大师|r 对话
     >>|cRXP_WARN_如果你之前切换成了|r |T135641:0|t[匕首] |cRXP_WARN_，记得重新装备上你的主武器|r << Rogue
-    .turnin 2359 >> 交任务克拉文之塔
+    .turnin 2359 >> 交任务 克拉文之塔
     .turnin 135 >> 交任务 迪菲亚兄弟会
     .target 马迪亚斯·肖尔大师
 step << Rogue
@@ -1358,7 +1358,7 @@ step
     .goto Redridge Mountains,31.00,47.30
     .turnin 122 >> 交任务 雏龙的鳞片
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_治安官马瑞斯|r 对话
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_治安官马瑞斯|r 对话
 	.target 治安官马瑞斯
     .goto Redridge Mountains,33.50,48.97
     .turnin 20 >> 交任务 黑石氏族的威胁
@@ -1400,7 +1400,7 @@ step << Rogue
     .target 夜行者奥斯伯
 step << Paladin
     .goto StormwindClassic,38.67,32.82
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_虔诚的亚瑟|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_虔诚的亚瑟|r 对话
     .trainer >> 训练你的职业技能
     .target 虔诚的亚瑟
 step << Priest

@@ -607,7 +607,7 @@ step << Druid
 step
 	#completewith BloodhoofHome
 	#softcore
-    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
 step
 	#hardcore
 	#completewith BloodhoofHome
@@ -1057,7 +1057,7 @@ step
 step
     #softcore
 	#completewith Thunderhorn
-    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
 step
     #hardcore
     #completewith Thunderhorn
@@ -1681,7 +1681,7 @@ step << !Druid
 step << Druid
     #sofcore
     #completewith Bloodhoofturnins1
-    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
 step << Druid
     #hardcore
     #completewith Bloodhoofturnins1
@@ -1924,7 +1924,7 @@ step << Tauren
 step << Tauren
     #softcore
 	#completewith Thunderhorn2
-    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
 step << Tauren
     #hardcore
     #completewith Thunderhorn2
@@ -2109,7 +2109,7 @@ step
 step
     #softcore
 	#completewith ZamahPickup
-    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
 step
     #hardcore
     #completewith ZamahPickup
@@ -3669,7 +3669,7 @@ step << Druid
 step
 	#completewith BloodhoofHome
 	#softcore
-    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
 step
 	#hardcore
 	#completewith BloodhoofHome
@@ -4150,7 +4150,7 @@ step
     #xprate <2.1
     #softcore
 	#completewith Thunderhorn
-    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
 step
     #xprate <2.1
     #hardcore
@@ -4864,7 +4864,7 @@ step
     #softcore
     #completewith Bloodhoofturnins1
     .goto Mulgore,48.22,38.85
-    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
     >>|cRXP_WARN_确保你在路点箭头处或者它的南边死去|r
     .zoneskip Thunder Bluff
 step
@@ -5284,7 +5284,7 @@ step << skip
 step << skip
     #softcore
 	#completewith Thunderhorn2
-    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
 step << skip
     #hardcore
     #completewith Thunderhorn2
@@ -5467,7 +5467,7 @@ step
     #xprate <2.1
     #softcore
 	#completewith ZamahPickup
-    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
 step
     #xprate <2.1
     #hardcore

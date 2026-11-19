@@ -1184,7 +1184,7 @@ step << !Warrior !Rogue
     .goto Darkshore,55.38,36.34
 step << !Warrior !Rogue
     .hs >> 炉石返回到奥伯丁
-    >>|cRXP_BUY_如有需要，购买食物/水|r << !Warrior !Rogue
+    >>|cRXP_BUY_按需购买食物/水|r << !Warrior !Rogue
 	>>|cRXP_BUY_需要的话就买点食物|r << Warrior/Rogue
     .cooldown item,6948,>0,1
 step << skip --logout skip !Warrior !Rogue
@@ -2834,7 +2834,7 @@ step
     .goto 1439,35.724,83.696
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_勘察员雷塔维|r 对话
     >>|cRXP_WARN_你可能需要等待他重新刷新，或等其他玩家完成护送|r
-    .turnin 729 >> 交任务 健忘的勘察员
+    .turnin 729 >> 交任务健忘的勘察员
     .target 勘察员雷塔维
 step
     #season 2
@@ -3131,7 +3131,7 @@ step
     .goto 1439,37.439,41.839
     #season 2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_考古学家霍莉|r 对话
-    .turnin 731 >> 交任务 健忘的勘察员
+    .turnin 731 >> 交任务健忘的勘察员
     .accept 741 >> 接受任务 健忘的勘察员
     .target 考古学家霍莉
     .isQuestComplete 731
@@ -3211,7 +3211,7 @@ step << Hunter
     #season 2
     .goto Teldrassil,23.70,64.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_首席考古学家杜瑟·灰胡|r 对话
-    .turnin 741 >> 交任务 健忘的勘察员
+    .turnin 741 >> 交任务健忘的勘察员
     .accept 942 >> 接受任务 健忘的勘察员
     .target 首席考古学家杜瑟·灰胡
     .isQuestComplete 741
@@ -3267,7 +3267,7 @@ step << !Druid !Hunter
     #season 2
     .goto Teldrassil,23.70,64.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_首席考古学家杜瑟·灰胡|r 对话
-    .turnin 741 >> 交任务 健忘的勘察员
+    .turnin 741 >> 交任务健忘的勘察员
     .accept 942 >> 接受任务 健忘的勘察员
     .target 首席考古学家杜瑟·灰胡
     .isQuestComplete 741
@@ -3319,7 +3319,7 @@ step << Druid
     .goto Darnassus,35.375,8.405
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_玛斯雷·驭熊者|r 对话
     .turnin 6001 >> 交任务 身心之力
-    .accept 26 >> 接受任务必修的课程
+    .accept 26 >> 接受任务 必修的课程
     .trainer >> 训练你的职业技能
     >>你很快就会获得许多强力的猫形态符文，使得野性猫成为更快的升级方式。|cRXP_WARN_如果你愿意的话，可以将天赋从平衡洗成野性|r。如果尽快点出猫形态的移动速度天赋，会为你节省大量跑路时间。
     .target 玛斯雷·驭熊者
@@ -3328,7 +3328,7 @@ step << Druid
     #season 2
     .goto Teldrassil,23.70,64.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_首席考古学家杜瑟·灰胡|r 对话
-    .turnin 741 >> 交任务 健忘的勘察员
+    .turnin 741 >> 交任务健忘的勘察员
     .accept 942 >> 接受任务 健忘的勘察员
     .target 首席考古学家杜瑟·灰胡
 step << Druid/Hunter
@@ -3469,7 +3469,7 @@ step << Druid
     #label TotL
     .goto Moonglade,36.517,40.104
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塔加里|r 对话
-    .turnin 29 >> 交任务 湖中试炼
+    .turnin 29 >> 交任务湖中试炼
     .accept 272 >> 接受任务 海狮试炼
     .target 塔加里
 step << Druid/Hunter
@@ -4394,7 +4394,7 @@ step << Rogue
     .goto Wetlands,10.843,60.435
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 在楼上与 |cRXP_FRIENDLY_考古学家弗拉冈特|r 对话
     .target 考古学家弗拉冈特
-    .turnin 942 >> 交任务 健忘的勘察员
+    .turnin 942 >> 交任务健忘的勘察员
     .accept 943 >> 接受任务 健忘的勘察员
     .isQuestComplete 942
 step << Rogue
@@ -4702,7 +4702,7 @@ step << Rogue
 step << Rogue
     #xprate >1.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_"剃刀"雷吉克|r 和 |cRXP_FRIENDLY_马迪亚斯·肖尔|r 对话
-    .accept 2281 >> 接受任务赤脊山的联络员
+    .accept 2281 >> 接受任务 赤脊山的联络员
     .goto StormwindClassic,75.76,60.35
     .target +Renzik "The Shiv"
     .accept 2360 >> 接受任务 马迪亚斯和迪菲亚盗贼
@@ -5147,7 +5147,7 @@ step << Rogue
     >>|cRXP_WARN_如果你之前切换成了|r |T135641:0|t[匕首] |cRXP_WARN_，记得重新装备上你的主武器|r << Rogue !sod
     .turnin 135 >> 交任务 迪菲亚兄弟会
 --  .accept 141 >> Accept The Defias Brotherhood
-    .turnin 2359 >> 交任务克拉文之塔
+    .turnin 2359 >> 交任务 克拉文之塔
     .target 马迪亚斯·肖尔大师
     .dungeon !DM
 step << Rogue
@@ -5486,7 +5486,7 @@ step << NightElf Warrior
     #xprate >1.59
     #optional
     .goto 1455,62.378,88.671
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在楼下与 |cRXP_FRIENDLY_布雷文·寒钢|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布雷文·寒钢|r 在楼下对话
     >>|cRXP_BUY_从她那里|r|cRXP_BUY_购买一把|r |T135425:0|t[锐利的飞刀]
     .collect 3107,1 --Collect Keen Throwing Knife (200)
     .target 布雷文·寒钢
@@ -5842,7 +5842,7 @@ step << Rogue
 step << Rogue
     #xprate >1.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_"剃刀"雷吉克|r 和 |cRXP_FRIENDLY_马迪亚斯·肖尔|r 对话
-    .accept 2281 >> 接受任务赤脊山的联络员
+    .accept 2281 >> 接受任务 赤脊山的联络员
     .goto StormwindClassic,75.76,60.35
     .target +Renzik "The Shiv"
     .accept 2360 >> 接受任务 马迪亚斯和迪菲亚盗贼
@@ -5943,7 +5943,7 @@ step << Paladin
     #xprate >1.59
     .goto StormwindClassic,38.58,32.00,12,0
     .goto StormwindClassic,38.67,32.82
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_虔诚的亚瑟|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_虔诚的亚瑟|r 对话
     .trainer >> 训练你的职业技能
     .target 虔诚的亚瑟
     .dungeon DM
@@ -6030,7 +6030,7 @@ step << Warlock
 step << Warlock
     #xprate >1.59
     .goto StormwindClassic,26.117,77.225
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
     .trainer >> 训练你的职业技能
     .target 厄苏拉·德林
     .dungeon DM
@@ -6497,7 +6497,7 @@ step
     >>|cRXP_WARN_如果你之前切换成了|r |T135641:0|t[匕首] |cRXP_WARN_，记得重新装备上你的主武器|r << Rogue
     .turnin 135 >> 交任务 迪菲亚兄弟会
     .accept 141 >> 接受任务 迪菲亚兄弟会
-    .turnin 2359 >> 交任务克拉文之塔 << Rogue
+    .turnin 2359 >> 交任务 克拉文之塔 << Rogue
     .target 马迪亚斯·肖尔大师
     .dungeon DM
 step
@@ -6959,7 +6959,7 @@ step << Warlock
     #xprate >1.59
     #optional
     .goto StormwindClassic,26.117,77.225
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
     .train 6202 >> 训练你的职业技能
     .target 厄苏拉·德林
     .xp <22,1
@@ -6990,7 +6990,7 @@ step << Paladin
     #optional
     .goto StormwindClassic,38.58,32.00,12,0
     .goto StormwindClassic,38.67,32.82
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_虔诚的亚瑟|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_虔诚的亚瑟|r 对话
     .train 19835 >> 训练你的职业技能
     .target 虔诚的亚瑟
     .xp <22,1
@@ -7093,7 +7093,7 @@ step << Paladin
     #xprate >1.59
     .goto StormwindClassic,38.58,32.00,12,0
     .goto StormwindClassic,38.67,32.82
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_虔诚的亚瑟|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_虔诚的亚瑟|r 对话
     .train 19835 >> 训练你的职业技能
     .target 虔诚的亚瑟
     .xp <22,1
@@ -7220,7 +7220,7 @@ step << NightElf Warrior
     #label DeeprunDMNoFP4
     #completewith NEIFFP
     .goto 1455,62.378,88.671
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在楼下与 |cRXP_FRIENDLY_布雷文·寒钢|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布雷文·寒钢|r 在楼下对话
     >>|cRXP_BUY_从她那里购买|r |T135427:0|t[重型飞刀]
     .collect 3108,200 --Collect Heavy Throwing Knife (200)
     .target 布雷文·寒钢

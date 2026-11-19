@@ -683,7 +683,7 @@ step
     #optional
     #softcore
     #completewith next
-    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
     .target 灵魂医者
 step << !Warlock
     #xprate >1.59
@@ -851,7 +851,7 @@ step
     #optional
     #softcore
     #completewith #label RestandR
-    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
     .target 灵魂医者
     .subzoneskip 59,1
 step
@@ -906,7 +906,7 @@ step
     #season 0,1 << Rogue
     #softcore
     #completewith Goldshire
-    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
     .target 灵魂医者
     .subzoneskip 87
 step
@@ -1144,7 +1144,7 @@ step << Warrior/Paladin/Rogue
     #requires RoughStone1
     #label RoughStoneCraft1
     #completewith NecklaceStart
-    +|T136241:0|t[锻造]|cRXP_WARN_|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_制作为|r |T135248:0|t[劣质磨刀石] << Warrior/Rogue
+    +|cRXP_WARN_把|r |T136241:0|t|cRXP_LOOT_[劣质的石头]|r |T135232:0|t[锻造]|cRXP_WARN_成|r |T135248:0|t[劣质磨刀石] << Warrior/Rogue
     +|cRXP_WARN_将|r |T136241:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_与|r |T135232:0|t|cRXP_LOOT_[亚麻布]|r |T132889:0|t[锻造]|cRXP_WARN_成|r |T135255:0|t[劣质平衡石] << Paladin
     .collect 2862,5 << Rogue/Warrior --Rough Sharpening Stone (5)
     .disablecheckbox
@@ -1198,7 +1198,7 @@ step
     .goto Elwynn Forest,42.357,89.373
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔舒·马科伦|r 对话
     .vendor >>|cRXP_BUY_能买多少|r |T132815:0|t[冰镇牛奶] |cRXP_WARN_就买多少|r << Priest/Warlock/Mage
-    .vendor >>出售垃圾物品 << !Priest !Warlock !Mage
+    .vendor >>|cRXP_WARN_出售垃圾物品|r << !Priest !Warlock !Mage
     .target 乔舒·马科伦
     .subzoneskip 64,1 --The Maclure Vineyards
 step << Warrior/Paladin/Rogue
@@ -1217,7 +1217,7 @@ step << Warrior/Paladin/Rogue
     #requires RoughStone2
     #label RoughStoneCraft2
     #completewith Lovers
-    +|T136241:0|t[锻造]|cRXP_WARN_|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_制作为|r |T135248:0|t[劣质磨刀石] << Warrior/Rogue
+    +|cRXP_WARN_把|r |T136241:0|t|cRXP_LOOT_[劣质的石头]|r |T135232:0|t[锻造]|cRXP_WARN_成|r |T135248:0|t[劣质磨刀石] << Warrior/Rogue
     +|cRXP_WARN_将|r |T136241:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_与|r |T135232:0|t|cRXP_LOOT_[亚麻布]|r |T132889:0|t[锻造]|cRXP_WARN_成|r |T135255:0|t[劣质平衡石] << Paladin
     .collect 2862,5 << Rogue/Warrior --Rough Sharpening Stone (5)
     .disablecheckbox
@@ -1291,7 +1291,7 @@ step << Warrior/Paladin/Rogue
     #requires RoughStone3
     #label RoughStoneCraft3
     #completewith Exchange
-    +|T136241:0|t[锻造]|cRXP_WARN_|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_制作为|r |T135248:0|t[劣质磨刀石] << Warrior/Rogue
+    +|cRXP_WARN_把|r |T136241:0|t|cRXP_LOOT_[劣质的石头]|r |T135232:0|t[锻造]|cRXP_WARN_成|r |T135248:0|t[劣质磨刀石] << Warrior/Rogue
     +|cRXP_WARN_将|r |T136241:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_与|r |T135232:0|t|cRXP_LOOT_[亚麻布]|r |T132889:0|t[锻造]|cRXP_WARN_成|r |T135255:0|t[劣质平衡石] << Paladin
     .collect 2862,5 << Rogue/Warrior --Rough Sharpening Stone (5)
     .disablecheckbox
@@ -1486,7 +1486,7 @@ step
 step
     #softcore
     #completewith Exchange
-    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
     .target 灵魂医者
 step
     #label Exchange
@@ -1756,7 +1756,7 @@ step << Warrior/Paladin/Rogue
     #requires RoughStone4
     #label RoughStoneCraft4
     #completewith JasperlodeExplore
-    +|T136241:0|t[锻造]|cRXP_WARN_|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_制作为|r |T135248:0|t[劣质磨刀石] << Warrior/Rogue
+    +|cRXP_WARN_把|r |T136241:0|t|cRXP_LOOT_[劣质的石头]|r |T135232:0|t[锻造]|cRXP_WARN_成|r |T135248:0|t[劣质磨刀石] << Warrior/Rogue
     +|cRXP_WARN_将|r |T136241:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_与|r |T135232:0|t|cRXP_LOOT_[亚麻布]|r |T132889:0|t[锻造]|cRXP_WARN_成|r |T135255:0|t[劣质平衡石] << Paladin
     .collect 2862,5 << Rogue/Warrior --Rough Sharpening Stone (5)
     .disablecheckbox
@@ -1865,7 +1865,7 @@ step << Warrior/Paladin/Rogue
     #requires RoughStone5
     #label RoughStoneCraft5
     #completewith Find
-    +|T136241:0|t[锻造]|cRXP_WARN_|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_制作为|r |T135248:0|t[劣质磨刀石] << Warrior/Rogue
+    +|cRXP_WARN_把|r |T136241:0|t|cRXP_LOOT_[劣质的石头]|r |T135232:0|t[锻造]|cRXP_WARN_成|r |T135248:0|t[劣质磨刀石] << Warrior/Rogue
     +|cRXP_WARN_将|r |T136241:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_与|r |T135232:0|t|cRXP_LOOT_[亚麻布]|r |T132889:0|t[锻造]|cRXP_WARN_成|r |T135255:0|t[劣质平衡石] << Paladin
     .collect 2862,5 << Rogue/Warrior --Rough Sharpening Stone (5)
     .disablecheckbox
@@ -1973,7 +1973,7 @@ step << Rogue
     #season 2
     #softcore
     #completewith AcceptBundle
-    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
     .target 灵魂医者
     .train 398196,1
     .subzoneskip 87 --Skip the Quick Draw steps if the user went back to goldshire instead
@@ -2040,7 +2040,7 @@ step << Priest
     #softcore
     #label EVDeathskip
     #completewith RedridgeS
-    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
     .target 灵魂医者
     .zoneskip Redridge Mountains
 --XX not worth deathskipping as a warlock due to having to resumm pet
@@ -2060,7 +2060,7 @@ step << Priest/Rogue
 step << Priest/Rogue
     #softcore
     #completewith RRFP
-    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
     .target 灵魂医者
     .subzoneskip 87 --Skip the Quick Draw steps if the user went back to goldshire instead
 step << Priest/Rogue
@@ -2590,7 +2590,7 @@ step << Human Paladin
 step << Human Paladin
     #xprate >1.59
     .goto StormwindClassic,38.67,32.82
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_虔诚的亚瑟|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_虔诚的亚瑟|r 对话
     .train 19834 >> 训练你的职业技能
     .target 虔诚的亚瑟
     .xp <12,1
@@ -2599,7 +2599,7 @@ step << Human Paladin
     #xprate >1.59
     #optional
     .goto StormwindClassic,38.67,32.82
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_虔诚的亚瑟|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_虔诚的亚瑟|r 对话
     .train 647 >> 训练你的职业技能
     .target 虔诚的亚瑟
     .xp <14,1
@@ -2630,7 +2630,7 @@ step << Warlock
 step << Warlock
     #xprate >1.59
     .goto StormwindClassic,26.11,77.22
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
     .train 705 >> 训练你的职业技能
     .target 厄苏拉·德林
     .xp <12,1
@@ -2639,7 +2639,7 @@ step << Warlock
     #xprate >1.59
     #optional
     .goto StormwindClassic,26.11,77.22
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
     .train 689 >> 训练你的职业技能
     .target 厄苏拉·德林
     .xp <14,1
@@ -2784,7 +2784,7 @@ step << Warlock
     .goto StormwindClassic,27.2,78.1,15 >> 前往屠宰场，进入地下室
 step << Warlock
     .goto StormwindClassic,26.117,77.225
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
     .trainer >> 训练你的职业技能
     .target 厄苏拉·德林
 step << Warlock
@@ -3175,7 +3175,7 @@ step << Paladin/Warrior
     >>击败|cRXP_ENEMY_布鲁阿特|r
     >>|cRXP_WARN_小心他施放|r |T132939:0|t|T132939:0|t[反手一击] |cRXP_WARN_（击晕你2秒）|r
     >>|cRXP_WARN_记得预读|r |T135924:0|t|T135924:0|t[十字军圣印] |cRXP_WARN_对他|r << Paladin
-    >>|cRXP_WARN_千万不要不小心对他施放|r|T135906:0|t[力量祝福] |cRXP_WARN_|r << Paladin
+    >>|cRXP_WARN_千万不要失误对他施放|r |T135906:0|t[力量祝福] |cRXP_WARN_|r << Paladin
     >>|cRXP_WARN_将他风筝到楼上的阳台，然后从旅店外跳下，必要时施放|r |T135920:0|t|T135920:0|t[圣光术] |cRXP_WARN_如果必要的话|r << Paladin
     >>|cRXP_WARN_将他风筝到楼上的阳台，然后从旅店外跳下，如果有/需要的话使用|r |T133688:0|t|T133688:0|t[绷带]|cRXP_WARN_ |r << Warrior
     >>|cRXP_WARN_尝试使用|r |T132316:0|t|T132324:0|t[|cRXP_FRIENDLY_断筋|r] |cRXP_WARN_和|r |T132324:0|t|T132324:0|t[|cRXP_FRIENDLY_投掷|r]来风筝他 << Warrior
@@ -3193,7 +3193,7 @@ step << Paladin/Warrior
     >>击败|cRXP_ENEMY_布鲁阿特|r
     >>|cRXP_WARN_小心他施放|r |T132939:0|t|T132939:0|t[反手一击] |cRXP_WARN_（击晕你2秒）|r
     >>|cRXP_WARN_记得预读|r |T135924:0|t|T135924:0|t[十字军圣印] |cRXP_WARN_对他|r << Paladin
-    >>|cRXP_WARN_千万不要不小心对他施放|r|T135906:0|t[力量祝福] |cRXP_WARN_|r << Paladin
+    >>|cRXP_WARN_千万不要失误对他施放|r |T135906:0|t[力量祝福] |cRXP_WARN_|r << Paladin
     >>|cRXP_WARN_将他风筝到楼上的阳台，然后从旅店外跳下，必要时施放|r |T135920:0|t|T135920:0|t[圣光术] |cRXP_WARN_如果必要的话|r << Paladin
     >>|cRXP_WARN_将他风筝到楼上的阳台，然后从旅店外跳下，如果有/需要的话使用|r |T133688:0|t|T133688:0|t[绷带]|cRXP_WARN_ |r << Warrior
     >>|cRXP_WARN_击败|cRXP_ENEMY_布鲁阿尔特|r后：|r
@@ -3283,7 +3283,7 @@ step << Paladin
 step << Paladin
     #xprate >1.49
     .goto StormwindClassic,38.67,32.82
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_虔诚的亚瑟|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_虔诚的亚瑟|r 对话
     .train 19834 >> 训练你的职业技能
     .target 虔诚的亚瑟
     .xp <12,1
@@ -3293,7 +3293,7 @@ step << Paladin
     #optional
     #label PaladinIFTrain
     .goto StormwindClassic,38.67,32.82
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_虔诚的亚瑟|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_虔诚的亚瑟|r 对话
     .train 647 >> 训练你的职业技能
     .target 虔诚的亚瑟
     .xp <14,1

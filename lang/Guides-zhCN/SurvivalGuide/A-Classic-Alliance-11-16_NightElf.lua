@@ -1102,7 +1102,7 @@ step << Rogue
     .target 布里维夫·石拳
 step << Hunter
     .goto Ironforge,69.865,82.886
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雷格努斯·雷石|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_雷格努斯·雷石|r 对话
     .trainer >> 训练你的职业技能
     .target 雷格努斯·雷石
 step << Warrior

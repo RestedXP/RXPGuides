@@ -133,7 +133,7 @@ step << !Human
 step
     .goto 1436/0,1166.57,-10653.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_与旅店老板对话|r
-    .vendor >>|cRXP_BUY_如有需要，购买食物/水|r
+    .vendor >>|cRXP_BUY_按需购买食物/水|r
 	.target 旅店老板希瑟尔
 step
     .goto 1436/0,1179.800,-10635.601
@@ -569,7 +569,7 @@ step << Skyborne Warrior
     .target 布里维夫·石拳
 step << Skyborne Warrior
     .goto 1455/0,-1206.77,-5037.07--c:1455,62.378,88.671
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在楼下与 |cRXP_FRIENDLY_布雷文·寒钢|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布雷文·寒钢|r 在楼下对话
     >>|cRXP_BUY_从她那里|r|cRXP_BUY_购买一把|r |T135425:0|t[锐利的飞刀]
     .collect 3107,1 --Collect Keen Throwing Knife (200)
     .target 布雷文·寒钢
@@ -679,7 +679,7 @@ step << Warlock
     .goto 1453/0,1015.33,-8978.9,15 >> 前往屠宰场，进入地下室
 step << Warlock
     .goto 1453/0,1029.89,-8971.06
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
     .trainer >> 训练你的职业技能
     .train 6222,1
     .target 厄苏拉·德林
@@ -706,7 +706,7 @@ step << Human Paladin
     .target 达索瑞恩·拉尔
 step << Paladin
     #label train19742
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_虔诚的亚瑟|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_虔诚的亚瑟|r 对话
     .goto 1453/0,859.13,-8559.14,10,0
     .goto 1453/0,861.14,-8573.03
     .trainer >> 训练你的职业技能
@@ -787,8 +787,8 @@ step
     #completewith DarkshoreBoat
     +|cRXP_WARN_你需要 50 点|r |T133971:0|t[烹饪] |cRXP_WARN_，以便之后在暮色森林完成一个任务|r
     >>|T133971:0|t[烹饪] 以下物品：
-    >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[大块野猪肉]|r|cRXP_WARN_|r |T133974:0|t[烤野猪肉]
-    >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[多汁狼肉]|r|cRXP_WARN_|r |T133974:0|t[烧烤狼肉]
+    >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[大块野猪肉]|r|cRXP_WARN_制作为|r |T133974:0|t[烤野猪肉]
+    >>|T133971:0|t[Cook]|cRXP_WARN_the|r |T133970:0|t|cRXP_LOOT_[多汁狼肉]|r|cRXP_WARN_into|r |T133974:0|t[Charred Wolf Meat]
     .usespell 2550
     .zoneskip Darkshore
     .itemcount 769,1 --Chunk of Boar Meat (1+)
@@ -801,7 +801,7 @@ step
     #label DarkshoreCook5
     #completewith DarkshoreBoat
     +|cRXP_WARN_你需要 50 点|r |T133971:0|t[烹饪] |cRXP_WARN_，以便之后在暮色森林完成一个任务|r
-    >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[多汁狼肉]|r|cRXP_WARN_|r |T133974:0|t[烧烤狼肉]
+    >>|T133971:0|t[Cook]|cRXP_WARN_the|r |T133970:0|t|cRXP_LOOT_[多汁狼肉]|r|cRXP_WARN_into|r |T133974:0|t[Charred Wolf Meat]
     .usespell 2550
     .zoneskip Darkshore
     .itemcount 769,<1 --Chunk of Boar Meat (<1)
@@ -814,7 +814,7 @@ step
     #label DarkshoreCook6
     #completewith DarkshoreBoat
     +|cRXP_WARN_你需要 50 点|r |T133971:0|t[烹饪] |cRXP_WARN_，以便之后在暮色森林完成一个任务|r
-    >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[大块野猪肉]|r|cRXP_WARN_|r |T133974:0|t[烤野猪肉]
+    >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[大块野猪肉]|r|cRXP_WARN_制作为|r |T133974:0|t[烤野猪肉]
     .usespell 2550
     .zoneskip Darkshore
     .itemcount 769,1 --Chunk of Boar Meat (1)
@@ -1899,7 +1899,7 @@ step
 step
     #optional
     #completewith AmethStart
-    >>杀死 |cRXP_ENEMY_月夜猛虎幼崽|r 和 |cRXP_ENEMY_月夜猛虎|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
+    >>击杀 |cRXP_ENEMY_月夜猛虎幼崽|r 和 |cRXP_ENEMY_月夜猛虎|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
     .complete 1002,1 -- Moonstalker Fang (6)
     .mob 月夜猛虎幼崽
     .mob Moonstalker
@@ -2039,7 +2039,7 @@ step << !sod/Warrior/Rogue
 step
     #optional
     #completewith FurbolgGrind
-    >>杀死 |cRXP_ENEMY_月夜猛虎幼崽|r 和 |cRXP_ENEMY_月夜猛虎|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
+    >>击杀 |cRXP_ENEMY_月夜猛虎幼崽|r 和 |cRXP_ENEMY_月夜猛虎|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
     .complete 1002,1 -- Moonstalker Fang (6)
     .mob 月夜猛虎幼崽
     .mob Moonstalker
@@ -2324,7 +2324,7 @@ step
     #optional
     #completewith BoatSeaCreature
     .goto 1439/1,47.22,6861.90,0--c:1439,44.190,33.697
-    >>杀死 |cRXP_ENEMY_月夜猛虎幼崽|r 和 |cRXP_ENEMY_月夜猛虎|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
+    >>击杀 |cRXP_ENEMY_月夜猛虎幼崽|r 和 |cRXP_ENEMY_月夜猛虎|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
     .complete 1002,1 -- Moonstalker Fang (6)
     .mob 月夜猛虎幼崽
     .mob Moonstalker
@@ -2388,7 +2388,7 @@ step
 step
     #optional
     #completewith CrabTurtle
-    >>杀死 |cRXP_ENEMY_月夜猛虎幼崽|r 和 |cRXP_ENEMY_月夜猛虎|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
+    >>击杀 |cRXP_ENEMY_月夜猛虎幼崽|r 和 |cRXP_ENEMY_月夜猛虎|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
     .complete 1002,1 -- Moonstalker Fang (6)
     .mob 月夜猛虎幼崽
     .mob Moonstalker
@@ -2460,7 +2460,7 @@ step << Hunter/Druid
 step << Hunter/Druid
     #optional
     #completewith Tower1
-    >>杀死 |cRXP_ENEMY_月夜猛虎|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
+    >>击杀 |cRXP_ENEMY_月夜猛虎|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
     .complete 1002,1 -- Moonstalker Fang (6)
     .mob Moonstalker
     .isOnQuest 1002
@@ -2539,7 +2539,7 @@ step
 step
     #optional
     #completewith CliffCave
-    >>杀死 |cRXP_ENEMY_月夜猛虎|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
+    >>击杀 |cRXP_ENEMY_月夜猛虎|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
     .complete 1002,1 -- Moonstalker Fang (6)
     .mob Moonstalker
     .isOnQuest 1002
@@ -2653,7 +2653,7 @@ step
 step
     #requires MushroomLS
     #completewith CavetoAuber
-    >>杀死 |cRXP_ENEMY_月夜猛虎幼崽|r 和 |cRXP_ENEMY_月夜猛虎|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
+    >>击杀 |cRXP_ENEMY_月夜猛虎幼崽|r 和 |cRXP_ENEMY_月夜猛虎|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
     .complete 1002,1 -- Moonstalker Fang (6)
     .mob 月夜猛虎幼崽
     .mob Moonstalker
@@ -2797,7 +2797,16 @@ step << Druid
     .xp 16 >> 刷怪升级到16级
     .mob Blackwood Pathfinder
     .mob Blackwood Windtalker
-step << Druid
+step << Skyborne Druid
+    .goto 1439/1,766.22,6591.78--c:1439,33.213,39.883
+    .zone Teldrassil >> 乘船前往达纳苏斯
+    .zoneskip Darnassus
+step << Skyborne Druid
+    .goto 1438/1,841.56,8640.79
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_维斯派塔斯|r 对话
+    .fp Teldrassil >> 开启泰达希尔的飞行路径
+    .target 维斯派塔斯
+step << NightElf Druid
     #optional
     #completewith DruidLesson
     .goto 1439/1,561.66,6343.27
@@ -2819,7 +2828,7 @@ step << Druid
 step << Druid
     .goto 1457/1,2563.98,10179.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_玛斯雷·驭熊者|r 对话
-    .accept 26 >> 接受任务必修的课程
+    .accept 26 >> 接受任务 必修的课程
     .trainer >> 训练你的职业技能
     .target 玛斯雷·驭熊者
 step << Druid
@@ -2862,7 +2871,7 @@ step << Druid
     #label TotL
     .goto 1450/1,-2224.18,7874.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塔加里|r 对话
-    .turnin 29 >> 交任务 湖中试炼
+    .turnin 29 >> 交任务湖中试炼
     .accept 272 >> 接受任务 海狮试炼
     .target 塔加里
 step << Druid
@@ -3015,7 +3024,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
     .fp Ironforge >> 获取铁炉堡的飞行路径
     .target 格莱斯·瑟登
-step Warrior
+step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_比尔班·飞钳|r 对话
     .goto 1455/0,-1234.65,-5035.67
     .trainer >> 训练你的职业技能
@@ -3031,7 +3040,7 @@ step << Warrior
     .target 布里维夫·石拳
 step << Warrior
     .goto 1455/0,-1206.77,-5037.07--c:1455,62.378,88.671
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在楼下与 |cRXP_FRIENDLY_布雷文·寒钢|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布雷文·寒钢|r 在楼下对话
     >>|cRXP_BUY_从她那里|r|cRXP_BUY_购买一把|r |T135425:0|t[锐利的飞刀]
     .collect 3107,1 --Collect Keen Throwing Knife (200)
     .target 布雷文·寒钢
@@ -3810,7 +3819,7 @@ step
 step
     #optional
     #completewith CompleteFangs
-    >>杀死 |cRXP_ENEMY_月夜猛虎幼崽|r 和 |cRXP_ENEMY_月夜猛虎|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
+    >>击杀 |cRXP_ENEMY_月夜猛虎幼崽|r 和 |cRXP_ENEMY_月夜猛虎|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
     .complete 1002,1 -- Moonstalker Fang (6)
     .mob 月夜猛虎幼崽
     .mob Moonstalker
@@ -4007,7 +4016,7 @@ step << Hunter
     .goto 1439/1,601.74,4678.61--c:1439,35.724,83.696
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_勘察员雷塔维|r 对话
     >>|cRXP_WARN_你可能需要等待他重新刷新，或等其他玩家完成护送|r
-    .turnin 729 >> 交任务 健忘的勘察员
+    .turnin 729 >> 交任务健忘的勘察员
     .target 勘察员雷塔维
 step << Hunter
     .goto 1439/1,602.01,4678.87
@@ -4170,7 +4179,7 @@ step
 step << Hunter
     .goto 1439/1,489.41,6506.36--c:1439,37.439,41.839
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_考古学家霍莉|r 对话
-    .turnin 731 >> 交任务 健忘的勘察员
+    .turnin 731 >> 交任务健忘的勘察员
     .accept 741 >> 接受任务 健忘的勘察员
     .target 考古学家霍莉
     .isQuestComplete 731
@@ -4325,7 +4334,7 @@ step
     .goto 1439/1,-533.04,7111.41,60,0--c:1439,53.049,27.983
     .goto 1439/1,-514.38,7184.38,60,0--c:1439,52.764,26.312
     .goto 1439/1,-571.03,7195.64,60,0--c:1439,53.629,26.054
-    >>杀死 |cRXP_ENEMY_月夜猛虎幼崽|r 和 |cRXP_ENEMY_月夜猛虎|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
+    >>击杀 |cRXP_ENEMY_月夜猛虎幼崽|r 和 |cRXP_ENEMY_月夜猛虎|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
     .complete 1002,1 -- Moonstalker Fang (6)
     .mob 月夜猛虎幼崽
     .mob Moonstalker
@@ -4557,7 +4566,7 @@ step << !NightElf !Hunter
     #softcore
     #optional
     #completewith next
-    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
     .target 灵魂医者
 step << !NightElf
     .goto 1439/1,492.36,6581.08--c:1439,37.394,40.128
@@ -4679,7 +4688,7 @@ step << Hunter
 step << Dwarf Hunter/Human Hunter/Skyborne Hunter
     .goto 1438/1,2607.86,9641.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_首席考古学家杜瑟·灰胡|r 对话
-    .turnin 741 >> 交任务 健忘的勘察员
+    .turnin 741 >> 交任务健忘的勘察员
     .accept 942 >> 接受任务 健忘的勘察员
     .target 首席考古学家杜瑟·灰胡
     .isOnQuest 741
@@ -4880,7 +4889,7 @@ step << Shaman
     .bronzetube
 step << Shaman
     .goto 1437/0,-782.03,-3793.12
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_谢尔雷|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_谢尔雷|r 交谈
     .fly Ironforge >> 飞往铁炉堡
     .target 谢尔雷·布隆迪尔
 step << Shaman
@@ -4967,7 +4976,7 @@ step << Warlock
     .goto 1453/0,1015.33,-8978.9,15 >> 前往屠宰场，进入地下室
 step << Warlock
     .goto 1453/0,1029.98,-8971.01
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
     .trainer >> 训练你的职业技能
     .target 厄苏拉·德林
 step << Warlock/Priest
@@ -4984,7 +4993,7 @@ step << Paladin/Priest
 step << Paladin
     .goto 1453/0,859.13,-8559.14,10,0
     .goto 1453/0,861.14,-8573.03
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_虔诚的亚瑟|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_虔诚的亚瑟|r 对话
     .trainer >> 训练你的职业技能
     .target 虔诚的亚瑟
 step << Human Paladin
@@ -5051,7 +5060,7 @@ step << Rogue
     .goto 1453/0,323.43,-8817.83,5 >> 进入军情7处总部。上楼去找 |cRXP_FRIENDLY_"剃刀"雷吉克|r
 step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_"剃刀"雷吉克|r对话
-    .accept 2281 >> 接受任务赤脊山的联络员
+    .accept 2281 >> 接受任务 赤脊山的联络员
     .goto 1453/0,362.55,-8819.80
     .target Renzik "The Shiv"
 step << Warrior
@@ -5165,7 +5174,7 @@ step << NightElf/Skyborne/Dwarf Hunter
     .target 艾蕾娜·斯托姆法瑟
 step
     #label BMenace
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_治安官马瑞斯|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_治安官马瑞斯|r 对话
     .goto 1433/0,-2298.06,-9284.04
     .accept 20 >> 接受任务黑石氏族的威胁
     .accept 98387 >>接受任务 黑石封锁
@@ -5176,7 +5185,7 @@ step
     .accept 125 >> 接受任务 丢失的工具
     .target Foreman Oslow
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_弗纳·奥斯古|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_弗纳·奥斯古|r 对话
 	.target Verner Osgood
     .goto 1433/0,-2243.14,-9259.43
     .accept 118 >> 接受任务 马掌
@@ -5245,7 +5254,7 @@ step << Rogue
     .goto 1433/0,-2180.19,-9328.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_卢修斯|r 对话
     .turnin 2281 >> 交任务 赤脊山的联络员
-    .accept 2282 >> 接受任务奥瑟尔伐木场
+    .accept 2282 >> 接受任务 奥瑟尔伐木场
     .target Lucius
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_肖恩|r对话
@@ -5430,7 +5439,7 @@ step
     #completewith next
     .goto 1433/0,-2298.06,-9284.04,150 >> 前往湖畔镇
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_治安官马瑞斯|r 对话
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_治安官马瑞斯|r 对话
 	.target 治安官马瑞斯
     .goto 1433/0,-2298.06,-9284.04
     .turnin 20 >> 交任务 黑石氏族的威胁
@@ -5726,7 +5735,7 @@ step << Warlock
     .goto 1453/0,1015.33,-8978.9,15 >> 前往屠宰场，进入地下室
 step << Warlock
     .goto 1453/0,1029.98,-8971.01
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
     .trainer >> 训练你的职业技能
     .target 厄苏拉·德林
 step << Warlock
@@ -5776,7 +5785,7 @@ step << Paladin
     .accept 1650 >>接受任务勇气之书
     .target 达索瑞恩·拉尔
 step << Paladin
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_虔诚的亚瑟|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_虔诚的亚瑟|r 对话
     .goto 1453/0,859.13,-8559.14,10,0
     .goto 1453/0,861.14,-8573.03
     .trainer >> 训练你的职业技能
@@ -5824,7 +5833,7 @@ step << NightElf Rogue/Skyborne Rogue
 step << NightElf Rogue/Skyborne Rogue
     .goto 1436/0,1037.42,-10628.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_索尔|r 对话
-    .fp Westfall >> 开启西部荒野的飞行路径
+    .fp Westfall >> 解锁西部荒野飞行路线
     .target 索尔
     .isOnQuest 2360
 step << Human Rogue/Dwarf Rogue
@@ -5975,8 +5984,8 @@ step << Rogue
     #requires AntiVenomEnd2 << Rogue
     .goto 1453/0,362.28,-8815.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_马迪亚斯·肖尔大师|r 对话
-    >>|cRXP_WARN_如果你之前切换成了|r |T135641:0|t[匕首] |cRXP_WARN_，记得重新装备上你的主武器|r << Rogue
-    .turnin 2359 >> 交任务克拉文之塔
+    >>|cRXP_WARN_如果你之前切换成了|r |T135641:0|t[匕首] |cRXP_WARN_，记得重新装备你的主武器|r << Rogue
+    .turnin 2359 >> 交任务 克拉文之塔
     .target 马迪亚斯·肖尔大师
 
 
@@ -6020,13 +6029,13 @@ step
     >>|cRXP_WARN_如果你在闪金镇，从暴风城飞过去会更快|r
 	>>|cRXP_WARN_如果你在阿祖拉之塔，直接跑去赤脊山|r
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_弗纳·奥斯古|r 对话
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_弗纳·奥斯古|r 对话
 	.target Verner Osgood
     .goto 1433/0,-2243.14,-9259.43
     .turnin 119 >> 交任务 回复弗纳
     .accept 124 >> 接受任务 豺狼人的乱吠
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_弗纳·奥斯古|r 对话
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_弗纳·奥斯古|r 对话
 	.target Verner Osgood
     .goto 1433/0,-2243.14,-9259.43
     .accept 122 >> 接受任务 雏龙的鳞片
@@ -6129,7 +6138,7 @@ step
     .skill cooking,50,1
     .mob Great Goretusk
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_弗纳·奥斯古|r 对话
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_弗纳·奥斯古|r 对话
 	.target Verner Osgood
     .goto 1433/0,-2243.79,-9259.860
     .turnin 124 >> 交任务 豺狼人的乱吠
@@ -6150,7 +6159,7 @@ RXPGuides.RegisterGuide([[
 #subgroup 速通指南 1-20级
 --#groupid RXP-SRGCE-A1
 #name 19-21级 黑海岸/灰谷
-#next RestedXP无限服指南（联盟）\21-23 灰谷/Stonetalon
+#next RestedXP无限服指南（联盟）\21-23级 灰谷/石爪山脉
 
 step
     #optional
@@ -6181,7 +6190,7 @@ step
     .goto 1439/1,601.74,4678.61--c:1439,35.724,83.696
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_勘察员雷塔维|r 对话
     >>|cRXP_WARN_你可能需要等待他重新刷新，或等其他玩家完成护送|r
-    .turnin 729 >> 交任务 健忘的勘察员
+    .turnin 729 >> 交任务健忘的勘察员
     .isOnQuest 729
     .target 勘察员雷塔维
 step
@@ -6677,7 +6686,7 @@ step
     #optional
     .goto 1439/1,489.35,6506.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_考古学家霍莉|r 对话
-    .turnin 731 >> 交任务 健忘的勘察员
+    .turnin 731 >> 交任务健忘的勘察员
     .accept 741 >> 接受任务 健忘的勘察员
     .target 考古学家霍莉
 step
@@ -6740,7 +6749,7 @@ step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_首席考古学家杜瑟·灰胡|r 对话
 	.target 首席考古学家杜瑟·灰胡
     .goto 1438/1,2607.86,9641.94
-    .turnin 741 >> 交任务 健忘的勘察员
+    .turnin 741 >> 交任务健忘的勘察员
     .accept 942 >> 接受任务 健忘的勘察员
     .isOnQuest 741
 step
@@ -6952,7 +6961,7 @@ step
     .goto 1439/1,601.74,4678.61--c:1439,35.724,83.696
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_勘察员雷塔维|r 对话
     >>|cRXP_WARN_你可能需要等待他重新刷新，或等其他玩家完成护送|r
-    .turnin 729 >> 交任务 健忘的勘察员
+    .turnin 729 >> 交任务健忘的勘察员
     .target 勘察员雷塔维
     .isOnQuest 729
 step

@@ -41,7 +41,7 @@ step << Warrior
     >>一直击杀 |cRXP_ENEMY_幼狼|r 直到你拥有价值10铜币以上的垃圾物品
     >>|cRXP_WARN_你会学习|r |T132333:0|t[战斗怒吼] |cRXP_WARN_从而加快前期升级速度|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_丹尼尔修士|r 对话
-    .vendor >> 出售垃圾物品
+    .vendor >> |cRXP_WARN_出售垃圾物品|r
     .target 丹尼尔修士
     .goto 1429/0,-112.74,-8901.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在屋内的楼下与 |cRXP_FRIENDLY_莱尼·拜舍尔|r 对话
@@ -252,13 +252,13 @@ step << Warlock
     #hardcore
 --   .goto 1429/0,-300.65,-8964.94,60,0
     .goto 1429/0,-432.55,-8958.00
-    >>打开 |cRXP_PICK_被偷走的书|r。从中拾取 |cRXP_LOOT_虚空灵能|r
+    >>打开 |cRXP_PICK_被偷走的书|r。并从中拾取 |cRXP_LOOT_虚空灵能|r
     .complete 1598,1 --Collect Powers of the Void (x1)
 step << Warlock
     #softcore
 --  .goto 1429/0,-300.65,-8964.94,60,0
     .goto 1429/0,-432.55,-8958.00
-    >>打开 |cRXP_PICK_被偷走的书|r。从中拾取 |cRXP_LOOT_虚空灵能|r
+    >>打开 |cRXP_PICK_被偷走的书|r。并从中拾取 |cRXP_LOOT_虚空灵能|r
     .complete 1598,1 --Collect Powers of the Void (x1)
 step << Warlock
     #softcore
@@ -344,7 +344,7 @@ step << !Hunter
     #completewith next
     .goto 1429/0,-119.86,-8898.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_高德瑞克·洛斯迦|r 对话
-    .vendor >> 出售垃圾物品
+    .vendor >> |cRXP_WARN_出售垃圾物品|r
     .target 高德瑞克·洛斯迦
 step << Hunter
     .goto 1429/0,-112.800,-8901.601
@@ -633,7 +633,7 @@ step
     #optional
     #softcore
     #completewith next
-    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
     .target 灵魂医者
 -- .subzoneskip 59,1
 step << Priest/Mage
@@ -731,7 +731,7 @@ step
     .target Shinyfinder Narf
 step
     #completewith next
-    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
     .target 灵魂医者
 step
     #optional
@@ -799,7 +799,7 @@ step << skip -- removing for now for camp fire buff/questline
     #season 0,1 << Rogue
     #softcore
     #completewith Goldshire
-    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
     .target 灵魂医者
     .subzoneskip 87
 
@@ -1199,7 +1199,7 @@ step << Warrior/Paladin/Rogue
     #requires RoughStone1
     #label RoughStoneCraft1
     #completewith NecklaceStart
-    +|T136241:0|t[锻造]|cRXP_WARN_|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_制作为|r |T135248:0|t[劣质磨刀石] << Warrior/Rogue
+    +|cRXP_WARN_把|r |T136241:0|t|cRXP_LOOT_[劣质的石头]|r |T135232:0|t[锻造]|cRXP_WARN_成|r |T135248:0|t[劣质磨刀石] << Warrior/Rogue
     +使用|T136241:0|t[锻造] |cRXP_WARN_将|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_制作成|r |T135255:0|t[劣质平衡石] << Paladin
     .collect 2862,5 << Rogue/Warrior --Rough Sharpening Stone (5)
     .disablecheckbox
@@ -1263,7 +1263,7 @@ step
     .goto 1429/0,65.28,-10008.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔舒·马科伦|r 对话
     .vendor >>|cRXP_BUY_能买多少|r |T132815:0|t[冰镇牛奶] |cRXP_WARN_就买多少|r << Priest/Warlock/Mage
-    .vendor >>出售垃圾物品 << !Priest !Warlock !Mage
+    .vendor >>|cRXP_WARN_出售垃圾物品|r << !Priest !Warlock !Mage
     .target 乔舒·马科伦
     .subzoneskip 64,1 --The Maclure Vineyards
 step << Warrior/Paladin/Rogue
@@ -1280,7 +1280,7 @@ step << Warrior/Paladin/Rogue
     #requires RoughStone2
     #label RoughStoneCraft2
     #completewith Lovers
-    +|T136241:0|t[锻造]|cRXP_WARN_|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_制作为|r |T135248:0|t[劣质磨刀石] << Warrior/Rogue
+    +|cRXP_WARN_把|r |T136241:0|t|cRXP_LOOT_[劣质的石头]|r |T135232:0|t[锻造]|cRXP_WARN_成|r |T135248:0|t[劣质磨刀石] << Warrior/Rogue
     +使用|T136241:0|t[锻造] |cRXP_WARN_将|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_制作成|r |T135255:0|t[劣质平衡石] << Paladin
     .collect 2862,5 << Rogue/Warrior --Rough Sharpening Stone (5)
     .disablecheckbox
@@ -1361,7 +1361,7 @@ step << Warrior/Paladin/Rogue
     #requires RoughStone3
     #label RoughStoneCraft3
     #completewith Exchange
-    +|T136241:0|t[锻造]|cRXP_WARN_|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_制作为|r |T135248:0|t[劣质磨刀石] << Warrior/Rogue
+    +|cRXP_WARN_把|r |T136241:0|t|cRXP_LOOT_[劣质的石头]|r |T135232:0|t[锻造]|cRXP_WARN_成|r |T135248:0|t[劣质磨刀石] << Warrior/Rogue
     +使用|T136241:0|t[锻造] |cRXP_WARN_将|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_制作成|r |T135255:0|t[劣质平衡石] << Paladin
     .collect 2862,5 << Rogue/Warrior --Rough Sharpening Stone (5)
     .disablecheckbox
@@ -1526,7 +1526,7 @@ step
 step
     #softcore
     #completewith Exchange
-    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
     .target 灵魂医者
 step
     #label Exchange
@@ -1876,7 +1876,7 @@ step << Warrior/Paladin/Rogue
     #requires RoughStone4
     #label RoughStoneCraft4
     #completewith JasperlodeExplore
-    +|T136241:0|t[锻造]|cRXP_WARN_|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_制作为|r |T135248:0|t[劣质磨刀石] << Warrior/Rogue
+    +|cRXP_WARN_把|r |T136241:0|t|cRXP_LOOT_[劣质的石头]|r |T135232:0|t[锻造]|cRXP_WARN_成|r |T135248:0|t[劣质磨刀石] << Warrior/Rogue
     +使用|T136241:0|t[锻造] |cRXP_WARN_将|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_制作成|r |T135255:0|t[劣质平衡石] << Paladin
     .collect 2862,5 << Rogue/Warrior --Rough Sharpening Stone (5)
     .disablecheckbox
@@ -1963,7 +1963,7 @@ step << Warrior/Paladin/Rogue
     #requires RoughStone5
     #label RoughStoneCraft5
     #completewith Find
-    +|T136241:0|t[锻造]|cRXP_WARN_|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_制作为|r |T135248:0|t[劣质磨刀石] << Warrior/Rogue
+    +|cRXP_WARN_把|r |T136241:0|t|cRXP_LOOT_[劣质的石头]|r |T135232:0|t[锻造]|cRXP_WARN_成|r |T135248:0|t[劣质磨刀石] << Warrior/Rogue
     +使用|T136241:0|t[锻造] |cRXP_WARN_将|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_制作成|r |T135255:0|t[劣质平衡石] << Paladin
     .collect 2862,5 << Rogue/Warrior --Rough Sharpening Stone (5)
     .disablecheckbox
@@ -2420,7 +2420,7 @@ step << !Warlock
     #softcore
     #label EVDeathskip
     #completewith RedridgeS
-    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
     .target 灵魂医者
     .zoneskip Redridge Mountains
     .xp >10,1 -- shows to 9 and under
@@ -2485,7 +2485,7 @@ step << !Warlock
 step << !Warlock
     #softcore
     #completewith RRFP
-    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
     .target 灵魂医者
     .xp >10,1 -- shows to 9 and under
 step << !Warlock
@@ -3176,7 +3176,7 @@ step << Warlock
 step << Warlock
     #xprate >1.59
     .goto 1453/0,1029.98,-8971.01
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
     .train 705 >> 训练你的职业技能
     .target 厄苏拉·德林
     .xp <12,1
@@ -3185,7 +3185,7 @@ step << Warlock
     #xprate >1.59
     #optional
     .goto 1453/0,1029.98,-8971.01
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
     .train 689 >> 训练你的职业技能
     .target 厄苏拉·德林
     .xp <14,1
@@ -3381,7 +3381,7 @@ step << Warlock
 step << Warlock
     #optional
     .goto 1453/0,1029.89,-8971.06
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
     .trainer >> 训练你的职业技能
     .target 厄苏拉·德林
     .xp <12,1
@@ -3590,8 +3590,8 @@ step << skip
     #completewith TramEnd
     >>|cRXP_WARN_你需要 50 点|r |T133971:0|t[烹饪] |cRXP_WARN_，以便之后在暮色森林完成一个任务|r
     >>|T133971:0|t[烹饪] 以下物品：
-    >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[大块野猪肉]|r|cRXP_WARN_|r |T133974:0|t[烤野猪肉]
-    >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[多汁狼肉]|r|cRXP_WARN_|r |T133974:0|t[烧烤狼肉]
+    >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[大块野猪肉]|r|cRXP_WARN_制作为|r |T133974:0|t[烤野猪肉]
+    >>|T133971:0|t[Cook]|cRXP_WARN_the|r |T133970:0|t|cRXP_LOOT_[多汁狼肉]|r|cRXP_WARN_into|r |T133974:0|t[Charred Wolf Meat]
     .usespell 2550
     .zoneskip Ironforge
     .itemcount 769,1 --Chunk of Boar Meat (1+)
@@ -3604,7 +3604,7 @@ step << skip
     #label TramCook5
     #completewith TramEnd
     >>|cRXP_WARN_你需要 50 点|r |T133971:0|t[烹饪] |cRXP_WARN_，以便之后在暮色森林完成一个任务|r
-    >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[多汁狼肉]|r|cRXP_WARN_|r |T133974:0|t[烧烤狼肉]
+    >>|T133971:0|t[Cook]|cRXP_WARN_the|r |T133970:0|t|cRXP_LOOT_[多汁狼肉]|r|cRXP_WARN_into|r |T133974:0|t[Charred Wolf Meat]
     .usespell 2550
     .zoneskip Ironforge
     .itemcount 769,<1 --Chunk of Boar Meat (<1)
@@ -3617,7 +3617,7 @@ step << skip
     #label TramCook6
     #completewith TramEnd
     >>|cRXP_WARN_你需要 50 点|r |T133971:0|t[烹饪] |cRXP_WARN_，以便之后在暮色森林完成一个任务|r
-    >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[大块野猪肉]|r|cRXP_WARN_|r |T133974:0|t[烤野猪肉]
+    >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[大块野猪肉]|r|cRXP_WARN_制作为|r |T133974:0|t[烤野猪肉]
     .usespell 2550
     .zoneskip Ironforge
     .itemcount 769,1 --Chunk of Boar Meat (1)
@@ -3937,7 +3937,7 @@ step
 step << !Human
     .goto 1426/0,-1577.16,-5671.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡杉·莫格什|r 对话
-    .vendor >> |cRXP_BUY_如有需要，|r|cRXP_BUY_购买|r |T133968:0|t[刚出炉的面包] << Warrior/Rogue
+    .vendor >> |cRXP_BUY_购买|r |T133968:0|t[刚出炉的面包]|cRXP_BUY_如果需要的话|r << Warrior/Rogue
     .vendor >> |cRXP_BUY_购买|r |T133968:0|t [刚出炉的面包]|cRXP_BUY_和|r |T132815:0|t[冰镇牛奶]|cRXP_BUY_如果需要的话|r << !Warrior !Rogue
     .target 卡杉·莫格什
     .xp >15,1
@@ -4739,7 +4739,7 @@ step << Warlock
     .goto 1453/0,1015.33,-8978.9,15 >> 前往屠宰场，进入地下室
 step << Warlock
     .goto 1453/0,1029.89,-8971.06
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
     .trainer >> 训练你的职业技能
     .target 厄苏拉·德林
 step << Warlock
@@ -4778,7 +4778,7 @@ step << Human Paladin
     .accept 1643 >>接受任务圣洁之书
     .target 达索瑞恩·拉尔
 step << Paladin
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_虔诚的亚瑟|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_虔诚的亚瑟|r 对话
     .goto 1453/0,859.13,-8559.14,10,0
     .goto 1453/0,861.14,-8573.03
     .trainer >> 训练你的职业技能
@@ -4926,8 +4926,8 @@ step << Hunter skip
     #completewith DarkshoreBoat
     >>|cRXP_WARN_你需要 50 点|r |T133971:0|t[烹饪] |cRXP_WARN_，以便之后在暮色森林完成一个任务|r
     >>|T133971:0|t[烹饪] 以下物品：
-    >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[大块野猪肉]|r|cRXP_WARN_|r |T133974:0|t[烤野猪肉]
-    >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[多汁狼肉]|r|cRXP_WARN_|r |T133974:0|t[烧烤狼肉]
+    >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[大块野猪肉]|r|cRXP_WARN_制作为|r |T133974:0|t[烤野猪肉]
+    >>|T133971:0|t[Cook]|cRXP_WARN_the|r |T133970:0|t|cRXP_LOOT_[多汁狼肉]|r|cRXP_WARN_into|r |T133974:0|t[Charred Wolf Meat]
     .usespell 2550
     .zoneskip Darkshore
     .itemcount 769,1 --Chunk of Boar Meat (1+)
@@ -4940,7 +4940,7 @@ step << Hunter skip
     #label DarkshoreCook5
     #completewith DarkshoreBoat
     >>|cRXP_WARN_你需要 50 点|r |T133971:0|t[烹饪] |cRXP_WARN_，以便之后在暮色森林完成一个任务|r
-    >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[多汁狼肉]|r|cRXP_WARN_|r |T133974:0|t[烧烤狼肉]
+    >>|T133971:0|t[Cook]|cRXP_WARN_the|r |T133970:0|t|cRXP_LOOT_[多汁狼肉]|r|cRXP_WARN_into|r |T133974:0|t[Charred Wolf Meat]
     .usespell 2550
     .zoneskip Darkshore
     .itemcount 769,<1 --Chunk of Boar Meat (<1)
@@ -4953,7 +4953,7 @@ step << Hunter skip
     #label DarkshoreCook6
     #completewith DarkshoreBoat
     >>|cRXP_WARN_你需要 50 点|r |T133971:0|t[烹饪] |cRXP_WARN_，以便之后在暮色森林完成一个任务|r
-    >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[大块野猪肉]|r|cRXP_WARN_|r |T133974:0|t[烤野猪肉]
+    >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[大块野猪肉]|r|cRXP_WARN_制作为|r |T133974:0|t[烤野猪肉]
     .usespell 2550
     .zoneskip Darkshore
     .itemcount 769,1 --Chunk of Boar Meat (1)

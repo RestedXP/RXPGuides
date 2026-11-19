@@ -120,7 +120,7 @@ step << Druid
 step << Druid
 	.goto 1457/1,2563.92,10179.040
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_玛斯雷·驭熊者|r 对话
-	.accept 26 >>接受任务必修的课程
+	.accept 26 >>接受任务 必修的课程
 	.trainer >> 训练你的职业技能
 	.target 玛斯雷·驭熊者
 step << Druid
@@ -153,7 +153,7 @@ step << Druid
     #label TotL
     .goto 1450/1,-2224.18,7874.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塔加里|r 对话
-    .turnin 29 >> 交任务 湖中试炼
+    .turnin 29 >> 交任务湖中试炼
     .accept 272 >> 接受任务 海狮试炼
     .target 塔加里
 step << NightElf
@@ -782,7 +782,7 @@ step << !Human
 step
     .goto 1436/0,1166.57,-10653.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_与旅店老板对话|r
-    .vendor >>|cRXP_BUY_如有需要，购买食物/水|r
+    .vendor >>|cRXP_BUY_按需购买食物/水|r
 	.target 旅店老板希瑟尔
 step
     .goto 1436/0,1179.800,-10635.601
@@ -1161,7 +1161,7 @@ step
 step << Skyborne
     .goto 1436/0,1037.42,-10628.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_索尔|r 对话
-    .fp Westfall >> 开启西部荒野的飞行路径
+    .fp Westfall >> 解锁西部荒野飞行路线
     .target 索尔
 step
     #optional
@@ -1265,7 +1265,7 @@ step << Warlock
     .goto 1453/0,1015.33,-8978.9,15 >> 前往屠宰场，进入地下室
 step << Warlock
     .goto 1453/0,1029.89,-8971.06
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
     .trainer >> 训练你的职业技能
     .train 6222,1
     .target 厄苏拉·德林
@@ -1292,7 +1292,7 @@ step << Human Paladin
     .target 达索瑞恩·拉尔
 step << Paladin
     #label train19742
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_虔诚的亚瑟|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_虔诚的亚瑟|r 对话
     .goto 1453/0,859.13,-8559.14,10,0
     .goto 1453/0,861.14,-8573.03
     .trainer >> 训练你的职业技能
@@ -1406,8 +1406,8 @@ step
     #completewith DarkshoreBoat
     >>|cRXP_WARN_你需要 50 点|r |T133971:0|t[烹饪] |cRXP_WARN_，以便之后在暮色森林完成一个任务|r
     >>|T133971:0|t[烹饪] 以下物品：
-    >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[大块野猪肉]|r|cRXP_WARN_|r |T133974:0|t[烤野猪肉]
-    >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[多汁狼肉]|r|cRXP_WARN_|r |T133974:0|t[烧烤狼肉]
+    >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[大块野猪肉]|r|cRXP_WARN_制作为|r |T133974:0|t[烤野猪肉]
+    >>|T133971:0|t[Cook]|cRXP_WARN_the|r |T133970:0|t|cRXP_LOOT_[多汁狼肉]|r|cRXP_WARN_into|r |T133974:0|t[Charred Wolf Meat]
     .usespell 2550
     .zoneskip Darkshore
     .itemcount 769,1 --Chunk of Boar Meat (1+)
@@ -1420,7 +1420,7 @@ step
     #label DarkshoreCook5
     #completewith DarkshoreBoat
     >>|cRXP_WARN_你需要 50 点|r |T133971:0|t[烹饪] |cRXP_WARN_，以便之后在暮色森林完成一个任务|r
-    >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[多汁狼肉]|r|cRXP_WARN_|r |T133974:0|t[烧烤狼肉]
+    >>|T133971:0|t[Cook]|cRXP_WARN_the|r |T133970:0|t|cRXP_LOOT_[多汁狼肉]|r|cRXP_WARN_into|r |T133974:0|t[Charred Wolf Meat]
     .usespell 2550
     .zoneskip Darkshore
     .itemcount 769,<1 --Chunk of Boar Meat (<1)
@@ -1433,7 +1433,7 @@ step
     #label DarkshoreCook6
     #completewith DarkshoreBoat
     >>|cRXP_WARN_你需要 50 点|r |T133971:0|t[烹饪] |cRXP_WARN_，以便之后在暮色森林完成一个任务|r
-    >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[大块野猪肉]|r|cRXP_WARN_|r |T133974:0|t[烤野猪肉]
+    >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[大块野猪肉]|r|cRXP_WARN_制作为|r |T133974:0|t[烤野猪肉]
     .usespell 2550
     .zoneskip Darkshore
     .itemcount 769,1 --Chunk of Boar Meat (1)
@@ -2300,7 +2300,7 @@ step << Druid
 step << Druid
     .goto 1457/1,2563.98,10179.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_玛斯雷·驭熊者|r 对话
-    .accept 26 >> 接受任务必修的课程
+    .accept 26 >> 接受任务 必修的课程
     .trainer >> 训练你的职业技能
     .target 玛斯雷·驭熊者
 step << Druid
@@ -2338,7 +2338,7 @@ step << Druid
     #label TotL
     .goto 1450/1,-2224.18,7874.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塔加里|r 对话
-    .turnin 29 >> 交任务 湖中试炼
+    .turnin 29 >> 交任务湖中试炼
     .accept 272 >> 接受任务 海狮试炼
     .target 塔加里
 step
@@ -2377,7 +2377,7 @@ step << Warlock
     .zoneskip Ironforge
 step << Warlock
     .goto 1453/0,1029.89,-8971.06
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
     .trainer >> 训练你的职业技能
     .target 厄苏拉·德林
     .zoneskip Dun Morogh
@@ -2402,7 +2402,7 @@ step << Priest/Paladin
     .zoneskip Dun Morogh
     .zoneskip Ironforge
 step << Paladin
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_虔诚的亚瑟|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_虔诚的亚瑟|r 对话
     .goto 1453/0,859.13,-8559.14,10,0
     .goto 1453/0,861.14,-8573.03
     .trainer >> 训练你的职业技能
@@ -2701,7 +2701,7 @@ step << Shaman
     .trainer >> 训练你的职业技能
 step << Priest/Paladin/Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_托德雷·铁矿|r 对话 << Priest
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布兰度尔·铁锤|r 对话 << Paladin
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_布兰度尔·铁锤|r 对话 << Paladin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_丁克|r 对话 << Mage
     .goto 1455/0,-928.48,-4614.620 << Mage
     .goto 1455/0,-912.88,-4625.99 << Priest
@@ -2727,7 +2727,7 @@ step << Warlock
     .target 寻尸者祖贝尔
     .train 20381,1
 step << Warrior/Hunter
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雷格努斯·雷石|r 对话 << Hunter
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_雷格努斯·雷石|r 对话 << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_比尔班·飞钳|r 对话 << Warrior
     .goto 1455/0,-1266.02,-5006.570 << Hunter
     .goto 1455/0,-1234.65,-5035.67 << Warrior
@@ -2817,7 +2817,7 @@ step
     .subzoneskip 16611 -- ruins of lordaeron
 step
     .goto 1424/0,-512.15,-715.14
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达尔拉·哈瑞斯|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_达尔拉·哈瑞斯|r 对话
     .fp Southshore >> 开启南海镇的飞行点
     .target 达尔拉·哈瑞斯
     .subzoneskip 16611 -- ruins of lordaeron
@@ -2971,7 +2971,7 @@ step << NightElf Rogue
     .goto 1453/0,323.43,-8817.83,5 >> 进入军情7处总部。上楼去找 |cRXP_FRIENDLY_"剃刀"雷吉克|r
 step << NightElf Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_"剃刀"雷吉克|r对话
-    .accept 2281 >> 接受任务赤脊山的联络员
+    .accept 2281 >> 接受任务 赤脊山的联络员
     .goto 1453/0,362.55,-8819.80
     .target Renzik "The Shiv"
 step << NightElf
@@ -3057,7 +3057,7 @@ step << !NightElf Rogue
     .goto 1453/0,323.43,-8817.83,5 >> 进入军情7处总部。上楼去找 |cRXP_FRIENDLY_"剃刀"雷吉克|r
 step << !NightElf Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_"剃刀"雷吉克|r对话
-    .accept 2281 >> 接受任务赤脊山的联络员
+    .accept 2281 >> 接受任务 赤脊山的联络员
     .goto 1453/0,362.55,-8819.80
     .target Renzik "The Shiv"
 step << Warrior
@@ -3088,7 +3088,7 @@ step << Warlock
     .goto 1453/0,1015.33,-8978.9,15 >> 前往屠宰场，进入地下室
 step << Warlock
     .goto 1453/0,1029.89,-8971.06
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
     .trainer >> 训练你的职业技能
     .target 厄苏拉·德林
     .xp <20,1
@@ -3107,7 +3107,7 @@ step << Priest/Paladin
     #completewith next
     .goto 1453/0,809.52,-8579.22,20 >> 前往暴风城大教堂
 step << Paladin
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_虔诚的亚瑟|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_虔诚的亚瑟|r 对话
     .goto 1453/0,859.13,-8559.14,10,0
     .goto 1453/0,861.14,-8573.03
     .trainer >> 训练你的职业技能
@@ -3161,7 +3161,7 @@ step << !Skyborne
     .goto 1436/0,1037.42,-10628.27,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 或 |cRXP_FRIENDLY_索尔|r 对话
     .fly Redridge >> 飞往赤脊山 << !NightElf !Dwarf/!Hunter
-    .fp Westfall >> 开启西部荒野的飞行路径 << NightElf/Dwarf Hunter
+    .fp Westfall >> 解锁西部荒野飞行路线 << NightElf/Dwarf Hunter
     .target 杜加尔·朗德瑞克
     .target 索尔
     .zoneskip Redridge Mountains
@@ -3197,7 +3197,7 @@ step << Rogue
     .goto 1433/0,-2180.19,-9328.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_卢修斯|r 对话
     .turnin 2281 >> 交任务 赤脊山的联络员
-    .accept 2282 >> 接受任务奥瑟尔伐木场
+    .accept 2282 >> 接受任务 奥瑟尔伐木场
     .target Lucius
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_肖恩|r对话
@@ -3520,7 +3520,7 @@ step
     .accept 98407 >>接受任务 力量的展示
     .target 菲尔顿副队长
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_治安官马瑞斯|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_治安官马瑞斯|r 对话
     .goto 1433/0,-2298.06,-9284.04
     .accept 20 >> 接受任务黑石氏族的威胁
     .accept 98387 >>接受任务 黑石封锁线
@@ -3600,7 +3600,7 @@ step
     .turnin 246 >> 交任务 审时度势
     .turnin 98407 >>交任务 力量的展示
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_治安官马瑞斯|r 对话
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_治安官马瑞斯|r 对话
 	.target 治安官马瑞斯
     .goto 1433/0,-2298.06,-9284.04
     .turnin 20 >> 交任务 黑石氏族的威胁
@@ -3820,8 +3820,8 @@ step << Rogue
     #requires AntiVenomEnd2 << Rogue
     .goto 1453/0,362.28,-8815.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_马迪亚斯·肖尔大师|r 对话
-    >>|cRXP_WARN_如果你之前切换成了|r |T135641:0|t[匕首] |cRXP_WARN_，记得重新装备上你的主武器|r << Rogue
-    .turnin 2359 >> 交任务克拉文之塔
+    >>|cRXP_WARN_如果你之前切换成了|r |T135641:0|t[匕首] |cRXP_WARN_，记得重新装备你的主武器|r << Rogue
+    .turnin 2359 >> 交任务 克拉文之塔
     .target 马迪亚斯·肖尔大师
 step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_吴|r 或 |cRXP_FRIENDLY_伊尔莎|r 对话
@@ -3897,7 +3897,7 @@ step << Warlock
     .goto 1453/0,1015.33,-8978.9,15 >> 前往屠宰场，进入地下室
 step << Warlock
     .goto 1453/0,1029.89,-8971.06
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
     .trainer >> 训练你的职业技能
     .target 厄苏拉·德林
 step << Warlock
@@ -3919,7 +3919,7 @@ step << Priest/Paladin
     #completewith next
     .goto 1453/0,809.52,-8579.22,20 >> 前往暴风城大教堂
 step << Paladin
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_虔诚的亚瑟|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_虔诚的亚瑟|r 对话
     .goto 1453/0,859.13,-8559.14,10,0
     .goto 1453/0,861.14,-8573.03
     .trainer >> 训练你的职业技能
@@ -4543,7 +4543,7 @@ step
     .goto 1439/1,601.74,4678.61--c:1439,35.724,83.696
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_勘察员雷塔维|r 对话
     >>|cRXP_WARN_你可能需要等待他重新刷新，或等其他玩家完成护送|r
-    .turnin 729 >> 交任务 健忘的勘察员
+    .turnin 729 >> 交任务健忘的勘察员
     .target 勘察员雷塔维
 step
     .goto 1439/1,602.01,4678.87

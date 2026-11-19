@@ -62,7 +62,7 @@ step << Warrior
     >>一直击杀 |cRXP_ENEMY_幼狼|r 直到你拥有价值10铜币以上的垃圾物品
     >>|cRXP_WARN_你会学习|r |T132333:0|t[战斗怒吼] |cRXP_WARN_从而加快前期升级速度|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_丹尼尔修士|r 对话
-    .vendor >> 出售垃圾物品
+    .vendor >> |cRXP_WARN_出售垃圾物品|r
     .target 丹尼尔修士
     .goto Elwynn Forest,47.486,41.566
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_莱尼·拜舍尔|r 对话
@@ -128,7 +128,7 @@ step
 step << Priest/Mage/Warlock
     .goto Elwynn Forest,47.486,41.566
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_丹尼尔修士|r 对话
-    .vendor >>出售垃圾物品
+    .vendor >>|cRXP_WARN_出售垃圾物品|r
     >>|cRXP_WARN_购买10瓶|r |T132794:0|t[清凉的泉水]
     .target 丹尼尔修士
     .collect 159,10 --Collect Refreshing Spring Water (x10)
@@ -136,7 +136,7 @@ step << !Priest !Mage !Warlock !Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_高德瑞克·洛斯迦|r 对话
     .target 高德瑞克·洛斯迦
     .goto Elwynn Forest,47.691,41.417
-    .vendor >>出售垃圾物品
+    .vendor >>|cRXP_WARN_出售垃圾物品|r
 step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_加诺斯|r 对话
     .goto Elwynn Forest,47.240,41.900
@@ -179,7 +179,7 @@ step
     .goto Elwynn Forest,47.691,41.417
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_高德瑞克·洛斯迦|r 对话
     .target 高德瑞克·洛斯迦
-    .vendor >> 出售垃圾物品
+    .vendor >> |cRXP_WARN_出售垃圾物品|r
 --N need SoM xp note
 step
     #requires xp3
@@ -421,7 +421,7 @@ step << Mage/Priest/Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_安德温·克里顿|r 对话
     .target 安德温·克里顿
     .goto Elwynn Forest,41.706,65.786
-    .vendor >> 出售垃圾物品
+    .vendor >> |cRXP_WARN_出售垃圾物品|r
 step
     #label Goldshire
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_治安官杜汉|r 对话
@@ -554,7 +554,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔舒·马科伦|r 对话
     .target 乔舒·马科伦
     .vendor >>|cRXP_BUY_能买多少|r |T132815:0|t[冰镇牛奶] |cRXP_WARN_就买多少|r << Priest/Warlock/Mage
-    .vendor >>出售垃圾物品 << !Priest !Warlock !Mage
+    .vendor >>|cRXP_WARN_出售垃圾物品|r << !Priest !Warlock !Mage
 step
     #completewith next
     >>击杀 |cRXP_ENEMY_狗头人隧道工|r 和 |cRXP_ENEMY_狗头人矿工|r。拾取他们的 |cRXP_LOOT_蜡烛|r 和 |cRXP_LOOT_金砂|r
@@ -695,7 +695,7 @@ step
     #completewith next
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_科瑞娜·斯蒂利|r 对话
     .goto Elwynn Forest,41.529,65.900
-    .vendor >>出售垃圾物品
+    .vendor >>|cRXP_WARN_出售垃圾物品|r
     .target 科瑞娜·斯蒂利
 step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_科瑞娜·斯蒂利|r 对话
@@ -839,7 +839,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拉里克·费恩|r 对话
     .target 拉里克·费恩
     .goto Elwynn Forest,83.283,66.089
-    .vendor >> 出售垃圾物品
+    .vendor >> |cRXP_WARN_出售垃圾物品|r
     .zoneskip Elwynn Forest,1
 step
     #completewith Prowlers
@@ -1289,7 +1289,7 @@ step
 step
     #softcore
     #completewith next
-    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
     .target 灵魂医者
 step
     .goto Westfall,56.327,47.520
@@ -1308,7 +1308,7 @@ step << Human
     .target 军需官刘易斯
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_军需官刘易斯|r 对话
     .accept 6181 >> 接受任务 快捷的消息
-    .vendor >>出售垃圾物品
+    .vendor >>|cRXP_WARN_出售垃圾物品|r
 step << Rogue
     #era
     .money >0.3152
@@ -1483,7 +1483,7 @@ step << Warlock
     .goto StormwindClassic,27.2,78.1,15 >> 前往屠宰场，进入地下室
 step << Warlock
     .goto StormwindClassic,26.117,77.225
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
     .trainer >> 训练你的职业技能
     .target 厄苏拉·德林
 step << Warlock
@@ -1810,7 +1810,7 @@ step
 step
     .goto Dun Morogh,68.614,54.643
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡杉·莫格什|r 对话
-    .vendor >> 出售垃圾物品 << !Priest !Warlock !Mage
+    .vendor >> |cRXP_WARN_出售垃圾物品|r << !Priest !Warlock !Mage
     .vendor >> |cRXP_BUY_购买最多20瓶|r |T132815:0|t[冰镇牛奶] << Priest/Warlock/Mage
     .target 卡杉·莫格什
 step << !Warlock
@@ -2197,7 +2197,7 @@ step << Warlock
     .goto StormwindClassic,27.2,78.1,15 >> 前往屠宰场，进入地下室
 step << Warlock
     .goto StormwindClassic,26.117,77.225
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
     .trainer >> 训练你的职业技能
     .target 厄苏拉·德林
 step << Warlock
@@ -2233,7 +2233,7 @@ step << Human Paladin
     .accept 1643 >>接受任务圣洁之书
     .target 达索瑞恩·拉尔
 step << Paladin
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_虔诚的亚瑟|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_虔诚的亚瑟|r 对话
     .goto StormwindClassic,38.82,31.27,10,0
     .goto StormwindClassic,38.67,32.82
     .trainer >> 训练你的职业技能

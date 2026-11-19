@@ -12,7 +12,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP 部落 1-22级
 #groupid RXP-SRGCE-H1
 #defaultfor Troll/Orc
-#next 6-10 杜隆塔尔
+#next 6-10级 杜隆塔尔
 
 
 step << !Orc !Troll
@@ -120,7 +120,7 @@ step << !Warrior !Rogue
     .goto Durotar,42.59,67.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_多克纳|r 对话
     >>|cRXP_BUY_从她那里|r|cRXP_BUY_购买|r |T132794:0|t[清凉的泉水] << !Hunter !Shaman
-    >>|cRXP_BUY_购买|r |T132382:0|t[劣质箭]|cRXP_BUY_从她那里|r << Hunter
+    >>|cRXP_BUY_购买|r |T132382:0|t[粗糙的箭矢] |cRXP_BUY_向她购买|r << Hunter
     .collect 159,30,6394,1 << !Hunter !Shaman --Refreshing Spring Water (30)
     .collect 2512,1000,6394,1 << Hunter --Rough Arrow (1000)
     .target 多克纳
@@ -414,7 +414,7 @@ step << !Rogue
     .goto Durotar,42.59,67.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_多克纳|r 对话
     >>|cRXP_BUY_从她那里|r|cRXP_BUY_购买|r |T132794:0|t[清凉的泉水] << !Rogue !Warrior !Hunter !Shaman
-    >>|cRXP_BUY_购买|r |T132382:0|t[劣质箭]|cRXP_BUY_从她那里|r << Hunter
+    >>|cRXP_BUY_购买|r |T132382:0|t[粗糙的箭矢] |cRXP_BUY_向她购买|r << Hunter
     .collect 159,15,6394,1 << !Rogue !Warrior !Hunter !Shaman --Refreshing Spring Water (15)
     .collect 2512,1000,6394,1 << Hunter --Rough Arrow (1000)
     .vendor >> 把垃圾物品卖给商人
@@ -440,7 +440,7 @@ step << Hunter
     #xprate >1.49
     .goto Durotar,42.59,67.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_多克纳|r 对话
-    >>|cRXP_BUY_购买|r |T132382:0|t[劣质箭]|cRXP_BUY_从她那里|r
+    >>|cRXP_BUY_购买|r |T132382:0|t[粗糙的箭矢] |cRXP_BUY_向她购买|r
     .collect 2512,400,6394,1 --Rough Arrow (400)
     .vendor >> 把垃圾物品卖给商人
     .target 多克纳
@@ -451,7 +451,7 @@ step << Hunter
     #xprate >1.49
     .goto Durotar,42.59,67.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_多克纳|r 对话
-    >>|cRXP_BUY_购买|r |T132382:0|t[劣质箭]|cRXP_BUY_从她那里|r
+    >>|cRXP_BUY_购买|r |T132382:0|t[粗糙的箭矢] |cRXP_BUY_向她购买|r
     .collect 2512,200,6394,1 --Rough Arrow (200)
     .vendor >> 把垃圾物品卖给商人
     .target 多克纳
@@ -946,7 +946,7 @@ step
     .goto Durotar,42.59,67.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_多克纳|r 对话
     >>|cRXP_BUY_从她那里|r|cRXP_BUY_购买|r |T132794:0|t[清凉的泉水] << !Rogue !Warrior !Hunter !Shaman
-    >>|cRXP_BUY_购买|r |T132382:0|t[劣质箭]|cRXP_BUY_从她那里|r << Hunter
+    >>|cRXP_BUY_购买|r |T132382:0|t[粗糙的箭矢] |cRXP_BUY_向她购买|r << Hunter
     .collect 159,5,6394,1 << !Rogue !Warrior !Hunter !Shaman --Refreshing Spring Water (5)
     .collect 2512,1000,6394,1 << Hunter --Rough Arrow (1000)
     .vendor >> 把垃圾物品卖给商人
@@ -1538,7 +1538,7 @@ RXPGuides.RegisterGuide([[
 #tbc
 #xprate <1.99
 << Horde
-#name 6-10 杜隆塔尔
+#name 6-10级 杜隆塔尔
 #version 11
 #group RestedXP 部落 1-22级
 #groupid RXP-SRGCE-H1
@@ -3342,7 +3342,7 @@ step << Warrior/Shaman
     #xprate >1.49
     #softcore
     .goto Durotar,47.04,17.58
-    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
     .isQuestComplete 806
 step << Warrior/Shaman
     #xprate >1.49
@@ -3486,7 +3486,7 @@ step << Warrior/Shaman/Hunter
     #xprate <1.5 << Shaman/Warrior
     #softcore
     .goto Durotar,47.04,17.58
-    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
     .isQuestComplete 806
 step << Warrior/Shaman/Hunter
     #xprate <1.5 << Shaman/Warrior
@@ -3497,7 +3497,7 @@ step << !Warrior !Shaman !Hunter
     #xprate >1.49
     #softcore
     .goto Durotar,47.04,17.58
-    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
     .isQuestComplete 806
 step << !Warrior !Shaman !Hunter
     #xprate >1.49
@@ -3818,7 +3818,7 @@ step << Warrior/Shaman
 step << Warrior/Shaman
     #softcore
     #completewith next
-    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
 step << Warrior/Shaman
     #label PoolsPickup
     .goto The Barrens,52.26,31.93
@@ -3899,7 +3899,7 @@ step << Warrior/Shaman
 step << Warrior/Shaman
     #softcore
     #completewith next
-    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
 step << Warrior/Shaman
     #label FungalSporesComplete
     .goto The Barrens,51.44,30.15
@@ -4860,7 +4860,7 @@ step
     #xprate <1.5
     #softcore
     #completewith SecuringLinesTurnIn
-    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
     .isQuestComplete 813 << Warrior/Shaman/Hunter
 step
     #xprate <1.5
@@ -5544,7 +5544,7 @@ step
     #optional
     #softcore
     #completewith ProofofDemiseTurnin
-    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
     .isQuestComplete 427
 step
     #optional
@@ -5636,7 +5636,7 @@ step << Warlock/Mage
 step << Warlock/Mage
     #label UCflightpath1
     .goto Undercity,63.25,48.56
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迈克尔 |r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_麦克尔|r 对话
     .fp Undercity >> 开启幽暗城的飞行点
     .target 迈克尔·加勒特
 step << Warlock/Mage
@@ -6072,7 +6072,7 @@ step
     #optional
     #softcore
     #completewith MillsTurnin
-    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
 step
     #optional
     #hardcore
@@ -6640,7 +6640,7 @@ step << skip --Warrior
 step << Warrior
     #softcore
     #completewith next
-    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
 step << Warrior
     #hardcore
     #completewith next
@@ -6793,7 +6793,7 @@ step << !Rogue !Mage
 step << !Undead
     #label UCflightpath3
     .goto Undercity,63.25,48.56
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迈克尔 |r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_麦克尔|r 对话
     .fp Undercity >> 开启幽暗城的飞行点
     >>|cRXP_WARN_若已解锁飞行点，请跳过此步骤！|r
     .target 迈克尔·加勒特
@@ -7349,7 +7349,7 @@ step << !Warrior !Rogue
     .goto Durotar,42.59,67.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_多克纳|r 对话
     >>|cRXP_BUY_从她那里|r|cRXP_BUY_购买|r |T132794:0|t[清凉的泉水] << !Hunter !Shaman
-    >>|cRXP_BUY_购买|r |T132382:0|t[劣质箭]|cRXP_BUY_从她那里|r << Hunter
+    >>|cRXP_BUY_购买|r |T132382:0|t[粗糙的箭矢] |cRXP_BUY_向她购买|r << Hunter
     .collect 159,30,6394,1 << !Hunter !Shaman --Refreshing Spring Water (30)
     .collect 2512,1000,6394,1 << Hunter --Rough Arrow (1000)
     .target 多克纳
@@ -7603,7 +7603,7 @@ step << !Rogue
     .goto Durotar,42.59,67.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_多克纳|r 对话
     >>|cRXP_BUY_从她那里|r|cRXP_BUY_购买|r |T132794:0|t[清凉的泉水] << !Rogue !Warrior !Hunter !Shaman
-    >>|cRXP_BUY_购买|r |T132382:0|t[劣质箭]|cRXP_BUY_从她那里|r << Hunter
+    >>|cRXP_BUY_购买|r |T132382:0|t[粗糙的箭矢] |cRXP_BUY_向她购买|r << Hunter
     .collect 159,15,6394,1 << !Rogue !Warrior !Hunter !Shaman --Refreshing Spring Water (15)
     .collect 2512,1000,6394,1 << Hunter --Rough Arrow (1000)
     .vendor >> 把垃圾物品卖给商人
@@ -7630,7 +7630,7 @@ step << Hunter
     #xprate >1.49
     .goto Durotar,42.59,67.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_多克纳|r 对话
-    >>|cRXP_BUY_购买|r |T132382:0|t[劣质箭]|cRXP_BUY_从她那里|r
+    >>|cRXP_BUY_购买|r |T132382:0|t[粗糙的箭矢] |cRXP_BUY_向她购买|r
     .collect 2512,400,6394,1 --Rough Arrow (400)
     .vendor >> 把垃圾物品卖给商人
     .target 多克纳
@@ -7641,7 +7641,7 @@ step << Hunter
     #xprate >1.49
     .goto Durotar,42.59,67.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_多克纳|r 对话
-    >>|cRXP_BUY_购买|r |T132382:0|t[劣质箭]|cRXP_BUY_从她那里|r
+    >>|cRXP_BUY_购买|r |T132382:0|t[粗糙的箭矢] |cRXP_BUY_向她购买|r
     .collect 2512,200,6394,1 --Rough Arrow (200)
     .vendor >> 把垃圾物品卖给商人
     .target 多克纳
@@ -7973,7 +7973,7 @@ step
     .goto Durotar,42.59,67.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_多克纳|r 对话
     >>|cRXP_BUY_从她那里|r|cRXP_BUY_购买|r |T132794:0|t[清凉的泉水] << !Rogue !Warrior !Hunter !Shaman
-    >>|cRXP_BUY_购买|r |T132382:0|t[劣质箭]|cRXP_BUY_从她那里|r << Hunter
+    >>|cRXP_BUY_购买|r |T132382:0|t[粗糙的箭矢] |cRXP_BUY_向她购买|r << Hunter
     .collect 159,5,6394,1 << !Rogue !Warrior !Hunter !Shaman --Refreshing Spring Water (5)
     .collect 2512,1000,6394,1 << Hunter --Rough Arrow (1000)
     .vendor >> 把垃圾物品卖给商人
@@ -9723,7 +9723,7 @@ step
     #xprate <2.1
     #softcore
     .goto Durotar,47.04,17.58
-    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
     .isQuestComplete 806
 step
     #xprate <2.1
@@ -9849,7 +9849,7 @@ step
     #softcore
     #completewith
     .goto The Barrens,50.72,32.61
-    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
     .subzoneskip 380
 step
     #xprate >2.09

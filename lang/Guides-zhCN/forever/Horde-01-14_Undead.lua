@@ -24,7 +24,7 @@ step
     #completewith next
     .goto 1420/0,1675.90,1645.00,8,0
     .goto 1420/0,1665.51,1645.00,8,0
-    .goto 1420/0,1667.77,1679.04,10 >> 从地穴跑出来，朝 |cRXP_FRIENDLY_摩尔多|r 方向前进
+    .goto 1420/0,1667.77,1679.04,10 >> 跑出地穴，朝 |cRXP_FRIENDLY_摩尔多|r 的方向前进
 step
     .goto 1420/0,1667.77,1679.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莫多|r 对话
@@ -39,7 +39,7 @@ step << Warrior/Warlock/Priest/Mage
     .goto 1420/0,1718.38,1799.24,40,0 << Priest/Mage
     .goto 1420/0,1669.12,1869.73,40,0 << Priest/Mage
     +|cRXP_WARN_击杀 |cRXP_ENEMY_食腐狼幼崽|r 和 |cRXP_ENEMY_夜行蝙蝠|r。拾取它们的掉落，直到你拥有价值60铜币的可出售物品（包括你的护甲）|r << Mage
-    +|cRXP_WARN_击杀 |cRXP_ENEMY_食腐狼幼崽|r 和 |cRXP_ENEMY_夜行蝙蝠|r，拾取它们的掉落，直到你拥有价值50铜币的可出售物品（包括你的护甲）|r << Priest
+    +|cRXP_WARN_击杀 |cRXP_ENEMY_食腐狼幼崽|r 和 |cRXP_ENEMY_夜行蝙蝠|r。拾取它们的掉落，直到你拥有价值50铜币的可出售物品（包括你的护甲）|r << Priest
     +|cRXP_WARN_击杀 |cRXP_ENEMY_食腐狼幼崽|r 和 |cRXP_ENEMY_夜行蝙蝠|r，拾取它们的掉落，直到你拥有价值10铜币的可出售物品（包括你的护甲）|r << Warrior/Warlock
     .mob 食腐狼幼崽
     .mob 夜行蝙蝠
@@ -58,7 +58,7 @@ step << Priest/Mage
 step << Warlock/Mage
     #sticky
     #label Piercing
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_温雅·玛山德|r 和 |cRXP_FRIENDLY_暗影牧师萨维斯|r 对话 << Warlock
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_温雅·玛山德|r 和 |cRXP_FRIENDLY_暗影牧师萨维斯|r 对话 << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_萨维斯|r 对话 << Mage
     .accept 1470 >>接受任务 控制小鬼 << Warlock
     .goto 1420/0,1633.42,1836.9 << Warlock
@@ -137,7 +137,7 @@ step << Warlock
     .mob 断骨骷髅
 step << Warlock
     #completewith next
-    +|cRXP_WARN_击杀 |cRXP_ENEMY_无脑的僵尸|r 和 |cRXP_ENEMY_悲惨的僵尸|r，拾取它们的掉落物，直到你获得价值 25 铜币的可出售物品(包括你的护甲)|r
+    +|cRXP_WARN_击杀 |cRXP_ENEMY_无脑的僵尸|r 和 |cRXP_ENEMY_悲惨的僵尸|r。拾取它们的掉落物，直到你获得价值 25 铜币的可出售物品(包括你的护甲)|r
     .mob 无脑的僵尸
     .mob Wretched Zombie
     .money >0.0025
@@ -540,7 +540,7 @@ step
 step
     #softcore
     #completewith Scavenging
-    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
     .target 灵魂医者
 step << Warlock
     #softcore
@@ -623,7 +623,7 @@ step
 step
     #softcore
     #completewith next
-    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
     .target 灵魂医者
 step
     .goto 1420/0,1624.84,1876.96
@@ -815,7 +815,7 @@ step
     --too many .mobs, will cause clutter
 step << Rogue
     .goto 1420/0,270.12,2253.23
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_温特斯夫人|r |cRXP_BUY_对话并|r|cRXP_BUY_从她那里购买一把|r |T135421:0|t[增重飞斧]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_温特斯夫人|r |cRXP_BUY_对话，并|r|cRXP_BUY_从她那里购买一把|r |T135421:0|t[增重飞斧]
     .collect 3131,200,786,1 --Weighted Throwing Axe (200)
     .target 温特斯夫人
     .itemStat 18,QUALITY,<7
@@ -1650,7 +1650,7 @@ step
 step << skip
     #softcore
     #completewith Brill3
-    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
 step
     .goto 1420/0,244.36,2262.26
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_库勒曼|r 对话
@@ -1940,7 +1940,7 @@ step
 step
     #softcore
     #completewith FoodandWater2
-    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
     .xp <10,1
 step
     #softcore
@@ -2759,7 +2759,7 @@ step
 step << skip
     #softcore
     #completewith next
-    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
 step
     .goto 1420/0,2037.100,2416.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_破坏者希尔达|r 对话
@@ -3428,7 +3428,7 @@ step
 step << skip
     #softcore
     #completewith ProveyourWorth
-    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
 step
     --#hardcore
     #completewith next
@@ -3471,7 +3471,7 @@ step << Undead
 step
     #label BorderCrossings
     .goto 1421/0,1602.84,520.63
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥利斯特|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_爱思特|r 对话
     .accept 477 >>接受任务 越境
     .target Shadow Priest Allister
 step
@@ -3660,7 +3660,7 @@ step
 step << skip
     #softcore
     #completewith ArugalTurnin
-    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
 step
     --#hardcore
     #completewith next
@@ -3876,7 +3876,7 @@ step
 step
     #softcore
     #completewith next
-    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥利斯特|r 和 |cRXP_FRIENDLY_达拉尔|r 对话
     .turnin 478 >>交任务 地图与符记
@@ -3890,7 +3890,7 @@ step
     .goto 1421/0,1593.6,554.23
 step
     .goto 1421/0,1602.84,520.63
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥利斯特|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_爱思特|r 对话
     .turnin 482 >>交任务 达拉然的意图
     .target Shadow Priest Allister
 step
@@ -3951,7 +3951,7 @@ step << Rogue
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.6
 step << Undead
     .goto 1458/0,266.20,1567.17
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迈克尔 |r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_麦克尔|r 对话
     .turnin 6322 >>交任务 迈克尔·加勒特
     .target 迈克尔·加勒特
 step << Rogue/Warrior
@@ -4164,7 +4164,7 @@ step << Priest/Mage/Warlock
     #ssf
     .goto 1458/0,206.04,1705.57
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|Tinterface/worldmap/chatbubble_64grey.blp:20|t与魔法区的|cRXP_FRIENDLY_赞恩·布拉德福德|r交谈
-    >>|cRXP_BUY_从他那里|r购买1把|cRXP_BUY_ |T135468:0|t[烟尘魔杖]|r
+    >>|cRXP_BUY_购买1根|r |T135468:0|t[烟尘魔杖] |cRXP_BUY_从他那里|r
     .collect 5208,1 --Smoldering Wand (1)
     .money <0.3515
     .itemStat 18,QUALITY,<7
@@ -4174,7 +4174,7 @@ step << Priest/Mage/Warlock
     #ah
     .goto 1458/0,206.04,1705.57
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|Tinterface/worldmap/chatbubble_64grey.blp:20|t与魔法区的|cRXP_FRIENDLY_赞恩·布拉德福德|r交谈
-    >>|cRXP_BUY_从他那里|r购买1把|cRXP_BUY_ |T135468:0|t[烟尘魔杖]|r
+    >>|cRXP_BUY_购买1根|r |T135468:0|t[烟尘魔杖] |cRXP_BUY_从他那里|r
     >>|cRXP_WARN_或者你也可以稍后去拍卖行看看是否有更好或更便宜的替代品|r
     .collect 5208,1 --Smoldering Wand (1)
     .itemStat 18,QUALITY,<7

@@ -456,7 +456,7 @@ step << Warrior
     .goto 1412/1,-213.61,-2880.71--c:Mulgore,44.02,76.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哈鲁特·雷角|r 对话
     .train 3127 >>学习 |T132269:0|t[招架]
-    .train 6343 >>训练|T136105:0|t|T136105:0|t[雷霆一击]
+    .train 6343 >>学习 |T136105:0|t[雷霆一击]
     .target 哈鲁特·雷角
     .money <0.02
 step << Warrior
@@ -489,7 +489,7 @@ RXPGuides.RegisterGuide([[
 step
 	#softcore
 	#completewith BloodhoofHome
-    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
 step
 	#hardcore
 	#completewith BloodhoofHome
@@ -1032,7 +1032,7 @@ step << Tauren
 step
     #softcore
 	#completewith Escort1
-    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
 step << Hunter
     #softcore
     .goto 1412/1,-408.32,-2180.30--c:Mulgore,47.81,55.69
@@ -1116,7 +1116,7 @@ step
 step
     #softcore
 	#completewith Thunderhorn
-    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
 step
     #hardcore
     #completewith Thunderhorn
@@ -1332,7 +1332,7 @@ step << Tauren
     .complete 758,1 --Cleanse the Thunderhorn Water Well (1)
 step
     .goto 1412/1,441.42,-1980.96--c:Mulgore,31.27,49.87
-    >>击杀 |cRXP_ENEMY_巴尔丹掘地工|r 和 |cRXP_ENEMY_巴尔丹鉴定官|r。拾取它们的|cRXP_LOOT_探矿者的镐|r
+    >>击杀 |cRXP_ENEMY_巴尔丹掘地工|r和|cRXP_ENEMY_巴尔丹鉴定官|r。拾取它们的|cRXP_LOOT_探矿者的镐|r
     .use 4702 >> |cRXP_WARN_砸碎|r |T134707:0|t[矿工锄] |cRXP_WARN_在熔炉处|r
     >>|cRXP_WARN_小心|cRXP_ENEMY_ 巴尔丹鉴定官|r 会施放|r |T135929:0|t[次级治疗术] |cRXP_WARN_(远程施法:当自身或附近生命值低于 50% 的单位时，为其恢复约 75 点生命值)|r
     .complete 746,1 --Broken Tools (5)
@@ -1948,7 +1948,7 @@ step
 step << skip -- Tauren
     #softcore
 	#completewith Thunderhorn2
-    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
 step << Tauren
     --#hardcore
     #completewith Thunderhorn2
@@ -2257,7 +2257,7 @@ step
     .goto 1456/1,44.58,-1263.32,0--c:Thunder Bluff,45.23,59.40
     .goto 1456/1,94.89,-1210.30--c:Thunder Bluff,40.41,51.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拍卖师斯塔比|r 对话
-    >>|cRXP_BUY_从拍卖行购买1条|r |T133894:0|t|T133894:0|t[新鲜的美味小鱼] |cRXP_BUY_|r
+    >>|cRXP_BUY_从拍卖行购买1条|r |T133894:0|t[新鲜的美味小鱼] |cRXP_BUY_|r
     .collect 6291,1,76240,1 --Raw Brilliant Smallfish (1)
     .target Auctioneer Stampi
 step

@@ -80,7 +80,7 @@ step << !Warrior !Rogue
     .goto Durotar,42.59,67.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_多克纳|r 对话
     >>|cRXP_BUY_从她那里|r|cRXP_BUY_购买|r |T132794:0|t[清凉的泉水] << !Hunter
-    >>|cRXP_BUY_购买|r |T132382:0|t[劣质箭]|cRXP_BUY_从她那里|r << Hunter
+    >>|cRXP_BUY_购买|r |T132382:0|t[粗糙的箭矢] |cRXP_BUY_向她购买|r << Hunter
     .collect 159,30,6394,1 << !Hunter !Shaman --Refreshing Spring Water (30)
     .collect 2512,1000,6394,1 << Hunter --Rough Arrow (1000)
     .target 多克纳
@@ -347,7 +347,7 @@ step << !Rogue
     .goto Durotar,42.59,67.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_多克纳|r 对话
     >>|cRXP_BUY_从她那里|r|cRXP_BUY_购买|r |T132794:0|t[清凉的泉水] << !Warrior !Hunter
-    >>|cRXP_BUY_购买|r |T132382:0|t[劣质箭]|cRXP_BUY_从她那里|r << Hunter
+    >>|cRXP_BUY_购买|r |T132382:0|t[粗糙的箭矢] |cRXP_BUY_向她购买|r << Hunter
     .collect 159,15,6394,1 << !Rogue !Warrior !Hunter --Refreshing Spring Water (15)
     .collect 2512,1000,6394,1 << Hunter --Rough Arrow (1000)
     .vendor >> 把垃圾物品卖给商人
@@ -580,7 +580,7 @@ step
     .goto Durotar,42.59,67.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_多克纳|r 对话
     >>|cRXP_BUY_从她那里|r|cRXP_BUY_购买|r |T132794:0|t[清凉的泉水] << !Rogue !Warrior !Hunter
-    >>|cRXP_BUY_购买|r |T132382:0|t[劣质箭]|cRXP_BUY_从她那里|r << Hunter
+    >>|cRXP_BUY_购买|r |T132382:0|t[粗糙的箭矢] |cRXP_BUY_向她购买|r << Hunter
     .collect 159,5,6394,1 << !Rogue !Warrior !Hunter --Refreshing Spring Water (5)
     .collect 2512,1000,6394,1 << Hunter --Rough Arrow (1000)
     .vendor >> 把垃圾物品卖给商人
@@ -3582,7 +3582,7 @@ step << Orc Rogue/Troll Rogue
 step << Orc Rogue/Troll Rogue
     #optional
     .goto Undercity,63.25,48.56
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迈克尔 |r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_麦克尔|r 对话
     .fp Undercity >> 获得幽暗城的飞行路径
     .target 迈克尔·加勒特
     .money <0.3023
@@ -3993,7 +3993,7 @@ step << Warlock/Mage
 step << Warlock/Mage
     #label UCflightpath1
     .goto Undercity,63.25,48.56
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迈克尔 |r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_麦克尔|r 对话
     .fp Undercity >> 获得幽暗城的飞行路径
     .target 迈克尔·加勒特
 step << Warlock/Mage
@@ -5197,7 +5197,7 @@ step << !Undead
 step << !Undead
     #label UCflightpath3
     .goto Undercity,63.25,48.56
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迈克尔 |r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_麦克尔|r 对话
     .fp Undercity >> 获得幽暗城的飞行路径
     >>|cRXP_WARN_若已解锁飞行点，请跳过此步骤！|r
     .target 迈克尔·加勒特

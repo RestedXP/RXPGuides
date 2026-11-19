@@ -52,7 +52,7 @@ step << Hunter
 step << Hunter
     .goto Teldrassil,54.593,32.992
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_埃沃隆|r 对话
-    .turnin 4495 >> 交任务  好朋友
+    .turnin 4495 >> 交任务 好朋友
     .target 埃沃隆
     .accept 3519 >> 接受任务 需要帮助的朋友
 step << Hunter
@@ -80,7 +80,7 @@ step
 step << Warrior
     .goto Teldrassil,59.306,41.091
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奇娜|r 对话
-	.vendor >> 出售垃圾物品
+	.vendor >> |cRXP_WARN_出售垃圾物品|r
     .target 奇娜
 step << Warrior
 	.goto Teldrassil,59.637,38.442
@@ -98,7 +98,7 @@ step << !Hunter
 step << !Hunter
     .goto Teldrassil,54.593,32.992
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_埃沃隆|r 对话
-    .turnin 4495 >> 交任务  好朋友
+    .turnin 4495 >> 交任务 好朋友
     .target 埃沃隆
     .accept 3519 >> 接受任务 需要帮助的朋友
 step << !Hunter
@@ -182,7 +182,7 @@ step << !Priest
     #completewith next
     .goto Teldrassil,59.306,41.091
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奇娜|r 对话
-	.vendor >> 出售垃圾物品 << !Hunter
+	.vendor >> |cRXP_WARN_出售垃圾物品|r << !Hunter
 	.vendor >> |cRXP_BUY_购买3或4组|r |T132382:0|t[劣质箭] << Hunter
     .target 奇娜
 step << Warrior
@@ -194,7 +194,7 @@ step << Priest
     #completewith next
     .goto Teldrassil,59.456,41.050
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与楼上的 |cRXP_FRIENDLY_简娜·明月|r 对话
-	.vendor >> 出售垃圾物品
+	.vendor >> |cRXP_WARN_出售垃圾物品|r
     .target Janna Brightmoon
 step << Priest
 	.goto Teldrassil,59.174,40.442
@@ -231,7 +231,7 @@ step
 step
 	#softcore
 	#completewith next
-    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
 step << skip --logout skip
 	#hardcore
 	#completewith next
@@ -268,7 +268,7 @@ step << Hunter
 step
     #requires vial1
     #completewith next
-    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
 step << Hunter
     #requires vial1
     .goto Teldrassil,58.6,44.3
@@ -658,7 +658,7 @@ step << !Hunter
 step
     #softcore
     #completewith next
-    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
 step << !Druid
     .goto Teldrassil,56.142,61.714
     .target 科瑞萨斯·月怒
@@ -724,14 +724,14 @@ step
     .target 塔隆凯·捷根
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|在树顶上与 |cRXP_FRIENDLY_塔隆凯·捷根|r 对话
     .turnin 932 >> 交任务  扭曲的仇恨 << !Hunter
-    .turnin 2459 >> 交任务 噬梦者菲罗斯塔
+    .turnin 2459 >> 交任务  噬梦者菲罗斯塔
 step
     #era
     .goto Teldrassil,55.574,56.948
     .target 塔隆凯·捷根
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|在树顶上与 |cRXP_FRIENDLY_塔隆凯·捷根|r 对话
     .turnin 932 >> 交任务  扭曲的仇恨
-    .turnin 2459 >> 交任务 噬梦者菲罗斯塔
+    .turnin 2459 >> 交任务  噬梦者菲罗斯塔
 step
     .goto Teldrassil,55.83,58.31,40,0
     .goto Teldrassil,50.22,53.83
@@ -876,7 +876,7 @@ step << !Rogue
     #requires xp10
     .goto Darnassus,38.18,21.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雷利亚·绿树|r 对话
-    .turnin 922 >> 交任务 雷利亚·绿树
+    .turnin 922 >> 交任务  雷利亚·绿树
     .target 雷利亚·绿树
     .accept 923 >> 接受任务 青苔之瘤
 step << !Hunter !Rogue
@@ -1109,7 +1109,7 @@ step << Rogue
 step << Rogue
     .goto Darnassus,38.18,21.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雷利亚·绿树|r 对话
-    .turnin 922 >> 交任务 雷利亚·绿树
+    .turnin 922 >> 交任务  雷利亚·绿树
     .target 雷利亚·绿树
     .accept 923 >> 接受任务 青苔之瘤
 step << Rogue

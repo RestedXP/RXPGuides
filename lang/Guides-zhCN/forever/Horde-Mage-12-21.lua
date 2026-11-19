@@ -614,7 +614,7 @@ step
 step
     .goto 1413/1,-2666.68,-481.94--??
 >>与 |cRXP_FRIENDLY_图加·符文图腾|r 对话
-    .turnin 877 >>交任务死水绿洲
+    .turnin 877 >>交任务  死水绿洲
 .target 图加·符文图腾
     .accept 880 >>接受任务 变异的生物
 step
@@ -780,7 +780,7 @@ step
 >>与 |cRXP_FRIENDLY_菲兹克斯|r 对话
     .turnin 1483 >> 交任务  菲兹克斯
 .target 菲兹克斯
-    .accept 1093 >> 接受任务超级收割机6000
+    .accept 1093 >> 接受任务 超级收割机6000
 step
     #sticky
     #requires deepmossegg
@@ -941,10 +941,10 @@ step
 step
     .goto 1413/1,-1896.55,-2387.20
 >>与 |cRXP_FRIENDLY_碎牙|r 对话
-    .turnin 878 >>交任务野猪人的内战
+    .turnin 878 >>交任务  野猪人的内战
 .target 碎牙
     .accept 5052 >>接受任务 阿迦玛甘的血岩碎片
-    .turnin 5052 >>交任务阿迦玛甘的血岩碎片
+    .turnin 5052 >>交任务  阿迦玛甘的血岩碎片
 --N Different classes needing different buffs, e.g. need speed buff later for Mulgore run for classes that didnt get FP earlier
 step
     .goto 1413/1,-1916.82,-2380.44
@@ -1062,12 +1062,12 @@ step
 >>与 |cRXP_FRIENDLY_希雷斯·碎石|r 对话
     .turnin 1062 >>交任务地精侵略者
 >>与 |cRXP_FRIENDLY_玛卡巴·扁蹄|r 对话
-    .turnin 6629 >>交任务  杀死格鲁迪格·黑云
+    .turnin 6629 >>交任务杀死格鲁迪格·黑云
     .turnin 6523 >>交任务保护卡雅
 .target 玛卡巴·扁蹄
     .accept 6401 >>接受任务卡雅还活着
 .target 希雷斯·碎石
-    .accept 1063 >>接受任务 巫婆长老
+    .accept 1063 >>接受任务巫婆长老
 --    .accept 1068 >> Accept Shredding Machines
 step
     .goto 1442/1,-235.98,-180.03

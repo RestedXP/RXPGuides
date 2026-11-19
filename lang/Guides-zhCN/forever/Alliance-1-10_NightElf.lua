@@ -59,7 +59,7 @@ step << !sod/Warrior
 step << Priest
     .goto 1438/1,779.8482,10450.1295
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德林拉尔|r 对话
-    .vendor >> 出售垃圾物品
+    .vendor >> |cRXP_WARN_出售垃圾物品|r
     >>|cRXP_BUY_购买15瓶|r |T132794:0|t[清凉的泉水]
     .collect 159,15 --Collect Refreshing Spring Water (x15)
     .target 德林拉尔
@@ -73,7 +73,7 @@ step << !Druid
 step << Warrior
     .goto 1438/1,794.92,10436.72
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奇娜|r 对话
-	.vendor >> 出售垃圾物品
+	.vendor >> |cRXP_WARN_出售垃圾物品|r
     .target 奇娜
 step << Warrior
 	.goto 1438/1,778.07,10526.62
@@ -86,7 +86,7 @@ step << Hunter/Warrior
 step << Hunter/Warrior
     .goto 1438/1,1034.89,10711.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_埃沃隆|r 对话
-    .turnin 4495 >> 交任务  好朋友
+    .turnin 4495 >> 交任务 好朋友
     .target 埃沃隆
     .accept 3519 >> 接受任务 需要帮助的朋友
 step << Hunter/Warrior
@@ -127,7 +127,7 @@ step << !Hunter !Druid !Warrior
 step << !Hunter !Druid !Warrior
     .goto 1438/1,1034.89,10711.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_埃沃隆|r 对话
-    .turnin 4495 >> 交任务  好朋友
+    .turnin 4495 >> 交任务 好朋友
     .target 埃沃隆
     .accept 3519 >> 接受任务 需要帮助的朋友
 step << !Hunter !Druid !Warrior
@@ -169,7 +169,7 @@ step << Druid
 step << Druid
     .goto 1438/1,1034.89,10711.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_埃沃隆|r 对话
-    .turnin 4495 >> 交任务  好朋友
+    .turnin 4495 >> 交任务 好朋友
     .target 埃沃隆
     .accept 3519 >> 接受任务 需要帮助的朋友
 step << Druid
@@ -207,7 +207,7 @@ step << Warrior
 step << Priest
     .goto 1438/1,779.8482,10450.1295
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德林拉尔|r 对话
-    .vendor >> 出售垃圾物品
+    .vendor >> |cRXP_WARN_出售垃圾物品|r
     >>|cRXP_BUY_购买最多25个|r |T132794:0|t[清凉的泉水]
     .collect 159,25 --Collect Refreshing Spring Water (x25)
     .target 德林拉尔
@@ -297,14 +297,14 @@ step
 step << Priest
     .goto 1438/1,779.8482,10450.1295
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德林拉尔|r 对话
-    .vendor >> 出售垃圾物品
+    .vendor >> |cRXP_WARN_出售垃圾物品|r
     >>|cRXP_BUY_购买最多25个|r |T132794:0|t[清凉的泉水]
     .collect 159,25 --Collect Refreshing Spring Water (x25)
     .target 德林拉尔
 step << !Priest
     .goto 1438/1,794.92,10436.72
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奇娜|r 对话
-	.vendor >> 出售垃圾物品 << !Hunter
+	.vendor >> |cRXP_WARN_出售垃圾物品|r << !Hunter
 	.vendor >> |cRXP_BUY_购买3或4组|r |T132382:0|t[劣质箭] << Hunter
     .target 奇娜
 step
@@ -410,7 +410,7 @@ step << Priest
     #completewith next
     .goto 1438/1,787.28,10438.120
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与楼上的 |cRXP_FRIENDLY_简娜·明月|r 对话
-	.vendor >> 出售垃圾物品
+	.vendor >> |cRXP_WARN_出售垃圾物品|r
     .target Janna Brightmoon
 step << Priest
 	.goto 1438/1,801.64,10458.75
@@ -1282,7 +1282,7 @@ step << Priest/Druid
     .target 塔隆凯·捷根
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|在树顶上与 |cRXP_FRIENDLY_塔隆凯·捷根|r 对话
     .turnin 932 >> 交任务  扭曲的仇恨
-    .turnin 2459 >> 交任务 噬梦者菲罗斯塔
+    .turnin 2459 >> 交任务  噬梦者菲罗斯塔
 step
     #optional
     #completewith Ambushers
@@ -1561,7 +1561,7 @@ step << !Rogue
     #requires xp10
     .goto 1457/1,2534.29,10085.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雷利亚·绿树|r 对话
-    .turnin 922 >> 交任务 雷利亚·绿树
+    .turnin 922 >> 交任务  雷利亚·绿树
     .target 雷利亚·绿树
     .accept 923 >> 接受任务 青苔之瘤
 step << Druid NightElf/Priest NightElf
@@ -1672,7 +1672,7 @@ step
     .target 塔隆凯·捷根
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|在树顶上与 |cRXP_FRIENDLY_塔隆凯·捷根|r 对话
     .turnin 932 >> 交任务  扭曲的仇恨
-    .turnin 2459 >> 交任务 噬梦者菲罗斯塔
+    .turnin 2459 >> 交任务  噬梦者菲罗斯塔
 step
     >>击杀 |cRXP_ENEMY_夜刃豹|r。拾取它们的 |cRXP_LOOT_牙齿|r 和 |cRXP_LOOT_毛皮|r
     >>击杀 |cRXP_ENEMY_巨翼枭|r。拾取他们的 |cRXP_LOOT_乱羽|r
@@ -1740,7 +1740,7 @@ step << Hunter
 step << Hunter
     .goto 1438/1,968.85,9821.98--c:Teldrassil,55.890,59.205
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_吉娜·羽弓|r 对话
-	.vendor >> |cRXP_BUY_购买4组|r |T132382:0|t[锋利的箭]|cRXP_BUY_。达到10级后立即装备它们|r
+	.vendor >> |cRXP_BUY_购买4组|r |T132382:0|t[锋利的箭]|cRXP_BUY_，达到10级后立即装备它们|r
     .target 吉娜·羽弓
 step << Hunter/Warrior/Rogue
     .goto 1438/1,1172.01,9917.17
@@ -1995,7 +1995,7 @@ step << Rogue
 step << Rogue
     .goto 1457/1,2534.29,10085.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雷利亚·绿树|r 对话
-    .turnin 922 >> 交任务 雷利亚·绿树
+    .turnin 922 >> 交任务  雷利亚·绿树
     .target 雷利亚·绿树
     .accept 923 >> 接受任务 青苔之瘤
 step << Rogue

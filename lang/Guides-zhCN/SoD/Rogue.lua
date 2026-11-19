@@ -903,7 +903,7 @@ step << Horde
     .train 400080,1
 step << Alliance
     >>前往南海镇
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达尔拉·哈瑞斯|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_达尔拉·哈瑞斯|r 对话
     .goto Hillsbrad Foothills,49.338,52.272
     .fly Ironforge >> 飞往铁炉堡
     .target 达尔拉·哈瑞斯
@@ -920,7 +920,7 @@ step
 step << Horde
     #season 2
     .goto Undercity,63.27,48.55
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迈克尔 |r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_麦克尔|r 对话
     .fly The Sepulcher>> 飞往瑟伯切尔
     .target 迈克尔·加勒特
     .zoneskip Silverpine Forest
@@ -1561,7 +1561,7 @@ step << Horde
     .train 400101,1
 step << Alliance
     >>前往南海镇
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达尔拉·哈瑞斯|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_达尔拉·哈瑞斯|r 对话
     .goto Hillsbrad Foothills,49.338,52.272
     .fly Ironforge >> 飞往铁炉堡
     .target 达尔拉·哈瑞斯
@@ -1576,7 +1576,7 @@ step
     +|cRXP_WARN_打开邮箱，阅读*C*寄来的信件。准备好后飞回南海镇然后前往银松森林|r << Alliance
 step << Horde
     .goto Undercity,63.27,48.55
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迈克尔 |r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_麦克尔|r 对话
     .fly The Sepulcher>> 飞往瑟伯切尔
     .target 迈克尔·加勒特
     .zoneskip Silverpine Forest

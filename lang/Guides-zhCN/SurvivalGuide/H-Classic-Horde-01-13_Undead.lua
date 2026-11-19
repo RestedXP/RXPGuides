@@ -39,7 +39,7 @@ step << Warrior/Warlock/Priest/Mage
     .goto Tirisfal Glades,29.10,67.66,40,0 << Priest/Mage
     .goto Tirisfal Glades,30.19,65.32,40,0 << Priest/Mage
     +|cRXP_WARN_击杀 |cRXP_ENEMY_食腐狼幼崽|r 和 |cRXP_ENEMY_夜行蝙蝠|r。拾取它们的掉落，直到你拥有价值60铜币的可出售物品（包括你的护甲）|r << Mage
-    +|cRXP_WARN_击杀 |cRXP_ENEMY_食腐狼幼崽|r 和 |cRXP_ENEMY_夜行蝙蝠|r，拾取它们的掉落，直到你拥有价值50铜币的可出售物品（包括你的护甲）|r << Priest
+    +|cRXP_WARN_击杀 |cRXP_ENEMY_食腐狼幼崽|r 和 |cRXP_ENEMY_夜行蝙蝠|r。拾取它们的掉落，直到你拥有价值50铜币的可出售物品（包括你的护甲）|r << Priest
     +|cRXP_WARN_击杀 |cRXP_ENEMY_食腐狼幼崽|r 和 |cRXP_ENEMY_夜行蝙蝠|r，拾取它们的掉落，直到你拥有价值10铜币的可出售物品（包括你的护甲）|r << Warrior/Warlock
     .mob 食腐狼幼崽
     .mob 夜行蝙蝠
@@ -58,7 +58,7 @@ step << Priest/Mage
 step << Warlock/Mage
     #sticky
     #label Piercing
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_温雅·玛山德|r 和 |cRXP_FRIENDLY_暗影牧师萨维斯|r 对话 << Warlock
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_温雅·玛山德|r 和 |cRXP_FRIENDLY_暗影牧师萨维斯|r 对话 << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_萨维斯|r 对话 << Mage
     .accept 1470 >>接受任务 控制小鬼 << Warlock
     .goto Tirisfal Glades,30.98,66.41 << Warlock
@@ -137,7 +137,7 @@ step << Warlock
     .mob 断骨骷髅
 step << Warlock
     #completewith next
-    +|cRXP_WARN_击杀 |cRXP_ENEMY_无脑的僵尸|r 和 |cRXP_ENEMY_悲惨的僵尸|r，拾取它们的掉落物，直到你获得价值 25 铜币的可出售物品(包括你的护甲)|r
+    +|cRXP_WARN_击杀 |cRXP_ENEMY_无脑的僵尸|r 和 |cRXP_ENEMY_悲惨的僵尸|r。拾取它们的掉落物，直到你获得价值 25 铜币的可出售物品(包括你的护甲)|r
     .mob 无脑的僵尸
     .mob Wretched Zombie
     .money >0.0025
@@ -2703,7 +2703,7 @@ step << Warlock
     .zoneskip Tirisfal Glades
 step
     #completewith next
-    >>杀死你看到的 |cRXP_ENEMY_夜行蝙蝠|r，拾取它们的 |cRXP_LOOT_毛皮|r
+    >>杀死你看到的 |cRXP_ENEMY_夜行蝙蝠|r。拾取它们的 |cRXP_LOOT_毛皮|r
     .complete 375,1 --Duskbat Pelt (5)
     .mob Greater Duskbat
     .mob Vampiric Duskbat
@@ -2813,7 +2813,7 @@ step
     .mob Vile Fin Muckdweller
 step
     #completewith RotHideGnolls
-    >>杀死你看到的 |cRXP_ENEMY_夜行蝙蝠|r，拾取它们的 |cRXP_LOOT_毛皮|r
+    >>杀死你看到的 |cRXP_ENEMY_夜行蝙蝠|r。拾取它们的 |cRXP_LOOT_毛皮|r
     .complete 375,1 --Duskbat Pelt (5)
     .mob Greater Duskbat
     .mob Vampiric Duskbat
@@ -3106,7 +3106,7 @@ step
     .target Deathguard Linnea
 step
     #completewith HorrorsandSpirits
-    >>杀死你看到的 |cRXP_ENEMY_夜行蝙蝠|r，拾取它们的 |cRXP_LOOT_毛皮|r
+    >>杀死你看到的 |cRXP_ENEMY_夜行蝙蝠|r。拾取它们的 |cRXP_LOOT_毛皮|r
     .complete 375,1 --Duskbat Pelt (5)
     .mob Greater Duskbat
     .mob Vampiric Duskbat
@@ -3206,7 +3206,7 @@ step << Priest/Warlock
     .mob Scarlet Zealot
 step
     #completewith next
-    >>杀死你看到的 |cRXP_ENEMY_夜行蝙蝠|r，拾取它们的 |cRXP_LOOT_毛皮|r
+    >>杀死你看到的 |cRXP_ENEMY_夜行蝙蝠|r。拾取它们的 |cRXP_LOOT_毛皮|r
     .complete 375,1 --Duskbat Pelt (5)
     .mob Greater Duskbat
     .mob Vampiric Duskbat

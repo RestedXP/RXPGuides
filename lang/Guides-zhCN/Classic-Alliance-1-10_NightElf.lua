@@ -75,7 +75,7 @@ step << Hunter
 step << Hunter
     .goto Teldrassil,54.593,32.992
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_埃沃隆|r 对话
-    .turnin 4495 >> 交任务  好朋友
+    .turnin 4495 >> 交任务 好朋友
     .target 埃沃隆
     .accept 3519 >> 接受任务 需要帮助的朋友
 step << Hunter
@@ -98,7 +98,7 @@ step << Hunter
 step << Druid
     .goto Teldrassil,59.602,40.696
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德林拉尔|r 对话
-    .vendor >> 出售垃圾物品
+    .vendor >> |cRXP_WARN_出售垃圾物品|r
     >>|cRXP_BUY_购买15瓶|r |T132794:0|t[清凉的泉水]
     .collect 159,15 --Collect Refreshing Spring Water (x15)
     .target 德林拉尔
@@ -120,7 +120,7 @@ step << Warrior
     #season 0
     .goto Teldrassil,59.306,41.091
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奇娜|r 对话
-	.vendor >> 出售垃圾物品
+	.vendor >> |cRXP_WARN_出售垃圾物品|r
     .target 奇娜
 step << Warrior
     #season 0
@@ -183,7 +183,7 @@ step << Druid
     #season 0,1
     .goto Teldrassil,59.602,40.696
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德林拉尔|r 对话
-    .vendor >> 出售垃圾物品
+    .vendor >> |cRXP_WARN_出售垃圾物品|r
     >>|cRXP_BUY_购买20|r |T132794:0|t[清凉的泉水]
     .collect 159,20 --Collect Refreshing Spring Water (x20)
     .target 德林拉尔
@@ -271,7 +271,7 @@ step << !Priest !Warrior
     #season 0 << Hunter
     .goto Teldrassil,59.306,41.091
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奇娜|r 对话
-	.vendor >> 出售垃圾物品 << !Hunter
+	.vendor >> |cRXP_WARN_出售垃圾物品|r << !Hunter
 	.vendor >> |cRXP_BUY_购买3或4组|r |T132382:0|t[劣质箭] << Hunter
     .target 奇娜
 step << Warrior
@@ -284,7 +284,7 @@ step << Priest
     #completewith next
     .goto Teldrassil,59.456,41.050
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与楼上的 |cRXP_FRIENDLY_简娜·明月|r 对话
-	.vendor >> 出售垃圾物品
+	.vendor >> |cRXP_WARN_出售垃圾物品|r
     .target Janna Brightmoon
 step << Priest
     #season 0,1,2
@@ -1071,7 +1071,7 @@ step
     .target 塔隆凯·捷根
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|在树顶上与 |cRXP_FRIENDLY_塔隆凯·捷根|r 对话
     .turnin 932 >> 交任务  扭曲的仇恨
-    .turnin 2459 >> 交任务 噬梦者菲罗斯塔
+    .turnin 2459 >> 交任务  噬梦者菲罗斯塔
 step
 #xprate >1.99
     .xp 10
@@ -1334,7 +1334,7 @@ step << !Rogue
     #requires xp10
     .goto Darnassus,38.18,21.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雷利亚·绿树|r 对话
-    .turnin 922 >> 交任务 雷利亚·绿树
+    .turnin 922 >> 交任务  雷利亚·绿树
     .target 雷利亚·绿树
     .accept 923 >> 接受任务 青苔之瘤
 step << !Hunter !Rogue
@@ -1613,7 +1613,7 @@ step << Rogue
 step << Rogue
     .goto Darnassus,38.18,21.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雷利亚·绿树|r 对话
-    .turnin 922 >> 交任务 雷利亚·绿树
+    .turnin 922 >> 交任务  雷利亚·绿树
     .target 雷利亚·绿树
     .accept 923 >> 接受任务 青苔之瘤
 step << Rogue
