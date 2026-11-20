@@ -202,6 +202,7 @@ local settingsDBDefaults = {
         enableAddonIncompatibilityCheck = true,
         enableVendorTreasure = true,
         enableInventoryManager = true,
+        enableBankAutomation = true,
 
         -- Themes
         activeTheme = 'RXP Blue',
@@ -981,14 +982,20 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "header",
                         width = "full",
                         order = 6.1,
-                        hidden = not (addon.inventoryManager and addon.inventoryManager.bagManager and addon.inventoryManager.bagManager:IsAvailable()),
+                    },
+                    enableBankAutomation = {
+                        name = L("Enable Bank Automation"),
+                        desc = L("Allow bank deposit and withdrawl automation"),
+                        type = "toggle",
+                        width = optionsWidth * 1.5,
+                        order = 6.110,
                     },
                     enableInventoryManager = {
                         name = L("Enable Inventory Manager"),
                         type = "toggle",
                         width = optionsWidth * 3,
-                        order = 6.105,
-                        hidden = not (addon.inventoryManager and addon.inventoryManager.bagManager and addon.inventoryManager.bagManager:IsAvailable()),
+                        order = 6.120,
+                        disabled = not (addon.inventoryManager and addon.inventoryManager.bagManager and addon.inventoryManager.bagManager:IsAvailable()),
                         set = function(info, value)
                             SetProfileOption(info, value)
                             addon.inventoryManager:Setup()
@@ -999,7 +1006,7 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L("Any items marked as junk will display a gold coin icon on the top left corner of the item icon within your bags"),
                         type = "toggle",
                         width = optionsWidth * 1.5,
-                        order = 6.11,
+                        order = 6.121,
                         hidden = not (addon.inventoryManager and addon.inventoryManager.bagManager and addon.inventoryManager.bagManager:IsAvailable()),
                         disabled = function()
                             return not self.profile.enableInventoryManager
@@ -1010,7 +1017,7 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L("Automatically attempts to discard the cheapest junk item from your bags if your inventory is full"),
                         type = "toggle",
                         width = optionsWidth * 1.5,
-                        order = 6.12,
+                        order = 6.122,
                         hidden = not (addon.inventoryManager and addon.inventoryManager.bagManager and addon.inventoryManager.bagManager:IsAvailable()),
                         disabled = function()
                             return not self.profile.enableInventoryManager
@@ -1021,7 +1028,7 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L("Allows you to toggle items as junk by clicking on it with CTRL+RightClick or ALT+RightClick"),
                         type = "toggle",
                         width = optionsWidth * 1.5,
-                        order = 6.13,
+                        order = 6.123,
                         hidden = not (addon.inventoryManager and addon.inventoryManager.bagManager and addon.inventoryManager.bagManager:IsAvailable()),
                         disabled = function()
                             return not self.profile.enableInventoryManager or addon.IsGamePadEnabled()
@@ -1031,7 +1038,7 @@ function addon.settings:CreateAceOptionsPanel()
                         name = L("Right Click Modifier"), -- TODO locale
                         type = "select",
                         width = optionsWidth*0.6,
-                        order = 6.14,
+                        order = 6.124,
                         get = function()
                             return
                                 self.profile.rightClickMod or 1
@@ -1052,7 +1059,7 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L("Automatically sell all gray items and all other items that you set as junk"),
                         type = "toggle",
                         width = optionsWidth * 3,
-                        order = 6.15,
+                        order = 6.125,
                         hidden = not (addon.inventoryManager and addon.inventoryManager.bagManager and addon.inventoryManager.bagManager:IsAvailable()),
                         disabled = function()
                             return not self.profile.enableInventoryManager or addon.IsGamePadEnabled()
@@ -1069,7 +1076,7 @@ function addon.settings:CreateAceOptionsPanel()
                         pattern = "^%d+$",
                         usage = L"You must input an integer number",
                         width = optionsWidth * 0.7,
-                        order = 6.16,
+                        order = 6.126,
                         hidden = not (addon.inventoryManager and addon.inventoryManager.bagManager and addon.inventoryManager.bagManager:IsAvailable() and addon.player.class == "WARLOCK" and addon.gameVersion < 40000),
                         disabled = function()
                             return not self.profile.enableInventoryManager
@@ -1080,7 +1087,7 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L("Click to set a keybind"),
                         type = "keybinding",
                         width = optionsWidth * 1.25,
-                        order = 6.17,
+                        order = 6.127,
                         hidden = not (addon.inventoryManager and addon.inventoryManager.bagManager and addon.inventoryManager.bagManager:IsAvailable()),
                         disabled = function()
                             return not self.profile.enableInventoryManager or addon.IsGamePadEnabled()
@@ -1095,7 +1102,7 @@ function addon.settings:CreateAceOptionsPanel()
                     resetDiscardItems = {
                         name = L("Reset Junk List"),
                         desc = L("Click to reset the discard list for this character"),
-                        order = 6.18,
+                        order = 6.128,
                         type = "execute",
                         width = optionsWidth,
                         func = function()

@@ -5202,7 +5202,7 @@ function addon.functions.questitemcount(self,text,itemId,qty,...)
 end
 
 function addon.PutItemInBank(bagContents)
-    if not BANK_CONTAINER then return end
+    if not addon.settings.profile.enableBankAutomation or not BANK_CONTAINER then return end
 
     local _, isBankOpened = GetContainerNumFreeSlots(BANK_CONTAINER);
     if CursorHasItem() and isBankOpened then
@@ -5303,7 +5303,7 @@ function addon.GoThroughBags(itemList, func)
 end
 
 function addon.DepositItems(itemList)
-    if not BANK_CONTAINER then return end
+    if not addon.settings.profile.enableBankAutomation or not BANK_CONTAINER then return end
 
     local _, isBankOpened = GetContainerNumFreeSlots(BANK_CONTAINER);
     if itemList and isBankOpened then
@@ -5396,7 +5396,7 @@ function addon.GoThroughBank(itemList, func)
 end
 
 function addon.WithdrawItems(itemList)
-    if not BANK_CONTAINER then return end
+    if not addon.settings.profile.enableBankAutomation or not BANK_CONTAINER then return end
 
     local _, isBankOpened = GetContainerNumFreeSlots(BANK_CONTAINER);
     if itemList and isBankOpened then
