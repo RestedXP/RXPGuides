@@ -891,6 +891,35 @@ function addon.GetQuestObjectives(id, step, useCache)
 end
 
 local NPCNames = {}
+local NPCScanTooltip
+function addon.RetrieveNPCName(id)
+    if type(id) ~= "number" then return end
+
+    local link = string.format("unit:Creature-0-0-0-0-%d", id)
+    local name
+    if _G.C_TooltipInfo and _G.C_TooltipInfo.GetHyperlink then
+        local data = _G.C_TooltipInfo.GetHyperlink(link)
+        local line = data and data.lines and data.lines[1]
+
+        name = line and line.leftText
+    else
+        if not NPCScanTooltip then
+            NPCScanTooltip = _G.CreateFrame("GameTooltip", "RXPGuidesNpcScanTooltip", UIParent, "GameTooltipTemplate")
+        end
+
+        NPCScanTooltip:SetOwner(WorldFrame, "ANCHOR_NONE")
+        NPCScanTooltip:ClearLines()
+        NPCScanTooltip:SetHyperlink(link)
+
+        name = NPCScanTooltip:IsShown() and _G.RXPGuidesNpcScanTooltipTextLeft1:GetText()
+        NPCScanTooltip:Hide()
+    end
+
+    if not name or addon.IsSecretValue(name) then return end
+
+    return name:match("^|c%x%x%x%x%x%x%x%x(.*)|") or name
+end
+
 function addon.GetNpcName(id)
     local npc = NPCNames[id]
 
@@ -899,22 +928,9 @@ function addon.GetNpcName(id)
     elseif type(npc) == "string" then
         return npc
     elseif not npc or GetTime()-npc > 1.5  then
-        GameTooltip:SetOwner(WorldFrame, "ANCHOR_BOTTOMRIGHT")
-        GameTooltip:ClearLines()
-        GameTooltip:SetHyperlink(string.format("unit:Creature-0-0-0-0-%d",id))
-        local name
-        if GameTooltip:IsShown() then
-            name = GameTooltipTextLeft1:GetText()
-            --DevTools_Dump(name)
-            if name and not addon.IsSecretValue(name) then
-                name = name:match("^|c%x%x%x%x%x%x%x%x(.*)|") or name
-                NPCNames[id] = name
-            else
-                name = nil
-            end
-        end
-        GameTooltip:Hide()
+        local name = addon.RetrieveNPCName(id)
         if name then
+            NPCNames[id] = name
             return name
         else
             NPCNames[id] = GetTime()
