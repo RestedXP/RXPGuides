@@ -274,6 +274,7 @@ function addon.Call(label,func,...)
     addon.lastCall = label
     local pass, r1, r2, r3, r4 = pcall(func,...)
     if not pass then
+        if addon.IsSecretValue(r1) then return end
         local msg = r1
         addon.errors[label] = addon.errors[label] or {}
         local count = addon.errors[label][msg] or 0
