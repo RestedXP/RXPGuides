@@ -1640,10 +1640,6 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 0,
                         set = function(info, value)
                             SetProfileOption(info, value)
-                            if addon.targeting.activeTargetFrame and
-                                not InCombatLockdown() then
-                                addon.targeting.activeTargetFrame:Hide()
-                            end
                             addon.targeting:UpdateTargetFrame()
                         end
                     },
@@ -1754,10 +1750,7 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 3.10,
                         set = function(info, value)
                             SetProfileOption(info, value)
-                            if addon.targeting.activeTargetFrame and
-                                not InCombatLockdown() then
-                                addon.targeting.activeTargetFrame:Hide()
-                            end
+                            addon.targeting:UpdateTargetFrame()
                         end
                     },
                     showTargetingOnProximity = {
