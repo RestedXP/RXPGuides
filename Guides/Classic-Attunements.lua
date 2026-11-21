@@ -2,6 +2,7 @@ local L = GetLocale() if L and RXP.enabledLocale[L] then return end
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
+#forever
 
 << Alliance
 #group RestedXP Endgame Guides
@@ -345,6 +346,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #group RestedXP Endgame Guides
 #subgroup Attunements
+#forever
 #name Onyxia Attunement (H)
 #guideKind attunement
 #guideIcon rxp-icon-ony
@@ -883,6 +885,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
+#forever
 
 #group RestedXP Endgame Guides
 #subgroup Keys
@@ -974,6 +977,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
+#forever
 
 << Alliance
 #group RestedXP Endgame Guides
@@ -1233,6 +1237,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
+#forever
 
 << Horde
 #group RestedXP Endgame Guides
@@ -1491,6 +1496,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
+#forever
 
 #group RestedXP Endgame Guides
 #subgroup Keys
@@ -1555,6 +1561,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
+#forever
 
 #group RestedXP Endgame Guides
 #subgroup Keys
