@@ -1,9 +1,9 @@
-if not _G.GetNumTalentTabs then return end
 local _, addon = ...
 local L = addon.locale.Get
 local AceGUI = LibStub("AceGUI-3.0")
 
-if not (addon.game == "CLASSIC" or addon.game == "TBC" or addon.game == "CATA") then return end
+if not (addon.game == "CLASSIC" or addon.game == "TBC" or addon.game == "CATA" or
+    addon.game == "FOREVER") then return end
 
 local locale = GetLocale()
 
@@ -15,10 +15,12 @@ local fmt, tinsert, ipairs, pairs, next, type, wipe, tonumber, strlower, smatch 
 
 local GetItemInfo = C_Item and C_Item.GetItemInfo or _G.GetItemInfo
 local GetItemInfoInstant = C_Item and C_Item.GetItemInfoInstant or _G.GetItemInfoInstant
+local GetItemLinkByGUID = C_Item and C_Item.GetItemLinkByGUID
 local IsEquippedItem = C_Item and C_Item.IsEquippedItem or _G.IsEquippedItem
 local GetItemStats = C_Item and C_Item.GetItemStats or _G.GetItemStats
 local UnitLevel = _G.UnitLevel
 local GetInventoryItemLink = _G.GetInventoryItemLink
+local AddTooltipPostCall = _G.TooltipDataProcessor and _G.TooltipDataProcessor.AddTooltipPostCall
 
 local ItemArmorSubclass, ItemWeaponSubclass = Enum.ItemArmorSubclass, Enum.ItemWeaponSubclass
 
@@ -484,11 +486,25 @@ local function enableTotalEPLines(itemData, lines)
     end
 end
 
-local function TooltipSetItem(tooltip, ...)
+local function TooltipSetItem(tooltip, data)
     if not addon.settings.profile.enableItemUpgrades or not addon.settings.profile.enableTips or
         addon.settings.profile.disableUpgradeTooltip then return end
 
-    local _, itemLink = tooltip:GetItem()
+    local itemLink
+    if data then
+        if tooltip ~= GameTooltip and tooltip ~= ItemRefTooltip and tooltip ~= ShoppingTooltip1 then return end
+
+        itemLink = data.hyperlink
+
+        if not itemLink and data.guid and GetItemLinkByGUID then
+            itemLink = GetItemLinkByGUID(data.guid)
+        end
+
+        if not itemLink and data.id then itemLink = select(2, GetItemInfo(data.id)) end
+    elseif tooltip.GetItem then
+        _, itemLink = tooltip:GetItem()
+    end
+
     if not itemLink then return end
     -- print("TooltipSetItem", tooltip:GetName(), itemLink)
 
@@ -593,7 +609,7 @@ local function TooltipSetItem(tooltip, ...)
         for _, line in ipairs(lines) do tooltip:AddLine(line) end
     end
 
-    tooltip:Show()
+    if not data then tooltip:Show() end
 end
 
 function addon.itemUpgrades:UpdateSlotMap()
@@ -648,15 +664,14 @@ function addon.itemUpgrades:Setup()
     -- Add out-of-band (aka hackery) stat parsing
     for key, regex in pairs(OUT_OF_BAND_KEYS) do session.statsRegexes[key] = regex end
 
-    -- Inventory
-    GameTooltip:HookScript("OnTooltipSetItem", TooltipSetItem)
+    if addon.game == "FOREVER" and AddTooltipPostCall then
+        AddTooltipPostCall(Enum.TooltipDataType.Item, TooltipSetItem)
+    else
+        GameTooltip:HookScript("OnTooltipSetItem", TooltipSetItem)
+        ItemRefTooltip:HookScript("OnTooltipSetItem", TooltipSetItem)
 
-    -- Vendor?
-    ItemRefTooltip:HookScript("OnTooltipSetItem", TooltipSetItem)
-
-    -- Enable AH
-    ShoppingTooltip1:HookScript("OnTooltipSetItem", TooltipSetItem)
-    -- ShoppingTooltip2:HookScript("OnTooltipSetItem", TooltipSetItem)
+        if ShoppingTooltip1 then ShoppingTooltip1:HookScript("OnTooltipSetItem", TooltipSetItem) end
+    end
 
     session.isInitialized = true
 
@@ -769,31 +784,37 @@ end
 function addon.itemUpgrades:ActivateSpecWeights()
     if not session.specWeights then return end
 
-    local spec = getSpec()
+    local spec
+    if addon.game == "FOREVER" then
+        spec = addon.settings.profile.itemUpgradeSpec
+        if not session.specWeights[spec] then spec = next(session.specWeights) end
+    else
+        spec = getSpec()
 
-    -- Uninitialized spec, so set to calculated value
-    if not addon.settings.profile.itemUpgradeSpec then
-        addon.settings.profile.itemUpgradeSpec = spec
-    elseif addon.settings.profile.itemUpgradeSpec ~= spec then
-        -- Handle spec name changes
-        if not session.specWeights[addon.settings.profile.itemUpgradeSpec] then
+        -- Uninitialized spec, so set to calculated value
+        if not addon.settings.profile.itemUpgradeSpec then
             addon.settings.profile.itemUpgradeSpec = spec
+        elseif addon.settings.profile.itemUpgradeSpec ~= spec then
+            -- Handle spec name changes
+            if not session.specWeights[addon.settings.profile.itemUpgradeSpec] then
+                addon.settings.profile.itemUpgradeSpec = spec
+            end
+
+            -- Chosen talents don't match itemUpgradeSpec
+            -- Leave alone as is, don't spam user if there's a mismatch
+            addon.comms.PrettyDebug("ItemUpgrades selected spec (%s) differs from calculated spec (%s)",
+                                    addon.settings.profile.itemUpgradeSpec, spec)
         end
 
-        -- Chosen talents don't match itemUpgradeSpec
-        -- Leave alone as is, don't spam user if there's a mismatch
-        addon.comms.PrettyDebug("ItemUpgrades selected spec (%s) differs from calculated spec (%s)",
-                                addon.settings.profile.itemUpgradeSpec, spec)
+        spec = addon.settings.profile.itemUpgradeSpec
+        if not spec then return end
     end
 
-    if not addon.settings.profile.itemUpgradeSpec then return end
-
-    addon.comms.PrettyDebug("Activating spec weights for %s", addon.settings.profile.itemUpgradeSpec)
-
-    session.activeStatWeights = session.specWeights[addon.settings.profile.itemUpgradeSpec]
+    session.activeStatWeights = session.specWeights[spec]
 
     if not session.activeStatWeights then return end
 
+    addon.comms.PrettyDebug("Activating spec weights for %s", spec)
     session.activeStatWeights.extraWeight = ITEM_WEIGHT_ADDITIONS[addon.player.class] or {}
 
     return session.activeStatWeights ~= nil
@@ -1531,7 +1552,8 @@ end
 addon.itemUpgrades.AH = addon:NewModule("ItemUpgradesAH", "AceEvent-3.0")
 
 function addon.itemUpgrades.AH:Setup()
-    if not addon.settings.profile.enableItemUpgradesAH or addon.game == "CATA" then return end
+    if not addon.settings.profile.enableItemUpgradesAH or addon.game == "CATA" or
+        addon.game == "FOREVER" then return end
 
     if ahSession.isInitialized then return end
 
