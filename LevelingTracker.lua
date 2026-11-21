@@ -566,17 +566,17 @@ function addon.tracker:CreateGui(target)
         local reportText = table.concat({
             className and fmt("%s (%s)", characterName, className) or characterName,
             "",
-            fmt("%s: %s", L("Level bracket"), trackerUi.levelBracketDropdown.text:GetText()),
-            fmt("%s: %s", L("Level-up"), trackerUi.levelDropdown.text:GetText()),
+            fmt("%s: %s", L("Level bracket"), trackerUi.levelBracketDropdown.text:GetText() or ""),
+            fmt("%s: %s", L("Level-up"), trackerUi.levelDropdown.text:GetText() or ""),
             "",
-            fmt("%s %s", L("Ding Time:"), trackerUi.dingContainer.data.text:GetText()),
-            fmt("%s %s", L("Speed:"), trackerUi.speedContainer.data.text:GetText()),
+            fmt("%s %s", L("Ding Time:"), trackerUi.dingContainer.data.text:GetText() or ""),
+            fmt("%s %s", L("Speed:"), trackerUi.speedContainer.data.text:GetText() or ""),
             "",
             L("Zones & Dungeons"),
-            trackerUi.zonesContainer.data.text:GetText(),
+            trackerUi.zonesContainer.data.text:GetText() or "",
             "",
             L("Teamwork:"),
-            trackerUi.teamworkContainer.data.text:GetText()
+            trackerUi.teamworkContainer.data.text:GetText() or ""
         }, "\n")
         local reportFrame = self.reportFrame.frame
         addon.comms.OpenBrandedExport(L("Export Report"), "", reportText, floor(reportFrame:GetWidth() / 2),
