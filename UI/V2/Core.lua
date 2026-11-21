@@ -3352,11 +3352,11 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
 
     local function releaseElementRow(row)
         addon.ReleaseActiveStepElement(row)
-
-        if _G.GameTooltip:GetOwner() == row then _G.GameTooltip:Hide() end
+        addon.ActiveStepElementOnLeave(row)
 
         row.text:SetText("")
         row.rxpQuestLink = nil
+        row.linkHighlight:Hide()
         row.hoverFrame:Hide()
         row.element = nil
         row.button:SetChecked(false)
@@ -3415,7 +3415,7 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
             row.hoverFrame:ClearAllPoints()
             row.hoverFrame:SetPoint("TOPLEFT", row, "TOPLEFT", textLeft, textTop)
             row.hoverFrame:SetSize(textWidth, textHeight)
-            row.hoverFrame:SetShown(row.rxpQuestLink and textWidth > 0 and textHeight > 0)
+            row.hoverFrame:SetShown((row.rxpQuestLink or element.tag == "link") and textWidth > 0 and textHeight > 0)
 
             row.layoutHeight = rowHeight
             row:ClearAllPoints()
@@ -3469,12 +3469,6 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
         _G.GameTooltip:SetHyperlink(link)
     end
 
-    local function elementTextOnHyperlinkLeave(row)
-        if not row:IsForbidden() and not _G.GameTooltip:IsForbidden() and _G.GameTooltip:GetOwner() == row then
-            _G.GameTooltip:Hide()
-        end
-    end
-
     local function updateElementRowText(row, element, resetPending)
         row.rxpQuestLink = nil
 
@@ -3515,7 +3509,7 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
         row:SetHyperlinksEnabled(true)
         row:SetScript("OnHyperlinkClick", elementTextOnHyperlinkClick)
         row:SetScript("OnHyperlinkEnter", elementTextOnHyperlinkEnter)
-        row:SetScript("OnHyperlinkLeave", elementTextOnHyperlinkLeave)
+        row:SetScript("OnHyperlinkLeave", addon.ActiveStepElementOnLeave)
 
         local button = CreateFrame("CheckButton", nil, row, BackdropTemplateMixin and "BackdropTemplate")
 
@@ -3596,22 +3590,42 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
         text:SetPoint("TOPLEFT", button, "TOPRIGHT", 7, -1)
         row.text = text
 
+        local linkHighlight = row:CreateTexture(nil, "BACKGROUND")
+        linkHighlight:SetAllPoints(text)
+        linkHighlight:SetTexture("Interface\\Worldmap\\UI-QuestPoi-HighlightBar")
+        linkHighlight:SetBlendMode("ADD")
+        linkHighlight:Hide()
+        row.linkHighlight = linkHighlight
+
         local rowHoverFrame = CreateFrame("Button", nil, row)
         rowHoverFrame.row = row
         rowHoverFrame:SetFrameLevel(row:GetFrameLevel() + 3)
         rowHoverFrame:EnableMouse(true)
         rowHoverFrame:SetScript("OnEnter", function(this)
             local row = this.row
-            if row.rxpQuestLink then elementTextOnHyperlinkEnter(row, row.rxpQuestLink) end
+            if row.rxpQuestLink then
+                elementTextOnHyperlinkEnter(row, row.rxpQuestLink)
+            elseif row.element.tag == "link" and not row:IsForbidden() and not _G.GameTooltip:IsForbidden() then
+                row.linkHighlight:Show()
+
+                _G.GameTooltip:SetOwner(row, "ANCHOR_CURSOR")
+                _G.GameTooltip:ClearLines()
+                _G.GameTooltip:AddLine(row.element.url, 1, 1, 1, true)
+                _G.GameTooltip:Show()
+            end
         end)
         rowHoverFrame:SetScript("OnLeave", function(this)
             local row = this.row
-            if row.rxpQuestLink then elementTextOnHyperlinkLeave(row) end
+            row.linkHighlight:Hide()
+            addon.ActiveStepElementOnLeave(row)
         end)
         rowHoverFrame:SetScript("OnClick", function(this, button)
             local row = this.row
             if row.rxpQuestLink then
                 elementTextOnHyperlinkClick(row, row.rxpQuestLink, row.text:GetText(), button)
+            elseif row.element.tag == "link" then
+                addon.ActiveStepElementOnLeave(row)
+                addon.comms.OpenLink(row.element.url)
             end
         end)
         rowHoverFrame:Hide()
@@ -3702,6 +3716,8 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
                     rowStep = watchOnly and (element.step or step) or step
 
                     if previousElement ~= element or previousStep ~= rowStep then
+                        row.linkHighlight:Hide()
+                        addon.ActiveStepElementOnLeave(row)
                         addon.ReleaseActiveStepElement(row)
                     end
 
