@@ -1,18 +1,19 @@
 local addonName, addon = ...
 
-local fmt, tinsert, tremove, mmax, mmin, mrand = string.format, table.insert, table.remove, math.max, math.min,
-                                                 math.random
-local GetMacroInfo, CreateMacro, EditMacro, InCombatLockdown, GetNumMacros = GetMacroInfo, CreateMacro, EditMacro,
-                                                                             InCombatLockdown, GetNumMacros
-local TargetUnit, next, IsInRaid, UnitIsDead, UnitIsGroupLeader, IsInGroup, UnitOnTaxi, UnitIsPlayer,
-      UnitIsUnit = TargetUnit, next, IsInRaid, UnitIsDead, UnitIsGroupLeader, IsInGroup, UnitOnTaxi,
-                   UnitIsPlayer, UnitIsUnit
-local GetRaidTargetIndex, SetRaidTarget = GetRaidTargetIndex, SetRaidTarget
-local GetTime, FlashClientIcon, PlaySound = GetTime, FlashClientIcon, PlaySound
-local wipe = wipe
-local GetRealZoneText = GetRealZoneText
-local GetNamePlates = C_NamePlate.GetNamePlates
-local HBD = LibStub("HereBeDragons-2.0")
+local fmt = _G.string.format
+local tinsert, tremove, next, wipe = _G.table.insert, _G.table.remove, _G.next, _G.wipe
+local mmax, mmin, mrand = _G.math.max, _G.math.min, _G.math.random
+
+local GetMacroInfo, CreateMacro, EditMacro, GetNumMacros, DeleteMacro = _G.GetMacroInfo, _G.CreateMacro, _G.EditMacro,
+                                                                        _G.GetNumMacros, _G.DeleteMacro
+local TargetUnit, UnitIsDead, UnitIsPlayer, UnitIsUnit = _G.TargetUnit, _G.UnitIsDead, _G.UnitIsPlayer, _G.UnitIsUnit
+local UnitIsGroupLeader, IsInGroup, IsInRaid, UnitOnTaxi, InCombatLockdown = _G.UnitIsGroupLeader, _G.IsInGroup,
+                                                                             _G.IsInRaid, _G.UnitOnTaxi,
+                                                                             _G.InCombatLockdown
+local GetRaidTargetIndex, SetRaidTarget = _G.GetRaidTargetIndex, _G.SetRaidTarget
+local GetTime, FlashClientIcon, PlaySound = _G.GetTime, _G.FlashClientIcon, _G.PlaySound
+local GetRealZoneText, GetNamePlates = _G.GetRealZoneText, _G.C_NamePlate.GetNamePlates
+local HBD = _G.LibStub("HereBeDragons-2.0")
 
 local GameTooltip = _G.GameTooltip
 
@@ -50,11 +51,11 @@ local pendingLeaderUpdate
 
 local UnitName = addon.GetUnitName
 
-function addon.targeting:ConfigureTargetButton(button, targetName, kind, index, marking)
-    local macrotext = "/cleartarget\n/targetexact " .. targetName
+function addon.targeting:ConfigureTargetButton(button, targetName, kind, index, marking, targetMacro)
+    local macrotext = targetMacro or ("/cleartarget\n/targetexact " .. targetName)
 
     -- Retail/Forever cannot SetRaidTarget automatically, leverage button
-    if (addon.game == "FOREVER" or addon.gameVersion >= 120000) and marking then
+    if not targetMacro and (addon.game == "FOREVER" or addon.gameVersion >= 120000) and marking then
         local markerIndex = self:GetMarkerIndex(kind, index)
         if markerIndex then
             -- Toggle Friendly markers
@@ -72,6 +73,7 @@ end
 
 function addon.targeting:Setup()
     if not addon.settings.profile.enableTargetMacro then DeleteMacro(self.macroName) end
+    if not addon.settings.profile.createFollowMacro then DeleteMacro(self.followMacroName) end
 
     self:CreateTargetFrame()
 
@@ -87,14 +89,9 @@ function addon.targeting:Setup()
     self:RegisterEvent("PLAYER_TARGET_CHANGED")
     self:RegisterEvent("UPDATE_MOUSEOVER_UNIT")
 
-    if addon.settings.profile.createFollowMacro then
-        self:RegisterEvent("PLAYER_ENTERING_WORLD")
-        self:RegisterEvent("GROUP_FORMED")
-        self:RegisterEvent("GROUP_LEFT")
-        self:RegisterEvent("PARTY_LEADER_CHANGED")
-    else
-        DeleteMacro(self.followMacroName)
-    end
+    self:RegisterEvent("PLAYER_ENTERING_WORLD")
+    self:RegisterEvent("GROUP_ROSTER_UPDATE")
+    self:RegisterEvent("PARTY_LEADER_CHANGED")
 
     if not addon.settings.profile.enableTargetAutomation then return end
 
@@ -269,14 +266,31 @@ function addon.targeting:UpdateMacro(queuedTargets)
     macroTargets = {}
 end
 
--- TODO fix bug when promoting leader
-function addon.targeting:UpdateFollowMacro(leaderName)
-    if not addon.settings.profile.createFollowMacro then return end
-
+function addon.targeting:UpdateFollowMacro()
     if InCombatLockdown() then
-        pendingLeaderUpdate = leaderName
+        pendingLeaderUpdate = true
+
         return
     end
+
+    pendingLeaderUpdate = nil
+
+    if not addon.settings.profile.createFollowMacro then
+        DeleteMacro(self.followMacroName)
+
+        return
+    end
+
+    if IsInRaid() then
+        if GetMacroInfo(self.followMacroName) then
+            EditMacro(self.followMacroName, self.followMacroName, nil, "//" .. _G.ERR_QUEST_PUSH_NOT_IN_PARTY_S)
+        end
+
+        return
+    end
+
+    local partyLeaderId
+    if IsInGroup() then _, partyLeaderId = addon.comms.grouping:GetPartyLeader() end
 
     if not GetMacroInfo(self.followMacroName) then
         if not self:CanCreateMacro() then return end
@@ -284,25 +298,20 @@ function addon.targeting:UpdateFollowMacro(leaderName)
         CreateMacro(self.followMacroName, "Inv_boots_02", "")
     end
 
-    if not IsInGroup() or leaderName == "" then
+    if not IsInGroup() then
         EditMacro(self.followMacroName, self.followMacroName, nil, "//" .. _G.ERR_QUEST_PUSH_NOT_IN_PARTY_S)
 
         return
     end
 
-    if UnitIsGroupLeader("player") then
+    if not partyLeaderId or partyLeaderId == "player" then
         EditMacro(self.followMacroName, self.followMacroName, nil, "//" .. _G.PARTY_LEADER)
 
         return
     end
 
-    if not leaderName then leaderName = addon.comms.state.group.leader end
-
-    if not leaderName then return end
-
-    EditMacro(self.followMacroName, self.followMacroName, nil, fmt('/targetexact %s\n/follow\n', leaderName))
-
-    pendingLeaderUpdate = nil
+    EditMacro(self.followMacroName, self.followMacroName, nil,
+              fmt('/target [@%s]\n/follow %s', partyLeaderId, partyLeaderId))
 end
 
 function addon.targeting:PLAYER_REGEN_ENABLED()
@@ -310,7 +319,7 @@ function addon.targeting:PLAYER_REGEN_ENABLED()
 
     self:UpdateTargetFrame()
 
-    if pendingLeaderUpdate then C_Timer.After(mrand(1), function() self:UpdateFollowMacro(pendingLeaderUpdate) end) end
+    if pendingLeaderUpdate then self:UpdateFollowMacro() end
 end
 
 function addon.targeting:CheckNameplate(nameplateID)
@@ -382,13 +391,18 @@ function addon.targeting:CheckNameplates()
     for _, nameplate in ipairs(nameplatesArray) do self:CheckNameplate(nameplate.namePlateUnitToken) end
 end
 
-function addon.targeting:PLAYER_ENTERING_WORLD() C_Timer.After(mrand(3), function() self:UpdateFollowMacro() end) end
+function addon.targeting:UpdateFollowTarget()
+    if addon.settings.profile.createFollowMacro then self:UpdateFollowMacro() end
+    if addon.settings.profile.createFollowTarget then self:UpdateTargetFrame() end
+end
 
-function addon.targeting:GROUP_FORMED() C_Timer.After(3 + mrand(2), function() self:UpdateFollowMacro() end) end
+function addon.targeting:PLAYER_ENTERING_WORLD()
+    C_Timer.After(mrand(3), function() addon.targeting:UpdateFollowTarget() end)
+end
 
-function addon.targeting:GROUP_LEFT() self:UpdateFollowMacro("") end
+function addon.targeting:GROUP_ROSTER_UPDATE() self:UpdateFollowTarget() end
 
-function addon.targeting:PARTY_LEADER_CHANGED() self:UpdateFollowMacro() end
+function addon.targeting:PARTY_LEADER_CHANGED() self:UpdateFollowTarget() end
 
 function addon.targeting:NAME_PLATE_UNIT_ADDED(_, nameplateID)
     if not nameplateID or not shouldTargetCheck() then return end
@@ -539,7 +553,9 @@ addon.targeting.QUEST_GREETING = addon.targeting.GOSSIP_SHOW
 addon.targeting.QUEST_COMPLETE = addon.targeting.GOSSIP_SHOW
 
 function addon.targeting.CheckTargetProximity()
-    if not shouldTargetCheck() or not addon.settings.profile.showTargetingOnProximity or not addon.unitscanEnabled then return end
+    if not shouldTargetCheck() or not addon.settings.profile.showTargetingOnProximity or not addon.unitscanEnabled then
+        return
+    end
 
     if addon.settings.profile.enableEnemyTargeting then
         for _, name in pairs(unitscanList) do
@@ -801,7 +817,10 @@ function addon.targeting:UpdateEnemyList(unitscan, mobs, addEntries)
     self:UpdateTargetFrame()
 end
 
-function addon.targeting:CanCreateMacro() return GetNumMacros() < 119 end
+function addon.targeting:CanCreateMacro(name)
+    if name and GetMacroInfo(name) then return true end
+    return GetNumMacros() < 119
+end
 
 local function UpdateV1IconFrameVisuals(self)
     self:SetScale(addon.settings.profile.activeTargetScale or 1)
@@ -850,6 +869,7 @@ function addon.targeting:CreateTargetFrame()
     f.IsFeatureEnabled = function()
         if not addon.settings.profile.enableTargetFrame then return nil, true end
         if (self.activeTargetCount or 0) == 0 then return nil, true end
+        if f.hasFollowTarget and addon.settings.profile.showEnabled then return true, true end
 
         if addon.settings.profile.showTargetingOnProximity then
             return proxmityPolling.match and shouldTargetCheck(), true
@@ -1124,16 +1144,28 @@ local function ResizeTargetsFrame(targetFrame, friendlyCount, enemyCount)
         local firstFriendlyButton = targetFrame.friendlyTargetButtons[1]
         firstFriendlyButton:ClearAllPoints()
         firstFriendlyButton:SetPoint("BOTTOMLEFT", targetFrame, "BOTTOMLEFT", 6,
-                                    (soloFriendlyRow and 4 or 6) + contentOffset)
+                                     (soloFriendlyRow and 4 or 6) + contentOffset)
     end
 end
 
 function addon.targeting:UpdateTargetFrame(selector)
-    if not addon.settings.profile.enableTargetFrame then return end
-
     local targetFrame = self.activeTargetFrame
 
+    if not addon.settings.profile.enableTargetFrame then
+        if targetFrame and not InCombatLockdown() then targetFrame:Hide() end
+
+        return
+    end
+
     if InCombatLockdown() then return end
+
+    local partyLeader, partyLeaderId
+    if addon.settings.profile.createFollowTarget then
+        partyLeader, partyLeaderId = addon.comms.grouping:GetPartyLeader()
+        if partyLeaderId == "player" then partyLeader, partyLeaderId = nil, nil end
+    end
+    local followMacro = partyLeader and fmt("/cleartarget\n/target [@%s]\n/follow %s", partyLeaderId, partyLeaderId)
+    targetFrame.hasFollowTarget = partyLeader ~= nil
 
     local enemyTargetButtons = targetFrame.enemyTargetButtons
     local enemyTargetButtonIndex = 0
@@ -1207,7 +1239,7 @@ function addon.targeting:UpdateTargetFrame(selector)
         end
 
         self:ConfigureTargetButton(btn, targetName, enemyKind, enemyTargetButtonIndex,
-            addon.settings.profile.enableEnemyMarking)
+                                   addon.settings.profile.enableEnemyMarking)
 
         if btn.targetData and btn.targetData.name ~= targetName then
             btn.placeholder:SetTexture(mobPlaceholder)
@@ -1228,15 +1260,28 @@ function addon.targeting:UpdateTargetFrame(selector)
 
     local friendlyTargetButtons = targetFrame.friendlyTargetButtons
     local friendlyTargetButtonIndex = 0
-    -- If proximity disabled, show all
     local friendlyList = addon.settings.profile.showTargetingOnProximity and {} or targetList
 
     if addon.settings.profile.showTargetingOnProximity then
         for name, data in pairs(proxmityPolling.scannedTargets) do
             if data.kind == 'friendly' then tinsert(friendlyList, name) end
         end
+    elseif partyLeader then
+        friendlyList = {}
+        for _, name in ipairs(targetList) do tinsert(friendlyList, name) end
     end
 
+    if partyLeader then
+        for index, name in ipairs(friendlyList) do
+            if name == partyLeader then
+                tremove(friendlyList, index)
+                break
+            end
+        end
+        tinsert(friendlyList, 1, partyLeader)
+    end
+
+    local isLeaderTarget
     for _, targetName in ipairs(friendlyList) do
         friendlyTargetButtonIndex = friendlyTargetButtonIndex + 1
         btn = friendlyTargetButtons[friendlyTargetButtonIndex]
@@ -1274,15 +1319,17 @@ function addon.targeting:UpdateTargetFrame(selector)
             ht:SetBlendMode("ADD")
         end
 
+        isLeaderTarget = partyLeader and targetName == partyLeader
         self:ConfigureTargetButton(btn, targetName, "friendly", friendlyTargetButtonIndex,
-            addon.settings.profile.enableTargetMarking)
+                                   addon.settings.profile.enableTargetMarking and not isLeaderTarget,
+                                   isLeaderTarget and followMacro)
 
         if btn.targetData and btn.targetData.name ~= targetName then
             btn.placeholder:SetTexture(targetPlaceholder)
             btn.placeholder.isDefault = true
         end
 
-        btn:GetUnitTexture(targetName, selector)
+        btn:GetUnitTexture(targetName, isLeaderTarget and partyLeaderId or selector)
 
         btn.targetData = {name = targetName, kind = "friendly"}
 
@@ -1316,7 +1363,7 @@ function addon.targeting:UpdateTargetFrame(selector)
     if (friendlyTargetButtonIndex == 0 and enemyTargetButtonIndex == 0) or not addon.settings.profile.showEnabled then
         targetFrame:Hide()
     elseif addon.settings.profile.showTargetingOnProximity then
-        if proxmityPolling.match then
+        if proxmityPolling.match or targetFrame.hasFollowTarget then
             targetFrame:Show()
         else
             targetFrame:Hide()

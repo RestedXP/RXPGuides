@@ -868,6 +868,17 @@ function addon.comms:PopupNotification(lookup, prompt)
 end
 
 addon.comms.grouping = {}
+function addon.comms.grouping:GetPartyLeader()
+    if _G.IsInRaid() or not _G.IsInGroup() then return end
+    if _G.UnitIsGroupLeader("player") then return UnitName("player"), "player" end
+
+    local partyId
+    for i = 1, _G.MAX_PARTY_MEMBERS do
+        partyId = "party" .. i
+        if _G.UnitIsGroupLeader(partyId) then return UnitName(partyId), partyId end
+    end
+end
+
 function addon.comms.grouping:ShareQuest(questId)
     if not addon.settings.profile.shareQuests then return end
 
@@ -891,8 +902,10 @@ function addon.comms.grouping:ShareQuest(questId)
 end
 
 function addon.comms.grouping:UpdateParty()
+    local partyLeader = self:GetPartyLeader()
+
     addon.comms.state.group = {
-        leader = nil,
+        leader = partyLeader,
         members = {[addon.player.name] = {partyId = "player", isRxp = true}},
         hasRXP = false
     }
@@ -905,8 +918,6 @@ function addon.comms.grouping:UpdateParty()
         name = UnitName(partyId)
 
         if not name then break end
-
-        if UnitIsGroupLeader(partyId) then addon.comms.state.group.leader = name end
 
         isRXP = addon.comms.players[name] and addon.comms.players[name].isRxp
         if isRXP then addon.comms.state.group.hasRXP = true end

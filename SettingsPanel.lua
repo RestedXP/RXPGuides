@@ -547,8 +547,6 @@ if GetLocale() ~= "enUS" then
     addon.locale.AddGenericTranslation("Enable Targeting",fmt("%s %s", _G.ENABLE, _G.BINDING_HEADER_TARGETING))
     addon.locale.AddGenericTranslation("Enable Target Markers (Group)",fmt("%s %s (%s)", _G.ENABLE, _G.BINDING_HEADER_RAID_TARGET, _G.GROUP))
     addon.locale.AddGenericTranslation("You are not a group leader. Enable Target Markers",fmt("%s %s %s", _G.ERR_TRAVEL_PASS_NOT_LEADER, _G.ENABLE, _G.BINDING_HEADER_RAID_TARGET))
-    addon.locale.AddGenericTranslation("Follow Party Leader Macro",fmt("%s %s %s", _G.FOLLOW, _G.PARTY_LEADER, _G.MACRO))
-    addon.locale.AddGenericTranslation("Enable follow party leader macro",fmt("%s %s %s %s", _G.ENABLE, strlower(_G.FOLLOW), strlower(_G.PARTY_LEADER), strlower(_G.MACRO)))
     addon.locale.AddGenericTranslation("Active Target Frame",fmt("%s %s",_G.ACTIVE_PETS, _G.HELPFRAME_REPORT_PLAYER_EXAMPLE_TARGET_CLICK_LOCATION))
     addon.locale.AddGenericTranslation("Enable Active Target Frame",fmt("%s %s %s", _G.ENABLE, _G.ACTIVE_PETS, _G.HELPFRAME_REPORT_PLAYER_EXAMPLE_TARGET_CLICK_LOCATION))
     addon.locale.AddGenericTranslation("Show Enemy Target",fmt("%s %s %s", _G.SHOW, _G.ENEMY, _G.TARGET))
@@ -1642,10 +1640,7 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 0,
                         set = function(info, value)
                             SetProfileOption(info, value)
-                            if addon.targeting.activeTargetFrame and
-                                not InCombatLockdown() then
-                                addon.targeting.activeTargetFrame:Hide()
-                            end
+                            addon.targeting:UpdateTargetFrame()
                         end
                     },
                     enableMaxNameplateDistance = {
@@ -1730,7 +1725,7 @@ function addon.settings:CreateAceOptionsPanel()
                             not self.profile.enableTargetMacro
                     },
                     createFollowMacro = {
-                        name = L("Follow Party Leader Macro"),
+                        name = L("Create Party Leader Macro"),
                         desc = L("Enable follow party leader macro"),
                         type = "toggle",
                         width = optionsWidth * 1.5,
@@ -1739,7 +1734,7 @@ function addon.settings:CreateAceOptionsPanel()
                             SetProfileOption(info, value)
                             addon.targeting:UpdateFollowMacro()
                         end,
-                        disabled = not addon.targeting:CanCreateMacro()
+                        disabled = not addon.targeting:CanCreateMacro(addon.targeting.followMacroName)
                     },
                     activeTargetsHeader = {
                         name = L("Active Target Frame"),
@@ -1755,10 +1750,7 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 3.10,
                         set = function(info, value)
                             SetProfileOption(info, value)
-                            if addon.targeting.activeTargetFrame and
-                                not InCombatLockdown() then
-                                addon.targeting.activeTargetFrame:Hide()
-                            end
+                            addon.targeting:UpdateTargetFrame()
                         end
                     },
                     showTargetingOnProximity = {
@@ -1798,12 +1790,16 @@ function addon.settings:CreateAceOptionsPanel()
                             return not self.profile.enableTargetFrame
                         end
                     },
-                    createFollowTarget = { --TODO implement /target + /follow
+                    createFollowTarget = {
                         name = L("Follow Party Leader Target"),
-                        desc = "TODO" .. L("Show party leader target"),
+                        desc = L("Show party leader target"),
                         type = "toggle",
                         width = optionsWidth,
                         order = 3.14,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.targeting:UpdateTargetFrame()
+                        end,
                         disabled = function()
                             return not self.profile.enableTargetFrame
                         end,
