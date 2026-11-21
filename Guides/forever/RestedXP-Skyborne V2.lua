@@ -4,14 +4,14 @@ RXPGuides.RegisterGuide([[
 #forever
 #disabledungeons
 #version 1
-#name 1-9 Zephras Isle
-#displayname 1-9 Skyborne << Alliance
-#displayname 1-9 Skyborne << Horde
+#name 1-9 Zephras Isle V2
+#displayname 1-9 Skyborne V2 << Alliance
+#displayname 1-9 Skyborne V2 << Horde
 #group RestedXP Forever Guide (A) << Alliance
 #group RestedXP Forever Guide (H) << Horde
 #subgroup Speedrun Guide 1-20 << Alliance
 #subgroup Speedrun Guide 1-22 << Horde
-#next 9-13 Zephras Isle
+#next 9-13 Zephras Isle V2
 #defaultfor Skyborne
 #internal
 
@@ -2903,9 +2903,9 @@ RXPGuides.RegisterGuide([[
 #forever
 #disabledungeons
 #version 1
-#name 9-13 Zephras Isle
-#displayname 9-13 Skyborne << Alliance
-#displayname 9-12 Skyborne << Horde
+#name 9-13 Zephras Isle V2
+#displayname 9-13 Skyborne V2 << Alliance
+#displayname 9-12 Skyborne V2 << Horde
 #group RestedXP Forever Guide (A) << Alliance
 #group RestedXP Forever Guide (H) << Horde
 #subgroup Speedrun Guide 1-20 << Alliance
