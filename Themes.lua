@@ -175,6 +175,8 @@ function addon:UsesDefaultTheme()
 end
 
 function addon:LoadActiveTheme()
+    if self.activeTheme and not self.settings.profile.enableThemeLiveReload then return self.activeTheme end
+
     local applicableTheme = addon.settings.profile.activeTheme
     local v2Enabled = addon.v2:IsEnabled()
     local useDefaultTheme = self:UsesDefaultTheme()
@@ -240,8 +242,7 @@ function addon:ReloadTheme()
     if not self.settings.profile.enableThemeLiveReload then return end
 
     self.v2:ConvertThemes()
-    self.RenderFrame('themeReload')
-    self.SetupArrow()
+    self:UpdateTheme(true)
 
     if self.v2:IsEnabled() then
         self.v2:UpdateGuideWindow()
@@ -443,18 +444,9 @@ function addon.v2:ConvertThemes()
 end
 
 function addon.v2:GetTheme()
-    local profile = addon.settings and addon.settings.profile
-    local name = profile and profile.activeTheme
-    local defaultTheme = GetDefaultTheme()
-    local fallbackTheme = defaultTheme
-
-    if not fallbackTheme.backgroundColors then
-        fallbackTheme = self.themes[defaultTheme.name] or self.themes['RXP Blue V2']
-    end
-
-    self.activeTheme = addon:UsesDefaultTheme() and fallbackTheme or self.themes[name] or fallbackTheme
-
-    return self.activeTheme
+    if not addon.activeTheme then return self.themes['RXP Blue V2'] end
+    if addon.activeTheme.backgroundColors then return addon.activeTheme end
+    return self.themes[addon.activeTheme.name] or self.themes['RXP Blue V2']
 end
 
 function addon.v2:GetAuctionHouseTheme()

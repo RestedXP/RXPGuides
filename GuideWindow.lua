@@ -49,7 +49,9 @@ RXPFrame.ScrollFrame = ScrollFrame
 RXPFrame.ScrollChild = ScrollChild
 RXPFrame.MenuFrame = MenuFrame
 
-function RXPFrame:UpdateVisuals()
+RXPFrame.UpdateTheme = addon.ui.v2.UpdateTheme
+
+function RXPFrame:UpdateSubTheme()
     if addon.v2:IsEnabled() then
         addon.v2.events:Trigger("GuideWindowRefresh", "visuals")
         return
@@ -58,13 +60,6 @@ function RXPFrame:UpdateVisuals()
     BottomFrame:ClearBackdrop()
     BottomFrame:SetBackdrop(RXPFrame.backdrop.edge)
     BottomFrame:SetBackdropColor(unpack(addon.colors.background))
-
-    if RXPFrame.activeItemFrame then
-        RXPFrame.activeItemFrame:ClearBackdrop()
-        RXPFrame.activeItemFrame:SetBackdrop(RXPFrame.backdrop.edge)
-        RXPFrame.activeItemFrame:SetBackdropColor(
-            unpack(addon.colors.background))
-    end
 
     GuideName:ClearBackdrop()
     GuideName:SetBackdrop(RXPFrame.backdrop.guideName)
@@ -89,22 +84,20 @@ function addon.NextStep()
     RXP.SetStep(RXPCData.currentStep + 1)
 end
 
-function addon.RenderFrame(themeUpdate,isLoading)
-    addon:LoadActiveTheme()
+function addon:UpdateTheme(skipMenu, skipGuideReload)
+    self:LoadActiveTheme()
 
-    -- TODO better handle themes
-    addon.colors = addon.activeTheme
+    RXPFrame:UpdateTheme()
+    self.arrowFrame:UpdateTheme()
+    if self.activeItemWindow then self.activeItemWindow:UpdateTheme() end
+    self.UpdateItemFrame()
+    if self.targeting.activeTargetWindow then self.targeting.activeTargetWindow:UpdateTheme() end
+    if addon.tracker then addon.tracker.splits:UpdateTheme() end
 
-    --TODO: Add UpdateVisuals function to every frame under enabledFrames
-    for _,frame in pairs(addon.enabledFrames) do
-        if frame.UpdateVisuals then
-            frame:UpdateVisuals(true)
-        end
-    end
-    if not themeUpdate then
+    if not skipMenu then
         RXPFrame.GenerateMenuTable()
     end
-    if addon.currentGuide and not isLoading then
+    if addon.currentGuide and not skipGuideReload then
         addon:ReloadGuide(true)
     end
 end
@@ -1017,7 +1010,6 @@ function addon.SetStep(n, n2, loopback)
             -- stepframe:SetBackdropBorderColor(0.1,0.5,0.1)
             stepframe.elements = {}
 
-            -- addon.CreateActiveItemFrame(stepframe)
         end
         if step.tip then
             --stepframe:SetParent(UIParent)
@@ -1867,14 +1859,9 @@ function addon:LoadGuide(guide, OnLoad)
         guide.softcore = true
     end
     if guide.hardcore then
-        if not addon.settings.profile.hardcore then
-            addon.settings.profile.hardcore = true
-            addon.RenderFrame(true,true)
-        end
-        --addon.settings.profile.season = 0
+        addon.settings.profile.hardcore = true
     elseif guide.softcore and addon.settings.profile.hardcore then
-            addon.settings.profile.hardcore = false
-            addon.RenderFrame(true,true)
+        addon.settings.profile.hardcore = false
     end
 
     if not useV2GuideWindow and addon.settings.profile.frameHeight then
@@ -1903,24 +1890,11 @@ function addon:LoadGuide(guide, OnLoad)
     table.wipe(addon.stepUpdateList)
     addon.updateTipWindow = false
     addon.currentGuide = nil
-    local renderFrame
-
-    if guide.hardcore and addon.game == "CLASSIC" and not addon.settings.profile.hardcore then
-        addon.settings.profile.hardcore = true
-        renderFrame = true
-    end
-
-    --TODO: add better theme handling
-    if guide.theme and addon:UsesDefaultTheme() then
-        renderFrame = true
-    end
-
-    if renderFrame then
-        addon.RenderFrame()
-    end
 
     addon.currentGuide = addon.ProcessGuideTable(guide)
     guide = addon.currentGuide
+
+    addon:UpdateTheme(true, true)
 
     if #guide.steps == 0 then
         return addon:LoadGuide(addon.emptyGuide)

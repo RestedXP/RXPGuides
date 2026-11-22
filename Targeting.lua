@@ -14,6 +14,7 @@ local GetRaidTargetIndex, SetRaidTarget = _G.GetRaidTargetIndex, _G.SetRaidTarge
 local GetTime, FlashClientIcon, PlaySound = _G.GetTime, _G.FlashClientIcon, _G.PlaySound
 local GetRealZoneText, GetNamePlates = _G.GetRealZoneText, _G.C_NamePlate.GetNamePlates
 local HBD = _G.LibStub("HereBeDragons-2.0")
+local AceGUI = _G.LibStub("AceGUI-3.0")
 
 local GameTooltip = _G.GameTooltip
 
@@ -594,7 +595,7 @@ function addon.targeting.CheckTargetProximity()
         proxmityPolling.match = false
         wipe(proxmityPolling.rareAnnounced)
         wipe(proxmityPolling.scannedTargets)
-        if not InCombatLockdown() then addon.targeting.activeTargetFrame:Hide() end
+        if not InCombatLockdown() then addon.targeting.activeTargetWindow:Hide() end
 
         -- Full reset, so don't handle per-mob checks below
         return
@@ -822,54 +823,22 @@ function addon.targeting:CanCreateMacro(name)
     return GetNumMacros() < 119
 end
 
-local function UpdateV1IconFrameVisuals(self)
-    self:SetScale(addon.settings.profile.activeTargetScale or 1)
-
-    addon.targeting:RenderTargetFrameBackground()
-
-    self.title:ClearBackdrop()
-    self.title:SetBackdrop(addon.RXPFrame.backdrop.edge)
-    self.title:SetBackdropColor(unpack(addon.colors.background))
-
-    self.title.text:SetFont(addon.font, 9, "")
-    self.title.text:SetTextColor(unpack(addon.activeTheme.textColor))
-
-    self.title:SetSize(self.title.text:GetStringWidth() + 10, 19)
-end
-
-local function UpdateV2IconFrameVisuals(self)
-    local theme = addon.v2:GetTheme()
-
-    self:SetScale(addon.settings.profile.activeTargetScale or 1)
-
-    addon.targeting:RenderTargetFrameBackground()
-    addon.ui.v2:ApplyFrameBackdrop(self.title, theme.edge, theme.backgroundColors.common, theme.borderColors.commonEdge)
-
-    self.title.text:SetFont(addon.font, 9, "")
-    self.title.text:SetTextColor(unpack(theme.textColor.title))
-
-    self.title:SetSize(self.title.text:GetStringWidth() + 10, 19)
-end
-
 function addon.targeting:CreateTargetFrame()
     -- Still create frame even if targeting disabled, for frame location preservation
-    if self.activeTargetFrame then return end
+    if self.activeTargetWindow then return end
 
-    self.activeTargetFrame = CreateFrame("Frame", "RXPTargetFrame", UIParent,
-                                         BackdropTemplateMixin and "BackdropTemplate" or nil)
-    local f = self.activeTargetFrame
-    f.v2 = addon.v2:IsEnabled()
+    local window = AceGUI:Create("RXPV2MiniFrame")
+    window.hideBackgroundSetting = "hideActiveTargetsBackground"
+    self.activeTargetWindow = window
+    _G.RXPTargetFrame = window.frame
 
-    f:SetClampedToScreen(true)
-    f:EnableMouse(true)
-    f:SetMovable(true)
-    f:Hide()
+    window:Hide()
 
-    addon.enabledFrames["activeTargetFrame"] = f
-    f.IsFeatureEnabled = function()
+    addon.enabledFrames["activeTargetFrame"] = window.frame
+    window.frame.IsFeatureEnabled = function()
         if not addon.settings.profile.enableTargetFrame then return nil, true end
         if (self.activeTargetCount or 0) == 0 then return nil, true end
-        if f.hasFollowTarget and addon.settings.profile.showEnabled then return true, true end
+        if window.hasFollowTarget and addon.settings.profile.showEnabled then return true, true end
 
         if addon.settings.profile.showTargetingOnProximity then
             return proxmityPolling.match and shouldTargetCheck(), true
@@ -878,70 +847,36 @@ function addon.targeting:CreateTargetFrame()
         return shouldTargetCheck(), true
     end
 
-    self:RenderTargetFrameBackground()
-
-    f.onMouseDown = function()
+    local function onMouseDown()
         if InCombatLockdown() then return end
         if addon.settings.profile.lockFrames and not IsAltKeyDown() then return end
-        f:StartMoving()
+        window:StartMoving()
     end
 
-    function f.onMouseUp()
+    local function onMouseUp()
         if InCombatLockdown() then return end
-        f:StopMovingOrSizing()
+        window:StopMovingOrSizing()
         addon.settings:SaveFramePositions()
     end
 
-    f:SetScript("OnMouseDown", f.onMouseDown)
-    f:SetScript("OnMouseUp", f.onMouseUp)
-    f.friendlyTargetButtons = {}
-    f.enemyTargetButtons = {}
+    window.frame:SetScript("OnMouseDown", onMouseDown)
+    window.frame:SetScript("OnMouseUp", onMouseUp)
+    window.friendlyTargetButtons = {}
+    window.enemyTargetButtons = {}
 
-    f:SetPoint("CENTER", UIParent, "CENTER", 0, 0)
+    window:SetPoint("CENTER", UIParent, "CENTER", 0, 0)
 
-    f.title = CreateFrame("Frame", "$parent_title", f, BackdropTemplateMixin and "BackdropTemplate" or nil)
-    f.title:SetPoint("TOPLEFT", f, 5, 8)
-    f.title:SetFrameLevel(f:GetFrameLevel() + 3)
-    f.title.text = f.title:CreateFontString(nil, "OVERLAY")
-    f.title.text:ClearAllPoints()
-    f.title.text:SetPoint("CENTER", f.title, 0, 0)
-    f.title.text:SetJustifyH("CENTER")
-    f.title.text:SetJustifyV("MIDDLE")
-    f.title.text:SetFont(addon.font, 9, "")
-    f.title.text:SetText(L "Active Targets")
+    window:UpdateTheme()
+    window:SetTitle(L("Active Targets"))
+    window.title:SetScript("OnMouseDown", onMouseDown)
+    window.title:SetScript("OnMouseUp", onMouseUp)
 
-    f.title:EnableMouse(true)
-    f.title:SetScript("OnMouseDown", f.onMouseDown)
-    f.title:SetScript("OnMouseUp", f.onMouseUp)
-
-    f.UpdateVisuals = f.v2 and UpdateV2IconFrameVisuals or UpdateV1IconFrameVisuals
-    f:SetHeight(40)
-    f:UpdateVisuals()
+    window:SetScale(addon.settings.profile.activeTargetScale or 1)
+    window:SetHeight(40)
 end
 
-function addon.targeting:RenderTargetFrameBackground()
-    if not self.activeTargetFrame then return end
-
-    local f = self.activeTargetFrame
-    if not f.v2 then
-        if addon.settings.profile.hideActiveTargetsBackground then
-            f:ClearBackdrop()
-        else
-            f:ClearBackdrop()
-            f:SetBackdrop(addon.RXPFrame.backdrop.edge)
-            f:SetBackdropColor(unpack(addon.colors.background))
-        end
-        return
-    end
-
-    if addon.settings.profile.hideActiveTargetsBackground then
-        addon.ui.v2:SetFrameBackdropShown(f, false)
-    else
-        local theme = addon.v2:GetTheme()
-        addon.ui.v2:ApplyFrameBackdrop(f, theme.edge, theme.backgroundColors.common, theme.borderColors.commonEdge)
-        addon.ui.v2:AddFrameShadow(f)
-        addon.ui.v2:SetFrameBackdropShown(f, true)
-    end
+function addon.targeting:SetScale(scale)
+    if self.activeTargetWindow then self.activeTargetWindow:SetScale(scale) end
 end
 
 local fOnEnter = function(self)
@@ -1023,7 +958,7 @@ local function GetIcon(unit)
 
     if not texture then
         if iconCounter < 30 then
-            texture = addon.targeting.activeTargetFrame:CreateTexture()
+            texture = addon.targeting.activeTargetWindow.frame:CreateTexture()
             iconCounter = iconCounter + 1
         else
             local lastActive = time
@@ -1088,71 +1023,49 @@ local function GetUnitTexture(self, name, unit)
 end
 
 local buttonsPerRow = 4
-local function GetTargetGridMetrics(count, rightPadding)
-    return count > 0 and mmin(count, buttonsPerRow) * 27 + rightPadding or 0, ceil(count / buttonsPerRow)
+local function GetTargetGridMetrics(count)
+    return count > 0 and mmin(count, buttonsPerRow) * 27 + 10 or 0, ceil(count / buttonsPerRow)
 end
 
-local function RowifyTargets(targetFrame, btn, buttons, kind)
-    local buttonKindCount = #buttons
+local function RowifyTargets(btn, buttons, isEnemy)
+    local count = #buttons
+    if count == 1 then return end -- ResizeTargetsFrame anchors the first button.
 
-    btn:ClearAllPoints()
-
-    -- isNewRow == 0 when new row
-    local isNewRow = (buttonKindCount - 1) % buttonsPerRow
-
-    if buttonKindCount == 1 then
-        if kind == "enemy" then
-            btn:SetPoint("TOPLEFT", targetFrame, "TOPLEFT", 6, -15)
-        else -- Friendly
-            btn:SetPoint("BOTTOMLEFT", targetFrame, "BOTTOMLEFT", 6, 6)
-        end
-
-        return
-    end
-
-    if kind == "enemy" then
-        if isNewRow == 0 then
-            btn:SetPoint("TOP", buttons[buttonKindCount - buttonsPerRow], "BOTTOM", 0, 0)
-        else
-            btn:SetPoint("CENTER", buttons[buttonKindCount - 1], "CENTER", 27, 0)
-        end
-    else -- Friendly, build from bottom up to simplify height logic
-        if isNewRow == 0 then
-            btn:SetPoint("BOTTOM", buttons[buttonKindCount - buttonsPerRow], "TOP", 0, 0)
-        else
-            btn:SetPoint("CENTER", buttons[buttonKindCount - 1], "CENTER", 27, 0)
-        end
+    if (count - 1) % buttonsPerRow ~= 0 then
+        btn:SetPoint("CENTER", buttons[count - 1], "CENTER", 27, 0)
+    elseif isEnemy then
+        btn:SetPoint("TOP", buttons[count - buttonsPerRow], "BOTTOM", 0, 0)
+    else
+        btn:SetPoint("BOTTOM", buttons[count - buttonsPerRow], "TOP", 0, 0)
     end
 end
 
-local function ResizeTargetsFrame(targetFrame, friendlyCount, enemyCount)
-    local enemyWidth, enemyRows = GetTargetGridMetrics(enemyCount, 10)
-    local friendlyWidth, friendlyRows = GetTargetGridMetrics(friendlyCount, 10)
+local function ResizeTargetsFrame(window, friendlyCount, enemyCount)
+    local enemyWidth, enemyRows = GetTargetGridMetrics(enemyCount)
+    local friendlyWidth, friendlyRows = GetTargetGridMetrics(friendlyCount)
     local soloFriendlyRow = enemyRows == 0 and friendlyRows == 1
-    local contentOffset = targetFrame.v2 and 0 or 3
 
-    targetFrame:SetWidth(mmax(targetFrame.title:GetWidth() + 10, friendlyWidth, enemyWidth))
-    targetFrame:SetHeight(18 + (enemyRows + friendlyRows) * 25 + (enemyRows > 0 and friendlyRows > 0 and 5 or 0))
+    window:SetWidth(mmax(window.title:GetWidth() + 10, friendlyWidth, enemyWidth))
+    window:SetHeight(18 + (enemyRows + friendlyRows) * 25 + (enemyRows > 0 and friendlyRows > 0 and 5 or 0))
 
     if enemyRows > 0 then
-        local firstEnemyButton = targetFrame.enemyTargetButtons[1]
+        local firstEnemyButton = window.enemyTargetButtons[1]
         firstEnemyButton:ClearAllPoints()
-        firstEnemyButton:SetPoint("TOPLEFT", targetFrame, "TOPLEFT", 6, -15 + contentOffset)
+        firstEnemyButton:SetPoint("TOPLEFT", window.frame, "TOPLEFT", 6, -15)
     end
 
     if friendlyRows > 0 then
-        local firstFriendlyButton = targetFrame.friendlyTargetButtons[1]
+        local firstFriendlyButton = window.friendlyTargetButtons[1]
         firstFriendlyButton:ClearAllPoints()
-        firstFriendlyButton:SetPoint("BOTTOMLEFT", targetFrame, "BOTTOMLEFT", 6,
-                                     (soloFriendlyRow and 4 or 6) + contentOffset)
+        firstFriendlyButton:SetPoint("BOTTOMLEFT", window.frame, "BOTTOMLEFT", 6, soloFriendlyRow and 4 or 6)
     end
 end
 
 function addon.targeting:UpdateTargetFrame(selector)
-    local targetFrame = self.activeTargetFrame
+    if not self.activeTargetWindow then return end
 
     if not addon.settings.profile.enableTargetFrame then
-        if targetFrame and not InCombatLockdown() then targetFrame:Hide() end
+        if not InCombatLockdown() then self.activeTargetWindow:Hide() end
 
         return
     end
@@ -1165,9 +1078,8 @@ function addon.targeting:UpdateTargetFrame(selector)
         if partyLeaderId == "player" then partyLeader, partyLeaderId = nil, nil end
     end
     local followMacro = partyLeader and fmt("/cleartarget\n/target [@%s]\n/follow %s", partyLeaderId, partyLeaderId)
-    targetFrame.hasFollowTarget = partyLeader ~= nil
+    self.activeTargetWindow.hasFollowTarget = partyLeader ~= nil
 
-    local enemyTargetButtons = targetFrame.enemyTargetButtons
     local enemyTargetButtonIndex = 0
     local enemiesList = {}
 
@@ -1202,10 +1114,10 @@ function addon.targeting:UpdateTargetFrame(selector)
     for targetName, enemyKind in pairs(enemiesList) do
 
         enemyTargetButtonIndex = enemyTargetButtonIndex + 1
-        btn = enemyTargetButtons[enemyTargetButtonIndex]
+        btn = self.activeTargetWindow.enemyTargetButtons[enemyTargetButtonIndex]
 
         if not btn then
-            btn = CreateFrame("Button", "RXPTargetFrame_EnemyButton" .. enemyTargetButtonIndex, targetFrame,
+            btn = CreateFrame("Button", "RXPTargetFrame_EnemyButton" .. enemyTargetButtonIndex, self.activeTargetWindow.frame,
                               "SecureActionButtonTemplate")
 
             btn:SetAttribute("type", "macro")
@@ -1213,9 +1125,9 @@ function addon.targeting:UpdateTargetFrame(selector)
 
             if btn.RegisterForClicks then btn:RegisterForClicks("AnyUp", "AnyDown") end
 
-            tinsert(enemyTargetButtons, btn)
+            tinsert(self.activeTargetWindow.enemyTargetButtons, btn)
 
-            RowifyTargets(targetFrame, btn, enemyTargetButtons, "enemy")
+            RowifyTargets(btn, self.activeTargetWindow.enemyTargetButtons, true)
 
             btn.icon = btn:CreateTexture(nil, "BACKGROUND")
             btn.placeholder = btn.icon
@@ -1258,7 +1170,6 @@ function addon.targeting:UpdateTargetFrame(selector)
         btn:Show()
     end
 
-    local friendlyTargetButtons = targetFrame.friendlyTargetButtons
     local friendlyTargetButtonIndex = 0
     local friendlyList = addon.settings.profile.showTargetingOnProximity and {} or targetList
 
@@ -1284,19 +1195,19 @@ function addon.targeting:UpdateTargetFrame(selector)
     local isLeaderTarget
     for _, targetName in ipairs(friendlyList) do
         friendlyTargetButtonIndex = friendlyTargetButtonIndex + 1
-        btn = friendlyTargetButtons[friendlyTargetButtonIndex]
+        btn = self.activeTargetWindow.friendlyTargetButtons[friendlyTargetButtonIndex]
 
         if not btn then
-            btn = CreateFrame("Button", "RXPTargetFrame_FriendlyButton" .. friendlyTargetButtonIndex, targetFrame,
+            btn = CreateFrame("Button", "RXPTargetFrame_FriendlyButton" .. friendlyTargetButtonIndex, self.activeTargetWindow.frame,
                               "SecureActionButtonTemplate")
             btn:SetAttribute("type", "macro")
             btn:SetSize(25, 25)
 
             if btn.RegisterForClicks then btn:RegisterForClicks("AnyUp", "AnyDown") end
 
-            tinsert(friendlyTargetButtons, btn)
+            tinsert(self.activeTargetWindow.friendlyTargetButtons, btn)
 
-            RowifyTargets(targetFrame, btn, friendlyTargetButtons, "friendly")
+            RowifyTargets(btn, self.activeTargetWindow.friendlyTargetButtons, false)
 
             btn.icon = btn:CreateTexture(nil, "BACKGROUND")
 
@@ -1342,34 +1253,34 @@ function addon.targeting:UpdateTargetFrame(selector)
         btn:Show()
     end
 
-    if friendlyTargetButtonIndex > 0 or enemyTargetButtonIndex > 0 then targetFrame:SetAlpha(1) end
+    if friendlyTargetButtonIndex > 0 or enemyTargetButtonIndex > 0 then self.activeTargetWindow:SetAlpha(1) end
 
-    for f = friendlyTargetButtonIndex + 1, #friendlyTargetButtons do
-        friendlyTargetButtons[f]:Hide()
-        friendlyTargetButtons[f].placeholder:SetTexture(targetPlaceholder)
-        friendlyTargetButtons[f].icon.isDefault = true
+    for f = friendlyTargetButtonIndex + 1, #self.activeTargetWindow.friendlyTargetButtons do
+        self.activeTargetWindow.friendlyTargetButtons[f]:Hide()
+        self.activeTargetWindow.friendlyTargetButtons[f].placeholder:SetTexture(targetPlaceholder)
+        self.activeTargetWindow.friendlyTargetButtons[f].icon.isDefault = true
     end
 
-    for e = enemyTargetButtonIndex + 1, #enemyTargetButtons do
-        enemyTargetButtons[e]:Hide()
-        enemyTargetButtons[e].placeholder:SetTexture(mobPlaceholder)
-        enemyTargetButtons[e].icon.isDefault = true
+    for e = enemyTargetButtonIndex + 1, #self.activeTargetWindow.enemyTargetButtons do
+        self.activeTargetWindow.enemyTargetButtons[e]:Hide()
+        self.activeTargetWindow.enemyTargetButtons[e].placeholder:SetTexture(mobPlaceholder)
+        self.activeTargetWindow.enemyTargetButtons[e].icon.isDefault = true
     end
 
     self.activeTargetCount = friendlyTargetButtonIndex + enemyTargetButtonIndex
 
-    ResizeTargetsFrame(targetFrame, friendlyTargetButtonIndex, enemyTargetButtonIndex)
+    ResizeTargetsFrame(self.activeTargetWindow, friendlyTargetButtonIndex, enemyTargetButtonIndex)
 
     if (friendlyTargetButtonIndex == 0 and enemyTargetButtonIndex == 0) or not addon.settings.profile.showEnabled then
-        targetFrame:Hide()
+        self.activeTargetWindow:Hide()
     elseif addon.settings.profile.showTargetingOnProximity then
-        if proxmityPolling.match or targetFrame.hasFollowTarget then
-            targetFrame:Show()
+        if proxmityPolling.match or self.activeTargetWindow.hasFollowTarget then
+            self.activeTargetWindow:Show()
         else
-            targetFrame:Hide()
+            self.activeTargetWindow:Hide()
         end
     else
-        targetFrame:Show()
+        self.activeTargetWindow:Show()
     end
 end
 

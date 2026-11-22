@@ -260,6 +260,7 @@ function addon.ui.v2:RegisterRXPV2MiniFrame()
         end,
 
         ["OnRelease"] = function(this)
+            this.hideBackgroundSetting = nil
             addon.ui.v2:SetFrameBackdropShown(this.frame, false)
             addon.ui.v2:SetFrameBackdropShown(this.title, false)
         end,
@@ -268,6 +269,18 @@ function addon.ui.v2:RegisterRXPV2MiniFrame()
             if not this.noAutoHeight then this:SetHeight(height or 0) end
         end,
 
+        ["SetScale"] = function(this, scale) this.frame:SetScale(scale) end,
+        ["GetHeight"] = function(this) return this.frame:GetHeight() end,
+        ["GetAlpha"] = function(this) return this.frame:GetAlpha() end,
+        ["SetAlpha"] = function(this, alpha) this.frame:SetAlpha(alpha) end,
+        ["StartMoving"] = function(this) this.frame:StartMoving() end,
+        ["StartSizing"] = function(this, point) this.frame:StartSizing(point) end,
+        ["StopMovingOrSizing"] = function(this) this.frame:StopMovingOrSizing() end,
+        ["SetResizeBounds"] = function(this, width, height) addon.SetResizeBounds(this.frame, width, height) end,
+        ["Hide"] = function(this) this.frame:Hide() end,
+        ["Show"] = function(this) this.frame:Show() end,
+        ["SetShown"] = function(this, shown) this.frame:SetShown(shown) end,
+
         ["SetTitle"] = function(this, label)
             this.title.text:SetText(label or "")
             this.title:SetWidth(this.title.text:GetStringWidth() + 10)
@@ -275,19 +288,19 @@ function addon.ui.v2:RegisterRXPV2MiniFrame()
 
         ["UpdateTheme"] = updateTheme,
 
-        ["UpdateSubTheme"] = function(this, payload)
+        ["UpdateSubTheme"] = function(this)
             local theme = addon.v2:GetTheme()
-            local frame, title = this.frame, this.title
-            addon.ui.v2:ApplyFrameBackdrop(frame, theme.edge, theme.backgroundColors.common,
-                                           theme.borderColors.commonEdge)
-            addon.ui.v2:AddFrameShadow(frame)
-            addon.ui.v2:SetFrameBackdropShown(frame, not (payload and payload.hideBackground))
-            addon.ui.v2:ApplyFrameBackdrop(title, theme.edge, theme.backgroundColors.common,
-                                           theme.borderColors.commonEdge)
-            addon.ui.v2:SetFrameBackdropShown(title, true)
-            title.text:SetFont(theme.font, 9, "")
-            title.text:SetTextColor(unpack(theme.textColor.title))
-            title:SetWidth(title.text:GetStringWidth() + 10)
+            local legacyTheme = not addon.v2:IsEnabled() and addon.activeTheme
+            local backgroundColor = legacyTheme and legacyTheme.background or theme.backgroundColors.common
+            local borderColor = legacyTheme and legacyTheme.bottomFrameHighlight or theme.borderColors.commonEdge
+            addon.ui.v2:ApplyFrameBackdrop(this.frame, theme.edge, backgroundColor, borderColor)
+            addon.ui.v2:AddFrameShadow(this.frame)
+            addon.ui.v2:SetFrameBackdropShown(this.frame, not addon.settings.profile[this.hideBackgroundSetting])
+            addon.ui.v2:ApplyFrameBackdrop(this.title, theme.edge, backgroundColor, borderColor)
+            addon.ui.v2:SetFrameBackdropShown(this.title, true)
+            this.title.text:SetFont(theme.font, 9, "")
+            this.title.text:SetTextColor(unpack(legacyTheme and legacyTheme.textColor or theme.textColor.title))
+            this.title:SetWidth(this.title.text:GetStringWidth() + 10)
         end
     }
 
@@ -295,6 +308,9 @@ function addon.ui.v2:RegisterRXPV2MiniFrame()
         local frameName = Type .. AceGUI:GetNextWidgetNum(Type)
         local frame = CreateFrame("Frame", frameName, UIParent)
         frame:Hide()
+        frame:SetClampedToScreen(true)
+        frame:EnableMouse(true)
+        frame:SetMovable(true)
 
         local content = CreateFrame("Frame", nil, frame)
         content:SetAllPoints(frame)
@@ -1187,8 +1203,7 @@ function addon.ui.v2:ApplyDropdownTheme(dropdown, theme)
     local pullout = dropdown and dropdown.pullout
     if not pullout then return end
 
-    local baseTheme = addon.v2.themes["RXP Blue V2"]
-    theme = theme or addon.v2.themes[addon.settings and addon.settings.profile.activeTheme] or baseTheme
+    theme = theme or addon.v2:GetTheme()
     local frame = pullout.frame
     local button = dropdown.button
 
@@ -2652,6 +2667,11 @@ function addon.ui.v2:RegisterRXPV2ScrollFrame()
     Methods
     -------------------------------------------------------------------------------]]
     local methods = {
+        ["Hide"] = function(this) this.frame:Hide() end,
+        ["Show"] = function(this) this.frame:Show() end,
+        ["SetShown"] = function(this, shown) this.frame:SetShown(shown) end,
+        ["GetHeight"] = function(this) return this.frame:GetHeight() end,
+
         ["OnAcquire"] = function(this)
             this.contentTopPadding = 0
             this:SetScroll(0)
