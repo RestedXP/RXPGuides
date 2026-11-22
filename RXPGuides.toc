@@ -20,7 +20,7 @@
 ## Category-zhTW: 任務
 ## OptionalDeps: Questie, RXPGuides_Themes
 ## SavedVariables: RXPData, RXPDB, RXPSettings, RXPString
-## SavedVariablesPerCharacter: RXPCData, RXPCTrackingData, RXPCComms, RXPCSettings
+## SavedVariablesPerCharacter: RXPCData, RXPCTrackingData, RXPCComms, RXPCSettings, RXPDuoDB
 ## X-Curse-Project-ID: 486246
 ## X-Wago-ID: ZKbebq61
 
@@ -120,5 +120,6 @@ CptStadicsVendorTreasures.lua [AllowLoadGameType vanilla,camelot,tbc,wrath]
 
 GroupLocale.lua
 GroupTranslations.lua
+Duo.lua
 TravelFlightMasters.lua
 Travel.lua

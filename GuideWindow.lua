@@ -2733,6 +2733,10 @@ function RXPFrame:GenerateMenuTable(menu)
         end
     end
 
+    if addon.duo and addon.duo.MenuEntry then
+        tinsert(menuList, addon.duo:MenuEntry())
+    end
+
     tinsert(menuList, {
         text = L("Open Feedback Form"),
         notCheckable = 1,
