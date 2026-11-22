@@ -123,4 +123,6 @@ GroupTranslations.lua
 Duo.lua
 TravelFlightMasters.lua
 Travel.lua
+AttuneRouteData.lua
+AttuneRoute.lua
 Prereq.lua
