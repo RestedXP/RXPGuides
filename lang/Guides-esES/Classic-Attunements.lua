@@ -2,6 +2,7 @@ if GetLocale() ~= "esES" and GetLocale() ~= "esMX" then return end
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
+#forever
 
 << Alliance
 #group RestedXP Guías de Contenido de Nivel Máximo
@@ -345,6 +346,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #group RestedXP Guías de Contenido de Nivel Máximo
 #subgroup Requisitos de Acceso (Attunements)
+#forever
 #name Requisitos de acceso a Onyxia (H) (Onyxia Attunement)
 #guideKind attunement
 #guideIcon rxp-icon-ony
@@ -883,6 +885,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
+#forever
 
 #group RestedXP Guías de Contenido de Nivel Máximo
 #subgroup Llaves
@@ -974,6 +977,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
+#forever
 
 << Alliance
 #group RestedXP Guías de Contenido de Nivel Máximo
@@ -1233,6 +1237,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
+#forever
 
 << Horde
 #group RestedXP Guías de Contenido de Nivel Máximo
@@ -1491,6 +1496,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
+#forever
 
 #group RestedXP Guías de Contenido de Nivel Máximo
 #subgroup Llaves
@@ -1555,6 +1561,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
+#forever
 
 #group RestedXP Guías de Contenido de Nivel Máximo
 #subgroup Llaves

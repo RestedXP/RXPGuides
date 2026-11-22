@@ -2,6 +2,7 @@
 
 	<Script file="Import.lua"/>
 	<Script file="forever\RestedXP-Skyborne.lua"/>
+	<Script file="forever\RestedXP-Skyborne V2.lua"/>
 	<Script file="forever\Alliance-1-10_NightElf.lua"/>
 	<Script file="forever\Alliance-1-13_Human.lua"/>
 	<Script file="forever\Alliance-1-14_DwarfGnome.lua"/>

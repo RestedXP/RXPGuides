@@ -2,6 +2,7 @@ if GetLocale() ~= "esES" and GetLocale() ~= "esMX" then return end
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
+#forever
 #group RestedXP Guías de Contenido de Nivel Máximo
 #subgroup Guía del conjunto Cuoroferal << Druid
 #subgroup Guía del conjunto Maestro de bestias << Hunter
@@ -220,6 +221,7 @@ step << Horde
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
+#forever
 #group RestedXP Guías de Contenido de Nivel Máximo
 #subgroup Guía del conjunto Cuoroferal << Druid
 #subgroup Guía del conjunto Maestro de bestias << Hunter
@@ -666,6 +668,7 @@ step << Horde
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
+#forever
 #group RestedXP Guías de Contenido de Nivel Máximo
 #subgroup Guía del conjunto Cuoroferal << Druid
 #subgroup Guía del conjunto Maestro de bestias << Hunter
@@ -1150,6 +1153,7 @@ step << Horde
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
+#forever
 #group RestedXP Guías de Contenido de Nivel Máximo
 #subgroup Guía del conjunto Cuoroferal << Druid
 #subgroup Guía del conjunto Maestro de bestias << Hunter

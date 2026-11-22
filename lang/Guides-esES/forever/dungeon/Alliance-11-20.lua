@@ -4096,7 +4096,7 @@ step
     #optional
     .isOnQuest 4763
     .goto 1439/1,467.08,6409.38
-    >>|cRXP_WARN_Usa el|r |T133748:0|t[Cuenco de purificación vacío] |cRXP_WARN_en la Poza de la Luna de Auberdine|r
+    >>|cRXP_WARN_Usa el|r |T133748:0|t[Cuenco de purificación vacío] |cRXP_WARN_en el pozo lunar de Auberdine|r
     .collect 12347,1,4763,1 --Filled Cleansing Bowl (1)
     .use 12346
 step
@@ -4136,7 +4136,7 @@ step
 step
     .isOnQuest 4763
     .goto 1439/1,467.08,6409.38
-    >>|cRXP_WARN_Usa el|r |T133748:0|t[Cuenco de purificación vacío] |cRXP_WARN_en la Poza de la Luna de Auberdine|r
+    >>|cRXP_WARN_Usa el|r |T133748:0|t[Cuenco de purificación vacío] |cRXP_WARN_en el pozo lunar de Auberdine|r
     .collect 12347,1,4763,1 --Filled Cleansing Bowl (1)
     .use 12346
 step

@@ -9,8 +9,8 @@ RXPGuides.RegisterGuide([[
 #displayname 1-9 Cielonato << Horde
 #group RestedXP Guía Forever (A) << Alliance
 #group RestedXP Guía Forever (H) << Horde
-#subgroup Guía de subida rápida de nivel (Speedrun) 1-20 << Alliance
-#subgroup Guía de subida rápida de nivel (Speedrun) 1-22 << Horde
+#subgroup Guía de Speedrun 1-20 << Alliance
+#subgroup Guía de Speedrun 1-22 << Horde
 #next 9-13 Isla de Zephras
 #defaultfor Skyborne
 
@@ -148,7 +148,7 @@ step << Skyborne
     .accept 92483 >>Acepta la misión At Home in the Sombras << Rogue
     .accept 92482 >>Acepta la misión El camino del cazador << Hunter
     .accept 92484 >>Acepta la misión Conexión elemental << Shaman
-    .accept 92532 >>Acepta la misión The Warrior's Camino << Warrior
+    .accept 92532 >>Acepta la misión The Guerrero's Camino << Warrior
     .accept 92485 >>Acepta la misión A Student of Nature << Druid
 --Split so players can complete this later if they used Walk on Air early
 step << Skyborne
@@ -167,12 +167,12 @@ step << !Skyborne
     .accept 92483 >>Acepta la misión At Home in the Sombras << Rogue
     .accept 92482 >>Acepta la misión El camino del cazador << Hunter
     .accept 92484 >>Acepta la misión Conexión elemental << Horde Shaman
-    .accept 92532 >>Acepta la misión The Warrior's Camino << Warrior
+    .accept 92532 >>Acepta la misión The Guerrero's Camino << Warrior
     .accept 92485 >>Acepta la misión A Student of Nature << Druid
 step << Druid
     .goto 2521,41.653,23.337
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Xyton Ventargento::251373|r.
-    .turnin 92485 >>Entrega la misión Un Estudiante de la Naturaleza
+    .turnin 92485 >>Entrega la misión A Student of Nature
     .target Xyton Silverwind::251373
 step << Druid
     .money <0.0010
@@ -534,7 +534,7 @@ step
 step << Rogue
     .goto 2521,43.74,24.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Akeri Duskblade::251389|r.
-    .turnin 92483 >>Entrega la misión Como en casa en las sombras
+    .turnin 92483 >>Entrega la misión At Home in the Sombras
     .target Akeri Duskblade::251389
 step << Warrior
     .money <0.02
@@ -552,7 +552,7 @@ step << Warrior
     .xp <4,1
     .goto 2521,43.66,24.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con la |cRXP_FRIENDLY_Maestra del acero Ren::251964|r.
-    .turnin 92532 >>Entrega la misión El camino del guerrero
+    .turnin 92532 >>Entrega la misión The Guerrero's Camino
     .target Blademaster Ren::251964
 step
     .goto 2521,43.44,24.80
@@ -1540,7 +1540,7 @@ step << Horde
 step
     #optional
     #completewith BadwindBennicB
-    >>Mata a los |cRXP_ENEMY_Highlands Bandits::251918|r. Despoja los |T5172975:0|t[|cRXP_LOOT_Pilfered Windstone|r].
+    >>Mata a los |cRXP_ENEMY_Highlands Bandits::251918|r. Despójalos para obtener los |T5172975:0|t[|cRXP_LOOT_Pilfered Windstone|r].
     .complete 92517,1 --|10/10 Highlands Bandit slain
     .complete 93319,1 --|10/10 Pilfered Windstone
     .mob +Highlands Bandit::251918
@@ -1548,7 +1548,7 @@ step
     #optional
     #completewith next
     #label BadwindBennicA
-    >>Mata a |cRXP_ENEMY_"Badwind" Bennic::255534|r.
+    >>Mata a |cRXP_ENEMY_"Badwind" Bennic::255534|r
     .complete 92517,2 --|1/1 "Badwind" Bennic slain
     .mob "Badwind" Bennic::255534
 step
@@ -1573,7 +1573,7 @@ step
     .goto 2521,49.59,34.3,20,0
     .goto 2521,50.4,33.49,30,0
     .goto 2521,50.680,34.214
-    >>Mata a |cRXP_ENEMY_"Badwind" Bennic::255534|r.
+    >>Mata a |cRXP_ENEMY_"Badwind" Bennic::255534|r
     .usespell 1259705
     .complete 92517,2 --|1/1 "Badwind" Bennic slain
     .mob "Badwind" Bennic::255534
@@ -2449,7 +2449,7 @@ step
     .goto 2521,44.465,44.966
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Teeri Bonovento::251906|r
     .target Teeri Wellwind::251906
-    .turnin 92516 >>Entrega la misión Acoso de hipogrifos
+    .turnin 92516 >>Entrega la misión Hipogrifo Harassment
     .turnin 93319 >>Entrega la misión Piedras de viento saqueadas
 step << Shaman/Druid
     .money <0.0504
@@ -2792,12 +2792,12 @@ step
     .complete 93927,1 --1/1 Collect and read the note
 step
     .goto 2521,40.988,64.088
-    >>|TInterface/cursor/crosshair/interact.blp:20|tHaz clic en |cRXP_PICK_Arvensus Shadowsong|r\n |cRXP_WARN_desde lejos|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tHaz clic en el |cRXP_PICK_Arvensus Shadowsong|r\n |cRXP_WARN_desde lejos|r.
     *|cRXP_WARN_Mantén una ranura libre en tus bolsas|r.
     .complete 93927,4 --1/1 Shadowsong Family Signet
 step
     .goto 2521,41.12,64.09
-    >>|TInterface/cursor/crosshair/interact.blp:20|tHaz clic en |cRXP_PICK_Raani Windgazer|r\n |cRXP_WARN_desde lejos|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tHaz clic en la |cRXP_PICK_Raani Windgazer|r\n |cRXP_WARN_desde lejos|r.
     *|cRXP_WARN_Mantén una ranura libre en tus bolsas|r.
     .complete 93927,3 --1/1 Raani's Favorite Feather
 step
@@ -2824,8 +2824,8 @@ step
 step  << Alliance
     #optional
     #completewith NearCommander
-    >>Mata a los |cRXP_ENEMY_Al'Aketh Stormcallers::252068|r. Despójalos para obtener los |T133647:0|t[|cRXP_LOOT_Stolen Shen'dar Suministros|r].
-    *|cRXP_WARN_|cRXP_ENEMY_Al'Aketh Stormcallers|r lanzan|r |T136014:0|t[Nube de relámpagos]. |cRXP_WARN_Muévete fuera de la nube sin atraer a enemigos cercanos|r.
+    >>Mata a |cRXP_ENEMY_Al'Aketh Stormcallers::252068|r. Despójales para obtener los |T133647:0|t[|cRXP_LOOT_Stolen Shen'dar Suministros|r].
+    *|cRXP_WARN_|cRXP_ENEMY_Al'Aketh Stormcallers|r lanza|r |T136014:0|t[Nube de relámpagos]. |cRXP_WARN_Muévete fuera de la nube sin atraer a enemigos cercanos|r.
     >>|TInterface/cursor/crosshair/interact.blp:16|tHaz clic en los |cRXP_PICK_Alijos de suministros|r (bolsas pequeñas).
     .complete 92550,1 --6/6 Al'Aketh Stormcaller slain
     .complete 92551,1 --10/10 Stolen Shen'dar Supplies
@@ -2869,15 +2869,15 @@ step
 step
     #optional
     #completewith CommanderCyclasHeadA
-    >>Mata al |cRXP_ENEMY_Living Relámpago::251662|r.
-    *|cRXP_WARN_Ten cuidado: |cRXP_ENEMY_Living Relámpago|r usa una habilidad similar a Atronar que causa tres veces su daño de cuerpo a cuerpo en un solo golpe.|r
+    >>Mata a |cRXP_ENEMY_Living Relámpago::251662|r.
+    *|cRXP_WARN_Ten cuidado: |cRXP_ENEMY_Living Relámpago|r usa una habilidad similar a Atronar que causa tres veces el daño cuerpo a cuerpo en un golpe|r.
     .complete 92550,2 --4/4 Living Lightning slain
     .mob Living Lightning::251662
 step
     #optional
     #completewith CommanderCyclasHeadA
-    >>Mata a los |cRXP_ENEMY_Al'Aketh Stormcallers::252068|r. Despójalos para obtener los |T133647:0|t[|cRXP_LOOT_Stolen Shen'dar Suministros|r].
-    *|cRXP_WARN_|cRXP_ENEMY_Al'Aketh Stormcallers|r lanzan|r |T136014:0|t[Nube de relámpagos]. |cRXP_WARN_Muévete fuera de la nube sin atraer a enemigos cercanos|r.
+    >>Mata a |cRXP_ENEMY_Al'Aketh Stormcallers::252068|r. Despójales para obtener los |T133647:0|t[|cRXP_LOOT_Stolen Shen'dar Suministros|r].
+    *|cRXP_WARN_|cRXP_ENEMY_Al'Aketh Stormcallers|r lanza|r |T136014:0|t[Nube de relámpagos]. |cRXP_WARN_Muévete fuera de la nube sin atraer a enemigos cercanos|r.
     >>|TInterface/cursor/crosshair/interact.blp:16|tHaz clic en los |cRXP_PICK_Alijos de suministros|r.
     .complete 92550,1 --6/6 Al'Aketh Stormcaller slain
     .complete 92551,1 --10/10 Stolen Shen'dar Supplies
@@ -2907,13 +2907,13 @@ step
 step
     #optional
     #completewith next
-    >>Mata al |cRXP_ENEMY_Living Relámpago::251662|r.
-    *|cRXP_WARN_Ten cuidado: |cRXP_ENEMY_Living Relámpago|r usa una habilidad similar a Atronar que causa tres veces su daño de cuerpo a cuerpo en un solo golpe.|r
+    >>Mata a |cRXP_ENEMY_Living Relámpago::251662|r.
+    *|cRXP_WARN_Ten cuidado: |cRXP_ENEMY_Living Relámpago|r usa una habilidad similar a Atronar que causa tres veces el daño cuerpo a cuerpo en un golpe|r.
     .complete 92550,2 --4/4 Living Lightning slain
     .mob Living Lightning::251662
 step
-    >>Mata |cRXP_ENEMY_Al'Aketh Stormcallers::252068|r. Despójalos para obtener |T133647:0|t[|cRXP_LOOT_Stolen Shen'dar Suministros|r].
-    *|cRXP_WARN_|cRXP_ENEMY_Al'Aketh Stormcallers|r lanzan|r |T136014:0|t[Nube de relámpagos]. |cRXP_WARN_Muévete fuera de la nube sin atraer a enemigos cercanos|r.
+    >>Mata a |cRXP_ENEMY_Al'Aketh Stormcallers::252068|r. Despójales para obtener los |T133647:0|t[|cRXP_LOOT_Stolen Shen'dar Suministros|r].
+    *|cRXP_WARN_|cRXP_ENEMY_Al'Aketh Stormcallers|r lanza|r |T136014:0|t[Nube de relámpagos]. |cRXP_WARN_Muévete fuera de la nube sin atraer a enemigos cercanos|r.
     >>|TInterface/cursor/crosshair/interact.blp:16|tHaz clic en los |cRXP_PICK_Alijos de suministros|r.
     .complete 92550,1 --6/6 Al'Aketh Stormcaller slain
     .complete 92551,1 --10/10 Stolen Shen'dar Supplies
@@ -2921,7 +2921,7 @@ step
 step
     #label LivingLightningA
     >>Mata a |cRXP_ENEMY_Living Relámpago::251662|r.
-    *|cRXP_WARN_Ten cuidado: |cRXP_ENEMY_Living Relámpago|r usa una habilidad similar a Atronar que causa tres veces su daño de cuerpo a cuerpo en un solo golpe.|r
+    *|cRXP_WARN_Ten cuidado: |cRXP_ENEMY_Living Relámpago|r usa una habilidad similar a Atronar que causa tres veces el daño cuerpo a cuerpo en un golpe|r.
     .complete 92550,2 --4/4 Living Lightning slain
     .mob Living Lightning::251662
 step << Horde
@@ -3241,8 +3241,8 @@ RXPGuides.RegisterGuide([[
 #displayname 9-12 Cielonato << Horde
 #group RestedXP Guía Forever (A) << Alliance
 #group RestedXP Guía Forever (H) << Horde
-#subgroup Guía de subida rápida de nivel (Speedrun) 1-20 << Alliance
-#subgroup Guía de subida rápida de nivel (Speedrun) 1-22 << Horde
+#subgroup Guía de Speedrun 1-20 << Alliance
+#subgroup Guía de Speedrun 1-22 << Horde
 #next 13-15 Páramos de Poniente << Alliance !Hunter
 #next 14-16 Costa Oscura << Alliance Hunter
 #next 12-14 Bosque de Argénteos << Horde !Hunter
@@ -3537,7 +3537,7 @@ step
     .isQuestAvailable 93948 -- Deliver the Signet
     .goto 2521,63.33,73.65,15,0
     .goto 2521,63.973,75.095,25 >>Pasa por encima de la colina
-    *|cRXP_WARN_Ignora la Línea Ley; nos saltaremos esto muriendo pronto|r << Alliance
+    *|cRXP_WARN_Ignora la Línea Ley; en breve haremos deathskip|r << Alliance
 step
     .goto 2521,63.973,75.095
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Lotheluum Brisa Estelar::252359|r.
@@ -3593,7 +3593,7 @@ step << Alliance
     .cooldown spell,1259416,>0,1 -- Walk on Air
     .goto 2521,66.47,76.68,10,0
     .goto 2521,66.63,79.94
-    .cast 1259416 >>Salta del árbol y usa |T132845:0|t[Caminar en el aire] para volar hacia el que da las misiones.
+    .cast 1259416 >>Salta del árbol y usa |T132845:0|t[Caminar en el aire] para volar hacia el dador de misiones.
     *|cRXP_WARN_Si lo haces en el momento correcto, puedes cancelarlo en el aire para aterrizar en el edificio|r
     .usespell 1259416
     .macro Cancel Walk on Air,132845 >>Cancela Caminar en el aire
@@ -3651,7 +3651,7 @@ step << Alliance
     .goto 2521,49.75,65.9,30,0
     .goto 2521,50.7,65.36
     >>|TInterface/cursor/crosshair/interact.blp:20|tHaz clic en |cRXP_FRIENDLY_Fillion Flamebreeze::253002|r dentro de la cueva.
-    *|cRXP_WARN_Evita los pájaros y haz clic en Fillion fuera de combate, o te teletransportarás afuera|r.
+    *|cRXP_WARN_Evade los pájaros y haz clic en Fillion fuera de combate, o serás teletransportado fuera|r.
     *|cRXP_WARN_Si hay un Tornado presente, úsalo para viajar más rápido|r.
     .complete 92849,1 --1/1 Find Fillion Flamebreeze
 step << Alliance
@@ -3660,7 +3660,7 @@ step << Alliance
     .isQuestNotComplete 92849 -- The Missing Scholar
     .goto 2521,50.7,65.36
     .aura 1258429 >>|TInterface/cursor/crosshair/interact.blp:20|tHaz clic en |cRXP_FRIENDLY_Fillion Flamebreeze::253002|r dentro de la cueva.
-    *|cRXP_WARN_Evita a los pájaros y haz clic en Fillion fuera de combate, o serás teletransportado afuera|r.
+    *|cRXP_WARN_Evade los pájaros y haz clic en Fillion fuera de combate, o serás teletransportado fuera|r.
     .skipgossipid 136430
     .target Fillion Flamebreeze::253002
 step << Alliance
@@ -3670,9 +3670,9 @@ step << Alliance
     .goto 2521,51.03,67.15,15,0
     .goto 2521,51.55,69.2,35,0
     .goto 2521,52.08,69.41
-    >>Lleva |cRXP_FRIENDLY_Fillion Flamebreeze::253281|r a un lugar seguro.
-    *|cRXP_WARN_Evita a los pájaros y haz clic en Fillion fuera de combate, o serás teletransportado afuera|r.
-    *|cRXP_WARN_Si un pájaro te ataca, cancela el aura portadora para evitar ser teletransportado afuera|r.
+    >>Lleva a |cRXP_FRIENDLY_Fillion Flamebreeze::253281|r a seguridad
+    *|cRXP_WARN_Evade los pájaros y haz clic en Fillion fuera de combate, o serás teletransportado fuera|r.
+    *|cRXP_WARN_Si un pájaro te ataca, cancela el aura de carga para evitar ser teletransportado afuera|r.
     .complete 92849,2 --1/1 Carry Fillion Flamebreeze to safety while avoiding enemies
     .skipgossipid 136430
     .mob Shriekling Fledgling::253282
@@ -3707,7 +3707,7 @@ step << Alliance
     .usespell 1259705
 step << Alliance
     .goto 2521,52.02,65.51
-    >>Mata |cRXP_ENEMY_Shriekling Matriarch::253283|r. Despójala para obtener |T6119035:0|t[|cRXP_LOOT_Shriekling Matriarch's Cabeza|r].
+    >>Mata a la |cRXP_ENEMY_Shriekling Matriarch::253283|r. Despójala para obtener |T6119035:0|t[|cRXP_LOOT_Shriekling Matriarch's Cabeza|r].
     .complete 92850,1 --1/1 Shriekling Matriarch's Head
     .mob Shriekling Matriarch::253283
 step << Alliance
@@ -3719,7 +3719,7 @@ step << Alliance
     .goto 2521,51.31,68.99,25 >>Sal de la Cueva
 step << Alliance
     #completewith FindAameliaWindfieldA
-    >>Mata a |cRXP_ENEMY_Windsong Crawlers::254588|r. Despójalos para conseguir |T133972:0|t[|cRXP_LOOT_Windsong Reptador Carne|r].
+    >>Mata a los |cRXP_ENEMY_Windsong Crawlers::254588|r. Despójalos para obtener |T133972:0|t[|cRXP_LOOT_Windsong Reptador Carne|r].
     .complete 93317,1 --6/6 Windsong Crawler Meat
     .mob Windsong Crawler::254588
     .skipgossipid 98031
@@ -3902,7 +3902,7 @@ step << Horde
     #completewith next
     #label BrokenConstructA
     #hidewindow
-    >>|TInterface/cursor/crosshair/interact.blp:20|tHaz clic en las |cRXP_PICK_Construct Parts|r |cRXP_WARN_dentro de la cueva en el piso inferior|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tHaz clic en |cRXP_PICK_Construct Parts|r |cRXP_WARN_dentro de la cueva en el piso inferior|r.
     .complete 93737,2 --|1/1 Obtain Crystallized lightning from the Shriekling Cave
 step << Horde
     #completewith BrokenConstructA
@@ -3916,7 +3916,7 @@ step << Horde
     .goto 2521,52.933,66.084,15,0
     .goto 2521,53.201,65.424,15,0
     .goto 2521,52.752,64.732,15,0
-    >>|TInterface/cursor/crosshair/interact.blp:20|tHaz clic en las |cRXP_PICK_Construct Parts|r |cRXP_WARN_dentro de la cueva en el piso inferior|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tHaz clic en |cRXP_PICK_Construct Parts|r |cRXP_WARN_dentro de la cueva en el piso inferior|r.
     .complete 93737,2 --|1/1 Obtain Crystallized lightning from the Shriekling Cave
 
 step << Horde
@@ -3974,7 +3974,7 @@ step
     -- .goto 2521,47.43,79.26,30,0
     .goto 2521,46.26,78.04
     >>|TInterface/cursor/crosshair/interact.blp:20|tHaz clic en las |cRXP_PICK_Tormanzanas maduras|r.
-    >>Mata a los |cRXP_ENEMY_Hungry Bandits::252802|r |cRXP_WARN_(stealthed)|r.
+    >>Mata a los |cRXP_ENEMY_Hungry Bandits::252802|r |cRXP_WARN_(en acecho)|r.
     *Consejos de cazador: "Spamea" el tabulador para seleccionarlos pronto, usa Marca del cazador en ellos para poder alejarte y dispararles desde más lejos. << Hunter
     .complete 92682,1 --10/10 Ripe Stormapple
     .complete 92682,2 --5/5 Hungry Bandit slain
@@ -3987,8 +3987,8 @@ step << Horde
 step
     #optional
     #completewith WhatIsMyPurposeA
-    >>Mata a los |cRXP_ENEMY_Ornery Galestriders::251707|r. Despójalos para obtener |T2066012:0|t[|cRXP_LOOT_Lowlands Galestrider Tenderloins|r].
-    *Ten cuidado: |cRXP_WARN_Ornery Galestriders|cRXP_ENEMY_ usan |T132156:0|t[Nube de polvo] para reducir tu probabilidad de golpear.|r
+    >>Mata a los |cRXP_ENEMY_Ornery Galestriders::251707|r. Despoja los |T2066012:0|t[|cRXP_LOOT_Lowlands Galestrider Tenderloins|r].
+    *|cRXP_WARN_Ten cuidado: los |cRXP_ENEMY_Ornery Galestriders|r usan |T132156:0|t[Nube de polvo] para reducir tu probabilidad de acertar.
     .complete 92684,1 --7/7 Lowlands Galestrider Tenderloin
     .mob Ornery Galestrider::251707
 step
@@ -3996,9 +3996,9 @@ step
     #completewith WhatIsMyPurposeA
     >>Usa repetidamente el |T537768:0|t[Mataalabatientes] en los |cRXP_ENEMY_Flutterflies::251622|r
     >>|TInterface/cursor/crosshair/interact.blp:16|tHaz clic en el |cRXP_PICK_Polvo de alabatiente|r.
-    *|cRXP_WARN_Si una Flutterfly no vuela, usa el swatter en ella de nuevo|r << !Mage !Druid
-    *|cRXP_WARN_Lanza muchas veces|r |T136071:0|t[Polimorfia] |cRXP_WARN_y usa el matamoscas en el mismo Flutterfly para polvo adicional|r. << Mage
-    *|cRXP_WARN_Lanza|r |T136100:0|t[Raíces enredadoras] |cRXP_WARN_y usa el matamoscas en el mismo Flutterfly para obtener polvo adicional|r. << Druid
+    *|cRXP_WARN_Si un Flutterfly no vuela lejos, usa el matamoscas en él de nuevo|r << !Mage !Druid
+    *|cRXP_WARN_Lanza repetidamente|r |T136071:0|t[Polimorfia] |cRXP_WARN_y usa el matamoscas en el mismo Flutterfly para obtener polvo extra|r. << Mage
+    *|cRXP_WARN_Lanza|r |T136100:0|t[Raíces enredadoras] |cRXP_WARN_y usa el matamoscas en el mismo Flutterfly para obtener polvo extra|r. << Druid
     .complete 92683,1 --5/5 Flutterfly Dust
     .mob Flutterfly::251622
     .use 253666 -- Flutterfly Swatter
@@ -4029,23 +4029,23 @@ step
 step
     #optional
     #completewith next
-    >>Mata a los |cRXP_ENEMY_Ornery Galestriders::251707|r. Despójalos para obtener |T2066012:0|t[|cRXP_LOOT_Lowlands Galestrider Tenderloins|r].
-        *Ten cuidado: |cRXP_WARN_Ornery Galestriders|cRXP_ENEMY_ usan |T132156:0|t[Nube de polvo] para reducir tu probabilidad de golpear.|r
+    >>Mata a los |cRXP_ENEMY_Ornery Galestriders::251707|r. Despoja los |T2066012:0|t[|cRXP_LOOT_Lowlands Galestrider Tenderloins|r].
+        *|cRXP_WARN_Ten cuidado: los |cRXP_ENEMY_Ornery Galestriders|r usan |T132156:0|t[Nube de polvo] para reducir tu probabilidad de acertar.
     .complete 92684,1 --7/7 Lowlands Galestrider Tenderloin
     .mob Ornery Galestrider::251707
 step
     >>Usa repetidamente el |T537768:0|t[Mataalabatientes] en los |cRXP_ENEMY_Flutterflies::251622|r
     >>|TInterface/cursor/crosshair/interact.blp:16|tHaz clic en el |cRXP_PICK_Polvo de alabatiente|r.
-    *|cRXP_WARN_Si una Flutterfly no vuela, usa el swatter en ella de nuevo|r << !Mage !Druid
-    *|cRXP_WARN_Sigue lanzando|r |T136071:0|t[Polimorfia] |cRXP_WARN_y usa el matamoscas en el mismo Flutterfly para obtener polvo adicional|r. << Mage
-    *|cRXP_WARN_Lanza|r |T136100:0|t[Raíces enredadoras] |cRXP_WARN_y usa el matamoscas en el mismo Flutterfly para polvo adicional|r. << Druid
+    *|cRXP_WARN_Si un Flutterfly no vuela lejos, usa el matamoscas en él de nuevo|r << !Mage !Druid
+    *|cRXP_WARN_Lanza repetidamente|r |T136071:0|t[Polimorfia] |cRXP_WARN_y usa el matamoscas en el mismo Flutterfly para obtener polvo extra|r. << Mage
+    *|cRXP_WARN_Lanza|r |T136100:0|t[Raíces enredadoras] |cRXP_WARN_y usa el matamoscas en el mismo Flutterfly para obtener polvo extra|r. << Druid
     .complete 92683,1 --5/5 Flutterfly Dust
     .mob Flutterfly::251622
     .use 253666 -- Flutterfly Swatter
 step
     #label GalestriderTenderloinA
-    >>Mata a los |cRXP_ENEMY_Ornery Galestriders::251707|r. Despójalos para obtener |T2066012:0|t[|cRXP_LOOT_Lowlands Galestrider Tenderloins|r].
-    *Ten cuidado: |cRXP_WARN_Ornery Galestriders|cRXP_ENEMY_ usan |T132156:0|t[Nube de polvo] para reducir tu probabilidad de golpear.|r
+    >>Mata a los |cRXP_ENEMY_Ornery Galestriders::251707|r. Despoja los |T2066012:0|t[|cRXP_LOOT_Lowlands Galestrider Tenderloins|r].
+    *|cRXP_WARN_Ten cuidado: los |cRXP_ENEMY_Ornery Galestriders|r usan |T132156:0|t[Nube de polvo] para reducir tu probabilidad de acertar.
     .complete 92684,1 --7/7 Lowlands Galestrider Tenderloin
     .mob Ornery Galestrider::251707
 step
@@ -4173,8 +4173,8 @@ step
     #completewith next
     #label Bandit Highwaymen
     *|cRXP_WARN_Equipa el|r |T7791298:0|t[Mataalabatientes] si no tienes |T7791298:0|t[Cachiporrazo zephralí]. << Rogue
-    >>Mata a los |cRXP_ENEMY_Bandit Highwaymen::252820|r. Despójalos para obtener |T133693:0|t[|cRXP_LOOT_Blood-Stained Bandido Masks|r].
-    *|cRXP_WARN_Observa para detectar enemigos ocultos en la huerta de manzanas|r.
+    >>Mata a |cRXP_ENEMY_Bandit Highwaymen::252820|r. Despójalos para las |T133693:0|t[|cRXP_LOOT_Blood-Stained Bandido Masks|r].
+    *|cRXP_WARN_Observa con cuidado a los enemigos sigilosos en el huerto de manzanas|r.
     .complete 92685,1 --7/7 Blood-Stained Bandit Mask
     .mob Bandit Highwaymen::252820
     .use 263329 << Rogue -- Flutterfly Swatter
@@ -4184,7 +4184,7 @@ step
     *|cRXP_WARN_Si ves un Tornado, úsalo para viajar más rápido|r.
 step << Horde
     #completewith next
-    >>|TInterface/cursor/crosshair/interact.blp:20|tHaz clic en las |cRXP_PICK_Construct Parts|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tHaz clic en las |cRXP_PICK_Piezas de Ensamblaje|r.
     .complete 93737,4 --|1/1 Obtain Air Construct Core from the Bandit Camp
 step
     #requires Bandit Highwaymen
@@ -4192,19 +4192,19 @@ step
     .goto 2521,45.615,72.361,35,0
     .goto 2521,43.551,74.999,35,0
     -- .goto 2521,45.760,78.419,35,0
-    >>Mata a los |cRXP_ENEMY_Bandit Highwaymen::252820|r. Despójalos para obtener |T133693:0|t[|cRXP_LOOT_Blood-Stained Bandido Masks|r].
+    >>Mata a |cRXP_ENEMY_Bandit Highwaymen::252820|r. Despójalos para las |T133693:0|t[|cRXP_LOOT_Blood-Stained Bandido Masks|r].
     .complete 92685,1 --7/7 Blood-Stained Bandit Mask
     .mob Bandit Highwaymen::252820
 step << Horde
     #loop
     .goto 2521,45.615,72.361,35,0
     .goto 2521,43.551,74.999,35,0
-    >>|TInterface/cursor/crosshair/interact.blp:20|tHaz clic en las |cRXP_PICK_Construct Parts|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tHaz clic en las |cRXP_PICK_Piezas de Ensamblaje|r.
     .complete 93737,4 --|1/1 Obtain Air Construct Core from the Bandit Camp
 step << Horde Shaman
     .goto 2521,42.393,68.887
     >>|TInterface/cursor/crosshair/interact.blp:20|tHaz clic en |cRXP_PICK_Kuramaa's Stump|r.
-    >>Mata a |cRXP_ENEMY_Kuramaa::268605|r. Despójalo para obtener |T3549050:0|t[|cRXP_LOOT_Kuramaa's Máscara|r].
+    >>Mata a |cRXP_ENEMY_Kuramaa::268605|r. Despójalo para |T3549050:0|t[|cRXP_LOOT_Máscara de Kuramaa|r].
     *|cRXP_WARN_Te empuja hacia atrás y recibe daño de fuego adicional|r.
     .complete 97245,1 --|1/1 Kuramaa's Mask
     .mob Kuramaa::268605
@@ -4239,27 +4239,27 @@ step
     *|cRXP_WARN_Puede estar moviéndose entre ubicaciones durante una secuencia de "roleplay"|r.
     *|cRXP_WARN_Búscala desde la distancia o sigue sus diálogos; la flecha solo marca una ubicación aproximada|r.
     *Puedes saltar de la montaña y usar |T132845:0|t[Caminar en el aire] |cRXP_WARN_en el aire|r para volar hacia el punto marcado de la ruta.
-    *|cRXP_WARN_Estate atento a los bandidos furtivos en el camino|r.
+    *|cRXP_WARN_Observa con cuidado a los bandidos sigilosos en el camino|r.
     .turnin 92685 >>Entrega la misión The Hills Have Ojos
     .accept 92693 >>Acepta la misión Inquebrantables << Alliance
     .target Aamelia Windfield::252800
 step << Alliance
     .goto 2521,46.71,81.94
-    >>Regresa a la ubicación principal de |cRXP_FRIENDLY_Aamelia Windfield::252800|r y habla con ella.
+    >>Regresa a la |cRXP_FRIENDLY_Aamelia Windfield's::252800|r ubicación principal y habla con ella.
     .complete 92693,1 --1/1 Speak with Aamelia Windfield
     .timer 75,Duración del Roleplay
     .target Aamelia Windfield::252800
     .skipgossipid 136302
 step << Alliance
     .goto 2521,47.51,78.44
-    >>Sigue a |cRXP_FRIENDLY_Aamelia Windfield::252800|r. Espera el Roleplay.
-    *Cuando Aamelia se detiene, coloca una Hoguera si tienes una y ninguno está cerca. Inicia la cocción para aumentos de habilidad.
+    >>Sigue a |cRXP_FRIENDLY_Aamelia Windfield::252800|r. Espera el roleplay.
+    *Cuando Aamelia se detiene, coloca una Hoguera si tienes una y ninguna está cerca. Inicia la cocina para aumentar habilidad.
     .complete 92693,2 --1/1 Follow Aamelia and make your final stand
     .use 279981 -- Basic Campfire Kit
 step << Alliance
     .goto 2521,47.51,78.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Aamelia Windfield::252800|r.
-    *|cRXP_WARN_Entrega la misión de inmediato; Aamelia pronto volverá a su ubicación original|r.
+    *|cRXP_WARN_Entrega la misión inmediatamente; Aamelia pronto regresará a su ubicación original|r.
     .turnin 92693 >>Entrega la misión Inquebrantables
     .accept 92703 >>Acepta la misión Deliver the News
     .target Aamelia Windfield::252800
@@ -4327,7 +4327,7 @@ step << Horde Shaman
     .timer 35,Duración del Roleplay
 step << Horde Shaman
     .goto 2521,51.265,85.927
-    >>Espera el Roleplay. Usa la |T135432:0|t[Antorcha of Llama eterna] en el |cRXP_PICK_Brazier of Ofreciendo|r.
+    >>Espera el juego de rol. Usa la |T135432:0|t[Antorcha of Llama eterna] en el ardiente |cRXP_PICK_Brazier of Ofreciendo|r.
     .complete 97257,1 --|1/1 Complete the Ritual with Olariaan
     .use 277329 -- Torch of Eternal Flame
 step << Horde Shaman
@@ -4358,7 +4358,7 @@ step << Horde !Hunter
     .isOnQuest 92703
     .goto 2521,58.986,75.460
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Railee Thriceforged::257422|r.
-    .vendor 257422 >>|cRXP_WARN_Vendor and repair if needed|r.
+    .vendor 257422 >>|cRXP_WARN_Vende y repara si es necesario|r.
     *No vendas |T132832:0|t[Huevos pequeños] ni |T133972:0|t[Carne de zancudo].
     *|cRXP_WARN_Los necesitamos para Cocina después|r.
     .target Railee Thriceforged::257422
@@ -4417,7 +4417,7 @@ step << Mage
     .target Belann Windwood::256507
     .accept 93791 >>Acepta la misión Hablar con Belann
     .turnin 93791 >>Entrega la misión Hablar con Belann
-    .accept 93797 >>Acepta la misión Ramas al viento
+    .accept 93797 >>Acepta la misión Ramas en el viento
 step << Warrior
     .goto 2521,59.889,72.869
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Seena Rompecielos::252377|r.
@@ -4620,7 +4620,7 @@ step << Mage
     .target Anathamaas Aetherwind::252373
 step << Alliance
     #label Turn in The Missing Scholar
-    *|cRXP_WARN_Equipa la|r |T134520:0|t[|cRXP_LOOT_Llave inglesa confiable|r] |cRXP_WARN_y el|r |T7791298:0|t[|cRXP_LOOT_Mataalabatientes|r] |cRXP_WARN_si no tienes el|r |T7791298:0|t[Cachiporrazo zephralí].<< Rogue
+    *|cRXP_WARN_Empuña a dos manos el|r |T134520:0|t[|cRXP_LOOT_Llave inglesa confiable|r] |cRXP_WARN_y|r |T7791298:0|t[|cRXP_LOOT_Mataalabatientes|r] |cRXP_WARN_si no tienes el|r |T7791298:0|t[Cachiporrazo zephralí].<< Rogue
     .goto 2521,66.21,79.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Fillion Flamebreeze::253284|r.
     .turnin 92850 >>Entrega la misión The Missing Scholar 2
@@ -4662,7 +4662,7 @@ step << Horde Hunter
     .goto 2521,51.968,73.084,35,0
     .goto 2521,53.126,73.502,20,0
     .goto 2521,51.268,69.758,35,0
-    .use 267272 >>|cRXP_WARN_Usa tu|r |T132164:0|t[Fusta de doma] |cRXP_WARN_en un|r |cRXP_ENEMY_Windsong Reptador::254588|r |cRXP_WARN_al máximo alcance|r.
+    .use 267272 >>|cRXP_WARN_Usa tu|r |T132164:0|t[Fusta de doma] |cRXP_WARN_en un|r |cRXP_ENEMY_Windsong Reptador::254588|r |cRXP_WARN_a rango máximo|r.
     .complete 94978,1 --Tame a Windsong Crawler
     .mob Windsong Crawler::254588
 step << Horde Hunter
@@ -4674,14 +4674,14 @@ step << Horde Hunter
 step << Horde Hunter
     #optional
     #completewith next
-    +|cRXP_WARN_Retira|cRXP_ENEMY_ tu |rWindsong Reptador::254588|r haciendo clic derecho en su marco de unidad y haciendo clic en despedir, de lo contrario no podrás domesticar un |cRXP_ENEMY_Ornery Galestrider::251707|r
+    +|cRXP_WARN_Retira tu |cRXP_ENEMY_Windsong Reptador::254588|r haciendo clic derecho en su marco de unidad y haciendo clic en Retirar. De lo contrario, no podrás domesticar un |cRXP_ENEMY_Ornery Galestrider::251707|r
     *|cRXP_WARN_Ten cuidado; te atacará cuando lo retires|r.
 step << Horde Hunter
     #loop
     .goto 2521,60.905,69.414,35,0
     .goto 2521,58.339,68.476,35,0
     .goto 2521,53.799,72.161,35,0
-    .use 267298 >>|cRXP_WARN_Usa tu|r |T132164:0|t[Fusta de doma] |cRXP_WARN_en un|r |cRXP_ENEMY_Ornery Galestrider::251707|r |cRXP_WARN_al rango máximo|r.
+    .use 267298 >>|cRXP_WARN_Usa tu|r |T132164:0|t[Fusta de doma] |cRXP_WARN_en un|r |cRXP_ENEMY_Ornery Galestrider::251707|r |cRXP_WARN_a rango máximo|r.
     .complete 94979,1 --Tame an Ornery Galestrider
     .mob Ornery Galestrider::251707
 step << Horde Hunter
@@ -4693,7 +4693,7 @@ step << Horde Hunter
 step << Horde Hunter
     #optional
     #completewith next
-    +|cRXP_WARN_Retira|cRXP_ENEMY_ tu |rOrnery Galestrider::251707|r haciendo clic derecho en su marco de unidad y haciendo clic en despedir, de lo contrario no podrás domesticar un |cRXP_ENEMY_Vuldren::250874|r
+    +|cRXP_WARN_Retira tu |cRXP_ENEMY_Ornery Galestrider::251707|r haciendo clic derecho en su marco de unidad y haciendo clic en Retirar. De lo contrario, no podrás domesticar un |cRXP_ENEMY_Vuldren::250874|r
     *|cRXP_WARN_Ten cuidado; te atacará cuando lo retires|r.
 step << Horde Hunter
     #loop
@@ -4730,7 +4730,7 @@ step << Horde Hunter
     -- .goto 2521,60.905,69.414,35,0
     -- .goto 2521,58.339,68.476,35,0
     -- .goto 2521,53.799,72.161,35,0
-    >>|cRXP_WARN_Lanza|r |T132164:0|t[Domesticar bestia] |cRXP_WARN_en un |cRXP_ENEMY_Windsong Reptador::254588|r para domesticarlo|r -- .tame 1997
+    >>|cRXP_WARN_Lanza|r |T132164:0|t[Domesticar bestia] |cRXP_WARN_sobre un |cRXP_ENEMY_Windsong Reptador::254588|r para domesticarlo|r -- .tame 1997
     *|cRXP_WARN_NOTA:|r Si todos los cangrejos están muertos, también puedes domesticar un |cRXP_ENEMY_Zancavientos enfurruñado::251707|r hasta que encuentres un cangrejo.
     .train 2981 >> |cRXP_WARN_Ataca a enemigos con ella para aprender|r |T132140:0|t[Zarpa (Rango 2)]
     .link https://www.wow-petopia.com/classic/training.php >> |cRXP_WARN_Haz clic aquí para más información sobre el entrenamiento de mascotas|r
@@ -4765,7 +4765,7 @@ step << Alliance
     .target Spirit Healer::6491
 step << Alliance !Hunter
     #completewith Protect the Index
-    >>Mata a |cRXP_ENEMY_Windsong Crawlers::254588|r. Despójalos para conseguir |T133972:0|t[|cRXP_LOOT_Windsong Reptador Carne|r].
+    >>Mata a los |cRXP_ENEMY_Windsong Crawlers::254588|r. Despójalos para obtener |T133972:0|t[|cRXP_LOOT_Windsong Reptador Carne|r].
     .complete 93317,1 --6/6 Windsong Crawler Meat
     .mob Windsong Crawler::254588
     .skipgossipid 98031
@@ -4774,7 +4774,7 @@ step << Alliance Hunter
     #completewith Protect the Index
     .goto 2521,51.56,71.28,40,0
     .goto 2521,50.94,69.46,40,0
-    .use 267272 >> |cRXP_WARN_Usa tu|r |T132164:0|t[Fusta de doma] |cRXP_WARN_en un|r |cRXP_ENEMY_Windsong Reptador::254588|r |cRXP_WARN_al máximo alcance|r.
+    .use 267272 >> |cRXP_WARN_Usa tu|r |T132164:0|t[Fusta de doma] |cRXP_WARN_en un|r |cRXP_ENEMY_Windsong Reptador::254588|r |cRXP_WARN_a rango máximo|r.
     -- *|cRXP_WARN_Be careful while Resurrection Sickness is active|r.
     .complete 94978,1 --Tame a Windsong Crawler
     .mob Windsong Crawler::254588
@@ -4835,7 +4835,7 @@ step << Alliance Hunter
     .goto 2521,52.05,71.71,40,0
     .goto 2521,51.82,72.95,40,0
     .goto 2521,52.81,75.82,40,0
-    .use 267272 >>|cRXP_WARN_Usa tu|r |T132164:0|t[Fusta de doma] |cRXP_WARN_en un|r |cRXP_ENEMY_Windsong Reptador::254588|r |cRXP_WARN_al máximo alcance|r.
+    .use 267272 >>|cRXP_WARN_Usa tu|r |T132164:0|t[Fusta de doma] |cRXP_WARN_en un|r |cRXP_ENEMY_Windsong Reptador::254588|r |cRXP_WARN_a rango máximo|r.
     .complete 94978,1 --Tame a Windsong Crawler
     .mob Windsong Crawler::254588
 step << Alliance Hunter
@@ -4864,14 +4864,14 @@ step << Alliance Hunter
 step << Alliance Hunter
     #optional
     #completewith next
-    +|cRXP_WARN_Retira|cRXP_ENEMY_ tu |rWindsong Reptador::254588|r haciendo clic derecho en su marco de unidad y haciendo clic en despedir, de lo contrario no podrás domesticar un |cRXP_ENEMY_Ornery Galestrider::251707|r
+    +|cRXP_WARN_Retira tu |cRXP_ENEMY_Windsong Reptador::254588|r haciendo clic derecho en su marco de unidad y haciendo clic en Retirar. De lo contrario, no podrás domesticar un |cRXP_ENEMY_Ornery Galestrider::251707|r
     *|cRXP_WARN_Ten cuidado; te atacará cuando lo retires|r.
 step << Alliance Hunter
     #loop
     .goto 2521,60.905,69.414,35,0
     .goto 2521,58.339,68.476,35,0
     .goto 2521,53.799,72.161,35,0
-    .use 267298 >>|cRXP_WARN_Usa tu|r |T132164:0|t[Fusta de doma] |cRXP_WARN_en|r |cRXP_ENEMY_Ornery Galestrider::251707|r |cRXP_WARN_al máximo alcance|r.
+    .use 267298 >>|cRXP_WARN_Usa tu|r |T132164:0|t[Fusta de doma] |cRXP_WARN_en un|r |cRXP_ENEMY_Ornery Galestrider::251707|r |cRXP_WARN_a rango máximo|r.
     .complete 94979,1 --Tame an Ornery Galestrider
     .mob Ornery Galestrider::251707
 step << Alliance Hunter
@@ -4890,7 +4890,7 @@ step << Alliance Hunter
 step << Alliance Hunter
     #optional
     #completewith next
-    +|cRXP_WARN_Retira|cRXP_ENEMY_ tu |rOrnery Galestrider::251707|r haciendo clic derecho en su marco de unidad y haciendo clic en despedir, de lo contrario no podrás domesticar un |cRXP_ENEMY_Vuldren::250874|r
+    +|cRXP_WARN_Retira tu |cRXP_ENEMY_Ornery Galestrider::251707|r haciendo clic derecho en su marco de unidad y haciendo clic en Retirar. De lo contrario, no podrás domesticar un |cRXP_ENEMY_Vuldren::250874|r
     *|cRXP_WARN_Ten cuidado; te atacará cuando lo retires|r.
 step << Alliance Hunter
     .isOnQuest 94013 --Taming the Beast
@@ -4898,7 +4898,7 @@ step << Alliance Hunter
     .subzoneskip 16638,1
     #label SkyhopperMultiClass
     .goto 2521,57.11,74.49
-    .subzone 16626 >> Entra en Gustberry Lowlands
+    .subzone 16626 >> Entra en Gustberry Lowlands.
 step << Alliance Hunter
     #loop
     .goto 2521,54.23,75,40,0
@@ -4945,7 +4945,7 @@ step << Alliance Hunter
     .goto 2521,60.905,69.414,35,0
     .goto 2521,58.339,68.476,35,0
     .goto 2521,53.799,72.161,35,0
-    >>|cRXP_WARN_Lanza|r |T132164:0|t[Domesticar bestia] |cRXP_WARN_en un |cRXP_ENEMY_Windsong Reptador::254588|r para domesticarlo|r -- .tame 1997
+    >>|cRXP_WARN_Lanza|r |T132164:0|t[Domesticar bestia] |cRXP_WARN_sobre un |cRXP_ENEMY_Windsong Reptador::254588|r para domesticarlo|r -- .tame 1997
     *|cRXP_WARN_NOTA:|r Si todos los cangrejos están muertos, también puedes domesticar un |cRXP_ENEMY_Zancavientos enfurruñado::251707|r hasta que encuentres un cangrejo.
     .train 2981 >> |cRXP_WARN_Ataca a enemigos con ella para aprender|r |T132140:0|t[Zarpa (Rango 2)]
     .link https://www.wow-petopia.com/classic/training.php >> |cRXP_WARN_Haz clic aquí para más información sobre el entrenamiento de mascotas|r
@@ -5086,7 +5086,7 @@ step << Horde Druid
 step << Horde Druid
     #completewith next
     .goto 2521,59.59,66.7,30,0
-    >>Mata a |cRXP_ENEMY_Windsong Crawlers::254588|r. Despójalos para conseguir |T133972:0|t[|cRXP_LOOT_Windsong Reptador Carne|r].
+    >>Mata a los |cRXP_ENEMY_Windsong Crawlers::254588|r. Despójalos para obtener |T133972:0|t[|cRXP_LOOT_Windsong Reptador Carne|r].
     .complete 93317,1 --6/6 Windsong Crawler Meat
 step << Horde
     .goto 2521,59.528,66.902,30,0 << Druid
@@ -5102,13 +5102,13 @@ step << Horde
     .goto 2521,55.93,60.3,35,0
     .goto 2521,56.04,59.08,35,0
     >>Mata a los |cRXP_ENEMY_Asesinos Al'Aketh::254626|r.
-    *|cRXP_WARN_Ten cuidado: |cRXP_ENEMY_Al'Aketh Assassins|r usan|r |T132357:0|t[Embate] |cRXP_WARN_para tirarte al suelo y|r |T136189:0|t[Golpe siniestro] |cRXP_WARN_junto a tus ataques de combate cercano|r.
+    *|cRXP_WARN_Ten cuidado: |cRXP_ENEMY_Al'Aketh Assassins|r usan|r |T132357:0|t[Embate] |cRXP_WARN_para derribarte y|r |T136189:0|t[Golpe siniestro] |cRXP_WARN_junto con sus ataques cuerpo a cuerpo|r.
     .complete 98512,1 --10/10 Al'Aketh Assassin slain
     .mob Al'Aketh Assassin::254626
 step << Horde
     .goto 2521,56.80,61.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Piedra de viento Fendaal::273017|r.
-    .turnin 98512 >>Entrega la misión Al'Aketh Assassins.
+    .turnin 98512 >>Entrega la misión Al'Aketh Assassins
     .target Fendaal Windstone::273017
 step << Horde Druid
     .goto 2521,54.284,65.803
@@ -5123,7 +5123,7 @@ step << Horde
     .goto 2521,52.49,57.3,35,0
     .goto 2521,53.55,55.55,35,0
     .goto 2521,54.3,57.94,35,0
-    >>Mata a |cRXP_ENEMY_Windsong Crawlers::254588|r. Despójalos para conseguir |T133972:0|t[|cRXP_LOOT_Windsong Reptador Carne|r].
+    >>Mata a los |cRXP_ENEMY_Windsong Crawlers::254588|r. Despójalos para obtener |T133972:0|t[|cRXP_LOOT_Windsong Reptador Carne|r].
     *|cRXP_WARN_NOTA:|r Esta misión es |cRXP_WARN_OPCIONAL|r. Salta este paso si los cangrejos están muy disputados.
     .complete 93317,1 --6/6 Windsong Crawler Meat
 step << Horde
@@ -5144,7 +5144,7 @@ step << Horde
     .goto 2521,49.511,45.931,35,0
     .goto 2521,49.917,44.806,35,0
     .goto 2521,50.642,44.296,35,0
-    >>|TInterface/cursor/crosshair/interact.blp:20|tHaz clic en las |cRXP_PICK_Construct Parts|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tHaz clic en las |cRXP_PICK_Piezas de Ensamblaje|r.
     .complete 93737,3 --|1/1 Obtain Enchanted Gyrozephyr from Windsong Lake
     .mob Windsong Crawler::254588
 step << Horde Druid
@@ -5262,13 +5262,13 @@ step << Alliance
     .goto 2521,65.36,71.79,30,0
     .goto 2521,65.76,68.4,30,0
     .goto 2521,69.64,67.07
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Yorana Windyreed|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Yorana Windyreed::252378|r.
     *|cRXP_WARN_Si hay un Tornado cerca, úsalo para viajar más rápido|r.
-    .turnin 93320,1 >>Entrega la misión Defender las torres. << Rogue/Hunter/Druid/Shaman
-    .turnin 93320,2 >>Entrega la misión Defender las torres. << Mage/Priest/Warlock
-    .turnin 93320,3 >>Entrega la misión Defender las torres. << Warrior/Paladin
-    .accept 92642 >>Acepta la misión Interrumpiendo Logistics
-    .accept 92645 >>Acepta la misión Ruptura the Pepillo
+    .turnin 93320,1 >>Entrega la misión Defender las torres << Rogue/Hunter/Druid/Shaman
+    .turnin 93320,2 >>Entrega la misión Defender las torres << Mage/Priest/Warlock
+    .turnin 93320,3 >>Entrega la misión Defender las torres << Warrior/Paladin
+    .accept 92642 >>Acepta la misión Interrumpiendo la Logística
+    .accept 92645 >>Acepta la misión Ruptura del Pepillo
     .target Yorana Windyreed::252378
 step << Alliance !Druid
     #completewith Commander Belguilos2
@@ -5345,7 +5345,7 @@ step << Alliance Druid
     .usespell 1259705
 step << Alliance Druid
     #completewith Commander Belguilos Druid2
-    >>Mata a los |cRXP_ENEMY_Al'Aketh Brawlers::270201|r, a los |cRXP_ENEMY_Al'Aketh Preachers::253195|r y a los |cRXP_ENEMY_Al'Aketh Pillagers::253511|r.
+    >>Mata a los |cRXP_ENEMY_Al'Aketh Brawlers::270201|r, a los |cRXP_ENEMY_Al'Aketh Preachers::253195|r, y a los |cRXP_ENEMY_Al'Aketh Pillagers::253511|r.
     *Despójalos para obtener |T1379232:0|t[|cRXP_LOOT_Talismanes de piedra de viento Al'Aketh|r].
    *|cRXP_WARN_Avanzarás aquí, pero probablemente completes la misión en otra ubicación más adelante|r.
     .complete 92834,1 --10/10 Al'Aketh Windstone Charm
@@ -5410,21 +5410,21 @@ step << Alliance Druid
 step << Alliance
     .goto 2521,69.61,67.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Yorana Windyreed::252378|r.
-    .turnin 92645,1 >>Entrega la misión Romper al quebrantador. << Rogue/Hunter/Druid/Shaman
-    .turnin 92645,2 >>Entrega la misión Romper al quebrantador. << Mage/Priest/Warlock
-    .turnin 92645,3 >>Entrega la misión Romper al quebrantador. << Warrior/Paladin
-    .turnin 92642 >>Entrega la misión Interrumpiendo Logistics
-    .accept 92880 >>Acepta la misión Regresar to Valanaar
+    .turnin 92645,1 >>Entrega la misión Rompiendo al Rompedor << Rogue/Hunter/Druid/Shaman
+    .turnin 92645,2 >>Entrega la misión Rompiendo al Rompedor << Mage/Priest/Warlock
+    .turnin 92645,3 >>Entrega la misión Rompiendo al Rompedor << Warrior/Paladin
+    .turnin 92642 >>Entrega la misión Interrumpiendo la logística
+    .accept 92880 >>Acepta la misión Regresar a Valanaar
     .target Yorana Windyreed::252378
 step << Alliance
     #optional
     #completewith next
     #label Return to Valanaar
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Valennia Puñotormenta::252383|r.
-    .turnin 92880,1 >>Entrega la misión Regresar to Valanaar << Warrior/Paladin
-    .turnin 92880,2 >>Entrega la misión Regresar to Valanaar << Rogue -- Quickblade's Dagger
-    .turnin 92880,3 >>Entrega la misión Regresar to Valanaar << Hunter/Mage/Druid/Priest/Warlock
-    .accept 92881 >>Acepta la misión The High Elder's Request
+    .turnin 92880,1 >>Entrega la misión Regresar a Valanaar << Warrior/Paladin
+    .turnin 92880,2 >>Entrega la misión Regresar a Valanaar << Rogue -- Quickblade's Dagger
+    .turnin 92880,3 >>Entrega la misión Regresar a Valanaar << Hunter/Mage/Druid/Priest/Warlock
+    .accept 92881 >>Acepta la misión Solicitud del Gran Ancestro
     .target Valennia Stormfist::252383
 step << Alliance
     #completewith Return to Valanaar
@@ -5436,21 +5436,21 @@ step << Alliance
     .goto 2521,66.31,77.08,5,0
     .goto 2521,66,76.57,8,0
     .goto 2521,66.19,76.22,8,0
-    .goto 2521,66.44,76.4,5 >>Ve alrededor de la montaña y luego sube la torre
+    .goto 2521,66.44,76.4,5 >>Rodea la montaña y luego sube la torre
     *|cRXP_WARN_Si hay un Tornado presente, úsalo para viajar más rápido|r.
 step << Alliance
     #requires Return to Valanaar
     .goto 2521,66.20,76.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Valennia Puñotormenta::252383|r.
-    .turnin 92880,1 >>Entrega la misión Regresar to Valanaar << Alliance Warrior/Alliance Paladin
-    .turnin 92880,2 >>Entrega la misión Regresar to Valanaar << Alliance Rogue -- Quickblade's Dagger
-    .turnin 92880,3 >>Entrega la misión Regresar to Valanaar << Alliance Hunter/Alliance Mage/Alliance Druid/Alliance Priest/Alliance Warlock
-    .accept 92881 >>Acepta la misión The High Elder's Request
+    .turnin 92880,1 >>Entrega la misión Regresar a Valanaar << Alliance Warrior/Alliance Paladin
+    .turnin 92880,2 >>Entrega la misión Regresar a Valanaar << Alliance Rogue -- Quickblade's Dagger
+    .turnin 92880,3 >>Entrega la misión Regresar a Valanaar << Alliance Hunter/Alliance Mage/Alliance Druid/Alliance Priest/Alliance Warlock
+    .accept 92881 >>Acepta la misión Solicitud del Gran Ancestro
     .target Valennia Stormfist::252383
 step << Alliance
     .goto 2521,66.17,76.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Talaanis Cantosombrío::252476|r.
-    .turnin 92881 >>Entrega la misión The High Elder's Request
+    .turnin 92881 >>Entrega la misión La petición del gran ancestro
     .accept 92643 >>Acepta la misión The Turncoat
     .target Talaanis::252476
 
@@ -5685,13 +5685,13 @@ step << Alliance
     *|cRXP_WARN_Equipa el|r |T7792097:0|t[Gran martillo afilado] si no tienes |T7792097:0|t[Quebrantador zephralí]. << Paladin
     *|cRXP_WARN_Equipa la|r |T7798447:0|t[Lanza larga equilibrada] si no tienes |T7792229:0|t[Cuchillo zephralí]. << Priest/Warlock/Mage
     *|cRXP_WARN_Equipa la|r |TInterface/Icons/inv_knife_1h_skybornec60_b_01:0|t[Quickblade's Dagger] si no tienes |T7791298:0|t[Cachiporrazo zephralí]. << Rogue
-    .accept 98512 >>Acepta la misión Al'Aketh Assassins.
+    .accept 98512 >>Acepta la misión Al'Aketh Assassins
     .target Fendaal Windstone::273017
 step << Alliance
     #optional
     #completewith Fendaal Windstone
-    >>Mata a los |cRXP_ENEMY_Al'Aketh Assassins::254626|r.
-    *|cRXP_WARN_Ten cuidado: |cRXP_ENEMY_Al'Aketh Assassins|r usan|r |T132357:0|t[Embate] |cRXP_WARN_para tirarte al suelo y|r |T136189:0|t[Golpe siniestro] |cRXP_WARN_junto a tus ataques de combate cercano|r.
+    >>Mata a |cRXP_ENEMY_Al'Aketh Assassins::254626|r.
+    *|cRXP_WARN_Ten cuidado: |cRXP_ENEMY_Al'Aketh Assassins|r usan|r |T132357:0|t[Embate] |cRXP_WARN_para derribarte y|r |T136189:0|t[Golpe siniestro] |cRXP_WARN_junto con sus ataques cuerpo a cuerpo|r.
     .complete 98512,1 --10/10 Al'Aketh Assassin slain
     .mob Al'Aketh Assassin::254626
 step << Alliance
@@ -5718,8 +5718,8 @@ step << Alliance
     .goto 2521,54.58,60.52,35,0
     .goto 2521,55.93,60.3,35,0
     .goto 2521,56.04,59.08,35,0
-    >>Mata a los |cRXP_ENEMY_Al'Aketh Assassins::254626|r.
-    *|cRXP_WARN_Ten cuidado: |cRXP_ENEMY_Al'Aketh Assassins|r usan|r |T132357:0|t[Embate] |cRXP_WARN_para tirarte al suelo y|r |T136189:0|t[Golpe siniestro] |cRXP_WARN_junto a tus ataques de combate cercano|r.
+    >>Mata a |cRXP_ENEMY_Al'Aketh Assassins::254626|r.
+    *|cRXP_WARN_Ten cuidado: |cRXP_ENEMY_Al'Aketh Assassins|r usan|r |T132357:0|t[Embate] |cRXP_WARN_para derribarte y|r |T136189:0|t[Golpe siniestro] |cRXP_WARN_junto con sus ataques cuerpo a cuerpo|r.
     .complete 98512,1 --10/10 Al'Aketh Assassin slain
     .mob Al'Aketh Assassin::254626
 step << Alliance
@@ -5757,7 +5757,7 @@ step << Alliance Druid
     #completewith next
     #label Windsong Crawler Meat Druid
     .goto 2521,59.59,66.7,30,0
-    >>Mata a los |cRXP_ENEMY_Windsong Crawlers::254588|r |cRXP_WARN_en el camino|r. Despoja |T133972:0|t[|cRXP_LOOT_Windsong Reptador Carne|r].
+    >>Mata a los |cRXP_ENEMY_Windsong Crawlers::254588|r |cRXP_WARN_en el camino|r. Despójalos para obtener |T133972:0|t[|cRXP_LOOT_Windsong Reptador Carne|r].
     .complete 93317,1 --6/6 Windsong Crawler Meat
     .mob Windsong Crawler::254588
 step << Alliance Druid
@@ -5774,7 +5774,7 @@ step << Alliance Druid
     .goto 2521,52.49,57.3,35,0
     .goto 2521,53.55,55.55,35,0
     .goto 2521,54.3,57.94,35,0
-    >>Mata a |cRXP_ENEMY_Windsong Crawlers::254588|r. Despójalos para conseguir |T133972:0|t[|cRXP_LOOT_Windsong Reptador Carne|r].
+    >>Mata a los |cRXP_ENEMY_Windsong Crawlers::254588|r. Despójalos para obtener |T133972:0|t[|cRXP_LOOT_Windsong Reptador Carne|r].
     .complete 93317,1 --6/6 Windsong Crawler Meat
     .mob Windsong Crawler::254588
 step << Alliance
@@ -5786,7 +5786,7 @@ step << Alliance
     .goto 2521,52.49,57.3,35,0
     .goto 2521,53.55,55.55,35,0
     .goto 2521,54.3,57.94,35,0
-    >>Mata a |cRXP_ENEMY_Windsong Crawlers::254588|r. Despójalos para conseguir |T133972:0|t[|cRXP_LOOT_Windsong Reptador Carne|r].
+    >>Mata a los |cRXP_ENEMY_Windsong Crawlers::254588|r. Despójalos para obtener |T133972:0|t[|cRXP_LOOT_Windsong Reptador Carne|r].
     .complete 93317,1 --6/6 Windsong Crawler Meat
     .mob Windsong Crawler::254588
 
@@ -5834,7 +5834,7 @@ step << Alliance
 
 step << Warrior
     .goto 2521,56.56,50.36
-    >>Mata |cRXP_ENEMY_Zaal Escudo de tormenta::257196|r. Despójalo para obtener el |T134959:0|t[|cRXP_LOOT_Skybreaker Baluarte|r].
+    >>Mata a |cRXP_ENEMY_Zaal Escudo de tormenta::257196|r. Despójalo para obtener el |T134959:0|t[|cRXP_LOOT_Skybreaker Baluarte|r].
     .complete 94003,1 --|1/1 Skybreaker Bulwark
     .mob Zaal Stormshield::257196
 
@@ -5848,7 +5848,7 @@ step << Warrior
 --     .usespell 1259705
 step << Alliance
     #completewith Learn
-    >>Mata |cRXP_ENEMY_Shadowgale Shrieklings::256092|r.
+    >>Mata a los |cRXP_ENEMY_Shadowgale Shrieklings::256092|r.
     *Despójalos para obtener las |T1508517:0|t[|cRXP_LOOT_Garfas de chillín|r].
     .complete 92741,1 --8/8 Shriekling Talons
     .mob Shadowgale Shriekling::256092
@@ -5867,8 +5867,8 @@ step
     .accept 93159 >>Acepta la misión El ermitaño extraño
     .complete 93159,1 --1/1 Learn more about the Strange Hermit
     .turnin 93159 >>Entrega la misión El ermitaño extraño
-    .accept 93160 >>Acepta la misión The Forest's Recompensa.
-    .accept 93172 >>Acepta la misión Liberar the Hollows.
+    .accept 93160 >>Acepta la misión The Forest's Recompensa
+    .accept 93172 >>Acepta la misión Liberar the Hollows
     .target Strange Hermit::251684
     .skipgossipid 135787
     .skipgossipid 135786
@@ -5890,7 +5890,7 @@ step
     .complete 93160,1 --8/8 Zephyrseed
 step << Alliance
     #completewith Abandoned Belongings1
-    >>Mata |cRXP_ENEMY_Shadowgale Shrieklings::256092|r.
+    >>Mata a los |cRXP_ENEMY_Shadowgale Shrieklings::256092|r.
     *Despójalos para obtener las |T1508517:0|t[|cRXP_LOOT_Garfas de chillín|r].
     .complete 92741,1 --8/8 Shriekling Talons
     .mob Shadowgale Shriekling::256092
@@ -5904,7 +5904,7 @@ step
     --@THIDDI: Not sure if worth it (Wind Hollow Essence).
     #completewith Resaan's Heirloom
     -- >>Kill |cRXP_ENEMY_Wind Hollows::251676|r. Loot them for |T2576094:0|t[|cRXP_LOOT_Wind Hollow Essence|r]. << Horde
-    >>Mata |cRXP_ENEMY_Wind Hollows::251676|r.
+    >>Mata a los |cRXP_ENEMY_Wind Hollows::251676|r.
     .complete 93172,1 --10/10 Wind Hollow freed
     -- .complete 93736,1 << Horde --10/10 Wind Hollow Essence
     .mob +Wind Hollow::251676
@@ -5921,14 +5921,14 @@ step
     .goto 2521,57.25,33.37,25,0
     .goto 2521,57.23,33.4,25,0
     .goto 2521,57.04,29.36
-    >>|TInterface/cursor/crosshair/interact.blp:20|tHaz clic en el |cRXP_PICK_Resaan Nimbuswalker|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tHaz clic en |cRXP_PICK_Resaan Nimbuswalker|r
     .complete 94897,1 --1/1 Resaan's Heirloom
     .skipgossipid 138670
     .target Resaan Nimbuswalker::259013
 step << Alliance
     #optional
     #completewith Abandoned BelongingsZ
-    >>Mata |cRXP_ENEMY_Wind Hollows::251676|r.
+    >>Mata a los |cRXP_ENEMY_Wind Hollows::251676|r.
     .complete 93172,1 --10/10 Wind Hollow freed
     .mob Wind Hollow::251676
 step << Alliance
@@ -5979,7 +5979,7 @@ step
     --@THIDDI: Not sure if worth it (Wind Hollow Essence).
     #completewith next
     -- >>Kill |cRXP_ENEMY_Wind Hollows::251676|r. Loot them for |T2576094:0|t[|cRXP_LOOT_Wind Hollow Essence|r]. << Horde
-    >>Mata |cRXP_ENEMY_Wind Hollows::251676|r.
+    >>Mata a los |cRXP_ENEMY_Wind Hollows::251676|r.
     .complete 93172,1 --10/10 Wind Hollow freed
     -- .complete 93736,1 << Horde--10/10 Wind Hollow Essence
     .mob +Wind Hollow::251676
@@ -5991,13 +5991,13 @@ step
     --@THIDDI: Not sure if worth it (Wind Hollow Essence).
     #label Wind Hollow
     -- >>Kill |cRXP_ENEMY_Wind Hollows::251676|r. Loot them for |T2576094:0|t[|cRXP_LOOT_Wind Hollow Essence|r]. << Horde
-    >>Mata |cRXP_ENEMY_Wind Hollows::251676|r.
+    >>Mata a los |cRXP_ENEMY_Wind Hollows::251676|r.
     .complete 93172,1 --10/10 Wind Hollow freed
     -- .complete 93736,1 << Horde --10/10 Wind Hollow Essence
     .mob +Wind Hollow::251676
 step << Alliance
     #completewith Unnerving Silence
-    >>Mata |cRXP_ENEMY_Shadowgale Shrieklings::256092|r.
+    >>Mata a los |cRXP_ENEMY_Shadowgale Shrieklings::256092|r.
     *Despójalos para obtener las |T1508517:0|t[|cRXP_LOOT_Garfas de chillín|r].
     .complete 92741,1 --8/8 Shriekling Talons
     .mob Shadowgale Shriekling::256092
@@ -6021,12 +6021,12 @@ step
 step
     #optional
     #completewith Unnerving Silence
-    >>Mata a los |cRXP_ENEMY_Shadowgale Shrieklings::256092|r. Despoja |T132927:0|t[|cRXP_LOOT_Pristine Shriekling Plumas|r].
+    >>Mata a los |cRXP_ENEMY_Shadowgale Shrieklings::256092|r. Despójalos para obtener |T132927:0|t[|cRXP_LOOT_Pristine Shriekling Plumas|r].
     .complete 94486,1 --20/20 Pristine Shriekling Feathers
     .mob Shadowgale Shriekling::256092
 step << Alliance
     #completewith next
-    >>Mata a |cRXP_ENEMY_Al'Aketh Footsoldiers::252665|r y a |cRXP_ENEMY_Al'Aketh Stormchasers::252664|r.
+    >>Mata a los |cRXP_ENEMY_Al'Aketh Footsoldiers::252665|r y a los |cRXP_ENEMY_Al'Aketh Stormchasers::252664|r.
     *Despójalos para obtener |T4622283:0|t[|cRXP_LOOT_Reliquias ensangrentadas|r] y |T1379232:0|t[|cRXP_LOOT_Talismanes de piedra de viento Al'Aketh|r].
     .complete 94487,1 --10/10 Bloody Heirloom
     .complete 92834,1 --10/10 Al'Aketh Windstone Charm
@@ -6049,7 +6049,7 @@ step
     .goto 2521,64.14,39.18,40,0
     .goto 2521,65.7,36.82,40,0
     .goto 2521,65.63,35.57,40,0
-    >>Mata a |cRXP_ENEMY_Al'Aketh Footsoldiers::252665|r y a |cRXP_ENEMY_Al'Aketh Stormchasers::252664|r.
+    >>Mata a los |cRXP_ENEMY_Al'Aketh Footsoldiers::252665|r y a los |cRXP_ENEMY_Al'Aketh Stormchasers::252664|r.
     *Despójalos para obtener |T4622283:0|t[|cRXP_LOOT_Reliquias ensangrentadas|r], |T133856:0|t[|cRXP_LOOT_Orejas de cultor de Al'Aketh|r] y |T1379232:0|t[|cRXP_LOOT_Talismanes de piedra de viento Al'Aketh|r]. << Alliance
     *Despójales para obtener las |T4622283:0|t[|cRXP_LOOT_Reliquias ensangrentadas|r]. << Horde
     .complete 94487,1 --10/10 Bloody Heirloom
@@ -6085,7 +6085,7 @@ step
     --@THIDDI: Not sure if worth it (Pristine Shriekling Feathers).
     #completewith ToHermit << Alliance
     #completewith ForestHollowsB << Horde
-    >>Mata |cRXP_ENEMY_Shadowgale Shrieklings::256092|r.
+    >>Mata a los |cRXP_ENEMY_Shadowgale Shrieklings::256092|r.
     *Despójalos para obtener |T1508517:0|t[|cRXP_LOOT_Garfas de chillín|r] y |T132927:0|t[|cRXP_LOOT_Plumas de chillín prístina|r]. << Alliance
     *Despójalos para obtener las |T132927:0|t[|cRXP_LOOT_Plumas de chillín prístina|r].
     .complete 92741,1 << Alliance --8/8 Shriekling Talons
@@ -6113,7 +6113,7 @@ step << Horde
     #label ForestHollowsB
     .goto 2521,53.97,38.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Strange Hermit::251684|r.
-    .turnin 93160 >>Entrega la misión The Forest's Recompensa.
+    .turnin 93160 >>Entrega la misión The Forest's Recompensa
     .turnin 93172,1 >>Entrega la misión Liberar the Hollows << Rogue/Hunter/Druid/Shaman
     .turnin 93172,2 >>Entrega la misión Liberar the Hollows << Mage/Priest/Warlock
     .turnin 93172,3 >>Entrega la misión Liberar the Hollows << Warrior/Paladin
@@ -6130,7 +6130,7 @@ step << Alliance
     #label ToHermit
     .goto 2521,53.97,38.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Strange Hermit::251684|r.
-    .turnin 93160 >>Entrega la misión The Forest's Recompensa.
+    .turnin 93160 >>Entrega la misión The Forest's Recompensa
     .turnin 93172,1 >>Entrega la misión Liberar the Hollows << Rogue/Hunter/Druid/Shaman
     .turnin 93172,2 >>Entrega la misión Liberar the Hollows << Mage/Priest/Warlock
     .turnin 93172,3 >>Entrega la misión Liberar the Hollows << Warrior/Paladin
@@ -6159,8 +6159,8 @@ step
     #optional
     --@THIDDI: Not sure if worth it (Pristine Shriekling Feathers).
     #completewith next
-    >>Mata a los |cRXP_ENEMY_Shadowgale Shrieklings::256092|r. Despoja |T1508517:0|t[|cRXP_LOOT_Shriekling Garfas|r] y |T132927:0|t[|cRXP_LOOT_Pristine Shriekling Plumas|r]. << Alliance
-    >>Mata a |cRXP_ENEMY_Shadowgale Shrieklings::256092|r. Despójalos para conseguir las |T132927:0|t[|cRXP_LOOT_Pristine Shriekling Plumas|r].
+    >>Mata a los |cRXP_ENEMY_Shadowgale Shrieklings::256092|r. Despójalos para obtener las |T1508517:0|t[|cRXP_LOOT_Shriekling Garfas|r] y las |T132927:0|t[|cRXP_LOOT_Pristine Shriekling Plumas|r]. << Alliance
+    >>Mata a los |cRXP_ENEMY_Shadowgale Shrieklings::256092|r. Despójalos para obtener las |T132927:0|t[|cRXP_LOOT_Pristine Shriekling Plumas|r].
     .complete 92741,1 << Alliance --8/8 Shriekling Talons
     .complete 94486,1 --20/20 Pristine Shriekling Feathers
     .mob +Shadowgale Shriekling::256092
@@ -6170,8 +6170,8 @@ step
 step
     --@THIDDI: Not sure if worth it (Pristine Shriekling Feathers).
     #label Pristine Shriekling Feathers
-    >>Mata a |cRXP_ENEMY_Shadowgale Shrieklings::256092|r. Despójalos para conseguir |T1508517:0|t[|cRXP_LOOT_Shriekling Garfas|r] y |T132927:0|t[|cRXP_LOOT_Pristine Shriekling Plumas|r]. << Alliance
-    >>Mata a los |cRXP_ENEMY_Shadowgale Shrieklings::256092|r. Despoja |T132927:0|t[|cRXP_LOOT_Pristine Shriekling Plumas|r].
+    >>Mata a los |cRXP_ENEMY_Shadowgale Shrieklings::256092|r. Despójalos para obtener las |T1508517:0|t[|cRXP_LOOT_Shriekling Garfas|r] y las |T132927:0|t[|cRXP_LOOT_Pristine Shriekling Plumas|r]. << Alliance
+    >>Mata a los |cRXP_ENEMY_Shadowgale Shrieklings::256092|r. Despójalos para obtener las |T132927:0|t[|cRXP_LOOT_Pristine Shriekling Plumas|r].
     .complete 92741,1 << Alliance --8/8 Shriekling Talons
     .complete 94486,1 --20/20 Pristine Shriekling Feathers
     .mob +Shadowgale Shriekling::256092
@@ -6187,7 +6187,7 @@ step
 step
     .isQuestAvailable 94490 -- Ripped Missive
     .goto 2521,65.54,36.3
-    >>Mata al |cRXP_ENEMY_Commander Haalien::253622|r. Despoja |T134161:0|t[|cRXP_LOOT_Severed Cabeza|r] y |T135332:0|t[|cRXP_LOOT_Ripped Missive|r].
+    >>Mata a |cRXP_ENEMY_Commander Haalien::253622|r. Despójalo para obtener la |T134161:0|t[|cRXP_LOOT_Severed Cabeza|r] y la |T135332:0|t[|cRXP_LOOT_Ripped Missive|r].
     .complete 94488,1 --1/1 Commander Haalien's Severed Head
     .mob Commander Haalien::253622
     .collect 265476,1 -- Ripped Missive
@@ -6205,7 +6205,7 @@ step << Horde
     .goto 2521,64.14,39.18,40,0
     .goto 2521,65.7,36.82,40,0
     .goto 2521,65.63,35.57,40,0
-    >>Mata a |cRXP_ENEMY_Al'Aketh Footsoldiers::252665|r y a |cRXP_ENEMY_Al'Aketh Stormchasers::252664|r.
+    >>Mata a los |cRXP_ENEMY_Al'Aketh Footsoldiers::252665|r y a los |cRXP_ENEMY_Al'Aketh Stormchasers::252664|r.
     *Despójalos para obtener las |T133856:0|t[|cRXP_LOOT_Orejas de cultor de Al'Aketh|r].
     .complete 93165,1 --10/10 Al'Aketh Cultist's Ear
     .mob Al'Aketh Footsoldier::252665
@@ -7058,7 +7058,7 @@ step << Alliance Hunter
     #label DarkshoreCook1
     #completewith DarkshoreBoat
     >>|cRXP_WARN_En el barco si acaba de llegar o en el muelle si acaba de partir:|r
-    .cast 818 >>|cRXP_WARN_Crea una|r |T135805:0|t[Lumbre] |cRXP_WARN_(en tu libro de profesiones)|r
+    .cast 818 >>|cRXP_WARN_Crea una|r |T135805:0|t[Lumbre] |cRXP_WARN_(en tu Libro de profesiones)|r
     .usespell 818
     .zoneskip Darkshore
     .itemcount 769,1 --Chunk of Boar Meat (1+)
@@ -7072,7 +7072,7 @@ step << Alliance Hunter
     #label DarkshoreCook2
     #completewith DarkshoreBoat
     >>|cRXP_WARN_En el barco si acaba de llegar o en el muelle si acaba de partir:|r
-    .cast 818 >>|cRXP_WARN_Crear una|r |T135805:0|t[Lumbre] |cRXP_WARN_(en tu Libro de Profesión)|r
+    .cast 818 >>|cRXP_WARN_Crea una|r |T135805:0|t[Lumbre] |cRXP_WARN_(en tu Libro de profesiones)|r
     .usespell 818
     .zoneskip Darkshore
     .itemcount 769,<1 --Chunk of Boar Meat (<1)
@@ -7086,7 +7086,7 @@ step << Alliance Hunter
     #label DarkshoreCook3
     #completewith DarkshoreBoat
     >>|cRXP_WARN_En el barco si acaba de llegar o en el muelle si acaba de partir:|r
-    .cast 818 >>|cRXP_WARN_Crear una|r |T135805:0|t[Lumbre] |cRXP_WARN_(en tu Libro de Profesión)|r
+    .cast 818 >>|cRXP_WARN_Crea una|r |T135805:0|t[Lumbre] |cRXP_WARN_(en tu Libro de profesiones)|r
     .usespell 818
     .zoneskip Darkshore
     .itemcount 769,1 --Chunk of Boar Meat (1+)
@@ -7239,7 +7239,7 @@ step << Horde
     .isQuestComplete 92708 -- A Grand Adventure
     .goto 2521,59.154,79.789
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ayessa Dawnsinger::251968|r.
-    .turnin 92708 >>Entrega la misión A Grand Adventure.
+    .turnin 92708 >>Entrega la misión A Grand Adventure
     .target Ayessa Dawnsinger::251968
 step << Horde
     .abandon 92708 >>Abandona la misión A Grand Adventure
@@ -7248,12 +7248,12 @@ step << Horde
     .zoneskip 2521,1 -- Zephras Isle
     .isQuestAvailable 95350 -- Welcome to Azeroth
     .goto 2521,57.921,80.781
-    .zone 1412 >>Toma el barco aéreo hacia |cRXP_PICK_Mulgore|r.
+    .zone 1412 >>Toma el dirigible a |cRXP_PICK_Mulgore|r.
 step << Horde Druid Skyborne
     .goto 1412/1,423.400,-659.000
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Muln Furia térrea::259118|r.
     .target Muln Earthfury::259118
-    .accept 94911 >>Acepta la misión Child of Nature.
+    .accept 94911 >>Acepta la misión Child of Nature
 step << Horde
     .goto 1412/1,426.100,-658.000
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Alaana Stormwalker::259119|r.
