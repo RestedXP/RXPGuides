@@ -120,3 +120,5 @@ CptStadicsVendorTreasures.lua [AllowLoadGameType vanilla,camelot,tbc,wrath]
 
 GroupLocale.lua
 GroupTranslations.lua
+TravelFlightMasters.lua
+Travel.lua
