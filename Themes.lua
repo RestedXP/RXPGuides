@@ -239,19 +239,13 @@ end
 function addon:ReloadTheme()
     if not self.settings.profile.enableThemeLiveReload then return end
 
-    self.RenderFrame('themeReload')
     self.v2:ConvertThemes()
+    self.RenderFrame('themeReload')
     self.SetupArrow()
 
     if self.v2:IsEnabled() then
         self.v2:UpdateGuideWindow()
         self.v2:GetGuideWindow():UpdateTheme({})
-
-        if self.activeItemFrame then self.activeItemFrame:UpdateVisuals() end
-
-        if self.targeting and self.targeting.activeTargetFrame then
-            self.targeting.activeTargetFrame:UpdateVisuals()
-        end
 
         self.v2:UpdateActiveStepTheme()
     end

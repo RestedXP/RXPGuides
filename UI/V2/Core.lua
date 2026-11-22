@@ -20,6 +20,7 @@ function addon.ui.v2:Initialize()
     L = addon.locale.Get
 
     self:RegisterRXPV2CommsWindow()
+    self:RegisterRXPV2MiniFrame()
     self:RegisterRXPV2CommsText()
     self:RegisterRXPV2LevelSplitsColumn()
     self:RegisterRXPV2LevelSplitsRow()
@@ -243,6 +244,76 @@ function addon.ui.v2:RegisterRXPV2CommsWindow()
     end
 
     AceGUI:RegisterLayout(Type, function() end)
+    AceGUI:RegisterWidgetType(Type, Constructor, Version)
+end
+
+function addon.ui.v2:RegisterRXPV2MiniFrame()
+    local Type, Version = "RXPV2MiniFrame", 1
+    if not AceGUI or (AceGUI:GetWidgetVersion(Type) or 0) >= Version then return end
+
+    local methods = {
+        ["OnAcquire"] = function(this)
+            this:SetWidth(160)
+            this:SetHeight(50)
+            this.title.text:SetFont(addon.v2:GetTheme().font, 9, "")
+            this:SetTitle("")
+        end,
+
+        ["OnRelease"] = function(this)
+            addon.ui.v2:SetFrameBackdropShown(this.frame, false)
+            addon.ui.v2:SetFrameBackdropShown(this.title, false)
+        end,
+
+        ["LayoutFinished"] = function(this, _, height)
+            if not this.noAutoHeight then this:SetHeight(height or 0) end
+        end,
+
+        ["SetTitle"] = function(this, label)
+            this.title.text:SetText(label or "")
+            this.title:SetWidth(this.title.text:GetStringWidth() + 10)
+        end,
+
+        ["UpdateTheme"] = updateTheme,
+
+        ["UpdateSubTheme"] = function(this, payload)
+            local theme = addon.v2:GetTheme()
+            local frame, title = this.frame, this.title
+            addon.ui.v2:ApplyFrameBackdrop(frame, theme.edge, theme.backgroundColors.common,
+                                           theme.borderColors.commonEdge)
+            addon.ui.v2:AddFrameShadow(frame)
+            addon.ui.v2:SetFrameBackdropShown(frame, not (payload and payload.hideBackground))
+            addon.ui.v2:ApplyFrameBackdrop(title, theme.edge, theme.backgroundColors.common,
+                                           theme.borderColors.commonEdge)
+            addon.ui.v2:SetFrameBackdropShown(title, true)
+            title.text:SetFont(theme.font, 9, "")
+            title.text:SetTextColor(unpack(theme.textColor.title))
+            title:SetWidth(title.text:GetStringWidth() + 10)
+        end
+    }
+
+    local function Constructor()
+        local frameName = Type .. AceGUI:GetNextWidgetNum(Type)
+        local frame = CreateFrame("Frame", frameName, UIParent)
+        frame:Hide()
+
+        local content = CreateFrame("Frame", nil, frame)
+        content:SetAllPoints(frame)
+
+        local title = CreateFrame("Frame", "$parent_title", frame)
+        title:SetPoint("TOPLEFT", frame, 5, 8)
+        title:SetFrameLevel(frame:GetFrameLevel() + 3)
+        title:SetHeight(19)
+        title:EnableMouse(true)
+        title.text = title:CreateFontString(nil, "OVERLAY")
+        title.text:SetPoint("CENTER", title)
+        title.text:SetJustifyH("CENTER")
+        title.text:SetJustifyV("MIDDLE")
+
+        local widget = {frame = frame, content = content, title = title, type = Type}
+        for method, func in pairs(methods) do widget[method] = func end
+        return AceGUI:RegisterAsContainer(widget)
+    end
+
     AceGUI:RegisterWidgetType(Type, Constructor, Version)
 end
 
