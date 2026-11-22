@@ -297,21 +297,21 @@ function addon.CreateActiveItemFrame(self, anchor, enableText)
 
     if not f.title then
         f.title = CreateFrame("Frame", "$parent_title", f, BackdropTemplate)
-        f.title:SetPoint("TOPLEFT", f, 5, 8)
+        f.title:SetPoint("TOPLEFT", f, 5, f.v2 and 10 or 8)
         f.title:SetFrameLevel(f:GetFrameLevel() + 3)
         f.title.text = f.title:CreateFontString(nil, "OVERLAY")
         f.title.text:ClearAllPoints()
         f.title.text:SetPoint("CENTER", f.title, 0, 0)
         f.title.text:SetJustifyH("CENTER")
         f.title.text:SetJustifyV("MIDDLE")
-        f.title.text:SetFont(addon.v2:IsEnabled() and addon.v2:GetTheme().font or addon.font, 9, "")
+        f.title.text:SetFont(f.v2 and addon.v2:GetTheme().font or addon.font, 9, "")
         f.title.text:SetText(L"Active Items")
         f.title:EnableMouse(true)
         f.title:SetScript("OnMouseDown", f.onMouseDown)
         f.title:SetScript("OnMouseUp", f.onMouseUp)
     end
 
-    f.UpdateVisuals = addon.v2:IsEnabled() and UpdateV2IconFrameVisuals or UpdateV1IconFrameVisuals
+    f.UpdateVisuals = f.v2 and UpdateV2IconFrameVisuals or UpdateV1IconFrameVisuals
     f.UpdateFrame = addon.UpdateItemFrame
     f:UpdateVisuals()
     f:SetHeight(43)
@@ -400,7 +400,6 @@ function addon.UpdateItemFrame(itemFrame)
 
     local buttonList = itemFrame.buttonList
     local itemList = GetActiveItemList()
-    local contentOffset = itemFrame.v2 and 0 or 3
 
     itemFrame.title:SetSize(itemFrame.title.text:GetStringWidth() + 10, 19)
     local i = 0
@@ -421,7 +420,8 @@ function addon.UpdateItemFrame(itemFrame)
 
             btn:ClearAllPoints()
             if n == 1 then
-                btn:SetPoint("BOTTOMLEFT", itemFrame, "BOTTOMLEFT", 6, 4 + contentOffset)
+                btn:SetPoint("BOTTOMLEFT", itemFrame, "BOTTOMLEFT",
+                             itemFrame.v2 and 4 or 6, itemFrame.v2 and 2 or 7)
             else
                 btn:SetPoint("CENTER", buttonList[n - 1], "CENTER", 27, 0)
             end
@@ -494,7 +494,7 @@ function addon.UpdateItemFrame(itemFrame)
     end
 
     for n = i + 1, #buttonList do buttonList[n]:Hide() end
-    local width = math.max(itemFrame.title:GetWidth() + 10, i * 27 + 10)
+    local width = math.max(itemFrame.title:GetWidth() + 10, i * 27 + (itemFrame.v2 and 8 or 10))
     itemFrame:SetWidth(width);
     UpdateCooldowns()
 
