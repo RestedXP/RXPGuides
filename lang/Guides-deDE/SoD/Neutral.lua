@@ -16,11 +16,11 @@ RXPGuides.RegisterGuide([[
 step
     #season 2
     #completewith next
-    .zone Wetlands >>Reist zum Sumpfland
+    .zone Wetlands >>Reist ins Sumpfland
 step
     #season 2
     #completewith next
-    .goto Wetlands,51.914,62.692,30 >> BETRETET die Thelgenfelsen-Höhle
+    .goto Wetlands,51.914,62.692,30 >> Betretet die Thelgenfelsenhöhle
     .train 425446,1 << Warrior
     .train 410115,1 << Hunter
 step
@@ -51,7 +51,7 @@ RXPGuides.RegisterGuide([[
 << Rogue SoD
 #group RestedXP Runen & Bücher Guide
 #subgroup Beine
-#name Vergiften - 25 (Hügellandhof)
+#name Vergiften - 25 (Hillsbrad)
 #title Vergiften
 
 
@@ -223,7 +223,7 @@ RXPGuides.RegisterGuide([[
 #displayname Parierdolch - 25 (The Barrens) << Rogue
 #next Kreuzfahrerstoß - 4 (Wald von Elwynn) << Human Paladin
 #next Kreuzfahrerstoß - 4 (Dun Morogh) << Dwarf Paladin
-#next Lavaeruption - 25 (Vorgebirge des Hügellands) << Shaman
+#next Lavaeruption - 25 (Vorgebirge von Hillsbrad) << Shaman
 #title Glücksfall << Priest
 #title Einsamer Wolf << Hunter
 #title Überleben des Stärkeren << Druid
@@ -238,7 +238,7 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith next
-    .zone The Barrens >>Reist nach Ratschet in The Barrens. |cRXP_WARN_Ihr braucht 3 Gold, um die Rune zu kaufen|r
+    .zone The Barrens >>Reist nach Ratchet im Brachland. |cRXP_WARN_Ihr braucht 3 Gold, um die Rune zu kaufen|r
 step
     .goto The Barrens,61.8,39.4
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Grizzby|r im Gasthaus
@@ -382,7 +382,7 @@ step << Druid
     .train 410028,1
 step << Druid
     #completewith next
-    .zone Hillsbrad Foothills >> Reist nach Vorgebirge des Hügellands
+    .zone Hillsbrad Foothills >> Reist zum Vorgebirge von Hillsbrad
     .train 410028,1
 step << Druid
     .goto Hillsbrad Foothills,36.914,76.142
@@ -678,7 +678,7 @@ RXPGuides.RegisterGuide([[
 << Hunter SoD
 #group RestedXP Runen & Bücher Guide
 #subgroup Brust
-#name Kobrastöße - 25 (Vorgebirge des Hügellands)
+#name Kobrastöße - 25 (Vorgebirge von Hillsbrad)
 #title Kobrastöße
 
 
@@ -687,8 +687,8 @@ RXPGuides.RegisterGuide([[
 step
     #season 2
     #completewith next
-    .zone Hillsbrad Foothills >>Reist nach Vorgebirge des Hügellands (z.B. von Unterstadt durch Silberwald) << Horde
-    .zone Hillsbrad Foothills >>Reist nach Vorgebirge des Hügellands (z.B. nördlich von Sumpfland) << Alliance
+    .zone Hillsbrad Foothills >>Reist zum Vorgebirge von Hillsbrad (z.B. von Undercity durch Silberwald) << Horde
+    .zone Hillsbrad Foothills >>Reist zum Vorgebirge von Hillsbrad (z.B. nördlich von Sumpfland) << Alliance
 step
     #season 2
     #loop
@@ -1279,7 +1279,7 @@ step
     .target Bibbly F'utzbuckle
 step
     #completewith next
-    .zone Stranglethorn Vale >>Reist nach Schlingendorntal |cRXP_WARN_(Beutebucht)|r
+    .zone Stranglethorn Vale >>Reist nach Schlingendorntal |cRXP_WARN_(Booty Bay)|r
 step
     .train 431663,1 << Priest
     .train 416031,1 << Paladin
@@ -1783,7 +1783,7 @@ step
     .accept 79975 >> Akzeptiert die Quest Adlerfaust
 step
     #completewith next
-    .goto Hillsbrad Foothills,87.691,48.166,10 >> Reist zur Thoradinsmauer an der Grenze zwischen Arathihochland und Vorgebirge des Hügellands
+    .goto Hillsbrad Foothills,87.691,48.166,10 >> Reist zum Thoradinswall an der Grenze zwischen Arathihochland und dem Vorgebirge von Hillsbrad
 step
     #completewith next
     .goto Arathi Highlands,24.132,21.470,7 >> Klettert auf den Karren und begebt euch entlang der Mauer hinauf
@@ -2220,11 +2220,11 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Runen & Bücher Guide
 #subgroup Läuten
 #title Wildkampf-Spezialisierung
-#name Wildkampf-Spezialisierung - 60 (Winterquell)
+#name Wildkampf-Spezialisierung - 60 (Winterspring)
 
 step
     #completewith next
-    .zone Winterspring >> Reist nach Winterquell
+    .zone Winterspring >> Reist nach Winterspring
 step
     .goto Winterspring,49.0,8.0,50 >> Geht nach Norden zu den Frostsäblerfelsen
 step
@@ -2294,11 +2294,11 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Runen & Bücher Guide
 #subgroup Läuten
 #title Frostschaden-Spezialisierung
-#name Frostschaden-Spezialisierung - 60 (Winterquell)
+#name Frost-Spezialisierung - 60 (Winterspring)
 
 step
     #completewith next
-    .zone Winterspring >> Reist nach Winterquell
+    .zone Winterspring >> Reist nach Winterspring
 step
     .goto Winterspring,59.0,59.0,50 >> Geht nach Süden zum Owlbeast-Lager
 step

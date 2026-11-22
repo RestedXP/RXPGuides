@@ -561,7 +561,7 @@ step
     #optional
     #label Charm
     #completewith next
-    .zone Undercity >> Reist zur Unterstadt
+    .zone Undercity >> Reist nach Undercity
     .train 401767,1
 step
     #label Comprehension
@@ -754,7 +754,7 @@ step
     #optional
     #label Charm
     #completewith next
-    .zone Undercity >> Reist zur Unterstadt
+    .zone Undercity >> Reist nach Undercity
     .train 401765,1
 step
     #label Comprehension
@@ -1433,12 +1433,12 @@ step
 step
     #completewith next
     .zone The Barrens >>Reist nach |cFFfa9602Das Brachland|r |cRXP_WARN_zu Fuß, wenn ihr keine Flugroute habt.|r
-    .fly Ratchet >>Erlernt die Flugroute nach |cFFfa9602Ratschet|r |cRXP_WARN_falls ihr sie bereits freigeschalten habt.|r
+    .fly Ratchet >>Nehmt die Flugroute nach |cFFfa9602Ratchet|r |cRXP_WARN_falls ihr sie bereits freigeschaltet habt.|r
     .disablecheckbox
     .isQuestAvailable 79097
 step
     .goto The Barrens,62.665,36.222
-    >>Klickt |cRXP_PICK_Goblin Foliant|r |cFFfa9602in Ratschet neben|r |cRXP_FRIENDLY_Gazlowe|r um |T133744:0|t[Baxtan on Destructive Magics.] zu erhalten.
+    >>Klickt |cRXP_PICK_Goblin Foliant|r |cFFfa9602in Ratchet neben|r |cRXP_FRIENDLY_Gazlowe|r um |T133744:0|t[Baxtan: Über zerstörerische Magie] zu erhalten.
     .collect 208800,1
     .isQuestAvailable 79097
 step
@@ -1509,7 +1509,7 @@ step
     -- .zone Silverpine Forest >>Travel to |cFFfa9602Silverpine Forest|r primarily on foot.
     -- .fly Hillsbrad Foothills >> |cRXP_WARN_Fly to Hillsbrad Foothills if you have the flight path unlocked.|r
     -- .disablecheckbox
-    .fly Arathi Highlands >> |cRXP_WARN_Fliegt nach Arathihochland, falls ihr nicht die Flugroute nach Hügellandhof Foothils freigeschaltet habt.|r
+    .fly Arathi Highlands >> |cRXP_WARN_Fliegt ins Arathihochland, falls ihr nicht die Flugroute zum Vorgebirge von Hillsbrad freigeschaltet habt.|r
     .disablecheckbox
     .fly Wetlands >> |cRXP_WARN_Fliegt nach Sumpfland, falls ihr Arathihochland nicht freigeschaltet habt.|r
     .disablecheckbox
@@ -1649,13 +1649,13 @@ step
 step
     #completewith next
     .zone The Barrens >>Reist nach |cFFfa9602The Barrens|r |cRXP_WARN_zu Fuß, falls ihr keine Flugrouten habt.|r
-    .fly Ratchet >>Erlernt die Flugroute nach |cFFfa9602Ratschet|r |cRXP_WARN_wenn ihr sie freigeschaltet habt.|r
-    .fly Crossroads >>Erlernt die Flugroute nach |cFFfa9602Kreuzweg|r |cRXP_WARN_wenn ihr die nach Ratschet noch nicht habt.|r
+    .fly Ratchet >>Nehmt die Flugroute nach |cFFfa9602Ratchet|r |cRXP_WARN_falls ihr sie bereits freigeschaltet habt.|r
+    .fly Crossroads >>Nehmt die Flugroute nach |cFFfa9602Ratchet|r |cRXP_WARN_falls ihr sie bereits freigeschaltet habt.|r
     .disablecheckbox
     .isQuestAvailable 79097
 step
     .goto The Barrens,62.665,36.222
-    >>Klickt |cRXP_PICK_Goblin Foliant|r |cFFfa9602in Ratschet neben|r |cRXP_FRIENDLY_Gazlowe|r um |T133744:0|t[Baxtan on Destructive Magics.] zu erhalten.
+    >>Klickt |cRXP_PICK_Goblin Foliant|r |cFFfa9602in Ratchet neben|r |cRXP_FRIENDLY_Gazlowe|r um |T133744:0|t[Baxtan: Über zerstörerische Magie] zu erhalten.
     .collect 208800,1
     .isQuestAvailable 79097
 step
@@ -1710,7 +1710,7 @@ step
 step
     #completewith next
     .zone The Barrens >>Reist nach |cFFfa9602Das Brachland|r |cRXP_WARN_zu Fuß, wenn ihr keine Flugroute habt.|r
-    .fly Ratchet >>Erlernt die Flugroute nach |cFFfa9602Ratschet|r |cRXP_WARN_falls ihr sie bereits freigeschalten habt.|r
+    .fly Ratchet >>Nehmt die Flugroute nach |cFFfa9602Ratchet|r |cRXP_WARN_falls ihr sie bereits freigeschaltet habt.|r
     .disablecheckbox
     .isQuestAvailable 79097
 step
@@ -1782,8 +1782,8 @@ step
     .collect 220346,1
     .isQuestAvailable 81949
 step
-    .zone Undercity >>Reist nach |cFFfa9602Unterstadt|r
-    .cast 3563 >>Benutzt [Teleporter Unterstadt] |cRXP_WARN_wenn ihr|r |T134419:0|t[Rune der Teleportation] habt.
+    .zone Undercity >>Reist nach |cFFfa9602Undercity|r
+    .cast 3563 >>Benutzt [Teleportieren: Undercity] |cRXP_WARN_wenn ihr|r |T134419:0|t[Rune der Teleportation] habt
     .disablecheckbox
 step
     .goto Undercity,69.8,27.6
@@ -1798,7 +1798,7 @@ step
 step
     #completewith next
     .zone Silverpine Forest >>Reist zu Fuß nach |cFFfa9602Silberwald|r, |cRXP_WARN_falls ihr in|r |cFFfa9602Tirisfal|r seid.
-    .fly Silverpine Forest >>Erlernt die Flugroute zu |cFFfa9602Silberwald|r |cRXP_WARN_falls ihr in|r |cFFfa9602Unterstadt seid.|r
+    .fly Silverpine Forest >>Erlernt die Flugroute nach |cFFfa9602Silberwald|r |cRXP_WARN_falls ihr in|r |cFFfa9602Undercity|r seid.
     .disablecheckbox
     .isQuestAvailable 79096
 step
@@ -1812,7 +1812,7 @@ step
 step
     #completewith next
     .zone Silverpine Forest >>Reist nach |cFFfa9602Silberwald.|r
-    .fly Silverpine Forest >>Erlernt die Flugroute nach |cFFfa9602Silberwald|r |cRXP_WARN_wenn ihr in|r |cFFfa9602Unterstadt|r seid.
+    .fly Silverpine Forest >>Erlernt die Flugroute nach |cFFfa9602Silberwald|r |cRXP_WARN_falls ihr in|r |cFFfa9602Undercity|r seid.
     .disablecheckbox
     .isQuestAvailable 78127
 step
@@ -1982,12 +1982,12 @@ step
     .isQuestAvailable 81953
 step
     #completewith next
-    .zone Undercity >>Reist nach |cFFfa9602Unterstadt|r
-    .cast 3563 >>Benutzt |T135766:0|t[Teleporter Unterstadt] |cRXP_WARN_falls ihr|r |T134419:0|t[Rune der Teleportation] habt.
+    .zone Undercity >>Reist nach |cFFfa9602Undercity|r
+    .cast 3563 >>Benutzt |T135766:0|t[Teleportieren: Undercity] |cRXP_WARN_wenn ihr|r |T134419:0|t[Rune der Teleportation] habt
     .disablecheckbox
 step
     .goto 1458,73.47,33.54
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Owen Thadd|r |cFFfa9602in Unterstadt, magischer Schaden Quarter.|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Owen Thadd|r |cFFfa9602in Undercity, Magieviertel.|r
     --x .accept is correct here because its a special kind of quest shiek
     .accept 78124 >>Gebt die Quest Almanach von Nar'thalas ab
     .accept 78127 >>Gebt die Quest Die Dalaranauswahl ab
@@ -2479,7 +2479,7 @@ step
 step
     .train 415936,1
     #completewith next
-    .zone Undercity >>Reist nach |cFFfa9602Unterstadt|r (falls ihr die Unterstadt-Flugroute habt, könnt ihr zum Grabmal sterben und von dort ausfliegen)
+    .zone Undercity >>Reist nach |cFFfa9602Undercity|r (falls ihr die Undercity Flugroute habt, könnt ihr einen Deathskip zum Grabmal machen und von dort aus fliegen)
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Bethor Iceshard|r.
     .goto Undercity,83.8,16.2
@@ -2821,7 +2821,7 @@ step
 step << Horde
     .train 429306,1
     .goto 1458,73.47,33.54
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Owen Thadd|r |cFFfa9602in Unterstadt, magischer Schaden Quarter.|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Owen Thadd|r |cFFfa9602in Undercity, Magieviertel.|r
     .accept 82054
 step << Alliance
     .train 429306,1
@@ -2845,7 +2845,7 @@ step << Alliance
 step << Horde
     .train 429311,1
     #completewith Scroll of Spatial Mending
-    .zone Undercity >> Reist nach Unterstadt
+    .zone Undercity >> Reist nach Undercity
 step
     .train 429311,1
     #label Scroll of Spatial Mending
@@ -3068,7 +3068,7 @@ step << Alliance
 step << Horde
     .train 429311,1
     #completewith Scroll of Spatial Mending
-    .zone Undercity >> Reist nach Unterstadt
+    .zone Undercity >> Reist nach Undercity
 step
     .train 429311,1
     #label Scroll of Spatial Mending
@@ -3229,7 +3229,7 @@ step << Alliance
 step << Horde
     .train 429311,1
     #completewith Scroll of Spatial Mending
-    .zone Undercity >> Reist nach Unterstadt
+    .zone Undercity >> Reist nach Undercity
 step
     .train 429311,1
     #label Scroll of Spatial Mending
@@ -3280,7 +3280,7 @@ step << Alliance
 step << Horde
     .train 429311,1
     #completewith Scroll of Spatial Mending
-    .zone Undercity >> Reist nach Unterstadt
+    .zone Undercity >> Reist nach Undercity
 step
     .train 429311,1
     #label Scroll of Spatial Mending
@@ -3344,7 +3344,7 @@ step << Alliance
 step << Horde
     .train 429311,1
     #completewith Scroll of Spatial Mending
-    .zone Undercity >> Reist nach Unterstadt
+    .zone Undercity >> Reist nach Undercity
 step
     .train 429311,1
     #label Scroll of Spatial Mending
@@ -3423,7 +3423,7 @@ RXPGuides.RegisterGuide([[
 << Mage SoD
 #group RestedXP Runen & Bücher Guide
 #subgroup Verschleierung
-#name Gefrorene Kugel - 55 (Teufelswald/Winterquell)
+#name Gefrorene Kugel - 55 (Teufelswald/Winterspring)
 #title Gefrorene Kugel
 
 step
@@ -3433,7 +3433,7 @@ step
 step
     .train 440858,1
     .goto Felwood,63.0,9.0
-    >>Tötet |cRXP_ENEMY_Deadwood Avengers|r und |cRXP_ENEMY_Deadwood Shamans|r. Plündert sie für |T237446:0|t[|cRXP_LOOT_Mysterious Darnassian Rolle|r]
+    >>Tötet |cRXP_ENEMY_Rächer der Totenwaldfelle|r und |cRXP_ENEMY_Schamane der Totenwaldfelle|r. Plündert sie für |T237446:0|t[|cRXP_LOOT_Mysteriöse darnassische Schriftrolle|r]
     .collect 227796,1 -- Mysterious Darnassian Scroll 1/1
     .mob Deadwood Shaman
     .mob Deadwood Avenger
@@ -3459,7 +3459,7 @@ step
 step
     .train 440858,1
     #completewith next
-    .zone Winterspring >> Reist nach Winterquell
+    .zone Winterspring >> Reist nach Winterspring
 step
     .train 440858,1
     .goto Winterspring,29.0,35.0
@@ -3540,7 +3540,7 @@ step
 step
     .train 401722,1
     #completewith next
-    .zone Winterspring >> Reist nach Winterquell
+    .zone Winterspring >> Reist nach Winterspring
 step
     .train 401722,1
     .goto Winterspring,60.7,37.7

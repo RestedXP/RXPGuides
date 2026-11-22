@@ -1428,13 +1428,13 @@ step
 step
     #optional
     .goto 1439/1,197.15,6964.86--c:1439,41.901,31.339
-    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4723 >> Akzeptiert die Quest Gestrandete Meereskreatur
     .isOnQuest 1001
 step
     #optional
     .goto 1439/1,197.15,6964.86--c:1439,41.901,31.339
-    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4723 >> Akzeptiert die Quest Gestrandete Meereskreatur
     .isOnQuest 982
 step
@@ -2312,7 +2312,7 @@ step
 step
     #optional
     .goto 1439/1,197.15,6964.86--c:1439,41.901,31.339
-    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4723 >> Akzeptiert die Quest Gestrandete Meereskreatur
     .isOnQuest 982
 
@@ -2375,7 +2375,7 @@ step
 step
     #label BoatSeaCreature
     .goto 1439/1,197.15,6964.86--c:1439,41.901,31.339
-    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4723 >> Akzeptiert die Quest Gestrandete Meereskreatur
 step
     #optional
@@ -2983,6 +2983,11 @@ step << Hunter
     .trainer >> Erlernt eure Begleiterfähigkeiten
     .target Karrina Mekenda
 step
+    .goto StormwindClassic,51.757,12.091
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Grimand Elmore|r
+    .accept 353 >> Akzeptiert die Quest Stormpikes Lieferung
+    .target Grimand Elmore
+step
     #label DeeprunEnter
     #completewith next
     .goto 1453/0,562.300,-8385.300,20,0
@@ -3226,6 +3231,7 @@ step
     .goto 1432/0,-2676.82,-4825.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Gebirgsjäger Stormpike|r im Bunker
     .turnin 1339 >> Gebt die Quest Gebirgsjäger Stormpikes Aufgabe ab
+    .turnin 353 >> Gebt die Quest Stormpikes Lieferung ab
     .accept 307 >> Akzeptiert die Quest Schmutzige Pfoten
     .target Mountaineer Stormpike
 step
@@ -3657,8 +3663,8 @@ RXPGuides.RegisterGuide([[
 #subgroup Schnellste Route 1-20
 --#groupid RXP-SRGCE-A1
 #name 16-19 Dunkelküste
-#next 19-20 Rotkammgebirge;20-21 Dunkelküste/Eschental << !Hunter
-#next 19-21 Dunkelküste/Eschental << Hunter
+#next 19-20 Rotkammgebirge;20-21 Dunkelküste/Ashenvale << !Hunter
+#next 19-21 Dunkelküste/Ashenvale << Hunter
 
 -- step << NightElf !Druid
 --     #optional
@@ -4034,7 +4040,7 @@ step << Hunter
     .isOnQuest 731
 step << Hunter
     .goto 1439/1,894.73,4516.04--c:1439,31.251,87.419
-    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4733 >> Akzeptiert die Quest Gestrandete Meereskreatur
     >>|cRXP_WARN_Diese Quest kann SEHR schwierig sein. Bekämpft die |cRXP_ENEMY_Murlocs|r einzeln, Andernfalls könntest du die Aggro von mehreren gleichzeitig auf dich ziehen.|r
     >>|cRXP_WARN_Achtet auf |cRXP_ENEMY_Orakel der Grauflossen|r'|r |T136048:0|t[Blitzschlag] |cRXP_WARN_Schaden, sie können auch mit|r |T136052:0|t[Welle der Heilung]|r heilen
@@ -4061,11 +4067,11 @@ step
     .accept 4731 >> Akzeptiert die Quest Gestrandete Meeresschildkröte
 step << !Hunter
     .goto 1439/1,803.48,4808.95--c:1439,32.644,80.711
-    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4730 >> Akzeptiert die Quest Gestrandete Meereskreatur
 step << Hunter
     .goto 1439/1,803.48,4808.95--c:1439,32.644,80.711
-    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4730 >> Akzeptiert die Quest Gestrandete Meereskreatur
 step << Druid
     #optional
@@ -4092,7 +4098,7 @@ step
 step
     #label CompleteThistleBears
     .goto 1439/1,585.76,5241.43--c:1439,35.968,70.807
-    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4728 >> Akzeptiert die Quest Gestrandete Meereskreatur
 step << Druid
     #label Southcrabs
@@ -4929,7 +4935,7 @@ RXPGuides.RegisterGuide([[
 #subgroup Schnellste Route 1-20
 --#groupid RXP-SRGCE-A1
 #name 19-20 Rotkammgebirge
-#next 20-21 Dunkelküste/Eschental
+#next 20-21 Dunkelküste/Ashenvale
 
 step << Shaman
     .goto 1453/0,638.8,-8341.95
@@ -6158,7 +6164,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Forever Route (A)
 #subgroup Schnellste Route 1-20
 --#groupid RXP-SRGCE-A1
-#name 19-21 Dunkelküste/Eschental
+#name 19-21 Dunkelküste/Ashenvale
 #next RestedXP Forever Route (A)\21-23 Ashenvale/Steinkrallengebirge
 
 step
@@ -6234,7 +6240,7 @@ step
 step
     #optional
     .goto 1439/1,894.73,4516.04--c:1439,31.251,87.419
-    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4733 >> Akzeptiert die Quest Gestrandete Meereskreatur
     >>|cRXP_WARN_Diese Quest kann SEHR schwierig sein. Bekämpft die |cRXP_ENEMY_Murlocs|r einzeln, Andernfalls könntest du die Aggro von mehreren gleichzeitig auf dich ziehen.|r
     .link https://youtu.be/lfQM3Q-Ag5A >> |cRXP_WARN_Klickt hier für einen Videoleitfaden|r
@@ -6251,7 +6257,7 @@ step
 step
     #optional
     .goto 1439/1,803.48,4808.95--c:1439,32.644,80.711
-    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4730 >> Akzeptiert die Quest Gestrandete Meereskreatur
 step
     #optional
@@ -6784,7 +6790,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Forever Route (A)
 #subgroup Schnellste Route 1-20
 --#groupid RXP-SRGCE-A1
-#name 20-21 Dunkelküste/Eschental
+#name 20-21 Dunkelküste/Ashenvale
 #next RestedXP Forever Route (A)\21-23 Steinkrallengebirge/Ashenvale
 
 
@@ -6989,7 +6995,7 @@ step
     .mob Reef Crawler
 step
     .goto 1439/1,894.73,4516.04--c:1439,31.251,87.419
-    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4733 >> Akzeptiert die Quest Gestrandete Meereskreatur
     >>|cRXP_WARN_Diese Quest kann SEHR schwierig sein. Bekämpft die |cRXP_ENEMY_Murlocs|r einzeln, Andernfalls könntest du die Aggro von mehreren gleichzeitig auf dich ziehen.|r
     .link https://youtu.be/lfQM3Q-Ag5A >> |cRXP_WARN_Klickt hier für einen Videoleitfaden|r
@@ -7005,7 +7011,7 @@ step
 step
     #optional
     .goto 1439/1,803.48,4808.95--c:1439,32.644,80.711
-    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4730 >> Akzeptiert die Quest Gestrandete Meereskreatur
 step
     #optional

@@ -788,7 +788,7 @@ step << !Druid sod
 step << Warrior/Rogue
     #season 2
     .goto 1439,41.901,31.339
-    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4723 >> Akzeptiert die Quest Gestrandete Meereskreatur
 step << !Warrior !Rogue
     #season 2
@@ -2878,7 +2878,7 @@ step << Druid/Hunter/Warrior
 step << !Warrior
     #season 2
     .goto 1439,31.251,87.419
-    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4733 >> Akzeptiert die Quest Gestrandete Meereskreatur
     >>|cRXP_WARN_Diese Quest kann SEHR schwierig sein. Bekämpft die |cRXP_ENEMY_Murlocs|r einzeln, Andernfalls könntest du die Aggro von mehreren gleichzeitig auf dich ziehen.|r
     .link https://youtu.be/lfQM3Q-Ag5A >> |cRXP_WARN_Klickt hier für einen Videoleitfaden|r << Hunter
@@ -2895,7 +2895,7 @@ step << !Warrior
 step
 	#season 2
     .goto 1439,32.644,80.711
-    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4730 >> Akzeptiert die Quest Gestrandete Meereskreatur
 step
     #season 2
@@ -2924,7 +2924,7 @@ step << !Priest
     #season 2
     #label CompleteThistleBears
     .goto 1439,35.968,70.807
-    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4728 >> Akzeptiert die Quest Gestrandete Meereskreatur
 step << !Priest
     #season 2
@@ -4123,7 +4123,7 @@ step << Warrior
 step << Warrior
     #season 2
     #sticky
-    >>|cRXP_WARN_Begleitet |cRXP_FRIENDLY_Kerlonian|r zu Maestras Posten im Eschental|r
+    >>|cRXP_WARN_Begleitet |cRXP_FRIENDLY_Kerlonian|r zu Maestras Posten in Ashenvale|r
     .use 13536 >> |cRXP_WARN_Benutzt das|r |T134229:0|t[|cRXP_LOOT_Horn der Erweckung|r] |cRXP_WARN_wenn |cRXP_FRIENDLY_Kerlonian|r neben euch einschläft|r
     >>|cRXP_WARN_Vermeidet es so weit wie möglich, auf der Hauptstraße zu laufen. Feinde spawnen nur, wenn ihr auf der Straße seid|r
     .complete 5321,2
@@ -4143,7 +4143,7 @@ step << Warrior
 step << Warrior
     #season 2
     #completewith towersod
-    .zone Ashenvale >> Reist südlich ins Eschental
+    .zone Ashenvale >> Reist südlich nach Ashenvale
     .goto Ashenvale,29.7,13.6
 step << Warrior
     #season 2
@@ -4239,12 +4239,12 @@ step << Druid
 step << Druid
 #season 2
     #completewith towersod
-    .zone Ashenvale >> Reist südlich ins Eschental
+    .zone Ashenvale >> Reist südlich nach Ashenvale
     .goto Ashenvale,29.7,13.6
 step << Druid
 #season 2
     .goto Ashenvale,27.26,35.58
-    >>|cRXP_WARN_Begleitet |cRXP_FRIENDLY_Kerlonian|r zu Maestras Posten im Eschental|r
+    >>|cRXP_WARN_Begleitet |cRXP_FRIENDLY_Kerlonian|r zu Maestras Posten in Ashenvale|r
     .use 13536 >> |cRXP_WARN_Benutzt das|r |T134229:0|t[|cRXP_LOOT_Horn der Erweckung|r] |cRXP_WARN_wenn |cRXP_FRIENDLY_Kerlonian|r neben euch einschläft|r
     >>|cRXP_WARN_Vermeidet es so weit wie möglich, auf der Hauptstraße zu laufen. Feinde spawnen nur, wenn ihr auf der Straße seid|r
     .complete 5321,2

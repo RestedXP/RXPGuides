@@ -3111,8 +3111,8 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Allianz 1-20
 #groupid RXP-SRGCE-A1
 #name 16-19 Dunkelküste
-#next 19-20 Rotkammgebirge;20-21 Dunkelküste/Eschental << !Hunter
-#next 19-21 Dunkelküste/Eschental << Hunter
+#next 19-20 Rotkammgebirge;20-21 Dunkelküste/Ashenvale << !Hunter
+#next 19-21 Dunkelküste/Ashenvale << Hunter
 
 step << NightElf !Druid
     #optional
@@ -3506,7 +3506,7 @@ step << Hunter
     #xprate <1.5
     #season 0
     .goto 1439,31.251,87.419
-    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4733 >> Akzeptiert die Quest Gestrandete Meereskreatur
     >>|cRXP_WARN_Diese Quest kann SEHR schwierig sein. Bekämpft die |cRXP_ENEMY_Murlocs|r einzeln, Andernfalls könntest du die Aggro von mehreren gleichzeitig auf dich ziehen.|r
     >>|cRXP_WARN_Achtet auf |cRXP_ENEMY_Orakel der Grauflossen|r'|r |T136048:0|t[Blitzschlag] |cRXP_WARN_Schaden, sie können auch mit|r |T136052:0|t[Welle der Heilung]|r heilen
@@ -8357,7 +8357,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Allianz 1-20
 #groupid RXP-SRGCE-A1
 #name 19-20 Rotkammgebirge
-#next 20-21 Dunkelküste/Eschental
+#next 20-21 Dunkelküste/Ashenvale
 
 step
     #completewith BMenace
@@ -10008,7 +10008,7 @@ RXPGuides.RegisterGuide([[
 << Alliance Hunter
 #group RestedXP Allianz 1-20
 #groupid RXP-SRGCE-A1
-#name 19-21 Dunkelküste/Eschental
+#name 19-21 Dunkelküste/Ashenvale
 #next RestedXP Allianz 20-30\21-23 Ashenvale/Steinkrallengebirge
 
 step
@@ -10030,7 +10030,7 @@ step
 step
     #xprate >1.49
     .goto 1439,32.644,80.711
-    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4730 >> Akzeptiert die Quest Gestrandete Meereskreatur
 step
     #xprate >1.49
@@ -10071,7 +10071,7 @@ step
     #xprate >1.49
     #label SeaCreatureEnd
     .goto 1439,31.251,87.419
-    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4733 >> Akzeptiert die Quest Gestrandete Meereskreatur
     >>|cRXP_WARN_Diese Quest kann SEHR schwierig sein. Bekämpft die |cRXP_ENEMY_Murlocs|r einzeln, Andernfalls könntest du die Aggro von mehreren gleichzeitig auf dich ziehen.|r
     .link https://youtu.be/lfQM3Q-Ag5A >> |cRXP_WARN_Klickt hier für einen Videoleitfaden|r
@@ -10149,7 +10149,7 @@ step
     #xprate <1.5
     #optional
     .goto 1439,31.251,87.419
-    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4733 >> Akzeptiert die Quest Gestrandete Meereskreatur
     >>|cRXP_WARN_Diese Quest kann SEHR schwierig sein. Bekämpft die |cRXP_ENEMY_Murlocs|r einzeln, Andernfalls könntest du die Aggro von mehreren gleichzeitig auf dich ziehen.|r
     .link https://youtu.be/lfQM3Q-Ag5A >> |cRXP_WARN_Klickt hier für einen Videoleitfaden|r
@@ -10169,7 +10169,7 @@ step
     #xprate <1.5
     #optional
     .goto 1439,32.644,80.711
-    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4730 >> Akzeptiert die Quest Gestrandete Meereskreatur
 step
 	#xprate <1.5
@@ -10215,7 +10215,7 @@ step
     #completewith Escaped
     .goto Darkshore,39.2,43.4
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Schildwache Selarin|r wenn sie da ist
-    .accept 990 >> Akzeptiert die Quest Marsch ins Eschental
+    .accept 990 >> Akzeptiert die Quest Marsch nach Ashenvale
     .target Sentinel Selarin
 step
 	#xprate >1.49
@@ -10282,7 +10282,7 @@ step
 step
     #label AshenStart
     #completewith tower
-    .zone Ashenvale >> Reist südlich ins Eschental
+    .zone Ashenvale >> Reist südlich nach Ashenvale
     .goto Ashenvale,29.7,13.6
 step
     #sticky
@@ -10293,7 +10293,7 @@ step
 step
     #label Kerlonian
     .goto Ashenvale,27.26,35.58
-    >>|cRXP_WARN_Begleitet |cRXP_FRIENDLY_Kerlonian|r zu Maestras Posten im Eschental|r
+    >>|cRXP_WARN_Begleitet |cRXP_FRIENDLY_Kerlonian|r zu Maestras Posten in Ashenvale|r
     .use 13536 >> |cRXP_WARN_Benutzt das|r |T134229:0|t[|cRXP_LOOT_Horn der Erweckung|r] |cRXP_WARN_wenn |cRXP_FRIENDLY_Kerlonian|r neben euch einschläft|r
     >>|cRXP_WARN_Vermeidet es so weit wie möglich, auf der Hauptstraße zu laufen. Feinde spawnen nur, wenn ihr auf der Straße seid|r
     .complete 5321,2
@@ -10783,7 +10783,7 @@ step << Dwarf Hunter
     #label end
     .goto Teldrassil,58.39,94.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Vesprystus|r
-    .fly Ashenvale >> Fliegt ins Eschental
+    .fly Ashenvale >> Fliegt nach Ashenvale
     .target Vesprystus
     .zoneskip Ashenvale
 ]])
@@ -10801,7 +10801,7 @@ RXPGuides.RegisterGuide([[
 #season 0
 #group RestedXP Allianz 1-20
 #groupid RXP-SRGCE-A1
-#name 20-21 Dunkelküste/Eschental
+#name 20-21 Dunkelküste/Ashenvale
 #next RestedXP Allianz 20-30\21-23 Steinkrallengebirge/Ashenvale;RestedXP Allianz 20-30\21-22 Eschental SoD
 
 
@@ -11041,7 +11041,7 @@ step
 step
     #xprate >1.49
     .goto 1439,32.644,80.711
-    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4730 >> Akzeptiert die Quest Gestrandete Meereskreatur
 step
     #xprate >1.49
@@ -11080,7 +11080,7 @@ step
     .accept 4732 >> Akzeptiert die Quest Gestrandete Meeresschildkröte
 step
     .goto 1439,31.251,87.419
-    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4733 >> Akzeptiert die Quest Gestrandete Meereskreatur
     >>|cRXP_WARN_Diese Quest kann SEHR schwierig sein. Bekämpft die |cRXP_ENEMY_Murlocs|r einzeln, Andernfalls könntest du die Aggro von mehreren gleichzeitig auf dich ziehen.|r
     .link https://youtu.be/lfQM3Q-Ag5A >> |cRXP_WARN_Klickt hier für einen Videoleitfaden|r
@@ -11099,7 +11099,7 @@ step
     #xprate <1.5
     #optional
     .goto 1439,32.644,80.711
-    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4730 >> Akzeptiert die Quest Gestrandete Meereskreatur
 step
     #xprate <1.5
@@ -11186,7 +11186,7 @@ step
 #xprate <1.5
     #completewith volcorEnd
     .goto Ashenvale,27.26,35.58
-    +|cRXP_FRIENDLY_Kerlonian|r wird euch folgen und wird gelegentlich im Kampf helfen. |cRXP_WARN_Passt auf, dass ihr ihn nicht verliert, denn er wird stehenbleiben, wenn er einschläft. Ihr habt 25 Minuten Zeit, um Eschental zu erreichen und diese Quest abzuschließen|r
+    +|cRXP_FRIENDLY_Kerlonian|r wird euch folgen und wird gelegentlich im Kampf helfen. |cRXP_WARN_Passt auf, dass ihr ihn nicht verliert, denn er wird stehenbleiben, wenn er einschläft. Ihr habt 25 Minuten Zeit, um Ashenvale zu erreichen und diese Quest abzuschließen|r
     .use 13536 >> |cRXP_WARN_Benutzt das|r |T134229:0|t[|cRXP_LOOT_Horn der Erweckung|r] |cRXP_WARN_wenn |cRXP_FRIENDLY_Kerlonian|r einschläft, während ihr neben ihm steht, um ihn aufzuwecken|r
     >>|cRXP_WARN_Vermeidet es so weit wie möglich, auf der Hauptstraße zu laufen. Feinde spawnen nur, wenn ihr auf der Straße seid|r
     .isOnQuest 5321
@@ -11213,17 +11213,17 @@ step
 step -- adjusted to heading there straight from southern most beached sea creature
 #xprate >1.49
     #completewith tower
-    .zone Ashenvale >> Reist südlich ins Eschental
+    .zone Ashenvale >> Reist südlich nach Ashenvale
     .goto Ashenvale,25.77,14.55
 step
 #xprate <1.50
     #completewith tower
-    .zone Ashenvale >> Reist südlich ins Eschental
+    .zone Ashenvale >> Reist südlich nach Ashenvale
     .goto Ashenvale,29.7,13.6
 step
 #xprate <1.5
     .goto Ashenvale,27.26,35.58
-    >>|cRXP_WARN_Begleitet |cRXP_FRIENDLY_Kerlonian|r zu Maestras Posten im Eschental|r
+    >>|cRXP_WARN_Begleitet |cRXP_FRIENDLY_Kerlonian|r zu Maestras Posten in Ashenvale|r
     .use 13536 >> |cRXP_WARN_Benutzt das|r |T134229:0|t[|cRXP_LOOT_Horn der Erweckung|r] |cRXP_WARN_wenn |cRXP_FRIENDLY_Kerlonian|r neben euch einschläft|r
     >>|cRXP_WARN_Vermeidet es so weit wie möglich, auf der Hauptstraße zu laufen. Feinde spawnen nur, wenn ihr auf der Straße seid|r
     .complete 5321,2

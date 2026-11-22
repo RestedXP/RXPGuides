@@ -2,6 +2,7 @@ if GetLocale() ~= "deDE" then return end
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
+#forever
 #group RestedXP Endgame Guides
 #subgroup Ungezähmtes Herz Set Dungeonführer << Druid
 #subgroup Tierherrschaft Set Dungeonführer << Hunter
@@ -29,7 +30,7 @@ step
     >>Sammelt die |T132612:0|t[|cRXP_LOOT_Armschienen der Furcht|r]. Dies ist ein gebunden beim anlegen Loot in der |cFFfa9602Schwarzfelsspitze|r << Warlock
     >>Sammelt die |T132617:0|t[|cRXP_LOOT_Armschienen der Ehre|r]. Dies ist ein beim Anlegen gebunden Loot in der |cFFfa9602Schwarzfelsspitze|r << Warrior
     >>|cRXP_WARN_Alternativ kauft sie aus dem Auktionshaus << !sod
-    >>|cRXP_WARN_Alternativ kauft sie aus dem Auktionshaus oder von |cRXP_FRIENDLY_Pix Xizzix|r in Beutebucht gegen|r |T133799:0|t[|cRXP_FRIENDLY_Angelaufener Real aus Undermine|r] << sod
+    >>|cRXP_WARN_Alternativ kauft sie aus dem Auktionshaus oder von |cRXP_FRIENDLY_Pix Xizzix|r in Booty Bay gegen|r |T133799:0|t[|cRXP_FRIENDLY_Angelaufener Real aus Undermine|r] << sod
     .collect 16714,1,8905,1 << Alliance Druid --Wildheart Bracers (x1)
     .collect 16681,1,8906,1 << Alliance Hunter --Beaststalker's Bindings (x1)
     .collect 16683,1,8907,1 << Alliance Mage --Magister's Bindings (x1)
@@ -72,7 +73,7 @@ step << Alliance
     .target Deliana
 step << Alliance
     #completewith next
-    .zone Winterspring >>Reist nach |cFFfa9602Winterquell|r
+    .zone Winterspring >>Reist nach |cFFfa9602Winterspring|r
 step << Alliance
     #loop
     .goto Winterspring,50.54,14.27,0
@@ -220,6 +221,7 @@ step << Horde
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
+#forever
 #group RestedXP Endgame Guides
 #subgroup Ungezähmtes Herz Set Dungeonführer << Druid
 #subgroup Tierherrschaft Set Dungeonführer << Hunter
@@ -266,7 +268,7 @@ step
     >>Sammelt |T132501:0|t[|cRXP_LOOT_Gürtel der Furcht|r]. Dies ist eine Gebunden-beim-Anlegen-Beute in |cFFfa9602Stratholme|r << Warlock
     >>Sammelt |T132523:0|t[|cRXP_LOOT_Gürtel der Ehre|r]. Dies ist eine Gebunden-beim-Anlegen-Beute in |cFFfa9602Schwarzfelsspitze|r und |cFFfa9602Stratholme|r << Warrior
     >>|cRXP_WARN_Alternativ kauft sie aus dem Auktionshaus << !sod
-    >>|cRXP_WARN_Alternativ kauft sie aus dem Auktionshaus oder von |cRXP_FRIENDLY_Pix Xizzix|r in Beutebucht im Tausch gegen|r |T133799:0|t[|cRXP_FRIENDLY_Angelaufener Real aus Undermine|r] << sod
+    >>|cRXP_WARN_Alternativ kauft sie aus dem Auktionshaus oder von |cRXP_FRIENDLY_Pix Xizzix|r in Booty Bay gegen|r |T133799:0|t[|cRXP_FRIENDLY_Angelaufener Real aus Undermine|r] << sod
     .collect 16716,1,8926,1 << Alliance Druid --Wildheart Belt (x1)
     .collect 16680,1,8931,1 << Alliance Hunter --Beaststalker's Belt (x1)
     .collect 16685,1,8932,1 << Alliance Mage --Magister's Belt (x1)
@@ -303,7 +305,7 @@ step
     >>Sammelt |T132966:0|t[|cRXP_LOOT_Wickeltücher der Furcht|r]. Dies ist eine Gebunden-beim-Anlegen-Beute in |cFFfa9602Scholomance|r << Warlock
     >>Sammelt |T132960:0|t[|cRXP_LOOT_Stulpen der Ehre|r]. Dies ist eine Gebunden-beim-Anlegen-Beute in |cFFfa9602Stratholme|r << Warrior
     >>|cRXP_WARN_Alternativ kauft sie aus dem Auktionshaus << !sod
-    >>|cRXP_WARN_Alternativ kauft sie aus dem Auktionshaus oder von |cRXP_FRIENDLY_Pix Xizzix|r in Beutebucht im Austausch gegen|r |T133799:0|t[|cRXP_FRIENDLY_Angelaufener Real aus Undermine|r] << sod
+    >>|cRXP_WARN_Alternativ kauft sie aus dem Auktionshaus oder von |cRXP_FRIENDLY_Pix Xizzix|r in Booty Bay gegen|r |T133799:0|t[|cRXP_FRIENDLY_Angelaufener Real aus Undermine|r] << sod
     .collect 16717,1,8926,1 << Alliance Druid --Wildheart Gloves (x1)
     .collect 16676,1,8931,1 << Alliance Hunter --Beaststalker's Gloves (x1)
     .collect 16684,1,8932,1 << Alliance Mage --Magister's Gloves (x1)
@@ -442,7 +444,7 @@ step
 	.mob Tortured Sentinel
 step
     #completewith next
-    .zone Winterspring >>Reist nach |cFFfa9602Winterquell|r
+    .zone Winterspring >>Reist nach |cFFfa9602Winterspring|r
 step
     #completewith next
     .cast 27433 >>|cRXP_WARN_Platziert den|r |T133882:0|t[Ektoplasmadestillierer] |cRXP_WARN_auf dem Boden. Er hält 5 Minuten lang|r
@@ -462,7 +464,7 @@ step
     .mob Anguished Highborne
 step
     #completewith FelElemRod
-    .subzone 2256 >>Reist zur Flüsternden Schlucht in |cFFfa9602Winterquell|r
+    .subzone 2256 >>Reist zur Flüsternden Schlucht in |cFFfa9602Winterspring|r
 step
     #hardcore
     #completewith next
@@ -526,7 +528,7 @@ step
 step
     #optional
     #completewith FelElemRod2
-    .subzone 2256 >>Reist zur Flüsternden Schlucht in |cFFfa9602Winterquell|r
+    .subzone 2256 >>Reist zur Flüsternden Schlucht in |cFFfa9602Winterspring|r
 step
     #optional
     #hardcore
@@ -666,6 +668,7 @@ step << Horde
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
+#forever
 #group RestedXP Endgame Guides
 #subgroup Ungezähmtes Herz Set Dungeonführer << Druid
 #subgroup Tierherrschaft Set Dungeonführer << Hunter
@@ -711,7 +714,7 @@ step
     >>Sammelt |T132592:0|t[|cRXP_LOOT_Stiefel der Elemente|r]. Diese werden von |cRXP_ENEMY_Hochlord Omokk|r in der |cFFfa9602Unteren Schwarzfelsspitze|r fallen gelassen << Shaman
     >>Sammelt |T132539:0|t[|cRXP_LOOT_Sandalen der Furcht|r]. Diese werden von |cRXP_ENEMY_Baroness Anastari|r in |cFFfa9602Stratholme|r fallen gelassen << Warlock
     >>Sammelt |T132584:0|t[|cRXP_LOOT_Stiefel der Ehre|r]. Diese werden von |cRXP_ENEMY_Kirtonos der Herold|r in |cFFfa9602Scholomance|r fallen gelassen << Warrior
-    >>|cRXP_WARN_Alternativ kauft sie von |cRXP_FRIENDLY_Pix Xizzix|r in Beutebucht im Austausch für|r |T133799:0|t[|cRXP_FRIENDLY_Angelaufener Real aus Undermine|r] << sod
+    >>|cRXP_WARN_Alternativ kauft sie von |cRXP_FRIENDLY_Pix Xizzix|r in Booty Bay gegen|r |T133799:0|t[|cRXP_FRIENDLY_Angelaufener Real aus Undermine|r] << sod
     .collect 16715,1,8951,1 << Alliance Druid --Wildheart Boots (x1)
     .collect 16675,1,8952,1 << Alliance Hunter --Beaststalker's Boots (x1)
     .collect 16682,1,8953,1 << Alliance Mage --Magister's Boots (x1)
@@ -747,7 +750,7 @@ step
     >>Sammelt das |T134583:0|t[|cRXP_LOOT_Kilt der Elemente|r]. Das wird von |cRXP_ENEMY_Baron Rivendare |r in |cFFfa9602Stratholme|r Fallen gelassen << Shaman
     >>Erhaltet die |T134588:0|t[|cRXP_LOOT_Gamaschen der Furcht|r]. Das wird von |cRXP_ENEMY_Baron Rivendare |r in |cFFfa9602Stratholme|r Fallen gelassen << Warlock
     >>Erhaltet die |T134584:0|t[|cRXP_LOOT_Beinplatten der Ehre|r]. Das wird von |cRXP_ENEMY_Baron Rivendare |r in |cFFfa9602Stratholme|r Fallen gelassen << Warrior
-    >>|cRXP_WARN_Alternativ kauft sie von |cRXP_FRIENDLY_Pix Xizzix|r in Beutebucht im Austausch für|r |T133799:0|t[|cRXP_FRIENDLY_Angelaufener Real aus Undermine|r] << sod
+    >>|cRXP_WARN_Alternativ kauft sie von |cRXP_FRIENDLY_Pix Xizzix|r in Booty Bay gegen|r |T133799:0|t[|cRXP_FRIENDLY_Angelaufener Real aus Undermine|r] << sod
     .collect 16719,1,8951,1 << Alliance Druid --Wildheart Kilt (x1)
     .collect 16678,1,8952,1 << Alliance Hunter --Beaststalker's Pants (x1)
     .collect 16687,1,8953,1 << Alliance Mage --Magister's Leggings (x1)
@@ -783,7 +786,7 @@ step
     >>Erhaltet die|T135060:0|t[|cRXP_LOOT_Schulterstücke der Elemente|r]. Diese werden von |cRXP_ENEMY_Gyth|r in der |cFFfa9602Oberen Schwarzfelsspitze|r Fallen gelassen << Shaman
     >>Sammelt |T133732:0|t[|cRXP_LOOT_Mantel der Furcht|r]. Diesen Gegenstand lässt |cRXP_ENEMY_Jandice Barov|r in |cFFfa9602Scholomance|r fallen << Warlock
     >>Sammelt die|T135061:0|t[|cRXP_LOOT_Schiftung der Ehre|r]. Diese werden von |cRXP_ENEMY_Kriegshäuptling Rend Blackhand|r in der|cFFfa9602Oberen Schwarzfelsspitze|r fallen gelassen << Warrior
-    >>|cRXP_WARN_Alternativ kauft sie von |cRXP_FRIENDLY_Pix Xizzix|r in Beutebucht im Austausch für|r |T133799:0|t[|cRXP_FRIENDLY_Angelaufener Real aus Undermine|r] << sod
+    >>|cRXP_WARN_Alternativ kauft sie von |cRXP_FRIENDLY_Pix Xizzix|r in Booty Bay gegen|r |T133799:0|t[|cRXP_FRIENDLY_Angelaufener Real aus Undermine|r] << sod
     .collect 16718,1,8951,1 << Alliance Druid --Wildheart Spaulders (x1)
     .collect 16679,1,8952,1 << Alliance Hunter --Beaststalker's Mantle (x1)
     .collect 16689,1,8953,1 << Alliance Mage --Magister's Mantle (x1)
@@ -1150,6 +1153,7 @@ step << Horde
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
+#forever
 #group RestedXP Endgame Guides
 #subgroup Ungezähmtes Herz Set Dungeonführer << Druid
 #subgroup Tierherrschaft Set Dungeonführer << Hunter
@@ -1194,7 +1198,7 @@ step
     >>Sammelt die |T133131:0|t[|cRXP_LOOT_Maske der Furcht|r]. Diese dropt von |cRXP_ENEMY_Dunkelmeister Gandling|r in |cFFfa9602Scholomance|r << Warlock
     >>Sammelt den |T133070:0|t[|cRXP_LOOT_Helm der Ehre|r]. Diese dropt von |cRXP_ENEMY_Dunkelmeister Gandling|r in |cFFfa9602Scholomance|r << Warrior
     >>Sammelt die |T132768:0|t[|cRXP_LOOT_Krone des Magisters|r]. Diese dropt von |cRXP_ENEMY_Dunkelmeister Gandling|r in |cFFfa9602Scholomance|r << Mage
-    >>|cRXP_WARN_Kauft sie alternativ von |cRXP_FRIENDLY_Pix Xizzix|r in Beutebucht im Tausch gegen|r |T133799:0|t[|cRXP_FRIENDLY_Angelaufener Real aus Undermine|r] << sod
+    >>|cRXP_WARN_Alternativ kauft sie von |cRXP_FRIENDLY_Pix Xizzix|r in Booty Bay gegen|r |T133799:0|t[|cRXP_FRIENDLY_Angelaufener Real aus Undermine|r] << sod
     .collect 16727,1,9002,1 << Alliance Paladin --Lightforge Helm (x1)
     .collect 16720,1,8999,1 << Alliance Druid --Wildheart Cowl (x1)
     .collect 16677,1,9000,1 << Alliance Hunter --Beaststalker's Cap (x1)
@@ -1230,7 +1234,7 @@ step
     >>Sammelt die |T132690:0|t[|cRXP_LOOT_Robe der Furcht|r]. Diese wird von |cRXP_ENEMY_General Drakkisath|r in der |cFFfa9602Oberen Schwarzfelsspitze|r fallen gelassen << Warlock
     >>Sammelt die |T132738:0|t[|cRXP_LOOT_Brustplatte der Ehre|r]. Diees wird von |cRXP_ENEMY_General Drakkisath|r in der |cFFfa9602Oberen Schwarzfelsspitze|r fallen gelassen << Warrior
     >>Sammelt die |T132666:0|t[|cRXP_LOOT_Roben des Magisters|r]. Diese wird von |cRXP_ENEMY_General Drakkisath|r in der |cFFfa9602Oberen Schwarzfelsspitze|r fallen gelassen << Mage
-    >>|cRXP_WARN_Alternativ kauft sie von |cRXP_FRIENDLY_Pix Xizzix|r in Beutebucht im Austausch für|r |T133799:0|t[|cRXP_FRIENDLY_Angelaufener Real aus Undermine|r] << sod
+    >>|cRXP_WARN_Alternativ kauft sie von |cRXP_FRIENDLY_Pix Xizzix|r in Booty Bay gegen|r |T133799:0|t[|cRXP_FRIENDLY_Angelaufener Real aus Undermine|r] << sod
     .collect 16726,1,9002,1 << Alliance Paladin --Lightforge Breastplate (x1)
     .collect 16706,1,8999,1 << Alliance Druid --Wildheart Vest (x1)
     .collect 16674,1,9000,1 << Alliance Hunter --Beaststalker's Tunic (x1)
@@ -1446,7 +1450,7 @@ step
     .isOnQuest 8962
 step
     #completewith next
-    .subzone 2249 >>Reist nach Frosthauchschlucht in |cFFfa9602Winterquell|r
+    .subzone 2249 >>Reist nach Frosthauchschlucht in |cFFfa9602Winterspring|r
     .isOnQuest 8963
 step
     #loop
@@ -1491,7 +1495,7 @@ step
 step
     #completewith next
     .goto Hillsbrad Foothills,19.67,76.92
-    .subzone 896 >>Reist zur Fegefeuerinsel im |cFFfa9602Vorgebirge des Hügellands|r
+    .subzone 896 >>Reist zur Fegefeuerinsel im |cFFfa9602Vorgebirge von Hillsbrad|r
     .isOnQuest 8965
 step
     #loop
@@ -1784,7 +1788,7 @@ step
     .isOnQuest 8986
 step
     #completewith next
-    .subzone 2249 >>Reist nach Frosthauchschlucht in |cFFfa9602Winterquell|r
+    .subzone 2249 >>Reist nach Frosthauchschlucht in |cFFfa9602Winterspring|r
     .isOnQuest 8985
 step
     #loop
@@ -1829,7 +1833,7 @@ step
 step
     #completewith next
     .goto Hillsbrad Foothills,19.67,76.92
-    .subzone 896 >>Reist zur Fegefeuerinsel im |cFFfa9602Vorgebirge des Hügellands|r
+    .subzone 896 >>Reist zur Fegefeuerinsel im |cFFfa9602Vorgebirge von Hillsbrad|r
     .isOnQuest 8988
 step
     #loop

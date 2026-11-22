@@ -13,7 +13,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Forever Route (H)
 #subgroup Schnellste Route 1-22
 --#groupid RXP-SRGCE-H1
-#next 17-22 Steinkrallengebirge/Brachland/Eschental
+#next 17-22 Steinkrallengebirge/Brachland/Ashenvale
 
 
 step << Tauren Shaman
@@ -580,7 +580,7 @@ step
 step
     #label RatchetEnter
     .goto 1413/1,-3728.66,-835.29
-    .subzone 392 >> Reist nach Ratschet
+    .subzone 392 >> Reist nach Ratchet
     .isOnQuest 845
 step
     .goto 1413/1,-3767.800,-842.900
@@ -596,7 +596,7 @@ step
     #completewith next
     .goto 1413/1,-3770.20,-898.12
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Bragok|r
-    .fp Ratchet >> Erlernt die Flugroute nach Ratschet
+    .fp Ratchet >> Erlernt die Flugroute nach Ratchet
     .target Bragok
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Sputtervalve|r und dem |cRXP_FRIENDLY_Gesucht Plakat|r
@@ -1039,7 +1039,7 @@ step << Tauren Druid
     .xp <16,1
 step << Tauren
     #completewith FlyXroads2
-    .hs >> Ruhestein nach Donnerfels
+    .hs >> Ruhestein nach Thunder Bluff
     .bindlocation 1638,1
     .zoneskip Thunder Bluff
     .cooldown item,6948,>0
@@ -1047,7 +1047,7 @@ step << Tauren
 step << Tauren
     .goto 1456/1,40.72,-1238.97--c:Thunder Bluff,45.6,55.9
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Ahanu|r
-    .turnin 6362 >>Gebt die Quest Flug nach Donnerfels ab
+    .turnin 6362 >>Gebt die Quest Flug nach Thunder Bluff ab
     .accept 6363 >>Akzeptiert die Quest Tal der Windreitermeister
     .target Ahanu
 step << Tauren Shaman
@@ -1305,13 +1305,13 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Vrang|r
     .accept 95494 >>Akzeptiert die Quest Verletzter Stolz und Löwenbalg
     .accept 95507 >>Akzeptiert die Quest Vrangs Spiel
-    .target Vrang Wildgore
+    .target Vrang Wildblut
 step
     .goto 1413/1,-1815.48,786.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Vrang|r
     >>|cRXP_FRIENDLY_Vrang|r |cRXP_WARN_verkauft|r |T133476:0|t[|cRXP_FRIENDLY_Schwerer Stachelkolben|r] |cRXP_WARN_ein Gegenstand mit begrenztem Vorrat|r << Tauren Warrior/Tauren Shaman/Druid
 	.vendor	>> Verkauft trash und repariert
-    .target Vrang Wildgore
+    .target Vrang Wildblut
     .isQuestAvailable 95494,95507
 step
     #completewith next
@@ -1365,7 +1365,7 @@ step
     .turnin 95494 >>Gebt die Quest Verletzter Stolz und Löwenbalg ab
     .turnin 95507 >>Gebt die Quest Vrangs Spiel ab
     .accept 95495 >>Nehmt die Quest Der einsiedlerische Kürschner an
-    .target Vrang Wildgore
+    .target Vrang Wildblut
     .isQuestComplete 95494
 step
     #completewith next
@@ -1820,7 +1820,7 @@ step << Rogue
     .goto 1454/1,-4279.79,1778.57
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Zando'zan|r
     .turnin 2379 >>Gebt die Quest Zando'zan ab
-    .accept 2382 >>Akzeptiert die Quest Wrenix aus Ratschet
+    .accept 2382 >>Akzeptiert die Quest Wrenix aus Ratchet
     .target Zando'zan
 step << Orc Rogue/Troll Rogue
     #optional
@@ -2004,13 +2004,13 @@ step
     #completewith RapHornsPickup
     .goto 1413/1,-2595.75,-437.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Devrak|r
-    .fly Ratchet >>Fliege nach Ratschet
+    .fly Ratchet >>Fliegt nach Ratchet
     .target Devrak
     .subzoneskip 392
 step << Rogue
     .goto 1413/1,-3767.800,-842.900
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Wrenix|r
-    .turnin 2382 >>Gebt die Quest Wrenix aus Ratschet ab
+    .turnin 2382 >>Gebt die Quest Wrenix aus Ratchet ab
     .accept 2381 >>Akzeptiert die Quest Das Ausplündern der Plünderer
     .target Wrenix the Wretched
 step << Rogue
@@ -2558,8 +2558,8 @@ RXPGuides.RegisterGuide([[
 #forever
 #disabledungeons
 << Horde
-#name 17-22 Steinkrallengebirge/Brachland/Eschental
-#displayname 18-22 Steinkrallengebirge/Brachland/Eschental << !Shaman !Hunter !Tauren
+#name 17-22 Steinkrallengebirge/Brachland/Ashenvale
+#displayname 18-22 Steinkrallengebirge/Brachland/Ashenvale << !Shaman !Hunter !Tauren
 #version 11
 #group RestedXP Forever Route (H)
 #subgroup Schnellste Route 1-22
@@ -3170,7 +3170,7 @@ step
     .mob Savannah Patriarch
 step
     #completewith BootyTurnin
-    .subzone 392 >> Reist nach Ratschet
+    .subzone 392 >> Reist nach Ratchet
 step
     .goto 1413/1,-3767.800,-842.900
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Wrenix|r
@@ -3258,9 +3258,9 @@ step
     .goto 1413/1,-3951.600,-1093.500
     .goto 1413/1,-4012.800,-1081.800
     .goto 1413/1,-3973.000,-1028.700
-    >>Tötet |cRXP_PICK_Bruuz|r (Stufe 20 Elite) im Meer in der Nähe von Ratschet
+    >>Tötet |cRXP_PICK_Bruuz|r (lvl 20 elite) im Meer neben Ratchet
     >>|cRXP_WARN_Das ist schwer! Bildet eine Gruppe, falls möglich|r << !Rogue !Warrior
-    >>|cRXP_WARN_Versucht, ihn nach Ratschet zu den Wachen zu locken, die euch helfen werden, aber stellt sicher, dass ihr mindestens 50% des Schadens verursacht!|r
+    >>|cRXP_WARN_Versucht, ihn nach Ratchet zu den Wachen zu locken, die euch helfen werden, aber stellt sicher, dass ihr mindestens 50% des Schadens verursacht!|r
     .complete 92706,1 --Kill Bruuz
     .mob Bruuz
     .isOnQuest 92706
@@ -3396,7 +3396,7 @@ step << Shaman
     #completewith CallofWater01
     .goto 1454/1,-4313.60,1676.24
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Doras|r
-    .fly Ratchet >> Fliege nach Ratschet
+    .fly Ratchet >> Fliegt nach Ratchet
     .target Doras
     .zoneskip Orgrimmar,1
 step << Shaman
@@ -3621,7 +3621,7 @@ step
     .turnin 884 >>Gebt die Quest Owatanka ab
     .turnin 913 >>Gebt die Quest Der Ruf des Donnerfalken ab
     .accept 874 >>Akzeptiert die Quest Mahren Skyseer
-    .accept 6382 >>Akzeptiert die Quest Die Jagd im Eschental << Hunter
+    .accept 6382 >>Akzeptiert die Quest Die Jagd in Ashenvale << Hunter
     .target Jorn Skyseer
     .isOnQuest 884
 step
@@ -3630,7 +3630,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Jorn Himmelsdeuter|r
     .turnin 913 >>Gebt die Quest Der Ruf des Donnerfalken ab
     .accept 874 >>Akzeptiert die Quest Mahren Skyseer
-    .accept 6382 >>Akzeptiert die Quest Die Jagd im Eschental << Hunter
+    .accept 6382 >>Akzeptiert die Quest Die Jagd in Ashenvale << Hunter
     .target Jorn Skyseer
 step
     #optional
@@ -3639,7 +3639,7 @@ step << !Tauren !Skyborne
     .goto 1413/1,-1891.48,-2391.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Quetschzahn|r
     .aura 16618 >>|cRXP_WARN_Falls ihr 10|r |T134128:0|t[|cRXP_LOOT_Blutsplitter|r] |cRXP_WARN_übrig habt, benutzt sie, um|r |T136022:0|t[Geist des Windes] |cRXP_WARN_von|r |cRXP_FRIENDLY_Quetschzahn|r zu erhalten
-    >>|cRXP_WARN_Überspringen diesen Schritt, falls ihr die Donnerfels-Flugroute habt|r
+    >>|cRXP_WARN_Überspringt diesen Schritt, falls ihr die Thunder Bluff Flugroute habt|r
     .itemcount 5075,10
     .target Mangletooth
     .train 2645,1 << Shaman --skip if ghost wolf trained
@@ -3651,13 +3651,13 @@ step << !Tauren !Skyborne
 step << !Tauren !Skyborne
     #completewith DeathDUPpickup
     .goto 1456/1,184.96,-1308.69
-    .zone Thunder Bluff >>Nehmt den Aufzug nach Donnerfels
-    >>|cRXP_WARN_Wenn ihr die Donnerfels Flugroute habt, fliegt stattdessen dorthin|r
+    .zone Thunder Bluff >>Nehmt den Aufzug nach Thunder Bluff
+    >>|cRXP_WARN_Wenn ihr die Thunder Bluff Flugroute habt, fliegt stattdessen dorthin|r
 step << Tauren/Skyborne
     #completewith DeathDUPpickup
     .goto 1413/1,-1881.35,-2384.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Omusa|r
-    .fly Thunder Bluff >>Fliege nach Donnerfels
+    .fly Thunder Bluff >>Fliegt nach Thunder Bluff
     .target Omusa Thunderhorn
     .zoneskip Thunder Bluff
 step << Undead Warrior/Orc Warrior/Troll Warrior/Troll Shaman/Orc Shaman
@@ -3714,7 +3714,7 @@ step
 step
     .goto 1456/1,38.32,-1300.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gastwirtin Pala|r
-    .home >>Setzt euren Ruhestein in Donnerfels
+    .home >>Setzt euren Ruhestein in Thunder Bluff
     .target Innkeeper Pala
     .bindlocation 1638
     .isQuestAvailable 6442
@@ -3948,7 +3948,7 @@ step << Druid
     .accept 98362 >>Akzeptiert die Quest Nach Thunder Bluff
     .target Dendrite Starblaze::11802
 step << Druid
-    .hs >> Ruhestein nach Donnerfels
+    .hs >> Ruhestein nach Thunder Bluff
     .use 6948
     .cooldown item,6948,>0
     .bindlocation 1638,1
@@ -3957,7 +3957,7 @@ step << Druid
     #completewith next
     .goto 1450/1,-2403.61,7785.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Bunthen|r
-    .fly Thunder Bluff >> Fliege nach Donnerfels
+    .fly Thunder Bluff >> Fliegt nach Thunder Bluff
     .target Bunthen Plainswind
     .zoneskip Thunder Bluff
     .cooldown item,6948,<0
@@ -4142,7 +4142,7 @@ step
     .turnin 95494 >>Gebt die Quest Verletzter Stolz und Löwenbalg ab
     .turnin 95507 >>Gebt die Quest Vrangs Spiel ab
     .accept 95495 >>Nehmt die Quest Der einsiedlerische Kürschner an
-    .target Vrang Wildgore
+    .target Vrang Wildblut
     .isQuestComplete 95494
 step
     #completewith next
@@ -4376,7 +4376,7 @@ step << skip
 step << skip
     #completewith ElderCroneTurnin
     .goto 1456/1,-48.84,-1037.94,20,0
-    .goto 1456/1,-13.04,-1107.95,40 >> Nehmt den Aufzug hinauf nach Donnerfels
+    .goto 1456/1,-13.04,-1107.95,40 >> Nehmt den Aufzug nach Thunder Bluff
 step << Hunter
     .goto 1442/1,360.76,451.690
     >>Klickt auf das |cRXP_FRIENDLY_Gesucht Poster|r
@@ -4753,13 +4753,13 @@ step
     #completewith JourneytoTM
     .goto 1440/1,994.16,3373.730
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Andruk|r
-    .fly Thunder Bluff >> Fliege nach Donnerfels
+    .fly Thunder Bluff >> Fliegt nach Thunder Bluff
     .zoneskip Thunder Bluff
     .target Andruk
     .cooldown item,6948,<0
 step
     #completewith JourneytoTM
-    .hs >> Ruhestein nach Donnerfels
+    .hs >> Ruhestein nach Thunder Bluff
     .use 6948
     .zoneskip Thunder Bluff
     .bindlocation 1638,1

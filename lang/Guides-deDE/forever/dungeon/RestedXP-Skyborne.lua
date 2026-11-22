@@ -15,7 +15,7 @@ RXPGuides.RegisterGuide([[
 
 step << Horde
     .enabledungeon RFC
-    #include RestedXP Forever Route (H)\1-9 Zephras Isle
+    #include RestedXP Forever Route (H)\1-9 Insel Zephras
 step << Alliance
     #include RestedXP Forever Route (A)\1-9 Zephras Isle
 ]])

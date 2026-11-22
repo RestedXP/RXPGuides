@@ -168,7 +168,7 @@ step << !Undead
 >>Sprecht mit |cRXP_FRIENDLY_Ak'Zeloth|r
     .turnin 924 >>Gebt die Quest Die Dämonensaat ab
 step
-    >>Tötet alle Zhevras die ihr seht. Sammelt sie für Hufe. Stellt sicher, dass ihr 4 habt bevor ihr Ratschet erreicht
+    >>Tötet alle Zhevras die ihr seht. Sammelt sie für Hufe. Stellt sicher, dass ihr 4 habt bevor ihr Ratchet erreicht
     .goto 1413/1,-3257.46,277.46,150,0 << Undead
     .goto 1413/1,-3852.28,-806.24
     .complete 845,1 --Zhevra Hooves (4)
@@ -180,7 +180,7 @@ step
     .accept 887 >>Akzeptiert die Quest Südmeerfreibeuter
 step
     .goto 1413/1,-3771.22,-894.07
-    .fp Ratchet >> Erlernt die Flugroute nach Ratschet
+    .fp Ratchet >> Erlernt die Flugroute nach Ratchet
 step
     .goto 1413/1,-3761.08,-900.83
 .target Sputtervalve
@@ -492,7 +492,7 @@ step
     .turnin 848 >> Gebt die Quest Pilzsporen ab
 step
     .goto 1413/1,-2595.75,-434.64
-    .fly Ratchet >>Fliege nach Ratschet
+    .fly Ratchet >>Fliegt nach Ratchet
 step
     .goto 1413/1,-3761.08,-900.83
 >>Sprecht mit |cRXP_FRIENDLY_Sputtervalve|r
@@ -881,7 +881,7 @@ step
     .complete 821,2 --Plainstrider Kidney (5)
 step
 	.goto 1413/1,-3730.68,-840.02
-    >>Lauft zu Ratschet zurück
+    >>Lauft zu Ratchet zurück
 .target Gazlowe
 >>Sprecht mit |cRXP_FRIENDLY_Gazlowe|r
     .turnin 888 >>Gebt die Quest Gestohlene Beute ab
@@ -1023,10 +1023,10 @@ step
 >>Sprecht mit |cRXP_FRIENDLY_Quetschzahn|r
     .turnin 889 >> Gebt die Quest Geist des Windes ab
 step
-    .goto 1456/1,182.67,-1315.51,60 >>Lauft zum Aufzug und nehmt ihn nach Donnerfels
+    .goto 1456/1,182.67,-1315.51,60 >>Lauft zum Aufzug und nehmt ihn nach Thunder Bluff
 step
     .goto 1456/1,38.48,-1300.28
-    .home >>Setzt euren Ruhestein in Donnerfels
+    .home >>Setzt euren Ruhestein in Thunder Bluff
 step
     .goto 1456/1,-125.64,-1413.06
 >>Sprecht mit |cRXP_FRIENDLY_Melor Stonehoof|r
@@ -1051,7 +1051,7 @@ step
     .accept 264 >>Akzeptiert die Quest Bis dass der Tod uns scheidet
 step
 	.goto 1456/1,26.07,-1196.75
-    .fp Thunder Bluff >> Erlernt die Flugroute nach Donnerfels
+    .fp Thunder Bluff >> Erlernt die Flugroute nach Thunder Bluff
     .fly Crossroads >>Fliege nach Das Wegekreuz
 step
     >>Tötet Serena Blutfeder. Plündert sie für ihren Kopf
@@ -1089,7 +1089,7 @@ step
     .fp Sun Rock>> Erlernt die Flugroute nach Sonnenfels
 step
     #completewith next
-    .hs >> Ruhestein nach Donnerfels
+    .hs >> Ruhestein nach Thunder Bluff
 step
     .goto 1456/1,-213.96,-1065.010
 >>Sprecht mit |cRXP_FRIENDLY_Magatha Grimtotem|r

@@ -1372,7 +1372,7 @@ step
 step
     #completewith TBHome
     .goto 1456/1,186.800,-1309.400,30,0
-    .goto 1456/1,147.900,-1290.600,30 >>Nehmt den Aufzug nach Donnerfels
+    .goto 1456/1,147.900,-1290.600,30 >>Nehmt den Aufzug nach Thunder Bluff
 step
     .goto 1456/1,104.500,-1308.400
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit Eberton Schattentotem|cRXP_FRIENDLY_
@@ -1383,14 +1383,14 @@ step
     #label TBHome
     .goto 1456/1,38.32,-1300.48--c:Thunder Bluff,45.83,64.74
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gastwirtin Pala|r
-    .home >>Setzt euren Ruhestein in Donnerfels
+    .home >>Setzt euren Ruhestein in Thunder Bluff
     .target Innkeeper Pala
     .bindlocation 1638
 step
     #completewith SacredBurial
     .goto 1456/1,186.800,-1309.400,30,0
     .goto 1456/1,147.900,-1290.600,30,0
-    .zone Mulgore >>Verlasst Donnerfels
+    .zone Mulgore >>Verlasst Thunder Bluff
 step
     #completewith SacredBurial
     >>|cRXP_WARN_Beendet das Sammeln der Gegenstände für Mazzranache|r
@@ -1429,7 +1429,7 @@ step
     .goto 1412/1,-1109.08,-992.51--c:Mulgore,61.45,21.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit dem |cRXP_FRIENDLY_Vorfahrengeist|r
     .turnin 773 >>Gebt die Quest Ritus der Weisheit ab
-    .accept 775 >>Akzeptiert die Quest Reise nach Donnerfels
+    .accept 775 >>Akzeptiert die Quest Reise nach Thunder Bluff
     .target Ancestral Spirit
 step
     #loop
@@ -1968,14 +1968,14 @@ step << Tauren
     .target Mull Thunderhorn
 step << !Druid
     #completewith ExitTB2
-    .hs >> Ruhestein nach Donnerfels
+    .hs >> Ruhestein nach Thunder Bluff
     .bindlocation 1638,1
     .zoneskip Thunder Bluff
     .cooldown item,6948,>0
     .use 6948
 step << Druid
     #completewith ExitTB2
-    .zone Thunder Bluff >>Reist nach Donnerfels
+    .zone Thunder Bluff >>Reist nach Thunder Bluff
 step
     .goto 1456/1,104.500,-1308.400
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Eberton Schattentotem|r
@@ -2030,7 +2030,7 @@ step
     #optional
     .goto 1456/1,-109.58,-1209.75--c:Thunder Bluff,60.0,51.7
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Cairne|r
-    .turnin 775 >>Gebt die Quest Reise nach Donnerfels ab
+    .turnin 775 >>Gebt die Quest Reise nach Thunder Bluff ab
     .accept 776 >>Akzeptiert die Quest Riten der Erdenmutter
     .turnin 99082 >>Gebt die Quest Der Oberhäuptling ab
     .turnin 98430 >>Gebt die Quest Die Langläufer ab
@@ -2039,7 +2039,7 @@ step
 step
     .goto 1456/1,-109.58,-1209.75--c:Thunder Bluff,60.0,51.7
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Cairne|r
-    .turnin 775 >>Gebt die Quest Reise nach Donnerfels ab
+    .turnin 775 >>Gebt die Quest Reise nach Thunder Bluff ab
     .accept 776 >>Akzeptiert die Quest Riten der Erdenmutter
     .turnin 98430 >>Gebt die Quest Die Langläufer ab
     .target Cairne Bloodhoof
@@ -2088,11 +2088,11 @@ step << Tauren Druid
     .goto 1450/1,-2678.76,8019.94--c:Moonglade,56.21,30.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Dendrite|r
     .turnin 5930 >>Gebt die Quest Großer Bärengeist ab
-    .accept 5932 >>Akzeptiert die Quest Zurück nach Donnerfels
+    .accept 5932 >>Akzeptiert die Quest Zurück nach Thunder Bluff
     .target Dendrite Starblaze
 step << Tauren Druid
     #completewith DruidBearForm
-    .hs >> Ruhestein nach Donnerfels
+    .hs >> Ruhestein nach Thunder Bluff
     .bindlocation 1638,1
     .zoneskip Thunder Bluff
     .cooldown item,6948,>0
@@ -2101,7 +2101,7 @@ step << Tauren Druid
     #completewith next
     .goto 1450/1,-2403.61,7785.46--c:Moonglade,44.29,45.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Bunthen|r
-    .fly Thunder Bluff >> Fliege nach Donnerfels
+    .fly Thunder Bluff >> Fliegt nach Thunder Bluff
     .target Bunthen Plainswind
     .zoneskip Thunder Bluff
     .cooldown item,6948,<0
@@ -2109,7 +2109,7 @@ step << Tauren Druid
     #label DruidBearForm
     .goto 1456/1,-283.89,-1039.96--c:Thunder Bluff,76.7,27.3
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Turak|r
-    .turnin 5932 >>Gebt die Quest Zurück nach Donnerfels ab
+    .turnin 5932 >>Gebt die Quest Zurück nach Thunder Bluff ab
     .accept 6002 >>Akzeptiert die Quest Körper und Herz
     .target Turak Runetotem
 step
@@ -2152,7 +2152,7 @@ step
     #completewith Harpies
     .goto 1456/1,186.800,-1309.400,30,0
     .goto 1456/1,147.900,-1290.600,30,0
-    .zone Mulgore >>Verlasst Donnerfels
+    .zone Mulgore >>Verlasst Thunder Bluff
 step
     #completewith ThunderBluff2
     >>Haltet Ausschau nach |cRXP_ENEMY_Geistheuler|r. Plündert ihn für seinen |T134358:0|t[|cRXP_LOOT_Dämonennarben-Umhang|r]. Benutzt es, um die Quest zu starten
@@ -2225,7 +2225,7 @@ step
 step
     #label ThunderBluff2
     #completewith next
-    .zone Thunder Bluff >> Reist nach Donnerfels
+    .zone Thunder Bluff >> Reist zurück nach Thunder Bluff
 step
     #label RFCPickups1
     .goto 1456/1,-218.13,-1055.97--c:Thunder Bluff,70.4,29.6
@@ -2326,7 +2326,7 @@ step
     #completewith next
     .goto 1456/1,-141.400,-1432.700,10,0
     .goto 1456/1,-161.300,-1454.200,10,0
-    .zone Mulgore >>Springt von der Anhöhe der Jäger auf den kleinen Hügel um Donnerfels zu verlassen
+    .zone Mulgore >>Springt von der Anhöhe der Jäger auf den kleinen Hügel um Thunder Bluff zu verlassen
     >>|cRXP_WARN_Folgt den Pfeil genau, um nicht zu sterben. Heilt euch vor dem zweiten Sprung.|r
 step
     #completewith WildManeTurnIn
@@ -2393,7 +2393,7 @@ step << Druid
     .goto 1413/1,-1881.35,-2383.82--c:The Barrens,44.45,59.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Omusa|r
     .fp Camp Taurajo >> Erlernt die Camp Taurajo-Flugroute
-    .fly Thunder Bluff >>Fliege nach Donnerfels << Tauren
+    .fly Thunder Bluff >>Fliegt nach Thunder Bluff << Tauren
     .target Omusa Thunderhorn
     .isQuestAvailable 848
 step << Tauren Druid

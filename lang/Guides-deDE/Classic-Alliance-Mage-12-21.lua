@@ -651,7 +651,7 @@ step
 step
     .isOnQuest 5321
     .goto Ashenvale,26.84,36.74
-    >>Lauft nach Süden ins Eschental. Bindet das Horn der Erweckung in euren Aktionsleisten und benutzt es bei Kerlonian, wenn er anfängt auf der Stelle zu gehen und einschläft
+    >>Lauft nach Ashenvale im Süden. Bindet das Horn der Erweckung in euren Aktionsleisten und benutzt es bei Kerlonian, wenn er anfängt auf der Stelle zu gehen und einschläft
     .complete 5321,1 --Escort Kerlonian Evershade to Maestra's Post (1)
 step
     .isOnQuest 5321

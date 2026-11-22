@@ -12,7 +12,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Überlebens-Guide (H)
 #subgroup RXP Überlebens-Guide 1-20
 #defaultfor Undead
-#next 6-13 Untot
+#next 6-13 Untote
 
 step << !Undead
     #completewith next
@@ -634,7 +634,7 @@ RXPGuides.RegisterGuide([[
 #classic
 #tbc
 << Horde
-#name 6-13 Untot
+#name 6-13 Untote
 #version 1
 #group RestedXP Überlebens-Guide (H)
 #subgroup RXP Überlebens-Guide 1-20
@@ -2501,7 +2501,7 @@ step << Warrior
     .isQuestAvailable 1498
 step << Warlock/Mage/Priest
     #completewith next
-    .goto Tirisfal Glades,61.80,65.06,20 >> Betrete Unterstadt
+    .goto Tirisfal Glades,61.80,65.06,20 >> Betrete Undercity
     .zoneskip Undercity
     .zoneskip Undercity
 step << Warlock/Mage/Priest
@@ -2511,7 +2511,7 @@ step << Warlock/Mage/Priest
     .goto Undercity,65.93,26.71,10,0
     .goto Undercity,65.89,34.03,10,0
     .goto Undercity,64.22,39.77,10,0
-    .goto Undercity,65.53,43.62,15 >> Nehmt den Aufzug hinab nach Unterstadt
+    .goto Undercity,65.53,43.62,15 >> Nehmt den Aufzug hinab nach Undercity
 step << Warlock/Mage/Priest
     #optional
     #ah
@@ -2553,7 +2553,7 @@ step << Priest
 step << Rogue
     #optional
     #completewith Swordtraining1
-    .goto Tirisfal Glades,61.80,65.06,20 >> Betrete Unterstadt
+    .goto Tirisfal Glades,61.80,65.06,20 >> Betrete Undercity
     .zoneskip Undercity
     .zoneskip Undercity
     .money <0.3023
@@ -2565,7 +2565,7 @@ step << Rogue
     .goto Undercity,65.93,26.71,10,0
     .goto Undercity,65.89,34.03,10,0
     .goto Undercity,64.22,39.77,10,0
-    .goto Undercity,65.53,43.62,15 >> Nehmt den Aufzug hinab nach Unterstadt
+    .goto Undercity,65.53,43.62,15 >> Nehmt den Aufzug hinab nach Undercity
     .money <0.3023
 step << Undead Rogue
     #optional
@@ -2628,7 +2628,7 @@ step << Warlock/Mage/Rogue/Priest
     .goto Undercity,27.39,30.23,35,0
     .goto Undercity,21.89,43.35,35,0
     .goto Tirisfal Glades,51.10,71.53,50,0
-    .zone Tirisfal Glades >> Verlasst die Unterstadt durch die Kanalisation
+    .zone Tirisfal Glades >> Verlasst Undercity durch die Abwasserkanäle
     .zoneskip Tirisfal Glades
 step << Warlock
     #completewith next
@@ -2669,7 +2669,7 @@ step << Warlock
     .goto Undercity,41.35,38.40,10,0
     .goto Undercity,45.25,39.20,10,0
     .goto Undercity,45.67,43.60,10,0
-    .zone Undercity >> Reist zurück nach Unterstadt durch die Kanalisation
+    .zone Undercity >> Reist zurück nach Undercity durch die Abwasserkanäle
 step << Warlock
     .goto Undercity,85.07,25.96
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Carendin|r im Magierviertel
@@ -2695,11 +2695,11 @@ step << skip --Warlock
     .goto Undercity,84.86,20.34
     .goto Undercity,67.90,15.28,30 >>|cRXP_WARN_Führt einen Logout-Skip durch: Positioniert den Character von Euch auf der höchsten Stelle der niedrigsten Treppenstufe, bis er zu schweben scheint. Meldet euch dann ab und wieder an|r
     .link https://www.youtube.com/watch?v=-Bi95bCN8dM >> |cRXP_WARN_KLICKT HIER für ein Beispiel|r
-    >>|cRXP_WARN_Falls ihr das nicht könnt, lauft einfach normal aus der Unterstadt|r
+    >>|cRXP_WARN_Falls ihr das nicht könnt, lauft einfach normal aus Undercity hinaus|r
 step << Warlock
     #completewith next
     .goto Tirisfal Glades,61.92,64.85
-    .zone Tirisfal Glades >> Verlasst Unterstadt
+    .zone Tirisfal Glades >> Verlasst Undercity
     .zoneskip Tirisfal Glades
 step
     #completewith next
@@ -3548,7 +3548,7 @@ step << Warlock
     .xp <14,1
 step << Mage
     #completewith next
-    .goto Tirisfal Glades,61.80,65.06,20 >> Betrete Unterstadt
+    .goto Tirisfal Glades,61.80,65.06,20 >> Betrete Undercity
     .zoneskip Undercity
 step << Mage
     #completewith next
@@ -3557,7 +3557,7 @@ step << Mage
     .goto Undercity,65.93,26.71,10,0
     .goto Undercity,65.89,34.03,10,0
     .goto Undercity,64.22,39.77,10,0
-    .goto Undercity,65.53,43.62,15 >> Nehmt den Aufzug hinab nach Unterstadt
+    .goto Undercity,65.53,43.62,15 >> Nehmt den Aufzug hinab nach Undercity
 step << Mage
     .goto Undercity,85.12,10.07
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Anastasia|r im Magierviertel
@@ -3565,7 +3565,7 @@ step << Mage
     .target Anastasia Hartwell
 step << Undead Rogue
     #completewith Swordtraining2
-    .goto Tirisfal Glades,61.80,65.06,20 >> Betrete Unterstadt
+    .goto Tirisfal Glades,61.80,65.06,20 >> Betrete Undercity
     .zoneskip Undercity
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
@@ -3576,12 +3576,12 @@ step << Undead Rogue
     .goto Undercity,65.93,26.71,10,0
     .goto Undercity,65.89,34.03,10,0
     .goto Undercity,64.22,39.77,10,0
-    .goto Undercity,65.53,43.62,15 >> Nehmt den Aufzug hinab nach Unterstadt
+    .goto Undercity,65.53,43.62,15 >> Nehmt den Aufzug hinab nach Undercity
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
 step << !Undead
     #completewith UCflightpath
-    .goto Tirisfal Glades,61.80,65.06,20 >> Betrete Unterstadt
+    .goto Tirisfal Glades,61.80,65.06,20 >> Betrete Undercity
     .zoneskip Undercity
 step << !Undead
     #completewith UCflightpath
@@ -3590,11 +3590,11 @@ step << !Undead
     .goto Undercity,65.93,26.71,10,0
     .goto Undercity,65.89,34.03,10,0
     .goto Undercity,64.22,39.77,10,0
-    .goto Undercity,65.53,43.62,15 >> Nehmt den Aufzug hinab nach Unterstadt
+    .goto Undercity,65.53,43.62,15 >> Nehmt den Aufzug hinab nach Undercity
 step << !Undead
     #label UCflightpath
     .goto Undercity,63.25,48.56
-    .fp Undercity >> Erlernt die Flugroute Unterstadt
+    .fp Undercity >> Erlernt die Flugroute Undercity
     .target Michael Garrett
 step << Undead Rogue
     .goto Undercity,83.52,69.09
@@ -3626,7 +3626,7 @@ step << Rogue
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
 step << Undead Warrior
     #completewith Entersilverpine
-    .goto Tirisfal Glades,61.80,65.06,20 >> Betrete Unterstadt
+    .goto Tirisfal Glades,61.80,65.06,20 >> Betrete Undercity
     .zoneskip Undercity
     .zoneskip Undercity
     .money <0.3022
@@ -3639,7 +3639,7 @@ step << Undead Warrior
     .goto Undercity,65.93,26.71,10,0
     .goto Undercity,65.89,34.03,10,0
     .goto Undercity,64.22,39.77,10,0
-    .goto Undercity,65.53,43.62,15 >> Nehmt den Aufzug hinab nach Unterstadt
+    .goto Undercity,65.53,43.62,15 >> Nehmt den Aufzug hinab nach Undercity
     .money <0.3022
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.0
@@ -3762,7 +3762,7 @@ step
     .goto Undercity,34.80,33.19,15,0
     .goto Undercity,27.39,30.23,35,0
     .goto Undercity,21.89,43.35,35,0
-    .goto Tirisfal Glades,51.10,71.53,50 >> Verlasst die Unterstadt durch die Kanalisation
+    .goto Tirisfal Glades,51.10,71.53,50 >> Verlasst Undercity durch die Abwasserkanäle
     .zoneskip Tirisfal Glades
     .zoneskip Tirisfal Glades
 step

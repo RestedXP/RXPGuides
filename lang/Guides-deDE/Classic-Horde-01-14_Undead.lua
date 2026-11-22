@@ -2488,7 +2488,7 @@ step << Warrior
     .target Deathguard Dillinger
 step << Warlock
     #completewith next
-    .goto Tirisfal Glades,61.80,65.06,20 >> Betrete Unterstadt
+    .goto Tirisfal Glades,61.80,65.06,20 >> Betrete Undercity
     .zoneskip Undercity
 step << Warlock
     #completewith next
@@ -2497,7 +2497,7 @@ step << Warlock
     .goto Undercity,65.93,26.71,10,0
     .goto Undercity,65.89,34.03,10,0
     .goto Undercity,64.22,39.77,10,0
-    .goto Undercity,65.53,43.62,15 >> Nehmt den Aufzug hinab nach Unterstadt
+    .goto Undercity,65.53,43.62,15 >> Nehmt den Aufzug hinab nach Undercity
 step << Warlock
     .goto Undercity,85.07,25.96
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Carendin|r im Magierviertel
@@ -2513,7 +2513,7 @@ step << Warlock
     .goto Undercity,27.39,30.23,35,0
     .goto Undercity,21.89,43.35,35,0
     .goto Tirisfal Glades,51.10,71.53,50,0
-    .zone Tirisfal Glades >> Verlasst die Unterstadt durch die Kanalisation
+    .zone Tirisfal Glades >> Verlasst Undercity durch die Abwasserkanäle
     .zoneskip Tirisfal Glades
 step << Rogue
     #season 2
@@ -2569,7 +2569,7 @@ step
     .goto Undercity,41.35,38.40,10,0
     .goto Undercity,45.25,39.20,10,0
     .goto Undercity,45.67,43.60,10,0
-    .zone Undercity >> Reist nach Unterstadt durch die Kanalisation
+    .zone Undercity >> Reist nach Undercity durch die Abwasserkanäle
     .zoneskip Undercity
 step
     #xprate >1.49
@@ -2583,7 +2583,7 @@ step
     .goto Undercity,41.35,38.40,10,0
     .goto Undercity,45.25,39.20,10,0
     .goto Undercity,45.67,43.60,10,0
-    .zone Undercity >> Reist nach Unterstadt durch die Kanalisation
+    .zone Undercity >> Reist nach Undercity durch die Abwasserkanäle
     .zoneskip Undercity
 --XX Priest skips on 1.5x unless they go for a Wand. No reason to go Undercity if skipping Lich quest and not setting hearth
 step << Rogue
@@ -2771,7 +2771,7 @@ step
     #label UCHome
     .goto Undercity,67.74,37.96
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Norman|r
-    .home >> Setzt euren Ruhestein in Unterstadt
+    .home >> Setzt euren Ruhestein in Undercity
     .target Innkeeper Norman
     .bindlocation 1497
 step
@@ -2782,7 +2782,7 @@ step << skip
     .goto Undercity,84.86,20.34
     .goto Undercity,67.90,15.28,30 >>|cRXP_WARN_Führt einen Logout-Skip durch: Positioniert den Character von Euch auf der höchsten Stelle der niedrigsten Treppenstufe, bis er zu schweben scheint. Meldet euch dann ab und wieder an|r
     .link https://www.youtube.com/watch?v=-Bi95bCN8dM >> |cRXP_WARN_KLICKT HIER für ein Beispiel|r
-    >>|cRXP_WARN_Falls ihr das nicht könnt, lauft einfach normal aus der Unterstadt|r
+    >>|cRXP_WARN_Falls ihr das nicht könnt, lauft einfach normal aus Undercity hinaus|r
 step << skip -- !Mage !Warlock
     #xprate >1.49
     #ah << Priest
@@ -2791,13 +2791,13 @@ step << skip -- !Mage !Warlock
     .goto Undercity,82.75,65.23 << Rogue
     .goto Undercity,67.90,15.28,30 >>|cRXP_WARN_Führt einen Logout-Skip durch: Springt auf den Stapel Fässer, dann meldet euch dann ab und wieder an|r << Priest/Warrior
     .goto Undercity,67.90,15.28,30 >>|cRXP_WARN_Führe einen „Logout Skip“ aus, indem du auf das Mahlwerk des Fleischwagens springst und dich anschließend aus- und wieder einloggst.|r << Rogue
-    >>|cRXP_WARN_Falls ihr das nicht könnt, lauft einfach normal aus der Unterstadt|r
+    >>|cRXP_WARN_Falls ihr das nicht könnt, lauft einfach normal aus Undercity hinaus|r
     .zoneskip Undercity,1
 step
     #xprate <1.5 << Priest
     #completewith AtWarS
     .goto Tirisfal Glades,61.92,64.85
-    .zone Tirisfal Glades >> Verlasst Unterstadt
+    .zone Tirisfal Glades >> Verlasst Undercity
     .zoneskip Tirisfal Glades
 step << Undead Rogue
     #sticky
@@ -3326,14 +3326,14 @@ step << Warrior
 step
     #xprate <1.5
     #completewith UndercityLS2
-    .hs >> Benutzt euren Ruhestein nach Unterstadt
+    .hs >> Benutzt euren Ruhestein nach Undercity
     .cooldown item,6948,>0,1
     .bindlocation 1497,1
     .zoneskip Undercity
 step
     #xprate <1.5
     #completewith UndercityLS2
-    .zone Undercity >>Reist zur Unterstadt
+    .zone Undercity >>Reist nach Undercity
     .cooldown item,6948,<0
 step
     #xprate <1.5
@@ -3473,7 +3473,7 @@ step << skip --Rogue
     .goto Undercity,55.22,90.88
     .goto Undercity,67.90,15.28,30 >>|cRXP_WARN_Überspringt, indem ihr euren Charakter auf dem Rand des Kreises positioniert, bis es aussieht, als würde er schweben, und dann ausloggt und wieder einloggt|r
 	.link https://www.youtube.com/watch?v=jj85AXyF1XE >> |cRXP_WARN_KLICKT HIER für ein Beispiel|r
-    >>|cRXP_WARN_Falls ihr das nicht könnt, lauft einfach normal aus der Unterstadt|r
+    >>|cRXP_WARN_Falls ihr das nicht könnt, lauft einfach normal aus Undercity hinaus|r
     .isQuestTurnedIn 1886
 step << Rogue
     #xprate <1.5
@@ -3489,14 +3489,14 @@ step << skip
     .goto Undercity,84.86,20.34
     .goto Undercity,67.90,15.28,30 >>|cRXP_WARN_Führt einen Logout-Skip durch: Positioniert den Character von Euch auf der höchsten Stelle der niedrigsten Treppenstufe, bis er zu schweben scheint. Meldet euch dann ab und wieder an|r
     .link https://www.youtube.com/watch?v=-Bi95bCN8dM >> |cRXP_WARN_KLICKT HIER für ein Beispiel|r
-    >>|cRXP_WARN_Falls ihr das nicht könnt, lauft einfach normal aus der Unterstadt|r
+    >>|cRXP_WARN_Falls ihr das nicht könnt, lauft einfach normal aus Undercity hinaus|r
     .zoneskip Undercity,1
     .isOnQuest 1886 << Rogue
 step
     #xprate <1.5
     #completewith next
     .goto Tirisfal Glades,61.92,64.85
-    .zone Tirisfal Glades >> Verlasst Unterstadt
+    .zone Tirisfal Glades >> Verlasst Undercity
     .zoneskip Tirisfal Glades
 step
     #xprate <1.5
@@ -3742,7 +3742,7 @@ step << Priest/Rogue/Warrior
     #completewith LesserMagicWand << Priest
     #completewith RogueCutlass << Rogue
     #completewith WarriorClaymore << Warrior
-    .goto Tirisfal Glades,61.80,65.06,20 >> Betrete Unterstadt
+    .goto Tirisfal Glades,61.80,65.06,20 >> Betrete Undercity
     .zoneskip Undercity
 step << Priest/Rogue/Warrior
     #optional
@@ -3754,7 +3754,7 @@ step << Priest/Rogue/Warrior
     .goto Undercity,65.93,26.71,10,0
     .goto Undercity,65.89,34.03,10,0
     .goto Undercity,64.22,39.77,10,0
-    .goto Undercity,65.53,43.62,15 >> Nehmt den Aufzug hinab nach Unterstadt
+    .goto Undercity,65.53,43.62,15 >> Nehmt den Aufzug hinab nach Undercity
 step << Priest
     #ah
     .goto Undercity,64.20,49.60
@@ -3840,7 +3840,7 @@ step << skip --Warrior/Rogue
     #label LogoutSkip3
     .goto Undercity,61.10,54.11
     .goto Undercity,67.90,15.28,30 >>|cRXP_WARN_Führt einen Logout-Skip durch: Springt auf den Stapel Fässer, dann meldet euch dann ab und wieder an|r
-    >>|cRXP_WARN_Falls ihr das nicht könnt, lauft einfach normal aus der Unterstadt|r
+    >>|cRXP_WARN_Falls ihr das nicht könnt, lauft einfach normal aus Undercity hinaus|r
     .zoneskip Undercity,1
     .itemcount 7231,<1 << Rogue --Astor's Letter of Introduction (0)
 step << Warrior
@@ -3858,7 +3858,7 @@ step << Warrior
 step << Warrior
     #season 2
     .goto Undercity,48.03,70.30
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Dorac Grago <Taktischer Chirurg>|r in der Unterstadt
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Dorac Graves|r in Undercity
     >>Gebt die |cRXP_LOOT_Köpfe|r, die ihr gesammelt habt, im Austausch für die |T134455:0|t[Runenfragmente] ab
     .collect 204688,1 --Monster Hunter's First Rune Fragment (1)
     .collect 204689,1 --Monster Hunter's Second Rune Fragment (1)
@@ -3884,7 +3884,7 @@ step << skip --Warrior
     #season 2
     .goto 1458,48.906,70.156
     .goto Undercity,67.90,15.28,30 >>|cRXP_WARN_Führt einen Logout-Skip durch, indem ihr auf den Bauch der Monstrosität springt, dann meldet euch ab und wieder an|r
-    >>|cRXP_WARN_Falls ihr das nicht könnt, lauft einfach normal aus der Unterstadt|r
+    >>|cRXP_WARN_Falls ihr das nicht könnt, lauft einfach normal aus Undercity hinaus|r
     .zoneskip Undercity,1
 step << Priest
     #optional
@@ -3910,7 +3910,7 @@ step << skip --Rogue/Warrior
     .goto Undercity,84.86,20.34
     .goto Undercity,67.90,15.28,30 >>|cRXP_WARN_Führt einen Logout-Skip durch: Positioniert den Character von Euch auf der höchsten Stelle der niedrigsten Treppenstufe, bis er zu schweben scheint. Meldet euch dann ab und wieder an|r
     .link https://www.youtube.com/watch?v=-Bi95bCN8dM >> |cRXP_WARN_KLICKT HIER für ein Beispiel|r
-    >>|cRXP_WARN_Falls ihr das nicht könnt, lauft einfach normal aus der Unterstadt|r
+    >>|cRXP_WARN_Falls ihr das nicht könnt, lauft einfach normal aus Undercity hinaus|r
     .zoneskip Undercity,1
     .itemcount 7231,<1 << Rogue --Astor's Letter of Introduction (0)
 --XX Priests only go Undercity if they need to make/buy a Lesser Magic Wand (still midway through the steps of doing so)
@@ -4001,7 +4001,7 @@ step << skip --Priest
     #label UndercityLS3
     .goto 1458,61.990,62.272
     .goto Undercity,67.90,15.28,30 >>|cRXP_WARN_Führt einen Logout-Skip durch: Springt auf den Stapel Fässer, dann meldet euch dann ab und wieder an|r
-    >>|cRXP_WARN_Falls ihr das nicht könnt, lauft einfach normal aus der Unterstadt|r
+    >>|cRXP_WARN_Falls ihr das nicht könnt, lauft einfach normal aus Undercity hinaus|r
     .zoneskip Undercity,1
 step << Rogue
     #optional
@@ -4053,14 +4053,14 @@ step << skip --Rogue
     .goto Undercity,55.22,90.88
     .goto Undercity,67.90,15.28,30 >>|cRXP_WARN_Positioniert euren Charakter auf dem Rand des Kreises, bis es aussieht, als würden sie schweben. Führt einen Logout-Skip durch, indem ihr euch abmeldet und wieder anmeldet|r
 	.link https://www.youtube.com/watch?v=jj85AXyF1XE >> |cRXP_WARN_KLICKT HIER für ein Beispiel|r
-    >>|cRXP_WARN_Falls ihr das nicht könnt, lauft einfach normal aus der Unterstadt|r
+    >>|cRXP_WARN_Falls ihr das nicht könnt, lauft einfach normal aus Undercity hinaus|r
     .isQuestTurnedIn 1886
     .zoneskip Undercity,1
 step << Rogue
     #optional
     #completewith Entersilverpine
     .goto Tirisfal Glades,61.92,64.85
-    .zone Tirisfal Glades >> Verlasst Unterstadt
+    .zone Tirisfal Glades >> Verlasst Undercity
     .zoneskip Tirisfal Glades
     .isQuestTurnedIn 1886
 step << Rogue/Warrior/Priest
@@ -4074,7 +4074,7 @@ step << Rogue/Warrior/Priest
     .goto Undercity,27.39,30.23,35,0
     .goto Undercity,21.89,43.35,35,0
     .goto Tirisfal Glades,51.10,71.53,50,0
-    .zone Tirisfal Glades >> Verlasst die Unterstadt durch die Kanalisation
+    .zone Tirisfal Glades >> Verlasst Undercity durch die Abwasserkanäle
     .zoneskip Tirisfal Glades
     .isQuestAvailable 1978
 
@@ -4521,7 +4521,7 @@ step << Rogue
     #season 2
     .goto Silverpine Forest,45.25,68.06,20,0
     .goto Silverpine Forest,45.26,67.21
-    >>Plündert |cRXP_PICK_die Rostig Truhe|r neben dem Eingang von Burg Schattenfang für |T134419:0|t[|cRXP_FRIENDLY_Rune des Säbelschlitzers|r]
+    >>Plündert die |cRXP_PICK_Rostige Truhe|r neben dem Eingang von Burg Shadowfang für |T134419:0|t[|cRXP_FRIENDLY_Rune des Säbelschlitzers|r]
     >>|cRXP_WARN_Benutzt|r |T132307:0|t[Sprinten] |cRXP_WARN_und springt dann von der Brücke zur Truhe.|r
     .collect 208772,1 --Rune of Saber Slash (1)
     .train 424984,1
@@ -4584,9 +4584,9 @@ step
     .goto Silverpine Forest,45.62,42.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Karos|r
     .turnin 6321 >>Gebt die Quest Nachschub für das Grabmal ab << Undead
-    .accept 6323 >>Akzeptiert die Quest Flug nach Unterstadt << Undead
+    .accept 6323 >>Akzeptiert die Quest Flug nach Undercity << Undead
     .fp Sepulcher >> Erlernt die Flugroute am Grabmal << !Undead
-    .fly Undercity >> Fliegt nach Unterstadt << !Undead
+    .fly Undercity >> Fliegt nach Undercity << !Undead
     .target Karos Razok
     .zoneskip Undercity
 step << Undead
@@ -4594,13 +4594,13 @@ step << Undead
     .goto Silverpine Forest,45.62,42.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Karos|r
     .turnin 6321 >>Gebt die Quest Nachschub für das Grabmal ab
-    .accept 6323 >>Akzeptiert die Quest Flug nach Unterstadt
-    .fly Undercity >> Fliegt nach Unterstadt
+    .accept 6323 >>Akzeptiert die Quest Flug nach Undercity
+    .fly Undercity >> Fliegt nach Undercity
     .target Karos Razok
     .zoneskip Undercity
 step << Undead
     #xprate <1.5
-    .hs >> Benutzt euren Ruhestein nach Unterstadt
+    .hs >> Benutzt euren Ruhestein nach Undercity
     .use 6948
     .zoneskip Undercity
     .bindlocation 1497,1
@@ -4618,7 +4618,7 @@ step << Undead
 step << Undead
     .goto Undercity,61.48,41.81
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Gordon|r
-    .turnin 6323 >> Gebt die Quest Flug nach Unterstadt ab
+    .turnin 6323 >> Gebt die Quest Flug nach Undercity ab
     .accept 6322 >> Akzeptiert die Quest Michael Garrett
     .target Gordon Wendham
 step << Rogue
@@ -4786,7 +4786,7 @@ step << Undead Warrior
     #season 2
     #label RuneOfDevastateUndead
     .goto Undercity,48.03,70.30
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Dorac|r in der Unterstadt
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Dorac|r in Undercity
     >>Gebt die |cRXP_LOOT_Köpfe|r, die ihr gesammelt habt, im Austausch für die |T134455:0|t[Runenfragmente] ab
     .collect 204688,1 --Monster Hunter's First Rune Fragment (1)
     .collect 204689,1 --Monster Hunter's Second Rune Fragment (1)
@@ -4808,7 +4808,7 @@ step << skip --Undead Rogue/Undead Warrior
     #optional
     .goto 1458,48.906,70.156
     .goto Undercity,67.90,15.28,30 >>|cRXP_WARN_Führt einen Logout-Skip durch, indem ihr auf den Bauch der Monstrosität springt, dann meldet euch ab und wieder an|r
-    >>|cRXP_WARN_Falls ihr das nicht könnt, lauft einfach normal aus der Unterstadt|r
+    >>|cRXP_WARN_Falls ihr das nicht könnt, lauft einfach normal aus Undercity hinaus|r
     .zoneskip Undercity,1
     .isQuestTurnedIn 1886 << Rogue
 step << Undead Rogue
@@ -4851,7 +4851,7 @@ step << skip --Undead Rogue
     .goto Undercity,55.22,90.88
     .goto Undercity,67.90,15.28,30 >>|cRXP_WARN_Positioniert euren Charakter auf dem Rand des Kreises, bis es aussieht, als würden sie schweben. Führt einen Logout-Skip durch, indem ihr euch abmeldet und wieder anmeldet|r
 	.link https://www.youtube.com/watch?v=jj85AXyF1XE >> |cRXP_WARN_KLICKT HIER für ein Beispiel|r
-    >>|cRXP_WARN_Falls ihr das nicht könnt, lauft einfach normal aus der Unterstadt|r
+    >>|cRXP_WARN_Falls ihr das nicht könnt, lauft einfach normal aus Undercity hinaus|r
     .zoneskip Undercity,1
     .isQuestTurnedIn 1886
 step << !Rogue !Warrior
@@ -5034,7 +5034,7 @@ step << skip --Undead !Rogue !Warrior
     .goto Undercity,69.46,25.85 << Mage/Warlock
     .goto Undercity,67.90,15.28,30 >>|cRXP_WARN_Führe einen „Logout Skip“ aus, indem du auf das Mahlwerk des Fleischwagens springst und dich anschließend aus- und wieder einloggst.|r << Priest
     .goto Undercity,67.90,15.28,30 >>|cRXP_WARN_Führt einen Logout-Skip durch: Springt auf den Stapel Fässer, dann meldet euch dann ab und wieder an|r << Mage/Warlock
-    >>|cRXP_WARN_Falls ihr das nicht könnt, lauft einfach normal aus der Unterstadt|r
+    >>|cRXP_WARN_Falls ihr das nicht könnt, lauft einfach normal aus Undercity hinaus|r
     .zoneskip Undercity,1
     .dungeon RFC
 step << skip --Undead !Rogue !Warrior
@@ -5042,7 +5042,7 @@ step << skip --Undead !Rogue !Warrior
     .goto Undercity,69.46,25.85 << Priest/Mage/Warlock
     .goto Undercity,67.90,15.28,30 >>|cRXP_WARN_Führt einen Logout-Skip durch: Springt auf den Stapel Fässer, dann meldet euch dann ab und wieder an|r << Priest/Mage/Warlock
     .link https://www.youtube.com/watch?v=-Bi95bCN8dM >> |cRXP_WARN_KLICKT HIER für ein Beispiel|r
-    >>|cRXP_WARN_Falls ihr das nicht könnt, lauft einfach normal aus der Unterstadt|r
+    >>|cRXP_WARN_Falls ihr das nicht könnt, lauft einfach normal aus Undercity hinaus|r
     .zoneskip Undercity,1
     .dungeon !RFC
 
@@ -5147,12 +5147,12 @@ step << Undead Warlock
 step << Undead
     #sticky
     #completewith EnterRFC
-    .subzone 2437 >> Jetzt solltet ihr eine Gruppe für Flammenschlund suchen
+    .subzone 2437 >> Jetzt solltet ihr nach einer Gruppe für Ragefireabgrund suchen
     .dungeon RFC
 step << Undead
     #completewith next
     .goto Tirisfal Glades,61.92,64.85,50,0
-    .zone Tirisfal Glades >> Verlasst Unterstadt
+    .zone Tirisfal Glades >> Verlasst Undercity
     .zoneskip Tirisfal Glades
 step << Undead
     #label ZeptoDurotar
@@ -5226,7 +5226,7 @@ step << Undead
 step << Undead
     #label EnterRFC
     .goto Orgrimmar,52.77,48.97
-    .subzone 2437 >> BETRETET Das Flammenschlund Instanzportal. Betretet die Zone
+    .subzone 2437 >> Betretet das Ragefireabgrund-Instanzportal
     .dungeon RFC
 step << Undead
     >>|cRXP_WARN_Falls möglich, lasst Gruppenmitglieder die folgenden Quests teilen|r
@@ -8408,7 +8408,7 @@ step << Warrior
     .target Deathguard Dillinger
 step << Warlock
     #completewith next
-    .goto Tirisfal Glades,61.80,65.06,20 >> Betrete Unterstadt
+    .goto Tirisfal Glades,61.80,65.06,20 >> Betrete Undercity
     .zoneskip Undercity
     .zoneskip Undercity
 step << Warlock
@@ -8418,7 +8418,7 @@ step << Warlock
     .goto Undercity,65.93,26.71,10,0
     .goto Undercity,65.89,34.03,10,0
     .goto Undercity,64.22,39.77,10,0
-    .goto Undercity,65.53,43.62,15 >> Nehmt den Aufzug hinab nach Unterstadt
+    .goto Undercity,65.53,43.62,15 >> Nehmt den Aufzug hinab nach Undercity
 step << Warlock
     .goto Undercity,85.07,25.96
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Carendin|r im Magierviertel
@@ -8434,7 +8434,7 @@ step << Warlock
     .goto Undercity,27.39,30.23,35,0
     .goto Undercity,21.89,43.35,35,0
     .goto Tirisfal Glades,51.10,71.53,50,0
-    .zone Tirisfal Glades >> Verlasst die Unterstadt durch die Kanalisation
+    .zone Tirisfal Glades >> Verlasst Undercity durch die Abwasserkanäle
     .zoneskip Tirisfal Glades
 step << Warrior
     #season 2
@@ -8504,7 +8504,7 @@ step
     .goto Undercity,41.35,38.40,10,0
     .goto Undercity,45.25,39.20,10,0
     .goto Undercity,45.67,43.60,10,0
-    .zone Undercity >> Reist nach Unterstadt durch die Kanalisation
+    .zone Undercity >> Reist nach Undercity durch die Abwasserkanäle
     .zoneskip Undercity
 step << !Mage
     #xprate >1.49
@@ -8517,7 +8517,7 @@ step << !Mage
     .goto Undercity,41.35,38.40,10,0
     .goto Undercity,45.25,39.20,10,0
     .goto Undercity,45.67,43.60,10,0
-    .zone Undercity >> Reist nach Unterstadt durch die Kanalisation
+    .zone Undercity >> Reist nach Undercity durch die Abwasserkanäle
     .zoneskip Undercity
 step << Priest
     .goto Undercity,48.98,18.33
@@ -8552,7 +8552,7 @@ step << Warrior/Rogue
 step << Warrior
     #season 2
     .goto Undercity,48.03,70.30
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Dorac Grago <Taktischer Chirurg>|r in der Unterstadt
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Dorac Graves|r in Undercity
     >>Gebt die |cRXP_LOOT_Köpfe|r, die ihr gesammelt habt, im Austausch für die |T134455:0|t[Runenfragmente] ab
     .collect 204688,1 --Monster Hunter's First Rune Fragment (1)
     .collect 204689,1 --Monster Hunter's Second Rune Fragment (1)
@@ -8598,7 +8598,7 @@ step << !Warlock
     #xprate <1.5
     .goto Undercity,67.74,37.96
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Norman|r
-    .home >> Setzt euren Ruhestein in Unterstadt
+    .home >> Setzt euren Ruhestein in Undercity
     .target Innkeeper Norman
     .bindlocation 1497
 step
@@ -8782,7 +8782,7 @@ step << skip --Warlock
     .goto Undercity,84.86,20.34
     .goto Undercity,67.90,15.28,30 >>|cRXP_WARN_Führt einen Logout-Skip durch: Positioniert den Character von Euch auf der höchsten Stelle der niedrigsten Treppenstufe, bis er zu schweben scheint. Meldet euch dann ab und wieder an|r
     .link https://www.youtube.com/watch?v=-Bi95bCN8dM >> |cRXP_WARN_KLICKT HIER für ein Beispiel|r
-    >>|cRXP_WARN_Falls ihr das nicht könnt, lauft einfach normal aus der Unterstadt|r
+    >>|cRXP_WARN_Falls ihr das nicht könnt, lauft einfach normal aus Undercity hinaus|r
 step << skip --!Mage !Warlock
     #xprate <2.1
     .goto Undercity,61.10,54.11 << Priest
@@ -8790,7 +8790,7 @@ step << skip --!Mage !Warlock
     .goto Undercity,82.75,65.23 << Rogue
     .goto Undercity,67.90,15.28,30 >>|cRXP_WARN_Führt einen Logout-Skip durch: Springt auf den Stapel Fässer, dann meldet euch dann ab und wieder an|r << Priest/Warrior
     .goto Undercity,67.90,15.28,30 >>|cRXP_WARN_Führe einen „Logout Skip“ aus, indem du auf das Mahlwerk des Fleischwagens springst und dich anschließend aus- und wieder einloggst.|r << Rogue
-    >>|cRXP_WARN_Falls ihr das nicht könnt, lauft einfach normal aus der Unterstadt|r
+    >>|cRXP_WARN_Falls ihr das nicht könnt, lauft einfach normal aus Undercity hinaus|r
     .zoneskip Undercity,1
 step
     #optional
@@ -8799,7 +8799,7 @@ step
     #xprate <2.1
     #completewith AtWarS
     .goto Tirisfal Glades,61.92,64.85
-    .zone Tirisfal Glades >> Verlasst Unterstadt
+    .zone Tirisfal Glades >> Verlasst Undercity
     .zoneskip Tirisfal Glades
 step << skip
     #sticky
@@ -9599,7 +9599,7 @@ step
 step << Undead
     #sticky
     #completewith EnterRFC
-    .subzone 2437 >> Jetzt solltet ihr eine Gruppe für Flammenschlund suchen
+    .subzone 2437 >> Jetzt solltet ihr nach einer Gruppe für Ragefireabgrund suchen
     .dungeon RFC
 step
     #optional
@@ -9681,7 +9681,7 @@ step << Undead
 step << Undead
     #label EnterRFC
     .goto Orgrimmar,52.77,48.97
-    .subzone 2437 >> BETRETET Das Flammenschlund Instanzportal. Betretet die Zone
+    .subzone 2437 >> Betretet das Ragefireabgrund-Instanzportal
     .dungeon RFC
 step << Undead
     >>|cRXP_WARN_Falls möglich, lasst Gruppenmitglieder die folgenden Quests teilen|r

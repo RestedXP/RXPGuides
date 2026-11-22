@@ -3566,7 +3566,7 @@ step << Orc Rogue/Troll Rogue
     #optional
     #completewith Swordtraining1
     .goto Tirisfal Glades,61.80,65.06,20,0
-    .zone Undercity >> Betrete Unterstadt
+    .zone Undercity >> Betrete Undercity
     .zoneskip Undercity
     .money <0.3023
 step << Orc Rogue/Troll Rogue
@@ -3577,13 +3577,13 @@ step << Orc Rogue/Troll Rogue
     .goto Undercity,65.93,26.71,10,0
     .goto Undercity,65.89,34.03,10,0
     .goto Undercity,64.22,39.77,10,0
-    .goto Undercity,65.53,43.62,15 >> Nehmt den Aufzug hinab nach Unterstadt
+    .goto Undercity,65.53,43.62,15 >> Nehmt den Aufzug hinab nach Undercity
     .money <0.3023
 step << Orc Rogue/Troll Rogue
     #optional
     .goto Undercity,63.25,48.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Michael|r
-    .fp Undercity >> Erlernt die Flugroute Unterstadt
+    .fp Undercity >> Erlernt die Flugroute Undercity
     .target Michael Garrett
     .money <0.3023
 step << Orc Rogue/Troll Rogue
@@ -3642,11 +3642,11 @@ step << skip --Orc Rogue/Troll Rogue
     .goto Undercity,84.86,20.34
     .goto Undercity,67.90,15.28,30 >>|cRXP_WARN_Führt einen Logout-Skip im Magieviertel durch, indem ihr euren Charakter auf dem höchsten Teil der untersten Treppe positioniert, bis es aussieht, als würde er schweben, dann aus- und wieder einloggen|r
     .link https://www.youtube.com/watch?v=-Bi95bCN8dM >> |cRXP_WARN_KLICKT HIER für ein Beispiel|r
-    >>|cRXP_WARN_Falls ihr das nicht könnt, lauft einfach normal aus der Unterstadt|r
+    >>|cRXP_WARN_Falls ihr das nicht könnt, lauft einfach normal aus Undercity hinaus|r
     .zoneskip Tirisfal Glades
 step << Orc Rogue/Troll Rogue
     #completewith next
-    .zone Tirisfal Glades >>Verlasst Unterstadt
+    .zone Tirisfal Glades >>Verlasst Undercity
     .zoneskip Undercity,1
 step
     #completewith next
@@ -3980,7 +3980,7 @@ step << Mage
 step << Warlock/Mage
     #completewith UCflightpath1
     .goto Tirisfal Glades,61.80,65.06,20,0
-    .zone Undercity >> Betrete Unterstadt
+    .zone Undercity >> Betrete Undercity
     .zoneskip Undercity
 step << Warlock/Mage
     #completewith UCflightpath1
@@ -3989,12 +3989,12 @@ step << Warlock/Mage
     .goto Undercity,65.93,26.71,10,0
     .goto Undercity,65.89,34.03,10,0
     .goto Undercity,64.22,39.77,10,0
-    .goto Undercity,65.53,43.62,15 >> Nehmt den Aufzug hinab nach Unterstadt
+    .goto Undercity,65.53,43.62,15 >> Nehmt den Aufzug hinab nach Undercity
 step << Warlock/Mage
     #label UCflightpath1
     .goto Undercity,63.25,48.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Michael|r
-    .fp Undercity >> Erlernt die Flugroute Unterstadt
+    .fp Undercity >> Erlernt die Flugroute Undercity
     .target Michael Garrett
 step << Warlock/Mage
     #optional
@@ -4025,7 +4025,7 @@ step << Mage
 step << Undead Priest
     #completewith TouchofWeakness
     .goto Tirisfal Glades,61.80,65.06,20,0
-    .zone Undercity >> Betrete Unterstadt
+    .zone Undercity >> Betrete Undercity
     .zoneskip Undercity
 step << Undead Priest
     #completewith TouchofWeakness
@@ -4034,7 +4034,7 @@ step << Undead Priest
     .goto Undercity,65.93,26.71,10,0
     .goto Undercity,65.89,34.03,10,0
     .goto Undercity,64.22,39.77,10,0
-    .goto Undercity,65.53,43.62,15 >> Nehmt den Aufzug hinab nach Unterstadt
+    .goto Undercity,65.53,43.62,15 >> Nehmt den Aufzug hinab nach Undercity
 step << Undead Priest
     #optional
     #ah
@@ -4062,7 +4062,7 @@ step << Undead Priest
 step << Rogue
     #completewith Swordtraining2
     .goto Tirisfal Glades,61.80,65.06,20,0
-    .zone Undercity >> Betrete Unterstadt
+    .zone Undercity >> Betrete Undercity
     .zoneskip Undercity
     .money <0.3023
     .itemStat 16,QUALITY,<7
@@ -4075,14 +4075,14 @@ step << Rogue
     .goto Undercity,65.93,26.71,10,0
     .goto Undercity,65.89,34.03,10,0
     .goto Undercity,64.22,39.77,10,0
-    .goto Undercity,65.53,43.62,15 >> Nehmt den Aufzug hinab nach Unterstadt
+    .goto Undercity,65.53,43.62,15 >> Nehmt den Aufzug hinab nach Undercity
     .money <0.3023
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
 step << Rogue
     #optional
     .goto Undercity,63.25,48.56
-    .fp Undercity >> Erlernt die Flugroute Unterstadt
+    .fp Undercity >> Erlernt die Flugroute Undercity
     .target Michael Garrett
     .money <0.3023
     .itemStat 16,QUALITY,<7
@@ -4162,7 +4162,7 @@ step << Warlock/Mage/Rogue
     .goto Undercity,27.39,30.23,35,0
     .goto Undercity,21.89,43.35,35,0
     .goto Tirisfal Glades,51.10,71.53,50,0
-    .zone Tirisfal Glades >> Verlasst die Unterstadt durch die Kanalisation
+    .zone Tirisfal Glades >> Verlasst Undercity durch die Abwasserkanäle
     .zoneskip Tirisfal Glades
 step << Undead Priest
     #optional
@@ -4175,7 +4175,7 @@ step << Undead Priest
     .goto Undercity,27.39,30.23,35,0
     .goto Undercity,21.89,43.35,35,0
     .goto Tirisfal Glades,51.10,71.53,50,0
-    .zone Tirisfal Glades >> Verlasst die Unterstadt durch die Kanalisation
+    .zone Tirisfal Glades >> Verlasst Undercity durch die Abwasserkanäle
     .zoneskip Tirisfal Glades
 step
     #optional
@@ -4226,7 +4226,7 @@ step << Warlock
     .goto Undercity,41.35,38.40,10,0
     .goto Undercity,45.25,39.20,10,0
     .goto Undercity,45.67,43.60,10,0
-    .zone Undercity >> Reist zurück nach Unterstadt durch die Kanalisation
+    .zone Undercity >> Reist zurück nach Undercity durch die Abwasserkanäle
 step << Warlock
     .goto Undercity,85.07,25.96
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Carendin|r im Magierviertel
@@ -4256,11 +4256,11 @@ step << skip --Warlock
     .goto Undercity,84.86,20.34
     .goto Undercity,67.90,15.28,30 >>|cRXP_WARN_Führt einen Logout-Skip durch: Positioniert den Character von Euch auf der höchsten Stelle der niedrigsten Treppenstufe, bis er zu schweben scheint. Meldet euch dann ab und wieder an|r
     .link https://www.youtube.com/watch?v=-Bi95bCN8dM >> |cRXP_WARN_KLICKT HIER für ein Beispiel|r
-    >>|cRXP_WARN_Falls ihr das nicht könnt, lauft einfach normal aus der Unterstadt|r
+    >>|cRXP_WARN_Falls ihr das nicht könnt, lauft einfach normal aus Undercity hinaus|r
 step << Warlock
     #completewith next
     .goto Tirisfal Glades,61.92,64.85,50,0
-    .zone Tirisfal Glades >> Verlasst Unterstadt
+    .zone Tirisfal Glades >> Verlasst Undercity
     .zoneskip Tirisfal Glades
 step
     #optional
@@ -5149,7 +5149,7 @@ step << Warlock
 step << Mage
     #completewith next
     .goto Tirisfal Glades,61.80,65.06,20,0
-    .zone Undercity >> Betrete Unterstadt
+    .zone Undercity >> Betrete Undercity
     .zoneskip Undercity
 step << Mage
     #completewith next
@@ -5158,7 +5158,7 @@ step << Mage
     .goto Undercity,65.93,26.71,10,0
     .goto Undercity,65.89,34.03,10,0
     .goto Undercity,64.22,39.77,10,0
-    .goto Undercity,65.53,43.62,15 >> Nehmt den Aufzug hinab nach Unterstadt
+    .goto Undercity,65.53,43.62,15 >> Nehmt den Aufzug hinab nach Undercity
 step << Mage
     .goto Undercity,85.12,10.07
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Anastasia|r im Magierviertel
@@ -5167,7 +5167,7 @@ step << Mage
 step << Rogue
     #completewith Swordtraining3
     .goto Tirisfal Glades,61.80,65.06,20,0
-    .zone Undercity >> Betrete Unterstadt
+    .zone Undercity >> Betrete Undercity
     .zoneskip Undercity
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
@@ -5178,13 +5178,13 @@ step << Rogue
     .goto Undercity,65.93,26.71,10,0
     .goto Undercity,65.89,34.03,10,0
     .goto Undercity,64.22,39.77,10,0
-    .goto Undercity,65.53,43.62,15 >> Nehmt den Aufzug hinab nach Unterstadt
+    .goto Undercity,65.53,43.62,15 >> Nehmt den Aufzug hinab nach Undercity
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
 step << !Undead
     #completewith UCflightpath3
     .goto Tirisfal Glades,61.80,65.06,20,0
-    .zone Undercity >> Betrete Unterstadt
+    .zone Undercity >> Betrete Undercity
     .zoneskip Undercity
 step << !Undead
     #completewith UCflightpath3
@@ -5193,12 +5193,12 @@ step << !Undead
     .goto Undercity,65.93,26.71,10,0
     .goto Undercity,65.89,34.03,10,0
     .goto Undercity,64.22,39.77,10,0
-    .goto Undercity,65.53,43.62,15 >> Nehmt den Aufzug hinab nach Unterstadt
+    .goto Undercity,65.53,43.62,15 >> Nehmt den Aufzug hinab nach Undercity
 step << !Undead
     #label UCflightpath3
     .goto Undercity,63.25,48.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Michael|r
-    .fp Undercity >> Erlernt die Flugroute Unterstadt
+    .fp Undercity >> Erlernt die Flugroute Undercity
     >>|cRXP_WARN_Überspringt diesen Schritt, wenn ihr bereits die Flugroute erlernt habt!|r
     .target Michael Garrett
 step << Orc Rogue/Troll Rogue
@@ -5254,7 +5254,7 @@ step << Rogue
 step << Undead Warrior
     #completewith Entersilverpine
     .goto Tirisfal Glades,61.80,65.06,20,0
-    .zone Undercity >> Betrete Unterstadt
+    .zone Undercity >> Betrete Undercity
     .zoneskip Undercity
     .money <0.3022
     .itemStat 16,QUALITY,<7
@@ -5266,7 +5266,7 @@ step << Undead Warrior
     .goto Undercity,65.93,26.71,10,0
     .goto Undercity,65.89,34.03,10,0
     .goto Undercity,64.22,39.77,10,0
-    .goto Undercity,65.53,43.62,15 >> Nehmt den Aufzug hinab nach Unterstadt
+    .goto Undercity,65.53,43.62,15 >> Nehmt den Aufzug hinab nach Undercity
     .money <0.3022
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.0
@@ -5393,7 +5393,7 @@ step
     .goto Undercity,27.39,30.23,35,0
     .goto Undercity,21.89,43.35,35,0
     .goto Tirisfal Glades,51.10,71.53,50,0
-    .zone Tirisfal Glades >> Verlasst die Unterstadt durch die Kanalisation
+    .zone Tirisfal Glades >> Verlasst Undercity durch die Abwasserkanäle
     .zoneskip Tirisfal Glades
     .zoneskip Silverpine Forest
 step

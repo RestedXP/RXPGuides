@@ -4,7 +4,7 @@ RXPGuides.RegisterGuide([[
 << Alliance Druid SoD
 #group RestedXP Runen & Bücher Guide
 #subgroup Brust
-#name Furor von Sturmgrimm - 4 (Laubschattental)
+#name Furor von Sturmgrimm - 4 (Shadowglen)
 #title Furor von Sturmgrimm
 
 step << Druid
@@ -744,17 +744,17 @@ step << Horde
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Bunthen Plainswind|r
     .goto Moonglade,44.29,45.86
     .skipgossip 11798,1
-    .zone Thunder Bluff >>Fliege nach Donnerfels
+    .zone Thunder Bluff >>Fliegt nach Thunder Bluff
     .target Bunthen Plainswind
 step << Horde
     .train 410059,1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Tal|r
     .goto Thunder Bluff,47.00,49.82
-    .fly Ratchet >>Fliege nach Ratschet
+    .fly Ratchet >>Fliegt nach Ratchet
     .target Tal
 step << Horde
     .goto The Barrens,63.677,38.618
-    .zone Stranglethorn Vale >> Nehmt das Boot nach Beutebucht. |cRXP_WARN_LOG OUT AFTER THE BOAT STARTS MOVING. WAIT 40 SECONDS AND THEN LOG BACK IN.|r
+    .zone Stranglethorn Vale >> Nehmt das Boot nach Booty Bay. |cRXP_WARN_LOGGT AUS SOBALD SICH DAS BOOT BEWEGT. WARTET 40 SEKUNDEN UND LOGGT WIEDER EIN.|r
 step << Horde
     .train 410059,1
     >>Benutzt |T132852:0|t[Wasser von Elun'ara] auf dem |cRXP_FRIENDLY_Urtumschössling|r
@@ -779,13 +779,13 @@ step << Horde
 step << Horde
     .goto Swamp of Sorrows,46.10,54.70
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Breyk|r
-    .fly Undercity >>Fliege nach Unterstadt
+    .fly Undercity >>Fliegt nach Undercity
 	.target Breyk
 step << Horde
     .goto Tirisfal Glades,61.6,62.2,50,0
     .goto Tirisfal Glades,54.7,73.0,50,0
     .goto Silverpine Forest,66.7,8.8,50,0
-    .zone Alterac Mountains >>|cRXP_WARN_Verlasst Unterstadt, geht nach Silberwald und schwimmt durch den See zum Alteracgebirge|r
+    .zone Alterac Mountains >>|cRXP_WARN_Verlasst Undercity, geht nach Silberwald und schwimmt durch den See zum Alteracgebirge|r
 step << Horde
     .train 410059,1
     >>Benutzt |T132852:0|t[Wasser von Elun'ara] auf dem |cRXP_FRIENDLY_Urtumschössling|r
@@ -1167,13 +1167,13 @@ RXPGuides.RegisterGuide([[
 << Druid SoD
 #group RestedXP Runen & Bücher Guide
 #subgroup Verschleierung
-#name Sternenregen - 60 (Winterquell)
+#name Sternenregen - 60 (Winterspring)
 #title Sternenregen
 
 step
     #completewith next
     .train 439770,1
-    .zone Winterspring >>Reist nach Winterquell
+    .zone Winterspring >>Reist nach Winterspring
     >>|cRXP_WARN_Hinweis: Für diese Rune müsst ihr einen Level-58-Elite töten. Ladet Freunde ein, um euch zu helfen|r
 step
     .train 439770,1

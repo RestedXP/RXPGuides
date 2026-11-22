@@ -3691,7 +3691,7 @@ step << skip --!Shaman !Hunter
     #softcore
     #completewith ZeptoUC1
     .goto 1454/1,-4424.40,1817.58
-    .subzone 2437 >> Betretet Der Flammenschlund
+    .subzone 2437 >> Betretet Ragefireabgrund
 step << skip --!Shaman !Hunter
     #softcore
     #completewith ZeptoUC1
@@ -3706,7 +3706,7 @@ step << skip --Shaman/Hunter
     #softcore
     #completewith FoundtheCure
     .goto 1454/1,-4424.40,1817.58
-    .subzone 2437 >> Betretet Der Flammenschlund
+    .subzone 2437 >> Betretet Ragefireabgrund
 step << skip --Shaman/Hunter
     #softcore
     #completewith FoundtheCure
@@ -3991,7 +3991,7 @@ step
 step
     .goto 1420/0,54.500,1996.400
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Hadric Harlson|r
-    .turnin 96897 >>Gebt die Quest Der Kult der Verdammten ab
+    .turnin 96897 >>Gebt die Quest The Cult of the Verdammt ab
     .turnin 96898 >>Gebt die Quest Überreste des Krieges ab
     .target Hadric Harlson
     .isQuestComplete 96897
@@ -4009,7 +4009,7 @@ step
     #optional
     .goto 1420/0,54.500,1996.400
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Hadric Harlson|r
-    .turnin 96898 >>Gebt die Quest Reste des Krieges ab
+    .turnin 96898 >>Gebt die Quest Remnants of Krieg ab
     .target Hadric Harlson
     .isQuestComplete 96898
     .dungeon !ROL
@@ -4047,7 +4047,7 @@ step
 step
     #completewith UCflightpath1
     .goto 1420/0,240.75,1877.57,20,0
-    .zone Undercity >> Betrete Unterstadt
+    .zone Undercity >> Betrete Undercity
     .zoneskip Undercity
 step
     #completewith UCflightpath1
@@ -4056,12 +4056,12 @@ step
     .goto 1458/0,240.68,1706.97,10,0
     .goto 1458/0,241.06,1660.12,10,0
     .goto 1458/0,257.08,1623.38,10,0
-    .goto 1458/0,244.51,1598.73,15 >> Nehmt den Aufzug hinab nach Unterstadt
+    .goto 1458/0,244.51,1598.73,15 >> Nehmt den Aufzug hinab nach Undercity
 step << !Undead
     #label UCflightpath1
     .goto 1458/0,266.39,1567.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Michael|r
-    .fp Undercity >> Erlernt die Flugroute Unterstadt
+    .fp Undercity >> Erlernt die Flugroute Undercity
     .target Michael Garrett
 step << Orc Rogue/Troll Rogue
     #ssf
@@ -4154,7 +4154,7 @@ step << Warlock
     .goto 1458/0,610.42,1684.44,35,0
     .goto 1458/0,663.19,1600.46,35,0
     .goto 1420/0,724.25,1682.66,50,0
-    .zone Tirisfal Glades >> Verlasst die Unterstadt durch die Kanalisation
+    .zone Tirisfal Glades >> Verlasst Undercity durch die Abwasserkanäle
     .zoneskip Tirisfal Glades
 step << Warlock
     #optional
@@ -4178,7 +4178,7 @@ step << Warlock
     .goto 1458/0,476.49,1632.15,10,0
     .goto 1458/0,439.08,1627.02,10,0
     .goto 1458/0,435.05,1598.86,10,0
-    .zone Undercity >> Reist zurück nach Unterstadt durch die Kanalisation
+    .zone Undercity >> Reist zurück nach Undercity durch die Abwasserkanäle
 step << Warlock
     .goto 1458/0,57.05,1711.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Carendin|r im Magierviertel
@@ -4333,7 +4333,7 @@ step
     .goto 1458/0,610.42,1684.44,35,0
     .goto 1458/0,663.19,1600.46,35,0
     .goto 1420/0,724.25,1682.66,50,0
-    .zone Tirisfal Glades >> Verlasst die Unterstadt durch die Kanalisation
+    .zone Tirisfal Glades >> Verlasst Undercity durch die Abwasserkanäle
     .zoneskip Silverpine Forest
 step
     #label Entersilverpine

@@ -26,7 +26,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
 #name Schattenschlag - 3 (Dun Morogh)
-#title Schattenschlagschaden
+#title Schattenschlag
 
 step
     #optional
@@ -897,7 +897,7 @@ step << Horde
     #season 2
     .goto Silverpine Forest,45.62,42.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Karos|r
-    .fly Undercity >> Fliegt nach Unterstadt
+    .fly Undercity >> Fliegt nach Undercity
     .target Karos Razok
     .zoneskip Undercity
     .train 400080,1
@@ -909,7 +909,7 @@ step << Alliance
     .target Darla Harris
     .train 400080,1
 step
-    .goto Undercity,68.290,38.043,5 >> |cRXP_WARN_Betretet Unterstadt. Überprüft euer Postfach auf den Brief von *C*|r << Horde
+    .goto Undercity,68.290,38.043,5 >> |cRXP_WARN_Betretet Undercity. Überprüft euren Briefkasten auf den Brief von *C*|r << Horde
     .goto Ironforge,71.485,72.280,5 >> |cRXP_WARN_Betretet Eisenschmiede. Überprüft die Mailbox von Euch für den Brief von *C*. Überspringt diesen Schritt falls ihr es in einer anderen Hauptstadt macht|r << Alliance
     .train 400080,1
 step
@@ -928,7 +928,7 @@ step << Horde
 step << Alliance
     .goto Ironforge,55.501,47.742
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gryth Thurden|r
-    .fly Southshore >> Fliege nach Süderstade
+    .fly Southshore >> Fliegt nach Southshore
     .target Gryth Thurden
     .zoneskip Silverpine Forest
     .train 400080,1
@@ -1460,7 +1460,7 @@ step
     #season 2
     .goto Silverpine Forest,45.25,68.06,20,0
     .goto Silverpine Forest,45.26,67.21
-    >>Plündert |cRXP_PICK_die Rostig Truhe|r neben dem Eingang von Burg Schattenfang für |T134419:0|t[|cRXP_FRIENDLY_Rune des Säbelschlitzers|r]
+    >>Plündert die |cRXP_PICK_Rostige Truhe|r neben dem Eingang von Burg Shadowfang für |T134419:0|t[|cRXP_FRIENDLY_Rune des Säbelschlitzers|r]
     >>|cRXP_WARN_Benutzt|r |T132307:0|t[Sprinten] |cRXP_WARN_und springt dann von der Brücke zur Truhe.|r
     .collect 208772,1 --Rune of Saber Slash (1)
     .train 424984,1
@@ -1555,7 +1555,7 @@ step
 step << Horde
     .goto Silverpine Forest,45.62,42.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Karos|r
-    .fly Undercity >> Fliegt nach Unterstadt
+    .fly Undercity >> Fliegt nach Undercity
     .target Karos Razok
     .zoneskip Undercity
     .train 400101,1
@@ -1567,7 +1567,7 @@ step << Alliance
     .target Darla Harris
     .train 400101,1
 step
-    .goto Undercity,68.290,38.043,5 >> |cRXP_WARN_Betretet Unterstadt. Überprüft euer Postfach auf den Brief von *C*|r << Horde
+    .goto Undercity,68.290,38.043,5 >> |cRXP_WARN_Betretet Undercity. Überprüft euren Briefkasten auf den Brief von *C*|r << Horde
     .goto Ironforge,71.485,72.280,5 >> |cRXP_WARN_Betretet Eisenschmiede. Überprüft das Postfach von Euch auf den Brief von *C*. Überspringt diesen Schritt, wenn ihr das in einer anderen Großstadt macht|r << Alliance
     .train 400101,1
 step
@@ -1584,7 +1584,7 @@ step << Horde
 step << Alliance
     .goto Ironforge,55.501,47.742
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gryth Thurden|r
-    .fly Southshore >> Fliege nach Süderstade
+    .fly Southshore >> Fliegt nach Southshore
     .target Gryth Thurden
     .zoneskip Silverpine Forest
     .train 400101,1
@@ -1689,7 +1689,7 @@ step
 step
     .train 425103,1
     #completewith next
-    .subzone 35 >>Reist nach Beutebucht
+    .subzone 35 >>Reist nach Booty Bay
 step
     .train 425103,1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Captain Aransas|r
@@ -1917,7 +1917,7 @@ step << Horde
     .isQuestAvailable 6681
 step
     #completewith next
-    .zone Hillsbrad Foothills >>Reist nach |cFFfa9602Vorgebirge des Hügellands|r
+    .zone Hillsbrad Foothills >>Reist zum |cFFfa9602Vorgebirge von Hillsbrad|r
     .isOnQuest 6681
 step
     #completewith next
@@ -1950,8 +1950,8 @@ step << Alliance
     .train 432295,1
 step << Horde
     +|cRXP_WARN_Reisen zu den Hauptstädten|r
-    >>Unterstadt
-    >>Donnerfels
+    >>Undercity
+    >>Thunder Bluff
     >>Orgrimmar
     .zoneskip Undercity
     .zoneskip Thunder Bluff
@@ -1964,7 +1964,7 @@ step
     .train 432295,1
 step
     #completewith next
-    .zone Hillsbrad Foothills >>Reist nach |cFFfa9602Vorgebirge des Hügellands|r
+    .zone Hillsbrad Foothills >>Reist zum |cFFfa9602Vorgebirge von Hillsbrad|r
 step
     #completewith next
     .goto Hillsbrad Foothills,75.27,23.66,15,0
@@ -2043,7 +2043,7 @@ step
     .train 432295,1
 step
     #completewith next
-    .zone Hillsbrad Foothills >>Reist nach |cFFfa9602Vorgebirge des Hügellands|r
+    .zone Hillsbrad Foothills >>Reist zum |cFFfa9602Vorgebirge von Hillsbrad|r
 step
     #completewith next
     .goto Hillsbrad Foothills,75.27,23.66,15,0
@@ -2075,7 +2075,7 @@ step
     .train 432295,1
 step
     #completewith next
-    .zone Hillsbrad Foothills >>Reist nach |cFFfa9602Vorgebirge des Hügellands|r
+    .zone Hillsbrad Foothills >>Reist zum |cFFfa9602Vorgebirge von Hillsbrad|r
 step
     #completewith next
     .goto Hillsbrad Foothills,75.27,23.66,15,0
@@ -2141,11 +2141,11 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Runen & Bücher Guide
 #subgroup Verschleierung
 #title Dolchfächer
-#name Dolchfächer - 55 (Winterquell)
+#name Dolchfächer - 55 (Winterspring)
 
 step
     .train 436609,1
-    .zone Winterspring >>Reist nach Winterquell
+    .zone Winterspring >>Reist nach Winterspring
 step
     .train 436609,1
     .goto Winterspring,67.7,35.4

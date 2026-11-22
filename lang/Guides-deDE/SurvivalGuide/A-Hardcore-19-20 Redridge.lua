@@ -9,7 +9,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Überlebens-Guide (A)
 #subgroup RXP Überlebens-Guide 1-20
-#next 20-21 Dunkelküste/Eschental
+#next 20-21 Dunkelküste/Ashenvale
 
 step << Hunter
     .goto StormwindClassic,61.609,15.269

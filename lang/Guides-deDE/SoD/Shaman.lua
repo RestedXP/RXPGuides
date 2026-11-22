@@ -10,13 +10,13 @@ RXPGuides.RegisterGuide([[
 
 
 step
-    +|cRXP_WARN_Ihr müsst mindestens Stufe 8 sein, um|r |T133816:0|t[Handschuhe prägen - Schmelzschlag] |cRXP_WARN_allein in Mulgore zu erwerben|r
-    >>|cRXP_WARN_Ihr MÜSST mindestens Stufe 3 haben, um das|r |T134918:0|t|cRXP_LOOT_[Schwefliges Symbol]|r
+    +|cRXP_WARN_Ihr solltet mindestens Stufe 8 sein, um|r |T133816:0|t[Handschuhe prägen - Schmelzschlag] |cRXP_WARN_allein in Mulgore zu erwerben|r
+    >>|cRXP_WARN_Ihr MÜSST mindestens Stufe 3 haben zum Ausrüsten von|r |T134918:0|t|cRXP_LOOT_[Schwefliges Symbol]|r
     >>|cRXP_WARN_Ihr müsst stärker leveln, bevor ihr überhaupt versucht|r |T133816:0|t[Handschuhe prägen - Schmelzschlag] zu erwerben
     .train 425344,1
     .xp >3,1
 step
-    +|cRXP_WARN_Ihr solltet mindestens Stufe 8 haben, um zu erwerben|r |T133816:0|t[Handschuhe prägen - Schmelzschlag] |cRXP_WARN_in Mulgore allein|r
+    +|cRXP_WARN_Ihr solltet mindestens Stufe 8 sein, um|r |T133816:0|t[Handschuhe prägen - Schmelzschlag] |cRXP_WARN_allein in Mulgore zu erwerben|r
     .train 425344,1
     .xp <3,1
     .xp >8,1
@@ -395,7 +395,7 @@ step
 --XX WIP to here
 step
     #completewith next
-    .zone Thunder Bluff >> Reist nach Donnerfels
+    .zone Thunder Bluff >> Reist nach Thunder Bluff
     .train 410104,1
     .xp <4,1
 step
@@ -463,7 +463,7 @@ step
     .xp <4,1
 step
     #completewith next
-    .zone Thunder Bluff >> Reist nach Donnerfels
+    .zone Thunder Bluff >> Reist nach Thunder Bluff
     .train 410104,1
     .xp <4,1
 --XX Logout skips take you to Bloodhoof, not worth doing
@@ -617,12 +617,12 @@ step
     .train 410097,1
     .xp >20,1
 step
-    .zone Orgrimmar >>Reist nach Orgrimmar oder Donnerfels
+    .zone Orgrimmar >>Reist nach Orgrimmar oder Thunder Bluff
     .zoneskip Thunder Bluff
     .train 8050,1
     .xp <20,1
 step
-    .zone Orgrimmar >>Reist nach Orgrimmar oder Donnerfels
+    .zone Orgrimmar >>Reist nach Orgrimmar oder Thunder Bluff
     .zoneskip Thunder Bluff
     .train 8056,1
     .xp <20,1
@@ -829,12 +829,12 @@ step
     .train 410097,1
     .xp >20,1
 step
-    .zone Orgrimmar >>Reist nach Orgrimmar oder Donnerfels
+    .zone Orgrimmar >>Reist nach Orgrimmar oder Thunder Bluff
     .zoneskip Thunder Bluff
     .train 8050,1
     .xp <20,1
 step
-    .zone Orgrimmar >>Reist nach Orgrimmar oder Donnerfels
+    .zone Orgrimmar >>Reist nach Orgrimmar oder Thunder Bluff
     .zoneskip Thunder Bluff
     .train 8056,1
     .xp <20,1
@@ -969,7 +969,7 @@ step
     .xp <25,1
 step
     #completewith next
-    .zone Hillsbrad Foothills >>Reist nach Vorgebirge des Hügellands
+    .zone Hillsbrad Foothills >>Reist zum Vorgebirge von Hillsbrad
     .train 410095,1
     .xp <25,1
 step
@@ -999,7 +999,7 @@ step
     .xp <25,1
 step
     .goto Orgrimmar,52.77,48.97
-    .subzone 2437 >> Betretet den Flammenschlund in der Kluft der Schatten
+    .subzone 2437 >> Betretet den Ragefireabgrund in der Kluft der Schatten
     .itemStat 18,QUALITY,2
     .train 410095,1
     .xp <25,1
@@ -1025,18 +1025,18 @@ RXPGuides.RegisterGuide([[
 << Horde Shaman SoD
 #group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
-#name Lavaeruption - 25 (Vorgebirge des Hügellands)
+#name Lavaeruption - 25 (Vorgebirge von Hillsbrad)
 #title Lavaeruption
 #next Erdschild - 25 (Azeroth)
 
 
 step
-    +|cRXP_WARN_Ihr solltet mindestens Stufe 25 sein, um|r |T133816:0|t[Handschuhe prägen - Lavaeruption] |cRXP_WARN_im Vorgebirge des Hügellands allein zu erwerben|r
+    +|cRXP_WARN_Ihr solltet mindestens Stufe 25 sein, um|r |T133816:0|t[Handschuhe prägen - Lavaeruption] |cRXP_WARN_allein im Vorgebirge von Hillsbrad zu erwerben|r
     .train 410095,1
     .xp >25,1
 step
     #completewith next
-    .zone Hillsbrad Foothills >>Reist nach Vorgebirge des Hügellands
+    .zone Hillsbrad Foothills >>Reist zum Vorgebirge von Hillsbrad
     .train 410095,1
 step
     #loop
@@ -1062,7 +1062,7 @@ step
     .train 410095,1
 step
     .goto Orgrimmar,52.77,48.97
-    .subzone 2437 >> Betretet den Flammenschlund in der Kluft der Schatten
+    .subzone 2437 >> Betretet den Ragefireabgrund in der Kluft der Schatten
     .itemStat 18,QUALITY,2
     .train 410095,1
 step
@@ -1848,7 +1848,7 @@ step
     .train 410107,1
     .xp >12,1
 step
-    .zone Orgrimmar >>Reist nach Orgrimmar oder Donnerfels
+    .zone Orgrimmar >>Reist nach Orgrimmar oder Thunder Bluff
     .zoneskip Thunder Bluff
     .train 370,1
     .xp <12,1
@@ -1985,7 +1985,7 @@ RXPGuides.RegisterGuide([[
 #subgroup Beine
 #name Großer Geisterwolf - 25 (Steinkrallengebirge)
 #title Großer Geisterwolf
-#next Beidhändigkeitsspezialisierung - 25 (Ratschet)
+#next Beidhändigkeitsspezialisierung - 25 (Ratchet)
 
 
 step
@@ -2030,11 +2030,11 @@ RXPGuides.RegisterGuide([[
 
 
 step
-    +|cRXP_WARN_Ihr MÜSST mindestens Stufe 25 sein, um zu erwerben|r |T134596:0|t[Hosen prägen - Erdschild] |cRXP_WARN_da es die Stufenvoraussetzung ist für das Betreten von Die Tiefschwarze Grotte|r
+    +|cRXP_WARN_Ihr MÜSST mindestens Stufe 25 sein, um|r |T134596:0|t[Hosen prägen - Erdschild] zu erwerben, |cRXP_WARN_da es die Stufenvoraussetzung zum Betreten der Blackfathom-Tiefe ist|r
     .train 410101,1
     .xp >25,1
 step
-    .zone Orgrimmar >>Reist nach Orgrimmar oder Donnerfels
+    .zone Orgrimmar >>Reist nach Orgrimmar oder Thunder Bluff
     .zoneskip Thunder Bluff
     .train 410101,1
     .xp <25,1
@@ -2100,12 +2100,12 @@ step
 step
     #completewith next
     .goto Kalimdor,44.36,34.86
-    >>|cRXP_WARN_Tretet einer neuen (0/7) Raid-Gruppe (10-Mann) für Die Tiefschwarze Grotte bei, oder erstellt sie|r
-    .subzone 2797,2 >> Macht euren Weg zur Tiefschwarzen Grotte. Betretet sie
+    >>|cRXP_WARN_Tretet einer neuen (0/7) Raid-Gruppe (10-Mann) für die Blackfathom-Tiefe bei, oder erstellt sie|r
+    .subzone 2797,2 >> Reist zum Blackfathom-Tiefe-Instanzportal und betretet es
     .train 410101,1
     .xp <25,1
 step
-    >>Tötet |cRXP_ENEMY_Baron Aquanis|r in Die Tiefschwarze Grotte. Plündert ihn für das |T136222:0|t|cRXP_LOOT_[Strange Wasserkugel]|r
+    >>Tötet |cRXP_ENEMY_Baron Aquanis|r in der Blackfathom-Tiefe. Plündert ihn für die |T136222:0|t|cRXP_LOOT_[Seltsame Wasserkugel]|r
     .collect 211454,1 --Strange Water Globe (SoD) (1)
     .mob Baron Aquanis
     .train 410101,1
@@ -2119,7 +2119,7 @@ step
     .xp <25,1
 step
     #completewith Baron
-    >>|cRXP_WARN_Beendet den Raid wenn ihr wollt, dann verlasst Die Tiefschwarze Grotte|r
+    >>|cRXP_WARN_Beendet den Raid wenn ihr wollt, dann verlasst die Blackfathom-Tiefe|r
     .zone Ashenvale >> Reist nach Eschental
     .zoneskip 221,1
     .train 410101,1
@@ -2466,7 +2466,7 @@ step
 step
     .train 410100,1
     #completewith next
-    .zone Hillsbrad Foothills >>Reist nach |cFFfa9602Vorgebirge des Hügellands|r
+    .zone Hillsbrad Foothills >>Reist zum |cFFfa9602Vorgebirge von Hillsbrad|r
 step
     .train 410100,1
     .goto Alterac Mountains,80.499,66.923
@@ -2543,7 +2543,7 @@ step
 step
     .train 410100,1
     #completewith next
-    .zone Hillsbrad Foothills >>Reist nach |cFFfa9602Vorgebirge des Hügellands|r
+    .zone Hillsbrad Foothills >>Reist zum |cFFfa9602Vorgebirge von Hillsbrad|r
 step
     .train 410100,1
     .goto Alterac Mountains,80.499,66.923
@@ -2592,7 +2592,7 @@ step
 step
     .train 410100,1
     #completewith next
-    .zone Hillsbrad Foothills >>Reist nach |cFFfa9602Vorgebirge des Hügellands|r
+    .zone Hillsbrad Foothills >>Reist zum |cFFfa9602Vorgebirge von Hillsbrad|r
 step
     .train 410100,1
     .goto Alterac Mountains,80.499,66.923
@@ -3110,7 +3110,7 @@ step
 step
     .goto Felwood,62.4,9.0
     .train 440634,1
-    >>Tötet |cRXP_ENEMY_Deadwood Shamans|r, |cRXP_ENEMY_Deadwood Avengers|r und |cRXP_ENEMY_Deadwood Den Watchers|r. Plündert sie für |T134918:0|t[|cRXP_LOOT_Voltaic Symbol|r]
+    >>Tötet |cRXP_ENEMY_Schamanen der Totenwaldfelle|r, |cRXP_ENEMY_Rächer der Totenwaldfelle|r und |cRXP_ENEMY_Höhlenbehüter der Totenwaldfelle|r. Plündert sie für |T134918:0|t[|cRXP_LOOT_Voltaische Ikone|r]
     .goto Feralas,76.6,48.0
     .collect 225838,1
     .mob Deadwood Shaman
@@ -3180,12 +3180,12 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Runen & Bücher Guide
 #subgroup Verschleierung
 #title Wildgeist
-#name Wildgeist - 60 (Winterquell)
+#name Wildgeist - 60 (Winterspring)
 
 step
     .train 440630,1
     #completewith next
-    .zone Winterspring >>Reist nach Winterquell
+    .zone Winterspring >>Reist nach Winterspring
     >>|cRXP_WARN_Hinweis: Ihr müsst einen Elite auf Stufe 60 töten. Erwägt, einen Freund mitzubringen|r
 step
     #completewith next

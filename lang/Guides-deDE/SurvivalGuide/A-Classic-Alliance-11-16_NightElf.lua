@@ -8,7 +8,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Überlebens-Guide (A)
 #subgroup RXP Überlebens-Guide 1-20
-#next 13-13 Loch Modan (Nacht Elf)
+#next 13-13 Loch Modan (Nachtelf)
 #defaultfor NightElf
 
 step << NightElf
@@ -537,7 +537,7 @@ RXPGuides.RegisterGuide([[
 #classic
 #tbc
 << Alliance
-#name 13-13 Loch Modan (Nacht Elf)
+#name 13-13 Loch Modan (Nachtelf)
 #version 1
 #group RestedXP Überlebens-Guide (A)
 #subgroup RXP Überlebens-Guide 1-20
@@ -763,7 +763,7 @@ step
 step
     #som
     .goto Dun Morogh,83.892,39.188
-    >>Wählt den Dolch, benutzt ihn als euer Nebenhand-Slot, bis ihr ein Vendorschwert bekommt << Rogue
+    >>Wählt den Dolch, benutzt ihn als eure Nebenhand, bis ihr ein Schwert vom Händler bekommt << Rogue
     .target Pilot Hammerfoot
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Pilot Hammerfuß|r
     .turnin 417 >> Gebt die Quest Pilotenrache ab

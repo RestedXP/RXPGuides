@@ -14,7 +14,7 @@ RXPGuides.RegisterGuide([[
 
 step << Warrior
     #season 2
-    >>|cRXP_WARN_Sucht nach dem|r |cRXP_FRIENDLY_Wandernder Schwertkämpfer|r. |cRXP_WARN_Er kann überall in dem kleinen Bereich sein, der auf von Euch Karte markiert ist|r
+    >>|cRXP_WARN_Sucht nach dem|r |cRXP_FRIENDLY_Wandernder Schwertkämpfer|r. |cRXP_WARN_Er kann überall in dem kleinen Bereich sein, der auf eurer Karte markiert ist|r
     >>Findet ihn und fordert ihn zu einem Duell heraus. Nach dem Sieg wird er eine kleine Kiste spawnen, die euch die Rune der |T132334:0|t[|cRXP_FRIENDLY_Blutraserei|r] gewährt
     .goto Dun Morogh,52.6,45.0
     .goto Dun Morogh,52.4,47.4,0
@@ -238,7 +238,7 @@ step << Dwarf Paladin
     .waypoint 1426,68.958,59.357,45,0
     .waypoint 1426,70.475,59.420,45,0
     >>Tötet |cRXP_ENEMY_Schädelhauer der Felsenkiefer|r und |cRXP_ENEMY_Knochenknacker der Felsenkiefer|r. Plündert sie für |T132889:0|t[Leinenstoff] << Dwarf Paladin
-    >>|cRXP_WARN_behaltet den|r |T132889:0|t[Leinenstoff] |cRXP_WARN_für eine spätere Quest|r << Dwarf Paladin
+    >>|cRXP_WARN_Behaltet den|r |T132889:0|t[Leinenstoff] |cRXP_WARN_für eine spätere Quest|r << Dwarf Paladin
     .collect 2589,10,1648,1 --Linen Cloth (10)
     .mob Rockjaw Skullthumper
     .mob Rockjaw Bonesnapper

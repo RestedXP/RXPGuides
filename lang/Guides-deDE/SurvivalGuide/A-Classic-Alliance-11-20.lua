@@ -790,7 +790,7 @@ step
 step
 #map Darkshore
     .goto Felwood,25.15,4.61
-    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4723 >> Akzeptiert die Quest Gestrandete Meereskreatur
 step << Druid
     #completewith cure1
@@ -1014,7 +1014,7 @@ step
 #map Darkshore
     #label Beached4728
     .goto Felwood,18.41,49.43
-    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4728 >> Akzeptiert die Quest Gestrandete Meereskreatur
 step
     #label BearComplete
@@ -1652,7 +1652,7 @@ RXPGuides.RegisterGuide([[
 #classic
 #tbc
 << Alliance
-#name 20-21 Dunkelküste/Eschental
+#name 20-21 Dunkelküste/Ashenvale
 #version 1
 #group RestedXP Überlebens-Guide (A)
 #subgroup RXP Überlebens-Guide 1-20
@@ -1894,7 +1894,7 @@ step
     .isOnQuest 731
 step
     .goto Ashenvale,13.97,4.10
-    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4733 >> Akzeptiert die Quest Gestrandete Meereskreatur
     >>|cRXP_WARN_Diese Quest kann SEHR schwierig sein. Bekämpft die |cRXP_ENEMY_Murlocs|r einzeln, Andernfalls könntest du die Aggro von mehreren gleichzeitig auf dich ziehen.|r
     .link https://youtu.be/lfQM3Q-Ag5A >> |cRXP_WARN_Klickt hier für einen Videoleitfaden|r
@@ -1910,7 +1910,7 @@ step
 step
 #map Darkshore
     .goto Felwood,14.62,60.72
-    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4730 >> Akzeptiert die Quest Gestrandete Meereskreatur
 step
     #label Murkdeep
@@ -2136,12 +2136,12 @@ step
     .goto The Barrens,53.87,21.52,120,0
     .goto The Barrens,59.15,25.48,120,0
     .goto The Barrens,63.087,37.607
-    .subzone 392 >> Reist nach Ratschet im Brachland. Folgt dem Pfeil, um die |cRXP_ENEMY_Brachland-Wachen|r zu vermeiden
+    .subzone 392 >> Reist nach Ratchet im Brachland. Folgt dem Pfeil, um die |cRXP_ENEMY_Wachen des Brachlandes|r zu vermeiden
 step
 .dungeon WC
     .goto The Barrens,63.084,37.163
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Bragok|r
-    .fp Ratchet >> Erlernt die Ratschet-Flugroute
+    .fp Ratchet >> Erlernt die Flugroute nach Ratchet
     .target Bragok
 step
 .dungeon WC
@@ -2243,7 +2243,7 @@ step
 .dungeon WC
     #completewith RatchetTurnin
     .goto The Barrens,62.984,37.218
-    .subzone 392 >> Reist nach Ratschet. Ihr werdet die oben genannten Quests bald abgeben
+    .subzone 392 >> Reist nach Ratchet. Ihr werdet die Quests über HDW bald abgeben
     .isOnQuest 6981,959
 step
 .dungeon WC

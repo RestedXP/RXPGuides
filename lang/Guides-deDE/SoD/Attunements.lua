@@ -9,7 +9,7 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith next
-    .subzone 2268 >> Reist zur |cRXP_LOOT_Kapelle des Hoffnungsvollen Lichts|r in den |cRXP_PICK_Östlichen Pestländern|r
+    .subzone 2268 >> Reist zur |cRXP_LOOT_Kapelle des hoffnungsvollen Lichts|r in den |cRXP_PICK_Östlichen Pestländern|r
 step
     .goto Eastern Plaguelands,81.3,58.75
     >>Klickt auf das Billboard |cRXP_FRIENDLY_Seeking Seasoned Adventurers|r rechts vom Eingang der Kapelle
@@ -17,7 +17,7 @@ step
 step
     .goto Deadwind Pass,43.08,34.22 << Alliance
     .goto Deadwind Pass,51.01,42.19 << Horde
-    .zone Deadwind Pass >> Reist zu |cRXP_PICK_Todwindpass|r
+    .zone Deadwind Pass >> Reist zum |cRXP_PICK_Gebirgspass der Totenwinde|r
     .isOnQuest 86964
 step
     .goto Deadwind Pass,47.36,75.60,100 >> Reisen south towards |cRXP_LOOT_Karazhan|r
@@ -129,7 +129,7 @@ step
     #optional
     #completewith Hypothesis
     #label Winterspring
-    .zone Winterspring >> Reist zu Winterquell|cRXP_PICK_, um nach dem |T136116:0|t[Enthusiastischer Irrwisch]|r zu suchen
+    .zone Winterspring >> Reist nach Winterspring|cRXP_PICK_, um nach dem |T136116:0|t[Enthusiastischer Irrwisch]|r zu suchen
     .isOnQuest 86969
     .itemcount 235788,<1
 step
@@ -167,7 +167,7 @@ step
     #label Hypothesis
     >>Sammelt die |T132839:0|t[Flamme des Lebens]. Sie fällt von |cRXP_ENEMY_Elite-Drachkin|r in der Nähe von |cRXP_LOOT_Grim Batol|r im |cRXP_PICK_Sumpfland|r
     >>Sammelt die |T135139:0|t[Ironwood Branch]. Sie fällt entweder von |cRXP_ENEMY_Grimmwurzel <Der trauernde Wächter>|r im |cRXP_LOOT_Dämonensturz|r|cRXP_WARN_(dungeon)|r oder von |cRXP_ENEMY_Tendris Wucherborke|r im |cRXP_LOOT_Dire Zermalmen West|r|cRXP_WARN_(dungeon)|r
-    >>Sammelt den |T136116:0|t[Enthusiastischer Irrwisch]. Dies ist ein interaktionsfähiger |cRXP_FRIENDLY_friendly NPC|r im |cRXP_LOOT_Die Flüsternde Schlucht|r im |cRXP_PICK_Winterquell|r
+    >>Sammelt den |T136116:0|t[Enthusiastischer Irrwisch]. Dies ist ein interaktionsfähiger |cRXP_FRIENDLY_freundlicher NPC|r in |cRXP_LOOT_Die Flüsternde Schlucht|r in |cRXP_PICK_Winterspring|r
     >>|cRXP_WARN_Diese Items können in beliebiger Reihenfolge gesammelt werden|r
     .complete 86969,1 --Flame of Life
     .complete 86969,2 --Ancient Ironwood Branch
@@ -244,10 +244,10 @@ step << Horde
     .goto Eastern Plaguelands,80.23,57.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Georgia|r außerhalb
     .target Georgia
-    .fly Undercity >> Fliegt nach Unterstadt
+    .fly Undercity >> Fliegt nach Undercity
     .isOnQuest 87459
 step << Horde
-    .goto Tirisfal Glades,61.85,66.59,60 >> Verlasst Unterstadt
+    .goto Tirisfal Glades,61.85,66.59,60 >> Verlasst Undercity
     .isOnQuest 87459
 step << Alliance
    #completewith next

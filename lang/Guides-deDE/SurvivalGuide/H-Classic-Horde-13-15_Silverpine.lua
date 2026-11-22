@@ -480,26 +480,26 @@ step
     .goto Silverpine Forest,43.43,40.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Hadrec|r in der Gruft
     .turnin 439 >>Gebt die Quest Auf den Spuren der Moderfelle ab
-    .accept 440 >>Akzeptiert die Quest Der gravierte Läuten
+    .accept 440 >>Akzeptiert die Quest Der gravierte Ring
     .target High Executor Hadrec
 step << Undead
     .goto Silverpine Forest,45.62,42.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Karos|r
     .turnin 6321 >>Gebt die Quest Nachschub für das Grabmal ab
-    .accept 6323 >>Akzeptiert die Quest Flug nach Unterstadt
+    .accept 6323 >>Akzeptiert die Quest Flug nach Undercity
     .target Karos Razok
 step
     #completewith ZingeAndFaranell
     .goto Silverpine Forest,45.62,42.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Karos|r
     .fp Sepulcher >> Erlernt die Flugroute am Grabmal << !Undead
-    .fly Undercity >> Fliegt nach Unterstadt
+    .fly Undercity >> Fliegt nach Undercity
     .target Karos Razok
     .zoneskip Undercity
 step << Undead
     .goto Undercity,61.48,41.81
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Gordon|r
-    .turnin 6323 >> Gebt die Quest Flug nach Unterstadt ab
+    .turnin 6323 >> Gebt die Quest Flug nach Undercity ab
     .accept 6322 >> Akzeptiert die Quest Michael Garrett
     .target Gordon Wendham
 step << Troll Warrior/Undead Warrior

@@ -177,7 +177,7 @@ step
     .mob Maggot Eye
 step
     .train 403920,1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Denton Bleichpfad <Seelenhändler>|r in Unterstadt
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Denton Bleichpfad|r in Undercity
     .goto Undercity,84.2,25.8
     .collect 205022,1
     .skipgossip 208682,1
@@ -217,13 +217,13 @@ step
     .target Rupert Boch
 step
     .train 416009,1
-    >>Benutzt |T133447:0|t[Machtloses Artefakt] neben dem Runenstein. |cRXP_WARN_Danach habt ihr 10 Minuten Zeit, um nach Unterstadt zu gelangen (schaut auf den Debuff von Euch)|r
+    >>Benutzt |T133447:0|t[Machtloses Artefakt] neben dem Runenstein. |cRXP_WARN_Danach habt ihr 10 Minuten Zeit, um nach Undercity zu gelangen (schaut auf euren Debuff)|r
     .goto Tirisfal Glades,76.61,44.87
     .use 205182
     .collect 205183,1
 step
     .train 416009,1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Carentin Halgar|r in Unterstadt
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Carentin Halgar|r in Undercity
     .goto Undercity,85.0,25.6
     .collect 205215,1
     .skipgossip 5675,1
@@ -392,13 +392,13 @@ RXPGuides.RegisterGuide([[
 << Warlock SoD
 #group RestedXP Runen & Bücher Guide
 #subgroup Brust
-#name See des Feuers - 25 (Vorgebirge des Hügellands)
+#name See des Feuers - 25 (Vorgebirge von Hillsbrad)
 #title See des Feuers
 
 step
     #completewith next
-    .zone Hillsbrad Foothills >>Reist nach Vorgebirge des Hügellands (z.B. von Unterstadt durch Silberwald) << Horde
-    .zone Hillsbrad Foothills >>Reist nach Vorgebirge des Hügellands (z.B. nördlich von Sumpfland) << Alliance
+    .zone Hillsbrad Foothills >>Reist zum Vorgebirge von Hillsbrad (z.B. von Undercity durch Silberwald) << Horde
+    .zone Hillsbrad Foothills >>Reist zum Vorgebirge von Hillsbrad (z.B. nördlich von Sumpfland) << Alliance
 step
     .train 403937,1
     #loop
@@ -568,7 +568,7 @@ step
     +|cRXP_WARN_Es wird empfohlen, alle diese Schritte in einer Gruppe zu absolvieren. Einige Schritte können allein absolviert werden.|r
 step
     #completewith next
-    .zone Redridge Mountains >>Reist zum Rotkammgebirge (z.B. nehmt das Boot von Ratschet nach Beutebucht, dann lauft nach Norden) << Horde
+    .zone Redridge Mountains >>Reist zum Rotkammgebirge (z.B. nehmt das Boot von Ratchet nach Booty Bay, dann lauft nach Norden) << Horde
     .zone Redridge Mountains >>Reist zum Rotkammgebirge << Alliance
 step
     #label WarlockRuneMetamorphosisA
@@ -713,7 +713,7 @@ step << Alliance
     .isOnQuest 78994
     .goto The Barrens,62.05,39.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gastwirt Wiley|r
-    .home >> Setzt euren Ruhestein in Ratschet
+    .home >> Setzt euren Ruhestein in Ratchet
     .target Innkeeper Wiley
 step << Horde
     .train 426445,1
@@ -762,7 +762,7 @@ step
     #completewith next
     .train 426445,1
     .isOnQuest 78994
-    .hs >> Ruhestein nach Ratschet << Alliance
+    .hs >> Ruhestein nach Ratchet << Alliance
     .hs >> Ruhestein nach Camp Taurajo << Horde
     .zoneskip The Barrens
 step

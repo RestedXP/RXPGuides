@@ -1807,7 +1807,7 @@ step
     .isOnQuest 1001
 step
     .goto 1439/1,197.15,6964.86--c:1439,41.901,31.339
-    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4723 >> Akzeptiert die Quest Gestrandete Meereskreatur
 step
     .goto 1439/1,193.29,7083.77--c:1439,41.960,28.616
@@ -2813,12 +2813,12 @@ step
     .subzoneskip 16611 -- ruins of lordaeron
 step
     .goto 1437/0,-581.800,-3722.400
-    .zone Hillsbrad Foothills >> Nehmt das Boot nach Süderstade
+    .zone Hillsbrad Foothills >> Nehmt das Boot nach Southshore
     .subzoneskip 16611 -- ruins of lordaeron
 step
     .goto 1424/0,-512.15,-715.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Darla Harris|r
-    .fp Southshore >> Erlernt die Flugroute nach Süderstade
+    .fp Southshore >> Erlernt die Flugroute nach Southshore
     .target Darla Harris
     .subzoneskip 16611 -- ruins of lordaeron
 step
@@ -2840,9 +2840,9 @@ step
     .goto 1420/0,6.300,1791.500,25,0
     .goto 1420/0,4.300,1847.500,10,0
     .goto 1458/0,238.400,1872.200,20,0
-    .goto 1458/0,170.700,1804.700,20 >>Reist zu den Ruinen von Lordaeron in der Unterstadt. Betretet den Instanz
+    .goto 1458/0,170.700,1804.700,20 >>Reist zu den Ruinen von Lordaeron in Undercity. Betretet die Instanz
     >>|cRXP_WARN_Seid vorsichtig vor hochstufigen |cRXP_ENEMY_Löwen|r, |cRXP_ENEMY_Bären|r, |cRXP_ENEMY_Spinnen|r oder |cRXP_ENEMY_Murlocs|r, während ihr hinüber lauft|r
-    >>|cRXP_WARN_Sobald ihr die Unterstadt betretet, werdet ihr automatisch für PvP markiert und seid angreifbar durch die|r |cRXP_ENEMY_Horde|r
+    >>|cRXP_WARN_Sobald ihr Undercity betretet, werdet ihr automatisch für PvP markiert und seid angreifbar durch die|r |cRXP_ENEMY_Horde|r
     .link https://www.youtube.com/watch?v=jxmG6_JPFMc >> |cRXP_WARN_Klickt hier für eine Videoanleitung zum Betreten des Ruinen von Lordaeron Dungeons|r
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Captain Truman|r
@@ -3130,7 +3130,7 @@ RXPGuides.RegisterGuide([[
 --#groupid RXP-SRGCE-A1
 #name 19-20 Todesminen
 #displayname 18-20 Todesminen/Rotkammgebirge << NightElf
-#next 20-21 Dunkelküste/Eschental
+#next 20-21 Dunkelküste/Ashenvale
 
 step
     #optional
@@ -3956,8 +3956,8 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Forever Dungeonführer (A)
 #subgroup Dungeonführer 1-20
 --#groupid RXP-SRGCE-A1
-#name 20-21 Dunkelküste/Eschental
-#next RestedXP Forever Dungeonführer (A)\21-23 Eschental/Steinkrallengebirge
+#name 20-21 Dunkelküste/Ashenvale
+#next RestedXP Forever Dungeonführer (A)\21-23 Ashenvale/Steinkrallengebirge
 
 step << Druid
     #completewith catspirit1
@@ -4437,7 +4437,7 @@ step
     .target Gwennyth Bly'Leggonde
 step
     .goto 1439/1,585.76,5241.43--c:1439,35.968,70.807
-    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4728 >> Akzeptiert die Quest Gestrandete Meereskreatur
     .isQuestTurnedIn 4681
 step
@@ -4558,7 +4558,7 @@ step
 step
     .isQuestTurnedIn 4681
     .goto 1439/1,803.48,4808.95--c:1439,32.644,80.711
-    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4730 >> Akzeptiert die Quest Gestrandete Meereskreatur
 step
     .isQuestTurnedIn 4681
@@ -4575,7 +4575,7 @@ step
 step
     .isQuestTurnedIn 4681
     .goto 1439/1,894.73,4516.04--c:1439,31.251,87.419
-    >>Klickt die |cRXP_PICK_Gestrandete Meereskreatur|r
+    >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4733 >> Akzeptiert die Quest Gestrandete Meereskreatur
     >>|cRXP_WARN_Achtet auf |cRXP_ENEMY_Orakel der Grauflossen|r'|r |T136048:0|t[Blitzschlag] |cRXP_WARN_Schaden, sie können auch mit|r |T136052:0|t[Welle der Heilung]|r heilen
 step
@@ -4634,7 +4634,7 @@ step
     .abandon 1002 >> Brecht die Quest Dröhnkiste 323 ab
 step
     #completewith tower
-    .zone Ashenvale >> Reist südlich ins Eschental
+    .zone Ashenvale >> Reist südlich nach Ashenvale
     .goto 1440/1,-12.70,4150.17
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Liladris Moonriver|r

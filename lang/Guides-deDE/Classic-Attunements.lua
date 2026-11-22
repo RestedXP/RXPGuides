@@ -2,6 +2,7 @@ if GetLocale() ~= "deDE" then return end
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
+#forever
 
 << Alliance
 #group RestedXP Endgame Guides
@@ -262,7 +263,7 @@ step
     .target Highlord Bolvar Fordragon
 step
     #completewith next
-    .zone Winterspring >>Reist nach |cFFfa9602Winterquell|r
+    .zone Winterspring >>Reist nach |cFFfa9602Winterspring|r
 step
     .isQuestTurnedIn 6403
     #completewith next
@@ -302,7 +303,7 @@ step
     .mob General Drakkisath
 step
     #completewith next
-    .zone Winterspring >>Reist nach |cFFfa9602Winterquell|r
+    .zone Winterspring >>Reist nach |cFFfa9602Winterspring|r
 step
     #completewith next
     .goto Winterspring,56.60,52.78,0
@@ -345,6 +346,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #group RestedXP Endgame Guides
 #subgroup Zutrittsvoraussetzungen
+#forever
 #name Onyxias Zutrittsvoraussetzungen (H)
 #guideKind attunement
 #guideIcon rxp-icon-ony
@@ -549,7 +551,7 @@ step
 step
     #sticky
     #label SkullofDragons
-    >>Tötet |cRXP_ENEMY_Seher|r in |cFFfa9602Winterquell|r
+    >>Tötet |cRXP_ENEMY_Scryer|r in |cFFfa9602Winterspring|r
     >>Tötet |cRXP_ENEMY_Somnus|r in |cFFfa9602Sümpfe des Elends|r
     >>Tötet |cRXP_ENEMY_Chronalis|r in |cFFfa9602Tanaris|r
     >>Plündert sie für |cRXP_LOOT_Schädel|r
@@ -566,7 +568,7 @@ step
     .unitscan Chronalis
 step
     #completewith next
-    .zone Winterspring >>Reist nach |cFFfa9602Winterquell|r
+    .zone Winterspring >>Reist nach |cFFfa9602Winterspring|r
 step
     #completewith next
     .goto Winterspring,57.07,49.97
@@ -883,6 +885,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
+#forever
 
 #group RestedXP Endgame Guides
 #subgroup Schlüssel
@@ -974,6 +977,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
+#forever
 
 << Alliance
 #group RestedXP Endgame Guides
@@ -1233,6 +1237,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
+#forever
 
 << Horde
 #group RestedXP Endgame Guides
@@ -1248,7 +1253,7 @@ step
     .collect 12359,2,5801,1 --Thorium Bar x2
 step
     #completewith next
-    .zone Undercity >>Reist nach |cFFfa9602Unterstadt|r
+    .zone Undercity >>Reist nach |cFFfa9602Undercity|r
 step
     #loop
     .goto Undercity,67.43,46.15,0
@@ -1264,7 +1269,7 @@ step
     .goto Undercity,70.81,51.49,50,0
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Künder Balthazad|r
     .acceptmultiple 5093,5094,5095 >>Der Ruf zu den Waffen: Die Pestländer! annehmen
-    >>|cRXP_WARN_Diese Quest kann auch in|r |cFFfa9602Orgrimmar|r |cRXP_WARN_oder|r |cFFfa9602Donnerfels|r angenommen werden
+    >>|cRXP_WARN_Diese Quest kann auch in|r |cFFfa9602Orgrimmar|r |cRXP_WARN_oder|r |cFFfa9602Thunder Bluff|r angenommen werden
     .unitscan Warcaller Gorlach --ORG
     .unitscan Harbinger Balthazadd --UC
     .unitscan Bluff Runner Windstrider --TB
@@ -1491,6 +1496,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
+#forever
 
 #group RestedXP Endgame Guides
 #subgroup Schlüssel
@@ -1555,6 +1561,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
+#forever
 
 #group RestedXP Endgame Guides
 #subgroup Schlüssel
@@ -1677,7 +1684,7 @@ step
     .itemcount 228172,<1 --Only shows if you don't have the trinket
 step
     #completewith next
-    .zone Winterspring >> Reist nach |cFFfa9602Winterquell|r
+    .zone Winterspring >> Reist nach |cFFfa9602Winterspring|r
     .itemcount 228172,<1 --Only shows if you don't have the trinket
 step
 	.line Winterspring,64.0,22.6,65.6,23.2,67.6,22.6,65.6,19.6,63.6,16.2,65.6,19.6,64.0,20.8,64.0,22.6

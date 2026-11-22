@@ -75,13 +75,13 @@ step << NightElf Priest
     #season 2
     #completewith next
     .isOnQuest 77574
-    .goto Teldrassil,59.940,33.052,10 >> Reist zum Mondquell in Laubschattental
+    .goto Teldrassil,59.940,33.052,10 >> Reist zum Mondbrunnen in Shadowglen
     .train 402862,1
 step << NightElf Priest
     #season 2
     .isOnQuest 77574
     .goto Teldrassil,59.940,33.052
-    .aura 419307 >>|cRXP_WARN_Sobald ihr am Mondquell seid, tippt /knien in euren Chat ein|r
+    .aura 419307 >>|cRXP_WARN_Sobald ihr am Mondbrunnen seid, tippt /knien in euren Chat ein|r
     >>|cRXP_WARN_Ihr werdet den|r |T136057:0|t[Meditation über Elune] |cRXP_WARN_Stärkungszauber erhalten|r
     .train 402862,1
 step << NightElf Priest
@@ -1612,7 +1612,7 @@ step
     .itemcount 228172,<1 --Only shows if you don't have the trinket
 step
     #completewith next
-    .zone Winterspring >> Reist nach Winterquell
+    .zone Winterspring >> Reist nach Winterspring
     .itemcount 228172,<1 --Only shows if you don't have the trinket
 step
     .goto Winterspring,65.6,21.4

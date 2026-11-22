@@ -11,7 +11,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Überlebens-Guide (H)
 #subgroup RXP Überlebens-Guide 1-20
-#next 19-23 Steinkrallengebirge/Brachland/Eschental
+#next 19-23 Steinkrallengebirge/Brachland/Ashenvale
 
 
 step << !Tauren !Hunter !Shaman
@@ -345,7 +345,7 @@ step << !Tauren !Undead
 step
     #sticky
     #completewith EnterRFC
-    .subzone 2437 >> Jetzt solltet ihr eine Gruppe für Flammenschlund suchen
+    .subzone 2437 >> Jetzt solltet ihr nach einer Gruppe für Ragefireabgrund suchen
     .dungeon RFC
 step
     .goto The Barrens,51.99,29.89
@@ -373,20 +373,20 @@ step << skip --!Tauren
     .dungeon RFC
 step << skip --!Tauren
     #completewith RFCPickups
-    .goto Thunder Bluff,50.75,37.07,40 >> Nehmt den Aufzug nach Donnerfels
+    .goto Thunder Bluff,50.75,37.07,40 >> Nehmt den Aufzug nach Thunder Bluff
     .dungeon RFC
 step << Tauren
     #completewith RFCPickups
     .goto The Barrens,51.50,30.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Devrak|r
-    .fly Thunder Bluff >>Fliege nach Donnerfels
+    .fly Thunder Bluff >>Fliegt nach Thunder Bluff
     .zoneskip Thunder Bluff
     .dungeon RFC
 step << !Tauren
     #completewith RFCPickups
     .goto Mulgore,68.68,60.34,120,0
-    .zone Thunder Bluff >>Reist südlich zu Camp Taurajo und betretet Mulgore. Reist von dort zu Donnerfels
-    >>|cRXP_WARN_Wenn ihr die Donnerfels Flugroute habt, fliegt stattdessen dorthin|r
+    .zone Thunder Bluff >>Reist südlich zu Camp Taurajo und betretet Mulgore. Reist von dort nach Thunder Bluff
+    >>|cRXP_WARN_Wenn ihr die Thunder Bluff Flugroute habt, fliegt stattdessen dorthin|r
     .dungeon RFC
 step
     #completewith next
@@ -404,7 +404,7 @@ step
     #completewith next
     .goto Thunder Bluff,47.00,49.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Tal|r
-    .fp Thunder Bluff >> Erlernt die Flugroute nach Donnerfels << !Tauren
+    .fp Thunder Bluff >> Erlernt die Flugroute nach Thunder Bluff << !Tauren
     .fly Orgrimmar >> Fliege nach Orgrimmar
     .zoneskip Orgrimmar
     .target Tal
@@ -454,7 +454,7 @@ step
 step
     #label EnterRFC
     .goto Orgrimmar,52.77,48.97
-    .subzone 2437 >> BETRETET Das Flammenschlund Instanzportal. Betretet die Zone
+    .subzone 2437 >> Betretet das Ragefireabgrund-Instanzportal
     .dungeon RFC
 step
     #completewith next
@@ -572,7 +572,7 @@ step
 step
     #completewith Varimathras
     .goto Tirisfal Glades,61.80,65.06,20,0
-    .zone Undercity >> Betrete Unterstadt
+    .zone Undercity >> Betrete Undercity
     .zoneskip Undercity
     .dungeon RFC
 step
@@ -582,7 +582,7 @@ step
     .goto Undercity,65.93,26.71,10,0
     .goto Undercity,65.89,34.03,10,0
     .goto Undercity,64.22,39.77,10,0
-    .goto Undercity,65.53,43.62,15 >> Nehmt den Aufzug hinab nach Unterstadt
+    .goto Undercity,65.53,43.62,15 >> Nehmt den Aufzug hinab nach Undercity
     .goto Undercity,56.2,96.2
     .dungeon RFC
 step
@@ -603,7 +603,7 @@ step
     #completewith FinalRFCTurnin
     .goto The Barrens,51.50,30.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Devrak|r
-    .fly Thunder Bluff >> Fliege nach Donnerfels
+    .fly Thunder Bluff >> Fliegt nach Thunder Bluff
     .target Devrak
     .zoneskip Thunder Bluff
     .dungeon RFC
@@ -749,7 +749,7 @@ step
     .complete 845,1 --Zhevra Hooves (4)
     .mob Zhevra Runner
 step
-    .goto The Barrens,63.08,36.56,120 >> Reisen toward Ratschet
+    .goto The Barrens,63.08,36.56,120 >> Reist nach Ratchet
     .subzoneskip 392
 step
     #label RatchetArrive
@@ -761,7 +761,7 @@ step
     #completewith next
     .goto The Barrens,63.09,37.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Bragok|r
-    .fp Ratchet >> Erlernt die Flugroute nach Ratschet
+    .fp Ratchet >> Erlernt die Flugroute nach Ratchet
     .target Bragok
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Sputtervalve|r und |cRXP_FRIENDLY_Wanted poster|r
@@ -864,7 +864,7 @@ step
     .vendor >> Verkauft Müll
     .collect 4592,40,895,1 --Longjaw Mud Snapper (40)
     .collect 1205,20,895,1 << Mage/Warlock/Priest/Shaman/Druid --Melon Juice (20)
-    .home >>Setzt euren Ruhestein in Ratschet
+    .home >>Setzt euren Ruhestein in Ratchet
     .target Innkeeper Wiley
     .bindlocation 392
     .isQuestAvailable 887
@@ -1186,7 +1186,7 @@ step
     .goto The Barrens,43.80,12.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Vrang|r
 	.vendor	>> Verkauft trash und repariert
-    .target Vrang Wildgore
+    .target Vrang Wildblut
 step
 	#label Samophlange
     .goto The Barrens,52.40,11.65
@@ -1243,7 +1243,7 @@ step << Druid
     .xp <18,1
 step
     #completewith next
-    .hs >>Ruhestein nach Ratschet
+    .hs >>Ruhestein nach Ratchet
     .bindlocation 392,1
     .subzoneskip 392
     .use 6948
@@ -1383,7 +1383,7 @@ step << Rogue
     .goto Orgrimmar,42.72,52.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Zando'zan|r
     .turnin 2379 >>Gebt die Quest Zando'zan ab
-    .accept 2382 >>Akzeptiert die Quest Wrenix aus Ratschet
+    .accept 2382 >>Akzeptiert die Quest Wrenix aus Ratchet
     .target Zando'zan
 step << Orc Rogue/Troll Rogue
     #completewith next
@@ -1819,13 +1819,13 @@ step
     #completewith TheEscapeTurnIn
     .goto The Barrens,51.50,30.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Devrak|r
-    .fly Ratchet >> Fliege nach Ratschet
+    .fly Ratchet >> Fliegt nach Ratchet
     .target Devrak
     .subzoneskip 392
 step << Rogue
     .goto The Barrens,63.07,36.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Wrenix|r
-    .turnin 2382 >>Gebt die Quest Wrenix aus Ratschet ab
+    .turnin 2382 >>Gebt die Quest Wrenix aus Ratchet ab
     .accept 2381 >>Akzeptiert die Quest Das Ausplündern der Plünderer
     .target Wrenix the Wretched
 step << Rogue
@@ -2114,11 +2114,11 @@ RXPGuides.RegisterGuide([[
 #classic
 #tbc
 << Horde
-#name 19-23 Steinkrallengebirge/Brachland/Eschental
+#name 19-23 Steinkrallengebirge/Brachland/Ashenvale
 #version 1
 #group RestedXP Überlebens-Guide (H)
 #subgroup RXP Überlebens-Guide 1-20
-#next 23-25 Vorgebirge des Hügellands
+#next 23-25 Vorgebirge von Hillsbrad
 
 step
     #optional
@@ -2615,7 +2615,7 @@ step
     .mob Ishamuhale
 step
     #completewith BootyTurnin
-    .subzone 392 >> Reist nach Ratschet
+    .subzone 392 >> Reist nach Ratchet
 step << Rogue
     .goto The Barrens,63.07,36.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Wrenix|r
@@ -2676,7 +2676,7 @@ step << Rogue/Hunter/Warrior/Shaman/Druid
 step
     .goto The Barrens,62.05,39.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gastwirt Wiley|r
-    .home >>Setzt euren Ruhestein in Ratschet
+    .home >>Setzt euren Ruhestein in Ratchet
     .target Innkeeper Wiley
     .bindlocation 392
     .isQuestAvailable 959
@@ -3048,7 +3048,7 @@ step << Shaman
     #completewith CallofWater01
     .goto Orgrimmar,45.13,63.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Doras|r
-    .fly Ratchet >> Fliege nach Ratschet
+    .fly Ratchet >> Fliegt nach Ratchet
     .target Doras
     .zoneskip Orgrimmar,1
 step << Shaman
@@ -3056,7 +3056,7 @@ step << Shaman
     #completewith CallofWater01
     .goto The Barrens,63.09,37.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Bragok|r
-    .fly Ratchet >> Fliege nach Ratschet
+    .fly Ratchet >> Fliegt nach Ratchet
     .target Bragok
     .subzoneskip 392,1
     .dungeon DM
@@ -3234,7 +3234,7 @@ step
 step << !Tauren
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Quetschzahn|r
     .aura 16618 >>|cRXP_WARN_Falls ihr 10 habt|r |T134128:0|t[|cRXP_LOOT_Blutsplitter|r] |cRXP_WARN_übrig, benutzt sie, um|r |T136022:0|t[Geist des Windes] |cRXP_WARN_von|r |cRXP_FRIENDLY_Quetschzahn|r zu erhalten
-    >>|cRXP_WARN_Überspringen diesen Schritt, falls ihr die Donnerfels-Flugroute habt|r
+    >>|cRXP_WARN_Überspringt diesen Schritt, falls ihr die Thunder Bluff Flugroute habt|r
     .itemcount 5075,10
     .target Mangletooth
 step << !Tauren
@@ -3244,13 +3244,13 @@ step << !Tauren
 step << !Tauren
     #completewith DeathDUPpickup
     .goto Thunder Bluff,31.78,65.92
-    .zone Thunder Bluff >>Nehmt den Aufzug nach Donnerfels
-    >>|cRXP_WARN_Wenn ihr die Donnerfels Flugroute habt, fliegt stattdessen dorthin|r
+    .zone Thunder Bluff >>Nehmt den Aufzug nach Thunder Bluff
+    >>|cRXP_WARN_Wenn ihr die Thunder Bluff Flugroute habt, fliegt stattdessen dorthin|r
 step << Tauren
     #completewith DeathDUPpickup
     .goto The Barrens,44.45,59.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Omusa|r
-    .fly Thunder Bluff >>Fliege nach Donnerfels
+    .fly Thunder Bluff >>Fliegt nach Thunder Bluff
     .target Omusa Thunderhorn
 step << Undead Warrior/Orc Warrior/Troll Warrior
     .goto Thunder Bluff,40.93,62.73
@@ -3281,7 +3281,7 @@ step
 step
     .goto Thunder Bluff,45.83,64.74
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gastwirtin Pala|r
-    .home >>Setzt euren Ruhestein in Donnerfels
+    .home >>Setzt euren Ruhestein in Thunder Bluff
     .target Innkeeper Pala
     .bindlocation 1638
     .dungeon !WC
@@ -3430,7 +3430,7 @@ step << Druid
     .target Tajarri
 step << Druid
     #completewith FlyXroads2
-    .hs >> Ruhestein nach Donnerfels
+    .hs >> Ruhestein nach Thunder Bluff
     .use 6948
     .cooldown item,6948,>0
     .dungeon !WC
@@ -3438,7 +3438,7 @@ step << Druid
     #completewith FlyXroads2
     .goto Moonglade,44.29,45.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Bunthen|r
-    .fly Thunder Bluff >> Fliege nach Donnerfels
+    .fly Thunder Bluff >> Fliegt nach Thunder Bluff
     .target Bunthen Plainswind
     .zoneskip Thunder Bluff
     .dungeon WC
@@ -3446,7 +3446,7 @@ step << Druid
     #completewith FlyXroads2
     .goto Moonglade,44.29,45.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Bunthen|r
-    .fly Thunder Bluff >> Fliege nach Donnerfels
+    .fly Thunder Bluff >> Fliegt nach Thunder Bluff
     .target Bunthen Plainswind
     .cooldown item,6948,<0
     .zoneskip Thunder Bluff
@@ -3892,7 +3892,7 @@ step
     .dungeon WC
 step
     #completewith GlowingShardRP
-    .hs >> Ruhestein nach Ratschet
+    .hs >> Ruhestein nach Ratchet
     .bindlocation 392,1
     .subzoneskip 392
     .use 6948
@@ -3987,7 +3987,7 @@ step
     #completewith WCEnd
     .goto The Barrens,51.50,30.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Devrak|r
-    .fly Thunder Bluff >>Fliege nach Donnerfels
+    .fly Thunder Bluff >>Fliegt nach Thunder Bluff
     .target Devrak
     .zoneskip Thunder Bluff
     .dungeon WC
@@ -4022,7 +4022,7 @@ step
     #label WCEnd
     .goto Thunder Bluff,45.83,64.74
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gastwirtin Pala|r
-    .home >>Setzt euren Ruhestein in Donnerfels
+    .home >>Setzt euren Ruhestein in Thunder Bluff
     .target Innkeeper Pala
     .bindlocation 1638
     .isQuestAvailable 6442
@@ -4539,7 +4539,7 @@ step
     .mob Wrathtail Myrmidon
     .mob Lady Vespia
 step
-    .goto Kalimdor,43.89,35.23,100 >> Reist zum Eingang der Tiefschwarzen Grotte
+    .goto Kalimdor,43.89,35.23,100 >> Reist zum Eingang der Blackfathom-Tiefe
     .isOnQuest 6563
     .group
 step
@@ -4652,7 +4652,7 @@ step
     .target Karang Amakkar
 step
     #completewith flytoORG
-    .hs >> Ruhestein nach Donnerfels
+    .hs >> Ruhestein nach Thunder Bluff
     .use 6948
     .bindlocation 1638,1
     .zoneskip Thunder Bluff
@@ -4662,7 +4662,7 @@ step
     .goto Ashenvale,12.24,33.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Andruk|r
     .zoneskip Thunder Bluff
-    .fly Thunder Bluff >> Fliege nach Donnerfels
+    .fly Thunder Bluff >> Fliegt nach Thunder Bluff
     .target Andruk
     .cooldown item,6948,<0
 step

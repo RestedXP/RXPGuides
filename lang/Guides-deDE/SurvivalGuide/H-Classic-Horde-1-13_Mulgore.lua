@@ -1069,7 +1069,7 @@ step
     .goto Mulgore,61.45,21.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit dem |cRXP_FRIENDLY_Vorfahrengeist|r
     .turnin 773 >>Gebt die Quest Ritus der Weisheit ab
-    .accept 775 >>Akzeptiert die Quest Reise nach Donnerfels
+    .accept 775 >>Akzeptiert die Quest Reise nach Thunder Bluff
     .target Ancestral Spirit
 step
     #loop
@@ -1548,26 +1548,26 @@ step << Hunter/Druid
     #completewith next
     .goto The Barrens,51.50,30.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Devrak|r
-    .fly Thunder Bluff >>Fliege nach Donnerfels
+    .fly Thunder Bluff >>Fliegt nach Thunder Bluff
     .target Devrak
     .zoneskip Thunder Bluff
 step << Hunter/Druid
     .goto Thunder Bluff,45.6,55.9
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Ahanu|r
-    .turnin 6362 >>Gebt die Quest Flug nach Donnerfels ab
+    .turnin 6362 >>Gebt die Quest Flug nach Thunder Bluff ab
     .accept 6363 >>Akzeptiert die Quest Tal der Windreitermeister
     .target Ahanu
 step << Druid
     .goto Thunder Bluff,45.83,64.74
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Gastwirtin Pala|r
-    .home >>Setzt euren Ruhestein in Donnerfels
+    .home >>Setzt euren Ruhestein in Thunder Bluff
     .target Innkeeper Pala
     .bindlocation 1638
     .isQuestAvailable 5932
 step << Hunter/Druid
     .goto Thunder Bluff,60.0,51.7
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Cairne|r
-    .turnin 775 >>Gebt die Quest Reise nach Donnerfels ab
+    .turnin 775 >>Gebt die Quest Reise nach Thunder Bluff ab
     .target Cairne Bloodhoof
 step << Hunter
 	.goto Thunder Bluff,57.4,89.4
@@ -1619,11 +1619,11 @@ step << Druid
     .goto Moonglade,56.21,30.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Dendrite|r
     .turnin 5930 >>Gebt die Quest Großer Bärengeist ab
-    .accept 5932 >>Akzeptiert die Quest Zurück nach Donnerfels
+    .accept 5932 >>Akzeptiert die Quest Zurück nach Thunder Bluff
     .target Dendrite Starblaze
 step << Druid
     #completewith DruidBearForm
-    .hs >> Ruhestein nach Donnerfels
+    .hs >> Ruhestein nach Thunder Bluff
     .cooldown item,6948,>0
     .use 6948
     .bindlocation 1638,1
@@ -1631,7 +1631,7 @@ step << Druid
     #completewith next
     .goto Moonglade,44.29,45.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Bunthen|r
-    .fly Thunder Bluff >> Fliege nach Donnerfels
+    .fly Thunder Bluff >> Fliegt nach Thunder Bluff
     .target Bunthen Plainswind
     .zoneskip Thunder Bluff
     .cooldown item,6948,<0
@@ -1639,7 +1639,7 @@ step << Druid
     #label DruidBearForm
     .goto Thunder Bluff,76.7,27.3
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Turak|r
-    .turnin 5932 >>Gebt die Quest Zurück nach Donnerfels ab
+    .turnin 5932 >>Gebt die Quest Zurück nach Thunder Bluff ab
     .accept 6002 >>Akzeptiert die Quest Körper und Herz
     .target Turak Runetotem
 step << Druid/Hunter
@@ -1704,7 +1704,7 @@ step << Druid
     #completewith next
     .goto The Barrens,44.45,59.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Omusa|r
-    .fly Thunder Bluff >> Fliege nach Donnerfels
+    .fly Thunder Bluff >> Fliegt nach Thunder Bluff
     .target Omusa Thunderhorn
     .zoneskip Thunder Bluff
 step << Druid
@@ -2955,7 +2955,7 @@ step << Shaman/Warrior
 step << Shaman/Warrior
     .goto Thunder Bluff,60.0,51.7
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Cairne|r
-    .turnin 775 >>Gebt die Quest Reise nach Donnerfels ab
+    .turnin 775 >>Gebt die Quest Reise nach Thunder Bluff ab
     .target Cairne Bloodhoof
 step << Shaman/Warrior
     .goto Thunder Bluff,47.00,49.82
@@ -3203,7 +3203,7 @@ step << Warrior
     .xp <14,1
 step
     #completewith UCflightpath2
-    .goto Tirisfal Glades,61.80,65.06,20 >> Betrete Unterstadt
+    .goto Tirisfal Glades,61.80,65.06,20 >> Betrete Undercity
     .zoneskip Undercity
     .zoneskip Undercity
 step
@@ -3213,13 +3213,13 @@ step
     .goto Undercity,65.93,26.71,10,0
     .goto Undercity,65.89,34.03,10,0
     .goto Undercity,64.22,39.77,10,0
-    .goto Undercity,65.53,43.62,15 >> Nehmt den Aufzug hinab nach Unterstadt
+    .goto Undercity,65.53,43.62,15 >> Nehmt den Aufzug hinab nach Undercity
 step
     #label UCflightpath2
     .goto Undercity,63.25,48.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Michael|r
     >>|cRXP_WARN_Überspringt diesen Schritt, wenn ihr bereits die Flugroute erlernt habt!|r
-    .fp Undercity >> Erlernt die Flugroute Unterstadt
+    .fp Undercity >> Erlernt die Flugroute Undercity
     .target Michael Garrett
 step
     #optional
@@ -3254,7 +3254,7 @@ step
     .goto Undercity,34.80,33.19,15,0
     .goto Undercity,27.39,30.23,35,0
     .goto Undercity,21.89,43.35,35,0
-    .goto Tirisfal Glades,51.10,71.53,50 >> Verlasst die Unterstadt durch die Kanalisation
+    .goto Tirisfal Glades,51.10,71.53,50 >> Verlasst Undercity durch die Abwasserkanäle
     .zoneskip Tirisfal Glades
     .zoneskip Tirisfal Glades
 step

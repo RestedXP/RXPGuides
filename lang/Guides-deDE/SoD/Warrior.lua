@@ -16,7 +16,7 @@ step << Warrior
     .goto 1429,48.336,28.597,20,0
     .goto 1429,48.679,26.618,20,0
     .goto 1429,49.919,25.792,20,0
-    .goto 1429,50.639,27.274,15 >>Reist zur |cRXP_PICK_Lagertruhe der Kobolde|r in Echokammmine
+    .goto 1429,50.639,27.274,15 >>Reist zur |cRXP_PICK_Lagertruhe der Kobolde|r in der Echokammmine
     .train 403470,1
 step << Warrior
     #season 2
@@ -749,7 +749,7 @@ RXPGuides.RegisterGuide([[
 << Horde Warrior SoD
 #group RestedXP Runen & Bücher Guide
 #subgroup Beine
-#name Rasender Angriff - 10 (Donnerfels)
+#name Rasender Angriff - 10 (Thunder Bluff)
 #title Rasender Angriff
 
 
@@ -1049,7 +1049,7 @@ step
 step
     #season 2
     .goto Undercity,48.03,70.30
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Dorac|r in der Unterstadt
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Dorac|r in Undercity
     >>Gebt die |cRXP_LOOT_Köpfe|r, die ihr gesammelt habt, im Austausch für die |T134455:0|t[Runenfragmente] ab
     .collect 204688,1 --Monster Hunter's First Rune Fragment (1)
     .collect 204689,1 --Monster Hunter's Second Rune Fragment (1)
@@ -1221,7 +1221,7 @@ step
     #completewith next
     .goto The Barrens,51.50,30.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Devrak|r
-    .fly Ratchet >> Fliege nach Ratschet
+    .fly Ratchet >> Fliege nach Ratchet
     .target Devrak
 step
     #completewith next
@@ -1379,7 +1379,7 @@ step
 step
     .train 416004,1
     #completewith next
-    .zone Hillsbrad Foothills >>Reist nach Vorgebirge des Hügellands
+    .zone Hillsbrad Foothills >>Reist zum Vorgebirge von Hillsbrad
 step
     .train 416004,1
     #loop
@@ -1974,7 +1974,7 @@ step
 step
     .train 440496,1
     #completewith next
-    .zone Winterspring >>Reist nach Winterquell
+    .zone Winterspring >>Reist nach Winterspring
 step
     .train 440496,1
     .goto Winterspring,61.2,37.0
@@ -2006,7 +2006,7 @@ step
 step
     .train 440496,1
     #completewith next
-    .zone Winterspring >>Reist nach Winterquell
+    .zone Winterspring >>Reist nach Winterspring
 step
     .train 440496,1
     .goto Winterspring,61.2,37.0

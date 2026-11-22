@@ -1970,7 +1970,7 @@ step
     #optional
     #completewith TeleporterTaken
     .isQuestTurnedIn 79984
-    .goto Stranglethorn Vale,27.6,77.4,8 >>Benutzt den Teleporter zu Feralas in Beutebucht
+    .goto Stranglethorn Vale,27.6,77.4,8 >>Benutzt den Teleporter nach Feralas in Booty Bay
     .train 429242,1
 step
     #optional
@@ -2001,7 +2001,7 @@ step
     .target Frix Xizzix
 step
     #completewith next
-    .zone Stranglethorn Vale >>Reist nach Schlingendorntal/Beutebucht
+    .zone Stranglethorn Vale >>Reist nach Schlingendorntal/Booty Bay
     .train 429242,1
 step
     .train 429242,1
@@ -2120,7 +2120,7 @@ step << Alliance
     .train 410013,1
 step << Alliance
     #completewith next
-    .zone Hillsbrad Foothills >>Reist nach Vorgebirge des Hügellands
+    .zone Hillsbrad Foothills >>Reist zum Vorgebirge von Hillsbrad
     .train 410013,1
 step << Alliance
     #loop
@@ -2133,7 +2133,7 @@ step << Alliance
     .complete 81970,4 --1/1 Symbol of Faith
 step << Horde
     #completewith next
-    .zone Hillsbrad Foothills >>Reist nach Vorgebirge des Hügellands
+    .zone Hillsbrad Foothills >>Reist zum Vorgebirge von Hillsbrad
     .train 410013,1
 step << Horde
     #loop
