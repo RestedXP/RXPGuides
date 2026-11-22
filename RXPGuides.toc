@@ -117,3 +117,6 @@ Guides/Talents/classic.xml [AllowLoadGameType vanilla,camelot]
 ItemUpgrades.lua [AllowLoadGameType tbc,vanilla,camelot,cata]
 
 CptStadicsVendorTreasures.lua [AllowLoadGameType vanilla,camelot,tbc,wrath]
+
+GroupLocale.lua
+GroupTranslations.lua
