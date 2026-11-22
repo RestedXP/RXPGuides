@@ -134,7 +134,7 @@ step << !Priest !Mage !Warlock !Shaman
     .goto 1426/0,320.30,-6226.74
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾德林·怒流|r 对话
     >>|cRXP_BUY_从他那里|r|cRXP_BUY_购买 600发|r |T132384:0|t[轻弹丸] << Hunter
-    .vendor >> |cRXP_WARN_出售垃圾物品|r << !Hunter
+    .vendor >> 出售垃圾物品 << !Hunter
     .collect 2516,600 << Hunter --Light Shot (600)
     .target 艾德林·怒流
     .xp >6,1
@@ -349,7 +349,7 @@ step << Shaman
     .target Teo Hammerstorm::257446
     .turnin 98581 >>交任务 古老符文
     .accept 94373 >>接受任务 大地的召唤
-    .train 8042 >> 影袭 |T136026:0|t[大地震击]
+    .train 8042 >> 学习 |T136026:0|t[大地震击]
 step << Paladin/Warlock/Hunter/Shaman
     .goto 1426/0,390.000,-6093.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格伦德·德罗克达::2756|r 对话
@@ -965,7 +965,7 @@ step
     .target 罗斯洛·鲁治
 step << Warrior/Paladin/Rogue
     #optional
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_罗斯洛·鲁治|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_罗斯洛·鲁治|r 对话
     >>|cRXP_BUY_购买一个|r |T134708:0|t[矿工锄]>>|cRXP_BUY_。如果买不起就跳过这一步|r
     .collect 2901,1 --Mining Pick (1)
     .goto 1426/0,-664.55,-5499.710
@@ -1178,7 +1178,7 @@ step << !Mage !Priest !Warlock
     #completewith next
     .goto 1426/0,302.27,-5387.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_基格·吉布恩|r 对话
-    .vendor >> |cRXP_WARN_出售垃圾物品|r
+    .vendor >> 出售垃圾物品
     .target 基格·吉布恩
 step << Priest/Mage/Warlock
     #completewith next
@@ -2144,7 +2144,7 @@ step
     .goto 1432/0,-2631.48,-5847.50,12 >> 进入地堡。登上顶楼
 step
     .goto 1432/0,-2634.59,-5842.81
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在地堡里与 |cRXP_FRIENDLY_拉格弗斯上尉|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与地堡里的 |cRXP_FRIENDLY_拉格弗斯上尉|r 对话
     .accept 267 >> 接受任务 穴居人的威胁
     .target 拉格弗斯上尉
 step
@@ -2326,7 +2326,7 @@ step << !Hunter
 step << !Hunter
     #completewith flyIF
     .hs >> 炉石到塞尔萨玛
-    >>|cRXP_BUY_按需购买食物/水|r << !Warrior !Rogue
+    >>|cRXP_BUY_如有需要，购买食物/水|r << !Warrior !Rogue
 	>>|cRXP_BUY_需要的话就买点食物|r << Warrior/Rogue
     .cooldown item,6948,>2,1
 step << Hunter
@@ -2550,7 +2550,7 @@ step << Dwarf Paladin
     .bindlocation 1537
 step << Hunter
     .hs >> 炉石到塞尔萨玛
-    >>|cRXP_BUY_按需购买食物/水|r << !Warrior !Rogue
+    >>|cRXP_BUY_如有需要，购买食物/水|r << !Warrior !Rogue
 	>>|cRXP_BUY_需要的话就买点食物|r << Warrior/Rogue
     .cooldown item,6948,>2,1
     .zoneskip Loch Modan
@@ -2870,7 +2870,7 @@ step << Paladin
     .trainer >> 训练你的职业技能
     .target 威尔海姆修士
 step << Warlock
-    >>点击 |cRXP_PICK_通缉布告|r
+    >>点击 |cRXP_PICK_通缉告示|r
     .accept 176 >> 接受任务 通缉：霍格
     .goto 1429/0,683.40,-9667.93
     .target 瑞尼尔副队长
@@ -3429,7 +3429,7 @@ step
     .target 索尔
 step << Dwarf Paladin
     .hs >> 将炉石使用回铁炉堡
-    >>|cRXP_BUY_按需购买食物/水|r << !Warrior !Rogue
+    >>|cRXP_BUY_如有需要，购买食物/水|r << !Warrior !Rogue
 	>>|cRXP_BUY_需要的话就买点食物|r << Warrior/Rogue
     .cooldown item,6948,>2,1
     .bindlocation 1537,1
@@ -3443,7 +3443,7 @@ step << Dwarf Paladin
     .zoneskip Loch Modan
 step << !Paladin
     .hs >> 炉石到塞尔萨玛
-    >>|cRXP_BUY_按需购买食物/水|r << !Warrior !Rogue
+    >>|cRXP_BUY_如有需要，购买食物/水|r << !Warrior !Rogue
 	>>|cRXP_BUY_需要的话就买点食物|r << Warrior/Rogue
     .cooldown item,6948,>2,1
     .zoneskip Loch Modan
@@ -4041,7 +4041,7 @@ step
     .goto 1432/0,-2648.30,-5876.75,15 >> 沿土路上行，然后跳入地堡
 step
     .goto 1432/0,-2634.59,-5842.81
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在地堡里与 |cRXP_FRIENDLY_拉格弗斯上尉|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与地堡里的 |cRXP_FRIENDLY_拉格弗斯上尉|r 对话
     .turnin 267 >> 交任务 穴居人的威胁
     .target 拉格弗斯上尉
     .isQuestComplete 267
@@ -4193,7 +4193,7 @@ step << Mage
     .target 丁克
 step << Priest
     .goto 1455/0,-912.88,-4625.99
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_托德雷·铁矿|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_托德雷·铁矿|r 对话
     .trainer >> 训练你的职业技能
     .target 托德雷·铁矿
 step << skip --logout skip << Mage/Priest
@@ -4245,7 +4245,7 @@ step << Warrior
     .goto 1455/0,-1234.65,-5035.67,12 >> 前往 |cRXP_FRIENDLY_比尔班·飞钳|r
 step << Warrior
     .goto 1455/0,-1234.65,-5035.67
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_比尔班·飞钳|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_比尔班·飞钳|r 对话
     .trainer >> 训练你的职业技能
     .target 比尔班·飞钳
 

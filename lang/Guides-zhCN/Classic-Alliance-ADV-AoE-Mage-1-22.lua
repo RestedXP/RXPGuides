@@ -6493,7 +6493,7 @@ step
     #label Remtravel1
     .goto Darkshore,35.72,83.69
     >>与 |cRXP_FRIENDLY_勘察员雷姆塔维尔|r 对话来开始护送
-    .turnin 729 >> 交任务健忘的勘察员
+    .turnin 729 >> 交任务 健忘的勘察员
     .accept 731 >> 接受任务 健忘的勘察员
     .target 勘察员雷塔维
     .use 13536
@@ -6718,7 +6718,7 @@ step
     #label Remtravel3
     .goto Darkshore,35.72,83.69
     >>与 |cRXP_FRIENDLY_勘察员雷姆塔维尔|r 对话来开始护送
-    .turnin 729 >> 交任务健忘的勘察员
+    .turnin 729 >> 交任务 健忘的勘察员
     .accept 731 >> 接受任务 健忘的勘察员
     .target 勘察员雷塔维
 step
@@ -6999,7 +6999,7 @@ step
 step
     .goto Darkshore,37.44,41.84
     >>与|cRXP_FRIENDLY_霍莉|r 对话
-    .turnin 731 >> 交任务健忘的勘察员
+    .turnin 731 >> 交任务 健忘的勘察员
     .accept 741 >> 接受任务 健忘的勘察员
     .target 考古学家霍莉
 step
@@ -7054,7 +7054,7 @@ step
 step
     .goto Darnassus,31.24,84.49
     >>与 |cRXP_FRIENDLY_杜瑟·灰须|r 对话
-    .turnin 741,3 >>交任务健忘的勘察员
+    .turnin 741,3 >>交任务 健忘的勘察员
     .accept 942 >>接受任务 健忘的勘察员
     .target 首席考古学家杜瑟·灰胡
 

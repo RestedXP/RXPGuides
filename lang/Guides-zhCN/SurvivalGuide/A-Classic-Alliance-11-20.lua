@@ -84,7 +84,7 @@ step << !Human
 step
     .goto Westfall,52.86,53.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_与旅店老板对话|r
-	>>|cRXP_BUY_按需购买食物/水|r << !Warrior !Rogue
+	>>|cRXP_BUY_如有需要，购买食物/水|r << !Warrior !Rogue
 	>>|cRXP_BUY_需要的话就买点食物|r << Warrior/Rogue
     .vendor >>|T133918:0|t[长嘴泥鳅] |cRXP_WARN_非常便宜|r
 	.target 旅店老板希瑟尔
@@ -512,7 +512,7 @@ step << NightElf Hunter
     .target 弗德瑞克·斯图瓦
 step << NightElf
     .goto StormwindClassic,43.065,26.156
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_珊娜·弗勒|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_珊娜·弗勒|r 对话
     >>升级你的|T135966:0|t[急救]
     .train 3274 >> 学习 中级急救
     .target Shaina Fuller
@@ -1110,7 +1110,7 @@ step << !NightElf Hunter/!NightElf Warrior
     .train 227 >> 学习法杖
     .target 伊琳尼雅·月火
 step << !NightElf !Mage !Paladin !Warlock
-    .goto Darnassus,30.7,41.3,15 >> 使用紫色传送门返回鲁瑟兰村
+    .goto Darnassus,30.7,41.3,15 >> 通过紫色传送门返回鲁瑟兰村
     .zoneskip Darkshore
     .zoneskip Teldrassil
 step << !NightElf !Mage !Paladin !Warlock
@@ -1626,7 +1626,7 @@ step << Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t上楼与 |cRXP_FRIENDLY_玛斯雷·驭熊者|r 对话
     .turnin 6125 >> 交任务 解毒之术
 step << Druid
-    .goto Darnassus,30.7,41.3 >> 使用紫色传送门返回鲁瑟兰村
+    .goto Darnassus,30.7,41.3 >> 通过紫色传送门返回鲁瑟兰村
     .zoneskip Darkshore
     .zoneskip Teldrassil
 step << Druid
@@ -1875,7 +1875,7 @@ step
     #label prospector
     .goto Felwood,18.08,64.03
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_勘察员雷塔维|r 对话
-    .turnin 729 >> 交任务健忘的勘察员
+    .turnin 729 >> 交任务 健忘的勘察员
     .target 勘察员雷塔维
 step
     .goto Darkshore,35.72,83.69
@@ -2122,7 +2122,7 @@ step
 .dungeon WC
     #completewith TravelRatchet
     .goto Ashenvale,20.31,42.33,0
-    .zone The Barrens >> 在寻找哀嚎洞穴队伍的同时，刷|cRXP_ENEMY_咸水嘴鱼人|r。它们的位置已标记在你的地图上
+    .zone The Barrens >> 在寻找哀嚎洞穴 队伍的同时，刷 |cRXP_ENEMY_咸水嘴鱼人|r。它们的位置已标记在你的地图上
 	.mob 盐沫战士
 	.mob 盐沫泥浆鱼人
 	.mob 盐沫智者

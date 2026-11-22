@@ -512,7 +512,7 @@ step
     >>|cRXP_WARN_在等待米奈希尔港的船只时，提升你的|r|T135966:0|t[急救]|cRXP_WARN_等级|r
 step
     .goto Wetlands,9.490,59.694
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_谢尔雷·布隆迪尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_谢尔雷·布隆迪尔|r 对话
     .fp Menethil Harbor >> 获取米奈希尔港的飞行路径
     .target 谢尔雷·布隆迪尔
 step
@@ -1086,7 +1086,7 @@ step << Priest
     .collect 5208,1 --Smoldering Wand (1)
     .target Ardwyn Cailen
 step << Priest
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_托德雷·铁矿|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_托德雷·铁矿|r 对话
     .goto Ironforge,25.204,10.749
     .trainer >> 训练你的职业技能
     .target 托德雷·铁矿
@@ -1107,7 +1107,7 @@ step << Hunter
     .target 雷格努斯·雷石
 step << Warrior
     .goto Ironforge,65.907,88.409
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_比尔班·飞钳|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_比尔班·飞钳|r 对话
     .trainer >> 训练你的职业技能
     .target 比尔班·飞钳
 step << Warrior
