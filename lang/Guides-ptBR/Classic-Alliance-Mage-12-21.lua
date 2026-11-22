@@ -740,7 +740,7 @@ step
     .accept 942 >>Aceite O Prospector Distraído
 step
     .goto Teldrassil,58.40,94.02
-    .fp Teldrassil >> Aprenda a rota de voo para Teldrassil
+    .fp Teldrassil >> Pegue a rota de voo de Teldrassil
     .fly Auberdine >> Voe para Auberdine
 step
     .goto Darkshore,32.42,43.75,50,0
@@ -949,7 +949,7 @@ step
     #label WFFP
     .goto Westfall,56.55,52.65
     .fp Westfall >> Aprenda a rota de voo para Cerro Oeste << Gnome
-    .fly Redridge >> Voe para Redridge
+    .fly Redridge >> Voe para as Montanhas Cristarrubra
 step
     #requires WFFP
     .goto Redridge Mountains,30.97,47.27

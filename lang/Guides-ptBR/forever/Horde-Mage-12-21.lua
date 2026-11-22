@@ -1038,7 +1038,7 @@ step
 	.goto 1456/1,202.5,-1058.75,30,0
 	.goto 1456/1,276.6,-996.120
 .target Apothecary Zamah
->>Fale com o |cRXP_FRIENDLY_Boticário Zaqueu|r
+>>Fale com |cRXP_FRIENDLY_Boticário Zaqueu|r
     .turnin 853 >> Entregue Boticária Zaqueia
 step
     .goto 1456/1,254.06,-995.78
@@ -1109,7 +1109,7 @@ step
     .turnin 1490 >> Entregue Nara Juba Agreste
 step
     .goto 1456/1,276.6,-996.12
->>Fale com o |cRXP_FRIENDLY_Boticário Zaqueu|r
+>>Fale com |cRXP_FRIENDLY_Boticário Zaqueu|r
     .turnin 1064 >> Entregue Ajuda Renegada
 .target Apothecary Zamah
     .accept 1065 >> Aceite A jornada para Serraria Tarren

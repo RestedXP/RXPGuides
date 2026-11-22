@@ -575,7 +575,7 @@ step << Hunter
     .goto 1426,25.861,78.197,0
     .goto 1426,23.716,80.257,0
     .goto 1426,20.671,75.838,0
-    .xp 4 >> Farme até o nível 4
+    .xp 4 >> Mate inimigos até atingir o nível 4
 step << Warlock
 #season 2
 #completewith next
@@ -1856,7 +1856,7 @@ step << Hunter
     .goto Dun Morogh,45.810,53.039
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Grif Selvacuore|r
     .trainer >> Treine suas magias de classe
-    .accept 6064 >>Aceite Adestramento da Fera - Missão << Dwarf
+    .accept 6064 >>Aceite Domando a Fera << Dwarf
     .target Grif Wildheart
 step << Dwarf Hunter
     .goto Dun Morogh,48.3,56.9
@@ -1868,7 +1868,7 @@ step << Dwarf Hunter
     .goto Dun Morogh,45.810,53.039
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Grif Selvacuore|r
     .turnin 6064 >>Entregue Domando a fera
-    .accept 6084 >>Aceite Adestramento da Fera - Missão
+    .accept 6084 >>Aceite Domando a Fera
     .target Grif Wildheart
 step << Dwarf Hunter
     .goto Dun Morogh,49.4,59.4
@@ -1880,7 +1880,7 @@ step << Dwarf Hunter
     .goto Dun Morogh,45.810,53.039
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Grif Selvacuore|r
     .turnin 6084 >>Entregue Domando a fera
-    .accept 6085 >>Aceite Adestramento da Fera - Missão
+    .accept 6085 >>Aceite Domando a Fera
     .target Grif Wildheart
 step << Dwarf Hunter
     .goto Dun Morogh,50.4,59.7

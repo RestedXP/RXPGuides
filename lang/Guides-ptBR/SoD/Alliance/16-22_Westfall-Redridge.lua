@@ -455,7 +455,7 @@ step
 step
     .goto Westfall,56.55,52.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thor|r
-    .fly Redridge >> Voe para Redridge
+    .fly Redridge >> Voe para as Montanhas Cristarrubra
     .target Thor
 
 ]])
@@ -525,7 +525,7 @@ step
     .accept 129 >> Aceite Um Almoço Grátis
 step << !Rogue
     .goto Redridge Mountains,27.0,44.8
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Estalajadeira Briana|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estalajadeira Briana|r
     .target Innkeeper Brianna
     .home >> Defina sua Pedra de Regresso para Vila Plácida
     .isQuestAvailable 20
@@ -755,7 +755,7 @@ step << Human
 .dungeon !DM
     .goto StormwindClassic,66.277,62.137
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dungar Tragolongo|r
-    .fly Redridge >> Voe para Redridge
+    .fly Redridge >> Voe para as Montanhas Cristarrubra
     .target Dungar Longdrink
     .zoneskip Redridge Mountains
 step
@@ -1034,7 +1034,7 @@ step << Rogue
     >>Saia manualmente de [Furtividade]|cRXP_WARN_, depois pressione sua tecla de atalho "Interagir com Alvo" para abrir o |cRXP_PICK_Baú da Floresta do Crepúsculo|r. Saqueie-o para obter |cRXP_LOOT_Diário de Filipe Pinel|r |r
     >>OBS.: Sua [Furtividade] vai parar de funcionar temporariamente após saquear |cRXP_LOOT_Diário de Filipe Pinel|r
     >>|cRXP_WARN_Esteja preparado para correr se você não matar as |cRXP_ENEMY_Sentinelas da Torre Défias|r no 2º andar. Elas provavelmente vão te manter em aggro permanente (mas sem te atacar) quando você estiver em cima da estante pois é um ponto de evade|r
-    >>Se você tiver uma [Adaga] na bolsa ou equipada, você pode usar [Emboscada] |cRXP_WARN_nos |cRXP_ENEMY_Patrulheiros da Torre Défias|r e nas |cRXP_ENEMY_Sentinelas da Torre Défias|r lá dentro para matá-los instantaneamente. Esteja pronto para correr depois de matar a primeira |cRXP_ENEMY_Sentinela da Torre Défias|r e lembre-se você pode levar golpes vindos de cima. É mais lento, mas MUITO mais seguro|r
+    >>|cRXP_WARN_Se você tiver um|r |T135641:0|t[Adaga] |cRXP_WARN_nas suas bolsas ou equipado, você pode lançar|r |T132282:0|t[Emboscada] |cRXP_WARN_no |cRXP_ENEMY_Patrulheiros da Torre Défias|r e |cRXP_ENEMY_Sentinelas da Torre Défias|r lá dentro para matá-los instantaneamente. Prepare-se para correr depois de matar o primeiro |cRXP_ENEMY_Sentinela da Torre Défias|r e lembre-se de que você pode ser atingido de cima. É mais lento, mas MUITO mais seguro|r
     >>|cRXP_WARN_Tome cuidado, pois |cRXP_ENEMY_Parasita Défias Mal Formado|r e |cRXP_ENEMY_Parasita Défias|r podem ficar na entrada da torre, caso você precise sair correndo dela|r
     .complete 2359,1 --Collect Klaven Mortwake's Journal (x1)
     .link https://www.youtube.com/watch?v=5sIew15IcG0 >> Clique AQUI para o guia em vídeo
@@ -1244,7 +1244,7 @@ step
     .dungeon DM
     .goto StormwindClassic,66.277,62.137
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dungar Tragolongo|r
-    .fly Redridge >> Voe para Redridge
+    .fly Redridge >> Voe para as Montanhas Cristarrubra
     .target Dungar Longdrink
     .zoneskip Redridge Mountains
 
@@ -1370,7 +1370,7 @@ step
 step << !Mage/Paladin/Warlock
     .goto StormwindClassic,52.623,65.701
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estalajadeira Cristine|r
-    .home >> Defina sua Pedra de Retorno em Cidade de Ventobravo
+    .home >> Defina sua Pedra de Regresso para a Cidade de Ventobravo
     .target Innkeeper Allison
 step << Mage
     .goto Stormwind City,39.681,79.538

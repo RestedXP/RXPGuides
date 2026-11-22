@@ -237,7 +237,7 @@ step
 step << Alliance
     .goto Eastern Plaguelands,81.64,59.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Khaelyn Asadaço|r lá fora
-    .fly Chillwind >> Voe para Terras Pestilentas Ocidentais
+    .fly Chillwind >> Voe para as Terras Pestilentas Ocidentais
     .target Khaelyn Steelwing
     .isOnQuest 87459
 step << Horde

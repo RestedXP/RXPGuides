@@ -543,7 +543,7 @@ step << Hunter
     .goto 1426,25.861,78.197,0
     .goto 1426,23.716,80.257,0
     .goto 1426,20.671,75.838,0
-    .xp 4 >> Farme até o nível 4
+    .xp 4 >> Mate inimigos até atingir o nível 4
 step << Paladin/Warlock/Hunter
     .goto Dun Morogh,24.980,75.963
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Nóri Fluiorgulho|r
@@ -2738,7 +2738,7 @@ step << Hunter
     .goto Dun Morogh,45.810,53.039
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Grif Selvacuore|r
     .trainer >> Treine suas magias de classe
-    .accept 6064 >>Aceite Adestramento da Fera - Missão << Dwarf
+    .accept 6064 >>Aceite Domando a Fera << Dwarf
     .target Grif Wildheart
 step << Dwarf Hunter
     #xprate >1.59
@@ -2751,7 +2751,7 @@ step << Dwarf Hunter
     .goto Dun Morogh,45.810,53.039
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Grif Selvacuore|r
     .turnin 6064 >>Entregue Domando a fera
-    .accept 6084 >>Aceite Adestramento da Fera - Missão
+    .accept 6084 >>Aceite Domando a Fera
     .target Grif Wildheart
 step << Dwarf Hunter
     #xprate >1.59
@@ -2764,7 +2764,7 @@ step << Dwarf Hunter
     .goto Dun Morogh,45.810,53.039
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Grif Selvacuore|r
     .turnin 6084 >>Entregue Domando a fera
-    .accept 6085 >>Aceite Adestramento da Fera - Missão
+    .accept 6085 >>Aceite Domando a Fera
     .target Grif Wildheart
 step << Dwarf Hunter
     #xprate >1.59
@@ -3292,7 +3292,7 @@ step << Hunter
     #xprate 1.49-1.59
     .goto Dun Morogh,45.810,53.039
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Grif Selvacuore|r
-    .accept 6064 >>Aceite Adestramento da Fera - Missão
+    .accept 6064 >>Aceite Domando a Fera
     .target Grif Wildheart
 step << Hunter
     #xprate 1.49-1.59
@@ -3305,7 +3305,7 @@ step << Hunter
     .goto Dun Morogh,45.810,53.039
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Grif Selvacuore|r
     .turnin 6064 >>Entregue Domando a fera
-    .accept 6084 >>Aceite Adestramento da Fera - Missão
+    .accept 6084 >>Aceite Domando a Fera
     .target Grif Wildheart
 step << Hunter
     #xprate 1.49-1.59
@@ -3318,7 +3318,7 @@ step << Hunter
     .goto Dun Morogh,45.810,53.039
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Grif Selvacuore|r
     .turnin 6084 >>Entregue Domando a fera
-    .accept 6085 >>Aceite Adestramento da Fera - Missão
+    .accept 6085 >>Aceite Domando a Fera
     .target Grif Wildheart
 step << Hunter
     #xprate 1.49-1.59
@@ -4279,7 +4279,7 @@ step
     .goto Ironforge,25.800,75.500,-1
     .goto Ironforge,24.200,74.600,-1
     .goto Ironforge,23.800,71.800,-1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Leiloeiro de Ironforge|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com um |cRXP_FRIENDLY_Leiloeiro de Altaforja|r
     >>|cRXP_BUY_Compre|r |T133970:0|t|cRXP_LOOT_[Nacos de Carne de Javali]|r |cRXP_BUY_e/ou|r |T133970:0|t|cRXP_LOOT_[Acém de Lobo]|r |cRXP_BUY_para aumentar sua habilidade de|r |T133971:0|t[Culinária] |cRXP_BUY_mais tarde|r
     >>|cRXP_WARN_Você precisará de 50 em|r |T133971:0|t[Culinária] |cRXP_WARN_para uma missão em Vila Sombria mais tarde|r
     >>Se você não quiser ou não puder fazer isso, pule esta etapa
@@ -4308,7 +4308,7 @@ step
     .goto Ironforge,25.800,75.500,-1
     .goto Ironforge,24.200,74.600,-1
     .goto Ironforge,23.800,71.800,-1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Leiloeiro de Ironforge|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com um |cRXP_FRIENDLY_Leiloeiro de Altaforja|r
     >>Se você não quiser ou não puder fazer isso, pule esta etapa
     >>|cRXP_BUY_Compre os itens a seguir para uma entrega mais rápida em Loch Modan em breve:|r
     >>|T134342:0|t[Javali Intestines]
@@ -4388,7 +4388,7 @@ step << skip --logout skip << !Hunter !Warrior --Hunter Class q, Warrior trainin
     #optional
     #completewith DRT
     .goto 1455,56.207,46.844
-    .goto 1455,76.414,51.226,20 >>|cRXP_WARN_Salte no topo da Cabeça do Grifo. Execute um Logout Pular desconectando e reconectando|r
+    .goto 1455,76.414,51.226,20 >>|cRXP_WARN_Pule sobre a Cabeça do Grifo. Faça um Pulo de Logout saindo e entrando novamente.|r
     .zoneskip Ironforge,1
     .isQuestTurnedIn 418 --XX only if you have turned in (don't need to go toward AH)
 step << skip --logout skip << !Hunter !Warrior --Hunter Class q, Warrior training Era SoD, Rune SoD
@@ -4398,7 +4398,7 @@ step << skip --logout skip << !Hunter !Warrior --Hunter Class q, Warrior trainin
     #optional
     #completewith DRT
     .goto 1455,56.207,46.844
-    .goto 1455,76.414,51.226,20 >>|cRXP_WARN_Salte no topo da Cabeça do Grifo. Execute um Logout Pular desconectando e reconectando|r
+    .goto 1455,76.414,51.226,20 >>|cRXP_WARN_Pule sobre a Cabeça do Grifo. Faça um Pulo de Logout saindo e entrando novamente.|r
     .zoneskip Ironforge,1
 step << Paladin
     #season 2
@@ -4569,7 +4569,7 @@ step << Hunter
 step << Hunter
     .goto Ironforge,70.86,85.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Bélia Granitrondo|r
-    .turnin 6086 >> Entregue Treinamento da Fera - Missão
+    .turnin 6086 >> Entregue Treinando a fera
     .target Belia Thundergranite
 step << skip --logout skip << Hunter
     #optional
@@ -5804,7 +5804,7 @@ step
     .fly Stormwind >> Voe para Ventobravo << Dwarf Paladin
     .target Thor
 step << !Paladin
-    .hs >> Use sua Pedra de Retorno para ir a Loch Modan
+    .hs >> Use a Pedra de Regresso para voltar a Loch Modan
 step << Dwarf Paladin
     .goto StormwindClassic,61.149,11.568,25,0
     .goto StormwindClassic,64.0,8.10
@@ -5955,7 +5955,7 @@ step
 step
     #season 0,1 << Paladin
     #xprate >1.49
-    .hs >> Use sua Pedra de Retorno para ir a Loch Modan
+    .hs >> Use a Pedra de Regresso para voltar a Loch Modan
     .cooldown item,6948,>180--wait for cd if <3min
     .zoneskip Loch Modan
     .zoneskip Wetlands
@@ -6102,7 +6102,7 @@ step
     .target Yanni Stoutheart
 step << !Hunter
     .goto Loch Modan,35.534,48.404
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Estalajadeiro Fornalenha|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estalajadeiro Fornalenha|r
     .vendor 6734 >> |cRXP_BUY_Compre alguns|r |T133968:0|t[Pão Fresquinho] |cRXP_BUY_se necessário|r << Warrior/Rogue
     .vendor 6734 >> |cRXP_BUY_Compre alguns|r |T133968:0|t[Pão Fresquinho] |cRXP_BUY_e|r |T132815:0|t[Leite Gelado] |cRXP_BUY_dela se necessário|r << !Warrior !Rogue
     .target Innkeeper Hearthstove
@@ -6588,7 +6588,7 @@ step << Dwarf Paladin
     .goto 1432,19.594,62.735,20,0
     .goto 1432,16.342,58.520,20,0
     .goto 1426,84.262,51.367
-    .zone Dun Morogh >> Viagem para Dun Morogh
+    .zone Dun Morogh >> Vá para Dun Morogh
 step << Dwarf Paladin
     #completewith next
     .goto Dun Morogh,78.321,58.088
@@ -7241,7 +7241,7 @@ step << Mage/Priest/Warlock
     .goto Ironforge,25.800,75.500,-1
     .goto Ironforge,24.200,74.600,-1
     .goto Ironforge,23.800,71.800,-1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Leiloeiro de Ironforge|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com um |cRXP_FRIENDLY_Leiloeiro de Altaforja|r
     >>|cRXP_BUY_Compre uma|r |T135144:0|t[Varinha Mágica Maior] |cRXP_BUY_se puder pagar|r
     >>Se você não quiser ou não puder fazer isso, pule esta etapa
     .collect 11288,1 --Greater Magic Wand (1)
@@ -7256,7 +7256,7 @@ step
     .goto Ironforge,25.800,75.500,-1
     .goto Ironforge,24.200,74.600,-1
     .goto Ironforge,23.800,71.800,-1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Leiloeiro de Ironforge|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com um |cRXP_FRIENDLY_Leiloeiro de Altaforja|r
     >>|cRXP_BUY_Compre|r |T133970:0|t|cRXP_LOOT_[Nacos de Carne de Javali]|r |cRXP_BUY_e/ou|r |T133970:0|t|cRXP_LOOT_[Acém de Lobo]|r |cRXP_BUY_para aumentar sua habilidade de|r |T133971:0|t[Culinária] |cRXP_BUY_mais tarde|r
     >>|cRXP_WARN_Você precisará de 50 em|r |T133971:0|t[Culinária] |cRXP_WARN_para uma missão em Vila Sombria mais tarde|r
     >>Se você não quiser ou não puder fazer isso, pule esta etapa
@@ -7283,7 +7283,7 @@ step
     .goto Ironforge,25.800,75.500,-1
     .goto Ironforge,24.200,74.600,-1
     .goto Ironforge,23.800,71.800,-1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Leiloeiro de Ironforge|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com um |cRXP_FRIENDLY_Leiloeiro de Altaforja|r
     >>Se você não quiser ou não puder fazer isso, pule esta etapa
     >>|cRXP_BUY_Compre os itens a seguir para entregas mais rápidas em Costa Negra em breve:|r
     >>|T133972:0|t[Carne de Moa]
@@ -7992,7 +7992,7 @@ step << Hunter
     .goto Dun Morogh,45.810,53.039
     .target Grif Wildheart
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Grif Selvacuore|r
-    .accept 6064 >>Aceite Adestramento da Fera - Missão
+    .accept 6064 >>Aceite Domando a Fera
 step << Hunter
 #xprate >1.49
     .goto Dun Morogh,48.3,56.9
@@ -8005,7 +8005,7 @@ step << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Grif Selvacuore|r
     .turnin 6064 >>Entregue Domando a fera
     .target Grif Wildheart
-    .accept 6084 >>Aceite Adestramento da Fera - Missão
+    .accept 6084 >>Aceite Domando a Fera
 step << Hunter
 #xprate >1.49
     .goto Dun Morogh,49.4,59.4
@@ -8018,7 +8018,7 @@ step << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Grif Selvacuore|r
     .turnin 6084 >>Entregue Domando a fera
     .target Grif Wildheart
-    .accept 6085 >>Aceite Adestramento da Fera - Missão
+    .accept 6085 >>Aceite Domando a Fera
 step << Hunter
 #xprate >1.49
     .goto Dun Morogh,50.4,59.7
@@ -8192,7 +8192,7 @@ step << Hunter
     .goto Dun Morogh,45.810,53.039
     .target Grif Wildheart
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Grif Selvacuore|r
-    .accept 6064 >>Aceite Adestramento da Fera - Missão
+    .accept 6064 >>Aceite Domando a Fera
 step << Hunter
 #xprate <1.5
     .goto Dun Morogh,48.3,56.9
@@ -8205,7 +8205,7 @@ step << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Grif Selvacuore|r
     .turnin 6064 >>Entregue Domando a fera
     .target Grif Wildheart
-    .accept 6084 >>Aceite Adestramento da Fera - Missão
+    .accept 6084 >>Aceite Domando a Fera
 step << Hunter
 #xprate <1.5
     .goto Dun Morogh,49.4,59.4
@@ -8218,7 +8218,7 @@ step << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Grif Selvacuore|r
     .turnin 6084 >>Entregue Domando a fera
     .target Grif Wildheart
-    .accept 6085 >>Aceite Adestramento da Fera - Missão
+    .accept 6085 >>Aceite Domando a Fera
 step << Hunter
 #xprate <1.5
     .goto Dun Morogh,50.4,59.7
@@ -8319,7 +8319,7 @@ step
     .accept 418 >> Aceite Chouriço de Thelsamar
 step
     .goto Loch Modan,35.534,48.404
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Estalajadeiro Fornalenha|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estalajadeiro Fornalenha|r
     .home >> Defina sua Pedra de Regresso em Thelsamar
     .target Innkeeper Hearthstove
 step
@@ -8356,7 +8356,7 @@ step << Hunter
     .goto Ironforge,70.86,85.83
     .target Belia Thundergranite
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Bélia Granitrondo|r
-    .turnin 6086 >> Entregue Treinamento da Fera - Missão
+    .turnin 6086 >> Entregue Treinando a fera
 step << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Grif Trovino|r
     .target Gryth Thurden
@@ -8640,7 +8640,7 @@ step
     .target Jern Hornhelm
 step
     .goto Loch Modan,33.938,50.954
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thorgrum|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thorgrum Borrelson|r
     .fly Ironforge >> Voe para Altaforja
     .target Thorgrum Borrelson
 step
@@ -8735,7 +8735,7 @@ step
     .skill cooking,<50,1 --XX Shows if cooking skill is 50+
 step
     #softcore
-    .hs >> Use sua Pedra de Retorno para ir a Loch Modan
+    .hs >> Use a Pedra de Regresso para voltar a Loch Modan
 step
     #softcore
     #completewith next
@@ -8754,7 +8754,7 @@ step
 step
     #softcore
     .goto Loch Modan,33.938,50.954
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thorgrum|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thorgrum Borrelson|r
     .fly Wetlands >> Voe para Pantanal
     .target Thorgrum Borrelson
 step << skip --logout skip

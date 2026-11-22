@@ -11,7 +11,7 @@ RXPGuides.RegisterGuide([[
 #displayname 15-18 Sertões << Paladin
 #version 11
 #group Guia de Progressão Rápida do RestedXP Forever (H)
-#subgroup Guia Speedrun 1-22
+#subgroup Guia de Progressão Rápida 1-22
 --#groupid RXP-SRGCE-H1
 #next 17-22 Cordilheira das Torres de Pedra/Sertões/Vale Gris
 
@@ -778,7 +778,7 @@ step << Orc Rogue/Troll Rogue
     #optional
 	#completewith SouthSea
 	>>Mate |cRXP_ENEMY_Tazan|r. Pegue sua |cRXP_LOOT_Algibeira|r
-    >>|cRXP_WARN_Ele desova no primeiro acampamento e patrulha montanha acima|r
+    >>|cRXP_WARN_Ele aparece no primeiro acampamento e patrulha morro acima|r
 	.complete 1963,1 --Tazan's Satchel (1)
     .unitscan Tazan
 step
@@ -826,7 +826,7 @@ step << Orc Rogue/Troll Rogue
     .goto 1413/1,-3895.600,-1365.000,50,0
     .goto 1413/1,-3826.300,-1487.300,50,0
 	>>Mate |cRXP_ENEMY_Tazan|r. Pegue sua |cRXP_LOOT_Algibeira|r
-    >>|cRXP_WARN_Ele desova no primeiro acampamento e patrulha montanha acima|r
+    >>|cRXP_WARN_Ele aparece no primeiro acampamento e patrulha morro acima|r
 	.complete 1963,1 --Tazan's Satchel (1)
     .unitscan Tazan
 step
@@ -1269,7 +1269,7 @@ step
     .goto 1413/1,-1483.11,66.67,50,0
     .goto 1413/1,-1531.75,180.85,50,0
     .goto 1413/1,-1462.84,214.63,50,0
-    >>Mate os |cRXP_ENEMY_Savannah Prowlers|r. Saque seus |cRXP_LOOT_Claws|r
+    >>Mate os |cRXP_ENEMY_Predadores da Savana|r. Pegue as |cRXP_LOOT_Garras de Predador|r deles
     .complete 903,1 --Prowler Claws (7)
     .mob Savannah Prowler
     .isQuestAvailable 819
@@ -1326,8 +1326,8 @@ step
     .goto 1413/1,-1960.600,653.700,50,0
     .goto 1413/1,-1871.600,653.700,50,0
     .goto 1413/1,-1729.700,592.400,50,0
-    >>Mate os |cRXP_ENEMY_Savannah Patriarchs|r. Saque seus |cRXP_LOOT_Hides|r e |cRXP_LOOT_Tusks|r
-    >>|cRXP_WARN_Se os |cRXP_ENEMY_Savannah Patriarchs|r estão muito disputados, considere pular esta missão por enquanto, ela pode ser completada depois|r
+    >>Mate os |cRXP_ENEMY_Patriarcas da Savana|r. Pegue os |cRXP_LOOT_Pelegos de Leão da Savana|r e as |cRXP_LOOT_Presas de Leão da Savana|r deles
+    >>|cRXP_WARN_Se houver muita disputa pelos |cRXP_ENEMY_Patriarcas da Savana|r, considere pular esta missão por enquanto. Pode concluí-la mais tarde|r
     .complete 95494,1 --|6/6 Savannah Lion Hide
     .complete 821,1 --Savannah Lion Tusk (5)
     .disablecheckbox
@@ -1343,8 +1343,8 @@ step
     .goto 1413/1,-1960.600,653.700,50,0
     .goto 1413/1,-1871.600,653.700,50,0
     .goto 1413/1,-1729.700,592.400,50,0
-    >>Mate os |cRXP_ENEMY_Savannah Patriarchs|r. Saque seus |cRXP_LOOT_Hides|r
-    >>|cRXP_WARN_Se os |cRXP_ENEMY_Savannah Patriarchs|r estão muito disputados, considere pular esta missão por enquanto, ela pode ser completada depois|r
+    >>Mate os |cRXP_ENEMY_Patriarcas da Savana|r. Pegue os |cRXP_LOOT_Pelegos de Leão da Savana|r deles
+    >>|cRXP_WARN_Se houver muita disputa pelos |cRXP_ENEMY_Patriarcas da Savana|r, considere pular esta missão por enquanto. Pode concluí-la mais tarde|r
     .complete 95494,1 --|6/6 Savannah Lion Hide
     .mob Savannah Patriarch
     .isQuestAvailable 819
@@ -1468,7 +1468,7 @@ step
 step
     #optional
     #completewith RaptorHeadsComplete
-    >>Mate os |cRXP_ENEMY_Savannah Prowlers|r. Saque seus |cRXP_LOOT_Claws|r
+    >>Mate os |cRXP_ENEMY_Predadores da Savana|r. Pegue as |cRXP_LOOT_Garras de Predador|r deles
     .complete 903,1 --Prowler Claws (7)
     .mob Savannah Prowler
     .isQuestAvailable 819
@@ -1505,7 +1505,7 @@ step
     .goto 1413/1,-2859.800,565.900,50,0
     .goto 1413/1,-3023.000,530.700,50,0
     .goto 1413/1,-2897.500,642.200,50,0
-    >>Mate os |cRXP_ENEMY_Savannah Prowlers|r. Saque seus |cRXP_LOOT_Claws|r
+    >>Mate os |cRXP_ENEMY_Predadores da Savana|r. Pegue as |cRXP_LOOT_Garras de Predador|r deles
     .complete 903,1 --Prowler Claws (7)
     .mob Savannah Prowler
     .isQuestAvailable 819
@@ -2038,7 +2038,7 @@ step
     .target Sputtervalve
 step
     .goto 1413/1,-3796.55,-985.28
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dizzywig|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mestre Portuário Caruncho|r
     .turnin 896 >> Entregue A fortuna do mineiro
     .target Wharfmaster Dizzywig
     .isQuestComplete 896
@@ -2462,7 +2462,7 @@ step
     >>Mate |cRXP_ENEMY_Senhor da Guerra Krom'zar|r (elite nível 20) quando aparecer. Pegue o |cRXP_PICK_Estandarte|r que ele deixa no chão
     >>|cRXP_WARN_Cuidado! Ele é forte e protegido por pelo menos dois|r |cRXP_ENEMY_inimigos|r |cRXP_WARN_Kolkar|r
     >>|cRXP_WARN_Ele pode levar até 3 minutos para aparecer|r
-    .link https://www.youtube.com/watch?v=xrm0PWe5wf4 >>|cRXP_WARN_Clique aqui para um vídeo de guia sobre como você pode kitar|r |cRXP_ENEMY_Senhor da Guerra Krom'zar|r
+    .link https://www.youtube.com/watch?v=xrm0PWe5wf4 >>|cRXP_WARN_Clique aqui para ver como atrair e manter à distância o|r |cRXP_ENEMY_Senhor da Guerra Krom'zar|r
     .complete 4021,1 --Piece of Krom'zar's Banner (1)
     .unitscan Warlord Krom'zar
     .isOnQuest 4021
@@ -2562,7 +2562,7 @@ RXPGuides.RegisterGuide([[
 #displayname 18-22 Cordilheira das Torres de Pedra/Sertões/Vale Gris << !Shaman !Hunter !Tauren
 #version 11
 #group Guia de Progressão Rápida do RestedXP Forever (H)
-#subgroup Guia Speedrun 1-22
+#subgroup Guia de Progressão Rápida 1-22
 --#groupid RXP-SRGCE-H1
 #next 22-24 Eira dos montes
 
@@ -3142,7 +3142,7 @@ step
     .mob Oasis Snapjaw
 step
     #completewith IshamuhalesFang
-    >>Mate os |cRXP_ENEMY_Savannah Matriarchs|r e os |cRXP_ENEMY_Savannah Patriarchs|r. Saque seus |cRXP_LOOT_Hides|r
+    >>Mate as |cRXP_ENEMY_Matriarcas da Savana|r e os |cRXP_ENEMY_Patriarcas da Savana|r. Pegue os |cRXP_LOOT_Pelegos de Leão da Savana|r deles
     .complete 95494,1 --|6/6 Savannah Lion Hide
     .mob Savannah Matriarch
     .mob Savannah Patriarch
@@ -3164,7 +3164,7 @@ step
     .goto 1413/1,-3633.200,-600.500,50,0
     .goto 1413/1,-3469.100,-495.000,50,0
     .goto 1413/1,-3428.300,-584.300,50,0
-    >>Mate os |cRXP_ENEMY_Savannah Matriarchs|r e os |cRXP_ENEMY_Savannah Patriarchs|r. Saque seus |cRXP_LOOT_Hides|r
+    >>Mate as |cRXP_ENEMY_Matriarcas da Savana|r e os |cRXP_ENEMY_Patriarcas da Savana|r. Pegue os |cRXP_LOOT_Pelegos de Leão da Savana|r deles
     .complete 95494,1 --|6/6 Savannah Lion Hide
     .mob Savannah Matriarch
     .mob Savannah Patriarch
@@ -3260,7 +3260,7 @@ step
     .goto 1413/1,-3973.000,-1028.700
     >>Mate |cRXP_PICK_Bruuz|r (elite nível 20) no mar perto de Vila Catraca
     >>|cRXP_WARN_É difícil! Forme um grupo se possível|r << !Rogue !Warrior
-    >>|cRXP_WARN_Tente levá-lo até Ratchet para os guardas que ajudarão, mas certifique-se de causar pelo menos 50% de dano!|r
+    >>|cRXP_WARN_Tente atraí-lo até os guardas de Vila Catraca, que vão ajudar. Certifique-se de causar pelo menos 50% do dano!|r
     .complete 92706,1 --Kill Bruuz
     .mob Bruuz
     .isOnQuest 92706
@@ -3500,8 +3500,8 @@ step
 step
     #label SleepingBag1
     .goto 1413/1,-2075.00,-3380.64--c:The Barrens,46.361,73.904
-    >>Clique no |cRXP_PICK_Burned-Saída Remains|r no chão
-    .accept 79007 >> Aceite ...e aquele bilhete que você encontrou
+    >>Clique nos |cRXP_PICK_Restos Queimados|r no chão
+    .accept 79007 >> Aceite ... e aquele bilhete, hein?
 step
     #label LizardBlood
     #loop
@@ -3634,7 +3634,7 @@ step
     .target Jorn Skyseer
 step
     #optional
-    .xp 20 >>Suba até o nível 20
+    .xp 20 >>Mate inimigos até o nível 20
 step << !Tauren !Skyborne
     .goto 1413/1,-1891.48,-2391.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Denterroto|r
@@ -3869,7 +3869,7 @@ step << Druid
     .turnin 27 >>Entregar Uma Lição a Aprender
     .accept 28 >>Aceitar Prova do Lago
     .turnin 98340 >>Entregue O Espírito do Grande Felino
-    .accept 98341 >>Aceite O Espírito do Grande Felino Etéreo << Skyborne
+    .accept 98341 >>Aceite O grande espírito felino pairavento << Skyborne
     .accept 98405 >>Aceite O Espírito do Grande Felino << !Skyborne
     .target Dendrite Starblaze
 step << Druid
@@ -3897,30 +3897,30 @@ step << Druid !Skyborne
 step << Druid Skyborne
     .goto 1450/1,-2352.700,7375.600,10,0
     .goto 1450/1,-2394.300,7361.200
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Avatar of Saeyleenan::272054|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Avatar de Saeyleenan::272054|r
     .target Avatar of Saeyleenan::272054
-    .turnin 98341 >>Entregue O Espírito do Grande Felino Etéreo
-    .accept 98404 >>Aceite O Espírito do Grande Felino Etéreo
+    .turnin 98341 >>Entregue O grande espírito felino pairavento
+    .accept 98404 >>Aceite O grande espírito felino pairavento
 step << Druid
     #completewith next
     .goto 1450/1,-3046.700,7534.400
     --aura 1309054?
-    .subzone 2363 >> Vá para Tempestofúria Barrow Dens
+    .subzone 2363 >> Vá até os Templos de Tempesfúria
 step << Druid
-    >>Vá fundo na caverna, caminhe pela ponte, procure uma estátua de gato em um nicho e clique no pequeno orbe ao lado da estátua
-    >>Saqueie |cRXP_LOOT_Relic of the Garra|r
+    >>Vá até o fundo da caverna, atravesse a ponte, procure uma estátua de gato em um nicho e clique no pequeno orbe ao lado da estátua
+    >>Pegue a |cRXP_LOOT_Relíquia da Garra|r
     .goto 1450/1,-3117.400,7455.300
     .complete 98404,2 << Skyborne --|1/1 Relic of the Claw
     .complete 98342,2 << !Skyborne --|1/1 Relic of the Claw
 step << Druid
     >>Clique no pequeno orbe ao lado da estátua de gato
-    >>Saqueie |cRXP_LOOT_Relic of the Silent Sombra|r
+    >>Pegue a |cRXP_LOOT_Relíquia da Sombra Silenciosa|r
     .goto 1450/1,-3099.200,7485.700
     .complete 98404,3  << Skyborne --|1/1 Relic of the Silent Shadow
     .complete 98342,3  << !Skyborne --|1/1 Relic of the Silent Shadow
 step << Druid
     >>Clique no pequeno orbe ao lado da estátua de gato
-    >>Saqueie |cRXP_LOOT_Relic of the Dentada|r
+    >>Pegue a |cRXP_LOOT_Relíquia da Presa|r
     .goto 1450/1,-3054.100,7476.800
     .complete 98404,1  << Skyborne --|1/1 Relic of the Fang
     .complete 98342,1  << !Skyborne --|1/1 Relic of the Fang
@@ -3932,20 +3932,20 @@ step << Druid !Skyborne
     .target Great Cat Spirit
 step << Druid Skyborne
     .goto 1450/1,-2395.400,7361.400
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Avatar of Saeyleenan::272054|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Avatar de Saeyleenan::272054|r
     .target Avatar of Saeyleenan::272054
-    .turnin 98404 >>Entregue O Espírito do Grande Felino Etéreo
-    .accept 98738 >>Aceite Bênçãos do Espírito do Grande Felino Etéreo
+    .turnin 98404 >>Entregue O grande espírito felino pairavento
+    .accept 98738 >>Aceite Bênçãos do Grande Espírito Felino Pairavento
 step << Druid
     #completewith next
     .cast 18960 >>Lance [Teleporte: Clareira da Lua]
     .zoneskip Moonglade
 step << Druid
     .goto 1450/1,-2678.200,8021.500
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dendrite Starblaze::11802|r
-    .turnin 98738 >>Entregue Bênçãos do Espírito do Grande Felino Etéreo << Skyborne
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dendrite Stellardor::11802|r
+    .turnin 98738 >>Entregue Bênçãos do Grande Espírito Felino Pairavento << Skyborne
     .turnin 98739 >>Entregue Bênçãos do Espírito do Grande Felino << !Skyborne
-    .accept 98362 >>Aceite Penhasco do Trovão
+    .accept 98362 >>Aceite Para o Penhasco do Trovão
     .target Dendrite Starblaze::11802
 step << Druid
     .hs >> Use a Pedra de Regresso para voltar ao Penhasco do Trovão
@@ -3964,7 +3964,7 @@ step << Druid
 step << Druid
     .goto 1456/1,-281.59,-1039.61
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Turak Runa Totem|r
-    .turnin 98362 >>Entregue Penhasco do Trovão
+    .turnin 98362 >>Entregue Para o Penhasco do Trovão
     .target Turak Runetotem
 step << Rogue
     .goto 1456/1,-36.52,-1244.05
@@ -4085,7 +4085,7 @@ step
     >>Mate |cRXP_ENEMY_Senhor da Guerra Krom'zar|r quando aparecer. Pegue o |cRXP_PICK_Estandarte|r que ele deixa no chão
     >>|cRXP_WARN_Cuidado! Ele é um elite forte e protegido por pelo menos dois|r |cRXP_ENEMY_inimigos|r |cRXP_WARN_Kolkar|r
     >>|cRXP_WARN_Ele pode levar até 3 minutos para aparecer|r
-    .link https://www.youtube.com/watch?v=xrm0PWe5wf4 >>|cRXP_WARN_Clique aqui para um vídeo de guia sobre como você pode kitar|r |cRXP_ENEMY_Senhor da Guerra Krom'zar|r
+    .link https://www.youtube.com/watch?v=xrm0PWe5wf4 >>|cRXP_WARN_Clique aqui para ver como atrair e manter à distância o|r |cRXP_ENEMY_Senhor da Guerra Krom'zar|r
     .complete 4021,1 --Piece of Krom'zar's Banner (1)
     .unitscan Warlord Krom'zar
     .isQuestTurnedIn 852
@@ -4122,7 +4122,7 @@ step
     .goto 1413/1,-1960.600,653.700,50,0
     .goto 1413/1,-1871.600,653.700,50,0
     .goto 1413/1,-1729.700,592.400,50,0
-    >>Mate os |cRXP_ENEMY_Savannah Patriarchs|r. Saque seus |cRXP_LOOT_Hides|r
+    >>Mate os |cRXP_ENEMY_Patriarcas da Savana|r. Pegue os |cRXP_LOOT_Pelegos de Leão da Savana|r deles
     .complete 95494,1 --|6/6 Savannah Lion Hide
     .mob Savannah Patriarch
 step
@@ -4206,8 +4206,8 @@ step << Hunter
     #optional
     .goto 1413/1,-2253.24,1246.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Torek|r
-    .accept 3513 >>Aceite O Pergaminho Rúnico
-    .turnin 3513 >>Entregue O Pergaminho Rúnico
+    .accept 3513 >>Aceite O pergaminho rúnico
+    .turnin 3513 >>Entregue O pergaminho rúnico
     .target Kadrak
     .itemcount 10621,1
 step << Hunter
@@ -4548,7 +4548,7 @@ step << skip
     .zoneskip Ashenvale
 step
     .goto 1440/1,-632.700,2311.500
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Va'xug Firefure|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Va'xug Furiflama|r
     .accept 98251 >>Aceite Não volto nunca mais
     .target Va'xug Firefure
 step
@@ -4560,16 +4560,16 @@ step
     .goto 1440/1,-712.300,2023.900,50,0
     .goto 1440/1,-534.500,2045.100,50,0
     >>Mate |cRXP_ENEMY_Ursos do Vale Gris|r e |cRXP_ENEMY_Cervos Galhassombra|r
-    >>|cRXP_WARN_Cuidado com |cRXP_ENEMY_Ursangous|r (nível 25 forte) que patrulha na área|r
+    >>|cRXP_WARN_Cuidado com |cRXP_ENEMY_Ursangous|r (nível 25 forte), que patrulha a área|r
     .complete 98251,2 --|6/6 Ashenvale Bear slain
     .mob +Ashenvale Bear
     .complete 98251,1 --|6/6 Shadowhorn Stag slain
     .mob +Shadowhorn Stag
 step
     .goto 1440/1,-632.900,2312.000
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Va'xug Firefure|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Va'xug Furiflama|r
     .turnin 98251 >>Entregue Não volto nunca mais
-    .accept 98252 >>Aceite Um Caminho do Vazio
+    .accept 98252 >>Aceite Um caminho no Caos
     .target Va'xug Firefure
 step
     .goto 1440/1,-545.200,2446.600
@@ -4579,7 +4579,7 @@ step
 step
     .goto 1440/1,-545.500,2445.400
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Olho de Kilrogg|r
-    .turnin 98252 >>Entregue Um Caminho do Vazio
+    .turnin 98252 >>Entregue Um caminho no Caos
     .target Eye of Kilrogg
     .isQuestComplete 98252
 step
@@ -4643,7 +4643,7 @@ step
 step
     #ah
     #completewith WrathtailHeads
-    +|cRXP_WARN_Guarde todos os|r |T134332:0|t[Retalhador Operating Manual Pages] |cRXP_WARN_que você saquear|r
+    +|cRXP_WARN_Guarde todas as|r |T134332:0|t[Páginas do Manual de Operação do Retalhador] |cRXP_WARN_que pegar|r
 step
    .goto 1440/1,1004.54,3341.83
    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Muglash|r
@@ -4803,7 +4803,7 @@ step
     #ah
     .goto 1456/1,24.85,-1252.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Chesmu|r
-    .bankdeposit 16645,16646,16647,16648,16649,16650,16651,16652,16653,16654,16655,16656 >>Deposite todos os seus |T134332:0|t[Retalhador Operating Manual Pages]
+    .bankdeposit 16645,16646,16647,16648,16649,16650,16651,16652,16653,16654,16655,16656 >>Deposite todas as suas |T134332:0|t[Páginas do Manual de Operação do Retalhador]
     .target Chesmu
 step << Warlock
     .goto 1456/1,26.1,-1196.66
@@ -5139,7 +5139,7 @@ step
 step
     .goto 1454/1,-4739.57,2036.84
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sovik|r
-    >>|cRXP_WARN_Preste atenção! Você precisa passar pelo seu diálogo primeiro, após o qual você aceitará a missão automaticamente|r
+    >>|cRXP_WARN_Atenção! Avance até o fim do diálogo para aceitar a missão automaticamente|r
     .accept 2842 >>Aceite Engenheiro-chefe Scooty
     .target Sovik
 step << skip --Rogue
@@ -5179,7 +5179,7 @@ step
     .abandon 6563 >>Abandone A essência de Aku'mai
 step
     #optional
-    .abandon 97003 >>Abandone Chol'aruk, o Devorador
+    .abandon 97003 >>Abandone Chol'aruk, o Rapinante
 step
     .zone Durotar >> Saia de Orgrimmar
     .zoneskip Tirisfal Glades

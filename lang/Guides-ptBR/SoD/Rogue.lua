@@ -928,7 +928,7 @@ step << Horde
 step << Alliance
     .goto Ironforge,55.501,47.742
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Grif Trovino|r
-    .fly Southshore >> Voe para Costa Sul
+    .fly Southshore >> Voe até Costa Sul
     .target Gryth Thurden
     .zoneskip Silverpine Forest
     .train 400080,1
@@ -1584,7 +1584,7 @@ step << Horde
 step << Alliance
     .goto Ironforge,55.501,47.742
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Grif Trovino|r
-    .fly Southshore >> Voe para Costa Sul
+    .fly Southshore >> Voe até Costa Sul
     .target Gryth Thurden
     .zoneskip Silverpine Forest
     .train 400101,1
@@ -1617,7 +1617,7 @@ step
     .collect 5060,1 >>|cRXP_WARN_Você também precisa|r |T134065:0|t[Ferramentas de Ladrões]
 step
     #completewith next
-    .zone Swamp of Sorrows >>Vá para Pântano das Mágoas
+    .zone Swamp of Sorrows >>Vá ao Pântano das Mágoas
 step
     .goto Swamp of Sorrows,41.48,29.97
     .train 400096,1
@@ -1646,7 +1646,7 @@ step
 step
     .train 425103,1
     #completewith next
-    .zone Stranglethorn Vale >>Voe para Stranglethorn Vale
+    .zone Stranglethorn Vale >>Vá para Vale do Espinho
 step
     .train 425103,1
     #completewith Uniform
@@ -1689,7 +1689,7 @@ step
 step
     .train 425103,1
     #completewith next
-    .subzone 35 >>Viaje para Booty Bay
+    .subzone 35 >>Vá para Angra do Butim
 step
     .train 425103,1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Capitã Aransas|r

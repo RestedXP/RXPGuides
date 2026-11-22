@@ -11,7 +11,7 @@ RXPGuides.RegisterGuide([[
 #displayname 1-7 Umbravale << sod
 #version 1
 #group Guia RestedXP Forever (A)
-#subgroup Speedrun Guia 1-20
+#subgroup Guia Speedrun 1-20
 --#groupid RXP-SRGCE-A1
 #defaultfor NightElf
 #next 6-11 Teldrassil
@@ -46,7 +46,7 @@ step << Druid
     .mob +Young Thistle Boar
 step << Druid
     #completewith next
-    +|cRXP_WARN_garanta que você tem pelo menos 1 prata 2 cobre de sucata de vendedor|r, você pode contar com seu bastão que vende por 9c
+    +|cRXP_WARN_Certifique-se de ter pelo menos 1 prata e 2 cobres em lixo para vender|r. Pode incluir o cajado, que vale 9 cobres na venda
 step << !sod/Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dirânia Pratafulge|r e |cRXP_FRIENDLY_Melithar Guenelmo|r
     #label GoodProtector
@@ -101,8 +101,8 @@ step << Hunter/Warrior
     .accept 97977 >>Aceite O Chamado da Natureza
 step << Druid
 	.goto 1438/1,820.68,10487.33--c:Teldrassil,58.8,39.6
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Khardan|r
-    >>|cRXP_WARN_Venda toda sua armadura e seu cajado|r! Compre uma |T135139:0|t[|cRXP_LOOT_Cajado Curto|r] dele
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Khardan Laminaltiva|r
+    >>|cRXP_WARN_Venda todo o seu equipamento e o cajado|r! Compre um |T135139:0|t[|cRXP_LOOT_Cajado Curto|r] com ele
 	.collect 2132 --Short Staff (1)
 	.use 2132 >> Equipe o Cajado Curto
 	.target Khardan Proudblade
@@ -151,19 +151,19 @@ step << Priest/Rogue
 	.accept 3119 >> Aceite O Selo Sagrado << Priest
 step << Druid
     #completewith next
-    +|cRXP_WARN_Lance|r |T136006:0|t[|cRXP_LOOT_Ira|r] |cRXP_WARN_até ficar sem mana, depois volte para|r |T135158:0|t[|cRXP_LOOT_Corpo a Corpo|r] |cRXP_WARN_até estar com mana cheia e repita|r
+    +|cRXP_WARN_Lance|r |T136006:0|t[|cRXP_LOOT_Ira|r] |cRXP_WARN_até ficar sem mana. Depois, volte a usar|r |T135158:0|t[|cRXP_LOOT_Corpo a Corpo|r] |cRXP_WARN_até recuperar toda a mana e repita|r
 step << Druid
     .goto 1438/1,964.300,10272.800,10,0
     .goto 1438/1,1030.200,10339.800
-    >>Abate os |cRXP_ENEMY_Capeta|r e os |cRXP_ENEMY_Tinhoso|r. Saque-os em busca de |cRXP_LOOT_Limo Vil|r
-    >>Pegue |T134460:0|t[|cRXP_LOOT_Gnarlpine Totens|r] dos Acampamentos Capeta
+    >>Mate |cRXP_ENEMY_Capetas|r e |cRXP_ENEMY_Tinhosos|r. Pegue o |cRXP_LOOT_Limo Vil|r deles
+    >>Pegue os |T134460:0|t[|cRXP_LOOT_Totens de Masca-pinho|r] nos acampamentos dos Capetas
     .complete 459,1 --Collect Fel Moss (x8)
     .complete 97977,1 --Gnarlpine Totem (x4)
     .mob Grell
     .mob Grellkin
 step << Druid
     #completewith next
-    >>Mate os |cRXP_ENEMY_Thistle Boars|r a caminho de Iverron. Você não precisa completar isto agora.
+    >>Mate os |cRXP_ENEMY_Javalis-espinho|r a caminho de Iverron. Você não precisa completar isto agora.
     .complete 457,2 --Kill Thistle Boar (x7)
     .mob +Thistle Boar
 step << Druid
@@ -179,7 +179,7 @@ step << Druid
     .goto 1438/1,871.60,10300.67
     .target Tarindrella
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tarindrella|r
-    >>DICA: |cRXP_WARN_Pegue as perneiras como recompensa e guarde-as. Você as utilizará para engravar uma runa depois|r << sod Hunter/sod Rogue/sod Warrior/sod Druid
+    >>DICA: |cRXP_WARN_Pegue as perneiras como recompensa e guarde-as. Use-as mais tarde para gravar uma runa|r << sod Hunter/sod Rogue/sod Warrior/sod Druid
     .turnin 459,1 >> Entregue A protetora dos bosques
     .turnin 97977 >>Entregue O Chamado da Natureza
 step
@@ -194,15 +194,15 @@ step << Hunter/Druid/Warrior
     #completewith htraining
     .goto 1438/1,794.92,10436.72
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Keina|r
-    >>|cRXP_WARN_Certifique-se de que tem 1 prata restante depois de sair do vendedor para conseguir pagar|r |T132204:0|t[|cRXP_FRIENDLY_Picada de Serpente|r] << Hunter
-	.vendor >> |cRXP_BUY_Compre 2 pilhas de|r |T132382:0|t[Rough Flechas] << Hunter
+    >>|cRXP_WARN_Certifique-se de sair do vendedor com 1 prata sobrando para aprender|r |T132204:0|t[|cRXP_FRIENDLY_Picada de Serpente|r] << Hunter
+	.vendor >> |cRXP_BUY_Compre 2 pilhas de|r |T132382:0|t[Flechas Rústicas] << Hunter
     .vendor >> |cRXP_BUY_Venda seu lixo|r
     .target Keina
 step << Warrior
 	.goto 1438/1,778.07,10526.62
     .target Alyissia
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Alyissia|r
-	.turnin 3116 >> Entregue O Selo Simples
+	.turnin 3116 >> Entregue O selo simples
     .trainer >> Treine suas magias de classe
 step << Priest
     .goto 1438/1,779.8482,10450.1295
@@ -217,54 +217,54 @@ step
 step
     .goto 1438/1,871.24,10417.65
     .target Gilshalan Windwalker
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Gilshalan Andavento|r
-    .accept 916 >> Aceite Veneno do Bosque Aracnídeo
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gilshalan Andavento|r
+    .accept 916 >> Aceite Peçonha de lenhateia
 step << Hunter/Druid
     .xp 4-40
 step << Druid
     .goto 1438/1,871.6,10440.83,25,0
     .goto 1438/1,829.54,10464.01
-    >>Suba a Árvore Aldrassil
+    >>Suba na árvore de Aldrassil
     .target Mardant Strongoak
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mardant Carvalhaço|r
-	.turnin 3120 >> Entregue O Selo Verdejante
+	.turnin 3120 >> Entregue O selo verdejante
 	.train 8921 >>Aprenda |T136096:0|t[Fogo Lunar]
 step << Hunter
     .goto 1438/1,871.6,10440.83,25,0
     .goto 1438/1,827.86,10458.51
-    >>Suba o Aldrassil
+    >>Suba na árvore de Aldrassil
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ayanna Perenanda|r
-    .turnin 3117 >> Entregue O Selo Cinzelado
-    .train 1978 >>Treine Picada de Serpente
+    .turnin 3117 >> Entregue O selo cinzelado
+    .train 1978 >>Aprenda Picada de Serpente
     .target Ayanna Everstride
 step << Druid
     #completewith IchorVenomSac
-    +Pare de lançar|cRXP_WARN_ |T136006:0|t[|cRXP_LOOT_Ira|r] completamente!|r Use apenas |T135158:0|t[|cRXP_LOOT_Corpo a Corpo|r] e |T136096:0|t[|cRXP_LOOT_Fogo Lunar|r] de agora em diante!
-    >>Procure usar apenas Fogo Lunar logo após Corpo a Corpo |cRXP_WARN_para não resetar seu tempo de ataque!|r
+    +Pare de lançar |T136006:0|t[|cRXP_WARN_Ira|cRXP_LOOT_] |rde vez!|r Use apenas |T135158:0|t[|cRXP_LOOT_Corpo a Corpo|r] e |T136096:0|t[|cRXP_LOOT_Fogo Lunar|r] daqui em diante!
+    >>Tente usar Fogo Lunar apenas logo após um ataque corpo a corpo |cRXP_WARN_para não reiniciar o intervalo entre ataques!|r
 step
     .goto 1438/1,863.96,10534.840,10,0
     .goto 1438/1,873.64,10566.40,10,0
     .goto 1438/1,850.72,10595.920,10,0
     .goto 1438/1,820.17,10547.39,10,0
     .goto 1438/1,863.96,10534.840
-    >>Saque o |cRXP_LOOT_Moonpetal Lilies|r no chão
+    >>Pegue os |cRXP_LOOT_Lírios Lunapétala|r no chão
     .complete 3521,2 --Collect Moonpetal Lily (x4)
 step
     #label IchorVenomSac
     .goto 1438/1,922.52,10755.43
-    >>Mate as |cRXP_ENEMY_Webwood Aranhas|r. Saqueie-as para obter |cRXP_LOOT_Ichor|r e |cRXP_LOOT_Venom Sacs|r
+    >>Mate as |cRXP_ENEMY_Aranhas Lenhateia|r. Pegue a |cRXP_LOOT_Linfa de Lenhateia|r e as |cRXP_LOOT_Vesículas de Peçonha de Lenhateia|r delas
     .complete 3521,3 --Collect Webwood Ichor (x1)
     .complete 916,1 --Collect Webwood Venom Sac (x10)
     .mob Webwood Spider
 step
     #completewith next
-    >>Mate os |cRXP_ENEMY_Thistle Boars|r a caminho de Grells. Você não precisa completar isto agora.
+    >>Mate os |cRXP_ENEMY_Javalis-espinho|r a caminho dos Capetas. Pode terminar esta etapa depois
     .complete 457,2 --Kill Thistle Boar (x7)
     .mob +Thistle Boar
 step << !Druid
     .goto 1438/1,1014.17,10348.18
-    >>Abata os |cRXP_ENEMY_Capeta|r e os |cRXP_ENEMY_Tinhoso|r. Saqueie-os por seus |cRXP_LOOT_Mushrooms|r e |cRXP_LOOT_Limo Vil|r
-    >>Saque |T134460:0|t[|cRXP_PICK_Totens Gnarlpine|r] dos Acampamentos Capeta
+    >>Mate os |cRXP_ENEMY_Capetas|r e os |cRXP_ENEMY_Tinhosos|r. Pegue os |cRXP_LOOT_Cogumelos Jacinto|r e o |cRXP_LOOT_Limo Vil|r deles
+    >>Pegue os |T134460:0|t[|cRXP_PICK_Totens de Masca-pinho|r] nos acampamentos dos Capetas
     .complete 3521,1 --Collect Hyacinth Mushroom (x7)
     .complete 459,1 --Collect Fel Moss (x8)
     .complete 97977,1 --Gnarlpine Totem (x4)
@@ -272,7 +272,7 @@ step << !Druid
     .mob Grellkin
 step << Druid
     .goto 1438/1,1014.17,10348.18
-    >>Abate os |cRXP_ENEMY_Capeta|r e os |cRXP_ENEMY_Tinhoso|r. Saque-os em busca de |cRXP_LOOT_Cogumelos|r
+    >>Mate os |cRXP_ENEMY_Capetas|r e os |cRXP_ENEMY_Tinhosos|r. Pegue os |cRXP_LOOT_Cogumelos Jacinto|r deles
     .complete 3521,1 --Collect Hyacinth Mushroom (x7)
     .mob Grell
     .mob Grellkin
@@ -280,20 +280,20 @@ step
     .goto 1438/1,871.60,10300.67
     .target Tarindrella
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tarindrella|r
-    >>DICA: |cRXP_WARN_Pegue as perneiras como recompensa e guarde-as. Você as utilizará para engravar uma runa depois|r << sod Hunter/sod Rogue/sod Warrior/sod Druid
-    .turnin 459 >> Entregue A Protetora dos Bosques
+    >>DICA: |cRXP_WARN_Pegue as perneiras como recompensa e guarde-as. Use-as mais tarde para gravar uma runa|r << sod Hunter/sod Rogue/sod Warrior/sod Druid
+    .turnin 459 >> Entregue A protetora dos bosques
     .turnin 97977 >>Entregue O Chamado da Natureza
 step
     #completewith next
-    >>Mate os |cRXP_ENEMY_Thistle Boars|r a caminho de Iverron. Você não precisa completar isto agora.
+    >>Mate os |cRXP_ENEMY_Javalis-espinho|r a caminho de Iverron. Você não precisa completar isto agora.
     .complete 457,2 --Kill Thistle Boar (x7)
     .mob +Thistle Boar
 step
     .goto 1438/1,713.81,10407.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dirânia Pratafulge|r
-    .turnin 3521 >> Entregue Antídoto de Iverron
+    .turnin 3521 >> Entregue O antídoto de Iverron
     .target Dirania Silvershine
-    .accept 3522 >> Aceite O Antídoto de Iverron
+    .accept 3522 >> Aceite O antídoto de Iverron
 step << Priest
     .goto 1438/1,779.8482,10450.1295
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Delailah|r
@@ -305,38 +305,38 @@ step << !Priest
     .goto 1438/1,794.92,10436.72
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Keina|r
 	.vendor >> |cRXP_WARN_Venda os itens de lixo|r << !Hunter
-	.vendor >> |cRXP_BUY_Compre 3 ou 4 pilhas de|r |T132382:0|t[Rough Flechas] << Hunter
+	.vendor >> |cRXP_BUY_Compre 3 ou 4 pilhas de|r |T132382:0|t[Flechas Rústicas] << Hunter
     .target Keina
 step
     .goto 1438/1,871.24,10417.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gilshalan Andavento|r
-    .turnin 916 >> Entregue Veneno do Bosque-aracnídeo
+    .turnin 916 >> Entregue Peçonha de lenhateia
     .target Gilshalan Windwalker
-    .accept 917 >> Aceite Ovo do Bosque-aracnídeo
+    .accept 917 >> Aceite Ovo de Lenhateia
 step << Hunter/Rogue
     #completewith next
-    +|cRXP_WARN_Equipe o|r |T135641:0|t[Adaga de Pau-cardo]
+    +|cRXP_WARN_Equipe a|r |T135641:0|t[Adaga de Pau-cardo]
     .use 5392
     .itemcount 5392,1
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.05
 step
     #completewith next
-    >>Mate os |cRXP_ENEMY_Thistle Boars|r a caminho de Iverron. Você não precisa completar isto agora.
+    >>Mate os |cRXP_ENEMY_Javalis-espinho|r a caminho de Iverron. Você não precisa completar isto agora.
     .complete 457,2 --Kill Thistle Boar (x7)
     .mob +Thistle Boar
 step
     .goto 1438/1,1034.89,10711.58
     .target Iverron
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Iverron|r
-    >>DICA: |cRXP_WARN_Pegar as calças como recompensa dele. Você as usará para gravar uma runa mais tarde|r << Priest sod
-    .turnin 3522 >> Entregue O Antídoto de Iverron
+    >>DICA: |cRXP_WARN_Pegue as calças como recompensa com ele. Use-as mais tarde para gravar uma runa|r << Priest sod
+    .turnin 3522 >> Entregue O antídoto de Iverron
 step
     #completewith next
-    .goto 1438/1,926.08,10773.42,25 >> Entre na Caverna Shadowthread
+    .goto 1438/1,926.08,10773.42,25 >> Entre na Caverna Fionumbra
 step
     .goto 1438/1,912.33,10935.30
-    >>Mate o |cRXP_ENEMY_Githyiss the Torpe|r e saqueie a |T134298:0|t[|cRXP_LOOT_Dentada|r]
-    >>Saque a |cRXP_LOOT_Webwood Ovo|r no chão no fundo da Caverna
+    >>Mate |cRXP_ENEMY_Githyiss, a Torpe|r e pegue sua |T134298:0|t[|cRXP_LOOT_Presa|r]
+    >>Pegue um |cRXP_LOOT_Ovo de Lenhateia|r no chão, no fundo da caverna
     .collect 277190,1 --Fang of Githyiss (x1)
     .complete 917,1 --Collect Webwood Egg (x1)
     .mob Githyiss the Vile
@@ -348,12 +348,12 @@ step
 step << skip --logout skip
 	#hardcore
 	#completewith next
-	+Na saliência atrás dos ovos, faça um logout skip. Mova seu personagem até parecer que estão flutuando, depois saia do jogo e volte.
-	>>Se você cair, apenas corra para fora da caverna normalmente para entregar a missão
-	.link https://www.youtube.com/watch?v=TTZZT3jpv1s >> CLIQUE AQUI para referência
+	+Faça o atalho por reconexão na saliência atrás dos ovos. Mova o personagem até parecer que está flutuando, depois saia do jogo e entre de novo.
+	>>Se cair, saia da caverna pelo caminho normal e vá entregar a missão
+	.link https://www.youtube.com/watch?v=TTZZT3jpv1s >> CLIQUE AQUI para ver a referência
 step
 	.goto 1438/1,871.24,10417.65
-    >>Usar a |T134298:0|t[|cRXP_LOOT_Dentada de Githyiss|r] para aceitar a missão
+    >>Use a |T134298:0|t[|cRXP_LOOT_Presa de Gilthyiss|r] para aceitar a missão
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gilshalan Andavento|r
     .accept 97236 >> Aceite Dentada de Githyiss
     .turnin 97236 >> Entregue Dentada de Githyiss
@@ -452,7 +452,7 @@ RXPGuides.RegisterGuide([[
 #displayname 7-13 Teldrassil << SoD
 #version 1
 #group Guia RestedXP Forever (A)
-#subgroup Speedrun Guia 1-20
+#subgroup Guia Speedrun 1-20
 --#groupid RXP-SRGCE-A1
 #defaultfor NightElf
 #next 14-16 Costa Negra
@@ -485,58 +485,58 @@ step
     .mob Webwood Venomfang
 step
    .goto 1438/1,879.700,9907.601
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Lyreena Duskblade|r
-    .turnin 96630 >> Entregue O Aventureiro
-    .accept 96606 >> Aceite Os Territórios Selvagens
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Lirena Gumúmbrio|r
+    .turnin 96630 >> Entregue O aventureiro
+    .accept 96606 >> Aceite Vida ao ar livre
     .target Lyreena Duskblade
 step
     .goto 1438/1,882.300,9909.101
-    >>Usar o gesto |cRXP_WARN_/sit|r ao lado da fogueira e |cRXP_WARN_fique parado por 1 minuto|r para completar o objetivo
-    >>|cRXP_WARN_Se você não receber crédito de missão por se sentar, abandone-a e aceite-a novamente!|r
+    >>Use o emote |cRXP_WARN_/sit|r ao lado da fogueira e |cRXP_WARN_fique sentado sem se mexer por 1 minuto|r para concluir o objetivo
+    >>|cRXP_WARN_Se sentar não contar para o objetivo, abandone a missão e aceite-a novamente!|r
     .complete 96606,1 --Sit
     .complete 96606,2 --Gain the Boosted Rest buff
 step
     .goto 1438/1,879.700,9907.601
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Lyreena Duskblade|r
-    .turnin 96606 >> Entregue Os Territórios Selvagens
-    .accept 96634 >> Aceite Acampamento 101: Culinária
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Lirena Gumúmbrio|r
+    .turnin 96606 >> Entregue Vida ao ar livre
+    .accept 96634 >> Aceite Introdução ao Acampamento: Cozinha
     .target Lyreena Duskblade
 step
     #label DenlansEarth
     .goto 1438/1,959.18,9872.38
     .target Syral Bladeleaf
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Syral Folhâmina|r
-    >>|cRXP_WARN_Certifique-se de que você tem 1 espaço vazio na mochila antes de aceitar esta missão|r
-    .accept 997 >> Aceite A Terra de Denalan
+    >>|cRXP_WARN_Certifique-se de ter 1 espaço livre na bolsa antes de aceitar esta missão|r
+    .accept 997 >> Aceite A terra de Denalan
 step
     .goto 1438/1,965.59,9887.58
     .target Athridas Bearmantle
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Athridas Mantursino|r
-    .accept 475 >> Aceite Uma Leve Brisa
+    .accept 475 >> Aceite Uma leve brisa
 step << Priest
     .goto 1438/1,985.45,9905.43
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Laurna Luzalbor|r
-    .turnin 5622 >> Entregue Em Simpatia de Elune
+    .turnin 5622 >> Entregue Em favor de Eluna
     .target Laurna Morninglight
-    .accept 5621 >> Aceite Vestes da Lua
+    .accept 5621 >> Aceite Vestes da lua
 	.trainer >> Treine suas magias de classe
 step << Rogue
     .goto 1438/1,988.30,9891.89
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Áldia|r subindo as escadas
-    .accept 87288 >> Aceite Peles de Sable Macias
-    .vendor >> |cRXP_BUY_Compre e equipe uma|r |T135641:0|t[Adaga Equilibrada de Arremesso]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Áldia|r no andar de cima
+    .accept 87288 >> Aceite Pelagens de sabre-da-noite macias
+    .vendor >> |cRXP_BUY_Compre e equipe uma|r |T135641:0|t[Adaga de Arremesso Equilibrada]
     .target Aldia
 step << !Rogue
     .goto 1438/1,988.30,9891.89
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Áldia|r subindo as escadas
-    .accept 87288 >> Aceite Peles de Sable Macias
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Áldia|r no andar de cima
+    .accept 87288 >> Aceite Pelagens de sabre-da-noite macias
     .target Aldia
 step
     .goto 1438/1,984.94,9898.58
     .target Tallonkai Swiftroot
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tallonkai Radicélere|r no topo da Árvore
-    .accept 932 >> Aceite Aversão Pervertida
-    .accept 2438 >> Aceite O Apanhador de Sonhos de Esmeralda
+    .accept 932 >> Aceite Aversão pervertida
+    .accept 2438 >> Aceite O apanhador de sonhos de esmeralda
 step << Hunter
     .goto 1438/1,968.85,9821.98--c:Teldrassil,55.890,59.205
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Jiyna Penarco|r
@@ -559,13 +559,13 @@ step << Hunter
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.37
 step
     .goto 1438/1,963.000,9811.601
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Sentinel Kyra Starsong::2081|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sentinela Kyra Stelacanto::2081|r
     .target Sentinel Kyra Starsong::2081
-    .accept 99046 >>Aceite A Corredora Perdida
+    .accept 99046 >>Aceite A mensageira perdida
 step << Warrior
     .goto 1438/1,947.57,9812.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Shalomon|r
-    >>|cRXP_BUY_Compre e equipe um|r |T135321:0|t[Gládio] |cRXP_BUY_se você pode pagar (5s 36c), se não, pule este passo|r
+    >>|cRXP_BUY_Compre e equipe um|r |T135321:0|t[Gládio] |cRXP_BUY_se tiver dinheiro suficiente (5 pratas e 36 cobres). Caso contrário, pule esta etapa|r
     .collect 2488,1 --Collect Gladius
     .target Shalomon
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.80
@@ -588,7 +588,7 @@ step << Rogue
 step << Rogue
     .goto 1438/1,947.57,9812.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Shalomon|r
-    >>|cRXP_BUY_Compre e equipe um|r |T135641:0|t[Estilete] |cRXP_BUY_se você pode pagar (4s 1c), se não, pule este passo|r
+    >>|cRXP_BUY_Compre e equipe um|r |T135641:0|t[Estilete] |cRXP_BUY_se tiver dinheiro suficiente (4 pratas e 1 cobre). Caso contrário, pule esta etapa|r
     .collect 2494,1 --Stiletto (1)
     .target Shalomon
     .money <0.0401
@@ -602,7 +602,7 @@ step << Rogue
 step << Druid
     .goto 1438/1,947.57,9812.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Shalomon|r
-    >>|cRXP_BUY_Compre e equipe uma|r |T135145:0|t[Bengala] |cRXP_BUY_se puder pagá-la (5s 4c), caso contrário, pule este passo|r
+    >>|cRXP_BUY_Compre e equipe uma|r |T135145:0|t[Bengala] |cRXP_BUY_se tiver dinheiro suficiente (5 pratas e 4 cobres). Caso contrário, pule esta etapa|r
     .collect 2495,1 --Walking Stick (1)
     .target Shalomon
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.20
@@ -615,11 +615,11 @@ step << Druid
 step
     .goto 1438/1,982.65,9802.19
     .target Innkeeper Keldamyr
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Estalajadeiro Keldamyr|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estalajadeiro Keldamyr|r
     .turnin 2159,2 >> Entregue Entrega para Dolanaar << Hunter
     .turnin 2159 >> Entregue Entrega para Dolanaar << !Hunter
-    .vendor >>|cRXP_BUY_Compre 10 |T132815:0|t|cRXP_LOOT_Leite Gelado|r ou o máximo que você puder pagar << Priest
-    .home >> Defina sua Pedra de Retorno em Dolanaar
+    .vendor >>Compre 10 |T132815:0|t|cRXP_BUY_Leites Gelados|cRXP_LOOT_ ou quantos puder pagar|r << Priest
+    .home >> Defina sua Pedra de Regresso para Dolanaar
 step << Hunter
     .goto 1438/1,928.83,9812.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dazalar|r
@@ -906,7 +906,7 @@ step << Warrior
 step << Rogue
     .goto 1438/1,947.57,9812.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Shalomon|r
-    >>|cRXP_BUY_Compre e equipe um|r |T135641:0|t[Estilete] |cRXP_BUY_se você pode pagar (4s 1c), se não, pule este passo|r
+    >>|cRXP_BUY_Compre e equipe um|r |T135641:0|t[Estilete] |cRXP_BUY_se tiver dinheiro suficiente (4 pratas e 1 cobre). Caso contrário, pule esta etapa|r
     .collect 2494,1 --Stiletto (1)
     .target Shalomon
     .money <0.0401
@@ -1547,7 +1547,7 @@ step << Priest
     #optional
     .goto 1457/1,2343.10,9856.95,-1
     .goto 1457/1,2341.74,9872.610,-1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Leiloeira de Darnassus|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com um |cRXP_FRIENDLY_Leiloeiro de Darnassus|r
     >>|T134711:0|t[Óleo Menor de Teurgo] |cRXP_WARN_e|r |T133906:0|t[Sabichão Defumado] |cRXP_WARN_fornecerão um grande aumento de DPS nos níveis iniciais|r
     >>|cRXP_WARN_Também procure por melhorias de alto DPS|r |T132317:0|t[Varinha] |cRXP_WARN_que você pode usar agora/em breve|r
     *|cRXP_WARN_Pule este passo se não quiser comprar nada|r
@@ -1618,7 +1618,7 @@ step << Priest
     .target Priestess Alathea
 step << Druid NightElf
 	#completewith next
-	.cast 18960 >> Lance Teleporte: Bosque da Lua
+	.cast 18960 >> Use Teleporte: Clareira da Lua
     >>|cRXP_WARN_Estará em seu grimório|r
 	.zoneskip Moonglade
 step << Druid NightElf
@@ -1636,7 +1636,7 @@ step << Druid NightElf
     .target Great Bear Spirit
 step << Druid NightElf
 	#completewith next
-	.cast 18960 >> Lance Teleporte: Bosque da Lua
+	.cast 18960 >> Use Teleporte: Clareira da Lua
     >>|cRXP_WARN_Isso o fará voltar mais rápido|r
 step << Druid NightElf
     .goto 1450/1,-2678.76,8019.94
@@ -1758,7 +1758,7 @@ step << Hunter
     .goto 1438/1,928.83,9812.34
     .target Dazalar
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dazalar|r
-    .accept 6063 >> Aceite Adestramento da Fera - Missão
+    .accept 6063 >> Aceite Domando a Fera
 	.train 13165 >> Treine seus feitiços de nível 10
 step << Hunter
 #xprate <1.99
@@ -1781,7 +1781,7 @@ step << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dazalar|r
     .turnin 6063 >> Entregue Domando a fera
     .target Dazalar
-    .accept 6101 >> Aceite Adestramento da Fera - Missão
+    .accept 6101 >> Aceite Domando a Fera
 step
     .goto 1438/1,956.02,9736.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Corithras Lunafúria|r
@@ -1852,7 +1852,7 @@ step << !Druid
     .goto 1438/1,982.65,9802.19
     .target Innkeeper Keldamyr
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Estalajadeiro Keldamyr|r
-    >>|cRXP_BUY_Compre|r |T132794:0|t[Água Refrescante da Fonte] |cRXP_BUY_dele|r
+    >>|cRXP_BUY_Compre|r |T132794:0|t[Água Refrescante da Fonte] |cRXP_BUY_com ele|r
     .collect 159,1 --Refreshing Spring Water (1)
     .isOnQuest 99050
     .xp >10,1
@@ -1887,7 +1887,7 @@ step << Hunter
     .goto 1438/1,928.83,9812.34
     .target Dazalar
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dazalar|r
-    .accept 6063 >> Aceite Adestramento da Fera - Missão
+    .accept 6063 >> Aceite Domando a Fera
 	.trainer >> Treine suas magias de classe
 step << Hunter
     .goto 1438/1,764.68,9835.73
@@ -1899,7 +1899,7 @@ step << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dazalar|r
     .turnin 6063 >> Entregue Domando a fera
     .target Dazalar
-    .accept 6101 >> Aceite Adestramento da Fera - Missão
+    .accept 6101 >> Aceite Domando a Fera
 step << Hunter
     #completewith next
     >>Mate todos os |cRXP_ENEMY_Lasher Sproutlings|r que você vê no caminho para o gato. Saqueie-os para obter |T237424:0|t[|cRXP_LOOT_Dewy Açoitadeira Fronds|r]
@@ -1927,7 +1927,7 @@ step << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dazalar|r
     .turnin 6101 >> Entregue Domando a fera
     .target Dazalar
-    .accept 6102 >> Aceite Adestramento da Fera - Missão
+    .accept 6102 >> Aceite Domando a Fera
 step << Hunter
     .goto 1438/1,520.28,9567.62
     .use 15923 >>|cRXP_WARN_Use o|r |T132164:0|t[Bastão de Adestramento] |cRXP_WARN_em uma|r |cRXP_ENEMY_Guinchadora Estrígida|r
@@ -1957,7 +1957,7 @@ step << !Druid
     .goto 1438/1,982.65,9802.19
     .target Innkeeper Keldamyr
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Estalajadeiro Keldamyr|r
-    >>|cRXP_BUY_Compre|r |T132794:0|t[Água Refrescante da Fonte] |cRXP_BUY_dele|r
+    >>|cRXP_BUY_Compre|r |T132794:0|t[Água Refrescante da Fonte] |cRXP_BUY_com ele|r
     .collect 159,1 --Refreshing Spring Water (1)
     .isOnQuest 99050
 step << Priest
@@ -2228,7 +2228,7 @@ step << Hunter
     .goto 1457/1,2511.04,10178.01
     .target Jocaste
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Jocaste|r
-    .turnin 6103 >> Entregue Treinamento da Fera - Missão
+    .turnin 6103 >> Entregue Treinando a fera
 step << Hunter
     >>Suba pela rampa à direita de |cRXP_FRIENDLY_Jocaste|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Silvaria|r
@@ -2291,7 +2291,7 @@ step
     #ah
     .goto 1457/1,2343.10,9856.95,-1
     .goto 1457/1,2341.74,9872.610,-1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Leiloeira de Darnassus|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com um |cRXP_FRIENDLY_Leiloeiro de Darnassus|r
     >>Compre os itens a seguir para entrega imediata em Costa Negra mais tarde:
     -- >>|T134187:0|t[Earthroot] << Druid era
     >>|T133912:0|t[Garoupa da Costa Negra]

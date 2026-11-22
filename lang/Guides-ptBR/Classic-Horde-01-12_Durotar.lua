@@ -932,7 +932,7 @@ step
     .goto Durotar,42.02,62.15,40,0
     .goto Durotar,42.00,62.92,40,0
     .goto Durotar,41.99,64.03,40,0
-    .xp 4 >> Farme até o nível 4
+    .xp 4 >> Mate inimigos até atingir o nível 4
     .mob Mottled Boar
     .mob Scorpid Worker
     .mob Vile Familiar
@@ -1306,7 +1306,7 @@ step
     #softcore
     .goto Durotar,49.89,40.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Férrano Escarnecenho|r
-    .accept 791 >>Aceite Carregar Seu Peso
+    .accept 791 >>Aceite Carregue suas tralhas
     .target Furl Scornbrow
 step << Warrior/Rogue
     #softcore
@@ -1569,7 +1569,7 @@ step
     .accept 817 >>Aceite Presa prática
     .target +Vel'rin Fang
     .goto Durotar,55.95,73.93
-    .accept 818 >>Aceite Um Espírito Solvente
+    .accept 818 >>Aceite Um espírito solvente
     .target +Master Vornal
     .goto Durotar,55.94,74.40
     .turnin 805 >>Entregue Apresente-se na Aldeia Sen'jin
@@ -1662,7 +1662,7 @@ step << Troll Warrior
 step << Hunter
     .goto Durotar,56.47,73.12
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Trayexir|r
-    .vendor >> Comerciante lixo. Venda sua arma se isso der dinheiro suficiente para um |T135499:0|t[Arco Recurvo de Pau-de-chifre] (2s 83c). Você voltará depois se ainda não tiver o bastante
+    .vendor >> Venda os lixos. Venda sua arma se ela lhe der dinheiro suficiente para um |T135499:0|t[Arco Recurvo de Pau-de-chifre] (2p 83c). Você voltará mais tarde se não tiver o suficiente ainda
     .target Trayexir
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.3
@@ -1936,7 +1936,7 @@ step << Hunter
     #xprate <1.5
     .goto Durotar,56.47,73.12
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Trayexir|r
-    .vendor >> Comerciante lixo. Venda sua arma se isso der dinheiro suficiente para um |T135499:0|t[Arco Recurvo de Pau-de-chifre] (2s 83c). Você voltará depois se ainda não tiver o bastante
+    .vendor >> Venda os lixos. Venda sua arma se ela lhe der dinheiro suficiente para um |T135499:0|t[Arco Recurvo de Pau-de-chifre] (2p 83c). Você voltará mais tarde se não tiver o suficiente ainda
     .target Trayexir
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.3
@@ -2103,7 +2103,7 @@ step
     #hardcore
     .goto Durotar,49.89,40.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Férrano Escarnecenho|r
-    .accept 791 >>Aceite Carregar Seu Peso
+    .accept 791 >>Aceite Carregue suas tralhas
     .target Furl Scornbrow
 step << Warrior/Rogue
     #hardcore
@@ -2548,13 +2548,13 @@ step << Troll Warrior
 step << Hunter
     .goto Durotar,52.97,41.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ghrawt|r
-    .vendor >> Comerciante lixo. Venda sua arma se isso der dinheiro suficiente para um |T135499:0|t[Arco Recurvo de Pau-de-chifre] (2s 83c). Você voltará depois se ainda não tiver o bastante
+    .vendor >> Venda os lixos. Venda sua arma se ela lhe der dinheiro suficiente para um |T135499:0|t[Arco Recurvo de Pau-de-chifre] (2p 83c). Você voltará mais tarde se não tiver o suficiente ainda
     .target Ghrawt
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.3
 step << Hunter
     .goto Durotar,52.97,41.04
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Converse com|r |cRXP_FRIENDLY_Ghrawt|r|cRXP_BUY_. Compre|r |T135499:0|t[Arco Recurvo de Pau-de-chifre] |cRXP_BUY_dele|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Fale com|r |cRXP_FRIENDLY_Ghrawt|r|cRXP_BUY_. Compre um|r |T135499:0|t[Arco Recurvo de Pau-de-chifre] |cRXP_BUY_dele|r
     .collect 2506,1,818,1 --Collect Hornwood Recurve Bow (1)
     .money <0.0283
     .itemStat 18,QUALITY,<7
@@ -3042,7 +3042,7 @@ step << Shaman
 step << Hunter
     #xprate <1.5
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com|r |cRXP_FRIENDLY_Cozinheiro Torka|r e |cRXP_FRIENDLY_Gar'Thok|r
-    .turnin 815 >>Entregue Quebre Alguns Ovos
+    .turnin 815 >>Entregue Quebrar alguns ovos
     .target +Cook Torka
     .goto Durotar,51.12,42.46
     .turnin 825 >>Entregue Dos destroços...
@@ -3053,7 +3053,7 @@ step
     #xprate >1.49
     #label RazorTurnins015
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com|r |cRXP_FRIENDLY_Cozinheiro Torka|r e |cRXP_FRIENDLY_Gar'Thok|r
-    .turnin 815 >>Entregue Quebre Alguns Ovos
+    .turnin 815 >>Entregue Quebrar alguns ovos
     .target +Cook Torka
     .goto Durotar,51.12,42.46
     .turnin 825 >>Entregue Dos destroços...
@@ -3106,7 +3106,7 @@ step << Hunter
     .goto Durotar,51.85,43.49
     >>Entre no bunker
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thotar|r dentro
-    .accept 6062 >>Aceite Adestramento da Fera - Missão
+    .accept 6062 >>Aceite Domando a Fera
     .trainer >> Treine suas magias de classe
     .target Thotar
 step << Hunter
@@ -3139,14 +3139,14 @@ step << Hunter
     >>Entre no bunker
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thotar|r dentro
     .turnin 6062 >>Entregue Domando a fera
-    .accept 6083 >>Aceite Adestramento da Fera - Missão
+    .accept 6083 >>Aceite Domando a Fera
     .target Thotar
     .isQuestComplete 6062
 step << Hunter
     .goto Durotar,51.85,43.49
     >>Entre no bunker
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thotar|r dentro
-    .accept 6083 >>Aceite Adestramento da Fera - Missão
+    .accept 6083 >>Aceite Domando a Fera
     .target Thotar
     .isQuestTurnedIn 6062
 step << Hunter
@@ -3168,7 +3168,7 @@ step << Hunter
     >>Entre no bunker
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thotar|r dentro
     .turnin 6083 >>Entregue Domando a fera
-    .accept 6082 >>Aceite Adestramento da Fera - Missão
+    .accept 6082 >>Aceite Domando a Fera
     .target Thotar
     .isQuestTurnedIn 6062
 step << Hunter
@@ -3253,7 +3253,7 @@ step << Shaman
     #xprate >1.49
     .goto The Barrens,55.86,19.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kranal|r
-    .turnin 2983 >>Entregue Call of Fogo
+    .turnin 2983 >>Entregue Call of Fogo - Missão - Missão
     .accept 1524 >>Aceite Clamor do Fogo
     .target Kranal Fiss
 step << Shaman
@@ -3276,7 +3276,7 @@ step << Shaman
     #label CallofFire3
     .goto Durotar,38.52,58.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Telf|r
-    .turnin 1524 >>Entregue Call of Fogo
+    .turnin 1524 >>Entregue Call of Fogo - Missão - Missão
     .accept 1525 >>Aceite Clamor do Fogo
     .target Telf Joolam
 step << Hunter/Shaman/Warrior
@@ -3555,7 +3555,7 @@ step << Hunter
 step << Hunter
     .goto Orgrimmar,66.05,18.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ormak|r
-    .turnin 6081 >>Entregue Treinamento da Fera - Missão
+    .turnin 6081 >>Entregue Treinando a fera
     .target Ormak Grimshot
 step << Hunter
     .goto Orgrimmar,66.34,14.83
@@ -3682,7 +3682,7 @@ step << Hunter
 step << !Hunter
     #xprate <1.5
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com|r |cRXP_FRIENDLY_Torka|r, |cRXP_FRIENDLY_Orgnil|r e |cRXP_FRIENDLY_Gar'Thok|r
-    .turnin 815 >>Entregue Quebre Alguns Ovos
+    .turnin 815 >>Entregue Quebrar alguns ovos
     .target +Cook Torka
     .goto Durotar,51.12,42.46
     .turnin 806 >>Entregue Tempestades sombrias
@@ -3696,7 +3696,7 @@ step << !Hunter
 step << Hunter/Shaman/Warrior
     #xprate >1.49
     #label RazorTurnins2
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com|r |cRXP_FRIENDLY_Orgnil|r e |cRXP_FRIENDLY_Gar'Thok|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com|r |cRXP_FRIENDLY_Orgnil Chaganalma|r e |cRXP_FRIENDLY_Gar'Thok|r
     .turnin 806 >>Entregue Tempestades sombrias
     .target +Orgnil Soulscar
     .goto Durotar,52.24,43.15
@@ -3807,7 +3807,7 @@ step << Shaman
     #xprate <1.5
     .goto The Barrens,55.86,19.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kranal|r
-    .turnin 2983 >>Entregue Call of Fogo
+    .turnin 2983 >>Entregue Call of Fogo - Missão - Missão
     .accept 1524 >>Aceite Clamor do Fogo
     .target Kranal Fiss
 step << Warrior/Shaman
@@ -4566,7 +4566,7 @@ step << Shaman
     #completewith Fish
     #requires Kah
     #label Pole
-    .equip 16,6256 >> |cRXP_WARN_Equipe o|r |T132932:0|t[Vara de Pescar]
+    .equip 16,6256 >> |cRXP_WARN_Equipe a|r |T132932:0|t[Vara de Pescar]
     .use 6256
     .train 410104,1
     .xp <4,1
@@ -4656,7 +4656,7 @@ step << Shaman
     #label CallofFire3
     .goto Durotar,38.52,58.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Telf|r
-    .turnin 1524 >>Entregue Call of Fogo
+    .turnin 1524 >>Entregue Call of Fogo - Missão - Missão
     .accept 1525 >>Aceite Clamor do Fogo
     .target Telf Joolam
 step << Warrior
@@ -6264,7 +6264,7 @@ step
     .goto Tirisfal Glades,65.49,60.25
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Necroguarda Lina|r
     .turnin 359 >>Entregue Deveres Renegados
-    .accept 360 >>Aceite Retornar ao Magistrado
+    .accept 360 >>Aceite De volta ao Magistrado
     .accept 356 >>Aceite Patrulha da retaguarda
     .target Deathguard Linnea
     .isQuestTurnedIn 358
@@ -8239,7 +8239,7 @@ step
     #softcore
     .goto Durotar,49.89,40.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Férrano Escarnecenho|r
-    .accept 791 >>Aceite Carregar Seu Peso
+    .accept 791 >>Aceite Carregue suas tralhas
     .target Furl Scornbrow
 step << Warrior/Rogue
     #softcore
@@ -8507,7 +8507,7 @@ step
     .accept 817 >>Aceite Presa prática
     .target +Vel'rin Fang
     .goto Durotar,55.95,73.93
-    .accept 818 >>Aceite Um Espírito Solvente
+    .accept 818 >>Aceite Um espírito solvente
     .target +Master Vornal
     .goto Durotar,55.94,74.40
     .turnin 805 >>Entregue Apresente-se na Aldeia Sen'jin
@@ -8601,7 +8601,7 @@ step << Troll Warrior
 step << Hunter
     .goto Durotar,56.47,73.12
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Trayexir|r
-    .vendor >> Comerciante lixo. Venda sua arma se isso der dinheiro suficiente para um |T135499:0|t[Arco Recurvo de Pau-de-chifre] (2s 83c). Você voltará depois se ainda não tiver o bastante
+    .vendor >> Venda os lixos. Venda sua arma se ela lhe der dinheiro suficiente para um |T135499:0|t[Arco Recurvo de Pau-de-chifre] (2p 83c). Você voltará mais tarde se não tiver o suficiente ainda
     .target Trayexir
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.3
@@ -8977,7 +8977,7 @@ step
     #hardcore
     .goto Durotar,49.89,40.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Férrano Escarnecenho|r
-    .accept 791 >>Aceite Carregar Seu Peso
+    .accept 791 >>Aceite Carregue suas tralhas
     .target Furl Scornbrow
 step << Warrior/Rogue
     #hardcore
@@ -9210,7 +9210,7 @@ step
 step
     .goto Durotar,51.09,42.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com|r |cRXP_FRIENDLY_Cozinheiro Torka|r
-    .turnin 815 >>Entregue Quebre Alguns Ovos
+    .turnin 815 >>Entregue Quebrar alguns ovos
     .target Cook Torka
     .isQuestComplete 815
 step
@@ -9351,13 +9351,13 @@ step << Troll Warrior
 step << Hunter
     .goto Durotar,52.97,41.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ghrawt|r
-    .vendor >> Comerciante lixo. Venda sua arma se isso der dinheiro suficiente para um |T135499:0|t[Arco Recurvo de Pau-de-chifre] (2s 83c). Você voltará depois se ainda não tiver o bastante
+    .vendor >> Venda os lixos. Venda sua arma se ela lhe der dinheiro suficiente para um |T135499:0|t[Arco Recurvo de Pau-de-chifre] (2p 83c). Você voltará mais tarde se não tiver o suficiente ainda
     .target Ghrawt
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.3
 step << Hunter
     .goto Durotar,52.97,41.04
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Converse com|r |cRXP_FRIENDLY_Ghrawt|r|cRXP_BUY_. Compre|r |T135499:0|t[Arco Recurvo de Pau-de-chifre] |cRXP_BUY_dele|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Fale com|r |cRXP_FRIENDLY_Ghrawt|r|cRXP_BUY_. Compre um|r |T135499:0|t[Arco Recurvo de Pau-de-chifre] |cRXP_BUY_dele|r
     .collect 2506,1,818,1 --Collect Hornwood Recurve Bow (1)
     .money <0.0283
     .itemStat 18,QUALITY,<7
@@ -9472,7 +9472,7 @@ step << Hunter
     .goto Durotar,51.85,43.49
     >>Entre no bunker
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thotar|r dentro
-    .accept 6062 >>Aceite Adestramento da Fera - Missão
+    .accept 6062 >>Aceite Domando a Fera
     .trainer >> Treine suas magias de classe
     .target Thotar
 step << Hunter
@@ -9491,13 +9491,13 @@ step << Hunter
     >>Entre no bunker
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thotar|r dentro
     .turnin 6062 >>Entregue Domando a fera
-    .accept 6083 >>Aceite Adestramento da Fera - Missão
+    .accept 6083 >>Aceite Domando a Fera
     .target Thotar
 step << Hunter
     .goto Durotar,51.85,43.49
     >>Entre no bunker
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thotar|r dentro
-    .accept 6083 >>Aceite Adestramento da Fera - Missão
+    .accept 6083 >>Aceite Domando a Fera
     .target Thotar
 step << Hunter
     #completewith next
@@ -9517,7 +9517,7 @@ step << Hunter
     >>Entre no bunker
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thotar|r dentro
     .turnin 6083 >>Entregue Domando a fera
-    .accept 6082 >>Aceite Adestramento da Fera - Missão
+    .accept 6082 >>Aceite Domando a Fera
     .target Thotar
 step << Hunter
     #completewith next
@@ -9638,7 +9638,7 @@ step << Shaman
     #xprate >1.49
     .goto The Barrens,55.86,19.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kranal|r
-    .turnin 2983 >>Entregue Call of Fogo
+    .turnin 2983 >>Entregue Call of Fogo - Missão - Missão
     .accept 1524 >>Aceite Clamor do Fogo
     .target Kranal Fiss
 step << Shaman
@@ -9661,7 +9661,7 @@ step << Shaman
     #label CallofFire3
     .goto Durotar,38.52,58.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Telf|r
-    .turnin 1524 >>Entregue Call of Fogo
+    .turnin 1524 >>Entregue Call of Fogo - Missão - Missão
     .accept 1525 >>Aceite Clamor do Fogo
     .target Telf Joolam
 step << Warrior
@@ -10070,7 +10070,7 @@ step << Hunter
 step << Hunter
     .goto Orgrimmar,66.05,18.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ormak|r
-    .turnin 6081 >>Entregue Treinamento da Fera - Missão
+    .turnin 6081 >>Entregue Treinando a fera
     .target Ormak Grimshot
 step << Hunter
     .goto Orgrimmar,66.34,14.83
@@ -10339,7 +10339,7 @@ step << Warrior
 step
     #xprate <2.1
     #label RazorTurnins2
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com|r |cRXP_FRIENDLY_Orgnil|r e |cRXP_FRIENDLY_Gar'Thok|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com|r |cRXP_FRIENDLY_Orgnil Chaganalma|r e |cRXP_FRIENDLY_Gar'Thok|r
     .turnin 806 >>Entregue Tempestades sombrias
     .target +Orgnil Soulscar
     .goto Durotar,52.24,43.15

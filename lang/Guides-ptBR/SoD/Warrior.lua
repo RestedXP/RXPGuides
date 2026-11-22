@@ -1409,7 +1409,7 @@ step
 step
     .train 416004,1
     #completewith next
-    .zone Swamp of Sorrows >>Vá para Pântano das Mágoas
+    .zone Swamp of Sorrows >>Vá ao Pântano das Mágoas
 step
     .train 416004,1
     #loop

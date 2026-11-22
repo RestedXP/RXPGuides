@@ -15,7 +15,7 @@ step
 step
     #completewith Rune
     #label Dun1
-    .zone Dun Morogh >> Viagem para Dun Morogh
+    .zone Dun Morogh >> Vá para Dun Morogh
     .train 410121,1
 step
     #optional
@@ -107,7 +107,7 @@ step
     .xp >5,1
 step
     #completewith Rune
-    .zone Dun Morogh >>Viagem para Dun Morogh
+    .zone Dun Morogh >>Vá para Dun Morogh
     .train 410123,1
 step
     #loop
@@ -1003,7 +1003,7 @@ step
     >>|cRXP_WARN_Use a|r |T237388:0|t[|cRXP_LOOT_Desenho Primitivo|r] |cRXP_WARN_para iniciar a missão|r
     >>|cRXP_WARN_Suas localizações estão marcadas no seu mapa|r
     .collect 211269,1,78823,1 --Primitive Drawing
-    .accept 78823 >> Aceite Terror dos Céus do Deserto
+    .accept 78823 >> Aceite Terror dos céus do deserto
     .mob Dustbelcher Ogre
     .mob Dustbelcher Brute
     .mob Dustbelcher Mauler
@@ -1017,13 +1017,13 @@ step
 step
     #optional
     #completewith next
-    .zone Stranglethorn Vale >>Voe para Stranglethorn Vale
+    .zone Stranglethorn Vale >>Vá para Vale do Espinho
     .train 410114,1
 step
     .goto Stranglethorn Vale,35.658,10.808
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Rosarães Guima|r
-    .turnin 78823 >> Entregue Terror dos Céus do Deserto
-    .accept 78830 >> Aceite Terror dos Céus do Deserto
+    .turnin 78823 >> Entregue Terror dos céus do deserto
+    .accept 78830 >> Aceite Terror dos céus do deserto
     .target Hemet Nesingwary
     .train 410114,1
 step
@@ -1057,12 +1057,12 @@ step
     .train 410114,1
 step
     #completewith next
-    .zone Stranglethorn Vale >>Voe para Stranglethorn Vale
+    .zone Stranglethorn Vale >>Vá para Vale do Espinho
     .train 410114,1
 step
     .goto Stranglethorn Vale,35.658,10.808
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Rosarães Guima|r
-    .turnin 78830 >> Entregue Terror dos Céus do Deserto
+    .turnin 78830 >> Entregue Terror dos céus do deserto
     .target Hemet Nesingwary
     .train 410114,1
 step
@@ -1119,7 +1119,7 @@ step
     .train 1543 >>|cRXP_WARN_You must train|r |T135815:0|t[Flare] |cRXP_WARN_to acquire the|r |T132147:0|t[Dual Wield Specialization] |cRXP_WARN_rune|r
 step
     #completewith next
-    .zone Stranglethorn Vale >>Voe para Stranglethorn Vale
+    .zone Stranglethorn Vale >>Vá para Vale do Espinho
 step
     .train 410116,1
     .goto Stranglethorn Vale,31.84,15.61

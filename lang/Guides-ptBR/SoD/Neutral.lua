@@ -904,7 +904,7 @@ step
     .mob Dark Rider
 step
     #completewith next
-    .zone Swamp of Sorrows >>Vá para Pântano das Mágoas
+    .zone Swamp of Sorrows >>Vá ao Pântano das Mágoas
 step
     .train 425312,1 << Priest
     .train 426180,1 << Paladin
@@ -1610,7 +1610,7 @@ step
     .train 416089,1 << Hunter
     .train 410027,1 << Druid
     #completewith next
-    .zone Swamp of Sorrows >>Vá para Pântano das Mágoas
+    .zone Swamp of Sorrows >>Vá ao Pântano das Mágoas
 step
     .train 416089,1 << Hunter
     .train 410027,1 << Druid
@@ -1629,7 +1629,7 @@ step
     .train 416089,1 << Hunter
     .train 410027,1 << Druid
     #completewith next
-    .zone Stranglethorn Vale >>Voe para Stranglethorn Vale
+    .zone Stranglethorn Vale >>Vá para Vale do Espinho
 step
     .train 416089,1 << Hunter
     .train 410027,1 << Druid
@@ -1688,7 +1688,7 @@ step
     .train 416089,1 << Hunter
     .train 410027,1 << Druid
     #completewith next
-    .zone Swamp of Sorrows >>Vá para Pântano das Mágoas
+    .zone Swamp of Sorrows >>Vá ao Pântano das Mágoas
 step
     .train 416089,1 << Hunter
     .train 410027,1 << Druid

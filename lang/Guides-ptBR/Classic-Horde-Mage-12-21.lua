@@ -1036,7 +1036,7 @@ step
 	.goto Thunder Bluff,30.1,30.0,30,0
 	.goto Thunder Bluff,23.00,21.00
 .target Apothecary Zamah
->>Fale com o |cRXP_FRIENDLY_Boticário Zaqueu|r
+>>Fale com |cRXP_FRIENDLY_Boticário Zaqueu|r
     .turnin 853 >> Entregue Boticária Zaqueia
 step
     .goto Thunder Bluff,25.16,20.95
@@ -1107,7 +1107,7 @@ step
     .turnin 1490 >> Entregue Nara Juba Agreste
 step
     .goto Thunder Bluff,23.00,21.0
->>Fale com o |cRXP_FRIENDLY_Boticário Zaqueu|r
+>>Fale com |cRXP_FRIENDLY_Boticário Zaqueu|r
     .turnin 1064 >> Entregue Ajuda Renegada
 .target Apothecary Zamah
     .accept 1065 >> Aceite A jornada para Serraria Tarren

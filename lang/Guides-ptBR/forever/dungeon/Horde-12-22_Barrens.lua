@@ -1939,7 +1939,7 @@ step
     >>|cRXP_WARN_Use o |T134085:0|t[|cRXP_LOOT_Olho da Sombra Ardente|r] para iniciar a missão|r
     >>|cRXP_WARN_Use LoS (linha de visão) para evitar |cRXP_ENEMY_Gazz'uz|r suas Setas das Sombras|r
     >>|cRXP_WARN_Você pode correr até as poças de água dentro da caverna para despistar o|r |cRXP_ENEMY_Emissário do Caos|r |cRXP_WARN_depois de matar|r |cRXP_ENEMY_Gazz'uz|r
-    >>|cRXP_WARN_Tenha cuidado, pois ele é difícil. Você pode pular esta missão se precisar.|r
+    >>|cRXP_WARN_Tome cuidado, pois ele é difícil. Você pode pular esta missão se precisar|r
     .collect 4903,1,832,1 --Collect Eye of Burning Shadow
     .accept 832 >>Aceite Sombras incandescentes
     .use 4903
@@ -4017,7 +4017,7 @@ step
     .target Jorn Skyseer
 step
     #optional
-    .xp 20 >>Suba até o nível 20
+    .xp 20 >>Mate inimigos até o nível 20
 step << !Tauren !Skyborne
     .goto 1413/1,-1891.48,-2391.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Denterroto|r
@@ -4979,7 +4979,7 @@ step
     >>Mate |cRXP_ENEMY_Senhor da Guerra Krom'zar|r quando aparecer. Pegue o |cRXP_PICK_Estandarte|r que ele deixa no chão
     >>|cRXP_WARN_Cuidado! Ele é um elite forte e protegido por pelo menos dois|r |cRXP_ENEMY_inimigos|r |cRXP_WARN_Kolkar|r
     >>|cRXP_WARN_Ele pode levar até 3 minutos para aparecer|r
-    .link https://www.youtube.com/watch?v=xrm0PWe5wf4 >>|cRXP_WARN_Clique aqui para um vídeo de guia sobre como você pode kitar|r |cRXP_ENEMY_Senhor da Guerra Krom'zar|r
+    .link https://www.youtube.com/watch?v=xrm0PWe5wf4 >>|cRXP_WARN_Clique aqui para ver como atrair e manter à distância o|r |cRXP_ENEMY_Senhor da Guerra Krom'zar|r
     .complete 4021,1 --Piece of Krom'zar's Banner (1)
     .unitscan Warlord Krom'zar
     .isQuestTurnedIn 852

@@ -1366,7 +1366,7 @@ step << Rogue
 step
     .goto StormwindClassic,52.623,65.701
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estalajadeira Cristine|r
-    .home >> Defina sua Pedra de Retorno em Cidade de Ventobravo
+    .home >> Defina sua Pedra de Regresso para a Cidade de Ventobravo
     .target Innkeeper Allison
 step << Warlock
     #completewith next
@@ -1623,7 +1623,7 @@ step
     .goto Ironforge,25.800,75.500,-1
     .goto Ironforge,24.200,74.600,-1
     .goto Ironforge,23.800,71.800,-1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Leiloeiro de Ironforge|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com um |cRXP_FRIENDLY_Leiloeiro de Altaforja|r
     >>Compre os itens a seguir para uma entrega mais rápida em Loch Modan em breve
     >>Isso vai economizar tempo, pois você não precisará ficar procurando inimigos para matar. Pule esta etapa se preferir não comprar nenhum
     >>|T134342:0|t[Javali Intestines]
@@ -1916,7 +1916,7 @@ step
 step
     #label StormpikeO
     .goto Loch Modan,35.534,48.404
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Estalajadeiro Fornalenha|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estalajadeiro Fornalenha|r
     .vendor 6734 >> |cRXP_BUY_Compre|r |T133968:0|t[Pão Fresquinho]|cRXP_BUY_. Procure ter cerca de 20|r << Warrior/Rogue
     .vendor 6734 >> |cRXP_BUY_Compre|r |T133968:0|t[Pão Fresquinho] |cRXP_BUY_e|r |T132815:0|t[Leite Gelado]|cRXP_BUY_. Procure ter cerca de 10|r |T133968:0|t[Pão Fresquinho] |cRXP_BUY_e 20|r |T132815:0|t[Leite Gelado] << !Warrior !Rogue
     .target Innkeeper Hearthstove

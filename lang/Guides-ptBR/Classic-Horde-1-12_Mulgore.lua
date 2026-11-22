@@ -573,7 +573,7 @@ step << Warrior
 step
     .goto Mulgore,38.51,81.54
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Antur|r
-    .accept 1656 >>Aceite Uma Tarefa Inacabada
+    .accept 1656 >>Aceite Serviço pela metade
     .target Antur Fallow
 ]])
 
@@ -1803,7 +1803,7 @@ step << Shaman
 step << Hunter
     .goto Mulgore,47.81,55.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Yaw Crina Cortante|r
-    .accept 6061 >>Aceite Adestramento da Fera - Missão
+    .accept 6061 >>Aceite Domando a Fera
     .trainer >> Treine suas magias de classe
     .target Yaw Sharpmane
 step << Druid
@@ -1831,7 +1831,7 @@ step << Hunter
     .goto Mulgore,47.81,55.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Yaw Crina Cortante|r
     .turnin 6061 >>Entregue Domando a fera
-    .accept 6087 >>Aceite Adestramento da Fera - Missão
+    .accept 6087 >>Aceite Domando a Fera
     .target Yaw Sharpmane
 step << Hunter
     #loop
@@ -1847,7 +1847,7 @@ step << Hunter
     .goto Mulgore,47.81,55.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Yaw Crina Cortante|r
     .turnin 6087 >>Entregue Domando a fera
-    .accept 6088 >>Aceite Adestramento da Fera - Missão
+    .accept 6088 >>Aceite Domando a Fera
     .target Yaw Sharpmane
 step << Hunter
     #loop
@@ -2195,7 +2195,7 @@ step << Hunter
 step << Hunter
 	.goto Thunder Bluff,57.4,89.4
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Holto Chifre Troante|r
-	.turnin 6089 >> Entregue Treinamento da Fera - Missão
+	.turnin 6089 >> Entregue Treinando a fera
     .target Holt Thunderhorn
 step << Hunter
     .goto Thunder Bluff,54.08,84.08
@@ -2644,7 +2644,7 @@ step << Shaman
     #completewith Fish
     #requires Kah
     #label Pole
-    .equip 16,6256 >> |cRXP_WARN_Equipe o|r |T132932:0|t[Vara de Pescar]
+    .equip 16,6256 >> |cRXP_WARN_Equipe a|r |T132932:0|t[Vara de Pescar]
     .use 6256
     .train 410104,1
     .xp <4,1
@@ -2885,7 +2885,7 @@ step << Shaman
 step << Shaman
     .goto The Barrens,55.86,19.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kranal|r
-    .turnin 2984 >>Entregue Call of Fogo
+    .turnin 2984 >>Entregue Call of Fogo - Missão - Missão
     .accept 1524 >>Aceite Clamor do Fogo
     .target Kranal Fiss
 step << Shaman
@@ -2906,7 +2906,7 @@ step << Shaman
     #label CallofFire2
     .goto Durotar,38.52,58.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Telf|r
-    .turnin 1524 >>Entregue Call of Fogo
+    .turnin 1524 >>Entregue Call of Fogo - Missão - Missão
     .accept 1525 >>Aceite Clamor do Fogo
     .target Telf Joolam
 step << Warrior
@@ -3635,7 +3635,7 @@ step
 step
     .goto Mulgore,38.51,81.54
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Antur|r
-    .accept 1656 >>Aceite Uma Tarefa Inacabada
+    .accept 1656 >>Aceite Serviço pela metade
     .target Antur Fallow
 ]])
 
@@ -4336,7 +4336,7 @@ step << Hunter
     #optional
     .goto Mulgore,47.81,55.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Yaw Crina Cortante|r
-    .accept 6061 >>Aceite Adestramento da Fera - Missão
+    .accept 6061 >>Aceite Domando a Fera
     .trainer >> Treine suas magias de classe
     .target Yaw Sharpmane
     .xp <10,1
@@ -4356,14 +4356,14 @@ step << Hunter
     .goto Mulgore,47.81,55.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Yaw Crina Cortante|r
     .turnin 6061 >>Entregue Domando a fera
-    .accept 6087 >>Aceite Adestramento da Fera - Missão
+    .accept 6087 >>Aceite Domando a Fera
     .target Yaw Sharpmane
     .isQuestComplete 6061
 step << Hunter
     #optional
     .goto Mulgore,47.81,55.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Yaw Crina Cortante|r
-    .accept 6087 >>Aceite Adestramento da Fera - Missão
+    .accept 6087 >>Aceite Domando a Fera
     .target Yaw Sharpmane
     .isQuestTurnedIn 6061
 step << Hunter
@@ -4383,7 +4383,7 @@ step << Hunter
     .goto Mulgore,47.81,55.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Yaw Crina Cortante|r
     .turnin 6087 >>Entregue Domando a fera
-    .accept 6088 >>Aceite Adestramento da Fera - Missão
+    .accept 6088 >>Aceite Domando a Fera
     .target Yaw Sharpmane
     .isQuestTurnedIn 6061
 step << Hunter
@@ -4662,7 +4662,7 @@ step << Druid
 step << Hunter
 	.goto Thunder Bluff,57.4,89.4
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Holto Chifre Troante|r
-	.turnin 6089 >> Entregue Treinamento da Fera - Missão
+	.turnin 6089 >> Entregue Treinando a fera
     .target Holt Thunderhorn
     .isOnQuest 6089
 step << Hunter
@@ -5022,7 +5022,7 @@ step << Shaman
 step << Hunter
     .goto Mulgore,47.81,55.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Yaw Crina Cortante|r
-    .accept 6061 >>Aceite Adestramento da Fera - Missão
+    .accept 6061 >>Aceite Domando a Fera
     .train 13165 >>Treine suas magias de classe
     .target Yaw Sharpmane
     .isQuestAvailable 6061
@@ -5060,7 +5060,7 @@ step << Hunter
     .goto Mulgore,47.81,55.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Yaw Crina Cortante|r
     .turnin 6061 >>Entregue Domando a fera
-    .accept 6087 >>Aceite Adestramento da Fera - Missão
+    .accept 6087 >>Aceite Domando a Fera
     .target Yaw Sharpmane
 step << Hunter
     #loop
@@ -5076,7 +5076,7 @@ step << Hunter
     .goto Mulgore,47.81,55.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Yaw Crina Cortante|r
     .turnin 6087 >>Entregue Domando a fera
-    .accept 6088 >>Aceite Adestramento da Fera - Missão
+    .accept 6088 >>Aceite Domando a Fera
     .target Yaw Sharpmane
 step << Hunter
     #loop
@@ -5552,7 +5552,7 @@ step
 step << Hunter
 	.goto Thunder Bluff,57.4,89.4
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Holto Chifre Troante|r
-	.turnin 6089 >> Entregue Treinamento da Fera - Missão
+	.turnin 6089 >> Entregue Treinando a fera
     .target Holt Thunderhorn
 step << Hunter
     #optional
@@ -5834,7 +5834,7 @@ step << Shaman
     #completewith Fish
     #requires Kah
     #label Pole
-    .equip 16,6256 >> |cRXP_WARN_Equipe o|r |T132932:0|t[Vara de Pescar]
+    .equip 16,6256 >> |cRXP_WARN_Equipe a|r |T132932:0|t[Vara de Pescar]
     .use 6256
     .train 410104,1
 step << Shaman
@@ -5952,7 +5952,7 @@ step << Shaman
 step << Shaman
     .goto The Barrens,55.86,19.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kranal|r
-    .turnin 2984 >>Entregue Call of Fogo
+    .turnin 2984 >>Entregue Call of Fogo - Missão - Missão
     .accept 1524 >>Aceite Clamor do Fogo
     .target Kranal Fiss
 step << Shaman
@@ -5973,7 +5973,7 @@ step << Shaman
     #label CallofFire2
     .goto Durotar,38.52,58.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Telf|r
-    .turnin 1524 >>Entregue Call of Fogo
+    .turnin 1524 >>Entregue Call of Fogo - Missão - Missão
     .accept 1525 >>Aceite Clamor do Fogo
     .target Telf Joolam
 step << Shaman

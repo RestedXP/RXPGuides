@@ -2307,7 +2307,7 @@ step
     .isQuestComplete 97968 --Camping 101: Herbalism
     .isQuestComplete 92516 --Hippogryph Harassment
     .goto 2521,43.0,43.6
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Halassa Fernbreeze::257021|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Halassa Relvento::257021|r.
     .turnin 97968 >>Entregue Introdução ao Acampamento: Herborismo
     .target Halassa Fernbreeze::257021
 step
@@ -3131,7 +3131,7 @@ step
     .isQuestComplete 97968 --Camping 101: Herbalism
     .isQuestComplete 92550 -- Havoc in the Highlands
     .goto 2521,43.0,43.6
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Halassa Fernbreeze::257021|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Halassa Relvento::257021|r.
     .turnin 97968 >>Entregue Introdução ao Acampamento: Herborismo
     .target Halassa Fernbreeze::257021
 step
@@ -3593,7 +3593,7 @@ step << Alliance
     .cooldown spell,1259416,>0,1 -- Walk on Air
     .goto 2521,66.47,76.68,10,0
     .goto 2521,66.63,79.94
-    .cast 1259416 >>Pule da árvore e use |T132845:0|t[Andar no Ar] para voar em direção ao doador da missão.
+    .cast 1259416 >>Pule da árvore e use |T132845:0|t[Andar no Ar] para voar até quem oferece a missão.
     *|cRXP_WARN_Se calcular bem o momento, pode cancelar o efeito no ar para pousar dentro do prédio|r
     .usespell 1259416
     .macro Cancel Walk on Air,132845 >>Cancele Andar no Ar
@@ -4422,7 +4422,7 @@ step << Warrior
     .goto 2521,59.889,72.869
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Seena Rompe-céus::252377|r.
     .target Seena Skybreaker::252377
-    .accept 94003 >>Aceite O Rompe-Céus Baluarte
+    .accept 94003 >>Aceite O Baluarte do Rompe-céus
 step << Warrior
     .money <0.12
     .xp <10,1
@@ -5228,7 +5228,7 @@ step << Alliance !Druid
     .cooldown spell,1259416,>0,1 -- Walk on Air
     .goto 2521,66.47,76.64,10,0
     .goto 2521,65.36,71.79
-    .cast 1259416 >>Pule da árvore e use |T132845:0|t[Andar no Ar] para voar em direção ao ponto de parada.
+    .cast 1259416 >>Pule da árvore e use |T132845:0|t[Andar no Ar] para voar até o ponto indicado pela seta.
     .usespell 1259416
 step << Alliance
     .goto 2521,65.956,74.309
@@ -5465,7 +5465,7 @@ step << Alliance
     .goto 2521,66.47,76.61,8,0
     .goto 2521,66.31,76.18,15,0
     .goto 2521,63.14,76.9
-    .cast 1259416 >>Pule da árvore e use |T132845:0|t[Andar no Ar] para voar em direção ao ponto de parada.
+    .cast 1259416 >>Pule da árvore e use |T132845:0|t[Andar no Ar] para voar até o ponto indicado pela seta.
     .usespell 1259416
 step << Alliance
     .subzoneskip 16638,1 -- Valanaar
@@ -5834,7 +5834,7 @@ step << Alliance
 
 step << Warrior
     .goto 2521,56.56,50.36
-    >>Mate |cRXP_ENEMY_Zaal Escudo Tonante::257196|r. Saqueie-o para o |T134959:0|t[|cRXP_LOOT_Skybreaker Baluarte|r].
+    >>Mate |cRXP_ENEMY_Zaal Escudo Tonante::257196|r. Pegue o |T134959:0|t[|cRXP_LOOT_Baluarte do Rompe-céus|r].
     .complete 94003,1 --|1/1 Skybreaker Bulwark
     .mob Zaal Stormshield::257196
 
@@ -6230,8 +6230,8 @@ step
 step << Alliance
     .goto 2521,63.80,36.00
     .itemcount 265476,1
-    >>Usar a |T134332:0|t[Ripped Missive] na mochila para começar a missão.
-    .accept 94490 >>Aceite Ripped Missive
+    >>Use a |T134332:0|t[Missiva Rasgada] nas bolsas para iniciar a missão.
+    .accept 94490 >>Aceite Missiva Rasgada
     .use 265476 -- Ripped Missive
 step
     .goto 2521,63.93,33.76,20,0
@@ -6333,7 +6333,7 @@ step << Alliance Warrior
     .goto 2521,59.886,72.863
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Seena Rompe-céus::252377|r.
     .target Seena Skybreaker::252377
-    .turnin 94003 >>Entregue O Rompe-céus Baluarte
+    .turnin 94003 >>Entregue O Baluarte do Rompe-céus
 -- step << Alliance Rogue
 --     .goto 2521,59.9,72.48
 --     *|cRXP_WARN_Use the Interact Key through the Wall|r
@@ -6494,7 +6494,7 @@ step << Alliance
     .cooldown spell,1259416,>0,1 -- Walk on Air
     .goto 2521,66.49,76.64,8,0
     .goto 2521,63.33,78.16
-    .cast 1259416 >>Pule da árvore e use |T132845:0|t[Andar no Ar] para voar em direção ao ponto de parada.
+    .cast 1259416 >>Pule da árvore e use |T132845:0|t[Andar no Ar] para voar até o ponto indicado pela seta.
     .usespell 1259416
 step << Alliance
     .goto 2521,63.33,78.16,30,0
@@ -6583,7 +6583,7 @@ step << Alliance
     .goto 2521,66.49,76.64,8,0
     .goto 2521,66.39,76.26,10,0
     .goto 2521,63.9,74.16
-    .cast 1259416 >>Pule da árvore e use |T132845:0|t[Andar no Ar] para voar em direção ao ponto de parada.
+    .cast 1259416 >>Pule da árvore e use |T132845:0|t[Andar no Ar] para voar até o ponto indicado pela seta.
     .usespell 1259416
 step << Alliance
     .subzoneskip 16638,1 -- Valanaar
@@ -6935,7 +6935,7 @@ step << Alliance
 step << Alliance Druid
     .goto 1416/0,385.700,385.400
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Arquimago Ansirem Tecerrunas::2543|r.
-    .accept 94912 >>Aceite Child of Nature
+    .accept 94912 >>Aceite Cria da natureza
     .target Archmage Ansirem Runeweaver::2543
 step << Alliance
     .goto 1416/0,445.93,450.00
@@ -6945,7 +6945,7 @@ step << Alliance Druid
     .goto 1453/0,1100.200,-8776.400
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sheldras Lunárvore::5504|r
     .target Sheldras Moontree::5504
-    .turnin 94912 >>Entregue Child of Nature
+    .turnin 94912 >>Entregue Cria da natureza
     .accept 94914 >>Aceite Clareira da Lua
 step << Alliance Hunter
     .goto 1453/0,765.700,-8804.000
@@ -7160,7 +7160,7 @@ step << Horde
 step << Horde Warrior
     .goto 2521,59.886,72.863
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Seena Rompe-céus::252377|r.
-    .turnin 94003 >>Entregue O Rompe-céus Baluarte
+    .turnin 94003 >>Entregue O Baluarte do Rompe-céus
     .target Seena Skybreaker::252377
 step << Horde Warrior
     .money <0.3
@@ -7253,10 +7253,10 @@ step << Horde Druid Skyborne
     .goto 1412/1,423.400,-659.000
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Muln Earthfury::259118|r.
     .target Muln Earthfury::259118
-    .accept 94911 >>Aceite Child of Nature
+    .accept 94911 >>Aceite Cria da natureza
 step << Horde
     .goto 1412/1,426.100,-658.000
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Alaana Stormwalker::259119|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Alaana Tempesvaga::259119|r.
     .accept 95350 >>Aceite Boas-Vindas a Azeroth
     .target Alaana Stormwalker::259119
 step << Horde
@@ -7269,7 +7269,7 @@ step << Horde
     .isOnQuest 95350
     .subzoneskip 1638,1
     .goto 1456/1,-74.900,-981.700
-    .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Spirit Curador::6491|r.
+    .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Anjo da Cura::6491|r.
     .skipgossipid 96031
     .skipgossipid 98031
     .target Spirit Healer::6491
@@ -7278,7 +7278,7 @@ step << Horde Druid Skyborne
     #label ChildOfNatureA
     #hidewindow
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Turak Runa Totem::3033|r.
-    .turnin 94911 >>Entregue Child of Nature
+    .turnin 94911 >>Entregue Cria da natureza
     .accept 94913 >>Aceite Clareira da Lua
     .target Turak Runetotem::3033
 step << Horde Druid Skyborne
@@ -7300,7 +7300,7 @@ step << Horde Druid Skyborne
     #requires ChildOfNatureC
     .goto 1456/1,-281.500,-1039.900
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Turak Runa Totem::3033|r.
-    .turnin 94911 >>Entregue Child of Nature
+    .turnin 94911 >>Entregue Cria da natureza
     .accept 94913 >>Aceite Clareira da Lua
     .target Turak Runetotem::3033
 step << Horde Druid Skyborne
@@ -7456,7 +7456,7 @@ step << Horde
 step << Horde
     .goto 1454/1,-4126.300,1920.100
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thrall::4949|r.
-    .turnin 95350 >>Entregue Bem-vindo a Azeroth
+    .turnin 95350 >>Entregue Boas-Vindas a Azeroth
     .accept 98024 >>Aceite Jornada para a Encruzilhada
     --.accept 93739 >>Accept Exploring the Horde
     --.accept 5726 >>Accept Hidden Enemies

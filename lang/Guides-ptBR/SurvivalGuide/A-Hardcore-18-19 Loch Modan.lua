@@ -393,7 +393,7 @@ step
 step
     #label FINISHED
     .goto Loch Modan,33.938,50.954
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thorgrum|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thorgrum Borrelson|r
     .fly Ironforge >> Voe para Altaforja
     .target Thorgrum Borrelson
 step

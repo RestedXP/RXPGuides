@@ -9,7 +9,7 @@ RXPGuides.RegisterGuide([[
 #name 1-6 Durotar
 #version 11
 #group Guia de Progressão Rápida do RestedXP Forever (H)
-#subgroup Guia Speedrun 1-22
+#subgroup Guia de Progressão Rápida 1-22
 --#groupid RXP-SRGCE-H1
 #defaultfor Troll/Orc
 #next 6-10 Durotar
@@ -286,7 +286,7 @@ step
     .accept 3084 >>Aceite Tabuleta Inscrita em Runas << Troll Shaman
     .accept 3085 >>Aceite Tabuleta consagrada << Troll Priest
     .accept 3086 >>Aceite Tabuleta glífica << Troll Mage
-    .accept 98575 >>Aceite Tabuleta Maculada << Troll Warlock
+    .accept 98575 >>Aceite Tabuleta turbada << Troll Warlock
     .accept 3087 >>Aceite Pergaminho cinzelado << Orc Hunter
     .accept 3088 >>Aceite Pergaminho cifrado << Orc Rogue
     .accept 3089 >>Aceite Pergaminho inscrito em runas << Orc Shaman
@@ -324,7 +324,7 @@ step
     .isQuestComplete 97279
 step
     #optional
-    .abandon 97279 >>Abandone Armas Descarriadas
+    .abandon 97279 >>Abandone Armas extraviadas
 step << Shaman
     .goto 1411/1,-4102.600,-588.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kzan|r
@@ -360,7 +360,7 @@ step << Warlock
     .goto 1411/1,-4111.87,-607.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Nartok|r
     .turnin 3090 >>Entregue Pergaminho maculado << Orc Warlock
-    .turnin 98575 >>Entregue Tabuleta Maculada << Troll Warlock
+    .turnin 98575 >>Entregue Tabuleta turbada << Troll Warlock
     .train 172 >> Aprenda |T136118:0|t[Corrupção]
     .target Nartok
 step
@@ -854,7 +854,7 @@ step
     #completewith RazorHill1
     .goto 1411/1,-4326.01,-41.23
     .deathskip >>Morra e reviva no |cRXP_FRIENDLY_Anjo da Cura|r
-    >>|cRXP_WARN_Certifique-se de que está na seta do ponto de passagem quando morre!|r
+    >>|cRXP_WARN_Certifique-se de morrer no ponto indicado pela seta de navegação!|r
     .target Anjo da Cura
 step
     #softcore
@@ -1104,7 +1104,7 @@ RXPGuides.RegisterGuide([[
 #name 6-10 Durotar
 #version 11
 #group Guia de Progressão Rápida do RestedXP Forever (H)
-#subgroup Guia Speedrun 1-22
+#subgroup Guia de Progressão Rápida 1-22
 --#groupid RXP-SRGCE-H1
 #defaultfor Troll/Orc
 #next 10-12 Durotar
@@ -1162,7 +1162,7 @@ step << !Rogue !Warrior
 step << !Rogue !Warrior
     .goto 1411/1,-4960.000,-791.300
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Pa'zula|r
-    .accept 96873 >>Aceite Uma Dor no Pescoço
+    .accept 96873 >>Aceite Uma dor no pescoço
     .target Pa'zula
     .skill enchanting,<1,1
 step << Rogue
@@ -1591,7 +1591,7 @@ step
     >>Mate |cRXP_ENEMY_Ukorsbane|r (elite). Pegue dele |T133628:0|t[|cRXP_LOOT_Mochila Perdida de Ukor|r]
     >>|cRXP_WARN_Isso é difícil! Forme um grupo se possível. Pule esta etapa se não conseguir matá-la|r
     .collect 275722,1,96876 --Ukor's Lost Pack (x1)
-    .accept 96876 >>Aceite Ukor's Perdida Pack
+    .accept 96876 >>Aceite Mochila Perdida de Ukor
     .mob Ukorsbane
 step
     .goto 1411/1,-4710.400,-209.400
@@ -2537,7 +2537,7 @@ step
 step
     .goto 1411/1,-4960.100,-791.400
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Pa'zula|r
-    .turnin 96873 >>Entregue A Dor no Pescoço
+    .turnin 96873 >>Entregue Uma dor no pescoço
     .target Pa'zula
     .isQuestComplete 96873
     .skill enchanting,<1,1
@@ -2572,7 +2572,7 @@ step
 step
     .goto 1411/1,-4715.100,-599.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ukor|r
-    .turnin 96876 >>Entregue O Pacote Perdido de Ukor
+    .turnin 96876 >>Entregue Mochila Perdida de Ukor
     .target Ukor
     .isOnQuest 96876
 step --at low lvl razormanes
@@ -3189,7 +3189,7 @@ RXPGuides.RegisterGuide([[
 #name 10-12 Durotar
 #version 11
 #group Guia de Progressão Rápida do RestedXP Forever (H)
-#subgroup Guia Speedrun 1-22
+#subgroup Guia de Progressão Rápida 1-22
 --#groupid RXP-SRGCE-H1
 #defaultfor Troll/Orc
 #next 10-12 Clareiras de Tirisfal (Orc/Trolls) << !Hunter !Shaman !Tauren !Skyborne
@@ -3823,7 +3823,7 @@ RXPGuides.RegisterGuide([[
 #name 10-12 Clareiras de Tirisfal (Orc/Trolls)
 #version 11
 #group Guia de Progressão Rápida do RestedXP Forever (H)
-#subgroup Guia Speedrun 1-22
+#subgroup Guia de Progressão Rápida 1-22
 --#groupid RXP-SRGCE-H1
 #defaultfor !Hunter !Shaman !Tauren !Skyborne !Undead
 #next 12-14 Floresta de Pinhaprata << !Hunter !Shaman !Tauren !Skyborne !Undead
@@ -4024,23 +4024,23 @@ step
 step
     #label LinneaTurnin
     .goto 1420/0,73.800,2022.300
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Deathguard Linnea::1495|r
-    >>|cRXP_WARN_Esta é uma missão preliminar para "The Ira of Rath'mael"|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Necroguarda Lina::1495|r
+    >>|cRXP_WARN_Esta missão é um pré-requisito para "A ira de Rath'mael"|r
     .turnin 356 >>Entregue Patrulha da retaguarda
     .target Deathguard Linnea::1495
     .accept 99156 >>Aceite Patrulha da retaguarda
     .dungeon ROL
 step
     .goto 1420/0,-765.200,2518.700
-    >>Mate |cRXP_ENEMY_Riptear|r |cRXP_WARN_(nível 13 élite)|r. Saque-o para |T134339:0|t[|cRXP_LOOT_Coração de Riptear|r]
-    >>|cRXP_WARN_Esta é uma missão preliminar para "The Ira of Rath'mael"|r
+    >>Mate |cRXP_ENEMY_Talharretalha|r |cRXP_WARN_(elite de nível 13)|r. Pegue o |T134339:0|t[|cRXP_LOOT_Coração de Talharretalha|r]
+    >>|cRXP_WARN_Esta missão é um pré-requisito para "A ira de Rath'mael"|r
     .complete 99156,1 --|1/1 Riptear's Heart
     .mob Riptear
     .dungeon ROL
 step
     .goto 1420/0,74.200,2022.400
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Deathguard Linnea::1495|r
-    >>|cRXP_WARN_Esta é uma missão preliminar para "The Ira of Rath'mael"|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Necroguarda Lina::1495|r
+    >>|cRXP_WARN_Esta missão é um pré-requisito para "A ira de Rath'mael"|r
     .turnin 99156 >>Entregue Patrulha da retaguarda
     .target Deathguard Linnea::1495
     .dungeon ROL

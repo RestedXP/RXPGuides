@@ -2,6 +2,7 @@ if GetLocale() ~= "ptBR" then return end
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
+#forever
 
 << Alliance
 #group Guias de Fim de Jogo
@@ -43,14 +44,14 @@ step
     .isQuestComplete 4182
     .goto Burning Steppes,85.820,68.948
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Helendis Flumicórnio|r
-    .turnin 4182 >> Entregue Ameaça Draconiana
-    .accept 4183 >> Aceite The True Masters
+    .turnin 4182 >> Entregue Ameaça draconiana
+    .accept 4183 >> Aceite Os verdadeiros mestres
     .target Helendis Riverhorn
 step
     .isQuestTurnedIn 4182
     .goto Burning Steppes,85.820,68.948
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Helendis Flumicórnio|r
-    .accept 4183 >> Aceite The True Masters
+    .accept 4183 >> Aceite Os verdadeiros mestres
     .target Helendis Riverhorn
 step
     .isQuestTurnedIn 4182
@@ -63,8 +64,8 @@ step
     .isQuestTurnedIn 4182
     .goto Redridge Mountains,29.98,44.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Magistrado Salomão|r
-    .turnin 4183 >> Entregue Os Verdadeiros Mestres
-    .accept 4184 >> Aceite The True Masters
+    .turnin 4183 >> Entregue Os verdadeiros mestres
+    .accept 4184 >> Aceite Os verdadeiros mestres
     .target Magistrate Solomon
 step
     .isQuestTurnedIn 4182
@@ -77,8 +78,8 @@ step
     .isQuestTurnedIn 4182
     .goto Stormwind City,78.213,17.980
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Grão-lorde Bolvar Fordragon|r
-    .turnin 4184 >> Entregue Os Verdadeiros Mestres
-    .accept 4185 >> Aceite The True Masters
+    .turnin 4184 >> Entregue Os verdadeiros mestres
+    .accept 4185 >> Aceite Os verdadeiros mestres
     .target Highlord Bolvar Fordragon
 step
     .isQuestTurnedIn 4182
@@ -91,8 +92,8 @@ step
     .isQuestTurnedIn 4182
     .goto Stormwind City,78.213,17.980
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Grão-lorde Bolvar Fordragon|r
-    .turnin 4185 >> Entregue Os Verdadeiros Mestres
-    .accept 4186 >> Aceite The True Masters
+    .turnin 4185 >> Entregue Os verdadeiros mestres
+    .accept 4186 >> Aceite Os verdadeiros mestres
     .target Highlord Bolvar Fordragon
 step
     .isQuestTurnedIn 4182
@@ -105,8 +106,8 @@ step
     .isQuestTurnedIn 4182
     .goto Redridge Mountains,29.98,44.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Magistrado Salomão|r
-    .turnin 4186 >> Entregue Os Verdadeiros Mestres
-    .accept 4223 >> Aceite The True Masters
+    .turnin 4186 >> Entregue Os verdadeiros mestres
+    .accept 4223 >> Aceite Os verdadeiros mestres
     .target Magistrate Solomon
 step
     .isQuestTurnedIn 4182
@@ -119,8 +120,8 @@ step
     .isQuestTurnedIn 4182
     .goto Burning Steppes,84.744,69.015
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Oficial Maximiliano|r
-    .turnin 4223 >> Entregue Os Verdadeiros Mestres
-    .accept 4224 >> Aceite The True Masters
+    .turnin 4223 >> Entregue Os verdadeiros mestres
+    .accept 4224 >> Aceite Os verdadeiros mestres
     .target Marshal Maxwell
 step
     .isQuestTurnedIn 4182
@@ -139,7 +140,7 @@ step
     .isQuestTurnedIn 4182
     .goto Burning Steppes,84.744,69.015
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Oficial Maximiliano|r
-    .turnin 4224 >> Entregue Os Verdadeiros Mestres
+    .turnin 4224 >> Entregue Os verdadeiros mestres
     .accept 4241 >> Aceite o Marechal Windsor
     .target Marshal Maxwell
 step
@@ -345,6 +346,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #group Guias de Fim de Jogo
 #subgroup Sintonizações
+#forever
 #name Sintonização de Onyxia (H)
 #guideKind attunement
 #guideIcon rxp-icon-ony
@@ -883,6 +885,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
+#forever
 
 #group Guias de Fim de Jogo
 #subgroup Chaves
@@ -974,6 +977,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
+#forever
 
 << Alliance
 #group Guias de Fim de Jogo
@@ -1004,7 +1008,7 @@ step
     .goto Ironforge,51.2,56.6,70,0
     .goto Ironforge,55.8,35.2,70,0
     .goto Ironforge,33.0,22.4,70,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Mensageiro Desçomalho|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mensageiro Desçomalho|r
     >>|cRXP_FRIENDLY_Mensageiro Desçomalho|r |cRXP_WARN_patrulha em todo Ironforge|r
     >>|cRXP_WARN_Esta missão também pode ser aceita em|r |cFFfa9602Stormwind City|r |cRXP_WARN_ou|r |cFFfa9602Darnassus|r
     .acceptmultiple 5091,5090,5066 >> Aceite Um chamado às armas: as Terras Pestilentas!
@@ -1022,8 +1026,8 @@ step
     .isOnQuest 5066
     .goto Western Plaguelands,42.702,84.031
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Comandante Ashlam Punhobom|r
-    .turnin 5066 >> Entregue Um Chamado às Armas: Terras Pestilentas!
-    .accept 5092 >> Aceite Abrindo Caminho
+    .turnin 5066 >> Entregue Um chamado às armas: as Terras Pestilentas!
+    .accept 5092 >> Aceite Abrindo caminho
     .target Commander Ashlam Valorfist
 step
     #requires ThoriumBars
@@ -1031,7 +1035,7 @@ step
     .isQuestTurnedIn 5066
     .goto Western Plaguelands,42.702,84.031
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Comandante Ashlam Punhobom|r
-    .accept 5092 >> Aceite Abrindo Caminho
+    .accept 5092 >> Aceite Abrindo caminho
     .target Commander Ashlam Valorfist
 step
     #requires ThoriumBars
@@ -1039,8 +1043,8 @@ step
     .isOnQuest 5091
     .goto Western Plaguelands,42.702,84.031
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Comandante Ashlam Punhobom|r
-    .turnin 5091 >> Entregue Um Chamado às Armas: Terras Pestilentas!
-    .accept 5092 >> Aceite Abrindo Caminho
+    .turnin 5091 >> Entregue Um chamado às armas: as Terras Pestilentas!
+    .accept 5092 >> Aceite Abrindo caminho
     .target Commander Ashlam Valorfist
 step
     #requires ThoriumBars
@@ -1048,15 +1052,15 @@ step
     .isQuestTurnedIn 5091
     .goto Western Plaguelands,42.702,84.031
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Comandante Ashlam Punhobom|r
-    .accept 5092 >> Aceite Abrindo Caminho
+    .accept 5092 >> Aceite Abrindo caminho
     .target Commander Ashlam Valorfist
 step
     #requires ThoriumBars
     .isOnQuest 5090
     .goto Western Plaguelands,42.702,84.031
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Comandante Ashlam Punhobom|r
-    .turnin 5090 >> Entregue Um Chamado às Armas: Terras Pestilentas!
-    .accept 5092 >> Aceite Abrindo Caminho
+    .turnin 5090 >> Entregue Um chamado às armas: as Terras Pestilentas!
+    .accept 5092 >> Aceite Abrindo caminho
     .target Commander Ashlam Valorfist
 step
     #requires ThoriumBars
@@ -1064,7 +1068,7 @@ step
     .isQuestTurnedIn 5090
     .goto Western Plaguelands,42.702,84.031
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Comandante Ashlam Punhobom|r
-    .accept 5092 >> Aceite Abrindo Caminho
+    .accept 5092 >> Aceite Abrindo caminho
     .target Commander Ashlam Valorfist
 step
     #loop
@@ -1073,7 +1077,7 @@ step
     .goto Western Plaguelands,49.90,76.54,60,0
     .goto Western Plaguelands,50.88,76.14,60,0
     .goto Western Plaguelands,50.05,80.74,60,0
-    >>Mate os |cRXP_ENEMY_Skeletal Flayers|r e os |cRXP_ENEMY_Slavering Carniçais|r
+    >>Mate |cRXP_ENEMY_Esfoladores Descarnados|r e |cRXP_ENEMY_Carniçais Salivantes|r
     .complete 5092,1 -- Skeletal Flayer slain (10)
     .mob +Skeletal Flayer
     .complete 5092,2 -- Slavering Ghoul slain (10)
@@ -1233,6 +1237,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
+#forever
 
 << Horde
 #group Guias de Fim de Jogo
@@ -1279,7 +1284,7 @@ step
     #requires ThoriumBars
     .goto Tirisfal Glades,83.15,68.92
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Alto-executor Arcabuz|r
-    .turnin 5093 >>Entregue Um Chamado às Armas: Terras Pestilentas!
+    .turnin 5093 >>Entregue Um chamado às armas: as Terras Pestilentas!
     .accept 5096 >>Aceite Distrações escarlate
 	.target High Executor Derrington
     .isOnQuest 5093
@@ -1296,7 +1301,7 @@ step
     #requires ThoriumBars
     .goto Tirisfal Glades,83.15,68.92
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Alto-executor Arcabuz|r
-    .turnin 5094 >>Entregue Um Chamado às Armas: Terras Pestilentas!
+    .turnin 5094 >>Entregue Um chamado às armas: as Terras Pestilentas!
     .accept 5096 >>Aceite Distrações escarlate
 	.target High Executor Derrington
     .isOnQuest 5094
@@ -1312,7 +1317,7 @@ step
     #requires ThoriumBars
     .goto Tirisfal Glades,83.15,68.92
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Alto-executor Arcabuz|r
-    .turnin 5095 >>Entregue Um Chamado às Armas: Terras Pestilentas!
+    .turnin 5095 >>Entregue Um chamado às armas: as Terras Pestilentas!
     .accept 5096 >>Aceite Distrações escarlate
 	.target High Executor Derrington
     .isOnQuest 5095
@@ -1331,13 +1336,13 @@ step
     .isQuestTurnedIn 5095
 step
     .goto Western Plaguelands,40.5,51.8
-    .use 12807 >>Clique em |cRXP_PICK_Comando Tenda|r, depois use seu |T132484:0|t[Estandarte do Flagelo]
+    .use 12807 >>Clique na |cRXP_PICK_Tenda de Comando|r e use seu |T132484:0|t[Estandarte do Flagelo]
 	>>|cRXP_WARN_Esses inimigos são relativamente difíceis e podem atrair outros para o combate, então tenha cuidado|r
     .complete 5096,1 --Destroy the command tent and plant the Scourge banner in the camp (1)
 step
     .goto Tirisfal Glades,83.15,68.92
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Alto-executor Arcabuz|r
-    .turnin 5096 >>Entregue Scarlet Diversions
+    .turnin 5096 >>Entregue Distrações escarlate
     .accept 5098 >>Aceite Você não vê as torres?
 	.target High Executor Derrington
 step
@@ -1491,6 +1496,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
+#forever
 
 #group Guias de Fim de Jogo
 #subgroup Chaves
@@ -1555,6 +1561,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
+#forever
 
 #group Guias de Fim de Jogo
 #subgroup Chaves

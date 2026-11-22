@@ -2,6 +2,7 @@ if GetLocale() ~= "ptBR" then return end
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
+#forever
 #group Guias de Fim de Jogo
 #subgroup Guia do Feralheart Set << Druid
 #subgroup Guia do Conjunto Senhor das Feras << Hunter
@@ -220,6 +221,7 @@ step << Horde
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
+#forever
 #group Guias de Fim de Jogo
 #subgroup Guia do Feralheart Set << Druid
 #subgroup Guia do Conjunto Senhor das Feras << Hunter
@@ -666,6 +668,7 @@ step << Horde
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
+#forever
 #group Guias de Fim de Jogo
 #subgroup Guia do Feralheart Set << Druid
 #subgroup Guia do Conjunto Senhor das Feras << Hunter
@@ -1150,6 +1153,7 @@ step << Horde
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
+#forever
 #group Guias de Fim de Jogo
 #subgroup Guia do Feralheart Set << Druid
 #subgroup Guia do Conjunto Senhor das Feras << Hunter

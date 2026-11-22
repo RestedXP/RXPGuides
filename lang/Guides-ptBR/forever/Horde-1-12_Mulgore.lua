@@ -10,7 +10,7 @@ RXPGuides.RegisterGuide([[
 #name 1-6 Mulgore
 #version 11
 #group Guia de Progressão Rápida do RestedXP Forever (H)
-#subgroup Guia Speedrun 1-22
+#subgroup Guia de Progressão Rápida 1-22
 --#groupid RXP-SRGCE-H1
 #defaultfor Tauren
 #next 6-12 Mulgore;6-13 Mulgore
@@ -108,8 +108,8 @@ step
     .target Chief Hawkwind
 step << Shaman
     .goto 1412/1,-216.18,-2926.26--c:Mulgore,44.07,77.47
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Marjak|r
-    .vendor >> Vendedor de itens inúteis. Venda sua arma se lhe der dinheiro suficiente para um |T135139:0|t[Cajado Curto] (1s 02c). Você voltará depois se ainda não tiver dinheiro suficiente.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Marjak Lâmina Mordaz|r
+    .vendor >> Venda seu lixo. Venda sua arma se isso der dinheiro suficiente para comprar um |T135139:0|t[Cajado Curto] (1 prata e 2 cobres). Se ainda faltar dinheiro, volte mais tarde
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<1.9
     .target Marjak Keenblade
@@ -480,7 +480,7 @@ RXPGuides.RegisterGuide([[
 #name 6-12 Mulgore
 #version 11
 #group Guia de Progressão Rápida do RestedXP Forever (H)
-#subgroup Guia Speedrun 1-22
+#subgroup Guia de Progressão Rápida 1-22
 --#groupid RXP-SRGCE-H1
 #defaultfor Tauren
 #next 12-17 Sertões
@@ -526,7 +526,7 @@ step
     #softcore
     .goto 1412/1,-430.600,-2097.600
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ahab Casco Trigo|r
-    .accept 99411 >>Aceite Quico Sumiu!
+    .accept 99411 >>Aceite Kyle Sumiu!
     .target Ahab Wheathoof
 step
     #softcore
@@ -655,7 +655,7 @@ step
     #hardcore
     .goto 1412/1,-430.600,-2097.600
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ahab Casco Trigo|r
-    .accept 99411 >>Aceite Quico Sumiu!
+    .accept 99411 >>Aceite Kyle Sumiu!
     .target Ahab Wheathoof
 step
     .goto 1412/1,-454.56,-2304.63--c:Mulgore,48.71,59.32
@@ -727,8 +727,8 @@ step
     .complete 766,4 --Swoop Gizzard (1)
 step << Tauren
     #completewith Ambercorns
-    >>Mate os |cRXP_ENEMY_Prairie Wolves|r. Saque-os por suas |cRXP_LOOT_Paws|r
-    >>Mate os |cRXP_ENEMY_Adult Plainstriders|r. Saqueie-os pela |T134028:0|t[|cRXP_LOOT_Carne Tenra de Moa|r] e pelas |cRXP_LOOT_Garras|r
+    >>Mate |cRXP_ENEMY_Lobos-da-pradaria|r. Pegue as |cRXP_LOOT_Patas|r deles
+    >>Mate |cRXP_ENEMY_Pinotes Adultos|r. Pegue |T134028:0|t[|cRXP_LOOT_Carne Tenra de Moa|r] e |cRXP_LOOT_Garras de Pinote|r deles
     .complete 748,1 --Prairie Wolf Paw (6)
     .mob +Prairie Wolf
     .complete 748,2 --Plainstrider Talon (4)
@@ -736,7 +736,7 @@ step << Tauren
     .mob +Adult Plainstrider
 step << !Tauren
     #completewith Ambercorns
-    >>Mate os |cRXP_ENEMY_Adult Plainstriders|r. Saqueie-os pela |T134028:0|t[|cRXP_LOOT_Carne Tenra de Moa|r]
+    >>Mate |cRXP_ENEMY_Pinotes Adultos|r. Pegue a |T134028:0|t[|cRXP_LOOT_Carne Tenra de Moa|r] deles
     .collect 287505,1,99411,1 --Collect Tender Strider Meat (1)
     .mob Adult Plainstrider
 step
@@ -773,8 +773,8 @@ step << Tauren
 	.goto 1412/1,-448.91,-2650.89,50,0--c:Mulgore,48.60,69.43
 	.goto 1412/1,-314.31,-2660.14,50,0--c:Mulgore,45.98,69.70
 	.goto 1412/1,-447.88,-2580.34,50,0--c:Mulgore,48.58,67.37
-    >>Mate os |cRXP_ENEMY_Prairie Wolves|r. Saque-os por suas |cRXP_LOOT_Paws|r
-    >>Mate os |cRXP_ENEMY_Adult Plainstriders|r. Saqueie-os pela |T134028:0|t[|cRXP_LOOT_Carne Tenra de Moa|r] e pelas |cRXP_LOOT_Garras|r
+    >>Mate |cRXP_ENEMY_Lobos-da-pradaria|r. Pegue as |cRXP_LOOT_Patas|r deles
+    >>Mate |cRXP_ENEMY_Pinotes Adultos|r. Pegue |T134028:0|t[|cRXP_LOOT_Carne Tenra de Moa|r] e |cRXP_LOOT_Garras de Pinote|r deles
     .complete 748,1 --Prairie Wolf Paw (6)
     .mob +Prairie Wolf
     .complete 748,2 --Plainstrider Talon (4)
@@ -796,13 +796,13 @@ step << !Tauren
 	.goto 1412/1,-448.91,-2650.89,50,0--c:Mulgore,48.60,69.43
 	.goto 1412/1,-314.31,-2660.14,50,0--c:Mulgore,45.98,69.70
 	.goto 1412/1,-447.88,-2580.34,50,0--c:Mulgore,48.58,67.37
-    >>Mate os |cRXP_ENEMY_Adult Plainstriders|r. Saqueie-os pela |T134028:0|t[|cRXP_LOOT_Carne Tenra de Moa|r]
+    >>Mate |cRXP_ENEMY_Pinotes Adultos|r. Pegue a |T134028:0|t[|cRXP_LOOT_Carne Tenra de Moa|r] deles
     .collect 287505,1,99411,1 --Collect Tender Strider Meat (1)
     .mob Adult Plainstrider
 step << Tauren
     #completewith next
-    .use 33009>> Procure |cRXP_FRIENDLY_Quico|r. Usar a |T134028:0|t[|cRXP_LOOT_Carne Tenra de Moa|r] para alimentá-lo
-    >>|cRXP_WARN_Ele corre em círculos no sentido horário ao redor de Bloodhoof Village|r
+    .use 33009>> Encontre |cRXP_FRIENDLY_Kyle|r. Use a |T134028:0|t[|cRXP_LOOT_Carne Tenra de Moa|r] para alimentá-lo
+    >>|cRXP_WARN_Ele corre em círculos no sentido horário ao redor da Aldeia Casco Sangrento|r
     .complete 99411,1 --1/1 Kyle fed
     .unitscan Kyle the Frenzied
 step << Tauren
@@ -833,8 +833,8 @@ step
     .complete 771,1 --Well Stone (2)
 step
     #completewith KyleFed
-    .use 33009>> Procure |cRXP_FRIENDLY_Quico|r. Usar a |T134028:0|t[|cRXP_LOOT_Carne Tenra de Moa|r] para alimentá-lo
-    >>|cRXP_WARN_Ele corre em círculos no sentido horário ao redor de Bloodhoof Village|r
+    .use 33009>> Encontre |cRXP_FRIENDLY_Kyle|r. Use a |T134028:0|t[|cRXP_LOOT_Carne Tenra de Moa|r] para alimentá-lo
+    >>|cRXP_WARN_Ele corre em círculos no sentido horário ao redor da Aldeia Casco Sangrento|r
     .complete 99411,1 --1/1 Kyle fed
     .unitscan Kyle the Frenzied
 step
@@ -943,7 +943,7 @@ step
 step
     .goto 1412/1,-430.600,-2097.600
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ahab Casco Trigo|r
-    .turnin 99411 >>Entregue Quico Sumiu!
+    .turnin 99411 >>Entregue Kyle Sumiu!
     .target Ahab Wheathoof
     .isQuestComplete 99411
 step << Hunter
@@ -990,7 +990,7 @@ step
     .goto 1412/1,-1066.400,-2325.200
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Malah Vento Longo|r
     .turnin 99079 >>Entregue Passo-longo Malah
-    .accept 99081 >>Aceite Grim Tidings
+    .accept 99081 >>Aceite Augúrios sinistros
     .target Malah Longwind
 step
     #completewith EnterCave
@@ -1063,7 +1063,7 @@ step << Shaman
     .xp <8,1
 step
     .goto 1412/1,54.800,-2442.200
-    >>Mate o |cRXP_ENEMY_Chakuyak|r. Saque-o por sua |cRXP_LOOT_Pelt|r
+    >>Mate |cRXP_ENEMY_Chakuyak|r. Pegue sua |cRXP_LOOT_Pelagem|r
     .complete 96130,1 --|1/1 Chakuyak's Pelt
     .mob Chakuyak
 step
@@ -1092,7 +1092,7 @@ step
 step
     #label Escort1
     .goto 1412/1,192.500,-2394.000
-    >>Escorte |cRXP_FRIENDLY_Perith Casco Feroz|r para fora da caverna
+    >>Escolte |cRXP_FRIENDLY_Perith Casco Feroz|r para fora da caverna
     .complete 98430,1 --escort (manually entered cords where its completed)
     .target Perith Stormhoof
 step
@@ -1123,8 +1123,8 @@ step
     .subzone 222 >> Volte à Aldeia Casco Sangrento
 step
     #completewith KyleFed2
-    .use 33009>> Procure |cRXP_FRIENDLY_Quico|r. Usar a |T134028:0|t[|cRXP_LOOT_Carne Tenra de Moa|r] para alimentá-lo
-    >>|cRXP_WARN_Ele corre em círculos no sentido horário ao redor de Bloodhoof Village|r
+    .use 33009>> Encontre |cRXP_FRIENDLY_Kyle|r. Use a |T134028:0|t[|cRXP_LOOT_Carne Tenra de Moa|r] para alimentá-lo
+    >>|cRXP_WARN_Ele corre em círculos no sentido horário ao redor da Aldeia Casco Sangrento|r
     .complete 99411,1 --1/1 Kyle fed
     .unitscan Kyle the Frenzied
 step
@@ -1225,22 +1225,22 @@ step
     .target Harant Ironbrace
 step
     .goto 1412/1,-285.000,-2263.400
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Pyall|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Pyall Passo Tranquilo|r
     .train 2550 >>Treine Culinária
-    .turnin 96661 >>Entregue Acampamento 101: Culinária
+    .turnin 96661 >>Entregue Introdução ao Acampamento: Cozinha
     .target Pyall Silentstride
 step
     .goto 1412/1,-392.500,-2318.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Valente Trilha Selvagem|r
     >>|cRXP_WARN_Ele patrulha um pouco pela área|r
-    .turnin 99081 >>Entregue Grim Tidings
-    .accept 99101 >>Aceite Our Ancient Enemy
+    .turnin 99081 >>Entregue Augúrios sinistros
+    .accept 99101 >>Aceite Nosso inimigo ancestral
     .target Brave Wildrunner
 step
     .goto 1412/1,-392.900,-2333.600
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Baine Casco Sangrento|r
     .turnin 745 >>Entregue Dividindo a terra
-    .turnin 99101 >>Entregue Our Ancient Enemy
+    .turnin 99101 >>Entregue Nosso inimigo ancestral
     .accept 99080 >>Aceite Expulse todos
     .target Baine Bloodhoof
 step
@@ -1303,14 +1303,14 @@ step
     .goto 1412/1,-438.600,-2387.500,30,0
     .goto 1412/1,-491.400,-2326.900,30,0
     .goto 1412/1,-469.300,-2256.000,30,0
-    .use 33009>> Procure |cRXP_FRIENDLY_Quico|r. Usar a |T134028:0|t[|cRXP_LOOT_Carne Tenra de Moa|r] para alimentá-lo
-    >>|cRXP_WARN_Ele corre em círculos no sentido horário ao redor de Bloodhoof Village|r
+    .use 33009>> Encontre |cRXP_FRIENDLY_Kyle|r. Use a |T134028:0|t[|cRXP_LOOT_Carne Tenra de Moa|r] para alimentá-lo
+    >>|cRXP_WARN_Ele corre em círculos no sentido horário ao redor da Aldeia Casco Sangrento|r
     .complete 99411,1 --1/1 Kyle fed
     .unitscan Kyle the Frenzied
 step
     .goto 1412/1,-430.600,-2097.600
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ahab Casco Trigo|r
-    .turnin 99411 >>Entregue Quico Sumiu!
+    .turnin 99411 >>Entregue Kyle Sumiu!
     .target Ahab Wheathoof
 step
     #completewith Burial
@@ -1334,7 +1334,7 @@ step
     .goto 1412/1,441.42,-1980.96--c:Mulgore,31.27,49.87
     >>Mate |cRXP_ENEMY_Escavadores de Bael'Dun|r e |cRXP_ENEMY_Avaliadores de Bael'Dun|r. Pegue suas |cRXP_LOOT_Picaretas do Prospector|r
     .use 4702 >> |cRXP_WARN_Quebre as|r |T134707:0|t[Picaretas] |cRXP_WARN_na forja|r
-    >>|cRXP_WARN_Tenha cuidado pois |cRXP_ENEMY_Bael'dun Appraisers|r lançam|r |T135929:0|t[Cura Inferior] |cRXP_WARN_(Lançamento à distância: Curam a si mesmos ou um inimigo próximo abaixo de 50% dos pontos de vida por cerca de 75 pontos de vida)|r
+    >>|cRXP_WARN_Cuidado, pois |cRXP_ENEMY_Avaliadores de Bael'Dun|r lançam|r |T135929:0|t[Cura Inferior] |cRXP_WARN_(à distância: restaura cerca de 75 de vida deles ou de um inimigo próximo com menos de 50% de vida)|r
     .complete 746,1 --Broken Tools (5)
     .mob Bael'dun Digger
     .mob Bael'dun Appraiser

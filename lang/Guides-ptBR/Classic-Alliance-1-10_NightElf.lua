@@ -17,7 +17,7 @@ RXPGuides.RegisterGuide([[
 step << !NightElf
     #sticky
     #completewith next
-    +Você selecionou um guia destinado a Elfos Noturnos. Você deve escolher a mesma zona inicial em que começa
+    +Você selecionou um guia destinado a Elfos Noturnos. Você deve escolher a zona inicial que corresponda à zona em que você começa
 step
     .goto Teldrassil,58.695,44.266
     .target Conservator Ilthalaine
@@ -127,7 +127,7 @@ step << Warrior
 	.goto Teldrassil,59.637,38.442
     .target Alyissia
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Alyissia|r
-	.turnin 3116 >> Entregue O Selo Simples
+	.turnin 3116 >> Entregue O selo simples
     .trainer >> Treine suas magias de classe
 step << !Hunter
     #season 0 << Druid
@@ -176,7 +176,7 @@ step << Hunter
     #completewith htraining
     .goto Teldrassil,59.306,41.091
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Keina|r
-    >>|cRXP_WARN_Certifique-se de que tem 1 prata restante depois de sair do vendedor para conseguir pagar|r |T132204:0|t[|cRXP_FRIENDLY_Picada de Serpente|r]
+    >>|cRXP_WARN_Certifique-se de sair do vendedor com 1 prata sobrando para aprender|r |T132204:0|t[|cRXP_FRIENDLY_Picada de Serpente|r]
 	.vendor >> |cRXP_BUY_Compre 2 pilhas de|r |T132382:0|t[Rough Flechas]
     .target Keina
 step << Druid
@@ -199,7 +199,7 @@ step << Hunter
     .goto Teldrassil,58.659,40.449
     >>Suba a Árvore Aldrassil
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ayanna Perenanda|r
-    .turnin 3117 >> Entregue O Selo Cinzelado
+    .turnin 3117 >> Entregue O selo cinzelado
     .train 1978 >>Treine Picada de Serpente
     .target Ayanna Everstride
 step
@@ -230,14 +230,14 @@ step << skip --logout skip Warrior
 	#hardcore
 	#completewith next
     #season 2
-	+Na saliência atrás dos ovos, faça um logout skip. Mova seu personagem até parecer que estão flutuando, depois saia do jogo e volte.
+	+Faça o atalho por reconexão na saliência atrás dos ovos. Mova o personagem até parecer que está flutuando, depois saia do jogo e entre de novo.
 	>>Se você cair, apenas corra para fora da caverna normalmente para entregar a missão
 	.link https://www.youtube.com/watch?v=TTZZT3jpv1s >> CLIQUE AQUI para referência
 step << skip --logout skip Hunter
 	#hardcore
     #season 2
 	#completewith next
-	+Na saliência atrás dos ovos, faça um logout skip. Mova seu personagem até parecer que estão flutuando, depois saia do jogo e volte.
+	+Faça o atalho por reconexão na saliência atrás dos ovos. Mova o personagem até parecer que está flutuando, depois saia do jogo e entre de novo.
 	>>Se você cair, apenas corra para fora da caverna normalmente para entregar a missão
 	.link https://www.youtube.com/watch?v=TTZZT3jpv1s >> CLIQUE AQUI para referência
 step
@@ -314,7 +314,7 @@ step << Druid
     >>Suba a Árvore Aldrassil
     .target Mardant Strongoak
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mardant Carvalhaço|r
-	.turnin 3120 >> Entregue O Selo Verdejante
+	.turnin 3120 >> Entregue O selo verdejante
 	.train 8921 >>Aprenda |T136096:0|t[Fogo Lunar]
 step
     #season 0 << Warrior
@@ -342,7 +342,7 @@ step << skip --logout skip
 	#hardcore
 	#completewith next
     #season 0 << Warrior
-	+Na saliência atrás dos ovos, faça um logout skip. Mova seu personagem até parecer que estão flutuando, depois saia do jogo e volte.
+	+Faça o atalho por reconexão na saliência atrás dos ovos. Mova o personagem até parecer que está flutuando, depois saia do jogo e entre de novo.
 	>>Se você cair, apenas corra para fora da caverna normalmente para entregar a missão
 	.link https://www.youtube.com/watch?v=TTZZT3jpv1s >> CLIQUE AQUI para referência
 step
@@ -459,7 +459,7 @@ step
     .target Syral Bladeleaf
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Syral Folhâmina|r
     >>|cRXP_WARN_Certifique-se de que você tem 1 espaço vazio na mochila antes de aceitar esta missão|r
-    .accept 997 >> Aceite A Terra de Denalan
+    .accept 997 >> Aceite A terra de Denalan
 step
     .goto Teldrassil,55.954,57.272
     .target Athridas Bearmantle
@@ -468,7 +468,7 @@ step
 step << Priest
     .goto Teldrassil,55.564,56.746
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Laurna Luzalbor|r
-    .turnin 5622 >> Entregue Em Simpatia de Elune
+    .turnin 5622 >> Entregue Em favor de Eluna
     .target Laurna Morninglight
     .accept 5621 >> Aceite Vestes da Lua
 	.trainer >> Treine suas magias de classe
@@ -482,14 +482,14 @@ step
     .goto Teldrassil,55.574,56.948
     .target Tallonkai Swiftroot
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tallonkai Radicélere|r no topo da Árvore
-    .accept 932 >> Aceite Aversão Pervertida
-    .accept 2438 >> Aceite O Apanhador de Sonhos de Esmeralda
+    .accept 932 >> Aceite Aversão pervertida
+    .accept 2438 >> Aceite O apanhador de sonhos de esmeralda
 step << Hunter/Warrior/Druid
 #xprate >1.99
     .goto Teldrassil,55.574,56.948
     .target Tallonkai Swiftroot
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tallonkai Radicélere|r no topo da Árvore
-    .accept 2438 >> Aceite O Apanhador de Sonhos de Esmeralda
+    .accept 2438 >> Aceite O apanhador de sonhos de esmeralda
 step << Hunter
     .goto Teldrassil,55.890,59.205
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Jiyna Penarco|r
@@ -537,7 +537,7 @@ step << Rogue
 step << Rogue
     .goto Teldrassil,56.308,59.488
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Shalomon|r
-    >>|cRXP_BUY_Compre e equipe um|r |T135641:0|t[Estilete] |cRXP_BUY_se você pode pagar (4s 1c), se não, pule este passo|r
+    >>|cRXP_BUY_Compre e equipe um|r |T135641:0|t[Estilete] |cRXP_BUY_se tiver dinheiro suficiente (4 pratas e 1 cobre). Caso contrário, pule esta etapa|r
     .collect 2494,1 --Stiletto (1)
     .target Shalomon
     .money <0.0401
@@ -569,7 +569,7 @@ step
     .turnin 2159,2 >> Entregue Entrega para Dolanaar << Hunter
     .turnin 2159 >> Entregue Entrega para Dolanaar << !Hunter
     .vendor >>|cRXP_BUY_Compre 10 |T132815:0|t|cRXP_LOOT_Leite Gelado|r ou o máximo que você puder pagar << Priest
-    .home >> Defina sua Pedra de Retorno em Dolanaar
+    .home >> Defina sua Pedra de Regresso para Dolanaar
 step << Hunter
     .goto Teldrassil,56.676,59.489
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dazalar|r
@@ -840,7 +840,7 @@ step << Warrior
 step << Rogue
     .goto Teldrassil,56.308,59.488
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Shalomon|r
-    >>|cRXP_BUY_Compre e equipe um|r |T135641:0|t[Estilete] |cRXP_BUY_se você pode pagar (4s 1c), se não, pule este passo|r
+    >>|cRXP_BUY_Compre e equipe um|r |T135641:0|t[Estilete] |cRXP_BUY_se tiver dinheiro suficiente (4 pratas e 1 cobre). Caso contrário, pule esta etapa|r
     .collect 2494,1 --Stiletto (1)
     .target Shalomon
     .money <0.0401
@@ -1102,7 +1102,7 @@ step << Hunter
     .goto Teldrassil,56.676,59.489
     .target Dazalar
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dazalar|r
-    .accept 6063 >> Aceite Adestramento da Fera - Missão
+    .accept 6063 >> Aceite Domando a Fera
 	.trainer >> Treine suas magias de classe
 step << Hunter
 #xprate >1.99
@@ -1116,7 +1116,7 @@ step << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dazalar|r
     .turnin 6063 >> Entregue Domando a fera
     .target Dazalar
-    .accept 6101 >> Aceite Adestramento da Fera - Missão
+    .accept 6101 >> Aceite Domando a Fera
 step << Hunter
 #xprate >1.99
     .goto Teldrassil,62.6,72.2
@@ -1130,7 +1130,7 @@ step << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dazalar|r
     .turnin 6101 >> Entregue Domando a fera
     .target Dazalar
-    .accept 6102 >> Aceite Adestramento da Fera - Missão
+    .accept 6102 >> Aceite Domando a Fera
 step << Hunter
 #xprate >1.99
     .goto Teldrassil,64.7,66.7
@@ -1326,8 +1326,8 @@ step << Warrior
 step << !Rogue !Hunter !Warrior
 #xprate >1.99
     .goto Darnassus,67.427,15.655
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Estalajadeira Saliennte|r
-    .home >> Defina sua Pedra de Retorno em Darnassus << !Warrior
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estalajadeira Saliennte|r
+    .home >> Defina sua Pedra de Regresso em Darnassus << !Warrior
     .vendor >>|cRXP_BUY_Compre mais|r |T132815:0|t|cRXP_LOOT_Leite Gelado|r << Priest
     .target Innkeeper Saelienne
 step << !Rogue
@@ -1356,7 +1356,7 @@ step << Hunter
     .goto Darnassus,40.377,8.545
     .target Jocaste
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Jocaste|r
-    .turnin 6103 >> Entregue Treinamento da Fera - Missão
+    .turnin 6103 >> Entregue Treinando a fera
 step << !Rogue
     .goto Darnassus,39.72,92.68,10,0
     .goto Darnassus,36.65,85.93
@@ -1365,7 +1365,7 @@ step << !Rogue
     .accept 2518 >> Aceite Lágrima da Lua
 step << Druid
 	#completewith next
-	.cast 18960 >> Lance Teleporte: Bosque da Lua
+	.cast 18960 >> Use Teleporte: Clareira da Lua
     >>|cRXP_WARN_Estará em seu grimório|r
 	.zoneskip Moonglade
 step << Druid
@@ -1383,7 +1383,7 @@ step << Druid
     .target Great Bear Spirit
 step << Druid
 	#completewith next
-	.cast 18960 >> Lance Teleporte: Bosque da Lua
+	.cast 18960 >> Use Teleporte: Clareira da Lua
     >>|cRXP_WARN_Isso o fará voltar mais rápido|r
 step << Druid
     .goto Moonglade,56.21,30.64
@@ -1427,7 +1427,7 @@ step << Hunter
     .goto Teldrassil,56.676,59.489
     .target Dazalar
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dazalar|r
-    .accept 6063 >> Aceite Adestramento da Fera - Missão
+    .accept 6063 >> Aceite Domando a Fera
 	.train 13165 >> Treine seus feitiços de nível 10
 step << Hunter
 #xprate <1.99
@@ -1450,7 +1450,7 @@ step << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dazalar|r
     .turnin 6063 >> Entregue Domando a fera
     .target Dazalar
-    .accept 6101 >> Aceite Adestramento da Fera - Missão
+    .accept 6101 >> Aceite Domando a Fera
 step
 	#xprate <1.5
     .goto Teldrassil,56.142,61.714
@@ -1522,7 +1522,7 @@ step << Hunter
     .goto Teldrassil,56.676,59.489
     .target Dazalar
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dazalar|r
-    .accept 6063 >> Aceite Adestramento da Fera - Missão
+    .accept 6063 >> Aceite Domando a Fera
 	.trainer >> Treine suas magias de classe
 step << Hunter
 #xprate <1.99
@@ -1536,7 +1536,7 @@ step << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dazalar|r
     .turnin 6063 >> Entregue Domando a fera
     .target Dazalar
-    .accept 6101 >> Aceite Adestramento da Fera - Missão
+    .accept 6101 >> Aceite Domando a Fera
 step << Hunter
 #xprate <1.99
     .goto Teldrassil,62.6,72.2
@@ -1550,7 +1550,7 @@ step << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dazalar|r
     .turnin 6101 >> Entregue Domando a fera
     .target Dazalar
-    .accept 6102 >> Aceite Adestramento da Fera - Missão
+    .accept 6102 >> Aceite Domando a Fera
 step << Hunter
 #xprate <1.99
     .goto Teldrassil,64.7,66.7
@@ -1825,7 +1825,7 @@ step << Hunter
     .goto Darnassus,40.377,8.545
     .target Jocaste
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Jocaste|r
-    .turnin 6103 >> Entregue Treinamento da Fera - Missão
+    .turnin 6103 >> Entregue Treinando a fera
 step << Hunter
     >>Suba pela rampa à direita de |cRXP_FRIENDLY_Jocaste|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Silvaria|r
@@ -1874,12 +1874,12 @@ step
     #ah
     .goto Darnassus,56.245,54.039,-1
     .goto Darnassus,56.374,51.820,-1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Leiloeira de Darnassus|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com um |cRXP_FRIENDLY_Leiloeiro de Darnassus|r
     >>Compre os itens a seguir para entrega imediata em Costa Negra mais tarde:
     >>|T134187:0|t[Earthroot] << Druid era
     >>|T133912:0|t[Garoupa da Costa Negra]
     >>|T133972:0|t[Carne de Moa]
-    *Pule esta etapa se você não quiser comprar nenhum
+    *Pule este passo se não desejar comprar nenhum
     .collect 5469,5,2178,1 -- Strider Meat (5)
     .collect 12238,6,1141,1 -- Darkshore Grouper (6)
     .collect 2449,5,6123,1 << Druid

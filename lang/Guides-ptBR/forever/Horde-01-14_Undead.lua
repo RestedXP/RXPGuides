@@ -8,7 +8,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #version 11
 #group Guia de Progressão Rápida do RestedXP Forever (H)
-#subgroup Guia Speedrun 1-22
+#subgroup Guia de Progressão Rápida 1-22
 --#groupid RXP-SRGCE-H1
 #defaultfor Undead
 #name 1-6 Clareiras de Tirisfal
@@ -160,7 +160,7 @@ step << Warlock
     .cast 688 >>|cRXP_WARN_Lance|r |T136218:0|t[Evocar Diabrete]
 step << Priest
     #completewith next
-    +|cRXP_WARN_Guarde seus|r |T132889:0|t[Linho]|cRXP_WARN_. Isso permitirá que você crie uma varinha depois|r
+    +|cRXP_WARN_Guarde seu|r |T132889:0|t[Linho]|cRXP_WARN_. Assim, poderá criar uma varinha mais tarde|r
 step
     #label Zombies
     #requires Piercing << Warlock/Mage
@@ -712,7 +712,7 @@ RXPGuides.RegisterGuide([[
 #displayname 6-13 Clareiras de Tirisfal << Paladin
 #version 11
 #group Guia de Progressão Rápida do RestedXP Forever (H)
-#subgroup Guia Speedrun 1-22
+#subgroup Guia de Progressão Rápida 1-22
 --#groupid RXP-SRGCE-H1
 #defaultfor Undead
 #next 12-14 Floresta de Pinhaprata; 12-17 Sertões
@@ -991,9 +991,9 @@ step << Priest/Warlock
 step
     .goto 1420/0,244.81,2269.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estalajadeira Geni|r
-    .vendor >>|cRXP_BUY_Compre o máximo|r |T132815:0|t[Leite Gelado] |cRXP_BUY_que você puder dela|r << Mage/Priest/Paladin
-    .vendor >>|cRXP_BUY_Compre o máximo|r |T134532:0|t[Vermelho-speckled Mushrooms] |cRXP_BUY_que você puder dela|r << Warrior/Rogue
-    .vendor >>|cRXP_BUY_Compre o máximo|r |T132815:0|t[Leite Gelado] |cRXP_BUY_e|r |T134532:0|t[Vermelho-speckled Mushrooms] |cRXP_BUY_que você puder dela|r << Warlock
+    .vendor >>|cRXP_BUY_Compre o máximo de|r |T132815:0|t[Leite Gelado] |cRXP_BUY_que puder dela|r << Mage/Priest/Paladin
+    .vendor >>|cRXP_BUY_Compre o máximo de|r |T134532:0|t[Cogumelos de Bolinhas Vermelhas] |cRXP_BUY_que puder dela|r << Warrior/Rogue
+    .vendor >>|cRXP_BUY_Compre o máximo de|r |T132815:0|t[Leite Gelado] |cRXP_BUY_e|r |T134532:0|t[Cogumelos de Bolinhas Vermelhas] |cRXP_BUY_que puder dela|r << Warlock
     .money <0.0125
     .target Innkeeper Renee
 step
@@ -1062,7 +1062,7 @@ step
     .goto 1420/0,496.96,2256.54,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gordo|r
     >>|cRXP_WARN_Ele é uma abominação que patrulha a estrada até Montalvo|r
-    >>|cRXP_WARN_Selecione "I need a report for Executor Zigano|r"
+    >>|cRXP_WARN_Selecione "Preciso de um relatório para o Executor Zigano|r"
     .complete 99141,3 --|1/1 Gordo's Report
     .target Gordo
     --.gossipoption 142737
@@ -1187,7 +1187,7 @@ step
 step
     .goto 1420/0,403.300,2287.700
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Necroguarda Dinis|r
-    >>|cRXP_WARN_Selecione "I need a report for Executor Zigano|r"
+    >>|cRXP_WARN_Selecione "Preciso de um relatório para o Executor Zigano|r"
     .turnin 404 >>Entregue Uma tarefa podre
     .accept 426 >>Aceite Os moinhos invadidos
     .complete 99141,1 --|1/1 Dillinger's Report
@@ -1301,8 +1301,8 @@ step << Warlock
 step << Mage/Priest/Warlock
     .goto 1420/0,244.81,2269.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estalajadeira Geni|r
-    .vendor >>|cRXP_BUY_Compre o máximo|r |T132815:0|t[Leite Gelado] |cRXP_BUY_que você puder dela|r << Mage/Priest
-    .vendor >>|cRXP_BUY_Compre o máximo|r |T132815:0|t[Leite Gelado] |cRXP_BUY_e|r |T134532:0|t[Vermelho-speckled Mushrooms] |cRXP_BUY_que você puder dela|r << Warlock
+    .vendor >>|cRXP_BUY_Compre o máximo de|r |T132815:0|t[Leite Gelado] |cRXP_BUY_que puder dela|r << Mage/Priest
+    .vendor >>|cRXP_BUY_Compre o máximo de|r |T132815:0|t[Leite Gelado] |cRXP_BUY_e|r |T134532:0|t[Cogumelos de Bolinhas Vermelhas] |cRXP_BUY_que puder dela|r << Warlock
     .money <0.0125
     .target Innkeeper Renee
 step
@@ -2880,23 +2880,23 @@ step << !Paladin
     .target Deathguard Linnea
 step << !Paladin
     .goto 1420/0,73.800,2022.300
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Deathguard Linnea::1495|r
-    >>|cRXP_WARN_Esta é uma missão preliminar para "The Ira of Rath'mael"|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Necroguarda Lina::1495|r
+    >>|cRXP_WARN_Esta missão é um pré-requisito para "A ira de Rath'mael"|r
     .turnin 356 >>Entregue Patrulha da retaguarda
     .target Deathguard Linnea::1495
     .accept 99156 >>Aceite Patrulha da retaguarda
     .dungeon ROL
 step << !Paladin
     .goto 1420/0,-765.200,2518.700
-    >>Mate |cRXP_ENEMY_Riptear|r |cRXP_WARN_(nível 13 élite)|r. Saque-o para |T134339:0|t[|cRXP_LOOT_Coração de Riptear|r]
-    >>|cRXP_WARN_Esta é uma missão preliminar para "The Ira of Rath'mael"|r
+    >>Mate |cRXP_ENEMY_Talharretalha|r |cRXP_WARN_(elite de nível 13)|r. Pegue o |T134339:0|t[|cRXP_LOOT_Coração de Talharretalha|r]
+    >>|cRXP_WARN_Esta missão é um pré-requisito para "A ira de Rath'mael"|r
     .complete 99156,1 --|1/1 Riptear's Heart
     .mob Riptear
     .dungeon ROL
 step << !Paladin
     .goto 1420/0,74.200,2022.400
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Deathguard Linnea::1495|r
-    >>|cRXP_WARN_Esta é uma missão preliminar para "The Ira of Rath'mael"|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Necroguarda Lina::1495|r
+    >>|cRXP_WARN_Esta missão é um pré-requisito para "A ira de Rath'mael"|r
     .turnin 99156 >>Entregue Patrulha da retaguarda
     .target Deathguard Linnea::1495
     .dungeon ROL
@@ -3185,23 +3185,23 @@ step << Paladin
     .target Deathguard Linnea
 step << Paladin
     .goto 1420/0,73.800,2022.300
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Deathguard Linnea::1495|r
-    >>|cRXP_WARN_Esta é uma missão preliminar para "The Ira of Rath'mael"|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Necroguarda Lina::1495|r
+    >>|cRXP_WARN_Esta missão é um pré-requisito para "A ira de Rath'mael"|r
     .turnin 356 >>Entregue Patrulha da retaguarda
     .target Deathguard Linnea::1495
     .accept 99156 >>Aceite Patrulha da retaguarda
     .dungeon ROL
 step << Paladin
     .goto 1420/0,-765.200,2518.700
-    >>Mate |cRXP_ENEMY_Riptear|r |cRXP_WARN_(nível 13 élite)|r. Saque-o para |T134339:0|t[|cRXP_LOOT_Coração de Riptear|r]
-    >>|cRXP_WARN_Esta é uma missão preliminar para "The Ira of Rath'mael"|r
+    >>Mate |cRXP_ENEMY_Talharretalha|r |cRXP_WARN_(elite de nível 13)|r. Pegue o |T134339:0|t[|cRXP_LOOT_Coração de Talharretalha|r]
+    >>|cRXP_WARN_Esta missão é um pré-requisito para "A ira de Rath'mael"|r
     .complete 99156,1 --|1/1 Riptear's Heart
     .mob Riptear
     .dungeon ROL
 step << Paladin
     .goto 1420/0,74.200,2022.400
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Deathguard Linnea::1495|r
-    >>|cRXP_WARN_Esta é uma missão preliminar para "The Ira of Rath'mael"|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Necroguarda Lina::1495|r
+    >>|cRXP_WARN_Esta missão é um pré-requisito para "A ira de Rath'mael"|r
     .turnin 99156 >>Entregue Patrulha da retaguarda
     .target Deathguard Linnea::1495
     .dungeon ROL
@@ -3325,7 +3325,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #group Guia de Progressão Rápida do RestedXP Forever (H)
-#subgroup Guia Speedrun 1-22
+#subgroup Guia de Progressão Rápida 1-22
 --#groupid RXP-SRGCE-H1
 << Horde
 #version 11
@@ -3840,7 +3840,7 @@ step
     .goto 1421/0,1625.94,522.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Alto-executor Hadrec|r na cripta
     .turnin 439 >>Entregue Pistas dos Putricouro
-    .accept 440 >>Aceite O Anel Gravado
+    .accept 440 >>Aceite O anel gravado
     .target High Executor Hadrec
 step
     #completewith next
@@ -3895,8 +3895,8 @@ step
     .target Shadow Priest Allister
 step
     .goto 1421/0,1579.600,461.700
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tabitha Heartweaver::250686|r
-    .accept 92401 >>Aceite A Amedrontado Request
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tábata Tececórdio::250686|r
+    .accept 92401 >>Aceite Pedido desesperado
     .target Tabitha Heartweaver::250686
     .xp <15,1
     .dungeon ROL
@@ -4038,7 +4038,7 @@ step
     .goto 1458/0,371.68,1370.64,15,0--c:1458,52.275,79.254
     .goto 1458/0,381.23,1366.35,15,0--c:1458,51.279,79.923
     .goto 1458/0,396.45,1372.88,15,0--c:1458,49.693,78.903
-    .goto 1458/0,413.16,1390.37,15 >>Vá para Apothecarium--c:1458,47.951,76.171
+    .goto 1458/0,413.16,1390.37,15 >>Vá até o Boticarium--c:1458,47.951,76.171
 step
     .goto 1458/0,426.100,1403.600
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Doutor Martinho Nunes|r
@@ -4142,7 +4142,7 @@ step << Undead Warlock
     .xp <16,1
 step << Paladin
     .goto 1458/0,418.500,1782.600
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Garen|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Garen|r
     .train 647 >>Treine suas magias de classe
     .target Garen Largo
     .xp <14,1
@@ -4150,13 +4150,13 @@ step << Paladin
 step << Paladin
     #optional
     .goto 1458/0,418.500,1782.600
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Garen|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Garen|r
     .train 7294 >>Treine suas magias de classe
     .target Garen Largo
     .xp <16,1
 step << Priest/Mage/Warlock
     .goto 1458/0,168.200,1663.100
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Owen Thadd::211022|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Adélio Tadeu::211022|r
     .target Owen Thadd::211022
     .turnin 79096 >>Entregue Ataeric: Sobre Curiosidades Arcanas
     .itemcount 210177,1
@@ -4277,7 +4277,7 @@ step << Undead/Skyborne
 step << Undead/Skyborne
     #completewith Gazzuz
     >>Mate |cRXP_ENEMY_Orcs da Lâmina Ardente|r. Pegue uma |cRXP_LOOT_Insígnia do Tenente|r deles
-    >>|cRXP_WARN_Esta é uma pré-missão para RFC. Tem uma chance de drop baixa|r
+    >>|cRXP_WARN_Esta é uma pré-missão para Cavernas Ígneas. A chance de saque é baixa|r
     .complete 5726,1 --Lieutenant's Insignia (1)
     .mob Burning Blade Fanatic
     .mob Burning Blade Apprentice
@@ -4287,9 +4287,9 @@ step << Undead/Skyborne
     .goto 1411/1,-4701.42,1455.83
     >>Mate o |cRXP_ENEMY_Gazz'uz|r. Saqueie-o para pegar |T134085:0|t[|cRXP_LOOT_Olho da Sombra Ardente|r]
     >>|cRXP_WARN_Use o |T134085:0|t[|cRXP_LOOT_Olho da Sombra Ardente|r] para iniciar a missão|r
-    >>|cRXP_WARN_Use LoS (linha de visão) para evitar |cRXP_ENEMY_Gazz'uz|r suas Setas das Sombras|r
+    >>|cRXP_WARN_Use LoS (linha de visão) para evitar as Setas Sombrias de |cRXP_ENEMY_Gazz'uz|r|r
     >>|cRXP_WARN_Você pode correr até as poças de água dentro da caverna para despistar o|r |cRXP_ENEMY_Emissário do Caos|r |cRXP_WARN_depois de matar|r |cRXP_ENEMY_Gazz'uz|r
-    >>|cRXP_WARN_Tenha cuidado, pois ele é difícil. Você pode pular esta missão se precisar.|r
+    >>|cRXP_WARN_Tome cuidado, pois ele é difícil. Você pode pular esta missão se precisar|r
     .collect 4903,1,832,1 --Collect Eye of Burning Shadow
     .accept 832 >>Aceite Sombras incandescentes
     .use 4903
@@ -4309,7 +4309,7 @@ step << Undead/Skyborne
     .goto 1411/1,-4684.50,1466.06,15,0
     .goto 1411/1,-4805.59,1495.67,15,0
     >>Mate |cRXP_ENEMY_Orcs da Lâmina Ardente|r. Pegue uma |cRXP_LOOT_Insígnia do Tenente|r deles
-    >>|cRXP_WARN_Esta é uma pré-missão para RFC. Tem uma chance de drop baixa|r
+    >>|cRXP_WARN_Esta é uma pré-missão para Cavernas Ígneas. A chance de saque é baixa|r
     .complete 5726,1 --Lieutenant's Insignia (1)
     .mob Burning Blade Fanatic
     .mob Burning Blade Apprentice

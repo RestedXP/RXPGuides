@@ -122,7 +122,7 @@ step
     .xp >2,1
 step
     #completewith next
-    .zone Dun Morogh >> Viagem para Dun Morogh
+    .zone Dun Morogh >> Vá para Dun Morogh
     .train 401760,1
     .xp <2,1
 step
@@ -701,7 +701,7 @@ step
     .train 401765,1
 step
     #completewith next
-    .zone Dun Morogh >>Viagem para Dun Morogh
+    .zone Dun Morogh >>Vá para Dun Morogh
     .train 401765,1
 step
     #loop
@@ -858,7 +858,7 @@ step
     .xp >6,1
 step
     #completewith next
-    .zone Dun Morogh >>Viagem para Dun Morogh
+    .zone Dun Morogh >>Vá para Dun Morogh
     .train 401759,1
 step
     .goto 1426,69.369,58.311
@@ -3289,7 +3289,7 @@ step
 step
     .train 429311,1
     #completewith next
-    .zone Swamp of Sorrows >> Vá para Pântano das Mágoas
+    .zone Swamp of Sorrows >> Vá ao Pântano das Mágoas
 step
     .train 429311,1
     #loop

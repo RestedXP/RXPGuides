@@ -9,7 +9,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 << Alliance
 #group Guia RestedXP Forever (A)
-#subgroup Speedrun Guia 1-20
+#subgroup Guia Speedrun 1-20
 --#groupid RXP-SRGCE-A1
 #name 1-5 Coldridge Valley
 #next 5-11 Dun Morogh
@@ -309,7 +309,7 @@ step << Hunter
     .goto 1426/0,528.43,-6444.55,0--c:1426,25.861,78.197
     .goto 1426/0,634.07,-6512.19,0--c:1426,23.716,80.257
     .goto 1426/0,784.04,-6367.10,0--c:1426,20.671,75.838
-    .xp 4 >> Farme até o nível 4
+    .xp 4 >> Mate inimigos até atingir o nível 4
 step << Paladin/Warlock/Hunter/Shaman
     .goto 1426/0,571.82,-6371.20--c:Dun Morogh,24.980,75.963
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Nóri Fluiorgulho|r
@@ -660,7 +660,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 << Alliance
 #group Guia RestedXP Forever (A)
-#subgroup Speedrun Guia 1-20
+#subgroup Guia Speedrun 1-20
 --#groupid RXP-SRGCE-A1
 #name 5-11 Dun Morogh
 #next 11-12 Elwynn (Anão/Gnomo);11-12 Missão do Emissário do Caos;12-14 Loch Modan (Anão/Gnomo);11-13 Loch Modan (Caçador)
@@ -1676,7 +1676,7 @@ step << Hunter
     .goto 1426/0,-454.06,-5618.53--c:Dun Morogh,45.810,53.039
     .target Grif Wildheart
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Grif Selvacuore|r
-    .accept 6064 >>Aceite Adestramento da Fera - Missão
+    .accept 6064 >>Aceite Domando a Fera
     .trainer >> Treine suas magias de classe
 step << Hunter
     .goto 1426/0,-576.69,-5745.30--c:Dun Morogh,48.3,56.9
@@ -1688,7 +1688,7 @@ step << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Grif Selvacuore|r
     .turnin 6064 >>Entregue Domando a fera
     .target Grif Wildheart
-    .accept 6084 >>Aceite Adestramento da Fera - Missão
+    .accept 6084 >>Aceite Domando a Fera
 step << Hunter
     .goto 1426/0,-630.87,-5827.38--c:Dun Morogh,49.4,59.4
     .use 15913 >>|cRXP_WARN_Use o|r |T132164:0|t[Bastão de Adestramento] |cRXP_WARN_em um|r |cRXP_ENEMY_Leopardo da Neve|r
@@ -1699,7 +1699,7 @@ step << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Grif Selvacuore|r
     .turnin 6084 >>Entregue Domando a fera
     .target Grif Wildheart
-    .accept 6085 >>Aceite Adestramento da Fera - Missão
+    .accept 6085 >>Aceite Domando a Fera
 step << Hunter
     .goto 1426/0,-680.12,-5837.23--c:Dun Morogh,50.4,59.7
     .use 15908 >>|cRXP_WARN_Use o|r |T132164:0|t[Bastão de Adestramento] |cRXP_WARN_em um|r |cRXP_ENEMY_Urso Garra de Gelo|r
@@ -1767,7 +1767,7 @@ step << Warrior
 step << Warrior
     .goto 1426/0,-831.31,-5026.91--c:1426,53.47,35.02
     >>Saia de Ironforge. Volte para Dun Morogh
-    .zone Dun Morogh >> Viagem para Dun Morogh
+    .zone Dun Morogh >> Vá para Dun Morogh
     .zoneskip Ironforge,1
 step
     #optional
@@ -2460,7 +2460,7 @@ step << Hunter
 step << Hunter
     .goto 1455/0,-1273.83,-5022.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Bélia Granitrondo|r
-    .turnin 6086 >> Entregue Treinamento da Fera - Missão
+    .turnin 6086 >> Entregue Treinando a fera
     .trainer >> Treine as magias do seu mascote
     .target Belia Thundergranite
 step << Hunter
@@ -2495,7 +2495,7 @@ step
     .goto 1455/0,-917.57,-4967.58,-1--c:Ironforge,25.800,75.500
     .goto 1455/0,-904.92,-4962.83,-1--c:Ironforge,24.200,74.600
     .goto 1455/0,-901.76,-4948.06,-1--c:Ironforge,23.800,71.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Leiloeiro de Ironforge|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com um |cRXP_FRIENDLY_Leiloeiro de Altaforja|r
     >>|cRXP_BUY_Compre|r |T133970:0|t|cRXP_LOOT_[Nacos de Carne de Javali]|r |cRXP_BUY_e/ou|r |T133970:0|t|cRXP_LOOT_[Acém de Lobo]|r |cRXP_BUY_para aumentar sua habilidade de|r |T133971:0|t[Culinária] |cRXP_BUY_mais tarde|r
     >>|cRXP_WARN_Você precisará de 50 em|r |T133971:0|t[Culinária] |cRXP_WARN_para uma missão em Vila Sombria mais tarde|r
     >>Se você não quiser ou não puder fazer isso, pule esta etapa
@@ -2525,7 +2525,7 @@ step
     .goto 1455/0,-917.57,-4967.58,-1--c:Ironforge,25.800,75.500
     .goto 1455/0,-904.92,-4962.83,-1--c:Ironforge,24.200,74.600
     .goto 1455/0,-901.76,-4948.06,-1--c:Ironforge,23.800,71.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Leiloeiro de Ironforge|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com um |cRXP_FRIENDLY_Leiloeiro de Altaforja|r
     >>Se você não quiser ou não puder fazer isso, pule esta etapa
     >>|cRXP_BUY_Compre os itens a seguir para uma entrega mais rápida em Loch Modan em breve:|r
     >>|T134342:0|t[Javali Intestines]
@@ -2794,7 +2794,7 @@ RXPGuides.RegisterGuide([[
 #season 0,1
 << Alliance !Hunter
 #group Guia RestedXP Forever (A)
-#subgroup Speedrun Guia 1-20
+#subgroup Guia Speedrun 1-20
 --#groupid RXP-SRGCE-A1
 #name 11-12 Elwynn (Anão/Gnomo)
 #version 1
@@ -3464,7 +3464,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 << Alliance !Hunter
 #group Guia RestedXP Forever (A)
-#subgroup Speedrun Guia 1-20
+#subgroup Guia Speedrun 1-20
 --#groupid RXP-SRGCE-A1
 #name 12-14 Loch Modan (Anão/Gnomo)
 #next 13-15 Cerro Oeste; 14-16 Costa Negra
@@ -3581,7 +3581,7 @@ step
     .target Yanni Stoutheart
 step << !Hunter
     .goto 1432/0,-2973.90,-5377.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Estalajadeiro Fornalenha|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estalajadeiro Fornalenha|r
     .vendor 6734 >> |cRXP_BUY_Compre alguns|r |T133968:0|t[Pão Fresquinho] |cRXP_BUY_se necessário|r << Warrior/Rogue
     .vendor 6734 >> |cRXP_BUY_Compre alguns|r |T133968:0|t[Pão Fresquinho] |cRXP_BUY_e|r |T132815:0|t[Leite Gelado] |cRXP_BUY_dela se necessário|r << !Warrior !Rogue
     .target Innkeeper Hearthstove
@@ -3619,7 +3619,7 @@ step << Shaman
     .goto 1426/0,-2510.100,-5310.300
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Bruegs Kindleborn::257597|r
     .target Bruegs Kindleborn::257597
-    .turnin 94449 >>Entregue Call of Fogo
+    .turnin 94449 >>Entregue Call of Fogo - Missão - Missão
     .accept 94465 >>Aceite Clamor do Fogo
 step << Shaman
     .isOnQuest 94465
@@ -3634,7 +3634,7 @@ step << Shaman
     .goto 1432/0,-2880.900,-5701.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Braldir Ashmantle::257808|r
     .target Braldir Ashmantle::257808
-    .turnin 94465 >>Entregue Call of Fogo
+    .turnin 94465 >>Entregue Call of Fogo - Missão - Missão
     .accept 94466 >>Aceite Clamor do Fogo
 step
     #optional
@@ -3970,7 +3970,7 @@ step
     .goto 1432/0,-2952.46,-5381.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Yanni Cuoreforte|r
     >>|cRXP_BUY_Compre uma|r |T135435:0|t[Simple Madeira] |cRXP_BUY_e uma|r |T135237:0|t[Pederneira e Lenha] |cRXP_BUY_dela|r
-    >>|cRXP_WARN_Isto é usado para fazer|r |T135805:0|t[Basic Campfires] |cRXP_WARN_em Barcos para aumentar sua|r |T133971:0|t[Culinária] |cRXP_WARN_habilidade sem perder tempo|r
+    >>|cRXP_WARN_Isto é usado para fazer|r |T135805:0|t[Fogueira de Acampamento Básica] |cRXP_WARN_em Barcos para subir seu nível de|r |T133971:0|t[Culinária] |cRXP_WARN_habilidade sem perder tempo|r
     >>Você precisa de 50 em [Culinária] para uma missão mais tarde na Floresta do Crepúsculo
     .collect 4470,1 --Simple Wood (1)
     .collect 4471,1 --Flint and Tinder (1)
@@ -4018,7 +4018,7 @@ step << Shaman
     .goto 1432/0,-2880.900,-5701.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Braldir Ashmantle::257808|r
     .target Braldir Ashmantle::257808
-    .turnin 94466 >>Entregue Call of Fogo
+    .turnin 94466 >>Entregue Call of Fogo - Missão - Missão
     .accept 94467 >>Aceite Clamor do Fogo
 step << Shaman
     #completewith next
@@ -4032,7 +4032,7 @@ step << Shaman
 step << Shaman
     .goto 1432/0,-2870.700,-5674.600
     >>Clique em |cRXP_PICK_Brazier of the Adormecido Chamas|r
-    .turnin 94467 >>Entregue Call of Fogo
+    .turnin 94467 >>Entregue Call of Fogo - Missão - Missão
     .accept 94468 >>Aceite Clamor do Fogo
 step
     #optional
@@ -4066,7 +4066,7 @@ step << Shaman
     .goto 1426/0,-2510.100,-5310.300
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Bruegs Kindleborn::257597|r
     .target Bruegs Kindleborn::257597
-    .turnin 94468 >>Entregue Call of Fogo
+    .turnin 94468 >>Entregue Call of Fogo - Missão - Missão
 step << Shaman
     .isQuestTurnedIn 94468
     .goto 1426/0,-2594.100,-5335.900,20,0
@@ -4109,7 +4109,7 @@ step << Dwarf Paladin
     .goto 1432/0,-2534.22,-5641.56,20,0--c:1432,19.594,62.735
     .goto 1432/0,-2444.52,-5564.02,20,0--c:1432,16.342,58.520
     .goto 1426/0,-2347.82,-5563.63--c:1426,84.262,51.367
-    .zone Dun Morogh >> Viagem para Dun Morogh
+    .zone Dun Morogh >> Vá para Dun Morogh
 step << Dwarf Paladin
     #completewith next
     .goto 1426/0,-2055.23,-5784.31
@@ -4464,7 +4464,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 << Alliance Hunter
 #group Guia RestedXP Forever (A)
-#subgroup Speedrun Guia 1-20
+#subgroup Guia Speedrun 1-20
 --#groupid RXP-SRGCE-A1
 #name 11-13 Loch Modan (Caçador)
 #next 14-16 Costa Negra
@@ -4510,7 +4510,7 @@ step
     .accept 418 >> Aceite Chouriço de Thelsamar
 step
     .goto 1432/0,-2973.90,-5377.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Estalajadeiro Fornalenha|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estalajadeiro Fornalenha|r
     .home >> Defina sua Pedra de Regresso em Thelsamar
     .target Innkeeper Hearthstove
 step
@@ -4548,7 +4548,7 @@ step << Hunter
     .goto 1455/0,-1273.83,-5022.08
     .target Belia Thundergranite
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Bélia Granitrondo|r
-    .turnin 6086 >> Entregue Treinamento da Fera - Missão
+    .turnin 6086 >> Entregue Treinando a fera
 step << Hunter
     #label RTB
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Grif Trovino|r
@@ -4825,7 +4825,7 @@ step
     .goto 1432/0,-4269.26,-5653.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Xandar Boabarba|r
     >>|cRXP_BUY_Compre um|r [Simple Wood] |cRXP_BUY_and a|r [Flint and Tinder] |cRXP_BUY_from him|r
-    >>|cRXP_WARN_Isto é usado para fazer|r |T135805:0|t[Basic Campfires] |cRXP_WARN_em Barcos para aumentar sua|r |T133971:0|t[Culinária] |cRXP_WARN_habilidade sem perder tempo|r
+    >>|cRXP_WARN_Isto é usado para fazer|r |T135805:0|t[Fogueira de Acampamento Básica] |cRXP_WARN_em Barcos para subir seu nível de|r |T133971:0|t[Culinária] |cRXP_WARN_habilidade sem perder tempo|r
     >>Você precisa de 50 em [Culinária] para uma missão mais tarde na Floresta do Crepúsculo
     .collect 4470,1 --Simple Wood (1)
     .collect 4471,1 --Flint and Tinder (1)
@@ -4848,7 +4848,7 @@ step
     .target Jern Hornhelm
 step
     .goto 1432/0,-2929.87,-5424.84
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thorgrum|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thorgrum Borrelson|r
     .fly Ironforge >> Voe para Altaforja
     .target Thorgrum Borrelson
 step
@@ -4946,7 +4946,7 @@ step
 step
     .goto 1453/0,765.700,-8804.000
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Catarina Gurjão|r
-    >>|cRXP_BUY_Compre um|r |T134335:0|t[MIçanga Brilhosa] |cRXP_BUY_e três|r |T134324:0|t[Reptantes] |cRXP_BUY_dela. Isto é para uma missão de 900xp|r
+    >>|cRXP_BUY_Compre um|r |T134335:0|t[Miçanga Brilhosa] |cRXP_BUY_e três|r |T134324:0|t[Reptantes] |cRXP_BUY_dela. Isto é para uma missão de 900xp|r
     .collect 6529,1,95065,1 --|1/1 Shiny Bauble
     .collect 6530,3,95065,1 --|3/3 Nightcrawlers
     .target Catherine Leland
@@ -4963,7 +4963,7 @@ step << Hunter skip
     #label DarkshoreCook1
     #completewith DarkshoreBoat
     >>|cRXP_WARN_Enquanto espera o barco no cais:|r
-    .cast 818 >>|cRXP_WARN_Crie uma|r |T135805:0|t[Fogo para Cozinhar] |cRXP_WARN_(no seu Livro de Profissão)|r
+    .cast 818 >>|cRXP_WARN_Criar a|r |T135805:0|t[Fogo para Cozinhar] |cRXP_WARN_(em seu Livro de Profissão)|r
     .usespell 818
     .zoneskip Darkshore
     .itemcount 769,1 --Chunk of Boar Meat (1+)
@@ -4977,7 +4977,7 @@ step << Hunter skip
     #label DarkshoreCook2
     #completewith DarkshoreBoat
     >>|cRXP_WARN_Enquanto espera o barco no cais:|r
-    .cast 818 >>|cRXP_WARN_Crie uma|r |T135805:0|t[Fogo para Cozinhar] |cRXP_WARN_(no seu Livro de Profissão)|r
+    .cast 818 >>|cRXP_WARN_Criar a|r |T135805:0|t[Fogo para Cozinhar] |cRXP_WARN_(em seu Livro de Profissão)|r
     .usespell 818
     .zoneskip Darkshore
     .itemcount 769,<1 --Chunk of Boar Meat (<1)
@@ -4991,7 +4991,7 @@ step << Hunter skip
     #label DarkshoreCook3
     #completewith DarkshoreBoat
     >>|cRXP_WARN_Enquanto espera o barco no cais:|r
-    .cast 818 >>|cRXP_WARN_Crie uma|r |T135805:0|t[Fogo para Cozinhar] |cRXP_WARN_(no seu Livro de Profissão)|r
+    .cast 818 >>|cRXP_WARN_Criar a|r |T135805:0|t[Fogo para Cozinhar] |cRXP_WARN_(em seu Livro de Profissão)|r
     .usespell 818
     .zoneskip Darkshore
     .itemcount 769,1 --Chunk of Boar Meat (1+)

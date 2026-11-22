@@ -22,7 +22,7 @@ step
     .target Innkeeper Firebrew
 step
     #completewith next
-    .zone Dun Morogh >> Viagem para Dun Morogh
+    .zone Dun Morogh >> Vá para Dun Morogh
 step
     .goto 1426/0,-1147.9916,-5502.3333,30,0
     .goto 1426/0,-1212.0166,-5426.8167,15,0
@@ -106,7 +106,7 @@ step
     #include Guia RestedXP Forever (A)\15-16 Loch Modan@LochEnter-LochEnd
 step << NightElf Druid
     #completewith next
-	.cast 18960 >> Lance Teleporte: Bosque da Lua
+	.cast 18960 >> Use Teleporte: Clareira da Lua
 	.zoneskip Moonglade
 step << Druid
 	.goto 1450/1,-2400.33,7795.33--c:Moonglade,44.148,45.229
@@ -125,7 +125,7 @@ step << Druid
 	.target Mathrengyl Bearwalker
 step << Druid
 	#completewith next
-	.cast 18960 >> Lance Teleporte: Bosque da Lua
+	.cast 18960 >> Use Teleporte: Clareira da Lua
 	.zoneskip Moonglade
 step << Druid
     .goto 1450/1,-2676.22,8019.01
@@ -142,7 +142,7 @@ step << Druid
 step << Druid
     #optional
     #completewith next
-    .cast 18960 >> Lance Teleporte: Bosque da Lua
+    .cast 18960 >> Use Teleporte: Clareira da Lua
     .itemcount 15877,1 -- Shrine Bauble (1)
 step << Druid
     .goto 1450/1,-2212.85,7854.68
@@ -674,7 +674,7 @@ step
 step
     .goto 1453/0,673.58,-8867.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estalajadeira Cristine|r
-    .home >> Defina sua Pedra de Retorno em Cidade de Ventobravo
+    .home >> Defina sua Pedra de Regresso para a Cidade de Ventobravo
     .target Innkeeper Allison
     .bindlocation 16509
 step
@@ -1237,7 +1237,7 @@ step << Warrior
 step
     .goto 1453/0,765.700,-8804.000
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Catarina Gurjão|r
-    >>|cRXP_BUY_Compre um|r |T134335:0|t[MIçanga Brilhosa] |cRXP_BUY_e três|r |T134324:0|t[Reptantes] |cRXP_BUY_dela. Isto é para uma missão de 900xp|r
+    >>|cRXP_BUY_Compre um|r |T134335:0|t[Miçanga Brilhosa] |cRXP_BUY_e três|r |T134324:0|t[Reptantes] |cRXP_BUY_dela. Isto é para uma missão de 900xp|r
     .collect 6529,1,95065,1 --|1/1 Shiny Bauble
     .collect 6530,3,95065,1 --|3/3 Nightcrawlers
     .target Catherine Leland
@@ -1313,7 +1313,7 @@ step
 step
     .goto 1453/0,673.58,-8867.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estalajadeira Cristine|r
-    .home >> Defina sua Pedra de Retorno em Cidade de Ventobravo
+    .home >> Defina sua Pedra de Regresso para a Cidade de Ventobravo
     .target Innkeeper Allison
     .bindlocation 16509
 step
@@ -1363,7 +1363,7 @@ step
     #label DarkshoreCook1
     #completewith DarkshoreBoat
     >>|cRXP_WARN_Enquanto espera o barco no cais:|r
-    .cast 818 >>|cRXP_WARN_Crie uma|r |T135805:0|t[Fogo para Cozinhar] |cRXP_WARN_(no seu Livro de Profissão)|r
+    .cast 818 >>|cRXP_WARN_Criar a|r |T135805:0|t[Fogo para Cozinhar] |cRXP_WARN_(em seu Livro de Profissão)|r
     .usespell 818
     .zoneskip Darkshore
     .itemcount 769,1 --Chunk of Boar Meat (1+)
@@ -1377,7 +1377,7 @@ step
     #label DarkshoreCook2
     #completewith DarkshoreBoat
     >>|cRXP_WARN_Enquanto espera o barco no cais:|r
-    .cast 818 >>|cRXP_WARN_Crie uma|r |T135805:0|t[Fogo para Cozinhar] |cRXP_WARN_(no seu Livro de Profissão)|r
+    .cast 818 >>|cRXP_WARN_Criar a|r |T135805:0|t[Fogo para Cozinhar] |cRXP_WARN_(em seu Livro de Profissão)|r
     .usespell 818
     .zoneskip Darkshore
     .itemcount 769,<1 --Chunk of Boar Meat (<1)
@@ -1391,7 +1391,7 @@ step
     #label DarkshoreCook3
     #completewith DarkshoreBoat
     >>|cRXP_WARN_Enquanto espera o barco no cais:|r
-    .cast 818 >>|cRXP_WARN_Crie uma|r |T135805:0|t[Fogo para Cozinhar] |cRXP_WARN_(no seu Livro de Profissão)|r
+    .cast 818 >>|cRXP_WARN_Criar a|r |T135805:0|t[Fogo para Cozinhar] |cRXP_WARN_(em seu Livro de Profissão)|r
     .usespell 818
     .zoneskip Darkshore
     .itemcount 769,1 --Chunk of Boar Meat (1+)
@@ -2310,7 +2310,7 @@ step << Druid
 step << Druid
     #optional
 	#completewith TotL
-	.cast 18960 >> Lance Teleporte: Bosque da Lua
+	.cast 18960 >> Use Teleporte: Clareira da Lua
 	.zoneskip Moonglade
 step << Druid
     .goto 1450/1,-2676.22,8019.01
@@ -2327,7 +2327,7 @@ step << Druid
 step << Druid
     #optional
     #completewith next
-    .cast 18960 >> Lance Teleporte: Bosque da Lua
+    .cast 18960 >> Use Teleporte: Clareira da Lua
     .itemcount 15877,1 -- Shrine Bauble (1)
 step << Druid
     .goto 1450/1,-2212.85,7854.68
@@ -2514,7 +2514,7 @@ step << !NightElf
     +|cRXP_WARN_Agora você vai completar uma pré-missão para Hall of Thanes, depois entre na masmorra|r
 step << !NightElf
     #completewith OII
-    .zone Dun Morogh >> Viagem para Dun Morogh
+    .zone Dun Morogh >> Vá para Dun Morogh
 step << !NightElf
     #label QuarryStart
     .goto 1426/0,-1394.24,-5797.83
@@ -2977,7 +2977,7 @@ step << NightElf Rogue
 step << NightElf
     .goto 1453/0,673.58,-8867.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estalajadeira Cristine|r
-    .home >> Defina sua Pedra de Retorno em Cidade de Ventobravo
+    .home >> Defina sua Pedra de Regresso para a Cidade de Ventobravo
     .target Innkeeper Allison
     .bindlocation 16509
 step << NightElf
@@ -3136,7 +3136,7 @@ step
     #optional
     .goto 1453/0,673.58,-8867.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estalajadeira Cristine|r
-    .home >> Defina sua Pedra de Retorno em Cidade de Ventobravo
+    .home >> Defina sua Pedra de Regresso para a Cidade de Ventobravo
     .target Innkeeper Allison
     .bindlocation 16509
 step << !NightElf !Dwarf/!Hunter
@@ -3470,7 +3470,7 @@ step << Druid
     .collect 15882,1,272,1 --Collect Half Pendant of Aquatic Endurance (x1)
 step << Druid
     #completewith next
-	.cast 18960 >> Lance Teleporte: Bosque da Lua
+	.cast 18960 >> Use Teleporte: Clareira da Lua
 step << Druid
     .goto 1450/1,-2593.82,7867.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Loganaar|r
@@ -3712,7 +3712,7 @@ step << Rogue
     >>Saia manualmente de [Furtividade]|cRXP_WARN_, depois pressione sua tecla de atalho "Interagir com Alvo" para abrir o |cRXP_PICK_Baú da Floresta do Crepúsculo|r. Saqueie-o para obter |cRXP_LOOT_Diário de Filipe Pinel|r |r
     >>OBS.: Sua [Furtividade] vai parar de funcionar temporariamente após saquear |cRXP_LOOT_Diário de Filipe Pinel|r
     >>|cRXP_WARN_Esteja preparado para correr se você não matar as |cRXP_ENEMY_Sentinelas da Torre Défias|r no 2º andar. Elas provavelmente vão te manter em aggro permanente (mas sem te atacar) quando você estiver em cima da estante pois é um ponto de evade|r
-    >>Se você tiver uma [Adaga] na bolsa ou equipada, você pode usar [Emboscada] |cRXP_WARN_nos |cRXP_ENEMY_Patrulheiros da Torre Défias|r e nas |cRXP_ENEMY_Sentinelas da Torre Défias|r lá dentro para matá-los instantaneamente. Esteja pronto para correr depois de matar a primeira |cRXP_ENEMY_Sentinela da Torre Défias|r e lembre-se você pode levar golpes vindos de cima. É mais lento, mas MUITO mais seguro|r
+    >>|cRXP_WARN_Se você tiver um|r |T135641:0|t[Adaga] |cRXP_WARN_nas suas bolsas ou equipado, você pode lançar|r |T132282:0|t[Emboscada] |cRXP_WARN_no |cRXP_ENEMY_Patrulheiros da Torre Défias|r e |cRXP_ENEMY_Sentinelas da Torre Défias|r lá dentro para matá-los instantaneamente. Prepare-se para correr depois de matar o primeiro |cRXP_ENEMY_Sentinela da Torre Défias|r e lembre-se de que você pode ser atingido de cima. É mais lento, mas MUITO mais seguro|r
     >>|cRXP_WARN_Tome cuidado, pois |cRXP_ENEMY_Parasita Défias Mal Formado|r e |cRXP_ENEMY_Parasita Défias|r podem ficar na entrada da torre, caso você precise sair correndo dela|r
     .complete 2359,1 --Collect Klaven Mortwake's Journal (x1)
     .link https://www.youtube.com/watch?v=5sIew15IcG0 >> Clique AQUI para o guia em vídeo
@@ -3957,11 +3957,11 @@ RXPGuides.RegisterGuide([[
 #subgroup Guia da Masmorra 1-20
 --#groupid RXP-SRGCE-A1
 #name 20-21 Costa Negra/Vale Gris
-#next Guia de Masmorras do RestedXP Forever (A)\21-23 Vale Gris/Stonetalon
+#next Guia de Masmorras do RestedXP Forever (A)\21-23 Vale Gris/Cordilheira das Torres de Pedra
 
 step << Druid
     #completewith catspirit1
-	.cast 18960 >> Lance Teleporte: Bosque da Lua
+	.cast 18960 >> Use Teleporte: Clareira da Lua
 step << Druid
     #completewith next
     .goto 1450/1,-2400.33,7795.33--c:Moonglade,44.148,45.229
@@ -3986,7 +3986,7 @@ step << Druid
     .accept 98393 >>Aceite O Espírito do Grande Felino
 step << Druid
     #completewith next
-	.cast 18960 >> Lance Teleporte: Bosque da Lua
+	.cast 18960 >> Use Teleporte: Clareira da Lua
     .zoneskip Moonglade
 step << Druid
     .goto 1450/1,-2678.900,8020.000
@@ -4371,7 +4371,7 @@ step << Druid
     .collect 15883,1,272,1 --Collect Half Pendant of Aquatic Agility (x1)
 step << Druid
     #completewith next
-	.cast 18960 >> Lance Teleporte: Bosque da Lua
+	.cast 18960 >> Use Teleporte: Clareira da Lua
 step << Druid
     .goto 1450/1,-2593.82,7867.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Loganaar|r
@@ -4383,12 +4383,12 @@ step << Druid
     .complete 272,1 --Collect Pendant of the Sea Lion (x1)
 step << Druid
     #completewith next
-	.cast 18960 >> Lance Teleporte: Bosque da Lua
+	.cast 18960 >> Use Teleporte: Clareira da Lua
     >>|cRXP_WARN_Isso economizará seu tempo, evitando que você precise voltar correndo|r
 step << Druid
     .goto 1450/1,-2678.74,8020.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Dendrite Stellardor|r
-    .turnin 272 >> Entregue Julgamento do Mar Leão
+    .turnin 272 >> Entregue a Provação do Leão-marinho
     .accept 5061 >> Aceite Forma aquática
     .target Dendrite Starblaze
 step << Druid
@@ -4714,7 +4714,7 @@ step
 step
     #optional
     .goto 1440/1,-138.99,3806.92
-    .xp 20 >> Suba até o nível 20
+    .xp 20 >> Mate inimigos até o nível 20
 step
     .goto 1440/1,175.87,3189.61
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Orendil Folharga|r
@@ -4768,13 +4768,13 @@ step
 step
     .goto 1440/1,-362.16,2785.640
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Faldreas Goeth'Shael|r
-    .accept 1056 >> Aceite Journey to Stonetalon Peak
+    .accept 1056 >> Aceite A jornada para o Morro das Torres de Pedra
     .target Faldreas Goeth'Shael
 step
     .goto 1440/1,-411.18,2767.19
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_a Raene Correlobos|r
     .accept 991 >> Aceite a Purificação de Raene
-    .accept 1054 >> Aceite Expurgo a Ameaça
+    .accept 1054 >> Aceite Contendo a ameaça
     .target Raene Wolfrunner
 step
     .goto 1440/1,-433.09,2781.02
