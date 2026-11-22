@@ -209,8 +209,7 @@ local function UpdateV1IconFrameVisuals(self, updateFrame)
     if not addon.settings.profile.activeItemHideBG then
         self:SetBackdrop(addon.RXPFrame.backdrop.edge)
 
-        local r, g, b = unpack(addon.colors.background)
-        self:SetBackdropColor(r, g, b, 0.4)
+        self:SetBackdropColor(unpack(addon.colors.background))
     end
 
     self.title:ClearBackdrop()
@@ -269,6 +268,7 @@ function addon.CreateActiveItemFrame(self, anchor, enableText)
                                            BackdropTemplate)
         f = self.activeItemFrame
     end
+    f.v2 = addon.v2:IsEnabled()
     addon.enabledFrames["activeItemFrame"] = f
     f.IsFeatureEnabled = function()
         local shown = not addon.settings.profile.disableItemWindow and next(GetActiveItemList()) ~= nil
@@ -297,7 +297,7 @@ function addon.CreateActiveItemFrame(self, anchor, enableText)
 
     if not f.title then
         f.title = CreateFrame("Frame", "$parent_title", f, BackdropTemplate)
-        f.title:SetPoint("TOPLEFT", f, 5, 10)
+        f.title:SetPoint("TOPLEFT", f, 5, 8)
         f.title:SetFrameLevel(f:GetFrameLevel() + 3)
         f.title.text = f.title:CreateFontString(nil, "OVERLAY")
         f.title.text:ClearAllPoints()
@@ -400,6 +400,7 @@ function addon.UpdateItemFrame(itemFrame)
 
     local buttonList = itemFrame.buttonList
     local itemList = GetActiveItemList()
+    local contentOffset = itemFrame.v2 and 0 or 3
 
     itemFrame.title:SetSize(itemFrame.title.text:GetStringWidth() + 10, 19)
     local i = 0
@@ -420,7 +421,7 @@ function addon.UpdateItemFrame(itemFrame)
 
             btn:ClearAllPoints()
             if n == 1 then
-                btn:SetPoint("BOTTOMLEFT", itemFrame, "BOTTOMLEFT", 4, 2)
+                btn:SetPoint("BOTTOMLEFT", itemFrame, "BOTTOMLEFT", 6, 4 + contentOffset)
             else
                 btn:SetPoint("CENTER", buttonList[n - 1], "CENTER", 27, 0)
             end
@@ -493,7 +494,7 @@ function addon.UpdateItemFrame(itemFrame)
     end
 
     for n = i + 1, #buttonList do buttonList[n]:Hide() end
-    local width = math.max(itemFrame.title:GetWidth() + 10, i * 27 + 8)
+    local width = math.max(itemFrame.title:GetWidth() + 10, i * 27 + 10)
     itemFrame:SetWidth(width);
     UpdateCooldowns()
 
