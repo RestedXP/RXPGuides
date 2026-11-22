@@ -306,7 +306,7 @@ step << Priest/Mage
     .complete 3904,1 --Collect Milly's Harvest (x8)
 step
     .goto Elwynn Forest,57.5,48.2
-    >>Tuez |cRXP_ENEMY_Garrick Padfoot|r. Dépouillez-le jeu pour sa |cRXP_LOOT_Tête|r
+    >>Tuez |cRXP_ENEMY_Garrick Padfoot|r. Dépouillez-le pour sa |cRXP_LOOT_Tête|r
 	.mob Garrick Padfoot
     .complete 6,1 --Collect Garrick's Head (x1)
 step << !Priest !Mage
@@ -652,7 +652,7 @@ step
     .mob Kobold Miner
 step << Warrior
     #completewith Goldtooth
-    +Essayez de garder une [Potion de soins mineure] à partir de maintenir, vous en aurez besoin pour le Cadavre de Rolf plus tard
+    +À partir de maintenant, essayez de garder au moins une [Potion de soins mineure] car vous en aurez besoin pour le Cadavre de Rolf plus tard
 step << Warrior/Rogue
     >>N'oubliez de fabriquer des [Pierre à aiguiser brute] si vous ramassez des |cRXP_LOOT_[Rough Stones]|r
     .xp 7+1600 >>Montez votre expérience jusqu'à 1600+/4500xp
@@ -1390,7 +1390,7 @@ step << Warlock
     .target Marshal Dughan
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Marshal Dughan|r
     .turnin 176 >> Rendez la quête On recherche : "Lardeur"
-    >>Choisissez le [|cRXP_FRIENDLY_Bâton de combat équilibré|r] comme récompense. Équipez-le
+    >>Choisissez le  [|cRXP_FRIENDLY_Bâton de combat équilibrée|r] comme récompense. Équipez-le
     .turnin 123 >> Rendez la quête Le collecteur
     .accept 147 >> Acceptez la quête Chasse à l'homme
 step << Warlock
@@ -1398,7 +1398,7 @@ step << Warlock
     .target Marshal Dughan
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Marshal Dughan|r
     .turnin 176 >> Rendez la quête On recherche : "Lardeur"
-    >>Choisissez le [|cRXP_FRIENDLY_Bâton de combat équilibré|r] comme récompense. Équipez-le
+    >>Choisissez le  [|cRXP_FRIENDLY_Bâton de combat équilibrée|r] comme récompense. Équipez-le
 step << Warlock
     .isQuestTurnedIn 123
     .goto Elwynn Forest,42.105,65.927
@@ -1790,7 +1790,7 @@ step
     .goto Dun Morogh,70.7,56.4,40,0
     .goto Dun Morogh,70.62,52.39,25,0
     .goto Dun Morogh,70.7,56.4
-    >>Tuez les |cRXP_ENEMY_Rockjaw Skullthumpers|r et les |cRXP_ENEMY_Rockjaw Bonesnappers|r
+    >>Tuez les |cRXP_ENEMY_Brise-crânes Mâcherocs|r et les |cRXP_ENEMY_Briseurs d'os Mâcherocs|r
     .complete 432,1 --Kill Rockjaw Skullthumper (x6)
     .mob +Rockjaw Skullthumper
     .complete 433,1 --Kill Rockjaw Bonesnapper (x10)

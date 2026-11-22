@@ -373,7 +373,7 @@ step
     #sticky
     #label vial1
     .goto 1438/1,764.68,10711.31
-	.use 5185 >> Utilisez la [Fiole de cristal] au puits de lune
+	.use 5185 >> Utilisez la [Flasque de cristal] au puits de lune
     .complete 921,1 --Collect Filled Crystal Phial (x1)
 step << Hunter/Druid/Warrior/Priest
     .goto 1438/1,769.77,10673.98
@@ -1467,7 +1467,7 @@ step << Hunter
     .target Ariyell Skyshadow
 step << Hunter
     .goto 1457/1,2329.19,9908.53
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t Parlez à |cRXP_FRIENDLY_Ilyenia Moonfire|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Ilyenia Moonfire|r
     .skipgossipid 96881
     .train 227 >>Apprenez la compétence Bâtons
     >>Si vous avez un Bâton dans votre sac, équipez-le.
@@ -2318,7 +2318,7 @@ step << Hunter
     .target Jaeana
 step << Hunter/Warrior/Priest
     .goto 1457/1,2329.19,9908.53
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t Parlez à |cRXP_FRIENDLY_Ilyenia Moonfire|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Ilyenia Moonfire|r
     .skipgossipid 96881
     .train 227 >>Apprenez la compétence Bâtons << Hunter/Warrior/Priest
     >>Si vous avez un Bâton dans votre sac, équipez-le. << Hunter
@@ -2369,7 +2369,7 @@ step << Warrior
 step << Warrior
     .goto 1457/1,2316.49,9924.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Ariyell Skyshadow|r
-	>>|cRXP_BUY_Achetez et équipez un|r [Coutelas] |cRXP_BUY_si vous ne pouvez pas acheter un|r [Bâton]
+	>>|cRXP_BUY_Achetez et équipez un|r |T135346:0|t[Sabre d’abordage] |cRXP_BUY_si vous ne pouvez pas vous offrir un|r |T135154:0|t[Bâton de combat]
 	.collect 851,1
     .target Ariyell Skyshadow
     .money <0.2023

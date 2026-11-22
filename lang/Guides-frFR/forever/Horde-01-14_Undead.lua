@@ -24,7 +24,7 @@ step
     #completewith next
     .goto 1420/0,1675.90,1645.00,8,0
     .goto 1420/0,1665.51,1645.00,8,0
-    .goto 1420/0,1667.77,1679.04,10 >> Sortez de la crypte vers |cRXP_FRIENDLY_Mordo|r
+    .goto 1420/0,1667.77,1679.04,10 >> Sortez de la crypte vers  |cRXP_FRIENDLY_Mordo|r
 step
     .goto 1420/0,1667.77,1679.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Mordo|r
@@ -784,7 +784,7 @@ step
     .goto 1411/1,-4715.200,140.100
     >>|cRXP_WARN_Tapez /assis près du feu de camp et attendez une minute jusqu'à ce que vous obteniez le buff "Avantages du camp"|r
     .complete 96607,1 --|1/1 Use the /sit emote near the campfire
-    .macro Sit,134400 >>Asseyez-vous 
+    .macro Sit,134400 >>Asseyez-vous
     .timer 59, RP
     .complete 96607,2 --|Gain the Boosted Rest buff
 step
@@ -991,9 +991,9 @@ step << Priest/Warlock
 step
     .goto 1420/0,244.81,2269.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Innkeeper Renee|r
-    .vendor >>|cRXP_BUY_Achetez autant|r |T132815:0|t[Lait glacé] |cRXP_BUY_d'elle que vous pouvez|r << Mage/Priest/Paladin
-    .vendor >>|cRXP_BUY_Achetez autant|r |T134532:0|t[rouge(s)-speckled Mushrooms] |cRXP_BUY_d'elle que vous pouvez|r << Warrior/Rogue
-    .vendor >>|cRXP_BUY_Achetez autant|r |T132815:0|t[Lait glacé] |cRXP_BUY_et|r |T134532:0|t[rouge(s)-speckled Mushrooms] |cRXP_BUY_d'elle que vous pouvez|r << Warlock
+    .vendor >>|cRXP_BUY_Achetez autant de|r |T132815:0|t[Lait glacé] |cRXP_BUY_ auprès d'elle que vous le pouvez|r << Mage/Priest/Paladin
+    .vendor >>|cRXP_BUY_Achetez autant de|r |T134532:0|t[Champignons à pois rouges] |cRXP_BUY_auprès d'elle que vous le pouvez|r << Warrior/Rogue
+    .vendor >>|cRXP_BUY_Achetez autant de|r |T132815:0|t[Lait glacé] |cRXP_BUY_et de|r |T134532:0|t[Champignons à pois rouges] |cRXP_BUY_que vous le pouvez auprès d'elle|r << Warlock
     .money <0.0125
     .target Innkeeper Renee
 step
@@ -1301,8 +1301,8 @@ step << Warlock
 step << Mage/Priest/Warlock
     .goto 1420/0,244.81,2269.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Innkeeper Renee|r
-    .vendor >>|cRXP_BUY_Achetez autant|r |T132815:0|t[Lait glacé] |cRXP_BUY_d'elle que vous pouvez|r << Mage/Priest
-    .vendor >>|cRXP_BUY_Achetez autant|r |T132815:0|t[Lait glacé] |cRXP_BUY_et|r |T134532:0|t[rouge(s)-speckled Mushrooms] |cRXP_BUY_d'elle que vous pouvez|r << Warlock
+    .vendor >>|cRXP_BUY_Achetez autant de|r |T132815:0|t[Lait glacé] |cRXP_BUY_ auprès d'elle que vous le pouvez|r << Mage/Priest
+    .vendor >>|cRXP_BUY_Achetez autant de|r |T132815:0|t[Lait glacé] |cRXP_BUY_et de|r |T134532:0|t[Champignons à pois rouges] |cRXP_BUY_que vous le pouvez auprès d'elle|r << Warlock
     .money <0.0125
     .target Innkeeper Renee
 step
@@ -3454,7 +3454,7 @@ step << !Mage !Priest
 step
     .goto 1421/0,1602.84,549.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Edwin|r
-    >>|cRXP_BUY_Achetez du|r [Lait frais] |cRXP_BUY_à Heron|r << Mage/Warlock/Priest/Shaman/Druid
+    >>|cRXP_BUY_Achetez du|r [Lait frais] |cRXP_BUY_à Grosk|r << Mage/Warlock/Priest/Shaman/Druid
     .vendor >> |cRXP_BUY_Achetez-lui des|r |T134830:0|t[Potions de soins inférieure] |cRXP_BUY_si elles sont disponibles|r
     >>|cRXP_WARN_Ne vendez PAS vos|r |T133884:0|t[|cRXP_LOOT_Yeux de murloc|r]
     .collect 1179,20,421,1 << Mage/Warlock/Priest/Shaman/Druid --Ice Cold Milk (20)
@@ -3489,7 +3489,7 @@ step
     .target High Executor Hadrec
 step << Mage/Priest/Warlock
     .goto 1421/0,1626.100,511.500
-    >>Ramassez le |cRXP_PICK_Glowing Livre|r sur le sol
+    >>Ramassez le |cRXP_PICK_Livre Scintillant|r au sol
     .collect 210177,1,79096,1 --Ataeric: On Arcane Curiosities
     --Other classes won't be nearby turnin in UC, probably not worth since it's only 160xp
 step
@@ -3703,7 +3703,7 @@ step << !Mage !Priest
 step
     .goto 1421/0,1602.84,549.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Edwin|r
-    >>|cRXP_BUY_Achetez du|r [Lait frais] |cRXP_BUY_à Heron|r << Warlock/Priest/Shaman/Druid
+    >>|cRXP_BUY_Achetez du|r [Lait frais] |cRXP_BUY_à Grosk|r << Warlock/Priest/Shaman/Druid
     .vendor >> |cRXP_BUY_Achetez-lui des|r |T134830:0|t[Potions de soins inférieure] |cRXP_BUY_si elles sont disponibles|r
     .collect 1179,20,423,1 << Warlock/Priest/Shaman/Druid --Ice Cold Milk (20)
     .target Edwin Harly
@@ -3895,7 +3895,7 @@ step
     .target Shadow Priest Allister
 step
     .goto 1421/0,1579.600,461.700
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tabitha Heartweaver::250686|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tabitha Tissecœur::250686|r
     .accept 92401 >>Acceptez la quête Une requête apeurée
     .target Tabitha Heartweaver::250686
     .xp <15,1
@@ -3924,7 +3924,7 @@ step << Rogue
     #ssf
     .goto 1458/0,286.53,1616.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParler à |cRXP_FRIENDLY_Louis Warren|r dans le Quartier des Marchands
-    >>|cRXP_BUY_Achetez une|r [Cimeterre] |cRXP_BUY_au marchand|r
+    >>|cRXP_BUY_Achetez une|r [Cimeterre] |cRXP_BUY_à Louis|r
     .collect 2027,1 --Collect Scimitar (1)
     .money <0.3815
     .itemStat 16,QUALITY,<7
@@ -3934,7 +3934,7 @@ step << Rogue
     #ah
     .goto 1458/0,286.53,1616.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParler à |cRXP_FRIENDLY_Louis Warren|r dans le Quartier des Marchands
-    >>|cRXP_BUY_Achetez une|r [Cimeterre] |cRXP_BUY_au marchand|r
+    >>|cRXP_BUY_Achetez une|r [Cimeterre] |cRXP_BUY_à Louis|r
     >>Sinon, vous pouvez regarder à l'Hôtel des Ventes si vous trouvez une alternative meilleure ou moins onéreuse
     .collect 2027,1 --Collect Scimitar (1)
     .money <0.3815
@@ -4038,7 +4038,7 @@ step
     .goto 1458/0,371.68,1370.64,15,0--c:1458,52.275,79.254
     .goto 1458/0,381.23,1366.35,15,0--c:1458,51.279,79.923
     .goto 1458/0,396.45,1372.88,15,0--c:1458,49.693,78.903
-    .goto 1458/0,413.16,1390.37,15 >>Rendez-vous à l'Apothecarium--c:1458,47.951,76.171
+    .goto 1458/0,413.16,1390.37,15 >>Dirigez-vous vers l'Apothicarium--c:1458,47.951,76.171
 step
     .goto 1458/0,426.100,1403.600
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Docteur Martin Felben|r

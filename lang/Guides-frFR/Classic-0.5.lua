@@ -2,6 +2,7 @@ if GetLocale() ~= "frFR" then return end
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
+#forever
 #group RestedXP Guides Endgame
 #subgroup Guide du Set Cœur-Farouche << Druid
 #subgroup Guide du Set Armure de belluaire << Hunter
@@ -220,6 +221,7 @@ step << Horde
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
+#forever
 #group RestedXP Guides Endgame
 #subgroup Guide du Set Cœur-Farouche << Druid
 #subgroup Guide du Set Armure de belluaire << Hunter
@@ -666,6 +668,7 @@ step << Horde
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
+#forever
 #group RestedXP Guides Endgame
 #subgroup Guide du Set Cœur-Farouche << Druid
 #subgroup Guide du Set Armure de belluaire << Hunter
@@ -1150,6 +1153,7 @@ step << Horde
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
+#forever
 #group RestedXP Guides Endgame
 #subgroup Guide du Set Cœur-Farouche << Druid
 #subgroup Guide du Set Armure de belluaire << Hunter

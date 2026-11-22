@@ -109,7 +109,7 @@ step
 step << Shaman
     .goto 1412/1,-216.18,-2926.26--c:Mulgore,44.07,77.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Marjak|r
-    .vendor >> Objets à vendre au marchand. Vendez votre arme si cela vous donne assez d'argent pour un |T135139:0|t[Bâton court] (1s 02c). Vous reviendrez plus tard si vous n'avez pas encore assez d'argent.
+    .vendor >> Vendez votre camelote. Vendez votre arme si cela vous donne assez d'argent pour un |T135139:0|t[Bâton court] (1 argent 02 cuivre). Vous reviendrez plus tard si vous n'avez pas encore assez d'argent.
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<1.9
     .target Marjak Keenblade
@@ -206,7 +206,7 @@ step
 step
     .goto 1412/1,-247.00,-2899.21--c:Mulgore,44.67,76.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Brave Windfeather|r
-    >>Elle patrouille aux alentours
+    >>Elle patrouille dans les alentours
     .accept 3376 >>Acceptez la quête La fin de Brochaigu !
     .target Brave Windfeather
 step << Warrior
@@ -375,18 +375,18 @@ step
     #optional
     #completewith next
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Brave Windfeather|r
-    >>Elle patrouille aux alentours
+    >>Elle patrouille dans les alentours
     .turnin 3376 >>Rendez la quête La fin de Brochaigu !
     .target Brave Windfeather
 step
     .goto 1412/1,-279.37,-2893.73--c:Mulgore,45.30,76.52
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Kawnie Douce-Brise|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Kawnie Softbreeze|r
     .vendor >> Vendez tout ce dont nous n'avez pas besoin
     .target Kawnie Softbreeze
 step
     .goto 1412/1,-247.00,-2899.21--c:Mulgore,44.67,76.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Brave Windfeather|r
-    >>Elle patrouille aux alentours
+    >>Elle patrouille dans les alentours
     .turnin 3376 >>Rendez la quête La fin de Brochaigu !
     .target Brave Windfeather
 step << Shaman
@@ -406,7 +406,7 @@ step
 step << Shaman
     #completewith CallofEarth
     #label Rock
-    .goto 1412/1,-712.98,-3018.05,30 >> Voyagez vers le rocher--c:Mulgore,53.74,80.15
+    .goto 1412/1,-712.98,-3018.05,30 >> Parlez vers le rocher--c:Mulgore,53.74,80.15
 step << Shaman
     #completewith next
     #requires Rock
@@ -506,7 +506,7 @@ step
     .goto 1412/1,-363.000,-2490.700
     >>|cRXP_WARN_Tapez /assis près du feu de camp et attendez une minute jusqu'à ce que vous obteniez le buff "Avantages du camp"|r
     .complete 96605,1 --|1/1 Use the /sit emote near the campfire
-    .macro Sit,134400 >>Asseyez-vous 
+    .macro Sit,134400 >>Asseyez-vous
     .timer 59, RP
     .complete 96605,2 --|Gain the Boosted Rest buff
 step
@@ -543,7 +543,7 @@ step
 step << Shaman/Druid
     .goto 1412/1,-297.87,-2279.97--c:Mulgore,45.66,58.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Mahnott|r
-    .vendor >> Vendez votre surplus. Vendez votre arme si elle vous donne assez d'argent pour un [Bâton de marche] (5s 04c). Vous reviendrez plus rien si vous n'avez pas encore assez d'argent
+    .vendor >> Vendez votre surplus. Vendez votre arme si elle vous donne assez d'argent pour un [Bâton de marche] (5s 04c). Vous reviendrez plus tard si vous n'avez pas encore assez d'argent
     .target Mahnott Roughwound
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.2
@@ -707,7 +707,7 @@ step
     .goto 1412/1,-363.000,-2490.700
     >>|cRXP_WARN_Tapez /assis près du feu de camp et attendez une minute jusqu'à ce que vous obteniez le buff "Avantages du camp"|r
     .complete 96605,1 --|1/1 Use the /sit emote near the campfire
-    .macro Sit,134400 >>Asseyez-vous 
+    .macro Sit,134400 >>Asseyez-vous
     .timer 59, RP
     .complete 96605,2 --|Gain the Boosted Rest buff
 step
@@ -862,7 +862,7 @@ step << Warrior
 step << Shaman/Druid
     .goto 1412/1,-297.87,-2279.97--c:Mulgore,45.66,58.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Mahnott|r
-    .vendor >> Vendez votre surplus. Vendez votre arme si elle vous donne assez d'argent pour un [Bâton de marche] (5s 04c). Vous reviendrez plus rien si vous n'avez pas encore assez d'argent
+    .vendor >> Vendez votre surplus. Vendez votre arme si elle vous donne assez d'argent pour un [Bâton de marche] (5s 04c). Vous reviendrez plus tard si vous n'avez pas encore assez d'argent
     .target Mahnott Roughwound
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.2
@@ -936,7 +936,7 @@ step
     #label Vision
     .goto 1412/1,-405.75,-2243.32--c:Mulgore,47.76,57.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Zarlman|r
-    >>Ne suivez pas le loup qui va apparaître
+    >>Ne suivez pas le loup qui vient d'apparaître
     .turnin 771 >>Rendez la quête Le Rite de vision
     .accept 772 >>Acceptez la quête Le Rite de vision
     .target Zarlman Two-Moons
@@ -1148,7 +1148,7 @@ step
 step << Shaman/Druid
     .goto 1412/1,-297.87,-2279.97--c:Mulgore,45.66,58.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Mahnott|r
-    .vendor >> Vendez votre surplus. Vendez votre arme si elle vous donne assez d'argent pour un [Bâton de marche] (5s 04c). Vous reviendrez plus rien si vous n'avez pas encore assez d'argent
+    .vendor >> Vendez votre surplus. Vendez votre arme si elle vous donne assez d'argent pour un [Bâton de marche] (5s 04c). Vous reviendrez plus tard si vous n'avez pas encore assez d'argent
     .target Mahnott Roughwound
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.2
@@ -1227,7 +1227,7 @@ step
     .goto 1412/1,-285.000,-2263.400
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Pyall|r
     .train 2550 >>Apprenez la Cuisine
-    .turnin 96661 >>Rendre la quête Campement 101: Cuisine
+    .turnin 96661 >>Rendez la quête Introduction au camping : la cuisine
     .target Pyall Silentstride
 step
     .goto 1412/1,-392.500,-2318.500
@@ -1287,7 +1287,7 @@ step
     #label KyleFed2
     .goto 1412/1,-347.70,-2364.91--c:Mulgore,46.63,61.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Innkeeper Kauth|r
-    >>|cRXP_BUY_Achetez du|r [Lait frais] |cRXP_BUY_à Heron|r << Shaman/Druid
+    >>|cRXP_BUY_Achetez du|r [Lait frais] |cRXP_BUY_à Grosk|r << Shaman/Druid
     >>|cRXP_BUY_Achetez des|r [Pain sorti du four] |cRXP_BUY_à Kauth|r << Warrior
     .vendor >> Vendez tout ce dont nous n'avez pas besoin << !Hunter
     .collect 1179,10,746,1 << Shaman/Druid --Ice Cold Milk (10)
@@ -1684,7 +1684,7 @@ step
 step << Hunter
     .goto 1412/1,-289.65,-2275.51--c:Mulgore,45.50,58.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Parlez à|r |cRXP_FRIENDLY_Kennah|r
-    >>|cRXP_BUY_Achetez des|r [Balle lourde] |cRXP_BUY_à Barg|r << Hunter
+    >>|cRXP_BUY_Achetez des|r [Balle lourde] |cRXP_BUY_à Kennah|r << Hunter
     .collect 2519,1000,6061,1 << Hunter --Heavy Shot (1000)
     .target Kennah Hawkseye
 step

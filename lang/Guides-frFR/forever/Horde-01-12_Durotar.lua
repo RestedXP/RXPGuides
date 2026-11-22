@@ -286,7 +286,7 @@ step
     .accept 3084 >>Acceptez la quête Tablette runique << Troll Shaman
     .accept 3085 >>Acceptez la quête Tablette bénie << Troll Priest
     .accept 3086 >>Acceptez la quête Tablette glyphée << Troll Mage
-    .accept 98575 >>Acceptez la quête Corrupted Tablette << Troll Warlock
+    .accept 98575 >>Acceptez la quête Tablette corrompue << Troll Warlock
     .accept 3087 >>Acceptez la quête Parchemin gravé << Orc Hunter
     .accept 3088 >>Acceptez la quête Parchemin codé << Orc Rogue
     .accept 3089 >>Acceptez la quête Parchemin runique << Orc Shaman
@@ -360,7 +360,7 @@ step << Warlock
     .goto 1411/1,-4111.87,-607.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Nartok|r
     .turnin 3090 >>Rendez la quête Parchemin contaminé << Orc Warlock
-    .turnin 98575 >>Rendez la quête Corrupted Tablette << Troll Warlock
+    .turnin 98575 >>Rendez la quête Tablette corrompue << Troll Warlock
     .train 172 >> Apprenez [Corruption]
     .target Nartok
 step
@@ -428,7 +428,7 @@ step
     .goto 1411/1,-4340.82,-628.50,20,0
     .goto 1411/1,-4375.71,-507.590,45,0
     .goto 1411/1,-4467.19,-506.53,45,0
-    >>Utilisez la [Matraque du contremaître] sur les |cRXP_FRIENDLY_Lazy Peons|r qui dorment
+    >>Utilisez la [Masse de contremaître] sur les |cRXP_FRIENDLY_Lazy Peons qui dorment|r
     .complete 5441,1 --Peons Awoken (5)
     .target Lazy Peon
     .use 16114
@@ -526,7 +526,7 @@ step
 	.goto 1411/1,-4144.65,-269.65,25,0
 	.goto 1411/1,-4125.62,-321.12,25,0
 	.goto 1411/1,-4015.64,-371.53,25,0
-    >>Utilisez la [Matraque du contremaître] sur les |cRXP_FRIENDLY_Lazy Peons|r qui dorment
+    >>Utilisez la [Masse de contremaître] sur les |cRXP_FRIENDLY_Lazy Peons qui dorment|r
     .complete 5441,1 --Peons Awoken (5)
     .target Lazy Peon
     .use 16114
@@ -854,7 +854,7 @@ step
     #completewith RazorHill1
     .goto 1411/1,-4326.01,-41.23
     .deathskip >>Mourez et ressuscitez au |cRXP_FRIENDLY_Gardien des âmes|r
-    >>|cRXP_WARN_Assurez-vous d'être sur la flèche quand vous mourez!|r
+    >>|cRXP_WARN_Assurez-vous d'être à l'emplacement qu'indique la flèche lorsque vous mourez !|r
     .target Gardien des âmes
 step
     #softcore
@@ -1134,7 +1134,7 @@ step
     .target Xar'Ti
 step
     #label SenjinPickups
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Vel'rin|r, |cRXP_FRIENDLY_Vornal|r et à |cRXP_FRIENDLY_Gadrin|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Vel'rin|r, |cRXP_FRIENDLY_Vornal|r et |cRXP_FRIENDLY_Gadrin|r
     .accept 817 >>Acceptez la quête Proie nécessaire
     .accept 96821 >>Acceptez la quête Toutes pattes dehors
     .target +Vel'rin Fang
@@ -1620,7 +1620,7 @@ step
     .goto 1411/1,-4715.200,140.100
     >>|cRXP_WARN_Tapez /assis près du feu de camp et attendez une minute jusqu'à ce que vous obteniez le buff "Avantages du camp"|r
     .complete 96604,1 --|1/1 Use the /sit emote near the campfire
-    .macro Sit,134400 >>Asseyez-vous 
+    .macro Sit,134400 >>Asseyez-vous
     .timer 59, RP
     .complete 96604,2 --|Gain the Boosted Rest buff
 step
@@ -1754,7 +1754,7 @@ step --south/west of keep
     .goto 1411/1,-4992.700,-234.400,25,0
     .goto 1411/1,-5101.700,-178.500,25,0
     >>Ramassez l' |cRXP_PICK_Arc d’écumeur|r au sol
-    >>|cRXP_WARN_Il y a deux emplacements d'apparition différents|r
+    >>|cRXP_WARN_Il peut apparaître à deux emplacements différents|r
     .complete 96822,1 --|1/1 Raider's Bow
 step --center in keep
     .goto 1411/1,-4994.900,-182.300
@@ -1799,7 +1799,7 @@ step --south/west of keep
     .goto 1411/1,-5101.700,-178.500,25,0
     .goto 1411/1,-4992.700,-234.400,25,0
     >>Ramassez l' |cRXP_PICK_Arc d’écumeur|r au sol
-    >>|cRXP_WARN_Il y a deux emplacements d'apparition différents|r
+    >>|cRXP_WARN_Il peut apparaître à deux emplacements différents|r
     .complete 96822,1 --|1/1 Raider's Bow
 step  --northern tower
     #label AgedEnvelope
@@ -1926,7 +1926,7 @@ step
     .goto 1411/1,-4715.200,140.100
     >>|cRXP_WARN_Tapez /assis près du feu de camp et attendez une minute jusqu'à ce que vous obteniez le buff "Avantages du camp"|r
     .complete 96604,1 --|1/1 Use the /sit emote near the campfire
-    .macro Sit,134400 >>Asseyez-vous 
+    .macro Sit,134400 >>Asseyez-vous
     .timer 59, RP
     .complete 96604,2 --|Gain the Boosted Rest buff
 step
@@ -2047,7 +2047,7 @@ step << Rogue
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
 step << Rogue
     .goto 1411/1,-4713.06,382.12
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Parlez à|r |cRXP_FRIENDLY_Uhgar|r|cRXP_BUY_. Achetez un|r [Stylet] |cRXP_BUY_à Uhgar|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Uhgar|r|cRXP_BUY_. Achetez un|r [Stylet] |cRXP_BUY_à Uhgar|r
     .collect 2494,1,825,1 --Collect Stiletto (1)
     .money <0.0381
     .itemStat 16,QUALITY,<7
@@ -2157,7 +2157,7 @@ step
 step
     .goto 1411/1,-4686.09,340.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Innkeeper Grosk|r
-    >>|cRXP_BUY_Achetez du|r [Lait frais] |cRXP_BUY_à Heron|r << Mage/Warlock/Priest/Shaman/Druid
+    >>|cRXP_BUY_Achetez du|r [Lait frais] |cRXP_BUY_à Grosk|r << Mage/Warlock/Priest/Shaman/Druid
     >>|cRXP_BUY_Achetez des|r [Cuissot] |cRXP_BUY_à Hai'zan|r << Rogue/Warrior
     >>Gardez 4 pièces d'argent pour vos sorts de classe ! << Rogue/Warrior/Shaman/Warlock
     >>Gardez 2 pièces d'argent pour vos sorts de classe ! << Priest
@@ -2173,7 +2173,7 @@ step << !Mage !Hunter !Druid
     #optional
     .goto 1411/1,-4686.09,340.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Innkeeper Grosk|r
-    >>|cRXP_BUY_Achetez du|r [Lait frais] |cRXP_BUY_à Heron|r << Mage/Warlock/Priest/Shaman/Druid
+    >>|cRXP_BUY_Achetez du|r [Lait frais] |cRXP_BUY_à Grosk|r << Mage/Warlock/Priest/Shaman/Druid
     >>|cRXP_BUY_Achetez des|r [Cuissot] |cRXP_BUY_à Hai'zan|r << Rogue/Warrior
     .vendor >> Vendez tout ce dont nous n'avez pas besoin
     .turnin 2161 >>Rendez la quête Un Fardeau de Péon
@@ -2366,7 +2366,7 @@ step
     #completewith next
     >>Tuez |cRXP_ENEMY_Zalazane|r. Dépouillez-le pour sa |cRXP_LOOT_Tête|r
     >>Gardez votre [Horion de terre] pour quand il lance [Vague de soins] << Shaman
-    >>Gardez votre [Suriner] pour quand il lance [Vague de soins] << Rogue
+    >>Gardez votre [Suriner] pour lorsqu'il lance [Vague de soins] << Rogue
     .complete 826,3 --Zalazane's Head (1)
     .mob Zalazane
 step
@@ -2379,7 +2379,7 @@ step
     .goto 1411/1,-5526.27,-1286.62
     >>Tuez |cRXP_ENEMY_Zalazane|r. Dépouillez-le pour sa |cRXP_LOOT_Tête|r
     >>Gardez votre [Horion de terre] pour quand il lance [Vague de soins] << Shaman
-    >>Gardez votre [Suriner] pour quand il lance [Vague de soins] << Rogue
+    >>Gardez votre [Suriner] pour lorsqu'il lance [Vague de soins] << Rogue
     .complete 826,3 --Zalazane's Head (1)
     .mob Zalazane
 step
@@ -3117,7 +3117,7 @@ step
     .goto 1411/1,-4686.09,340.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Innkeeper Grosk|r
     .vendor >> Vendez tout ce dont nous n'avez pas besoin
-    >>|cRXP_BUY_Achetez du|r [Lait frais] |cRXP_BUY_à Heron|r << Mage/Warlock/Priest/Shaman
+    >>|cRXP_BUY_Achetez du|r [Lait frais] |cRXP_BUY_à Grosk|r << Mage/Warlock/Priest/Shaman
     >>|cRXP_BUY_Achetez des|r [Cuissot] |cRXP_BUY_à Hai'zan|r << Rogue/Warrior
     .collect 1179,15,828,1 << Mage/Warlock/Priest/Shaman --Ice Cold Milk (15)
     .collect 2287,15,828,1 << Rogue/Warrior --Haunch of Meat (15)
@@ -3776,7 +3776,7 @@ step << !Shaman !Hunter
     #label Gazzuz
     .goto 1411/1,-4701.42,1455.83
     >>Tuez |cRXP_ENEMY_Gazz'uz|r. Dépouillez-le pour son [|cRXP_LOOT_Eye of Burning Shadow|r]
-    >>|cRXP_WARN_Soyez prudents car il est TRÈS difficile. N'hésitez pas à sauter cette quête si vous ne pouvez pas former un groupe ou le vaincre en solo|r
+    >>|cRXP_WARN_Faites attention comme il est TRÈS difficile. N'hésitez pas à passer cette quête si vous n'arrivez pas à trouver des joueurs pour vous aider ou à le faire seul|r
     >>|cRXP_WARN_Utilisez le [|cRXP_LOOT_Eye of Burning Shadow|r] pour commencer la quête|r
     >>|cRXP_WARN_Cachez-vous (LoS) pour éviter les Traits de l'ombre de |cRXP_ENEMY_Gazz'uz|r|r
     >>Vous pouvez aller dans les points d'eau dans la grotte pour vous échapper (evade) des |cRXP_ENEMY_Voidwalker|r après avoir tué |cRXP_ENEMY_Gazz'uz|r
@@ -3870,7 +3870,7 @@ step << Warrior
     .isQuestAvailable 1498
 step << Warrior
     .goto 1420/0,360.04,2376.14
-    >>Cliquez sur le Déclencheur du mausolée sur le sol. Cela va invoquer |cRXP_ENEMY_Ulag.|r. Tuez-le
+    >>|cRXP_WARN_Cliquez sur le|r |cRXP_WARN_Déclencheur du mausolée|r |cRXP_WARN_au sol. Cela va invoquer|r |cRXP_ENEMY_Ulag.|r |cRXP_WARN_Tuez-le|r
     .complete 1819,1 --Ulag the Cleaver (1)
     .mob Ulag the Cleaver
     .isQuestAvailable 1498

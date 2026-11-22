@@ -2,6 +2,7 @@ if GetLocale() ~= "frFR" then return end
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
+#forever
 
 << Alliance
 #group RestedXP Guides Endgame
@@ -345,6 +346,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #group RestedXP Guides Endgame
 #subgroup Accès
+#forever
 #name Accès au Repaire d'Onyxia (H)
 #guideKind attunement
 #guideIcon rxp-icon-ony
@@ -883,6 +885,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
+#forever
 
 #group RestedXP Guides Endgame
 #subgroup Clés
@@ -974,6 +977,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
+#forever
 
 << Alliance
 #group RestedXP Guides Endgame
@@ -1233,6 +1237,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
+#forever
 
 << Horde
 #group RestedXP Guides Endgame
@@ -1331,8 +1336,8 @@ step
     .isQuestTurnedIn 5095
 step
     .goto Western Plaguelands,40.5,51.8
-    .use 12807 >>Cliquez sur la|cRXP_PICK_Command Tent|r, puis utilisez votre |T132484:0|t[Scourge Banner]
-	>>|cRXP_WARN_Ces créatures sont assez difficiles à tuer et peuvent chain-pull, faites attention|r
+    .use 12807 >>Cliquez sur la|cRXP_PICK_Command Tent|r, puis utilisez votre [Bannière du Fléau]
+	>>Ces créatures sont assez difficiles à tuer et peuvent chain-pull, faites attention
     .complete 5096,1 --Destroy the command tent and plant the Scourge banner in the camp (1)
 step
     .goto Tirisfal Glades,83.15,68.92
@@ -1491,6 +1496,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
+#forever
 
 #group RestedXP Guides Endgame
 #subgroup Clés
@@ -1555,6 +1561,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
+#forever
 
 #group RestedXP Guides Endgame
 #subgroup Clés

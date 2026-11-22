@@ -7134,7 +7134,7 @@ step
     #requires Bank1
     .goto Stormwind City,39.69,79.56
     >>Parlez à |cRXP_FRIENDLY_Larimaine Purdue|r
-    .train 3561 >> Apprenez [Téléportation : Hurlevent]
+    .train 3561 >> Apprenez [Téléportation : Stormwind]
     >>Coût total : 20 pièces d'argent
     .target Larimaine Purdue
 step
