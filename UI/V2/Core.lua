@@ -3646,6 +3646,7 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
             this.elementRows = this.elementRows or {}
             this.activeElementRows = 0
             this.noAutoHeight = false
+            this:UpdateSubTheme()
         end,
 
         ["OnRelease"] = function(this)
@@ -3811,9 +3812,7 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
 
         ["UpdateTheme"] = updateTheme,
 
-        ["UpdateSubTheme"] = function(this, payload)
-            if not payload then return end
-
+        ["UpdateSubTheme"] = function(this)
             local theme = addon.v2:GetTheme()
 
             addon.ui.v2:ApplyFrameBackdrop(this.card, theme.edge, theme.backgroundColors.common,
@@ -3851,21 +3850,18 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
         local card = CreateFrame("Frame", nil, frame, BackdropTemplateMixin and "BackdropTemplate")
         card:SetPoint("TOPLEFT", frame, "TOPLEFT", 0, 0)
         card:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", 0, 8)
-        addon.ui.v2:ApplyFrameBackdrop(card, theme.edge, theme.backgroundColors.common, theme.borderColors.commonEdge)
         addon.ui.v2:AddFrameShadow(card)
 
         local title = CreateFrame("Frame", nil, card, BackdropTemplateMixin and "BackdropTemplate")
         title:SetFrameLevel(card:GetFrameLevel() + 2)
         title:SetPoint("TOPLEFT", card, "TOPLEFT", 6, 9)
         title:ClearBackdrop()
-        addon.ui.v2:ApplyFrameBackdrop(title, theme.edge, theme.backgroundColors.common, theme.borderColors.commonEdge)
 
         local titletext = title:CreateFontString(nil, "OVERLAY")
         titletext:ClearAllPoints()
         titletext:SetPoint("CENTER", title, 0, 0)
         titletext:SetJustifyH("CENTER")
         titletext:SetJustifyV("MIDDLE")
-        titletext:SetTextColor(unpack(theme.textColor.title))
         titletext:SetFont(theme.font, addon.v2:GetGuideFontSize() - 1, "")
 
         -- Container Support
