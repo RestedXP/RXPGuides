@@ -1020,7 +1020,7 @@ local function IsDeathSkip()
     end
 end
 
-local function updateArrowData()
+function addon.UpdateArrowData()
     local lowPrioWPs
     local loop = {}
     local isDeathSkip = IsDeathSkip()
@@ -1153,7 +1153,7 @@ function addon.ResetArrowPosition()
     end
     af:ClearAllPoints()
     af:SetPoint("CENTER", 0, 200)
-    updateArrowData()
+    addon.UpdateArrowData()
 end
 
 -- Removes all pins from the map and mini map and resets all data structrures
@@ -1180,7 +1180,7 @@ function addon.UpdateMap(resetPins)
         addWorldMapLines()
         addWorldMapPins()
         addMiniMapPins()
-        updateArrowData()
+        addon.UpdateArrowData()
         addon.DisplayLines(true)
     else
         addon.updateMap = true
@@ -1469,7 +1469,7 @@ function addon.UpdateGotoSteps()
 
     end
 
-    if forceArrowUpdate then updateArrowData() end
+    if forceArrowUpdate then addon.UpdateArrowData() end
 end
 
 local function GetMapCoefficients(p1x,p1y,p1xb,p1yb,p2x,p2y,p2xb,p2yb)
