@@ -217,13 +217,10 @@ function addon:CreateActiveItemFrame()
 
     local function onMouseDown()
         if addon.settings.profile.lockFrames and not IsAltKeyDown() then return end
-        if InCombatLockdown() and window.frame:IsProtected() then return end
         window:StartMoving()
     end
     local function onMouseUp()
-        if InCombatLockdown() and window.frame:IsProtected() then return end
-        window:StopMovingOrSizing()
-        addon.settings:SaveFramePositions()
+        if window:StopMovingOrSizing() then addon.settings:SaveFramePositions() end
     end
     window.frame:SetScript("OnMouseDown", onMouseDown)
     window.frame:SetScript("OnMouseUp", onMouseUp)

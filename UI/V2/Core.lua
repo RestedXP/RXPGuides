@@ -273,9 +273,20 @@ function addon.ui.v2:RegisterRXPV2MiniFrame()
         ["GetHeight"] = function(this) return this.frame:GetHeight() end,
         ["GetAlpha"] = function(this) return this.frame:GetAlpha() end,
         ["SetAlpha"] = function(this, alpha) this.frame:SetAlpha(alpha) end,
-        ["StartMoving"] = function(this) this.frame:StartMoving() end,
-        ["StartSizing"] = function(this, point) this.frame:StartSizing(point) end,
-        ["StopMovingOrSizing"] = function(this) this.frame:StopMovingOrSizing() end,
+        ["StartMoving"] = function(this)
+            if InCombatLockdown() and this.frame:IsProtected() then return end
+            this.frame:StartMoving()
+        end,
+        ["StartSizing"] = function(this, point)
+            if InCombatLockdown() and this.frame:IsProtected() then return end
+            this.frame:StartSizing(point)
+            return true
+        end,
+        ["StopMovingOrSizing"] = function(this)
+            if InCombatLockdown() and this.frame:IsProtected() then return end
+            this.frame:StopMovingOrSizing()
+            return true
+        end,
         ["SetResizeBounds"] = function(this, width, height) addon.SetResizeBounds(this.frame, width, height) end,
         ["Hide"] = function(this) this.frame:Hide() end,
         ["Show"] = function(this) this.frame:Show() end,

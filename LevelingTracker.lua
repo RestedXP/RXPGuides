@@ -992,8 +992,7 @@ function addon.tracker.splits:StartMoving()
 end
 
 function addon.tracker.splits:StopMoving()
-    self.window:StopMovingOrSizing()
-    addon.settings:SaveFramePositions()
+    if self.window:StopMovingOrSizing() then addon.settings:SaveFramePositions() end
 end
 
 function addon.tracker.splits:Create()
@@ -1043,10 +1042,10 @@ function addon.tracker.splits:Create()
     sizer:SetHighlightTexture("Interface/CHATFRAME/UI-ChatIM-SizeGrabber-Highlight", "ADD")
     sizer:SetScript("OnMouseDown", function()
         if addon.settings.profile.lockFrames and not IsAltKeyDown() then return end
+        if not layout:StartSizing("BOTTOMRIGHT") then return end
         self.userResizing = true
         layout:SetAutoAdjustHeight(false)
         self:ResizeHistory()
-        layout:StartSizing("BOTTOMRIGHT")
     end)
     sizer:SetScript("OnMouseUp", function() self:StopMoving() end)
 
