@@ -14,6 +14,19 @@ judge the idea and reimplement it your own way if you prefer.
 
 <img src="img/showcase.jpg" alt="The two modules, exploded into their layers" width="100%">
 
+## What players are asking
+
+These features started from questions that come up regularly in the RestedXP Discord. A few recent ones, quoted
+without names:
+
+| Player question | What helps in this branch |
+|---|---|
+| *"Anyone else run into these all the time where the guide tells you to do something, and you can't?"* (a step asking to accept a quest whose chain was skipped) | **Quest Prerequisites** spots these steps ahead of time, shows the missing chain and builds a routed guide to unlock it, then brings you back to your exact step. |
+| *"I started the guide for Tanaris, and I have to go to Thousand Needles and I don't have the quests. Does the guide bug out sometimes?"* | Steps for quests that are not in your log are listed too ("not in your quest log"), with what to do to get them, before you travel there. |
+| *"When I get to level 22, can I just skip to the level 22 guide, or do I have to finish the 17-22 first?"* | The window shows, for the current guide, which quests your **next** guides will need ("for &lt;guide&gt;"), with XP and distance, so you can judge what is worth doing and what you can skip. |
+| *"Is there a way I can put my shaman and my warrior on the same guide? The warrior needs to go to Tirisfal and my shaman is going to the Barrens."* | **Group mode** maps each friend's current step into your own guide (by step, with a fallback for class-specific steps), so you see where you overlap and who is ahead or behind. |
+| *"How can I get my guide to match my friend's so every quest is the same? He's a gnome and I'm a night elf."* | Same: the guides stay race-specific as designed, but group mode shows where each friend stands relative to your guide, and the invite and one-click layer change keep the group together. |
+
 ## What players get
 
 All player-facing texts follow the game language (9 locales, `GroupTranslations.lua`). The videos are rendered from
