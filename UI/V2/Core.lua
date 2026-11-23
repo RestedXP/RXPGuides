@@ -357,6 +357,8 @@ function addon.ui.v2:RegisterRXPV2MiniFrame()
         frame:SetScript("OnMouseUp", onMouseUp)
         title:SetScript("OnMouseDown", onMouseDown)
         title:SetScript("OnMouseUp", onMouseUp)
+        title:RegisterEvent("PLAYER_REGEN_DISABLED")
+        title:SetScript("OnEvent", function() widget:StopMovingOrSizing() end)
 
         return AceGUI:RegisterAsContainer(widget)
     end
