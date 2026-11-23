@@ -261,6 +261,7 @@ function addon.ui.v2:RegisterRXPV2MiniFrame()
 
         ["OnRelease"] = function(this)
             this.hideBackgroundSetting = nil
+            this.movingOrSizing = nil
             addon.ui.v2:SetFrameBackdropShown(this.frame, false)
             addon.ui.v2:SetFrameBackdropShown(this.title, false)
         end,
@@ -277,14 +278,18 @@ function addon.ui.v2:RegisterRXPV2MiniFrame()
             if addon.settings.profile.lockFrames and not IsAltKeyDown() then return end
             if InCombatLockdown() and this.frame:IsProtected() then return end
             this.frame:StartMoving()
+            this.movingOrSizing = true
         end,
         ["StartSizing"] = function(this, point)
             if addon.settings.profile.lockFrames and not IsAltKeyDown() then return end
             if InCombatLockdown() and this.frame:IsProtected() then return end
             this.frame:StartSizing(point)
+            this.movingOrSizing = true
             return true
         end,
         ["StopMovingOrSizing"] = function(this)
+            if not this.movingOrSizing then return end
+            this.movingOrSizing = nil
             if InCombatLockdown() and this.frame:IsProtected() then return end
             this.frame:StopMovingOrSizing()
             addon.settings:SaveFramePositions()
