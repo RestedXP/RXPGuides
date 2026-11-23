@@ -12,7 +12,7 @@ line numbers are given for orientation.
 
 ## 1. Problem
 
-> **The problem, as players put it** (RestedXP Discord, names hidden):
+> **The problem, as players put it** (RestedXP Discord):
 >
 > <img src="img/problem-two-classes.png" alt="Two characters of different classes on the same guide" width="700">
 >

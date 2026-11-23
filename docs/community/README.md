@@ -16,8 +16,7 @@ judge the idea and reimplement it your own way if you prefer.
 
 ## What players are asking
 
-These features started from questions that come up regularly in the RestedXP Discord. A few recent ones, quoted
-without names:
+These features started from questions that come up regularly in the RestedXP Discord. A few recent ones:
 
 | Player question | What helps in this branch |
 |---|---|
@@ -34,7 +33,7 @@ pixel-faithful HTML reproductions of the in-game UI; the map is the game's paint
 
 ### Quest Prerequisites
 
-> **The problem, as players put it** (RestedXP Discord, names hidden):
+> **The problem, as players put it** (RestedXP Discord):
 >
 > <img src="img/problem-cant-do-step.png" alt="Guide asks to accept a quest the player cannot take" width="520">
 >
@@ -64,7 +63,7 @@ route exists. Re-plans when you drift off and brings you back to your exact step
 
 ### Group mode and one-click layer search
 
-> **The problem, as players put it** (RestedXP Discord, names hidden):
+> **The problem, as players put it** (RestedXP Discord):
 >
 > <img src="img/problem-two-classes.png" alt="Two characters of different classes on the same guide" width="700">
 >

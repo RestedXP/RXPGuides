@@ -10,7 +10,7 @@ Technical design notes for the RestedXP team. Describes the contributor feature 
 
 ## 1. Problem
 
-> **The problem, as players put it** (RestedXP Discord, names hidden):
+> **The problem, as players put it** (RestedXP Discord):
 >
 > <img src="img/problem-cant-do-step.png" alt="Guide asks to accept a quest the player cannot take" width="520">
 >
