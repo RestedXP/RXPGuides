@@ -9,8 +9,8 @@ RXPGuides.RegisterGuide([[
 #displayname 1-9 Cielonato << Horde
 #group RestedXP Guía Forever (A) << Alliance
 #group RestedXP Guía Forever (H) << Horde
-#subgroup Guía de Speedrun 1-20 << Alliance
-#subgroup Guía de Speedrun 1-22 << Horde
+#subgroup Guía de subida rápida de nivel (Speedrun) 1-20 << Alliance
+#subgroup Guía de subida rápida de nivel (Speedrun) 1-22 << Horde
 #next 9-13 Isla de Zephras
 #defaultfor Skyborne
 
@@ -145,10 +145,10 @@ step << Skyborne
     .target Rorian the Dayseeker::251361
     .accept 92464 >>Acepta la misión Agitación elemental
     .accept 92481 >>Acepta la misión Estudiante de lo arcano << Mage
-    .accept 92483 >>Acepta la misión At Home in the Sombras << Rogue
+    .accept 92483 >>Acepta la misión En las sombras del hogar << Rogue
     .accept 92482 >>Acepta la misión El camino del cazador << Hunter
     .accept 92484 >>Acepta la misión Conexión elemental << Shaman
-    .accept 92532 >>Acepta la misión The Guerrero's Camino << Warrior
+    .accept 92532 >>Acepta la misión El camino del guerrero << Warrior
     .accept 92485 >>Acepta la misión A Student of Nature << Druid
 --Split so players can complete this later if they used Walk on Air early
 step << Skyborne
@@ -3241,8 +3241,8 @@ RXPGuides.RegisterGuide([[
 #displayname 9-12 Cielonato << Horde
 #group RestedXP Guía Forever (A) << Alliance
 #group RestedXP Guía Forever (H) << Horde
-#subgroup Guía de Speedrun 1-20 << Alliance
-#subgroup Guía de Speedrun 1-22 << Horde
+#subgroup Guía de subida rápida de nivel (Speedrun) 1-20 << Alliance
+#subgroup Guía de subida rápida de nivel (Speedrun) 1-22 << Horde
 #next 13-15 Páramos de Poniente << Alliance !Hunter
 #next 14-16 Costa Oscura << Alliance Hunter
 #next 12-14 Bosque de Argénteos << Horde !Hunter

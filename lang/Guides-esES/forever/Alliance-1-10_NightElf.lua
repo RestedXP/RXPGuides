@@ -1422,7 +1422,7 @@ step << Hunter
     #sticky
     #label xp10
     .xp 9+800 >> Mata enemigos hasta tener 800xp en el nivel 9
-    >>|cRXP_WARN_Una vez que llegues a este punto de ruptura de experiencia, omite la misión de harpías/escolta y ve directamente a Darnassus. Tendrás otra oportunidad para completar esas misiones más tarde|r
+    >>|cRXP_WARN_Una vez que llegues a este punto de ruptura de experiencia, omite la misión de arpías/escolta y ve directamente a Darnassus. Tendrás otra oportunidad para completar esas misiones más tarde|r
 step << Hunter
     #completewith xp10
     #requires mist1
