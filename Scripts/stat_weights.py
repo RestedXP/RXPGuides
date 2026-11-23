@@ -17,12 +17,17 @@ config = {
         "glob": "./Scripts/Values leveling - * Cataclysm.csv",
         "path": 'DB/cata/statWeights.lua',
         "classCount": 10
+    },
+    "forever": {
+        "glob": "./Scripts/Values leveling - * Forever.csv",
+        "path": 'DB/forever/StatWeights.lua',
+        "classCount": 8
     }
 }
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('--client', type=str, required=True, choices=['classic', 'tbc', 'cata'] )
+    parser.add_argument('--client', type=str, required=True, choices=config)
     args = parser.parse_args()
 
     config = config[args.client]
