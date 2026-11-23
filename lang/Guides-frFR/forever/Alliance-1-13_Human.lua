@@ -3063,15 +3063,15 @@ step
     #optional << Warlock/Mage/Warrior/Rogue
     .goto 1453/0,613.0,-8796.03
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Woo Ping|r
-    .trainer >>Achetez la compétence pour porter les Épées à une main et les Bâtons << Warlock/Mage
-    .trainer >>Achetez la compétence pour porter des épées à une main << Rogue
+    .trainer >>Achetez la compétence pour porter les Épées à une main et les Bâtons << Warlock
+    .trainer >>Achetez la compétence pour porter des épées à une main << Rogue/Mage
     .trainer >>Apprenez la compétence Bâtons << Priest
     .trainer >>Achetez la compétence pour porter des épées à deux mains << Warrior/Paladin
     .target Woo Ping
     .money <0.2 << Warlock/Mage
     .money <0.3 << Warrior
     .money <0.55 << Rogue
-step << Warlock/Mage
+step << Warlock
     .goto 1453/0,613.0,-8796.03
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Woo Ping|r
     .trainer >>Apprenez la compétence Bâtons

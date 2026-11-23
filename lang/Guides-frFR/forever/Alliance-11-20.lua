@@ -2938,11 +2938,19 @@ step << Priest
     .trainer >> Apprenez vos sorts de classe
     .target Brother Joshua
 step
+    #optional
+    .isOnQuest 97914
     .goto 1453/0,719.67,-8550.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Baros Alexston|r
-    .turnin -97914 >> Rendez la quête Vers de nouveaux horizons
+    .turnin 97914 >> Rendez la quête Vers de nouveaux horizons
     .accept 97926 >> Acceptez la quête Faire avec les moyens du bord
---    .accept 399 >> Accept Humble Beginnings
+    .target Baros Alexston
+step
+    #optional
+    .isQuestTurnedIn 97914
+    .goto 1453/0,719.67,-8550.30
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Baros Alexston|r
+    .accept 97926 >> Acceptez la quête Making Do
     .target Baros Alexston
 step << Rogue/Warrior/Hunter
     .goto 1453/0,613.12,-8795.96
