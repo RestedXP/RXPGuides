@@ -953,21 +953,13 @@ function addon.ui.v2.configurator:RegisterRXPV2GuideConfiguratorOptionPadding()
     local methods = {
         ["OnAcquire"] = function(this)
             this:SetWidth(180)
-            this.fixedHeight = 38
-            this:SetHeight(this.fixedHeight)
+            this:SetHeight(38)
             this.titleLabel = nil
             this.descriptionLabel = nil
         end,
 
-        -- Keep the spacer at its fixed height while separating intro labels.
-        ["LayoutFinished"] = function(this)
-            if not this.titleLabel or not this.descriptionLabel then return end
-
-            local titleFrame = this.titleLabel.frame
-            local descriptionFrame = this.descriptionLabel.frame
-            descriptionFrame:ClearAllPoints()
-            descriptionFrame:SetPoint("TOPLEFT", titleFrame, "BOTTOMLEFT", 0, -7)
-            descriptionFrame:SetPoint("TOPRIGHT", titleFrame, "BOTTOMRIGHT", 0, -7)
+        ["LayoutFinished"] = function(this, _, height)
+            if this.descriptionLabel then this:SetHeight(height + 8) end
         end,
 
         ["OnWidthSet"] = function(this, width)
@@ -976,7 +968,7 @@ function addon.ui.v2.configurator:RegisterRXPV2GuideConfiguratorOptionPadding()
             content.width = width
         end,
 
-        ["OnHeightSet"] = function(this, height) this.content:SetHeight(this.fixedHeight) end,
+        ["OnHeightSet"] = function(this, height) this.content:SetHeight(height) end,
 
         ["UpdateTheme"] = addon.ui.v2.UpdateTheme,
 
@@ -1126,8 +1118,6 @@ function addon.ui.v2.configurator:CreateGuideConfigurator()
         local intro = AceGUI:Create("RXPV2GuideConfiguratorOptionPadding")
         intro:SetLayout("Flow")
         intro:SetFullWidth(true)
-        intro.fixedHeight = 47
-        intro:SetHeight(intro.fixedHeight)
 
         local theme = addon.v2:GetTheme()
         local textColor = theme.textColor.common
