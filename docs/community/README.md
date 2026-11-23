@@ -18,13 +18,25 @@ judge the idea and reimplement it your own way if you prefer.
 
 These features started from questions that come up regularly in the RestedXP Discord. A few recent ones:
 
-| Player question | What helps in this branch |
-|---|---|
-| *"Anyone else run into these all the time where the guide tells you to do something, and you can't?"* (a step asking to accept a quest whose chain was skipped) | **Quest Prerequisites** spots these steps ahead of time, shows the missing chain and builds a routed guide to unlock it, then brings you back to your exact step. |
-| *"I started the guide for Tanaris, and I have to go to Thousand Needles and I don't have the quests. Does the guide bug out sometimes?"* | Steps for quests that are not in your log are listed too ("not in your quest log"), with what to do to get them, before you travel there. |
-| *"When I get to level 22, can I just skip to the level 22 guide, or do I have to finish the 17-22 first?"* | The window shows, for the current guide, which quests your **next** guides will need ("for &lt;guide&gt;"), with XP and distance, so you can judge what is worth doing and what you can skip. |
-| *"Is there a way I can put my shaman and my warrior on the same guide? The warrior needs to go to Tirisfal and my shaman is going to the Barrens."* | **Group mode** maps each friend's current step into your own guide (by step, with a fallback for class-specific steps), so you see where you overlap and who is ahead or behind. |
-| *"How can I get my guide to match my friend's so every quest is the same? He's a gnome and I'm a night elf."* | Same: the guides stay race-specific as designed, but group mode shows where each friend stands relative to your guide, and the invite and one-click layer change keep the group together. |
+<img src="img/problem-cant-do-step.png" alt="The guide asks for a quest the player cannot take" width="520">
+
+&rarr; **Quest Prerequisites** spots these steps ahead of time, shows the missing chain and builds a routed guide to unlock it, then brings you back to your exact step.
+
+<img src="img/problem-missing-quests.png" alt="Sent to a zone for quests the player does not have" width="760">
+
+&rarr; Steps for quests that are not in your log are listed too ("not in your quest log"), with what to do to get them, before you travel there.
+
+<img src="img/problem-skip-guide.png" alt="Can I skip to the next guide?" width="640">
+
+&rarr; The window shows, for the current guide, which quests your **next** guides will need ("for &lt;guide&gt;"), with XP and distance, so you can judge what is worth doing and what you can skip.
+
+<img src="img/problem-two-classes.png" alt="Two characters of different classes on the same guide" width="760">
+
+&rarr; **Group mode** maps each friend's current step into your own guide (by step, with a fallback for class-specific steps), so you see where you overlap and who is ahead or behind.
+
+<img src="img/problem-two-races.png" alt="Two friends of different races want the same quests" width="760">
+
+&rarr; The guides stay race-specific as designed, but group mode shows where each friend stands relative to your guide, and the invite and one-click layer change keep the group together.
 
 ## What players get
 
@@ -32,15 +44,6 @@ All player-facing texts follow the game language (9 locales, `GroupTranslations.
 pixel-faithful HTML reproductions of the in-game UI; the map is the game's painted world map, from wowforevermap.com.
 
 ### Quest Prerequisites
-
-> **The problem, as players put it** (RestedXP Discord):
->
-> <img src="img/problem-cant-do-step.png" alt="Guide asks to accept a quest the player cannot take" width="520">
->
-> <img src="img/problem-missing-quests.png" alt="Guide sends the player to a zone for quests they do not have" width="700">
->
-> <img src="img/problem-skip-guide.png" alt="Can I skip to the next guide?" width="600">
-
 
 Shows every quest of your current guide you can't take yet, with the full missing chain, what to kill or loot, XP and
 distance, flags quests your next guides need, and builds a routed guide to unlock them.
@@ -62,13 +65,6 @@ route exists. Re-plans when you drift off and brings you back to your exact step
 [Watch the route planning (13 s)](videos/prereq-05-route.mp4) · [Design doc: TRAVEL-PLANNER.md](TRAVEL-PLANNER.md)
 
 ### Group mode and one-click layer search
-
-> **The problem, as players put it** (RestedXP Discord):
->
-> <img src="img/problem-two-classes.png" alt="Two characters of different classes on the same guide" width="700">
->
-> <img src="img/problem-two-races.png" alt="Two friends of different races want the same quests" width="700">
-
 
 Up to 5 players share their guide steps, invite each other from the guide menu, and change layer together in one
 click (LayerSwap host search, then automatic regroup on the new layer).
