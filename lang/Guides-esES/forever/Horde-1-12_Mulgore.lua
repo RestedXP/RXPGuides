@@ -1233,15 +1233,15 @@ step
     .goto 1412/1,-392.500,-2318.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Valiente Corresalvaje|r
     >>|cRXP_WARN_Patrulla por la zona|r
-    .turnin 99081 >>Entrega la misión Grim Tidings
-    .accept 99101 >>Acepta la misión Our Ancient Enemy
+    .turnin 99081 >>Entrega la misión Novedades funestas
+    .accept 99101 >>Acepta la misión Nuestro enemigo ancestral
     .target Brave Wildrunner
 step
     .goto 1412/1,-392.900,-2333.600
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Baine Pezuña de Sangre|r
     .turnin 745 >>Entrega la misión Compartir la tierra
-    .turnin 99101 >>Entrega la misión Our Ancient Enemy
-    .accept 99080 >>Acepta la misión Drive Them Fuera
+    .turnin 99101 >>Entrega la misión Nuestro enemigo ancestral
+    .accept 99080 >>Acepta la misión Échenlos
     .target Baine Bloodhoof
 step
     .goto 1412/1,-454.56,-2304.63--c:Mulgore,48.71,59.32
@@ -1884,7 +1884,7 @@ step
     >>|cRXP_WARN_Usa los|r |T134332:0|t[|cRXP_LOOT_Planes de expansión de Mulgore|r] |cRXP_WARN_para iniciar la misión|r
     .complete 765,1 --Fizsprocket's Clipboard (1)
     .collect 281031,1,98424 --Mulgore Expansion Plans (x1)
-    .accept 98424 >>Acepta la misión Fizsprocket's Notes
+    .accept 98424 >>Acepta la misión Notas de Saltatuercas
     .mob Supervisor Saltatuercas
 step
     .goto 1412/1,-1128.700,-1674.600

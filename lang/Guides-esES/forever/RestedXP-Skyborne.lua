@@ -172,7 +172,7 @@ step << !Skyborne
 step << Druid
     .goto 2521,41.653,23.337
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Xyton Ventargento::251373|r.
-    .turnin 92485 >>Entrega la misión A Student of Nature
+    .turnin 92485 >>Entrega la misión Estudiante de la naturaleza
     .target Xyton Silverwind::251373
 step << Druid
     .money <0.0010
@@ -552,7 +552,7 @@ step << Warrior
     .xp <4,1
     .goto 2521,43.66,24.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con la |cRXP_FRIENDLY_Maestra del acero Ren::251964|r.
-    .turnin 92532 >>Entrega la misión The Guerrero's Camino
+    .turnin 92532 >>Entrega la misión El camino del guerrero
     .target Blademaster Ren::251964
 step
     .goto 2521,43.44,24.80
@@ -594,7 +594,7 @@ step << Warrior
 step << Warrior
     .goto 2521,43.66,24.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con la |cRXP_FRIENDLY_Maestra del acero Ren::251964|r.
-    .turnin 92532 >>Entrega la misión The Guerrero's Camino
+    .turnin 92532 >>Entrega la misión El camino del guerrero
     .target Blademaster Ren::251964
 step << Horde Hunter
     .money <0.02
@@ -1100,7 +1100,7 @@ step << Alliance
     .goto 2521,45.04,46.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Rathiril Lanzasol::251903|r.
     .complete 93461,1 --1/1 Speak with Rathiril Sunlance
-    .accept 92596 >>Acepta la misión The High Order
+    .accept 92596 >>Acepta la misión La Suma Orden
     .target Rathiril Sunlance::251903
 step << Alliance
     .goto 2521,45.04,46.49
@@ -1116,7 +1116,7 @@ step << Alliance
 step << Alliance
     .goto 2521,44.98,46.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Rathiril Lanzasol::251903|r.
-    .turnin 92596 >>Entrega la misión The High Order
+    .turnin 92596 >>Entrega la misión La Suma Orden
     .accept 94413 >>Acepta la misión Un agravio mágico
     .target Rathiril Sunlance::251903
 step << Alliance Rogue
@@ -1210,7 +1210,7 @@ step << Horde
 step << Horde
     .goto 2521,43.52,44.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Illaya Ventámbar::251902|r.
-    .turnin 92595 >>Entrega la misión The Windshapers
+    .turnin 92595 >>Entrega la misión Los Formavientos
     .accept 94411 >>Acepta la misión Magos metiches
     .target Illaya Amberwind::251902
 step << Horde Shaman
@@ -1354,8 +1354,8 @@ step << Druid/Priest/Warlock/Mage
 step
     .goto 2521,44.47,44.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Teeri Bonovento::251906|r.
-    .accept 93319 >>Acepta la misión Saqueado Windstones
-    .accept 92516 >>Acepta la misión Hipogrifo Harassment
+    .accept 93319 >>Acepta la misión Piedras de viento saqueadas
+    .accept 92516 >>Acepta la misión Hipogrifos hostigadores
     .target Teeri Wellwind::251906
 step
     .goto 2521,44.68,44.53
@@ -1365,7 +1365,7 @@ step
 step
     .goto 2521,44.88,44.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Taleen Paño Brillante::251991|r.
-    .accept 93951 >>Acepta la misión A Little Bella
+    .accept 93951 >>Acepta la misión Una pizca de belleza
     .target Taleen Shimmerthread::251991
 step << Shaman
     .money <0.0504
@@ -2436,7 +2436,7 @@ step
     .goto 2521,44.686,44.518
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Indari Cosesoles::251993|r
     .target Indari Sunseam::251993
-    .turnin 92515 >>Entrega la misión The Problem With Prideclaws
+    .turnin 92515 >>Entrega la misión El problema con los leozarpas
 step
     .train 2108,3 -- Leatherworking Trained
     .isQuestComplete 97969 -- Camping 101: Leatherworking
@@ -2449,7 +2449,7 @@ step
     .goto 2521,44.465,44.966
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Teeri Bonovento::251906|r
     .target Teeri Wellwind::251906
-    .turnin 92516 >>Entrega la misión Hipogrifo Harassment
+    .turnin 92516 >>Entrega la misión Hipogrifos hostigadores
     .turnin 93319 >>Entrega la misión Piedras de viento saqueadas
 step << Shaman/Druid
     .money <0.0504
@@ -3579,8 +3579,8 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Valennia Puñotormenta::252383|r.
     .turnin 92701 >>Entrega la misión A Valanaar << Alliance
     .turnin 92579,3 >>Entrega la misión A Valanaar << Horde
-    .accept 92699 >>Acepta la misión The Supreme Magister << Alliance
-    .accept 92700 >>Acepta la misión The Grand Skyseer << Horde
+    .accept 92699 >>Acepta la misión El magíster supremo << Alliance
+    .accept 92700 >>Acepta la misión La Gran Vidente del Cielo << Horde
     .accept 93949 >>Acepta la misión Insectos infiltrados << Alliance
     .target Valennia Stormfist::252383
 
@@ -3606,18 +3606,18 @@ step << Alliance
 step << Alliance
     .goto 2521,66.63,79.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Elaadrin Ventopar::252475|r.
-    .turnin 92699 >>Entrega la misión The Supreme Magister
+    .turnin 92699 >>Entrega la misión El magíster supremo
     .target Elaadrin Evengale::252475
 step << Alliance
     .goto 2521,66.26,79.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Dondallion Susurravientos::253204|r.
-    .accept 92727 >>Acepta la misión The Missing Scholar
+    .accept 92727 >>Acepta la misión El erudito desaparecido
     .target Dondallion Whisperwind::253204
 step << Alliance
     #label Unwelcome Visitors
     .goto 2521,66.35,79.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Iaadaria Vientoglacial::253004|r.
-    .accept 92741 >>Acepta la misión Unwelcome Visitantes
+    .accept 92741 >>Acepta la misión Visitantes inoportunos
     .target Iaadaria Bitterwind::253004
 step << Alliance
     .isOnQuest 92727 -- The Missing Scholar
@@ -3639,8 +3639,8 @@ step << Alliance
     >>|TInterface/cursor/crosshair/interact.blp:20|tHaz clic en el |cRXP_PICK_Bolsón manchado de sangre::581822|r
     *|cRXP_WARN_Si hay un Tornado presente, úsalo para viajar más rápido|r.
     *Ten cuidado con el |cRXP_ENEMY_Zancavientos enfurruñado::251707|r.
-    .turnin 92727 >>Entrega la misión The Missing Scholar
-    .accept 92849 >>Acepta la misión The Missing Scholar
+    .turnin 92727 >>Entrega la misión El erudito desaparecido
+    .accept 92849 >>Acepta la misión El erudito desaparecido
     .target Bloodstained Satchel::581822
     .mob Ornery Galestrider::251707
 step << Alliance
@@ -3681,8 +3681,8 @@ step << Alliance
     .goto 2521,52.064,69.396
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Fillion Flamebreeze::253284|r.
     .target Fillion Flamebreeze::253284
-    .turnin 92849 >>Entrega la misión The Missing Scholar 1
-    .accept 92850 >>Acepta la misión The Missing Scholar 2
+    .turnin 92849 >>Entrega la misión El erudito desaparecido 1
+    .accept 92850 >>Acepta la misión El erudito desaparecido 2
 -- step << Alliance
 --     #completewith next
 --     #label Shriekling Matriarch
@@ -4374,10 +4374,10 @@ step
     .goto 2521,62.05,73.09,8,0
     .goto 2521,62.11,73.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Alvarion Windfield::252448|r |cRXP_WARN_en el segundo piso|r.
-    .turnin 92703,1 >>Entrega la misión Deliver the News << Warrior/Shaman/Paladin
-    .turnin 92703,2 >>Entrega la misión Deliver the News << Druid/Priest
-    .turnin 92703,3 >>Entrega la misión Deliver the News << Rogue
-    .turnin 92703 >>Entrega la misión Deliver the News << Hunter/Mage/Warlock
+    .turnin 92703,1 >>Entrega la misión Entrega de noticias << Warrior/Shaman/Paladin
+    .turnin 92703,2 >>Entrega la misión Entrega de noticias << Druid/Priest
+    .turnin 92703,3 >>Entrega la misión Entrega de noticias << Rogue
+    .turnin 92703 >>Entrega la misión Entrega de noticias << Hunter/Mage/Warlock
     .target Alvarion Windfield::252448
 step
     #completewith Accept Catching Wind
@@ -4416,8 +4416,8 @@ step << Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Belann Vientosauco::256507|r.
     .target Belann Windwood::256507
     .accept 93791 >>Acepta la misión Hablar con Belann
-    .turnin 93791 >>Entrega la misión Hablar con Belann
-    .accept 93797 >>Acepta la misión Ramas en el viento
+    .turnin 93791 >>Entrega la misión Habla con Belann
+    .accept 93797 >>Acepta la misión Ramas al viento
 step << Warrior
     .goto 2521,59.889,72.869
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Seena Rompecielos::252377|r.
@@ -4623,8 +4623,8 @@ step << Alliance
     *|cRXP_WARN_Empuña a dos manos el|r |T134520:0|t[|cRXP_LOOT_Llave inglesa confiable|r] |cRXP_WARN_y|r |T7791298:0|t[|cRXP_LOOT_Mataalabatientes|r] |cRXP_WARN_si no tienes el|r |T7791298:0|t[Cachiporrazo zephralí].<< Rogue
     .goto 2521,66.21,79.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Fillion Flamebreeze::253284|r.
-    .turnin 92850 >>Entrega la misión The Missing Scholar 2
-    .accept 99260 >>Acepta la misión Fillion's Mission
+    .turnin 92850 >>Entrega la misión El erudito desaparecido 2
+    .accept 99260 >>Acepta la misión La misión de Fillion
     .target Fillion Flamebreeze::253284
     .use 263313 << Rogue -- Trusty Wrench
     .use 263329 << Rogue -- Flutterfly Swatter
@@ -4649,7 +4649,7 @@ step << Alliance
     .goto 2521,66.627,79.942
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Elaadrin Ventopar::252475|r.
     .target Elaadrin Evengale::252475
-    .turnin 99260 >>Entrega la misión Fillion's Mission
+    .turnin 99260 >>Entrega la misión La misión de Fillion
     .accept 92840 >>Acepta la misión Búsqueda espiritual
 
 -- ============================================================================
@@ -4954,7 +4954,7 @@ step << Mage
     #label SkyhopperMultiClass
     .goto 2521,62.89,77.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Belann Vientosauco::256507|r.
-    .turnin 93797 >>Entrega la misión Boughs in the Viento
+    .turnin 93797 >>Entrega la misión Ramas al viento
     .target Belann Windwood::256507
 step << Mage
     #loop
@@ -5108,7 +5108,7 @@ step << Horde
 step << Horde
     .goto 2521,56.80,61.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Piedra de viento Fendaal::273017|r.
-    .turnin 98512 >>Entrega la misión Al'Aketh Assassins
+    .turnin 98512 >>Entrega la misión Asesinos Al'Aketh
     .target Fendaal Windstone::273017
 step << Horde Druid
     .goto 2521,54.284,65.803
@@ -5179,7 +5179,7 @@ step << Alliance
     .goto 2521,66.63,79.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Elaadrin Ventopar::252475|r.
     .turnin 92840 >>Entrega la misión Búsqueda espiritual
-    .accept 92834 >>Acepta la misión Avenged Tenfold
+    .accept 92834 >>Acepta la misión La venganza será diez veces peor
     .accept 92860 >>Acepta la misión Al servicio de Zephras
     .target Elaadrin Evengale::252475
 step << Alliance
@@ -5410,10 +5410,10 @@ step << Alliance Druid
 step << Alliance
     .goto 2521,69.61,67.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Yorana Windyreed::252378|r.
-    .turnin 92645,1 >>Entrega la misión Rompiendo al Rompedor << Rogue/Hunter/Druid/Shaman
-    .turnin 92645,2 >>Entrega la misión Rompiendo al Rompedor << Mage/Priest/Warlock
-    .turnin 92645,3 >>Entrega la misión Rompiendo al Rompedor << Warrior/Paladin
-    .turnin 92642 >>Entrega la misión Interrumpiendo la logística
+    .turnin 92645,1 >>Entrega la misión Exterminar a la Exterminadora << Rogue/Hunter/Druid/Shaman
+    .turnin 92645,2 >>Entrega la misión Exterminar a la Exterminadora << Mage/Priest/Warlock
+    .turnin 92645,3 >>Entrega la misión Exterminar a la Exterminadora << Warrior/Paladin
+    .turnin 92642 >>Entrega la misión Interrupción logística
     .accept 92880 >>Acepta la misión Regresar a Valanaar
     .target Yorana Windyreed::252378
 step << Alliance
@@ -5421,9 +5421,9 @@ step << Alliance
     #completewith next
     #label Return to Valanaar
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Valennia Puñotormenta::252383|r.
-    .turnin 92880,1 >>Entrega la misión Regresar a Valanaar << Warrior/Paladin
-    .turnin 92880,2 >>Entrega la misión Regresar a Valanaar << Rogue -- Quickblade's Dagger
-    .turnin 92880,3 >>Entrega la misión Regresar a Valanaar << Hunter/Mage/Druid/Priest/Warlock
+    .turnin 92880,1 >>Entrega la misión Regreso a Valanaar << Warrior/Paladin
+    .turnin 92880,2 >>Entrega la misión Regreso a Valanaar << Rogue -- Quickblade's Dagger
+    .turnin 92880,3 >>Entrega la misión Regreso a Valanaar << Hunter/Mage/Druid/Priest/Warlock
     .accept 92881 >>Acepta la misión Solicitud del Gran Ancestro
     .target Valennia Stormfist::252383
 step << Alliance
@@ -5442,15 +5442,15 @@ step << Alliance
     #requires Return to Valanaar
     .goto 2521,66.20,76.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Valennia Puñotormenta::252383|r.
-    .turnin 92880,1 >>Entrega la misión Regresar a Valanaar << Alliance Warrior/Alliance Paladin
-    .turnin 92880,2 >>Entrega la misión Regresar a Valanaar << Alliance Rogue -- Quickblade's Dagger
-    .turnin 92880,3 >>Entrega la misión Regresar a Valanaar << Alliance Hunter/Alliance Mage/Alliance Druid/Alliance Priest/Alliance Warlock
+    .turnin 92880,1 >>Entrega la misión Regreso a Valanaar << Alliance Warrior/Alliance Paladin
+    .turnin 92880,2 >>Entrega la misión Regreso a Valanaar << Alliance Rogue -- Quickblade's Dagger
+    .turnin 92880,3 >>Entrega la misión Regreso a Valanaar << Alliance Hunter/Alliance Mage/Alliance Druid/Alliance Priest/Alliance Warlock
     .accept 92881 >>Acepta la misión Solicitud del Gran Ancestro
     .target Valennia Stormfist::252383
 step << Alliance
     .goto 2521,66.17,76.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Talaanis Cantosombrío::252476|r.
-    .turnin 92881 >>Entrega la misión La petición del gran ancestro
+    .turnin 92881 >>Entrega la misión El pedido del gran ancestro
     .accept 92643 >>Acepta la misión The Turncoat
     .target Talaanis::252476
 
@@ -5685,7 +5685,7 @@ step << Alliance
     *|cRXP_WARN_Equipa el|r |T7792097:0|t[Gran martillo afilado] si no tienes |T7792097:0|t[Quebrantador zephralí]. << Paladin
     *|cRXP_WARN_Equipa la|r |T7798447:0|t[Lanza larga equilibrada] si no tienes |T7792229:0|t[Cuchillo zephralí]. << Priest/Warlock/Mage
     *|cRXP_WARN_Equipa la|r |TInterface/Icons/inv_knife_1h_skybornec60_b_01:0|t[Quickblade's Dagger] si no tienes |T7791298:0|t[Cachiporrazo zephralí]. << Rogue
-    .accept 98512 >>Acepta la misión Al'Aketh Assassins
+    .accept 98512 >>Acepta la misión Asesinos Al'Aketh
     .target Fendaal Windstone::273017
 step << Alliance
     #optional
@@ -5710,8 +5710,8 @@ step << Alliance
     .goto 2521,56.043,58.785
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Dead Cultor::253372|r.
     .target Dead Cultist::253372
-    .turnin 92643 >>Entrega la misión The Turncoat
-    .accept 92644 >>Acepta la misión Unfortunate News
+    .turnin 92643 >>Entrega la misión El traidor
+    .accept 92644 >>Acepta la misión Noticias desafortunadas
 step << Alliance
     #loop
     .goto 2521,55.27,59.58,35,0
@@ -5867,8 +5867,8 @@ step
     .accept 93159 >>Acepta la misión El ermitaño extraño
     .complete 93159,1 --1/1 Learn more about the Strange Hermit
     .turnin 93159 >>Entrega la misión El ermitaño extraño
-    .accept 93160 >>Acepta la misión The Forest's Recompensa
-    .accept 93172 >>Acepta la misión Liberar the Hollows
+    .accept 93160 >>Acepta la misión La abundancia del bosque
+    .accept 93172 >>Acepta la misión Libera la hoyas
     .target Strange Hermit::251684
     .skipgossipid 135787
     .skipgossipid 135786
@@ -6402,7 +6402,7 @@ step << Horde
     .goto 2521,63.989,75.090
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Lotheluum Brisa Estelar::252359|r.
     .target Lotheluum Starbreeze::252359
-    .turnin 94491 >>Entrega la misión The Destino of the Den
+    .turnin 94491 >>Entrega la misión El destino de la guarida
 step << Horde
     #optional
     .isQuestComplete 94896
@@ -6430,9 +6430,9 @@ step << Alliance
     #completewith next
     #label Unfortunate News
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Talaanis Cantosombrío::252476|r.
-    .turnin 92644,1 >>Entrega la misión Unfortunate News << Rogue/Hunter/Druid/Shaman
-    .turnin 92644,2 >>Entrega la misión Unfortunate News << Mage/Priest/Warlock
-    .turnin 92644,3 >>Entrega la misión Unfortunate News << Warrior/Paladin
+    .turnin 92644,1 >>Entrega la misión Noticias desafortunadas << Rogue/Hunter/Druid/Shaman
+    .turnin 92644,2 >>Entrega la misión Noticias desafortunadas << Mage/Priest/Warlock
+    .turnin 92644,3 >>Entrega la misión Noticias desafortunadas << Warrior/Paladin
     .accept 94568 >>Acepta la misión The Cult's True Plans
     .disablecheckbox
     .target Talaanis Shadowsong::252476
@@ -6450,9 +6450,9 @@ step << Alliance
     #requires Unfortunate News
     .goto 2521,66.17,76.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Talaanis Cantosombrío::252476|r.
-    .turnin 92644,1 >>Entrega la misión Unfortunate News << Rogue/Hunter/Druid/Shaman
-    .turnin 92644,2 >>Entrega la misión Unfortunate News << Mage/Priest/Warlock
-    .turnin 92644,3 >>Entrega la misión Unfortunate News << Warrior/Paladin
+    .turnin 92644,1 >>Entrega la misión Noticias desafortunadas << Rogue/Hunter/Druid/Shaman
+    .turnin 92644,2 >>Entrega la misión Noticias desafortunadas << Mage/Priest/Warlock
+    .turnin 92644,3 >>Entrega la misión Noticias desafortunadas << Warrior/Paladin
     .accept 94568 >>Acepta la misión The Cult's True Plans
     .target Talaanis Shadowsong::252476
 step << Alliance
@@ -6478,7 +6478,7 @@ step << Alliance
 step << Alliance
     .goto 2521,66.17,76.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Talaanis Cantosombrío::252476|r |cRXP_WARN_junto a ti|r.
-    .turnin 94568 >>Entrega la misión The Cult's True Plans
+    .turnin 94568 >>Entrega la misión Los verdaderos planes del culto
     .accept 92640 >>Acepta la misión Tiempos desesperados
     .target Talaanis Shadowsong::252476
 step << Alliance
@@ -6515,7 +6515,7 @@ step << Alliance
     .goto 2521,63.35,78.58,30,0
     .goto 2521,66.34,79.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Iaadaria Vientoglacial::253004|r.
-    .turnin 92741 >>Entrega la misión Unwelcome Visitantes
+    .turnin 92741 >>Entrega la misión Visitantes inoportunos
     .target Iaadaria Bitterwind::253004
 step << Alliance
     .goto 2521,66.54,79.89
@@ -6527,9 +6527,9 @@ step << Alliance
 step << Alliance
     .goto 2521,66.628,79.936
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Elaadrin Ventopar::252475|r.
-    .turnin 92834,1 >>Entrega la misión Avenged Tenfold << Rogue/Hunter/Druid/Shaman
-    .turnin 92834,2 >>Entrega la misión Avenged Tenfold << Mage/Priest/Warlock
-    .turnin 92834,3 >>Entrega la misión Avenged Tenfold << Warrior/Paladin
+    .turnin 92834,1 >>Entrega la misión La venganza será diez veces peor << Rogue/Hunter/Druid/Shaman
+    .turnin 92834,2 >>Entrega la misión La venganza será diez veces peor << Mage/Priest/Warlock
+    .turnin 92834,3 >>Entrega la misión La venganza será diez veces peor << Warrior/Paladin
     .turnin -92709 >>Entrega la misión Una gran aventura
     .target Elaadrin Evengale::252475
 step << Alliance Mage
@@ -6933,10 +6933,10 @@ step << Alliance
     -- .turnin -94946 >>Turn in The Magical City of Dalaran
     .accept 94947 >>Acepta la misión Bienvenido a Azeroth
 step << Alliance Druid
-    .goto 1416/0,385.700,385.400
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Archimago Ansirem Tejerruna::2543|r.
+    .goto 1416/0,455.400,444.700
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Alfina Nightgaze|r.
     .accept 94912 >>Acepta la misión Hijos de la naturaleza
-    .target Archmage Ansirem Runeweaver::2543
+    .target Alfina Nightgaze
 step << Alliance
     .goto 1416/0,445.93,450.00
     >>|TInterface/cursor/crosshair/interact.blp:20|tHaz clic en el |cRXP_PICK_Portal|r
@@ -7036,8 +7036,8 @@ step << Alliance
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Highlord Bolvar Fordragon::1748|r dentro del Keep.
     .target Highlord Bolvar Fordragon::1748
     .turnin 94947 >>Entrega la misión Welcome to Azeroth
-    .accept 93963 >>Acepta la misión Exploring the Alianza
-    .accept 98021 >>Acepta la misión Journey to Centinela Hill << !Hunter
+    .accept 93963 >>Acepta la misión Explorar la Alianza
+    .accept 98021 >>Acepta la misión Viaje a la Colina del Centinela << !Hunter
 
 
 
@@ -7051,7 +7051,7 @@ step << Alliance Hunter
     .goto 1453/0,1269.100,-8540.601
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Gilbert Gris::267118|r
     .target Gilbert Gray::267118
-    .accept 95065 >>Acepta la misión Fishin' Tiempo
+    .accept 95065 >>Acepta la misión Hora de la pesca
     .turnin 95065 >>Entrega la misión Fishin' Tiempo
 step << Alliance Hunter
     #optional
@@ -7253,11 +7253,11 @@ step << Horde Druid Skyborne
     .goto 1412/1,423.400,-659.000
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Muln Furia térrea::259118|r.
     .target Muln Earthfury::259118
-    .accept 94911 >>Acepta la misión Child of Nature
+    .accept 94911 >>Acepta la misión Hijos de la naturaleza
 step << Horde
     .goto 1412/1,426.100,-658.000
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Alaana Stormwalker::259119|r.
-    .accept 95350 >>Acepta la misión Welcome to Azeroth
+    .accept 95350 >>Acepta la misión Bienvenido a Azeroth
     .target Alaana Stormwalker::259119
 step << Horde
     #ignorecorpse

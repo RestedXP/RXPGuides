@@ -1797,7 +1797,7 @@ step << !Hunter
     .goto 1426/0,-1041.000,-5350.600
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Padre Gavin::1253|r
     .target Father Gavin::1253
-    .turnin 99158 >>Entrega la misión Alba in the Mountains
+    .turnin 99158 >>Entrega la misión Alba en las montañas
 step << !Hunter
     #completewith Rudra
     #label Dirt
@@ -4091,7 +4091,7 @@ step
     .goto 1432/0,-3086.600,-5216.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Khara Aguahonda::1684|r
     .target Khara Deepwater::1684
-    .turnin 86614 >>Entrega la misión Plateado of the Waves
+    .turnin 86614 >>Entrega la misión Olas de plata
     .xp <13,1
 step << !Dwarf/!Paladin
     .goto 1432/0,-2929.87,-5424.84

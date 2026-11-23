@@ -1752,13 +1752,13 @@ step
 step
     .goto 1429/0,-113.23,-9379.25--c:1429,47.5,62.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Jason Mathers|r
-    .accept 99127 >> Acepta la misión A Red Disaster
+    .accept 99127 >> Acepta la misión Una red desastrosa
     .target Jason Mathers
 step
     #softcore
     .goto 1429/0,-116.70,-9381.57--c:1429,47.6,62.3
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Lee Moreno|r
-    .accept 99143 >> Acepta la misión Bottles and Baubles
+    .accept 99143 >> Acepta la misión Botellas y adornos
     .target Lee Brown
 step
     #loop
@@ -1771,7 +1771,7 @@ step
 step
     .goto 1429/0,-113.23,-9379.25--c:1429,47.5,62.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Jason Mathers|r
-    .turnin 99127 >> Entrega la misión A Red Disaster
+    .turnin 99127 >> Entrega la misión Una red desastrosa
     .accept 99128 >> Acepta la misión Amenaza Babosa
     .target Jason Mathers
 step
@@ -1857,7 +1857,7 @@ step
 step
     .goto 1429/0,-113.23,-9379.25--c:1429,47.5,62.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Jason Mathers|r
-    .turnin 99128 >> Entrega la misión Amenaza Babosa
+    .turnin 99128 >> Entrega la misión Amenaza babosa
     .accept 99129 >> Acepta la misión A Man About a Múrloc
     .target Jason Mathers
 
@@ -2759,7 +2759,7 @@ step << skip
     .goto 1429/0,72.81,-9496.23--c:Elwynn Forest,42.140,67.254
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Remy "Dos Veces"|r
     .turnin 99130 >> Entrega la misión An Tentador Offer
-    .accept 99131 >> Acepta la misión Baited for Éxito
+    .accept 99131 >> Acepta la misión El anzuelo para el éxito
     .target Remy "Two Times"
 sstep << skip
     .goto 1429/0,-113.23,-9379.25--c:1429,47.5,62.2
@@ -3063,15 +3063,15 @@ step
     #optional << Warlock/Mage/Warrior/Rogue
     .goto 1453/0,613.0,-8796.03
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Woo Ping|r
-    .trainer >>Aprende Espadas de 1 mano y Bastones << Warlock/Mage
-    .trainer >>Aprende Espadas de 1 mano << Rogue
+    .trainer >>Aprende Espadas de 1 mano y Bastones << Warlock
+    .trainer >>Aprende Espadas de 1 mano << Rogue/Mage
     .trainer >>Aprende el uso de Bastones << Priest
     .trainer >>Aprende Espadas de 2 manos << Warrior/Paladin
     .target Woo Ping
     .money <0.2 << Warlock/Mage
     .money <0.3 << Warrior
     .money <0.55 << Rogue
-step << Warlock/Mage
+step << Warlock
     .goto 1453/0,613.0,-8796.03
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Woo Ping|r
     .trainer >>Aprende el uso de Bastones

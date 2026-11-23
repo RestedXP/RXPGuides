@@ -4296,7 +4296,7 @@ step << Druid
     .turnin 27 >>Entrega la misión Una lección que aprender
     .accept 28 >>Acepta la misión La prueba del lago
     .turnin 98340 >>Entrega la misión El gran espíritu felino
-    .accept 98341 >>Acepta la misión El gran espíritu felino del viento << Skyborne
+    .accept 98341 >>Acepta la misión El gran espíritu felino natoviento << Skyborne
     .accept 98405 >>Acepta la misión El gran espíritu felino << !Skyborne
     .target Dendrite Starblaze
 step << Druid
@@ -4326,8 +4326,8 @@ step << Druid Skyborne
     .goto 1450/1,-2394.300,7361.200
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Avatar de Saeyleenan::272054|r
     .target Avatar of Saeyleenan::272054
-    .turnin 98341 >>Entrega la misión El gran espíritu felino del viento
-    .accept 98404 >>Acepta la misión El gran espíritu felino del viento
+    .turnin 98341 >>Entrega la misión El gran espíritu felino natoviento
+    .accept 98404 >>Acepta la misión El gran espíritu felino natoviento
 step << Druid
     #completewith next
     .goto 1450/1,-3046.700,7534.400
@@ -4361,8 +4361,8 @@ step << Druid Skyborne
     .goto 1450/1,-2395.400,7361.400
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Avatar de Saeyleenan::272054|r
     .target Avatar of Saeyleenan::272054
-    .turnin 98404 >>Entrega la misión El gran espíritu felino del viento
-    .accept 98738 >>Acepta la misión Bendiciones del gran espíritu felino del viento
+    .turnin 98404 >>Entrega la misión El gran espíritu felino natoviento
+    .accept 98738 >>Acepta la misión Bendiciones del gran espíritu felino natoviento
 step << Druid
     #completewith next
     .cast 18960 >>|cRXP_WARN_Lanza|r |T135758:0|t[Teletransporte a: Claro de la Luna]
@@ -4370,9 +4370,9 @@ step << Druid
 step << Druid
     .goto 1450/1,-2678.200,8021.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Dendrita Rafagaestelar::11802|r
-    .turnin 98738 >>Entrega la misión Bendiciones del gran espíritu felino del viento << Skyborne
+    .turnin 98738 >>Entrega la misión Bendiciones del gran espíritu felino natoviento << Skyborne
     .turnin 98739 >>Entrega la misión Bendiciones del gran espíritu felino << !Skyborne
-    .accept 98362 >>Acepta la misión To Trueno Engaño
+    .accept 98362 >>Acepta la misión Hacia Cima del Trueno
     .target Dendrite Starblaze::11802
 step << Druid
     .hs >> Usa tu Piedra de hogar para ir a Cima del Trueno

@@ -2938,11 +2938,19 @@ step << Priest
     .trainer >> Aprende tus hechizos de clase
     .target Brother Joshua
 step
+    #optional
+    .isOnQuest 97914
     .goto 1453/0,719.67,-8550.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Baros Alexston|r
-    .turnin -97914 >> Entrega la misión Expandiendo tus horizontes
+    .turnin 97914 >> Entrega la misión Expandiendo tus horizontes
     .accept 97926 >> Acepta la misión Acepto el reto
---    .accept 399 >> Accept Humble Beginnings
+    .target Baros Alexston
+step
+    #optional
+    .isQuestTurnedIn 97914
+    .goto 1453/0,719.67,-8550.30
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Baros Alexston|r
+    .accept 97926 >> Acepta la misión Making Do
     .target Baros Alexston
 step << Rogue/Warrior/Hunter
     .goto 1453/0,613.12,-8795.96
@@ -3499,7 +3507,7 @@ step
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Marek Coracero|r
     .accept 385 >> Acepta la misión La caza de crocoliscos
-    .accept 86758 >>Acepta la misión Twisting the Cuchillo
+    .accept 86758 >>Acepta la misión Un cuchillo (y no por la espalda)
     .goto 1432/0,-4248.9631,-5621.7869
     .target Marek Ironheart
 step
@@ -5564,7 +5572,7 @@ step << Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Dendrita Rafagaestelar::11802|r
     .target Dendrite Starblaze::11802
     .turnin 98393 >>Entrega la misión El gran espíritu felino
-    .accept 98341 >>Acepta la misión El gran espíritu felino del viento << Skyborne
+    .accept 98341 >>Acepta la misión El gran espíritu felino natoviento << Skyborne
     .accept 98394 >>Acepta la misión El gran espíritu felino << !Skyborne
 step << Druid !Skyborne
     .goto 1450/1,-2640.000,7338.900
@@ -5578,7 +5586,7 @@ step << Druid Skyborne
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Avatar de Saeyleenan::272054|r
     .target Avatar of Saeyleenan::272054
     .turnin 98341 >>Entrega la misión El gran espíritu felino del viento
-    .accept 98404 >>Acepta la misión El gran espíritu felino del viento
+    .accept 98404 >>Acepta la misión El gran espíritu felino natoviento
 step << Druid
     #completewith next
     .goto 1450/1,-3046.700,7534.400
@@ -5613,7 +5621,7 @@ step << Druid Skyborne
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Avatar de Saeyleenan::272054|r
     .target Avatar of Saeyleenan::272054
     .turnin 98404 >>Entrega la misión El gran espíritu felino del viento
-    .accept 98738 >>Acepta la misión Bendiciones del gran espíritu felino del viento
+    .accept 98738 >>Acepta la misión Bendiciones del gran espíritu felino natoviento
 step << Druid
     .goto 1450/1,-2678.200,8021.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTeletranspórtate a Claro de la Luna y habla con |cRXP_FRIENDLY_Dendrita Rafagaestelar::11802|r

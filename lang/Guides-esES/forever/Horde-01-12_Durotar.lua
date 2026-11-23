@@ -360,7 +360,7 @@ step << Warlock
     .goto 1411/1,-4111.87,-607.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Nartok|r
     .turnin 3090 >>Entrega la misión Papiro corrupto << Orc Warlock
-    .turnin 98575 >>Entrega la misión Contaminated Tablilla << Troll Warlock
+    .turnin 98575 >>Entrega la misión Tablilla corrupta << Troll Warlock
     .train 172 >> Aprende |T136118:0|t[Corrupción]
     .target Nartok
 step
