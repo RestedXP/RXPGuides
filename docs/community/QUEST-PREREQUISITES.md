@@ -10,6 +10,15 @@ Technical design notes for the RestedXP team. Describes the contributor feature 
 
 ## 1. Problem
 
+> **The problem, as players put it** (RestedXP Discord, names hidden):
+>
+> <img src="img/problem-cant-do-step.png" alt="Guide asks to accept a quest the player cannot take" width="520">
+>
+> <img src="img/problem-missing-quests.png" alt="Guide sends the player to a zone for quests they do not have" width="700">
+>
+> <img src="img/problem-skip-guide.png" alt="Can I skip to the next guide?" width="600">
+
+
 A guide sometimes asks you to accept a quest you cannot get yet, because you skipped part of
 its chain. It can also ask you to complete or turn in a quest you don't have. The player usually
 learns this at the NPC. This module finds those steps ahead of time, shows the missing chain,

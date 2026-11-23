@@ -34,6 +34,15 @@ pixel-faithful HTML reproductions of the in-game UI; the map is the game's paint
 
 ### Quest Prerequisites
 
+> **The problem, as players put it** (RestedXP Discord, names hidden):
+>
+> <img src="img/problem-cant-do-step.png" alt="Guide asks to accept a quest the player cannot take" width="520">
+>
+> <img src="img/problem-missing-quests.png" alt="Guide sends the player to a zone for quests they do not have" width="700">
+>
+> <img src="img/problem-skip-guide.png" alt="Can I skip to the next guide?" width="600">
+
+
 Shows every quest of your current guide you can't take yet, with the full missing chain, what to kill or loot, XP and
 distance, flags quests your next guides need, and builds a routed guide to unlock them.
 
@@ -54,6 +63,13 @@ route exists. Re-plans when you drift off and brings you back to your exact step
 [Watch the route planning (13 s)](videos/prereq-05-route.mp4) · [Design doc: TRAVEL-PLANNER.md](TRAVEL-PLANNER.md)
 
 ### Group mode and one-click layer search
+
+> **The problem, as players put it** (RestedXP Discord, names hidden):
+>
+> <img src="img/problem-two-classes.png" alt="Two characters of different classes on the same guide" width="700">
+>
+> <img src="img/problem-two-races.png" alt="Two friends of different races want the same quests" width="700">
+
 
 Up to 5 players share their guide steps, invite each other from the guide menu, and change layer together in one
 click (LayerSwap host search, then automatic regroup on the new layer).

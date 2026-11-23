@@ -12,6 +12,13 @@ line numbers are given for orientation.
 
 ## 1. Problem
 
+> **The problem, as players put it** (RestedXP Discord, names hidden):
+>
+> <img src="img/problem-two-classes.png" alt="Two characters of different classes on the same guide" width="700">
+>
+> <img src="img/problem-two-races.png" alt="Two friends of different races want the same quests" width="700">
+
+
 Friends levelling together on the same guide lose each other: one is three steps ahead, another is
 on a different guide, and nobody knows until they ask in chat. On WoW Forever, layering also splits
 groups, and moving everybody to the same layer means leaving the party, finding a host and
