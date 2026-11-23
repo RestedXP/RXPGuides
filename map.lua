@@ -1152,7 +1152,7 @@ function addon.ResetArrowPosition()
         addon.settings.ToggleActive()
     end
     af:ClearAllPoints()
-    af:SetPoint("CENTER", 0, 200)
+    af:SetPoint("TOP")
     addon.UpdateArrowData()
 end
 
