@@ -12,11 +12,6 @@ local itemIconTexture = "Interface\\Buttons\\UI-Quickslot2"
 local itemIconHighlightTexture = "Interface\\Buttons\\ButtonHilight-Square"
 local buttonDividerTexture = "Interface\\FrameGeneral\\UI-Frame"
 
-function addon.ui.v2:InitializeAuctionHouse()
-    self:RegisterRXPV2AuctionHouseItemBlock()
-    self:RegisterRXPV2AuctionHouse()
-end
-
 local function createAuctionHouseColumnButton(parent, text, width)
     local button = CreateFrame("Button", nil, parent)
     local theme = addon.v2:GetTheme()
@@ -296,8 +291,8 @@ function addon.ui.v2:RegisterRXPV2AuctionHouseItemBlock()
     AceGUI:RegisterWidgetType(Type, Constructor, Version)
 end
 
-function addon.ui.v2:RegisterRXPV2AuctionHouse()
-    local Type, Version = "RXPV2AuctionHouse", 1
+local function registerAuctionHouse(Type, titleOffset)
+    local Version = 1
     if not AceGUI or (AceGUI:GetWidgetVersion(Type) or 0) >= Version then return end
 
     local methods = {
@@ -334,7 +329,7 @@ function addon.ui.v2:RegisterRXPV2AuctionHouse()
 
         local title = frame:CreateFontString(nil, "BACKGROUND")
         title:SetFont(addon.v2:GetTheme().font, 12, "")
-        title:SetPoint("TOP", 0, -18)
+        title:SetPoint("TOP", 0, titleOffset)
         title:SetText(_G.MINIMAP_TRACKING_AUCTIONEER)
         frame.Title = title
 
@@ -381,14 +376,28 @@ function addon.ui.v2:RegisterRXPV2AuctionHouse()
     AceGUI:RegisterWidgetType(Type, Constructor, Version)
 end
 
-function addon.ui.v2:CreateAuctionHouse(handlers)
+function addon.ui.v2:RegisterRXPV2AuctionHouse()
+    registerAuctionHouse("RXPV2AuctionHouse", -18)
+end
+
+function addon.ui.v2:RegisterRXPV2ForeverAH()
+    registerAuctionHouse("RXPV2ForeverAH", -34)
+end
+
+function addon.ui.v2:CreateAuctionHouse(handlers, widgetType)
     if self.auctionHouse then
         self.auctionHouse:SetHandlers(handlers)
 
         return self.auctionHouse
     end
 
-    self.auctionHouse = AceGUI:Create("RXPV2AuctionHouse")
+    self:RegisterRXPV2AuctionHouseItemBlock()
+    if not widgetType then
+        self:RegisterRXPV2AuctionHouse()
+        widgetType = "RXPV2AuctionHouse"
+    end
+
+    self.auctionHouse = AceGUI:Create(widgetType)
     self.auctionHouse:SetHandlers(handlers)
     self.auctionHouse.frame:Hide()
 

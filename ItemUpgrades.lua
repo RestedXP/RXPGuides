@@ -1554,8 +1554,8 @@ end
 addon.itemUpgrades.AH = addon:NewModule("ItemUpgradesAH", "AceEvent-3.0")
 
 function addon.itemUpgrades.AH:Setup()
-    if not addon.settings.profile.enableItemUpgradesAH or addon.game == "CATA" or
-        addon.game == "FOREVER" then return end
+    if not addon.settings.profile.enableItemUpgradesAH or addon.game == "CATA" then return end
+    if addon.game == "FOREVER" and not self.forever then return end
 
     if ahSession.isInitialized then return end
 
@@ -1563,7 +1563,11 @@ function addon.itemUpgrades.AH:Setup()
     self:RegisterEvent("AUCTION_HOUSE_CLOSED")
 
     self:RegisterEvent("GET_ITEM_INFO_RECEIVED")
-    self:RegisterEvent("AUCTION_ITEM_LIST_UPDATE")
+    if self.forever then
+        self.forever.RegisterEvents(self)
+    else
+        self:RegisterEvent("AUCTION_ITEM_LIST_UPDATE")
+    end
 
     ahSession.isInitialized = true
 end
@@ -1579,6 +1583,7 @@ function addon.itemUpgrades.AH:AUCTION_HOUSE_CLOSED()
     ahSession.scanCancelled = false
     setAHScanButton(_G.SEARCH, true)
     if ahSession.displayFrame then ahSession.displayFrame.Title:SetText(ahSession.scanStatus.baseTitle) end
+    if self.forever and ahSession.displayFrame then ahSession.displayFrame:Hide() end
 end
 
 -- Fired when GetItemInfo queries the server for an uncached item and the reponse has arrived.
@@ -1621,6 +1626,8 @@ end
 
 function addon.itemUpgrades.AH:SearchForBuyoutItem(itemData)
     if not (itemData and itemData.Name) then return end
+
+    if self.forever then return self.forever.SearchForBuyoutItem(itemData) end
 
     if not _G.AuctionFrame:IsShown() then return end
 
@@ -1795,6 +1802,8 @@ function addon.itemUpgrades.AH:Scan(retries, maxRetries, scanGeneration)
     -- Prevent double calls
     if ahSession.sentQuery then return end
 
+    if self.forever then return self.forever.Scan(retries, maxRetries, scanGeneration) end
+
     if not AuctionCategories or not CanSendAuctionQuery() then
         -- print("addon.itemUpgrades.AH:Scan() - queued", ahSession.scanPage, ahSession.scanType)
 
@@ -1823,6 +1832,10 @@ local function calculate(itemLink, scanData)
 
     ahSession.pendingItemInfo[scanData.itemID] = nil
     if itemData.unusable then return end
+
+    if scanData.itemKey then
+        scanData.name, _, _, scanData.level, _, _, _, _, _, scanData.itemIcon = GetItemInfo(itemLink)
+    end
 
     scanData.totalWeight = itemData.totalWeight
     scanData.weightPerCopper = itemData.totalWeight / scanData.lowestPrice
@@ -1870,6 +1883,7 @@ local function analyzeSlotUpgrade(scanData, itemLink, bAS)
         bAS.best.ratio = scanData.ratio
         bAS.best.itemLink = itemLink
         bAS.best.itemID = scanData.itemID
+        bAS.best.itemKey = scanData.itemKey
         bAS.best.itemIcon = scanData.itemIcon
         bAS.best.name = scanData.name
         bAS.best.level = scanData.level
@@ -1887,6 +1901,7 @@ local function analyzeSlotUpgrade(scanData, itemLink, bAS)
         bAS.budget.rwpc = scanData.relativeWeightPerCopper
         bAS.budget.itemLink = itemLink
         bAS.budget.itemID = scanData.itemID
+        bAS.budget.itemKey = scanData.itemKey
         bAS.budget.itemIcon = scanData.itemIcon
         bAS.budget.name = scanData.name
         bAS.budget.level = scanData.level
@@ -1969,6 +1984,7 @@ function addon.itemUpgrades.AH:Analyze()
                 targetRow = cache.results[invEquipType].best
                 targetRow.itemLink = sourceRow.itemLink
                 targetRow.itemID = sourceRow.itemID
+                targetRow.itemKey = sourceRow.itemKey
                 targetRow.itemIcon = sourceRow.itemIcon
                 targetRow.name = sourceRow.name
                 targetRow.level = sourceRow.level
@@ -1982,6 +1998,7 @@ function addon.itemUpgrades.AH:Analyze()
                 targetRow = cache.results[invEquipType].budget
                 targetRow.itemLink = sourceRow.itemLink
                 targetRow.itemID = sourceRow.itemID
+                targetRow.itemKey = sourceRow.itemKey
                 targetRow.itemIcon = sourceRow.itemIcon
                 targetRow.name = sourceRow.name
                 targetRow.level = sourceRow.level
@@ -2144,6 +2161,7 @@ local function getAuctionHouseRowData(data, itemKindIcon, updateEPText, theme)
     return {
         ItemLink = data.itemLink,
         ItemID = data.itemID,
+        ItemKey = data.itemKey,
         ItemKindIcon = itemKindIcon,
         Name = data.name,
         ColorizedName = getColorizedName(data.itemLink, data.name),
@@ -2169,18 +2187,8 @@ local function getAuctionHouseBlockData(data, theme, upgradeIcon, valueIcon)
     return blockData
 end
 
-function addon.itemUpgrades.AH:CreateEmbeddedGui()
-    if ahSession.displayFrame then return end
-
-    local attachment = _G.AuctionFrame
-    if not attachment then return end
-
-    if not addon.ui.v2 then return end
-
-    addon.ui.v2:InitializeAuctionHouse()
-    ahSession.displayFrame = addon.ui.v2:CreateAuctionHouse(auctionHouseHandlers).frame
-
-    if not ahSession.displayFrame then return end
+local function createEmbeddedGui(attachment, widgetType)
+    ahSession.displayFrame = addon.ui.v2:CreateAuctionHouse(auctionHouseHandlers, widgetType).frame
 
     ahSession.displayFrame:SetParent(attachment)
     ahSession.displayFrame:SetPoint("TOPLEFT", attachment, "TOPLEFT")
@@ -2214,6 +2222,16 @@ function addon.itemUpgrades.AH:CreateEmbeddedGui()
     end)
 
     ahSession.displayFrame.buyButton:Disable()
+end
+
+function addon.itemUpgrades.AH:CreateEmbeddedGui()
+    if ahSession.displayFrame or not addon.ui.v2 then return end
+    if self.forever then return self.forever.CreateEmbeddedGui(self) end
+
+    local attachment = _G.AuctionFrame
+    if not attachment then return end
+
+    createEmbeddedGui(attachment)
 
     local index = attachment.numTabs + 1
     local tabButton = CreateFrame("Button", "AuctionFrameTab" .. index, attachment, "AuctionTabTemplate")
@@ -2281,7 +2299,7 @@ StaticPopupDialogs["RXPNoUpgradesFound"] = {
 
 function addon.itemUpgrades.AH:DisplayEmbeddedResults(showEmptyResults)
     self:CreateEmbeddedGui()
-    if not _G.AuctionFrame:IsShown() then return end
+    if not ahSession.displayFrame or not ahSession.displayFrame:GetParent():IsShown() then return end
 
     if not ahSession.bestAnalysis then
         local cache = getAHCache()
@@ -2331,4 +2349,116 @@ function addon.itemUpgrades.AH:DisplayEmbeddedResults(showEmptyResults)
     results:DoLayout()
 
     if showEmptyResults and not hasResults then _G.StaticPopup_Show("RXPNoUpgradesFound") end
+end
+
+if addon.game ~= "FOREVER" or not _G.C_AuctionHouse then return end
+
+local C_AuctionHouse = _G.C_AuctionHouse
+local forever = {}
+addon.itemUpgrades.AH.forever = forever
+
+function forever.RegisterEvents(ah)
+    ah:RegisterEvent("AUCTION_HOUSE_BROWSE_RESULTS_UPDATED", forever.ProcessBrowseResults)
+    ah:RegisterEvent("AUCTION_HOUSE_BROWSE_RESULTS_ADDED", forever.ProcessBrowseResults)
+    ah:RegisterEvent("AUCTION_HOUSE_BROWSE_FAILURE", function()
+        if ahSession.sentQuery then finishAHScan(true) end
+    end)
+end
+
+function forever.ProcessBrowseResults(event, results)
+    if not ahSession.sentQuery then return end
+
+    if event == "AUCTION_HOUSE_BROWSE_RESULTS_UPDATED" then results = C_AuctionHouse.GetBrowseResults() end
+
+    local itemLink, scanData
+    for _, result in ipairs(results) do
+        itemLink = "item:" .. result.itemKey.itemID
+        scanData = ahSession.scanData[itemLink]
+        if result.minPrice > 0 and (not scanData or result.minPrice < scanData.lowestPrice) then
+            ahSession.scanData[itemLink] = {
+                itemID = result.itemKey.itemID,
+                itemKey = result.itemKey,
+                lowestPrice = result.minPrice
+            }
+        end
+    end
+
+    if ahSession.cancelRequested or C_AuctionHouse.HasFullBrowseResults() then
+        finishAHScan(ahSession.cancelRequested)
+    else
+        ahSession.sentQuery = false
+        ahSession.scanPage = ahSession.scanPage + 1
+        addon.itemUpgrades.AH:Scan(0)
+    end
+end
+
+function forever.Scan(retries, maxRetries, scanGeneration)
+    if not C_AuctionHouse.IsThrottledMessageSystemReady() then
+        C_Timer.After(1, function() addon.itemUpgrades.AH:Scan(retries + 1, maxRetries, scanGeneration) end)
+        return
+    end
+
+    ahSession.sentQuery = true
+    if ahSession.scanPage > 0 then
+        C_AuctionHouse.RequestMoreBrowseResults()
+    else
+        C_AuctionHouse.SendBrowseQuery({
+            searchString = "",
+            minLevel = math.max(1, addon.player.level - 5),
+            maxLevel = addon.player.level,
+            filters = {Enum.AuctionHouseFilter.UsableOnly, Enum.AuctionHouseFilter.UncommonQuality},
+            itemClassFilters = {{classID = Enum.ItemClass.Armor}, {classID = Enum.ItemClass.Weapon}},
+            sorts = {}
+        })
+    end
+end
+
+function forever.SearchForBuyoutItem(itemData)
+    if not _G.AuctionHouseFrame:IsShown() or not itemData.ItemKey then return end
+
+    if C_AuctionHouse.GetItemKeyInfo(itemData.ItemKey) then
+        _G.AuctionHouseFrame:SelectBrowseResult({itemKey = itemData.ItemKey, minPrice = itemData.BuyoutMoney})
+    else
+        ahSession.displayFrame.buyButton:Enable()
+    end
+end
+
+function forever.CreateEmbeddedGui(ah)
+    local attachment = _G.AuctionHouseFrame
+    if not attachment then return end
+
+    addon.ui.v2:RegisterRXPV2ForeverAH()
+    createEmbeddedGui(attachment, "RXPV2ForeverAH")
+
+    ahSession.displayFrame:HookScript("OnShow", function()
+        if next(ahSession.scanData) then ah:Analyze() end
+        ah:DisplayEmbeddedResults()
+    end)
+    ahSession.displayFrame:HookScript("OnHide", function()
+        if ahSession.isScanning then finishAHScan(true) end
+    end)
+
+    local tabLibrary = LibStub("LibAHTab-1-0", true)
+    if tabLibrary then
+        tabLibrary:CreateTab(addon.name, ahSession.displayFrame, addon.name)
+    else
+        local tabButton = CreateFrame("Button", nil, attachment, "AuctionHouseFrameDisplayModeTabTemplate")
+        tabButton:SetText(addon.name)
+        PanelTemplates_TabResize(tabButton, 20, nil, 70)
+        tabButton:SetPoint("TOPLEFT", attachment.Tabs[#attachment.Tabs], "TOPRIGHT", -14, 0)
+        tabButton:SetScript("OnClick", function(this)
+            attachment:SetDisplayMode({})
+            attachment.displayMode = nil
+            for _, tab in ipairs(attachment.Tabs) do PanelTemplates_DeselectTab(tab) end
+            PanelTemplates_SelectTab(this)
+            attachment:SetTitle(addon.name)
+            ahSession.displayFrame:Show()
+        end)
+        hooksecurefunc(attachment, "SetDisplayMode", function(_, mode)
+            if mode and #mode > 0 then
+                PanelTemplates_DeselectTab(tabButton)
+                ahSession.displayFrame:Hide()
+            end
+        end)
+    end
 end
