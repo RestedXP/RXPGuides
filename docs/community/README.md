@@ -73,7 +73,7 @@ route exists. Re-plans when you drift off and brings you back to your exact step
 Up to 5 players share their guide steps, invite each other from the guide menu, and change layer together in one
 click (LayerSwap host search, then automatic regroup on the new layer).
 
-<a href="videos/group-mode-explained.mp4"><img src="img/group-02-layer-search.webp" alt="Group mode explained" width="100%"></a>
+<a href="videos/group-mode-explained.mp4"><img src="img/group-01-invite.webp" alt="Group mode explained" width="100%"></a>
 
 [Watch the explainer (37 s)](videos/group-mode-explained.mp4) · [Design doc: GROUP-MODE.md](GROUP-MODE.md)
 
