@@ -197,7 +197,7 @@ step
 	.goto Westfall,56.04,31.23
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Bauer Saldean|r
     .vendor
-    >>|cRXP_WARN_Do NOT sell |T133884:0|t[Murloc Augen], |T135997:0|t[Geiferzahn Snouts], |T134341:0|t[Geiferzahn Livers] oder |T133972:0|t[Stringy Vulture Fleisch]|r
+    >>|cRXP_WARN_Verkauft KEINE |T133884:0|t[Murlocaugen], |T135997:0|t[Geiferzahnschnauzen], |T134341:0|t[Geiferzahnlebern] oder |T133972:0|t[Sehniges Geierfleisch]|r
 	.target Farmer Saldean
 step
     #label HarvestW
@@ -1993,7 +1993,7 @@ step
     .goto Ashenvale,29.7,13.6
 step
     .goto Ashenvale,27.26,35.58
-    >>|cRXP_WARN_Begleitet |cRXP_FRIENDLY_Kerlonian|r zu Maestras Posten im Eschental|r
+    >>|cRXP_WARN_Begleitet |cRXP_FRIENDLY_Kerlonian|r zu Maestras Posten in Ashenvale|r
     .use 13536 >> |cRXP_WARN_Benutzt das|r |T134229:0|t[|cRXP_LOOT_Horn der Erweckung|r] |cRXP_WARN_wenn |cRXP_FRIENDLY_Kerlonian|r neben euch einschläft|r
     >>|cRXP_WARN_Vermeidet es so weit wie möglich, auf der Hauptstraße zu laufen. Feinde spawnen nur, wenn ihr auf der Straße seid|r
     .complete 5321,2

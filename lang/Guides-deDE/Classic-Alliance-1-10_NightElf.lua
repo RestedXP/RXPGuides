@@ -7,8 +7,8 @@ RXPGuides.RegisterGuide([[
 #tbc
 #season 0,1
 << Alliance
-#name 1-6 Laubschattental
-#displayname 1-7 Laubschattental << sod
+#name 1-6 Shadowglen
+#displayname 1-7 Shadowglen << sod
 #version 1
 #group RestedXP Allianz 1-20
 #groupid RXP-SRGCE-A1
@@ -80,7 +80,7 @@ step << Hunter
     .accept 3519 >> Akzeptiert die Quest Ein Freund in der Not
 step << Hunter
     #completewith next
-    .hs >> Benutzt euren Ruhestein zum Laubschattental
+    .hs >> Ruhestein nach Shadowglen
 step << Hunter
     .goto Teldrassil,57.9,45.1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Tarindrella|r
@@ -147,11 +147,11 @@ step << !Hunter
 step << !Hunter !Warrior
     #season 2
     #completewith next
-    .hs >> Benutzt euren Ruhestein zum Laubschattental
+    .hs >> Ruhestein nach Shadowglen
 step << !Hunter
     #season 0
     #completewith next
-    .hs >> Benutzt euren Ruhestein zum Laubschattental
+    .hs >> Ruhestein nach Shadowglen
 step << !Hunter
     #season 0 << Druid/Warrior
     .goto Teldrassil,57.9,45.1

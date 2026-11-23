@@ -3664,7 +3664,7 @@ RXPGuides.RegisterGuide([[
 --#groupid RXP-SRGCE-A1
 #name 16-19 Dunkelküste
 #next 19-20 Rotkammgebirge;20-21 Dunkelküste/Ashenvale << !Hunter
-#next 19-21 Dunkelküste/Ashenvale << Hunter
+#next 19-21 Dunkelküste/Eschental << Hunter
 
 -- step << NightElf !Druid
 --     #optional
@@ -6164,7 +6164,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Forever Route (A)
 #subgroup Schnellste Route 1-20
 --#groupid RXP-SRGCE-A1
-#name 19-21 Dunkelküste/Ashenvale
+#name 19-21 Dunkelküste/Eschental
 #next RestedXP Forever Route (A)\21-23 Ashenvale/Steinkrallengebirge
 
 step

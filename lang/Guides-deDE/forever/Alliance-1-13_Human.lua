@@ -4115,7 +4115,7 @@ step
 step << Rogue
     #optional
     #completewith next
-    +|cRXP_WARN_Legt|r |T135641:0|t[Handwerkerdolch] |cRXP_WARN_in eurer Nebenhand an|r
+    +|cRXP_WARN_Legt den|r |T135641:0|t[Handwerkerdolch] |cRXP_WARN_in eurer Nebenhand an|r
     .use 2218
     .itemcount 2218,1
     .itemStat 17,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8

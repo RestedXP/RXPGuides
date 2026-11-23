@@ -7,8 +7,8 @@ RXPGuides.RegisterGuide([[
 #disabledungeons
 #season 0,1
 << Alliance
-#name 1-6 Laubschattental
-#displayname 1-7 Laubschattental << sod
+#name 1-6 Shadowglen
+#displayname 1-7 Shadowglen << sod
 #version 1
 #group RestedXP Forever Route (A)
 #subgroup Schnellste Route 1-20
@@ -91,7 +91,7 @@ step << Hunter/Warrior
     .accept 3519 >> Akzeptiert die Quest Ein Freund in der Not
 step << Hunter/Warrior
     #completewith next
-    .hs >> Benutzt euren Ruhestein zum Laubschattental
+    .hs >> Ruhestein nach Shadowglen
 step << Hunter/Warrior
     .goto 1438/1,866.51,10300.67
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Tarindrella|r
@@ -132,7 +132,7 @@ step << !Hunter !Druid !Warrior
     .accept 3519 >> Akzeptiert die Quest Ein Freund in der Not
 step << !Hunter !Druid !Warrior
     #completewith next
-    .hs >> Benutzt euren Ruhestein zum Laubschattental
+    .hs >> Ruhestein nach Shadowglen
 step << !Hunter !Warrior
     .goto 1438/1,866.51,10300.67
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Tarindrella|r
@@ -174,7 +174,7 @@ step << Druid
     .accept 3519 >> Akzeptiert die Quest Ein Freund in der Not
 step << Druid
     #completewith next
-    .hs >> Benutzt euren Ruhestein zum Laubschattental
+    .hs >> Ruhestein nach Shadowglen
 step << Druid
     .goto 1438/1,871.60,10300.67
     .target Tarindrella

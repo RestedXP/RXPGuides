@@ -483,7 +483,7 @@ RXPGuides.RegisterGuide([[
 #subgroup Schnellste Route 1-22
 --#groupid RXP-SRGCE-H1
 #defaultfor Tauren
-#next 12-17 das Brachland
+#next 12-17 Das Brachland
 
 
 step

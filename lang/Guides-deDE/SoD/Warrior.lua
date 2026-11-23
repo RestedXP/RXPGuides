@@ -64,7 +64,7 @@ RXPGuides.RegisterGuide([[
 << Alliance Warrior SoD
 #group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
-#name Siegesrausch - 3 (Laubschattental)
+#name Siegesrausch - 3 (Shadowglen)
 #title Siegesrausch
 
 step << Warrior

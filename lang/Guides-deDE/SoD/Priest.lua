@@ -60,7 +60,7 @@ RXPGuides.RegisterGuide([[
 << NightElf Priest SoD
 #group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
-#name Sühne - 2 (Laubschattental)
+#name Sühne - 2 (Shadowglen)
 #title Sühne
 
 step << NightElf Priest

@@ -56,7 +56,7 @@ RXPGuides.RegisterGuide([[
 << Alliance Rogue SoD
 #group RestedXP Runen & Bücher Guide
 #subgroup Handschuhe
-#name Schattenschlagschaden - 3 (Laubschattental)
+#name Schattenschlag - 3 (Shadowglen)
 #title Schattenschlagschaden
 
 step << Rogue

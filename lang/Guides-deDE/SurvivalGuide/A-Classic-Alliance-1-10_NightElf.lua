@@ -7,7 +7,7 @@ RXPGuides.RegisterGuide([[
 #classic
 #tbc
 << Alliance
-#name 1-6 Laubschattental
+#name 1-6 Shadowglen
 #version 1
 #group RestedXP Überlebens-Guide (A)
 #subgroup RXP Überlebens-Guide 1-20
@@ -57,7 +57,7 @@ step << Hunter
     .accept 3519 >> Akzeptiert die Quest Ein Freund in der Not
 step << Hunter
     #completewith next
-    .hs >> Benutzt euren Ruhestein zum Laubschattental
+    .hs >> Ruhestein nach Shadowglen
 step << Hunter
     .goto Teldrassil,57.9,45.1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Tarindrella|r
@@ -103,7 +103,7 @@ step << !Hunter
     .accept 3519 >> Akzeptiert die Quest Ein Freund in der Not
 step << !Hunter
     #completewith next
-    .hs >> Benutzt euren Ruhestein zum Laubschattental
+    .hs >> Ruhestein nach Shadowglen
 step << !Hunter
     .goto Teldrassil,57.9,45.1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Tarindrella|r

@@ -1096,13 +1096,13 @@ RXPGuides.RegisterGuide([[
 << Druid SoD
 #group RestedXP Runen & Bücher Guide
 #subgroup Verschleierung
-#name Verbesserter Prankenhieb - 50 (Krater von Un'Goro)
+#name Verbesserter Prankenhieb - 50 (Un'Goro-Krater)
 #title Verbesserter Prankenhieb
 
 step
     #completewith next
     .train 439765,1
-    .zone Un'Goro Crater >>Reist nach Krater von Un'Goro
+    .zone Un'Goro Crater >>Reist zum Un'Goro-Krater
 step
     .train 439765,1
     .goto Un'Goro Crater,68.0,51.4

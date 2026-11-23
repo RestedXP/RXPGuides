@@ -2892,7 +2892,7 @@ step
     .collect 223147,1 --Spell Notes: Balefire Bolt
     .mob Fel Interloper
 step
-    .train 429311 >>|cRXP_WARN_Benutzt die|r |T134939:0|t[|cRXP_FRIENDLY_Zaubernotizen: Qualfeuerblitz|r] |cRXP_WARN_zum Trainieren|r |T135809:0|t[Qualfeuerblitz]
+    .train 429311 >>|cRXP_WARN_Benutzt die|r |T134939:0|t[|cRXP_FRIENDLY_Zaubernotizen: Qualfeuerblitz|r] |cRXP_WARN_um|r |T135809:0|t[Qualfeuerblitz] zu erlernen
     .use 223147
 ]])
 

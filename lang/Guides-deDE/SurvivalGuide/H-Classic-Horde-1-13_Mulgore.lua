@@ -2944,12 +2944,12 @@ step << Shaman/Warrior
     #completewith next
     .goto The Barrens,51.50,30.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Devrak|r
-    .fly Thunder Bluff >>Fliege nach Donnerfels
+    .fly Thunder Bluff >>Fliegt nach Thunder Bluff
     .zoneskip Thunder Bluff
 step << Shaman/Warrior
     .goto Thunder Bluff,45.6,55.9
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Ahanu|r
-    .turnin 6362 >>Gebt die Quest Flug nach Donnerfels ab
+    .turnin 6362 >>Gebt die Quest Flug nach Thunder Bluff ab
     .accept 6363 >>Akzeptiert die Quest Tal der Windreitermeister
     .target Ahanu
 step << Shaman/Warrior

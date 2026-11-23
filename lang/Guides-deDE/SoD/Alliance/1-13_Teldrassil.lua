@@ -6,8 +6,8 @@ RXPGuides.RegisterGuide([[
 #classic
 << Alliance
 #season 2
-#name 1-7 Laubschattental SoD
-#displayname 1-7 Laubschattental
+#name 1-7 Shadowglen SoD
+#displayname 1-7 Shadowglen
 #version 1
 #group RestedXP Allianz 1-20
 #groupid RXP-SRGCE-A1
@@ -286,7 +286,7 @@ step
     .xp 3-400 >> Schleifen bis ihr 400xp vom Level 3 entfernt seid (500/900)
 step
     #completewith next
-    .hs >> Benutzt euren Ruhestein zum Laubschattental
+    .hs >> Ruhestein nach Shadowglen
 step << Hunter
     .goto Teldrassil,57.9,45.1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Tarindrella|r

@@ -4021,7 +4021,7 @@ step
 step << !Tauren !Skyborne
     .goto 1413/1,-1891.48,-2391.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Quetschzahn|r
-    .aura 16618 >>|cRXP_WARN_Falls ihr 10 habt|r |T134128:0|t[|cRXP_LOOT_Blutsplitter|r] |cRXP_WARN_übrig, benutzt sie, um|r |T136022:0|t[Geist des Windes] |cRXP_WARN_von|r |cRXP_FRIENDLY_Quetschzahn|r zu erhalten
+    .aura 16618 >>|cRXP_WARN_Falls ihr 10|r |T134128:0|t[|cRXP_LOOT_Blutsplitter|r] |cRXP_WARN_übrig habt, benutzt sie, um|r |T136022:0|t[Geist des Windes] |cRXP_WARN_von|r |cRXP_FRIENDLY_Quetschzahn|r zu erhalten
     >>|cRXP_WARN_Überspringt diesen Schritt, falls ihr die Thunder Bluff Flugroute habt|r
     .itemcount 5075,10
     .target Mangletooth
@@ -4224,7 +4224,7 @@ step
     .skill firstaid,<1,1
 step
     .goto 1456/1,206.88,-997.45
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit|r |cRXP_FRIENDLY_Pand|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |r |cRXP_FRIENDLY_Pand|r
     >>|cRXP_WARN_Überspringt diesen Schritt, wenn ihr nicht genug|r |T132889:0|t[Leinenstoff] |cRXP_WARN_hattet, um Skill 80 zu erreichen|r
     .train 3277 >> Erlernt |T133684:0|t[Wollverband]
     .train 7934 >> Erlernt |T134437:0|t[Gegengift] << Rogue
@@ -5057,7 +5057,7 @@ step
     .isQuestComplete 1486
 step
     #completewith WCEnd
-    .hs >> Ruhestein nach Donnerfels
+    .hs >> Ruhestein nach Thunder Bluff
     .bindlocation 1638,1
     .zoneskip Thunder Bluff
     .use 6948

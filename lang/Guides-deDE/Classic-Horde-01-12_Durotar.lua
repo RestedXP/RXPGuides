@@ -3771,7 +3771,7 @@ RXPGuides.RegisterGuide([[
 #groupid RXP-SRGCE-H1
 #defaultfor Troll/Orc
 #next 10-12 Tirisfal << Troll Rogue/Orc Rogue/Orc Warlock/Troll Mage/Troll Priest
-#next 12-17 das Brachland << Troll !Rogue !Mage !Priest/Orc !Rogue !Warlock
+#next 12-17 Das Brachland << Troll !Rogue !Mage !Priest/Orc !Rogue !Warlock
 
 
 step << Warrior/Shaman

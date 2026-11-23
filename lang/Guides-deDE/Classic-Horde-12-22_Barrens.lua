@@ -7,7 +7,7 @@ RXPGuides.RegisterGuide([[
 #tbc
 #xprate <1.99
 << Horde
-#name 12-17 das Brachland
+#name 12-17 Das Brachland
 #displayname 14-18 Das Brachland << Undead/Troll Rogue/Orc Rogue/Orc Warlock/Troll Mage/Troll Priest
 #version 11
 #group RestedXP Horde 1-22
@@ -2830,8 +2830,8 @@ step
     #optional
     #completewith RFCTurninsTB1
     .goto Thunder Bluff,31.78,65.92
-    .zone Thunder Bluff >>Nehmt den Aufzug nach Donnerfels
-    >>|cRXP_WARN_Wenn ihr die Donnerfels Flugroute habt, fliegt stattdessen dorthin|r
+    .zone Thunder Bluff >>Nehmt den Aufzug nach Thunder Bluff
+    >>|cRXP_WARN_Wenn ihr die Thunder Bluff Flugroute habt, fliegt stattdessen dorthin|r
     .dungeon RFC
 step
     #optional
@@ -4767,7 +4767,7 @@ step
     .skill firstaid,<1,1
 step
     .goto Thunder Bluff,29.68,21.19
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit|r |cRXP_FRIENDLY_Pand|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |r |cRXP_FRIENDLY_Pand|r
     >>|cRXP_WARN_Überspringt diesen Schritt, wenn ihr nicht genug|r |T132889:0|t[Leinenstoff] |cRXP_WARN_hattet, um Skill 80 zu erreichen|r
     .train 3277 >> Erlernt |T133684:0|t[Wollverband]
     .train 7934 >> Erlernt |T134437:0|t[Gegengift] << Rogue
@@ -8703,7 +8703,7 @@ step << skip --!Tauren
     .isQuestComplete 5723
 step << skip --!Tauren
     #completewith RFCPickups
-    .goto Thunder Bluff,50.75,37.07,40 >> Nehmt den Aufzug hinauf nach Donnerfels
+    .goto Thunder Bluff,50.75,37.07,40 >> Nehmt den Aufzug nach Thunder Bluff
     .isOnQuest 5724
     .isQuestComplete 5723
     .dungeon RFC
@@ -12183,7 +12183,7 @@ step
     #xprate <2.1 << Warlock
     #label FirstAid2
     .goto Thunder Bluff,29.68,21.19
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit|r |cRXP_FRIENDLY_Pand|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |r |cRXP_FRIENDLY_Pand|r
     >>|cRXP_WARN_Überspringt diesen Schritt, wenn ihr nicht genug|r |T132889:0|t[Leinenstoff] |cRXP_WARN_hattet, um Skill 80 zu erreichen|r
     .train 3277 >> Erlernt |T133684:0|t[Wollverband]
     .train 7934 >> Erlernt |T134437:0|t[Gegengift] << Rogue

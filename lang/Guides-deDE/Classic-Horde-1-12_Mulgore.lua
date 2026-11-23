@@ -588,7 +588,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Horde 1-22
 #groupid RXP-SRGCE-H1
 #defaultfor Tauren
-#next 12-17 das Brachland
+#next 12-17 Das Brachland
 
 
 step << Druid

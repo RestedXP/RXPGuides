@@ -6,7 +6,7 @@ RXPGuides.RegisterGuide([[
 #forever
 #disabledungeons
 << Horde
-#name 12-17 das Brachland
+#name 12-17 Das Brachland
 #displayname 14-18 Das Brachland << !Shaman !Hunter !Tauren
 #displayname 15-18 Das Brachland << Paladin
 #version 11
@@ -3827,7 +3827,7 @@ step
     .skill firstaid,<1,1
 step
     .goto 1456/1,206.88,-997.45
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit|r |cRXP_FRIENDLY_Pand|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |r |cRXP_FRIENDLY_Pand|r
     >>|cRXP_WARN_Überspringt diesen Schritt, wenn ihr nicht genug|r |T132889:0|t[Leinenstoff] |cRXP_WARN_hattet, um Skill 80 zu erreichen|r
     .train 3277 >> Erlernt |T133684:0|t[Wollverband]
     .train 7934 >> Erlernt |T134437:0|t[Gegengift] << Rogue

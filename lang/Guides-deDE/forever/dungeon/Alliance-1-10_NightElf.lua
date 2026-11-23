@@ -6,7 +6,7 @@ RXPGuides.RegisterGuide([[
 #forever
 #season 0,1
 << Alliance
-#name 1-6 Laubschattental
+#name 1-6 Shadowglen
 #version 1
 #group RestedXP Forever Dungeonführer (A)
 #subgroup Dungeonführer 1-20
@@ -14,7 +14,7 @@ RXPGuides.RegisterGuide([[
 #defaultfor NightElf
 #next 6-11 Teldrassil
 step
-#include RestedXP Forever Route (A)\1-6 Laubschattental
+#include RestedXP Forever Route (A)\1-6 Shadowglen
 ]])
 
 RXPGuides.RegisterGuide([[

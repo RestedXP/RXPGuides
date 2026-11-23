@@ -2397,7 +2397,7 @@ step
     .target Zor Lonetree
 step
     #completewith next
-    .zone Thunder Bluff >>Reist nach |cFFfa9602Donnerfels|r
+    .zone Thunder Bluff >>Reist nach |cFFfa9602Thunder Bluff|r
 step
     .goto Thunder Bluff,78.61,28.55
     .gossip 5769 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Erzdruide Hamuul Runentotem|r und wählt die Dialogoption

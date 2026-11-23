@@ -28,7 +28,7 @@ RXPGuides.RegisterGuide([[
 #subgroup Dungeonführer 1-22
 --#groupid RXP-SRGCE-H1
 #defaultfor Undead
-#next 12-14 Silberwald; 12-17 das Brachland
+#next 12-14 Silberwald; 12-17 Das Brachland
 
 step
 .enabledungeon ROL

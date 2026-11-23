@@ -791,7 +791,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Horde 1-22
 #groupid RXP-SRGCE-H1
 #defaultfor Undead
-#next 12-14 Silberwald; 12-17 das Brachland
+#next 12-14 Silberwald; 12-17 Das Brachland
 
 step
     .goto Tirisfal Glades,40.91,54.17
@@ -4098,7 +4098,7 @@ RXPGuides.RegisterGuide([[
 #tbc
 #era/som--h
 #name 12-14 Silberwald
-#next 12-17 das Brachland
+#next 12-17 Das Brachland
 
 
 step << Undead Warrior

@@ -1165,7 +1165,7 @@ step
     #completewith next
     .goto Tanaris,51.006,29.345
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Bera Steinhammer|r
-    .fly Un'Goro >> Fliegt in den Krater von Un'Goro
+    .fly Un'Goro >> Fliegt in den Un'Goro-Krater
     .target Bera Stonehammer
     .zoneskip Un'Goro Crater
 step
@@ -1424,7 +1424,7 @@ step
     #completewith next
     .goto Silithus,48.69,36.67
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Runk|r
-    .fly Un'Goro >>Fliegt in den Krater von Un'Goro
+    .fly Un'Goro >>Fliegt in den Un'Goro-Krater
 	.target Runk Windtamer
 	.zoneskip Un'Goro Crater
 step
