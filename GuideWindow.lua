@@ -2677,8 +2677,7 @@ function RXPFrame:GenerateMenuTable(menu)
         end
     })
 
-    if addon.ui.v2.configurator.IsSupportedClient() and not addon.currentGuide and
-        not addon.ui.v2.configurator:IsShown() then
+    if addon.ui.v2.configurator.IsSupportedClient() and not addon.ui.v2.configurator:IsShown() then
         tinsert(menuList, {
             text = L("Run Guide Configurator"),
             notCheckable = 1,
