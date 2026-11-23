@@ -2938,11 +2938,19 @@ step << Priest
     .trainer >> Trainiere deine Klassenfähigkeiten
     .target Brother Joshua
 step
+    #optional
+    .isOnQuest 97914
     .goto 1453/0,719.67,-8550.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Baros Alexston|r
-    .turnin -97914 >> Gebt die Quest Neue Horizonte ab
+    .turnin 97914 >> Gebt die Quest Neue Horizonte ab
     .accept 97926 >> Akzeptiert die Quest Auf sich allein gestellt
---    .accept 399 >> Accept Humble Beginnings
+    .target Baros Alexston
+step
+    #optional
+    .isQuestTurnedIn 97914
+    .goto 1453/0,719.67,-8550.30
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Baros Alexston|r
+    .accept 97926 >> Akzeptiert die Quest Making Do
     .target Baros Alexston
 step << Rogue/Warrior/Hunter
     .goto 1453/0,613.12,-8795.96

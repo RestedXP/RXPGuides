@@ -4,7 +4,7 @@ RXPGuides.RegisterGuide([[
 #forever
 #disabledungeons
 #version 1
-#name 1-9 Zephras Isle V2
+#name 1-9 Die Insel Zephras V2
 #displayname 1-9 Skyborne V2 << Alliance
 #displayname 1-9 Skyborne V2 << Horde
 #group RestedXP Forever Route (A) << Alliance
@@ -396,7 +396,7 @@ step << Horde Shaman
     .subzoneskip 16635,1 -- Thendal Village
     .showwhiledead
     .goto 2521,41.06,22.32
-    .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit dem |cRXP_FRIENDLY_Spirit Heilung::6491|r.
+    .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit dem |cRXP_FRIENDLY_Geistheiler::6491|r.
     .target Spirit Healer::6491
 step << Horde Shaman
     #loop
@@ -839,7 +839,7 @@ step
     .isQuestComplete 92470 -- Foul Matriarch
     .goto 2521,41.06,22.31
     .showwhiledead
-    .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit dem |cRXP_FRIENDLY_Spirit Heilung::6491|r.
+    .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit dem |cRXP_FRIENDLY_Geistheiler::6491|r.
     .skipgossipid 96031
     .skipgossipid 98031
     .target Spirit Healer::6491
@@ -1628,7 +1628,7 @@ step
     .subzoneskip 16623,1 
     .showwhiledead
     .goto 2521/2991,1634.800,3418.600
-    .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit dem |cRXP_FRIENDLY_Spirit Heilung::6491|r.
+    .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit dem |cRXP_FRIENDLY_Geistheiler::6491|r.
     .skipgossipid 96031
     .skipgossipid 98031
     .target Spirit Healer::6491
@@ -2027,7 +2027,7 @@ step
     .subzoneskip 16623,1 
     .showwhiledead
     .goto 2521/2991,1634.800,3418.600
-    .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit dem |cRXP_FRIENDLY_Spirit Heilung::6491|r.
+    .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit dem |cRXP_FRIENDLY_Geistheiler::6491|r.
     .skipgossipid 96031
     .skipgossipid 98031
     .target Spirit Healer::6491
@@ -2248,7 +2248,7 @@ step
     .subzoneskip 17674,1 
     .showwhiledead
     .goto 2521/2991,1993.600,2589.900
-    .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit dem |cRXP_FRIENDLY_Spirit Heilung::6491|r.
+    .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit dem |cRXP_FRIENDLY_Geistheiler::6491|r.
     *|cRXP_WARN_Beim Respawn könntet ihr von|r Prideclaws::251245|cRXP_ENEMY_ angegriffen werden|r.
     .skipgossipid 96031
     .skipgossipid 98031
@@ -3068,7 +3068,7 @@ step
     .isNotOnQuest 93317 -- Crab Season
     .showwhiledead
     .goto 2521,54.99,68.14
-    .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit dem |cRXP_FRIENDLY_Spirit Heilung::6491|r.
+    .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit dem |cRXP_FRIENDLY_Geistheiler::6491|r.
     .skipgossipid 96031
     .skipgossipid 98031
     .target Spirit Healer::6491
@@ -3363,14 +3363,14 @@ step << Alliance
     .isOnQuest 92727 -- The Missing Scholar
     .subzoneskip 16638,1 -- Valanaar
     .goto 2521,67.41,80.46
-    .subzone 16626 >>Springt von der Klippe herunter und respawnt beim |cRXP_FRIENDLY_Spirit Heilung::6491|r.
+    .subzone 16626 >>Springt von der Klippe und belebt euch beim |cRXP_FRIENDLY_Geistheiler::6491|r wieder.
 step << Alliance
     #ignorecorpse
     .subzoneskip 16626,1 -- Gustberry Lowlands
     .isOnQuest 92727 -- The Missing Scholar
     .showwhiledead
     .goto 2521,54.99,68.14
-    .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit dem |cRXP_FRIENDLY_Spirit Heilung::6491|r.
+    .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit dem |cRXP_FRIENDLY_Geistheiler::6491|r.
     .skipgossipid 96031
     .skipgossipid 98031
     .target Spirit Healer::6491
@@ -3866,14 +3866,14 @@ step << Horde Shaman
     .isOnQuest 97244 --Call of Fire
     .isQuestNotComplete 97244 --Call of Fire
     .goto 2521,50.8,89.6
-    .subzone 16593 >>Springt von der Klippe herunter und respawnt beim |cRXP_FRIENDLY_Spirit Heilung::6491|r.
+    .subzone 16593 >>Springt von der Klippe und belebt euch beim |cRXP_FRIENDLY_Geistheiler::6491|r wieder.
 step << Horde Shaman
     #ignorecorpse
     .isOnQuest 97244 --Call of Fire
     .isQuestNotComplete 97244 --Call of Fire
     .showwhiledead
     .goto 2521,54.99,68.14
-    .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit dem |cRXP_FRIENDLY_Spirit Heilung::6491|r.
+    .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit dem |cRXP_FRIENDLY_Geistheiler::6491|r.
     .skipgossipid 96031
     .skipgossipid 98031
     .target Spirit Healer::6491
@@ -3888,14 +3888,14 @@ step << Horde Shaman
     .isQuestComplete 97244 --Call of Fire
     .goto 2521,62.384,64.393,-1
     .goto 2521,54.99,68.14,-1
-    +Sterbt und beschwört euch beim |cRXP_FRIENDLY_Spirit Heilung::6491|r erneut.
+    +Sterbt und belebt euch beim |cRXP_FRIENDLY_Geistheiler::6491|r wieder.
 step << Horde Shaman
     .isOnQuest 97244 --Call of Fire
     .isQuestComplete 97244 --Call of Fire
     #ignorecorpse
     .showwhiledead
     .goto 2521,54.99,68.14
-    .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit dem |cRXP_FRIENDLY_Spirit Heilung::6491|r.
+    .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit dem |cRXP_FRIENDLY_Geistheiler::6491|r.
     .skipgossipid 96031
     .skipgossipid 98031
     .target Spirit Healer::6491

@@ -2749,7 +2749,7 @@ step
     .goto 2521,45.35,46.79,20,0
     .goto 2521,44.05,49.98,30,0
     .goto 2521,43.02,49.86
-    .subzone 17674 >>Sterbt südwestlich von Shen'dar Village und spawnt bei |cRXP_FRIENDLY_Spirit Heilung::6491|r auf.
+    .subzone 17674 >>Sterbt südwestlich von Shen'dar und belebt euch beim |cRXP_FRIENDLY_Geistheiler::6491|r wieder
     *|cRXP_WARN_Benutzt das Sitzmakro im Kampf, um schneller zu sterben|r.
     .macro Sit to Die Faster,134400 >>Setzt euch hin zum schnelleren Sterben
 step
@@ -2769,7 +2769,7 @@ step
     .subzoneskip 17674,1 -- West Pylon Watchtower
     .showwhiledead
     .goto 2521,40.23,63.83
-    .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit dem |cRXP_FRIENDLY_Spirit Heilung::6491|r.
+    .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit dem |cRXP_FRIENDLY_Geistheiler::6491|r.
     .skipgossipid 96031
     .skipgossipid 98031
     .target Spirit Healer::6491
@@ -3351,7 +3351,7 @@ step
     .isNotOnQuest 93317 -- Crab Season
     .showwhiledead
     .goto 2521,54.99,68.14
-    .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit dem |cRXP_FRIENDLY_Spirit Heilung::6491|r.
+    .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit dem |cRXP_FRIENDLY_Geistheiler::6491|r.
     .skipgossipid 96031
     .skipgossipid 98031
     .target Spirit Healer::6491
@@ -3630,7 +3630,7 @@ step << Alliance
     .isOnQuest 92727 -- The Missing Scholar
     .showwhiledead
     .goto 2521,54.99,68.14
-    .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit dem |cRXP_FRIENDLY_Spirit Heilung::6491|r.
+    .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit dem |cRXP_FRIENDLY_Geistheiler::6491|r.
     .skipgossipid 96031
     .skipgossipid 98031
     .target Spirit Healer::6491
@@ -4123,7 +4123,7 @@ step << Horde Shaman
     .isQuestNotComplete 97244
     .showwhiledead
     .goto 2521,54.99,68.14
-    .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit dem |cRXP_FRIENDLY_Spirit Heilung::6491|r.
+    .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit dem |cRXP_FRIENDLY_Geistheiler::6491|r.
     .skipgossipid 96031
     .skipgossipid 98031
     .target Spirit Healer::6491
@@ -4138,14 +4138,14 @@ step << Horde Shaman
     .isQuestComplete 97244
     .goto 2521,62.384,64.393,-1
     .goto 2521,54.99,68.14,-1
-    +Sterbt und beschwört euch beim |cRXP_FRIENDLY_Spirit Heilung::6491|r erneut.
+    +Sterbt und belebt euch beim |cRXP_FRIENDLY_Geistheiler::6491|r wieder.
 step << Horde Shaman
     .isOnQuest 97244
     .isQuestComplete 97244
     #ignorecorpse
     .showwhiledead
     .goto 2521,54.99,68.14
-    .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit dem |cRXP_FRIENDLY_Spirit Heilung::6491|r.
+    .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit dem |cRXP_FRIENDLY_Geistheiler::6491|r.
     .skipgossipid 96031
     .skipgossipid 98031
     .target Spirit Healer::6491
@@ -6933,10 +6933,10 @@ step << Alliance
     -- .turnin -94946 >>Turn in The Magical City of Dalaran
     .accept 94947 >>Akzeptiert die Quest Welcome to Azeroth
 step << Alliance Druid
-    .goto 1416/0,385.700,385.400
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Archmage Ansirem Runeweaver::2543|r.
+    .goto 1416/0,455.400,444.700
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Alfina Nightgaze|r.
     .accept 94912 >>Akzeptiert die Quest Child of Naturschaden
-    .target Archmage Ansirem Runeweaver::2543
+    .target Alfina Nightgaze
 step << Alliance
     .goto 1416/0,445.93,450.00
     >>|TInterface/cursor/crosshair/interact.blp:20|tKlickt |cRXP_PICK_Portal|r

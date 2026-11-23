@@ -3619,13 +3619,7 @@ step
 step
     #label Level20Check
 
-step << !Druid !Rogue
-    .hs >> Ruhestein nach Sturmwind
-    .cooldown item,6948,>2,1
-    .zoneskip Stormwind City
-    .zoneskip Darkshore
 step
-    #optional
     #completewith DarkshoreBoat
     .goto 1433/0,-2234.900,-9435.300,-1
     .goto 1436/0,1037.42,-10628.27,-1
@@ -3740,12 +3734,6 @@ step << Dwarf Rogue
     .cast 20594 >>|cRXP_WARN_Wirkt |T136225:0|t[Steingestalt], um |T136230:0|t[Berührung von Zanzil]-Debuff zu entfernen|r
     .aura -9991
 step << Rogue
-    .hs >> Ruhestein nach Sturmwind
-    .cooldown item,6948,>2,1
-    .zoneskip Stormwind City
-    .zoneskip Darkshore
-step << Rogue
-    #optional
     #completewith KlavenEnd
     .goto 1436/0,1037.42,-10628.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Thor|r
@@ -4088,10 +4076,17 @@ step << Druid
     .target Vesprystus
     .zoneskip Darkshore
 step
+    .goto 1439/1,515.55,6406.32
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Shaussiy|r unten
+    .home >> Setzt den Ruhestein von Euch in Auberdine
+    .target Innkeeper Shaussiy
+    .bindlocation 442
+step
     .goto 1439/1,497.08,6427.72--c:1439,37.322,43.640
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Barithras Moonshade|r
     .accept 947 >> Akzeptiert die Quest Höhlenpilze
     .target Barithras Moonshade
+    .maxlevel 21
 step
     #optional
     .isOnQuest 4763
@@ -4099,6 +4094,7 @@ step
     >>|cRXP_WARN_Benutzt die|r |T133748:0|t[Leere Säuberungsschale] |cRXP_WARN_beim Auberdine-Mondbrunnen|r
     .collect 12347,1,4763,1 --Filled Cleansing Bowl (1)
     .use 12346
+    .maxlevel 21
 step
     .goto 1439/1,489.41,6506.36--c:1439,37.439,41.839
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Archäologin Hollee|r
@@ -4110,6 +4106,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Thundris Windwirker|r
     .accept 4763 >> Akzeptiert die Quest Die verderbten Schwarzfelle
     .target Thundris Windweaver
+    .maxlevel 21
 step
     .isOnQuest 3765
     .goto 1439/1,431.300,6454.000
@@ -4139,6 +4136,7 @@ step
     >>|cRXP_WARN_Benutzt die|r |T133748:0|t[Leere Säuberungsschale] |cRXP_WARN_beim Auberdine-Mondbrunnen|r
     .collect 12347,1,4763,1 --Filled Cleansing Bowl (1)
     .use 12346
+    .maxlevel 21
 step
     #optional
     .goto 1439/1,48.66,6748.71--c:1439,44.168,36.289
@@ -4160,6 +4158,7 @@ step
     .complete 4763,1 --Talisman of Corruption (1)
     .disablecheckbox
     .itemcount 12355,<1 --Talisman of Corruption (<1)
+    .maxlevel 21
 step
     .isOnQuest 2139
     .goto 1439/1,-503.63,6732.95,45,0
@@ -4183,6 +4182,7 @@ step
     .complete 4763,1 --Talisman of Corruption (1)
     .disablecheckbox
     .itemcount 12355,<1 --Talisman of Corruption (<1)
+    .maxlevel 21
 step
     .isOnQuest 4763
     #sticky
@@ -4198,6 +4198,7 @@ step
     .complete 4763,1 --Talisman of Corruption (1)
     .disablecheckbox
     .itemcount 12355,<1 --Talisman of Corruption (<1)
+    .maxlevel 21
 step
     .isOnQuest 4763
     #optional
@@ -4207,6 +4208,7 @@ step
     .cast 16072 >> |cRXP_WARN_Benutzt die|r |T134712:0|t[Gefüllte Säuberungsschale] |cRXP_WARN_beim |cRXP_PICK_Feuer|r um|r |cRXP_ENEMY_Xabraxxis|r zu beschwören
     .timer 17,Die verderbten Schwarzfelle RP
     .use 12347
+    .maxlevel 21
 step
     .isOnQuest 4763
     #requires Blackwood3
@@ -4216,6 +4218,7 @@ step
     .use 12347
     .complete 4763,1 -- Talisman of Corruption (1)
     .mob Xabraxxis
+    .maxlevel 21
 step
     .goto 1439/1,-690.31,6751.29,12,0
     .goto 1439/1,-706.68,6748.23,12,0
@@ -4235,6 +4238,7 @@ step
     .goto 1439/1,-663.45,6877.49
     .complete 947,2 --Death Cap (1)
     .goto 1439/1,-685.72,6746.49
+    .maxlevel 21
 step
     .goto 1439/1,-659.06,7246.69--c:1439,54.973,24.885
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Balthule Schattenhieb|r
@@ -4364,6 +4368,7 @@ step
     .goto 1439/1,-537.23,7543.01--c:1439,53.113,18.099
     >>Klickt die |cRXP_PICK_Gestrandete Meeresschildkröte|r
     .accept 4727 >> Akzeptiert die Quest Gestrandete Meeresschildkröte
+    .maxlevel 21
 step << Druid
     .goto 1439/1,-259.32,7839.03
     >>|cRXP_WARN_Schwimmt hinaus ins Wasser|r
@@ -4391,20 +4396,26 @@ step << Druid
     .turnin 272 >> Gebt die Quest Prüfung des Seelöwen ab
     .accept 5061 >> Accept Wassergestalt
     .target Dendrite Starblaze
-step << Druid
-    .isOnQuest 5061
-    .goto 1450/1,-2489.25,7457.07
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Sindrayl|r
-    .target Sindrayl
-    .fly Darkshore >> Fliegt zur Dunkelküste
-    .zoneskip Darkshore
+--step << Druid
+--    .isOnQuest 5061
+--    .goto 1450/1,-2489.25,7457.07
+--    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sindrayl|r
+--    .target Sindrayl
+--    .fly Darkshore >> Fly to Darkshore
+--    .zoneskip Darkshore
 step
     #sticky
     #optional
     .destroy 7442 >> Zerstört |T134459:0|t[Gyromasts Schlüssel] aus euren Taschen, da ihr ihn nicht mehr braucht
 step
+    .hs >> Ruhestein nach Auberdine
+    .bindlocation 442
+    .cooldown item,6948,>2,1
+step
+    #optional
     #completewith ReturnAuberdine
     .subzone 442 >> Kehrt nach Auberdine zurück
+
 step
     .isQuestComplete 2139
     .goto 1439/1,397.45,6437.50--c:1439,38.843,43.416
@@ -4427,6 +4438,7 @@ step
     .goto 1439/1,504.41,6402.39
     >>Klickt das |cRXP_PICK_Gesucht-Plakat|r
     .accept 4740 >> Akzeptiert die Quest GESUCHT: Gurgelbacke!
+    .maxlevel 21
 step
     #label ReturnAuberdine
     .isOnQuest 4727
@@ -4441,6 +4453,10 @@ step
     .accept 4728 >> Akzeptiert die Quest Gestrandete Meereskreatur
     .isQuestTurnedIn 4681
 step
+    #optional
+    #sticky
+    .abandon 4763 >> Brecht die Quest Die verderbten Schwarzfelle ab
+step
     .goto 1439/1,621.07,4989.95,0--c:1439,35.429,76.566
     .goto 1439/1,621.07,4989.95,60,0--c:1439,35.429,76.566
     .goto 1439/1,541.75,4991.52
@@ -4453,18 +4469,28 @@ step
     .mob Greymist Warrior
     .mob Greymist Hunter
     .mob Greymist Coastrunner
+    .maxlevel 21
 step
+    .isOnQuest 948
+    .goto 1439/1,88.81,5001.87--c:1439,43.555,76.293
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Onu|r
+    .turnin 948 >> Gebt die Quest Onu ab
+    .target Onu
+step
+    #optional
     #label Onu
     .goto 1439/1,88.81,5001.87--c:1439,43.555,76.293
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Onu|r
     .turnin 948 >> Gebt die Quest Onu ab
     .accept 944 >> Akzeptiert die Quest Die Meistergleve
     .target Onu
+    .maxlevel 21
 step
     #label MasterG
     .goto 1439/1,417.30,4575.82,100 >> Reist zur Meistergleve
     .subzoneskip 449
     .isOnQuest 944
+    .maxlevel 21
 step
     #optional
     #completewith FunandGames
@@ -4474,22 +4500,26 @@ step
     .collect 5352,1,968,1 --Book: The Powers Below (1)
     .mob Twilight Disciple
     .mob Twilight Thug
+    .maxlevel 21
 step
     #optional
     .goto 1439/1,390.700,4542.700
     >>Entdeckt Die Meistergleve
     .complete 944,1 --Enter the Master's Glaive (1)
+    .maxlevel 21
 step
     #optional
     #completewith next
     .cast 5809 >> |cRXP_WARN_Benutzt die|r |T134715:0|t[Wahrsagephiole] |cRXP_WARN_und platziert sie auf dem Boden|r
     .use 5251
+    .maxlevel 21
 step
     .goto 1439/1,417.30,4575.82
     >>|cRXP_WARN_Klickt die |cRXP_PICK_Wahrsageschale|r auf dem Boden|r
     .turnin 944 >> Gebt die Quest Die Meistergleve ab
     .accept 949 >> Akzeptiert die Quest Das Twilight-Lager
     .use 5251
+    .maxlevel 21
 step
     #label FunandGames
     .goto 1439/1,417.49,4575.82--c:1439,38.537,86.050
@@ -4497,6 +4527,7 @@ step
     .turnin 949 >> Gebt die Quest Das Twilight-Lager ab
     .accept 950 >> Akzeptiert die Quest Rückkehr zu Onu
     .accept 98042 >>Akzeptiert die Quest Ein Blick in den Abgrund
+    .maxlevel 21
 step
     #completewith TheryluneEnd
     >>Tötet |cRXP_ENEMY_Twilight-Jünger|r und |cRXP_ENEMY_Twilight-Rohling|r. Plündert sie für das |cRXP_LOOT_Unvergleichliches Auge|r und |T133743:0|t[|cRXP_LOOT_Buch: Die Macht in der Tiefe|r]
@@ -4507,18 +4538,21 @@ step
     .mob +Twilight Thug
     .collect 5352,1,968,1 --Book: The Powers Below (1)
     .disablecheckbox
+    .maxlevel 21
 step
     .goto 1439/1,409.44,4521.01--c:1439,38.660,87.305
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Therylune|r. Es wird eine Escort quest starten
     >>|cRXP_WARN_Überspringt diesen Schritt, falls sie nicht da ist|r
     .accept 945 >> Akzeptiert die Quest Therylunes Flucht
     .target Therylune
+    .maxlevel 21
 step
     #label TheryluneEnd
     .goto 1439/1,288.26,4530.40
     >>|cRXP_WARN_Eskortiert |cRXP_FRIENDLY_Therylune|r aus Der Meistergleve|r
     .complete 945,1 --Escort Therylune away from the Master's Glaive (1)
     .isOnQuest 945
+    .maxlevel 21
 step
     #loop
     .goto 1439/1,376.800,4608.600,40,0
@@ -4532,6 +4566,7 @@ step
     .mob +Twilight Thug
     .collect 5352,1,968,1 --Book: The Powers Below (1)
     .disablecheckbox
+    .maxlevel 21
 step
     #optional
     #sticky
@@ -4560,25 +4595,31 @@ step
     .goto 1439/1,803.48,4808.95--c:1439,32.644,80.711
     >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4730 >> Akzeptiert die Quest Gestrandete Meereskreatur
+    .maxlevel 21
 step
     .isQuestTurnedIn 4681
     .goto 1439/1,865.97,4678.43--c:1439,31.690,83.700
     >>|cRXP_WARN_Achtet auf |cRXP_ENEMY_Orakel der Grauflossen|r'|r |T136048:0|t[Blitzschlag] |cRXP_WARN_Schaden, sie können auch mit|r |T136052:0|t[Welle der Heilung]|r heilen
     >>Klickt die |cRXP_PICK_Gestrandete Meeresschildkröte|r
     .accept 4731 >> Akzeptiert die Quest Gestrandete Meeresschildkröte
+    .maxlevel 21
 step
     .isQuestTurnedIn 4681
     .goto 1439/1,896.17,4597.04--c:1439,31.229,85.564
     >>|cRXP_WARN_Achtet auf |cRXP_ENEMY_Orakel der Grauflossen|r'|r |T136048:0|t[Blitzschlag] |cRXP_WARN_Schaden, sie können auch mit|r |T136052:0|t[Welle der Heilung]|r heilen
     >>Klickt die |cRXP_PICK_Gestrandete Meeresschildkröte|r
     .accept 4732 >> Akzeptiert die Quest Gestrandete Meeresschildkröte
+    .maxlevel 21
 step
     .isQuestTurnedIn 4681
     .goto 1439/1,894.73,4516.04--c:1439,31.251,87.419
     >>Klickt auf die |cRXP_PICK_Gestrandete Meereskreatur|r
     .accept 4733 >> Akzeptiert die Quest Gestrandete Meereskreatur
     >>|cRXP_WARN_Achtet auf |cRXP_ENEMY_Orakel der Grauflossen|r'|r |T136048:0|t[Blitzschlag] |cRXP_WARN_Schaden, sie können auch mit|r |T136052:0|t[Welle der Heilung]|r heilen
+    .maxlevel 21
 step
+    #optional
+    .isOnQuest 950
     .goto 1439/1,88.81,5001.87--c:1439,43.555,76.293
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Onu|r
     .turnin 950 >> Gebt die Quest Rückkehr zu Onu ab
@@ -4590,36 +4631,19 @@ step
     .accept 968 >> Akzeptiert die Quest Die Macht in der Tiefe
     .use 5352
     .itemcount 5352,1
-step
-    #optional
+step -- only want to do this if turned in 950 and already next to onu
+    .isQuestTurnedIn 950
     .goto 1439/1,33.40,4996.11--c:1439,44.401,76.425
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Kerlonian Evershade|r, um die Eskorte zu beginnen
     >>|cRXP_WARN_Überspringt diesen Schritt, wenn er nicht dort ist. Es kann bis zu 25 Minuten dauern, bis er respawnt|r
     >>|cRXP_WARN_Dies ist eine Zeitquest, ihr müsst ihn in 20 Minuten zu seinem Beutel bringen|r
     .accept 5321 >> Akzeptiert die Quest Der Schläfer ist erwacht
     .target Kerlonian Evershade
-    .isQuestTurnedIn 731 --Only shows if Prospector was already escorted
-step
-    #optional
-    .isOnQuest 5321
-    .goto 1439/1,34.78,5001.570
-    >>Öffnet |cRXP_PICK_Kerlonians Truhe|r. Plündert sie für |T134229:0|t[|cRXP_LOOT_Horn der Erweckung|r]
-    .complete 5321,1 -- Horn of Awakening (1)
-    .isQuestTurnedIn 731 --Only shows if Prospector was already escorted
-step
-    .goto 1439/1,33.40,4996.11--c:1439,44.401,76.425
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprecht mit |cRXP_FRIENDLY_Kerlonian Evershade|r, um die Eskorte zu beginnen
-    >>|cRXP_WARN_Überspringt diesen Schritt, wenn er nicht dort ist. Es kann bis zu 25 Minuten dauern, bis er respawnt|r
-    >>|cRXP_WARN_Dies ist eine Zeitquest, ihr müsst ihn in 20 Minuten zu seinem Beutel bringen|r
-    .accept 5321 >> Akzeptiert die Quest Der Schläfer ist erwacht
-    .target Kerlonian Evershade
-    .itemcount 13536,<1 --Horn of Awakening
 step
     .isOnQuest 5321
     .goto 1439/1,34.78,5001.570
     >>Öffnet |cRXP_PICK_Kerlonians Truhe|r. Plündert sie für |T134229:0|t[|cRXP_LOOT_Horn der Erweckung|r]
     .complete 5321,1 -- Horn of Awakening (1)
-    .itemcount 13536,<1 --Horn of Awakening
 step
     #label Kerlonian
     .goto 1439/1,206.400,4402.500
@@ -4630,6 +4654,7 @@ step
     .isOnQuest 5321
 step
     #optional
+    #sticky
     .abandon 2138 >> Brecht die Quest Ausrottung der Infizierten ab
     .abandon 1002 >> Brecht die Quest Dröhnkiste 323 ab
 step
@@ -4662,6 +4687,7 @@ step
     .complete 970,1
     .mob Dark Strand Cultist
     .mob Dark Strand Adept
+    .maxlevel 21
 step
     .goto 1440/1,-102.08,3492.890
     .xp 20-1650 >>Tötet weiter |cRXP_ENEMY_Mobs des dunklen Strangs|r bis ihr genug XP habt, um Stufe 20 zu erreichen
@@ -4706,10 +4732,17 @@ step
     .target Orendil Broadleaf
     .isQuestTurnedIn 1010
 step
+    .isQuestComplete 970
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Delgren der Läuterer|r
 	.target Delgren the Purifier
     .goto 1440/1,189.71,3185.77
     .turnin 970 >> Gebt die Quest Der Turm von Althalaxx ab
+    .accept 973 >> Der Turm von Althalaxx annehmen
+step
+    .isQuestTurnedIn 970
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSprich mit |cRXP_FRIENDLY_Delgren der Läuterer|r
+	.target Delgren the Purifier
+    .goto 1440/1,189.71,3185.77
     .accept 973 >> Der Turm von Althalaxx annehmen
 step
     #optional
@@ -4744,6 +4777,10 @@ step
     .turnin 1010 >> Gebt die Quest Bathranshaar ab
     .accept 1020 >> Akzeptiert die Quest Orendils Heilmittel
     .target Orendil Broadleaf
+step
+    #optional
+    #sticky
+    .abandon 970 >> Brecht die Quest Der Turm von Althalaxx ab
 step
     #optional
     #completewith TZS
