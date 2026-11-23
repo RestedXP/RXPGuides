@@ -2938,11 +2938,19 @@ step << Priest
     .trainer >> 训练你的职业技能
     .target 乔舒修士
 step
+    #optional
+    .isOnQuest 97914
     .goto 1453/0,719.67,-8550.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_巴隆斯·阿历克斯顿|r 对话
-    .turnin -97914 >> 交任务 拓宽视野
+    .turnin 97914 >> 交任务 拓宽视野
     .accept 97926 >> 接受任务 勉强度日
---    .accept 399 >> Accept Humble Beginnings
+    .target 巴隆斯·阿历克斯顿
+step
+    #optional
+    .isQuestTurnedIn 97914
+    .goto 1453/0,719.67,-8550.30
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_巴隆斯·阿历克斯顿|r 对话
+    .accept 97926 >> 接受任务 Making Do
     .target 巴隆斯·阿历克斯顿
 step << Rogue/Warrior/Hunter
     .goto 1453/0,613.12,-8795.96

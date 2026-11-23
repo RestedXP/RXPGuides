@@ -3063,15 +3063,15 @@ step
     #optional << Warlock/Mage/Warrior/Rogue
     .goto 1453/0,613.0,-8796.03
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_吴平|r 对话
-    .trainer >>学习单手剑和法杖 << Warlock/Mage
-    .trainer >>学习单手剑 << Rogue
+    .trainer >>学习单手剑和法杖 << Warlock
+    .trainer >>学习单手剑 << Rogue/Mage
     .trainer >>学习法杖 << Priest
     .trainer >>学习双手剑 << Warrior/Paladin
     .target 吴平
     .money <0.2 << Warlock/Mage
     .money <0.3 << Warrior
     .money <0.55 << Rogue
-step << Warlock/Mage
+step << Warlock
     .goto 1453/0,613.0,-8796.03
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_吴平|r 对话
     .trainer >>学习法杖

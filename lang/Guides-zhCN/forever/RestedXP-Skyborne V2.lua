@@ -4,8 +4,8 @@ RXPGuides.RegisterGuide([[
 #forever
 #disabledungeons
 #version 1
-#name 1-9 Zephras Isle V2
-#displayname 1-9 Skyborne V2 << Alliance
+#name 1-9级 泽风岛 v2
+#displayname 1-9级 天裔 v2 << Alliance
 #displayname 1-9 Skyborne V2 << Horde
 #group RestedXP 无限指南 (联盟) << Alliance
 #group RestedXP 无限指南 (部落) << Horde

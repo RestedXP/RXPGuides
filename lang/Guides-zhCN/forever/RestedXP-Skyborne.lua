@@ -6933,10 +6933,10 @@ step << Alliance
     -- .turnin -94946 >>Turn in The Magical City of Dalaran
     .accept 94947 >>接受任务 欢迎来到艾泽拉斯
 step << Alliance Druid
-    .goto 1416/0,385.700,385.400
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_大法师安斯雷姆·鲁因维沃尔::2543|r 对话。
+    .goto 1416/0,455.400,444.700
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Alfina Nightgaze|r 对话。
     .accept 94912 >>接受任务 自然之子
-    .target Archmage Ansirem Runeweaver::2543
+    .target Alfina Nightgaze
 step << Alliance
     .goto 1416/0,445.93,450.00
     >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_传送门|r
