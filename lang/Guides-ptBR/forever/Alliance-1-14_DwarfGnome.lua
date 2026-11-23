@@ -3619,7 +3619,7 @@ step << Shaman
     .goto 1426/0,-2510.100,-5310.300
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Bruegs Kindleborn::257597|r
     .target Bruegs Kindleborn::257597
-    .turnin 94449 >>Entregue Call of Fogo - Missão - Missão
+    .turnin 94449 >>Entregue Clamor do Fogo
     .accept 94465 >>Aceite Clamor do Fogo
 step << Shaman
     .isOnQuest 94465
@@ -3634,7 +3634,7 @@ step << Shaman
     .goto 1432/0,-2880.900,-5701.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Braldir Ashmantle::257808|r
     .target Braldir Ashmantle::257808
-    .turnin 94465 >>Entregue Call of Fogo - Missão - Missão
+    .turnin 94465 >>Entregue Clamor do Fogo
     .accept 94466 >>Aceite Clamor do Fogo
 step
     #optional
@@ -4018,7 +4018,7 @@ step << Shaman
     .goto 1432/0,-2880.900,-5701.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Braldir Ashmantle::257808|r
     .target Braldir Ashmantle::257808
-    .turnin 94466 >>Entregue Call of Fogo - Missão - Missão
+    .turnin 94466 >>Entregue Clamor do Fogo
     .accept 94467 >>Aceite Clamor do Fogo
 step << Shaman
     #completewith next
@@ -4032,7 +4032,7 @@ step << Shaman
 step << Shaman
     .goto 1432/0,-2870.700,-5674.600
     >>Clique em |cRXP_PICK_Brazier of the Adormecido Chamas|r
-    .turnin 94467 >>Entregue Call of Fogo - Missão - Missão
+    .turnin 94467 >>Entregue Clamor do Fogo
     .accept 94468 >>Aceite Clamor do Fogo
 step
     #optional
@@ -4066,7 +4066,7 @@ step << Shaman
     .goto 1426/0,-2510.100,-5310.300
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Bruegs Kindleborn::257597|r
     .target Bruegs Kindleborn::257597
-    .turnin 94468 >>Entregue Call of Fogo - Missão - Missão
+    .turnin 94468 >>Entregue Clamor do Fogo
 step << Shaman
     .isQuestTurnedIn 94468
     .goto 1426/0,-2594.100,-5335.900,20,0

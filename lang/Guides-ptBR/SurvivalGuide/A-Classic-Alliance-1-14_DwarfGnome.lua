@@ -215,7 +215,7 @@ step << Hunter
     .target Thorgas Grimson
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thorgas Grimson|r
     .turnin 3108 >>Entregue Runa Cinzelada
-    .train 1978 >> Treine Picada de Serpente
+    .train 1978 >> Aprenda Picada de Serpente
 step << Dwarf Paladin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Bromos Grummner|r
     .target Bromos Grummner

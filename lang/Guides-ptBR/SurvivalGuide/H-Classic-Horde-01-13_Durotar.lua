@@ -876,7 +876,7 @@ step << skip
     .target Furl Scornbrow
 step << skip --Warrior/Rogue
     .goto Durotar,51.81,40.89
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConversar com |cRXP_FRIENDLY_Krunn|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Krunn|r
     .train 2575 >> Aprenda |T136248:0|t[Mineração]
     >>|cRXP_WARN_Isto permitirá que você encontre|r |T135232:0|t|cRXP_LOOT_[Pedra Rústica]|r |cRXP_WARN_de depósitos de minérios para fabricar|r |T135248:0|t[Pedra de Afiar Rústica] |cRXP_WARN_(+2 Dano da Arma por 30 minutos)|r
     .target Krunn
@@ -1494,7 +1494,7 @@ step
     .target Furl Scornbrow
 step << Warrior/Rogue
     .goto Durotar,51.81,40.89
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConversar com |cRXP_FRIENDLY_Krunn|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Krunn|r
     >>|cRXP_WARN_Isto permitirá que você encontre|r |T135232:0|t|cRXP_LOOT_[Pedra Rústica]|r |cRXP_WARN_de depósitos de minérios para fabricar|r |T135248:0|t[Pedra de Afiar Rústica] |cRXP_WARN_(+2 Dano da Arma por 30 minutos)|r
     .target Krunn
 step << Warrior/Rogue
@@ -1690,7 +1690,7 @@ step
     .target Furl Scornbrow
 step << Warrior/Rogue
     .goto Durotar,51.81,40.89
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConversar com |cRXP_FRIENDLY_Krunn|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Krunn|r
     .train 2575 >> Aprenda |T136248:0|t[Mineração]
     >>|cRXP_WARN_Isto permitirá que você encontre|r |T135232:0|t|cRXP_LOOT_[Pedra Rústica]|r |cRXP_WARN_de depósitos de minérios para fabricar|r |T135248:0|t[Pedra de Afiar Rústica] |cRXP_WARN_(+2 Dano da Arma por 30 minutos)|r
     .target Krunn
@@ -2349,7 +2349,7 @@ step << Shaman
 step << Shaman
     .goto The Barrens,55.86,19.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kranal|r
-    .turnin 2983 >>Entregue Call of Fogo - Missão - Missão
+    .turnin 2983 >>Entregue Clamor do Fogo
     .accept 1524 >>Aceite Clamor do Fogo
     .target Kranal Fiss
 step << Shaman
@@ -2374,7 +2374,7 @@ step << Shaman
     #label CallofFire2
     .goto Durotar,38.52,58.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Telf|r
-    .turnin 1524 >>Entregue Call of Fogo - Missão - Missão
+    .turnin 1524 >>Entregue Clamor do Fogo
     .accept 1525 >>Aceite Clamor do Fogo
     .target Telf Joolam
 step << Shaman
@@ -3044,7 +3044,7 @@ step << Shaman
 step
     #label NeeruFireblade
     .goto Orgrimmar,49.49,50.56
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Neeru|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Neeru Cortafogo|r
     .turnin 829 >>Entregue Neeru Cortafogo
     .accept 809 >>Aceite Ak'Zeloth
     .target Neeru Fireblade
@@ -3190,7 +3190,7 @@ step << Shaman
     #label CallofFire3
     .goto Durotar,38.52,58.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Telf|r
-    .turnin 1525 >>Entregue Call of Fogo - Missão - Missão
+    .turnin 1525 >>Entregue Clamor do Fogo
     .accept 1526 >>Aceite Clamor do Fogo
     .target Telf Joolam
 step << Shaman
@@ -3206,7 +3206,7 @@ step << Shaman
 step << Shaman
     .goto Durotar,38.96,58.22
     >>Clique no |cRXP_PICK_Braseiro|r no chão
-    .turnin 1526 >>Entregue Call of Fogo - Missão - Missão
+    .turnin 1526 >>Entregue Clamor do Fogo
     .accept 1527 >>Aceite Clamor do Fogo
 step << Shaman
     #completewith next
@@ -3261,7 +3261,7 @@ step << Shaman/Hunter
 step << Shaman
     .goto The Barrens,55.86,19.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kranal|r
-    .turnin 1527 >>Entregue Call of Fogo - Missão - Missão
+    .turnin 1527 >>Entregue Clamor do Fogo
     .target Kranal Fiss
 step << Hunter
     #completewith next

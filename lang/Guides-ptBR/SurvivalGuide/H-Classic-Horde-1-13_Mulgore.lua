@@ -1769,7 +1769,7 @@ step << Tauren Hunter
 step << Shaman
     .goto The Barrens,55.86,19.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kranal|r
-    .turnin 2984 >>Entregue Call of Fogo - Missão - Missão
+    .turnin 2984 >>Entregue Clamor do Fogo
     .accept 1524 >>Aceite Clamor do Fogo
     .target Kranal Fiss
 step << Shaman
@@ -1794,7 +1794,7 @@ step << Shaman
     #label CallofFire2
     .goto Durotar,38.52,58.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Telf|r
-    .turnin 1524 >>Entregue Call of Fogo - Missão - Missão
+    .turnin 1524 >>Entregue Clamor do Fogo
     .accept 1525 >>Aceite Clamor do Fogo
     .target Telf Joolam
 step << Shaman
@@ -2582,7 +2582,7 @@ step
 step
     #label NeeruFireblade
     .goto Orgrimmar,49.49,50.56
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Neeru|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Neeru Cortafogo|r
     .turnin 829 >>Entregue Neeru Cortafogo
     .accept 809 >>Aceite Ak'Zeloth
     .target Neeru Fireblade
@@ -2724,7 +2724,7 @@ step << Shaman
     #label CallofFire3
     .goto Durotar,38.52,58.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Telf|r
-    .turnin 1525 >>Entregue Call of Fogo - Missão - Missão
+    .turnin 1525 >>Entregue Clamor do Fogo
     .accept 1526 >>Aceite Clamor do Fogo
     .target Telf Joolam
 step << Shaman
@@ -2740,7 +2740,7 @@ step << Shaman
 step << Shaman
     .goto Durotar,38.96,58.22
     >>Clique no |cRXP_PICK_Braseiro|r no chão
-    .turnin 1526 >>Entregue Call of Fogo - Missão - Missão
+    .turnin 1526 >>Entregue Clamor do Fogo
     .accept 1527 >>Aceite Clamor do Fogo
 step << Shaman
     #completewith next
@@ -2797,7 +2797,7 @@ step
 step << Shaman
     .goto The Barrens,55.86,19.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kranal|r
-    .turnin 1527 >>Entregue Call of Fogo - Missão - Missão
+    .turnin 1527 >>Entregue Clamor do Fogo
     .target Kranal Fiss
 step << Shaman
     .goto The Barrens,55.78,20.00

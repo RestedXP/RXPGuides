@@ -2194,7 +2194,7 @@ step
 .dungeon WC
     #label EnterWC
     .goto 1414,52.37,55.20
-    +Entre nas Cavernas do Lamento
+    +Entre na Caverna Ululante
     .zoneskip 1414,1 -- similar to stockades, no subzone for WC
 step
 .dungeon WC

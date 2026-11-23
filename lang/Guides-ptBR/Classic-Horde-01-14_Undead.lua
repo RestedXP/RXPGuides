@@ -2802,7 +2802,7 @@ step
 step << Undead Rogue
     #sticky
     #completewith UnluckyRogue
-    >>|cRXP_WARN_Se você vir|r |cRXP_FRIENDLY_Astolfo Hadren|r|cRXP_WARN_, fale com ele e mate-o. Saqueie-o pela carta. Ele patrula a estrada entre Montalvo e Sepulcro|r
+    >>|cRXP_WARN_Se você vir|r |cRXP_FRIENDLY_Astolfo Hadren|r|cRXP_WARN_, fale com ele e mate-o. Saque-o pela carta. Ele patrula a estrada entre Montalvo e Sepulcro|r
     .complete 1886,1 --Astor's Letter of Introduction (1)
     .unitscan Astor Hadren
     .isOnQuest 1886
@@ -3723,7 +3723,7 @@ step << Warlock
     .xp <12,1
 step << Rogue
     #completewith Entersilverpine
-    >>|cRXP_WARN_Se você vir|r |cRXP_FRIENDLY_Astolfo Hadren|r|cRXP_WARN_, fale com ele e mate-o. Saqueie-o pela carta. Ele patrula a estrada entre Montalvo e Sepulcro|r
+    >>|cRXP_WARN_Se você vir|r |cRXP_FRIENDLY_Astolfo Hadren|r|cRXP_WARN_, fale com ele e mate-o. Saque-o pela carta. Ele patrula a estrada entre Montalvo e Sepulcro|r
     .complete 1886,1 --Astor's Letter of Introduction (1)
     .unitscan Astor Hadren
 step
@@ -4112,7 +4112,7 @@ step << Undead Warrior
 step << Undead Rogue
     #sticky
     #completewith Rot HideCluesTurnIn
-    >>|cRXP_WARN_Se você vir|r |cRXP_FRIENDLY_Astolfo Hadren|r|cRXP_WARN_, fale com ele e mate-o. Saqueie-o pela carta. Ele patrula a estrada entre Montalvo e Sepulcro|r
+    >>|cRXP_WARN_Se você vir|r |cRXP_FRIENDLY_Astolfo Hadren|r|cRXP_WARN_, fale com ele e mate-o. Saque-o pela carta. Ele patrula a estrada entre Montalvo e Sepulcro|r
     .complete 1886,1 --Astor's Letter of Introduction (1)
     .unitscan Astor Hadren
 step
@@ -8804,7 +8804,7 @@ step
 step << skip
     #sticky
     #completewith UnluckyRogue
-    >>|cRXP_WARN_Se você vir|r |cRXP_FRIENDLY_Astolfo Hadren|r|cRXP_WARN_, fale com ele e mate-o. Saqueie-o pela carta. Ele patrula a estrada entre Montalvo e Sepulcro|r
+    >>|cRXP_WARN_Se você vir|r |cRXP_FRIENDLY_Astolfo Hadren|r|cRXP_WARN_, fale com ele e mate-o. Saque-o pela carta. Ele patrula a estrada entre Montalvo e Sepulcro|r
     .complete 1886,1 --Astor's Letter of Introduction (1)
     .unitscan Astor Hadren
     .isOnQuest 1886
@@ -9587,7 +9587,7 @@ step << Warlock
     .xp <14,1
 step << skip
     #completewith Entersilverpine
-    >>|cRXP_WARN_Se você vir|r |cRXP_FRIENDLY_Astolfo Hadren|r|cRXP_WARN_, fale com ele e mate-o. Saqueie-o pela carta. Ele patrula a estrada entre Montalvo e Sepulcro|r
+    >>|cRXP_WARN_Se você vir|r |cRXP_FRIENDLY_Astolfo Hadren|r|cRXP_WARN_, fale com ele e mate-o. Saque-o pela carta. Ele patrula a estrada entre Montalvo e Sepulcro|r
     .complete 1886,1 --Astor's Letter of Introduction (1)
     .unitscan Astor Hadren
 step

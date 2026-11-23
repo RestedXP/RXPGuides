@@ -2885,7 +2885,7 @@ step << Shaman
 step << Shaman
     .goto The Barrens,55.86,19.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kranal|r
-    .turnin 2984 >>Entregue Call of Fogo - Missão - Missão
+    .turnin 2984 >>Entregue Clamor do Fogo
     .accept 1524 >>Aceite Clamor do Fogo
     .target Kranal Fiss
 step << Shaman
@@ -2906,7 +2906,7 @@ step << Shaman
     #label CallofFire2
     .goto Durotar,38.52,58.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Telf|r
-    .turnin 1524 >>Entregue Call of Fogo - Missão - Missão
+    .turnin 1524 >>Entregue Clamor do Fogo
     .accept 1525 >>Aceite Clamor do Fogo
     .target Telf Joolam
 step << Warrior
@@ -5952,7 +5952,7 @@ step << Shaman
 step << Shaman
     .goto The Barrens,55.86,19.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kranal|r
-    .turnin 2984 >>Entregue Call of Fogo - Missão - Missão
+    .turnin 2984 >>Entregue Clamor do Fogo
     .accept 1524 >>Aceite Clamor do Fogo
     .target Kranal Fiss
 step << Shaman
@@ -5973,7 +5973,7 @@ step << Shaman
     #label CallofFire2
     .goto Durotar,38.52,58.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Telf|r
-    .turnin 1524 >>Entregue Call of Fogo - Missão - Missão
+    .turnin 1524 >>Entregue Clamor do Fogo
     .accept 1525 >>Aceite Clamor do Fogo
     .target Telf Joolam
 step << Shaman

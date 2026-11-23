@@ -67,7 +67,7 @@ step
     #label ShadowCave1
     #completewith Rune
     .goto 1438,56.694,31.485
-    .subzone 25 >> Entre na Caverna Shadowthread
+    .subzone 25 >> Entre na Caverna Fionumbra
     .train 410121,1
 step
     #optional

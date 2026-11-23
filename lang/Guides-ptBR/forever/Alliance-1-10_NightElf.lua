@@ -1851,7 +1851,7 @@ step
 step << !Druid
     .goto 1438/1,982.65,9802.19
     .target Innkeeper Keldamyr
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Estalajadeiro Keldamyr|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estalajadeiro Keldamyr|r
     >>|cRXP_BUY_Compre|r |T132794:0|t[Água Refrescante da Fonte] |cRXP_BUY_com ele|r
     .collect 159,1 --Refreshing Spring Water (1)
     .isOnQuest 99050
@@ -1956,7 +1956,7 @@ step << Rogue
 step << !Druid
     .goto 1438/1,982.65,9802.19
     .target Innkeeper Keldamyr
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Estalajadeiro Keldamyr|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estalajadeiro Keldamyr|r
     >>|cRXP_BUY_Compre|r |T132794:0|t[Água Refrescante da Fonte] |cRXP_BUY_com ele|r
     .collect 159,1 --Refreshing Spring Water (1)
     .isOnQuest 99050

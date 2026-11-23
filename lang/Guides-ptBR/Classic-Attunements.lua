@@ -1090,22 +1090,22 @@ step
 step
     .goto Western Plaguelands,46.681,71.135,-1
     .goto Western Plaguelands,46.558,71.156,-1
-    .use 12815 >> |cRXP_WARN_Use a|r |T135432:0|t[Tocha Sinalizadora] |cRXP_WARN_ao lado da entrada da Torre. Você pode fazer isso sem atrair o Élite |cRXP_ENEMY_Senhor da Guerra Descarnado|r de dentro|r
+    .use 12815 >> |cRXP_WARN_Use a|r |T135432:0|t[Tocha Sinalizadora] |cRXP_WARN_ao lado da entrada da torre. Dá para fazer isso sem atrair o |cRXP_ENEMY_Senhor da Guerra Descarnado|r elite que está lá dentro|r
     .complete 5098,4 --Tower Four marked
 step
     .goto Western Plaguelands,44.217,63.319,-1
     .goto Western Plaguelands,44.247,63.131,-1
-    .use 12815 >> |cRXP_WARN_Use a|r |T135432:0|t[Tocha Sinalizadora] |cRXP_WARN_ao lado da entrada da Torre. Você pode fazer isso sem atrair o Élite |cRXP_ENEMY_Senhor da Guerra Descarnado|r de dentro|r
+    .use 12815 >> |cRXP_WARN_Use a|r |T135432:0|t[Tocha Sinalizadora] |cRXP_WARN_ao lado da entrada da torre. Dá para fazer isso sem atrair o |cRXP_ENEMY_Senhor da Guerra Descarnado|r elite que está lá dentro|r
     .complete 5098,3 --Tower Three marked
 step
     .goto Western Plaguelands,42.326,66.105,-1
     .goto Western Plaguelands,42.422,66.222,-1
-    .use 12815 >> |cRXP_WARN_Use a|r |T135432:0|t[Tocha Sinalizadora] |cRXP_WARN_ao lado da entrada da Torre. Você pode fazer isso sem atrair o Élite |cRXP_ENEMY_Senhor da Guerra Descarnado|r de dentro|r
+    .use 12815 >> |cRXP_WARN_Use a|r |T135432:0|t[Tocha Sinalizadora] |cRXP_WARN_ao lado da entrada da torre. Dá para fazer isso sem atrair o |cRXP_ENEMY_Senhor da Guerra Descarnado|r elite que está lá dentro|r
     .complete 5098,2 --Tower Two marked
 step
     .goto Western Plaguelands,40.116,71.561,-1
     .goto Western Plaguelands,40.038,71.713,-1
-    .use 12815 >> |cRXP_WARN_Use a|r |T135432:0|t[Tocha Sinalizadora] |cRXP_WARN_ao lado da entrada da Torre. Você pode fazer isso sem atrair o Élite |cRXP_ENEMY_Senhor da Guerra Descarnado|r de dentro|r
+    .use 12815 >> |cRXP_WARN_Use a|r |T135432:0|t[Tocha Sinalizadora] |cRXP_WARN_ao lado da entrada da torre. Dá para fazer isso sem atrair o |cRXP_ENEMY_Senhor da Guerra Descarnado|r elite que está lá dentro|r
     .complete 5098,1 --Tower One marked
 step
     .goto Western Plaguelands,42.702,84.031
@@ -1116,10 +1116,10 @@ step
 step
     #completewith SkeletalFragments
     .isQuestTurnedIn 5098
-    .destroy 12815 >> Descarte o |T135432:0|t[Tocha Sinalizadora]
+    .destroy 12815 >> Destrua a |T135432:0|t[Tocha Sinalizadora]
 step
     .goto Western Plaguelands,42.665,83.774
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Alquimista Arvignon|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Alquimista Arvignon|r
     .turnin 5533 >>Entregue Scolomântia
     .accept 5537 >>Aceite Fragmentos de Ossos
     .target Alchemist Arbington
@@ -1144,7 +1144,7 @@ step
     .mob Skeletal Acolyte
 step
     .goto Western Plaguelands,42.665,83.774
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Alquimista Arvignon|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Alquimista Arvignon|r
     .turnin 5537 >>Entregue Fragmentos de Ossos
     .accept 5538 >>Aceite Mold Rhymes With...
     .target Alchemist Arbington
@@ -1180,7 +1180,7 @@ step
     .subzone 3197 >>Vá para Chillwind Camp em |cFFfa9602Terras Pestilentas Ocidentais|r
 step
     .goto Western Plaguelands,42.665,83.774
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Alquimista Arvignon|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Alquimista Arvignon|r
     .turnin 5801 >>Entregue Fogo Plume Forged
     .accept 5803 >>Aceite Araj's Scarab
     .target Alchemist Arbington
@@ -1223,12 +1223,12 @@ step
     .mob Araj the Summoner
 step
     .goto Western Plaguelands,42.665,83.774
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Alquimista Arvignon|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Alquimista Arvignon|r
     .turnin 5803 >>Entregue Araj's Scarab
     .target Alchemist Arbington
 step
     .goto Western Plaguelands,42.665,83.774
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Alquimista Arvignon|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Alquimista Arvignon|r
     .turnin 5505 >>Entregue A Chave da Scolomântia
     .target Alchemist Arbington
 
@@ -1348,22 +1348,22 @@ step
 step
     .goto Western Plaguelands,46.681,71.135,-1
     .goto Western Plaguelands,46.558,71.156,-1
-    .use 12815 >> |cRXP_WARN_Use a|r |T135432:0|t[Tocha Sinalizadora] |cRXP_WARN_ao lado da entrada da Torre. Você pode fazer isso sem atrair o Élite |cRXP_ENEMY_Senhor da Guerra Descarnado|r de dentro|r
+    .use 12815 >> |cRXP_WARN_Use a|r |T135432:0|t[Tocha Sinalizadora] |cRXP_WARN_ao lado da entrada da torre. Dá para fazer isso sem atrair o |cRXP_ENEMY_Senhor da Guerra Descarnado|r elite que está lá dentro|r
     .complete 5098,4 --Tower Four marked
 step
     .goto Western Plaguelands,44.217,63.319,-1
     .goto Western Plaguelands,44.247,63.131,-1
-    .use 12815 >> |cRXP_WARN_Use a|r |T135432:0|t[Tocha Sinalizadora] |cRXP_WARN_ao lado da entrada da Torre. Você pode fazer isso sem atrair o Élite |cRXP_ENEMY_Senhor da Guerra Descarnado|r de dentro|r
+    .use 12815 >> |cRXP_WARN_Use a|r |T135432:0|t[Tocha Sinalizadora] |cRXP_WARN_ao lado da entrada da torre. Dá para fazer isso sem atrair o |cRXP_ENEMY_Senhor da Guerra Descarnado|r elite que está lá dentro|r
     .complete 5098,3 --Tower Three marked
 step
     .goto Western Plaguelands,42.326,66.105,-1
     .goto Western Plaguelands,42.422,66.222,-1
-    .use 12815 >> |cRXP_WARN_Use a|r |T135432:0|t[Tocha Sinalizadora] |cRXP_WARN_ao lado da entrada da Torre. Você pode fazer isso sem atrair o Élite |cRXP_ENEMY_Senhor da Guerra Descarnado|r de dentro|r
+    .use 12815 >> |cRXP_WARN_Use a|r |T135432:0|t[Tocha Sinalizadora] |cRXP_WARN_ao lado da entrada da torre. Dá para fazer isso sem atrair o |cRXP_ENEMY_Senhor da Guerra Descarnado|r elite que está lá dentro|r
     .complete 5098,2 --Tower Two marked
 step
     .goto Western Plaguelands,40.116,71.561,-1
     .goto Western Plaguelands,40.038,71.713,-1
-    .use 12815 >> |cRXP_WARN_Use a|r |T135432:0|t[Tocha Sinalizadora] |cRXP_WARN_ao lado da entrada da Torre. Você pode fazer isso sem atrair o Élite |cRXP_ENEMY_Senhor da Guerra Descarnado|r de dentro|r
+    .use 12815 >> |cRXP_WARN_Use a|r |T135432:0|t[Tocha Sinalizadora] |cRXP_WARN_ao lado da entrada da torre. Dá para fazer isso sem atrair o |cRXP_ENEMY_Senhor da Guerra Descarnado|r elite que está lá dentro|r
     .complete 5098,1 --Tower One marked
 step
     .goto Tirisfal Glades,83.15,68.92
@@ -1374,7 +1374,7 @@ step
  step
     #completewith SkeletalFragments
     .isQuestTurnedIn 5098
-    .destroy 12815 >> Descarte o |T135432:0|t[Tocha Sinalizadora]
+    .destroy 12815 >> Destrua a |T135432:0|t[Tocha Sinalizadora]
 step
  	#era/som
     .goto Tirisfal Glades,83.28,69.23

@@ -2939,7 +2939,7 @@ step
     .goto Westfall,41.08,98.55,60,0
     .goto Westfall,37.10,89.16,40,0
     .goto Westfall,30.01,86.02,200 >> Nade de Grom'Gol diretamente para oeste até o Arrecife Torpe, depois para norte em direção a Cerro Oeste
-    >>|cRXP_WARN_Desvie da ilha. Siga o marcador pela segurança!|r
+    >>|cRXP_WARN_Mantenha distância da ilha. Siga o ponto indicado por segurança!|r
     .dungeon DM
 step
     #completewith next

@@ -2055,7 +2055,7 @@ step
     .target Neeru Fireblade
 step
     .goto 1454/1,-4374.75,1800.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Neeru|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Neeru Cortafogo|r
     .turnin 832 >>Entregue Sombras incandescentes
     .target Neeru Fireblade
     .isOnQuest 832

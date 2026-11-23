@@ -363,7 +363,7 @@ step << Hunter
     .turnin 3117 >> Entregue O selo cinzelado
     .accept 77568 >> Aceite A Força de um Caçador
     .turnin 77568 >> Entregue A Força de um Caçador
-    .train 1978 >>Treine Picada de Serpente
+    .train 1978 >>Aprenda Picada de Serpente
     .target Ayanna Everstride
 step
     .goto Teldrassil,57.95,38.20,10,0
@@ -416,7 +416,7 @@ step << Hunter
     .goto Teldrassil,59.306,41.091
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Keina|r
 	.vendor >> |cRXP_WARN_Venda os itens de lixo|r << !Hunter
-	.vendor >> |cRXP_BUY_Compre 3 ou 4 pilhas de|r |T132382:0|t[Rough Flechas] << Hunter
+	.vendor >> |cRXP_BUY_Compre 3 ou 4 pilhas de|r |T132382:0|t[Flechas Rústicas] << Hunter
     .vendor >> |cRXP_BUY_Compre um|r |T135499:0|t[Arco Recurvo de Pau-de-chifre] |cRXP_BUY_Compre se você ainda não tem|r << Hunter
     .target Keina
 step << Hunter
@@ -430,7 +430,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gilshalan Andavento|r
     .turnin 916 >> Entregue Veneno do Bosque-aracnídeo
     .target Gilshalan Windwalker
-    .accept 917 >> Aceite Ovo do Bosque-aracnídeo
+    .accept 917 >> Aceite Ovo de Lenhateia
     .xp >7,1
 step
     .goto Teldrassil,57.807,41.653
@@ -457,12 +457,12 @@ step
     .goto Teldrassil,54.593,32.992
     .target Iverron
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Iverron|r
-    >>DICA: |cRXP_WARN_Pegar as calças como recompensa dele. Você as usará para gravar uma runa mais tarde|r << Priest sod
+    >>DICA: |cRXP_WARN_Pegue as calças como recompensa com ele. Use-as mais tarde para gravar uma runa|r << Priest sod
     .turnin 3522 >> Entregue Antídoto de Iverron
     .isOnQuest 3522
 step
     #completewith next
-    .goto Teldrassil,56.73,31.17,25 >> Entre na Caverna Shadowthread
+    .goto Teldrassil,56.73,31.17,25 >> Entre na Caverna Fionumbra
     .isOnQuest 917
 step
     .goto Teldrassil,57.0,26.4
@@ -582,7 +582,7 @@ step << Priest
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Laurna Luzalbor|r
     .turnin 5622 >> Entregue Em favor de Eluna
     .target Laurna Morninglight
-    .accept 5621 >> Aceite Vestes da Lua
+    .accept 5621 >> Aceite Vestes da lua
 	.trainer >> Treine suas magias de classe
 step << Rogue
     .goto Teldrassil,55.508,57.145
@@ -683,7 +683,7 @@ step << Druid
 step
     .goto Teldrassil,55.619,59.788
     .target Innkeeper Keldamyr
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Estalajadeiro Keldamyr|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estalajadeiro Keldamyr|r
     .turnin 2159,2 >> Entregue Entrega para Dolanaar << Hunter
     .turnin 2159 >> Entregue Entrega para Dolanaar << !Hunter
     .vendor >>|cRXP_BUY_Compre 10 |T132815:0|t|cRXP_LOOT_Leite Gelado|r ou o máximo que você puder pagar << Priest

@@ -4200,7 +4200,7 @@ step << Hunter
     #optional
     .goto 1439/1,491.97,6560.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dalmond|r
-    .vendor >>|cRXP_BUY_Reabasteça em Munição|r
+    .vendor >>|cRXP_BUY_Reabasteça a munição|r
     .target Dalmond
 step << Druid
     .goto 1439/1,472.32,6556.100

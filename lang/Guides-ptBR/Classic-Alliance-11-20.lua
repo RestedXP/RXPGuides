@@ -3699,7 +3699,7 @@ step << Hunter
     #season 0
     .goto Darkshore,37.4,40.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dalmond|r
-    .vendor >>|cRXP_BUY_Reabasteça em Munição|r
+    .vendor >>|cRXP_BUY_Reabasteça a munição|r
     .target Dalmond
 step << Druid
     #xprate <1.5

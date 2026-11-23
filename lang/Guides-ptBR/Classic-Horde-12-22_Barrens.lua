@@ -511,7 +511,7 @@ step << Tauren Shaman
 step << Tauren Shaman
     .goto Durotar,38.52,58.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Telf|r
-    .turnin 1525 >>Entregue Call of Fogo - Missão - Missão
+    .turnin 1525 >>Entregue Clamor do Fogo
     .accept 1526 >>Aceite Clamor do Fogo
     .target Telf Joolam
     .dungeon RFC
@@ -530,13 +530,13 @@ step << Tauren Shaman
 step << Tauren Shaman
     .goto Durotar,38.96,58.22
     >>Clique no |cRXP_PICK_Braseiro|r no chão
-    .turnin 1526 >>Entregue Call of Fogo - Missão - Missão
+    .turnin 1526 >>Entregue Clamor do Fogo
     .accept 1527 >>Aceite Clamor do Fogo
     .dungeon RFC
 step << Tauren Shaman
     .goto The Barrens,55.86,19.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kranal|r
-    .turnin 1527 >>Entregue Call of Fogo - Missão - Missão
+    .turnin 1527 >>Entregue Clamor do Fogo
     .target Kranal Fiss
     .dungeon RFC
 step << Tauren Shaman
@@ -955,7 +955,7 @@ step << Shaman
     #requires ShamanDurotar
     .goto Durotar,38.52,58.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Telf|r
-    .turnin 1525 >>Entregue Call of Fogo - Missão - Missão
+    .turnin 1525 >>Entregue Clamor do Fogo
     .accept 1526 >>Aceite Clamor do Fogo
     .target Telf Joolam
 step << Shaman
@@ -971,7 +971,7 @@ step << Shaman
 step << Shaman
     .goto Durotar,38.96,58.22
     >>Clique no |cRXP_PICK_Braseiro|r no chão
-    .turnin 1526 >>Entregue Call of Fogo - Missão - Missão
+    .turnin 1526 >>Entregue Clamor do Fogo
     .accept 1527 >>Aceite Clamor do Fogo
 step << Shaman
     #optional
@@ -991,7 +991,7 @@ step << Shaman
     #label FireEnd
     .goto The Barrens,55.86,19.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kranal|r
-    .turnin 1527 >>Entregue Call of Fogo - Missão - Missão
+    .turnin 1527 >>Entregue Clamor do Fogo
     .target Kranal Fiss
 step << Shaman
     .goto The Barrens,55.78,20.00
@@ -4272,7 +4272,7 @@ step
     .goto Westfall,41.08,98.55,60,0
     .goto Westfall,37.10,89.16,40,0
     .goto Westfall,30.01,86.02,200 >> Nade de Grom'Gol diretamente para oeste até o Arrecife Torpe, depois para norte em direção a Cerro Oeste
-    >>|cRXP_WARN_Desvie da ilha. Siga o marcador pela segurança!|r
+    >>|cRXP_WARN_Mantenha distância da ilha. Siga o ponto indicado por segurança!|r
     .dungeon DM
 step
     #completewith next
@@ -7457,7 +7457,7 @@ step << Tauren Shaman
 step << Tauren Shaman
     .goto Durotar,38.52,58.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Telf|r
-    .turnin 1525 >>Entregue Call of Fogo - Missão - Missão
+    .turnin 1525 >>Entregue Clamor do Fogo
     .accept 1526 >>Aceite Clamor do Fogo
     .target Telf Joolam
     .dungeon RFC
@@ -7476,13 +7476,13 @@ step << Tauren Shaman
 step << Tauren Shaman
     .goto Durotar,38.96,58.22
     >>Clique no |cRXP_PICK_Braseiro|r no chão
-    .turnin 1526 >>Entregue Call of Fogo - Missão - Missão
+    .turnin 1526 >>Entregue Clamor do Fogo
     .accept 1527 >>Aceite Clamor do Fogo
     .dungeon RFC
 step << Tauren Shaman
     .goto The Barrens,55.86,19.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kranal|r
-    .turnin 1527 >>Entregue Call of Fogo - Missão - Missão
+    .turnin 1527 >>Entregue Clamor do Fogo
     .target Kranal Fiss
     .dungeon RFC
 step << Tauren Shaman
@@ -7903,7 +7903,7 @@ step << Shaman
     #requires ShamanDurotar
     .goto Durotar,38.52,58.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Telf|r
-    .turnin 1525 >>Entregue Call of Fogo - Missão - Missão
+    .turnin 1525 >>Entregue Clamor do Fogo
     .accept 1526 >>Aceite Clamor do Fogo
     .target Telf Joolam
 step << Shaman
@@ -7919,7 +7919,7 @@ step << Shaman
 step << Shaman
     .goto Durotar,38.96,58.22
     >>Clique no |cRXP_PICK_Braseiro|r no chão
-    .turnin 1526 >>Entregue Call of Fogo - Missão - Missão
+    .turnin 1526 >>Entregue Clamor do Fogo
     .accept 1527 >>Aceite Clamor do Fogo
 step << Shaman
     #completewith FireEnd
@@ -7937,7 +7937,7 @@ step << Shaman
     #label FireEnd
     .goto The Barrens,55.86,19.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kranal|r
-    .turnin 1527 >>Entregue Call of Fogo - Missão - Missão
+    .turnin 1527 >>Entregue Clamor do Fogo
     .target Kranal Fiss
 step << Shaman
     .goto The Barrens,55.78,20.00
@@ -11634,7 +11634,7 @@ step
     .goto Westfall,41.08,98.55,60,0
     .goto Westfall,37.10,89.16,40,0
     .goto Westfall,30.01,86.02,200 >> Nade de Grom'Gol diretamente para oeste até o Arrecife Torpe, depois para norte em direção a Cerro Oeste
-    >>|cRXP_WARN_Desvie da ilha. Siga o marcador pela segurança!|r
+    >>|cRXP_WARN_Mantenha distância da ilha. Siga o ponto indicado por segurança!|r
     .dungeon DM
 step
     #completewith next
