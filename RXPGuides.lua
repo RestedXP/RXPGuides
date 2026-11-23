@@ -1587,7 +1587,7 @@ function addon:OnInitialize()
     addon.settings:UpdateMinimapButton()
     addon.settings:SetupMapButton()
     addon.SetupGuideWindow()
-    addon.RenderFrame()
+    addon:UpdateTheme()
     addon.SetupArrow()
     addon.SetupWorldMap()
     addon:CreateActiveItemFrame()
@@ -1608,9 +1608,6 @@ function addon:OnInitialize()
     addon.RXPFrame:SetScale(addon.settings.profile.windowScale)
     addon.arrowFrame:SetSize(32 * addon.settings.profile.arrowScale,
                              32 * addon.settings.profile.arrowScale)
-    addon.arrowFrame.text:SetFont(addon.font,
-                                  addon.settings.profile.arrowText, "OUTLINE")
-    addon.activeItemFrame:SetScale(addon.settings.profile.activeItemsScale)
 
     addon.v2:Setup()
 
@@ -2474,7 +2471,7 @@ function addon.HardcoreToggle()
             addon.settings.profile.hardcore = not hc
         end
         if hc ~= addon.settings.profile.hardcore then
-            addon.RenderFrame()
+            addon:UpdateTheme()
             if addon.v2:IsEnabled() then
                 addon.v2:UpdateActiveStepTheme()
             end
@@ -2485,11 +2482,10 @@ end
 function addon.GAToggle()
     if RXPCData and addon.farmGuides > 0 then
         RXPCData.GA = not RXPCData.GA
-        addon.RenderFrame()
     else
         RXPCData.GA = false
-        addon.RenderFrame()
     end
+    addon:UpdateTheme()
 end
 
 addon.stepLogic = {}

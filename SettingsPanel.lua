@@ -1388,7 +1388,7 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 2.4,
                         set = function(info, value)
                             SetProfileOption(info, value)
-                            addon.RenderFrame()
+                            addon:UpdateTheme()
                         end,
                         hidden = addon.game ~= "CLASSIC"
                     },
@@ -1435,7 +1435,7 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 2.4,
                         set = function(info, value)
                             SetProfileOption(info, value)
-                            addon.RenderFrame()
+                            addon:UpdateTheme()
                         end,
                         hidden = addon.game ~= "RETAIL" or not next(RXPCData.guideMetaData.multibox)
                     },
@@ -1837,7 +1837,7 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 3.3,
                         set = function(info, value)
                             SetProfileOption(info, value)
-                            addon.targeting:RenderTargetFrameBackground()
+                            addon.targeting:UpdateTheme()
                         end,
                         disabled = function()
                             return not self.profile.enableTargetFrame
@@ -1855,7 +1855,7 @@ function addon.settings:CreateAceOptionsPanel()
                         isPercent = true,
                         set = function(info, value)
                             SetProfileOption(info, value)
-                            addon.targeting.activeTargetFrame:SetScale(value)
+                            addon.targeting:SetScale(value)
                         end
                     },
                     resetTargetPosition = {
@@ -2005,14 +2005,7 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 2.1,
                         set = function(info, value)
                             SetProfileOption(info, value)
-                            if value then
-                                addon.tracker.splits:Create()
-                                addon.tracker.splits.frame:Show()
-                            else
-                                if addon.tracker.splits.frame and addon.tracker.splits.frame:IsShown() then
-                                    addon.tracker.splits.frame:Hide()
-                                end
-                            end
+                            addon.tracker.splits:SetShown(value)
                         end,
                         disabled = function()
                             return not self.profile.enableTracker
@@ -2055,7 +2048,7 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 2.4,
                         set = function(info, value)
                             SetProfileOption(info, value)
-                            addon.tracker.splits:UpdateTheme()
+                            addon.tracker:UpdateTheme()
                         end,
                         disabled = function()
                             return not self.profile.enableTracker or
@@ -2145,9 +2138,7 @@ function addon.settings:CreateAceOptionsPanel()
                         isPercent = true,
                         set = function(info, value)
                             SetProfileOption(info, value)
-                            if addon.tracker.splits.frame then
-                                addon.tracker.splits.frame:SetScale(value)
-                            end
+                            addon.tracker.splits:SetScale(value)
                         end,
                         disabled = function()
                             return not self.profile.enableTracker or
@@ -2760,7 +2751,6 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "select",
                         width = optionsWidth,
                         order = 1.1,
-                        get = function() return self.profile.activeTheme end,
                         set = function(info, value)
                             SetProfileOption(info, value)
                             addon:ReloadTheme()
@@ -2787,7 +2777,6 @@ function addon.settings:CreateAceOptionsPanel()
                             self.profile.customTheme.background = {
                                 r, g, b, a or 1
                             }
-                            addon:RegisterTheme(self.profile.customTheme)
                             addon:ReloadTheme()
                         end,
                         hidden = function()
@@ -2809,7 +2798,6 @@ function addon.settings:CreateAceOptionsPanel()
                             self.profile.customTheme.bottomFrameBG = {
                                 r, g, b, a or 1
                             }
-                            addon:RegisterTheme(self.profile.customTheme)
                             addon:ReloadTheme()
                         end,
                         hidden = function()
@@ -2832,7 +2820,6 @@ function addon.settings:CreateAceOptionsPanel()
                             self.profile.customTheme.bottomFrameHighlight = {
                                 r, g, b, a or 1
                             }
-                            addon:RegisterTheme(self.profile.customTheme)
                             addon:ReloadTheme()
                         end,
                         hidden = function()
@@ -2852,7 +2839,6 @@ function addon.settings:CreateAceOptionsPanel()
                         end,
                         set = function(_, r, g, b, a)
                             self.profile.customTheme.mapPins = {r, g, b, a or 1}
-                            addon:RegisterTheme(self.profile.customTheme)
                             addon:ReloadTheme()
                         end,
                         hidden = function()
@@ -2873,7 +2859,6 @@ function addon.settings:CreateAceOptionsPanel()
                         set = function(_, value)
                             self.profile.customTheme.tooltip = fmt('|c%sFF',
                                                                    value)
-                            addon:RegisterTheme(self.profile.customTheme)
                             addon:ReloadTheme()
                         end,
                         hidden = function()
@@ -2906,8 +2891,6 @@ function addon.settings:CreateAceOptionsPanel()
                             self.profile.customTheme.font = value
                             -- TODO replace \ with \\
 
-                            addon:RegisterTheme(self.profile.customTheme)
-
                             addon:ReloadTheme()
                         end,
                         hidden = function()
@@ -2927,7 +2910,6 @@ function addon.settings:CreateAceOptionsPanel()
                             self.profile.customTheme.textColor = {
                                 r, g, b, a or 1
                             }
-                            addon:RegisterTheme(self.profile.customTheme)
                             addon:ReloadTheme()
                         end,
                         hidden = function()
@@ -2948,8 +2930,7 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth,
                         order = 1.91,
                         func = function()
-                            self.profile.customTheme = addon.customThemeBase
-                            addon:RegisterTheme(self.profile.customTheme)
+                            self.profile.customTheme = CopyTable(addon.customThemeBase)
                             addon:ReloadTheme()
                         end,
                         hidden = function()
@@ -2962,6 +2943,10 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "toggle",
                         width = optionsWidth,
                         order = 1.92,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            if value then addon:ReloadTheme() end
+                        end,
                     },
                     previewFramePositions = {
                         name = fmt(L("%s Frame Positions"), _G.PREVIEW),
@@ -3251,7 +3236,7 @@ function addon.settings:CreateAceOptionsPanel()
                         isPercent = true,
                         set = function(info, value)
                             SetProfileOption(info, value)
-                            addon.activeItemFrame:SetScale(value)
+                            if addon.activeItemWindow then addon.activeItemWindow:SetScale(value) end
                         end
                     },
                     activeItemHideBG = {
@@ -3262,9 +3247,7 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 6.2,
                         set = function(info, value)
                             SetProfileOption(info, value)
-                            if addon.activeItemFrame then
-                                addon.activeItemFrame:UpdateVisuals()
-                            end
+                            if addon.activeItemWindow then addon.activeItemWindow:UpdateTheme() end
                         end
                     },
                     resetItemPosition = {
@@ -4528,23 +4511,16 @@ function addon.settings:LoadScales()
     addon.RXPFrame:SetScale(self.profile.windowScale)
     addon.ui.v2.configurator:SetScale(self.profile.windowScale)
 
-    if addon.tracker.splits.frame then
-        addon.tracker.splits.frame:SetScale(self.profile.levelSplitsScale)
-    end
+    addon.tracker.splits:SetScale(self.profile.levelSplitsScale)
 
     if addon.arrowFrame then
         addon.arrowFrame:SetSize(32 * self.profile.arrowScale,
                                  32 * self.profile.arrowScale)
     end
 
-    if addon.activeItemFrame then
-        addon.activeItemFrame:SetScale(self.profile.activeItemsScale)
-    end
+    if addon.activeItemWindow then addon.activeItemWindow:SetScale(self.profile.activeItemsScale) end
 
-    if addon.targeting and addon.targeting.activeTargetFrame then
-        addon.targeting.activeTargetFrame:SetScale(self.profile
-                                                       .activeTargetScale)
-    end
+    addon.targeting:SetScale(self.profile.activeTargetScale)
 end
 
 function addon.settings:IsEnabled(...)

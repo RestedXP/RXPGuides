@@ -3,7 +3,7 @@ local _, addon = ...
 local _G = _G
 local L = addon.locale.Get
 
-local BackdropTemplate = BackdropTemplateMixin and "BackdropTemplate"
+local AceGUI = LibStub("AceGUI-3.0")
 local GetContainerNumSlots = C_Container and C_Container.GetContainerNumSlots or _G.GetContainerNumSlots
 local GetContainerItemID = C_Container and C_Container.GetContainerItemID or _G.GetContainerItemID
 local GetContainerItemInfo = C_Container and C_Container.GetContainerItemInfo or _G.GetContainerItemInfo
@@ -158,11 +158,9 @@ local function GetActiveItemList(ref)
 end
 
 local function UpdateCooldowns()
-    if not (addon.activeItemFrame and addon.activeItemFrame:IsShown()) then
+    if not (addon.activeItemWindow and addon.activeItemWindow:IsShown()) then
         return
     end
-    local itemFrame = addon.activeItemFrame
-    local buttonList = itemFrame.buttonList
     --[[local function FormatCooldown(startTime, remaining, enable)
 
         if remaining < 60 and remaining > 0 then
@@ -175,7 +173,7 @@ local function UpdateCooldowns()
             return tostring(math.ceil(remaining / 3600 - 0.5)) .. "h"
         end
     end]]
-    for i, btn in ipairs(buttonList) do
+    for i, btn in ipairs(addon.activeItemWindow.buttonList) do
         local id = btn.itemId
         if id and btn:IsShown() then
             local start,duration
@@ -203,119 +201,35 @@ local function UpdateCooldowns()
     end
 end
 
-local function UpdateV1IconFrameVisuals(self, updateFrame)
-    self:ClearBackdrop()
+function addon:CreateActiveItemFrame()
+    if self.activeItemWindow then return end
 
-    if not addon.settings.profile.activeItemHideBG then
-        self:SetBackdrop(addon.RXPFrame.backdrop.edge)
+    local window = AceGUI:Create("RXPV2MiniFrame")
+    window.hideBackgroundSetting = "activeItemHideBG"
+    window:SetAutoAdjustHeight(false)
+    window.frame.saveSize = false
+    self.activeItemWindow = window
 
-        local r, g, b = unpack(addon.colors.background)
-        self:SetBackdropColor(r, g, b, 0.4)
-    end
-
-    self.title:ClearBackdrop()
-    self.title:SetBackdrop(addon.RXPFrame.backdrop.edge)
-    self.title:SetBackdropColor(unpack(addon.colors.background))
-
-    self.title.text:SetFont(addon.font, 9, "")
-    self.title.text:SetTextColor(unpack(addon.activeTheme.textColor))
-
-    self.title:SetSize(self.title.text:GetStringWidth() + 10, 19)
-
-    if updateFrame and self.UpdateFrame then return self:UpdateFrame() end
-end
-
-local function UpdateV2IconFrameVisuals(self, updateFrame)
-    local theme = addon.v2:GetTheme()
-
-    if addon.settings.profile.activeItemHideBG then
-        addon.ui.v2:SetFrameBackdropShown(self, false)
-    else
-        addon.ui.v2:ApplyFrameBackdrop(self, theme.edge, theme.backgroundColors.common,
-                                       theme.borderColors.commonEdge)
-        addon.ui.v2:AddFrameShadow(self)
-        addon.ui.v2:SetFrameBackdropShown(self, true)
-    end
-
-    addon.ui.v2:ApplyFrameBackdrop(self.title, theme.edge, theme.backgroundColors.common,
-                                   theme.borderColors.commonEdge)
-
-    self.title.text:SetFont(theme.font, 9, "")
-    self.title.text:SetTextColor(unpack(theme.textColor.title))
-
-    self.title:SetSize(self.title.text:GetStringWidth() + 10, 19)
-
-    if updateFrame and self.UpdateFrame then
-        return self:UpdateFrame()
-    end
-end
-
-function addon.CreateActiveItemFrame(self, anchor, enableText)
-
-    if not self or self.activeItemFrame then return end
-
-    local f
-
-    if not anchor then
-        anchor = UIParent
-        self.activeItemFrame = CreateFrame("Frame", "RXPItemFrame", anchor,
-                                           BackdropTemplate)
-        f = self.activeItemFrame
-        f:SetClampedToScreen(true)
-        f:EnableMouse(true)
-        f:SetMovable(true)
-    else
-        self.activeItemFrame = CreateFrame("Frame", "$parentItemFrame", anchor,
-                                           BackdropTemplate)
-        f = self.activeItemFrame
-    end
-    addon.enabledFrames["activeItemFrame"] = f
-    f.IsFeatureEnabled = function()
+    _G.RXPItemFrame = window.frame
+    addon.enabledFrames["activeItemFrame"] = window.frame
+    window.frame.IsFeatureEnabled = function()
         local shown = not addon.settings.profile.disableItemWindow and next(GetActiveItemList()) ~= nil
         return shown,true
     end
 
-    f.onMouseDown = function()
-        if addon.settings.profile.lockFrames and not IsAltKeyDown() then return end
-        if InCombatLockdown() and f:IsProtected() then return end
-        f:StartMoving()
-    end
-    function f.onMouseUp()
-        if InCombatLockdown() and f:IsProtected() then return end
-        f:StopMovingOrSizing()
-        addon.settings:SaveFramePositions()
-    end
-    f:SetScript("OnMouseDown", f.onMouseDown)
-    f:SetScript("OnMouseUp", f.onMouseUp)
-    f.parent = self
-    f.buttonList = {}
-    f:SetPoint("CENTER", anchor, "CENTER", 0, 0)
+    window.buttonList = {}
+    window:SetPoint("CENTER", UIParent, "CENTER", 0, 0)
 
-    f:RegisterEvent("SPELL_UPDATE_COOLDOWN")
-    f:RegisterEvent("PLAYER_REGEN_ENABLED")
-    f:SetScript("OnEvent",UpdateCooldowns)
+    window.frame:RegisterEvent("SPELL_UPDATE_COOLDOWN")
+    window.frame:RegisterEvent("PLAYER_REGEN_ENABLED")
+    window.frame:SetScript("OnEvent",UpdateCooldowns)
 
-    if not f.title then
-        f.title = CreateFrame("Frame", "$parent_title", f, BackdropTemplate)
-        f.title:SetPoint("TOPLEFT", f, 5, 10)
-        f.title:SetFrameLevel(f:GetFrameLevel() + 3)
-        f.title.text = f.title:CreateFontString(nil, "OVERLAY")
-        f.title.text:ClearAllPoints()
-        f.title.text:SetPoint("CENTER", f.title, 0, 0)
-        f.title.text:SetJustifyH("CENTER")
-        f.title.text:SetJustifyV("MIDDLE")
-        f.title.text:SetFont(addon.v2:IsEnabled() and addon.v2:GetTheme().font or addon.font, 9, "")
-        f.title.text:SetText(L"Active Items")
-        f.title:EnableMouse(true)
-        f.title:SetScript("OnMouseDown", f.onMouseDown)
-        f.title:SetScript("OnMouseUp", f.onMouseUp)
-    end
+    window:SetScale(addon.settings.profile.activeItemsScale)
+    window:UpdateTheme()
+    window:SetTitle(L("Active Items"))
 
-    f.UpdateVisuals = addon.v2:IsEnabled() and UpdateV2IconFrameVisuals or UpdateV1IconFrameVisuals
-    f.UpdateFrame = addon.UpdateItemFrame
-    f:UpdateVisuals()
-    f:SetHeight(43)
-    f:Hide()
+    window:SetHeight(43)
+    window:Hide()
 end
 
 local fOnEnter = function(self)
@@ -346,32 +260,8 @@ local fOnLeave = function(self)
     end
 end
 
-function addon.UpdateItemFrame(itemFrame)
-    if not itemFrame then
-        if addon.activeItemFrame then
-            itemFrame = addon.activeItemFrame
-        else
-            return
-        end
-    end
-
-    --[[local stepframe = itemFrame.stepframe
-    local step = stepframe.step
-    if not (step and step.activeItems) then
-        itemFrame:SetAlpha(0.01)
-        if not InCombatLockdown() then
-            return itemFrame:Hide()
-        end
-        return
-    elseif InCombatLockdown() then
-        if itemFrame.step ~= stepframe.step then
-            itemFrame:SetAlpha(0.1)
-        end
-        return
-    end
-
-    itemFrame.step = stepframe.step
-    ]]
+function addon.UpdateItemFrame()
+    if not addon.activeItemWindow then return end
 
     if InCombatLockdown() then return end
 
@@ -398,31 +288,27 @@ function addon.UpdateItemFrame(itemFrame)
         end
     end
 
-    local buttonList = itemFrame.buttonList
     local itemList = GetActiveItemList()
 
-    itemFrame.title:SetSize(itemFrame.title.text:GetStringWidth() + 10, 19)
     local i = 0
     for _, item in ipairs(itemList) do
         i = i + 1
-        local btn = buttonList[i]
+        local btn = addon.activeItemWindow.buttonList[i]
 
         if not btn then
-            btn = CreateFrame("Button", "$parentButton" .. i, itemFrame,
+            btn = CreateFrame("Button", "RXPItemFrameButton" .. i, addon.activeItemWindow.frame,
                               "SecureActionButtonTemplate")
             btn:SetAttribute("type1", "item")
             btn:SetSize(25, 25)
             if btn.RegisterForClicks then--and addon.game == "RETAIL" then
                 btn:RegisterForClicks("AnyUp","AnyDown")
             end
-            table.insert(buttonList, btn)
-            local n = #buttonList
+            addon.activeItemWindow.buttonList[i] = btn
 
-            btn:ClearAllPoints()
-            if n == 1 then
-                btn:SetPoint("BOTTOMLEFT", itemFrame, "BOTTOMLEFT", 4, 2)
+            if i == 1 then
+                btn:SetPoint("TOPLEFT", addon.activeItemWindow.frame, "TOPLEFT", 6, -15)
             else
-                btn:SetPoint("CENTER", buttonList[n - 1], "CENTER", 27, 0)
+                btn:SetPoint("CENTER", addon.activeItemWindow.buttonList[i - 1], "CENTER", 27, 0)
             end
             btn.icon = btn:CreateTexture(nil, "BACKGROUND");
             local icon = btn.icon
@@ -484,17 +370,17 @@ function addon.UpdateItemFrame(itemFrame)
         btn:Show()
     end
     -- print("s:",i)
-    if i > 0 then itemFrame:SetAlpha(1) end
+    if i > 0 then addon.activeItemWindow:SetAlpha(1) end
 
     if i == 0 or addon.settings.profile.disableItemWindow or not addon.settings.profile.showEnabled then
-        itemFrame:Hide()
+        addon.activeItemWindow:Hide()
     else
-        itemFrame:Show()
+        addon.activeItemWindow:Show()
     end
 
-    for n = i + 1, #buttonList do buttonList[n]:Hide() end
-    local width = math.max(itemFrame.title:GetWidth() + 10, i * 27 + 8)
-    itemFrame:SetWidth(width);
+    for n = i + 1, #addon.activeItemWindow.buttonList do addon.activeItemWindow.buttonList[n]:Hide() end
+    local width = math.max(addon.activeItemWindow.title:GetWidth() + 10, i * 27 + 8)
+    addon.activeItemWindow:SetWidth(width);
     UpdateCooldowns()
 
 end

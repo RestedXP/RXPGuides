@@ -419,6 +419,8 @@ local function createReportCard(title, iconName)
 end
 
 function addon.tracker:UpdateTheme()
+    self.splits:UpdateTheme()
+
     local theme = addon.v2:GetTheme()
     local guideGroupColor = {addon.settings:HexToRGB(addon.guideTextColors["RXP_WARN_"])}
     if self.reportFrame then
@@ -436,10 +438,6 @@ function addon.tracker:UpdateTheme()
 
         trackerUi.scrollContainer:UpdateTheme({updateChildren = true})
         trackerUi.scrollContainer:DoLayout()
-    end
-
-    if self.splits.frame then
-        self.splits:UpdateTheme()
     end
 end
 
@@ -871,7 +869,7 @@ function addon.tracker.splits:ShowMenu(menuFrame, button)
             tooltipTitle = L("Temporarily hide, use '/rxp splits' to show again"),
             tooltipOnButton = true,
             notCheckable = 1,
-            func = function() self.frame:Hide() end
+            func = function() self.window:Hide() end
         }, {
             text = L("Close"),
             notCheckable = 1,
@@ -931,117 +929,85 @@ function addon.tracker.splits:ShowMenu(menuFrame, button)
 end
 
 function addon.tracker.splits:UpdateTheme()
-    local f = self.frame
-    if not f then return end
+    if not self.window then return end
+    self.window:UpdateTheme()
+    self.history:UpdateTheme()
 
     local theme = addon.v2:GetTheme()
-    if addon.settings.profile.hideSplitsBackground then
-        addon.ui.v2:SetFrameBackdropShown(f, false)
-    else
-        addon.ui.v2:ApplyFrameBackdrop(f, theme.edge, theme.backgroundColors.common,
-                                       theme.borderColors.commonEdge)
-        addon.ui.v2:AddFrameShadow(f)
-        addon.ui.v2:SetFrameBackdropShown(f, true)
-    end
-
-    addon.ui.v2:ApplyFrameBackdrop(f.title, theme.edge, theme.backgroundColors.common,
-                                   theme.borderColors.commonEdge)
-    f.history:UpdateTheme()
-    f.title.text:SetFont(theme.font, 9, "")
-    f.title.text:SetTextColor(unpack(theme.textColor.title))
-    f.title:SetWidth(f.title.text:GetStringWidth() + 10)
-
     local fontSize = addon.settings.profile.levelSplitsFontSize
-    f.measureText:SetFont(theme.font, fontSize, "")
+    self.measureText:SetFont(theme.font, fontSize, "")
     local guideGroupColor = {addon.settings:HexToRGB(addon.guideTextColors["RXP_WARN_"])}
-    f.current:UpdateSubTheme()
-    f.current:SetFontSize(fontSize)
-    f.current:SetColors(theme.textColor.common, guideGroupColor)
-    f.total:UpdateSubTheme()
-    f.total:SetFontSize(fontSize)
-    f.total:SetColors(theme.textColor.common, guideGroupColor)
-    for _, row in ipairs(f.history.children) do
-        row:UpdateSubTheme()
+    self.current:UpdateTheme()
+    self.current:SetFontSize(fontSize)
+    self.current:SetColors(theme.textColor.common, guideGroupColor)
+    self.total:UpdateTheme()
+    self.total:SetFontSize(fontSize)
+    self.total:SetColors(theme.textColor.common, guideGroupColor)
+    for _, row in ipairs(self.history.children) do
+        row:UpdateTheme()
         row:SetFontSize(fontSize)
         row:SetColors(theme.textColor.common, guideGroupColor)
     end
 
-    f.history:DoLayout()
-    if f.userResizing then
+    self.history:DoLayout()
+    if self.userResizing then
         self:ResizeHistory()
     else
-        if f.history.frame:IsShown() then f.history:SetHeight(min(f.history.content:GetHeight(), 154)) end
-        f.rows:DoLayout()
+        if self.history:IsShown() then self.history:SetHeight(min(self.history.content:GetHeight(), 154)) end
+        self.window:DoLayout()
     end
 end
 
 function addon.tracker.splits:ResizeHistory()
-    local f = self.frame
-    if f.resizingHistory then return end
-    f.resizingHistory = true
+    if self.resizingHistory then return end
+    self.resizingHistory = true
 
     local fixedHeight, fixedChildren = 0, 0
-    for _, row in ipairs(f.rows.children) do
-        if row ~= f.history and row:IsShown() then
+    for _, row in ipairs(self.window.children) do
+        if row ~= self.history and row:IsShown() then
             fixedHeight = fixedHeight + row.frame:GetHeight()
             fixedChildren = fixedChildren + 1
         end
     end
 
-    local tableOptions = f.rows:GetUserData("table")
+    local tableOptions = self.window:GetUserData("table")
     local spacing = tableOptions.spaceV or tableOptions.space or 0
     local minHeight = fixedHeight + spacing * fixedChildren
-    if f:GetHeight() < minHeight then f:SetHeight(minHeight) end
-    if f.SetResizeBounds then
-        f:SetResizeBounds(160, minHeight)
+    if self.window:GetHeight() < minHeight then self.window:SetHeight(minHeight) end
+    self.window:SetResizeBounds(160, minHeight)
+
+    if #self.history.children > 0 and addon.settings.profile.showLevelSplitsHistory then
+        self.history:SetHeight(min(self.history.content:GetHeight(), mmax(self.window:GetHeight() - minHeight, 0)))
+        self.history:SetShown(self.history:GetHeight() > 1)
     else
-        f:SetMinResize(160, minHeight)
+        self.history:SetHeight(0)
+        self.history:Hide()
     end
-
-    if #f.history.children > 0 and addon.settings.profile.showLevelSplitsHistory then
-        f.history:SetHeight(min(f.history.content:GetHeight(), mmax(f:GetHeight() - minHeight, 0)))
-        f.history.frame:SetShown(f.history.frame:GetHeight() > 1)
-    else
-        f.history:SetHeight(0)
-        f.history.frame:Hide()
-    end
-    f.rows:DoLayout()
-    f.resizingHistory = nil
-end
-
-function addon.tracker.splits:StartMoving()
-    if addon.settings.profile.lockFrames and not IsAltKeyDown() then return end
-
-    self.frame:StartMoving()
-end
-
-function addon.tracker.splits:StopMoving()
-    self.frame:StopMovingOrSizing()
-    addon.settings:SaveFramePositions()
+    self.window:DoLayout()
+    self.resizingHistory = nil
 end
 
 function addon.tracker.splits:Create()
-    if self.frame then
+    if self.window then
         self:Update("full")
         return
     end
-    -- This frame only needs a movable anchor and text.
-    local layout = AceGUI:Create("SimpleGroup")
+    local layout = AceGUI:Create("RXPV2MiniFrame")
+    layout.hideBackgroundSetting = "hideSplitsBackground"
     layout:SetLayout("Table")
     layout:SetUserData("table", {columns = {{weight = 1}}, spaceV = 2})
 
-    local f = layout.frame
-    f:SetFrameStrata("MEDIUM")
+    layout.frame:SetFrameStrata("MEDIUM")
 
-    self.frame = f
-    addon.enabledFrames["levelSplits"] = f
-    f.GetSavedSize = function(frame)
-        return frame:GetWidth(), frame:GetHeight(), frame.userResizing == true
+    self.window = layout
+    addon.enabledFrames["levelSplits"] = layout.frame
+    layout.frame.GetSavedSize = function(frame)
+        return frame:GetWidth(), frame:GetHeight(), self.userResizing == true
     end
-    f.RestoreSavedSize = function(frame, size)
+    layout.frame.RestoreSavedSize = function(frame, size)
         local isManualResize = addon.settings.profile.showLevelSplitsHistory and size and size[3] == true
-        frame.userResizing = isManualResize and true or nil
-        frame.rows:SetAutoAdjustHeight(not isManualResize)
+        self.userResizing = isManualResize and true or nil
+        layout:SetAutoAdjustHeight(not isManualResize)
         if size then
             if isManualResize then
                 frame:SetSize(size[1], size[2])
@@ -1050,80 +1016,50 @@ function addon.tracker.splits:Create()
             end
         end
         if isManualResize then
-            addon.tracker.splits:ResizeHistory()
+            self:ResizeHistory()
         else
-            frame.rows:DoLayout()
+            layout:DoLayout()
         end
     end
-    f.IsFeatureEnabled = function() return addon.settings.profile.enablelevelSplits, false end
-    f:SetClampedToScreen(true)
-    f:EnableMouse(true)
-    f:SetMovable(true)
-    f:SetResizable(true)
-    if f.SetResizeBounds then
-        f:SetResizeBounds(160, 50)
-    else
-        f:SetMinResize(160, 50)
-    end
-    f:SetScript("OnMouseDown", function() addon.tracker.splits:StartMoving() end)
-    f:SetScript("OnMouseUp", function() addon.tracker.splits:StopMoving() end)
+    layout.frame.IsFeatureEnabled = function() return addon.settings.profile.enablelevelSplits, false end
+    layout.frame:SetResizable(true)
+    layout:SetResizeBounds(160, 50)
 
-    local sizer = CreateFrame("Button", nil, f)
+    local sizer = CreateFrame("Button", nil, layout.frame)
     sizer:SetSize(12, 12)
-    sizer:SetPoint("BOTTOMRIGHT", f, "BOTTOMRIGHT", -2, 2)
+    sizer:SetPoint("BOTTOMRIGHT", layout.frame, "BOTTOMRIGHT", -2, 2)
     sizer:SetNormalTexture("Interface/CHATFRAME/UI-ChatIM-SizeGrabber-Up")
     sizer:SetHighlightTexture("Interface/CHATFRAME/UI-ChatIM-SizeGrabber-Highlight", "ADD")
-    sizer:SetScript("OnMouseDown", function()
-        if addon.settings.profile.lockFrames and not IsAltKeyDown() then return end
-        f.userResizing = true
-        f.rows:SetAutoAdjustHeight(false)
-        addon.tracker.splits:ResizeHistory()
-        f:StartSizing("BOTTOMRIGHT")
+    sizer:SetScript("OnMouseDown", function(_, button)
+        if button ~= "LeftButton" then return end
+        if not layout:StartSizing("BOTTOMRIGHT") then return end
+        self.userResizing = true
+        layout:SetAutoAdjustHeight(false)
+        self:ResizeHistory()
     end)
-    sizer:SetScript("OnMouseUp", function() addon.tracker.splits:StopMoving() end)
-
-    f:SetScale(addon.settings.profile.levelSplitsScale)
-    f:SetPoint("CENTER", UIParent, "CENTER", 0, 0)
-    f.title = CreateFrame("Frame", "$parent_title", f, BackdropTemplateMixin and "BackdropTemplate")
-    f.title:ClearAllPoints()
-    f.title:EnableMouse(true)
-    f.title:SetPoint("TOPLEFT", f, 5, 8)
-    f.title:SetFrameLevel(f:GetFrameLevel() + 3)
-    f.title:SetHeight(19)
-
-    f.title.splitsMenuFrame = CreateFrame("Frame", "RXPG_SplitsMenuFrame", f.title, "UIDropDownMenuTemplate")
-
-    f.title.text = f.title:CreateFontString(nil, "OVERLAY")
-    f.title.text:ClearAllPoints()
-    f.title.text:SetJustifyH("CENTER")
-    f.title.text:SetJustifyV("MIDDLE")
-    f.title.text:SetFont(addon.v2:GetTheme().font, 9, "")
-    f.title.text:SetText(L("Level Splits"))
-    f.title.text:SetPoint("CENTER", f.title, 0, 0)
-    f.title:SetWidth(f.title.text:GetStringWidth() + 10)
-    f.title:SetScript("OnMouseDown", function(_, button)
-        if button == "LeftButton" then addon.tracker.splits:StartMoving() end
-    end)
-    f.title:SetScript("OnMouseUp", function(title, button)
-        if button == "LeftButton" then
-            addon.tracker.splits:StopMoving()
-        elseif button == "RightButton" then
-            addon.tracker.splits:ShowMenu(f.title.splitsMenuFrame, title)
-        end
+    sizer:SetScript("OnMouseUp", function(_, button)
+        if button == "LeftButton" then layout:StopMovingOrSizing() end
     end)
 
-    f.history = AceGUI:Create("RXPV2ScrollFrame")
-    f.history:SetFullWidth(true)
-    f.history:SetUserData("table", {columns = {{weight = 1}}, spaceV = 2})
-    f.history:SetLayout("Table")
-    f.history:SetHeight(0)
-    f.current = AceGUI:Create("RXPV2LevelSplitsRow")
-    f.total = AceGUI:Create("RXPV2LevelSplitsRow")
-    f.current:SetLayout("Table")
-    f.total:SetLayout("Table")
+    layout:SetScale(addon.settings.profile.levelSplitsScale)
+    layout:SetPoint("CENTER", UIParent, "CENTER", 0, 0)
+    layout:SetTitle(L("Level Splits"))
+    local menuFrame = CreateFrame("Frame", "RXPG_SplitsMenuFrame", layout.title, "UIDropDownMenuTemplate")
+    layout.title:HookScript("OnMouseUp", function(this, button)
+        if button == "RightButton" then self:ShowMenu(menuFrame, this) end
+    end)
 
-    f.rows = layout
-    f.rows:PauseLayout()
+    self.history = AceGUI:Create("RXPV2ScrollFrame")
+    self.history:SetFullWidth(true)
+    self.history:SetUserData("table", {columns = {{weight = 1}}, spaceV = 2})
+    self.history:SetLayout("Table")
+    self.history:SetHeight(0)
+    self.current = AceGUI:Create("RXPV2LevelSplitsRow")
+    self.total = AceGUI:Create("RXPV2LevelSplitsRow")
+    self.current:SetLayout("Table")
+    self.total:SetLayout("Table")
+
+    layout:PauseLayout()
     local spacer = AceGUI:Create("SimpleGroup")
     spacer:SetAutoAdjustHeight(false)
     spacer:SetFullWidth(true)
@@ -1132,51 +1068,56 @@ function addon.tracker.splits:Create()
     bottomSpacer:SetAutoAdjustHeight(false)
     bottomSpacer:SetFullWidth(true)
     bottomSpacer:SetHeight(14)
-    f.rows:AddChildren(spacer, f.current, f.total, f.history, bottomSpacer)
-    f.history.frame:Hide()
-    f.rows:ResumeLayout()
-    f.rows:DoLayout()
-    f.measureText = f:CreateFontString(nil, "ARTWORK")
-    f.measureText:SetAlpha(0)
-    f.measureText:Show()
+    layout:AddChildren(spacer, self.current, self.total, self.history, bottomSpacer)
+    self.history:Hide()
+    layout:ResumeLayout()
+    layout:DoLayout()
+    self.measureText = layout.frame:CreateFontString(nil, "ARTWORK")
+    self.measureText:SetAlpha(0)
+    self.measureText:Show()
 
-    f:HookScript("OnSizeChanged", function()
-        if f.userResizing then addon.tracker.splits:ResizeHistory() end
+    layout.frame:HookScript("OnSizeChanged", function()
+        if self.userResizing then self:ResizeHistory() end
     end)
 
     self:UpdateTheme()
 
-    f:SetAlpha(addon.settings.profile.levelSplitsOpacity)
-    f.title:SetIgnoreParentAlpha(true)
-    if addon.settings.profile.levelSplitsOpacity + 0.1 > 1.0 then
-        f.title:SetAlpha(1)
-    else
-        f.title:SetAlpha(addon.settings.profile.levelSplitsOpacity + 0.1)
-    end
+    layout:SetAlpha(addon.settings.profile.levelSplitsOpacity)
+    layout.title:SetIgnoreParentAlpha(true)
+    layout.title:SetAlpha(min(addon.settings.profile.levelSplitsOpacity + 0.1, 1))
 
-    f:HookScript("OnUpdate", function() addon.tracker.splits:RefreshSummary() end)
+    layout.frame:HookScript("OnUpdate", function() self:RefreshSummary() end)
 
-    f.awaitingInitialData = true
-    f:SetScript("OnShow", function()
+    self.awaitingInitialData = true
+    layout.frame:SetScript("OnShow", function()
         if addon.settings.profile.showEnabled and addon.tracker.state.login then
-            addon.tracker.splits:Update("full")
+            self:Update("full")
         else
-            f:Hide()
+            layout:Hide()
         end
     end)
-    f:Hide()
+    layout:Hide()
     if addon.tracker.state.login then self:Update("full") end
+end
+
+function addon.tracker.splits:IsShown()
+    return self.window ~= nil and self.window:IsShown()
+end
+
+function addon.tracker.splits:SetShown(shown)
+    if shown and not self.window then self:Create() end
+    if self.window then self.window:SetShown(shown) end
+end
+
+function addon.tracker.splits:SetScale(scale)
+    if self.window then self.window:SetScale(scale) end
 end
 
 function addon.tracker.splits:Toggle()
     if InCombatLockdown() or not addon.settings.profile.enablelevelSplits then return end
-    if not self.frame then return end
+    if not self.window then return end
 
-    if self.frame:IsShown() then
-        self.frame:Hide()
-    else
-        self.frame:Show()
-    end
+    self:SetShown(not self:IsShown())
 end
 
 function addon.tracker.splits:RefreshSummary()
@@ -1312,10 +1253,9 @@ function addon.tracker.splits:FormatDelta(mine, theirs)
 end
 
 function addon.tracker.splits:Update(kind, fitToContent)
-    local f = self.frame
-    if not f then return end
+    if not self.window then return end
     if not addon.settings.profile.enablelevelSplits or not addon.settings.profile.showEnabled then
-        f:Hide()
+        self.window:Hide()
         return
     end
     if not addon.tracker.state.login then return end
@@ -1324,8 +1264,8 @@ function addon.tracker.splits:Update(kind, fitToContent)
     local compareTo = self.comparisonKey and addon.db.profile.reports.splits[self.comparisonKey]
 
     if fitToContent then
-        f.userResizing = nil
-        f.rows:SetAutoAdjustHeight(true)
+        self.userResizing = nil
+        self.window:SetAutoAdjustHeight(true)
         local savedSize = addon.settings.profile.frameSizes and addon.settings.profile.frameSizes.levelSplits
         if savedSize then savedSize[3] = false end
     end
@@ -1333,7 +1273,7 @@ function addon.tracker.splits:Update(kind, fitToContent)
     if addon.tracker.playerLevel == addon.tracker.maxLevel then
         -- Leave creation or full placeholder on updates
         if kind == "full" then
-            f.current:SetText(L("Level Time"), "Max")
+            self.current:SetText(L("Level Time"), "Max")
 
             -- If max level and compareTo level exists, compare total time
             local totalLabel, totalValue = reportSplitsData.total.text:match("^(.-):%s*(.*)$")
@@ -1341,7 +1281,7 @@ function addon.tracker.splits:Update(kind, fitToContent)
                 totalValue = fmt("%s %s", totalValue,
                                  self:FormatDelta(reportSplitsData.total.duration, compareTo.total.duration))
             end
-            f.total:SetText(totalLabel, totalValue)
+            self.total:SetText(totalLabel, totalValue)
         end
     else
         local currentLabel, currentValue = reportSplitsData.current.text:match("^(.-):%s*(.*)$")
@@ -1368,21 +1308,21 @@ function addon.tracker.splits:Update(kind, fitToContent)
             local comparisonValue = nextSplitDuration and
                                     fmt("%s %s", self:FormatTime(nextSplitDuration),
                                         self:FormatDelta(reportSplitsData.current.duration, nextSplitDuration)) or "-"
-            f.current:SetText(fmt("%s %d\n\n%s", L("Level"), addon.tracker.playerLevel + 1, currentLabel),
+            self.current:SetText(fmt("%s %d\n\n%s", L("Level"), addon.tracker.playerLevel + 1, currentLabel),
                               fmt("%s\n\n%s", comparisonValue, currentValue))
         else
-            f.current:SetText(currentLabel, currentValue)
+            self.current:SetText(currentLabel, currentValue)
         end
 
         local totalLabel, totalValue = reportSplitsData.total.text:match("^(.-):%s*(.*)$")
-        f.total:SetText(totalLabel, totalValue)
+        self.total:SetText(totalLabel, totalValue)
     end
 
     if kind == "full" then
         local historyLevels = {}
 
-        f.history:ReleaseChildren()
-        f.history:PauseLayout()
+        self.history:ReleaseChildren()
+        self.history:PauseLayout()
         if addon.settings.profile.showLevelSplitsHistory then
             for level in pairs(reportSplitsData.history.levels) do
                 historyLevels[#historyLevels + 1] = level
@@ -1419,49 +1359,49 @@ function addon.tracker.splits:Update(kind, fitToContent)
                     historyRow = AceGUI:Create("RXPV2LevelSplitsRow")
                     historyRow:SetLayout("Table")
                     historyRow:SetText(fmt("%s %d", L("Level"), level + 1), displayDuration)
-                    historyRow:UpdateSubTheme()
+                    historyRow:UpdateTheme()
                     historyRow:SetFontSize(fontSize)
                     historyRow:SetColors(theme.textColor.common, guideGroupColor)
-                    f.history:AddChild(historyRow)
+                    self.history:AddChild(historyRow)
                 end
             end
         end
 
-        f.history:ResumeLayout()
-        f.history:DoLayout()
-        if addon.settings.profile.showLevelSplitsHistory and #f.history.children > 0 then
-            f.history:SetHeight(min(f.history.content:GetHeight(), 154))
-            f.history.frame:Show()
+        self.history:ResumeLayout()
+        self.history:DoLayout()
+        if addon.settings.profile.showLevelSplitsHistory and #self.history.children > 0 then
+            self.history:SetHeight(min(self.history.content:GetHeight(), 154))
+            self.history:Show()
         else
-            f.history:SetHeight(0)
-            f.history.frame:Hide()
+            self.history:SetHeight(0)
+            self.history:Hide()
         end
     end
 
     local theme = addon.v2:GetTheme()
-    local currentFont, currentFontSize = f.current.leftColumn.text:GetFont()
+    local currentFont, currentFontSize = self.current.leftColumn.text:GetFont()
     if currentFont ~= theme.font or currentFontSize ~= addon.settings.profile.levelSplitsFontSize then
         self:UpdateTheme()
-    elseif f.userResizing then
+    elseif self.userResizing then
         self:ResizeHistory()
     else
-        f.rows:DoLayout()
+        self.window:DoLayout()
     end
-    if kind == "full" then f.history:SetScroll(0) end
+    if kind == "full" then self.history:SetScroll(0) end
 
-    if f:GetAlpha() ~= addon.settings.profile.levelSplitsOpacity then
-        f:SetAlpha(addon.settings.profile.levelSplitsOpacity)
-        f.title:SetAlpha(addon.settings.profile.levelSplitsOpacity + 0.1)
+    if self.window:GetAlpha() ~= addon.settings.profile.levelSplitsOpacity then
+        self.window:SetAlpha(addon.settings.profile.levelSplitsOpacity)
+        self.window.title:SetAlpha(min(addon.settings.profile.levelSplitsOpacity + 0.1, 1))
     end
 
     -- Remove refresh after the first full update at max level
     if addon.tracker.playerLevel == addon.tracker.maxLevel and kind == "full" then
-        self.frame:SetScript("OnUpdate", nil)
+        self.window.frame:SetScript("OnUpdate", nil)
     end
 
-    if f.awaitingInitialData then
-        f.awaitingInitialData = nil
-        f:Show()
+    if self.awaitingInitialData then
+        self.awaitingInitialData = nil
+        self.window:Show()
     end
 end
 
@@ -1470,7 +1410,7 @@ function addon.tracker.splits:ShareText()
     local rows = {}
     local labelWidth, valueWidth = 0, 0
     local label, value, rowLabelWidth, rowValueWidth
-    local measureText = self.frame.measureText
+    local measureText = self.measureText
 
     if reportSplitsData.current.duration then
         label = fmt(L("Level %d time") .. ":", addon.tracker.playerLevel)

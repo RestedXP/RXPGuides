@@ -41,12 +41,16 @@ end
 addon.arrowFrame = CreateFrame("Frame", "RXPG_ARROW", UIParent)
 local af = addon.arrowFrame
 
-function addon.arrowFrame:UpdateVisuals()
+af.UpdateTheme = addon.ui.v2.UpdateTheme
+
+function af:UpdateSubTheme()
     local texture = addon.GetV1Texture("rxp_navigation_arrow-1")
     if addon.v2 and addon.v2:IsEnabled() then
         texture = addon.v2:GetTheme().navigationArrow
     end
     self.texture:SetTexture(texture)
+    self.text:SetFont(addon.font, addon.settings.profile.arrowText, "OUTLINE")
+    self.text:SetTextColor(unpack(addon.activeTheme.textColor))
 end
 
 local function IsInInstance()
@@ -92,10 +96,6 @@ af:SetScript("OnMouseUp", function(self, button)
 end)
 
 function addon.SetupArrow()
-    af.text:SetFont(addon.font, 9,"OUTLINE")
-    af:UpdateVisuals()
-    af.text:SetTextColor(unpack(addon.activeTheme.textColor))
-
     addon.arrowFrame:SetScript("OnUpdate", addon.DrawArrow)
 end
 
